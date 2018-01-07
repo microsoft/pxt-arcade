@@ -1,7 +1,7 @@
 {
-    "id": "sample",
-    "name": "sample",
-    "title": "MakeCode Editor Sample",
+    "id": "pxt32",
+    "name": "PXT-32",
+    "title": "PXT-32 Game Console",
     "corepkg": "core",
     "cloud": {
         "workspace": false,
@@ -23,11 +23,11 @@
         "autoRun": true
     },
     "appTheme": {
-        "logoUrl": "https://github.com/Microsoft/pxt-sample",
-        "homeUrl": "http://microsoft.github.io/pxt-sample/",
+        "logoUrl": "https://github.com/Microsoft/pxt-32",
+        "homeUrl": "http://microsoft.github.io/pxt-32/",
         "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
         "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
-        "betaUrl": "https://makecode.com/",
+        "betaUrl": "https://pxt.io/32",
         "docMenu": [
             {
                 "name": "About",
