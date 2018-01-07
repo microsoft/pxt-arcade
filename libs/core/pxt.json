@@ -1,0 +1,17 @@
+{
+    "name": "core",
+    "description": "A target sample for PXT",
+    "files": [
+        "README.md",
+        "pxt-core.d.ts",
+        "pxt-helpers.ts",
+        "enums.d.ts",
+        "sims.d.ts",
+        "ns.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true,
+    "dependencies": {}
+}

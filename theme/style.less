@@ -1,0 +1,38 @@
+/* Import all components */
+@import 'semantic';
+@import 'pxt';
+@import 'themes/default/globals/site.variables';
+@import 'themes/pxt/globals/site.variables';
+@import 'site/globals/site.variables';
+
+/* Reference import */
+@import (reference) "semantic.less";
+
+/*******************************
+    Add your custom CSS here
+*******************************/
+
+.ui.item.logo .name {
+    font-size: 20px;
+    font-family: @headerFont;
+    font-weight: 400;
+    color: white;
+    text-transform: uppercase;
+    margin-left: 1rem;
+}
+
+/* Mobile */
+@media only screen and (max-width: @largestMobileScreen) {
+}
+
+/* Tablet */
+@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
+}
+
+/* Small Monitor */
+@media only screen and (min-width: @computerBreakpoint) and (max-width: @largestSmallMonitor) {
+}
+
+/* Large Monitor */
+@media only screen and (min-width: @largeMonitorBreakpoint) {
+}

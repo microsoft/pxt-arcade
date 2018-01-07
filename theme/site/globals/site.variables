@@ -1,0 +1,109 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+/*--------------
+      Page
+---------------*/
+
+@pageBackground      : #F9F9F9;
+
+/*-------------------
+     Fonts
+--------------------*/
+
+@headerFont        : "Roboto Mono", serif;
+@pageFont          : "Roboto Mono", serif;
+@googleFontName    : 'Roboto Mono';
+@importGoogleFonts : true;
+
+@docsHeaderFont: @headerFont;
+@docsPageFont: @pageFont;
+
+/*-------------------
+      Site Colors
+--------------------*/
+
+/*---  Colors  ---*/
+@black            : #34495e;
+@blue             : #3498db;
+@green            : #2ecc71;
+@grey             : #7f8c8d;
+@orange           : #e67e22;
+@pink             : #E91E63;
+@purple           : #9C27B0;
+@red              : #e74c3c;
+@teal             : #1abc9c;
+@yellow           : #f1c40f;
+
+/*-------------------
+    Brand Colors
+--------------------*/
+
+@primaryColor        : @blue;
+@secondaryColor      : @grey;
+
+@lightPrimaryColor   : @lightBlue;
+@lightSecondaryColor : @lightGrey;
+
+/*******************************
+     PXT Variables
+*******************************/
+
+/*-------------------
+   Menu
+--------------------*/
+
+@mainMenuInvertedBackground: @green;
+@mainMenuTutorialBackground: @orange;
+
+@mainMenuBlocksJsToggleColor: @primaryColor;
+
+@tutorialSelectedMenuColor: @primaryColor;
+
+/*-------------------
+   Layout
+--------------------*/
+
+@sideBarWidth: 22rem;
+@simulatorWidth: 27rem;
+@simulatorWidthSmall: 20rem;
+
+/*-------------------
+   Background
+--------------------*/
+
+@simulatorBackground: #2c3e50;
+@editorToolsBackground: @simulatorBackground;
+@blocklySvgColor: #ecf0f1;
+
+@homeScreenBackground: #ecf0f1;
+
+/*-------------------
+   Full screen
+--------------------*/
+
+@fullscreenBackgroundGradientStart: @mainMenuInvertedBackground;
+@fullscreenBackgroundGradientEnd: @simulatorBackground;
+
+/*-------------------
+   Editor
+--------------------*/
+
+@blocklyToolboxColor: white;
+@trashIconColor: @primaryColor;
+
+/*-------------------
+   Blockly
+--------------------*/
+
+@blocklyFont: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+
+/*-------------------
+   Flyout
+--------------------*/
+
+@flyoutLabelColor: white;
+@blocklyFlyoutColor: @grey;
+@blocklyFlyoutColorOpacity: 0.9;
+@monacoFlyoutColor: fade(@blocklyFlyoutColor, 90%);

@@ -1,0 +1,60 @@
+{
+    "id": "sample",
+    "name": "sample",
+    "title": "MakeCode Editor Sample",
+    "corepkg": "core",
+    "cloud": {
+        "workspace": false,
+        "packages": true
+    },
+    "bundleddirs": [
+        "libs/core"
+    ],
+    "runtime": {
+      "mathBlocks": true,
+      "loopsBlocks": true,
+      "logicBlocks": true,
+      "variablesBlocks": true,
+      "textBlocks": true,
+      "functionBlocks": true,
+      "listsBlocks": true 
+    },
+    "simulator": {
+        "autoRun": true
+    },
+    "appTheme": {
+        "logoUrl": "https://github.com/Microsoft/pxt-sample",
+        "homeUrl": "http://microsoft.github.io/pxt-sample/",
+        "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
+        "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
+        "betaUrl": "https://makecode.com/",
+        "docMenu": [
+            {
+                "name": "About",
+                "path": "/about"
+            },
+            {
+                "name": "Docs",
+                "path": "/docs"
+            }
+        ],
+        "coloredToolbox": true,
+        "monacoToolbox": true,
+        "invertedMenu": true,
+        "showHomeScreen": true,
+        "homeScreenHero": "./static/hero.png",        
+        "blocklyOptions": { 
+            "grid": {
+                "spacing": 45,
+                "length": 7,
+                "colour": "rgba(189, 195, 199, 0.30)",
+                "snap": true
+            }
+        },
+        "simAnimationEnter": "fly right in",
+        "simAnimationExit": "fly right out",
+        "monacoColors": {
+            "editor.background": "#ecf0f1"
+        }
+    }
+}

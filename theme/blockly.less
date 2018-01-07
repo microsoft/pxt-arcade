@@ -1,0 +1,30 @@
+@import 'themes/default/globals/site.variables';
+@import 'themes/pxt/globals/site.variables';
+@import 'site/globals/site.variables';
+
+@import 'blockly-core';
+
+div.blocklyTreeRow {
+    box-shadow: inset 0 -1px 0 0 #ecf0f1;
+    margin-bottom: 0px !important;
+    transition-property: background-color;
+    transition-duration: 1s;
+}
+
+.blocklyToolboxDiv, .monacoToolboxDiv, .blocklyAddPackageDiv {
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24);    
+}
+
+/* Mobile */
+@media only screen and (max-width: @largestMobileScreen) {
+    .blocklyToolboxDiv, .monacoToolboxDiv, .blocklyAddPackageDiv {
+        border-left: 0 !important;
+    }
+}
+
+/* Tablet */
+@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
+    .blocklyToolboxDiv, .monacoToolboxDiv, .blocklyAddPackageDiv {
+        border-left: 0 !important;
+    }
+}

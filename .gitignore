@@ -1,0 +1,10 @@
+node_modules
+*.sw?
+built
+typings/
+tmp/
+*.ts.new
+temp/
+projects/
+packaged
+gh-pages
