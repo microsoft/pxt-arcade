@@ -95,6 +95,7 @@ namespace pxsim {
         private frameUser = 0
         private frameSystem = 0
         private frameSkip = 0
+        private frameSkipNow = 0
 
         constructor() {
             super();
@@ -332,6 +333,11 @@ namespace pxsim {
 
             if (this.inUpdate) {
                 this.frameSkip++
+                this.frameSkipNow++
+                // it seems game loop is blocked; at least update the screen
+                if (this.frameSkipNow > 2) {
+                    this.flush()
+                }
                 return
             }
             let start = perfNow()
@@ -356,6 +362,7 @@ namespace pxsim {
                 this.flush()
                 this.frameSystem += perfNow() - stopUser
                 this.inUpdate = false
+                this.frameSkipNow = 0
             })
         }
     }

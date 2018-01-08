@@ -62,6 +62,20 @@ namespace pxsim.screen {
     }
 
     /**
+      * Get a pixel
+      * @param x 
+      * @param y 
+      */
+    //% block
+    export function get(x: int, y: int) {
+        const b = board()
+        if (b.inRange(x, y)) {
+            return b.palette.indexOf(b.screen[b.pix(x, y)])
+        }
+        return -1
+    }
+
+    /**
      * Fill a rectangle
      * @param x 
      * @param y 
@@ -288,6 +302,14 @@ namespace pxsim.control {
     //% blockId=control_running_time block="millis (ms)" 
     export function millis() {
         return Date.now() - board().startTime
+    }
+
+    /**
+     * Restarts the console.
+     */
+    //% block
+    export function reset() {
+        U.userError("reset")
     }
 
 }

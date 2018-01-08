@@ -16,6 +16,15 @@ declare namespace screen {
     function set(x: number, y: number, c: number): void;
 
     /**
+     * Get a pixel
+     * @param x 
+     * @param y 
+     */
+    //% block
+    //% shim=screen::get
+    function get(x: number, y: number): number;
+
+    /**
      * Fill a rectangle
      * @param x 
      * @param y 
@@ -139,6 +148,13 @@ declare namespace control {
     //% blockId=control_running_time block="millis (ms)"
     //% shim=control::millis
     function millis(): number;
+
+    /**
+     * Restarts the console.
+     */
+    //% block
+    //% shim=control::reset
+    function reset(): void;
 
 }
 
