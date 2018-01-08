@@ -1,33 +1,41 @@
 /// <reference path="../libs/core/enums.d.ts"/>
 
-namespace pxsim.turtle {
+type color = number
+type int = number
+
+namespace pxsim.screen {
     /**
-     * Moves the sprite forward
-     * @param steps number of steps to move, eg: 1
+     * Set a pixel
+     * @param x 
+     * @param y 
+     * @param c 
      */
-    //% weight=90
     //% block
-    export function forwardAsync(steps: number) {
-        return board().sprite.forwardAsync(steps)
+    export function set(x: int, y: int, c: color) {
+        const b = board()
+        if (b.inRange(x, y)) {
+            b.screen[b.pix(x, y)] = b.color(c)
+        }
     }
 
     /**
-     * Moves the sprite forward
-     * @param direction the direction to turn, eg: Direction.Left
-     * @param angle degrees to turn, eg:90
+     * Fill a rectangle
+     * @param x 
+     * @param y 
+     * @param w 
+     * @param h 
+     * @param c 
      */
-    //% weight=85
-    //% blockId=sampleTurn block="turn %direction|by %angle degrees"
-    export function turnAsync(direction: Direction, angle: number) {
-        let b = board();
-
-        if (direction == Direction.Left)
-            b.sprite.angle -= angle;
-        else
-            b.sprite.angle += angle;
-        return Promise.delay(400)
+    //% block
+    export function rect(x: int, y: int, w: int, h: int, c: color) {
+        const b = board()
+        let [x2, y2] = b.clamp(x + w - 1, y + h - 1);
+        [x, y] = b.clamp(x, y)
+        b.fillRect(x, y, x2 - x + 1, y2 - y + 1, b.color(c))
     }
+}
 
+namespace pxsim.turtle {
     /**
      * Triggers when the turtle bumps a wall
      * @param handler 
@@ -53,6 +61,15 @@ namespace pxsim.loops {
     }
 
     /**
+     * Runs code every frame.
+     * @param body the code to repeat
+     */
+    //% block
+    export function frame(body: RefAction): void {
+        board().frameHandler = body
+    }
+
+    /**
      * Pause for the specified time in milliseconds
      * @param ms how long to pause for, eg: 100, 200, 500, 1000, 2000
      */
@@ -63,14 +80,14 @@ namespace pxsim.loops {
     }
 }
 
-function logMsg(m:string) { console.log(m) }
+function logMsg(m: string) { console.log(m) }
 
 namespace pxsim.console {
     /**
      * Print out message
      */
     //% 
-    export function log(msg:string) {
+    export function log(msg: string) {
         logMsg("CONSOLE: " + msg)
         // why doesn't that work?
         board().writeSerial(msg + "\n")
@@ -88,17 +105,17 @@ namespace pxsim {
          */
         //%
         public x = 100;
-         /**
-         * The Y-coordiante
-         */
+        /**
+        * The Y-coordiante
+        */
         //%
         public y = 100;
         public angle = 90;
-        
+
         constructor() {
         }
-        
-        private foobar() {}
+
+        private foobar() { }
 
         /**
          * Move the thing forward

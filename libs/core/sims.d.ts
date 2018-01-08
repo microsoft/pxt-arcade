@@ -1,24 +1,29 @@
 // Auto-generated from simulator. Do not edit.
-declare namespace turtle {
+declare namespace screen {
     /**
-     * Moves the sprite forward
-     * @param steps number of steps to move, eg: 1
+     * Set a pixel
+     * @param x 
+     * @param y 
+     * @param c 
      */
-    //% weight=90
     //% block
-    //% shim=turtle::forwardAsync promise
-    function forward(steps: number): void;
+    //% shim=screen::set
+    function set(x: number, y: number, c: number): void;
 
     /**
-     * Moves the sprite forward
-     * @param direction the direction to turn, eg: Direction.Left
-     * @param angle degrees to turn, eg:90
+     * Fill a rectangle
+     * @param x 
+     * @param y 
+     * @param w 
+     * @param h 
+     * @param c 
      */
-    //% weight=85
-    //% blockId=sampleTurn block="turn %direction|by %angle degrees"
-    //% shim=turtle::turnAsync promise
-    function turn(direction: Direction, angle: number): void;
+    //% block
+    //% shim=screen::rect
+    function rect(x: number, y: number, w: number, h: number, c: number): void;
 
+}
+declare namespace turtle {
     /**
      * Triggers when the turtle bumps a wall
      * @param handler 
@@ -37,6 +42,14 @@ declare namespace loops {
     //% blockId=device_forever block="forever"
     //% shim=loops::forever
     function forever(body: () => void): void;
+
+    /**
+     * Runs code every frame.
+     * @param body the code to repeat
+     */
+    //% block
+    //% shim=loops::frame
+    function frame(body: () => void): void;
 
     /**
      * Pause for the specified time in milliseconds
