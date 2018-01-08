@@ -22,15 +22,26 @@ declare namespace screen {
     //% shim=screen::rect
     function rect(x: number, y: number, w: number, h: number, c: number): void;
 
-}
-declare namespace turtle {
     /**
-     * Triggers when the turtle bumps a wall
-     * @param handler 
+     * Get the width of the screen in pixels
      */
-    //% blockId=onBump block="on bump"
-    //% shim=turtle::onBump
-    function onBump(handler: () => void): void;
+    //%
+    //% shim=screen::width
+    function width(): number;
+
+    /**
+     * Get the height of the screen in pixels
+     */
+    //%
+    //% shim=screen::height
+    function height(): number;
+
+    /**
+     * 
+     */
+    //%
+    //% shim=screen::drawImage
+    function drawImage(x: number, y: number, img: Buffer): void;
 
 }
 declare namespace loops {
@@ -68,6 +79,22 @@ declare namespace console {
     //%
     //% shim=console::log
     function log(msg: string): void;
+
+}
+declare namespace control {
+    /**
+     * Listen to a event
+     */
+    //%
+    //% shim=control::on
+    function on(ev: string, arg: number, f: () => void): void;
+
+    /**
+     * Generate an event
+     */
+    //%
+    //% shim=control::queue
+    function queue(ev: string, arg: number): void;
 
 }
     /**

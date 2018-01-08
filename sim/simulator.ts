@@ -27,10 +27,26 @@ namespace pxsim {
     initCurrentRuntime = () => {
         runtime.board = new Board();
 
-        if (!updateLoop)
+        if (!updateLoop) {
             updateLoop = setInterval(() => {
                 board().updateView()
             }, 20)
+            const body = document.getElementById("root")
+            window.onfocus = () => {
+                body.className = "focus"
+            }
+            window.onblur = () => {
+                body.className = "blur"
+            }
+            window.onkeydown = (e) => {
+                const b = board()
+                if (b) b.setKey((typeof e.which == "number") ? e.which : e.keyCode, true)
+            }
+            window.onkeyup = (e) => {
+                const b = board()
+                if (b) b.setKey((typeof e.which == "number") ? e.which : e.keyCode, false)
+            }
+        }
     };
 
     /**
@@ -66,9 +82,9 @@ namespace pxsim {
         public canvas: HTMLCanvasElement;
         public stats: HTMLElement;
         public sprite: Sprite;
-        private palette = new Uint32Array(16);
-        public width = 128;
-        public height = 128;
+        public palette = new Uint32Array(16);
+        public width = 32;
+        public height = 32;
         public screen: Uint32Array;
         public frameHandler: RefAction;
         public frameNo = 1;
@@ -82,12 +98,17 @@ namespace pxsim {
         constructor() {
             super();
             this.bus = new EventBus(runtime);
-            this.canvas = document.getElementById('screen') as any;
 
             let p = ["#0"].concat(paletteSrc)
             for (let i = 0; i < 16; ++i) {
                 this.palette[i] = htmlColorToUint32(p[i])
             }
+        }
+
+        setKey(which: number, isPressed: boolean) {
+            let k = mapKey(which)
+            if (k)
+                this.bus.queue(isPressed ? "_keydown" : "_keyup", k)
         }
 
         pix(x: int, y: int) {
@@ -128,18 +149,92 @@ namespace pxsim {
             }
         }
 
+        // Image format:
+        //  byte 0: magic 0xf4; 0xf0 is monochromatic, might be supported in future
+        //  byte 1: width in pixels
+        //  byte 2...N: data 4 bits per pixels, high order nibble printed first, lines aligned to byte
+
+        drawImage(x: int, y: int, img: Uint8Array) {
+            if (!img || img.length < 3 || img[0] != 0xf4)
+                return
+            let w = img[1]
+            let byteW = (w + 1) >> 1
+            let h = ((img.length - 2) / byteW) | 0
+            if (h == 0)
+                return
+
+            x |= 0
+            y |= 0
+            const sh = this.height
+            const sw = this.width
+
+            if (x + w <= 0) return
+            if (x >= sw) return
+            if (y + h <= 0) return
+            if (y >= sh) return
+
+            let p = 2
+
+            const palette = this.palette
+            const screen = this.screen
+
+            for (let i = 0; i < h; ++i) {
+                let yy = y + i
+                if (0 <= yy && yy < sh) {
+                    let dst = yy * sw
+                    let len = 0
+                    let src = p
+                    if (x < 0) {
+                        src += ((-x) >> 1)
+                        len = Math.min(sw, w + x)
+                        if (x & 1) {
+                            let c = img[src++] & 0xf
+                            if (c)
+                                screen[dst] = palette[c]
+                            dst++
+                            len--
+                        }
+                    } else {
+                        dst += x
+                        len = Math.min(sw - x, w)
+                    }
+
+                    for (let i = 0; i < len >> 1; ++i) {
+                        const v = img[src++]
+                        if (v >> 4)
+                            screen[dst] = palette[v >> 4]
+                        dst++
+                        if (v & 0xf)
+                            screen[dst] = palette[v & 0xf]
+                        dst++
+                    }
+
+                    if (len & 1) {
+                        let c = img[src++] >> 4
+                        if (c)
+                            screen[dst++] = palette[c]
+                    }
+                }
+                p += byteW
+            }
+        }
+
         flush: () => void;
 
         initAsync(msg: pxsim.SimulatorRunMessage): Promise<void> {
             document.body.innerHTML = ''; // clear children
             this.canvas = document.createElement("canvas");
             this.stats = document.createElement("div")
-            this.stats.className  ="stats"
+            this.stats.className = "stats"
             this.canvas.width = this.width;
             this.canvas.height = this.height;
-            document.body.appendChild(this.canvas);
-            document.body.appendChild(this.stats);
             this.canvas.style.width = "256px";
+            document.body.appendChild(this.canvas);
+            let info = document.createElement("div")
+            info.className = "info"
+            info.textContent = "Use arrows and Z,X."
+            document.body.appendChild(this.stats);
+            document.body.appendChild(info);
 
             /*
             for (let c of paletteSrc) {
@@ -158,6 +253,8 @@ namespace pxsim {
             this.flush = () => {
                 ctx.putImageData(img, 0, 0)
             }
+
+            this.fillRect(0, 0, this.width, this.height, this.color(0))
 
             return Promise.resolve();
         }

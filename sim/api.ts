@@ -3,6 +3,42 @@
 type color = number
 type int = number
 
+namespace pxsim {
+    export enum Key {
+        None = 0,
+        Left = 1,
+        Up = 2,
+        Right = 3,
+        Down = 4,
+        A = 5,
+        B = 6,
+    }
+
+    export function mapKey(which: number): Key {
+        switch (which) {
+            case 65: // A
+            case 37: // Left arrow
+                return Key.Left
+            case 87: // W
+            case 38: // Up arrow
+                return Key.Up
+            case 68: // D
+            case 39: // right arrow
+                return Key.Right
+            case 83: // S
+            case 40: // down arrow
+                return Key.Down
+            case 32: // Space
+            case 90: // Z
+                return Key.A
+            case 13: // Enter
+            case 88: // X
+                return Key.B
+            default: return Key.None
+        }
+    }
+}
+
 namespace pxsim.screen {
     /**
      * Set a pixel
@@ -33,23 +69,34 @@ namespace pxsim.screen {
         [x, y] = b.clamp(x, y)
         b.fillRect(x, y, x2 - x + 1, y2 - y + 1, b.color(c))
     }
-}
 
-namespace pxsim.turtle {
     /**
-     * Triggers when the turtle bumps a wall
-     * @param handler 
+     * Get the width of the screen in pixels
      */
-    //% blockId=onBump block="on bump"
-    export function onBump(handler: RefAction) {
-        let b = board();
+    //%
+    export function width() {
+        return board().width
+    }
 
-        b.bus.listen("Turtle", "Bump", handler);
+    /**
+     * Get the height of the screen in pixels
+     */
+    //%
+    export function height() {
+        return board().height
+    }
+
+    /**
+     * 
+     */
+    //%
+    export function drawImage(x: number, y: number, img: RefBuffer) {
+        if (img)
+            board().drawImage(x, y, img.data)
     }
 }
 
 namespace pxsim.loops {
-
     /**
      * Repeats the code forever in the background. On each iteration, allows other code to run.
      * @param body the code to repeat
@@ -91,6 +138,24 @@ namespace pxsim.console {
         logMsg("CONSOLE: " + msg)
         // why doesn't that work?
         board().writeSerial(msg + "\n")
+    }
+}
+
+namespace pxsim.control {
+    /**
+     * Listen to a event
+     */
+    //% 
+    export function on(ev: string, arg: number, f: RefAction) {
+        board().bus.listen(ev, arg, f)
+    }
+
+    /**
+     * Generate an event
+     */
+    //% 
+    export function queue(ev: string, arg: number) {
+        board().bus.queue(ev, arg)
     }
 }
 

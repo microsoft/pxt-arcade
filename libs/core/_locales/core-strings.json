@@ -20,6 +20,7 @@
   "String.substr|block": "substring of %this=text|from %start|of length %length",
   "String|block": "String",
   "console|block": "console",
+  "control|block": "control",
   "loops.forever|block": "forever",
   "loops.frame|block": "frame|body %body",
   "loops.pause|block": "pause (ms) %pause",
@@ -30,13 +31,14 @@
   "screen|block": "screen",
   "sprites.createSprite|block": "create sprite",
   "sprites|block": "sprites",
-  "turtle.onBump|block": "on bump",
-  "turtle|block": "turtle",
   "{id:category}Array": "Array",
   "{id:category}Arrays": "Arrays",
   "{id:category}Boolean": "Boolean",
+  "{id:category}Buffer": "Buffer",
   "{id:category}Console": "Console",
+  "{id:category}Control": "Control",
   "{id:category}Helpers": "Helpers",
+  "{id:category}Keys": "Keys",
   "{id:category}Loops": "Loops",
   "{id:category}Math": "Math",
   "{id:category}Number": "Number",
@@ -44,6 +46,5 @@
   "{id:category}Sprite": "Sprite",
   "{id:category}Sprites": "Sprites",
   "{id:category}String": "String",
-  "{id:category}Text": "Text",
-  "{id:category}Turtle": "Turtle"
+  "{id:category}Text": "Text"
 }
