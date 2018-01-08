@@ -22,6 +22,8 @@
   "console|block": "console",
   "control.millis|block": "millis (ms)",
   "control.reset|block": "reset",
+  "control.runInBackground|block": "run in background",
+  "control.waitForEvent|block": "wait for event|from %src|with value %value",
   "control|block": "control",
   "loops.forever|block": "forever",
   "loops.frame|block": "frame|body %body",

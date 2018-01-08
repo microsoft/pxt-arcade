@@ -282,7 +282,7 @@ namespace pxsim.control {
      * Generate an event
      */
     //% 
-    export function queue(ev: string, arg: number) {
+    export function raiseEvent(ev: string, arg: number) {
         board().bus.queue(ev, arg)
     }
 
@@ -312,4 +312,15 @@ namespace pxsim.control {
         U.userError("reset")
     }
 
+    export let runInBackground = thread.runInBackground;
+
+    export function waitForEvent(id: string, evid: number) {
+        const cb = getResume();
+        board().bus.wait(id, evid, cb);
+    }
+
+    export function allocateNotifyEvent() : number {
+        let b = board();
+        return b.bus.nextNotifyEvent++;
+    }
 }

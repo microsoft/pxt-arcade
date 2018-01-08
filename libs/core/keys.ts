@@ -11,14 +11,14 @@ namespace keys {
             control.on("_keyup", id, () => {
                 if (this._pressed) {
                     this._pressed = false
-                    control.queue("keyup", id)
+                    control.raiseEvent("keyup", id)
                 }
             })
             control.on("_keydown", id, () => {
                 if (!this._pressed) {
                     this._pressed = true
                     this.checked = false
-                    control.queue("keydown", id)
+                    control.raiseEvent("keydown", id)
                 }
             })
         }

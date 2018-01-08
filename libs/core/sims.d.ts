@@ -130,8 +130,8 @@ declare namespace control {
      * Generate an event
      */
     //%
-    //% shim=control::queue
-    function queue(ev: string, arg: number): void;
+    //% shim=control::raiseEvent
+    function raiseEvent(ev: string, arg: number): void;
 
     /**
      * Create a new zero-initialized buffer.

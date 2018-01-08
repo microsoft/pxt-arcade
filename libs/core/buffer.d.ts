@@ -84,3 +84,19 @@ declare interface Buffer {
 
     [index: number]: number;
 }
+
+declare namespace control {
+    /**
+     * Run other code in the background.
+     */
+    //% help=control/run-in-background blockAllowMultiple=1 afterOnStart=true
+    //% blockId="control_run_in_background" block="run in background" blockGap=8 shim=control::runInBackground
+    function runInBackground(a: () => void): void;
+
+    /**
+     * Blocks the calling thread until the specified event is raised.
+     */
+    //% help=control/wait-for-event async
+    //% blockId=control_wait_for_event block="wait for event|from %src|with value %value" shim=control::waitForEvent
+    function waitForEvent(src: string, value: int32): void;
+}
