@@ -1,5 +1,10 @@
 // Auto-generated from simulator. Do not edit.
 declare namespace screen {
+    /** Internal. */
+    //%
+    //% shim=screen::_setSpriteHandler
+    function _setSpriteHandler(h: () => void): void;
+
     /**
      * Set a pixel
      * @param x 
@@ -126,6 +131,14 @@ declare namespace control {
     //%
     //% shim=control::createBuffer
     function createBuffer(size: number): Buffer;
+
+    /**
+     * Gets the number of milliseconds elapsed since power on.
+     */
+    //% help=control/millis weight=50
+    //% blockId=control_running_time block="millis (ms)"
+    //% shim=control::millis
+    function millis(): number;
 
 }
 

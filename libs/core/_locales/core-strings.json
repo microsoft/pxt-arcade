@@ -20,6 +20,7 @@
   "String.substr|block": "substring of %this=text|from %start|of length %length",
   "String|block": "String",
   "console|block": "console",
+  "control.millis|block": "millis (ms)",
   "control|block": "control",
   "loops.forever|block": "forever",
   "loops.frame|block": "frame|body %body",
@@ -41,6 +42,7 @@
   "{id:category}Math": "Math",
   "{id:category}Number": "Number",
   "{id:category}Screen": "Screen",
+  "{id:category}Sprite": "Sprite",
   "{id:category}String": "String",
   "{id:category}Text": "Text"
 }

@@ -40,12 +40,19 @@ namespace pxsim {
 }
 
 namespace pxsim.screen {
+
+    /** Internal. */
+    //%
+    export function _setSpriteHandler(h: RefAction) {
+        board().spriteHandler = h
+    }
+
     /**
-     * Set a pixel
-     * @param x 
-     * @param y 
-     * @param c 
-     */
+      * Set a pixel
+      * @param x 
+      * @param y 
+      * @param c 
+      */
     //% block
     export function set(x: int, y: int, c: color) {
         const b = board()
@@ -273,4 +280,14 @@ namespace pxsim.control {
     export function createBuffer(size: int): RefBuffer {
         return pxsim.BufferMethods.createBuffer(size)
     }
+
+    /**
+     * Gets the number of milliseconds elapsed since power on.
+     */
+    //% help=control/millis weight=50
+    //% blockId=control_running_time block="millis (ms)" 
+    export function millis() {
+        return Date.now() - board().startTime
+    }
+
 }

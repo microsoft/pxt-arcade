@@ -82,12 +82,14 @@ namespace pxsim {
         public canvas: HTMLCanvasElement;
         public stats: HTMLElement;
         public palette = new Uint32Array(16);
-        public width = 32;
-        public height = 32;
+        public width = 128;
+        public height = 128;
         public screen: Uint32Array;
         public frameHandler: RefAction;
+        public spriteHandler: RefAction;
         public frameNo = 1;
         public inUpdate = false;
+        public startTime = Date.now()
 
         private frameSamples = 0
         private frameUser = 0
@@ -335,20 +337,26 @@ namespace pxsim {
             let start = perfNow()
             this.inUpdate = true
             this.frameSamples++
-            if (this.frameHandler) {
-                runtime.runFiberAsync(this.frameHandler)
+            let p = Promise.resolve()
+
+            if (this.spriteHandler)
+                p = p.then(() => runtime.runFiberAsync(this.spriteHandler))
                     .then(() => {
-                        let stopUser = perfNow()
-                        this.frameUser += stopUser - start
-                        this.flush()
-                        this.frameSystem += perfNow() - stopUser
-                        this.inUpdate = false
+                        let n = perfNow()
+                        this.frameSystem += n - start
+                        start = n
                     })
-            } else {
+
+            if (this.frameHandler)
+                p = p.then(() => runtime.runFiberAsync(this.frameHandler))
+
+            p.then(() => {
+                let stopUser = perfNow()
+                this.frameUser += stopUser - start
                 this.flush()
-                this.frameSystem += perfNow() - start
+                this.frameSystem += perfNow() - stopUser
                 this.inUpdate = false
-            }
+            })
         }
     }
 }

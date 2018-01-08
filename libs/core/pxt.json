@@ -9,6 +9,7 @@
         "keys.ts",
         "text.ts",
         "screen.ts",
+        "sprite.ts",
         "enums.d.ts",
         "sims.d.ts",
         "ns.ts"
