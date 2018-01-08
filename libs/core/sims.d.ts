@@ -37,11 +37,26 @@ declare namespace screen {
     function height(): number;
 
     /**
-     * 
+     * Draw a color image on the screen.
      */
     //%
     //% shim=screen::drawImage
     function drawImage(x: number, y: number, img: Buffer): void;
+
+    /**
+     * Draw a monochromatic image on the screen.
+     */
+    //%
+    //% shim=screen::drawIcon
+    function drawIcon(x: number, y: number, img: Buffer, color: number): void;
+
+    /**
+     * Return the image (mono or color) where each pixel is replaced by 4
+     * @param buf 
+     */
+    //%
+    //% shim=screen::doubledImage
+    function doubledImage(buf: Buffer): Buffer;
 
 }
 declare namespace loops {
@@ -95,6 +110,14 @@ declare namespace control {
     //%
     //% shim=control::queue
     function queue(ev: string, arg: number): void;
+
+    /**
+     * Create a new zero-initialized buffer.
+     * @param size number of bytes in the buffer
+     */
+    //%
+    //% shim=control::createBuffer
+    function createBuffer(size: number): Buffer;
 
 }
 

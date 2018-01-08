@@ -7,6 +7,7 @@
         "pxt-helpers.ts",
         "buffer.d.ts",
         "keys.ts",
+        "text.ts",
         "screen.ts",
         "enums.d.ts",
         "sims.d.ts",

@@ -82,8 +82,8 @@ namespace pxsim {
         public canvas: HTMLCanvasElement;
         public stats: HTMLElement;
         public palette = new Uint32Array(16);
-        public width = 32;
-        public height = 32;
+        public width = 128;
+        public height = 128;
         public screen: Uint32Array;
         public frameHandler: RefAction;
         public frameNo = 1;
@@ -140,7 +140,8 @@ namespace pxsim {
             return this.palette[c]
         }
 
-        fillRect(x: number, y: number, w: number, h: number, c: int) {
+        fillRect(x: number, y: number, w: number, h: number, c: color) {
+            c = this.color(c)
             while (h-- > 0) {
                 let p = this.pix(x, y++)
                 for (let i = 0; i < w; ++i)
@@ -149,9 +150,64 @@ namespace pxsim {
         }
 
         // Image format:
-        //  byte 0: magic 0xf4; 0xf0 is monochromatic, might be supported in future
+        //  byte 0: magic 0xf4 - 4 bit color; 0xf0 is monochromatic
         //  byte 1: width in pixels
         //  byte 2...N: data 4 bits per pixels, high order nibble printed first, lines aligned to byte
+        //  byte 2...N: data 1 bit per pixels, low order bit printed first, lines aligned to byte
+
+        drawIcon(x: int, y: int, img: Uint8Array, color: color) {
+            if (!img || img.length < 3 || img[0] != 0xf0)
+                return
+            let w = img[1]
+            let byteW = (w + 7) >> 3
+            let h = ((img.length - 2) / byteW) | 0
+            if (h == 0)
+                return
+
+            x |= 0
+            y |= 0
+            const sh = this.height
+            const sw = this.width
+
+            if (x + w <= 0) return
+            if (x >= sw) return
+            if (y + h <= 0) return
+            if (y >= sh) return
+
+            let p = 2
+            color = this.color(color)
+            const screen = this.screen
+
+            for (let i = 0; i < h; ++i) {
+                let yy = y + i
+                if (0 <= yy && yy < sh) {
+                    let dst = yy * sw
+                    let src = p
+                    let xx = x
+                    let end = Math.min(sw, w + x)
+                    if (x < 0) {
+                        src += ((-x) >> 3)
+                        xx += ((-x) >> 3) * 8
+                    }
+                    dst += xx
+                    let mask = 0x01
+                    let v = img[src++]
+                    while (xx < end) {
+                        if (xx >= 0 && (v & mask)) {
+                            screen[dst] = color
+                        }
+                        mask <<= 1
+                        if (mask & 0x100) {
+                            mask = 0x01
+                            v = img[src++]
+                        }
+                        dst++
+                        xx++
+                    }
+                }
+                p += byteW
+            }
+        }
 
         drawImage(x: int, y: int, img: Uint8Array) {
             if (!img || img.length < 3 || img[0] != 0xf4)
@@ -253,7 +309,7 @@ namespace pxsim {
                 ctx.putImageData(img, 0, 0)
             }
 
-            this.fillRect(0, 0, this.width, this.height, this.color(0))
+            this.fillRect(0, 0, this.width, this.height, 0)
 
             return Promise.resolve();
         }

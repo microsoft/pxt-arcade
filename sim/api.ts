@@ -67,7 +67,7 @@ namespace pxsim.screen {
         const b = board()
         let [x2, y2] = b.clamp(x + w - 1, y + h - 1);
         [x, y] = b.clamp(x, y)
-        b.fillRect(x, y, x2 - x + 1, y2 - y + 1, b.color(c))
+        b.fillRect(x, y, x2 - x + 1, y2 - y + 1, c)
     }
 
     /**
@@ -87,13 +87,81 @@ namespace pxsim.screen {
     }
 
     /**
-     * 
+     * Draw a color image on the screen.
      */
     //%
     export function drawImage(x: number, y: number, img: RefBuffer) {
-        if (img)
+        if (img) {
             board().drawImage(x, y, img.data)
+        }
     }
+
+    /**
+     * Draw a monochromatic image on the screen.
+     */
+    //%
+    export function drawIcon(x: number, y: number, img: RefBuffer, color: color) {
+        if (img) {
+            board().drawIcon(x, y, img.data, color)
+        }
+    }
+
+
+
+    export function isValidImage(buf: RefBuffer) {
+        return buf.data.length >= 3 && (buf.data[0] == 0xf0 || buf.data[0] == 0xf4);
+    }
+
+    export function bytes(x: number, isMono: boolean) {
+        if (isMono)
+            return ((x + 7) >> 3)
+        else
+            return ((x + 1) >> 1)
+    }
+
+    const bitdouble = [
+        0x00, 0x03, 0x0c, 0x0f, 0x30, 0x33, 0x3c, 0x3f, 0xc0, 0xc3, 0xcc, 0xcf, 0xf0, 0xf3, 0xfc, 0xff,
+    ]
+
+    /**
+     * Return the image (mono or color) where each pixel is replaced by 4
+     * @param buf 
+     */
+    //%
+    export function doubledImage(buf: RefBuffer): RefBuffer {
+        if (!screen.isValidImage(buf))
+            return null;
+        const w = buf.data[1];
+        if (w > 126)
+            return null;
+        const isMono = buf.data[0] == 0xf0
+        const bw = bytes(w, isMono);
+        const h = ((buf.data.length - 2) / bw) | 0;
+        const bw2 = bytes(w * 2, isMono);
+        const out = pxsim.BufferMethods.createBuffer(2 + bw2 * h * 2)
+        out.data[0] = buf.data[0];
+        out.data[1] = w * 2;
+        let src = 2
+        let dst = 2
+        for (let i = 0; i < h; ++i) {
+            for (let jj = 0; jj < 2; ++jj) {
+                let p = src;
+                for (let j = 0; j < bw; ++j) {
+                    const v = buf.data[p++]
+                    if (isMono) {
+                        out.data[dst++] = bitdouble[v & 0xf];
+                        out.data[dst++] = bitdouble[v >> 4];
+                    } else {
+                        out.data[dst++] = 0x11 * (v >> 4);
+                        out.data[dst++] = 0x11 * (v & 0xf);
+                    }
+                }
+            }
+            src += bw;
+        }
+        return out;
+    }
+
 }
 
 namespace pxsim.loops {
@@ -156,5 +224,14 @@ namespace pxsim.control {
     //% 
     export function queue(ev: string, arg: number) {
         board().bus.queue(ev, arg)
+    }
+
+    /**
+     * Create a new zero-initialized buffer.
+     * @param size number of bytes in the buffer
+     */
+    //% 
+    export function createBuffer(size: int): RefBuffer {
+        return pxsim.BufferMethods.createBuffer(size)
     }
 }
