@@ -51,6 +51,14 @@ declare namespace screen {
     function drawIcon(x: number, y: number, img: Buffer, color: number): void;
 
     /**
+     * Return image flipped (mirrored) horizontally
+     * @param buf 
+     */
+    //%
+    //% shim=screen::flippedX
+    function flippedX(buf: Buffer): Buffer;
+
+    /**
      * Return the image (mono or color) where each pixel is replaced by 4
      * @param buf 
      */

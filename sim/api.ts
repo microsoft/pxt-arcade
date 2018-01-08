@@ -119,6 +119,44 @@ namespace pxsim.screen {
             return ((x + 1) >> 1)
     }
 
+    /**
+     * Return image flipped (mirrored) horizontally
+     * @param buf 
+     */
+    //%
+    export function flippedX(buf: RefBuffer) {
+        if (!screen.isValidImage(buf))
+            return null;
+        const w = buf.data[1];
+        const isMono = buf.data[0] == 0xf0
+        if (isMono)
+            return null // TODO
+        const bw = bytes(w, isMono);
+        const h = ((buf.data.length - 2) / bw) | 0;
+        const out = pxsim.BufferMethods.createBuffer(2 + bw * h)
+        out.data[0] = buf.data[0];
+        out.data[1] = w;
+        let dst = 2
+        for (let i = 0; i < h; ++i) {
+            let src = 2 + (i + 1) * bw - 1
+            if (w & 1) {
+                let v = buf.data[src--]
+                for (let j = 0; j < bw; ++j) {
+                    let t = v & 0xf0
+                    v = j == bw - 1 ? 0 : buf.data[src--]
+                    out.data[dst++] = t | (v & 0xf)
+                }
+            } else {
+                for (let j = 0; j < bw; ++j) {
+                    const v = buf.data[src--]
+                    out.data[dst++] = (v << 4) | (0xf & (v >> 4));
+                }
+            }
+        }
+        return out;
+
+    }
+
     const bitdouble = [
         0x00, 0x03, 0x0c, 0x0f, 0x30, 0x33, 0x3c, 0x3f, 0xc0, 0xc3, 0xcc, 0xcf, 0xf0, 0xf3, 0xfc, 0xff,
     ]
@@ -156,6 +194,7 @@ namespace pxsim.screen {
                         out.data[dst++] = 0x11 * (v & 0xf);
                     }
                 }
+                if (!isMono && (w & 1)) dst--
             }
             src += bw;
         }

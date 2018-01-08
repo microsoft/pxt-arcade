@@ -82,8 +82,8 @@ namespace pxsim {
         public canvas: HTMLCanvasElement;
         public stats: HTMLElement;
         public palette = new Uint32Array(16);
-        public width = 128;
-        public height = 128;
+        public width = 32;
+        public height = 32;
         public screen: Uint32Array;
         public frameHandler: RefAction;
         public frameNo = 1;

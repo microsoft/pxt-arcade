@@ -129,6 +129,7 @@
   "screen.doubledImage": "Return the image (mono or color) where each pixel is replaced by 4",
   "screen.drawIcon": "Draw a monochromatic image on the screen.",
   "screen.drawImage": "Draw a color image on the screen.",
+  "screen.flippedX": "Return image flipped (mirrored) horizontally",
   "screen.height": "Get the height of the screen in pixels",
   "screen.rect": "Fill a rectangle",
   "screen.rect|param|w": "@param h ",
