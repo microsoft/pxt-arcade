@@ -29,8 +29,6 @@
   "screen.rect|block": "rect|x %x|y %y|w %w|h %h|c %c",
   "screen.set|block": "set|x %x|y %y|c %c",
   "screen|block": "screen",
-  "sprites.createSprite|block": "create sprite",
-  "sprites|block": "sprites",
   "{id:category}Array": "Array",
   "{id:category}Arrays": "Arrays",
   "{id:category}Boolean": "Boolean",
@@ -43,8 +41,6 @@
   "{id:category}Math": "Math",
   "{id:category}Number": "Number",
   "{id:category}Screen": "Screen",
-  "{id:category}Sprite": "Sprite",
-  "{id:category}Sprites": "Sprites",
   "{id:category}String": "String",
   "{id:category}Text": "Text"
 }

@@ -12,10 +12,8 @@
      Fonts
 --------------------*/
 
-@headerFont        : "Roboto Mono", serif;
-@pageFont          : "Roboto Mono", serif;
-@googleFontName    : 'Roboto Mono';
-@importGoogleFonts : true;
+@headerFont        : Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
+@pageFont          : Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
 
 @docsHeaderFont: @headerFont;
 @docsPageFont: @pageFont;

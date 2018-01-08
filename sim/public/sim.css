@@ -1,8 +1,9 @@
 body {
     font-size: 12px;
     color: white;
-    font-family: "Consolas", "Courier New", Courier, monospace;
+    font-family: Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace
 }
+
 svg {
     width:100%;
 }

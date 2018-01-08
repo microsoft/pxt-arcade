@@ -97,10 +97,6 @@
   "Math.trunc": "Returns the number with the decimal part truncated.",
   "Math.trunc|param|x": "A numeric expression.",
   "Number.toString": "Returns a string representation of a number.",
-  "Sprite": "A ghost on the screen.",
-  "Sprite.forward": "Move the thing forward",
-  "Sprite.x": "The X-coordiante",
-  "Sprite.y": "The Y-coordiante",
   "String": "Combine, split, and search text strings.\n\nCombine, split, and search text strings.",
   "String.charAt": "Return the character at the specified index.",
   "String.charAt|param|index": "The zero-based index of the desired character.",
@@ -134,6 +130,5 @@
   "screen.rect|param|x": "@param y ",
   "screen.set": "Set a pixel",
   "screen.set|param|x": "@param y ",
-  "screen.width": "Get the width of the screen in pixels",
-  "sprites.createSprite": "Creates a new sprite"
+  "screen.width": "Get the width of the screen in pixels"
 }

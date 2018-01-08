@@ -97,41 +97,5 @@ declare namespace control {
     function queue(ev: string, arg: number): void;
 
 }
-    /**
-     * A ghost on the screen.
-     */
-    //%
-    declare class Sprite {
-        /**
-         * The X-coordiante
-         */
-        //%
-        //% shim=.x
-        public x: number;
-
-        /**
-         * The Y-coordiante
-         */
-        //%
-        //% shim=.y
-        public y: number;
-
-        /**
-         * Move the thing forward
-         */
-        //%
-        //% shim=.forwardAsync promise
-        public forward(steps: number): void;
-
-    }
-declare namespace sprites {
-    /**
-     * Creates a new sprite
-     */
-    //% block
-    //% shim=sprites::createSprite
-    function createSprite(): Sprite;
-
-}
 
 // Auto-generated. Do not edit. Really.

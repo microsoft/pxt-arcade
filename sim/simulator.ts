@@ -81,7 +81,6 @@ namespace pxsim {
         public bus: EventBus;
         public canvas: HTMLCanvasElement;
         public stats: HTMLElement;
-        public sprite: Sprite;
         public palette = new Uint32Array(16);
         public width = 32;
         public height = 32;
