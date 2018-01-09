@@ -69,7 +69,7 @@ namespace pxsim {
     }
 
     function perfNow() {
-        // TODO polyfill?
+        // TODO polyfill needed?
         return window.performance.now()
     }
 
