@@ -1,4 +1,3 @@
-/// <reference path="../node_modules/pxt-core/typings/globals/node/index.d.ts"/>
 /// <reference path="../node_modules/pxt-core/built/pxtlib.d.ts" />
 
 import * as path from "path";
