@@ -50,6 +50,13 @@ namespace pxsim {
         }
 
         /**
+         * Fill entire image with a given color
+         */
+        fill(c: color) {
+            this.data.fill(this.color(c))
+        }
+
+        /**
          * Fill a rectangle
          */
         //%
@@ -304,7 +311,7 @@ namespace pxsim {
     }
 }
 
-namespace pxsim.screen {
+namespace pxsim.xscreen {
 
     /** Internal. */
     //%
@@ -411,7 +418,7 @@ namespace pxsim.screen {
      */
     //%
     export function flippedX(buf: RefBuffer) {
-        if (!screen.isValidImage(buf))
+        if (!isValidImage(buf))
             return null;
         const w = buf.data[1];
         const isMono = buf.data[0] == 0xf0
@@ -453,7 +460,7 @@ namespace pxsim.screen {
      */
     //%
     export function doubledImage(buf: RefBuffer): RefBuffer {
-        if (!screen.isValidImage(buf))
+        if (!isValidImage(buf))
             return null;
         const w = buf.data[1];
         if (w > 126)
@@ -487,4 +494,64 @@ namespace pxsim.screen {
         return out;
     }
 
+}
+
+namespace pxsim.image {
+    /**
+     * Internal
+     */
+    //%
+    export function _show(img: Image) {
+        const b = board()
+        const src = img.data
+        const dst = b.screen
+        if (b.width != img._width || b.height != img._height || src.length != dst.length)
+            U.userError("wrong size")
+        const p = b.palette
+        for (let i = 0; i < src.length; ++i) {
+            dst[i] = p[src[i] & 0xf]
+        }
+        b.flush()
+    }
+
+    /**
+     * Create new empty (transparent) image
+     */
+    //%
+    export function create(w: int, h: int) {
+        return new Image(w, h)
+    }
+
+    /**
+     * Create image of 0xF4 buffer.
+     */
+    //%
+    export function ofBuffer(buf: RefBuffer): Image {
+        if (!buf)
+            return null
+        const src = buf.data
+        if (src.length < 3 || src[0] != 0xf4)
+            return null
+        const w = src[1]
+        const h = ((src.length - 2) / w) | 0
+        if (w == 0 || h == 0)
+            return null
+        const r = new Image(w, h)
+        const dst = r.data
+
+        let dstP = 0
+        let srcP = 2
+
+        for (let i = 0; i < h; ++i) {
+            for (let j = 0; j < w >> 1; ++j) {
+                const v = src[srcP++]
+                dst[dstP++] = v >> 4
+                dst[dstP++] = v & 0xf
+            }
+            if (w & 1)
+                dst[dstP++] = src[srcP++] >> 4
+        }
+
+        return r
+    }
 }

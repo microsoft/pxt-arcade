@@ -312,7 +312,8 @@ namespace pxsim {
                 ctx.putImageData(img, 0, 0)
             }
 
-            this.fillRect(0, 0, this.width, this.height, 0)
+            this.screen.fill(this.palette[0])
+            this.flush()
 
             return Promise.resolve();
         }
