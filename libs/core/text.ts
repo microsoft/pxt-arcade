@@ -10,6 +10,11 @@ namespace image {
     let currFont: Font
     let currColor = 15
 
+    export function getFont() {
+        if (!currFont) currFont = defaultFont
+        return currFont
+    }
+
     export function setFont(f: Font, size = 1) {
         for (let i = 1; i < Math.min(4, size); ++i) {
             f = doubledFont(f)
@@ -17,9 +22,12 @@ namespace image {
         currFont = f
     }
 
-
     export function setTextColor(color: number) {
         currColor = color
+    }
+
+    export function getTextColor() {
+        return currColor
     }
 
     //% whenUsed
@@ -94,11 +102,18 @@ namespace image {
 000f04020f 0c0406040c 0202020202 0302060203 0000061800
 `
     }
+}
 
-    export function print(text: string, x: number, y: number) {
+interface Image {
+    //% helper=print
+    print(text: string, x: number, y: number): void;
+}
+
+namespace helpers {
+    export function print(img: Image, text: string, x: number, y: number) {
         x |= 0
         y |= 0
-        if (!currFont) currFont = defaultFont
+        const currFont = image.getFont()
         let x0 = x
         let cp = 0
         let byteWidth = (currFont.charWidth + 7) >> 3
@@ -118,7 +133,7 @@ namespace image {
                 imgBuf.fill(0, 2)
             else
                 imgBuf.write(2, currFont.data.slice(idx, charSize))
-            screen.drawIcon(imgBuf, x, y, currColor)
+            img.drawIcon(imgBuf, x, y, image.getTextColor())
             x += currFont.charWidth
         }
     }

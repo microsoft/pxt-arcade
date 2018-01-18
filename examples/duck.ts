@@ -1,3 +1,4 @@
+
 let duckImg = hex`f40a
 00eeee0000
 00e0ee00ee
@@ -49,7 +50,7 @@ let pillars: Sprite[] = []
 let pimg = pillarImage()
 let spread = 80
 for (let i = 0; i < 4; ++i) {
-    let p = screen.createSprite(pimg)
+    let p = image.createSprite(pimg)
     pillars.push(p)
     p.x = i * spread + 130
     p.y = Math.randomRange(30, 90)
@@ -61,16 +62,16 @@ function gameOver() {
     if (stop) return
     stop = true
     for (let i = 0; i < 40; ++i) {
-        screen.setFont(screen.defaultFont, 2)
-        screen.setTextColor(Math.randomRange(1, 15))
+        image.setFont(image.defaultFont, 2)
+        image.setTextColor(Math.randomRange(1, 15))
         screen.print("GAME\nOVER", 30, 50)
         loops.pause(20)
     }
     control.reset()
 }
 
-let duck = screen.createSprite(duckImg)
-duck.flipX()
+let duck = image.createSprite(duckImg)
+duck.image.flipX()
 duck.y = 90
 duck.x = 20
 
@@ -83,8 +84,7 @@ keys.A.onPressed(function () {
 })
 
 loops.frame(function () {
-    screen.clear(4)
-    screen.updateSprites()
+    screen.fill(4)    
 
     if (duck.y < -20 || duck.y > screen.height() + 20
         || screen.get(duck.x + 6, duck.y) != 4)

@@ -54,6 +54,7 @@
   "Image.doubleY": "Stretches the image vertically by 100%",
   "Image.drawIcon": "Draw an icon (monochromatic image) using given color",
   "Image.drawImage": "Draw given image on the current image",
+  "Image.fill": "Fill entire image with a given color",
   "Image.fillRect": "Fill a rectangle",
   "Image.flipX": "Flips (mirrors) pixels horizontally in the current image",
   "Image.flipY": "Flips (mirrors) pixels vertically in the current image",

@@ -52,6 +52,7 @@ namespace pxsim {
         /**
          * Fill entire image with a given color
          */
+        //%
         fill(c: color) {
             this.data.fill(this.color(c))
         }

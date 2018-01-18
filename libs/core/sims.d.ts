@@ -101,6 +101,13 @@ declare namespace control {
         public get(x: number, y: number): number;
 
         /**
+         * Fill entire image with a given color
+         */
+        //%
+        //% shim=.fill
+        public fill(c: number): void;
+
+        /**
          * Fill a rectangle
          */
         //%
