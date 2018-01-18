@@ -18,7 +18,7 @@ namespace pxsim {
         "#efe204", // yellow
         "#ffffff", // white
     ]
-    let updateLoop = 0
+    let updateLoop: any
 
     /**
      * This function gets called each time the program restarts

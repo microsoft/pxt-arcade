@@ -1,4 +1,4 @@
-namespace screen {
+namespace image {
     export let allSprites: Sprite[]
     let lastTime: number
 
@@ -30,7 +30,7 @@ class Sprite {
     vy: number
     ax: number
     ay: number
-    image: Buffer
+    image: Image
 
     constructor(img: Buffer) {
         this.x = screen.width() / 2
@@ -39,14 +39,14 @@ class Sprite {
         this.vy = 0
         this.ax = 0
         this.ay = 0
-        this.image = img
+        this.image = image.ofBuffer(img)
     }
 
     width() {
-        return this.image[1]
+        return this.image.width()
     }
     height() {
-        return Math.idiv(this.image.length, (this.width() + 1) >> 1)
+        return this.image.height()
     }
 
     _update(dt: number) {
@@ -54,10 +54,6 @@ class Sprite {
         this.y += this.vy * dt
         this.vx += this.ax * dt
         this.vy += this.ay * dt
-        screen.drawImage(this.x - this.width() / 2, this.y - this.height() / 2, this.image)
-    }
-
-    flipX() {
-        this.image = screen.flippedX(this.image)
+        screen.drawImage(this.image, this.x - this.width() / 2, this.y - this.height() / 2)
     }
 }

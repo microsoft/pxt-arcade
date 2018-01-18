@@ -1,4 +1,4 @@
-namespace screen {
+namespace image {
 
     export interface Font {
         charWidth: number;
@@ -61,7 +61,7 @@ namespace screen {
         let dst = 0
         for (let i = 0; i < f.data.length; i += sz) {
             tmp.write(2, f.data.slice(i, sz))
-            let t = screen.doubledImage(tmp)
+            let t = image.doubledImage(tmp)
             data.write(dst, t.slice(2))
             dst += 2 * f.charHeight * newByteWidth
         }
@@ -118,7 +118,7 @@ namespace screen {
                 imgBuf.fill(0, 2)
             else
                 imgBuf.write(2, currFont.data.slice(idx, charSize))
-            drawIcon(x, y, imgBuf, currColor)
+            screen.drawIcon(imgBuf, x, y, currColor)
             x += currFont.charWidth
         }
     }

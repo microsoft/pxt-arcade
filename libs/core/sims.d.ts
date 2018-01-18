@@ -177,85 +177,34 @@ declare namespace control {
         public drawIcon(icon: Buffer, x: number, y: number, color: number): void;
 
     }
-declare namespace screen {
-    /** Internal. */
-    //%
-    //% shim=screen::_setSpriteHandler
-    function _setSpriteHandler(h: () => void): void;
-
+declare namespace image {
     /**
-     * Set a pixel
-     * @param x 
-     * @param y 
-     * @param c 
-     */
-    //% block
-    //% shim=screen::set
-    function set(x: number, y: number, c: number): void;
-
-    /**
-     * Get a pixel
-     * @param x 
-     * @param y 
-     */
-    //% block
-    //% shim=screen::get
-    function get(x: number, y: number): number;
-
-    /**
-     * Fill a rectangle
-     * @param x 
-     * @param y 
-     * @param w 
-     * @param h 
-     * @param c 
-     */
-    //% block
-    //% shim=screen::rect
-    function rect(x: number, y: number, w: number, h: number, c: number): void;
-
-    /**
-     * Get the width of the screen in pixels
+     * Internal
      */
     //%
-    //% shim=screen::width
-    function width(): number;
+    //% shim=image::_show
+    function _show(img: Image): void;
 
     /**
-     * Get the height of the screen in pixels
+     * Create new empty (transparent) image
      */
     //%
-    //% shim=screen::height
-    function height(): number;
+    //% shim=image::create
+    function create(w: number, h: number): Image;
 
     /**
-     * Draw a color image on the screen.
+     * Create image of 0xF4 buffer.
      */
     //%
-    //% shim=screen::drawImage
-    function drawImage(x: number, y: number, img: Buffer): void;
-
-    /**
-     * Draw a monochromatic image on the screen.
-     */
-    //%
-    //% shim=screen::drawIcon
-    function drawIcon(x: number, y: number, img: Buffer, color: number): void;
-
-    /**
-     * Return image flipped (mirrored) horizontally
-     * @param buf 
-     */
-    //%
-    //% shim=screen::flippedX
-    function flippedX(buf: Buffer): Buffer;
+    //% shim=image::ofBuffer
+    function ofBuffer(buf: Buffer): Image;
 
     /**
      * Return the image (mono or color) where each pixel is replaced by 4
      * @param buf 
      */
     //%
-    //% shim=screen::doubledImage
+    //% shim=image::doubledImage
     function doubledImage(buf: Buffer): Buffer;
 
 }

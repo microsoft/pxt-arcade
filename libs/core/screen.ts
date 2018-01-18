@@ -1,9 +1,4 @@
-namespace screen {
-    export function clear(color: number = 0) {
-        screen.rect(0, 0, width(), height(), color)
-    }
-}
-
+let screen = image.create(128, 128)
 
 /**
  * Tagged hex literal converter
