@@ -27,6 +27,7 @@ namespace control {
                 frameNo++
                 let loopStart = control.millis()
                 let dt = (loopStart - prevTime) / 1000.0
+                prevTime = loopStart
                 for (let f of evolveFns) {
                     f(dt)
                 }
