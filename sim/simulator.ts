@@ -18,7 +18,7 @@ namespace pxsim {
         "#efe204", // yellow
         "#ffffff", // white
     ]
-    let updateLoop: any
+    let forcedUpdateLoop: any
 
     /**
      * This function gets called each time the program restarts
@@ -26,10 +26,11 @@ namespace pxsim {
     initCurrentRuntime = () => {
         runtime.board = new Board();
 
-        if (!updateLoop) {
-            updateLoop = setInterval(() => {
-                board().updateView()
-            }, 20)
+        if (!forcedUpdateLoop) {
+            // this is used to force screen update if game loop is stuck or not set up properly
+            forcedUpdateLoop = setInterval(() => {
+                board().maybeForceScreenUpdate()
+            }, 100)
             const body = document.getElementById("root")
             window.onfocus = () => {
                 body.className = "focus"
@@ -81,20 +82,13 @@ namespace pxsim {
         public canvas: HTMLCanvasElement;
         public stats: HTMLElement;
         public palette = new Uint32Array(16);
-        public width = 128;
-        public height = 128;
+        public width: number;
+        public height: number;
         public screen: Uint32Array;
-        public frameHandler: RefAction;
-        public spriteHandler: RefAction;
-        public frameNo = 1;
-        public inUpdate = false;
         public startTime = Date.now()
 
-        private frameSamples = 0
-        private frameUser = 0
-        private frameSystem = 0
-        private frameSkip = 0
-        private frameSkipNow = 0
+        private lastImage: Image
+        private lastImageFlushTime = 0
 
         constructor() {
             super();
@@ -112,168 +106,34 @@ namespace pxsim {
                 this.bus.queue(isPressed ? "_keydown" : "_keyup", k)
         }
 
-        pix(x: int, y: int) {
-            return (x | 0) + (y | 0) * this.width
-        }
+        showImage(img: Image) {
+            if (!this.flush) {
+                this.width = img.width()
+                this.height = img.height()
+                this.canvas.width = this.width
+                this.canvas.height = this.height
 
-        inRange(x: int, y: int) {
-            return 0 <= (x | 0) && (x | 0) < this.width &&
-                0 <= (y | 0) && (y | 0) < this.height;
-        }
+                const ctx = this.canvas.getContext("2d")
+                ctx.imageSmoothingEnabled = false
+                const imgdata = ctx.getImageData(0, 0, this.width, this.height)
+                this.screen = new Uint32Array(imgdata.data.buffer)
 
-        clamp(x: int, y: int) {
-            x |= 0
-            y |= 0
-
-            if (x < 0) x = 0
-            else if (x >= this.width)
-                x = this.width - 1
-
-            if (y < 0) y = 0
-            else if (y >= this.height)
-                y = this.height - 1
-
-            return [x, y]
-        }
-
-        color(c: number) {
-            c |= 0
-            if (c < 0 || c >= 16) return 0
-            return this.palette[c]
-        }
-
-        fillRect(x: number, y: number, w: number, h: number, c: color) {
-            c = this.color(c)
-            while (h-- > 0) {
-                let p = this.pix(x, y++)
-                for (let i = 0; i < w; ++i)
-                    this.screen[p++] = c;
-            }
-        }
-
-        // Image format:
-        //  byte 0: magic 0xf4 - 4 bit color; 0xf0 is monochromatic
-        //  byte 1: width in pixels
-        //  byte 2...N: data 4 bits per pixels, high order nibble printed first, lines aligned to byte
-        //  byte 2...N: data 1 bit per pixels, low order bit printed first, lines aligned to byte
-
-        drawIcon(x: int, y: int, img: Uint8Array, color: color) {
-            if (!img || img.length < 3 || img[0] != 0xf0)
-                return
-            let w = img[1]
-            let byteW = (w + 7) >> 3
-            let h = ((img.length - 2) / byteW) | 0
-            if (h == 0)
-                return
-
-            x |= 0
-            y |= 0
-            const sh = this.height
-            const sw = this.width
-
-            if (x + w <= 0) return
-            if (x >= sw) return
-            if (y + h <= 0) return
-            if (y >= sh) return
-
-            let p = 2
-            color = this.color(color)
-            const screen = this.screen
-
-            for (let i = 0; i < h; ++i) {
-                let yy = y + i
-                if (0 <= yy && yy < sh) {
-                    let dst = yy * sw
-                    let src = p
-                    let xx = x
-                    let end = Math.min(sw, w + x)
-                    if (x < 0) {
-                        src += ((-x) >> 3)
-                        xx += ((-x) >> 3) * 8
-                    }
-                    dst += xx
-                    let mask = 0x01
-                    let v = img[src++]
-                    while (xx < end) {
-                        if (xx >= 0 && (v & mask)) {
-                            screen[dst] = color
-                        }
-                        mask <<= 1
-                        if (mask & 0x100) {
-                            mask = 0x01
-                            v = img[src++]
-                        }
-                        dst++
-                        xx++
-                    }
+                this.flush = () => {
+                    ctx.putImageData(imgdata, 0, 0)
                 }
-                p += byteW
             }
-        }
 
-        drawImage(x: int, y: int, img: Uint8Array) {
-            if (!img || img.length < 3 || img[0] != 0xf4)
-                return
-            let w = img[1]
-            let byteW = (w + 1) >> 1
-            let h = ((img.length - 2) / byteW) | 0
-            if (h == 0)
-                return
-
-            x |= 0
-            y |= 0
-            const sh = this.height
-            const sw = this.width
-
-            if (x + w <= 0) return
-            if (x >= sw) return
-            if (y + h <= 0) return
-            if (y >= sh) return
-
-            let p = 2
-
-            const palette = this.palette
-            const screen = this.screen
-
-            for (let i = 0; i < h; ++i) {
-                let yy = y + i
-                if (0 <= yy && yy < sh) {
-                    let dst = yy * sw
-                    let len = 0
-                    let src = p
-                    if (x < 0) {
-                        src += ((-x) >> 1)
-                        len = Math.min(sw, w + x)
-                        if (x & 1) {
-                            let c = img[src++] & 0xf
-                            if (c)
-                                screen[dst] = palette[c]
-                            dst++
-                            len--
-                        }
-                    } else {
-                        dst += x
-                        len = Math.min(sw - x, w)
-                    }
-
-                    for (let i = 0; i < len >> 1; ++i) {
-                        const v = img[src++]
-                        if (v >> 4)
-                            screen[dst] = palette[v >> 4]
-                        dst++
-                        if (v & 0xf)
-                            screen[dst] = palette[v & 0xf]
-                        dst++
-                    }
-
-                    if (len & 1) {
-                        let c = img[src++] >> 4
-                        if (c)
-                            screen[dst++] = palette[c]
-                    }
-                }
-                p += byteW
+            const src = img.data
+            const dst = this.screen
+            if (this.width != img._width || this.height != img._height || src.length != dst.length)
+                U.userError("wrong size")
+            const p = this.palette
+            for (let i = 0; i < src.length; ++i) {
+                dst[i] = p[src[i] & 0xf]
             }
+            this.flush()
+            this.lastImage = img
+            this.lastImageFlushTime = Date.now()
         }
 
         flush: () => void;
@@ -283,8 +143,8 @@ namespace pxsim {
             this.canvas = document.createElement("canvas");
             this.stats = document.createElement("div")
             this.stats.className = "stats"
-            this.canvas.width = this.width;
-            this.canvas.height = this.height;
+            this.canvas.width = 16;
+            this.canvas.height = 16;
             this.canvas.style.width = "256px";
             document.body.appendChild(this.canvas);
             let info = document.createElement("div")
@@ -293,77 +153,14 @@ namespace pxsim {
             document.body.appendChild(this.stats);
             document.body.appendChild(info);
 
-            /*
-            for (let c of paletteSrc) {
-                let d = document.createElement("div");
-                d.className = "sq";
-                d.style.backgroundColor = c;
-                document.body.appendChild(d)
-            }
-            */
-
-            const ctx = this.canvas.getContext("2d")
-            ctx.imageSmoothingEnabled = false
-            const img = ctx.getImageData(0, 0, this.width, this.height)
-            this.screen = new Uint32Array(img.data.buffer)
-
-            this.flush = () => {
-                ctx.putImageData(img, 0, 0)
-            }
-
-            this.screen.fill(this.palette[0])
-            this.flush()
-
             return Promise.resolve();
         }
 
-        updateView() {
-            this.frameNo++
-
-            if (this.frameSamples >= 50) {
-                let p1 = Math.round(this.frameUser * 1000 / this.frameSamples)
-                let p2 = Math.round(this.frameSystem * 1000 / this.frameSamples)
-                this.stats.textContent = `render: ${p1}us (+ ${p2}us)` +
-                    (this.frameSkip ? ` ${this.frameSkip} skipped` : ``)
-                this.frameSamples = 0
-                this.frameSkip = 0
-                this.frameUser = 0
-                this.frameSystem = 0
+        maybeForceScreenUpdate() {
+            const now = Date.now()
+            if (this.lastImage && now - this.lastImageFlushTime > 150) {
+                this.showImage(this.lastImage)
             }
-
-            if (this.inUpdate) {
-                this.frameSkip++
-                this.frameSkipNow++
-                // it seems game loop is blocked; at least update the screen
-                if (this.frameSkipNow > 2) {
-                    this.flush()
-                }
-                return
-            }
-            let start = perfNow()
-            this.inUpdate = true
-            this.frameSamples++
-            let p = Promise.resolve()
-
-            if (this.spriteHandler)
-                p = p.then(() => runtime.runFiberAsync(this.spriteHandler))
-                    .then(() => {
-                        let n = perfNow()
-                        this.frameSystem += n - start
-                        start = n
-                    })
-
-            if (this.frameHandler)
-                p = p.then(() => runtime.runFiberAsync(this.frameHandler))
-
-            p.then(() => {
-                let stopUser = perfNow()
-                this.frameUser += stopUser - start
-                this.flush()
-                this.frameSystem += perfNow() - stopUser
-                this.inUpdate = false
-                this.frameSkipNow = 0
-            })
         }
     }
 }

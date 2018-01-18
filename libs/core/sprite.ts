@@ -1,22 +1,18 @@
 namespace image {
     export let allSprites: Sprite[]
-    let lastTime: number
-
-    export function updateSprites() {
-        let now = control.millis()
-        let dt = now - lastTime
-        lastTime = now
-        dt /= 1000
-        for (let s of allSprites) {
-            s._update(dt)
-        }
-    }
 
     export function createSprite(img: Buffer) {
         let s = new Sprite(img)
         if (!allSprites) {
             allSprites = []
-            lastTime = control.millis()
+            control.addEvolve(dt => {
+                for (let s of allSprites)
+                    s._update(dt)
+            })
+            control.addDraw(() => {
+                for (let s of allSprites)
+                    s._draw()
+            })
         }
         allSprites.push(s)
         return s
@@ -49,11 +45,14 @@ class Sprite {
         return this.image.height()
     }
 
+    _draw() {
+        screen.drawImage(this.image, this.x - this.width() / 2, this.y - this.height() / 2)
+    }
+
     _update(dt: number) {
         this.x += this.vx * dt
         this.y += this.vy * dt
         this.vx += this.ax * dt
         this.vy += this.ay * dt
-        screen.drawImage(this.image, this.x - this.width() / 2, this.y - this.height() / 2)
     }
 }

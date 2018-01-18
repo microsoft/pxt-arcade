@@ -138,6 +138,7 @@
   "control.waitForEvent": "Blocks the calling thread until the specified event is raised.",
   "hex": "Tagged hex literal converter",
   "image._show": "Internal",
+  "image._stats": "Internal",
   "image.create": "Create new empty (transparent) image",
   "image.doubledImage": "Return the image (mono or color) where each pixel is replaced by 4",
   "image.ofBuffer": "Create image of 0xF4 buffer.",

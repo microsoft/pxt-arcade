@@ -52,15 +52,6 @@ namespace pxsim.loops {
     }
 
     /**
-     * Runs code every frame.
-     * @param body the code to repeat
-     */
-    //% block
-    export function frame(body: RefAction): void {
-        board().frameHandler = body
-    }
-
-    /**
      * Pause for the specified time in milliseconds
      * @param ms how long to pause for, eg: 100, 200, 500, 1000, 2000
      */

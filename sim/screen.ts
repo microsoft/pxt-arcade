@@ -317,16 +317,15 @@ namespace pxsim.image {
      */
     //%
     export function _show(img: Image) {
-        const b = board()
-        const src = img.data
-        const dst = b.screen
-        if (b.width != img._width || b.height != img._height || src.length != dst.length)
-            U.userError("wrong size")
-        const p = b.palette
-        for (let i = 0; i < src.length; ++i) {
-            dst[i] = p[src[i] & 0xf]
-        }
-        b.flush()
+        board().showImage(img)
+    }
+
+    /**
+     * Internal
+     */
+    //%
+    export function _stats(s: string) {
+        board().stats.textContent = s
     }
 
     /**

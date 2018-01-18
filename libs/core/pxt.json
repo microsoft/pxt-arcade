@@ -8,7 +8,7 @@
         "buffer.d.ts",
         "keys.ts",
         "text.ts",
-        "screen.ts",
+        "device.ts",
         "sprite.ts",
         "enums.d.ts",
         "sims.d.ts",

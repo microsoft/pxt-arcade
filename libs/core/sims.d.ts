@@ -10,14 +10,6 @@ declare namespace loops {
     function forever(body: () => void): void;
 
     /**
-     * Runs code every frame.
-     * @param body the code to repeat
-     */
-    //% block
-    //% shim=loops::frame
-    function frame(body: () => void): void;
-
-    /**
      * Pause for the specified time in milliseconds
      * @param ms how long to pause for, eg: 100, 200, 500, 1000, 2000
      */
@@ -184,6 +176,13 @@ declare namespace image {
     //%
     //% shim=image::_show
     function _show(img: Image): void;
+
+    /**
+     * Internal
+     */
+    //%
+    //% shim=image::_stats
+    function _stats(s: string): void;
 
     /**
      * Create new empty (transparent) image
