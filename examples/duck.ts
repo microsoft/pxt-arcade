@@ -83,12 +83,8 @@ keys.A.onPressed(function () {
     duck.vy = -100
 })
 
-loops.frame(function () {
-    screen.fill(4)    
-
-    if (duck.y < -20 || duck.y > screen.height() + 20
-        || screen.get(duck.x + 6, duck.y) != 4)
-        control.runInBackground(gameOver)
+control.addEvolve(function () {
+    screen.fill(4)
 
     let pass: Sprite = null
     let maxX = 0
@@ -100,4 +96,10 @@ loops.frame(function () {
         pass.x = maxX + spread
         pass.y = Math.randomRange(30, 90)
     }
+})
+
+control.addDraw(function () {
+    if (duck.y < -20 || duck.y > screen.height() + 20
+        || screen.get(duck.x + 6, duck.y) != 4)
+        control.runInBackground(gameOver)
 })
