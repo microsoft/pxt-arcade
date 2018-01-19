@@ -163,6 +163,13 @@ declare namespace control {
         //% shim=.drawImage
         public drawImage(from: Image, x: number, y: number): void;
 
+        /**
+         * Check if the current image "collides" with another
+         */
+        //%
+        //% shim=.overlapsWith
+        public overlapsWith(other: Image, x: number, y: number): boolean;
+
         // Image format:
         //  byte 0: magic 0xf4 - 4 bit color; 0xf0 is monochromatic
         //  byte 1: width in pixels

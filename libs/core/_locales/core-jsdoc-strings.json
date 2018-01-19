@@ -60,6 +60,7 @@
   "Image.flipY": "Flips (mirrors) pixels vertically in the current image",
   "Image.get": "Get a pixel color",
   "Image.height": "Get the height of the image",
+  "Image.overlapsWith": "Check if the current image \"collides\" with another",
   "Image.set": "Set pixel color",
   "Image.width": "Get the width of the image",
   "Math": "More complex operations with numbers.",

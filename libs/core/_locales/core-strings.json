@@ -37,6 +37,7 @@
   "{id:category}Buffer": "Buffer",
   "{id:category}Console": "Console",
   "{id:category}Control": "Control",
+  "{id:category}Game": "Game",
   "{id:category}Helpers": "Helpers",
   "{id:category}Image": "Image",
   "{id:category}Keys": "Keys",

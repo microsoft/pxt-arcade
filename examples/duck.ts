@@ -50,30 +50,20 @@ let pillars: Sprite[] = []
 let pimg = pillarImage()
 let spread = 80
 for (let i = 0; i < 4; ++i) {
-    let p = image.createSprite(pimg)
+    let p = sprite.createFromBuffer(pimg)
     pillars.push(p)
     p.x = i * spread + 130
     p.y = Math.randomRange(30, 90)
 }
 
-let stop = false
-
-function gameOver() {
-    if (stop) return
-    stop = true
-    for (let i = 0; i < 40; ++i) {
-        image.setFont(image.defaultFont, 2)
-        image.setTextColor(Math.randomRange(1, 15))
-        screen.print("GAME\nOVER", 30, 50)
-        loops.pause(20)
-    }
-    control.reset()
-}
-
-let duck = image.createSprite(duckImg)
+let duck = sprite.createFromBuffer(duckImg)
 duck.image.flipX()
 duck.y = 90
 duck.x = 20
+
+duck.onCollision(function (other: Sprite) {
+    game.over()
+})
 
 keys.A.onPressed(function () {
     duck.ay = 300
@@ -83,7 +73,7 @@ keys.A.onPressed(function () {
     duck.vy = -100
 })
 
-control.addEvolve(function () {
+control.addFrameHandler(0, function () {
     screen.fill(4)
 
     let pass: Sprite = null
@@ -95,11 +85,6 @@ control.addEvolve(function () {
     if (pass) {
         pass.x = maxX + spread
         pass.y = Math.randomRange(30, 90)
+        game.addToScore(1)
     }
-})
-
-control.addDraw(function () {
-    if (duck.y < -20 || duck.y > screen.height() + 20
-        || screen.get(duck.x + 6, duck.y) != 4)
-        control.runInBackground(gameOver)
 })

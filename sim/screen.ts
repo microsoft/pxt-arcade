@@ -214,6 +214,48 @@ namespace pxsim {
             }
         }
 
+        /**
+         * Check if the current image "collides" with another
+         */
+        //%
+        overlapsWith(other: Image, x: int, y: int) {
+            x |= 0
+            y |= 0
+
+            const w = other._width
+            let h = other._height
+            const sh = this._height
+            const sw = this._width
+
+            if (x + w <= 0) return false
+            if (x >= sw) return false
+            if (y + h <= 0) return false
+            if (y >= sh) return false
+
+            const len = x < 0 ? Math.min(sw, w + x) : Math.min(sw - x, w)
+            const fdata = other.data
+            const tdata = this.data
+
+            for (let p = 0; h--; y++ , p += w) {
+                if (0 <= y && y < sh) {
+                    let dst = y * sw
+                    let src = p
+                    if (x < 0)
+                        src += -x
+                    else
+                        dst += x
+                    for (let i = 0; i < len; ++i) {
+                        const v = fdata[src++]
+                        if (v && tdata[dst])
+                            return true
+                        dst++
+                    }
+                }
+            }
+
+            return false
+        }
+
 
         // Image format:
         //  byte 0: magic 0xf4 - 4 bit color; 0xf0 is monochromatic

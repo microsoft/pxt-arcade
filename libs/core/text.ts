@@ -7,28 +7,6 @@ namespace image {
         data: Buffer;
         doubledCache?: Font;
     }
-    let currFont: Font
-    let currColor = 15
-
-    export function getFont() {
-        if (!currFont) currFont = defaultFont
-        return currFont
-    }
-
-    export function setFont(f: Font, size = 1) {
-        for (let i = 1; i < Math.min(4, size); ++i) {
-            f = doubledFont(f)
-        }
-        currFont = f
-    }
-
-    export function setTextColor(color: number) {
-        currColor = color
-    }
-
-    export function getTextColor() {
-        return currColor
-    }
 
     //% whenUsed
     export const defaultFont: Font = {
@@ -56,7 +34,7 @@ namespace image {
 `
     }
 
-    function doubledFont(f: Font): Font {
+    export function doubledFont(f: Font): Font {
         if (f.doubledCache) return f.doubledCache
         let byteWidth = (f.charWidth + 7) >> 3
         let lines = f.data.length / byteWidth
@@ -106,35 +84,36 @@ namespace image {
 
 interface Image {
     //% helper=print
-    print(text: string, x: number, y: number): void;
+    print(text: string, x: number, y: number, color?: number, font?: image.Font): void;
 }
 
 namespace helpers {
-    export function print(img: Image, text: string, x: number, y: number) {
+    export function print(img: Image, text: string, x: number, y: number, color?: number, font?: image.Font) {
         x |= 0
         y |= 0
-        const currFont = image.getFont()
+        if (!font) font = image.defaultFont
+        if (!color) color = 15
         let x0 = x
         let cp = 0
-        let byteWidth = (currFont.charWidth + 7) >> 3
-        let charSize = byteWidth * currFont.charHeight
+        let byteWidth = (font.charWidth + 7) >> 3
+        let charSize = byteWidth * font.charHeight
         let imgBuf = control.createBuffer(2 + charSize)
         imgBuf[0] = 0xf0
-        imgBuf[1] = currFont.charWidth
+        imgBuf[1] = font.charWidth
         while (cp < text.length) {
             let ch = text.charCodeAt(cp++)
             if (ch == 10) {
-                y += currFont.charHeight + 2
+                y += font.charHeight + 2
                 x = x0
             }
             if (ch < 32) continue
-            let idx = (ch - currFont.firstChar) * charSize
-            if (idx < 0 || idx + imgBuf.length - 1 > currFont.data.length)
+            let idx = (ch - font.firstChar) * charSize
+            if (idx < 0 || idx + imgBuf.length - 1 > font.data.length)
                 imgBuf.fill(0, 2)
             else
-                imgBuf.write(2, currFont.data.slice(idx, charSize))
-            img.drawIcon(imgBuf, x, y, image.getTextColor())
-            x += currFont.charWidth
+                imgBuf.write(2, font.data.slice(idx, charSize))
+            img.drawIcon(imgBuf, x, y, color)
+            x += font.charWidth
         }
     }
 }
