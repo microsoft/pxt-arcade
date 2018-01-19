@@ -1,7 +1,7 @@
 namespace sprite {
     export let allSprites: Sprite[]
 
-    export function createFromBuffer(imgbuf:Buffer) {
+    export function createFromBuffer(imgbuf: Buffer) {
         return create(image.ofBuffer(imgbuf))
     }
 

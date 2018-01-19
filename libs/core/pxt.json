@@ -10,6 +10,8 @@
         "text.ts",
         "device.ts",
         "sprite.ts",
+        "game.ts",
+        "image.ts",
         "enums.d.ts",
         "sims.d.ts",
         "ns.ts"
