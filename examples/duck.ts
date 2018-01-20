@@ -12,6 +12,13 @@ aaaaaa00ee
 00aaaaaa00
 `)
 
+const cloudImg = image.ofBuffer(hex`f410
+0000ffffff000000
+00f5555555f000ff
+0f5555555fffffff
+0000ffffff000000
+`)
+
 let block = image.repeatY(20, image.ofBuffer(hex`f40e
 00 0f f7 77 7f f0 00
 00 0f 77 77 77 f0 00
@@ -34,14 +41,8 @@ let hole = image.create(top.width(), 50)
 
 let pimg = image.concatY([block, top, hole, bot, block])
 
-let pillars: Sprite[] = []
 let spread = 80
-for (let i = 0; i < 4; ++i) {
-    let p = sprite.create(pimg)
-    pillars.push(p)
-    p.x = i * spread + 130
-    p.y = Math.randomRange(30, 90)
-}
+let prevObstacle: Sprite
 
 let duck = sprite.create(duckImg)
 duck.image.flipX()
@@ -49,30 +50,35 @@ duck.y = 90
 duck.x = 20
 
 duck.onCollision(game.over)
-duck.onHitWall(function () {
-    game.over()
-})
+duck.onHitWall(game.over)
+
+function launchObstacle() {
+    prevObstacle = sprite.launchObstacle(pimg, -30, 0)
+    prevObstacle.y = Math.randomRange(30, 90)
+    prevObstacle.onDestroy(function () {
+        game.addToScore(1)
+    })
+}
 
 keys.A.onPressed(function () {
+    if (prevObstacle == null)
+        launchObstacle()
     duck.ay = 300
-    for (let p of pillars) {
-        p.vx = -30
-    }
     duck.vy = -100
 })
 
 control.addFrameHandler(0, function () {
     screen.fill(4)
 
-    let pass: Sprite = null
-    let maxX = 0
-    for (let p of pillars) {
-        maxX = Math.max(p.x, maxX)
-        if (p.x < -8) pass = p
+    if (Math.random() < 0.02) {
+        let s = sprite.launchObstacle(cloudImg, -45, 0)
+        s.y = Math.randomRange(0, screen.height())
+        s.z = -1
+        s.flags |= sprite.Flag.Ghost
     }
-    if (pass) {
-        pass.x = maxX + spread
-        pass.y = Math.randomRange(30, 90)
-        game.addToScore(1)
+
+    if (prevObstacle && prevObstacle.x < screen.width() - spread) {
+        launchObstacle()
+        spread = Math.randomRange(40, 90)
     }
 })
