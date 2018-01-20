@@ -130,7 +130,7 @@ namespace pxsim {
             let dst = 0
 
             for (let src = 0; src < d.length; ++src) {
-                let c = d[src++]
+                let c = d[src]
                 n[dst++] = c
                 n[dst++] = c
             }
