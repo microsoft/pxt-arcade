@@ -144,6 +144,7 @@
   "image.create": "Create new empty (transparent) image",
   "image.doubledImage": "Return the image (mono or color) where each pixel is replaced by 4",
   "image.ofBuffer": "Create image of 0xF4 buffer.",
+  "img": "Tagged image literal converter",
   "loops.forever": "Repeats the code forever in the background. On each iteration, allows other code to run.",
   "loops.forever|param|body": "the code to repeat",
   "loops.frame": "Runs code every frame.",

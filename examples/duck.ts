@@ -1,23 +1,25 @@
-const duckImg = image.ofBuffer(hex`f40a
-00eeee0000
-00e0ee00ee
-00eeee00ee
-aaaaaa00ee
-00eeeeeeee
-00eeeeeeee
-00eeeeeeee
-0000eeee00
-0000eeee00
-0000eeee00
-00aaaaaa00
-`)
+const duckImg = img`
+..eeee
+..e.ee..ee
+..eeee..ee
+RRRRRR..ee
+..eeeeeeee
+..eeeeeeee
+..eeeeeeee
+....eeee
+....eeee
+....eeee
+..RRRRRR
+`
 
-const cloudImg = image.ofBuffer(hex`f410
-0000ffffff000000
-00f5555555f000ff
-0f5555555fffffff
-0000ffffff000000
-`)
+const cloudImg = img`
+ . f f f . . . . . . . . . f f
+ f 2 2 2 f . . f f f . . f 2 2 f
+ f 2 2 2 2 f f 2 2 2 f f 2 2 2 f
+ f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f
+ . f f f f f f f f f f f f f f
+ `
+cloudImg.double()
 
 let block = image.repeatY(20, image.ofBuffer(hex`f40e
 00 0f f7 77 7f f0 00
