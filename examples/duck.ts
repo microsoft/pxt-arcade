@@ -1,5 +1,4 @@
-
-let duckImg = image.ofBuffer(hex`f40a
+const duckImg = image.ofBuffer(hex`f40a
 00eeee0000
 00e0ee00ee
 00eeee00ee
@@ -49,7 +48,8 @@ duck.image.flipX()
 duck.y = 90
 duck.x = 20
 
-duck.onCollision(function (other: Sprite) {
+duck.onCollision(game.over)
+duck.onHitWall(function () {
     game.over()
 })
 

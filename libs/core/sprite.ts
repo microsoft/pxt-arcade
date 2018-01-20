@@ -12,25 +12,8 @@ namespace sprite {
             control.addFrameHandler(10, dt => {
                 for (let s of allSprites)
                     s._update(dt)
-
-                for (let s of allSprites) {
-                    if (s.collisionHandler) {
-                        for (let o of allSprites) {
-                            if (s != o && s.collidesWith(o))
-                                s.collisionHandler(o)
-                        }
-
-                        if (s.flags & Flag.Unbounded) {
-                            // OK
-                        } else if (
-                            0 <= s.x && s.x < screen.width() &&
-                            0 <= s.y && s.y < screen.height()) {
-                            // OK
-                        } else {
-                            s.collisionHandler(null)
-                        }
-                    }
-                }
+                for (let s of allSprites)
+                    s._collisions()
             })
             control.addFrameHandler(90, dt => {
                 allSprites.sort((a, b) => a.z - b.z || a.id - b.id)
@@ -45,7 +28,8 @@ namespace sprite {
 
     export enum Flag {
         Ghost = 1, // doesn't collide with other sprites
-        Unbounded = 2, // hitting walls doesn't generate collision events
+        Removed = 2,
+        RemoveWhenOut = 4,
     }
 }
 
@@ -60,11 +44,12 @@ class Sprite {
     image: Image
     flags: number
     id: number
-    collisionHandler: (other: Sprite) => void
+    private collisionHandler: (other: Sprite) => void
+    private wallHandler: () => void
 
     constructor(img: Image) {
-        this.x = screen.width() / 2
-        this.y = screen.height() / 2
+        this.x = screen.width() >> 1
+        this.y = screen.height() >> 1
         this.vx = 0
         this.vy = 0
         this.ax = 0
@@ -97,6 +82,25 @@ class Sprite {
         this.vy += this.ay * dt
     }
 
+    _collisions() {
+        if (this.collisionHandler) {
+            for (let o of sprite.allSprites) {
+                if (this != o && this.collidesWith(o))
+                    this.collisionHandler(o)
+            }
+        }
+
+        if (this.wallHandler) {
+            if (
+                0 <= this.x && this.x < screen.width() &&
+                0 <= this.y && this.y < screen.height()) {
+                // OK
+            } else {
+                this.collisionHandler(null)
+            }
+        }
+    }
+
     collidesWith(other: Sprite) {
         if (this.flags & sprite.Flag.Ghost)
             return false
@@ -107,5 +111,14 @@ class Sprite {
 
     onCollision(handler: (other: Sprite) => void) {
         this.collisionHandler = handler
+    }
+
+    onHitWall(handler: () => void) {
+        this.wallHandler = handler
+    }
+
+    remove() {
+        this.flags |= sprite.Flag.Removed
+        sprite.allSprites.removeElement(this)
     }
 }
