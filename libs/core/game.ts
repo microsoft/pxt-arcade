@@ -29,7 +29,7 @@ namespace game {
         scoreSprite = sprite.create(image.create(font.charWidth * maxW, font.charHeight))
         scoreSprite.x = screen.width() - font.charWidth * maxW / 2 - 10
         scoreSprite.y = font.charHeight
-        scoreSprite.flags |= sprite.Flag.Ghost
+        scoreSprite.makeGhost()
         scoreSprite.z = 1000
         control.addFrameHandler(85, () => {
             let s = _score + ""

@@ -141,6 +141,10 @@ class Sprite {
         }
     }
 
+    makeGhost() {
+        this.flags |= sprite.Flag.Ghost
+    }
+
     collidesWith(other: Sprite) {
         if (this.flags & sprite.Flag.Ghost)
             return false

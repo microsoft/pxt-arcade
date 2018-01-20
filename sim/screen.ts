@@ -390,7 +390,7 @@ namespace pxsim.image {
         if (src.length < 3 || src[0] != 0xf4)
             return null
         const w = src[1]
-        const h = ((src.length - 2) / (w >> 1)) | 0
+        const h = ((src.length - 2) / ((w + 1) >> 1)) | 0
         if (w == 0 || h == 0)
             return null
         const r = new Image(w, h)

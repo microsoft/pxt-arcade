@@ -76,7 +76,7 @@ control.addFrameHandler(0, function () {
         let s = sprite.launchObstacle(cloudImg, -45, 0)
         s.y = Math.randomRange(0, screen.height())
         s.z = -1
-        s.flags |= sprite.Flag.Ghost
+        s.makeGhost()
     }
 
     if (prevObstacle && prevObstacle.x < screen.width() - spread) {
