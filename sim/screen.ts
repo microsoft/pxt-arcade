@@ -65,6 +65,8 @@ namespace pxsim {
             let [x2, y2] = this.clamp(x + w - 1, y + h - 1);
             [x, y] = this.clamp(x, y)
             let p = this.pix(x, y)
+            w = x2 - x + 1
+            h = y2 - y + 1
             let d = this._width - w
             c = this.color(c)
             while (h-- > 0) {
@@ -116,6 +118,30 @@ namespace pxsim {
                     bot -= w
                 }
             }
+        }
+
+        /**
+         * Every pixel in image is moved by (dx,dy)
+         */
+        //%
+        scroll(dx: int, dy: int) {
+            dx |= 0
+            dy |= 0
+            if (dy < 0) {
+                dy = -dy
+                if (dy < this._height)
+                    this.data.copyWithin(0, dy * this._width)
+                else
+                    dy = this._height
+                this.data.fill(0, (this._height - dy) * this._width)
+            } else if (dy > 0) {
+                if (dy < this._height)
+                    this.data.copyWithin(dy * this._width, 0)
+                else
+                    dy = this._height
+                this.data.fill(0, 0, dy * this._width)
+            }
+            // TODO implement dx
         }
 
         /**

@@ -136,6 +136,13 @@ declare namespace control {
         public flipY(): void;
 
         /**
+         * Every pixel in image is moved by (dx,dy)
+         */
+        //%
+        //% shim=.scroll
+        public scroll(dx: number, dy: number): void;
+
+        /**
          * Stretches the image horizontally by 100%
          */
         //%
