@@ -35,6 +35,7 @@
     "typescript": "2.6.1"
   },
   "dependencies": {
+    "pxt-common-packages": "0.*",
     "pxt-core": "3.*"
   }
 }
