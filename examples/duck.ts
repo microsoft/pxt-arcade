@@ -18,17 +18,16 @@ const cloudImg = img`
  f 2 2 2 2 f f 2 2 2 f f 2 2 2 f
  f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f
  . f f f f f f f f f f f f f f
- `
-cloudImg.double()
+ `.doubled()
 
-let block = image.repeatY(20, image.ofBuffer(hex`f40e
+let block = image.repeatY(20, image.ofBuffer(hex`f40e04
 00 0f f7 77 7f f0 00
 00 0f 77 77 77 f0 00
 00 0f 77 77 77 f0 00
 00 0f 77 77 77 f0 00
 `))
 
-let bot = image.ofBuffer(hex`f40e
+let bot = image.ofBuffer(hex`f40e05
 0f ff ff ff ff ff f0
 0f 77 77 77 77 77 f0
 0f 77 77 77 77 77 f0
@@ -79,7 +78,7 @@ control.addFrameHandler(0, function () {
         s.makeGhost()
     }
 
-    if (prevObstacle && prevObstacle.x < screen.width() - spread) {
+    if (prevObstacle && prevObstacle.x < screen.width - spread) {
         launchObstacle()
         spread = Math.randomRange(40, 90)
     }

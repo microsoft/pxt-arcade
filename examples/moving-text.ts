@@ -15,8 +15,6 @@ let d = 0.2
 loops.frame(() => {
     y += keys.dy(d)
     screen.fill(0)
-    image.setFont(image.microbitFont, 2)
-    screen.print("Habcdef", x, y)
-    image.setFont(image.microbitFont)
-    screen.print("Habcdef", x, y + 30)
+    screen.print("Habcdef", x, y, 2, image.codalFont)
+    screen.print("Habcdef", x, y + 30, 15, image.codalFont)
 })
