@@ -116,7 +116,11 @@ namespace pxsim.control {
      */
     //% block
     export function reset() {
-        U.userError("reset")
+        pxsim.Runtime.postMessage(<pxsim.SimulatorCommandMessage>{
+            type: "simulator",
+            command: "restart"
+        })
+        const cb = getResume();
     }
 
     export let runInBackground = thread.runInBackground;

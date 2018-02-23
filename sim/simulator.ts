@@ -5,6 +5,7 @@ namespace pxsim {
 
     const paletteSrc = [
         "#000000", // black
+        "#000000", // black
         "#33e2e4", // teal 
         "#05b3e0", // blue
         "#3d30ad", // violet
@@ -31,7 +32,7 @@ namespace pxsim {
         if (!forcedUpdateLoop) {
             // this is used to force screen update if game loop is stuck or not set up properly
             forcedUpdateLoop = setInterval(() => {
-                board().maybeForceScreenUpdate()
+                board().screenState.maybeForceUpdate()
             }, 100)
             const body = document.getElementById("root")
             window.onfocus = () => {
@@ -70,11 +71,6 @@ namespace pxsim {
         return new Uint32Array(ca.buffer)[0]
     }
 
-    function perfNow() {
-        // TODO polyfill needed?
-        return window.performance.now()
-    }
-
     /**
      * Represents the entire state of the executing program.
      * Do not store state anywhere else!
@@ -83,23 +79,14 @@ namespace pxsim {
         public bus: EventBus;
         public canvas: HTMLCanvasElement;
         public stats: HTMLElement;
-        public palette = new Uint32Array(16);
-        public width: number;
-        public height: number;
         public screen: Uint32Array;
         public startTime = Date.now()
-
-        private lastImage: RefImage
-        private lastImageFlushTime = 0
+        public screenState: ScreenState
 
         constructor() {
             super();
             this.bus = new EventBus(runtime);
-
-            let p = ["#0"].concat(paletteSrc)
-            for (let i = 0; i < 16; ++i) {
-                this.palette[i] = htmlColorToUint32(p[i])
-            }
+            this.screenState = new ScreenState(paletteSrc)
         }
 
         setKey(which: number, isPressed: boolean) {
@@ -107,38 +94,6 @@ namespace pxsim {
             if (k)
                 this.bus.queue(isPressed ? "_keydown" : "_keyup", k)
         }
-
-        showImage(img: RefImage) {
-            if (!this.flush) {
-                this.width = img._width
-                this.height = img._height
-                this.canvas.width = this.width
-                this.canvas.height = this.height
-
-                const ctx = this.canvas.getContext("2d")
-                ctx.imageSmoothingEnabled = false
-                const imgdata = ctx.getImageData(0, 0, this.width, this.height)
-                this.screen = new Uint32Array(imgdata.data.buffer)
-
-                this.flush = () => {
-                    ctx.putImageData(imgdata, 0, 0)
-                }
-            }
-
-            const src = img.data
-            const dst = this.screen
-            if (this.width != img._width || this.height != img._height || src.length != dst.length)
-                U.userError("wrong size")
-            const p = this.palette
-            for (let i = 0; i < src.length; ++i) {
-                dst[i] = p[src[i] & 0xf]
-            }
-            this.flush()
-            this.lastImage = img
-            this.lastImageFlushTime = Date.now()
-        }
-
-        flush: () => void;
 
         initAsync(msg: pxsim.SimulatorRunMessage): Promise<void> {
             document.body.innerHTML = ''; // clear children
@@ -148,6 +103,25 @@ namespace pxsim {
             this.canvas.width = 16;
             this.canvas.height = 16;
             this.canvas.style.width = "256px";
+            
+            this.screenState.onChange = () => {
+                this.canvas.width = this.screenState.width
+                this.canvas.height = this.screenState.height
+
+                const ctx = this.canvas.getContext("2d")
+                ctx.imageSmoothingEnabled = false
+                const imgdata = ctx.getImageData(0, 0, this.screenState.width, this.screenState.height)
+                const arr = new Uint32Array(imgdata.data.buffer)
+                
+                // after we did one-time setup, redefine ourselves to be quicker
+                this.screenState.onChange = () => {
+                    arr.set(this.screenState.screen)
+                    ctx.putImageData(imgdata, 0, 0)
+                }
+                // and finally call the redefnied self
+                this.screenState.onChange()
+            }
+
             document.body.appendChild(this.canvas);
             let info = document.createElement("div")
             info.className = "info"
@@ -157,12 +131,12 @@ namespace pxsim {
 
             return Promise.resolve();
         }
+    }
+}
 
-        maybeForceScreenUpdate() {
-            const now = Date.now()
-            if (this.lastImage && now - this.lastImageFlushTime > 150) {
-                this.showImage(this.lastImage)
-            }
-        }
+
+namespace pxsim.pxtcore {
+    export function updateStats(s: string) {
+        board().stats.textContent = s
     }
 }

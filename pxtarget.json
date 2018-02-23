@@ -10,7 +10,8 @@
     "bundleddirs": [
         "libs/core",
         "libs/screen",
-        "libs/game"
+        "libs/game",
+        "libs/device"
     ],
     "runtime": {
       "mathBlocks": true,

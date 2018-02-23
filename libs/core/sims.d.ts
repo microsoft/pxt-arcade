@@ -67,21 +67,5 @@ declare namespace control {
     function reset(): void;
 
 }
-declare namespace image {
-    /**
-     * Internal
-     */
-    //%
-    //% shim=image::_show
-    function _show(img: RefImage): void;
-
-    /**
-     * Internal
-     */
-    //%
-    //% shim=image::_stats
-    function _stats(s: string): void;
-
-}
 
 // Auto-generated. Do not edit. Really.
