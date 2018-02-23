@@ -8,7 +8,9 @@
         "packages": true
     },
     "bundleddirs": [
-        "libs/core"
+        "libs/core",
+        "libs/screen",
+        "libs/game"
     ],
     "runtime": {
       "mathBlocks": true,

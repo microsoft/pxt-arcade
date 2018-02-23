@@ -1,0 +1,15 @@
+{
+    "name": "device",
+    "description": "The fantasy game console library",
+    "files": [
+        "README.md",
+        "ns.ts",
+        "startup.ts"
+    ],
+    "dependencies": {
+        "core": "file:../core",
+        "screen": "file:../screen",
+        "game": "file:../game"
+    },
+    "public": true
+}

@@ -1,7 +1,7 @@
 {
     "name": "{0}",
     "dependencies": {
-        "core": "file:../core"
+        "device": "file:../device"
     },
     "description": "",
     "files": [

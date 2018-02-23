@@ -7,11 +7,6 @@
         "pxt-helpers.ts",
         "buffer.d.ts",
         "keys.ts",
-        "text.ts",
-        "device.ts",
-        "sprite.ts",
-        "game.ts",
-        "image.ts",
         "enums.d.ts",
         "sims.d.ts",
         "ns.ts"
