@@ -8,5 +8,9 @@
         "rootDir": ".",
         "newLine": "LF",
         "sourceMap": false
-    }
+    },
+    "include": [
+      "*.ts",
+      "../node_modules/pxt-common-packages/libs/screen/sim/*.ts"
+    ]
 }

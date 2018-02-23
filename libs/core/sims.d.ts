@@ -36,6 +36,36 @@ declare namespace control {
     //% shim=control::on
     function on(ev: string, arg: number, f: () => void): void;
 
+    /**
+     * Generate an event
+     */
+    //%
+    //% shim=control::raiseEvent
+    function raiseEvent(ev: string, arg: number): void;
+
+    /**
+     * Create a new zero-initialized buffer.
+     * @param size number of bytes in the buffer
+     */
+    //%
+    //% shim=control::createBuffer
+    function createBuffer(size: number): Buffer;
+
+    /**
+     * Gets the number of milliseconds elapsed since power on.
+     */
+    //% help=control/millis weight=50
+    //% blockId=control_running_time block="millis (ms)"
+    //% shim=control::millis
+    function millis(): number;
+
+    /**
+     * Restarts the console.
+     */
+    //% block
+    //% shim=control::reset
+    function reset(): void;
+
 }
 declare namespace image {
     /**
@@ -43,7 +73,7 @@ declare namespace image {
      */
     //%
     //% shim=image::_show
-    function _show(img: any): void;
+    function _show(img: RefImage): void;
 
     /**
      * Internal

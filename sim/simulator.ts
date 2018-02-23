@@ -1,6 +1,8 @@
 /// <reference path="../node_modules/pxt-core/built/pxtsim.d.ts"/>
 
 namespace pxsim {
+    export type CommonBoard = Board
+
     const paletteSrc = [
         "#000000", // black
         "#33e2e4", // teal 
@@ -87,7 +89,7 @@ namespace pxsim {
         public screen: Uint32Array;
         public startTime = Date.now()
 
-        private lastImage: Image
+        private lastImage: RefImage
         private lastImageFlushTime = 0
 
         constructor() {
@@ -106,10 +108,10 @@ namespace pxsim {
                 this.bus.queue(isPressed ? "_keydown" : "_keyup", k)
         }
 
-        showImage(img: Image) {
+        showImage(img: RefImage) {
             if (!this.flush) {
-                this.width = img.width()
-                this.height = img.height()
+                this.width = img._width
+                this.height = img._height
                 this.canvas.width = this.width
                 this.canvas.height = this.height
 

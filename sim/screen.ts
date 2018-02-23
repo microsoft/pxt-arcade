@@ -5,7 +5,7 @@ namespace pxsim.image {
      * Internal
      */
     //%
-    export function _show(img: Image) {
+    export function _show(img: RefImage) {
         board().showImage(img)
     }
 
