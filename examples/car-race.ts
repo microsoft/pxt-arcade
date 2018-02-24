@@ -53,11 +53,11 @@ car.z = 10
 let pos = 0
 let prevPos = 0
 
-control.addFrameHandler(0, function (dt: number) {
+
+loops.frame(function () {
     pos += 1 + Math.sqrt(control.millis()) / 200.0
-    screen.fill(0)
     drive(pos - prevPos)
     prevPos = pos | 0
     game.setScore(prevPos >> 6)
-    car.x += keys.dx(70 * dt)
+    car.x += keys.dx(70)
 })

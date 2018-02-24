@@ -20,20 +20,20 @@ const cloudImg = img`
  . f f f f f f f f f f f f f f
  `.doubled()
 
-let block = image.repeatY(20, image.ofBuffer(hex`f40e04
+let block = image.repeatY(20, img`
 00 0f f7 77 7f f0 00
 00 0f 77 77 77 f0 00
 00 0f 77 77 77 f0 00
 00 0f 77 77 77 f0 00
-`))
+`)
 
-let bot = image.ofBuffer(hex`f40e05
+let bot = img`
 0f ff ff ff ff ff f0
 0f 77 77 77 77 77 f0
 0f 77 77 77 77 77 f0
 00 ff 77 77 77 ff 00
 00 0f 77 77 77 f0 00
-`)
+`
 
 let top = bot.clone()
 top.flipY()
@@ -50,11 +50,15 @@ duck.image.flipX()
 duck.y = 90
 duck.x = 20
 
-duck.onCollision(game.over)
-duck.onHitWall(game.over)
+duck.onCollision(function (other: Sprite) {
+    game.over()
+})
+duck.onHitWall(function () {
+    game.over()
+})
 
 function launchObstacle() {
-    prevObstacle = sprite.launchObstacle(pimg, -30, 0)
+    prevObstacle = sprite.launchParticle(pimg, -30, 0)
     prevObstacle.y = Math.randomRange(30, 90)
     prevObstacle.onDestroy(function () {
         game.addToScore(1)
@@ -68,14 +72,13 @@ keys.A.onPressed(function () {
     duck.vy = -100
 })
 
-control.addFrameHandler(0, function () {
-    screen.fill(4)
-
+sprite.setBackgroundColor(4)
+loops.frame(function () {
     if (Math.random() < 0.02) {
-        let s = sprite.launchObstacle(cloudImg, -45, 0)
+        let s = sprite.launchParticle(cloudImg, -45, 0)
         s.y = Math.randomRange(0, screen.height())
         s.z = -1
-        s.makeGhost()
+        s.flags |= sprite.Flag.Ghost
     }
 
     if (prevObstacle && prevObstacle.x < screen.width - spread) {

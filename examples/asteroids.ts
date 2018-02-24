@@ -32,26 +32,23 @@ spaceship.onCollision(function (other: Sprite) {
 })
 spaceship.z = 10
 
-let lastFire = 0
-
-control.addFrameHandler(0, function (dt: number) {
-    screen.fill(0)
-    spaceship.x += keys.dx(70 * dt)
+loops.frame(function () {
+    spaceship.x += keys.dx(70)
     spaceship.x = Math.clamp(10, 118, spaceship.x)
+
     if (Math.random() < 0.05) {
-        let m = sprite.launchObstacle(meteor, 0, 60)
+        let m = sprite.launchParticle(meteor, 0, Math.randomRange(30, 80))
         m.x = Math.randomRange(10, 118)
     }
     // stars
     if (Math.random() < 0.1) {
-        let m = sprite.launchObstacle(img`f`, 0, 60)
+        let m = sprite.launchParticle(img`f`, 0, 40)
         m.x = Math.randomRange(0, 128)
         m.makeGhost()
     }
     let now = control.millis()
-    if (keys.A.isPressed() && now - lastFire > 500) {
-        lastFire = now
-        let r = sprite.launchObstacle(rocketImg, 0, -90)
+    if (keys.A.wasPressed()) {
+        let r = sprite.launchParticle(rocketImg, 0, -90)
         r.x = spaceship.x
         r.y = spaceship.y - 10
         r.onCollision(function (other: Sprite) {
