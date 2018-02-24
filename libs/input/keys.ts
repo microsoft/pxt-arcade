@@ -19,6 +19,7 @@ namespace keys {
                     this._pressed = true
                     this.checked = false
                     control.raiseEvent("keydown", id)
+                    control.raiseEvent("keydown", 0)
                 }
             })
         }
@@ -41,6 +42,10 @@ namespace keys {
                 return this._pressed
             }
             return false
+        }
+
+        waitPressed() {
+            control.waitForEvent("keydown", this.id)
         }
     }
 
@@ -67,4 +72,7 @@ namespace keys {
         else return 0
     }
 
+    export function waitAnyKey() {
+        control.waitForEvent("keydown", 0)
+    }
 }
