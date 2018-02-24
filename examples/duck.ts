@@ -1,3 +1,5 @@
+game.splash("Falling Duck", "Z to jump")
+
 const duckImg = img`
 ..eeee
 ..e.ee..ee
@@ -47,8 +49,8 @@ let prevObstacle: Sprite
 
 let duck = sprite.create(duckImg)
 duck.image.flipX()
-duck.y = 90
 duck.x = 20
+duck.ay = 300
 
 duck.onCollision(function (other: Sprite) {
     game.over()
@@ -65,10 +67,9 @@ function launchObstacle() {
     })
 }
 
+launchObstacle()
+
 keys.A.onPressed(function () {
-    if (prevObstacle == null)
-        launchObstacle()
-    duck.ay = 300
     duck.vy = -100
 })
 
@@ -81,7 +82,7 @@ loops.frame(function () {
         s.flags |= sprite.Flag.Ghost
     }
 
-    if (prevObstacle && prevObstacle.x < screen.width - spread) {
+    if (prevObstacle.x < screen.width - spread) {
         launchObstacle()
         spread = Math.randomRange(40, 90)
     }

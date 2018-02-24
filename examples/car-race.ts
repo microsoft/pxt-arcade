@@ -1,3 +1,5 @@
+game.splash("Car Race", "Avoid the borders!")
+
 const car = sprite.create(img`
  . . 9 9 
  . 4 9 9 4
