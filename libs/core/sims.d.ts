@@ -62,7 +62,7 @@ declare namespace control {
     /**
      * Restarts the console.
      */
-    //% block
+    //% block async
     //% shim=control::reset
     function reset(): void;
 

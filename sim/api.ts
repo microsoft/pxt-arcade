@@ -114,7 +114,7 @@ namespace pxsim.control {
     /**
      * Restarts the console.
      */
-    //% block
+    //% block async
     export function reset() {
         pxsim.Runtime.postMessage(<pxsim.SimulatorCommandMessage>{
             type: "simulator",

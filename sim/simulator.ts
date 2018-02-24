@@ -32,7 +32,7 @@ namespace pxsim {
         if (!forcedUpdateLoop) {
             // this is used to force screen update if game loop is stuck or not set up properly
             forcedUpdateLoop = setInterval(() => {
-                board().screenState.maybeForceUpdate()
+                //board().screenState.maybeForceUpdate()
             }, 100)
             const body = document.getElementById("root")
             window.onfocus = () => {
