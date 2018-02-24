@@ -11,6 +11,7 @@
         "libs/core",
         "libs/screen",
         "libs/game",
+        "libs/input",
         "libs/device"
     ],
     "runtime": {

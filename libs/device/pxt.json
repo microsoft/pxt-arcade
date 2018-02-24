@@ -6,9 +6,11 @@
         "ns.ts",
         "startup.ts"
     ],
+    "core": true,
     "dependencies": {
         "core": "file:../core",
         "screen": "file:../screen",
+        "input": "file:../input",
         "game": "file:../game"
     },
     "public": true

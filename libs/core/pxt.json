@@ -6,7 +6,6 @@
         "pxt-core.d.ts",
         "pxt-helpers.ts",
         "buffer.d.ts",
-        "keys.ts",
         "enums.d.ts",
         "sims.d.ts",
         "ns.ts"
