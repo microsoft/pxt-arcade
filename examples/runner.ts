@@ -1,4 +1,4 @@
-let jumper = sprite.create(img`
+let frames = [img`
  . . 3 3
  . . 3 3
  . . 3 .
@@ -10,9 +10,24 @@ let jumper = sprite.create(img`
  . 3 . . 3
  3 . . 3
  3 . . 3
- `)
+ `, img`
+ . . 3 3
+ . . 3 3
+ . . 3 .
+ . 3 3 3 3 
+ 3 . 3 3 . 3
+ 3 . 3 3 . 3
+ . . 3 3
+ . 3 . . 3
+ . 3 . . 3
+ . . 3 . . 3
+ . . 3 . . 3
+ `
+]
 
-jumper.image.replace(3, 10)
+frames.map(f => f.replace(3, 10))
+
+let jumper = sprite.createWithAnimation(frames)
 
 jumper.x = 20
 jumper.y = 70
