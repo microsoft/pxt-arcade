@@ -13,11 +13,7 @@ namespace _screen_internal {
     //% shim=pxt::updateStats
     function updateStats(msg: string): void {}
 
-    control.addFrameHandler(200, () => {
-        updateScreen(screen)
-    })
-
-    updateScreen(screen)
+    control.setupScreenRefresh(() => updateScreen(screen))
 
     export function _stats(msg: string) {
         updateStats(msg)
