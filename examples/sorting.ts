@@ -1,3 +1,4 @@
+
 let arr = [1]
 for (let i = 0; i < 42; ++i)
     arr.push(Math.randomRange(10, 100))
@@ -25,7 +26,33 @@ function bubble() {
         }
 }
 
-bubble()
 
-// TODO add qsort etc
+
+function qsort(lo: number, hi: number) {
+    if (lo < hi) {
+        let p = partition(lo, hi)
+        qsort(lo, p - 1)
+        qsort(p + 1, hi)
+    }
+}
+
+function partition(lo: number, hi: number) {
+    let pivot = arr[hi]
+    let i = lo - 1
+    for (let j = lo; j < hi; ++j)
+        if (arr[j] < pivot) {
+            i++
+            swap(i, j)
+        }
+    swap(i + 1, hi)
+    return i + 1
+}
+
+function quicksort() {
+    qsort(0, arr.length)
+}
+
+
+// bubble()
+// quicksort()
 
