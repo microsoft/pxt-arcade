@@ -12,3 +12,6 @@
 * [ ] think if we want to support devices with very low memory (eg SAMD21 has 32k and one screen is 8k; we need double buffering, and also some other random memory which leaves around 1 screen worth of memory for the user)
 * [ ] nice design for GAME OVER - probably should avoid text - localization
 * [ ] nice design for splash
+* [ ] animations for sprites
+* [ ] some physics - make it easy for players to stop on platforms
+* [ ] come up with a better color palette (we at least need gray)

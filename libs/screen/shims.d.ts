@@ -75,6 +75,12 @@ declare interface Image {
     doubledY(): Image;
 
     /**
+     * Replaces one color in an image with another
+     */
+    //% shim=ImageMethods::replace
+    replace(from: int32, to: int32): void;
+
+    /**
      * Stretches the image in both directions by 100%
      */
     //% shim=ImageMethods::doubled
