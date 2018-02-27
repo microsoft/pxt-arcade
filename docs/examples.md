@@ -10,7 +10,7 @@ Here are some fun programs for your @boardname@!
   "name": "Falling Duck",
   "description": "A duck that falls",
   "url":"/examples/duck",
-  "cardType": "example"
+  "cardType": "codeExample"
 },
 {
   "name": "Asteroids",
