@@ -2,7 +2,7 @@
 
 Example
 
-```blocks
+```typescript
 let sz = 8
 let w = screen.width / sz | 0
 let h = screen.height / sz | 0
