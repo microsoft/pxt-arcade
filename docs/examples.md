@@ -16,43 +16,43 @@ Here are some fun programs for your @boardname@!
   "name": "Asteroids",
   "description": "Shoot at rocks",
   "url":"/examples/asteroids",
-  "cardType": "example"
+  "cardType": "codeExample"
 },
 {
   "name": "Car Race",
   "description": "Drive a sports car",
   "url":"/examples/car-race",
-  "cardType": "example"
+  "cardType": "codeExample"
 },
 {
   "name": "Car Race",
   "description": "Drive a sports car",
   "url":"/examples/car-race",
-  "cardType": "example"
+  "cardType": "codeExample"
 },
 {
   "name": "Snake",
   "description": "Dumb-phone classic",
   "url":"/examples/snake",
-  "cardType": "example"
+  "cardType": "codeExample"
 },
 {
   "name": "Jumping Runner",
   "description": "A runner that jumps",
   "url":"/examples/runner",
-  "cardType": "example"
+  "cardType": "codeExample"
 },
 {
   "name": "Sorting",
   "description": "Visualize sorting algorithms",
   "url":"/examples/sorting",
-  "cardType": "example"
+  "cardType": "codeExample"
 },
 {
   "name": "Palette",
   "description": "Visualize palette",
   "url":"/examples/palette",
-  "cardType": "example"
+  "cardType": "codeExample"
 }
 ]
 ```
