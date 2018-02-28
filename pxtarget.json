@@ -14,6 +14,9 @@
         "libs/input",
         "libs/device"
     ],
+    "compile": {
+        "saveAsPNG": true
+    },
     "runtime": {
       "mathBlocks": true,
       "loopsBlocks": true,

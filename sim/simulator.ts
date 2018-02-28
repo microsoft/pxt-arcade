@@ -71,6 +71,29 @@ namespace pxsim {
         return new Uint32Array(ca.buffer)[0]
     }
 
+    const openMeInMakeCode = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAACBAgMAAACA` +
+        `3hMIAAAACVBMVEX///+rq6sAAACQF3jzAAAAdklEQVQY05WQsQ2FMAxE3/8KDZUp2CcjMBIlYorUTIntuLA` +
+        `UCcHpFRfp4kuMaqqIKGa61kpxfqgis4ghKYOzMipl+pCqfpjzcFHCfOjaUtfmXViLeLVExgIljuN70jYcyH` +
+        `PUhAosRi969a920E7azHWx/zvm4QZrZxQ87RClwwAAAABJRU5ErkJggg==`
+
+    export function loadImageAsync(url: string) {
+        return new Promise<HTMLCanvasElement>((resolve, reject) => {
+            const img = new Image();
+            img.src = url
+            img.onload = () => {
+                const canvas = document.createElement("canvas")
+                canvas.width = img.width
+                canvas.height = img.height
+                const ctx = canvas.getContext("2d")
+                ctx.drawImage(img, 0, 0);
+                resolve(canvas)
+            };
+            img.onerror = () => {
+                reject(new Error("Cannot load image"))
+            }
+        })
+    }
+
     /**
      * Represents the entire state of the executing program.
      * Do not store state anywhere else!
@@ -82,6 +105,9 @@ namespace pxsim {
         public screen: Uint32Array;
         public startTime = Date.now()
         public screenState: ScreenState
+        private lastKey = 0
+        private lastScreenshot: Uint32Array
+        private lastScreenshotTime = 0
 
         constructor() {
             super();
@@ -91,8 +117,59 @@ namespace pxsim {
 
         setKey(which: number, isPressed: boolean) {
             let k = mapKey(which)
-            if (k)
+            if (k) {
+                this.lastKey = Date.now()
                 this.bus.queue(isPressed ? "_keydown" : "_keyup", k)
+            }
+        }
+
+        public receiveMessage(msg: SimulatorMessage) {
+            if (msg.type == "screenshot")
+                this.screenshotAsync(pxsim.title || "Hello world")
+                    .then(img => {
+                        Runtime.postMessage(
+                            { type: "screenshot", data: img } as SimulatorScreenshotMessage)
+                    })
+        }
+
+        private screenshotAsync(title: string) {
+            let w = this.screenState.width
+            let h = this.screenState.height
+            let work = document.createElement("canvas")
+            let border = 16
+            let bottom = 32
+            work.width = w + border * 2
+            work.height = h + border * 2 + bottom
+            let ctx = work.getContext("2d")
+            ctx.imageSmoothingEnabled = false
+            ctx.fillStyle = 'white'
+            ctx.fillRect(0, 0, work.width, work.height)
+            let id = ctx.getImageData(border, border, w, h)
+            if (this.lastScreenshot)
+                new Uint32Array(id.data.buffer).set(this.lastScreenshot)
+            else
+                new Uint32Array(id.data.buffer).fill(0xff000000)
+            ctx.putImageData(id, border, border)
+            let lblTop = 2 * border + h + 4
+            ctx.fillStyle = 'black'
+            ctx.font = '13px sans-serif'
+            ctx.fillText(title, border, lblTop, w)
+            return loadImageAsync(openMeInMakeCode)
+                .then(openme => {
+                    ctx.drawImage(openme, border + w + 3, border)
+                    return work.toDataURL("image/png")
+                })
+        }
+
+        tryScreenshot() {
+            let now = Date.now()
+            // if there was a key since last screenshot and at least 100ms ago, and last screenshot was at least 3s ago, record a new one
+            if (now - this.lastScreenshotTime > 3000 &&
+                this.lastKey < now - 100 &&
+                (!this.lastScreenshot || this.lastKey > this.lastScreenshotTime)) {
+                this.lastScreenshot = this.screenState.screen.slice(0)
+                this.lastScreenshotTime = now
+            }
         }
 
         initAsync(msg: pxsim.SimulatorRunMessage): Promise<void> {
@@ -103,7 +180,7 @@ namespace pxsim {
             this.canvas.width = 16;
             this.canvas.height = 16;
             this.canvas.style.width = "256px";
-            
+
             this.screenState.onChange = () => {
                 this.canvas.width = this.screenState.width
                 this.canvas.height = this.screenState.height
@@ -112,11 +189,12 @@ namespace pxsim {
                 ctx.imageSmoothingEnabled = false
                 const imgdata = ctx.getImageData(0, 0, this.screenState.width, this.screenState.height)
                 const arr = new Uint32Array(imgdata.data.buffer)
-                
+
                 // after we did one-time setup, redefine ourselves to be quicker
                 this.screenState.onChange = () => {
                     arr.set(this.screenState.screen)
                     ctx.putImageData(imgdata, 0, 0)
+                    this.tryScreenshot()
                 }
                 // and finally call the redefnied self
                 this.screenState.onChange()
