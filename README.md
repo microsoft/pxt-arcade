@@ -1,20 +1,6 @@
-# Sample target for a Microsoft MakeCode Editor
+# Casual game editor using Microsoft MakeCode
 
-This repo contains a sample editor built with [Microsoft MakeCode (PXT)](https://github.com/Microsoft/pxt). The editor is hosted on the GitHub pages at [http://microsoft.github.io/pxt-sample/](http://microsoft.github.io/pxt-sample/)
-
-[![Build Status](https://travis-ci.org/Microsoft/pxt-sample.svg?branch=master)](https://travis-ci.org/Microsoft/pxt-sample)
-
-If you'd like to start your own editor, fork this repo and fix all the TODOs.
-
-## TODOs
-
-- [ ] Fork repo and setup local server (see below)
-- [ ] Update metadata in ``pxtarget.json``. Change the id, title, name, etc... to your taste.
-- [ ] Update the JavaScript runtime in ``sim/simulator.ts``. If needed add additional JS library under ``sim/public/**``
-and edit ``sim/public/simulator.html`` with additional ``script`` tags.
-- [ ] Update the APIs in ``sim/api.ts`` to use your runtime.
-- [ ] Test your editor in the local server
-- [ ] run ``pgk staticpkg --gh --bump`` to upload a static version to GitHub pages.
+This repo contains an editor built with [Microsoft MakeCode (PXT)](https://github.com/Microsoft/pxt). 
 
 ## Running locally
 
