@@ -1,22 +1,23 @@
 {
-  "name": "pxt-sample",
+  "name": "pxt-arcade",
   "version": "1.0.17",
-  "description": "sample target for PXT",
+  "description": "Small arcade editor for MakeCode",
   "keywords": [
     "JavaScript",
     "education",
-    "PXT"
+    "MakeCode"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Microsoft/pxt-sample.git"
+    "url": "git+https://github.com/Microsoft/pxt-32.git"
   },
   "author": "",
   "license": "MIT",
-  "homepage": "https://github.com/Microsoft/pxt-sample#readme",
+  "homepage": "https://github.com/Microsoft/pxt-32#readme",
   "files": [
     "README.md",
     "pxtarget.json",
+    "targetconfig.json",
     "built/*.js",
     "built/*.json",
     "built/*.d.ts",

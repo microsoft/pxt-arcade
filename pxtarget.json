@@ -1,7 +1,7 @@
 {
     "id": "mkcd32",
-    "name": "PXT-32",
-    "title": "PXT-32 Game Console",
+    "name": "arcade",
+    "title": "Arcade",
     "corepkg": "core",
     "cloud": {
         "workspace": false,
