@@ -2,33 +2,48 @@
 
 This repo contains an editor built with [Microsoft MakeCode (PXT)](https://github.com/Microsoft/pxt). 
 
-## Running locally
+## Local Dev setup
 
-These instructions allow to run locally to modify the sample.
+These instructions assume familiarity with dev tools and languages.
 
-### Setup
+* install Node.js 8+
+* (optional) install [Visual Studio Code](https://code.visualstudio.com/)
 
-The following commands are a 1-time setup after synching the repo on your machine.
+In a common folder,
 
-* install [node.js](https://nodejs.org/en/)
+* clone https://github.com/Microsoft/pxt to ``pxt`` folder
+* clone https://github.com/Microsoft/pxt-common-packages to ``pxt-common-packages`` folder
+* clone https://github.com/Microsoft/pxt-32 to ``pxt-32`` folder
+* go to ``pxt`` and run
 
-* install the PXT command line
-```
-npm install -g pxt
-```
-* install the dependencies
 ```
 npm install
+npm run build
 ```
 
-### Running the local server
+* go to ``pxt-common-packages`` and run
 
-After you're done, simple run this command to open a local web server:
 ```
-pxt serve
+npm install
+npm link ../pxt
 ```
 
-After making a change in the source, refresh the page in the browser.
+* go to ``pxt-32`` and run
+
+```
+npm install
+npm link ../pxt
+npm link ../pxt-common-packages
+```
+
+## to run the local server
+
+From root github folder,
+
+```
+cd pxt-32
+pxt serve --cloud
+```
 
 ## Updating the tools
 
