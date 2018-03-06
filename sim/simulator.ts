@@ -181,6 +181,8 @@ namespace pxsim {
             this.canvas.height = 16;
             this.canvas.style.width = "256px";
 
+            let requested = false
+
             this.screenState.onChange = () => {
                 this.canvas.width = this.screenState.width
                 this.canvas.height = this.screenState.height
@@ -190,11 +192,19 @@ namespace pxsim {
                 const imgdata = ctx.getImageData(0, 0, this.screenState.width, this.screenState.height)
                 const arr = new Uint32Array(imgdata.data.buffer)
 
+                let flush = () => {
+                    requested = false
+                    ctx.putImageData(imgdata, 0, 0)
+                    this.tryScreenshot()
+                }
+
                 // after we did one-time setup, redefine ourselves to be quicker
                 this.screenState.onChange = () => {
                     arr.set(this.screenState.screen)
-                    ctx.putImageData(imgdata, 0, 0)
-                    this.tryScreenshot()
+                    if (!requested) {
+                        requested = true
+                        window.requestAnimationFrame(flush)
+                    }
                 }
                 // and finally call the redefnied self
                 this.screenState.onChange()

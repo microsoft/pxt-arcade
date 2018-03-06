@@ -23,7 +23,7 @@
 * [ ] some rigid-body physics - make it easy for players to stop on platforms
 * [ ] come up with a better color palette (we at least need gray)
 * [ ] make palette swappable
-* [ ] game loop (frame.ts) should use requestAnimationFrame()
+* [x] game loop (frame.ts) should use requestAnimationFrame()
 
 ## Saving as PNG
 
