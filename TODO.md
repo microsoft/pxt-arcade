@@ -27,6 +27,6 @@
 
 ## Saving as PNG
 
-* [ ] save screenshots during game play
-* [ ] encode LZMA compressed program sources in the screenshot and have it download on "Download" button
-* [ ] implement loading of such PNG files
+* [x] save screenshots during game play
+* [x] encode LZMA compressed program sources in the screenshot and have it download on "Download" button
+* [x] implement loading of such PNG files
