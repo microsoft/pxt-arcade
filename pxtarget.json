@@ -60,6 +60,7 @@
         },
         "simAnimationEnter": "fly right in",
         "simAnimationExit": "fly right out",
+        "crowdinProject": "kindscript",
         "monacoColors": {
             "editor.background": "#ecf0f1"
         }
