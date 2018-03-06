@@ -5,6 +5,7 @@
     "corepkg": "core",
     "cloud": {
         "workspace": false,
+        "sharing": true,
         "packages": true
     },
     "bundleddirs": [
