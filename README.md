@@ -1,4 +1,4 @@
-# Casual game editor using Microsoft MakeCode
+# Casual game editor using Microsoft MakeCode [![Build Status](https://travis-ci.org/Microsoft/pxt-32.svg?branch=master)](https://travis-ci.org/Microsoft/pxt-32)
 
 This repo contains an editor built with [Microsoft MakeCode (PXT)](https://github.com/Microsoft/pxt). 
 
