@@ -48,7 +48,7 @@ namespace hud {
     /**
      * Gets the current score if any
      */
-    //%
+    //% blockId=hudScore block="score"
     export function score() {
         initScore()
         return _score || 0;
@@ -59,19 +59,29 @@ namespace hud {
         return _score !== null
     }
 
-    //%
-    export function setScore(score: number) {
+    /**
+     * Sets the score
+     */
+    //% blockId=hudsetScore block="set score to %value"
+    export function setScore(value: number) {
         initScore()
-        _score = score | 0
+        _score = value | 0
     }
 
-    //%
-    export function changeScoreBy(points: number) {
+    /**
+     * Changes the score by the given amount
+     * @param value the amount of change, eg: 1
+     */
+    //% blockId=hudChangeScoreBy block="change score by %value"
+    export function changeScoreBy(value: number) {
         initScore();
-        setScore(_score + points)
+        setScore(_score + value)
     }
 
-    //%
+    /**
+     * Gets the number of lives
+     */
+    //% blockId=hudLife block="life"
     export function life() {
         initLife()
         return _life
@@ -82,15 +92,23 @@ namespace hud {
         return _life !== null
     }
 
-    //%
-    export function setLife(life: number) {
+    /**
+     * Sets the number of lives
+     * @param value the number of lives, eg: 3
+     */
+    //% blockId=hudSetLife block="set life to %value"
+    export function setLife(value: number) {
         initLife()
-        _life = life | 0
+        _life = value | 0
     }
 
-    //%
-    export function changeLifeBy(life: number) {
+    /**
+     * Changes the lives by the given amount
+     * @param value the change of lives, eg: -1
+     */
+    //% blockId=hudChangeLifeBy block="change life by %value"
+    export function changeLifeBy(value: number) {
         initLife();
-        setLife(_life + life)
+        setLife(_life + value)
     }
 }
