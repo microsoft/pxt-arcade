@@ -39,7 +39,7 @@ loops.frame(function () {
             ball.vy = -20 - ball.ay;
             ball.vx = Math.randomRange(-40, 40)
             game.addToScore(1)
-            if (game.score() % 5 == 0)
+            if (hud.score() % 5 == 0)
                 addBall(ball.ay);
         }
         if (ball.right > screen.width || ball.left < 0)
