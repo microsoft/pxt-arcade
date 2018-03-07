@@ -6,6 +6,7 @@
     "cloud": {
         "workspace": false,
         "sharing": true,
+        "importing": true,
         "packages": true
     },
     "bundleddirs": [
@@ -18,6 +19,14 @@
     "compile": {
         "saveAsPNG": true
     },
+    "serial": {
+        "useEditor": true,
+        "log": true,
+        "editorTheme": {
+            "graphBackground": "#d9d9d9",
+            "lineColors": ["#009DDC", "#FB48C7", "#40bf4a", "#8073E5", "#d25b33"]
+        }
+    },    
     "runtime": {
       "mathBlocks": true,
       "loopsBlocks": true,
@@ -50,6 +59,9 @@
         "monacoToolbox": true,
         "invertedMenu": true,
         "showHomeScreen": true,
+        "highContrast": true,
+        "hasAudio": true,
+        "allowPackageExtensions": true,
         "homeScreenHero": "./static/hero.png",        
         "blocklyOptions": { 
             "grid": {
