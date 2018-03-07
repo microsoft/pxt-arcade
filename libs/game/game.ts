@@ -1,8 +1,5 @@
 namespace game {
     let isOver = false
-    let _score: number = null
-    let _life: number = null
-    let _hud: boolean = false;
     let _waitAnyKey: () => void
 
     export function setWaitAnyKey(f: () => void) {
@@ -15,9 +12,9 @@ namespace game {
     }
 
     export function freeze() {
-        sprite.setBackgroundCallback(() => { })
+        sprites.setBackgroundCallback(() => { })
         loops.frame(() => { })
-        sprite.reset()
+        sprites.reset()
     }
 
     function showBackground(h: number, c: number) {
@@ -73,95 +70,13 @@ namespace game {
             if (effect) effect()
             let top = showBackground(44, 4)
             screen.printCenter("GAME OVER!", top + 8, 5, image.font8)
-            if (hasScore())
-                screen.printCenter("Score:" + game.score(), top + 23, 2, image.font5)
+            if (hud.hasScore())
+                screen.printCenter("Score:" + hud.score(), top + 23, 2, image.font5)
             if (!effect)
                 loops.pause(1000) // wait for users to stop pressing keys
             waitAnyKey()
             control.reset()
         })
-    }
-
-    function initHUD() {
-        if (_hud) return;
-        _hud = true;
-
-        let font = image.font5
-        let color = 15
-        let maxW = 8
-        control.addFrameHandler(95, () => {
-            // show score
-            if (_score !== null) {
-                let s = _score + ""
-                while (s.length < maxW) s = " " + s
-                screen.print(s, screen.width - font.charWidth * maxW - 10, font.charHeight, color, font)    
-            }
-            // show life
-            if (_life !== null) {
-                let s = _life + ""
-                screen.print(s, 10, font.charHeight, color, font)
-                if (_life == 0)
-                    game.over();
-            }
-        })
-    }
-
-    function initScore() {
-        if (_score !== null) return
-        _score = 0
-        initHUD();
-    }
-
-    //%
-    export function score() {
-        initScore()
-        return _score
-    }
-
-    //%
-    export function hasScore() {
-        return _score !== null
-    }
-
-    //%
-    export function setScore(score: number) {
-        initScore()
-        _score = score | 0
-    }
-
-    //%
-    export function addToScore(points: number) {
-        initScore();
-        setScore(_score + points)
-    }
-
-    function initLife() {
-        if (_life !== null) return
-        _life = 3;
-        initHUD();
-    }
-
-    //%
-    export function life() {
-        initLife()
-        return _life
-    }
-
-    //%
-    export function hasLife() {
-        return _life !== null
-    }
-
-    //%
-    export function setLife(life: number) {
-        initLife()
-        _life = life | 0
-    }
-
-    //%
-    export function addToLife(life: number) {
-        initLife();
-        setLife(_life + life)
     }
 
     /**

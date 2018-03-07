@@ -3,12 +3,12 @@
 ```blocks
 game.splash("Juggler", "Press arrows")
 
-sprite.setBackgroundColor(3);
+sprites.setBackgroundColor(3);
 // images
 let balls: Sprite[] = []
 
 function addBall(ay: number) {
-    let ball = sprite.create(img`
+    let ball = sprites.create(img`
 ...6
 ..626
 .62926
@@ -22,7 +22,7 @@ function addBall(ay: number) {
     balls.push(ball);
 }
 
-let paddle = sprite.create(img`
+let paddle = sprites.create(img`
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2

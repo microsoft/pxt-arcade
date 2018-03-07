@@ -3,7 +3,7 @@
 Example
 
 ```blocks
-const spaceship = sprite.create(img`
+const spaceship = sprites.create(img`
  . . . . d
  . . . . d
  . . . d d d
@@ -42,18 +42,18 @@ loops.frame(function () {
     spaceship.x = Math.clamp(10, 118, spaceship.x)
 
     if (Math.random() < 0.05) {
-        let m = sprite.launchParticle(meteor, 0, Math.randomRange(30, 80))
+        let m = sprites.launchParticle(meteor, 0, Math.randomRange(30, 80))
         m.x = Math.randomRange(10, 118)
     }
     // stars
     if (Math.random() < 0.1) {
-        let m = sprite.launchParticle(img`f`, 0, 40)
+        let m = sprites.launchParticle(img`f`, 0, 40)
         m.x = Math.randomRange(0, 128)
         m.makeGhost()
     }
     let now = control.millis()
     if (keys.A.wasPressed()) {
-        let r = sprite.launchParticle(rocketImg, 0, -90)
+        let r = sprites.launchParticle(rocketImg, 0, -90)
         r.x = spaceship.x
         r.y = spaceship.y - 10
         r.onCollision(function (other: Sprite) {

@@ -9,7 +9,7 @@ Frame handlers:
 200 - screen refresh
 */
 
-namespace sprite {
+namespace sprites {
     export let allSprites: Sprite[]
 
     export function createFromBuffer(imgbuf: Buffer) {
@@ -88,7 +88,7 @@ namespace sprite {
         else if (vy > 0)
             s.y = -(s.height >> 1) + 1
 
-        s.flags |= sprite.Flag.AutoDestroy
+        s.flags |= sprites.Flag.AutoDestroy
 
         return s
     }
@@ -197,7 +197,7 @@ class Sprite {
 
     _collisions() {
         if (this.collisionHandler) {
-            for (let o of sprite.allSprites) {
+            for (let o of sprites.allSprites) {
                 if (this != o && this.collidesWith(o)) {
                     let tmp = o
                     control.runInBackground(() => this.collisionHandler(tmp))
@@ -216,7 +216,7 @@ class Sprite {
             }
         }
 
-        if (this.flags & sprite.Flag.AutoDestroy) {
+        if (this.flags & sprites.Flag.AutoDestroy) {
             if (this.right < 0 || this.bottom < 0 ||
                 this.left >= screen.width ||
                 this.top >= screen.height) {
@@ -226,13 +226,13 @@ class Sprite {
     }
 
     makeGhost() {
-        this.flags |= sprite.Flag.Ghost
+        this.flags |= sprites.Flag.Ghost
     }
 
     collidesWith(other: Sprite) {
-        if (this.flags & sprite.Flag.Ghost)
+        if (this.flags & sprites.Flag.Ghost)
             return false
-        if (other.flags & sprite.Flag.Ghost)
+        if (other.flags & sprites.Flag.Ghost)
             return false
         return other.image.overlapsWith(this.image, this.left - other.left, this.top - other.top)
     }
@@ -250,10 +250,10 @@ class Sprite {
     }
 
     destroy() {
-        if (this.flags & sprite.Flag.Destroyed)
+        if (this.flags & sprites.Flag.Destroyed)
             return
-        this.flags |= sprite.Flag.Destroyed
-        sprite.allSprites.removeElement(this)
+        this.flags |= sprites.Flag.Destroyed
+        sprites.allSprites.removeElement(this)
         if (this.destroyHandler) {
             control.runInBackground(this.destroyHandler)
         }
