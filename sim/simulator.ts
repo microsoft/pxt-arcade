@@ -125,7 +125,7 @@ namespace pxsim {
 
         public receiveMessage(msg: SimulatorMessage) {
             if (msg.type == "screenshot")
-                this.screenshotAsync(pxsim.title || "Hello world")
+                this.screenshotAsync((msg as SimulatorScreenshotMessage).title || pxsim.title || "...")
                     .then(img => {
                         Runtime.postMessage(
                             { type: "screenshot", data: img } as SimulatorScreenshotMessage)
