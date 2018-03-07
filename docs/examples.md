@@ -43,6 +43,12 @@ Here are some fun programs for your @boardname@!
   "cardType": "codeExample"
 },
 {
+  "name": "Mega Bounce",
+  "description": "More and more bouncing balls",
+  "url":"/examples/mega-bounce",
+  "cardType": "codeExample"
+},
+{
   "name": "Sorting",
   "description": "Visualize sorting algorithms",
   "url":"/examples/sorting",
