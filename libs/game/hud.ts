@@ -3,19 +3,22 @@
  * Head-up display
  * 
 */
-//% color=#430054 weight=80
+//% color=#661141 weight=80 block="Heads Up Display" icon="\uf2bb"
 namespace hud {
-    let _score: number = null
-    let _life: number = null
+    let _score: number = null;
+    let _life: number = null;
     let _hud: boolean = false;
+    /**
+     * Color of the HUD display
+     */
+    let color = 15;
 
     function initHUD() {
         if (_hud) return;
         _hud = true;
 
-        let font = image.font5
-        let color = 15
-        let maxW = 8
+        const font = image.font5;
+        const maxW = 8;
         control.addFrameHandler(95, () => {
             // show score
             if (_score !== null) {
