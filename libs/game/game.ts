@@ -1,3 +1,7 @@
+/**
+ * Game transitions and dialog
+ **/
+//% color=#008272 weight=99 icon="\uf11b"
 namespace game {
     let isOver = false
     let _waitAnyKey: () => void
@@ -29,25 +33,39 @@ namespace game {
         return top
     }
 
-    export function showDialog(name: string, content: string) {
-        let lines = 1
-        if (!content) lines = 0
-        else
-            for (let i = 0; i < content.length; ++i)
-                if (content[i] == '\n') lines++
-
-        let h = 28 + lines * (image.font5.charHeight + 2)
-        let top = showBackground(h, 9)
-        screen.print(name, 8, top + 8, 14, image.font8)
-        screen.print(content, 8, top + 23, 13, image.font5)
-    }
-
-    export function splash(name: string, help: string) {
-        showDialog(name, help)
+    /**
+     * Show a title, subtitle menu
+     * @param title 
+     * @param subtitle
+     */
+    //% weight=90
+    //% blockId=gameSplash block="splash %title %subtitle"
+    export function splash(title: string, subtitle: string) {
+        showDialog(title, subtitle)
         waitAnyKey()
     }
 
-    export function meltScreen() {
+    /**
+     * Shows a dialog on screen
+     * @param title 
+     * @param subtitle 
+     */
+    //% weight=89
+    //% blockId=gameDialog block="show dialog %title %subtitle"
+    export function showDialog(title: string, subtitle: string) {
+        let lines = 1
+        if (!subtitle) lines = 0
+        else
+            for (let i = 0; i < subtitle.length; ++i)
+                if (subtitle[i] == '\n') lines++
+
+        let h = 28 + lines * (image.font5.charHeight + 2)
+        let top = showBackground(h, 9)
+        screen.print(title, 8, top + 8, 14, image.font8)
+        screen.print(subtitle, 8, top + 23, 13, image.font5)
+    }
+
+    function meltScreen() {
         freeze()
         for (let i = 0; i < 10; ++i) {
             for (let j = 0; j < 1000; ++j) {
@@ -61,13 +79,18 @@ namespace game {
         }
     }
 
-    export function over(effect?: () => void) {
+    /**
+     * Finishes the game and displays score
+     */
+    //% blockId=gameOver block="game over"
+    //% weight=80
+    export function over() {
         if (isOver) return
         takeScreenshot();
         isOver = true
         control.clearHandlers()
         control.runInBackground(() => {
-            if (effect) effect()
+            meltScreen();
             let top = showBackground(44, 4)
             screen.printCenter("GAME OVER!", top + 8, 5, image.font8)
             if (hud.hasScore())
