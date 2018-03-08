@@ -1,7 +1,7 @@
 /**
  * Control flow
  */
-//% color=#FF5722 weight=90
+//% color=#FF5722 weight=90 advanced=true
 namespace control {
 
 }
