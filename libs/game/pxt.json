@@ -2,7 +2,8 @@
     "name": "game",
     "description": "The game and sprite library - beta",
     "files": [
-        "sprite.ts",
+        "sprites.ts",
+        "hud.ts",
         "game.ts"
     ],
     "public": true,

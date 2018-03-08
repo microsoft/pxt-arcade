@@ -52,7 +52,7 @@ let pimg = image.concatY([block, top, hole, bot, block])
 let spread = 80
 let prevObstacle: Sprite
 
-let duck = sprite.create(duckImg)
+let duck = sprites.create(duckImg)
 duck.image.flipX()
 duck.x = 20
 duck.ay = 300
@@ -65,7 +65,7 @@ duck.onHitWall(function () {
 })
 
 function launchObstacle() {
-    prevObstacle = sprite.launchParticle(pimg, -30, 0)
+    prevObstacle = sprites.launchParticle(pimg, -30, 0)
     prevObstacle.y = Math.randomRange(30, 90)
     prevObstacle.onDestroy(function () {
         game.addToScore(1)
@@ -78,13 +78,13 @@ keys.A.onPressed(function () {
     duck.vy = -100
 })
 
-sprite.setBackgroundColor(4)
+sprites.setBackgroundColor(4)
 loops.frame(function () {
     if (Math.random() < 0.02) {
-        let s = sprite.launchParticle(cloudImg, -45, 0)
+        let s = sprites.launchParticle(cloudImg, -45, 0)
         s.y = Math.randomRange(0, screen.height())
         s.z = -1
-        s.flags |= sprite.Flag.Ghost
+        s.flags |= sprites.Flag.Ghost
     }
 
     if (prevObstacle.x < screen.width - spread) {
