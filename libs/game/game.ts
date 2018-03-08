@@ -95,8 +95,7 @@ namespace game {
             screen.printCenter("GAME OVER!", top + 8, 5, image.font8)
             if (hud.hasScore())
                 screen.printCenter("Score:" + hud.score(), top + 23, 2, image.font5)
-            if (!effect)
-                loops.pause(1000) // wait for users to stop pressing keys
+            loops.pause(1000) // wait for users to stop pressing keys
             waitAnyKey()
             control.reset()
         })
