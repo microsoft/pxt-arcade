@@ -3,7 +3,7 @@
  * Head-up display
  * 
 */
-//% color=#661141 weight=80 block="Heads Up Display" icon="\uf2bb"
+//% color=#AA5585 weight=80 block="Heads Up Display" icon="\uf2bb"
 namespace hud {
     let _score: number = null;
     let _life: number = null;
