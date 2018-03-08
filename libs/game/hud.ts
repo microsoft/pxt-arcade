@@ -51,6 +51,7 @@ namespace hud {
     /**
      * Gets the current score if any
      */
+    //% weight=95 blockGap=8
     //% blockId=hudScore block="score"
     export function score() {
         initScore()
@@ -65,6 +66,7 @@ namespace hud {
     /**
      * Sets the score
      */
+    //% weight=94 blockGap=8
     //% blockId=hudsetScore block="set score to %value"
     export function setScore(value: number) {
         initScore()
@@ -75,6 +77,7 @@ namespace hud {
      * Changes the score by the given amount
      * @param value the amount of change, eg: 1
      */
+    //% weight=93
     //% blockId=hudChangeScoreBy block="change score by %value"
     export function changeScoreBy(value: number) {
         initScore();
@@ -84,6 +87,7 @@ namespace hud {
     /**
      * Gets the number of lives
      */
+    //% weight=85 blockGap=8
     //% blockId=hudLife block="life"
     export function life() {
         initLife()
@@ -99,6 +103,7 @@ namespace hud {
      * Sets the number of lives
      * @param value the number of lives, eg: 3
      */
+    //% weight=84 blockGap=8
     //% blockId=hudSetLife block="set life to %value"
     export function setLife(value: number) {
         initLife()
@@ -109,6 +114,7 @@ namespace hud {
      * Changes the lives by the given amount
      * @param value the change of lives, eg: -1
      */
+    //% weight=83
     //% blockId=hudChangeLifeBy block="change life by %value"
     export function changeLifeBy(value: number) {
         initLife();
