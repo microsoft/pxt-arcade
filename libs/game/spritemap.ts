@@ -5,34 +5,9 @@ namespace sprites {
         private rowCount: number;
         private columnCount: number;
         private buckets: Sprite[][];
-        sprites: Sprite[];
 
         constructor() {
             this.buckets = [];
-            this.sprites = [];
-            this.update();
-        }
-
-        /**
-         * Inserts a sprite in the map
-         */
-        insert(sprite: Sprite): void {
-            if (this.sprites.indexOf(sprite) < 0) {
-                this.insertAABB(sprite);
-                this.sprites.push(sprite);
-            }
-        }
-
-        /**
-         * Removes the sprite from any bucket
-         */
-        remove(sprite: Sprite): void {
-            if (this.sprites.removeElement(sprite)) {
-                const l = this.buckets.length;
-                for (let i = 0; i < l; ++i)
-                    if (this.buckets[i])
-                        this.buckets[i].removeElement(sprite);
-            }
         }
 
         /**
@@ -74,23 +49,15 @@ namespace sprites {
         }
 
         /**
-         * Clears the map
-         */
-        clear() {
-            this.clearBuckets();
-            this.sprites.length = 0;
-        }
-
-        /**
          * Recompute hashes for all objects
          */
-        update() {
-            this.clearBuckets();
+        update(sprites: Sprite[]) {
+            this.buckets = [];
 
             // rescale buckets
             let maxWidth = 0;
             let maxHeight = 0;
-            for (const sprite of this.sprites) {
+            for (const sprite of sprites) {
                 if (sprite.width > maxWidth) maxWidth = sprite.width;
                 if (sprite.height > maxHeight) maxHeight = sprite.height;
             }
@@ -100,12 +67,8 @@ namespace sprites {
             this.columnCount = (screen.width / this.cellWidth) >> 0;
 
 
-            for (const sprite of this.sprites)
+            for (const sprite of sprites)
                 this.insertAABB(sprite);
-        }
-
-        private clearBuckets() {
-            this.buckets = [];
         }
 
         private key(x: number, y: number): number {
@@ -150,7 +113,7 @@ namespace sprites {
         }
 
         toString() {
-            return `${this.sprites.length} sprites in ${this.buckets.length}/${this.buckets.filter(b => !!b).length} buckets`;
+            return `${this.buckets.length} buckets, ${this.buckets.filter(b => !!b).length} filled`;
         }
     }
 }
