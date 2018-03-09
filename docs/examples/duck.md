@@ -68,7 +68,7 @@ function launchObstacle() {
     prevObstacle = sprites.launchParticle(pimg, -30, 0)
     prevObstacle.y = Math.randomRange(30, 90)
     prevObstacle.onDestroy(function () {
-        game.changeScoreBy(1)
+        hud.changeScoreBy(1)
     })
 }
 

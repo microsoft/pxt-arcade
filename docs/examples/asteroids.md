@@ -58,7 +58,7 @@ loops.frame(function () {
         r.y = spaceship.y - 10
         r.onCollision(function (other: Sprite) {
             other.destroy()
-            game.changeScoreBy(1)
+            hud.changeScoreBy(1)
         })
     }
 })
