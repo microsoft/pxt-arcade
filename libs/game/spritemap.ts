@@ -120,11 +120,6 @@ namespace sprites {
 
         private insertAtKey(x: number, y: number, sprite: Sprite) {
             const k = this.key(x, y);
-            if (k < 0) {
-                console.log(`${x}-${y} -> oob`)
-                return; // out of bounds
-            }
-
             let bucket = this.buckets[k];
             if (!bucket)
                 bucket = this.buckets[k] = [];
@@ -133,7 +128,7 @@ namespace sprites {
         }
 
         private isOob(sprite: Sprite): boolean {
-            return sprite.right < 0 || sprite.left > screen.width || sprite.top < 0 || sprite.bottom > screen.height;
+            return sprite.right < 0 || sprite.left > screen.width || sprite.bottom < 0 || sprite.top > screen.height;
         }
 
         private insertAABB(sprite: Sprite) {
@@ -143,8 +138,8 @@ namespace sprites {
 
             const left = sprite.left;
             const top = sprite.top;
-            for(let x = 0; x < sprite.width; x += this.cellWidth)
-                for(let y = 0; y < sprite.height; y += this.cellHeight)
+            for(let x = 0; x <= sprite.width; x += this.cellWidth)
+                for(let y = 0; y <= sprite.height; y += this.cellHeight)
                     this.insertAtKey(left + x, top + y, sprite);
         }
 
