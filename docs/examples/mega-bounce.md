@@ -38,7 +38,7 @@ loops.frame(function () {
         if (ball.collidesWith(paddle)) {
             ball.vy = -20 - ball.ay;
             ball.vx = Math.randomRange(-40, 40)
-            game.changeScoreBy(1)
+            hud.changeScoreBy(1)
             if (hud.score() % 5 == 0)
                 addBall(ball.ay);
         }
