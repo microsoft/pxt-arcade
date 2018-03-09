@@ -23,10 +23,10 @@ class PhysicsEngine {
 class ArcadePhysicsEngine extends PhysicsEngine {
     private sprites: Sprite[];
     private map: sprites.SpriteMap;
+
     constructor() {
         super();
         this.sprites = [];
-        this.map = new sprites.SpriteMap();
     }
 
     addSprite(sprite: Sprite) {
@@ -53,20 +53,37 @@ class ArcadePhysicsEngine extends PhysicsEngine {
             s.vy += s.ay * dt
             s.x += (ovx + s.vx) * dt2;
             s.y += (ovy + s.vy) * dt2;
+            s._update(dt)
         }
 
         // update physics of non-ghosts
-        this.map.update(this.sprites.filter(sprite => !(sprite.flags & sprites.Flag.Ghost)));
+        const colliders = this.sprites.filter(sprite => !(sprite.flags & sprites.Flag.Ghost));
+        const collisioners = colliders.filter(sprite => !!sprite.collisionHandler);
+        if (collisioners.length < Math.sqrt(colliders.length)) {
+            this.map = undefined;
+        } else {
+            if (!this.map) this.map = new sprites.SpriteMap();
+            this.map.update(colliders);
+        }
 
-        // update sprite positions
-        for (let s of this.sprites) {
-            s._update(dt)
+        // update sprite collisions
+        for (let s of collisioners) {
             s._collisions();
         }
     }
 
     collides(sprite: Sprite): Sprite[] {
-        return this.map.overlaps(sprite);
+        if (this.map)
+            return this.map.overlaps(sprite);
+        else {
+            const r: Sprite[] = [];
+            const n = this.sprites.length;
+            for (let i = 0; i < n; ++i) {
+                if (sprite.collidesWith(this.sprites[i]))
+                    r.push(this.sprites[i]);
+            }
+            return r;
+        }
     }
 }
 

@@ -146,7 +146,7 @@ class Sprite {
 
     animation: SpriteAnimation
 
-    private collisionHandler: (other: Sprite) => void
+    collisionHandler: (other: Sprite) => void
     private wallHandler: () => void
     private destroyHandler: () => void
 
@@ -225,6 +225,7 @@ class Sprite {
     }
 
     collidesWith(other: Sprite) {
+        if (other == this) return false;
         if (this.flags & sprites.Flag.Ghost)
             return false
         if (other.flags & sprites.Flag.Ghost)
