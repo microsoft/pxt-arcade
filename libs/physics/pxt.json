@@ -1,0 +1,11 @@
+{
+    "name": "physics",
+    "description": "Simple Physics Library",
+    "files": [
+        "quadTree.ts"
+    ],
+    "dependencies": {
+        "core": "file:../core"
+    },
+    "public": true
+}
