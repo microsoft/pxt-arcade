@@ -23,6 +23,17 @@ canvas {
 	-ms-interpolation-mode: nearest-neighbor;
 }
 
+#screen {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#paint-surface {
+    width: 80%;
+    height: 80%;
+}
+
 .stats {
     margin-top: 8px;
 }

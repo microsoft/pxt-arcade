@@ -37,7 +37,8 @@
       "listsBlocks": true 
     },
     "simulator": {
-        "autoRun": true
+        "autoRun": true,
+        "aspectRatio": 0.7
     },
     "appTheme": {
         "logoUrl": "https://github.com/Microsoft/pxt-32",

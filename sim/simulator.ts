@@ -107,7 +107,9 @@ namespace pxsim {
         public screenState: ScreenState
         private lastKey = 0
         private lastScreenshot: Uint32Array
-        private lastScreenshotTime = 0
+        private lastScreenshotTime = 0;
+
+        private controls: ControlPad;
 
         constructor() {
             super();
@@ -120,6 +122,9 @@ namespace pxsim {
             if (k) {
                 this.lastKey = Date.now()
                 this.bus.queue(isPressed ? "_keydown" : "_keyup", k)
+                if (this.controls) {
+                    this.controls.handleKey(k, isPressed);
+                }
             }
         }
 
@@ -173,13 +178,11 @@ namespace pxsim {
         }
 
         initAsync(msg: pxsim.SimulatorRunMessage): Promise<void> {
-            document.body.innerHTML = ''; // clear children
-            this.canvas = document.createElement("canvas");
-            this.stats = document.createElement("div")
+            this.canvas = document.getElementById("paint-surface") as HTMLCanvasElement;
+            this.stats = document.getElementById("debug-stats");
             this.stats.className = "stats"
             this.canvas.width = 16;
             this.canvas.height = 16;
-            this.canvas.style.width = "256px";
 
             let requested = false
 
@@ -210,12 +213,14 @@ namespace pxsim {
                 this.screenState.onChange()
             }
 
-            document.body.appendChild(this.canvas);
-            let info = document.createElement("div")
+            let info = document.getElementById("instructions")
             info.className = "info"
             info.textContent = "Use arrows and Z,X."
-            document.body.appendChild(this.stats);
-            document.body.appendChild(info);
+
+            if (!this.controls) {
+                this.controls = new ControlPad();
+                document.body.appendChild(this.controls.root.el);
+            }
 
             return Promise.resolve();
         }
