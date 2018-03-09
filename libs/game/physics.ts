@@ -43,7 +43,7 @@ class ArcadePhysicsEngine extends PhysicsEngine {
 
         // update sprite positions
         for (let s of this.sprites.sprites) {
-            if (s.flags & (sprites.Flag.Destroyed | sprites.Flag.Ghost)) {
+            if (s.flags & sprites.Flag.Destroyed) {
                 this.sprites.remove(s);
             } else {
                 const ovx = s.vx;

@@ -129,7 +129,7 @@ namespace sprites {
 
         private insertAABB(sprite: Sprite) {
             // is object completely out of space?
-            if (this.isOob(sprite))
+            if (this.isOob(sprite) || (sprite.flags & sprites.Flag.Ghost))
                 return;
 
             const left = sprite.left;
