@@ -43,7 +43,7 @@ class ArcadePhysicsEngine extends PhysicsEngine {
         const dt2 = dt / 2;
 
         // remove dead sprites
-        this.sprites = this.sprites.filter(sprite => !(sprite.flags * sprites.Flag.Destroyed));
+        this.sprites = this.sprites.filter(sprite => !(sprite.flags & sprites.Flag.Destroyed));
 
         // update sprite positions
         for (let s of this.sprites) {

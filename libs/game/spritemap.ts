@@ -61,8 +61,8 @@ namespace sprites {
                 if (sprite.width > maxWidth) maxWidth = sprite.width;
                 if (sprite.height > maxHeight) maxHeight = sprite.height;
             }
-            this.cellWidth = Math.clamp(8, screen.width / 4, maxWidth);
-            this.cellHeight = Math.clamp(8, screen.height / 4, maxHeight);
+            this.cellWidth = Math.clamp(8, screen.width / 4, maxWidth * 2);
+            this.cellHeight = Math.clamp(8, screen.height / 4, maxHeight * 2);
             this.rowCount = (screen.height / this.cellHeight) >> 0
             this.columnCount = (screen.width / this.cellWidth) >> 0;
 
@@ -97,9 +97,11 @@ namespace sprites {
 
             const left = sprite.left;
             const top = sprite.top;
-            for(let x = 0; x <= sprite.width; x += this.cellWidth)
-                for(let y = 0; y <= sprite.height; y += this.cellHeight)
-                    this.insertAtKey(left + x, top + y, sprite);
+            const xn = Math.ceil(sprite.width / this.cellWidth)
+            const yn = Math.ceil(sprite.height / this.cellHeight);
+            for(let x = 0; x <= xn; x ++)
+                for(let y = 0; y <= yn; y ++)
+                    this.insertAtKey(left + Math.min(sprite.width, x * this.cellWidth), top + Math.min(sprite.height, y * this.cellHeight), sprite)
         }
 
         private mergeAtKey(x: number, y: number, n: Sprite[]) {
