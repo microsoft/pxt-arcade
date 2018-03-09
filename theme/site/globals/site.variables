@@ -12,8 +12,8 @@
      Fonts
 --------------------*/
 
-@headerFont        : Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
-@pageFont          : Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
+@headerFont        : "Press-Start", Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
+@pageFont          : "Press-Start", Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
 
 @docsHeaderFont: @headerFont;
 @docsPageFont: @pageFont;
@@ -73,7 +73,7 @@
 
 @simulatorBackground: #2c3e50;
 @editorToolsBackground: @simulatorBackground;
-@blocklySvgColor: #ecf0f1;
+@blocklySvgColor: #E0E4F1;
 
 @homeScreenBackground: #ecf0f1;
 
