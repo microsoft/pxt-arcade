@@ -57,12 +57,10 @@ namespace sprites {
         overlaps(sprite: Sprite): Sprite[] {
             const n = this.neighbors(sprite);
             const o = n.filter(neighbor => sprite.collidesWith(neighbor));
-            console.log(`overlaps ${sprite} -> ${n.length} -> ${o.length}`)
             return o;
         }
 
         draw() {
-            console.log(`sprites draw`)
             for(let x = 0; x < this.columnCount; ++x) {
                 for(let y = 0; y < this.rowCount; ++y) {
                     const left = x * this.cellWidth;
@@ -104,8 +102,6 @@ namespace sprites {
 
             for (const sprite of this.sprites)
                 this.insertAABB(sprite);
-
-            console.log(`${this}, ${this.cellWidth}, ${this.cellHeight}, ${this.columnCount}, ${this.rowCount}`)
         }
 
         private clearBuckets() {

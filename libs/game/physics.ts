@@ -28,7 +28,8 @@ class ArcadePhysicsEngine extends PhysicsEngine {
     }
 
     addSprite(sprite: Sprite) {
-        this.sprites.insert(sprite);
+        if (!(sprite.flags & sprites.Flag.Ghost))
+            this.sprites.insert(sprite);
     }
 
     draw() {
@@ -54,7 +55,6 @@ class ArcadePhysicsEngine extends PhysicsEngine {
             }
         }
 
-        // collsiion detection
         this.sprites.update();
 
         // update sprite positions
@@ -66,9 +66,7 @@ class ArcadePhysicsEngine extends PhysicsEngine {
     }
 
     collides(sprite: Sprite): Sprite[] {
-        const r = this.sprites.overlaps(sprite);
-        console.log(`collides: ${r.length}`)
-        return r;
+        return this.sprites.overlaps(sprite);
     }
 }
 
