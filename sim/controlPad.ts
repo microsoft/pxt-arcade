@@ -5,7 +5,7 @@ namespace pxsim {
 
     const COMPONENT_WIDTH = 60;
     const DRAW_UNIT = COMPONENT_WIDTH / 3;
-    const PADDING = 20;
+    const PADDING = 30;
 
     const D_PAD_COLOR = "#dedede";
     const D_PAD_DOWN_COLOR = "#f4b342";
@@ -95,41 +95,41 @@ namespace pxsim {
                 ], DRAW_UNIT));
 
             // Draw the real touch pads
-            this.up = this.drawTouchPad(DRAW_UNIT, 0);
+            this.up = this.drawTouchPad(this.dPad, DRAW_UNIT, 0);
             this.bindPadEvents(this.up, Key.Up);
 
-            this.right = this.drawTouchPad(2 * DRAW_UNIT, DRAW_UNIT);
+            this.right = this.drawTouchPad(this.dPad, 2 * DRAW_UNIT, DRAW_UNIT);
             this.bindPadEvents(this.right, Key.Right);
 
-            this.down = this.drawTouchPad(DRAW_UNIT, 2 * DRAW_UNIT);
+            this.down = this.drawTouchPad(this.dPad, DRAW_UNIT, 2 * DRAW_UNIT);
             this.bindPadEvents(this.down, Key.Down);
 
-            this.left = this.drawTouchPad(0, DRAW_UNIT);
+            this.left = this.drawTouchPad(this.dPad, 0, DRAW_UNIT);
             this.bindPadEvents(this.left, Key.Left);
 
             // Add some helpful diagonal touch pads
-            this.bindPadEvents(this.drawTouchPad(0, 0), [Key.Up, Key.Left]);
-            this.bindPadEvents(this.drawTouchPad(2 * DRAW_UNIT, 0), [Key.Up, Key.Right]);
-            this.bindPadEvents(this.drawTouchPad(0, 2 * DRAW_UNIT), [Key.Down, Key.Left]);
-            this.bindPadEvents(this.drawTouchPad(2 * DRAW_UNIT, 2 * DRAW_UNIT), [Key.Down, Key.Right]);
+            this.bindPadEvents(this.drawTouchPad(this.dPad, 0, 0), [Key.Up, Key.Left]);
+            this.bindPadEvents(this.drawTouchPad(this.dPad, 2 * DRAW_UNIT, 0), [Key.Up, Key.Right]);
+            this.bindPadEvents(this.drawTouchPad(this.dPad, 0, 2 * DRAW_UNIT), [Key.Down, Key.Left]);
+            this.bindPadEvents(this.drawTouchPad(this.dPad, 2 * DRAW_UNIT, 2 * DRAW_UNIT), [Key.Down, Key.Right]);
         }
 
-        protected drawTouchPad(x: number, y: number, width = DRAW_UNIT, height = DRAW_UNIT) {
-            const pad: s.Rect = this.dPad.draw("rect")
+        protected drawTouchPad(parent: s.Group, x: number, y: number, width = DRAW_UNIT, height = DRAW_UNIT) {
+            const pad: s.Rect = parent.draw("rect")
                 .at(x, y)
                 .fill(D_PAD_COLOR, 0)
-                .size(DRAW_UNIT, DRAW_UNIT);
+                .size(width, height);
             return pad;
         }
 
         protected bindPadEvents(pad: s.Rect, target: Key | Key[]) {
             const down = Array.isArray(target) ? 
-                () => target.forEach(key => this.mirrorKey(key, true)) :
-                () => this.mirrorKey(target, true);
+                () => target.forEach(key => board().handleKeyEvent(key, true)) :
+                () => board().handleKeyEvent(target, true);
             
             const up = Array.isArray(target) ? 
-                () => target.forEach(key => this.mirrorKey(key, false)) :
-                () => this.mirrorKey(target, false);
+                () => target.forEach(key => board().handleKeyEvent(key, false)) :
+                () => board().handleKeyEvent(target, false);
             
             pad.onDown(down);
             pad.onLeave(up);
@@ -160,7 +160,7 @@ namespace pxsim {
                 .anchor("middle")
                 .alignmentBaseline("middle");
 
-            this.bindPadEvents(this.drawTouchPad(cx - r, cy - r, r * 2, r * 2), key);
+            this.bindPadEvents(this.drawTouchPad(this.buttons, cx - r, cy - r, r * 2, r * 2), key);
 
             return button;
         }

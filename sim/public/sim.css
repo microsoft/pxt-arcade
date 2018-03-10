@@ -1,11 +1,8 @@
 body {
     font-size: 12px;
     color: white;
+    height: 100vh;
     font-family: Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace
-}
-
-svg {
-    width:100%;
 }
 
 .sprite {
@@ -28,11 +25,21 @@ canvas {
     flex-direction: column;
     align-content: center;
     justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 #paint-surface {
-    width: 80%;
-    height: 80%;
+    object-fit: contain;
+}
+
+#paint-surface-container {
+    width: 100%;
+    flex: 5;
+}
+
+#controls {
+    flex: 1;
 }
 
 .stats {

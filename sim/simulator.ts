@@ -120,11 +120,15 @@ namespace pxsim {
         setKey(which: number, isPressed: boolean) {
             let k = mapKey(which)
             if (k) {
-                this.lastKey = Date.now()
-                this.bus.queue(isPressed ? "_keydown" : "_keyup", k)
-                if (this.controls) {
-                    this.controls.mirrorKey(k, isPressed);
-                }
+                this.handleKeyEvent(k, isPressed);
+            }
+        }
+
+        handleKeyEvent(key: Key, isPressed: boolean) {
+            this.lastKey = Date.now()
+            this.bus.queue(isPressed ? "_keydown" : "_keyup", key)
+            if (this.controls) {
+                this.controls.mirrorKey(key, isPressed);
             }
         }
 
