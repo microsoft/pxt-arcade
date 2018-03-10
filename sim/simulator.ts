@@ -123,7 +123,7 @@ namespace pxsim {
                 this.lastKey = Date.now()
                 this.bus.queue(isPressed ? "_keydown" : "_keyup", k)
                 if (this.controls) {
-                    this.controls.handleKey(k, isPressed);
+                    this.controls.mirrorKey(k, isPressed);
                 }
             }
         }
@@ -184,6 +184,12 @@ namespace pxsim {
             this.canvas.width = 16;
             this.canvas.height = 16;
 
+            if (!this.controls) {
+                const controlDiv = document.getElementById("controls");
+                controlDiv.innerHTML = "";
+                this.controls = new ControlPad(controlDiv);
+            }
+
             let requested = false
 
             this.screenState.onChange = () => {
@@ -214,13 +220,6 @@ namespace pxsim {
             }
 
             let info = document.getElementById("instructions")
-            info.className = "info"
-            info.textContent = "Use arrows and Z,X."
-
-            if (!this.controls) {
-                this.controls = new ControlPad();
-                document.body.appendChild(this.controls.root.el);
-            }
 
             return Promise.resolve();
         }

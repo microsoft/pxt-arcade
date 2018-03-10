@@ -3,13 +3,17 @@
 namespace pxsim {
     import s = svgUtil;
 
-    const D_PAD_WIDTH = 60;
-    const DRAW_UNIT = D_PAD_WIDTH / 3;
+    const COMPONENT_WIDTH = 60;
+    const DRAW_UNIT = COMPONENT_WIDTH / 3;
+    const PADDING = 20;
+
     const D_PAD_COLOR = "#dedede";
     const D_PAD_DOWN_COLOR = "#f4b342";
 
     const BUTTON_COLOR = "#66bb77";
     const BUTTON_DOWN_COLOR = "#225533";
+
+    const aspectRatio = 2; // width / height
     
     export class ControlPad {
         root: s.SVG;
@@ -25,12 +29,12 @@ namespace pxsim {
         protected primary: s.Circle;
         protected secondary: s.Circle;
 
-        constructor() {
-            this.root = new s.SVG();
+        constructor(parent: Element) {
+            this.root = new s.SVG(parent);
             this.buildDom();
         }
 
-        public handleKey(key: Key, down: boolean) {
+        public mirrorKey(key: Key, down: boolean, realEvent?: boolean) {
             switch (key) {
                 case Key.Up:
                     this.setDpadState(this.up, down);
@@ -44,18 +48,28 @@ namespace pxsim {
                 case Key.Left:
                     this.setDpadState(this.left, down);
                     break;
+                case Key.A:
+                    this.setButtonState(this.primary, down);
+                    break;
+                case Key.B:
+                    this.setButtonState(this.secondary, down);
+                    break;
             }
         }
 
         protected buildDom() {
             this.drawDirectionalPad();
             this.drawButtonGroup();
-            this.layout(100);
+
+            const height = COMPONENT_WIDTH + PADDING * 2;
+            const width = height * aspectRatio;
+
+            this.dPad.translate(PADDING, PADDING);
+            this.buttons.translate(width - PADDING - COMPONENT_WIDTH, PADDING);
+
+            this.root.setAttribute("height", height).setAttribute("width", width);
         }
 
-        protected layout(width: number) {
-            this.buttons.translate(D_PAD_WIDTH + 20, 0);
-        }
 
         protected drawDirectionalPad() {
             this.dPad = this.root.group();
@@ -63,7 +77,8 @@ namespace pxsim {
             this.dPad.draw("polygon")
                 .at(0, 0)
                 .fill(D_PAD_COLOR)
-                .stroke("black", 2)
+                .stroke("black", 4)
+                .setAttribute("stroke-linejoin", "round")
                 .with(scale([
                     { x: 1, y: 0 },
                     { x: 2, y: 0 },
@@ -79,51 +94,83 @@ namespace pxsim {
                     { x: 1, y: 1 }
                 ], DRAW_UNIT));
 
-            // Draw the touch pads
-            this.up = this.drawPad(DRAW_UNIT, 0);
-            this.right = this.drawPad(2 * DRAW_UNIT, DRAW_UNIT);
-            this.down = this.drawPad(DRAW_UNIT, 2 * DRAW_UNIT);
-            this.left = this.drawPad(0, DRAW_UNIT);
+            // Draw the real touch pads
+            this.up = this.drawTouchPad(DRAW_UNIT, 0);
+            this.bindPadEvents(this.up, Key.Up);
+
+            this.right = this.drawTouchPad(2 * DRAW_UNIT, DRAW_UNIT);
+            this.bindPadEvents(this.right, Key.Right);
+
+            this.down = this.drawTouchPad(DRAW_UNIT, 2 * DRAW_UNIT);
+            this.bindPadEvents(this.down, Key.Down);
+
+            this.left = this.drawTouchPad(0, DRAW_UNIT);
+            this.bindPadEvents(this.left, Key.Left);
+
+            // Add some helpful diagonal touch pads
+            this.bindPadEvents(this.drawTouchPad(0, 0), [Key.Up, Key.Left]);
+            this.bindPadEvents(this.drawTouchPad(2 * DRAW_UNIT, 0), [Key.Up, Key.Right]);
+            this.bindPadEvents(this.drawTouchPad(0, 2 * DRAW_UNIT), [Key.Down, Key.Left]);
+            this.bindPadEvents(this.drawTouchPad(2 * DRAW_UNIT, 2 * DRAW_UNIT), [Key.Down, Key.Right]);
         }
 
-        protected drawPad(x: number, y: number) {
+        protected drawTouchPad(x: number, y: number, width = DRAW_UNIT, height = DRAW_UNIT) {
             const pad: s.Rect = this.dPad.draw("rect")
                 .at(x, y)
-                .fill(D_PAD_COLOR)
-                .size(DRAW_UNIT, DRAW_UNIT)
-                .onDown(() => this.setDpadState(pad, true))
-                .onLeave(() => this.setDpadState(pad, false))
-                .onUp(() => this.setDpadState(pad, false));
+                .fill(D_PAD_COLOR, 0)
+                .size(DRAW_UNIT, DRAW_UNIT);
             return pad;
+        }
+
+        protected bindPadEvents(pad: s.Rect, target: Key | Key[]) {
+            const down = Array.isArray(target) ? 
+                () => target.forEach(key => this.mirrorKey(key, true)) :
+                () => this.mirrorKey(target, true);
+            
+            const up = Array.isArray(target) ? 
+                () => target.forEach(key => this.mirrorKey(key, false)) :
+                () => this.mirrorKey(target, false);
+            
+            pad.onDown(down);
+            pad.onLeave(up);
+            pad.onUp(up);
+            pad.onEnter(isDown => isDown ? down() : up());
         }
 
         protected drawButtonGroup() {
             this.buttons = this.root.group();
 
-            // Arranged inside the d-pad
-            this.primary = this.drawButton("A", 2.5 * DRAW_UNIT, 1.5 * DRAW_UNIT);
-            this.secondary = this.drawButton("B", 1.5 * DRAW_UNIT, 2.5 * DRAW_UNIT);
+            this.primary = this.drawButton("A", 2.5 * DRAW_UNIT, DRAW_UNIT, Key.A);
+            this.secondary = this.drawButton("B", 0.75 * DRAW_UNIT, 2.5 * DRAW_UNIT, Key.B);
         }
 
-        protected drawButton(symbol: string, cx: number, cy: number) {
+        protected drawButton(symbol: string, cx: number, cy: number, key: Key) {
+            const r = DRAW_UNIT * 0.75;
+
             const button: s.Circle = this.buttons.draw("circle")
                 .at(cx, cy)
-                .radius(DRAW_UNIT / 2)
+                .radius(r)
                 .fill(BUTTON_COLOR)
-                .stroke(BUTTON_DOWN_COLOR, 2)
-                .onDown(() => this.setButtonState(button, true))
-                .onLeave(() => this.setButtonState(button, false))
-                .onUp(() => this.setButtonState(button, false));
+                .stroke(BUTTON_DOWN_COLOR, 2);
+            
+            this.buttons.draw("text")
+                .at(cx, cy)
+                .text(symbol)
+                .fill("white")
+                .anchor("middle")
+                .alignmentBaseline("middle");
+
+            this.bindPadEvents(this.drawTouchPad(cx - r, cy - r, r * 2, r * 2), key);
 
             return button;
         }
 
         protected setDpadState(pad: s.Rect, down: boolean) {
             if (down) {
-                pad.fill(D_PAD_DOWN_COLOR);
+                pad.fill(D_PAD_DOWN_COLOR, 1);
             }
             else {
-                pad.fill(D_PAD_COLOR);
+                pad.fill(D_PAD_COLOR, 0);
             }
         }
 

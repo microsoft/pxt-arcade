@@ -3,7 +3,7 @@ namespace svgUtil {
         [index: string]: T;
     };
 
-    export type Handler = () => void;
+    export type PointerHandler = () => void;
 
     export enum PatternUnits {
         userSpaceOnUse = 0,
@@ -169,9 +169,9 @@ namespace svgUtil {
     }
 
     export class Drawable<T extends SVGElement> extends BaseElement<T> {
-        protected downHandler: Handler;
-        protected upHandler: Handler;
-        protected clickHandler: Handler;
+        protected downHandler: PointerHandler;
+        protected upHandler: PointerHandler;
+        protected clickHandler: PointerHandler;
         private eventsReady = false;
 
         at(x: number, y: number): this {
@@ -212,27 +212,27 @@ namespace svgUtil {
             return this.setAttribute("stroke-opacity", opacity);
         }
 
-        onDown(handler: Handler): this {
+        onDown(handler: PointerHandler): this {
             events.down(this.el, handler);
             return this;
         }
 
-        onUp(handler: Handler): this {
+        onUp(handler: PointerHandler): this {
             events.up(this.el, handler);
             return this;
         }
 
-        onMove(handler: Handler): this {
+        onMove(handler: PointerHandler): this {
             events.move(this.el, handler);
             return this;
         }
 
-        onEnter(handler: Handler): this {
+        onEnter(handler: (isDown: boolean) => void): this {
             events.enter(this.el, handler);
             return this;
         }
 
-        onLeave(handler: Handler): this {
+        onLeave(handler: PointerHandler): this {
             events.leave(this.el, handler);
             return this;
         }
@@ -250,6 +250,14 @@ namespace svgUtil {
         text(text: string): this {
             this.el.textContent = text;
             return this;
+        }
+
+        alignmentBaseline(type: string) {
+            return this.setAttribute("alignment-baseline", type);
+        }
+
+        anchor(type: "start" | "middle" | "end" | "inherit") {
+            return this.setAttribute("text-anchor", type);
         }
     }
 
@@ -575,15 +583,21 @@ namespace svgUtil.events {
         }
     }
 
-    export function enter(el: SVGElement, handler: () => void) {
+    export function enter(el: SVGElement, handler: (isDown: boolean) => void) {
         if (hasPointerEvents()) {
-            el.addEventListener("pointerenter", handler);
+            el.addEventListener("pointerover", e => {
+                handler(!!(e.buttons & 1))
+            });
         }
         else if (isTouchEnabled()) {
-            el.addEventListener("touchenter", handler);
+            el.addEventListener("touchstart", e => {
+                handler(true);
+            });
         }
         else {
-            el.addEventListener("mouseenter", handler);
+            el.addEventListener("mouseover", e => {
+                handler(!!(e.buttons & 1))
+            });
         }
     }
 
@@ -613,5 +627,39 @@ namespace svgUtil.events {
 }
 
 namespace svgUtil.helpers {
-    
+    export class CenteredText extends Text {
+        protected cx: number;
+        protected cy: number;
+
+        protected fontSizePixels: number;
+
+        public at(cx: number, cy: number): this {
+            this.cx = cx;
+            this.cy = cy;
+            this.rePosition();
+
+            return this;
+        }
+
+        public text(text: string, fontSizePixels = 12) {
+            super.text(text);
+            this.fontSizePixels = fontSizePixels;
+            this.setAttribute("font-size", fontSizePixels + "px");
+
+            this.rePosition();
+
+            return this;
+        }
+
+        protected rePosition() {
+            if (this.cx == undefined || this.cy == undefined || this.fontSizePixels == undefined) {
+                return;
+            }
+
+            this.setAttribute("x", this.cx);
+            this.setAttribute("y", this.cy);
+            this.setAttribute("text-anchor", "middle");
+            this.setAttribute("alignment-baseline", "middle");
+        }
+    }
 }
