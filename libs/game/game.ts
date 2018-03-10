@@ -10,6 +10,7 @@ namespace game {
 
     let isOver = false
     let _waitAnyKey: () => void
+    let bgFunction = () => { }
 
     export function setWaitAnyKey(f: () => void) {
         _waitAnyKey = f
@@ -21,9 +22,48 @@ namespace game {
     }
 
     export function freeze() {
-        sprites.setBackgroundCallback(() => { })
+        setBackgroundCallback(() => { })
         loops.frame(() => { })
-        sprites.reset()
+        sprites.allSprites = [];
+    }
+
+    export function init() {
+        if (!sprites.allSprites) {
+            sprites.allSprites = []
+            game.setBackground(0)
+            control.addFrameHandler(10, () => {
+                const dt = control.deltaTime;
+                physics.engine.update(dt);
+                for (let s of sprites.allSprites)
+                    s._update(dt);
+            })
+            control.addFrameHandler(60, () => { bgFunction() })
+            control.addFrameHandler(90, () => {
+                // stack overflow
+                // allSprites.sort(function (a, b) { return a.z - b.z || a.id - b.id; })
+                for (let s of sprites.allSprites)
+                    s._draw()
+                if (game.debug)
+                    physics.engine.draw();
+            })
+        }
+    }    
+
+    export function setBackgroundCallback(f: () => void) {
+        init();
+        bgFunction = f
+    }
+
+    /**
+     * Sets the game background color
+     * @param color 
+     */
+    //% blockId=gamesetbackgroundcolor block="set background to %color"
+    export function setBackground(color: number) {
+        init();
+        bgFunction = () => {
+            screen.fill(color)
+        }
     }
 
     function showBackground(h: number, c: number) {

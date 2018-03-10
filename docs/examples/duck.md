@@ -78,7 +78,7 @@ keys.A.onPressed(function () {
     duck.vy = -100
 })
 
-sprites.setBackgroundColor(4)
+game.setBackground(4)
 loops.frame(function () {
     if (Math.random() < 0.02) {
         let s = sprites.launchParticle(cloudImg, -45, 0)
