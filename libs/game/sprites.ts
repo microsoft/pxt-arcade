@@ -151,7 +151,7 @@ class SpriteAnimation {
  * A state property from the sprite
  */
 //%
-enum SpriteSetProperty {
+enum SpriteWriteProperty {
     //% block=x
     X,
     //% block=y
@@ -170,7 +170,7 @@ enum SpriteSetProperty {
  * A state property from the sprite
  */
 //%
-enum SpriteGetProperty {
+enum SpriteReadProperty {
     //% block=x
     X,
     //% block=y
@@ -240,14 +240,14 @@ class Sprite {
          */
         //% blockNamespace=Sprites
         //% blockId=spritesspreiteset block="set %sprite %property to %value" blockGap=8
-        public set(property: SpriteSetProperty, value: number) {
+        public set(property: SpriteWriteProperty, value: number) {
             switch (property) {
-                case SpriteSetProperty.X: this.x = value; break;
-                case SpriteSetProperty.Y: this.y = value; break;
-                case SpriteSetProperty.VX: this.vx = value; break;
-                case SpriteSetProperty.VY: this.vy = value; break;
-                case SpriteSetProperty.AX: this.ax = value; break;
-                case SpriteSetProperty.AY: this.ay = value; break;
+                case SpriteWriteProperty.X: this.x = value; break;
+                case SpriteWriteProperty.Y: this.y = value; break;
+                case SpriteWriteProperty.VX: this.vx = value; break;
+                case SpriteWriteProperty.VY: this.vy = value; break;
+                case SpriteWriteProperty.AX: this.ax = value; break;
+                case SpriteWriteProperty.AY: this.ay = value; break;
             }
         }
 
@@ -258,14 +258,14 @@ class Sprite {
          */
         //% blockNamespace=Sprites
         //% blockId=spritespsritechange block="change %sprite %property by %value" blockGap=8
-        public changeBy(property: SpriteSetProperty, value: number) {
+        public changeBy(property: SpriteWriteProperty, value: number) {
             switch (property) {
-                case SpriteSetProperty.X: this.x += value; break;
-                case SpriteSetProperty.Y: this.y += value; break;
-                case SpriteSetProperty.VX: this.vx += value; break;
-                case SpriteSetProperty.VY: this.vy += value; break;
-                case SpriteSetProperty.AX: this.ax += value; break;
-                case SpriteSetProperty.AY: this.ay += value; break;
+                case SpriteWriteProperty.X: this.x += value; break;
+                case SpriteWriteProperty.Y: this.y += value; break;
+                case SpriteWriteProperty.VX: this.vx += value; break;
+                case SpriteWriteProperty.VY: this.vy += value; break;
+                case SpriteWriteProperty.AX: this.ax += value; break;
+                case SpriteWriteProperty.AY: this.ay += value; break;
             }
         }
 
@@ -275,21 +275,21 @@ class Sprite {
          */
         //% blockNamespace=Sprites
         //% blockId=spritespspriteget block="%sprite %property"
-        public get(property: SpriteGetProperty) {
+        public get(property: SpriteReadProperty) {
             switch (property) {
-                case SpriteGetProperty.X: return this.x;
-                case SpriteGetProperty.Y: return this.y;
-                case SpriteGetProperty.Left: return this.left;
-                case SpriteGetProperty.Right: return this.right;
-                case SpriteGetProperty.Top: return this.top;
-                case SpriteGetProperty.Bottom: return this.bottom;
-                case SpriteGetProperty.Width: return this.width;
-                case SpriteGetProperty.Height: return this.height;
-                case SpriteGetProperty.Y: return this.y;
-                case SpriteGetProperty.VX: return this.vx;
-                case SpriteGetProperty.VY: return this.vy;
-                case SpriteGetProperty.AX: return this.ax;
-                case SpriteGetProperty.AY: return this.ay;
+                case SpriteReadProperty.X: return this.x;
+                case SpriteReadProperty.Y: return this.y;
+                case SpriteReadProperty.Left: return this.left;
+                case SpriteReadProperty.Right: return this.right;
+                case SpriteReadProperty.Top: return this.top;
+                case SpriteReadProperty.Bottom: return this.bottom;
+                case SpriteReadProperty.Width: return this.width;
+                case SpriteReadProperty.Height: return this.height;
+                case SpriteReadProperty.Y: return this.y;
+                case SpriteReadProperty.VX: return this.vx;
+                case SpriteReadProperty.VY: return this.vy;
+                case SpriteReadProperty.AX: return this.ax;
+                case SpriteReadProperty.AY: return this.ay;
                 default: return 0;
             }
         }
