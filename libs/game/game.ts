@@ -3,6 +3,11 @@
  **/
 //% color=#008272 weight=99 icon="\uf11b"
 namespace game {
+    /**
+     * Determins if diagnostics are shown
+     */
+    export let debug = false;
+
     let isOver = false
     let _waitAnyKey: () => void
 

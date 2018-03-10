@@ -26,16 +26,19 @@ namespace sprites {
             allSprites = []
             setBackgroundColor(0)
             control.addFrameHandler(10, () => {
+                const dt = control.deltaTime;
+                physics.engine.update(dt);
                 for (let s of allSprites)
-                    s._update(control.deltaTime)
-                for (let s of allSprites)
-                    s._collisions()
+                    s._update(control.deltaTime);
             })
             control.addFrameHandler(60, () => { bgFunction() })
             control.addFrameHandler(90, () => {
-                allSprites.sort((a, b) => a.z - b.z || a.id - b.id)
+                // stack overflow
+                // allSprites.sort(function (a, b) { return a.z - b.z || a.id - b.id; })
                 for (let s of allSprites)
                     s._draw()
+                if (game.debug)
+                    physics.engine.draw();
             })
         }
     }
@@ -59,6 +62,7 @@ namespace sprites {
         let spr = new Sprite(img)
         allSprites.push(spr)
         spr.id = allSprites.length
+        physics.engine.addSprite(spr);
         return spr
     }
 
@@ -67,9 +71,10 @@ namespace sprites {
         s.animation = new SpriteAnimation(imgs)
         return s
     }
-    
+
     /**
-     * Create a new sprite with given speed, and place it at the edge of the screen so it moves towards the middle. The sprite auto-destroys when it leaves the screen. You can modify position after it's created.
+     * Create a new sprite with given speed, and place it at the edge of the screen so it moves towards the middle. 
+     * The sprite auto-destroys when it leaves the screen. You can modify position after it's created.
      */
     export function launchParticle(img: Image, vx: number, vy: number) {
         let s = create(img)
@@ -146,7 +151,7 @@ class Sprite {
 
     animation: SpriteAnimation
 
-    private collisionHandler: (other: Sprite) => void
+    collisionHandler: (other: Sprite) => void
     private wallHandler: () => void
     private destroyHandler: () => void
 
@@ -184,25 +189,27 @@ class Sprite {
 
     _draw() {
         screen.drawTransparentImage(this.image, this.left, this.top)
+        if (game.debug)
+            screen.drawRect(this.left, this.top, this.width, this.height, 3);
     }
 
     _update(dt: number) {
-        this.x += this.vx * dt
-        this.y += this.vy * dt
-        this.vx += this.ax * dt
-        this.vy += this.ay * dt
         if (this.animation)
             this.animation.update(this)
+        if (this.flags & sprites.Flag.AutoDestroy) {
+            if (this.right < 0 || this.bottom < 0 ||
+                this.left > screen.width ||
+                this.top > screen.height) {
+                this.destroy()
+            }
+        }
     }
 
     _collisions() {
         if (this.collisionHandler) {
-            for (let o of sprites.allSprites) {
-                if (this != o && this.collidesWith(o)) {
-                    let tmp = o
-                    control.runInBackground(() => this.collisionHandler(tmp))
-                }
-
+            for (let o of physics.engine.collides(this)) {
+                let tmp = o
+                control.runInBackground(() => this.collisionHandler(tmp))
             }
         }
 
@@ -216,13 +223,6 @@ class Sprite {
             }
         }
 
-        if (this.flags & sprites.Flag.AutoDestroy) {
-            if (this.right < 0 || this.bottom < 0 ||
-                this.left >= screen.width ||
-                this.top >= screen.height) {
-                this.destroy()
-            }
-        }
     }
 
     makeGhost() {
@@ -230,6 +230,7 @@ class Sprite {
     }
 
     collidesWith(other: Sprite) {
+        if (other == this) return false;
         if (this.flags & sprites.Flag.Ghost)
             return false
         if (other.flags & sprites.Flag.Ghost)
@@ -253,9 +254,14 @@ class Sprite {
         if (this.flags & sprites.Flag.Destroyed)
             return
         this.flags |= sprites.Flag.Destroyed
-        sprites.allSprites.removeElement(this)
+        sprites.allSprites.removeElement(this);
+        physics.engine.removeSprite(this);
         if (this.destroyHandler) {
             control.runInBackground(this.destroyHandler)
         }
+    }
+
+    toString() {
+        return `${this.id}(${this.x},${this.y})->(${this.vx},${this.vy})`;
     }
 }
