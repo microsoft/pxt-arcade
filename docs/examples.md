@@ -43,6 +43,12 @@ Here are some fun programs for your @boardname@!
   "cardType": "codeExample"
 },
 {
+  "name": "Jumper",
+  "description": "Another runner that jumps",
+  "url":"/examples/jumper",
+  "cardType": "codeExample"
+},
+{
   "name": "Mega Bounce",
   "description": "More and more bouncing balls",
   "url":"/examples/mega-bounce",
