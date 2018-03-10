@@ -40,10 +40,8 @@ class ArcadePhysicsEngine extends PhysicsEngine {
     }
 
     draw() {
-        if (game.debug) {
-            if (this.map) 
-                this.map.draw();
-        }
+        if (this.map)
+            this.map.draw();
     }
 
     update(dt: number) {
@@ -70,7 +68,7 @@ class ArcadePhysicsEngine extends PhysicsEngine {
         }
 
         // queue collision handlers
-        for(const sprite of collisioners)
+        for (const sprite of collisioners)
             sprite._collisions();
     }
 

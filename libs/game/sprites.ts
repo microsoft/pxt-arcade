@@ -37,7 +37,8 @@ namespace sprites {
                 // allSprites.sort(function (a, b) { return a.z - b.z || a.id - b.id; })
                 for (let s of allSprites)
                     s._draw()
-                physics.engine.draw();
+                if (game.debug)
+                    physics.engine.draw();
             })
         }
     }
