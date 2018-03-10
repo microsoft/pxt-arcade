@@ -9,10 +9,14 @@ Frame handlers:
 200 - screen refresh
 */
 
+/**
+ * Sprites on screen
+ */
+//% weight=98 color=#12592A icon="\uf111"
 namespace sprites {
     export let allSprites: Sprite[]
 
-    export function createFromBuffer(imgbuf: Buffer) {
+    function createFromBuffer(imgbuf: Buffer) {
         return create(image.ofBuffer(imgbuf))
     }
 
@@ -57,7 +61,12 @@ namespace sprites {
         }
     }
 
-    export function create(img: Image) {
+    /**
+     * Creates a new sprite from an image
+     * @param img the iamge
+     */
+    //% _blockId=spritescreate block="create %img"
+    export function create(img: Image): Sprite {
         init()
         let spr = new Sprite(img)
         allSprites.push(spr)
@@ -66,6 +75,11 @@ namespace sprites {
         return spr
     }
 
+    /**
+     * Creates a sprite from a sequence of images
+     * @param imgs an array of images
+     */
+    //% _blockId=spritescreateanimation block="create animated %images"
     export function createWithAnimation(imgs: Image[]) {
         let s = create(imgs[0])
         s.animation = new SpriteAnimation(imgs)
@@ -93,7 +107,7 @@ namespace sprites {
         else if (vy > 0)
             s.y = -(s.height >> 1) + 1
 
-        s.flags |= sprites.Flag.AutoDestroy
+        s.flags |= sprites.Flag.AutoDestroy;
 
         return s
     }
@@ -105,6 +119,7 @@ namespace sprites {
     }
 }
 
+//%
 class SpriteAnimation {
     frames: Image[]
     frameIdx: number
@@ -136,6 +151,60 @@ class SpriteAnimation {
     }
 }
 
+/**
+ * A state property from the sprite
+ */
+//%
+enum SpriteSetProperty {
+    //% block=x
+    X,
+    //% block=y
+    Y,
+    //% block="vx"
+    VX,
+    //% block="vy"
+    VY,
+    //% block="ax"
+    AX,
+    //% block="ay"
+    AY    
+}
+
+/**
+ * A state property from the sprite
+ */
+//%
+enum SpriteGetProperty {
+    //% block=x
+    X,
+    //% block=y
+    Y,
+    //% block="vx"
+    VX,
+    //% block="vy"
+    VY,
+    //% block="ax"
+    AX,
+    //% block="ay"
+    AY,
+    //% block=left
+    Left,
+    //% block=right
+    Right,
+    //% block=top
+    Top,
+    //% block=bottom
+    Bottom,
+    //% block=width
+    Width,
+    //% block=height
+    Height
+}
+
+/** 
+ * A sprite on screem 
+ **/
+//%
 class Sprite {
     x: number
     y: number
@@ -167,6 +236,67 @@ class Sprite {
         this.image = img
         this.type = 0
     }
+
+        /**
+         * Sets a property of the sprite
+         * @param property the name of the property to change
+         * @param the updated value
+         */
+        //% blockNamespace=Sprites
+        //% blockId=spritesspreiteset block="set %sprite %property to %value" blockGap=8
+        public set(property: SpriteSetProperty, value: number) {
+            switch (property) {
+                case SpriteSetProperty.X: this.x = value; break;
+                case SpriteSetProperty.Y: this.y = value; break;
+                case SpriteSetProperty.VX: this.vx = value; break;
+                case SpriteSetProperty.VY: this.vy = value; break;
+                case SpriteSetProperty.AX: this.ax = value; break;
+                case SpriteSetProperty.AY: this.ay = value; break;
+            }
+        }
+
+        /**
+         * Changes a property of the sprite
+         * @param property the name of the property to change
+         * @param value amount of change, eg: 1
+         */
+        //% blockNamespace=Sprites
+        //% blockId=spritespsritechange block="change %sprite %property by %value" blockGap=8
+        public changeBy(property: SpriteSetProperty, value: number) {
+            switch (property) {
+                case SpriteSetProperty.X: this.x += value; break;
+                case SpriteSetProperty.Y: this.y += value; break;
+                case SpriteSetProperty.VX: this.vx += value; break;
+                case SpriteSetProperty.VY: this.vy += value; break;
+                case SpriteSetProperty.AX: this.ax += value; break;
+                case SpriteSetProperty.AY: this.ay += value; break;
+            }
+        }
+
+        /**
+         * Gets a property of the sprite
+         * @param property the name of the property to change
+         */
+        //% blockNamespace=Sprites
+        //% blockId=spritespspriteget block="%sprite %property"
+        public get(property: SpriteGetProperty) {
+            switch (property) {
+                case SpriteGetProperty.X: return this.x;
+                case SpriteGetProperty.Y: return this.y;
+                case SpriteGetProperty.Left: return this.left;
+                case SpriteGetProperty.Right: return this.right;
+                case SpriteGetProperty.Top: return this.top;
+                case SpriteGetProperty.Bottom: return this.bottom;
+                case SpriteGetProperty.Width: return this.width;
+                case SpriteGetProperty.Height: return this.height;
+                case SpriteGetProperty.Y: return this.y;
+                case SpriteGetProperty.VX: return this.vx;
+                case SpriteGetProperty.VY: return this.vy;
+                case SpriteGetProperty.AX: return this.ax;
+                case SpriteGetProperty.AY: return this.ay;
+                default: return 0;
+            }
+        }
 
     get width() {
         return this.image.width
