@@ -58,7 +58,7 @@ function quicksort() {
 }
 
 
-// bubble()
+bubble()
 // quicksort()
 
 
