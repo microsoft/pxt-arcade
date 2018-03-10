@@ -16,10 +16,6 @@ Frame handlers:
 namespace sprites {
     export let allSprites: Sprite[]
 
-    function createFromBuffer(imgbuf: Buffer) {
-        return create(image.ofBuffer(imgbuf))
-    }
-
     export function reset() {
         init()
         allSprites = []
