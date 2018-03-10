@@ -26,10 +26,14 @@ namespace sprites {
             allSprites = []
             setBackgroundColor(0)
             control.addFrameHandler(10, () => {
-                physics.engine.update();
+                const dt = control.deltaTime;
+                physics.engine.update(dt);
+                for (let s of allSprites)
+                    s._update(control.deltaTime);
             })
             control.addFrameHandler(60, () => { bgFunction() })
             control.addFrameHandler(90, () => {
+                // stack overflow
                 allSprites.sort(function (a, b) { return a.z - b.z || a.id - b.id; })
                 for (let s of allSprites)
                     s._draw()
@@ -191,6 +195,13 @@ class Sprite {
     _update(dt: number) {
         if (this.animation)
             this.animation.update(this)
+        if (this.flags & sprites.Flag.AutoDestroy) {
+            if (this.right < 0 || this.bottom < 0 ||
+                this.left > screen.width ||
+                this.top > screen.height) {
+                this.destroy()
+            }
+        }
     }
 
     _collisions() {
@@ -211,13 +222,6 @@ class Sprite {
             }
         }
 
-        if (this.flags & sprites.Flag.AutoDestroy) {
-            if (this.right < 0 || this.bottom < 0 ||
-                this.left >= screen.width ||
-                this.top >= screen.height) {
-                this.destroy()
-            }
-        }
     }
 
     makeGhost() {
@@ -249,7 +253,8 @@ class Sprite {
         if (this.flags & sprites.Flag.Destroyed)
             return
         this.flags |= sprites.Flag.Destroyed
-        sprites.allSprites.removeElement(this)
+        sprites.allSprites.removeElement(this);
+        physics.engine.removeSprite(this);
         if (this.destroyHandler) {
             control.runInBackground(this.destroyHandler)
         }

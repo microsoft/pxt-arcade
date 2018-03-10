@@ -8,12 +8,14 @@ class PhysicsEngine {
      */
     addSprite(sprite: Sprite) { }
 
+    removeSprite(sprite: Sprite) { }
+
     draw() { }
 
     /**
      * Compute physic information before rendering
      */
-    update() {
+    update(dt: number) {
     }
 }
 
@@ -33,17 +35,19 @@ class ArcadePhysicsEngine extends PhysicsEngine {
         this.sprites.push(sprite);
     }
 
-    draw() {
-        if (game.debug)
-            this.map.draw();
+    removeSprite(sprite: Sprite) {
+        this.sprites.removeElement(sprite);
     }
 
-    update() {
-        const dt = control.deltaTime;
-        const dt2 = dt / 2;
+    draw() {
+        if (game.debug) {
+            if (this.map) 
+                this.map.draw();
+        }
+    }
 
-        // remove dead sprites
-        this.sprites = this.sprites.filter(sprite => !(sprite.flags & sprites.Flag.Destroyed));
+    update(dt: number) {
+        const dt2 = dt / 2;
 
         // update sprite positions
         for (let s of this.sprites) {
@@ -53,7 +57,6 @@ class ArcadePhysicsEngine extends PhysicsEngine {
             s.vy += s.ay * dt
             s.x += (ovx + s.vx) * dt2;
             s.y += (ovy + s.vy) * dt2;
-            s._update(dt)
         }
 
         // update physics of non-ghosts
@@ -66,10 +69,9 @@ class ArcadePhysicsEngine extends PhysicsEngine {
             this.map.update(colliders);
         }
 
-        // update sprite collisions
-        for (let s of collisioners) {
-            s._collisions();
-        }
+        // queue collision handlers
+        for(const sprite of collisioners)
+            sprite._collisions();
     }
 
     collides(sprite: Sprite): Sprite[] {
