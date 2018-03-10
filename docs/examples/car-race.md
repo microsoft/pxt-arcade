@@ -5,7 +5,7 @@ Example
 ```blocks
 game.splash("Car Race", "Avoid the borders!")
 
-const car = sprite.create(img`
+const car = sprites.create(img`
  . . 9 9 
  . 4 9 9 4
  . 4 9 9 4
@@ -50,7 +50,7 @@ function drive(lines: number) {
 
 drive(128)
 ddx = 1
-const road = sprite.create(roadImg)
+const road = sprites.create(roadImg)
 
 car.onCollision(function (other: Sprite) {
     game.over()
@@ -65,7 +65,7 @@ loops.frame(function () {
     pos += 1 + Math.sqrt(control.millis()) / 200.0
     drive(pos - prevPos)
     prevPos = pos | 0
-    game.setScore(prevPos >> 6)
+    hud.setScore(prevPos >> 6)
     car.x += keys.dx(70)
 })
 ```

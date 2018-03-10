@@ -135,3 +135,10 @@ namespace pxsim.control {
         return b.bus.nextNotifyEvent++;
     }
 }
+
+namespace pxsim.game {
+    export function takeScreenshot() {
+        const b = board();
+        b.tryScreenshot();
+    }
+}

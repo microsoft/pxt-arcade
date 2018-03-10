@@ -168,13 +168,18 @@ namespace pxsim {
 
         tryScreenshot() {
             let now = Date.now()
-            // if there was a key since last screenshot and at least 100ms ago, and last screenshot was at least 3s ago, record a new one
+            // if there was a key since last screenshot and at least 100ms ago, 
+            // and last screenshot was at least 3s ago, record a new one
             if (now - this.lastScreenshotTime > 3000 &&
                 this.lastKey < now - 100 &&
-                (!this.lastScreenshot || this.lastKey > this.lastScreenshotTime)) {
-                this.lastScreenshot = this.screenState.screen.slice(0)
-                this.lastScreenshotTime = now
-            }
+                (!this.lastScreenshot || this.lastKey > this.lastScreenshotTime))
+                this.takeScreenshot();
+        }
+
+        takeScreenshot() {
+            let now = Date.now()
+            this.lastScreenshot = this.screenState.screen.slice(0)
+            this.lastScreenshotTime = now
         }
 
         initAsync(msg: pxsim.SimulatorRunMessage): Promise<void> {

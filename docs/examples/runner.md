@@ -32,7 +32,7 @@ let frames = [img`
 
 frames.map(f => f.replace(3, 10))
 
-let jumper = sprite.createWithAnimation(frames)
+let jumper = sprites.createWithAnimation(frames)
 
 jumper.x = 20
 jumper.y = 70
@@ -46,13 +46,13 @@ function newHouse() {
     let w = currHouse ? Math.randomRange(40, 80) : screen.width
     let img = image.create(w, 70)
     img.fill(Math.randomRange(2, 5))
-    let s = sprite.launchParticle(img, -80, 0)
+    let s = sprites.launchParticle(img, -80, 0)
     if (!currHouse) {
         s.y = 110
         s.x = screen.width / 2
     } else {
         s.y = Math.randomRange(100, currHouse.y + 8)
-        game.addToScore(1)
+        hud.changeScoreBy(1)
     }
     gap = Math.randomRange(5, 20)
     currHouse = s
