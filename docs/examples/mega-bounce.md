@@ -3,7 +3,7 @@
 ```blocks
 game.splash("Juggler", "Press arrows")
 
-sprites.setBackgroundColor(3);
+game.setBackground(3);
 // images
 let balls: Sprite[] = []
 
