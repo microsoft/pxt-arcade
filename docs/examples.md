@@ -49,6 +49,12 @@ Here are some fun programs for your @boardname@!
   "cardType": "codeExample"
 },
 {
+  "name": "Collisions",
+  "description": "Test collision perf",
+  "url":"/examples/collisons",
+  "cardType": "codeExample"
+},
+{
   "name": "Sorting",
   "description": "Visualize sorting algorithms",
   "url":"/examples/sorting",
