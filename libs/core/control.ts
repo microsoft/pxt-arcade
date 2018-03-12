@@ -154,14 +154,20 @@ function pauseUntil(condition: () => boolean, timeOut?: number): void {
     control.__queuePollEvent(timeOut, condition, undefined);
 }
 
+
+let __foreverCb: () => void = undefined;
 /**
  * Repeats the code forever in the background. On each iteration, allows other codes to run.
  * @param body code to execute
  */
 //% help=loops/forever weight=100 afterOnStart=true blockNamespace="loops"
-//% blockId=forever block="forever" blockAllowMultiple=1
+//% blockId=forever block="forever"
 function forever(a: () => void): void {
-    loops.forever(a);
+    if (!__foreverCb)
+        control.addFrameHandler(20, function() {
+            if (__foreverCb) __foreverCb();
+        });
+    __foreverCb = a;
 }
 
 /**
@@ -171,6 +177,6 @@ function forever(a: () => void): void {
 //% help=loops/pause weight=99
 //% async block="pause %pause=timePicker|ms"
 //% blockId=device_pause blockNamespace="loops"
+//% shims=loops::pause
 function pause(ms: number): void {
-    loops.pause(ms);
 }
