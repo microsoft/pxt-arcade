@@ -14,6 +14,7 @@
         "libs/screen",
         "libs/game",
         "libs/input",
+        "libs/music",
         "libs/device"
     ],
     "compile": {

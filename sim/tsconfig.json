@@ -11,6 +11,7 @@
     },
     "include": [
       "*.ts",
-      "../node_modules/pxt-common-packages/libs/screen/sim/*.ts"
+      "../node_modules/pxt-common-packages/libs/screen/sim/*.ts",
+      "../node_modules/pxt-common-packages/libs/music/sim/*.ts"
     ]
 }

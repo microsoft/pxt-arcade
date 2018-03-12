@@ -14,7 +14,7 @@ declare namespace loops {
      * @param ms how long to pause for, eg: 100, 200, 500, 1000, 2000
      */
     //% help=functions/pause weight=54
-    //% block="pause (ms) %pause" blockId=device_pause
+    //% block="pause (ms) %pause" blockId=device_pause_loops
     //% shim=loops::pauseAsync promise
     function pause(ms: number): void;
 
@@ -33,8 +33,8 @@ declare namespace control {
      * Listen to a event
      */
     //%
-    //% shim=control::on
-    function on(ev: string, arg: number, f: () => void): void;
+    //% shim=control::onEvent
+    function onEvent(ev: string, arg: number, f: () => void): void;
 
     /**
      * Generate an event

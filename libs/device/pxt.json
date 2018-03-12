@@ -11,6 +11,7 @@
         "core": "file:../core",
         "screen": "file:../screen",
         "input": "file:../input",
+        "music": "file:../music",
         "game": "file:../game"
     },
     "public": true

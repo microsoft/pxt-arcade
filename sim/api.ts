@@ -56,7 +56,7 @@ namespace pxsim.loops {
      * @param ms how long to pause for, eg: 100, 200, 500, 1000, 2000
      */
     //% help=functions/pause weight=54
-    //% block="pause (ms) %pause" blockId=device_pause
+    //% block="pause (ms) %pause" blockId=device_pause_loops
     export function pauseAsync(ms: number) {
         return Promise.delay(ms)
     }
@@ -81,7 +81,7 @@ namespace pxsim.control {
      * Listen to a event
      */
     //% 
-    export function on(ev: string, arg: number, f: RefAction) {
+    export function onEvent(ev: string, arg: number, f: RefAction) {
         board().bus.listen(ev, arg, f)
     }
 
@@ -123,7 +123,7 @@ namespace pxsim.control {
         const cb = getResume();
     }
 
-    export let runInBackground = thread.runInBackground;
+    export let runInParallel = thread.runInBackground;
 
     export function waitForEvent(id: string, evid: number) {
         const cb = getResume();

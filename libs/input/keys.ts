@@ -8,13 +8,13 @@ namespace keys {
             this.id = id
             this._pressed = false
             this.checked = false
-            control.on("_keyup", id, () => {
+            control.onEvent("_keyup", id, () => {
                 if (this._pressed) {
                     this._pressed = false
                     control.raiseEvent("keyup", id)
                 }
             })
-            control.on("_keydown", id, () => {
+            control.onEvent("_keydown", id, () => {
                 if (!this._pressed) {
                     this._pressed = true
                     this.checked = false
@@ -25,11 +25,11 @@ namespace keys {
         }
 
         onPressed(f: () => void) {
-            control.on("keydown", this.id, f)
+            control.onEvent("keydown", this.id, f)
         }
 
         onReleased(f: () => void) {
-            control.on("keyup", this.id, f)
+            control.onEvent("keyup", this.id, f)
         }
 
         isPressed() {
