@@ -29,6 +29,10 @@ canvas {
     height: 100%;
 }
 
+.has-focus {
+    border: 5px solid orange;
+}
+
 #paint-surface {
     object-fit: contain;
     display: inline;
