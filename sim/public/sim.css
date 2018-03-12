@@ -1,11 +1,8 @@
 body {
     font-size: 12px;
     color: white;
+    height: 100vh;
     font-family: Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace
-}
-
-svg {
-    width:100%;
 }
 
 .sprite {
@@ -20,7 +17,38 @@ canvas {
 	image-rendering: -webkit-optimize-contrast;
 	image-rendering: optimize-contrast;
 	image-rendering: pixelated;
-	-ms-interpolation-mode: nearest-neighbor;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+#screen {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#paint-surface {
+    object-fit: contain;
+    display: inline;
+    height: 100%;
+}
+
+#paint-surface-container {
+    width: 100%;
+    flex: 5;
+    text-align: center;
+}
+
+#debug-stats {
+    position: absolute;
+    top: 90%;
+    left: 0;
+}
+
+#controls {
+    flex: 1;
 }
 
 .stats {
