@@ -57,7 +57,7 @@ Here are some fun programs for your @boardname@!
 {
   "name": "Collisions",
   "description": "Test collision perf",
-  "url":"/examples/collisons",
+  "url":"/examples/collisions",
   "cardType": "codeExample"
 },
 {
