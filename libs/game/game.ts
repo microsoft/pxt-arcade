@@ -135,7 +135,7 @@ namespace game {
         isOver = true
         control.clearHandlers()
         control.runInParallel(() => {
-            music.playSoundUntilDone(music.sounds(Sounds.Wawawawaa))
+            music.playSound(music.sounds(Sounds.Wawawawaa))
             meltScreen();
             let top = showBackground(44, 4)
             screen.printCenter("GAME OVER!", top + 8, 5, image.font8)
