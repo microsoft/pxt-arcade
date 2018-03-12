@@ -56,7 +56,7 @@ namespace pxsim.loops {
      * @param ms how long to pause for, eg: 100, 200, 500, 1000, 2000
      */
     //% help=functions/pause weight=54
-    //% block="pause (ms) %pause" blockId=device_pause
+    //% block="pause (ms) %pause" blockId=device_pause_loops
     export function pauseAsync(ms: number) {
         return Promise.delay(ms)
     }
