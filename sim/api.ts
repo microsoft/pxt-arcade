@@ -81,7 +81,7 @@ namespace pxsim.control {
      * Listen to a event
      */
     //% 
-    export function on(ev: string, arg: number, f: RefAction) {
+    export function onEvent(ev: string, arg: number, f: RefAction) {
         board().bus.listen(ev, arg, f)
     }
 
@@ -123,7 +123,7 @@ namespace pxsim.control {
         const cb = getResume();
     }
 
-    export let runInBackground = thread.runInBackground;
+    export let runInParallel = thread.runInBackground;
 
     export function waitForEvent(id: string, evid: number) {
         const cb = getResume();

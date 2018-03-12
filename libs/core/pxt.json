@@ -8,6 +8,7 @@
         "buffer.d.ts",
         "enums.d.ts",
         "sims.d.ts",
+        "control.ts",
         "ns.ts"
     ],
     "testFiles": [

@@ -33,8 +33,8 @@ declare namespace control {
      * Listen to a event
      */
     //%
-    //% shim=control::on
-    function on(ev: string, arg: number, f: () => void): void;
+    //% shim=control::onEvent
+    function onEvent(ev: string, arg: number, f: () => void): void;
 
     /**
      * Generate an event

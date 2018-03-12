@@ -294,7 +294,7 @@ class Sprite {
         if (this.collisionHandler) {
             for (let o of physics.engine.collides(this)) {
                 let tmp = o
-                control.runInBackground(() => this.collisionHandler(tmp))
+                control.runInParallel(() => this.collisionHandler(tmp))
             }
         }
 
@@ -304,7 +304,7 @@ class Sprite {
                 0 <= this.y && this.y < screen.height) {
                 // OK
             } else {
-                control.runInBackground(this.wallHandler)
+                control.runInParallel(this.wallHandler)
             }
         }
 
@@ -342,7 +342,7 @@ class Sprite {
         sprites.allSprites.removeElement(this);
         physics.engine.removeSprite(this);
         if (this.destroyHandler) {
-            control.runInBackground(this.destroyHandler)
+            control.runInParallel(this.destroyHandler)
         }
     }
 
