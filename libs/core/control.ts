@@ -154,22 +154,6 @@ function pauseUntil(condition: () => boolean, timeOut?: number): void {
     control.__queuePollEvent(timeOut, condition, undefined);
 }
 
-
-let __foreverCb: () => void = undefined;
-/**
- * Repeats the code forever in the background. On each iteration, allows other codes to run.
- * @param body code to execute
- */
-//% help=loops/forever weight=100 afterOnStart=true blockNamespace="loops"
-//% blockId=forever block="forever"
-function forever(a: () => void): void {
-    if (!__foreverCb)
-        control.addFrameHandler(20, function() {
-            if (__foreverCb) __foreverCb();
-        });
-    __foreverCb = a;
-}
-
 /**
  * Pause for the specified time in milliseconds
  * @param ms how long to pause for, eg: 100, 200, 500, 1000, 2000

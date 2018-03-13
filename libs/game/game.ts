@@ -23,7 +23,7 @@ namespace game {
 
     export function freeze() {
         setBackgroundCallback(() => { })
-        forever(() => { })
+        frame(() => { })
         sprites.allSprites = [];
     }
 
