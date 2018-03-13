@@ -69,7 +69,7 @@ player.onCollision(function (other: Sprite) {
 
 
 let frameCount = 0;
-loops.frame(function () {
+frame(function () {
     // Periodically spawn an obstacle and increase the difficulty.
     // This math assumes the game is running at 60 FPS
     frameCount = (frameCount + 1) % Math.floor(60 / obstaclesPerSecond)

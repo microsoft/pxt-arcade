@@ -18,12 +18,12 @@ namespace game {
 
     export function waitAnyKey() {
         if (_waitAnyKey) _waitAnyKey()
-        else loops.pause(2000)
+        else pause(2000)
     }
 
     export function freeze() {
         setBackgroundCallback(() => { })
-        loops.frame(() => { })
+        frame(() => { })
         sprites.allSprites = [];
     }
 
@@ -120,7 +120,7 @@ namespace game {
                 screen.set(x, y + 1, c)
                 screen.set(x, y + 2, c)
             }
-            loops.pause(100)
+            pause(100)
         }
     }
 
@@ -141,7 +141,7 @@ namespace game {
             screen.printCenter("GAME OVER!", top + 8, 5, image.font8)
             if (hud.hasScore())
                 screen.printCenter("Score:" + hud.score(), top + 23, 2, image.font5)
-            loops.pause(1000) // wait for users to stop pressing keys
+            pause(1000) // wait for users to stop pressing keys
             waitAnyKey()
             control.reset()
         })
