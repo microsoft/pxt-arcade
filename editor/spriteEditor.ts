@@ -42,6 +42,9 @@ namespace mkcd {
         private rows: number = 16;
         private colors: string[];
 
+        private width: number;
+        private height: number;
+
         constructor() {
             this.colors = [
                 "#000000",
@@ -63,6 +66,7 @@ namespace mkcd {
 
             this.root = new svg.SVG();
 
+            // FIXME: This causes a ton of lag! Commenting out for now
             // The classic checkerboard alpha background
             // this.root.define((defs) => {
             //     const unit = BG_WIDTH / 2;
@@ -90,6 +94,16 @@ namespace mkcd {
                 style.el.textContent = `
                 .pixel-cell {
                     shape-rendering: crispedges;
+                }
+
+                .palette-selected {
+                    stroke: orange;
+                    stroke-width: 2px;
+                }
+
+                .palette-unselected {
+                    stroke: #dedede;
+                    stroke-width: 1px;
                 }
                 `
                 defs.el.appendChild(style.el);
@@ -132,19 +146,8 @@ namespace mkcd {
                 }
             });
             
-            // TODO: Figure out a different way to render the preview; using
-            // a Grid creates a lot of SVG elements.
-            this.preview = new mkcd.Grid({
-                rowLength: this.columns,
-                numCells: this.columns * this.rows,
-                cellWidth: Math.ceil(CELL_WIDTH / 5),
-                cellHeight: Math.ceil(CELL_WIDTH / 5),
-                cellClass: "pixel-cell"
-            });
-            
             this.group.appendChild(this.palette.getView());
             this.group.appendChild(this.paintSurface.getView());
-            this.group.appendChild(this.preview.getView());
             this.debugText = this.group.draw("text").attr({ "font-family": "segoe ui" });
 
             document.addEventListener("keydown", ev => {
@@ -214,15 +217,25 @@ namespace mkcd {
             const paletteScale = this.paintSurface.outerHeight() / this.palette.outerHeight();
             this.palette.scale(paletteScale);
 
-            this.palette.translate(0, 0);
+            this.palette.translate(MARGIN, MARGIN);
             
-            const paintLeft = this.palette.outerWidth() * paletteScale + MARGIN;
-            this.paintSurface.translate(paintLeft, 0);
-            this.preview.translate(paintLeft + this.paintSurface.outerWidth() + MARGIN, 0);
+            const paintLeft = MARGIN + this.palette.outerWidth() * paletteScale + MARGIN;
+            this.paintSurface.translate(paintLeft, MARGIN);
+
+            this.width = paintLeft + this.paintSurface.outerWidth() + MARGIN;
+            this.height = this.paintSurface.outerHeight() + MARGIN * 2;
 
             if (this.debugText) {
-                this.debugText.at(paintLeft, this.paintSurface.outerHeight() + MARGIN);
+                this.debugText.at(paintLeft, this.paintSurface.outerHeight() + MARGIN * 2);
             }
+        }
+
+        outerWidth() {
+            return this.width;
+        }
+
+        outerHeight() {
+            return this.height;
         }
 
         setTool(tool: PaintTool): void {
@@ -230,7 +243,11 @@ namespace mkcd {
             this.debug("Set tool to " + PaintTool[tool]);
         }
 
-        private rePaint() {
+        setPreview(preview: Grid) {
+            this.preview = preview;
+        } 
+
+        public rePaint() {
             for (let c = 0; c < this.columns; c++) {
                 for (let r = 0; r < this.rows; r++) {
                     this.paintCell(c, r, this.displayState.get(c, r));
@@ -279,7 +296,10 @@ namespace mkcd {
 
         private paintCell(col: number, row: number, color: number) {
             this.paintSurface.setCellColor(col, row, this.palette.colorForIndex(color));
-            this.preview.setCellColor(col, row, this.palette.colorForIndex(color));
+
+            if (this.preview) {
+                this.preview.setCellColor(col, row, this.palette.colorForIndex(color));
+            }
         }
         
         private newEdit(color: number) {

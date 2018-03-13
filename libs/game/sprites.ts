@@ -67,6 +67,16 @@ namespace sprites {
         return s
     }
 
+        /**
+     * Creates a new sprite from an image
+     * @param img the iamge
+     */
+    //% blockId=spritescreatetest block="TEST %img"
+    //% img.fieldEditor="sprite"
+    export function testCreate(img: string): string {
+        return undefined;
+    }
+
     export enum Flag {
         Ghost = 1, // doesn't collide with other sprites
         Destroyed = 2,

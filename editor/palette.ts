@@ -8,9 +8,8 @@ namespace mkcd {
         rowLength: number;
         emptySwatchDisabled: boolean;
         emptySwatchFill: string;
-        selectBorderWidth: number;
-        selectBorderColor: string;
-        selectBorderOpacity: number;
+        selectedClass: string;
+        unselectedClass: string;
     }
 
     export class ColorPalette extends Grid {
@@ -51,12 +50,10 @@ namespace mkcd {
         setCellHighlighted(index: number, highlighted: boolean)  {
             const cell = this.getCell(index);
             if (highlighted) {
-                cell.stroke(this.props.selectBorderColor, this.props.selectBorderWidth);
-                cell.strokeOpacity(this.props.selectBorderOpacity);
+                cell.setAttribute("class", this.props.selectedClass);
             }
             else {
-                cell.stroke(this.props.selectBorderColor, 0);
-                cell.strokeOpacity(0);
+                cell.setAttribute("class", this.props.unselectedClass);
             }
         }
 
@@ -65,6 +62,7 @@ namespace mkcd {
                 const cell = this.getCell(i);
                 cell.fill(this.colorForIndex(i));
                 cell.onDown(() => this.setSelected(i));
+                this.setCellHighlighted(i, false);
             }
             this.setSelected(0);
         }
@@ -76,9 +74,8 @@ namespace mkcd {
             rowLength: 4,
             emptySwatchDisabled: false,
             emptySwatchFill: "lightgrey",
-            selectBorderWidth: 2,
-            selectBorderColor: "black",
-            selectBorderOpacity: 0.5,
+            selectedClass: "palette-selected",
+            unselectedClass: "palette-unselected",
             cellWidth: 10,
             cellHeight: 10,
             columnMargin: 2,

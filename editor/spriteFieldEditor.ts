@@ -65,8 +65,14 @@ namespace pxt.editor {
         Blockly.DropDownDiv.clearContent();
         
         let contentDiv = Blockly.DropDownDiv.getContentDiv();
+        
         this.editor = new mkcd.SpriteEditor();
+        this.editor.setPreview(this.preview);
         this.editor.render(contentDiv);
+        this.editor.rePaint();
+
+        goog.style.setHeight(contentDiv, this.editor.outerHeight());
+        goog.style.setWidth(contentDiv, this.editor.outerWidth());
 
         Blockly.DropDownDiv.setColour(this.sourceBlock_.parentBlock_.getColour(), this.sourceBlock_.getColourTertiary());
         Blockly.DropDownDiv.showPositionedByBlock(this, this.sourceBlock_);
