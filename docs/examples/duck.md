@@ -79,7 +79,7 @@ keys.A.onPressed(function () {
 })
 
 game.setBackground(4)
-loops.frame(function () {
+frame(function () {
     if (Math.random() < 0.02) {
         let s = sprites.launchParticle(cloudImg, -45, 0)
         s.y = Math.randomRange(0, screen.height())

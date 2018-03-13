@@ -75,7 +75,7 @@ function show() {
 
 newFood()
 
-loops.frame(function () {
+frame(function () {
     if (keys.dx()) {
         dx = Math.sign(keys.dx())
         dy = 0

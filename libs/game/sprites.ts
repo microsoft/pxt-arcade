@@ -1,7 +1,7 @@
 /*
 Frame handlers:
  10 - physics and collisions
- 20 - loops.frame()
+ 20 - frame()
  60 - screen/sprite background
  90 - drawing sprites
  95 - drawing score

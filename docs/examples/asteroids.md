@@ -37,7 +37,7 @@ spaceship.onCollision(function (other: Sprite) {
 })
 spaceship.z = 10
 
-loops.frame(function () {
+frame(function () {
     spaceship.x += keys.dx(70)
     spaceship.x = Math.clamp(10, 118, spaceship.x)
 

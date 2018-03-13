@@ -68,7 +68,7 @@ jumper.onCollision(function (h: Sprite) {
     }
 })
 
-loops.frame(function () {
+frame(function () {
     if (keys.A.isPressed() && jumper.vy >= 0)
         jumper.vy = -100
 
