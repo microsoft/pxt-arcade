@@ -62,7 +62,8 @@
         "highContrast": true,
         "hasAudio": true,
         "allowPackageExtensions": true,
-        "homeScreenHero": "./static/hero.png",        
+        "homeScreenHero": "./static/hero.png",    
+        "extendEditor": true,    
         "blocklyOptions": { 
             "grid": {
                 "spacing": 45,
