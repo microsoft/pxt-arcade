@@ -161,6 +161,6 @@ function pauseUntil(condition: () => boolean, timeOut?: number): void {
 //% help=loops/pause weight=99
 //% async block="pause %pause=timePicker|ms"
 //% blockId=device_pause blockNamespace="loops"
-//% shims=loops::pause
+//% shim=pauseAsync promise
 function pause(ms: number): void {
 }
