@@ -1,12 +1,17 @@
 /**
  * Game transitions and dialog
  **/
-//% color=#008272 weight=99 icon="\uf11b"
+//% color=#008272 weight=99 icon="\uf1d8"
 namespace game {
+    export enum Flag {
+        NeedsSorting = 1 << 1,
+    }
+
     /**
      * Determins if diagnostics are shown
      */
     export let debug = false;
+    export let flags: number = 0;
 
     let isOver = false
     let _waitAnyKey: () => void
@@ -21,7 +26,7 @@ namespace game {
         else pause(2000)
     }
 
-    export function freeze() {
+    function freeze() {
         setBackgroundCallback(() => { })
         game.frame(() => { })
         sprites.allSprites = [];
@@ -35,16 +40,18 @@ namespace game {
                 const dt = control.deltaTime;
                 physics.engine.update(dt);
                 for (let s of sprites.allSprites)
-                    s._update(dt);
+                    s.__update(dt);
             })
             control.addFrameHandler(60, () => { bgFunction() })
             control.addFrameHandler(90, () => {
-                // stack overflow
-                // allSprites.sort(function (a, b) { return a.z - b.z || a.id - b.id; })
+                if (flags & Flag.NeedsSorting)
+                    sprites.allSprites.sort(function (a, b) { return a.z - b.z || a.id - b.id; })
                 for (let s of sprites.allSprites)
-                    s._draw()
+                    s.__draw()
                 if (game.debug)
                     physics.engine.draw();
+            
+                flags = 0;
             })
         }
     }    
@@ -111,7 +118,6 @@ namespace game {
     }
 
     function meltScreen() {
-        freeze()
         for (let i = 0; i < 10; ++i) {
             for (let j = 0; j < 1000; ++j) {
                 let x = Math.randomRange(0, screen.width - 1)
@@ -136,6 +142,7 @@ namespace game {
         control.clearHandlers()
         control.runInParallel(() => {
             music.playSound(music.sounds(Sounds.Wawawawaa))
+            freeze();
             meltScreen();
             let top = showBackground(44, 4)
             screen.printCenter("GAME OVER!", top + 8, 5, image.font8)
@@ -161,7 +168,7 @@ namespace game {
      * @param body code to execute
      */
     //% help=loops/frame weight=100 afterOnStart=true
-    //% blockId=frame block="frame"
+    //% blockId=frame block="game frame"
     export function frame(a: () => void): void {
         if (!__frameCb)
             control.addFrameHandler(20, function() {

@@ -1,4 +1,21 @@
+enum KeyEvent {
+    //% block="pressed"
+    Pressed,
+    //% block="released"
+    Released
+}
+
+/**
+ * Access to game keys
+ */
+//% weight=97 color="#5B0F4D" icon="\uf11b"
 namespace keys {
+    const eventNames = [
+        "keydown",
+        "keyup"
+    ];
+
+    //% fixedInstances
     export class Key {
         id: number
         private _pressed: boolean
@@ -24,18 +41,38 @@ namespace keys {
             })
         }
 
-        onPressed(f: () => void) {
-            control.onEvent("keydown", this.id, f)
+        /**
+         * Register code for a key event
+         */
+        //% weight=99 blockGap=8
+        //% blockId=keyonevent block="on %key **key** %event"
+        onEvent(event: KeyEvent, handler: () => void) {
+            control.onEvent(eventNames[event], this.id, handler);
         }
 
-        onReleased(f: () => void) {
-            control.onEvent("keyup", this.id, f)
-        }
+        /**
+         * Pauses until a key is pressed or released
+         */
+        //% weight=98 blockGap=8
+        //% blockId=keypauseuntil block="pause until %key **key** is %event"
+        pauseUntil(event: KeyEvent) {
+            control.waitForEvent(eventNames[event], this.id)
+        }        
 
+        /** 
+         * Indicates if the key is currently pressed
+        */
+        //% weight=96 blockGap=8
+        //% blockId=keyispressed block="is %key **key** pressed"
         isPressed() {
             return this._pressed
         }
 
+        /** 
+         * Indicates if the key was pressed since the last call
+        */
+        //% weight=95
+        //% blockId=keywaspressed block="was %key **key** pressed"
         wasPressed() {
             if (!this.checked) {
                 this.checked = true
@@ -43,20 +80,28 @@ namespace keys {
             }
             return false
         }
-
-        waitPressed() {
-            control.waitForEvent("keydown", this.id)
-        }
     }
 
+    //% fixedInstance block="left"
     export const Left = new Key(1)
+    //% fixedInstance block="up"
     export const Up = new Key(2)
+    //% fixedInstance block="right"
     export const Right = new Key(3)
+    //% fixedInstance block="down"
     export const Down = new Key(4)
+    //% fixedInstance block="A"
     export const A = new Key(5)
+    //% fixedInstance block="B"
     export const B = new Key(6)
 
-    export function dx(step = 100) {
+    /**
+     * Gets the horizontal movement, given the step and state of keys
+     * @param step the distance, eg: 100
+     */
+    //% weight=50 blockGap=8
+    //% blockId=keysdx block="dx %step"
+    export function dx(step: number) {
         if (keys.Left.isPressed())
             if (keys.Right.isPressed()) return 0
             else return -step * control.deltaTime
@@ -64,7 +109,13 @@ namespace keys {
         else return 0
     }
 
-    export function dy(step = 100) {
+    /**
+     * Gets the vertical movement, given the step and state of keys
+     * @param step the distance, eg: 100
+     */
+    //% weight=49
+    //% blockId=keysdy block="dy %step"
+    export function dy(step: number) {
         if (keys.Up.isPressed())
             if (keys.Down.isPressed()) return 0
             else return -step * control.deltaTime
@@ -72,7 +123,12 @@ namespace keys {
         else return 0
     }
 
-    export function waitAnyKey() {
+    /**
+     * Pauses the program until a key is pressed
+     */
+    //% weight=10
+    //% blockId=keypauseuntilanykey block="pause until any key"
+    export function pauseUntilAnyKey() {
         control.waitForEvent("keydown", 0)
     }
 }

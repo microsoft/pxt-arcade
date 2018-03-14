@@ -23,11 +23,11 @@ function nextLevel() {
         foodY = -1
         show()
         control.screenRefresh()
-        loops.pause(300)
+        pause(300)
     }
     level++
     game.showDialog("Level " + level, "")
-    loops.pause(1000)
+    pause(1000)
     lastFoodIndex = 1
     snake = [0x605, 0x505]
     time = 1
@@ -45,7 +45,12 @@ function inSnake(x: number, y: number) {
 }
 
 function newFood() {
-    if (++lastFoodIndex >= 5) nextLevel()
+    if (++lastFoodIndex >= 5) {
+        music.playSound(music.sounds(Sounds.PowerUp))
+        nextLevel()
+    } else {
+        music.playSound(music.sounds(Sounds.BaDing))
+    }
     do {
         foodX = Math.randomRange(1, w - 2)
         foodY = Math.randomRange(1, h - 2)
@@ -76,12 +81,12 @@ function show() {
 newFood()
 
 game.frame(function () {
-    if (keys.dx()) {
-        dx = Math.sign(keys.dx())
+    if (keys.dx(100)) {
+        dx = Math.sign(keys.dx(100))
         dy = 0
-    } else if (keys.dy()) {
+    } else if (keys.dy(100)) {
         dx = 0
-        dy = Math.sign(keys.dy())
+        dy = Math.sign(keys.dy(100))
     }
 
     time += control.deltaTime
@@ -111,6 +116,4 @@ game.frame(function () {
         time = 0
     }
 })
-
-
 ```

@@ -2,7 +2,7 @@
 
 A simple example
 
-```blocks
+```typescript
 game.splash("Falling Duck", "Z to jump")
 
 const duckImg = img`
@@ -57,31 +57,33 @@ duck.image.flipX()
 duck.x = 20
 duck.ay = 300
 
-duck.onCollision(function (other: Sprite) {
-    game.over()
-})
-duck.onHitWall(function () {
+duck.onOverlap(function (other: Sprite) {
     game.over()
 })
 
 function launchObstacle() {
-    prevObstacle = sprites.launchParticle(pimg, -30, 0)
+    prevObstacle = sprites.createProjectile(pimg, -30, 0)
     prevObstacle.y = Math.randomRange(30, 90)
-    prevObstacle.onDestroy(function () {
+    prevObstacle.type = 1;
+    prevObstacle.onDestroyed(function () {
         hud.changeScoreBy(1)
     })
 }
 
 launchObstacle()
 
-keys.A.onPressed(function () {
+keys.A.onEvent(KeyEvent.Pressed, function () {
     duck.vy = -100
 })
 
 game.setBackground(4)
 game.frame(function () {
+    if (duck.x < 0 || duck.x > screen.height) {
+        game.over();
+    }
+
     if (Math.random() < 0.02) {
-        let s = sprites.launchParticle(cloudImg, -45, 0)
+        let s = sprites.createProjectile(cloudImg, -45, 0)
         s.y = Math.randomRange(0, screen.height())
         s.z = -1
         s.flags |= sprites.Flag.Ghost
