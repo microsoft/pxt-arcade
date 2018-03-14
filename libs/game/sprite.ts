@@ -109,7 +109,7 @@ class Sprite {
             case SpriteProperty.Left: this.x = value + this.image.width / 2; break;
             case SpriteProperty.Right: this.x = value - this.image.width / 2; break;
             case SpriteProperty.Top: this.y = value + this.image.height / 2; break;
-            case SpriteProperty.Bottom: this.y = value + this.image.height / 2; break;
+            case SpriteProperty.Bottom: this.y = value - this.image.height / 2; break;
         }
     }
 
