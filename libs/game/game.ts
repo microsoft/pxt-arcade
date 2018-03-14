@@ -1,7 +1,7 @@
 /**
  * Game transitions and dialog
  **/
-//% color=#008272 weight=99 icon="\uf43c"
+//% color=#008272 weight=99 icon="\uf1d8"
 namespace game {
     export enum Flag {
         NeedsSorting = 1 << 1,

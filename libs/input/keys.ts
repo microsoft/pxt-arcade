@@ -8,7 +8,7 @@ enum KeyEvent {
 /**
  * Access to game keys
  */
-//% weight=70 color="#5B0F4D" icon="\uf11b"
+//% weight=81 color="#5B0F4D" icon="\uf11b"
 namespace keys {
     const eventNames = [
         "keydown",
@@ -44,15 +44,25 @@ namespace keys {
         /**
          * Register code for a key event
          */
-        //% weight=99
+        //% weight=99 blockGap=8
         //% blockId=keyonevent block="on %key **key** %event"
         onEvent(event: KeyEvent, handler: () => void) {
             control.onEvent(eventNames[event], this.id, handler);
         }
 
+        /**
+         * Pauses until a key is pressed or released
+         */
+        //% weight=98 blockGap=8
+        //% blockId=keypauseuntil block="pause until %key **key** is %event"
+        pauseUntil(event: KeyEvent) {
+            control.waitForEvent(eventNames[event], this.id)
+        }        
+
         /** 
          * Indicates if the key is currently pressed
         */
+        //% weight=96 blockGap=8
         //% blockId=keyispressed block="is %key **key** pressed"
         isPressed() {
             return this._pressed
@@ -61,6 +71,7 @@ namespace keys {
         /** 
          * Indicates if the key was pressed since the last call
         */
+        //% weight=95
         //% blockId=keywaspressed block="was %key **key** pressed"
         wasPressed() {
             if (!this.checked) {
@@ -68,14 +79,6 @@ namespace keys {
                 return this._pressed
             }
             return false
-        }
-
-        /**
-         * Pauses until a key is pressed or released
-         */
-        //% blockId=keypauseuntil block="pause until %key **key** is %event"
-        pauseUntil(event: KeyEvent) {
-            control.waitForEvent(eventNames[event], this.id)
         }
     }
 
@@ -96,6 +99,7 @@ namespace keys {
      * Gets the horizontal movement, given the step and state of keys
      * @param step the distance, eg: 100
      */
+    //% weight=50 blockGap=8
     //% blockId=keysdx block="dx %step"
     export function dx(step: number) {
         if (keys.Left.isPressed())
@@ -109,6 +113,7 @@ namespace keys {
      * Gets the vertical movement, given the step and state of keys
      * @param step the distance, eg: 100
      */
+    //% weight=49
     //% blockId=keysdy block="dy %step"
     export function dy(step: number) {
         if (keys.Up.isPressed())
@@ -121,7 +126,8 @@ namespace keys {
     /**
      * Pauses the program until a key is pressed
      */
-    //% blockId=keypauseuntil block="pause until any key"
+    //% weight=10
+    //% blockId=keypauseuntilanykey block="pause until any key"
     export function pauseUntilAnyKey() {
         control.waitForEvent("keydown", 0)
     }
