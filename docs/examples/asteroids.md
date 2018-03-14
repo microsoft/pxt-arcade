@@ -51,7 +51,7 @@ game.frame(function () {
         let m = sprites.launchParticle(img`f`, 0, 40)
         m.x = Math.randomRange(0, 128)
         m.type = 2;
-        m.makeGhost()
+        m.setGhost()
     }
     let now = control.millis()
     if (keys.A.wasPressed()) {

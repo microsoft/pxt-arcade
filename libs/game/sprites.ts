@@ -324,7 +324,12 @@ class Sprite {
 
     }
 
-    makeGhost() {
+    /**
+     * Sets the sprite as a ghost (which does not interact with physics)
+     */
+    //% blockNamespace=Sprites
+    //% blockId=spritesetghost block="set %sprite ghost"
+    setGhost() {
         this.flags |= sprites.Flag.Ghost
     }
 
@@ -333,7 +338,7 @@ class Sprite {
      * @param other 
      */
     //% blockNamespace=Sprites
-    //% blockId=spriteoverlapswith block="%this overlaps with %other"
+    //% blockId=spriteoverlapswith block="%sprite overlaps with %other"
     overlapsWith(other: Sprite) {
         if (other == this) return false;
         if (this.flags & sprites.Flag.Ghost)
@@ -349,7 +354,7 @@ class Sprite {
      * @param handler 
      */
     //% blockNamespace=Sprites
-    //% blockId=spriteonoverlaps block="on %sprite overlaps with type %type"
+    //% blockId=spriteonoverlap block="on %sprite overlap with type %type"
     onOverlap(spriteType: number, handler: (sprite: Sprite) => void) {
         if (!this.overlapHandlers) this.overlapHandlers = [];
         for(let i = 0; i < this.overlapHandlers.length; ++i)
@@ -367,10 +372,21 @@ class Sprite {
         this.wallHandler = handler
     }
 
-    onDestroy(handler: () => void) {
+    /**
+     * Register code to run when sprite is destroyed
+     * @param handler 
+     */
+    //% blockNamespace=Sprites
+    //% blockId=spriteondestroy block="on %sprite destroyed"
+    onDestroyed(handler: () => void) {
         this.destroyHandler = handler
     }
 
+    /**
+     * Destroys the sprite
+     */
+    //% blockNamespace=Sprites
+    //% blockId=spritedestroy block="destroy %sprite"
     destroy() {
         if (this.flags & sprites.Flag.Destroyed)
             return
