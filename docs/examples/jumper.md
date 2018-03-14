@@ -104,9 +104,9 @@ game.frame(function () {
 })
 
 function createObstacle() {
-    // sprites.launchParticle creates a sprite that automatically
+    // sprites.createProjectile creates a sprite that automatically
     // destroys itself when it leaves the screen
-    const s = sprites.launchParticle(img`
+    const s = sprites.createProjectile(img`
         f f f f f
         f f f f f
         f f f f f

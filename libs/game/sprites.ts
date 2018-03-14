@@ -45,7 +45,7 @@ namespace sprites {
      * Create a new sprite with given speed, and place it at the edge of the screen so it moves towards the middle. 
      * The sprite auto-destroys when it leaves the screen. You can modify position after it's created.
      */
-    export function launchParticle(img: Image, vx: number, vy: number) {
+    export function createProjectile(img: Image, vx: number, vy: number) {
         let s = create(img)
         s.vx = vx
         s.vy = vy

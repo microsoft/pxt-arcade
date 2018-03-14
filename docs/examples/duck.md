@@ -65,7 +65,7 @@ duck.onHitWall(function () {
 })
 
 function launchObstacle() {
-    prevObstacle = sprites.launchParticle(pimg, -30, 0)
+    prevObstacle = sprites.createProjectile(pimg, -30, 0)
     prevObstacle.y = Math.randomRange(30, 90)
     prevObstacle.type = 1;
     prevObstacle.onDestroy(function () {
@@ -82,7 +82,7 @@ keys.A.onPressed(function () {
 game.setBackground(4)
 game.frame(function () {
     if (Math.random() < 0.02) {
-        let s = sprites.launchParticle(cloudImg, -45, 0)
+        let s = sprites.createProjectile(cloudImg, -45, 0)
         s.y = Math.randomRange(0, screen.height())
         s.z = -1
         s.flags |= sprites.Flag.Ghost
