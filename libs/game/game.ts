@@ -26,7 +26,7 @@ namespace game {
         else pause(2000)
     }
 
-    export function freeze() {
+    function freeze() {
         setBackgroundCallback(() => { })
         game.frame(() => { })
         sprites.allSprites = [];
@@ -118,7 +118,6 @@ namespace game {
     }
 
     function meltScreen() {
-        freeze()
         for (let i = 0; i < 10; ++i) {
             for (let j = 0; j < 1000; ++j) {
                 let x = Math.randomRange(0, screen.width - 1)
@@ -143,6 +142,7 @@ namespace game {
         control.clearHandlers()
         control.runInParallel(() => {
             music.playSound(music.sounds(Sounds.Wawawawaa))
+            freeze();
             meltScreen();
             let top = showBackground(44, 4)
             screen.printCenter("GAME OVER!", top + 8, 5, image.font8)
