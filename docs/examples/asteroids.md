@@ -23,6 +23,39 @@ const meteor = img`
 . . . 8 8 8 
 `
 
+const meteorDeath = [
+    img`
+. . . 8 8 8 
+. . . 8 1 8 . 8
+. 8 8 . 1 . 8 8 8
+. . 8 8 . 8 1 1 8 8
+8 8 8 . 8 . 1 1 8
+. 8 . 8 8 8 . 8 8
+. . 8 8 1 8 8 .
+. . . 8 8 8 
+`,
+    img`
+. . . 8 8 8 
+. . . 8 1 8 . .
+. 8 8 . . . . 8 8
+. . 8 . . . 1 1 8 8
+8 8 8 . . . . 1 8
+. . . . . . . . .
+. . . 8 1 8 . .
+. . . 8 8 8 
+`,
+    img`
+. . . . 8 . 
+. . . . . . . .
+. 8 . . . . . . .
+. . . . . . . . . 8
+. . . . . . . . .
+. . . . . . . . .
+. . . . . . . .
+. . . . 8 . 
+`]
+
+
 const rocketImg = img`
 . 3 
 . 3
@@ -42,7 +75,7 @@ game.frame(function () {
     // metero
     if (Math.random() < 0.05) {
         let m = sprites.createProjectile(meteor, 0, Math.randomRange(30, 80))
-        m.x = Math.randomRange(10, 118)
+        m.x = Math.randomRange(10, 140)
     }
     // stars
     if (Math.random() < 0.1) {
@@ -58,9 +91,14 @@ game.frame(function () {
         r.y = spaceship.y - 10
         r.onOverlap(function (other: Sprite) {
             other.destroy()
+            const o = sprites.createWithAnimation(meteorDeath)
+            o.x = other.x;
+            o.y = other.y;
+            o.vy = -5;
+            o.life = 20;
+            o.setFlag(SpriteFlag.Ghost, true)
             hud.changeScoreBy(1)
         })
     }
 })
-
 ```
