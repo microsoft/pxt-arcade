@@ -109,7 +109,7 @@ namespace sprites {
             const bucket = this.buckets[k];
             if (bucket) {
                 for (const sprite of bucket)
-                    if (sprite.type == type && n.indexOf(sprite) < 0)
+                    if ((!type || sprite.type == type) && n.indexOf(sprite) < 0)
                         n.push(sprite);
             }
         }
