@@ -206,6 +206,7 @@ class Sprite {
      * @param property the name of the property to change
      * @param the updated value
      */
+    //% weight=80 blockGap=8
     //% blockNamespace=Sprites
     //% blockId=spritesspreiteset block="set %sprite %property to %value" blockGap=8
     public set(property: SpriteWriteProperty, value: number) {
@@ -225,6 +226,7 @@ class Sprite {
      * @param property the name of the property to change
      * @param value amount of change, eg: 1
      */
+    //% weight=79
     //% blockNamespace=Sprites
     //% blockId=spritespsritechange block="change %sprite %property by %value" blockGap=8
     public changeBy(property: SpriteWriteProperty, value: number) {
@@ -243,6 +245,7 @@ class Sprite {
      * Gets a property of the sprite
      * @param property the name of the property to change
      */
+    //% weight=81 blockGap=8
     //% blockNamespace=Sprites
     //% blockId=spritespspriteget block="%sprite %property"
     public get(property: SpriteReadProperty) {
@@ -327,6 +330,7 @@ class Sprite {
     /**
      * Sets the sprite as a ghost (which does not interact with physics)
      */
+    //% blockGap=8
     //% blockNamespace=Sprites
     //% blockId=spritesetghost block="set %sprite ghost"
     setGhost() {
@@ -337,6 +341,7 @@ class Sprite {
      * Tests if a sprite overlaps with another
      * @param other 
      */
+    //% blockGap=8
     //% blockNamespace=Sprites
     //% blockId=spriteoverlapswith block="%sprite overlaps with %other"
     overlapsWith(other: Sprite) {
@@ -353,6 +358,7 @@ class Sprite {
      * @param spriteType sprite type to match
      * @param handler 
      */
+    //% blockGap=8
     //% blockNamespace=Sprites
     //% blockId=spriteonoverlap block="on %sprite overlap with type %type"
     onOverlap(spriteType: number, handler: (sprite: Sprite) => void) {
@@ -376,6 +382,7 @@ class Sprite {
      * Register code to run when sprite is destroyed
      * @param handler 
      */
+    //% weight=9 blockGap=8
     //% blockNamespace=Sprites
     //% blockId=spriteondestroy block="on %sprite destroyed"
     onDestroyed(handler: () => void) {
@@ -385,6 +392,7 @@ class Sprite {
     /**
      * Destroys the sprite
      */
+    //% weight=10 blockGap=8
     //% blockNamespace=Sprites
     //% blockId=spritedestroy block="destroy %sprite"
     destroy() {
