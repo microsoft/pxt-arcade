@@ -32,7 +32,7 @@ const rocketImg = img`
 3 3 3
 `
 
-spaceship.onOverlap(function (other: Sprite) {
+spaceship.onOverlap(1, function (other: Sprite) {
     game.over()
 })
 spaceship.z = 10
