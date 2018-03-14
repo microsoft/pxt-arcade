@@ -16,7 +16,9 @@ enum SpriteWriteProperty {
     //% block="ay"
     AY,
     //% block="type"
-    Type
+    Type,
+    //% block="life"
+    Life
 }
 
 /**
@@ -49,7 +51,9 @@ enum SpriteReadProperty {
     //% block=height
     Height,
     //% block=type
-    Type
+    Type,
+    //% block=life
+    Life
 }
 
 enum SpriteFlag {
@@ -124,6 +128,7 @@ class Sprite {
             case SpriteWriteProperty.AX: this.ax = value; break;
             case SpriteWriteProperty.AY: this.ay = value; break;
             case SpriteWriteProperty.Type: this.type = value; break;
+            case SpriteWriteProperty.Life: this.life = value; break;
         }
     }
 
@@ -144,6 +149,7 @@ class Sprite {
             case SpriteWriteProperty.AX: this.ax += value; break;
             case SpriteWriteProperty.AY: this.ay += value; break;
             case SpriteWriteProperty.Type: this.type += value; break;
+            case SpriteWriteProperty.Life: this.life += value; break;
         }
     }
 
@@ -170,6 +176,7 @@ class Sprite {
             case SpriteReadProperty.AX: return this.ax;
             case SpriteReadProperty.AY: return this.ay;
             case SpriteReadProperty.Type: return this.type;
+            case SpriteReadProperty.Life: return this.life;
             default: return 0;
         }
     }
