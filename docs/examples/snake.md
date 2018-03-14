@@ -82,11 +82,11 @@ newFood()
 
 game.frame(function () {
     if (keys.dx(100)) {
-        dx = Math.sign(keys.dx())
+        dx = Math.sign(keys.dx(100))
         dy = 0
     } else if (keys.dy(100)) {
         dx = 0
-        dy = Math.sign(keys.dy())
+        dy = Math.sign(keys.dy(100))
     }
 
     time += control.deltaTime

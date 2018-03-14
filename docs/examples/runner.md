@@ -2,7 +2,7 @@
 
 A simple example
 
-```blocks
+```typescript
 let frames = [img`
  . . 3 3
  . . 3 3

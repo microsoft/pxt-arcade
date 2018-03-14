@@ -1,8 +1,6 @@
 # asteroids
 
-Example
-
-```blocks
+```typescript
 const spaceship = sprites.create(img`
  . . . . d
  . . . . d

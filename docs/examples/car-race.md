@@ -1,8 +1,6 @@
 # car-race
 
-Example
-
-```blocks
+```typescript
 game.splash("Car Race", "Avoid the borders!")
 
 const car = sprites.create(img`
