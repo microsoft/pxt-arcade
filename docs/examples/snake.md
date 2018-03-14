@@ -75,7 +75,7 @@ function show() {
 
 newFood()
 
-frame(function () {
+game.frame(function () {
     if (keys.dx()) {
         dx = Math.sign(keys.dx())
         dy = 0

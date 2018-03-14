@@ -220,6 +220,7 @@ namespace pxsim {
                 let flush = () => {
                     requested = false
                     ctx.putImageData(imgdata, 0, 0)
+                    this.stats.textContent = this.screenState.stats;
                     this.tryScreenshot()
                 }
 
@@ -239,12 +240,5 @@ namespace pxsim {
 
             return Promise.resolve();
         }
-    }
-}
-
-
-namespace pxsim.pxtcore {
-    export function updateStats(s: string) {
-        board().stats.textContent = s
     }
 }
