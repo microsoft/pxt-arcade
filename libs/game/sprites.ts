@@ -284,13 +284,13 @@ class Sprite {
         return this.top + this.height
     }
 
-    _draw() {
+    __draw() {
         screen.drawTransparentImage(this.image, this.left, this.top)
         if (game.debug)
             screen.drawRect(this.left, this.top, this.width, this.height, 3);
     }
 
-    _update(dt: number) {
+    __update(dt: number) {
         if (this.animation)
             this.animation.update(this)
         if (this.flags & sprites.Flag.AutoDestroy) {
@@ -302,7 +302,7 @@ class Sprite {
         }
     }
 
-    _overlaps() {
+    __computeOverlaps() {
         if (this.overlapHandlers) {
             this.overlapHandlers.forEach(oh => {
                 for (let o of physics.engine.collides(this, oh.spriteType)) {
@@ -328,6 +328,12 @@ class Sprite {
         this.flags |= sprites.Flag.Ghost
     }
 
+    /**
+     * Tests if a sprite overlaps with another
+     * @param other 
+     */
+    //% blockNamespace=Sprites
+    //% blockId=spriteoverlapswith block="%this overlaps with %other"
     overlapsWith(other: Sprite) {
         if (other == this) return false;
         if (this.flags & sprites.Flag.Ghost)
@@ -337,7 +343,14 @@ class Sprite {
         return other.image.overlapsWith(this.image, this.left - other.left, this.top - other.top)
     }
 
-    onOverlap(spriteType: number, handler: (other: Sprite) => void) {
+    /**
+     * Registers code when the sprite overlaps with another sprite
+     * @param spriteType sprite type to match
+     * @param handler 
+     */
+    //% blockNamespace=Sprites
+    //% blockId=spriteonoverlaps block="on %sprite overlaps with type %type"
+    onOverlap(spriteType: number, handler: (sprite: Sprite) => void) {
         if (!this.overlapHandlers) this.overlapHandlers = [];
         for(let i = 0; i < this.overlapHandlers.length; ++i)
             if (this.overlapHandlers[i].spriteType == spriteType) {

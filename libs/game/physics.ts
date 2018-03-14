@@ -69,7 +69,7 @@ class ArcadePhysicsEngine extends PhysicsEngine {
 
         // queue collision handlers
         for (const sprite of collisioners)
-            sprite._overlaps();
+            sprite.__computeOverlaps();
     }
 
     collides(sprite: Sprite, spriteType: number): Sprite[] {

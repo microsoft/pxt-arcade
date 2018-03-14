@@ -35,14 +35,14 @@ namespace game {
                 const dt = control.deltaTime;
                 physics.engine.update(dt);
                 for (let s of sprites.allSprites)
-                    s._update(dt);
+                    s.__update(dt);
             })
             control.addFrameHandler(60, () => { bgFunction() })
             control.addFrameHandler(90, () => {
                 // stack overflow
                 // allSprites.sort(function (a, b) { return a.z - b.z || a.id - b.id; })
                 for (let s of sprites.allSprites)
-                    s._draw()
+                    s.__draw()
                 if (game.debug)
                     physics.engine.draw();
             })
