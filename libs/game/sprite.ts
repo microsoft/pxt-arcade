@@ -212,7 +212,7 @@ class Sprite {
     __computeOverlaps() {
         const oh = this.overlapHandler;
         if (oh) {
-            for (let o of physics.engine.collides(this, 0)) {
+            for (let o of physics.engine.overlaps(this, 0)) {
                 let tmp = o
                 control.runInParallel(() => oh(tmp))
             }

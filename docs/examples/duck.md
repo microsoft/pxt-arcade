@@ -60,9 +60,6 @@ duck.ay = 300
 duck.onOverlap(function (other: Sprite) {
     game.over()
 })
-duck.onHitWall(function () {
-    game.over()
-})
 
 function launchObstacle() {
     prevObstacle = sprites.createProjectile(pimg, -30, 0)
