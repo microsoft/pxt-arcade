@@ -81,10 +81,10 @@ function show() {
 newFood()
 
 game.frame(function () {
-    if (keys.dx()) {
+    if (keys.dx(100)) {
         dx = Math.sign(keys.dx())
         dy = 0
-    } else if (keys.dy()) {
+    } else if (keys.dy(100)) {
         dx = 0
         dy = Math.sign(keys.dy())
     }

@@ -74,3 +74,16 @@ Here are some fun programs for your @boardname@!
 }
 ]
 ```
+
+## See also
+
+[Falling Duck](/examples/falling-duck),
+[Asteroids](/examples/asteroids),
+[Car Race](/examples/car-race),
+[Snake](/examples/snake),
+[Jumping Runner](/examples/runner),
+[Jumper](/examples/jumper),
+[Mega Bounce](/examples/mega-bounce),
+[Collisions](/examples/collisions),
+[Sorting](/examples/sorting),
+[Palette](/examples/palette),
