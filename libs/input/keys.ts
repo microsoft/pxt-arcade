@@ -44,6 +44,7 @@ namespace keys {
         /**
          * Register code for a key event
          */
+        //% weight=99
         //% blockId=keyonevent block="on %key **key** %event"
         onEvent(event: KeyEvent, handler: () => void) {
             control.onEvent(eventNames[event], this.id, handler);
@@ -60,7 +61,7 @@ namespace keys {
         /** 
          * Indicates if the key was pressed since the last call
         */
-        //% blockId=keyispressed block="was %key **key** pressed"
+        //% blockId=keywaspressed block="was %key **key** pressed"
         wasPressed() {
             if (!this.checked) {
                 this.checked = true
@@ -92,11 +93,11 @@ namespace keys {
     export const B = new Key(6)
 
     /**
-     * Gets the horizontal difference, given the step and state of keys
-     * @param step 
+     * Gets the horizontal movement, given the step and state of keys
+     * @param step the distance, eg: 100
      */
     //% blockId=keysdx block="dx %step"
-    export function dx(step = 100) {
+    export function dx(step: number) {
         if (keys.Left.isPressed())
             if (keys.Right.isPressed()) return 0
             else return -step * control.deltaTime
@@ -104,7 +105,12 @@ namespace keys {
         else return 0
     }
 
-    export function dy(step = 100) {
+    /**
+     * Gets the vertical movement, given the step and state of keys
+     * @param step the distance, eg: 100
+     */
+    //% blockId=keysdy block="dy %step"
+    export function dy(step: number) {
         if (keys.Up.isPressed())
             if (keys.Down.isPressed()) return 0
             else return -step * control.deltaTime
