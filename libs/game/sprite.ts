@@ -79,7 +79,6 @@ class Sprite {
     animation: SpriteAnimation
 
     overlapHandler: (other: Sprite) => void;
-    private wallHandler: () => void;
     private destroyHandler: () => void;
 
     constructor(img: Image) {
@@ -218,17 +217,6 @@ class Sprite {
                 control.runInParallel(() => oh(tmp))
             }
         }
-
-        if (this.wallHandler) {
-            if (
-                0 <= this.x && this.x < screen.width &&
-                0 <= this.y && this.y < screen.height) {
-                // OK
-            } else {
-                control.runInParallel(this.wallHandler)
-            }
-        }
-
     }
 
     /**
@@ -269,10 +257,6 @@ class Sprite {
     //% blockId=spriteonoverlap block="on %sprite overlap with"
     onOverlap(handler: (other: Sprite) => void) {
         this.overlapHandler = handler;
-    }
-
-    onHitWall(handler: () => void) {
-        this.wallHandler = handler
     }
 
     /**

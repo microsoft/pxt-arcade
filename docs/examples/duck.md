@@ -81,6 +81,10 @@ keys.A.onPressed(function () {
 
 game.setBackground(4)
 game.frame(function () {
+    if (duck.x < 0 || duck.x > screen.height) {
+        game.over();
+    }
+
     if (Math.random() < 0.02) {
         let s = sprites.createProjectile(cloudImg, -45, 0)
         s.y = Math.randomRange(0, screen.height())
