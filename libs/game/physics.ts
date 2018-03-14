@@ -79,7 +79,7 @@ class ArcadePhysicsEngine extends PhysicsEngine {
             const r: Sprite[] = [];
             const n = this.sprites.length;
             for (let i = 0; i < n; ++i) {
-                if (spriteType == sprite.type && sprite.overlapsWith(this.sprites[i]))
+                if (spriteType == this.sprites[i].type && sprite.overlapsWith(this.sprites[i]))
                     r.push(this.sprites[i]);
             }
             return r;
