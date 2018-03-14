@@ -160,11 +160,6 @@ enum SpriteReadProperty {
     Type
 }
 
-interface OverlapHandler {
-    spriteType: number;
-    handler: (other: Sprite) => void;
-}
-
 /** 
  * A sprite on screem 
  **/
@@ -184,9 +179,9 @@ class Sprite {
 
     animation: SpriteAnimation
 
-    overlapHandlers: OverlapHandler[];
-    private wallHandler: () => void
-    private destroyHandler: () => void
+    overlapHandler: (other: Sprite) => void;
+    private wallHandler: () => void;
+    private destroyHandler: () => void;
 
     constructor(img: Image) {
         this.x = screen.width >> 1
@@ -306,13 +301,12 @@ class Sprite {
     }
 
     __computeOverlaps() {
-        if (this.overlapHandlers) {
-            this.overlapHandlers.forEach(oh => {
-                for (let o of physics.engine.collides(this, oh.spriteType)) {
-                    let tmp = o
-                    control.runInParallel(() => oh.handler(tmp))
-                }    
-            })
+        const oh = this.overlapHandler;
+        if (oh) {
+            for (let o of physics.engine.collides(this, 0)) {
+                let tmp = o
+                control.runInParallel(() => oh(tmp))
+            }
         }
 
         if (this.wallHandler) {
@@ -360,18 +354,9 @@ class Sprite {
      */
     //% blockGap=8
     //% blockNamespace=Sprites
-    //% blockId=spriteonoverlap block="on %sprite overlap with sprite type %type"
-    onOverlap(spriteType: number, handler: (other: Sprite) => void) {
-        if (!this.overlapHandlers) this.overlapHandlers = [];
-        for(let i = 0; i < this.overlapHandlers.length; ++i)
-            if (this.overlapHandlers[i].spriteType == spriteType) {
-                this.overlapHandlers[i].handler = handler;
-                return;
-            }
-        this.overlapHandlers.push({
-            spriteType: spriteType,
-            handler: handler
-        })
+    //% blockId=spriteonoverlap block="on %sprite overlap with"
+    onOverlap(handler: (other: Sprite) => void) {
+        this.overlapHandler = handler;
     }
 
     onHitWall(handler: () => void) {
