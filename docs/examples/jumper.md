@@ -63,7 +63,7 @@ const ground = screen.height - player.height;
 player.x = 20;
 player.y = ground;
 
-player.onCollision(function (other: Sprite) {
+player.onOverlap(0, function (other: Sprite) {
     game.over();
 });
 

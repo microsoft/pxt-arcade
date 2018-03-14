@@ -122,7 +122,9 @@ enum SpriteWriteProperty {
     //% block="ax"
     AX,
     //% block="ay"
-    AY    
+    AY,
+    //% block="type"
+    Type
 }
 
 /**
@@ -153,7 +155,14 @@ enum SpriteReadProperty {
     //% block=width
     Width,
     //% block=height
-    Height
+    Height,
+    //% block=type
+    Type
+}
+
+interface OverlapHandler {
+    spriteType: number;
+    handler: (other: Sprite) => void;
 }
 
 /** 
@@ -175,7 +184,7 @@ class Sprite {
 
     animation: SpriteAnimation
 
-    collisionHandler: (other: Sprite) => void
+    overlapHandlers: OverlapHandler[];
     private wallHandler: () => void
     private destroyHandler: () => void
 
@@ -192,66 +201,69 @@ class Sprite {
         this.type = 0
     }
 
-        /**
-         * Sets a property of the sprite
-         * @param property the name of the property to change
-         * @param the updated value
-         */
-        //% blockNamespace=Sprites
-        //% blockId=spritesspreiteset block="set %sprite %property to %value" blockGap=8
-        public set(property: SpriteWriteProperty, value: number) {
-            switch (property) {
-                case SpriteWriteProperty.X: this.x = value; break;
-                case SpriteWriteProperty.Y: this.y = value; break;
-                case SpriteWriteProperty.VX: this.vx = value; break;
-                case SpriteWriteProperty.VY: this.vy = value; break;
-                case SpriteWriteProperty.AX: this.ax = value; break;
-                case SpriteWriteProperty.AY: this.ay = value; break;
-            }
+    /**
+     * Sets a property of the sprite
+     * @param property the name of the property to change
+     * @param the updated value
+     */
+    //% blockNamespace=Sprites
+    //% blockId=spritesspreiteset block="set %sprite %property to %value" blockGap=8
+    public set(property: SpriteWriteProperty, value: number) {
+        switch (property) {
+            case SpriteWriteProperty.X: this.x = value; break;
+            case SpriteWriteProperty.Y: this.y = value; break;
+            case SpriteWriteProperty.VX: this.vx = value; break;
+            case SpriteWriteProperty.VY: this.vy = value; break;
+            case SpriteWriteProperty.AX: this.ax = value; break;
+            case SpriteWriteProperty.AY: this.ay = value; break;
+            case SpriteWriteProperty.Type: this.type = value; break;
         }
+    }
 
-        /**
-         * Changes a property of the sprite
-         * @param property the name of the property to change
-         * @param value amount of change, eg: 1
-         */
-        //% blockNamespace=Sprites
-        //% blockId=spritespsritechange block="change %sprite %property by %value" blockGap=8
-        public changeBy(property: SpriteWriteProperty, value: number) {
-            switch (property) {
-                case SpriteWriteProperty.X: this.x += value; break;
-                case SpriteWriteProperty.Y: this.y += value; break;
-                case SpriteWriteProperty.VX: this.vx += value; break;
-                case SpriteWriteProperty.VY: this.vy += value; break;
-                case SpriteWriteProperty.AX: this.ax += value; break;
-                case SpriteWriteProperty.AY: this.ay += value; break;
-            }
+    /**
+     * Changes a property of the sprite
+     * @param property the name of the property to change
+     * @param value amount of change, eg: 1
+     */
+    //% blockNamespace=Sprites
+    //% blockId=spritespsritechange block="change %sprite %property by %value" blockGap=8
+    public changeBy(property: SpriteWriteProperty, value: number) {
+        switch (property) {
+            case SpriteWriteProperty.X: this.x += value; break;
+            case SpriteWriteProperty.Y: this.y += value; break;
+            case SpriteWriteProperty.VX: this.vx += value; break;
+            case SpriteWriteProperty.VY: this.vy += value; break;
+            case SpriteWriteProperty.AX: this.ax += value; break;
+            case SpriteWriteProperty.AY: this.ay += value; break;
+            case SpriteWriteProperty.Type: this.type += value; break;
         }
+    }
 
-        /**
-         * Gets a property of the sprite
-         * @param property the name of the property to change
-         */
-        //% blockNamespace=Sprites
-        //% blockId=spritespspriteget block="%sprite %property"
-        public get(property: SpriteReadProperty) {
-            switch (property) {
-                case SpriteReadProperty.X: return this.x;
-                case SpriteReadProperty.Y: return this.y;
-                case SpriteReadProperty.Left: return this.left;
-                case SpriteReadProperty.Right: return this.right;
-                case SpriteReadProperty.Top: return this.top;
-                case SpriteReadProperty.Bottom: return this.bottom;
-                case SpriteReadProperty.Width: return this.width;
-                case SpriteReadProperty.Height: return this.height;
-                case SpriteReadProperty.Y: return this.y;
-                case SpriteReadProperty.VX: return this.vx;
-                case SpriteReadProperty.VY: return this.vy;
-                case SpriteReadProperty.AX: return this.ax;
-                case SpriteReadProperty.AY: return this.ay;
-                default: return 0;
-            }
+    /**
+     * Gets a property of the sprite
+     * @param property the name of the property to change
+     */
+    //% blockNamespace=Sprites
+    //% blockId=spritespspriteget block="%sprite %property"
+    public get(property: SpriteReadProperty) {
+        switch (property) {
+            case SpriteReadProperty.X: return this.x;
+            case SpriteReadProperty.Y: return this.y;
+            case SpriteReadProperty.Left: return this.left;
+            case SpriteReadProperty.Right: return this.right;
+            case SpriteReadProperty.Top: return this.top;
+            case SpriteReadProperty.Bottom: return this.bottom;
+            case SpriteReadProperty.Width: return this.width;
+            case SpriteReadProperty.Height: return this.height;
+            case SpriteReadProperty.Y: return this.y;
+            case SpriteReadProperty.VX: return this.vx;
+            case SpriteReadProperty.VY: return this.vy;
+            case SpriteReadProperty.AX: return this.ax;
+            case SpriteReadProperty.AY: return this.ay;
+            case SpriteReadProperty.Type: return this.type;
+            default: return 0;
         }
+    }
 
     get width() {
         return this.image.width
@@ -290,12 +302,14 @@ class Sprite {
         }
     }
 
-    _collisions() {
-        if (this.collisionHandler) {
-            for (let o of physics.engine.collides(this)) {
-                let tmp = o
-                control.runInParallel(() => this.collisionHandler(tmp))
-            }
+    _overlaps() {
+        if (this.overlapHandlers) {
+            this.overlapHandlers.forEach(oh => {
+                for (let o of physics.engine.collides(this, oh.spriteType)) {
+                    let tmp = o
+                    control.runInParallel(() => oh.handler(tmp))
+                }    
+            })
         }
 
         if (this.wallHandler) {
@@ -314,7 +328,7 @@ class Sprite {
         this.flags |= sprites.Flag.Ghost
     }
 
-    collidesWith(other: Sprite) {
+    overlapsWith(other: Sprite) {
         if (other == this) return false;
         if (this.flags & sprites.Flag.Ghost)
             return false
@@ -323,8 +337,17 @@ class Sprite {
         return other.image.overlapsWith(this.image, this.left - other.left, this.top - other.top)
     }
 
-    onCollision(handler: (other: Sprite) => void) {
-        this.collisionHandler = handler
+    onOverlap(spriteType: number, handler: (other: Sprite) => void) {
+        if (!this.overlapHandlers) this.overlapHandlers = [];
+        for(let i = 0; i < this.overlapHandlers.length; ++i)
+            if (this.overlapHandlers[i].spriteType == spriteType) {
+                this.overlapHandlers[i].handler = handler;
+                return;
+            }
+        this.overlapHandlers.push({
+            spriteType: spriteType,
+            handler: handler
+        })
     }
 
     onHitWall(handler: () => void) {

@@ -35,7 +35,7 @@ while (true) {
         s.y = Math.randomRange(0, screen.height);
         s.vx = Math.randomRange(-10, 10)
         s.vy = Math.randomRange(-10, 10)
-        s.onCollision(function (other: Sprite) {
+        s.onOverlap(0, function (other: Sprite) {
             hud.changeScoreBy(1);
         })
     }

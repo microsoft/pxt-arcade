@@ -59,7 +59,7 @@ class ArcadePhysicsEngine extends PhysicsEngine {
 
         // update physics of non-ghosts
         const colliders = this.sprites.filter(sprite => !(sprite.flags & sprites.Flag.Ghost));
-        const collisioners = colliders.filter(sprite => !!sprite.collisionHandler);
+        const collisioners = colliders.filter(sprite => !!sprite.overlapHandlers);
         if (collisioners.length < Math.sqrt(colliders.length)) {
             this.map = undefined;
         } else {
@@ -69,17 +69,17 @@ class ArcadePhysicsEngine extends PhysicsEngine {
 
         // queue collision handlers
         for (const sprite of collisioners)
-            sprite._collisions();
+            sprite._overlaps();
     }
 
-    collides(sprite: Sprite): Sprite[] {
+    collides(sprite: Sprite, spriteType: number): Sprite[] {
         if (this.map)
-            return this.map.overlaps(sprite);
+            return this.map.overlaps(sprite, spriteType);
         else {
             const r: Sprite[] = [];
             const n = this.sprites.length;
             for (let i = 0; i < n; ++i) {
-                if (sprite.collidesWith(this.sprites[i]))
+                if (spriteType == sprite.type && sprite.overlapsWith(this.sprites[i]))
                     r.push(this.sprites[i]);
             }
             return r;

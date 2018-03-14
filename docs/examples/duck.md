@@ -57,7 +57,7 @@ duck.image.flipX()
 duck.x = 20
 duck.ay = 300
 
-duck.onCollision(function (other: Sprite) {
+duck.onOverlap(1, function (other: Sprite) {
     game.over()
 })
 duck.onHitWall(function () {
@@ -67,6 +67,7 @@ duck.onHitWall(function () {
 function launchObstacle() {
     prevObstacle = sprites.launchParticle(pimg, -30, 0)
     prevObstacle.y = Math.randomRange(30, 90)
+    prevObstacle.type = 1;
     prevObstacle.onDestroy(function () {
         hud.changeScoreBy(1)
     })

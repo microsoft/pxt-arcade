@@ -51,8 +51,9 @@ function drive(lines: number) {
 drive(128)
 ddx = 1
 const road = sprites.create(roadImg)
+road.type = 1
 
-car.onCollision(function (other: Sprite) {
+car.onOverlap(1, function (other: Sprite) {
     game.over()
 })
 car.z = 10
