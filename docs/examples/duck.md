@@ -2,7 +2,7 @@
 
 A simple example
 
-```blocks
+```typescript
 game.splash("Falling Duck", "Z to jump")
 
 const duckImg = img`

@@ -77,7 +77,7 @@ Here are some fun programs for your @boardname@!
 
 ## See also
 
-[Falling Duck](/examples/falling-duck),
+[Falling Duck](/examples/duck),
 [Asteroids](/examples/asteroids),
 [Car Race](/examples/car-race),
 [Snake](/examples/snake),
