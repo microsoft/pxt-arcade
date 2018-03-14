@@ -6,6 +6,7 @@
 //% color=#AA5585 weight=80 block="Heads Up Display" icon="\uf2bb"
 namespace hud {
     let _score: number = null;
+    let _highScore: number = null;
     let _life: number = null;
     let _hud: boolean = false;
     /**
@@ -38,7 +39,8 @@ namespace hud {
 
     function initScore() {
         if (_score !== null) return
-        _score = 0
+        _score = 0;
+        _highScore = updateHighScore(_score);
         initHUD();
     }
 
@@ -61,6 +63,16 @@ namespace hud {
     //%
     export function hasScore() {
         return _score !== null
+    }
+
+    /**
+     * Gets the last recorded high score
+     */
+    //% weight=60
+    //% blockId=highScore block="high score"
+    export function highScore(): number {
+        initScore();
+        return _highScore || 0;
     }
 
     /**
@@ -119,5 +131,22 @@ namespace hud {
     export function changeLifeBy(value: number) {
         initLife();
         setLife(_life + value)
+    }
+
+    /**
+     * Updates the high score based on the current score
+     */
+    export function saveHighScore() {
+        if (_score) {
+            updateHighScore(_score);
+        }
+    }
+
+    /**
+     * Sends the current score and the new high score
+     */
+    //% shim=hud::updateHighScore
+    function updateHighScore(score: number): number {
+        return 0;
     }
 }

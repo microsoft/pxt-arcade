@@ -146,8 +146,13 @@ namespace game {
             meltScreen();
             let top = showBackground(44, 4)
             screen.printCenter("GAME OVER!", top + 8, 5, image.font8)
-            if (hud.hasScore())
+            if (hud.hasScore()) {
                 screen.printCenter("Score:" + hud.score(), top + 23, 2, image.font5)
+                if (hud.score() > hud.highScore()) {
+                    hud.saveHighScore();
+                    screen.printCenter("New High Score!", top + 32, 2, image.font5);
+                }
+            }
             pause(1000) // wait for users to stop pressing keys
             waitAnyKey()
             control.reset()
