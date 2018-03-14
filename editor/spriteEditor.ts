@@ -22,8 +22,8 @@ namespace mkcd {
 
     export class SpriteEditor {
         private palette: ColorPalette;
-        private paintSurface: Grid;
-        private preview: Grid;
+        private paintSurface: BitmapImage;
+        private preview: BitmapImage;
 
         private group: svg.Group;
         private root: svg.SVG;
@@ -45,7 +45,7 @@ namespace mkcd {
         private width: number;
         private height: number;
 
-        constructor() {
+        constructor(bitmap: Bitmap) {
             this.colors = [
                 "#000000",
                 "#33e2e4",
@@ -64,67 +64,26 @@ namespace mkcd {
                 "#ffffff",
             ];
 
+            this.columns = bitmap.width;
+            this.rows = bitmap.height;
+            
+            this.state = bitmap.copy()
+            this.displayState = bitmap.copy();
+
             this.root = new svg.SVG();
-
-            // FIXME: This causes a ton of lag! Commenting out for now
-            // The classic checkerboard alpha background
-            // this.root.define((defs) => {
-            //     const unit = BG_WIDTH / 2;
-            //     const bg = defs.create("pattern", "alpha-background")
-            //         .size(BG_WIDTH, BG_WIDTH)
-            //         .units(svg.PatternUnits.userSpaceOnUse);
-                
-            //     // Background
-            //     bg.draw("rect")
-            //         .size(BG_WIDTH, BG_WIDTH)
-            //         .fill("white");
-                
-            //     // Checkerboard
-            //     bg.draw("rect")
-            //         .size(unit, unit)
-            //         .fill("grey");
-            //     bg.draw("rect")
-            //         .size(unit, unit)
-            //         .fill("grey")
-            //         .at(unit, unit);
-            // });
-
-            this.root.define(defs => {
-                const style = new svg.BaseElement<SVGStyleElement>("style");
-                style.el.textContent = `
-                .pixel-cell {
-                    shape-rendering: crispedges;
-                }
-
-                .palette-selected {
-                    stroke: orange;
-                    stroke-width: 2px;
-                }
-
-                .palette-unselected {
-                    stroke: #dedede;
-                    stroke-width: 1px;
-                }
-                `
-                defs.el.appendChild(style.el);
-            })
-
             this.group = this.root.group();
+
             this.palette = new mkcd.ColorPalette({
                 rowLength: 2,
                 emptySwatchDisabled: false,
-                // emptySwatchFill: "url(#alpha-background)",
                 colors: this.colors
             });
 
-            this.paintSurface = new mkcd.Grid({
-                rowLength: this.columns,
-                numCells: this.columns * this.rows,
+            this.paintSurface = new mkcd.BitmapImage({
                 cellWidth: CELL_WIDTH,
                 cellHeight: CELL_WIDTH,
                 cellClass: "pixel-cell"
-                // backgroundFill: "url(#alpha-background)"
-            });
+            }, this.displayState, ["#dedede"].concat(this.colors));
             
             this.paintSurface.drag((col, row) => {
                 if (this.tool !== PaintTool.Fill) {
@@ -143,6 +102,9 @@ namespace mkcd {
             this.paintSurface.down((col, row) => {
                 if (this.tool === PaintTool.Fill) {
                     this.fill(col, row);
+                }
+                else {
+                    this.setCell(col, row, this.palette.selected, false);
                 }
             });
             
@@ -183,12 +145,10 @@ namespace mkcd {
                     }
                 }
             });
-            this.init();
         }
 
         setCell(col: number, row: number, color: number, commit: boolean): void {
             if (commit) {
-                this.displayState.set(col, row, color);
                 this.state.set(col, row, color);
                 this.paintCell(col, row, color);
             }
@@ -198,9 +158,7 @@ namespace mkcd {
                     this.edit.start(col, row);
                 }
                 this.edit.update(col, row);
-                this.displayState = this.state.copy();
-                this.edit.apply(this.displayState);
-                this.rePaint();
+                this.paintEdit(this.edit);
             }
         }
         
@@ -243,23 +201,32 @@ namespace mkcd {
             this.debug("Set tool to " + PaintTool[tool]);
         }
 
-        setPreview(preview: Grid) {
+        setPreview(preview: BitmapImage) {
             this.preview = preview;
         } 
 
-        public rePaint() {
-            for (let c = 0; c < this.columns; c++) {
-                for (let r = 0; r < this.rows; r++) {
-                    this.paintCell(c, r, this.displayState.get(c, r));
-                }
+        rePaint() {
+            this.paintSurface.repaint();
+            if (this.preview) {
+                this.preview.repaint();
+            }
+        }
+
+        private paintEdit(edit: Edit) {
+            this.paintSurface.restore(this.state);
+            this.paintSurface.applyEdit(edit);
+
+            if (this.preview) {
+                this.preview.restore(this.state);
+                this.preview.applyEdit(edit);
             }
         }
         
         private commit() {
             if (this.edit) {
-                this.undoStack.push(this.state);
-                this.apply(this.edit);
-                this.state = this.displayState.copy();
+                this.pushState(true);
+                this.paintEdit(this.edit);
+                this.state.apply(this.displayState);
                 this.edit = undefined;
                 this.redoStack = [];
             }
@@ -269,7 +236,7 @@ namespace mkcd {
             if (this.undoStack.length) {
                 this.debug("undo");
                 const todo = this.undoStack.pop();
-                this.redoStack.push(this.state.copy());
+                this.pushState(false);
                 this.restore(todo);
             }
         }
@@ -278,27 +245,35 @@ namespace mkcd {
             if (this.redoStack.length) {
                 this.debug("redo");
                 const todo = this.redoStack.pop();
-                this.undoStack.push(this.state.copy());
+                this.pushState(true);
                 this.restore(todo);
             }
         }
 
-        private apply(edit: Edit) {
-            edit.apply(this.displayState);
-            this.rePaint();
+        private pushState(undo: boolean) {
+            const cp = this.state.copy();
+            if (undo) {
+                this.undoStack.push(cp);
+            }
+            else {
+                this.redoStack.push(cp);
+            }
         }
 
         private restore(bitmap: Bitmap) {
             this.state.apply(bitmap);
-            this.displayState = this.state.copy();
-            this.rePaint();
+            this.paintSurface.restore(bitmap, true);
+            
+            if (this.preview) {
+                this.preview.restore(bitmap, true);
+            }
         }
 
         private paintCell(col: number, row: number, color: number) {
-            this.paintSurface.setCellColor(col, row, this.palette.colorForIndex(color));
+            this.paintSurface.writeColor(col, row, color);
 
             if (this.preview) {
-                this.preview.setCellColor(col, row, this.palette.colorForIndex(color));
+                this.preview.writeColor(col, row, color);
             }
         }
         
@@ -323,7 +298,7 @@ namespace mkcd {
                 return;
             }
 
-            this.undoStack.push(this.state.copy());
+            this.pushState(true);
             this.redoStack = [];
             
             const mask = new mkcd.Bitmask(this.columns, this.rows);
@@ -344,17 +319,6 @@ namespace mkcd {
                 if (x >= 0 && x < mask.width && y >= 0 && y < mask.height && !mask.get(x, y)) {
                     mask.set(x, y);
                     q.push([x, y]);
-                }
-            }
-        }
-
-        private init() {
-            this.state = new mkcd.Bitmap(this.columns, this.rows);
-            this.displayState = new mkcd.Bitmap(this.columns, this.rows);
-            this.undoStack = [];
-            for (let c = 0; c < this.columns; c++) {
-                for (let r = 0; r < this.rows; r++) {
-                    this.setCell(c, r, 0, true);
                 }
             }
         }

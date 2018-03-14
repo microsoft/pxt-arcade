@@ -9,7 +9,7 @@ namespace mkcd {
         }
 
         public abstract update(col: number, row: number): void;
-        public abstract apply(bitmap: Bitmap): void;
+        public abstract doEdit(bitmap: Bitmap): void;
 
         start(cursorCol: number, cursorRow: number) {
             this.startCol = cursorCol;
@@ -50,7 +50,7 @@ namespace mkcd {
             this.mask.set(col, row);
         }
 
-        apply(bitmap: Bitmap) {
+        doEdit(bitmap: Bitmap) {
             for (let c = 0; c < bitmap.width; c++) {
                 for (let r = 0; r < bitmap.height; r++) {
                     if (this.mask.get(c, r)) {
@@ -65,7 +65,7 @@ namespace mkcd {
      * Tool for drawing filled rectangles
      */
     export class RectangleEdit extends SelectionEdit {
-        apply(bitmap: Bitmap) {
+        doEdit(bitmap: Bitmap) {
             const tl = this.topLeft();
             const br = this.bottomRight();
             for (let c = tl[0]; c <= br[0]; c++) {
@@ -80,7 +80,7 @@ namespace mkcd {
      * Tool for drawing empty rectangles
      */
     export class OutlineEdit extends SelectionEdit {
-        apply(bitmap: Bitmap) {
+        doEdit(bitmap: Bitmap) {
             const tl = this.topLeft();
             const br = this.bottomRight();
             for (let c = tl[0]; c <= br[0]; c++) {
@@ -98,7 +98,7 @@ namespace mkcd {
      * Tool for drawing straight lines
      */
     export class LineEdit extends SelectionEdit {
-        apply(bitmap: Bitmap) {
+        doEdit(bitmap: Bitmap) {
             this.bresenham(this.startCol, this.startRow, this.endCol, this.endRow, bitmap);
         }
 
@@ -137,7 +137,7 @@ namespace mkcd {
      * Tool for circular outlines
      */
     export class CircleEdit extends SelectionEdit {
-        apply(bitmap: Bitmap) {
+        doEdit(bitmap: Bitmap) {
             const tl = this.topLeft();
             const br = this.bottomRight();
             const dx = br[0] - tl[0];
@@ -196,7 +196,7 @@ namespace mkcd {
             this.row = row;
         }
         
-        apply(bitmap: Bitmap) {
+        doEdit(bitmap: Bitmap) {
             const replColor = bitmap.get(this.col, this.row);
             if (replColor === this.color) {
                 return;
