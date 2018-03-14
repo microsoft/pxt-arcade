@@ -51,7 +51,7 @@ game.frame(function () {
         let m = sprites.createProjectile(img`f`, 0, 40)
         m.x = Math.randomRange(0, 128)
         m.type = 2;
-        m.setGhost()
+        m.setFlag(SpriteFlag.Ghost, true);
     }
     let now = control.millis()
     if (keys.A.wasPressed()) {

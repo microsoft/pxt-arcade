@@ -52,6 +52,13 @@ enum SpriteReadProperty {
     Type
 }
 
+enum SpriteFlag {
+    //% block="ghost"
+    Ghost = sprites.Flag.Ghost,
+    //% block="auto destroy"
+    AutoDestroy = sprites.Flag.AutoDestroy
+}
+
 /** 
  * A sprite on screem 
  **/
@@ -229,9 +236,11 @@ class Sprite {
      */
     //% blockGap=8
     //% blockNamespace=Sprites
-    //% blockId=spritesetghost block="set %sprite ghost"
-    setGhost() {
-        this.flags |= sprites.Flag.Ghost
+    //% blockId=spritesetsetflag block="set %sprite %flag %on"
+    //% on.fieldEditor=toggleonoff
+    setFlag(flag: SpriteFlag, on: boolean) {
+        if (on) this.flags |= flag
+        else this.flags = ~(~this.flags | flag);
     }
 
     /**
