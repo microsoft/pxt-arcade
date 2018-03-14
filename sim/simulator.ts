@@ -194,6 +194,7 @@ namespace pxsim {
         }
 
         initAsync(msg: pxsim.SimulatorRunMessage): Promise<void> {
+            this.runOptions = msg;
             this.canvas = document.getElementById("paint-surface") as HTMLCanvasElement;
             this.stats = document.getElementById("debug-stats");
             this.stats.className = "stats"
