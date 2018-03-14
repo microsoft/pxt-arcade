@@ -39,16 +39,16 @@ game.frame(function () {
     spaceship.x += keys.dx(70)
     spaceship.x = Math.clamp(10, 118, spaceship.x)
 
+    // metero
     if (Math.random() < 0.05) {
         let m = sprites.createProjectile(meteor, 0, Math.randomRange(30, 80))
         m.x = Math.randomRange(10, 118)
-        m.type = 1;
     }
     // stars
     if (Math.random() < 0.1) {
         let m = sprites.createProjectile(img`f`, 0, 40)
         m.x = Math.randomRange(0, 128)
-        m.type = 2;
+        m.life = Math.randomRange(100, 120)
         m.setFlag(SpriteFlag.Ghost, true);
     }
     let now = control.millis()

@@ -75,6 +75,7 @@ class Sprite {
     flags: number
     id: number
     type: number
+    life: number;
 
     animation: SpriteAnimation
 
@@ -92,6 +93,7 @@ class Sprite {
         this.flags = 0
         this.image = img
         this.type = 0
+        this.life = -1
     }
 
     get z(): number {
@@ -200,6 +202,11 @@ class Sprite {
     __update(dt: number) {
         if (this.animation)
             this.animation.update(this)
+        if (this.life > 0) {
+            this.life--;
+            if (this.life <= 0)
+                this.destroy();
+        }
         if (this.flags & sprites.Flag.AutoDestroy) {
             if (this.right < 0 || this.bottom < 0 ||
                 this.left > screen.width ||
