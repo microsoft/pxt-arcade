@@ -161,7 +161,7 @@ namespace game {
      * @param body code to execute
      */
     //% help=loops/frame weight=100 afterOnStart=true
-    //% blockId=frame block="frame"
+    //% blockId=frame block="game frame"
     export function frame(a: () => void): void {
         if (!__frameCb)
             control.addFrameHandler(20, function() {
