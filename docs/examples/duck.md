@@ -72,7 +72,7 @@ function launchObstacle() {
 
 launchObstacle()
 
-keys.A.onPressed(function () {
+keys.A.onEvent(KeyEvent.Pressed, function () {
     duck.vy = -100
 })
 
