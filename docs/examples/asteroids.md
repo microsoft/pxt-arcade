@@ -32,7 +32,7 @@ const rocketImg = img`
 3 3 3
 `
 
-spaceship.onOverlap(1, function (other: Sprite) {
+spaceship.onOverlap(function (other: Sprite) {
     game.over()
 })
 spaceship.z = 10
@@ -58,7 +58,7 @@ game.frame(function () {
         let r = sprites.createProjectile(rocketImg, 0, -90)
         r.x = spaceship.x
         r.y = spaceship.y - 10
-        r.onOverlap(1, function (other: Sprite) {
+        r.onOverlap(function (other: Sprite) {
             other.destroy()
             hud.changeScoreBy(1)
         })

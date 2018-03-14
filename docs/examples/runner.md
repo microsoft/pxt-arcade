@@ -60,7 +60,7 @@ function newHouse() {
 
 newHouse()
 
-jumper.onOverlap(0, function (h: Sprite) {
+jumper.onOverlap(function (h: Sprite) {
     if (jumper.bottom - 4 < h.top) {
         if (jumper.vy > 0)
             jumper.vy = 0

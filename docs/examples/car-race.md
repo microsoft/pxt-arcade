@@ -53,7 +53,7 @@ ddx = 1
 const road = sprites.create(roadImg)
 road.type = 1
 
-car.onOverlap(1, function (other: Sprite) {
+car.onOverlap(function (other: Sprite) {
     game.over()
 })
 car.z = 10

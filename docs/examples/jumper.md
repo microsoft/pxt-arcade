@@ -63,7 +63,7 @@ const ground = screen.height - player.height;
 player.x = 20;
 player.y = ground;
 
-player.onOverlap(0, function (other: Sprite) {
+player.onOverlap(function (other: Sprite) {
     game.over();
 });
 
@@ -123,7 +123,7 @@ function createObstacle() {
     s.y = ground - 15 * Math.floor(Math.randomRange(0, obstaclePositions - 1));
 
     // Keep score
-    s.onDestroy(function () {
+    s.onDestroyed(function () {
         hud.changeScoreBy(1)
     });
 }
