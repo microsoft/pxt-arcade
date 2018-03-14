@@ -39,8 +39,7 @@ namespace game {
             })
             control.addFrameHandler(60, () => { bgFunction() })
             control.addFrameHandler(90, () => {
-                // stack overflow
-                // allSprites.sort(function (a, b) { return a.z - b.z || a.id - b.id; })
+                sprites.allSprites.sort(function (a, b) { return a.z - b.z || a.id - b.id; })
                 for (let s of sprites.allSprites)
                     s.__draw()
                 if (game.debug)

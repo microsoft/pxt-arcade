@@ -21,7 +21,7 @@ function swap(i: number, j: number) {
     arr[j] = tmp
     show()
     hud.changeScoreBy(1)
-    loops.pause(10)
+    pause(10)
 }
 
 function bubble() {

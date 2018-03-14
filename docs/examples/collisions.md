@@ -39,6 +39,6 @@ while (true) {
             hud.changeScoreBy(1);
         })
     }
-    loops.pause(1000)
+    pause(1000)
 }
 ```
