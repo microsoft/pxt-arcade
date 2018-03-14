@@ -3,6 +3,110 @@
  **/
 //% color=#008272 weight=99 icon="\uf1d8"
 namespace game {
+    class Background {
+        color: number;
+        viewX: number;
+        viewY: number;
+        private _layers: BackgroundLayer[];
+
+        constructor() {
+            this.color = 0;
+            this.viewX = 0;
+            this.viewY = 0;
+            this._layers = [];
+        }
+
+        public addLayer(distance: number, pic: Image) {
+            const layer = new BackgroundLayer(distance, pic);
+            this._layers.push(layer);
+            this._layers.sort((a, b) => b.distance - a.distance);
+            return layer;
+        }
+
+        render() {
+            screen.fill(this.color);
+            this._layers.forEach(layer => {
+                // compute displacement based on distance
+                const ox = Math.round(this.viewX / (1 + layer.distance));
+                const oy = Math.round(this.viewY / (1 + layer.distance));
+
+                layer.render(ox, oy);
+            });
+        }
+    }
+
+    enum Alignment {
+        Left,
+        Right,
+        Top,
+        Bottom,
+        Center
+    }
+
+    class BackgroundLayer {
+        distance: number;
+        img: Image;
+        repeatX: boolean;
+        repeatY: boolean;
+        alignX: Alignment;
+        alignY: Alignment;
+
+        constructor(distance: number, img: Image) {
+            this.distance = distance;
+            this.img = img;
+            this.repeatX = true;
+            this.repeatY = false;
+            this.alignX = Alignment.Left;
+            this.alignY = Alignment.Bottom;
+        }
+
+        render(offsetX: number, offsetY: number) {
+            const w = screen.width;
+            const h = screen.height;
+            const pw = this.img.width;
+            const ph = this.img.height;
+
+            if (!pw || !ph) return; // empty image.
+
+            // left, top aligned
+            let rx = -offsetX;
+            let ry = -offsetY;
+
+            switch (this.alignX) {
+                case Alignment.Right: rx -= (w + pw); break;
+                case Alignment.Center: rx -= (w + pw) / 2; break;
+            }
+            switch (this.alignY) {
+                case Alignment.Bottom: ry -= (h + ph); break;
+                case Alignment.Center: ry -= (h + ph) / 2; break;
+            }
+
+            rx %= w; if (rx < 0) rx += w;
+            ry %= h; if (ry < 0) ry += h;
+
+            // avoid subpixel aliasing
+            rx = Math.floor(rx);
+            ry = Math.floor(ry);
+
+            let y = 0;
+            let py = 0;
+            while (y < h) {
+                py = y % ph;
+                let dh = Math.min(ph - py, h - ry);
+                let x = 0;
+                while (x < w) {
+                    let px = x % pw;
+                    let dw = Math.min(pw - px, w - rx);
+                    screen.drawImage(this.img, rx, ry);
+                    rx = (rx + dw) % w;
+                    x += this.repeatX ? dw : w;
+                }
+                ry = (ry + dh) % h;
+                y += this.repeatY ? dh : h;
+            }
+        }
+    }
+
     export enum Flag {
         NeedsSorting = 1 << 1,
     }
@@ -13,16 +117,17 @@ namespace game {
     export let debug = false;
     export let flags: number = 0;
 
-    let isOver = false
-    let _waitAnyKey: () => void
-    let bgFunction = () => { }
+    let __isOver = false
+    let __waitAnyKey: () => void
+    let __bgFunction = () => { }
+    let __background: Background;
 
     export function setWaitAnyKey(f: () => void) {
-        _waitAnyKey = f
+        __waitAnyKey = f
     }
 
     export function waitAnyKey() {
-        if (_waitAnyKey) _waitAnyKey()
+        if (__waitAnyKey) __waitAnyKey()
         else pause(2000)
     }
 
@@ -35,6 +140,7 @@ namespace game {
     export function init() {
         if (!sprites.allSprites) {
             sprites.allSprites = []
+            __background = new Background();
             game.setBackground(0)
             control.addFrameHandler(10, () => {
                 const dt = control.deltaTime;
@@ -42,7 +148,7 @@ namespace game {
                 for (let s of sprites.allSprites)
                     s.__update(dt);
             })
-            control.addFrameHandler(60, () => { bgFunction() })
+            control.addFrameHandler(60, () => { __bgFunction() })
             control.addFrameHandler(90, () => {
                 if (flags & Flag.NeedsSorting)
                     sprites.allSprites.sort(function (a, b) { return a.z - b.z || a.id - b.id; })
@@ -58,7 +164,7 @@ namespace game {
 
     export function setBackgroundCallback(f: () => void) {
         init();
-        bgFunction = f
+        __bgFunction = f
     }
 
     /**
@@ -68,9 +174,30 @@ namespace game {
     //% blockId=gamesetbackgroundcolor block="set background to %color"
     export function setBackground(color: number) {
         init();
-        bgFunction = () => {
-            screen.fill(color)
-        }
+        __background.color = color;
+        __bgFunction = () => __background.render();
+    }
+
+    /**
+     * Adds a background layer
+     * @param distance distance of the layer which determines how fast it moves
+     * @param img 
+     */
+    //%
+    export function addBackgroundImage(distance: number, img: Image) {
+        init();
+        __background.addLayer(distance, img);
+    }
+
+    /**
+     * Moves the background by the given value
+     * @param dx 
+     * @param dy 
+     */
+    export function moveBackground(dx: number, dy: number) {
+        init();
+        __background.viewX += dx;
+        __background.viewY += dy;
     }
 
     function showBackground(h: number, c: number) {
@@ -136,9 +263,9 @@ namespace game {
     //% blockId=gameOver block="game over"
     //% weight=80
     export function over() {
-        if (isOver) return
+        if (__isOver) return
         takeScreenshot();
-        isOver = true
+        __isOver = true
         control.clearHandlers()
         control.runInParallel(() => {
             music.playSound(music.sounds(Sounds.Wawawawaa))
