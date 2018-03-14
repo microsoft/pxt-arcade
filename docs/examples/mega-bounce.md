@@ -32,7 +32,7 @@ let counter = 0
 
 addBall(80);
 
-frame(function () {
+game.frame(function () {
     counter++;
     for (const ball of balls) {
         if (ball.collidesWith(paddle)) {

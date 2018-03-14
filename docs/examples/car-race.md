@@ -61,7 +61,7 @@ let pos = 0
 let prevPos = 0
 
 
-frame(function () {
+game.frame(function () {
     pos += 1 + Math.sqrt(control.millis()) / 200.0
     drive(pos - prevPos)
     prevPos = pos | 0
