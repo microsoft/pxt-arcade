@@ -51,7 +51,7 @@ namespace game {
             this.distance = distance;
             this.img = img;
             this.repeatX = true;
-            this.repeatY = false;
+            this.repeatY = true;
             this.alignX = BackgroundAlignment.Left;
             this.alignY = BackgroundAlignment.Bottom;
         }
@@ -90,11 +90,12 @@ namespace game {
                 py = y % ph;
                 let dh = Math.min(ph - py, h - ry);
                 let x = 0;
+                let rxl = rx;
                 while (x < w) {
                     let px = x % pw;
-                    let dw = Math.min(pw - px, w - rx);
-                    screen.drawImage(this.img, rx, ry);
-                    rx = (rx + dw) % w;
+                    let dw = Math.min(pw - px, w - rxl);
+                    screen.drawImage(this.img, rxl, ry);
+                    rxl = (rxl + dw) % w;
                     x += this.repeatX ? dw : w;
                 }
                 ry = (ry + dh) % h;
