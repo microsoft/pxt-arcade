@@ -7,6 +7,7 @@
         "spritemap.ts",
         "physics.ts",
         "hud.ts",
+        "background.ts",
         "game.ts"
     ],
     "public": true,
