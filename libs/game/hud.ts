@@ -23,7 +23,10 @@ namespace hud {
         control.addFrameHandler(95, () => {
             // show score
             if (_score !== null) {
-                let s = _score + ""
+                let s = ""
+                if (_highScore)
+                    s += "HI " + _highScore + " ";
+                s += _score + ""
                 while (s.length < maxW) s = " " + s
                 screen.print(s, screen.width - font.charWidth * maxW - 10, font.charHeight, color, font)    
             }
@@ -141,12 +144,12 @@ namespace hud {
             updateHighScore(_score);
         }
     }
+}
 
+declare namespace hud {
     /**
      * Sends the current score and the new high score
      */
     //% shim=hud::updateHighScore
-    function updateHighScore(score: number): number {
-        return 0;
-    }
+    function updateHighScore(score: number): number;
 }

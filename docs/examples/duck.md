@@ -78,7 +78,7 @@ keys.A.onEvent(KeyEvent.Pressed, function () {
 
 game.setBackground(4)
 game.frame(function () {
-    if (duck.x < 0 || duck.x > screen.height) {
+    if (duck.y < 0 || duck.y > screen.height) {
         game.over();
     }
 
