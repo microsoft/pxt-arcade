@@ -3,6 +3,7 @@
     "description": "The game and sprite library - beta",
     "files": [
         "sprites.ts",
+        "sprite.ts",
         "spritemap.ts",
         "physics.ts",
         "hud.ts",
