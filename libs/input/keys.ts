@@ -8,7 +8,7 @@ enum KeyEvent {
 /**
  * Access to game keys
  */
-//% weight=81 color="#5B0F4D" icon="\uf11b"
+//% weight=97 color="#5B0F4D" icon="\uf11b"
 namespace keys {
     const eventNames = [
         "keydown",
