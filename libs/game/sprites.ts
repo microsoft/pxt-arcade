@@ -360,8 +360,8 @@ class Sprite {
      */
     //% blockGap=8
     //% blockNamespace=Sprites
-    //% blockId=spriteonoverlap block="on %sprite overlap with type %type"
-    onOverlap(spriteType: number, handler: (sprite: Sprite) => void) {
+    //% blockId=spriteonoverlap block="on %sprite overlap with sprite type %type"
+    onOverlap(spriteType: number, handler: (other: Sprite) => void) {
         if (!this.overlapHandlers) this.overlapHandlers = [];
         for(let i = 0; i < this.overlapHandlers.length; ++i)
             if (this.overlapHandlers[i].spriteType == spriteType) {
