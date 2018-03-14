@@ -3,10 +3,15 @@
  **/
 //% color=#008272 weight=99 icon="\uf11b"
 namespace game {
+    export enum Flag {
+        NeedsSorting = 1 << 1,
+    }
+
     /**
      * Determins if diagnostics are shown
      */
     export let debug = false;
+    export let flags: number = 0;
 
     let isOver = false
     let _waitAnyKey: () => void
@@ -39,11 +44,14 @@ namespace game {
             })
             control.addFrameHandler(60, () => { bgFunction() })
             control.addFrameHandler(90, () => {
-                sprites.allSprites.sort(function (a, b) { return a.z - b.z || a.id - b.id; })
+                if (flags & Flag.NeedsSorting)
+                    sprites.allSprites.sort(function (a, b) { return a.z - b.z || a.id - b.id; })
                 for (let s of sprites.allSprites)
                     s.__draw()
                 if (game.debug)
                     physics.engine.draw();
+            
+                flags = 0;
             })
         }
     }    

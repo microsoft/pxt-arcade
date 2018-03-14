@@ -167,7 +167,7 @@ enum SpriteReadProperty {
 class Sprite {
     x: number
     y: number
-    z: number
+    _z: number
     vx: number
     vy: number
     ax: number
@@ -186,7 +186,7 @@ class Sprite {
     constructor(img: Image) {
         this.x = screen.width >> 1
         this.y = screen.height >> 1
-        this.z = 0
+        this._z = 0
         this.vx = 0
         this.vy = 0
         this.ax = 0
@@ -194,6 +194,17 @@ class Sprite {
         this.flags = 0
         this.image = img
         this.type = 0
+    }
+
+    get z(): number {
+        return this._z;
+    }
+
+    set z(value: number) {
+        if (value != this._z) {
+            this._z = value;
+            game.flags |= game.Flag.NeedsSorting;
+        }
     }
 
     /**
