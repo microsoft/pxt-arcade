@@ -2,28 +2,7 @@
  * A state property from the sprite
  */
 //%
-enum SpriteWriteProperty {
-    //% block=x
-    X,
-    //% block=y
-    Y,
-    //% block="vx"
-    VX,
-    //% block="vy"
-    VY,
-    //% block="ax"
-    AX,
-    //% block="ay"
-    AY,
-    //% block="type"
-    Type
-}
-
-/**
- * A state property from the sprite
- */
-//%
-enum SpriteReadProperty {
+enum SpriteProperty {
     //% block=x
     X,
     //% block=y
@@ -49,7 +28,9 @@ enum SpriteReadProperty {
     //% block=height
     Height,
     //% block=type
-    Type
+    Type,
+    //% block=life
+    Life
 }
 
 enum SpriteFlag {
@@ -75,6 +56,7 @@ class Sprite {
     flags: number
     id: number
     type: number
+    life: number;
 
     animation: SpriteAnimation
 
@@ -92,6 +74,7 @@ class Sprite {
         this.flags = 0
         this.image = img
         this.type = 0
+        this.life = -1
     }
 
     get z(): number {
@@ -113,15 +96,20 @@ class Sprite {
     //% weight=80 blockGap=8
     //% blockNamespace=Sprites
     //% blockId=spritesspreiteset block="set %sprite %property to %value" blockGap=8
-    public set(property: SpriteWriteProperty, value: number) {
+    public set(property: SpriteProperty, value: number) {
         switch (property) {
-            case SpriteWriteProperty.X: this.x = value; break;
-            case SpriteWriteProperty.Y: this.y = value; break;
-            case SpriteWriteProperty.VX: this.vx = value; break;
-            case SpriteWriteProperty.VY: this.vy = value; break;
-            case SpriteWriteProperty.AX: this.ax = value; break;
-            case SpriteWriteProperty.AY: this.ay = value; break;
-            case SpriteWriteProperty.Type: this.type = value; break;
+            case SpriteProperty.X: this.x = value; break;
+            case SpriteProperty.Y: this.y = value; break;
+            case SpriteProperty.VX: this.vx = value; break;
+            case SpriteProperty.VY: this.vy = value; break;
+            case SpriteProperty.AX: this.ax = value; break;
+            case SpriteProperty.AY: this.ay = value; break;
+            case SpriteProperty.Type: this.type = value; break;
+            case SpriteProperty.Life: this.life = value; break;
+            case SpriteProperty.Left: this.x = value + this.image.width / 2; break;
+            case SpriteProperty.Right: this.x = value - this.image.width / 2; break;
+            case SpriteProperty.Top: this.y = value + this.image.height / 2; break;
+            case SpriteProperty.Bottom: this.y = value - this.image.height / 2; break;
         }
     }
 
@@ -133,16 +121,8 @@ class Sprite {
     //% weight=79
     //% blockNamespace=Sprites
     //% blockId=spritespsritechange block="change %sprite %property by %value" blockGap=8
-    public changeBy(property: SpriteWriteProperty, value: number) {
-        switch (property) {
-            case SpriteWriteProperty.X: this.x += value; break;
-            case SpriteWriteProperty.Y: this.y += value; break;
-            case SpriteWriteProperty.VX: this.vx += value; break;
-            case SpriteWriteProperty.VY: this.vy += value; break;
-            case SpriteWriteProperty.AX: this.ax += value; break;
-            case SpriteWriteProperty.AY: this.ay += value; break;
-            case SpriteWriteProperty.Type: this.type += value; break;
-        }
+    public changeBy(property: SpriteProperty, value: number) {
+        this.set(property, this.get(property) + value);
     }
 
     /**
@@ -152,22 +132,23 @@ class Sprite {
     //% weight=81 blockGap=8
     //% blockNamespace=Sprites
     //% blockId=spritespspriteget block="%sprite %property"
-    public get(property: SpriteReadProperty) {
+    public get(property: SpriteProperty) {
         switch (property) {
-            case SpriteReadProperty.X: return this.x;
-            case SpriteReadProperty.Y: return this.y;
-            case SpriteReadProperty.Left: return this.left;
-            case SpriteReadProperty.Right: return this.right;
-            case SpriteReadProperty.Top: return this.top;
-            case SpriteReadProperty.Bottom: return this.bottom;
-            case SpriteReadProperty.Width: return this.width;
-            case SpriteReadProperty.Height: return this.height;
-            case SpriteReadProperty.Y: return this.y;
-            case SpriteReadProperty.VX: return this.vx;
-            case SpriteReadProperty.VY: return this.vy;
-            case SpriteReadProperty.AX: return this.ax;
-            case SpriteReadProperty.AY: return this.ay;
-            case SpriteReadProperty.Type: return this.type;
+            case SpriteProperty.X: return this.x;
+            case SpriteProperty.Y: return this.y;
+            case SpriteProperty.Left: return this.left;
+            case SpriteProperty.Right: return this.right;
+            case SpriteProperty.Top: return this.top;
+            case SpriteProperty.Bottom: return this.bottom;
+            case SpriteProperty.Width: return this.width;
+            case SpriteProperty.Height: return this.height;
+            case SpriteProperty.Y: return this.y;
+            case SpriteProperty.VX: return this.vx;
+            case SpriteProperty.VY: return this.vy;
+            case SpriteProperty.AX: return this.ax;
+            case SpriteProperty.AY: return this.ay;
+            case SpriteProperty.Type: return this.type;
+            case SpriteProperty.Life: return this.life;
             default: return 0;
         }
     }
@@ -200,6 +181,11 @@ class Sprite {
     __update(dt: number) {
         if (this.animation)
             this.animation.update(this)
+        if (this.life > 0) {
+            this.life--;
+            if (this.life <= 0)
+                this.destroy();
+        }
         if (this.flags & sprites.Flag.AutoDestroy) {
             if (this.right < 0 || this.bottom < 0 ||
                 this.left > screen.width ||
