@@ -25,7 +25,7 @@ namespace hud {
             if (_score !== null) {
                 let s = ""
                 if (_highScore)
-                    s += "HI " + _highScore + " ";
+                    s += "HI" + _highScore + "  ";
                 s += _score + ""
                 while (s.length < maxW) s = " " + s
                 screen.print(s, screen.width - font.charWidth * maxW - 10, font.charHeight, color, font)    
