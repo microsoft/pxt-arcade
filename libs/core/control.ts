@@ -3,16 +3,16 @@
 */
 //% weight=10 color="#31bca3" icon="\uf110" advanced=true
 namespace control {
-    const DEVICE_ID_NOTIFY = "notify";
-    const DEVICE_ID_NOTIFY_ONE = "notifyone";
-
+    // https://github.com/lancaster-university/codal-core/blob/c1280524f508c6150f51b77c130eb467976b4cf6/inc/core/CodalComponent.h#L60
+    const DEVICE_ID_NOTIFY_ONE = 1022;
+    const DEVICE_ID_NOTIFY = 1023;
     let nextNotifyEvent = 1;
 
     export function allocateNotifyEvent(): number {
         return nextNotifyEvent++;
     }
-    export function allocatePollEvent(): string {
-        return "poll" + nextNotifyEvent++;
+    export function allocatePollEvent(): number {
+        return nextNotifyEvent++;
     }
     
     export class AnimationQueue {
@@ -77,13 +77,13 @@ namespace control {
     }
 
     class PollEvent {
-        public eid: string;
+        public eid: number;
         public vid: number;
         public start: number;
         public timeOut: number;
         public condition: () => boolean;
         public once: boolean;
-        constructor(eid: string, vid: number, start: number, timeOut: number, condition: () => boolean, once: boolean) {
+        constructor(eid: number, vid: number, start: number, timeOut: number, condition: () => boolean, once: boolean) {
             this.eid = eid;
             this.vid = vid;
             this.start = start;

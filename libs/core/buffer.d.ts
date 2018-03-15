@@ -98,5 +98,5 @@ declare namespace control {
      */
     //% help=control/wait-for-event async
     //% blockId=control_wait_for_event block="wait for event|from %src|with value %value" shim=control::waitForEvent
-    function waitForEvent(src: string, value: int32): void;
+    function waitForEvent(src: number, value: int32): void;
 }

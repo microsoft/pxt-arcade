@@ -1,4 +1,5 @@
 /// <reference path="../node_modules/pxt-core/built/pxtsim.d.ts"/>
+/// <reference path="../libs/keys/enums.ts"/>
 
 namespace pxsim {
     export type CommonBoard = Board
@@ -123,7 +124,7 @@ namespace pxsim {
         getDefaultPitchPin(): Pin {
             return undefined;
         }
-        
+
         setKey(which: number, isPressed: boolean) {
             let k = mapKey(which)
             if (k) {
@@ -133,7 +134,7 @@ namespace pxsim {
 
         handleKeyEvent(key: Key, isPressed: boolean) {
             this.lastKey = Date.now()
-            this.bus.queue(isPressed ? "_keydown" : "_keyup", key)
+            this.bus.queue(isPressed ? INTERNAL_KEY_DOWN : INTERNAL_KEY_UP, key)
             if (this.controls) {
                 this.controls.mirrorKey(key, isPressed);
             }
