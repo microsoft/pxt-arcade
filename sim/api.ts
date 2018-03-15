@@ -126,3 +126,22 @@ namespace pxsim.game {
         b.tryScreenshot();
     }
 }
+
+namespace pxsim.keys {
+    const eventNames = [
+        "keyup",
+        "keydown"
+    ]
+
+    export function raiseKeyEvent(id: number, evid: number): void {
+        pxsim.control.raiseEvent(eventNames[id], evid);
+    }
+
+    export function pauseUntilKeyEvent(id: number, evid: number): void {
+        pxsim.control.waitForEvent(eventNames[id], evid);
+    }
+    
+    export function onKeyEvent(id: number, evid: number, handler: RefAction): void {
+        pxsim.control.onEvent(eventNames[id], evid, handler);
+    }
+}
