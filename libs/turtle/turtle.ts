@@ -53,20 +53,22 @@ namespace turtle {
         let firstX = _sprite.x;
         let firstY = _sprite.y;
 
-        // animating move...
-        let oldX = _sprite.x;
-        let oldY = _sprite.y;
-        for (let i = 0; i < n; ++i) {
-            // paint if pen down
-            if (_penMode == TurtlePenMode.Down || _penMode == TurtlePenMode.Erase)
-                _bkg.image.drawLine(oldX, oldY, _sprite.x, _sprite.y, c)
-            // paint and update
-            setPosition(_sprite.x + dx, _sprite.y + dy);
-            // and wait
-            pause(_delay);
+        if (_delay > 1) {
+            // animating move...
+            let oldX = _sprite.x;
+            let oldY = _sprite.y;
+            for (let i = 0; i < n; ++i) {
+                // paint if pen down
+                if (_penMode == TurtlePenMode.Down || _penMode == TurtlePenMode.Erase)
+                    _bkg.image.drawLine(oldX, oldY, _sprite.x, _sprite.y, c)
+                // paint and update
+                setPosition(_sprite.x + dx, _sprite.y + dy);
+                // and wait
+                pause(_delay);
 
-            oldX = _sprite.x;
-            oldY = _sprite.y;
+                oldX = _sprite.x;
+                oldY = _sprite.y;
+            }
         }
 
         // adjust final position
@@ -93,7 +95,7 @@ namespace turtle {
      * Turns the turtle
      */
     //% blockId=turtleturn block="turn %degrees"
-    //% degress.min=-180 degrees.max=180
+    //% degrees.min=-180 degrees.max=180
     export function turn(degrees: number): void {
         init();
         _direction = (_direction + degrees) % 360;
@@ -147,23 +149,22 @@ namespace turtle {
 
     /**
      * Define the steps per second
-     * @param stepsPerSecond steps per second, eg: 25
+     * @param speed eg: 50
      */
     //% blockGap=8
     //% blockId=turtleSetSpeed block="set speed %speed"
-    //% stepsPerSecond.min=1 stepsPerSecond.max=50
+    //% speed.min=1 speed.max=100
     //% weight=10
-    export function setSpeed(stepsPerSecond: number): void {
-        if (stepsPerSecond <= 0) return;
+    export function setSpeed(speed: number): void {
         init();
-        _delay = Math.max(1, Math.min(50, 1000 / stepsPerSecond));
+        _delay = 100 - Math.clamp(1, 100, speed);
     }
 
     /**
      * Stamps the image at the current turtle position
      * @param image 
      */
-    //% blockId=turtlestamp block="stamp %image"
+    //% _blockId=turtlestamp block="stamp %image"
     export function stamp(image: Image) {
         init();
         _bkg.image.drawImage(image, _sprite.left + ((_sprite.width - image.width) >> 1), _sprite.top + ((_sprite.height - image.height) >> 1));
