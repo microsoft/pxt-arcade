@@ -1,13 +1,3 @@
 {
-    "name": "keys",
-    "description": "Handling keys",
-    "files": [
-        "keys.ts",
-        "targetoverrides.ts"
-    ],
-    "dependencies": {
-        "core": "file:../core",
-        "screen": "file:../screen"
-    },
-    "public": true
+    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/keys"
 }
