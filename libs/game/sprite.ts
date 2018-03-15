@@ -40,8 +40,8 @@ enum SpriteFlag {
     AutoDestroy = sprites.Flag.AutoDestroy
 }
 
-/** 
- * A sprite on screem 
+/**
+ * A sprite on screem
  **/
 //%
 class Sprite {
@@ -94,7 +94,7 @@ class Sprite {
      * @param the updated value
      */
     //% weight=80 blockGap=8
-    //% blockNamespace=Sprites
+    //% blockNamespace=Sprites color="#23c47e"
     //% blockId=spritesspreiteset block="set %sprite %property to %value" blockGap=8
     public set(property: SpriteProperty, value: number) {
         switch (property) {
@@ -119,7 +119,7 @@ class Sprite {
      * @param value amount of change, eg: 1
      */
     //% weight=79
-    //% blockNamespace=Sprites
+    //% blockNamespace=Sprites color="#23c47e"
     //% blockId=spritespsritechange block="change %sprite %property by %value" blockGap=8
     public changeBy(property: SpriteProperty, value: number) {
         this.set(property, this.get(property) + value);
@@ -130,7 +130,7 @@ class Sprite {
      * @param property the name of the property to change
      */
     //% weight=81 blockGap=8
-    //% blockNamespace=Sprites
+    //% blockNamespace=Sprites color="#23c47e"
     //% blockId=spritespspriteget block="%sprite %property"
     public get(property: SpriteProperty) {
         switch (property) {
@@ -220,7 +220,7 @@ class Sprite {
      * Sets the sprite as a ghost (which does not interact with physics)
      */
     //% blockGap=8
-    //% blockNamespace=Sprites
+    //% blockNamespace=Sprites color="#23c47e"
     //% blockId=spritesetsetflag block="set %sprite %flag %on"
     //% on.fieldEditor=toggleonoff
     setFlag(flag: SpriteFlag, on: boolean) {
@@ -230,10 +230,10 @@ class Sprite {
 
     /**
      * Tests if a sprite overlaps with another
-     * @param other 
+     * @param other
      */
     //% blockGap=8
-    //% blockNamespace=Sprites
+    //% blockNamespace=Sprites color="#23c47e"
     //% blockId=spriteoverlapswith block="%sprite overlaps with %other"
     overlapsWith(other: Sprite) {
         if (other == this) return false;
@@ -247,10 +247,10 @@ class Sprite {
     /**
      * Registers code when the sprite overlaps with another sprite
      * @param spriteType sprite type to match
-     * @param handler 
+     * @param handler
      */
     //% blockGap=8
-    //% blockNamespace=Sprites
+    //% blockNamespace=Sprites color="#23c47e"
     //% blockId=spriteonoverlap block="on %sprite overlap with"
     onOverlap(handler: (other: Sprite) => void) {
         this.overlapHandler = handler;
@@ -258,10 +258,10 @@ class Sprite {
 
     /**
      * Register code to run when sprite is destroyed
-     * @param handler 
+     * @param handler
      */
     //% weight=9 blockGap=8
-    //% blockNamespace=Sprites
+    //% blockNamespace=Sprites color="#23c47e"
     //% blockId=spriteondestroy block="on %sprite destroyed"
     onDestroyed(handler: () => void) {
         this.destroyHandler = handler
@@ -271,7 +271,7 @@ class Sprite {
      * Destroys the sprite
      */
     //% weight=10 blockGap=8
-    //% blockNamespace=Sprites
+    //% blockNamespace=Sprites color="#23c47e"
     //% blockId=spritedestroy block="destroy %sprite"
     destroy() {
         if (this.flags & sprites.Flag.Destroyed)

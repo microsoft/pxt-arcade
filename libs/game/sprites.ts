@@ -12,15 +12,17 @@ Frame handlers:
 /**
  * Sprites on screen
  */
-//% weight=98 color=#12592A icon="\uf111"
+//% weight=98 color="#23c47e" icon="\uf111"
 namespace sprites {
     export let allSprites: Sprite[]
 
     /**
      * Creates a new sprite from an image
-     * @param img the iamge
+     * @param img the image
      */
-    //% _blockId=spritescreate block="create %img"
+    //% blockId=spritescreate block="sprite %img"
+    //% img.fieldEditor="sprite"
+    //% img.fieldOptions.taggedTemplate="img"
     export function create(img: Image): Sprite {
         game.init()
         let spr = new Sprite(img)
@@ -42,7 +44,7 @@ namespace sprites {
     }
 
     /**
-     * Create a new sprite with given speed, and place it at the edge of the screen so it moves towards the middle. 
+     * Create a new sprite with given speed, and place it at the edge of the screen so it moves towards the middle.
      * The sprite auto-destroys when it leaves the screen. You can modify position after it's created.
      */
     export function createProjectile(img: Image, vx: number, vy: number) {
@@ -65,16 +67,6 @@ namespace sprites {
         s.flags |= sprites.Flag.AutoDestroy;
 
         return s
-    }
-
-        /**
-     * Creates a new sprite from an image
-     * @param img the iamge
-     */
-    //% blockId=spritescreatetest block="TEST %img"
-    //% img.fieldEditor="sprite"
-    export function testCreate(img: string): string {
-        return undefined;
     }
 
     export enum Flag {
