@@ -10,7 +10,7 @@
     "dependencies": {
         "core": "file:../core",
         "screen": "file:../screen",
-        "input": "file:../input",
+        "keys": "file:../keys",
         "music": "file:../music",
         "game": "file:../game"
     },

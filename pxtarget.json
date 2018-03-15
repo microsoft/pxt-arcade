@@ -13,7 +13,7 @@
         "libs/core",
         "libs/screen",
         "libs/game",
-        "libs/input",
+        "libs/keys",
         "libs/music",
         "libs/device",
         "libs/turtle"

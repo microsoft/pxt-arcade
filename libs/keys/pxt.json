@@ -2,7 +2,8 @@
     "name": "input",
     "description": "Handling keys",
     "files": [
-        "keys.ts"
+        "keys.ts",
+        "targetoverrides.ts"
     ],
     "dependencies": {
         "core": "file:../core",
