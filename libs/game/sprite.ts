@@ -162,16 +162,27 @@ class Sprite {
     get left() {
         return this.x - (this.width >> 1)
     }
+    set left(value: number) {
+        this.x = value + (this.width >> 1);
+    }
     get right() {
         return this.left + this.width
+    }
+    set right(value: number) {
+        this.x = value - (this.width >> 1);
     }
     get top() {
         return this.y - (this.height >> 1)
     }
+    set top(value: number) {
+        this.y = value + (this.height >> 1);
+    }
     get bottom() {
         return this.top + this.height
     }
-
+    set bottom(value: number) {
+        this.y = value - (this.height >> 1);
+    }
     __draw() {
         screen.drawTransparentImage(this.image, this.left, this.top)
         if (game.debug)
