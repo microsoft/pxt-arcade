@@ -81,10 +81,12 @@ namespace mkcd {
 
             this.root = new svg.SVG();
             this.group = this.root.group();
+            this.makeTransparencyFill();
 
             this.palette = new mkcd.ColorPalette({
                 rowLength: 2,
                 emptySwatchDisabled: false,
+                emptySwatchFill: 'url("#alpha-background")',
                 outerMargin: paletteBorderWidth,
                 columnMargin: 1,
                 rowMargin: 1,
@@ -98,7 +100,7 @@ namespace mkcd {
                 outerMargin: paintSurfaceBorderWidth,
                 backgroundFill: "black",
                 cellClass: "pixel-cell"
-            }, this.displayState, ["#dedede"].concat(this.colors));
+            }, this.displayState, ['url("#alpha-background")'].concat(this.colors));
 
             this.paintSurface.drag((col, row) => {
                 if (this.tool !== PaintTool.Fill) {
@@ -343,6 +345,27 @@ namespace mkcd {
             if (this.debugText) {
                 this.debugText.text("DEBUG: " + msg);
             }
+        }
+
+        private makeTransparencyFill() {
+            this.root.define(defs => {
+                const p = defs.create("pattern", "alpha-background")
+                    .size(10, 10)
+                    .units(svg.PatternUnits.objectBoundingBox);
+
+                p.draw("rect")
+                    .at(0, 0)
+                    .size(11, 11)
+                    .fill("white")
+                p.draw("rect")
+                    .at(0, 0)
+                    .size(5, 5)
+                    .fill("#dedede");
+                p.draw("rect")
+                    .at(5, 5)
+                    .size(5, 5)
+                    .fill("#dedede");
+            })
         }
     }
 }

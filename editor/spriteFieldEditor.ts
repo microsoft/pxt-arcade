@@ -5,8 +5,9 @@
 
 
 namespace pxt.editor {
-    const PREVIEW_WIDTH = 100;
-    const PREVIEW_HEIGHT = 100;
+    const PREVIEW_WIDTH = 40;
+    const PREVIEW_HEIGHT = 40;
+    const TOP_BOTTOM_MARGIN = 5;
 
     // These are the characters used to compile, for a list of every supported character see parseBitmap()
     const hexChars = [".", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
@@ -86,8 +87,8 @@ namespace pxt.editor {
         render_() {
             super.render_();
             if (this.preview) {
-                this.size_.height = this.preview.outerHeight() + 20;
-                this.size_.width = this.preview.outerWidth() + 20;
+                this.size_.height = this.preview.outerHeight() + TOP_BOTTOM_MARGIN * 2;
+                this.size_.width = this.preview.outerWidth() + TOP_BOTTOM_MARGIN * 2;
             }
         }
 
@@ -125,6 +126,8 @@ namespace pxt.editor {
         private redrawPreview() {
             this.fieldGroup_.innerHTML = "";
             this.preview = new mkcd.BitmapImage({
+                //backgroundFill: this.sourceBlock_.getColourSecondary(),
+                outerMargin: 2,
                 cellWidth: Math.floor(PREVIEW_WIDTH / 16),
                 cellHeight: Math.floor(PREVIEW_HEIGHT / 16),
                 cellClass: "pixel-cell"
@@ -147,6 +150,7 @@ namespace pxt.editor {
                     "#ffffff",
                 ]);
 
+            this.preview.translate(0, TOP_BOTTOM_MARGIN);
             this.fieldGroup_.appendChild(this.preview.getView().el);
         }
 
