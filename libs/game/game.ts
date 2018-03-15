@@ -13,16 +13,17 @@ namespace game {
     export let debug = false;
     export let flags: number = 0;
 
-    let isOver = false
-    let _waitAnyKey: () => void
-    let bgFunction = () => { }
+    let __isOver = false
+    let __waitAnyKey: () => void
+    let __bgFunction = () => { }
+    let __background: Background;
 
     export function setWaitAnyKey(f: () => void) {
-        _waitAnyKey = f
+        __waitAnyKey = f
     }
 
     export function waitAnyKey() {
-        if (_waitAnyKey) _waitAnyKey()
+        if (__waitAnyKey) __waitAnyKey()
         else pause(2000)
     }
 
@@ -35,6 +36,7 @@ namespace game {
     export function init() {
         if (!sprites.allSprites) {
             sprites.allSprites = []
+            __background = new Background();
             game.setBackground(0)
             control.addFrameHandler(10, () => {
                 const dt = control.deltaTime;
@@ -42,7 +44,7 @@ namespace game {
                 for (let s of sprites.allSprites)
                     s.__update(dt);
             })
-            control.addFrameHandler(60, () => { bgFunction() })
+            control.addFrameHandler(60, () => { __bgFunction() })
             control.addFrameHandler(90, () => {
                 if (flags & Flag.NeedsSorting)
                     sprites.allSprites.sort(function (a, b) { return a.z - b.z || a.id - b.id; })
@@ -58,19 +60,45 @@ namespace game {
 
     export function setBackgroundCallback(f: () => void) {
         init();
-        bgFunction = f
+        __bgFunction = f
     }
 
     /**
      * Sets the game background color
      * @param color 
      */
+    //% weight=25
     //% blockId=gamesetbackgroundcolor block="set background to %color"
     export function setBackground(color: number) {
         init();
-        bgFunction = () => {
-            screen.fill(color)
-        }
+        __background.color = color;
+        __bgFunction = () => __background.render();
+    }
+
+    /**
+     * Adds a background layer
+     * @param distance distance of the layer which determines how fast it moves
+     * @param img 
+     */
+    //% weight=24
+    //% _blockId=backgroundaddimage block="add background image|distance %distance|aligned % alignment|image %img"
+    export function addBackgroundImage(distance: number, alignment: BackgroundAlignment, img: Image) {
+        init();
+        __background.addLayer(distance, alignment, img);
+        __bgFunction = () => __background.render();
+    }
+
+    /**
+     * Moves the background by the given value
+     * @param dx 
+     * @param dy 
+     */
+    //% weight=20
+    //% blockId=backgroundmove block="move background dx %dx dy %dy"
+    export function moveBackground(dx: number, dy: number) {
+        init();
+        __background.viewX += dx;
+        __background.viewY += dy;
     }
 
     function showBackground(h: number, c: number) {
@@ -136,9 +164,9 @@ namespace game {
     //% blockId=gameOver block="game over"
     //% weight=80
     export function over() {
-        if (isOver) return
+        if (__isOver) return
         takeScreenshot();
-        isOver = true
+        __isOver = true
         control.clearHandlers()
         control.runInParallel(() => {
             music.playSound(music.sounds(Sounds.Wawawawaa))
