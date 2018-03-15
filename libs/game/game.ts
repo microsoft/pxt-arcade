@@ -67,6 +67,7 @@ namespace game {
      * Sets the game background color
      * @param color 
      */
+    //% weight=25
     //% blockId=gamesetbackgroundcolor block="set background to %color"
     export function setBackground(color: number) {
         init();
@@ -79,10 +80,11 @@ namespace game {
      * @param distance distance of the layer which determines how fast it moves
      * @param img 
      */
-    //%
-    export function addBackgroundImage(distance: number, img: Image) {
+    //% weight=24
+    //% _blockId=backgroundaddimage block="add background image|distance %distance|aligned % alignment|image %img"
+    export function addBackgroundImage(distance: number, alignment: BackgroundAlignment, img: Image) {
         init();
-        __background.addLayer(distance, img);
+        __background.addLayer(distance, alignment, img);
     }
 
     /**
@@ -90,6 +92,8 @@ namespace game {
      * @param dx 
      * @param dy 
      */
+    //% weight=20
+    //% blockId=backgroundmove block="move background dx %dx dy %dy"
     export function moveBackground(dx: number, dy: number) {
         init();
         __background.viewX += dx;

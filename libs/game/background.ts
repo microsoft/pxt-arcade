@@ -1,3 +1,16 @@
+enum BackgroundAlignment {
+    //% block="left"
+    Left,
+    //% block="right"
+    Right,
+    //% block="top"
+    Top,
+    //% block="bottom"
+    Bottom,
+    //% block="center"
+    Center
+}
+
 namespace game {
     export class Background {
         color: number;
@@ -12,8 +25,8 @@ namespace game {
             this._layers = [];
         }
 
-        public addLayer(distance: number, pic: Image) {
-            const layer = new BackgroundLayer(distance, pic);
+        public addLayer(distance: number, alignment: BackgroundAlignment, pic: Image) {
+            const layer = new BackgroundLayer(distance, alignment, pic);
             this._layers.push(layer);
             this._layers.sort((a, b) => b.distance - a.distance);
             return layer;
@@ -31,13 +44,6 @@ namespace game {
         }
     }
 
-    export enum BackgroundAlignment {
-        Left,
-        Right,
-        Top,
-        Bottom,
-        Center
-    }
 
     export class BackgroundLayer {
         distance: number;
@@ -47,13 +53,31 @@ namespace game {
         alignX: BackgroundAlignment;
         alignY: BackgroundAlignment;
 
-        constructor(distance: number, img: Image) {
-            this.distance = distance;
+        constructor(distance: number, alignment: BackgroundAlignment, img: Image) {
+            this.distance = Math.max(1, distance);
             this.img = img;
-            this.repeatX = true;
-            this.repeatY = true;
-            this.alignX = BackgroundAlignment.Left;
-            this.alignY = BackgroundAlignment.Bottom;
+            switch (alignment) {
+                case BackgroundAlignment.Center:
+                    this.repeatX = true;
+                    this.repeatY = true;
+                    this.alignX = BackgroundAlignment.Center;
+                    this.alignY = BackgroundAlignment.Center;
+                    break;
+                case BackgroundAlignment.Left:
+                case BackgroundAlignment.Right:
+                    this.repeatX = false;
+                    this.repeatY = true;
+                    this.alignX = alignment;
+                    this.alignY = BackgroundAlignment.Center;
+                    break;
+                case BackgroundAlignment.Top:
+                case BackgroundAlignment.Bottom:
+                    this.repeatX = true;
+                    this.repeatY = false;
+                    this.alignX = BackgroundAlignment.Center;
+                    this.alignY = alignment;
+                    break;
+            }
         }
 
         render(offsetX: number, offsetY: number) {
