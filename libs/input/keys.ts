@@ -94,6 +94,8 @@ namespace keys {
     export const A = new Key(5)
     //% fixedInstance block="B"
     export const B = new Key(6)
+    //% fixedInstance block="any"
+    export const Any = new Key(0);
 
     /**
      * Gets the horizontal movement, given the step and state of keys
