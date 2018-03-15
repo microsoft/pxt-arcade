@@ -2,6 +2,7 @@
     "name": "keys",
     "description": "Handling keys",
     "files": [
+        "enums.ts",
         "keys.ts",
         "targetoverrides.ts"
     ],
