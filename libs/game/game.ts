@@ -85,6 +85,7 @@ namespace game {
     export function addBackgroundImage(distance: number, alignment: BackgroundAlignment, img: Image) {
         init();
         __background.addLayer(distance, alignment, img);
+        __bgFunction = () => __background.render();
     }
 
     /**
