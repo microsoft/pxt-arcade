@@ -15,8 +15,9 @@ class PhysicsEngine {
     /**
      * Compute physic information before rendering
      */
-    update(dt: number) {
-    }
+    update(dt: number) { }
+
+    overlaps(sprite: Sprite, spriteType: number): Sprite[] { return []; }
 }
 
 /**
@@ -59,8 +60,11 @@ class ArcadePhysicsEngine extends PhysicsEngine {
 
         // update physics of non-ghosts
         const colliders = this.sprites.filter(sprite => !(sprite.flags & sprites.Flag.Ghost));
-        const collisioners = colliders.filter(sprite => !!sprite.collisionHandler);
+        // collect any sprite with a collection handler
+        const collisioners = colliders.filter(sprite => !!sprite.overlapHandler);
+        // for low number of sprites, just iterate through them
         if (collisioners.length < Math.sqrt(colliders.length)) {
+            // not enough sprite, just brute force it
             this.map = undefined;
         } else {
             if (!this.map) this.map = new sprites.SpriteMap();
@@ -69,17 +73,22 @@ class ArcadePhysicsEngine extends PhysicsEngine {
 
         // queue collision handlers
         for (const sprite of collisioners)
-            sprite._collisions();
+            sprite.__computeOverlaps();
     }
 
-    collides(sprite: Sprite): Sprite[] {
+    /**
+     * Returns sprites that overlap with the given sprite. If type is non-zero, also filter by type.
+     * @param sprite 
+     * @param spriteType 
+     */
+    overlaps(sprite: Sprite, spriteType: number): Sprite[] {
         if (this.map)
-            return this.map.overlaps(sprite);
+            return this.map.overlaps(sprite, spriteType);
         else {
             const r: Sprite[] = [];
             const n = this.sprites.length;
             for (let i = 0; i < n; ++i) {
-                if (sprite.collidesWith(this.sprites[i]))
+                if ((!spriteType || spriteType == this.sprites[i].type) && sprite.overlapsWith(this.sprites[i]))
                     r.push(this.sprites[i]);
             }
             return r;
@@ -91,5 +100,5 @@ namespace physics {
     /**
      * Gets the default physics engine
      */
-    export let engine = new ArcadePhysicsEngine();
+    export let engine: PhysicsEngine = new ArcadePhysicsEngine();
 }

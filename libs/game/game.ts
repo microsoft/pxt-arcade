@@ -1,69 +1,104 @@
 /**
  * Game transitions and dialog
  **/
-//% color=#008272 weight=99 icon="\uf11b"
+//% color=#008272 weight=99 icon="\uf1d8"
 namespace game {
+    export enum Flag {
+        NeedsSorting = 1 << 1,
+    }
+
     /**
      * Determins if diagnostics are shown
      */
     export let debug = false;
+    export let flags: number = 0;
 
-    let isOver = false
-    let _waitAnyKey: () => void
-    let bgFunction = () => { }
+    let __isOver = false
+    let __waitAnyKey: () => void
+    let __bgFunction = () => { }
+    let __background: Background;
 
     export function setWaitAnyKey(f: () => void) {
-        _waitAnyKey = f
+        __waitAnyKey = f
     }
 
     export function waitAnyKey() {
-        if (_waitAnyKey) _waitAnyKey()
-        else loops.pause(2000)
+        if (__waitAnyKey) __waitAnyKey()
+        else pause(2000)
     }
 
-    export function freeze() {
+    function freeze() {
         setBackgroundCallback(() => { })
-        loops.frame(() => { })
+        game.frame(() => { })
         sprites.allSprites = [];
     }
 
     export function init() {
         if (!sprites.allSprites) {
             sprites.allSprites = []
+            __background = new Background();
             game.setBackground(0)
             control.addFrameHandler(10, () => {
                 const dt = control.deltaTime;
                 physics.engine.update(dt);
                 for (let s of sprites.allSprites)
-                    s._update(dt);
+                    s.__update(dt);
             })
-            control.addFrameHandler(60, () => { bgFunction() })
+            control.addFrameHandler(60, () => { __bgFunction() })
             control.addFrameHandler(90, () => {
-                // stack overflow
-                // allSprites.sort(function (a, b) { return a.z - b.z || a.id - b.id; })
+                if (flags & Flag.NeedsSorting)
+                    sprites.allSprites.sort(function (a, b) { return a.z - b.z || a.id - b.id; })
                 for (let s of sprites.allSprites)
-                    s._draw()
+                    s.__draw()
                 if (game.debug)
                     physics.engine.draw();
+            
+                flags = 0;
             })
         }
     }    
 
     export function setBackgroundCallback(f: () => void) {
         init();
-        bgFunction = f
+        __bgFunction = f
     }
 
     /**
      * Sets the game background color
      * @param color 
      */
+    //% weight=25
     //% blockId=gamesetbackgroundcolor block="set background to %color"
     export function setBackground(color: number) {
         init();
-        bgFunction = () => {
-            screen.fill(color)
-        }
+        __background.color = color;
+        __bgFunction = () => __background.render();
+    }
+
+    /**
+     * Adds a background layer
+     * @param distance distance of the layer which determines how fast it moves
+     * @param img 
+     */
+    //% weight=24
+    //% _blockId=backgroundaddimage block="add background image|distance %distance|aligned % alignment|image %img"
+    export function addBackgroundImage(distance: number, alignment: BackgroundAlignment, img: Image) {
+        init();
+        __background.addLayer(distance, alignment, img);
+        __bgFunction = () => __background.render();
+    }
+
+    /**
+     * Moves the background by the given value
+     * @param dx 
+     * @param dy 
+     */
+    //% weight=20
+    //% blockId=backgroundmove block="move background dx %dx dy %dy"
+    export function moveBackground(dx: number, dy: number) {
+        init();
+        __background.viewX += dx;
+        __background.viewY += dy;
     }
 
     function showBackground(h: number, c: number) {
@@ -111,7 +146,6 @@ namespace game {
     }
 
     function meltScreen() {
-        freeze()
         for (let i = 0; i < 10; ++i) {
             for (let j = 0; j < 1000; ++j) {
                 let x = Math.randomRange(0, screen.width - 1)
@@ -120,7 +154,7 @@ namespace game {
                 screen.set(x, y + 1, c)
                 screen.set(x, y + 2, c)
             }
-            loops.pause(100)
+            pause(100)
         }
     }
 
@@ -130,17 +164,26 @@ namespace game {
     //% blockId=gameOver block="game over"
     //% weight=80
     export function over() {
-        if (isOver) return
+        if (__isOver) return
         takeScreenshot();
-        isOver = true
+        __isOver = true
         control.clearHandlers()
-        control.runInBackground(() => {
+        control.runInParallel(() => {
+            music.playSound(music.sounds(Sounds.Wawawawaa))
+            freeze();
             meltScreen();
             let top = showBackground(44, 4)
             screen.printCenter("GAME OVER!", top + 8, 5, image.font8)
-            if (hud.hasScore())
+            if (hud.hasScore()) {
                 screen.printCenter("Score:" + hud.score(), top + 23, 2, image.font5)
-            loops.pause(1000) // wait for users to stop pressing keys
+                if (hud.score() > hud.highScore()) {
+                    hud.saveHighScore();
+                    screen.printCenter("New High Score!", top + 32, 2, image.font5);
+                } else {
+                    screen.printCenter("HI" + hud.highScore(), top + 32, 2, image.font5);
+                }
+            }
+            pause(1000) // wait for users to stop pressing keys
             waitAnyKey()
             control.reset()
         })
@@ -153,4 +196,19 @@ namespace game {
     export function takeScreenshot() {
         // handled by host
     }
+
+    let __frameCb: () => void = undefined;
+    /**
+     * Repeats the code in the screen rendering loop.
+     * @param body code to execute
+     */
+    //% help=loops/frame weight=100 afterOnStart=true
+    //% blockId=frame block="game frame"
+    export function frame(a: () => void): void {
+        if (!__frameCb)
+            control.addFrameHandler(20, function() {
+                if (__frameCb) __frameCb();
+            });
+        __frameCb = a;
+    }        
 }

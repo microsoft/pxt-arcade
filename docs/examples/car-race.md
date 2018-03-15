@@ -1,8 +1,6 @@
 # car-race
 
-Example
-
-```blocks
+```typescript
 game.splash("Car Race", "Avoid the borders!")
 
 const car = sprites.create(img`
@@ -51,8 +49,9 @@ function drive(lines: number) {
 drive(128)
 ddx = 1
 const road = sprites.create(roadImg)
+road.type = 1
 
-car.onCollision(function (other: Sprite) {
+car.onOverlap(function (other: Sprite) {
     game.over()
 })
 car.z = 10
@@ -61,7 +60,7 @@ let pos = 0
 let prevPos = 0
 
 
-loops.frame(function () {
+game.frame(function () {
     pos += 1 + Math.sqrt(control.millis()) / 200.0
     drive(pos - prevPos)
     prevPos = pos | 0

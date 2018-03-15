@@ -13,14 +13,14 @@ namespace sprites {
         /**
          * Returns a potential list of neighbors
          */
-        neighbors(sprite: Sprite): Sprite[] {
+        neighbors(sprite: Sprite, spriteType: number): Sprite[] {
             if (this.isOob(sprite)) return [];
 
             const n: Sprite[] = [];
-            this.mergeAtKey(sprite.left, sprite.top, n)
-            this.mergeAtKey(sprite.left, sprite.bottom, n)
-            this.mergeAtKey(sprite.right, sprite.top, n)
-            this.mergeAtKey(sprite.right, sprite.bottom, n)
+            this.mergeAtKey(sprite.left, sprite.top, spriteType, n)
+            this.mergeAtKey(sprite.left, sprite.bottom, spriteType, n)
+            this.mergeAtKey(sprite.right, sprite.top, spriteType, n)
+            this.mergeAtKey(sprite.right, sprite.bottom, spriteType, n)
             n.removeElement(sprite);
             return n;
         }
@@ -29,9 +29,9 @@ namespace sprites {
          * Gets the overlaping sprites if any
          * @param sprite 
          */
-        overlaps(sprite: Sprite): Sprite[] {
-            const n = this.neighbors(sprite);
-            const o = n.filter(neighbor => sprite.collidesWith(neighbor));
+        overlaps(sprite: Sprite, spriteType: number): Sprite[] {
+            const n = this.neighbors(sprite, spriteType);
+            const o = n.filter(neighbor => sprite.overlapsWith(neighbor));
             return o;
         }
 
@@ -104,12 +104,12 @@ namespace sprites {
                     this.insertAtKey(left + Math.min(sprite.width, x * this.cellWidth), top + Math.min(sprite.height, y * this.cellHeight), sprite)
         }
 
-        private mergeAtKey(x: number, y: number, n: Sprite[]) {
+        private mergeAtKey(x: number, y: number, type: number, n: Sprite[]) {
             const k = this.key(x, y);
             const bucket = this.buckets[k];
             if (bucket) {
                 for (const sprite of bucket)
-                    if (n.indexOf(sprite) < 0)
+                    if ((!type || sprite.type == type) && n.indexOf(sprite) < 0)
                         n.push(sprite);
             }
         }

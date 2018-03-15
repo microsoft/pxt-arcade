@@ -63,13 +63,13 @@ const ground = screen.height - player.height;
 player.x = 20;
 player.y = ground;
 
-player.onCollision(function (other: Sprite) {
+player.onOverlap(function (other: Sprite) {
     game.over();
 });
 
 
 let frameCount = 0;
-loops.frame(function () {
+game.frame(function () {
     // Periodically spawn an obstacle and increase the difficulty.
     // This math assumes the game is running at 60 FPS
     frameCount = (frameCount + 1) % Math.floor(60 / obstaclesPerSecond)
@@ -104,9 +104,9 @@ loops.frame(function () {
 })
 
 function createObstacle() {
-    // sprites.launchParticle creates a sprite that automatically
+    // sprites.createProjectile creates a sprite that automatically
     // destroys itself when it leaves the screen
-    const s = sprites.launchParticle(img`
+    const s = sprites.createProjectile(img`
         f f f f f
         f f f f f
         f f f f f
@@ -123,7 +123,7 @@ function createObstacle() {
     s.y = ground - 15 * Math.floor(Math.randomRange(0, obstaclePositions - 1));
 
     // Keep score
-    s.onDestroy(function () {
+    s.onDestroyed(function () {
         hud.changeScoreBy(1)
     });
 }

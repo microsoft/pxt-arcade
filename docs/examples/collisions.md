@@ -24,7 +24,7 @@ const coll = img`
 .77
 7..77   
     `
-keys.A.onPressed(function () {
+keys.A.onEvent(KeyEvent.Pressed, function () {
     game.debug = !game.debug
 })
 while (true) {
@@ -35,10 +35,10 @@ while (true) {
         s.y = Math.randomRange(0, screen.height);
         s.vx = Math.randomRange(-10, 10)
         s.vy = Math.randomRange(-10, 10)
-        s.onCollision(function (other: Sprite) {
+        s.onOverlap(function (other: Sprite) {
             hud.changeScoreBy(1);
         })
     }
-    loops.pause(1000)
+    pause(1000)
 }
 ```

@@ -1,8 +1,6 @@
 # asteroids
 
-Example
-
-```blocks
+```typescript
 const spaceship = sprites.create(img`
  . . . . d
  . . . . d
@@ -25,6 +23,39 @@ const meteor = img`
 . . . 8 8 8 
 `
 
+const meteorDeath = [
+    img`
+. . . 8 8 8 
+. . . 8 1 8 . 8
+. 8 8 . 1 . 8 8 8
+. . 8 8 . 8 1 1 8 8
+8 8 8 . 8 . 1 1 8
+. 8 . 8 8 8 . 8 8
+. . 8 8 1 8 8 .
+. . . 8 8 8 
+`,
+    img`
+. . . 8 8 8 
+. . . 8 1 8 . .
+. 8 8 . . . . 8 8
+. . 8 . . . 1 1 8 8
+8 8 8 . . . . 1 8
+. . . . . . . . .
+. . . 8 1 8 . .
+. . . 8 8 8 
+`,
+    img`
+. . . . 8 . 
+. . . . . . . .
+. 8 . . . . . . .
+. . . . . . . . . 8
+. . . . . . . . .
+. . . . . . . . .
+. . . . . . . .
+. . . . 8 . 
+`]
+
+
 const rocketImg = img`
 . 3 
 . 3
@@ -32,35 +63,42 @@ const rocketImg = img`
 3 3 3
 `
 
-spaceship.onCollision(function (other: Sprite) {
+spaceship.onOverlap(function (other: Sprite) {
     game.over()
 })
 spaceship.z = 10
 
-loops.frame(function () {
+game.frame(function () {
     spaceship.x += keys.dx(70)
     spaceship.x = Math.clamp(10, 118, spaceship.x)
 
+    // metero
     if (Math.random() < 0.05) {
-        let m = sprites.launchParticle(meteor, 0, Math.randomRange(30, 80))
-        m.x = Math.randomRange(10, 118)
+        let m = sprites.createProjectile(meteor, 0, Math.randomRange(30, 80))
+        m.x = Math.randomRange(10, 140)
     }
     // stars
     if (Math.random() < 0.1) {
-        let m = sprites.launchParticle(img`f`, 0, 40)
+        let m = sprites.createProjectile(img`f`, 0, 40)
         m.x = Math.randomRange(0, 128)
-        m.makeGhost()
+        m.life = Math.randomRange(100, 120)
+        m.setFlag(SpriteFlag.Ghost, true);
     }
     let now = control.millis()
     if (keys.A.wasPressed()) {
-        let r = sprites.launchParticle(rocketImg, 0, -90)
+        let r = sprites.createProjectile(rocketImg, 0, -90)
         r.x = spaceship.x
         r.y = spaceship.y - 10
-        r.onCollision(function (other: Sprite) {
+        r.onOverlap(function (other: Sprite) {
             other.destroy()
+            const o = sprites.createWithAnimation(meteorDeath)
+            o.x = other.x;
+            o.y = other.y;
+            o.vy = -5;
+            o.life = 20;
+            o.setFlag(SpriteFlag.Ghost, true)
             hud.changeScoreBy(1)
         })
     }
 })
-
 ```

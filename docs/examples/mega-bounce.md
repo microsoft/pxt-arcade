@@ -32,15 +32,17 @@ let counter = 0
 
 addBall(80);
 
-loops.frame(function () {
+game.frame(function () {
     counter++;
     for (const ball of balls) {
-        if (ball.collidesWith(paddle)) {
+        if (ball.overlapsWith(paddle)) {
             ball.vy = -20 - ball.ay;
             ball.vx = Math.randomRange(-40, 40)
             hud.changeScoreBy(1)
-            if (hud.score() % 5 == 0)
+            if (hud.score() % 5 == 0) {
+                music.playSound(music.sounds(Sounds.PowerUp))
                 addBall(ball.ay);
+            }
         }
         if (ball.right > screen.width || ball.left < 0)
             ball.vx = -ball.vx;

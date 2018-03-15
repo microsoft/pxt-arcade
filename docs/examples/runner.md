@@ -2,7 +2,7 @@
 
 A simple example
 
-```blocks
+```typescript
 let frames = [img`
  . . 3 3
  . . 3 3
@@ -46,7 +46,7 @@ function newHouse() {
     let w = currHouse ? Math.randomRange(40, 80) : screen.width
     let img = image.create(w, 70)
     img.fill(Math.randomRange(2, 5))
-    let s = sprites.launchParticle(img, -80, 0)
+    let s = sprites.createProjectile(img, -80, 0)
     if (!currHouse) {
         s.y = 110
         s.x = screen.width / 2
@@ -60,7 +60,7 @@ function newHouse() {
 
 newHouse()
 
-jumper.onCollision(function (h: Sprite) {
+jumper.onOverlap(function (h: Sprite) {
     if (jumper.bottom - 4 < h.top) {
         if (jumper.vy > 0)
             jumper.vy = 0
@@ -68,7 +68,7 @@ jumper.onCollision(function (h: Sprite) {
     }
 })
 
-loops.frame(function () {
+game.frame(function () {
     if (keys.A.isPressed() && jumper.vy >= 0)
         jumper.vy = -100
 

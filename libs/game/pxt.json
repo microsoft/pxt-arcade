@@ -3,13 +3,17 @@
     "description": "The game and sprite library - beta",
     "files": [
         "sprites.ts",
+        "sprite.ts",
+        "spriteanimation.ts",
         "spritemap.ts",
         "physics.ts",
         "hud.ts",
+        "background.ts",
         "game.ts"
     ],
     "public": true,
     "dependencies": {
-        "screen": "file:../screen"
+        "screen": "file:../screen",
+        "music": "file:../music"
     }
 }

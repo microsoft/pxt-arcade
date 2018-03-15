@@ -98,8 +98,10 @@ namespace pxsim {
      * Represents the entire state of the executing program.
      * Do not store state anywhere else!
      */
-    export class Board extends pxsim.BaseBoard {
+    export class Board extends pxsim.BaseBoard
+        implements pxsim.MusicBoard {
         public bus: EventBus;
+        public audioState: AudioState;
         public canvas: HTMLCanvasElement;
         public stats: HTMLElement;
         public screen: Uint32Array;
@@ -115,8 +117,13 @@ namespace pxsim {
             super();
             this.bus = new EventBus(runtime);
             this.screenState = new ScreenState(paletteSrc)
+            this.audioState = new AudioState();
         }
 
+        getDefaultPitchPin(): Pin {
+            return undefined;
+        }
+        
         setKey(which: number, isPressed: boolean) {
             let k = mapKey(which)
             if (k) {
@@ -187,6 +194,7 @@ namespace pxsim {
         }
 
         initAsync(msg: pxsim.SimulatorRunMessage): Promise<void> {
+            this.runOptions = msg;
             this.canvas = document.getElementById("paint-surface") as HTMLCanvasElement;
             this.stats = document.getElementById("debug-stats");
             this.stats.className = "stats"
@@ -213,6 +221,7 @@ namespace pxsim {
                 let flush = () => {
                     requested = false
                     ctx.putImageData(imgdata, 0, 0)
+                    this.stats.textContent = this.screenState.stats;
                     this.tryScreenshot()
                 }
 
@@ -244,12 +253,5 @@ namespace pxsim {
         else {
             c.classList.remove("has-focus");
         }
-    }
-}
-
-
-namespace pxsim.pxtcore {
-    export function updateStats(s: string) {
-        board().stats.textContent = s
     }
 }
