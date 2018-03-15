@@ -1,4 +1,4 @@
-/// <reference path="./svg.ts" />
+/// <reference path="../sim/svg.ts" />
 /// <reference path="./util.ts" />
 
 
@@ -15,7 +15,7 @@ namespace mkcd {
         backgroundFill?: string;
         cellClass?: string;
     }
-    
+
     export interface GridProps extends GridStyleProps {
         rowLength: number;
         numCells: number;
@@ -140,7 +140,7 @@ namespace mkcd {
                 .size(this.gridProps.cellWidth, this.gridProps.cellHeight)
                 .fill(this.gridProps.defaultColor)
                 .attr({ "data-grid-index": this.cellToIndex(col, row) });
-            
+
             if (this.gridProps.cornerRadius) {
                 cell.corner(this.gridProps.cornerRadius)
             }
@@ -224,7 +224,7 @@ namespace mkcd {
                 this.downHandler(col, row);
             }
         }
-        
+
         private moveCore(col: number, row: number) {
             if (this.dragHandler) {
                 this.dragHandler(col, row);

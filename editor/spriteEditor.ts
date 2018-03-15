@@ -1,4 +1,4 @@
-/// <reference path="./svg.ts" />
+/// <reference path="../sim/svg.ts" />
 /// <reference path="./grid.ts" />
 /// <reference path="./bitmap.ts" />
 /// <reference path="./tools.ts" />
@@ -28,16 +28,16 @@ namespace mkcd {
         private group: svg.Group;
         private root: svg.SVG;
         private debugText: svg.Text;
-        
+
         private state: Bitmap;
         private displayState: Bitmap;
-        
+
         private edit: Edit;
         private tool: PaintTool = PaintTool.Normal;
 
         private undoStack: Bitmap[] = [];
         private redoStack: Bitmap[] = [];
-        
+
         private columns: number = 16;
         private rows: number = 16;
         private colors: string[];
@@ -66,7 +66,7 @@ namespace mkcd {
 
             this.columns = bitmap.width;
             this.rows = bitmap.height;
-            
+
             this.state = bitmap.copy()
             this.displayState = bitmap.copy();
 
@@ -84,21 +84,21 @@ namespace mkcd {
                 cellHeight: CELL_WIDTH,
                 cellClass: "pixel-cell"
             }, this.displayState, ["#dedede"].concat(this.colors));
-            
+
             this.paintSurface.drag((col, row) => {
                 if (this.tool !== PaintTool.Fill) {
                     this.debug("gesture (" + PaintTool[this.tool] + ")");
                     this.setCell(col, row, this.palette.selected, false);
                 }
             });
-            
+
             this.paintSurface.up((col, row) => {
                 if (this.tool !== PaintTool.Fill) {
                     this.debug("gesture end (" + PaintTool[this.tool] + ")");
                     this.commit();
                 }
             });
-            
+
             this.paintSurface.down((col, row) => {
                 if (this.tool === PaintTool.Fill) {
                     this.fill(col, row);
@@ -107,10 +107,11 @@ namespace mkcd {
                     this.setCell(col, row, this.palette.selected, false);
                 }
             });
-            
+
             this.group.appendChild(this.palette.getView());
             this.group.appendChild(this.paintSurface.getView());
-            this.debugText = this.group.draw("text").attr({ "font-family": "segoe ui" });
+
+            // this.debugText = this.group.draw("text").attr({ "font-family": "segoe ui" });
 
             document.addEventListener("keydown", ev => {
                 if (ev.key === "Undo" || (ev.ctrlKey && ev.key === "z")) {
@@ -161,13 +162,13 @@ namespace mkcd {
                 this.paintEdit(this.edit);
             }
         }
-        
+
         render(el: HTMLElement): void {
             this.root.attr({ "width": "100%", "height": "100%" });
             el.appendChild(this.root.el);
             this.layout();
         }
-        
+
         layout(): void {
             if (!this.root) {
                 return;
@@ -176,7 +177,7 @@ namespace mkcd {
             this.palette.scale(paletteScale);
 
             this.palette.translate(MARGIN, MARGIN);
-            
+
             const paintLeft = MARGIN + this.palette.outerWidth() * paletteScale + MARGIN;
             this.paintSurface.translate(paintLeft, MARGIN);
 
@@ -203,7 +204,7 @@ namespace mkcd {
 
         setPreview(preview: BitmapImage) {
             this.preview = preview;
-        } 
+        }
 
         rePaint() {
             this.paintSurface.repaint();
@@ -221,7 +222,7 @@ namespace mkcd {
                 this.preview.applyEdit(edit);
             }
         }
-        
+
         private commit() {
             if (this.edit) {
                 this.pushState(true);
@@ -240,7 +241,7 @@ namespace mkcd {
                 this.restore(todo);
             }
         }
-        
+
         private redo() {
             if (this.redoStack.length) {
                 this.debug("redo");
@@ -263,7 +264,7 @@ namespace mkcd {
         private restore(bitmap: Bitmap) {
             this.state.apply(bitmap);
             this.paintSurface.restore(bitmap, true);
-            
+
             if (this.preview) {
                 this.preview.restore(bitmap, true);
             }
@@ -276,7 +277,7 @@ namespace mkcd {
                 this.preview.writeColor(col, row, color);
             }
         }
-        
+
         private newEdit(color: number) {
             switch (this.tool) {
                 case PaintTool.Normal: return new PaintEdit(this.columns, this.rows, color);
@@ -285,7 +286,7 @@ namespace mkcd {
                 case PaintTool.Line: return new LineEdit(this.columns, this.rows, color);
                 case PaintTool.Circle: return new CircleEdit(this.columns, this.rows, color);
                 case PaintTool.Erase: return new PaintEdit(this.columns, this.rows, 0);
-                
+
                 // TODO: Doesn't really need to be a special case
                 case PaintTool.Fill: return undefined;
             }
@@ -300,7 +301,7 @@ namespace mkcd {
 
             this.pushState(true);
             this.redoStack = [];
-            
+
             const mask = new mkcd.Bitmask(this.columns, this.rows);
             mask.set(col, row);
             const q = [[col, row]];

@@ -1,5 +1,5 @@
 /// <reference path="./grid.ts" />
-/// <reference path="./svg.ts" />
+/// <reference path="../sim/svg.ts" />
 
 
 namespace mkcd {
@@ -24,7 +24,7 @@ namespace mkcd {
 
             this.initColors();
         }
-        
+
         colorForIndex(index: number) {
             if (this.props.emptySwatchDisabled) {
                 return this.props.colors[index];

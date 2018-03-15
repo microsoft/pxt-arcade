@@ -7,6 +7,8 @@
 namespace pxt.editor {
     const PREVIEW_WIDTH = 100;
     const PREVIEW_HEIGHT = 100;
+
+    // These are the characters used to compile, for a list of every supported character see parseBitmap()
     const hexChars = [".", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
 
     export class FieldSpriteEditor extends Blockly.Field implements Blockly.FieldCustom {
@@ -160,24 +162,24 @@ namespace pxt.editor {
                 const row = rows[r];
                 const rowValues: number[] = [];
                 for (let c = 0; c < row.length; c++) {
+                    // This list comes from libs/screen/targetOverrides.ts
                     switch (row[c]) {
-                        case ".":
-                        case "0": rowValues.push(0); break;
-                        case "1": rowValues.push(1); break;
-                        case "2": rowValues.push(2); break;
-                        case "3": rowValues.push(3); break;
-                        case "4": rowValues.push(4); break;
-                        case "5": rowValues.push(5); break;
-                        case "6": rowValues.push(6); break;
-                        case "7": rowValues.push(7); break;
+                        case "0": case ".": rowValues.push(0); break;
+                        case "1": case "#": rowValues.push(1); break;
+                        case "2": case "T": rowValues.push(2); break;
+                        case "3": case "t": rowValues.push(3); break;
+                        case "4": case "N": rowValues.push(4); break;
+                        case "5": case "n": rowValues.push(5); break;
+                        case "6": case "G": rowValues.push(6); break;
+                        case "7": case "g": rowValues.push(7); break;
                         case "8": rowValues.push(8); break;
                         case "9": rowValues.push(9); break;
-                        case "a": rowValues.push(10); break;
-                        case "b": rowValues.push(11); break;
-                        case "c": rowValues.push(12); break;
-                        case "d": rowValues.push(13); break;
-                        case "e": rowValues.push(14); break;
-                        case "f": rowValues.push(15); break;
+                        case "a": case "A": case "R": rowValues.push(10); break;
+                        case "b": case "B": case "P": rowValues.push(11); break;
+                        case "c": case "C": case "p": rowValues.push(12); break;
+                        case "d": case "D": case "O": rowValues.push(13); break;
+                        case "e": case "E": case "Y": rowValues.push(14); break;
+                        case "f": case "F": case "W": rowValues.push(15); break;
                     }
                 }
 
