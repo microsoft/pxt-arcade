@@ -78,9 +78,10 @@ namespace mkcd {
             unselectedClass: "palette-unselected",
             cellWidth: 10,
             cellHeight: 10,
-            columnMargin: 2,
-            rowMargin: 2,
-            cornerRadius: 4,
+            columnMargin: 1,
+            rowMargin: 1,
+            outerMargin: 1,
+            cornerRadius: 0,
             defaultColor: "#ffffff",
         };
     }

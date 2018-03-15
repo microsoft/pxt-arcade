@@ -68,8 +68,13 @@ namespace pxt.editor {
             goog.style.setHeight(contentDiv, this.editor.outerHeight());
             goog.style.setWidth(contentDiv, this.editor.outerWidth());
 
-            Blockly.DropDownDiv.setColour(this.sourceBlock_.parentBlock_.getColour(), this.sourceBlock_.getColourTertiary());
-            Blockly.DropDownDiv.showPositionedByBlock(this, this.sourceBlock_);
+            Blockly.DropDownDiv.setColour("#2c3e50", "#2c3e50");
+            Blockly.DropDownDiv.showPositionedByBlock(this, this.sourceBlock_, () => {
+                if (this.sourceBlock_ && Blockly.Events.isEnabled()) {
+                    Blockly.Events.fire(new Blockly.Events.BlockChange(
+                        this.sourceBlock_, 'field', this.name, this.text_, this.getText()));
+                }
+            });
             this.editor.layout();
         }
 

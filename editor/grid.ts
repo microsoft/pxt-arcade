@@ -9,6 +9,7 @@ namespace mkcd {
         cellWidth: number;
         cellHeight: number;
         columnMargin: number;
+        outerMargin: number;
         rowMargin: number;
         cornerRadius: number;
         defaultColor: string;
@@ -46,12 +47,12 @@ namespace mkcd {
 
         outerWidth(): number {
             const x = this.cellToCoord(this.columns - 1, 0)[0];
-            return x + this.gridProps.cellWidth;
+            return x + this.gridProps.cellWidth + this.gridProps.outerMargin;
         }
 
         outerHeight(): number {
             const y = this.cellToCoord(0, this.rows - 1)[1];
-            return y + this.gridProps.cellHeight;
+            return y + this.gridProps.cellHeight + this.gridProps.outerMargin;
         }
 
         getView() {
@@ -91,14 +92,14 @@ namespace mkcd {
         }
 
         protected cellToCoord(column: number, row: number): Coord {
-            const x = column * (this.gridProps.cellWidth + this.gridProps.columnMargin);
-            const y = row * (this.gridProps.cellHeight + this.gridProps.rowMargin);
+            const x = this.gridProps.outerMargin + column * (this.gridProps.cellWidth + this.gridProps.columnMargin);
+            const y = this.gridProps.outerMargin + row * (this.gridProps.cellHeight + this.gridProps.rowMargin);
             return [x, y];
         }
 
         protected coordToCell(x: number, y: number): Coord {
-            const column = Math.floor(x / (this.gridProps.cellWidth + this.gridProps.columnMargin));
-            const row = Math.floor(y / this.gridProps.cellHeight + this.gridProps.rowMargin);
+            const column = Math.floor((x - this.gridProps.outerMargin) / (this.gridProps.cellWidth + this.gridProps.columnMargin));
+            const row = Math.floor((y - this.gridProps.outerMargin) / (this.gridProps.cellHeight + this.gridProps.rowMargin));
             return [column, row];
         }
 
@@ -238,6 +239,7 @@ namespace mkcd {
             numCells: 16 * 16,
             cellWidth: 10,
             cellHeight: 10,
+            outerMargin: 0,
             columnMargin: 0,
             rowMargin: 0,
             cornerRadius: 0,

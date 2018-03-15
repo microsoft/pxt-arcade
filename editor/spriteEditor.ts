@@ -10,6 +10,15 @@ namespace mkcd {
     const CELL_WIDTH = 10;
     const BG_WIDTH = 6;
 
+    // Border around paint surface
+    const paintSurfaceBorderWidth = 3;
+
+    // Border around color paltte
+    const paletteBorderWidth = 2;
+
+    // Spacing between palette and screen (discounting borders)
+    const palettePaintMargin = 2;
+
     export enum PaintTool {
         Normal = 0,
         Rectangle = 1,
@@ -76,12 +85,18 @@ namespace mkcd {
             this.palette = new mkcd.ColorPalette({
                 rowLength: 2,
                 emptySwatchDisabled: false,
+                outerMargin: paletteBorderWidth,
+                columnMargin: 1,
+                rowMargin: 1,
+                backgroundFill: "black",
                 colors: this.colors
             });
 
             this.paintSurface = new mkcd.BitmapImage({
                 cellWidth: CELL_WIDTH,
                 cellHeight: CELL_WIDTH,
+                outerMargin: paintSurfaceBorderWidth,
+                backgroundFill: "black",
                 cellClass: "pixel-cell"
             }, this.displayState, ["#dedede"].concat(this.colors));
 
@@ -178,7 +193,7 @@ namespace mkcd {
 
             this.palette.translate(MARGIN, MARGIN);
 
-            const paintLeft = MARGIN + this.palette.outerWidth() * paletteScale + MARGIN;
+            const paintLeft = MARGIN + this.palette.outerWidth() * paletteScale - paletteBorderWidth - paintSurfaceBorderWidth + palettePaintMargin;
             this.paintSurface.translate(paintLeft, MARGIN);
 
             this.width = paintLeft + this.paintSurface.outerWidth() + MARGIN;
