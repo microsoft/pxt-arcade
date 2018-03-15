@@ -112,7 +112,6 @@ namespace turtle {
         init();
         _sprite.x = x % screen.width; if (_sprite.x < 0) _sprite.x += screen.width;
         _sprite.y = y % screen.height; if (_sprite.y < 0) _sprite.y += screen.height;
-        pause(1);
     }
 
     /**
@@ -124,7 +123,6 @@ namespace turtle {
     export function pen(mode: TurtlePenMode): void {
         init();
         _penMode = mode;
-        pause(1);
     }
 
     /**
@@ -135,7 +133,6 @@ namespace turtle {
     export function home(): void {
         setPosition(2, 2);
         _direction = 90;
-        pause(1);
     }
 
     /**
@@ -144,6 +141,7 @@ namespace turtle {
     //% blockGap=8
     //% blockId=turtlesetpencolor block="set pen color to %color"
     export function setPenColor(color: number) {
+        init();
         _color = color;
     }
 
@@ -157,7 +155,18 @@ namespace turtle {
     //% weight=10
     export function setSpeed(stepsPerSecond: number): void {
         if (stepsPerSecond <= 0) return;
-
+        init();
         _delay = Math.max(1, Math.min(50, 1000 / stepsPerSecond));
+    }
+
+    /**
+     * Stamps the image at the current turtle position
+     * @param image 
+     */
+    //% blockId=turtlestamp block="stamp %image"
+    export function stamp(image: Image) {
+        init();
+        _bkg.image.drawImage(image, _sprite.left + ((_sprite.width - image.width) >> 1), _sprite.top + ((_sprite.height - image.height) >> 1));
+        pause(_delay); // allow redraw
     }
 }
