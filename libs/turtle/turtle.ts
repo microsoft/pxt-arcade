@@ -13,7 +13,7 @@ enum TurtlePenMode {
 namespace turtle {
     let _bkg: Sprite;
     let _sprite: Sprite;
-    let _color: number = 2;
+    let _color: number = 1;
     let _direction: number = 90; // degrees
     let _penMode: TurtlePenMode = TurtlePenMode.Down;
     let _delay = 10;
@@ -22,7 +22,7 @@ namespace turtle {
             _bkg = sprites.create(image.create(screen.width, screen.height));
             _bkg.left = 0;
             _bkg.top = 0;
-            _bkg.image.fill(0xf);
+            _bkg.image.fill(turtle.backgroundColor);
             _sprite = sprites.create(turtle.turtleImage.clone());
         }
     }

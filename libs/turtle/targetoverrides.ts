@@ -6,4 +6,5 @@ namespace turtle {
     . . . a . . .            
     . . . a . . .            
     `;       
+    export const backgroundColor = 0xf;
 }
