@@ -30,7 +30,7 @@ namespace turtle {
             _bkg = sprites.create(image.create(screen.width, screen.height));
             _bkg.left = 0;
             _bkg.top = 0;
-            _bkg.image.fill(0x1);
+            _bkg.image.fill(0xf);
             _sprite = sprites.create(_templateImg)
         }
     }
