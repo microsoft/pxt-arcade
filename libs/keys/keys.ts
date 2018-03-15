@@ -81,7 +81,10 @@ namespace keys {
             return false
         }
     }
-    
+
+    //% fixedInstance block="any"
+    export const Any = new Key(0);
+
     /**
      * Gets the horizontal movement, given the step and state of keys
      * @param step the distance, eg: 100
