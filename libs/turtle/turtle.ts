@@ -17,21 +17,13 @@ namespace turtle {
     let _direction: number = 90; // degrees
     let _penMode: TurtlePenMode = TurtlePenMode.Down;
     let _delay = 10;
-    let _templateImg = img`
-. . . a . . .            
-. . a a a . .            
-. a . a . a .            
-. . . a . . .            
-. . . a . . .            
-`;
-
     function init() {
         if (!_sprite) {
             _bkg = sprites.create(image.create(screen.width, screen.height));
             _bkg.left = 0;
             _bkg.top = 0;
             _bkg.image.fill(0xf);
-            _sprite = sprites.create(_templateImg)
+            _sprite = sprites.create(turtle.turtleImage.clone());
         }
     }
 

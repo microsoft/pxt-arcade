@@ -1,8 +1,9 @@
 {
     "name": "turtle",
-    "description": "A LOGO turtle library",
+    "description": "A turtle library",
     "files": [
-        "turtle.ts"
+        "turtle.ts",
+        "targetoverrides.ts"
     ],
     "public": true,
     "dependencies": {
