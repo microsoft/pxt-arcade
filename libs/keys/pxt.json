@@ -1,5 +1,5 @@
 {
-    "name": "input",
+    "name": "keys",
     "description": "Handling keys",
     "files": [
         "keys.ts",
