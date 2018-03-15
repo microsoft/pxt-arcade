@@ -36,10 +36,10 @@ namespace pxsim {
             }, 100)
             const body = document.getElementById("root")
             window.onfocus = () => {
-                body.className = "focus"
+                indicateFocus(true);
             }
             window.onblur = () => {
-                body.className = "blur"
+                indicateFocus(false);
             }
             window.onkeydown = (e) => {
                 const b = board()
@@ -240,6 +240,18 @@ namespace pxsim {
             let info = document.getElementById("instructions")
 
             return Promise.resolve();
+        }
+    }
+
+    function indicateFocus(hasFocus: boolean) {
+        const c = board().canvas;
+        if (!c) return;
+
+        if (hasFocus) {
+            c.classList.add("has-focus");
+        }
+        else {
+            c.classList.remove("has-focus");
         }
     }
 }
