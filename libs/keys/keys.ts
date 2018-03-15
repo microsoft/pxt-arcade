@@ -10,10 +10,26 @@ enum KeyEvent {
  */
 //% weight=97 color="#5B0F4D" icon="\uf11b"
 namespace keys {
-    const eventNames = [
-        "keydown",
-        "keyup"
-    ];
+    /**
+     * Raises a key event
+     * @param event 
+     * @param id 
+     */
+    declare function raiseKeyEvent(event: KeyEvent, id: number): void;
+
+    /**
+     * Puases until a key event is raised
+     * @param event 
+     * @param id 
+     */
+    declare function pauseUntilKeyEvent(event: KeyEvent, id: number): void;
+    
+    /**
+     * Register code to run for a key event
+     * @param event 
+     * @param id 
+     */
+    declare function onKeyEvent(event: KeyEvent, id: number, handler: () => void): void;
 
     //% fixedInstances
     export class Key {
@@ -28,15 +44,16 @@ namespace keys {
             control.onEvent("_keyup", id, () => {
                 if (this._pressed) {
                     this._pressed = false
-                    control.raiseEvent("keyup", id)
+                    raiseKeyEvent(KeyEvent.Released, 0)
+                    raiseKeyEvent(KeyEvent.Released, id)
                 }
             })
             control.onEvent("_keydown", id, () => {
                 if (!this._pressed) {
                     this._pressed = true
                     this.checked = false
-                    control.raiseEvent("keydown", id)
-                    control.raiseEvent("keydown", 0)
+                    raiseKeyEvent(KeyEvent.Pressed, 0)
+                    raiseKeyEvent(KeyEvent.Pressed, id)
                 }
             })
         }
@@ -47,7 +64,7 @@ namespace keys {
         //% weight=99 blockGap=8
         //% blockId=keyonevent block="on %key **key** %event"
         onEvent(event: KeyEvent, handler: () => void) {
-            control.onEvent(eventNames[event], this.id, handler);
+            onKeyEvent(event, this.id, handler);
         }
 
         /**
@@ -56,7 +73,7 @@ namespace keys {
         //% weight=98 blockGap=8
         //% blockId=keypauseuntil block="pause until %key **key** is %event"
         pauseUntil(event: KeyEvent) {
-            control.waitForEvent(eventNames[event], this.id)
+            pauseUntilKeyEvent(event, this.id);
         }        
 
         /** 

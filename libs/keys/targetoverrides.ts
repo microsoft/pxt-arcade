@@ -11,4 +11,21 @@ namespace keys {
     export const A = new Key(5)
     //% fixedInstance block="B"
     export const B = new Key(6)
+
+    const eventNames = [
+        "keydown",
+        "keyup"
+    ];
+
+    function raiseKeyEvent(event: KeyEvent, id: number): void {
+        control.raiseEvent(eventNames[event], id);
+    }
+
+    function onKeyEvent(event: KeyEvent, id: number, handler: () => void): void {
+        control.onEvent(eventNames[event], id, handler);
+    }
+
+    function pauseUntilKeyEvent(event: KeyEvent, id: number): void {
+        control.waitForEvent(eventNames[event], id);
+    }   
 }
