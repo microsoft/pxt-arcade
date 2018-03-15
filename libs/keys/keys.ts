@@ -44,16 +44,16 @@ namespace keys {
             control.onEvent("_keyup", id, () => {
                 if (this._pressed) {
                     this._pressed = false
-                    raiseKeyEvent(KeyEvent.Released, 0)
                     raiseKeyEvent(KeyEvent.Released, id)
+                    raiseKeyEvent(KeyEvent.Released, 0)
                 }
             })
             control.onEvent("_keydown", id, () => {
                 if (!this._pressed) {
                     this._pressed = true
                     this.checked = false
-                    raiseKeyEvent(KeyEvent.Pressed, 0)
                     raiseKeyEvent(KeyEvent.Pressed, id)
+                    raiseKeyEvent(KeyEvent.Pressed, 0)
                 }
             })
         }
