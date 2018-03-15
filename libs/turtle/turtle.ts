@@ -30,6 +30,7 @@ namespace turtle {
             _bkg = sprites.create(image.create(screen.width, screen.height));
             _bkg.left = 0;
             _bkg.top = 0;
+            _bkg.image.fill(0x1);
             _sprite = sprites.create(_templateImg)
         }
     }
@@ -72,8 +73,8 @@ namespace turtle {
         }
 
         // adjust final position
-        _sprite.x = firstX + dx * steps;
-        _sprite.y = firstY + dy * steps;
+        _sprite.x = Math.round(firstX + dx * steps);
+        _sprite.y = Math.round(firstY + dy * steps);
         // paint if pen down
         if (_penMode == TurtlePenMode.Down || _penMode == TurtlePenMode.Erase)
             _bkg.image.drawLine(firstX, firstY, _sprite.x, _sprite.y, c)
