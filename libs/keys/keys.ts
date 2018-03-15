@@ -92,10 +92,10 @@ namespace keys {
     //% weight=50 blockGap=8
     //% blockId=keysdx block="dx %step"
     export function dx(step: number) {
-        if (keys.Left.isPressed())
-            if (keys.Right.isPressed()) return 0
+        if (keys.left.isPressed())
+            if (keys.right.isPressed()) return 0
             else return -step * control.deltaTime
-        else if (keys.Right.isPressed()) return step * control.deltaTime
+        else if (keys.right.isPressed()) return step * control.deltaTime
         else return 0
     }
 
@@ -106,10 +106,10 @@ namespace keys {
     //% weight=49
     //% blockId=keysdy block="dy %step"
     export function dy(step: number) {
-        if (keys.Up.isPressed())
-            if (keys.Down.isPressed()) return 0
+        if (keys.up.isPressed())
+            if (keys.down.isPressed()) return 0
             else return -step * control.deltaTime
-        else if (keys.Down.isPressed()) return step * control.deltaTime
+        else if (keys.down.isPressed()) return step * control.deltaTime
         else return 0
     }
 
