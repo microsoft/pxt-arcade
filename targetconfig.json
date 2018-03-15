@@ -6,6 +6,7 @@
         ]
     },
     "galleries": {
-        "Examples": "examples"
+        "Examples": "examples",
+        "Turtle": "examples/turtle"
     }
 }

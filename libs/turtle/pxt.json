@@ -1,0 +1,12 @@
+{
+    "name": "turtle",
+    "description": "A turtle library",
+    "files": [
+        "turtle.ts",
+        "targetoverrides.ts"
+    ],
+    "public": true,
+    "dependencies": {
+        "game": "file:../game"
+    }
+}

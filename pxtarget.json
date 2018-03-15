@@ -15,7 +15,8 @@
         "libs/game",
         "libs/input",
         "libs/music",
-        "libs/device"
+        "libs/device",
+        "libs/turtle"
     ],
     "compile": {
         "saveAsPNG": true
