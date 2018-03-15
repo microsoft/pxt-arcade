@@ -5,6 +5,7 @@
         "README.md",
         "pxt-core.d.ts",
         "pxt-helpers.ts",
+        "base.ts",
         "buffer.d.ts",
         "enums.d.ts",
         "sims.d.ts",
