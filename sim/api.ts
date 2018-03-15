@@ -130,7 +130,9 @@ namespace pxsim.game {
 namespace pxsim.keys {
     const eventNames = [
         "keyup",
-        "keydown"
+        "keydown",
+        "_keyup",
+        "_keydown"
     ]
 
     export function raiseKeyEvent(id: number, evid: number): void {
