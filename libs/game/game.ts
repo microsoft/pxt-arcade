@@ -12,6 +12,7 @@ namespace game {
      */
     export let debug = false;
     export let flags: number = 0;
+    export let gameOverSound: () => void = undefined;
 
     let __isOver = false
     let __waitAnyKey: () => void
@@ -165,11 +166,11 @@ namespace game {
     //% weight=80
     export function over() {
         if (__isOver) return
-        takeScreenshot();
         __isOver = true
         control.clearHandlers()
+        takeScreenshot();
         control.runInParallel(() => {
-            music.playSound(music.sounds(Sounds.Wawawawaa))
+            if (gameOverSound) gameOverSound();
             freeze();
             meltScreen();
             let top = showBackground(44, 4)
