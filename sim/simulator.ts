@@ -103,6 +103,7 @@ namespace pxsim {
         implements pxsim.MusicBoard {
         public bus: EventBus;
         public audioState: AudioState;
+        public background: HTMLDivElement;
         public canvas: HTMLCanvasElement;
         public stats: HTMLElement;
         public screen: Uint32Array;
@@ -196,6 +197,7 @@ namespace pxsim {
 
         initAsync(msg: pxsim.SimulatorRunMessage): Promise<void> {
             this.runOptions = msg;
+            this.background = document.getElementById("screen-back") as HTMLDivElement;
             this.canvas = document.getElementById("paint-surface") as HTMLCanvasElement;
             this.stats = document.getElementById("debug-stats");
             this.stats.className = "stats"
@@ -223,6 +225,7 @@ namespace pxsim {
                     requested = false
                     ctx.putImageData(imgdata, 0, 0)
                     this.stats.textContent = this.screenState.stats;
+                    this.background.style.width = `${this.canvas.scrollWidth + 40}px`;
                     this.tryScreenshot()
                 }
 
@@ -234,7 +237,7 @@ namespace pxsim {
                         window.requestAnimationFrame(flush)
                     }
                 }
-                // and finally call the redefnied self
+                // and finally call the redefined self
                 this.screenState.onChange()
             }
 
@@ -245,7 +248,7 @@ namespace pxsim {
     }
 
     function indicateFocus(hasFocus: boolean) {
-        const c = board().canvas;
+        const c = board().background;
         if (!c) return;
 
         if (hasFocus) {
