@@ -105,8 +105,8 @@ namespace game {
         let top = (screen.height - h) / 2
         if (screen.isMono) {
             screen.fillRect(0, top, screen.width, h, 0)
-            screen.drawLine(0, top, screen.width, top, c)
-            screen.drawLine(0, top + h - 1, screen.width, top + h - 1, c)
+            screen.drawLine(0, top, screen.width, top, 1)
+            screen.drawLine(0, top + h - 1, screen.width, top + h - 1, 1)
         } else {
             screen.fillRect(0, top, screen.width, h, c)
         }
@@ -135,14 +135,13 @@ namespace game {
     export function showDialog(title: string, subtitle: string) {
         let lines = 1
         if (!subtitle) lines = 0
-        else
-            for (let i = 0; i < subtitle.length; ++i)
+        else for (let i = 0; i < subtitle.length; ++i)
                 if (subtitle[i] == '\n') lines++
 
         let h = 28 + lines * (image.font5.charHeight + 2)
         let top = showBackground(h, 9)
-        screen.print(title, 8, top + 8, 14, image.font8)
-        screen.print(subtitle, 8, top + 23, 13, image.font5)
+        screen.print(title, 8, top + 8, screen.isMono ? 1 : 14, image.font8)
+        screen.print(subtitle, 8, top + 23, screen.isMono ? 1 : 13, image.font5)
     }
 
     function meltScreen() {
