@@ -4,7 +4,7 @@
  * 
 */
 //% color=#AA5585 weight=80 block="Heads Up Display" icon="\uf2bb"
-namespace hud {
+namespace player {
     let _score: number = null;
     let _highScore: number = null;
     let _life: number = null;
@@ -146,7 +146,7 @@ namespace hud {
     }
 }
 
-declare namespace hud {
+declare namespace player {
     /**
      * Sends the current score and the new high score
      */

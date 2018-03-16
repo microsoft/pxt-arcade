@@ -16,6 +16,6 @@ namespace music {
 }
 
 //% color=#B09EFF
-namespace hud {
+namespace player {
 
 }

@@ -38,8 +38,8 @@ game.frame(function () {
         if (ball.overlapsWith(paddle)) {
             ball.vy = -20 - ball.ay;
             ball.vx = Math.randomRange(-40, 40)
-            hud.changeScoreBy(1)
-            if (hud.score() % 5 == 0) {
+            player.changeScoreBy(1)
+            if (player.score() % 5 == 0) {
                 music.playSound(music.sounds(Sounds.PowerUp))
                 addBall(ball.ay);
             }

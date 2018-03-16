@@ -64,7 +64,7 @@ game.frame(function () {
     pos += 1 + Math.sqrt(control.millis()) / 200.0
     drive(pos - prevPos)
     prevPos = pos | 0
-    hud.setScore(prevPos >> 6)
+    player.setScore(prevPos >> 6)
     car.x += keys.dx(70)
 })
 ```
