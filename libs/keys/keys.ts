@@ -1,8 +1,8 @@
 enum KeyEvent {
     //% block="pressed"
-    Pressed,
+    Pressed = KEY_DOWN,
     //% block="released"
-    Released
+    Released = KEY_UP
 }
 
 /**
@@ -10,11 +10,6 @@ enum KeyEvent {
  */
 //% weight=97 color="#5B0F4D" icon="\uf11b"
 namespace keys {
-    const eventNames = [
-        "keydown",
-        "keyup"
-    ];
-
     //% fixedInstances
     export class Key {
         id: number
@@ -25,18 +20,19 @@ namespace keys {
             this.id = id
             this._pressed = false
             this.checked = false
-            control.onEvent("_keyup", id, () => {
+            control.onEvent(INTERNAL_KEY_UP, id, () => {
                 if (this._pressed) {
                     this._pressed = false
-                    control.raiseEvent("keyup", id)
+                    control.raiseEvent(KEY_UP, id)
+                    control.raiseEvent(KEY_UP, 0)
                 }
             })
-            control.onEvent("_keydown", id, () => {
+            control.onEvent(INTERNAL_KEY_DOWN, id, () => {
                 if (!this._pressed) {
                     this._pressed = true
                     this.checked = false
-                    control.raiseEvent("keydown", id)
-                    control.raiseEvent("keydown", 0)
+                    control.raiseEvent(KEY_DOWN, id)
+                    control.raiseEvent(KEY_DOWN, 0)
                 }
             })
         }
@@ -47,7 +43,7 @@ namespace keys {
         //% weight=99 blockGap=8
         //% blockId=keyonevent block="on %key **key** %event"
         onEvent(event: KeyEvent, handler: () => void) {
-            control.onEvent(eventNames[event], this.id, handler);
+            control.onEvent(event, this.id, handler);
         }
 
         /**
@@ -56,8 +52,8 @@ namespace keys {
         //% weight=98 blockGap=8
         //% blockId=keypauseuntil block="pause until %key **key** is %event"
         pauseUntil(event: KeyEvent) {
-            control.waitForEvent(eventNames[event], this.id)
-        }        
+            control.waitForEvent(event, this.id)
+        }
 
         /** 
          * Indicates if the key is currently pressed
@@ -119,6 +115,6 @@ namespace keys {
     //% weight=10
     //% blockId=keypauseuntilanykey block="pause until any key"
     export function pauseUntilAnyKey() {
-        control.waitForEvent("keydown", 0)
+        control.waitForEvent(KEY_DOWN, 0)
     }
 }
