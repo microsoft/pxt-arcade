@@ -7,7 +7,7 @@
         "spriteanimation.ts",
         "spritemap.ts",
         "physics.ts",
-        "hud.ts",
+        "player.ts",
         "background.ts",
         "game.ts"
     ],

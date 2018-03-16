@@ -20,7 +20,7 @@ function swap(i: number, j: number) {
     arr[i] = arr[j]
     arr[j] = tmp
     show()
-    hud.changeScoreBy(1)
+    player.changeScoreBy(1)
     pause(10)
 }
 
