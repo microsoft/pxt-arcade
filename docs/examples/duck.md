@@ -66,7 +66,7 @@ function launchObstacle() {
     prevObstacle.y = Math.randomRange(30, 90)
     prevObstacle.type = 1;
     prevObstacle.onDestroyed(function () {
-        player.changeScoreBy(1)
+        info.changeScoreBy(1)
     })
 }
 

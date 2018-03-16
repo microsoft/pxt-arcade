@@ -52,7 +52,7 @@ function newHouse() {
         s.x = screen.width / 2
     } else {
         s.y = Math.randomRange(100, currHouse.y + 8)
-        player.changeScoreBy(1)
+        info.changeScoreBy(1)
     }
     gap = Math.randomRange(5, 20)
     currHouse = s
