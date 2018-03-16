@@ -193,9 +193,7 @@ namespace game {
      * Tells the game host to grab a screenshot
      */
     //% shim=game::takeScreenshot
-    export function takeScreenshot() {
-        // handled by host
-    }
+    declare function takeScreenshot(): void; 
 
     let __frameCb: () => void = undefined;
     /**

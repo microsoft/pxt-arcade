@@ -9,7 +9,8 @@
         "physics.ts",
         "player.ts",
         "background.ts",
-        "game.ts"
+        "game.ts",
+        "targetoverrides.cpp"
     ],
     "public": true,
     "dependencies": {

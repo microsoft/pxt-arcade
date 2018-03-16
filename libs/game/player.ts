@@ -150,6 +150,6 @@ declare namespace player {
     /**
      * Sends the current score and the new high score
      */
-    //% shim=hud::updateHighScore
+    //% shim=player::updateHighScore
     function updateHighScore(score: number): number;
 }
