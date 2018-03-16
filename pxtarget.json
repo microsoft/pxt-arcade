@@ -44,10 +44,15 @@
     },
     "appTheme": {
         "logoUrl": "https://github.com/Microsoft/pxt-32",
+        "logo": "./static/logo.svg",
+        "docsLogo": "./static/logo.svg",
+        "portraitLogo": "./static/logo.svg",
+        "footerLogo": "./static/logo.svg",
         "homeUrl": "http://pixels.makecode.com/",
         "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
         "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
         "betaUrl": "https://github.com/Microsoft/pxt-32",
+        "boardName": "Pixels",
         "docMenu": [
             {
                 "name": "About",

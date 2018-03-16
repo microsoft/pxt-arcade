@@ -33,7 +33,6 @@
 
 /* 32 colors */
 @purple           : #6B4F76;
-@red              : #E95153;
 @blue             : #74E4EA;
 
 /*-------------------
@@ -59,7 +58,7 @@
    Menu
 --------------------*/
 
-@mainMenuInvertedBackground: @red;
+@mainMenuInvertedBackground: #E95153;
 @mainMenuTutorialBackground: @orange;
 
 @mainMenuBlocksJsToggleColor: @primaryColor;
