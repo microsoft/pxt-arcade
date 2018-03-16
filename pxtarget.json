@@ -39,7 +39,8 @@
       "listsBlocks": true 
     },
     "simulator": {
-        "autoRun": true
+        "autoRun": true,
+        "aspectRatio": 0.85
     },
     "appTheme": {
         "logoUrl": "https://github.com/Microsoft/pxt-32",
@@ -68,17 +69,25 @@
         "extendEditor": true,    
         "blocklyOptions": { 
             "grid": {
-                "spacing": 45,
-                "length": 7,
-                "colour": "rgba(189, 195, 199, 0.30)",
+                "spacing": 20,
+                "length": 100,
+                "colour": "rgba(107, 79, 118, 0.10)",
                 "snap": true
             }
+        },
+        "blockColors": {
+            "loops": "#698927",
+            "logic": "#06B3E0",
+            "math": "#3D30AD",
+            "variables": "#F80102",
+            "text": "#FF9DA5",
+            "arrays": "#FF8F08"
         },
         "simAnimationEnter": "fly right in",
         "simAnimationExit": "fly right out",
         "crowdinProject": "kindscript",
         "monacoColors": {
-            "editor.background": "#ecf0f1"
+            "editor.background": "#FFFAE7"
         }
     }
 }

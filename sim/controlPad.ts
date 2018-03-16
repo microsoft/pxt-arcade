@@ -7,11 +7,11 @@ namespace pxsim {
     const DRAW_UNIT = COMPONENT_WIDTH / 3;
     const PADDING = 30;
 
-    const D_PAD_COLOR = "#dedede";
+    const D_PAD_COLOR = "#6B4F76";
     const D_PAD_DOWN_COLOR = "#f4b342";
 
-    const BUTTON_COLOR = "#66bb77";
-    const BUTTON_DOWN_COLOR = "#225533";
+    const BUTTON_COLOR = "#FE8C4F";
+    const BUTTON_DOWN_COLOR = "#DE5F26";
 
     const aspectRatio = 2; // width / height
     
@@ -77,7 +77,7 @@ namespace pxsim {
             this.dPad.draw("polygon")
                 .at(0, 0)
                 .fill(D_PAD_COLOR)
-                .stroke("black", 4)
+                .stroke("#412C3D", 2)
                 .setAttribute("stroke-linejoin", "round")
                 .with(scale([
                     { x: 1, y: 0 },
