@@ -14,7 +14,6 @@
     ],
     "public": true,
     "dependencies": {
-        "screen": "file:../screen",
-        "music": "file:../music"
+        "screen": "file:../screen"
     }
 }
