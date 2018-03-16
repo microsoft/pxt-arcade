@@ -97,7 +97,7 @@ game.frame(function () {
             o.vy = -5;
             o.life = 20;
             o.setFlag(SpriteFlag.Ghost, true)
-            player.changeScoreBy(1)
+            info.changeScoreBy(1)
         })
     }
 })
