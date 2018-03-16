@@ -3,7 +3,7 @@
  * Head-up display
  * 
 */
-//% color=#AA5585 weight=80 block="Heads Up Display" icon="\uf2bb"
+//% color=#AA5585 weight=80 icon="\uf2bb"
 namespace player {
     let _score: number = null;
     let _highScore: number = null;
