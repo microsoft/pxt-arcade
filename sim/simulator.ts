@@ -5,8 +5,8 @@ namespace pxsim {
     export type CommonBoard = Board
 
     const paletteSrc = [
-        "#000000", // black
-        "#000000", // black
+        "#000000", // transparent
+        "#ffffff", // white
         "#33e2e4", // teal 
         "#05b3e0", // blue
         "#3d30ad", // violet
@@ -20,7 +20,7 @@ namespace pxsim {
         "#ff9da5", // light pink
         "#ff9005", // orange
         "#efe204", // yellow
-        "#ffffff", // white
+        "#000000", // black
     ]
     let forcedUpdateLoop: any
 
