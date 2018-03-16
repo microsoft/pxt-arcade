@@ -66,7 +66,8 @@ canvas {
 #debug-stats {
     position: absolute;
     top: 90%;
-    left: 0;
+    left: 10%;
+    color: #3c3cff;
 }
 
 #controls {
