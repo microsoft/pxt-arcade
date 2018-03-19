@@ -12,8 +12,8 @@
      Fonts
 --------------------*/
 
-@headerFont        : Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
-@pageFont          : Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
+@headerFont        : "VT323", Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
+@pageFont          : "VT323", Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
 
 @docsHeaderFont: @headerFont;
 @docsPageFont: @pageFont;

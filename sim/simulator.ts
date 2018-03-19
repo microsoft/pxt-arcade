@@ -241,6 +241,10 @@ namespace pxsim {
                 this.screenState.onChange()
             }
 
+            window.onresize = () => {
+                this.background.style.width = `${this.canvas.scrollWidth + 40}px`;
+            }
+
             let info = document.getElementById("instructions")
 
             return Promise.resolve();
