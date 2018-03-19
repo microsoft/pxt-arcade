@@ -34,6 +34,8 @@
 /* 32 colors */
 @purple           : #6B4F76;
 @blue             : #74E4EA;
+@beige            : #FFFAE7;
+@salmon           : #E95153;
 
 /*-------------------
     Brand Colors
@@ -49,16 +51,11 @@
      PXT Variables
 *******************************/
 
-@black: #000303;
-
-@mainColor: @blue;
-@beige: #FFFAE7;
-
 /*-------------------
    Menu
 --------------------*/
 
-@mainMenuInvertedBackground: #E95153;
+@mainMenuInvertedBackground: @salmon;
 @mainMenuTutorialBackground: @orange;
 
 @mainMenuBlocksJsToggleColor: @primaryColor;
@@ -81,7 +78,7 @@
 @editorToolsBackground: @beige;
 @blocklySvgColor: @beige;
 
-@homeScreenBackground: #ecf0f1;
+@homeScreenBackground: @beige;
 
 /*-------------------
    Full screen
