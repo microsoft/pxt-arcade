@@ -75,6 +75,9 @@ namespace pxt.editor {
                     Blockly.Events.fire(new Blockly.Events.BlockChange(
                         this.sourceBlock_, 'field', this.name, this.text_, this.getText()));
                 }
+
+                goog.style.setHeight(contentDiv, "unset");
+                goog.style.setWidth(contentDiv, "unset");
             });
             this.editor.layout();
         }
@@ -133,21 +136,21 @@ namespace pxt.editor {
                 cellClass: "pixel-cell"
             }, this.state, [
                     "rgba(0, 0, 0, 0)",
-                    "#ffffff",
-                    "#33e2e4",
-                    "#05b3e0",
-                    "#3d30ad",
-                    "#b09eff",
-                    "#5df51f",
-                    "#6a8927",
-                    "#65471f",
-                    "#98294a",
-                    "#f80000",
-                    "#e30ec0",
-                    "#ff9da5",
-                    "#ff9005",
-                    "#efe204",
-                    "#000000",
+                    "#ffffff", // white
+                    "#33e2e4", // teal
+                    "#05b3e0", // blue
+                    "#3d30ad", // violet
+                    "#b09eff", // light violet
+                    "#5df51f", // green
+                    "#6a8927", // dollar green
+                    "#65471f", // brown
+                    "#98294a", // bordowy
+                    "#f80000", // red
+                    "#e30ec0", // pink
+                    "#ff9da5", // light pink
+                    "#ff9005", // orange
+                    "#efe204", // yellow
+                    "#000000", // black
                 ]);
 
             this.preview.translate(0, TOP_BOTTOM_MARGIN);
