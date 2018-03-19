@@ -12,8 +12,8 @@
      Fonts
 --------------------*/
 
-@headerFont        : Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
-@pageFont          : Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
+@headerFont        : "VT323", Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
+@pageFont          : "VT323", Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
 
 @docsHeaderFont: @headerFont;
 @docsPageFont: @pageFont;
@@ -24,21 +24,24 @@
 
 /*---  Colors  ---*/
 @black            : #34495e;
-@blue             : #3498db;
 @green            : #2ecc71;
 @grey             : #7f8c8d;
 @orange           : #e67e22;
 @pink             : #E91E63;
-@purple           : #9C27B0;
-@red              : #e74c3c;
 @teal             : #1abc9c;
 @yellow           : #f1c40f;
+
+/* 32 colors */
+@purple           : #6B4F76;
+@blue             : #74E4EA;
+@beige            : #FFFAE7;
+@salmon           : #E95153;
 
 /*-------------------
     Brand Colors
 --------------------*/
 
-@primaryColor        : @blue;
+@primaryColor        : @purple;
 @secondaryColor      : @grey;
 
 @lightPrimaryColor   : @lightBlue;
@@ -52,7 +55,7 @@
    Menu
 --------------------*/
 
-@mainMenuInvertedBackground: @green;
+@mainMenuInvertedBackground: @salmon;
 @mainMenuTutorialBackground: @orange;
 
 @mainMenuBlocksJsToggleColor: @primaryColor;
@@ -71,24 +74,24 @@
    Background
 --------------------*/
 
-@simulatorBackground: #2c3e50;
-@editorToolsBackground: @simulatorBackground;
-@blocklySvgColor: #ecf0f1;
+@simulatorBackground: @blue;
+@editorToolsBackground: @beige;
+@blocklySvgColor: @beige;
 
-@homeScreenBackground: #ecf0f1;
+@homeScreenBackground: @beige;
 
 /*-------------------
    Full screen
 --------------------*/
 
-@fullscreenBackgroundGradientStart: @mainMenuInvertedBackground;
+@fullscreenBackgroundGradientStart: @simulatorBackground;
 @fullscreenBackgroundGradientEnd: @simulatorBackground;
 
 /*-------------------
    Editor
 --------------------*/
 
-@blocklyToolboxColor: white;
+@blocklyToolboxColor: @beige;
 @trashIconColor: @primaryColor;
 
 /*-------------------

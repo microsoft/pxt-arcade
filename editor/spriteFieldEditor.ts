@@ -133,7 +133,7 @@ namespace pxt.editor {
                 cellClass: "pixel-cell"
             }, this.state, [
                     "rgba(0, 0, 0, 0)",
-                    "#000000",
+                    "#ffffff",
                     "#33e2e4",
                     "#05b3e0",
                     "#3d30ad",
@@ -147,7 +147,7 @@ namespace pxt.editor {
                     "#ff9da5",
                     "#ff9005",
                     "#efe204",
-                    "#ffffff",
+                    "#000000",
                 ]);
 
             this.preview.translate(0, TOP_BOTTOM_MARGIN);

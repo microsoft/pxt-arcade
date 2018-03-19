@@ -1,11 +1,12 @@
 /// <reference path="../node_modules/pxt-core/built/pxtsim.d.ts"/>
+/// <reference path="../node_modules/pxt-common-packages/libs/keys/enums.ts"/>
 
 namespace pxsim {
     export type CommonBoard = Board
 
     const paletteSrc = [
-        "#000000", // black
-        "#000000", // black
+        "#000000", // transparent
+        "#ffffff", // white
         "#33e2e4", // teal 
         "#05b3e0", // blue
         "#3d30ad", // violet
@@ -19,7 +20,7 @@ namespace pxsim {
         "#ff9da5", // light pink
         "#ff9005", // orange
         "#efe204", // yellow
-        "#ffffff", // white
+        "#000000", // black
     ]
     let forcedUpdateLoop: any
 
@@ -102,6 +103,7 @@ namespace pxsim {
         implements pxsim.MusicBoard {
         public bus: EventBus;
         public audioState: AudioState;
+        public background: HTMLDivElement;
         public canvas: HTMLCanvasElement;
         public stats: HTMLElement;
         public screen: Uint32Array;
@@ -123,7 +125,7 @@ namespace pxsim {
         getDefaultPitchPin(): Pin {
             return undefined;
         }
-        
+
         setKey(which: number, isPressed: boolean) {
             let k = mapKey(which)
             if (k) {
@@ -133,7 +135,7 @@ namespace pxsim {
 
         handleKeyEvent(key: Key, isPressed: boolean) {
             this.lastKey = Date.now()
-            this.bus.queue(isPressed ? "_keydown" : "_keyup", key)
+            this.bus.queue(isPressed ? INTERNAL_KEY_DOWN : INTERNAL_KEY_UP, key)
             if (this.controls) {
                 this.controls.mirrorKey(key, isPressed);
             }
@@ -195,6 +197,7 @@ namespace pxsim {
 
         initAsync(msg: pxsim.SimulatorRunMessage): Promise<void> {
             this.runOptions = msg;
+            this.background = document.getElementById("screen-back") as HTMLDivElement;
             this.canvas = document.getElementById("paint-surface") as HTMLCanvasElement;
             this.stats = document.getElementById("debug-stats");
             this.stats.className = "stats"
@@ -222,6 +225,7 @@ namespace pxsim {
                     requested = false
                     ctx.putImageData(imgdata, 0, 0)
                     this.stats.textContent = this.screenState.stats;
+                    this.background.style.width = `${this.canvas.scrollWidth + 40}px`;
                     this.tryScreenshot()
                 }
 
@@ -233,8 +237,12 @@ namespace pxsim {
                         window.requestAnimationFrame(flush)
                     }
                 }
-                // and finally call the redefnied self
+                // and finally call the redefined self
                 this.screenState.onChange()
+            }
+
+            window.onresize = () => {
+                this.background.style.width = `${this.canvas.scrollWidth + 40}px`;
             }
 
             let info = document.getElementById("instructions")
@@ -244,7 +252,7 @@ namespace pxsim {
     }
 
     function indicateFocus(hasFocus: boolean) {
-        const c = board().canvas;
+        const c = board().background;
         if (!c) return;
 
         if (hasFocus) {

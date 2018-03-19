@@ -20,6 +20,19 @@ canvas {
     -ms-interpolation-mode: nearest-neighbor;
 }
 
+#screen-back {
+    background: #FFFAE7;
+    height: 94%;
+    position: absolute;
+    z-index: -1;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    border-radius: 5px;
+    border: 5px solid #FFFAE7;
+}
+
 #screen {
     display: flex;
     flex-direction: column;
@@ -27,16 +40,21 @@ canvas {
     justify-content: center;
     align-items: center;
     height: 100%;
+    padding-top: 10px;
 }
 
 .has-focus {
-    border: 5px solid orange;
+    border: 5px solid #E95153 !important;
 }
 
 #paint-surface {
     object-fit: contain;
     display: inline;
     height: 100%;
+    border: 7px solid #6B4F76;
+    border-radius: 5px;
+    border-left-width: 12px;
+    border-right-width: 12px;
 }
 
 #paint-surface-container {
@@ -48,11 +66,13 @@ canvas {
 #debug-stats {
     position: absolute;
     top: 90%;
-    left: 0;
+    left: 10%;
+    color: #3c3cff;
 }
 
 #controls {
     flex: 1;
+    padding-bottom: 25px;
 }
 
 .stats {

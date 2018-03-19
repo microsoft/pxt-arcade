@@ -12,6 +12,15 @@
     Add your custom CSS here
 *******************************/
 
+/* VT323 font */
+@font-face  {
+    font-family: 'VT323';
+    font-style: normal;
+    font-weight: 400;
+    src: local('VT323'),
+         data-uri('../docs/static/fonts/VT323-Regular.woff') format('woff')
+}
+
 .ui.item.logo .name {
     font-size: 20px;
     font-family: @headerFont;
@@ -19,6 +28,22 @@
     color: white;
     text-transform: uppercase;
     margin-left: 1rem;
+}
+
+.simtoolbar .ui.button,
+.ui.button.play-button,
+.ui.button.restart-button,
+.ui.button.collapse-button,
+.ui.button.collapsed-button {
+    &:extend(.ui.grey.button all);
+}
+
+.projectsdialog .getting-started-segment {
+    background-position-y: center;
+}
+
+.projectsdialog .ui.card:hover {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 /* Mobile */

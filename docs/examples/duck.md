@@ -20,26 +20,26 @@ RRRRRR..ee
 `
 
 const cloudImg = img`
- . f f f . . . . . . . . . f f
- f 2 2 2 f . . f f f . . f 2 2 f
- f 2 2 2 2 f f 2 2 2 f f 2 2 2 f
- f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f
- . f f f f f f f f f f f f f f
+ . 1 1 1 . . . . . . . . . 1 1
+ 1 2 2 2 1 . . 1 1 1 . . 1 2 2 1
+ 1 2 2 2 2 1 1 2 2 2 1 1 2 2 2 1
+ 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1
+ . 1 1 1 1 1 1 1 1 1 1 1 1 1 1
  `.doubled()
 
 let block = image.repeatY(20, img`
-00 0f f7 77 7f f0 00
-00 0f 77 77 77 f0 00
-00 0f 77 77 77 f0 00
-00 0f 77 77 77 f0 00
+00 01 17 77 71 10 00
+00 01 77 77 77 10 00
+00 01 77 77 77 10 00
+00 01 77 77 77 10 00
 `)
 
 let bot = img`
-0f ff ff ff ff ff f0
-0f 77 77 77 77 77 f0
-0f 77 77 77 77 77 f0
-00 ff 77 77 77 ff 00
-00 0f 77 77 77 f0 00
+01 11 11 11 11 11 10
+01 77 77 77 77 77 10
+01 77 77 77 77 77 10
+00 11 77 77 77 11 00
+00 01 77 77 77 10 00
 `
 
 let top = bot.clone()
@@ -66,7 +66,7 @@ function launchObstacle() {
     prevObstacle.y = Math.randomRange(30, 90)
     prevObstacle.type = 1;
     prevObstacle.onDestroyed(function () {
-        hud.changeScoreBy(1)
+        info.changeScoreBy(1)
     })
 }
 

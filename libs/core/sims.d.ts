@@ -14,14 +14,14 @@ declare namespace control {
      */
     //%
     //% shim=control::onEvent
-    function onEvent(ev: string, arg: number, f: () => void): void;
+    function onEvent(ev: number, arg: number, f: () => void): void;
 
     /**
      * Generate an event
      */
     //%
     //% shim=control::raiseEvent
-    function raiseEvent(ev: string, arg: number): void;
+    function raiseEvent(ev: number, arg: number): void;
 
     /**
      * Create a new zero-initialized buffer.

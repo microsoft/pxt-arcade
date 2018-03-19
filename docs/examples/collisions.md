@@ -29,14 +29,14 @@ keys.A.onEvent(KeyEvent.Pressed, function () {
 })
 while (true) {
     for (let i = 0; i < 10; ++i) {
-        hud.changeLifeBy(1)
+        info.changeLifeBy(1)
         let s = sprites.create(alone)
         s.x = Math.randomRange(0, screen.width);
         s.y = Math.randomRange(0, screen.height);
         s.vx = Math.randomRange(-10, 10)
         s.vy = Math.randomRange(-10, 10)
         s.onOverlap(function (other: Sprite) {
-            hud.changeScoreBy(1);
+            info.changeScoreBy(1);
         })
     }
     pause(1000)

@@ -48,7 +48,7 @@ namespace mkcd {
 
         constructor(bitmap: Bitmap) {
             this.colors = [
-                "#000000",
+                "#ffffff",
                 "#33e2e4",
                 "#05b3e0",
                 "#3d30ad",
@@ -62,7 +62,7 @@ namespace mkcd {
                 "#ff9da5",
                 "#ff9005",
                 "#efe204",
-                "#ffffff",
+                "#000000",
             ];
 
             this.columns = bitmap.width;
