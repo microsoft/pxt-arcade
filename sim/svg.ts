@@ -10,6 +10,18 @@ namespace svgUtil {
         objectBoundingBox = 1,
     }
 
+    export enum LengthUnit {
+        em,
+        ex,
+        px,
+        in,
+        cm,
+        mm,
+        pt,
+        pc,
+        percent
+    }
+
     export class BaseElement<T extends SVGElement> {
         el: T;
         constructor(type: string) {
@@ -29,6 +41,19 @@ namespace svgUtil {
 
         id(id: string): this {
             return this.setAttribute("id", id);
+        }
+
+        setClass(...classes: string[]): this {
+            return this.setAttribute("class", classes.join(" "));
+        }
+
+        appendClass(className: string): this {
+            this.el.classList.add(className);
+            return this;
+        }
+
+        removeClass(className: string): void {
+            this.el.classList.remove(className);
         }
     }
 
@@ -168,12 +193,7 @@ namespace svgUtil {
         }
     }
 
-    export class Drawable<T extends SVGElement> extends BaseElement<T> {
-        protected downHandler: PointerHandler;
-        protected upHandler: PointerHandler;
-        protected clickHandler: PointerHandler;
-        private eventsReady = false;
-
+    export class Drawable<T extends SVGElement> extends DrawContext<T> {
         at(x: number, y: number): this {
             this.setAttribute("x", x);
             this.setAttribute("y", y);
@@ -236,6 +256,11 @@ namespace svgUtil {
             events.leave(this.el, handler);
             return this;
         }
+
+        onClick(handler: PointerHandler): this {
+            events.click(this.el, handler);
+            return this;
+        }
     }
 
     export class Text extends Drawable<SVGTextElement> {
@@ -250,6 +275,14 @@ namespace svgUtil {
         text(text: string): this {
             this.el.textContent = text;
             return this;
+        }
+
+        fontFamily(family: string) {
+            return this.setAttribute("font-family", family);
+        }
+
+        fontSize(size: number, units: LengthUnit) {
+            return this.setAttribute("font-size", lengthWithUnits(size, units));
         }
 
         alignmentBaseline(type: string) {
@@ -366,7 +399,7 @@ namespace svgUtil {
 
     export class Path extends Drawable<SVGPathElement> {
         d: PathContext;
-        
+
         constructor() {
             super("path");
             this.d = new PathContext();
@@ -376,7 +409,7 @@ namespace svgUtil {
             return this.setAttribute("d", this.d.toAttribute());
         }
 
-        draw(cb: (d: PathContext) => void): this {
+        path(cb: (d: PathContext) => void): this {
             cb(this.d);
             return this.update();
         }
@@ -418,7 +451,7 @@ namespace svgUtil {
             return this;
         }
     }
-    
+
     export class RadialGradient extends Gradient<SVGRadialGradientElement> {
         constructor() { super("radialGradient"); }
 
@@ -545,6 +578,21 @@ namespace svgUtil {
             return this;
         }
     }
+
+    function lengthWithUnits(value: number, unit: LengthUnit) {
+        switch (unit) {
+            case LengthUnit.em: return value + "em";
+            case LengthUnit.ex: return value + "ex";
+            case LengthUnit.px: return value + "px";
+            case LengthUnit.in: return value + "in";
+            case LengthUnit.cm: return value + "cm";
+            case LengthUnit.mm: return value + "mm";
+            case LengthUnit.pt: return value + "pt";
+            case LengthUnit.pc: return value + "pc";
+            case LengthUnit.percent: return value + "%";
+            default: return value.toString();
+        }
+    }
 }
 
 namespace svgUtil.events {
@@ -623,6 +671,10 @@ namespace svgUtil.events {
         else {
             el.addEventListener("mousemove", handler);
         }
+    }
+
+    export function click(el: SVGElement, handler: () => void) {
+        el.addEventListener("click", handler);
     }
 }
 

@@ -1,6 +1,16 @@
 /// <reference path="./bitmap.ts" />
 
 namespace mkcd {
+    export enum PaintTool {
+        Normal = 0,
+        Rectangle = 1,
+        Outline = 2,
+        Circle = 3,
+        Fill = 4,
+        Line = 5,
+        Erase = 6,
+    }
+
     export abstract class Edit {
         protected startCol: number;
         protected startRow: number;
@@ -20,7 +30,7 @@ namespace mkcd {
     export abstract class SelectionEdit extends Edit {
         protected endCol: number;
         protected endRow: number;
-        
+
         update(col: number, row: number) {
             this.endCol = col;
             this.endRow = row;
@@ -114,7 +124,7 @@ namespace mkcd {
                 }
                 return;
             }
-            
+
             const xStep = dx > 0 ? 1 : -1;
             const yStep = dy > 0 ? 1 : -1;
             const dErr = Math.abs(dy / dx);
@@ -151,7 +161,7 @@ namespace mkcd {
             const radius = Math.floor((br[0] - tl[0]) / 2);
             const cx = tl[0] + radius;
             const cy = tl[1] + radius;
-            
+
             this.midpoint(cx, cy, radius, bitmap);
         }
 
@@ -177,7 +187,7 @@ namespace mkcd {
                     x -= 1;
                     err -= 2 * x + 1;
                 }
-            }      
+            }
         }
     }
 
@@ -195,7 +205,7 @@ namespace mkcd {
             this.col = col;
             this.row = row;
         }
-        
+
         doEdit(bitmap: Bitmap) {
             const replColor = bitmap.get(this.col, this.row);
             if (replColor === this.color) {
