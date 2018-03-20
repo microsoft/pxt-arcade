@@ -5,8 +5,9 @@
 
 
 namespace pxt.editor {
-    const PREVIEW_WIDTH = 100;
-    const PREVIEW_HEIGHT = 100;
+    const PREVIEW_WIDTH = 40;
+    const PREVIEW_HEIGHT = 40;
+    const TOP_BOTTOM_MARGIN = 5;
 
     // These are the characters used to compile, for a list of every supported character see parseBitmap()
     const hexChars = [".", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
@@ -74,6 +75,9 @@ namespace pxt.editor {
                     Blockly.Events.fire(new Blockly.Events.BlockChange(
                         this.sourceBlock_, 'field', this.name, this.text_, this.getText()));
                 }
+
+                goog.style.setHeight(contentDiv, "unset");
+                goog.style.setWidth(contentDiv, "unset");
             });
             this.editor.layout();
         }
@@ -86,8 +90,8 @@ namespace pxt.editor {
         render_() {
             super.render_();
             if (this.preview) {
-                this.size_.height = this.preview.outerHeight() + 20;
-                this.size_.width = this.preview.outerWidth() + 20;
+                this.size_.height = this.preview.outerHeight() + TOP_BOTTOM_MARGIN * 2;
+                this.size_.width = this.preview.outerWidth() + TOP_BOTTOM_MARGIN * 2;
             }
         }
 
@@ -125,28 +129,31 @@ namespace pxt.editor {
         private redrawPreview() {
             this.fieldGroup_.innerHTML = "";
             this.preview = new mkcd.BitmapImage({
+                //backgroundFill: this.sourceBlock_.getColourSecondary(),
+                outerMargin: 2,
                 cellWidth: Math.floor(PREVIEW_WIDTH / 16),
                 cellHeight: Math.floor(PREVIEW_HEIGHT / 16),
                 cellClass: "pixel-cell"
             }, this.state, [
                     "rgba(0, 0, 0, 0)",
-                    "#ffffff",
-                    "#33e2e4",
-                    "#05b3e0",
-                    "#3d30ad",
-                    "#b09eff",
-                    "#5df51f",
-                    "#6a8927",
-                    "#65471f",
-                    "#98294a",
-                    "#f80000",
-                    "#e30ec0",
-                    "#ff9da5",
-                    "#ff9005",
-                    "#efe204",
-                    "#000000",
+                    "#ffffff", // white
+                    "#33e2e4", // teal
+                    "#05b3e0", // blue
+                    "#3d30ad", // violet
+                    "#b09eff", // light violet
+                    "#5df51f", // green
+                    "#6a8927", // dollar green
+                    "#65471f", // brown
+                    "#98294a", // bordowy
+                    "#f80000", // red
+                    "#e30ec0", // pink
+                    "#ff9da5", // light pink
+                    "#ff9005", // orange
+                    "#efe204", // yellow
+                    "#000000", // black
                 ]);
 
+            this.preview.translate(0, TOP_BOTTOM_MARGIN);
             this.fieldGroup_.appendChild(this.preview.getView().el);
         }
 

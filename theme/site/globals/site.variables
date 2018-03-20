@@ -12,11 +12,14 @@
      Fonts
 --------------------*/
 
-@headerFont        : "VT323", Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
-@pageFont          : "VT323", Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
+@headerFont        : "Share Tech Mono", Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
+@pageFont          : "Share Tech Mono", Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
 
 @docsHeaderFont: @headerFont;
 @docsPageFont: @pageFont;
+
+@importGoogleFonts: true;
+@fontName: "Share Tech Mono";
 
 /*-------------------
       Site Colors

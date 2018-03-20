@@ -7,6 +7,7 @@
     },
     "galleries": {
         "Examples": "examples",
+        "Lessons": "lessons",
         "Turtle": "examples/turtle"
     }
 }

@@ -75,20 +75,20 @@ namespace mkcd {
         protected mask: Uint8Array;
 
         constructor(public width: number, public height: number) {
-            this.mask = new Uint8Array(Math.ceil(width * height / 8));    
+            this.mask = new Uint8Array(Math.ceil(width * height / 8));
         }
 
         set(col: number, row: number) {
             const cellIndex = col + this.width * row;
-            const index = Math.floor(cellIndex / 8);
-            const offset = cellIndex % 8;
-            this.mask[index] |= (1 << offset); 
+            const index = cellIndex >> 3;
+            const offset = cellIndex & 7;
+            this.mask[index] |= (1 << offset);
         }
 
         get(col: number, row: number) {
             const cellIndex = col + this.width * row;
-            const index = Math.floor(cellIndex / 8);
-            const offset = cellIndex % 8;
+            const index = cellIndex >> 3;
+            const offset = cellIndex & 7;
             return (this.mask[index] >> offset) & 1;
         }
     }

@@ -5,7 +5,7 @@ namespace pxsim {
 
     const COMPONENT_WIDTH = 60;
     const DRAW_UNIT = COMPONENT_WIDTH / 3;
-    const PADDING = 30;
+    const PADDING = 20;
 
     const D_PAD_COLOR = "#6B4F76";
     const D_PAD_DOWN_COLOR = "#f4b342";

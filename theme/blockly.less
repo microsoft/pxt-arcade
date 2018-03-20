@@ -45,3 +45,34 @@ div.blocklyTreeRow {
 .palette-unselected {
     stroke: none;
 }
+
+.toolbar-button {
+    .toolbar-button-icon {
+        fill: white;
+        font-family: "Icons";
+    }
+
+    .toolbar-button-background {
+        fill: #7f8c8d;
+        fill-opacity: 0.8;
+    }
+}
+
+.toolbar-button:hover {
+    .toolbar-button-background {
+        fill-opacity: 0.9;
+        transition: fill-opacity 0.1s;
+    }
+}
+
+.toolbar-button:active {
+    .toolbar-button-background {
+        fill-opacity: 1;
+        transition: fill-opacity 0.1s;
+    }
+}
+
+.toolbar-button.toolbar-button-selected .toolbar-button-background {
+    stroke: orange;
+    stroke-width: 2px;
+}

@@ -13,6 +13,7 @@ namespace mkcd {
         rowMargin: number;
         cornerRadius: number;
         defaultColor: string;
+        cellIdPrefix: string;
         backgroundFill?: string;
         cellClass?: string;
     }
@@ -136,11 +137,13 @@ namespace mkcd {
         protected buildCell(col: number, row: number): svg.Rect {
             const [x, y] = this.cellToCoord(col, row);
 
+            const index = this.cellToIndex(col, row);
             const cell = this.group.draw("rect")
+                .id(this.gridProps.cellIdPrefix + "-" + index)
                 .at(x, y)
                 .size(this.gridProps.cellWidth, this.gridProps.cellHeight)
                 .fill(this.gridProps.defaultColor)
-                .attr({ "data-grid-index": this.cellToIndex(col, row) });
+                .attr({ "data-grid-index": index });
 
             if (this.gridProps.cornerRadius) {
                 cell.corner(this.gridProps.cornerRadius)
@@ -244,6 +247,12 @@ namespace mkcd {
             rowMargin: 0,
             cornerRadius: 0,
             defaultColor: "#ffffff",
+            cellIdPrefix: uniquePrefix()
         };
+    }
+
+    let current = 0;
+    export function uniquePrefix() {
+        return "grid" + current++;
     }
 }
