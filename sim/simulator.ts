@@ -104,6 +104,7 @@ namespace pxsim {
         public bus: EventBus;
         public audioState: AudioState;
         public background: HTMLDivElement;
+        public controlsDiv: HTMLDivElement;
         public canvas: HTMLCanvasElement;
         public stats: HTMLElement;
         public screen: Uint32Array;
@@ -205,9 +206,13 @@ namespace pxsim {
             this.canvas.height = 16;
 
             if (!this.controls) {
-                const controlDiv = document.getElementById("controls");
-                controlDiv.innerHTML = "";
-                this.controls = new ControlPad(controlDiv);
+                this.controlsDiv = document.getElementById("controls") as HTMLDivElement;
+                this.controlsDiv.innerHTML = "";
+                this.controls = new ControlPad(this.controlsDiv);
+
+                this.controlsDiv.onmouseover = () => {
+                    if (!document.hasFocus()) window.focus();
+                }
             }
 
             let requested = false
@@ -246,20 +251,24 @@ namespace pxsim {
             }
 
             let info = document.getElementById("instructions")
+            indicateFocus(false);
 
             return Promise.resolve();
         }
     }
 
     function indicateFocus(hasFocus: boolean) {
-        const c = board().background;
-        if (!c) return;
+        const b = board().background;
+        const c = board().controlsDiv;
+        if (!b || !c) return;
 
         if (hasFocus) {
-            c.classList.add("has-focus");
+            b.classList.add("has-focus");
+            c.classList.remove("no-focus");
         }
         else {
-            c.classList.remove("has-focus");
+            b.classList.remove("has-focus");
+            c.classList.add("no-focus");
         }
     }
 }

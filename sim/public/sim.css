@@ -1,8 +1,12 @@
+html, body {
+    margin: 0 !important;
+    height: 100%;
+}
+
 body {
     font-size: 12px;
     color: white;
-    height: 100vh;
-    font-family: Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace
+    font-family: Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
 }
 
 .sprite {
@@ -22,7 +26,7 @@ canvas {
 
 #screen-back {
     background: #FFFAE7;
-    height: 94%;
+    height: calc(100% - 10px);
     position: absolute;
     z-index: -1;
     margin-left: auto;
@@ -39,8 +43,7 @@ canvas {
     align-content: center;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    padding-top: 10px;
+    height: 100vh;
 }
 
 .has-focus {
@@ -50,7 +53,7 @@ canvas {
 #paint-surface {
     object-fit: contain;
     display: inline;
-    height: 100%;
+    height: calc(100% - 14px);
     border: 7px solid #6B4F76;
     border-radius: 5px;
     border-left-width: 12px;
@@ -58,9 +61,11 @@ canvas {
 }
 
 #paint-surface-container {
+    padding-top: 10px;
     width: 100%;
     flex: 5;
     text-align: center;
+    overflow-y: hidden;
 }
 
 #debug-stats {
@@ -72,7 +77,15 @@ canvas {
 
 #controls {
     flex: 1;
-    padding-bottom: 25px;
+    width: 100%;
+    text-align: center;
+}
+
+#controls.no-focus {
+    opacity: 0.5;
+    -moz-filter: blur(3px);
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
 }
 
 .stats {
