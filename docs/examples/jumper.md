@@ -124,6 +124,6 @@ function createObstacle() {
 
     // Keep score
     s.onDestroyed(function () {
-        player.changeScoreBy(1)
+        info.changeScoreBy(1)
     });
 }
