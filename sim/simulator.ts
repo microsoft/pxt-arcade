@@ -251,7 +251,7 @@ namespace pxsim {
             }
 
             let info = document.getElementById("instructions")
-            indicateFocus(false);
+            indicateFocus(document.hasFocus());
 
             return Promise.resolve();
         }
