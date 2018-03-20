@@ -22,7 +22,6 @@ function nextLevel() {
         foodX = -1
         foodY = -1
         show()
-        control.screenRefresh()
         pause(300)
     }
     level++
