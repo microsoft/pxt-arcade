@@ -2,37 +2,29 @@
 /// <reference path="./grid.ts" />
 /// <reference path="./bitmap.ts" />
 /// <reference path="./tools.ts" />
+/// <reference path="./toolbar.ts" />
 
 namespace mkcd {
     import svg = svgUtil;
 
-    const MARGIN = 20;
+    const MARGIN = 8;
     const CELL_WIDTH = 10;
     const BG_WIDTH = 6;
 
     // Border around paint surface
-    const paintSurfaceBorderWidth = 3;
+    const paintSurfaceBorderWidth = 0;
 
-    // Border around color paltte
+    // Border around color palette
     const paletteBorderWidth = 2;
 
     // Spacing between palette and screen (discounting borders)
     const palettePaintMargin = 2;
 
-    export enum PaintTool {
-        Normal = 0,
-        Rectangle = 1,
-        Outline = 2,
-        Circle = 3,
-        Fill = 4,
-        Line = 5,
-        Erase = 6,
-    }
-
-    export class SpriteEditor {
+    export class SpriteEditor implements ToolbarHost {
         private palette: ColorPalette;
         private paintSurface: BitmapImage;
         private preview: BitmapImage;
+        private toolbar: Toolbar;
 
         private group: svg.Group;
         private root: svg.SVG;
@@ -42,7 +34,7 @@ namespace mkcd {
         private displayState: Bitmap;
 
         private edit: Edit;
-        private tool: PaintTool = PaintTool.Normal;
+        private activeTool: PaintTool = PaintTool.Normal;
 
         private undoStack: Bitmap[] = [];
         private redoStack: Bitmap[] = [];
@@ -55,22 +47,22 @@ namespace mkcd {
         private height: number;
 
         constructor(bitmap: Bitmap) {
-            this.colors = [
-                "#ffffff",
-                "#33e2e4",
-                "#05b3e0",
-                "#3d30ad",
-                "#b09eff",
-                "#5df51f",
-                "#6a8927",
-                "#65471f",
-                "#98294a",
-                "#f80000",
-                "#e30ec0",
-                "#ff9da5",
-                "#ff9005",
-                "#efe204",
-                "#000000",
+            this.colors =  [
+                "#ffffff", // white
+                "#33e2e4", // teal
+                "#05b3e0", // blue
+                "#3d30ad", // violet
+                "#b09eff", // light violet
+                "#5df51f", // green
+                "#6a8927", // dollar green
+                "#65471f", // brown
+                "#98294a", // bordowy
+                "#f80000", // red
+                "#e30ec0", // pink
+                "#ff9da5", // light pink
+                "#ff9005", // orange
+                "#efe204", // yellow
+                "#000000", // black
             ];
 
             this.columns = bitmap.width;
@@ -81,10 +73,12 @@ namespace mkcd {
 
             this.root = new svg.SVG();
             this.group = this.root.group();
+            this.makeTransparencyFill();
 
             this.palette = new mkcd.ColorPalette({
                 rowLength: 2,
                 emptySwatchDisabled: false,
+                emptySwatchFill: 'url("#alpha-background")',
                 outerMargin: paletteBorderWidth,
                 columnMargin: 1,
                 rowMargin: 1,
@@ -96,26 +90,26 @@ namespace mkcd {
                 cellWidth: CELL_WIDTH,
                 cellHeight: CELL_WIDTH,
                 outerMargin: paintSurfaceBorderWidth,
-                backgroundFill: "black",
+                backgroundFill: "white",
                 cellClass: "pixel-cell"
-            }, this.displayState, ["#dedede"].concat(this.colors));
+            }, this.displayState, ['url("#alpha-background")'].concat(this.colors));
 
             this.paintSurface.drag((col, row) => {
-                if (this.tool !== PaintTool.Fill) {
-                    this.debug("gesture (" + PaintTool[this.tool] + ")");
+                if (this.activeTool !== PaintTool.Fill) {
+                    this.debug("gesture (" + PaintTool[this.activeTool] + ")");
                     this.setCell(col, row, this.palette.selected, false);
                 }
             });
 
             this.paintSurface.up((col, row) => {
-                if (this.tool !== PaintTool.Fill) {
-                    this.debug("gesture end (" + PaintTool[this.tool] + ")");
+                if (this.activeTool !== PaintTool.Fill) {
+                    this.debug("gesture end (" + PaintTool[this.activeTool] + ")");
                     this.commit();
                 }
             });
 
             this.paintSurface.down((col, row) => {
-                if (this.tool === PaintTool.Fill) {
+                if (this.activeTool === PaintTool.Fill) {
                     this.fill(col, row);
                 }
                 else {
@@ -123,8 +117,14 @@ namespace mkcd {
                 }
             });
 
-            this.group.appendChild(this.palette.getView());
             this.group.appendChild(this.paintSurface.getView());
+            this.group.appendChild(this.palette.getView());
+
+            this.toolbar = new Toolbar(this.group.group(), {
+                height: 25,
+                width: this.paintSurface.outerWidth()
+            }, this);
+            this.palette.setSelected(1);
 
             // this.debugText = this.group.draw("text").attr({ "font-family": "segoe ui" });
 
@@ -134,31 +134,6 @@ namespace mkcd {
                 }
                 else if (ev.key === "Redo" || (ev.ctrlKey && ev.key === "y")) {
                     this.redo();
-                }
-                else {
-                    switch (ev.key) {
-                        case "n":
-                            this.setTool(PaintTool.Normal);
-                            break;
-                        case "r":
-                            this.setTool(PaintTool.Rectangle);
-                            break;
-                        case "o":
-                            this.setTool(PaintTool.Outline);
-                            break;
-                        case "c":
-                            this.setTool(PaintTool.Circle);
-                            break;
-                        case "f":
-                            this.setTool(PaintTool.Fill);
-                            break;
-                        case "l":
-                            this.setTool(PaintTool.Line);
-                            break;
-                        case "e":
-                            this.setTool(PaintTool.Erase);
-                            break;
-                    }
                 }
             });
         }
@@ -179,7 +154,7 @@ namespace mkcd {
         }
 
         render(el: HTMLElement): void {
-            this.root.attr({ "width": "100%", "height": "100%" });
+            this.root.attr({ "width": "95%", "height": "95%" });
             el.appendChild(this.root.el);
             this.layout();
         }
@@ -188,16 +163,20 @@ namespace mkcd {
             if (!this.root) {
                 return;
             }
+
+            const toolbarHeight = this.toolbar.outerHeight() + 10;
+            this.toolbar.translate(MARGIN, MARGIN);
+
             const paletteScale = this.paintSurface.outerHeight() / this.palette.outerHeight();
             this.palette.scale(paletteScale);
 
-            this.palette.translate(MARGIN, MARGIN);
+            this.palette.translate(MARGIN, MARGIN + toolbarHeight);
 
             const paintLeft = MARGIN + this.palette.outerWidth() * paletteScale - paletteBorderWidth - paintSurfaceBorderWidth + palettePaintMargin;
-            this.paintSurface.translate(paintLeft, MARGIN);
+            this.paintSurface.translate(paintLeft, MARGIN + toolbarHeight);
 
             this.width = paintLeft + this.paintSurface.outerWidth() + MARGIN;
-            this.height = this.paintSurface.outerHeight() + MARGIN * 2;
+            this.height = this.paintSurface.outerHeight() + MARGIN * 2 + toolbarHeight;
 
             if (this.debugText) {
                 this.debugText.at(paintLeft, this.paintSurface.outerHeight() + MARGIN * 2);
@@ -212,11 +191,6 @@ namespace mkcd {
             return this.height;
         }
 
-        setTool(tool: PaintTool): void {
-            this.tool = tool;
-            this.debug("Set tool to " + PaintTool[tool]);
-        }
-
         setPreview(preview: BitmapImage) {
             this.preview = preview;
         }
@@ -225,6 +199,28 @@ namespace mkcd {
             this.paintSurface.repaint();
             if (this.preview) {
                 this.preview.repaint();
+            }
+        }
+
+        setActiveTool(tool: PaintTool) {
+            this.activeTool = tool;
+        }
+
+        undo() {
+            if (this.undoStack.length) {
+                this.debug("undo");
+                const todo = this.undoStack.pop();
+                this.pushState(false);
+                this.restore(todo);
+            }
+        }
+
+        redo() {
+            if (this.redoStack.length) {
+                this.debug("redo");
+                const todo = this.redoStack.pop();
+                this.pushState(true);
+                this.restore(todo);
             }
         }
 
@@ -245,24 +241,6 @@ namespace mkcd {
                 this.state.apply(this.displayState);
                 this.edit = undefined;
                 this.redoStack = [];
-            }
-        }
-
-        private undo() {
-            if (this.undoStack.length) {
-                this.debug("undo");
-                const todo = this.undoStack.pop();
-                this.pushState(false);
-                this.restore(todo);
-            }
-        }
-
-        private redo() {
-            if (this.redoStack.length) {
-                this.debug("redo");
-                const todo = this.redoStack.pop();
-                this.pushState(true);
-                this.restore(todo);
             }
         }
 
@@ -294,7 +272,7 @@ namespace mkcd {
         }
 
         private newEdit(color: number) {
-            switch (this.tool) {
+            switch (this.activeTool) {
                 case PaintTool.Normal: return new PaintEdit(this.columns, this.rows, color);
                 case PaintTool.Rectangle: return new RectangleEdit(this.columns, this.rows, color);
                 case PaintTool.Outline: return new OutlineEdit(this.columns, this.rows, color);
@@ -343,6 +321,27 @@ namespace mkcd {
             if (this.debugText) {
                 this.debugText.text("DEBUG: " + msg);
             }
+        }
+
+        private makeTransparencyFill() {
+            this.root.define(defs => {
+                const p = defs.create("pattern", "alpha-background")
+                    .size(10, 10)
+                    .units(svg.PatternUnits.objectBoundingBox);
+
+                p.draw("rect")
+                    .at(0, 0)
+                    .size(11, 11)
+                    .fill("white")
+                p.draw("rect")
+                    .at(0, 0)
+                    .size(5, 5)
+                    .fill("#dedede");
+                p.draw("rect")
+                    .at(5, 5)
+                    .size(5, 5)
+                    .fill("#dedede");
+            })
         }
     }
 }

@@ -3,6 +3,7 @@
 
 
 namespace mkcd {
+    import svg = svgUtil;
     export interface ColorPaletteProps extends GridStyleProps {
         colors: string[];
         rowLength: number;
@@ -15,12 +16,20 @@ namespace mkcd {
     export class ColorPalette extends Grid {
         selected: number;
         private props: ColorPaletteProps;
+        private selectedClone: svg.BaseElement<SVGUseElement>;
 
         constructor(props: Partial<ColorPaletteProps>) {
             super(toGridProps(mergeProps(defaultPaletteProps(), props)));
 
             this.props = mergeProps(defaultPaletteProps(), props);
             this.selected = 0;
+
+            // SVG elements are drawn according to their order in the DOM. The selected color's
+            // rect may grow in size (larger stroke width) so in order to prevent it from being
+            // overlapped by other elements we can clone it at the end of the DOM with a "use"
+            // element
+            this.selectedClone = new svg.BaseElement("use");
+            this.group.appendChild(this.selectedClone);
 
             this.initColors();
         }
@@ -51,6 +60,7 @@ namespace mkcd {
             const cell = this.getCell(index);
             if (highlighted) {
                 cell.setAttribute("class", this.props.selectedClass);
+                this.selectedClone.setAttribute("href", cell.el.getAttribute("id"))
             }
             else {
                 cell.setAttribute("class", this.props.unselectedClass);
@@ -83,6 +93,7 @@ namespace mkcd {
             outerMargin: 1,
             cornerRadius: 0,
             defaultColor: "#ffffff",
+            cellIdPrefix: uniquePrefix()
         };
     }
 
