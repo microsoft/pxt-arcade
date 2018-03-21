@@ -13,7 +13,16 @@ namespace mkcd {
         setActiveTool(tool: PaintTool): void;
         undo(): void;
         redo(): void;
+        resize(width: number, height: number): void;
     }
+
+    const sizePresets: [number, number][] = [
+        [8, 8],
+        [8, 16],
+        [16, 16],
+        [16, 32],
+        [32, 32],
+    ];
 
     export class Toolbar {
         protected activeTool = PaintTool.Normal;
@@ -25,7 +34,8 @@ namespace mkcd {
         protected undoButton: IconButton;
         protected redoButton: IconButton;
 
-        protected currentIndex = 0;
+        protected resizeButton: IconButton;
+        protected selectedSize = 2;
 
         constructor(protected g: svg.Group, protected props: ToolbarProps, protected host: ToolbarHost) {
             this.createButtons();
@@ -46,7 +56,15 @@ namespace mkcd {
                 this.host.redo();
             });
 
+            this.resizeButton = this.addButton("\uf337");
+            this.resizeButton.onClick(() => {
+                this.selectedSize = (this.selectedSize + 1) % sizePresets.length;
+                const [width, height] = sizePresets[this.selectedSize];
+                this.host.resize(width, height);
+            });
+
             this.setTool(PaintTool.Normal);
+            this.layout();
         }
 
         protected addTool(icon: string, tool: PaintTool) {
@@ -57,10 +75,8 @@ namespace mkcd {
 
         protected addButton(icon: string) {
             const btn = mkToolbarButton(icon, this.props.height);
-            btn.translate(this.currentIndex * (this.props.height + 5), 0);
             this.g.appendChild(btn.getView());
 
-            this.currentIndex ++;
             return btn;
         }
 
@@ -74,6 +90,32 @@ namespace mkcd {
 
         translate(x: number, y: number) {
             this.g.translate(x, y);
+        }
+
+        setDimensions(width: number, height: number) {
+            if (this.props.width != width || this.props.height != height) {
+                this.props.width = width;
+                this.props.height = height;
+                this.layout();
+            }
+        }
+
+        protected layout() {
+            this.layoutButton(this.pencilButton, 0, true);
+            this.layoutButton(this.rectButton, 1, true);
+            this.layoutButton(this.eraseButton, 2, true);
+            this.layoutButton(this.undoButton, 3, true);
+            this.layoutButton(this.redoButton, 4, true);
+            this.layoutButton(this.resizeButton, 0, false);
+        }
+
+        protected layoutButton(button: IconButton, index: number, fromLeft: boolean) {
+            if (fromLeft) {
+                button.translate(index * (this.props.height + 5), 0);
+            }
+            else {
+                button.translate(this.props.width - (index + 1) * (this.props.height + 5), 0);
+            }
         }
 
         protected setTool(tool: PaintTool) {

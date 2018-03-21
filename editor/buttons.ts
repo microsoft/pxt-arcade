@@ -54,14 +54,7 @@ namespace mkcd {
                 .corner(this.props.cornerRadius)
                 .size(this.props.width, this.props.height);
 
-            this.icon = this.root.draw("text")
-                .at(this.props.width / 2, this.props.height / 2)
-                .fontFamily(this.props.iconFont)
-                .text(this.props.iconString)
-                .fontSize(this.props.height - this.props.iconMargin * 2, svg.LengthUnit.px)
-                .anchor("middle")
-                .alignmentBaseline("middle");
-
+            this.icon = this.drawIcon();
 
             if (this.props.rootClass) {
                 this.root.setClass(this.props.rootClass);
@@ -74,10 +67,24 @@ namespace mkcd {
             }
 
             this.root.el.addEventListener("click", () => {
-                if (this.clickHandler) {
-                    this.clickHandler();
-                }
+                this.handleClick();
             });
+        }
+
+        protected handleClick() {
+            if (this.clickHandler) {
+                this.clickHandler();
+            }
+        }
+
+        protected drawIcon(): svg.Text {
+            return this.root.draw("text")
+                .at(this.props.width / 2, this.props.height / 2)
+                .fontFamily(this.props.iconFont)
+                .text(this.props.iconString)
+                .fontSize(this.props.height - this.props.iconMargin * 2, svg.LengthUnit.px)
+                .anchor("middle")
+                .alignmentBaseline("middle");
         }
     }
 }
