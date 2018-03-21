@@ -71,6 +71,7 @@ namespace pxt.editor {
 
             Blockly.DropDownDiv.setColour("#2c3e50", "#2c3e50");
             Blockly.DropDownDiv.showPositionedByBlock(this, this.sourceBlock_, () => {
+                this.state = this.preview.image;
                 if (this.sourceBlock_ && Blockly.Events.isEnabled()) {
                     Blockly.Events.fire(new Blockly.Events.BlockChange(
                         this.sourceBlock_, 'field', this.name, this.text_, this.getText()));
@@ -131,8 +132,6 @@ namespace pxt.editor {
             this.preview = new mkcd.BitmapImage({
                 //backgroundFill: this.sourceBlock_.getColourSecondary(),
                 outerMargin: 2,
-                cellWidth: Math.floor(PREVIEW_WIDTH / 16),
-                cellHeight: Math.floor(PREVIEW_HEIGHT / 16),
                 cellClass: "pixel-cell"
             }, this.state, [
                     "rgba(0, 0, 0, 0)",
@@ -154,6 +153,7 @@ namespace pxt.editor {
                 ]);
 
             this.preview.translate(0, TOP_BOTTOM_MARGIN);
+            this.preview.setGridDimensions(PREVIEW_WIDTH);
             this.fieldGroup_.appendChild(this.preview.getView().el);
         }
 
