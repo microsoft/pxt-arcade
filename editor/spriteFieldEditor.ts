@@ -5,9 +5,14 @@
 
 
 namespace pxt.editor {
-    const PREVIEW_WIDTH = 40;
-    const PREVIEW_HEIGHT = 40;
-    const TOP_BOTTOM_MARGIN = 5;
+    import svg = svgUtil;
+
+    // It's a square
+    const TOTAL_WIDTH = 55;
+    const PADDING = 5;
+    const BG_PADDING = 4;
+    const BG_WIDTH = TOTAL_WIDTH - PADDING * 2;
+    const PREVIEW_WIDTH = TOTAL_WIDTH - PADDING * 2 - BG_PADDING * 2;
 
     // These are the characters used to compile, for a list of every supported character see parseBitmap()
     const hexChars = [".", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
@@ -66,8 +71,6 @@ namespace pxt.editor {
             this.editor.render(contentDiv);
             this.editor.rePaint();
 
-            goog.style.setHeight(contentDiv, this.editor.outerHeight());
-            goog.style.setWidth(contentDiv, this.editor.outerWidth());
 
             Blockly.DropDownDiv.setColour("#2c3e50", "#2c3e50");
             Blockly.DropDownDiv.showPositionedByBlock(this, this.sourceBlock_, () => {
@@ -77,10 +80,14 @@ namespace pxt.editor {
                         this.sourceBlock_, 'field', this.name, this.text_, this.getText()));
                 }
 
-                goog.style.setHeight(contentDiv, "unset");
-                goog.style.setWidth(contentDiv, "unset");
+                goog.style.setHeight(contentDiv, null);
+                goog.style.setWidth(contentDiv, null);
+                goog.style.setStyle(contentDiv, "overflow", null);
             });
             this.editor.layout();
+            goog.style.setHeight(contentDiv, this.editor.outerHeight() + 1);
+            goog.style.setWidth(contentDiv, this.editor.outerWidth() + 1);
+            goog.style.setStyle(contentDiv, "overflow", "hidden");
         }
 
 
@@ -91,8 +98,8 @@ namespace pxt.editor {
         render_() {
             super.render_();
             if (this.preview) {
-                this.size_.height = this.preview.outerHeight() + TOP_BOTTOM_MARGIN * 2;
-                this.size_.width = this.preview.outerWidth() + TOP_BOTTOM_MARGIN * 2;
+                this.size_.height = TOTAL_WIDTH
+                this.size_.width = TOTAL_WIDTH;
             }
         }
 
@@ -129,6 +136,14 @@ namespace pxt.editor {
 
         private redrawPreview() {
             this.fieldGroup_.innerHTML = "";
+
+            const bg = new svg.Rect()
+                .at(PADDING, PADDING)
+                .size(BG_WIDTH, BG_WIDTH)
+                .fill("#dedede")
+                .stroke("#898989", 1)
+                .corner(4);
+
             this.preview = new mkcd.BitmapImage({
                 //backgroundFill: this.sourceBlock_.getColourSecondary(),
                 outerMargin: 2,
@@ -152,8 +167,9 @@ namespace pxt.editor {
                     "#000000", // black
                 ]);
 
-            this.preview.translate(0, TOP_BOTTOM_MARGIN);
+            this.preview.translate(PADDING + BG_PADDING, PADDING + BG_PADDING);
             this.preview.setGridDimensions(PREVIEW_WIDTH);
+            this.fieldGroup_.appendChild(bg.el);
             this.fieldGroup_.appendChild(this.preview.getView().el);
         }
 

@@ -111,7 +111,7 @@ namespace mkcd {
                 .alignmentBaseline("middle")
                 .anchor("middle");
 
-            this.overlayFade = new Fade(this.overlay, 1000, 500);
+            this.overlayFade = new Fade(this.overlay, 750, 500);
         }
     }
 

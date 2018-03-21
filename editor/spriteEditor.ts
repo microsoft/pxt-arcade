@@ -165,9 +165,9 @@ namespace mkcd {
         }
 
         render(el: HTMLElement): void {
-            this.root.attr({ "width": "100%", "height": "100%" });
             el.appendChild(this.root.el);
             this.layout();
+            this.root.attr({ "width": this.outerWidth() + "px", "height": this.outerHeight() + "px" });
         }
 
         layout(): void {

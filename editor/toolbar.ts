@@ -42,16 +42,16 @@ namespace mkcd {
         }
 
         protected createButtons() {
-            this.pencilButton = this.addTool("\uf303", PaintTool.Normal);
-            this.rectButton = this.addTool("\uf360", PaintTool.Rectangle);
+            this.pencilButton = this.addTool("\uf040", PaintTool.Normal);
+            this.rectButton = this.addTool("\uf096", PaintTool.Rectangle);
             this.eraseButton = this.addTool("\uf12d", PaintTool.Erase);
 
-            this.undoButton = this.addButton("\uf2ea");
+            this.undoButton = this.addButton("\uf0e2");
             this.undoButton.onClick(() => {
                 this.host.undo();
             });
 
-            this.redoButton = this.addButton("\uf2f9");
+            this.redoButton = this.addButton("\uf01e");
             this.redoButton.onClick(() => {
                 this.host.redo();
             });
