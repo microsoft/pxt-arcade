@@ -56,7 +56,7 @@ namespace mkcd {
                 this.host.redo();
             });
 
-            this.resizeButton = this.addButton("\uf337");
+            this.resizeButton = this.addButton("\uf0b2");
             this.resizeButton.onClick(() => {
                 this.selectedSize = (this.selectedSize + 1) % sizePresets.length;
                 const [width, height] = sizePresets[this.selectedSize];

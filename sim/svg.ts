@@ -232,6 +232,10 @@ namespace svgUtil {
             return this.setAttribute("stroke-opacity", opacity);
         }
 
+        setVisible(visible: boolean): this {
+            return this.setAttribute("visibility", visible ? "visible" : "hidden");
+        }
+
         onDown(handler: PointerHandler): this {
             events.down(this.el, handler);
             return this;

@@ -9,10 +9,11 @@ namespace mkcd {
     export class BitmapImage extends Grid {
         public image: Bitmap;
         protected palette: string[];
-        protected overlay: svg.Group;
+        private overlay: svg.Group;
+        private overlayFade: Fade;
 
-        constructor(props: Partial<GridStyleProps>, img: Bitmap, palette: string[]) {
-            super(bitmapImageProps(props, img));
+        constructor(props: Partial<GridStyleProps>, img: Bitmap, palette: string[], root?: svg.SVG) {
+            super(bitmapImageProps(props, img), root);
 
             this.image = img;
             this.palette = palette;
@@ -28,6 +29,7 @@ namespace mkcd {
         }
 
         writeColor(col: number, row: number, color: number) {
+            const old = this.image.get(col, row);
             this.image.set(col, row, color);
             this.setCellColor(col, row, this.palette[color]);
         }
@@ -67,14 +69,14 @@ namespace mkcd {
             }
             else {
                 this.overlay.el.innerHTML = "";
+                if (this.overlayFade) {
+                    this.overlayFade.kill();
+                }
             }
+
 
             const width = this.outerWidth();
             const height = this.outerHeight();
-
-            this.overlay.draw("rect")
-                .fill("#dedede")
-                .size(width, height);
 
             for (let c = 0; c < this.columns; c++) {
                 const [x, ] = this.cellToCoord(c, 0);
@@ -92,7 +94,24 @@ namespace mkcd {
                     .at(0, y, width, y);
             }
 
-            fade(this.overlay, 500, 500);
+            const toastWidth = 100;
+            const toastHeight = 40;
+
+            this.overlay.draw("rect")
+                .at(width / 2 - toastWidth / 2, height / 2 - toastHeight / 2 )
+                .fill("#898989")
+                .corner(2)
+                .size(toastWidth, toastHeight);
+
+            this.overlay.draw("text")
+                .text(`${this.columns}x${this.rows}`)
+                .at(width / 2, height / 2)
+                .fontSize(30, svg.LengthUnit.px)
+                .fill("white")
+                .alignmentBaseline("middle")
+                .anchor("middle");
+
+            this.overlayFade = new Fade(this.overlay, 1000, 500);
         }
     }
 
@@ -104,28 +123,40 @@ namespace mkcd {
         return mergeProps<GridProps>(defaultProps, props);
     }
 
-    function fade(target: svg.Group, delay: number, duration: number) {
-        const start = Date.now() + delay;
-        const end = start + duration;
-        const slope = 1 / duration;
+    class Fade {
+        start: number;
+        end: number;
+        slope: number;
+        dead: boolean;
 
-        const frame = () => {
+        constructor (protected target: svg.Group, delay: number, duration: number) {
+            this.start = Date.now() + delay;
+            this.end = this.start + duration;
+            this.slope = 1 / duration;
+            this.dead = false;
+
+            target.setAttribute("fill-opacity", 1)
+            target.setAttribute("stroke-opacity", 1)
+
+            setTimeout(() => requestAnimationFrame(() => this.frame()), delay);
+        }
+
+        frame() {
+            if (this.dead) return;
             const now = Date.now();
-            if (now < end) {
-                const v = 1 - (slope * (now - start));
-                target.setAttribute("fill-opacity", v);
-                target.setAttribute("stroke-opacity", v);
-                requestAnimationFrame(frame);
+            if (now < this.end) {
+                const v = 1 - (this.slope * (now - this.start));
+                this.target.setAttribute("fill-opacity", v);
+                this.target.setAttribute("stroke-opacity", v);
+                requestAnimationFrame(() => this.frame());
             }
             else {
-                target.setAttribute("fill-opacity", 0)
-                target.setAttribute("stroke-opacity", 0)
+                this.target.el.innerHTML = "";
             }
         }
 
-        target.setAttribute("fill-opacity", 1)
-        target.setAttribute("stroke-opacity", 1)
-
-        setTimeout(() => requestAnimationFrame(frame), delay);
+        kill() {
+            this.dead = true;
+        }
     }
 }

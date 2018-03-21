@@ -101,9 +101,9 @@ namespace mkcd {
 
             this.paintSurface = new mkcd.BitmapImage({
                 outerMargin: 0,
-                backgroundFill: "white",
+                backgroundFill: 'url("#alpha-background")',
                 cellClass: "pixel-cell"
-            }, this.state.copy(), ['url("#alpha-background")'].concat(this.colors));
+            }, this.state.copy(), [null].concat(this.colors), this.root);
 
             this.paintSurface.drag((col, row) => {
                 if (this.activeTool !== PaintTool.Fill) {

@@ -41,7 +41,7 @@ namespace mkcd {
         protected downHandler: (col: number, row: number) => void;
         protected upHandler: (col: number, row: number) => void;
 
-        constructor(props: Partial<GridProps>) {
+        constructor(props: Partial<GridProps>, protected root?: svg.SVG) {
             this.gridProps = mkcd.mergeProps(defaultGridProps(), props);
             this.updateDimensions();
             this.group = new svg.Group();
@@ -129,7 +129,15 @@ namespace mkcd {
             }
             column = Math.floor(column);
             row = Math.floor(row);
-            this.getCell(this.cellToIndex(column, row)).fill(color, opacity);
+
+            const cell = this.getCell(this.cellToIndex(column, row))
+            if (color != null) {
+                cell.setVisible(true);
+                cell.fill(color, opacity);
+            }
+            else {
+                cell.setVisible(false);
+            }
         }
 
         down(handler: (col: number, row: number) => void): void {
@@ -235,9 +243,10 @@ namespace mkcd {
         }
 
         private initDragSurface() {
-            if (!this.dragSurface) {
+            if (!this.dragSurface && this.root) {
                 let lastCol = -1;
                 let lastRow = -1;
+                let point = this.root.el.createSVGPoint();
                 let inGesture = false;
                 this.dragSurface = this.group.draw("rect")
                     .opacity(0)
@@ -252,22 +261,21 @@ namespace mkcd {
                             lastRow = -1;
                             start = true;
                         }
-                        const elts = document.elementsFromPoint(ev.pageX, ev.pageY);
-                        elts.forEach((el) => {
-                            if (el.hasAttribute("data-grid-index")) {
-                                const [col, row] = this.indexToCell(Number(el.getAttribute("data-grid-index")));
-                                if (lastCol != col || lastRow != row) {
-                                    lastCol = col;
-                                    lastRow = row;
-                                    if (start) {
-                                        this.downCore(col, row);
-                                    }
-                                    else {
-                                        this.moveCore(col, row);
-                                    }
-                                }
+
+                        point.x = ev.clientX;
+                        point.y = ev.clientY;
+                        const cursor = point.matrixTransform(this.root.el.getScreenCTM().inverse());
+                        const [col, row] = this.coordToCell(cursor.x - this.group.left, cursor.y - this.group.top);
+                        if (lastCol != col || lastRow != row) {
+                            lastCol = col;
+                            lastRow = row;
+                            if (start) {
+                                this.downCore(col, row);
                             }
-                        });
+                            else {
+                                this.moveCore(col, row);
+                            }
+                        }
                     }
                     else if (inGesture) {
                         this.upCore(lastCol, lastRow);
