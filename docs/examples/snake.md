@@ -25,7 +25,7 @@ function nextLevel() {
         pause(300)
     }
     level++
-    game.showDialog("Level " + level, "")
+    game.splash("Level " + level, "")
     pause(1000)
     lastFoodIndex = 1
     snake = [0x605, 0x505]
