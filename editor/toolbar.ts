@@ -206,6 +206,9 @@ namespace mkcd {
                 case PaintTool.Erase:
                     button = this.eraseButton;
                     break;
+                case PaintTool.Fill:
+                    button = this.fillButton;
+                    break;
             }
 
             if (button) {
