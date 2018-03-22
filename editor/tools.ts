@@ -15,7 +15,7 @@ namespace mkcd {
         protected startCol: number;
         protected startRow: number;
 
-        constructor (protected canvasWidth: number, protected canvasHeight: number, protected color: number) {
+        constructor (protected canvasWidth: number, protected canvasHeight: number, protected color: number, protected toolWidth: number) {
         }
 
         public abstract update(col: number, row: number): void;
@@ -51,13 +51,22 @@ namespace mkcd {
     export class PaintEdit extends Edit {
         protected mask: Bitmask;
 
-        constructor (canvasWidth: number, canvasHeight: number, color: number) {
-            super(canvasWidth, canvasHeight, color);
+        constructor (canvasWidth: number, canvasHeight: number, color: number, toolWidth: number) {
+            super(canvasWidth, canvasHeight, color, toolWidth);
             this.mask = new mkcd.Bitmask(canvasWidth, canvasHeight);
         }
 
         update(col: number, row: number) {
-            this.mask.set(col, row);
+            for (let i = 0; i < this.toolWidth; i++) {
+                for (let j = 0; j < this.toolWidth; j++) {
+                    const c = col + i;
+                    const r = row + j;
+
+                    if (c < this.canvasWidth && r < this.canvasHeight) {
+                        this.mask.set(col + i, row + j);
+                    }
+                }
+            }
         }
 
         doEdit(bitmap: Bitmap) {

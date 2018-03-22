@@ -67,7 +67,7 @@ namespace pxt.editor {
             let contentDiv = Blockly.DropDownDiv.getContentDiv();
 
             this.editor = new mkcd.SpriteEditor(this.preview.bitmap());
-            this.editor.setPreview(this.preview);
+            this.editor.setPreview(this.preview, PREVIEW_WIDTH);
             this.editor.render(contentDiv);
             this.editor.rePaint();
 

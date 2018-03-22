@@ -8,16 +8,16 @@ namespace mkcd {
     import svg = svgUtil;
 
     // Absolute editor height
-    const TOTAL_HEIGHT = 250;
+    const TOTAL_HEIGHT = 270;
 
     // Editor padding on all sides
     const PADDING = 8;
 
     // Height of toolbar (the buttons above the canvas)
-    const TOOLBAR_HEIGHT = 25;
+    const TOOLBAR_HEIGHT = 45;
 
     // Spacing between the toolbar and the canvas
-    const TOOLBAR_CANVAS_MARGIN = 10;
+    const TOOLBAR_CANVAS_MARGIN = 5;
 
     // Total allowed height of paint surface
     const CANVAS_HEIGHT = TOTAL_HEIGHT - TOOLBAR_HEIGHT - TOOLBAR_CANVAS_MARGIN - PADDING * 2;
@@ -48,6 +48,7 @@ namespace mkcd {
 
         private edit: Edit;
         private activeTool: PaintTool = PaintTool.Normal;
+        private toolWidth = 1;
 
         private undoStack: Bitmap[] = [];
         private redoStack: Bitmap[] = [];
@@ -133,7 +134,10 @@ namespace mkcd {
 
             this.toolbar = new Toolbar(this.group.group(), {
                 height: TOOLBAR_HEIGHT,
-                width: CANVAS_HEIGHT
+                width: CANVAS_HEIGHT,
+                buttonMargin: 5,
+                optionsMargin: 3,
+                rowMargin: 5
             }, this);
             this.palette.setSelected(1);
 
@@ -205,9 +209,9 @@ namespace mkcd {
             return this.height;
         }
 
-        setPreview(preview: BitmapImage) {
+        setPreview(preview: BitmapImage, width: number) {
             this.preview = preview;
-            this.previewWidth = this.preview.outerWidth();
+            this.previewWidth = width;
         }
 
         rePaint() {
@@ -219,6 +223,10 @@ namespace mkcd {
 
         setActiveTool(tool: PaintTool) {
             this.activeTool = tool;
+        }
+
+        setToolWidth(width: number) {
+            this.toolWidth = width;
         }
 
         undo() {
@@ -255,6 +263,14 @@ namespace mkcd {
             this.preview.restore(this.state, true);
             this.preview.setGridDimensions(this.previewWidth);
             this.layout();
+        }
+
+        canvasWidth() {
+            return this.columns;
+        }
+
+        canvasHeight() {
+            return this.rows;
         }
 
         private paintEdit(edit: Edit) {
@@ -309,12 +325,12 @@ namespace mkcd {
 
         private newEdit(color: number) {
             switch (this.activeTool) {
-                case PaintTool.Normal: return new PaintEdit(this.columns, this.rows, color);
-                case PaintTool.Rectangle: return new RectangleEdit(this.columns, this.rows, color);
-                case PaintTool.Outline: return new OutlineEdit(this.columns, this.rows, color);
-                case PaintTool.Line: return new LineEdit(this.columns, this.rows, color);
-                case PaintTool.Circle: return new CircleEdit(this.columns, this.rows, color);
-                case PaintTool.Erase: return new PaintEdit(this.columns, this.rows, 0);
+                case PaintTool.Normal: return new PaintEdit(this.columns, this.rows, color, this.toolWidth);
+                case PaintTool.Rectangle: return new RectangleEdit(this.columns, this.rows, color, this.toolWidth);
+                case PaintTool.Outline: return new OutlineEdit(this.columns, this.rows, color, this.toolWidth);
+                case PaintTool.Line: return new LineEdit(this.columns, this.rows, color, this.toolWidth);
+                case PaintTool.Circle: return new CircleEdit(this.columns, this.rows, color, this.toolWidth);
+                case PaintTool.Erase: return new PaintEdit(this.columns, this.rows, 0, this.toolWidth);
 
                 // TODO: Doesn't really need to be a special case
                 case PaintTool.Fill: return undefined;
