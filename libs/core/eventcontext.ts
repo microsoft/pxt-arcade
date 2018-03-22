@@ -46,12 +46,12 @@ namespace control {
     function doNothing() { }
 
     export class EventContext {
-        handlers: EventHandler[];
-        frameCallbacks: FrameCallback[];
-        frameWorker: number;
-        frameNo: number;
-        framesInSample: number;
-        timeInSample: number;
+        private handlers: EventHandler[];
+        private frameCallbacks: FrameCallback[];
+        private frameWorker: number;
+        private frameNo: number;
+        private framesInSample: number;
+        private timeInSample: number;
         public deltaTime: number;
 
         constructor() {
@@ -63,8 +63,9 @@ namespace control {
             this.frameWorker = 0;
         }
 
-        initFrameCallbacks() {
-            this.frameCallbacks = [];
+        private startFrameCallbacks() {
+            if (!this.frameCallbacks) return;
+
             this.frameNo = 0;
             this.framesInSample = 0;
             this.timeInSample = 0;
@@ -97,8 +98,7 @@ namespace control {
         register() {
             for (const h of this.handlers)
                 h.register();
-            if (this.frameCallbacks)
-                this.initFrameCallbacks();
+            this.startFrameCallbacks();
         }
 
         unregister() {
@@ -108,8 +108,10 @@ namespace control {
         }
 
         registerFrameHandler(order: number, handler: () => void) {
-            if (!this.frameCallbacks)
-                this.initFrameCallbacks();
+            if (!this.frameCallbacks) {
+                this.frameCallbacks = [];
+                this.startFrameCallbacks();
+            }
 
             const fn = new FrameCallback()
             fn.order = order
