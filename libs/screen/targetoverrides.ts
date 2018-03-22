@@ -14,5 +14,7 @@ namespace _screen_internal {
     function updateStats(msg: string): void {}
 
     control.__screen.setupUpdate(() => updateScreen(screen))
-    control.EventContext.onStats = updateStats;
+    control.EventContext.onStats = function(msg: string) { 
+        updateStats(msg);
+    }
 }
