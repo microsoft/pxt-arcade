@@ -10,6 +10,7 @@
         "enums.d.ts",
         "sims.d.ts",
         "control.ts",
+        "eventcontext.ts",
         "ns.ts"
     ],
     "testFiles": [

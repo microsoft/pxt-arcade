@@ -65,7 +65,7 @@ namespace pxsim.control {
      * Listen to a event
      */
     //% 
-    export function onEvent(ev: number, arg: number, f: RefAction) {
+    export function internalOnEvent(ev: number, arg: number, f: RefAction, flags: number) {
         board().bus.listen(ev, arg, f)
     }
 

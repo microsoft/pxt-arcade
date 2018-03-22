@@ -25,12 +25,6 @@ Here are some fun programs for your @boardname@!
   "cardType": "codeExample"
 },
 {
-  "name": "Car Race",
-  "description": "Drive a sports car",
-  "url":"/examples/car-race",
-  "cardType": "codeExample"
-},
-{
   "name": "Snake",
   "description": "Dumb-phone classic",
   "url":"/examples/snake",

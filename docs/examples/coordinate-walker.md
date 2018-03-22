@@ -14,12 +14,12 @@ player1 = sprites.create(img`
 `)
 
 game.setBackground(4)
-game.frame(function () {
+game.update(function () {
     if (keys.A.isPressed()) {
         // display integer part of coordinates as a string
-        game.showDialog("" + Math.trunc(player1.x) + "", "X")
+        game.splash("" + Math.trunc(player1.x) + "", "X")
         pause(1000)
-        game.showDialog("" + Math.trunc(player1.y) + "", "Y")
+        game.splash("" + Math.trunc(player1.y) + "", "Y")
         pause(1000)
     }
     // Move sprite bigger number is faster for keys.dx(15)
