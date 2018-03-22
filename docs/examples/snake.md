@@ -79,7 +79,7 @@ function show() {
 
 newFood()
 
-game.frame(function () {
+game.paint(function () {
     if (keys.dx(100)) {
         dx = Math.sign(keys.dx(100))
         dy = 0
