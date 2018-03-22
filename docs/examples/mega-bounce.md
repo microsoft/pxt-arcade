@@ -32,7 +32,7 @@ let counter = 0
 
 addBall(80);
 
-game.frame(function () {
+game.update(function () {
     counter++;
     for (const ball of balls) {
         if (ball.overlapsWith(paddle)) {

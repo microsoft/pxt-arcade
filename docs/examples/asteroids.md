@@ -68,7 +68,7 @@ spaceship.onOverlap(function (other: Sprite) {
 })
 spaceship.z = 10
 
-game.frame(function () {
+game.update(function () {
     spaceship.x += keys.dx(70)
     spaceship.x = Math.clamp(10, 118, spaceship.x)
 
