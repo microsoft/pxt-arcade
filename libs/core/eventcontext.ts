@@ -63,7 +63,7 @@ namespace control {
             this.frameWorker = 0;
         }
 
-        private startFrameCallbacks() {
+        private registerFrameCallbacks() {
             if (!this.frameCallbacks) return;
 
             this.frameNo = 0;
@@ -98,7 +98,7 @@ namespace control {
         register() {
             for (const h of this.handlers)
                 h.register();
-            this.startFrameCallbacks();
+            this.registerFrameCallbacks();
         }
 
         unregister() {
@@ -110,7 +110,7 @@ namespace control {
         registerFrameHandler(order: number, handler: () => void) {
             if (!this.frameCallbacks) {
                 this.frameCallbacks = [];
-                this.startFrameCallbacks();
+                this.registerFrameCallbacks();
             }
 
             const fn = new FrameCallback()
