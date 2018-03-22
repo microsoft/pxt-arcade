@@ -83,9 +83,9 @@ canvas {
 
 #controls.no-focus {
     opacity: 0.5;
-    -moz-filter: blur(3px);
-    -webkit-filter: blur(3px);
-    filter: blur(3px);
+    -moz-filter: grayscale();
+    -webkit-filter: grayscale();
+    filter: grayscale();
 }
 
 .stats {
