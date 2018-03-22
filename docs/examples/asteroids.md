@@ -79,7 +79,7 @@ game.frame(function () {
     }
     // stars
     if (Math.random() < 0.1) {
-        let m = sprites.createProjectile(img`f`, 0, 40)
+        let m = sprites.createProjectile(img`1`, 0, 40)
         m.x = Math.randomRange(0, 128)
         m.life = Math.randomRange(100, 120)
         m.setFlag(SpriteFlag.Ghost, true);
