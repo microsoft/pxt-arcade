@@ -11,7 +11,7 @@ for (let i = 0; i < 42; ++i)
 function show() {
     screen.fill(0)
     for (let i = 0; i < arr.length; ++i)
-        screen.fillRect(i * 3, 128 - arr[i], 2, 128, 15)
+        screen.fillRect(i * 3, 128 - arr[i], 2, 128, 1)
 }
 show()
 
