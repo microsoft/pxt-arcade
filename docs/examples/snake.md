@@ -22,11 +22,10 @@ function nextLevel() {
         foodX = -1
         foodY = -1
         show()
-        control.screenRefresh()
         pause(300)
     }
     level++
-    game.showDialog("Level " + level, "")
+    game.splash("Level " + level, "")
     pause(1000)
     lastFoodIndex = 1
     snake = [0x605, 0x505]
@@ -89,7 +88,7 @@ game.frame(function () {
         dy = Math.sign(keys.dy(100))
     }
 
-    time += control.deltaTime
+    time += game.eventContext().deltaTime
     if (time > speed) {
         let x = snake[0] >> 8
         let y = snake[0] & 0xff
