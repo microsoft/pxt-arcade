@@ -88,7 +88,7 @@ game.frame(function () {
         dy = Math.sign(keys.dy(100))
     }
 
-    time += control.deltaTime
+    time += game.eventContext().deltaTime
     if (time > speed) {
         let x = snake[0] >> 8
         let y = snake[0] & 0xff
