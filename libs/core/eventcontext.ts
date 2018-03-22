@@ -53,6 +53,7 @@ namespace control {
         private framesInSample: number;
         private timeInSample: number;
         public deltaTime: number;
+        static onStats: (stats: string) => void;
 
         constructor() {
             this.handlers = [];
@@ -85,7 +86,8 @@ namespace control {
                     this.timeInSample += runtime
                     this.framesInSample++
                     if (this.timeInSample > 1000 || this.framesInSample > 30) {
-                        _screen_internal._stats(`render: ${Math.round(this.timeInSample / this.framesInSample * 1000)}us`)
+                        if (EventContext.onStats)
+                            EventContext.onStats(`render: ${Math.round(this.timeInSample / this.framesInSample * 1000)}us`)
                         this.timeInSample = 0
                         this.framesInSample = 0
                     }
