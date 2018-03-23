@@ -7,34 +7,48 @@
 namespace mkcd {
     import svg = svgUtil;
 
-    const MARGIN = 8;
-    const CELL_WIDTH = 10;
-    const BG_WIDTH = 6;
+    // Absolute editor height
+    const TOTAL_HEIGHT = 270;
 
-    // Border around paint surface
-    const paintSurfaceBorderWidth = 0;
+    // Editor padding on all sides
+    const PADDING = 8;
 
-    // Border around color palette
-    const paletteBorderWidth = 2;
+    // Height of toolbar (the buttons above the canvas)
+    const TOOLBAR_HEIGHT = 45;
 
-    // Spacing between palette and screen (discounting borders)
-    const palettePaintMargin = 2;
+    // Spacing between the toolbar and the canvas
+    const TOOLBAR_CANVAS_MARGIN = 5;
+
+    // Total allowed height of paint surface
+    const CANVAS_HEIGHT = TOTAL_HEIGHT - TOOLBAR_HEIGHT - TOOLBAR_CANVAS_MARGIN - PADDING * 2;
+
+    // Border width between palette swatches
+    const PALETTE_INNER_BORDER = 2;
+
+    // Border width around the outside of the palette
+    const PALETTE_OUTER_BORDER = 3;
+
+    // Spacing between palette and paint surface
+    const PALETTE_CANVAS_MARGIN = 0;
 
     export class SpriteEditor implements ToolbarHost {
+        private group: svg.Group;
+        private root: svg.SVG;
+        private debugText: svg.Text;
+
         private palette: ColorPalette;
         private paintSurface: BitmapImage;
         private preview: BitmapImage;
         private toolbar: Toolbar;
 
-        private group: svg.Group;
-        private root: svg.SVG;
-        private debugText: svg.Text;
-
         private state: Bitmap;
-        private displayState: Bitmap;
+
+        // When changing the size, keep the old bitmap around so that we can restore it
+        private cachedState: Bitmap;
 
         private edit: Edit;
         private activeTool: PaintTool = PaintTool.Normal;
+        private toolWidth = 1;
 
         private undoStack: Bitmap[] = [];
         private redoStack: Bitmap[] = [];
@@ -45,6 +59,7 @@ namespace mkcd {
 
         private width: number;
         private height: number;
+        private previewWidth: number;
 
         constructor(bitmap: Bitmap) {
             this.colors =  [
@@ -69,7 +84,6 @@ namespace mkcd {
             this.rows = bitmap.height;
 
             this.state = bitmap.copy()
-            this.displayState = bitmap.copy();
 
             this.root = new svg.SVG();
             this.group = this.root.group();
@@ -79,20 +93,18 @@ namespace mkcd {
                 rowLength: 2,
                 emptySwatchDisabled: false,
                 emptySwatchFill: 'url("#alpha-background")',
-                outerMargin: paletteBorderWidth,
-                columnMargin: 1,
-                rowMargin: 1,
+                outerMargin: PALETTE_OUTER_BORDER,
+                columnMargin: PALETTE_INNER_BORDER,
+                rowMargin: PALETTE_INNER_BORDER,
                 backgroundFill: "black",
                 colors: this.colors
             });
 
             this.paintSurface = new mkcd.BitmapImage({
-                cellWidth: CELL_WIDTH,
-                cellHeight: CELL_WIDTH,
-                outerMargin: paintSurfaceBorderWidth,
-                backgroundFill: "white",
+                outerMargin: 0,
+                backgroundFill: 'url("#alpha-background")',
                 cellClass: "pixel-cell"
-            }, this.displayState, ['url("#alpha-background")'].concat(this.colors));
+            }, this.state.copy(), [null].concat(this.colors), this.root);
 
             this.paintSurface.drag((col, row) => {
                 if (this.activeTool !== PaintTool.Fill) {
@@ -121,8 +133,11 @@ namespace mkcd {
             this.group.appendChild(this.palette.getView());
 
             this.toolbar = new Toolbar(this.group.group(), {
-                height: 25,
-                width: this.paintSurface.outerWidth()
+                height: TOOLBAR_HEIGHT,
+                width: CANVAS_HEIGHT,
+                buttonMargin: 5,
+                optionsMargin: 3,
+                rowMargin: 5
             }, this);
             this.palette.setSelected(1);
 
@@ -154,9 +169,9 @@ namespace mkcd {
         }
 
         render(el: HTMLElement): void {
-            this.root.attr({ "width": "95%", "height": "95%" });
             el.appendChild(this.root.el);
             this.layout();
+            this.root.attr({ "width": this.outerWidth() + "px", "height": this.outerHeight() + "px" });
         }
 
         layout(): void {
@@ -164,22 +179,25 @@ namespace mkcd {
                 return;
             }
 
-            const toolbarHeight = this.toolbar.outerHeight() + 10;
-            this.toolbar.translate(MARGIN, MARGIN);
+            const paintAreaTop = TOOLBAR_HEIGHT + TOOLBAR_CANVAS_MARGIN + PADDING;
 
-            const paletteScale = this.paintSurface.outerHeight() / this.palette.outerHeight();
-            this.palette.scale(paletteScale);
+            this.palette.setGridDimensions(CANVAS_HEIGHT);
+            this.palette.translate(PADDING, paintAreaTop);
 
-            this.palette.translate(MARGIN, MARGIN + toolbarHeight);
+            const paintAreaLeft = PADDING + this.palette.outerWidth() + PALETTE_CANVAS_MARGIN;
 
-            const paintLeft = MARGIN + this.palette.outerWidth() * paletteScale - paletteBorderWidth - paintSurfaceBorderWidth + palettePaintMargin;
-            this.paintSurface.translate(paintLeft, MARGIN + toolbarHeight);
+            this.paintSurface.setGridDimensions(CANVAS_HEIGHT);
+            const canvasLeft = paintAreaLeft + CANVAS_HEIGHT / 2 - this.paintSurface.outerWidth() / 2;
+            this.paintSurface.translate(canvasLeft, paintAreaTop);
 
-            this.width = paintLeft + this.paintSurface.outerWidth() + MARGIN;
-            this.height = this.paintSurface.outerHeight() + MARGIN * 2 + toolbarHeight;
+            this.width = paintAreaLeft + CANVAS_HEIGHT + PADDING;
+            this.height = paintAreaTop + CANVAS_HEIGHT + PADDING;
+
+            this.toolbar.translate(PADDING, PADDING);
+            this.toolbar.setDimensions(this.width - PADDING * 2, TOOLBAR_HEIGHT);
 
             if (this.debugText) {
-                this.debugText.at(paintLeft, this.paintSurface.outerHeight() + MARGIN * 2);
+                this.debugText.at(paintAreaLeft, this.height - PADDING);
             }
         }
 
@@ -191,8 +209,9 @@ namespace mkcd {
             return this.height;
         }
 
-        setPreview(preview: BitmapImage) {
+        setPreview(preview: BitmapImage, width: number) {
             this.preview = preview;
+            this.previewWidth = width;
         }
 
         rePaint() {
@@ -204,6 +223,10 @@ namespace mkcd {
 
         setActiveTool(tool: PaintTool) {
             this.activeTool = tool;
+        }
+
+        setToolWidth(width: number) {
+            this.toolWidth = width;
         }
 
         undo() {
@@ -224,6 +247,32 @@ namespace mkcd {
             }
         }
 
+        resize(width: number, height: number) {
+            if (!this.cachedState) {
+                this.cachedState = this.state.copy();
+                this.undoStack.push(this.cachedState)
+                this.redoStack = [];
+            }
+            this.columns = width;
+            this.rows = height;
+
+            this.state = resizeBitmap(this.cachedState, width, height);
+            this.paintSurface.restore(this.state, true);
+            this.paintSurface.setGridDimensions(CANVAS_HEIGHT);
+            this.paintSurface.showOverlay();
+            this.preview.restore(this.state, true);
+            this.preview.setGridDimensions(this.previewWidth);
+            this.layout();
+        }
+
+        canvasWidth() {
+            return this.columns;
+        }
+
+        canvasHeight() {
+            return this.rows;
+        }
+
         private paintEdit(edit: Edit) {
             this.paintSurface.restore(this.state);
             this.paintSurface.applyEdit(edit);
@@ -236,9 +285,12 @@ namespace mkcd {
 
         private commit() {
             if (this.edit) {
+                if (this.cachedState) {
+                    this.cachedState = undefined;
+                }
                 this.pushState(true);
                 this.paintEdit(this.edit);
-                this.state.apply(this.displayState);
+                this.state.apply(this.paintSurface.image);
                 this.edit = undefined;
                 this.redoStack = [];
             }
@@ -273,12 +325,12 @@ namespace mkcd {
 
         private newEdit(color: number) {
             switch (this.activeTool) {
-                case PaintTool.Normal: return new PaintEdit(this.columns, this.rows, color);
-                case PaintTool.Rectangle: return new RectangleEdit(this.columns, this.rows, color);
-                case PaintTool.Outline: return new OutlineEdit(this.columns, this.rows, color);
-                case PaintTool.Line: return new LineEdit(this.columns, this.rows, color);
-                case PaintTool.Circle: return new CircleEdit(this.columns, this.rows, color);
-                case PaintTool.Erase: return new PaintEdit(this.columns, this.rows, 0);
+                case PaintTool.Normal: return new PaintEdit(this.columns, this.rows, color, this.toolWidth);
+                case PaintTool.Rectangle: return new RectangleEdit(this.columns, this.rows, color, this.toolWidth);
+                case PaintTool.Outline: return new OutlineEdit(this.columns, this.rows, color, this.toolWidth);
+                case PaintTool.Line: return new LineEdit(this.columns, this.rows, color, this.toolWidth);
+                case PaintTool.Circle: return new CircleEdit(this.columns, this.rows, color, this.toolWidth);
+                case PaintTool.Erase: return new PaintEdit(this.columns, this.rows, 0, this.toolWidth);
 
                 // TODO: Doesn't really need to be a special case
                 case PaintTool.Fill: return undefined;
@@ -327,12 +379,12 @@ namespace mkcd {
             this.root.define(defs => {
                 const p = defs.create("pattern", "alpha-background")
                     .size(10, 10)
-                    .units(svg.PatternUnits.objectBoundingBox);
+                    .units(svg.PatternUnits.userSpaceOnUse);
 
                 p.draw("rect")
                     .at(0, 0)
-                    .size(11, 11)
-                    .fill("white")
+                    .size(10, 10)
+                    .fill("white");
                 p.draw("rect")
                     .at(0, 0)
                     .size(5, 5)

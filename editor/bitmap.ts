@@ -92,4 +92,10 @@ namespace mkcd {
             return (this.mask[index] >> offset) & 1;
         }
     }
+
+    export function resizeBitmap(img: Bitmap, width: number, height: number) {
+        const result = new Bitmap(width, height);
+        result.apply(img);
+        return result;
+    }
 }
