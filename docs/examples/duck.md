@@ -76,8 +76,8 @@ keys.A.onEvent(KeyEvent.Pressed, function () {
     duck.vy = -100
 })
 
-game.setBackground(4)
-game.frame(function () {
+game.setBackgroundColor(4)
+game.update(function () {
     if (duck.y < 0 || duck.y > screen.height) {
         game.over();
     }

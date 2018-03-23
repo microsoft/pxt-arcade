@@ -232,6 +232,10 @@ namespace svgUtil {
             return this.setAttribute("stroke-opacity", opacity);
         }
 
+        setVisible(visible: boolean): this {
+            return this.setAttribute("visibility", visible ? "visible" : "hidden");
+        }
+
         onDown(handler: PointerHandler): this {
             events.down(this.el, handler);
             return this;
@@ -297,12 +301,12 @@ namespace svgUtil {
     export class Rect extends Drawable<SVGRectElement> {
         constructor() { super("rect") };
 
-        width(width: number): this {
-            return this.setAttribute("width", width);
+        width(width: number, unit = LengthUnit.px): this {
+            return this.setAttribute("width", lengthWithUnits(width, unit));
         }
 
-        height(height: number): this {
-            return this.setAttribute("height", height);
+        height(height: number, unit = LengthUnit.px): this {
+            return this.setAttribute("height", lengthWithUnits(height, unit));
         }
 
         corner(radius: number): this {
@@ -315,9 +319,9 @@ namespace svgUtil {
             return this;
         }
 
-        size(width: number, height: number): this {
-            this.width(width);
-            this.height(height);
+        size(width: number, height: number, unit = LengthUnit.px): this {
+            this.width(width, unit);
+            this.height(height, unit);
             return this;
         }
     }

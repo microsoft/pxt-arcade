@@ -1,28 +1,23 @@
 namespace mkcd {
     import svg = svgUtil;
 
-    export interface IconButtonProps {
+    export interface ButtonProps {
         width: number;
         height: number;
-
-        iconString: string;
-        iconFont: string;
-        iconMargin: number;
         cornerRadius: number;
-
         backgroundClass?: string;
-        iconClass?: string;
         rootClass?: string;
+
+        padding: number;
     }
 
-    export class IconButton {
+    export class Button {
         protected root: svg.Group;
         protected background: svg.Rect;
-        protected icon: svg.Text;
 
         protected clickHandler: () => void;
 
-        constructor (protected props: IconButtonProps) {
+        constructor (protected props: ButtonProps) {
             this.buildDom();
         }
 
@@ -46,22 +41,17 @@ namespace mkcd {
             this.root.removeClass(className);
         }
 
+        public setDimensions(width: number, height: number) {
+            this.props.width = width;
+            this.props.height = height;
+            this.layout();
+        }
+
         protected buildDom() {
             this.root = new svg.Group();
 
             this.background = this.root.draw("rect")
-                .at(0, 0)
-                .corner(this.props.cornerRadius)
-                .size(this.props.width, this.props.height);
-
-            this.icon = this.root.draw("text")
-                .at(this.props.width / 2, this.props.height / 2)
-                .fontFamily(this.props.iconFont)
-                .text(this.props.iconString)
-                .fontSize(this.props.height - this.props.iconMargin * 2, svg.LengthUnit.px)
-                .anchor("middle")
-                .alignmentBaseline("middle");
-
+                .corner(this.props.cornerRadius);
 
             if (this.props.rootClass) {
                 this.root.setClass(this.props.rootClass);
@@ -69,15 +59,91 @@ namespace mkcd {
             if (this.props.backgroundClass) {
                 this.background.setClass(this.props.backgroundClass);
             }
+
+            this.drawContent();
+
+            this.root.el.addEventListener("click", () => {
+                this.handleClick();
+            });
+
+            this.layout();
+        }
+
+        // To be overridden by subclass
+        protected drawContent() {  }
+
+        // To be overridden by subclass
+        protected layoutContent(contentWidth: number, contentHeight: number, top: number, left: number) {  }
+
+        protected handleClick() {
+            if (this.clickHandler) {
+                this.clickHandler();
+            }
+        }
+
+        protected layout() {
+            this.background.size(this.props.width, this.props.height);
+            const contentWidth = this.props.width - this.props.padding * 2;
+            const contentHeight = this.props.height - this.props.padding * 2;
+            this.layoutContent(contentWidth, contentHeight, this.props.padding, this.props.padding);
+        }
+    }
+
+    export interface FontIconButtonProps extends ButtonProps {
+        iconString: string;
+        iconFont: string;
+        iconClass?: string;
+    }
+
+    export class FontIconButton extends Button {
+        protected icon: svg.Text;
+
+        constructor (protected props: FontIconButtonProps) {
+            super(props);
+        }
+
+        protected drawContent() {
+            this.icon = this.root.draw("text")
+                .fontFamily(this.props.iconFont)
+                .text(this.props.iconString)
+                .anchor("middle")
+                .alignmentBaseline("middle");
+
             if (this.props.iconClass) {
                 this.icon.setClass(this.props.iconClass);
             }
+        }
 
-            this.root.el.addEventListener("click", () => {
-                if (this.clickHandler) {
-                    this.clickHandler();
-                }
-            });
+        protected layoutContent(contentWidth: number, contentHeight: number, top: number, left: number) {
+            this.icon.at(left + contentWidth / 2, top + contentHeight / 2)
+                .fontSize(contentHeight, svg.LengthUnit.px);
+        }
+    }
+
+    export interface CursorButtonProps extends ButtonProps {
+        cursorSideLength: number;
+        cursorFill: string;
+    }
+
+    export class CursorSizeButton extends Button {
+        protected cursor: svg.Rect;
+
+        constructor (protected props: CursorButtonProps) {
+            super(props);
+        }
+
+        protected drawContent() {
+            this.cursor = this.root.draw("rect")
+                .fill(this.props.cursorFill)
+        }
+
+        protected layoutContent(contentWidth: number, contentHeight: number, top: number, left: number) {
+
+            const unit = Math.min(contentWidth, contentHeight) / 4;
+
+            const sideLength = this.props.cursorSideLength * unit;
+            this.cursor.at(left + contentWidth / 2 - sideLength / 2, top + contentHeight / 2 - sideLength / 2)
+                .size(sideLength, sideLength);
         }
     }
 }

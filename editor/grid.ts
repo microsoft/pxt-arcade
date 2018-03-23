@@ -28,20 +28,22 @@ namespace mkcd {
      */
     export class Grid {
         protected group: svg.Group;
-        protected cells: svg.Rect[][];
-        protected gridProps: GridProps;
-        protected dragHandler: (col: number, row: number) => void;
-        protected downHandler: (col: number, row: number) => void;
-        protected upHandler: (col: number, row: number) => void;
+        protected cellGroup: svg.Group;
+        protected cells: svg.Rect[];
         protected dragSurface: svg.Rect;
+        protected background: svg.Rect;
+
+        protected gridProps: GridProps;
         protected rows: number;
         protected columns: number;
 
+        protected dragHandler: (col: number, row: number) => void;
+        protected downHandler: (col: number, row: number) => void;
+        protected upHandler: (col: number, row: number) => void;
 
-        constructor(props: Partial<GridProps>) {
+        constructor(props: Partial<GridProps>, protected root?: svg.SVG) {
             this.gridProps = mkcd.mergeProps(defaultGridProps(), props);
-            this.columns = this.gridProps.rowLength;
-            this.rows = Math.ceil(this.gridProps.numCells / this.columns);
+            this.updateDimensions();
             this.group = new svg.Group();
             this.buildDom();
         }
@@ -68,13 +70,74 @@ namespace mkcd {
             this.group.scale(ratio);
         }
 
+        resizeGrid(rowLength: number, numCells: number) {
+            this.gridProps.rowLength = rowLength;
+            this.gridProps.numCells = numCells;
+            this.updateDimensions();
+
+            if (numCells > this.cells.length) {
+                while (this.cells.length < numCells) {
+                    this.cells.push(this.buildCell());
+                }
+            }
+            else if (numCells < this.cells.length) {
+                while (this.cells.length > numCells) {
+                    const c = this.cells.pop();
+                    this.cellGroup.el.removeChild(c.el);
+                }
+            }
+
+            this.layout();
+        }
+
+        setCellDimensions(width: number, height = width) {
+            this.gridProps.cellWidth = width;
+            this.gridProps.cellHeight = height;
+            this.layout();
+        }
+
+        setGridDimensions(width: number, height = width, lockAspectRatio = true) {
+            const totalCellWidth = this.columns * this.gridProps.cellWidth;
+            const totalCellHeight = this.rows * this.gridProps.cellHeight;
+
+            const targetWidth = width - (this.outerWidth() - totalCellWidth);
+            const targetHeight = height - (this.outerHeight() - totalCellHeight);
+
+            const maxCellWidth = this.gridProps.cellWidth * (targetWidth / totalCellWidth);
+            const maxCellHeight = this.gridProps.cellHeight * (targetHeight / totalCellHeight);
+
+            if (lockAspectRatio) {
+                const aspectRatio = this.gridProps.cellWidth / this.gridProps.cellHeight;
+
+                if (aspectRatio >= 1) {
+                    const w = Math.min(maxCellWidth, maxCellHeight * aspectRatio);
+                    this.setCellDimensions(w, w * aspectRatio);
+                }
+                else {
+                    const h = Math.min(maxCellHeight, maxCellWidth / aspectRatio)
+                    this.setCellDimensions(h / aspectRatio, h);
+                }
+            }
+            else {
+                this.setCellDimensions(maxCellWidth, maxCellHeight);
+            }
+        }
+
         setCellColor(column: number, row: number, color: string, opacity?: number): void {
             if (column < 0 || row < 0 || column >= this.columns || row >= this.rows) {
                 return;
             }
             column = Math.floor(column);
             row = Math.floor(row);
-            this.cells[column][row].fill(color, opacity);
+
+            const cell = this.getCell(this.cellToIndex(column, row))
+            if (color != null) {
+                cell.setVisible(true);
+                cell.fill(color, opacity);
+            }
+            else {
+                cell.setVisible(false);
+            }
         }
 
         down(handler: (col: number, row: number) => void): void {
@@ -117,33 +180,28 @@ namespace mkcd {
         protected buildDom() {
             this.cells = [];
             if (this.gridProps.backgroundFill) {
-                this.group.draw("rect")
+                this.background = this.group.draw("rect")
                     .size(this.outerWidth(), this.outerHeight())
                     .fill(this.gridProps.backgroundFill);
             }
+            this.cellGroup = this.group.group();
             let count = 0;
             for (let col = 0; col < this.columns; col++) {
-                this.cells.push([]);
                 for (let row = 0; row < this.rows; row++) {
-                    this.cells[col].push(this.buildCell(col, row));
+                    this.cells.push(this.buildCell());
                     count++;
                     if (count > this.gridProps.numCells) {
                         return;
                     }
                 }
             }
+            this.layout();
         }
 
-        protected buildCell(col: number, row: number): svg.Rect {
-            const [x, y] = this.cellToCoord(col, row);
-
-            const index = this.cellToIndex(col, row);
-            const cell = this.group.draw("rect")
-                .id(this.gridProps.cellIdPrefix + "-" + index)
-                .at(x, y)
+        protected buildCell(): svg.Rect {
+            const cell = this.cellGroup.draw("rect")
                 .size(this.gridProps.cellWidth, this.gridProps.cellHeight)
                 .fill(this.gridProps.defaultColor)
-                .attr({ "data-grid-index": index });
 
             if (this.gridProps.cornerRadius) {
                 cell.corner(this.gridProps.cornerRadius)
@@ -156,15 +214,39 @@ namespace mkcd {
             return cell;
         }
 
+        protected layout() {
+            // Position grid cells
+            for (let c = 0; c < this.columns; c++) {
+                for (let r = 0; r < this.rows; r++) {
+                    const [x, y] = this.cellToCoord(c, r);
+                    const index = this.cellToIndex(c, r);
+                    this.getCell(index)
+                        .at(x, y)
+                        .size(this.gridProps.cellWidth, this.gridProps.cellHeight)
+                        .id(this.gridProps.cellIdPrefix + "-" + index)
+                        .attr({ "data-grid-index": index });
+                }
+            }
+
+            // Resize gesture surface and background
+            if (this.dragSurface) {
+                this.dragSurface.size(this.outerWidth(), this.outerHeight());
+            }
+
+            if (this.background) {
+                this.background.size(this.outerWidth(), this.outerHeight());
+            }
+        }
+
         protected getCell(index: number): svg.Rect {
-            const [col, row] = this.indexToCell(index);
-            return this.cells[col][row];
+            return this.cells[index];
         }
 
         private initDragSurface() {
-            if (!this.dragSurface) {
+            if (!this.dragSurface && this.root) {
                 let lastCol = -1;
                 let lastRow = -1;
+                let point = this.root.el.createSVGPoint();
                 let inGesture = false;
                 this.dragSurface = this.group.draw("rect")
                     .opacity(0)
@@ -179,22 +261,21 @@ namespace mkcd {
                             lastRow = -1;
                             start = true;
                         }
-                        const elts = document.elementsFromPoint(ev.pageX, ev.pageY);
-                        elts.forEach((el) => {
-                            if (el.hasAttribute("data-grid-index")) {
-                                const [col, row] = this.indexToCell(Number(el.getAttribute("data-grid-index")));
-                                if (lastCol != col || lastRow != row) {
-                                    lastCol = col;
-                                    lastRow = row;
-                                    if (start) {
-                                        this.downCore(col, row);
-                                    }
-                                    else {
-                                        this.moveCore(col, row);
-                                    }
-                                }
+
+                        point.x = ev.clientX;
+                        point.y = ev.clientY;
+                        const cursor = point.matrixTransform(this.root.el.getScreenCTM().inverse());
+                        const [col, row] = this.coordToCell(cursor.x - this.group.left, cursor.y - this.group.top);
+                        if (lastCol != col || lastRow != row) {
+                            lastCol = col;
+                            lastRow = row;
+                            if (start) {
+                                this.downCore(col, row);
                             }
-                        });
+                            else {
+                                this.moveCore(col, row);
+                            }
+                        }
                     }
                     else if (inGesture) {
                         this.upCore(lastCol, lastRow);
@@ -233,6 +314,11 @@ namespace mkcd {
             if (this.dragHandler) {
                 this.dragHandler(col, row);
             }
+        }
+
+        private updateDimensions() {
+            this.columns = this.gridProps.rowLength;
+            this.rows = Math.ceil(this.gridProps.numCells / this.columns);
         }
     }
 

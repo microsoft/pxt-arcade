@@ -69,7 +69,7 @@ player.onOverlap(function (other: Sprite) {
 
 
 let frameCount = 0;
-game.frame(function () {
+game.update(function () {
     // Periodically spawn an obstacle and increase the difficulty.
     // This math assumes the game is running at 60 FPS
     frameCount = (frameCount + 1) % Math.floor(60 / obstaclesPerSecond)

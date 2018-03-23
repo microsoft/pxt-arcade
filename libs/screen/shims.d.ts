@@ -23,14 +23,14 @@ declare interface Image {
     /**
      * Set pixel color
      */
-    //% shim=ImageMethods::set
-    set(x: int32, y: int32, c: int32): void;
+    //% shim=ImageMethods::setPixel
+    setPixel(x: int32, y: int32, c: int32): void;
 
     /**
      * Get a pixel color
      */
-    //% shim=ImageMethods::get
-    get(x: int32, y: int32): int32;
+    //% shim=ImageMethods::getPixel
+    getPixel(x: int32, y: int32): int32;
 
     /**
      * Fill entire image with a given color

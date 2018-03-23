@@ -68,7 +68,7 @@ spaceship.onOverlap(function (other: Sprite) {
 })
 spaceship.z = 10
 
-game.frame(function () {
+game.update(function () {
     spaceship.x += keys.dx(70)
     spaceship.x = Math.clamp(10, 118, spaceship.x)
 
@@ -79,7 +79,7 @@ game.frame(function () {
     }
     // stars
     if (Math.random() < 0.1) {
-        let m = sprites.createProjectile(img`f`, 0, 40)
+        let m = sprites.createProjectile(img`1`, 0, 40)
         m.x = Math.randomRange(0, 128)
         m.life = Math.randomRange(100, 120)
         m.setFlag(SpriteFlag.Ghost, true);
