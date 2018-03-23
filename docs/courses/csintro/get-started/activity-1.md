@@ -16,7 +16,7 @@ Relate screen `(x, y)` coordinates to the corners and middle of the game screen
 
 Use the coordinate walker example to move around the screen and track X and Y coordinates.
 
-**Open [coordinate walker example ](/examples/coordinate-walker)**: to compete the tasks
+**Open [coordinate walker example ](/courses/examples/coordinate-walker)**: to compete the tasks
 
 
 * **Check the location**: click on the screen and then press the "A" button on the game pad (or space bar key on keyboard) to display the starting location coordinates
