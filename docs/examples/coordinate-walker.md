@@ -1,3 +1,7 @@
+
+# Example
+
+```blocks
 /**********************************************
  *                                            *
  *     Coordinate Walker  Game start          *
@@ -8,9 +12,9 @@ game.splash("Sprite Walker", "\"A\" for coordinates")
 
 let player1: Sprite = null
 player1 = sprites.create(img`
-1 1 1 
-1 a 1 
-1 1 1 
+1 1 1
+1 a 1
+1 1 1
 `)
 
 game.setBackground(4)
@@ -26,3 +30,4 @@ game.frame(function () {
     player1.x += keys.dx(15);
     player1.y += keys.dy(15);
 })
+```
