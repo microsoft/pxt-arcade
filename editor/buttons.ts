@@ -139,7 +139,7 @@ namespace mkcd {
 
         protected layoutContent(contentWidth: number, contentHeight: number, top: number, left: number) {
 
-            const unit = Math.min(contentWidth, contentHeight) / 4;
+            const unit = Math.min(contentWidth, contentHeight) / 3;
 
             const sideLength = this.props.cursorSideLength * unit;
             this.cursor.at(left + contentWidth / 2 - sideLength / 2, top + contentHeight / 2 - sideLength / 2)

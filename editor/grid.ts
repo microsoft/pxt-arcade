@@ -32,14 +32,13 @@ namespace mkcd {
         protected cells: svg.Rect[];
         protected dragSurface: svg.Rect;
         protected background: svg.Rect;
+        protected point: SVGPoint;
 
         protected gridProps: GridProps;
         protected rows: number;
         protected columns: number;
 
-        protected dragHandler: (col: number, row: number) => void;
-        protected downHandler: (col: number, row: number) => void;
-        protected upHandler: (col: number, row: number) => void;
+        private gesture: GestureState;
 
         constructor(props: Partial<GridProps>, protected root?: svg.SVG) {
             this.gridProps = mkcd.mergeProps(defaultGridProps(), props);
@@ -142,17 +141,27 @@ namespace mkcd {
 
         down(handler: (col: number, row: number) => void): void {
             this.initDragSurface();
-            this.downHandler = handler;
+            this.gesture.subscribe(GestureType.Down, handler);
         }
 
         up(handler: (col: number, row: number) => void): void {
             this.initDragSurface();
-            this.upHandler = handler;
+            this.gesture.subscribe(GestureType.Up, handler);
         }
 
         drag(handler: (col: number, row: number) => void): void {
             this.initDragSurface();
-            this.dragHandler = handler;
+            this.gesture.subscribe(GestureType.Drag, handler);
+        }
+
+        move(handler: (col: number, row: number) => void): void {
+            this.initDragSurface();
+            this.gesture.subscribe(GestureType.Move, handler);
+        }
+
+        leave(handler: () => void): void {
+            this.initDragSurface();
+            this.gesture.subscribe(GestureType.Leave, handler);
         }
 
         protected cellToCoord(column: number, row: number): Coord {
@@ -175,6 +184,14 @@ namespace mkcd {
 
         protected cellToIndex(col: number, row: number): number {
             return row * this.gridProps.rowLength + col;
+        }
+
+        protected clientToCell(clientX: number, clientY: number) {
+            if (!this.point) this.point = this.root.el.createSVGPoint();
+            this.point.x = clientX;
+            this.point.y = clientY;
+            const cursor = this.point.matrixTransform(this.root.el.getScreenCTM().inverse());
+            return this.coordToCell(cursor.x - this.group.left, cursor.y - this.group.top);
         }
 
         protected buildDom() {
@@ -244,81 +261,120 @@ namespace mkcd {
 
         private initDragSurface() {
             if (!this.dragSurface && this.root) {
-                let lastCol = -1;
-                let lastRow = -1;
-                let point = this.root.el.createSVGPoint();
-                let inGesture = false;
+                this.gesture = new GestureState();
                 this.dragSurface = this.group.draw("rect")
                     .opacity(0)
                     .width(this.outerWidth())
                     .height(this.outerHeight());
-                const mHandler = (ev: MouseEvent) => {
+
+                this.dragSurface.el.addEventListener("pointermove", (ev: MouseEvent) => {
+                    const [col, row] = this.clientToCell(ev.clientX, ev.clientY);
                     if (ev.buttons & 1) {
-                        let start = false;
-                        if (!inGesture) {
-                            inGesture = true;
-                            lastCol = -1;
-                            lastRow = -1;
-                            start = true;
-                        }
-
-                        point.x = ev.clientX;
-                        point.y = ev.clientY;
-                        const cursor = point.matrixTransform(this.root.el.getScreenCTM().inverse());
-                        const [col, row] = this.coordToCell(cursor.x - this.group.left, cursor.y - this.group.top);
-                        if (lastCol != col || lastRow != row) {
-                            lastCol = col;
-                            lastRow = row;
-                            if (start) {
-                                this.downCore(col, row);
-                            }
-                            else {
-                                this.moveCore(col, row);
-                            }
-                        }
+                        this.gesture.handle(InputEvent.Down, col, row);
                     }
-                    else if (inGesture) {
-                        this.upCore(lastCol, lastRow);
-                        lastCol = -1;
-                        lastRow = -1;
-                        inGesture = false;
-                    }
-                };
-                this.dragSurface.el.addEventListener("pointermove", mHandler);
-                this.dragSurface.el.addEventListener("pointerdown", mHandler);
-                this.dragSurface.el.addEventListener("pointerclick", mHandler);
-                this.dragSurface.el.addEventListener("pointerleave", ev => {
-                    if (inGesture) {
-                        this.upCore(lastCol, lastRow);
-                        lastCol = -1;
-                        lastRow = -1;
-                        inGesture = false;
-                    }
+                    this.gesture.handle(InputEvent.Move, col, row);
                 });
-            }
-        }
 
-        private upCore(col: number, row: number) {
-            if (this.upHandler) {
-                this.upHandler(col, row);
-            }
-        }
+                this.dragSurface.el.addEventListener("pointerdown", (ev: MouseEvent) => {
+                    const [col, row] = this.clientToCell(ev.clientX, ev.clientY);
+                    this.gesture.handle(InputEvent.Down, col, row);
+                });
 
-        private downCore(col: number, row: number) {
-            if (this.downHandler) {
-                this.downHandler(col, row);
-            }
-        }
+                this.dragSurface.el.addEventListener("pointerup", (ev: MouseEvent) => {
+                    const [col, row] = this.clientToCell(ev.clientX, ev.clientY);
+                    this.gesture.handle(InputEvent.Up, col, row);
+                });
 
-        private moveCore(col: number, row: number) {
-            if (this.dragHandler) {
-                this.dragHandler(col, row);
+                this.dragSurface.el.addEventListener("pointerclick", (ev: MouseEvent) => {
+                    const [col, row] = this.clientToCell(ev.clientX, ev.clientY);
+                    this.gesture.handle(InputEvent.Down, col, row);
+                    this.gesture.handle(InputEvent.Up, col, row);
+                });
+
+                this.dragSurface.el.addEventListener("pointerleave", ev => {
+                    const [col, row] = this.clientToCell(ev.clientX, ev.clientY);
+                    this.gesture.handle(InputEvent.Leave, col, row);
+                });
             }
         }
 
         private updateDimensions() {
             this.columns = this.gridProps.rowLength;
             this.rows = Math.ceil(this.gridProps.numCells / this.columns);
+        }
+    }
+
+    enum InputEvent {
+        Up,
+        Down,
+        Move,
+        Leave
+    }
+
+    enum GestureType {
+        Up,
+        Down,
+        Move,
+        Drag,
+        Leave
+    }
+
+    type GestureHandler = (col: number, row: number) => void;
+
+    class GestureState {
+        lastCol: number;
+        lastRow: number;
+
+        isDown = false;
+
+        handlers: {[index: number]: GestureHandler} = {};
+
+        handle(event: InputEvent, col: number, row: number) {
+            switch (event) {
+                case InputEvent.Up:
+                    this.update(col, row);
+                    this.isDown = false;
+                    this.fire(GestureType.Up);
+                    break;
+                case InputEvent.Down:
+                    if (!this.isDown) {
+                        this.isDown = true;
+                        this.fire(GestureType.Down);
+                    }
+                    break;
+                case InputEvent.Move:
+                    if (col === this.lastCol && row === this.lastRow) return;
+                    this.update(col, row);
+                    if (this.isDown) {
+                        this.fire(GestureType.Drag);
+                    }
+                    else {
+                        this.fire(GestureType.Move);
+                    }
+                    break;
+
+                case InputEvent.Leave:
+                    this.update(col, row);
+                    this.isDown = false;
+                    this.fire(GestureType.Leave);
+                    break;
+            }
+        }
+
+        subscribe(type: GestureType, handler: GestureHandler) {
+            this.handlers[type] = handler;
+        }
+
+        protected update(col: number, row: number) {
+            this.lastCol = col;
+            this.lastRow = row;
+        }
+
+        protected fire(type: GestureType) {
+            console.log("GESTURE: " + GestureType[type] + " c=" + this.lastCol + " r=" + this.lastRow);
+            if (this.handlers[type]) {
+                this.handlers[type](this.lastCol, this.lastRow);
+            }
         }
     }
 

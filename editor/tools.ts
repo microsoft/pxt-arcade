@@ -14,16 +14,29 @@ namespace mkcd {
     export abstract class Edit {
         protected startCol: number;
         protected startRow: number;
+        isStarted: boolean;
 
-        constructor (protected canvasWidth: number, protected canvasHeight: number, protected color: number, protected toolWidth: number) {
+        constructor (protected canvasWidth: number, protected canvasHeight: number, public color: number, protected toolWidth: number) {
         }
 
         public abstract update(col: number, row: number): void;
-        public abstract doEdit(bitmap: Bitmap): void;
+        protected abstract doEditCore(bitmap: Bitmap): void;
+
+        public doEdit(bitmap: Bitmap): void {
+            if (this.isStarted) {
+                this.doEditCore(bitmap);
+            }
+        }
+
 
         start(cursorCol: number, cursorRow: number) {
+            this.isStarted = true;
             this.startCol = cursorCol;
             this.startRow = cursorRow;
+        }
+
+        drawCursor(col: number, row: number, draw: (c: number, r: number) => void) {
+            draw(col, row);
         }
     }
 
@@ -57,23 +70,33 @@ namespace mkcd {
         }
 
         update(col: number, row: number) {
-            for (let i = 0; i < this.toolWidth; i++) {
-                for (let j = 0; j < this.toolWidth; j++) {
-                    const c = col + i;
-                    const r = row + j;
+            this.drawCore(col, row, (c, r) => this.mask.set(c, r));
+        }
 
-                    if (c < this.canvasWidth && r < this.canvasHeight) {
-                        this.mask.set(col + i, row + j);
+        drawCursor(col: number, row: number, draw: (c: number, r: number) => void) {
+            this.drawCore(col, row, draw);
+        }
+
+        protected doEditCore(bitmap: Bitmap) {
+            for (let c = 0; c < bitmap.width; c++) {
+                for (let r = 0; r < bitmap.height; r++) {
+                    if (this.mask.get(c, r)) {
+                        bitmap.set(c, r, this.color);
                     }
                 }
             }
         }
 
-        doEdit(bitmap: Bitmap) {
-            for (let c = 0; c < bitmap.width; c++) {
-                for (let r = 0; r < bitmap.height; r++) {
-                    if (this.mask.get(c, r)) {
-                        bitmap.set(c, r, this.color);
+        protected drawCore(col: number, row: number, setPixel: (col: number, row: number) => void) {
+            col = col - Math.floor(this.toolWidth / 2);
+            row = row - Math.floor(this.toolWidth / 2);
+            for (let i = 0; i < this.toolWidth; i++) {
+                for (let j = 0; j < this.toolWidth; j++) {
+                    const c = col + i;
+                    const r = row + j;
+
+                    if (c >= 0 && c < this.canvasWidth && r >= 0 && r < this.canvasHeight) {
+                        setPixel(col + i, row + j);
                     }
                 }
             }
@@ -84,7 +107,7 @@ namespace mkcd {
      * Tool for drawing filled rectangles
      */
     export class RectangleEdit extends SelectionEdit {
-        doEdit(bitmap: Bitmap) {
+        protected doEditCore(bitmap: Bitmap) {
             const tl = this.topLeft();
             const br = this.bottomRight();
             for (let c = tl[0]; c <= br[0]; c++) {
@@ -99,7 +122,7 @@ namespace mkcd {
      * Tool for drawing empty rectangles
      */
     export class OutlineEdit extends SelectionEdit {
-        doEdit(bitmap: Bitmap) {
+        protected doEditCore(bitmap: Bitmap) {
             const tl = this.topLeft();
             const br = this.bottomRight();
             for (let c = tl[0]; c <= br[0]; c++) {
@@ -117,7 +140,7 @@ namespace mkcd {
      * Tool for drawing straight lines
      */
     export class LineEdit extends SelectionEdit {
-        doEdit(bitmap: Bitmap) {
+        protected doEditCore(bitmap: Bitmap) {
             this.bresenham(this.startCol, this.startRow, this.endCol, this.endRow, bitmap);
         }
 
@@ -156,7 +179,7 @@ namespace mkcd {
      * Tool for circular outlines
      */
     export class CircleEdit extends SelectionEdit {
-        doEdit(bitmap: Bitmap) {
+        protected doEditCore(bitmap: Bitmap) {
             const tl = this.topLeft();
             const br = this.bottomRight();
             const dx = br[0] - tl[0];
@@ -206,6 +229,7 @@ namespace mkcd {
         protected row: number;
 
         start(col: number, row: number) {
+            this.isStarted = true;
             this.col = col;
             this.row = row;
         }
@@ -215,7 +239,7 @@ namespace mkcd {
             this.row = row;
         }
 
-        doEdit(bitmap: Bitmap) {
+        protected doEditCore(bitmap: Bitmap) {
             const replColor = bitmap.get(this.col, this.row);
             if (replColor === this.color) {
                 return;

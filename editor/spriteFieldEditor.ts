@@ -83,11 +83,13 @@ namespace pxt.editor {
                 goog.style.setHeight(contentDiv, null);
                 goog.style.setWidth(contentDiv, null);
                 goog.style.setStyle(contentDiv, "overflow", null);
+                goog.style.setStyle(contentDiv, "max-height", null);
             });
             this.editor.layout();
             goog.style.setHeight(contentDiv, this.editor.outerHeight() + 1);
             goog.style.setWidth(contentDiv, this.editor.outerWidth() + 1);
             goog.style.setStyle(contentDiv, "overflow", "hidden");
+            goog.style.setStyle(contentDiv, "max-height", "500px");
         }
 
 

@@ -16,6 +16,7 @@ namespace mkcd {
     export class ColorPalette extends Grid {
         selected: number;
         private props: ColorPaletteProps;
+        private handler: (color: number) => void;
         private selectedClone: svg.BaseElement<SVGUseElement>;
 
         constructor(props: Partial<ColorPaletteProps>) {
@@ -50,6 +51,10 @@ namespace mkcd {
             this.setCellHighlighted(this.selected, false);
             this.selected = index;
             this.setCellHighlighted(this.selected, true);
+
+            if (this.handler) {
+                this.handler(this.selected);
+            }
         }
 
         selectedColor() {
@@ -65,6 +70,10 @@ namespace mkcd {
             else {
                 cell.setAttribute("class", this.props.unselectedClass);
             }
+        }
+
+        onColorSelected(handler: (color: number) => void) {
+            this.handler = handler;
         }
 
         protected initColors() {

@@ -8,13 +8,13 @@ namespace mkcd {
     import svg = svgUtil;
 
     // Absolute editor height
-    const TOTAL_HEIGHT = 270;
+    const TOTAL_HEIGHT = 350;
 
     // Editor padding on all sides
     const PADDING = 8;
 
     // Height of toolbar (the buttons above the canvas)
-    const TOOLBAR_HEIGHT = 45;
+    const TOOLBAR_HEIGHT = 55;
 
     // Spacing between the toolbar and the canvas
     const TOOLBAR_CANVAS_MARGIN = 5;
@@ -49,6 +49,7 @@ namespace mkcd {
         private edit: Edit;
         private activeTool: PaintTool = PaintTool.Normal;
         private toolWidth = 1;
+        private color = 1;
 
         private undoStack: Bitmap[] = [];
         private redoStack: Bitmap[] = [];
@@ -109,7 +110,7 @@ namespace mkcd {
             this.paintSurface.drag((col, row) => {
                 if (this.activeTool !== PaintTool.Fill) {
                     this.debug("gesture (" + PaintTool[this.activeTool] + ")");
-                    this.setCell(col, row, this.palette.selected, false);
+                    this.setCell(col, row, this.color, false);
                 }
             });
 
@@ -125,7 +126,20 @@ namespace mkcd {
                     this.fill(col, row);
                 }
                 else {
-                    this.setCell(col, row, this.palette.selected, false);
+                    this.setCell(col, row, this.color, false);
+                }
+            });
+
+            this.paintSurface.move((col, row) => {
+                this.drawCursor(col, row);
+            });
+
+            this.paintSurface.leave(() => {
+                if (this.edit) {
+                    this.paintSurface.repaint();
+                }
+                if (this.edit.isStarted) {
+                    this.commit();
                 }
             });
 
@@ -139,7 +153,11 @@ namespace mkcd {
                 optionsMargin: 3,
                 rowMargin: 5
             }, this);
-            this.palette.setSelected(1);
+            this.palette.setSelected(this.color);
+            this.palette.onColorSelected(color => {
+                this.setActiveColor(color);
+            });
+            this.setActiveColor(this.color);
 
             // this.debugText = this.group.draw("text").attr({ "font-family": "segoe ui" });
 
@@ -159,8 +177,7 @@ namespace mkcd {
                 this.paintCell(col, row, color);
             }
             else {
-                if (!this.edit) {
-                    this.edit = this.newEdit(color);
+                if (!this.edit.isStarted) {
                     this.edit.start(col, row);
                 }
                 this.edit.update(col, row);
@@ -201,14 +218,6 @@ namespace mkcd {
             }
         }
 
-        outerWidth() {
-            return this.width;
-        }
-
-        outerHeight() {
-            return this.height;
-        }
-
         setPreview(preview: BitmapImage, width: number) {
             this.preview = preview;
             this.previewWidth = width;
@@ -221,12 +230,19 @@ namespace mkcd {
             }
         }
 
+        setActiveColor(color: number) {
+            this.color = color;
+            this.edit = this.newEdit(this.color);
+        }
+
         setActiveTool(tool: PaintTool) {
             this.activeTool = tool;
+            this.edit = this.newEdit(this.color)
         }
 
         setToolWidth(width: number) {
             this.toolWidth = width;
+            this.edit = this.newEdit(this.color);
         }
 
         undo() {
@@ -273,6 +289,21 @@ namespace mkcd {
             return this.rows;
         }
 
+        outerWidth() {
+            return this.width;
+        }
+
+        outerHeight() {
+            return this.height;
+        }
+
+        private drawCursor(col: number, row: number) {
+            if (this.edit) {
+                this.paintSurface.repaint();
+                this.edit.drawCursor(col, row, (c, r) => this.paintSurface.drawColor(c, r, this.edit.color));
+            }
+        }
+
         private paintEdit(edit: Edit) {
             this.paintSurface.restore(this.state);
             this.paintSurface.applyEdit(edit);
@@ -291,7 +322,7 @@ namespace mkcd {
                 this.pushState(true);
                 this.paintEdit(this.edit);
                 this.state.apply(this.paintSurface.image);
-                this.edit = undefined;
+                this.edit = this.newEdit(this.color);
                 this.redoStack = [];
             }
         }
@@ -338,7 +369,7 @@ namespace mkcd {
         }
 
         private fill(col: number, row: number) {
-            const color = this.palette.selected;
+            const color = this.color;
             const replColor = this.state.get(col, row);
             if (replColor === color) {
                 return;
