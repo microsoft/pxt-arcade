@@ -4,6 +4,8 @@
 
 namespace mkcd {
     import svg = svgUtil;
+    import lf = pxt.Util.lf;
+
     export interface ColorPaletteProps extends GridStyleProps {
         colors: string[];
         rowLength: number;
@@ -79,6 +81,12 @@ namespace mkcd {
         protected initColors() {
             for (let i = 0; i < this.gridProps.numCells; i++) {
                 const cell = this.getCell(i);
+                if (i === 0) {
+                    cell.title(lf("Color Index 0 (Transparent)"));
+                }
+                else {
+                    cell.title(lf("Color Index {0}", i));
+                }
                 cell.fill(this.colorForIndex(i));
                 cell.onDown(() => this.setSelected(i));
                 this.setCellHighlighted(i, false);

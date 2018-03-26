@@ -125,6 +125,17 @@ namespace mkcd {
         protected doEditCore(bitmap: Bitmap) {
             const tl = this.topLeft();
             const br = this.bottomRight();
+            for (let i = 0; i < this.toolWidth; i++) {
+                this.drawRectangle(bitmap,
+                    [tl[0] + i, tl[1] + i],
+                    [br[0] - i, br[1] - i]
+                );
+            }
+        }
+
+        protected drawRectangle(bitmap: Bitmap, tl: Coord, br: Coord) {
+            if (tl[0] > br[0] || tl[1] > br[1]) return;
+
             for (let c = tl[0]; c <= br[0]; c++) {
                 bitmap.set(c, tl[1], this.color);
                 bitmap.set(c, br[1], this.color);
@@ -144,15 +155,20 @@ namespace mkcd {
             this.bresenham(this.startCol, this.startRow, this.endCol, this.endRow, bitmap);
         }
 
+        drawCursor(col: number, row: number, draw: (c: number, r: number) => void) {
+            this.drawCore(col, row, draw);
+        }
+
         // https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm
-        private bresenham(x0: number, y0: number, x1: number, y1: number, bitmap: Bitmap) {
+        protected bresenham(x0: number, y0: number, x1: number, y1: number, bitmap: Bitmap) {
             const dx = x1 - x0;
             const dy = y1 - y0;
+            const draw = (c: number, r: number) => bitmap.set(c, r, this.color);
             if (dx === 0) {
                 const startY = dy >= 0 ? y0 : y1;
                 const endY = dy >= 0 ? y1 : y0;
                 for (let y = startY; y <= endY; y++) {
-                    bitmap.set(x0, y, this.color);
+                    this.drawCore(x0, y, draw);
                 }
                 return;
             }
@@ -164,12 +180,26 @@ namespace mkcd {
             let err = 0;
             let y = y0;
             for (let x = x0; x != x1; x += xStep) {
-                bitmap.set(x, y, this.color);
+                this.drawCore(x, y, draw);
                 err += dErr;
                 while (err >= 0.5) {
-                    bitmap.set(x, y, this.color);
+                    this.drawCore(x, y, draw);
                     y += yStep;
                     err -= 1;
+                }
+            }
+        }
+
+        // This is surely not the most efficient approach for drawing thick lines...
+        protected drawCore(col: number, row: number, draw: (c: number, r: number) => void) {
+            col = col - Math.floor(this.toolWidth / 2);
+            row = row - Math.floor(this.toolWidth / 2);
+            for (let i = 0; i < this.toolWidth; i++) {
+                for (let j = 0; j < this.toolWidth; j++) {
+                    const c = col + i;
+                    const r = row + j;
+
+                    draw(c, r);
                 }
             }
         }

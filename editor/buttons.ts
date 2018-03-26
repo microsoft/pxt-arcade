@@ -41,6 +41,10 @@ namespace mkcd {
             this.root.removeClass(className);
         }
 
+        public title(text: string) {
+            this.root.title(text);
+        }
+
         public setDimensions(width: number, height: number) {
             this.props.width = width;
             this.props.height = height;

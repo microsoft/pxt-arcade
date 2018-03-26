@@ -3,6 +3,7 @@
 
 namespace mkcd {
     import svg = svgUtil;
+    import lf = pxt.Util.lf;
 
     export interface ToolbarProps {
         width: number;
@@ -110,25 +111,30 @@ namespace mkcd {
             }
         }
 
+        resetTool() {
+            this.setTool(0, false);
+        }
+
         protected initTools() {
             this.tools = [
-                { title: "Pencil", tool: PaintTool.Normal, icon: "\uf040" },
-                { title: "Erase", tool: PaintTool.Erase, icon: "\uf12d" },
-                { title: "Fill", tool: PaintTool.Fill, icon: "\uf0d0" },
+                { title: lf("Pencil"), tool: PaintTool.Normal, icon: "\uf040" },
+                { title: lf("Erase"), tool: PaintTool.Erase, icon: "\uf12d" },
+                { title: lf("Fill"), tool: PaintTool.Fill, icon: "\uf0d0" },
                 {
-                    title: "Shapes",
+                    title: lf("Shapes"),
                     tool: PaintTool.Rectangle,
                     icon: "\uf096",
                     options: [
-                        { title: "Rectangle", tool: PaintTool.Rectangle, icon: "\uf096" },
-                        { title: "Line", tool: PaintTool.Line, icon: "\uf07e" },
-                        { title: "Circle", tool: PaintTool.Circle, icon: "\uf10c" },
+                        { title: lf("Rectangle"), tool: PaintTool.Rectangle, icon: "\uf096" },
+                        { title: lf("Line"), tool: PaintTool.Line, icon: "\uf07e" },
+                        { title: lf("Circle"), tool: PaintTool.Circle, icon: "\uf10c" },
                     ]
                 },
             ];
 
             this.toolButtons = this.tools.map((tool, index) => {
                 const toolBtn = this.addButton(tool.icon);
+                toolBtn.title(tool.title);
                 toolBtn.onClick(() => {
                     if (index === this.activeButtonIndex) return;
                     this.setTool(index);
@@ -148,16 +154,19 @@ namespace mkcd {
 
         protected initControls() {
             this.undoButton = this.addButton("\uf0e2");
+            this.undoButton.title(lf("Undo"));
             this.undoButton.onClick(() => {
                 this.host.undo();
             });
 
             this.redoButton = this.addButton("\uf01e");
+            this.redoButton.title(lf("Redo"));
             this.redoButton.onClick(() => {
                 this.host.redo();
             });
 
             this.resizeButton = this.addButton("\uf0b2");
+            this.resizeButton.title(lf("Change sprite size"))
             this.resizeButton.onClick(() => {
                 this.selectedSizePreset = (this.selectedSizePreset + 1) % sizePresets.length;
                 const [width, height] = sizePresets[this.selectedSizePreset];
@@ -169,6 +178,7 @@ namespace mkcd {
             this.cursorSizes = []
             for (let i = 0; i < 3; i++) {
                 const btn = mkCursorSizeButton(i + 1, this.props.height);
+                btn.title(sizeAdjective(i));
                 this.cursorSizes.push(btn);
                 this.optionBar.appendChild(btn.getView());
                 btn.onClick(() => {
@@ -275,6 +285,7 @@ namespace mkcd {
             this.clearOptions();
             this.optionButtons = options.map((option, index) => {
                 const button = mkToolbarButton(option.icon, this.optionsHeight, 2);
+                button.title(option.title);
                 button.onClick(() => {
                     this.setTool(index, true);
                 });
@@ -317,5 +328,15 @@ namespace mkcd {
             backgroundClass: "toolbar-button-background",
             iconClass: "toolbar-button-icon"
         });
+    }
+
+    function sizeAdjective(cursorIndex: number) {
+        switch (cursorIndex) {
+            case 0: return lf("Small Cursor");
+            case 1: return lf("Medium Cursor");
+            case 2: return lf("Large Cursor");
+        }
+
+        return undefined;
     }
 }

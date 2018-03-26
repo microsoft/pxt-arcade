@@ -6,6 +6,7 @@
 
 namespace mkcd {
     import svg = svgUtil;
+    import lf = pxt.Util.lf;
 
     // Absolute editor height
     const TOTAL_HEIGHT = 350;
@@ -106,6 +107,7 @@ namespace mkcd {
                 backgroundFill: 'url("#alpha-background")',
                 cellClass: "pixel-cell"
             }, this.state.copy(), [null].concat(this.colors), this.root);
+
 
             this.paintSurface.drag((col, row) => {
                 if (this.activeTool !== PaintTool.Fill) {
@@ -232,6 +234,13 @@ namespace mkcd {
 
         setActiveColor(color: number) {
             this.color = color;
+
+            // If the user is erasing, go back to pencil
+            if (this.activeTool === PaintTool.Erase) {
+                this.toolbar.resetTool();
+                this.activeTool = PaintTool.Normal;
+            }
+
             this.edit = this.newEdit(this.color);
         }
 
@@ -357,7 +366,7 @@ namespace mkcd {
         private newEdit(color: number) {
             switch (this.activeTool) {
                 case PaintTool.Normal: return new PaintEdit(this.columns, this.rows, color, this.toolWidth);
-                case PaintTool.Rectangle: return new RectangleEdit(this.columns, this.rows, color, this.toolWidth);
+                case PaintTool.Rectangle: return new OutlineEdit(this.columns, this.rows, color, this.toolWidth);
                 case PaintTool.Outline: return new OutlineEdit(this.columns, this.rows, color, this.toolWidth);
                 case PaintTool.Line: return new LineEdit(this.columns, this.rows, color, this.toolWidth);
                 case PaintTool.Circle: return new CircleEdit(this.columns, this.rows, color, this.toolWidth);
