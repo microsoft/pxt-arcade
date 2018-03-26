@@ -1,7 +1,7 @@
 {
-    "id": "mkcd32",
-    "name": "pixels",
-    "title": "Pixels for MakeCode",
+    "id": "arcade",
+    "name": "arcade",
+    "title": "MakeCode Arcade",
     "corepkg": "core",
     "cloud": {
         "workspace": false,
@@ -48,11 +48,11 @@
         "docsLogo": "./static/logo.svg",
         "portraitLogo": "./static/logo.svg",
         "footerLogo": "./static/logo.svg",
-        "homeUrl": "http://pixels.makecode.com/",
+        "homeUrl": "https://arcade.makecode.com/",
         "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
         "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
         "betaUrl": "https://github.com/Microsoft/pxt-32",
-        "boardName": "Pixels",
+        "boardName": "Arcade",
         "docMenu": [
             {
                 "name": "About",
