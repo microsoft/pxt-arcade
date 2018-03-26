@@ -47,6 +47,8 @@ div.blocklyTreeRow {
 }
 
 .toolbar-button {
+    cursor: pointer;
+
     .toolbar-button-icon {
         fill: white;
         font-family: "Icons";
@@ -77,8 +79,15 @@ div.blocklyTreeRow {
     stroke-width: 2px;
 }
 
-
 .toolbar-button.toolbar-option-selected .toolbar-button-background {
     stroke: magenta;
     stroke-width: 1px;
+}
+
+#sprite-editor-canvas {
+    cursor: crosshair;
+}
+
+#sprite-editor-palette .palette-swatch {
+    cursor: pointer;
 }

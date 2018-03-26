@@ -66,11 +66,13 @@ namespace mkcd {
         setCellHighlighted(index: number, highlighted: boolean)  {
             const cell = this.getCell(index);
             if (highlighted) {
-                cell.setAttribute("class", this.props.selectedClass);
+                cell.removeClass(this.props.unselectedClass);
+                cell.appendClass(this.props.selectedClass);
                 this.selectedClone.setAttribute("href", cell.el.getAttribute("id"))
             }
             else {
-                cell.setAttribute("class", this.props.unselectedClass);
+                cell.removeClass(this.props.selectedClass);
+                cell.appendClass(this.props.unselectedClass);
             }
         }
 

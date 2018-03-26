@@ -139,6 +139,10 @@ namespace mkcd {
             }
         }
 
+        setRootId(id: string) {
+            this.group.id(id);
+        }
+
         down(handler: (col: number, row: number) => void): void {
             this.initDragSurface();
             this.gesture.subscribe(GestureType.Down, handler);
