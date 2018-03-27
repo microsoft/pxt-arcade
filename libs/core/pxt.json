@@ -11,6 +11,7 @@
         "sims.d.ts",
         "control.ts",
         "eventcontext.ts",
+        "fieldeditors.ts",
         "ns.ts"
     ],
     "testFiles": [
