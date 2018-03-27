@@ -168,6 +168,7 @@ namespace mkcd {
             this.setActiveColor(this.color);
 
             this.drawReporterBar();
+            this.updateUndoRedo();
 
             document.addEventListener("keydown", ev => {
                 if (ev.key === "Undo" || (ev.ctrlKey && ev.key === "z")) {
@@ -267,6 +268,7 @@ namespace mkcd {
                 this.pushState(false);
                 this.restore(todo);
             }
+            this.updateUndoRedo();
         }
 
         redo() {
@@ -276,6 +278,7 @@ namespace mkcd {
                 this.pushState(true);
                 this.restore(todo);
             }
+            this.updateUndoRedo();
         }
 
         resize(width: number, height: number) {
@@ -369,6 +372,7 @@ namespace mkcd {
             else {
                 this.redoStack.push(cp);
             }
+            this.updateUndoRedo();
         }
 
         private restore(bitmap: Bitmap) {
@@ -378,6 +382,11 @@ namespace mkcd {
             if (this.preview) {
                 this.preview.restore(bitmap, true);
             }
+        }
+
+        private updateUndoRedo() {
+            this.toolbar.setUndoState(this.undoStack.length > 0);
+            this.toolbar.setRedoState(this.redoStack.length > 0);
         }
 
         private paintCell(col: number, row: number, color: number) {

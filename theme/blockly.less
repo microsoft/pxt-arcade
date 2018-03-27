@@ -60,14 +60,22 @@ div.blocklyTreeRow {
     }
 }
 
-.toolbar-button:hover {
+.toolbar-button.disabled {
+    cursor: not-allowed;
+
+    .toolbar-button-background {
+        fill: #aeaeae;
+    }
+}
+
+.toolbar-button:hover:not(.disabled) {
     .toolbar-button-background {
         fill-opacity: 0.9;
         transition: fill-opacity 0.1s;
     }
 }
 
-.toolbar-button:active {
+.toolbar-button:active:not(.disabled) {
     .toolbar-button-background {
         fill-opacity: 1;
         transition: fill-opacity 0.1s;

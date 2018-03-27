@@ -115,6 +115,14 @@ namespace mkcd {
             this.setTool(0, false);
         }
 
+        setUndoState(enabled: boolean) {
+            this.undoButton.setEnabled(enabled);
+        }
+
+        setRedoState(enabled: boolean) {
+            this.redoButton.setEnabled(enabled);
+        }
+
         protected initTools() {
             this.tools = [
                 { title: lf("Pencil"), tool: PaintTool.Normal, icon: "\uf040" },

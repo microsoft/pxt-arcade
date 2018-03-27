@@ -14,6 +14,7 @@ namespace mkcd {
     export class Button {
         protected root: svg.Group;
         protected background: svg.Rect;
+        protected enabled: boolean;
 
         protected clickHandler: () => void;
 
@@ -51,6 +52,19 @@ namespace mkcd {
             this.layout();
         }
 
+        public setEnabled(enabled: boolean) {
+            if (enabled != this.enabled) {
+                this.enabled = enabled;
+
+                if (this.enabled) {
+                    this.root.removeClass("disabled");
+                }
+                else {
+                    this.root.appendClass("disabled");
+                }
+            }
+        }
+
         protected buildDom() {
             this.root = new svg.Group();
 
@@ -80,7 +94,7 @@ namespace mkcd {
         protected layoutContent(contentWidth: number, contentHeight: number, top: number, left: number) {  }
 
         protected handleClick() {
-            if (this.clickHandler) {
+            if (this.clickHandler && this.enabled) {
                 this.clickHandler();
             }
         }
