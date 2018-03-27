@@ -14,7 +14,7 @@ namespace mkcd {
     export class Button {
         protected root: svg.Group;
         protected background: svg.Rect;
-        protected enabled: boolean;
+        protected enabled = true;
 
         protected clickHandler: () => void;
 
