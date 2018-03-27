@@ -291,13 +291,20 @@ namespace mkcd {
             this.rows = height;
 
             this.state = resizeBitmap(this.cachedState, width, height);
+
             this.paintSurface.restore(this.state, true);
             this.paintSurface.setGridDimensions(CANVAS_HEIGHT);
-            this.paintSurface.showOverlay();
+
             this.preview.restore(this.state, true);
             this.preview.setGridDimensions(this.previewWidth);
+
             this.canvasDimensions.text(`${this.columns}x${this.rows}`)
             this.layout();
+
+            this.paintSurface.showOverlay();
+
+            // Canvas size changed and some edits rely on that (like paint)
+            this.edit = this.newEdit(this.color);
         }
 
         canvasWidth() {

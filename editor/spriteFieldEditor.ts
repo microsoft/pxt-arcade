@@ -151,7 +151,7 @@ namespace pxt.editor {
                 outerMargin: 2,
                 cellClass: "pixel-cell"
             }, this.state, [
-                    "rgba(0, 0, 0, 0)",
+                    null,
                     "#ffffff", // white
                     "#33e2e4", // teal
                     "#05b3e0", // blue
