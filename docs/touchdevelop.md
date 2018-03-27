@@ -54,7 +54,7 @@ TBD
 
 Touch Develop supported a step-by-step tutorial mode that introduced the 
 features of the editor. MakeCode tutorials give examples of the Blockly
-programs 
+programs XYZ
 
 
 
