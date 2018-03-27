@@ -179,11 +179,13 @@ namespace mkcd {
 
             let err = 0;
             let y = y0;
-            for (let x = x0; x != x1; x += xStep) {
+            for (let x = x0; xStep > 0 ? x <= x1 : x >= x1; x += xStep) {
                 this.drawCore(x, y, draw);
                 err += dErr;
                 while (err >= 0.5) {
-                    this.drawCore(x, y, draw);
+                    if (yStep > 0 ? y <= y1 : y >= y1) {
+                        this.drawCore(x, y, draw);
+                    }
                     y += yStep;
                     err -= 1;
                 }
