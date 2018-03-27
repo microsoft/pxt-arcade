@@ -25,14 +25,38 @@ as well as a specially designed editor for editing Touch Develop programs
 using touch interfaces.
 
 MakeCode is based on the [TypeScript](http://www.typescriptlang.org) language, which
-is a superset JavaScript and compiles to plain JavaScript, a standards-based
-language supported on all modern web browsers.  Furthermore, MakeCode uses
+is a superset of JavaScript; TypeScript compiles to plain JavaScript, a standards-based
+language supported on all modern web browsers.  
+
+Furthermore, MakeCode uses
 two robust and supported editors, Google's [Blockly](https://developers.google.com/blockly/) 
 and Microsoft's [Monaco](https://github.com/Microsoft/monaco-editor).
 
+## Courses
+
+TBD
+
 ## Game Engines
 
-Both Touch Develop and MakeCode have sprite-base game engines. 
+Both Touch Develop and MakeCode have sprite-based 2D game engines, with some minor differences. 
+Both include
+- a simple 2D game engine with basic physics;
+- sprites, along with the ability to create/import color bitmaps;
+- sounds;
+- scoring;
+- keyboard control
+
+## Documentation
+
+TBD
+
+## Tutorials
+
+Touch Develop supported a step-by-step tutorial mode that introduced the 
+features of the editor. MakeCode tutorials give examples of the Blockly
+programs 
+
+
 
 
 
