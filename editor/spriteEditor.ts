@@ -125,6 +125,7 @@ namespace mkcd {
             this.paintSurface.drag((col, row) => {
                 this.debug("gesture (" + PaintTool[this.activeTool] + ")");
                 this.setCell(col, row, this.color, false);
+                this.setCursorInfo(col, row);
             });
 
             this.paintSurface.up((col, row) => {
@@ -138,6 +139,7 @@ namespace mkcd {
 
             this.paintSurface.move((col, row) => {
                 this.drawCursor(col, row);
+                this.setCursorInfo(col, row);
             });
 
             this.paintSurface.leave(() => {
@@ -344,7 +346,9 @@ namespace mkcd {
                 this.paintSurface.repaint();
                 this.edit.drawCursor(col, row, (c, r) => this.paintSurface.drawColor(c, r, this.edit.color));
             }
+        }
 
+        private setCursorInfo(col: number, row: number) {
             this.cursorInfo.text(`${col},${row}`);
         }
 

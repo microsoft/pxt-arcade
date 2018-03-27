@@ -375,7 +375,6 @@ namespace mkcd {
         }
 
         protected fire(type: GestureType) {
-            console.log("GESTURE: " + GestureType[type] + " c=" + this.lastCol + " r=" + this.lastRow);
             if (this.handlers[type]) {
                 this.handlers[type](this.lastCol, this.lastRow);
             }
