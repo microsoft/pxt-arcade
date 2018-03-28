@@ -31,6 +31,10 @@ namespace mkcd {
         writeColor(col: number, row: number, color: number) {
             const old = this.image.get(col, row);
             this.image.set(col, row, color);
+            this.drawColor(col, row, color);
+        }
+
+        drawColor(col: number, row: number, color: number) {
             this.setCellColor(col, row, this.palette[color]);
         }
 
