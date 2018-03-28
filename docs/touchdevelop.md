@@ -5,8 +5,8 @@ and the [Creative Computing for Games and Apps](http://www.touchdevelop.com/ccga
 
 ## Your Scripts
 
-Touch Develop supported logins and stored your scripts in the cloud. MakeCode Arcade
-does **not** support logins nor cloud storage. MakeCode Arcade stores your scripts in
+Touch Develop supported logins and stored your scripts in the cloud. MakeCode
+does **not** support logins nor cloud storage. MakeCode stores your scripts in
 browser-local storage on your machine and provides two other ways
 to store and retrieve your scripts:
 - each time you press the **Download** button and save your compiled program to the
@@ -24,7 +24,7 @@ Touch Develop used a specially designed language particular to that project,
 as well as a specially designed editor for editing Touch Develop programs
 using touch interfaces.
 
-MakeCode Arcade provides two code editors: a drag-and-drop block programming editor, 
+MakeCode provides two code editors: a drag-and-drop block programming editor, 
 based on Google's [Blockly](https://developers.google.com/blockly/) and a text programming editor using the [TypeScript](http://www.typescriptlang.org) language and the Microsoft's [Monaco](https://github.com/Microsoft/monaco-editor) editor.
 
 TypeScript language, which is a superset of JavaScript; TypeScript compiles to plain JavaScript, a standards-based
@@ -32,14 +32,14 @@ language supported on all modern web browsers.
 
 ## Game Engines
 
-Both Touch Develop and MakeCode Arcade have sprite-based 2D game engines, with some minor differences. 
+Both Touch Develop and MakeCode have sprite-based 2D game engines, with some minor differences. 
 Both include a simple 2D game engine with basic physics, sprites, sounds, scoring, and keyboard control.
 
 ### Coordinates
 
 The coordinates are the same. Positions on the screen are based on pixels. The origin of the grid is the top left corner (the x-axis is horizontal, the y-axis is vertical). Sprite positions refer to the center of the sprite, i.e., the halfway point of its width and height before any rotation is applied. Speed and acceleration are measured in pixels/second and pixels/second^2.
 
-Unlike Touch Develop where the game size would vary with the screen, MakeCode Arcade supports 
+Unlike Touch Develop where the game size would vary with the screen, the MakeCode game engine supports 
 a single ``128``x``128`` screen with a palette of 16 colors.
 
 ### Sprite
@@ -111,7 +111,7 @@ game.update(function () {
 
 Similarly to Touch Develop, you can set the position (``x``, ``y``), velocity (``vx``, ``vy``)
 and acceleration of any sprite (``ax``, ``ay``) and depth (``z``). The physics engine will move the sprite accordingly.
-Unlike Touch Develop, sprites in MakeCode Arcade do not rotate.
+Unlike Touch Develop, sprites in the MakeCode game engine do not rotate.
 
 ```blocks
 let monster: Sprite = null
@@ -155,7 +155,7 @@ game.update(function () {
 ### Life and score
 
 Similarly to Touch Develop, the game engine provides basic support for life and score management.
-MakeCode Arcade also stores a highscore but no cloud-based leaderboards are supported.
+The MakeCode game engine also stores a highscore but no cloud-based leaderboards are supported.
 
 ```blocks
 let monster: Sprite = null
