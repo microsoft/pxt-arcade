@@ -8,11 +8,11 @@
 {
   "name": "Coordinate Walker",
   "description": "Learn about screen coordinates",
-  "url":"/lessons/coordinate-walker"
+  "url":"/courses/csintro/get-started/activity-1"
 }
 ]
 ```
 
 ## See Also
 
-[coordinate walker](/lessons/coordinate-walker)
+[coordinate walker](/courses/csintro/get-started/activity-1)
