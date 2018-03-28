@@ -39,25 +39,22 @@ Both include a simple 2D game engine with basic physics, sprites, sounds, scorin
 While Touch Develop supported sound and image upload, MakeCode lets you define your own sprites
 with a built-in editor. Here are a few examples.
 
-### Clouds across the sky
+### Creating a sprite
 
-Here's a simple example that shows the creation of a "cloud" of sprites that move across the screen:
+Here's a simple example of creating a sprite:
 
-```typescript
-let cloudImg = img`
- . 1 1 1 . . . . . . . . . 1 1
- 1 2 2 2 1 . . 1 1 1 . . 1 2 2 1
- 1 2 2 2 2 1 1 2 2 2 1 1 2 2 2 1
- 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1
- . 1 1 1 1 1 1 1 1 1 1 1 1 1 1
- `
- game.update(function () {
-    if (Math.random() < 0.02) {
-      let s = sprites.createProjectile(cloudImg, -45, 0)
-      s.y = Math.randomRange(0, screen.height())
-      s.z = -1
-    }
- })
+```blocks
+let sprite: Sprite = null
+sprite = sprites.create(img`
+3 2 2 2 . . . . 
+4 3 2 2 . 2 2 . 
+. 4 3 2 2 2 2 . 
+. . 4 2 2 2 . . 
+. 4 3 2 2 2 2 2 
+. 4 3 3 4 3 2 2 
+. . 4 4 . 4 3 2 
+. . . . . . 4 3 
+`)
 ```
 
 
