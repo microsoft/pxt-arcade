@@ -79,7 +79,8 @@ sprite = sprites.create(img`
 
 ### Input
 
-Touch Develop supports various inputs from mouse or touch. MakeCode Arcadia restricts inputs
+Touch Develop supports various inputs from mouse or touch. 
+MakeCode restricts inputs
 to a set of 6 buttons: ``A``, ``B`` and 4 directional buttons.
 
 The keys event can be used to register code that runs when a key is pressed;
