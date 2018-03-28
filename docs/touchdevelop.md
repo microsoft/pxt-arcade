@@ -32,29 +32,33 @@ Furthermore, MakeCode uses
 two robust and supported editors, Google's [Blockly](https://developers.google.com/blockly/) 
 and Microsoft's [Monaco](https://github.com/Microsoft/monaco-editor).
 
-## Courses
-
-TBD
-
 ## Game Engines
 
 Both Touch Develop and MakeCode have sprite-based 2D game engines, with some minor differences. 
-Both include
-- a simple 2D game engine with basic physics;
-- sprites, along with the ability to create/import color bitmaps;
-- sounds;
-- scoring;
-- keyboard control
+Both include a simple 2D game engine with basic physics, sprites, sounds, scoring, and keyboard control.
+While Touch Develop supported sound and image upload, MakeCode lets you define your own sprites
+with a built-in editor. Here are a few examples.
 
-## Documentation
+### Clouds across the sky
 
-TBD
+Here's a simple example that shows the creation of a "cloud" of sprites that move across the screen:
 
-## Tutorials
-
-Touch Develop supported a step-by-step tutorial mode that introduced the 
-features of the editor. MakeCode tutorials give examples of the Blockly
-programs XYZ
+```typescript
+let cloudImg = img`
+ . 1 1 1 . . . . . . . . . 1 1
+ 1 2 2 2 1 . . 1 1 1 . . 1 2 2 1
+ 1 2 2 2 2 1 1 2 2 2 1 1 2 2 2 1
+ 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1
+ . 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ `
+ game.update(function () {
+    if (Math.random() < 0.02) {
+      let s = sprites.createProjectile(cloudImg, -45, 0)
+      s.y = Math.randomRange(0, screen.height())
+      s.z = -1
+    }
+ })
+```
 
 
 
