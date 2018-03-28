@@ -4,6 +4,8 @@
 
 namespace mkcd {
     import svg = svgUtil;
+    import lf = pxt.Util.lf;
+
     export interface ColorPaletteProps extends GridStyleProps {
         colors: string[];
         rowLength: number;
@@ -16,6 +18,7 @@ namespace mkcd {
     export class ColorPalette extends Grid {
         selected: number;
         private props: ColorPaletteProps;
+        private handler: (color: number) => void;
         private selectedClone: svg.BaseElement<SVGUseElement>;
 
         constructor(props: Partial<ColorPaletteProps>) {
@@ -50,6 +53,10 @@ namespace mkcd {
             this.setCellHighlighted(this.selected, false);
             this.selected = index;
             this.setCellHighlighted(this.selected, true);
+
+            if (this.handler) {
+                this.handler(this.selected);
+            }
         }
 
         selectedColor() {
@@ -59,17 +66,29 @@ namespace mkcd {
         setCellHighlighted(index: number, highlighted: boolean)  {
             const cell = this.getCell(index);
             if (highlighted) {
-                cell.setAttribute("class", this.props.selectedClass);
+                cell.removeClass(this.props.unselectedClass);
+                cell.appendClass(this.props.selectedClass);
                 this.selectedClone.setAttribute("href", cell.el.getAttribute("id"))
             }
             else {
-                cell.setAttribute("class", this.props.unselectedClass);
+                cell.removeClass(this.props.selectedClass);
+                cell.appendClass(this.props.unselectedClass);
             }
+        }
+
+        onColorSelected(handler: (color: number) => void) {
+            this.handler = handler;
         }
 
         protected initColors() {
             for (let i = 0; i < this.gridProps.numCells; i++) {
                 const cell = this.getCell(i);
+                if (i === 0) {
+                    cell.title(lf("Color Index 0 (Transparent)"));
+                }
+                else {
+                    cell.title(lf("Color Index {0}", i));
+                }
                 cell.fill(this.colorForIndex(i));
                 cell.onDown(() => this.setSelected(i));
                 this.setCellHighlighted(i, false);

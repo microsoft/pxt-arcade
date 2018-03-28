@@ -24,6 +24,7 @@ namespace svgUtil {
 
     export class BaseElement<T extends SVGElement> {
         el: T;
+        protected titleElement: SVGTitleElement;
         constructor(type: string) {
             this.el = elt(type) as T;
         }
@@ -54,6 +55,21 @@ namespace svgUtil {
 
         removeClass(className: string): void {
             this.el.classList.remove(className);
+        }
+
+        title(text: string) {
+            if (!this.titleElement) {
+                this.titleElement = elt("title");
+
+                // Title has to be the first child in the DOM
+                if (this.el.firstChild) {
+                    this.el.insertBefore(this.titleElement, this.el.firstChild)
+                }
+                else {
+                    this.el.appendChild(this.titleElement);
+                }
+            }
+            this.titleElement.textContent = text;
         }
     }
 

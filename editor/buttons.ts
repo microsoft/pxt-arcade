@@ -14,6 +14,7 @@ namespace mkcd {
     export class Button {
         protected root: svg.Group;
         protected background: svg.Rect;
+        protected enabled = true;
 
         protected clickHandler: () => void;
 
@@ -41,10 +42,27 @@ namespace mkcd {
             this.root.removeClass(className);
         }
 
+        public title(text: string) {
+            this.root.title(text);
+        }
+
         public setDimensions(width: number, height: number) {
             this.props.width = width;
             this.props.height = height;
             this.layout();
+        }
+
+        public setEnabled(enabled: boolean) {
+            if (enabled != this.enabled) {
+                this.enabled = enabled;
+
+                if (this.enabled) {
+                    this.root.removeClass("disabled");
+                }
+                else {
+                    this.root.appendClass("disabled");
+                }
+            }
         }
 
         protected buildDom() {
@@ -76,7 +94,7 @@ namespace mkcd {
         protected layoutContent(contentWidth: number, contentHeight: number, top: number, left: number) {  }
 
         protected handleClick() {
-            if (this.clickHandler) {
+            if (this.clickHandler && this.enabled) {
                 this.clickHandler();
             }
         }
@@ -139,7 +157,7 @@ namespace mkcd {
 
         protected layoutContent(contentWidth: number, contentHeight: number, top: number, left: number) {
 
-            const unit = Math.min(contentWidth, contentHeight) / 4;
+            const unit = Math.min(contentWidth, contentHeight) / 3;
 
             const sideLength = this.props.cursorSideLength * unit;
             this.cursor.at(left + contentWidth / 2 - sideLength / 2, top + contentHeight / 2 - sideLength / 2)
