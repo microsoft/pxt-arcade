@@ -230,7 +230,8 @@ namespace pxsim {
                     requested = false
                     ctx.putImageData(imgdata, 0, 0)
                     this.stats.textContent = this.screenState.stats;
-                    this.background.style.width = `${this.canvas.scrollWidth + 40}px`;
+                    var width = this.canvas.scrollWidth < this.canvas.scrollHeight ? this.canvas.scrollWidth : this.canvas.scrollHeight;
+                    this.background.style.width = `${width + 20}px`;
                     this.tryScreenshot()
                 }
 
@@ -247,7 +248,8 @@ namespace pxsim {
             }
 
             window.onresize = () => {
-                this.background.style.width = `${this.canvas.scrollWidth + 40}px`;
+                var width = this.canvas.scrollWidth < this.canvas.scrollHeight ? this.canvas.scrollWidth : this.canvas.scrollHeight;
+                this.background.style.width = `${width + 20}px`;
             }
 
             let info = document.getElementById("instructions")
