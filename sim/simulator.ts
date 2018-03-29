@@ -230,7 +230,7 @@ namespace pxsim {
                     requested = false
                     ctx.putImageData(imgdata, 0, 0)
                     this.stats.textContent = this.screenState.stats;
-                    this.background.style.width = `${this.canvas.scrollWidth + 40}px`;
+                    this.background.style.width = `${this.canvas.scrollWidth + 20}px`;
                     this.tryScreenshot()
                 }
 
