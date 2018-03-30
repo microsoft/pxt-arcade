@@ -58,6 +58,14 @@ namespace pxsim.console {
         // why doesn't that work?
         board().writeSerial(msg + "\n")
     }
+
+    /**
+     * Print out message to debug console
+     */
+    //% 
+    export function debug(msg: string) {
+        logMsg("DEBUG: " + msg)
+    }
 }
 
 namespace pxsim.control {

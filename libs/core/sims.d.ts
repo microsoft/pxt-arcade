@@ -7,6 +7,13 @@ declare namespace console {
     //% shim=console::log
     function log(msg: string): void;
 
+    /**
+     * Print out message to debug console
+     */
+    //%
+    //% shim=console::debug
+    function debug(msg: string): void;
+
 }
 declare namespace control {
     /**
