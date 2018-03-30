@@ -16,7 +16,7 @@ to store and retrieve your scripts:
 - use the **Share** link on the upper left of the MakeCode editor to obtain
   an anonymized URL that you can use to later retrieve your encrypted script
   from the cloud; do not lose this URL, as it is the only way to retrieve
-  your (unecrypted) script text
+  your script text
 
 ## Languages and Editors
 
@@ -99,7 +99,7 @@ sprite = sprites.create(img`
 . . . . . . 4 3 
 `)
 keys.left.onEvent(KeyEvent.Pressed, function () {
-    sprite.x -= 1;
+    sprite.x += -1;
 })
 game.update(function () {
     if (keys.right.wasPressed()) {
