@@ -51,21 +51,20 @@ canvas {
 }
 
 #paint-surface {
+    margin: 20px;
     object-fit: contain;
     display: inline;
-    height: calc(100% - 54px);
-    border: 7px solid #6B4F76;
-    border-radius: 5px;
-    border-left-width: 12px;
-    border-right-width: 12px;
+    height: calc(100% - 40px);
+    width: calc(100% - 40px);
+
+    filter: drop-shadow(0px 0px 10px #6B4F76)
 }
 
 #paint-surface-container {
-    padding-top: 10px;
-    width: 100%;
     flex: 5;
     text-align: center;
     overflow-y: hidden;
+    width: 100%;
 }
 
 #debug-stats {
