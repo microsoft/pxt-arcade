@@ -5,7 +5,7 @@
 //% groups=["0.","1#","2T","3t","4N","5n","6G","7g","8","9","aAR","bBP","cCp","dDO","eEY","fFW"]
 function img(lits: any, ...args: any[]): Image { return null }
 
-let screen = image.create(128, 128)
+let screen = image.create(160, 128)
 
 namespace _screen_internal {
     //% shim=pxt::updateScreen
