@@ -49,7 +49,7 @@ function drive(lines: number) {
 drive(128)
 ddx = 1
 const road = sprites.create(roadImg)
-road.type = 1
+road.layer = 1
 
 car.onOverlap(function (other: Sprite) {
     game.over()
