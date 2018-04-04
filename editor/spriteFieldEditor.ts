@@ -146,28 +146,14 @@ namespace pxt.editor {
                 .stroke("#898989", 1)
                 .corner(4);
 
+            const palette = U.clone(pxt.appTarget.runtime.palette);
+            palette[0] = null;
+
             this.preview = new mkcd.BitmapImage({
                 //backgroundFill: this.sourceBlock_.getColourSecondary(),
                 outerMargin: 2,
                 cellClass: "pixel-cell"
-            }, this.state, [
-                    null,
-                    "#ffffff", // white
-                    "#33e2e4", // teal
-                    "#05b3e0", // blue
-                    "#3d30ad", // violet
-                    "#b09eff", // light violet
-                    "#5df51f", // green
-                    "#6a8927", // dollar green
-                    "#65471f", // brown
-                    "#98294a", // bordowy
-                    "#f80000", // red
-                    "#e30ec0", // pink
-                    "#ff9da5", // light pink
-                    "#ff9005", // orange
-                    "#efe204", // yellow
-                    "#000000", // black
-                ]);
+            }, this.state, palette);
 
             this.preview.translate(PADDING + BG_PADDING, PADDING + BG_PADDING);
             this.preview.setGridDimensions(PREVIEW_WIDTH);
