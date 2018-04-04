@@ -4,6 +4,8 @@
     "files": [
         "README.md",
         "ns.ts",
+        "sprites.castle.jres",
+        "sprites.castle.ts",
         "startup.ts"
     ],
     "core": true,
