@@ -64,7 +64,6 @@ duck.onOverlap(function (other: Sprite) {
 function launchObstacle() {
     prevObstacle = sprites.createProjectile(pimg, -30, 0)
     prevObstacle.y = Math.randomRange(30, 90)
-    prevObstacle.type = 1;
     prevObstacle.onDestroyed(function () {
         info.changeScoreBy(1)
     })
