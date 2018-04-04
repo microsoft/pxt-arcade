@@ -95,7 +95,6 @@
         "crowdinProject": "kindscript",
         "monacoColors": {
             "editor.background": "#FFFAE7"
-        },
-        "debugger": true
+        }
     }
 }
