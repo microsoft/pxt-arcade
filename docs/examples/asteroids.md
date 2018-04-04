@@ -91,7 +91,7 @@ game.update(function () {
         r.y = spaceship.y - 10
         r.onOverlap(function (other: Sprite) {
             other.destroy()
-            const o = sprites.createWithAnimation(meteorDeath)
+            const o = sprites.create(meteorDeath[0])
             o.x = other.x;
             o.y = other.y;
             o.vy = -5;

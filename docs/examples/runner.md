@@ -32,7 +32,7 @@ let frames = [img`
 
 frames.map(f => f.replace(3, 10))
 
-let jumper = sprites.createWithAnimation(frames)
+let jumper = sprites.create(frames[0])
 
 jumper.x = 20
 jumper.y = 70
