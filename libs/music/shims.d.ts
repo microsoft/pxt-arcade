@@ -1,11 +1,14 @@
 // Auto-generated. Do not edit.
+
+
+declare interface AnalogOutPin {}
 declare namespace music {
 
     /**
      * Set a source of digital sound data (PCM) for making tones.
-     * Samples are 1020 x 10bit unsigned PCM.
+     * Samples are 1024 x 10bit unsigned PCM.
      * A reference to the buffer is kept to avoid the memory overhead, so changes to the buffer
-     * values are reflected immediately to the sound output. 
+     * values are reflected immediately to the sound output.
      */
     //% help=music/set-tone
     //% weight=1 group="Tones"
@@ -27,7 +30,7 @@ declare namespace music {
     /**
      * Play a tone through the speaker for some amount of time.
      * @param frequency pitch of the tone to play in Hertz (Hz), eg: Note.C
-     * @param ms tone duration in milliseconds (ms), eg: music.beat(BeatFraction.Half)
+     * @param ms tone duration in milliseconds (ms), eg: BeatFraction.Half
      */
     //% help=music/play-tone
     //% blockId=music_play_note block="play tone|at %note=device_note|for %duration=device_beat"

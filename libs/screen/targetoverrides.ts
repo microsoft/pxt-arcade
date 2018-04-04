@@ -1,7 +1,7 @@
 /**
  * Tagged image literal converter
  */
-//% shim=@f4 helper=image::ofBuffer
+//% shim=@f4 helper=image::ofBuffer blockIdentity="sprites._createImageShim"
 //% groups=["0.","1#","2T","3t","4N","5n","6G","7g","8","9","aAR","bBP","cCp","dDO","eEY","fFW"]
 function img(lits: any, ...args: any[]): Image { return null }
 
@@ -14,7 +14,7 @@ namespace _screen_internal {
     function updateStats(msg: string): void {}
 
     control.__screen.setupUpdate(() => updateScreen(screen))
-    control.EventContext.onStats = function(msg: string) { 
+    control.EventContext.onStats = function(msg: string) {
         updateStats(msg);
     }
 }
