@@ -71,6 +71,10 @@ namespace svgUtil {
             }
             this.titleElement.textContent = text;
         }
+
+        setVisible(visible: boolean): this {
+            return this.setAttribute("visibility", visible ? "visible" : "hidden");
+        }
     }
 
     export class DrawContext<T extends SVGElement> extends BaseElement<T> {
@@ -246,10 +250,6 @@ namespace svgUtil {
 
         strokeOpacity(opacity: number): this {
             return this.setAttribute("stroke-opacity", opacity);
-        }
-
-        setVisible(visible: boolean): this {
-            return this.setAttribute("visibility", visible ? "visible" : "hidden");
         }
 
         onDown(handler: PointerHandler): this {

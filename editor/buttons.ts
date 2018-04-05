@@ -65,6 +65,10 @@ namespace mkcd {
             }
         }
 
+        public setVisible(visible: boolean) {
+            this.root.setVisible(visible);
+        }
+
         protected buildDom() {
             this.root = new svg.Group();
 
