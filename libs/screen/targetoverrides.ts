@@ -25,3 +25,18 @@ namespace _screen_internal {
         updateStats(msg);
     }
 }
+
+namespace image {
+    /**
+     * An image
+     * @param image the image
+     */
+    //% blockId=screen_image_picker block="%image" shim=TD_ID
+    //% image.fieldEditor="images"
+    //% image.fieldOptions.columns=6
+    //% image.fieldOptions.width=600
+    //% group="Screen" weight=0 blockHidden=1
+    export function __imagePicker(image: Image): Image {
+        return image;
+    }
+}
