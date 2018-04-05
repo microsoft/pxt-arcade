@@ -34,14 +34,6 @@ namespace mkcd {
         options?: ToolOption[];
     }
 
-    const sizePresets: [number, number][] = [
-        [8, 8],
-        [8, 16],
-        [16, 16],
-        [16, 32],
-        [32, 32],
-    ];
-
     // The ratio of the toolbar height that is taken up by the options (as opposed to the buttons)
     const TOOLBAR_OPTIONS_RATIO = 0.333333;
 
@@ -72,22 +64,25 @@ namespace mkcd {
         protected toolbarHeight: number;
         protected optionsHeight: number;
 
+        protected sizePresets: [number, number][];
+
         constructor(protected g: svg.Group, protected props: ToolbarProps, protected host: ToolbarHost) {
             this.toolsBar = g.group();
             this.optionBar = g.group();
             this.dropdownOptions = this.optionBar.group();
 
-            const canvasColumns = this.host.canvasWidth();
-            const canvasRows = this.host.canvasHeight();
-            sizePresets.forEach(([columns, rows], index) => {
-                if (columns === canvasColumns && rows === canvasRows) {
-                    this.selectedSizePreset = index;
-                }
-            });
-
             this.initTools();
             this.initControls();
             this.createOptionsBar();
+
+            this.setSizePresets([
+                [8, 8],
+                [8, 16],
+                [16, 16],
+                [16, 32],
+                [32, 32],
+            ]);
+
             this.layout();
         }
 
@@ -121,6 +116,26 @@ namespace mkcd {
 
         setRedoState(enabled: boolean) {
             this.redoButton.setEnabled(enabled);
+        }
+
+        setSizePresets(presets: [number, number][]) {
+            this.sizePresets = presets;
+
+            if (this.sizePresets && this.sizePresets.length) {
+                const canvasColumns = this.host.canvasWidth();
+                const canvasRows = this.host.canvasHeight();
+
+                this.sizePresets.forEach(([columns, rows], index) => {
+                    if (columns === canvasColumns && rows === canvasRows) {
+                        this.selectedSizePreset = index;
+                    }
+                });
+
+                this.resizeButton.setVisible(true);
+            }
+            else {
+                this.resizeButton.setVisible(false);
+            }
         }
 
         protected initTools() {
@@ -176,8 +191,8 @@ namespace mkcd {
             this.resizeButton = this.addButton("\uf0b2");
             this.resizeButton.title(lf("Change sprite size"))
             this.resizeButton.onClick(() => {
-                this.selectedSizePreset = (this.selectedSizePreset + 1) % sizePresets.length;
-                const [width, height] = sizePresets[this.selectedSizePreset];
+                this.selectedSizePreset = (this.selectedSizePreset + 1) % this.sizePresets.length;
+                const [width, height] = this.sizePresets[this.selectedSizePreset];
                 this.host.resize(width, height);
             });
         }

@@ -241,16 +241,21 @@ namespace mkcd {
             }
         }
 
-        setActiveColor(color: number) {
-            this.color = color;
-
-            // If the user is erasing, go back to pencil
-            if (this.activeTool === PaintTool.Erase) {
-                this.toolbar.resetTool();
-                this.activeTool = PaintTool.Normal;
+        setActiveColor(color: number, setPalette = false) {
+            if (setPalette) {
+                this.palette.setSelected(color);
             }
+            else {
+                this.color = color;
 
-            this.edit = this.newEdit(this.color);
+                // If the user is erasing, go back to pencil
+                if (this.activeTool === PaintTool.Erase) {
+                    this.toolbar.resetTool();
+                    this.activeTool = PaintTool.Normal;
+                }
+
+                this.edit = this.newEdit(this.color);
+            }
         }
 
         setActiveTool(tool: PaintTool) {
@@ -261,6 +266,12 @@ namespace mkcd {
         setToolWidth(width: number) {
             this.toolWidth = width;
             this.edit = this.newEdit(this.color);
+
+            // Cursor doesn't affect fill, so switch to pencil
+            if (this.activeTool === PaintTool.Fill) {
+                this.toolbar.resetTool();
+                this.activeTool = PaintTool.Normal;
+            }
         }
 
         undo() {
@@ -307,6 +318,10 @@ namespace mkcd {
 
             // Canvas size changed and some edits rely on that (like paint)
             this.edit = this.newEdit(this.color);
+        }
+
+        setSizePresets(presets: [number, number][]) {
+            this.toolbar.setSizePresets(presets);
         }
 
         canvasWidth() {
