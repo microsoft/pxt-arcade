@@ -4,6 +4,8 @@
     "files": [
         "README.md",
         "ns.ts",
+        "sprites.castle.jres",
+        "sprites.castle.ts",
         "startup.ts"
     ],
     "core": true,
@@ -14,5 +16,23 @@
         "music": "file:../music",
         "game": "file:../game"
     },
+    "palette": [
+        "#000000",
+        "#ffffff",
+        "#33e2e4",
+        "#05b3e0",
+        "#3d30ad",
+        "#b09eff",
+        "#5df51f",
+        "#6a8927",
+        "#65471f",
+        "#98294a",
+        "#f80000",
+        "#e30ec0",
+        "#ff9da5",
+        "#ff9005",
+        "#efe204",
+        "#000000"
+    ],
     "public": true
 }

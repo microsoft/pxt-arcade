@@ -4,24 +4,6 @@
 namespace pxsim {
     export type CommonBoard = Board
 
-    const paletteSrc = [
-        "#000000", // transparent
-        "#ffffff", // white
-        "#33e2e4", // teal 
-        "#05b3e0", // blue
-        "#3d30ad", // violet
-        "#b09eff", // light violet
-        "#5df51f", // green
-        "#6a8927", // dollar green
-        "#65471f", // brown
-        "#98294a", // bordowy
-        "#f80000", // red
-        "#e30ec0", // pink
-        "#ff9da5", // light pink
-        "#ff9005", // orange
-        "#efe204", // yellow
-        "#000000", // black
-    ]
     let forcedUpdateLoop: any
 
     /**
@@ -58,18 +40,6 @@ namespace pxsim {
      */
     export function board(): Board {
         return runtime.board as Board;
-    }
-
-    function htmlColorToUint32(hexColor: string) {
-        const ca = new Uint8ClampedArray(4)
-        const ui = new Uint32Array(ca.buffer)
-        const v = parseInt(hexColor.replace(/#/, ""), 16)
-        ca[0] = (v >> 16) & 0xff;
-        ca[1] = (v >> 8) & 0xff;
-        ca[2] = (v >> 0) & 0xff;
-        ca[3] = 0xff; // alpha
-        // convert to uint32 using target endian
-        return new Uint32Array(ca.buffer)[0]
     }
 
     const openMeInMakeCode = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAACBAgMAAACA` +
@@ -119,7 +89,7 @@ namespace pxsim {
         constructor() {
             super();
             this.bus = new EventBus(runtime);
-            this.screenState = new ScreenState(paletteSrc)
+            this.screenState = new ScreenState(null)
             this.audioState = new AudioState();
         }
 

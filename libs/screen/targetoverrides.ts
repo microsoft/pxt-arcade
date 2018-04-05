@@ -7,14 +7,36 @@ function img(lits: any, ...args: any[]): Image { return null }
 
 let screen = image.create(160, 128)
 
+namespace image {
+    //% shim=pxt::setPalette
+    export function setPalette(buf: Buffer) { }
+}
+
 namespace _screen_internal {
     //% shim=pxt::updateScreen
-    function updateScreen(img: Image): void {}
+    function updateScreen(img: Image): void { }
     //% shim=pxt::updateStats
-    function updateStats(msg: string): void {}
+    function updateStats(msg: string): void { }
+
+    image.setPalette(hex`__palette`)
 
     control.__screen.setupUpdate(() => updateScreen(screen))
-    control.EventContext.onStats = function(msg: string) {
+    control.EventContext.onStats = function (msg: string) {
         updateStats(msg);
+    }
+}
+
+namespace image {
+    /**
+     * An image
+     * @param image the image
+     */
+    //% blockId=screen_image_picker block="%image" shim=TD_ID
+    //% image.fieldEditor="images"
+    //% image.fieldOptions.columns=6
+    //% image.fieldOptions.width=600
+    //% group="Screen" weight=0 blockHidden=1
+    export function __imagePicker(image: Image): Image {
+        return image;
     }
 }

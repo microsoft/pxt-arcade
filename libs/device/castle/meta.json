@@ -1,0 +1,10 @@
+{
+    "width": 16,
+    "height": 16,
+    "blockIdentity": "image.__imagePicker",
+    "creator": "image.ofBuffer",
+    "star": {
+        "namespace": "sprites.castle",
+        "mimeType": "image/x-mkcd-f4"
+    }
+}
