@@ -21,6 +21,13 @@ declare interface Image {
     isMono: boolean;
 
     /**
+     * Sets all pixels in the current image from the other image, which has to be of the same size and
+     * bpp.
+     */
+    //% shim=ImageMethods::copyFrom
+    copyFrom(from: Image): void;
+
+    /**
      * Set pixel color
      */
     //% shim=ImageMethods::setPixel
