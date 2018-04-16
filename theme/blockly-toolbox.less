@@ -1,0 +1,29 @@
+
+
+/*******************************
+    Add your custom CSS here
+*******************************/
+
+div.blocklyTreeRow {
+    margin-bottom: 0px !important;
+    transition-property: background-color;
+    transition-duration: 1s;
+}
+
+.blocklyToolboxDiv, .monacoToolboxDiv {
+    box-shadow: 0 1px 3px rgba(107, 79, 118,0.12), 0 1px 2px rgba(107, 79, 118, 0.24);
+}
+
+/* Mobile */
+@media only screen and (max-width: @largestMobileScreen) {
+    .blocklyToolboxDiv, .monacoToolboxDiv {
+        border-left: 0 !important;
+    }
+}
+
+/* Tablet */
+@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
+    .blocklyToolboxDiv, .monacoToolboxDiv {
+        border-left: 0 !important;
+    }
+}

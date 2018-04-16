@@ -73,7 +73,7 @@
         "hasAudio": true,
         "allowPackageExtensions": true,
         "homeScreenHero": "./static/hero.png",    
-        "extendEditor": true,    
+        "extendFieldEditors": true,    
         "blocklyOptions": { 
             "grid": {
                 "spacing": 20,
