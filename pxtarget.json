@@ -52,6 +52,7 @@
         "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
         "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
         "betaUrl": "https://github.com/Microsoft/pxt-32",
+        "githubUrl": "https://github.com/Microsoft/pxt-32",
         "boardName": "Arcade",
         "docMenu": [
             {
