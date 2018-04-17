@@ -64,6 +64,12 @@ declare interface Image {
     flipY(): void;
 
     /**
+     * Returns a transposed image (with X/Y swapped)
+     */
+    //% shim=ImageMethods::transposed
+    transposed(): Image;
+
+    /**
      * Every pixel in image is moved by (dx,dy)
      */
     //% shim=ImageMethods::scroll
