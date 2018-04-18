@@ -1,7 +1,7 @@
 /**
  * Tagged image literal converter
  */
-//% shim=@f4 helper=image::ofBuffer blockIdentity="sprites._createImageShim"
+//% shim=@f4 helper=image::ofBuffer blockIdentity="images._spriteImage"
 //% groups=["0.","1#","2T","3t","4N","5n","6G","7g","8","9","aAR","bBP","cCp","dDO","eEY","fFW"]
 function img(lits: any, ...args: any[]): Image { return null }
 
