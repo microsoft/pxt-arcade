@@ -1,7 +1,7 @@
 {
   "Array": "Add, remove, and replace items in lists.\n\nAdd, remove, and replace items in lists.",
   "Array.every": "Tests whether all elements in the array pass the test implemented by the provided function.",
-  "Array.every|param|callbackfn": "A function that accepts up to two arguments. The some method calls the callbackfn function one time for each element in the array.",
+  "Array.every|param|callbackfn": "A function that accepts up to two arguments. The every method calls the callbackfn function one time for each element in the array.",
   "Array.filter": "Return the elements of an array that meet the condition specified in a callback function.",
   "Array.filter|param|callbackfn": "A function that accepts up to two arguments. The filter method calls the callbackfn function one time for each element in the array.",
   "Array.forEach": "Call a defined callback function on each element of an array.",
