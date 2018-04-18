@@ -65,6 +65,12 @@ Here are some fun programs for your @boardname@!
   "description": "Visualize palette",
   "url":"/examples/palette",
   "cardType": "codeExample"
+},
+{
+  "name": "Guess the Letter",
+  "description": "Try and guess the letter",
+  "url":"/examples/guess-the-letter",
+  "cardType": "example"
 }
 ]
 ```
