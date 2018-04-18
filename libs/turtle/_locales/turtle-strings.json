@@ -1,0 +1,16 @@
+{
+  "TurtlePenMode.Down|block": "down",
+  "TurtlePenMode.Erase|block": "erase",
+  "TurtlePenMode.Up|block": "up",
+  "turtle.back|block": "back %steps steps",
+  "turtle.forward|block": "forward %steps steps",
+  "turtle.home|block": "home",
+  "turtle.pen|block": "pen %mode",
+  "turtle.setPenColor|block": "set pen color to %color",
+  "turtle.setPosition|block": "set position x %x y %y",
+  "turtle.setSpeed|block": "set speed %speed",
+  "turtle.stamp|block": "stamp %image=screen_image_picker",
+  "turtle.turn|block": "turn %degrees",
+  "turtle|block": "turtle",
+  "{id:category}Turtle": "Turtle"
+}

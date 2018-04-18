@@ -1,0 +1,17 @@
+{
+  "turtle": "Turtle graphics blocks",
+  "turtle.back": "Moves back by the given number of steps",
+  "turtle.back|param|steps": "number of steps to move, eg: 1",
+  "turtle.forward": "Moves the turtle for the given amount of pixels",
+  "turtle.forward|param|steps": "number of steps, eg: 1",
+  "turtle.home": "Moves the turtle to the center of the screen",
+  "turtle.pen": "Puts the pen down or up",
+  "turtle.setPenColor": "Sets the pen color",
+  "turtle.setPosition": "Sets the turtle position",
+  "turtle.setPosition|param|x": "the horizontal position from 0 (left) to 4 (right), eg: 2",
+  "turtle.setPosition|param|y": "the vertical position from 0 (top) to 4 (bottom), eg: 2",
+  "turtle.setSpeed": "Define the steps per second",
+  "turtle.setSpeed|param|speed": "eg: 50",
+  "turtle.stamp": "Stamps the image at the current turtle position",
+  "turtle.turn": "Turns the turtle"
+}

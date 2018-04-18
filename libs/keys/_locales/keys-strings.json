@@ -1,0 +1,20 @@
+{
+  "KeyEvent.Pressed|block": "pressed",
+  "KeyEvent.Released|block": "released",
+  "keys.A|block": "A",
+  "keys.B|block": "B",
+  "keys.Key.isPressed|block": "is %key **key** pressed",
+  "keys.Key.onEvent|block": "on %key **key** %event",
+  "keys.Key.pauseUntil|block": "pause until %key **key** is %event",
+  "keys.Key.wasPressed|block": "was %key **key** pressed",
+  "keys.any|block": "any",
+  "keys.down|block": "down",
+  "keys.dx|block": "dx %step",
+  "keys.dy|block": "dy %step",
+  "keys.left|block": "left",
+  "keys.pauseUntilAnyKey|block": "pause until any key",
+  "keys.right|block": "right",
+  "keys.up|block": "up",
+  "keys|block": "keys",
+  "{id:category}Keys": "Keys"
+}

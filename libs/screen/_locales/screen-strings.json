@@ -1,0 +1,11 @@
+{
+  "helpers|block": "helpers",
+  "images._image|block": "%image",
+  "images._spriteImage|block": "%img",
+  "images|block": "images",
+  "image|block": "image",
+  "{id:category}Control": "Control",
+  "{id:category}Helpers": "Helpers",
+  "{id:category}Image": "Image",
+  "{id:category}Images": "Images"
+}
