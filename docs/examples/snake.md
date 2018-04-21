@@ -57,7 +57,7 @@ function newFood() {
 }
 
 function isEdge(x: number, y: number) {
-    return (x == 0 || y == 0 || x == w - 1 || y == w - 1)
+    return (x == 0 || y == 0 || x == w - 1 || y == h - 1)
 }
 
 function show() {
@@ -111,8 +111,8 @@ game.paint(function () {
         } else {
             snake.pop()
         }
-        show()
         time = 0
     }
+    show()
 })
 ```
