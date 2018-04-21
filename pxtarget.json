@@ -40,7 +40,8 @@
     },
     "simulator": {
         "autoRun": true,
-        "aspectRatio": 0.85
+        "aspectRatio": 0.85,
+        "debugger": true
     },
     "appTheme": {
         "logoUrl": "https://github.com/Microsoft/pxt-32",
