@@ -24,8 +24,6 @@
     "sim/public",
     "docs/**"
   ],
-  "main": "built/pxtrequire.js",
-  "typings": "built/pxtrequire.d.ts",
   "devDependencies": {
     "@types/bluebird": "^2.0.33",
     "@types/jquery": "^3.2.18",
@@ -36,7 +34,7 @@
     "typescript": "2.6.1"
   },
   "dependencies": {
-    "pxt-common-packages": "0.21.6",
-    "pxt-core": "3.10.14"
+    "pxt-common-packages": "0.21.8",
+    "pxt-core": "3.12.1"
   }
 }
