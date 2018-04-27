@@ -46,7 +46,7 @@ Here are some fun programs for your @boardname@!
   "name": "Mega Bounce",
   "description": "More and more bouncing balls",
   "url":"/examples/mega-bounce",
-  "cardType": "codeExample"
+  "cardType": "example"
 },
 {
   "name": "Collisions",
