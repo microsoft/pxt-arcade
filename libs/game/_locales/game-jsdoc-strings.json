@@ -66,6 +66,8 @@
   "scene.backgroundImage": "Returns the background image",
   "scene.cameraFollowSprite": "The game camera follows a particular sprite",
   "scene.centerCameraAt": "Moves the camera center to a given coordinate",
+  "scene.screenHeight": "Gets the height in pixel of the screen",
+  "scene.screenWidth": "Gets the width in pixel of the screen",
   "scene.setBackgroundColor": "Sets the game background color",
   "scene.setBackgroundImage": "Sets the picture on the background",
   "scene.setTile": "Sets the tile image at the given index",
