@@ -79,7 +79,7 @@ function show() {
 
 newFood()
 
-game.paint(function () {
+game.onFramePaint(function () {
     if (controller.dx(100)) {
         dx = Math.sign(controller.dx(100))
         dy = 0
