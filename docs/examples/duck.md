@@ -71,7 +71,7 @@ function launchObstacle() {
 
 launchObstacle()
 
-controller.A.onEvent(KeyEvent.Pressed, function () {
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     duck.vy = -100
 })
 

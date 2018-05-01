@@ -24,7 +24,7 @@ const coll = img`
 .77
 7..77   
     `
-controller.A.onEvent(KeyEvent.Pressed, function () {
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     game.debug = !game.debug
 })
 while (true) {

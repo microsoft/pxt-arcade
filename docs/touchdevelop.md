@@ -98,7 +98,7 @@ sprite = sprites.create(img`
 . . 4 4 . 4 3 2 
 . . . . . . 4 3 
 `)
-controller.left.onEvent(KeyEvent.Pressed, function () {
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     sprite.x += -1;
 })
 game.onFrameUpdate(function () {
@@ -127,7 +127,7 @@ monster = sprites.create(img`
 . . . . . . 4 3 
 `)
 monster.ay = 200;
-controller.any.onEvent(KeyEvent.Pressed, function () {
+controller.any.onEvent(ControllerButtonEvent.Pressed, function () {
     monster.vy = -100;
 })
 ```
@@ -171,7 +171,7 @@ monster = sprites.create(img`
 . . . . . . 4 3 
 `)
 monster.ay = 200;
-controller.any.onEvent(KeyEvent.Pressed, function () {
+controller.any.onEvent(ControllerButtonEvent.Pressed, function () {
     monster.vy = -100;
     info.changeScoreBy(1)
 })
