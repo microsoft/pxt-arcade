@@ -8,5 +8,5 @@
   "controller.dx|param|step": "the distance, eg: 100",
   "controller.dy": "Get the vertical movement, given the step and state of buttons",
   "controller.dy|param|step": "the distance, eg: 100",
-  "controller.pauseUntilAnyButtonPressed": "Pause the program until a button is pressed"
+  "controller.pauseUntilAnyButtonIsPressed": "Pause the program until a button is pressed"
 }

@@ -12,7 +12,7 @@
   "controller.dx|block": "x direction||scaled by %step",
   "controller.dy|block": "y direction||scaled by %step",
   "controller.left|block": "left",
-  "controller.pauseUntilAnyButtonPressed|block": "pause until any button pressed",
+  "controller.pauseUntilAnyButtonIsPressed|block": "pause until any button is pressed",
   "controller.right|block": "right",
   "controller.up|block": "up",
   "controller|block": "controller",
