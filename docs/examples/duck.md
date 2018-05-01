@@ -71,12 +71,12 @@ function launchObstacle() {
 
 launchObstacle()
 
-keys.A.onEvent(KeyEvent.Pressed, function () {
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     duck.vy = -100
 })
 
 scene.setBackgroundColor(4)
-game.update(function () {
+game.onFrameUpdate(function () {
     if (duck.y < 0 || duck.y > screen.height) {
         game.over();
     }

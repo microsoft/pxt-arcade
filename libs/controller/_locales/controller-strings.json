@@ -1,0 +1,20 @@
+{
+  "ControllerButtonEvent.Pressed|block": "pressed",
+  "ControllerButtonEvent.Released|block": "released",
+  "controller.A|block": "A",
+  "controller.Button.isPressed|block": "is %button **button** pressed",
+  "controller.Button.onEvent|block": "on %button **button** %event",
+  "controller.Button.pauseUntil|block": "pause until %button **button** is %event",
+  "controller.Button.wasPressed|block": "was %button **button** pressed",
+  "controller.B|block": "B",
+  "controller.anyButton|block": "any",
+  "controller.down|block": "down",
+  "controller.dx|block": "x direction||scaled by %step",
+  "controller.dy|block": "y direction||scaled by %step",
+  "controller.left|block": "left",
+  "controller.pauseUntilAnyButtonIsPressed|block": "pause until any button is pressed",
+  "controller.right|block": "right",
+  "controller.up|block": "up",
+  "controller|block": "controller",
+  "{id:category}Controller": "Controller"
+}

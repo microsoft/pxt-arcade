@@ -69,7 +69,7 @@ player.onOverlap(function (other: Sprite) {
 
 
 let frameCount = 0;
-game.update(function () {
+game.onFrameUpdate(function () {
     // Periodically spawn an obstacle and increase the difficulty.
     // This math assumes the game is running at 60 FPS
     frameCount = (frameCount + 1) % Math.floor(60 / obstaclesPerSecond)
@@ -85,7 +85,7 @@ game.update(function () {
     }
 
     // If the player is close to the ground, A is pressed, and we are not falling...
-    if (player.y > ground - 20 && keys.A.isPressed() && player.vy <= 0) {
+    if (player.y > ground - 20 && controller.A.isPressed() && player.vy <= 0) {
         if (player.vy === 0) {
             // Set the velocity for the initial jump. Negative velocities are up
             player.vy = -1 * jumpVelocity

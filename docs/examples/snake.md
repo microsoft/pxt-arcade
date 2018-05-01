@@ -79,13 +79,13 @@ function show() {
 
 newFood()
 
-game.paint(function () {
-    if (keys.dx(100)) {
-        dx = Math.sign(keys.dx(100))
+game.onFramePaint(function () {
+    if (controller.dx(100)) {
+        dx = Math.sign(controller.dx(100))
         dy = 0
-    } else if (keys.dy(100)) {
+    } else if (controller.dy(100)) {
         dx = 0
-        dy = Math.sign(keys.dy(100))
+        dy = Math.sign(controller.dy(100))
     }
 
     time += game.eventContext().deltaTime
