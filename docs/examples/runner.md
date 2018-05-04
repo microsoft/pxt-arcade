@@ -68,7 +68,7 @@ jumper.onOverlap(function (h: Sprite) {
     }
 })
 
-game.onFrameUpdate(function () {
+game.onUpdate(function () {
     if (controller.A.isPressed() && jumper.vy >= 0)
         jumper.vy = -100
 

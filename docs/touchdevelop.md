@@ -101,7 +101,7 @@ sprite = sprites.create(img`
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     sprite.x += -1;
 })
-game.onFrameUpdate(function () {
+game.onUpdate(function () {
     if (controller.right.wasPressed()) {
         sprite.x += 1;
     }
@@ -147,7 +147,7 @@ sprite = sprites.create(img`
 . . 4 4 . 4 3 2 
 . . . . . . 4 3 
 `)
-game.onFrameUpdate(function () {
+game.onUpdate(function () {
     sprite.x += controller.dx(100)
     sprite.y += controller.dy(100)
 })
@@ -175,7 +175,7 @@ controller.any.onEvent(ControllerButtonEvent.Pressed, function () {
     monster.vy = -100;
     info.changeScoreBy(1)
 })
-game.onFrameUpdate(function () {
+game.onUpdate(function () {
     if (monster.y > screen.height) {
         info.changeLifeBy(-1)
     }
