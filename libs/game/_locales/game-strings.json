@@ -25,7 +25,7 @@
   "Image.setPixel|block": "set pixel of %myImage=variables_get at x %x y %y to %c=colorindexpicker",
   "Math.percentChance|block": "%percentage|\\% chance",
   "Math|block": "Math",
-  "Sprite.addMovementFrame|block": "add %sprite movement frame %image=screen_image_picker %direction ||reversed %addReverseDirection=toggleOnOff",
+  "Sprite.addMovementFrame|block": "add %sprite movement frame %image=screen_image_picker %direction ||and reverse direction %addReverseDirection=toggleOnOff",
   "Sprite.ax|block": "ax (acceleration x)",
   "Sprite.ay|block": "ay (acceleration y)",
   "Sprite.bottom@set|block": "bottom",
