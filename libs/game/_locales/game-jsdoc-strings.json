@@ -37,7 +37,7 @@
   "Sprite.onOverlap": "Registers code when the sprite overlaps with another sprite",
   "Sprite.overlapsWith": "Tests if a sprite overlaps with another",
   "Sprite.say": "Display a speech bubble with the text, for the given time",
-  "Sprite.say|param|text": "the text to say, eg: \"Hi\"",
+  "Sprite.say|param|text": "the text to say, eg: \":)\"",
   "Sprite.setFlag": "Sets the sprite as a ghost (which does not interact with physics)",
   "Sprite.setImage": "Sets the image on the sprite",
   "Sprite.startAnimation": "Queues a timed animation on the sprite without blocking the current fiber",
