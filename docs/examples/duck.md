@@ -76,7 +76,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 
 scene.setBackgroundColor(4)
-game.onFrameUpdate(function () {
+game.onUpdate(function () {
     if (duck.y < 0 || duck.y > screen.height) {
         game.over();
     }

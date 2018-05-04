@@ -14,7 +14,7 @@ player1 = sprites.create(img`
 `)
 
 game.setBackground(4)
-game.onFrameUpdate(function () {
+game.onUpdate(function () {
     if (controller.A.isPressed()) {
         // display integer part of coordinates as a string
         game.splash("" + Math.trunc(player1.x) + "", "X")
