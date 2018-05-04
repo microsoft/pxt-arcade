@@ -81,7 +81,7 @@ game.onUpdate(function () {
     if (Math.random() < 0.1) {
         let m = sprites.createProjectile(img`1`, 0, 40)
         m.x = Math.randomRange(0, screen.width)
-        m.life = Math.randomRange(100, 120)
+        m.lifespan = Math.randomRange(100, 120)
         m.setFlag(SpriteFlag.Ghost, true);
     }
     let now = control.millis()
@@ -95,7 +95,7 @@ game.onUpdate(function () {
             o.x = other.x;
             o.y = other.y;
             o.vy = -5;
-            o.life = 20;
+            o.lifespan = 20;
             o.setFlag(SpriteFlag.Ghost, true)
             info.changeScoreBy(1)
         })
