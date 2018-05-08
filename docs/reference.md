@@ -1,10 +1,8 @@
-
 # Reference
 
 ```namespaces
 info.setScore(0)
-game.paint(function () {
-	
+game.paint(function () {	
 })
 keys.dx(60)
 music.playSound(music.sounds(Sounds.PowerUp))
