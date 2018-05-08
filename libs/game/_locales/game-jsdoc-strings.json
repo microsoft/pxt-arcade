@@ -30,6 +30,7 @@
   "Sprite.isFacing": "Determines if the movement animation is facing a given direction. Note that\nthis API will always return false if no movement frames have been added.",
   "Sprite.isOutOfScreen": "Indicates if the sprite is outside the screen",
   "Sprite.isShowingAnimation": "Determines if the sprite is currently showing a timed animation",
+  "Sprite.layer": "A bitset of layer. Each bit is a layer, default is 1.",
   "Sprite.lifespan": "Time to live in game ticks. The lifespan decreases by 1 on each game update\nand the sprite gets destroyed when it reaches 0.",
   "Sprite.obstacle": "Gets the obstacle sprite in a given direction if any",
   "Sprite.onCollision": "Registers code when the sprite collides with another sprite",
