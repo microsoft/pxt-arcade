@@ -32,7 +32,7 @@ let counter = 0
 
 addBall(80);
 
-game.update(function () {
+game.onUpdate(function () {
     counter++;
     for (const ball of balls) {
         if (ball.overlapsWith(paddle)) {
@@ -52,6 +52,6 @@ game.update(function () {
             ball.ay++;
     }
     paddle.x = Math.clamp(paddle.width / 2, screen.width - paddle.width / 2,
-        paddle.x + keys.dx(180))
+        paddle.x + controller.dx(180))
 })
 ```

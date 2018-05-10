@@ -98,11 +98,11 @@ sprite = sprites.create(img`
 . . 4 4 . 4 3 2 
 . . . . . . 4 3 
 `)
-keys.left.onEvent(KeyEvent.Pressed, function () {
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     sprite.x += -1;
 })
-game.update(function () {
-    if (keys.right.wasPressed()) {
+game.onUpdate(function () {
+    if (controller.right.wasPressed()) {
         sprite.x += 1;
     }
 })
@@ -127,7 +127,7 @@ monster = sprites.create(img`
 . . . . . . 4 3 
 `)
 monster.ay = 200;
-keys.any.onEvent(KeyEvent.Pressed, function () {
+controller.any.onEvent(ControllerButtonEvent.Pressed, function () {
     monster.vy = -100;
 })
 ```
@@ -147,9 +147,9 @@ sprite = sprites.create(img`
 . . 4 4 . 4 3 2 
 . . . . . . 4 3 
 `)
-game.update(function () {
-    sprite.x += keys.dx(100)
-    sprite.y += keys.dy(100)
+game.onUpdate(function () {
+    sprite.x += controller.dx(100)
+    sprite.y += controller.dy(100)
 })
 ```
 
@@ -171,11 +171,11 @@ monster = sprites.create(img`
 . . . . . . 4 3 
 `)
 monster.ay = 200;
-keys.any.onEvent(KeyEvent.Pressed, function () {
+controller.any.onEvent(ControllerButtonEvent.Pressed, function () {
     monster.vy = -100;
     info.changeScoreBy(1)
 })
-game.update(function () {
+game.onUpdate(function () {
     if (monster.y > screen.height) {
         info.changeLifeBy(-1)
     }

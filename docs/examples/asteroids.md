@@ -68,8 +68,8 @@ spaceship.onOverlap(function (other: Sprite) {
 })
 spaceship.z = 10
 
-game.update(function () {
-    spaceship.x += keys.dx(70)
+game.onUpdate(function () {
+    spaceship.x += controller.dx(70)
     spaceship.x = Math.clamp(10, 118, spaceship.x)
 
     // metero
@@ -81,11 +81,11 @@ game.update(function () {
     if (Math.random() < 0.1) {
         let m = sprites.createProjectile(img`1`, 0, 40)
         m.x = Math.randomRange(0, screen.width)
-        m.life = Math.randomRange(100, 120)
+        m.lifespan = Math.randomRange(100, 120)
         m.setFlag(SpriteFlag.Ghost, true);
     }
     let now = control.millis()
-    if (keys.A.wasPressed()) {
+    if (controller.A.wasPressed()) {
         let r = sprites.createProjectile(rocketImg, 0, -90)
         r.x = spaceship.x
         r.y = spaceship.y - 10
@@ -95,7 +95,7 @@ game.update(function () {
             o.x = other.x;
             o.y = other.y;
             o.vy = -5;
-            o.life = 20;
+            o.lifespan = 20;
             o.setFlag(SpriteFlag.Ghost, true)
             info.changeScoreBy(1)
         })

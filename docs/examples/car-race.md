@@ -59,11 +59,11 @@ let pos = 0
 let prevPos = 0
 
 
-game.update(function () {
+game.onUpdate(function () {
     pos += 1 + Math.sqrt(control.millis()) / 200.0
     drive(pos - prevPos)
     prevPos = pos | 0
     info.setScore(prevPos >> 6)
-    car.x += keys.dx(70)
+    car.x += controller.dx(70)
 })
 ```
