@@ -26,6 +26,18 @@
 * [Reference](/reference)
     * [info](/reference/info)
     * [game](/reference/game)
-    * [keys](/reference/keys)
+    * [controller](/reference/controller)
     * [music](/reference/music)
+    * [scene](/reference/scene)
     * [image](/reference/images)
+
+## Types #types
+
+* [Types](/types)
+    * [Number](/types/number)
+    * [String](/types/string)
+    * [Boolean](/types/boolean)
+    * [Array](/types/array)
+    * [Function](/types/function)
+    * [Image](/types/image)
+    * [Sprite](/types/sprite)

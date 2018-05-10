@@ -2,9 +2,9 @@
 
 ```namespaces
 info.setScore(0)
-game.paint(function () {	
+game.onUpdate(function () {	
 })
-keys.dx(60)
+controller.dx(60)
 music.playSound(music.sounds(Sounds.PowerUp))
 image.create(0, 0)
 ```
@@ -13,6 +13,6 @@ image.create(0, 0)
 
 [info](/reference/info),
 [game](/reference/game),
-[keys](/reference/keys),
+[controller](/reference/controller),
 [music](/reference/music),
 [images](/reference/images)
