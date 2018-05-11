@@ -32,7 +32,7 @@
     "typescript": "2.6.1"
   },
   "dependencies": {
-    "pxt-common-packages": "0.22.10",
-    "pxt-core": "3.12.26"
+    "pxt-common-packages": "0.22.11",
+    "pxt-core": "3.14.1"
   }
 }
