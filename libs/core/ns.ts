@@ -21,6 +21,10 @@ namespace loops {
     }
 }
 
+//% color="#4b7bec"
+namespace music {
+
+}
 
 /**
  * Tagged hex literal converter
