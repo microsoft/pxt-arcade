@@ -33,7 +33,7 @@
   "Sprite.layer": "A bitset of layer. Each bit is a layer, default is 1.",
   "Sprite.lifespan": "Time to live in game ticks. The lifespan decreases by 1 on each game update\nand the sprite gets destroyed when it reaches 0.",
   "Sprite.obstacle": "Gets the obstacle sprite in a given direction if any",
-  "Sprite.onCollision": "Registers code when the sprite collides with another sprite",
+  "Sprite.onCollision": "Registers code when the sprite collides with an obstacle",
   "Sprite.onCollision|param|direction": "@param handler",
   "Sprite.onDestroyed": "Register code to run when sprite is destroyed",
   "Sprite.onOverlap": "Registers code when the sprite overlaps with another sprite",
@@ -96,8 +96,6 @@
   "sprites.TimedAnimation.addFrame|param|frame": "The frame to add to the end of this animation",
   "sprites.create": "Creates a new sprite from an image",
   "sprites.createAnimation": "Creates a timed animation",
-  "sprites.createObstacle": "Creates a new object sprite from an image",
-  "sprites.createObstacle|param|img": "the image",
   "sprites.createProjectile": "Create a new sprite with given speed, and place it at the edge of the screen so it moves towards the middle.\nThe sprite auto-destroys when it leaves the screen. You can modify position after it's created.",
   "sprites.create|param|img": "the image"
 }
