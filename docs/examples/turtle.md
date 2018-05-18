@@ -8,7 +8,8 @@
   "name": "Spiral",
   "description": "Draw a color square spiral",
   "url":"/examples/turtle/spiral",
-  "cardType": "example"
+  "cardType": "example",
+  "imageUrl": "/static/examples/turtle-spiral.png"
 }
 ]
 ```
