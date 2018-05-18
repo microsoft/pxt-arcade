@@ -1,4 +1,4 @@
-# Examples
+# JavaScript Games
 
 Here are some fun programs for your @boardname@!
 
@@ -8,7 +8,7 @@ Here are some fun programs for your @boardname@!
 [
 {
   "name": "Falling Duck",
-  "description": "A duck that falls",
+  "description": "Avoid the pipes",
   "url":"/examples/duck",
   "cardType": "codeExample"
 },
