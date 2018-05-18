@@ -1,3 +1,6 @@
+# Jumper
+
+```typescript
 /**********************************************
  *                                            *
  *              Physics controls              *
@@ -44,7 +47,7 @@ function increaseDifficulty() {
  *                Game start                  *
  *                                            *
  **********************************************/
-game.setBackground(1)
+scene.setBackgroundColor(1)
 
 // Create the player sprite
 const player = sprites.create(img`
@@ -127,3 +130,4 @@ function createObstacle() {
         info.changeScoreBy(1)
     });
 }
+```

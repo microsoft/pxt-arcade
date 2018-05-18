@@ -17,6 +17,27 @@
   "url":"/examples/eater-princess",
   "cardType": "example",
   "imageUrl": "/static/examples/eater-princess.png"
+},
+{
+  "name": "Food Machine",
+  "description": "3 the same and you win",
+  "url":"/examples/food-machine",
+  "cardType": "example",
+  "imageUrl": "/static/examples/food-machine.png"
+},
+{
+  "name": "Treasure Hunt",
+  "description": "It's hidden somewhere...",
+  "url":"/examples/treasure-hunt",
+  "cardType": "example",
+  "imageUrl": "/static/examples/treasure-hunt.png"
+},
+{
+  "name": "Jewels",
+  "description": "...",
+  "url":"/examples/treasure-hunt",
+  "cardType": "example",
+  "imageUrl": "/static/examples/jewels.png"
 }
 ]
 ```
