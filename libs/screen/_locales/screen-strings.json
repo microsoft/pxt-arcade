@@ -1,7 +1,9 @@
 {
   "helpers|block": "helpers",
   "images._image|block": "%image",
+  "images._screenImage|block": "%img",
   "images._spriteImage|block": "%img",
+  "images._tileMapImage|block": "%img",
   "images|block": "images",
   "image|block": "image",
   "{id:category}Control": "Control",
