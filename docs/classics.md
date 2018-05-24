@@ -35,7 +35,7 @@
 {
   "name": "Jewels",
   "description": "...",
-  "url":"/examples/treasure-hunt",
+  "url":"/examples/jewels",
   "cardType": "example",
   "imageUrl": "/static/examples/jewels.png"
 }
