@@ -1,6 +1,6 @@
 # Treasure Hunt
 
-```blocks
+```typescript
 let answer = ""
 let EndGame: Sprite = null
 let wizard: Sprite = null

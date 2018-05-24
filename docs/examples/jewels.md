@@ -1,6 +1,6 @@
 # Jewels
 
-```blocks
+```typescript
 let neighbour: number[] = []
 let newType = 0
 let boardSprite: Sprite = null
