@@ -137,7 +137,6 @@ f f 8 8 8 8 8 8 8 8 8 8 8 8 f f
 `)
 door.x = 10
 door.y = 150
-door.setFlag(SpriteFlag.Obstacle, true)
 jewel = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
