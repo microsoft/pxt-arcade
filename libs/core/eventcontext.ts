@@ -6,7 +6,7 @@ namespace control {
      */
     //% weight=20 blockGap=8 blockId="control_on_event" block="on event|from %src|with value %value"
     //% blockExternalInputs=1
-    //% help="control/on-event"          
+    //% help="control/on-event"
     export function onEvent(src: number, value: number, handler: () => void, flags = 16) { // EVENT_LISTENER_DEFAULT_FLAGS
         const ctx = control.eventContext();
         if (!ctx)
@@ -86,8 +86,10 @@ namespace control {
                     this.timeInSample += runtime
                     this.framesInSample++
                     if (this.timeInSample > 1000 || this.framesInSample > 30) {
-                        if (EventContext.onStats)
-                            EventContext.onStats(`render: ${Math.round(this.timeInSample / this.framesInSample * 1000)}us`)
+                        if (EventContext.onStats) {
+                            const fps = Math.round(this.framesInSample / (this.timeInSample / 1000));
+                            EventContext.onStats(`${fps}fps`)
+                        }
                         this.timeInSample = 0
                         this.framesInSample = 0
                     }

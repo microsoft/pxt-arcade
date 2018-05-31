@@ -6,8 +6,8 @@
         ]
     },
     "galleries": {
-        "Examples": "examples",
-        "Lessons": "lessons",
-        "Turtle": "examples/turtle"
+        "Classics": "classics",
+        "JavaScript Games": "javascript-games",
+        "Lessons": "lessons"
     }
 }

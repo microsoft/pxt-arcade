@@ -15,8 +15,7 @@
         "libs/game",
         "libs/controller",
         "libs/music",
-        "libs/device",
-        "libs/turtle"
+        "libs/device"
     ],
     "compile": {
         "saveAsPNG": true
@@ -82,12 +81,13 @@
             }
         },
         "blockColors": {
-            "loops": "#698927",
-            "logic": "#06B3E0",
-            "math": "#3D30AD",
-            "variables": "#F80102",
-            "text": "#FF9DA5",
-            "arrays": "#FF8F08"
+            "loops": "#20BF6B",
+            "logic": "#45AAF2",
+            "math": "#A55EEA",
+            "variables": "#EC3B59",
+            "text": "#F5D547",
+            "arrays": "#FF8F08",
+            "functions": "#1446A0"
         },
         "simAnimationEnter": "fly right in",
         "simAnimationExit": "fly right out",
