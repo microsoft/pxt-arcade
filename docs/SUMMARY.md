@@ -5,9 +5,18 @@
 * [Lessons](/lessons)
     * [Coordinate Walker](/lessons/coordinate-walker)
 
-## Examples #examples
+## Classic Games
 
-* [Examples](/examples)
+* [Classics](/classics)
+    * [Ping Pong](/examples/ping-pong)
+    * [Eater Princess](/examples/eater-princess)
+    * [Food Machine](/examples/food-machine)
+    * [Treasure Hunt](/examples/treasure-hunt)
+    * [Jewels](/examples/jewels)
+
+## JavaScript Games
+
+* [JavaScript Games](/javascript-games)
     * [Asteroids](/examples/asteroids)
     * [Car Race](/examples/car-race)
     * [Collisions](/examples/collisions)
@@ -23,11 +32,12 @@
 ## Reference #reference
 
 * [Reference](/reference)
-    * [info](/reference/info)
     * [game](/reference/game)
+    * [sprites](/reference/sprites)
     * [controller](/reference/controller)
     * [music](/reference/music)
     * [scene](/reference/scene)
+    * [info](/reference/info)
     * [image](/reference/images)
 
 ## Types #types
