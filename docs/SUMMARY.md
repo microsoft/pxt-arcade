@@ -19,7 +19,6 @@
     * [Runner](/examples/runner)
     * [Snake](/examples/snake)
     * [Sorting](/examples/sorting)
-    * [Turtle](/examples/turtle)
 
 ## Reference #reference
 
