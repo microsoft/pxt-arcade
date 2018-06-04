@@ -3,27 +3,30 @@
 A simple example
 
 ```typescript
+/**
+* A simple example
+*/
 game.splash("Falling Duck", "Z to jump")
 
 const duckImg = img`
-..eeee
-..e.ee..ee
-..eeee..ee
-RRRRRR..ee
-..eeeeeeee
-..eeeeeeee
-..eeeeeeee
-....eeee
-....eeee
-....eeee
-..RRRRRR
+..5555
+..5f55..55
+..5555..55
+444444..55
+..55555555
+..55555555
+..55555555
+....5555
+....5555
+....5555
+..444444
 `
 
 const cloudImg = img`
  . 1 1 1 . . . . . . . . . 1 1
- 1 2 2 2 1 . . 1 1 1 . . 1 2 2 1
- 1 2 2 2 2 1 1 2 2 2 1 1 2 2 2 1
- 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1
+ 1 9 9 9 1 . . 1 1 1 . . 1 9 9 1
+ 1 9 9 9 9 1 1 9 9 9 1 1 9 9 9 1
+ 1 9 9 9 9 9 9 9 9 9 9 9 9 9 9 1
  . 1 1 1 1 1 1 1 1 1 1 1 1 1 1
  `.doubled()
 
@@ -75,7 +78,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     duck.vy = -100
 })
 
-scene.setBackgroundColor(4)
+scene.setBackgroundColor(9)
 game.onUpdate(function () {
     if (duck.y < 0 || duck.y > screen.height) {
         game.over();
