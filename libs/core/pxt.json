@@ -1,22 +1,3 @@
 {
-    "name": "core",
-    "description": "A target sample for PXT",
-    "files": [
-        "README.md",
-        "pxt-core.d.ts",
-        "pxt-helpers.ts",
-        "base.ts",
-        "buffer.d.ts",
-        "enums.d.ts",
-        "sims.d.ts",
-        "control.ts",
-        "eventcontext.ts",
-        "fieldeditors.ts",
-        "ns.ts"
-    ],
-    "testFiles": [
-        "test.ts"
-    ],
-    "public": true,
-    "dependencies": {}
+    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/core"
 }

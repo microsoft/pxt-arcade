@@ -22,3 +22,8 @@ namespace music {
 namespace player {
 
 }
+
+//% color=#FF5722 weight=90 advanced=true
+namespace control {
+
+}

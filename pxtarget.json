@@ -10,11 +10,17 @@
         "packages": true
     },
     "bundleddirs": [
+        "libs/base",
         "libs/core",
+        "libs/core---stm32f401re",
+        "libs/hw",
+        "libs/hw---stm32f401",
         "libs/screen",
+        "libs/screen---st7735",
         "libs/game",
         "libs/controller",
         "libs/music",
+        "libs/music---pwm",
         "libs/device"
     ],
     "compile": {

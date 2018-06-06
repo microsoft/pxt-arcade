@@ -1,0 +1,15 @@
+{
+    "name": "hw---stm32f401",
+    "description": "Hardware definition - STM32F401 board",
+    "files": [
+        "config.ts"
+    ],
+    "compileServiceVariant": "stm32f401",
+    "dependencies": {
+        "core": "file:../core---stm32f401re",
+        "screen": "file:../screen---st7735",
+        "controller": "file:../controller",
+        "music": "file:../music---pwm"
+    },
+    "public": true
+}
