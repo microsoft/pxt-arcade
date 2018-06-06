@@ -24,7 +24,39 @@
         "libs/device"
     ],
     "compile": {
-        "saveAsPNG": true
+        "useUF2": true,
+        "webUSB": false,
+        "deployDrives": ".*",
+        "deployFileMarker": "INFO_UF2.TXT",
+        "driveName": "ARCADE",
+        "floatingPoint": true,
+        "taggedInts": true,
+        "saveAsPNG": true,
+        "upgrades": []
+    },
+    "compileService": {
+        "buildEngine": "codal",
+        "githubCorePackage": "lancaster-university/codal",
+        "gittag": "v0.4.0"
+    },
+    "variants": {
+        "stm32f401": {
+            "compile": {
+                "hasHex": true,
+                "openocdScript": "source [find interface/stlink-v2.cfg]; source [find target/stm32f4x.cfg]",
+                "vtableShift": 4
+            },
+            "compileService": {
+                "codalTarget": {
+                    "name": "codal-big-brainpad",
+                    "url": "https://github.com/lancaster-university/codal-big-brainpad",
+                    "branch": "v1.0.4",
+                    "type": "git"
+                },
+                "codalBinary": "STM32",
+                "serviceId": "codal2stm32"
+            }
+        }
     },
     "serial": {
         "useEditor": true,
@@ -35,18 +67,19 @@
         }
     },
     "runtime": {
-      "mathBlocks": true,
-      "loopsBlocks": true,
-      "logicBlocks": true,
-      "variablesBlocks": true,
-      "textBlocks": true,
-      "functionBlocks": true,
-      "listsBlocks": true
+        "mathBlocks": true,
+        "loopsBlocks": true,
+        "logicBlocks": true,
+        "variablesBlocks": true,
+        "textBlocks": true,
+        "functionBlocks": true,
+        "listsBlocks": true
     },
     "simulator": {
         "autoRun": true,
         "aspectRatio": 0.85,
-        "debugger": true
+        "debugger": true,
+        "dynamicBoardDefinition": true
     },
     "appTheme": {
         "logoUrl": "https://github.com/Microsoft/pxt-32",
@@ -60,8 +93,7 @@
         "betaUrl": "https://github.com/Microsoft/pxt-32",
         "githubUrl": "https://github.com/Microsoft/pxt-32",
         "boardName": "Arcade",
-        "docMenu": [
-            {
+        "docMenu": [{
                 "name": "About",
                 "path": "/about"
             },
