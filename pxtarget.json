@@ -47,6 +47,7 @@
             "compile": {
                 "hasHex": true,
                 "openocdScript": "source [find interface/stlink-v2.cfg]; source [find target/stm32f4x.cfg]",
+                "saveAsPNG": false,
                 "vtableShift": 4
             },
             "compileService": {
