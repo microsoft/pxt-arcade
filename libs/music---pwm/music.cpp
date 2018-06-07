@@ -23,7 +23,7 @@ void playTone(int frequency, int ms) {
   if (frequency <= 0) {
     pitchPin->setAnalogValue(0);
   } else {
-    pitchPin->setAnalogValue(512);
+    pitchPin->setAnalogValue(getConfig(CFG_SPEAKER_VOLUME, 10));
     pitchPin->setAnalogPeriodUs(1000000 / frequency);
     if (ms > 0) {
       int d = max(1, ms - NOTE_PAUSE); // allow for short rest
