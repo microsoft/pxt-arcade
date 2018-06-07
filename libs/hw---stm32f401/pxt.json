@@ -6,10 +6,11 @@
     ],
     "compileServiceVariant": "stm32f401",
     "dependencies": {
-        "core": "file:../core---stm32f401re",
-        "screen": "file:../screen---st7735",
+        "core---stm32f401re": "file:../core---stm32f401re",
+        "screen---st7735": "file:../screen---st7735",
+        "music---pwm": "file:../music---pwm",
         "controller": "file:../controller",
-        "music": "file:../music---pwm"
+        "game": "file:../game"        
     },
     "public": true
 }

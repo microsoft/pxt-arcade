@@ -10,8 +10,7 @@
     ],
     "core": true,
     "dependencies": {
-        "hw": "file:../hw",
-        "game": "file:../game"
+        "hw": "file:../hw"
     },
     "palette": [
         "#000000",
