@@ -22,6 +22,7 @@ namespace config {
 
     export const PIN_BTN_A = PIN_SDA;
     export const PIN_BTN_B = PIN_SCL;
+    export const PIN_BTN_MENU = PIN_RX;
 
     export const PIN_DISPLAY_CS = DAL.PB_12;
     export const PIN_DISPLAY_SCK = DAL.PB_13;
