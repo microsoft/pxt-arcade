@@ -32,6 +32,7 @@
         "floatingPoint": true,
         "taggedInts": true,
         "saveAsPNG": true,
+        "nativeType": "thumb",
         "upgrades": []
     },
     "compileService": {
