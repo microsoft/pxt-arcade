@@ -19,6 +19,8 @@
         "libs/screen---st7735",
         "libs/game",
         "libs/controller",
+        "libs/controller---hw",
+        "libs/buttons",
         "libs/music",
         "libs/music---pwm",
         "libs/device"

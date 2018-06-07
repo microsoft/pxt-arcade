@@ -2,15 +2,17 @@
     "name": "hw---stm32f401",
     "description": "Hardware definition - STM32F401 board",
     "files": [
-        "config.ts"
+        "config.ts",
+        "device.d.ts"
     ],
     "compileServiceVariant": "stm32f401",
     "dependencies": {
         "core---stm32f401re": "file:../core---stm32f401re",
         "screen---st7735": "file:../screen---st7735",
         "music---pwm": "file:../music---pwm",
-        "controller": "file:../controller",
-        "game": "file:../game"        
+        "controller---hw": "file:../controller---hw",
+        "buttons": "file:../buttons",
+        "game": "file:../game"
     },
     "public": true
 }
