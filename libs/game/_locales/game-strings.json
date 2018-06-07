@@ -47,6 +47,7 @@
   "Sprite.z|block": "z (depth)",
   "SpriteFlag.AutoDestroy|block": "auto destroy",
   "SpriteFlag.Ghost|block": "ghost",
+  "SpriteFlag.StayInScreen|block": "stay in screen",
   "SpriteType.Coin|block": "coin",
   "SpriteType.Food|block": "food",
   "SpriteType.Player|block": "player",
