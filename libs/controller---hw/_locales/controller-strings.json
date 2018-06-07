@@ -12,6 +12,7 @@
   "controller.dx|block": "dx (left-right buttons)||scaled by %step",
   "controller.dy|block": "dy (up-down buttons)||scaled by %step",
   "controller.left|block": "left",
+  "controller.menu|block": "menu",
   "controller.right|block": "right",
   "controller.up|block": "up",
   "controller|block": "controller",
