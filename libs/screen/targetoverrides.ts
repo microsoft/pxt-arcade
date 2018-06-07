@@ -5,6 +5,8 @@
 //% groups=["0.","1#","2T","3t","4N","5n","6G","7g","8","9","aAR","bBP","cCp","dDO","eEY","fFW"]
 function img(lits: any, ...args: any[]): Image { return null }
 
+// set palette before creating screen, so the JS version has the right BPP
+image.setPalette(hex`__palette`)
 let screen = image.create(160, 128)
 
 namespace image {
@@ -17,8 +19,6 @@ namespace _screen_internal {
     function updateScreen(img: Image): void { }
     //% shim=pxt::updateStats
     function updateStats(msg: string): void { }
-
-    image.setPalette(hex`__palette`)
 
     control.__screen.setupUpdate(() => updateScreen(screen))
     control.EventContext.onStats = function (msg: string) {
