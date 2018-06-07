@@ -245,3 +245,16 @@ namespace pxsim {
         }
     }
 }
+
+
+namespace pxsim.pxtcore {
+    export function getButtonByPinCfg(key: number) {
+        return { id: key }
+    }
+}
+
+namespace pxsim.ButtonMethods {
+    export function id(button: any): number {
+        return (button).id;
+    }
+}
