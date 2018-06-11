@@ -54,9 +54,17 @@ namespace pxsim.console {
      */
     //% 
     export function log(msg: string) {
+        // this doesn't work because there is a STS implementation available and it takes precedence
         logMsg("CONSOLE: " + msg)
-        // why doesn't that work?
         board().writeSerial(msg + "\n")
+    }
+
+    /**
+     * Print out message to debug console
+     */
+    //% 
+    export function debug(msg: string) {
+        logMsg("DEBUG: " + msg)
     }
 }
 
