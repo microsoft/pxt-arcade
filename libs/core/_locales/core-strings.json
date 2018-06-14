@@ -26,7 +26,6 @@
   "control.runInParallel|block": "run in parallel",
   "control.waitForEvent|block": "wait for event|from %src|with value %value",
   "control|block": "control",
-  "fieldeditors|block": "fieldeditors",
   "loops|block": "loops",
   "parseInt|block": "parse to integer %text",
   "pause|block": "pause %pause=timePicker|ms",
