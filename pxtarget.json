@@ -7,7 +7,9 @@
         "workspace": false,
         "sharing": true,
         "importing": true,
-        "packages": true
+        "packages": true,
+        "publishing": true,
+        "githubPackages": true
     },
     "bundleddirs": [
         "libs/base",
