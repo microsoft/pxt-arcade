@@ -40,7 +40,7 @@ Both include a simple 2D game engine with basic physics, sprites, sounds, scorin
 The coordinates are the same. Positions on the screen are based on pixels. The origin of the grid is the top left corner (the x-axis is horizontal, the y-axis is vertical). Sprite positions refer to the center of the sprite, i.e., the halfway point of its width and height before any rotation is applied. Speed and acceleration are measured in pixels/second and pixels/second^2.
 
 Unlike Touch Develop where the game size would vary with the screen, the MakeCode game engine supports 
-a single ``160``x``128`` screen with a palette of 16 colors.
+a single ``160``x``120`` screen with a palette of 16 colors.
 
 ### Sprite
 
