@@ -4,7 +4,7 @@
 
 * [ ] add SVG around the screen
 * [ ] add buttons in SVG, especially for usage on a mobile phone
-* [ ] scale the screen - need to first print on 128x128 canvas and then print this canvas scaled on the actual canvas - there's example in EV3
+* [ ] scale the screen - need to first print on 160x120 canvas and then print this canvas scaled on the actual canvas - there's example in EV3
 * [ ] gray out the simulator and display big play button over it, when it has no focus - otherwise it cannot get key events
 
 ## APIs

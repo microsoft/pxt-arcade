@@ -36,7 +36,7 @@
     ],
     "screenSize": {
         "width": 160,
-        "height": 128
+        "height": 120
     },
     "public": true
 }
