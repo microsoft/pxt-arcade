@@ -1,0 +1,14 @@
+{
+    "name": "hw---rpi",
+    "description": "Hardware definition - Raspberry Pi",
+    "files": [
+        "config.ts",
+        "device.d.ts"
+    ],
+    "compileServiceVariant": "rpi",
+    "dependencies": {
+        "core---linux": "file:../core---linux",
+        "game": "file:../game"
+    },
+    "public": true
+}

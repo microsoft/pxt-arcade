@@ -60,6 +60,21 @@
                 "codalBinary": "STM32",
                 "serviceId": "codal2stm32"
             }
+        },
+        "rpi": {
+            "compile": {
+                "hasHex": true,
+                "useELF": true,
+                "saveAsPNG": false,
+                "vtableShift": 4,
+                "flashCodeAlign": 256,
+                "stackAlign": 2
+            },
+            "compileService": {
+                "buildEngine": "dockermake",
+                "dockerImage": "pext/rpi:latest",
+                "serviceId": "rpi"
+            }
         }
     },
     "serial": {
