@@ -31,11 +31,11 @@ function drive(lines: number) {
     while (--lines >= 0) {
         let w2 = roadW >> 1
         if (curr == target) {
-            target = Math.randomRange(w2, 128 - w2)
+            target = Math.randomRange(w2, 120 - w2)
         }
         const dx = Math.sign(target - curr) * ddx
         curr += dx
-        roadImg.fillRect(0, lines, 128, 1, 7)
+        roadImg.fillRect(0, lines, 120, 1, 7)
         roadImg.fillRect(curr - w2 - 5, lines, roadW + 10, 1, isRed ? 10 : 15)
         roadImg.fillRect(curr - w2, lines, roadW, 1, 0)
 
@@ -46,7 +46,7 @@ function drive(lines: number) {
     }
 }
 
-drive(128)
+drive(120)
 ddx = 1
 const road = sprites.create(roadImg)
 
