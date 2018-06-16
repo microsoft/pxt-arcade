@@ -68,6 +68,7 @@
                 "hasHex": true,
                 "useELF": true,
                 "saveAsPNG": false,
+                "runtimeIsARM": true,
                 "vtableShift": 4,
                 "flashCodeAlign": 256,
                 "stackAlign": 2
