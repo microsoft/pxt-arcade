@@ -4,6 +4,11 @@
 #include <wiringPiI2C.h>
 #include <pthread.h>
 
+namespace music {
+    void playTone(int frequency, int ms);
+}
+
+
 namespace pxt {
 
 enum class Key {
@@ -135,6 +140,8 @@ static void *btnPoll(void *dummy) {
 }
 
 void initKeys() {
+    music::playTone(0, 0); // start music process early
+
     wiringPiSetupGpio();
 
     for (int i = 0; keyPins[i]; ++i) {
