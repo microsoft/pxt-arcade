@@ -4,6 +4,9 @@
     "files": [
         "keys.cpp",
         "config.ts",
+        "gamesel.cpp",
+        "enums.d.ts",
+        "shims.d.ts",
         "device.d.ts"
     ],
     "compileServiceVariant": "rpi",
