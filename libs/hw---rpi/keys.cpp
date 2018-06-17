@@ -5,38 +5,34 @@
 #include <pthread.h>
 
 namespace music {
-    void playTone(int frequency, int ms);
+void playTone(int frequency, int ms);
 }
-
 
 namespace pxt {
 
+static uint64_t configuredPins;
+
 enum class Key {
-    Left = 1,
-    Up,
-    Right,
-    Down,
+    LEFT = 1,
+    UP,
+    RIGHT,
+    DOWN,
     A,
     B,
-    Menu,
-    Reset,
-    Exit,
+    MENU,
+    RESET,
+    EXIT,
 };
 
-enum class HwKey {
-    Y = 13,
-    X = 16,
-    A = 12,
-    B = 6,
-    Select = 20,
-    Start = 26,
-    Player1 = 23,
-    Player2 = 22,
-};
-
-#define HK(v) (int)(HwKey::v)
-const int keyPins[] = {HK(X),     HK(Y),       HK(A),       HK(B), HK(Select),
-                       HK(Start), HK(Player1), HK(Player2), 0};
+/*
+BTN_A = 12, 16
+BTN_B = 6, 13
+BTN_MENU = 20
+BTN_EXIT = 22, 23
+BTN_RESTART = 26
+JOYSTICK_ADDR = 0x48
+# Free pins: 4, 5, 17, 24, 25, 27
+*/
 
 const int INTERNAL_KEY_UP = 2050;
 const int INTERNAL_KEY_DOWN = 2051;
@@ -44,14 +40,21 @@ const int INTERNAL_KEY_DOWN = 2051;
 static int adcFD;
 
 #define SWAP(v) (uint16_t)((v >> 8) | (v << 8))
+#define MID 0x3300
+#define DEAD 0x1000
+
 
 static int readADC(int channel) {
     if (!adcFD) {
-        adcFD = wiringPiI2CSetup(0x48);
+        int addr = getConfigInt("JOYSTICK_ADDR", -1);
+        if (addr < 0)
+            adcFD = -1;
+        else
+            adcFD = wiringPiI2CSetup(0x48);
     }
 
     if (adcFD < 0)
-        return -1;
+        return MID;
 
     uint16_t config = 0x8383;
     config += 0x4000 + 0x1000 * channel;
@@ -63,38 +66,51 @@ static int readADC(int channel) {
     return SWAP(config);
 }
 
-#define CHK(k) !digitalRead(HK(k))
 #define SET(s) r |= 1 << (int)(Key::s)
-#define KEY(k0, s)                                                                                \
-    if (CHK(k0))                                                                                   \
+#define KEY(s)                                                                                 \
+    if (isPressed("BTN_" #s))                                                                                   \
     SET(s)
 
-#define MID 0x3300
-#define DEAD 0x1000
+static int isPressed(const char *name) {
+    auto pins = getConfigInts(name);
+    for (int i = 0; pins[i] != ENDMARK; ++i) {
+        auto p = pins[i];
+        auto mask = 1ULL << p;
+        if (!(configuredPins & mask)) {
+            pinMode(p, INPUT);
+            pullUpDnControl(p, PUD_UP);
+            configuredPins |= mask;
+        }
+        if (!digitalRead(p))
+            return 1;
+    }
+    return 0;
+}
 
 static uint32_t readBtns() {
     uint32_t r = 0;
 
-    KEY(A, A);
-    KEY(X, A);
-    KEY(B, B);
-    KEY(Y, B);
-    KEY(Select, Menu);
-    KEY(Start, Reset);
-    KEY(Player1, Exit);
-    KEY(Player2, Exit);
-
+    KEY(A);
+    KEY(B);
+    KEY(LEFT);
+    KEY(RIGHT);
+    KEY(UP);
+    KEY(DOWN);
+    KEY(MENU);
+    KEY(EXIT);
+    KEY(RESET);
+    
     uint16_t ch0 = readADC(0), ch1 = readADC(1);
 
     if (ch0 < MID - DEAD)
-        SET(Up);
+        SET(UP);
     if (ch0 > MID + DEAD)
-        SET(Down);
+        SET(DOWN);
 
     if (ch1 < MID - DEAD)
-        SET(Left);
+        SET(LEFT);
     if (ch1 > MID + DEAD)
-        SET(Right);
+        SET(RIGHT);
 
     return r;
 }
@@ -103,7 +119,6 @@ static void *btnPoll(void *dummy) {
     (void)dummy;
 
     uint32_t state = readBtns();
-    // DMESG("btns: %p", state);
     int k = 0;
     while (1) {
         sleep_core_us(5000);
@@ -121,9 +136,9 @@ static void *btnPoll(void *dummy) {
                     ev = INTERNAL_KEY_UP;
                 else if (!(state & mask) && (nstate & mask)) {
                     ev = INTERNAL_KEY_DOWN;
-                    if (i == (int)Key::Exit)
+                    if (i == (int)Key::EXIT)
                         target_exit();
-                    else if (i == (int)Key::Reset)
+                    else if (i == (int)Key::RESET)
                         target_reset();
                 }
                 if (ev) {
@@ -140,14 +155,10 @@ static void *btnPoll(void *dummy) {
 }
 
 void initKeys() {
+    DMESG("init keys");
     music::playTone(0, 0); // start music process early
 
     wiringPiSetupGpio();
-
-    for (int i = 0; keyPins[i]; ++i) {
-        pinMode(keyPins[i], INPUT);
-        pullUpDnControl(keyPins[i], PUD_UP);
-    }
 
     pthread_t disp;
     pthread_create(&disp, NULL, btnPoll, NULL);
