@@ -71,6 +71,7 @@ namespace pxsim {
      */
     export class Board extends pxsim.BaseBoard
         implements pxsim.MusicBoard {
+        public id: string;
         public bus: EventBus;
         public audioState: AudioState;
         public background: HTMLDivElement;
@@ -175,6 +176,7 @@ namespace pxsim {
             this.stats.className = "stats"
             this.canvas.width = 16;
             this.canvas.height = 16;
+            this.id = msg.id;
 
             if (!this.controls) {
                 this.controlsDiv = document.getElementById("controls") as HTMLDivElement;
