@@ -18,7 +18,7 @@
 @docsHeaderFont: @headerFont;
 @docsPageFont: @pageFont;
 
-@importGoogleFonts: true;
+@importGoogleFonts: false;
 @fontName: "Share Tech Mono";
 
 /*-------------------
