@@ -17,10 +17,21 @@
 			flex-direction: column;
 			flex: 1 1 auto;
 		}
-		
-		.ui.container.mainbody {
+
+		.ui.container.main {
 			margin: 0rem !important;
 			padding: 0;
+		}
+
+		.abuse.content {
+			background: #F2F2F2;
+			color: #333;
+			padding: 1rem;
+			width: 100%;
+		}
+		.abuse.content.mobile {
+			padding: 0.1rem;
+			font-size: small;
 		}
 	</style>
 </head>
@@ -28,12 +39,12 @@
 <body id='root' class='root' style="display: flex">
 
 
-	<div class="ui main container fluid mainbody">
+	<div class="ui main container fluid">
 		<!-- @include abuse.html -->
 
 		<div class="ui container fluid" style="margin:0 !important">
 			<iframe style="flex-grow: 1; " src="/@versionsuff@#sandbox:@id@" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
-				frameborder="0"></iframe>
+			 frameborder="0"></iframe>
 		</div>
 
 		@body@
@@ -42,9 +53,9 @@
 
 
 	<script>
-const script = @JSON@;
+		const script = @JSON @;
 // do something with it
-</script>
+	</script>
 
 	<!-- Do not add analytics!!!! -->
 </body>
