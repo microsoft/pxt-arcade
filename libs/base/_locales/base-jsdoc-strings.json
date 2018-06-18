@@ -168,13 +168,5 @@
   "pauseUntil": "Busy wait for a condition to be true",
   "pauseUntil|param|condition": "condition to test for",
   "pauseUntil|param|timeOut": "if positive, maximum duration to wait for in milliseconds",
-  "pause|param|ms": "how long to pause for, eg: 100, 200, 500, 1000, 2000",
-  "serial": "Reading and writing data over a serial connection.",
-  "serial.writeBuffer": "Send a buffer across the serial connection.",
-  "serial.writeLine": "Write a line of text to the serial port.",
-  "serial.writeNumber": "Write a number to the serial port.",
-  "serial.writeString": "Write some text to the serial port.",
-  "serial.writeValue": "Write a name:value pair as a line of text to the serial port.",
-  "serial.writeValue|param|name": "name of the value stream, eg: \"x\"",
-  "serial.writeValue|param|value": "to write"
+  "pause|param|ms": "how long to pause for, eg: 100, 200, 500, 1000, 2000"
 }

@@ -17,7 +17,7 @@
   "PulseValue.Low|block": "low",
   "PwmOnlyPin.analogSetPeriod|block": "analog set period|pin %pin|to (µs)%period",
   "PwmOnlyPin.servoSetPulse|block": "servo set pulse|pin %value|to (µs) %duration",
-  "PwmOnlyPin.servoWrite|block": "servo write|pin %name|to %value",
+  "PwmOnlyPin.servoWrite|block": "servo write|pin %name|to %value=protractorPicker",
   "control.Timer.millis|block": "%timer|millis",
   "control.Timer.pauseUntil|block": "%timer|pause until (ms) %ms",
   "control.Timer.reset|block": "%timer|reset",

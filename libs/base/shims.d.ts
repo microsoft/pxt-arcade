@@ -142,23 +142,12 @@ declare namespace control {
     //% blockId="control_device_serial_number" block="device serial number" weight=9
     //% help=control/device-serial-number shim=control::deviceSerialNumber
     function deviceSerialNumber(): int32;
-}
-declare namespace serial {
 
     /**
-     * Write some text to the serial port.
+     *
      */
-    //% help=serial/write-string
-    //% weight=87 blockHidden=true
-    //% blockId=serial_writestring block="serial|write string %text" shim=serial::writeString
-    function writeString(text: string): void;
-
-    /**
-     * Send a buffer across the serial connection.
-     */
-    //% help=serial/write-buffer weight=6 blockHidden=true
-    //% blockId=serial_writebuffer block="serial|write buffer %buffer" shim=serial::writeBuffer
-    function writeBuffer(buffer: Buffer): void;
+    //% shim=control::__log
+    function __log(text: string): void;
 }
 
 // Auto-generated. Do not edit. Really.

@@ -162,16 +162,17 @@ declare interface PwmOnlyPin {
      * rotation servo, this will set the speed of the servo (with ``0`` being full-speed in one
      * direction, ``180`` being full speed in the other, and a value near ``90`` being no movement).
      * @param name pin to write to
-     * @param value angle or rotation speed, eg:180,90,0
+     * @param value angle or rotation speed
      */
     //% help=pins/servo-write weight=41 group="Servo"
-    //% blockId=device_set_servo_pin block="servo write|pin %name|to %value" blockGap=8
+    //% blockId=device_set_servo_pin block="servo write|pin %name|to %value=protractorPicker" blockGap=8
     //% parts=microservo trackArgs=0
     //% blockNamespace=pins
     //% name.fieldEditor="gridpicker"
     //% name.fieldOptions.width=220
-    //% name.fieldOptions.columns=4 shim=PwmOnlyPinMethods::servoWrite
-    servoWrite(value: int32): void;
+    //% name.fieldOptions.columns=4
+    //% value.defl=90 shim=PwmOnlyPinMethods::servoWrite
+    servoWrite(value?: int32): void;
 
     /**
      * Set the pin for PWM analog output, make the period be 20 ms, and set the pulse width.

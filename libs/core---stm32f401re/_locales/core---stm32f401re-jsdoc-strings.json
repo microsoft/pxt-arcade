@@ -14,7 +14,7 @@
   "PwmOnlyPin.servoSetPulse": "Set the pin for PWM analog output, make the period be 20 ms, and set the pulse width.\nThe pulse width is based on the value it is given **microseconds** or `1/1000` milliseconds.",
   "PwmOnlyPin.servoSetPulse|param|duration": "pulse duration in micro seconds, eg:1500",
   "PwmOnlyPin.servoWrite": "Write a value to the servo to control the rotation of the shaft. On a standard servo, this will\nset the angle of the shaft (in degrees), moving the shaft to that orientation. On a continuous\nrotation servo, this will set the speed of the servo (with ``0`` being full-speed in one\ndirection, ``180`` being full speed in the other, and a value near ``90`` being no movement).",
-  "PwmOnlyPin.servoWrite|param|value": "angle or rotation speed, eg:180,90,0",
+  "PwmOnlyPin.servoWrite|param|value": "angle or rotation speed",
   "control": "Program controls and events.",
   "control.Timer": "A timer",
   "control.Timer.millis": "Gets the elapsed time in millis since the last reset",
