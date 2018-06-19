@@ -61,6 +61,12 @@ npm install
 npm run build
 ```
 
+* then install the ``pxt`` command line tool (only need to do this once):
+
+```
+npm install -g pxt
+```
+
 * go to ``pxt-common-packages`` and run
 
 ```
@@ -91,6 +97,7 @@ If you would like to pick up the latest PXT build, simply run
 ```
 pxt update
 ```
+in the folder you wish to update.
 
 More instructions at https://github.com/Microsoft/pxt#running-a-target-from-localhost 
 
