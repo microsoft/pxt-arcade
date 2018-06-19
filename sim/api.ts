@@ -38,85 +38,15 @@ namespace pxsim {
             default: return Key.None
         }
     }
-}
 
-namespace pxsim {
     export function pauseAsync(ms: number) {
         return Promise.delay(ms)
     }
 }
 
-function logMsg(m: string) { console.log(m) }
-
-namespace pxsim.console {
-    /**
-     * Print out message
-     */
-    //% 
-    export function log(msg: string) {
-        logMsg("CONSOLE: " + msg)
-        // why doesn't that work?
-        board().writeSerial(msg + "\n")
-    }
-}
-
-namespace pxsim.control {
-    /**
-     * Listen to a event
-     */
-    //% 
-    export function internalOnEvent(ev: number, arg: number, f: RefAction, flags: number) {
-        board().bus.listen(ev, arg, f)
-    }
-
-    /**
-     * Generate an event
-     */
-    //% 
-    export function raiseEvent(ev: number, arg: number) {
-        board().bus.queue(ev, arg)
-    }
-
-    /**
-     * Create a new zero-initialized buffer.
-     * @param size number of bytes in the buffer
-     */
-    //% 
-    export function createBuffer(size: int): RefBuffer {
-        return pxsim.BufferMethods.createBuffer(size)
-    }
-
-    /**
-     * Gets the number of milliseconds elapsed since power on.
-     */
-    //% help=control/millis weight=50
-    //% blockId=control_running_time block="millis (ms)" 
-    export function millis() {
-        return Date.now() - board().startTime
-    }
-
-    /**
-     * Restarts the console.
-     */
-    //% block async
-    export function reset() {
-        pxsim.Runtime.postMessage(<pxsim.SimulatorCommandMessage>{
-            type: "simulator",
-            command: "restart"
-        })
-        const cb = getResume();
-    }
-
-    export let runInParallel = thread.runInBackground;
-
-    export function waitForEvent(id: number, evid: number) {
-        const cb = getResume();
-        board().bus.wait(id, evid, cb);
-    }
-
-    export function allocateNotifyEvent(): number {
-        let b = board();
-        return b.bus.nextNotifyEvent++;
+namespace pxsim.pxtcore {
+    export function registerWithDal(id: number, evid: number, handler: RefAction, mode: number = 0) {
+        board().bus.listen(id, evid, handler);
     }
 }
 

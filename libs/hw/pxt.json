@@ -1,0 +1,15 @@
+{
+    "name": "hw",
+    "description": "Hardware definition - web-browser only",
+    "files": [
+        "config.ts"
+    ],
+    "dependencies": {
+        "core": "file:../core",
+        "screen": "file:../screen",
+        "controller": "file:../controller",
+        "music": "file:../music",
+        "game": "file:../game"
+    },
+    "public": true
+}

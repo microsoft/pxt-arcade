@@ -1,0 +1,12 @@
+{
+    "name": "storage",
+    "description": "USB mass storage support",
+    "files": [
+        "storage.cpp",
+        "storage.ts"
+    ],
+    "dependencies": {
+        "hw": "file:../hw"
+    },
+    "public": true
+}

@@ -1,0 +1,20 @@
+{
+    "name": "hw---rpi",
+    "description": "Hardware definition - Raspberry Pi",
+    "files": [
+        "keys.cpp",
+        "config.ts",
+        "gamesel.cpp",
+        "enums.d.ts",
+        "shims.d.ts",
+        "device.d.ts"
+    ],
+    "compileServiceVariant": "rpi",
+    "dependencies": {
+        "core---linux": "file:../core---linux",
+        "music---linux": "file:../music---linux",
+        "screen---linux": "file:../screen---linux",
+        "game": "file:../game"
+    },
+    "public": true
+}

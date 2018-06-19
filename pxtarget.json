@@ -12,15 +12,77 @@
         "githubPackages": true
     },
     "bundleddirs": [
+        "libs/base",
         "libs/core",
+        "libs/core---stm32f401re",
+        "libs/core---linux",
+        "libs/hw",
+        "libs/hw---stm32f401",
+        "libs/hw---rpi",
         "libs/screen",
+        "libs/screen---st7735",
+        "libs/screen---linux",
         "libs/game",
         "libs/controller",
+        "libs/controller---hw",
+        "libs/buttons",
         "libs/music",
+        "libs/music---pwm",
+        "libs/music---linux",
         "libs/device"
     ],
     "compile": {
-        "saveAsPNG": true
+        "useUF2": true,
+        "webUSB": false,
+        "deployDrives": ".*",
+        "deployFileMarker": "INFO_UF2.TXT",
+        "driveName": "ARCADE",
+        "floatingPoint": true,
+        "taggedInts": true,
+        "saveAsPNG": true,
+        "nativeType": "thumb",
+        "upgrades": []
+    },
+    "compileService": {
+        "buildEngine": "codal",
+        "githubCorePackage": "lancaster-university/codal",
+        "gittag": "v0.4.0"
+    },
+    "variants": {
+        "stm32f401": {
+            "compile": {
+                "hasHex": true,
+                "openocdScript": "source [find interface/stlink-v2.cfg]; source [find target/stm32f4x.cfg]",
+                "saveAsPNG": false,
+                "vtableShift": 4
+            },
+            "compileService": {
+                "codalTarget": {
+                    "name": "codal-big-brainpad",
+                    "url": "https://github.com/lancaster-university/codal-big-brainpad",
+                    "branch": "v1.0.4",
+                    "type": "git"
+                },
+                "codalBinary": "STM32",
+                "serviceId": "codal2stm32"
+            }
+        },
+        "rpi": {
+            "compile": {
+                "hasHex": true,
+                "useELF": true,
+                "saveAsPNG": false,
+                "runtimeIsARM": true,
+                "vtableShift": 4,
+                "flashCodeAlign": 256,
+                "stackAlign": 2
+            },
+            "compileService": {
+                "buildEngine": "dockermake",
+                "dockerImage": "pext/rpi:latest",
+                "serviceId": "rpi"
+            }
+        }
     },
     "serial": {
         "useEditor": true,
@@ -31,18 +93,19 @@
         }
     },
     "runtime": {
-      "mathBlocks": true,
-      "loopsBlocks": true,
-      "logicBlocks": true,
-      "variablesBlocks": true,
-      "textBlocks": true,
-      "functionBlocks": true,
-      "listsBlocks": true
+        "mathBlocks": true,
+        "loopsBlocks": true,
+        "logicBlocks": true,
+        "variablesBlocks": true,
+        "textBlocks": true,
+        "functionBlocks": true,
+        "listsBlocks": true
     },
     "simulator": {
         "autoRun": true,
         "aspectRatio": 0.85,
-        "debugger": true
+        "debugger": true,
+        "dynamicBoardDefinition": true
     },
     "appTheme": {
         "logoUrl": "https://github.com/Microsoft/pxt-32",
@@ -56,8 +119,7 @@
         "betaUrl": "https://github.com/Microsoft/pxt-32",
         "githubUrl": "https://github.com/Microsoft/pxt-32",
         "boardName": "Arcade",
-        "docMenu": [
-            {
+        "docMenu": [{
                 "name": "About",
                 "path": "/about"
             },

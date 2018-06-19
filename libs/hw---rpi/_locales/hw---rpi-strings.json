@@ -1,0 +1,5 @@
+{
+  "control|block": "control",
+  "{id:category}Config": "Config",
+  "{id:category}Control": "Control"
+}

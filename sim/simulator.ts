@@ -71,6 +71,7 @@ namespace pxsim {
      */
     export class Board extends pxsim.BaseBoard
         implements pxsim.MusicBoard {
+        public id: string;
         public bus: EventBus;
         public audioState: AudioState;
         public background: HTMLDivElement;
@@ -176,6 +177,7 @@ namespace pxsim {
             this.stats.className = "stats"
             this.canvas.width = 16;
             this.canvas.height = 16;
+            this.id = msg.id;
 
             if (!this.controls) {
                 this.controlsDiv = document.getElementById("controls") as HTMLDivElement;
@@ -244,5 +246,18 @@ namespace pxsim {
             b.classList.remove("has-focus");
             c.classList.add("no-focus");
         }
+    }
+}
+
+
+namespace pxsim.pxtcore {
+    export function getButtonByPinCfg(key: number) {
+        return { id: key }
+    }
+}
+
+namespace pxsim.ButtonMethods {
+    export function id(button: any): number {
+        return (button).id;
     }
 }

@@ -10,11 +10,7 @@
     ],
     "core": true,
     "dependencies": {
-        "core": "file:../core",
-        "screen": "file:../screen",
-        "controller": "file:../controller",
-        "music": "file:../music",
-        "game": "file:../game"
+        "hw": "file:../hw"
     },
     "palette": [
         "#000000",

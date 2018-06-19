@@ -1,26 +1,8 @@
-// Copied by hand from file generated from the C++ interface
+// Auto-generated. Do not edit.
 
-declare const enum NumberFormat {
-    Int8LE = 1,
-    UInt8LE = 2,
-    Int16LE = 3,
-    UInt16LE = 4,
-    Int32LE = 5,
-    Int8BE = 6,
-    UInt8BE = 7,
-    Int16BE = 8,
-    UInt16BE = 9,
-    Int32BE = 10,
 
-    UInt32LE = 11,
-    UInt32BE = 12,
-    Float32LE = 13,
-    Float64LE = 14,
-    Float32BE = 15,
-    Float64BE = 16,
-}
 
-//% indexerGet=BufferMethods::getByte indexerSet=BufferMethods::setByte
+    //% indexerGet=BufferMethods::getByte indexerSet=BufferMethods::setByte
 declare interface Buffer {
     /**
      * Write a number in specified format in the buffer.
@@ -81,22 +63,91 @@ declare interface Buffer {
      */
     //% shim=BufferMethods::write
     write(dstOffset: int32, src: Buffer): void;
-
-    [index: number]: number;
 }
-
 declare namespace control {
+
+    /**
+     * Create a new zero-initialized buffer.
+     * @param size number of bytes in the buffer
+     */
+    //% shim=control::createBuffer
+    function createBuffer(size: int32): Buffer;
+}
+declare namespace loops {
+
+    /**
+     * Repeats the code forever in the background. On each iteration, allows other codes to run.
+     * @param body code to execute
+     */
+    //% help=loops/forever weight=100 afterOnStart=true deprecated=true
+    //% blockId=forever_deprecated block="forever" blockAllowMultiple=1 shim=loops::forever
+    function forever(a: () => void): void;
+
+    /**
+     * Pause for the specified time in milliseconds
+     * @param ms how long to pause for, eg: 100, 200, 500, 1000, 2000
+     */
+    //% help=loops/pause weight=99 deprecated=true
+    //% async block="pause %pause=timePicker|ms"
+    //% blockId=device_pause_deprecated shim=loops::pause
+    function pause(ms: int32): void;
+}
+declare namespace control {
+
+    /**
+     * Gets the number of milliseconds elapsed since power on.
+     */
+    //% help=control/millis weight=50
+    //% blockId=control_running_time block="millis (ms)" shim=control::millis
+    function millis(): int32;
+
+    /**
+     * Used internally
+     */
+    //% flags.defl=16 shim=control::internalOnEvent
+    function internalOnEvent(src: int32, value: int32, handler: () => void, flags?: int32): void;
+
+    /**
+     * Reset the device.
+     */
+    //% weight=30 async help=control/reset blockGap=8
+    //% blockId="control_reset" block="reset" shim=control::reset
+    function reset(): void;
+
+    /**
+     * Block the current fiber for the given microseconds
+     * @param micros number of micro-seconds to wait. eg: 4
+     */
+    //% help=control/wait-micros weight=29 async
+    //% blockId="control_wait_us" block="wait (µs)%micros" shim=control::waitMicros
+    function waitMicros(micros: int32): void;
+
     /**
      * Run other code in the parallel.
      */
     //% help=control/run-in-parallel handlerStatement=1
     //% blockId="control_run_in_parallel" block="run in parallel" blockGap=8 shim=control::runInParallel
     function runInParallel(a: () => void): void;
-    
+
     /**
      * Blocks the calling thread until the specified event is raised.
      */
     //% help=control/wait-for-event async
     //% blockId=control_wait_for_event block="wait for event|from %src|with value %value" shim=control::waitForEvent
-    function waitForEvent(src: number, value: int32): void;
+    function waitForEvent(src: int32, value: int32): void;
+
+    /**
+     * Derive a unique, consistent serial number of this device from internal data.
+     */
+    //% blockId="control_device_serial_number" block="device serial number" weight=9
+    //% help=control/device-serial-number shim=control::deviceSerialNumber
+    function deviceSerialNumber(): int32;
+
+    /**
+     *
+     */
+    //% shim=control::__log
+    function __log(text: string): void;
 }
+
+// Auto-generated. Do not edit. Really.
