@@ -26,11 +26,11 @@ namespace pxsim {
             }
             window.onkeydown = (e) => {
                 const b = board()
-                if (b) b.setKey((typeof e.which == "number") ? e.which : e.keyCode, true)
+                if (b) b.setKey((typeof e.which == "number") ? e.which : e.keyCode, true, e)
             }
             window.onkeyup = (e) => {
                 const b = board()
-                if (b) b.setKey((typeof e.which == "number") ? e.which : e.keyCode, false)
+                if (b) b.setKey((typeof e.which == "number") ? e.which : e.keyCode, false, e)
             }
         }
     };
@@ -98,10 +98,11 @@ namespace pxsim {
             return undefined;
         }
 
-        setKey(which: number, isPressed: boolean) {
+        setKey(which: number, isPressed: boolean, e: KeyboardEvent) {
             let k = mapKey(which)
             if (k) {
                 this.handleKeyEvent(k, isPressed);
+                e.preventDefault();
             }
         }
 
