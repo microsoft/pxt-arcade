@@ -1,6 +1,35 @@
-# Casual game editor using Microsoft MakeCode [![Build Status](https://travis-ci.org/Microsoft/pxt-32.svg?branch=master)](https://travis-ci.org/Microsoft/pxt-32)
+# Casual game editor using Microsoft MakeCode 
+
+* [Try it live!](https://arcade.makecode.com)
+
+[![Build Status](https://travis-ci.org/Microsoft/pxt-arcade.svg?branch=master)](https://travis-ci.org/Microsoft/pxt-arcade)
+[![Community Discord](https://img.shields.io/discord/448979533891371018.svg)](https://aka.ms/makecodecommunity)
 
 This repo contains an editor built with [Microsoft MakeCode (PXT)](https://github.com/Microsoft/pxt). 
+
+## Local server setup
+
+This setup gives you a local version of the editor and the ability to load packages from your machine. This is the setup to develop new packages.
+
+### Setup
+
+* install [Node.js 8+](https://nodejs.org/en/download/)
+* clone https://github.com/Microsoft/pxt-arcade to ``pxt-arcade`` folder
+* go to ``pxt-arcade`` and run
+
+```
+npm install
+```
+
+Don't forget to periodically ``git pull`` and ``npm install`` to get the latest changes.
+
+### Launching the server
+
+This command launches a local web server. Note that this web server is meant for development purposes only. It was not designed or secured to be run on a web server.
+
+```
+npm run serve
+```
 
 ## Local Dev setup
 
@@ -13,7 +42,7 @@ In a common folder,
 
 * clone https://github.com/Microsoft/pxt to ``pxt`` folder
 * clone https://github.com/Microsoft/pxt-common-packages to ``pxt-common-packages`` folder
-* clone https://github.com/Microsoft/pxt-32 to ``pxt-32`` folder
+* clone https://github.com/Microsoft/pxt-arcade to ``pxt-arcade`` folder
 * go to ``pxt`` and run
 
 ```
@@ -28,7 +57,7 @@ npm install
 npm link ../pxt
 ```
 
-* go to ``pxt-32`` and run
+* go to ``pxt-arcade`` and run
 
 ```
 npm install
@@ -41,7 +70,7 @@ npm link ../pxt-common-packages
 From root github folder,
 
 ```
-cd pxt-32
+cd pxt-arcade
 pxt serve --cloud
 ```
 
