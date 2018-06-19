@@ -14,14 +14,25 @@ This setup gives you a local version of the editor and the ability to load packa
 ### Setup
 
 * install [Node.js 8+](https://nodejs.org/en/download/)
-* clone https://github.com/Microsoft/pxt-arcade to ``pxt-arcade`` folder
+* clone https://github.com/Microsoft/pxt-arcade to ``pxt-arcade`` folder. For example, from a git bash,
+
+```
+git clone https://github.com/Microsoft/pxt-arcade
+```
+
 * go to ``pxt-arcade`` and run
 
 ```
+cd pxt-arcade
 npm install
 ```
 
 Don't forget to periodically ``git pull`` and ``npm install`` to get the latest changes.
+
+```
+git pull
+npm install
+```
 
 ### Launching the server
 
