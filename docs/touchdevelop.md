@@ -102,7 +102,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     sprite.x += -1;
 })
 game.onUpdate(function () {
-    if (controller.right.wasPressed()) {
+    if (controller.right.isPressed()) {
         sprite.x += 1;
     }
 })

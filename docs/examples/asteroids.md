@@ -85,7 +85,7 @@ game.onUpdate(function () {
         m.setFlag(SpriteFlag.Ghost, true);
     }
     let now = control.millis()
-    if (controller.A.wasPressed()) {
+    if (controller.A.isPressed()) {
         let r = sprites.createProjectile(rocketImg, 0, -90)
         r.x = spaceship.x
         r.y = spaceship.y - 10
