@@ -6,6 +6,12 @@
         "ns.ts",
         "sprites.castle.jres",
         "sprites.castle.ts",
+        "sprites.space.jres",
+        "sprites.space.ts",
+        "bigFood.jres",
+        "bigFood.ts",
+        "smallFood.jres",
+        "smallFood.ts",
         "startup.ts"
     ],
     "core": true,
