@@ -11,7 +11,7 @@
   "Image.scroll|block": "scroll %myImage=variables_get by dx %dx dy %dy",
   "Image.setPixel|block": "set pixel of %myImage=variables_get at x %x y %y to %c=colorindexpicker",
   "helpers|block": "helpers",
-  "image.create|block": "create empty image with width %width height %height",
+  "image.create|block": "create image width %width height %height",
   "images._image|block": "%image",
   "images._screenImage|block": "%img",
   "images._spriteImage|block": "%img",
