@@ -1,6 +1,7 @@
 {
     "packages": {
         "approvedOrgs": [
+            "Microsoft"
         ],
         "approvedRepos": [
         ]
