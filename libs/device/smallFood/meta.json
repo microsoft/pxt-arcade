@@ -1,0 +1,11 @@
+{
+    "width": 16,
+    "height": 16,
+    "blockIdentity": "image.__imagePicker",
+    "creator": "image.ofBuffer",
+    "basename": "smallFood",
+    "star": {
+        "namespace": "sprites.food",
+        "mimeType": "image/x-mkcd-f4"
+    }
+}

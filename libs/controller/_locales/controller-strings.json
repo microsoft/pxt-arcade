@@ -1,6 +1,7 @@
 {
   "ControllerButtonEvent.Pressed|block": "pressed",
   "ControllerButtonEvent.Released|block": "released",
+  "ControllerButtonEvent.Repeated|block": "repeat",
   "controller.A|block": "A",
   "controller.Button.isPressed|block": "is %button **button** pressed",
   "controller.Button.onEvent|block": "on %button **button** %event",
