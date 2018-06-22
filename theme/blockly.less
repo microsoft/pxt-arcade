@@ -8,70 +8,11 @@
     font-family: @pageFont;
 }
 
-/* Sprite editor */
-.pixel-cell {
-    shape-rendering: crispedges;
-}
-
-.palette-selected {
-    stroke: orange;
-    stroke-width: 2px;
-}
-
-.palette-unselected {
-    stroke: none;
-}
-
-.toolbar-button {
-    cursor: pointer;
-
-    .toolbar-button-icon {
-        fill: white;
-        font-family: "Icons";
-    }
-
-    .toolbar-button-background {
-        fill: #7f8c8d;
-        fill-opacity: 0.8;
-    }
-}
-
-.toolbar-button.disabled {
-    cursor: not-allowed;
-
-    .toolbar-button-background {
-        fill: #aeaeae;
-    }
-}
-
-.toolbar-button:hover:not(.disabled) {
-    .toolbar-button-background {
-        fill-opacity: 0.9;
-        transition: fill-opacity 0.1s;
-    }
-}
-
-.toolbar-button:active:not(.disabled) {
-    .toolbar-button-background {
-        fill-opacity: 1;
-        transition: fill-opacity 0.1s;
-    }
-}
-
-.toolbar-button.toolbar-button-selected .toolbar-button-background {
-    stroke: orange;
-    stroke-width: 2px;
-}
-
-.toolbar-button.toolbar-option-selected .toolbar-button-background {
-    stroke: magenta;
-    stroke-width: 1px;
-}
-
-#sprite-editor-canvas {
-    cursor: crosshair;
-}
-
-#sprite-editor-palette .palette-swatch {
-    cursor: pointer;
+.blocklyDropDownContent .blocklyDropDownButton img {
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor;
 }

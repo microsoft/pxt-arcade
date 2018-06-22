@@ -1,0 +1,11 @@
+{
+    "width": 32,
+    "height": 32,
+    "blockIdentity": "image.__imagePicker",
+    "creator": "image.ofBuffer",
+    "basename": "bigFood",
+    "star": {
+        "namespace": "sprites.food",
+        "mimeType": "image/x-mkcd-f4"
+    }
+}
