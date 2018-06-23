@@ -42,12 +42,20 @@ This command launches a local web server. Note that this web server is meant for
 npm run serve
 ```
 
+### Developing an Image resource package
+
 ## Local Dev setup
 
-These instructions assume familiarity with dev tools and languages.
+These instructions allow you to test changes to pxt-core and pxt-common-packages. They are more involved
+as you need to clone and link 3 repos.
 
 * install Node.js 8+
 * (optional) install [Visual Studio Code](https://code.visualstudio.com/)
+* install the **pxt** command line tool
+
+```
+[sudo] npm install -g pxt
+```
 
 In a common folder,
 
@@ -82,14 +90,7 @@ From root github folder,
 
 ```
 cd pxt-arcade
-pxt serve --cloud
-```
-
-## Updating the tools
-
-If you would like to pick up the latest PXT build, simply run
-```
-pxt update
+pxt serve
 ```
 
 More instructions at https://github.com/Microsoft/pxt#running-a-target-from-localhost 
