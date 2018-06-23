@@ -60,13 +60,13 @@ npm run serve
 
 Once this project is setup, simply reload the editor after making changes on disk.
 
-## How to create sprite packs
+### How to create sprite packs
 
 Packs of images can be added to the editor using PXT packages. To create
 a package of images.
 
 1. Create a package (see steps above)
-1. Prepare your sprites in a spritesheet. All sprites in a sheet must be
+1. Prepare your sprites in a spritesheet: All sprites in a sheet must be
    the same size and arranged in a grid with no gaps. Spritesheets must be
    PNG files. An example spritesheet is located [here](https://github.com/Microsoft/pxt-arcade/blob/master/libs/device/smallFood/small.png)
 1. Inside the package directory, create a subdirectory where the assets will be
