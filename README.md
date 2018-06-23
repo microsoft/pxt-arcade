@@ -1,11 +1,11 @@
-# Casual game editor using Microsoft MakeCode 
+# Casual game editor using Microsoft MakeCode
 
 * [Try it live!](https://arcade.makecode.com)
 
 [![Build Status](https://travis-ci.org/Microsoft/pxt-arcade.svg?branch=master)](https://travis-ci.org/Microsoft/pxt-arcade)
 [![Community Discord](https://img.shields.io/discord/448979533891371018.svg)](https://aka.ms/makecodecommunity)
 
-This repo contains an editor built with [Microsoft MakeCode (PXT)](https://github.com/Microsoft/pxt). 
+This repo contains an editor built with [Microsoft MakeCode (PXT)](https://github.com/Microsoft/pxt).
 
 ## Local server setup
 
@@ -93,7 +93,34 @@ cd pxt-arcade
 pxt serve
 ```
 
-More instructions at https://github.com/Microsoft/pxt#running-a-target-from-localhost 
+More instructions at https://github.com/Microsoft/pxt#running-a-target-from-localhost
+
+
+
+## How to create sprite packs
+
+Packs of images can be added to the editor using PXT packages. To create
+a package of images
+
+1. Create a PXT package
+1. Prepare your sprites in a spritesheet. All sprites in a sheet must be
+   the same size and arranged in a grid with no gaps. Spritesheets must be
+   PNG files. An example spritesheet is located [here](https://github.com/Microsoft/pxt-arcade/blob/master/libs/device/smallFood/small.png)
+1. Inside the package directory, create a subdirectory where the assets will be
+   placed and copy the spritesheet containing your images into it.
+1. Create a file named `meta.json` in the directory you created. An example
+   `meta.json` can be found [here](https://github.com/Microsoft/pxt-arcade/blob/master/libs/device/smallFood/meta.json)
+   and documentation on all of the options can be found [here](https://makecode.com/cli/buildsprites)
+1. Create another `.json` file with the same basename as the spritesheet.
+1. Inside that file add a single property called `frames` which maps to an array of
+   names for the sprites. Indices start in the top left of the sheet and proceed
+   left to right. For a sample file see [here](https://github.com/Microsoft/pxt-arcade/blob/master/libs/device/smallFood/small.json)
+1. From the root of your package, run the command `pxt buildsprites SUBDIR`
+   where `SUBDIR` is the name of the directory containing the assets.
+1. Two files will be generated in the package root, one with the extenstion `.ts`
+   and one with the extension `.jres`. Add both to the package's `pxt.json`
+1. You're done! The images will show up in the Image category when the package
+   is added to a project
 
 
 # Contributing
