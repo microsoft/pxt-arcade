@@ -69,6 +69,12 @@ npm install
 npm run build
 ```
 
+* then install the ``pxt`` command line tool (only need to do this once):
+
+```
+npm install -g pxt
+```
+
 * go to ``pxt-common-packages`` and run
 
 ```
@@ -92,6 +98,7 @@ From root github folder,
 cd pxt-arcade
 pxt serve
 ```
+in the folder you wish to update.
 
 More instructions at https://github.com/Microsoft/pxt#running-a-target-from-localhost 
 
