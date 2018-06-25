@@ -1,8 +1,10 @@
 {
     "packages": {
         "approvedOrgs": [
+            "Microsoft"
         ],
         "approvedRepos": [
+            "adafruit/Circuit-Playground-Character-Icons"
         ]
     },
     "galleries": {

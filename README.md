@@ -1,11 +1,11 @@
-# Casual game editor using Microsoft MakeCode 
+# Casual game editor using Microsoft MakeCode
 
 * [Try it live!](https://arcade.makecode.com)
 
 [![Build Status](https://travis-ci.org/Microsoft/pxt-arcade.svg?branch=master)](https://travis-ci.org/Microsoft/pxt-arcade)
 [![Community Discord](https://img.shields.io/discord/448979533891371018.svg)](https://aka.ms/makecodecommunity)
 
-This repo contains an editor built with [Microsoft MakeCode (PXT)](https://github.com/Microsoft/pxt). 
+This repo contains an editor built with [Microsoft MakeCode (PXT)](https://github.com/Microsoft/pxt).
 
 ## Local server setup
 
@@ -42,12 +42,61 @@ This command launches a local web server. Note that this web server is meant for
 npm run serve
 ```
 
+### Creating and editing a package
+
+* go to ``/projects`` under the ``pxt-arcade`` folder
+* clone your package repo, say ``pxt-helloworld``
+* launch the server with ``npm run serve`` from the ``pxt-arcade`` folder using ``npm serve``
+* create a new project
+* go to **project settings** and click on **Edit settings as text**
+* add an entry in the dependency section that points to your project
+```
+    "dependencies": {
+        "circuit-playground": "*",
+        "helloworld": "file:../pxt-helloworld"
+    },
+```
+* click on the **Blocks** icon to reload the blocks.
+
+Once this project is setup, simply reload the editor after making changes on disk.
+
+### How to create sprite packs
+
+Packs of images can be added to the editor using PXT packages. To create
+a package of images.
+
+1. Create a package (see steps above)
+1. Prepare your sprites in a spritesheet: All sprites in a sheet must be
+   the same size and arranged in a grid with no gaps. Spritesheets must be
+   PNG files. An example spritesheet is located [here](https://github.com/Microsoft/pxt-arcade/blob/master/libs/device/smallFood/small.png)
+1. Inside the package directory, create a subdirectory where the assets will be
+   placed and copy the spritesheet containing your images into it.
+1. Create a file named `meta.json` in the directory you created. An example
+   `meta.json` can be found [here](https://github.com/Microsoft/pxt-arcade/blob/master/libs/device/smallFood/meta.json)
+   and documentation on all of the options can be found [here](https://makecode.com/cli/buildsprites)
+1. Create another `.json` file with the same basename as the spritesheet.
+1. Inside that file add a single property called `frames` which maps to an array of
+   names for the sprites. Indices start in the top left of the sheet and proceed
+   left to right. For a sample file see [here](https://github.com/Microsoft/pxt-arcade/blob/master/libs/device/smallFood/small.json)
+1. From the root of your package, run the command `pxt buildsprites SUBDIR`
+   where `SUBDIR` is the name of the directory containing the assets.
+1. Two files will be generated in the package root, one with the extenstion `.ts`
+   and one with the extension `.jres`. Add both to the package's `pxt.json`
+1. You're done! The images will show up in the Image category when the package
+   is added to a project
+
 ## Local Dev setup
 
-These instructions assume familiarity with dev tools and languages.
+These instructions allow you to test changes to pxt-core and pxt-common-packages. They are more involved
+as you need to clone and link 3 repos.
 
 * install Node.js 8+
 * (optional) install [Visual Studio Code](https://code.visualstudio.com/)
+* install the **pxt** command line tool
+
+```
+[sudo] npm install -g pxt
+```
 
 In a common folder,
 
@@ -59,12 +108,6 @@ In a common folder,
 ```
 npm install
 npm run build
-```
-
-* then install the ``pxt`` command line tool (only need to do this once):
-
-```
-npm install -g pxt
 ```
 
 * go to ``pxt-common-packages`` and run
@@ -88,19 +131,10 @@ From root github folder,
 
 ```
 cd pxt-arcade
-pxt serve --cloud
+pxt serve
 ```
 
-## Updating the tools
-
-If you would like to pick up the latest PXT build, simply run
-```
-pxt update
-```
-in the folder you wish to update.
-
-More instructions at https://github.com/Microsoft/pxt#running-a-target-from-localhost 
-
+More instructions at https://github.com/Microsoft/pxt#running-a-target-from-localhost
 
 # Contributing
 
