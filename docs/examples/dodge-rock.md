@@ -25,7 +25,7 @@ sprite = sprites.create(img`
 `, SpriteKind.Player)
 controller.controlSprite(sprite, 100, 100)
 sprite.setFlag(SpriteFlag.StayInScreen, true)
-game.onUpdateInterval(200, function () {
+game.onUpdateInterval(500, function () {
     info.changeScoreBy(1)
     if (Math.percentChance(50)) {
         projectile = sprites.createProjectile(sprites.space.spaceAsteroid0, -50, 0, SpriteKind.Enemy, item)
