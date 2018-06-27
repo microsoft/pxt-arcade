@@ -8,6 +8,7 @@
         ]
     },
     "galleries": {
+        "Blocks Games": "blocks-games",
         "Classics": "classics",
         "JavaScript Games": "javascript-games",
         "Lessons": "lessons"
