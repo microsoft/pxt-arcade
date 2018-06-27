@@ -1,7 +1,7 @@
 {
     "width": 32,
     "height": 32,
-    "blockIdentity": "image.__imagePicker",
+    "blockIdentity": "images._image",
     "creator": "image.ofBuffer",
     "basename": "bigFood",
     "star": {
