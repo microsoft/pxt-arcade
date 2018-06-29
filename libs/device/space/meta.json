@@ -1,7 +1,7 @@
 {
     "width": 16,
     "height": 16,
-    "blockIdentity": "image.__imagePicker",
+    "blockIdentity": "images._image",
     "creator": "image.ofBuffer",
     "star": {
         "namespace": "sprites.space",
