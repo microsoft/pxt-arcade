@@ -11,7 +11,7 @@
     ],
     "card": {
         "name": "Raspberry Pi Zero",
-        "description": "Custom Linxu image running on a Pi.",
+        "description": "Custom piCore Linux image running on a Pi. Play your games on BIG screen!",
         "learnMoreUrl": "https://arcade.makecode.com/rpi",
         "buyUrl": "https://www.adafruit.com/product/3464",
         "cardType": "hw",
