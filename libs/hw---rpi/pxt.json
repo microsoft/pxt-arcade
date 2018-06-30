@@ -1,6 +1,6 @@
 {
     "name": "hw---rpi",
-    "description": "Hardware definition - Raspberry Pi",
+    "description": "Raspberry Pi",
     "files": [
         "keys.cpp",
         "config.ts",
@@ -9,6 +9,13 @@
         "shims.d.ts",
         "device.d.ts"
     ],
+    "card": {
+        "name": "Raspberry Pi Zero",
+        "description": "Custom Linxu image running on a Pi.",
+        "url": "https://arcade.makecode.com/rpi",
+        "cardType": "hw",
+        "imageUrl": "/static/boards/rpi.jpg"
+    },
     "compileServiceVariant": "rpi",
     "dependencies": {
         "core---linux": "file:../core---linux",
