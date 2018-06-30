@@ -8,7 +8,7 @@
     "card": {
         "name": "STM32F401 board",
         "description": "Just a generic board, no branding yet.",
-        "url": "https://arcade.makecode.com/stm32f401",
+        "learnMoreUrl": "https://arcade.makecode.com/stm32f401",
         "cardType": "hw",
         "imageUrl": "/static/boards/stm.jpg"
     },

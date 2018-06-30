@@ -12,7 +12,8 @@
     "card": {
         "name": "Raspberry Pi Zero",
         "description": "Custom Linxu image running on a Pi.",
-        "url": "https://arcade.makecode.com/rpi",
+        "learnMoreUrl": "https://arcade.makecode.com/rpi",
+        "buyUrl": "https://www.adafruit.com/product/3464",
         "cardType": "hw",
         "imageUrl": "/static/boards/rpi.jpg"
     },
