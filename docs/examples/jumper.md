@@ -116,7 +116,7 @@ function createObstacle() {
         f f f f f
         f f f f f
         `,
-        -1 * obstacleSpeed, 0);
+        -1 * obstacleSpeed, 0, 0);
 
     // Start on the right side of the screen
     s.x = screen.width;

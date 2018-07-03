@@ -65,7 +65,7 @@ duck.onOverlap(function (other: Sprite) {
 })
 
 function launchObstacle() {
-    prevObstacle = sprites.createProjectile(pimg, -30, 0)
+    prevObstacle = sprites.createProjectile(pimg, -30, 0, 0)
     prevObstacle.y = Math.randomRange(30, 90)
     prevObstacle.onDestroyed(function () {
         info.changeScoreBy(1)
@@ -85,7 +85,7 @@ game.onUpdate(function () {
     }
 
     if (Math.random() < 0.02) {
-        let s = sprites.createProjectile(cloudImg, -45, 0)
+        let s = sprites.createProjectile(cloudImg, -45, 0, 0)
         s.y = Math.randomRange(0, screen.height())
         s.z = -1
         s.flags |= sprites.Flag.Ghost
