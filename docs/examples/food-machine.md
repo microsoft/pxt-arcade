@@ -177,15 +177,15 @@ game.onUpdateInterval(500, function () {
     imagery = list[Math.randomRange(0, list.length - 1)]
     if (control.millis() < 5000) {
         if (columcounter == 0) {
-            left = sprites.createProjectile(imagery, 0, 100)
+            left = sprites.createProjectile(imagery, 0, 100, 0)
             left.x = 40
             left.ay = -30
         } else if (columcounter == 1) {
-            middle = sprites.createProjectile(imagery, 0, 100)
+            middle = sprites.createProjectile(imagery, 0, 100, 0)
             middle.x = 80
             middle.ay = -30
         } else {
-            right = sprites.createProjectile(imagery, 0, 100)
+            right = sprites.createProjectile(imagery, 0, 100, 0)
             right.x = 120
             right.ay = -30
         }
