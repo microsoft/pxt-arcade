@@ -1,21 +1,15 @@
 THIRD PARTY SOFTWARE NOTICES AND INFORMATION
 Do Not Translate or Localize
 
-pxt-arcade incorporates material from third parties. Microsoft makes certain
-open source code available at http://3rdpartysource.microsoft.com, or you may
-send a check or money order for US $5.00, including the product name, the open
-source component name, and version number, to:
+pxt-arcade incorporates third party material from the projects listed below.
+The original copyright notice and the license under which Microsoft received
+such third party material are set forth below. Microsoft reserves all other
+rights not expressly granted, whether by implication, estoppel or otherwise.
 
-Source Code Compliance Team
-Microsoft Corporation
-One Microsoft Way
-Redmond, WA 98052
-USA
+In the event that we accidentally failed to list a required notice, please
+bring it to our attention. Post an issue or email us:
 
-Notwithstanding any other terms, you may reverse engineer this software to the
-extent required to debug changes to any libraries licensed under the GNU Lesser
-General Public License.
-
+           makecode@microsoft.com
 
 
 
