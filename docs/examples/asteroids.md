@@ -13,51 +13,51 @@ const spaceship = sprites.create(img`
 spaceship.y = 110
 
 const meteor = img`
-. . . 8 8 8 
+. . . 8 8 8
 . . 8 8 1 8 8 8
 . 8 8 1 1 8 8 8 8
 . . 8 8 8 8 1 1 8 8
 8 8 8 8 8 8 1 1 8
 . 8 8 8 8 8 8 8 8
 . . 8 8 1 8 8 8
-. . . 8 8 8 
+. . . 8 8 8
 `
 
 const meteorDeath = [
     img`
-. . . 8 8 8 
+. . . 8 8 8
 . . . 8 1 8 . 8
 . 8 8 . 1 . 8 8 8
 . . 8 8 . 8 1 1 8 8
 8 8 8 . 8 . 1 1 8
 . 8 . 8 8 8 . 8 8
 . . 8 8 1 8 8 .
-. . . 8 8 8 
+. . . 8 8 8
 `,
     img`
-. . . 8 8 8 
+. . . 8 8 8
 . . . 8 1 8 . .
 . 8 8 . . . . 8 8
 . . 8 . . . 1 1 8 8
 8 8 8 . . . . 1 8
 . . . . . . . . .
 . . . 8 1 8 . .
-. . . 8 8 8 
+. . . 8 8 8
 `,
     img`
-. . . . 8 . 
+. . . . 8 .
 . . . . . . . .
 . 8 . . . . . . .
 . . . . . . . . . 8
 . . . . . . . . .
 . . . . . . . . .
 . . . . . . . .
-. . . . 8 . 
+. . . . 8 .
 `]
 
 
 const rocketImg = img`
-. 3 
+. 3
 . 3
 3 3 3
 3 3 3
@@ -74,19 +74,19 @@ game.onUpdate(function () {
 
     // metero
     if (Math.random() < 0.05) {
-        let m = sprites.createProjectile(meteor, 0, Math.randomRange(30, 80))
+        let m = sprites.createProjectile(meteor, 0, Math.randomRange(30, 80), 0)
         m.x = Math.randomRange(10, 140)
     }
     // stars
     if (Math.random() < 0.1) {
-        let m = sprites.createProjectile(img`1`, 0, 40)
+        let m = sprites.createProjectile(img`1`, 0, 40, 0)
         m.x = Math.randomRange(0, screen.width)
         m.lifespan = Math.randomRange(100, 120)
         m.setFlag(SpriteFlag.Ghost, true);
     }
     let now = control.millis()
     if (controller.A.isPressed()) {
-        let r = sprites.createProjectile(rocketImg, 0, -90)
+        let r = sprites.createProjectile(rocketImg, 0, -90, 0)
         r.x = spaceship.x
         r.y = spaceship.y - 10
         r.onOverlap(function (other: Sprite) {

@@ -1,10 +1,17 @@
 {
     "name": "hw---stm32f401",
-    "description": "Hardware definition - STM32F401 board",
+    "description": "STM32F401 board",
     "files": [
         "config.ts",
         "device.d.ts"
     ],
+    "card": {
+        "name": "STM32F401 board",
+        "description": "Just a generic board, no branding yet.",
+        "learnMoreUrl": "https://arcade.makecode.com/stm32f401",
+        "cardType": "hw",
+        "imageUrl": "/static/boards/stm.jpg"
+    },
     "compileServiceVariant": "stm32f401",
     "dependencies": {
         "core---stm32f401re": "file:../core---stm32f401re",

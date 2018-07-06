@@ -17,8 +17,8 @@
         "libs/core---stm32f401re",
         "libs/core---linux",
         "libs/hw",
-        "libs/hw---stm32f401",
         "libs/hw---rpi",
+        "libs/hw---stm32f401",
         "libs/screen",
         "libs/screen---st7735",
         "libs/screen---linux",
@@ -53,7 +53,6 @@
             "compile": {
                 "hasHex": true,
                 "openocdScript": "source [find interface/stlink-v2.cfg]; source [find target/stm32f4x.cfg]",
-                "saveAsPNG": false,
                 "vtableShift": 4
             },
             "compileService": {
@@ -71,7 +70,6 @@
             "compile": {
                 "hasHex": true,
                 "useELF": true,
-                "saveAsPNG": false,
                 "runtimeIsARM": true,
                 "vtableShift": 4,
                 "flashCodeAlign": 256,

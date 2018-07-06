@@ -7,7 +7,7 @@ let frames = [img`
  . . 3 3
  . . 3 3
  . . 3 .
- . 3 3 3 3 
+ . 3 3 3 3
  3 . 3 3 . 3
  3 . 3 3 . 3
  . . 3 3
@@ -19,7 +19,7 @@ let frames = [img`
  . . 3 3
  . . 3 3
  . . 3 .
- . 3 3 3 3 
+ . 3 3 3 3
  3 . 3 3 . 3
  3 . 3 3 . 3
  . . 3 3
@@ -46,7 +46,7 @@ function newHouse() {
     let w = currHouse ? Math.randomRange(40, 80) : screen.width
     let img = image.create(w, 70)
     img.fill(Math.randomRange(2, 5))
-    let s = sprites.createProjectile(img, -80, 0)
+    let s = sprites.createProjectile(img, -80, 0, 0)
     if (!currHouse) {
         s.y = 110
         s.x = screen.width / 2

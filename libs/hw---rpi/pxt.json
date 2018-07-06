@@ -1,6 +1,6 @@
 {
     "name": "hw---rpi",
-    "description": "Hardware definition - Raspberry Pi",
+    "description": "Raspberry Pi",
     "files": [
         "keys.cpp",
         "config.ts",
@@ -9,6 +9,14 @@
         "shims.d.ts",
         "device.d.ts"
     ],
+    "card": {
+        "name": "Raspberry Pi Zero",
+        "description": "Custom piCore Linux image running on a Pi. Play your games on a BIG screen!",
+        "learnMoreUrl": "https://arcade.makecode.com/rpi",
+        "buyUrl": "https://www.adafruit.com/product/3464",
+        "cardType": "hw",
+        "imageUrl": "/static/boards/rpi.jpg"
+    },
     "compileServiceVariant": "rpi",
     "dependencies": {
         "core---linux": "file:../core---linux",
