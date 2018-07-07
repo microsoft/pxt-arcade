@@ -7,7 +7,7 @@
 [
 {
   "name": "Cherry Pickr Tutorial",
-  "description": "Collect as many cherries as possible",
+  "description": "Learn the basics of creating a game",
   "url":"/lessons/cherry-pickr-lesson",
   "cardType": "lesson",
   "imageUrl": "/static/examples/cherry-pickr.png"
