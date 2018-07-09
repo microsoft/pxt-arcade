@@ -20,7 +20,6 @@
 * [JavaScript Games](/javascript-games)
     * [Asteroids](/examples/asteroids)
     * [Car Race](/examples/car-race)
-    * [Cherry Pickr](/examples/cherry-pickr)
     * [Collisions](/examples/collisions)
     * [Duck](/examples/duck)
     * [Guess the Letter](/examples/guess-the-letter)
