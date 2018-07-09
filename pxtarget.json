@@ -12,6 +12,7 @@
         "githubPackages": true
     },
     "bundleddirs": [
+        "libs/animation",
         "libs/base",
         "libs/core",
         "libs/core---stm32f401re",
