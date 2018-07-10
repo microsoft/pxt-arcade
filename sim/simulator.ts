@@ -190,7 +190,7 @@ namespace pxsim {
                 }
             }
 
-            this.view = new ScreenView(this.screenState, this.canvas, () => this.layout());
+            this.view = new ScreenView(this.screenState, this.canvas, () => this.layout(), () => this.updateStats());
             this.layout()
 
             throttleAnimation(cb => window.onresize = cb, () => this.layout())
@@ -200,6 +200,10 @@ namespace pxsim {
             return Promise.resolve();
         }
 
+        updateStats() {
+            this.stats.textContent = this.screenState.stats;
+            this.tryScreenshot();
+        }
 
         layout() {
             const minControlWidth = 100;
@@ -228,7 +232,6 @@ namespace pxsim {
         }
     }
 
-
     class ScreenView {
         state: ScreenState;
         canvas: HTMLCanvasElement;
@@ -245,7 +248,7 @@ namespace pxsim {
         private cachedWidth: number;
         private cachedHeight: number;
 
-        constructor(state: ScreenState, canvas: HTMLCanvasElement, private onResize: () => void) {
+        constructor(state: ScreenState, canvas: HTMLCanvasElement, private onResize: () => void, private onUpdate: () => void) {
             this.state = state;
             this.canvas = canvas;
             this.context = this.canvas.getContext("2d");
@@ -259,7 +262,7 @@ namespace pxsim {
         }
 
         attach() {
-            throttleAnimation(cb => this.state.onChange = cb, () => this.redraw());
+            throttleAnimation(cb => this.state.onChange = cb, () => this.redraw(true));
         }
 
         centerInBox(left: number, top: number, width: number, height: number) {
@@ -282,7 +285,7 @@ namespace pxsim {
             this.canvas.style.top = (this.boxTop + ((this.boxHeight - actualHeight) / 2)) + "px";
             this.canvas.width = actualWidth;
             this.canvas.height = actualHeight;
-            if (this.palette) this.redraw();
+            if (this.palette) this.redraw(false);
         }
 
         protected refreshPalette() {
@@ -294,7 +297,7 @@ namespace pxsim {
             }
         }
 
-        protected redraw() {
+        protected redraw(screenStateChanged: boolean) {
             if (this.cachedHeight !== this.state.height || this.cachedWidth !== this.state.width) {
                 this.cachedHeight = this.state.height;
                 this.cachedWidth = this.state.width;
@@ -310,11 +313,10 @@ namespace pxsim {
                     }
                 }
             }
+            if (screenStateChanged) {
+                this.onUpdate()
+            }
         }
-    }
-
-    function RGBtoHTMLColor(color: number) {
-        return `rgb(${(color >> 16) & 0xff},${(color >> 8) & 0xff},${color & 0xff})`
     }
 
     function indicateFocus(hasFocus: boolean) {
