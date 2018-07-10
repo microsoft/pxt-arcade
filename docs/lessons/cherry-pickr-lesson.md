@@ -96,7 +96,7 @@ We can rename our character from ``agent`` to ``player`` by clicking the drop do
 
 To move the player, click **Controller** in the Toolbox and drag out a ``||controller:control sprite||`` block into the ``|||loops:on start||`` block. Make sure the variable selected is ``agent``.  
 
-Then go to ``||sceme:Scene||`` and under the **Camera** category, drag the ``||scene:camera follow sprite||`` block into the ``||loops:on start||`` block. Make sure the variable selected is ``agent``.  
+Then go to ``||scene:Scene||`` and under the **Camera** category, drag the ``||scene:camera follow sprite||`` block into the ``||loops:on start||`` block. Make sure the variable selected is ``agent``.  
 
 We do this so that when the player moves around the map, they will remain at the center of the screen.  
 To make the player move faster, set the ``vx`` and ``vy`` to `150`.
@@ -108,12 +108,24 @@ enum SpriteKind {
 }
 let agent: Sprite = null
 game.splash("Cherry Pickr")
+scene.setTileMap(img`
+6 6 6 6 6 6 6 6 6 6 
+3 3 3 3 3 3 3 3 3 3 
+5 5 5 5 5 5 5 5 5 5 
+7 7 7 7 7 7 7 7 7 7 
+9 9 9 9 9 9 9 9 9 9 
+4 4 4 4 4 4 4 4 4 4 
+2 2 2 2 2 2 2 2 2 2 
+a a a a a a a a a a 
+`)
 agent = sprites.create(sprites.castle.princessFront0, SpriteKind.Player)
 controller.controlSprite(agent, 150, 150)
 scene.cameraFollowSprite(agent)
 ```
 
-Now we are able to move our player! In the simulator, test out the movement of the player.
+Now we are able to move our player! In the simulator, test out the movement of the player.  
+
+![Player Moving](..\static\movingplayer.gif)
 
 ## Part Four: Spawn Cherries on the Screen
 
@@ -195,9 +207,9 @@ info.setScore(0)
 
 ## Part Six: Picking Up Cherries
 
-The last task is to let our player to actually collect cherries. Go to ``||Sprites||`` and under the **Overlaps** category, drag out ``||sprites:on sprite of kind Player overlaps||``. 
+The last task is to let our player to actually collect cherries. Go to ``||sprites:Sprites||`` and under the **Overlaps** category, drag out ``||sprites:on sprite of kind Player overlaps||``. 
 
-Next, in the ``||variables:variables||`` tab, drag the ``item`` variable onto the ``otherSprite`` variable to replace it. Also, drag out the ``agent`` variable and drop it onto the ``sprite`` variable. Then go to the second ``Player`` drop down and select ``Item``.  
+Next, in the ``||variables:Variables||`` tab, drag the ``item`` variable onto the ``otherSprite`` variable to replace it. Also, drag out the ``agent`` variable and drop it onto the ``sprite`` variable. Then go to the second ``Player`` drop down and select ``Item``.  
 
 ### Changing the Score
 
@@ -242,3 +254,5 @@ game.onUpdateInterval(500, function () {
 ```
 
 And now we have a fully functioning game!
+
+![Working Game](..\static\workinggame.gif)
