@@ -1,6 +1,8 @@
 # Cherry Pickr
 
-Collect as many cherries before time runs out!  
+![Game view in simulator](/static/lessons/cherry-pickr/cherry-pickr.png)
+
+Collect as many cherries as you can before time runs out!  
 
 ## Learning Objective
 
@@ -125,7 +127,7 @@ scene.cameraFollowSprite(agent)
 
 Now we are able to move our player! In the simulator, test out the movement of the player.  
 
-![Player Moving](..\static\movingplayer.gif)
+![Player moving on the screen](/static/lessons/cherry-pickr/movingplayer.gif)
 
 ## Part Four: Spawn Cherries on the Screen
 
@@ -255,4 +257,4 @@ game.onUpdateInterval(500, function () {
 
 And now we have a fully functioning game!
 
-![Working Game](..\static\workinggame.gif)
+![Working Game](/static/lessons/cherry-pickr/workinggame.gif)
