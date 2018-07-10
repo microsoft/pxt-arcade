@@ -96,7 +96,7 @@ We can rename our character from ``agent`` to ``player`` by clicking the drop do
 
 ### Moving
 
-To move the player, click **Controller** in the Toolbox and drag out a ``||controller:control sprite||`` block into the ``|||loops:on start||`` block. Make sure the variable selected is ``agent``.  
+To move the player, click ``||controller:Controller||`` in the Toolbox and drag out a ``||controller:control sprite||`` block into the ``|||loops:on start||`` block. Make sure the variable selected is ``agent``.  
 
 Then go to ``||scene:Scene||`` and under the **Camera** category, drag the ``||scene:camera follow sprite||`` block into the ``||loops:on start||`` block. Make sure the variable selected is ``agent``.  
 
