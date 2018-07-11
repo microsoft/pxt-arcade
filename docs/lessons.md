@@ -21,5 +21,6 @@
 ```
 
 ## See Also
-[Cherry Pickr](/lessons/cherry-pickr-lesson)
+
+[Cherry Pickr](/lessons/cherry-pickr-lesson),
 [Coordinate Walker](/lessons/coordinate-walker)
