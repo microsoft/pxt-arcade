@@ -6,11 +6,11 @@
 ```codecard
 [
 {
-  "name": "Cherry Pickr Tutorial",
+  "name": "Cherry Pickr",
   "description": "Learn the basics of creating a game",
   "url":"/lessons/cherry-pickr-lesson",
   "cardType": "lesson",
-  "imageUrl": "/static/examples/cherry-pickr.png"
+  "imageUrl": "/static/lessons/cherry-pickr.png"
 },
 {
   "name": "Coordinate Walker",
@@ -21,5 +21,5 @@
 ```
 
 ## See Also
-[Cherry Pickr Tutorial](/lessons/cherry-pickr-lesson)
+[Cherry Pickr](/lessons/cherry-pickr-lesson)
 [Coordinate Walker](/lessons/coordinate-walker)
