@@ -3,6 +3,7 @@
 ## Projects #projects
 
 * [Lessons](/lessons)
+    * [Cherry Pickr](/lessons/cherry-pickr)
     * [Coordinate Walker](/lessons/coordinate-walker)
 
 ## Classic Games
