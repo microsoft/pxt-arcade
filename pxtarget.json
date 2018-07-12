@@ -98,7 +98,8 @@
         "variablesBlocks": true,
         "textBlocks": true,
         "functionBlocks": true,
-        "listsBlocks": true
+        "listsBlocks": true,
+        "bannedCategories": ["pins", "console", "control"]
     },
     "simulator": {
         "autoRun": true,
