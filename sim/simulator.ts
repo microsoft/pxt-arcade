@@ -84,6 +84,7 @@ namespace pxsim {
         private lastKey = 0
         private lastScreenshot: Uint32Array
         private lastScreenshotTime = 0;
+        private view: ScreenView;
 
         private controls: ControlPad;
 
@@ -155,7 +156,7 @@ namespace pxsim {
 
         tryScreenshot() {
             let now = Date.now()
-            // if there was a key since last screenshot and at least 100ms ago, 
+            // if there was a key since last screenshot and at least 100ms ago,
             // and last screenshot was at least 3s ago, record a new one
             if (now - this.lastScreenshotTime > 3000 &&
                 this.lastKey < now - 100 &&
@@ -189,47 +190,132 @@ namespace pxsim {
                 }
             }
 
-            let requested = false
+            this.view = new ScreenView(this.screenState, this.canvas, () => this.layout(), () => this.updateStats());
+            this.layout()
 
-            this.screenState.onChange = () => {
-                this.canvas.width = this.screenState.width
-                this.canvas.height = this.screenState.height
-
-                const ctx = this.canvas.getContext("2d")
-                ctx.imageSmoothingEnabled = false
-                const imgdata = ctx.getImageData(0, 0, this.screenState.width, this.screenState.height)
-                const arr = new Uint32Array(imgdata.data.buffer)
-
-                let flush = () => {
-                    requested = false
-                    ctx.putImageData(imgdata, 0, 0)
-                    this.stats.textContent = this.screenState.stats;
-                    var width = this.canvas.scrollWidth < this.canvas.scrollHeight ? this.canvas.scrollWidth : this.canvas.scrollHeight;
-                    this.background.style.width = `${width + 20}px`;
-                    this.tryScreenshot()
-                }
-
-                // after we did one-time setup, redefine ourselves to be quicker
-                this.screenState.onChange = () => {
-                    arr.set(this.screenState.screen)
-                    if (!requested) {
-                        requested = true
-                        window.requestAnimationFrame(flush)
-                    }
-                }
-                // and finally call the redefined self
-                this.screenState.onChange()
-            }
-
-            window.onresize = () => {
-                var width = this.canvas.scrollWidth < this.canvas.scrollHeight ? this.canvas.scrollWidth : this.canvas.scrollHeight;
-                this.background.style.width = `${width + 20}px`;
-            }
-
+            throttleAnimation(cb => window.onresize = cb, () => this.layout())
             let info = document.getElementById("instructions")
             indicateFocus(document.hasFocus());
 
             return Promise.resolve();
+        }
+
+        updateStats() {
+            this.stats.textContent = this.screenState.stats;
+            this.tryScreenshot();
+        }
+
+        layout() {
+            const minControlWidth = 100;
+            const wWidth = window.innerWidth;
+            const wHeight = window.innerHeight;
+            if (wWidth < wHeight) {
+                // Place controls below
+                this.view.centerInBox(0, 0, window.innerWidth, window.innerHeight - minControlWidth);
+
+                const bottom = this.view.boundingBox().bottom;
+                const controlsHeight = window.innerHeight - bottom;
+
+                this.controls.moveDPad(0, window.innerHeight - controlsHeight, controlsHeight);
+                this.controls.moveButtons(window.innerWidth - controlsHeight, window.innerHeight - controlsHeight, controlsHeight);
+            }
+            else {
+                // Place controls on sides
+                const availableWidth = window.innerWidth - minControlWidth * 2;
+                this.view.centerInBox(minControlWidth, 0, availableWidth, window.innerHeight);
+
+                const left = this.view.boundingBox().left;
+
+                this.controls.moveDPad(0, window.innerHeight - left, left);
+                this.controls.moveButtons(window.innerWidth - left, window.innerHeight - left, left);
+            }
+        }
+    }
+
+    class ScreenView {
+        state: ScreenState;
+        canvas: HTMLCanvasElement;
+        context: CanvasRenderingContext2D;
+        cellWidth: number;
+
+        palette: string[];
+
+        boxLeft: number;
+        boxTop: number;
+        boxWidth: number;
+        boxHeight: number;
+
+        private cachedWidth: number;
+        private cachedHeight: number;
+
+        constructor(state: ScreenState, canvas: HTMLCanvasElement, private onResize: () => void, private onUpdate: () => void) {
+            this.state = state;
+            this.canvas = canvas;
+            this.context = this.canvas.getContext("2d");
+
+            this.centerInBox(0, 0, 200, 200)
+            this.context.fillStyle = "#000000";
+            this.context.fill();
+
+            this.attach();
+            this.refreshPalette();
+        }
+
+        attach() {
+            throttleAnimation(cb => this.state.onChange = cb, () => this.redraw(true));
+        }
+
+        centerInBox(left: number, top: number, width: number, height: number) {
+            this.boxLeft = left;
+            this.boxTop = top;
+            this.boxHeight = height;
+            this.boxWidth = width;
+            this.resize();
+        }
+
+        boundingBox() {
+            return this.canvas.getBoundingClientRect();
+        }
+
+        protected resize() {
+            this.cellWidth = Math.max(1, Math.floor(Math.min(this.boxWidth / this.state.width, this.boxHeight / this.state.height)));
+            const actualWidth = this.cellWidth * this.state.width;
+            const actualHeight = this.cellWidth * this.state.height;
+            this.canvas.style.left = (this.boxLeft + ((this.boxWidth - actualWidth) / 2)) + "px";
+            this.canvas.style.top = (this.boxTop + ((this.boxHeight - actualHeight) / 2)) + "px";
+            this.canvas.width = actualWidth;
+            this.canvas.height = actualHeight;
+            if (this.palette) this.redraw(false);
+        }
+
+        protected refreshPalette() {
+            this.palette = [];
+
+            for (let i = 0; i < this.state.palette.length; i++) {
+                const c = this.state.palette[i];
+                this.palette.push(`rgb(${c & 0xff},${(c >> 8) & 0xff},${(c >> 16) & 0xff})`);
+            }
+        }
+
+        protected redraw(screenStateChanged: boolean) {
+            if (this.cachedHeight !== this.state.height || this.cachedWidth !== this.state.width) {
+                this.cachedHeight = this.state.height;
+                this.cachedWidth = this.state.width;
+                this.refreshPalette();
+                this.resize();
+                this.onResize();
+            }
+            else {
+                for (let x = 0; x < this.state.width; x++) {
+                    for (let y = 0; y < this.state.height; y++) {
+                        this.context.fillStyle = this.palette[this.state.lastImage.data[x + y * this.state.width] & 0xff]
+                        this.context.fillRect(x * this.cellWidth, y * this.cellWidth, this.cellWidth, this.cellWidth);
+                    }
+                }
+            }
+            if (screenStateChanged) {
+                this.onUpdate()
+            }
         }
     }
 
@@ -246,6 +332,18 @@ namespace pxsim {
             b.classList.remove("has-focus");
             c.classList.add("no-focus");
         }
+    }
+
+    function throttleAnimation(event: (cb: () => void) => void, handler: () => void) {
+        let requested = false;
+        event(() => {
+            if (!requested) {
+                window.requestAnimationFrame(() => {
+                    handler();
+                    requested = false;
+                });
+            }
+        })
     }
 }
 
