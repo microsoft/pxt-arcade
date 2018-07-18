@@ -1,7 +1,5 @@
 # CS INTRO -- BETA
 
-* [CS Intro](/courses/csintro)
-
 ## [Orientation](/courses/csintro1/orientation)
 
 * [Birthday Algorithm](/courses/csintro1/orientation/birthday-algorithm)
