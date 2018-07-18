@@ -119,6 +119,11 @@ agent.say(":)")
 What would you do if you needed to keep track of the number of coins the player has earned, the number of keys they have collected, and the number of chicken legs they have to eat. Would using ``||info:score||`` be helpful in storing all these values?
 ### ~
 
+## Rubrics
+
+### ~hint
+Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed.  This means that to get the highest score student must pass all previous rubrics.
+### ~
 ### Task rubrics
 
 | points | 5 | 7 | 9 | 10 |

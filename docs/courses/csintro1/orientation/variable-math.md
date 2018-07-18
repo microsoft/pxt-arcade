@@ -31,7 +31,7 @@ https://youtu.be/Dv-5K9bWcps
 2. Create the sample code and run the code
 3. Save the code for the task (name it "equation variable") 
 
-https://makecode.com/_RdXJ5jMxubqA
+[equation variable](https://makecode.com/_RdXJ5jMxubqA)
 
 ```blocks  
 let answer = 0

@@ -14,7 +14,7 @@ In this activity student will work with:
 
 ## Concept: Opening a game
 
-# TODO: Video showing game being opened, explaining simulation
+# Video showing game being opened, explaining simulation
 
 ## Student Task 1: Playing Space Destroyer
 1. Click the "Space Destroyer" example game under the "Blocks Games" category
@@ -22,7 +22,7 @@ In this activity student will work with:
 3. Press left and right on the direction pad to move the space ship, and press a to fire the laser. 
 4. Look at what happens when the laser collides with an asteroid.
 
-# TODO: Video showing creation of a new project
+# Video showing creation of a new project
 
 ## Student Task 2: Starting your own game
 1. Press the "Home" button in the upper left corner to return to the homepage
@@ -34,7 +34,6 @@ In this activity student will work with:
 5. At the bottom of the screen, select a name to save this game as (e.g. - "first game"), and click "Download" to download it.
 ![Downloading the game](/static/courses/csintro1/orientation/download.gif)
 6. Students will turn in this file today, so be sure to keep track of it!
-
 
 ## Student Task 3: Importing your game
 To make sure you saved your project properly, we should import it back into MakeCode Arcade!
@@ -60,13 +59,11 @@ There is one other common way that we will keep track of our games: by making li
 3. Include the image created in task 2
 4. Include the link created in task 4 here
 
-### Rubric
+## Rubrics
 
 ### ~hint
 Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed.  This means that to get the highest score student must pass all previous rubrics.
 ### ~
-
-## Rubrics
 
 ### tasks rubric
 | points | 5 | 7 | 9 | 10 |
@@ -79,7 +76,6 @@ Start on the left rubric column (5pts), if the work meets the rubric measurement
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | Student answered #1 & #2  | clear explanation of using sprite say | clear explanation of email game choice (file or link)  |  explanations use an creative example or analogy |
+| Explanation | Student answered #1 & #2  | clear explanation of using sprite say | clear explanation of email game choice (file or link) |  explanations use an creative example or analogy |
 
 ### Score = \_\_\_\_\_\_ /10 
-

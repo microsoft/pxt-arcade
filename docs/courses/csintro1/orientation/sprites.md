@@ -17,7 +17,7 @@ https://youtu.be/xujAdjmNPgc
 
 Sprites are created using the Sprites menu - choosing the set block  
 
-https://makecode.com/_g3CcuWigwKR8 
+[Empty Sprite Example](https://makecode.com/_g3CcuWigwKR8)
 ```blocks
 enum SpriteKind {
     Player,
@@ -51,7 +51,7 @@ and then using the sprite editor to color pixels for a sprite design.
 
 Look at the blocks and note that a name for the sprite (`actor`) is set to an image for the sprite (it's hot sauce!).
 
-https://makecode.com/_VEXXpq9RtRfT
+[Hot Sauce Example Sprite](https://makecode.com/_VEXXpq9RtRfT)
 ```blocks
 enum SpriteKind {
     Player,
