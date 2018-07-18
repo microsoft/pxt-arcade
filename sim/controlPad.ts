@@ -14,9 +14,10 @@ namespace pxsim {
     const BUTTON_DOWN_COLOR = "#DE5F26";
 
     const aspectRatio = 2; // width / height
-    
+
     export class ControlPad {
-        root: s.SVG;
+        dPadRoot: s.SVG;
+        buttonsRoot: s.SVG;
 
         protected dPad: s.Group;
         protected buttons: s.Group;
@@ -30,7 +31,8 @@ namespace pxsim {
         protected secondary: s.Circle;
 
         constructor(parent: Element) {
-            this.root = new s.SVG(parent);
+            this.dPadRoot = new s.SVG(parent);
+            this.buttonsRoot = new s.SVG(parent);
             this.buildDom();
         }
 
@@ -57,23 +59,39 @@ namespace pxsim {
             }
         }
 
+        moveDPad(left: number, top: number, width: number) {
+            this.dPadRoot.el.style.position = "absolute";
+            this.dPadRoot.el.style.left = left + "px";
+            this.dPadRoot.el.style.top = top + "px";
+            this.dPadRoot.setAttribute("height", width).setAttribute("width", width);
+
+            const scale = width / (COMPONENT_WIDTH + PADDING * 2);
+            this.dPad.scale(width / (COMPONENT_WIDTH + PADDING * 2));
+            this.dPad.translate(PADDING * scale, PADDING * scale);
+        }
+
+        moveButtons(left: number, top: number, width: number) {
+            this.buttonsRoot.el.style.position = "absolute";
+            this.buttonsRoot.el.style.left = left + "px";
+            this.buttonsRoot.el.style.top = top + "px";
+            this.buttonsRoot.setAttribute("height", width).setAttribute("width", width);
+
+            const scale = width / (COMPONENT_WIDTH + PADDING * 2);
+            this.buttons.scale(width / (COMPONENT_WIDTH + PADDING * 2));
+            this.buttons.translate(PADDING * scale, PADDING * scale);
+        }
+
         protected buildDom() {
             this.drawDirectionalPad();
             this.drawButtonGroup();
 
-            const height = COMPONENT_WIDTH + PADDING * 2;
-            const width = height * aspectRatio;
-
-            this.dPad.translate(PADDING, PADDING);
-            this.buttons.translate(width - PADDING - COMPONENT_WIDTH, PADDING);
-
-            this.root.setAttribute("height", height).setAttribute("width", width);
+            this.moveDPad(0, 0, COMPONENT_WIDTH)
+            this.moveButtons(0, 0, COMPONENT_WIDTH);
         }
 
-
         protected drawDirectionalPad() {
-            this.dPad = this.root.group();
-            
+            this.dPad = this.dPadRoot.group();
+
             this.dPad.draw("polygon")
                 .at(0, 0)
                 .fill(D_PAD_COLOR)
@@ -123,14 +141,14 @@ namespace pxsim {
         }
 
         protected bindPadEvents(pad: s.Rect, target: Key | Key[]) {
-            const down = Array.isArray(target) ? 
+            const down = Array.isArray(target) ?
                 () => target.forEach(key => board().handleKeyEvent(key, true)) :
                 () => board().handleKeyEvent(target, true);
-            
-            const up = Array.isArray(target) ? 
+
+            const up = Array.isArray(target) ?
                 () => target.forEach(key => board().handleKeyEvent(key, false)) :
                 () => board().handleKeyEvent(target, false);
-            
+
             pad.onDown(down);
             pad.onLeave(up);
             pad.onUp(up);
@@ -138,7 +156,7 @@ namespace pxsim {
         }
 
         protected drawButtonGroup() {
-            this.buttons = this.root.group();
+            this.buttons = this.buttonsRoot.group();
 
             this.primary = this.drawButton("A", 2.5 * DRAW_UNIT, DRAW_UNIT, Key.A);
             this.secondary = this.drawButton("B", 0.75 * DRAW_UNIT, 2.5 * DRAW_UNIT, Key.B);
@@ -152,7 +170,7 @@ namespace pxsim {
                 .radius(r)
                 .fill(BUTTON_COLOR)
                 .stroke(BUTTON_DOWN_COLOR, 2);
-            
+
             this.buttons.draw("text")
                 .at(cx, cy)
                 .text(symbol)

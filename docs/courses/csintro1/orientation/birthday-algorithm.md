@@ -22,6 +22,8 @@ Result is in the format `month.day`
 example: June 1st would be `6.01`
 ### ~
 
+https://youtu.be/74F-iBs-H3g 
+
 Follow the Birthday Algorithm step below working with a partner(s). Record the steps and the answer at each steps so you can troubleshoot. Doing this with just paper and pencil adds to the challenge. If the trick doesn't work retrace steps and check each calculation with partner. 
 
 Produce a total at the end of each step and use the total in the next step until producing the birthday `month.day`. 

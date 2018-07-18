@@ -27,6 +27,7 @@ canvas {
 #screen-back {
     background: #FFFAE7;
     height: calc(100% - 10px);
+    width: calc(100% - 10px);
     position: absolute;
     z-index: -1;
     margin-left: auto;
@@ -38,8 +39,6 @@ canvas {
 }
 
 #screen {
-    display: flex;
-    flex-direction: column;
     align-content: center;
     justify-content: center;
     align-items: center;
@@ -51,17 +50,11 @@ canvas {
 }
 
 #paint-surface {
-    margin: 20px;
-    object-fit: contain;
-    display: inline;
-    height: calc(100% - 40px);
-    width: calc(100% - 40px);
-
+    position: absolute;
     filter: drop-shadow(0px 0px 10px #6B4F76)
 }
 
 #paint-surface-container {
-    flex: 5;
     text-align: center;
     overflow-y: hidden;
     width: 100%;
@@ -75,8 +68,9 @@ canvas {
 }
 
 #controls {
-    flex: 1;
+    position: absolute;
     width: 100%;
+    height: 100%;
     text-align: center;
 }
 
