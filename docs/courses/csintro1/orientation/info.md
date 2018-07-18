@@ -1,8 +1,8 @@
-# Activity: Info Variables
+# Activity: Info Category Variable Properties
 
-In this section we worked with variables we created. A lot of the time, though, we want to interact with variables and values that were created elsewhere.
+We have previously worked with variables we created. A lot of the time, software developers need to interact with variables and values that were created elsewhere.
 
-The ``||info:info||`` category in blocks contains a few variables (known as properties) which we are allowed to update. These properties have to do with score, life, and time. We will take a quick look at how to use these variables in our code.
+The ``||info:info||`` category in blocks contains a few variables (data properties) which we are allowed to update. These properties have to do with score, life, and time. We will take a quick look at how to use these as variables in our code.
 
 In this activity students will:
 
@@ -74,11 +74,52 @@ When a nurse needs to take a patient's heart rate, they do not want to sit aroun
 2. Create the sample code and run the code
 3. Save the code for the task (name it "button rate")
 4. Change the ``||sprites:say||`` block so that after 6 seconds have passed it says the ``||info:score||``. You may also want it to show a message explaining what the value represents
+
 ### ~hint
-Review the [Variable Math](/courses/csintro1/variables/variable-math) section if you're having trouble making the sprite say the ``||info:score||`` - it is stored as a number.
+
+Review the [Variable Math](/courses/csintro1/orientation/variable-math) activity if you're having trouble making the sprite say the ``||info:score||`` - it is stored as a number.
+
 ### ~
-5. Use the ``||math:x||`` block to multiply the ``||info:score||`` by 10 when you make the sprite ``||sprites:say||`` it, so that it will correspond to one minute's worth of button presses.
-6. Challenge: instead of outputting an exact estimate, give a range that the button presses will likely fall into - estimate this by making the low end of the range correspond to ``(score - 1) * 10``, and the high end of the range correspond to ``(score + 1) * 10``. For example, if the score were 5, the output should be something along the lines of "between 40 and 60".
+
+5. Use the ``||math:x||`` block to multiply the ``||info:score||`` by 10 and store it in a variable called `minuteScore`, so it will correspond to one minute's worth of button presses.
+6. Make the sprite ``||sprites:say||`` the result stored in `minuteScore`. Edit the sprite so it looks better.
+7. Challenge: instead of outputting an exact estimate, give a range that the button presses will likely fall into - estimate this by making the low end of the range correspond to ``(score - 1) * 10``, and the high end of the range correspond to ``(score + 1) * 10``. For example, if the score were 5, the output should be something along the lines of "between 40 and 60".
+
+### ~hint
+
+For the Challenge 
+Remember to use order of operations and parenthesis (JavaScript) to get the right equation,
+
+For multiple joins we can chain the ``||text:join ||`` blocks just as we did for addition. 
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . 6 6 6 6 6 6 6 6 6 6 6 . . . 
+. . 6 . . . . . . . . . 6 . . . 
+. . 6 . 6 6 . . . 6 6 . 6 . . . 
+. . 6 . . . . . . . . . 6 . . . 
+. . 6 . . . . . . . . . 6 . . . 
+. . 6 . 6 . . . . 6 6 . 6 . . . 
+. . 6 . 6 6 6 6 6 6 . . 6 . . . 
+. . 6 . . . . . . . . . 6 . . . 
+. . 6 6 6 6 6 6 6 6 6 6 6 . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+mySprite.say("score " + ("is " + 5))
+```
+
+### ~
 
 ```blocks
 enum SpriteKind {
@@ -88,7 +129,7 @@ enum SpriteKind {
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
 })
-let agent: Sprite = sprites.create(img`
+let mySprite: Sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -106,6 +147,7 @@ let agent: Sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
+mySprite.setPosition(25, 60)
 game.splash("Press buttons for 6 seconds!")
 pause(6000)
 agent.say(":)")
@@ -119,11 +161,6 @@ agent.say(":)")
 What would you do if you needed to keep track of the number of coins the player has earned, the number of keys they have collected, and the number of chicken legs they have to eat. Would using ``||info:score||`` be helpful in storing all these values?
 ### ~
 
-## Rubrics
-
-### ~hint
-Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed.  This means that to get the highest score student must pass all previous rubrics.
-### ~
 ### Task rubrics
 
 | points | 5 | 7 | 9 | 10 |

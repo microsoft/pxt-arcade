@@ -67,7 +67,7 @@ We can create variable based math equations, like `A = B + C`, into code using o
 In order of operation precedence:
 
 - Addition (**`+`**)  and  Subtraction (**`-`**)  
-- Multiplication (**`*`**)  and - Division (**`/`**)  
+- Multiplication (**`*`**)  and Division (**`/`**)  
 
 Note that multiplication uses the **`*`** symbol and division uses **`/`** in JavaScript
 
