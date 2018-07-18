@@ -11,14 +11,13 @@ In this activity Students are introduced to:
 * Viewing JavaScript  
 * Color codes in image editor, Blocks and JavaScript  
 
+## Concept: Set a Sprite variable to an image using the image editor
 
-# Concept: Set a Sprite variable to an image using the image editor
-
-# VIDEO
+https://youtu.be/xujAdjmNPgc
 
 Sprites are created using the Sprites menu - choosing the set block  
 
-[Example 1](https://makecode.com/_g3CcuWigwKR8)
+https://makecode.com/_g3CcuWigwKR8 
 ```blocks
 enum SpriteKind {
     Player,
@@ -52,7 +51,7 @@ and then using the sprite editor to color pixels for a sprite design.
 
 Look at the blocks and note that a name for the sprite (`actor`) is set to an image for the sprite (it's hot sauce!).
 
-[Example 2](https://makecode.com/_VEXXpq9RtRfT)
+https://makecode.com/_VEXXpq9RtRfT
 ```blocks
 enum SpriteKind {
     Player,
@@ -87,22 +86,21 @@ actor = sprites.create(img`
 When using the image editor the pixel dimensions are displayed in the lower right corner. Sizes include 8x8, 16x16, 32x32, and other odd sizes.
 ### ~
 
+## Student Task: Build a "rainbow numbers" sprite that uses every color in the editor 
 
-## Student Task: Build a "rainbow numbers" sprite that uses every color in the editor [ TODO video]
+https://youtu.be/oupwql9r-80  
 
-![sprite rainbow numbers image](/static/courses/csintro1/variables/rainbownumbers.png)
 1. make a blank **32x32** sprite  
 2. hover over every color and find color index 0 - which is the transparency color and add that color on the far left  
 3. then find and add the other colors as picture of the number in order to the right using color index 1, 2, 3, 4, ..., until you have color index 15
 4. look at the sprite image in JavaScript view to answer **What did we learn** questions below
 
+![sprite rainbow numbers image](/static/courses/csintro1/orientation/rainbow-numbers.png)
+
 ### ~hint
 Try Changing the background color
-using ``||Scene: set background color to||``
-
-red as 2
+using ``||Scene: set background color to||`` red as 2
 ### ~
-
 
 ## What did we learn?
 

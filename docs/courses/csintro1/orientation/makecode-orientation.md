@@ -14,7 +14,7 @@ In this activity student will work with:
 
 ## Concept: Opening a game
 
-# VIDEO
+# TODO: Video showing game being opened, explaining simulation
 
 ## Student Task 1: Playing Space Destroyer
 1. Click the "Space Destroyer" example game under the "Blocks Games" category
@@ -22,7 +22,7 @@ In this activity student will work with:
 3. Press left and right on the direction pad to move the space ship, and press a to fire the laser. 
 4. Look at what happens when the laser collides with an asteroid.
 
-# VIDEO
+# TODO: Video showing creation of a new project
 
 ## Student Task 2: Starting your own game
 1. Press the "Home" button in the upper left corner to return to the homepage
@@ -68,7 +68,7 @@ Start on the left rubric column (5pts), if the work meets the rubric measurement
 
 ## Rubrics
 
-### Tasks rubric
+### tasks rubric
 | points | 5 | 7 | 9 | 10 |
 |:---:|:---:|:---:|:---:|:---:|
 | orientation | task 1 moved ship and scored a point | task 2 made a sprite say |task 3 opened game .gif file | shared a link to a game |
