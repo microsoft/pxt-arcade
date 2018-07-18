@@ -50,7 +50,7 @@ game.splash("3 + 5 = " + answer)
 ### ~hint
 In order to combine multiple items we will need to add additional Math blocks
 
-![animation: adding 3 numbers with blocks](/static/courses/csintro1/orientation/add3Numbers.gif)
+![animation: adding 3 numbers with blocks](/static/courses/csintro1/orientation/add-3-numbers.gif)
 ### ~
 
 ### ~hint
@@ -131,7 +131,7 @@ It can be difficult to structure parenthesis using blocks.  Look at and edit the
  
 [Fix the Code here](https://makecode.com/_0qfiscfhEY9P)  
   
-![image of code blocks with error](/static/courses/csintro1/orientation/fixCode.png)
+![image of code blocks with error](/static/courses/csintro1/orientation/fix-code.png)
 
 ### ~hint
 
