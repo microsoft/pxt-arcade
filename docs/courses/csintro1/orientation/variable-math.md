@@ -126,11 +126,10 @@ It can be difficult to structure parenthesis using blocks.  Look at and edit the
 
 
 ## Student Task 5: Debugging
-1. We decided that we want to have three different variables in our code - a, b, and c. The variable `a` should be set to `3`, `b` should be set to `a + 5`, and `c` should be set to `a + 2 * b`. This should result in b storing 8, and c storing 19 at the end. When we wrote this out, though, we found that we couldn't run our code. What is going wrong in the following code, and how can you fix it?
+1. We decided that we want to have three different variables in our code - `a`, `b`, and `c`. The variable `a` should be set to `3`, `b` should be set to `a + 5`, and `c` should be set to `a + 2 * b`. This should result in b storing 8, and c storing 19 at the end. When we wrote this out, though, we found that we couldn't run our code. What is going wrong in the following code, and how can you fix it?
 
- 
 [Fix the Code here](https://makecode.com/_0qfiscfhEY9P)  
-  
+
 ![image of code blocks with error](/static/courses/csintro1/orientation/fix-code.png)
 
 ### ~hint
@@ -139,9 +138,7 @@ Click edit to fix code.  Splash can display string characters.  Review previous 
 
 ### ~
 
-2. After you are able to run the code, the value of c should be shown as a splash screen, but the value shown is not quite right. Rearrange the existing blocks so that it produces the correct output, without removing or adding any JavaScript or blocks beyond what was necessary for part 1.  What went wrong?
-
-Fix the output
+2. After you are able to run the code, the value of c should be shown as a splash screen, but the value shown is not quite right. Rearrange the existing blocks so that it produces the correct output, without removing or adding any JavaScript or blocks beyond what was necessary for part 1.  What went wrong? Fix the output
 
 ### ~hint
 It can be useful to view math equations in JavaScript.
