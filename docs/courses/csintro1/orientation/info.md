@@ -116,7 +116,7 @@ mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-mySprite.say("score " + ("is " + 5))
+mySprite.say("score " + ("is " + "here"))
 ```
 
 ### ~
