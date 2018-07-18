@@ -40,11 +40,11 @@ Remember that you can find blocks easily by using the search bar
 ### ~
 3. Add in a ``||info:start countdown 10 (s)||`` block into the ``||loops:on start||`` block
 
-Run the code you created in task 1 a few times, and try to get different scores. Notice the benefits that using just the ``||info:countdown||`` and ``||info:change score by||`` blocks - the countdown creates a timer that counts down to 0, and then ends the game at that point. The score keeps track of the value for you, and shows it in the top right corner, and when the game is over, maintains a high score through multiple runs of the game.
+Run the code you created in task 1 a few times, and try to get different scores. Notice the benefits that using just the ``||info:countdown||`` and ``||info:change score by||`` blocks - the countdown creates a timer that counts down to 0, and then ends the game at that point. The score keeps track of the value for you which is shown in the top right corner, and when the game is over, maintains a high score through multiple runs of the game.
 
 ## Concept: Using ``||info:life||``
 
-Beyond score, another important value to keep track of is the players life total. This lets us make games where players can be penalized for mistakes, without simply ending the game immediately.
+Beyond score, another important value to keep track of is the players life total. This lets us make games where players can be penalized for mistakes, without simply ending the game immediately when they make one.
 
 ## Example: changing ``||info:life||`` totals
 1. Review the code below
@@ -150,7 +150,7 @@ let mySprite: Sprite = sprites.create(img`
 mySprite.setPosition(25, 60)
 game.splash("Press buttons for 6 seconds!")
 pause(6000)
-agent.say(":)")
+mySprite.say(":)")
 ```
 
 ## What did we learn? 
