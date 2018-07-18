@@ -2,7 +2,7 @@
 
 This activity starts with the basics to get started in MakeCode Arcade.
 
-The MakeCode Arcade Platform is similar to other MakeCode Products such as Miro:bit, Minecraft and the [others](https://makecode.com).  If you are new to MakeCode, Welcome! Previous users of MakeCode, or other block based coding platforms, will see familiarities in how to work with Blocks and run code using an in-browser simulator.  
+The MakeCode Arcade Platform is similar to other MakeCode Products such as Micro:bit, Minecraft and the [others](https://makecode.com).  If you are new to MakeCode, Welcome! Previous users of MakeCode, or other block based coding platforms, will see familiarities in how to work with Blocks and run code using an in-browser simulator.  
 
 MakeCode Arcade uses block menus items for concepts such as Sprites, Scene, and Controller which form the basis for making MakeCode Arcade games along with blocks that are common to other MakeCode Products such as Loops, Logic, Variables and Math.
 
