@@ -18,7 +18,7 @@ The first example will be a simple one - simply counting the number of buttons p
 
 ## Example: Counting button presses
 
-## TODO Video
+https://youtu.be/7JkbbfBJCdI
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -47,6 +47,8 @@ Run the code you created in task 1 a few times, and try to get different scores.
 Beyond score, another important value to keep track of is the players life total. This lets us make games where players can be penalized for mistakes, without simply ending the game immediately when they make one.
 
 ## Example: changing ``||info:life||`` totals
+https://youtu.be/YiZ-yl5CbYM
+
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "do not touch the buttons")
@@ -65,6 +67,10 @@ This simple game gives the user a simple task - to not touch a button. If they d
 2. Modify the initial value of the life to be 15, instead of just 1.
 3. Add in the ``||info:change score by||`` block used in the first task, and modify it to add 2 to the score each time a button is pressed.
 4. Add in a ``||info:countdown||``, and set it to run out after 2 seconds.
+
+### Simplify Blocks chained together with JavaScript
+
+![simplify join blocks with JavaScript](/static/courses/csintro1/orientation/join-javascript.gif)
 
 ## Student Task 3: Estimate rate of presses
 ### Overview
