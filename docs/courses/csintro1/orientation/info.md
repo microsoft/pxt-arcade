@@ -36,7 +36,9 @@ Noticed that the score popped up in the top right corner - that is one benefit o
 1. Start with the code saved as "button count" in the prior example.
 2. Create an ``||loops:on start||`` block
 ### ~hint
+
 Remember that you can find blocks easily by using the search bar
+
 ### ~
 3. Add in a ``||info:start countdown 10 (s)||`` block into the ``||loops:on start||`` block
 
@@ -164,7 +166,9 @@ mySprite.say(":)")
 2. List one potential downside of using ``||info:score||`` over just using your own variables to keep track of the state of your game.
 
 ### ~hint
+
 What would you do if you needed to keep track of the number of coins the player has earned, the number of keys they have collected, and the number of chicken legs they have to eat. Would using ``||info:score||`` be helpful in storing all these values?
+
 ### ~
 
 ### Task rubrics

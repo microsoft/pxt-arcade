@@ -18,8 +18,10 @@ An Algorithm is series of steps, decisions and/or formulas. Some common examples
 
 The Birthday Algorithm displays a birthday as `month.day` after following a set of calculations.  
 ### ~hint
+
 Result is in the format `month.day`  
 example: June 1st would be `6.01`
+
 ### ~
 
 https://youtu.be/74F-iBs-H3g 

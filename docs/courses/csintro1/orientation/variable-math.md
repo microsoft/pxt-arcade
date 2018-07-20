@@ -48,13 +48,17 @@ game.splash("3 + 5 = " + answer)
 
 
 ### ~hint
+
 In order to combine multiple items we will need to add additional Math blocks
 
 ![animation: adding 3 numbers with blocks](/static/courses/csintro1/orientation/add-3-numbers.gif)
+
 ### ~
 
 ### ~hint
+
 The splash screen is designed for short sentences.  This limits the length of equation we can effectively display. "Show long text" allows for a better representation for longer text.
+
 ### ~  
 
 ## Concept: basic math operators with variables 
@@ -106,7 +110,9 @@ https://youtu.be/C_UY8V-ufiI
 4. Challenge: create an equation using all 4 basic operators (`+, -, *, /`) and at least 5 unique variables.  
 
 ### ~hint
+
 Look at the JavaScript code.  For multiple operator equations it is often easier to code in JavaScript. Note how using parenthesis `( )` changes the equation.
+
 ### ~
 
 ## Student Task 4: Conversion  
@@ -121,7 +127,9 @@ Look at the JavaScript code.  For multiple operator equations it is often easier
     - be sure to pay attention to the parenthesis
 
 ### ~hint
+
 It can be difficult to structure parenthesis using blocks.  Look at and edit the JavaScript code to create the formula where it looks much more like a math equation, except for **\*** is used for multiplication and **/** is used for division.  Note: evaluate parenthesis first because code follows the the same parenthesis rules as mathematics.
+
 ### ~
 
 
@@ -141,7 +149,9 @@ Click edit to fix code.  Splash can display string characters.  Review previous 
 2. After you are able to run the code, the value of c should be shown as a splash screen, but the value shown is not quite right. Rearrange the existing blocks so that it produces the correct output, without removing or adding any JavaScript or blocks beyond what was necessary for part 1.  What went wrong? Fix the output
 
 ### ~hint
+
 It can be useful to view math equations in JavaScript.
+
 ### ~
 
 ## Variables Summary

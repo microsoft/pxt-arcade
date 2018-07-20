@@ -83,7 +83,9 @@ actor = sprites.create(img`
 * The default sprite is 16x16 pixels - **Make a sprite that is 32x32 pixels!**  
 
 ### ~hint
+
 When using the image editor the pixel dimensions are displayed in the lower right corner. Sizes include 8x8, 16x16, 32x32, and other odd sizes.
+
 ### ~
 
 ## Student Task: Build a "rainbow numbers" sprite that uses every color in the editor 
@@ -98,8 +100,9 @@ https://youtu.be/oupwql9r-80
 ![sprite rainbow numbers image](/static/courses/csintro1/orientation/rainbow-numbers.png)
 
 ### ~hint
-Try Changing the background color
-using ``||Scene: set background color to||`` red as 2
+
+Try Changing the background color using ``||Scene: set background color to||`` red as 2
+
 ### ~
 
 ## What did we learn?
