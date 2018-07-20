@@ -9,3 +9,9 @@
 * [Sprites](/courses/csintro1/orientation/sprites)
 * [Variable Math](/courses/csintro1/orientation/variable-math)
 * [Info Variables](/courses/csintro1/orientation/info)
+
+## Sprites
+
+* [Coordinate Walker](/courses/csintro1/sprites/coordinate-walker)
+* [Collage](/courses/csintro1/sprites/collage)
+* [Hello Sprite](/courses/csintro1/sprites/hello-sprite)
