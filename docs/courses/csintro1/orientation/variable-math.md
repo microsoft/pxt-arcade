@@ -48,13 +48,17 @@ game.splash("3 + 5 = " + answer)
 
 
 ### ~hint
+
 In order to combine multiple items we will need to add additional Math blocks
 
 ![animation: adding 3 numbers with blocks](/static/courses/csintro1/orientation/add-3-numbers.gif)
+
 ### ~
 
 ### ~hint
+
 The splash screen is designed for short sentences.  This limits the length of equation we can effectively display. "Show long text" allows for a better representation for longer text.
+
 ### ~  
 
 ## Concept: basic math operators with variables 
@@ -67,7 +71,7 @@ We can create variable based math equations, like `A = B + C`, into code using o
 In order of operation precedence:
 
 - Addition (**`+`**)  and  Subtraction (**`-`**)  
-- Multiplication (**`*`**)  and - Division (**`/`**)  
+- Multiplication (**`*`**)  and Division (**`/`**)  
 
 Note that multiplication uses the **`*`** symbol and division uses **`/`** in JavaScript
 
@@ -106,7 +110,9 @@ https://youtu.be/C_UY8V-ufiI
 4. Challenge: create an equation using all 4 basic operators (`+, -, *, /`) and at least 5 unique variables.  
 
 ### ~hint
+
 Look at the JavaScript code.  For multiple operator equations it is often easier to code in JavaScript. Note how using parenthesis `( )` changes the equation.
+
 ### ~
 
 ## Student Task 4: Conversion  
@@ -121,16 +127,17 @@ Look at the JavaScript code.  For multiple operator equations it is often easier
     - be sure to pay attention to the parenthesis
 
 ### ~hint
+
 It can be difficult to structure parenthesis using blocks.  Look at and edit the JavaScript code to create the formula where it looks much more like a math equation, except for **\*** is used for multiplication and **/** is used for division.  Note: evaluate parenthesis first because code follows the the same parenthesis rules as mathematics.
+
 ### ~
 
 
 ## Student Task 5: Debugging
-1. We decided that we want to have three different variables in our code - a, b, and c. The variable `a` should be set to `3`, `b` should be set to `a + 5`, and `c` should be set to `a + 2 * b`. This should result in b storing 8, and c storing 19 at the end. When we wrote this out, though, we found that we couldn't run our code. What is going wrong in the following code, and how can you fix it?
+1. We decided that we want to have three different variables in our code - `a`, `b`, and `c`. The variable `a` should be set to `3`, `b` should be set to `a + 5`, and `c` should be set to `a + 2 * b`. This should result in b storing 8, and c storing 19 at the end. When we wrote this out, though, we found that we couldn't run our code. What is going wrong in the following code, and how can you fix it?
 
- 
 [Fix the Code here](https://makecode.com/_0qfiscfhEY9P)  
-  
+
 ![image of code blocks with error](/static/courses/csintro1/orientation/fix-code.png)
 
 ### ~hint
@@ -139,12 +146,12 @@ Click edit to fix code.  Splash can display string characters.  Review previous 
 
 ### ~
 
-2. After you are able to run the code, the value of c should be shown as a splash screen, but the value shown is not quite right. Rearrange the existing blocks so that it produces the correct output, without removing or adding any JavaScript or blocks beyond what was necessary for part 1.  What went wrong?
-
-Fix the output
+2. After you are able to run the code, the value of c should be shown as a splash screen, but the value shown is not quite right. Rearrange the existing blocks so that it produces the correct output, without removing or adding any JavaScript or blocks beyond what was necessary for part 1.  What went wrong? Fix the output
 
 ### ~hint
+
 It can be useful to view math equations in JavaScript.
+
 ### ~
 
 ## Variables Summary
@@ -153,8 +160,8 @@ https://youtu.be/BPX2MHXmXJw
 
 * Variables are names that point to a container that can be updated to hold different data types  
 * Data Types used in variables so far are Sprites, Numbers and Strings  
-* Strings are Characters (like the Characters on a keyboard) surrounded by quotation marks  
-* Displaying a Number often requires coercion, persuading a number to act like a string, using ``||text:join()()||``
+* Strings are Characters (like the characters on a keyboard) surrounded by quotation marks  
+* Displaying a Number often requires coercion, persuading a number to act like a string, using ``||text:join||``
 
 ## What did we learn? 
 

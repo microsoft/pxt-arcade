@@ -2,7 +2,7 @@
 
 This activity starts with the basics to get started in MakeCode Arcade.
 
-The MakeCode Arcade Platform is similar to other MakeCode Products such as Miro:bit, Minecraft and the [others](https://makecode.com).  If you are new to MakeCode, Welcome! Previous users of MakeCode, or other block based coding platforms, will see familiarities in how to work with Blocks and run code using an in-browser simulator.  
+The MakeCode Arcade Platform is similar to other MakeCode Products such as Micro:bit, Minecraft and the [others](https://makecode.com).  If you are new to MakeCode, Welcome! Previous users of MakeCode, or other block based coding platforms, will see familiarities in how to work with Blocks and run code using an in-browser simulator.  
 
 MakeCode Arcade uses block menus items for concepts such as Sprites, Scene, and Controller which form the basis for making MakeCode Arcade games along with blocks that are common to other MakeCode Products such as Loops, Logic, Variables and Math.
 
@@ -14,7 +14,7 @@ In this activity student will work with:
 
 ## Concept: Opening a game
 
-# Video showing game being opened, explaining simulation
+https://youtu.be/GsvBCViybPs
 
 ## Student Task 1: Playing Space Destroyer
 1. Click the "Space Destroyer" example game under the "Blocks Games" category
@@ -22,7 +22,9 @@ In this activity student will work with:
 3. Press left and right on the direction pad to move the space ship, and press a to fire the laser. 
 4. Look at what happens when the laser collides with an asteroid.
 
-# Video showing creation of a new project
+### New Project
+
+https://youtu.be/iEQa-Wd3MRs
 
 ## Student Task 2: Starting your own game
 1. Press the "Home" button in the upper left corner to return to the homepage

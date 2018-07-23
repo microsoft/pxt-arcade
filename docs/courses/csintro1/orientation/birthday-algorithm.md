@@ -16,13 +16,16 @@ An Algorithm is series of steps, decisions and/or formulas. Some common examples
 
 ## Birthday Algorithm  
 
-The Birthday Algorithm displays a birthday as `month.day` after following a set of calculations.  
+The Birthday Algorithm displays a birthday as `month.day` after following a set of calculations.
+
 ### ~hint
+
 Result is in the format `month.day`  
 example: June 1st would be `6.01`
+
 ### ~
 
-https://youtu.be/74F-iBs-H3g 
+https://youtu.be/G0iDwdEHn_8
 
 Follow the Birthday Algorithm step below working with a partner(s). Record the steps and the answer at each steps so you can troubleshoot. Doing this with just paper and pencil adds to the challenge. If the trick doesn't work retrace steps and check each calculation with partner. 
 
