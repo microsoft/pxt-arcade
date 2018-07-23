@@ -1,5 +1,7 @@
 # Activity: Collage
 
+https://youtu.be/kKeuxhqnZ4U
+
 **Visual Design** is an important part of Game Development.  This activity builds skills needed to create multiple sprites placed on a game screen by building a Personal Interest Collage. The student will Create Sprites with custom variable names and arrange the sprites on a game screen using sprite properties to set the coordinates.
 
 In this activity we will use
@@ -8,7 +10,9 @@ In this activity we will use
 * Coordinates to arrange our sprites into a scene  
 * Background - set background
 
-## Example: Sprite
+## Example: Sprite & Background
+
+https://youtu.be/TY0kSXUaPkg
 
 This Sprite example is larger than the default 16x16 and uses a custom variable name `hotSauce`.  *How can we determine the dimensions of this sprite?*
 
@@ -55,7 +59,9 @@ hotSauce = sprites.create(img`
 `, SpriteKind.Player)
 
 ```
-## Example: Sprite placement & background 
+## Example: Sprite placement
+
+https://youtu.be/PsIZ_08eEYk
 
 This Sprite example uses sprite properties to set the `x` and `y` coordinates on the game screen. *View the Sprite in JavaScript. Note how colors are represented.*
 
@@ -103,7 +109,9 @@ hotSauce.x = 20
 hotSauce.y = 40
 ```
 
-## Student Task: Build a Collage 
+## Student Task: Build a Collage
+
+https://youtu.be/AV8YIkXE1N8
 
 It can be about a typical day, a hobby, favorite musician or actor, sports, clothes - anything tells something that tells story and is about you.
 

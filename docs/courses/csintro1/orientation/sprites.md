@@ -13,7 +13,7 @@ In this activity Students are introduced to:
 
 ## Concept: Set a Sprite variable to an image using the image editor
 
-https://youtu.be/xujAdjmNPgc
+https://youtu.be/tGISp5qcrR4
 
 Sprites are created using the Sprites menu - choosing the set block  
 

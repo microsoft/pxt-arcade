@@ -1,5 +1,7 @@
 # Activity: Coordinate Walker
 
+https://youtu.be/fr036vKEFiI
+
 Move walker sprite around the game screen to identify X-Y coordinates
 
 In this Activity students investigate the game screen using
