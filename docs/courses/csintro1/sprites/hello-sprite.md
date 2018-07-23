@@ -68,7 +68,11 @@ console.log("msg sent!")
     * a string (example: "Hello console")
     * a string variable (example: use **msg** variable)
 
+### ~hint
+
 Consider This!: The code `console.log()` doesn't use **mySprite** as with ``||sprites:say||``. Why?
+
+### ~
 
 ## Task: Add another sprite and set it's coordinates
 
@@ -93,7 +97,6 @@ There is a pause block under the Loops menu ``||loops:pause(1000)||`` that can b
 
 3. Discuss the different ways we can display a message in this exercise. List and example.
 4. Come up with a hypothesis and explain why `console.log()` has a large limit on the length of text. Explain.
-
 
 ## Rubrics
 

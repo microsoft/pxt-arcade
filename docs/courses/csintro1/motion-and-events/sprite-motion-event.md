@@ -196,17 +196,15 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let mySprite: Sprite = null
-function fliphorizontal() {
+function flipHorizontal() {
     mySprite.image.flipX()
     pause(200)
 }
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
-    // for (let i = 0; i < 19; i++) { fliphorizontal() }
-    fliphorizontal()
+    flipHorizontal()
 })
 scene.setBackgroundColor(6)
-mySprite = sprites.create(img`
+let mySprite: Sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . 2 . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . 2 2 2 2 2 . . . . . . . . . . . . . . . 
@@ -245,7 +243,7 @@ mySprite = sprites.create(img`
 
 # Student Task 4: Image Flip with motion
 
-1. start with Motion (short method) example above or similar code
+1. Start with Motion (short method) example above or similar code
 2. Make **your own image** move using the up, down, left, right controller
 3. Use "A" button to flip vertically (upside down and back upright)
 4. Challenge: add the flip Vertical as a function.
@@ -257,7 +255,6 @@ mySprite = sprites.create(img`
 3. In using flip, the sprite is **not** flipped.  What is flipped? Explain how you know.  
 
 ## Rubrics
-
 
 ### Motion event tasks rubric
 

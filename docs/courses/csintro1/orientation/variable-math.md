@@ -160,8 +160,8 @@ https://youtu.be/BPX2MHXmXJw
 
 * Variables are names that point to a container that can be updated to hold different data types  
 * Data Types used in variables so far are Sprites, Numbers and Strings  
-* Strings are Characters (like the Characters on a keyboard) surrounded by quotation marks  
-* Displaying a Number often requires coercion, persuading a number to act like a string, using ``||text:join()()||``
+* Strings are Characters (like the characters on a keyboard) surrounded by quotation marks  
+* Displaying a Number often requires coercion, persuading a number to act like a string, using ``||text:join||``
 
 ## What did we learn? 
 

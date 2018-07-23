@@ -1,5 +1,5 @@
-# Activity: Sprite Overlap & Events 1
-(Part 1)  
+# Activity: Sprite Overlap & Events Part 1
+
 Once the spites are moving, the next step is to detect when sprites interact with other objects. Overlap is a primary way sprites trigger interactions with each other.
 
 Sprites, and other game objects, can overlap to activate event code such as scoring points, destroying an object, simulating a bump between objects, starting an animation, ending the game, and much more.
@@ -11,7 +11,6 @@ In this activity the student will work with:
 * destroy sprite
 
 # Overlaps
-
 
 ## Concept: SpriteKind Overlap Event
 
@@ -97,7 +96,7 @@ game.onUpdate(function () {
 ## Student Task 1: Add actions to overlap events
 1. starting with example 1, or your own similar code
 2. add additional code to the overlap event that has the person saying something (e.g. - "Good!")
-3. Challenge: add another action to the overlap event. (Hint: can use both sprites)
+3. Challenge: add another action to the overlap event that uses the other sprite.
 
 ### ~hint
 
@@ -105,7 +104,7 @@ Use ``||loops:pause||`` before using sprite destroy otherwise the sprite will be
 
 ### ~
 
-## set Sprite ghost on
+## Set Sprite ghost on
 The sprite **ghost on** setting makes the sprite able to pass "through" with other sprites and objects (such as walls that we create later) on the screen without an overlap or collision event being detected.  The default when we don't use the Sprite ghost block is ghost off.
 
 ## Example 2: Sprite Overlap - Ghost on 
@@ -184,8 +183,8 @@ game.onUpdate(function () {
 ```
 
 ## Student Task 2: Sprite Overlap - Ghost off and on
-1. start with example or task #1 or similar code -  create 3 sprites
-2. as before, make one sprite object move with the controller 
+1. Start with example or task #1 or similar code -  create 3 sprites
+2. As before, make one sprite object move with the controller 
 3. Make the other sprites stationary and both of the same SpriteKind (e.g.- SpriteKind Enemy). 
 4. Set one (stationary) sprite ghost off and one sprite ghost on
 5. Add an event for on Overlap of the stationary SpriteKind (e.g. - in the event have an action of sprite destroy and/or sprite say)

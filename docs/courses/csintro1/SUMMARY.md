@@ -1,3 +1,5 @@
+# @extends
+
 # CS INTRO -- BETA
 
 * [CS Intro](/courses/csintro)

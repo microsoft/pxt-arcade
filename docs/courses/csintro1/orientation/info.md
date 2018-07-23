@@ -35,11 +35,13 @@ Noticed that the score popped up in the top right corner - that is one benefit o
 ## Student Task 1: 10 second button smash
 1. Start with the code saved as "button count" in the prior example.
 2. Create an ``||loops:on start||`` block
+
 ### ~hint
 
 Remember that you can find blocks easily by using the search bar
 
 ### ~
+
 3. Add in a ``||info:start countdown 10 (s)||`` block into the ``||loops:on start||`` block
 
 Run the code you created in task 1 a few times, and try to get different scores. Notice the benefits that using just the ``||info:countdown||`` and ``||info:change score by||`` blocks - the countdown creates a timer that counts down to 0, and then ends the game at that point. The score keeps track of the value for you which is shown in the top right corner, and when the game is over, maintains a high score through multiple runs of the game.

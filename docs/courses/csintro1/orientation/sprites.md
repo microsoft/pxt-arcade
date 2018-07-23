@@ -101,7 +101,7 @@ https://youtu.be/oupwql9r-80
 
 ### ~hint
 
-Try Changing the background color using ``||Scene: set background color to||`` red as 2
+Try Changing the background color using ``||Scene: set background color to||``
 
 ### ~
 
