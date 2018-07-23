@@ -1,8 +1,8 @@
-# Activity: Info Variables
+# Activity: Info Category Variable Properties
 
-In this section we worked with variables we created. A lot of the time, though, we want to interact with variables and values that were created elsewhere.
+We have previously worked with variables we created. A lot of the time, software developers need to interact with variables and values that were created elsewhere.
 
-The ``||info:info||`` category in blocks contains a few variables (known as properties) which we are allowed to update. These properties have to do with score, life, and time. We will take a quick look at how to use these variables in our code.
+The ``||info:info||`` category in blocks contains a few variables (data properties) which we are allowed to update. These properties have to do with score, life, and time. We will take a quick look at how to use these as variables in our code.
 
 In this activity students will:
 
@@ -18,7 +18,7 @@ The first example will be a simple one - simply counting the number of buttons p
 
 ## Example: Counting button presses
 
-## TODO Video
+https://youtu.be/7JkbbfBJCdI
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -35,18 +35,24 @@ Noticed that the score popped up in the top right corner - that is one benefit o
 ## Student Task 1: 10 second button smash
 1. Start with the code saved as "button count" in the prior example.
 2. Create an ``||loops:on start||`` block
+
 ### ~hint
+
 Remember that you can find blocks easily by using the search bar
+
 ### ~
+
 3. Add in a ``||info:start countdown 10 (s)||`` block into the ``||loops:on start||`` block
 
-Run the code you created in task 1 a few times, and try to get different scores. Notice the benefits that using just the ``||info:countdown||`` and ``||info:change score by||`` blocks - the countdown creates a timer that counts down to 0, and then ends the game at that point. The score keeps track of the value for you, and shows it in the top right corner, and when the game is over, maintains a high score through multiple runs of the game.
+Run the code you created in task 1 a few times, and try to get different scores. Notice the benefits that using just the ``||info:countdown||`` and ``||info:change score by||`` blocks - the countdown creates a timer that counts down to 0, and then ends the game at that point. The score keeps track of the value for you which is shown in the top right corner, and when the game is over, maintains a high score through multiple runs of the game.
 
 ## Concept: Using ``||info:life||``
 
-Beyond score, another important value to keep track of is the players life total. This lets us make games where players can be penalized for mistakes, without simply ending the game immediately.
+Beyond score, another important value to keep track of is the players life total. This lets us make games where players can be penalized for mistakes, without simply ending the game immediately when they make one.
 
 ## Example: changing ``||info:life||`` totals
+https://youtu.be/YiZ-yl5CbYM
+
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "do not touch the buttons")
@@ -66,19 +72,64 @@ This simple game gives the user a simple task - to not touch a button. If they d
 3. Add in the ``||info:change score by||`` block used in the first task, and modify it to add 2 to the score each time a button is pressed.
 4. Add in a ``||info:countdown||``, and set it to run out after 2 seconds.
 
+### Simplify Blocks chained together with JavaScript
+
+![simplify join blocks with JavaScript](/static/courses/csintro1/orientation/join-javascript.gif)
+
 ## Student Task 3: Estimate rate of presses
 ### Overview
-When a nurse needs to take a patient's heart rate, they do not want to sit around for a minute to figure out how many beats per minute the heart rate is going. Instead, they can use another, quicker approach to estimate the pulse rate - count how many heart beats there are over 15 seconds, and then multiply that value by 4 to get an estimate for the full minute. In this task, we will use the score to do the same thing, only with button presses. The ``||loops:pause||`` block is new in this example, and pauses the code at that point for however many milliseconds it is provided - in this case, we pass 6000 ms so that it pauses for 6 seconds, and then multiply by 10 to get an estimate for 60 seconds (one minute).
+When a nurse needs to take a patient's heart rate with their other vital signs, they do not want to (or have time to) sit around for a full minute to count how many beats there are. Instead, they can use another, quicker approach to estimate the patient's heart rate - count how many heart beats there are over 15 seconds, and then multiply that value by 4 to get an estimate for the full minute. In this task, we will use the score to do the same thing, only with button presses. The ``||loops:pause||`` block is new in this example, and pauses the code at that point for however many milliseconds it is provided - in this case, we pass 6000 ms so that it pauses for 6 seconds, and then multiply by 10 to get an estimate for 60 seconds (one minute).
 
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "button rate")
 4. Change the ``||sprites:say||`` block so that after 6 seconds have passed it says the ``||info:score||``. You may also want it to show a message explaining what the value represents
+
 ### ~hint
-Review the [Variable Math](/courses/csintro1/variables/variable-math) section if you're having trouble making the sprite say the ``||info:score||`` - it is stored as a number.
+
+Review the [Variable Math](/courses/csintro1/orientation/variable-math) activity if you're having trouble making the sprite say the ``||info:score||`` - it is stored as a number.
+
 ### ~
-5. Use the ``||math:x||`` block to multiply the ``||info:score||`` by 10 when you make the sprite ``||sprites:say||`` it, so that it will correspond to one minute's worth of button presses.
-6. Challenge: instead of outputting an exact estimate, give a range that the button presses will likely fall into - estimate this by making the low end of the range correspond to ``(score - 1) * 10``, and the high end of the range correspond to ``(score + 1) * 10``. For example, if the score were 5, the output should be something along the lines of "between 40 and 60".
+
+5. Use the ``||math:x||`` block to multiply the ``||info:score||`` by 10 and store it in a variable called `minuteScore`, so it will correspond to one minute's worth of button presses.
+6. Make the sprite ``||sprites:say||`` the result stored in `minuteScore`. Edit the sprite so it looks better.
+7. Challenge: instead of outputting an exact estimate, give a range that the button presses will likely fall into - estimate this by making the low end of the range correspond to ``(score - 1) * 10``, and the high end of the range correspond to ``(score + 1) * 10``. For example, if the score were 5, the output should be something along the lines of "between 40 and 60".
+
+### ~hint
+
+For the Challenge 
+Remember to use order of operations and parenthesis (JavaScript) to get the right equation,
+
+For multiple joins we can chain the ``||text:join||`` blocks just as we did for addition. 
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . 6 6 6 6 6 6 6 6 6 6 6 . . . 
+. . 6 . . . . . . . . . 6 . . . 
+. . 6 . 6 6 . . . 6 6 . 6 . . . 
+. . 6 . . . . . . . . . 6 . . . 
+. . 6 . . . . . . . . . 6 . . . 
+. . 6 . 6 . . . . 6 6 . 6 . . . 
+. . 6 . 6 6 6 6 6 6 . . 6 . . . 
+. . 6 . . . . . . . . . 6 . . . 
+. . 6 6 6 6 6 6 6 6 6 6 6 . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+mySprite.say("score " + ("is " + "here"))
+```
+
+### ~
 
 ```blocks
 enum SpriteKind {
@@ -88,7 +139,7 @@ enum SpriteKind {
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
 })
-let agent: Sprite = sprites.create(img`
+let mySprite: Sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -106,9 +157,10 @@ let agent: Sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
+mySprite.setPosition(25, 60)
 game.splash("Press buttons for 6 seconds!")
 pause(6000)
-agent.say(":)")
+mySprite.say(":)")
 ```
 
 ## What did we learn? 
@@ -116,14 +168,11 @@ agent.say(":)")
 2. List one potential downside of using ``||info:score||`` over just using your own variables to keep track of the state of your game.
 
 ### ~hint
+
 What would you do if you needed to keep track of the number of coins the player has earned, the number of keys they have collected, and the number of chicken legs they have to eat. Would using ``||info:score||`` be helpful in storing all these values?
+
 ### ~
 
-## Rubrics
-
-### ~hint
-Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed.  This means that to get the highest score student must pass all previous rubrics.
-### ~
 ### Task rubrics
 
 | points | 5 | 7 | 9 | 10 |
