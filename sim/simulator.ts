@@ -11,6 +11,7 @@ namespace pxsim {
      */
     initCurrentRuntime = () => {
         runtime.board = new Board();
+        initGamepad();
 
         if (!forcedUpdateLoop) {
             // this is used to force screen update if game loop is stuck or not set up properly
