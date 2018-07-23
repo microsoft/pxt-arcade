@@ -3,9 +3,11 @@ namespace pxsim {
     let state: {[index: number]: boolean} = {};
     let init = false;
     let connected = false;
+    let resetPressed = false;
 
 
     export function initGamepad() {
+        resetPressed = false;
         if (init) return;
         init = true;
         window.addEventListener("gamepadconnected", (e) => {
@@ -29,6 +31,11 @@ namespace pxsim {
                     updateState(Key.Down, 13, gamepad, 1, true);
                     updateState(Key.Left, 14, gamepad, 0, false);
                     updateState(Key.Right, 15, gamepad, 0, true);
+
+                    if (!resetPressed && gamepad.buttons[9] && gamepad.buttons[9].pressed) {
+                        resetPressed = true;
+                        pxsim.control.reset();
+                    }
                 }
             }
         }
