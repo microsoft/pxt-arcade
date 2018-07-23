@@ -8,13 +8,13 @@ Motion **is** change in position, to be still means position doesn't change. To 
 
 In these activities, the student will use: 
 
-* controller events
-* increment x and y coordinates
-* increment vx and vy velocity
+* Controller events
+* Increment x and y coordinates
+* Increment vx and vy velocity
 * Motion short method
-* stay on screen
-* image flip (sprite image)
-* functions
+* Stay on screen
+* Image flip (sprite image)
+* Functions
 
 ## Example 1: increment position left and right 
 
@@ -57,16 +57,15 @@ agent = sprites.create(img`
 
 ## Student Task #1: increment position Y-axis (up and down) 
 
-1. start with example 1 (motionLR, or your own similar code)
-2. add additional code to control the up down Y-direction motions using the controller 
-3. Challenges: 
-    - add an "A" button event to move the sprite to the center of the game screen.  
+1. Start with example 1 (motionLR, or your own similar code)
+2. Add additional code to control the up down Y-direction motions using the controller 
+3. **Challenges:**
+    - Add an "A" button event to move the sprite to the center of the game screen.  
     - Add a "B" button event to make the sprite "jump" (move) 15 pixels.
 
 ## Sprite Motion Velocity
 
 https://youtu.be/Gl0Y2sHY_MA 
-
 
 Velocity is speed in a particular direction - continuous movement.  In our games we typically track movement in X and Y directions. If we have a positive x velocity we more right and a negative X velocity is moving left.
 
@@ -110,10 +109,10 @@ agent = sprites.create(img`
 
 ## Student Task #2: Increment Velocity Up and Down 
 
-1. start with example #2 (velocityLR, or your own similar code)
-2. add additional code to control the up down Y-direction velocities using the controller 
-3. Challenges: 
-    - add an "A" button event move the sprite to the center of the game screen.  
+1. Start with example #2 (velocityLR, or your own similar code)
+2. Add additional code to control the up down Y-direction velocities using the controller 
+3. **Challenges:**
+    - Add an "A" button event move the sprite to the center of the game screen.  
     - Add a "B" button event to stop the sprite (all velocities = 0).  
 
 ## Motion - short dx/dy code method  
@@ -127,7 +126,7 @@ We have created motion by capturing the key pad events and incrementing (or decr
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "MotionShortMethod" or "motion Short Method")  
-4. note the blocks in ``||game: on game update||``
+4. Note the blocks in ``||game: on game update||``
 
 ```blocks
 enum SpriteKind {
@@ -163,11 +162,11 @@ game.onUpdate(function () {
 
 ## Student Task #3: Create Velocity Motion (discover the short method)
 
-1. start with Motion (short method) example above or similar code
-2. explore the controller menu for ``||controller: control (mySprite) with vx (100) vy (100) ||``  
-3. change the key pad motion to use the discovered block 
-3. make the sprite stay in the screen boundary
-4. Challenge: add button events for Stop motion and Center sprite. Also, make a better sprite than a ball!
+1. Start with Motion (short method) example above or similar code
+2. Explore the controller menu for ``||controller: control (mySprite) with vx (100) vy (100) ||``  
+3. Change the key pad motion to use the discovered block 
+3. Make the sprite stay in the screen boundary
+4. **Challenge:** add button events for Stop motion and Center sprite. Also, make a better sprite than a ball!
 
 ### ~hint
 
@@ -188,8 +187,8 @@ Flipping an image creates a left right mirror image when we use flip horizontal.
 1. Review the code below
 2. Create the sample code and run the code https://makecode.com/_D2yMge4to89R 
 3. Save the code for the task (name it "FlipImage")  
-4. note use of the  function called "fliphorizontal"
-5. find the ``||sprites:sprite image||`` block in the sprites menu that is the image that is flipped
+4. Note use of the  function called "fliphorizontal"
+5. Find the ``||sprites:sprite image||`` block in the sprites menu that is the image that is flipped
 
 ```blocks
 enum SpriteKind {

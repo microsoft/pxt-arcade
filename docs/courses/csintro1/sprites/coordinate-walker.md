@@ -15,30 +15,29 @@ In order to create games we need to place Sprites and other objects at various l
 
 ## Student Activity
 
-* [Use the coordinate walker example to get X and Y coordinates.](#coordinate-walker)
-* [Determine **X** and **Y** coordinates for the corners and middle of the the game screen.](#map-game-screen)
+* [Use the coordinate walker example to get `X` and `Y` coordinates.](#coordinate-walker)
+* [Determine `X` and `Y` coordinates for the corners and middle of the the game screen.](#map-game-screen)
 * [Record Results in simple diagram](#record-results)
 
 ### Coordinate Walker
 
-Use the coordinate walker example to move around the screen and track X and Y coordinates.
+Use the coordinate walker example to move around the screen and track `X` and`Y` coordinates.
 
 **Open [coordinate walker program](https://makecode.com/_Vdi18F33t66F)**: to complete the tasks
 
-
-* **Check the location**: Run the program and then press the "A" button on the game pad (or space bar key on keyboard) to display the starting location coordinates - press to see x and y coordinates.
-  * Note the two coordinate values for (x,y)
-* **Move the sprite**: click on the game pad (or use keyboard a, w, s, d keys) to move the sprite.  Check the coordinates after moving.
+1. Check the location: Run the program and then press the "A" button on the game pad (or space bar key on keyboard) to display the starting location coordinates - press to see `X` and `Y` coordinates.
+    * Note the two coordinate values for `(X, Y)`
+2. Move the sprite: click on the game pad (or use keyboard `WASD` keys) to move the sprite.  Check the coordinates after moving.
     
 ## What did we learn?
-Use **X** and/or **Y** in your answers  
+Use `X` and/or `Y` in your answers  
 
 1. Describe how coordinates change when moving up versus moving down  
 2. Describe how coordinates change when moving right versus moving left  
 
 ### Map Game Screen
 
-Two dimensional game screen coordinates are represented by values for **X** and **Y** axis locations.
+Two dimensional game screen coordinates are represented by values for `X` and `Y` axis locations.
 
 ![XY Coordinates](/static/courses/csintro1/sprites/coordinates.png)
 
@@ -50,8 +49,8 @@ Two dimensional game screen coordinates are represented by values for **X** and 
 ![sprite at top edge of screen](/static/courses/csintro1/sprites/coordinate-edge.png)
 
 
-* Move to each of the corners and **map the coordinates** as a pair of X and Y values like `(x,y)`
-    * Restart the game. What are the coordinates when you start? Should be `(64,64)`.
+* Move to each of the corners and **map the coordinates** as a pair of X and Y values like `(X, Y)`
+    * Restart the game. What are the coordinates when you start? Should be `(64, 64)`.
     * **Record** the coordinates at the **Top Right** corner  
     * **Record** the coordinates at the **Bottom Right** corner  
     * **Record** the coordinates at the **Bottom Left** corner  
@@ -71,13 +70,13 @@ Record Results in a simple diagram
 ### Challenge
 
 **Bring off-screen sprite back into view.**
- Challenge a peer to bring the sprite back into view after you move the sprite off screen.
+    Challenge a peer to bring the sprite back into view after you move the sprite off screen.
 
 1. **Partner 1:** Move the walker sprite off past the area of the visible game screen (not too far)
 2. **Partner 2**: Return the sprite to the screen using only two directions of the game controls
-    * use the game pad **A** button to get the *hidden* sprite coordinates
-    * pick 1: `up` or `down` Y direction
-    * pick 1: `left` or `right`  X direction
+    * use the game pad `A` button to get the *hidden* sprite coordinates
+    * pick 1: `up` or `down` `Y` direction
+    * pick 1: `left` or `right`  `X` direction
     * using only the controller pad keys chosen bring the sprite back onto the screen.
 
 ## Rubrics

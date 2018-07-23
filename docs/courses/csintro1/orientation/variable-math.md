@@ -11,12 +11,12 @@ If we know `Y = 3` we can calculate `X` from our equation.  Later `Y` can have a
 
 In this activity student will:
 
-* combine numeric values with math operators (+, -, \*, /)
-* store the result of an equation in a variable 
-* evaluate equations using variables
-* modify and create variable equations
-* display text with ``||game:splash||`` by using ``||text:join||``
-* differentiate between number and string data types
+* Combine numeric values with math operators (`+`, `-`, `*`, `/`)
+* Store the result of an equation in a variable 
+* Evaluate equations using variables
+* Modify and create variable equations
+* Display text with ``||game:splash||`` by using ``||text:join||``
+* Differentiate between number and string data types
 
 ## Concept: Assign Number Variables and displaying numeric values
 
@@ -41,7 +41,7 @@ game.splash("3 + 5 = " + answer)
 
 ## Student Task 1: Try new values in the equation 
 
-1. starting with the above example 
+1. Starting with the above example 
 2. Experiment using different numbers in our equation (e.g.  `9 + 2`)
 3. Test at least 3 different equations
 4. Challenge: make longer addition equations so the code calculates the sum of 5 or more numbers. If the equation gets too long, then display using "show long text"
@@ -70,8 +70,8 @@ We can create variable based math equations, like `A = B + C`, into code using o
 ### Operators 
 In order of operation precedence:
 
-- Addition (**`+`**)  and  Subtraction (**`-`**)  
-- Multiplication (**`*`**)  and Division (**`/`**)  
+* Addition (**`+`**)  and  Subtraction (**`-`**)  
+* Multiplication (**`*`**)  and Division (**`/`**)  
 
 Note that multiplication uses the **`*`** symbol and division uses **`/`** in JavaScript
 
@@ -79,7 +79,7 @@ Note that multiplication uses the **`*`** symbol and division uses **`/`** in Ja
 
 1. Review the code below
 2. Create the sample code and run the code
-3. press any button to see then second equation on splash message
+3. Press any button to see then second equation on splash message
 
 ```blocks
 let answer = 0
@@ -98,16 +98,16 @@ game.splash("5 * 7 = " + answer)
 
 https://youtu.be/C_UY8V-ufiI
 
-1. starting with the previous example 
-2. add a thirdNumber variable with a unique value
-3. create an equation using both the addition operator (`+`) and the multiplication operator (`*`)
+1. Starting with the previous example 
+2. Add a thirdNumber variable with a unique value
+3. Create an equation using both the addition operator (`+`) and the multiplication operator (`*`)
 4. Swap the Addition and Multiplication operator and run the program (Typically the answers will differ)
 
 ## Student Task 3: multiple operators and variables equation  
-1. starting with the previous example 
-2. add a fourthNumber variable
-3. create an equation using 3 different operators
-4. Challenge: create an equation using all 4 basic operators (`+, -, *, /`) and at least 5 unique variables.  
+1. Starting with the previous example 
+2. Add a fourthNumber variable
+3. Create an equation using 3 different operators
+4. Challenge: create an equation using all 4 basic operators (`+`, `-`, `*`, `/`) and at least 5 unique variables.  
 
 ### ~hint
 
@@ -116,15 +116,15 @@ Look at the JavaScript code.  For multiple operator equations it is often easier
 ### ~
 
 ## Student Task 4: Conversion  
-1. create 2 variables
-    - tempC (temperature Celsius) 
-    - tempF (temperature Fahrenheit)
-2. initialize tempC with common Celsius temperature (e.g., 22.0)
-3. create an equation using  the formula: tempF = tempC × 9/5 + 32
+1. Create 2 variables
+    * tempC (temperature Celsius) 
+    * tempF (temperature Fahrenheit)
+2. Initialize tempC with common Celsius temperature (e.g., 22.0)
+3. Create an equation using  the formula: tempF = tempC × 9/5 + 32
 4. Show the temp in a Splash Screen
-4. Challenge: create an equation for converting to Celsius:   
-    - tempC = (tempF - 32) × 5/9
-    - be sure to pay attention to the parenthesis
+4. **Challenge:** create an equation for converting to Celsius:   
+    * tempC = (tempF - 32) × 5/9
+    * be sure to pay attention to the parenthesis
 
 ### ~hint
 

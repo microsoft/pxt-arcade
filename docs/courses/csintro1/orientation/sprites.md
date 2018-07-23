@@ -92,10 +92,10 @@ When using the image editor the pixel dimensions are displayed in the lower righ
 
 https://youtu.be/oupwql9r-80  
 
-1. make a blank **32x32** sprite  
-2. hover over every color and find color index 0 - which is the transparency color and add that color on the far left  
-3. then find and add the other colors as picture of the number in order to the right using color index 1, 2, 3, 4, ..., until you have color index 15
-4. look at the sprite image in JavaScript view to answer **What did we learn** questions below
+1. Make a blank **32x32** sprite  
+2. Hover over every color and find color index 0 - which is the transparency color and add that color on the far left  
+3. Then find and add the other colors as picture of the number in order to the right using color index 1, 2, 3, 4, ..., until you have color index 15
+4. Look at the sprite image in JavaScript view to answer **What did we learn** questions below
 
 ![sprite rainbow numbers image](/static/courses/csintro1/orientation/rainbow-numbers.png)
 
@@ -108,9 +108,9 @@ Try Changing the background color using ``||Scene: set background color to||``
 ## What did we learn?
 
 1. Make a table showing 
-     - Color (use an approximate color name like white, red, pink, ...)  
-     - Color index (1-15)  
-     - Color representation in JavaScript  
+    * Color (use an approximate color name like white, red, pink, ...)  
+    * Color index (1-15)  
+    * Color representation in JavaScript  
 2. Explain what happens to the color index 0 in JavaScript (form a hypothesis)  
 3. Explain why we see only 14 colors at a time although there are 16 color indexes (0-15) in the image editor?  
 

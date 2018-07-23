@@ -6,11 +6,11 @@ The ``||info:info||`` category in blocks contains a few variables (data properti
 
 In this activity students will:
 
-* use the ``||info:score||`` and ``||info:life||`` variables
-* combine numeric values with math operators (\*)
-* identify the benefits of using ``||info:score||`` and ``||info:life||`` over other options
-* use the ``||info:countdown||`` block to put a time limit on a game
-* use the ``||loops:pause||`` block to wait a set amount of time
+* Use the ``||info:score||`` and ``||info:life||`` variables
+* Combine numeric values with math operators (\*)
+* Identify the benefits of using ``||info:score||`` and ``||info:life||`` over other options
+* Use the ``||info:countdown||`` block to put a time limit on a game
+* Use the ``||loops:pause||`` block to wait a set amount of time
 
 ## Concept: Using ``||info:score||`` to keep track of button presses
 
@@ -93,7 +93,7 @@ Review the [Variable Math](/courses/csintro1/orientation/variable-math) activity
 
 5. Use the ``||math:x||`` block to multiply the ``||info:score||`` by 10 and store it in a variable called `minuteScore`, so it will correspond to one minute's worth of button presses.
 6. Make the sprite ``||sprites:say||`` the result stored in `minuteScore`. Edit the sprite so it looks better.
-7. Challenge: instead of outputting an exact estimate, give a range that the button presses will likely fall into - estimate this by making the low end of the range correspond to ``(score - 1) * 10``, and the high end of the range correspond to ``(score + 1) * 10``. For example, if the score were 5, the output should be something along the lines of "between 40 and 60".
+7. **Challenge:** instead of outputting an exact estimate, give a range that the button presses will likely fall into - estimate this by making the low end of the range correspond to ``(score - 1) * 10``, and the high end of the range correspond to ``(score + 1) * 10``. For example, if the score were 5, the output should be something along the lines of "between 40 and 60".
 
 ### ~hint
 

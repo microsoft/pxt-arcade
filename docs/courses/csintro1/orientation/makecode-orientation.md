@@ -7,8 +7,8 @@ The MakeCode Arcade Platform is similar to other MakeCode Products such as Micro
 MakeCode Arcade uses block menus items for concepts such as Sprites, Scene, and Controller which form the basis for making MakeCode Arcade games along with blocks that are common to other MakeCode Products such as Loops, Logic, Variables and Math.
 
 In this activity student will work with: 
-* opening a game, game controls and playing a game
-* creating a new game, Blocks vs Script
+* Opening a game, game controls and playing a game
+* Creating a new game, Blocks vs Script
 * "My Projects", game .png download, and creating a game link
 
 
@@ -30,11 +30,17 @@ https://youtu.be/iEQa-Wd3MRs
 1. Press the "Home" button in the upper left corner to return to the homepage
 2. Press the "New Project" button 
 3. The screen will have two blocks on it to start with - we will focus on the ``||loops:on start||`` block for now, so drag the ``||game:on game update||`` block to the side bar to delete it as shown below.
+
 ![Deleting Onstart](/static/courses/csintro1/orientation/delete-on-start.gif)
+
 4. Drag out a new sprite and have it ``||sprite:say||`` something as shown below
+
 ![Sprite Say](/static/courses/csintro1/orientation/sprite-say.gif)
+
 5. At the bottom of the screen, select a name to save this game as (e.g. - "first game"), and click "Download" to download it.
+
 ![Downloading the game](/static/courses/csintro1/orientation/download.gif)
+
 6. Students will turn in this file today, so be sure to keep track of it!
 
 ## Student Task 3: Importing your game
@@ -52,6 +58,7 @@ There is one other common way that we will keep track of our games: by making li
 1. Press the "Home" button in the upper left corner to return to the homepage.
 2. Select your game from task 2 under "My Projects"
 3. Select the share button in the upper left corner, as shown below. Verify that you want to publish the code, and keep track of the URL it shows - that is a link directly to your code!
+
 ![Sharing the game](/static/courses/csintro1/orientation/sharing.gif)
 
 
@@ -67,7 +74,7 @@ There is one other common way that we will keep track of our games: by making li
 Start on the left rubric column (5pts), if the work meets the rubric measurement continue to the right (7pts, 9pts, 10pts). Award the score of the right most rubric that is passed.  This means that to get the highest score student must pass all previous rubrics.
 ### ~
 
-### tasks rubric
+### Tasks rubric
 | points | 5 | 7 | 9 | 10 |
 |:---:|:---:|:---:|:---:|:---:|
 | orientation | task 1 moved ship and scored a point | task 2 made a sprite say |task 3 opened game .gif file | shared a link to a game |

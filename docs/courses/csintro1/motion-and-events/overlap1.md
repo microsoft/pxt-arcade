@@ -8,7 +8,7 @@ In this activity the student will work with:
 * SpriteKind
 * On Overlap event with SpriteKind
 * Ghost on - Ghost off
-* destroy sprite
+* ``||sprites:destroy||`` sprite
 
 # Overlaps
 
@@ -16,15 +16,15 @@ In this activity the student will work with:
 
 https://youtu.be/rdZdXltoWXE 
 
-We use SpriteKind to classify our sprites.  We can have sprites that are Player, Enemy, Coin, SpaceShip or anything crate any label that is a good descriptive name.  Sometimes there just 1 of a SpriteKind and other times there will be many as with clouds. Once we have SpriteKind we can check if SpriteKinds are overlapping using the on SpriteKind overlap event.
+We use ``||sprites:SpriteKind||`` to classify our sprites.  We can have sprites that are Player, Enemy, Coin, SpaceShip or anything crate any label that is a good descriptive name.  Sometimes there just 1 of a SpriteKind and other times there will be many as with clouds. Once we have SpriteKind we can check if SpriteKinds are overlapping using the on SpriteKind overlap event.
 
 ## Example 1: Two Sprite Overlap  
 1. Review the code below 
 2. Create the sample code and run the code https://makecode.com/_e77ia1MAyA0U
 3. Save the code for the task (name it "eatFruit")  
-4. Look at the overlap event - note which sprite is named `sprite` and which is `otherSprite` 
+4. Look at the overlap event - note which sprite is named `sprite` and which is `otherSprite`
 
-```blocks  
+```blocks
 enum SpriteKind {
     Player,
     Enemy
@@ -94,9 +94,9 @@ game.onUpdate(function () {
 ```
 
 ## Student Task 1: Add actions to overlap events
-1. starting with example 1, or your own similar code
-2. add additional code to the overlap event that has the person saying something (e.g. - "Good!")
-3. Challenge: add another action to the overlap event that uses the other sprite.
+1. Starting with example 1, or your own similar code
+2. Add additional code to the overlap event that has the person saying something (e.g. - "Good!")
+3. **Challenge:** add another action to the overlap event that uses the other sprite.
 
 ### ~hint
 
@@ -192,10 +192,10 @@ game.onUpdate(function () {
 
 ## Student Task 3: Create Overlap using 1 SpriteKind Player and multiple SpriteKind 
 
-1. start with Task #1, Task #2 or your own similar code
-2. add a few Sprites that will use the same SpriteKind (such as SpriteKind Enemy) and a third & fourth SpriteKind as well 
-3. enable sprite to move anywhere on screen along x and y axis
-4. Challenge: using a total of 6 or more sprites and have an overlap involving each SpriteKind. Make one of the Overlap events play a sound, pause and then stop all sounds.
+1. Start with Task #1, Task #2 or your own similar code
+2. Add a few Sprites that will use the same SpriteKind (such as SpriteKind Enemy) and a third & fourth SpriteKind as well 
+3. Enable sprite to move anywhere on screen along x and y axis
+4. **Challenge:** using a total of 6 or more sprites and have an overlap involving each SpriteKind. Make one of the Overlap events play a sound, pause and then stop all sounds.
 
 ### ~hint
 
@@ -208,7 +208,7 @@ Be sure to use ``||music:stop all sounds||`` if completing challenge overlap eve
 ## What did we learn? 
 
 1. Describe how a SpriteKind label is used to detect overlap
-2. 2 or more sprites can have the same SpriteKind, explain how to reference only a sprite that was involved in the overlap.  
+2. If 2 or more sprites can have the same SpriteKind, explain how to reference only a sprite that was involved in the overlap.  
 
 ## Rubrics
 

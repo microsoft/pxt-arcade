@@ -63,8 +63,8 @@ console.log("msg sent!")
 
 ## Task: Add console.log( ) to "sprite hello"
 
-1. open (or recreate) the "sprite hello"  
-2. add in console messages using `console.log()` for:
+1. Open (or recreate) the "sprite hello"  
+2. Add in console messages using `console.log()` for:
     * a string (example: "Hello console")
     * a string variable (example: use **msg** variable)
 
@@ -79,8 +79,8 @@ Consider This!: The code `console.log()` doesn't use **mySprite** as with ``||sp
 https://youtu.be/1xQWu1tHFCo
 
 1. Start with the above project and add another sprite (need a different variable name) 
-2. add in a ``||sprite:say||`` messages to have a conversation with the first sprite
-3. push the **+** on the ``||sprites:say||`` block and set the time for each message (**1000** millisecond = 1 second)
+2. Add in a ``||sprite:say||`` messages to have a conversation with the first sprite
+3. Push the **+** on the ``||sprites:say||`` block and set the time for each message (**1000** millisecond = 1 second)
 
 ### ~hint
 
@@ -88,15 +88,12 @@ There is a pause block under the Loops menu ``||loops:pause(1000)||`` that can b
 
 ### ~
 
-## Challenge
+## What did we learn?
 
-1. Add additional Sprites at different coordinates and use ``||sprites:say||`` messages  
-2. Make larger 32x32 sprites
-
-### What did we learn?
-
-3. Discuss the different ways we can display a message in this exercise. List and example.
-4. Come up with a hypothesis and explain why `console.log()` has a large limit on the length of text. Explain.
+1. Discuss the different ways we can display a message in this exercise. List an example for each.
+2. Come up with a hypothesis and explain why `console:console.log()` has a large limit on the length of text. Explain.
+3. Add additional Sprites at different coordinates and use ``||sprites:say||`` to make messages for all of them.
+4. **Challenge:** Make larger 32x32 sprites.
 
 ## Rubrics
 
