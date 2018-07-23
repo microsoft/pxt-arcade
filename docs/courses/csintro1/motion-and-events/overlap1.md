@@ -221,7 +221,7 @@ Be sure to use ``||music:stop all sounds||`` if completing challenge overlap eve
 
 ### Score = \_\_\_\_\_\_ /10 
 
-### What did we learn rubric [TODO review based on number of questions]
+### What did we learn rubric
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
 | Explanations | answered questions but parts are unclear or lack detail | Explanations address both questions fully | all answers have clear explanations | included an exceptional explanation with a creative example, drawing or analogy |
