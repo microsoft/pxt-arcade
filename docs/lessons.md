@@ -11,16 +11,10 @@
   "url": "/lessons/cherry-pickr",
   "cardType": "lesson",
   "imageUrl": "/static/lessons/cherry-pickr.png"
-},
-{
-  "name": "Coordinate Walker",
-  "description": "Learn about screen coordinates",
-  "url": "/lessons/coordinate-walker"
 }
 ]
 ```
 
 ## See Also
 
-[Cherry Pickr](/lessons/cherry-pickr-lesson),
-[Coordinate Walker](/lessons/coordinate-walker)
+[Cherry Pickr](/lessons/cherry-pickr-lesson)
