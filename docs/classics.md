@@ -19,11 +19,11 @@
   "imageUrl": "/static/examples/eater-princess.png"
 },
 {
-  "name": "Food Machine",
+  "name": "Food Slot Machine",
   "description": "3 the same and you win",
-  "url":"/examples/food-machine",
+  "url":"/examples/slot-machine",
   "cardType": "example",
-  "imageUrl": "/static/examples/food-machine.png"
+  "imageUrl": "/static/examples/slot-machine.png"
 },
 {
   "name": "Treasure Hunt",
