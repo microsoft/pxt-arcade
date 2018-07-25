@@ -19,6 +19,7 @@ https://youtu.be/rdZdXltoWXE
 We use ``||sprites:SpriteKind||`` to classify our sprites.  We can have sprites that are Player, Enemy, Coin, SpaceShip or anything crate any label that is a good descriptive name.  Sometimes there just 1 of a SpriteKind and other times there will be many as with clouds. Once we have SpriteKind we can check if SpriteKinds are overlapping using the on SpriteKind overlap event.
 
 ## Example 1: Two Sprite Overlap  
+
 1. Review the code below 
 2. Create the sample code and run the code https://makecode.com/_e77ia1MAyA0U
 3. Save the code for the task (name it "eatFruit")  
@@ -94,6 +95,7 @@ game.onUpdate(function () {
 ```
 
 ## Student Task 1: Add actions to overlap events
+
 1. Starting with example 1, or your own similar code
 2. Add additional code to the overlap event that has the person saying something (e.g. - "Good!")
 3. **Challenge:** add another action to the overlap event that uses the other sprite.
@@ -105,9 +107,13 @@ Use ``||loops:pause||`` before using sprite destroy otherwise the sprite will be
 ### ~
 
 ## Set Sprite ghost on
+
+https://youtu.be/rN1UyX6YkQE
+
 The sprite **ghost on** setting makes the sprite able to pass "through" with other sprites and objects (such as walls that we create later) on the screen without an overlap or collision event being detected.  The default when we don't use the Sprite ghost block is ghost off.
 
 ## Example 2: Sprite Overlap - Ghost on 
+
 1. Review the code below
 2. Create the sample code and run the code https://makecode.com/_FR3ciEHqR8YE
 3. Note: find the set ghost on block - switching to ghost off  means "no ghost" properties and the code will run like example 1.
@@ -183,6 +189,7 @@ game.onUpdate(function () {
 ```
 
 ## Student Task 2: Sprite Overlap - Ghost off and on
+
 1. Start with example or task #1 or similar code -  create 3 sprites
 2. As before, make one sprite object move with the controller 
 3. Make the other sprites stationary and both of the same SpriteKind (e.g.- SpriteKind Enemy). 
@@ -191,6 +198,8 @@ game.onUpdate(function () {
 6. Add additional stationary sprites, with one more new SpriteKind and overlap events for all SpriteKinds (e.g. - SpriteKind of  Player, Enemy, Food)
 
 ## Student Task 3: Create Overlap using 1 SpriteKind Player and multiple SpriteKind 
+
+https://youtu.be/Nasu00HvaYE 
 
 1. Start with Task #1, Task #2 or your own similar code
 2. Add a few Sprites that will use the same SpriteKind (such as SpriteKind Enemy) and a third & fourth SpriteKind as well 

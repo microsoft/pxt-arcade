@@ -160,11 +160,11 @@ game.onUpdate(function () {
 ```
 
 
-## Student Task #3: Create Velocity Motion (discover the short method)
+## Student Task #3: Create Velocity Motion (discover the very short method)
 
 1. Start with Motion (short method) example above or similar code
 2. Explore the controller menu for ``||controller: control (mySprite) with vx (100) vy (100) ||``  
-3. Change the key pad motion to use the discovered block 
+3. Change the key pad motion to use the discovered block by placing it in ``||game:On Start||``
 3. Make the sprite stay in the screen boundary
 4. **Challenge:** add button events for Stop motion and Center sprite. Also, make a better sprite than a ball!
 
