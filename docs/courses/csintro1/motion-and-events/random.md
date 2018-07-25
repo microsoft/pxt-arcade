@@ -31,7 +31,7 @@ game.splash("Random Number is " + randomNumber)
 2. Adjust the code to pick a random number from 1 to 100
 3. Add a new variable `anotherRandom` to pick a random number from 20 to 30
 4. Add ``||game:splash||`` for 'anotherRandom' variable and change the label from 'x' to a meaningful label
-5. **Challenge:** create the value of a random number that can have both negative and positive values
+5. **Challenge:** use blocks to generate a random number that can result in both negative and positive values
 
 ## Concept: pick a random location
 
@@ -181,7 +181,7 @@ hat.setPosition(35, 60)
 
 ## What did we learn? 
 
-1. Describe how a set random makes programming can make a game more interesting and/or challenging.
+1. Describe how the ability to generate a random value can make a game more interesting and/or challenging.
 2. What is a good use of random that you would like to design into a future game - especially something we don't know how to do yet. Be descriptive of the game and how random is needed.  
 
 ## Rubrics
