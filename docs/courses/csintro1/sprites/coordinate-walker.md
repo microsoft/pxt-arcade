@@ -23,7 +23,7 @@ In order to create games we need to place Sprites and other objects at various l
 
 Use the coordinate walker example to move around the screen and track `X` and`Y` coordinates.
 
-**Open [coordinate walker program](https://makecode.com/_Vdi18F33t66F)**: to complete the tasks
+**Open [coordinate walker program](https://makecode.com/_huXKRL3r24iC)**: to complete the tasks
 
 1. Check the location: Run the program and then press the "A" button on the game pad (or space bar key on keyboard) to display the starting location coordinates - press to see `X` and `Y` coordinates.
     * Note the two coordinate values for `(X, Y)`
