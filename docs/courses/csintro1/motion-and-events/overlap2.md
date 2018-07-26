@@ -1,38 +1,36 @@
 # Activity: Sprite Overlap & Events - Part 2
 
-We use SpriteKind to give a label to Sprites so we can define how a "kind of sprite" will act when overlapping with another "kind of sprite." In the activity, all "Cloud" SpriteKind's respond with the same action when overlapped with a `Helicopter` SpriteKind. 
+We use ``||sprites:Kind||`` to give a label to Sprites so we can define how a "kind of sprite" will act when overlapping with another "kind of sprite." In the activity, all "Cloud" ``||sprites:Kind||``'s respond with the same action when overlapped with a `Helicopter` ``||sprites:Kind||``. 
 
-By making several cloud shaped sprites with the same SpriteKind of `Cloud`, we write code to so all SpriteKind `Cloud` interact in the same way with a SpriteKind `Helicopter` overlap event.
+By making several cloud shaped sprites with the same ``||sprites:Kind||`` of `Cloud`, we write code to so all ``||sprites:Kind||`` `Cloud` interact in the same way with a ``||sprites:Kind||`` `Helicopter` overlap event.
 
 In this activity the student will continue to work with:
-* ``||sprites:on overlap event||`` with a SpriteKind (e.g. - `Cloud`) applied to several identical sprites
-* Define multiple SpriteKind overlap events and actions
+* ``||sprites:on overlap event||`` with a ``||sprites:Kind||`` (e.g. - `Cloud`) applied to several identical sprites
+* Define multiple ``||sprites:Kind||`` overlap events and actions
 
-## Concept: SpriteKind Overlap Event "bump" action  
+## Concept: ``||sprites:Kind||`` Overlap Event "bump" action  
 
 https://youtu.be/eXCpLH74tF4 
 
-Having sprites bump rather than pass over each other is useful game behavior for a SpriteKind overlap event. One way to simulate a bump is:
+Having sprites bump rather than pass over each other is useful game behavior for a ``||sprites:Kind||`` overlap event. One way to simulate a bump is:
 
 1. Move the sprite in the opposite direction after the overlap (we will make it bump backwards). The faster we bump, the farther we move away from the overlap object.  
 2. Stop the sprite
-    * set ``||sprites:vx||`` and ``||sprites:vy||`` to 0
+    * Set ``||sprites:vx||`` and ``||sprites:vy||`` to 0
     * Change x position by (-1) \* (``||sprites:vx||``)  
     * Change y position by (-1) \* (``||sprites:vy||``)  
 3. Shake the stationary object (cloud)  
-    * Move 1 pixel (any direction)  
-    * Pause  
+    * Move 1 pixel (in any direction)  
+    * ``||loops:pause||``
     * Move back
 
-## Example 1: bump action from overlap event  
-
-1. Review the code below 
-2. Create the sample code and run the code 
-3. Save the code for the task (name it "copterBump1")  
-4. Look at the overlap event - note which sprite is named `sprite` and which is `otherSprite` and the how the code creates the bump behavior.
+## Example #1: bump action from overlap event
+1. Review the code below
+2. Create the sample code and run the code
+3. Save the code for the task (name it "copterBump1")
+4. Look at the overlap event - note which sprite is named ``||variables:sprite||`` and which is ``||variables:otherSprite||``, and how the code creates the bump behavior
 
 https://makecode.com/_UhT3dj2UjKPv
-
 ```blocks
 enum SpriteKind {
     Helicopter,
@@ -204,37 +202,31 @@ landing = sprites.create(img`
 landing.y = 125
 ```
 
-
 ## Student Task #1: Soft Landing  
-
-There is a "T" shaped landing area at the bottom of the example.  The helicopter sprite should not go through the landing, it should land!
-
-1. Starting with example #1,  replace the helicopter motion with the short method using ``||controller:dx (left-right buttons)||``  
-2. Review the rest of the code and then add an on overlap event for when the helicopter overlaps with the landing (Note the SpriteKind of `LandingPad`)
+There is a "T" shaped landing area at the bottom of the example. The helicopter sprite should not go through the landing pad, it should land!
+1. Starting with example #1, replace the helicopter motion with the short method using ``||controller:dx (left-right buttons)||``  
+2. Review the rest of the code, and then add an on overlap event for when the helicopter overlaps with the landing (note the ``||sprites:Kind||`` of ``||sprites:LandingPad||``)
 3. The block of code in the overlap event should stop the helicopter velocity motion (both vx and vy to zero) and then change the helicopter position **up** 2 pixels so it isn't overlapping any more.
-4. **Challenge:** Add a new sprite and SpriteKind to the Screen (e.g. - mountain, tree, or other) and set the overlap action to make the helicopter sprite have an erratic motion after an overlap. This should be 3 or more changes in position and/or velocity. Also, pauses allow the game player to see the motion changes more clearly.
+4. **Challenge:** Add a new sprite and ``||sprites:Kind||`` to the screen (for example, a mountain or a tree) and set the overlap action to make the helicopter sprite have an erratic motion after an overlap. This should be 3 or more changes in position and/or velocity. Also, ``||loops:pause||`` allows the game player to see the motion changes more clearly.
 
 ### ~hint
 
-For the landing: to change the helicopter ``||sprites:Y||`` position in order to move upwards we have to change by an negative value.
-
-Challenge Tip: Erratic motion can be made by changing the sprite position back and forth several times. Try changes in velocity and/or position separated by short pauses.
+Challenge Tip: erratic motion can be made by changing the sprite position back and forth multiple times. Try changes in velocity and/or position separated by short pauses.
 
 ### ~
 
-## Student Task #2: Add a new unique sprite with SpriteKind of "Cloud" 
-
-1. Starting with example or task #1 
-2. Add a new sprite that looks nothing like a cloud (e.g.- hat, tree, etc.)
-3. Make sure the new sprite has SpriteKind of "Cloud"  even though it is not a cloud
+## Student Task #2: Add a new unique sprite with ``||sprites:Kind||`` of ``||sprites:Cloud||``
+1. Starting with example code or task #1
+2. Add a new sprite that looks nothing like a cloud (for example, a hat or a tree)
+3. Make sure the new sprite has ``||sprites:Kind||`` of "Cloud"  even though it is not a cloud
 4. Position the new sprite so it is not touching any other sprite
-5. **Challenge:** Add another Sprite that looks different from the previous new sprite and give it a SpriteKind other than "Cloud" and make sure it has a unique overlap event action (e.g. - might say something new) 
+5. **Challenge:** Add another Sprite that looks different from the previous new sprite and give it a ``||sprites:Kind||`` other than ``||sprites:Cloud||`` and make sure it has a unique overlap event action (e.g. - might say something new) 
 6. Test the overlaps on the new sprite(s)
 
 ## What did we learn?
 
-1. Describe how a SpriteKind can improve code (for example, how it can make programming easier, more powerful, more efficient...).    
-2. Explain why in creating a "bump" effect negative X and Y velocities are used to change the X and Y positions. 
+1. Describe how a ``||sprites:Kind||`` can improve code (for example, how it can make programming easier, more powerful, more efficient...).    
+2. Explain why in creating a "bump" effect negative `X` and `Y` velocities are used to change the `X` and `Y` positions. 
 
 ## Rubrics
 
@@ -242,13 +234,13 @@ Challenge Tip: Erratic motion can be made by changing the sprite position back a
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Overlap & Events 2 | completed tasks |  Fully completed both tasks | Completed all tasks and at least 1 Challenge | Completed all tasks and All Challenge Code  |
+| Overlap & Events | Completed tasks | Fully completed both tasks | Completed all tasks and at least 1 Challenge | Completed all tasks and all challenge code |
 
 ### Score = \_\_\_\_\_\_ /10 
 
 ### What did we learn rubric 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | answers for both questions | Explanations address all questions fully | all answers have clear explanations with at least 2 examples for question #1 |  used an exceptional explanation (such as a diagram) in question #2 |
+| Explanation | Answers for both questions | Explanations address all questions fully | All answers have clear explanations with at least 2 examples for question 1 | Used an exceptional explanation (such as a diagram) in question 2 |
 
 ### Score = \_\_\_\_\_\_ /10 
