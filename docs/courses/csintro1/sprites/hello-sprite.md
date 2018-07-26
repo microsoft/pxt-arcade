@@ -90,7 +90,7 @@ There is a pause block under the ``||loops:Loops||`` menu ``||loops:pause(1000)|
 ## What did we learn?
 
 1. Discuss the different ways we can display a message in this exercise. Make a hypotheses for what each would be best at
-2. Come up with a hypothesis and explain why `console:console.log()` has a larger limit on the length of text. Explain.
+2. Come up with a hypothesis and explain why `console.log()` has a larger limit on the length of text. Explain.
 3. Add additional sprites at different coordinates and use ``||sprites:say||`` to make messages for all of them.
 4. **Challenge:** Make larger 32x32 sprites with more detail than the smaller sprites.
 
