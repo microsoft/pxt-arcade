@@ -2,7 +2,7 @@
 
 Once the sprites are moving, the next step is to detect when sprites interact with other objects. Overlap is the primary way in which we can make sprites interact with each other.
 
-We can assign events to overlaps between different ``||sprites:Kind||`` such as scoring points, destroying an object, starting an animation, and much more.
+We can assign events to overlaps between sprites of different (or even the same) ``||sprites:Kind||``, adding behaviors such as scoring points, destroying an object, starting an animation, and much more.
 
 In this activity, students will be introduced to:
 * ``||sprites:Sprite Kind||``
