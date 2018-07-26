@@ -2,11 +2,11 @@
 
 Many games need to spawn sprites to be collected like coins, or avoided like oil spills. We will use ``||sprites:create empty sprite||`` to spawn a new empty sprite, which is a place holder for a sprite without an image. Then use a ``||sprites:on created||`` event to set the image and a random position for newly generated sprites.  ``||sprites:on created||`` uses sprite kind so we can gie our new sprites the exact attributes we want like image, velocity or position.
 
-## Concept: Random Clouds - on created event with spawn SpriteKind 
+## Concept: Random Clouds - Create SpriteKind with on created event 
 
 https://youtu.be/iPxXjitXEUg 
 
-## Example 2: random clouds
+## Example 1: random clouds
 
 Use ``||sprites:on created||`` event to set image and location after a SpriteKind is spawned
 
@@ -110,7 +110,7 @@ sprites.createEmptySprite(SpriteKind.Cloud)
 sprites.createEmptySprite(SpriteKind.Cloud)
 ```
 
-## Student Task #2: More Random Clouds
+## Student Task #1: More Random Clouds
 
 The ``||sprites:on created||`` event allows us to become efficient with our code by running our set up for new clouds multiple times with the same code.  Now we will create new clouds with ``||Sprite:create empty sprite ||`` blocks.
 
