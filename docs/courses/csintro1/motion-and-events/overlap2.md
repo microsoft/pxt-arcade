@@ -14,7 +14,7 @@ https://youtu.be/eXCpLH74tF4
 
 Having sprites bump rather than pass over each other is useful game behavior for a ``||sprites:Kind||`` overlap event. One way to simulate a bump is:
 
-1. Move the sprite in the opposite direction after the overlap (we will make it bump backwards). The faster we bump, the farther we move away from the overlap object.  
+1. Move the sprite in the opposite direction after the overlap (we will make it bump backwards). The faster we bump, the farther we move away from the overlap object 
 2. Stop the sprite
     * Set ``||sprites:vx||`` and ``||sprites:vy||`` to 0
     * Change x position by (-1) \* (``||sprites:vx||``)  
@@ -206,8 +206,8 @@ landing.y = 125
 There is a "T" shaped landing area at the bottom of the example. The helicopter sprite should not go through the landing pad, it should land!
 1. Starting with example #1, replace the helicopter motion with the short method using ``||controller:dx (left-right buttons)||``  
 2. Review the rest of the code, and then add an on overlap event for when the helicopter overlaps with the landing (note the ``||sprites:Kind||`` of ``||sprites:LandingPad||``)
-3. The block of code in the overlap event should stop the helicopter velocity motion (both vx and vy to zero) and then change the helicopter position **up** 2 pixels so it isn't overlapping any more.
-4. **Challenge:** Add a new sprite and ``||sprites:Kind||`` to the screen (for example, a mountain or a tree) and set the overlap action to make the helicopter sprite have an erratic motion after an overlap. This should be 3 or more changes in position and/or velocity. Also, ``||loops:pause||`` allows the game player to see the motion changes more clearly.
+3. The block of code in the overlap event should stop the helicopter velocity motion (both vx and vy to zero) and then change the helicopter position **up** 2 pixels so it isn't overlapping any more
+4. **Challenge:** Add a new sprite and ``||sprites:Kind||`` to the screen (for example, a mountain or a tree) and set the overlap action to make the helicopter sprite have an erratic motion after an overlap. This should be 3 or more changes in position and/or velocity
 
 ### ~hint
 
@@ -225,7 +225,7 @@ Challenge Tip: erratic motion can be made by changing the sprite position back a
 
 ## What did we learn?
 
-1. Describe how a ``||sprites:Kind||`` can improve code (for example, how it can make programming easier, more powerful, more efficient...).    
+1. Describe how a ``||sprites:Kind||`` can improve code (for example, how it can make programming easier, more powerful, more efficient, ...).    
 2. Explain why in creating a "bump" effect negative `X` and `Y` velocities are used to change the `X` and `Y` positions. 
 
 ## Rubrics

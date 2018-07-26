@@ -43,7 +43,7 @@ Produce a total at the end of each step and use the total in the next step until
 11. Divide by 5  
 12. Add 22  
 13. Divide by 200  
-14. If **not** a match of the `month.day` of the persons birthday, carefully re-read the instructions and check answers at each step. 
+14. If **not** a match of the `month.day` of the persons birthday, carefully re-read the instructions and check answers at each step
 
 ## What did we learn? 
 

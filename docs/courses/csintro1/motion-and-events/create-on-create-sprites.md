@@ -121,10 +121,10 @@ The ``||sprites:on created||`` event allows us to become efficient with our code
     * create empty sprite having a small image, perhaps a bird, butterfly, other small item
     * add the image and random position using a new ``||sprites:on created||`` event block. 
     * create ``||sprites:create empty sprite of kind||`` for at least five of the new sprites (in random positions)
-5. **Challenge:** create an event for the ``||sprites:Helicopter||`` overlap with the new ``||sprites:Kind||`` that has an action that gives the new ``||sprites:Kind||`` a fast velocity so that it will fly off the screen after they overlap.
+5. **Challenge:** create an event for the ``||sprites:Helicopter||`` overlap with the new ``||sprites:Kind||`` that has an action that gives the new ``||sprites:Kind||`` a fast velocity so that it will fly off the screen after they overlap
 
 ## What did we learn? 
-1. Describe how a ``||sprites:Kind||`` label is used in generating a sprite using ``||sprites:create empty sprite||`` block
+1. Describe how a ``||sprites:Kind||`` label is used in generating a sprite using ``||sprites:create empty sprite||`` block.
 2. Explain what the ``||sprites:on created||`` block does for you.
 
 ## Rubrics
@@ -133,7 +133,7 @@ The ``||sprites:on created||`` event allows us to become efficient with our code
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Create & On-Create | Fully competed parts 1 to 3 of task #1 | Fully completed all part 4 of task #1 | Adds an overlap event for sprite in challenge section | Completed all parts of task #1 |
+| Create & On-Create | Fully competed parts 1 through 3 of task #1 | Fully completed all part 4 of task #1 | Adds an overlap event for sprite in challenge section | Completed all parts of task #1 |
 
 ### Score = \_\_\_\_\_\_ /10 
 

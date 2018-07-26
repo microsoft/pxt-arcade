@@ -96,7 +96,7 @@ game.onUpdate(function () {
 
 1. Starting with example #1, or your own similar code
 2. Add additional code to the overlap event that has the person saying something (for example, "Good!")
-3. **Challenge:** add another action to the overlap event that uses the other sprite.
+3. **Challenge:** add another action to the overlap event that uses the other sprite
 
 ### ~hint
 
@@ -190,7 +190,7 @@ game.onUpdate(function () {
 1. Start with the example or task #1
 2. Create 3 sprites in different locations across
 3. Make the newly created sprites all be of the same ``||sprites:Kind||``. 
-4. Set at least one sprite to have ``||sprites:ghost off||`` and one to have ``||sprites:ghost on||``. Make sure both of these are stationary (don't move).
+4. Set at least one sprite to have ``||sprites:ghost off||`` and one to have ``||sprites:ghost on||``. Make sure both of these are stationary (don't move)
 5. Add an event for ``||sprites:on overlap||`` of the stationary sprite ``||sprites:Kind||``s with the ``||sprites:Kind||`` for the movable sprite (for example, in the event have an action of sprite destroy and/or sprite say)
 6. Add 2 additional stationary sprites, with one more new ``||sprites:Kind||`` and overlap events for all the different ``||sprites:Kind||``s (for example, Player, Enemy, Food, ...)
 
@@ -200,7 +200,7 @@ https://youtu.be/Nasu00HvaYE
 
 1. Start with task #2 or your own similar code
 2. Enable sprite to move anywhere on screen along x and y axis
-3. **Challenge:** using a total of 6 or more sprites and have an overlap involving each SpriteKind. Make one of the Overlap events play a sound, pause and then stop all sounds.
+3. **Challenge:** using a total of 6 or more sprites and have an overlap involving each SpriteKind. Make one of the Overlap events play a sound, pause and then stop all sounds
 
 ### ~hint
 
@@ -212,7 +212,7 @@ Be sure to use ``||music:stop all sounds||`` if completing challenge overlap eve
 
 ## What did we learn? 
 
-1. Describe how a ``||sprites:Kind||`` is used to detect overlap
+1. Describe how a ``||sprites:Kind||`` is used to detect overlap.
 2. Suppose you have 2 or more sprites that have the same ``||sprites:Kind||``, and one of them triggers an overlap event. Explain how you can reference the sprite that was involved in the overlap event, rather than one of the other sprites of that ``||sprites:Kind||``.
 
 ## Rubrics

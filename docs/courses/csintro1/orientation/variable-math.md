@@ -41,7 +41,7 @@ game.splash("3 + 5 = " + answer)
 1. Starting with the above example 
 2. Experiment using different numbers in our equation (e.g.  `9 + 2`)
 3. Test at least 3 different equations
-4. **Challenge:** make longer addition equations so that the code calculates the sum of 5 or more numbers. If the equation gets too long, then display using ``||game:show long text||``.
+4. **Challenge:** make longer addition equations so that the code calculates the sum of 5 or more numbers. If the equation gets too long, then display using ``||game:show long text||``
 
 ### ~hint
 
@@ -103,7 +103,7 @@ https://youtu.be/C_UY8V-ufiI
 1. Start with the code from the previous task
 2. Add a ``||variables:fourthNumber||`` variable
 3. Create an equation using 3 different operators
-4. Challenge: create an equation using all 4 basic operators (`+`, `-`, `*`, `/`) and at least 5 unique variables.  
+4. Challenge: create an equation using all 4 basic operators (`+`, `-`, `*`, `/`) and at least 5 unique variables
 
 ### ~hint
 
@@ -120,7 +120,7 @@ Look at the JavaScript code. For multiple operator equations it is often easier 
 4. Show the ``||variables:temp||`` in a Splash Screen
 4. **Challenge:** create an equation for converting back to Celsius:   
     * ``||variables:tempC||`` = (``||variables:tempF||`` - 32) × 5/9
-    * pay careful attention to the parenthesis
+    * pay careful attention to the parentheses
 
 ### ~hint
 

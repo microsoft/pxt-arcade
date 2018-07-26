@@ -107,8 +107,8 @@ agent = sprites.create(img`
 1. Start with example #2 ("velocityLR") or your own similar code
 2. Add additional code to control the up down Y-direction velocities using the controller 
 3. **Challenges:**
-    - Add an `A` button event move the sprite to the center of the game screen
-    - Add a `B` button event to stop the sprite (all velocities = 0)
+    * Add an `A` button event move the sprite to the center of the game screen
+    * Add a `B` button event to stop the sprite (all velocities = 0)
 
 ## Motion - short ``||sprites:dx||``/``||sprites:dy||`` code method  
 
@@ -116,7 +116,7 @@ https://youtu.be/TPpg3jp2lx4
 
 We have created motion by capturing the key pad events and incrementing (or decrementing) a location coordinate or a velocity. Now that we have seen how this works for the four directional buttons we can use a shorter method to handle this.
 
-## Example #3: motion short ``||dx||`` / ``||dy||`` code method 
+## Example #3: motion short ``||sprites:dx||`` / ``||sprites:dy||`` code method 
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "motionShortMethod")  
@@ -158,7 +158,7 @@ game.onUpdate(function () {
 2. Explore the controller menu for ``||controller: control (mySprite) with vx (100) vy (100) ||``  
 3. Change the key pad motion to use the discovered block by placing it in ``||game:on start||``
 3. Make the sprite stay in the screen boundary
-4. **Challenge:** add button events that stop motion the sprites motion, and reset the sprite to the center of the screen.
+4. **Challenge:** add button events that stop motion the sprites motion, and reset the sprite to the center of the screen
 
 ### ~hint
 
@@ -233,7 +233,6 @@ let mySprite: Sprite = sprites.create(img`
 ```
 
 # Student Task #4: Image Flip with motion
-
 1. Start with Motion (short method) example above or similar code
 2. Make your own image move using the `up`, `down`, `left`, `right` buttons on the controller
 3. Use `A` button to flip vertically (upside down, and back upright)

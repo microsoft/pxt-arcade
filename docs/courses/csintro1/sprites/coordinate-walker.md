@@ -53,9 +53,9 @@ game.onUpdate(function () {
 })
 ```
 
-1. To check the location: run the program, and then press the `A` button on the game pad (or space bar key on keyboard). This will display the starting location's `X` and `Y` coordinates.
+1. To check the location: run the program, and then press the `A` button on the game pad (or space bar key on keyboard). This will display the starting location's `X` and `Y` coordinates
     * Note the two coordinate values for `(X, Y)`
-2. Move the sprite: click on the game pad (or use keyboard `WASD` keys) to move the sprite.  Check the coordinates after moving.
+2. Move the sprite: click on the game pad (or use keyboard `WASD` keys) to move the sprite.  Check the coordinates after moving
     
 ## What did we learn?
 Use `X` and/or `Y` in your answers  
@@ -74,14 +74,13 @@ Two dimensional game screen coordinates are represented by values for `X` and `Y
 
 ![sprite at top edge of screen](/static/courses/csintro1/sprites/coordinate-edge.png)
 
-2. Move to each of the corners and **map the coordinates** as a pair of X and Y values like `(X, Y)`. 
-    * Restart the game. What are the coordinates when you start? Should be `(64, 64)`.
-    * **Record** the coordinates at the **Top Right** corner  
-    * **Record** the coordinates at the **Bottom Right** corner  
-    * **Record** the coordinates at the **Bottom Left** corner  
-    * **Record** the coordinates at the **Top Left** corner   
-    * **Record** the Game Screen Dimensions (height by width)  
-
+2. Move to each of the corners and **map the coordinates** as a pair of X and Y values like `(X, Y)`
+    * Restart the game. What are the coordinates when you start?
+    * **Record** the coordinates at the **Top Right** corner
+    * **Record** the coordinates at the **Bottom Right** corner
+    * **Record** the coordinates at the **Bottom Left** corner
+    * **Record** the coordinates at the **Top Left** corner
+    * **Record** the Game Screen Dimensions (height by width)
 
 ![map the coordinates at the corners](/static/courses/csintro1/sprites/coordinates-map.png)
 
@@ -97,7 +96,7 @@ Challenge a peer to bring the sprite back into view after you move the sprite of
     * use the game pad `A` button to get the *hidden* sprite coordinates
     * pick 1: `up` or `down` `Y` direction
     * pick 1: `left` or `right`  `X` direction
-    * using only the controller pad keys chosen bring the sprite back onto the screen.
+    * using only the controller pad keys chosen bring the sprite back onto the screen
 
 ## Rubrics
 

@@ -32,7 +32,7 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
 Notice that the score pops up in the top right corner as soon as it is used for the first time - that is one benefit of using the ``||info:score||`` variable to keep track of the points the player has earned. Next, we will add in code to in order to create a timer, to see some of the other benefits of the ``||info:info||`` blocks.
 
 ## Student Task #1: 10 second button smash
-1. Start with the code saved as "button count" in the prior example.
+1. Start with the code saved as "button count" in the prior example
 2. Create an ``||loops:on start||`` block
 
 ### ~hint
@@ -66,10 +66,10 @@ info.setLife(1)
 This simple game gives the user a simple task - to not touch a button. If they do touch a button, the life will go down to 0, and they will lose. The game is a bit boring, but it does demonstrate a few of the benefits of using ``||info:life||``: life total shows up in the corner as a number of hearts, and when you run out of the lives, the game will end.
 
 ## Student Task 2: Touch the button 15 times
-1. Start with the code saved as "do not touch the buttons" in the prior example.
-2. Modify the initial value of the life to be 15, instead of just 1.
-3. Add in the ``||info:change score by||`` block used in the first task, and modify it to add 2 to the score each time a button is pressed.
-4. Add in a ``||info:countdown||``, and set it to run out after 2 seconds.
+1. Start with the code saved as "do not touch the buttons" in the prior example
+2. Modify the initial value of the life to be 15, instead of just 1
+3. Add in the ``||info:change score by||`` block used in the first task, and modify it to add 2 to the score each time a button is pressed
+4. Add in a ``||info:countdown||``, and set it to run out after 2 seconds
 
 ### Simplify Blocks chained together with JavaScript
 
@@ -89,9 +89,9 @@ Review the [Variable Math](/courses/csintro1/orientation/variable-math) activity
 
 ### ~
 
-5. Use the ``||math:x||`` block to multiply the ``||info:score||`` by 10 and store it in a variable called `minuteScore`, so it will correspond to one minute's worth of button presses.
-6. Make the sprite ``||sprites:say||`` the result stored in `minuteScore`. Edit the sprite so it looks better.
-7. **Challenge:** instead of outputting an exact estimate, give a range that the button presses will likely fall into - estimate this by making the low end of the range correspond to `(score - 1) * 10`, and the high end of the range correspond to `(score + 1) * 10`. For example, if the score were 5, the output should be something along the lines of "between 40 and 60".
+5. Use the ``||math:x||`` block to multiply the ``||info:score||`` by 10 and store it in a variable called `minuteScore`, so it will correspond to one minute's worth of button presses
+6. Make the sprite ``||sprites:say||`` the result stored in `minuteScore`. Edit the sprite so it looks better
+7. **Challenge:** instead of outputting an exact estimate, give a range that the button presses will likely fall into - estimate this by making the low end of the range correspond to `(score - 1) * 10`, and the high end of the range correspond to `(score + 1) * 10`. For example, if the score were 5, the output should be something along the lines of "between 40 and 60"
 
 ### ~hint
 
