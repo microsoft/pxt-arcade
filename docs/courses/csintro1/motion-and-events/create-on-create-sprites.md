@@ -140,6 +140,6 @@ The ``||sprites:on created||`` event allows us to become efficient with our code
 ### What did we learn rubric
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanations | answered questions but parts are unclear or lack detail | Explanations address both questions fully | all answers have clear explanations | included an exceptional explanation with original example, drawing or analogy |
+| Explanations | Answered questions but parts are unclear or lack detail | Explanations address both questions fully | All answers have clear explanations | Included an exceptional explanation with original example, drawing or analogy |
 
 ### Score = \_\_\_\_\_\_ /10 
