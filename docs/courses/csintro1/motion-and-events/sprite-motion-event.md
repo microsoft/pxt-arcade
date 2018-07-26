@@ -162,7 +162,7 @@ game.onUpdate(function () {
 
 ### ~hint
 
-The ``||sprites:stay in screen||`` block is is in the sprite menu.
+The ``||sprites:stay in screen||`` block is in the sprite menu.
 
 ### ~
 
@@ -242,7 +242,7 @@ let mySprite: Sprite = sprites.create(img`
 
 1. Describe how an events can be used to run code using an example.
 2. Describe the difference between changing position and changing velocity.
-3. In using flip, the sprite is **not** what is flipped. What is flipped? Explain how you know.
+3. In using flip, the sprite is **not** what is flipped. What is actually flipped? Explain how you know.
 
 ## Rubrics
 
