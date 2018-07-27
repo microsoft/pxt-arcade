@@ -4,23 +4,20 @@
 
 https://youtu.be/O27uzdkbgK4 
 
-Motion **is** change in position, to be still means position doesn't change. To get sprites moving we will change their position using a game pad event.  The game pad has controller events for up, down, left and right so we can change sprite location and make the sprite move.  We will also see how to give a sprite a velocity.  Velocity is the rate of change of our position and is similar to Kilometers/hour or Miles/hour. When velocity is not 0 (zero) then the sprite will be in motion.
+Motion is the change in position. To get sprites moving, we will change their position using a game pad event.  The game pad has ``||controller:controller events||`` for up, down, left and right. We can use those eventsto change sprite location, and to make the sprite move. We will also see how to give a sprite a velocity. Velocity is the rate of change of our position - in real life, this is often measured as kilometers per hour or miles per hour. When the velocities of a sprite are not zero, then the sprite will be in motion.
 
-In these activities, the student will use: 
+In these activities, the student will be introduced to:
+* Controller events
+* Incrementing ``||sprites:x||`` and ``||sprites:y||`` coordinates
+* Setting ``||sprites:vx||`` and ``||sprites:vy||`` velocity
+* Short methods and functions with motion
+* ``||sprites:stay on screen||``
+* Flipping (and switching) images
 
-* controller events
-* increment x and y coordinates
-* increment vx and vy velocity
-* Motion short method
-* stay on screen
-* image flip (sprite image)
-* functions
-
-## Example 1: increment position left and right 
-
+## Example #1: increment position left and right 
 1. Review the code below
 2. Create the sample code and run the code
-3. Save the code for the task (name it "motionLR" or "motion left right")  
+3. Save the code for the task (name it "motionLR")  
 
 ```blocks
 enum SpriteKind {
@@ -56,25 +53,22 @@ agent = sprites.create(img`
 ```
 
 ## Student Task #1: increment position Y-axis (up and down) 
-
-1. start with example 1 (motionLR, or your own similar code)
-2. add additional code to control the up down Y-direction motions using the controller 
-3. Challenges: 
-    - add an "A" button event to move the sprite to the center of the game screen.  
-    - Add a "B" button event to make the sprite "jump" (move) 15 pixels.
+1. Start with example 1 (motionLR, or your own similar code)
+2. Add additional code to control the up down Y-direction motions using the controller 
+3. **Challenges:**
+    - Add an `A` button event to move the sprite to the center of the game screen
+    - Add a `B` button event to make the sprite "jump" (move) 15 pixels
 
 ## Sprite Motion Velocity
 
 https://youtu.be/Gl0Y2sHY_MA 
 
+Velocity is speed in a particular direction. In our games we typically track movement in `X` and `Y` directions. If we have a positive `X` velocity, for example, then our sprite will continue to increase in `X`, making it move to the right across the screen.
 
-Velocity is speed in a particular direction - continuous movement.  In our games we typically track movement in X and Y directions. If we have a positive x velocity we more right and a negative X velocity is moving left.
-
-## Example 2: increment velocity left and right 
-
+## Example 2: increment velocity left and right
 1. Review the code below
-2. Create the sample code and run the code https://makecode.com/_P2zg4qYYcYH3
-3. Save the code for the task (name it "velocityLR" or "velocity left right")  
+2. Create the sample code and run the code
+3. Save the code for the task (name it "velocityLR")  
 
 ```blocks
 enum SpriteKind {
@@ -110,24 +104,23 @@ agent = sprites.create(img`
 
 ## Student Task #2: Increment Velocity Up and Down 
 
-1. start with example #2 (velocityLR, or your own similar code)
-2. add additional code to control the up down Y-direction velocities using the controller 
-3. Challenges: 
-    - add an "A" button event move the sprite to the center of the game screen.  
-    - Add a "B" button event to stop the sprite (all velocities = 0).  
+1. Start with example #2 ("velocityLR") or your own similar code
+2. Add additional code to control the up down Y-direction velocities using the controller 
+3. **Challenges:**
+    * Add an `A` button event move the sprite to the center of the game screen
+    * Add a `B` button event to stop the sprite (all velocities = 0)
 
-## Motion - short dx/dy code method  
+## Motion - short ``||sprites:dx||``/``||sprites:dy||`` code method  
 
 https://youtu.be/TPpg3jp2lx4 
 
-We have created motion by capturing the key pad events and incrementing (or decrementing) a location coordinate or velocity. Now that we have seen how this works for the four directional buttons we can use a shorter method.
+We have created motion by capturing the key pad events and incrementing (or decrementing) a location coordinate or a velocity. Now that we have seen how this works for the four directional buttons we can use a shorter method to handle this.
 
-## Example 3: motion short dx/dy code method 
-
+## Example #3: motion short ``||sprites:dx||`` / ``||sprites:dy||`` code method 
 1. Review the code below
 2. Create the sample code and run the code
-3. Save the code for the task (name it "MotionShortMethod" or "motion Short Method")  
-4. note the blocks in ``||game: on game update||``
+3. Save the code for the task (name it "motionShortMethod")  
+4. Note the blocks in ``||game:on game update||``
 
 ```blocks
 enum SpriteKind {
@@ -160,18 +153,16 @@ game.onUpdate(function () {
 })
 ```
 
-
-## Student Task #3: Create Velocity Motion (discover the short method)
-
-1. start with Motion (short method) example above or similar code
-2. explore the controller menu for ``||controller: control (mySprite) with vx (100) vy (100) ||``  
-3. change the key pad motion to use the discovered block 
-3. make the sprite stay in the screen boundary
-4. Challenge: add button events for Stop motion and Center sprite. Also, make a better sprite than a ball!
+## Student Task #3: Create Velocity Motion (discover the very short method)
+1. Start with Motion (short method) example above or similar code
+2. Explore the controller menu for ``||controller: control (mySprite) with vx (100) vy (100) ||``  
+3. Change the key pad motion to use the discovered block by placing it in ``||game:on start||``
+3. Make the sprite stay in the screen boundary
+4. **Challenge:** add button events that stop motion the sprites motion, and reset the sprite to the center of the screen
 
 ### ~hint
 
-The "stay in screen" block is is in the sprite menu.  Start with a ``||Sprite:set sprite ghost||`` block and change the dropdown.
+The ``||sprites:stay in screen||`` block is in the sprite menu.
 
 ### ~
 
@@ -181,15 +172,15 @@ https://youtu.be/1tae8OZpt4w
 
 By making a mirror flip of a sprite we can simulate walking by making each leg appear differently 
 
-## Example 4: Image Flip with button press event
+## Example #4: Image Flip with button press event
 
 Flipping an image creates a left right mirror image when we use flip horizontal. This can be useful in creating a simple 2 frame walking animation.
 
 1. Review the code below
-2. Create the sample code and run the code https://makecode.com/_D2yMge4to89R 
-3. Save the code for the task (name it "FlipImage")  
-4. note use of the  function called "fliphorizontal"
-5. find the ``||sprites:sprite image||`` block in the sprites menu that is the image that is flipped
+2. Create the sample code and run the code
+3. Save the code for the task (name it "flipImage")  
+4. Note use of the  function called "flipHorizontal"
+5. Find the ``||sprites:sprite image||`` block in the sprites menu that is the image that is flipped
 
 ```blocks
 enum SpriteKind {
@@ -241,18 +232,16 @@ let mySprite: Sprite = sprites.create(img`
 
 ```
 
-# Student Task 4: Image Flip with motion
-
+# Student Task #4: Image Flip with motion
 1. Start with Motion (short method) example above or similar code
-2. Make **your own image** move using the up, down, left, right controller
-3. Use "A" button to flip vertically (upside down and back upright)
-4. Challenge: add the flip Vertical as a function.
+2. Make your own image move using the `up`, `down`, `left`, `right` buttons on the controller
+3. Use `A` button to flip vertically (upside down, and back upright)
 
 ## What did we learn? 
 
 1. Describe how an events can be used to run code using an example.
 2. Describe the difference between changing position and changing velocity.
-3. In using flip, the sprite is **not** flipped.  What is flipped? Explain how you know.  
+3. In using flip, the sprite is **not** what is flipped. What is actually flipped? Explain how you know.
 
 ## Rubrics
 
@@ -260,7 +249,7 @@ let mySprite: Sprite = sprites.create(img`
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| motion-event  | completed 3 or more Tasks|  completed all 4 tasks properly | completed all tasks and 1 or more challenges | Completed all tasks and Challenge Code  |
+| Motion Event | Completed 3 or more Tasks| Completed all 4 tasks properly | Completed all tasks and 1 or more challenges | Completed all tasks and challenge Code |
 
 ### Score = \_\_\_\_\_\_ /10 
 
@@ -268,6 +257,6 @@ let mySprite: Sprite = sprites.create(img`
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | all answers have clear explanations |  has an exceptional explanation using an original example and/or analogy |
+| Explanation | Answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | All answers have clear explanations | Has an exceptional explanation using an original example and/or analogy |
 
 ### Score = \_\_\_\_\_\_ /10 
