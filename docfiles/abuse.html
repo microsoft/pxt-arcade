@@ -1,17 +1,24 @@
-<div class="ui grid padded mobile only">
-    <div class="abuse content mobile">
-        <p>
-            The content below is provided by a user, and is not endorsed by Microsoft. 
-            <a style='text-decoration:underline' id="abuse" href="#">Report abuse</a> if you think it's not appropriate.
-        </p>
+<div class="ui tiny message">
+    <i class="close icon"></i>
+    <div class="ui grid padded mobile only">
+        <div class="abuse content mobile">
+            <p>
+                The content below is provided by a user, and is not endorsed by Microsoft.
+                <a style='text-decoration:underline' id="abuse" href="#">Report abuse</a> if you think it's not appropriate.
+            </p>
+        </div>
     </div>
-</div>
-<div class="ui grid padded mobile hide">
-    <div class="abuse content full">
-        <p>
-            The content below is provided by a user, and is not endorsed by Microsoft. 
-            <a style='text-decoration:underline' id="abuse" href="#">Report abuse</a> if you think it's not appropriate.
-        </p>
+
+    <div class="ui grid padded mobile hide">
+        <div class="abuse content full">
+            <h3 class="header">
+                User-provided content
+            </h3>
+            <p>
+                The content below is provided by a user, and is not endorsed by Microsoft.
+                <a style='text-decoration:underline' id="abuse" href="#">Report abuse</a> if you think it's not appropriate.
+            </p>
+        </div>
     </div>
 </div>
 
@@ -51,26 +58,26 @@
 
 
 <script>
-    $(function() {
+    $(function () {
         var id = "@id@";
-        var now = Math.round(Date.now()/1000);
-        $(".humantime").each(function() {
+        var now = Math.round(Date.now() / 1000);
+        $(".humantime").each(function () {
             $(this).text(
                 describetime(now, parseInt($(this).data("time")))
-            )        
+            )
         })
-        $("#abuse").click(function() {
+        $("#abuse").click(function () {
             $("#abusemodal")
                 .modal({
-                    onApprove: function() {
+                    onApprove: function () {
                         $.ajax({
                             type: 'POST',
                             url: '/api/@id@/abusereports',
                             data: JSON.stringify({
                                 text: $('#abusetext').val()
                             }),
-                            success: function() {
-                                $("#abusedone").modal("show"); 
+                            success: function () {
+                                $("#abusedone").modal("show");
                             },
                             contentType: "application/json",
                             dataType: 'json'
@@ -79,5 +86,10 @@
                 })
                 .modal("show");
         })
+        $('.message .close').click(function () {
+            $(this)
+                .closest('.message')
+                .fadeOut();
+        });
     })
 </script>
