@@ -62,9 +62,12 @@ namespace pxsim {
 
             if (!document.hasFocus()) window.focus();
 
+            const x = ev.pageX
+            const y = ev.pageY
+
             const inRect = (r: ClientRect) => {
-                return (r.left <= ev.x && ev.x <= r.right &&
-                    r.top <= ev.y && ev.y <= r.bottom)
+                return (r.left <= x && ev.pageX <= r.right &&
+                    r.top <= y && y <= r.bottom)
             }
 
             for (let k of this.keys) {
@@ -72,8 +75,8 @@ namespace pxsim {
                 if (inRect(r)) {
                     inside = k
                 }
-                const dx = (r.left + r.right) / 2 - ev.x
-                const dy = (r.top + r.bottom) / 2 - ev.y
+                const dx = (r.left + r.right) / 2 - x
+                const dy = (r.top + r.bottom) / 2 - y
                 const d = dx * dx + dy * dy
                 k.dist = d
 
