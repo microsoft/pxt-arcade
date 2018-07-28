@@ -60,6 +60,8 @@ namespace pxsim {
             let inside: KeyBinding = null
             let close: KeyBinding[] = []
 
+            if (!document.hasFocus()) window.focus();
+
             const inRect = (r: ClientRect) => {
                 return (r.left <= ev.x && ev.x <= r.right &&
                     r.top <= ev.y && ev.y <= r.bottom)
