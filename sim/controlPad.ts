@@ -15,6 +15,13 @@ namespace pxsim {
 
     const aspectRatio = 2; // width / height
 
+    export interface KeyBinding {
+        el: Element;
+        key: Key;
+        isDown?: boolean;
+        dist?: number;
+    }
+
     export class ControlPad {
         dPadRoot: s.SVG;
         buttonsRoot: s.SVG;
@@ -30,10 +37,74 @@ namespace pxsim {
         protected primary: s.Circle;
         protected secondary: s.Circle;
 
+        protected keys: KeyBinding[] = [];
+
         constructor(parent: Element) {
             this.dPadRoot = new s.SVG(parent);
             this.buttonsRoot = new s.SVG(parent);
             this.buildDom();
+
+            const clearBtns = () => {
+                for (let k of this.keys) {
+                    if (k.isDown) {
+                        k.isDown = false
+                        board().handleKeyEvent(k.key, k.isDown)
+                    }
+                }
+            }
+
+            svg.buttonEvents(parent, ev => this.btnEvent(ev), ev => this.btnEvent(ev), clearBtns)
+        }
+
+        private btnEvent(ev: MouseEvent) {
+            let inside: KeyBinding = null
+            let close: KeyBinding[] = []
+
+            if (!document.hasFocus()) window.focus();
+
+            const x = ev.pageX
+            const y = ev.pageY
+
+            const inRect = (r: ClientRect) => {
+                return (r.left <= x && ev.pageX <= r.right &&
+                    r.top <= y && y <= r.bottom)
+            }
+
+            for (let k of this.keys) {
+                const r = k.el.getBoundingClientRect();
+                if (inRect(r)) {
+                    inside = k
+                }
+                const dx = (r.left + r.right) / 2 - x
+                const dy = (r.top + r.bottom) / 2 - y
+                const d = dx * dx + dy * dy
+                k.dist = d
+
+                if (d < r.width * r.width * 3) {
+                    close.push(k)
+                }
+            }
+
+            if (inside) close = [inside]
+            if (close.length > 2) {
+                close.sort((a, b) => a.dist - b.dist)
+                close = close.slice(0, 2)
+            }
+
+            if (close.length == 0) {
+                if (inRect(board().canvas.getBoundingClientRect()))
+                    close = this.keys.filter(k => k.key == Key.A)
+            }
+
+            for (let k of this.keys) {
+                const isDown = close.indexOf(k) >= 0
+                if (isDown != k.isDown) {
+                    k.isDown = isDown
+                    board().handleKeyEvent(k.key, k.isDown)
+                }
+            }
+
+            ev.preventDefault();
         }
 
         public mirrorKey(key: Key, down: boolean, realEvent?: boolean) {
@@ -124,12 +195,6 @@ namespace pxsim {
 
             this.left = this.drawTouchPad(this.dPad, 0, DRAW_UNIT);
             this.bindPadEvents(this.left, Key.Left);
-
-            // Add some helpful diagonal touch pads
-            this.bindPadEvents(this.drawTouchPad(this.dPad, 0, 0), [Key.Up, Key.Left]);
-            this.bindPadEvents(this.drawTouchPad(this.dPad, 2 * DRAW_UNIT, 0), [Key.Up, Key.Right]);
-            this.bindPadEvents(this.drawTouchPad(this.dPad, 0, 2 * DRAW_UNIT), [Key.Down, Key.Left]);
-            this.bindPadEvents(this.drawTouchPad(this.dPad, 2 * DRAW_UNIT, 2 * DRAW_UNIT), [Key.Down, Key.Right]);
         }
 
         protected drawTouchPad(parent: s.Group, x: number, y: number, width = DRAW_UNIT, height = DRAW_UNIT) {
@@ -140,19 +205,8 @@ namespace pxsim {
             return pad;
         }
 
-        protected bindPadEvents(pad: s.Rect, target: Key | Key[]) {
-            const down = Array.isArray(target) ?
-                () => target.forEach(key => board().handleKeyEvent(key, true)) :
-                () => board().handleKeyEvent(target, true);
-
-            const up = Array.isArray(target) ?
-                () => target.forEach(key => board().handleKeyEvent(key, false)) :
-                () => board().handleKeyEvent(target, false);
-
-            pad.onDown(down);
-            pad.onLeave(up);
-            pad.onUp(up);
-            pad.onEnter(isDown => isDown ? down() : up());
+        protected bindPadEvents(pad: s.Rect, target: Key) {
+            this.keys.push({ el: pad.el, key: target })
         }
 
         protected drawButtonGroup() {
@@ -163,7 +217,7 @@ namespace pxsim {
         }
 
         protected drawButton(symbol: string, cx: number, cy: number, key: Key) {
-            const r = DRAW_UNIT * 0.75;
+            let r = DRAW_UNIT * 0.75;
 
             const button: s.Circle = this.buttons.draw("circle")
                 .at(cx, cy)
@@ -178,6 +232,7 @@ namespace pxsim {
                 .anchor("middle")
                 .alignmentBaseline("middle");
 
+            r *= 0.6; // the actual radius is bigger, see btnEvent() above
             this.bindPadEvents(this.drawTouchPad(this.buttons, cx - r, cy - r, r * 2, r * 2), key);
 
             return button;
@@ -202,7 +257,7 @@ namespace pxsim {
         }
     }
 
-    function scale(points: { x: number, y: number } [], factor: number) {
+    function scale(points: { x: number, y: number }[], factor: number) {
         return points.map(({ x, y }) => ({ x: x * factor, y: y * factor }))
     }
 }
