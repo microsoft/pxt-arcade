@@ -2,21 +2,19 @@
 
 https://youtu.be/79vikAMjpBs
 
-A variable points to a container that can store data.  We have previously used variables names for  sprites (e.g. - `player1`).  Variables act like an address, and let us store, retrieve or update data.  For our Sprite example, the variable `player1` allowed us to use the Sprite in our game.  The word "variable" also means change. We can update the values our variable point to, such as updating the `player1` variable to point to a new Sprite image.
+A variable points to a container that can store data. We have previously used variables names for sprites (for example, ``||sprites:mySprite||``). Variables act like an address, and allow us to store, retrieve, and update data. For the examples in the Sprites lesson, the variable ``||variables:mySprite||`` allowed us to interact with the sprite in our game. The word "variable" also means change. We can update the values our variable point to, such as updating the ``||variable:mySprite||`` variable to point to a completely different sprite.
 
-Variables are used extensively in code. Variables allow code to be written in a generic way and allow for easier reuse of our code.  Math equations, like `X = 2Y`, provide familiar examples in the use of variables that apply to code by assigning know values to variables to calculate unknown variable values.  
+Variables are used extensively in code. Variables allow code to be written in a generic way, and allow for easier reuse of our code.  Math equations, like `X = 2Y`, provide familiar examples in the use of variables that apply to code by assigning know values to variables to calculate unknown variable values.  
 
-If we know `Y = 3` we can calculate `X` from our equation.  Later `Y` can have a different value, `Y = 7`. We can reuse the equation, `X = 2Y`, for both values of `Y`.
+If we know `Y = 3` we can calculate `X` from our equation. Later on, `Y` can have a different value, like `Y = 7`. We can reuse the equation, `X = 2Y`, for both values of `Y`. This way, the value of `X` will change alongside the value of `Y`.
 
-
-In this activity student will:
-
-* combine numeric values with math operators (+, -, \*, /)
-* store the result of an equation in a variable 
-* evaluate equations using variables
-* modify and create variable equations
-* display text with ``||game:splash||`` by using ``||text:join||``
-* differentiate between number and string data types
+In this activity, student are introduced to:
+* Expressing numeric operations with math operators (`+`, `-`, `*`, `/`)
+* Storing the result of an equation in a variable 
+* Evaluating equations using variables
+* Modifying and creating variable equations
+* Displaying text with ``||game:splash||`` by using ``||text:join||``
+* Differentiating between the number and string data types
 
 ## Concept: Assign Number Variables and displaying numeric values
 
@@ -39,17 +37,15 @@ answer = 3 + 5
 game.splash("3 + 5 = " + answer)
 ```
 
-## Student Task 1: Try new values in the equation 
-
-1. starting with the above example 
+## Student Task #1: Try new values in the equation 
+1. Starting with the above example 
 2. Experiment using different numbers in our equation (e.g.  `9 + 2`)
 3. Test at least 3 different equations
-4. Challenge: make longer addition equations so the code calculates the sum of 5 or more numbers. If the equation gets too long, then display using "show long text"
-
+4. **Challenge:** make longer addition equations so that the code calculates the sum of 5 or more numbers. If the equation gets too long, then display using ``||game:show long text||``
 
 ### ~hint
 
-In order to combine multiple items we will need to add additional Math blocks
+In order to combine multiple items we will need to add additional math blocks
 
 ![animation: adding 3 numbers with blocks](/static/courses/csintro1/orientation/add-3-numbers.gif)
 
@@ -57,9 +53,9 @@ In order to combine multiple items we will need to add additional Math blocks
 
 ### ~hint
 
-The splash screen is designed for short sentences.  This limits the length of equation we can effectively display. "Show long text" allows for a better representation for longer text.
+The splash screen is primarily designed for short sentences.  This limits the length of equation we can effectively display. ``||game:show long text||`` allows for a better representation for longer text.
 
-### ~  
+### ~
 
 ## Concept: basic math operators with variables 
 
@@ -68,18 +64,17 @@ https://youtu.be/EiWXa52oIgU
 We can create variable based math equations, like `A = B + C`, into code using our code variables and math operators.
 
 ### Operators 
-In order of operation precedence:
+In JavaScript, the following order of operation precedence applies:
 
-- Addition (**`+`**)  and  Subtraction (**`-`**)  
-- Multiplication (**`*`**)  and Division (**`/`**)  
+* Addition (`+`) and Subtraction (`-`)  
+* Multiplication (`*`) and Division (`/`)  
 
-Note that multiplication uses the **`*`** symbol and division uses **`/`** in JavaScript
+Note that JavaScript uses the ``||math:*||`` symbol for multiplication the ``||math:/||`` for division division. In order to change this order of operations, you can use parentheses `( )` around expressions just like in math.
 
-## Example:  
-
+## Example: Displaying expressions with ``||game:splash||``
 1. Review the code below
 2. Create the sample code and run the code
-3. press any button to see then second equation on splash message
+3. Press any button to see then second equation on splash message
 
 ```blocks
 let answer = 0
@@ -94,47 +89,47 @@ secondNumber = 7
 answer = firstNumber * secondNumber
 game.splash("5 * 7 = " + answer)
 ```
-## Student Task 2: basic math operators with variables
+
+## Student Task #2: basic math operators with variables
 
 https://youtu.be/C_UY8V-ufiI
 
-1. starting with the previous example 
-2. add a thirdNumber variable with a unique value
-3. create an equation using both the addition operator (`+`) and the multiplication operator (`*`)
+1. Start with the previous example 
+2. Add a ``||variables:thirdNumber||`` variable with a unique value
+3. Create an equation using both the addition operator (`+`) and the multiplication operator (`*`)
 4. Swap the Addition and Multiplication operator and run the program (Typically the answers will differ)
 
-## Student Task 3: multiple operators and variables equation  
-1. starting with the previous example 
-2. add a fourthNumber variable
-3. create an equation using 3 different operators
-4. Challenge: create an equation using all 4 basic operators (`+, -, *, /`) and at least 5 unique variables.  
+## Student Task #3: multiple operators and variables equation  
+1. Start with the code from the previous task
+2. Add a ``||variables:fourthNumber||`` variable
+3. Create an equation using 3 different operators
+4. Challenge: create an equation using all 4 basic operators (`+`, `-`, `*`, `/`) and at least 5 unique variables
 
 ### ~hint
 
-Look at the JavaScript code.  For multiple operator equations it is often easier to code in JavaScript. Note how using parenthesis `( )` changes the equation.
+Look at the JavaScript code. For multiple operator equations it is often easier to code in JavaScript. Note how using parenthesis `( )` changes the equation.
 
 ### ~
 
 ## Student Task 4: Conversion  
-1. create 2 variables
-    - tempC (temperature Celsius) 
-    - tempF (temperature Fahrenheit)
-2. initialize tempC with common Celsius temperature (e.g., 22.0)
-3. create an equation using  the formula: tempF = tempC × 9/5 + 32
-4. Show the temp in a Splash Screen
-4. Challenge: create an equation for converting to Celsius:   
-    - tempC = (tempF - 32) × 5/9
-    - be sure to pay attention to the parenthesis
+1. Create 2 variables
+    * ``||variables:tempC||`` (temperature Celsius) 
+    * ``||variables:tempF||`` (temperature Fahrenheit)
+2. Initialize ``||variables:tempC||`` with common Celsius temperature (for example, 22.0)
+3. Create an equation using the formula ``||variables:tempF||`` = ``||variables:tempC||`` × 9/5 + 32 and assign it to a new variable ``||variables:temp||``
+4. Show the ``||variables:temp||`` in a Splash Screen
+4. **Challenge:** create an equation for converting back to Celsius:   
+    * ``||variables:tempC||`` = (``||variables:tempF||`` - 32) × 5/9
+    * pay careful attention to the parentheses
 
 ### ~hint
 
-It can be difficult to structure parenthesis using blocks.  Look at and edit the JavaScript code to create the formula where it looks much more like a math equation, except for **\*** is used for multiplication and **/** is used for division.  Note: evaluate parenthesis first because code follows the the same parenthesis rules as mathematics.
+It can be difficult to structure complicated expressions using blocks. Look at and edit the JavaScript code to create the formula where it looks much more like a standard math equation.
 
 ### ~
 
-
-## Student Task 5: Debugging
-1. We decided that we want to have three different variables in our code - `a`, `b`, and `c`. The variable `a` should be set to `3`, `b` should be set to `a + 5`, and `c` should be set to `a + 2 * b`. This should result in b storing 8, and c storing 19 at the end. When we wrote this out, though, we found that we couldn't run our code. What is going wrong in the following code, and how can you fix it?
+## Student Task #5: Debugging
+1. We decided that we want to have three different variables in our code - ``||variables:a||``, ``||variables:b||``, and ``||variables:c||``. The variable ``||variables:a||`` should be set to `3`, ``||variables:b||`` should be set to `a + 5`, and ``||variables:c||`` should be set to `a + 2 * b`. This should result in ``||variables:a||`` storing 3, ``||variables:b||`` storing 8, and ``||variables:c||`` storing 19 at the end. When we wrote this out, though, we found that we couldn't run our code. What is going wrong in the following code, and how can you fix it?
 
 [Fix the Code here](https://makecode.com/_0qfiscfhEY9P)  
 
@@ -142,39 +137,33 @@ It can be difficult to structure parenthesis using blocks.  Look at and edit the
 
 ### ~hint
 
-Click edit to fix code.  Splash can display string characters.  Review previous examples of using Splash.
+Click edit to fix code. ``||game:splash||`` can display string characters. Review previous examples of using ``||game:splash||``.
 
 ### ~
 
-2. After you are able to run the code, the value of c should be shown as a splash screen, but the value shown is not quite right. Rearrange the existing blocks so that it produces the correct output, without removing or adding any JavaScript or blocks beyond what was necessary for part 1.  What went wrong? Fix the output
-
-### ~hint
-
-It can be useful to view math equations in JavaScript.
-
-### ~
+2. After you are able to run the code, the value of ``||variables:c||`` should be shown as a splash screen, but the value shown is not quite right. Rearrange the existing blocks so that it produces the correct output, without removing or adding any JavaScript or blocks beyond what was necessary for part 1. What went wrong? Fix the output.
 
 ## Variables Summary
 
 https://youtu.be/BPX2MHXmXJw
 
-* Variables are names that point to a container that can be updated to hold different data types  
-* Data Types used in variables so far are Sprites, Numbers and Strings  
-* Strings are Characters (like the characters on a keyboard) surrounded by quotation marks  
-* Displaying a Number often requires coercion, persuading a number to act like a string, using ``||text:join||``
+* Variables are names that point to a container that can be updated to hold different data types.
+* Data Types used in variables so far are ``||variables:Sprite||``, ``||variables:numbers||`` and ``||variables:strings||``.
+* Strings are sequences of characters (like the letters found on a keyboard) surrounded by quotation marks.
+* Displaying a number often requires type coercion by using ``||text:join||`` to convert a number into a string.
 
 ## What did we learn? 
 
-1. In MakeCode JavaScript what is the resulting value of answer for `answer = 5 + 3 * 2`? Explain why the answer is **not** 30.
-2. How is putting operators and numbers into a calculator different than writing in code  (example: 2 + 3 + 4 * 4)?  Explain.
-3. Research and describe 2 other Math Operators using the math menu in MakeCode (hover over values for more information) and/or use other JavaScript resources.
+1. In JavaScript what is the resulting value of answer for `answer = 5 + 3 * 2`? Explain why the answer is **not** 30.
+2. How is putting operators and numbers into a calculator different than writing in code (example: 2 + 3 + 4 * 4)? Explain.
+3. Research and describe 2 other ``||math:Math||`` Operators found in the math menu in MakeCode (hover over values for more information).
 
 ## Rubrics
 
 ### Code Tasks
 | points | 5 | 7 | 9 | 10 |
 |:---:|:---:|:---:|:---:|:---:|
-| Variable Math Tasks | Completed at least 4 coding tasks |Completed All 5 coding tasks |All coding tasks completed plus at least 1 Challenge | Completed 2 or more Challenges |
+| Variable Math Tasks | Completed at least 4 coding tasks | Completed all 5 coding tasks |All coding tasks completed plus at least 1 Challenge | Completed 2 or more Challenges |
 
 ### Score = \_\_\_\_\_\_ /10 
 
@@ -182,5 +171,5 @@ https://youtu.be/BPX2MHXmXJw
 
 |   | 5pts | 7pts | 9pts | 10pts |
 |:---:|:---:|:---:|:---:|:---:|
-| Explanation | answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | Uses multiple examples and clear explanations |  Explanations are outstanding in detail and/or use creative examples |
+| Explanation | Answered at least 2 questions fully, or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | Uses multiple examples and clear explanations | Explanations are outstanding in detail and/or use creative examples |
 ### Score = \_\_\_\_\_\_ /10 
