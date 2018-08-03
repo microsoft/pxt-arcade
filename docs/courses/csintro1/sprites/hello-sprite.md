@@ -10,6 +10,8 @@ In this activity, students will be introduced to:
 
 https://youtu.be/iufK6TM9OkM
 
+[Alternative Video Location](https://aka.ms/40544a-spritesay_final)
+
 Sprite Objects have a method ``||sprites:say||`` that displays a text box over the sprite when used. 
 
 ### Vocabulary: Method
@@ -42,13 +44,16 @@ scene.setBackgroundColor(4)
 mySprite.say(msg)
 ```
 
-## What did we learn? 
+## What did we learn?
+
 1. Identify and show the JavaScript code that aligns with which each block.
 2. Identify any JavaScript code that doesn't seem to have any blocks directly related to it. Make a hypothesis of what it means does.
 
 # Example: console.log()
 
 https://youtu.be/9xSWNoDOAQc
+
+[Alternative Video Location](https://aka.ms/40544a-consolelog)
 
 1. Start a new project, and name it "console"
 2. Switch to JavaScript view and replace all code with the code below
@@ -61,6 +66,7 @@ console.log("msg sent!")
 ```
 
 ## Student Task #1: Add `console.log( )` to "sprite hello"
+
 1. Open the "sprite hello" code saved above
 2. Add in console messages using `console.log()` for:
     * a string (example: "Hello console")
@@ -75,6 +81,8 @@ Consider This!: The code `console.log()` doesn't use **mySprite** like ``||sprit
 ## Student Task #2: Add another sprite, and set it's coordinates
 
 https://youtu.be/1xQWu1tHFCo
+
+[Alternative Video Location](https://aka.ms/40544a-spritesaylog)
 
 1. Start with the above project and add another sprite (make sure to give both unique variable names)
 2. Add in a ``||sprite:say||`` messages to have a conversation with the first sprite
@@ -92,21 +100,3 @@ There is a pause block under the ``||loops:Loops||`` menu ``||loops:pause(1000)|
 2. Come up with a hypothesis and explain why `console.log()` has a larger limit on the length of text. Explain.
 3. Add additional sprites at different coordinates and use ``||sprites:say||`` to make messages for all of them.
 4. **Challenge:** Make larger 32x32 sprites with more detail than the smaller sprites allowed.
-
-## Rubrics
-
-### Hello Sprite task rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Hello Sprites | Sprite text with on screen and and in console | 2 sprites on screen in different locations both using "say" | 2 sprites are on screen in different locations both using ``||sprites:say||``, and messages are timed and go away at different times | Completed Challenge or exceptional art for sprites created |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanation | Answered at least 3 questions fully or answered all 4 questions but parts are unclear or lack detail | Explanations address all 4 questions fully | Uses multiple examples and clear explanations |  Explanation uses an original example and/or analogy |
-
-### Score = \_\_\_\_\_\_ /10
