@@ -113,7 +113,7 @@ for (let i = 0; i < 5; i++) {
 
 ```
 
-## Example #2c: Change in Velocity vs Acceleration
+## Example #1c: Change in Velocity vs Acceleration
 
 1. Review the code below
 2. Create the sample code and run the code
