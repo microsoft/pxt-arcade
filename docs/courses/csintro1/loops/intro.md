@@ -117,7 +117,9 @@ pause(100)
 
 ## Concept: Moving a sprite using the repeat block loop
 
-# TODO: Video for using a repeat block to move sprite
+https://youtu.be/Y2Y-n4p1QNI
+
+[Alternative Video Location](https://aka.ms/40544a-loop-intro)
 
 When completing the last task, you likely noticed that you were doing the same action repeatedly - moving in one direction, pausing, moving in another, pausing, and then repeating that. Instead of doing that by hand, we can instead using loops to repeat that chunk of code more easily.
 
@@ -171,6 +173,10 @@ Start with the code in the example. The solution isn't much different from the e
 ### ~
 
 ## Student Task #3: Boomerang
+
+https://youtu.be/5as0a991-IY
+
+[Alternative Video Location](https://aka.ms/40544a-loop-intro2)
 
 1. Add a single loop to the following code so that the boomerang goes to the right 50 pixels over the course of two seconds
 2. Make the boomerang return to it's original location over the course of two seconds using a loop

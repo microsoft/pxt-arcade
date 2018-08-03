@@ -22,10 +22,14 @@ In these activities, the student will be introduced to:
 
 ## Examples: Incrementing a Variable
 
+https://youtu.be/fOiJJuJteMs
+
+[Alternative Video Location](https://aka.ms/40544a-incrementloop1)
+
 1. Review each example below
 2. Create the sample and run the code
 3. Save the code for the start of the next task (name it "increment") 
-4. Note how changing the ``||variables:change by||`` amount changes the game score  
+4. Note how changing the ``||variables:change by||`` amount changes the game score
 
 ### Example #1a: Increment with On Game Update 
 
@@ -69,6 +73,10 @@ info.startCountdown(5)
 4. **Challenge:** Have the sprite coach give the current score in addition to a cheer ("Faster!")
 
 ### Example #2: Increment to make a spiral
+
+https://youtu.be/ilbOGc6oFXk
+
+[Alternative Video Location](https://aka.ms/40544a-incrementloop2)
 
 A spiral increases the length of each side. In the example below the sides are 5, 6, 7 and 8 pixels long. To continue the spiral we will need to continue to make each side longer than the last. Notice that some of the lengths are negative values (in order to move up or move left).
 
@@ -136,6 +144,10 @@ So we can see the following for how one of the spiral sides moves farther each l
 in the task we will need to update all sides of the spiral
 
 ### Example #3: For Loop
+
+https://youtu.be/J0sB0HFxIyQ
+
+[Alternative Video Location](https://aka.ms/40544a-incrementloop3)
 
 The ``||loops:for||`` loop is another common loop.  This loop has a counter variable built in that defaults as ``||variables:index||`` in blocks.  The value of index is incremented between the values entered in the for loop.  We can use the ``||variables:index||`` variable inside of the body of the ``||loops:for||`` loop.
 
