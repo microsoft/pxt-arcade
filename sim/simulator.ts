@@ -11,6 +11,7 @@ namespace pxsim {
      */
     initCurrentRuntime = () => {
         runtime.board = new Board();
+        initGamepad();
 
         if (!forcedUpdateLoop) {
             // this is used to force screen update if game loop is stuck or not set up properly
@@ -214,7 +215,10 @@ namespace pxsim {
                 this.view.centerInBox(0, 0, window.innerWidth, window.innerHeight - minControlWidth);
 
                 const bottom = this.view.boundingBox().bottom;
-                const controlsHeight = window.innerHeight - bottom;
+                let controlsHeight = window.innerHeight - bottom;
+
+                if (controlsHeight * 2 > wWidth)
+                    controlsHeight = wWidth / 2 | 0;
 
                 this.controls.moveDPad(0, window.innerHeight - controlsHeight, controlsHeight);
                 this.controls.moveButtons(window.innerWidth - controlsHeight, window.innerHeight - controlsHeight, controlsHeight);

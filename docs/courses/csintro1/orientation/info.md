@@ -4,13 +4,12 @@ We have previously worked with variables we created. A lot of the time, software
 
 The ``||info:info||`` category in blocks contains a few variables (data properties) which we are allowed to update. These properties have to do with score, life, and time. We will take a quick look at how to use these as variables in our code.
 
-In this activity students will:
-
-* use the ``||info:score||`` and ``||info:life||`` variables
-* combine numeric values with math operators (\*)
-* identify the benefits of using ``||info:score||`` and ``||info:life||`` over other options
-* use the ``||info:countdown||`` block to put a time limit on a game
-* use the ``||loops:pause||`` block to wait a set amount of time
+In this activity, students are introduced to:
+* Using the ``||info:score||`` and ``||info:life||`` properties
+* Combining numeric values with math operators (\*)
+* The benefits of using ``||info:score||`` and ``||info:life||`` over other options
+* The ``||info:countdown||`` block
+* The ``||loops:pause||`` block
 
 ## Concept: Using ``||info:score||`` to keep track of button presses
 
@@ -30,10 +29,10 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-Noticed that the score popped up in the top right corner - that is one benefit of using the ``||info:score||`` variable to keep track of points the player has earned. Now, we will add in code to add a timer, to see some of the other benefits of the ``||info:info||`` blocks.
+Notice that the score pops up in the top right corner as soon as it is used for the first time - that is one benefit of using the ``||info:score||`` variable to keep track of the points the player has earned. Next, we will add in code to in order to create a timer, to see some of the other benefits of the ``||info:info||`` blocks.
 
-## Student Task 1: 10 second button smash
-1. Start with the code saved as "button count" in the prior example.
+## Student Task #1: 10 second button smash
+1. Start with the code saved as "button count" in the prior example
 2. Create an ``||loops:on start||`` block
 
 ### ~hint
@@ -44,11 +43,11 @@ Remember that you can find blocks easily by using the search bar
 
 3. Add in a ``||info:start countdown 10 (s)||`` block into the ``||loops:on start||`` block
 
-Run the code you created in task 1 a few times, and try to get different scores. Notice the benefits that using just the ``||info:countdown||`` and ``||info:change score by||`` blocks - the countdown creates a timer that counts down to 0, and then ends the game at that point. The score keeps track of the value for you which is shown in the top right corner, and when the game is over, maintains a high score through multiple runs of the game.
+Run the code you created in task 1 a few times, and try to get different scores. Notice the benefits of using both the ``||info:countdown||`` and the ``||info:change score by||`` blocks - the countdown creates a timer that counts down to 0, and then ends the game at that point. The score keeps track of the value for you which is shown in the top right corner. When the game is over, the ``||info:score||`` maintains a ``||info:high score||`` automatically through multiple runs of the game.
 
 ## Concept: Using ``||info:life||``
 
-Beyond score, another important value to keep track of is the players life total. This lets us make games where players can be penalized for mistakes, without simply ending the game immediately when they make one.
+Beyond score, another important value to keep track of is the players life total. This allows us to make games where players can be penalized for mistakes, without simply ending the game immediately when they make one.
 
 ## Example: changing ``||info:life||`` totals
 https://youtu.be/YiZ-yl5CbYM
@@ -67,10 +66,10 @@ info.setLife(1)
 This simple game gives the user a simple task - to not touch a button. If they do touch a button, the life will go down to 0, and they will lose. The game is a bit boring, but it does demonstrate a few of the benefits of using ``||info:life||``: life total shows up in the corner as a number of hearts, and when you run out of the lives, the game will end.
 
 ## Student Task 2: Touch the button 15 times
-1. Start with the code saved as "do not touch the buttons" in the prior example.
-2. Modify the initial value of the life to be 15, instead of just 1.
-3. Add in the ``||info:change score by||`` block used in the first task, and modify it to add 2 to the score each time a button is pressed.
-4. Add in a ``||info:countdown||``, and set it to run out after 2 seconds.
+1. Start with the code saved as "do not touch the buttons" in the prior example
+2. Modify the initial value of the life to be 15, instead of just 1
+3. Add in the ``||info:change score by||`` block used in the first task, and modify it to add 2 to the score each time a button is pressed
+4. Add in a ``||info:countdown||``, and set it to run out after 2 seconds
 
 ### Simplify Blocks chained together with JavaScript
 
@@ -78,8 +77,7 @@ This simple game gives the user a simple task - to not touch a button. If they d
 
 ## Student Task 3: Estimate rate of presses
 ### Overview
-When a nurse needs to take a patient's heart rate with their other vital signs, they do not want to (or have time to) sit around for a full minute to count how many beats there are. Instead, they can use another, quicker approach to estimate the patient's heart rate - count how many heart beats there are over 15 seconds, and then multiply that value by 4 to get an estimate for the full minute. In this task, we will use the score to do the same thing, only with button presses. The ``||loops:pause||`` block is new in this example, and pauses the code at that point for however many milliseconds it is provided - in this case, we pass 6000 ms so that it pauses for 6 seconds, and then multiply by 10 to get an estimate for 60 seconds (one minute).
-
+When a nurse needs to take a patient's heart rate with their other vital signs, they do not want to (or have time to) sit around for a full minute to count how many beats there are. Instead, they can use another, quicker approach to estimate the patient's heart rate - count how many heart beats there are over 15 seconds, and then multiply that value by 4 to get an estimate for the full minute. In this task, we will use the score to do the same thing, only with button presses. The ``||loops:pause||`` block is new in this example, and pauses the code at that point for however many milliseconds it is provided - in this case, we pass 6000 ms so that it pauses for 6 seconds, and then multiply by 10 to get an estimate for the full 60 seconds (one minute).
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "button rate")
@@ -91,16 +89,16 @@ Review the [Variable Math](/courses/csintro1/orientation/variable-math) activity
 
 ### ~
 
-5. Use the ``||math:x||`` block to multiply the ``||info:score||`` by 10 and store it in a variable called `minuteScore`, so it will correspond to one minute's worth of button presses.
-6. Make the sprite ``||sprites:say||`` the result stored in `minuteScore`. Edit the sprite so it looks better.
-7. Challenge: instead of outputting an exact estimate, give a range that the button presses will likely fall into - estimate this by making the low end of the range correspond to ``(score - 1) * 10``, and the high end of the range correspond to ``(score + 1) * 10``. For example, if the score were 5, the output should be something along the lines of "between 40 and 60".
+5. Use the ``||math:x||`` block to multiply the ``||info:score||`` by 10 and store it in a variable called `minuteScore`, so it will correspond to one minute's worth of button presses
+6. Make the sprite ``||sprites:say||`` the result stored in `minuteScore`. Edit the sprite so it looks better
+7. **Challenge:** instead of outputting an exact estimate, give a range that the button presses will likely fall into - estimate this by making the low end of the range correspond to `(score - 1) * 10`, and the high end of the range correspond to `(score + 1) * 10`. For example, if the score were 5, the output should be something along the lines of "between 40 and 60"
 
 ### ~hint
 
-For the Challenge 
-Remember to use order of operations and parenthesis (JavaScript) to get the right equation,
 
-For multiple joins we can chain the ``||text:join||`` blocks just as we did for addition. 
+When doing the challenge, remember to pay careful attention to the order of operations and parentheses (JavaScript) to get the right equation.
+
+To join more than just two strings and numbers, we can chain the ``||text:join||`` blocks just as we did for addition. 
 
 ```blocks
 enum SpriteKind {
