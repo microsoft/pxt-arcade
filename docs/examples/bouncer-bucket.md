@@ -50,7 +50,7 @@ let balls: Image[] = []
 let catcher: Sprite = null
 let sitting = false
 let playing = false
-game.splash("Bouncer", "A = 1 ball, B = 10 balls")
+game.splash("Bouncer Bucket", "A = 1 ball, B = 10 balls")
 balls.push(img`
 . . 7 7 7 7 . . 
 . 7 7 7 7 7 7 . 
