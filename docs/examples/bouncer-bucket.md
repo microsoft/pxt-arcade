@@ -48,6 +48,7 @@ enum SpriteKind {
 let bouncers: Sprite[] = []
 let balls: Image[] = []
 let catcher: Sprite = null
+let deadball: Sprite = null
 let sitting = false
 let playing = false
 game.splash("Bouncer Bucket", "A = 1 ball, B = 10 balls")
@@ -127,7 +128,11 @@ info.onCountdownEnd(function () {
     game.over()
 })
 sprites.onDestroyed(SpriteKind.Ball, function (sprite) {
-    let deadball = bouncers.pop()
+    for (let j = 0; j <= bouncers.length - 1; j++) {
+        if (bouncers[j] == sprite) {
+            deadball = bouncers.removeAt(j)
+        }
+    }
     makeBouncer()
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
