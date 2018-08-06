@@ -4,7 +4,9 @@
             "Microsoft"
         ],
         "approvedRepos": [
-            "adafruit/Circuit-Playground-Character-Icons"
+            "adafruit/Circuit-Playground-Character-Icons",
+            "jwunderl/pxt-corgio",
+            "jwunderl/pxt-darts"
         ]
     },
     "galleries": {
