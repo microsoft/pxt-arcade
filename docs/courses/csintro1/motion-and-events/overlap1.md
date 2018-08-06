@@ -12,11 +12,14 @@ In this activity, students will be introduced to:
 
 ## Concept: SpriteKind Overlap Event
 
-https://youtu.be/rdZdXltoWXE 
+https://youtu.be/rdZdXltoWXE
+
+[Alternative Video Location](https://aka.ms/40544a-overlap1spritekind)
 
 We use ``||sprites:SpriteKind||`` to classify our sprites. We can have sprites in our games that represent many different things - players, enemies, coins, food, or anything else you might want to represent in your games. Creating labels (that is, ``||sprites:Kinds||``) for different groups of sprites helps us assign them each unique behaviors - for example, you might want to have the player in your game be able to eat 5 different food sprites, so combining them into a single ``||sprites:Kind||`` allows you to write the code for a single section  Sometimes there just one of a given ``||sprites:Kind||`` (for example, the Player), and other times there will be many sprites (for example, Clouds in the sky). Once we have ``||sprites:Kind||``s for different sprites, we can check if two different sprites are overlapping one another using the ``sprites:on overlap||`` event.
 
-## Example #1: Two Sprite Overlap  
+## Example #1: Two Sprites Overlap
+
 1. Review the code below 
 2. Create the sample code and run the code
 3. Save the code for the task (name it "eatFruit")  
@@ -108,9 +111,12 @@ Use ``||loops:pause||`` before using sprite destroy otherwise the sprite will be
 
 https://youtu.be/rN1UyX6YkQE
 
+[Alternative Video Location](https://aka.ms/40544a-overlap1spritekindtask)
+
 The ``||sprites:ghost on||`` setting for sprites makes the sprite ignore ``||sprites:on overlap||`` events while it is turned on. By default, the setting is off.
 
 ## Example #2: Sprite Overlap - Ghost on
+
 1. Review the code below
 2. Create the sample code and run the code
 3. Try turning the ``||sprites:ghost||`` setting on and off and see the difference
@@ -187,6 +193,11 @@ game.onUpdate(function () {
 ```
 
 ## Student Task #2: Sprite Overlap - Ghost off and on
+
+https://youtu.be/FwDty0LxzSM
+
+[Alternative Video Location](https://aka.ms/40544a-overlap1ghostntask)
+
 1. Start with the example or task #1
 2. Create 3 sprites in different locations across
 3. Make the newly created sprites all be of the same ``||sprites:Kind||``. 
@@ -196,7 +207,9 @@ game.onUpdate(function () {
 
 ## Student Task #3: Create overlap using one sprite of ``||sprites:Kind||`` Player and multiple other ``||sprites:Kind||``
 
-https://youtu.be/Nasu00HvaYE 
+https://youtu.be/Nasu00HvaYE
+
+[Alternative Video Location](https://aka.ms/40544a-overlap1task3)
 
 1. Start with task #2 or your own similar code
 2. Enable sprite to move anywhere on screen along x and y axis
@@ -214,20 +227,3 @@ Be sure to use ``||music:stop all sounds||`` if completing challenge overlap eve
 
 1. Describe how a ``||sprites:Kind||`` is used to detect overlap.
 2. Suppose you have 2 or more sprites that have the same ``||sprites:Kind||``, and one of them triggers an overlap event. Explain how you can reference the sprite that was involved in the overlap event, rather than one of the other sprites of that ``||sprites:Kind||``.
-
-## Rubrics
-
-### Overlap task rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Overlap 1 | Fully competed 2 tasks | Fully completed all 3 tasks | Completed all 3 tasks and at least 1 challenge code | Completed all tasks and challenge Code |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn rubric
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanations | Answered questions but parts are unclear or lack detail | Explanations address both questions fully | All answers have clear explanations | Included an exceptional explanation with a creative example, drawing or analogy |
-
-### Score = \_\_\_\_\_\_ /10 

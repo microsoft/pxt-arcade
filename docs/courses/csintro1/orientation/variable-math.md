@@ -2,6 +2,8 @@
 
 https://youtu.be/79vikAMjpBs
 
+[Alternative Video Location](https://aka.ms/40544a-intromath)
+
 A variable points to a container that can store data. We have previously used variables names for sprites (for example, ``||sprites:mySprite||``). Variables act like an address, and allow us to store, retrieve, and update data. For the examples in the Sprites lesson, the variable ``||variables:mySprite||`` allowed us to interact with the sprite in our game. The word "variable" also means change. We can update the values our variable point to, such as updating the ``||variable:mySprite||`` variable to point to a completely different sprite.
 
 Variables are used extensively in code. Variables allow code to be written in a generic way, and allow for easier reuse of our code.  Math equations, like `X = 2Y`, provide familiar examples in the use of variables that apply to code by assigning know values to variables to calculate unknown variable values.  
@@ -20,16 +22,21 @@ In this activity, student are introduced to:
 
 https://youtu.be/nlp6Cqfxmb4
 
+[Alternative Video Location](https://aka.ms/40544a-variablesmath1)
+
 ## Concept: Using Math Operators with Variables
 
-https://youtu.be/Dv-5K9bWcps 
+https://youtu.be/Dv-5K9bWcps
+
+[Alternative Video Location](https://aka.ms/40544a-variablesmath2)
 
 ## Example: math equation in a variable
+
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "equation variable") 
 
-[equation variable](https://makecode.com/_RdXJ5jMxubqA)
+[Equation variable](https://makecode.com/_RdXJ5jMxubqA)
 
 ```blocks  
 let answer = 0
@@ -37,7 +44,8 @@ answer = 3 + 5
 game.splash("3 + 5 = " + answer)
 ```
 
-## Student Task #1: Try new values in the equation 
+## Student Task #1: Try new values in the equation
+
 1. Starting with the above example 
 2. Experiment using different numbers in our equation (e.g.  `9 + 2`)
 3. Test at least 3 different equations
@@ -61,9 +69,12 @@ The splash screen is primarily designed for short sentences.  This limits the le
 
 https://youtu.be/EiWXa52oIgU
 
+[Alternative Video Location](https://aka.ms/40544a-variablesmath3)
+
 We can create variable based math equations, like `A = B + C`, into code using our code variables and math operators.
 
-### Operators 
+### Operators
+
 In JavaScript, the following order of operation precedence applies:
 
 * Addition (`+`) and Subtraction (`-`)  
@@ -72,6 +83,7 @@ In JavaScript, the following order of operation precedence applies:
 Note that JavaScript uses the ``||math:*||`` symbol for multiplication the ``||math:/||`` for division division. In order to change this order of operations, you can use parentheses `( )` around expressions just like in math.
 
 ## Example: Displaying expressions with ``||game:splash||``
+
 1. Review the code below
 2. Create the sample code and run the code
 3. Press any button to see then second equation on splash message
@@ -90,9 +102,11 @@ answer = firstNumber * secondNumber
 game.splash("5 * 7 = " + answer)
 ```
 
-## Student Task #2: basic math operators with variables
+## Student Task #2: Basic math operators with variables
 
 https://youtu.be/C_UY8V-ufiI
+
+[Alternative Video Location](https://aka.ms/40544a-variablesmath4)
 
 1. Start with the previous example 
 2. Add a ``||variables:thirdNumber||`` variable with a unique value
@@ -111,7 +125,8 @@ Look at the JavaScript code. For multiple operator equations it is often easier 
 
 ### ~
 
-## Student Task 4: Conversion  
+## Student Task 4: Conversion
+
 1. Create 2 variables
     * ``||variables:tempC||`` (temperature Celsius) 
     * ``||variables:tempF||`` (temperature Fahrenheit)
@@ -129,6 +144,7 @@ It can be difficult to structure complicated expressions using blocks. Look at a
 ### ~
 
 ## Student Task #5: Debugging
+
 1. We decided that we want to have three different variables in our code - ``||variables:a||``, ``||variables:b||``, and ``||variables:c||``. The variable ``||variables:a||`` should be set to `3`, ``||variables:b||`` should be set to `a + 5`, and ``||variables:c||`` should be set to `a + 2 * b`. This should result in ``||variables:a||`` storing 3, ``||variables:b||`` storing 8, and ``||variables:c||`` storing 19 at the end. When we wrote this out, though, we found that we couldn't run our code. What is going wrong in the following code, and how can you fix it?
 
 [Fix the Code here](https://makecode.com/_0qfiscfhEY9P)  
@@ -147,6 +163,8 @@ Click edit to fix code. ``||game:splash||`` can display string characters. Revie
 
 https://youtu.be/BPX2MHXmXJw
 
+[Alternative Video Location](https://aka.ms/40544a-variabledatatype)
+
 * Variables are names that point to a container that can be updated to hold different data types.
 * Data Types used in variables so far are ``||variables:Sprite||``, ``||variables:numbers||`` and ``||variables:strings||``.
 * Strings are sequences of characters (like the letters found on a keyboard) surrounded by quotation marks.
@@ -157,19 +175,3 @@ https://youtu.be/BPX2MHXmXJw
 1. In JavaScript what is the resulting value of answer for `answer = 5 + 3 * 2`? Explain why the answer is **not** 30.
 2. How is putting operators and numbers into a calculator different than writing in code (example: 2 + 3 + 4 * 4)? Explain.
 3. Research and describe 2 other ``||math:Math||`` Operators found in the math menu in MakeCode (hover over values for more information).
-
-## Rubrics
-
-### Code Tasks
-| points | 5 | 7 | 9 | 10 |
-|:---:|:---:|:---:|:---:|:---:|
-| Variable Math Tasks | Completed at least 4 coding tasks | Completed all 5 coding tasks |All coding tasks completed plus at least 1 Challenge | Completed 2 or more Challenges |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn Questions
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanation | Answered at least 2 questions fully, or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | Uses multiple examples and clear explanations | Explanations are outstanding in detail and/or use creative examples |
-### Score = \_\_\_\_\_\_ /10 
