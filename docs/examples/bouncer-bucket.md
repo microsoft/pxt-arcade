@@ -34,7 +34,7 @@ Each ball is dropped at a random location in the upper corner of the screen. The
 
 ### Playing the game
 
-There are two modes of play: single ball and multiple balls. Press the **A** button to drop a single ball and press the **B** to drop `10` balls at once. The single ball mode runs for `45` seconds and the multiple ball mode runs for `30` seconds. The player trys to catch as many balls as possible while the time counts down.
+There are two modes of play: single ball and multiple balls. Press the **A** button to drop a single ball and press the **B** to drop `10` balls at once. The single ball mode runs for `45` seconds and the multiple ball mode runs for `30` seconds. The player tries to catch as many balls as possible while the time counts down.
 
 ## Game program
 
@@ -49,7 +49,7 @@ let bouncers: Sprite[] = []
 let balls: Image[] = []
 let catcher: Sprite = null
 let deadball: Sprite = null
-let sitting = false
+let sitting = 0
 let playing = false
 game.splash("Bouncer Bucket", "A = 1 ball, B = 10 balls")
 balls.push(img`
@@ -104,8 +104,8 @@ catcher.bottom = scene.screenHeight() - 1
 catcher.setFlag(SpriteFlag.StayInScreen, true)
 info.setScore(0)
 sprites.onOverlap(SpriteKind.Ball, SpriteKind.Player, function (sprite, otherSprite) {
-    if (sprite.x > otherSprite.x - 1 && sprite.x < otherSprite.x + 1) {
-        if (sitting) {
+    if (sprite.x > otherSprite.x - 2 && sprite.x < otherSprite.x + 2) {
+        if (sitting > 300) {
             otherSprite.say("nope", 200)
             sprite.vy = sprite.vy * -2
         } else {
@@ -163,7 +163,7 @@ function makeBouncer() {
 game.onUpdate(function () {
     let moveX = controller.dx()
     if (moveX != 0) {
-        sitting = false
+        sitting = 0
         catcher.x += moveX
     }
 })
@@ -174,8 +174,6 @@ game.onUpdateInterval(10, function () {
             bouncer.ay = bouncer.ay + 20
         }
     }
-})
-game.onUpdateInterval(3000, function () {
-    sitting = true
+    sitting += 1    
 })
 ```
