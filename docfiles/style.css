@@ -383,7 +383,7 @@ svg {
         padding-right: 6rem;
     }
     
-     .container.fluid.showMobileOnly {
+    .container.fluid.showMobileOnly {
         display: none;
     }
 }
