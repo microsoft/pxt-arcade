@@ -20,4 +20,11 @@
 * [Random](/courses/csintro1/motion-and-events/random)
 * [Overlap Section 2](/courses/csintro1/motion-and-events/overlap2)
 * [Create Sprite & On Create](/courses/csintro1/motion-and-events/create-on-create-sprites)
-* [Mid Course Project](/courses/csintro1/motion-and-events/project)
+* [Project](/courses/csintro1/motion-and-events/project)
+
+## [Loops](/courses/csintro1/loops)
+* [Intro](/courses/csintro1/loops/intro)
+* [Increment Loop](/courses/csintro1/loops/increment-loop)
+* [Projectiles](/courses/csintro1/loops/projectiles)
+* [Physics](/courses/csintro1/loops/physics)
+* [Project](/courses/csintro1/loops/project)

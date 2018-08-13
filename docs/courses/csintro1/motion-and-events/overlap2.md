@@ -10,7 +10,9 @@ In this activity the student will continue to work with:
 
 ## Concept: ``||sprites:Kind||`` Overlap Event "bump" action  
 
-https://youtu.be/eXCpLH74tF4 
+https://youtu.be/hAFzGASNgN0
+
+[Alternative Video Location](https://aka.ms/40544a-overlap2bumpfinal)
 
 Having sprites bump rather than pass over each other is useful game behavior for a ``||sprites:Kind||`` overlap event. One way to simulate a bump is:
 
@@ -25,12 +27,14 @@ Having sprites bump rather than pass over each other is useful game behavior for
     * Move back
 
 ## Example #1: bump action from overlap event
+
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "copterBump1")
 4. Look at the overlap event - note which sprite is named ``||variables:sprite||`` and which is ``||variables:otherSprite||``, and how the code creates the bump behavior
 
 https://makecode.com/_UhT3dj2UjKPv
+
 ```blocks
 enum SpriteKind {
     Helicopter,
@@ -202,7 +206,8 @@ landing = sprites.create(img`
 landing.y = 125
 ```
 
-## Student Task #1: Soft Landing  
+## Student Task #1: Soft Landing
+
 There is a "T" shaped landing area at the bottom of the example. The helicopter sprite should not go through the landing pad, it should land!
 1. Starting with example #1, replace the helicopter motion with the short method using ``||controller:dx (left-right buttons)||``  
 2. Review the rest of the code, and then add an on overlap event for when the helicopter overlaps with the landing (note the ``||sprites:Kind||`` of ``||sprites:LandingPad||``)
@@ -216,6 +221,7 @@ Challenge Tip: erratic motion can be made by changing the sprite position back a
 ### ~
 
 ## Student Task #2: Add a new unique sprite with ``||sprites:Kind||`` of ``||sprites:Cloud||``
+
 1. Starting with example code or task #1
 2. Add a new sprite that looks nothing like a cloud (for example, a hat or a tree)
 3. Make sure the new sprite has ``||sprites:Kind||`` of "Cloud"  even though it is not a cloud
@@ -227,20 +233,3 @@ Challenge Tip: erratic motion can be made by changing the sprite position back a
 
 1. Describe how a ``||sprites:Kind||`` can improve code (for example, how it can make programming easier, more powerful, more efficient, ...).    
 2. Explain why in creating a "bump" effect negative `X` and `Y` velocities are used to change the `X` and `Y` positions. 
-
-## Rubrics
-
-### Overlap task rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Overlap & Events | Completed tasks | Fully completed both tasks | Completed all tasks and at least 1 Challenge | Completed all tasks and all challenge code |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn rubric 
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanation | Answers for both questions | Explanations address all questions fully | All answers have clear explanations with at least 2 examples for question 1 | Used an exceptional explanation (such as a diagram) in question 2 |
-
-### Score = \_\_\_\_\_\_ /10 

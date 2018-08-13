@@ -82,6 +82,13 @@ Here are some fun programs for your @boardname@!
   "url":"/examples/guess-the-letter",
   "cardType": "example",
   "imageUrl": "/static/examples/guess-the-letter.png"
+},
+{
+  "name": "Bouncer Bucket",
+  "description": "Try to catch the bouncing balls in your bucket",
+  "url":"/examples/bouncer-bucket",
+  "cardType": "example",
+  "imageUrl": "/static/examples/bouncer-bucket.png"
 }
 ]
 ```
@@ -98,3 +105,4 @@ Here are some fun programs for your @boardname@!
 [Collisions](/examples/collisions),
 [Sorting](/examples/sorting),
 [Palette](/examples/palette),
+[Bouncer Bucket](/examples/bouncer-bucket)
