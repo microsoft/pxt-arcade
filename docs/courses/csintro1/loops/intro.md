@@ -2,7 +2,8 @@
 
 When writing code, we often want to repeat the same action. Using loops, we can reduce redundancy in our code - that is, we can avoid writing the same code multiple times. 
 
-An example to visualize a loop is looking at multiplication of integers as repeated addition. The repeated addition of the integer 4 added together five times:  
+An example to visualize a loop is looking at multiplication of integers as repeated addition. The repeated addition of the integer 4 added together five times:
+
 > 4 + 4 + 4 + 4 + 4  is equal to 4\*5
 
 We reduced the redundancy in the expression 
@@ -108,6 +109,9 @@ pause(100)
 sprite.y += 5
 pause(100)
 ```  
+https://youtu.be/Y2Y-n4p1QNI
+
+[Alternative Video Location](https://aka.ms/40544a-loop-intro)
 
 ## Student Task #1: Move to the upper left corner, and move faster
 
@@ -116,10 +120,6 @@ pause(100)
 3. Change the pause between each step to be only 50 ms, instead of 100 - we decided we want the ghost to be a little bit faster than it was
 
 ## Concept: Moving a sprite using the repeat block loop
-
-https://youtu.be/Y2Y-n4p1QNI
-
-[Alternative Video Location](https://aka.ms/40544a-loop-intro)
 
 When completing the last task, you likely noticed that you were doing the same action repeatedly - moving in one direction, pausing, moving in another, pausing, and then repeating that. Instead of doing that by hand, we can instead using loops to repeat that chunk of code more easily.
 
@@ -166,7 +166,7 @@ We now want to add in a second ghost, that moves towards the bottom right like i
 
 ### ~hint
 
-The loop body is the code that is surrounded by the loop. We need to add more things into the **body** of the loop.  
+The loop body is the code that is surrounded by the loop. We need to add more things into the **body** of the loop.
 
 Start with the code in the example. The solution isn't much different from the example - we just need to add to the code for the second sprite in the body or the same loop.
 
