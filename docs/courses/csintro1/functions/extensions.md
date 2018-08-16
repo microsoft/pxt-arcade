@@ -138,8 +138,6 @@ Do any of the names of the tabs in the explorer look similar to the name of the 
 
 ### ~
 
-https://makecode.com/_0r2MxgLeKcjL
-
 ```blocks
 enum SpriteKind {
     Player,

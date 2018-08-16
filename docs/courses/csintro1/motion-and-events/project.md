@@ -33,7 +33,7 @@ From what we learned in the previous lessons we should be able to make some grea
 
 ### ~hint
 
-For an MVP game, you might want to avoid spending too much time getting bogged down making the perfect sprite; instead, you can always just use some of the pre made sprites in the Gallery - that way you can focus on getting the concept for your game in a function state!
+For an MVP game, you might want to avoid spending too much time getting bogged down making the perfect image for your sprite; instead, you can always just use some of the premade sprites in the Gallery - that way you can focus on getting the concept for your game into a functional state, and personalize it later on!
 
 ![Using Gallery](/static/courses/csintro1/motion-and-events/image-gallery.gif)
 
