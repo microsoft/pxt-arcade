@@ -6,9 +6,13 @@ https://youtu.be/O27uzdkbgK4
 
 [Alternative Video Location](https://aka.ms/40544a-spritemoevent1)
 
-Motion is the change in position. To get sprites moving, we will change their position using a game pad event. The game pad has ``||controller:controller events||`` for the up, down, left and right buttons. We can use those events to change sprite location, and to make the sprite move. We will also see how to give a sprite a velocity. Velocity is the rate of change of our position - in real life, this is often measured as kilometers per hour or miles per hour. When the velocities of a sprite are not zero, then the sprite will be in motion.
+Motion is the change in position. To get sprites moving, we will change their position using a game pad event. The game pad has ``||controller:controller events||`` for the up, down, left and right buttons. 
 
-In these activities, the student will be introduced to:
+We can use those events to change sprite location, and to make the sprite move. We will also see how to give a sprite a velocity. Velocity is the rate of change of our position - in real life, this is often measured as kilometers per hour or miles per hour. 
+
+When the velocities of a sprite are not zero, then the sprite will be in motion.
+
+In these activities, the student will use:
 * Controller events
 * Incrementing ``||sprites:x||`` and ``||sprites:y||`` coordinates
 * Setting ``||sprites:vx||`` and ``||sprites:vy||`` velocity
@@ -69,7 +73,9 @@ https://youtu.be/Gl0Y2sHY_MA
 
 [Alternative Video Location](https://aka.ms/40544a-spritemoevent2velocity)
 
-Velocity is speed in a particular direction. In our games we typically track movement in `X` and `Y` directions. If we have a positive `X` velocity, for example, then our sprite will continue to increase in `X`, making it move to the right across the screen.
+Velocity is speed in a particular direction. In our games we typically track movement in `X` and `Y` directions. 
+
+If we have a positive `X` velocity, for example, then our sprite will continue to increase in `X`, making it move to the right across the screen.
 
 ## Example 2: Increment Velocity Left and Right
 
@@ -242,10 +248,9 @@ let mySprite: Sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . . 7 7 . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . d d d . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-
 ```
 
-# Student Task #4: Image Flip with motion
+## Student Task #4: Image Flip with motion
 
 1. Start with Motion (short method) example above or similar code
 2. Make your own image move using the `up`, `down`, `left`, `right` buttons on the controller

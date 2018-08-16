@@ -1,6 +1,10 @@
 # Activity: Generate Sprites using Create and On Create
 
-Many games need to spawn sprites to be collected like coins, or avoided like oil spills. We will use ``||sprites:create empty sprite||`` to spawn a new empty sprite, which is a place holder for a sprite without an image. Then use a ``||sprites:on created||`` event to set the image and a random position for newly generated sprites. ``||sprites:on created||`` uses sprite kind so we can gie our new sprites the exact attributes we want like image, velocity or position.
+Many games need to spawn sprites to be collected like coins, or avoided like oil spills. 
+
+We will use ``||sprites:create empty sprite||`` to spawn a new empty sprite, which is a place holder for a sprite without an image. Then use a ``||sprites:on created||`` event to set the image and a random position for newly generated sprites. 
+
+``||sprites:on created||`` uses sprite kind so we can give our new sprites the exact attributes we want like image, velocity or position.
 
 ## Concept: Random Clouds - Create SpriteKind with on created event 
 

@@ -49,8 +49,8 @@ Produce a total at the end of each step and use the total in the next step until
 
 ## What did we learn? 
 
-1. Describe how well the algorithm worked. Explain what made the algorithm work or what was tried when it did not work.  
-2. Explain how the algorithm could be improved in terms of efficiency and usability for the participant. Be sure to describe how to reduce the number of steps while maintaining the trick.  
+1. Describe how well the algorithm worked. Explain what made the algorithm work or what was tried when it did not work. 
+2. Explain how the algorithm could be improved in terms of efficiency and usability for the participant. Be sure to describe how to reduce the number of steps while maintaining the trick. 
 3. **Challenge:** Write full equation at each step. Then try to simplify each answer. 
 
 ### ~hint

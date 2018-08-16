@@ -59,7 +59,7 @@ game.onUpdate(function () {
 
 1. To check the location: run the program, and then press the `A` button on the game pad (or space bar key on keyboard). This will display the starting location's `X` and `Y` coordinates
     * Note the two coordinate values for `(X, Y)`
-2. Move the sprite: click on the game pad (or use keyboard `WASD` keys) to move the sprite.  Check the coordinates after moving
+2. Move the sprite: click on the game pad (or use keyboard `WASD` keys) to move the sprite. Check the coordinates after moving
     
 ## What did we learn?
 

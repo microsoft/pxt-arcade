@@ -12,24 +12,18 @@ In these activities, the student will be introduced to:
 * Info ``||info:set score||``
 * Game ``||info:countdown||``
 
-## Concept: Increase By (increment)
-
-# TODO: Create Video overview + increment.  Provide high level script outline.
-
-* Variables with increase by  
-* Game update every  
-* Info set score  
-
-## Examples: Incrementing a Variable
+## Concept: Increase By (increment) 
 
 https://youtu.be/fOiJJuJteMs
 
-[Alternative Video Location](https://aka.ms/40544a-incrementloop1)
+[Alternative Video Location](https://aka.ms/40544a-incrementloop1) 
+
+## Examples: Incrementing a Variable
 
 1. Review each example below
 2. Create the sample and run the code
 3. Save the code for the start of the next task (name it "increment") 
-4. Note how changing the ``||variables:change by||`` amount changes the game score
+4. Note how changing the ``||variables:change by||`` amount changes the game score  
 
 ### Example #1a: Increment with On Game Update 
 
@@ -122,8 +116,8 @@ We want to move the sprite in the following blocks in a spiral - starting small 
 
 ![spiral image](/static/courses/csintro1/loops/spiral.png)
 
-1. Start with the example above, add in a new variable - we'll refer to it as ``||variables:increase||``. 
-2. Use the ``||variables:change by||`` block to increment ``||variables:increase||`` by 5 at the end of the code block for the loop.
+1. Start with the example above, add in a new variable - we'll refer to it as ``||variables:increase||``
+2. Use the ``||variables:change by||`` block to increment ``||variables:increase||`` by 5 at the end of the code block for the loop
 3. Add math expressions like ``||math:+||`` and ``||math:-||`` to use the variable ``||variables:increase||`` to increase the distance the sprite moves on each step - that might look like the code in this ``||loops:on start||`` block below:
 
 ```blocks
@@ -133,11 +127,11 @@ mySprite.x += -7 - increase
 increase += 5
 ```
 
-The code above will cause mySprite X movement to move farther by 5 on each loop as ``||variables:increase||`` becomes 5 larger each loop.  In the small example code above we subtract ``||variables:increase||`` from -7 as in  `-7 - increase`. The result is used to update the sprite's ``||sprites:x||`` coordinate.  
+The code above will cause mySprite X movement to move farther by 5 on each loop as ``||variables:increase||`` becomes 5 larger each loop. In the small example code above we subtract ``||variables:increase||`` from -7 as in  `-7 - increase`. The result is used to update the sprite's ``||sprites:x||`` coordinate. 
 
 So we can see the following for how one of the spiral sides moves farther each loop
 
-* Loop 1: mySprite x coordinate change = **-7** 
+* Loop 1: mySprite X coordinate change = **-7** 
 * Loop 2: mySprite X coordinate change = -7 - 5 = **-12** 
 * Loop 3: mySprite X coordinate change = -7 - 10 - **-17**
 
@@ -149,7 +143,7 @@ https://youtu.be/J0sB0HFxIyQ
 
 [Alternative Video Location](https://aka.ms/40544a-incrementloop3)
 
-The ``||loops:for||`` loop is another common loop.  This loop has a counter variable built in that defaults as ``||variables:index||`` in blocks.  The value of index is incremented between the values entered in the for loop.  We can use the ``||variables:index||`` variable inside of the body of the ``||loops:for||`` loop.
+The ``||loops:for||`` loop is another common loop. This loop has a counter variable built in that defaults as ``||variables:index||`` in blocks. The value of index is incremented between the values entered in the for loop. We can use the ``||variables:index||`` variable inside of the body of the ``||loops:for||`` loop.
 
 ```blocks
 enum SpriteKind {
@@ -193,8 +187,8 @@ In this task we need to use ``||loops:for||`` loop to help in implementing the b
 
 This ``||loops:for||`` will provide the variable ``||variables:index||`` similar to how we used the ``||variables:increase||`` variable in ttask #2. We need to clean up the task #2 code by switching to use a ``||loops:for||`` block.
 
-1. Add a ``||loops:for||`` to your task #2 solution.  **Change the end value in the** ``||loops:for index from 0 to 4||`` ** block from `4` to `10`**.  Your code should now behave like it did before you made any modifications.
-2. Replace how we define the ``||variables:increase||`` variable.  We won't increment the variable any more but will **set** the value of ``||variables:increase||`` to ``||variables:index||`` multiplied by **5** inside of the  ``||loops:for index from 0 to 10||`` block. 
+1. Add a ``||loops:for||`` to your task #2 solution. Change the end value in the ``||loops:for index from 0 to 4||`` block from `4` to `10`. Your code should now behave like it did before you made any modifications
+2. Replace how we define the ``||variables:increase||`` variable. We won't increment the variable any more but will **set** the value of ``||variables:increase||`` to ``||variables:index||`` multiplied by **5** inside of the  ``||loops:for index from 0 to 10||`` block
 
 ```blocks
 let increase = 0
