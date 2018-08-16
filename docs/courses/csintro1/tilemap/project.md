@@ -6,6 +6,8 @@ Make games of your choosing!
 
 ![Fire castle](/static/courses/csintro1/tilemap/fire-castle.gif)
 
+![Corgi Fetch](/static/courses/csintro1/tilemap/corgi-fetch.gif)
+
 From what we learned in the previous lessons we should be able to make some great games. 
 
 ## Student Task #1:
