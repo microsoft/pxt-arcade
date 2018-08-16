@@ -22,7 +22,7 @@ https://youtu.be/VVjxMS29jjU
 [Alternative Video Location](https://aka.ms/40544a-extensiondart) 
 
 1. Open a new project (name it "football")
-2. Using the extensions menu, search for "darts" (or the full package location at [github.com/jwunderl/pxt-darts](github.com/jwunderl/pxt-darts)). Notice how a new section is added to the menu, above ``||game:Game||``
+2. Using the extensions menu, search for "darts" (or the full package location at `github.com/jwunderl/pxt-darts`). Notice how a new section is added to the menu, above ``||game:Game||``
 3. Review the example code below, and either recreate it or build something similar
 
 ![Finding Dart Extension](/static/courses/csintro1/functions/finding-darts.gif)
@@ -84,7 +84,7 @@ mySprite.setPosition(150, 110)
 ```
 
 ```package
-darts=github:jwunderl/pxt-darts#master
+darts=github:jwunderl/pxt-darts#v0.0.14
 ```
 
 Using extensions can reduce the number of things you have to worry about while writing your own game.

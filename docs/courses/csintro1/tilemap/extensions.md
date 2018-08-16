@@ -11,7 +11,7 @@ In this activity, students will:
 
 To simplify the design process of the game, we will be using the corgio extension. This extension allows you to create a sprite who can jump, run, and fall with only a few blocks in the ``||loops:on start||``; many of these behaviors will continue to run in the background without further input.
 
-To add the corgio extension to your project, open the extensions tab and search for "corgio" - it should be the first result. Alternatively, you can search using a direct link to the package, as follows: [github.com/jwunderl/pxt-corgio](github.com/jwunderl/pxt-corgio).
+To add the corgio extension to your project, open the extensions tab and search for "corgio" - it should be the first result. Alternatively, you can search using a direct link to the package, as follows: `github.com/jwunderl/pxt-corgio`.
 
 After adding corgio to your project, a new tab titled ``||corgio:Corgi||`` will appear in the top of the toolbox, above ``||game:Game||``; this contains the blocks necessary to create and interact with the Corgi.
 
@@ -100,5 +100,5 @@ The tilemap we are using is 64 tiles wide and 8 tiles tall, with each tile being
 2. How difficult was it to balance making your level interesting and completable? Where there any portions of the level that you had to change in order to make the game playable?
 
 ```package
-corgio=github:jwunderl/pxt-corgio#master
+corgio=github:jwunderl/pxt-corgio#v0.0.12
 ```
