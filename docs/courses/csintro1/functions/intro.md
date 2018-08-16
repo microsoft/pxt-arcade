@@ -168,13 +168,13 @@ https://youtu.be/MXQTc9At7Ts
 3. Create 3 different functions, with names that describe different sections of the code.
     * Remove the blocks from the ``||loops:on start||`` block and split it into the three different functions. Each function should have 3 of the 9 blocks
     * Use the ``||functions:call function||`` block 3 times in your ``||loops:on start||`` block to call each new function
-4. Make sure your code behaves **exactly** the same as the code below!
+4. Make sure your code behaves **exactly** the same as the code below
 
 ### ~hint
 
 The 3 functions should cover the initial sprite setup, playing the music, and display items.
 
-For the challenge, try re-ordering the ``||functions:function calls||`` in your ``||loops:on start||`` - does anything change, or happen in a different order?
+Try re-ordering the ``||functions:function calls||`` in your ``||loops:on start||`` - does anything change, or happen in a different order?
 
 ### ~
 
@@ -217,7 +217,7 @@ info.startCountdown(10)
 
 ## Student Task #1b: Functions in Events
 
-https://youtu.be/46mdlB941Yo 
+https://youtu.be/46mdlB941Yo
 
 [Alternative Video Location](https://aka.ms/40544a-function-redundant-task2)
 

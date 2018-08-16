@@ -108,7 +108,8 @@ sprite.x += 5
 pause(100)
 sprite.y += 5
 pause(100)
-```  
+```
+
 https://youtu.be/Y2Y-n4p1QNI
 
 [Alternative Video Location](https://aka.ms/40544a-loop-intro)
@@ -123,40 +124,6 @@ https://youtu.be/Y2Y-n4p1QNI
 
 When completing the last task, you likely noticed that you were doing the same action repeatedly - moving in one direction, pausing, moving in another, pausing, and then repeating that. Instead of doing that by hand, we can instead using loops to repeat that chunk of code more easily.
 
-## Example #2: Moving up and to the left using loops
-
-```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let sprite: Sprite = null
-sprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 1 1 1 . . . . . . 
-. . . . . . 1 1 1 1 1 . . . . . 
-. . . . . . 1 f 1 f 1 . . . . . 
-. . . . . . 1 1 1 1 1 . . . . . 
-. . . . . . 1 1 1 1 1 . . . . . 
-. . . . . 1 1 f f f 1 1 . . . . 
-. . . . . 1 1 1 1 1 1 1 . . . . 
-. . . . 1 . 1 1 1 1 1 . 1 . . . 
-. . . 1 1 . . 1 1 1 . . 1 1 . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-for (let i = 0; i < 12; i++) {
-    sprite.x += -5
-    pause(50)
-    sprite.y += -5
-    pause(50)
-}
-```
-
 ## Student Task #2: Add a second sprite using loops
 
 We now want to add in a second ghost, that moves towards the bottom right like in the first example.
@@ -166,7 +133,7 @@ We now want to add in a second ghost, that moves towards the bottom right like i
 
 ### ~hint
 
-The loop body is the code that is surrounded by the loop. We need to add more things into the **body** of the loop.
+The loop body is the code that is surrounded by the loop. We need to add more things into the **body** of the loop. 
 
 Start with the code in the example. The solution isn't much different from the example - we just need to add to the code for the second sprite in the body or the same loop.
 

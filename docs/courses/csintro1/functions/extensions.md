@@ -1,6 +1,6 @@
 # Making and Using Extensions
 
-When writing code, software developers often want to avoid spending time "reinventing the wheel." Previous sections have shown how a single developer might do this using functions, but not how developers can share code amongst others.
+When writing code, software developers often want to avoid spending time recreating code that already exists. Previous sections have shown how a single developer might do this using functions, but not how developers can share code amongst others.
 
 In this activity, students will:
 * Import an extension
@@ -9,14 +9,20 @@ In this activity, students will:
 
 ## Using Shared Code
 
-As a starting point, take a look at the editor. Now that you have experience writing your own functions, you might notice something different about the blocks you've been using - almost all of them are already functions! These are provided to you by default to make your coding experience easier.
+Now that we have experience writing functions, we might notice something different about the blocks you've been using - almost all of them are already functions! These functions are provided to you by default to make your coding experience easier. We call these "built in functions."
 
-We are not stuck with only the functions provided when you first open MakeCode. Using extensions allows you to use functions and other code written by other software developers in your own games. You can even make your own packages in order to share code that you have written with others, or to reuse the same code in multiple games.
+We are not stuck with only the functions provided when you first open MakeCode. Extensions, in the advanced menu, allow functions, and other code, to be included and used in our games. 
+
+We can make even make our own packages of code to share or reuse in our games.
 
 ## Example #1: Using a package
 
-1. Open a new project (name it "soccer")
-2. Using the extensions menu, search for "darts" (or the full package location at github.com/jwunderl/pxt-darts). Notice how a new section is added to the menu, above ``||game:Game||``
+https://youtu.be/VVjxMS29jjU
+
+[Alternative Video Location](https://aka.ms/40544a-extensiondart) 
+
+1. Open a new project (name it "football")
+2. Using the extensions menu, search for "darts" (or the full package location at [github.com/jwunderl/pxt-darts](github.com/jwunderl/pxt-darts)). Notice how a new section is added to the menu, above ``||game:Game||``
 3. Review the example code below, and either recreate it or build something similar
 
 ![Finding Dart Extension](/static/courses/csintro1/functions/finding-darts.gif)
@@ -25,7 +31,7 @@ We are not stuck with only the functions provided when you first open MakeCode. 
 enum SpriteKind {
     Player,
     Enemy,
-    Soccer_Ball,
+    Foot_Ball,
     Goal
 }
 let mySprite: Sprite = null
@@ -33,7 +39,7 @@ let myDart: Dart = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     myDart.throwDart()
 })
-sprites.onOverlap(SpriteKind.Soccer_Ball, SpriteKind.Goal, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Foot_Ball, SpriteKind.Goal, function (sprite, otherSprite) {
     game.splash("Goal!")
 })
 myDart = Darts.create(img`
@@ -53,7 +59,7 @@ myDart = Darts.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, SpriteKind.Soccer_Ball)
+`, SpriteKind.Foot_Ball)
 myDart.setTrace()
 myDart.controlWithArrowKeys()
 mySprite = sprites.create(img`
@@ -81,15 +87,21 @@ mySprite.setPosition(150, 110)
 darts=github:jwunderl/pxt-darts#master
 ```
 
-Using extensions can reduce the number of things you have to worry about while writing your own game. In this case, you do not have to worry as much about algebra or calculus to be able to calculate and display the path a sprite will take; the extension **abstracts away** portions of the code that you may not be an expert in (but still want in order to make interesting games)
+Using extensions can reduce the number of things you have to worry about while writing your own game.
+
+Using the darts extension package, we do not have to worry as much about algebra or calculus to be able to calculate and display the path a sprite will take. The darts extension **abstracts away** (hides) portions of the code that we may not yet have expertise or time to build ourself, but still want to use.
 
 ## Student Task #1: Build an Obstacle Course
 
+https://youtu.be/HmhCPIvfKe8
+
+[Alternative Video Location](https://aka.ms/40544a-darttask)
+
 1. Start with the code from example #1
 2. Add at least 3 new sprites of kind ``||sprites:Obstacle||``
-3. Place the sprites in different positions on the screen so that they are in between the ``||sprites:Soccer_Ball||`` and the ``||sprites:Goal||`` (or equivalent)
+3. Place the sprites in different positions on the screen so that they are in between the ``||sprites:Foot_Ball||`` and the ``||sprites:Goal||`` (or equivalent)
 4. Add a new ``||sprites:on overlap||`` event between the ball and the obstacles, so that hitting an obstacle causes a ``||game:game over||``
-5. **Challenge:** add a controller event so that pressing the ``||controller:B||`` button stops the ball in it's current location
+5. **Challenge:** add a controller event so that pressing the ``||controller:B||`` button stops the ball at it's current location
 
 ## Sharing Code
 
@@ -103,18 +115,30 @@ Creating new blocks like the ones in example #1 requires the use of JavaScript o
 
 ## Example #2: Spawn a single bird
 
-1. Review the code below, and load it into a new project (name it "birdie")
+https://youtu.be/kZNYHZSdhdY
+
+[Alternative Video Location](https://aka.ms/40544a-starrynight)
+
+Follow these steps as shown in the video
+
+1. Review the code below, and load it into a new project (name it "birdy")
 2. Press share (and confirm) to create a link to this code
-3. Open a new project in another window
+3. Open a new (empty) project in another window
 4. Under extensions, enter the link you generated into the search bar and press the search icon; a single extension should come up (with the name "birdie") - add that to your current project
 5. The bird will fly across the screen as soon as the game is loaded, even though the new project only has the initial blocks
-6. **Challenge:** open the JavaScript tab, and open the explorer below the simulator. Find where the code that was imported was added into your project
+6. Change the background color in the new project
+
+![Sharing an Extension](/static/courses/csintro1/functions/adding-shared-project.gif)
 
 ### ~hint
+
+**Challenge:** open the JavaScript tab, and open the explorer below the simulator. Find where the code that was imported was added into your project.
 
 Do any of the names of the tabs in the explorer look similar to the name of the project you shared?
 
 ### ~
+
+https://makecode.com/_0r2MxgLeKcjL
 
 ```blocks
 enum SpriteKind {
@@ -144,14 +168,19 @@ projectile = sprites.createProjectile(img`
 
 ## Student Task #2: Making the stars go by
 
-1. Create a new project (name it "starryNight")
+1. Create a new project (name it "starryNight") that we will include in other projects
 2. Add an ``||game:on game update every 500ms||`` block
 3. Inside of ``||game:on game update every 500ms||`` block, create a new projectile with 1 or 2 pixels colored in white or yellow - this will be a single star in the sky
-4. Set the projectile to have a a random ``||sprites:vx||`` between -90 and -30, so that they move across the screen to the left
+4. Set the projectile to have a random ``||sprites:vx||`` between -90 and -30, so it moves across the screen to the left
 5. Set the projectile to have a random ``||sprites:y||`` position between 0 and ``||scene:screen height||``, and ``||sprites:set projectile ghost on||``
-6. Create a shareable link using the "Share Project" button
-7. Load the this extension into another project by entering the link created in step 6 into the search bar of the extensions menu
-8. **Challenge:** every 2000 ms, spawn a meteor that moves across the screen. Make sure to set a random ``||sprites:vertical position||`` for it as well
+6. Share the game and load it into another project (name the project "use starryNight")
+7. In your new project ("use starryNight")
+    * add a new ``||scene:background color||``  
+    * Add a ``||info:countdown||`` block so the game will eventually end
+7. **Challenge:** Create and add code to "use starryNight" so that a second type of projectile that will spawn a meteor every that moves across the screen
+    * Save the updated "starryNight" code and get a share link.
+    * Add the share link into a new game and save as "challenge starryNight" 
+    * The Challenge game should have updated background color and countdown timer
 
 ## What did we learn?
 

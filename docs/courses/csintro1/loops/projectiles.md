@@ -194,7 +194,7 @@ d d d d d d d d
 2. Replace the ``||game:onupdate||`` ``||loops:repeat||`` loop 
 3. Each time a projectile is created, add one point (1) to the score using the ``||info:change score by||`` block
 4. Modify the ``||sprite:create projectile||`` block so that each spawned meteor moves down the screen at a rate of 50
-5. **Challenge:** Make the projectile move at a random rate between 40 and 60 as we have previously learned, instead of the current constant rate of 50.
+5. **Challenge:** Make the projectile move at a random rate between 40 and 60 as we have previously learned, instead of the current constant rate of 50.## Student Task #2b: Projectiles with loops
 
 ## Student Task #2b: Offset Projectiles
 
@@ -206,7 +206,7 @@ We have seen how it is useful for projectiles to come from random positions but 
 2. Create the sample code and run the code
 3. Save the code for the task (name it "screen fill")
 4. Move the code in the ``||loops:on start||`` block into a ``||loops:for index from 0 to 12||`` block, to create 13 projectiles, one every 300 ms
-5. Modify the ``||sprites:set projectile y to||`` block to set the projectiles ``||sprites:y||`` position to the value **`10 * index`**, so that they start further down the screen on each iteration
+5. Modify the ``||sprites:set projectile y to||`` block to set the projectiles ``||sprites:y||`` position to the value `10 * index`, so that they start further down the screen on each iteration
 
 ```blocks
 enum SpriteKind {
@@ -235,6 +235,7 @@ projectile = sprites.createProjectile(img`
 projectile.y = 10
 pause(300)
 ```
+
 
 ## Concept: Projectiles from Corners
 
@@ -279,9 +280,9 @@ projectile = sprites.createProjectile(img`
 1. Create the example code above 
 2. Modify the code to make the sprite start from the upper right corner by default and move toward the lower left corner 
 3. Place the code in a loop to repeat 4 times with a short pause between loop iterations
-4. **Challenge**: Make sprites originate from each of the 4 corners inside the loop.
+4. **Challenge**: Make sprites originate from each of the 4 corners inside the loop
 
 ## What did we learn?
 
-1. Describe two benefits of using projectiles rather than normal sprites.
+1. Describe two benefits of using projectiles rather than normal sprites. 
 2. How did using a loop in this section help reduce the amount of blocks that were used? 

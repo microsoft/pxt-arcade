@@ -37,9 +37,11 @@ ball = sprites.createProjectile(img`
 `, -50, 0, SpriteKind.Ball, mySprite)
 ```
 
-### Example #1: Throw ball 
+### Example #1: Throw ball
 
-[Throw ball](https://makecode.com/_hcy4AV871ix1)
+1. Review the code below
+2. Create the sample code and run the code
+3. Save the code for the task (name it "Throw Ball") 
 
 ```blocks
 enum SpriteKind {
@@ -88,11 +90,11 @@ mySprite.setPosition(145, 60)
 
 ## Student Task #1: Throw a ball at a target
 
-1. Create the example code above 
+1. Start with the code from example #1
 2. Modify the code to make a target sprite on the other side of the screen from the player sprite 
 3. Add a countdown timer
 4. Build an ``||sprites:on overlap||`` event for the ball and the target to add a point and destroy the ball
-5. **Challenge**: Make the target into projectiles that move down the screen and add vertical motion to the player sprite.
+5. **Challenge**: Make the target into projectiles that move down the screen and add vertical motion to the player sprite
 
 ## Concept: Projectiles from other Projectile Sprites
 
@@ -105,8 +107,6 @@ We can use the projectiles we have made as the source of animation like projecti
 ## Example #2a: Cloud projectile 
 
 Start with the following cloud moving across the screen:
-
-https://makecode.com/_UfeX3VY6CfgD
 
 ```blocks
 enum SpriteKind {
@@ -138,8 +138,6 @@ There isn't all that much to this code; it spawns a cloud, which slowly moves ac
 ## Example #2b: Cloud projectile that emits projectile rain
 
 Review the code carefully for the use of ``||sprites:ghost on||`` and ``||sprites:projectile -- from sprite||`` for the raindrop projectiles. 
-
-https://makecode.com/_Es5HF0VEuCiL
 
 ```blocks
 enum SpriteKind {
@@ -203,8 +201,6 @@ let raindrop: Sprite = null
 raindrop.x += Math.randomRange(1, 14)
 ```
 
-https://makecode.com/_CvEVPuh35bbj
-
 ```blocks
 
 enum SpriteKind {
@@ -259,7 +255,7 @@ game.onUpdateInterval(50, function () {
 
 ## Example #2d: count destroyed raindrops
 
-The ghost raindrop sprites can't have an overlap event but we can use ``||sprite:on sprite destroyed||``. This way, we can count the raindrops that make it to the bottom of the screen by counting when they're destroyed!
+The ghost raindrop sprites can't have an overlap event but we can use ``||sprite:on sprite destroyed||``. So we can count the raindrops that make it to the bottom of the screen by counting when they're destroyed!
 
 ```block
 enum SpriteKind {
@@ -271,8 +267,6 @@ sprites.onDestroyed(SpriteKind.Rain, function (sprite: Sprite) {
     info.changeScoreBy(1)
 })
 ```
-
-https://makecode.com/_HhcT57KDxR9s
 
 ```blocks
 enum SpriteKind {
@@ -341,7 +335,7 @@ https://youtu.be/qlijC56n88k
 
 Make a projectile go across the bottom of the screen that will give off different projectiles that "float" to the top of the screen. Use parts of example code above for inspiration to start you project
 
-1. Create a projectile that moves across the bottom of the screen.
+1. Create a projectile that moves across the bottom of the screen
 2. have a new projectile float from the original bottom projectile
 3. Make several of the floating projectiles come from the bottom projectile 
 
@@ -351,7 +345,7 @@ Use a loop and if creating many projectiles use ``||sprite:ghost on||``
 
 ### ~
 
-4. **Challenge**: As the projectiles "float" up from the bottom of the game screen give them a small random X direction so they move at a slight angle left or right.
+4. **Challenge**: As the projectiles "float" up from the bottom of the game screen give them a small random X direction so they move at a slight angle left or right
 
 ## What did we learn?
 

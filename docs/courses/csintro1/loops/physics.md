@@ -29,20 +29,7 @@ In MakeCode Arcade, a sprite's velocity is defined in terms of pixels per second
 
 1. Review the code below
 2. Create the sample code and run the code
-3. Notice how the behavior for the two sprites is similar, and how it is different.
-
-**Note these parts of the code**
-
-```block
-let first: Sprite = null
-let second: Sprite = null
-first.vx = 30
-game.onUpdateInterval(1000, function () {
-    second.x += 30
-})
-```
-
-https://makecode.com/_efqPrJavXK5T
+3. Notice how the behavior for the two sprites is similar, and how it is different
 
 ```blocks
 enum SpriteKind {
@@ -101,6 +88,17 @@ game.onUpdate(function () {
 })
 ```
 
+In particular, pay attention to these portions of the code:
+
+```block
+let first: Sprite = null
+let second: Sprite = null
+first.vx = 30
+game.onUpdateInterval(1000, function () {
+    second.x += 30
+})
+```
+
 ## Concept: Acceleration
 
 https://youtu.be/pRUlsEekmUg 
@@ -115,11 +113,10 @@ In other words, acceleration tells us how quickly the velocity is changing. Brak
 
 In MakeCode Arcade, a sprite's acceleration is defined in terms of **pixels per second, per second** (pixels/s/s).
 
+
 ### Example #1b - Sprite with Acceleration
 
 Below is a sprite with an Acceleration applied. We set the sprite position to the bottom of the screen every 2 seconds in order to see how the velocity changes over time. We see the sprite has a larger velocity with each pass.
-
-https://makecode.com/_XvjRki5vzMrC
 
 ```blocks
 enum SpriteKind {
@@ -158,9 +155,7 @@ mySprite.destroy()
 
 1. Review the code below
 2. Create the sample code and run the code
-3. Notice how the behavior for the two sprites is similar, and how it is different.
-
-https://makecode.com/_9Xiair9qeH55
+3. Notice how the behavior for the two sprites is similar, and how it is different
 
 ```blocks
 enum SpriteKind {
@@ -236,8 +231,6 @@ In total, this loop should include 4 blocks - the generation of a random xDirect
 
 ### ~
 
-https://makecode.com/_K1jC1dJzgKa2
-
 ```blocks
 enum SpriteKind {
     Player,
@@ -252,8 +245,8 @@ let xDirection = 0
 let block: Sprite = null
 sprites.onOverlap(SpriteKind.Balloon, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.setFlag(SpriteFlag.Ghost, true)
-    xDirection = Math.randomRange(-50, 50)
-    yDirection = Math.randomRange(-50, 50)
+    xDirection = Math.randomRange(0, 50)
+    yDirection = Math.randomRange(0, 50)
     // create the splash
     projectile = sprites.createProjectile(img`
 9 
@@ -345,13 +338,13 @@ In this task, you will make a basic version of a flying bird game. In it, the bi
 3. Give the sprite an acceleration in the ``||sprites:Y||`` direction, so that it falls due to 'gravity'
 4. Create an ``||controller:on A button pressed||`` event
 5. Inside of the ``||controller:on A button pressed||`` event, use ``||sprites:change by||`` to change the sprite's velocity in the ``||sprites:Y||`` direction, so that pressing the ``||controller:A||`` button makes the sprite 'fly' and counteract 'gravity'
-6. **Challenge:** create an ``||game:on game update every 2000 ms||`` event, a spawn a projectile that moves horizontally across the screen. Set the projectile's ``||sprites:Y||`` position to a random place on the screen, using the ``||Math:pick random||`` and ``||Scene:screen height||`` blocks. Make something happen when the projectiles overlap with the player sprite!
+6. **Challenge:** create an ``||game:on game update every 2000 ms||`` event which spawns a projectile that moves horizontally across the screen. Set the projectile's ``||sprites:Y||`` position to a random place on the screen, using the ``||Math:pick random||`` and ``||Scene:screen height||`` blocks. Make something happen when the projectiles overlap with the player sprite!
 
 ![Flying Duck](/static/courses/csintro1/loops/flying-duck.gif)
 
 ### ~hint
 
-Try different values for the vertical acceleration representing gravity ``||sprites:ay||`` such as 25, 50, 100, 200
+Try different values for the vertical acceleration representing gravity ``||sprites:ay||`` such as 25, 50, 100, 200.
 
 What is a reasonably challenging value for the acceleration of gravity for Duck?
 
@@ -361,4 +354,4 @@ What is a reasonably challenging value for the acceleration of gravity for Duck?
 
 1. Why does making a sprite have a random velocity in both the x and y directions cause the sprite to move in a random direction? How would limiting the projectile to only positive directions change this?
 2. In examples #1a and #1c, you likely noticed that the values were fluctuating more for ``||variables:first||`` than for ``||variables:second||``, even though they were both increasing at the same rate on a second-by-second basis. Make a hypothesis on why that is.
-3. **Challenge:** Did either race (example #1a or example #1c) have a clear winner? Make a hypothesis on why this might be, even if the rate of change is the same on a second-by-second basis.
+3. **Challenge:** Did either race (example #1 or example #2) have a clear winner? Make a hypothesis on why this might be, even if the rate of change is the same on a second-by-second basis.

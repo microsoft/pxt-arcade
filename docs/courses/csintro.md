@@ -34,3 +34,10 @@
 * [Intro to Functions](/courses/csintro1/functions/intro)
 * [Reducing Redundancy with Functions](/courses/csintro1/functions/redundancy)
 * [Using Extensions](/courses/csintro1/functions/extensions)
+* [Project](/courses/csintro1/functions/project)
+
+## [Tilemap](/courses/csintro1/tilemap)
+* [Intro](/courses/csintro1/tilemap/intro)
+* [Interactions](/courses/csintro1/tilemap/interactions)
+* [Using Corgi Extension](/courses/csintro1/tilemap/extensions)
+* [Project](/courses/csintro1/tilemap/project)

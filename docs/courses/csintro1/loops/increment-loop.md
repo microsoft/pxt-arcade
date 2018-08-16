@@ -12,11 +12,6 @@ In these activities, the student will be introduced to:
 * Info ``||info:set score||``
 * Game ``||info:countdown||``
 
-In this activity, students will use:
-* Variables with increase by  
-* Game update every  
-* Info set score  
-
 ## Concept: Increase By (increment) 
 
 https://youtu.be/fOiJJuJteMs
@@ -67,8 +62,8 @@ info.startCountdown(5)
 
 1. Start with code from example #1c
 2. Add a sprite to coach the player
-3. Use ``||sprites:say||`` to give words of encouragement, setting a short display time (for example, 500 ms)
-4. Make ``||sprites:say||`` so it flashes by placing it in ``||game:on game update every 1000 ms||``
+3. Use ``||sprites:say("")||`` to give words of encouragement, setting a short display time (for example, 500 ms)
+4. Make ``||sprites:say("")||`` so it flashes by placing it in ``||game:on game update(1000)||``
 4. **Challenge:** Have the sprite coach give the current score in addition to a cheer ("Faster!")
 
 ### Example #2: Increment to make a spiral
@@ -121,8 +116,8 @@ We want to move the sprite in the following blocks in a spiral - starting small 
 
 ![spiral image](/static/courses/csintro1/loops/spiral.png)
 
-1. Start with the example above, add in a new variable - we'll refer to it as ``||variables:increase||``. 
-2. Use the ``||variables:change by||`` block to increment ``||variables:increase||`` by 5 at the end of the code block for the loop.
+1. Start with the example above, add in a new variable - we'll refer to it as ``||variables:increase||``
+2. Use the ``||variables:change by||`` block to increment ``||variables:increase||`` by 5 at the end of the code block for the loop
 3. Add math expressions like ``||math:+||`` and ``||math:-||`` to use the variable ``||variables:increase||`` to increase the distance the sprite moves on each step - that might look like the code in this ``||loops:on start||`` block below:
 
 ```blocks
@@ -136,7 +131,7 @@ The code above will cause mySprite X movement to move farther by 5 on each loop 
 
 So we can see the following for how one of the spiral sides moves farther each loop
 
-* Loop 1: mySprite x coordinate change = **-7** 
+* Loop 1: mySprite X coordinate change = **-7** 
 * Loop 2: mySprite X coordinate change = -7 - 5 = **-12** 
 * Loop 3: mySprite X coordinate change = -7 - 10 - **-17**
 
@@ -192,8 +187,8 @@ In this task we need to use ``||loops:for||`` loop to help in implementing the b
 
 This ``||loops:for||`` will provide the variable ``||variables:index||`` similar to how we used the ``||variables:increase||`` variable in ttask #2. We need to clean up the task #2 code by switching to use a ``||loops:for||`` block.
 
-1. Add a ``||loops:for||`` to your task #2 solution. **Change the end value in the** ``||loops:for index from 0 to 4||`` ** block from `4` to `10`**. Your code should now behave like it did before you made any modifications.
-2. Replace how we define the ``||variables:increase||`` variable. We won't increment the variable any more but will **set** the value of ``||variables:increase||`` to ``||variables:index||`` multiplied by **5** inside of the  ``||loops:for index from 0 to 10||`` block. 
+1. Add a ``||loops:for||`` to your task #2 solution. Change the end value in the ``||loops:for index from 0 to 4||`` block from `4` to `10`. Your code should now behave like it did before you made any modifications
+2. Replace how we define the ``||variables:increase||`` variable. We won't increment the variable any more but will **set** the value of ``||variables:increase||`` to ``||variables:index||`` multiplied by **5** inside of the  ``||loops:for index from 0 to 10||`` block
 
 ```blocks
 let increase = 0
