@@ -8,10 +8,17 @@
 {
   "name": "Getting Started",
   "description": "Learn the basics of creating a game",
-  "url": "/lessons/getting-started",
+  "url": "/tutorials/getting-started",
   "cardType": "tutorial",
   "label": "New? Start Here!",
   "labelClass": "green ribbon huge",
+  "imageUrl": "/static/tutorials/getting-started.png"
+},
+{
+  "name": "Dummy",
+  "description": "Dummy test tutorial",
+  "url": "/tutorials/Dummy",
+  "cardType": "tutorial",
   "imageUrl": "/static/tutorials/getting-started.png"
 }
 ]
