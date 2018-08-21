@@ -4,6 +4,8 @@
 
 Welcome to @boardname@! Let's get started by creating a simple game where your player tries to get out of a maze while there's still time!
 
+![Simple maze game playing](/static/tutorials/simple-maze/simple-maze-game.gif)
+
 ## Step 1
 
 The first thing we'll do is make our player. Find the ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``.
@@ -32,9 +34,9 @@ mySprite = sprites.create(img`
 
 ## Step 2 @fullscreen
 
-Click on the grey box in ``||variables:set mySprite to||`` an draw your player's image. It can be just be a solid block or something else.
+Click on the grey box in ``||variables:set mySprite to||`` an draw your player's image. It can be anything, solid block or a figure.
 
-![Draw a figure for the sprite](/static/tutorials/getting-started/draw-sprite-figure.gif)
+![Draw a figure for the sprite](/static/tutorials/simple-maze/draw-sprite-figure.gif)
 
 ```blocks
 let mySprite: Sprite = null
@@ -293,7 +295,7 @@ info.startCountdown(10)
 
 ## Step 10
 
-Finally, check to see if the player makes it out of the maze by adding a ``||logic:if then||`` block inside ``||game:update||``. Get a ``||logic:0 < 0||`` block and put it in for where you see `true`.
+We need to see if the player makes it out of the maze by adding a ``||logic:if then||`` block inside ``||game:update||``. Get a ``||logic:0 < 0||`` block and relpace the `true` condition with it.
 
 ```blocks
 let mySprite: Sprite = null
@@ -308,7 +310,7 @@ game.onUpdate(function () {
 
 ## Step 11
 
-Change the ``<`` condition in ``||logic:0 < 0||`` to ``<=``. Find the ``||sprites:mySprite:left||`` block and put it in where the first `0` is. Put a ``||game:game over||`` inside ``||logic:if then||``.
+Change the ``<`` condition in ``||logic:0 < 0||`` to ``<=``. Find the ``||sprites:mySprite x (horizontal position)||`` block and put it in where the first `0` is. Click the dropdown and select ``left``. Put a ``||game:game over||`` inside of ``||logic:if then||``.
 
 ```blocks
 let mySprite: Sprite = null
@@ -320,3 +322,7 @@ game.onUpdate(function () {
     }
 })
 ```
+
+## Complete
+
+Congratulations, your maze game is complete! You can now play your first game. See if you can escape the maze.

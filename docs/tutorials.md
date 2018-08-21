@@ -6,24 +6,17 @@
 ```codecard
 [
 {
-  "name": "Getting Started",
-  "description": "Learn the basics of creating a game",
-  "url": "/tutorials/getting-started",
+  "name": "Simple Maze",
+  "description": "Learn the basics of creating a game with this simple maze program",
+  "url": "/tutorials/simple-maze",
   "cardType": "tutorial",
   "label": "New? Start Here!",
   "labelClass": "green ribbon huge",
-  "imageUrl": "/static/tutorials/getting-started.png"
-},
-{
-  "name": "Dummy",
-  "description": "Dummy test tutorial",
-  "url": "/tutorials/Dummy",
-  "cardType": "tutorial",
-  "imageUrl": "/static/tutorials/getting-started.png"
+  "imageUrl": "/static/tutorials/simple-maze.png"
 }
 ]
 ```
 
 ## See Also
 
-[Getting Started](/tutorials/getting-started)
+[Simple Maze](/tutorials/simple-maze)
