@@ -290,7 +290,7 @@ info.startCountdown(10)
 
 ## Step 8
 
-We need to see if the player makes it out of the maze by adding a ``||logic:if then||`` block inside ``||game:update||``. Get a ``||logic:0 < 0||`` block and relpace the `true` condition with it.
+We need to see if the player makes it out of the maze by adding a ``||logic:if then||`` block inside ``||game:update||``. Get a ``||logic:0 < 0||`` block and replace the `true` condition with it.
 
 ```blocks
 game.onUpdate(function () {
