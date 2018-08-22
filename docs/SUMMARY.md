@@ -4,6 +4,7 @@
 
 * [Lessons](/lessons)
     * [Cherry Pickr](/lessons/cherry-pickr)
+    * [Barrel Dodger](/lessons/barrel-dodger)
 
 ## Classic Games
 
@@ -18,6 +19,7 @@
 
 * [JavaScript Games](/javascript-games)
     * [Asteroids](/examples/asteroids)
+    * [Bouncer Bucket](/examples/bouncer-bucket)
     * [Car Race](/examples/car-race)
     * [Collisions](/examples/collisions)
     * [Duck](/examples/duck)

@@ -2,17 +2,21 @@
 
 https://youtu.be/fr036vKEFiI
 
+[Alternative Video Location](https://aka.ms/40544a-03_coordinate_walker_intro_final)
+
 In this activity, students will investigate the game screen.
 
 ## Concept: Identify the X, Y coordinates of the Game Screen  
 
-https://youtu.be/R6NJjzXfejM 
+https://youtu.be/R6NJjzXfejM
+
+[Alternative Video Location](https://aka.ms/40544a-coordinate-walker)
 
 Move walker sprite around the game screen, and use it to identify `X` and `Y` coordinates
 
 In order to create games, we need to be able to place ``||sprites:Sprites||`` and other objects at various locations on the game screen. In this set of activities, we will relate the screen (`x`, `y`) coordinates to the 4 corners and middle of the game screen.
 
-### Student task #1: Coordinate Walker
+## Student task #1: Coordinate Walker
 
 Use the coordinate walker example to move around the screen and track `X` and `Y` coordinates.
 
@@ -55,15 +59,16 @@ game.onUpdate(function () {
 
 1. To check the location: run the program, and then press the `A` button on the game pad (or space bar key on keyboard). This will display the starting location's `X` and `Y` coordinates
     * Note the two coordinate values for `(X, Y)`
-2. Move the sprite: click on the game pad (or use keyboard `WASD` keys) to move the sprite.  Check the coordinates after moving
+2. Move the sprite: click on the game pad (or use keyboard `WASD` keys) to move the sprite. Check the coordinates after moving
     
 ## What did we learn?
+
 Use `X` and/or `Y` in your answers  
 
 1. Describe how coordinates change when moving up and down. Which direction caused the coordinates to increase?
 2. Describe how coordinates change when moving right and left. Which direction caused the coordinates to increase?
 
-### Student Task #2: Map Game Screen
+## Student Task #2: Map Game Screen
 
 Two dimensional game screen coordinates are represented by values for `X` and `Y` axis locations.
 
@@ -89,6 +94,7 @@ Record the results from this task in a simple diagram like the one below.
 ![map the coordinates results](/static/courses/csintro1/sprites/record-coordinates.png)
 
 ### Challenge: Bring an off-screen sprite back into view
+
 Challenge a peer to bring the sprite back into view after you move the sprite off screen.
 
 1. **Partner 1:** Move the walker sprite off past the area of the visible game screen (not too far)
@@ -97,13 +103,3 @@ Challenge a peer to bring the sprite back into view after you move the sprite of
     * pick 1: `up` or `down` `Y` direction
     * pick 1: `left` or `right`  `X` direction
     * using only the controller pad keys chosen bring the sprite back onto the screen
-
-## Rubrics
-
-### Coordinate Walker Rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Coordinate Walker | Filled in the diagram of all corners (`X`,`Y`) | Diagram is correct | Answered "What did we learn" questions 1 and 2 using `X` and `Y` | Answered questions with clear explanations using examples and/or excellent detail |
-
-### Score = \_\_\_\_\_\_ /10 
