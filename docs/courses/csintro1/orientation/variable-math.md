@@ -6,7 +6,7 @@ https://youtu.be/79vikAMjpBs
 
 A variable points to a container that can store data. We have previously used variables names for sprites (for example, ``||sprites:mySprite||``). Variables act like an address, and allow us to store, retrieve, and update data. For the examples in the Sprites lesson, the variable ``||variables:mySprite||`` allowed us to interact with the sprite in our game. The word "variable" also means change. We can update the values our variable point to, such as updating the ``||variable:mySprite||`` variable to point to a completely different sprite.
 
-Variables are used extensively in code. Variables allow code to be written in a generic way, and allow for easier reuse of our code.  Math equations, like `X = 2Y`, provide familiar examples in the use of variables that apply to code by assigning know values to variables to calculate unknown variable values.  
+Variables are used extensively in code. Variables allow code to be written in a generic way, and allow for easier reuse of our code. Math equations, like `X = 2Y`, provide familiar examples in the use of variables that apply to code by assigning know values to variables to calculate unknown variable values. 
 
 If we know `Y = 3` we can calculate `X` from our equation. Later on, `Y` can have a different value, like `Y = 7`. We can reuse the equation, `X = 2Y`, for both values of `Y`. This way, the value of `X` will change alongside the value of `Y`.
 
@@ -47,7 +47,7 @@ game.splash("3 + 5 = " + answer)
 ## Student Task #1: Try new values in the equation
 
 1. Starting with the above example 
-2. Experiment using different numbers in our equation (e.g.  `9 + 2`)
+2. Experiment using different numbers in our equation (e.g. `9 + 2`)
 3. Test at least 3 different equations
 4. **Challenge:** make longer addition equations so that the code calculates the sum of 5 or more numbers. If the equation gets too long, then display using ``||game:show long text||``
 
@@ -61,7 +61,7 @@ In order to combine multiple items we will need to add additional math blocks
 
 ### ~hint
 
-The splash screen is primarily designed for short sentences.  This limits the length of equation we can effectively display. ``||game:show long text||`` allows for a better representation for longer text.
+The splash screen is primarily designed for short sentences. This limits the length of equation we can effectively display. ``||game:show long text||`` allows for a better representation for longer text.
 
 ### ~
 

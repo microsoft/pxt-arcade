@@ -4,6 +4,7 @@
 
 * [Lessons](/lessons)
     * [Cherry Pickr](/lessons/cherry-pickr)
+    * [Barrel Dodger](/lessons/barrel-dodger)
 
 ## Classic Games
 

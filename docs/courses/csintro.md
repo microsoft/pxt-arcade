@@ -26,5 +26,18 @@
 * [Intro](/courses/csintro1/loops/intro)
 * [Increment Loop](/courses/csintro1/loops/increment-loop)
 * [Projectiles](/courses/csintro1/loops/projectiles)
+* [Projectiles from Sprites](/courses/csintro1/loops/projectile-from)
 * [Physics](/courses/csintro1/loops/physics)
 * [Project](/courses/csintro1/loops/project)
+
+## [Functions](/courses/csintro1/functions)
+* [Intro to Functions](/courses/csintro1/functions/intro)
+* [Reducing Redundancy with Functions](/courses/csintro1/functions/redundancy)
+* [Using Extensions](/courses/csintro1/functions/extensions)
+* [Project](/courses/csintro1/functions/project)
+
+## [Tilemap](/courses/csintro1/tilemap)
+* [Intro](/courses/csintro1/tilemap/intro)
+* [Interactions](/courses/csintro1/tilemap/interactions)
+* [Using Corgi Extension](/courses/csintro1/tilemap/extensions)
+* [Project](/courses/csintro1/tilemap/project)

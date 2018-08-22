@@ -1,13 +1,15 @@
 # Activity: Random Sprite Location
 
-In this activity, students will be introduced to: 
+Random numbers provide the element of chance to our games that make them look and feel more natural. They can also provide surprises and introduce elements of "good" or "bad" luck.
+
+In this activity, students will use: 
 *  ``||math:pick random||`` to generate random numbers
 * Setting random sprite positions
 * Setting button press events
 
 ## Concept: pick a random number
 
-We can pick a random number in a range using ``||math:pick random||``.  First, we will use this to display a random value.
+We can pick a random number in a range using ``||math:pick random||``. First, we will use this to display a random value.
 
 https://youtu.be/PS8clbMInjw
 
@@ -40,7 +42,7 @@ https://youtu.be/Ggj4rOXw6ns
 
 [Alternative Video Location](https://aka.ms/40544a-randomposition)
 
-Games often have an element of luck and surprise to keep the player engaged. In this example, we will use random numbers to place a sprite on the screen in a random location.  We can use a random range because we know the dimensions of the screen.
+Games often have an element of luck and surprise to keep the player engaged. In this example, we will use random numbers to place a sprite on the screen in a random location. We can use a random range because we know the dimensions of the screen.
 
 ## Example #2: random sprite location
 

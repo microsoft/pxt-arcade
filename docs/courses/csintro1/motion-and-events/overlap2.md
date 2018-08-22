@@ -1,6 +1,8 @@
 # Activity: Sprite Overlap & Events - Part 2
 
-We use ``||sprites:Kind||`` to give a label to Sprites so we can define how a "kind of sprite" will act when overlapping with another "kind of sprite." In the activity, all "Cloud" ``||sprites:Kind||``'s respond with the same action when overlapped with a `Helicopter` ``||sprites:Kind||``. 
+We use ``||sprites:Kind||`` to give a label to Sprites so we can define how a "kind of sprite" will act when overlapping with another "kind of sprite." 
+
+In the previous activity, all "Cloud" ``||sprites:Kind||``'s respond with the same action when overlapped with a Helicopter ``||sprites:Kind||``. 
 
 By making several cloud shaped sprites with the same ``||sprites:Kind||`` of `Cloud`, we write code to so all ``||sprites:Kind||`` `Cloud` interact in the same way with a ``||sprites:Kind||`` `Helicopter` overlap event.
 
@@ -209,6 +211,7 @@ landing.y = 125
 ## Student Task #1: Soft Landing
 
 There is a "T" shaped landing area at the bottom of the example. The helicopter sprite should not go through the landing pad, it should land!
+
 1. Starting with example #1, replace the helicopter motion with the short method using ``||controller:dx (left-right buttons)||``  
 2. Review the rest of the code, and then add an on overlap event for when the helicopter overlaps with the landing (note the ``||sprites:Kind||`` of ``||sprites:LandingPad||``)
 3. The block of code in the overlap event should stop the helicopter velocity motion (both vx and vy to zero) and then change the helicopter position **up** 2 pixels so it isn't overlapping any more
@@ -231,5 +234,5 @@ Challenge Tip: erratic motion can be made by changing the sprite position back a
 
 ## What did we learn?
 
-1. Describe how a ``||sprites:Kind||`` can improve code (for example, how it can make programming easier, more powerful, more efficient, ...).    
+1. Describe how a ``||sprites:Kind||`` can improve code (for example, how it can make programming easier, more powerful, more efficient, ...). 
 2. Explain why in creating a "bump" effect negative `X` and `Y` velocities are used to change the `X` and `Y` positions. 
