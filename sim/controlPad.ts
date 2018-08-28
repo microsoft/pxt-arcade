@@ -5,10 +5,13 @@ namespace pxsim {
 
     const COMPONENT_WIDTH = 60;
     const DRAW_UNIT = COMPONENT_WIDTH / 3;
-    const PADDING = 20;
+    const PADDING = 5;
 
     const D_PAD_COLOR = "#6B4F76";
     const D_PAD_DOWN_COLOR = "#f4b342";
+
+    const D_PAD_SVG_WIDTH = 23.813;
+    const BUTTON_SVG_WIDTH = 13.533;
 
     const BUTTON_COLOR = "#FE8C4F";
     const BUTTON_DOWN_COLOR = "#DE5F26";
@@ -34,8 +37,8 @@ namespace pxsim {
         protected left: s.Rect;
         protected right: s.Rect;
 
-        protected primary: s.Circle;
-        protected secondary: s.Circle;
+        protected primary: s.Group;
+        protected secondary: s.Group;
 
         protected keys: KeyBinding[] = [];
 
@@ -122,10 +125,10 @@ namespace pxsim {
                     this.setDpadState(this.left, down);
                     break;
                 case Key.A:
-                    this.setButtonState(this.primary, down);
+                    // this.setButtonState(this.primary, down);
                     break;
                 case Key.B:
-                    this.setButtonState(this.secondary, down);
+                    // this.setButtonState(this.secondary, down);
                     break;
             }
         }
@@ -135,9 +138,9 @@ namespace pxsim {
             this.dPadRoot.el.style.left = left + "px";
             this.dPadRoot.el.style.top = top + "px";
             this.dPadRoot.setAttribute("height", width).setAttribute("width", width);
-
-            const scale = width / (COMPONENT_WIDTH + PADDING * 2);
-            this.dPad.scale(width / (COMPONENT_WIDTH + PADDING * 2));
+            // 23.813 24.362
+            const scale = width / (D_PAD_SVG_WIDTH + PADDING * 2);
+            this.dPad.scale(scale);
             this.dPad.translate(PADDING * scale, PADDING * scale);
         }
 
@@ -147,8 +150,8 @@ namespace pxsim {
             this.buttonsRoot.el.style.top = top + "px";
             this.buttonsRoot.setAttribute("height", width).setAttribute("width", width);
 
-            const scale = width / (COMPONENT_WIDTH + PADDING * 2);
-            this.buttons.scale(width / (COMPONENT_WIDTH + PADDING * 2));
+            const scale = width / ((BUTTON_SVG_WIDTH * 2) + PADDING * 2);
+            this.buttons.scale(scale);
             this.buttons.translate(PADDING * scale, PADDING * scale);
         }
 
@@ -162,38 +165,40 @@ namespace pxsim {
 
         protected drawDirectionalPad() {
             this.dPad = this.dPadRoot.group();
+            this.dPad.el.appendChild(svg.dPad.cloneNode(true));
 
-            this.dPad.draw("polygon")
-                .at(0, 0)
-                .fill(D_PAD_COLOR)
-                .stroke("#412C3D", 2)
-                .setAttribute("stroke-linejoin", "round")
-                .with(scale([
-                    { x: 1, y: 0 },
-                    { x: 2, y: 0 },
-                    { x: 2, y: 1 },
-                    { x: 3, y: 1 },
-                    { x: 3, y: 2 },
-                    { x: 2, y: 2 },
-                    { x: 2, y: 3 },
-                    { x: 1, y: 3 },
-                    { x: 1, y: 2 },
-                    { x: 0, y: 2 },
-                    { x: 0, y: 1 },
-                    { x: 1, y: 1 }
-                ], DRAW_UNIT));
+            // this.dPad.draw("polygon")
+            //     .at(0, 0)
+            //     .fill(D_PAD_COLOR)
+            //     .stroke("#412C3D", 2)
+            //     .setAttribute("stroke-linejoin", "round")
+            //     .with(scale([
+            //         { x: 1, y: 0 },
+            //         { x: 2, y: 0 },
+            //         { x: 2, y: 1 },
+            //         { x: 3, y: 1 },
+            //         { x: 3, y: 2 },
+            //         { x: 2, y: 2 },
+            //         { x: 2, y: 3 },
+            //         { x: 1, y: 3 },
+            //         { x: 1, y: 2 },
+            //         { x: 0, y: 2 },
+            //         { x: 0, y: 1 },
+            //         { x: 1, y: 1 }
+            //     ], DRAW_UNIT));
 
             // Draw the real touch pads
-            this.up = this.drawTouchPad(this.dPad, DRAW_UNIT, 0);
+            const unit = D_PAD_SVG_WIDTH / 3;
+            this.up = this.drawTouchPad(this.dPad, unit, 0, unit, unit);
             this.bindPadEvents(this.up, Key.Up);
 
-            this.right = this.drawTouchPad(this.dPad, 2 * DRAW_UNIT, DRAW_UNIT);
+            this.right = this.drawTouchPad(this.dPad, 2 * unit, unit, unit, unit);
             this.bindPadEvents(this.right, Key.Right);
 
-            this.down = this.drawTouchPad(this.dPad, DRAW_UNIT, 2 * DRAW_UNIT);
+            this.down = this.drawTouchPad(this.dPad, unit, 2 * unit, unit, unit);
             this.bindPadEvents(this.down, Key.Down);
 
-            this.left = this.drawTouchPad(this.dPad, 0, DRAW_UNIT);
+            this.left = this.drawTouchPad(this.dPad, 0, unit, unit, unit);
             this.bindPadEvents(this.left, Key.Left);
         }
 
@@ -212,30 +217,37 @@ namespace pxsim {
         protected drawButtonGroup() {
             this.buttons = this.buttonsRoot.group();
 
-            this.primary = this.drawButton("A", 2.5 * DRAW_UNIT, DRAW_UNIT, Key.A);
-            this.secondary = this.drawButton("B", 0.75 * DRAW_UNIT, 2.5 * DRAW_UNIT, Key.B);
+            const unit = BUTTON_SVG_WIDTH * 2 / 3;
+
+            this.primary = this.drawButton("A", 2.25 * unit, unit, Key.A);
+            this.secondary = this.drawButton("B", 0.75 * unit, 2.25 * unit, Key.B);
         }
 
         protected drawButton(symbol: string, cx: number, cy: number, key: Key) {
-            let r = DRAW_UNIT * 0.75;
+            let r = (BUTTON_SVG_WIDTH * 2 / 3) * 0.75;
 
-            const button: s.Circle = this.buttons.draw("circle")
-                .at(cx, cy)
-                .radius(r)
-                .fill(BUTTON_COLOR)
-                .stroke(BUTTON_DOWN_COLOR, 2);
+            // const button: s.Circle = this.buttons.draw("circle")
+            //     .at(cx, cy)
+            //     .radius(r)
+            //     .fill(BUTTON_COLOR)
+            //     .stroke(BUTTON_DOWN_COLOR, 2);
 
-            this.buttons.draw("text")
-                .at(cx, cy)
-                .text(symbol)
-                .fill("white")
-                .anchor("middle")
-                .alignmentBaseline("middle");
+            // this.buttons.draw("text")
+            //     .at(cx, cy)
+            //     .text(symbol)
+            //     .fill("white")
+            //     .anchor("middle")
+            //     .alignmentBaseline("middle");
+
+            const buttonDom = symbol === "A" ? svg.aButton.cloneNode(true) : svg.bButton.cloneNode(true);
+            const buttonG = this.buttons.group();
+            buttonG.el.appendChild(buttonDom);
+            buttonG.translate(cx - r, cy - r);
 
             r *= 0.6; // the actual radius is bigger, see btnEvent() above
             this.bindPadEvents(this.drawTouchPad(this.buttons, cx - r, cy - r, r * 2, r * 2), key);
 
-            return button;
+            return buttonG;
         }
 
         protected setDpadState(pad: s.Rect, down: boolean) {
@@ -244,15 +256,6 @@ namespace pxsim {
             }
             else {
                 pad.fill(D_PAD_COLOR, 0);
-            }
-        }
-
-        protected setButtonState(button: s.Circle, down: boolean) {
-            if (down) {
-                button.fill(BUTTON_DOWN_COLOR).stroke(BUTTON_COLOR);
-            }
-            else {
-                button.fill(BUTTON_COLOR).stroke(BUTTON_DOWN_COLOR);
             }
         }
     }
