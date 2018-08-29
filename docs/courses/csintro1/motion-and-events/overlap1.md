@@ -26,7 +26,7 @@ Sometimes there just one of a given ``||sprites:Kind||`` (for example, the Playe
 
 1. Review the code below 
 2. Create the sample code and run the code
-3. Save the code for the task (name it "eatFruit")  
+3. Save the code for the task (name it "eatFruit")
 4. Look at the overlap event - note which sprite is named ``||variables:sprite||`` and which is ``||sprites:otherSprite||``
 
 https://makecode.com/_e77ia1MAyA0U

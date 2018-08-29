@@ -19,11 +19,11 @@ Velocity is defined as speed in a given direction. Velocity is the rate at which
 
 In real life, you can think of velocity like being in a train or a car; the speed on a highway may be 60 miles per hour, but the velocity would be 60 miles per hour going North. This means over the course of an hour at this rate, you will be 60 miles further North than you are currently.
 
-In MakeCode Arcade, a sprite's velocity is measured in **pixels per second**, and stored as a sprite's ``||sprites:vx||`` and ``||sprites:vy||``. A sprite's ``||sprites:vx||`` represents the sprite's velocity on the horizontal axis and is, how quickly the sprite's ``||sprites:x||`` value is changing in value moving left to right. 
+In @boardname@, a sprite's velocity is measured in **pixels per second**, and stored as a sprite's ``||sprites:vx||`` and ``||sprites:vy||``. A sprite's ``||sprites:vx||`` represents the sprite's velocity on the horizontal axis and is, how quickly the sprite's ``||sprites:x||`` value is changing in value moving left to right. 
 
 A sprite's ``||sprites:vy||``, represents the sprite's velocity in the vertical axis, and is how quickly the sprite's ``||sprites:y||`` changes in value moving up and down.
 
-In MakeCode Arcade, a sprite's velocity is defined in terms of pixels per second.
+In @boardname@, a sprite's velocity is defined in terms of pixels per second.
 
 ### Example #1a: Change in Position vs Velocity
 
@@ -111,7 +111,7 @@ The relationship between acceleration and velocity is similar to the relationshi
 
 In other words, acceleration tells us how quickly the velocity is changing. Braking in a car or speeding up in a rocket taking off are examples of acceleration. We feel a force pull on our bodies when there is acceleration.
 
-In MakeCode Arcade, a sprite's acceleration is defined in terms of **pixels per second, per second** (pixels/s/s).
+In @boardname@, a sprite's acceleration is defined in terms of **pixels per second, per second** (pixels/s/s).
 
 
 ### Example #1b - Sprite with Acceleration

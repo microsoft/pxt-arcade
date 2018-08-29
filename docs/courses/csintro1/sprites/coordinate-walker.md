@@ -6,7 +6,7 @@ https://youtu.be/fr036vKEFiI
 
 In this activity, students will investigate the game screen.
 
-## Concept: Identify the X, Y coordinates of the Game Screen  
+## Concept: Identify the X, Y coordinates of the Game Screen 
 
 https://youtu.be/R6NJjzXfejM
 
@@ -60,10 +60,10 @@ game.onUpdate(function () {
 1. To check the location: run the program, and then press the `A` button on the game pad (or space bar key on keyboard). This will display the starting location's `X` and `Y` coordinates
     * Note the two coordinate values for `(X, Y)`
 2. Move the sprite: click on the game pad (or use keyboard `WASD` keys) to move the sprite. Check the coordinates after moving
-    
+
 ## What did we learn?
 
-Use `X` and/or `Y` in your answers  
+Use `X` and/or `Y` in your answers 
 
 1. Describe how coordinates change when moving up and down. Which direction caused the coordinates to increase?
 2. Describe how coordinates change when moving right and left. Which direction caused the coordinates to increase?

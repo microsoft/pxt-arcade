@@ -10,6 +10,12 @@ Variables are used extensively in code. Variables allow code to be written in a 
 
 If we know `Y = 3` we can calculate `X` from our equation. Later on, `Y` can have a different value, like `Y = 7`. We can reuse the equation, `X = 2Y`, for both values of `Y`. This way, the value of `X` will change alongside the value of `Y`.
 
+### ~hint
+
+Variable Definition: a container used to store values in your code.
+
+### ~
+
 In this activity, student are introduced to:
 * Expressing numeric operations with math operators (`+`, `-`, `*`, `/`)
 * Storing the result of an equation in a variable 
@@ -38,7 +44,7 @@ https://youtu.be/Dv-5K9bWcps
 
 [Equation variable](https://makecode.com/_RdXJ5jMxubqA)
 
-```blocks  
+```blocks
 let answer = 0
 answer = 3 + 5
 game.splash("3 + 5 = " + answer)
@@ -77,8 +83,8 @@ We can create variable based math equations, like `A = B + C`, into code using o
 
 In JavaScript, the following order of operation precedence applies:
 
-* Addition (`+`) and Subtraction (`-`)  
-* Multiplication (`*`) and Division (`/`)  
+* Addition (`+`) and Subtraction (`-`)
+* Multiplication (`*`) and Division (`/`)
 
 Note that JavaScript uses the ``||math:*||`` symbol for multiplication the ``||math:/||`` for division division. In order to change this order of operations, you can use parentheses `( )` around expressions just like in math.
 
@@ -113,7 +119,7 @@ https://youtu.be/C_UY8V-ufiI
 3. Create an equation using both the addition operator (`+`) and the multiplication operator (`*`)
 4. Swap the Addition and Multiplication operator and run the program (Typically the answers will differ)
 
-## Student Task #3: multiple operators and variables equation  
+## Student Task #3: multiple operators and variables equation
 1. Start with the code from the previous task
 2. Add a ``||variables:fourthNumber||`` variable
 3. Create an equation using 3 different operators
@@ -133,7 +139,7 @@ Look at the JavaScript code. For multiple operator equations it is often easier 
 2. Initialize ``||variables:tempC||`` with common Celsius temperature (for example, 22.0)
 3. Create an equation using the formula ``||variables:tempF||`` = ``||variables:tempC||`` × 9/5 + 32 and assign it to a new variable ``||variables:temp||``
 4. Show the ``||variables:temp||`` in a Splash Screen
-4. **Challenge:** create an equation for converting back to Celsius:   
+4. **Challenge:** create an equation for converting back to Celsius:
     * ``||variables:tempC||`` = (``||variables:tempF||`` - 32) × 5/9
     * pay careful attention to the parentheses
 
@@ -147,7 +153,7 @@ It can be difficult to structure complicated expressions using blocks. Look at a
 
 1. We decided that we want to have three different variables in our code - ``||variables:a||``, ``||variables:b||``, and ``||variables:c||``. The variable ``||variables:a||`` should be set to `3`, ``||variables:b||`` should be set to `a + 5`, and ``||variables:c||`` should be set to `a + 2 * b`. This should result in ``||variables:a||`` storing 3, ``||variables:b||`` storing 8, and ``||variables:c||`` storing 19 at the end. When we wrote this out, though, we found that we couldn't run our code. What is going wrong in the following code, and how can you fix it?
 
-[Fix the Code here](https://makecode.com/_0qfiscfhEY9P)  
+[Fix the Code here](https://makecode.com/_0qfiscfhEY9P)
 
 ![image of code blocks with error](/static/courses/csintro1/orientation/fix-code.png)
 
@@ -174,4 +180,4 @@ https://youtu.be/BPX2MHXmXJw
 
 1. In JavaScript what is the resulting value of answer for `answer = 5 + 3 * 2`? Explain why the answer is **not** 30.
 2. How is putting operators and numbers into a calculator different than writing in code (example: 2 + 3 + 4 * 4)? Explain.
-3. Research and describe 2 other ``||math:Math||`` Operators found in the math menu in MakeCode (hover over values for more information).
+3. Research and describe 2 other ``||math:Math||`` Operators found in the math menu in @boardname@ (hover over values for more information).

@@ -275,5 +275,5 @@ princess.setPosition(50, 50)
 
 ## What did we learn?
 
-1. Describe how the use of functions in code can help make code programming easier.
+1. Describe how the use of functions in code can help make programming easier.
 2. Does putting code into separate functions always make sense? Would it be more or less clear if we took the code from example #2, and made a function that calls the other three, so that our ``||loops:on start||`` block only had a single block inside of it?
