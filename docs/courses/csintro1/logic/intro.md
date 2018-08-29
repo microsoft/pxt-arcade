@@ -397,8 +397,8 @@ Notice how when the player is on the left half of the screen, the game will fire
 3. Make it so that when the player presses the ``||controller:A||`` button, the score increases by 1
 4. In this event, if the player's score is above 10, make the sprite congratulate the player on their high score
 5. In the same event, if the player's score is an even number, change the background to a random color
-6. **Challenge:** Add projectiles that fire from the sprite when the score is increased to a value greater than 5
-7. **Challenge:** If the score reaches 20, change the sprites image
+6. **Challenge:** add projectiles that fire from the sprite when the score is increased to a value greater than 5
+7. **Challenge:** if the score reaches 20, change the sprites image
 
 ### ~hint
 

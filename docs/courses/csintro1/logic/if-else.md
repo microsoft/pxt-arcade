@@ -24,7 +24,6 @@ https://youtu.be/sMFHdR6KzPo
 
 [Alternative Video Location](https://aka.ms/40544a-ifelse-overview)
 
-
 ## Concept: **if** Statement
 
 We have seen in the previous lesson ``||logic:if||`` statements perform a test and if the logic test evaluates to true, then it will run code that is given. 
@@ -40,7 +39,6 @@ if (info.life() > 2) {
 When we use an ``||logic:if||`` statement, we have the option to add an ``||logic:else||`` statement. An else block will only run in the event that the logic test given evaluates to false. In other words if the test is true, then the ``||logic:if||`` block’s code will run, else, the ``||logic:else||`` block’s code will run. 
 
 To use an ``||logic:else||`` click on the plus sign of an existing ``||logic:if||`` block.
-
 
 ```block
 if (info.highScore() > 5) {
@@ -192,7 +190,6 @@ mySprite = sprites.create(img`
 info.startCountdown(20)
 generate()
 ```
-
 
 ### Example 1c: ``|logic:else|`` for random alternating message
 
