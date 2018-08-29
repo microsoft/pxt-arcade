@@ -10,6 +10,7 @@
         ]
     },
     "galleries": {
+        "Tutorials": "tutorials",
         "Blocks Games": "blocks-games",
         "Classics": "classics",
         "JavaScript Games": "javascript-games",
