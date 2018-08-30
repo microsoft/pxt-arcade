@@ -61,4 +61,4 @@ console.log("a / b = " + (a / b));
 console.log("c = " + c);
 ```
 
-(ask students: why both doing adding parens to a * b and a / b if they worked before? Good practice, etc)
+(ask students: why add parens to `a * b` and `a / b` if they worked without them? Good practice, consistency, etc)
