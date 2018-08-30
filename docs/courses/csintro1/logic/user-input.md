@@ -1,6 +1,6 @@
 # Activity: User Input and String Logic
 
-Logical expressions like ``||logic:if||`` and ``||logic:else||`` can be used beyond comparing numeric values. Various data type values (such as Strings) can be compared and used to change the way the programs we write behave depending on the different conditions.
+Logical expressions like ``||logic:if||`` and ``||logic:else||`` can be used beyond comparing numeric values. Data type values (such as Strings) can be compared and used to change the way the programs we write behave depending on the different conditions.
 
 One major example of this can be found in some of the earliest computer games - text-based adventure games. These rely heavily on crafting a story, and having the player interact with this story by prompting them with questions and identifying what the user gives back as a response.
 
@@ -27,18 +27,20 @@ if (game.ask("Do you want to win?")) {
 }
 ```
 
-This is a fairly simple game - you press ``||controller:A||`` to win, or ``||controller:B||`` to do nothing. However, it does illustrate two important concepts: one, that there are **built in** methods that return Boolean values, which allows for the easy implementation of logical tests in the code we write, and two, that those tests can be based off user input - in this case, which button the user pressed.
+This is a fairly simple game - you press ``||controller:A||`` to win, or ``||controller:B||`` to do nothing. However, it does illustrate two important concepts: 
+>* There are **built in** methods that return Boolean values, allowing us to easily create logical tests in our code.
+>* These tests can be based off user input - in this case, which button the user pressed.
 
 ## Student Task #1: Option for failure!
 
 1. Start with the code from example #1
 2. Add an ``||logic:else||`` branch so that there is a possibility for failure - use ``||game:splash||`` to say "You lost!"
 3. Inside the ``||logic:else||`` branch, add an ``||logic:if||`` statement with a ``||game:ask||`` that asks "So do you want to lose?"
-4. Make sure the player only gets the "You lost!" message if they respond "OK" to the prompt from part 3
+4. Make sure the player only gets the "You lost!" message if they respond "OK" to the prompt from step 3
 
 ## Concept: Text input
 
-Beyond just asking questions with a binary response (one with two possibilities - for example, "yes or no" and "true or false"), we can request further input from users and keep track of that to enhance the player's experience - even something as simple as asking for their name and using in future interactions.
+Beyond asking questions with a binary response (e.g. - "yes or no" or "true or false"), we can request input from users and keep track of that to enhance the player's experience. We could ask for a user name and display the name in later in the game, such as in a leader board or a welcome message as in example #2.
 
 ## Example #2: Taking in a user name
 
@@ -51,7 +53,7 @@ let input = game.askForString("What is your name?")
 game.splash("Hello " + input + "!")
 ```
 
-This will prompt the user for their name, and then use it in the future. This allows for the game to be a bit more personal; it is the player's story, not some random character named "Jim" or "Mink." Personalization is not the only thing that user input can be used for, though; it can also be used to craft puzzles that force them to search for clues to how they must respond to a given question.
+Prompts for names, like above, allows games to be more personal.  The prompts can also enable users to make choices during game play, or make guesses from clues to solve a puzzle, or to use a password.
 
 ## Student Task #2: Making a (secret?) password
 
