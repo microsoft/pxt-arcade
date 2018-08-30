@@ -4,3 +4,4 @@
 * [Math](/courses/csintro2/orientation/math)
 * [Logic](/courses/csintro2/orientation/logic)
 * [Loops](/courses/csintro2/orientation/loops)
+* [Sprites](/courses/csintro2/orientation/sprites)

@@ -95,3 +95,7 @@ num = num / 5;
 let num: number = 15;
 num /= 5;
 ```
+
+## Math Functions / calling functions intro
+
+Show sample code calling Math.round, Math.randomRange, Math.max, etc
