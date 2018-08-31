@@ -4,7 +4,7 @@ We can return stuff, how to give stuff
 
 ## Parameters
 
-```ts
+```typescript
 function gimme(n: number): number {
     return n;
 }
@@ -18,7 +18,7 @@ returns the number passed when it is called
 
 a bit more clear why with add
 
-```ts
+```typescript
 function add(first: number, second: number): number {
     return first + second;
 }
@@ -29,7 +29,7 @@ game.splash("first + second is " + add(5, 10));
 
 lets use a string parameter too
 
-```ts
+```typescript
 function hello(name: string) {
     game.splash("Hello, " + name);
 }
@@ -40,7 +40,7 @@ hello("mary");
 
 sprites work too!
 
-```ts
+```typescript
 enum SpriteKind {
     Player,
     Enemy,

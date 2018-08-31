@@ -16,13 +16,13 @@ game.splash("", "")
 
 The second parameter is not required to use the function, but it allows for more precise behavior - in this case, adding in the second parameter allows you to add in a subtitle to the splash screen. 
 
-```ts
+```typescript
 game.splash("hello!");
 ```
 
 This is done by specifying that the parameter is optional, by adding in a question mark (`?`) before the type
 
-```ts
+```typescript
 function add(a: number, b: number, prefix?: string): string {
     return prefix + (a + b);
 }
@@ -37,7 +37,7 @@ console.log(add(1, 2, "The answer is "));
 
 fixed version
 
-```ts
+```typescript
 function add(a: number, b: number, prefix?: string): string {
     if (prefix == undefined) {
         prefix = "";

@@ -6,7 +6,7 @@ In TypeScript, events are registered using functions that accept other functions
 
 ![Splash and Dash](/static/courses/csintro2/events/splash-and-dash.gif)
 
-```ts
+```typescript
 enum SpriteKind {
     Player,
     Enemy
@@ -27,7 +27,7 @@ player.x = 0;
 
 the base for them to start with, following gif to transition to
 
-```ts
+```typescript
 enum SpriteKind {
     Player,
     Enemy
@@ -54,14 +54,14 @@ The sample code produced by the toolbox had slightly different syntax than the f
 
 For example, the following two pieces of sample code will behave in effectively the same way, even though they are created in different ways
 
-```ts
+```typescript
 function splash() {
     game.splash("Hello!");
 }
 splash();
 ```
 
-```ts
+```typescript
 let splash = function () {
     game.splash("Hello!");
 }
@@ -76,7 +76,7 @@ Anonymous functions allow for functions that will only be used in one case to be
 
 The code from the first example using anonymous function
 
-```ts
+```typescript
 enum SpriteKind {
     Player,
     Enemy

@@ -4,7 +4,7 @@ Intro to namespaces; fairly light, transitions nicely into functions (as basical
 
 Intro -> use Math.max to explain (max is a fairly common word, so transitioning to making a function called max will lkely seem reasonable)
 
-```ts
+```typescript
 let a = 5;
 let b = 6;
 let num: number = Math.max(a, b);
@@ -14,7 +14,7 @@ game.splash(num + "")
 
 easy, good, etc
 
-```ts
+```typescript
 function max() {
     return "Maximilian";
 }
@@ -30,7 +30,7 @@ These two functions have the same name - max() - oh wow how does that work, how 
 
 ## Using namespaces
 
-```ts
+```typescript
 namespace names {
     export function max() {
         return "Maximilian";
@@ -60,7 +60,7 @@ game.splash(names.max() + num)
 
 ## multiple namespaces
 
-```ts
+```typescript
 namespace consoleOutput {
     export function printNum(value: number) {
         console.log(value + "");
