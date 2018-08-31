@@ -4,7 +4,7 @@ explain how using extensions in typescript is just as easy as in blocks, helpful
 
 ### Making a Corgio
 
-```ts
+```typescript
 enum SpriteKind {
     Player,
     Enemy
@@ -17,7 +17,7 @@ let myCorg: Corgi = corgi.create(SpriteKind.Player);
 
 Interacting with corgio -> using methods
 
-```ts
+```typescript
 enum SpriteKind {
     Player,
     Enemy
@@ -31,7 +31,7 @@ Specifically how you're calling a method on the corgio -> `myCorg.horizontalMove
 
 making an interesting corgio that can do the things
 
-```ts
+```typescript
 enum SpriteKind {
     Player,
     Enemy
@@ -46,7 +46,7 @@ myCorg.updateSprite();
 
 barking and stuff as a student activity (loops reminder, calling more methods, more practice with looking for properties / methods (either in toolbox, or autocomplete shown in sprites lesson))
 
-```ts
+```typescript
 enum SpriteKind {
     Player,
     Enemy
@@ -60,4 +60,8 @@ for (let i = 0; i < 50; i++) {
     myCorg.bark();
     pause(1000);
 }
+```
+
+```package
+corgio=github:jwunderl/pxt-corgio#v0.0.12
 ```

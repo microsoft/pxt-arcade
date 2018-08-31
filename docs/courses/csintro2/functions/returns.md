@@ -8,7 +8,7 @@ to fix, use parameters and return values! (finally..)
 
 Note that these have been (should have been?) used a bit and described at a high level with Math expressions and sprites at this point (sprites.create()), so this can have quick description of what return values are and then focus on **how** things are returned
 
-```ts
+```typescript
 function gimme5(): number {
     return 5;
 }
@@ -20,7 +20,7 @@ explain return keyword, and the `: number` after the parens to define the value
 
 returns 5 each time it's called
 
-```ts
+```typescript
 function add(): number {
     return first + second;
 }

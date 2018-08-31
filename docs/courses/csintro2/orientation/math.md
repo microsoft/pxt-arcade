@@ -12,12 +12,12 @@ etc
 
 ### Complex Expressions
 
-```ts
+```typescript
 let num: number = 5 + 3 * 2;
 console.log("" + num);
 ```
 
-```ts
+```typescript
 let num: number = 15 / 3 * 8;
 console.log("" + num);
 ```
@@ -26,13 +26,13 @@ console.log("" + num);
 
 ### Show increment / change by transition (blocks -> ts)
 
-```ts
+```typescript
 let num: number = 0;
 num = num + 5;
 num = num + 3;
 ```
 
-```ts
+```typescript
 let num: number = 0;
 num += 5;
 num += 3;
@@ -40,7 +40,7 @@ num += 3;
 
 ### Special case: add or subtract 1 (increment / decrement operators)
 
-```ts
+```typescript
 let num: number = 0;
 num += 1;
 num += 1;
@@ -48,7 +48,7 @@ num += -1;
 num += 1;
 ```
 
-```ts
+```typescript
 let num: number = 0;
 num++;
 num++;
@@ -62,36 +62,36 @@ Explain why -> very commonly used, easier to write as a short hand, etc
 
 ### minus equals
 
-```ts
+```typescript
 let num: number = 15;
 num = num - 5;
 ```
 
-```ts
+```typescript
 let num: number = 15;
 num -= 5;
 ```
 
 ### times equals
 
-```ts
+```typescript
 let num: number = 15;
 num = num * 5;
 ```
 
-```ts
+```typescript
 let num: number = 15;
 num *= 5;
 ```
 
 ### divided by equals
 
-```ts
+```typescript
 let num: number = 15;
 num = num / 5;
 ```
 
-```ts
+```typescript
 let num: number = 15;
 num /= 5;
 ```

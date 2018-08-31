@@ -2,7 +2,7 @@
 
 defining a function - using game.splash() for a simple method that can be converted to blocks and back with no changes
 
-```ts
+```typescript
 function hello() {
     game.splash("hello");
 }
@@ -21,7 +21,7 @@ hello();
 
 ## Variable scoping / functions different from blocks
 
-```ts
+```typescript
 function makeNumbers() {
     let first: number = 5;
     let second: number = 6;
@@ -33,7 +33,7 @@ makeNumbers();
 
 run the code. Makes variables in function, etc, etc.
 
-```ts
+```typescript
 function makeNumbers() {
     let first: number = 5;
     let second: number = 6;
@@ -48,7 +48,7 @@ Why doesn't this work -> variables not defined outside the scope of makeNumbers,
 
 Why this is good:
 
-```ts
+```typescript
 function makeNumbers() {
     let first: number = 5;
     let second: number = 6;
@@ -69,7 +69,7 @@ explain how keeping the variables in a small scope allows for the names to be us
 
 If the other behavior is preferred (for example, a given function modifies a variable), the value can be identified outside any functions and referenced inside - that is
 
-```
+```typescript
 let first: number;
 let second: number;
 function makeNumbers() {
@@ -89,7 +89,7 @@ makeOtherNumbers();
 ```
 
 (maybe note that this can lead to weird bugs like the following
-```ts
+```typescript
 let first: number;
 let second: number;
 function makeNumbers() {

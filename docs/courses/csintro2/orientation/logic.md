@@ -1,16 +1,23 @@
 # logic operators
 
 table of blocks -> ts equivalent
+
 |     |     |
 | --- | --- |
-| a ``||logic:and||`` b | a && b |
-| ``||logic:not||`` a | !a |
+| a and b | a && b |
+| not a | !a |
 
-etc 
+etc
 
 ### If and else statements 
 
-```blocks
+```typescript
+let num: number = 1;
+if (num == 1) console.log("num is one!");
+else console.log("num is not one!");
+```
+
+```typescript
 let num: number = 1;
 if (num == 1) {
     console.log("num is one!");
@@ -21,7 +28,7 @@ if (num == 1) {
 
 ### Add more examples of if statements with logic expressions they have seen
 
-```blocks
+```typescript
 let word: string = "word";
 let num: number = 1;
 

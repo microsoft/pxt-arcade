@@ -2,7 +2,21 @@
 
 ### How many times does this run, what is the max value of i, etc
 
-```ts
+```typescript
+let i = 0;
+
+while (i < 5) {
+    console.log("hello!");
+    i++;
+}
+```
+
+```typescript
+for (initialization; check; update) {
+    // BODY OF CODE
+}
+```
+```typescript
 for (let i = 0; i < 5; i++) {
     console.log("hello!");
 }
@@ -10,7 +24,7 @@ for (let i = 0; i < 5; i++) {
 
 ### Sum up values 1 -> n
 
-```ts
+```typescript
 let n: number = 10;
 let out = 0;
 for (let i = 1; i <= n; i++) {
@@ -22,7 +36,7 @@ console.log("" + out);
 
 ### Sum up values 1 -> n using plus equals
 
-```ts
+```typescript
 let n: number = 10;
 let out = 0;
 for (let i = 1; i <= n; i++) {
@@ -33,7 +47,7 @@ console.log("" + out);
 
 ### What numbers show up on the string, etc
 
-```ts
+```typescript
 let out: string = "hello";
 for (let i = 0; i < 5; i++) {
     out = out + i + " ";
@@ -43,7 +57,7 @@ console.log(out);
 
 ### Appending to a string
 
-```ts
+```typescript
 let out: string = "hello";
 for (let i = 0; i < 5; i++) {
     out += i + " ";

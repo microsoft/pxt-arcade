@@ -2,7 +2,7 @@
 
 ## Creating and controlling sprite in ts
 
-```ts
+```typescript
 let player: Sprite = sprites.create(img`
 1 1 1
 1 1 1
@@ -21,7 +21,7 @@ controller.controlSprite(player, 100, 100);
 
 ## Using kinds
 
-```ts
+```typescript
 enum SpriteKind {
     Player,
     Enemy
@@ -41,7 +41,7 @@ controller.controlSprite(player, 100, 100);
 
 ## Example using / adding a new kind
 
-```ts
+```typescript
 enum SpriteKind {
     Player,
     Enemy,
@@ -58,7 +58,7 @@ controller.controlSprite(player, 100, 100);
 
 ## Task make them add 2 new kinds
 
-```ts
+```typescript
 enum SpriteKind {
     Player,
     Enemy,
@@ -87,7 +87,7 @@ Auto complete gif here to show how they can identify all the public properties b
 
 changing x to move, also showing `pause()` to make the movement visible
 
-```ts
+```typescript
 enum SpriteKind {
     Player,
     Enemy,
@@ -108,7 +108,7 @@ pauses half a second, then bumps player over 20. Show it being equivalent to cha
 
 more practice with properties; use in a loop, move in a square, etc, etc; for example,
 
-```ts
+```typescript
 enum SpriteKind {
     Player,
     Enemy,
