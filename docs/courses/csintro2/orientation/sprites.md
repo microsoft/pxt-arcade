@@ -106,4 +106,23 @@ player.x += 20
 
 pauses half a second, then bumps player over 20. Show it being equivalent to change by block -> making them convert back and forth to see
 
-more practice with properties; use in a loop, move in a square, etc, etc
+more practice with properties; use in a loop, move in a square, etc, etc; for example,
+
+```ts
+enum SpriteKind {
+    Player,
+    Enemy,
+    Square
+}
+
+let player = sprites.create(img`
+1 1 1 
+1 1 1 
+1 1 1 
+`, SpriteKind.Square);
+
+for (let i = 0; i < 5; i++) {
+    pause(500)
+    player.x += 20
+}
+```
