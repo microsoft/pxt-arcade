@@ -3,7 +3,7 @@
 Random numbers provide the element of chance to our games that make them look and feel more natural. They can also provide surprises and introduce elements of "good" or "bad" luck.
 
 In this activity, students will use: 
-*  ``||math:pick random||`` to generate random numbers
+* ``||math:pick random||`` to generate random numbers
 * Setting random sprite positions
 * Setting button press events
 
@@ -22,7 +22,7 @@ https://youtu.be/PS8clbMInjw
 3. Re-run the code several times to see the values generated
 4. Observe how the range (between two numbers) is set
 
-```blocks  
+```blocks
 let randomNumber = 0
 randomNumber = Math.randomRange(0, 10)
 game.splash("Random Number is " + randomNumber)
@@ -51,7 +51,7 @@ Games often have an element of luck and surprise to keep the player engaged. In 
 3. Save the code for the task (name it "randomLocation")
 4. Examine the use of ``||math:pick random||`` in the sprite location block. The code does not assign the chosen random number to a variable before using it
 
-```blocks  
+```blocks
 enum SpriteKind {
     Player,
     Enemy
@@ -76,7 +76,7 @@ mySprite = sprites.create(img`
 . . 2 2 . . . . . 2 2 . . . . . 
 `, SpriteKind.Player)
 mySprite.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
-```  
+```
 
 ## Student Task #2: Set random position using a button event
 
@@ -84,7 +84,7 @@ mySprite.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 2. Add a ``||controller:on A button pressed||`` block
 3. Make the event code for the `A` button move a sprite to a new random position
 4. Add another sprite and make it move with the `B` button
-5. **Challenge:** make both sprites change position with the `A` button and make the `B` button give one of the sprites a random velocity (use small numbers that can be both postive and negative)
+5. **Challenge:** make both sprites change position with the `A` button and make the `B` button give one of the sprites a random velocity (use small numbers that can be both positive and negative)
 
 ### ~hint
 

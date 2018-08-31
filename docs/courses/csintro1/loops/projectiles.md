@@ -27,7 +27,7 @@ We can use projectiles to create sprites that move across the screen. Let's star
 3. Save the code for the task (name it "Bird Projectile 1") 
 4. Look for what portion of the blocks makes the bird move across the screen, instead of just staying still
 
-```blocks  
+```blocks
 enum SpriteKind {
     Player,
     Enemy
@@ -54,7 +54,7 @@ let projectile: Sprite = sprites.createProjectile(img`
 
 It may seem surprising that there's only a single block inside the ``||loops:on start||`` block - projectiles make it particularly easy to create temporary sprites, by including a lot of common behaviors. 
 
-```blocks  
+```blocks 
 enum SpriteKind {
     Player,
     Enemy
