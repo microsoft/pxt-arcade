@@ -92,3 +92,16 @@ canvas {
 .blur .info {
     opacity: 0.2;
 }
+
+.controller-button-overlay {
+    fill: black;
+    fill-opacity: 0;
+}
+
+.controller-button-overlay:hover {
+    fill-opacity: 0.125;
+}
+
+.controller-button-overlay.pressed {
+    fill-opacity: 0.25;
+}
