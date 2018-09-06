@@ -1,14 +1,21 @@
-# Tile Map
+# Activity: Tile Map
 
-Maps and levels form the basis of many of the most common types of video games; they act as a canvas for the games story to progress, and for the player to explore. 
+Maps and levels form the basis of many of the most common types of video games; they allow a canvas for the games story to progress, and for the player to explore. 
 
-In MakeCode Arcade, ``||scene:tile maps||`` provide an easy way to design two dimensional maps.
+In @boardname@, ``||scene:tile maps||`` provide an easy way to design two dimensional maps.
+
+In this activity, students will:
+* Edit a tile map
+* Personalize the tiles in the tile map
+* "Decorate" a house
 
 ## Concept: Editing a tile map
 
 The tile map uses an image to represent a game space that is often much larger than the visible game screen. 
 
-Each pixel in a tile map image translates to an area of 16x16 pixels on the 160x120 pixel game screen.
+Each pixel in a tile map image translates to and area of 16x16 pixels on the 160x120 pixel game screen.
+
+A ``|scene:tile map|`` is called a "Map" because it "maps" a tile map color to image that is stored as a tile.
 
 ### Example #1: Making a tile map
 
@@ -36,8 +43,8 @@ In this example, we have used ``||scene:set tile map to||`` to set the tile map 
 
 ## Student Task #1: Personalized tile map
 
-1. Start with example #1 and name it "intro tile map 1"
-2. **Modify** the image to create a tile map of your creation
+1. Start with example #1
+2. Modify the image to create a tile map of your creation (name it "intro tile map 1")
 
 ### Example #2: Creating tiles in a tile map
 
@@ -81,7 +88,7 @@ scene.setTile(5, img`
 
 ## Student Task #2: Add tile to tile map
 
-1. Start with your "intro tile map 1" code and name it "tile in tile map"
+1. Start with your "intro tile map 1" code and name "tile in tile map"
 2. **Modify** the code to include a tile image that is used in the tile map
 
 ### Example #3: Words!
@@ -239,7 +246,7 @@ The ``||scene:set tile to||`` blocks allow us to personalize how the tile shows 
 
 ## Student Task #3: Hello World!
 
-1. Start with the code from example #2
+1. Start with the code from example #3
 2. Change the ``||scene:tile map||`` image so that it displays "Hello World" instead of just "Word"
 3. **Challenge:** Create a new tile with an exclamation mark, and change the tile map so that "Hello World**!**" is displayed
 
@@ -252,6 +259,8 @@ https://youtu.be/YHYBQ03ecOk
 1. Make a new project (name it "newHome")
 2. Review the code below
 3. Copy the code below into your project and run it
+
+[NewHome project](https://makecode.com/_2X5PdkLjp5p5)
 
 ```blocks
 enum SpriteKind {
@@ -410,7 +419,7 @@ For the "newHome" example, we have made a tile map that is significantly larger 
 
 ![image: tile map editor](/static/courses/csintro1/tilemap/tilemap-editor.png)
 
-We've created a few tiles with ``||scene:wall||`` set to on - this means that the player won't be able to move through them.
+ We've created a few tiles with ``||scene:wall||`` set to on - this means that the player won't be able to move through them.
 
 The example tiles that are provided here are the following:
 * The black tile represents a wall
@@ -421,7 +430,7 @@ The example tiles that are provided here are the following:
 
 ## Student Task #4: Decorate and move around the house
 
-1. Start with the code from example #3
+1. Start with the code from example #4
 2. Make the camera follow the sprite by adding the ``||scene:camera follow sprite||`` block to the ``||loops:on start||`` block and set it to follow the ``||variables:homeOwner||``
 3. Add home furnishings around the house, by changing some of the white tiles to be some of the other provided tiles
 4. Create another tile with a different image, and place that tile around the house to personalize it

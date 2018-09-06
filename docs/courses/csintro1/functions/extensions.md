@@ -1,4 +1,4 @@
-# Making and Using Extensions
+# Activity: Making and Using Extensions
 
 When writing code, software developers often want to avoid spending time recreating code that already exists. Previous sections have shown how a single developer might do this using functions, but not how developers can share code amongst others.
 
@@ -11,7 +11,7 @@ In this activity, students will:
 
 Now that we have experience writing functions, we might notice something different about the blocks you've been using - almost all of them are already functions! These functions are provided to you by default to make your coding experience easier. We call these "built in functions."
 
-We are not stuck with only the functions provided when you first open MakeCode. Extensions, in the advanced menu, allow functions, and other code, to be included and used in our games. 
+We are not stuck with only the functions provided when you first open @boardname@. Extensions, in the advanced menu, allow functions, and other code, to be included and used in our games. 
 
 We can make even make our own packages of code to share or reuse in our games.
 
@@ -173,7 +173,7 @@ projectile = sprites.createProjectile(img`
 5. Set the projectile to have a random ``||sprites:y||`` position between 0 and ``||scene:screen height||``, and ``||sprites:set projectile ghost on||``
 6. Share the game and load it into another project (name the project "use starryNight")
 7. In your new project ("use starryNight")
-    * add a new ``||scene:background color||``  
+    * add a new ``||scene:background color||``
     * Add a ``||info:countdown||`` block so the game will eventually end
 7. **Challenge:** Create and add code to "use starryNight" so that a second type of projectile that will spawn a meteor every that moves across the screen
     * Save the updated "starryNight" code and get a share link.

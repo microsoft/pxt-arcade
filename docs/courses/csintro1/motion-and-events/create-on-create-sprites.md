@@ -18,7 +18,7 @@ Use ``||sprites:on created||`` event to set the sprite image and location after 
 
 1. Review the code below 
 2. Create the sample code and run the code 
-3. Save the code for the task (name it "spawnCloud")  
+3. Save the code for the task (name it "spawnCloud")
 4. Carefully examine the ``||sprites:create empty sprite||`` block and ``||sprites:on created||`` event
 
 ```blocks
@@ -120,7 +120,7 @@ sprites.createEmptySprite(SpriteKind.Cloud)
 
 The ``||sprites:on created||`` event allows us to become efficient with our code by running our set up for new clouds multiple times with the same code. Now we will create new clouds with ``||Sprite:create empty sprite of kind||`` blocks.
 
-1. Start with example #1 or your own similar code  
+1. Start with example #1 or your own similar code
 2. Review the code and find the ``||sprites:create empty sprite of kind||`` of kind blocks
 3. Add 2 more ``||sprites:create empty sprite of kind||`` blocks for clouds
 4. Add a new ``||sprites:create empty sprite of kind||`` for a different ``||sprites:Kind||``

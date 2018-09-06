@@ -124,14 +124,7 @@ https://youtu.be/-50-av1tblc
 
 1. Review the code below 
 2. Create the sample code and run the code
-3. Create a function to replace the series of blocks that are repeated each time a projectile is made
-
-### ~hint
-
-The function should include 4 blocks that appear in the same order 3 separate times.
-
-### ~
-
+3. Create a function to replace the series of blocks that are repeated each time a projectile is made *(hint: The function should include 4 blocks that appear in the same order 3 separate times)*  
 4. Reduce the redundancy in the code using your newly created function, without changing the behavior of the game
 5. **Challenge:** Change the behavior of the game by making the projectiles move at twice the vx rate (from -20 to -40), and by making the ``||music:play tone||`` block play a `Middle A`
 
@@ -282,5 +275,5 @@ info.startCountdown(15)
 
 ## What did we learn?
 
-1. Does the use of a function to capture repeated code make it easier or harder to maek changes to those repeated sections in the future?
+1. Does the use of a function to capture repeated code make it easier or harder to make changes to those repeated sections in the future?
 2. Are there any possible downsides to moving repeated code into a function?

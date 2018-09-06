@@ -10,7 +10,7 @@ We reduced the redundancy in the expression
 
 > 4 + 4 + 4 + 4 + 4 
 
-by using a different operator (multiplication:  **`*`**) to express the same overall expression.
+by using a different operator (multiplication: **`*`**) to express the same overall expression.
 
 We can use loops to solve tasks in a similar way. The following code leaves the variable ``||variables:output||`` with the same output as the expressions above
 

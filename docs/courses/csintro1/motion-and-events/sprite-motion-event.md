@@ -1,6 +1,6 @@
 # Activity: Sprite Motion and Events 
 
-## Change position with controller event  
+## Change position with controller event
 
 https://youtu.be/O27uzdkbgK4
 
@@ -24,7 +24,7 @@ In these activities, the student will use:
 
 1. Review the code below
 2. Create the sample code and run the code
-3. Save the code for the task (name it "motionLR")  
+3. Save the code for the task (name it "motionLR")
 
 ```blocks
 enum SpriteKind {
@@ -81,7 +81,7 @@ If we have a positive `X` velocity, for example, then our sprite will continue t
 
 1. Review the code below
 2. Create the sample code and run the code
-3. Save the code for the task (name it "velocityLR")  
+3. Save the code for the task (name it "velocityLR")
 
 ```blocks
 enum SpriteKind {
@@ -123,7 +123,7 @@ agent = sprites.create(img`
     * Add an `A` button event move the sprite to the center of the game screen
     * Add a `B` button event to stop the sprite (all velocities = 0)
 
-## Motion - short ``||sprites:dx||``/``||sprites:dy||`` code method  
+## Motion - short ``||sprites:dx||``/``||sprites:dy||`` code method
 
 https://youtu.be/TPpg3jp2lx4
 
@@ -135,7 +135,7 @@ We have created motion by capturing the key pad events and incrementing (or decr
 
 1. Review the code below
 2. Create the sample code and run the code
-3. Save the code for the task (name it "motionShortMethod")  
+3. Save the code for the task (name it "motionShortMethod")
 4. Note the blocks in ``||game:on game update||``
 
 ```blocks
@@ -172,7 +172,7 @@ game.onUpdate(function () {
 ## Student Task #3: Create Velocity Motion (discover the very short method)
 
 1. Start with motion (short method) example above or similar code
-2. Explore the controller menu for ``||controller: control (mySprite) with vx (100) vy (100) ||``  
+2. Explore the controller menu for ``||controller: control (mySprite) with vx (100) vy (100) ||``
 3. Change the key pad motion to use the discovered block by placing it in ``||game:on start||``
 3. Make the sprite stay in the screen boundary
 4. **Challenge:** add button events that stop motion the sprites motion, and reset the sprite to the center of the screen
@@ -197,7 +197,7 @@ Flipping an image creates a left right mirror image when we use flip horizontal.
 
 1. Review the code below
 2. Create the sample code and run the code
-3. Save the code for the task (name it "flipImage")  
+3. Save the code for the task (name it "flipImage")
 4. Note use of the function called "flipHorizontal"
 5. Find the ``||sprites:sprite image||`` block in the sprites menu that is the image that is flipped
 
