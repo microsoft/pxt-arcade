@@ -8,6 +8,7 @@ This course is currently in beta - this means that it is likely to have bugs and
 
 ### About
 
+* [Language](/courses/csintro/about/script)
 * [Authors](/courses/csintro/about/authors)
 
 ### [Orientation](/courses/csintro/orientation)
