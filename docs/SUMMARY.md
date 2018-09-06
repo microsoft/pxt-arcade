@@ -20,7 +20,7 @@
 * [Courses](/courses)
     * [CS Intro](/courses/csintro)
         * [About](/courses/csintro)
-            * [Language](/courses/csintro/about/script)
+            * [Programming Language](/courses/csintro/about/script)
             * [Authors](/courses/csintro/about/authors)
         * [Orientation](/courses/csintro/orientation)
             * [Birthday Algorithm](/courses/csintro/orientation/birthday-algorithm)
