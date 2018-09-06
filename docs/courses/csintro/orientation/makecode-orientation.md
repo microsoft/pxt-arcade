@@ -70,3 +70,5 @@ There is one other common way that we will keep track of our games: by making li
 2. Compare and contrast the two different ways that we saved our game; what are the benefits of each choice? Which do you think you would use if you wanted to email a game you made to your friend, and why would you make that decision?
 3. Include the image created in task #2.
 4. Include the link created in task #4.
+
+### [Teacher Material](/courses/csintro/about/teachers)

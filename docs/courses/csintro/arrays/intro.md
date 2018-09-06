@@ -100,4 +100,4 @@ remember to use ``||string:join||`` to convert from number to string
 1. What is the difference between creating an array of numbers and storing multiple values as individual variables (as in, `value1 = 1`, `value2 = 2`, `value3 ...`)? What can an array do that storing different variables by themselves cannot?
 2. How does the ``||array:length||`` of an array relate to the position of the final element?
 
-[Teacher Material](/courses/csintro/about/teachers)
+### [Teacher Material](/courses/csintro/about/teachers)

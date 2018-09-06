@@ -316,3 +316,5 @@ if (info.score() > 10) {
     game.splash("Case 3")
 }
 ```
+
+### [Teacher Material](/courses/csintro/about/teachers)

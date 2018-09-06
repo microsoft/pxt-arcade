@@ -52,6 +52,7 @@ This course is currently in beta - this means that it is likely to have bugs and
 ### About
 
 * [Programming Language](/courses/csintro/about/script)
+* [For Teachers](/courses/csintro/about/teachers)
 * [Authors](/courses/csintro/about/authors)
 
 ### [Orientation](/courses/csintro/orientation)

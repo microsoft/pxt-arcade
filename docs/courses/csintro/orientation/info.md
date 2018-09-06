@@ -183,3 +183,5 @@ mySprite.say(":)")
 What would you do if you needed to keep track of the number of coins the player has earned, the number of keys they have collected, and the number of chicken legs they have to eat. Would using ``||info:score||`` be helpful in storing all these values?
 
 ### ~
+
+### [Teacher Material](/courses/csintro/about/teachers)

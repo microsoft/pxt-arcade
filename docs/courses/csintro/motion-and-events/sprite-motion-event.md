@@ -261,3 +261,5 @@ let mySprite: Sprite = sprites.create(img`
 1. Describe how events can be used to run code using an example.
 2. Describe the difference between changing position and changing velocity.
 3. **Challenge** When using ``||images:flip||``, the sprite is **not** what is flipped. What is actually flipped? Explain how you know.
+
+### [Teacher Material](/courses/csintro/about/teachers)

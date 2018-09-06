@@ -253,3 +253,5 @@ This is also a great occasion to use arrays - that way, we can have more than a 
 
 1. How could using arrays of sprites influence the way you design games? List at least **two** ways.
 2. How is using ``||sprites:array of sprites of kind||`` easier than keeping track of all the sprites in an array manually?
+
+### [Teacher Material](/courses/csintro/about/teachers)

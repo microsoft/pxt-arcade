@@ -43,3 +43,5 @@ For an MVP game, you might want to avoid spending too much time getting bogged d
 
 1. What did you learn making a MVP version of the game? What was useful and what was difficult?
 2. Were items in the list of elements of a game to use in the game were not used? Why? If all were used explain which ones were essential to the game versus less essential elements of a game.
+
+### [Teacher Material](/courses/csintro/about/teachers)

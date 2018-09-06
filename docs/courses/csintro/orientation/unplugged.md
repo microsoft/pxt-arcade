@@ -17,3 +17,5 @@ Discuss as a class how you kept track of the scores.
 Think about what on the score sheet represents **constants**, values that do not change through the course of the gaming session.
  
 Think about what on the score sheet represents **variables**, values that do not change through the course of the gaming session.
+
+### [Teacher Material](/courses/csintro/about/teachers)

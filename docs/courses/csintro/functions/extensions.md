@@ -184,3 +184,5 @@ projectile = sprites.createProjectile(img`
 
 1. How could sharing and importing projects help manage a group project with four or more students?
 2. What is one benefit to importing code from a project versus just copying the code into the project? You might find it useful to discuss task #2 in your response to this question.
+
+### [Teacher Material](/courses/csintro/about/teachers)

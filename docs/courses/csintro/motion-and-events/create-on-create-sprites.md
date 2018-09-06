@@ -133,3 +133,5 @@ The ``||sprites:on created||`` event allows us to become efficient with our code
  
 1. Describe how a ``||sprites:Kind||`` label is used in generating a sprite using ``||sprites:create empty sprite||`` block.
 2. Explain what the ``||sprites:on created||`` block does for you.
+
+### [Teacher Material](/courses/csintro/about/teachers)

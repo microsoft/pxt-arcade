@@ -111,3 +111,5 @@ The tile map we are using is 64 tiles wide and 8 tiles tall, with each tile bein
 ```package
 corgio=github:jwunderl/pxt-corgio#v0.0.12
 ```
+
+### [Teacher Material](/courses/csintro/about/teachers)

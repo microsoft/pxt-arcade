@@ -149,3 +149,5 @@ A ``||loops:repeat||`` loop is intended to be used to repeat something a pre-det
 1. How are ``||loops:while||`` loops different from ``||loops:for index||`` loops?
 2. Explain why picking up the ``||variables:fireSource||`` allowed the player to keep making fireballs, without any other buttons being pressed.
 3. **Challenge:** if ``||logic:if||`` statements didn't exist, could you use ``||loops:while||`` loops to implement the same behavior in blocks? If so, how?
+
+### [Teacher Material](/courses/csintro/about/teachers)

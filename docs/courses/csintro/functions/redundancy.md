@@ -277,3 +277,5 @@ info.startCountdown(15)
 
 1. Does the use of a function to capture repeated code make it easier or harder to make changes to those repeated sections in the future?
 2. Are there any possible downsides to moving repeated code into a function?
+
+### [Teacher Material](/courses/csintro/about/teachers)

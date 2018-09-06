@@ -181,3 +181,5 @@ corgio=github:jwunderl/pxt-corgio#v0.0.12
 
 1. What is the difference between a ``||loops:for index from 0 to||`` and a ``||loops:for element||`` loop? Can you think of any situations where you might prefer the ``||loops:for index from 0 to||`` loop when using arrays?
 2. In task #1a, why did we use the ``||array:length of array||`` instead of just setting it to the new length (e.g. changing it to be from `0 to 3` to `0 to 6`)?
+
+### [Teacher Material](/courses/csintro/about/teachers)

@@ -245,3 +245,5 @@ else                game.splash("false or false is false")
     * In what cases will they both evaluate to true?
     * In what cases will they both evaluate to false?
     * In what cases will they evaluate differently?
+
+### [Teacher Material](/courses/csintro/about/teachers)

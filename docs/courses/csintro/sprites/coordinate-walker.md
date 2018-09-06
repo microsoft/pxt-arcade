@@ -103,3 +103,5 @@ Challenge a peer to bring the sprite back into view after you move the sprite of
     * pick 1: `up` or `down` `Y` direction
     * pick 1: `left` or `right`  `X` direction
     * using only the controller pad keys chosen bring the sprite back onto the screen
+
+### [Teacher Material](/courses/csintro/about/teachers)

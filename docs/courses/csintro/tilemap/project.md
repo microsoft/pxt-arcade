@@ -45,3 +45,5 @@ From what we learned in the previous lessons we should be able to make some grea
 
 1. Discuss something that was difficult to implement in the game. Describe what you learned or a how you would improve how the game code works.
 2. Discuss your favorite feature of the game and how it was implemented.
+
+### [Teacher Material](/courses/csintro/about/teachers)

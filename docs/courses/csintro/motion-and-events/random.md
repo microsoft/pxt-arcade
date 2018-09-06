@@ -190,3 +190,5 @@ hat.setPosition(35, 60)
 
 1. Describe how the ability to generate a random value can make a game more interesting and/or challenging.
 2. Make a hypothesis of a good use of random that you would like to design into a future game - especially something we don't know how to do yet. Be descriptive of the game and how random would be needed.
+
+### [Teacher Material](/courses/csintro/about/teachers)

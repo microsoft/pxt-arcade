@@ -118,3 +118,5 @@ Try changing the background color using ``||scene:set background color to||`` in
     * Color representation in JavaScript
 2. Explain what happens to the color index 0 in JavaScript (form a hypothesis).
 3. Explain why we see only 14 colors at a time, despite the fact that there are 16 color indexes (0-15) in the image editor.
+
+### [Teacher Material](/courses/csintro/about/teachers)

@@ -69,3 +69,5 @@ Prompts for names, like above, allows games to be more personal.  The prompts ca
 
 1. In task #2, you implemented a basic "password checker." What is one possible downside of the way that the code was implemented?
 2. List at least **2** ways in which user input could be used in writing a text based game.
+
+### [Teacher Material](/courses/csintro/about/teachers)

@@ -286,3 +286,5 @@ projectile = sprites.createProjectile(img`
 
 1. Describe two benefits of using projectiles rather than normal sprites. 
 2. How did using a loop in this section help reduce the amount of blocks that were used? 
+
+### [Teacher Material](/courses/csintro/about/teachers)

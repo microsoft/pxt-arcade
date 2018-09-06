@@ -236,3 +236,5 @@ darts=github:jwunderl/pxt-darts#v0.0.14
 
 1. Describe how a tile in a tile map differs from a pixel in a sprite image.
 2. Make a hypothesis of how we would make "dart" objects (like the golf ball) bounce off of tile map walls.
+
+### [Teacher Material](/courses/csintro/about/teachers)

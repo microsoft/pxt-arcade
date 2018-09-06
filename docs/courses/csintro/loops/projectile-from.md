@@ -352,3 +352,5 @@ Use a loop and if creating many projectiles use ``||sprite:ghost on||``
 1. How can we make a sprite that came from a sprite block act like a projectile sprite? Explain the block code to use.
 2. Give examples of using ghost and/or on overlap events in a game to make a projectile: decoration, laser beam, coin (reward). Explain each. 
 3. **Challenge:** Create a hypothesis on why making projectiles have ``||sprite:ghost on||`` might make your game run faster than leaving it off.
+
+### [Teacher Material](/courses/csintro/about/teachers)

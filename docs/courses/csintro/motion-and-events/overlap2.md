@@ -236,3 +236,5 @@ Challenge Tip: erratic motion can be made by changing the sprite position back a
 
 1. Describe how a ``||sprites:Kind||`` can improve code (for example, how it can make programming easier, more powerful, more efficient, ...). 
 2. Explain why in creating a "bump" effect negative `X` and `Y` velocities are used to change the `X` and `Y` positions. 
+
+### [Teacher Material](/courses/csintro/about/teachers)

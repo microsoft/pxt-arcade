@@ -388,3 +388,5 @@ scene.setBackgroundColor(Math.randomRange(1, 15))
 
 1. What is an ``||logic:if||`` statement? What is a case in which you would use one?
 2. What is a logic comparison? What is a case in which you would use one?
+
+### [Teacher Material](/courses/csintro/about/teachers)

@@ -21,6 +21,7 @@
     * [CS Intro](/courses/csintro)
         * [About](/courses/csintro)
             * [Programming Language](/courses/csintro/about/script)
+            * [For Teachers](/courses/csintro/about/teachers)
             * [Authors](/courses/csintro/about/authors)
         * [Orientation](/courses/csintro/orientation)
             * [Birthday Algorithm](/courses/csintro/orientation/birthday-algorithm)

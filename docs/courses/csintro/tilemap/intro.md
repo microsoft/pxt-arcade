@@ -449,3 +449,5 @@ As a reminder, the ``||scene:screen height||`` is 120 pixels, and the ``||scene:
 ### ~
 
 2. When ``||scene:camera follow sprite||`` is set to follow a sprite, does that sprite always stay in the center of the screen, or are there times where it somewhere else on the screen? Explain how you know.
+
+### [Teacher Material](/courses/csintro/about/teachers)

@@ -420,3 +420,5 @@ In this example, the ``||functions:buildLevel||`` function is used to move from 
 
 1. How do the tile map blocks introduced in this lesson make it easier to set up a level?
 2. In this lesson, were there any times in which a level accidentally became too hard or impossible to complete? Explain how this might happen when adding randomness to levels.
+
+### [Teacher Material](/courses/csintro/about/teachers)

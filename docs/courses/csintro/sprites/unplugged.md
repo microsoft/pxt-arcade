@@ -33,3 +33,5 @@ Take turns trying to guess where your opponent's ships. Use x and y coordinates,
 If your opponent guesses a square that one of your ships occupy, then you say "Hit" and you record that the square has been it. Otherwise, the shot misses and you say "Miss". If the entire length of a ship is hit, it is sunk and that ship is removed from play.
 
 The winner is the player who sinks all of their opponent's ships.
+
+### [Teacher Material](/courses/csintro/about/teachers)

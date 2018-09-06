@@ -232,3 +232,5 @@ Be sure to use ``||music:stop all sounds||`` if completing challenge overlap eve
 
 1. Describe how a ``||sprites:Kind||`` is used to detect overlap.
 2. Suppose you have 2 or more sprites that have the same ``||sprites:Kind||``, and one of them triggers an overlap event. Explain how you can reference the sprite that was involved in the overlap event, rather than one of the other sprites of that ``||sprites:Kind||``.
+
+### [Teacher Material](/courses/csintro/about/teachers)

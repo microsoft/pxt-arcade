@@ -139,3 +139,5 @@ Make a collage with different images scattered around the screen. It can be abou
 1. How could the use of multiple sprites in a single game enhance your ability to convey a story in your games?
 2. What other blocks are available in the ``||sprites:Sprites||`` menu? List several blocks not used in collage and make a hypothesis of what one (or more) of these blocks does.
 3. **Challenge:** switch to the JavaScript version of your collage, and take a look at the images you drew in the task above. What do periods (**.**) represent in the images?
+
+### [Teacher Material](/courses/csintro/about/teachers)

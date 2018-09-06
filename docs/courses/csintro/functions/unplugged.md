@@ -11,3 +11,5 @@ Did it work? Was the "robot" able to successfully make a peanut butter and jelly
 Give your revised pseudocode functions back to the "robot" and have them act it out.
 
 Keep revising until the "robot" is able to successfully make a peanut butter and jelly sandwich.
+
+### [Teacher Material](/courses/csintro/about/teachers)

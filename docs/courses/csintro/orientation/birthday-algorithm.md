@@ -63,3 +63,5 @@ Example: first 4 steps
 >4. `(7m - 1)13 = 91m - 13` 
 
 ### ~
+
+### [Teacher Material](/courses/csintro/about/teachers)
