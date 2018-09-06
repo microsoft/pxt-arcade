@@ -6,6 +6,49 @@ This course is currently in beta - this means that it is likely to have bugs and
 
 ###
 
+```codecard
+[{
+    "name": "Orientation",
+    "url": "/courses/csintro/orientation",
+    "imageUrl": "/static/courses/csintro/orientation.gif"
+}, {
+    "name": "Sprites",
+    "url": "/courses/csintro/sprites",
+    "imageUrl": "/static/courses/csintro/sprites.gif"
+}, {
+    "name": "Motion and Events",
+    "url": "/courses/csintro/motion-and-events",
+    "imageUrl": "/static/courses/csintro1/motion-and-events.gif"
+}, {
+    "name": "Loops",
+    "url": "/courses/csintro/loops",
+    "imageUrl": "/static/courses/csintro/loops.gif"
+}, {
+    "name": "Functions",
+    "url": "/courses/csintro/functions",
+    "imageUrl": "/static/courses/csintro/functions.gif"
+}, {
+    "name": "Tile Map",
+    "url": "/courses/csintro/tilemap",
+    "imageUrl": "/static/courses/csintro/tilemap.gif"
+}, {
+    "name": "Logic",
+    "url": "/courses/csintro/logic",
+    "imageUrl": "/static/courses/csintro/logic.gif"
+}, {
+    "name": "Arrays",
+    "url": "/courses/csintro/arrays",
+    "imageUrl": "/static/courses/csintro/arrays.gif"
+}, {
+    "name": "Final Project",
+    "url": "/courses/csintro/final-project",
+    "imageUrl": "/static/courses/csintro/final-project.gif"
+}
+]
+```
+
+## Table of Contents
+
 ### About
 
 * [Language](/courses/csintro/about/script)
