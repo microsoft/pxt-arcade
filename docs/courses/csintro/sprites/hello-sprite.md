@@ -59,8 +59,8 @@ https://youtu.be/9xSWNoDOAQc
 2. Switch to JavaScript view and replace all code with the code below
 3. Press **Show Console Simulator** button below the simulator to display `console` output
 
-```let
-typescript msg: string = "Hello World!"
+```typescript
+let msg: string = "Hello World!"
 console.log(msg)
 console.log("msg sent!")
 ```

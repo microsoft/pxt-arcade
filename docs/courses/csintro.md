@@ -1,6 +1,16 @@
-# CS INTRO -- BETA
+# CS INTRO BETA
 
-## [Orientation](/courses/csintro/orientation)
+### ~hint
+
+This course is currently in beta - this means that it is likely to have bugs and changes made fairly regularly. If you see anything that doesn't seem quite right, or have any suggestions, please file an issue on [github](github.com/microsoft/pxt-arcade).
+
+###
+
+### About
+
+* [Authors](/courses/csintro/about/authors)
+
+### [Orientation](/courses/csintro/orientation)
 
 * [Birthday Algorithm](/courses/csintro/orientation/birthday-algorithm)
 * [Orientation to Makecode](/courses/csintro/orientation/makecode-orientation)
@@ -9,14 +19,14 @@
 * [Variable Math](/courses/csintro/orientation/variable-math)
 * [Info Variables](/courses/csintro/orientation/info)
 
-## [Sprites](/courses/csintro/sprites)
+### [Sprites](/courses/csintro/sprites)
 
 * [Unplugged: Sink a Ship](/courses/csintro/sprites/unplugged)
 * [Coordinate Walker](/courses/csintro/sprites/coordinate-walker)
 * [Collage](/courses/csintro/sprites/collage)
 * [Hello Sprite](/courses/csintro/sprites/hello-sprite)
 
-## [Motion and Events](/courses/csintro/motion-and-events)
+### [Motion and Events](/courses/csintro/motion-and-events)
 
 * [Unplugged: Using a Controller](/courses/csintro/motion-and-events/unplugged)
 * [Sprite Motion Event](/courses/csintro/motion-and-events/sprite-motion-event)
@@ -26,7 +36,7 @@
 * [Create Sprite & On Create](/courses/csintro/motion-and-events/create-on-create-sprites)
 * [Project](/courses/csintro/motion-and-events/project)
 
-## [Loops](/courses/csintro/loops)
+### [Loops](/courses/csintro/loops)
 
 * [Intro](/courses/csintro/loops/intro)
 * [Unplugged: Circle a Chair](/courses/csintro/loops/unplugged)
@@ -36,7 +46,7 @@
 * [Physics](/courses/csintro/loops/physics)
 * [Project](/courses/csintro/loops/project)
 
-## [Functions](/courses/csintro/functions)
+### [Functions](/courses/csintro/functions)
 
 * [Unplugged: Making a Sandwich](/courses/csintro/functions/unplugged)
 * [Intro to Functions](/courses/csintro/functions/intro)
@@ -44,14 +54,14 @@
 * [Using Extensions](/courses/csintro/functions/extensions)
 * [Project](/courses/csintro/functions/project)
 
-## [Tilemap](/courses/csintro/tilemap)
+### [Tilemap](/courses/csintro/tilemap)
 
 * [Intro](/courses/csintro/tilemap/intro)
 * [Interactions](/courses/csintro/tilemap/interactions)
 * [Using Corgi Extension](/courses/csintro/tilemap/extensions)
 * [Project](/courses/csintro/tilemap/project)
 
-## [Logic](/courses/csintro/logic)
+### [Logic](/courses/csintro/logic)
 
 * [Introduction](/courses/csintro/logic/intro)
 * [If and Else](/courses/csintro/logic/if-else)
@@ -60,7 +70,7 @@
 * [Logic in Loops](/courses/csintro/logic/while)
 * [Project](/courses/csintro/logic/project)
 
-## [Arrays](/courses/csintro/arrays)
+### [Arrays](/courses/csintro/arrays)
 
 * [Intro](/courses/csintro/arrays/intro)
 * [String Arrays](/courses/csintro/arrays/string)
@@ -68,4 +78,4 @@
 * [Tile Arrays](/courses/csintro/arrays/tilemap)
 * [Project](/courses/csintro/arrays/project)
 
-## [Final Project](/courses/csintro/final-project)
+### [Final Project](/courses/csintro/final-project)
