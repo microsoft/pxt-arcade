@@ -2,9 +2,9 @@
 
 ### ~hint
 
-This course is currently in beta - this means that it is likely to have bugs and changes made fairly regularly. If you see anything that doesn't seem quite right, or have any suggestions, please file an issue on [github](github.com/microsoft/pxt-arcade).
+This course is currently in beta - this means that it is likely to have bugs and changes made fairly regularly. If you see anything that doesn't seem quite right, or if you have any suggestions, please file an issue on [github](github.com/microsoft/pxt-arcade).
 
-###
+### ~
 
 ```codecard
 [{
@@ -18,7 +18,7 @@ This course is currently in beta - this means that it is likely to have bugs and
 }, {
     "name": "Motion and Events",
     "url": "/courses/csintro/motion-and-events",
-    "imageUrl": "/static/courses/csintro1/motion-and-events.gif"
+    "imageUrl": "/static/courses/csintro/motion-and-events.gif"
 }, {
     "name": "Loops",
     "url": "/courses/csintro/loops",

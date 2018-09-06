@@ -1,5 +1,7 @@
 # Motion and Events
 
+![Motion and Events](/static/courses/csintro/motion-and-events.gif)
+
 * [Unplugged: Using a Controller](/courses/csintro/motion-and-events/unplugged)
 * [Sprite Motion Event](/courses/csintro/motion-and-events/sprite-motion-event)
 * [Overlap Section 1](/courses/csintro/motion-and-events/overlap1)

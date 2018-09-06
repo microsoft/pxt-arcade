@@ -1,5 +1,7 @@
 # Loops
 
+![Loops](/static/courses/csintro/loops.gif)
+
 * [Intro](/courses/csintro/loops/intro)
 * [Unplugged: Circle a Chair](/courses/csintro/loops/unplugged)
 * [Increment Loop](/courses/csintro/loops/increment-loop)

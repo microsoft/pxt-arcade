@@ -1,5 +1,7 @@
 # Orientation
 
+![Orientation](/static/courses/csintro/orientation.gif)
+
 * [Birthday Algorithm](/courses/csintro/orientation/birthday-algorithm)
 * [Orientation to Makecode](/courses/csintro/orientation/makecode-orientation)
 * [Sprites](/courses/csintro/orientation/sprites)

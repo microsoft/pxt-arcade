@@ -1,5 +1,7 @@
 # Functions
 
+![Functions](/static/courses/csintro/functions.gif)
+
 * [Unplugged: Making a Sandwich](/courses/csintro/functions/unplugged)
 * [Intro to Functions](/courses/csintro/functions/intro)
 * [Reducing Redundancy with Functions](/courses/csintro/functions/redundancy)

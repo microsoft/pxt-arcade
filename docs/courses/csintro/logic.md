@@ -1,5 +1,7 @@
 # Logic
 
+![Logic](/static/courses/csintro/logic.gif)
+
 * [Introduction](/courses/csintro/logic/intro)
 * [If and Else](/courses/csintro/logic/if-else)
 * [Booleans](/courses/csintro/logic/booleans)

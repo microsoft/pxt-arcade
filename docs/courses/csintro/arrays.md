@@ -1,5 +1,7 @@
 # Arrays
 
+![Arrays](/static/courses/csintro/arrays.gif)
+
 * [Intro](/courses/csintro/arrays/intro)
 * [String Arrays](/courses/csintro/arrays/string)
 * [Sprite Arrays](/courses/csintro/arrays/sprites)
