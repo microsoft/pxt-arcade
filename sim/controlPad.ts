@@ -174,7 +174,7 @@ namespace pxsim {
 
         protected drawTouchPad(parent: s.Group, x: number, y: number, width: number, height: number) {
             const pad: s.Rect = parent.draw("rect")
-                .appendClass("controller-button-overlay")
+                .setClass("controller-button-overlay")
                 .at(x, y)
                 .corners(1, 1)
                 .fill("black", 0)
@@ -203,7 +203,7 @@ namespace pxsim {
             buttonG.el.appendChild(buttonDom);
 
             const overlay = buttonG.draw("circle")
-                .appendClass("controller-button-overlay")
+                .setClass("controller-button-overlay")
                 .at(r, r)
                 .radius(r)
                 .fill("black", 0);
@@ -216,10 +216,10 @@ namespace pxsim {
 
         protected setOverlayState(overlay: s.Rect | s.Circle, down: boolean) {
             if (down) {
-                overlay.appendClass("pressed");
+                overlay.setClass("controller-button-overlay pressed");
             }
             else {
-                overlay.removeClass("pressed");
+                overlay.setClass("controller-button-overlay");
             }
         }
     }
