@@ -1,6 +1,6 @@
 # Sprites and stuff
 
-## Creating and controlling sprite in ts
+## Creating and controlling sprite in JavaScript
 
 ```typescript
 let player: Sprite = sprites.create(img`
@@ -81,7 +81,7 @@ Explain that properites are basically variables contained within the sprite obje
 
 Auto complete gif here to show how they can identify all the public properties by typing the name of the variable and a dot
 
-![Auto Complete](/static/courses/csintro2/orientation/auto-complete.gif)
+![Auto Complete](/static/courses/javascript/orientation/auto-complete.gif)
 
 ### Using a property
 

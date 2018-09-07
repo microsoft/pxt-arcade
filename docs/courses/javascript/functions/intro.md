@@ -111,4 +111,4 @@ makeOtherNumbers();
 with local variables in makeNumber shadowing the variables outside, making them **different variables with the same name**
 )
 
-Note that this is the default behavior for converting blocks to ts, as blocks don't have a sense of scope in variables / local variables are ts only
+Note that this is the default behavior for converting blocks to JavaScript, as blocks don't have a sense of scope in variables / local variables are JavaScript only

@@ -1,6 +1,6 @@
 # logic operators
 
-table of blocks -> ts equivalent
+table of blocks -> JavaScript equivalent
 
 |     |     |
 | --- | --- |
