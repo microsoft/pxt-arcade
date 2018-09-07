@@ -49,7 +49,7 @@ This course is currently in beta - this means that it is likely to have bugs and
 
 ## Table of Contents
 
-### About
+### [About](/courses/csintro/about)
 
 * [Programming Language](/courses/csintro/about/script)
 * [For Teachers](/courses/csintro/about/teachers)

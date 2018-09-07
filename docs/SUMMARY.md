@@ -19,7 +19,7 @@
 
 * [Courses](/courses)
     * [CS Intro](/courses/csintro)
-        * [About](/courses/csintro)
+        * [About](/courses/csintro/about)
             * [Programming Language](/courses/csintro/about/script)
             * [For Teachers](/courses/csintro/about/teachers)
             * [Authors](/courses/csintro/about/authors)
