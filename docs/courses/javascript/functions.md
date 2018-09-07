@@ -5,3 +5,4 @@
 * [Parameters](/courses/javascript/functions/parameters)
 * [Optional Parameters](/courses/javascript/functions/optional)
 * [Namespaces](/courses/javascript/functions/namespaces)
+* [Commenting Functions](/courses/javascript/functions/comments)
