@@ -1,6 +1,6 @@
-# Using Corgio in TypeScript
+# Using Corgio in JavaScript
 
-explain how using extensions in typescript is just as easy as in blocks, helpful as a transition point to describing namespaces in a rudamentary fashion; this is fairly necessary in explaining what all the things they are typing in actually do (i.e. why is it Math.floor() instead of just floor, etc)
+explain how using extensions in JavaScript is just as easy as in blocks, helpful as a transition point to describing namespaces in a rudamentary fashion; this is fairly necessary in explaining what all the things they are typing in actually do (i.e. why is it Math.floor() instead of just floor, etc)
 
 ### Making a Corgio
 

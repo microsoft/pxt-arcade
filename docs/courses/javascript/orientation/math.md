@@ -2,7 +2,7 @@
 
 table with math blocks -> equivalent
 
-| blocks | typescript |
+| blocks | JavaScript |
 | -- | -- |
 | x  |  * |
 | +  |  + | 
@@ -24,7 +24,7 @@ console.log("" + num);
 
 ## Assignment Operators
 
-### Show increment / change by transition (blocks -> ts)
+### Show increment / change by transition (blocks -> JavaScript)
 
 ```typescript
 let num: number = 0;

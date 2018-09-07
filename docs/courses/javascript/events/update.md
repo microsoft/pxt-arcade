@@ -1,10 +1,10 @@
-# intro -> using an on game update loop in ts
+# intro -> using an on game update loop in JavaScript
 
-In TypeScript, events are registered using functions that accept other functions as parameters to run when the event occurs. To illustrate this, we will use the `game.onGameInterval()` method - which is the javascript equivalent of the commonly used ``||game: on game update every||`` block.
+In TypeScript, events are registered using functions that accept other functions as parameters to run when the event occurs. To illustrate this, we will use the `game.onUpdateInterval()` method - which is the JavaScript equivalent of the commonly used ``||game: on game update every||`` block.
 
 ## Example
 
-![Splash and Dash](/static/courses/csintro2/events/splash-and-dash.gif)
+![Splash and Dash](/static/courses/javascript/events/splash-and-dash.gif)
 
 ```typescript
 enum SpriteKind {
