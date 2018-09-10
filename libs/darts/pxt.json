@@ -1,6 +1,6 @@
 {
     "name": "darts",
-    "description": "A sprite with past projection",
+    "description": "A sprite with path projection",
     "files": [
         "README.md",
         "darts.ts"

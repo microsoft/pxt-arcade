@@ -3,7 +3,7 @@
 */
 //% weight=100 color=#6699CC icon="\uf140"
 //% groups='["Create", "Actions", "Properties"]'
-namespace Darts {
+namespace darts {
     /**
      * Creates a new dart from an image and kind
      * @param img the image for the sprite
@@ -57,7 +57,7 @@ namespace Darts {
 /**
  * A dart
  **/
-//% blockNamespace=Darts color="#6699CC" blockGap=8
+//% blockNamespace=darts color="#6699CC" blockGap=8
 class Dart {
     private dart: Sprite;
     private bkgd: Image;
@@ -145,8 +145,8 @@ class Dart {
             let newBkgd: Image = __this.bkgd.clone();
             scene.setBackgroundImage(newBkgd);
             if (!__this.dart.ay && __this.trace) {
-                let xComp = Darts.xComponent(__this.angle, __this.pow);
-                let yComp = Darts.yComponent(__this.angle, __this.pow);
+                let xComp = darts.xComponent(__this.angle, __this.pow);
+                let yComp = darts.yComponent(__this.angle, __this.pow);
                 let camera = game.currentScene().camera
                 let xOffset = camera.offsetX;
                 let yOffset = camera.offsetY;
@@ -169,8 +169,8 @@ class Dart {
     //% weight=50
     //% group="Actions"
     public throwDart(): void {
-        this.dart.vx = Darts.xComponent(this.angle, this.pow);
-        this.dart.vy = Darts.yComponent(this.angle, this.pow);
+        this.dart.vx = darts.xComponent(this.angle, this.pow);
+        this.dart.vy = darts.yComponent(this.angle, this.pow);
         this.dart.ay = this.gravity;
         this.dart.ax = this.wind;
     }
