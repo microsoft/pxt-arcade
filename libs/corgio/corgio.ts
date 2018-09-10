@@ -1,9 +1,18 @@
 /**
-* Corgi Platformer Blocks
+* Sprite Wrapper for a Corgi Platformer
 */
 //% weight=100 color=#d2b48c icon="\uf1b0"
 //% groups='["Create", "Movement", "Speak", "Properties"]'
 namespace corgi {
+    export enum CorgiFlags {
+        None = 0,
+        HorizontalMovement = 1 << 0,
+        VerticalMovement = 1 << 1,
+        UpdateSprite = 1 << 2,
+        CameraFollow = 1 << 3,
+        All = ~(~0 << 4)
+    }
+
     export let _corgi_still: Image[] = [
         img`
             . . . . . . . . . . . . . . . .
@@ -250,15 +259,6 @@ namespace corgi {
     }
 }
 
-enum CorgiFlags {
-    None = 0,
-    HorizontalMovement = 1 << 0,
-    VerticalMovement = 1 << 1,
-    UpdateSprite = 1 << 2,
-    CameraFollow = 1 << 3,
-    All = ~(~0 << 4)
-}
-
 /**
  * A Corgi
  **/
@@ -308,7 +308,7 @@ class Corgi {
             "bark"
         ];
 
-        this.controlFlags = CorgiFlags.None;
+        this.controlFlags = corgi.CorgiFlags.None;
 
         this.stillAnimation = corgi._corgi_still;
         this._leftAnimation = corgi._corgi_left;
@@ -322,7 +322,7 @@ class Corgi {
     }
 
     /**
-     * Gets the Corgis's sprite
+     * Get the Corgis's sprite
      */
     //% group="Properties"
     //% blockId=corgSprite block="%corgi(myCorg) sprite"
@@ -340,10 +340,11 @@ class Corgi {
     horizontalMovement(on: boolean = true): void {
         let _this = this;
 
-        this.updateFlags(on, CorgiFlags.HorizontalMovement);
+        this.updateFlags(on, corgi.CorgiFlags.HorizontalMovement);
 
         game.onUpdate(function () {
-            if (!(_this.controlFlags & CorgiFlags.HorizontalMovement)) return;
+            if (!(_this.controlFlags & corgi.CorgiFlags.HorizontalMovement)) return;
+
             let dir: number = controller.dx();
 
             _this.player.vx = dir ? corgi.normalize(dir) * _this.maxMoveVelocity :
@@ -360,14 +361,14 @@ class Corgi {
     verticalMovement(on: boolean = true): void {
         let _this = this;
 
-        this.updateFlags(on, CorgiFlags.VerticalMovement);
+        this.updateFlags(on, corgi.CorgiFlags.VerticalMovement);
 
         controller.up.onEvent(ControllerButtonEvent.Released, function () {
             _this.releasedJump = true;
         })
 
         game.onUpdate(function () {
-            if (!(_this.controlFlags & CorgiFlags.VerticalMovement)) return;
+            if (!(_this.controlFlags & corgi.CorgiFlags.VerticalMovement)) return;
 
             if (controller.up.isPressed()) {
                 if (_this.contactLeft() && controller.right.isPressed()
@@ -403,10 +404,10 @@ class Corgi {
     follow(on: boolean = true): void {
         let _this = this;
 
-        this.updateFlags(on, CorgiFlags.CameraFollow);
+        this.updateFlags(on, corgi.CorgiFlags.CameraFollow);
 
         game.onUpdate(function () {
-            if (_this.controlFlags & CorgiFlags.CameraFollow) {
+            if (_this.controlFlags & corgi.CorgiFlags.CameraFollow) {
                 scene.centerCameraAt(_this.player.x, screen.height >> 1);
             }
         })
@@ -421,10 +422,10 @@ class Corgi {
     updateSprite(on: boolean = true): void {
         let _this = this;
 
-        this.updateFlags(on, CorgiFlags.UpdateSprite);
+        this.updateFlags(on, corgi.CorgiFlags.UpdateSprite);
 
         game.onUpdate(function () {
-            if (!(_this.controlFlags & CorgiFlags.UpdateSprite)) return;
+            if (!(_this.controlFlags & corgi.CorgiFlags.UpdateSprite)) return;
 
             _this.count++;
 
@@ -439,7 +440,7 @@ class Corgi {
     }
 
     /**
-     * Add the a new way phrase for the character to say
+     * Add new phrase for the character to bark
      * @param input phrase to add to script, eg: "bark"
      */
     //% group="Speak"
@@ -467,18 +468,17 @@ class Corgi {
                 this.initJump = false;
             } else {
                 this.player.vy = Math.clamp((-4 * this.jumpVelocity) / 3, -30,
-                        this.player.vy - this.jumpVelocity);
+                                            this.player.vy - this.jumpVelocity);
             }
             this.remainingJump--;
         }
     }
 
-    private updateFlags(on: boolean, flag: CorgiFlags): void {
+    private updateFlags(on: boolean, flag: corgi.CorgiFlags): void {
         if (on) this.controlFlags |= flag;
-        else this.controlFlags &= CorgiFlags.All ^ flag;
+        else this.controlFlags &= corgi.CorgiFlags.All ^ flag;
     }
 
-    // Grab the next Image to use from the given array, based off the current _count
     private pickNext(input: Image[], state: number = 3): Image {
         return input[(this.count / state) % input.length];
     }
