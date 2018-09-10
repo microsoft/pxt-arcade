@@ -47,7 +47,20 @@ mySprite.say(msg)
 ## What did we learn?
 
 1. Identify and show the JavaScript code that aligns with which each block.
+> Example:
+```block
+let msg: string = "Hello World!"
+```
+is equivalent to 
+```typescript
+let msg: string = "Hello World!"
+```
 2. Identify any JavaScript code that doesn't seem to have any blocks directly related to it. Make a hypothesis of what it means does.
+> Example:
+```typescript
+let mySprite: Sprite = null
+```
+This doesn't have an equivalent block. To show this, we can copy and paste any block that we think it belongs to and when we look at the JavaScript, we'll see that this code doesn't repeat.
 
 # Example: console.log()
 
@@ -87,6 +100,8 @@ https://youtu.be/1xQWu1tHFCo
 1. Start with the above project and add another sprite (make sure to give both unique variable names)
 2. Add in a ``||sprite:say||`` messages to have a conversation with the first sprite
 3. Push the `+` on the ``||sprites:say||`` block and set the time for each message (1000 millisecond = 1 second)
+4. **Challenge** Add additional sprites at different coordinates and use ``||sprites:say||`` to make messages for all of them.
+5. **Challenge:** Make larger 32x32 sprites with more detail than the smaller sprites allowed.
 
 ### ~hint
 
@@ -98,7 +113,6 @@ There is a pause block under the ``||loops:Loops||`` menu ``||loops:pause(1000)|
 
 1. Discuss the different ways we can display a message in this exercise. Make a hypotheses for what each would be best used for.
 2. Come up with a hypothesis and explain why `console.log()` has a larger limit on the length of text. Explain.
-3. Add additional sprites at different coordinates and use ``||sprites:say||`` to make messages for all of them.
-4. **Challenge:** Make larger 32x32 sprites with more detail than the smaller sprites allowed.
+
 
 ### [Teacher Material](/courses/csintro/about/teachers)

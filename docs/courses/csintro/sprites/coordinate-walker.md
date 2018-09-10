@@ -80,12 +80,12 @@ Two dimensional game screen coordinates are represented by values for `X` and `Y
 ![sprite at top edge of screen](/static/courses/csintro/sprites/coordinate-edge.png)
 
 2. Move to each of the corners and **map the coordinates** as a pair of X and Y values like `(X, Y)`
-    * Restart the game. What are the coordinates when you start?
-    * **Record** the coordinates at the **Top Right** corner
-    * **Record** the coordinates at the **Bottom Right** corner
-    * **Record** the coordinates at the **Bottom Left** corner
-    * **Record** the coordinates at the **Top Left** corner
-    * **Record** the Game Screen Dimensions (height by width)
+    * Restart the game. What are the coordinates at the start?
+    * **Record** what the coordinates at the **Top Right** corner are
+    * **Record** what the coordinates at the **Bottom Right** corner are
+    * **Record** what the coordinates at the **Bottom Left** corner are
+    * **Record** what the coordinates at the **Top Left** corner are
+    * **Record** what the Game Screen Dimensions (height by width) are
 
 ![map the coordinates at the corners](/static/courses/csintro/sprites/coordinates-map.png)
 
