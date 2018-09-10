@@ -40,7 +40,7 @@
     * [music](/reference/music)
     * [scene](/reference/scene)
     * [info](/reference/info)
-    * [image](/reference/images)
+    * [images](/reference/images)
 
 ## Types #types
 
