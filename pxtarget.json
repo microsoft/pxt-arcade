@@ -17,6 +17,8 @@
         "libs/core",
         "libs/core---stm32f401re",
         "libs/core---linux",
+        "libs/corgio",
+        "libs/darts",
         "libs/hw",
         "libs/hw---rpi",
         "libs/hw---stm32f401",
