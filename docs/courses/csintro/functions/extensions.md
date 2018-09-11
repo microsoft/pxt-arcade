@@ -42,7 +42,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 sprites.onOverlap(SpriteKind.Foot_Ball, SpriteKind.Goal, function (sprite, otherSprite) {
     game.splash("Goal!")
 })
-myDart = Darts.create(img`
+myDart = darts.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . e e e . . . . 
@@ -84,7 +84,7 @@ mySprite.setPosition(150, 110)
 ```
 
 ```package
-darts=github:jwunderl/pxt-darts#v0.0.14
+darts=github:jwunderl/pxt-darts#v0.0.15
 ```
 
 Using extensions can reduce the number of things you have to worry about while writing your own game.
