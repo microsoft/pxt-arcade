@@ -19,7 +19,9 @@ Velocity is defined as speed in a given direction. Velocity is the rate at which
 
 In real life, you can think of velocity like being in a train or a car; the speed on a highway may be 60 miles per hour, but the velocity would be 60 miles per hour going North. This means over the course of an hour at this rate, you will be 60 miles further North than you are currently.
 
-In @boardname@, a sprite's velocity is measured in **pixels per second**, and stored as a sprite's ``||sprites:vx||`` and ``||sprites:vy||``. A sprite's ``||sprites:vx||`` represents the sprite's velocity on the horizontal axis and is, how quickly the sprite's ``||sprites:x||`` value is changing in value moving left to right. 
+In @boardname@, a sprite's velocity is measured in **pixels per second**, and stored as a sprite's ``||sprites:vx||`` and ``||sprites:vy||``.
+
+A sprite's ``||sprites:vx||`` represents the sprite's velocity on the horizontal axis and is how quickly the sprite's ``||sprites:x||`` value is changing in value moving left to right. 
 
 A sprite's ``||sprites:vy||``, represents the sprite's velocity in the vertical axis, and is how quickly the sprite's ``||sprites:y||`` changes in value moving up and down.
 
@@ -113,10 +115,9 @@ In other words, acceleration tells us how quickly the velocity is changing. Brak
 
 In @boardname@, a sprite's acceleration is defined in terms of **pixels per second, per second** (pixels/s/s).
 
-
 ### Example #1b - Sprite with Acceleration
 
-Below is a sprite with an Acceleration applied. We set the sprite position to the bottom of the screen every 2 seconds in order to see how the velocity changes over time. We see the sprite has a larger velocity with each pass.
+Below is a sprite with an acceleration applied. We set the sprite position to the bottom of the screen every 2 seconds in order to see how the velocity changes over time. We see the sprite has a larger velocity with each pass.
 
 ```blocks
 enum SpriteKind {
@@ -223,11 +224,11 @@ https://youtu.be/lMLLUf4NQF0
 2. Create the sample code and run the code
 3. Save the code for the task (name it "water balloon")
 4. Currently, when the balloon collides with the block, it creates only a single drop of a splash. Use a loop in the overlap event between sprites of kind Balloon and sprites of kind Enemy to create 50 drops of kind ``||sprites:Splash||`` instead
-5. **Challenge:** Set the acceleration for every splash of water emitted from the balloon to be 40, so that the splashes will accelerate downwards at the same rate the balloon did
+5. **Challenge:** set the acceleration for every splash of water emitted from the balloon to be 40, so that the splashes will accelerate downwards at the same rate the balloon did
 
 ### ~hint
 
-In total, this loop should include 4 blocks - the generation of a random xDirection and yDirection, the creation of the projectile, and the block that sets the projectiles ghost flag to be on.
+In total, this loop should include 4 blocks - the generation of a random ``||variables:xDirection||`` and ``||variables:yDirection||``, the creation of the projectile, and the block that sets the projectiles ghost flag to be on.
 
 ### ~
 
@@ -331,7 +332,7 @@ https://youtu.be/mmRhSMyFtaY
 
 [Alternative Video Location](https://aka.ms/40544a-physics-task-b) 
 
-In this task, you will make a basic version of a flying bird game. In it, the bird will fall due to gravity, and whenever the player presses ``||controller:A||``, the bird flies into the sky.
+In this task, you will make a basic version of a flying bird game. In it, the bird will fall due to gravity, and whenever the player presses ``||controller:A||`` button, the bird flies into the sky.
 
 1. Open a new project, and name it "Flying Duck"
 2. Create a sprite on the screen
@@ -346,7 +347,7 @@ In this task, you will make a basic version of a flying bird game. In it, the bi
 
 Try different values for the vertical acceleration representing gravity ``||sprites:ay||`` such as 25, 50, 100, 200.
 
-What is a reasonably challenging value for the acceleration of gravity for Duck?
+What is a reasonably challenging value for the acceleration of gravity for the duck?
 
 ### ~
 

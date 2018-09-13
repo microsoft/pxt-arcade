@@ -1,20 +1,20 @@
 # Activity: Projectiles from Sprites
 
-Projectiles are just sprites with a bit of extra behavior by default; this means that you can do anything with them that you can do with sprites. You can change their speed, the image they show, and how they interact with other sprites and have them originate from another sprite. 
+Another option for projectiles is to set a sprite for them to originate from. This is particularly useful for creating special effects.
 
 In this activity, students will use:
-* ``||sprites:projectile - from sprite||`` sprites
+* ``||sprites:projectile from sprite||`` sprites
 * ``||sprite:on sprite destroyed||``
 * ``||math:pick random||``
 * ``||sprites:ghost on||``
 
-## Concept: Projectile From Sprite
+## Concept: Projectile from Sprite
 
 https://youtu.be/Y7_-noa6_FU 
 
 [Alternative Video Location](https://aka.ms/40544a-projectile-from-sprite) 
 
-There are many games that have sprites sending out projectile sprites. We can set projectiles to originate from a sprite to drop coins, create obstacles, kick a ball or send a laser beam to destroy an asteroid by using ``||sprites:projectile - from sprite||`` as below: 
+There are many games that have sprites sending out projectile sprites. We can set projectiles to originate from a sprite to drop coins, create obstacles, kick a ball or send a laser beam to destroy an asteroid by using ``||sprites:projectile from sprite||``.
 
 ```block
 enum SpriteKind {
@@ -37,6 +37,8 @@ ball = sprites.createProjectile(img`
 `, -50, 0, SpriteKind.Ball, mySprite)
 ```
 
+The new option can be added to any projectile block by clicking the `+` button to extend the block.
+
 ### Example #1: Throw ball
 
 1. Review the code below
@@ -52,7 +54,6 @@ enum SpriteKind {
 }
 let mySprite: Sprite = null
 let ball: Sprite = null
-let targetVelocity = 0
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     ball = sprites.createProjectile(img`
 . . . . . . 7 7 
@@ -66,7 +67,6 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 `, -50, 0, SpriteKind.Ball, mySprite)
     pause(200)
 })
-targetVelocity = 20
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -93,8 +93,8 @@ mySprite.setPosition(145, 60)
 1. Start with the code from example #1
 2. Modify the code to make a target sprite on the other side of the screen from the player sprite 
 3. Add a countdown timer
-4. Build an ``||sprites:on overlap||`` event for the ball and the target to add a point and destroy the ball
-5. **Challenge**: Make the target into projectiles that move down the screen and add vertical motion to the player sprite
+4. Create an ``||sprites:on overlap||`` event for the ball and the target to add a point and destroy the ball
+5. **Challenge**: make the target into projectiles that move down the screen and add vertical motion to the player sprite
 
 ## Concept: Projectiles from other Projectile Sprites
 
@@ -102,7 +102,7 @@ https://youtu.be/EkG5UxwfxG8
 
 [Alternative Video Location](https://aka.ms/40544a-projectile-from-projectile)
 
-We can use the projectiles we have made as the source of animation like projectiles by following the following examples to build a projectile raining cloud (that is a projectile). 
+We can use projectiles to create an animation. The following examples build a projectile raining cloud (that is also a projectile). 
 
 ## Example #2a: Cloud projectile 
 
@@ -133,7 +133,7 @@ cloud = sprites.createProjectile(img`
 `, 10, 0, SpriteKind.Cloud)
 ```
 
-There isn't all that much to this code; it spawns a cloud, which slowly moves across the screen. However, what if we want to make the cloud rain? We can do this by adding projectiles that are emitted from the cloud itself!
+There is not all that much to this code; it spawns a cloud, which slowly moves across the screen. However, what if we want to make the cloud rain? We can do this by adding projectiles that are emitted from the cloud itself!
 
 ## Example #2b: Cloud projectile that emits projectile rain
 
@@ -188,7 +188,7 @@ game.onUpdateInterval(50, function () {
 })
 ```
 
-We set the raindrops to be ``||sprites:ghosts||`` - this means that **they won't be detected in overlap** with other sprites, and will pass through sprites as if there were no overlap events. It turns out that there is a fairly significant performance benefit to doing this when you spawn a large amount of projectiles (and don't need them to overlap with other sprites).
+Note that we set the raindrops to be ``||sprites:ghosts||`` - this means that **they won't be detected in overlap** with other sprites, and will pass through sprites as if there were no overlap events. The game can avoid checking collisions for ghost sprites, which causes a significant boost in performance / frame rate.
 
 Try removing the ``||sprites:ghosts||`` block, and see how much the performance goes down.
 
@@ -202,7 +202,6 @@ raindrop.x += Math.randomRange(1, 14)
 ```
 
 ```blocks
-
 enum SpriteKind {
     Cloud,
     Rain
@@ -253,9 +252,9 @@ game.onUpdateInterval(50, function () {
 })
 ```
 
-## Example #2d: count destroyed raindrops
+## Example #2d: Count destroyed raindrops
 
-The ghost raindrop sprites can't have an overlap event but we can use ``||sprite:on sprite destroyed||``. So we can count the raindrops that make it to the bottom of the screen by counting when they're destroyed!
+The ghost raindrop sprites don't cause overlap events, but we can use other events, like ``||sprite:on sprite destroyed||``. We can count the raindrops that make it to the bottom of the screen by counting how many are destroyed.
 
 ```block
 enum SpriteKind {
@@ -333,19 +332,12 @@ https://youtu.be/qlijC56n88k
 
 [Alternative Video Location](https://aka.ms/40544a-projectile-from-proj-task)
 
-Make a projectile go across the bottom of the screen that will give off different projectiles that "float" to the top of the screen. Use parts of example code above for inspiration to start you project
+Make a projectile go across the bottom of the screen that will give off different projectiles that "float" to the top of the screen. Use parts of example code above for inspiration to start you project.
 
 1. Create a projectile that moves across the bottom of the screen
-2. have a new projectile float from the original bottom projectile
-3. Make several of the floating projectiles come from the bottom projectile 
-
-### ~hint
-
-Use a loop and if creating many projectiles use ``||sprite:ghost on||``
-
-### ~
-
-4. **Challenge**: As the projectiles "float" up from the bottom of the game screen give them a small random X direction so they move at a slight angle left or right
+2. Create a new projectile that floats from the original bottom projectile
+3. Use ``||loops:loops||`` or an ``||game:on update||`` event to create more of the projectile from part 2
+4. **Challenge**: as the projectiles "float" up from the bottom of the game screen, give them a small random X velocity so they move at a slight angle to the left or right
 
 ## What did we learn?
 

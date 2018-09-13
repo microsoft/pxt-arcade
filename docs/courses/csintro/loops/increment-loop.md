@@ -25,7 +25,7 @@ https://youtu.be/fOiJJuJteMs
 3. Save the code for the start of the next task (name it "increment") 
 4. Note how changing the ``||variables:change by||`` amount changes the game score 
 
-### Example #1a: Increment with On Game Update 
+### Example #1a: Increment with ``||game:on game update||``
 
 ```blocks
 let count = 0
@@ -64,7 +64,7 @@ info.startCountdown(5)
 2. Add a sprite to coach the player
 3. Use ``||sprites:say("")||`` to give words of encouragement, setting a short display time (for example, 500 ms)
 4. Make ``||sprites:say("")||`` so it flashes by placing it in ``||game:on game update(1000)||``
-4. **Challenge:** Have the sprite coach give the current score in addition to a cheer ("Faster!")
+4. **Challenge:** have the sprite coach give the current score in addition to a cheer ("Faster!")
 
 ### Example #2: Increment to make a spiral
 
@@ -116,26 +116,32 @@ We want to move the sprite in the following blocks in a spiral - starting small 
 
 ![spiral image](/static/courses/csintro/loops/spiral.png)
 
-1. Start with the example above, add in a new variable - we'll refer to it as ``||variables:increase||``
+1. Start with the example above, add in a new variable ``||variables:increase||``
 2. Use the ``||variables:change by||`` block to increment ``||variables:increase||`` by 5 at the end of the code block for the loop
-3. Add math expressions like ``||math:+||`` and ``||math:-||`` to use the variable ``||variables:increase||`` to increase the distance the sprite moves on each step - that might look like the code in this ``||loops:on start||`` block below:
+3. Add math expressions like ``||math:+||`` and ``||math:-||`` to use the variable ``||variables:increase||`` to increase the distance the sprite moves on each step
 
-```blocks
+### ~hint
+
+Part 3 might look like the code below:
+
+```block
 let mySprite: Sprite = null
 let increase = 0
 mySprite.x += -7 - increase
 increase += 5
 ```
 
-The code above will cause mySprite X movement to move farther by 5 on each loop as ``||variables:increase||`` becomes 5 larger each loop. In the small example code above we subtract ``||variables:increase||`` from -7 as in `-7 - increase`. The result is used to update the sprite's ``||sprites:x||`` coordinate. 
+### ~
+
+The code above will cause mySprite `X` movement to move farther by 5 on each loop as ``||variables:increase||`` becomes 5 larger each loop. In the small example code above we subtract ``||variables:increase||`` from -7 (as in `-7 - increase`). The result is used to update the sprite's ``||sprites:x||`` coordinate. 
 
 So we can see the following for how one of the spiral sides moves farther each loop
 
-* Loop 1: mySprite X coordinate change = **-7** 
-* Loop 2: mySprite X coordinate change = -7 - 5 = **-12** 
-* Loop 3: mySprite X coordinate change = -7 - 10 - **-17**
+>* Loop 1: mySprite X coordinate change = **-7** 
+>* Loop 2: mySprite X coordinate change = -7 - 5 = **-12** 
+>* Loop 3: mySprite X coordinate change = -7 - 10 - **-17**
 
-in the task we will need to update all sides of the spiral
+in the following task we will need to update all sides of the spiral.
 
 ### Example #3: For Loop
 
@@ -181,7 +187,7 @@ The ``||loops:for index from 0 to 4||`` loop behaves similar to the repeat loop,
 * on the second iteration ``||variables:index||`` will be 1
 * and so on, until ``||variables:index||`` reaches the final iteration - with the default value of 4
 
-## Student Task #3: for index loops
+## Student Task #3: ``||loops:for index||`` loops
 
 In this task we need to use ``||loops:for||`` loop to help in implementing the behavior from task #2.
 
@@ -198,7 +204,7 @@ increase = index * 5
 
 ## What did we learn?
 
-1. In task #3, you may have noticed that when you switched from a repeat loop to a for loop, the sprite actually continued in it's spiral for a little bit longer than it did before. Why is that? 
+1. In task #3, you may have noticed that when you switched from a ``||loops:repeat||`` loop to a ``||loops:for index||`` loop, the sprite actually continued in it's spiral for a little bit longer than it did before. Why is that? 
 2. Is there a difference between how many times ``||loops:repeat 0 times||`` and ``||loops:for index from 0 to 0||`` will run? When might you want to choose to use a ``||loops:repeat||`` loop over a ``||loops:for index||`` loop?
 
 ### [Teacher Material](/courses/csintro/about/teachers)

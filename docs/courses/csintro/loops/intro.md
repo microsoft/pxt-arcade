@@ -28,9 +28,13 @@ In this activity students will be introduced to:
 
 ## Concept: Motion with loops
 
-Start off by trying to solve a small task - slowly move a ghost from the center of the screen towards the bottom right corner.
+Start off by trying to solve a small task: slowly move a ghost from the center of the screen towards the bottom right corner.
 
 ## Example #1: Moving a Ghost (the long way)
+
+https://youtu.be/Y2Y-n4p1QNI
+
+[Alternative Video Location](https://aka.ms/40544a-loop-intro)
 
 1. Open up [this sample code](https://makecode.com/_VDCA0g4VmRkF)
 2. Run the code. The ghost should scroll off to the bottom right area of the screen, and peek just over the edge
@@ -110,10 +114,6 @@ sprite.y += 5
 pause(100)
 ```
 
-https://youtu.be/Y2Y-n4p1QNI
-
-[Alternative Video Location](https://aka.ms/40544a-loop-intro)
-
 ## Student Task #1: Move to the upper left corner, and move faster
 
 1. Load up the blocks from the previous example
@@ -147,7 +147,7 @@ https://youtu.be/5as0a991-IY
 
 1. Add a single loop to the following code so that the boomerang goes to the right 50 pixels over the course of two seconds
 2. Make the boomerang return to it's original location over the course of two seconds using a loop
-3. **Challenge:** Use the ``||images:flip picture horizontally||`` block inside the loops to make it appear like the boomerang is rotating as it flies
+3. **Challenge:** use the ``||images:flip picture horizontally||`` block inside the loops to make it appear like the boomerang is rotating as it flies
 
 ### ~hint
 

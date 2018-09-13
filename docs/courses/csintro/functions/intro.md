@@ -227,12 +227,12 @@ In this task, we will clean up the ``||controller:on A button pressed||`` event 
 
 1. Review the code below
 2. Create the sample code and run the code
-3. Create 2 new functions, named "conversation" and "scorePoints"
+3. Create 2 new functions, named ``||functions:conversation||`` and ``||functions:scorePoints||``
 4. Move the blocks in ``||controller:on A button pressed||`` for the conversation to ``||functions:conversation||``, and the blocks for scoring a point and playing a sound to ``||functions:scorePoints||``
 5. Use the ``||functions:call function||`` block 2 times in the ``||controller:on A button pressed||`` event to call both new functions
 6. **Challenge**: Create an ``||sprites:on overlap||`` event that uses 
-    * the "conversation" function 
-    * an additional function (e.g. - playerConversation, or movePlayer, or...)
+    * the ``||functions:conversation||`` function 
+    * an additional function (for example, ``||functions:playerConversation||``, or ``||functions:movePlayer||``)
 
 ```blocks
 enum SpriteKind {

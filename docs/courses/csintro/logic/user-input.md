@@ -53,7 +53,7 @@ let input = game.askForString("What is your name?")
 game.splash("Hello " + input + "!")
 ```
 
-Prompts for names, like above, allows games to be more personal.  The prompts can also enable users to make choices during game play, or make guesses from clues to solve a puzzle, or to use a password.
+Prompts for names, like above, allows games to be more personal. The prompts can also enable users to make choices during game play, or make guesses from clues to solve a puzzle, or to use a password.
 
 ## Student Task #2: Making a (secret?) password
 

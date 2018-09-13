@@ -126,7 +126,7 @@ https://youtu.be/-50-av1tblc
 2. Create the sample code and run the code
 3. Create a function to replace the series of blocks that are repeated each time a projectile is made *(hint: The function should include 4 blocks that appear in the same order 3 separate times)*  
 4. Reduce the redundancy in the code using your newly created function, without changing the behavior of the game
-5. **Challenge:** Change the behavior of the game by making the projectiles move at twice the vx rate (from -20 to -40), and by making the ``||music:play tone||`` block play a `Middle A`
+5. **Challenge:** change the behavior of the game by making the projectiles move at twice the rate in the horizontal direction (from -20 to -40), and by making the ``||music:play tone||`` block play a `Middle A`
 
 ```blocks
 enum SpriteKind {

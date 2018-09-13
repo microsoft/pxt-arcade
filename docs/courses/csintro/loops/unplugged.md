@@ -2,7 +2,6 @@
 
 In this activity, you will give someone specific instructions to do a simple action.
 
-
 1. Place a chair somewhere in the room
 2. Have either your teacher or a group member stand with their back to the back of a chair
 3. Have the person demonstrate the task of walking around the chair and sitting down
@@ -20,12 +19,10 @@ In this activity, you will give someone specific instructions to do a simple act
     * So how could we rewrite this code?
 9. Have the person stand with their back to the chair again. This time, have them follow your revised code
 
-There! They have just rewritten many lines of code as just a few lines of code, by using a loop.
+>> There! They have just rewritten many lines of code as just a few lines of code, by using a loop.
 
-
-The 'repeat' command creates a loop. The code within the loop gets repeated a certain number of times until a condition is met. The condition in this algorithm is that the code in the loop is repeated 4 times. Once this condition is met, the program exits the loop.
+>> The 'repeat' command creates a loop. The code within the loop gets repeated a certain number of times until a condition is met. The condition in this algorithm is that the code in the loop is repeated 4 times. Once this condition is met, the program exits the loop.
 
 10. Work in small groups to form additional examples and pseudocode.
-
 
 ### [Teacher Material](/courses/csintro/about/teachers)
