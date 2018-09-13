@@ -2,7 +2,7 @@
 
 This activity starts with the basics needed to get started in @boardname@.
 
-The @boardname@ platform is similar to other @boardname@ products featuring Minecraft, micro:bit, and [more](https://makecode.com). Previous users of @boardname@ (or other block based coding platforms) will see familiar blocks and features. If you are new to MakeCode, welcome! 
+The @boardname@ platform is similar to other MakeCode products featuring Minecraft, micro:bit, and [more](https://makecode.com). Previous users of @boardname@ (or other block based coding platforms) will see familiar blocks and features. If you are new to MakeCode, welcome! 
 
 @boardname@ uses general game concepts such as ``||sprites:Sprites||``, ``||scene:Scene||``, and ``||controller:Controller||`` to make writing arcade games easier, as well as categories of blocks that are common to other @boardname@ Products such as ``||loops:Loops||``, ``||logic:Logic||``, ``||variables:Variables||``, and ``||math:Math||``. As soon as you add in your first block, you can start to run your code in seconds using the in-browser simulator, with your games changing with every new block you add.
 
@@ -23,7 +23,7 @@ https://youtu.be/GsvBCViybPs
 
 1. Click the "Space Destroyer" example game under the "Blocks Games" category
 2. Select "Open Example"
-3. Press left and right on the direction pad to move the space ship, and press the a to fire the laser
+3. Press left and right on the direction pad to move the space ship, and press the `A` button to fire the laser
 4. Pay careful attention to what happens when the laser collides with an asteroid
 
 ### New Project

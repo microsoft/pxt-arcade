@@ -1,12 +1,12 @@
 # Activity: Generate Sprites using Create and On Create
 
-Many games need to spawn sprites to be collected like coins, or avoided like oil spills. 
+Many games need to spawn sprites for the player to collect like coins, or to avoid like oil spills. 
 
-We will use ``||sprites:create empty sprite||`` to spawn a new empty sprite, which is a place holder for a sprite without an image. Then use a ``||sprites:on created||`` event to set the image and a random position for newly generated sprites. 
+We will use ``||sprites:create empty sprite||`` to spawn a new empty sprite, which is a place holder for a sprite without an image. Then we can use an ``||sprites:on created||`` event to set the image and a random position for newly generated sprites. 
 
-``||sprites:on created||`` uses sprite kind so we can give our new sprites the exact attributes we want like image, velocity or position.
+The ``||sprites:on created||`` block uses the sprite's ``sprites:Kind||`` so we can give our new sprites the exact attributes we want, like an image, velocity, or position.
 
-## Concept: Random Clouds - Create SpriteKind with on created event 
+## Concept: Random Clouds - create with on created event 
 
 https://youtu.be/eXCpLH74tF4
 
@@ -14,7 +14,7 @@ https://youtu.be/eXCpLH74tF4
 
 ## Example #1: Random clouds
 
-Use ``||sprites:on created||`` event to set the sprite image and location after a sprite of a particular kind is spawned.
+This example uses the ``||sprites:on created||`` event to set the sprite image and location after a sprite of a particular kind is spawned.
 
 1. Review the code below 
 2. Create the sample code and run the code 
@@ -118,16 +118,16 @@ sprites.createEmptySprite(SpriteKind.Cloud)
 
 ## Student Task #1: More Random Clouds
 
-The ``||sprites:on created||`` event allows us to become efficient with our code by running our set up for new clouds multiple times with the same code. Now we will create new clouds with ``||Sprite:create empty sprite of kind||`` blocks.
+The ``||sprites:on created||`` event allows us to set code to run whenever a new sprite is created. This is used to create new clouds multiple times with the same code. Now we will create new clouds with ``||sprites:create empty sprite of kind||`` blocks.
 
 1. Start with example #1 or your own similar code
 2. Review the code and find the ``||sprites:create empty sprite of kind||`` of kind blocks
 3. Add 2 more ``||sprites:create empty sprite of kind||`` blocks for clouds
-4. Add a new ``||sprites:create empty sprite of kind||`` for a different ``||sprites:Kind||``
-    * create empty sprite having a small image, perhaps a bird, butterfly, other small item
-    * add the image and random position using a new ``||sprites:on created||`` event block. 
-    * create ``||sprites:create empty sprite of kind||`` for at least five of the new sprites (in random positions)
-5. **Challenge:** create an event for the ``||sprites:Helicopter||`` overlap with the new ``||sprites:Kind||`` that has an action that gives the new ``||sprites:Kind||`` a fast velocity so that it will fly off the screen after they overlap
+4. Add a new ``||sprites:create empty sprite of kind||`` for a different ``||sprites:Kind||``. Use the ``||sprites:on created||`` event to
+    * set an image for the sprite that is created (for example, a bird or a butterfly)
+    * set the sprite to be in a random position
+5. Use ``||sprites:create empty sprite of kind||`` to create at least five of the times.
+6. **Challenge:** create an event for the ``||sprites:Helicopter||`` overlap with the new ``||sprites:Kind||`` that has an action that gives the new ``||sprites:Kind||`` a fast velocity so that it will fly off the screen after they overlap
 
 ## What did we learn?
  

@@ -12,7 +12,7 @@ https://youtu.be/R6NJjzXfejM
 
 [Alternative Video Location](https://aka.ms/40544a-coordinate-walker)
 
-Move walker sprite around the game screen, and use it to identify `X` and `Y` coordinates
+Move walker sprite around the game screen, and use it to identify `X` and `Y` coordinates.
 
 In order to create games, we need to be able to place ``||sprites:Sprites||`` and other objects at various locations on the game screen. In this set of activities, we will relate the screen (`x`, `y`) coordinates to the 4 corners and middle of the game screen.
 
@@ -97,8 +97,8 @@ Record the results from this task in a simple diagram like the one below.
 
 Challenge a peer to bring the sprite back into view after you move the sprite off screen.
 
-1. **Partner 1:** Move the walker sprite off past the area of the visible game screen (not too far)
-2. **Partner 2**: Return the sprite to the screen using only two directions of the game controls
+1. **Partner 1:** move the walker sprite off past the area of the visible game screen (not too far)
+2. **Partner 2**: return the sprite to the screen using only two directions of the game controls
     * use the game pad `A` button to get the *hidden* sprite coordinates
     * pick 1: `up` or `down` `Y` direction
     * pick 1: `left` or `right`  `X` direction

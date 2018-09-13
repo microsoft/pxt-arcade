@@ -36,7 +36,7 @@ https://youtu.be/Dv-5K9bWcps
 
 [Alternative Video Location](https://aka.ms/40544a-variablesmath2)
 
-## Example: math equation in a variable
+## Example: Math equation in a variable
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -71,20 +71,20 @@ The splash screen is primarily designed for short sentences. This limits the len
 
 ### ~
 
-## Concept: basic math operators with variables 
+## Concept: Basic math operators with variables 
 
 https://youtu.be/EiWXa52oIgU
 
 [Alternative Video Location](https://aka.ms/40544a-variablesmath3)
 
-We can create variable based math equations, like `A = B + C`, into code using our code variables and math operators.
+We can convert variable based math equations, like `A = B + C`, into code using our code variables and math operators.
 
 ### Operators
 
 In JavaScript, the following order of operation precedence applies:
 
-* Addition (`+`) and Subtraction (`-`)
 * Multiplication (`*`) and Division (`/`)
+* Addition (`+`) and Subtraction (`-`)
 
 Note that JavaScript uses the ``||math:*||`` symbol for multiplication the ``||math:/||`` for division division. In order to change this order of operations, you can use parentheses `( )` around expressions just like in math.
 
@@ -119,11 +119,11 @@ https://youtu.be/C_UY8V-ufiI
 3. Create an equation using both the addition operator (`+`) and the multiplication operator (`*`)
 4. Swap the Addition and Multiplication operator and run the program (Typically the answers will differ)
 
-## Student Task #3: multiple operators and variables equation
+## Student Task #3: Multiple operators and variables equation
 1. Start with the code from the previous task
 2. Add a ``||variables:fourthNumber||`` variable
 3. Create an equation using 3 different operators
-4. Challenge: create an equation using all 4 basic operators (`+`, `-`, `*`, `/`) and at least 5 unique variables
+4. **Challenge:** create an equation using all 4 basic operators (`+`, `-`, `*`, `/`) and at least 5 unique variables
 
 ### ~hint
 
@@ -163,7 +163,7 @@ Click edit to fix code. ``||game:splash||`` can display string characters. Revie
 
 ### ~
 
-2. After you are able to run the code, the value of ``||variables:c||`` should be shown as a splash screen, but the value shown is not quite right. Rearrange the existing blocks so that it produces the correct output, without removing or adding any JavaScript or blocks beyond what was necessary for part 1. What went wrong? Fix the output.
+2. After you are able to run the code, the value of ``||variables:c||`` should be shown on the screen, but the value shown is not quite right. Rearrange the existing blocks so that it produces the correct output, without removing or adding any JavaScript or blocks beyond what was necessary for part 1. What went wrong? Fix the output.
 
 ## Variables Summary
 
@@ -180,6 +180,6 @@ https://youtu.be/BPX2MHXmXJw
 
 1. In JavaScript what is the resulting value of answer for `answer = 5 + 3 * 2`? Explain why the answer is **not** 16.
 2. How is putting operators and numbers into a calculator different than writing in code (example: 2 + 3 + 4 * 4)? Explain.
-3. Research and describe 2 other ``||math:Math||`` Operators found in the math menu in @boardname@ (hover over values for more information).
+3. Research and describe 2 other ``||math:Math||`` operators found in the math menu in @boardname@ (hover over values for more information).
 
 ### [Teacher Material](/courses/csintro/about/teachers)

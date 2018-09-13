@@ -107,7 +107,6 @@ Review the [Variable Math](/courses/csintro/orientation/variable-math) activity 
 
 ### ~hint
 
-
 When doing the challenge, remember to pay careful attention to the order of operations and parentheses (JavaScript) to get the right equation.
 
 To join more than just two strings and numbers, we can chain the ``||text:join||`` blocks just as we did for addition. 
@@ -180,7 +179,7 @@ mySprite.say(":)")
 
 ### ~hint
 
-What would you do if you needed to keep track of the number of coins the player has earned, the number of keys they have collected, and the number of chicken legs they have to eat. Would using ``||info:score||`` be helpful in storing all these values?
+Hint: Consider what you would do if you needed to keep track of the number of coins the player has earned, the number of keys they have collected, and the number of chicken legs they have to eat. Consider whether using ``||info:score||`` be helpful in storing all these values.
 
 ### ~
 

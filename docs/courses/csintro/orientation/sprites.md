@@ -1,6 +1,6 @@
 # Activity: Sprites
 
-Games tell a story, and those stories generally require characters. In @boardname@, those characters are generally represented using sprites. This activity equips students with the skills necessary to create, test and save sprites using the MakeCode development environment. Students will build unique sprites by using the sprite menu and the integrated image editor.
+Games tell a story, and those stories require characters. In @boardname@, those characters are generally represented using sprites. This activity equips students with the skills necessary to create, test and save sprites using the MakeCode development environment. Students will build unique sprites by using the sprite menu and the integrated image editor.
 
 ![Image Editor Features](/static/courses/csintro/orientation/image-editor-features.png)
 
@@ -21,6 +21,7 @@ https://youtu.be/tGISp5qcrR4
 The blocks needed to create sprites are found in the ``||sprites:Sprites||`` menu. The ``||variables:set mySprite to||`` is the first block in this category that we will discuss. The following example shows the creation of a sprite with a blank image.
 
 [Empty Sprite Example](https://makecode.com/_g3CcuWigwKR8)
+
 ```blocks
 enum SpriteKind {
     Player,
@@ -55,6 +56,7 @@ Clicking on the image icon as shown in the video above will bring up the Image E
 Look at the blocks, and note that a name for the sprite (``||variables:mySprite||``) is set to an image for the sprite (it's hot sauce!).
 
 [Hot Sauce Example Sprite](https://makecode.com/_VEXXpq9RtRfT)
+
 ```blocks
 enum SpriteKind {
     Player,
@@ -87,7 +89,7 @@ mySprite = sprites.create(img`
 
 ### ~hint
 
-When using the image editor the pixel dimensions are displayed in the lower right corner. Sizes include 8x8, 16x16, 32x32, and other odd sizes.
+When using the image editor the pixel dimensions are displayed in the lower right corner. Sizes include 8x8, 16x16, 32x32, and more.
 
 ### ~
 

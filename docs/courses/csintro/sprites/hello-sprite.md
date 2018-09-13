@@ -114,5 +114,4 @@ There is a pause block under the ``||loops:Loops||`` menu ``||loops:pause(1000)|
 1. Discuss the different ways we can display a message in this exercise. Make a hypotheses for what each would be best used for.
 2. Come up with a hypothesis and explain why `console.log()` has a larger limit on the length of text. Explain.
 
-
 ### [Teacher Material](/courses/csintro/about/teachers)

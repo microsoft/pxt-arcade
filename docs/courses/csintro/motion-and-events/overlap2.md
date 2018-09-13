@@ -1,14 +1,14 @@
 # Activity: Sprite Overlap & Events - Part 2
 
-We use ``||sprites:Kind||`` to give a label to Sprites so we can define how a "kind of sprite" will act when overlapping with another "kind of sprite." 
+We use ``||sprites:Kind||`` to give a label to Sprites so we can define how one ``||sprites:kind||`` of sprite will react when moving on top of another ``||sprites:kind||`` of sprite
 
 In the previous activity, all "Cloud" ``||sprites:Kind||``'s respond with the same action when overlapped with a Helicopter ``||sprites:Kind||``. 
 
-By making several cloud shaped sprites with the same ``||sprites:Kind||`` of `Cloud`, we write code to so all ``||sprites:Kind||`` `Cloud` interact in the same way with a ``||sprites:Kind||`` `Helicopter` overlap event.
+By making several cloud shaped sprites with the same ``||sprites:Kind||`` of `Cloud`, we can write code so that all of the clouds interact with the ``||sprites:Helicopter||`` in the same way with an overlap event.
 
-In this activity the student will continue to work with:
-* ``||sprites:on overlap event||`` with a ``||sprites:Kind||`` (e.g. - `Cloud`) applied to several identical sprites
-* Define multiple ``||sprites:Kind||`` overlap events and actions
+In this activity, the student will continue to work with:
+* ``||sprites:on overlap event||`` with a ``||sprites:Kind||`` applied to several identical sprites
+* Overlap events
 
 ## Concept: ``||sprites:Kind||`` Overlap Event "bump" action
 
@@ -28,14 +28,14 @@ Having sprites bump rather than pass over each other is useful game behavior for
     * ``||loops:pause||``
     * Move back
 
-## Example #1: bump action from overlap event
+## Example #1: Bump action from overlap event
 
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "copterBump1")
 4. Look at the overlap event - note which sprite is named ``||variables:sprite||`` and which is ``||variables:otherSprite||``, and how the code creates the bump behavior
 
-https://makecode.com/_UhT3dj2UjKPv
+[Helicopter Example](https://makecode.com/_UhT3dj2UjKPv)
 
 ```blocks
 enum SpriteKind {
@@ -214,12 +214,14 @@ There is a "T" shaped landing area at the bottom of the example. The helicopter 
 
 1. Starting with example #1, replace the helicopter motion with the short method using ``||controller:dx (left-right buttons)||``
 2. Review the rest of the code, and then add an on overlap event for when the helicopter overlaps with the landing (note the ``||sprites:Kind||`` of ``||sprites:LandingPad||``)
-3. The block of code in the overlap event should stop the helicopter velocity motion (both vx and vy to zero) and then change the helicopter position **up** 2 pixels so it isn't overlapping any more
+3. The block of code in the overlap event should stop the helicopter velocity motion (setting both vx and vy to zero) and then change the helicopter position **up** 2 pixels so it isn't overlapping any more
 4. **Challenge:** Add a new sprite and ``||sprites:Kind||`` to the screen (for example, a mountain or a tree) and set the overlap action to make the helicopter sprite have an erratic motion after an overlap. This should be 3 or more changes in position and/or velocity
 
 ### ~hint
 
-Challenge Tip: erratic motion can be made by changing the sprite position back and forth multiple times. Try changes in velocity and/or position separated by short pauses.
+Challenge hint:
+
+Erratic motion can be made by changing the sprite position back and forth multiple times. Try changes in velocity and/or position separated by short pauses.
 
 ### ~
 
@@ -229,7 +231,7 @@ Challenge Tip: erratic motion can be made by changing the sprite position back a
 2. Add a new sprite that looks nothing like a cloud (for example, a hat or a tree)
 3. Make sure the new sprite has ``||sprites:Kind||`` of "Cloud" even though it is not a cloud
 4. Position the new sprite so it is not touching any other sprite
-5. **Challenge:** Add another Sprite that looks different from the previous new sprite and give it a ``||sprites:Kind||`` other than ``||sprites:Cloud||`` and make sure it has a unique overlap event action (e.g. - might say something new) 
+5. **Challenge:** add another Sprite that looks different from the previous new sprite and give it a ``||sprites:Kind||`` other than ``||sprites:Cloud||`` and make sure it has a unique overlap event action (e.g. - might say something new) 
 6. Test the overlaps on the new sprite(s)
 
 ## What did we learn?

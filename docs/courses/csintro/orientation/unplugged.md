@@ -10,12 +10,12 @@ Keep track of how many times each player wins as well as the number of times the
  
 Play: Play Rock Paper Scissors in groups for about a minute. When done, add up your scores and how many 'rounds' you played. 
  
-Play again: Now start over and play again for another minute. When done, add up your scores and how many 'rounds' you played. they played. 
+Play again: Now start over and play again for another minute. When done, add up your scores and how many 'rounds' you played.
 
 Discuss as a class how you kept track of the scores.
  
 Think about what on the score sheet represents **constants**, values that do not change through the course of the gaming session.
  
-Think about what on the score sheet represents **variables**, values that do not change through the course of the gaming session.
+Think about what on the score sheet represents **variables**, values that can change through the course of the gaming session.
 
 ### [Teacher Material](/courses/csintro/about/teachers)
