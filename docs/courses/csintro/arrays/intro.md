@@ -79,7 +79,7 @@ list.push(5)
 
 In this example, we added 5 to the end of the array, after it's already been created. This might seem simple in this case, but it allows for many other uses of arrays we create - for example, adding a new high score, or keeping track of where a sprite has already been.
 
-## Example #2: Add in event
+## Student Task #2: Add in event
 
 1. Create a new array with the values -3, 3, and 4
 2. Create a ``||controller:on A button press||`` event

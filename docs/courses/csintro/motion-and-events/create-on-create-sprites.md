@@ -4,7 +4,7 @@ Many games need to spawn sprites for the player to collect like coins, or to avo
 
 We will use ``||sprites:create empty sprite||`` to spawn a new empty sprite, which is a place holder for a sprite without an image. Then we can use an ``||sprites:on created||`` event to set the image and a random position for newly generated sprites. 
 
-The ``||sprites:on created||`` block uses the sprite's ``sprites:Kind||`` so we can give our new sprites the exact attributes we want, like an image, velocity, or position.
+The ``||sprites:on created||`` block uses the sprite's ``||sprites:Kind||`` so we can give our new sprites the exact attributes we want, like an image, velocity, or position.
 
 ## Concept: Random Clouds - create with on created event 
 
