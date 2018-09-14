@@ -13,7 +13,7 @@ In this activity, students will:
 
 ``||corgio:corgio||`` allows you to create a sprite who can jump, run, and fall with only a few blocks in the ``||loops:on start||``.
 
-To add the corgio extension to your project, open the extensions tab and search for "corgio" - it should be the first result. Alternatively, you can search using a direct link to the package, as follows: `github.com/jwunderl/pxt-corgio`.
+To add the corgio extension to your project, open the extensions tab and look for "corgio" - it should be the first result.
 
 After adding corgio to your project, a new tab titled ``||corgio:Corgi||`` will appear in the toolbox, above ``||game:Game||``; this contains the blocks necessary to create and interact with the Corgi.
 
@@ -109,7 +109,7 @@ The tile map we are using is 64 tiles wide and 8 tiles tall, with each tile bein
 2. How difficult was it to balance making your level interesting but still a game the user can complete? Where there any portions of the level that you had to change in order to make the game playable?
 
 ```package
-corgio=github:jwunderl/pxt-corgio#v0.0.12
+corgio
 ```
 
 ### [Teacher Material](/courses/csintro/about/teachers)

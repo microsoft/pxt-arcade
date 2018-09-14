@@ -229,7 +229,7 @@ Now that we have a functioning game of mini golf, we should make an interesting 
 6. **Challenge**: add ``||scene:set tile||`` blocks to add new types of tiles that act as decorations (wall off) or obstacles (wall on)
 
 ```package
-darts=github:jwunderl/pxt-darts#v0.0.15
+darts
 ```
 
 ## What did we learn? 
