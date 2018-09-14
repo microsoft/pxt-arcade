@@ -2,9 +2,9 @@
 
 In this activity, you will learn about events and how they drive actions.
 
-1. Look at the Events Controller as a class.
+1. In @boardname@, create a new project and open the simulator view to full screen
 
-2. Decide as a class what each button does (for example, red square - clap, purple star - stomp, blue triangle - Say "YEAH", etc)
+2. Decide as a class what each button does (for example, ``||controller:A||`` means clap, ``||controller:down||`` means stomp, ``||controller:B||`` makes everyone say "YEAH", ...)
 
 3. As your teacher taps the buttons on the overhead, react based on the actions associated with each button
 
