@@ -180,7 +180,7 @@ if (Math.percentChance(50)) {
 }
 ```
 
-This example sets two random tiles from the first two rows of walls to be tiles with ``||scene:wall off||``, allowing the player to move through them freely. Because there are only two 'entrances' to the goal, it chooses between those two entrances with a fifty percent chance and removes the wall.
+This example sets two random tiles from the first two rows of walls to be tiles with ``||scene:wall off||``, allowing the player to move through them freely. Because there are only two 'entrances' to the goal, it chooses between those two entrances with a fifty percent chance and removes the chosen wall.
 
 ## Example #2b: ``||scene:array of all tiles||``
 

@@ -39,6 +39,7 @@ Build an key collecting MVP game using an array of boolean values to keep to kee
 ### ~hint
 
 For a game with three keys, you should
+
 * Start with an array that contains three ``||logic:false||`` values
 * Create three keys with different ``||sprites:kind||``s - for example, ``||sprites:FirstKey||``, ``||sprites:SecondKey||``, and ``||sprites:ThirdKey||``
 * Create overlap events between the player and each kind of key - in one, ``||arrays:set value at 0||`` of the array to be true, another ``||arrays:set value at 1 to true||``, and the last ``||arrays:set value at 2 to true||``

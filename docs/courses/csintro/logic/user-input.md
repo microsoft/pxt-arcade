@@ -2,7 +2,7 @@
 
 Logical expressions like ``||logic:if||`` and ``||logic:else||`` can be used beyond comparing numeric values. Data type values (such as Strings) can be compared and used to change the way the programs we write behave depending on the different conditions.
 
-One major example of this can be found in some of the earliest computer games - text-based adventure games. These rely heavily on crafting a story, and having the player interact with this story by prompting them with questions and identifying what the user gives back as a response.
+One major example of this can be found in some of the earliest computer games: text-based adventure games. These rely heavily on crafting a story, and having the player interact with this story by prompting them with questions and identifying what the user gives back as a response.
 
 In this activity, students will:
 * ``||game:ask||``
@@ -27,8 +27,9 @@ if (game.ask("Do you want to win?")) {
 }
 ```
 
-This is a fairly simple game - you press ``||controller:A||`` to win, or ``||controller:B||`` to do nothing. However, it does illustrate two important concepts: 
->* There are **built in** methods that return Boolean values, allowing us to easily create logical tests in our code.
+This is a fairly simple game - you press ``||controller:A||`` to win, or ``||controller:B||`` to do nothing. However, it does illustrate two important concepts:
+
+>* There are **built in** methods that return boolean values, allowing us to easily create logical tests in our code.
 >* These tests can be based off user input - in this case, which button the user pressed.
 
 ## Student Task #1: Option for failure!
@@ -40,7 +41,7 @@ This is a fairly simple game - you press ``||controller:A||`` to win, or ``||con
 
 ## Concept: Text input
 
-Beyond asking questions with a binary response (e.g. - "yes or no" or "true or false"), we can request input from users and keep track of that to enhance the player's experience. We could ask for a user name and display the name in later in the game, such as in a leader board or a welcome message as in example #2.
+Beyond asking questions with a binary response (for example, "yes or no" or "true or false"), we can request input from users and keep track of that to enhance the player's experience. We could ask for a user name and display the name in later in the game, such as in a leader board or a welcome message as in example #2.
 
 ## Example #2: Taking in a user name
 
@@ -60,10 +61,10 @@ Prompts for names, like above, allows games to be more personal. The prompts can
 1. Start with the code from example #2.
 2. Create a new variable, and ``||game:ask for string||`` with the prompt "What is your password?" to find a word to store in that new variable
 3. Create an ``||logic:if else||`` block
-4. Use the ``||logic:=||`` block to compare the 'password' the user inputted with the string "Hunter2"
+4. Use the ``||logic:=||`` block to compare the 'password' the user inputted with the string "Arcade"
 5. If those two are the same, ``||game:splash||`` "login successful"
 6. Otherwise, ``||game:splash||`` "login failed"
-7. **Challenge:** Use the ``||logic:or||`` block to also compare your stored password with "\*\*\*\*\*\*\*" and accept the password if the user's input is equal to **either** "\*\*\*\*\*\*\*" **or** "Hunter2"
+7. **Challenge:** use the ``||logic:or||`` block to also compare your stored password with "\*\*\*\*\*\*\*" and accept the password if the user's input is equal to **either** "\*\*\*\*\*\*\*" **or** "Arcade"
 
 ## What did we learn?
 

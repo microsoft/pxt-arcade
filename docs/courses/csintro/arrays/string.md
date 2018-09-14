@@ -1,6 +1,8 @@
 # Activity: Arrays of Strings
 
-In the previous lesson, we learned that arrays can be used to keep track of an indefinite number of values of the same type, as well as some of the basic ways in which developers can interact with the arrays. It is important to remember, though, that they can be used with any variables you need to keep track of, not simply with numbers. In this activity, we will identify some ways in which we can use arrays of strings, and explore other ways in which we can use arrays.
+In the previous lesson, we learned that arrays can be used to keep track of an indefinite number of values of the same type, as well as some of the basic ways in which developers can interact with the arrays. It is important to remember, though, that they can be used with any variables you need to keep track of, not just with numbers.
+
+In this activity, we will identify some ways in which we can use arrays of strings, and explore other ways in which we can use arrays.
 
 In this activity, students will:
 * Interact with string arrays
@@ -70,11 +72,15 @@ You will likely notice some redundancy in this code - each pair of ``||sprites:s
 
 ### ~hint
 
+Consider the following:
+
 If the four lines the princess was saying were instead stored as four separate variables ("line1", "line2", "line3", and "line4"), would it still be possible to reduce the redundancy using loops?
 
 ### ~
 
-The changes in this task make the code a lot easier to read, and demonstrate a very common usage of arrays - iterating over their contents. This is so common, in fact, that there is another loop that is commonly used to iterate over arrays and other data structures. In Blocks, this is the ``||loops:for element||`` loop, but the behavior is often referred to as a `for each` loop. This title comes from the way in which we commonly describe the behavior of the loop; using the code from task #1a, you might say something along the lines of
+The changes in this task make the code a lot easier to read, and demonstrate a very common usage of arrays - iterating over their contents. This is so common, in fact, that there is another loop that is commonly used to iterate over arrays and other data structures.
+
+In Blocks, this is the ``||loops:for element||`` loop, but the behavior is often referred to as a `for each` loop. This title comes from the way in which we commonly describe the behavior of the loop; using the code from task #1a, you might say something along the lines of
 
 > **for each** string in text_list, make the princess say that string and then pause for a moment.
 
@@ -86,7 +92,7 @@ The changes in this task make the code a lot easier to read, and demonstrate a v
 
 ## Concept: Random Reactions
 
-Another way in which you can use string arrays in your games is to create reactions to different events - for example, the player running into another character, or losing a life. This can be used both to personalize your game, and to make the game feel more 'alive' as the characters respond 'randomly' to the player's actions.
+Another way in which you can use string arrays in your games is to create reactions to different events - for example, the player running into another character, or losing a life. This can be used both to personalize your game, and to make the game feel more alive, as the characters respond 'randomly' to the player's actions.
 
 ## Example #2: Reacting to collisions
 
@@ -169,7 +175,7 @@ text_list = ["oww", "no walls", "oh no", "I stubbed my toe"]
 
 ### ~hint
 
-Review the corgio extension from the Tile Map Extensions lesson; can you guess how the ``||corgio:make myCorg bark!||`` and ``||corgio:teach myCorg the word||`` blocks work?
+Review the corgio extension from the [Tile Map: Extensions](/courses/csintro/tilemap/extensions) lesson; can you guess how the ``||corgio:make myCorg bark!||`` and ``||corgio:teach myCorg the word||`` blocks work?
 
 ```package
 corgio=github:jwunderl/pxt-corgio#v0.0.12
@@ -180,6 +186,6 @@ corgio=github:jwunderl/pxt-corgio#v0.0.12
 ## What did we learn?
 
 1. What is the difference between a ``||loops:for index from 0 to||`` and a ``||loops:for element||`` loop? Can you think of any situations where you might prefer the ``||loops:for index from 0 to||`` loop when using arrays?
-2. In task #1a, why did we use the ``||array:length of array||`` instead of just setting it to the new length (e.g. changing it to be from `0 to 3` to `0 to 6`)?
+2. In task #1a, why did we use the ``||array:length of array||`` instead of just setting it to the new length (for example, changing it to be from `0 to 3` to `0 to 6`)?
 
 ### [Teacher Material](/courses/csintro/about/teachers)

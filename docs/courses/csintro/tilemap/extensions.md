@@ -1,10 +1,8 @@
 # Activity: Level Design and the Corgio Extension
 
-The design of the area the player is in can make or break a game: if it is too sparse, the game can become boring and uninteresting. If the screen is overly filled with objects, the game can start to run slowly. 
+The design of the area the player is in can make or break a game. If the play area is too sparse, the game can become boring and uninteresting, and if it is overly filled with objects, the game can become to hard too hard to follow. 
 
-In this activity, students will use the corgio extension (based on the Corgi dog breed) to make several sprite actions easy to implement. Using Corgio allows us to focus on the desig and structure of the game play without getting bogged down in complex functionality that corgio handles for us. 
-
-Extensions let us abstract (hide) the details of implementating different behaviors. Like driving a car, in order to drive a car we don't need build a car, or to know how to build a car, or if the engine uses gas or electricity. We only need to know how to use the car.
+In this activity, students will use the ``||corgio:corgio||`` extension (based on the Corgi dog breed) to make several sprite actions easy to implement. Using ``||corgio:corgio||`` allows us to focus on the design and structure of the game play without getting bogged down in some of the complex functionality that corgio handles for us.
 
 In this activity, students will:
 * Use a new extension
@@ -13,7 +11,7 @@ In this activity, students will:
 
 ## Using the corgio package
 
-Corgi allows you to create a sprite who can jump, run, and fall with only a few blocks in the ``||loops:on start||``.
+``||corgio:corgio||`` allows you to create a sprite who can jump, run, and fall with only a few blocks in the ``||loops:on start||``.
 
 To add the corgio extension to your project, open the extensions tab and search for "corgio" - it should be the first result. Alternatively, you can search using a direct link to the package, as follows: `github.com/jwunderl/pxt-corgio`.
 
@@ -79,14 +77,16 @@ myCorg.verticalMovement()
 
 1. Either start with the code from example #1, or add a tilemap to task #1
 2. Add the ``||corgi:make camera follow myCorg left and right||`` block, so that the camera will follow the corgi while it moves across the tile map
-3. Open the tile map in the image editor, and add a red wall that is 3 tiles tall in the middle of the map. Make sure to set that tile to have a sprite and to be a wall
+3. Open the tile map in the image editor, and add a red wall that is 3 tiles tall in the middle of the map.
+4. Set the red tile to be a wall, and give it a unique image
  
 ## Goals, Puzzles, and Hazards
 
 Just having a single wall in your game does not make for a particularly challenging or fun experience; you need a bit more to make a game someone will actually want to try and play. To do so, we will introduce three things to the platformer: 
-1. an end goal for the player to try and get to
-2. walls that form a small puzzle to get through
-3. hazards that will add a possibility of failure to the game
+
+1. An end goal for the player to try and get to
+2. Walls that form a small puzzle to get through
+3. Hazards that will add a possibility of failure to the game
 
 ## Student Task #3: Creating an interesting level
 

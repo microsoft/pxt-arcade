@@ -2,9 +2,9 @@
 
 Software developers often need to store multiple related values at once - for example, multiple sprites that are "enemies," or the names of the highest scoring players in a leader board. Arrays allow for the storage and use of a large number of values that share a type.
 
-Arrays store values at different indices, so that you can keep track of where values are located within the array. In most programming languages, arrays serve as some of the most basic **data structures** that can be used to keep track of sequences of data (with some minor differences in behavior depending on how the language implements them). 
+Arrays store values at different **indices**, so that you can keep track of where values are located within the array. In most programming languages, arrays serve as some of the most basic **data structures** that can be used to keep track of sequences of data (with some minor differences in behavior depending on how the language implements them). 
 
-In Blocks, arrays can be found under the Advanced category of the toolbox.
+In Blocks, arrays can be found under the `Advanced` category of the toolbox.
 
 ![locating arrays](/static/courses/csintro/arrays/locating-arrays.gif)
 
@@ -32,18 +32,18 @@ game.splash("" + list[1])
 
 The first block in the ``||loops:on start||`` creates a new array, with two values to start with - 1 and 2. The next block prints out the value that is stored at **index 1** - the value **2**. 
 
-This might seem odd - after all, there are two values in the array, and the first one listed is **1**, not **2**. The reason that index 1 stores the value 2 is due to the fact that arrays are indexed starting at 0 in JavaScript - that is, the first value in the array is stored at index 0.
+This might seem odd - after all, there are two values in the array, and the first one listed is **1**, not **2**. The reason that index 1 stores the value 2 is due to the fact that arrays are indexed starting at 0 in JavaScript and blocks - that is, the first value in the array is stored at index 0, not index 1.
 
 ### ~hint
 
-One way to think about this is in terms of where the value is located within the array - the first value is located **0** positions away from the beginning, the second value is **1** position away from the beginning, and so on. As such, index 0 means "0 values away from the first."
+One way to think about this is in terms of where the value is located within the array - the first value is located **0** positions away from the beginning, the second value is **1** position away from the beginning, and so on. As such, index 0 means "0 values away from the start."
 
 ### ~
 
 ## Student Task #1: Random values from Arrays
 
 1. Start with the code from example #1
-2. Add two more numbers to the array, by pressing the ``||array:+||`` button on the block
+2. Add two more numbers to the array, by pressing the `+` button on the block
 3. Instead of always splashing the value at index 1, change the ``||array:get value at||`` block to choose a random index between 0 and 3 using the ``||math:pick random||`` block
 4. Add one more number to the array. Identify whether this value will ever show up as one of the values being ``||game:splashed||``
 
@@ -79,7 +79,7 @@ list.push(5)
 
 In this example, we added 5 to the end of the array, after it's already been created. This might seem simple in this case, but it allows for many other uses of arrays we create - for example, adding a new high score, or keeping track of where a sprite has already been.
 
-## Example #2: Add on event
+## Example #2: Add in event
 
 1. Create a new array with the values -3, 3, and 4
 2. Create a ``||controller:on A button press||`` event
@@ -89,11 +89,11 @@ In this example, we added 5 to the end of the array, after it's already been cre
 
 ### ~hint
 
-remember to use ``||string:join||`` to convert from number to string
+Remember to use ``||string:join||`` to convert from number to string when displaying a number
 
 ### ~
 
-6. **Challenge:** Modify the value of the ``||game:splash||`` to instead display the result of adding **two** random values from the ``||variable:list||``
+6. **Challenge:** modify the value of the ``||game:splash||`` to instead display the result of adding **two** random values from the ``||variable:list||``
 
 ## What did we learn?
 

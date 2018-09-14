@@ -36,7 +36,7 @@ Another way to think about this task is that we want the code that prompts the p
 
 In English, the difference between "until" *some condition* and "while" *some condition* is simply that they are opposites.
 
-Example: "We want to run this code until the player guesses it correctly" is the same as saying "We want to run this code while the player guesses it incorrectly".
+Example: "We want to run this code until the player guesses it correctly" is the same as saying "we want to run this code while the player guesses it incorrectly".
 
 ### ~
 
@@ -46,7 +46,7 @@ Example: "We want to run this code until the player guesses it correctly" is the
 2. Generate a second random value between 1 and 5, and store it in the variable ``||variables:secondValue||``
 3. Change the ``||game:splash||`` screen from "I'm thinking of a number between 1 and 5" to "Answer the question!"
 4. Compare the ``||variables:guess||`` to the result of `value + secondValue` instead of just `value`
-5. Change the ``||game:ask for string with text||`` value to instead ask for the sum of ``||variables:value||`` and ``||variables:secondValue||`` - make sure to include what those two values are in the message
+5. Change the ``||game:ask for string with text||`` value to instead ask for the sum of ``||variables:value||`` and ``||variables:secondValue||`` (make sure to include what those two values are in the message)
 
 ## Example #2: Fireball Game
 
@@ -140,7 +140,7 @@ Why did we use a ``||loops:while||`` loop instead of a ``||loops:repeat||`` loop
 
 The intention of the game is for the fires to keep being created until the game ends, once the player presses the A button.
 
-A ``||loops:repeat||`` loop is intended to be used to repeat something a pre-determined number of times. Using a ``||loops:while||`` loop is very useful in this case to both to more accurately reflect what the developer intends (that is, make the code more readable for a classmate or friend).
+A ``||loops:repeat||`` loop is intended to be used to repeat something a pre-determined number of times. Using a ``||loops:while||`` loop is very useful in this case to more accurately reflect what the developer intends (which will make the code more readable for a classmate or friend).
 
 ### ~
 

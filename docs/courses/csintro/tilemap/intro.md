@@ -15,7 +15,7 @@ The tile map uses an image to represent a game space that is often much larger t
 
 Each pixel in a tile map image translates to and area of 16x16 pixels on the 160x120 pixel game screen.
 
-A ``|scene:tile map|`` is called a "Map" because it "maps" a tile map color to image that is stored as a tile.
+A ``||scene:tile map||`` is called a "map" because it "maps" a tile map color to image that is stored as a tile.
 
 ### Example #1: Making a tile map
 
@@ -88,7 +88,7 @@ scene.setTile(5, img`
 
 ## Student Task #2: Add tile to tile map
 
-1. Start with your "intro tile map 1" code and name "tile in tile map"
+1. Start with your "intro tile map 1" code
 2. **Modify** the code to include a tile image that is used in the tile map
 
 ### Example #3: Words!
@@ -240,15 +240,13 @@ f f f f f f f f f f f f f f f f
 `)
 ```
 
-In this example, there is a new block being used: ``||scene:set tile to||``
-
-The ``||scene:set tile to||`` blocks allow us to personalize how the tile shows up on the screen. Here, we have created a few images containing letters of the alphabet, assigned to different color tiles, with ``||scene:set tile map to||`` set to create a tile map with the tiles necessary to display "word" on the background.
+In this example, the tiles are changed to correspond to images with letters on them.
 
 ## Student Task #3: Hello World!
 
 1. Start with the code from example #3
 2. Change the ``||scene:tile map||`` image so that it displays "Hello World" instead of just "Word"
-3. **Challenge:** Create a new tile with an exclamation mark, and change the tile map so that "Hello World**!**" is displayed
+3. **Challenge:** create a new tile with an exclamation mark, and change the tile map so that "Hello World**!**" is displayed
 
 ### Example #4: A brand new home
 
@@ -419,14 +417,14 @@ For the "newHome" example, we have made a tile map that is significantly larger 
 
 ![image: tile map editor](/static/courses/csintro/tilemap/tilemap-editor.png)
 
- We've created a few tiles with ``||scene:wall||`` set to on - this means that the player won't be able to move through them.
+We've created a few tiles with ``||scene:wall||`` set to on - this means that the player won't be able to move through them.
 
 The example tiles that are provided here are the following:
-* The black tile represents a wall
-* The red tile represents a chair
-* The pink tile represents a bed
-* The orange tile represents a table
-* The purple tile represents a rug
+>* The black tile represents a wall
+>* The red tile represents a chair
+>* The pink tile represents a bed
+>* The orange tile represents a table
+>* The purple tile represents a rug
 
 ## Student Task #4: Decorate and move around the house
 
@@ -434,7 +432,7 @@ The example tiles that are provided here are the following:
 2. Make the camera follow the sprite by adding the ``||scene:camera follow sprite||`` block to the ``||loops:on start||`` block and set it to follow the ``||variables:homeOwner||``
 3. Add home furnishings around the house, by changing some of the white tiles to be some of the other provided tiles
 4. Create another tile with a different image, and place that tile around the house to personalize it
-5. **Challenge:** create two more tiles with different sprites, and place them around the house as well. 
+5. **Challenge:** create two more tiles with different sprites, and place them around the house as well.
 
 ## What did we learn?
 

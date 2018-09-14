@@ -1,6 +1,6 @@
 # Activity: Interactions
 
-To demonstrate some of the more uses of a tile map, students will implement their own game of mini golf using the darts extension covered in a previous function extensions lesson, similar to the game shown below
+Tile maps can be used for more than just a nice way to create a background. In this activity, students will implement their own game of 'mini golf' using the darts extension, similar to the game shown below
 
 ![Mini golf example game](/static/courses/csintro/tilemap/mini-golf.gif)
 
@@ -184,7 +184,7 @@ golfBall.controlWithArrowKeys()
 
 ### ~hint
 
-Notice how the ``||scene:background to image||`` block changes the game; try taking it out of the code and adding it back in. You can even try drawing an image for the background using the image editor! but be sure to place it **before** any ``||darts:dart||`` blocks in the ``||Game: on start||``
+Notice how the ``||scene:background to image||`` block changes the game; try taking it out of the code and adding it back in. You can even try drawing an image for the background using the image editor! But be sure to place it **before** any ``||darts:dart||`` blocks in the ``||game:on start||``.
 
 ### ~
 
@@ -193,18 +193,18 @@ Notice how the ``||scene:background to image||`` block changes the game; try tak
 1. Start with the code from example #1
 2. Add an ``||controller:on A button pressed||`` event that ``||darts:throws||`` the golfBall, and increases score by 1
 3. Add a ``||scene:set tile to||`` block so that the brown tiles are walls
-4. Create a sprite that is a flag, and place it at x=120 y=105 - this will place it right behind the wall
+4. Create a sprite that is a flag, and place it at `x=120` and `y=105` - this will position it right behind the wall
 5. Add an ``||sprites:overlap||`` event between the ball and the flag that ``||game:splashes||`` a congratulation message containing their score, then causes a ``||game:game over||``
 
-Play around with the game for a bit; what happens when you hit a wall? Try and land on top of the wall that is blocking the flag; what happens?
+Play around with the game for a bit - what happens when the ball hits a wall? Try and land on top of the wall that is blocking the flag. What happens?
 
 ## Golf Ball Momentum
 
 The golf ball will keep on moving! For example, if the wall is below the ball, it will still move horizontally and maintain it's speed. 
 
-When the golf ball continues to roll forever after it collides with the wall, that doesn't work for our game. 
+When the ball hits a wall, it should stop, so that it can be hit again.
 
-We can stop the ball when it strikes a wall and fix this using the ``||scene:on sprite of kind hits wall||`` block, which creates an event that occurs whenever the given sprite touches the given wall tile.
+This behavior can be fixed using the ``||scene:on sprite of kind hits wall||`` block, which is an event that occurs whenever the given sprite touches the given wall tile.
 
 ## Student Task #2: Make it stop
 
@@ -215,7 +215,7 @@ https://youtu.be/VBzh-vZeWKs
 1. Start with the code from task #1
 2. Create an ``||scene:on sprite of kind hits wall||`` between the golf ball (kind ``||sprites:GolfBall||``) and the brown wall
 3. Inside of that event, use the ``||darts:stop golfBall||`` to force the golf ball to stop in it's current position
-4. Verify that the behavior is now fixed - that the golf ball correctly stops when it touches a wall
+4. Verify that the golf ball now correctly stops when it touches a wall
 
 ## Student Task #3: Make a real course
 
@@ -223,10 +223,10 @@ Now that we have a functioning game of mini golf, we should make an interesting 
 
 1. Start with the code from task #2
 2. Remove the walls that are currently on the right side of the image
-3. Open the image from the ``||scene:set tile map to||`` block, increase the size of the image to 64x8, and add brown walls to create your own unique mini golf course
-4. Move the flag's ``||sprites:x||`` coordinate to 960 - this will be closer to the end of this new tile map
+3. Open the image from the ``||scene:set tile map to||`` block, increase the size of the image to `64x8`, and add brown walls to create your own unique mini golf course
+4. Move the flag's ``||sprites:x||`` coordinate to `960` - this will be closer to the end of this new tile map
 5. Use the ``||scene:camera follow sprite||`` and ``||darts:myDart sprite||`` blocks to make it so the camera follows the golf ball as it moves across the screen
-6. **Challenge**: Add ``||scene:set tile||`` blocks to add new types of tiles that act as decorations (wall off) or obstacles (wall on)
+6. **Challenge**: add ``||scene:set tile||`` blocks to add new types of tiles that act as decorations (wall off) or obstacles (wall on)
 
 ```package
 darts=github:jwunderl/pxt-darts#v0.0.15
@@ -235,6 +235,6 @@ darts=github:jwunderl/pxt-darts#v0.0.15
 ## What did we learn? 
 
 1. Describe how a tile in a tile map differs from a pixel in a sprite image.
-2. Make a hypothesis of how we would make "dart" objects (like the golf ball) bounce off of tile map walls.
+2. Make a hypothesis of how we would make ``||darts:dart||`` objects (like the golf ball) bounce off of tile map walls.
 
 ### [Teacher Material](/courses/csintro/about/teachers)

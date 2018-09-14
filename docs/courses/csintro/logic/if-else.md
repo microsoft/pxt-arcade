@@ -1,16 +1,12 @@
-# Activity: if else comparisons
-
-* ``||logic:if||`` 
-* ``||logic:else||``
-* ``||logic:else if||``
-
-## Comparisons 
-
-``||logic:if||`` and ``||logic:else if||`` logic
+# Activity: If and else comparisons
  
-In our games we will often want to compare values and take an action based on the comparison.
+https://youtu.be/sMFHdR6KzPo 
 
-> Example: Is my value smaller than a test value? If it is ``||logic:true||`` that my value (3) is smaller than the test value (5) then we will add to my value.
+[Alternative Video Location](https://aka.ms/40544a-ifelse-overview)
+
+In our games we will often want to compare values, and take an action based on the result of the comparison.
+
+> Example: Is my value smaller than a test value? If it is ``||logic:true||`` that my value (3) is smaller than the test value (5) then we will add to my value. Otherwise, we will subtract from the value.
 
 We could do a comparison test to see:
 
@@ -18,13 +14,14 @@ We could do a comparison test to see:
 * if the player has 0 lives left, then we set to game over
 * if we have the secret key, then we can enter the room.
 
-``||logic:if||`` and ``||logic:else if||`` statements allow us to make our programs behave in different ways based on the state of the game.
+``||logic:if||`` and ``||logic:else||`` statements allow us to make our programs behave in different ways based on the state of the game.
 
-https://youtu.be/sMFHdR6KzPo 
+In this activity, students will work with:
+* ``||logic:if||`` 
+* ``||logic:else||``
+* ``||logic:else if||``
 
-[Alternative Video Location](https://aka.ms/40544a-ifelse-overview)
-
-## Concept: **if** Statement
+## Concept: **If** Statement
 
 We have seen in the previous lesson ``||logic:if||`` statements perform a test and if the logic test evaluates to true, then it will run code that is given. 
 
@@ -34,9 +31,9 @@ if (info.life() > 2) {
 }
 ```
 
-## Concept: **else** Statement
+## Concept: **Else** Statement
 
-When we use an ``||logic:if||`` statement, we have the option to add an ``||logic:else||`` statement. An else block will only run in the event that the logic test given evaluates to false. In other words if the test is true, then the ``||logic:if||`` block’s code will run, else, the ``||logic:else||`` block’s code will run. 
+When we use an ``||logic:if||`` statement, we have the option to add an ``||logic:else||`` statement. An else block will only run in the event that the logic test given evaluates to false. In other words, if the test is true, then the ``||logic:if||`` block’s code will run, else, the ``||logic:else||`` block’s code will run. 
 
 To use an ``||logic:else||`` click on the plus sign of an existing ``||logic:if||`` block.
 
@@ -47,7 +44,8 @@ if (info.highScore() > 5) {
     game.splash("Set High Score!")
 }
 ```
-## Concept: **else if** Statement
+
+## Concept: **Else if** Statement
 
 Using an ``||logic:if||`` block with an ``||logic:else||`` block allows us to split all comparisons into two categories - either the comparison is ``||logic:true||`` or ``||logic:false||`` (not true). 
 
@@ -55,11 +53,11 @@ What if we needed to split a comparison into three or four categories?
 
 We can use the ``||logic:else if||`` block to add additional comparisons. 
 
-By clicking the plus sign of an ``||logic:if else||`` block, and an ``||logic:else if||`` block will appear. This requires another logic test and that splits the cases after the original logic test evaluates to false. 
+By clicking the plus sign of an ``||logic:if else||`` block, an ``||logic:else if||`` block will appear. This allows for another logic test that splits the cases after the original logic test evaluates to false. 
 
 We can compare the score with 3 possible results. 
  
-First test if the score is greater than 100 and if not run a second comparison to see if score is greater than 50.
+For example, consider the case where we want to split scores into three groups: beginner, intermediate, and expert.
 
 >* if score greater than 100 "you are an expert"
 >* or else if greater than 50 "you are intermediate"
@@ -75,9 +73,11 @@ if (info.score() > 100) {
 }
 ```
 
-This code will first check if the high score for the game is greater than five. If it is, then it will message "expert" and skip the rest of the comparison tests. 
+This code will first check if the high score for the game is greater than 100. If it is, then it will identify the player is an "expert" and skip the rest of the comparison tests. 
 
-If it is not greater than 100, then the second logic test is run to see if the score is greater than 50. If it is, then it will message "intermediate." If it is not greater than 50 it will run the ``||logic: else||`` and rank the player a "beginner."
+If it is not greater than 100, then the second logic test is run to see if the score is greater than 50. If it is, then it will identify the player as "intermediate."
+
+If it is not greater than 50, it will run the else section and rank the player a "beginner."
 
 ## Button Game
 
@@ -87,9 +87,15 @@ https://youtu.be/FuABS3PVnAM
 
 [Alternative Video Location](https://aka.ms/40544a-ifelse)
 
-### Example 1a: random alternating message
+For each example below,
 
-https://makecode.com/_HXMRAzYY4YkU
+1. Play the game
+2. Review the code that uses comparisons
+3. Identify how the behavior is different from the other examples
+
+### Example #1a: Random alternating message
+
+[Example #1a](https://makecode.com/_HXMRAzYY4YkU)
 
 ```blocks
 enum SpriteKind {
@@ -136,9 +142,9 @@ info.startCountdown(20)
 generate()
 ```
 
-### Example 1b: Check if correct button is pressed
+### Example #1b: Check if correct button is pressed
 
-https://makecode.com/_LigLWHR00d74
+[Example #1b](https://makecode.com/_LigLWHR00d74)
 
 ```blocks
 enum SpriteKind {
@@ -191,9 +197,9 @@ info.startCountdown(20)
 generate()
 ```
 
-### Example 1c: ``|logic:else|`` for random alternating message
+### Example #1c: ``|logic:else|`` for random alternating message
 
-https://makecode.com/_FDoAgwhKdh1X
+[Example #1c](https://makecode.com/_FDoAgwhKdh1X)
 
 ```blocks
 enum SpriteKind {
@@ -245,17 +251,17 @@ info.startCountdown(20)
 generate()
 ```
 
-## Student Task 1a: ``|logic:else|`` for check if correct button is pressed
+## Student Task #1a: ``|logic:else|`` for check if correct button is pressed
 
 https://youtu.be/zW7JyNiJeKI
 
 [Alternative Video Location](https://aka.ms/40544a-ifelse-task)
 
-Now that we have the basic functionality of our game, let’s make it so that the player loses points when they press the wrong button.
+Now that we have the basic functionality of our game, make it so that the player loses points when they press the wrong button.
 
-1. Start with the code 1c above 
-2. Add else ``||logic:else||`` statements in the button press events that run code when the player enters the wrong button
-3. Decrease the players ``||info:score||`` by 1 when they press the wrong button by using the ``||info:change score by||`` block
+1. Start with the code from example #1c above 
+2. Add ``||logic:else||`` statements in the button press events that run code when the player enters the wrong button
+3. Decrease the players ``||info:score||`` by 1 when they press the wrong button
 
 ### ~hint
 
@@ -265,7 +271,7 @@ To decrease a value, change its value by a negative amount
 
 ## Task #1b: End of Game Message
 
-Now let’s congratulate the player at the end of the game, giving them a specific message based on their ``||info:score||``.
+Now add a timer, and congratulate the player at the end of the game, giving them a specific message based on their ``||info:score||``.
 
 1. Create an event for when the countdown ends by using the ``||info:on countdown end||`` block
 2. Check to see if the player’s ``||info:score||`` is less than `20`. If it is, use a splash block to say “Beginner score of ” and then the player’s ``||info:score||``
@@ -287,12 +293,12 @@ This will change the dialog shown on the game over screen.
 
 ### ~
 
-5. Challenge: Make the sprite have a shake or bump effect each time it has a say so can see when letter updates even when it is the same as the previous time.
+5. **Challenge:** make the sprite have a shake or bump effect each time it has a say so can see when letter updates even when it is the same as the previous time.
 
 ## What did we learn?
 
-1. What's a case in which you use an ``||logic:if||`` but not an ``||logic:else||``?
-2. For example 1c, we changed the ``|logic:if||`` ``|logic:if||`` structure to an ``|logic:if else||`` structure. Why does it make sense to do this?
+1. What is a case in which you use an ``||logic:if||`` but not an ``||logic:else||``?
+2. For example #1c, we changed the ``|logic:if||`` ``|logic:if||`` structure to an ``|logic:if else||`` structure. Why does it make sense to do this?
 3. What is the same and what is different between the following code samples? Which one is easier to read? Explain.
 
 ```blocks
