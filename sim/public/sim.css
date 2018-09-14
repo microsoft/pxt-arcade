@@ -25,7 +25,7 @@ canvas {
 }
 
 #screen-back {
-    background: #FFFAE7;
+    background: #fcf7e4;
     height: calc(100% - 10px);
     width: calc(100% - 10px);
     position: absolute;
@@ -34,8 +34,8 @@ canvas {
     margin-right: auto;
     left: 0;
     right: 0;
-    border-radius: 5px;
-    border: 5px solid #FFFAE7;
+    border-radius: 12px;
+    border: 5px solid #fcf7e4;
 }
 
 #screen {
@@ -46,12 +46,16 @@ canvas {
 }
 
 .has-focus {
-    border: 5px solid #E95153 !important;
+    border: 5px solid #96266c !important;
 }
 
 #paint-surface {
     position: absolute;
-    filter: drop-shadow(0px 0px 10px #6B4F76)
+    /* filter: drop-shadow(0px 0px 10px #6B4F76) */
+    border-right: 0.5rem inset #2f99a1;
+    border-left: 0.5rem outset #2f99a1;
+    border-top: 0.5rem outset #f290c1;
+    border-bottom: 0.5rem inset #f290c1;
 }
 
 #paint-surface-container {
@@ -87,4 +91,17 @@ canvas {
 
 .blur .info {
     opacity: 0.2;
+}
+
+.controller-button-overlay {
+    fill: black;
+    fill-opacity: 0;
+}
+
+.controller-button-overlay:hover {
+    fill-opacity: 0.125;
+}
+
+.controller-button-overlay.pressed {
+    fill-opacity: 0.25;
 }
