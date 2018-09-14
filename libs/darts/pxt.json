@@ -1,0 +1,11 @@
+{
+    "name": "darts",
+    "description": "A sprite with path projection",
+    "files": [
+        "README.md",
+        "darts.ts"
+    ],
+    "public": true,
+    "dependencies": {
+    }
+}
