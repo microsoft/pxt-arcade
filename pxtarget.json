@@ -49,7 +49,8 @@
     "compileService": {
         "buildEngine": "codal",
         "githubCorePackage": "lancaster-university/codal",
-        "gittag": "v0.4.0"
+        "gittag": "v0.4.0",
+        "dockerImage": "pext/yotta:latest"
     },
     "variants": {
         "stm32f401": {
