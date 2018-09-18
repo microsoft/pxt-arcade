@@ -12,7 +12,7 @@ Extensions in @boardname@ allow users to easily develop and share portions of th
 
 ## Step 1
 
-The first thing we'll do is make our corgi. Find the ``||corgi:set myCorg to||`` in ``||corgi:Corgi||``. Drag it into the ``||loops:on start||``. The corgi should appear on the left side of the screen.
+The first thing we'll do is make our corgi. Find the ``||variables:set myCorg to||`` in ``||corgi:Corgi||``. Drag it into the ``||loops:on start||``. The corgi should appear on the left side of the screen.
 
 ```blocks
 enum SpriteKind {
@@ -25,7 +25,7 @@ myCorg = corgi.create(SpriteKind.Player)
 
 ## Step 2
 
-Now, let's make our sprite figure move left and right with the controller arrow keys. Get a ``||corgi:make myCorg move left and right with arrow keys||`` and a ``||corgi:make myCorg jump if up arrow key is pressed||`` from ``||corgi:Corgi||`` and put it under ``||corgi:set myCorg to||``.
+Now, let's make our sprite figure move left and right with the controller arrow keys. Get a ``||corgi:make myCorg move left and right with arrow keys||`` and a ``||corgi:make myCorg jump if up arrow key is pressed||`` from ``||corgi:Corgi||`` and put it under ``||variables:set myCorg to||``.
 
 ```blocks
 enum SpriteKind {
@@ -39,7 +39,7 @@ myCorg.horizontalMovement()
 
 ## Step 3
 
-The corgi is a bit boring when it's image doesn't change; to fix this, get a ``||corgi:change image when myCorg is moving||`` block from ``||corgi:Corgi||`` and put it under ``||corgi:set myCorg to||``.
+The corgi is a bit boring when it's image doesn't change; to fix this, get a ``||corgi:change image when myCorg is moving||`` block from ``||corgi:Corgi||`` and put it under ``||variables:set myCorg to||``.
 
 ```blocks
 enum SpriteKind {
@@ -179,7 +179,7 @@ scene.setTile(4, img`
 
 ## Step 7
 
-To make it so the camera follows the corgi as it leaves the screen, add ``||corgi:make camera follow myCorg left and right||`` from ``||corgi:Corgi||`` and put it under ``||corgi:set myCorg to||``.
+To make it so the camera follows the corgi as it leaves the screen, add ``||corgi:make camera follow myCorg left and right||`` from ``||corgi:Corgi||`` and put it under ``||variables:set myCorg to||``.
 
 ```blocks
 enum SpriteKind {
@@ -227,7 +227,6 @@ scene.setTile(4, img`
 At the end of the tile map, draw a column that is a different color than the current walls. Set that tile to be a wall like you did in step 4.
 
 ![Add winning event](/static/tutorials/simple-extensions/add-goal.png)
-
 
 ```blocks
 enum SpriteKind {
