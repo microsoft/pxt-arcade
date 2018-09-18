@@ -1,9 +1,5 @@
 # Getting started
 
-```package
-corgio
-```
-
 ## Introduction @unplugged
 
 Extensions in @boardname@ allow users to easily develop and share portions of their code others. In this tutorial, you will be using the ``||corgi:corgio||`` extension to create a simple platformer. In this example the extension will be automatically loaded: in other projects, you can load the extension as shown below.
@@ -358,3 +354,7 @@ scene.setTile(7, img`
 ## Complete
 
 Congratulations, your platformer is complete! See if you can get to the wall at the end of the level.
+
+```package
+corgio
+```
