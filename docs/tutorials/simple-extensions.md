@@ -1,8 +1,8 @@
-# Getting started
+# Simple Extensions
 
 ## Introduction @unplugged
 
-Extensions in @boardname@ allow users to easily develop and share portions of their code others. In this tutorial, you will be using the ``||corgi:corgio||`` extension to create a simple platformer. In this example the extension will be automatically loaded: in other projects, you can load the extension as shown below.
+Extensions in @boardname@ allow users to easily develop and share portions of their code others. In this tutorial, you will be using the ``||corgi:corgio||`` extension to create a simple platformer. In this example the extension is automatically loaded: in other projects, you can load the extension as shown below.
 
 ![Adding Corgio Extension](/static/tutorials/simple-extensions/add-corgio.gif)
 
@@ -220,7 +220,7 @@ scene.setTile(4, img`
 
 ## Step 8
 
-At the end of the tile map, draw a column that is a different color than the current walls. Set that tile to be a wall like you did in step 4.
+At the end of the tile map, draw a column that is a different color than the current walls. Set that tile to be a wall just like you did in step 4.
 
 ![Add winning event](/static/tutorials/simple-extensions/add-goal.png)
 
@@ -356,5 +356,5 @@ scene.setTile(7, img`
 Congratulations, your platformer is complete! See if you can get to the wall at the end of the level.
 
 ```package
-corgio
+corgio=github:jwunderl/pxt-corgio#master
 ```
