@@ -356,5 +356,5 @@ scene.setTile(7, img`
 Congratulations, your platformer is complete! See if you can get to the wall at the end of the level.
 
 ```package
-corgio=github:jwunderl/pxt-corgio#master
+corgio
 ```
