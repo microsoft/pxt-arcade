@@ -19,11 +19,18 @@
   "url": "/tutorials/simple-extensions",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/simple-extensions.gif"
+}, {
+  "name": "Happy Flower",
+  "description": "Create a flower that exudes happiness",
+  "url": "/tutorials/happy-flower",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/happy-flower.gif"
 }
 ]
 ```
 
 ## See Also
 
-[Simple Maze](/tutorials/simple-maze)
-[Simple Extensions](/tutorials/simple-extensions)
+[Simple Maze](/tutorials/simple-maze),
+[Simple Extensions](/tutorials/simple-extensions),
+[Happy Flower](/tutorials/happy-flower)
