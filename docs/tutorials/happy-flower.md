@@ -38,7 +38,7 @@ mySprite = sprites.create(img`
 
 ## Step 2
 
-Find ``||game:on update every 500 ms||`` in ``||game:Game||``, and drag it onto the game area.
+Get a ``||game:on update every 500 ms||`` from ``||game:Game||`` and drag it onto the editor workspace.
 
 ```blocks
 enum SpriteKind {
@@ -71,7 +71,7 @@ game.onUpdateInterval(500, function () {
 
 ## Step 3
 
-Find ``||variables:set projectile to||`` in ``||sprites:Sprites||``. Drag it into the ``||game:on game update every 500 ms||``.
+Find ``||variables:set projectile to||`` in ``||sprites:Sprites||``. Pull it out and put it into the ``||game:on game update every 500 ms||``.
 
 ```blocks
 enum SpriteKind {
@@ -121,7 +121,7 @@ game.onUpdateInterval(500, function () {
 
 ## Step 4
 
-Click on the grey box in ``||variables:set projectile to||`` and create a small smiley face.
+Click on the grey box in ``||sprites:projectile||`` and make a small smiley face.
 
 ```blocks
 enum SpriteKind {
@@ -163,8 +163,7 @@ game.onUpdateInterval(500, function () {
 
 ## Step 5
 
-Find ``||Math:pick random 0 to 10||``. Change the `0` to `-25`, and the `10` to `25`. Place it in ``||sprites:vx||`` in ``||sprites:projectile||``.
-
+Go get a ``||Math:pick random 0 to 10||``. Place it in the ``||sprites:vx||`` slot of ``||sprites:projectile||``. Change the `0` to `-25` and the `10` to `25`. 
 ```blocks
 enum SpriteKind {
     Player,
@@ -205,7 +204,7 @@ game.onUpdateInterval(500, function () {
 
 ## Step 6
 
-Duplicate the ``||Math:pick random -25 to 25||`` block and place it in ``||sprites:vy||`` in ``||sprites:projectile||``.
+Duplicate the ``||Math:pick random -25 to 25||`` block and place it in the ``||sprites:vy||`` slot of ``||sprites:projectile||``.
 
 ```blocks
 enum SpriteKind {
@@ -291,7 +290,7 @@ game.onUpdateInterval(500, function () {
 
 ## Step 8 @fullscreen
 
-Find ``||sprites:set mySprite x (horizontal position) to 0||`` in ``||sprites:Sprites||``. Change ``||sprites:x (horizontal position)||`` to ``||sprites:lifespan||``, and `0` to `2000`. Place it after ``||variables:set projectile to||`` and change ``||variables:mySprite||`` to ``||variables:projectile||``.
+Find the ``||sprites:set mySprite x (horizontal position) to 0||`` in ``||sprites:Sprites||``, place it after ``||variables:set projectile to||``, and change ``||variables:mySprite||`` to ``||variables:projectile||``. Change ``||sprites:x (horizontal position)||`` to ``||sprites:lifespan||`` and set `0` to `2000`.
 
 ![Adding life span](/static/tutorials/happy-flower/life-span.gif)
 
@@ -337,7 +336,7 @@ game.onUpdateInterval(500, function () {
 
 ## Step 9
 
-Find ``||sprites:set mySprite x (horizontal position) to 0||`` in ``||sprites:Sprites||``. Change ``||sprites:x (horizontal position)||`` to ``||sprites:z (depth)||``, and `0` to `-1`. Place it after ``||variables:set projectile to||`` and change ``||variables:mySprite||`` to ``||variables:projectile||``.
+Get another ``||sprites:set mySprite x (horizontal position) to 0||`` in ``||sprites:Sprites||``, place it after ``||variables:set projectile to||``, and change ``||variables:mySprite||`` to ``||variables:projectile||``. Change ``||sprites:x (horizontal position)||`` to ``||sprites:z (depth)||`` and set `0` to `-1`.
 
 ```blocks
 enum SpriteKind {
@@ -382,4 +381,4 @@ game.onUpdateInterval(500, function () {
 
 ## Complete
 
-Congratulations, your happy flower is complete! It will now spread happiness to all around it.
+Congratulations, your happy flower is complete! It will now spread happiness all around.
