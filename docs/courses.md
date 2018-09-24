@@ -10,7 +10,7 @@ Structured courses for teaching computer science in the classroom.
 [
 {
     "name": "Intro to CS",
-    "description": "A semester length computer science course for middle school grades 6-8",
+    "description": "A semester length computer science course for beginning coders",
     "url":"/courses/csintro"
 }, {
     "name": "Advanced Blocks",

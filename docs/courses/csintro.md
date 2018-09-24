@@ -42,8 +42,8 @@ This course is currently in beta - this means that it is likely to have bugs and
 
 ### [Orientation](/courses/csintro/orientation)
 
-* [Birthday Algorithm](/courses/csintro/orientation/birthday-algorithm)
 * [Orientation to Makecode](/courses/csintro/orientation/makecode-orientation)
+* [Birthday Algorithm](/courses/csintro/orientation/birthday-algorithm)
 * [Sprites](/courses/csintro/orientation/sprites)
 * [Unplugged: Rock Paper Scissors](/courses/csintro/orientation/unplugged)
 * [Variable Math](/courses/csintro/orientation/variable-math)

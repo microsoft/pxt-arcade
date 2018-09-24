@@ -6,8 +6,8 @@ This section serves as a quick introduction to the @boardname@ environment, and 
 
 ## Lessons
 
-* [Birthday Algorithm](/courses/csintro/orientation/birthday-algorithm)
 * [Orientation to Makecode](/courses/csintro/orientation/makecode-orientation)
+* [Birthday Algorithm](/courses/csintro/orientation/birthday-algorithm)
 * [Sprites](/courses/csintro/orientation/sprites)
 * [Unplugged: Rock Paper Scissors](/courses/csintro/orientation/unplugged)
 * [Variable Math](/courses/csintro/orientation/variable-math)

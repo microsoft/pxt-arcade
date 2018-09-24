@@ -178,6 +178,28 @@ Make a new story using characters and the ``||sprites:say||`` block. These can b
 5. Use ``||sprites:say||`` to make the character say something unique
 6. Complete steps 1-5 two more times, creating a total of **three** unique characters
 
+## Concept: Gathering Feedback
+
+Gathering feedback from peers is an important part of Software Development. This allows for the developer to **explain** what they intend for their code to do to someone else, and identify any bugs or issues it may cause before the code gets released. 
+
+## Student Task #2: Code Review
+
+Gather feedback on the story that was crafted for task #1. Do this with another student, a parent, or whoever else you are working on this code with.
+
+1. Before showing the code you wrote, give a short description of what the story is meant to be about
+2. Show the code, and give them time to review what you wrote
+3. Ask for feedback on what you did well, and what could need clarifying in the game
+
+### ~hint
+
+If you can't think of questions to ask, here are a few to get started:
+
+* Did the story come across the same way that I described it?
+* Did the images of the sprites look like the characters they were supposed to be?
+* Could you read all of the things that the sprite said?
+
+### ~
+
 ## What did we learn?
 
 1. What is an advantage to making your story on a computer rather than on a piece of paper?
