@@ -24,6 +24,10 @@ This course is currently in beta - this means that it is likely to have bugs and
     "name": "Loops",
     "url": "/courses/csintro/loops",
     "imageUrl": "/static/courses/csintro/loops.gif"
+}, {
+    "name": "Final Project",
+    "url": "/courses/csintro/final-project",
+    "imageUrl": "/static/courses/csintro/final-project.gif"
 }
 ]
 ```

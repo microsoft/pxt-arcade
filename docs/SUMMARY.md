@@ -51,6 +51,7 @@
             * [Projectiles from Sprites](/courses/csintro/loops/projectile-from)
             * [Physics](/courses/csintro/loops/physics)
             * [Project](/courses/csintro/loops/project)
+        * [Final Project](/courses/csintro/final-project)
     * [Advanced Blocks](/courses/advanced-blocks)
         * [Functions](/courses/advanced-blocks/functions)
             * [Unplugged: Making a Sandwich](/courses/advanced-blocks/functions/unplugged)
