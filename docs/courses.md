@@ -7,13 +7,21 @@ A collection of courses and tutorials built for the @boardname@.
 Structured courses for teaching computer science in the classroom.
 
 ```codecard
-[{
-  "name": "Intro to CS",
-  "description": "A semester length computer science course for middle school grades 6-8",
-  "url":"/courses/csintro"
-}]
+[
+{
+    "name": "Intro to CS",
+    "description": "A semester length computer science course for middle school grades 6-8",
+    "url":"/courses/csintro"
+},
+{
+    "name": "Advanced Blocks",
+    "description": "A semester length computer science course for middle school grades 6-8",
+    "url:"/courses/advanced-blocks"
+}
+]
 ```
 
 ## See also
 
-[Intro to CS](/courses/csintro)
+[Intro to CS](/courses/csintro),
+[Advanced Blocks](/courses/advanced-blocks)
