@@ -7,7 +7,8 @@ This course is currently in beta - this means that it is likely to have bugs and
 ### ~
 
 ```codecard
-[{
+[
+{
     "name": "Orientation",
     "url": "/courses/csintro/orientation",
     "imageUrl": "/static/courses/csintro/orientation.gif"
