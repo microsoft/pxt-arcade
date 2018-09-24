@@ -17,4 +17,20 @@ It is a good idea to start the game as a MVP (minimum viable project) to demonst
 >* sprite physics
 
 * Choose **two** sections from the course, and use at least one additional concept from each
-* For each of the above concepts, write a short sentence on how it allows your game to be more interesting or challenging for the player
+* For each of the above concepts, write a short sentence on how it allows your game to be more interesting or challenging for the player. Focus on the **Design Decisions** you made; what about the way you used the blocks made the game more appealing?
+
+
+### ~hint
+
+## Group Option
+
+Set up for working in a team
+
+* Each member of the group should develop 2-3 MVP games to generate ideas
+* Discuss each MVP game as a group: identify which parts of the games should be kept around for the final project
+* As a group, build an MVP for the final project game
+* Identify different tasks that need to be completed to finish the game, and have each member of the group handle one task at a time
+* At the end of each day, discuss as a group how the tasks are progressing. If a task is more complicated than expected, try to identify solutions as a group
+* When all tasks are complete, combine each member's work as a group into a complete final game
+
+### ~
