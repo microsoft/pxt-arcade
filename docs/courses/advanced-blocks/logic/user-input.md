@@ -1,8 +1,8 @@
 # Activity: User Input and String Logic
 
-Logical expressions like ``||logic:if||`` and ``||logic:else||`` can be used beyond comparing numeric values. Data type values (such as Strings) can be compared and used to change the way the programs we write behave depending on the different conditions.
+Logical expressions like ``||logic:if||`` and ``||logic:else||`` can be used for much more than comparing numeric values. Data type values (such as Strings) can be compared and used to change the way the programs we write behave depending on the different conditions.
 
-One major example of this can be found in some of the earliest computer games: text-based adventure games. These rely heavily on crafting a story, and having the player interact with this story by prompting them with questions and identifying what the user gives back as a response.
+Some of the earliest computer games, text-based adventure games, used only text answers to have the player interact with the story. The game prompts with a question and calculates what response to give the user.
 
 In this activity, students will:
 * ``||game:ask||``
@@ -27,21 +27,21 @@ if (game.ask("Do you want to win?")) {
 }
 ```
 
-This is a fairly simple game - you press ``||controller:A||`` to win, or ``||controller:B||`` to do nothing. However, it does illustrate two important concepts:
+In this simple game, the only options are to press ``||controller:A||`` to win, or ``||controller:B||`` to do nothing. This illustrates two important concepts:
 
->* There are **built in** methods that return boolean values, allowing us to easily create logical tests in our code.
->* These tests can be based off user input - in this case, which button the user pressed.
+>* **Built in** methods can return boolean values, allowing us to easily create logical tests in our code.
+>* Tests can be based off user input - in this case, which button the user pressed.
 
 ## Student Task #1: Option for failure!
 
 1. Start with the code from example #1
-2. Add an ``||logic:else||`` branch so that there is a possibility for failure - use ``||game:splash||`` to say "You lost!"
-3. Inside the ``||logic:else||`` branch, add an ``||logic:if||`` statement with a ``||game:ask||`` that asks "So do you want to lose?"
+2. Add an ``||logic:else||`` branch - use ``||game:splash||`` to say "Bye"
+3. Add an ``||logic:else if||`` statement which provides an "option for failure." Use a ``||game:ask||`` that asks "Do you want to lose?"
 4. Make sure the player only gets the "You lost!" message if they respond "OK" to the prompt from step 3
 
 ## Concept: Text input
 
-Beyond asking questions with a binary response (for example, "yes or no" or "true or false"), we can request input from users and keep track of that to enhance the player's experience. We could ask for a user name and display the name in later in the game, such as in a leader board or a welcome message as in example #2.
+Beyond asking questions with a binary response (for example, "yes or no" or "true or false"), we can request input from users and keep track of that information to enhance the player's experience. We could ask for a user name and display the name in later in the game, such as in a leader board or a welcome message as in example #2.
 
 ## Example #2: Taking in a user name
 
@@ -59,12 +59,13 @@ Prompts for names, like above, allows games to be more personal. The prompts can
 ## Student Task #2: Making a (secret?) password
 
 1. Start with the code from example #2.
-2. Create a new variable, and ``||game:ask for string||`` with the prompt "What is your password?" to find a word to store in that new variable
-3. Create an ``||logic:if else||`` block
-4. Use the ``||logic:=||`` block to compare the 'password' the user inputted with the string "Arcade"
-5. If those two are the same, ``||game:splash||`` "login successful"
-6. Otherwise, ``||game:splash||`` "login failed"
-7. **Challenge:** use the ``||logic:or||`` block to also compare your stored password with "\*\*\*\*\*\*\*" and accept the password if the user's input is equal to **either** "\*\*\*\*\*\*\*" **or** "Arcade"
+2. Create a new variable (`input`)
+3. Set `input` to ``||game:ask for string||`` with the prompt text "What is your password?" 
+4. Create an ``||logic:if else||`` block
+5. Use the ``||logic:=||`` block to compare the 'password' from user input with the string "Arcade"
+6. If those two are the same, ``||game:splash||`` "login successful"
+7. Otherwise, ``||game:splash||`` "login failed"
+8. **Challenge:** use the ``||logic:or||`` block to also compare your stored password with "\*\*\*\*\*\*\*" and accept the password if the user's input is equal to **either** "\*\*\*\*\*\*\*" **or** "Arcade"
 
 ## What did we learn?
 

@@ -2,9 +2,9 @@
 
 In the previous lessons, we saw how ``||logic:if||`` and ``||logic:else||`` statements allow us to write code that can handle different situations by making comparisons between different numbers. 
 
-Comparison statements are centered around **Boolean logic**, with the conditions evaluating to either ``||logic:true||`` or ``||logic:false||``. 
+Comparison statements are centered around **Boolean Logic**, with the conditions evaluating to either ``||logic:true||`` or ``||logic:false||``. 
 
-These expressions values, and can be stored and used as `boolean` variables. Whenever we see the term boolean, it means we have something that can evaluate to ``||logic:true||`` or ``||logic:false||``.
+The values of these expressions are stored and used as `boolean` variables. Whenever we see the term boolean, it means we have something that can evaluate to ``||logic:true||`` or ``||logic:false||``.
 
 In these activities students will work with:
 * Boolean flags and values (``||logic:true||`` and ``||logic:false||``)
