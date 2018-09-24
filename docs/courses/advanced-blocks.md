@@ -10,23 +10,23 @@ This course is currently in beta - this means that it is likely to have bugs and
 [
 {
     "name": "Functions",
-    "url": "/courses/csintro/functions",
+    "url": "/courses/advanced-blocks/functions",
     "imageUrl": "/static/courses/advanced-blocks/functions.gif"
 }, {
     "name": "Tile Map",
-    "url": "/courses/csintro/tilemap",
+    "url": "/courses/advanced-blocks/tilemap",
     "imageUrl": "/static/courses/advanced-blocks/tilemap.gif"
 }, {
     "name": "Logic",
-    "url": "/courses/csintro/logic",
+    "url": "/courses/advanced-blocks/logic",
     "imageUrl": "/static/courses/advanced-blocks/logic.gif"
 }, {
     "name": "Arrays",
-    "url": "/courses/csintro/arrays",
+    "url": "/courses/advanced-blocks/arrays",
     "imageUrl": "/static/courses/advanced-blocks/arrays.gif"
 }, {
     "name": "Final Project",
-    "url": "/courses/csintro/final-project",
+    "url": "/courses/advanced-blocks/final-project",
     "imageUrl": "/static/courses/advanced-blocks/final-project.gif"
 }
 ]
