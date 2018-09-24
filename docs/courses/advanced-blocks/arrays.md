@@ -13,4 +13,4 @@ Arrays are **data structures** that allow for users to store an indefinite amoun
 * [Project](/courses/advanced-blocks/arrays/project)
 
 
-[CS Intro Home](/courses/advanced-blocks)
+[Advanced Blocks Home](/courses/advanced-blocks)

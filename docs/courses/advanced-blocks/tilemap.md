@@ -12,4 +12,4 @@ Tile maps allow you to develop levels, and define playspaces for the characters 
 * [Project](/courses/advanced-blocks/tilemap/project)
 
 
-[CS Intro Home](/courses/advanced-blocks)
+[Advanced Blocks Home](/courses/advanced-blocks)

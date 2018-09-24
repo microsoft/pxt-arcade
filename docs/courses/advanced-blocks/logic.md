@@ -14,4 +14,4 @@ Logical operations allow the user to create behaviors that respond to the changi
 * [Project](/courses/advanced-blocks/logic/project)
 
 
-[CS Intro Home](/courses/advanced-blocks)
+[Advanced Blocks Home](/courses/advanced-blocks)

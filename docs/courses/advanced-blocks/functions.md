@@ -13,4 +13,4 @@ Functions serve as a powerful tool to clarify the intent of your code, and to ma
 * [Project](/courses/advanced-blocks/functions/project)
 
 
-[CS Intro Home](/courses/advanced-blocks)
+[Advanced Blocks Home](/courses/advanced-blocks)
