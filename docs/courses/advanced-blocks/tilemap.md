@@ -1,7 +1,5 @@
 # Tilemap
 
-![Tilemap](/static/courses/advanced-blocks/tilemap.gif)
-
 Tile maps allow you to develop levels, and define playspaces for the characters in your games to roam around.
 
 ## Lessons

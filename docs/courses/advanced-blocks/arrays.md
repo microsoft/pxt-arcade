@@ -1,7 +1,5 @@
 # Arrays
 
-![Arrays](/static/courses/advanced-blocks/arrays.gif)
-
 Arrays are **data structures** that allow for users to store an indefinite amount of related information.
 
 ## Lessons

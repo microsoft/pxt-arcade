@@ -1,7 +1,5 @@
 # Loops
 
-![Loops](/static/courses/csintro/loops.gif)
-
 Loops serve as a powerful tool, both to reduce redundancy in the code we write, and to implement behaviors that must repeat indefinitely.
 
 ```codecard

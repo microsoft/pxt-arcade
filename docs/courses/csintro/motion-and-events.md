@@ -1,7 +1,5 @@
 # Motion and Events
 
-![Motion and Events](/static/courses/csintro/motion-and-events.gif)
-
 Motion and Events introduce the ability to control how the games respond to different conditions, 
 
 ```codecard

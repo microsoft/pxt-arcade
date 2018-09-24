@@ -1,7 +1,5 @@
 # Logic
 
-![Logic](/static/courses/advanced-blocks/logic.gif)
-
 Logical operations allow the user to create behaviors that respond to the changing conditions within a game.
 
 ## Lessons
