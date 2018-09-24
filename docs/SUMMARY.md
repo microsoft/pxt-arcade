@@ -35,6 +35,7 @@
             * [Coordinate Walker](/courses/csintro/sprites/coordinate-walker)
             * [Collage](/courses/csintro/sprites/collage)
             * [Hello Sprite](/courses/csintro/sprites/hello-sprite)
+            * [Characters and Stories](/courses/csintro/sprites/characters)
         * [Motion and Events](/courses/csintro/motion-and-events)
             * [Unplugged: Using a Controller](/courses/csintro/motion-and-events/unplugged)
             * [Sprite Motion Event](/courses/csintro/motion-and-events/sprite-motion-event)

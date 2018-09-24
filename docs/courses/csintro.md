@@ -55,6 +55,7 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Coordinate Walker](/courses/csintro/sprites/coordinate-walker)
 * [Collage](/courses/csintro/sprites/collage)
 * [Hello Sprite](/courses/csintro/sprites/hello-sprite)
+* [Characters and Stories](/courses/csintro/sprites/characters)
 
 ### [Motion and Events](/courses/csintro/motion-and-events)
 
