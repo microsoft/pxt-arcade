@@ -21,8 +21,8 @@ Loops serve as a powerful tool, both to reduce redundancy in the code we write, 
     "imageUrl": "/static/courses/csintro/loops/projectiles.gif"
 }, {
     "name": "Projectiles from Sprites",
-    "url": "/courses/csintro/loops/projectiles-from",
-    "imageUrl": "/static/courses/csintro/loops/projectiles-from.gif"
+    "url": "/courses/csintro/loops/projectile-from",
+    "imageUrl": "/static/courses/csintro/loops/projectile-from.gif"
 }, {
     "name": "Physics",
     "url": "/courses/csintro/loops/physics",
