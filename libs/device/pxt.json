@@ -6,6 +6,8 @@
         "ns.ts",
         "sprites.castle.jres",
         "sprites.castle.ts",
+        "sprites.duck.jres",
+        "sprites.duck.ts",
         "sprites.space.jres",
         "sprites.space.ts",
         "sprites.vehicle.ts",
