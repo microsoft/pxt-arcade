@@ -1,6 +1,6 @@
 # Activity: Sprite Motion and Events 
 
-Motion is the change in position. To get sprites moving, we will change their position using a game pad event. The game pad has ``||controller:controller events||`` for the `up`, `down`, `left` and `right` buttons. 
+Motion is the change in position. To get sprites moving, we will change their position using a game pad event. The game pad has ``||controller:controller events||`` for the ``||controller:up||``, ``||controller:down||``, ``||controller:left||`` and ``||controller:right||`` buttons. 
 
 We can use those events to change sprite location, and to make the sprite move. We will also see how to give a sprite a velocity. Velocity is the rate of change of our position - in real life, this is often measured as kilometers per hour or miles per hour. 
 
@@ -63,8 +63,8 @@ agent = sprites.create(img`
 1. Start with example 1 (motionLR, or your own similar code)
 2. Add additional code to control the up and down (`Y` direction) motions using the controller 
 3. **Challenges:**
-    * Add an `A` button event to move the sprite to the center of the game screen
-    * Add a `B` button event to make the sprite "jump" (move) 15 pixels
+    * Add an ``||controller:A||`` button event to move the sprite to the center of the game screen
+    * Add a ``||controller:B||`` button event to make the sprite "jump" (move) 15 pixels
 
 ## Concept: Sprite Motion Velocity
 
@@ -119,8 +119,8 @@ agent = sprites.create(img`
 1. Start with example #2 ("velocityLR") or your own similar code
 2. Add additional code to control the up and down (`Y` direction) velocities using the controller 
 3. **Challenges:**
-    * Add an `A` button event move the sprite to the center of the game screen
-    * Add a `B` button event to stop the sprite (all velocities = 0)
+    * Add an ``||controller:A||`` button event move the sprite to the center of the game screen
+    * Add a ``||controller:B||`` button event to stop the sprite (all velocities = 0)
 
 ## Motion: Shorter ``||sprites:dx||``/``||sprites:dy||`` approach
 
@@ -252,13 +252,13 @@ let mySprite: Sprite = sprites.create(img`
 ## Student Task #4: Image Flip with motion
 
 1. Start with example #4 above or your own similar code
-2. Make your own image move using the `up`, `down`, `left`, `right` buttons on the controller
-3. Use `A` button to ``||images:flip vertically||`` to flip the image upside down.
+2. Make your own image move using the ``||controller:up||``, ``||controller:down||``, ``||controller:left||``, ``||controller:right||`` buttons on the controller
+3. Use ``||controller:A||`` button to ``||images:flip vertically||`` to flip the image upside down.
 
 ## What did we learn? 
 
 1. Describe how events can be used to run code using an example.
 2. Describe the difference between changing position and changing velocity.
-3. **Challenge** When using ``||images:flip||``, the sprite is **not** what is flipped. What is actually flipped? Explain how you know.
+3. **Challenge:** when using ``||images:flip||`` in task #4, ``||variables:mySprite||`` is **not** what is flipped. What is actually flipped? Explain how you know.
 
 ### [Teacher Material](/courses/csintro/about/teachers)

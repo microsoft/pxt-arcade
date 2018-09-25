@@ -37,7 +37,7 @@ ball = sprites.createProjectile(img`
 `, -50, 0, SpriteKind.Ball, mySprite)
 ```
 
-The new option can be added to any projectile block by clicking the `+` button to extend the block.
+The new option can be added to any projectile block by clicking the ``+`` button to extend the block.
 
 ### Example #1: Throw ball
 
@@ -137,7 +137,7 @@ There is not all that much to this code; it spawns a cloud, which slowly moves a
 
 ## Example #2b: Cloud projectile that emits projectile rain
 
-Review the code carefully for the use of ``||sprites:ghost on||`` and ``||sprites:projectile -- from sprite||`` for the raindrop projectiles. 
+Review the code carefully for the use of ``||sprites:ghost on||`` and ``||sprites:projectile --  from sprite||`` for the raindrop projectiles. 
 
 ```blocks
 enum SpriteKind {
@@ -337,12 +337,12 @@ Make a projectile go across the bottom of the screen that will give off differen
 1. Create a projectile that moves across the bottom of the screen
 2. Create a new projectile that floats from the original bottom projectile
 3. Use ``||loops:loops||`` or an ``||game:on update||`` event to create more of the projectile from part 2
-4. **Challenge**: as the projectiles "float" up from the bottom of the game screen, give them a small random X velocity so they move at a slight angle to the left or right
+4. **Challenge:** as the projectiles "float" up from the bottom of the game screen, give them a small random X velocity so they move at a slight angle to the left or right
 
 ## What did we learn?
 
 1. How can we make a sprite that came from a sprite block act like a projectile sprite? Explain the block code to use.
 2. Give examples of using ghost and/or on overlap events in a game to make a projectile: decoration, laser beam, coin (reward). Explain each. 
-3. **Challenge:** Create a hypothesis on why making projectiles have ``||sprite:ghost on||`` might make your game run faster than leaving it off.
+3. **Challenge:** create a hypothesis on why making projectiles have ``||sprites:ghost on||`` might make your game run faster than leaving it off.
 
 ### [Teacher Material](/courses/csintro/about/teachers)
