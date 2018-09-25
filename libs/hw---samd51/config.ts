@@ -28,14 +28,14 @@ namespace config {
     export const PIN_D11 = DAL.PA21;
     export const PIN_D12 = DAL.PA23;
 
-    export const PIN_BTN_LEFT = PIN_D12;
-    export const PIN_BTN_UP = PIN_D11;
-    export const PIN_BTN_RIGHT = PIN_D10;
-    export const PIN_BTN_DOWN = PIN_D9;
+    export const PIN_BTN_LEFT = PIN_D11;
+    export const PIN_BTN_UP = PIN_D10;
+    export const PIN_BTN_RIGHT = PIN_D9;
+    export const PIN_BTN_DOWN = PIN_D12;
 
     export const PIN_BTN_A = PIN_SCL;
-    export const PIN_BTN_B = PIN_SDA;
-    export const PIN_BTN_MENU = PIN_D7;
+    export const PIN_BTN_B = PIN_D7;
+    export const PIN_BTN_MENU = PIN_SDA;
 
     export const PIN_DISPLAY_CS = PIN_A2;
     export const PIN_DISPLAY_SCK = PIN_SCK;
@@ -47,8 +47,8 @@ namespace config {
 
     // it's really piezo speaker, not an amp
     export const PIN_SPEAKER_AMP = PIN_A0;
-
-    export const DISPLAY_CFG0 = 0x00000080;
+    
+    export const DISPLAY_CFG0 = 0x1000080;
     export const DISPLAY_CFG1 = 0x000603;
 
     export const DISPLAY_CFG2 = 24; // MHz
