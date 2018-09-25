@@ -23,7 +23,7 @@ https://youtu.be/GsvBCViybPs
 
 1. Click the "Space Destroyer" example game under the "Blocks Games" category
 2. Select "Open Example"
-3. Press left and right on the direction pad to move the space ship, and press the `A` button to fire the laser
+3. Press left and right on the direction pad to move the space ship, and press the ``||controller:A||`` button to fire the laser
 4. Pay careful attention to what happens when the laser collides with an asteroid
 
 ### New Project

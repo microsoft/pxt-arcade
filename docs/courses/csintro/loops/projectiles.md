@@ -87,7 +87,7 @@ This modified version adds in an event that triggers when the projectile is dest
 
 ``||sprites:auto destroy||`` is available for all sprites using the ``||sprite:set sprite auto destroy on||`` flag, but projectiles have it added in for you automatically. 
 
-If projectiles are not provided a name of a sprite to start from (by pressing the `+` button on the block to show the option), they will be created either in the middle of the screen if the velocities in the x and y direction are both set to 0, or from the side of the screen opposite their initial speed otherwise (so that they can move across the screen).
+If projectiles are not provided a name of a sprite to start from (by pressing the ``+`` button on the block to show the option), they will be created either in the middle of the screen if the velocities in the x and y direction are both set to 0, or from the side of the screen opposite their initial speed otherwise (so that they can move across the screen).
 
 ## Student Task #1: Make a ball fall down
 
@@ -281,7 +281,7 @@ projectile = sprites.createProjectile(img`
 1. Create the example code above 
 2. Modify the code to make the sprite start from the upper right corner by default and move toward the lower left corner 
 3. Place the code in a loop to repeat 4 times with a short pause between loop iterations
-4. **Challenge**: make sprites originate from each of the 4 corners inside the loop
+4. **Challenge:** make sprites originate from each of the 4 corners inside the loop
 
 ## What did we learn?
 

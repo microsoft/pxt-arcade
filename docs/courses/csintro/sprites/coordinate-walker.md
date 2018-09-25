@@ -57,7 +57,7 @@ game.onUpdate(function () {
 })
 ```
 
-1. To check the location: run the program, and then press the `A` button on the game pad (or space bar key on keyboard). This will display the starting location's `X` and `Y` coordinates
+1. To check the location: run the program, and then press the ``||controller:A||`` button on the game pad (or space bar key on keyboard). This will display the starting location's `X` and `Y` coordinates
     * Note the two coordinate values for `(X, Y)`
 2. Move the sprite: click on the game pad (or use keyboard `WASD` keys) to move the sprite. Check the coordinates after moving
 
@@ -99,9 +99,9 @@ Challenge a peer to bring the sprite back into view after you move the sprite of
 
 1. **Partner 1:** move the walker sprite off past the area of the visible game screen (not too far)
 2. **Partner 2:** return the sprite to the screen using only two directions of the game controls
-    * use the game pad `A` button to get the *hidden* sprite coordinates
-    * pick 1: `up` or `down` `Y` direction
-    * pick 1: `left` or `right`  `X` direction
+    * use the game pad ``||controller:A||`` button to get the *hidden* sprite coordinates
+    * pick 1: ``||controller:up||`` or ``||controller:down||`` `Y` direction
+    * pick 1: ``||controller:left||`` or ``||controller:right||``  `X` direction
     * using only the controller pad keys chosen bring the sprite back onto the screen
 
 ### [Teacher Material](/courses/csintro/about/teachers)
