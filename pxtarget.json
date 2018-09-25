@@ -141,6 +141,7 @@
         "invertedMenu": true,
         "showHomeScreen": true,
         "highContrast": true,
+        "print": true,
         "hasAudio": true,
         "allowPackageExtensions": true,
         "homeScreenHero": "./static/hero.png",
