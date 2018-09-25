@@ -40,9 +40,10 @@ if (info.highScore() > 5) {
 ## Concept: Comparison Operators
 
 When we make comparisons, we have two numbers, in a specific order, and what is know as a comparison operator. A comparison operator allows us to specify what type of comparison we are doing. Some basic ones are:
-* `>` Greater than: Determines whether the first value given represents a quantity that is larger than the second value
-* `<` Less than: Determines whether the first value given represents a quantity that is smaller than the second value
-* `=` Equal to: Determines whether the two values given represent the same quantity
+
+* ``||logic:>||`` (Greater than): determines whether the first value given represents a quantity that is larger than the second value
+* ``||logic:<||`` (Less than): determines whether the first value given represents a quantity that is smaller than the second value
+* ``||logic:=||`` (Equal to): determines whether the two values given represent the same quantity
 
 ### Example #1: Less than 
 
@@ -54,7 +55,7 @@ https://youtu.be/s7sFOn7xXC0
 2. Review the code that uses comparisons
 3. Look at how it uses ``||logic:if||`` logic and a less than comparison to modify the game
 
-https://makecode.com/_YERAiggVK6mH
+[Less Than Example](https://makecode.com/_YERAiggVK6mH)
 
 ```blocks
 enum SpriteKind {
@@ -151,7 +152,7 @@ https://youtu.be/EhRPChFc1Us
 2. Review the code that uses comparisons
 3. Look at how it uses ``||logic:if||`` logic and a greater than comparison to modify the game
 
-https://makecode.com/_3M85jR4tCAXA
+[Greater than example](https://makecode.com/_3M85jR4tCAXA)
 
 ```blocks
 enum SpriteKind {

@@ -185,13 +185,21 @@ game.onUpdateInterval(500, function () {
 
 Beyond just using a single boolean value, there are several ways in which we can combine these values. The most commonly used are ``||logic:and||`` and ``||logic:or||``. These are used similarly to the the use in English language; for example, the statement
 
-> If I have food and I am hungry, I will make lunch
+### ~hint
+
+>> If I have food and I am hungry, I will make lunch
+
+### ~
 
 means that if **both** conditions (there being food, and being hungry) are true, then lunch will be made. If either is false, though, no lunch will be made.
 
 Alternatively, the statement
 
-> If I need to buy milk or I need to buy eggs, I will go to the store
+### ~hint
+
+>> If I need to buy milk or I need to buy eggs, I will go to the store
+
+### ~
 
 means that if **either** condition is true, I will go to the store. If I don't need to buy milk and I also don't need to buy eggs, then I will not end up going to the store.
 
@@ -217,8 +225,6 @@ else                game.splash("false and false is false")
 1. Review the code below
 2. Create the sample code and run the code
 3. Identify which combinations of true or false evaluate to true, and which evaluate to false
-
-https://makecode.com/_3PWUwFdxC97c
 
 ```blocks
 if (true || true)   game.splash("true or true is true")

@@ -276,22 +276,22 @@ Now add a timer, and congratulate the player at the end of the game, giving them
 1. Create an event for when the countdown ends by using the ``||info:on countdown end||`` block
 2. Check to see if the player’s ``||info:score||`` is less than `20`. If it is, use a splash block to say “Beginner score of ” and then the player’s ``||info:score||``
 
-### ~hint
+    ### ~hint
 
-You can combine a string and a number to form a string using the ``||text:join||`` block.
+    You can combine a string and a number to form a string using the ``||text:join||`` block.
 
-### ~
+    ### ~
 
 3. Use an ``||logic:else||`` block to do the same for if the player’s ``||info:score||`` was greater than or equal to `20` but say “Pro score of ” and then the player’s ``||info:score||``
 4. Use a game over block to let the game know that it is over and that the player won
 
-### ~hint 
+    ### ~hint 
 
-By clicking the plus sign of a game over block, you can let the game know whether or not the player won. 
+    By clicking the plus sign of a game over block, you can let the game know whether or not the player won. 
 
-This will change the dialog shown on the game over screen. 
+    This will change the dialog shown on the game over screen. 
 
-### ~
+    ### ~
 
 5. **Challenge:** make the sprite have a shake or bump effect each time it has a say so can see when letter updates even when it is the same as the previous time.
 

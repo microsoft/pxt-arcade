@@ -34,4 +34,4 @@ If your opponent guesses a square that one of your ships occupy, then you say "H
 
 The winner is the player who sinks all of their opponent's ships.
 
-### [Teacher Material](/courses/advanced-blocks/about/teachers)
+### [Teacher Material](/courses/csintro/about/teachers)

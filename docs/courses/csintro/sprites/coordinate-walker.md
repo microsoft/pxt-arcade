@@ -72,12 +72,12 @@ Use `X` and/or `Y` in your answers
 
 Two dimensional game screen coordinates are represented by values for `X` and `Y` axis locations.
 
-![XY Coordinates](/static/courses/advanced-blocks/sprites/coordinates.png)
+![XY Coordinates](/static/courses/csintro/sprites/coordinates.png)
 
 1. Move to the sprite to the top edge of the screen
     * What is the `Y` coordinate at the top of the screen?
 
-![sprite at top edge of screen](/static/courses/advanced-blocks/sprites/coordinate-edge.png)
+        ![sprite at top edge of screen](/static/courses/csintro/sprites/coordinate-edge.png)
 
 2. Move to each of the corners and **map the coordinates** as a pair of X and Y values like `(X, Y)`
     * Restart the game. What are the coordinates at the start?
@@ -87,21 +87,21 @@ Two dimensional game screen coordinates are represented by values for `X` and `Y
     * **Record** what the coordinates at the **Top Left** corner are
     * **Record** what the Game Screen Dimensions (height by width) are
 
-![map the coordinates at the corners](/static/courses/advanced-blocks/sprites/coordinates-map.png)
+        ![map the coordinates at the corners](/static/courses/csintro/sprites/coordinates-map.png)
 
-Record the results from this task in a simple diagram like the one below.
+3. Record the results from this task in a simple diagram like the one below.
 
-![map the coordinates results](/static/courses/advanced-blocks/sprites/record-coordinates.png)
+    ![map the coordinates results](/static/courses/csintro/sprites/record-coordinates.png)
 
 ### Challenge: Bring an off-screen sprite back into view
 
 Challenge a peer to bring the sprite back into view after you move the sprite off screen.
 
 1. **Partner 1:** move the walker sprite off past the area of the visible game screen (not too far)
-2. **Partner 2**: return the sprite to the screen using only two directions of the game controls
+2. **Partner 2:** return the sprite to the screen using only two directions of the game controls
     * use the game pad `A` button to get the *hidden* sprite coordinates
     * pick 1: `up` or `down` `Y` direction
     * pick 1: `left` or `right`  `X` direction
     * using only the controller pad keys chosen bring the sprite back onto the screen
 
-### [Teacher Material](/courses/advanced-blocks/about/teachers)
+### [Teacher Material](/courses/csintro/about/teachers)

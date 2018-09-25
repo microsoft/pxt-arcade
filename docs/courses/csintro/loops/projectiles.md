@@ -192,7 +192,7 @@ d d d d d d d d
 
 ## Student Task #2a: Add vertical projectiles that move down the screen
 
-1. Start with the example above. Currently, it will spawn meteors of ``||sprites:Kind||`` ``||sprites:Enemy||`` that stay in random locations along the top of the screen
+1. Start with the example above. Currently, it will spawn meteors of ``||sprites:kind||`` ``||sprites:Enemy||`` that stay in random locations along the top of the screen
 2. Replace the ``||game:on update||`` with a ``||loops:repeat||`` loop in the ``||loops:on start||`` block
 3. Each time a projectile is created, add one (1) point to the score using the ``||info:change score by||`` block
 4. Modify the ``||sprite:create projectile||`` block so that each spawned meteor moves down the screen at a rate of 50

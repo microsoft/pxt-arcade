@@ -82,9 +82,9 @@ mySprite.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 
 1. Starting with code from example #2
 2. Add a ``||controller:on A button pressed||`` block
-3. Make the event code for the `A` button move a sprite to a new random position
-4. Add another sprite and make it move with the `B` button
-5. **Challenge:** make both sprites change position with the `A` button and make the `B` button give one of the sprites a random velocity (use small numbers that can be both positive and negative)
+3. Make the event code for the ``||controller:A||`` button move a sprite to a new random position
+4. Add another sprite and make it move with the ``||controller:B||`` button
+5. **Challenge:** make both sprites change position with the ``||controller:A||`` button, and make the ``||controller:B||`` button give one of the sprites a random velocity (use small numbers that can be both positive and negative)
 
 ### ~hint
 
@@ -106,7 +106,7 @@ https://youtu.be/OgyWVwCJJIk
 
 1. Review the code below
 2. Create the sample code and run the code
-3. Examine the use of ``||sprites:SpriteKind||`` in the overlap event
+3. Examine the use of the sprite's ``||sprites:kind||`` in the overlap event
 
 ```blocks
 enum SpriteKind {
@@ -182,9 +182,9 @@ hat.setPosition(35, 60)
 
 1. Starting with task #2 where the game randomly moves 2 sprites with button pushes
 2. Add at least 2 more sprites with random or fixed position
-3. Add an ``||sprite:on overlap||`` event result in a new behavior that uses ``||math:pick random||`` (for example, set velocity, set location, change location by, and so on) with sprite action of saying something
-4. Be sure the overlap will work for several sprite of the same SpriteKind
-5. **Challenge:** make multiple sprites randomly change position with the `A` button, and give two of the sprites a random velocity (use a range across negative and positive for ``||sprites:vx||`` and ``||sprites:vy||``)
+3. Add an ``||sprites:on overlap||`` event that results in a new behavior that uses ``||math:pick random||`` (for example, set velocity, set location, change location by, and so on), and causes the sprite to ``||sprites:say||`` something
+4. Test that the ``||sprites:overlap||`` works with different sprites of the same ``||sprites:kind||``
+5. **Challenge:** make multiple sprites randomly change position with the ``||controller:A||`` button, and give two of the sprites a random velocity (use a range across negative and positive for ``||sprites:vx||`` and ``||sprites:vy||``)
 
 ## What did we learn? 
 

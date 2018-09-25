@@ -82,7 +82,11 @@ The changes in this task make the code a lot easier to read, and demonstrate a v
 
 In Blocks, this is the ``||loops:for element||`` loop, but the behavior is often referred to as a `for each` loop. This title comes from the way in which we commonly describe the behavior of the loop; using the code from task #1a, you might say something along the lines of
 
-> **for each** string in text_list, make the princess say that string and then pause for a moment.
+### ~hint
+
+**for each** string in text_list, make the princess say that string and then pause for a moment.
+
+### ~
 
 ## Student Task #1b: Using ``||loops:for element||``
 

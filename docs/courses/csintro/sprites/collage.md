@@ -72,7 +72,7 @@ This example uses sprite properties to set the `X` and `Y` coordinates on the ga
 
 ### ~hint
 
-If the sprites are not moving to where you expect them to when you set their coordinates, review the [Coordinate Walker Activity](/courses/advanced-blocks/sprites/coordinate-walker) to see where the different `X` and `Y` values are located.
+If the sprites are not moving to where you expect them to when you set their coordinates, review the [Coordinate Walker Activity](/courses/csintro/sprites/coordinate-walker) to see where the different `X` and `Y` values are located.
 
 ### ~
 
@@ -140,4 +140,4 @@ Make a collage with different images scattered around the screen. It can be abou
 2. What other blocks are available in the ``||sprites:Sprites||`` menu? List several blocks not used in collage and make a hypothesis of what one (or more) of these blocks does.
 3. **Challenge:** switch to the JavaScript version of your collage, and take a look at the images you drew in the task above. What do periods (**.**) represent in the images?
 
-### [Teacher Material](/courses/advanced-blocks/about/teachers)
+### [Teacher Material](/courses/csintro/about/teachers)

@@ -47,19 +47,19 @@ One way to think about this is in terms of where the value is located within the
 3. Instead of always splashing the value at index 1, change the ``||array:get value at||`` block to choose a random index between 0 and 3 using the ``||math:pick random||`` block
 4. Add one more number to the array. Identify whether this value will ever show up as one of the values being ``||game:splashed||``
 
-### ~hint
+    ### ~hint
 
-What index will the new value be located at?
+    What index will the new value be located at?
 
-### ~
+    ### ~
 
 5. The ``||array:length of array||`` block will return the length of the array - that is, the number of values contained within it. Modify the values in the ``||math:pick random||`` so that it will pick a value between 0 and the highest index in the array
 
-### ~hint
+    ### ~hint
 
-When there were 4 items in the array, the index with the last value was 3 and the length of the array was 4
+    When there were 4 items in the array, the index with the last value was 3 and the length of the array was 4
 
-### ~
+    ### ~
 
 ## Concept: Modifying an Array
 
@@ -87,11 +87,11 @@ In this example, we added 5 to the end of the array, after it's already been cre
 4. Create a ``||controller: on B button press||`` event
 5. Inside the ``||controller: on B button press||`` event, select a random item from the ``||variables:list||`` and ``||game:splash||`` it
 
-### ~hint
+    ### ~hint
 
-Remember to use ``||string:join||`` to convert from number to string when displaying a number
+    Remember to use ``||string:join||`` to convert from number to string when displaying a number
 
-### ~
+    ### ~
 
 6. **Challenge:** modify the value of the ``||game:splash||`` to instead display the result of adding **two** random values from the ``||variable:list||``
 

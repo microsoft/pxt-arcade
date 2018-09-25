@@ -438,13 +438,13 @@ The example tiles that are provided here are the following:
 
 1. What is the default size when you create a new tile map? Does it perfectly match the screen size?
 
-### ~hint
+    ### ~hint
 
-Open the tile map from the first example in the image editor; it will give the dimensions of the tile map in the bottom-left corner. When displayed on the screen, each tile in that tile map will be a 16x16 square.
+    Open the tile map from the first example in the image editor; it will give the dimensions of the tile map in the bottom-left corner. When displayed on the screen, each tile in that tile map will be a 16x16 square.
 
-As a reminder, the ``||scene:screen height||`` is 120 pixels, and the ``||scene:screen width||`` is 160 pixels.
+    As a reminder, the ``||scene:screen height||`` is 120 pixels, and the ``||scene:screen width||`` is 160 pixels.
 
-### ~
+    ### ~
 
 2. When ``||scene:camera follow sprite||`` is set to follow a sprite, does that sprite always stay in the center of the screen, or are there times where it somewhere else on the screen? Explain how you know.
 
