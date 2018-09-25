@@ -8,6 +8,8 @@
         "sprites.castle.ts",
         "sprites.space.jres",
         "sprites.space.ts",
+        "sprites.vehicle.ts",
+        "sprites.vehicle.jres",
         "bigFood.jres",
         "bigFood.ts",
         "smallFood.jres",
