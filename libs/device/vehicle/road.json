@@ -1,0 +1,16 @@
+{
+    "xSpacing": 1,
+    "ySpacing": 1,
+    "frames": [
+        "Turn1",
+        "Turn2",
+        "Turn4",
+        "Intersection1",
+        "Intersection2",
+        "Vertical",
+        "Turn3",
+        "Horizontal",
+        "Intersection3",
+        "Intersection4"
+    ]
+}

@@ -207,7 +207,7 @@ namespace pxsim {
         }
 
         layout() {
-            const minControlWidth = 100;
+            const minControlWidth = 80;
             const wWidth = window.innerWidth;
             const wHeight = window.innerHeight;
             if (wWidth < wHeight) {
@@ -215,13 +215,16 @@ namespace pxsim {
                 this.view.centerInBox(0, 0, window.innerWidth, window.innerHeight - minControlWidth);
 
                 const bottom = this.view.boundingBox().bottom;
-                let controlsHeight = window.innerHeight - bottom;
+                const availableHeight = window.innerHeight - bottom;
+                let controlsHeight = availableHeight * 4 / 5;
 
                 if (controlsHeight * 2 > wWidth)
                     controlsHeight = wWidth / 2 | 0;
 
-                this.controls.moveDPad(0, window.innerHeight - controlsHeight, controlsHeight);
-                this.controls.moveButtons(window.innerWidth - controlsHeight, window.innerHeight - controlsHeight, controlsHeight);
+                const controlsTop = window.innerHeight - availableHeight + (availableHeight - controlsHeight) / 2;
+
+                this.controls.moveDPad(0, controlsTop, controlsHeight);
+                this.controls.moveButtons(window.innerWidth - controlsHeight, controlsTop, controlsHeight);
             }
             else {
                 // Place controls on sides
@@ -283,13 +286,38 @@ namespace pxsim {
 
         protected resize() {
             this.cellWidth = Math.max(1, Math.floor(Math.min(this.boxWidth / this.state.width, this.boxHeight / this.state.height)));
-            const actualWidth = this.cellWidth * this.state.width;
-            const actualHeight = this.cellWidth * this.state.height;
-            this.canvas.style.left = (this.boxLeft + ((this.boxWidth - actualWidth) / 2)) + "px";
-            this.canvas.style.top = (this.boxTop + ((this.boxHeight - actualHeight) / 2)) + "px";
-            this.canvas.width = actualWidth;
-            this.canvas.height = actualHeight;
+            const screenWidth = this.cellWidth * this.state.width;
+            const screenHeight = this.cellWidth * this.state.height;
+            this.canvas.width = screenWidth;
+            this.canvas.height = screenHeight;
+
+            const bb = this.boundingBox();
+
+            const leftMargin = this.boxLeft + ((this.boxWidth - bb.width) / 2);
+
+            this.canvas.style.left = leftMargin + "px";
+            this.canvas.style.top = Math.min((this.boxTop + ((this.boxHeight - bb.height) / 2)), leftMargin) + "px";
+
+            this.calculateClipPath(screenWidth, screenHeight, (bb.width - screenWidth) / 2);
+
             if (this.palette) this.redraw(false);
+        }
+
+        protected calculateClipPath(width: number, height: number, borderWidth: number) {
+            let points = [];
+            const wedgeOffset = borderWidth * 2 / 3;
+
+            points.push([0, wedgeOffset]);
+            points.push([wedgeOffset, 0]);
+            points.push([width + borderWidth * 2 - wedgeOffset, 0]);
+            points.push([width + borderWidth * 2, wedgeOffset]);
+            points.push([width + borderWidth * 2, height + borderWidth * 2 - wedgeOffset]);
+            points.push([width + borderWidth * 2 - wedgeOffset, height + borderWidth * 2]);
+            points.push([wedgeOffset, height + borderWidth * 2]);
+            points.push([0, height + borderWidth * 2 - wedgeOffset]);
+
+            const polyString = "polygon(" + points.map(p => p.map(c => c + "px").join(" ")).join(", ") + ")";
+            this.canvas.style.clipPath = polyString;
         }
 
         protected refreshPalette() {

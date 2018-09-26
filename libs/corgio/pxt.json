@@ -1,0 +1,12 @@
+{
+    "name": "corgio",
+    "description": "A Corgi platformer",
+    "files": [
+        "README.md",
+        "corgio.ts"
+    ],
+    "public": true,
+    "dependencies": {
+        "game": "file:../game"
+    }
+}
