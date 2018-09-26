@@ -49,8 +49,11 @@ namespace config {
     export const PIN_SPEAKER_AMP = PIN_D2;
     export const SPEAKER_VOLUME = 512;
     
-    export const DISPLAY_CFG0 = 0x1000080;
-    export const DISPLAY_CFG1 = 0x000603;
+    export const DISPLAY_CFG0 = 0x00000090;
+    export const DISPLAY_CFG1 = 0x000e14ff;
+
+    //export const DISPLAY_CFG0 = 0x01000080;
+    //export const DISPLAY_CFG1 = 0x00000603;
 
     export const DISPLAY_CFG2 = 24; // MHz
     export const DISPLAY_WIDTH = 160;
