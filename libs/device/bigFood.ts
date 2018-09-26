@@ -15,4 +15,6 @@ namespace sprites.food {
     export const bigDonut = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     export const bigIceCream = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
+    export const plate = image.ofBuffer(hex``);
 }

@@ -1,0 +1,18 @@
+{
+    "width": 16,
+    "height": 16,
+    "frames": [
+        "Front",
+        "WalkFront1",
+        "WalkFront2",
+        "WalkFront3",
+        "Back",
+        "WalkBack1",
+        "WalkBack2",
+        "WalkBack3",
+        "Left1",
+        "Left2",
+        "Right1",
+        "Right2"
+    ]
+}
