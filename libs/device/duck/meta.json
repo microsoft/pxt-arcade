@@ -1,0 +1,22 @@
+{
+    "width": 16,
+    "height": 16,
+    "blockIdentity": "images._image",
+    "creator": "image.ofBuffer",
+    "star": {
+        "namespace": "sprites.duck",
+        "mimeType": "image/x-mkcd-f4"
+    },
+    "standaloneSprites": [
+        "log1",
+        "log2",
+        "log3",
+        "log4",
+        "log5",
+        "log6",
+        "log7",
+        "log8",
+        "tree",
+        "duckHurt"
+    ]
+}
