@@ -14,4 +14,5 @@
 * [Variable Math Practice](/courses/advanced-blocks/review/practice-variable-math)
 * [String Math Practice](/courses/advanced-blocks/review/practice-string-math)
 
-* [Advanced Blocks Home](/courses/advanced-blocks)
+
+[Advanced Blocks Home](/courses/advanced-blocks)
