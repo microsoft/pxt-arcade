@@ -1,9 +1,8 @@
 # Review Material
 
 * [Review Game](/courses/advanced-blocks/review/review-game)
+* [Side Scroller](/courses/advanced-blocks/review/side-scroller)
 * [Car Avoider](/courses/advanced-blocks/review/car-avoider)
-* [Baseball Catching](/courses/advanced-blocks/review/baseball-catching)
-* [Motion](/courses/advanced-blocks/review/motion)
 * [Projectiles](/courses/advanced-blocks/review/projectiles)
 * [Change By Practice](/courses/advanced-blocks/review/practice-change-by)
 * [Conditionals Practice](/courses/advanced-blocks/review/practice-conditionals)

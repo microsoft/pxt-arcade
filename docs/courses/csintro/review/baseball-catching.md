@@ -21,7 +21,7 @@ Add balls for the player to attempt to collect
 1. Get an ``||game:on game update every 500 ms||`` event
 2. Create a projectile representing a baseball inside the ``||game:on game update every||`` event
 3. Change the variable name from ``||variables:projectile||`` to ``||variables:baseball||``, and the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Baseball||``
-4. Making ``||variables:baseball||`` move randomly in the ``x`` and ``y`` directions using ``math:pick random 0 to 10||`` for the initial ``||sprites:vx||`` and ``||sprites:vy||``: make the range from `-50` and `50`
+4. Making ``||variables:baseball||`` move randomly in the ``x`` and ``y`` directions using ``||math:pick random 0 to 10||`` for the initial ``||sprites:vx||`` and ``||sprites:vy||``: make the range from `-50` and `50`
 
 ## Student Task #3: Gameplay
 
