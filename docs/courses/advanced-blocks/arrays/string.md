@@ -176,7 +176,7 @@ text_list = ["oww", "no walls", "oh no", "I stubbed my toe"]
 4. Set the player's ``||info:life||`` to 5
 5. Create an ``||sprites:on overlap||`` event between ``||sprites:kind player||`` and ``||sprites:kind enemy||``, which causes ``||info:life||`` to change by -1 and the ``||sprites:enemy||`` to say a random word from ``||variables:enemyScript||``
 6. At the end of the same ``||sprites:on overlap||`` event, set the enemy to be a ``||sprites:ghost||``, ``||loops:pause||`` for a second and then make it so the sprite isn't a ``||sprites:ghost||``
-7. Add an ``||controller:on A button pressed||`` event. When the ``||controller:A||`` button is pressed, use ``||game:ask for string with text||`` and ``||arrays:list add value to end||`` to add a word the player chooses into ``||variables:text list||``
+7. **Challenge:** add an ``||controller:on A button pressed||`` event. When the ``||controller:A||`` button is pressed, use ``||game:ask for string with text||`` and ``||arrays:list add value to end||`` to add a word the player chooses into ``||variables:text list||``
 
 ### ~hint
 
