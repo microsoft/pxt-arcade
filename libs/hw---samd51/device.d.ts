@@ -15,6 +15,13 @@ declare namespace pins {
     //% fixedInstance shim=pxt::getPinCfg(CFG_PIN_MOSI)
     const MOSI: DigitalPin;
 
+    //% fixedInstance shim=pxt::getPinCfg(CFG_PIN_D2)
+    const D2: PwmOnlyPin;
+    //% fixedInstance shim=pxt::getPinCfg(CFG_PIN_D3)
+    const D3: DigitalPin;
+    //% fixedInstance shim=pxt::getPinCfg(CFG_PIN_D4)
+    const D4: PwmOnlyPin;
+
     //% fixedInstance shim=pxt::getPinCfg(CFG_PIN_RX)
     const RX: DigitalPin;
     //% fixedInstance shim=pxt::getPinCfg(CFG_PIN_TX)

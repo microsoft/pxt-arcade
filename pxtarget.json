@@ -82,7 +82,7 @@
                 "codalTarget": {
                     "name": "codal-itsybitsy-m4",
                     "url": "https://github.com/mmoskal/codal-itsybitsy-m4",
-                    "branch": "v0.0.2",
+                    "branch": "v0.0.3",
                     "type": "git"
                 },
                 "codalBinary": "ITSYBITSY_M4",

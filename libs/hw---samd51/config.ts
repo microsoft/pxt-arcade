@@ -46,7 +46,8 @@ namespace config {
     export const PIN_DISPLAY_BL = PIN_A5;
 
     // it's really piezo speaker, not an amp
-    export const PIN_SPEAKER_AMP = PIN_A0;
+    export const PIN_SPEAKER_AMP = PIN_D2;
+    export const SPEAKER_VOLUME = 512;
     
     export const DISPLAY_CFG0 = 0x1000080;
     export const DISPLAY_CFG1 = 0x000603;
