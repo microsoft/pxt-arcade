@@ -5,6 +5,7 @@ namespace game {
      */
     //% blockId=arcade_game_runtime block="time since start (ms)"
     //% group="Gameplay" weight=11
+    //% help=game/runtime
     export function runtime(): number {
         return control.millis();
     }
@@ -15,6 +16,7 @@ namespace game {
      */
     //% blockId=arcade_game_reset block="reset game"
     //% group="Gameplay" weight=10
+    //% help=game/reset
     export function reset() {
         control.reset();
     }

@@ -6,7 +6,7 @@ It is a good idea to start the game as a MVP (minimum viable project) to demonst
 
 ## Student Task: Building a full game
 
-![Pizza Space](/static/courses/csintro/final-project/pizza-space.gif)
+![Asteroid Miner](/static/courses/csintro/final-project/asteroid-miner.gif)
 
 ### Requirements
 
@@ -16,16 +16,21 @@ It is a good idea to start the game as a MVP (minimum viable project) to demonst
 >* ``||sprites:on overlap events||``
 >* sprite physics
 
-* If one of the sections (tile maps, arrays, ...) does not seem to be relevant the game you are creating, then explain why the given section features are omitted in your game (check with instructor)
-* Choose **four** sections from the course, and use at least one additional concept from each
-* For each of the above concepts, write a short sentence on how it allows your game to be more interesting or challenging for the player
+* Choose **two** sections from the course, and use at least one additional concept from each
+* For each of the above concepts, write a short sentence on how it allows your game to be more interesting or challenging for the player. Focus on the **Design Decisions** you made; what about the way you used the blocks made the game more appealing?
 
-### Challenge: Learning new blocks
 
-A significant part of software development comes down to learning - about new functions and methods available to you, new concepts that allow you to more easily complete your work, and all sorts of other things.
+### ~hint
 
-For this challenge, you will dig into one of two groups of functions that we have only lightly examined: ``||music:Music||`` (included by default) and ``||animation:Animation||`` (found as an extension). To complete this challenge, use one of these two sections in your final game in a thoughtful way; this means that you will have to read through the functions **on your own**, and identify both how it works, and what it can be used for.
+## Group Option
 
-```package
-animation
-```
+Set up for working in a team
+
+* Each member of the group should develop 2-3 MVP games to generate ideas
+* Discuss each MVP game as a group: identify which parts of the games should be kept around for the final project
+* As a group, build an MVP for the final project game
+* Identify different tasks that need to be completed to finish the game, and have each member of the group handle one task at a time
+* At the end of each day, discuss as a group how the tasks are progressing. If a task is more complicated than expected, try to identify solutions as a group
+* When all tasks are complete, combine each member's work as a group into a complete final game
+
+### ~

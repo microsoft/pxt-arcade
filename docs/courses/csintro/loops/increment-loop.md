@@ -62,8 +62,8 @@ info.startCountdown(5)
 
 1. Start with code from example #1c
 2. Add a sprite to coach the player
-3. Use ``||sprites:say("")||`` to give words of encouragement, setting a short display time (for example, 500 ms)
-4. Make ``||sprites:say("")||`` so it flashes by placing it in ``||game:on game update(1000)||``
+3. Use ``||sprites:say||`` to give words of encouragement, setting a short display time (for example, 500 ms)
+4. Make ``||sprites:say||`` so it flashes by placing it in ``||game:on game update every 1000 ms||``
 4. **Challenge:** have the sprite coach give the current score in addition to a cheer ("Faster!")
 
 ### Example #2: Increment to make a spiral

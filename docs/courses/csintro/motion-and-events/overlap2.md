@@ -1,13 +1,13 @@
 # Activity: Sprite Overlap & Events - Part 2
 
-We use ``||sprites:Kind||`` to give a label to Sprites so we can define how one ``||sprites:kind||`` of sprite will react when moving on top of another ``||sprites:kind||`` of sprite
+We use ``||sprites:kind||`` to give a label to Sprites so we can define how one ``||sprites:kind||`` of sprite will react when moving on top of another ``||sprites:kind||`` of sprite
 
-In the previous activity, all "Cloud" ``||sprites:Kind||``'s respond with the same action when overlapped with a Helicopter ``||sprites:Kind||``. 
+In the previous activity, all "Cloud" ``||sprites:kind||``'s respond with the same action when overlapped with a Helicopter ``||sprites:kind||``. 
 
-By making several cloud shaped sprites with the same ``||sprites:Kind||`` of `Cloud`, we can write code so that all of the clouds interact with the ``||sprites:Helicopter||`` in the same way with an overlap event.
+By making several cloud shaped sprites with the same ``||sprites:kind||`` of `Cloud`, we can write code so that all of the clouds interact with the ``||sprites:Helicopter||`` in the same way with an overlap event.
 
 In this activity, the student will continue to work with:
-* ``||sprites:on overlap event||`` with a ``||sprites:Kind||`` applied to several identical sprites
+* ``||sprites:on overlap event||`` with a ``||sprites:kind||`` applied to several identical sprites
 * Overlap events
 
 ## Concept: ``||sprites:Kind||`` Overlap Event "bump" action
@@ -16,7 +16,7 @@ https://youtu.be/hAFzGASNgN0
 
 [Alternative Video Location](https://aka.ms/40544a-overlap2bumpfinal)
 
-Having sprites bump rather than pass over each other is useful game behavior for a ``||sprites:Kind||`` overlap event. One way to simulate a bump is:
+Having sprites bump rather than pass over each other is useful game behavior for a ``||sprites:kind||`` overlap event. One way to simulate a bump is:
 
 1. Move the sprite in the opposite direction after the overlap (we will make it bump backwards). The faster we bump, the farther we move away from the overlap object 
 2. Stop the sprite
@@ -213,9 +213,9 @@ landing.y = 125
 There is a "T" shaped landing area at the bottom of the example. The helicopter sprite should not go through the landing pad, it should land!
 
 1. Starting with example #1, replace the helicopter motion with the short method using ``||controller:dx (left-right buttons)||``
-2. Review the rest of the code, and then add an on overlap event for when the helicopter overlaps with the landing (note the ``||sprites:Kind||`` of ``||sprites:LandingPad||``)
+2. Review the rest of the code, and then add an on overlap event for when the helicopter overlaps with the landing (note the ``||sprites:kind||`` of ``||sprites:LandingPad||``)
 3. The block of code in the overlap event should stop the helicopter velocity motion (setting both vx and vy to zero) and then change the helicopter position **up** 2 pixels so it isn't overlapping any more
-4. **Challenge:** Add a new sprite and ``||sprites:Kind||`` to the screen (for example, a mountain or a tree) and set the overlap action to make the helicopter sprite have an erratic motion after an overlap. This should be 3 or more changes in position and/or velocity
+4. **Challenge:** Add a new sprite and ``||sprites:kind||`` to the screen (for example, a mountain or a tree) and set the overlap action to make the helicopter sprite have an erratic motion after an overlap. This should be 3 or more changes in position and/or velocity
 
 ### ~hint
 
@@ -225,18 +225,18 @@ Erratic motion can be made by changing the sprite position back and forth multip
 
 ### ~
 
-## Student Task #2: Add a new unique sprite with ``||sprites:Kind||`` of ``||sprites:Cloud||``
+## Student Task #2: Add a new unique sprite with ``||sprites:kind||`` of ``||sprites:Cloud||``
 
 1. Starting with example code or task #1
 2. Add a new sprite that looks nothing like a cloud (for example, a hat or a tree)
-3. Make sure the new sprite has ``||sprites:Kind||`` of "Cloud" even though it is not a cloud
+3. Make sure the new sprite has ``||sprites:kind||`` of "Cloud" even though it is not a cloud
 4. Position the new sprite so it is not touching any other sprite
-5. **Challenge:** add another Sprite that looks different from the previous new sprite and give it a ``||sprites:Kind||`` other than ``||sprites:Cloud||`` and make sure it has a unique overlap event action (e.g. - might say something new) 
+5. **Challenge:** add another Sprite that looks different from the previous new sprite and give it a ``||sprites:kind||`` other than ``||sprites:Cloud||`` and make sure it has a unique overlap event action (e.g. - might say something new) 
 6. Test the overlaps on the new sprite(s)
 
 ## What did we learn?
 
-1. Describe how a ``||sprites:Kind||`` can improve code (for example, how it can make programming easier, more powerful, more efficient, ...). 
+1. Describe how a ``||sprites:kind||`` can improve code (for example, how it can make programming easier, more powerful, more efficient, ...). 
 2. Explain why in creating a "bump" effect negative `X` and `Y` velocities are used to change the `X` and `Y` positions. 
 
 ### [Teacher Material](/courses/csintro/about/teachers)

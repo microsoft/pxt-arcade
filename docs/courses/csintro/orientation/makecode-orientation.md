@@ -23,7 +23,7 @@ https://youtu.be/GsvBCViybPs
 
 1. Click the "Space Destroyer" example game under the "Blocks Games" category
 2. Select "Open Example"
-3. Press left and right on the direction pad to move the space ship, and press the `A` button to fire the laser
+3. Press left and right on the direction pad to move the space ship, and press the ``||controller:A||`` button to fire the laser
 4. Pay careful attention to what happens when the laser collides with an asteroid
 
 ### New Project
@@ -37,11 +37,17 @@ https://youtu.be/iEQa-Wd3MRs
 1. Press the "Home" button in the upper left corner to return to the homepage
 2. Press the "New Project" button 
 3. The screen will start with two blocks by default - we will focus on the ``||loops:on start||`` block for now, so drag the ``||game:on game update||`` block to the side bar to delete it as shown below
-![Deleting Onstart](/static/courses/csintro/orientation/delete-on-start.gif)
+
+    ![Deleting Onstart](/static/courses/csintro/orientation/delete-on-start.gif)
+
 4. Drag out a new sprite and have it ``||sprites:say||`` something as shown below
-![Sprite Say](/static/courses/csintro/orientation/sprite-say.gif)
+
+    ![Sprite Say](/static/courses/csintro/orientation/sprite-say.gif)
+
 5. At the bottom of the screen, select a name to save this game as (e.g. - "first game"), and click "Download" to download it
-![Downloading the game](/static/courses/csintro/orientation/download.gif)
+
+    ![Downloading the game](/static/courses/csintro/orientation/download.gif)
+
 6. Students will turn in this file today, so be sure to keep track of it!
 
 ## Student Task #3: Importing your game
@@ -58,6 +64,7 @@ Alternatively, you can simply drag the image that you downloaded onto the home p
 ## Student Task #4: Sharing your game
 
 There is one other common way that we will keep track of our games: by making links to directly access the code.
+
 1. Press the "Home" button in the upper left corner to return to the homepage
 2. Select your game from task #2 under "My Projects"
 3. Select the share button in the upper left corner, as shown below. Verify that you want to publish the code, and keep track of the URL it shows - that is a link directly to your code!

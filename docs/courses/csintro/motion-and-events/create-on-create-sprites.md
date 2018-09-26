@@ -4,7 +4,7 @@ Many games need to spawn sprites for the player to collect like coins, or to avo
 
 We will use ``||sprites:create empty sprite||`` to spawn a new empty sprite, which is a place holder for a sprite without an image. Then we can use an ``||sprites:on created||`` event to set the image and a random position for newly generated sprites. 
 
-The ``||sprites:on created||`` block uses the sprite's ``||sprites:Kind||`` so we can give our new sprites the exact attributes we want, like an image, velocity, or position.
+The ``||sprites:on created||`` block uses the sprite's ``||sprites:kind||`` so we can give our new sprites the exact attributes we want, like an image, velocity, or position.
 
 ## Concept: Random Clouds - create with on created event 
 
@@ -123,15 +123,15 @@ The ``||sprites:on created||`` event allows us to set code to run whenever a new
 1. Start with example #1 or your own similar code
 2. Review the code and find the ``||sprites:create empty sprite of kind||`` of kind blocks
 3. Add 2 more ``||sprites:create empty sprite of kind||`` blocks for clouds
-4. Add a new ``||sprites:create empty sprite of kind||`` for a different ``||sprites:Kind||``. Use the ``||sprites:on created||`` event to
+4. Add a new ``||sprites:create empty sprite of kind||`` for a different ``||sprites:kind||``. Use the ``||sprites:on created||`` event to
     * set an image for the sprite that is created (for example, a bird or a butterfly)
     * set the sprite to be in a random position
 5. Use ``||sprites:create empty sprite of kind||`` to create at least five of the times.
-6. **Challenge:** create an event for the ``||sprites:Helicopter||`` overlap with the new ``||sprites:Kind||`` that has an action that gives the new ``||sprites:Kind||`` a fast velocity so that it will fly off the screen after they overlap
+6. **Challenge:** create an event for the ``||sprites:Helicopter||`` overlap with the new ``||sprites:kind||`` that has an action that gives the new ``||sprites:kind||`` a fast velocity so that it will fly off the screen after they overlap
 
 ## What did we learn?
  
-1. Describe how a ``||sprites:Kind||`` label is used in generating a sprite using ``||sprites:create empty sprite||`` block.
+1. Describe how a ``||sprites:kind||`` label is used in generating a sprite using ``||sprites:create empty sprite||`` block.
 2. Explain what the ``||sprites:on created||`` block does for you.
 
 ### [Teacher Material](/courses/csintro/about/teachers)
