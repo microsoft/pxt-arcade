@@ -1,8 +1,8 @@
 # Activity: Arrays of Sprites
 
-In previous lessons, we have used arrays of fairly simple types of variables - numbers and strings. As mentioned in those lessons, though, arrays can be used with any variable you would like, including sprites.
+So far we have used arrays of numbers and strings. We will see that arrays can be used with any variable type, including sprites.
 
-In this activity, we will walk through a few ways in which we can use arrays of sprites to to create unique behaviors for the characters in our games, as well as introduce the basics of artificial intelligence for non-player characters.
+In this activity, we will use arrays of sprites to to create unique behaviors for the characters in our games, as well as introduce the basics of artificial intelligence for our enemy characters.
 
 In this activity, students will:
 * Create arrays of sprites
@@ -14,11 +14,11 @@ In this activity, students will:
 
 ## Concept: Creating Sprite Arrays
 
-Creating arrays of sprites is effectively the same as creating arrays of numbers or strings; this is done by creating a new array of numbers, and then replacing all of the numbers within the array with sprites.
+Creating arrays of sprites follow a similar process as creating arrays of numbers or strings. Start with a new array (e.g.- of numbers), and then replacing all of the numbers within the array with sprites.
 
 ![creating an array of sprites](/static/courses/advanced-blocks/arrays/create-sprite-array.gif)
 
-This can be very useful when implementing the same behavior for multiple sprites at once.
+A sprite array can be very useful when implementing the same behavior for multiple sprites at once.
 
 ## Example #1: Moving all Asteroids
 
