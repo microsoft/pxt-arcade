@@ -11,7 +11,7 @@
 * [Classics](/classics)
     * [Ping Pong](/examples/ping-pong)
     * [Eater Princess](/examples/eater-princess)
-    * [Food Slot Machine](/examples/slot-machine)
+    * [Food Machine](/examples/food-machine)
     * [Treasure Hunt](/examples/treasure-hunt)
     * [Jewels](/examples/jewels)
 
