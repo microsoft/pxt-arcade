@@ -2,7 +2,7 @@
 
 Whether a baseball is thrown or hit, one thing is certain: someone is trying to catch it. To represent this, build a simple game where the goal is to catch the baseballs that fly across the screen.
 
-![Final Baseball Catching Game](/static/courses/csintro/review/final-baseball-game.gif)
+![Final Baseball Catching Game](/static/courses/csintro/review/baseball-game.gif)
 
 ## Student Task #1: Build a Mitt
 

@@ -1,6 +1,6 @@
 # Avoid the cars!
 
-![Final Car Game](/static/courses/csintro/review/final-car-avoid.gif)
+![Final Car Game](/static/courses/advanced-blocks/review/final-car-avoid.gif)
 
 ## Provided Starter Code
 

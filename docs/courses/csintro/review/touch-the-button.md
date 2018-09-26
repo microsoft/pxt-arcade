@@ -1,4 +1,4 @@
-# Extend "Touch The Button"
+# Review: Touch the Button
 
 In the info section of the orientation, the game "touch the button 15 times" had a very basic problem - no matter what, when the game was over, the same screen was shown, with the only difference being the score.
 
