@@ -91,7 +91,7 @@ mySprite = sprites.create(img`
 `, SpriteKind.Player)
 game.onUpdateInterval(5000, function () {
     if (!(isHungry)) {
-        mySprite.say("I'm not hungry")
+        mySprite.say("I'm not hungry", 2000)
     }
 })
 ```
