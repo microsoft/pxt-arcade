@@ -9,11 +9,11 @@ Structured courses for teaching computer science in the classroom.
 ```codecard
 [
 {
-    "name": "Intro to CS",
+    "name": "CS Intro 1",
     "description": "A semester length computer science course for beginning coders",
     "url":"/courses/csintro1"
 }, {
-    "name": "Advanced Blocks",
+    "name": "CS Intro 2",
     "description": "A continuation of the Intro to CS course",
     "url":"/courses/csintro2"
 }
