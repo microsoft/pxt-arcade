@@ -58,7 +58,7 @@ To create your MVP,
 
 For an MVP game, you might want to avoid spending too much time getting bogged down making the perfect image for your sprite; instead, you can always just use some of the provided sprites in the Gallery. This allows you to focus on getting the concept for your game into a functional state, and personalize it later on!
 
-![Using Gallery](/static/courses/csintro/motion-and-events/image-gallery.gif)
+![Using Gallery](/static/courses/csintro/project/image-gallery.gif)
 
 ### ~
 
@@ -68,7 +68,7 @@ This is the development process we will use to turn an idea for a game into a fi
 
 The development cycle works by adding small changes and getting feedback as you develop. When you get to the end of the **Learn** section, if there are ideas that you would still like to implement, return to the **Build** section and start implementing those ideas.
 
-Repeat this cycle until you are satisfied with the game, **and** the game has at least **10** items from the list of **Concepts Learned**. If more time is available, create an MVP for another one of your original ideas and begin the development cycle on it.
+Repeat this cycle until you are satisfied with the game, **and** the game has at least **8** concepts from the list of **Concepts Learned**. If more time is available, create an MVP for another one of your original ideas and begin the development cycle on it.
 
 For a guided example of this process, [see the example project page.](/courses/csintro/project/example)
 
@@ -95,9 +95,9 @@ Gather feedback about the game from an outside source
 2. Give a 15-30 second description of what your game is supposed to be: describe the features that are not yet implemented to give them an idea of the 'bigger picture'
 3. Have them play your game
 4. Ask for feedback:
-    * What do they like about the game?
-    * What would they like to be improved?
-    * How would they like it to be improved?
+    1. What do they like about the game?
+    2. What would they like to be improved?
+    3. How would they like it to be improved?
 
 ### ~
 

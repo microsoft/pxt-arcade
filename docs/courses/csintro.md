@@ -79,5 +79,5 @@ This course is currently in beta - this means that it is likely to have bugs and
 
 ### Projects
 
-* [Example Section Project](/courses/csintro/projects/example)
+* [Example Section Project](/courses/csintro/project/example)
 * [Final Project](/courses/csintro/project/final)
