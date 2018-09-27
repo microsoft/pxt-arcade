@@ -14,11 +14,7 @@ We discussed the idea for the game with another group. They thought it would be 
 
 We create the following list of features that were the most **crucial** to implement in order to make this game fun:
 
-### TODO handwrite list to identify it as an 'artifact'
-
-* The player is constantly falling, but bounces on the trampoline
-* The trampolines are placed randomly on the screen
-* The score goes up when the player bounces on a trampoline
+![Features](/static/courses/csintro/project/features.png)
 
 ## Round 1: Minimum Viable Product
 
@@ -317,4 +313,4 @@ We also had all sorts of things to turn in, that helped document how we got to t
 
 We also listed out the concepts we used from the **Concepts Learned** sections of the project:
 
-### TODO make written list of the 8 concepts used
+![Concepts Used](/static/courses/csintro/project/concepts-used.png)
