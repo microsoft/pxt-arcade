@@ -1,6 +1,6 @@
-# Motion and Events
+# Motion
 
-Motion and Events introduce the ability to control how the games respond to different conditions, 
+Motion introduce the ability to control how a sprite moves around the screen.
 
 ```codecard
 [

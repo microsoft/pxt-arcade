@@ -10,7 +10,7 @@ It is a good idea to start the game as a MVP (minimum viable project) to demonst
 
 ### Requirements
 
-* Use at least one concept from each section of the course - for example, from `Motion and Events`, you could use:
+* Use at least one concept from each section of the course - for example, from `Motion` in the previous course, you could use:
 
 >* ``||controller:control sprite with vx vy||``
 >* ``||sprites:on overlap events||``

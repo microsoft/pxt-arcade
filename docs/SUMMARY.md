@@ -18,7 +18,7 @@
 ## Courses
 
 * [Courses](/courses)
-    * [CS Intro](/courses/csintro1)
+    * [CS Intro 1](/courses/csintro1)
         * [About](/courses/csintro1/about)
             * [Programming Language](/courses/csintro1/about/script)
             * [For Teachers](/courses/csintro1/about/teachers)
@@ -36,7 +36,7 @@
             * [Collage](/courses/csintro1/sprites/collage)
             * [Hello Sprite](/courses/csintro1/sprites/hello-sprite)
             * [Characters and Stories](/courses/csintro1/sprites/characters)
-        * [Motion and Events](/courses/csintro1/motion)
+        * [Motion](/courses/csintro1/motion)
             * [Unplugged: Using a Controller](/courses/csintro1/motion/unplugged)
             * [Sprite Motion Event](/courses/csintro1/motion/sprite-motion-event)
             * [Overlap Section 1](/courses/csintro1/motion/overlap1)
@@ -53,7 +53,7 @@
             * [Physics](/courses/csintro1/loops/physics)
             * [Project](/courses/csintro1/loops/project)
         * [Final Project](/courses/csintro1/project/final)
-    * [Advanced Blocks](/courses/csintro2)
+    * [CS Intro 2](/courses/csintro2)
         * [About](/courses/csintro2/about)
             * [Programming Language](/courses/csintro2/about/script)
             * [For Teachers](/courses/csintro2/about/teachers)

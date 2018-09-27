@@ -17,7 +17,7 @@ This course is currently in beta - this means that it is likely to have bugs and
     "url": "/courses/csintro1/sprites",
     "imageUrl": "/static/courses/csintro1/sprites.gif"
 }, {
-    "name": "Motion and Events",
+    "name": "Motion",
     "url": "/courses/csintro1/motion",
     "imageUrl": "/static/courses/csintro1/motion.gif"
 }, {
@@ -57,7 +57,7 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Hello Sprite](/courses/csintro1/sprites/hello-sprite)
 * [Characters and Stories](/courses/csintro1/sprites/characters)
 
-### [Motion and Events](/courses/csintro1/motion)
+### [Motion](/courses/csintro1/motion)
 
 * [Unplugged: Using a Controller](/courses/csintro1/motion/unplugged)
 * [Sprite Motion Event](/courses/csintro1/motion/sprite-motion-event)
