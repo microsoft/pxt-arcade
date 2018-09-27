@@ -2,7 +2,7 @@
 
 ### ~hint
 
-This course is currently in beta - this means that it is likely to have bugs and changes made fairly regularly. If you see anything that doesn't seem quite right, or if you have any suggestions, please file an issue on [github](github.com/microsoft/pxt-arcade).
+This course is currently in beta - this means that it is likely to have bugs and changes made fairly regularly. If you see anything that doesn't seem quite right, or if you have any suggestions, please file an issue on [github](https://github.com/microsoft/pxt-arcade).
 
 ### ~
 
