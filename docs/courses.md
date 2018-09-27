@@ -22,4 +22,4 @@ Structured courses for teaching computer science in the classroom.
 ## See also
 
 [Intro to CS](/courses/csintro),
-["JavaScript"](/courses/javascript)
+[JavaScript](/courses/javascript)
