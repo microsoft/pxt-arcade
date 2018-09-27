@@ -1,8 +1,8 @@
 # Activity: Arrays of Sprites
 
-In previous lessons, we have used arrays of fairly simple types of variables - numbers and strings. As mentioned in those lessons, though, arrays can be used with any variable you would like, including sprites.
+So far we have used arrays of numbers and strings. We will see that arrays can be used with any variable type, including sprites.
 
-In this activity, we will walk through a few ways in which we can use arrays of sprites to to create unique behaviors for the characters in our games, as well as introduce the basics of artificial intelligence for non-player characters.
+In this activity, we will use arrays of sprites to to create unique behaviors for the characters in our games, as well as introduce the basics of artificial intelligence for our enemy characters.
 
 In this activity, students will:
 * Create arrays of sprites
@@ -14,11 +14,11 @@ In this activity, students will:
 
 ## Concept: Creating Sprite Arrays
 
-Creating arrays of sprites is effectively the same as creating arrays of numbers or strings; this is done by creating a new array of numbers, and then replacing all of the numbers within the array with sprites.
+Creating arrays of sprites follow a similar process as creating arrays of numbers or strings. Start with a new array (e.g.- of numbers), and then replace all of the numbers within the array with sprites.
 
 ![creating an array of sprites](/static/courses/advanced-blocks/arrays/create-sprite-array.gif)
 
-This can be very useful when implementing the same behavior for multiple sprites at once.
+A sprite array is useful when implementing the same behavior for several sprites at once.
 
 ## Example #1: Moving all Asteroids
 
@@ -100,9 +100,9 @@ c a 8 a a c c c c a a f f f 8 a
 
 ## Concept: Arrays from functions
 
-Building arrays by adding in values is useful on it's own, but arrays can be even more useful when they are returned by functions. This allows for the return of multiple related values at once.
+Building arrays by adding in values is a common and useful coding pattern. Arrays can be even more useful when they are returned by functions. For instance, a function could return multiple related values at once.
 
-The ``||sprites:array of sprites of kind||`` block (located in the ``||array:arrays||`` category) is one example of a function like this - it will return an array with all of the sprites currently in the game with the given ``||sprites:kind||``. This makes it easier to implement behaviors like those in example #1, especially as more sprites are created and destroyed.
+The ``||sprites:array of sprites of kind||`` block (located in the ``||array:arrays||`` category) is one example of a function that will return an array with all of the sprites currently in the game of a particular ``||sprites:kind||``. This makes it easier to implement behaviors for several sprites like we did in example #1, especially as  sprites are continually created and destroyed as we play the game.
 
 ## Example #2a: Using ``||sprites:array of sprites of kind||``
 
@@ -176,10 +176,10 @@ firework.setPosition(Math.randomRange(0, scene.screenWidth()), Math.randomRange(
 firework.setFlag(SpriteFlag.Ghost, true)
 ```
 
-This creates a firework at a random position on the screen, and then on any button press sets the firework off. The ``||images:fill image with||`` block is used to randomize the color of the projectiles, so that each firework is more magnificent. It has a few problems as written, though:
+The example above creates a firework at a random position on the screen, and then on any button press sets the firework off. The ``||images:fill image with||`` block is used to randomize the color of the projectiles, so that each firework is more magnificent. It has a few problems as written, though:
 
 * The firework can be set off again, creating an explosion from nothing
-* You can only really make one firework - try putting a repeat loop and identify what will cause it to behave incorrectly
+* You can only really make one firework (try putting a repeat loop and identify what will cause it to behave incorrectly)
 
 Using ``||sprites:array of sprites of kind||``, we can easily address both of these issues.
 
