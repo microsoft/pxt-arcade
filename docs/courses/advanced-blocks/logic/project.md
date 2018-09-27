@@ -1,85 +1,119 @@
 # Activity: Logic Project
 
-Make games of your choosing!
+Make your own unique games!
 
-![Collection Message](/static/courses/advanced-blocks/logic/collection-message.gif)
-
-![Low Life Scoring Bonus](/static/courses/advanced-blocks/logic/scoring-bonus.gif)
-
-![AND "Gate"](/static/courses/advanced-blocks/logic/and-gate.gif)
-
-From what we learned in the previous lessons we should be able to make some great games.
+```codecard
+[
+{
+    "name": "Collection Message",
+    "imageUrl": "/static/courses/advanced-blocks/logic/collection-message.gif"
+}, {
+    "name": "Low Life Scoring Bonus",
+    "imageUrl": "/static/courses/advanced-blocks/logic/scoring-bonus.gif"
+}, {
+    "name": "AND Gate",
+    "imageUrl": "/static/courses/advanced-blocks/logic/and-gate.gif"
+}
+]
+```
 
 ### Concepts Learned
-* Sprites / Projectiles
+
+* ``||sprites:Sprites||`` and ``||sprites:Projectiles||``
 * Controller (dx) and ``||controller:control sprite with||``
-* Overlap Events / sprite ``||sprites:kind||``
-* Function
-* Random
-* Score / life / Countdown
-* Stay in screen / ghost
-* Set image
-* Sprite say / Splash
-* create / on create
+* ``||loops:on game update||`` and ``||loops:on game update every||``
+* ``||loops:while||`` loop
+* ``||functions:Functions||``
+* ``||scene:tile map||``
+* ``||game:ask||`` and ``||game:ask for string with text||`` 
+* ``||logic:and||`` and ``||logic:or||``
+* Numeric Comparisons
 
 ## Student Task #1: Initial Ideas
-1. Think of 3 ideas for a game that you would like to make that use some of these concepts learned
+
+1. Think of **at least** 3 ideas for games that use some of the "concepts learned" listed above
 2. On a piece of paper, sketch out what each game will look like
-3. Discuss your ideas with a partner. Talk about what you each like about the ideas and what you don't like
-4. Discuss with your partner about what features would need to be implemented for each game
+3. Discuss your ideas with a partner. Talk about:
+    * What you like about the ideas
+    * What you don't like about the ideas
+    * Any suggestions you have for extending the ideas
+4. With your partner, discuss what features would be necessary to start each game
 
+## Student Task #2: Creating a Minimum Viable Product
 
-## Student Task #2: MVP
-An MVP, or Minimum Viable Product is what we call the simplest version of a product that has some working features. The idea is that you make a very simple foundation for your product and that you consistently add in features while getting feedback from users.
+A Minimum Viable Product, or MVP, is the simplest version of a product. It will consist of placeholder values, and have features missing.
+
+An MVP is a very simple foundation for your product, which allows you to gather feedback and ideas from others without getting lost in the small parts that require polish later on: making the perfect sprite, creating challenging levels, identifying how players score more points, and so on.
+
+To create your MVP,
 
 1. Pick one of your ideas that you want to turn into a full game
-2. Identify what crucial functionality is required for the game. Think about what the one thing about your game that makes it unique is
-3. Make a list of these key features that you need to implement
-4. Transition into the development cycle and start making your game
+2. Identify what **crucial functionality** is required for the game - identify what makes it unique
+3. Make a list of these key (important) features that you need to implement
+4. Transition into the development cycle to start making your game
 
 ### ~hint
 
-For an MVP game, you might want to avoid spending too much time getting bogged down making the perfect image for your sprite; instead, you can always just use some of the pre-made sprites in the Gallery - that way you can focus on getting the concept for your game into a functional state, and personalize it later on!
+For an MVP game, you might want to avoid spending too much time getting bogged down making the perfect image for your sprite; instead, you can always just use some of the provided sprites in the Gallery. This allows you to focus on getting the concept for your game into a functional state, and personalize it later on!
 
-![Using Gallery](/static/courses/advanced-blocks/motion-and-events/image-gallery.gif)
+![Using Gallery](/static/courses/csintro/project/image-gallery.gif)
 
 ### ~
 
-## Student Task #3: Development Cycle
+## Student Task #3: The Development Cycle
 
-This is the development process we will use to turn an idea into a finished product. It works by adding small changes and getting feedback as you develop. When you get to the end of the Learn section, if there are ideas that you would still like to implement, circle back to the Build section and start implementing those ideas.
+This is the development process we will use to turn an idea for a game into a finished product.
 
-Repeat until your game has at least **5** items from the list of Concepts Learned, you use logic in your game, **and** you are satisfied with your project. If more time is available, make a MVP for another one of your original ideas and begin the development cycle on it.
+The development cycle works by adding small changes and getting feedback as you develop. When you get to the end of the **Learn** section, if there are ideas that you would still like to implement, return to the **Build** section and start implementing those ideas.
+
+Repeat this cycle until you are satisfied with the game, **and** the game has at least **5** concepts from the list of **Concepts Learned**. If more time is available, create an MVP for another one of your original ideas and begin the development cycle on it.
+
+For a guided example of this process, [see the example project page.](/courses/csintro/project/example)
 
 ### ~hint
 
-[For a guided example of this process, look here](/courses/advanced-blocks/example-project-process)
+### Build
+
+Implement a list of features
+
+1. Break down what tasks need to be done for each feature you want to implement
+2. Make a plan for how each one of the tasks will be finished
+3. Complete the tasks needed to implement these features
+4. When the tasks are complete, create a **share link** to the game
+
 ### ~
 
-> ### Build
-> We will implement a list of features
-> 1. Break down what tasks need to be down for each feature you want to implement
-> 2. Make a plan for how each one of tasks will get done
-> 3. Complete the tasks needed to implement these features
->
->
-> ### Measure
-> We will gather feedback about our game from an outside source
-> 1. Find someone to test your current build with
-> 2. Give a 15-30 second pitch of what your game is supposed to be
-> 3. Have them play your game
-> 4. Get their feedback. What do they like about the game? What would they like to be improved? How would they like it to be improved?
->
->
-> ### Learn
-> We will interpret our feedback into a list of features that we want to implement
-> 1. Reflect on the feedback you got from users testing your game
-> 2. Think about what features you would like to add based on what users want
-> 3. Prioritize what features are most important to implement
+### ~hint
+
+### Test
+
+Gather feedback about the game from an outside source
+
+1. Find someone to test the current game with
+2. Give a 15-30 second description of what your game is supposed to be: describe the features that are not yet implemented to give them an idea of the 'bigger picture'
+3. Have them play your game
+4. Ask for feedback:
+    1. What do they like about the game?
+    2. What would they like to be improved?
+    3. How would they like it to be improved?
+
+### ~
+
+### ~hint
+
+### Learn
+
+Convert the feedback into a list of features that to implement
+
+1. **Reflect** on the feedback you gathered from users testing your game
+2. **Identify** what features you would like to add based on what the users want
+3. **Prioritize** what features are most important to implement next
+
+### ~
 
 ## What did we learn?
 
-1. What did you learn making a MVP version of the game? What was useful and what was difficult?
-2. Were items in the list of elements of a game to use in the game were not used? Why? If all were used explain which ones were essential to the game versus less essential elements of a game.
+1. What did you learn when making an MVP version of the game? What was useful, and what was difficult?
+2. Were any items you initially listed as **crucial** to the game were not used? Why? If all were used, explain which ones were most essential to the game, versus the less essential elements of the game.
 
 ### [Teacher Material](/courses/advanced-blocks/about/teachers)
