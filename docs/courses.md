@@ -11,9 +11,15 @@ Structured courses for teaching computer science in the classroom.
   "name": "Intro to CS",
   "description": "A semester length computer science course for middle school grades 6-8",
   "url":"/courses/csintro"
+},
+{
+  "name": "Javascript",
+  "description": "A semester length computer science course for middle school grades 6-8",
+  "url":"/courses/javascript"
 }]
 ```
 
 ## See also
 
-[Intro to CS](/courses/csintro)
+[Intro to CS](/courses/csintro),
+["Javascript"](/courses/javascript)
