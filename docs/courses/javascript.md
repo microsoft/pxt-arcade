@@ -1,4 +1,4 @@
-# Javascript Beta
+# JavaScript Beta
 
 ### ~hint
 

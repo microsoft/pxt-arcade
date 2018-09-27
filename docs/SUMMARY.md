@@ -76,7 +76,7 @@
             * [Tile Arrays](/courses/csintro/arrays/tilemap)
             * [Project](/courses/csintro/arrays/project)
         * [Final Project](/courses/csintro/final-project)
-    * [Javascript](/courses/javascript)
+    * [JavaScript](/courses/javascript)
         * [About](/courses/javascript/about)
             * [Programming Language](/courses/javascript/about/script)
             * [For Teachers](/courses/javascript/about/teachers)
