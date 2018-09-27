@@ -82,7 +82,7 @@
             * [Sprite Arrays](/courses/advanced-blocks/arrays/sprites)
             * [Tile Arrays](/courses/advanced-blocks/arrays/tilemap)
             * [Project](/courses/advanced-blocks/arrays/project)
-        * [Final Project](/courses/advanced-blocks/final-project)
+        * [Final Project](/courses/advanced-blocks/project/final)
 
 ## JavaScript Games
 

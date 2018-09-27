@@ -8,9 +8,7 @@ We came up with the idea to make a game that involves a person jumping on trampo
 
 After discussing the idea with others, we thought it would be cool if the trampolines moved around, making it harder for the player to score points
 
-
-
-![Drawing](/static/courses/csintro/example-project-process/trampoline-drawing.png)
+![Drawing](/static/courses/csintro/project/trampoline-drawing.png)
 
 
 Here is a list of features that we figured we we would need to implement in order to make this game:
@@ -19,11 +17,9 @@ Here is a list of features that we figured we we would need to implement in orde
 * Trampolines being placed about the screen
 * Score going up when the player bounces on a trampoline
 
-
 ## MVP
 
 For our MVP, we are going to start by just making the player move around and bounce on a trampoline.
-
 
 ## Round 1
 > 
@@ -36,7 +32,7 @@ For our MVP, we are going to start by just making the player move around and bou
 > 
 > We need to make the player bounce when they land on the trampoline
 > 
-> ![MVP](/static/courses/csintro/example-project-process/trampoline-mvp.gif) 
+> ![MVP](/static/courses/csintro/project/trampoline-mvp.gif) 
 >
 > https://makecode.com/_88Fae4627DEk
 >
@@ -64,7 +60,7 @@ For our MVP, we are going to start by just making the player move around and bou
 > 
 > We looked back at the lessons and saw that the Sprite Overlap 2 lesson showed us how to bump a sprite in the opposite direction when they overlapped with another. Our solution to our problem would be to add sprites to the left and right side of the screen that would bump the trampoline back and forth
 > 
-> ![Version 2](/static/courses/csintro/example-project-process/trampoline-v2.gif) 
+> ![Version 2](/static/courses/csintro/project/trampoline-v2.gif) 
 > 
 > https://makecode.com/_4KoccVPCaixe
 >
@@ -88,7 +84,7 @@ For our MVP, we are going to start by just making the player move around and bou
 > 
 > We'll also use ``||math:random||`` so that the trampolines will be randomly placed on the screen.
 >
-> ![Version 3](/static/courses/csintro/example-project-process/trampoline-v3.gif) 
+> ![Version 3](/static/courses/csintro/project/trampoline-v3.gif) 
 > 
 > https://makecode.com/_9C7KhuiyR1Dh
 > 
@@ -116,7 +112,7 @@ For our MVP, we are going to start by just making the player move around and bou
 > 
 > We'll change the initial position of the sprite so that it is easier to hit the trampolines
 >
-> ![Version 4](/static/courses/csintro/example-project-process/trampoline-v4.gif) 
+> ![Version 4](/static/courses/csintro/project/trampoline-v4.gif) 
 > 
 > https://makecode.com/_55XMm1cc6cTe
 > 
@@ -154,4 +150,4 @@ For our MVP, we are going to start by just making the player move around and bou
 
 
 ## End Result
-![Final Result](/static/courses/csintro/example-project-process/trampoline-game-final.gif)
+![Final Result](/static/courses/csintro/project/trampoline-game-final.gif)

@@ -26,7 +26,7 @@ This course is currently in beta - this means that it is likely to have bugs and
     "imageUrl": "/static/courses/csintro/loops.gif"
 }, {
     "name": "Final Project",
-    "url": "/courses/csintro/final-project",
+    "url": "/courses/csintro/project/final",
     "imageUrl": "/static/courses/csintro/final-project.gif"
 }
 ]
@@ -76,3 +76,8 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Projectiles from Sprites](/courses/csintro/loops/projectile-from)
 * [Physics](/courses/csintro/loops/physics)
 * [Project](/courses/csintro/loops/project)
+
+### Projects
+
+* [Example Section Project](/courses/csintro/projects/example)
+* [Final Project](/courses/csintro/project/final)

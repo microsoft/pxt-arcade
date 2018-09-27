@@ -6,7 +6,7 @@ It is a good idea to start the game as a MVP (minimum viable project) to demonst
 
 ## Student Task: Building a full game
 
-![Asteroid Miner](/static/courses/csintro/final-project/asteroid-miner.gif)
+![Asteroid Miner](/static/courses/csintro/project/asteroid-miner.gif)
 
 ### Requirements
 
