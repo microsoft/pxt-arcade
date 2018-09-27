@@ -208,33 +208,33 @@ namespace pxsim {
 
         layout() {
             const minControlWidth = 80;
-            const wWidth = window.innerWidth;
-            const wHeight = window.innerHeight;
+            const wWidth = document.body.clientWidth;
+            const wHeight = document.body.clientHeight;
             if (wWidth < wHeight) {
                 // Place controls below
-                this.view.centerInBox(0, 0, window.innerWidth, window.innerHeight - minControlWidth);
+                this.view.centerInBox(0, 0, wWidth, wHeight - minControlWidth);
 
                 const bottom = this.view.boundingBox().bottom;
-                const availableHeight = window.innerHeight - bottom;
+                const availableHeight = wHeight - bottom;
                 let controlsHeight = availableHeight * 4 / 5;
 
                 if (controlsHeight * 2 > wWidth)
                     controlsHeight = wWidth / 2 | 0;
 
-                const controlsTop = window.innerHeight - availableHeight + (availableHeight - controlsHeight) / 2;
+                const controlsTop = wHeight - availableHeight + (availableHeight - controlsHeight) / 2;
 
                 this.controls.moveDPad(0, controlsTop, controlsHeight);
-                this.controls.moveButtons(window.innerWidth - controlsHeight, controlsTop, controlsHeight);
+                this.controls.moveButtons(wWidth - controlsHeight, controlsTop, controlsHeight);
             }
             else {
                 // Place controls on sides
-                const availableWidth = window.innerWidth - minControlWidth * 2;
-                this.view.centerInBox(minControlWidth, 0, availableWidth, window.innerHeight);
+                const availableWidth = wWidth - minControlWidth * 2;
+                this.view.centerInBox(minControlWidth, 0, availableWidth, wHeight);
 
                 const left = this.view.boundingBox().left;
 
-                this.controls.moveDPad(0, window.innerHeight - left, left);
-                this.controls.moveButtons(window.innerWidth - left, window.innerHeight - left, left);
+                this.controls.moveDPad(0, wHeight - left, left);
+                this.controls.moveButtons(wWidth - left, wHeight - left, left);
             }
         }
     }

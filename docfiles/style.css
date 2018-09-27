@@ -1,5 +1,7 @@
 body#root {
-    font-size: 12pt;    
+    font-size: 12pt;
+    display: flex;
+    flex-direction: column;
 }
 
 #docs ul {
@@ -11,7 +13,7 @@ body#root {
 }
 
 #docs ul li:before {
-  margin: 0 1em; 
+  margin: 0 1em;
   content: "\25CF";
 }
 
@@ -26,7 +28,40 @@ body#root {
 #root .editor-image {
     margin: 2em auto;
     display: block;
-    max-width: 80%;    
+    max-width: 80%;
+}
+
+.page-header {
+    flex-grow: 0;
+}
+
+.ui.container.script-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.script-embed {
+    flex-grow: 1;
+}
+
+.script-bookend {
+    flex-grow: 0;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.script-frame {
+    width: 100%;
+    height: 100%;
+}
+
+.script-info {
+    width: 100%;
+}
+
+.ui.header:first-child {
+    margin-top: 0.2rem !important;
 }
 
 pre {
@@ -48,7 +83,7 @@ code {
 }
 
 p code, li code {
-    background-color: rgba(0,0,0,0.04);    
+    background-color: rgba(0,0,0,0.04);
 }
 
 p code:before, p code:after,
@@ -65,6 +100,13 @@ code.hljs {
 .ui[class*="5:3"].embed {
     padding-bottom: 83%;
     background:transparent !important;
+}
+
+div.blocks-svg-list > svg {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    page-break-inside: avoid;
+    vertical-align: top;
 }
 
 code {
@@ -102,7 +144,7 @@ code.lang-codecard
 
 /* Limit width of text so that it's readable
  */
- 
+
 .ui.text p,
 .ui.text li,
 .ui.container.mainbody {
@@ -194,7 +236,7 @@ svg {
 }
 
 #pagemenu {
-    border-radius: 0;    
+    border-radius: 0;
 }
 
 #pagemenu .ui.item .header {
@@ -279,23 +321,26 @@ svg {
     display: none;
 }
 
-/* Search */
-.toc .item.search {
-    margin: -.92857143em -1.14285714em;
-}
-
-.toc .item.search input {
-    border-radius: 0;
-}
-
 .showmobile {
     display: none;
 }
 
+.abuse.content {
+    color: #333;
+    padding: 1rem;
+}
+
+/*
+From Semantic:
+
+    @mobileBreakpoint            : 320px;
+    @tabletBreakpoint            : 768px;
+    @computerBreakpoint          : 992px;
+    @largeMonitorBreakpoint      : 1200px;
+    @widescreenMonitorBreakpoint : 1920px;
+*/
+
 @media only screen and (max-width: 1144px) {
-    body.root.expandIt{
-        display: flex;
-    }
     .pusher > .toc {
         width: 200px;
         position: absolute;
@@ -323,13 +368,6 @@ svg {
     .navigation.navigation-next {
         margin-right: 0;
     }
-    .ui.container.mainbody {
-        margin-top: 5rem;
-        margin-left: 0!important;
-        margin-right: 0!important;
-        padding-left: 1em;
-        padding-right: 1em;
-    }
     .navigation {
         position: relative; /* IE doesn't support static */
         position: static;
@@ -344,27 +382,6 @@ svg {
     .ui.vertical.segment.footer {
         margin-top: 4rem;
     }
-    
-    .showDesktop {
-        display: none;
-    }
-
-    .ui.container {
-        display: flex;
-        flex-direction: column;
-        flex: 1 1 auto;
-    }
-
-    .ui.container.main {
-        margin: 0rem !important;
-        padding: 0;
-    }
-
-    .abuse.content {
-        color: #333;
-        padding: 1rem;
-        width: 100%;
-    }
 
     .abuse.content.mobile {
         padding: 0.1rem;
@@ -372,19 +389,32 @@ svg {
     }
 }
 
-@media only screen and (min-width: 1145px) {
+/* tablet */
+@media only screen and (max-width: 768px) {
+    .ui.container.mainbody {
+        margin: 0 !important;
+    }
+
+    #abuse-message {
+        padding: 0 !important;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .ui.container.mainbody {
+        margin-top: 1rem;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
     .fixed.main.menu {
         display: none;
     }
-    
+
     .mainbody {
         margin-top: 2em;
         padding-left: 6rem;
         padding-right: 6rem;
-    }
-    
-    .container.fluid.showMobileOnly {
-        display: none;
     }
 }
 
@@ -415,6 +445,6 @@ print only stuff
         display:none !important;
     }
     body.pushable {
-        background: #fff !important;        
+        background: #fff !important;
     }
 }
