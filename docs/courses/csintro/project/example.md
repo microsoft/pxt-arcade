@@ -14,7 +14,11 @@ We discussed the idea for the game with another group. They thought it would be 
 
 We create the following list of features that were the most **crucial** to implement in order to make this game fun:
 
-![Features](/static/courses/csintro/project/features.png)
+* The player is constantly falling, but bounces on the trampoline
+* The trampolines are placed randomly on the screen
+* The score goes up when the player bounces on a trampoline
+
+![Features of Game](/static/courses/csintro/project/features.png)
 
 ## Round 1: Minimum Viable Product
 
@@ -305,12 +309,21 @@ game.onUpdate(function () {
 })
 ```
 
-We also had all sorts of things to turn in, that helped document how we got to the final result:
+We also had the following items that helped document how we got to the final result:
 
 * The share links of the games throughout each round
 * The drawings we made along the way
 * The lists of suggestions, ideas, and tasks we had along the way
 
 We also listed out the concepts we used from the **Concepts Learned** sections of the project:
+
+* Sprites
+* Sprite Position
+* Controller
+* Overlap Events
+* Spawning Sprites
+* Random
+* Score
+* Set Image
 
 ![Concepts Used](/static/courses/csintro/project/concepts-used.png)

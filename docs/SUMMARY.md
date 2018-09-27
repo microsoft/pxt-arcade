@@ -52,7 +52,7 @@
             * [Projectiles from Sprites](/courses/csintro/loops/projectile-from)
             * [Physics](/courses/csintro/loops/physics)
             * [Project](/courses/csintro/loops/project)
-        * [Final Project](/courses/csintro/final-project)
+        * [Final Project](/courses/csintro/project/final)
     * [Advanced Blocks](/courses/advanced-blocks)
         * [About](/courses/advanced-blocks/about)
             * [Programming Language](/courses/advanced-blocks/about/script)
@@ -82,7 +82,7 @@
             * [Sprite Arrays](/courses/advanced-blocks/arrays/sprites)
             * [Tile Arrays](/courses/advanced-blocks/arrays/tilemap)
             * [Project](/courses/advanced-blocks/arrays/project)
-        * [Final Project](/courses/advanced-blocks/project/final)
+        * [Final Project](/courses/advanced-blocks/final-project)
 
 ## JavaScript Games
 
