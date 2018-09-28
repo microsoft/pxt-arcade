@@ -6,6 +6,7 @@
         "corgio.ts"
     ],
     "public": true,
+    "icon": "./static/packages/corgio/icon.png",
     "dependencies": {
         "game": "file:../game"
     }
