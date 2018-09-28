@@ -1,6 +1,7 @@
 # Review Material
 
 * [Extend "touch the button"](/courses/csintro1/review/touch-the-button)
+* [Paparazzi](/courses/csintro1/review/paparazzi)
 * [Baseball Catching](/courses/csintro1/review/baseball-catching)
 * [Dodgey Duck](/courses/csintro1/review/dodgey-duck)
 
