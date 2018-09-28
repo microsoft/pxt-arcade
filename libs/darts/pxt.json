@@ -6,7 +6,6 @@
         "darts.ts"
     ],
     "public": true,
-    "icon": "./static/packages/darts/icon.png",
     "dependencies": {
         "game": "file:../game"
     }
