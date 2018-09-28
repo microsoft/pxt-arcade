@@ -89,6 +89,6 @@ info.onCountdownEnd(function () {
 })
 ```
 
-Everything seems like it's working fine to start, until he tries to add in the score to the splash screen, as shown in the animation below. What is going wrong, and how can he fix it?
+Everything seems like it's working fine to start, until they try to add in the score to the splash screen, as shown in the animation below. What is going wrong, and how can they fix it?
 
 ![Adding score to splash screen](/static/courses/csintro1/review/score-to-splash.gif)
