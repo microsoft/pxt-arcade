@@ -12,7 +12,7 @@
 	<link rel="alternate" type="text/xml+oembed" href="@oembedurl@&format=xml" />
 </head>
 
-<body id='root' class='root expandIt'>
+<body id='root' class='root expandIt share-page'>
 
 	<div class="showDesktop page-header">
 		<!-- @include pageheader.html -->
@@ -31,7 +31,7 @@
 				</div>
 			</h2>
 		</div>
-		<iframe id="embed-frame" class="script-embed" src="/@versionsuff@--run?id=@id@"  sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
+		<iframe id="embed-frame" class="script-embed" src="/@versionsuff@--run?fullscreen=1&nofooter=1&id=@id@"  sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
 		frameborder="0"></iframe>
 		<div class="script-bookend">
 			<!-- @include abuse.html -->
@@ -45,7 +45,7 @@
 
 	<script>
 		var editorEmbedURL = "/@versionsuff@#sandbox:@id@";
-		var gameEmbedURL = "/@versionsuff@--run?id=@id@";
+		var gameEmbedURL = "/@versionsuff@--run?fullscreen=1&nofooter=1&id=@id@";
 		var showCodeButton = document.getElementById("show-code-button");
 		var frame = document.getElementById("embed-frame");
 

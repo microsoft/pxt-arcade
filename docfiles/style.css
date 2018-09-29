@@ -4,6 +4,33 @@ body#root {
     flex-direction: column;
 }
 
+body#root.share-page {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+body#root.share-page #pagemenu .ui.header {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+body#root.share-page #pagemenu {
+    height: 4rem;
+    min-height: 4rem !important;
+}
+
+body#root.share-page .left.menu {
+    align-items: center;
+}
+
+body#root.share-page .ui.item.logo.organization {
+    height: 100%;
+}
+
+body#root.share-page .ui.mini.image.mclogo {
+    width: 45px;
+    max-height: 45px;
+}
+
 #docs ul {
     padding: 0rem;
 }
@@ -58,6 +85,11 @@ body#root {
 
 .script-info {
     width: 100%;
+}
+
+#abuse-message {
+    padding: 0 !important;
+    margin-bottom: 0.2em;
 }
 
 .ui.header:first-child {
@@ -187,8 +219,7 @@ svg {
 /* page layout */
 
 .mainbody {
-    margin-top: 2em;
-    padding-bottom: 1em;
+    margin-top: 1em;
 }
 
 #accessibleMenu .ui.item.link {
@@ -393,10 +424,6 @@ From Semantic:
 @media only screen and (max-width: 768px) {
     .ui.container.mainbody {
         margin: 0 !important;
-    }
-
-    #abuse-message {
-        padding: 0 !important;
     }
 }
 
