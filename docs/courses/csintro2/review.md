@@ -1,7 +1,6 @@
 # Review Material
 
 * [Side Scroller](/courses/csintro2/review/side-scroller)
-* [Projectiles](/courses/csintro2/review/projectiles)
 * [Change By Practice](/courses/csintro2/review/practice-change-by)
 * [Conditionals Practice](/courses/csintro2/review/practice-conditionals)
 * [Functions Practice](/courses/csintro2/review/practice-functions)
