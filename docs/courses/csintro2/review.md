@@ -2,7 +2,8 @@
 
 * [Side Scroller](/courses/csintro2/review/side-scroller)
 * [Change By Practice](/courses/csintro2/review/practice-change-by)
-* [Conditionals Practice](/courses/csintro2/review/practice-conditionals)
+* [Blockbuster Film](/courses/csintro2/review/blockbuster)
+
 * [Functions Practice](/courses/csintro2/review/practice-functions)
 * [Loops Practice](/courses/csintro2/review/practice-loops)
 * [Projectiles Practice](/courses/csintro2/review/practice-projectiles)

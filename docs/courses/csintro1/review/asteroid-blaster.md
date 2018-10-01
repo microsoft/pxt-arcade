@@ -1,8 +1,8 @@
 # Review: Asteroid Blaster
 
-![Asteroid Blaster](/static/courses/csintro1/review/asteroid-blaster.gif)
+Create your own asteroid destroying masterpiece.
 
-Start with this basic game code. We will alter this by adding the basic motion concepts that we learned to make the game above.
+![Asteroid Blaster](/static/courses/csintro1/review/asteroid-blaster.gif)
 
 ## Student Task #1: Create the Spaceship
 
@@ -42,6 +42,8 @@ Add an an event so that the player loses life
 3. ``||sprites:destroy||`` the ``||sprites:Asteroid||`` sprite
 
 ## Student Task #5: Laser Effect
+
+Give the laser some power to destroy the asteroids
 
 1. Add an event for when a sprite of kind ``||sprites:Laser||`` overlaps with a sprite of kind ``||sprites:Asteroid||``
 2. Increase the player's score by one

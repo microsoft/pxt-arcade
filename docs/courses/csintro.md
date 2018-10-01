@@ -11,11 +11,11 @@ These courses are currently in beta - this means that they are likely to have bu
 ```codecard
 [
 {
-    "name": "Intro to CS",
+    "name": "CS Intro 1",
     "description": "A semester length computer science course for beginning coders",
     "url":"/courses/csintro1"
 }, {
-    "name": "Advanced Blocks",
+    "name": "CS Intro 2",
     "description": "A continuation of the Intro to CS course",
     "url":"/courses/csintro2"
 }
@@ -29,3 +29,9 @@ Coming Soon:
 Two more courses centered on JavaScript
 
 ### ~
+
+## See also
+
+[Courses Home Page](/courses),
+[CS Intro 1](/courses/csintro1),
+[CS Intro 2](/courses/csintro2)
