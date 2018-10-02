@@ -1,5 +1,35 @@
 # Review Material
 
+These sections cover *optional* review material to that can be useful when transitioning to the final project.
+
+```codecard
+[
+{
+    "name": "Extend 'Touch the Button'",
+    "url": "/courses/csintro1/review/touch-the-button",
+    "imageUrl": "/static/courses/csintro1/review/touch-the-button.gif"
+}, {
+    "name": "Paparazzi",
+    "url": "/courses/csintro1/review/paparazzi",
+    "imageUrl": "/static/courses/csintro1/review/paparazzi.gif"
+}, {
+    "name": "Asteroid Blaster",
+    "url": "/courses/csintro1/review/asteroid-blaster",
+    "imageUrl": "/static/courses/csintro1/review/asteroid-blaster.gif"
+}, {
+    "name": "Baseball Catching",
+    "url": "/courses/csintro1/review/baseball-catching",
+    "imageUrl": "/static/courses/csintro1/review/baseball-catching.gif"
+}, {
+    "name": "Dodgey Duck",
+    "url": "/courses/csintro1/review/dodgey-duck",
+    "imageUrl": "/static/courses/csintro1/review/dodgey-duck.gif"
+}
+]
+```
+
+## Review
+
 * [Extend "touch the button"](/courses/csintro1/review/touch-the-button)
 * [Paparazzi](/courses/csintro1/review/paparazzi)
 * [Asteroid Blaster](/courses/csintro1/review/asteroid-blaster)

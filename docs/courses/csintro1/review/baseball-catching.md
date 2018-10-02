@@ -2,7 +2,7 @@
 
 Whether a baseball is thrown or hit, one thing is certain: someone is trying to catch it. To represent this, build a simple game where the goal is to catch the baseballs that fly across the screen.
 
-![Final Baseball Catching Game](/static/courses/csintro1/review/baseball-game.gif)
+![Final Baseball Catching Game](/static/courses/csintro1/review/baseball-catching.gif)
 
 ## Student Task #1: Build a Mitt
 
@@ -29,11 +29,11 @@ Add gameplay elements that make the game interesting to play.
 
 1. Add a ``||info:countdown||`` of 20 seconds in the ``||loops:on start||``
 2. Create an ``||sprites:on overlap||`` event between sprites of ``||sprites:kind||`` ``||sprites:Mitt||`` and sprites of ``||sprites:kind||`` ``||sprites:Baseball||``
-3. Inside the ``||sprites:on overlap||`` event, ``||sprites:destroy||`` the ``||sprites:Ball||``, and add `1` to the score
+3. Inside the ``||sprites:on overlap||`` event, ``||sprites:destroy||`` the ``||sprites:Baseball||``, and add `1` to the score
 4. Make the ``||sprites:Mitt||`` 'bounce' when in the overlap event, by
-    * changing ``||sprites:Mitt||``'s ``x`` by 5
+    * changing ``||sprites:Mitt||``'s ``y`` by -5
     * ``||loops:pause||`` for 100 ms
-    * changing ``||sprites:Mitt||``'s ``x`` by -5
+    * changing ``||sprites:Mitt||``'s ``y`` by 5
 
 ### ~hint
 

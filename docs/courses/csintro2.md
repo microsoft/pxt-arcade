@@ -25,6 +25,10 @@ This course is currently in beta - this means that it is likely to have bugs and
     "url": "/courses/csintro2/arrays",
     "imageUrl": "/static/courses/csintro2/arrays.gif"
 }, {
+    "name": "Review",
+    "url": "/courses/csintro2/review",
+    "imageUrl": "/static/courses/csintro2/review.gif"
+}, {
     "name": "Final Project",
     "url": "/courses/csintro2/final-project",
     "imageUrl": "/static/courses/csintro2/final-project.gif"
@@ -71,5 +75,12 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Sprite Arrays](/courses/csintro2/arrays/sprites)
 * [Tile Arrays](/courses/csintro2/arrays/tilemap)
 * [Project](/courses/csintro2/arrays/project)
+
+### [Review](/courses/csintro2/review)
+
+* [Side Scroller](/courses/csintro2/review/side-scroller)
+* [Blockbuster Film](/courses/csintro2/review/blockbuster)
+* [Functionally the Same](/courses/csintro2/review/functions)
+
 
 ### [Final Project](/courses/csintro2/final-project)
