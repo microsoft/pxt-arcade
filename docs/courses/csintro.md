@@ -22,6 +22,8 @@ These courses are currently in beta - this means that they are likely to have bu
 ]
 ```
 
+## About the CS Intro Series
+
 The CS Intro Series is designed to teach new developers how to code from the ground up.
 
 In CS Intro 1, students are introduced to programming through the MakeCode Blocks editor. They can create their own games, while learning concepts that are crucial to software development: creating variables, responding to events, and using iteration to simplify and extend their programs. Throughout the course, they will learn to develop their own games through small daily tasks, as well as projects that guide them through the process of turning basic ideas into full-fledged games.
