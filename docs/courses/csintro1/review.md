@@ -5,7 +5,7 @@ These sections cover *optional* review material to that can be useful when trans
 ```codecard
 [
 {
-    "name": "Extend 'Touch the Button'",
+    "name": "Touch the Button",
     "url": "/courses/csintro1/review/touch-the-button",
     "imageUrl": "/static/courses/csintro1/review/touch-the-button.gif"
 }, {
