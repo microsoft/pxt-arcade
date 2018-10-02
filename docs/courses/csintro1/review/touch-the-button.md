@@ -4,6 +4,8 @@ In the info section of the orientation, the game "touch the button 15 times" had
 
 This can be changed using two using two blocks: ``||info:on life zero||`` and ``||info:on countdown end||``. These blocks are used to **override** (change) the standard behavior for running out of lives and time running out for a countdown.
 
+![Touch the Button](/static/courses/csintro1/review/touch-the-button.gif)
+
 ## Initial Game:
 
 ```blocks

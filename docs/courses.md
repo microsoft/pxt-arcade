@@ -23,5 +23,5 @@ Structured courses for teaching computer science in the classroom.
 ## See also
 
 [CS Intro Home Page](/courses/csintro),
-[Intro to CS](/courses/csintro1),
-[Advanced Blocks](/courses/csintro2)
+[CS Intro 1](/courses/csintro1),
+[CS Intro 2](/courses/csintro2)

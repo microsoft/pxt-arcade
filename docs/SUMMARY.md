@@ -52,6 +52,12 @@
             * [Projectiles from Sprites](/courses/csintro1/loops/projectile-from)
             * [Physics](/courses/csintro1/loops/physics)
             * [Project](/courses/csintro1/loops/project)
+        * [Review](/courses/csintro1/review)
+            * [Extend "touch the button"](/courses/csintro1/review/touch-the-button)
+            * [Paparazzi](/courses/csintro1/review/paparazzi)
+            * [Asteroid Blaster](/courses/csintro1/review/asteroid-blaster)
+            * [Baseball Catching](/courses/csintro1/review/baseball-catching)
+            * [Dodgey Duck](/courses/csintro1/review/dodgey-duck)
         * [Final Project](/courses/csintro1/project/final)
     * [CS Intro 2](/courses/csintro2)
         * [About](/courses/csintro2/about)
@@ -82,6 +88,10 @@
             * [Sprite Arrays](/courses/csintro2/arrays/sprites)
             * [Tile Arrays](/courses/csintro2/arrays/tilemap)
             * [Project](/courses/csintro2/arrays/project)
+        * [Review](/courses/csintro2/review)
+            * [Side Scroller](/courses/csintro2/review/side-scroller)
+            * [Blockbuster Film](/courses/csintro2/review/blockbuster)
+            * [Functionally the Same](/courses/csintro2/review/functions)
         * [Final Project](/courses/csintro2/final-project)
 
 ## JavaScript Games

@@ -25,6 +25,10 @@ This course is currently in beta - this means that it is likely to have bugs and
     "url": "/courses/csintro1/loops",
     "imageUrl": "/static/courses/csintro1/loops.gif"
 }, {
+    "name": "Review",
+    "url": "/courses/csintro1/review",
+    "imageUrl": "/static/courses/csintro1/review.gif"
+}, {
     "name": "Final Project",
     "url": "/courses/csintro1/project/final",
     "imageUrl": "/static/courses/csintro1/final-project.gif"
@@ -76,6 +80,14 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Projectiles from Sprites](/courses/csintro1/loops/projectile-from)
 * [Physics](/courses/csintro1/loops/physics)
 * [Project](/courses/csintro1/loops/project)
+
+### [Review](/courses/csintro1/review)
+
+* [Extend "touch the button"](/courses/csintro1/review/touch-the-button)
+* [Paparazzi](/courses/csintro1/review/paparazzi)
+* [Asteroid Blaster](/courses/csintro1/review/asteroid-blaster)
+* [Baseball Catching](/courses/csintro1/review/baseball-catching)
+* [Dodgey Duck](/courses/csintro1/review/dodgey-duck)
 
 ### Projects
 

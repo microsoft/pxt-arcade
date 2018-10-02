@@ -1,15 +1,30 @@
 # Review Material
 
+These sections cover *optional* review material to that can be useful when transitioning to the final project.
+
+```codecard
+[
+{
+    "name": "Side Scroller",
+    "url": "/courses/csintro2/review/side-scroller",
+    "imageUrl": "/static/courses/csintro2/review/side-scroller.gif"
+}, {
+    "name": "Making a Blockbuster",
+    "url": "/courses/csintro2/review/blockbuster",
+    "imageUrl": "/static/courses/csintro2/review/blockbuster.gif"
+}, {
+    "name": "Functionally the Same",
+    "url": "/courses/csintro2/review/functions",
+    "imageUrl": "/static/courses/csintro2/review/functions.gif"
+}
+]
+```
+
+## Review
+
 * [Side Scroller](/courses/csintro2/review/side-scroller)
-* [Projectiles](/courses/csintro2/review/projectiles)
-* [Change By Practice](/courses/csintro2/review/practice-change-by)
-* [Conditionals Practice](/courses/csintro2/review/practice-conditionals)
-* [Functions Practice](/courses/csintro2/review/practice-functions)
-* [Loops Practice](/courses/csintro2/review/practice-loops)
-* [Projectiles Practice](/courses/csintro2/review/practice-projectiles)
-* [Sprite Motion Practice](/courses/csintro2/review/practice-sprite-motion)
-* [Variable Math Practice](/courses/csintro2/review/practice-variable-math)
-* [String Math Practice](/courses/csintro2/review/practice-string-math)
+* [Blockbuster Film](/courses/csintro2/review/blockbuster)
+* [Functionally the Same](/courses/csintro2/review/functions)
 
 
 [Advanced Blocks Home](/courses/csintro2)
