@@ -22,7 +22,7 @@ The Birthday Algorithm displays a birthday as `month.day` after following a set 
 ### ~hint
 
 Result is in the format `month.day`
-example: June 1st would be `6.01`
+example: March 1st would be `3.01`
 
 ### ~
 
