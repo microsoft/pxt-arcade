@@ -105,7 +105,9 @@ game.onUpdateInterval(5000, function () {
 1. Start a new project
 2. Create a ``||sprites:sprite||`` and use the ``||controller:control with||`` block to move the sprite around the screen
 3. Make a variable named ``||variables:isLeft||`` and set it equal to ``||logic:false||``
-4. In the ``||game:on game update||`` block, add an ``||logic:if else||`` block that sets ``||variables:isLeft||`` to ``||logic:true||`` if the our sprite is on the left side of the screen and ``||logic:false||`` otherwise
+4. In the ``||game:on game update||`` block
+    - add an ``||logic:if else||`` block that sets ``||variables:isLeft||`` to ``||logic:true||`` if the our sprite is on the **left side of the screen** (left side is when the horizonal position is less than 80)
+    - otherwise set to ``||logic:false||`` 
 5. Make it so that if the player presses the ``||controller:A||`` button, if ``||variables:isLeft||`` is ``||logic:false||``, then the sprite should ``||sprites:say||`` something
 
 ## Concept: Alternating Booleans
