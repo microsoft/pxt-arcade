@@ -1,0 +1,25 @@
+{
+    "name": "hw---samd51",
+    "description": "SAMD51 board",
+    "files": [
+        "config.ts",
+        "device.d.ts"
+    ],
+    "card": {
+        "name": "SAMD51 board",
+        "description": "Just a generic board, no branding yet.",
+        "learnMoreUrl": "https://arcade.makecode.com/samd51",
+        "cardType": "hw",
+        "imageUrl": "/static/boards/samd.jpg"
+    },
+    "compileServiceVariant": "samd51",
+    "dependencies": {
+        "core---samd51": "file:../core---samd51",
+        "screen---st7735": "file:../screen---st7735",
+        "music---pwm": "file:../music---pwm",
+        "controller---hw": "file:../controller---hw",
+        "buttons": "file:../buttons",
+        "game": "file:../game"
+    },
+    "public": true
+}
