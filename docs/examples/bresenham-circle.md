@@ -90,26 +90,26 @@ let cx = 31
 let cy = 31
 let radius = 0
 let grow = true
-let mySprite: Sprite = null
-let myImage: Image = null
-myImage = image.create(64, 64)
-mySprite = sprites.create(myImage, 0)
+let circleSprite: Sprite = null
+let circle: Image = null
+circle = image.create(64, 64)
+circleSprite = sprites.create(circle, 0)
 
 forever(function () {
-    myImage.fill(6)
+    circle.fill(6)
     d = 3 - 2 * radius
     x = 0
     y = radius
 
     while (x <= y) {
-        myImage.setPixel(cx + x, cy + y, 4)
-        myImage.setPixel(cx + x, cx - y, 4)
-        myImage.setPixel(cx - x, cx + y, 4)
-        myImage.setPixel(cx - x, cy - y, 4)
-        myImage.setPixel(cx + y, cy + x, 4)
-        myImage.setPixel(cx + y, cy - x, 4)
-        myImage.setPixel(cx - y, cy + x, 4)
-        myImage.setPixel(cx - y, cy - x, 4)
+        circle.setPixel(cx + x, cy + y, 4)
+        circle.setPixel(cx + x, cx - y, 4)
+        circle.setPixel(cx - x, cx + y, 4)
+        circle.setPixel(cx - x, cy - y, 4)
+        circle.setPixel(cx + y, cy + x, 4)
+        circle.setPixel(cx + y, cy - x, 4)
+        circle.setPixel(cx - y, cy + x, 4)
+        circle.setPixel(cx - y, cy - x, 4)
         if (d <= 0) {
             d += 4 * x + 6
         } else {
