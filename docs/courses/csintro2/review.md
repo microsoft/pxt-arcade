@@ -1,6 +1,6 @@
 # Review Material
 
-These sections cover *optional* review material to that can be useful when transitioning to the final project.
+These sections cover *optional* review material that can be used to help transition to the final project.
 
 ```codecard
 [
