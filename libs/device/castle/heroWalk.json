@@ -1,0 +1,14 @@
+{
+    "width": 16,
+    "height": 16,
+    "frames": [
+        "Front1",
+        "Front2",
+        "Front3",
+        "Front4",
+        "Back1",
+        "Back2",
+        "Back3",
+        "Back4"
+    ]
+}
