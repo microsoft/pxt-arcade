@@ -20,7 +20,29 @@ For example, ``||sprites:stay in screen||`` is a flag that we have set that forc
 
 ## Coming Soon: VIDEO
 
-## Example #1: Are you hungry?
+## Example #1a: Assigning a Boolean Value
+
+1. Review the code below
+2. Create the sample code and run the code
+3. Identify how the boolean value is stored inside of a variable
+
+```blocks
+let isOneLife = false
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (isOneLife) {
+        game.splash("You're at one health!")
+    }
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.changeLifeBy(-1)
+})
+info.setLife(3)
+game.onUpdate(function () {
+    isOneLife = info.life() == 1
+})
+```
+
+## Example #1b: Are you hungry?
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -46,7 +68,7 @@ In this example, ``||variables:isHungry||`` is a flag that will change the behav
 
 ## Student Task #1: Off and On
 
-1. Start with the code from example #1
+1. Start with the code from example #1b
 2. Modify the ``||controller:on A button pressed||`` event so that it **switches** the value of ``||variables:isHungry||`` from ``||logic:true||`` to ``||logic:false||`` or from ``||logic:false||`` to ``||logic:true||``, by using an ``||logic:if else||`` block
 
 ## Concept: ``||logic:not||``
@@ -105,9 +127,7 @@ game.onUpdateInterval(5000, function () {
 1. Start a new project
 2. Create a ``||sprites:sprite||`` and use the ``||controller:control with||`` block to move the sprite around the screen
 3. Make a variable named ``||variables:isLeft||`` and set it equal to ``||logic:false||``
-4. In the ``||game:on game update||`` block
-    - add an ``||logic:if else||`` block that sets ``||variables:isLeft||`` to ``||logic:true||`` if the our sprite is on the **left side of the screen** (left side is when the horizonal position is less than 80)
-    - otherwise set to ``||logic:false||`` 
+4. In the ``||game:on game update||`` block, assign ``||variables:isLeft||`` to a ``||logic:0 < 0||`` comparison. Replace the first ``0`` with the ``||sprites:sprites||`` ``||sprites:x||`` position, and the second ``0`` with 80
 5. Make it so that if the player presses the ``||controller:A||`` button, if ``||variables:isLeft||`` is ``||logic:false||``, then the sprite should ``||sprites:say||`` something
 
 ## Concept: Alternating Booleans
