@@ -22,10 +22,6 @@ body#root.share-page .left.menu {
     align-items: center;
 }
 
-body#root.share-page .ui.item.logo.organization {
-    height: 100%;
-}
-
 body#root.share-page .ui.mini.image.mclogo {
     width: 45px;
     max-height: 45px;
@@ -59,6 +55,41 @@ body#root.share-page .ui.mini.image.mclogo {
 }
 
 .page-header {
+    flex-grow: 0;
+}
+
+#page-header-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 4rem;
+    min-height: 4rem !important;
+}
+
+.page-header-item {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.page-header-content {
+    /* aligns with edge of embedded simulator */
+    padding-left: 10px;
+    max-width: 50%;
+    flex-shrink: 1;
+}
+
+.page-header-content .ui.header {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.show-code-toggle {
+    flex-grow: 1;
+    padding-left: 1rem;
+}
+
+.no-grow {
     flex-grow: 0;
 }
 
@@ -179,7 +210,8 @@ code.lang-codecard
 
 .ui.text p,
 .ui.text li,
-.ui.container.mainbody {
+.ui.container.mainbody,
+.page-header .ui.container {
     max-width: 1100px !important;
 }
 
@@ -217,11 +249,6 @@ svg {
 }
 
 /* page layout */
-
-.mainbody {
-    margin-top: 1em;
-}
-
 #accessibleMenu .ui.item.link {
     position: absolute;
     height: 4em;
@@ -422,26 +449,23 @@ From Semantic:
 
 /* tablet */
 @media only screen and (max-width: 768px) {
-    .ui.container.mainbody {
+    body#root.share-page #pagemenu {
+        height: 2.8rem;
+        min-height: 2.8rem !important;
+    }
+    .ui.container.mainbody, .page-header .ui.container {
         margin: 0 !important;
     }
 }
 
 @media only screen and (min-width: 769px) {
-    .ui.container.mainbody {
-        margin-top: 1rem;
+    .ui.container.mainbody, .page-header .ui.container {
         padding-left: 1em;
         padding-right: 1em;
     }
 
     .fixed.main.menu {
         display: none;
-    }
-
-    .mainbody {
-        margin-top: 2em;
-        padding-left: 6rem;
-        padding-right: 6rem;
     }
 }
 
