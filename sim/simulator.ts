@@ -195,7 +195,6 @@ namespace pxsim {
             this.layout()
 
             throttleAnimation(cb => window.onresize = cb, () => this.layout())
-            let info = document.getElementById("instructions")
             indicateFocus(document.hasFocus());
 
             return Promise.resolve();
@@ -322,9 +321,9 @@ namespace pxsim {
 
             if (isEdge() || isIE()) {
                 // Snap to closest screen-size to avoid scaling issues
-                this.cellWidth = Math.max(1, Math.floor(Math.min(maxWidth / this.state.width, maxHeight / this.state.height)));
-                screenWidth = this.cellWidth * this.state.width;
-                screenHeight = this.cellWidth * this.state.height;
+                const cellWidth = Math.max(1, Math.floor(Math.min(maxWidth / this.state.width, maxHeight / this.state.height)));
+                screenWidth = cellWidth * this.state.width;
+                screenHeight = cellWidth * this.state.height;
             }
             else {
                 const constrainedHeight = maxWidth / aspectRatio;
@@ -413,6 +412,7 @@ namespace pxsim {
 
         protected resize() {
             if (isEdge() || isIE()) {
+                this.cellWidth = this.metrics.width / this.state.width;
                 this.canvas.width = this.metrics.width;
                 this.canvas.height = this.metrics.height;
             }

@@ -172,12 +172,29 @@ namespace pxsim {
         protected buildDom() {
             this.drawDirectionalPad();
             this.drawButtonGroup();
+            this.drawMenuReset(this.reset, svg.resetButton);
+            this.drawMenuReset(this.menu, svg.menuButton);
+
+            this.reset.el.addEventListener("click", () => {
+                pxsim.Runtime.postMessage(<pxsim.SimulatorCommandMessage>{
+                    type: "simulator",
+                    command: "restart"
+                })
+            });
 
             this.moveDPad(0, 0, COMPONENT_WIDTH)
             this.moveButtons(0, 0, COMPONENT_WIDTH);
+        }
 
-            this.reset.el.appendChild(svg.resetButton.cloneNode(true));
-            this.menu.el.appendChild(svg.menuButton.cloneNode(true));
+        protected drawMenuReset(parent: s.SVG, el: SVGSVGElement) {
+            parent.el.appendChild(el.cloneNode(true));
+
+            const overlay = parent.draw("rect")
+                .setClass("controller-button-overlay")
+                .width(100, s.LengthUnit.percent)
+                .height(100, s.LengthUnit.percent)
+                .fill("black", 0)
+                .corners(10, 10);
         }
 
         protected drawDirectionalPad() {
