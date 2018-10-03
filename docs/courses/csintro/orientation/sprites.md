@@ -85,7 +85,10 @@ mySprite = sprites.create(img`
 
 ## Student Task #1: Create your own sprite
 
-* The default sprite is 16x16 pixels - press the `change sprite size` button to make a sprite that is 32x32 pixels!
+1. Create a new project in @boardname@
+2. Create a new ``||sprites:Sprite||``
+3. The default sprite is 16x16 pixels - press the `change sprite size` button to make a sprite that is 32x32 pixels
+4. Draw a unique sprite
 
 ### ~hint
 

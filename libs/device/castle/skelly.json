@@ -1,0 +1,22 @@
+{
+    "width": 24,
+    "height": 24,
+    "frames": [
+        "Front",
+        "WalkFront1",
+        "WalkFront2",
+        "WalkFront3",
+        "AttackFront1",
+        "AttackFront2",
+        "AttackFront3",
+        "AttackFront4",
+        "WalkLeft1",
+        "AttackLeft1",
+        "AttackLeft2",
+        "WalkLeft2",
+        "WalkRight1",
+        "AttackRight1",
+        "AttackRight2",
+        "WalkRight2"
+    ]
+}

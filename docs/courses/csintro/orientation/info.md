@@ -38,11 +38,11 @@ Notice that the score pops up in the top right corner as soon as it is used for 
 1. Start with the code saved as "button count" in the prior example
 2. Create an ``||loops:on start||`` block
 
-### ~hint
+    ### ~hint
 
-Remember that you can find blocks easily by using the search bar
+    Remember that you can find blocks easily by using the search bar
 
-### ~
+    ### ~
 
 3. Add in a ``||info:start countdown 10 (s)||`` block into the ``||loops:on start||`` block
 
@@ -95,17 +95,51 @@ When a nurse needs to take a patient's heart rate with their other vital signs, 
 3. Save the code for the task (name it "button rate")
 4. Change the ``||sprites:say||`` block so that after 6 seconds have passed it says the ``||info:score||``. You may also want it to show a message explaining what the value represents
 
-### ~hint
+    ### ~hint
 
-Review the [Variable Math](/courses/csintro/orientation/variable-math) activity if you're having trouble making the sprite say the ``||info:score||`` - it is stored as a number.
+    Review the [Variable Math](/courses/csintro/orientation/variable-math) activity if you're having trouble making the sprite say the ``||info:score||`` - it is stored as a number.
 
-### ~
+    ### ~
 
 5. Use the ``||math:x||`` block to multiply the ``||info:score||`` by 10 and store it in a variable called `minuteScore`, so it will correspond to one minute's worth of button presses
 6. Make the sprite ``||sprites:say||`` the result stored in `minuteScore`. Edit the sprite so it looks better
 7. **Challenge:** instead of outputting an exact estimate, give a range that the button presses will likely fall into - estimate this by making the low end of the range correspond to `(score - 1) * 10`, and the high end of the range correspond to `(score + 1) * 10`. For example, if the score were 5, the output should be something along the lines of "between 40 and 60"
 
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.changeScoreBy(1)
+})
+let mySprite: Sprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . d d d d d d . . . . . 
+. . . . d d d d d d d d . . . . 
+. . . . d d f d d f d d . . . . 
+. . . . d d d d d d d d . . . . 
+. . . . d d f d d f d d . . . . 
+. . . . d d d f f d d d . . . . 
+. . . . . d d d d d d . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+mySprite.setPosition(25, 60)
+game.splash("Press buttons for 6 seconds!")
+pause(6000)
+mySprite.say(":)")
+```
+
 ### ~hint
+
+### Hint:
 
 When doing the challenge, remember to pay careful attention to the order of operations and parentheses (JavaScript) to get the right equation.
 
@@ -139,38 +173,6 @@ mySprite.say("score " + ("is " + "here"))
 ```
 
 ### ~
-
-```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
-controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.changeScoreBy(1)
-})
-let mySprite: Sprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . d d d d d d . . . . . 
-. . . . d d d d d d d d . . . . 
-. . . . d d f d d f d d . . . . 
-. . . . d d d d d d d d . . . . 
-. . . . d d f d d f d d . . . . 
-. . . . d d d f f d d d . . . . 
-. . . . . d d d d d d . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-mySprite.setPosition(25, 60)
-game.splash("Press buttons for 6 seconds!")
-pause(6000)
-mySprite.say(":)")
-```
 
 ## What did we learn?
 

@@ -15,6 +15,7 @@
         "libs/animation",
         "libs/base",
         "libs/core",
+        "libs/core---samd51",
         "libs/core---stm32f401re",
         "libs/core---linux",
         "libs/corgio",
@@ -22,6 +23,7 @@
         "libs/hw",
         "libs/hw---rpi",
         "libs/hw---stm32f401",
+        "libs/hw---samd51",
         "libs/screen",
         "libs/screen---st7735",
         "libs/screen---linux",
@@ -49,7 +51,8 @@
     "compileService": {
         "buildEngine": "codal",
         "githubCorePackage": "lancaster-university/codal",
-        "gittag": "v0.4.0"
+        "gittag": "v0.5.0",
+        "dockerImage": "pext/yotta:latest"
     },
     "variants": {
         "stm32f401": {
@@ -62,11 +65,28 @@
                 "codalTarget": {
                     "name": "codal-big-brainpad",
                     "url": "https://github.com/lancaster-university/codal-big-brainpad",
-                    "branch": "v1.0.4",
+                    "branch": "v1.0.8",
                     "type": "git"
                 },
                 "codalBinary": "STM32",
                 "serviceId": "codal2stm32"
+            }
+        },
+        "samd51": {
+            "compile": {
+                "hasHex": true,
+                "openocdScript": "source [find interface/cmsis-dap.cfg]; set CHIPNAME at91samd51g19; source [find target/at91samdXX.cfg]",
+                "vtableShift": 4
+            },
+            "compileService": {
+                "codalTarget": {
+                    "name": "codal-itsybitsy-m4",
+                    "url": "https://github.com/lancaster-university/codal-itsybitsy-m4",
+                    "branch": "v0.0.4",
+                    "type": "git"
+                },
+                "codalBinary": "ITSYBITSY_M4",
+                "serviceId": "codal2samd51"
             }
         },
         "rpi": {
@@ -140,6 +160,7 @@
         "invertedMenu": true,
         "showHomeScreen": true,
         "highContrast": true,
+        "print": true,
         "hasAudio": true,
         "allowPackageExtensions": true,
         "homeScreenHero": "./static/hero.png",
