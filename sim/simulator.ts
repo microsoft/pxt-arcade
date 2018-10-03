@@ -207,7 +207,9 @@ namespace pxsim {
         }
 
         layout() {
-            const minControlWidth = 80;
+            const minControlWidth = 100;
+            const menuResetWidth = minControlWidth * 0.7;
+
             const maxWidth = document.body.clientWidth;
             const maxHeight = document.body.clientHeight;
 
@@ -220,27 +222,37 @@ namespace pxsim {
             if (portraitMetrics.area > landscapeMetrics.area) {
                 // Place controls below
                 this.view.centerInBox(0, 0, portraitMetrics);
+                const bb = this.view.boundingBox();
 
-                const bottom = this.view.boundingBox().bottom;
-                const availableHeight = maxHeight - bottom;
+                const availableHeight = maxHeight - bb.bottom;
                 let controlsHeight = availableHeight * 4 / 5;
 
                 if (controlsHeight * 2 > maxWidth)
                     controlsHeight = maxWidth / 2 | 0;
 
-                const controlsTop = maxHeight - availableHeight + (availableHeight - controlsHeight) / 2;
+                const controlsTop = maxHeight - availableHeight + (availableHeight - controlsHeight) * 3 / 4;
 
                 this.controls.moveDPad(0, controlsTop, controlsHeight);
                 this.controls.moveButtons(maxWidth - controlsHeight, controlsTop, controlsHeight);
+
+                const spacing = 30;
+                const menuResetTop = bb.bottom + 20;
+                const midpoint = maxWidth / 2;
+
+                // Centered between the d-pad and buttons
+                this.controls.moveReset(midpoint - (spacing / 2) - menuResetWidth, menuResetTop, menuResetWidth);
+                this.controls.moveMenu(midpoint + (spacing / 2), menuResetTop, menuResetWidth);
             }
             else {
                 // Place controls on sides
                 this.view.centerInBox(minControlWidth, 0, landscapeMetrics);
+                const bb = this.view.boundingBox();
 
-                const left = this.view.boundingBox().left;
+                this.controls.moveDPad(0, maxHeight - bb.left, bb.left);
+                this.controls.moveButtons(maxWidth - bb.left, maxHeight - bb.left, bb.left);
 
-                this.controls.moveDPad(0, maxHeight - left, left);
-                this.controls.moveButtons(maxWidth - left, maxHeight - left, left);
+                this.controls.moveReset(bb.left - menuResetWidth - 20, bb.top, menuResetWidth);
+                this.controls.moveMenu(bb.right + 20, bb.top, menuResetWidth)
             }
         }
     }
