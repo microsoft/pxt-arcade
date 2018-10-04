@@ -126,7 +126,6 @@
     "simulator": {
         "autoRun": true,
         "aspectRatio": 0.85,
-        "debugger": true,
         "dynamicBoardDefinition": true
     },
     "appTheme": {
@@ -160,6 +159,7 @@
         "invertedMenu": true,
         "showHomeScreen": true,
         "highContrast": true,
+        "debugger": true,
         "print": true,
         "hasAudio": true,
         "allowPackageExtensions": true,
