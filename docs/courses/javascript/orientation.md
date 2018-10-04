@@ -1,5 +1,6 @@
-# Course 2 orientation
+# Course 2 Orientation
 
+* [Case Study](/courses/javascript/orientation/case-study)
 * [Initialization](/courses/javascript/orientation/initialization)
 * [Types](/courses/javascript/orientation/types)
 * [Math](/courses/javascript/orientation/math)
