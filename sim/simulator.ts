@@ -195,7 +195,6 @@ namespace pxsim {
             this.layout()
 
             throttleAnimation(cb => window.onresize = cb, () => this.layout())
-            let info = document.getElementById("instructions")
             indicateFocus(document.hasFocus());
 
             return Promise.resolve();
@@ -207,36 +206,62 @@ namespace pxsim {
         }
 
         layout() {
-            const minControlWidth = 80;
-            const wWidth = window.innerWidth;
-            const wHeight = window.innerHeight;
-            if (wWidth < wHeight) {
-                // Place controls below
-                this.view.centerInBox(0, 0, window.innerWidth, window.innerHeight - minControlWidth);
+            const minControlWidth = 100;
+            const menuResetWidth = minControlWidth * 0.7;
 
-                const bottom = this.view.boundingBox().bottom;
-                const availableHeight = window.innerHeight - bottom;
+            const maxWidth = document.body.clientWidth;
+            const maxHeight = document.body.clientHeight;
+
+            const landscapeWidth = maxWidth - minControlWidth * 2;
+            const portraitHeight = maxHeight - minControlWidth;
+
+            const portraitMetrics = this.view.getFit(maxWidth, portraitHeight, 20);
+            const landscapeMetrics = this.view.getFit(landscapeWidth, maxHeight, 20);
+
+            if (portraitMetrics.area > landscapeMetrics.area) {
+                // Place controls below
+                this.view.centerInBox(0, 0, portraitMetrics);
+                const bb = this.view.boundingBox();
+
+                const availableHeight = maxHeight - bb.bottom;
                 let controlsHeight = availableHeight * 4 / 5;
 
-                if (controlsHeight * 2 > wWidth)
-                    controlsHeight = wWidth / 2 | 0;
+                if (controlsHeight * 2 > maxWidth)
+                    controlsHeight = maxWidth / 2 | 0;
 
-                const controlsTop = window.innerHeight - availableHeight + (availableHeight - controlsHeight) / 2;
+                const controlsTop = maxHeight - availableHeight + (availableHeight - controlsHeight) * 3 / 4;
 
                 this.controls.moveDPad(0, controlsTop, controlsHeight);
-                this.controls.moveButtons(window.innerWidth - controlsHeight, controlsTop, controlsHeight);
+                this.controls.moveButtons(maxWidth - controlsHeight, controlsTop, controlsHeight);
+
+                const spacing = 30;
+                const menuResetTop = bb.bottom + 20;
+                const midpoint = maxWidth / 2;
+
+                // Centered between the d-pad and buttons
+                this.controls.moveReset(midpoint - (spacing / 2) - menuResetWidth, menuResetTop, menuResetWidth);
+                this.controls.moveMenu(midpoint + (spacing / 2), menuResetTop, menuResetWidth);
             }
             else {
                 // Place controls on sides
-                const availableWidth = window.innerWidth - minControlWidth * 2;
-                this.view.centerInBox(minControlWidth, 0, availableWidth, window.innerHeight);
+                this.view.centerInBox(minControlWidth, 0, landscapeMetrics);
+                const bb = this.view.boundingBox();
 
-                const left = this.view.boundingBox().left;
+                this.controls.moveDPad(0, maxHeight - bb.left, bb.left);
+                this.controls.moveButtons(maxWidth - bb.left, maxHeight - bb.left, bb.left);
 
-                this.controls.moveDPad(0, window.innerHeight - left, left);
-                this.controls.moveButtons(window.innerWidth - left, window.innerHeight - left, left);
+                this.controls.moveReset(bb.left - menuResetWidth - 20, bb.top, menuResetWidth);
+                this.controls.moveMenu(bb.right + 20, bb.top, menuResetWidth)
             }
         }
+    }
+
+    interface ScreenMetrics {
+        width: number;
+        height: number;
+        left: number;
+        top: number;
+        area: number;
     }
 
     class ScreenView {
@@ -247,20 +272,20 @@ namespace pxsim {
 
         palette: string[];
 
-        boxLeft: number;
-        boxTop: number;
-        boxWidth: number;
-        boxHeight: number;
-
         private cachedWidth: number;
         private cachedHeight: number;
+        private cachedPalette: Uint32Array;
+
+        private ox: number;
+        private oy: number;
+        private metrics: ScreenMetrics;
 
         constructor(state: ScreenState, canvas: HTMLCanvasElement, private onResize: () => void, private onUpdate: () => void) {
             this.state = state;
             this.canvas = canvas;
             this.context = this.canvas.getContext("2d");
 
-            this.centerInBox(0, 0, 200, 200)
+            this.centerInBox(0, 0, this.getFit(200, 200, 20));
             this.context.fillStyle = "#000000";
             this.context.fill();
 
@@ -272,11 +297,10 @@ namespace pxsim {
             throttleAnimation(cb => this.state.onChange = cb, () => this.redraw(true));
         }
 
-        centerInBox(left: number, top: number, width: number, height: number) {
-            this.boxLeft = left;
-            this.boxTop = top;
-            this.boxHeight = height;
-            this.boxWidth = width;
+        centerInBox(ox: number, oy: number, metrics: ScreenMetrics) {
+            this.ox = ox;
+            this.oy = oy;
+            this.metrics = metrics;
             this.resize();
         }
 
@@ -284,23 +308,58 @@ namespace pxsim {
             return this.canvas.getBoundingClientRect();
         }
 
-        protected resize() {
-            this.cellWidth = Math.max(1, Math.floor(Math.min(this.boxWidth / this.state.width, this.boxHeight / this.state.height)));
-            const screenWidth = this.cellWidth * this.state.width;
-            const screenHeight = this.cellWidth * this.state.height;
-            this.canvas.width = screenWidth;
-            this.canvas.height = screenHeight;
+        aspectRatio() {
+            return this.state.width / this.state.height;
+        }
 
-            const bb = this.boundingBox();
+        getFit(boundsWidth: number, boundsHeight: number, padding: number): ScreenMetrics {
+            let screenWidth: number, screenHeight: number;
+            const aspectRatio = this.aspectRatio();
 
-            const leftMargin = this.boxLeft + ((this.boxWidth - bb.width) / 2);
+            const maxWidth = boundsWidth - padding * 2;
+            const maxHeight = boundsHeight - padding * 2;
 
-            this.canvas.style.left = leftMargin + "px";
-            this.canvas.style.top = Math.min((this.boxTop + ((this.boxHeight - bb.height) / 2)), leftMargin) + "px";
+            if (isEdge() || isIE()) {
+                // Snap to closest screen-size to avoid scaling issues
+                const cellWidth = Math.max(1, Math.floor(Math.min(maxWidth / this.state.width, maxHeight / this.state.height)));
+                screenWidth = cellWidth * this.state.width;
+                screenHeight = cellWidth * this.state.height;
+            }
+            else {
+                const constrainedHeight = maxWidth / aspectRatio;
+                const constrainedWidth = maxHeight * aspectRatio;
+                if (constrainedHeight < maxHeight) {
+                    if (constrainedWidth < maxWidth) {
+                        const area1 = constrainedHeight * maxWidth;
+                        const area2 = constrainedWidth * maxHeight;
+                        if (area1 > area2) {
+                            screenWidth = maxWidth;
+                            screenHeight = constrainedHeight;
+                        }
+                        else {
+                            screenWidth = constrainedWidth;
+                            screenHeight = maxHeight;
+                        }
+                    }
+                    else {
+                        screenWidth = maxWidth;
+                        screenHeight = constrainedHeight;
+                    }
+                }
+                else {
+                    screenWidth = constrainedWidth;
+                    screenHeight = maxHeight;
+                }
+            }
 
-            this.calculateClipPath(screenWidth, screenHeight, (bb.width - screenWidth) / 2);
 
-            if (this.palette) this.redraw(false);
+            return {
+                width: screenWidth,
+                height: screenHeight,
+                left: (boundsWidth - screenWidth ) / 2,
+                top: (boundsHeight - screenHeight) / 2,
+                area: screenWidth * screenHeight
+            }
         }
 
         protected calculateClipPath(width: number, height: number, borderWidth: number) {
@@ -330,9 +389,10 @@ namespace pxsim {
         }
 
         protected redraw(screenStateChanged: boolean) {
-            if (this.cachedHeight !== this.state.height || this.cachedWidth !== this.state.width) {
+            if (this.cachedHeight !== this.state.height || this.cachedWidth !== this.state.width || this.paletteDidChange()) {
                 this.cachedHeight = this.state.height;
                 this.cachedWidth = this.state.width;
+                this.cachedPalette = this.state.palette.slice();
                 this.refreshPalette();
                 this.resize();
                 this.onResize();
@@ -348,6 +408,42 @@ namespace pxsim {
             if (screenStateChanged) {
                 this.onUpdate()
             }
+        }
+
+        protected resize() {
+            if (isEdge() || isIE()) {
+                this.cellWidth = this.metrics.width / this.state.width;
+                this.canvas.width = this.metrics.width;
+                this.canvas.height = this.metrics.height;
+            }
+            else {
+                this.cellWidth = 1;
+                this.canvas.width = this.state.width;
+                this.canvas.height = this.state.height;
+                this.canvas.style.width = this.metrics.width + "px";
+                this.canvas.style.height = this.metrics.height + "px";
+            }
+
+            const bb = this.boundingBox();
+
+            const borderWidth = (bb.width - this.metrics.width) / 2;
+            const borderHeight = (bb.height - this.metrics.height) / 2;
+            const leftMargin = this.ox + this.metrics.left - borderWidth;
+
+            this.canvas.style.left = leftMargin + "px";
+            this.canvas.style.top = Math.min(this.oy + this.metrics.top - borderHeight, leftMargin) + "px";
+
+            this.calculateClipPath(this.metrics.width, this.metrics.height, (bb.width - this.metrics.width) / 2);
+
+            if (this.palette) this.redraw(false);
+        }
+
+        protected paletteDidChange() {
+            if (!this.cachedPalette || this.cachedPalette.length != this.state.palette.length) return true;
+            for (let i = 0; i < this.cachedPalette.length; i++) {
+                if (this.cachedPalette[i] != this.state.palette[i]) return true;
+            }
+            return false;
         }
     }
 
@@ -379,6 +475,16 @@ namespace pxsim {
     }
 }
 
+// Copied verbatim from pxt-core
+function hasNavigator(): boolean {
+    return typeof navigator !== "undefined";
+}
+function isEdge(): boolean {
+    return hasNavigator() && /Edge/i.test(navigator.userAgent);
+}
+function isIE(): boolean {
+    return hasNavigator() && /Trident/i.test(navigator.userAgent);
+}
 
 namespace pxsim.pxtcore {
     export function getButtonByPinCfg(key: number) {

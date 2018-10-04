@@ -8,6 +8,7 @@ namespace pxsim {
 
     const D_PAD_SVG_WIDTH = 23.813;
     const BUTTON_SVG_WIDTH = 13.533;
+    export const MENU_RESET_ASPECT_RATIO = 45 / 120;
 
     export interface KeyBinding {
         el: Element;
@@ -31,11 +32,18 @@ namespace pxsim {
         protected primary: s.Circle;
         protected secondary: s.Circle;
 
+        protected reset: s.SVG;
+        protected menu: s.SVG;
+
         protected keys: KeyBinding[] = [];
 
         constructor(parent: Element) {
             this.dPadRoot = new s.SVG(parent);
             this.buttonsRoot = new s.SVG(parent);
+
+            this.reset = new s.SVG(parent);
+            this.menu = new s.SVG(parent);
+
             this.buildDom();
 
             const clearBtns = () => {
@@ -145,12 +153,48 @@ namespace pxsim {
             this.buttons.translate(PADDING * scale, PADDING * scale);
         }
 
+        moveReset(left: number, top: number, width: number) {
+            this.reset.el.setAttribute("width", width + "px");
+            this.reset.el.setAttribute("height", (width * MENU_RESET_ASPECT_RATIO) + "px");
+            this.reset.el.style.position = "absolute";
+            this.reset.el.style.left = left + "px";
+            this.reset.el.style.top = top + "px";
+        }
+
+        moveMenu(left: number, top: number, width: number) {
+            this.menu.el.setAttribute("width", width + "px");
+            this.menu.el.setAttribute("height", (width * MENU_RESET_ASPECT_RATIO) + "px");
+            this.menu.el.style.position = "absolute";
+            this.menu.el.style.left = left + "px";
+            this.menu.el.style.top = top + "px";
+        }
+
         protected buildDom() {
             this.drawDirectionalPad();
             this.drawButtonGroup();
+            this.drawMenuReset(this.reset, svg.resetButton);
+            this.drawMenuReset(this.menu, svg.menuButton);
+
+            this.reset.el.addEventListener("click", () => {
+                pxsim.Runtime.postMessage(<pxsim.SimulatorCommandMessage>{
+                    type: "simulator",
+                    command: "restart"
+                })
+            });
 
             this.moveDPad(0, 0, COMPONENT_WIDTH)
             this.moveButtons(0, 0, COMPONENT_WIDTH);
+        }
+
+        protected drawMenuReset(parent: s.SVG, el: SVGSVGElement) {
+            parent.el.appendChild(el.cloneNode(true));
+
+            const overlay = parent.draw("rect")
+                .setClass("controller-button-overlay")
+                .width(100, s.LengthUnit.percent)
+                .height(100, s.LengthUnit.percent)
+                .fill("black", 0)
+                .corners(10, 10);
         }
 
         protected drawDirectionalPad() {
