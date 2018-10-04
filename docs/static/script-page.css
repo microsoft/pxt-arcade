@@ -108,7 +108,7 @@ body#root.share-page .ui.mini.image.mclogo {
 
 .abuse.content {
     color: #333;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 @media only screen and (max-width: 1144px) {
     .ui.container.mainbody {
