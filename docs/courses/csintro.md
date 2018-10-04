@@ -1,78 +1,43 @@
-# CS INTRO BETA
+# CS Intro
+
+A collection of courses meant to teach introductory programmers using Blocks and JavaScript
 
 ### ~hint
 
-This course is currently in beta - this means that it is likely to have bugs and changes made fairly regularly. If you see anything that doesn't seem quite right, or if you have any suggestions, please file an issue on [github](github.com/microsoft/pxt-arcade).
+These courses are currently in beta - this means that they are likely to have bugs and changes made fairly regularly. If you see anything that doesn't seem quite right, or if you have any suggestions, please file an issue on [github](https://github.com/microsoft/pxt-arcade).
 
 ### ~
 
 ```codecard
 [
 {
-    "name": "Orientation",
-    "url": "/courses/csintro/orientation",
-    "imageUrl": "/static/courses/csintro/orientation.gif"
+    "name": "CS Intro 1",
+    "description": "A semester length computer science course for beginning coders",
+    "url":"/courses/csintro1"
 }, {
-    "name": "Sprites",
-    "url": "/courses/csintro/sprites",
-    "imageUrl": "/static/courses/csintro/sprites.gif"
-}, {
-    "name": "Motion and Events",
-    "url": "/courses/csintro/motion-and-events",
-    "imageUrl": "/static/courses/csintro/motion-and-events.gif"
-}, {
-    "name": "Loops",
-    "url": "/courses/csintro/loops",
-    "imageUrl": "/static/courses/csintro/loops.gif"
-}, {
-    "name": "Final Project",
-    "url": "/courses/csintro/final-project",
-    "imageUrl": "/static/courses/csintro/final-project.gif"
+    "name": "CS Intro 2",
+    "description": "A continuation of the Intro to CS course",
+    "url":"/courses/csintro2"
 }
 ]
 ```
 
-## Table of Contents
+## About the CS Intro Series
 
-### [About](/courses/csintro/about)
+The CS Intro Series is designed to teach new developers how to code from the ground up.
 
-* [Programming Language](/courses/csintro/about/script)
-* [For Teachers](/courses/csintro/about/teachers)
-* [Authors](/courses/csintro/about/authors)
+In CS Intro 1, students are introduced to programming through the MakeCode Blocks editor. They can create their own games, while learning concepts that are crucial to software development: creating variables, responding to events, and using iteration to simplify and extend their programs. Throughout the course, they will learn to develop their own games through small daily tasks, as well as projects that guide them through the process of turning basic ideas into full-fledged games.
 
-### [Orientation](/courses/csintro/orientation)
+In CS Intro 2, students will continue to develop the software development skills they were introduced to in the first course, with more advanced programming concepts such as functions, logical comparisons, and arrays. These new skills will allow students to create more advanced and compelling games.
 
-* [Orientation to Makecode](/courses/csintro/orientation/makecode-orientation)
-* [Birthday Algorithm](/courses/csintro/orientation/birthday-algorithm)
-* [Sprites](/courses/csintro/orientation/sprites)
-* [Unplugged: Rock Paper Scissors](/courses/csintro/orientation/unplugged)
-* [Variable Math](/courses/csintro/orientation/variable-math)
-* [Info Variables](/courses/csintro/orientation/info)
+### ~hint
 
-### [Sprites](/courses/csintro/sprites)
+In the future CS Intro 3 and CS Intro 4 courses, students will transition the skills they have learned in a Block based environment into skills in a text based coding environment, allowing them to dig deeper into the games they make, as well as transition their skills in the @boardname@ into other environments.
 
-* [Unplugged: Sink a Ship](/courses/csintro/sprites/unplugged)
-* [Coordinate Walker](/courses/csintro/sprites/coordinate-walker)
-* [Collage](/courses/csintro/sprites/collage)
-* [Hello Sprite](/courses/csintro/sprites/hello-sprite)
-* [Characters and Stories](/courses/csintro/sprites/characters)
+### ~
 
-### [Motion and Events](/courses/csintro/motion-and-events)
+## See also
 
-* [Unplugged: Using a Controller](/courses/csintro/motion-and-events/unplugged)
-* [Sprite Motion Event](/courses/csintro/motion-and-events/sprite-motion-event)
-* [Overlap Section 1](/courses/csintro/motion-and-events/overlap1)
-* [Random](/courses/csintro/motion-and-events/random)
-* [Overlap Section 2](/courses/csintro/motion-and-events/overlap2)
-* [Create Sprite & On Create](/courses/csintro/motion-and-events/create-on-create-sprites)
-* [Project](/courses/csintro/motion-and-events/project)
-
-### [Loops](/courses/csintro/loops)
-
-* [Intro](/courses/csintro/loops/intro)
-* [Unplugged: Circle a Chair](/courses/csintro/loops/unplugged)
-* [Increment Loop](/courses/csintro/loops/increment-loop)
-* [Projectiles](/courses/csintro/loops/projectiles)
-* [Projectiles from Sprites](/courses/csintro/loops/projectile-from)
-* [Physics](/courses/csintro/loops/physics)
-* [Project](/courses/csintro/loops/project)
+[Courses Home Page](/courses),
+[CS Intro 1](/courses/csintro1),
+[CS Intro 2](/courses/csintro2)

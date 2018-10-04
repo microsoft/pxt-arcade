@@ -1,0 +1,49 @@
+# Loops
+
+Loops serve as a powerful tool, both to reduce redundancy in the code we write, and to implement behaviors that must repeat indefinitely.
+
+```codecard
+[
+{
+    "name": "Intro",
+    "url": "/courses/csintro1/loops/intro",
+    "imageUrl": "/static/courses/csintro1/loops/intro.gif"
+}, {
+    "name": "Unplugged: Circle a Chair",
+    "url": "/courses/csintro1/loops/unplugged"
+}, {
+    "name": "Increment Loop",
+    "url": "/courses/csintro1/loops/increment-loop",
+    "imageUrl": "/static/courses/csintro1/loops/increment-loop.gif"
+}, {
+    "name": "Projectiles",
+    "url": "/courses/csintro1/loops/projectiles",
+    "imageUrl": "/static/courses/csintro1/loops/projectiles.gif"
+}, {
+    "name": "Projectiles from Sprites",
+    "url": "/courses/csintro1/loops/projectile-from",
+    "imageUrl": "/static/courses/csintro1/loops/projectile-from.gif"
+}, {
+    "name": "Physics",
+    "url": "/courses/csintro1/loops/physics",
+    "imageUrl": "/static/courses/csintro1/loops/physics.gif"
+}, {
+    "name": "Project",
+    "url": "/courses/csintro1/loops/project",
+    "imageUrl": "/static/courses/csintro1/loops/project.gif"
+}
+]
+```
+
+## Lessons
+
+* [Intro](/courses/csintro1/loops/intro)
+* [Unplugged: Circle a Chair](/courses/csintro1/loops/unplugged)
+* [Increment Loop](/courses/csintro1/loops/increment-loop)
+* [Projectiles](/courses/csintro1/loops/projectiles)
+* [Projectiles from Sprites](/courses/csintro1/loops/projectile-from)
+* [Physics](/courses/csintro1/loops/physics)
+* [Project](/courses/csintro1/loops/project)
+
+
+[CS Intro Home](/courses/csintro1)
