@@ -11,11 +11,12 @@ while (i < 5) {
 }
 ```
 
-```typescript
+```typescript-ignore
 for (initialization; check; update) {
     // BODY OF CODE
 }
 ```
+
 ```typescript
 for (let i = 0; i < 5; i++) {
     console.log("hello!");
@@ -32,7 +33,6 @@ for (let i = 1; i <= n; i++) {
 }
 console.log("" + out);
 ```
-
 
 ### Sum up values 1 -> n using plus equals
 

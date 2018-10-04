@@ -63,5 +63,5 @@ for (let i = 0; i < 50; i++) {
 ```
 
 ```package
-corgio=github:jwunderl/pxt-corgio#v0.0.12
+corgio
 ```

@@ -89,7 +89,7 @@ makeOtherNumbers();
 ```
 
 (maybe note that this can lead to weird bugs like the following
-```typescript
+```typescript-ignore
 let first: number;
 let second: number;
 function makeNumbers() {
