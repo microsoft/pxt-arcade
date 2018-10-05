@@ -78,8 +78,8 @@ body#root.share-page .ui.mini.image.mclogo {
 }
 
 .script-embed {
-    flex-grow: 1;
     width: 100%;
+    flex-grow: 1;
 }
 
 .script-bookend {
