@@ -160,6 +160,7 @@
         "showHomeScreen": true,
         "highContrast": true,
         "debugger": true,
+        "enableTrace": true,
         "print": true,
         "hasAudio": true,
         "allowPackageExtensions": true,
