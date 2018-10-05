@@ -2,7 +2,7 @@
 
 In blocks, the types of variables that were being used was generally invisible: when declaring a variable, the type of the variable was assumed by whatever value was first put into it.
 
-When types came up, they were generally due to small errors: trying to ``||game:splash||`` a number required that the number be ``||string:join||``ed to a string, trying to store a string in a variable that's already been designated to be a string, and other small things.
+When types came up, they were generally due to small errors: trying to ``||game:splash||`` a number required that the number be ``||text:join||``ed to a string, trying to store a string in a variable that's already been designated to be a string, and other small things.
 
 ### Rethink how to introduce this; it's really misleading as it's ascribing to javascript something that is unique to typescript. For now, instead of JavaScript using $Script$ for ease of conversion
 
@@ -23,7 +23,7 @@ In the following examples, the same code is shown in two different ways: the fir
 
 1. Review the two examples below
 2. Identify what is different between the two, and what has stayed the same
-3. Notice that ``+`` is the equivalent of ``||string:join||`` from Blocks
+3. Notice that ``+`` is the equivalent of ``||text:join||`` from Blocks
 4. Run both examples: identify whether the behavior of the code has changed
 
 ### Example #1a: Implicit Typing
@@ -58,7 +58,7 @@ word += word;
 
 ## Concept: Logging a Number
 
-Just like in Blocks, numbers need to be converted to a string in order to display them. This can be done in the same way: using ``+`` (``||string:join||``) to join the number to an empty string to convert the number to a string.
+Just like in Blocks, numbers need to be converted to a string in order to display them. This can be done in the same way: using ``+`` (``||text:join||``) to join the number to an empty string to convert the number to a string.
 
 ```typescript
 console.log("The number is " + 7);
