@@ -79,6 +79,8 @@ body#root.share-page .ui.mini.image.mclogo {
 
 .script-embed {
     width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     flex-grow: 1;
 }
 
