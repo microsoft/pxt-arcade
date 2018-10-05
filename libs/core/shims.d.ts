@@ -47,7 +47,8 @@ declare interface AnalogOutPin {
     //% parts="analogled" trackArgs=0
     //% name.fieldEditor="gridpicker"
     //% name.fieldOptions.width=220
-    //% name.fieldOptions.columns=4 shim=AnalogOutPinMethods::analogWrite
+    //% name.fieldOptions.columns=4
+    //% value.min=0 value.max=1023 shim=AnalogOutPinMethods::analogWrite
     analogWrite(value: int32): void;
 }
 
