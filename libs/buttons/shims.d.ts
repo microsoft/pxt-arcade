@@ -1,11 +1,11 @@
 // Auto-generated. Do not edit.
 
 
-declare interface DigitalPin {
+declare interface DigitalInOutPin {
     /**
      * Get the push button (connected to GND) for given pin
      */
-    //% shim=DigitalPinMethods::pushButton
+    //% shim=DigitalInOutPinMethods::pushButton
     pushButton(): Button;
 }
 
