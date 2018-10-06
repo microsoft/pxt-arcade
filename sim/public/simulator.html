@@ -10,6 +10,17 @@
             background: transparent;
             overflow: hidden;
         }
+
+        /* fix for iOS; see https://github.com/PierBover/ios-iframe-fix */
+        #wrap {
+            position: fixed;
+            top: 0;
+            right:0;
+            bottom:0;
+            left: 0;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
     </style>
     <script src="/cdn/bluebird.min.js"></script>
     <script src="/cdn/pxtsim.js"></script>
@@ -17,14 +28,16 @@
 </head>
 
 <body id="root" class="blur">
-    <div id="debug-stats"></div>
-    <div id="screen-back"></div>
-    <div id="screen">
-        <div id="paint-surface-container">
-            <canvas id="paint-surface"></canvas>
+    <div id="wrap">
+        <div id="debug-stats"></div>
+        <div id="screen-back"></div>
+        <div id="screen">
+            <div id="paint-surface-container">
+                <canvas id="paint-surface"></canvas>
+            </div>
+            <div id="controls"></div>
         </div>
-        <div id="controls"></div>
+        <div id="instructions"></div>
     </div>
-    <div id="instructions"></div>
 </body>
 </html>
