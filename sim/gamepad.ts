@@ -1,13 +1,24 @@
 
 namespace pxsim {
-    let state: {[index: number]: boolean} = {};
+    enum PlayerNumber {
+        One = 1,
+        Two,
+        Three,
+        Four
+    }
+
     let init = false;
     let connected = false;
-    let resetPressed = false;
 
+    let all: {[index: number]: Controller} = {};
+    let player = PlayerNumber.One;
+
+    interface Controller {
+        player: PlayerNumber;
+        state: {[index: number]: boolean};
+    }
 
     export function initGamepad() {
-        resetPressed = false;
         if (init) return;
         init = true;
         window.addEventListener("gamepadconnected", (e) => {
@@ -25,23 +36,29 @@ namespace pxsim {
             for (let i = 0; i < g.length; i++) {
                 const gamepad = g[i];
                 if (gamepad && gamepad.buttons && gamepad.buttons.length) {
-                    updateState(Key.A, 0, gamepad);
-                    updateState(Key.B, 1, gamepad);
-                    updateState(Key.Up, 12, gamepad, 1, false);
-                    updateState(Key.Down, 13, gamepad, 1, true);
-                    updateState(Key.Left, 14, gamepad, 0, false);
-                    updateState(Key.Right, 15, gamepad, 0, true);
-
-                    if (!resetPressed && gamepad.buttons[9] && gamepad.buttons[9].pressed) {
-                        resetPressed = true;
-                        pxsim.control.reset();
-                    }
+                    const ctrl = getState(gamepad);
+                    updateState(ctrl, Key.A, 0, gamepad);
+                    updateState(ctrl, Key.B, 1, gamepad);
+                    updateState(ctrl, Key.Up, 12, gamepad, 1, false);
+                    updateState(ctrl, Key.Down, 13, gamepad, 1, true);
+                    updateState(ctrl, Key.Left, 14, gamepad, 0, false);
+                    updateState(ctrl, Key.Right, 15, gamepad, 0, true);
                 }
             }
         }
     }
 
-    function updateState(key: Key, buttonIndex: number, gamepad: Gamepad, axis?: number, axisPositive?: boolean) {
+    function getState(gamepad: Gamepad): Controller {
+        if (all[gamepad.index]) return all[gamepad.index];
+
+        const newState = { state: {}, player };
+        all[gamepad.index] = newState;
+        player++;
+
+        return newState;
+    }
+
+    function updateState(ctrl: Controller, key: Key, buttonIndex: number, gamepad: Gamepad, axis?: number, axisPositive?: boolean) {
         let pressed = gamepad.buttons[buttonIndex].pressed;
         if (axis != undefined && gamepad.axes && gamepad.axes[axis]) {
             const value = gamepad.axes[axis];
@@ -49,10 +66,10 @@ namespace pxsim {
                 pressed = pressed || (axisPositive === value > 0);
             }
         }
-        const old = state[key];
+        const old = ctrl.state[key];
         if (old != pressed) {
-            state[key] = pressed;
-            board().handleKeyEvent(key, pressed);
+            ctrl.state[key] = pressed;
+            board().handleKeyEvent(key + (7 * (ctrl.player - 1)), pressed);
         }
     }
 }
