@@ -1,67 +1,111 @@
-## what do with for index loops
+# Activity: Loops
 
-### How many times does this run, what is the max value of i, etc
+A ``||loops:for||`` loop is one of the most common loop structures. It allows for a consistent way to iterate a (generally) predetermined number of times.
 
-```typescript
-let i = 0;
+In blocks, this structure was represented in two different ways: the ``||loops:for index||`` loop, as well as the ``||loops:repeat loop||``. The main difference between the two was largely based on whether or not the user needed to use the ``||variables:index||`` in their loop.
 
-while (i < 5) {
-    console.log("hello!");
-    i++;
-}
-```
+In JavaScript, the structure of these loops is more complex than in Blocks. However, this complexity allows for the structure to be suitable for a wider range of tasks.
+
+A ``||loops:for||`` loop has the following structure:
 
 ```typescript-ignore
 for (initialization; check; update) {
-    // BODY OF CODE
+    codeToRun;
+    ...;
+    moreCodeToRun;
 }
 ```
+
+When the code runs, it will do the following:
+
+1. Run ``initialization``. This is used to set up a variable for the loop to iterate on.
+2. Run ``check``.
+    * **If** ``check`` evaluates to true, run the code inside the loop (in this case, from ``codeToRun`` to ``moreCodeToRun``). Then, run ``update`` to change the variable the loop is iterating on, and repeat step 2.
+    * **Otherwise**, exit the loop and continue to the next line of code after the loop.
+
+## Example #1: Logging a String
+
+1. Review the example code below
+2. Identify the ``initialization`` step, the ``check`` step, and the ``update`` step
+3. Walk through what the code will do **by hand**. See the hint below for the first two iterations of the loop
 
 ```typescript
 for (let i = 0; i < 5; i++) {
-    console.log("hello!");
+    console.log("hello number " + i);
 }
 ```
 
-### Sum up values 1 -> n
+### ~hint
+
+Set up:
+
+>1. Run ``initialization``. This creates a variable ``||variables:i||`` and assigns it the value 0.
+
+First Iteration:
+
+>1. Run ``check``. The expresssion ``0 < 5`` is ``||logic:true||``, so the loop will continue.
+>2. Log "hello number 0" to the console.
+>3. Run ``update``. ``||variables:i||`` is now assigned the value 1.
+
+Second Iteration:
+
+>1. Run ``check``. The expresssion ``1 < 5`` is ``||logic:true||``, so the loop will continue.
+>2. Log "hello number 1" to the console.
+>3. Run ``update``. ``||variables:i||`` is now assigned the value 2.
+
+### ~
+
+## Student Task #1: Modify the Loop
+
+1. Start with the code from example #1
+2. Modify the ``initialization`` step so that ``||variables:i||`` starts at **10**
+3. Modify the ``check`` step to check if ``||variables:i||`` is less than **50**
+4. Create a hypothesis on what the last line of output will say
+5. Run the code to check your hypothesis
+6. **Challenge:** modify the ``update`` step to change ``||variables:i||`` by **2** on each iteration (you will need to use ``||math:=||`` or ``||math:+=||`` instead of ``||math:++||``). How has the output changed?
+
+## Example #2: Summation
+
+1. Review the example code below
+2. Identify the ``initialization`` step, the ``check`` step, and the ``update`` step
+3. Walk through what the code will do **by hand**
 
 ```typescript
-let n: number = 10;
-let out = 0;
-for (let i = 1; i <= n; i++) {
-    out = out + i;
+let output: number = 0;
+for (let i = 0; i < 15; i++) {
+    output += i;
 }
-console.log("" + out);
+console.log("" + output);
 ```
 
-### Sum up values 1 -> n using plus equals
+## Student Task #2: Product
+
+1. Create a variable (``||variables:product||``) that is a number. Assign it the value **1**
+2. Create a for loop with the variable ``||variables:i||``. Assign ``||variables:i||`` the value **1** to start
+3. Make ``||variables:i||`` increment by 1 on each iteration in the ``update``
+4. In the ``check``, make the loop **end** when i is **greater than** 15
+5. In the loop, assign ``||variables:product||`` the value ``product * i``
+6. **Challenge:** create another variable, ``||variables:output||``, that is a string. Assign it the value "" before the loop. In the loop, after changing the value of ``||variables:product||``, assign ``||variables:output||`` the value ``output + product + " "``
+
+### ~hint
+
+When adding to a string, the value can be **appended** using the ``||math:+=||`` operator. For example, 
 
 ```typescript
-let n: number = 10;
-let out = 0;
-for (let i = 1; i <= n; i++) {
-    out += i;
-}
-console.log("" + out);
+let phrase = "hello";
+phrase = phrase + " world";
 ```
 
-### What numbers show up on the string, etc
+can also be written
 
 ```typescript
-let out: string = "hello";
-for (let i = 0; i < 5; i++) {
-    out = out + i + " ";
-}
-console.log(out);
+let phrase = "hello";
+phrase += " world";
 ```
 
-### Appending to a string
+### ~
 
-```typescript
-let out: string = "hello";
-for (let i = 0; i < 5; i++) {
-    out += i + " ";
-}
-console.log(out);
-```
+## What did we learn?
 
+1. In your own words, describe the ``initialization``, ``check``, and ``update`` steps of a for loop.
+2. In @boardname@, create a new project and place a ``||loops:repeat||`` and a ``||loops:for index||`` loop in the ``||loops:on start||``. Convert the code to JavaScript: what is different between the two loops?
