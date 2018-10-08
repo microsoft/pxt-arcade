@@ -53,7 +53,7 @@ declare interface AnalogOutPin {
 }
 
 
-declare interface DigitalPin {
+declare interface DigitalInOutPin {
     /**
      * Read a pin or connector as either 0 or 1
      * @param name pin to read from
@@ -64,7 +64,7 @@ declare interface DigitalPin {
     //% blockNamespace=pins
     //% name.fieldEditor="gridpicker"
     //% name.fieldOptions.width=220
-    //% name.fieldOptions.columns=4 shim=DigitalPinMethods::digitalRead
+    //% name.fieldOptions.columns=4 shim=DigitalInOutPinMethods::digitalRead
     digitalRead(): boolean;
 
     /**
@@ -78,7 +78,7 @@ declare interface DigitalPin {
     //% blockNamespace=pins
     //% name.fieldEditor="gridpicker"
     //% name.fieldOptions.width=220
-    //% name.fieldOptions.columns=4 shim=DigitalPinMethods::digitalWrite
+    //% name.fieldOptions.columns=4 shim=DigitalInOutPinMethods::digitalWrite
     digitalWrite(value: boolean): void;
 
     /**
@@ -92,7 +92,7 @@ declare interface DigitalPin {
     //% pin.fieldOptions.width=220
     //% pin.fieldOptions.columns=4
     //% parts="slideswitch" trackArgs=0
-    //% deprecated=1 hidden=1 shim=DigitalPinMethods::onPulsed
+    //% deprecated=1 hidden=1 shim=DigitalInOutPinMethods::onPulsed
     onPulsed(pulse: PulseValue, body: () => void): void;
 
     /**
@@ -104,7 +104,7 @@ declare interface DigitalPin {
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.width=220
     //% pin.fieldOptions.columns=4
-    //% parts="slideswitch" trackArgs=0 shim=DigitalPinMethods::onEvent
+    //% parts="slideswitch" trackArgs=0 shim=DigitalInOutPinMethods::onEvent
     onEvent(event: PinEvent, body: () => void): void;
 
     /**
@@ -119,7 +119,7 @@ declare interface DigitalPin {
     //% blockNamespace=pins
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.width=220
-    //% pin.fieldOptions.columns=4 maxDuration.defl=2000000 shim=DigitalPinMethods::pulseIn
+    //% pin.fieldOptions.columns=4 maxDuration.defl=2000000 shim=DigitalInOutPinMethods::pulseIn
     pulseIn(value: PulseValue, maxDuration?: int32): int32;
 
     /**
@@ -132,7 +132,7 @@ declare interface DigitalPin {
     //% blockNamespace=pins
     //% name.fieldEditor="gridpicker"
     //% name.fieldOptions.width=220
-    //% name.fieldOptions.columns=4 shim=DigitalPinMethods::setPull
+    //% name.fieldOptions.columns=4 shim=DigitalInOutPinMethods::setPull
     setPull(pull: PinPullMode): void;
 }
 

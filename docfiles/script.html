@@ -146,12 +146,10 @@
 		showCodeButton.addEventListener("click", function() {
 			if (isGame) {
 				frame.setAttribute("src", editorEmbedURL);
-				frame.setAttribute("style", "margin: 0.5rem");
 				showCodeButton.textContent = "Show Game";
 			}
 			else {
 				frame.setAttribute("src", gameEmbedURL);
-				frame.setAttribute("style", "");
 				showCodeButton.textContent = "Show Code";
 			}
 			isGame = !isGame;
