@@ -64,12 +64,12 @@ JavaScipt uses a **PEMDAS** structure to determine the order in which operations
 
 | Order	| Operation         |
 | :---:	| :---------------- |
-| 1st	| Parenthesis       |
-| 2nd	| Exponents         |
-| 3rd	| Multiplication    |
-|		| Division          |
-| 4th	| Addition          |
-|		| Subtraction       |
+| 1st   | Parenthesis       |
+| 2nd   | Exponents         |
+| 3rd   | Multiplication    |
+|       | Division          |
+| 4th   | Addition          |
+|       | Subtraction       |
 
 <br />
 
