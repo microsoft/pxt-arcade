@@ -13,8 +13,8 @@ In $Script$, variables can be explicitly given a type for the computer to treat 
 In $Script$, variables can be assigned a type at declaration by using ``: type`` after the name of the variable.
 
 ```typescript
-let x: number;
-let word: string;
+let x: number = 5;
+let word: string = "Hello";
 ```
 
 In this previous code snippet, ``||variables:x||`` is defined to be of type ``number``, and ``||variables:word||`` has been defined to be of type ``string``.
