@@ -22,6 +22,8 @@ Your grid: Mark where your ships are and keep track of your opponent's hits and 
 | (0,3) | (1,3) | (2,3) | (3,3) | (4,3) |
 | (0,4) | (1,4) | (2,4) | (3,4) | (4,4) |
 
+<br />
+
 ![Your Grid Example](/static/courses/csintro1/sprites/your-grid.png)
 
 Opponent's grid: Keep track of your hits and misses while trying to locate your opponent's ships.
@@ -33,6 +35,8 @@ Opponent's grid: Keep track of your hits and misses while trying to locate your 
 | (0,2) | (1,2) | (2,2) | (3,2) | (4,2) |
 | (0,3) | (1,3) | (2,3) | (3,3) | (4,3) |
 | (0,4) | (1,4) | (2,4) | (3,4) | (4,4) |
+
+<br />
 
 ![Opponent's Grid Example](/static/courses/csintro1/sprites/opponents-grid.png)
 
