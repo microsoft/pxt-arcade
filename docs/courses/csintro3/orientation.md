@@ -2,6 +2,7 @@
 
 * [Initialization](/courses/csintro3/orientation/initialization)
 * [Types](/courses/csintro3/orientation/types)
+* [User Input](/courses/csintro3/orientation/user-input)
 * [Math](/courses/csintro3/orientation/math)
 * [Logic](/courses/csintro3/orientation/logic)
 * [Loops](/courses/csintro3/orientation/loops)
