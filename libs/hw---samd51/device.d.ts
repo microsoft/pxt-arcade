@@ -1,31 +1,31 @@
 // TODO remove pins?
 declare namespace pins {
     //% fixedInstance shim=pxt::getPinCfg(CFG_PIN_LED)
-    const LED: DigitalPin;
+    const LED: DigitalInOutPin;
 
     //% fixedInstance shim=pxt::getPinCfg(CFG_PIN_SDA)
-    const SDA: DigitalPin;
+    const SDA: DigitalInOutPin;
     //% fixedInstance shim=pxt::getPinCfg(CFG_PIN_SCL)
-    const SCL: DigitalPin;
+    const SCL: DigitalInOutPin;
 
     //% fixedInstance shim=pxt::getPinCfg(CFG_PIN_SCK)
-    const SCK: DigitalPin;
+    const SCK: DigitalInOutPin;
     //% fixedInstance shim=pxt::getPinCfg(CFG_PIN_MISO)
-    const MISO: DigitalPin;
+    const MISO: DigitalInOutPin;
     //% fixedInstance shim=pxt::getPinCfg(CFG_PIN_MOSI)
-    const MOSI: DigitalPin;
+    const MOSI: DigitalInOutPin;
 
     //% fixedInstance shim=pxt::getPinCfg(CFG_PIN_D2)
     const D2: PwmOnlyPin;
     //% fixedInstance shim=pxt::getPinCfg(CFG_PIN_D3)
-    const D3: DigitalPin;
+    const D3: DigitalInOutPin;
     //% fixedInstance shim=pxt::getPinCfg(CFG_PIN_D4)
     const D4: PwmOnlyPin;
 
     //% fixedInstance shim=pxt::getPinCfg(CFG_PIN_RX)
-    const RX: DigitalPin;
+    const RX: DigitalInOutPin;
     //% fixedInstance shim=pxt::getPinCfg(CFG_PIN_TX)
-    const TX: DigitalPin;
+    const TX: DigitalInOutPin;
 }
 
 declare namespace input {
