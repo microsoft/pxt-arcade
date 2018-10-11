@@ -129,6 +129,8 @@ namespace pxsim {
                 case Key.B:
                     this.setOverlayState(this.secondary, down);
                     break;
+                default:
+                    break;
             }
         }
 

@@ -34,6 +34,7 @@
         "libs/music",
         "libs/music---pwm",
         "libs/music---linux",
+        "libs/local-multiplayer",
         "libs/device"
     ],
     "compile": {
