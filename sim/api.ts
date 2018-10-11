@@ -30,11 +30,27 @@ namespace pxsim {
             case 40: // down arrow
                 return Key.Down
             case 32: // Space
+            case 81: // Q
             case 90: // Z
                 return Key.A
             case 13: // Enter
             case 88: // X
+            case 69: // E
                 return Key.B
+
+            // Player two (see the local-multiplayer package)
+            case 74: // J
+                return Key.Left + 7
+            case 73: // I
+                return Key.Up + 7
+            case 76: // L
+                return Key.Right + 7
+            case 75: // K
+                return Key.Down + 7
+            case 85: // U
+                return Key.A + 7
+            case 79: // O
+                return Key.B + 7
             default: return Key.None
         }
     }
