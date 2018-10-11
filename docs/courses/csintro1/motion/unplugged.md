@@ -2,6 +2,8 @@
 
 In this activity, you will learn about events and how they drive actions.
 
+![Controller](/static/courses/csintro1/motion/controller.png)
+
 1. In @boardname@, create a new project and open the simulator view to full screen
 
 2. Decide as a class what each button does (for example, ``||controller:A||`` means clap, ``||controller:down||`` means stomp, ``||controller:B||`` makes everyone say "YEAH", ...)
