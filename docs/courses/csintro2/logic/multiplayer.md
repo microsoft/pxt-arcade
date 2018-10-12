@@ -14,7 +14,7 @@ In this section, the ``||controller:local-multiplayer||`` extension will be used
 
 The ``||controller:local-multiplayer||`` extension allows for multiple users to play games with eachother in the browser.
 
-Using a QWERTY keyboard, the keys for both players are listed belows
+Using a QWERTY keyboard, the keys for both players are listed below
 
 | Controller Button | Player One    | Player Two    |
 | :---------------: | :-----------: | :-----------: |
@@ -27,7 +27,15 @@ Using a QWERTY keyboard, the keys for both players are listed belows
 
 <br />
 
-Additionally, many gamepads (for example, an Xbox One controller) can be used to control the game as well. The button mappings depend on the controller, and some may not work. Gamepads also allow more than two players can play at once.
+Some keyboards may have a maximum number of keys that can be pressed at a single time, which may inhibit the ability for two people to play on one keyboard.
+
+### ~hint
+
+Many gamepads (for example, an Xbox One controller) can be used to control the game as well. The button mappings depend on the controller, and some gamepads may not work.
+
+Additionally, multiple gamepads can be used to allow for more than the two players a keyboard supports, allowing for three or more players in a single game.
+
+### ~
 
 ## Example #1: Player one
 
