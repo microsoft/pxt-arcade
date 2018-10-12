@@ -143,21 +143,21 @@ controller.setPlayerSprite(controller.PlayerNumber.Two, sprites.create(img`
 ## Student Task #3: Wall Bounce
 
 1. Get an ``||game:on game update||`` event. Place an ``||logic:if then ... else if then||`` block inside of the event
-2. In the first condition, check if ``||variables:currentBall||``s ``||sprites:y||`` position is **less than or equal to** 0. If it is,
-    * set ``||variables:currentBall||``s ``||sprites:y||`` position to 0
-    * set ``||variables:currentBall||``s ``||sprites:vy||`` to it's current ``||sprites:vy||`` multiplied by ``-1``
-3. In the second condition, check if ``||variables:currentBall||``s ``||sprites:y||`` position is **greater than or equal to** ``||scene:screen height||``. If it is,
-    * set ``||variables:currentBall||``s ``||sprites:y||`` position to ``||scene:screen height||``
-    * set ``||variables:currentBall||``s ``||sprites:vy||`` to it's current ``||sprites:vy||`` multiplied by ``-1``
+2. In the first condition, check if ``||variables:currentBall||``'s ``||sprites:y||`` position is **less than or equal to** 0. If it is,
+    * set ``||variables:currentBall||``'s ``||sprites:y||`` position to 0
+    * set ``||variables:currentBall||``'s ``||sprites:vy||`` to it's current ``||sprites:vy||`` multiplied by ``-1``
+3. In the second condition, check if ``||variables:currentBall||``'s ``||sprites:y||`` position is **greater than or equal to** ``||scene:screen height||``. If it is,
+    * set ``||variables:currentBall||``'s ``||sprites:y||`` position to ``||scene:screen height||``
+    * set ``||variables:currentBall||``'s ``||sprites:vy||`` to it's current ``||sprites:vy||`` multiplied by ``-1``
 
 ## Student Task #4: Keeping Score
 
 1. Add another ``||logic:if then ... else if then||`` block inside of the event
-2. **If** the ``||variables:currentBall||``s ``||sprites:x||`` position is less than 0, then
+2. **If** the ``||variables:currentBall||``'s ``||sprites:x||`` position is less than 0, then
     * ``||sprites:destroy||`` the ``||variables:currentBall||``
     * Add one to ``||info:change player two score||``
     * create a new ball with ``||sprites:create empty sprite of kind Ball||``
-3. Otherwise, **if** the ``||variables:currentBall||``s ``||sprites:x||`` position is greater than ``||scene:screen width||``, then
+3. Otherwise, **if** the ``||variables:currentBall||``'s ``||sprites:x||`` position is greater than ``||scene:screen width||``, then
     * ``||sprites:destroy||`` the ``||variables:currentBall||``
     * Add one to ``||info:change player one score||``
     * create a new ball with ``||sprites:create empty sprite of kind Ball||``
@@ -166,7 +166,7 @@ controller.setPlayerSprite(controller.PlayerNumber.Two, sprites.create(img`
 
 1. Create an ``||sprites:on overlap||`` event between a ``||sprites:Ball||`` and a ``||sprites:Player||``
 2. In the ``||sprites:overlap||`` event, first ``||sprites:set mySprite ghost on||``
-3. Next, reverse the ``||sprites:Ball||``s ``||sprites:vx||`` by setting it to the current ``||sprites:vx||`` multiplied by -1
+3. Next, reverse the ``||sprites:Ball||``'s ``||sprites:vx||`` by setting it to the current ``||sprites:vx||`` multiplied by -1
 4. After a ``||loops:pause||`` of 200 ms,  ``||sprites:set mySprite ghost off||``
 
 ## What did we learn?
