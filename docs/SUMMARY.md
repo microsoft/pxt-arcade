@@ -23,7 +23,7 @@
             * [Programming Language](/courses/csintro1/about/script)
             * [For Teachers](/courses/csintro1/about/teachers)
             * [Authors](/courses/csintro1/about/authors)
-        * [Orientation](/courses/csintro1/intro)
+        * [Intro](/courses/csintro1/intro)
             * [Orientation to Makecode](/courses/csintro1/intro/makecode-orientation)
             * [Birthday Algorithm](/courses/csintro1/intro/birthday-algorithm)
             * [Sprites](/courses/csintro1/intro/sprites)

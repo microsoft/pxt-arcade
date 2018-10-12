@@ -1,4 +1,4 @@
-# Orientation
+# Introduction
 
 This section serves as a quick introduction to the @boardname@ environment, and to the basics of programming in blocks.
 
@@ -19,7 +19,7 @@ This section serves as a quick introduction to the @boardname@ environment, and 
 }, {
     "name": "Unplugged: Rock Paper Scissors",
     "url": "/courses/csintro1/intro/unplugged",
-    "imageUrl": "/static/courses/csintro1/intro/rock-paper-scissors-unplugged.png"
+    "imageUrl": "/static/courses/csintro1/intro/unplugged.png"
 }, {
     "name": "Variable Math",
     "url": "/courses/csintro1/intro/variable-math",

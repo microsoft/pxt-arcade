@@ -7,7 +7,7 @@ Functions serve as a powerful tool to clarify the intent of your code, and to ma
 {
     "name": "Unplugged: Making a Sandwich",
     "url": "/courses/csintro2/functions/unplugged",
-    "imageUrl": "/static/courses/csintro2/functions/making-a-sandwich.png"
+    "imageUrl": "/static/courses/csintro2/functions/unplugged.png"
 }, {
     "name": "Intro to Functions",
     "url": "/courses/csintro2/functions/intro",

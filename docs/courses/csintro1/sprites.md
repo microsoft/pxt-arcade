@@ -7,7 +7,7 @@ Sprites allow developers to fill there games with unique characters that the pla
 {
     "name": "Unplugged: Sink a Ship",
     "url": "/courses/csintro1/sprites/unplugged",
-    "imageUrl": "/static/courses/csintro1/sprites/sink-a-ship.png"
+    "imageUrl": "/static/courses/csintro1/sprites/unplugged.png"
 }, {
     "name": "Coordinate Walker",
     "url": "/courses/csintro1/sprites/coordinate-walker",
