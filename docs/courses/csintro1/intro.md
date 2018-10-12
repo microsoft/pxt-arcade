@@ -10,14 +10,16 @@ This section serves as a quick introduction to the @boardname@ environment, and 
     "imageUrl": "/static/courses/csintro1/intro/makecode-orientation.gif"
 }, {
     "name": "Birthday Algorithm",
-    "url": "/courses/csintro1/intro/birthday-algorithm"
+    "url": "/courses/csintro1/intro/birthday-algorithm",
+    "imageUrl": "/static/courses/csintro1/intro/birthday-algorithm.png"
 }, {
     "name": "Sprites",
     "url": "/courses/csintro1/intro/sprites",
     "imageUrl": "/static/courses/csintro1/intro/sprites.png"
 }, {
     "name": "Unplugged: Rock Paper Scissors",
-    "url": "/courses/csintro1/intro/unplugged"
+    "url": "/courses/csintro1/intro/unplugged",
+    "imageUrl": "/static/courses/csintro1/intro/rock-paper-scissors-unplugged.png"
 }, {
     "name": "Variable Math",
     "url": "/courses/csintro1/intro/variable-math",

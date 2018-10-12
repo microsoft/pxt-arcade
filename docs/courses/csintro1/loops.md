@@ -10,7 +10,8 @@ Loops serve as a powerful tool, both to reduce redundancy in the code we write, 
     "imageUrl": "/static/courses/csintro1/loops/intro.gif"
 }, {
     "name": "Unplugged: Circle a Chair",
-    "url": "/courses/csintro1/loops/unplugged"
+    "url": "/courses/csintro1/loops/unplugged",
+    "imageUrl": "/static/courses/csintro1/loops/circle-a-chair.png"
 }, {
     "name": "Increment Loop",
     "url": "/courses/csintro1/loops/increment-loop",
