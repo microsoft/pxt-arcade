@@ -141,6 +141,8 @@ controller.setPlayerSprite(controller.PlayerNumber.Two, sprites.create(img`
 
 ## Student Task #2: Create a Ball
 
+### TODO GIF of step results
+
 1. Get the ``||sprites:on created sprite of kind||`` event, and change ``||sprites:Player||`` to ``||sprites:Ball||``
 2. In the ``||sprites:on created sprite of kind||`` event, use ``||sprites:set sprite image to||`` to give the sprite an image of a ball
 3. Give the ball a ``||sprites:vx||`` of either -50 or 50, with a ``||math:50 % chance||`` of each (use an ``||logic:if then ... else||`` block to handle this)
@@ -149,6 +151,8 @@ controller.setPlayerSprite(controller.PlayerNumber.Two, sprites.create(img`
 6. Add ``||sprites:create empty sprite of kind Ball||`` to the ``||loops:on start||``, to create a ball when the game starts
 
 ## Student Task #3: Wall Bounce
+
+### TODO GIF of step results
 
 1. Get an ``||game:on game update||`` event. Place an ``||logic:if then ... else if then||`` block inside of the event
 2. In the first condition, check if ``||variables:currentBall||``'s ``||sprites:y||`` position is **less than or equal to** 0. If it is,
@@ -159,6 +163,8 @@ controller.setPlayerSprite(controller.PlayerNumber.Two, sprites.create(img`
     * set ``||variables:currentBall||``'s ``||sprites:vy||`` to it's current ``||sprites:vy||`` multiplied by ``-1``
 
 ## Student Task #4: Keeping Score
+
+### TODO GIF of step results
 
 1. Add another ``||logic:if then ... else if then||`` block inside of the event
 2. **If** the ``||variables:currentBall||``'s ``||sprites:x||`` position is less than 0, then
@@ -172,12 +178,17 @@ controller.setPlayerSprite(controller.PlayerNumber.Two, sprites.create(img`
 
 ## Student Task #5: Hit the Paddle
 
+### TODO GIF of step results
+
 1. Create an ``||sprites:on overlap||`` event between a ``||sprites:Ball||`` and a ``||sprites:Player||``
 2. In the ``||sprites:overlap||`` event, first ``||sprites:set mySprite ghost on||``
 3. Next, reverse the ``||sprites:Ball||``'s ``||sprites:vx||`` by setting it to the current ``||sprites:vx||`` multiplied by -1
 4. After a ``||loops:pause||`` of 200 ms,  ``||sprites:set mySprite ghost off||``
 
 ## What did we learn?
+
+1. How does having multiple players at once in a single game allow for new and compelling games?
+2. Were there any difficulties in implementing the multiplayer game? Was it easier or harder than a single player game?
 
 ```package
 local-multiplayer
