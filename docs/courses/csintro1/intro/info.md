@@ -80,7 +80,7 @@ This simple game gives the user a simple task - to not touch a button. If they d
 
 ### Simplify Blocks chained together with JavaScript
 
-![simplify join blocks with JavaScript](/static/courses/csintro1/orientation/join-javascript.gif)
+![simplify join blocks with JavaScript](/static/courses/csintro1/intro/join-javascript.gif)
 
 ## Student Task 3: Estimate rate of presses
 
@@ -97,7 +97,7 @@ When a nurse needs to take a patient's heart rate with their other vital signs, 
 
     ### ~hint
 
-    Review the [Variable Math](/courses/csintro1/orientation/variable-math) activity if you're having trouble making the sprite say the ``||info:score||`` - it is stored as a number.
+    Review the [Variable Math](/courses/csintro1/intro/variable-math) activity if you're having trouble making the sprite say the ``||info:score||`` - it is stored as a number.
 
     ### ~
 

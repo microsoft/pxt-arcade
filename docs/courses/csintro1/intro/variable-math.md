@@ -61,7 +61,7 @@ game.splash("3 + 5 = " + answer)
 
 In order to combine multiple items we will need to add additional math blocks
 
-![animation: adding 3 numbers with blocks](/static/courses/csintro1/orientation/add-3-numbers.gif)
+![animation: adding 3 numbers with blocks](/static/courses/csintro1/intro/add-3-numbers.gif)
 
 ### ~
 
@@ -155,7 +155,7 @@ It can be difficult to structure complicated expressions using blocks. Look at a
 
 [Fix the Code here](https://makecode.com/_0qfiscfhEY9P)
 
-![image of code blocks with error](/static/courses/csintro1/orientation/fix-code.png)
+![image of code blocks with error](/static/courses/csintro1/intro/fix-code.png)
 
 ### ~hint
 

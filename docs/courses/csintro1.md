@@ -10,8 +10,8 @@ This course is currently in beta - this means that it is likely to have bugs and
 [
 {
     "name": "Orientation",
-    "url": "/courses/csintro1/orientation",
-    "imageUrl": "/static/courses/csintro1/orientation.gif"
+    "url": "/courses/csintro1/intro",
+    "imageUrl": "/static/courses/csintro1/intro.gif"
 }, {
     "name": "Sprites",
     "url": "/courses/csintro1/sprites",
@@ -44,14 +44,14 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [For Teachers](/courses/csintro1/about/teachers)
 * [Authors](/courses/csintro1/about/authors)
 
-### [Orientation](/courses/csintro1/orientation)
+### [Orientation](/courses/csintro1/intro)
 
-* [Orientation to Makecode](/courses/csintro1/orientation/makecode-orientation)
-* [Birthday Algorithm](/courses/csintro1/orientation/birthday-algorithm)
-* [Sprites](/courses/csintro1/orientation/sprites)
-* [Unplugged: Rock Paper Scissors](/courses/csintro1/orientation/unplugged)
-* [Variable Math](/courses/csintro1/orientation/variable-math)
-* [Info Variables](/courses/csintro1/orientation/info)
+* [Orientation to Makecode](/courses/csintro1/intro/makecode-orientation)
+* [Birthday Algorithm](/courses/csintro1/intro/birthday-algorithm)
+* [Sprites](/courses/csintro1/intro/sprites)
+* [Unplugged: Rock Paper Scissors](/courses/csintro1/intro/unplugged)
+* [Variable Math](/courses/csintro1/intro/variable-math)
+* [Info Variables](/courses/csintro1/intro/info)
 
 ### [Sprites](/courses/csintro1/sprites)
 

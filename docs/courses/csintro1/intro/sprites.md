@@ -2,7 +2,7 @@
 
 Games tell a story, and those stories require characters. In @boardname@, those characters are generally represented using sprites. This activity equips students with the skills necessary to create, test and save sprites using the MakeCode development environment. Students will build unique sprites by using the sprite menu and the integrated image editor.
 
-![Image Editor Features](/static/courses/csintro1/orientation/image-editor-features.png)
+![Image Editor Features](/static/courses/csintro1/intro/image-editor-features.png)
 
 In this activity, students are introduced to:
 * Using blocks
@@ -107,7 +107,7 @@ https://youtu.be/oupwql9r-80
 3. Then find and add the other colors in the shape of their corresponding code index number. Arrange them inside the Sprite Editor workspace so you have all 15 index colors
 4. Look at how the sprite image is represented in the JavaScript view to help answer the "What did we learn" questions below
 
-![sprite rainbow numbers image](/static/courses/csintro1/orientation/rainbow-numbers.png)
+![sprite rainbow numbers image](/static/courses/csintro1/intro/rainbow-numbers.png)
 
 ### ~hint
 
