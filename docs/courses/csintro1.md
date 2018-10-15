@@ -9,7 +9,7 @@ This course is currently in beta - this means that it is likely to have bugs and
 ```codecard
 [
 {
-    "name": "Orientation",
+    "name": "Intro",
     "url": "/courses/csintro1/intro",
     "imageUrl": "/static/courses/csintro1/intro.gif"
 }, {

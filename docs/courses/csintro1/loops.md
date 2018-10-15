@@ -9,7 +9,7 @@ Loops serve as a powerful tool, both to reduce redundancy in the code we write, 
     "url": "/courses/csintro1/loops/intro",
     "imageUrl": "/static/courses/csintro1/loops/intro.gif"
 }, {
-    "name": "Unplugged: Circle a Chair",
+    "name": "Unplugged: Chair",
     "url": "/courses/csintro1/loops/unplugged",
     "imageUrl": "/static/courses/csintro1/loops/unplugged.png"
 }, {
@@ -21,7 +21,7 @@ Loops serve as a powerful tool, both to reduce redundancy in the code we write, 
     "url": "/courses/csintro1/loops/projectiles",
     "imageUrl": "/static/courses/csintro1/loops/projectiles.gif"
 }, {
-    "name": "Projectiles from Sprites",
+    "name": "Projectiles From",
     "url": "/courses/csintro1/loops/projectile-from",
     "imageUrl": "/static/courses/csintro1/loops/projectile-from.gif"
 }, {

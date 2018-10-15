@@ -5,7 +5,7 @@ This section serves as a quick introduction to the @boardname@ environment, and 
 ```codecard
 [
 {
-    "name": "Orientation to MakeCode",
+    "name": "MakeCode",
     "url": "/courses/csintro1/intro/makecode-orientation",
     "imageUrl": "/static/courses/csintro1/intro/makecode-orientation.gif"
 }, {
@@ -25,7 +25,7 @@ This section serves as a quick introduction to the @boardname@ environment, and 
     "url": "/courses/csintro1/intro/variable-math",
     "imageUrl": "/static/courses/csintro1/intro/variable-math.gif"
 }, {
-    "name": "Info Variable Properties",
+    "name": "Info Properties",
     "url": "/courses/csintro1/intro/info",
     "imageUrl": "/static/courses/csintro1/intro/info.gif"
 }

@@ -5,7 +5,7 @@ Functions serve as a powerful tool to clarify the intent of your code, and to ma
 ```codecard
 [
 {
-    "name": "Unplugged: Making a Sandwich",
+    "name": "Unplugged: Sandwich",
     "url": "/courses/csintro2/functions/unplugged",
     "imageUrl": "/static/courses/csintro2/functions/unplugged.png"
 }, {
@@ -13,7 +13,7 @@ Functions serve as a powerful tool to clarify the intent of your code, and to ma
     "url": "/courses/csintro2/functions/intro",
     "imageUrl": "/static/courses/csintro2/functions/intro.gif"
 }, {
-    "name": "Reducing Redundancy with Functions",
+    "name": "Reducing Redundancy",
     "url": "/courses/csintro2/functions/redundancy",
     "imageUrl": "/static/courses/csintro2/functions/redundancy.gif"
 }, {

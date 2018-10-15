@@ -5,7 +5,7 @@ Motion introduce the ability to control how a sprite moves around the screen.
 ```codecard
 [
 {
-    "name": "Unplugged: Using a Controller",
+    "name": "Unplugged: Controller",
     "url": "/courses/csintro1/motion/unplugged",
     "imageUrl": "/static/courses/csintro1/motion/unplugged.png"
 }, {
@@ -25,7 +25,7 @@ Motion introduce the ability to control how a sprite moves around the screen.
     "url": "/courses/csintro1/motion/overlap2",
     "imageUrl": "/static/courses/csintro1/motion/overlap2.gif"
 }, {
-    "name": "Sprite Create and On Create",
+    "name": "Create and On Create",
     "url": "/courses/csintro1/motion/create-on-create-sprites",
     "imageUrl": "/static/courses/csintro1/motion/create-on-create-sprites.gif"
 }, {
