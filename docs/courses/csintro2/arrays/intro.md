@@ -9,10 +9,11 @@ In Blocks, arrays can be found under the `Advanced` category of the toolbox.
 ![locating arrays](/static/courses/csintro2/arrays/locating-arrays.gif)
 
 In this activity, students will:
+
 * Interact with arrays
 * Create arrays of numbers
-* ``||array:length of array||``
-* ``||array:add||`` and ``||array:remove||`` values from arrays
+* ``||arrays:length of array||``
+* ``||arrays:add||`` and ``||arrays:remove||`` values from arrays
 
 ## Coming Soon: VIDEO
 
@@ -44,7 +45,7 @@ One way to think about this is in terms of where the value is located within the
 
 1. Start with the code from example #1
 2. Add two more numbers to the array, by pressing the `+` button on the block
-3. Instead of always splashing the value at index 1, change the ``||array:get value at||`` block to choose a random index between 0 and 3 using the ``||math:pick random||`` block
+3. Instead of always splashing the value at index 1, change the ``||arrays:get value at||`` block to choose a random index between 0 and 3 using the ``||math:pick random||`` block
 4. Add one more number to the array. Identify whether this value will ever show up as one of the values being ``||game:splashed||``
 
     ### ~hint
@@ -53,7 +54,7 @@ One way to think about this is in terms of where the value is located within the
 
     ### ~
 
-5. The ``||array:length of array||`` block will return the length of the array - that is, the number of values contained within it. Modify the values in the ``||math:pick random||`` so that it will pick a value between 0 and the highest index in the array
+5. The ``||arrays:length of array||`` block will return the length of the array - that is, the number of values contained within it. Modify the values in the ``||math:pick random||`` so that it will pick a value between 0 and the highest index in the array
 
     ### ~hint
 
@@ -83,7 +84,7 @@ In this example, we added 5 to the end of the array, after it's already been cre
 
 1. Create a new array with the values -3, 3, and 4
 2. Create a ``||controller:on A button press||`` event
-3. Inside the ``||controller:on A button press||`` event, use ``||array:list add value to end||`` to append a random number using ``||math:pick random -10 to 10||``
+3. Inside the ``||controller:on A button press||`` event, use ``||arrays:list add value to end||`` to append a random number using ``||math:pick random -10 to 10||``
 4. Create a ``||controller: on B button press||`` event
 5. Inside the ``||controller: on B button press||`` event, select a random item from the ``||variables:list||`` and ``||game:splash||`` it
 
@@ -98,6 +99,6 @@ In this example, we added 5 to the end of the array, after it's already been cre
 ## What did we learn?
 
 1. What is the difference between creating an array of numbers and storing multiple values as individual variables (as in, `value1 = 1`, `value2 = 2`, `value3 ...`)? What can an array do that storing different variables by themselves cannot?
-2. How does the ``||array:length||`` of an array relate to the position of the final element?
+2. How does the ``||arrays:length||`` of an array relate to the position of the final element?
 
 ### [Teacher Material](/courses/csintro2/about/teachers)

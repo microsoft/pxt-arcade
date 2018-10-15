@@ -51,7 +51,7 @@ mySprite = sprites.create(img`
 
 Clicking on the image icon as shown in the video above will bring up the Image Editor, allowing you to draw an image for your own sprite.
 
-## Example: Sprite
+## Example #1: Sprites
 
 Look at the blocks, and note that a name for the sprite (``||variables:mySprite||``) is set to an image for the sprite (it's hot sauce!).
 

@@ -7,7 +7,7 @@ In this activity, students will use:
 * Setting random sprite positions
 * Setting button press events
 
-## Concept: Picking a random number
+## Concept: Picking a Random Number
 
 We can pick a random number in a range using ``||math:pick random||``. First, we will use this to display a random value on the screen.
 
@@ -15,7 +15,7 @@ https://youtu.be/PS8clbMInjw
 
 [Alternative Video Location](https://aka.ms/40544a-randomsplash)
 
-## Example #1: Pick random
+## Example #1: Pick Random
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -28,7 +28,7 @@ randomNumber = Math.randomRange(0, 10)
 game.splash("Random Number is " + randomNumber)
 ```
 
-## Student Task #1: Create random numbers ranges
+## Student Task #1: Create Random Number Ranges
 
 1. Start with the example code above
 2. Adjust the code to pick a random number from **1** to **100**
@@ -36,7 +36,7 @@ game.splash("Random Number is " + randomNumber)
 4. Add a ``||game:splash||`` for the ``||variables:anotherRandom||`` variable
 5. **Challenge:** use blocks to generate a random number that can result in both negative and positive values
 
-## Concept: Pick a random location
+## Concept: Pick a Random Location
 
 https://youtu.be/Ggj4rOXw6ns
 
@@ -44,7 +44,7 @@ https://youtu.be/Ggj4rOXw6ns
 
 Games often have an element of luck and surprise to keep the player engaged. In this example, we will use random numbers to place a sprite on the screen in a random location. We can use a random range because we know the dimensions of the screen.
 
-## Example #2: Random sprite location
+## Example #2: Random Sprite Location
 
 1. Review the code below
 2. Create the sample code and run it

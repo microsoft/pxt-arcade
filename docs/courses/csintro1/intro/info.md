@@ -15,7 +15,7 @@ In this activity, students are introduced to:
 
 The first example will be a simple one - simply counting the number of buttons pressed and keeping track of them as a score. We will discuss ``||controller:on any button pressed||`` block in more detail later, but for we just need to know that whatever is inside of the block will happen each time a button (``||controller:A||``, ``||controller:up||``, and so on) is pressed.
 
-## Example: Counting button presses
+## Example #1: Counting button presses
 
 https://youtu.be/7JkbbfBJCdI
 
@@ -52,7 +52,7 @@ Run the code you created in task #1 a few times, and try to get different scores
 
 Beyond score, another important value to keep track of is the players life total. This allows us to make games where players can be penalized for mistakes, without simply ending the game immediately when they make one.
 
-## Example: changing ``||info:life||`` totals
+## Example #2: changing ``||info:life||`` totals
 
 https://youtu.be/YiZ-yl5CbYM
 
@@ -71,7 +71,7 @@ info.setLife(1)
 
 This simple game gives the user a simple task - to not touch a button. If they do touch a button, the life will go down to 0, and they will lose. The game is a bit boring, but it does demonstrate a few of the benefits of using ``||info:life||``: life total shows up in the corner as a number of hearts, and when you run out of the lives, the game will end.
 
-## Student Task 2: Touch the button 15 times
+## Student Task #2: Touch the button 15 times
 
 1. Start with the code saved as "do not touch the buttons" in the prior example
 2. Modify the initial value of the life to be 15, instead of just 1
@@ -82,7 +82,7 @@ This simple game gives the user a simple task - to not touch a button. If they d
 
 ![simplify join blocks with JavaScript](/static/courses/csintro1/intro/join-javascript.gif)
 
-## Student Task 3: Estimate rate of presses
+## Student Task #3: Estimate rate of presses
 
 ### Overview
 
@@ -143,7 +143,7 @@ mySprite.say(":)")
 
 When doing the challenge, remember to pay careful attention to the order of operations and parentheses (JavaScript) to get the right equation.
 
-To join more than just two strings and numbers, we can chain the ``||text:join||`` blocks just as we did for addition. 
+To join more than just two strings and numbers, press the **+** to add more locations to combine strings
 
 ```blocks
 enum SpriteKind {
@@ -169,7 +169,7 @@ mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-mySprite.say("score " + ("is " + "here"))
+mySprite.say("score " + "is " + "here")
 ```
 
 ### ~

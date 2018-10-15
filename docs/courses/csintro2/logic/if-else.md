@@ -298,7 +298,7 @@ Now add a timer, and congratulate the player at the end of the game, giving them
 ## What did we learn?
 
 1. What is a case in which you use an ``||logic:if||`` but not an ``||logic:else||``?
-2. For example #1c, we changed the ``|logic:if||`` ``|logic:if||`` structure to an ``|logic:if else||`` structure. Why does it make sense to do this?
+2. For example #1c, we changed the ``||logic:if||`` - ``||logic:if||`` structure to an ``||logic:if else||`` structure. Why does it make sense to do this?
 3. What is the same and what is different between the following code samples? Which one is easier to read? Explain.
 
 ```blocks

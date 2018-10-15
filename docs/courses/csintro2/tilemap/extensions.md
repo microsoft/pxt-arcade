@@ -2,7 +2,7 @@
 
 The design of the area the player is in can make or break a game. If the play area is too sparse, the game can become boring and uninteresting, and if it is overly filled with objects, the game can become to hard too hard to follow. 
 
-In this activity, students will use the ``||corgio:corgio||`` extension (based on the Corgi dog breed) to make several sprite actions easy to implement. Using ``||corgio:corgio||`` allows us to focus on the design and structure of the game play without getting bogged down in some of the complex functionality that corgio handles for us.
+In this activity, students will use the ``||corgi:corgio||`` extension (based on the Corgi dog breed) to make several sprite actions easy to implement. Using ``||corgi:corgio||`` allows us to focus on the design and structure of the game play without getting bogged down in some of the complex functionality that corgio handles for us.
 
 In this activity, students will:
 * Use a new extension
@@ -11,21 +11,21 @@ In this activity, students will:
 
 ## Using the corgio package
 
-``||corgio:corgio||`` allows you to create a sprite who can jump, run, and fall with only a few blocks in the ``||loops:on start||``.
+``||corgi:corgio||`` allows you to create a sprite who can jump, run, and fall with only a few blocks in the ``||loops:on start||``.
 
 To add the corgio extension to your project, open the extensions tab and look for "corgio" - it should be the first result.
 
-After adding corgio to your project, a new tab titled ``||corgio:Corgi||`` will appear in the toolbox, above ``||game:Game||``; this contains the blocks necessary to create and interact with the Corgi.
+After adding corgio to your project, a new tab titled ``||corgi:Corgi||`` will appear in the toolbox, above ``||game:Game||``; this contains the blocks necessary to create and interact with the Corgi.
 
 ## Coming Soon: VIDEO
 
 ## Student Task #1: Making your first corgio
 
 1. Open a new project, and import the corgio extension (name the project "myPlatformer")
-2. Create your first Corgi; to do this, add the ``||variables:set myCorg to||`` block in the ``||corgio:Create||`` category to ``||loops:on start||`` block. If you press the **+** button on the corgi block, you can also set the initial location for the corgi to be created
-3. Add the ``||corgio:make myCorg move left and right with arrow keys||`` block from the ``||corgio:Movement||`` category, as well as the ``||corgio:change image when myCorg is moving||``. Try adding one without the other; what changes?
-4. Finally, add the ``||corgio:make myCorg jump if up arrow key is pressed||`` block; try pressing the ``||controller:up||`` button multiple times before you hit the ground, or jumping away from a wall that you are currently touching
-5. **Challenge:** use the blocks in the ``||corgio:Speak||`` category to teach the corgio to say "hello", "goodbye", "jump", and "sit"; make the corgi ``||corgio:bark||`` when the user presses the ``||controller:A||`` button. Did it know any words before you taught it those four?
+2. Create your first Corgi; to do this, add the ``||variables:set myCorg to||`` block in the ``||corgi:Create||`` category to ``||loops:on start||`` block. If you press the **+** button on the corgi block, you can also set the initial location for the corgi to be created
+3. Add the ``||corgi:make myCorg move left and right with arrow keys||`` block from the ``||corgi:Movement||`` category, as well as the ``||corgi:change image when myCorg is moving||``. Try adding one without the other; what changes?
+4. Finally, add the ``||corgi:make myCorg jump if up arrow key is pressed||`` block; try pressing the ``||controller:up||`` button multiple times before you hit the ground, or jumping away from a wall that you are currently touching
+5. **Challenge:** use the blocks in the ``||corgi:Speak||`` category to teach the corgio to say "hello", "goodbye", "jump", and "sit"; make the corgi ``||corgi:bark||`` when the user presses the ``||controller:A||`` button. Did it know any words before you taught it those four?
 
 ## Example #1: Corgi with tile map
 

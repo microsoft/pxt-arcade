@@ -85,7 +85,7 @@ projectile = sprites.createProjectile(img`
 
 This modified version adds in an event that triggers when the projectile is destroyed - you should see that when the sprite goes off the screen, it is actually automatically destroyed! 
 
-``||sprites:auto destroy||`` is available for all sprites using the ``||sprite:set sprite auto destroy on||`` flag, but projectiles have it added in for you automatically. 
+``||sprites:auto destroy||`` is available for all sprites using the ``||sprites:set sprite auto destroy on||`` flag, but projectiles have it added in for you automatically. 
 
 If projectiles are not provided a name of a sprite to start from (by pressing the ``+`` button on the block to show the option), they will be created either in the middle of the screen if the velocities in the x and y direction are both set to 0, or from the side of the screen opposite their initial speed otherwise (so that they can move across the screen).
 
@@ -195,7 +195,7 @@ d d d d d d d d
 1. Start with the example above. Currently, it will spawn meteors of ``||sprites:kind||`` ``||sprites:Enemy||`` that stay in random locations along the top of the screen
 2. Replace the ``||game:on update||`` with a ``||loops:repeat||`` loop in the ``||loops:on start||`` block
 3. Each time a projectile is created, add one (1) point to the score using the ``||info:change score by||`` block
-4. Modify the ``||sprite:create projectile||`` block so that each spawned meteor moves down the screen at a rate of 50
+4. Modify the ``||sprites:create projectile||`` block so that each spawned meteor moves down the screen at a rate of 50
 5. **Challenge:** make the projectile move at a random rate between 40 and 60 as we have previously learned, instead of the current constant rate of 50
 
 ## Student Task #2b: Offset Projectiles

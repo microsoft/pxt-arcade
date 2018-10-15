@@ -12,7 +12,7 @@ In this activity, students will be introduced to:
 * Using coordinates on the screen to arrange our sprites into a scene
 * Changing a the background color
 
-## Example: Sprite & Background
+## Example #1: Sprite & Background
 
 This sprite example is larger than the default 16x16, and uses a custom variable name ``||variables:hotSauce||``. However, the image does not show up properly on the screen with the default background, so we must change the background color for the image to show up correctly.
 
@@ -62,7 +62,8 @@ hotSauce = sprites.create(img`
 . . 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
 ```
-## Example: Sprite placement
+
+## Example #1: Sprite placement
 
 https://youtu.be/PsIZ_08eEYk
 
@@ -120,7 +121,7 @@ hotSauce.x = 20
 hotSauce.y = 40
 ```
 
-## Student Task: Build a "Personal Interest Collage"
+## Student Task #1: Build a "Personal Interest Collage"
 
 https://youtu.be/AV8YIkXE1N8
 
