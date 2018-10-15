@@ -4,11 +4,13 @@ So far, games have been primarily been intended for a single user. These are cal
 
 In this section, the ``||controller:local-multiplayer||`` extension will be used to facilitate **multiplayer**, so that more than one person can player at the same time.
 
-## TODO add lesson outline
+![Final Game](/static/courses/csintro2/logic/pong.gif)
 
-## TODO add final pong game gif
+In these activities, students will work with:
 
-## TODO finalize block examples once apis are settled
+* ``||logic:if then ... else if||`` conditions
+* Comparison operators
+* The ``||controller:local-multiplayer||`` extension
 
 ## Concept: Local Multiplayer
 
@@ -66,7 +68,7 @@ controller.setPlayerSprite(controller.PlayerNumber.One, sprites.create(img`
 . . . . . . 5 5 5 5 5 . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player));
-// controller.controlPlayer(controller.PlayerNumber.One, 100, 100); ## TODO comment this when implemented
+controller.controlPlayer(controller.PlayerNumber.One, 100, 100);
 ```
 
 ## Student Task #1: Loading Player Two
@@ -113,9 +115,9 @@ controller.setPlayerSprite(controller.PlayerNumber.One, sprites.create(img`
 2 2 2 2 2 . . . . . . . . . . . 
 2 2 2 2 2 . . . . . . . . . . . 
 `, SpriteKind.Player));
-// controller.controlPlayer(controller.PlayerNumber.One, 0, 100); ## TODO comment this when implemented
-// controller.getPlayerSprite(controller.PlayerNumber.One).x = 0;
-// controller.getPlayerSprite(controller.PlayerNumber.One).setFlag(SpriteFlag.StayInScreen, true);
+controller.controlPlayer(controller.PlayerNumber.One, 0, 100);
+controller.playerSprite(controller.PlayerNumber.One).x = 0
+controller.playerSprite(controller.PlayerNumber.One).setFlag(SpriteFlag.StayInScreen, true)
 controller.setPlayerSprite(controller.PlayerNumber.Two, sprites.create(img`
 . . . . . . . . . . . 5 5 5 5 5 
 . . . . . . . . . . . 5 5 5 5 5 
@@ -134,25 +136,23 @@ controller.setPlayerSprite(controller.PlayerNumber.Two, sprites.create(img`
 . . . . . . . . . . . 5 5 5 5 5 
 . . . . . . . . . . . 5 5 5 5 5 
 `, SpriteKind.Player));
-// controller.controlPlayer(controller.PlayerNumber.Two, 0, 100); ## TODO comment this when implemented
-// controller.getPlayerSprite(controller.PlayerNumber.Two).x = 0;
-// controller.getPlayerSprite(controller.PlayerNumber.Two).setFlag(SpriteFlag.StayInScreen, true);
+controller.controlPlayer(controller.PlayerNumber.Two, 0, 100);
+controller.playerSprite(controller.PlayerNumber.Two).x = scene.screenWidth()
+controller.playerSprite(controller.PlayerNumber.Two).setFlag(SpriteFlag.StayInScreen, true)
 ```
 
 ## Student Task #2: Create a Ball
 
-### TODO GIF of step results
-
 1. Get the ``||sprites:on created sprite of kind||`` event, and change ``||sprites:Player||`` to ``||sprites:Ball||``
 2. In the ``||sprites:on created sprite of kind||`` event, use ``||sprites:set sprite image to||`` to give the sprite an image of a ball
-3. Give the ball a ``||sprites:vx||`` of either -50 or 50, with a ``||math:50 % chance||`` of each (use an ``||logic:if then ... else||`` block to handle this)
-4. Give the ball a random ``||sprites:vy||`` between -50 and 50
-5. Store the ball sprite in the variable ``||variables:currentBall||``
+3. Give the ball a ``||sprites:vx||`` of either -75 or 75, with a ``||math:50 % chance||`` of each (use an ``||logic:if then ... else||`` block to handle this)
+4. Give the ball a random ``||sprites:vy||`` between -75 and 75
+5. Store the ball ``||variables:sprite||`` in the variable ``||variables:currentBall||``
 6. Add ``||sprites:create empty sprite of kind Ball||`` to the ``||loops:on start||``, to create a ball when the game starts
 
 ## Student Task #3: Wall Bounce
 
-### TODO GIF of step results
+![Bounce!](/static/courses/csintro2/logic/bounce.gif)
 
 1. Get an ``||game:on game update||`` event. Place an ``||logic:if then ... else if then||`` block inside of the event
 2. In the first condition, check if ``||variables:currentBall||``'s ``||sprites:y||`` position is **less than or equal to** 0. If it is,
@@ -164,26 +164,27 @@ controller.setPlayerSprite(controller.PlayerNumber.Two, sprites.create(img`
 
 ## Student Task #4: Keeping Score
 
-### TODO GIF of step results
+![Score](/static/courses/csintro2/logic/keeping-score.gif)
 
-1. Add another ``||logic:if then ... else if then||`` block inside of the event
+1. Add another ``||logic:if then ... else if then||`` block inside of the ``||game:on game update||`` event
 2. **If** the ``||variables:currentBall||``'s ``||sprites:x||`` position is less than 0, then
     * ``||sprites:destroy||`` the ``||variables:currentBall||``
-    * Add one to ``||info:change player two score||``
+    * Add one to player two's score with ``||info:change player two score||``
     * create a new ball with ``||sprites:create empty sprite of kind Ball||``
 3. Otherwise, **if** the ``||variables:currentBall||``'s ``||sprites:x||`` position is greater than ``||scene:screen width||``, then
     * ``||sprites:destroy||`` the ``||variables:currentBall||``
-    * Add one to ``||info:change player one score||``
+    * Add one to player one's score with ``||info:change player one score||``
     * create a new ball with ``||sprites:create empty sprite of kind Ball||``
+4. In the ``||loops:on start||``, use ``||info:set player one score||`` and ``||info:set player two score||`` to start both players off with a score of 0
 
 ## Student Task #5: Hit the Paddle
 
-### TODO GIF of step results
+![Final Game](/static/courses/csintro2/logic/pong.gif)
 
 1. Create an ``||sprites:on overlap||`` event between a ``||sprites:Ball||`` and a ``||sprites:Player||``
 2. In the ``||sprites:overlap||`` event, first ``||sprites:set mySprite ghost on||``
 3. Next, reverse the ``||sprites:Ball||``'s ``||sprites:vx||`` by setting it to the current ``||sprites:vx||`` multiplied by -1
-4. After a ``||loops:pause||`` of 200 ms,  ``||sprites:set mySprite ghost off||``
+4. After a ``||loops:pause||`` of 200 ms, ``||sprites:set mySprite ghost off||``
 
 ## What did we learn?
 
