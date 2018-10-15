@@ -119,22 +119,22 @@ controller.controlPlayer(PlayerNumber.One, 0, 100);
 controller.playerSprite(PlayerNumber.One).x = 0
 controller.playerSprite(PlayerNumber.One).setFlag(SpriteFlag.StayInScreen, true)
 controller.setPlayerSprite(PlayerNumber.Two, sprites.create(img`
-. . . . . . . . . . . 5 5 5 5 5 
-. . . . . . . . . . . 5 5 5 5 5 
-. . . . . . . . . . . 5 5 5 5 5 
-. . . . . . . . . . . 5 5 5 5 5 
-. . . . . . . . . . . 5 5 5 5 5 
-. . . . . . . . . . . 5 5 5 5 5 
-. . . . . . . . . . . 5 5 5 5 5 
-. . . . . . . . . . . 5 5 5 5 5 
-. . . . . . . . . . . 5 5 5 5 5 
-. . . . . . . . . . . 5 5 5 5 5 
-. . . . . . . . . . . 5 5 5 5 5 
-. . . . . . . . . . . 5 5 5 5 5 
-. . . . . . . . . . . 5 5 5 5 5 
-. . . . . . . . . . . 5 5 5 5 5 
-. . . . . . . . . . . 5 5 5 5 5 
-. . . . . . . . . . . 5 5 5 5 5 
+. . . . . . . . . . . 8 8 8 8 8 
+. . . . . . . . . . . 8 8 8 8 8 
+. . . . . . . . . . . 8 8 8 8 8 
+. . . . . . . . . . . 8 8 8 8 8 
+. . . . . . . . . . . 8 8 8 8 8 
+. . . . . . . . . . . 8 8 8 8 8 
+. . . . . . . . . . . 8 8 8 8 8 
+. . . . . . . . . . . 8 8 8 8 8 
+. . . . . . . . . . . 8 8 8 8 8 
+. . . . . . . . . . . 8 8 8 8 8 
+. . . . . . . . . . . 8 8 8 8 8 
+. . . . . . . . . . . 8 8 8 8 8 
+. . . . . . . . . . . 8 8 8 8 8 
+. . . . . . . . . . . 8 8 8 8 8 
+. . . . . . . . . . . 8 8 8 8 8 
+. . . . . . . . . . . 8 8 8 8 8 
 `, SpriteKind.Player));
 controller.controlPlayer(PlayerNumber.Two, 0, 100);
 controller.playerSprite(PlayerNumber.Two).x = scene.screenWidth()
