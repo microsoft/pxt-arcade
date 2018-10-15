@@ -50,7 +50,7 @@ enum SpriteKind {
     Player,
     Enemy
 }
-controller.setPlayerSprite(controller.PlayerNumber.One, sprites.create(img`
+controller.setPlayerSprite(PlayerNumber.One, sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . 5 . . . . . 5 . . . . . 
@@ -68,7 +68,7 @@ controller.setPlayerSprite(controller.PlayerNumber.One, sprites.create(img`
 . . . . . . 5 5 5 5 5 . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player));
-controller.controlPlayer(controller.PlayerNumber.One, 100, 100);
+controller.controlPlayer(PlayerNumber.One, 100, 100);
 ```
 
 ## Student Task #1: Loading Player Two
@@ -97,7 +97,7 @@ enum SpriteKind {
     Player,
     Enemy
 }
-controller.setPlayerSprite(controller.PlayerNumber.One, sprites.create(img`
+controller.setPlayerSprite(PlayerNumber.One, sprites.create(img`
 2 2 2 2 2 . . . . . . . . . . . 
 2 2 2 2 2 . . . . . . . . . . . 
 2 2 2 2 2 . . . . . . . . . . . 
@@ -115,10 +115,10 @@ controller.setPlayerSprite(controller.PlayerNumber.One, sprites.create(img`
 2 2 2 2 2 . . . . . . . . . . . 
 2 2 2 2 2 . . . . . . . . . . . 
 `, SpriteKind.Player));
-controller.controlPlayer(controller.PlayerNumber.One, 0, 100);
-controller.playerSprite(controller.PlayerNumber.One).x = 0
-controller.playerSprite(controller.PlayerNumber.One).setFlag(SpriteFlag.StayInScreen, true)
-controller.setPlayerSprite(controller.PlayerNumber.Two, sprites.create(img`
+controller.controlPlayer(PlayerNumber.One, 0, 100);
+controller.playerSprite(PlayerNumber.One).x = 0
+controller.playerSprite(PlayerNumber.One).setFlag(SpriteFlag.StayInScreen, true)
+controller.setPlayerSprite(PlayerNumber.Two, sprites.create(img`
 . . . . . . . . . . . 5 5 5 5 5 
 . . . . . . . . . . . 5 5 5 5 5 
 . . . . . . . . . . . 5 5 5 5 5 
@@ -136,9 +136,9 @@ controller.setPlayerSprite(controller.PlayerNumber.Two, sprites.create(img`
 . . . . . . . . . . . 5 5 5 5 5 
 . . . . . . . . . . . 5 5 5 5 5 
 `, SpriteKind.Player));
-controller.controlPlayer(controller.PlayerNumber.Two, 0, 100);
-controller.playerSprite(controller.PlayerNumber.Two).x = scene.screenWidth()
-controller.playerSprite(controller.PlayerNumber.Two).setFlag(SpriteFlag.StayInScreen, true)
+controller.controlPlayer(PlayerNumber.Two, 0, 100);
+controller.playerSprite(PlayerNumber.Two).x = scene.screenWidth()
+controller.playerSprite(PlayerNumber.Two).setFlag(SpriteFlag.StayInScreen, true)
 ```
 
 ## Student Task #2: Create a Ball
@@ -181,10 +181,12 @@ controller.playerSprite(controller.PlayerNumber.Two).setFlag(SpriteFlag.StayInSc
 
 ![Final Game](/static/courses/csintro2/logic/pong.gif)
 
-1. Create an ``||sprites:on overlap||`` event between a ``||sprites:Ball||`` and a ``||sprites:Player||``
-2. In the ``||sprites:overlap||`` event, first ``||sprites:set mySprite ghost on||``
+1. Create an ``||sprites:on overlap||`` event between a ``||sprites:Player||`` and a ``||sprites:Ball||``, so that ``||variables:sprite||`` corresponds to the ``||sprites:Player||``
+2. In the ``||sprites:overlap||`` event, first ``||sprites:set otherSprite ghost on||``
 3. Next, reverse the ``||sprites:Ball||``'s ``||sprites:vx||`` by setting it to the current ``||sprites:vx||`` multiplied by -1
-4. After a ``||loops:pause||`` of 200 ms, ``||sprites:set mySprite ghost off||``
+4. After a ``||loops:pause||`` of 200 ms, ``||sprites:set otherSprite ghost off||``
+5. **Challenge:** when reversing the ``||sprites:Ball||``'s ``||sprites:vx||``, multiply the current ``||sprites:vx||`` by -1.1 instead of -1
+6. **Challenge:** add ``||sprites:change otherSprite vy by 0||`` to change the vertical speed of the ``||sprites:Ball||`` when it collides with a paddle. Replace the ``0`` with ``||sprites:sprite vy||`` multiplied by ``0.33``
 
 ## What did we learn?
 
