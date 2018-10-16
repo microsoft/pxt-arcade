@@ -167,11 +167,11 @@ controller.playerSprite(PlayerNumber.Two).setFlag(SpriteFlag.StayInScreen, true)
 ![Score](/static/courses/csintro2/logic/keeping-score.gif)
 
 1. Add another ``||logic:if then ... else if then||`` block inside of the ``||game:on game update||`` event
-2. **If** the ``||variables:currentBall||``'s ``||sprites:x||`` position is less than 0, then
+2. ``||logic:if||`` the ``||variables:currentBall||``'s ``||sprites:x||`` position is less than 0, then
     * ``||sprites:destroy||`` the ``||variables:currentBall||``
     * Add one to player two's score with ``||info:change player two score||``
     * create a new ball with ``||sprites:create empty sprite of kind Ball||``
-3. Otherwise, **if** the ``||variables:currentBall||``'s ``||sprites:x||`` position is greater than ``||scene:screen width||``, then
+3. Otherwise, ``||logic:if||`` the ``||variables:currentBall||``'s ``||sprites:x||`` position is greater than ``||scene:screen width||``, then
     * ``||sprites:destroy||`` the ``||variables:currentBall||``
     * Add one to player one's score with ``||info:change player one score||``
     * create a new ball with ``||sprites:create empty sprite of kind Ball||``
