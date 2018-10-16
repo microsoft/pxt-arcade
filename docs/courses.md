@@ -10,11 +10,11 @@ Structured courses for teaching computer science in the classroom.
 [
 {
     "name": "CS Intro 1",
-    "description": "A semester length computer science course for beginning coders",
+    "description": "A quarter length computer science course for beginning coders",
     "url":"/courses/csintro1"
 }, {
     "name": "CS Intro 2",
-    "description": "A continuation of the Intro to CS course",
+    "description": "A quarter length continuation of CS Intro 1 course",
     "url":"/courses/csintro2"
 }
 ]
