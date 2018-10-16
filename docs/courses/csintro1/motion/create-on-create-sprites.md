@@ -28,8 +28,6 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let cloud2: Sprite = null
-let cloud1: Sprite = null
 let agent: Sprite = null
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     agent.vy += -1
@@ -63,8 +61,8 @@ sprites.onCreated(SpriteKind.Cloud, function (newCloud) {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `)
-    newCloud.x = Math.randomRange(16, screen.width - 16)
-    newCloud.y = Math.randomRange(20, screen.height - 75)
+    newCloud.x = Math.randomRange(16, scene.screenWidth() - 16)
+    newCloud.y = Math.randomRange(20, scene.screenHeight() - 75)
 })
 sprites.onOverlap(SpriteKind.Helicopter, SpriteKind.Cloud, function (sprite, otherSprite) {
     sprite.x += -1 * sprite.vx

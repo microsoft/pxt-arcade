@@ -1,6 +1,8 @@
 # Unplugged: Rock Paper Scissors Math
 
-In this activity, you will think about think about math operators and variables.
+In this activity, you will think about think about math operators and variables by playing Rock Paper Scissors.
+
+![Rock Paper Scissors](/static/courses/csintro1/intro/rock-paper-scissors.png)
 
 Pair up with other student. If needed, you may form a group of three in which one student will keep score.
  

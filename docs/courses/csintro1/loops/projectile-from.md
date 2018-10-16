@@ -4,7 +4,7 @@ Another option for projectiles is to set a sprite for them to originate from. Th
 
 In this activity, students will use:
 * ``||sprites:projectile from sprite||`` sprites
-* ``||sprite:on sprite destroyed||``
+* ``||sprites:on sprite destroyed||``
 * ``||math:pick random||``
 * ``||sprites:ghost on||``
 
@@ -254,7 +254,7 @@ game.onUpdateInterval(50, function () {
 
 ## Example #2d: Count destroyed raindrops
 
-The ghost raindrop sprites don't cause overlap events, but we can use other events, like ``||sprite:on sprite destroyed||``. We can count the raindrops that make it to the bottom of the screen by counting how many are destroyed.
+The ghost raindrop sprites don't cause overlap events, but we can use other events, like ``||sprites:on sprite destroyed||``. We can count the raindrops that make it to the bottom of the screen by counting how many are destroyed.
 
 ```block
 enum SpriteKind {

@@ -76,7 +76,7 @@ Velocity is speed in a particular direction. In our games we typically track mov
 
 If we have a positive `X` velocity, for example, then our sprite will continue to increase in `X`, making it move to the right across the screen.
 
-## Example 2: Increment Velocity Left and Right
+## Example #2: Increment Velocity Left and Right
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -122,7 +122,7 @@ agent = sprites.create(img`
     * Add an ``||controller:A||`` button event move the sprite to the center of the game screen
     * Add a ``||controller:B||`` button event to stop the sprite (all velocities = 0)
 
-## Motion: Shorter ``||sprites:dx||``/``||sprites:dy||`` approach
+## Concept: Shorter ``||sprites:dx||``/``||sprites:dy||`` approach
 
 https://youtu.be/TPpg3jp2lx4
 
@@ -168,7 +168,7 @@ game.onUpdate(function () {
 })
 ```
 
-## Student Task #3: Create Velocity Motion (discovering the very short method)
+## Student Task #3: Create Velocity Motion
 
 1. Start with motion (short method) example above or similar code
 2. Explore the controller menu for ``||controller:control mySprite with vx 100 vy 100||``

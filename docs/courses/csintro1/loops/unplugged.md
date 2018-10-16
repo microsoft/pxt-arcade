@@ -2,6 +2,8 @@
 
 In this activity, you will give someone specific instructions to do a simple action.
 
+![Chair](/static/courses/csintro1/loops/chair.png)
+
 1. Place a chair somewhere in the room
 2. Have either your teacher or a group member stand with their back to the back of a chair
 3. Have the person demonstrate the task of walking around the chair and sitting down

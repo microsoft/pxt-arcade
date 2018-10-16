@@ -9,7 +9,7 @@ Students will be introduced to:
 
 ## Algorithm
 
-An Algorithm is series of steps, decisions and/or formulas. Some common examples include:
+An Algorithm is series of steps, decisions and / or formulas. Some common examples include:
 
 * Cooking recipes
 * Map directions to an address

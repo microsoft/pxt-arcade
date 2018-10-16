@@ -102,7 +102,7 @@ c a 8 a a c c c c a a f f f 8 a
 
 Building arrays by adding in values is a common and useful coding pattern. Arrays can be even more useful when they are returned by functions. For instance, a function could return multiple related values at once.
 
-The ``||sprites:array of sprites of kind||`` block (located in the ``||array:arrays||`` category) is one example of a function that will return an array with all of the sprites currently in the game of a particular ``||sprites:kind||``. This makes it easier to implement behaviors for several sprites like we did in example #1, especially as  sprites are continually created and destroyed as we play the game.
+The ``||sprites:array of sprites of kind||`` block (located in the ``||arrays:arrays||`` category) is one example of a function that will return an array with all of the sprites currently in the game of a particular ``||sprites:kind||``. This makes it easier to implement behaviors for several sprites like we did in example #1, especially as  sprites are continually created and destroyed as we play the game.
 
 ## Example #2a: Using ``||sprites:array of sprites of kind||``
 

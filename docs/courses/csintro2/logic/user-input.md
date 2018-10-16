@@ -2,9 +2,10 @@
 
 Logical expressions like ``||logic:if||`` and ``||logic:else||`` can be used for much more than comparing numeric values. Data type values (such as Strings) can be compared and used to change the way the programs we write behave depending on the different conditions.
 
-Some of the earliest computer games, text-based adventure games, used only text answers to have the player interact with the story. The game prompts with a question and calculates what response to give the user.
+Some of the earliest computer games, text-based adventure games, used only text based responses to have the player interact with the story. The game prompts the user with a question, accepts the user's answer,  and calculates what response should be provided.
 
 In this activity, students will:
+
 * ``||game:ask||``
 * ``||game:ask for string with text||``
 * Use Boolean logic with Strings
