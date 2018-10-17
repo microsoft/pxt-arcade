@@ -10,7 +10,7 @@ In this activity, students will be introduced to:
 * ``||sprites:ghost on||`` and ``||sprites:ghost off||``
 * ``||sprites:destroy||`` sprite
 
-## Concept: SpriteKind Overlap Event
+## Concept: Overlap Event
 
 https://youtu.be/rdZdXltoWXE
 
@@ -198,7 +198,7 @@ game.onUpdate(function () {
 })
 ```
 
-## Student Task #2: Sprite Overlap - Ghost off and on
+## Student Task #2: Ghost Off and On
 
 https://youtu.be/FwDty0LxzSM
 
@@ -211,7 +211,7 @@ https://youtu.be/FwDty0LxzSM
 5. Add an event for ``||sprites:on overlap||`` of the stationary sprite ``||sprites:kind||``s with the ``||sprites:kind||`` for the movable sprite (for example, in the event have an action of sprite destroy and/or sprite say)
 6. Add 2 additional stationary sprites, with one more new ``||sprites:kind||`` and overlap events for all the different ``||sprites:kind||``s (for example, Player, Enemy, Food, ...)
 
-## Student Task #3: Create overlap using one sprite of ``||sprites:kind||`` Player and multiple other ``||sprites:kind||``
+## Student Task #3: Multiple ``||sprites:kind||``s
 
 https://youtu.be/Nasu00HvaYE
 

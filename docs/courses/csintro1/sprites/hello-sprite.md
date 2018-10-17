@@ -18,7 +18,7 @@ Sprite Objects have a method ``||sprites:say||`` that displays a text box over t
 
 A **method** is an action that an object supports. For example, sprites (an object) have a ``||sprites:say||`` method that displays text provided above the sprite.
 
-## Example: Sprite Hello Blocks
+## Example #1: Sprite Hello Blocks
 
 1. Create the code below in Blocks
 2. Name the code "sprite hello"
@@ -65,7 +65,7 @@ mySprite.say(msg)
     ```
     This doesn't have an equivalent block. To show this, we can copy and paste any block that we think it belongs to and when we look at the JavaScript, we'll see that this code doesn't repeat.
 
-# Example: console.log()
+# Example #2: console.log()
 
 https://youtu.be/9xSWNoDOAQc
 
@@ -81,7 +81,7 @@ console.log(msg)
 console.log("msg sent!")
 ```
 
-## Student Task #1: Add `console.log( )` to "sprite hello"
+## Student Task #1: Add ``console.log( )`` to "sprite hello"
 
 1. Open the "sprite hello" code saved above
 2. Add in console messages using `console.log()` for:
@@ -96,7 +96,7 @@ The code `console.log()` doesn't use **mySprite** like ``||sprites:say||`` does.
 
 ### ~
 
-## Student Task #2: Add another sprite, and set it's coordinates
+## Student Task #2: More Sprites
 
 https://youtu.be/1xQWu1tHFCo
 
