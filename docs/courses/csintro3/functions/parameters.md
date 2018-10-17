@@ -1,74 +1,94 @@
-# Using Parameters
+# Activity: Parameters
 
-Functions are a great way to make code less redundant. Code that is too redundant is often hard to read and is more tedious to edit. Parameters allow functions to be more versatile in that they allow for different input values that can alter the effects of a function.
+In the previous lesson, the parentheses in function definitions (``()``) were skimmed over. These are used to indicate the **Parameters** for the ``||functions:function||``.
 
-## Example #1: Hello World
+Parameters are variables that can be passed (given) to the ``||functions:function||``. This allows for functions that can react appropriately to different conditions and settings.
 
-Up until this point, every time we call a function, it will do the same thing. For example:
+## Concept: Functions with Parameters
+
+Functions can be provided with parameters by including them between the parentheses in the function definition.
+
+```typescript-ignore
+function name(parameter: parameterType) {
+    // function contents
+}
+name(value);
+```
+
+There are three new elements added to this snippet since the previous lesson:
+
+* ``parameter``: the name of the parameter variable
+* ``parameterType``: the type the parameter must be
+* ``value``: a variable (or value) that is being passed to ``name``
+
+``value`` must be of type ``parameterType``, or else the code will not be able to run.
+
+``parameter`` can be handled like any other variable within the scope of the function ``name`` - however, the value it is initially assigned will be whatever value is provided when the function is called.
+
+## Example #1: Reducing Redundancy with Parameters
+
+Parameters can be used to reduce redundancy between different functions.
+
+1. Review the two code snippets below
+2. Verify that the two snippets produce the same results
+3. Identify how ``||functions:printMessage||`` uses parameters to reduce the redundancy between ``||functions:printHello||`` and ``||functions:printWorld||``
 
 ```typescript
 function printHello() {
-	console.log("Hello");
+    console.log("Hello");
 }
 
 function printWorld() {
-	console.log("World");
+    console.log("World");
 }
 printHello();
 printWorld();
 ```
-We see that when `printHello` is called, the word "Hello" is printed, and when `printWorld` is called, "World" is printed.
-
-Since both of these functions do very similar tasks, it would be nice if they could be modified such that they were combined into a single function. That way, if we wanted to change the behavior for one, it would change it for all. For example, if we wanted to use ``||game:game.splash||`` instead of `console.log`, we would need to change every function.
-
-We can use what are known as **parameters** to fix this by writing one function that changes behavior based on input that we specify.
 
 ```typescript
-function someFunction(nameOfParameter: parameterType) {
-
-}
-```
-
-In this case, `nameOfParameter` is the name of some value that can be used in the function and `parameterType` is the type of that value.
-
-We can call this function using the syntax
-
-```typescript-ignore
-someFunction(someValue);
-```
-
-Looking back at our Hello World example, we can alter our function such that it takes some input and will behave differently. 
-
-```typescript
-function printMessage(msg: string) {
-	console.log(msg);
+function printMessage(message: string) {
+    console.log(message);
 }
 
 printMessage("Hello");
 printMessage("World");
 ```
-This way is much easier to read and modify.
 
+Beyond just reducing redundancy, this allows for the code to be more flexible: if the developer chooses to start all messages by printing "Hey Listen!" before the message, this can be changed in a single place, rather than in every method that prints to the console.
 
-## Student Task #1: 
+## Student Task #1: Hey Jude!
 
-Write a function named `greet` that takes in a string `firstName` and prints to the console a greeting of some sort that uses both parameters. Example: `Hey John!`.
+1. Create a function named ``greet``
+2. Add a parameter ``firstName`` that is of type ``string``
+3. In the function, ``||game:game.splash||`` a greeting that includes ``firstName`` (if "Jude" is passed, it might ``||game:splash||`` "Hey Jude!")
+4. Call the function with three different names
 
-### ~hint
+## Concept: Multiple Parameters
 
-Functions can also accept multiple parameters as input if you separate parameters with a comma. However, the number of parameters in the function header must match the same number of parameters in the function call.
+Functions are not limited to a single parameter; more than one parameter can be passed, with each separated by a comma (``,``).
 
-### ~
+```typescript-ignore
+function name(parameterOne: parameterOneType, parameterTwo: parameterTwoType) {
+    // function contents
+}
+name(valueOne, valueTwo);
+```
 
-## Example #2: Choose between
+Notice that when calling the function, the order the parameters are passed must match the order the parameters were defined in; in this case, ``parameterOne`` will store ``valueOne``, and ``parameterTwo`` will store ``valueTwo``.
+
+## Example #2: Choose for Me
+
+1. Review the code below
+2. Identify how the two parameters are being used
+3. Identify what the ``||math:Math.percentChance(50)||`` evaluates to
 
 ```typescript
 function choose(choice1: string, choice2: string) {
-	if (Math.percentChance(50)) {
-		console.log("I think " + choice1 + " is the better choice");
-	} else {
-		console.log("I think " + choice2 + " is the better choice");
-	}
+    if (Math.percentChance(50)) {
+        console.log("I think " + choice1 + " is the better choice");
+    } else {
+        console.log("I think " + choice2 + " is the better choice");
+    }
 
 }
 choose("cats", "dogs");
@@ -76,54 +96,40 @@ choose("pizza", "tacos");
 choose("Summer", "Winter");
 ```
 
-This is a function that takes in two choices and will randomly choose one of them to be the "better" choice. Observe how the function takes in two parameters and that each function call has two parameters as well.
+## Student Task #2: Extended Greeting
 
-## Student Task #2: Greeting
+1. Start with the your solution to task #1
+2. Modify the function so that it accepts two strings: ``firstName`` and ``lastName``
+3. Make use of **both** parameters in the greeting (for example, ``greeting("Jude", "Doe")`` could result in "Hey Jude Doe!")
 
-Modify the greet function Task #1 so that it takes in two strings: `firstName` and `lastName`. This time, the function should print to the console a greeting of some sort that uses **both** parameters. Example: `Hello John Doe`.
+## Example #3: Non String Parameters
 
-## Example #3a: Capslock
-
-Parameters don't have to just be strings. They can be any type.
+1. Review the code below
+2. Identify the types of the two parameters
+3. Identify how those two parameters are used in the function
 
 ```typescript
-function printHello(n: number, capslock: boolean) {
-    for (let i = 0; i < n; i++) {
-    	if (capslock) {
-    		console.log("HELLO");
-    		console.log("WORLD");
-    	} else {
-    		console.log("hello");
-    		console.log("world");
-    	}
+function changeByFive(value: number, add: boolean) {
+    if (add) {
+        value += 5;
+    } else {
+        value -= 5;
     }
+    game.splash("" + value);
 }
 
-printHello(3, true);
-printHello(7, false);
+changeByFive(2, true);
+changeByFive(15, false);
 ```
 
-## Example 3b: Follow the leader
-Including ``||sprites:sprites||`` work too!
+## Student Task #3: Move the Sprite
 
-```typescript
-function follow(follower: Sprite, leader: Sprite) {
-    let diffX = leader.x - follower.x;
-    let diffY = leader.y - follower.y;
-    follower.vx = diffX;
-    follower.vy = diffY;
-}
-```
-
-## Student Task #3: 
-
-Create a function that takes in two parameters, a ``||sprites:sprite||`` with the name `sprite` and a boolean with the named `left`.
-Make it so that if `left` is true, the sprite will move 10 units to the left, otherwise it will move 10 units to the right.
-
+1. Create a function named ``horizontalMovement``
+2. Add two parameters to the function: ``player`` of type ``||sprites:Sprite||``, and ``left`` of type ``||logic:boolean||``
+3. ``||logic:if||`` ``left`` is true, move ``player`` 10 pixels to the left
+4. ``||logic:if||`` ``left`` is false, move ``player`` 10 pixels to the right
 
 ## What did we learn?
 
-1. What is the proper syntax for using a parameter? What about using multiple parameters?
-2. How do you specify the type of a parameter?
-3. What does a function call look like?
-4. What types can be used as parameters?
+1. How do parameters allow for more flexible code?
+2. Review the functions you have learned, like ``||game:game.splash||`` and ``console.log``, and identify which ones have parameters.
