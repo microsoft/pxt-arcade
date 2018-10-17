@@ -1,88 +1,196 @@
 # Activity: Returns
 
-As shown with parameters, functions can accept input. With something called **Return Values**, they can also output a value. 
+In the previous section, functions were shown to accept input in the form of **parameters**. These allow developers to pass values **to** a function.
+
+**Return values** allow a function to return (give back) a value at the end of a function call. This **ends** the call to the function, continuing the code from where the function was called.
 
 ## Concept: Returning a Value
 
-The syntax for return values is to append the type to the end of the function, after the parentheses/parameters and before the curly brace. Then, to output a value, the `return` keyword is used followed by the value that is being outputted. 
-
-To use this value that is outputted, the function call is treated just like a variable that stores the value.
+Functions can be given return value by using the return value, and giving the function a type.
 
 ```typescript-ignore
-	function functionName(parameters): typeOfOutputValue {
-		// Code goes here
-		return outputValue;
-	}
+function name(parameter: parameterType): outputType {
+    // function contents
+    return output;
+}
+let returnedValue: outputType = name(value);
 ```
+
+There are four new elements added to this snippet since the previous lesson:
+
+* ``return``: the start of the **return statement**; the value that follows this will be returned
+* ``output;``: the value that is returned
+* ``: outputType``: the type of the value that is going to be returned by the function
+* ``let returnedValue: outputType = ``:  storing the returned value from ``||functions:name||`` in a variable. If the returned variable is not stored like this, the returned value will not be accessible afterwards.
+
+``returnedValue`` will store the result of the call to ``||functions:name||``, allowing that value to be used outside of the function.
 
 ## Example #1: Gimme 5
 
+1. Review the code below
+2. Identify what the return type of this function will be
+3. Identify what will be stored in ``||variables:returnedValue||`` after ``||functions:giveMeFive||`` is finished
+
 ```typescript
-function gimme5(): number {
+function giveMeFive(): number {
     return 5;
 }
 
-let num: number = gimme5();
+let returnedValue: number = giveMeFive();
 ```
 
-This is a function that when called, will return the value 5.
+## Student Task #1: Who are You?
 
+1. Create a function named ``aName``
+2. Add a return value to ``aName``, which returns "Bill"
+3. After calling the function, store the returned value in the variable ``theName``
+4. Use ``||game:game.splash||`` to display ``theName``
+5. **Challenge:** give ``aName`` a parameter ``name`` of type ``string``. Modify the return value to return ``name`` instead
 
-## Student Task #1: Who are you?
+## Concept: Different Return Values
 
-Write a function called `name` that returns a string with the value of your name.
+Return statements are very useful when writing functions, but require some care to make sure the code runs properly.
 
-## Concept: Multiple returns keywords
+### Error #1: Returning too early
 
-Since functions can change their behavior based on their parameters, they can also have different output values. Using logic statements like ``||logic:if||`` can cause only certain portions of code to run. Placing return statements inside these portions of code that only run if a condition is met can be problematic as the function **must** return a value every time it runs. The solution is to use multiple return statements to guarantee that in all cases, the function will return a value.
+In the following snippet, the intention of ``hello`` is to return the value 5, and also ``||game:splash||`` "5 is returned!".
+
+```typescript
+function hello(): number {
+    let output: number = 5;
+    return output;
+
+    game.splash(output + " is returned!");
+}
+```
+
+However, because the return statement comes before the ``||game:splash||``, the function ends before the value is ``||game:splashed||``. This can be fixed in this case by switching the order of the statements, so that the return value is at the **end** of the function.
+
+```typescript
+function hello(): number {
+    let output: number = 5;
+    game.splash(output + " is returned!");
+
+    return output;
+}
+```
+
+### Error #2: Missing a Return
+
+In this example, the intention is to return 5 half the time, and otherwise return 10. 
+
+```typescript-ignore
+function world(): number {
+    if (Math.percentChance(50)) {
+        return 5;
+    } else if (Math.percentChance(50)) {
+        return 10;
+    }
+}
+```
+
+This code can be fixed by removing the condition on the else as follows:
+
+```typescript
+function world(): number {
+    if (Math.percentChance(50)) {
+        return 5;
+    } else {
+        return 10;
+    }
+}
+```
+
+Another way to address this issue is to only have a single return statement, and create an ``output`` variable to return. For example, the above code could be rewritten as the following:
+
+```typescript
+function world(): number {
+    let output: number = 0;
+    if (Math.percentChance(50)) {
+        output = 5;
+    } else {
+        output = 10;
+    }
+    return output;
+}
+```
+
+### ~hint
+
+There is another case of error #2 above that can be very confusing to catch.
+
+```typescript-ignore
+function world(num: number): number {
+    if (num < 0) {
+        return 5;
+    } else if (num >= 0) {
+        return 4;
+    }
+}
+```
+
+This code will fail to run, giving the error that ``Not all code paths return a value.``
+
+This may seem odd; if ``num`` is not less than 0, then we can generally reason that ``num`` **must be** greater than or equal to 0.
+
+However, there are some cases where that statement is incorrect that we have not covered yet - and even if it were the case, the code should be written so that it does not require this sort of reasoning. To make this code work properly, one of the fixes for error #2 should be applied here as well.
+
+### ~
 
 ## Example #2: Absolute Value
 
+1. Review the code below
+2. Identify what ``||functions:makePositive||`` will return in the three commented out ``console.log`` statements
+3. Recreate the code, and uncomment the three statements to verify the results are correct
 
 ```typescript
 function makePositive(num: number): number {
-	if (num < 0) {
-		return (-1 * num);
-	} else {
-		return num;
-	}
+    if (num < 0) {
+        return -1 * num;
+    } else {
+        return num;
+    }
 }
-console.log("" + makePositive(-3));
-console.log("" + makePositive(5));
-console.log("" + makePositive(0));
+// console.log("" + makePositive(-3));
+// console.log("" + makePositive(5));
+// console.log("" + makePositive(0));
 ```
 
 ### ~
 
-
 ## Student Task #2: Up or Down
 
-Write a function that takes in two parameters, a `num` number and a `up` boolean. If the `up` value is `true`, then return `1` more than the number, else, return `1` less than the number.
-
-
+1. Create a function named ``addOrRemove``
+2. Add two parameters to the function: ``input`` of type ``||Math:number||``, and ``up`` of type ``||logic:boolean||``
+3. Add an ``||logic:if ... else||`` to the function
+    * if ``||logic:up||`` is true, return ``input`` plus one
+    * otherwise, return ``input`` minus one
+4. **Challenge:** create **four** test cases for ``addOrRemove``, with different values for ``input`` and ``up`` that verify the function is working properly
 
 ## Example #3: Sprites
 
-The return type of a function can be any type. In fact, it is how ``||sprites:sprites||`` get created. The `sprites.create` function takes input of an image and returns a sprite with that image.	
+Like parameters, the return type of a function can be of any type.
+
+1. Review the code below
+2. Identify what ``||functions:copyCat||`` accepts as a parameter, and what it returns
+3. Recreate the example and create a ``||sprites:sprite||``. Call the function using that new ``||sprites:sprite||`` as a parameter, and identify what is returned.
 
 ```typescript
-function copyCat(originalSprite: Sprite) {
+function copyCat(originalSprite: Sprite): Sprite {
     return sprites.create(sprite.image);
 }
 ```
 
-This function will take a sprite as a parameter, create a new one with the same image, an returns this new clone.
+## Concept: Ending a Function
 
-## Concept: Stopping a function
+The ``return`` keyword causes the function to stop running and return. This can be very helpful when searching for a value, or reaching a case in which the function should end early.
 
-The `return` keyword causes the function to stop running. This is because the function has already found its output and does not need to proceed anymore. 
-
-## Example #4: Finding 3
+## Example #4: Finding Three
 
 ```typescript 
 function containsThree(min: number, max: number): boolean {
     for (let i = min; i <= max; i++) {
-    	console.log("" + i);
+        console.log("" + i);
         if (i == 3) {
             return true;
         }
@@ -91,24 +199,42 @@ function containsThree(min: number, max: number): boolean {
 }
 let found: boolean = containsThree(0, 5);
 console.log("" + found);
+let found: boolean = containsThree(5, 10);
+console.log("" + found);
 ```
 
-This is a function that takes in a range as input and returns whether it found the number 3 or not. During this process, it will log which values it has checked. The console output of this function call would be.
+``||functions:containsThree||`` will go through all values starting at ``||variables:min||`` and ending at ``||variables:max||``, ``logging`` the value of each until it finds the value 3. If it finds 3, it will return true; otherwise, it will return false.
 
+In the first case shown in the code (``containsThree(0, 5)``), the function only logs ``0``, ``1``, ``2``, and ``3`` because the function stopped once it found ``3`` and returned ``true``.
+
+In the first case shown in the code (``containsThree(5, 10)``), the function logs all values between ``5`` and ``10`` because it never finds ``3``, and returns ``false``.
+
+### ~hint
+
+A ``return`` statement can also be used without a value; in this case, the function call will end, and nothing will be returned.
+
+```typescript
+function printCountTimes(words: string, count: number) {
+    if (count <= 0) {
+        return;
+    }
+
+    // Omitted complicated set up code
+
+    for (let i = 0; i < count; i++) {
+        console.log(words);
+    }
+}
 ```
-0
-1
-2
-3
-true
-```
 
-The function only logs `0`, `1`, `2`, and `3` because the function stopped once it found `3` and returned `true`
+In the above snippet, ``||functions:printCountTimes||`` will ``return`` early if count is less than or equal to ``0``.
 
+By returning early, it avoids doing the unnecessary ``// Omitted complicated set up code``.
 
+### ~
 
 ## What did we learn?
 
-1. What needs to be added to a function so that it will return a value? 
-2. What is the syntax for this change?
-3. If a function returns a value in one case, does it need to return a value in all cases?
+1. What needs to be added to a function so that it will return a value?
+2. If a function returns a value in one case, does it need to return a value in all cases?
+3. What happens if you call a function with a return value without storing or using the returned value?
