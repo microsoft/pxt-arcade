@@ -1,4 +1,4 @@
-# Activity: Arrays Project
+# Activity: Project
 
 Make your own unique games!
 
