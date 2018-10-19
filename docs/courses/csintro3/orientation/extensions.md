@@ -1,6 +1,6 @@
 # Activity: Using Corgio in JavaScript
 
-In previous lessons, the ``||corgio:Corgio||`` extension handled the intricate parts of making a character for a platformer.
+In previous lessons, the ``||corgi:Corgio||`` extension handled the intricate parts of making a character for a platformer.
 
 In JavaScript, extensions remain a useful tool in developing complex programs.
 
@@ -12,9 +12,9 @@ Using an extension in JavaScript is very similar to using an extension in Blocks
 
 After loading the extension, the contents of the extension can be accessed just like any other code, and a new category in the toolbox will often show up showing some of the newly accessible functions (if the developer of the extension chose to implement that behavior).
 
-## Example #1: ``||corgio:Corgio||`` Extension in Blocks and JavaScript
+## Example #1: ``||corgi:Corgio||`` Extension in Blocks and JavaScript
 
-The ``||corgio:Corgio||`` extension remains easy to use in JavaScript. For example, ``corgi.create`` can be used to create a new ``||corgio:Corgi||``.
+The ``||corgi:Corgio||`` extension remains easy to use in JavaScript. For example, ``corgi.create`` can be used to create a new ``||corgi:Corgi||``.
 
 ```blocks
 enum SpriteKind {
@@ -36,20 +36,20 @@ let myCorg: Corgi = corgi.create(SpriteKind.Player);
 
 There are several important things to notice here:
 
-* The same ``||sprites:SpriteKind||`` enum used in sprites is used to identify the ``||sprites:Kind||`` of a ``||corgio:Corgi||``
-* The type for the ``||corgio:Corgio||`` platformer character is ``||corgio:Corgi||``
-* The ``||corgio:Corgi||`` is created in a similar way to how ``||sprites:Sprites||`` are created (using ``sprites.create``)
+* The same ``||sprites:SpriteKind||`` enum used in sprites is used to identify the ``||sprites:Kind||`` of a ``||corgi:Corgi||``
+* The type for the ``||corgi:Corgio||`` platformer character is ``||corgi:Corgi||``
+* The ``||corgi:Corgi||`` is created in a similar way to how ``||sprites:Sprites||`` are created (using ``sprites.create``)
 
-## Concept: Interacting with a ``||corgio:Corgi||``
+## Concept: Interacting with a ``||corgi:Corgi||``
 
-``||corgio:Corgi||``s have several properties and methods that can be called to interact
+``||corgi:Corgi||``s have several properties and methods that can be called to interact
 
-``||myCorg.horizontalMovement()||`` can be used to make it so the ``||corgio:Corgi||`` can move around the screen
+``||corgi:myCorg.horizontalMovement()||`` can be used to make it so the ``||corgi:Corgi||`` can move around the screen
 
 ## Example #2: Adding Horizontal Movement
 
 1. Review the code below
-2. Notice how adding ``||myCorg.horizontalMovement()||`` changes the behavior of the ``||corgio:Corgi||``
+2. Notice how adding ``||corgi:myCorg.horizontalMovement()||`` changes the behavior of the ``||corgi:Corgi||``
 
 ```blocks
 enum SpriteKind {
@@ -73,21 +73,21 @@ myCorg.horizontalMovement();
 
 ### ~hint
 
-``myCorg.horizontalMovement()`` can be expressed as simply "tell myCorg to use horizontalMovement."
+``||corgi:myCorg.horizontalMovement()||`` can be expressed as simply "tell myCorg to use horizontalMovement."
 
 ### ~
 
-## Student Task #1: More ``||corgio:Corgi||`` Actions
+## Student Task #1: More ``||corgi:Corgi||`` Actions
 
-There are a number of other things the ``||corgio:Corgi||`` can be made to do using the other items in the toolbox.
+There are a number of other things the ``||corgi:Corgi||`` can be made to do using the other items in the toolbox.
 
 1. Start with the code from example #2
-2. Find the ``myCorg.horizontalMovement()`` code snippet in the ``||corgio:Corgi||`` category of the Toolbox and add it to the code
-3. Find the ``myCorg.updateSprite()`` code snippet in the ``||corgio:Corgi||`` category of the Toolbox and add it to the code
+2. Find the ``||corgi:myCorg.horizontalMovement()||`` code snippet in the ``||corgi:Corgi||`` category of the Toolbox and add it to the code
+3. Find the ``||corgi:myCorg.updateSprite()||`` code snippet in the ``||corgi:Corgi||`` category of the Toolbox and add it to the code
 
 ## Example #3: Bark!
 
-Another feature of the ``||corgio:Corgi||`` is to maintain a group of words the ``||corgio:Corgi||`` has learned to ``||corgio:bark||``. 
+Another feature of the ``||corgi:Corgi||`` is to maintain a group of words the ``||corgi:Corgi||`` has learned to ``||corgi:bark||``. 
 
 ```typescript
 enum SpriteKind {
@@ -107,8 +107,8 @@ myCorg.bark();
     * start at ``i = 0``
     * continue while ``i < 50``
     * increment ``i`` by 1 on each iteration
-3. Move the call to ``myCorg.bark()`` inside of the loop
-4. Add ``||loops:pause(1000)||`` after the call to ``myCorg.bark()``; this is the JavaScript version of ``||pause 1000 ms||``
+3. Move the call to ``||corgi:myCorg.bark()||`` inside of the loop
+4. Add ``||loops:pause(1000)||`` after the call to ``||corgi:myCorg.bark()||``; this is the JavaScript version of ``[pause(1000)]``
 
 ## Concept: Commenting Your Own Code
 
