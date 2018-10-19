@@ -1,6 +1,4 @@
-# @extends
-
-## Courses
+# [Courses](/courses)
 
 * [CS Intro 1](/courses/csintro1)
     * [About](/courses/csintro1/about)
