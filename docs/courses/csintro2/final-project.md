@@ -10,14 +10,14 @@ It is a good idea to start the game as a MVP (minimum viable project) to demonst
 
 ### Requirements
 
-* Use at least one concept from each section of the course - for example, from `Motion` in the previous course, you could use:
+* Use at least one concept from each section of the course - for example, from [functions](/courses/csintro2/functions), you could use:
 
->* ``||controller:control sprite with vx vy||``
->* ``||sprites:on overlap events||``
->* sprite physics
+>* ``||functions:functions||`` that reduce redundancy
+>* ``||functions:functions||`` that create a sprite
+>* The ``||darts:Darts||`` extension
 
+* For each of the above concepts, write a short sentence on how it allows your game to be more interesting or challenging for the player. Focus on the **Design Decisions** you made; what about the way you used the blocks made the game more appealing?
 * If one of the sections (tile maps, arrays, ...) does not seem to be relevant the game you are creating, then explain why the given section features are omitted in your game (check with instructor)
-* Choose **four** sections from the course, and use at least one additional concept from each
 * For each of the above concepts, write a short sentence on how it allows your game to be more interesting or challenging for the player
 
 ### Challenge: Learning new blocks
@@ -28,4 +28,5 @@ For this challenge, you will dig into one of two groups of functions that we hav
 
 ```package
 animation
+darts
 ```

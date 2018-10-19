@@ -1,4 +1,4 @@
-# Activity: Logic Project
+# Activity: Project
 
 Make your own unique games!
 
