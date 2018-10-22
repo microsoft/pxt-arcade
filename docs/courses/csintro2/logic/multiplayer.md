@@ -2,7 +2,7 @@
 
 So far, games have been primarily been intended for a single user. These are called **single player games**: the player is alone in the world created by developers.
 
-In this section, the ``||controller:local-multiplayer||`` extension will be used to facilitate **multiplayer**, so that more than one person can player at the same time.
+In this section, the ``||controller:local-multiplayer||`` extension will be used to facilitate **multiplayer**, so that more than one person can play at the same time.
 
 ![Final Game](/static/courses/csintro2/logic/pong.gif)
 
