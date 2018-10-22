@@ -174,7 +174,7 @@ text_list = ["oww", "no walls", "oh no", "I stubbed my toe"]
 
 ### ~hint
 
-Review the corgio extension from the [Tile Map: Extensions](/courses/csintro2/tilemap/extensions) lesson; can you guess how the ``||corgi:make myCorg bark!||`` and ``||corgi:teach myCorg the word||`` blocks work?
+Review the corgio extension from the [Tile Map: Extensions](/courses/csintro2/tilemap/extensions) lesson; can you guess how the ``||corgio:make myCorg bark!||`` and ``||corgio:teach myCorg the word||`` blocks work?
 
 ```package
 corgio

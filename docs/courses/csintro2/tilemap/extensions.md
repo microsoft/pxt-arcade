@@ -2,7 +2,7 @@
 
 The design of the area the player is in can make or break a game. If the play area is too sparse, the game can become boring and uninteresting, and if it is overly filled with objects, the game can become to hard too hard to follow. 
 
-In this activity, students will use the ``||corgi:corgio||`` extension (based on the Corgi dog breed) to make several sprite actions easy to implement. Using ``||corgi:corgio||`` allows us to focus on the design and structure of the game play without getting bogged down in some of the complex functionality that corgio handles for us.
+In this activity, students will use the ``||corgio:corgio||`` extension (based on the corgiodog breed) to make several sprite actions easy to implement. Using ``||corgio:corgio||`` allows us to focus on the design and structure of the game play without getting bogged down in some of the complex functionality that corgio handles for us.
 
 In this activity, students will:
 * Use a new extension
@@ -11,35 +11,35 @@ In this activity, students will:
 
 ## Using the corgio package
 
-``||corgi:corgio||`` allows you to create a sprite who can jump, run, and fall with only a few blocks in the ``||loops:on start||``.
+``||corgio:corgio||`` allows you to create a sprite who can jump, run, and fall with only a few blocks in the ``||loops:on start||``.
 
 To add the corgio extension to your project, open the extensions tab and look for "corgio" - it should be the first result.
 
-After adding corgio to your project, a new tab titled ``||corgi:Corgi||`` will appear in the toolbox, above ``||game:Game||``; this contains the blocks necessary to create and interact with the Corgi.
+After adding corgio to your project, a new tab titled ``||corgio:Corgio||`` will appear in the toolbox, above ``||game:Game||``; this contains the blocks necessary to create and interact with the Corgio.
 
 ## Coming Soon: VIDEO
 
 ## Student Task #1: Making your first corgio
 
 1. Open a new project, and import the corgio extension (name the project "myPlatformer")
-2. Create your first Corgi; to do this, add the ``||variables:set myCorg to||`` block in the ``||corgi:Create||`` category to ``||loops:on start||`` block. If you press the **+** button on the corgi block, you can also set the initial location for the corgi to be created
-3. Add the ``||corgi:make myCorg move left and right with arrow keys||`` block from the ``||corgi:Movement||`` category, as well as the ``||corgi:change image when myCorg is moving||``. Try adding one without the other; what changes?
-4. Finally, add the ``||corgi:make myCorg jump if up arrow key is pressed||`` block; try pressing the ``||controller:up||`` button multiple times before you hit the ground, or jumping away from a wall that you are currently touching
-5. **Challenge:** use the blocks in the ``||corgi:Speak||`` category to teach the corgio to say "hello", "goodbye", "jump", and "sit"; make the corgi ``||corgi:bark||`` when the user presses the ``||controller:A||`` button. Did it know any words before you taught it those four?
+2. Create your first Corgio; to do this, add the ``||variables:set myCorg to||`` block in the ``||corgio:Create||`` category to ``||loops:on start||`` block. If you press the **+** button on the corgio block, you can also set the initial location for the corgio to be created
+3. Add the ``||corgio:make myCorg move left and right with arrow keys||`` block from the ``||corgio:Movement||`` category, as well as the ``||corgio:change image when myCorg is moving||``. Try adding one without the other; what changes?
+4. Finally, add the ``||corgio:make myCorg jump if up arrow key is pressed||`` block; try pressing the ``||controller:up||`` button multiple times before you hit the ground, or jumping away from a wall that you are currently touching
+5. **Challenge:** use the blocks in the ``||corgio:Speak||`` category to teach the corgio to say "hello", "goodbye", "jump", and "sit"; make the corgio ``||corgio:bark||`` when the user presses the ``||controller:A||`` button. Did it know any words before you taught it those four?
 
-## Example #1: Corgi with tile map
+## Example #1: Corgio with tile map
 
 1. Open a new project (name it "myLevel")
 2. Using the extensions menu, search for "corgio"
 3. Review the example code below, and either recreate it or build something similar using a 64x8 tile map
-4. Notice how the corgi rests on top of the wall tiles, and that the jumps reset as if the corgi were touching the bottom of the screen
+4. Notice how the corgio rests on top of the wall tiles, and that the jumps reset as if the corgio were touching the bottom of the screen
 
 ```blocks
 enum SpriteKind {
     Player,
     Enemy
 }
-let myCorg: Corgi = corgi.create(SpriteKind.Player);
+let myCorg: Corgio = corgio.create(SpriteKind.Player);
 scene.setTileMap(img`
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
@@ -76,7 +76,7 @@ myCorg.verticalMovement()
 ## Student Task #2: Creating a side scroll game
 
 1. Either start with the code from example #1, or add a tilemap to task #1
-2. Add the ``||corgi:make camera follow myCorg left and right||`` block, so that the camera will follow the corgi while it moves across the tile map
+2. Add the ``||corgio:make camera follow myCorg left and right||`` block, so that the camera will follow the corgio while it moves across the tile map
 3. Open the tile map in the image editor, and add a red wall that is 3 tiles tall in the middle of the map.
 4. Set the red tile to be a wall, and give it a unique image
  

@@ -55,7 +55,7 @@
     * [Tilemap](/courses/csintro2/tilemap)
         * [Intro](/courses/csintro2/tilemap/intro)
         * [Interactions](/courses/csintro2/tilemap/interactions)
-        * [Using Corgi Extension](/courses/csintro2/tilemap/extensions)
+        * [Using Corgio Extension](/courses/csintro2/tilemap/extensions)
         * [Project](/courses/csintro2/tilemap/project)
     * [Logic](/courses/csintro2/logic)
         * [Introduction](/courses/csintro2/logic/intro)
