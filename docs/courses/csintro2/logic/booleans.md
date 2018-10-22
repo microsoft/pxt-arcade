@@ -122,7 +122,7 @@ game.onUpdateInterval(5000, function () {
 2. Examine its use of the ``||logic:not||`` block
 3. Notice how the ``||sprites:sprite||`` will only say something if the boolean is *not* ``||logic:true||``
 
-## Student Task #2: ``||logic:not||``
+## Student Task #2: ``||logic:not||``  Left (is Right)
 
 1. Start a new project
 2. Create a ``||sprites:sprite||`` and use the ``||controller:control with||`` block to move the sprite around the screen

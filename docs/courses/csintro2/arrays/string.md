@@ -56,13 +56,7 @@ mySprite.say(text_list[3], 300)
 pause(400)
 ```
 
-### ~hint
-
-You will likely notice some redundancy in this code - each pair of ``||sprites:say||`` and ``||loops:pause||`` is different only in the index which the princess is saying.
-
-### ~
-
-## Student Task #1a: Fix the redundancy
+## Student Task #1a: Fix the Redundancy
 
 1. Start with the code from example #1
 2. Use a ``||loops:for index from 0 to 3||`` loop to reduce the redundancy found in the example, without changing the behavior of the code
@@ -98,7 +92,7 @@ In Blocks, this is the ``||loops:for element||`` loop, but the behavior is often
 
 Another way in which you can use string arrays in your games is to create reactions to different events - for example, the player running into another character, or losing a life. This can be used both to personalize your game, and to make the game feel more alive, as the characters respond 'randomly' to the player's actions.
 
-## Example #2: Reacting to collisions
+## Example #2: Reacting to Collisions
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -165,7 +159,7 @@ controller.controlSprite(mySprite, 100, 100)
 text_list = ["oww", "no walls", "oh no", "I stubbed my toe"]
 ```
 
-## Student Task #2: Respond to loss of health
+## Student Task #2: Respond to Loss of Health
 
 1. Start with the code from example #2
 2. Create another ``||arrays:text list||``, stored in a different variable called "enemyScript". Fill it with the following strings:
@@ -180,7 +174,7 @@ text_list = ["oww", "no walls", "oh no", "I stubbed my toe"]
 
 ### ~hint
 
-Review the corgio extension from the [Tile Map: Extensions](/courses/csintro2/tilemap/extensions) lesson; can you guess how the ``||corgio:make myCorg bark!||`` and ``||corgio:teach myCorg the word||`` blocks work?
+Review the corgio extension from the [Tile Map: Extensions](/courses/csintro2/tilemap/extensions) lesson; can you guess how the ``||corgi:make myCorg bark!||`` and ``||corgi:teach myCorg the word||`` blocks work?
 
 ```package
 corgio

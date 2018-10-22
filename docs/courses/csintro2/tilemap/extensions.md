@@ -88,25 +88,18 @@ Just having a single wall in your game does not make for a particularly challeng
 2. Walls that form a small puzzle to get through
 3. Hazards that will add a possibility of failure to the game
 
-## Student Task #3: Creating an interesting level
+## Student Task #3: Creating an Interesting Level
 
 1. Start with the code from task #2
 2. Add red walls to the map, so that they form a harder level to make your way through - try making an area that is only accessible by jumping past a series of tiles
-3. Create a sprite of a new kind, and place it at the end of the level. Add an ``||sprites:overlap||`` event to congratulate the player and end the game (after a small pause) when the player reaches the sprite.
-
-### ~hint
-
-The tile map we are using is 64 tiles wide and 8 tiles tall, with each tile being 16 pixels by 16 pixels
-
-### ~
-
+3. Create a sprite of a new kind, and place it at the end of the level. Add an ``||sprites:overlap||`` event to congratulate the player and end the game (after a small pause) when the player reaches the sprite (note the dimensions of the tilemap when placing the sprite: each tile is 16 pixels tall and 16 pixels wide)
 4. Create a green tile on the map, that is a wall (and looks ominous)
 5. Add an ``||scene:on sprite of kind player hits wall||`` for your green tile, so that the game ends (and the player loses) when the tile is hit
 
 ## What did we learn?
 
 1. How did using an extension impact the development of this platformer? What took up the most of your time while doing this activity?
-2. How difficult was it to balance making your level interesting but still a game the user can complete? Where there any portions of the level that you had to change in order to make the game playable?
+2. How difficult was it to balance making your level interesting but still a game the user can complete? Were there any portions of the level that you had to change in order to make the game playable?
 
 ```package
 corgio
