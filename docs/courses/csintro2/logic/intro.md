@@ -312,7 +312,7 @@ c a 8 a a c c c c a a f f f 8 a
 })
 ```
 
-When the player is on their final life, the image of the sprite changes and the sprite say "Last chance".
+When the player is on their final life, the image of the sprite changes and the sprite says "Last chance".
 
 ## Task #3: Count to 10 
 
