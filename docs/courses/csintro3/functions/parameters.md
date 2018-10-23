@@ -1,6 +1,6 @@
 # Activity: Parameters
 
-In the previous lesson, the parentheses in function definitions (``()``) were skimmed over. These are used to indicate the **Parameters** for the ``||functions:function||``.
+In the previous lesson, the parentheses ``()`` in function definitions were skimmed over. These are used to indicate the **Parameters** for the ``||functions:function||``.
 
 Parameters are variables that can be passed (given) to the ``||functions:function||``. This allows for functions that can react appropriately to different conditions and settings.
 
