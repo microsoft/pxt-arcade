@@ -14,7 +14,7 @@ After loading the extension, the contents of the extension can be accessed just 
 
 ## Example #1: ``||corgi:Corgio||`` Extension in Blocks and JavaScript
 
-The ``||corgi:Corgio||`` extension remains easy to use in JavaScript. For example, ``corgi.create`` can be used to create a new ``||corgi:Corgi||``.
+The ``||corgi:Corgio||`` extension remains easy to use in JavaScript. For example, ``||corgi:corgi.create||`` can be used to create a new ``||corgi:Corgi||``.
 
 ```blocks
 enum SpriteKind {
@@ -42,9 +42,9 @@ There are several important things to notice here:
 
 ## Concept: Interacting with a ``||corgi:Corgi||``
 
-``||corgi:Corgi||``s have several properties and methods that can be called to interact
+``||corgi:Corgi||``s have several properties and methods that can be called to interact with them.
 
-``||corgi:myCorg.horizontalMovement()||`` can be used to make it so the ``||corgi:Corgi||`` can move around the screen
+For example, ``||corgi:myCorg.horizontalMovement()||`` can be used to make it so the ``||corgi:Corgi||`` can move left and right across the screen.
 
 ## Example #2: Adding Horizontal Movement
 
@@ -110,42 +110,11 @@ myCorg.bark();
 3. Move the call to ``||corgi:myCorg.bark()||`` inside of the loop
 4. Add ``||loops:pause(1000)||`` after the call to ``||corgi:myCorg.bark()||``; this is the JavaScript version of ``[pause(1000)]``
 
-## Concept: Commenting Your Own Code
+## What did we learn?
 
-Sharing code in @boardname@ allows for the code you write to be used in other projects - whether those projects are your own, your friends, or anyone else you give the link to.
+1. Explain what is the same when using extensions in JavaScript and using extensions in Blocks.
+2. Why do you think the extensions have to be added through the extensions menu? Open the ``Explorer`` below the simulator; is there any difference between what is there when you first open the editor, and what is there after you add an extension?
 
-There are still some important topics to cover before the code we write can be written in a way that is easy to use without causing issues. One of those issues is making the code easy to understand, so that others can use it without having to ask questions about every detail of the code.
-
-Comments allow developers to leave **documentation** for those reading their code: whether that be someone else who's never seen it before, or themselves in a year or two.
-
-In JavaScript, there are two different formats for comments:
-
-```typescript
-// Single line comments, like this
-
-game.splash("//hello!//") // Another single line comments
-
-/**
- * And multiline comments,
- * like this
- */
-
-/* Also works with a single line */
-```
-
-When a line contains two slashes in a row (``//``) that are not in a string, that signifies that the line is finished, and anything else on that line is simply a comment - something for humans to read, that the computer will otherwise ignore.
-
-Similarly, multiline comments (which start with ``/*`` and end with ``*/``) allow for sections of text that the computer will ignore. Anything between the start and end will not be run by the program, and only intended as an annotation for the user.
-
-In this course, multiline comments will use the style shown below, so that it is easier to identify where the comments start and end.
-
-```typescript
-/**
- * The course uses this style of comment;
- * the asterisks that start these lines are not required,
- * but do make it easier to follow what exactly the comment includes
- */
-```
 
 ```package
 corgio

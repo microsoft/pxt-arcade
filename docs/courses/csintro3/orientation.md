@@ -8,3 +8,4 @@
 * [Loops](/courses/csintro3/orientation/loops)
 * [Sprites](/courses/csintro3/orientation/sprites)
 * [Corgio Extension](/courses/csintro3/orientation/extensions)
+* [Namespaces](/courses/csintro3/orientation/namespaces)
