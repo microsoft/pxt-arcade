@@ -1,98 +1,103 @@
-# intro -> using an on game update loop in JavaScript
+# Activity: On Game Update Interval
 
-In TypeScript, events are registered using functions that accept other functions as parameters to run when the event occurs. To illustrate this, we will use the `game.onUpdateInterval()` method - which is the JavaScript equivalent of the commonly used ``||game: on game update every||`` block.
+In the previous lesson, the ``||game:on game update||`` event was used to handle events that should occur every time the game updates.
 
-## Example
+However, not all behaviors should necessarily occur every time the game updates. The ``||game:on game update every||`` event can be used to handle these types of behaviors.
 
-![Splash and Dash](/static/courses/csintro3/events/splash-and-dash.gif)
+## Concept: Keeping Track of Time
+
+The ``||game:game.onUpdateInterval||`` event is similar to the ``||game:game.onUpdate||`` event, except it will only occur  once per given **period**.
+
+```sig
+game.onUpdateInterval(500, undefined);
+```
+
+## Example #1: Visualizing the Rate
+
+1. Review the code below
+2. Identify the **period** of the event
+3. Identify how often the ``||variables:a||`` will be logged to the console
+
+```typescript
+let a: number = 0;
+
+game.onUpdateInterval(100, function () {
+    console.logValue("a", a);
+    a++;
+})
+```
+
+## Student Task #1: Comparing Periods
+
+1. Start with the code from example #1
+2. Create two more variables at the start of the code: ``||variables:a||`` and ``||varables:b||``. Assign each the value 0
+3. Create **two** more ``||game:game.onUpdateInterval||`` events: one with a period of 500 ms, and the other with a period of 1000 ms
+4. In the event with a period of 500 ms, use ``console.logValue`` to log the value of ``||variables:b||``, and then increment the value
+5. In the event with a period of 1000 ms, use ``console.logValue`` to log the value of ``||variables:c||``, and then increment the value
+
+### ~hint
+
+``||game:on game update||`` and ``||game:on game update interval||`` both allow for multiple **event handlers**, so calling the function multiple times and assigning different event handlers will work appropriately.
+
+However, some other events discussed in future lessons will **not** allow for this. Instead, these functions might **overwrite** the old event handler when a new one is assigned.
+
+### ~
+
+## Concept: ``||game:game.onUpdateInterval||`` to Create Projectiles
+
+The ``||game:game.onUpdateInterval||`` event being kept to a consistent pace makes it ideal for handling behavior like the creation ``||sprites:projectiles||``.
+
+This allows for ``||sprites:sprites||`` that are created regularly, without overwhelming the player or the screen.
+
+## Example #2: Fewer Stars
+
+1. Review the code below
+2. Identify the **period** of the event
 
 ```typescript
 enum SpriteKind {
-    Player,
-    Enemy
+    Star
 }
 
-function splashAndDash() {
-    game.splash("Hello!");
-    player.x += 5;
-}
-
-let player: Sprite = sprites.create(img`
-1 1 1
-1 1 1
-1 1 1
-`, SpriteKind.Player);
-player.x = 0;
+game.onUpdateInterval(250, function () {
+    let star = sprites.createProjectile(img`1`, 50, 0, SpriteKind.Star);
+    star.y = Math.randomRange(0, scene.screenHeight());
+})
 ```
 
-the base for them to start with, following gif to transition to
+## Student Task #2: Asteroids 2.0
+
+1. Start with the code from example #2
+2. Create a second ``||game:game.onUpdateInterval||`` event, with a period of 750 ms
+3. In the new ``||game:game.onUpdateInterval||`` event, create a projectile with an image of an Asteroid
+4. Give the asteroid a ``||math:random||`` ``||sprites:vx||`` between -15 and 15, and a ``||sprites:vy||`` of 50
+5. Assign the asteroid a ``||math:random||`` ``||sprites:x||`` position between 0 and ``||scene:scene.screenWidth()||``
+
+## What did we learn?
+
+1. In your own words, explain the difference between the ``||game:game.onUpdate||`` event and the ``||game:game.onUpdateInterval||`` event.
+2. Explain why it can be helpful to be able to create multiple **event handlers** for a given **event**?
+
+### ~hint
+
+## Sidenote: Why not ``||loops:pause||`` in ``||game:on game update||``?
+
+The behavior of the ``||game:on game update interval||`` event might seem like an easy thing to address without making an extra type of event: why not just ``||loops:pause||`` right before the end of the event handler? This approach could be used to limit the rate at which stars are created, like in the snippet below.
 
 ```typescript
 enum SpriteKind {
-    Player,
-    Enemy
+    Star
 }
 
-function splashAndDash() {
-    game.splash("Hello!");
-    player.x += 5;
-}
-
-let player: Sprite = sprites.create(img`
-1 1 1
-1 1 1
-1 1 1
-`, SpriteKind.Player);
-player.x = 0;
-
-game.onUpdateInterval(2000, splashAndDash);
+game.onUpdate(function () {
+    let star = sprites.createProjectile(img`1`, 50, 0, SpriteKind.Star);
+    star.y = Math.randomRange(0, scene.screenHeight());
+    pause(250);
+})
 ```
 
-## Anonymous Functions
+Run the code above and you'll likely see an issue: the game starts to hang between the creation of ``||sprites:Star||``s, resulting in inconsistent motion as the game only updates once per second.
 
-The sample code produced by the toolbox had slightly different syntax than the functions that we are used to. These are called "anonymous functions" - they are created as function __expressions__, to be stored in a variable after creation.
+This occurs because the event occurs as part of the game update; by calling ``||loops:pause||``, the **entire** game will pause. This behavior will also occur if ``||loops:pause||`` is used in ``||game:on game update interval||``. For this reason,it is important to pay attention to the side effects of using any event.
 
-For example, the following two pieces of sample code will behave in effectively the same way, even though they are created in different ways
-
-```typescript
-function splash() {
-    game.splash("Hello!");
-}
-splash();
-```
-
-```typescript
-let splash = function () {
-    game.splash("Hello!");
-}
-splash();
-```
-
-Explain differences in how these behave
-
-## convert prior code to use anonymous functions
-
-Anonymous functions allow for functions that will only be used in one case to be created and used without giving a name to them. In the case of events, this is very useful to avoid creating functions that will only be used to pass them to the event.
-
-The code from the first example using anonymous function
-
-```typescript
-enum SpriteKind {
-    Player,
-    Enemy
-}
-
-let player: Sprite = sprites.create(img`
-1 1 1
-1 1 1
-1 1 1
-`, SpriteKind.Player);
-player.x = 0;
-
-game.onUpdateInterval(2000, function () {
-    game.splash("Hello!");
-    player.x += 5;
-});
-```
-
-This behaves identically to how the above code works, without the requirement of making a unique name for the function being passed, and making it available unnecessarily within the rest of the code. This helps most when using multiple functions with distinct tasks - no need to make upArrowFunction, leftArrowFunction, rightArrowFunction, ... to handle button press events - just assign them directly and move on.
+### ~
