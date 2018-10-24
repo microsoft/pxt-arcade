@@ -165,6 +165,7 @@
         "debugger": true,
         "print": true,
         "hasAudio": true,
+        "extendFieldEditors": true,
         "allowPackageExtensions": true,
         "homeScreenHero": "./static/hero.png",
         "blocklyOptions": {
