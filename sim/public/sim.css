@@ -96,6 +96,7 @@ canvas {
 .controller-button-overlay {
     fill: black;
     fill-opacity: 0;
+    cursor: pointer;
 }
 
 .controller-button-overlay:hover {
