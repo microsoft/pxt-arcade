@@ -24,7 +24,7 @@ let a: number = 0;
 game.onUpdateInterval(100, function () {
     console.logValue("a", a);
     a++;
-})
+});
 ```
 
 ## Student Task #1: Comparing Periods
@@ -62,7 +62,7 @@ enum SpriteKind {
 game.onUpdateInterval(250, function () {
     let star = sprites.createProjectile(img`1`, 50, 0, SpriteKind.Star);
     star.y = Math.randomRange(0, scene.screenHeight());
-})
+});
 ```
 
 ## Student Task #2: Asteroids 2.0
@@ -93,7 +93,7 @@ game.onUpdate(function () {
     let star = sprites.createProjectile(img`1`, 50, 0, SpriteKind.Star);
     star.y = Math.randomRange(0, scene.screenHeight());
     pause(250);
-})
+});
 ```
 
 Run the code above and you'll likely see an issue: the game starts to hang between the creation of ``||sprites:Star||``s, resulting in inconsistent motion as the game only updates once per second.

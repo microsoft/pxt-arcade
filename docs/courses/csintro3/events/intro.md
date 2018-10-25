@@ -36,7 +36,7 @@ The syntax for this will likely seem a bit weird to start. More details on why t
 ```typescript
 game.onUpdate(function () {
     console.log("Updating!");
-})
+});
 ```
 
 ![Logging Updates](/static/courses/csintro3/events/logging-update.gif)
@@ -71,7 +71,7 @@ enum SpriteKind {
 game.onUpdate(function () {
     let star = sprites.createProjectile(img`1`, 50, 0, SpriteKind.Star);
     star.y = Math.randomRange(0, scene.screenHeight());
-})
+});
 ```
 
 ## Student Task #2a: Asteroids
@@ -126,7 +126,7 @@ game.onUpdate(function () {
         mySprite.x = scene.screenWidth();
         mySprite.vx = -mySprite.vx;
     }
-})
+});
 ```
 
 ## Student Task #3: Bouncing All Around
