@@ -10,15 +10,13 @@ It is a good idea to start the game as a MVP (minimum viable project) to demonst
 
 ### Requirements
 
-* Use at least one concept from each section of the course - for example, from `Motion`, you could use:
+* Use at least one concept from each section of the course - for example, from [Motion](/courses/csintro1/motion), you could use:
 
 >* ``||controller:control sprite with vx vy||``
+>* ``||controller:on A button pressed||``
 >* ``||sprites:on overlap events||``
->* sprite physics
 
-* Choose **two** sections from the course, and use at least one additional concept from each
 * For each of the above concepts, write a short sentence on how it allows your game to be more interesting or challenging for the player. Focus on the **Design Decisions** you made; what about the way you used the blocks made the game more appealing?
-
 
 ### ~hint
 

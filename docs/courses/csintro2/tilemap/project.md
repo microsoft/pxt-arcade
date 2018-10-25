@@ -1,4 +1,4 @@
-# Activity: Tile map Project
+# Activity: Project
 
 Make your own unique games!
 
