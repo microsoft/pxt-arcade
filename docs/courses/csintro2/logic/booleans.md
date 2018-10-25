@@ -12,15 +12,16 @@ In these activities students will work with:
 * ``||logic:or||``
 * ``||logic:not||``
 
+
 ## Concept: Boolean Flags
 
-Boolean values are regularly used to help maintain the **state** of a given piece of code. It is common to describe variables as "boolean flags" - these often are used to turn on and off different behaviors that might be useful. 
+Boolean values are regularly used to help maintain the **state** of a given piece of code. It is common to describe boolean variables as "boolean flags" - these often are used to turn on and off different behaviors that might be useful. 
 
 For example, ``||sprites:stay in screen||`` is a flag that we have set that forces the sprite to stay within the bounds of the screen when set to ``||logic:true||``.
 
 ## Coming Soon: VIDEO
 
-## Example #1: Are you hungry?
+## Example #1: is hungry? flag
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -49,35 +50,14 @@ In this example, ``||variables:isHungry||`` is a flag that will change the behav
 1. Start with the code from example #1a
 2. Modify the ``||controller:on A button pressed||`` event so that it **switches** the value of ``||variables:isHungry||`` from ``||logic:true||`` to ``||logic:false||`` or from ``||logic:false||`` to ``||logic:true||``, by using an ``||logic:if else||`` block
 
+
 ## Concept: ``||logic:not||``
 
 When we have a boolean value, we have seen that we can write code that runs when it is true using a simple ``||logic:if||`` statement. However, we can also run code for when the boolean is false. This is done with the ``||logic:not||`` block.
 
-## Example #2a: Assigning a Boolean Value
+## Example #2: ``||logic:not||``
 
-1. Review the code below
-2. Create the sample code and run the code
-3. Identify how the boolean value is stored inside of a variable
-
-```blocks
-let isOneLife = false
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (isOneLife) {
-        game.splash("You're at one health!")
-    }
-})
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.changeLifeBy(-1)
-})
-info.setLife(3)
-game.onUpdate(function () {
-    isOneLife = info.life() == 1
-})
-```
-
-## Example #2b: ``||logic:not||``
-
-[Example #2b](https://makecode.com/_Ug9eu36KRW2o)
+[Example #2](https://makecode.com/_Ug9eu36KRW2o)
 
 ```blocks
 enum SpriteKind {
@@ -132,7 +112,7 @@ game.onUpdateInterval(5000, function () {
 
 ## Concept: Alternating Booleans
 
-We can also use the ``||logic:not||`` block when assigning a boolean. So if we wanted to, we could assign a boolean to be the opposite of another boolean. It is to set a boolean to the opposite value of itself, to 'switch' states.
+We can also use the ``||logic:not||`` block when assigning a boolean. So if we wanted to, we could assign a boolean to be the opposite of another boolean. Setting a boolean to the opposite value of itself, 'switches' the variable state from ``||logic:true||`` to ``||logic:false||`` (or false to true).
 
 ## Example #3: Alternating Booleans
 
