@@ -195,7 +195,7 @@ if (val1 > 2 && val2 == 0) {
 ```typescript
 let num: number = 5;
 let bool: boolean = true;
-if (num > 2 || bool == 0) {
+if (num > 2 || bool) {
     console.log("The condition is true");
 }
 ```

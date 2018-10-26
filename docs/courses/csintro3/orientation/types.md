@@ -125,7 +125,7 @@ In this example, the type of the variables is defined before any values are assi
 3. Change the first **3** lines of code by adding in type definitions
 4. Make sure the code runs without any errors once the previous step has been completed
 
-```typescript
+```typescript-ignore
 let x;
 let y;
 let z;

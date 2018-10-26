@@ -177,7 +177,7 @@ Like parameters, the return type of a function can be of any type.
 
 ```typescript
 function copyCat(originalSprite: Sprite): Sprite {
-    return sprites.create(sprite.image);
+    return sprites.create(originalSprite.image);
 }
 ```
 
@@ -199,7 +199,7 @@ function containsThree(min: number, max: number): boolean {
 }
 let found: boolean = containsThree(0, 5);
 console.log("" + found);
-let found: boolean = containsThree(5, 10);
+found = containsThree(5, 10);
 console.log("" + found);
 ```
 

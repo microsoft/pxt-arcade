@@ -15,14 +15,14 @@ Saving user input in variables is useful, as it allows the values the user input
 ## Example #1: Storing a Name
 
 1. Review the code below
-2. Identify what **type** of value is returned by ``||game:game.showLongText||``
+2. Identify what **type** of value is returned by ``||game:game.askForString||``
 3. Identify what ``"Give me data!"`` in the function call does
 
 ```typescript
-let userInput: string = game.showLongText("Give me data!");
+let userInput: string = game.askForString("Give me data!");
 ```
 
-The ``||game:game.showLongText||`` function prompts the user to input a string with the phrase "Give me data!", and then the response the user gives is stored in the variable ``||variables:userInput||`` as a **string**.
+The ``||game:game.askForString||`` function prompts the user to input a string with the phrase "Give me data!", and then the response the user gives is stored in the variable ``||variables:userInput||`` as a **string**.
 
 ## Student Task #1: Say my Name
 
