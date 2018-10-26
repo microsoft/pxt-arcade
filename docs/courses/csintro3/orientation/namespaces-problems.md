@@ -1,74 +1,101 @@
-# Problem Set: Namespaces
+# Problem Set: Namespaces and Comments
 
-This section contains a number of selected problems for the Namespaces section.
+This section contains a number of selected problems for the Namespaces and Comments section.
 
 It is recommended that you review the problems, and complete a few before moving on to the next section.
 
-## Problem #1: What does this do?
+## Problem #1: What Does *This* Do?
+
+The following code snippet prints out numbers from 10 down to 1, but this can be kind of tricky to figure that out at a glance.
+
+Add a comment above the ``||loops:for||`` loop that specifies that this is what the loop does.
 
 ```typescript-ignore
 for (let i = 0; i < 10; i++) {
-    console.log("" + i);
+    console.log("" + (10 - i));
 }
 ```
 
-This code prints out the integers `0` through `9`, but it can be kind of tricky to figure that out at a glance. Add a comment above the ``||loops:for||`` loop that specifies that this is what the loop does.
-
-## Problem #2: How's the weather
-
-Create a `weather` namespace that has a few variables that contain information about the weather today.
-
-An example of information to store:
-
-|               |               |
-|-----------    |---------------|
-|weather        |"Rainy"        |
-|precipitation  |90             |
-|temperature    |56             |
-|windSpeed      |5              |
-
-When using numbers to represent measured data, make sure to use a comment to describe the variable and what units are used.
-
-Inside the weather namespace, `console.log` a sentence describing the weather today.
-
-## Problem #3: What about Barry
-
-Create a `barry` namespace that has a few variables that contain information about Barry.
-
-Make sure to include the following information:
-
-|           |               |
-|-----------|---------------|
-|name       |"Barry"        |
-|age        |43             |
-|hometown   |"Redmond, WA"  |
-
-
-From outside of the `barry` namespace, `console.log` some text that uses these variables.
-
-## Problem #4: Using constants
-
-Inside the ``||math:Math||`` namespace, there are a few useful constants related to Math. Use the ``||math:Math||`` namespace to ``||game:game.splash||`` the value of ``||math:pi||`` to the screen.
-
 ### ~hint
 
-The ``||math:Math||`` namespace is one of the very few namespaces that starts with a capital letter. The standard convention is use a single word all lowercase.
+### Challenge
+
+Change the loop structure above so that the same output can be achieved with just ``console.log("" + i);`` instead of ``console.log("" + (10 - i));``: this would be much more readable, and likely would not need a comment.
 
 ### ~
 
-## Problem #5: A few of my favorite things
+## Problem #2: How's the weather
 
-Create a namespace called `favorites`. Inside, define at least 3 variables that contain your favorite things. Some examples are
+Create a ``weather`` namespace that contains variables that store information about the current weather. Include at least **three** variables in the namespace.
 
-* Favorite color
-* Favorite flavor of ice cream
-* Favorite song
-* Favorite number
-* Favorite food
-* Favorite movie
+For example, this might contain the following variables:
 
-Right above the namespace, use a multiline comment that describes what the namespace contains.
+| Variable                          | Current Value |
+| :-------------------------------- | :------------ |
+| condition                         | "Cloudy"      |
+| chance of rain (percentage)       | 90            |
+| temperature (degrees Fahrenheit)  | 56            |
+| wind speed (miles per hour)       | 5             |
 
-Outside of the namespace, `console.log` a sentence containing one of the variables defined in `favorites`. 
+<br />
 
-Anywhere in your code, hover your mouse over where you use the namespace `favorites` and see that your description shows up.
+Include a short comment for each variable describing what the variable represents.
+
+Outside of the ``weather`` namespace, ``||game:game.splash||`` a sentence describing the current weather.
+
+### ~hint
+
+Variables need to be ``export``ed to make them accessible **outside** of the namespace.
+
+### ~
+
+## Problem #3: What About Barry
+
+Create a ``barry`` namespace that has a few variables that contain information about Barry.
+
+Make sure to include the following information:
+
+| Variable      | Current Value |
+| :------------ | :------------ |
+| name          | "Barry"       |
+| age           | 17            |
+| weight (lb)   | 1200          |
+| favorite food | raw fish      |
+| status        | "Not a bear"  |
+
+<br />
+
+From outside of the ``barry`` namespace, ``console.log`` a description of Barry using the variables in the ``barry`` namespace.
+
+## Problem #4: Using Values
+
+Inside the ``||math:Math||`` namespace, there are a few useful values related to Math. Use the ``||math:Math||`` namespace to ``||game:game.splash||`` the value of ``||math:pi||`` to the screen.
+
+### ~hint
+
+The ``||math:Math||`` namespace is one of the very few namespaces that starts with a capital letter. The standard convention for naming namespaces is to have the name be in lowercase letters.
+
+### ~
+
+## Problem #5: A Few of My Favorite Things
+
+Create a ``favorites`` namespace. Inside, define at least **three** variables that contain information about your favorite things.
+
+For example, it might store:
+
+* Your favorite color
+* Your favorite flavor of ice cream
+* Your favorite song
+* Your favorite number
+* Your favorite food
+* Your favorite movie
+
+Right above the namespace, include a multiline comment that describes what the namespace contains. Make sure that this is immediately above the ``favorites`` namespace - no other code between the comment and the namespace
+
+Outside of the namespace, ``console.log`` a sentence containing at least two of the variables defined in ``favorites``.
+
+### ~hint
+
+Hover over the ``favorites`` namespace somewhere in your code. The comment you wrote before for the namespace should show up on the screen.
+
+### ~
