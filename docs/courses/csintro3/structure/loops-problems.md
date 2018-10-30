@@ -93,7 +93,7 @@ Make another ``||loops:for||`` loop that repeats 15 times. Each time it repeats,
 
 ## Problem #7: User Input
 
-This problem is an extension of a problem seen in [User Input](/courses/csintro3/orientation/user-input-problems).
+This problem is an extension of a problem seen in [User Input](/courses/csintro3/intro/user-input-problems).
 
 You and a friend want to keep a log of a long conversation. Create a program that will do this for you.
 

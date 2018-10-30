@@ -136,7 +136,7 @@ Sprites have properties and functions that keep track of the different values re
 
 These properties and functions can be easily browsed using the autocomplete feature.
 
-![Auto Complete](/static/courses/csintro3/orientation/auto-complete.gif)
+![Auto Complete](/static/courses/csintro3/structure/auto-complete.gif)
 
 ## Example #3: Using a Property
 

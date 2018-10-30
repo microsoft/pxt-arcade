@@ -25,7 +25,7 @@ When the code runs, it will do the following:
 
 ## Example #1: Logging a String
 
-![Filling in Example](/static/courses/csintro3/orientation/filling-loop.gif)
+![Filling in Example](/static/courses/csintro3/structure/filling-loop.gif)
 
 1. Review the example code below
 2. Identify the ``initialization`` step, the ``check`` step, and the ``update`` step

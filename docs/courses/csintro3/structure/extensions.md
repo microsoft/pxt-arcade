@@ -8,7 +8,7 @@ In JavaScript, extensions remain a useful tool in developing complex programs.
 
 Using an extension in JavaScript is very similar to using an extension in Blocks: the first step remains to load the extension.
 
-![Loading Corgio using Extensions menu](/static/courses/csintro3/orientation/loading-extension.gif)
+![Loading Corgio using Extensions menu](/static/courses/csintro3/structure/loading-extension.gif)
 
 After loading the extension, the contents of the extension can be accessed just like any other code, and a new category in the toolbox will often show up showing some of the newly accessible functions (if the developer of the extension chose to implement that behavior).
 
