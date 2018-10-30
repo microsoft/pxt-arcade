@@ -30,7 +30,7 @@ game.onUpdateInterval(100, function () {
 ## Student Task #1: Comparing Periods
 
 1. Start with the code from example #1
-2. Create two more variables at the start of the code: ``||variables:a||`` and ``||varables:b||``. Assign each the value 0
+2. Create two more variables at the start of the code: ``||variables:a||`` and ``||variables:b||``. Assign each the value 0
 3. Create **two** more ``||game:game.onUpdateInterval||`` events: one with a period of 500 ms, and the other with a period of 1000 ms
 4. In the event with a period of 500 ms, use ``console.logValue`` to log the value of ``||variables:b||``, and then increment the value
 5. In the event with a period of 1000 ms, use ``console.logValue`` to log the value of ``||variables:c||``, and then increment the value
