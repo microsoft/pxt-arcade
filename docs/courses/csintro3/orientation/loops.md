@@ -89,24 +89,6 @@ console.log("" + output);
 5. In the loop, assign ``||variables:product||`` the value ``product * i``
 6. **Challenge:** create another variable, ``||variables:output||``, that is a string. Assign it the value "" before the loop. In the loop, after changing the value of ``||variables:product||``, assign ``||variables:output||`` the value ``output + product + " "``
 
-### ~hint
-
-When adding to a string, the value can be **appended** using the ``||math:+=||`` operator. For example, 
-
-```typescript
-let phrase = "hello";
-phrase = phrase + " world";
-```
-
-can also be written
-
-```typescript
-let phrase = "hello";
-phrase += " world";
-```
-
-### ~
-
 ## What did we learn?
 
 1. In your own words, describe the ``initialization``, ``check``, and ``update`` steps of a for loop.

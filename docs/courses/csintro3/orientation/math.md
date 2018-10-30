@@ -143,56 +143,6 @@ let num: number = 18 * 6 + 4 / 2 - 1;
 game.splash("" + num);
 ```
 
-## Concept: ``||variables:change by||`` and Assignment Operators
-
-The ``||variables:change by||`` block was very commonly used to modify the value a variable was assigned to when programming in Blocks.
-
-This can be accomplished in JavaScript by using the variable itself in the equation:
-
-```typescript-ignore
-num = num + 5;
-```
-
-This works because the equation on theright side of the assignment operator is evaluated first, and the result of that equation is assigned to the variable on the right side.
-
-For example, if ``num`` stored ``4`` before the code above, the right hand side of the equation would first be evaluated to ``9``, and then num would be reassigned ``9`` as it's new value.
-
-Modifying a value in this way is a very common task, so JavaScript and other languages introduce the ``+=`` operator, which will **add** the value on the right side to the value currently stored on the left side.
-
-Using the ``+=`` operator, the example code above can also be written as
-
-```typescript-ignore
-num += 5;
-```
-
-This process of condensing the expression extends to all operators, so
-
-* ``num -= 5;`` is equivalent to ``num = num - 5;``
-* ``num *= 5;`` is equivalent to ``num = num * 5;``
-* ``num /= 5;`` is equivalent to ``num = num / 5;``
-
-These are called **Assignment Operators**, like ``=``.
-
-### ~hint
-
-### Increment and Decrement
-
-In JavaScript, it is very common to add or subtract one from a value: for example, to count the number of times a button was pressed, or the index in a loop.
-
-In JavaScript, there are two **Assignment Operators** that can do this.
-
-``num = num + 1;`` and ``num += 1;``
-
-However, because this is such a common task, there is another (shorter) way to write it. This is done using the **Increment Operator**, represented by two plus signs: in this case, ``num++;``.
-
-All three of the lines above will result in ``num`` being 1 greater than whatever value it was prior.
-
-Similarly, the **Decrement Operator** is represented by two minus signs: in this case,
-
-``num = num - 1;`` is equal to both ``num -= 1;`` and ``num--;``;
-
-### ~
-
 ## What did we learn?
 
 1. What is an advantage of writing expressions out in JavaScript as opposed to blocks?
