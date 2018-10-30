@@ -8,8 +8,11 @@ This course is currently in beta - this means that it is likely to have bugs and
 
 ```codecard
 [{
-    "name": "Orientation",
-    "url": "/courses/csintro3/orientation"
+    "name": "Intro",
+    "url": "/courses/csintro3/intro"
+},{
+    "name": "Structure",
+    "url": "/courses/csintro3/structure"
 }, {
     "name": "Functions",
     "url": "/courses/csintro3/functions"
@@ -30,15 +33,22 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [For Teachers](/courses/csintro3/about/teachers)
 * [Authors](/courses/csintro3/about/authors)
 
-### [Orientation](/courses/csintro3/orientation)
+### [Intro](/courses/csintro3/intro)
 
-* [Initialization](/courses/csintro3/orientation/initialization)
-* [Types](/courses/csintro3/orientation/types)
-* [Math](/courses/csintro3/orientation/math)
-* [Logic](/courses/csintro3/orientation/logic)
-* [Loops](/courses/csintro3/orientation/loops)
-* [Sprites](/courses/csintro3/orientation/sprites)
-* [Corgio Extension](/courses/csintro3/orientation/extensions)
+* [Case Study](/courses/csintro3/structure/case-study)
+* [Initialization](/courses/csintro3/intro/initialization)
+* [Types](/courses/csintro3/intro/types)
+* [User Input](/courses/csintro3/intro/user-input)
+* [Math](/courses/csintro3/intro/math)
+* [Operators](/courses/csintro3/intro/operators)
+
+### [Structure](/courses/csintro3/orientation)
+
+* [Logic](/courses/csintro3/structure/logic)
+* [Loops](/courses/csintro3/structure/loops)
+* [Sprites](/courses/csintro3/structure/sprites)
+* [Corgio Extension](/courses/csintro3/structure/extensions)
+* [Namespaces](/courses/csintro3/structure/namespaces)
 
 ### [Functions](/courses/csintro3/functions)
 
