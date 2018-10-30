@@ -26,7 +26,37 @@ The code above will output a random number between ``1`` and ``10`` twice.
 |(d)|some value, and then that value **divided by** ``10``|
 
 
-## Problem #2: What'd You Say
+## Problem #2: Counting 
+
+Trace through the following code and determine what the output should be.
+
+```typescript
+let num: number = 10;
+num++;
+console.log("" + num);
+num--;
+console.log("" + num);
+num++;
+console.log("" + num);
+num++;
+console.log("" + num);
+num--;
+console.log("" + num);
+num++;
+console.log("" + num);
+num++;
+console.log("" + num);
+num++;
+console.log("" + num);
+num--;
+console.log("" + num);
+num++;
+console.log("" + num);
+```
+
+Afterwards, run the code and determine how correct you were. If you were incorrect determine where you went wrong and try again.
+
+## Problem #3: What'd You Say
 
 ```typescript-ignore
 let output: string = "The user says: ";

@@ -109,3 +109,8 @@ game.splash(order);
 2. Modify the code so that it also prompts the user "What dessert would you like"
 3. Append to ``||variables:order||`` the sentence " For Dessert, I would like " followed by what the user specified.
 4. Append a "." to the end of the order for grammatical correctness.
+
+## What did we learn?
+
+1. How can your use assignment operators to modify the value of a variable?
+2. Which operator can you use to append a string to another string?
