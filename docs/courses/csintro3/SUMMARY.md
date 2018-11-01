@@ -26,6 +26,6 @@
         * [Button Press Events](/courses/csintro3/events/buttons)
     * [Arrays](/courses/csintro3/arrays)
         * [Arrays of Numbers](/courses/csintro3/arrays/numbers)
-        * [Array Methods](/courses/csintro3/arrays/strings)
+        * [Array Manipulation](/courses/csintro3/arrays/strings)
         * [Arrays of Sprites](/courses/csintro3/arrays/sprites)
         * [Tile Maps](/courses/csintro3/arrays/tilemap)
