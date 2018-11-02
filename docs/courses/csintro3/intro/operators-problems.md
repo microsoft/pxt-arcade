@@ -4,65 +4,95 @@ This section contains a number of selected problems for the Operators section.
 
 It is recommended that you review the problems, and complete a few before moving on to the next section.
 
-## Problem #1: Randomness
+## Problem #1: Random Modification
 
 ```typescript-ignore
 let n: number = Math.randomRange(1, 10)
-console.log("" + n);
+game.splash("Value A is " + n);
 ...
-console.log("" + n);
+game.splash("Value B is " + n);
 ```
 
-The code above will output a random number between ``1`` and ``10`` twice. 
+The code above will output a random number between ``1`` and ``10`` twice, with different names ("Value A" and "Value B") for each
 
-1. Copy the code from above
-2. Replace the ``...`` with a line of code that modifies ``||variables:n||`` such that the output is 
+1. Start with the snippet above
+2. Replace the ``...`` with a line of code that changes the value assigned to ``||variables:n||`` so that the second value ``||game:splashed||`` matches the expected output
 
-| Task | Output |
-|---|---|
-|(a)|some value, and then that value **plus** ``5``|
-|(b)|some value, and then that value **minus** ``5``|
-|(c)|some value, and then that value **times** ``2``|
-|(d)|some value, and then that value **divided by** ``10``|
+|           | Expected Output                                               |
+| :-------: | :------------------------------------------------------------ |
+| **(a)**   | The value for "B" is the value of "A" **plus** ``5``          |
+| **(b)**   | The value for "B" is the value of "A" **minus** ``5``         |
+| **(c)**   | The value for "B" is the value of "A" **times** ``10``        |
+| **(d)**   | The value for "B" is the value of "A" **divided by** ``2``    |
 
+## Problem #2: Counting Crisis
 
-## Problem #2: Counting 
-
-Trace through the following code and determine what the output should be.
+Walk through the following code and write down the expected output for each ``console.log||``.
 
 ```typescript
 let num: number = 10;
 num++;
-console.log("" + num);
+console.log("a: " + num);
 num--;
-console.log("" + num);
+console.log("b: " + num);
 num++;
-console.log("" + num);
+console.log("c: " + num);
 num++;
-console.log("" + num);
+console.log("d: " + num);
 num--;
-console.log("" + num);
+console.log("e: " + num);
 num++;
-console.log("" + num);
+console.log("f: " + num);
 num++;
-console.log("" + num);
+console.log("g: " + num);
 num++;
-console.log("" + num);
+console.log("h: " + num);
 num--;
-console.log("" + num);
+console.log("i: " + num);
 num++;
-console.log("" + num);
+console.log("j: " + num);
 ```
 
-Afterwards, run the code and determine how correct you were. If you were incorrect determine where you went wrong and try again.
+After walking through the code, run it and check for any errors. If there were any values that did not match what you expected, start from the first error and correct any mistakes.
 
-## Problem #3: What'd You Say
+## Problem #3: What Did You Say?
+
+
+Replace the ``...`` in the snippet below with a line of code so the value logged is "The user says: " followed by the value the user inputted.
+
 
 ```typescript-ignore
 let output: string = "The user says: ";
-let input: string = game.askForString("");
+let input: string = game.askForString("Say something");
 ...
 console.log(output);
 ```
 
-Replace the ``...`` with a line of code so the console logs "The user says: " followed by what they said.
+## Problem #4: What is This Assignment?
+
+In the code snippet below, change the values used in the assignment operators to make each ``console.log`` a true statement.
+
+### ~hint
+
+The only portions of the code you can change in this problem are the ``0``s in the assignment. Do not change the type of assignment operator that is used.
+
+### ~
+
+```typescript
+let myNumber: number = 5;
+myNumber *= 0;
+console.log("4 + 6 is " + myNumber);
+myNumber /= 0;
+console.log("8 - 7 is " + myNumber);
+myNumber += 0;
+console.log("7 * 6 is " + myNumber);
+myNumber /= 0;
+console.log("3 * 7 is " + myNumber);
+myNumber -= 0;
+console.log("100 / 2 is " + myNumber);
+myNumber *= 0;
+console.log("15 - 3 * 5 is " + myNumber);
+```
+
+
+
