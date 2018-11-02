@@ -14,7 +14,7 @@ num = num + 5;
 
 This works because the equation on the right side of the assignment operator is evaluated first, and the result of that equation is assigned to the variable on the right side.
 
-For example, if ``num`` stored ``4`` before the code above, the right hand side of the equation would first be evaluated to ``9``, and then num would be reassigned ``9`` as it's new value.
+For example, if ``||variables:num||`` stored ``4`` before the code above, the right hand side of the equation would first be evaluated to ``9``, and then ``||variables:num||`` would be **reassigned** ``9`` as it's new value.
 
 Modifying a value in this way is a very common task, so JavaScript and other languages introduce the ``+=`` operator, which will **add** the value on the right side to the value currently stored on the left side.
 
@@ -32,83 +32,109 @@ This process of condensing the expression extends to all operators, so
 
 These are called **Assignment Operators**, like ``=``.
 
-### ~hint
-
-### Increment and Decrement
-
-In JavaScript, it is very common to add or subtract one from a value: for example, to count the number of times a button was pressed, or the index in a loop.
-
-In JavaScript, there are two **Assignment Operators** that can do this.
-
-``num = num + 1;`` and ``num += 1;``
-
-However, because this is such a common task, there is another (shorter) way to write it. This is done using the **Increment Operator**, represented by two plus signs: in this case, ``num++;``.
-
-All three of the lines above will result in ``num`` being 1 greater than whatever value it was prior.
-
-Similarly, the **Decrement Operator** is represented by two minus signs: in this case,
-
-``num = num - 1;`` is equal to both ``num -= 1;`` and ``num--;``;
-
-### ~
-
-## Example #1: Seconds in a Day
+## Example #1: Seconds in an Hour
 
 1. Review the code below
-2. Observe how it uses assignment operators to modify the ``||variables:seconds||`` variable
+2. Observe how assignment operators are used to modify the ``||variables:seconds||`` variable
+3. Identify the two values that are ``||game:splashed||``
 
 ```typescript
-let seconds: number = 60; 
-seconds *= 60; 
-seconds *= 24; 
-game.splash(seconds + " seconds"); 
+let seconds: number = 1;
+seconds *= 60;
+game.splash(seconds + " seconds in a minute");
+seconds *= 60;
+game.splash(seconds + " seconds in an hour");
 ```
 
 ## Student Task #1: Seconds in a Week
 
-1. Copy the code from the example above
-2. Add a line that modifies the ``||variables:seconds||`` variable so that it is equal to the number of seconds in a week
+1. Start with the code from example #1
+2. After the second ``||game:game.splash||``, use an **assignment operator** to make ``||variables:seconds||`` store the number of seconds in a day
+3. ``||game:Splash||`` the new value of ``||variables:seconds||``. Make sure to include a description of the value to match the previous values that were ``||game:splashed||``
+4. Use another ``||assignment operator||`` to make ``||variables:seconds||`` store the number of seconds in a week
+5. ``||game:Splash||`` the new value of ``||variables:seconds||``, along with it's corresponding description
+6. **Challenge:** repeat this process for both the seconds in a month, and seconds in a year
+
+### ~hint
+
+For the challenge, you can use an estimate of 4 weeks per month and 12 months per year.
+
+### ~
+
+## Concept: Increment and Decrement
+
+In JavaScript, it is very common to add or subtract one from a value: for example, to count the number of times a button was pressed, or the index in a loop.
+
+In JavaScript, there are several **Assignment Operators** that can do this. For example, both  ``num = num + 1;`` and ``num += 1;`` will result in ``||variables:num||`` being incremented by 1.
+
+However, because this is such a common task, there is an even shorter way to write it. This is done using the **Increment Operator**, represented by two plus signs. ``num++;`` is equivalent to the two expressions above.
+
+Similarly, the **Decrement Operator** is represented by two minus signs, meaning ``num = num - 1;`` is equal to both ``num -= 1;`` and ``num--;``;
+
+## Example #2: Incrementing Values
+
+1. Review the code below
+2. Identify how the **increment operator** is used to change the value of ``||variables:myNumber||``
+
+```typescript
+let myNumber = 5;
+game.splash(myNumber + " is too low!");
+myNumber++;
+myNumber++;
+game.splash(myNumber + " is too high!");
+```
+
+## Student Task #2: Just Right
+
+1. Start with the code from example #2
+2. Use the **decrement operator** to lower of ``||variables:myNumber||`` by 1
+3. ``||game:Splash||`` ``||variables:myNumber||`` with the description " is just right!"
 
 ## Concept: Appending Strings
 
 The **Assignment Operator** ``||math:+=||`` can also be useful when adding to strings.
 
-Values can be **appended** using the ``||math:+=||`` operator. For example, 
+Values can be **appended** using the ``||math:+=||`` operator. For example, the following snippet:
 
 ```typescript
 let phrase: string = "hello";
 phrase = phrase + " world";
 ```
 
-can also be written
+can also be written:
 
 ```typescript
 let phrase: string = "hello";
 phrase += " world";
 ```
 
-## Example #2: Food Order
+This allows for strings to be "built" by adding pieces to them as necessary.
+
+## Example #3: Food Order
 
 1. Review the code written below
-2. Observe how it uses the ``||math:+=||`` operator to build up an ``||variables:order||`` string
+2. Identify how the ``||math:+=||`` operator is used to to build up an ``||variables:order||`` string
 
 ```typescript
-let order: string = "I would like to eat "
-let food: string = game.askForString("What would you like to eat?")
-order += food
-order += ". I would also like to drink "
-let drink: string = game.askForString("What would you like to drink?")
-order +=  drink
-order +=  "."
+let order: string = "I would like to eat ";
+let food: string = game.askForString("What would you like to eat?");
+order += food;
+order += ". I would also like to drink ";
+
+let drink: string = game.askForString("What would you like to drink?");
+order +=  drink;
+order +=  ".";
+
 game.splash(order);
 ```
 
-## Student Task #2: Dessert
+## Student Task #3: Dessert
 
 1. Copy the code from the example above
 2. Modify the code so that it also prompts the user "What dessert would you like"
-3. Append to ``||variables:order||`` the sentence " For Dessert, I would like " followed by what the user specified.
-4. Append a "." to the end of the order for grammatical correctness.
+3. Append to ``||variables:order||`` the sentence " For dessert, I would like " followed by the dessert the user requested
+4. Append a "." to end the sentence
+5. **Challenge:** instead of storing the variables ``||variables:food||``, ``||variables:drink||``, and ``||variables:dessert||``, append the result of ``||game:game.askForString||`` directly to ``||variables:order||``
 
 ## What did we learn?
 
