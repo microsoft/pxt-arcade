@@ -147,4 +147,3 @@ game.splash("" + num);
 
 1. What is an advantage of writing expressions out in JavaScript as opposed to blocks?
 2. In JavaScript, how can the order in which an expression is evaluated be changed?
-3. **Challenge:** explain why the different increment, decrement, and assignment operators are be useful for adding to or subtracting from a variable. 
