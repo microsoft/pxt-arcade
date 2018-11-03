@@ -138,5 +138,4 @@ game.splash(order);
 
 ## What did we learn?
 
-1. How can your use assignment operators to modify the value of a variable?
-2. Which operator can you use to append a string to another string?
+1. Explain how the different increment, decrement, and assignment operators can be useful for modifying a number ``||variables:variable||``.

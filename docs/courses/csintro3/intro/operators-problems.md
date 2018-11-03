@@ -27,7 +27,7 @@ The code above will output a random number between ``1`` and ``10`` twice, with 
 
 ## Problem #2: Counting Crisis
 
-Walk through the following code and write down the expected output for each ``console.log||``.
+Walk through the following code and write down the expected output for each ``console.log``.
 
 ```typescript
 let num: number = 10;
@@ -93,6 +93,3 @@ console.log("100 / 2 is " + myNumber);
 myNumber *= 0;
 console.log("15 - 3 * 5 is " + myNumber);
 ```
-
-
-
