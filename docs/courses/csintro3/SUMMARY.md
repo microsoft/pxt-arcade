@@ -7,6 +7,7 @@
         * [Types](/courses/csintro3/intro/types)
         * [User Input](/courses/csintro3/intro/user-input)
         * [Math](/courses/csintro3/intro/math)
+        * [Operators](/courses/csintro3/intro/operators)
     * [Structure](/courses/csintro3/structure)
         * [Logic](/courses/csintro3/structure/logic)
         * [Loops](/courses/csintro3/structure/loops)
