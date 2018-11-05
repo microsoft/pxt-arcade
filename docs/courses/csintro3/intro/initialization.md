@@ -90,8 +90,18 @@ game.splash("word");
 1. Create a new project in @boardname@
 2. **Declare** a new variable named ``||variables:dog||``, and **assign** it the value "Bark!"
 3. **Declare** another new variable named ``||variables:cat||``, and **assign** it the value "Meow"
-4. Use ``||game:game.splash||`` to display ``||variables:dog||`` to the user
-5. Use ``||game:game.splash||`` to display ``||variables:cat||`` to the user
+4. **Declare** one more new variable named ``||variables:catAndDog||``, and **assign** it the value "Meow and Bark!"
+5. Use ``||game:game.splash||`` to display ``||variables:dog||`` to the user
+6. Use ``||game:game.splash||`` to display ``||variables:cat||`` to the user
+7. Use ``||game:game.splash||`` to display ``||variables:catAndDog||`` to the user
+
+### ~hint
+
+Variables in JavaScript are typically **camel cased**. The first word in the variable name should be all lowercase, and any other words should have the first letter capitalized. For example, if you wanted to name a variable that stores "documents for john", this could be stored in the variable ``||variables:documentsForJohn||``.
+
+Note the name of the third variable created for this task: ``||variables:catAndDog||``, and how it is **camel cased**.
+
+### ~
 
 ## Example #3: Reassigning variables
 
