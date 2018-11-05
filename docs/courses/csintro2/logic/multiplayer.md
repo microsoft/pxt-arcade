@@ -14,7 +14,7 @@ In these activities, students will work with:
 
 ## Concept: Local Multiplayer
 
-The ``||controller:local-multiplayer||`` extension allows for multiple users to play games with eachother in the browser.
+The ``||controller:local-multiplayer||`` extension allows for multiple users to play games with each other in the browser.
 
 Using a QWERTY keyboard, the keys for both players are listed below
 

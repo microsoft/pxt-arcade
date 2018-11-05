@@ -1,9 +1,5 @@
 # Activity: If and else comparisons
  
-https://youtu.be/sMFHdR6KzPo 
-
-[Alternative Video Location](https://aka.ms/40544a-ifelse-overview)
-
 In our games we will often want to compare values, and take an action based on the result of the comparison.
 
 > Example: Is my value smaller than a test value? If it is ``||logic:true||`` that my value (3) is smaller than the test value (5) then we will add to my value. Otherwise, we will subtract from the value.
@@ -22,6 +18,10 @@ In this activity, students will work with:
 * ``||logic:else if||``
 
 ## Concept: ``||logic:if||`` and ``||logic:else||`` Statement
+
+https://youtu.be/FuABS3PVnAM 
+
+[Alternative Video Location](https://aka.ms/40544a-if-else-pre)
 
 We have seen in the previous lesson ``||logic:if||`` statements perform a test and if the logic test evaluates to true, then it will run code that is given. 
 
@@ -81,9 +81,9 @@ If it is not greater than 50, it will run the else section and rank the player a
 
 Make sprite alternate between saying "A" and "B"
 
-https://youtu.be/FuABS3PVnAM 
+https://youtu.be/sMFHdR6KzPo 
 
-[Alternative Video Location](https://aka.ms/40544a-ifelse)
+[Alternative Video Location](https://aka.ms/40544a-if-else-examples)
 
 For each example below,
 
@@ -253,7 +253,7 @@ generate()
 
 https://youtu.be/zW7JyNiJeKI
 
-[Alternative Video Location](https://aka.ms/40544a-ifelse-task)
+[Alternative Video Location](https://aka.ms/40544a-if-else-tasks)
 
 Now that we have the basic functionality of our game, make it so that the player loses points when they press the wrong button.
 
