@@ -1,6 +1,8 @@
-# About: Starting
+# About: Where to Start
 
-If you are learning to code for the first time, it is suggested that you start with the [CS Intro Course](/courses/csintro), which goes much more in depth with the concepts necessary to begin programming.
+This course focuses on transitioning from the Block-based environment to a JavaScript environment, and expanding on the ideas taught in the first two courses.
+
+If you have completed the first two courses in this series, then you are in the right place. The [Introduction section](/courses/csintro3/intro) is the first section of this course.
 
 If you have experience with other MakeCode editors or programming in general, the following tutorials will be useful in learning the basics of the functionality that is specific to @boardname@:
 
@@ -9,8 +11,9 @@ If you have experience with other MakeCode editors or programming in general, th
 * [Happy Flower](/#tutorial:tutorials/happy-flower)
 * [Simple Extensions](/#tutorial:tutorials/simple-extensions)
 
-Additionally, you may find it useful to visit the review material for the previous courses:
+Additionally, you may find it useful to check out the review material for the previous courses:
 
 * [CS Intro 1 Review](/courses/csintro1/review)
 * [CS Intro 2 Review](/courses/csintro2/review)
 
+If you are learning to code for the first time, it is suggested that you start with [CS Intro 1](/courses/csintro1) and [CS Intro 2](/courses/csintro2), which go in depth into many core programming concepts. This course assumes experience with these concepts, so if you choose to start here you might want to review the concepts in those courses as they come up.
