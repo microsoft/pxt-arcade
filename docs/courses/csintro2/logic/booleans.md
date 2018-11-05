@@ -12,7 +12,6 @@ In these activities students will work with:
 * ``||logic:or||``
 * ``||logic:not||``
 
-
 ## Concept: Boolean Flags
 
 Boolean values are regularly used to help maintain the **state** of a given piece of code. It is common to describe boolean variables as "boolean flags" - these often are used to turn on and off different behaviors that might be useful. 
@@ -21,7 +20,7 @@ For example, ``||sprites:stay in screen||`` is a flag that we have set that forc
 
 ## Coming Soon: VIDEO
 
-## Example #1: is hungry? flag
+## Example #1: Are you hungry?
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -49,7 +48,6 @@ In this example, ``||variables:isHungry||`` is a flag that will change the behav
 
 1. Start with the code from example #1a
 2. Modify the ``||controller:on A button pressed||`` event so that it **switches** the value of ``||variables:isHungry||`` from ``||logic:true||`` to ``||logic:false||`` or from ``||logic:false||`` to ``||logic:true||``, by using an ``||logic:if else||`` block
-
 
 ## Concept: ``||logic:not||``
 
