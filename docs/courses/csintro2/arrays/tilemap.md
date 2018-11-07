@@ -308,7 +308,7 @@ b 5 5 5 5 d d 4 4 4 4 . . . . .
 3. Add an ``||sprites:on overlap||`` event between the enemies and the player that causes the game to be over
 4. **Challenge:** add another row of walls, and pick one at random to change into a non-wall tile. Are there any rows in which choosing randomly might make the game impossible, or too easy?
 
-### Concept: Multiple Levels
+## Concept: Multiple Levels
 
 Using the concepts from tasks #1 and #2, the development of multi-level games becomes much easier. This is can be done by creating an array of tile maps and transitioning through the levels, while using the blocks discussed earlier in this activity to help set up and move through the levels.
 

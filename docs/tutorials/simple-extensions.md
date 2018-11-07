@@ -2,48 +2,48 @@
 
 ## Introduction @unplugged
 
-Extensions in @boardname@ allow users to easily develop and share portions of their code others. In this tutorial, you will be using the ``||corgi:corgio||`` extension to create a simple platformer. In this example the extension is automatically loaded: in other projects, you can load the extension as shown below.
+Extensions in @boardname@ allow users to easily develop and share portions of their code others. In this tutorial, you will be using the ``||corgio:corgio||`` extension to create a simple platformer. In this example the extension is automatically loaded: in other projects, you can load the extension as shown below.
 
 ![Adding Corgio Extension](/static/tutorials/simple-extensions/add-corgio.gif)
 
 ## Step 1
 
-The first thing we'll do is make our corgi. Find the ``||variables:set myCorg to||`` in ``||corgi:Corgi||``. Drag it into the ``||loops:on start||``. The corgi should appear on the left side of the screen.
+The first thing we'll do is make our corgio. Find the ``||variables:set myCorg to||`` in ``||corgio:Corgi||``. Drag it into the ``||loops:on start||``. The corgio should appear on the left side of the screen.
 
 ```blocks
 enum SpriteKind {
     Player,
     Enemy
 }
-let myCorg: Corgi = null
-myCorg = corgi.create(SpriteKind.Player)
+let myCorg: Corgio = null
+myCorg = corgio.create(SpriteKind.Player)
 ```
 
 ## Step 2
 
-Now, let's make our sprite figure move left and right with the controller arrow keys. Get a ``||corgi:make myCorg move left and right with arrow keys||`` and a ``||corgi:make myCorg jump if up arrow key is pressed||`` from ``||corgi:Corgi||`` and put it under ``||variables:set myCorg to||``.
+Now, let's make our sprite figure move left and right with the controller arrow keys. Get a ``||corgio:make myCorg move left and right with arrow keys||`` and a ``||corgio:make myCorg jump if up arrow key is pressed||`` from ``||corgio:Corgi||`` and put it under ``||variables:set myCorg to||``.
 
 ```blocks
 enum SpriteKind {
     Player,
     Enemy
 }
-let myCorg: Corgi = null
-myCorg = corgi.create(SpriteKind.Player)
+let myCorg: Corgio = null
+myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
 ```
 
 ## Step 3
 
-The corgi is a bit boring when it's image doesn't change; to fix this, get a ``||corgi:change image when myCorg is moving||`` block from ``||corgi:Corgi||`` and put it under ``||variables:set myCorg to||``.
+The corgio is a bit boring when it's image doesn't change; to fix this, get a ``||corgio:change image when myCorg is moving||`` block from ``||corgio:Corgio||`` and put it under ``||variables:set myCorg to||``.
 
 ```blocks
 enum SpriteKind {
     Player,
     Enemy
 }
-let myCorg: Corgi = null
-myCorg = corgi.create(SpriteKind.Player)
+let myCorg: Corgio = null
+myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
 myCorg.verticalMovement()
 myCorg.updateSprite()
@@ -58,8 +58,8 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let myCorg: Corgi = null
-myCorg = corgi.create(SpriteKind.Player)
+let myCorg: Corgio = null
+myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
 myCorg.verticalMovement()
 myCorg.updateSprite()
@@ -94,8 +94,8 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let myCorg: Corgi = null
-myCorg = corgi.create(SpriteKind.Player)
+let myCorg: Corgio = null
+myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
 myCorg.verticalMovement()
 myCorg.updateSprite()
@@ -131,14 +131,14 @@ scene.setTile(4, img`
 
 ## Step 6 @fullscreen
 
-Open up the image editor of ``||scene:set tile map||`` again, and change the size of the image until you get to **32x8**. Draw more platforms for the corgi to jump on.
+Open up the image editor of ``||scene:set tile map||`` again, and change the size of the image until you get to **32x8**. Draw more platforms for the corgio to jump on.
 
 ```blocks
 enum SpriteKind {
     Player,
     Enemy
 }
-let myCorg: Corgi = null
+let myCorg: Corgio = null
 scene.setTileMap(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . 4 . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . 4 . . . . . . 
@@ -149,7 +149,7 @@ scene.setTileMap(img`
 . . . . . . . . . . . . . . . . . . . 4 . . . . . . . . . . . . 
 4 4 4 4 4 4 4 4 4 4 . . . . . . . . . 4 . . . . . . . . 4 4 4 . 
 `)
-myCorg = corgi.create(SpriteKind.Player)
+myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
 myCorg.verticalMovement()
 myCorg.updateSprite()
@@ -175,14 +175,14 @@ scene.setTile(4, img`
 
 ## Step 7
 
-To make it so the camera follows the corgi as it leaves the screen, add ``||corgi:make camera follow myCorg left and right||`` from ``||corgi:Corgi||`` and put it under ``||variables:set myCorg to||``.
+To make it so the camera follows the corgio as it leaves the screen, add ``||corgio:make camera follow myCorg left and right||`` from ``||corgio:Corgio||`` and put it under ``||variables:set myCorg to||``.
 
 ```blocks
 enum SpriteKind {
     Player,
     Enemy
 }
-let myCorg: Corgi = null
+let myCorg: Corgio = null
 scene.setTileMap(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . 4 . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . 4 . . . . . . 
@@ -193,7 +193,7 @@ scene.setTileMap(img`
 . . . . . . . . . . . . . . . . . . . 4 . . . . . . . . . . . . 
 4 4 4 4 4 4 4 4 4 4 . . . . . . . . . 4 . . . . . . . . 4 4 4 . 
 `)
-myCorg = corgi.create(SpriteKind.Player)
+myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
 myCorg.verticalMovement()
 myCorg.updateSprite()
@@ -229,7 +229,7 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let myCorg: Corgi = null
+let myCorg: Corgio = null
 scene.setTileMap(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . 4 . . . . . 7 
 . . . . . . . . . . . . . . . . . . . . . . . . . 4 . . . . . 7 
@@ -240,7 +240,7 @@ scene.setTileMap(img`
 . . . . . . . . . . . . . . . . . . . 4 . . . . . . . . . . . 7 
 4 4 4 4 4 4 4 4 4 4 . . . . . . . . . 4 . . . . . . . . 4 4 4 7 
 `)
-myCorg = corgi.create(SpriteKind.Player)
+myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
 myCorg.verticalMovement()
 myCorg.updateSprite()
@@ -294,7 +294,7 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let myCorg: Corgi = null
+let myCorg: Corgio = null
 scene.onHitTile(SpriteKind.Player, 7, function (sprite) {
     game.over(true)
 })
@@ -308,7 +308,7 @@ scene.setTileMap(img`
 . . . . . . . . . . . . . . . . . . . 4 . . . . . . . . . . . 7 
 4 4 4 4 4 4 4 4 4 4 . . . . . . . . . 4 . . . . . . . . 4 4 4 7 
 `)
-myCorg = corgi.create(SpriteKind.Player)
+myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
 myCorg.verticalMovement()
 myCorg.updateSprite()

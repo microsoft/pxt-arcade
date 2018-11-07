@@ -3,7 +3,7 @@
 */
 //% weight=100 color=#d2b48c icon="\uf1b0"
 //% groups='["Create", "Movement", "Speak", "Properties"]'
-namespace corgi {
+namespace corgio {
     export enum CorgiFlags {
         None = 0,
         HorizontalMovement = 1 << 0,
@@ -233,8 +233,8 @@ namespace corgi {
     //% group="Create"
     export function create(kind: number,
                             x: number = 10,
-                            y: number = 70): Corgi {
-        return new Corgi(kind, x, y);
+                            y: number = 70): Corgio {
+        return new Corgio(kind, x, y);
     }
 
     // Round input towards 0; 1.4 becomes 1.0, -0.4 becomes 0.0
@@ -260,10 +260,10 @@ namespace corgi {
 }
 
 /**
- * A Corgi
+ * A Corgi Platformer
  **/
-//% blockNamespace=corgi color="#d2b48c" blockGap=8
-class Corgi {
+//% blockNamespace=corgio color="#d2b48c" blockGap=8
+class Corgio {
     private player: Sprite;
     private stillAnimation: Image[];
     private _leftAnimation: Image[];
@@ -308,11 +308,11 @@ class Corgi {
             "bark"
         ];
 
-        this.controlFlags = corgi.CorgiFlags.None;
+        this.controlFlags = corgio.CorgiFlags.None;
 
-        this.stillAnimation = corgi._corgi_still;
-        this._leftAnimation = corgi._corgi_left;
-        this._rightAnimation = corgi._corgi_right;
+        this.stillAnimation = corgio._corgi_still;
+        this._leftAnimation = corgio._corgi_left;
+        this._rightAnimation = corgio._corgi_right;
 
         this.player = sprites.create(this.stillAnimation[0], kind);
         this.player.setFlag(SpriteFlag.StayInScreen, true);
@@ -322,10 +322,10 @@ class Corgi {
     }
 
     /**
-     * Get the Corgis's sprite
+     * Get the Corgio's sprite
      */
     //% group="Properties"
-    //% blockId=corgSprite block="%corgi(myCorg) sprite"
+    //% blockId=corgSprite block="%corgio(myCorg) sprite"
     //% weight=8
     get sprite(): Sprite {
         return this.player;
@@ -335,20 +335,20 @@ class Corgi {
      * Make the character move in the direction indicated by the left and right arrow keys.
      */
     //% group="Movement"
-    //% blockId=horizontalMovement block="make %corgi(myCorg) move left and right with arrow keys || %on=toggleOnOff"
+    //% blockId=horizontalMovement block="make %corgio(myCorg) move left and right with arrow keys || %on=toggleOnOff"
     //% weight=100 blockGap=5
     horizontalMovement(on: boolean = true): void {
         let _this = this;
 
-        this.updateFlags(on, corgi.CorgiFlags.HorizontalMovement);
+        this.updateFlags(on, corgio.CorgiFlags.HorizontalMovement);
 
         game.onUpdate(function () {
-            if (!(_this.controlFlags & corgi.CorgiFlags.HorizontalMovement)) return;
+            if (!(_this.controlFlags & corgio.CorgiFlags.HorizontalMovement)) return;
 
             let dir: number = controller.dx();
 
-            _this.player.vx = dir ? corgi.normalize(dir) * _this.maxMoveVelocity :
-                                    corgi.roundTowardsZero(_this.player.vx * _this.decelerationRate);
+            _this.player.vx = dir ? corgio.normalize(dir) * _this.maxMoveVelocity :
+                                    corgio.roundTowardsZero(_this.player.vx * _this.decelerationRate);
         })
     }
 
@@ -356,19 +356,19 @@ class Corgi {
      * Make the character jump when the up arrow key is pressed, and grab onto the wall when falling.
      */
     //% group="Movement"
-    //% blockId=verticalMovement block="make %corgi(myCorg) jump if up arrow key is pressed || %on=toggleOnOff"
+    //% blockId=verticalMovement block="make %corgio(myCorg) jump if up arrow key is pressed || %on=toggleOnOff"
     //% weight=100 blockGap=5
     verticalMovement(on: boolean = true): void {
         let _this = this;
 
-        this.updateFlags(on, corgi.CorgiFlags.VerticalMovement);
+        this.updateFlags(on, corgio.CorgiFlags.VerticalMovement);
 
         controller.up.onEvent(ControllerButtonEvent.Released, function () {
             _this.releasedJump = true;
         })
 
         game.onUpdate(function () {
-            if (!(_this.controlFlags & corgi.CorgiFlags.VerticalMovement)) return;
+            if (!(_this.controlFlags & corgio.CorgiFlags.VerticalMovement)) return;
 
             if (controller.up.isPressed()) {
                 if (_this.contactLeft() && controller.right.isPressed()
@@ -396,18 +396,18 @@ class Corgi {
     }
 
     /**
-     * Set camera to follow corgi horizontally, while keeping the screen centered vertically.
+     * Set camera to follow corgio horizontally, while keeping the screen centered vertically.
      */
     //% group="Movement"
-    //% blockId=followCorgi block="make camera follow %corgi(myCorg) left and right || %on=toggleOnOff"
+    //% blockId=followCorgi block="make camera follow %corgio(myCorg) left and right || %on=toggleOnOff"
     //% weight=90 blockGap=5
     follow(on: boolean = true): void {
         let _this = this;
 
-        this.updateFlags(on, corgi.CorgiFlags.CameraFollow);
+        this.updateFlags(on, corgio.CorgiFlags.CameraFollow);
 
         game.onUpdate(function () {
-            if (_this.controlFlags & corgi.CorgiFlags.CameraFollow) {
+            if (_this.controlFlags & corgio.CorgiFlags.CameraFollow) {
                 scene.centerCameraAt(_this.player.x, screen.height >> 1);
             }
         })
@@ -417,15 +417,15 @@ class Corgi {
      * Make the character change sprites when moving.
      */
     //% group="Movement"
-    //% blockId=updateSprite block="change image when %corgi(myCorg) is moving || %on=toggleOnOff"
+    //% blockId=updateSprite block="change image when %corgio(myCorg) is moving || %on=toggleOnOff"
     //% weight=100 blockGap=5
     updateSprite(on: boolean = true): void {
         let _this = this;
 
-        this.updateFlags(on, corgi.CorgiFlags.UpdateSprite);
+        this.updateFlags(on, corgio.CorgiFlags.UpdateSprite);
 
         game.onUpdate(function () {
-            if (!(_this.controlFlags & corgi.CorgiFlags.UpdateSprite)) return;
+            if (!(_this.controlFlags & corgio.CorgiFlags.UpdateSprite)) return;
 
             _this.count++;
 
@@ -444,7 +444,7 @@ class Corgi {
      * @param input phrase to add to script, eg: "bark"
      */
     //% group="Speak"
-    //% blockId=addScript block="teach %corgi(myCorg) the word %input"
+    //% blockId=addScript block="teach %corgio(myCorg) the word %input"
     //% weight=95 blockGap=5
     addToScript(input: string): void {
         this.script.push(input);
@@ -454,7 +454,7 @@ class Corgi {
      * Have the character say one of the phrases in the script at random
      */
     //% group="Speak"
-    //% blockId=bark block="make %corgi(myCorg) bark!"
+    //% blockId=bark block="make %corgio(myCorg) bark!"
     //% weight=95 blockGap=5
     bark(): void {
         this.player.say(Math.pickRandom(this.script), 250);
@@ -474,9 +474,9 @@ class Corgi {
         }
     }
 
-    private updateFlags(on: boolean, flag: corgi.CorgiFlags): void {
+    private updateFlags(on: boolean, flag: corgio.CorgiFlags): void {
         if (on) this.controlFlags |= flag;
-        else this.controlFlags &= corgi.CorgiFlags.All ^ flag;
+        else this.controlFlags &= corgio.CorgiFlags.All ^ flag;
     }
 
     private pickNext(input: Image[], state: number = 3): Image {

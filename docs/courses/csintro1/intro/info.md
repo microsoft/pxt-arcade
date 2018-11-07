@@ -78,10 +78,6 @@ This simple game gives the user a simple task - to not touch a button. If they d
 3. Add in the ``||info:change score by||`` block used in the first task, and modify it to add 2 to the score each time a button is pressed
 4. Add in a ``||info:countdown||``, and set it to run out after 2 seconds
 
-### Simplify Blocks chained together with JavaScript
-
-![simplify join blocks with JavaScript](/static/courses/csintro1/intro/join-javascript.gif)
-
 ## Student Task #3: Estimate rate of presses
 
 ### Overview

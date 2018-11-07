@@ -11,7 +11,7 @@ Make your own unique games!
     "name": "Fire Castle",
     "imageUrl": "/static/courses/csintro2/tilemap/fire-castle.gif"
 }, {
-    "name": "Corgi Fetch",
+    "name": "Corgio Fetch",
     "imageUrl": "/static/courses/csintro2/tilemap/corgi-fetch.gif"
 }
 ]

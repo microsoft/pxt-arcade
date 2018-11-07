@@ -111,7 +111,6 @@ To add some possibility for failure (and success) to the game, we will make a ho
 3. Create a ``||scene:on sprite of kind Car hits wall||`` event, and select the yellow tile
 4. In this ``||scene:on sprite of kind Car hits wall||`` event, place a ``||game:game over||`` block with ``||game:win||`` set to ``true``
 
-
 ### Losing
 
 1. In ``||loops:on start||``, create a variable ``||variables:column||``, and set it to 0
@@ -119,7 +118,7 @@ To add some possibility for failure (and success) to the game, we will make a ho
 3. In the ``||game:on game update every||`` event, create a ``||loops:for index from 0 to 7||`` loop 
 4. In the ``||loops:for index||`` loop, create a sprite named ``||variables:duck||`` of ``||sprites:kind||`` ``||sprites:Enemy||``. Make the duck get destroyed when it goes off the screen using ``||sprites:set duck auto destroy on||``
 5. Get ``||variables:set myTile to||`` from ``||scene:Scene||``. Set ``||scene:col||`` to ``||variables:column||``, and ``||scene:row||`` to ``||variables:index||``
-6. Get ``||scene:on top of myTile place mySprite||``, and replace ``||variables:myTile||`` with ``||duck||``
+6. Get ``||scene:on top of myTile place mySprite||``, and replace ``||variables:myTile||`` with ``||variables:duck||``
 7. After the loop, ``||variables:change column by 1||``
 8. Create an ``||sprites:on overlap||`` event between ``||sprites:Car||`` and ``||sprites:Enemy||``, and make it cause a ``||game:game over||`` with ``||game:win||`` set to ``false``
 
