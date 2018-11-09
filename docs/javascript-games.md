@@ -7,13 +7,6 @@ Here are some fun programs for your @boardname@!
 ```codecard
 [
 {
-  "name": "Falling Duck",
-  "description": "Avoid the pipes",
-  "url":"/examples/duck",
-  "cardType": "codeExample",
-  "imageUrl": "/static/examples/duck.png"
-},
-{
   "name": "Asteroids",
   "description": "Shoot at rocks",
   "url":"/examples/asteroids",
@@ -95,7 +88,6 @@ Here are some fun programs for your @boardname@!
 
 ## See also
 
-[Falling Duck](/examples/duck),
 [Asteroids](/examples/asteroids),
 [Car Race](/examples/car-race),
 [Snake](/examples/snake),
