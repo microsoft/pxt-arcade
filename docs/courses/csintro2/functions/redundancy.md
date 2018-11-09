@@ -1,10 +1,11 @@
-# Activity: Reduce redundancy using functions
+# Activity: Reducing Redundancy using Functions
 
 Besides simplifying long sections of code, functions are also regularly used to reduce redundancy in code, similar to loops. 
 
 Using functions, we can take code that is repeated in multiple locations, and keep it in one centralized location. That way, when there are changes needed or bugs found, the code can be updated in a single place, instead of in several (or a hundred different) locations.
 
 In this activity, students will:
+
 * reduce redundancy using functions
 
 ## Example #1a: Movement
@@ -66,9 +67,9 @@ This code may seem like it's easy to simplify using loops at first, but there is
 
 In this case, it is easier to use ``||functions:functions||`` to reduce redundancy; that way, we can capture the portions of the code **that are repeated**, without losing the details that are actually different. 
 
-In this case, the ``||loops:pause||``, ``||sprites:movement||``, and ``||music:tone||`` all happen in the same order throughout the code, so putting those pieces into a function reduces that redundancy. If it is later decided that playing a tone of `Middle E` works better, then only one block needs to be changed in one location, instead of 3 different blocks.
+In this case, the ``||loops:pause||``, ``||sprites:movement||``, and ``||music:tone||`` all happen in the same order throughout the code, so putting those pieces into a function reduces that redundancy. If it is later decided that playing a tone of ``||music:Middle E||`` works better, then only one block needs to be changed in one location, instead of 3 different blocks.
 
-## Example #1b: Movement using functions
+## Example #1b: Movement using Functions
 
 1. Review the code below 
 2. Create the sample code and run the code
@@ -126,7 +127,7 @@ https://youtu.be/-50-av1tblc
 2. Create the sample code and run the code
 3. Create a function to replace the series of blocks that are repeated each time a projectile is made *(hint: The function should include 4 blocks that appear in the same order 3 separate times)*  
 4. Reduce the redundancy in the code using your newly created function, without changing the behavior of the game
-5. **Challenge:** change the behavior of the game by making the projectiles move at twice the rate in the horizontal direction (from -20 to -40), and by making the ``||music:play tone||`` block play a `Middle A`
+5. **Challenge:** change the behavior of the game by making the projectiles move at twice the rate in the horizontal direction (from -20 to -40), and by making the ``||music:play tone||`` block play a ``||music:Middle A||``
 
 ```blocks
 enum SpriteKind {

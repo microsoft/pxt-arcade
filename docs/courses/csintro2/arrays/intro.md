@@ -15,11 +15,11 @@ In this activity, students will:
 * ``||arrays:length of array||``
 * ``||arrays:add||`` and ``||arrays:remove||`` values from arrays
 
-## Coming Soon: VIDEO
-
 ## Concept: Creating Arrays
 
-## Example #1: Creating an array of numbers
+## Coming Soon: VIDEO
+
+## Example #1: Creating an Array of Numbers
 
 1. Review the code below 
 2. Create the sample code and run the code
@@ -41,7 +41,7 @@ One way to think about this is in terms of where the value is located within the
 
 ### ~
 
-## Student Task #1: Random values from Arrays
+## Student Task #1: Random Values from Arrays
 
 1. Start with the code from example #1
 2. Add two more numbers to the array, by pressing the `+` button on the block
@@ -94,7 +94,7 @@ In this example, we added 5 to the end of the array, after it's already been cre
 
     ### ~
 
-6. **Challenge:** modify the value of the ``||game:splash||`` to instead display the result of adding **two** random values from the ``||variable:list||``
+6. **Challenge:** modify the value of the ``||game:splash||`` to instead display the result of adding **two** random values from the ``||variables:list||``
 
 ## What did we learn?
 

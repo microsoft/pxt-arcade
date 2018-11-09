@@ -18,16 +18,16 @@ Create a sprite for the camera the player will control
 Manually add custom motion for the Camera
 
 1. Move the ``||variables:camera||`` to the top left corner, by setting both the ``||sprites:x||`` and ``||sprites:y||`` coordinates to 30
-2. Use the ``||controller:on left button pressed||`` and ``||controller:on right button pressed||`` blocks to make ``||variables:camera||`` move left and right, by using the ``||sprite:change x by||`` block. Make the camera move **5** pixels in the direction specified each time the button is pressed
+2. Use the ``||controller:on left button pressed||`` and ``||controller:on right button pressed||`` blocks to make ``||variables:camera||`` move left and right, by using the ``||sprites:change x by||`` block. Make the camera move **5** pixels in the direction specified each time the button is pressed
 3. Use the ``||controller:on up button pressed||`` and ``||controller:on down button pressed||`` blocks to make ``||variables:camera||`` change the y velocity by 2 in the specified direction when up or down is pressed. 
-4. In the ``||loops:on start||`` block, set the ``||variables:camera||`` ``||sprite:ay||`` value to 2. This represents the camera **acceleration**, or how fast it increases in velocity, to make it fall if the player doesn't press anything
+4. In the ``||loops:on start||`` block, set the ``||variables:camera||`` ``||sprites:ay||`` value to 2. This represents the camera **acceleration**, or how fast it increases in velocity, to make it fall if the player doesn't press anything
 5. **Challenge:** set the ``||variables:camera||`` to have an acceleration of 2 in the x direction as well; how long can you keep it on screen? Revert this change before moving on to the next task
 
 ## Student Task #3: A Star is Born
 
 Create a star for the player to photograph
 
-1. Use the ``||sprites:create empty sprite of kind Star||`` category inside of an ``||games:on game update every 1000 ms||`` event to create a new sprite twice per second.
+1. Use the ``||sprites:create empty sprite of kind Star||`` category inside of an ``||game:on game update every 1000 ms||`` event to create a new sprite twice per second.
 2. Add an ``||sprites:on created sprite of kind Star||`` event. Inside of that, use ``||sprites:set sprite image to||`` to set the ``||sprites:Star||``s image to a drawing of a star
 3. Set the created sprite's ``||sprites:x||`` and ``||sprites:y||`` positions so it appears somewhere on the screen at random
 5. Set the created sprite's ``||sprites:z||`` index to -1, so that all ``||sprites:stars||`` will show up behind the ``||variables:camera||``
@@ -64,7 +64,7 @@ game.splash("Hello! This will count down from 5 for you!")
 
 ### Student 2: Emma
 
-Emma decides that she does not like the Stars being destroyed when the ``||variables:camera||`` overlap them, so she removes the ``||sprite:destroy||`` block so that the ``||sprites:Stars||`` remain. However, this makes the game score behave weirdly, and no longer represent the number of stars that have been overlapped. What went wrong? (**Challenge:** can you fix it?)
+Emma decides that she does not like the Stars being destroyed when the ``||variables:camera||`` overlap them, so she removes the ``||sprites:destroy||`` block so that the ``||sprites:Stars||`` remain. However, this makes the game score behave weirdly, and no longer represent the number of stars that have been overlapped. What went wrong? (**Challenge:** can you fix it?)
 
 ```blocks
 enum SpriteKind {

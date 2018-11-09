@@ -3,6 +3,7 @@
 When writing code, software developers often want to avoid spending time recreating code that already exists. Previous sections have shown how a single developer might do this using functions, but not how developers can share code amongst others.
 
 In this activity, students will:
+
 * Import an extension
 * Write a small extension
 * Share their extension with other students
@@ -15,7 +16,7 @@ We are not stuck with only the functions provided when you first open @boardname
 
 We can make even make our own packages of code to share or reuse in our games.
 
-## Example #1: Using a package
+## Example #1: Using a Package
 
 https://youtu.be/VVjxMS29jjU
 
@@ -113,7 +114,7 @@ Creating new blocks like the ones in example #1 requires the use of JavaScript o
 
 ### ~
 
-## Example #2: Spawn a single bird
+## Example #2: Spawn a Single Bird
 
 https://youtu.be/kZNYHZSdhdY
 
@@ -164,7 +165,7 @@ projectile = sprites.createProjectile(img`
 `, 50, 0, SpriteKind.Player)
 ```
 
-## Student Task #2: Making the stars go by
+## Student Task #2: Making the Stars go by
 
 1. Create a new project (name it "starryNight") that we will include in other projects
 2. Add an ``||game:on game update every 500ms||`` block
@@ -173,9 +174,9 @@ projectile = sprites.createProjectile(img`
 5. Set the projectile to have a random ``||sprites:y||`` position between 0 and ``||scene:screen height||``, and ``||sprites:set projectile ghost on||``
 6. Share the game and load it into another project (name the project "use starryNight")
 7. In your new project ("use starryNight")
-    * add a new ``||scene:background color||``
+    * Add a new ``||scene:background color||``
     * Add a ``||info:countdown||`` block so the game will eventually end
-7. **Challenge:** create and add code to "use starryNight" so that a second type of projectile that will spawn a meteor every that moves across the screen
+8. **Challenge:** create and add code to "use starryNight" so that a second type of projectile (a meteor) will spawn every 750 ms that moves across the screen
     * Save the updated "starryNight" code and get a share link.
     * Add the share link into a new game and save as "challenge starryNight" 
     * The challenge game should have updated background color and countdown timer
