@@ -12,7 +12,7 @@ namespace control {
 //%
 RefCollection *programList() {
     DIR *d = opendir(PROGDIR);
-    auto res = new RefCollection();
+    auto res = Array_::mk();
     for (;;) {
         struct dirent *ent = readdir(d);
         if (!ent)
