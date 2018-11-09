@@ -21,4 +21,9 @@
     Float64BE = 16,
     }
 
+
+    declare const enum PerfCounters {
+    GC = 0,
+    }
+
 // Auto-generated. Do not edit. Really.
