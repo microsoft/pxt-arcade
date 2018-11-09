@@ -21,14 +21,4 @@
     Float64BE = 16,
     }
 
-
-    declare const enum ValType {
-    Undefined = 0,
-    Boolean = 1,
-    Number = 2,
-    String = 3,
-    Object = 4,
-    Function = 5,
-    }
-
 // Auto-generated. Do not edit. Really.

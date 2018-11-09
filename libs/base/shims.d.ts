@@ -148,6 +148,18 @@ declare namespace control {
      */
     //% shim=control::__log
     function __log(text: string): void;
+
+    /**
+     * Dump internal information about a value.
+     */
+    //% shim=control::dmesgValue
+    function dmesgValue(v: any): void;
+
+    /**
+     * Force GC and dump information about heap.
+     */
+    //% shim=control::gc
+    function gc(): void;
 }
 
 // Auto-generated. Do not edit. Really.
