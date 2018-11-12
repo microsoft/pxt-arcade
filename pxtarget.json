@@ -71,7 +71,8 @@
                     "type": "git"
                 },
                 "codalBinary": "STM32",
-                "serviceId": "codal2stm32"
+                "serviceId": "codal2stm32",
+                "dockerImage": "pext/yotta:latest"
             }
         },
         "samd51": {
@@ -87,7 +88,8 @@
                     "name": "codal-itsybitsy-m4",
                     "url": "https://github.com/lancaster-university/codal-itsybitsy-m4",
                     "branch": "v0.0.6",
-                    "type": "git"
+                    "type": "git",
+                    "dockerImage": "pext/yotta:latest"
                 },
                 "codalBinary": "ITSYBITSY_M4",
                 "serviceId": "codal2samd51"
