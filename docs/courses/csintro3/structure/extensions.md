@@ -77,7 +77,7 @@ myCorg.horizontalMovement();
 
 ### ~
 
-## Student Task #1: More ``||corgi:Corgi||`` Actions
+## Student Task #1: More ``||corgio:Corgi||`` Actions
 
 There are a number of other things the ``||corgio:Corgio||`` can be made to do using the other items in the toolbox.
 

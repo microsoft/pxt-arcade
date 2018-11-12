@@ -967,7 +967,6 @@ namespace ship {
     })
 
     controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-        // if (boostedLasers > 0) {
         if (state.boostCharge > 0) {
             let left = sprites.createProjectile(spritesheet.laser, controller.dx() * 4, -40, SpriteKind.Laser, player);
             let right = sprites.createProjectile(spritesheet.laser, controller.dx() * 4, -40, SpriteKind.Laser, player);
@@ -1126,6 +1125,7 @@ namespace misc {
     }
 
     export function setPosition(star: Sprite, edge?: number) {
+        if (edge === undefined) edge = 0;
         star.x = Math.randomRange(edge, screen.width - edge);
         star.y = 0;
     }
