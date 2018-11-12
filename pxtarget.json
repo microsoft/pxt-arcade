@@ -35,7 +35,8 @@
         "libs/music---pwm",
         "libs/music---linux",
         "libs/local-multiplayer",
-        "libs/device"
+        "libs/device",
+        "libs/jacdac"
     ],
     "compile": {
         "useUF2": true,
