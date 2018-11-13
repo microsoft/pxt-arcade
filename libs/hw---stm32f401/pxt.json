@@ -19,7 +19,8 @@
         "music---pwm": "file:../music---pwm",
         "controller---hw": "file:../controller---hw",
         "buttons": "file:../buttons",
-        "game": "file:../game"
+        "game": "file:../game",
+        "jacdac": "file:../jacdac"
     },
     "public": true
 }
