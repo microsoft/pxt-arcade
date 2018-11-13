@@ -31,9 +31,10 @@
         "libs/controller",
         "libs/controller---hw",
         "libs/buttons",
-        "libs/music",
-        "libs/music---pwm",
-        "libs/music---linux",
+        "libs/mixer",
+        "libs/mixer---stm32",
+        "libs/mixer---none",
+        "libs/mixer---linux",
         "libs/local-multiplayer",
         "libs/device"
     ],

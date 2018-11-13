@@ -20,7 +20,7 @@
     "compileServiceVariant": "rpi",
     "dependencies": {
         "core---linux": "file:../core---linux",
-        "music---linux": "file:../music---linux",
+        "mixer---linux": "file:../mixer---linux",
         "screen---linux": "file:../screen---linux",
         "game": "file:../game"
     },
