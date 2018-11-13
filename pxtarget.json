@@ -48,6 +48,7 @@
         "taggedInts": true,
         "saveAsPNG": true,
         "nativeType": "thumb",
+        "gc": true,
         "upgrades": []
     },
     "compileService": {
@@ -67,7 +68,7 @@
                 "codalTarget": {
                     "name": "codal-big-brainpad",
                     "url": "https://github.com/lancaster-university/codal-big-brainpad",
-                    "branch": "v1.0.12",
+                    "branch": "v1.0.11",
                     "type": "git"
                 },
                 "codalBinary": "STM32",
@@ -87,9 +88,8 @@
                 "codalTarget": {
                     "name": "codal-itsybitsy-m4",
                     "url": "https://github.com/lancaster-university/codal-itsybitsy-m4",
-                    "branch": "v0.0.6",
-                    "type": "git",
-                    "dockerImage": "pext/yotta:latest"
+                    "branch": "v0.0.8",
+                    "type": "git"
                 },
                 "codalBinary": "ITSYBITSY_M4",
                 "serviceId": "codal2samd51"
