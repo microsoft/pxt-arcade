@@ -58,4 +58,6 @@ namespace config {
     export const DISPLAY_CFG2 = 24; // MHz
     export const DISPLAY_WIDTH = 160;
     export const DISPLAY_HEIGHT = 128;
+
+    // TODO: JACDAC pin
 }
