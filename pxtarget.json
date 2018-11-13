@@ -92,7 +92,8 @@
                     "type": "git"
                 },
                 "codalBinary": "ITSYBITSY_M4",
-                "serviceId": "codal2samd51"
+                "serviceId": "codal2samd51",
+                "dockerImage": "pext/yotta:latest"
             }
         },
         "rpi": {
