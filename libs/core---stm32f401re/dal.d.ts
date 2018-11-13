@@ -735,6 +735,7 @@ declare const enum DAL {
     CFG_PIN_LED3 = 57,
     CFG_PIN_LED4 = 58,
     CFG_SPEAKER_VOLUME = 59,
+    CFG_PIN_JACDAC = 60,
     CFG_PIN_A0 = 100,
     CFG_PIN_A1 = 101,
     CFG_PIN_A2 = 102,
