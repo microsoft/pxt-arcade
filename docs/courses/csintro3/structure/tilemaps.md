@@ -141,7 +141,7 @@ scene.setTile(8, img`
 
 Here are some examples of ``||scene:tile maps||`` for this task.
 
-![Examples of Tile Maps](/static/courses/csintro3/arrays/tile-maps/example-tile-maps.png)
+![Examples of Tile Maps](/static/courses/csintro3/structure/example-tile-maps.png)
 
 You can try to replicate one of these, or create one entirely of your own design.
 
