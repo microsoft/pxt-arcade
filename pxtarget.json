@@ -35,7 +35,8 @@
         "libs/music---pwm",
         "libs/music---linux",
         "libs/local-multiplayer",
-        "libs/device"
+        "libs/device",
+        "libs/jacdac"
     ],
     "compile": {
         "useUF2": true,
@@ -71,7 +72,8 @@
                     "type": "git"
                 },
                 "codalBinary": "STM32",
-                "serviceId": "codal2stm32"
+                "serviceId": "codal2stm32",
+                "dockerImage": "pext/yotta:latest"
             }
         },
         "samd51": {
@@ -90,7 +92,8 @@
                     "type": "git"
                 },
                 "codalBinary": "ITSYBITSY_M4",
-                "serviceId": "codal2samd51"
+                "serviceId": "codal2samd51",
+                "dockerImage": "pext/yotta:latest"
             }
         },
         "rpi": {

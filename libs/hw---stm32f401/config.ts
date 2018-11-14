@@ -12,6 +12,8 @@ namespace config {
     export const PIN_SDA = DAL.PB_7;
     export const PIN_SCL = DAL.PB_6;
 
+    export const PIN_JACDAC = DAL.PA_9;
+
     export const PIN_D14 = DAL.PB_9;
     export const PIN_D15 = DAL.PB_8;
 
@@ -31,7 +33,7 @@ namespace config {
     export const PIN_DISPLAY_RST = DAL.PC_4;
     export const PIN_DISPLAY_MISO = DAL.PB_14;
     export const PIN_DISPLAY_BL = DAL.PA_4;
-
+    
     // it's really piezo speaker, not an amp
     export const PIN_SPEAKER_AMP = DAL.PB_8;
 

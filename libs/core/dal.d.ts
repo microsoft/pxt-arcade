@@ -1,6 +1,89 @@
 // Auto-generated. Do not edit.
 declare const enum DAL {
-    // built/codal/libraries/codal-core/inc/core/CodalComponent.h
+    // built/dockercodal/libraries/codal-core/inc/JACDAC/JACDAC.h
+    JD_SERIAL_MAX_BUFFERS = 10,
+    JD_SERIAL_RECEIVING = 2,
+    JD_SERIAL_TRANSMITTING = 4,
+    JD_SERIAL_TX_DRAIN_ENABLE = 8,
+    JD_SERIAL_EVT_DATA_READY = 1,
+    JD_SERIAL_EVT_BUS_ERROR = 2,
+    JD_SERIAL_EVT_DRAIN = 3,
+    JD_SERIAL_HEADER_SIZE = 4,
+    JD_SERIAL_DATA_SIZE = 32,
+    JD_SERIAL_PACKET_SIZE = 36,
+    JD_SERIAL_MAXIMUM_BUFFERS = 10,
+    JD_SERIAL_DMA_TIMEOUT = 2,
+    JD_JD_FLAGS_LOSSY = 1,
+    // built/dockercodal/libraries/codal-core/inc/JACDAC/JDBridgeDriver.h
+    JD_BRIDGE_HISTORY_SIZE = 8,
+    // built/dockercodal/libraries/codal-core/inc/JACDAC/JDClasses.h
+    JD_DRIVER_CLASS_CONTROL = 0,
+    JD_DRIVER_CLASS_ARCADE = 1,
+    JD_DRIVER_CLASS_JOYSTICK = 2,
+    JD_DRIVER_CLASS_MESSAGE_BUS = 3,
+    JD_DRIVER_CLASS_RADIO = 4,
+    JD_DRIVER_CLASS_BRIDGE = 5,
+    JD_DRIVER_CLASS_BUTTON = 6,
+    JD_DRIVER_CLASS_PIN = 7,
+    JD_DRIVER_CLASS_RELIABILITY_TESTER = 8,
+    // built/dockercodal/libraries/codal-core/inc/JACDAC/JDMessageBusDriver.h
+    JD_MESSAGEBUS_TYPE_EVENT = 1,
+    JD_MESSAGEBUS_TYPE_LISTEN = 2,
+    // built/dockercodal/libraries/codal-core/inc/JACDAC/JDPinDriver.h
+    SetDigital = 0,
+    SetAnalog = 1,
+    SetServo = 2,
+    // built/dockercodal/libraries/codal-core/inc/JACDAC/JDProtocol.h
+    JD_DRIVER_EVT_CONNECTED = 1,
+    JD_DRIVER_EVT_DISCONNECTED = 2,
+    JD_DRIVER_EVT_PAIRED = 3,
+    JD_DRIVER_EVT_UNPAIRED = 4,
+    JD_DRIVER_EVT_PAIR_REJECTED = 5,
+    JD_DRIVER_EVT_PAIRING_RESPONSE = 6,
+    JD_DEVICE_FLAGS_LOCAL = 32768,
+    JD_DEVICE_FLAGS_REMOTE = 16384,
+    JD_DEVICE_FLAGS_BROADCAST = 8192,
+    JD_DEVICE_FLAGS_PAIR = 4096,
+    JD_DEVICE_DRIVER_MODE_MSK = 61440,
+    JD_DEVICE_FLAGS_PAIRABLE = 2048,
+    JD_DEVICE_FLAGS_PAIRED = 1024,
+    JD_DEVICE_FLAGS_PAIRING = 512,
+    JD_DEVICE_FLAGS_INITIALISED = 128,
+    JD_DEVICE_FLAGS_INITIALISING = 64,
+    JD_DEVICE_FLAGS_CP_SEEN = 32,
+    JD_DEVICE_FLAGS_BROADCAST_MAP = 16,
+    JD_LOGIC_DRIVER_MAX_FILTERS = 20,
+    JD_LOGIC_DRIVER_TIMEOUT = 254,
+    JD_LOGIC_ADDRESS_ALLOC_TIME = 254,
+    JD_LOGIC_DRIVER_CTRLPACKET_TIME = 112,
+    CONTROL_JD_FLAGS_RESERVED = 32768,
+    CONTROL_JD_FLAGS_PAIRING_MODE = 16384,
+    CONTROL_JD_FLAGS_PAIRABLE = 8192,
+    CONTROL_JD_FLAGS_PAIRED = 4096,
+    CONTROL_JD_FLAGS_CONFLICT = 2048,
+    CONTROL_JD_FLAGS_UNCERTAIN = 1024,
+    CONTROL_JD_FLAGS_NACK = 512,
+    CONTROL_JD_FLAGS_ACK = 256,
+    CONTROL_JD_TYPE_HELLO = 1,
+    CONTROL_JD_TYPE_PAIRING_REQUEST = 2,
+    JD_PROTOCOL_EVT_SEND_CONTROL = 1,
+    JD_PROTOCOL_DRIVER_ARRAY_SIZE = 20,
+    VirtualDriver = 16384,
+    PairedDriver = 12288,
+    HostDriver = 32768,
+    PairableHostDriver = 34816,
+    BroadcastDriver = 40960,
+    SnifferDriver = 24576,
+    // built/dockercodal/libraries/codal-core/inc/JACDAC/JDRadioDriver.h
+    JD_RADIO_HISTORY_SIZE = 4,
+    JD_RADIO_MAXIMUM_BUFFERS = 10,
+    JD_RADIO_HEADER_SIZE = 4,
+    // built/dockercodal/libraries/codal-core/inc/JACDAC/JDReliabilityTester.h
+    RELIABILITY_TEST_FINISHED = 7,
+    RELIABILITY_STATUS_TEST_IN_PROGRESS = 2,
+    RELIABILITY_STATUS_TEST_READY = 4,
+    RELIABILITY_STATUS_TEST_FINISHED = 8,
+    // built/dockercodal/libraries/codal-core/inc/core/CodalComponent.h
     DEVICE_ID_BUTTON_A = 1,
     DEVICE_ID_BUTTON_B = 2,
     DEVICE_ID_BUTTON_AB = 3,
@@ -25,16 +108,33 @@ declare const enum DAL {
     DEVICE_ID_SYSTEM_LEVEL_DETECTOR_SPL = 22,
     DEVICE_ID_MSC = 23,
     DEVICE_ID_SPI = 24,
+    DEVICE_ID_DISTANCE = 25,
+    DEVICE_ID_GYROSCOPE = 26,
+    DEVICE_ID_HUMIDITY = 27,
+    DEVICE_ID_PRESSURE = 28,
+    DEVICE_ID_JACDAC0 = 29,
+    DEVICE_ID_JACDAC1 = 30,
+    DEVICE_ID_JACDAC_PROTOCOL = 31,
+    DEVICE_ID_JACKROUTER = 32,
+    DEVICE_ID_GAME_ENGINE = 33,
+    DEVICE_ID_GAME_STATE_MANAGER = 34,
+    DEVICE_ID_SPRITE = 35,
+    DEVICE_ID_SINGLE_WIRE_SERIAL = 36,
     DEVICE_ID_IO_P0 = 100,
     DEVICE_ID_MESSAGE_BUS_LISTENER = 1021,
     DEVICE_ID_NOTIFY_ONE = 1022,
     DEVICE_ID_NOTIFY = 1023,
+    DEVICE_ID_BUTTON_UP = 2000,
+    DEVICE_ID_BUTTON_DOWN = 2001,
+    DEVICE_ID_BUTTON_LEFT = 2002,
+    DEVICE_ID_BUTTON_RIGHT = 2003,
+    DEVICE_ID_JD_DYNAMIC_ID = 3000,
     DEVICE_COMPONENT_RUNNING = 4096,
     DEVICE_COMPONENT_STATUS_SYSTEM_TICK = 8192,
     DEVICE_COMPONENT_STATUS_IDLE_TICK = 16384,
     DEVICE_COMPONENT_LISTENERS_CONFIGURED = 1,
     DEVICE_COMPONENT_EVT_SYSTEM_TICK = 1,
-    // built/codal/libraries/codal-core/inc/core/CodalFiber.h
+    // built/dockercodal/libraries/codal-core/inc/core/CodalFiber.h
     DEVICE_SCHEDULER_RUNNING = 1,
     DEVICE_SCHEDULER_IDLE = 2,
     DEVICE_FIBER_FLAG_FOB = 1,
@@ -43,7 +143,7 @@ declare const enum DAL {
     DEVICE_FIBER_FLAG_DO_NOT_PAGE = 8,
     DEVICE_SCHEDULER_EVT_TICK = 1,
     DEVICE_SCHEDULER_EVT_IDLE = 2,
-    // built/codal/libraries/codal-core/inc/core/CodalListener.h
+    // built/dockercodal/libraries/codal-core/inc/core/CodalListener.h
     MESSAGE_BUS_LISTENER_PARAMETERISED = 1,
     MESSAGE_BUS_LISTENER_METHOD = 2,
     MESSAGE_BUS_LISTENER_BUSY = 4,
@@ -54,7 +154,7 @@ declare const enum DAL {
     MESSAGE_BUS_LISTENER_URGENT = 128,
     MESSAGE_BUS_LISTENER_DELETING = 32768,
     MESSAGE_BUS_LISTENER_IMMEDIATE = 192,
-    // built/codal/libraries/codal-core/inc/core/ErrorNo.h
+    // built/dockercodal/libraries/codal-core/inc/core/ErrorNo.h
     DEVICE_OK = 0,
     DEVICE_INVALID_PARAMETER = -1001,
     DEVICE_NOT_SUPPORTED = -1002,
@@ -68,16 +168,18 @@ declare const enum DAL {
     DEVICE_NO_DATA = -1012,
     DEVICE_NOT_IMPLEMENTED = -1013,
     DEVICE_SPI_ERROR = -1014,
+    DEVICE_INVALID_STATE = -1015,
     DEVICE_OOM = 20,
     DEVICE_HEAP_ERROR = 30,
     DEVICE_NULL_DEREFERENCE = 40,
     DEVICE_USB_ERROR = 50,
-    // built/codal/libraries/codal-core/inc/core/NotifyEvents.h
+    // built/dockercodal/libraries/codal-core/inc/core/NotifyEvents.h
     DISPLAY_EVT_FREE = 1,
     CODAL_SERIAL_EVT_TX_EMPTY = 2,
     BLE_EVT_SERIAL_TX_EMPTY = 3,
+    ARCADE_PLAYER_JOIN_RESULT = 4,
     DEVICE_NOTIFY_USER_EVENT_BASE = 1024,
-    // built/codal/libraries/codal-core/inc/driver-models/AbstractButton.h
+    // built/dockercodal/libraries/codal-core/inc/driver-models/AbstractButton.h
     DEVICE_BUTTON_EVT_DOWN = 1,
     DEVICE_BUTTON_EVT_UP = 2,
     DEVICE_BUTTON_EVT_CLICK = 3,
@@ -99,7 +201,7 @@ declare const enum DAL {
     DEVICE_BUTTON_ALL_EVENTS = 1,
     ACTIVE_LOW = 0,
     ACTIVE_HIGH = 1,
-    // built/codal/libraries/codal-core/inc/driver-models/Accelerometer.h
+    // built/dockercodal/libraries/codal-core/inc/driver-models/Accelerometer.h
     ACCELEROMETER_IMU_DATA_VALID = 2,
     ACCELEROMETER_EVT_DATA_UPDATE = 1,
     ACCELEROMETER_EVT_NONE = 0,
@@ -125,7 +227,7 @@ declare const enum DAL {
     ACCELEROMETER_SHAKE_DAMPING = 10,
     ACCELEROMETER_SHAKE_RTX = 30,
     ACCELEROMETER_SHAKE_COUNT_THRESHOLD = 4,
-    // built/codal/libraries/codal-core/inc/driver-models/Compass.h
+    // built/dockercodal/libraries/codal-core/inc/driver-models/Compass.h
     COMPASS_STATUS_RUNNING = 1,
     COMPASS_STATUS_CALIBRATED = 2,
     COMPASS_STATUS_CALIBRATING = 4,
@@ -134,7 +236,10 @@ declare const enum DAL {
     COMPASS_EVT_CONFIG_NEEDED = 2,
     COMPASS_EVT_CALIBRATE = 3,
     COMPASS_EVT_CALIBRATION_NEEDED = 4,
-    // built/codal/libraries/codal-core/inc/driver-models/Pin.h
+    // built/dockercodal/libraries/codal-core/inc/driver-models/Gyroscope.h
+    GYROSCOPE_IMU_DATA_VALID = 2,
+    GYROSCOPE_EVT_DATA_UPDATE = 1,
+    // built/dockercodal/libraries/codal-core/inc/driver-models/Pin.h
     IO_STATUS_DIGITAL_IN = 1,
     IO_STATUS_DIGITAL_OUT = 2,
     IO_STATUS_ANALOG_IN = 4,
@@ -161,11 +266,24 @@ declare const enum DAL {
     None = 0,
     Down = 1,
     Up = 2,
-    // built/codal/libraries/codal-core/inc/driver-models/SPIFlash.h
+    // built/dockercodal/libraries/codal-core/inc/driver-models/Radio.h
+    RADIO_EVT_DATA_READY = 2,
+    // built/dockercodal/libraries/codal-core/inc/driver-models/SPIFlash.h
     SPIFLASH_PAGE_SIZE = 256,
     SPIFLASH_SMALL_ROW_PAGES = 16,
     SPIFLASH_BIG_ROW_PAGES = 256,
-    // built/codal/libraries/codal-core/inc/driver-models/Serial.h
+    // built/dockercodal/libraries/codal-core/inc/driver-models/Sensor.h
+    SENSOR_THRESHOLD_LOW = 1,
+    SENSOR_THRESHOLD_HIGH = 2,
+    SENSOR_UPDATE_NEEDED = 3,
+    SENSOR_INITIALISED = 1,
+    SENSOR_HIGH_THRESHOLD_PASSED = 2,
+    SENSOR_LOW_THRESHOLD_PASSED = 4,
+    SENSOR_LOW_THRESHOLD_ENABLED = 8,
+    SENSOR_HIGH_THRESHOLD_ENABLED = 16,
+    SENSOR_DEFAULT_SENSITIVITY = 868,
+    SENSOR_DEFAULT_SAMPLE_PERIOD = 500,
+    // built/dockercodal/libraries/codal-core/inc/driver-models/Serial.h
     CODAL_SERIAL_DEFAULT_BAUD_RATE = 115200,
     CODAL_SERIAL_DEFAULT_BUFFER_SIZE = 20,
     CODAL_SERIAL_EVT_DELIM_MATCH = 1,
@@ -180,9 +298,17 @@ declare const enum DAL {
     SYNC_SLEEP = 2,
     RxInterrupt = 0,
     TxInterrupt = 1,
-    // built/codal/libraries/codal-core/inc/driver-models/Timer.h
+    // built/dockercodal/libraries/codal-core/inc/driver-models/SingleWireSerial.h
+    SWS_EVT_DATA_RECEIVED = 1,
+    SWS_EVT_DATA_SENT = 2,
+    SWS_EVT_ERROR = 3,
+    SWS_EVT_DATA_DROPPED = 4,
+    SingleWireRx = 0,
+    SingleWireTx = 1,
+    SingleWireDisconnected = 2,
+    // built/dockercodal/libraries/codal-core/inc/driver-models/Timer.h
     CODAL_TIMER_DEFAULT_EVENT_LIST_SIZE = 10,
-    // built/codal/libraries/codal-core/inc/drivers/AnalogSensor.h
+    // built/dockercodal/libraries/codal-core/inc/drivers/AnalogSensor.h
     ANALOG_THRESHOLD_LOW = 1,
     ANALOG_THRESHOLD_HIGH = 2,
     ANALOG_SENSOR_UPDATE_NEEDED = 3,
@@ -191,7 +317,7 @@ declare const enum DAL {
     ANALOG_SENSOR_LOW_THRESHOLD_PASSED = 4,
     ANALOG_SENSOR_LOW_THRESHOLD_ENABLED = 8,
     ANALOG_SENSOR_HIGH_THRESHOLD_ENABLED = 16,
-    // built/codal/libraries/codal-core/inc/drivers/AnimatedDisplay.h
+    // built/dockercodal/libraries/codal-core/inc/drivers/AnimatedDisplay.h
     DISPLAY_EVT_ANIMATION_COMPLETE = 1,
     DISPLAY_DEFAULT_AUTOCLEAR = 1,
     DISPLAY_SPACING = 1,
@@ -207,17 +333,17 @@ declare const enum DAL {
     ANIMATION_MODE_ANIMATE_IMAGE = 5,
     ANIMATION_MODE_ANIMATE_IMAGE_WITH_CLEAR = 6,
     ANIMATION_MODE_PRINT_CHARACTER = 7,
-    // built/codal/libraries/codal-core/inc/drivers/FAT.h
+    // built/dockercodal/libraries/codal-core/inc/drivers/FAT.h
     FAT_RESERVED_SECTORS = 1,
     FAT_ROOT_DIR_SECTORS = 4,
-    // built/codal/libraries/codal-core/inc/drivers/HID.h
+    // built/dockercodal/libraries/codal-core/inc/drivers/HID.h
     HID_REQUEST_GET_REPORT = 1,
     HID_REQUEST_GET_IDLE = 2,
     HID_REQUEST_GET_PROTOCOL = 3,
     HID_REQUEST_SET_REPORT = 9,
     HID_REQUEST_SET_IDLE = 10,
     HID_REQUEST_SET_PROTOCOL = 11,
-    // built/codal/libraries/codal-core/inc/drivers/HIDKeyboard.h
+    // built/dockercodal/libraries/codal-core/inc/drivers/HIDKeyboard.h
     HID_KEYBOARD_NUM_REPORTS = 3,
     HID_KEYBOARD_REPORT_GENERIC = 1,
     HID_KEYBOARD_REPORT_CONSUMER = 2,
@@ -227,7 +353,12 @@ declare const enum DAL {
     HID_KEYBOARD_DELAY_DEFAULT = 10,
     PressKey = 0,
     ReleaseKey = 1,
-    // built/codal/libraries/codal-core/inc/drivers/KeyMap.h
+    // built/dockercodal/libraries/codal-core/inc/drivers/JackRouter.h
+    AllDown = 1,
+    HeadPhones = 2,
+    Buzzer = 3,
+    BuzzerAndSerial = 4,
+    // built/dockercodal/libraries/codal-core/inc/drivers/KeyMap.h
     KEYMAP_ALL_KEYS_UP_Val = 1,
     KEYMAP_ALL_KEYS_UP_POS = 28,
     KEYMAP_NORMAL_KEY_Val = 0,
@@ -238,7 +369,7 @@ declare const enum DAL {
     KEYMAP_KEY_UP_Val = 0,
     KEYMAP_KEY_DOWN_Val = 1,
     KEYMAP_KEY_DOWN_POS = 31,
-    // built/codal/libraries/codal-core/inc/drivers/LEDMatrix.h
+    // built/dockercodal/libraries/codal-core/inc/drivers/LEDMatrix.h
     LED_MATRIX_GREYSCALE_BIT_DEPTH = 8,
     LED_MATRIX_EVT_LIGHT_SENSE = 2,
     LED_MATRIX_EVT_FRAME_TIMEOUT = 3,
@@ -253,7 +384,45 @@ declare const enum DAL {
     MATRIX_DISPLAY_ROTATION_180 = 2,
     MATRIX_DISPLAY_ROTATION_270 = 3,
     NO_CONN = 0,
-    // built/codal/libraries/codal-core/inc/drivers/MultiButton.h
+    // built/dockercodal/libraries/codal-core/inc/drivers/MAG3110.h
+    MAG3110_DEFAULT_ADDR = 29,
+    MAG_DR_STATUS = 0,
+    MAG_OUT_X_MSB = 1,
+    MAG_OUT_X_LSB = 2,
+    MAG_OUT_Y_MSB = 3,
+    MAG_OUT_Y_LSB = 4,
+    MAG_OUT_Z_MSB = 5,
+    MAG_OUT_Z_LSB = 6,
+    MAG_WHOAMI = 7,
+    MAG_SYSMOD = 8,
+    MAG_OFF_X_MSB = 9,
+    MAG_OFF_X_LSB = 10,
+    MAG_OFF_Y_MSB = 11,
+    MAG_OFF_Y_LSB = 12,
+    MAG_OFF_Z_MSB = 13,
+    MAG_OFF_Z_LSB = 14,
+    MAG_DIE_TEMP = 15,
+    MAG_CTRL_REG1 = 16,
+    MAG_CTRL_REG2 = 17,
+    MAG3110_SAMPLE_RATES = 11,
+    MAG3110_WHOAMI_VAL = 196,
+    // built/dockercodal/libraries/codal-core/inc/drivers/MMA8653.h
+    MICROBIT_ACCEL_PITCH_ROLL_VALID = 2,
+    MICROBIT_ACCEL_ADDED_TO_IDLE = 4,
+    MMA8653_DEFAULT_ADDR = 58,
+    MMA8653_STATUS = 0,
+    MMA8653_OUT_X_MSB = 1,
+    MMA8653_WHOAMI = 13,
+    MMA8653_XYZ_DATA_CFG = 14,
+    MMA8653_CTRL_REG1 = 42,
+    MMA8653_CTRL_REG2 = 43,
+    MMA8653_CTRL_REG3 = 44,
+    MMA8653_CTRL_REG4 = 45,
+    MMA8653_CTRL_REG5 = 46,
+    MMA8653_WHOAMI_VAL = 90,
+    MMA8653_SAMPLE_RANGES = 3,
+    MMA8653_SAMPLE_RATES = 8,
+    // built/dockercodal/libraries/codal-core/inc/drivers/MultiButton.h
     MULTI_BUTTON_STATE_1 = 1,
     MULTI_BUTTON_STATE_2 = 2,
     MULTI_BUTTON_HOLD_TRIGGERED_1 = 4,
@@ -261,7 +430,7 @@ declare const enum DAL {
     MULTI_BUTTON_SUPRESSED_1 = 16,
     MULTI_BUTTON_SUPRESSED_2 = 32,
     MULTI_BUTTON_ATTACHED = 64,
-    // built/codal/libraries/codal-core/inc/drivers/ST7735.h
+    // built/dockercodal/libraries/codal-core/inc/drivers/ST7735.h
     MADCTL_MY = 128,
     MADCTL_MX = 64,
     MADCTL_MV = 32,
@@ -269,17 +438,17 @@ declare const enum DAL {
     MADCTL_RGB = 0,
     MADCTL_BGR = 8,
     MADCTL_MH = 4,
-    // built/codal/libraries/codal-core/inc/drivers/TouchButton.h
+    // built/dockercodal/libraries/codal-core/inc/drivers/TouchButton.h
     TOUCH_BUTTON_CALIBRATION_PERIOD = 10,
     TOUCH_BUTTON_CALIBRATION_LINEAR_OFFSET = 2,
     TOUCH_BUTTON_CALIBRATION_PERCENTAGE_OFFSET = 5,
     TOUCH_BUTTON_CALIBRATING = 16,
-    // built/codal/libraries/codal-core/inc/drivers/TouchSensor.h
+    // built/dockercodal/libraries/codal-core/inc/drivers/TouchSensor.h
     TOUCH_SENSOR_MAX_BUTTONS = 10,
     TOUCH_SENSOR_SAMPLE_PERIOD = 50,
     TOUCH_SENSE_SAMPLE_MAX = 1000,
     TOUCH_SENSOR_UPDATE_NEEDED = 1,
-    // built/codal/libraries/codal-core/inc/drivers/USB_HID_Keys.h
+    // built/dockercodal/libraries/codal-core/inc/drivers/USB_HID_Keys.h
     KEY_MOD_LCTRL = 1,
     KEY_MOD_LSHIFT = 2,
     KEY_MOD_LALT = 4,
@@ -458,33 +627,33 @@ declare const enum DAL {
     KEY_MEDIA_COFFEE = 249,
     KEY_MEDIA_REFRESH = 250,
     KEY_MEDIA_CALC = 251,
-    // built/codal/libraries/codal-core/inc/drivers/uf2format.h
+    // built/dockercodal/libraries/codal-core/inc/drivers/uf2format.h
     UF2FORMAT_H = 1,
     APP_START_ADDRESS = 8192,
     UF2_FLAG_NOFLASH = 1,
-    // built/codal/libraries/codal-core/inc/streams/DataStream.h
+    // built/dockercodal/libraries/codal-core/inc/streams/DataStream.h
     DATASTREAM_MAXIMUM_BUFFERS = 1,
-    // built/codal/libraries/codal-core/inc/streams/LevelDetector.h
+    // built/dockercodal/libraries/codal-core/inc/streams/LevelDetector.h
     LEVEL_THRESHOLD_LOW = 1,
     LEVEL_THRESHOLD_HIGH = 2,
     LEVEL_DETECTOR_INITIALISED = 1,
     LEVEL_DETECTOR_HIGH_THRESHOLD_PASSED = 2,
     LEVEL_DETECTOR_LOW_THRESHOLD_PASSED = 4,
     LEVEL_DETECTOR_DEFAULT_WINDOW_SIZE = 128,
-    // built/codal/libraries/codal-core/inc/streams/LevelDetectorSPL.h
+    // built/dockercodal/libraries/codal-core/inc/streams/LevelDetectorSPL.h
     LEVEL_DETECTOR_SPL_INITIALISED = 1,
     LEVEL_DETECTOR_SPL_HIGH_THRESHOLD_PASSED = 2,
     LEVEL_DETECTOR_SPL_LOW_THRESHOLD_PASSED = 4,
     LEVEL_DETECTOR_SPL_DEFAULT_WINDOW_SIZE = 128,
-    // built/codal/libraries/codal-core/inc/streams/Synthesizer.h
+    // built/dockercodal/libraries/codal-core/inc/streams/Synthesizer.h
     SYNTHESIZER_SAMPLE_RATE = 44100,
     TONE_WIDTH = 1024,
-    // built/codal/libraries/codal-core/inc/types/BitmapFont.h
+    // built/dockercodal/libraries/codal-core/inc/types/BitmapFont.h
     BITMAP_FONT_WIDTH = 5,
     BITMAP_FONT_HEIGHT = 5,
     BITMAP_FONT_ASCII_START = 32,
     BITMAP_FONT_ASCII_END = 126,
-    // built/codal/libraries/codal-core/inc/types/CoordinateSystem.h
+    // built/dockercodal/libraries/codal-core/inc/types/CoordinateSystem.h
     COORDINATE_SPACE_ROTATED_0 = 0,
     COORDINATE_SPACE_ROTATED_90 = 1,
     COORDINATE_SPACE_ROTATED_180 = 2,
@@ -493,20 +662,20 @@ declare const enum DAL {
     SIMPLE_CARTESIAN = 1,
     NORTH_EAST_DOWN = 2,
     NORTH_EAST_UP = 3,
-    // built/codal/libraries/codal-core/inc/types/Event.h
+    // built/dockercodal/libraries/codal-core/inc/types/Event.h
     DEVICE_ID_ANY = 0,
     DEVICE_EVT_ANY = 0,
     CREATE_ONLY = 0,
     CREATE_AND_FIRE = 1,
     DEVICE_EVENT_DEFAULT_LAUNCH_MODE = 1,
-    // built/codal/libraries/codal-core/inc/types/RefCounted.h
+    // built/dockercodal/libraries/codal-core/inc/types/RefCounted.h
     REF_TAG_STRING = 1,
     REF_TAG_BUFFER = 2,
     REF_TAG_IMAGE = 3,
     REF_TAG_USER = 32,
-    // built/codal/pxtapp/core---stm32f401re/hf2dbg.h
+    // built/dockercodal/pxtapp/hf2dbg.h
     HF2DBG_H = 1,
-    // built/codal/pxtapp/core---stm32f401re/pins.h
+    // built/dockercodal/pxtapp/pins.h
     CFG_PIN_ACCELEROMETER_INT = 1,
     CFG_PIN_ACCELEROMETER_SCL = 2,
     CFG_PIN_ACCELEROMETER_SDA = 3,
@@ -551,18 +720,22 @@ declare const enum DAL {
     CFG_DISPLAY_CFG3 = 42,
     CFG_PIN_DISPLAY_RST = 43,
     CFG_PIN_DISPLAY_BL = 44,
-    CFG_PIN_BTN_LEFT = 45,
-    CFG_PIN_BTN_RIGHT = 46,
-    CFG_PIN_BTN_UP = 47,
-    CFG_PIN_BTN_DOWN = 48,
-    CFG_PIN_BTN_MENU = 49,
-    CFG_PIN_LED_R = 50,
-    CFG_PIN_LED_G = 51,
-    CFG_PIN_LED_B = 52,
-    CFG_PIN_LED1 = 53,
-    CFG_PIN_LED2 = 54,
-    CFG_PIN_LED3 = 55,
-    CFG_PIN_LED4 = 56,
+    CFG_PIN_SERVO_1 = 45,
+    CFG_PIN_SERVO_2 = 46,
+    CFG_PIN_BTN_LEFT = 47,
+    CFG_PIN_BTN_RIGHT = 48,
+    CFG_PIN_BTN_UP = 49,
+    CFG_PIN_BTN_DOWN = 50,
+    CFG_PIN_BTN_MENU = 51,
+    CFG_PIN_LED_R = 52,
+    CFG_PIN_LED_G = 53,
+    CFG_PIN_LED_B = 54,
+    CFG_PIN_LED1 = 55,
+    CFG_PIN_LED2 = 56,
+    CFG_PIN_LED3 = 57,
+    CFG_PIN_LED4 = 58,
+    CFG_SPEAKER_VOLUME = 59,
+    CFG_PIN_JACDAC = 60,
     CFG_PIN_A0 = 100,
     CFG_PIN_A1 = 101,
     CFG_PIN_A2 = 102,
@@ -606,7 +779,8 @@ declare const enum DAL {
     BUTTON_ACTIVE_LOW_PULL_DOWN = 16,
     BUTTON_ACTIVE_LOW_PULL_UP = 32,
     BUTTON_ACTIVE_LOW_PULL_NONE = 48,
-    // built/codal/pxtapp/core---stm32f401re/platform.h
+    // built/dockercodal/pxtapp/platform.h
+    PXT_BOOTLOADER_CFG_ADDR = 134234056,
     PAGE_SIZE = 1024,
     DEV_NUM_PINS = 64,
     IMAGE_BITS = 4,
@@ -658,15 +832,29 @@ declare const enum DAL {
     PC_13 = 45,
     PC_14 = 46,
     PC_15 = 47,
-    // built/codal/pxtapp/core---stm32f401re/pxt.h
+    // built/dockercodal/pxtapp/pxt.h
     DEVICE_ID_BUTTON_SLIDE = 3000,
     DEVICE_ID_MICROPHONE = 3001,
     DEVICE_ID_FIRST_BUTTON = 4000,
     DEVICE_ID_FIRST_TOUCHBUTTON = 4100,
-    // built/codal/pxtapp/core---stm32f401re/uf2hid.h
-    UF2_HID_H = 1,
-    // built/codal/pxtapp/pxtbase.h
-    MEMDBG_ENABLED = 0,
+    // built/dockercodal/pxtapp/pxtbase.h
+    PXT_REFCNT_FLASH = 65534,
+    VTABLE_MAGIC = 249,
+    Undefined = 0,
+    Boolean = 1,
+    Number = 2,
+    String = 3,
+    Object = 4,
+    Function = 5,
+    BoxedString = 1,
+    BoxedNumber = 2,
+    BoxedBuffer = 3,
+    RefAction = 4,
+    RefImage = 5,
+    RefCollection = 6,
+    RefRefLocal = 7,
+    RefMap = 8,
+    User0 = 16,
     Int8LE = 1,
     UInt8LE = 2,
     Int16LE = 3,
@@ -683,12 +871,9 @@ declare const enum DAL {
     Float64LE = 14,
     Float32BE = 15,
     Float64BE = 16,
-    Undefined = 0,
-    Boolean = 1,
-    Number = 2,
-    String = 3,
-    Object = 4,
-    Function = 5,
-    // built/codal/pxtapp/pxtconfig.h
-    PXT_VM = 0,
+    GC = 0,
+    // built/dockercodal/pxtapp/pxtconfig.h
+    PXT_GC = 1,
+    // built/dockercodal/pxtapp/uf2hid.h
+    UF2_HID_H = 1,
 }
