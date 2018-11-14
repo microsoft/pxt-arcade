@@ -2,6 +2,18 @@
 declare namespace jacdac {
 
     /**
+     * Starts the JacDac protocol
+     */
+    //% shim=jacdac::start
+    function start(): void;
+
+    /**
+     * Starts the JacDac protocol
+     */
+    //% shim=jacdac::stop
+    function stop(): void;
+
+    /**
      * Internal
      */
     //% shim=jacdac::__internalSendPacket
