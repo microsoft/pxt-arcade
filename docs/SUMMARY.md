@@ -117,7 +117,6 @@
     * [game](/reference/game)
     * [sprites](/reference/sprites)
     * [controller](/reference/controller)
-    * [music](/reference/music)
     * [scene](/reference/scene)
     * [info](/reference/info)
     * [images](/reference/images)
