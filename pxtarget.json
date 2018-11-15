@@ -36,7 +36,8 @@
         "libs/music---linux",
         "libs/local-multiplayer",
         "libs/device",
-        "libs/jacdac"
+        "libs/jacdac",
+        "libs/menu"
     ],
     "compile": {
         "useUF2": true,

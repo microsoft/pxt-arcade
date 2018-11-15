@@ -10,7 +10,8 @@
         "controller": "file:../controller",
         "music": "file:../music",
         "game": "file:../game",
-        "jacdac": "file:../jacdac"
+        "jacdac": "file:../jacdac",
+        "menu": "file:../menu"
     },
     "public": true
 }
