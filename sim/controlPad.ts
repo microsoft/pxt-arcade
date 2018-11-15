@@ -183,6 +183,7 @@ namespace pxsim {
                     command: "restart"
                 })
             });
+            this.bindPadEvents(this.menu, Key.Menu);
 
             this.moveDPad(0, 0, COMPONENT_WIDTH)
             this.moveButtons(0, 0, COMPONENT_WIDTH);
@@ -228,7 +229,7 @@ namespace pxsim {
             return pad;
         }
 
-        protected bindPadEvents(pad: s.Rect | s.Circle, target: Key) {
+        protected bindPadEvents(pad: s.Rect | s.Circle | s.SVG, target: Key) {
             this.keys.push({ el: pad.el, key: target })
         }
 

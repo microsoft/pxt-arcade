@@ -13,6 +13,7 @@ namespace pxsim {
         Down = 4,
         A = 5,
         B = 6,
+        Menu = 7
     }
 
     export function mapKey(which: number): Key {
