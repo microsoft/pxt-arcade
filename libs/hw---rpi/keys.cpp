@@ -156,7 +156,7 @@ static void *btnPoll(void *dummy) {
 
 void initKeys() {
     DMESG("init keys");
-    music::playTone(0, 0); // start music process early
+    // music::playTone(0, 0); // start music process early
 
     wiringPiSetupGpio();
 

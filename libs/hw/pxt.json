@@ -8,7 +8,7 @@
         "core": "file:../core",
         "screen": "file:../screen",
         "controller": "file:../controller",
-        "music": "file:../music",
+        "mixer": "file:../mixer",
         "game": "file:../game",
         "jacdac": "file:../jacdac"
     },
