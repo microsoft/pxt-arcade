@@ -45,6 +45,8 @@ namespace config {
     export const PIN_DISPLAY_MISO = PIN_MISO;
     export const PIN_DISPLAY_BL = PIN_A5;
 
+    export const PIN_JACK_TX = PIN_TX;
+
     // it's really piezo speaker, not an amp
     export const PIN_SPEAKER_AMP = PIN_D2;
     export const SPEAKER_VOLUME = 512;
@@ -58,4 +60,6 @@ namespace config {
     export const DISPLAY_CFG2 = 24; // MHz
     export const DISPLAY_WIDTH = 160;
     export const DISPLAY_HEIGHT = 128;
+
+    // TODO: JACDAC pin
 }

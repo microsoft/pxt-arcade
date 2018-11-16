@@ -16,10 +16,11 @@
     "dependencies": {
         "core---stm32f401re": "file:../core---stm32f401re",
         "screen---st7735": "file:../screen---st7735",
-        "music---pwm": "file:../music---pwm",
+        "mixer---stm32": "file:../mixer---stm32",
         "controller---hw": "file:../controller---hw",
         "buttons": "file:../buttons",
-        "game": "file:../game"
+        "game": "file:../game",
+        "jacdac": "file:../jacdac"
     },
     "public": true
 }

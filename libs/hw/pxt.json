@@ -8,8 +8,9 @@
         "core": "file:../core",
         "screen": "file:../screen",
         "controller": "file:../controller",
-        "music": "file:../music",
-        "game": "file:../game"
+        "mixer": "file:../mixer",
+        "game": "file:../game",
+        "jacdac": "file:../jacdac"
     },
     "public": true
 }

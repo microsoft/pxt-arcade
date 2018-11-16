@@ -13,6 +13,7 @@
       "*.ts",
       "../node_modules/pxt-common-packages/libs/screen/sim/*.ts",
       "../node_modules/pxt-common-packages/libs/music/sim/*.ts",
+      "../node_modules/pxt-common-packages/libs/mixer/sim/*.ts",
       "../node_modules/pxt-common-packages/libs/game/sim/*.ts",
       "../node_modules/pxt-common-packages/libs/base/sim/control.ts",
       "../node_modules/pxt-common-packages/libs/base/sim/loops.ts",
