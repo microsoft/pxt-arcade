@@ -10,8 +10,7 @@
         "controller": "file:../controller",
         "mixer": "file:../mixer",
         "game": "file:../game",
-        "jacdac": "file:../jacdac",
-        "menu": "file:../menu"
+        "jacdac": "file:../jacdac"
     },
     "public": true
 }

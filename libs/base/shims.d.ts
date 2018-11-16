@@ -147,7 +147,7 @@ declare namespace control {
      *
      */
     //% shim=control::__log
-    function __log(text: string): void;
+    function __log(prority: int32, text: string): void;
 
     /**
      * Dump internal information about a value.
