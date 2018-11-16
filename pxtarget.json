@@ -37,8 +37,7 @@
         "libs/mixer---linux",
         "libs/local-multiplayer",
         "libs/device",
-        "libs/jacdac",
-        "libs/menu"
+        "libs/jacdac"
     ],
     "compile": {
         "useUF2": true,
