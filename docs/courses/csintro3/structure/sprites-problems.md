@@ -27,12 +27,12 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let duck: Sprite = sprites.create(sprites.duck.duck1, SpriteKind.Player)
+let duck: Sprite = sprites.create(sprites.duck.duck1, SpriteKind.Player);
 for (let i = 0; i < 10; i++) {
-    duck.setImage(sprites.duck.duck1)
-    pause(150)
-    duck.setImage(sprites.duck.duck2)
-    pause(150)
+    duck.setImage(sprites.duck.duck1);
+    pause(150);
+    duck.setImage(sprites.duck.duck2);
+    pause(150);
 }
 ```
 
@@ -71,7 +71,7 @@ enum SpriteKind {
 
 let hero: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player);
 
-pause (1000)
+pause (1000);
 
 if (hero.x < 40) {
     hero.say("That's not right!", 1000);
