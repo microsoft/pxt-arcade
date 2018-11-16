@@ -1,5 +1,6 @@
 // Auto-generated. Do not edit.
 declare namespace jacdac {
+
     /**
      * Internal
      */

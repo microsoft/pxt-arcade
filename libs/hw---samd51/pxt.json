@@ -16,7 +16,7 @@
     "dependencies": {
         "core---samd51": "file:../core---samd51",
         "screen---st7735": "file:../screen---st7735",
-        "music---pwm": "file:../music---pwm",
+        "mixer---none": "file:../mixer---none",
         "controller---hw": "file:../controller---hw",
         "buttons": "file:../buttons",
         "game": "file:../game",
