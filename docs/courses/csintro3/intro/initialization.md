@@ -134,3 +134,9 @@ The old value is gone - there is no way to reference it anymore.
 
 1. Explain the difference between **declaring** and **assigning** a value. It might be useful to try to come up with an analogy.
 2. In task #3, the same variable was ``||game:splash||``ed twice, with different results. Explain how the output was changed in the other lines of code.
+
+### ~hint
+
+Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/intro/initialization-problems) for this section to review the material and practice the concepts introduced in this section.
+
+### ~

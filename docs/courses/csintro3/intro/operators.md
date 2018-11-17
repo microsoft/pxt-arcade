@@ -139,3 +139,9 @@ game.splash(order);
 ## What did we learn?
 
 1. Explain how the different increment, decrement, and assignment operators can be useful for modifying a number ``||variables:variable||``.
+
+### ~hint
+
+Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/intro/operators-problems) for this section to review the material and practice the concepts introduced in this section.
+
+### ~

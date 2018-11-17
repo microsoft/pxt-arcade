@@ -143,3 +143,9 @@ console.log(x);
 
 1. Make a hypothesis on why using ``+`` between a ``string`` and a ``number`` results in a ``string``, not a ``number``.
 2. In task #3, you had to look at code someone else wrote and figure out what types the variables needed to hold. What were the clues that helped you identify what type the variables needed to hold?
+
+### ~hint
+
+Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/intro/types-problems) for this section to review the material and practice the concepts introduced in this section.
+
+### ~

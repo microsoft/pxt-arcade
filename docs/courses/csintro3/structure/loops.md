@@ -93,3 +93,10 @@ console.log("" + output);
 
 1. In your own words, describe the ``initialization``, ``check``, and ``update`` steps of a for loop.
 2. In @boardname@, create a new project and place a ``||loops:repeat||`` and a ``||loops:for index||`` loop in the ``||loops:on start||``. Convert the code to JavaScript: what is different between the two loops?
+
+
+### ~hint
+
+Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/structure/loops-problems) for this section to review the material and practice the concepts introduced in this section.
+
+### ~

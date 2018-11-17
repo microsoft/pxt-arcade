@@ -170,3 +170,10 @@ player.x += 20;
 
 1. In your own words, explain why drawing your own ``||sprites:Sprites||`` can be important when creating new games.
 2. How do ``||sprites:Sprite Properties||`` allow you to interact with ``||sprites:Sprites||``?
+
+
+### ~hint
+
+Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/structure/sprites-problems) for this section to review the material and practice the concepts introduced in this section.
+
+### ~

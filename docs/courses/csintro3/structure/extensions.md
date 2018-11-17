@@ -115,6 +115,11 @@ myCorg.bark();
 1. Explain what is the same when using extensions in JavaScript and using extensions in Blocks.
 2. Why do you think the extensions have to be added through the extensions menu? Open the ``Explorer`` below the simulator; is there any difference between what is there when you first open the editor, and what is there after you add an extension?
 
+### ~hint
+
+Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/structure/extensions-problems) for this section to review the material and practice the concepts introduced in this section.
+
+### ~
 
 ```package
 corgio
