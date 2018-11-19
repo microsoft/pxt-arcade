@@ -104,6 +104,6 @@ The ``||variables:hero||`` is a bit picky about where they want to be. Change th
 
 Use a ``||loops:for||`` loop to create **twelve** ``||sprites:sprites||`` with an image of your choice.
 
-Give each ``||sprites:sprite||`` a velocity to make it move to the left. Set their ``||sprites:y||`` position to 10 times the loop variable (``||variables:i||``), and their ``||sprites:x||`` position to ``||scene:screenWidth()||``.
+Give each ``||sprites:sprite||`` a velocity to make it move to the left. Set their ``||sprites:y||`` position to 10 times the loop variable (``||variables:i||``), and their ``||sprites:x||`` position to ``||scene:screenWidth||``.
 
 ``||loops:Pause||`` for 500 ms between enemies so they do not all appear at once.
