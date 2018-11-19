@@ -10,7 +10,7 @@ To more appropriately handle a situation like this, the ``switch`` statement can
 
 The ``switch`` statement takes a value and checks that value against a series of ``case``s. Combined, this is often called a ``switch case``, as neither statement is particularly useful without the other.
 
-```typescript
+```typescript-ignore
 switch (valueToCheck) {
     case FirstCase: {
         // code to run for FirstCase
