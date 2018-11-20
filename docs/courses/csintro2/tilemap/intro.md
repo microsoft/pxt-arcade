@@ -409,7 +409,7 @@ scene.setTile(5, img`
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `, false)
-controller.controlSprite(HomeOwner, 100, 100)
+controller.moveSprite(HomeOwner, 100, 100)
 ```
 
 For the "newHome" example, we have made a tile map that is significantly larger than the screen size by increasing the size to 32x32 within the ``||scene:tile map||`` image editor.

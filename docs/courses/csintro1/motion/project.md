@@ -18,7 +18,7 @@ Make your own unique games!
 
 * ``||sprites:Sprites||``
 * Sprite Position (coordinates)
-* Controller (dx) and ``||controller:control sprite with||``
+* Controller (dx) and ``||controller:move mySprite with buttons||``
 * ``||sprites:overlap||`` Events / sprite ``||sprites:kind||``
 * "Spawning" sprites: ``||sprites:create||`` and ``||sprites:on create||``
 * ``||math:random||``

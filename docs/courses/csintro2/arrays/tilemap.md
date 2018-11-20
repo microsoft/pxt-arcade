@@ -45,7 +45,7 @@ mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-controller.controlSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite, 100, 100)
 scene.setTileMap(img`
 1 1 1 1 1 1 1 1 1 1 
 1 2 2 2 2 2 2 2 2 1 
@@ -133,7 +133,7 @@ mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-controller.controlSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite, 100, 100)
 scene.setTile(15, img`
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 2 2 2 . . . . . . . . . . 2 2 2 
@@ -237,7 +237,7 @@ mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
 scene.cameraFollowSprite(mySprite)
-controller.controlSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite, 100, 100)
 scene.setTile(15, img`
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 2 2 2 . . . . . . . . . . 2 2 2 
@@ -404,7 +404,7 @@ player = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-controller.controlSprite(player, 100, 100)
+controller.moveSprite(player, 100, 100)
 buildLevel()
 ```
 

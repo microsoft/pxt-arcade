@@ -68,7 +68,7 @@ controller.setPlayerSprite(PlayerNumber.One, sprites.create(img`
 . . . . . . 5 5 5 5 5 . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player));
-controller.controlPlayer(PlayerNumber.One, 100, 100);
+controller.movePlayer(PlayerNumber.One, 100, 100);
 ```
 
 ## Student Task #1: Loading Player Two
@@ -115,7 +115,7 @@ controller.setPlayerSprite(PlayerNumber.One, sprites.create(img`
 2 2 2 2 2 . . . . . . . . . . . 
 2 2 2 2 2 . . . . . . . . . . . 
 `, SpriteKind.Player));
-controller.controlPlayer(PlayerNumber.One, 0, 100);
+controller.movePlayer(PlayerNumber.One, 0, 100);
 controller.playerSprite(PlayerNumber.One).x = 0
 controller.playerSprite(PlayerNumber.One).setFlag(SpriteFlag.StayInScreen, true)
 controller.setPlayerSprite(PlayerNumber.Two, sprites.create(img`
@@ -136,7 +136,7 @@ controller.setPlayerSprite(PlayerNumber.Two, sprites.create(img`
 . . . . . . . . . . . 8 8 8 8 8 
 . . . . . . . . . . . 8 8 8 8 8 
 `, SpriteKind.Player));
-controller.controlPlayer(PlayerNumber.Two, 0, 100);
+controller.movePlayer(PlayerNumber.Two, 0, 100);
 controller.playerSprite(PlayerNumber.Two).x = scene.screenWidth()
 controller.playerSprite(PlayerNumber.Two).setFlag(SpriteFlag.StayInScreen, true)
 ```
