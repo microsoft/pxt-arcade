@@ -64,7 +64,11 @@ declare interface JacDacDriverStatus {
 
     /** If paired, paired instance address */
     //% property shim=JacDacDriverStatusMethods::isPairedInstanceAddress
-    isPairedInstanceAddress(address: uint8): uint32;
+    isPairedInstanceAddress(address: uint8): boolean;
+
+    /** Sends a pairing packet */
+    //% shim=JacDacDriverStatusMethods::sendPairingPacket
+    sendPairingPacket(buf: Buffer): void;
 }
 
 // Auto-generated. Do not edit. Really.
