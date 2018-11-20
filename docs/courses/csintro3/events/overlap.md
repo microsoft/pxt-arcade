@@ -130,8 +130,8 @@ game.onUpdateInterval(1000, function () {
 . 1 1 1 1 .
 . . 1 1 . . 
 `, Math.randomRange(-40, 40), 30, SpriteKind.Ball);
-    ball.x = scene.screenWidth() / 2;
-    ball.y = scene.screenHeight() / 2;
+    ball.x = screen.width / 2;
+    ball.y = screen.height / 2;
 })
 ```
 

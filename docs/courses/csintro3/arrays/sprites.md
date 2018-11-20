@@ -24,9 +24,9 @@ let player: Sprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Pl
 let enemy1: Sprite = sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy);
 let enemy2: Sprite = sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy);
 let enemy3: Sprite = sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy);
-enemy1.x = Math.randomRange(10, scene.screenWidth() - 10);
-enemy2.x = Math.randomRange(10, scene.screenWidth() - 10);
-enemy3.x = Math.randomRange(10, scene.screenWidth() - 10);
+enemy1.x = Math.randomRange(10, screen.width - 10);
+enemy2.x = Math.randomRange(10, screen.width - 10);
+enemy3.x = Math.randomRange(10, screen.width - 10);
 ```
 
 ### Example #1b: ``||variables:enemies||`` Array
@@ -40,16 +40,16 @@ let player: Sprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Pl
 let enemies: Sprite[] = [sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy),
                         sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy),
                         sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy)];
-enemies[0].x = Math.randomRange(10, scene.screenWidth() - 10);
-enemies[1].x = Math.randomRange(10, scene.screenWidth() - 10);
-enemies[2].x = Math.randomRange(10, scene.screenWidth() - 10);
+enemies[0].x = Math.randomRange(10, screen.width - 10);
+enemies[1].x = Math.randomRange(10, screen.width - 10);
+enemies[2].x = Math.randomRange(10, screen.width - 10);
 ```
 
 ## Student Task #1: Redundancy and Randomness
 
 1. Start with the code from example #1b
 2. The code is a bit redundant when setting the ``||sprites:x||`` position for each ``||sprites:Enemy||``: modify the code to use a ``||loops:for||`` loop instead
-3. Set each ``||sprites:Enemy||`` to have a random ``||sprites:y||`` position between ``10`` and ``||scene:scene.screenHeight() - 10||``
+3. Set each ``||sprites:Enemy||`` to have a random ``||sprites:y||`` position between ``10`` and ``||scene:screen.height - 10||``
 4. Use ``||math:Math.pickRandom||`` to select a random ``||sprites:Enemy||``. Make the selected ``||sprites:Enemy||`` ``||sprites:say||`` "I've been chosen!" for 1000 ms
 5. **Challenge:** can steps 2 through 4 of this task be completed using the code from example #1a to start? Which version is easier to work with?
 
@@ -68,8 +68,8 @@ let characters: Sprite[] = [];
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     let newCharacter: Sprite = sprites.create(sprites.food.smallPizza, SpriteKind.Player);
-    newCharacter.x = Math.randomRange(0, scene.screenWidth());
-    newCharacter.y = Math.randomRange(0, scene.screenHeight());
+    newCharacter.x = Math.randomRange(0, screen.width);
+    newCharacter.y = Math.randomRange(0, screen.height);
     characters.push(newCharacter);
 });
 
@@ -103,8 +103,8 @@ enum SpriteKind {
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     let newCharacter: Sprite = sprites.create(sprites.food.smallPizza, SpriteKind.Player);
-    newCharacter.x = Math.randomRange(0, scene.screenWidth());
-    newCharacter.y = Math.randomRange(0, scene.screenHeight());
+    newCharacter.x = Math.randomRange(0, screen.width);
+    newCharacter.y = Math.randomRange(0, screen.height);
 })
 
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {

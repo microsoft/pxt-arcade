@@ -96,8 +96,8 @@ enum SpriteKind {
 }
 let topSprite: Sprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player);
 let bottomSprite: Sprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player);
-topSprite.setPosition(scene.screenWidth() / 2, 40);
-bottomSprite.setPosition(scene.screenWidth() / 2, 80);
+topSprite.setPosition(screen.width / 2, 40);
+bottomSprite.setPosition(screen.width / 2, 80);
 
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     topSprite.say("Pressed", 1000);

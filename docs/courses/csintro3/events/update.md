@@ -61,7 +61,7 @@ enum SpriteKind {
 
 game.onUpdateInterval(250, function () {
     let star = sprites.createProjectile(img`1`, 50, 0, SpriteKind.Star);
-    star.y = Math.randomRange(0, scene.screenHeight());
+    star.y = Math.randomRange(0, screen.height);
 });
 ```
 
@@ -71,7 +71,7 @@ game.onUpdateInterval(250, function () {
 2. Create a second ``||game:game.onUpdateInterval||`` event, with a period of 750 ms
 3. In the new ``||game:game.onUpdateInterval||`` event, create a projectile with an image of an Asteroid
 4. Give the asteroid a ``||math:random||`` ``||sprites:vx||`` between -15 and 15, and a ``||sprites:vy||`` of 50
-5. Assign the asteroid a ``||math:random||`` ``||sprites:x||`` position between 0 and ``||scene:scene.screenWidth()||``
+5. Assign the asteroid a ``||math:random||`` ``||sprites:x||`` position between 0 and ``||scene:screen.width||``
 
 ## What did we learn?
 
@@ -91,7 +91,7 @@ enum SpriteKind {
 
 game.onUpdate(function () {
     let star = sprites.createProjectile(img`1`, 50, 0, SpriteKind.Star);
-    star.y = Math.randomRange(0, scene.screenHeight());
+    star.y = Math.randomRange(0, screen.height);
     pause(250);
 });
 ```

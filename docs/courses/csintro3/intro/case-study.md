@@ -620,8 +620,8 @@ namespace state {
 
     chargeBar.z = 50;
     chargeBar.setFlag(SpriteFlag.Ghost, true);
-    chargeBar.right = scene.screenWidth() - 2;
-    chargeBar.bottom = scene.screenHeight() - 2;
+    chargeBar.right = screen.width - 2;
+    chargeBar.bottom = screen.height - 2;
 
     game.onUpdateInterval(1000, function () {
         charge = Math.min(charge + 1, maxCharge);
@@ -1092,8 +1092,8 @@ namespace state {
 
     chargeBar.z = 50;
     chargeBar.setFlag(SpriteFlag.Ghost, true);
-    chargeBar.right = scene.screenWidth() - 2;
-    chargeBar.bottom = scene.screenHeight() - 2;
+    chargeBar.right = screen.width - 2;
+    chargeBar.bottom = screen.height - 2;
 
     let boostDisplay = sprites.create(image.create(15, 10));
     boostDisplay.right = chargeBar.left - 2;

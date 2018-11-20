@@ -70,7 +70,7 @@ enum SpriteKind {
 
 game.onUpdate(function () {
     let star = sprites.createProjectile(img`1`, 50, 0, SpriteKind.Star);
-    star.y = Math.randomRange(0, scene.screenHeight());
+    star.y = Math.randomRange(0, screen.height);
 });
 ```
 
@@ -79,7 +79,7 @@ game.onUpdate(function () {
 1. Start with the code from example #2
 2. In the ``||game:game.onUpdate||`` event, create another projectile with an image of an Asteroid
 3. Give the asteroid a ``||math:random||`` ``||sprites:vx||`` between -15 and 15, and a ``||sprites:vy||`` of 50
-4. Assign the asteroid a ``||math:random||`` ``||sprites:x||`` position between 0 and ``||scene:scene.screenWidth()||``
+4. Assign the asteroid a ``||math:random||`` ``||sprites:x||`` position between 0 and ``||scene:screen.width||``
 
 ### ~hint
 
@@ -122,8 +122,8 @@ game.onUpdate(function () {
     if (mySprite.x < 0) {
         mySprite.x = 0;
         mySprite.vx = -mySprite.vx;
-    } else if (mySprite.x > scene.screenWidth()) {
-        mySprite.x = scene.screenWidth();
+    } else if (mySprite.x > screen.width) {
+        mySprite.x = screen.width;
         mySprite.vx = -mySprite.vx;
     }
 });
@@ -136,7 +136,7 @@ game.onUpdate(function () {
 3. In the ``||game:game.onUpdate||`` event, add an additional ``||logic:if ... else if||`` section after the first one
 4. In this ``||logic:if ... else if||`` section, 
     * if ``mySprite.y < 0``, set the ``||sprites:Sprite||``'s ``||sprites:y||`` position to 0 and reverse it's ``||sprites:vy||``
-    * if ``mySprite.y > scene.screenWidth()``, set the ``||sprites:Sprite||``'s ``||sprites:y||`` position to ``||scene:screenWidth()||`` and reverse it's ``||sprites:vy||``
+    * if ``mySprite.y > screen.width``, set the ``||sprites:Sprite||``'s ``||sprites:y||`` position to ``||scene:screen.width||`` and reverse it's ``||sprites:vy||``
 
 ## What did we learn?
 
