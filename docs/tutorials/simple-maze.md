@@ -84,7 +84,7 @@ mySprite = sprites.create(img`
 . . . 2 2 2 . 2 . . . . . . . . 
 . . . 2 . . . . 2 2 . . . . . . 
 `)
-controller.controlSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite, 100, 100)
 ```
 
 ## Step 4
@@ -111,7 +111,7 @@ mySprite = sprites.create(img`
 . . . 2 2 2 . 2 . . . . . . . . 
 . . . 2 . . . . 2 2 . . . . . . 
 `)
-controller.controlSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite, 100, 100)
 scene.setTile(0, img`
 a a a a a a a a a a a a a a a a 
 a a a a a a a a a a a a a a a a 
@@ -156,7 +156,7 @@ mySprite = sprites.create(img`
 . . . 2 2 2 . 2 . . . . . . . . 
 . . . 2 . . . . 2 2 . . . . . . 
 `)
-controller.controlSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite, 100, 100)
 scene.setTile(10, img`
 a a a a a a a a a a a a a a a a 
 a a a a a a a a a a a a a a a a 
@@ -201,7 +201,7 @@ mySprite = sprites.create(img`
 . . . 2 2 2 . 2 . . . . . . . . 
 . . . 2 . . . . 2 2 . . . . . . 
 `)
-controller.controlSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite, 100, 100)
 scene.setTile(10, img`
 a a a a a a a a a a a a a a a a 
 a a a a a a a a a a a a a a a a 
@@ -256,7 +256,7 @@ mySprite = sprites.create(img`
 . . . 2 2 2 . 2 . . . . . . . . 
 . . . 2 . . . . 2 2 . . . . . . 
 `)
-controller.controlSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite, 100, 100)
 scene.setTile(10, img`
 a a a a a a a a a a a a a a a a 
 a a a a a a a a a a a a a a a a 

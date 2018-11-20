@@ -12,7 +12,7 @@ It is a good idea to start the game as a MVP (minimum viable project) to demonst
 
 * Use at least one concept from each section of the course - for example, from [Motion](/courses/csintro1/motion), you could use:
 
->* ``||controller:control sprite with vx vy||``
+>* ``||controller:move mySprite with buttons||``
 >* ``||controller:on A button pressed||``
 >* ``||sprites:on overlap events||``
 

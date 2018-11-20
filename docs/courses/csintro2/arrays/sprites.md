@@ -217,7 +217,7 @@ player = sprites.create(img`
 1 . . . 1 
 . 1 1 1 . 
 `, SpriteKind.Player)
-controller.controlSprite(player, 100, 100)
+controller.moveSprite(player, 100, 100)
 enemy = sprites.create(img`
 2 . . 2 
 . . . . 

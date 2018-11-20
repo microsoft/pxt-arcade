@@ -23,7 +23,7 @@ sprite = sprites.create(img`
 4 4 4 4 4 4 4 4
 4 4 4 4 4 4 4 4
 `, SpriteKind.Player)
-controller.controlSprite(sprite, 100, 100)
+controller.moveSprite(sprite, 100, 100)
 sprite.setFlag(SpriteFlag.StayInScreen, true)
 game.onUpdateInterval(500, function () {
     info.changeScoreBy(1)

@@ -16,7 +16,7 @@ Make your own unique games!
 
 ### Concepts Learned
 * ``||sprites:Sprites||`` and ``||sprites:Projectiles||``
-* Controller (dx) and ``||controller:control sprite with||``
+* Controller (dx) and ``||controller:move mySprite with buttons||``
 * ``||functions:Functions||``
 * ``||logic:Logic||``
 * ``||scene:Tile Maps||``

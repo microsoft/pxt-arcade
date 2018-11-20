@@ -205,7 +205,7 @@ mySprite = sprites.create(img`
 . 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-controller.controlSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite, 100, 100)
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
 music.playTone(262, music.beat(BeatFraction.Half))
 music.playTone(392, music.beat(BeatFraction.Half))
@@ -267,7 +267,7 @@ player = sprites.create(img`
 . 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-controller.controlSprite(player, 100, 100)
+controller.moveSprite(player, 100, 100)
 player.setFlag(SpriteFlag.StayInScreen, true)
 princess = sprites.create(sprites.castle.princessFront0, SpriteKind.Princess)
 princess.setPosition(50, 50)
