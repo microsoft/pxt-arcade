@@ -41,7 +41,7 @@ mySprite = sprites.create(img`
 . . . . . . . . . f f . . . . . 
 `, SpriteKind.Player)
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
-controller.controlSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite, 100, 100)
 info.setScore(0)
 info.setLife(3)
 game.onUpdateInterval(1000, function () {

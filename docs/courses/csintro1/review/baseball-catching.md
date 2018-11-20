@@ -11,7 +11,7 @@ Start the project, and create a mitt for the player to control.
 1. Create a new project in @boardname@
 2. Create a new sprite representing a mitt
 3. Change the variable name from ``||variables:mySprite||`` to ``||variables:mitt||``, and the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Mitt||``
-4. Make ``||variables:mitt||`` move based off the direction keys using ``||controller:control sprite with||``
+4. Make ``||variables:mitt||`` move based off the direction keys using ``||controller:move sprite with buttons||``
 5. Make ``||variables:mitt||`` stay in screen using ``||sprites:set mySprite stay in screen on||``
 
 ## Student Task #2: Throwing Balls

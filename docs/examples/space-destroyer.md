@@ -38,7 +38,7 @@ asteroids = [sprites.space.spaceSmallAsteroid1, sprites.space.spaceSmallAsteroid
 ship = sprites.create(sprites.space.spaceRedShip, SpriteKind.Player)
 ship.setFlag(SpriteFlag.StayInScreen, true)
 ship.bottom = 120
-controller.controlSprite(ship, 100, 0)
+controller.moveSprite(ship, 100, 0)
 game.onUpdateInterval(200, function () {
     projectile = sprites.createProjectile(Math.pickRandom(asteroids), 0, 75, SpriteKind.Enemy, item)
     projectile.x = Math.randomRange(10, 150)

@@ -20,7 +20,7 @@ Make your own unique games!
 ### Concepts Learned
 
 * ``||sprites:Sprites||`` and ``||sprites:Projectiles||``
-* Controller (dx) and ``||controller:control sprite with||``
+* Controller (dx) and ``||controller:move mySprite with buttons||``
 * ``||loops:on game update||`` and ``||loops:on game update every||``
 * ``||loops:repeat||`` and ``||loops:for||`` loop
 * ``||functions:Functions||`` 

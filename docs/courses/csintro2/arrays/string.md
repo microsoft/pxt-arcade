@@ -155,7 +155,7 @@ mySprite = sprites.create(img`
 . . . f f f f f f f f f f . . . 
 . . . . . f f . . f f . . . . . 
 `, SpriteKind.Player)
-controller.controlSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite, 100, 100)
 text_list = ["oww", "no walls", "oh no", "I stubbed my toe"]
 ```
 

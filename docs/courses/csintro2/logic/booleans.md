@@ -103,7 +103,7 @@ game.onUpdateInterval(5000, function () {
 ## Student Task #2: ``||logic:not||``  Left (is Right)
 
 1. Start a new project
-2. Create a ``||sprites:sprite||`` and use the ``||controller:control with||`` block to move the sprite around the screen
+2. Create a ``||sprites:sprite||`` and use the ``||controller:move mySprite with buttons||`` block to move the sprite around the screen
 3. Make a variable named ``||variables:isLeft||`` and set it equal to ``||logic:false||``
 4. In the ``||game:on game update||`` block, assign ``||variables:isLeft||`` to a ``||logic:0 < 0||`` comparison. Replace the first ``0`` with the ``||sprites:sprites||`` ``||sprites:x||`` position, and the second ``0`` with 80
 5. Make it so that if the player presses the ``||controller:A||`` button, if ``||variables:isLeft||`` is ``||logic:false||``, then the sprite should ``||sprites:say||`` something
@@ -240,7 +240,7 @@ else                game.splash("false or false is false")
 ## Student Task #4: Using ``||logic:and||`` and ``||logic:or||``
 
 1. Create a new project
-2. Create a sprite, and use ``||controller:control sprite with||`` to make it move when the directional keys are pressed
+2. Create a sprite, and use ``||controller:move mySprite with buttons||`` to make it move when the directional keys are pressed
 3. In the ``||game:on game update||`` block, add an ``||logic:if||`` statement that makes the sprite ``||sprites:say||`` "hello" for 200 milliseconds when the ``||sprites:sprite x||`` value is less than 30 ``||logic:and||`` ``||sprites:sprite y||`` is less than 30.
 4. In the ``||game:on game update||`` block, add another ``||logic:if||`` statement that makes the sprite ``|sprites:say||`` "bye" for 200 ms when the ``||sprites:sprite x||`` is greater than 80 ``||logic:or||`` the ``||sprites:sprite y||`` is greater than 80
 5. **Challenge**: create the same behavior while using one or more ``||logic:not||`` blocks

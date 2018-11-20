@@ -84,7 +84,7 @@ mySprite = sprites.create(img`
 . . . 2 2 2 . 2 . . . . . . . . 
 . . . 2 . . . . 2 2 . . . . . . 
 `)
-controller.controlSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite, 100, 100)
 ```
 
 ## Step 4

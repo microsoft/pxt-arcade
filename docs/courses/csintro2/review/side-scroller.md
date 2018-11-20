@@ -74,7 +74,7 @@ Make ``||variables:myCar||`` move, and simulate random 'bumps' in the terrain
 
 1. Give ``||variables:myCar||`` a velocity of 10 in the ``X`` direction
 2. Give ``||variables:myCar||`` an acceleration of 3 in the ``X`` direction
-3. Use ``||controller:control sprite myCar with vx 0 vy 30||`` to make ``||variables:myCar||`` to allow the player to move up and down
+3. Use ``||controller:move myCar with buttons vx 0 vy 30||`` to allow the player to move up and down
 4. Create a ``||loops:forever||`` block
 5. Inside the ``||loops:forever||``, make the player 'bump' up and down:
     * change ``||variables:myCar||``'s ``Y`` position by -2

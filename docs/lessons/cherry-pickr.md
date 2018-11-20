@@ -121,7 +121,7 @@ scene.setTileMap(img`
 a a a a a a a a a a 
 `)
 agent = sprites.create(sprites.castle.princessFront0, SpriteKind.Player)
-controller.controlSprite(agent, 150, 150)
+controller.moveSprite(agent, 150, 150)
 scene.cameraFollowSprite(agent)
 ```
 
@@ -201,7 +201,7 @@ scene.setTileMap(img`
 a a a a a a a a a a 
 `)
 agent = sprites.create(sprites.castle.princessFront0, SpriteKind.Player)
-controller.controlSprite(agent, 150, 150)
+controller.moveSprite(agent, 150, 150)
 scene.cameraFollowSprite(agent)
 info.startCountdown(60)
 info.setScore(0)
@@ -245,7 +245,7 @@ scene.setTileMap(img`
 a a a a a a a a a a 
 `)
 agent = sprites.create(sprites.castle.princessFront0, SpriteKind.Player)
-controller.controlSprite(agent, 150, 150)
+controller.moveSprite(agent, 150, 150)
 scene.cameraFollowSprite(agent)
 info.startCountdown(60)
 info.setScore(0)

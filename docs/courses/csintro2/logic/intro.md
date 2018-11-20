@@ -88,7 +88,7 @@ mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-controller.controlSprite(mySprite, 0, 50)
+controller.moveSprite(mySprite, 0, 50)
 mySprite.x = 8
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
 info.setScore(0)
@@ -136,7 +136,7 @@ https://youtu.be/VYmc4szD5mU
 ## Task #1b: Sprite Position
 
 1. Create a new project
-2. Create a sprite, and use ``||controller:control sprite with||`` to make it move when the directional keys are pressed
+2. Create a sprite, and use ``||controller:move mySprite with buttons||`` to make it move when the directional keys are pressed
 3. When the player is on the left half of the screen and the player presses the ``||controller:A||``button, make the score increase by 1
 
 ### ~hint
@@ -190,7 +190,7 @@ mySprite = sprites.create(img`
 . . . f f f f f f f f f f . . . 
 . . . . . f f . . f f . . . . . 
 `, SpriteKind.Player)
-controller.controlSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite, 100, 100)
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
 game.splash("Collect 5 cherries")
 game.onUpdateInterval(500, function () {
@@ -286,7 +286,7 @@ mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-controller.controlSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite, 100, 100)
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
 info.setLife(3)
 forever(function () {
@@ -360,7 +360,7 @@ mySprite = sprites.create(img`
 . . . f f f f f f f f f f . . . 
 . . . . . f f . . f f . . . . . 
 `, SpriteKind.Player)
-controller.controlSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite, 100, 100)
 info.setLife(5)
 ```
 
