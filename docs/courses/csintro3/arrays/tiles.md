@@ -25,7 +25,7 @@ enum SpriteKind {
 }
 
 let mySprite: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player);
-controller.controlSprite(mySprite, 100, 100);
+controller.moveSprite(mySprite, 100, 100);
 
 scene.setTileMap(img`
 7 7 7 7 7 7 7 7 7 7 
@@ -186,7 +186,7 @@ for (let i = 0; i < flowerTiles.length; i++) {
 }
 
 let player: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player);
-controller.controlSprite(player, 100, 100);
+controller.moveSprite(player, 100, 100);
 scene.cameraFollowSprite(player);
 ```
 

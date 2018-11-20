@@ -128,7 +128,7 @@ for (let i = 0; i < 5; i++) {
 
 ## Student Task #3: Random Responses
 
-1. Create two sprites: a ``||sprites:Player||``, that is controlled using ``||controller:controller.controlSprite||``, and a ``||sprites:Friend||``. Set the ``||sprites:Friend||`` ``||sprites:x||`` position to 130
+1. Create two sprites: a ``||sprites:Player||``, that is controlled using ``||controller:controller.moveSprite||``, and a ``||sprites:Friend||``. Set the ``||sprites:Friend||`` ``||sprites:x||`` position to 130
 2. Create an ``||sprites:on overlap||`` event between the ``||sprites:Player||`` and the ``||sprites:Friend||``
 3. Store an array of strings in the variable ``||variables:greetings||``. Include at least 4 short greetings (for example, "hello friend!")
 4. In the ``||sprites:on overlap||`` event, make the ``||sprites:Friend||`` ``||sprites:say||`` a ``||math:random||`` string from ``||variables:greetings||`` for 500 ms

@@ -64,7 +64,7 @@ enum SpriteKind {
     Enemy
 }
 let mySprite: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player);
-controller.controlSprite(mySprite, 100, 100);
+controller.moveSprite(mySprite, 100, 100);
 scene.setTileMap(img`
 5 5 5 5 5 5 5 5 5 d 
 5 5 5 5 5 5 5 5 d 8 
@@ -170,7 +170,7 @@ enum SpriteKind {
 }
 let mySprite: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player);
 scene.cameraFollowSprite(mySprite);
-controller.controlSprite(mySprite, 100, 100);
+controller.moveSprite(mySprite, 100, 100);
 scene.setBackgroundColor(7);
 scene.setTileMap(img`
 f f f f f f f f f f f f f f f f 

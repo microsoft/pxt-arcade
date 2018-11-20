@@ -123,7 +123,7 @@ When calling the ``||sprites:sprites.allOfKind||`` function, it is best to keep 
 
 ## Student Task #2: Sprites of Kind ``||sprites:Enemy||``
 
-1. Start with the code from task #1. Use ``||controller:controller.controlSprite||`` to make the ``||sprites:Player||`` move around the screen with the arrow keys
+1. Start with the code from task #1. Use ``||controller:controller.moveSprite||`` to make the ``||sprites:Player||`` move around the screen with the arrow keys
 2. Instead of creating the array with three elements in it, use a ``||loops:for||`` loop to create **5** ``||sprites:Enemy||``s and then use ``||sprites:sprites.allOfKind||`` to create the ``||variables:enemies||`` array
 3. Add an ``||sprites:on overlap||`` event between ``||sprites:Player||`` and ``||sprites:Enemy||``
 4. In the ``||sprites:on overlap||`` event, ``||sprites:destroy||`` the ``||sprites:Enemy||`` sprite, and then create a new ``||sprites:Enemy||`` sprite and position them in a random location on the screen
@@ -151,7 +151,7 @@ enum SpriteKind {
 let player: Sprite = sprites.create(sprites.food.smallPizza, SpriteKind.Player);
 let enemy: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Enemy);
 
-controller.controlSprite(player, 100, 100);
+controller.moveSprite(player, 100, 100);
 
 game.onUpdateInterval(200, function () {
     if (enemy.x != player.x) {

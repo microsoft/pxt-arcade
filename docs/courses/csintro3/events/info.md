@@ -65,7 +65,7 @@ enum SpriteKind {
 let mySprite = sprites.create(img`
 1 1 1
 `, SpriteKind.Player);
-controller.controlSprite(mySprite, 100, 100);
+controller.moveSprite(mySprite, 100, 100);
 
 let enemy = sprites.create(img`
 5 2 5

@@ -456,7 +456,7 @@ namespace ship {
     info.setLife(3);
     info.setScore(0);
 
-    controller.controlSprite(player, 80, 30);
+    controller.moveSprite(player, 80, 30);
     player.y = screen.height - 20;
 
     // let laserImage: Image = img`
@@ -956,7 +956,7 @@ namespace ship {
     info.setLife(3);
     info.setScore(0);
 
-    controller.controlSprite(player, 80, 30);
+    controller.moveSprite(player, 80, 30);
     player.y = screen.height - 20;
 
     controller.A.onEvent(ControllerButtonEvent.Pressed, function () {

@@ -57,7 +57,7 @@ The ``||controller:controller||`` namespace contains a number of different butto
 
 A ``||sprites:Sprite||`` will often serve as the main character of a game. As such, ``||controller:button||`` events will often be used to control the player.
 
-In previous lessons, ``||controller:controller.controlSprite||`` was introduced to easily control ``||sprites:sprites||``, but it is important to be able to control them using simple events as well. This way, you can change the way the sprite behaves to your liking, instead of having to stick with the default behavior.
+In previous lessons, ``||controller:controller.moveSprite||`` was introduced to easily control ``||sprites:sprites||``, but it is important to be able to control them using simple events as well. This way, you can change the way the sprite behaves to your liking, instead of having to stick with the default behavior.
 
 ## Example #2: To the Left
 

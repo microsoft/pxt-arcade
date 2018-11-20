@@ -14,21 +14,21 @@ Creating and controlling ``||sprites:Sprites||`` are two of the most important s
 
 ```typescript
 let player: Sprite = sprites.create(sprites.castle.princessFront0, 0);
-controller.controlSprite(player, 100, 100);
+controller.moveSprite(player, 100, 100);
 ```
 
 In the example above, the sprite is created using ``||sprites:sprites.create||``. There is a lot to take in, though:
 
 * Notice the type of ``||variables:player||``: it is a ``||sprites:Sprite||``
 * The function that creates the ``||sprites:Sprite||`` takes in two things: an image (``||sprites:sprites.castle.princessFront0||`` is one of the provided images to start with), and a ``||sprites:kind||`` of 0
-* ``||controller:controller.controlSprite||`` is a function that takes a ``||sprites:Sprite||`` and allows it to to move around the screen as using the direction keys. Besides the ``||sprites:Sprite||``, it also needs two numbers: one for the horizontal velocity, and one for the vertical velocity
+* ``||controller:controller.moveSprite||`` is a function that takes a ``||sprites:Sprite||`` and allows it to to move around the screen as using the direction keys. Besides the ``||sprites:Sprite||``, it also needs two numbers: one for the horizontal velocity, and one for the vertical velocity
 
 ## Student Task #1: Slow the New Sprite
 
 1. Start with the code from example #1
 2. Change the image of the ``||sprites:Sprite||`` from ``||sprites:princessFront0||`` to ``||sprites:princess2Front||`` (the ``||sprites:sprites.castle.||`` part should remain in front)
-3. Change the ``||sprites:vx||`` in ``||controller:controller.controlSprite||`` to 50
-4. Change the ``||sprites.vy||`` in ``||controller:controller.controlSprite||`` to 150
+3. Change the ``||sprites:vx||`` in ``||controller:controller.moveSprite||`` to 50
+4. Change the ``||sprites.vy||`` in ``||controller:controller.moveSprite||`` to 150
 5. Play the game, and identify how it has changed in this task
 
 ### ~hint
@@ -79,7 +79,7 @@ let player = sprites.create(img`
 . . . f f f f f f f f f f . . . 
 . . . . . f f . . f f . . . . . 
 `, SpriteKind.Player);
-controller.controlSprite(player, 100, 100);
+controller.moveSprite(player, 100, 100);
 ```
 
 This code will need some explanation. It includes two features of JavaScript - called ``enums`` and ``tagged templates`` - that are a bit advanced, and out of the scope of this course to cover in detail. For our purposes, we can use the following simplified descriptions:
@@ -120,7 +120,7 @@ let square = sprites.create(img`
 1 1 1 
 1 1 1 
 `, SpriteKind.Square);
-controller.controlSprite(square, 100, 100);
+controller.moveSprite(square, 100, 100);
 ```
 
 ## Student Task #2: Adding Sprites

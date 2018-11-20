@@ -31,7 +31,7 @@ enum SpriteKind {
 let mySprite = sprites.create(img`
 1 1 1
 `, SpriteKind.Player);
-controller.controlSprite(mySprite, 100, 100);
+controller.moveSprite(mySprite, 100, 100);
 
 let enemy = sprites.create(img`
 5 2 5
@@ -73,7 +73,7 @@ enum SpriteKind {
 let mySprite = sprites.create(img`
 1 1 1
 `, SpriteKind.Player);
-controller.controlSprite(mySprite, 100, 100);
+controller.moveSprite(mySprite, 100, 100);
 
 let enemy = sprites.create(img`
 5 2 5
@@ -119,7 +119,7 @@ d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
 d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
 `, SpriteKind.Paddle);
 paddle.y += 50;
-controller.controlSprite(paddle, 100, 0)
+controller.moveSprite(paddle, 100, 0)
 
 game.onUpdateInterval(1000, function () {
     let ball: Sprite = sprites.createProjectile(img`
