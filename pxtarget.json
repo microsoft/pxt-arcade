@@ -70,7 +70,7 @@
         "dockerImage": "pext/yotta:latest",
         "codalTarget": {
             "branches": {
-                "https://github.com/lancaster-university/codal-core": "f2bf573d26f94e72b279aadb97127663ce89ecef"
+                "https://github.com/lancaster-university/codal-core": "b0a3cfb6204042a2238c09647a52119e298685df"
             }
         }
     },
@@ -210,6 +210,7 @@
         "crowdinProject": "kindscript",
         "monacoColors": {
             "editor.background": "#FFFAE7"
-        }
+        },
+        "scriptManager": true
     }
 }

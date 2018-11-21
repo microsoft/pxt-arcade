@@ -23,40 +23,14 @@ declare namespace jacdac {
 
 declare interface JacDacDriverStatus {
     /**
-     * Retrieves the serial number in use by this driver.
-     *
-     * @return the serial number
-     **/
-    //% property shim=JacDacDriverStatusMethods::serialNumber
-    serialNumber: uint32;
-
-    /** Check if device is paired. */
-    //% property shim=JacDacDriverStatusMethods::isPaired
-    isPaired: boolean;
-
-    /** Check if device is pairable. */
-    //% property shim=JacDacDriverStatusMethods::isPairable
-    isPairable: boolean;
-
-    /** Check if driver is virtual. */
-    //% property shim=JacDacDriverStatusMethods::isVirtualDriver
-    isVirtualDriver: boolean;
-
-    /** Check if driver is paired. */
-    //% property shim=JacDacDriverStatusMethods::isPairedDriver
-    isPairedDriver: boolean;
+     * Returns the JDDevice instnace
+     */
+    //% property shim=JacDacDriverStatusMethods::device
+    device: Buffer;
 
     /** Check if driver is connected. */
     //% property shim=JacDacDriverStatusMethods::isConnected
     isConnected: boolean;
-
-    /** Get device class. */
-    //% property shim=JacDacDriverStatusMethods::driverClass
-    driverClass: uint32;
-
-    /** Get device class. */
-    //% property shim=JacDacDriverStatusMethods::driverAddress
-    driverAddress: uint8;
 
     /** Get device id for events. */
     //% property shim=JacDacDriverStatusMethods::id
@@ -64,7 +38,7 @@ declare interface JacDacDriverStatus {
 
     /** If paired, paired instance address */
     //% property shim=JacDacDriverStatusMethods::isPairedInstanceAddress
-    isPairedInstanceAddress(address: uint8): uint32;
+    isPairedInstanceAddress(address: uint8): boolean;
 }
 
 // Auto-generated. Do not edit. Really.
