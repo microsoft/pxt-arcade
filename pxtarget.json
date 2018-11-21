@@ -210,6 +210,7 @@
         "crowdinProject": "kindscript",
         "monacoColors": {
             "editor.background": "#FFFAE7"
-        }
+        },
+        "scriptManager": true
     }
 }
