@@ -14,6 +14,18 @@ declare namespace jacdac {
     function stop(): void;
 
     /**
+     * Clears any existing bridge
+     */
+    //% shim=jacdac::clearBridge
+    function clearBridge(): void;
+
+    /**
+    Internal
+     */
+    //% shim=jacdac::__internalAddDriver
+    function __internalAddDriver(driverType: int32, driverClass: int32, methods: MethodCollection, controlData: Buffer): JacDacDriverStatus;
+
+    /**
      * Internal
      */
     //% shim=jacdac::__internalSendPacket
@@ -39,6 +51,12 @@ declare interface JacDacDriverStatus {
     /** If paired, paired instance address */
     //% property shim=JacDacDriverStatusMethods::isPairedInstanceAddress
     isPairedInstanceAddress(address: uint8): boolean;
+
+    /**
+     * Set driver as bridge
+     */
+    //% shim=JacDacDriverStatusMethods::setBridge
+    setBridge(): void;
 }
 
 // Auto-generated. Do not edit. Really.
