@@ -3,6 +3,7 @@ CACHE MANIFEST
 CACHE:
 /cdn/bluebird.min.js
 /cdn/pxtsim.js
+/sim/common-sim.js
 /sim/sim.js
 /sim/sim.css
 
