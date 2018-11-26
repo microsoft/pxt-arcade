@@ -70,7 +70,7 @@
         "dockerImage": "pext/yotta:latest",
         "codalTarget": {
             "branches": {
-                "https://github.com/lancaster-university/codal-core": "b0a3cfb6204042a2238c09647a52119e298685df"
+                "https://github.com/lancaster-university/codal-core": "d1dc4ad04860a0b02fd6c9437d77a05e9d26b898"
             }
         }
     },
@@ -85,7 +85,7 @@
                 "codalTarget": {
                     "name": "codal-big-brainpad",
                     "url": "https://github.com/lancaster-university/codal-big-brainpad",
-                    "branch": "v1.0.13",
+                    "branch": "v1.0.14",
                     "type": "git"
                 },
                 "codalBinary": "STM32",
@@ -134,7 +134,13 @@
         "log": true,
         "editorTheme": {
             "graphBackground": "#d9d9d9",
-            "lineColors": ["#009DDC", "#FB48C7", "#40bf4a", "#8073E5", "#d25b33"]
+            "lineColors": [
+                "#009DDC",
+                "#FB48C7",
+                "#40bf4a",
+                "#8073E5",
+                "#d25b33"
+            ]
         }
     },
     "runtime": {
@@ -145,7 +151,11 @@
         "textBlocks": true,
         "functionBlocks": true,
         "listsBlocks": true,
-        "bannedCategories": ["pins", "console", "control"]
+        "bannedCategories": [
+            "pins",
+            "console",
+            "control"
+        ]
     },
     "simulator": {
         "autoRun": true,
@@ -169,7 +179,8 @@
         "betaUrl": "https://github.com/Microsoft/pxt-32",
         "githubUrl": "https://github.com/Microsoft/pxt-32",
         "boardName": "Arcade",
-        "docMenu": [{
+        "docMenu": [
+            {
                 "name": "About",
                 "path": "/about"
             },
