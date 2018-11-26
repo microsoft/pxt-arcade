@@ -71,9 +71,10 @@ namespace pxsim {
      * Do not store state anywhere else!
      */
     export class Board extends pxsim.BaseBoard
-        implements pxsim.MusicBoard {
+        implements pxsim.MusicBoard, pxsim.JacDacBoard {
         public id: string;
         public bus: EventBus;
+        public jacdacState: pxsim.JacDacState;
         public audioState: AudioState;
         public background: HTMLDivElement;
         public controlsDiv: HTMLDivElement;
