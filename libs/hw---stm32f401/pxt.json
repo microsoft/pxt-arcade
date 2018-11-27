@@ -22,5 +22,10 @@
         "game": "file:../game",
         "jacdac": "file:../jacdac"
     },
-    "public": true
+    "public": true,
+    "yotta": {
+        "config": {
+            "CODAL_JACDAC_NOPIN_CTOR": 1
+        }
+    }
 }
