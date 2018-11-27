@@ -96,6 +96,7 @@ namespace pxsim {
             this.screenState = new ScreenState(null)
             this.audioState = new AudioState();
             this.jacdacState = new JacDacState(this);
+            this.addMessageListener(this.receiveScreenshot.bind(this));
         }
 
         getDefaultPitchPin(): Pin {
@@ -119,7 +120,7 @@ namespace pxsim {
             }
         }
 
-        public receiveMessage(msg: SimulatorMessage) {
+        private receiveScreenshot(msg: SimulatorMessage) {
             if (msg.type == "screenshot")
                 this.screenshotAsync((msg as SimulatorScreenshotMessage).title || pxsim.title || "...")
                     .then(img => {
