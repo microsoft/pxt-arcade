@@ -95,6 +95,7 @@ namespace pxsim {
             this.bus = new EventBus(runtime);
             this.screenState = new ScreenState(null)
             this.audioState = new AudioState();
+            this.jacdacState = new JacDacState(this);
         }
 
         getDefaultPitchPin(): Pin {
