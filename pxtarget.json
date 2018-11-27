@@ -106,7 +106,10 @@
                     "name": "codal-itsybitsy-m4",
                     "url": "https://github.com/lancaster-university/codal-itsybitsy-m4",
                     "branch": "v0.0.11",
-                    "type": "git"
+                    "type": "git",
+                    "branches": {
+                        "https://github.com/lancaster-university/codal-core": "a1e70d89fc1901215cfc744f5cf0f236b0fcc9ef"
+                    }
                 },
                 "codalBinary": "ITSYBITSY_M4",
                 "serviceId": "codal2samd51",
