@@ -1,0 +1,26 @@
+{
+    "name": "hw---stm32f103",
+    "description": "STM32F103 board",
+    "files": [
+        "config.ts",
+        "device.d.ts"
+    ],
+    "card": {
+        "name": "STM32F103 board",
+        "description": "Just a generic board, no branding yet.",
+        "learnMoreUrl": "https://arcade.makecode.com/stm32f103",
+        "cardType": "hw",
+        "imageUrl": "/static/boards/stm.jpg"
+    },
+    "compileServiceVariant": "stm32f103",
+    "dependencies": {
+        "core---stm32f103": "file:../core---stm32f103",
+        "screen---st7735": "file:../screen---st7735",
+        "mixer---none": "file:../mixer---none",
+        "controller---hw": "file:../controller---hw",
+        "buttons": "file:../buttons",
+        "game": "file:../game",
+        "jacdac": "file:../jacdac"
+    },
+    "public": true
+}
