@@ -66,7 +66,7 @@
     "compileService": {
         "buildEngine": "codal",
         "githubCorePackage": "lancaster-university/codal",
-        "gittag": "v0.6.0",
+        "gittag": "v0.6.1",
         "dockerImage": "pext/yotta:latest",
         "codalTarget": {
             "branches": {
@@ -152,7 +152,13 @@
         "log": true,
         "editorTheme": {
             "graphBackground": "#d9d9d9",
-            "lineColors": ["#009DDC", "#FB48C7", "#40bf4a", "#8073E5", "#d25b33"]
+            "lineColors": [
+                "#009DDC",
+                "#FB48C7",
+                "#40bf4a",
+                "#8073E5",
+                "#d25b33"
+            ]
         }
     },
     "runtime": {
@@ -163,7 +169,11 @@
         "textBlocks": true,
         "functionBlocks": true,
         "listsBlocks": true,
-        "bannedCategories": ["pins", "console", "control"]
+        "bannedCategories": [
+            "pins",
+            "console",
+            "control"
+        ]
     },
     "simulator": {
         "autoRun": true,
@@ -171,7 +181,7 @@
         "dynamicBoardDefinition": true
     },
     "appTheme": {
-        "logoUrl": "https://github.com/Microsoft/pxt-32",
+        "logoUrl": "https://github.com/Microsoft/pxt-arcade",
         "logo": "./static/logo.svg",
         "docsLogo": "./static/logo.svg",
         "portraitLogo": "./static/logo.svg",
@@ -184,10 +194,11 @@
         "embedUrl": "https://arcade.makecode.com/",
         "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
         "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
-        "betaUrl": "https://github.com/Microsoft/pxt-32",
-        "githubUrl": "https://github.com/Microsoft/pxt-32",
+        "betaUrl": "https://github.com/Microsoft/pxt-arcade",
+        "githubUrl": "https://github.com/Microsoft/pxt-arcade",
         "boardName": "Arcade",
-        "docMenu": [{
+        "docMenu": [
+            {
                 "name": "About",
                 "path": "/about"
             },
