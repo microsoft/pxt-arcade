@@ -10,6 +10,6 @@
   "url":"/examples/eater-princess",
   "cardType": "example",
   "imageUrl": "/static/examples/eater-princess.png"
-},
+}
 ]
 ```
