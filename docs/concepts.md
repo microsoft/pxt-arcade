@@ -6,7 +6,7 @@
 [
 {
   "name": "Bouncing Burger",
-  "description": "Learn how to create a projectile that will bounce around the screen",
+  "description": "Learn how to create a Sprite that will bounce around the screen",
   "url": "/concepts/bouncing-burger",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/bouncing-burger.gif"

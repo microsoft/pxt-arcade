@@ -2,11 +2,11 @@
 
 ## Introduction @unplugged
 
-``||sprites:Projectiles||`` are ``||sprites:Sprites||`` that are made to move around the screen. They can be used to represent stars moving across the sky, lasers that are fired from a spaceship, or anything else you want. In this case, a ``||sprites:projectile||`` will be used to represent a burger that bounces around the screen.
+``||sprites:Sprites||`` can be given ``||sprites:x||`` and ``||sprites:y||`` velocities so that they can move around the screen.  In this case, a ``||sprites:Sprite||`` will be used to represent a burger that bounces around the screen.
 
 ## Step 1 @fullscreen
 
-Find ``||variables:set projectile to||`` in ``||sprites:Sprites||``. Drag it into the ``||game:on game update||``.
+Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``.
 
 ```blocks
 enum SpriteKind {
@@ -14,7 +14,7 @@ enum SpriteKind {
     Enemy
 }
 
-let projectile = sprites.createProjectile(img`
+let mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -31,7 +31,7 @@ let projectile = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 0, 0, SpriteKind.Player)
+`, SpriteKind.Player)
 ```
 
 ## Step 2 @fullscreen
@@ -46,8 +46,8 @@ enum SpriteKind {
     Enemy
 }
 
-let projectile: Sprite = null
-projectile = sprites.createProjectile(img`
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
 . . . . . . . . . . . c c c c c 6 6 6 6 6 . . . . . . . . . . . 
 . . . . . . . . c c c 4 4 4 4 4 4 4 4 4 4 6 6 6 . . . . . . . . 
 . . . . . . c c 4 4 4 4 4 4 4 4 4 b b 4 4 4 4 4 6 6 . . . . . . 
@@ -80,12 +80,12 @@ f 6 6 d d f f f f f e e e f f e f f e e e e e f f e e d b 4 6 e
 . . . . . . f f e b b b b b b 4 4 4 4 4 4 4 4 e e e . . . . . . 
 . . . . . . . . . f f f f f f f c c c c c e e . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, 0, 0, SpriteKind.Player)
+`, SpriteKind.Player)
 ```
 
 ## Step 3 @fullscreen
 
-In ``||sprites:projectile||``, set ``||sprites:vx||`` to 40.
+Find ``||sprites:set mySprite x to 0||`` in ``||sprites:Sprites||``. Place it after ``||variables:set mySprite to||``, and change ``||variables:x||`` to ``||variables:vx||``. Change the 0 to 40.
 
 This will make the sprite move to the **right** across the screen, because the ``||sprites:x||`` position will be **increasing**.
 
@@ -95,8 +95,8 @@ enum SpriteKind {
     Enemy
 }
 
-let projectile: Sprite = null
-projectile = sprites.createProjectile(img`
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
 . . . . . . . . . . . c c c c c 6 6 6 6 6 . . . . . . . . . . . 
 . . . . . . . . c c c 4 4 4 4 4 4 4 4 4 4 6 6 6 . . . . . . . . 
 . . . . . . c c 4 4 4 4 4 4 4 4 4 b b 4 4 4 4 4 6 6 . . . . . . 
@@ -129,12 +129,13 @@ f 6 6 d d f f f f f e e e f f e f f e e e e e f f e e d b 4 6 e
 . . . . . . f f e b b b b b b 4 4 4 4 4 4 4 4 e e e . . . . . . 
 . . . . . . . . . f f f f f f f c c c c c e e . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, 40, 0, SpriteKind.Player)
+`, SpriteKind.Player)
+mySprite.vx = 40;
 ```
 
 ## Step 4 @fullscreen
 
-In ``||sprites:projectile||``, set ``||sprites:vy||`` to 60.
+Find ``||sprites:set mySprite x to 0||`` in ``||sprites:Sprites||``. Place it after ``||variables:set mySprite to||``, and change ``||variables:x||`` to ``||variables:vy||``. Change the 0 to 60.
 
 This will make the sprite move **downwards** across the screen, because the ``||sprites:y||`` position will be **increasing**.
 
@@ -144,8 +145,8 @@ enum SpriteKind {
     Enemy
 }
 
-let projectile: Sprite = null
-projectile = sprites.createProjectile(img`
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
 . . . . . . . . . . . c c c c c 6 6 6 6 6 . . . . . . . . . . . 
 . . . . . . . . c c c 4 4 4 4 4 4 4 4 4 4 6 6 6 . . . . . . . . 
 . . . . . . c c 4 4 4 4 4 4 4 4 4 b b 4 4 4 4 4 6 6 . . . . . . 
@@ -178,20 +179,23 @@ f 6 6 d d f f f f f e e e f f e f f e e e e e f f e e d b 4 6 e
 . . . . . . f f e b b b b b b 4 4 4 4 4 4 4 4 e e e . . . . . . 
 . . . . . . . . . f f f f f f f c c c c c e e . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, 40, 60, SpriteKind.Player)
+`, SpriteKind.Player)
+mySprite.x = 40
+mySprite.y = 60
 ```
 
 ## Step 5 @fullscreen
 
-Find ``||sprites:set mySprite stay in screen||`` in ``||sprites:Sprites||``. Place it after ``||variables:set projectile to||`` and change ``||variables:mySprite||`` to ``||variables:projectile||``.
+Find ``||sprites:set mySprite stay in screen||`` in ``||sprites:Sprites||``. Place it after ``||variables:set mySprite to||``.
 
 ```blocks
 enum SpriteKind {
     Player,
     Enemy
 }
-let projectile: Sprite = null
-projectile = sprites.createProjectile(img`
+
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
 . . . . . . . . . . . c c c c c 6 6 6 6 6 . . . . . . . . . . . 
 . . . . . . . . c c c 4 4 4 4 4 4 4 4 4 4 6 6 6 . . . . . . . . 
 . . . . . . c c 4 4 4 4 4 4 4 4 4 b b 4 4 4 4 4 6 6 . . . . . . 
@@ -224,8 +228,10 @@ f 6 6 d d f f f f f e e e f f e f f e e e e e f f e e d b 4 6 e
 . . . . . . f f e b b b b b b 4 4 4 4 4 4 4 4 e e e . . . . . . 
 . . . . . . . . . f f f f f f f c c c c c e e . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, 40, 60, SpriteKind.Player)
-projectile.setFlag(SpriteFlag.StayInScreen, false)
+`, SpriteKind.Player)
+mySprite.x = 40
+mySprite.y = 60
+mySprite.setFlag(SpriteFlag.StayInScreen, false)
 ```
 
 
@@ -240,8 +246,9 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let projectile: Sprite = null
-projectile = sprites.createProjectile(img`
+
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
 . . . . . . . . . . . c c c c c 6 6 6 6 6 . . . . . . . . . . . 
 . . . . . . . . c c c 4 4 4 4 4 4 4 4 4 4 6 6 6 . . . . . . . . 
 . . . . . . c c 4 4 4 4 4 4 4 4 4 b b 4 4 4 4 4 6 6 . . . . . . 
@@ -274,8 +281,10 @@ f 6 6 d d f f f f f e e e f f e f f e e e e e f f e e d b 4 6 e
 . . . . . . f f e b b b b b b 4 4 4 4 4 4 4 4 e e e . . . . . . 
 . . . . . . . . . f f f f f f f c c c c c e e . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, 40, 60, SpriteKind.Player)
-projectile.setFlag(SpriteFlag.BounceOnWall, true)
+`, SpriteKind.Player)
+mySprite.x = 40
+mySprite.y = 60
+mySprite.setFlag(SpriteFlag.BounceOnWall, true)
 ```
 
 ## Complete
