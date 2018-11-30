@@ -39,7 +39,8 @@
         "libs/mixer---linux",
         "libs/local-multiplayer",
         "libs/device",
-        "libs/jacdac"
+        "libs/jacdac",
+        "libs/jacdac-drivers"
     ],
     "compile": {
         "useUF2": true,
@@ -172,8 +173,7 @@
         "bannedCategories": [
             "pins",
             "console",
-            "control",
-            "jacdac"
+            "control"
         ]
     },
     "simulator": {
