@@ -234,7 +234,7 @@ chicken = sprites.create(img`
 . . . . . . . . . . . c 1 b c . 
 . . . . . . . . . . . . c c . . 
 `, SpriteKind.Player)
-chicken.setPosition(90, 70)
+chicken.setPosition(120, 80)
 ```
 
 ## Complete
