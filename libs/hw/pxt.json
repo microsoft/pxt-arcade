@@ -9,8 +9,7 @@
         "screen": "file:../screen",
         "controller": "file:../controller",
         "mixer": "file:../mixer",
-        "game": "file:../game",
-        "jacdac": "file:../jacdac"
+        "game": "file:../game"
     },
     "public": true
 }

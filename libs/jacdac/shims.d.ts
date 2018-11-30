@@ -35,7 +35,7 @@ declare namespace jacdac {
 
 declare interface JacDacDriverStatus {
     /**
-     * Returns the JDDevice instnace
+     * Returns the JDDevice instance
      */
     //% property shim=JacDacDriverStatusMethods::device
     device: Buffer;

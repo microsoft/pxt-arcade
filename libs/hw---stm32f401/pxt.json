@@ -19,8 +19,7 @@
         "mixer---stm32": "file:../mixer---stm32",
         "controller---hw": "file:../controller---hw",
         "buttons": "file:../buttons",
-        "game": "file:../game",
-        "jacdac": "file:../jacdac"
+        "game": "file:../game"
     },
     "public": true
 }
