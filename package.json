@@ -1,6 +1,6 @@
 {
   "name": "pxt-32",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Small arcade editor for MakeCode",
   "keywords": [
     "JavaScript",
@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "pxt-common-packages": "5.1.18",
-    "pxt-core": "5.2.5"
+    "pxt-core": "5.2.8"
   },
   "scripts": {
     "serve": "node node_modules/pxt-core/built/pxt.js serve"

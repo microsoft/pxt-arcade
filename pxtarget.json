@@ -172,7 +172,8 @@
         "bannedCategories": [
             "pins",
             "console",
-            "control"
+            "control",
+            "jacdac"
         ]
     },
     "simulator": {
