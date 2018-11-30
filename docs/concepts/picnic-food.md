@@ -1,5 +1,7 @@
 # Picnic Food
 
+[Open this tutorial in the editor!](/#tutorial:concepts/picnic-food)
+
 ## Introduction @unplugged
 
 ``||sprites:Sprites||`` can be placed in different locations around the screen. This is done by setting their ``||sprites:x||`` and ``||sprites:y||`` positions.
@@ -232,7 +234,7 @@ chicken = sprites.create(img`
 . . . . . . . . . . . c 1 b c . 
 . . . . . . . . . . . . c c . . 
 `, SpriteKind.Player)
-chicken.setPosition(90, 70)
+chicken.setPosition(120, 80)
 ```
 
 ## Complete

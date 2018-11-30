@@ -21,6 +21,13 @@
   "imageUrl": "/static/concepts/picnic-food.gif"
 },
 {
+  "name": "Princess Pizza",
+  "description": "Learn about how overlap events work. New Concepts: Sprite kind, On overlap event, Game over",
+  "url": "/concepts/princess-pizza",
+  "cardType": "tutorial",
+  "imageUrl": "/static/concepts/princess-pizza.gif"
+},
+{
   "name": "Bouncing Burger",
   "description": "Learn how to create a Sprite that will bounce around the screen. New Concepts: Projectiles, Sprite motion, Bounce on Wall flag",
   "url": "/concepts/bouncing-burger",
