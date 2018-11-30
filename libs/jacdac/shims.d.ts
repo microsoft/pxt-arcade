@@ -4,31 +4,31 @@ declare namespace jacdac {
     /**
      * Starts the JacDac protocol
      */
-    //% shim=jacdac::start
+    //% parts=jacdac shim=jacdac::start
     function start(): void;
 
     /**
      * Starts the JacDac protocol
      */
-    //% shim=jacdac::stop
+    //% parts=jacdac shim=jacdac::stop
     function stop(): void;
 
     /**
      * Clears any existing bridge
      */
-    //% shim=jacdac::clearBridge
+    //% parts=jacdac shim=jacdac::clearBridge
     function clearBridge(): void;
 
     /**
     Internal
      */
-    //% shim=jacdac::__internalAddDriver
+    //% parts=jacdac shim=jacdac::__internalAddDriver
     function __internalAddDriver(driverType: int32, driverClass: int32, methods: MethodCollection, controlData: Buffer): JacDacDriverStatus;
 
     /**
      * Internal
      */
-    //% shim=jacdac::__internalSendPacket
+    //% parts=jacdac shim=jacdac::__internalSendPacket
     function __internalSendPacket(buf: Buffer, deviceAddress: int32): int32;
 }
 
