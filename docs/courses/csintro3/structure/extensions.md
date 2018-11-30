@@ -124,3 +124,11 @@ Before moving on to the next lesson, it is recommended that you check out the [s
 ```package
 corgio
 ```
+
+### ~hint
+
+## Case Study
+
+The example case study game does not include any extensions, so there is nothing to add in this section; spend a few minutes making sure your game's ``||sprites:space ship||`` and ``||sprites:enemy||`` look exactly as you want them to.
+
+### ~

@@ -51,7 +51,7 @@ game.splash(seconds + " seconds in an hour");
 1. Start with the code from example #1
 2. After the second ``||game:game.splash||``, use an **assignment operator** to make ``||variables:seconds||`` store the number of seconds in a day
 3. ``||game:Splash||`` the new value of ``||variables:seconds||``. Make sure to include a description of the value to match the previous values that were ``||game:splashed||``
-4. Use another ``||assignment operator||`` to make ``||variables:seconds||`` store the number of seconds in a week
+4. Use another **assignment operator** to make ``||variables:seconds||`` store the number of seconds in a week
 5. ``||game:Splash||`` the new value of ``||variables:seconds||``, along with it's corresponding description
 6. **Challenge:** repeat this process for both the seconds in a month, and seconds in a year
 
@@ -143,5 +143,61 @@ game.splash(order);
 ### ~hint
 
 Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/intro/operators-problems) for this section to review the material and practice the concepts introduced in this section.
+
+### ~
+
+### ~hint
+
+## Case Study
+
+### Personal Message
+
+Modify the code so that the user is prompted for their name **before** the ``||game:splash screen||``, and then use their name in the introduction. Use the **string append** operator to build up the introduction
+
+### Captain Whoever
+
+We've decided to make the game into a space adventure, so the player should have a title. Before asking their name, start with the title "Captain ", and then just append the name they enter onto the name; this way, they will be addressed as Captain whenever their name is used.
+
+### Solution
+
+```typescript
+enum SpriteKind {
+    Asteroid
+}
+
+namespace asteroids {
+    sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
+        sprite.setImage(sprites.space.spaceAsteroid0);
+        sprite.setFlag(SpriteFlag.AutoDestroy, true);
+        setPosition(sprite, 10);
+        setMotion(sprite);
+    });
+
+    game.onUpdateInterval(1500, function () {
+        sprites.createEmptySprite(SpriteKind.Asteroid);
+    });
+
+    function setMotion(asteroid: Sprite) {
+        asteroid.vx = Math.randomRange(-8, 8);
+        asteroid.vy = Math.randomRange(35, 20);
+    }
+
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
+    }
+}
+
+let name: string = "Captain ";
+name += game.askForString("What is your name?");
+
+let intro: string = "Hello, ";
+intro += name;
+intro += "! This is my Space Game!";
+game.splash(intro);
+
+let x: number = screen.width / 2;
+let y: number = screen.height - 20;
+```
 
 ### ~

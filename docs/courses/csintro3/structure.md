@@ -5,4 +5,5 @@
 * [Sprites](/courses/csintro3/structure/sprites)
 * [Tile Maps](/courses/csintro3/structure/tilemaps)
 * [Corgio Extension](/courses/csintro3/structure/extensions)
-* [Namespaces](/courses/csintro3/structure/namespaces)
+* [Namespaces and Comments](/courses/csintro3/structure/namespaces)
+* [Additions to Case Study](/courses/csintro3/structure/additions)

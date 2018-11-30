@@ -140,6 +140,14 @@ Return values are incredibly important; if they are not documented properly, the
 
 To document return values, start the comment with ``@returns``, and then give a short description of what the value returned represents. Generally, we will put the ``@returns`` annotation after any parameters for the functions we describe.
 
+```typescript-ignore
+/**
+ * Prints "Hello!" to the console a given number of times
+ * @param count the number of times to print the phrase
+ * @returns the number of characters that were printed
+ */
+```
+
 ## Example #3a: Describing Return Values
 
 1. Review the code below

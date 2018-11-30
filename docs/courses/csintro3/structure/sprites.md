@@ -171,9 +171,93 @@ player.x += 20;
 1. In your own words, explain why drawing your own ``||sprites:Sprites||`` can be important when creating new games.
 2. How do ``||sprites:Sprite Properties||`` allow you to interact with ``||sprites:Sprites||``?
 
-
 ### ~hint
 
 Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/structure/sprites-problems) for this section to review the material and practice the concepts introduced in this section.
+
+### ~
+
+### ~hint
+
+## Case Study
+
+### Create a Spaceship
+
+It's time to create a space ship for the space game.
+
+Create a ``||sprites:Sprite||`` representing the player's space ship. Add a new ``||sprites:SpriteKind||`` of ``||sprites:Player||`` for this ``||sprites:Sprite||``. Store the ``||sprites:Sprite||`` in the variable ``||variables:Player||``.
+
+Make the space ship ``||controller:move with buttons||``, with a ``||controller:vx||`` of 80 and a ``||controller:vy||`` of 30.
+
+After this is done, you can start playing the game by moving the character around the screen, dodging the asteroids. Notice how the game changes when the ``||variables:player||`` if the player is created **before** or **after** the loop added in the previous activity.
+
+### Initial Position
+
+Earlier on in the case study, the variables ``||variables:x||`` and ``||variables:y||`` were created to store the location the player should start at. Move these assignments after the creation of the ``||variables:player||``, and then change it to set ``||variables:player.x||`` instead of ``||variables:x||``, and ``||variables:player.y||`` instead of ``||variables:y||``.
+
+### Solution
+
+```typescript
+enum SpriteKind {
+    Player,
+    Asteroid
+}
+
+namespace asteroids {
+    sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
+        sprite.setImage(sprites.space.spaceAsteroid0);
+        sprite.setFlag(SpriteFlag.AutoDestroy, true);
+        setPosition(sprite, 10);
+        setMotion(sprite);
+    });
+
+    game.onUpdateInterval(1500, function () {
+        sprites.createEmptySprite(SpriteKind.Asteroid);
+    });
+
+    function setMotion(asteroid: Sprite) {
+        asteroid.vx = Math.randomRange(-8, 8);
+        asteroid.vy = Math.randomRange(35, 20);
+    }
+
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
+    }
+}
+
+let name: string = "Captain ";
+let playerName: string = game.askForString("What is your name?");
+
+if (playerName == "myName!") {
+    playerName += " 2";
+}
+
+name += playerName;
+
+let intro: string = "Hello, ";
+intro += name;
+intro += "! This is my Space Game!";
+game.splash(intro);
+
+for (let i = 0; i < 10; i++) {
+    sprites.createEmptySprite(SpriteKind.Asteroid);
+    pause(250);
+}
+
+let player = sprites.create(img`
+    . . . . 8 . . . .
+    . . . 8 8 8 . . .
+    . . . 8 1 8 . . .
+    . . 2 8 1 8 2 . .
+    . 2 2 8 8 8 2 2 .
+    2 2 2 8 8 8 2 2 2
+    . . . 5 . 5 . . .
+`, SpriteKind.Player);
+
+controller.moveSprite(player, 80, 30);
+player.x = screen.width / 2;
+player.y = screen.height - 20;
+```
 
 ### ~

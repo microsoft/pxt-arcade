@@ -126,8 +126,8 @@ The old value is gone - there is no way to reference it anymore.
 ## Student Task #3: Splash a Variable
 
 1. Start with the (valid) code from example #3
-2. Immediately after the first line, add a new line to ``||game:game.splash()||`` ``||variables:word||``
-3. Add another ``||game:game.splash()||`` with ``||variables:word||`` to the end of the code
+2. Immediately after the first line, add a new line to ``||game:game.splash||`` ``||variables:word||``
+3. Add another ``||game:game.splash||`` with ``||variables:word||`` to the end of the code
 4. Verify that the two splash screens display different words
 
 ## What did we learn?
@@ -138,5 +138,53 @@ The old value is gone - there is no way to reference it anymore.
 ### ~hint
 
 Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/intro/initialization-problems) for this section to review the material and practice the concepts introduced in this section.
+
+### ~
+
+### ~hint
+
+## Case Study
+
+### Create an Intro
+
+At the end of your game, create a variable ``||variables:intro||``. This should store a short introduction to your game; for example, "Hello! This is my Space Game!"
+
+### Splash the Intro
+
+The ``||game.splash||`` function is commonly used to give introductions to games. Use it to ``||game:splash||`` the introduction you just created.
+
+### Solution
+
+```typescript
+enum SpriteKind {
+    Asteroid
+}
+
+namespace asteroids {
+    sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
+        sprite.setImage(sprites.space.spaceAsteroid0);
+        sprite.setFlag(SpriteFlag.AutoDestroy, true);
+        setPosition(sprite, 10);
+        setMotion(sprite);
+    });
+
+    game.onUpdateInterval(1500, function () {
+        sprites.createEmptySprite(SpriteKind.Asteroid);
+    });
+
+    function setMotion(asteroid: Sprite) {
+        asteroid.vx = Math.randomRange(-8, 8);
+        asteroid.vy = Math.randomRange(35, 20);
+    }
+
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
+    }
+}
+
+let intro = "Hello! This is my Space Game!"
+game.splash(intro);
+```
 
 ### ~

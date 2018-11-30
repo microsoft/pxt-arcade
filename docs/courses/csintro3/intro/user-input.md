@@ -144,3 +144,51 @@ console.log(sentence1);
 Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/intro/user-input-problems) for this section to review the material and practice the concepts introduced in this section.
 
 ### ~
+
+### ~hint
+
+## Case Study
+
+### Ask for a Name
+
+Ask the user for their name with ``||game:game.askForString||``, so that the game can use their name to personalize messages to them in the future.
+
+### Solution
+
+```typescript
+enum SpriteKind {
+    Asteroid
+}
+
+namespace asteroids {
+    sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
+        sprite.setImage(sprites.space.spaceAsteroid0);
+        sprite.setFlag(SpriteFlag.AutoDestroy, true);
+        setPosition(sprite, 10);
+        setMotion(sprite);
+    });
+
+    game.onUpdateInterval(1500, function () {
+        sprites.createEmptySprite(SpriteKind.Asteroid);
+    });
+
+    function setMotion(asteroid: Sprite) {
+        asteroid.vx = Math.randomRange(-8, 8);
+        asteroid.vy = Math.randomRange(35, 20);
+    }
+
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
+    }
+}
+
+let intro: string = "Hello! This is my Space Game!"
+game.splash(intro);
+let name: string = game.askForString("What is your name?");
+
+let x: number = 80;
+let y: number = 100;
+```
+
+### ~

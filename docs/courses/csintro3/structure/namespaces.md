@@ -1,4 +1,4 @@
-# Activity: Comments and Namespaces
+# Activity: Namespaces and Comments
 
 As the code we write starts to get to be dozens of lines long (or more), it is important to be able to make sure that the code remains easy to follow and understand.
 
@@ -126,5 +126,146 @@ game.splash("Hello " + names.amy);
 ### ~hint
 
 Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/structure/namespaces-problems) for this section to review the material and practice the concepts introduced in this section.
+
+### ~
+
+### ~hint
+
+## Case Study
+
+### Separate Sprite Images
+
+As the game gets increasingly complicated, it becomes increasingly important to separate out the different portions of the code. One portion that can be helpful to separate are the images for the different ``||sprites:Sprites||``; by keeping them in a different namespace, there can be a single location for all the images, without interrupting the rest of the code.
+
+Create a new namespace, ``spritesheet``, which will store all of the images used in this game. In it, create and export three images (the type for images in @boardname@ is ``||images:Image||``):
+
+* ``||variables:player||``, which stores the ``||images:Image||`` for the player's space ship
+* ``||variables:enemy||``, which stores the ``||images:Image||`` for the enemy space ship
+* ``||variables:asteroid||``, which stores the ``||images:Image||`` for the asteroids
+
+### The ship and enemy Namespaces
+
+It's time to create a namespace for the player's space ship. Create a new namespace, ``ship``, and move the code related to the player's ship into that namespace: this should include the code that:
+
+* Creates the ``||variables:player||`` ``||sprites:Sprite||``
+* Sets the ``||variables:player||``'s initial ``||sprites:x||`` and ``||sprites:y||`` positions
+* Makes the ``||variables:player||`` be controlled with the directional buttons
+
+After moving the code, ``export`` ``||variables:player||``, so that it will be accessible outside of the ``ship`` namespace. Make sure to update any sections that use the ``||variables:player||`` to instead refer to ``ship.player``.
+
+Create one last new namespace, ``enemy``, which contains the code relating to the ``||variables:enemy||``.
+
+### Documentation
+
+Document the game a bit by adding a short comment to each of the three namespaces added in this section: ``spritesheet``, ``ship``, and ``enemy``. These comments should give an indication of what each namespace contains.
+
+For example, a comment for the ``asteroids`` namespace might look like the following:
+
+```typescript-ignore
+/**
+ * Creates and controls the asteroids within the game
+ */
+```
+
+### Solution
+
+```typescript
+enum SpriteKind {
+    Player,
+    Enemy,
+    Asteroid
+}
+
+/**
+ * Contains the images used in the game
+ */
+namespace spritesheet {
+    export let player: Image = img`
+        . . . . 8 . . . .
+        . . . 8 8 8 . . .
+        . . . 8 1 8 . . .
+        . . 2 8 1 8 2 . .
+        . 2 2 8 8 8 2 2 .
+        2 2 2 8 8 8 2 2 2
+        . . . 5 . 5 . . .
+    `;
+
+    export let enemy: Image = img`
+        5 5 . . . . 5 5
+        7 7 7 7 7 7 7 7
+        . 9 9 7 7 9 9 .
+        . 7 7 7 7 7 7 .
+        . . . 9 9 . . .
+    `;
+
+    export let asteroid: Image = sprites.space.spaceAsteroid0;
+}
+
+/**
+ * Creates and controls the asteroids within the game
+ */
+namespace asteroids {
+    sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
+        sprite.setImage(spritesheet.asteroid);
+        sprite.setFlag(SpriteFlag.AutoDestroy, true);
+        setPosition(sprite, 10);
+        setMotion(sprite);
+    });
+
+    game.onUpdateInterval(1500, function () {
+        sprites.createEmptySprite(SpriteKind.Asteroid);
+    });
+
+    function setMotion(asteroid: Sprite) {
+        asteroid.vx = Math.randomRange(-8, 8);
+        asteroid.vy = Math.randomRange(35, 20);
+    }
+
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
+    }
+}
+
+/**
+ * Creates and controls the player's ship
+ */
+namespace ship {
+    export let player = sprites.create(spritesheet.player, SpriteKind.Player);
+
+    controller.moveSprite(player, 80, 30);
+    player.x = screen.width / 2;
+    player.y = screen.height - 20;
+}
+
+/**
+ * Creates and controls the enemies in the game
+ */
+namespace enemy {
+    let enemy = sprites.create(spritesheet.enemy, SpriteKind.Enemy);
+    enemy.x = ship.player.x;
+    enemy.y = 20;
+    enemy.vy = 10;
+}
+
+let name: string = "Captain ";
+let playerName: string = game.askForString("What is your name?");
+
+if (playerName == "myName!") {
+    playerName += " 2";
+}
+
+name += playerName;
+
+let intro: string = "Hello, ";
+intro += name;
+intro += "! This is my Space Game!";
+game.splash(intro);
+
+for (let i = 0; i < 10; i++) {
+    sprites.createEmptySprite(SpriteKind.Asteroid);
+    pause(250);
+}
+```
 
 ### ~

@@ -94,9 +94,75 @@ console.log("" + output);
 1. In your own words, describe the ``initialization``, ``check``, and ``update`` steps of a for loop.
 2. In @boardname@, create a new project and place a ``||loops:repeat||`` and a ``||loops:for index||`` loop in the ``||loops:on start||``. Convert the code to JavaScript: what is different between the two loops?
 
-
 ### ~hint
 
 Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/structure/loops-problems) for this section to review the material and practice the concepts introduced in this section.
+
+### ~
+
+### ~hint
+
+## Case Study
+
+### Asteroid Blast!
+
+We've decided that at the beginning of the game, there should be a few extra ``||sprites:Asteroids||`` to make it seem like the player ran into an asteroid belt.
+
+At the end of your code, add a ``||loops:for||`` loop that starts at 0 and ends at 9.
+
+Inside of the loop, add ``||sprites.createEmptySprite(SpriteKind.Asteroid)||``. This will create 10 ``||sprites:Asteroids||``. Add a ``||loops:pause||`` for 250 ms into the loop as well, so that the extra ``||sprites:sprites||`` get created over the course of 2.5 seconds.
+
+### Solution
+
+```typescript
+enum SpriteKind {
+    Asteroid
+}
+
+namespace asteroids {
+    sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
+        sprite.setImage(sprites.space.spaceAsteroid0);
+        sprite.setFlag(SpriteFlag.AutoDestroy, true);
+        setPosition(sprite, 10);
+        setMotion(sprite);
+    });
+
+    game.onUpdateInterval(1500, function () {
+        sprites.createEmptySprite(SpriteKind.Asteroid);
+    });
+
+    function setMotion(asteroid: Sprite) {
+        asteroid.vx = Math.randomRange(-8, 8);
+        asteroid.vy = Math.randomRange(35, 20);
+    }
+
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
+    }
+}
+
+let name: string = "Captain ";
+let playerName: string = game.askForString("What is your name?");
+
+if (playerName == "myName!") {
+    playerName += " 2";
+}
+
+name += playerName;
+
+let intro: string = "Hello, ";
+intro += name;
+intro += "! This is my Space Game!";
+game.splash(intro);
+
+let x: number = screen.width / 2;
+let y: number = screen.height - 20;
+
+for (let i = 0; i < 10; i++) {
+    sprites.createEmptySprite(SpriteKind.Asteroid);
+    pause(250);
+}
+```
 
 ### ~

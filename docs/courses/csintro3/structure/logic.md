@@ -16,8 +16,7 @@ let x: boolean = true;
 
 ## Concept If and Else Statements 
 
-The ``||logic:if then||`` and ``||logic:else||`` blocks were amongst the most important in the
-``||logic:Logic||`` category in the previous course, and remain just as important in JavaScript.
+The ``||logic:if then||`` and ``||logic:else||`` blocks were amongst the most important in the ``||logic:Logic||`` category in the previous course, and remain just as important in JavaScript.
 
 In JavaScript, these can be expressed as:
 
@@ -37,7 +36,7 @@ if (condition) {
 }
 ``` 
 
-where `condition` is some sort of boolean - either a boolean value (``||logic:true||`` or ``||logic:false||``, or another block that evaluates to a boolean (``||logic:0 < 0||``). In Blocks, these often took the form of elongated hexagons:
+In these snippets, ``||variables:condition||`` is a boolean value (an expression that evaluates to ``||logic:true||`` or ``||logic:false||``). In Blocks, these often took the form of elongated hexagons:
 
 ```block
 let x = true
@@ -49,12 +48,12 @@ In blocks, there were many ways to compare two numbers. In JavaScript, these sam
 
 | Name                      | Symbol    | JavaScript            |
 | :------------------------ | :-------: | :-------------------:	|
-| Equal To                  | =	        | `value1 == value2`    |
-| Not Equal To              | &ne;      | `value1 != value2`    |
-| Less Than                 | <	        | `value1 < value2`     |
-| Less Than or Equal To     | &le;      | `value1 <= value2`    |
-| Greater Than              | >	        | `value1 > value2`     |
-| Greater Than or Equal To  | &ge;      | `value1 >= value2`    |  
+| Equal To                  | =         | ``value1 == value2``  |
+| Not Equal To              | &ne;      | ``value1 != value2``  |
+| Less Than                 | <         | ``value1 < value2``   |
+| Less Than or Equal To     | &le;      | ``value1 <= value2``  |
+| Greater Than              | >         | ``value1 > value2``   |
+| Greater Than or Equal To  | &ge;      | ``value1 >= value2``  |  
 
 ## Example #1: Numeric Comparisons
 
@@ -83,17 +82,21 @@ if (num == 1) {
 }
 ```
 
-Notice how the code above uses curly braces (`{` and `}`) and indentation to separate the code that is contained within each logical block. This is done for two major reasons:
+Notice how the code above uses curly braces (``{`` and ``}``) and indentation to separate the code that is contained within each logical block. This is done for two major reasons:
 
 ### ~hint
 
-**Readability.** Anyone can look at the code and easily decipher what is part of the if statement and what is not, even if they have never seen it before.
+### Readability
+
+Anyone can look at the code and easily decipher what is part of the if statement and what is not, even if they have never seen it before. The indentation provides a visual distinction for where different statements will run.
 
 ### ~
 
 ### ~hint
 
-**Functionality.** Without indentations, the code would run the same - but that is not true about curly braces. Curly braces are used to group code together, which means multiple expressions can be included in the conditionals.
+### Functionality
+
+JavaScript ignores indentation, but does not ignore curly braces. Curly braces are used to group code together, which makes it possible to include multiple expressions in the conditional statements.
 
 ```typescript
 let num: number = 1;
@@ -113,21 +116,21 @@ if (num > 5) {
 ## Student Task #1: A Simple Comparison
 
 1. Create a variable that stores a number
-2. Use an ``if`` statement to check if the number is less than 2
-3. If the condition is true (in the **if** section), print "Hello!" to the console
-4. If the condition is false (in the **else** section), print "Goodbye!" to the console
+2. Use an ``||logic:if||`` statement to check if the number is less than 2
+3. If the condition is true (in the ``||logic:if||`` section), print "Hello!" to the console
+4. If the condition is false (in the ``||logic:else||`` section), print "Goodbye!" to the console
 
 ## Concept: Boolean Operators
 
 Boolean operators allow boolean values to be manipulated.
 
-| Name  | Order	| JavaScript                    |
-| :---- | :---:	| :---------------------------:	|
-| Not   | 1st   | `!bool1`                      |
-| And   | 2nd   | `bool1 && bool2`              |
-| Or    | 3rd   | `bool1` &vert;&vert; `bool2`  |
+| Name  | Order | JavaScript                        |
+| :---- | :---: | :-------------------------------: |
+| Not   | 1st   | ``!bool1``                        |
+| And   | 2nd   | ``bool1 && bool2``                |
+| Or    | 3rd   | ``bool1`` &vert;&vert; ``bool2``  |
 
-Just like in Math, the order of operations becomes important when there are multiple operators being used at once.
+Just like in math, the order of operations becomes important when there are multiple operators being used at once.
 
 ### ~hint
 
@@ -137,7 +140,7 @@ The vertical bar (``|``) character is used when writing ``||logic:or||``. Be sur
 
 ### Example #2: Order of Boolean Operators
 
-Evaluate the value stored in ``bool4`` given the following code:
+Evaluate the value stored in the variable ``||variables:bool4||`` given the following code:
 
 ```typescript
 let bool1: boolean = false;
@@ -147,15 +150,15 @@ let bool3: boolean = false;
 let bool4: boolean = bool1 && bool2 || !bool3;
 ```
 
-Following the order of operations, the value assigned to ``bool4`` is evaluated as follows
+Following the order of operations, the value assigned to ``||variables:bool4||`` is evaluated as follows
 
-1. Negate ``bool3``, which evaluates to ``true``
-2. Check ``bool1`` **and** ``bool2``, which evaluates to ``false``
-3. Check the result of step 1 **or** the result of step 2, (that is, ``true`` ``||logic:or||`` ``false``) which evaluates to ``true``
+1. Negate ``||variables:bool3||``, which evaluates to ``||logic:true||``
+2. Check ``||variables:bool1||`` **and** ``||variables:bool2||``, which evaluates to ``||logic:false||``
+3. Check the result of step 1 **or** the result of step 2, (that is, ``||logic:true||`` ``||logic:or||`` ``||logic:false||``) which evaluates to ``||logic:true||``
 
-This results in ``bool4`` storing ``true``.
+This results in ``||variables:bool4||`` storing ``||logic:true||``.
 
-This result can be changed by adding parentheses
+This result can be changed by adding parentheses:
 
 ```typescript
 let bool1: boolean = false;
@@ -165,13 +168,13 @@ let bool3: boolean = false;
 let bool4: boolean = bool1 && (bool2 || !bool3);
 ```
 
-Following the order of operations, the value assigned to ``bool4`` is evaluated as follows
+Following the order of operations, the value assigned to ``||variables:bool4||`` is evaluated as follows:
 
-1. Negate ``bool3``, which evaluates to ``true``
-2. Check ``bool2`` **or** the result of step 1, which evaluates to ``true``
-3. Check ``bool1`` **and** the result of step 3, which evaluates to ``false``
+1. Negate ``||variables:bool3||``, which evaluates to ``||logic:true||``
+2. Check ``||variables:bool2||`` **or** the result of step 1, which evaluates to ``||logic:true||``
+3. Check ``||variables:bool1||`` **and** the result of step 3, which evaluates to ``||logic:false||``
 
-This results in ``bool4`` storing ``false`` instead.
+This results in ``||variables:bool4||`` storing ``||logic:false||`` instead.
 
 ## Example #3: Numeric Comparisons
 
@@ -220,9 +223,76 @@ if (num > 2 || bool) {
     * ``!bool1 && !bool2``
     * ``!(bool1 || bool2)``
 
-
 ### ~hint
 
 Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/structure/logic-problems) for this section to review the material and practice the concepts introduced in this section.
+
+### ~
+
+### ~hint
+
+Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/intro/operators-problems) for this section to review the material and practice the concepts introduced in this section.
+
+### ~
+
+### ~hint
+
+## Case Study
+
+### That's My Name!
+
+When somebody enters their name, we should make sure they know who made this game. Store the result of the call to ``||game:game.askForString||`` that asks for the users name in the variable ``||variables:playerName||``.
+
+Before adding it to ``||variables:name||``, check if the player has entered your name by comparing (with ``||logic:==||``) ``||variables:playerName||`` and a string containing your first name. If the player has entered your name, append a " 2" to ``||variables:playerName||``, to make sure they know they're not the first one to play this game.
+
+(In the example solution, "myName!" will be used to represent the games author)
+
+### Solution
+
+```typescript
+enum SpriteKind {
+    Asteroid
+}
+
+namespace asteroids {
+    sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
+        sprite.setImage(sprites.space.spaceAsteroid0);
+        sprite.setFlag(SpriteFlag.AutoDestroy, true);
+        setPosition(sprite, 10);
+        setMotion(sprite);
+    });
+
+    game.onUpdateInterval(1500, function () {
+        sprites.createEmptySprite(SpriteKind.Asteroid);
+    });
+
+    function setMotion(asteroid: Sprite) {
+        asteroid.vx = Math.randomRange(-8, 8);
+        asteroid.vy = Math.randomRange(35, 20);
+    }
+
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
+    }
+}
+
+let name: string = "Captain ";
+let playerName: string = game.askForString("What is your name?");
+
+if (playerName == "myName!") {
+    playerName += " 2";
+}
+
+name += playerName;
+
+let intro: string = "Hello, ";
+intro += name;
+intro += "! This is my Space Game!";
+game.splash(intro);
+
+let x: number = screen.width / 2;
+let y: number = screen.height - 20;
+```
 
 ### ~

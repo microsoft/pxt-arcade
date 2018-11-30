@@ -4,13 +4,11 @@ In blocks, the types of variables that were being used was generally invisible: 
 
 When types came up, they were generally due to small errors: trying to ``||game:splash||`` a number required that the number be ``||text:join||``ed to a string, trying to store a string in a variable that's already been designated to be a string, and other small things.
 
-### Rethink how to introduce this; it's really misleading as it's ascribing to javascript something that is unique to typescript. For now, instead of JavaScript using $Script$ for ease of conversion
-
-In $Script$, variables can be explicitly given a type for the computer to treat it as; some common examples in @boardname@ are ``string``, ``number``, and ``sprite``.
+In MakeCode JavaScript, variables can be explicitly given a type for the computer to treat it as; some common examples in @boardname@ are ``string``, ``number``, and ``sprite``.
 
 ## Concept: Implicit Typing to Explicit Typing
 
-In $Script$, variables can be assigned a type at declaration by using ``: type`` after the name of the variable.
+In MakeCode JavaScript, variables can be assigned a type at declaration by using ``: type`` after the name of the variable.
 
 ```typescript
 let x: number = 5;
@@ -147,5 +145,60 @@ console.log(x);
 ### ~hint
 
 Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/intro/types-problems) for this section to review the material and practice the concepts introduced in this section.
+
+### ~
+
+### ~hint
+
+## Case Study
+
+### Using Types
+
+In your game, add a type to the variable you created in the previous lesson's ``Splash the Intro`` example.
+
+### Setting a Value
+
+``||variables:Variables||`` can be used to store different values that are useful in your code. In your game, add **two** new variables on new lines after the rest of the code (including the curly braces ``{}``!).
+
+Make the first variable, ``||variables:x||``, store the value 80. Make the second variable, ``||variables:y||``, store the value 100.
+
+Make sure to give each of these values the proper type.
+
+### Solution
+
+```typescript
+enum SpriteKind {
+    Asteroid
+}
+
+namespace asteroids {
+    sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
+        sprite.setImage(sprites.space.spaceAsteroid0);
+        sprite.setFlag(SpriteFlag.AutoDestroy, true);
+        setPosition(sprite, 10);
+        setMotion(sprite);
+    });
+
+    game.onUpdateInterval(1500, function () {
+        sprites.createEmptySprite(SpriteKind.Asteroid);
+    });
+
+    function setMotion(asteroid: Sprite) {
+        asteroid.vx = Math.randomRange(-8, 8);
+        asteroid.vy = Math.randomRange(35, 20);
+    }
+
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
+    }
+}
+
+let intro: string = "Hello! This is my Space Game!"
+game.splash(intro);
+
+let x: number = 80;
+let y: number = 100;
+```
 
 ### ~

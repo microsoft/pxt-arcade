@@ -213,9 +213,99 @@ Note that the ``||scene:cameraFollowSprite||`` function was used to make the cam
 1. What is the behavior of a tile if no ``||images:image||`` is set to that color?
 2. How do ``||scene:tile maps||`` help make a level feel more personalized?
 
-
 ### ~hint
 
 Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/structure/tilemaps-problems) for this section to review the material and practice the concepts introduced in this section.
+
+### ~
+
+### ~hint
+
+## Case Study
+
+### Creating an Enemy
+
+``||scene:Tile Maps||`` will not be used in the example case study game. Instead, this section will include another ``||sprites:Sprite||`` that needs to be created: an ``||sprites:Enemy||``!
+
+Create a sprite of ``||sprites:Kind||`` ``||sprites:Enemy||``. Set their ``||sprites:x||`` position to be the **same** as the ``||variables:player||``s ``||sprites:x||`` position, and it's ``||sprites:y||`` position to 20. Create a unique image for your new enemy.
+
+Set the ``||variables:enemy||`` to have a ``||sprites:vy||`` of 10, so that it moves down the screen slowly.
+
+### Solution
+
+```typescript
+enum SpriteKind {
+    Player,
+    Enemy,
+    Asteroid
+}
+
+namespace asteroids {
+    sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
+        sprite.setImage(sprites.space.spaceAsteroid0);
+        sprite.setFlag(SpriteFlag.AutoDestroy, true);
+        setPosition(sprite, 10);
+        setMotion(sprite);
+    });
+
+    game.onUpdateInterval(1500, function () {
+        sprites.createEmptySprite(SpriteKind.Asteroid);
+    });
+
+    function setMotion(asteroid: Sprite) {
+        asteroid.vx = Math.randomRange(-8, 8);
+        asteroid.vy = Math.randomRange(35, 20);
+    }
+
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
+    }
+}
+
+let name: string = "Captain ";
+let playerName: string = game.askForString("What is your name?");
+
+if (playerName == "myName!") {
+    playerName += " 2";
+}
+
+name += playerName;
+
+let intro: string = "Hello, ";
+intro += name;
+intro += "! This is my Space Game!";
+game.splash(intro);
+
+for (let i = 0; i < 10; i++) {
+    sprites.createEmptySprite(SpriteKind.Asteroid);
+    pause(250);
+}
+
+let player = sprites.create(img`
+    . . . . 8 . . . .
+    . . . 8 8 8 . . .
+    . . . 8 1 8 . . .
+    . . 2 8 1 8 2 . .
+    . 2 2 8 8 8 2 2 .
+    2 2 2 8 8 8 2 2 2
+    . . . 5 . 5 . . .
+`, SpriteKind.Player);
+
+controller.moveSprite(player, 80, 30);
+player.x = screen.width / 2;
+player.y = screen.height - 20;
+
+let enemy = sprites.create(img`
+    5 5 . . . . 5 5
+    7 7 7 7 7 7 7 7
+    . 9 9 7 7 9 9 .
+    . 7 7 7 7 7 7 .
+    . . . 9 9 . . .
+`, SpriteKind.Enemy);
+enemy.x = player.x;
+enemy.y = 20;
+enemy.vy = 10;
+```
 
 ### ~

@@ -6,16 +6,16 @@ In JavaScript, the same formulas can be easier to express, as the syntax (struct
 
 | Operation         | Block                 | JavaScript            |
 | :---------------- | :-------------------: | :-------------------- |
-| Addition          | `[let x = (6 + 2)]`   | `let x = 6 + 2;`      |
-| Subtraction       | `[let x = (6 - 2)]`   | `let x = 6 - 2;`      |
-| Multiplication    | `[let x = (6 * 2)]`   | `let x = 6 * 2;`      |
-| Division          | `[let x = (6 / 2)]`   | `let x = 6 / 2;`      |
+| Addition          | ``[let x = (6 + 2)]`` | ``let x = 6 + 2;``    |
+| Subtraction       | ``[let x = (6 - 2)]`` | ``let x = 6 - 2;``    |
+| Multiplication    | ``[let x = (6 * 2)]`` | ``let x = 6 * 2;``    |
+| Division          | ``[let x = (6 / 2)]`` | ``let x = 6 / 2;``    |
 
 ## Example #1: Complex Expressions
 
 1. Review the examples below
 2. Identify what is different between the Blocks and the JavaScript in each pair
-3. Run the examples: identify what the end result will be (it may be useful to add ``game.splash`` or ``console.log`` to display the value)
+3. Run the examples: identify what the end result will be (it may be useful to add ``||game:game.splash||`` or ``console.log`` to display the value)
 
 ### Example #1a: Addition and Subtraction
 
@@ -82,7 +82,7 @@ Parentheses have the highest order, which means that they are always evaluated f
 ## Example #2: Using PEMDAS
 
 1. Review the examples below
-2. In each example, identify how the value of ``num`` is changed using the order of operations
+2. In each example, identify how the value of ``||variables:num||`` is changed using the order of operations
 
 ### Example #2a: Subtraction and Division
 
@@ -123,7 +123,7 @@ This will print out the number 2 instead.
 ## Student Task #2: Fixing an Expression
 
 1. Recreate the code below
-2. Run the code and identify what value ``num`` stores
+2. Run the code and identify what value ``||variables:num||`` stores
 3. Review the description of the goal of the code in the box below: does the code match the goal?
 4. If the code does not match the expected output, modify the order in which it is evaluated **by adding parentheses**. Do not add or remove any other operators or numbers 
 
@@ -151,5 +151,55 @@ game.splash("" + num);
 ### ~hint
 
 Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/intro/math-problems) for this section to review the material and practice the concepts introduced in this section.
+
+### ~
+
+### ~hint
+
+## Case Study
+
+### Use Relative Values
+
+The ``||scene:screen.width||`` and ``||scene:screen.height||`` properties correspond to the width and height of the game ``||scene:screen||``.
+
+Change how ``||variables:x||`` and ``||variables:y||`` are set so that ``||variables:x||`` stores ``||scene:screen.width / 2||``, and ``||variables:y||`` stores ``||scene:screen.height - 20||``.
+
+### Solution
+
+```typescript
+enum SpriteKind {
+    Asteroid
+}
+
+namespace asteroids {
+    sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
+        sprite.setImage(sprites.space.spaceAsteroid0);
+        sprite.setFlag(SpriteFlag.AutoDestroy, true);
+        setPosition(sprite, 10);
+        setMotion(sprite);
+    });
+
+    game.onUpdateInterval(1500, function () {
+        sprites.createEmptySprite(SpriteKind.Asteroid);
+    });
+
+    function setMotion(asteroid: Sprite) {
+        asteroid.vx = Math.randomRange(-8, 8);
+        asteroid.vy = Math.randomRange(35, 20);
+    }
+
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
+    }
+}
+
+let intro: string = "Hello! This is my Space Game!"
+game.splash(intro);
+let name: string = game.askForString("What is your name?");
+
+let x: number = screen.width / 2;
+let y: number = screen.height - 20;
+```
 
 ### ~

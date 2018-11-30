@@ -15,6 +15,7 @@
         * [Tile Maps](/courses/csintro3/structure/tilemaps)
         * [Corgio Extension](/courses/csintro3/structure/extensions)
         * [Namespaces and Comments](/courses/csintro3/structure/namespaces)
+        * [Additions to Case Study](/courses/csintro3/structure/additions)
     * [Functions](/courses/csintro3/functions)
         * [Intro to JavaScript Functions](/courses/csintro3/functions/intro)
         * [Parameters](/courses/csintro3/functions/parameters)
