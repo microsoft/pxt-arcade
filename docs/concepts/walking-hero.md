@@ -1,5 +1,7 @@
 # Walking Hero
 
+[Open this tutorial in the editor!](/#tutorial:concepts/walking-hero)
+
 ## Introduction @unplugged
 
 ``||sprites:Sprites||`` can be used to represent the **characters** in your game. These can be anything - coins to collect, enemies to avoid, or lasers fired from a spaceship.
@@ -40,7 +42,7 @@ let mySprite = sprites.create(img`
 
 ## Step 2 @fullscreen
 
-Click on the grey box in ``||variables:set projectile to||`` to open the image editor. Use it to draw an image to represent your new sprite on the screen.
+Click on the grey box in ``||variables:set mySprite to||`` to open the image editor. Use it to draw an image to represent your new sprite on the screen.
 
 When you close the image editor by clicking outside of it, the image you drew will show up in the center of the screen in the simulator.
 

@@ -1,4 +1,6 @@
-# [Princess Pizza](/#tutorial:concepts/princess-pizza)
+# Princess Pizza
+
+[Open this tutorial in the editor!](/#tutorial:concepts/princess-pizza)
 
 ## Introduction @unplugged
 

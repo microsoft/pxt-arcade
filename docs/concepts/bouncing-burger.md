@@ -1,5 +1,7 @@
 # Bouncing Burger
 
+[Open this tutorial in the editor!](/#tutorial:concepts/bouncing-burger)
+
 ## Introduction @unplugged
 
 ``||sprites:Sprites||`` can be given ``||sprites:x||`` and ``||sprites:y||`` velocities so that they can move around the screen.  In this case, a ``||sprites:Sprite||`` will be used to represent a burger that bounces around the screen.
@@ -36,7 +38,7 @@ let mySprite = sprites.create(img`
 
 ## Step 2 @fullscreen
 
-Click on the grey box in ``||variables:set projectile to||`` to open the image editor. Open the Gallery, scroll to find the image of a burger, and click on the image of a burger to select that image.
+Click on the grey box in ``||variables:set mySprite to||`` to open the image editor. Open the Gallery, scroll to find the image of a burger, and click on the image of a burger to select that image.
 
 This will set the image of the ``||sprites:Sprite||`` to a burger; run the code and make sure you see it on the screen!
 
@@ -85,7 +87,7 @@ f 6 6 d d f f f f f e e e f f e f f e e e e e f f e e d b 4 6 e
 
 ## Step 3 @fullscreen
 
-Find ``||sprites:set mySprite x to 0||`` in ``||sprites:Sprites||``. Place it after ``||variables:set mySprite to||``, and change ``||variables:x||`` to ``||variables:vx||``. Change the 0 to 40.
+Find ``||sprites:set mySprite x to 0||`` in ``||sprites:Sprites||``. Place it after ``||variables:set mySprite to||``, and change ``||sprites:x||`` to ``||sprites:vx||``. Change the 0 to 40.
 
 This will make the sprite move to the **right** across the screen, because the ``||sprites:x||`` position will be **increasing**.
 
@@ -135,7 +137,7 @@ mySprite.vx = 40;
 
 ## Step 4 @fullscreen
 
-Find ``||sprites:set mySprite x to 0||`` in ``||sprites:Sprites||``. Place it after ``||variables:set mySprite to||``, and change ``||variables:x||`` to ``||variables:vy||``. Change the 0 to 60.
+Find ``||sprites:set mySprite x to 0||`` in ``||sprites:Sprites||``. Place it after ``||variables:set mySprite to||``, and change ``||sprites:x||`` to ``||sprites:vy||``. Change the 0 to 60.
 
 This will make the sprite move **downwards** across the screen, because the ``||sprites:y||`` position will be **increasing**.
 
@@ -180,8 +182,8 @@ f 6 6 d d f f f f f e e e f f e f f e e e e e f f e e d b 4 6 e
 . . . . . . . . . f f f f f f f c c c c c e e . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-mySprite.x = 40
-mySprite.y = 60
+mySprite.vx = 40
+mySprite.vy = 60
 ```
 
 ## Step 5 @fullscreen
@@ -229,8 +231,8 @@ f 6 6 d d f f f f f e e e f f e f f e e e e e f f e e d b 4 6 e
 . . . . . . . . . f f f f f f f c c c c c e e . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-mySprite.x = 40
-mySprite.y = 60
+mySprite.vx = 40
+mySprite.vy = 60
 mySprite.setFlag(SpriteFlag.StayInScreen, false)
 ```
 
@@ -282,8 +284,8 @@ f 6 6 d d f f f f f e e e f f e f f e e e e e f f e e d b 4 6 e
 . . . . . . . . . f f f f f f f c c c c c e e . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-mySprite.x = 40
-mySprite.y = 60
+mySprite.vx = 40
+mySprite.vy = 60
 mySprite.setFlag(SpriteFlag.BounceOnWall, true)
 ```
 
