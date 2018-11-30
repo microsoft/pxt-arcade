@@ -22,7 +22,7 @@
 },
 {
   "name": "Bouncing Burger",
-  "description": "Learn how to create a Sprite that will bounce around the screen New Concepts: Projectiles, Sprite motion, Bounce on Wall flag",
+  "description": "Learn how to create a Sprite that will bounce around the screen. New Concepts: Projectiles, Sprite motion, Bounce on Wall flag",
   "url": "/concepts/bouncing-burger",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/bouncing-burger.gif"
