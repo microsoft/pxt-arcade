@@ -40,6 +40,13 @@
   "url": "/concepts/throw-a-bone",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/throw-a-bone.gif"
+},
+{
+  "name": "Sunday Drive",
+  "description": "Learn about how to make actions occur on an interval, and introducing randomness to games. New Concepts: On game update interval, Pick random, Screen height property",
+  "url": "/concepts/sunday-drive",
+  "cardType": "tutorial",
+  "imageUrl": "/static/concepts/sunday-drive.gif"
 }
 ]
 ```
