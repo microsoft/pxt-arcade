@@ -33,6 +33,20 @@
   "url": "/concepts/bouncing-burger",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/bouncing-burger.gif"
+},
+{
+  "name": "Throw a Bone",
+  "description": "Learn about how projectiles and button events work by throwing a bone. New Concepts: Controller button events, projectiles",
+  "url": "/concepts/throw-a-bone",
+  "cardType": "tutorial",
+  "imageUrl": "/static/concepts/throw-a-bone.gif"
+},
+{
+  "name": "Sunday Drive",
+  "description": "Learn about how to make actions occur on an interval, and introducing randomness to games. New Concepts: On game update interval, Pick random, Screen height property",
+  "url": "/concepts/sunday-drive",
+  "cardType": "tutorial",
+  "imageUrl": "/static/concepts/sunday-drive.gif"
 }
 ]
 ```
@@ -41,4 +55,6 @@
 
 [Walking Hero](/concepts/walking-hero),
 [Picnic Food](/concepts/picnic-food),
-[Bouncing Burger](/concepts/bouncing-burger)
+[Princess Pizza](/concepts/princess-pizza),
+[Bouncing Burger](/concepts/bouncing-burger),
+[Throw a Bone](/concepts/throw-a-bone)
