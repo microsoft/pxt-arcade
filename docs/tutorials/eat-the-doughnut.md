@@ -118,7 +118,7 @@ controller.moveSprite(mySprite)
 
 ## Step 5 @fullscreen
 
-Drag another ``||variables:set mySprite to||`` into the ``||loops:on start||``. Click on ``||variables:mySprite||``, and select ``||variables:Create a new variable||``, and enter ``doughnut`` as the variable name.
+Drag another ``||variables:set mySprite to||`` into the ``||loops:on start||``. Click on ``||variables:mySprite||``, select ``||variables:Create a new variable||``, and enter ``doughnut`` as the variable name.
 
 This will create **another** ``||sprites:Sprite||``, that will not be controlled by the player.
 
@@ -171,9 +171,9 @@ doughnut = sprites.create(img`
 
 ## Step 6
 
-Click on the grey box for ``||variables:doughnut||``, and then select the ``Gallery`` view. Scroll to find the image of a small doughnut (without sprinkles), and select it to load it into the image editor.
+Click on the grey box for ``||variables:doughnut||``, and then select the Gallery view. Scroll to find the image of a small doughnut (without sprinkles), and select it to load it into the image editor.
 
-The image editor has a lot of other images in it; feel free to look around and choose another one if it looks better to you!
+The Gallery has a lot of other images in it; feel free to look around and choose different image if one looks better to you!
 
 ```blocks
 enum SpriteKind {
