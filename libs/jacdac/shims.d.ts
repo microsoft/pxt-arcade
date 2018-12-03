@@ -14,10 +14,22 @@ declare namespace jacdac {
     function stop(): void;
 
     /**
+     * Indicates if JacDac is running
+     */
+    //% parts=jacdac shim=jacdac::isRunning
+    function isRunning(): boolean;
+
+    /**
      * Clears any existing bridge
      */
     //% parts=jacdac shim=jacdac::clearBridge
     function clearBridge(): void;
+
+    /**
+     * Gets a snapshot of the drivers registered on the bus. Array of JDDevice
+     */
+    //% parts=jacdac shim=jacdac::__internalDrivers
+    function __internalDrivers(): Buffer;
 
     /**
     Internal
