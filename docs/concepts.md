@@ -47,6 +47,13 @@
   "url": "/concepts/sunday-drive",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/sunday-drive.gif"
+},
+{
+  "name": "Which Button?",
+  "description": "Learn about how to use score, life, and countdown when making games. New Concepts: Score, Life, Countdown",
+  "url": "/concepts/which-button",
+  "cardType": "tutorial",
+  "imageUrl": "/static/concepts/which-button.gif"
 }
 ]
 ```
