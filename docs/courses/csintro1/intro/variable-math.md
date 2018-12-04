@@ -17,6 +17,7 @@ Variable Definition: a container used to store values in your code.
 ### ~
 
 In this activity, student are introduced to:
+
 * Expressing numeric operations with math operators (`+`, `-`, `*`, `/`)
 * Storing the result of an equation in a variable 
 * Evaluating equations using variables

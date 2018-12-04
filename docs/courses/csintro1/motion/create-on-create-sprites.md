@@ -6,7 +6,7 @@ We will use ``||sprites:create empty sprite||`` to spawn a new empty sprite, whi
 
 The ``||sprites:on created||`` block uses the sprite's ``||sprites:kind||`` so we can give our new sprites the exact attributes we want, like an image, velocity, or position.
 
-## Concept: Random Clouds - create with on created event 
+## Concept: Create with on created event 
 
 https://youtu.be/eXCpLH74tF4
 
@@ -29,7 +29,7 @@ enum SpriteKind {
     Enemy
 }
 let agent: Sprite = null
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.n.onEvent(ControllerButtonEvent.Pressed, function () {
     agent.vy += -1
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
