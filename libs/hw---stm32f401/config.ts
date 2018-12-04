@@ -12,7 +12,7 @@ namespace config {
     export const PIN_SDA = DAL.PB_7;
     export const PIN_SCL = DAL.PB_6;
 
-    export const PIN_JACDAC = DAL.PA_9;
+    export const PIN_JACK_TX = PIN_TX; // DAL.PA_9;
 
     export const PIN_D14 = DAL.PB_9;
     export const PIN_D15 = DAL.PB_8;
