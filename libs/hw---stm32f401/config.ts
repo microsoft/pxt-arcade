@@ -1,4 +1,4 @@
-
+// Note that these value can be overridden by the configuration area in the bootloader.
 namespace config {
     export const PIN_LED = DAL.PC_8;
 
