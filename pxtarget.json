@@ -173,7 +173,8 @@
         "bannedCategories": [
             "pins",
             "console",
-            "control"
+            "control",
+            "input"
         ]
     },
     "simulator": {
