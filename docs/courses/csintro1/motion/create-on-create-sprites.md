@@ -29,7 +29,7 @@ enum SpriteKind {
     Enemy
 }
 let agent: Sprite = null
-controller.n.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     agent.vy += -1
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
