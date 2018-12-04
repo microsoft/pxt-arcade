@@ -7,6 +7,7 @@ We can use those events to change sprite location, and to make the sprite move. 
 When the velocities of a sprite are not zero, then the sprite will be in motion.
 
 In these activities, the student will use:
+
 * Controller events
 * Incrementing ``||sprites:x||`` and ``||sprites:y||`` coordinates
 * Setting ``||sprites:vx||`` and ``||sprites:vy||`` velocity
@@ -135,7 +136,8 @@ We have created motion by capturing the key pad events and incrementing (or decr
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "motionShortMethod")
-4. Note the blocks in ``||game:on game update||``
+4. Note the ``||game:on game update||``; this is used to assign code to run whenever the game updates
+5. Note the blocks in ``||game:on game update||``
 
 ```blocks
 enum SpriteKind {

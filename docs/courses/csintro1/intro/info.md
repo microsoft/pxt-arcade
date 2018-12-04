@@ -5,6 +5,7 @@ We have previously worked with variables we created. A lot of the time, software
 The ``||info:info||`` category in blocks contains a few variables (data properties) which we are allowed to update. These properties have to do with score, life, and time. We will take a quick look at how to use these as variables in our code.
 
 In this activity, students are introduced to:
+
 * Using the ``||info:score||`` and ``||info:life||`` properties
 * Combining numeric values with math operators (\*)
 * The benefits of using ``||info:score||`` and ``||info:life||`` over other options

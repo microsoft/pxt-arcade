@@ -39,7 +39,6 @@ player1 = sprites.create(img`
 `, SpriteKind.Player)
 scene.setBackgroundColor(12)
 game.onUpdate(function () {
-    // Move sprite bigger number is faster e.g. - dx(20)
     player1.x += controller.dx(15)
     player1.y += controller.dy(15)
     if (player1.x < -10) {
@@ -52,7 +51,7 @@ game.onUpdate(function () {
         player1.y = -10
     }
     if (player1.y > 130) {
-        player1.x = 130
+        player1.y = 130
     }
 })
 ```

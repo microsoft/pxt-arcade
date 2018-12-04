@@ -8,6 +8,16 @@ Having stars in the background is important to show motion for a game that takes
 
 ## Step 1
 
+Find ``||game:on game update||`` in ``||game:Game||``, and drag it into the workspace.
+
+```blocks
+game.onUpdate(function () {
+
+})
+```
+
+## Step 2
+
 Find ``||variables:set projectile to||`` in ``||sprites:Sprites||``. Drag it into the ``||game:on game update||``.
 
 ```blocks
@@ -37,7 +47,7 @@ game.onUpdate(function () {
 })
 ```
 
-## Step 2 @fullscreen
+## Step 3 @fullscreen
 
 Click on the grey box in ``||variables:set projectile to||`` and create a single white pixel for the star.
 
@@ -70,7 +80,7 @@ game.onUpdate(function () {
 })
 ```
 
-## Step 3 @fullscreen
+## Step 4 @fullscreen
 
 Find ``||Math:pick random 0 to 10||``. Change the `0` to `20`, and the `10` to `30`. Place it in ``||sprites:vy||`` in ``||sprites:projectile||``.
 
@@ -103,7 +113,7 @@ game.onUpdate(function () {
 })
 ```
 
-## Step 4
+## Step 5
 
 Find ``||sprites:set mySprite position to||`` in ``||sprites:Sprites||``. Place it after ``||variables:set projectile to||`` and change ``||variables:mySprite||`` to ``||variables:projectile||``.
 
@@ -135,7 +145,7 @@ game.onUpdate(function () {
 })
 ```
 
-## Step 5
+## Step 6
 
 Grab another ``||Math:pick random 0 to 10||`` and put it in as the ``x`` value for position. Find ``||scene:screen width||`` in ``||scene:Scene||``, and replace the `10` with it.
 
@@ -167,7 +177,7 @@ game.onUpdate(function () {
 })
 ```
 
-## Step 6 @fullscreen
+## Step 7 @fullscreen
 
 At this point, too many stars are being created. This is fixed by surrounding the blocks inside ``||game:on game update||`` with an ``||logic:if then||`` block.
 
@@ -203,7 +213,7 @@ game.onUpdate(function () {
 })
 ```
 
-## Step 7
+## Step 8
 
 Get a ``||Math:0 % chance||`` block and replace the `true` condition in the ``||logic: if then||`` with it. Change the `0` to `25`.
  

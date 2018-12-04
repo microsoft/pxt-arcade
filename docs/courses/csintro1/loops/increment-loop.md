@@ -5,6 +5,7 @@ Games often need to keep multiple variables to keep track of how well a player i
 We refer to increasing a count as incrementing it, and decreasing count as decrementing it. We will update our game score by using the ``||variables:change by||`` block.
 
 In these activities, the student will be introduced to:
+
 * ``||loops:repeat||`` loops
 * ``||loops:for index||`` loops
 * Variables with ``||variables:increase by||``
