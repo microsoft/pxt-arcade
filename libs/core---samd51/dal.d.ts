@@ -695,16 +695,7 @@ declare const enum DAL {
     REF_TAG_BUFFER = 2,
     REF_TAG_IMAGE = 3,
     REF_TAG_USER = 32,
-    // /pxtapp/hf2dbg.h
-    HF2DBG_H = 1,
-    // /pxtapp/mixer---none/melody.h
-    SW_TRIANGLE = 1,
-    SW_SAWTOOTH = 2,
-    SW_SINE = 3,
-    SW_NOISE = 4,
-    SW_SQUARE_10 = 11,
-    SW_SQUARE_50 = 15,
-    // /pxtapp/pins.h
+    // /pxtapp/configkeys.h
     CFG_PIN_ACCELEROMETER_INT = 1,
     CFG_PIN_ACCELEROMETER_SCL = 2,
     CFG_PIN_ACCELEROMETER_SDA = 3,
@@ -817,6 +808,19 @@ declare const enum DAL {
     CFG_DEFAULT_BUTTON_MODE = 202,
     CFG_SWD_ENABLED = 203,
     CFG_FLASH_BYTES = 204,
+    CFG_RAM_BYTES = 205,
+    CFG_SYSTEM_HEAP_BYTES = 206,
+    CFG_LOW_MEM_SIMULATION_KB = 207,
+    // /pxtapp/hf2dbg.h
+    HF2DBG_H = 1,
+    // /pxtapp/mixer---none/melody.h
+    SW_TRIANGLE = 1,
+    SW_SAWTOOTH = 2,
+    SW_SINE = 3,
+    SW_NOISE = 4,
+    SW_SQUARE_10 = 11,
+    SW_SQUARE_50 = 15,
+    // /pxtapp/pins.h
     BUTTON_ACTIVE_HIGH_PULL_DOWN = 17,
     BUTTON_ACTIVE_HIGH_PULL_UP = 33,
     BUTTON_ACTIVE_HIGH_PULL_NONE = 49,
