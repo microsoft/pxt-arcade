@@ -8,7 +8,7 @@ The maps and levels in a game are important to make the game interesting to expl
 
 ## Step 1 @fullscreen
 
-Find ``||scene:set til emap to||`` in ``||scene:Scene||``. Drag it into ``||loops:on start||``.
+Find ``||scene:set tile map to||`` in ``||scene:Scene||``. Drag it into ``||loops:on start||``.
 
 ```blocks
 scene.setTileMap(img`
@@ -81,9 +81,9 @@ scene.setTile(5, img`
 
 ## Step 4 @fullscreen
 
-Click on the other gray box in `||scene:set tile to||`` to open the image editor, and draw an image for the tile.
+Click on the other gray box in ``||scene:set tile to||`` to open the image editor, and draw an image for the tile.
 
-This way, any tiles that are assigned the color in the ``||scene:tile map||`` will now be displayed as the image that you drew.
+Any tiles that are assigned the color you specified in the ``||scene:tile map||`` will now be displayed as the image that you drew.
 
 ```blocks
 scene.setTileMap(img`
@@ -178,7 +178,7 @@ mySprite = sprites.create(img`
 
 Find ``||controller:move mySprite with buttons||`` and drag it into ``||loops:on start||`` after ``||variables:set mySprite to||``.
 
-This will let the player move the character around the map that is displayed on the screen. However, there is one thing; the player can move straight through the beautiful tiles we designed! This can be fixed by changing the tile to be a ``||scene:Wall||``.
+This will let the player move the character around the map that is displayed on the screen. However, there is one issue; the player can move straight through the beautiful tiles we designed! This can be fixed by changing the tile to be a ``||scene:Wall||``.
 
 ```blocks
 enum SpriteKind {
@@ -296,6 +296,6 @@ mySprite = sprites.create(img`
 controller.moveSprite(mySprite)
 ```
 
-## Complete
+## Complete @fullscreen
 
 Congratulations, your first tile map is complete! Try to move the character around the screen, or create more types of ``||scene:tiles||``. If you expand the ``||scene:tile map||`` image, you can create a larger map - if you do, use ``||scene:camera follow sprite mySprite||`` to make it so the camera stays centered on the character you control, so that you can explore the entire map!

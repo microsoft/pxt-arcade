@@ -18,7 +18,7 @@ info.setScore(0)
 
 ## Step 2 @fullscreen
 
-Find ``||info:set life to 3||`` in ``||info:Info||``, and drag it into ``||loops:on start||``. Change the 3 to 5 to increase the start lives.
+Find ``||info:set life to 3||`` in ``||info:Info||``, and drag it into ``||loops:on start||``. Change the 3 to 5.
 
 This sets the amount of lives a player will start with. Lives show up in the top left corner of the screen, and if the player runs out of lives the game will end.
 
@@ -101,6 +101,6 @@ info.setLife(5)
 info.startCountdown(10)
 ```
 
-## Complete
+## Complete @fullscreen
 
-Congratulations, you have completed your game! This one may be simple - with the only way to lose life being to press the wrong button - but the blocks can be combined with others, like ``||sprites:sprite overlap events||``, to make games where players are rewarded or punished based on their performance.
+Congratulations, you have completed your game! This one may be simple - with the only way to lose life being to press the wrong button - but the blocks can be combined with others, like sprite overlap events, to make games where players are rewarded or punished based on their performance.
