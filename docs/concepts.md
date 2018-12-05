@@ -54,6 +54,13 @@
   "url": "/concepts/which-button",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/which-button.gif"
+},
+{
+  "name": "Setting the Scene",
+  "description": "Learn about how tile maps are used to create levels for players to explore. New Concepts: Tile maps, Tile Images, Walls",
+  "url": "/concepts/setting-the-scene",
+  "cardType": "tutorial",
+  "imageUrl": "/static/concepts/setting-the-scene.gif"
 }
 ]
 ```
@@ -64,4 +71,7 @@
 [Picnic Food](/concepts/picnic-food),
 [Princess Pizza](/concepts/princess-pizza),
 [Bouncing Burger](/concepts/bouncing-burger),
-[Throw a Bone](/concepts/throw-a-bone)
+[Throw a Bone](/concepts/throw-a-bone),
+[Sunday Drive](/concepts/sunday-drive),
+[Which Button](/concepts/which-button),
+[Setting the Scene](/concepts/setting-the-scene)
