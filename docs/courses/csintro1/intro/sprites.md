@@ -5,6 +5,7 @@ Games tell a story, and those stories require characters. In @boardname@, those 
 ![Image Editor Features](/static/courses/csintro1/intro/image-editor-features.png)
 
 In this activity, students are introduced to:
+
 * Using blocks
 * ``||sprites:Sprites||`` and ``||images:Images||``
 * Using the Image Editor

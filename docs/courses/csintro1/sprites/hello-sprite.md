@@ -12,7 +12,7 @@ https://youtu.be/iufK6TM9OkM
 
 [Alternative Video Location](https://aka.ms/40544a-spritesay_final)
 
-Sprite Objects have a method ``||sprites:say||`` that displays a text box over the sprite when used. 
+Sprites have a method ``||sprites:say||`` that displays a text box over the sprite when used. 
 
 ### Vocabulary: Method
 
@@ -73,7 +73,7 @@ https://youtu.be/9xSWNoDOAQc
 
 1. Start a new project, and name it "console"
 2. Switch to JavaScript view and replace all code with the code below
-3. Press **Show Console Simulator** button below the simulator to display `console` output
+3. Press the **Show Console Simulator** button below the simulator to display `console` output
 
 ```typescript
 let msg: string = "Hello World!"
@@ -104,9 +104,9 @@ https://youtu.be/1xQWu1tHFCo
 
 1. Start with the above project and add another sprite (make sure to give both unique variable names)
 2. Add in a ``||sprite:say||`` messages to have a conversation with the first sprite
-3. Push the `+` on the ``||sprites:say||`` block and set the time for each message (1000 millisecond = 1 second)
-4. **Challenge:** add additional sprites at different coordinates and use ``||sprites:say||`` to make messages for all of them.
-5. **Challenge:** make larger 32x32 sprites with more detail than the smaller sprites allowed.
+3. Push the `+` on the ``||sprites:say||`` block and set the time for each message to be displayed (1000 millisecond = 1 second)
+4. **Challenge:** add additional sprites at different coordinates and use ``||sprites:say||`` to make messages for all of them
+5. **Challenge:** make larger 32x32 sprites with more detail than the smaller sprites allowed
 
 ### ~hint
 

@@ -1,4 +1,4 @@
-# Getting started
+# Simple Maze
 
 ## Introduction @unplugged
 
@@ -290,7 +290,17 @@ info.startCountdown(10)
 
 ## Step 8
 
-We need to see if the player makes it out of the maze by adding a ``||logic:if then||`` block inside ``||game:update||``. Get a ``||logic:0 < 0||`` block and replace the `true` condition with it.
+Find ``||game:on game update||`` in ``||game:Game||``, and drag it into the workspace.
+
+```blocks
+game.onUpdate(function () {
+
+})
+```
+
+## Step 9
+
+We need to see if the player makes it out of the maze by adding a ``||logic:if then||`` block inside ``||game:on game update||``. Get a ``||logic:0 < 0||`` block and replace the `true` condition with it.
 
 ```blocks
 game.onUpdate(function () {
@@ -300,7 +310,7 @@ game.onUpdate(function () {
 })
 ```
 
-## Step 9
+## Step 10
 
 Change the ``<`` condition in ``||logic:0 < 0||`` to ``<=``. Find the ``||sprites:mySprite x (horizontal position)||`` block and put it in where the first `0` is. Click the dropdown and select ``left``. Put a ``||game:game over||`` inside of ``||logic:if then||``.
 

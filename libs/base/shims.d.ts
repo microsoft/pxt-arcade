@@ -156,10 +156,16 @@ declare namespace control {
     function dmesgValue(v: any): void;
 
     /**
-     * Force GC and dump information about heap.
+     * Force GC and dump basic information about heap.
      */
     //% shim=control::gc
     function gc(): void;
+
+    /**
+     * Force GC and halt waiting for debugger to do a full heap dump.
+     */
+    //% shim=control::heapDump
+    function heapDump(): void;
 
     /**
      * Return true if profiling is enabled in the current build.

@@ -38,7 +38,7 @@ mySprite = sprites.create(img`
 
 ## Step 2
 
-Get a ``||game:on update every 500 ms||`` from ``||game:Game||`` and drag it onto the editor workspace.
+Find in ``||game:on update every 500 ms||`` and ``||game:Game||``, and drag it into the workspace.
 
 ```blocks
 enum SpriteKind {

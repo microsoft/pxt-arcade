@@ -19,8 +19,10 @@
         "mixer---none": "file:../mixer---none",
         "controller---hw": "file:../controller---hw",
         "buttons": "file:../buttons",
-        "game": "file:../game",
-        "jacdac": "file:../jacdac"
+        "game": "file:../game"
     },
-    "public": true
+    "public": true,
+    "dalDTS": {
+        "corePackage": "../core---samd51"
+    }
 }

@@ -4,38 +4,68 @@ declare namespace jacdac {
     /**
      * Starts the JacDac protocol
      */
-    //% shim=jacdac::start
+    //% parts=jacdac shim=jacdac::start
     function start(): void;
 
     /**
      * Starts the JacDac protocol
      */
-    //% shim=jacdac::stop
+    //% parts=jacdac shim=jacdac::stop
     function stop(): void;
+
+    /**
+     * Indicates if JacDac is running
+     */
+    //% parts=jacdac shim=jacdac::isRunning
+    function isRunning(): boolean;
+
+    /**
+     * true if connected, false if there's a bad bus condition.
+     */
+    //% parts=jacdac shim=jacdac::isConnected
+    function isConnected(): boolean;
+
+    /**
+     * Gets the jacdac event id
+     */
+    //% parts=jacdac shim=jacdac::eventId
+    function eventId(): int32;
+
+    /**
+     * Gets the jacdac logic driver event id
+     */
+    //% parts=jacdac shim=jacdac::logicEventId
+    function logicEventId(): int32;
 
     /**
      * Clears any existing bridge
      */
-    //% shim=jacdac::clearBridge
+    //% parts=jacdac shim=jacdac::clearBridge
     function clearBridge(): void;
+
+    /**
+     * Gets a snapshot of the drivers registered on the bus. Array of JDDevice
+     */
+    //% parts=jacdac shim=jacdac::__internalDrivers
+    function __internalDrivers(): Buffer;
 
     /**
     Internal
      */
-    //% shim=jacdac::__internalAddDriver
+    //% parts=jacdac shim=jacdac::__internalAddDriver
     function __internalAddDriver(driverType: int32, driverClass: int32, methods: MethodCollection, controlData: Buffer): JacDacDriverStatus;
 
     /**
      * Internal
      */
-    //% shim=jacdac::__internalSendPacket
+    //% parts=jacdac shim=jacdac::__internalSendPacket
     function __internalSendPacket(buf: Buffer, deviceAddress: int32): int32;
 }
 
 
 declare interface JacDacDriverStatus {
     /**
-     * Returns the JDDevice instnace
+     * Returns the JDDevice instance
      */
     //% property shim=JacDacDriverStatusMethods::device
     device: Buffer;
