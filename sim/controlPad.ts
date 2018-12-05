@@ -13,6 +13,7 @@ namespace pxsim {
     export interface KeyBinding {
         el: Element;
         key: Key;
+        closenessFactor: number;
         isDown?: boolean;
         dist?: number;
     }
@@ -72,30 +73,29 @@ namespace pxsim {
                     r.top <= y && y <= r.bottom)
             }
 
-            for (let k of this.keys) {
-                const r = k.el.getBoundingClientRect();
-                if (inRect(r)) {
-                    inside = k
-                }
-                const dx = (r.left + r.right) / 2 - x
-                const dy = (r.top + r.bottom) / 2 - y
-                const d = dx * dx + dy * dy
-                k.dist = d
+            if (inRect(board().canvas.getBoundingClientRect()))
+                close = this.keys.filter(k => k.key == Key.A)
 
-                if (d < r.width * r.width * 3) {
-                    close.push(k)
+            if (!close.length)
+                for (let k of this.keys) {
+                    const r = k.el.getBoundingClientRect();
+                    if (inRect(r)) {
+                        inside = k
+                    }
+                    const dx = (r.left + r.right) / 2 - x
+                    const dy = (r.top + r.bottom) / 2 - y
+                    const d = dx * dx + dy * dy
+                    k.dist = d
+
+                    if (d < r.width * r.width * k.closenessFactor) {
+                        close.push(k)
+                    }
                 }
-            }
 
             if (inside) close = [inside]
             if (close.length > 2) {
                 close.sort((a, b) => a.dist - b.dist)
                 close = close.slice(0, 2)
-            }
-
-            if (close.length == 0) {
-                if (inRect(board().canvas.getBoundingClientRect()))
-                    close = this.keys.filter(k => k.key == Key.A)
             }
 
             for (let k of this.keys) {
@@ -183,7 +183,7 @@ namespace pxsim {
                     command: "restart"
                 })
             });
-            this.bindPadEvents(this.menu, Key.Menu);
+            this.bindPadEvents(this.menu, Key.Menu, 0.25);
 
             this.moveDPad(0, 0, COMPONENT_WIDTH)
             this.moveButtons(0, 0, COMPONENT_WIDTH);
@@ -229,8 +229,8 @@ namespace pxsim {
             return pad;
         }
 
-        protected bindPadEvents(pad: s.Rect | s.Circle | s.SVG, target: Key) {
-            this.keys.push({ el: pad.el, key: target })
+        protected bindPadEvents(pad: s.Rect | s.Circle | s.SVG, target: Key, closenessFactor: number = 3) {
+            this.keys.push({ el: pad.el, key: target, closenessFactor })
         }
 
         protected drawButtonGroup() {
