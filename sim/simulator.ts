@@ -79,7 +79,6 @@ namespace pxsim {
         public background: HTMLDivElement;
         public controlsDiv: HTMLDivElement;
         public canvas: HTMLCanvasElement;
-        public stats: HTMLElement;
         public screen: Uint32Array;
         public startTime = Date.now()
         public screenState: ScreenState
@@ -178,8 +177,6 @@ namespace pxsim {
             this.runOptions = msg;
             this.background = document.getElementById("screen-back") as HTMLDivElement;
             this.canvas = document.getElementById("paint-surface") as HTMLCanvasElement;
-            this.stats = document.getElementById("debug-stats");
-            this.stats.className = "stats"
             this.canvas.width = 16;
             this.canvas.height = 16;
             this.id = msg.id;
@@ -204,7 +201,6 @@ namespace pxsim {
         }
 
         updateStats() {
-            this.stats.textContent = this.screenState.stats;
             this.tryScreenshot();
         }
 
