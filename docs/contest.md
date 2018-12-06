@@ -4,7 +4,7 @@ Microsoft MakeCode Arcade is a game creation tool meant to replicate the
 limitations of retro game consoles. Our target "hardware" has a screen of
 160 by 120 pixels and up to 16 colors.
 
-For the MakeCode Arcade Contest, we are challening Microsoft employees to
+For the MakeCode Arcade Contest, we are challenging Microsoft employees to
 generate amazing games that push the limits of our tool and show off the cool
 things it can do.
 
