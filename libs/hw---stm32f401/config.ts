@@ -3,6 +3,8 @@ namespace config {
     export const PIN_LED = DAL.PC_8;
 
     export const PIN_JACK_TX = DAL.PA_9;
+    export const PIN_JACK_BUSLED = DAL.PC_8;
+    export const PIN_JACK_COMMLED = DAL.PC_9;
 
     export const PIN_BTN_LEFT = DAL.PA_15;
     export const PIN_BTN_UP = DAL.PA_5;
