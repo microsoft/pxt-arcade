@@ -1,7 +1,7 @@
 // Auto-generated. Do not edit.
 declare const enum DAL {
     // /libraries/codal-core/inc/JACDAC/JACDAC.h
-    JD_VERSION = 2,
+    JD_VERSION = 3,
     JD_SERIAL_MAX_BUFFERS = 10,
     JD_SERIAL_RECEIVING = 2,
     JD_SERIAL_TRANSMITTING = 4,
@@ -761,6 +761,8 @@ declare const enum DAL {
     CFG_PIN_JACK_BZEN = 63,
     CFG_PIN_JACK_PWREN = 64,
     CFG_PIN_JACK_SND = 65,
+    CFG_PIN_JACK_BUSLED = 66,
+    CFG_PIN_JACK_COMMLED = 67,
     CFG_PIN_BTNMX_LATCH = 66,
     CFG_PIN_BTNMX_CLOCK = 67,
     CFG_PIN_BTNMX_DATA = 68,
