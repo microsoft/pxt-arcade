@@ -51,7 +51,7 @@ enemies[2].x = Math.randomRange(10, screen.width - 10);
 2. The code is a bit redundant when setting the ``||sprites:x||`` position for each ``||sprites:Enemy||``: modify the code to use a ``||loops:for||`` loop instead
 3. Set each ``||sprites:Enemy||`` to have a random ``||sprites:y||`` position between ``10`` and ``||scene:screen.height - 10||``
 4. Use ``||math:Math.pickRandom||`` to select a random ``||sprites:Enemy||``. Make the selected ``||sprites:Enemy||`` ``||sprites:say||`` "I've been chosen!" for 1000 ms
-5. **Challenge:** can steps 2 through 4 of this task be completed using the code from example #1a to start? Which version is easier to work with?
+5. **Challenge:** can steps 2 through 4 of this task be completed starting with the code from example #1a? Which version is easier to work with?
 
 ## Concept: Getting All the Sprites
 
@@ -88,13 +88,12 @@ There are several approaches to fix this. One approach would be to use ``||math:
 
 Another approach would be to use ``||arrays:characters.removeElement||`` (which accepts an element, searches the array for that element, and removes it) to remove the ``||sprites:sprite||``.
 
-However, both of these approaches will have a similar problem: they have to be done **everywhere** a sprite is ``||sprites:destroy||``ed. Instead, the ``||arrays:sprites.allOfKind||`` function can be called to return an array that contains all ``||sprites:sprites||`` of a given ``||sprites:SpriteKind||`` as needed, rather than keeping track of it on your own.
+However, both of these approaches will have a similar problem: they have to be done **everywhere** a sprite is ``||sprites:destroy||``ed. Instead, the ``||sprites:sprites.allOfKind||`` function can be called to return an array that contains all ``||sprites:sprites||`` of a given ``||sprites:SpriteKind||`` as needed, rather than keeping track of it on your own.
 
 ## Example #2: Sprites of Kind ``||sprites:Player||``
 
 1. Review the code below
 2. Identify how the ``||sprites:sprites.allOfKind||`` function is used to identify all sprites of ``||sprites:kind||`` ``||sprites:Player||``
-
 
 ```typescript
 enum SpriteKind {
@@ -117,7 +116,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ### ~hint
 
-When calling the ``||sprites:sprites.allOfKind||`` function, it is best to keep it as a variable if it is going to be used multiple times in a row, to avoid recreating the same array over and over again.
+When calling the ``||sprites:sprites.allOfKind||`` function, it is best to keep it as a variable if it is going to be used multiple times in a row without adding or removing sprites, to avoid recreating the same array over and over again.
 
 ### ~
 
@@ -171,7 +170,7 @@ If you have time, it could be a good idea to practice your skill with logical co
 
 ### ~
 
-## Student Task #3: They're all Following!
+## Student Task #3: They're All Following!
 
 1. Start with the code from example #3
 2. Create at least **5** enemies in a loop. Set each to have random ``||sprites:x||`` and ``||sprites:y||`` positions
