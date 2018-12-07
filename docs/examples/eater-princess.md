@@ -6,9 +6,8 @@ The Princess is hungry, feed her! But watch out for death pill.
 enum SpriteKind {
     Player,
     Enemy,
-    eat,
-    death,
-    taco
+    Taco,
+    Food
 }
 let deathpill: Sprite = null
 let taco: Sprite = null
@@ -16,7 +15,6 @@ let princess: Sprite = null
 let cherry: Sprite = null
 let tree: Sprite = null
 let otherSprite: Sprite = null
-let sprite: Sprite = null
 /**
  * Eating tree or cherry gives 1 point
  * 
@@ -44,7 +42,7 @@ c c c 6 6 6 c 6 6 6 6 7 7 6 6 6
 . . . . . e e e e e e . . . . . 
 . . . . e e . e e . e e . . . . 
 . . . . . . . e e . . . . . . . 
-`, SpriteKind.eat)
+`, SpriteKind.Food)
     tree.x = Math.randomRange(0, scene.screenWidth())
     tree.y = Math.randomRange(0, scene.screenHeight())
     cherry = sprites.create(img`
@@ -64,10 +62,10 @@ c 2 e e 2 2 2 2 e 2 5 4 2 c 8 .
 . . . . . . . c e e e e e e 2 c 
 . . . . . . . . c e 2 2 2 2 c . 
 . . . . . . . . . c c c c c . . 
-`, SpriteKind.eat)
+`, SpriteKind.Food)
     cherry.x = Math.randomRange(0, scene.screenWidth())
     cherry.y = Math.randomRange(0, scene.screenHeight())
-    if (Math.randomRange(0, 10) > 8) {
+    if (Math.percentChance(20)) {
         taco = sprites.create(img`
 . . . . . . . e e e e . . . . . 
 . . . . . e e 4 5 5 5 e e . . . 
@@ -85,7 +83,7 @@ e 5 e e 5 5 5 5 5 4 e . . . . .
 4 5 4 e 5 5 5 5 e e . . . . . . 
 . 4 5 4 5 5 4 e . . . . . . . . 
 . . 4 4 e e e . . . . . . . . . 
-`, SpriteKind.taco)
+`, SpriteKind.Taco)
         taco.x = Math.randomRange(0, scene.screenWidth())
         taco.y = Math.randomRange(0, scene.screenHeight())
     } else {
@@ -114,42 +112,24 @@ e 5 e e 5 5 5 5 5 4 e . . . . .
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.death)
+`, SpriteKind.Enemy)
         deathpill.x = Math.randomRange(0, scene.screenWidth())
         deathpill.y = Math.randomRange(0, scene.screenHeight())
     }
 }
-sprites.onOverlap(SpriteKind.Player, SpriteKind.eat, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     otherSprite.destroy()
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.death, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
     info.changeScoreBy(15)
     otherSprite.destroy()
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.taco, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Taco, function (sprite, otherSprite) {
     info.changeScoreBy(10)
     otherSprite.destroy()
 })
-scene.setTileMap(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`)
 info.setLife(3)
 info.startCountdown(60)
 princess = sprites.create(img`
