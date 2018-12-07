@@ -17,7 +17,7 @@ The MakeCode editor stores all of your projects in browser's local storage. The
 easiest way to back up a blocks project is to simply "download" it. For text
 projects, MakeCode has GitHub integration. Read more [here](https://makecode.com/extensions/github-authoring).
 
-MakeCode also supports "extensions" in projects, so it's possible to split your project
+MakeCode also supports "extensions" (libraries or packages) in projects, so it's possible to split your project
 into multiple repositories or libraries. Find more information [here](https://makecode.com/extensions).
 
 ## Music and Art
