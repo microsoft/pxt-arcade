@@ -116,7 +116,9 @@ to be dropped if all channels are currently busy.
 
 If your music or sounds are mostly static (i.e. not created at runtime), you can save
 memory by storing them in `hex` buffers. These buffers are compiled into the "binary"
-by the MakeCode compiler. You can create them using this tagged template literal syntax:
+by the MakeCode compiler. 
+Note that there is currently no way to play sound samples - the buffers below would only apply to the `playInstructions` format described above.
+You can create static buffers using this tagged template literal syntax:
 
 ```typescript
 // The contents of the literal string should be the data in hex-encoding
