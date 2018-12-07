@@ -67,7 +67,21 @@ To set the waveform for the generated notes:
 ~\d+
 ```
 
-Where the number refers to one of the waveforms in the table below (see "Sound Instructions").
+Where the number refers to one of the waveforms in the table below:
+
+Waveform        | Value
+----------------|-------
+triangle        | 1
+sawtooth        | 2
+sine            | 3
+metallic        | 4
+square (10%)    | 11
+square (20%)    | 12
+square (30%)    | 13
+square (40%)    | 14
+square (50%)    | 15
+
+The `metallic` tone contains a pseudo-random sample, which doesn't quite sound like white noise.
 
 ## Sound Instructions
 
@@ -84,19 +98,8 @@ duration (ms)   | 16
 start volume    | 16
 end volume      | 16
 
-Volume is a scalar value that ranges from 0 to 1024. The available values for waveform include:
-
-Waveform        | Value
-----------------|-------
-triangle        | 1
-sawtooth        | 2
-sine            | 3
-noise           | 4
-square (10%)    | 11
-square (20%)    | 12
-square (30%)    | 13
-square (40%)    | 14
-square (50%)    | 15
+Volume is a scalar value that ranges from 0 to 1024. See the table in previous section for
+the available values for waveform.
 
 To play a sound buffer, use the `music.playInstructions()` API. Buffers can contain
 multiple instructions one after the other, so a single "effect" or "melody" should be
