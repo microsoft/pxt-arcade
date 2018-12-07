@@ -1,4 +1,4 @@
-# Arrays of Numbers
+# Activity: Arrays of Numbers
 
 At the end of the previous course, ``||arrays:Arrays||`` were introduced as a way to store multiple related values.
 
@@ -103,7 +103,7 @@ The only difference is that the first example's array started off **empty**, as 
 
 ## Student Task #2: Add Some Values
 
-In this task, use the new way to create initial
+In this task, use the new way to create an array that contains elements to start with.
 
 1. In a new project, create two new ``||arrays:arrays||``, ``||variables:evens||`` and ``||variables:odds||``
 2. Initialize ``||variables:evens||`` with the **even** values between 0 to 10 (including 0 and 10)

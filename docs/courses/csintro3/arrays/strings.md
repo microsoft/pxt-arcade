@@ -57,7 +57,7 @@ In the previous task, it was specified to loop exactly 4 times. This may seem od
 This was avoided because it can result in tricky behavior. An example of this can be seen in the code snippet below. The intention of the snippet is to print out each word in ``||variables:script||`` backwards. 
 
 ```typescript
-let script: string[] = ["Hello", "my", "name", "is", "bob", ":)"];
+let script: string[] = ["Hello", "my", "name", "is", "Bob", ":)"];
 
 for (let i = 0; i < script.length; i++) {
     game.splash(script.pop());
@@ -69,7 +69,7 @@ When the code runs, it only prints out half the values in the array. This is bec
 This can be seen by modifying the previous snippet very slightly. This snippet will splash the value of ``||variables:i||`` and ``||arrays:script.length||``. 
 
 ```typescript
-let script: string[] = ["Hello", "my", "name", "is", "bob", ":)"];
+let script: string[] = ["Hello", "my", "name", "is", "Bob", ":)"];
 
 for (let i = 0; i < script.length; i++) {
     script.pop();
