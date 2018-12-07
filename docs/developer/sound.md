@@ -2,10 +2,10 @@
 
 ## Melodies
 
-The high level music API in arcade uses a syntax for creating melodies from
-sequences of notes. Melodies are authored using the `music.Melody` class
-in arcade which encodes them in a string syntax. For some example melodies,
-see the [mixer package](https://github.com/Microsoft/pxt-common-packages/blob/master/libs/mixer/melody.ts#L387).
+The high-level music API in arcade creates and processes melodies as a sequence of
+notes following a syntax form for each note. The melodies are authored using the
+`music.Melody` class in arcade which encodes them into a string with this syntax.
+For some examples of formatted melodies, see the [mixer extension/package](https://github.com/Microsoft/pxt-common-packages/blob/master/libs/mixer/melody.ts#L387).
 
 Melodies are constructed with a series of commands outlined below.
 
@@ -51,7 +51,7 @@ To set the ADSR envelope for the played sounds:
 @\d+,\d+,\d+,\d+
 ```
 
-Where the numbers are:
+Where the four values indicate:
 1. "Attack" in ms
 2. "Decay" in ms
 3. "Sustain" volume (0-255)
@@ -111,15 +111,15 @@ To create a `Buffer`, you can use the `control.createBuffer()` API.
 
 The arcade "hardware" has five available music "channels" that are mixed to produce
 the game audio. Using the `music.playInstructions()` API will automatically allocate
-a channel to play the instruction and that channel will be occupied until the sound
-is completed. Attempting to play too many sounds simultaneously will cause some sounds
+a channel to play the instruction and that channel remains occupied until the sound play
+completes. Attempting to play too many sounds simultaneously will cause some sounds
 to be dropped if all channels are currently busy.
 
 ### Hex buffers
 
 If your music or sounds are mostly static (i.e. not created at runtime), you can save
 memory by storing them in `hex` buffers. These buffers are compiled into the "binary"
-by the MakeCode compiler. 
+by the MakeCode compiler.
 Note that there is currently no way to play sound samples - the buffers below would only apply to the `playInstructions` format described above.
 You can create static buffers using this tagged template literal syntax:
 

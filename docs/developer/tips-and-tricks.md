@@ -28,13 +28,13 @@ Documentation on how to create music and sound effects is [here](https://arcade.
 
 ## Getting help
 
-The public MakeCode discord is located at https://aka.ms/makecodecommunity and has a channel for arcade.
+To get help, you can ask the [MakeCode community](https://aka.ms/makecodecommunity) at/on our public discord channel for arcade.
 
 
 ## Bugs and Features
 
 Please report all bugs and feature requests to [pxt-arcade](https://github.com/Microsoft/pxt-arcade/issues).
-If you would also like to submit a fix, feel free to open a PR!
+If you would also like to submit a fix, feel free to open a pull request!
 
 The arcade editor is located in [pxt-arcade](https://github.com/Microsoft/pxt-arcade). The game engine and runtime code is in [pxt-common-packages](https://github.com/Microsoft/pxt-common-packages).
 

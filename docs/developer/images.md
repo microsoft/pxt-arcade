@@ -2,10 +2,10 @@
 
 ## Colors
 
-Images in arcade are stored using 4 bits per color. The color `0` is
-reserved for transparency, so there are 15 available colors for you to
-work with at any one time. Colors are represented as indices into a palette;
-the default palette shown in the MakeCode UI is here:
+Images in arcade are stored using 4 bits per color. The color `0` is reserved for transparency
+so, at any one time, you have the remaining 15 colors available to work with. The image color
+values are really indices that map to 16 entries of the current palette of RGB colors.
+The default palette for the MakeCode UI is here:
 
 ```
 #000000     // transparency
@@ -29,8 +29,8 @@ the default palette shown in the MakeCode UI is here:
 
 ### Changing the default palette
 
-If you intend to use the MakeCode blocks editor for
-your project but would like to change the colors, it is recommended
+If you intend to use the MakeCode blocks editor to create or edit images
+but would like to change the colors, it is recommended
 that you set a default palette so that your sprites render correctly
 in the image editor/blocks.
 
@@ -72,8 +72,8 @@ like so:
 }
 ```
 
-Note that the first color in the array doesn't matter because it maps to transparency.
-Be sure that the palette you enter has exactly 16 colors.
+Note that it doesn't matter what you set the first color in the array to because
+it always maps to transparency. Be sure that the palette array you enter has **exactly** 16 colors.
 
 
 ### Changing the palette at runtime
@@ -82,7 +82,7 @@ To change the palette at runtime, you can use the `image.setPalette()` API, whic
 a `Buffer` of RGB values. Each color channel has one byte, giving you a total of three
 bytes per color. You can use the tool at https://riknoll.github.io/pxt-arcade-asset-tool/
 to import palettes in the `.gpl`, `.txt`, or `.hex` formats. Palettes cannot contain more
-than 16 colors (including transparency).
+than 16 colors (including color `0` for transparency).
 
 
 ## Importing custom art and palettes
@@ -92,7 +92,7 @@ created a simple tool for converting images into a format supported by Arcade:
 
 https://riknoll.github.io/pxt-arcade-asset-tool/
 
-To add images, simply drag them onto the page (`.png` is currently supported). Images
+To add images, simply drag them onto the page (only `.png` is currently supported). Images
 can contain single sprites or spritesheets with multiple images; use the toggle to
 switch between the two. Spritesheets should contain equally sized sprites with no spacing
 between them.
