@@ -1,4 +1,4 @@
-# Activity: Images in Arrays
+# Activity: Arrays of Images
 
 ``||images:Images||`` are used to represent many things on screen in @boardname@ - ``||scene:backgrounds||``, ``||sprites:Sprites||``, many other elements of the games.
 
@@ -125,7 +125,7 @@ game.onUpdateInterval(150, function () {
 
 1. Start with the code from task #1
 2. Replace the ``||loops:for||`` loops with the ``||game:on update interval||`` event with a ``||variables:counter||`` as shown in example #2 to make the animation run indefinitely
-3. Make the hero move with the arrow keys
+3. Make the hero ``||controller:move||`` with the directional buttons
 
 ## Concept: Random Images
 
@@ -178,7 +178,7 @@ sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
 1. Start with the code from example #3
 2. In the ``||sprites:on created||`` event, set the ``||variables:sprite||`` ``||sprites:y||`` position to be 0, so it starts at the top of the screen
 3. After setting the ``||sprites:y||`` position, set the ``||sprites:vy||`` to a ``||math:random value between||`` 30 and 50
-4. Set the ``||sprites:Ghost||`` flag for every ``||sprites:Asteroid||`` to true
+4. Set the ``||sprites:Ghost||`` flag for every ``||sprites:Asteroid||`` to ``||logic:true||``
 
 ### ~hint
 
