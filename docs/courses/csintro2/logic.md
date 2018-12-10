@@ -29,7 +29,7 @@ Logical operations allow the user to create behaviors that respond to the changi
     "url": "/courses/csintro2/logic/while",
     "imageUrl": "/static/courses/csintro2/logic/while.gif"
 }, {
-    "name": "Project",
+    "name": "Logic Project",
     "url": "/courses/csintro2/logic/project",
     "imageUrl": "/static/courses/csintro2/logic/project.gif"
 }
@@ -44,7 +44,7 @@ Logical operations allow the user to create behaviors that respond to the changi
 * [Booleans](/courses/csintro2/logic/booleans)
 * [Validating User Input](/courses/csintro2/logic/user-input)
 * [Logic in Loops](/courses/csintro2/logic/while)
-* [Project](/courses/csintro2/logic/project)
+* [Logic Project](/courses/csintro2/logic/project)
 
 
-[Advanced Blocks Home](/courses/csintro2)
+[CS Intro 2 Home](/courses/csintro2)

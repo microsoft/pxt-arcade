@@ -1,4 +1,4 @@
-# Activity: Project
+# Activity: Motion Project
 
 Make your own unique games!
 
