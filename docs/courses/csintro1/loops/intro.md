@@ -1,4 +1,4 @@
-# Activity: Intro to loops
+# Activity: Loops Intro
 
 When writing code, we often want to repeat the same action. Using loops, we can reduce redundancy in our code - that is, we can avoid writing the same code multiple times. 
 

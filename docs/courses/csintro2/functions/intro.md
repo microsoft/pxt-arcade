@@ -1,4 +1,4 @@
-# Activity: Functions
+# Activity: Functions Intro
 
 Functions are a way to group sections of code to be run together. They are regularly used when writing code both to increase the readability of code, and to allow for reuse of common actions. 
 

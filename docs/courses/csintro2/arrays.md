@@ -5,7 +5,7 @@ Arrays are **data structures** that allow for users to store an indefinite amoun
 ```codecard
 [
 {
-    "name": "Intro to Arrays",
+    "name": "Arrays Intro",
     "url": "/courses/csintro2/arrays/intro",
     "imageUrl": "/static/courses/csintro2/arrays/intro.gif"
 }, {
@@ -30,7 +30,7 @@ Arrays are **data structures** that allow for users to store an indefinite amoun
 
 ## Lessons
 
-* [Intro](/courses/csintro2/arrays/intro)
+* [Arrays Intro](/courses/csintro2/arrays/intro)
 * [String Arrays](/courses/csintro2/arrays/string)
 * [Sprite Arrays](/courses/csintro2/arrays/sprites)
 * [Tile Arrays](/courses/csintro2/arrays/tilemap)

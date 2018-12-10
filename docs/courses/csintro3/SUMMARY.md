@@ -22,7 +22,7 @@
         * [Return Values](/courses/csintro3/functions/returns)
         * [Commenting Functions](/courses/csintro3/functions/comments)
     * [Events](/courses/csintro3/events)
-        * [Intro to Events](/courses/csintro3/events/intro)
+        * [On Game Update Event](/courses/csintro3/events/intro)
         * [On Update Interval](/courses/csintro3/events/update)
         * [Sprite Overlap Events](/courses/csintro3/events/overlap)
         * [Info Events](/courses/csintro3/events/info)

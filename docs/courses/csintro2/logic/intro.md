@@ -1,8 +1,9 @@
-# Activity: If statements
+# Activity: Logic Intro
 
 Logic in software development allows for flexible programs that respond appropriately to different conditions. In this section, we will identify how comparisons can be used within our code.
 
 In these activities, students will work with:
+
 * ``||logic:if||`` block
 * Comparison operators
 

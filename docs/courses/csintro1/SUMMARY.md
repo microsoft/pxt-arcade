@@ -27,7 +27,7 @@
         * [Create Sprite & On Create](/courses/csintro1/motion/create-on-create-sprites)
         * [Motion Project](/courses/csintro1/motion/project)
     * [Loops](/courses/csintro1/loops)
-        * [Intro](/courses/csintro1/loops/intro)
+        * [Loops Intro](/courses/csintro1/loops/intro)
         * [Unplugged: Circle a Chair](/courses/csintro1/loops/unplugged)
         * [Increment Loop](/courses/csintro1/loops/increment-loop)
         * [Projectiles](/courses/csintro1/loops/projectiles)
