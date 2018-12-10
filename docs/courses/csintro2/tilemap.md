@@ -1,4 +1,4 @@
-# Tilemap
+# Tile Map
 
 Tile maps allow you to develop levels, and define playspaces for the characters in your games to roam around.
 
@@ -17,7 +17,7 @@ Tile maps allow you to develop levels, and define playspaces for the characters 
     "url": "/courses/csintro2/tilemap/extensions",
     "imageUrl": "/static/courses/csintro2/tilemap/extensions.gif"
 }, {
-    "name": "Project",
+    "name": "Tile Map Project",
     "url": "/courses/csintro2/tilemap/project",
     "imageUrl": "/static/courses/csintro2/tilemap/project.gif"
 }
@@ -29,7 +29,7 @@ Tile maps allow you to develop levels, and define playspaces for the characters 
 * [Tile Map Intro](/courses/csintro2/tilemap/intro)
 * [Interactions](/courses/csintro2/tilemap/interactions)
 * [Using Corgio Extension](/courses/csintro2/tilemap/extensions)
-* [Project](/courses/csintro2/tilemap/project)
+* [Tile Map Project](/courses/csintro2/tilemap/project)
 
 
-[Advanced Blocks Home](/courses/csintro2)
+[CS Intro 2 Home](/courses/csintro2)

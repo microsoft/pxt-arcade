@@ -1,4 +1,4 @@
-# Review Material
+# Unit 2 Review Material
 
 These sections cover *optional* review material that can be used to help transition to the final project.
 
@@ -27,4 +27,4 @@ These sections cover *optional* review material that can be used to help transit
 * [Functionally the Same](/courses/csintro2/review/functions)
 
 
-[Advanced Blocks Home](/courses/csintro2)
+[CS Intro 2 Home](/courses/csintro2)

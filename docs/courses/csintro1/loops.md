@@ -29,7 +29,7 @@ Loops serve as a powerful tool, both to reduce redundancy in the code we write, 
     "url": "/courses/csintro1/loops/physics",
     "imageUrl": "/static/courses/csintro1/loops/physics.gif"
 }, {
-    "name": "Project",
+    "name": "Loops Project",
     "url": "/courses/csintro1/loops/project",
     "imageUrl": "/static/courses/csintro1/loops/project.gif"
 }
@@ -44,7 +44,7 @@ Loops serve as a powerful tool, both to reduce redundancy in the code we write, 
 * [Projectiles](/courses/csintro1/loops/projectiles)
 * [Projectiles from Sprites](/courses/csintro1/loops/projectile-from)
 * [Physics](/courses/csintro1/loops/physics)
-* [Project](/courses/csintro1/loops/project)
+* [Loops Project](/courses/csintro1/loops/project)
 
 
 [CS Intro Home](/courses/csintro1)
