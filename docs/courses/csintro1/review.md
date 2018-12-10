@@ -1,4 +1,4 @@
-# Review Material
+# Unit 1 Review Material
 
 These sections cover *optional* review material that can be used to help transition to the final project.
 
@@ -28,7 +28,7 @@ These sections cover *optional* review material that can be used to help transit
 ]
 ```
 
-## Review
+## Unit 1 Review
 
 * [Extend "touch the button"](/courses/csintro1/review/touch-the-button)
 * [Paparazzi](/courses/csintro1/review/paparazzi)

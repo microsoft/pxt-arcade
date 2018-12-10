@@ -21,7 +21,7 @@ Functions serve as a powerful tool to clarify the intent of your code, and to ma
     "url": "/courses/csintro2/functions/extensions",
     "imageUrl": "/static/courses/csintro2/functions/extensions.gif"
 }, {
-    "name": "Project",
+    "name": "Functions Project",
     "url": "/courses/csintro2/functions/project",
     "imageUrl": "/static/courses/csintro2/functions/project.gif"
 }
@@ -34,7 +34,7 @@ Functions serve as a powerful tool to clarify the intent of your code, and to ma
 * [Intro to Functions](/courses/csintro2/functions/intro)
 * [Reducing Redundancy with Functions](/courses/csintro2/functions/redundancy)
 * [Using Extensions](/courses/csintro2/functions/extensions)
-* [Project](/courses/csintro2/functions/project)
+* [Functions Project](/courses/csintro2/functions/project)
 
 
-[Advanced Blocks Home](/courses/csintro2)
+[CS Intro 2 Home](/courses/csintro2)

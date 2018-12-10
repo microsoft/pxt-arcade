@@ -1,4 +1,4 @@
-# Activity: Project
+# Activity: Functions Project
 
 Make your own unique games!
 

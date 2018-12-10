@@ -40,7 +40,8 @@
         "libs/local-multiplayer",
         "libs/device",
         "libs/jacdac",
-        "libs/jacdac-drivers"
+        "libs/jacdac-drivers",
+        "libs/jacdac-game"
     ],
     "compile": {
         "useUF2": true,
@@ -71,7 +72,7 @@
         "dockerImage": "pext/yotta:latest",
         "codalTarget": {
             "branches": {
-                "https://github.com/lancaster-university/codal-core": "3546f72f2cd11bf70290e572085ea8f62dd1a2c3"
+                "https://github.com/lancaster-university/codal-core": "5bfe583b1982a55d59e09dd0217155e6b7b5898c"
             }
         }
     },

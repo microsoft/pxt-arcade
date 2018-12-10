@@ -1,4 +1,4 @@
-# Activity: Final Project
+# Activity: Unit 2 Project
 
 In this activity, students will incorporate functionality learned throughout the course sections to build a well functioning game in building a game of their own design.
 
