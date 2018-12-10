@@ -14,7 +14,7 @@
     },
     "compileServiceVariant": "samd51",
     "dependencies": {
-        "core---samd51": "file:../core---samd51",
+        "core---samd": "file:../core---samd",
         "screen---st7735": "file:../screen---st7735",
         "mixer---none": "file:../mixer---none",
         "controller---hw": "file:../controller---hw",
@@ -23,6 +23,6 @@
     },
     "public": true,
     "dalDTS": {
-        "corePackage": "../core---samd51"
+        "corePackage": "../core---samd"
     }
 }

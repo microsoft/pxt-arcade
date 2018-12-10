@@ -14,7 +14,7 @@
     },
     "compileServiceVariant": "stm32f401",
     "dependencies": {
-        "core---stm32f401re": "file:../core---stm32f401re",
+        "core---stm32": "file:../core---stm32",
         "screen---st7735": "file:../screen---st7735",
         "mixer---stm32": "file:../mixer---stm32",
         "controller---hw": "file:../controller---hw",
@@ -23,6 +23,6 @@
     },
     "public": true,
     "dalDTS": {
-        "corePackage": "../core---stm32f401re"
+        "corePackage": "../core---stm32"
     }
 }
