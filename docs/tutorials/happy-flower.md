@@ -115,7 +115,7 @@ game.onUpdateInterval(500, function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 0, 0, SpriteKind.Player)
+`, 0, 100, SpriteKind.Player)
 })
 ```
 
@@ -157,13 +157,14 @@ game.onUpdateInterval(500, function () {
 . . 5 5 5 5 . . 
 . . . . . . . . 
 . . . . . . . . 
-`, 0, 0, SpriteKind.Player)
+`, 0, 100, SpriteKind.Player)
 })
 ```
 
 ## Step 5
 
 Go get a ``||Math:pick random 0 to 10||``. Place it in the ``||sprites:vx||`` slot of ``||sprites:projectile||``. Change the `0` to `-25` and the `10` to `25`. 
+
 ```blocks
 enum SpriteKind {
     Player,
@@ -198,7 +199,7 @@ game.onUpdateInterval(500, function () {
 . . 5 5 5 5 . . 
 . . . . . . . . 
 . . . . . . . . 
-`, Math.randomRange(-25, 25), 0, SpriteKind.Player)
+`, Math.randomRange(-25, 25), 100, SpriteKind.Player)
 })
 ```
 
