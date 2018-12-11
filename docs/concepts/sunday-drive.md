@@ -54,7 +54,7 @@ game.onUpdateInterval(1000, function () {
 . . f f f f f e e f f f f f e . 
 . . . f f f . . . . f f f f . . 
 . . . . . . . . . . . . . . . . 
-`, 0, 0, SpriteKind.Player)
+`, 0, 100, SpriteKind.Player)
 })
 ```
 
@@ -86,11 +86,43 @@ game.onUpdateInterval(1000, function () {
 . . f f f f f e e f f f f f e . 
 . . . f f f . . . . f f f f . . 
 . . . . . . . . . . . . . . . . 
-`, 40, 0, SpriteKind.Player)
+`, 40, 100, SpriteKind.Player)
 })
 ```
 
 ## Step 5 @fullscreen
+
+In the ``||sprites:projectile||``, set the ``||sprites:vy||`` to 0, so that the cars drive **only** to the right.
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let projectile: Sprite = null;
+game.onUpdateInterval(1000, function () {
+    projectile = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . . . 2 2 2 2 2 2 2 2 . . . . 
+. . . 2 4 2 2 2 2 2 2 c 2 . . . 
+. . 2 c 4 2 2 2 2 2 2 c c 2 . . 
+. 2 c c 4 4 4 4 4 4 2 c c 4 2 d 
+. 2 c 2 e e e e e e e b c 4 2 2 
+. 2 2 e b b e b b b e e b 4 2 2 
+. 2 e b b b e b b b b e 2 2 2 2 
+. e e 2 2 2 e 2 2 2 2 2 e 2 2 2 
+. e e e e e e f e e e f e 2 d d 
+. e e e e e e f e e f e e e 2 d 
+. e e e e e e f f f e e e e e e 
+. e f f f f e e e e f f f e e e 
+. . f f f f f e e f f f f f e . 
+. . . f f f . . . . f f f f . . 
+. . . . . . . . . . . . . . . . 
+`, 40, 0, SpriteKind.Player)
+})
+```
+
+## Step 6 @fullscreen
 
 Find ``||sprites:set mySprite x to 0||`` from ``||sprites:Sprites||``, and drag it after the ``||variables:set projectile to||``. Change ``||variables:mySprite||`` to ``||variables:projectile||``, and change ``||sprites:x||`` to ``||sprites:y||``.
 
@@ -123,7 +155,7 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 6 @fullscreen
+## Step 7 @fullscreen
 
 Find ``||math:pick random 0 to 10||`` in ``||math:Math||``, and replace the 0 in ``||sprites:set projectile y to 0||`` with the it.
 
@@ -158,7 +190,7 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 7 @fullscreen
+## Step 8 @fullscreen
 
 Find ``||scene:screen height||`` in ``||scene:Scene||``. Replace the 10 in ``||math:pick random 0 to 10||`` with it.
 
