@@ -74,6 +74,12 @@ declare interface JacDacDriverStatus {
     //% property shim=JacDacDriverStatusMethods::isConnected
     isConnected: boolean;
 
+    /**
+     * Sets the error state on the device
+     */
+    //% shim=JacDacDriverStatusMethods::setError
+    setError(error: int32): void;
+
     /** Get device id for events. */
     //% property shim=JacDacDriverStatusMethods::id
     id: uint32;

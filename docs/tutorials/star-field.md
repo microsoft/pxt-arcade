@@ -43,7 +43,7 @@ game.onUpdate(function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 0, 0, SpriteKind.Player)
+`, 0, 100, SpriteKind.Player)
 })
 ```
 
@@ -76,7 +76,7 @@ game.onUpdate(function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 0, 0, SpriteKind.Player)
+`, 0, 100, SpriteKind.Player)
 })
 ```
 
