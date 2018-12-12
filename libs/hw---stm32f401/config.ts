@@ -1,10 +1,6 @@
 // Note that these value can be overridden by the configuration area in the bootloader.
 namespace config {
-    export const PIN_LED = DAL.PC_8;
-
     export const PIN_JACK_TX = DAL.PA_9;
-    export const PIN_JACK_BUSLED = DAL.PC_8;
-    export const PIN_JACK_COMMLED = DAL.PC_9;
 
     export const PIN_BTN_LEFT = DAL.PA_15;
     export const PIN_BTN_UP = DAL.PA_5;
@@ -22,7 +18,18 @@ namespace config {
     export const PIN_DISPLAY_RST = DAL.PC_4;
     export const PIN_DISPLAY_MISO = DAL.PB_14;
     export const PIN_DISPLAY_BL = DAL.PC_7;
-   
+
+    export const PIN_LED = DAL.PC_9
+    export const PIN_LED1 = DAL.PC_8
+
+    export const PIN_JACK_BUSLED = PIN_LED1;
+    export const PIN_JACK_COMMLED = PIN_LED;
+
+    export const PIN_JACK_SND = DAL.PA_8
+    export const PIN_JACK_BZEN = DAL.PA_10
+    export const PIN_JACK_HPEN = DAL.PA_4
+    export const PIN_JACK_SENSE = DAL.PA_6
+    export const PIN_JACK_PWREN = DAL.PA_7
 
     export const DISPLAY_CFG0 = 0x00000080;
     export const DISPLAY_CFG1 = 0x000603;
