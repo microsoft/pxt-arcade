@@ -97,12 +97,12 @@ let projectile = sprites.createProjectile(img`
 . . . . 1 1 . . . . . . . . . .
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
-`, 0, 0, SpriteKind.Player)
+`, 0, 100, SpriteKind.Player)
 ```
 
 ## Step 3 @fullscreen
 
-In ``||sprites:projectile||``, set ``||sprites:vx||`` to 50. Then, run the game, and notice that the ``||variables:projectile||`` now starts on the **left** side of the screen, and moves to the right.
+In ``||sprites:projectile||``, set ``||sprites:vx||`` to 50. Then, run the game, and notice that the ``||variables:projectile||`` now starts on the **left** side of the screen, and moves down and to the right.
 
 ```blocks
 enum SpriteKind {
@@ -152,7 +152,7 @@ let projectile = sprites.createProjectile(img`
 . . . . 1 1 . . . . . . . . . .
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
-`, 50, 0, SpriteKind.Player)
+`, 50, 100, SpriteKind.Player)
 ```
 
 ## Step 4 @fullscreen
@@ -212,61 +212,6 @@ let projectile = sprites.createProjectile(img`
 
 ## Step 5 @fullscreen
 
-In ``||sprites:projectile||``, set ``||sprites:vy||`` to -15. Then, run the game, and notice that the ``||variables:projectile||`` now starts on the **bottom left** corner of the screen and moves up and to the right.
-
-```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . f f f f . . . . . . . . . . 
-. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
-. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
-. . . . . f f f c 1 1 1 1 1 1 1 f . . . . . . . 
-. . . f c 1 1 1 c d 1 1 1 1 1 1 1 f . . . . . . 
-. . . f 1 b 1 b 1 b 1 1 1 1 d d d f . . . . . . 
-. . . f b f b f f c f 1 1 f c d d f . . . . . . 
-. . . . . . f c f 1 1 1 1 1 1 b b f . . . . . . 
-. . . . . . . c c b d b 1 b 1 f c f . . . . . . 
-. . . . . . . f f f b f b f d f f . . . . . . . 
-. . . . . . . . f f f f f f f f . . . . . . . . 
-. . . . . . . . f f f f f f f f f f f . . . . . 
-. . . . . . . . . f f f f f c 1 1 1 c f . . . . 
-. . . . . . . . . f f f f f 1 b 1 b 1 f . . . . 
-. . . . . . . . . . f f f f b f b f b f . . . . 
-. . . . . . . . . . . f f f f . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-let projectile = sprites.createProjectile(img`
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . 1 1 . . . .
-. . . . . . . . . 1 1 1 . . . .
-. . . . . . . . . 1 1 1 . . . .
-. . . . . . . . . 1 1 1 1 1 . .
-. . . . . . . 1 1 1 1 1 1 1 . .
-. . . . . . 1 1 1 1 . 1 1 1 . .
-. . 1 1 . 1 1 1 1 . . . . . . .
-. 1 1 1 1 1 1 . . . . . . . . .
-. 1 1 1 1 1 . . . . . . . . . .
-. . 1 1 1 1 . . . . . . . . . .
-. . . 1 1 1 . . . . . . . . . .
-. . . . 1 1 . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-`, 50, -15, SpriteKind.Player)
-```
-
-## Step 6 @fullscreen
-
 Click on the **(+)** at the end of ``||sprites:projectile||``, and change ``||variables:item||`` to ``||variables:mySprite||``.
 
 This will cause the bone to be created at the same location as ``||variables:mySprite||``, no matter where that ``||sprites:sprite||`` is on the screen.
@@ -322,7 +267,7 @@ let projectile = sprites.createProjectile(img`
 `, 50, -15, SpriteKind.Player, mySprite)
 ```
 
-## Step 7 @fullscreen
+## Step 6 @fullscreen
 
 Find ``||controller:on any button pressed||`` in ``||controller:Controller||``, and drag it into the workspace. Drag ``||variables:set projectile to||`` from ``||loops:on start||`` into ``||controller:on any button pressed||``.
 
@@ -382,7 +327,7 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 8 @fullscreen
+## Step 7 @fullscreen
 
 In the ``||controller:on any button pressed||`` event, click on ``||controller:any||`` and change it to ``||controller:A||``.
 

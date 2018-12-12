@@ -172,7 +172,6 @@
         "listsBlocks": true,
         "bannedCategories": [
             "pins",
-            "console",
             "control",
             "input"
         ]
