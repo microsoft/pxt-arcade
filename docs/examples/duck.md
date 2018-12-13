@@ -2,7 +2,7 @@
 
 A simple example
 
-```typescript
+```blocks
 enum SpriteKind {
     Player,
     Projectile
