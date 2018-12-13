@@ -39,7 +39,7 @@ ship.setFlag(SpriteFlag.StayInScreen, true)
 ship.bottom = 120
 controller.moveSprite(ship, 100, 0)
 game.onUpdateInterval(200, function () {
-    projectile = sprites.createProjectileFromSide(Math.pickRandom(asteroids), 0, 75)
+    projectile = sprites.createProjectileFromSide(asteroids[Math.randomRange(0, asteroids.length - 1)], 0, 75)
     projectile.setKind(SpriteKind.Enemy)
     projectile.x = Math.randomRange(10, 150)
 })
