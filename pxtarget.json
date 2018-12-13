@@ -40,7 +40,8 @@
         "libs/device",
         "libs/jacdac",
         "libs/jacdac-drivers",
-        "libs/jacdac-game"
+        "libs/jacdac-game",
+        "libs/particles"
     ],
     "compile": {
         "useUF2": true,
