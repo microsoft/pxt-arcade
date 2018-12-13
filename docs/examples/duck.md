@@ -2,10 +2,10 @@
 
 A simple example
 
-```typescript
+```blocks
 enum SpriteKind {
     Player,
-    Enemy
+    Projectile
 }
 enum ActionKind {
     Walking,
@@ -22,7 +22,7 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite.vy = -100
     animation.setAction(mySprite, ActionKind.Jumping)
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     game.over()
 })
 scene.setBackgroundColor(9)
@@ -515,9 +515,9 @@ game.onUpdateInterval(1500, function () {
 . . . . . . e e 6 e e e e e e 6 e e f . . . . .
 `
     }
-    projectile = sprites.createProjectile(topImage, -45, 0, SpriteKind.Enemy)
+    projectile = sprites.createProjectileFromSide(topImage, -45, 0)
     projectile.top = 0
-    projectile = sprites.createProjectile(bottomImage, -45, 0, SpriteKind.Enemy)
+    projectile = sprites.createProjectileFromSide(bottomImage, -45, 0)
     projectile.bottom = scene.screenHeight()
 })
 game.onUpdate(function () {

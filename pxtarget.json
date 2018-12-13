@@ -40,7 +40,8 @@
         "libs/device",
         "libs/jacdac",
         "libs/jacdac-drivers",
-        "libs/jacdac-game"
+        "libs/jacdac-game",
+        "libs/particles"
     ],
     "compile": {
         "useUF2": true,
@@ -213,7 +214,6 @@
         "invertedMenu": true,
         "showHomeScreen": true,
         "highContrast": true,
-        "debugger": true,
         "print": true,
         "hasAudio": true,
         "allowPackageExtensions": true,
@@ -241,6 +241,9 @@
         "monacoColors": {
             "editor.background": "#FFFAE7"
         },
-        "scriptManager": true
+        "scriptManager": true,
+        "experiments": [
+            "debugger"
+        ]
     }
 }

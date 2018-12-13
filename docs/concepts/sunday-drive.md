@@ -28,7 +28,7 @@ game.onUpdateInterval(1000, function () {
 
 ## Step 3 @fullscreen
 
-Find ``||variables:set projectile to||`` in ``||sprites:Sprites||``, and drag it into the ``||loops:on game update interval ||``. Open the image editor for ``||variables:projectile||``, and select or create an image of a car that is facing **right**.
+Find ``||sprites:projectile from side||`` in ``||sprites:Sprites||``, and drag it into the ``||loops:on game update interval||``. Open the image editor for ``||variables:projectile||``, and select or create an image of a car that is facing **right**.
 
 ```blocks
 enum SpriteKind {
@@ -37,7 +37,7 @@ enum SpriteKind {
 }
 let projectile: Sprite = null;
 game.onUpdateInterval(1000, function () {
-    projectile = sprites.createProjectile(img`
+    projectile = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . 2 2 2 2 2 2 2 2 . . . . 
 . . . 2 4 2 2 2 2 2 2 c 2 . . . 
@@ -54,7 +54,7 @@ game.onUpdateInterval(1000, function () {
 . . f f f f f e e f f f f f e . 
 . . . f f f . . . . f f f f . . 
 . . . . . . . . . . . . . . . . 
-`, 0, 100, SpriteKind.Player)
+`, 0, 100)
 })
 ```
 
@@ -69,7 +69,7 @@ enum SpriteKind {
 }
 let projectile: Sprite = null;
 game.onUpdateInterval(1000, function () {
-    projectile = sprites.createProjectile(img`
+    projectile = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . 2 2 2 2 2 2 2 2 . . . . 
 . . . 2 4 2 2 2 2 2 2 c 2 . . . 
@@ -86,7 +86,7 @@ game.onUpdateInterval(1000, function () {
 . . f f f f f e e f f f f f e . 
 . . . f f f . . . . f f f f . . 
 . . . . . . . . . . . . . . . . 
-`, 40, 100, SpriteKind.Player)
+`, 40, 100)
 })
 ```
 
@@ -101,7 +101,7 @@ enum SpriteKind {
 }
 let projectile: Sprite = null;
 game.onUpdateInterval(1000, function () {
-    projectile = sprites.createProjectile(img`
+    projectile = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . 2 2 2 2 2 2 2 2 . . . . 
 . . . 2 4 2 2 2 2 2 2 c 2 . . . 
@@ -118,7 +118,7 @@ game.onUpdateInterval(1000, function () {
 . . f f f f f e e f f f f f e . 
 . . . f f f . . . . f f f f . . 
 . . . . . . . . . . . . . . . . 
-`, 40, 0, SpriteKind.Player)
+`, 40, 0)
 })
 ```
 
@@ -133,7 +133,7 @@ enum SpriteKind {
 }
 let projectile: Sprite = null;
 game.onUpdateInterval(1000, function () {
-    projectile = sprites.createProjectile(img`
+    projectile = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . 2 2 2 2 2 2 2 2 . . . . 
 . . . 2 4 2 2 2 2 2 2 c 2 . . . 
@@ -150,7 +150,7 @@ game.onUpdateInterval(1000, function () {
 . . f f f f f e e f f f f f e . 
 . . . f f f . . . . f f f f . . 
 . . . . . . . . . . . . . . . . 
-`, 40, 0, SpriteKind.Player)
+`, 40, 0)
     projectile.y = 0
 })
 ```
@@ -168,7 +168,7 @@ enum SpriteKind {
 }
 let projectile: Sprite = null;
 game.onUpdateInterval(1000, function () {
-    projectile = sprites.createProjectile(img`
+    projectile = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . 2 2 2 2 2 2 2 2 . . . . 
 . . . 2 4 2 2 2 2 2 2 c 2 . . . 
@@ -185,7 +185,7 @@ game.onUpdateInterval(1000, function () {
 . . f f f f f e e f f f f f e . 
 . . . f f f . . . . f f f f . . 
 . . . . . . . . . . . . . . . . 
-`, 40, 0, SpriteKind.Player)
+`, 40, 0)
     projectile.y = Math.randomRange(0, 10)
 })
 ```
@@ -203,7 +203,7 @@ enum SpriteKind {
 }
 let projectile: Sprite = null;
 game.onUpdateInterval(1000, function () {
-    projectile = sprites.createProjectile(img`
+    projectile = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . 2 2 2 2 2 2 2 2 . . . . 
 . . . 2 4 2 2 2 2 2 2 c 2 . . . 
@@ -220,11 +220,11 @@ game.onUpdateInterval(1000, function () {
 . . f f f f f e e f f f f f e . 
 . . . f f f . . . . f f f f . . 
 . . . . . . . . . . . . . . . . 
-`, 40, 0, SpriteKind.Player)
+`, 40, 0)
     projectile.y = Math.randomRange(0, scene.screenHeight())
 })
 ```
 
 ## Complete
 
-Congratulations, you have made cars randomly drive across the screen! You can use this to start your own version of a road crossing game -- for example, making a chicken or duck cross the road.
+Congratulations, you have made cars randomly drive across the screen! You can use this to start your own version of a road crossing game -- for example, making a chicken or duck cross the road. Just remember that ``||sprites:projectiles||`` are of kind ``||sprites:Projectile||`` by default.

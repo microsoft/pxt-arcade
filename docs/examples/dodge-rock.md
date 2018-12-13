@@ -5,12 +5,11 @@ Dodge the rocks and stay alive as long as you can
 ```blocks
 enum SpriteKind {
     Player,
-    Enemy
+    Projectile
 }
-let item: Sprite = null
 let projectile: Sprite = null
 let sprite: Sprite = null
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     game.over()
 })
 sprite = sprites.create(img`
@@ -28,9 +27,9 @@ sprite.setFlag(SpriteFlag.StayInScreen, true)
 game.onUpdateInterval(500, function () {
     info.changeScoreBy(1)
     if (Math.percentChance(50)) {
-        projectile = sprites.createProjectile(sprites.space.spaceAsteroid0, -50, 0, SpriteKind.Enemy, item)
+        projectile = sprites.createProjectileFromSide(sprites.space.spaceAsteroid0, -50, 0)
     } else {
-        projectile = sprites.createProjectile(sprites.space.spaceAsteroid0, 50, 0, SpriteKind.Enemy, item)
+        projectile = sprites.createProjectileFromSide(sprites.space.spaceAsteroid0, 50, 0)
     }
     projectile.y = Math.randomRange(10, 110)
 })

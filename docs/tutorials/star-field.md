@@ -18,7 +18,7 @@ game.onUpdate(function () {
 
 ## Step 2
 
-Find ``||variables:set projectile to||`` in ``||sprites:Sprites||``. Drag it into the ``||game:on game update||``.
+Find ``||sprites:projectile from side||`` in ``||sprites:Sprites||``. Drag it into the ``||game:on game update||``.
 
 ```blocks
 enum SpriteKind {
@@ -26,7 +26,7 @@ enum SpriteKind {
     Enemy
 }
 game.onUpdate(function () {
-    let projectile = sprites.createProjectile(img`
+    let projectile = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -43,7 +43,7 @@ game.onUpdate(function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 0, 100, SpriteKind.Player)
+`, 0, 100)
 })
 ```
 
@@ -59,7 +59,7 @@ enum SpriteKind {
     Enemy
 }
 game.onUpdate(function () {
-    let projectile = sprites.createProjectile(img`
+    let projectile = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -76,13 +76,13 @@ game.onUpdate(function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 0, 100, SpriteKind.Player)
+`, 0, 100)
 })
 ```
 
 ## Step 4 @fullscreen
 
-Find ``||Math:pick random 0 to 10||``. Change the `0` to `20`, and the `10` to `30`. Place it in ``||sprites:vy||`` in ``||sprites:projectile||``.
+Find ``||Math:pick random 0 to 10||``. Change the ``0`` to ``20``, and the ``10`` to ``30``. Place it in ``||sprites:vy||`` in ``||sprites:projectile||``.
 
 ![Random Speed](/static/tutorials/star-field/random-speed.gif)
 
@@ -92,7 +92,7 @@ enum SpriteKind {
     Enemy
 }
 game.onUpdate(function () {
-    let projectile = sprites.createProjectile(img`
+    let projectile = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -109,7 +109,7 @@ game.onUpdate(function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 0, Math.randomRange(20, 30), SpriteKind.Player)
+`, 0, Math.randomRange(20, 30))
 })
 ```
 
@@ -123,7 +123,7 @@ enum SpriteKind {
     Enemy
 }
 game.onUpdate(function () {
-    let projectile = sprites.createProjectile(img`
+    let projectile = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -140,14 +140,14 @@ game.onUpdate(function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 0, Math.randomRange(20, 30), SpriteKind.Player)
+`, 0, Math.randomRange(20, 30))
     projectile.setPosition(0, 0)
 })
 ```
 
 ## Step 6
 
-Grab another ``||Math:pick random 0 to 10||`` and put it in as the ``x`` value for position. Find ``||scene:screen width||`` in ``||scene:Scene||``, and replace the `10` with it.
+Grab another ``||Math:pick random 0 to 10||`` and put it in as the ``||sprites:x||`` value for position. Find ``||scene:screen width||`` in ``||scene:Scene||``, and replace the ``10`` with it.
 
 ```blocks
 enum SpriteKind {
@@ -155,7 +155,7 @@ enum SpriteKind {
     Enemy
 }
 game.onUpdate(function () {
-    let projectile = sprites.createProjectile(img`
+    let projectile = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -172,7 +172,7 @@ game.onUpdate(function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 0, Math.randomRange(20, 30), SpriteKind.Player)
+`, 0, Math.randomRange(20, 30))
     projectile.setPosition(Math.randomRange(0, scene.screenWidth()), 0)
 })
 ```
@@ -190,7 +190,7 @@ enum SpriteKind {
 }
 game.onUpdate(function () {
     if (true) {
-        let projectile = sprites.createProjectile(img`
+        let projectile = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -207,7 +207,7 @@ game.onUpdate(function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 0, Math.randomRange(20, 30), SpriteKind.Player)
+`, 0, Math.randomRange(20, 30))
         projectile.setPosition(Math.randomRange(0, scene.screenWidth()), 0)
     }
 })
@@ -215,7 +215,7 @@ game.onUpdate(function () {
 
 ## Step 8
 
-Get a ``||Math:0 % chance||`` block and replace the `true` condition in the ``||logic: if then||`` with it. Change the `0` to `25`.
+Get a ``||Math:0 % chance||`` block and replace the ``true`` condition in the ``||logic: if then||`` with it. Change the ``0`` to ``25``.
  
 ```blocks
 enum SpriteKind {
@@ -224,7 +224,7 @@ enum SpriteKind {
 }
 game.onUpdate(function () {
     if (Math.percentChance(25)) {
-        let projectile = sprites.createProjectile(img`
+        let projectile = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -241,7 +241,7 @@ game.onUpdate(function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 0, Math.randomRange(20, 30), SpriteKind.Player)
+`, 0, Math.randomRange(20, 30))
         projectile.setPosition(Math.randomRange(0, scene.screenWidth()), 0)
     }
 })
@@ -255,7 +255,7 @@ Congratulations, your star field is complete! Build any game you wish on top of 
 
 In real outer space, stars are millions of light year away, so they shouldn't interact with anything else.
 
-Find ``||sprites:set mySprite stay in screen||`` in ``||sprites:Sprites||``. Place it after ``||variables:set projectile to||`` and change ``||variables:mySprite||`` to ``||variables:projectile||``. Change ``||sprites:stay in screen||`` to ``||sprites:ghost||``, and click on `off` to turn it `on`.
+Find ``||sprites:set mySprite stay in screen||`` in ``||sprites:Sprites||``. Place it after ``||variables:set projectile to||`` and change ``||variables:mySprite||`` to ``||variables:projectile||``. Change ``||sprites:stay in screen||`` to ``||sprites:ghost||``, and click on ``off`` to turn it ``on``.
 
 This will also have a large effect on the frame rate, as the game can ignore the fact that the stars overlap with the other sprites in the game.
 
@@ -266,7 +266,7 @@ enum SpriteKind {
 }
 game.onUpdate(function () {
     if (Math.percentChance(25)) {
-        let projectile = sprites.createProjectile(img`
+        let projectile = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -283,7 +283,7 @@ game.onUpdate(function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 0, Math.randomRange(20, 30), SpriteKind.Player)
+`, 0, Math.randomRange(20, 30))
         projectile.setPosition(Math.randomRange(0, scene.screenWidth()), 0)
         projectile.setFlag(SpriteFlag.Ghost, true)
     }
