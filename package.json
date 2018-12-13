@@ -32,8 +32,8 @@
     "typescript": "2.6.1"
   },
   "dependencies": {
-    "pxt-common-packages": "5.1.52",
-    "pxt-core": "5.2.15"
+    "pxt-common-packages": "5.1.53",
+    "pxt-core": "5.2.17"
   },
   "scripts": {
     "serve": "node node_modules/pxt-core/built/pxt.js serve"
