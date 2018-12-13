@@ -1,6 +1,6 @@
 # Activity: Generate Sprites using Create and On Create
 
-Many games need to spawn sprites for the player to collect like coins, or to avoid like oil spills. 
+Many games need to spawn sprites for the player to do things like collect coins or avoid oil spills. 
 
 We will use ``||sprites:create empty sprite||`` to spawn a new empty sprite, which is a place holder for a sprite without an image. Then we can use an ``||sprites:on created||`` event to set the image and a random position for newly generated sprites. 
 
@@ -12,7 +12,7 @@ https://youtu.be/eXCpLH74tF4
 
 [Alternative Video Location](https://aka.ms/40544a-createoncreate)
 
-## Example #1: Random clouds
+## Example #1: Random clouds #example-1
 
 This example uses the ``||sprites:on created||`` event to set the sprite image and location after a sprite of a particular kind is spawned.
 
@@ -118,14 +118,14 @@ sprites.createEmptySprite(SpriteKind.Cloud)
 
 The ``||sprites:on created||`` event allows us to set code to run whenever a new sprite is created. This is used to create new clouds multiple times with the same code. Now we will create new clouds with ``||sprites:create empty sprite of kind||`` blocks.
 
-1. Start with example #1 or your own similar code
+1. Start with [example #1](#example-1) or your own similar code
 2. Review the code and find the ``||sprites:create empty sprite of kind||`` of kind blocks
 3. Add 2 more ``||sprites:create empty sprite of kind||`` blocks for clouds
 4. Add a new ``||sprites:create empty sprite of kind||`` for a different ``||sprites:kind||``. Use the ``||sprites:on created||`` event to
     * set an image for the sprite that is created (for example, a bird or a butterfly)
     * set the sprite to be in a random position
-5. Use ``||sprites:create empty sprite of kind||`` to create at least five of the times.
-6. **Challenge:** create an event for the ``||sprites:Helicopter||`` overlap with the new ``||sprites:kind||`` that has an action that gives the new ``||sprites:kind||`` a fast velocity so that it will fly off the screen after they overlap
+5. Use ``||sprites:create empty sprite of kind||`` to create at least five of the new kind.
+6. **Challenge:** create an event for the ``Helicopter`` overlap with the new ``||sprites:kind||`` that has an action that gives the new ``||sprites:kind||`` a fast velocity so that it will fly off the screen after they overlap
 
 ## What did we learn?
  
