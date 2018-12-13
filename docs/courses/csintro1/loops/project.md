@@ -1,6 +1,6 @@
 # Activity: Loops Project
 
-Make your own unique games!
+Now its time to put the concepts together and make your own unique games!
 
 ```codecard
 [
@@ -44,7 +44,7 @@ Make your own unique games!
 
 ## Student Task #2: Creating a Minimum Viable Product
 
-A Minimum Viable Product, or MVP, is the simplest version of a product. It will consist of placeholder values, and have features missing.
+A [Minimum Viable Product](https://www.bing.com/search?q=Minimum+Viable+Product), or MVP, is the simplest version of a product. It will consist of placeholder values, and have features missing.
 
 An MVP is a very simple foundation for your product, which allows you to gather feedback and ideas from others without getting lost in the small parts that require polish later on: making the perfect sprite, creating challenging levels, identifying how players score more points, and so on.
 

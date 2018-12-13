@@ -122,7 +122,7 @@ pause(100)
 
 ## Concept: Moving a sprite using the repeat block loop
 
-When completing the last task, you likely noticed that you were doing the same action repeatedly - moving in one direction, pausing, moving in another, pausing, and then repeating that. Instead of doing that by inserting the same chunk code multiple times, we can, by using loops, repeat that chunk of code more easily.
+When completing the last task, you likely noticed that you were doing the same action repeatedly - moving in one direction, pausing, moving in another, pausing, and then repeating that. Instead of doing that by inserting the same chunk of code multiple times, we can, by using loops, repeat that chunk of code more easily.
 
 ## Student Task #2: Add a second sprite using loops
 
