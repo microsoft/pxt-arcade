@@ -5,21 +5,22 @@
 namespace pxt.editor {
 
     export interface FieldPositionOptions extends Blockly.FieldCustomOptions {
+        screenWidth?: number;
+        screenHeight?: number;
     }
 
     export class FieldPosition extends Blockly.FieldNumber implements Blockly.FieldCustom {
         public isFieldCustom_ = true;
-
         private params: any;
-
-        private static SCREEN_WIDTH = 160;
-        private static SCREEN_HEIGHT = 120;
-
         private selectorDiv_: HTMLElement;
 
         constructor(text: string, params: FieldPositionOptions, validator?: Function) {
             super(text, validator);
             this.params = params;
+            if (!this.params.screenHeight)
+                this.params.screenHeight = 120;
+            if (!this.params.screenWidth)
+                this.params.screenWidth = 160;
         }
 
         showEditor_() {
@@ -65,10 +66,10 @@ namespace pxt.editor {
             let initialX = height / 2;
             let initialY = width / 2;
             const { currentX, currentY } = this.getXY();
-            if (currentX && currentX > 0 && currentX <= FieldPosition.SCREEN_WIDTH
-                && currentY && currentY > 0 && currentY <= FieldPosition.SCREEN_HEIGHT) {
-                initialX = currentY / FieldPosition.SCREEN_HEIGHT * height;
-                initialY = currentX / FieldPosition.SCREEN_WIDTH * width;
+            if (currentX && currentX > 0 && currentX <= this.params.screenWidth
+                && currentY && currentY > 0 && currentY <= this.params.screenHeight) {
+                initialX = currentY / this.params.screenHeight * height;
+                initialY = currentX / this.params.screenWidth * width;
             }
             crossX.style.top = initialX + 'px';
             crossY.style.left = initialY + 'px';
@@ -89,8 +90,8 @@ namespace pxt.editor {
                 const x = e.clientX - left;
                 const y = e.clientY - top;
 
-                const normalizedX = Math.round(x / width * FieldPosition.SCREEN_WIDTH);
-                const normalizedY = Math.round(y / height * FieldPosition.SCREEN_HEIGHT);
+                const normalizedX = Math.round(x / width * this.params.screenWidth);
+                const normalizedY = Math.round(y / height * this.params.screenHeight);
 
                 this.close();
                 this.setXY(normalizedX, normalizedY);
