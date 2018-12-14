@@ -25,6 +25,12 @@ declare namespace jacdac {
     //% parts=jacdac shim=jacdac::isConnected
     function isConnected(): boolean;
 
+    /** 
+     * Sets the error state on the device
+     */
+    //% shim=JacDacDriverStatusMethods::setError
+    setError(error: int32):
+
     /**
      * Gets the jacdac event id
      */
