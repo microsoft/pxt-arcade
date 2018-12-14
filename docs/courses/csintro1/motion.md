@@ -29,7 +29,7 @@ Motion introduce the ability to control how a sprite moves around the screen.
     "url": "/courses/csintro1/motion/create-on-create-sprites",
     "imageUrl": "/static/courses/csintro1/motion/create-on-create-sprites.gif"
 }, {
-    "name": "Project",
+    "name": "Motion Project",
     "url": "/courses/csintro1/motion/project",
     "imageUrl": "/static/courses/csintro1/motion/project.gif"
 }
@@ -44,7 +44,7 @@ Motion introduce the ability to control how a sprite moves around the screen.
 * [Random](/courses/csintro1/motion/random)
 * [Overlap Section 2](/courses/csintro1/motion/overlap2)
 * [Sprite Create and On Create](/courses/csintro1/motion/create-on-create-sprites)
-* [Project](/courses/csintro1/motion/project)
+* [Motion Project](/courses/csintro1/motion/project)
 
 
 [CS Intro Home](/courses/csintro1)

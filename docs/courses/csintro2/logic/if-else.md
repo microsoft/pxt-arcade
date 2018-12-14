@@ -1,9 +1,5 @@
 # Activity: If and else comparisons
  
-https://youtu.be/sMFHdR6KzPo 
-
-[Alternative Video Location](https://aka.ms/40544a-ifelse-overview)
-
 In our games we will often want to compare values, and take an action based on the result of the comparison.
 
 > Example: Is my value smaller than a test value? If it is ``||logic:true||`` that my value (3) is smaller than the test value (5) then we will add to my value. Otherwise, we will subtract from the value.
@@ -21,7 +17,11 @@ In this activity, students will work with:
 * ``||logic:else||``
 * ``||logic:else if||``
 
-## Concept: **If** Statement
+## Concept: ``||logic:if||`` and ``||logic:else||`` Statement
+
+https://youtu.be/FuABS3PVnAM 
+
+[Alternative Video Location](https://aka.ms/40544a-if-else-pre)
 
 We have seen in the previous lesson ``||logic:if||`` statements perform a test and if the logic test evaluates to true, then it will run code that is given. 
 
@@ -30,8 +30,6 @@ if (info.life() > 2) {
     game.splash("3 or more lives")
 }
 ```
-
-## Concept: **Else** Statement
 
 When we use an ``||logic:if||`` statement, we have the option to add an ``||logic:else||`` statement. An else block will only run in the event that the logic test given evaluates to false. In other words, if the test is true, then the ``||logic:if||`` block’s code will run, else, the ``||logic:else||`` block’s code will run. 
 
@@ -45,7 +43,7 @@ if (info.highScore() > 5) {
 }
 ```
 
-## Concept: **Else if** Statement
+## Concept: ``||logic:else if||`` Statement
 
 Using an ``||logic:if||`` block with an ``||logic:else||`` block allows us to split all comparisons into two categories - either the comparison is ``||logic:true||`` or ``||logic:false||`` (not true). 
 
@@ -79,13 +77,13 @@ If it is not greater than 100, then the second logic test is run to see if the s
 
 If it is not greater than 50, it will run the else section and rank the player a "beginner."
 
-## Button Game
+## Concept: Button Game
 
 Make sprite alternate between saying "A" and "B"
 
-https://youtu.be/FuABS3PVnAM 
+https://youtu.be/sMFHdR6KzPo 
 
-[Alternative Video Location](https://aka.ms/40544a-ifelse)
+[Alternative Video Location](https://aka.ms/40544a-if-else-examples)
 
 For each example below,
 
@@ -93,7 +91,7 @@ For each example below,
 2. Review the code that uses comparisons
 3. Identify how the behavior is different from the other examples
 
-### Example #1a: Random alternating message
+### Example #1a: Random Message
 
 [Example #1a](https://makecode.com/_HXMRAzYY4YkU)
 
@@ -142,7 +140,7 @@ info.startCountdown(20)
 generate()
 ```
 
-### Example #1b: Check if correct button is pressed
+### Example #1b: Check the Button
 
 [Example #1b](https://makecode.com/_LigLWHR00d74)
 
@@ -197,7 +195,7 @@ info.startCountdown(20)
 generate()
 ```
 
-### Example #1c: ``|logic:else|`` for random alternating message
+### Example #1c: Using ``||logic:else||`` 
 
 [Example #1c](https://makecode.com/_FDoAgwhKdh1X)
 
@@ -251,11 +249,11 @@ info.startCountdown(20)
 generate()
 ```
 
-## Student Task #1a: ``|logic:else|`` for check if correct button is pressed
+## Student Task #1a: ``||logic:else||`` with an Incorrect Response
 
 https://youtu.be/zW7JyNiJeKI
 
-[Alternative Video Location](https://aka.ms/40544a-ifelse-task)
+[Alternative Video Location](https://aka.ms/40544a-if-else-tasks)
 
 Now that we have the basic functionality of our game, make it so that the player loses points when they press the wrong button.
 
@@ -263,25 +261,12 @@ Now that we have the basic functionality of our game, make it so that the player
 2. Add ``||logic:else||`` statements in the button press events that run code when the player enters the wrong button
 3. Decrease the players ``||info:score||`` by 1 when they press the wrong button
 
-### ~hint
-
-To decrease a value, change its value by a negative amount
-
-### ~
-
 ## Task #1b: End of Game Message
 
 Now add a timer, and congratulate the player at the end of the game, giving them a specific message based on their ``||info:score||``.
 
 1. Create an event for when the countdown ends by using the ``||info:on countdown end||`` block
 2. Check to see if the player’s ``||info:score||`` is less than `20`. If it is, use a splash block to say “Beginner score of ” and then the player’s ``||info:score||``
-
-    ### ~hint
-
-    You can combine a string and a number to form a string using the ``||text:join||`` block.
-
-    ### ~
-
 3. Use an ``||logic:else||`` block to do the same for if the player’s ``||info:score||`` was greater than or equal to `20` but say “Pro score of ” and then the player’s ``||info:score||``
 4. Use a game over block to let the game know that it is over and that the player won
 

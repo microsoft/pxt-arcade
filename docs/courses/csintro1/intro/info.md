@@ -5,6 +5,7 @@ We have previously worked with variables we created. A lot of the time, software
 The ``||info:info||`` category in blocks contains a few variables (data properties) which we are allowed to update. These properties have to do with score, life, and time. We will take a quick look at how to use these as variables in our code.
 
 In this activity, students are introduced to:
+
 * Using the ``||info:score||`` and ``||info:life||`` properties
 * Combining numeric values with math operators (\*)
 * The benefits of using ``||info:score||`` and ``||info:life||`` over other options
@@ -77,10 +78,6 @@ This simple game gives the user a simple task - to not touch a button. If they d
 2. Modify the initial value of the life to be 15, instead of just 1
 3. Add in the ``||info:change score by||`` block used in the first task, and modify it to add 2 to the score each time a button is pressed
 4. Add in a ``||info:countdown||``, and set it to run out after 2 seconds
-
-### Simplify Blocks chained together with JavaScript
-
-![simplify join blocks with JavaScript](/static/courses/csintro1/intro/join-javascript.gif)
 
 ## Student Task #3: Estimate rate of presses
 

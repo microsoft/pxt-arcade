@@ -9,7 +9,7 @@ Create your own asteroid destroying masterpiece.
 Create a spaceship for the player to control
 
 1. Create a sprite, with the image set to a spaceship. Store it in the variable ``||variables:spaceship||``
-2. Add a ``||controller:control sprite spaceship with||`` block, and set both ``||controller:vx||`` and ``||controller:vy||`` to 50
+2. Add a ``||controller:move spaceship with buttons||`` block, and set both ``||controller:vx||`` and ``||controller:vy||`` to 50
 3. ``||sprites:Change||`` ``||variables:spaceship||``s ``||sprites:y||`` position by 40, to move them closer to the bottom of the screen
 4. Use ``||info:set life to 3||`` to start the player off with some life
 5. Use ``||info:set score to 0||`` to start the player off with no score

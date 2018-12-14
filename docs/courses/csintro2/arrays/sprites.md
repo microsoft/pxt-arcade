@@ -92,13 +92,13 @@ c a 8 a a c c c c a a f f f 8 a
 `, SpriteKind.Asteroid)]
 ```
 
-## Student Task #1: Moving a random asteroid
+## Student Task #1: Moving a Random Asteroid
 
 1. Start with the code from example #1
 2. Instead of moving every asteroid, use select a random asteroid from ``||variables:my sprite array||`` and move only that asteroid when the ``||controller:A||`` button is pressed
 3. **Challenge:** choose another random asteroid, and have it ``||sprites:say||`` "woosh" for 300 ms. Are the two randomly chosen asteroids the same? (Can they be the same?)
 
-## Concept: Arrays from functions
+## Concept: Arrays from Functions
 
 Building arrays by adding in values is a common and useful coding pattern. Arrays can be even more useful when they are returned by functions. For instance, a function could return multiple related values at once.
 
@@ -192,7 +192,7 @@ Using ``||sprites:array of sprites of kind||``, we can easily address both of th
 5. Select a firework from ``||variables:sprite list||`` at random, and store that in the variable ``||variables:origin||``. Replace all references to ``||variables:firework||`` in the event to refer to this new variable
 6. **Challenge:** change the ``||controller:on any button pressed||`` event to only trigger when the ``||controller:A||`` button is pressed, and make a ``||controller:on B button pressed||`` event that will create a new firework. Make sure to use either a ``||functions:function||`` or an ``||sprites:on created sprite of kind||`` event to reduce the redundancy between the new event and the ``||loops:on start||`` block
 
-## Example #3: Tracking with a single sprite
+## Example #3: Tracking with a Single Sprite
 
 It is fairly common to want sprites to follow other sprites; for example, enemy sprites that want to damage the player, or faithful ally accompanying the player on an adventure.
 
@@ -217,7 +217,7 @@ player = sprites.create(img`
 1 . . . 1 
 . 1 1 1 . 
 `, SpriteKind.Player)
-controller.controlSprite(player, 100, 100)
+controller.moveSprite(player, 100, 100)
 enemy = sprites.create(img`
 2 . . 2 
 . . . . 
@@ -242,7 +242,7 @@ game.onUpdate(function () {
 
 This is also a great occasion to use arrays - that way, we can have more than a single enemy follow the player.
 
-## Student Task #3: Tracking with all sprites of a kind
+## Student Task #3: Tracking with All Sprites of a Kind
 
 1. Start with the code from example #3
 2. Add a ``||loops:repeat 20 times||`` loop that creates 20 enemies in random positions on the screen

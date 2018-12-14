@@ -14,7 +14,7 @@ In these activities students will work with:
 
 ## Concept: Boolean Flags
 
-Boolean values are regularly used to help maintain the **state** of a given piece of code. It is common to describe variables as "boolean flags" - these often are used to turn on and off different behaviors that might be useful. 
+Boolean values are regularly used to help maintain the **state** of a given piece of code. It is common to describe boolean variables as "boolean flags" - these often are used to turn on and off different behaviors that might be useful. 
 
 For example, ``||sprites:stay in screen||`` is a flag that we have set that forces the sprite to stay within the bounds of the screen when set to ``||logic:true||``.
 
@@ -53,31 +53,9 @@ In this example, ``||variables:isHungry||`` is a flag that will change the behav
 
 When we have a boolean value, we have seen that we can write code that runs when it is true using a simple ``||logic:if||`` statement. However, we can also run code for when the boolean is false. This is done with the ``||logic:not||`` block.
 
-## Example #2a: Assigning a Boolean Value
+## Example #2: ``||logic:not||``
 
-1. Review the code below
-2. Create the sample code and run the code
-3. Identify how the boolean value is stored inside of a variable
-
-```blocks
-let isOneLife = false
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (isOneLife) {
-        game.splash("You're at one health!")
-    }
-})
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.changeLifeBy(-1)
-})
-info.setLife(3)
-game.onUpdate(function () {
-    isOneLife = info.life() == 1
-})
-```
-
-## Example #2b: ``||logic:not||``
-
-[Example #2b](https://makecode.com/_Ug9eu36KRW2o)
+[Example #2](https://makecode.com/_Ug9eu36KRW2o)
 
 ```blocks
 enum SpriteKind {
@@ -122,17 +100,17 @@ game.onUpdateInterval(5000, function () {
 2. Examine its use of the ``||logic:not||`` block
 3. Notice how the ``||sprites:sprite||`` will only say something if the boolean is *not* ``||logic:true||``
 
-## Student Task #2: ``||logic:not||``
+## Student Task #2: ``||logic:not||``  Left (is Right)
 
 1. Start a new project
-2. Create a ``||sprites:sprite||`` and use the ``||controller:control with||`` block to move the sprite around the screen
+2. Create a ``||sprites:sprite||`` and use the ``||controller:move mySprite with buttons||`` block to move the sprite around the screen
 3. Make a variable named ``||variables:isLeft||`` and set it equal to ``||logic:false||``
 4. In the ``||game:on game update||`` block, assign ``||variables:isLeft||`` to a ``||logic:0 < 0||`` comparison. Replace the first ``0`` with the ``||sprites:sprites||`` ``||sprites:x||`` position, and the second ``0`` with 80
 5. Make it so that if the player presses the ``||controller:A||`` button, if ``||variables:isLeft||`` is ``||logic:false||``, then the sprite should ``||sprites:say||`` something
 
 ## Concept: Alternating Booleans
 
-We can also use the ``||logic:not||`` block when assigning a boolean. So if we wanted to, we could assign a boolean to be the opposite of another boolean. It is to set a boolean to the opposite value of itself, to 'switch' states.
+We can also use the ``||logic:not||`` block when assigning a boolean. So if we wanted to, we could assign a boolean to be the opposite of another boolean. Setting a boolean to the opposite value of itself, 'switches' the variable state from ``||logic:true||`` to ``||logic:false||`` (or false to true).
 
 ## Example #3: Alternating Booleans
 
@@ -262,7 +240,7 @@ else                game.splash("false or false is false")
 ## Student Task #4: Using ``||logic:and||`` and ``||logic:or||``
 
 1. Create a new project
-2. Create a sprite, and use ``||controller:control sprite with||`` to make it move when the directional keys are pressed
+2. Create a sprite, and use ``||controller:move mySprite with buttons||`` to make it move when the directional keys are pressed
 3. In the ``||game:on game update||`` block, add an ``||logic:if||`` statement that makes the sprite ``||sprites:say||`` "hello" for 200 milliseconds when the ``||sprites:sprite x||`` value is less than 30 ``||logic:and||`` ``||sprites:sprite y||`` is less than 30.
 4. In the ``||game:on game update||`` block, add another ``||logic:if||`` statement that makes the sprite ``|sprites:say||`` "bye" for 200 ms when the ``||sprites:sprite x||`` is greater than 80 ``||logic:or||`` the ``||sprites:sprite y||`` is greater than 80
 5. **Challenge**: create the same behavior while using one or more ``||logic:not||`` blocks

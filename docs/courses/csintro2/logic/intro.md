@@ -6,7 +6,7 @@ In these activities, students will work with:
 * ``||logic:if||`` block
 * Comparison operators
 
-## Comparisons 
+## Concept: Comparisons 
 
 Comparison logic with the ``||logic:if||`` statement
  
@@ -20,7 +20,7 @@ We have already seen similar behaviors in events like ``||sprites:on overlap||``
 
 ``||logic:if||`` statements allow us to program a behavior based on the state of the game.
 
-## Concept: **if** Statement
+## Concept: ``||logic:if||`` Statement
 
 ``||logic:if||`` statements perform a test, and if the test evaluates to true, then it will run code that is given. Some further examples are:
 
@@ -88,7 +88,7 @@ mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-controller.controlSprite(mySprite, 0, 50)
+controller.moveSprite(mySprite, 0, 50)
 mySprite.x = 8
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
 info.setScore(0)
@@ -118,7 +118,9 @@ c a 8 a a c c c c a a f f f 8 a
 })
 ```
 
-Notice that when the game creates a new enemy, it checks to see if the player's score is less than a certain value. If that is the case, the player has just started playing the game, so the game makes it easier for the player by decreasing the speed in which the projectiles are thrown at the player.
+When the game creates a new enemy, it checks to see if the player's score is less than a certain value.
+
+If that is the case, the player has just started playing the game, so the game makes it easier for the player by decreasing the speed in which the projectiles are thrown at the player.
 
 https://youtu.be/VYmc4szD5mU 
 
@@ -127,14 +129,15 @@ https://youtu.be/VYmc4szD5mU
 ## Task #1a: Scoring
 
 1. Create a new project
-2. When the player presses the ``||controller:A||`` button the score increases by 1
-3. Then, when the player presses the ``||controller:B||`` button, if the player's score is less than 10, the sprite will say something
+2. Create a ``||sprites:Sprite||``
+3. When the player presses the ``||controller:A||`` button, increase the score by 1
+4. When the player presses the ``||controller:B||`` button, if the player's score is less than 10, make the ``||sprites:Sprite||`` say something
 
 ## Task #1b: Sprite Position
 
 1. Create a new project
-2. Create a sprite, and use ``||controller:control sprite with||`` to make it move when the directional keys are pressed
-3. When the player is on the left half of the screen and the player presses the ``||controller:A||``button, the score increases by 1
+2. Create a sprite, and use ``||controller:move mySprite with buttons||`` to make it move when the directional keys are pressed
+3. When the player is on the left half of the screen and the player presses the ``||controller:A||``button, make the score increase by 1
 
 ### ~hint
 
@@ -142,7 +145,7 @@ The player is on the left half of the screen if their ``||sprites:x position||``
 
 ### ~
 
-### Example #2: Greater than
+### Example #2: Greater Than
 
 https://youtu.be/EhRPChFc1Us 
 
@@ -187,7 +190,7 @@ mySprite = sprites.create(img`
 . . . f f f f f f f f f f . . . 
 . . . . . f f . . f f . . . . . 
 `, SpriteKind.Player)
-controller.controlSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite, 100, 100)
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
 game.splash("Collect 5 cherries")
 game.onUpdateInterval(500, function () {
@@ -212,7 +215,7 @@ c 2 e e 2 2 2 2 e 2 5 4 2 c 8 .
 })
 ```
 
-Notice how when the player collects a cherry, the game will check if they have collected more than 5, if the player has collected more than 5, then the sprite says "Too many cherries".
+When the player collects a cherry, if the player has collected more than 5, then the sprite says "Too many cherries".
 
 ## Task #2: Follow me!
 
@@ -244,7 +247,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     otherSprite.destroy()
     info.changeLifeBy(-1)
     if (info.life() == 1) {
-        mySprite.say("Last shot")
+        mySprite.say("Last chance")
         mySprite.setImage(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -283,7 +286,7 @@ mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-controller.controlSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite, 100, 100)
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
 info.setLife(3)
 forever(function () {
@@ -309,7 +312,7 @@ c a 8 a a c c c c a a f f f 8 a
 })
 ```
 
-Notice how when the player is on their final life, the image of the sprite changes and the sprite say "Last shot".
+When the player is on their final life, the image of the sprite changes and the sprite says "Last chance".
 
 ## Task #3: Count to 10 
 
@@ -317,7 +320,7 @@ Notice how when the player is on their final life, the image of the sprite chang
 2. Make it so that when the player presses the ``||controller:A||`` button the score increases by 1
 3. Make it so that after the score is increased, if the score is equal to 10, use the ``||game:game over||`` block to end the game
 
-### Example #4: Using multiple if comparisons 
+### Example #4: Multiple ``||logic:if||`` Comparisons 
 
 1. Play the game linked below
 2. Review the code that uses comparisons
@@ -357,21 +360,21 @@ mySprite = sprites.create(img`
 . . . f f f f f f f f f f . . . 
 . . . . . f f . . f f . . . . . 
 `, SpriteKind.Player)
-controller.controlSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite, 100, 100)
 info.setLife(5)
 ```
 
 Notice how when the player presses the ``||controller:A||`` button, if they are on the left half of the screen, the score will increase, and if they are on the top half of the screen, their lives will decrease.
 
-## Task #4: equal and greater than test
+## Task #4: Equal and Greater Than
 
 1. Create a new project
-2. Add in a simple sprite
+2. Create a ``||sprites:sprite||``
 3. Make it so that when the player presses the ``||controller:A||`` button, the score increases by 1
 4. In this event, if the player's score is above 10, make the sprite congratulate the player on their high score
 5. In the same event, if the player's score is an even number, change the background to a random color
-6. **Challenge:** add projectiles that fire from the sprite when the score is increased to a value greater than 5
-7. **Challenge:** if the score reaches 20, change the sprites image
+6. **Challenge:** add projectiles that fire from the ``||sprites:sprite||`` when the score is increased to a value greater than 5
+7. **Challenge:** if the score reaches 20, change the ``||sprites:sprite||``'s image
 
 ### ~hint
 

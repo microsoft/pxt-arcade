@@ -5,6 +5,7 @@ Once the sprites are moving, the next step is to detect when sprites interact wi
 We can assign events to overlaps between sprites of different (or even the same) ``||sprites:kind||``, adding behaviors such as scoring points, destroying an object, starting an animation, and much more.
 
 In this activity, students will be introduced to:
+
 * ``||sprites:Sprite Kind||``
 * ``||sprites:on overlap||`` event with different ``||sprites:kind||``
 * ``||sprites:ghost on||`` and ``||sprites:ghost off||``
@@ -20,7 +21,7 @@ We use ``||sprites:kind||`` to classify our sprites. We can have sprites in our 
 
 Creating labels (``||sprites:kind||``s) for different groups of sprites helps us assign them each unique behaviors. For example, you might want to have the player in your game be able to eat 5 different food sprites, so combining them into a single ``||sprites:kind||`` allows you to write the code for a single section. 
 
-Sometimes there will be only a single sprite of a given ``||sprites:kind||`` (for example, the ``||sprites:Player||``), and other times there will be many sprites (for example, ``||sprites:Cloud||``s in the sky). Once we have ``||sprites:kind||``s for different sprites, we can check if two different sprites are overlapping one another using the ``sprites:on overlap||`` event.
+Sometimes there will be only a single sprite of a given ``||sprites:kind||`` (for example, the ``||sprites:Player||``), and other times there will be many sprites (for example, ``||sprites:Cloud||``s in the sky). Once we have ``||sprites:kind||``s for different sprites, we can check if two different sprites are overlapping one another using the ``||sprites:on overlap||`` event.
 
 ## Example #1: Two Sprites overlap
 

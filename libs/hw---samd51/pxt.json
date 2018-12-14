@@ -14,12 +14,15 @@
     },
     "compileServiceVariant": "samd51",
     "dependencies": {
-        "core---samd51": "file:../core---samd51",
+        "core---samd": "file:../core---samd",
         "screen---st7735": "file:../screen---st7735",
-        "music---pwm": "file:../music---pwm",
+        "mixer---none": "file:../mixer---none",
         "controller---hw": "file:../controller---hw",
         "buttons": "file:../buttons",
         "game": "file:../game"
     },
-    "public": true
+    "public": true,
+    "dalDTS": {
+        "corePackage": "../core---samd"
+    }
 }

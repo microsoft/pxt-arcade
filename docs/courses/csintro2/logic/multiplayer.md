@@ -2,7 +2,7 @@
 
 So far, games have been primarily been intended for a single user. These are called **single player games**: the player is alone in the world created by developers.
 
-In this section, the ``||controller:local-multiplayer||`` extension will be used to facilitate **multiplayer**, so that more than one person can player at the same time.
+In this section, the ``||controller:local-multiplayer||`` extension will be used to facilitate **multiplayer**, so that more than one person can play at the same time.
 
 ![Final Game](/static/courses/csintro2/logic/pong.gif)
 
@@ -14,7 +14,7 @@ In these activities, students will work with:
 
 ## Concept: Local Multiplayer
 
-The ``||controller:local-multiplayer||`` extension allows for multiple users to play games with eachother in the browser.
+The ``||controller:local-multiplayer||`` extension allows for multiple users to play games with each other in the browser.
 
 Using a QWERTY keyboard, the keys for both players are listed below
 
@@ -68,7 +68,7 @@ controller.setPlayerSprite(PlayerNumber.One, sprites.create(img`
 . . . . . . 5 5 5 5 5 . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player));
-controller.controlPlayer(PlayerNumber.One, 100, 100);
+controller.movePlayer(PlayerNumber.One, 100, 100);
 ```
 
 ## Student Task #1: Loading Player Two
@@ -115,7 +115,7 @@ controller.setPlayerSprite(PlayerNumber.One, sprites.create(img`
 2 2 2 2 2 . . . . . . . . . . . 
 2 2 2 2 2 . . . . . . . . . . . 
 `, SpriteKind.Player));
-controller.controlPlayer(PlayerNumber.One, 0, 100);
+controller.movePlayer(PlayerNumber.One, 0, 100);
 controller.playerSprite(PlayerNumber.One).x = 0
 controller.playerSprite(PlayerNumber.One).setFlag(SpriteFlag.StayInScreen, true)
 controller.setPlayerSprite(PlayerNumber.Two, sprites.create(img`
@@ -136,7 +136,7 @@ controller.setPlayerSprite(PlayerNumber.Two, sprites.create(img`
 . . . . . . . . . . . 8 8 8 8 8 
 . . . . . . . . . . . 8 8 8 8 8 
 `, SpriteKind.Player));
-controller.controlPlayer(PlayerNumber.Two, 0, 100);
+controller.movePlayer(PlayerNumber.Two, 0, 100);
 controller.playerSprite(PlayerNumber.Two).x = scene.screenWidth()
 controller.playerSprite(PlayerNumber.Two).setFlag(SpriteFlag.StayInScreen, true)
 ```

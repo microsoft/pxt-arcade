@@ -1,4 +1,4 @@
-# Activity: Project
+# Activity: Tile Map Project
 
 Make your own unique games!
 
@@ -11,7 +11,7 @@ Make your own unique games!
     "name": "Fire Castle",
     "imageUrl": "/static/courses/csintro2/tilemap/fire-castle.gif"
 }, {
-    "name": "Corgi Fetch",
+    "name": "Corgio Fetch",
     "imageUrl": "/static/courses/csintro2/tilemap/corgi-fetch.gif"
 }
 ]
@@ -20,7 +20,7 @@ Make your own unique games!
 ### Concepts Learned
 
 * ``||sprites:Sprites||`` and ``||sprites:Projectiles||``
-* Controller (dx) and ``||controller:control sprite with||``
+* Controller (dx) and ``||controller:move mySprite with buttons||``
 * ``||loops:on game update||`` and ``||loops:on game update every||``
 * ``||loops:repeat||`` and ``||loops:for||`` loop
 * ``||functions:Functions||`` 

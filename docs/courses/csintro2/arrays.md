@@ -21,7 +21,7 @@ Arrays are **data structures** that allow for users to store an indefinite amoun
     "url": "/courses/csintro2/arrays/tilemap",
     "imageUrl": "/static/courses/csintro2/arrays/tilemap.gif"
 }, {
-    "name": "Project",
+    "name": "Arrays Project",
     "url": "/courses/csintro2/arrays/project",
     "imageUrl": "/static/courses/csintro2/arrays/project.gif"
 }
@@ -34,7 +34,7 @@ Arrays are **data structures** that allow for users to store an indefinite amoun
 * [String Arrays](/courses/csintro2/arrays/string)
 * [Sprite Arrays](/courses/csintro2/arrays/sprites)
 * [Tile Arrays](/courses/csintro2/arrays/tilemap)
-* [Project](/courses/csintro2/arrays/project)
+* [Arrays Project](/courses/csintro2/arrays/project)
 
 
-[Advanced Blocks Home](/courses/csintro2)
+[CS Intro 2 Home](/courses/csintro2)

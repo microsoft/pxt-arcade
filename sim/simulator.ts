@@ -71,14 +71,16 @@ namespace pxsim {
      * Do not store state anywhere else!
      */
     export class Board extends pxsim.BaseBoard
-        implements pxsim.MusicBoard {
+        implements pxsim.MusicBoard
+        // , pxsim.JacDacBoard 
+        {
         public id: string;
         public bus: EventBus;
+        //public jacdacState: pxsim.JacDacState;
         public audioState: AudioState;
         public background: HTMLDivElement;
         public controlsDiv: HTMLDivElement;
         public canvas: HTMLCanvasElement;
-        public stats: HTMLElement;
         public screen: Uint32Array;
         public startTime = Date.now()
         public screenState: ScreenState
@@ -94,6 +96,8 @@ namespace pxsim {
             this.bus = new EventBus(runtime);
             this.screenState = new ScreenState(null)
             this.audioState = new AudioState();
+            //this.jacdacState = new JacDacState(this);
+            this.addMessageListener(this.receiveScreenshot.bind(this));
         }
 
         getDefaultPitchPin(): Pin {
@@ -117,7 +121,7 @@ namespace pxsim {
             }
         }
 
-        public receiveMessage(msg: SimulatorMessage) {
+        private receiveScreenshot(msg: SimulatorMessage) {
             if (msg.type == "screenshot")
                 this.screenshotAsync((msg as SimulatorScreenshotMessage).title || pxsim.title || "...")
                     .then(img => {
@@ -175,8 +179,6 @@ namespace pxsim {
             this.runOptions = msg;
             this.background = document.getElementById("screen-back") as HTMLDivElement;
             this.canvas = document.getElementById("paint-surface") as HTMLCanvasElement;
-            this.stats = document.getElementById("debug-stats");
-            this.stats.className = "stats"
             this.canvas.width = 16;
             this.canvas.height = 16;
             this.id = msg.id;
@@ -201,7 +203,6 @@ namespace pxsim {
         }
 
         updateStats() {
-            this.stats.textContent = this.screenState.stats;
             this.tryScreenshot();
         }
 

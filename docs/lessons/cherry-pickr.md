@@ -28,7 +28,7 @@ Learn the basic requirements to build a functional game!
 
 Go to the [MakeCode Arcade](@homeurl@) editor and select **New Project** to begin creating a new game.  
 
-Once the editor loads, you will see a green ``||loops:on start||`` block and a purple ``||game:on game update||`` block already placed in the editor Workspace.
+Once the editor loads, you will see a green ``||loops:on start||`` block already placed in the editor Workspace.
 
 We want the game to start with a _Title Screen_ to let the player know what game they are playing. To do that, we go to ``||game:Game||`` in the Toolbox and under the **Prompt** category, drag a ``||game:splash||`` block into the ``||loops:on start||`` block. Give your game a title and put in as the text for the ``||game:splash||`` block.
 
@@ -121,7 +121,7 @@ scene.setTileMap(img`
 a a a a a a a a a a 
 `)
 agent = sprites.create(sprites.castle.princessFront0, SpriteKind.Player)
-controller.controlSprite(agent, 150, 150)
+controller.moveSprite(agent, 150, 150)
 scene.cameraFollowSprite(agent)
 ```
 
@@ -201,7 +201,7 @@ scene.setTileMap(img`
 a a a a a a a a a a 
 `)
 agent = sprites.create(sprites.castle.princessFront0, SpriteKind.Player)
-controller.controlSprite(agent, 150, 150)
+controller.moveSprite(agent, 150, 150)
 scene.cameraFollowSprite(agent)
 info.startCountdown(60)
 info.setScore(0)
@@ -245,7 +245,7 @@ scene.setTileMap(img`
 a a a a a a a a a a 
 `)
 agent = sprites.create(sprites.castle.princessFront0, SpriteKind.Player)
-controller.controlSprite(agent, 150, 150)
+controller.moveSprite(agent, 150, 150)
 scene.cameraFollowSprite(agent)
 info.startCountdown(60)
 info.setScore(0)

@@ -6,12 +6,16 @@
 ```codecard
 [
 {
+  "name": "Eat the Doughnut",
+  "description": "Learn the basics of creating a game with this doughnut collecting program",
+  "url": "/tutorials/eat-the-doughnut",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/eat-the-doughnut.gif"
+}, {
   "name": "Simple Maze",
-  "description": "Learn the basics of creating a game with this simple maze program",
+  "description": "Learn the basics of creating a maze with this simple program",
   "url": "/tutorials/simple-maze",
   "cardType": "tutorial",
-  "label": "New? Start Here!",
-  "labelClass": "green ribbon huge",
   "imageUrl": "/static/tutorials/simple-maze.png"
 }, {
   "name": "Happy Flower",

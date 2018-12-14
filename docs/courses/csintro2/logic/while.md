@@ -94,7 +94,7 @@ f 4 4 2 2 2 2 5 5 5 5 5 5 4 4 f
 . . . f 4 4 4 4 4 4 4 4 f f . . 
 . . . . f f f f f f f f . . . . 
 `, SpriteKind.Player)
-controller.controlSprite(mySprite, 50, 50)
+controller.moveSprite(mySprite, 50, 50)
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
 info.setLife(15)
 info.startCountdown(3)
@@ -127,7 +127,7 @@ An important part is missing, though: the code that will fire the fireballs when
 ## Student Task #2: Creating fireballs
 
 1. Start with the code from example #2
-2. To start, add in the code to fire a single fireball from ``||mySprite||`` in the ``||controller:on A button pressed||`` event. This should:
+2. To start, add in the code to fire a single fireball from ``||variables:mySprite||`` in the ``||controller:on A button pressed||`` event. This should:
     * Use an ``||logic:if||`` statement to check that the player has more than one life
     * Create a ``||sprites:projectile||`` of a fireball with the origin set to ``||variables:mySprite||`` (along with some initial velocities)
     * Decrement ``||info:life||`` by 1

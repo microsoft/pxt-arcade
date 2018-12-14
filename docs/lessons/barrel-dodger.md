@@ -122,21 +122,16 @@ scene.setTileMap(img`
 
 ## Step 6
 
-Next, let's have some barrels moving at random speeds. Make them start from the right side of the screen and fly towards the player sprite. Move an ``||game:on game update every||`` onto the editor and set the interval time to `750` milliseconds. Drag a ``||variables:set projectile to||`` into it. Click the empty image box in the projectile block and change the dimensions to 8x8. Draw the barrel.
+Next, let's have some barrels moving at random speeds. Make them start from the right side of the screen and fly towards the player sprite. Move an ``||game:on game update every||`` onto the editor and set the interval time to `750` milliseconds. Drag a ``||sprites:projectile from side||`` into it. Click the empty image box in the projectile block and change the dimensions to 8x8. Draw the barrel.
 
 ![Draw a barrel in the image editor](/static/lessons/barrel-dodger/draw-barrel.gif)
 
-After that, drag a ``||math:pick random||`` block into where ``vx`` is and set the range from ``-80`` to ``-100``. Make sure you change the sprite kind to ``Enemy``.
+After that, drag a ``||math:pick random||`` block into where ``vx`` is and set the range from ``-80`` to ``-100``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-}
-
 let projectile: Sprite = null
 game.onUpdateInterval(750, function () {
-    projectile = sprites.createProjectile(img`
+    projectile = sprites.createProjectileFromSide(img`
 . e e e e e e . 
 e e e e e e e e 
 1 1 1 1 1 1 1 1 
@@ -145,7 +140,7 @@ e e e e e e e e
 1 1 1 1 1 1 1 1 
 e e e e e e e e 
 . e e e e e e . 
-`, Math.randomRange(-80, -100), 0, 2)
+`, Math.randomRange(-80, -100), 0)
 })
 ```
 
@@ -154,14 +149,9 @@ e e e e e e e e
 Now we want add a ``||sprites:set mySprite x(horizontal position)||`` to ``||game:on game update every||``. Get one of those and in the dropdown, select ``lifespan``. Change the variable to ``projectile`` instead of ``mySprite``. Make the lifespan value be `60`. Drag a  ``||sprites:set mySprite position to||`` into the bottom of ``||game:on game update every||`` and change the variable to ``projectile``. Set the ``x`` value to `160` and the ``y`` value to `90`.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-}
-
 let projectile: Sprite = null
 game.onUpdateInterval(750, function () {
-    projectile = sprites.createProjectile(img`
+    projectile = sprites.createProjectileFromSide(img`
 . e e e e e e . 
 e e e e e e e e 
 1 1 1 1 1 1 1 1 
@@ -170,7 +160,7 @@ e e e e e e e e
 1 1 1 1 1 1 1 1 
 e e e e e e e e 
 . e e e e e e . 
-`, Math.randomRange(-80, -100), 0, 2)
+`, Math.randomRange(-80, -100), 0)
     projectile.lifespan = 60
     projectile.setPosition(160, 90)
 })
@@ -228,7 +218,7 @@ Each time a barrel starts to move we want to increase the score. Get a ``||info:
 ```blocks
 let projectile: Sprite = null
 game.onUpdateInterval(750, function () {
-    projectile = sprites.createProjectile(img`
+    projectile = sprites.createProjectileFromSide(img`
 . e e e e e e . 
 e e e e e e e e 
 1 1 1 1 1 1 1 1 
@@ -237,7 +227,7 @@ e e e e e e e e
 1 1 1 1 1 1 1 1 
 e e e e e e e e 
 . e e e e e e . 
-`, Math.randomRange(-80, -100), 0, 2)
+`, Math.randomRange(-80, -100), 0)
     projectile.lifespan = 60
     projectile.setPosition(160, 90)
     info.changeScoreBy(1)
@@ -246,14 +236,14 @@ e e e e e e e e
 
 ## Step 11
 
-Our final step is to end the game if a barrel touches the sprite player. Drag an ``||sprites:on sprite overlaps||`` onto the editor. Set the sprite kind for ``otherSprite`` to ``Enemy``. End the game with a ``||game:game over||`` block inside.
+Our final step is to end the game if a barrel touches the sprite player. Drag an ``||sprites:on sprite overlaps||`` onto the editor. Set the sprite kind for ``otherSprite`` to ``Projectile``. End the game with a ``||game:game over||`` block inside.
 
 ```blocks
 enum SpriteKind {
     Player,
-    Enemy
+    Projectile
 }
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     game.over()
 })
 ```

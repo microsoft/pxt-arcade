@@ -1,4 +1,4 @@
-# Activity: Project
+# Activity: Logic Project
 
 Make your own unique games!
 
@@ -20,7 +20,7 @@ Make your own unique games!
 ### Concepts Learned
 
 * ``||sprites:Sprites||`` and ``||sprites:Projectiles||``
-* Controller (dx) and ``||controller:control sprite with||``
+* Controller (dx) and ``||controller:move mySprite with||``
 * ``||loops:on game update||`` and ``||loops:on game update every||``
 * ``||loops:while||`` loop
 * ``||functions:Functions||``

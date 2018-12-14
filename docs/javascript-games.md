@@ -7,76 +7,6 @@ Here are some fun programs for your @boardname@!
 ```codecard
 [
 {
-  "name": "Falling Duck",
-  "description": "Avoid the pipes",
-  "url":"/examples/duck",
-  "cardType": "codeExample",
-  "imageUrl": "/static/examples/duck.png"
-},
-{
-  "name": "Asteroids",
-  "description": "Shoot at rocks",
-  "url":"/examples/asteroids",
-  "cardType": "codeExample",
-  "imageUrl": "/static/examples/asteroids.png"
-},
-{
-  "name": "Car Race",
-  "description": "Drive a sports car",
-  "url":"/examples/car-race",
-  "cardType": "codeExample",
-  "imageUrl": "/static/examples/car-race.png"
-},
-{
-  "name": "Snake",
-  "description": "Dumb-phone classic",
-  "url":"/examples/snake",
-  "cardType": "codeExample",
-  "imageUrl": "/static/examples/snake.png"
-},
-{
-  "name": "Jumping Runner",
-  "description": "A runner that jumps",
-  "url":"/examples/runner",
-  "cardType": "codeExample",
-  "imageUrl": "/static/examples/jumping-runner.png"
-},
-{
-  "name": "Jumper",
-  "description": "Another runner that jumps",
-  "url":"/examples/jumper",
-  "cardType": "codeExample",
-  "imageUrl": "/static/examples/jumper.png"
-},
-{
-  "name": "Mega Bounce",
-  "description": "More and more bouncing balls",
-  "url":"/examples/mega-bounce",
-  "cardType": "codeExample",
-  "imageUrl": "/static/examples/mega-bounce.png"
-},
-{
-  "name": "Collisions",
-  "description": "Test collision perf",
-  "url":"/examples/collisions",
-  "cardType": "codeExample",
-  "imageUrl": "/static/examples/collisions.png"
-},
-{
-  "name": "Sorting",
-  "description": "Visualize sorting algorithms",
-  "url":"/examples/sorting",
-  "cardType": "codeExample",
-  "imageUrl": "/static/examples/sorting.png"
-},
-{
-  "name": "Palette",
-  "description": "Visualize palette",
-  "url":"/examples/palette",
-  "cardType": "codeExample",
-  "imageUrl": "/static/examples/palette.png"
-},
-{
   "name": "Guess the Letter",
   "description": "Try and guess the letter",
   "url":"/examples/guess-the-letter",
@@ -95,7 +25,6 @@ Here are some fun programs for your @boardname@!
 
 ## See also
 
-[Falling Duck](/examples/duck),
 [Asteroids](/examples/asteroids),
 [Car Race](/examples/car-race),
 [Snake](/examples/snake),

@@ -64,13 +64,6 @@ canvas {
     width: 100%;
 }
 
-#debug-stats {
-    position: absolute;
-    bottom: 1%;
-    left: 10%;
-    color: #3c3cff;
-}
-
 #controls {
     position: absolute;
     width: 100%;

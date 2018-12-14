@@ -10,7 +10,7 @@ In this activity, student will be introduced to:
 * Simple functions in blocks
 * Calling functions by name
 
-## Concept: Making a basic function for readability
+## Concept: Functions for Readability
 
 Functions allow us to break up code into different sections. In doing so, we can separate distinct tasks, giving a distinct name for small tasks in your code.
 
@@ -157,7 +157,7 @@ One way to think of this is like a book: by adding new functions to our code, we
 
 Each function ends up being a chapter in the book with more details on what exactly is getting down. If you want to get a feeling for how the book will be, you skim through the table of contents, and if parts sound interesting, you can read those by going to the specified location (or function).
 
-## Student Task #1a: Make your own functions
+## Student Task #1a: Make your own Functions
 
 https://youtu.be/MXQTc9At7Ts 
 
@@ -205,7 +205,7 @@ mySprite = sprites.create(img`
 . 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-controller.controlSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite, 100, 100)
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
 music.playTone(262, music.beat(BeatFraction.Half))
 music.playTone(392, music.beat(BeatFraction.Half))
@@ -267,7 +267,7 @@ player = sprites.create(img`
 . 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-controller.controlSprite(player, 100, 100)
+controller.moveSprite(player, 100, 100)
 player.setFlag(SpriteFlag.StayInScreen, true)
 princess = sprites.create(sprites.castle.princessFront0, SpriteKind.Princess)
 princess.setPosition(50, 50)

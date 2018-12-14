@@ -7,6 +7,7 @@ The @boardname@ platform is similar to other MakeCode products featuring Minecra
 @boardname@ uses general game concepts such as ``||sprites:Sprites||``, ``||scene:Scene||``, and ``||controller:Controller||`` to make writing arcade games easier, as well as categories of blocks that are common to other @boardname@ Products such as ``||loops:Loops||``, ``||logic:Logic||``, ``||variables:Variables||``, and ``||math:Math||``. As soon as you add in your first block, you can start to run your code in seconds using the in-browser simulator, with your games changing with every new block you add.
 
 In this activity, students are introduced to:
+
 * Opening a game, game controls, and playing a game
 * Creating a new game
 * The difference between blocks and script
@@ -35,24 +36,22 @@ https://youtu.be/iEQa-Wd3MRs
 ## Student Task #2: Starting your own game
 
 1. Press the "Home" button in the upper left corner to return to the homepage
-2. Press the "New Project" button 
-3. The screen will start with two blocks by default - we will focus on the ``||loops:on start||`` block for now, so drag the ``||game:on game update||`` block to the side bar to delete it as shown below
-
-    ![Deleting Onstart](/static/courses/csintro1/intro/delete-on-start.gif)
-
-4. Drag out a new sprite and have it ``||sprites:say||`` something as shown below
+2. Press the "New Project" button
+3. Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``, and drag it into ``||loops:on start||``
+4. Make the new ``||sprites:Sprite||`` ``||sprites:say||`` something, by dragging ``||sprites:mySprite say||`` and placing it after ``||variables:set mySprite to||``
 
     ![Sprite Say](/static/courses/csintro1/intro/sprite-say.gif)
 
-5. At the bottom of the screen, select a name to save this game as (e.g. - "first game"), and click "Download" to download it
+5. At the bottom of the screen, select a name to save this game as (for example, "first game"), and click "Download" to download it
 
     ![Downloading the game](/static/courses/csintro1/intro/download.gif)
 
-6. Students will turn in this file today, so be sure to keep track of it!
+6. If you are in a class, you may need to turn in this file today, so be sure to keep track of it!
 
 ## Student Task #3: Importing your game
 
 To make sure you saved your project properly, we should import it back into @boardname@!
+
 1. Press the "Home" button in the upper left corner to return to the homepage
 2. The "My Projects" section should now include the game you created in the last task. To the right of it, there should be a button labeled "Import" - press that button
 3. Select "Import File..."

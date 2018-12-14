@@ -33,7 +33,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 game.splash("Hurry!")
 level = 1
 player = sprites.create(sprites.castle.princessFront0, SpriteKind.Player)
-controller.controlSprite(player, 70, 70)
+controller.moveSprite(player, 70, 70)
 startLevel()
 
 ```
