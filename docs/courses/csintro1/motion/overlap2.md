@@ -215,7 +215,7 @@ There is a "T" shaped landing area at the bottom of the example. The helicopter 
 1. Starting with [example #1](#example-1), replace the helicopter motion with the short method using ``||controller:dx (left-right buttons)||``
 2. Review the rest of the code, and then add an ``||sprites:on overlaps||`` event for when the helicopter overlaps with the landing (note the ``||sprites:kind||`` of ``||sprites:LandingPad||``)
 3. The block of code in the overlap event should stop the helicopter velocity motion (setting both ``vx`` and ``vy`` to zero) and then change the helicopter position **up** 2 pixels so it isn't overlapping any more
-4. **Challenge:** Add a new sprite and ``||sprites:kind||`` to the screen (for example, a mountain or a tree) and set the overlap action to make the helicopter sprite have an erratic motion after an overlap. This should require 3 or more changes in position and/or velocity
+4. **Challenge:** add a new sprite and ``||sprites:kind||`` to the screen (for example, a mountain or a tree) and set the overlap action to make the helicopter sprite have an erratic motion after an overlap. This should require 3 or more changes in position and/or velocity
 
 ### ~hint
 
