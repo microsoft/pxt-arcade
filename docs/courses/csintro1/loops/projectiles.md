@@ -199,7 +199,7 @@ d d d d d d d d
 2. Replace the ``||game:on update||`` with a ``||loops:repeat||`` loop in the ``||loops:on start||`` block
 3. Each time a projectile is created, add one (1) point to the score using the ``||info:change score by||`` block
 4. Modify the ``||sprites:create projectile||`` block so that each spawned meteor moves down the screen at a rate of 50
-5. **Challenge:** Instead of moving at the current constant rate of 50, make the projectile move at a random rate between 40 and 60 using the method we learned earlier.
+5. **Challenge:** instead of moving at the current constant rate of 50, make the projectile move at a random rate between 40 and 60 using the method we learned earlier
 
 ## Student Task #2b: Offset Projectiles
 
