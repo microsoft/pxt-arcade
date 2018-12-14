@@ -9,14 +9,12 @@
   "name": "Cherry Pickr",
   "description": "Learn the basics of creating a game",
   "url": "/lessons/cherry-pickr",
-  "cardType": "lesson",
   "imageUrl": "/static/lessons/cherry-pickr.png"
 },
 {
   "name": "Barrel Dodger",
   "description": "Use the sprite editor to make player, tile, and enemy images",
   "url": "/lessons/barrel-dodger",
-  "cardType": "lesson",
   "imageUrl": "/static/lessons/barrel-dodger.png"
 }
 ]
