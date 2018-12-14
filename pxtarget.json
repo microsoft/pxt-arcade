@@ -241,6 +241,7 @@
         "monacoColors": {
             "editor.background": "#FFFAE7"
         },
+        "monacoFieldEditors": ["image-editor"],
         "scriptManager": true,
         "experiments": [
             "debugger"
