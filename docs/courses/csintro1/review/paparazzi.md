@@ -27,11 +27,11 @@ Manually add custom motion for the Camera
 
 Create a star for the player to photograph
 
-1. Use the ``||sprites:create empty sprite of kind Star||`` category inside of an ``||game:on game update every 1000 ms||`` event to create a new sprite twice per second.
-2. Add an ``||sprites:on created sprite of kind Star||`` event. Inside of that, use ``||sprites:set sprite image to||`` to set the ``Star``'s image to a drawing of a star
+1. Create a sprite with ``||sprites:sprite of kind Star||`` inside of an ``||game:on game update every 500 ms||`` event to create a new sprite twice per second.
+2. Add an ``||sprites:on created sprite of kind Star||`` event. Inside of that, use ``||sprites:set sprite image to||`` to set the ``||sprites:Star||``s image to a drawing of a star
 3. Set the created sprite's ``||sprites:x||`` and ``||sprites:y||`` positions so it appears somewhere on the screen at random
-5. Set the created sprite's ``||sprites:z||`` index to -1, so that all ``Star``s will show up behind the ``||variables:camera||``
-6. Set the created sprite's ``||sprites:lifespan||`` to 5000, so that it will be destroyed after 5 seconds
+4. Set the created sprite's ``||sprites:z||`` index to -1, so that all ``Star``s will show up behind the ``||variables:camera||``
+5. Set the created sprite's ``||sprites:lifespan||`` to 5000, so that it will be destroyed after 5 seconds
 
 ## Student Task #4: Photograph the Stars
 

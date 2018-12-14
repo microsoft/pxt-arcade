@@ -2,7 +2,7 @@
 
 Many games need to spawn sprites for the player to do things like collect coins or avoid oil spills. 
 
-We will use ``||sprites:create empty sprite||`` to spawn a new empty sprite, which is a place holder for a sprite without an image. Then we can use an ``||sprites:on created||`` event to set the image and a random position for newly generated sprites. 
+We will use ``||sprites:sprite of kind||`` to spawn a new empty sprite, with nothing in it yet. Then we can use an ``||sprites:on created||`` event to set the image and a random position for newly generated sprites. 
 
 The ``||sprites:on created||`` block uses the sprite's ``||sprites:kind||`` so we can give our new sprites the exact attributes we want, like an image, velocity, or position.
 
@@ -19,7 +19,7 @@ This example uses the ``||sprites:on created||`` event to set the sprite image a
 1. Review the code below 
 2. Create the sample code and run the code 
 3. Save the code for the task (name it "spawnCloud")
-4. Carefully examine the ``||sprites:create empty sprite||`` block and ``||sprites:on created||`` event
+4. Carefully examine the ``||sprites:sprite of kind||`` block and ``||sprites:on created||`` event
 
 ```blocks
 enum SpriteKind {
@@ -29,6 +29,7 @@ enum SpriteKind {
     Enemy
 }
 let agent: Sprite = null
+let cloud: Sprite = null
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     agent.vy += -1
 })
@@ -38,7 +39,6 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     agent.vx += -1
 })
-// Control the copter with the + pad
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     agent.vx += 1
 })
@@ -109,27 +109,60 @@ agent = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Helicopter)
-// Create and place "clouds"  Sprites
-sprites.createEmptySprite(SpriteKind.Cloud)
-sprites.createEmptySprite(SpriteKind.Cloud)
+
+cloud = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Cloud)
+cloud = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Cloud)
 ```
 
 ## Student Task #1: More Random Clouds
 
-The ``||sprites:on created||`` event allows us to set code to run whenever a new sprite is created. This is used to create new clouds multiple times with the same code. Now we will create new clouds with ``||sprites:create empty sprite of kind||`` blocks.
+The ``||sprites:on created||`` event allows us to set code to run whenever a new sprite is created. This is used to create new clouds multiple times with the same code. Now we will create new clouds with ``||sprites:sprite of kind||`` blocks.
 
-1. Start with [example #1](#example-1) or your own similar code
-2. Review the code and find the ``||sprites:create empty sprite of kind||`` of kind blocks
-3. Add 2 more ``||sprites:create empty sprite of kind||`` blocks for clouds
-4. Add a new ``||sprites:create empty sprite of kind||`` for a different ``||sprites:kind||``. Use the ``||sprites:on created||`` event to
+1. Start with example #1 or your own similar code
+2. Add 2 more ``||sprites:sprite of kind||`` blocks for clouds
+3. Add a new ``||sprites:sprite of kind||`` for a different ``||sprites:kind||``. Use the ``||sprites:on created||`` event to
     * set an image for the sprite that is created (for example, a bird or a butterfly)
     * set the sprite to be in a random position
-5. Use ``||sprites:create empty sprite of kind||`` to create at least five of the new kind.
-6. **Challenge:** create an event for the ``Helicopter`` overlap with the new ``||sprites:kind||`` that has an action that gives the new ``||sprites:kind||`` a fast velocity so that it will fly off the screen after they overlap
+4. Use ``||sprites:sprite of kind||`` to create at least five of the times.
+5. **Challenge:** create an event for the ``||sprites:Helicopter||`` overlap with the new ``||sprites:kind||`` that has an action that gives the new ``||sprites:kind||`` a fast velocity so that it will fly off the screen after they overlap
 
 ## What did we learn?
  
-1. Describe how a ``||sprites:kind||`` label is used in generating a sprite using ``||sprites:create empty sprite||`` block.
+1. Describe how a ``||sprites:kind||`` label is used in generating a sprite by creating an empty sprite block.
 2. Explain what the ``||sprites:on created||`` block does for you.
 
 ### [Teacher Material](/courses/csintro1/about/teachers)
