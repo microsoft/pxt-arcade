@@ -284,7 +284,7 @@ projectile = sprites.createProjectile(img`
 1. Create the example code above 
 2. Modify the code to make the sprite start from the upper right corner by default and move toward the lower left corner 
 3. Place the code in a loop to repeat 4 times with a short pause between loop iterations
-4. **Challenge:** Inside the loop, make sprites originate from each of the 4 corners of the screen.
+4. **Challenge:** inside the loop, make sprites originate from each of the 4 corners of the screen
 
 ## What did we learn?
 
