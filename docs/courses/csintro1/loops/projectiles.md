@@ -87,7 +87,7 @@ This modified version adds in an event that triggers when the projectile is dest
 
 ``||sprites:auto destroy||`` is available for all sprites using the ``||sprites:set sprite auto destroy on||`` flag, but projectiles have it added in for you automatically. 
 
-If projectiles are not set to start from another sprite (there's another a projectile block with a place for the start sprite name), they are created and will start from one of two positions:
+If projectiles are not set to start from another sprite they are created and will start from one of two positions:
 
 * In the middle of the screen if the velocities in the x and y direction are both set to `0`
 * From the side of the screen opposite their initial velocity direction, `+` or `-` (this makes them move across the screen).
