@@ -22,6 +22,11 @@
         "game": "file:../game"
     },
     "public": true,
+    "yotta": {
+        "config": {
+            "DEVICE_USB": 1
+        }
+    },
     "dalDTS": {
         "corePackage": "../core---stm32"
     }

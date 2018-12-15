@@ -274,6 +274,13 @@ declare const enum DAL {
     // /libraries/codal-core/inc/driver-models/Gyroscope.h
     GYROSCOPE_IMU_DATA_VALID = 2,
     GYROSCOPE_EVT_DATA_UPDATE = 1,
+    // /libraries/codal-core/inc/driver-models/LowLevelTimer.h
+    TimerModeTimer = 0,
+    TimerModeCounter = 1,
+    BitMode8 = 0,
+    BitMode16 = 1,
+    BitMode24 = 2,
+    BitMode32 = 3,
     // /libraries/codal-core/inc/driver-models/Pin.h
     IO_STATUS_DIGITAL_IN = 1,
     IO_STATUS_DIGITAL_OUT = 2,
@@ -826,6 +833,7 @@ declare const enum DAL {
     CFG_RAM_BYTES = 205,
     CFG_SYSTEM_HEAP_BYTES = 206,
     CFG_LOW_MEM_SIMULATION_KB = 207,
+    CFG_BOOTLOADER_BOARD_ID = 208,
     // /pxtapp/hf2dbg.h
     HF2DBG_H = 1,
     // /pxtapp/mixer---stm32/melody.h
@@ -843,7 +851,10 @@ declare const enum DAL {
     BUTTON_ACTIVE_LOW_PULL_UP = 32,
     BUTTON_ACTIVE_LOW_PULL_NONE = 48,
     // /pxtapp/platform.h
-    PXT_BOOTLOADER_CFG_ADDR = 134234056,
+    SETTINGS_MAGIC_0 = 273114691,
+    SETTINGS_MAGIC_1 = 781864998,
+    BOOT_RTC_SIGNATURE = 1906448503,
+    APP_RTC_SIGNATURE = 614608146,
     PAGE_SIZE = 1024,
     DEV_NUM_PINS = 64,
     IMAGE_BITS = 4,

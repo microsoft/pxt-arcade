@@ -58,6 +58,12 @@ declare namespace jacdac {
     /**
      * Internal
      */
+    //% parts=jacdac shim=jacdac::__internalRemoveDriver
+    function __internalRemoveDriver(d: JacDacDriverStatus): void;
+
+    /**
+     * Internal
+     */
     //% parts=jacdac shim=jacdac::__internalSendPacket
     function __internalSendPacket(buf: Buffer, deviceAddress: int32): int32;
 }
