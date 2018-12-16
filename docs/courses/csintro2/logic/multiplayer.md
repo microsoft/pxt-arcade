@@ -147,8 +147,7 @@ controller.playerSprite(PlayerNumber.Two).setFlag(SpriteFlag.StayInScreen, true)
 2. In the ``||sprites:on created sprite of kind||`` event, use ``||sprites:set sprite image to||`` to give the sprite an image of a ball
 3. Give the ball a ``||sprites:vx||`` of either -75 or 75, with a ``||math:50 % chance||`` of each (use an ``||logic:if then ... else||`` block to handle this)
 4. Give the ball a random ``||sprites:vy||`` between -75 and 75
-5. Store the ball ``||variables:sprite||`` in the variable ``||variables:currentBall||``
-6. Add ``||sprites:create empty sprite of kind Ball||`` to the ``||loops:on start||``, to create a ball when the game starts
+5. Assign the variable ``||variables:currentBall||`` to ``||sprites:sprite of kind Ball||`` in ``||loops:on start||``, to create a ball when the game starts
 
 ## Student Task #3: Wall Bounce
 
@@ -170,11 +169,11 @@ controller.playerSprite(PlayerNumber.Two).setFlag(SpriteFlag.StayInScreen, true)
 2. ``||logic:if||`` the ``||variables:currentBall||``'s ``||sprites:x||`` position is less than 0, then
     * ``||sprites:destroy||`` the ``||variables:currentBall||``
     * Add one to player two's score with ``||info:change player two score||``
-    * create a new ball with ``||sprites:create empty sprite of kind Ball||``
+    * Assign ``||variables:currentBall||`` to a new ``||sprites:sprite of kind Ball||``
 3. Otherwise, ``||logic:if||`` the ``||variables:currentBall||``'s ``||sprites:x||`` position is greater than ``||scene:screen width||``, then
     * ``||sprites:destroy||`` the ``||variables:currentBall||``
     * Add one to player one's score with ``||info:change player one score||``
-    * create a new ball with ``||sprites:create empty sprite of kind Ball||``
+    * Assign ``||variables:currentBall||`` to a new ``||sprites:sprite of kind Ball||``
 4. In the ``||loops:on start||``, use ``||info:set player one score||`` and ``||info:set player two score||`` to start both players off with a score of 0
 
 ## Student Task #5: Hit the Paddle

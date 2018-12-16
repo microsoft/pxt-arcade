@@ -121,7 +121,7 @@ The first step (making the trampoline bigger) was simple to complete by just cha
 
 When we started working on making more sprites, we noticed that this seemed similar to the clouds from the [Create and On Create Sprites](/courses/csintro1/motion/create-on-create-sprites) lesson, so we decided to use that for making the trampolines.
 
-We used ``||sprites:create empty sprite||`` to create a trampoline, and decided to move the code for making the walls into an ``||sprites:on created||`` event. This way, no matter where the trampoline was made, the walls would be placed in the correct location.
+We used ``||sprites:create sprite||`` to create a trampoline, and decided to move the code for making the walls into an ``||sprites:on created||`` event. This way, no matter where the trampoline was made, the walls would be placed in the correct location.
 
 To make the trampoline start in a random position, we used ``||math:pick random||`` in the ``||sprites:on created||`` event to pick a random starting position for the trampoline that was on the screen. The wall positions were already set based off the position of the trampoline, so nothing else was needed.
 
@@ -129,7 +129,7 @@ To make the trampoline start in a random position, we used ``||math:pick random|
 
 When we were finished with this section, we created a share link to the updated game:
 
-> [`https://makecode.com/_9C7KhuiyR1Dh`](https://makecode.com/_9C7KhuiyR1Dh)
+> [`https://makecode.com/_7eTTidTU4DvA`](https://makecode.com/_7eTTidTU4DvA)
 
 ### ~
 
@@ -177,7 +177,7 @@ We also changed the initial position of the player, so that it was more likely t
 
 When we were finished with this section, we created a share link to the updated game:
 
-> [`https://makecode.com/_55XMm1cc6cTe`](https://makecode.com/_55XMm1cc6cTe)
+> [`https://makecode.com/_gKuYPvJpWYvP`](https://makecode.com/_gKuYPvJpWYvP)
 
 ### ~
 
@@ -216,7 +216,7 @@ We went through the game, and made sure the small "nice to have" features were d
 
 When we were finished with this section, we created a share link to the updated game:
 
-> [`https://makecode.com/_XcTRgaYW3T5p`](https://makecode.com/_XcTRgaYW3T5p)
+> [`https://makecode.com/_99X0r8adA1sg`](https://makecode.com/_99X0r8adA1sg)
 
 ### ~
 
@@ -252,11 +252,29 @@ enum SpriteKind {
     Wall
 }
 let player: Sprite = null
+let trampoline: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Trampoline, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     player.vy = -100
     otherSprite.destroy()
-    sprites.createEmptySprite(SpriteKind.Trampoline)
+    trampoline = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Trampoline)
 })
 sprites.onCreated(SpriteKind.Trampoline, function (trampoline) {
     trampoline.setImage(img`
@@ -301,9 +319,60 @@ player = sprites.create(img`
 player.ay = 100
 player.y = 0
 scene.setBackgroundColor(9)
-sprites.createEmptySprite(SpriteKind.Trampoline)
-sprites.createEmptySprite(SpriteKind.Trampoline)
-sprites.createEmptySprite(SpriteKind.Trampoline)
+trampoline = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Trampoline)
+trampoline = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Trampoline)
+trampoline = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Trampoline)
 game.onUpdate(function () {
     player.x += controller.dx()
 })
