@@ -4,7 +4,7 @@ Projectiles are regular sprites that destroy themselves when they go off of the 
 
 Depending on the game, a projectile can be dangerous, friendly, or even just a decoration that floats across the screen.
 
-Typically, projectiles will be used because we want movement for meteors, laser beams, cars, or whatever we decide we need in our games. In many games, we will create a large number of projectiles, so the ability for them to be automatically destroyed as they leave the screen will often be very helpful in making sure our games run efficiently.
+Typically, we use projectiles because we want movement for meteors, laser beams, cars, or whatever we decide we need in our games. In many games, a large number of projectiles are created, so the ability for them to be automatically destroyed as they leave the screen will often be very helpful in making sure our games run efficiently.
 
 In this activity, students will use:
 
@@ -19,7 +19,7 @@ https://youtu.be/K4feIZBn56g
 
 [Alternative Video Location](https://aka.ms/40544a-projectiles1)
 
-We can use projectiles to create sprites that move across the screen. Let's start off with making a simple bird projectile.
+We can use projectiles to create sprites that move across the screen. Let's start off by making a simple bird projectile.
 
 ### Example #1: Bird projectile
 
@@ -54,7 +54,7 @@ let projectile: Sprite = sprites.createProjectileFromSide(img`
 `, 50, 0)
 ```
 
-It may seem surprising that there's only a single block inside the ``||loops:on start||`` block - projectiles make it very easy to create temporary sprites with motion. 
+It may seem surprising that there's only a single block inside the ``||loops:on start||`` to create a projectile. Projectiles are an easy way to create temporary sprites with motion. 
 
 ```blocks 
 enum SpriteKind {
@@ -86,7 +86,7 @@ projectile = sprites.createProjectileFromSide(img`
 `, 50, 0)
 ```
 
-This modified version adds in an event that triggers when the projectile is destroyed - you should see that when the sprite goes off the screen, it is actually automatically destroyed!
+This modified version adds in an event that triggers when the projectile is destroyed - you should see that when the sprite goes off the screen, it is actually destroyed automatically!
 
 ### ~hint
 
@@ -140,7 +140,7 @@ projectile = sprites.createProjectileFromSide(img`
 
 ## Concept: Projectile Loop
 
-Games often create many projectiles, one after another. We can use a loop to create multiple projectiles by creating a projectile in the body of the loop.
+Games often create many projectiles, one after another. We can create multiple projectiles of the same kind inside the body of an update loop.
 
 ### Example #2: Projectile Loop
 
@@ -207,19 +207,19 @@ d d d d d d d d
 2. Replace the ``||game:on update||`` with a ``||loops:repeat||`` loop in the ``||loops:on start||`` block
 3. Each time a projectile is created, add one (1) point to the score using the ``||info:change score by||`` block
 4. Modify the ``||sprites:create projectile||`` block so that each spawned meteor moves down the screen at a rate of 50
-5. **Challenge:** make the projectile move at a ``||math:random||`` rate between 40 and 60, instead of the current constant rate of 50
+5. **Challenge:** instead of moving at the current constant rate of 50, make the projectile move at a random rate between 40 and 60
 
 ## Student Task #2b: Offset Projectiles
 
 ![spiral image](/static/courses/csintro1/loops/offset-projectiles-2b.png)
 
-We have seen how it is useful for projectiles to come from random positions but at other times we will want projectiles spawned in a structured manner. This tasks uses a loop to offset the ``Y`` position of each projectile using a ``||loops:for||`` loop index. 
+We have seen that it is useful for projectiles to come from random positions, but there are times when we'll want to have projectiles spawned in a more structured manner. This tasks uses a loop to offset the `Y` position of each projectile using a ``||loops:for||`` loop index. 
 
 1. Review the code below
 2. Create the sample code and run the code
 3. Save the code for the task (name it "screenFill")
 4. Move the code in the ``||loops:on start||`` block into a ``||loops:for index from 0 to 12||`` block, to create 13 projectiles, one every 300 ms
-5. Modify the ``||sprites:set projectile y to||`` block to set the projectiles ``||sprites:y||`` position to the value ``10 * index``, so that they start further down the screen on each iteration
+5. Modify the ``||sprites:set projectile y to||`` block to set the projectiles' ``||sprites:y||`` position to the value `10 * index`, so that they start further down the screen on each iteration
 
 ```blocks
 enum SpriteKind {
@@ -297,7 +297,7 @@ projectile = sprites.createProjectileFromSide(img`
 1. Create the example code above 
 2. Modify the code to make the sprite start from the upper right corner by default and move toward the lower left corner 
 3. Place the code in a loop to repeat 4 times with a short pause between loop iterations
-4. **Challenge:** make sprites originate from each of the 4 corners inside the loop
+4. **Challenge:** inside the loop, make sprites originate from each of the 4 corners of the screen
 
 ## What did we learn?
 

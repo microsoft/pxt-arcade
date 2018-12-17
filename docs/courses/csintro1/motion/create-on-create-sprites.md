@@ -1,6 +1,6 @@
 # Activity: Generate Sprites using Create and On Create
 
-Many games need to spawn sprites for the player to collect like coins, or to avoid like oil spills. 
+Many games need to spawn sprites for the player to do things like collect coins or avoid oil spills. 
 
 We will use ``||sprites:sprite of kind||`` to spawn a new empty sprite, with nothing in it yet. Then we can use an ``||sprites:on created||`` event to set the image and a random position for newly generated sprites. 
 
@@ -12,7 +12,7 @@ https://youtu.be/eXCpLH74tF4
 
 [Alternative Video Location](https://aka.ms/40544a-createoncreate)
 
-## Example #1: Random clouds
+## Example #1: Random clouds #example-1
 
 This example uses the ``||sprites:on created||`` event to set the sprite image and location after a sprite of a particular kind is spawned.
 

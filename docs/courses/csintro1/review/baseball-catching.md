@@ -10,7 +10,7 @@ Start the project, and create a mitt for the player to control.
 
 1. Create a new project in @boardname@
 2. Create a new sprite representing a mitt
-3. Change the variable name from ``||variables:mySprite||`` to ``||variables:mitt||``, and the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Mitt||``
+3. Change the variable name from ``||variables:mySprite||`` to ``||variables:mitt||``, and the ``||sprites:kind||`` from ``Player`` to ``Mitt``
 4. Make ``||variables:mitt||`` move based off the direction keys using ``||controller:move sprite with buttons||``
 5. Make ``||variables:mitt||`` stay in screen using ``||sprites:set mySprite stay in screen on||``
 
@@ -20,7 +20,7 @@ Add balls for the player to attempt to collect
 
 1. Get an ``||game:on game update every 500 ms||`` event
 2. Create a projectile representing a baseball inside the ``||game:on game update every||`` event
-3. Change the variable name from ``||variables:projectile||`` to ``||variables:baseball||``, and the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Baseball||``
+3. Change the variable name from ``||variables:projectile||`` to ``||variables:baseball||``, and the ``||sprites:kind||`` from ``Player`` to ``Baseball``
 4. Making ``||variables:baseball||`` move randomly in the ``x`` and ``y`` directions using ``||math:pick random 0 to 10||`` for the initial ``||sprites:vx||`` and ``||sprites:vy||``: make the range from `-50` and `50`
 
 ## Student Task #3: Gameplay
@@ -28,12 +28,12 @@ Add balls for the player to attempt to collect
 Add gameplay elements that make the game interesting to play.
 
 1. Add a ``||info:countdown||`` of 20 seconds in the ``||loops:on start||``
-2. Create an ``||sprites:on overlap||`` event between sprites of ``||sprites:kind||`` ``||sprites:Mitt||`` and sprites of ``||sprites:kind||`` ``||sprites:Baseball||``
-3. Inside the ``||sprites:on overlap||`` event, ``||sprites:destroy||`` the ``||sprites:Baseball||``, and add `1` to the score
-4. Make the ``||sprites:Mitt||`` 'bounce' when in the overlap event, by
-    * changing ``||sprites:Mitt||``'s ``y`` by -5
+2. Create an ``||sprites:on overlap||`` event between sprites of ``||sprites:kind||`` ``Mitt`` and sprites of ``||sprites:kind||`` ``Baseball``
+3. Inside the ``||sprites:on overlap||`` event, ``||sprites:destroy||`` the ``Baseball``, and add `1` to the score
+4. Make the ``Mitt`` 'bounce' when in the overlap event, by
+    * changing ``Mitt``'s ``y`` by -5
     * ``||loops:pause||`` for 100 ms
-    * changing ``||sprites:Mitt||``'s ``y`` by 5
+    * changing ``Mitt``'s ``y`` by 5
 
 ### ~hint
 

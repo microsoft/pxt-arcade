@@ -2,7 +2,7 @@
 
 Making enemies spawn in random positions is a useful tool that helps with making games unique for each player, but it comes at a cost: sometimes, the randomization can lead to elements being weirdly positioned, or make them unable to interact with your character.
 
-One approach to help mitigate this is to be picky in what locations the random elements of the game can be created at. In this case, the enemy sprites and collectibles will be aligned to different rows in the game.
+One approach to help mitigate this is to be picky about what locations the random elements of the game can be created at. In this case, the enemy sprites and collectibles will be aligned to different rows in the game.
 
 ![Final Car Game](/static/courses/csintro1/review/dodgey-duck.gif)
 
@@ -86,22 +86,22 @@ Right now, the game is a bit hard; as soon as the player hits a duck, they lose 
 
 Without some sort of objective beyond avoiding ducks, the game is a bit tedious. To fix this, add sprites for the player to try and collect.
 
-1. Create an ``||game:on game update every 4000 ms||`` event, which spawns a sprite. Make sure the sprite is ``16x16``, and change the ``||sprites:kind||`` to ``||sprites:Collectible||``
-2. Duplicate the ``||sprites:set projectile y to||`` that sets the ``||sprites:Enemy||``'s ``||sprites:y||`` position, and make it position the ``||sprites:Collectible||`` in a random row on the screen
+1. Create an ``||game:on game update every 4000 ms||`` event, which spawns a sprite. Make sure the sprite is ``16x16``, and change the ``||sprites:kind||`` to ``Collectible``
+2. Duplicate the ``||sprites:set projectile y to||`` that sets the ``Enemy``'s ``||sprites:y||`` position, and make it position the ``Collectible`` in a random row on the screen
 3. Duplicate the previous step. Change ``||sprites:set projectile y to||`` to ``||sprites:set projectile x to||``, so that it chooses a random column, and change the ``7`` to a ``9``, because the screen is wider than it is tall
-4. Add an ``||sprites:overlap||`` event between the ``||sprites:Player||`` and a ``||sprites:Collectible||``, which adds 1 to ``||info:life||`` and ``||sprites:destroy||``s the ``||sprites:Collectible||``
+4. Add an ``||sprites:overlap||`` event between the ``Player`` and a ``Collectible``, which adds 1 to ``||info:life||`` and ``||sprites:destroy||``s the ``Collectible``
 
 ## Student Task #3: Polish up the Game
 
 After playing the game, you might notice that there are a few things that don't seem quite right. For example,
 
-* The ``||sprites:Collectible||``s and ``||sprites:Enemy||``s can show up partially off screen
-* The ``||sprites:Enemy||``s ignore the ``||sprites:Collectible||``s, making it fairly easy to collect them
+* The ``Collectible``s and ``Enemy``s can show up partially off screen
+* The ``Enemy``s ignore the ``Collectible``s, making it fairly easy to collect them
 
 Let's fix these issues.
 
-1. To stop the ``||sprites:Collectibles||`` from showing up off screen, we can change the range of positions they can be created at. In this case, if the random value is 0 for either position, the sprite will be only half visible, so that should not be an option
+1. To stop the ``Collectibles`` from showing up off screen, we can change the range of positions they can be created at. In this case, if the random value is 0 for either position, the sprite will be only half visible, so that should not be an option
     * When setting the ``||sprites:y||`` position, change the random value to be between 1 and 7
     * When setting the ``||sprites:x||`` position, change the random value to be between 1 and 9
 2. The same fix should be done for the ``||sprites:Enemy||``, as they will also appear off screen if the random value is 0
-3. To make the game harder, add an ``||sprites:on overlap||`` event between ``||sprites:Enemy||``s and ``||sprites:Collectible||``s. Make the event destroy the the ``||sprites:Collectible||``, and have the ``||sprites:Enemy||`` gloat about collecting the item using ``||sprites:say||``
+3. To make the game harder, add an ``||sprites:on overlap||`` event between ``Enemy``s and ``Collectible``s. Make the event destroy the the ``Collectible``, and have the ``Enemy`` gloat about collecting the item using ``||sprites:say||``
