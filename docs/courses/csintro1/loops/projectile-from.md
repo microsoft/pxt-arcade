@@ -190,7 +190,7 @@ game.onUpdateInterval(50, function () {
 })
 ```
 
-Note that we set the raindrops to be ``||sprites:ghosts||``. This means that these ``||sprites:Sprites||`` **won't be detected in overlap** with other sprites, and will pass through sprites as if there were no overlap events. The game can avoid checking collisions for ghost sprites, which causes a significant boost in performance / frame rate.
+Note that we set the raindrops to be ``||sprites:ghosts||``. This means that these ``||sprites:Sprites||`` **won't be detected when overlapping** with other sprites, and will pass through sprites as if there were no overlap events. The game can avoid checking collisions for ghost sprites, which causes a significant boost in performance / frame rate.
 
 Try removing the ``||sprites:ghosts||`` block, and see how much the performance goes down.
 
@@ -257,16 +257,6 @@ game.onUpdateInterval(50, function () {
 ### Example #2d: Count destroyed raindrops
 
 The ghost raindrop sprites don't cause overlap events, but we can use other events, like ``||sprites:on sprite destroyed||``. We can count the raindrops that make it to the bottom of the screen by counting how many are destroyed.
-
-```block
-enum SpriteKind {
-    Projectile
-}
-let raindrop: Sprite = null
-sprites.onDestroyed(SpriteKind.Projectile, function (sprite: Sprite) {
-    info.changeScoreBy(1)
-})
-```
 
 ```blocks
 enum SpriteKind {

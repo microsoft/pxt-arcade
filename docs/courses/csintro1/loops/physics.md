@@ -213,7 +213,6 @@ game.onUpdate(function () {
 game.onUpdateInterval(1000, function () {
     second.vx += 2
 })
-
 ```
 
 ## Student Task #1a: Water balloons

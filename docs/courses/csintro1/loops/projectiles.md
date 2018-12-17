@@ -105,7 +105,7 @@ Notice that the ``||sprites:kind||`` of the ``||sprites:projectile||`` is ``Proj
 1. Start with the provided code below
 2. Modify the code so that the ball falls down the screen at a rate of **50** instead of **100**
 3. Create a second projectile that goes up the screen at a rate of 50 (moving in the direction opposite the ball)
-4. **Challenge:** when the two projectiles overlap one another, have them ``||sprite:say||`` hello to each other
+4. **Challenge:** when the two projectiles overlap one another, have them ``||sprites:say||`` hello to each other
 
 ```blocks
 enum SpriteKind {
