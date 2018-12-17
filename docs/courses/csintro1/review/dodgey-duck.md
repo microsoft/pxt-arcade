@@ -17,7 +17,7 @@ Additionally, note that this projectile will move faster as the game moves on: e
 ```blocks
 enum SpriteKind {
     Player,
-    Enemy
+    Projectile
 }
 
 let mySprite: Sprite = null
@@ -45,7 +45,7 @@ controller.moveSprite(mySprite, 100, 100)
 info.setScore(0)
 info.setLife(3)
 game.onUpdateInterval(1000, function () {
-    projectile = sprites.createProjectile(img`
+    projectile = sprites.createProjectileFromSide(img`
 . . . . . . . . . . b 5 b . . . 
 . . . . . . . . . b 5 b . . . . 
 . . . . . . b b b b b b . . . . 
@@ -62,13 +62,13 @@ c b 5 5 b c d d 5 5 5 5 5 5 b .
 b b c c c d d d 5 5 5 5 5 d b . 
 . . . . c c d d d 5 5 5 b b . . 
 . . . . . . c c c c c b b . . . 
-`, 40 + info.score(), 0, SpriteKind.Enemy)
+`, 40 + info.score(), 0)
     projectile.y = Math.randomRange(0, 7) * 16
 })
-sprites.onDestroyed(SpriteKind.Enemy, function (sprite) {
+sprites.onDestroyed(SpriteKind.Projectile, function (sprite) {
     info.changeScoreBy(2)
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
     sprite.say("oww!", 500)
 })
