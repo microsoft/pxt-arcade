@@ -3,6 +3,7 @@
 Up to this point, we have generally glossed over the exact details of how sprite motion works. In this activity, students will gain a greater understanding of how exactly a sprite's velocity and acceleration actually affects their behavior in a game.
 
 In this activity, student will use:
+
 * ``||sprites:projectile||`` sprites
 * ``||game:on game update every||``
 * ``||math:pick random||``
@@ -36,11 +37,12 @@ In @boardname@, a sprite's velocity is defined in terms of pixels per second.
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let second: Sprite = null
 let first: Sprite = null
-first = sprites.createProjectile(img`
+first = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -57,8 +59,8 @@ first = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 0, 0, SpriteKind.Player)
-second = sprites.createProjectile(img`
+`, SpriteKind.Player)
+second = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -75,7 +77,7 @@ second = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 0, 0, SpriteKind.Player)
+`, SpriteKind.Player)
 first.x += -80
 second.x += -80
 first.y += -10
@@ -115,7 +117,7 @@ In other words, acceleration tells us how quickly the velocity is changing. Brak
 
 In @boardname@, a sprite's acceleration is defined in terms of **pixels per second, per second** (pixels/s/s).
 
-### Example #1b - Sprite with Acceleration
+### Example #1b: Sprite with Acceleration
 
 Below is a sprite with an acceleration applied. We set the sprite position to the bottom of the screen every 2 seconds in order to see how the velocity changes over time. We see the sprite has a larger velocity with each pass.
 
@@ -149,7 +151,6 @@ for (let i = 0; i < 5; i++) {
     pause(2000)
 }
 mySprite.destroy()
-
 ```
 
 ### Example #1c: Change in Velocity vs Acceleration
@@ -161,11 +162,12 @@ mySprite.destroy()
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let second: Sprite = null
 let first: Sprite = null
-first = sprites.createProjectile(img`
+first = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -182,8 +184,8 @@ first = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 20, 0, SpriteKind.Player)
-second = sprites.createProjectile(img`
+`, 20, 0)
+second = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -200,7 +202,7 @@ second = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 20, 0, SpriteKind.Player)
+`, 20, 0)
 first.y += -10
 second.y += 10
 first.ax = 2
@@ -235,6 +237,7 @@ In total, this loop should include 4 blocks - the generation of a random ``||var
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Balloon,
     Splash
@@ -249,13 +252,9 @@ sprites.onOverlap(SpriteKind.Balloon, SpriteKind.Enemy, function (sprite, otherS
     xDirection = Math.randomRange(0, 50)
     yDirection = Math.randomRange(0, 50)
     // create the splash
-    projectile = sprites.createProjectile(img`
+    projectile = sprites.createProjectileFromSprite(img`
 9 
-`, xDirection, yDirection, SpriteKind.Splash, sprite)
-    // create the splash
-    projectile = sprites.createProjectile(img`
-9 
-`, -1 * xDirection, -1 * yDirection, SpriteKind.Splash, sprite)
+`, sprite, xDirection, yDirection)
     // make the splash a ghost, so that it doesn't
     // interact with other sprites
     projectile.setFlag(SpriteFlag.Ghost, true)
@@ -282,6 +281,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 . . . . . 8 8 9 8 8 . . . . . . 
 . . . . . . . 8 . . . . . . . . 
 `, SpriteKind.Balloon)
+    balloon.setKind(SpriteKind.Balloon)
     balloon.x += -50
 })
 scene.setBackgroundColor(6)
@@ -322,6 +322,8 @@ balloon = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Balloon)
+balloon.setKind(SpriteKind.Balloon)
+
 balloon.x += -50
 
 ```
