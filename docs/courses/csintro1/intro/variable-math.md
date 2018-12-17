@@ -4,7 +4,8 @@ https://youtu.be/79vikAMjpBs
 
 [Alternative Video Location](https://aka.ms/40544a-intromath)
 
-A variable points to a container that can store data. We have previously used variables names for sprites (for example, ``||variables:mySprite||``). Variables act like an address, and allow us to store, retrieve, and update data. For the examples in the Sprites lesson, the variable ``||variables:mySprite||`` allowed us to interact with the sprite in our game. The word "variable" also means change. We can update the values our variable point to, such as updating the ``||variables:mySprite||`` variable to point to a completely different sprite.
+A variable points to a container that can store data. We have previously used variable names for sprites (for example, ``||variables:mySprite||``). Variables act like an address, and allow us to store, retrieve, and update data. For the examples in the [Sprites](/courses/csintro1/intro/sprites
+) lesson, the variable ``||variables:mySprite||`` allowed us to interact with the sprite in our game. The word "variable" also means change. We can update the values our variable point to, such as updating the ``||variables:mySprite||`` variable to point to a completely different sprite.
 
 Variables are used extensively in code. Variables allow code to be written in a generic way, and allow for easier reuse of our code. Math equations, like `X = 2Y`, provide familiar examples in the use of variables that apply to code by assigning know values to variables to calculate unknown variable values. 
 
@@ -12,11 +13,11 @@ If we know `Y = 3` we can calculate `X` from our equation. Later on, `Y` can hav
 
 ### ~hint
 
-Variable Definition: a container used to store values in your code.
+**Variable Definition**: a container used to store values in your code.
 
 ### ~
 
-In this activity, student are introduced to:
+In this activity, students are introduced to:
 
 * Expressing numeric operations with math operators (`+`, `-`, `*`, `/`)
 * Storing the result of an equation in a variable 
@@ -37,7 +38,7 @@ https://youtu.be/Dv-5K9bWcps
 
 [Alternative Video Location](https://aka.ms/40544a-variablesmath2)
 
-## Example #1: Math equation in a variable
+## Example #1: Math equation in a variable #example-1
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -53,7 +54,7 @@ game.splash("3 + 5 = " + answer)
 
 ## Student Task #1: Try new values in the equation
 
-1. Starting with example #1
+1. Starting with [example #1](#example-1)
 2. Experiment using different numbers in our equation (e.g. `9 + 2`)
 3. Test at least 3 different equations
 4. **Challenge:** make longer addition equations so that the code calculates the sum of 5 or more numbers. If the equation gets too long, then display using ``||game:show long text||``
@@ -89,7 +90,7 @@ In JavaScript, the following order of operation precedence applies:
 
 Note that JavaScript uses the ``||math:*||`` symbol for multiplication the ``||math:/||`` for division division. In order to change this order of operations, you can use parentheses `( )` around expressions just like in math.
 
-## Example #2: Displaying expressions with ``||game:splash||``
+## Example #2: Displaying expressions with ``||game:splash||`` #example-2
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -115,7 +116,7 @@ https://youtu.be/C_UY8V-ufiI
 
 [Alternative Video Location](https://aka.ms/40544a-variablesmath4)
 
-1. Start with example #2
+1. Start with [example #2](#example-2)
 2. Add a ``||variables:thirdNumber||`` variable with a unique value
 3. Create an equation using both the addition operator (`+`) and the multiplication operator (`*`)
 4. Swap the Addition and Multiplication operator and run the program (Typically the answers will differ)

@@ -1,3 +1,5 @@
+# Authors
+
 ![Eric's picture](/static/courses/csintro1/about/eric.png)
 
 Eric Camplin is a Senior Content Developer at Microsoft Learning with a focus on software development for beginning programmers. He has over 19 years of industry experience in various roles. Additionally, Eric was a Public High School Teacher for 10 years, primarily in Seattle. You can follow him on Twitter at @eric_camplin.
