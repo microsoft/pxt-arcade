@@ -103,5 +103,5 @@ Let's fix these issues.
 1. To stop the ``Collectibles`` from showing up off screen, we can change the range of positions they can be created at. In this case, if the random value is 0 for either position, the sprite will be only half visible, so that should not be an option
     * When setting the ``||sprites:y||`` position, change the random value to be between 1 and 7
     * When setting the ``||sprites:x||`` position, change the random value to be between 1 and 9
-2. The same fix should be done for the ``||sprites:Enemy||``, as they will also appear off screen if the random value is 0
+2. The same fix should be done for the ``Enemy``, as they will also appear off screen if the random value is 0
 3. To make the game harder, add an ``||sprites:on overlap||`` event between ``Enemy``s and ``Collectible``s. Make the event destroy the the ``Collectible``, and have the ``Enemy`` gloat about collecting the item using ``||sprites:say||``
