@@ -17,7 +17,7 @@ Additionally, note that this projectile will move faster as the game moves on: e
 ```blocks
 enum SpriteKind {
     Player,
-    Enemy
+    Projectile
 }
 
 let mySprite: Sprite = null
@@ -45,7 +45,7 @@ controller.moveSprite(mySprite, 100, 100)
 info.setScore(0)
 info.setLife(3)
 game.onUpdateInterval(1000, function () {
-    projectile = sprites.createProjectile(img`
+    projectile = sprites.createProjectileFromSide(img`
 . . . . . . . . . . b 5 b . . . 
 . . . . . . . . . b 5 b . . . . 
 . . . . . . b b b b b b . . . . 
@@ -62,13 +62,13 @@ c b 5 5 b c d d 5 5 5 5 5 5 b .
 b b c c c d d d 5 5 5 5 5 d b . 
 . . . . c c d d d 5 5 5 b b . . 
 . . . . . . c c c c c b b . . . 
-`, 40 + info.score(), 0, SpriteKind.Enemy)
+`, 40 + info.score(), 0)
     projectile.y = Math.randomRange(0, 7) * 16
 })
-sprites.onDestroyed(SpriteKind.Enemy, function (sprite) {
+sprites.onDestroyed(SpriteKind.Projectile, function (sprite) {
     info.changeScoreBy(2)
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
     sprite.say("oww!", 500)
 })
@@ -87,7 +87,7 @@ Right now, the game is a bit hard; as soon as the player hits a duck, they lose 
 Without some sort of objective beyond avoiding ducks, the game is a bit tedious. To fix this, add sprites for the player to try and collect.
 
 1. Create an ``||game:on game update every 4000 ms||`` event, which spawns a sprite. Make sure the sprite is ``16x16``, and change the ``||sprites:kind||`` to ``Collectible``
-2. Duplicate the ``||sprites:set projectile y to||`` that sets the ``Enemy``'s ``Y`` position, and make it position the ``Collectible`` in a random row on the screen
+2. Duplicate the ``||sprites:set projectile y to||`` that sets the ``Enemy``'s ``||sprites:y||`` position, and make it position the ``Collectible`` in a random row on the screen
 3. Duplicate the previous step. Change ``||sprites:set projectile y to||`` to ``||sprites:set projectile x to||``, so that it chooses a random column, and change the ``7`` to a ``9``, because the screen is wider than it is tall
 4. Add an ``||sprites:overlap||`` event between the ``Player`` and a ``Collectible``, which adds 1 to ``||info:life||`` and ``||sprites:destroy||``s the ``Collectible``
 
@@ -100,8 +100,8 @@ After playing the game, you might notice that there are a few things that don't 
 
 Let's fix these issues.
 
-1. To stop the ``||sprites:Collectibles||`` from showing up off screen, we can change the range of positions they can be created at. In this case, if the random value is 0 for either position, the sprite will be only half visible, so that should not be an option
-    * When setting the ``Y`` position, change the random value to be between 1 and 7
-    * When setting the ``X`` position, change the random value to be between 1 and 9
+1. To stop the ``Collectibles`` from showing up off screen, we can change the range of positions they can be created at. In this case, if the random value is 0 for either position, the sprite will be only half visible, so that should not be an option
+    * When setting the ``||sprites:y||`` position, change the random value to be between 1 and 7
+    * When setting the ``||sprites:x||`` position, change the random value to be between 1 and 9
 2. The same fix should be done for the ``Enemy``, as they will also appear off screen if the random value is 0
 3. To make the game harder, add an ``||sprites:on overlap||`` event between ``Enemy``s and ``Collectible``s. Make the event destroy the the ``Collectible``, and have the ``Enemy`` gloat about collecting the item using ``||sprites:say||``
