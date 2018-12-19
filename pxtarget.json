@@ -144,7 +144,7 @@
             },
             "compileService": {
                 "buildEngine": "dockermake",
-                "dockerImage": "pext/rpi:latest",
+                "dockerImage": "pext/rpi:alsa",
                 "serviceId": "rpi"
             }
         }
