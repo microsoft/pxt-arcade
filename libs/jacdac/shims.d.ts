@@ -8,6 +8,12 @@ declare namespace jacdac {
     function start(): void;
 
     /**
+     * Gets the bus state
+     */
+    //% parts=jacdac shim=jacdac::state
+    function state(): int32;
+
+    /**
      * Starts the JacDac protocol
      */
     //% parts=jacdac shim=jacdac::stop
