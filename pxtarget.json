@@ -51,7 +51,6 @@
         "driveName": "ARCADE",
         "floatingPoint": true,
         "taggedInts": true,
-        "saveAsPNG": true,
         "nativeType": "thumb",
         "gc": true,
         "upgrades": [],
@@ -243,6 +242,7 @@
         },
         "monacoFieldEditors": ["image-editor"],
         "scriptManager": true,
+        "saveInMenu": true,
         "experiments": [
             "debugger"
         ]
