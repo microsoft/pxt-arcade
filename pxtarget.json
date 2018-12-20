@@ -29,8 +29,6 @@
         "libs/screen---st7735",
         "libs/screen---linux",
         "libs/game",
-        "libs/controller",
-        "libs/controller---hw",
         "libs/buttons",
         "libs/mixer",
         "libs/mixer---stm32",

@@ -17,7 +17,6 @@
         "core---stm32": "file:../core---stm32",
         "screen---st7735": "file:../screen---st7735",
         "mixer---none": "file:../mixer---none",
-        "controller---hw": "file:../controller---hw",
         "buttons": "file:../buttons",
         "game": "file:../game"
     },
