@@ -34,7 +34,6 @@
         "libs/mixer---stm32",
         "libs/mixer---none",
         "libs/mixer---linux",
-        "libs/local-multiplayer",
         "libs/device",
         "libs/jacdac",
         "libs/jacdac-drivers",

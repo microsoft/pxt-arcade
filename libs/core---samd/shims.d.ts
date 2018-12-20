@@ -2,6 +2,12 @@
 declare namespace pins {
 
     /**
+     * Given a configuration key, lookup the pin id
+     */
+    //% shim=pins::lookupPinIdByCfg
+    function lookupPinIdByCfg(key: int32): int32;
+
+    /**
      * Create a new zero-initialized buffer.
      * @param size number of bytes in the buffer
      */
