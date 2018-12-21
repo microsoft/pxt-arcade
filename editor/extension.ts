@@ -71,7 +71,6 @@ namespace pxt.editor {
             </statement>
         </block>
         */
-        console.log("Inside patchBlockly");
         const allEventNodes = U.toArray(dom.querySelectorAll("block[type=spritesoverlap]"))
             .concat(U.toArray(dom.querySelectorAll("block[type=spritesoncreated]")))
             .concat(U.toArray(dom.querySelectorAll("block[type=spritesondestroyed]")))
