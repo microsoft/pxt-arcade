@@ -1,0 +1,7 @@
+{
+    "name": "game",
+    "additionalFilePath": "../game",
+    "dependencies": {
+        "buttons": "file:../buttons"
+    }
+}
