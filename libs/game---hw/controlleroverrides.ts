@@ -15,9 +15,9 @@ namespace controller {
     export const menu = new Button(7, input.buttonMenu.id());
 
     //% fixedInstance whenUsed block="player 2"
-    export const player2 = new Controller(2);
+    export const player2 = new Controller(2, undefined);
     //% fixedInstance whenUsed block="player 3"
-    export const player3 = new Controller(3);
+    export const player3 = new Controller(3, undefined);
     //% fixedInstance whenUsed block="player 4"
-    export const player4= new Controller(4);
+    export const player4 = new Controller(4, undefined);
 }
