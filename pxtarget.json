@@ -39,7 +39,8 @@
         "libs/jacdac",
         "libs/jacdac-drivers",
         "libs/jacdac-game",
-        "libs/particles"
+        "libs/particles",
+        "libs/local-multiplayer"
     ],
     "compile": {
         "useUF2": true,
