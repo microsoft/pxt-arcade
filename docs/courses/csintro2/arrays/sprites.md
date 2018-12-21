@@ -157,7 +157,7 @@ enum SpriteKind {
     Firework
 }
 let firework: Sprite = null
-controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     for (let i = 0; i < 30; i++) {
         let projectile = sprites.createProjectile(img`
 1 

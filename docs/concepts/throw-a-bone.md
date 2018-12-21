@@ -316,7 +316,7 @@ let mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     let projectile = sprites.createProjectileFromSprite(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .

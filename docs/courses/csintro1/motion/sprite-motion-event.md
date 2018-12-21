@@ -211,7 +211,7 @@ function flipHorizontal() {
     mySprite.image.flipX()
     pause(200)
 }
-controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     flipHorizontal()
 })
 scene.setBackgroundColor(6)

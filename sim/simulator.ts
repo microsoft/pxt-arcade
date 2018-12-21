@@ -1,5 +1,5 @@
 /// <reference path="../node_modules/pxt-core/built/pxtsim.d.ts"/>
-/// <reference path="../node_modules/pxt-common-packages/libs/controller/enums.ts"/>
+/// <reference path="../node_modules/pxt-common-packages/libs/game/constants.ts"/>
 
 namespace pxsim {
     export type CommonBoard = Board

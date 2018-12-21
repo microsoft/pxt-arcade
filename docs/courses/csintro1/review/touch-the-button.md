@@ -9,7 +9,7 @@ This can be changed using two using two blocks: ``||info:on life zero||`` and ``
 ## Initial Game:
 
 ```blocks
-controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(2)
     info.changeLifeBy(-1)
 })
