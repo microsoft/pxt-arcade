@@ -60,7 +60,7 @@ canvas {
 
 #paint-surface-container {
     text-align: center;
-    overflow-y: hidden;
+    /* messes up safari overflow-y: hidden; */
     width: 100%;
 }
 

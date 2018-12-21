@@ -1,6 +1,6 @@
 # Motion
 
-Motion introduce the ability to control how a sprite moves around the screen.
+Motion introduces the ability to control how a sprite moves around the screen.
 
 ```codecard
 [

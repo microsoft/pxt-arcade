@@ -29,19 +29,18 @@
         "libs/screen---st7735",
         "libs/screen---linux",
         "libs/game",
-        "libs/controller",
-        "libs/controller---hw",
+        "libs/game---hw",
         "libs/buttons",
         "libs/mixer",
         "libs/mixer---stm32",
         "libs/mixer---none",
         "libs/mixer---linux",
-        "libs/local-multiplayer",
         "libs/device",
         "libs/jacdac",
         "libs/jacdac-drivers",
         "libs/jacdac-game",
-        "libs/particles"
+        "libs/particles",
+        "libs/local-multiplayer"
     ],
     "compile": {
         "useUF2": true,
@@ -72,7 +71,7 @@
         "dockerImage": "pext/yotta:latest",
         "codalTarget": {
             "branches": {
-                "https://github.com/lancaster-university/codal-core": "5bfe583b1982a55d59e09dd0217155e6b7b5898c"
+                "https://github.com/lancaster-university/codal-core": "f2b9522ed0260bf1c5706d9652d7a23d76086263"
             }
         }
     },
@@ -144,7 +143,7 @@
             },
             "compileService": {
                 "buildEngine": "dockermake",
-                "dockerImage": "pext/rpi:latest",
+                "dockerImage": "pext/rpi:alsa",
                 "serviceId": "rpi"
             }
         }

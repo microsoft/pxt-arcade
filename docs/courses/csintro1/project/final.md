@@ -1,8 +1,8 @@
 # Activity: Final Project
 
-In this activity, students will incorporate functionality learned throughout the course sections to build a well functioning game in building a game of their own design.
+In this activity, students will incorporate functionality learned throughout the course sections to build a well functioning game of their own design.
 
-It is a good idea to start the game as a MVP (minimum viable project) to demonstrate the concepts and ideas, but the final product will be a complete working game. The full game can be based off of a previous game, or from an entirely new code and design. This will likely take multiple days to fully develop into a polished final product so it is important to track your progress. A good check to see if you have the time required for the project is to build out the basic functionality as soon as possible in the MVP. Then decide if features should be cut or if there is time to add some final features to the game.
+It is a good idea to start the game as a MVP (minimum viable project) to demonstrate the concepts and ideas, but the final product will be a complete working game. The full game can be based off of a previous game or from an entirely new code and design. This will likely take multiple days to fully develop into a polished final product so it is important to track your progress. A good check to see if you have the time required for the project to build out the basic functionality as soon as possible in the MVP. Then decide if features should be cut or if there is time to add some final features to the game.
 
 ## Student Task: Building a full game
 

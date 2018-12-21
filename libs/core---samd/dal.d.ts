@@ -1,7 +1,7 @@
 // Auto-generated. Do not edit.
 declare const enum DAL {
     // /libraries/codal-core/inc/JACDAC/JACDAC.h
-    JD_VERSION = 4,
+    JD_VERSION = 5,
     JD_SERIAL_MAX_BUFFERS = 10,
     JD_SERIAL_RECEIVING = 2,
     JD_SERIAL_TRANSMITTING = 4,
@@ -76,7 +76,6 @@ declare const enum DAL {
     JD_DEVICE_FLAGS_INITIALISED = 128,
     JD_DEVICE_FLAGS_INITIALISING = 64,
     JD_DEVICE_FLAGS_CP_SEEN = 32,
-    JD_DEVICE_FLAGS_BROADCAST_MAP = 16,
     JD_DEVICE_ERROR_MSK = 15,
     JD_LOGIC_DRIVER_MAX_FILTERS = 20,
     JD_LOGIC_DRIVER_TIMEOUT = 254,
@@ -274,6 +273,13 @@ declare const enum DAL {
     // /libraries/codal-core/inc/driver-models/Gyroscope.h
     GYROSCOPE_IMU_DATA_VALID = 2,
     GYROSCOPE_EVT_DATA_UPDATE = 1,
+    // /libraries/codal-core/inc/driver-models/LowLevelTimer.h
+    TimerModeTimer = 0,
+    TimerModeCounter = 1,
+    BitMode8 = 0,
+    BitMode16 = 1,
+    BitMode24 = 2,
+    BitMode32 = 3,
     // /libraries/codal-core/inc/driver-models/Pin.h
     IO_STATUS_DIGITAL_IN = 1,
     IO_STATUS_DIGITAL_OUT = 2,
