@@ -27,7 +27,7 @@ https://youtu.be/7JkbbfBJCdI
 3. Save the code for the task (name it "button count")
 
 ```blocks
-controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
 })
 ```
@@ -64,7 +64,7 @@ https://youtu.be/YiZ-yl5CbYM
 3. Save the code for the task (name it "do not touch the buttons")
 
 ```blocks
-controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeLifeBy(-1)
 })
 info.setLife(1)
@@ -107,7 +107,7 @@ enum SpriteKind {
     Player,
     Enemy
 }
-controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
 })
 let mySprite: Sprite = sprites.create(img`
