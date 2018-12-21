@@ -1,4 +1,12 @@
 // Auto-generated. Do not edit.
+declare namespace pxt {
+
+    /**
+     * Gets a button
+     */
+    //% shim=pxt::getButtonByPinCfg
+    function getButtonByPinCfg(key: int32, flags: int32): Button;
+}
 
 
 declare interface DigitalInOutPin {
