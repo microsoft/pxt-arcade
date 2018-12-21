@@ -166,14 +166,3 @@ void initKeys() {
 }
 
 } // namespace pxt
-
-
-namespace pins {
-    /**
-    *
-    */
-    //%
-    int lookupPinIdByCfg(int key) {
-        return -1;
-    }
-}
