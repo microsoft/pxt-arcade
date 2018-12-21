@@ -115,8 +115,7 @@ namespace pxsim {
         handleKeyEvent(key: Key, isPressed: boolean) {
             this.lastKey = Date.now()
             this.bus.queue(isPressed ? INTERNAL_KEY_DOWN : INTERNAL_KEY_UP, key)
-            // any not supported anymore
-            // this.bus.queue(isPressed ? INTERNAL_KEY_DOWN : INTERNAL_KEY_UP, 0) // "any" key
+            this.bus.queue(isPressed ? INTERNAL_KEY_DOWN : INTERNAL_KEY_UP, 0) // "any" key
             if (this.controls) {
                 this.controls.mirrorKey(key, isPressed);
             }
