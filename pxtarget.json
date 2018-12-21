@@ -244,6 +244,7 @@
         "scriptManager": true,
         "experiments": [
             "debugger"
-        ]
+        ],
+        "extendEditor": true
     }
 }
