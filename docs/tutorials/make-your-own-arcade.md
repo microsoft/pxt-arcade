@@ -6,7 +6,6 @@ This tutorial will show you how to build your own MakeCode arcade using an Adafr
 
 Before you begin, you're going to need a few parts, which are shown in the diagram below.
 
-![alt text](https://github.com/Microsoft/pxt-arcade/blob/master/docs/static/tutorials/make-your-own-arcade/Parts_Needed.png)
 
 I've also listed out where you can buy the parts and a brief description of what each part does as well.
 
@@ -17,13 +16,11 @@ I've also listed out where you can buy the parts and a brief description of what
 
 #### Assembling your MakeCode Arcade
 
-![alt text](https://github.com/Microsoft/pxt-arcade/blob/master/docs/static/tutorials/make-your-own-arcade/Completed.png)
 
 The diagram above is what we're going to build towards when everything has been connected.
 
 ##### Step 1: Connecting the KMR 1.8" TFT Screen
 
-![alt text](https://github.com/Microsoft/pxt-arcade/blob/master/docs/static/tutorials/make-your-own-arcade/Step1-ConnectScreen.png)
 
 For now, lets start with connecting the screen. Follow the diagram above and for reference, I've listed a chart that shows the mapping of the KMR SPI screen pin to the Itsy Bitsy M4 Express. The mappings on the KMR screen are not quite what they've listed, which is why I've provided this helpful mapping - thanks Michal!
 
@@ -47,7 +44,6 @@ For now, lets start with connecting the screen. Follow the diagram above and for
 
 ##### Step 2: Connecting the 3.5mm Audio Jack Connector to the Itsy Bitsy M4 Express
 
-![alt text](https://github.com/Microsoft/pxt-arcade/blob/master/docs/static/tutorials/make-your-own-arcade/Step2-HookingUpJacDac.png)
 
 Follow the diagram above and for reference, I've again listed a small chart that maps the typical 3.5mm Stero audio jack connector/pins to the protocol we will be using later (JACDAC). 
 
@@ -61,7 +57,6 @@ Connecting the audio jack simply requires connecting the ring pin of the audio c
 
 ##### Step 3: Connecting the 3.5mm Audio Jack Connector to the Circuit Playground Express
 
-![alt text](https://github.com/Microsoft/pxt-arcade/blob/master/docs/static/tutorials/make-your-own-arcade/Step3-HookingUpCPX.png)
 
 Follow the diagram above for reference. Similar to Step 2, connect the ring pin of the audio connector to the TX pin of the Circuit Playground Express and connecting the sleeve pin of the audio connector to the ground pin of the Circuit Playground Express.
 
