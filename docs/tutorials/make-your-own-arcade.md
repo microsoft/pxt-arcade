@@ -12,19 +12,32 @@ I've also listed out where you can buy the parts and a brief description of what
 * [Adafruit Itsy Bitsy M4 Express] - This will run the code for the Arcade game you will be creating.
 * [Circuit Playground Express] - This act as your controller to control the Arcade game.
 * [3.5mm Stereo Audio Jack Connector] - This will connect the Itsy Bitsy M4 Express to the Circuit Playground Express, using our JACDAC protocol. 
-* [1.8" TFT Screen (160x128)] - This will be the screen for your MakeCode Arcade. Note: Not all KMR screens are the same (despite being listed as such). If the colors are inverted on your screen towards the end, it's fine. Just load the correct colors onto the bootloader (described later).
+* [1.8" ST7735R TFT Screen (160x128)] - This will be the screen for your MakeCode Arcade. Note: There are several knockoff ST7735R screens which will have different pin mappings. These screens may also have colors inverted. To fix this, load a bootloader with the correct colors onto your board (described later).
 
 #### Assembling your MakeCode Arcade
 
-
 The diagram above is what we're going to build towards when everything has been connected.
 
-##### Step 1: Connecting the KMR 1.8" TFT Screen
+##### Step 1: Connecting the 1.8" TFT Screen
 
+For now, lets start with connecting the screen. Follow the diagram above and for reference, I've listed a chart that shows the mapping of the pins on the ST7735R Color TFT LCD from Adafruit to the Itsy Bitsy M4 Express.
 
-For now, lets start with connecting the screen. Follow the diagram above and for reference, I've listed a chart that shows the mapping of the KMR SPI screen pin to the Itsy Bitsy M4 Express. The mappings on the KMR screen are not quite what they've listed, which is why I've provided this helpful mapping - thanks Michal!
+| ST7735R (Adafruit)  | Itsy Bitsy Pin|
+| ------ | ------ |
+| LITE | Connect to VHI |
+| MISO |Connect to MISO (MI)  |
+| SCK | Connect to SCK |
+| MOSI | Connect to MOSI (MO) |
+| TFT_CS | Connect to A2 |
+| CARD_CS | Don't need to connect |
+| D/C | Connect to A3 |
+| RESET | Connect to A4 |
+| VCC | Connect to 3V |
+| GND | Connect to GND |
 
-| KMR Screen Pin | Itsy Bitsy Pin|
+If you have a knockoff screen, the pins will likely be mapped as below. The mappings on the these screen are not quite what they've listed, which is why I've provided this helpful mapping - thanks Michal!
+
+| ST7735R (Knockoff) | Itsy Bitsy Pin|
 | ------ | ------ |
 | LED- | Connect to GND |
 | LED+ | Connect to VHI |
@@ -100,4 +113,4 @@ When everything is plugged in, turn on both the Itsy Bitsy M4 Express and the Ci
    [Adafruit Itsy Bitsy M4 Express]: <https://www.adafruit.com/product/3800 />
    [Circuit Playground Express]: <https://www.adafruit.com/product/3333 />
    [3.5mm Stereo Audio Jack Connector]: <https://www.adafruit.com/product/2791 />
-   [1.8" TFT Screen (160x128)]: <https://www.amazon.com/HiLetgo-ST7735R-128160-Display-Arduino/dp/B00LSG51MM />
+   [1.8" TFT Screen (160x128)]: <https://www.adafruit.com/product/358/>
