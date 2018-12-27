@@ -18,7 +18,8 @@
         "screen---st7735": "file:../screen---st7735",
         "mixer---none": "file:../mixer---none",
         "buttons": "file:../buttons",
-        "game---hw": "file:../game---hw"
+        "game---hw": "file:../game---hw",
+        "jacdac-game": "file:../jacdac-game"
     },
     "public": true,
     "dalDTS": {
