@@ -140,7 +140,7 @@ After everything is plugged in, turn on both the Itsy Bitsy M4 Express and the C
 ### Developer
 
 * [Makecode Arcade (beta)](https://arcade.makecode.com/beta)
-* [Makecode Maker (beta):](https://maker.makecode.com/beta)
+* [Makecode Maker (beta)](https://maker.makecode.com/beta)
 * [JACDAC](https://jacdac.org/)
 * [Adafruit](https://www.adafruit.com)
 
