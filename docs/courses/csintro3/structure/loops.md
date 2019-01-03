@@ -110,7 +110,7 @@ We've decided that at the beginning of the game, there should be a few extra ``|
 
 At the end of your code, add a ``||loops:for||`` loop that starts at 0 and ends at 9.
 
-Inside of the loop, add ``||sprites.createEmptySprite(SpriteKind.Asteroid)||``. This will create 10 ``||sprites:Asteroids||``. Add a ``||loops:pause||`` for 250 ms into the loop as well, so that the extra ``||sprites:sprites||`` get created over the course of 2.5 seconds.
+Inside of the loop, add ``||sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Asteroid)||``. This will create 10 ``||sprites:Asteroids||``. Add a ``||loops:pause||`` for 250 ms into the loop as well, so that the extra ``||sprites:sprites||`` get created over the course of 2.5 seconds.
 
 ### Solution
 
@@ -121,14 +121,13 @@ enum SpriteKind {
 
 namespace asteroids {
     sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
-        sprite.setImage(sprites.space.spaceAsteroid0);
         sprite.setFlag(SpriteFlag.AutoDestroy, true);
         setPosition(sprite, 10);
         setMotion(sprite);
     });
 
     game.onUpdateInterval(1500, function () {
-        sprites.createEmptySprite(SpriteKind.Asteroid);
+        sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Asteroid);
     });
 
     function setMotion(asteroid: Sprite) {
@@ -160,7 +159,7 @@ let x: number = screen.width / 2;
 let y: number = screen.height - 20;
 
 for (let i = 0; i < 10; i++) {
-    sprites.createEmptySprite(SpriteKind.Asteroid);
+    sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Asteroid);
     pause(250);
 }
 ```

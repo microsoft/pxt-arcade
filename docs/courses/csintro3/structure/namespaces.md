@@ -206,14 +206,13 @@ namespace spritesheet {
  */
 namespace asteroids {
     sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
-        sprite.setImage(spritesheet.asteroid);
         sprite.setFlag(SpriteFlag.AutoDestroy, true);
         setPosition(sprite, 10);
         setMotion(sprite);
     });
 
     game.onUpdateInterval(1500, function () {
-        sprites.createEmptySprite(SpriteKind.Asteroid);
+        sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Asteroid);
     });
 
     function setMotion(asteroid: Sprite) {
@@ -263,7 +262,7 @@ intro += "! This is my Space Game!";
 game.splash(intro);
 
 for (let i = 0; i < 10; i++) {
-    sprites.createEmptySprite(SpriteKind.Asteroid);
+    sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Asteroid);
     pause(250);
 }
 ```

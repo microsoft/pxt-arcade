@@ -133,11 +133,7 @@ In games, ``||sprites:sprites||`` will often need to be created a large number o
 
 To make the games more visually appealing, these ``||sprites:Sprites||`` can be given different ``||images:images||`` to make sure they do not all look the same.
 
-The ``||sprites:sprites.createEmptySprite||`` event and ``||sprites.onCreated||`` function are helping for handling this type of behavior.
-
-```sig
-sprites.createEmptySprite(0);
-```
+The ``||sprites.onCreated||`` event is helpful for handling this type of behavior.
 
 ```sig
 sprites.onCreated(0, null);
@@ -146,7 +142,7 @@ sprites.onCreated(0, null);
 ## Example #3: Asteroids!
 
 1. Review the code below
-2. Identify how the different images for ``||sprites:Asteroid||``s are defined
+2. Identify how the different images for ``||sprites:Asteroid||``s are defined, and what happens to the image originally set for the ``||sprites:Sprite||``
 3. Identify what occurs when an ``||sprites:Asteroid||`` is ``||sprites:created||``
 4. Identify how ``||math:Math.pickRandom||`` is used to pick a ``||math:random||`` ``||images:image||``
 
@@ -163,7 +159,7 @@ let asteroids: Image[] = [
 ];
 
 game.onUpdateInterval(1000, function () {
-    sprites.createEmptySprite(SpriteKind.Asteroid);
+    sprites.create(img`1`, SpriteKind.Asteroid);
 });
 
 sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
