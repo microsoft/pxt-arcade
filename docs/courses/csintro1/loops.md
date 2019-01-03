@@ -1,6 +1,6 @@
 # Loops
 
-Loops serve as a powerful tool, both to reduce redundancy in the code we write, and to implement behaviors that must repeat indefinitely.
+Loops serve as a powerful tool, both to reduce redundancy in the code we write, and to implement behaviors that must repeat multiple times or indefinitely.
 
 ```codecard
 [

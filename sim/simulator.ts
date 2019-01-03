@@ -1,5 +1,5 @@
 /// <reference path="../node_modules/pxt-core/built/pxtsim.d.ts"/>
-/// <reference path="../node_modules/pxt-common-packages/libs/controller/enums.ts"/>
+/// <reference path="../node_modules/pxt-common-packages/libs/game/constants.ts"/>
 
 namespace pxsim {
     export type CommonBoard = Board
@@ -71,10 +71,12 @@ namespace pxsim {
      * Do not store state anywhere else!
      */
     export class Board extends pxsim.BaseBoard
-        implements pxsim.MusicBoard, pxsim.JacDacBoard {
+        implements pxsim.MusicBoard
+        // , pxsim.JacDacBoard 
+        {
         public id: string;
         public bus: EventBus;
-        public jacdacState: pxsim.JacDacState;
+        //public jacdacState: pxsim.JacDacState;
         public audioState: AudioState;
         public background: HTMLDivElement;
         public controlsDiv: HTMLDivElement;
@@ -94,7 +96,7 @@ namespace pxsim {
             this.bus = new EventBus(runtime);
             this.screenState = new ScreenState(null)
             this.audioState = new AudioState();
-            this.jacdacState = new JacDacState(this);
+            //this.jacdacState = new JacDacState(this);
             this.addMessageListener(this.receiveScreenshot.bind(this));
         }
 

@@ -1,10 +1,10 @@
 # Activity: Sprite Overlap & Events - Part 2
 
-We use ``||sprites:kind||`` to give a label to Sprites so we can define how one ``||sprites:kind||`` of sprite will react when moving on top of another ``||sprites:kind||`` of sprite
+We use ``||sprites:kind||`` to give a label to our sprites so we can define how one ``||sprites:kind||`` of sprite will react when moving on top of another ``||sprites:kind||`` of sprite.
 
-In the previous activity, all "Cloud" ``||sprites:kind||``'s respond with the same action when overlapped with a Helicopter ``||sprites:kind||``. 
+In the previous activity, all "Cloud" ``||sprites:kind||``'s respond with the same action when overlapped with a "Helicopter" ``||sprites:kind||``. 
 
-By making several cloud shaped sprites with the same ``||sprites:kind||`` of `Cloud`, we can write code so that all of the clouds interact with the ``||sprites:Helicopter||`` in the same way with an overlap event.
+By making several cloud shaped sprites with the same ``||sprites:kind||`` of `Cloud`, we can write code so that all of the clouds interact with the ``Helicopter`` in the same way with an overlap event.
 
 In this activity, the student will continue to work with:
 * ``||sprites:on overlap event||`` with a ``||sprites:kind||`` applied to several identical sprites
@@ -28,7 +28,7 @@ Having sprites bump rather than pass over each other is useful game behavior for
     * ``||loops:pause||``
     * Move back
 
-## Example #1: Bump action from overlap event
+## Example #1: Bump action from overlap event #example-1
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -208,14 +208,14 @@ landing = sprites.create(img`
 landing.y = 125
 ```
 
-## Student Task #1: Soft Landing
+## Student Task #1: Soft Landing #task-1
 
 There is a "T" shaped landing area at the bottom of the example. The helicopter sprite should not go through the landing pad, it should land!
 
-1. Starting with example #1, replace the helicopter motion with the short method using ``||controller:dx (left-right buttons)||``
-2. Review the rest of the code, and then add an on overlap event for when the helicopter overlaps with the landing (note the ``||sprites:kind||`` of ``||sprites:LandingPad||``)
-3. The block of code in the overlap event should stop the helicopter velocity motion (setting both vx and vy to zero) and then change the helicopter position **up** 2 pixels so it isn't overlapping any more
-4. **Challenge:** Add a new sprite and ``||sprites:kind||`` to the screen (for example, a mountain or a tree) and set the overlap action to make the helicopter sprite have an erratic motion after an overlap. This should be 3 or more changes in position and/or velocity
+1. Starting with [example #1](#example-1), replace the helicopter motion with the short method using ``||controller:dx (left-right buttons)||``
+2. Review the rest of the code, and then add an ``||sprites:on overlaps||`` event for when the helicopter overlaps with the landing (note the ``||sprites:kind||`` of ``||sprites:LandingPad||``)
+3. The block of code in the overlap event should stop the helicopter velocity motion (setting both ``vx`` and ``vy`` to zero) and then change the helicopter position **up** 2 pixels so it isn't overlapping any more
+4. **Challenge:** add a new sprite and ``||sprites:kind||`` to the screen (for example, a mountain or a tree) and set the overlap action to make the helicopter sprite have an erratic motion after an overlap. This should require 3 or more changes in position and/or velocity
 
 ### ~hint
 
@@ -227,7 +227,7 @@ Erratic motion can be made by changing the sprite position back and forth multip
 
 ## Student Task #2: Add a new unique sprite with ``||sprites:kind||`` of ``||sprites:Cloud||``
 
-1. Starting with example code or task #1
+1. Starting with example code or [task #1](#task-1)
 2. Add a new sprite that looks nothing like a cloud (for example, a hat or a tree)
 3. Make sure the new sprite has ``||sprites:kind||`` of "Cloud" even though it is not a cloud
 4. Position the new sprite so it is not touching any other sprite

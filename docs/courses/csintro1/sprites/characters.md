@@ -167,7 +167,7 @@ lion.say("I want courage")
 dorothy.say("Where's Kansas")
 ```
 
-## Student Task #1: Create your own story
+## Student Task #1: Create your own story #task-1
 
 Make a new story using characters and the ``||sprites:say||`` block. These can be characters from famous movies, TV shows, video games, or anything else.
 
@@ -180,11 +180,11 @@ Make a new story using characters and the ``||sprites:say||`` block. These can b
 
 ## Concept: Gathering Feedback
 
-Gathering feedback from peers is an important part of Software Development. This allows for the developer to **explain** what they intend for their code to do to someone else, and identify any bugs or issues it may cause before the code gets released. 
+Gathering feedback from peers is an important part of Software Development. This lets the developer **explain** to someone else what they intend their code to do, and identify any bugs or issues it may cause before the code gets released. 
 
 ## Student Task #2: Code Review
 
-Gather feedback on the story that was crafted for task #1. Do this with another student, a parent, or whoever else you are working on this code with.
+Gather feedback on the story that was crafted for [task #1](#task-1). Do this with another student, a parent, or whoever else you are working on this code with.
 
 1. Before showing the code you wrote, give a short description of what the story is meant to be about
 2. Show the code, and give them time to review what you wrote

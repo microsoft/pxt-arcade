@@ -10,7 +10,7 @@ Create a sprite for the camera the player will control
 
 1. Create a **32 x 32** sprite of a camera
 2. Name the sprite ``||variables:camera||``
-3. Make the sprite be of ``||sprites:kind||`` ``||sprites:Camera||``
+3. Make the sprite be of ``||sprites:kind||`` ``Camera``
 4. When the game starts, make ``||variables:camera||`` ``||sprites:say||`` something (for example, "I'm ready to play!") for **1000 ms**
 
 ## Student Task #2: Manual Motion
@@ -27,19 +27,19 @@ Manually add custom motion for the Camera
 
 Create a star for the player to photograph
 
-1. Use the ``||sprites:create empty sprite of kind Star||`` category inside of an ``||game:on game update every 1000 ms||`` event to create a new sprite twice per second.
+1. Create a sprite with ``||sprites:sprite of kind Star||`` inside of an ``||game:on game update every 500 ms||`` event to create a new sprite twice per second.
 2. Add an ``||sprites:on created sprite of kind Star||`` event. Inside of that, use ``||sprites:set sprite image to||`` to set the ``||sprites:Star||``s image to a drawing of a star
 3. Set the created sprite's ``||sprites:x||`` and ``||sprites:y||`` positions so it appears somewhere on the screen at random
-5. Set the created sprite's ``||sprites:z||`` index to -1, so that all ``||sprites:stars||`` will show up behind the ``||variables:camera||``
-6. Set the created sprite's ``||sprites:lifespan||`` to 5000, so that it will be destroyed after 5 seconds
+4. Set the created sprite's ``||sprites:z||`` index to -1, so that all ``Star``s will show up behind the ``||variables:camera||``
+5. Set the created sprite's ``||sprites:lifespan||`` to 5000, so that it will be destroyed after 5 seconds
 
 ## Student Task #4: Photograph the Stars
 
 Flash on the screen when the player snaps a picture of a star
 
-1. Create a ``||sprites:on overlap||`` event between the ``||sprites:Camera||`` and a ``||sprites:Star||``
-2. In the ``||sprites:overlap||``, create a projectile of kind ``||sprites:Flash||``. Click the ``+`` to set it to be ``||sprites:from||`` the ``||sprites:Star||``. Give the sprite an image of a flash of light
-3. After creating the ``||sprites:Flash||``, destroy the ``||sprites:Star||`` that is overlapped, and add one point to the ``||info:score||``
+1. Create a ``||sprites:on overlap||`` event between the ``||sprites:Camera||`` and a ``Star``
+2. In the ``||sprites:overlap||``, create a projectile of kind ``||sprites:Flash||``. Click the ``+`` to set it to be ``||sprites:from||`` the ``Star``. Give the sprite an image of a flash of light
+3. After creating the ``||sprites:Flash||``, destroy the ``Star`` that is overlapped, and add one point to the ``||info:score||``
 4. Make the ``||sprites:Flash||`` the have a ``||sprites:lifespan||`` of 400 ms
 
 ## Student Task #5: Gameplay Elements
@@ -64,16 +64,16 @@ game.splash("Hello! This will count down from 5 for you!")
 
 ### Student 2: Emma
 
-Emma decides that she does not like the Stars being destroyed when the ``||variables:camera||`` overlap them, so she removes the ``||sprites:destroy||`` block so that the ``||sprites:Stars||`` remain. However, this makes the game score behave weirdly, and no longer represent the number of stars that have been overlapped. What went wrong? (**Challenge:** can you fix it?)
+Emma decides that she does not like the Stars being destroyed when the ``||variables:camera||`` overlap them, so she removes the ``||sprites:destroy||`` block so that the ``Star``s remain. However, this makes the game score behave weirdly, and no longer represent the number of stars that have been overlapped. What went wrong? (**Challenge:** can you fix it?)
 
 ```blocks
 enum SpriteKind {
     Player,
     Enemy,
     Camera,
-    Stars
+    Star
 }
-sprites.onOverlap(SpriteKind.Camera, SpriteKind.Stars, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Camera, SpriteKind.Star, function (sprite, otherSprite) {
     info.changeScoreBy(1)
 })
 ```

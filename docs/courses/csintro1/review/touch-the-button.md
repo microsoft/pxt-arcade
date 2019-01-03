@@ -1,6 +1,6 @@
 # Review: Touch the Button
 
-In the info section of the orientation, the game "touch the button 15 times" had a very basic problem - no matter what, when the game was over, the same screen was shown, with the only difference being the score.
+In the [info](/courses/csintro1/intro/info) section of the orientation, the game "touch the button 15 times" had a very basic problem - no matter what, when the game was over, the same screen was shown, with the only difference being the score.
 
 This can be changed using two using two blocks: ``||info:on life zero||`` and ``||info:on countdown end||``. These blocks are used to **override** (change) the standard behavior for running out of lives and time running out for a countdown.
 
@@ -9,7 +9,7 @@ This can be changed using two using two blocks: ``||info:on life zero||`` and ``
 ## Initial Game:
 
 ```blocks
-controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(2)
     info.changeLifeBy(-1)
 })

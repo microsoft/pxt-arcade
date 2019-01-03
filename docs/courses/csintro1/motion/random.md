@@ -44,7 +44,7 @@ https://youtu.be/Ggj4rOXw6ns
 
 Games often have an element of luck and surprise to keep the player engaged. In this example, we will use random numbers to place a sprite on the screen in a random location. We can use a random range because we know the dimensions of the screen.
 
-## Example #2: Random Sprite Location
+## Example #2: Random Sprite Location #example-2
 
 1. Review the code below
 2. Create the sample code and run it
@@ -78,9 +78,9 @@ mySprite = sprites.create(img`
 mySprite.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 ```
 
-## Student Task #2: Set random position using a button event
+## Student Task #2: Set random position using a button event #task-2
 
-1. Starting with code from example #2
+1. Starting with code from [example #2](#example-2)
 2. Add a ``||controller:on A button pressed||`` block
 3. Make the event code for the ``||controller:A||`` button move a sprite to a new random position
 4. Add another sprite and make it move with the ``||controller:B||`` button
@@ -180,15 +180,15 @@ hat.setPosition(35, 60)
 
 ## Student Task #3: Check for random overlap with many sprites
 
-1. Starting with task #2 where the game randomly moves 2 sprites with button pushes
+1. Starting with [task #2](#task-2) where the game randomly moves 2 sprites with button pushes
 2. Add at least 2 more sprites with random or fixed position
 3. Add an ``||sprites:on overlap||`` event that results in a new behavior that uses ``||math:pick random||`` (for example, set velocity, set location, change location by, and so on), and causes the sprite to ``||sprites:say||`` something
 4. Test that the ``||sprites:overlap||`` works with different sprites of the same ``||sprites:kind||``
-5. **Challenge:** make multiple sprites randomly change position with the ``||controller:A||`` button, and give two of the sprites a random velocity (use a range across negative and positive for ``||sprites:vx||`` and ``||sprites:vy||``)
+5. **Challenge:** make multiple sprites randomly change position with the ``||controller:A||`` button and give two of the sprites a random velocity (use a range across negative and positive for ``||sprites:vx||`` and ``||sprites:vy||``)
 
 ## What did we learn? 
 
 1. Describe how the ability to generate a random value can make a game more interesting and/or challenging.
-2. Make a hypothesis of a good use of random that you would like to design into a future game - especially something we don't know how to do yet. Be descriptive of the game and how random would be needed.
+2. Make a hypothesis of a good use of ``||math:pick random||`` that you would like to design into a future game - especially something we don't know how to do yet. Be descriptive of the game and how a random value would be needed.
 
 ### [Teacher Material](/courses/csintro1/about/teachers)

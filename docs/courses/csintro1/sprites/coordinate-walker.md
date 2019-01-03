@@ -12,7 +12,7 @@ https://youtu.be/R6NJjzXfejM
 
 [Alternative Video Location](https://aka.ms/40544a-coordinate-walker)
 
-Move walker sprite around the game screen, and use it to identify `X` and `Y` coordinates.
+Move a walker sprite around the game screen, and use it to identify `X` and `Y` coordinates.
 
 In order to create games, we need to be able to place ``||sprites:Sprites||`` and other objects at various locations on the game screen. In this set of activities, we will relate the screen (`x`, `y`) coordinates to the 4 corners and middle of the game screen.
 
@@ -20,7 +20,7 @@ In order to create games, we need to be able to place ``||sprites:Sprites||`` an
 
 Use the coordinate walker example to move around the screen and track `X` and `Y` coordinates.
 
-Open the [coordinate walker program](https://makecode.com/_huXKRL3r24iC) or open the simulator in the following code to complete the tasks.
+Open the [coordinate walker program](https://makecode.com/_huXKRL3r24iC) or open the simulator for the following code to complete the tasks.
 
 ```blocks
 enum SpriteKind {
@@ -56,9 +56,9 @@ game.onUpdate(function () {
 })
 ```
 
-1. To check the location: run the program, and then press the ``||controller:A||`` button on the game pad (or space bar key on keyboard). This will display the starting location's `X` and `Y` coordinates
+1. To check the location: run the program, and then press the ``||controller:A||`` button on the game pad (or space bar key on keyboard). This will display the starting location's `X` and `Y` coordinates.
     * Note the two coordinate values for `(X, Y)`
-2. Move the sprite: click on the game pad (or use keyboard `WASD` keys) to move the sprite. Check the coordinates after moving
+2. Move the sprite: click on the game pad (or use keyboard `WASD` keys) to move the sprite. Check the coordinates after moving.
 
 ## What did we learn?
 
@@ -74,23 +74,25 @@ Two dimensional game screen coordinates are represented by values for `X` and `Y
 ![XY Coordinates](/static/courses/csintro1/sprites/coordinates.png)
 
 1. Move to the sprite to the top edge of the screen
-    * What is the `Y` coordinate at the top of the screen?
 
-        ![sprite at top edge of screen](/static/courses/csintro1/sprites/coordinate-edge.png)
+>* What is the `Y` coordinate at the top of the screen?
+
+![sprite at top edge of screen](/static/courses/csintro1/sprites/coordinate-edge.png)
 
 2. Move to each of the corners and **map the coordinates** as a pair of X and Y values like `(X, Y)`
-    * Restart the game. What are the coordinates at the start?
-    * **Record** what the coordinates at the **Top Right** corner are
-    * **Record** what the coordinates at the **Bottom Right** corner are
-    * **Record** what the coordinates at the **Bottom Left** corner are
-    * **Record** what the coordinates at the **Top Left** corner are
-    * **Record** what the Game Screen Dimensions (height by width) are
 
-        ![map the coordinates at the corners](/static/courses/csintro1/sprites/coordinates-map.png)
+>* Restart the game. What are the coordinates at the start?
+>* **Record** what the coordinates at the **Top Right** corner are
+>* **Record** what the coordinates at the **Bottom Right** corner are
+>* **Record** what the coordinates at the **Bottom Left** corner are
+>* **Record** what the coordinates at the **Top Left** corner are
+>* **Record** what the Game Screen Dimensions (height by width) are
+
+![map the coordinates at the corners](/static/courses/csintro1/sprites/coordinates-map.png)
 
 3. Record the results from this task in a simple diagram like the one below.
 
-    ![map the coordinates results](/static/courses/csintro1/sprites/record-coordinates.png)
+![map the coordinates results](/static/courses/csintro1/sprites/record-coordinates.png)
 
 ### Challenge: Bring an off-screen sprite back into view
 

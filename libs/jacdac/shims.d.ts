@@ -8,6 +8,12 @@ declare namespace jacdac {
     function start(): void;
 
     /**
+     * Gets the bus state
+     */
+    //% parts=jacdac shim=jacdac::state
+    function state(): int32;
+
+    /**
      * Starts the JacDac protocol
      */
     //% parts=jacdac shim=jacdac::stop
@@ -58,6 +64,12 @@ declare namespace jacdac {
     /**
      * Internal
      */
+    //% parts=jacdac shim=jacdac::__internalRemoveDriver
+    function __internalRemoveDriver(d: JacDacDriverStatus): void;
+
+    /**
+     * Internal
+     */
     //% parts=jacdac shim=jacdac::__internalSendPacket
     function __internalSendPacket(buf: Buffer, deviceAddress: int32): int32;
 }
@@ -73,6 +85,12 @@ declare interface JacDacDriverStatus {
     /** Check if driver is connected. */
     //% property shim=JacDacDriverStatusMethods::isConnected
     isConnected: boolean;
+
+    /**
+     * Sets the error state on the device
+     */
+    //% shim=JacDacDriverStatusMethods::setError
+    setError(error: int32): void;
 
     /** Get device id for events. */
     //% property shim=JacDacDriverStatusMethods::id
