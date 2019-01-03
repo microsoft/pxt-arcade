@@ -104,4 +104,4 @@ Let's fix these issues.
     * When setting the ``||sprites:y||`` position, change the random value to be between 1 and 7
     * When setting the ``||sprites:x||`` position, change the random value to be between 1 and 9
 2. The same fix should be done for the ``Enemy``, as they will also appear off screen if the random value is 0
-3. To make the game harder, add an ``||sprites:on overlap||`` event between ``Enemy``s and ``Collectible``s. Make the event destroy the the ``Collectible``, and have the ``Enemy`` gloat about collecting the item using ``||sprites:say||``
+3. To make the game harder, add an ``||sprites:on overlap||`` event between ``Enemy``s and ``Collectible``s. Make the event destroy the ``Collectible``, and have the ``Enemy`` gloat about collecting the item using ``||sprites:say||``

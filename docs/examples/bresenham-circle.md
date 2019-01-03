@@ -76,7 +76,7 @@ d += 4 * (x -y) + 10
 
 ## Program for Bresenham Circles
 
-The program draws new circles with either an increasing or decreasing radius. The value of ``x`` varies from `0` to ``radius`` to pick pixels for just one-eighth of the the circle, an _octant_. The pixels for the other 7 corresponding octants are plotted based on the symmetry properties of a circle.
+The program draws new circles with either an increasing or decreasing radius. The value of ``x`` varies from `0` to ``radius`` to pick pixels for just one-eighth of the circle, an _octant_. The pixels for the other 7 corresponding octants are plotted based on the symmetry properties of a circle.
 
 ![](/static/examples/bresenham-circle/octants.jpg)
 

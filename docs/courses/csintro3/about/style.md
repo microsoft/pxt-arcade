@@ -50,7 +50,7 @@ It is important to note that these are not meant to serve as an overall style gu
 
 In the case study in particular, some sections have top level code in the namespaces. This is done to allow for an easy way to indicate which sections of the case study students are meant to modify, and allow for some introduction of encapsulation - where students can ignore other segments of the code and focus on what applies within that section of the game.
 
-Encapsulation can be done in other, more appropriate ways: nested functions, object oriented programming, and a more structured form with functions to initialize the values and then calling each portion step by step. In the case of the case study, though, this would lead to some problems; students would have to go back and forth between multiple sections of code for each task, and not have a single place to look for a given feature. Context switching can be particularly hard for beginning developers, so this is avoided by using namespaces in an unorthodox and non-ideal fashion.
+Encapsulation can be done in other, more appropriate ways: for example, with nested functions and object oriented programming. In the case of the case study, though, this would lead to some problems; students would have to go back and forth between multiple sections of code for each task, and not have a single place to look for a given feature. Context switching can be particularly hard for beginning developers, so this is avoided by using namespaces in an unorthodox and non-ideal fashion.
 
 ### ~
 
@@ -61,4 +61,4 @@ Encapsulation can be done in other, more appropriate ways: nested functions, obj
 
 ## Other
 
-1. As this course does not cover object oriented programming from the perspective of the implementor, instance methods are described as functions in much of the course. 
+1. As this course does not cover object oriented programming (beyond what is necessary to describe creating objects), instance methods are described as functions in much of the course. 

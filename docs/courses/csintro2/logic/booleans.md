@@ -183,7 +183,7 @@ game.onUpdateInterval(500, function () {
 
 ## Concept: ``||logic:and||`` and ``||logic:or||``
 
-Beyond just using a single boolean value, there are several ways in which we can combine these values. The most commonly used are ``||logic:and||`` and ``||logic:or||``. These are used similarly to the the use in English language; for example, the statement
+Beyond just using a single boolean value, there are several ways in which we can combine these values. The most commonly used are ``||logic:and||`` and ``||logic:or||``. These are used similarly to their usage in the English language; for example, the statement
 
 ### ~hint
 

@@ -196,7 +196,7 @@ Try removing the ``||sprites:ghosts||`` block and see how much the performance g
 
 ### Example #2c: Cloud projectile that widely emits projectile rain
 
-We can make the the rain drops show up at different places so that they don't all appear in the same location relative to the cloud. We'll set the raindrop `X` property to a random value. 
+We can make the rain drops show up at different places so that they don't all appear in the same location relative to the cloud. We'll set the raindrop `X` property to a random value. 
 
 ```block
 let raindrop: Sprite = null
