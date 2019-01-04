@@ -21,7 +21,7 @@ In the example above, the sprite is created using ``||sprites:sprites.create||``
 
 * Notice the type of ``||variables:player||``: it is a ``||sprites:Sprite||``
 * The function that creates the ``||sprites:Sprite||`` takes in two things: an image (``||sprites:sprites.castle.princessFront0||`` is one of the provided images to start with), and a ``||sprites:kind||`` of 0
-* ``||controller:controller.moveSprite||`` is a function that takes a ``||sprites:Sprite||`` and allows it to to move around the screen as using the direction keys. Besides the ``||sprites:Sprite||``, it also needs two numbers: one for the horizontal velocity, and one for the vertical velocity
+* ``||controller:controller.moveSprite||`` is a function that takes a ``||sprites:Sprite||`` and allows it to move around the screen as using the direction keys. Besides the ``||sprites:Sprite||``, it also needs two numbers: one for the horizontal velocity, and one for the vertical velocity
 
 ## Student Task #1: Slow the New Sprite
 

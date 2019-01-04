@@ -88,7 +88,7 @@ In JavaScript, the following order of operation precedence applies:
 * Multiplication (`*`) and Division (`/`)
 * Addition (`+`) and Subtraction (`-`)
 
-Note that JavaScript uses the ``||math:*||`` symbol for multiplication the ``||math:/||`` for division division. In order to change this order of operations, you can use parentheses `( )` around expressions just like in math.
+Note that JavaScript uses the ``||math:*||`` symbol for multiplication the ``||math:/||`` for division. In order to change this order of operations, you can use parentheses `( )` around expressions just like in math.
 
 ## Example #2: Displaying expressions with ``||game:splash||`` #example-2
 

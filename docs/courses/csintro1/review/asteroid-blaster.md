@@ -35,7 +35,7 @@ Add asteroids for the player to avoid, that are created more quickly as time goe
 
 ## Student Task #4: Damage
 
-Add an an event so that the player loses life 
+Add an event so that the player loses life 
 
 1. Add an event for when a sprite of kind ``||sprites:Player||`` overlaps with a sprite of kind ``||sprites:Asteroid||``
 2. Decrease ``||info:life||`` by 1

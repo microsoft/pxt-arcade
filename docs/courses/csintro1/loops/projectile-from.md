@@ -319,7 +319,7 @@ sprites.onDestroyed(SpriteKind.Cloud, function (sprite: Sprite) {
 })
 ```
 
-Note the new ``||sprites:set cloud kind to Cloud||`` block was added in as well; the cloud ``||sprites:Projectile||``'s ``||sprites:kind||`` needed to be changed so that a different ``||sprites:on destroyed||`` event can be applied to to the clouds and the rain drops.
+Note the new ``||sprites:set cloud kind to Cloud||`` block was added in as well; the cloud ``||sprites:Projectile||``'s ``||sprites:kind||`` needed to be changed so that a different ``||sprites:on destroyed||`` event can be applied to the clouds and the rain drops.
 
 ## Student Task #2: Projectile from Projectile
 

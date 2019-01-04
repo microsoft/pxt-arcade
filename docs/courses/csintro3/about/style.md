@@ -19,7 +19,7 @@ It is important to note that these are not meant to serve as an overall style gu
 3. Namespaces should be all lowercase, and generally a single word.
     * ``namespace game {``
 4. Descriptive variable names are highly preferred, even for simple functions. Coming up with a descriptive name for each variable gives students time to reflect on their code, and identify what exactly they are intending to do with each variable.
-    * Exception: variables with short names due to convention or accuracy (e.g.: ``i`` ``j`` and ``k`` for for loops, or ``x`` and ``y``) do not need to be extended, as the short name is descriptive enough on it's own
+    * Exception: variables with short names due to convention or accuracy (e.g.: ``i`` ``j`` and ``k`` for ``||loops:for||`` loops, or ``x`` and ``y``) do not need to be extended, as the short name is descriptive enough on it's own
 
 ## Spacing
 

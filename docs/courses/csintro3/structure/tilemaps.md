@@ -196,7 +196,7 @@ scene.setTile(7, sprites.castle.tileGrass1);
 
 ### ~hint
 
-Note that the ``||scene:cameraFollowSprite||`` function was used to make the camera camera follow ``||variables:mySprite||``; if you have a large ``||scene:tile map||``, you will have to modify the camera to see different parts of it.
+Note that the ``||scene:cameraFollowSprite||`` function was used to make the camera follow ``||variables:mySprite||``; if you have a large ``||scene:tile map||``, you will have to modify the camera to see different parts of it.
 
 ### ~
 

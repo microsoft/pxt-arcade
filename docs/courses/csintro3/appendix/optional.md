@@ -181,5 +181,5 @@ repeatIt("How are you?", 5);
 
 ## What did we learn?
 
-1. What is is an optional parameter? What are some functions in the arcade that use them?
+1. What is an optional parameter? What are some functions in the arcade that use them?
 2. What is the proper syntax for using an optional parameter?
