@@ -206,14 +206,14 @@ if (num > 2 || bool) {
 ## Student Task #2: Compare a Lot!
 
 1. Create two variables to store two numbers:
-    * Variable ``a`` stores ``7``
-    * Variable ``b`` stores ``8``
-2. Use an ``if`` statement to perform **two** comparison on these variable
-    * First, check that ``a`` is **less than** 4
-    * Then, check that ``b`` is **not equal to** 9
-    * Combine these two statements using ``or`` (``||``)
-3. If the condition is ``true``, print "You got it!" to the console
-4. If the condition is ``false``, print "Try again!" to the console
+    * Variable ``||variables:a||`` stores ``7``
+    * Variable ``||variables:b||`` stores ``8``
+2. Use an ``||logic:if||`` statement to perform **two** comparison on these variable
+    * First, check that ``||variables:a||`` is **less than** 4
+    * Then, check that ``||variables:b||`` is **not equal to** 9
+    * Combine these two statements using ``||logic:or||`` (``||``)
+3. If the condition is ``||logic:true||``, print "You got it!" to the console
+4. If the condition is ``||logic:false||``, print "Try again!" to the console
 
 ## What did we learn?
 
@@ -226,12 +226,6 @@ if (num > 2 || bool) {
 ### ~hint
 
 Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/structure/logic-problems) for this section to review the material and practice the concepts introduced in this section.
-
-### ~
-
-### ~hint
-
-Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/intro/operators-problems) for this section to review the material and practice the concepts introduced in this section.
 
 ### ~
 

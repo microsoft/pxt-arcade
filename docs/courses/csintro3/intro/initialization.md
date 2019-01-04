@@ -16,11 +16,11 @@ game.splash("Hello!");
 
 In the above section, both ways that ``||game:splash||`` are defined are shown - for blocks, and for JavaScript. Below those two, is an example of splash being **used** in JavaScript.
 
-Carefully note the difference between the middle example - which lists out fully how the block is defined - and how the block is used in the last snippet, with ``game.`` in front. These details will become more important in future sections.
+Carefully note the difference between the middle example - which lists out fully how the block is defined - and how the block is used in the last snippet, with ``||game:game||``. in front. These details will become more important in future sections.
 
 For now, carefully read the JavaScript code to identify the following portions:
 
-* ``game.splash()``: The **function** that is called
+* ``||game:game.splash()||``: The **function** that is called
 * ``Hello!``: The string that is **given** to the function,
 * ``""``: Surrounds the string, to identify it as a string
 * ``;``: Indicates the end of the current line of code
@@ -56,7 +56,7 @@ Will **declare** a variable named ``||variables:word||``, **assign** that variab
 
 ## Example #2b: String Variable vs. Strings
 
-In example #2a, the variable was passed directly to the ``game.splash`` function. 
+In example #2a, the variable was passed directly to the ``||game:game.splash||`` function. 
 
 Referencing the variable is done without surrounding it in quotation marks. If you try to surround it with quotation marks, it will instead be identified as a string.
 
@@ -151,7 +151,7 @@ At the end of your game, create a variable ``||variables:intro||``. This should 
 
 ### Splash the Intro
 
-The ``||game.splash||`` function is commonly used to give introductions to games. Use it to ``||game:splash||`` the introduction you just created.
+The ``||game:game.splash||`` function is commonly used to give introductions to games. Use it to ``||game:splash||`` the introduction you just created.
 
 ### Solution
 

@@ -57,10 +57,8 @@ This course is currently in beta - this means that it is likely to have bugs and
 ### [Functions](/courses/csintro3/functions)
 
 * [Intro to TypeScript Functions](/courses/csintro3/functions/intro)
-* [Return Values](/courses/csintro3/functions/returns)
 * [Parameters](/courses/csintro3/functions/parameters)
-* [Optional Parameters](/courses/csintro3/functions/optional)
-* [Namespaces](/courses/csintro3/functions/namespaces)
+* [Return Values](/courses/csintro3/functions/returns)
 * [Commenting Functions](/courses/csintro3/functions/comments)
 
 ### [Events](/courses/csintro3/events)

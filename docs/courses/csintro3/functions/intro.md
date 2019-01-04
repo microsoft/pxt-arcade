@@ -52,7 +52,7 @@ Does the function ever run if the code is not called with ``||functions:sayHello
 
 ## Student Task #1: Make a Log
 
-1. Create a function named ``logMeIn``
+1. Create a function named ``||functions:logMeIn||``
 2. In the function, ``||game:splash||`` the phrase "LOGGING!"
 3. After the ``||game:splash||``, use ``console.log`` to log the phrase "I'm Here!" to the console
 4. Call the function **twice** after the closing curly brace
@@ -167,7 +167,7 @@ game.splash(word);
 
 In this example, the intention was to change ``||variables:word||`` from "hello!" to "goodbye!" when the function was called. It seems like there is a bug in there, though - word is declared twice.
 
-However, because the variable in the function has a different **scope**, the variable declared in the function **shadows** the outer one - there are now two variables with the same name within ``changeHello``, with only the local one (the one that shadows the other) being accessible. The outer variable won't be changed, and will remain "Hello!" when it is ``||game:splash||``ed.
+However, because the variable in the function has a different **scope**, the variable declared in the function **shadows** the outer one - there are now two variables with the same name within ``||functions:changeHello||``, with only the local one (the one that shadows the other) being accessible. The outer variable won't be changed, and will remain "Hello!" when it is ``||game:splash||``ed.
 
 This type of bug is very subtle, and can be hard to catch when looking through long segments of code; in the next few lessons better ways to handle this type of behavior will be shown.
 

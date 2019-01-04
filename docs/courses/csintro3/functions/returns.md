@@ -41,11 +41,11 @@ let returnedValue: number = giveMeFive();
 
 ## Student Task #1: Who are You?
 
-1. Create a function named ``aName``
-2. Add a return value to ``aName``, which returns "Bill"
-3. After calling the function, store the returned value in the variable ``theName``
-4. Use ``||game:game.splash||`` to display ``theName``
-5. **Challenge:** give ``aName`` a parameter ``name`` of type ``string``. Modify the return value to return ``name`` instead
+1. Create a function named ``||functions:aName||``
+2. Add a return value to ``||functions:aName||``, which returns "Bill"
+3. After calling the function, store the returned value in the variable ``||variables:theName||``
+4. Use ``||game:game.splash||`` to display ``||variables:theName||``
+5. **Challenge:** give ``||functions:aName||`` a parameter ``name`` of type ``||text:string||``. Modify the return value to return ``name`` instead
 
 ## Concept: Different Return Values
 
@@ -101,7 +101,7 @@ function world(): number {
 }
 ```
 
-Another way to address this issue is to only have a single return statement, and create an ``output`` variable to return. For example, the above code could be rewritten as the following:
+Another way to address this issue is to only have a single return statement, and create an ``||variables:output||`` variable to return. For example, the above code could be rewritten as the following:
 
 ```typescript
 function world(): number {
@@ -160,12 +160,12 @@ function makePositive(num: number): number {
 
 ## Student Task #2: Up or Down
 
-1. Create a function named ``addOrRemove``
+1. Create a function named ``||functions:addOrRemove||``
 2. Add two parameters to the function: ``input`` of type ``||Math:number||``, and ``up`` of type ``||logic:boolean||``
 3. Add an ``||logic:if ... else||`` to the function
     * if ``||logic:up||`` is true, return ``input`` plus one
     * otherwise, return ``input`` minus one
-4. **Challenge:** create **four** test cases for ``addOrRemove``, with different values for ``input`` and ``up`` that verify the function is working properly
+4. **Challenge:** create **four** test cases for ``||functions:addOrRemove||``, with different values for ``input`` and ``up`` that verify the function is working properly
 
 ## Example #3: Sprites
 
@@ -205,9 +205,9 @@ console.log("" + found);
 
 ``||functions:containsThree||`` will go through all values starting at ``||variables:min||`` and ending at ``||variables:max||``, ``logging`` the value of each until it finds the value 3. If it finds 3, it will return true; otherwise, it will return false.
 
-In the first case shown in the code (``containsThree(0, 5)``), the function only logs ``0``, ``1``, ``2``, and ``3`` because the function stopped once it found ``3`` and returned ``true``.
+In the first case shown in the code (``||functions:containsThree(0, 5)||``), the function only logs ``0``, ``1``, ``2``, and ``3`` because the function stopped once it found ``3`` and returned ``true``.
 
-In the first case shown in the code (``containsThree(5, 10)``), the function logs all values between ``5`` and ``10`` because it never finds ``3``, and returns ``false``.
+In the first case shown in the code (``||functions:containsThree(5, 10)||``), the function logs all values between ``5`` and ``10`` because it never finds ``3``, and returns ``false``.
 
 ### ~hint
 

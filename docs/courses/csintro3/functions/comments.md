@@ -2,7 +2,7 @@
 
 In previous lessons, ``||functions:functions||`` have been shown to have a wide variety of uses, with many different features.
 
-For those reasons, we will maintain a particular syntax for ``||functions:function||`` comments. This way, anyone who wants to learn about the function will have a consistent and easy way in which to identify these features.
+For those reasons, we will maintain a particular format for ``||functions:function||`` comments. This way, anyone who wants to learn about the function will have a consistent and easy way in which to identify these features, without having to go back and forth looking for what the different aspects of the function are.
 
 ## Concept: Commenting Simple Functions
 

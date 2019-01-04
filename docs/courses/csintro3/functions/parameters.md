@@ -23,7 +23,7 @@ There are three new elements added to this snippet since the previous lesson:
 
 ``value`` must be of type ``parameterType``, or else the code will not be able to run.
 
-``parameter`` can be handled like any other variable within the scope of the function ``name`` - however, the value it is initially assigned will be whatever value is provided when the function is called.
+``parameter`` can be handled like any other variable within the scope of the function ``||functions:name||`` - however, the value it is initially assigned will be whatever value is provided when the function is called.
 
 ## Example #1: Reducing Redundancy with Parameters
 
@@ -56,11 +56,11 @@ printMessage("World");
 
 Beyond just reducing redundancy, this allows for the code to be more flexible: if the developer chooses to start all messages by printing "Hey Listen!" before the message, this can be changed in a single place, rather than in every method that prints to the console.
 
-## Student Task #1: Hey Jude!
+## Student Task #1: Hey, You!
 
-1. Create a function named ``greet``
-2. Add a parameter ``firstName`` that is of type ``string``
-3. In the function, ``||game:game.splash||`` a greeting that includes ``firstName`` (if "Jude" is passed, it might ``||game:splash||`` "Hey Jude!")
+1. Create a function named ``||functions:greet||``
+2. Add a parameter ``firstName`` that is of type ``||text:string||``
+3. In the function, ``||game:game.splash||`` a greeting that includes ``firstName`` (if "You" is passed, it might ``||game:splash||`` "Hey, You!")
 4. Call the function with three different names
 
 ## Concept: Multiple Parameters
@@ -99,8 +99,8 @@ choose("Summer", "Winter");
 ## Student Task #2: Extended Greeting
 
 1. Start with the your solution to task #1
-2. Modify the function so that it accepts two strings: ``firstName`` and ``lastName``
-3. Make use of **both** parameters in the greeting (for example, ``greeting("Jude", "Doe")`` could result in "Hey Jude Doe!")
+2. Modify the function so that it accepts two ``||text:strings||``: ``firstName`` and ``lastName``
+3. Make use of **both** parameters in the greeting (for example, ``||functions:greeting("You", "Friend")||`` could result in "Hey You Friend!")
 
 ## Example #3: Non String Parameters
 
@@ -124,7 +124,7 @@ changeByFive(15, false);
 
 ## Student Task #3: Move the Sprite
 
-1. Create a function named ``horizontalMovement``
+1. Create a function named ``||functions:horizontalMovement||``
 2. Add two parameters to the function: ``player`` of type ``||sprites:Sprite||``, and ``left`` of type ``||logic:boolean||``
 3. ``||logic:if||`` ``left`` is true, move ``player`` 10 pixels to the left
 4. ``||logic:if||`` ``left`` is false, move ``player`` 10 pixels to the right

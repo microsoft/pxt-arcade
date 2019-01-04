@@ -159,7 +159,8 @@ scene.getTilesByType(0);
 
 1. Review the code below
 2. Identify how it is different from example #3
-3. Identify how the 
+3. Identify how the ``||scene:Tile||`` ``||arrays:array||`` is created
+4. Identify how the ``||scene:Tile||`` ``||arrays:array||`` is used
 
 ```typescript
 enum SpriteKind {

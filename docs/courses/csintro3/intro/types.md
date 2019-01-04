@@ -4,7 +4,7 @@ In blocks, the types of variables that were being used was generally invisible: 
 
 When types came up, they were generally due to small errors: trying to ``||game:splash||`` a number required that the number be ``||text:join||``ed to a string, trying to store a string in a variable that's already been designated to be a string, and other small things.
 
-In MakeCode JavaScript, variables can be explicitly given a type for the computer to treat it as; some common examples in @boardname@ are ``string``, ``number``, and ``sprite``.
+In MakeCode JavaScript, variables can be explicitly given a type for the computer to treat it as; some common examples in @boardname@ are ``||text:string||``, ``||math:number||``, and ``||sprites:sprite||``.
 
 ## Concept: Implicit Typing to Explicit Typing
 
@@ -15,7 +15,7 @@ let x: number = 5;
 let word: string = "Hello";
 ```
 
-In this previous code snippet, ``||variables:x||`` is defined to be of type ``number``, and ``||variables:word||`` has been defined to be of type ``string``.
+In this previous code snippet, ``||variables:x||`` is defined to be of type ``||math:number||``, and ``||variables:word||`` has been defined to be of type ``||text:string||``.
 
 In the following examples, the same code is shown in two different ways: the first, with the type of the variable inferred from the value that is assigned to it, and the second, with the type explicitly mentioned.
 
@@ -45,7 +45,7 @@ console.log(word + otherWord);
 1. Start with the code below
 2. Make a hypothesis on what value will be stored in ``||variables:word||`` after the code is run
 3. Write out the value you expect to be stored in ``||variables:word||`` each time it is assigned a value (there should be three lines)
-4. To test your hypothesis, add ``||console:console.log(word)||`` after the final line of the code, and run the program
+4. To test your hypothesis, add ``console.log(word)`` after the final line of the code, and run the program
 5. If the output did not match your hypothesis, review what you wrote in step 3 and identify where the value was different from your expectation.
 
 ```typescript
@@ -139,7 +139,7 @@ console.log(x);
 
 ## What did we learn
 
-1. Make a hypothesis on why using ``+`` between a ``string`` and a ``number`` results in a ``string``, not a ``number``.
+1. Make a hypothesis on why using ``+`` between a ``||text:string||`` and a ``||math:number||`` results in a ``||text:string||``, not a ``||math:number||``.
 2. In task #3, you had to look at code someone else wrote and figure out what types the variables needed to hold. What were the clues that helped you identify what type the variables needed to hold?
 
 ### ~hint

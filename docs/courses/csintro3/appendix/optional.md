@@ -24,7 +24,7 @@ game.splash("Hello", "World");
 
 ## Student Task #1: Stop Talking
 
-``||sprites:Sprite.say||`` accepts an optional second parameter: a number, that corresponds to the number of seconds to display the message for.
+``||sprites:Sprite.say||`` accepts an optional second parameter: a ``||math:number||``, that corresponds to the number of seconds to display the message for.
 
 1. Create a new project, starting with the code below
 2. Define the optional parameter for the time the message will be displayed to be 1 ms, so that it goes away (almost) immediately
@@ -83,7 +83,7 @@ console.log(buildName("John", "Doe"));
 ## Student Task #2: Tell the World
 
 1. Start a new project, and create a function ``||functions:tellTheWorld||``
-2. Add a **required** parameter named ``||variables:message||`` of type ``string``
+2. Add a **required** parameter named ``||variables:message||`` of type ``||text:string||``
 3. Add an **optional** parameter ``||variables:mySprite||`` of type ``||sprites:Sprite||``
 4. If ``||variables:mySprite||`` is **not** specified, make the function ``||game:splash||`` ``||variables:message||`` to the screen
 5. If ``||variables:mySprite||`` is specified, make the function instead have the ``||variables:mySprite||`` ``||sprites:say||`` the message.
@@ -120,7 +120,7 @@ For an optional parameter to be used, all parameters to the left of it **must** 
 ## Student Task #3: Stop Telling the World
 
 1. Start with the code from task #2
-2. Add another optional parameter, ``||variables:time||``, of type ``number``
+2. Add another optional parameter, ``||variables:time||``, of type ``||math:number||``
 3. If ``||variables:time||`` is specified, it should be passed as a parameter to ``||sprites:say||`` to limit how long the message is displayed
 
 ## Concept: Default Parameters

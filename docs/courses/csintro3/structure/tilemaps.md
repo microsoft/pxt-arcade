@@ -49,13 +49,13 @@ scene.setTileMap(img`
 scene.setTile(1, sprites.castle.tileGrass1);
 ```
 
-This function accepts an ``index`` of a color, and a **16 x 16** ``||image:Image||`` to replace the color in the ``||scene:tile map||``.
+This function accepts an ``index`` of a color, and a **16 x 16** ``||images:Image||`` to replace the color in the ``||scene:tile map||``.
 
 ## Example 1: Beach Day
 
 1. Review the code below
 2. Identify where the ``||scene:tile map||`` is defined
-3. Identify where the different colors of the ``||scene:tile map||`` are assigned a different ``||image:Image||``
+3. Identify where the different colors of the ``||scene:tile map||`` are assigned a different ``||images:Image||``
 4. Move the character around the screen; notice that the player cannot leave the ``||scene:tile map||``
 
 ```typescript

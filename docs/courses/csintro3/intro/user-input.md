@@ -22,7 +22,7 @@ Saving user input in variables is useful, as it allows the values the user input
 let userInput: string = game.askForString("Give me data!");
 ```
 
-The ``||game:game.askForString||`` function prompts the user to input a string with the phrase "Give me data!", and then the response the user gives is stored in the variable ``||variables:userInput||`` as a **string**.
+The ``||game:game.askForString||`` function prompts the user to input a string with the phrase "Give me data!", and then the response the user gives is stored in the variable ``||variables:userInput||`` as a ``||text:string||``.
 
 ## Student Task #1: Say my Name
 
