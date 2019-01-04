@@ -421,9 +421,10 @@ namespace pxsim {
                 this.onResize();
             }
             else {
+                const mask = this.palette.length - 1
                 for (let x = 0; x < this.state.width; x++) {
                     for (let y = 0; y < this.state.height; y++) {
-                        this.context.fillStyle = this.palette[this.state.lastImage.data[x + y * this.state.width] & 0xff]
+                        this.context.fillStyle = this.palette[this.state.lastImage.data[x + y * this.state.width] & mask]
                         this.context.fillRect(x * this.cellWidth, y * this.cellWidth, this.cellWidth, this.cellWidth);
                     }
                 }
