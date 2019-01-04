@@ -72,8 +72,8 @@ namespace pxsim {
      */
     export class Board extends pxsim.BaseBoard
         implements pxsim.MusicBoard
-        // , pxsim.JacDacBoard
-        {
+    // , pxsim.JacDacBoard
+    {
         public id: string;
         public bus: EventBus;
         //public jacdacState: pxsim.JacDacState;
@@ -374,7 +374,7 @@ namespace pxsim {
             return {
                 width: screenWidth,
                 height: screenHeight,
-                left: (boundsWidth - screenWidth ) / 2,
+                left: (boundsWidth - screenWidth) / 2,
                 top: (boundsHeight - screenHeight) / 2,
                 area: screenWidth * screenHeight
             }
@@ -421,11 +421,19 @@ namespace pxsim {
                 this.onResize();
             }
             else {
-                const mask = this.palette.length - 1
-                for (let x = 0; x < this.state.width; x++) {
-                    for (let y = 0; y < this.state.height; y++) {
-                        this.context.fillStyle = this.palette[this.state.lastImage.data[x + y * this.state.width] & mask]
-                        this.context.fillRect(x * this.cellWidth, y * this.cellWidth, this.cellWidth, this.cellWidth);
+                if (this.cellWidth == 1) {
+                    if (this.state.width && this.state.height) {
+                        let img = this.context.getImageData(0, 0, this.state.width, this.state.height)
+                        new Uint32Array(img.data.buffer).set(this.state.screen)
+                        this.context.putImageData(img, 0, 0)
+                    }
+                } else {
+                    const mask = this.palette.length - 1
+                    for (let x = 0; x < this.state.width; x++) {
+                        for (let y = 0; y < this.state.height; y++) {
+                            this.context.fillStyle = this.palette[this.state.lastImage.data[x + y * this.state.width] & mask]
+                            this.context.fillRect(x * this.cellWidth, y * this.cellWidth, this.cellWidth, this.cellWidth);
+                        }
                     }
                 }
             }
