@@ -109,7 +109,7 @@ To create a `Buffer`, you can use the `control.createBuffer()` API.
 
 ### Channels
 
-The arcade "hardware" has five available music "channels" that are mixed to produce
+The arcade "hardware" has three available music "channels" that are mixed to produce
 the game audio. Using the `music.playInstructions()` API will automatically allocate
 a channel to play the instruction and that channel remains occupied until the sound play
 completes. Attempting to play too many sounds simultaneously will cause some sounds
