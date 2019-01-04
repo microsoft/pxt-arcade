@@ -8,9 +8,9 @@ Many hardware targets will work as a physical Arcade platform. These are typical
 
 ![Arcade hardware](/static/boards/brainpad.jpg)
 
-Arcade hardware targets are supported by their _hardware definition_ which is provided as aa [extension](https://makecode.com/extensions). The hardware definition specifies the base device characteristics and mappings for the screen, buttons, pins, and sound.
+Arcade hardware targets are supported by their _hardware definition_ which is provided as an [extension](https://makecode.com/extensions). The hardware definition specifies the base device characteristics and mappings for the screen, buttons, pins, and sound.
 
-The components of the extension are source files which specify device mappings and control behaviors that specific to the hardware target. The files and dependancies are all declared in a ``pxt.json`` file just like all MakeCode [extensions](https://makecode.com/extensions).
+The components of the extension are source files which specify device mappings and control behaviors that are specific to the hardware target. The files and dependancies are all declared in a ``pxt.json`` file just like all MakeCode [extensions](https://makecode.com/extensions).
 
 ```
 {
