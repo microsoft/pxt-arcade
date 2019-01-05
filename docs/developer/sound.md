@@ -75,13 +75,16 @@ triangle        | 1
 sawtooth        | 2
 sine            | 3
 metallic        | 4
+noise           | 5
 square (10%)    | 11
 square (20%)    | 12
 square (30%)    | 13
 square (40%)    | 14
 square (50%)    | 15
 
-The `metallic` tone contains a pseudo-random sample, which doesn't quite sound like white noise.
+The `metallic` tone contains a (very pseudo) random sample, which sounds metallic.
+
+The `noise` is an actual white noise.
 
 ## Sound Instructions
 
