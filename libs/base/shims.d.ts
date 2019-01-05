@@ -43,6 +43,12 @@ declare interface Buffer {
     shift(offset: int32, start?: int32, length?: int32): void;
 
     /**
+     * Convert a buffer to string assuming UTF8 encoding
+     */
+    //% shim=BufferMethods::toString
+    toString(): string;
+
+    /**
      * Convert a buffer to its hexadecimal representation.
      */
     //% shim=BufferMethods::toHex
@@ -72,6 +78,13 @@ declare namespace control {
      */
     //% shim=control::createBuffer
     function createBuffer(size: int32): Buffer;
+
+    /**
+     * Create a new buffer with UTF8-encoded string
+     * @param str the string to put in the buffer
+     */
+    //% shim=control::createBufferFromUTF8
+    function createBufferFromUTF8(str: string): Buffer;
 }
 declare namespace loops {
 
