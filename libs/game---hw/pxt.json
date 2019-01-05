@@ -1,0 +1,8 @@
+{
+    "name": "game",
+    "additionalFilePath": "../game",
+    "dependencies": {
+        "screen---st7735": "file:../screen---st7735",
+        "buttons": "file:../buttons"
+    }
+}

@@ -17,9 +17,9 @@
         "core---stm32": "file:../core---stm32",
         "screen---st7735": "file:../screen---st7735",
         "mixer---stm32": "file:../mixer---stm32",
-        "controller---hw": "file:../controller---hw",
         "buttons": "file:../buttons",
-        "game": "file:../game"
+        "game---hw": "file:../game---hw",
+        "jacdac-game": "file:../jacdac-game"
     },
     "public": true,
     "yotta": {

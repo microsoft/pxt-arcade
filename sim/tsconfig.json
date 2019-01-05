@@ -18,6 +18,7 @@
       "../node_modules/pxt-common-packages/libs/jacdac/sim/*.ts",
       "../node_modules/pxt-common-packages/libs/base/sim/control.ts",
       "../node_modules/pxt-common-packages/libs/base/sim/loops.ts",
-      "../node_modules/pxt-common-packages/libs/core/sim/edgeconnector.ts"
+      "../node_modules/pxt-common-packages/libs/core/sim/edgeconnector.ts",
+      "../node_modules/pxt-common-packages/libs/core/sim/pins.ts"
     ]
 }

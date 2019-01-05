@@ -1,7 +1,7 @@
 // Auto-generated. Do not edit.
 declare const enum DAL {
     // /libraries/codal-core/inc/JACDAC/JACDAC.h
-    JD_VERSION = 4,
+    JD_VERSION = 5,
     JD_SERIAL_MAX_BUFFERS = 10,
     JD_SERIAL_RECEIVING = 2,
     JD_SERIAL_TRANSMITTING = 4,
@@ -76,7 +76,6 @@ declare const enum DAL {
     JD_DEVICE_FLAGS_INITIALISED = 128,
     JD_DEVICE_FLAGS_INITIALISING = 64,
     JD_DEVICE_FLAGS_CP_SEEN = 32,
-    JD_DEVICE_FLAGS_BROADCAST_MAP = 16,
     JD_DEVICE_ERROR_MSK = 15,
     JD_LOGIC_DRIVER_MAX_FILTERS = 20,
     JD_LOGIC_DRIVER_TIMEOUT = 254,
