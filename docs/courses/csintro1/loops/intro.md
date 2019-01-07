@@ -43,6 +43,7 @@ https://youtu.be/Y2Y-n4p1QNI
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let sprite: Sprite = null
@@ -158,6 +159,7 @@ Motion and flips will both occur very quickly unless you include the ``||loops:p
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let boomerang: Sprite = null

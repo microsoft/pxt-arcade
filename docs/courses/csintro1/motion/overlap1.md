@@ -35,6 +35,7 @@ Sometimes there will be only a single sprite of a given ``||sprites:kind||`` (fo
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let head: Sprite = null
@@ -132,6 +133,7 @@ The ``||sprites:ghost on||`` setting for sprites, when turned on, makes the spri
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let head: Sprite = null

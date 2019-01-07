@@ -116,7 +116,8 @@ Inside of the loop, add ``||sprites.create(sprites.space.spaceAsteroid0, SpriteK
 
 ```typescript
 enum SpriteKind {
-    Asteroid
+    Asteroid,
+    Projectile
 }
 
 namespace asteroids {

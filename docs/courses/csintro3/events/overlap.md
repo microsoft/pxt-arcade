@@ -25,6 +25,7 @@ This event handler is a bit different than previous events, though. It accepts *
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 
@@ -67,6 +68,7 @@ In the previous courses, it was very common to set a ``||sprites:Sprite||`` to b
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 
@@ -106,6 +108,7 @@ enemy.setFlag(SpriteFlag.Ghost, true);
 ```typescript
 enum SpriteKind {
     Paddle,
+    Projectile,
     Ball
 }
 

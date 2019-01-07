@@ -172,6 +172,7 @@ For example, a comment for the ``asteroids`` namespace might look like the follo
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Asteroid
 }

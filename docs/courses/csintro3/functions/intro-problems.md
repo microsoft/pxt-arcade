@@ -50,7 +50,8 @@ The ``||functions:function||`` in the code snippet below places a pizza ``||spri
 
 ```typescript
 enum SpriteKind {
-    Pizza
+    Pizza,
+    Projectile
 }
 
 function makePizza() {

@@ -65,7 +65,8 @@ For example, in the previous course's [multiplayer lesson](/courses/csintro2/log
 
 ```typescript
 enum SpriteKind {
-    Star
+    Star,
+    Projectile
 }
 
 game.onUpdate(function () {
@@ -113,7 +114,8 @@ The ``||game:on game update||`` event is perfect for handling this behavior, as 
 
 ```typescript
 enum SpriteKind {
-    Asteroid
+    Asteroid,
+    Projectile
 }
 let mySprite: Sprite = sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Asteroid);
 mySprite.vx = 50;

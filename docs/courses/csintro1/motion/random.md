@@ -54,6 +54,7 @@ Games often have an element of luck and surprise to keep the player engaged. In 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -111,6 +112,7 @@ https://youtu.be/OgyWVwCJJIk
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Hat
 }

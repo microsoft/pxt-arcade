@@ -157,7 +157,8 @@ Ask the user for their name with ``||game:game.askForString||``, so that the gam
 
 ```typescript
 enum SpriteKind {
-    Asteroid
+    Asteroid,
+    Projectile
 }
 
 namespace asteroids {

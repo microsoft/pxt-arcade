@@ -25,6 +25,7 @@ Open the [coordinate walker program](https://makecode.com/_huXKRL3r24iC) or open
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {

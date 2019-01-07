@@ -56,7 +56,8 @@ This allows for ``||sprites:sprites||`` that are created regularly, without over
 
 ```typescript
 enum SpriteKind {
-    Star
+    Star,
+    Projectile
 }
 
 game.onUpdateInterval(250, function () {
@@ -86,7 +87,8 @@ The behavior of the ``||game:on game update interval||`` event might seem like a
 
 ```typescript
 enum SpriteKind {
-    Star
+    Star,
+    Projectile
 }
 
 game.onUpdate(function () {

@@ -54,6 +54,7 @@ In this task, you will pass a declared function as a parameter to an event. This
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 
@@ -121,6 +122,7 @@ In this task, you will change the code in task #1 to use an anonymous function. 
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 

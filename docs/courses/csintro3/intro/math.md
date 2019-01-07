@@ -168,7 +168,8 @@ Change how ``||variables:x||`` and ``||variables:y||`` are set so that ``||varia
 
 ```typescript
 enum SpriteKind {
-    Asteroid
+    Asteroid,
+    Projectile
 }
 
 namespace asteroids {

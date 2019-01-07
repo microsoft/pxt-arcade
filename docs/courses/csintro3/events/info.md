@@ -59,6 +59,7 @@ Notice that this is the same snippet from the examples in the [Overlap Events](/
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 

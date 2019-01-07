@@ -264,6 +264,7 @@ https://youtu.be/YHYBQ03ecOk
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let HomeOwner: Sprite = null

@@ -61,6 +61,7 @@ This function accepts an ``index`` of a color, and a **16 x 16** ``||images:Imag
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player);
@@ -166,6 +167,7 @@ If you do not want a sprite to be confined to the ``||scene:tile map||`` or bloc
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player);
@@ -236,6 +238,7 @@ Set the ``||variables:enemy||`` to have a ``||sprites:vy||`` of 10, so that it m
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Asteroid
 }

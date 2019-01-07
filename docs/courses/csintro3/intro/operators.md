@@ -162,7 +162,8 @@ We've decided to make the game into a space adventure, so the player should have
 
 ```typescript
 enum SpriteKind {
-    Asteroid
+    Asteroid,
+    Projectile
 }
 
 namespace asteroids {

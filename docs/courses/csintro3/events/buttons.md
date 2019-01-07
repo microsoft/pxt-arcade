@@ -68,6 +68,7 @@ In previous lessons, ``||controller:controller.moveSprite||`` was introduced to 
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player);
@@ -92,6 +93,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let topSprite: Sprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player);

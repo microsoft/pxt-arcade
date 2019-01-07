@@ -98,6 +98,7 @@ For each example below,
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -147,6 +148,7 @@ generate()
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -202,6 +204,7 @@ generate()
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null

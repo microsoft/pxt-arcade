@@ -19,6 +19,7 @@ The ``||corgio:Corgio||`` extension remains easy to use in JavaScript. For examp
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 
@@ -28,6 +29,7 @@ let myCorg: Corgio = corgio.create(SpriteKind.Player);
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 
@@ -54,6 +56,7 @@ For example, ``||corgio:myCorg.horizontalMovement()||`` can be used to make it s
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 
@@ -64,6 +67,7 @@ myCorg.horizontalMovement();
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 
@@ -92,6 +96,7 @@ Another feature of the ``||corgio:Corgio||`` is to maintain a group of words the
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 

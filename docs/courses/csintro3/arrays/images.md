@@ -19,6 +19,7 @@ Using ``||arrays:arrays||``, these ``||images:images||`` can be stored in a sing
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 
@@ -101,6 +102,7 @@ The remainder operator is often referred to as the ``mod`` operator, short for m
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 
@@ -149,6 +151,7 @@ sprites.onCreated(0, null);
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Asteroid
 }

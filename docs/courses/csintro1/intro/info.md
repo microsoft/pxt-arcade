@@ -105,6 +105,7 @@ When a nurse needs to take a patient's heart rate with their other vital signs, 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -145,6 +146,7 @@ To join more than just two strings and numbers, press the **+** to add more loca
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null

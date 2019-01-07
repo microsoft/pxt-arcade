@@ -18,7 +18,8 @@ The point of the case study is to learn how the code works together while buildi
 
 ```typescript
 enum SpriteKind {
-    Asteroid
+    Asteroid,
+    Projectile
 }
 
 namespace asteroids {
@@ -49,6 +50,7 @@ namespace asteroids {
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Asteroid,
     Laser
@@ -96,6 +98,7 @@ player.y = screen.height - 20;
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     PowerUp,
     Asteroid,

@@ -26,6 +26,7 @@ The blocks needed to create sprites are found in the ``||sprites:Sprites||`` men
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -61,6 +62,7 @@ Look at the blocks, and note that a name for the sprite (``||variables:mySprite|
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null

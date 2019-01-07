@@ -245,7 +245,8 @@ Before adding it to ``||variables:name||``, check if the player has entered your
 
 ```typescript
 enum SpriteKind {
-    Asteroid
+    Asteroid,
+    Projectile
 }
 
 namespace asteroids {

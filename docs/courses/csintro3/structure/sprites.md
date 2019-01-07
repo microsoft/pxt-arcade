@@ -58,7 +58,8 @@ To start personalizing your own ``||sprites:sprites||``, we will need to learn a
 
 ```typescript
 enum SpriteKind {
-    Player
+    Player,
+    Projectile
 }
 
 let player = sprites.create(img`
@@ -112,6 +113,7 @@ The image editor can be used to easily create these ``tagged templates``.
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Square
 }
 
@@ -146,7 +148,8 @@ These properties and functions can be easily browsed using the autocomplete feat
 
 ```typescript
 enum SpriteKind {
-    Square
+    Square,
+    Projectile
 }
 
 let player = sprites.create(img`
@@ -200,6 +203,7 @@ Earlier on in the case study, the variables ``||variables:x||`` and ``||variable
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Asteroid
 }
 

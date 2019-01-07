@@ -40,6 +40,7 @@ Having sprites bump rather than pass over each other is useful game behavior for
 ```blocks
 enum SpriteKind {
     Helicopter,
+    Projectile,
     Cloud,
     LandingPad,
     Player,

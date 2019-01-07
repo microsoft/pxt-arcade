@@ -23,6 +23,7 @@ This will help focus on the sections of the code that are relevant to each task,
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Asteroid
 }
@@ -114,6 +115,7 @@ namespace enemy {
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Asteroid,
     PowerUp,

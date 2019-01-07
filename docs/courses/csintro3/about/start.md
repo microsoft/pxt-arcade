@@ -6,7 +6,7 @@ If you are learning to code for the first time, it is suggested that you start w
 
 If you have completed the first two courses in this series, then you are in the right place. The [Introduction section](/courses/csintro3/intro) is the first section of this course.
 
-If you have experience with other MakeCode editors or programming in general, the ``Game Design Concepts`` tutorials on the [home page](/) describe a number of concepts and blocks that are unique to game development.
+If you have experience with other MakeCode editors or programming in general, the [Game Design Concepts](/concepts) tutorials describe a number of concepts and blocks that are unique to game development.
 
 The following tutorials may also be useful in learning about concepts that you might not have seen elsewhere:
 

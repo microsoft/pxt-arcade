@@ -25,6 +25,7 @@ Many of the ``||sprites:sprites||`` in the gallery form a sequence: slightly dif
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let duck: Sprite = sprites.create(sprites.duck.duck1, SpriteKind.Player);
@@ -66,6 +67,7 @@ Review the code in the snippet below.
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 

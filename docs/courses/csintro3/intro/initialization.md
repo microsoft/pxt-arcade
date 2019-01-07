@@ -157,7 +157,8 @@ The ``||game:game.splash||`` function is commonly used to give introductions to 
 
 ```typescript
 enum SpriteKind {
-    Asteroid
+    Asteroid,
+    Projectile
 }
 
 namespace asteroids {

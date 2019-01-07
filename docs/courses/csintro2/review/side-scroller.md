@@ -15,6 +15,7 @@ Make sure the tilemap you draw always has at least **two** clear tiles next to e
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Car
 }

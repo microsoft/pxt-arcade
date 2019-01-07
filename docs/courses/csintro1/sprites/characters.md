@@ -15,6 +15,7 @@ The characters are all represented as sprites, allowing them to be positioned on
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let dorothy: Sprite = null

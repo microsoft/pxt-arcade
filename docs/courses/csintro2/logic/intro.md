@@ -61,6 +61,7 @@ https://youtu.be/s7sFOn7xXC0
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -161,6 +162,7 @@ https://youtu.be/EhRPChFc1Us
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Cherry
 }
@@ -240,6 +242,7 @@ https://youtu.be/BDCHtIFuEhw
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let projectile: Sprite = null
@@ -332,6 +335,7 @@ When the player is on their final life, the image of the sprite changes and the 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null

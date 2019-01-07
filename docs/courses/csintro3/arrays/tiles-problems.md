@@ -116,7 +116,8 @@ To implement this behavior, start with the code snippet below.
 
 ```typescript
 enum SpriteKind {
-    Flame
+    Flame,
+    Projectile
 }
 
 let fire: Image = img`

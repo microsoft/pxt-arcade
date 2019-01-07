@@ -18,6 +18,7 @@ Keeping sprites in an array can be useful even when there are only a few of them
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let player: Sprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player);
@@ -34,6 +35,7 @@ enemy3.x = Math.randomRange(10, screen.width - 10);
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let player: Sprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player);
@@ -61,7 +63,8 @@ For example, consider the following snippet:
 
 ```typescript
 enum SpriteKind {
-    Player
+    Player,
+    Projectile
 }
 
 let characters: Sprite[] = [];
@@ -97,7 +100,8 @@ However, both of these approaches will have a similar problem: they have to be d
 
 ```typescript
 enum SpriteKind {
-    Player
+    Player,
+    Projectile
 }
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -144,6 +148,7 @@ In the next example, the player will control a piece of pizza, with a hungry adv
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 

@@ -168,7 +168,8 @@ Make sure to give each of these values the proper type.
 
 ```typescript
 enum SpriteKind {
-    Asteroid
+    Asteroid,
+    Projectile
 }
 
 namespace asteroids {

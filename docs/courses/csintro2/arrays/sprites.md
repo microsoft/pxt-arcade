@@ -29,6 +29,7 @@ A sprite array is useful when implementing the same behavior for several sprites
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Asteroid
 }
@@ -113,6 +114,7 @@ The ``||sprites:array of sprites of kind||`` block (located in the ``||arrays:ar
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Asteroid
 }
@@ -153,6 +155,7 @@ c a 8 a a c c c c a a f f f 8 a
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Firework
 }
@@ -205,6 +208,7 @@ We can implement this behavior easily using ``||logic:logic||`` blocks in an ``|
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let enemy: Sprite = null

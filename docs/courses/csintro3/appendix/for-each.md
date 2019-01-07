@@ -32,6 +32,7 @@ This is done in order from the first element (index 0) to the last element in th
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 
@@ -103,6 +104,7 @@ The snippet above will first filter out any elements from the array ``||variable
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 
@@ -143,6 +145,7 @@ The **arrow function** (``=>``) is very useful when modifying code in cases like
 ```typescript
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 

@@ -29,6 +29,7 @@ The code snippet below can be used to create fireworks that fly up the screen. H
 ```typescript
 enum SpriteKind {
     Firework,
+    Projectile,
     Particle
 }
 

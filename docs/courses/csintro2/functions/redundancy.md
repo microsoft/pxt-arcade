@@ -21,6 +21,7 @@ https://youtu.be/NsENrceOCDw
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -78,6 +79,7 @@ In this case, the ``||loops:pause||``, ``||sprites:movement||``, and ``||music:t
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -132,6 +134,7 @@ https://youtu.be/-50-av1tblc
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let projectile: Sprite = null
@@ -220,6 +223,7 @@ https://youtu.be/m4AamaGjDoE
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let projectile: Sprite = null
