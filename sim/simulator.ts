@@ -72,8 +72,8 @@ namespace pxsim {
      */
     export class Board extends pxsim.BaseBoard
         implements pxsim.MusicBoard
-        // , pxsim.JacDacBoard 
-        {
+    // , pxsim.JacDacBoard
+    {
         public id: string;
         public bus: EventBus;
         //public jacdacState: pxsim.JacDacState;
@@ -121,6 +121,17 @@ namespace pxsim {
             }
         }
 
+        /*
+        Screenshot instructions:
+        0. run your program; press any button (A/B/left/...)
+        1. run in JS console: E.sim.driver.postMessage({type:"rawscreenshot"})
+        2. click on the data URL
+        3. do "Save As"
+        4. repeat for all screenshots you want
+        5. drop files at https://tinypng.com/
+        6. download compressed files in a folder
+        7. run for f in * ; do echo $f; node -p '"data:image/png;base64," + require("fs").readFileSync("'$f'").toString("base64")' ; done
+        */
         private receiveScreenshot(msg: SimulatorMessage) {
             if (msg.type == "screenshot")
                 this.screenshotAsync((msg as SimulatorScreenshotMessage).title || pxsim.title || "...")
@@ -128,6 +139,8 @@ namespace pxsim {
                         Runtime.postMessage(
                             { type: "screenshot", data: img } as SimulatorScreenshotMessage)
                     })
+            else if (msg.type == "rawscreenshot")
+                console.log(this.rawScreenshot())
         }
 
         private screenshotAsync(title: string) {
@@ -143,10 +156,9 @@ namespace pxsim {
             ctx.fillStyle = 'white'
             ctx.fillRect(0, 0, work.width, work.height)
             let id = ctx.getImageData(border, border, w, h)
-            if (this.lastScreenshot)
-                new Uint32Array(id.data.buffer).set(this.lastScreenshot)
-            else
-                new Uint32Array(id.data.buffer).fill(0xff000000)
+            if (!this.lastScreenshot)
+                this.takeScreenshot()
+            new Uint32Array(id.data.buffer).set(this.lastScreenshot)
             ctx.putImageData(id, border, border)
             let lblTop = 2 * border + h + 4
             ctx.fillStyle = 'black'
@@ -157,6 +169,19 @@ namespace pxsim {
                     ctx.drawImage(openme, border + w + 3, border)
                     return work.toDataURL("image/png")
                 })
+        }
+
+        private rawScreenshot() {
+            let work = document.createElement("canvas")
+            work.width = this.screenState.width
+            work.height = this.screenState.height
+            let ctx = work.getContext("2d")
+            let id = ctx.getImageData(0, 0, work.width, work.height)
+            if (!this.lastScreenshot)
+                this.takeScreenshot()
+            new Uint32Array(id.data.buffer).set(this.lastScreenshot)
+            ctx.putImageData(id, 0, 0)
+            return work.toDataURL("image/png")
         }
 
         tryScreenshot() {
@@ -208,10 +233,21 @@ namespace pxsim {
 
         layout() {
             const minControlWidth = 100;
-            const menuResetWidth = minControlWidth * 0.7;
+            const maxThinButtonWidth = minControlWidth * 0.7;
 
             const maxWidth = document.body.clientWidth;
             const maxHeight = document.body.clientHeight;
+
+            if (maxWidth < 200 || maxHeight < 200) {
+                // Show no controls, we can barely fit the screen
+                this.view.bevelEdges = false;
+                this.controls.setVisible(false);
+                this.view.centerInBox(0, 0, this.view.getFit(maxWidth, maxHeight, 20));
+                return;
+            }
+
+            this.view.bevelEdges = !isIE();
+            this.controls.setVisible(true);
 
             const landscapeWidth = maxWidth - minControlWidth * 2;
             const portraitHeight = maxHeight - minControlWidth;
@@ -219,7 +255,7 @@ namespace pxsim {
             const portraitMetrics = this.view.getFit(maxWidth, portraitHeight, 20);
             const landscapeMetrics = this.view.getFit(landscapeWidth, maxHeight, 20);
 
-            if (portraitMetrics.area > landscapeMetrics.area) {
+            if (portraitMetrics.area >= landscapeMetrics.area) {
                 // Place controls below
                 this.view.centerInBox(0, 0, portraitMetrics);
                 const bb = this.view.boundingBox();
@@ -235,13 +271,17 @@ namespace pxsim {
                 this.controls.moveDPad(0, controlsTop, controlsHeight);
                 this.controls.moveButtons(maxWidth - controlsHeight, controlsTop, controlsHeight);
 
-                const spacing = 30;
-                const menuResetTop = bb.bottom + 20;
+                const menuResetTop = bb.bottom + 10;
+
+                // 0.1575 is the ratio of padding / height in the D-PAD and A-B SVGs.
+                const thinButtonWidth = Math.min(maxThinButtonWidth, (controlsTop - menuResetTop + controlsHeight * 0.1575) / MENU_RESET_ASPECT_RATIO);
+                const spacing = thinButtonWidth / 4;
+
                 const midpoint = maxWidth / 2;
 
                 // Centered between the d-pad and buttons
-                this.controls.moveReset(midpoint - (spacing / 2) - menuResetWidth, menuResetTop, menuResetWidth);
-                this.controls.moveMenu(midpoint + (spacing / 2), menuResetTop, menuResetWidth);
+                this.controls.moveReset(midpoint - (spacing / 2) - thinButtonWidth, menuResetTop, thinButtonWidth);
+                this.controls.moveMenu(midpoint + (spacing / 2), menuResetTop, thinButtonWidth);
             }
             else {
                 // Place controls on sides
@@ -251,8 +291,8 @@ namespace pxsim {
                 this.controls.moveDPad(0, maxHeight - bb.left, bb.left);
                 this.controls.moveButtons(maxWidth - bb.left, maxHeight - bb.left, bb.left);
 
-                this.controls.moveReset(bb.left - menuResetWidth - 20, bb.top, menuResetWidth);
-                this.controls.moveMenu(bb.right + 20, bb.top, menuResetWidth)
+                this.controls.moveReset(bb.left - maxThinButtonWidth - 20, bb.top, maxThinButtonWidth);
+                this.controls.moveMenu(bb.right + 20, bb.top, maxThinButtonWidth)
             }
         }
     }
@@ -276,6 +316,8 @@ namespace pxsim {
         private cachedWidth: number;
         private cachedHeight: number;
         private cachedPalette: Uint32Array;
+
+        bevelEdges = true;
 
         private ox: number;
         private oy: number;
@@ -357,13 +399,18 @@ namespace pxsim {
             return {
                 width: screenWidth,
                 height: screenHeight,
-                left: (boundsWidth - screenWidth ) / 2,
+                left: (boundsWidth - screenWidth) / 2,
                 top: (boundsHeight - screenHeight) / 2,
                 area: screenWidth * screenHeight
             }
         }
 
         protected calculateClipPath(width: number, height: number, borderWidth: number) {
+            if (!this.bevelEdges) {
+                this.canvas.style.clipPath = null;
+                return;
+            }
+
             let points = [];
             const wedgeOffset = borderWidth * 2 / 3;
 
@@ -399,10 +446,19 @@ namespace pxsim {
                 this.onResize();
             }
             else {
-                for (let x = 0; x < this.state.width; x++) {
-                    for (let y = 0; y < this.state.height; y++) {
-                        this.context.fillStyle = this.palette[this.state.lastImage.data[x + y * this.state.width] & 0xff]
-                        this.context.fillRect(x * this.cellWidth, y * this.cellWidth, this.cellWidth, this.cellWidth);
+                if (this.cellWidth == 1) {
+                    if (this.state.width && this.state.height) {
+                        let img = this.context.getImageData(0, 0, this.state.width, this.state.height)
+                        new Uint32Array(img.data.buffer).set(this.state.screen)
+                        this.context.putImageData(img, 0, 0)
+                    }
+                } else {
+                    const mask = this.palette.length - 1
+                    for (let x = 0; x < this.state.width; x++) {
+                        for (let y = 0; y < this.state.height; y++) {
+                            this.context.fillStyle = this.palette[this.state.lastImage.data[x + y * this.state.width] & mask]
+                            this.context.fillRect(x * this.cellWidth, y * this.cellWidth, this.cellWidth, this.cellWidth);
+                        }
                     }
                 }
             }

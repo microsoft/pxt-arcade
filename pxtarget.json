@@ -23,7 +23,6 @@
         "libs/hw",
         "libs/hw---rpi",
         "libs/hw---stm32f401",
-        "libs/hw---stm32f103",
         "libs/hw---samd51",
         "libs/screen",
         "libs/screen---st7735",
@@ -44,7 +43,6 @@
     ],
     "compile": {
         "useUF2": true,
-        "webUSB": false,
         "deployDrives": ".*",
         "deployFileMarker": "INFO_UF2.TXT",
         "driveName": "ARCADE",
@@ -53,6 +51,7 @@
         "nativeType": "thumb",
         "gc": true,
         "upgrades": [],
+        "webUSB": true,
         "patches": {
             "0.0.0 - 0.1.1": [{
                 "type": "api",
@@ -70,7 +69,7 @@
         "dockerImage": "pext/yotta:latest",
         "codalTarget": {
             "branches": {
-                "https://github.com/lancaster-university/codal-core": "f2b9522ed0260bf1c5706d9652d7a23d76086263"
+                "https://github.com/lancaster-university/codal-core": "36dafe77219239c1397ece44ed37a7f6e6f50d5a"
             }
         }
     },
@@ -79,13 +78,14 @@
             "compile": {
                 "hasHex": true,
                 "openocdScript": "source [find interface/stlink-v2.cfg]; source [find target/stm32f4x.cfg]",
+                "uf2Family": "0x57755a57",
                 "vtableShift": 4
             },
             "compileService": {
                 "codalTarget": {
                     "name": "codal-big-brainpad",
                     "url": "https://github.com/lancaster-university/codal-big-brainpad",
-                    "branch": "v1.0.16",
+                    "branch": "v1.0.16-newusb.2",
                     "type": "git"
                 },
                 "codalBinary": "STM32",
@@ -97,6 +97,8 @@
             "compile": {
                 "hasHex": true,
                 "openocdScript": "source [find interface/stlink-v2.cfg]; source [find target/stm32f1x.cfg]",
+                "uf2Family": "0x5ee21072",
+                "webUSB": false,
                 "vtableShift": 4
             },
             "compileService": {
@@ -117,6 +119,8 @@
                 "openocdScriptAlt": "source [find interface/cmsis-dap.cfg]; set CHIPNAME at91samd51g19; source [find target/at91samdXX.cfg]",
                 "openocdScript": "source [find interface/stlink-v2.cfg]; set CPUTAPID 0x2ba01477; set CHIPNAME at91samd51g19; source [find target/at91samdXX.cfg]",
                 "ramSize": 196608,
+                "webUSB": false,
+                "uf2Family": "0x55114460",
                 "vtableShift": 4
             },
             "compileService": {
@@ -138,6 +142,7 @@
                 "runtimeIsARM": true,
                 "vtableShift": 4,
                 "flashCodeAlign": 256,
+                "webUSB": false,
                 "stackAlign": 2
             },
             "compileService": {
@@ -197,8 +202,7 @@
         "betaUrl": "https://github.com/Microsoft/pxt-arcade",
         "githubUrl": "https://github.com/Microsoft/pxt-arcade",
         "boardName": "Arcade",
-        "docMenu": [
-            {
+        "docMenu": [{
                 "name": "About",
                 "path": "/about"
             },

@@ -134,6 +134,13 @@ namespace pxsim {
             }
         }
 
+        setVisible(visible: boolean) {
+            this.dPadRoot.setVisible(visible)
+            this.buttonsRoot.setVisible(visible);
+            this.menu.setVisible(visible);
+            this.reset.setVisible(visible);
+        }
+
         moveDPad(left: number, top: number, width: number) {
             this.dPadRoot.el.style.position = "absolute";
             this.dPadRoot.el.style.left = left + "px";

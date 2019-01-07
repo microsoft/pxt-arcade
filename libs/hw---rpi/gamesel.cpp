@@ -34,7 +34,7 @@ RefCollection *programList() {
 //%
 void runProgram(String prog) {
     char *p;
-    asprintf(&p, "%s/%s.elf", PROGDIR, prog->data);
+    asprintf(&p, "%s/%s.elf", PROGDIR, prog->getUTF8Data());
     initialArgv = new char*[3];
     initialArgv[0] = p;
     initialArgv[1] = (char*)"--run";
