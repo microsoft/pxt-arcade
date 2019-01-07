@@ -1,12 +1,8 @@
 # Hardware
 
-![Gaming on Arcade hardware](/static/boards/brainpad-play.jpg)
-
-Many hardware targets will work as a physical Arcade platform. These are typically SoC based systems that run some type of Linux core.
+Many hardware targets will work as a physical Arcade platform. These are typically SoC based systems that run a small core operating system.
 
 ## Hardware definitions
-
-![Arcade hardware](/static/boards/brainpad.jpg)
 
 Arcade hardware targets are supported by their _hardware definition_ which is provided as an [extension](https://makecode.com/extensions). The hardware definition specifies the base device characteristics and mappings for the screen, buttons, pins, and sound.
 
