@@ -10,12 +10,11 @@
         "device.d.ts"
     ],
     "card": {
-        "name": "Raspberry Pi Zero",
-        "description": "Custom piCore Linux image running on a Pi. Play your games on a BIG screen!",
-        "learnMoreUrl": "https://arcade.makecode.com/rpi",
-        "buyUrl": "https://www.adafruit.com/product/3464",
+        "name": "Pi0",
+        "description": "Raspberry Pi Zero (custom piCore Linux image)",
+        "learnMoreUrl": "https://arcade.makecode.com/hardware#pi0",
         "cardType": "hw",
-        "imageUrl": "/static/boards/rpi.jpg"
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAAB4BAMAAACHjORcAAAAD1BMVEUAAAD/k8T/9gn/gTX///8CbOdcAAAB3klEQVRo3u1aQW7EIAyMlBcg+QXNB1D8AiT//01lsONuKZUQzWGjethmhMdMsAu9dLd0Mx5iKIlKYzwBEWUy1iRHr4mI65saqRVslan0LoQUQ695vhuKFCyAABY3EDcSDNJ5p9m6zlALF11oBiQ287lmpE6jHyUT3qBvFHFDHdZPMHYiauCataoztL3Z+23hNRSqK3fa2LCVYz1MtlvEXnqIsMdfNYs/6WC/t2Hg7/i4Gf/WkG0ABx/nwWebg9cMmc/LUJk9dovhwWbIq4YHytTFYAzEeL2Hx4mnglsfEVvuIVArvPi9js1TwdubYedcN8XKDN4q58p7hg5+zZkAwyiDMzxgaMNUz6nPmR1qMhj5A0PPYZ4wZIx9z+BaHAJu4i/0nAmgR7ACaw+zl6lgz4G2jFqhc+Am7Hf3cuIMdudMjwx4cOXmDZFmhzqDYTS4cvMl4+1uyMrDKzffQ/5arL1fuXIO/1MFI+y2+gyvXKXlX2JcuUAgEAgEAoFAIBAIBAKBQOA7HvAf8F8VfMPDQfVHOmnCUIp/6ipKBVZF6pSoeqqUXNIpEsaGWEJ42lqSFiRCvCSSTrIp9AlDfFpxlJphpV7yKf1espAVIlfhMGxx74YmeMlIeNgXJ+42/ASw+1fGCliG7AAAAABJRU5ErkJggg=="
     },
     "compileServiceVariant": "rpi",
     "dependencies": {

@@ -121,6 +121,17 @@ namespace pxsim {
             }
         }
 
+        /*
+        Screenshot instructions:
+        0. run your program; press any button (A/B/left/...)
+        1. run in JS console: E.sim.driver.postMessage({type:"rawscreenshot"})
+        2. click on the data URL
+        3. do "Save As"
+        4. repeat for all screenshots you want
+        5. drop files at https://tinypng.com/
+        6. download compressed files in a folder
+        7. run for f in * ; do echo $f; node -p '"data:image/png;base64," + require("fs").readFileSync("'$f'").toString("base64")' ; done
+        */
         private receiveScreenshot(msg: SimulatorMessage) {
             if (msg.type == "screenshot")
                 this.screenshotAsync((msg as SimulatorScreenshotMessage).title || pxsim.title || "...")
@@ -128,6 +139,8 @@ namespace pxsim {
                         Runtime.postMessage(
                             { type: "screenshot", data: img } as SimulatorScreenshotMessage)
                     })
+            else if (msg.type == "rawscreenshot")
+                console.log(this.rawScreenshot())
         }
 
         private screenshotAsync(title: string) {
@@ -143,10 +156,9 @@ namespace pxsim {
             ctx.fillStyle = 'white'
             ctx.fillRect(0, 0, work.width, work.height)
             let id = ctx.getImageData(border, border, w, h)
-            if (this.lastScreenshot)
-                new Uint32Array(id.data.buffer).set(this.lastScreenshot)
-            else
-                new Uint32Array(id.data.buffer).fill(0xff000000)
+            if (!this.lastScreenshot)
+                this.takeScreenshot()
+            new Uint32Array(id.data.buffer).set(this.lastScreenshot)
             ctx.putImageData(id, border, border)
             let lblTop = 2 * border + h + 4
             ctx.fillStyle = 'black'
@@ -157,6 +169,19 @@ namespace pxsim {
                     ctx.drawImage(openme, border + w + 3, border)
                     return work.toDataURL("image/png")
                 })
+        }
+
+        private rawScreenshot() {
+            let work = document.createElement("canvas")
+            work.width = this.screenState.width
+            work.height = this.screenState.height
+            let ctx = work.getContext("2d")
+            let id = ctx.getImageData(0, 0, work.width, work.height)
+            if (!this.lastScreenshot)
+                this.takeScreenshot()
+            new Uint32Array(id.data.buffer).set(this.lastScreenshot)
+            ctx.putImageData(id, 0, 0)
+            return work.toDataURL("image/png")
         }
 
         tryScreenshot() {
