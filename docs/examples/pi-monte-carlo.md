@@ -67,12 +67,13 @@ let cirImage: Image = null
 let mCircle: Sprite = null
 let mSquare: Sprite = null
 
-let startMonteCarlo = false
 let circleDots = 0
 let squareDots = 0
 let yy = 0
 let xx = 0
 let j = 0
+let delay = 0
+let simulate = false
 
 // set the radius and side length for the shapes
 const r = scene.screenHeight() / 4
@@ -86,10 +87,65 @@ const r2 = 5000
 // scale the actual radius from the virtual radius
 const scale = (r + 1) / r2
 
+sqImage = image.create(l, l)
+sqImage.fill(0)
+sqImage.drawRect(0, 0, l, l, 1)
+cirImage = image.create(l, l)
+cirImage.fill(0)
+
+game.splash("Approximate Pi", "Monte Carlo Method")
+
+mSquare = sprites.create(sqImage, SpriteKind.Square)
+mSquare.setFlag(SpriteFlag.AutoDestroy, true)
+drawCircle()
+mCircle = sprites.create(cirImage, SpriteKind.Circle)
+
+info.onLifeZero(function () {
+    info.setScore(circleDots)
+    game.showLongText("Pi: " + 4 * circleDots / squareDots, DialogLayout.Bottom)
+    mCircle.say("Bye..")
+    mCircle.vx = 1000
+    mSquare.say("..we have Pi")
+    mSquare.ax = 50
+})
+
+sprites.onDestroyed(SpriteKind.Square, function (sprite: Sprite) {
+    game.reset()
+})
+
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    game.showLongText("Pi: " + 4 * circleDots / squareDots + " using " + circleDots + " dots", DialogLayout.Bottom)
+})
+
+function drawCircle() {
+    // draw a circle outline using random dots!
+    for (let i = 0; i < dots; i++) {
+        xx = Math.randomRange(0, 2 * r) - r
+        yy = Math.randomRange(0, 2 * r) - r
+        // test if the point will draw the circle
+        if ((xx * xx + yy * yy >= r ** 2) && (xx * xx + yy * yy < (r + 1) ** 2)) {
+            cirImage.setPixel(xx + r, yy + r, 1)
+        }
+    }
+}
+
+game.onUpdateInterval(100, function () {
+    if (delay > 10) { // start simulation
+        simulate = true
+    }
+    if (delay > 20) { // slide shape apart
+        if (mCircle.x < scene.screenWidth() - 3 * r / 2) {
+            mSquare.x += -1
+            mCircle.x += 1
+        }
+    }
+    delay += 1
+})
+
 forever(function () {
     // A simple Monte Carlo simulation to approximate Pi
     //
-    while (j < dots && startMonteCarlo) {
+    while (j < dots && simulate) {
         // generate a point within the square
         xx = Math.randomRange(0, 2 * r2) - r2
         yy = Math.randomRange(0, 2 * r2) - r2
@@ -120,59 +176,4 @@ forever(function () {
         }
     }
 })
-
-sqImage = image.create(l, l)
-sqImage.fill(0)
-sqImage.drawRect(0, 0, l, l, 1)
-cirImage = image.create(l, l)
-cirImage.fill(0)
-
-game.splash("Approximate Pi", "Monte Carlo Method")
-
-mSquare = sprites.create(sqImage, SpriteKind.Square)
-mSquare.setFlag(SpriteFlag.AutoDestroy, true)
-drawCircle()
-mCircle = sprites.create(cirImage, SpriteKind.Circle)
-
-// wait for 1 second before starting the approximation
-pause(1000)
-startMonteCarlo = true
-// wait 2 seconds before sliding the shapes apart
-pause(2000)
-
-// slide the shapes apart on the screen
-while (mCircle.x < scene.screenWidth() - 3 * r / 2) {
-    mSquare.x += -1
-    mCircle.x += 1
-    pause(100)
-}
-
-info.onLifeZero(function () {
-    info.setScore(circleDots)
-    game.showLongText("Pi: " + 4 * circleDots / squareDots, DialogLayout.Bottom)
-    mCircle.say("Bye..")
-    mCircle.vx = 1000
-    mSquare.say("..we have Pi")
-    mSquare.ax = 50
-})
-
-sprites.onDestroyed(SpriteKind.Square, function (sprite: Sprite) {
-    game.reset()
-})
-
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    game.showLongText("Pi: " + 4 * circleDots / squareDots + " using " + circleDots + " dots", DialogLayout.Bottom)
-})
-
-function drawCircle() {
-    // draw a circle outline using random dots!
-    for (let i = 0; i < dots; i++) {
-        xx = Math.randomRange(0, 2 * r) - r
-        yy = Math.randomRange(0, 2 * r) - r
-        // test if the point will draw the circle
-        if ((xx * xx + yy * yy >= r ** 2) && (xx * xx + yy * yy < (r + 1) ** 2)) {
-            cirImage.setPixel(xx + r, yy + r, 1)
-        }
-    }
-}
 ```
