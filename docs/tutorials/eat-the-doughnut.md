@@ -453,7 +453,6 @@ enum SpriteKind {
     Food,
     Projectile
 }
-let doughnut: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeScoreBy(1)
 })
