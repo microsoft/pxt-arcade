@@ -13,6 +13,7 @@ In this tutorial, you will build a fairly simple game, with the goal of eating a
 Find ``||scene:set background color to||`` in ``||scene:Scene||``. Drag it into the ``||loops:on start||``, and then click on the grey box and select a new background color.
 
 ```blocks
+// @highlight
 scene.setBackgroundColor(7)
 ```
 
@@ -29,6 +30,7 @@ enum SpriteKind {
 }
 let mySprite: Sprite = null
 scene.setBackgroundColor(7)
+// @highlight
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -86,6 +88,7 @@ mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
+// @highlight
 controller.moveSprite(mySprite)
 ```
 
@@ -122,6 +125,7 @@ mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
 controller.moveSprite(mySprite)
+// @highlight
 doughnut = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -148,52 +152,7 @@ Click on the grey box for ``||variables:doughnut||``, and then select the Galler
 
 The Gallery has a lot of other images in it; feel free to look around and choose different image if one looks better to you!
 
-```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let doughnut: Sprite = null
-let mySprite: Sprite = null
-scene.setBackgroundColor(7)
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. 3 3 . . . . . . . . . . 3 . . 
-. . 3 3 . . . . . . . . 3 3 . . 
-. . . 3 3 . . . . . . 3 3 . . . 
-. . . . 3 3 3 3 3 3 3 3 . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-doughnut = sprites.create(img`
-. . . . . . b b b b a a . . . . 
-. . . . b b d d d 3 3 3 a a . . 
-. . . b d d d 3 3 3 3 3 3 a a . 
-. . b d d 3 3 3 3 3 3 3 3 3 a . 
-. b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
-. b 3 3 3 3 3 a a 3 3 3 3 3 a b 
-b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
-b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
-b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
-a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
-a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
-a a 3 3 3 d d d a a 4 4 4 e e . 
-. e a a a a a a 4 4 4 4 e e . . 
-. . e e b b 4 4 4 4 b e e . . . 
-. . . e e e e e e e e . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-```
+![Image editor](/static/tutorials/eat-the-doughnut/set-position.gif)
 
 ## Step 7 @fullscreen
 
@@ -244,6 +203,7 @@ a a 3 3 3 d d d a a 4 4 4 e e .
 . . . e e e e e e e e . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
+// @highlight
 doughnut.setPosition(0, 0)
 ```
 
@@ -252,53 +212,7 @@ doughnut.setPosition(0, 0)
 Select ``||sprites:x||`` and ``||sprites:y||`` positions for the ``||variables:doughnut||`` in ``||sprites:set doughnut position to||``.
 Click on the ``x`` and ``y`` then use the picker to help with the coordinates.
 
-```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let doughnut: Sprite = null
-let mySprite: Sprite = null
-scene.setBackgroundColor(7)
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. 3 3 . . . . . . . . . . 3 . . 
-. . 3 3 . . . . . . . . 3 3 . . 
-. . . 3 3 . . . . . . 3 3 . . . 
-. . . . 3 3 3 3 3 3 3 3 . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-doughnut = sprites.create(img`
-. . . . . . b b b b a a . . . . 
-. . . . b b d d d 3 3 3 a a . . 
-. . . b d d d 3 3 3 3 3 3 a a . 
-. . b d d 3 3 3 3 3 3 3 3 3 a . 
-. b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
-. b 3 3 3 3 3 a a 3 3 3 3 3 a b 
-b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
-b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
-b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
-a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
-a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
-a a 3 3 3 d d d a a 4 4 4 e e . 
-. e a a a a a a 4 4 4 4 e e . . 
-. . e e b b 4 4 4 4 b e e . . . 
-. . . e e e e e e e e . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-doughnut.setPosition(140, 100)
-```
+
 
 ## Step 9 @fullscreen
 
@@ -352,6 +266,7 @@ a a 3 3 3 d d d a a 4 4 4 e e .
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
 doughnut.setPosition(140, 100)
+// @highlight
 info.startCountdown(3)
 ```
 
@@ -366,6 +281,7 @@ enum SpriteKind {
     Player,
     Enemy
 }
+// @highlight
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
 	
 })
@@ -384,6 +300,7 @@ enum SpriteKind {
     Projectile
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    // @highlight
     info.changeScoreBy(1)
 })
 ```
@@ -404,6 +321,7 @@ enum SpriteKind {
 let doughnut: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeScoreBy(1)
+    // @highlight
     doughnut.setPosition(Math.randomRange(20, 140), Math.randomRange(20, 80))
 })
 ```
@@ -424,6 +342,7 @@ let doughnut: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     doughnut.setPosition(Math.randomRange(20, 140), Math.randomRange(20, 80))
+    // @highlight
     info.startCountdown(3)
 })
 ```
