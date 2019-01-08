@@ -210,7 +210,7 @@ doughnut.setPosition(0, 0)
 Select ``||sprites:x||`` and ``||sprites:y||`` positions for the ``||variables:doughnut||`` in ``||sprites:set doughnut position to||``.
 Click on the ``x`` and ``y`` then use the picker to help with the coordinates.
 
-![Image editor](/static/tutorials/eat-the-doughnut/set-position.gif)
+![Set position](/static/tutorials/eat-the-doughnut/set-position.gif)
 
 ## Step 9 @fullscreen
 
