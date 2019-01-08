@@ -82,7 +82,7 @@ mySprite = sprites.create(img`
 `, SpriteKind.Player)
 ```
 
-## Step 4 
+## Step 4 @fullscreen
 
 Find ``||controller:move mySprite with buttons||`` in ``||controller:Controller||``, and drag it into the ``||loops:on start||`` after ``||variables:set mySprite to||``.
 
@@ -169,7 +169,7 @@ doughnut = sprites.create(img`
 `, SpriteKind.Player)
 ```
 
-## Step 6
+## Step 6 @fullscreen
 
 Click on the grey box for ``||variables:doughnut||``, and then select the Gallery view. Scroll to find the image of a small doughnut (without sprinkles), and select it to load it into the image editor.
 
@@ -328,7 +328,7 @@ a a 3 3 3 d d d a a 4 4 4 e e .
 doughnut.setPosition(140, 100)
 ```
 
-## Step 9
+## Step 9 @fullscreen
 
 Find ``||info:start countdown 10s||`` in ``||info:Info||``. Drag it into the ``||loops:on start||`` after ``||sprites:set doughnut position to||``, and change the ``10`` to ``5``.
 
@@ -394,51 +394,9 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let doughnut: Sprite = null
-let mySprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
 	
 })
-scene.setBackgroundColor(7)
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. 3 3 . . . . . . . . . . 3 . . 
-. . 3 3 . . . . . . . . 3 3 . . 
-. . . 3 3 . . . . . . 3 3 . . . 
-. . . . 3 3 3 3 3 3 3 3 . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-doughnut = sprites.create(img`
-. . . . . . b b b b a a . . . . 
-. . . . b b d d d 3 3 3 a a . . 
-. . . b d d d 3 3 3 3 3 3 a a . 
-. . b d d 3 3 3 3 3 3 3 3 3 a . 
-. b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
-. b 3 3 3 3 3 a a 3 3 3 3 3 a b 
-b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
-b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
-b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
-a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
-a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
-a a 3 3 3 d d d a a 4 4 4 e e . 
-. e a a a a a a 4 4 4 4 e e . . 
-. . e e b b 4 4 4 4 b e e . . . 
-. . . e e e e e e e e . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Enemy)
-doughnut.setPosition(140, 100)
-info.startCountdown(5)
 ```
 
 ## Step 11 @fullscreen
@@ -498,6 +456,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Complete
+## Complete @fullscreen
 
 Congratulations, you have completed your game! Try to move your character around the screen to collect the doughnut before time runs out!
