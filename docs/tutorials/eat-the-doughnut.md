@@ -150,7 +150,7 @@ doughnut = sprites.create(img`
 
 Click on the grey box for ``||variables:doughnut||``, and then select the Gallery view. Scroll to find the image of a small doughnut (or any other image you like!), and select it to load it into the image editor.
 
-![Image editor](/static/tutorials/eat-the-doughnut/image-gallery.gif)
+![Image editor](/static/tutorials/eat-the-doughnut/image-gal.gif)
 
 ## Step 7 @fullscreen
 
