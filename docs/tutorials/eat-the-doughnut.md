@@ -4,7 +4,7 @@
 
 ## Introduction @unplugged
 
-Games can be made from any idea you have, but general need two things: a way for the player to win, and a way for the player to lose. 
+![Game animation](/static/tutorials/eat-the-doughnut.gif)
 
 In this tutorial, you will build a fairly simple game, with the goal of eating a doughnut before time runs out. When the player eats a doughnut, the countdown is restarted.
 
@@ -276,9 +276,8 @@ doughnut.setPosition(0, 0)
 
 ## Step 8 @fullscreen
 
-Select ``||sprites:x||`` and ``||sprites:y||`` positions for the ``||variables:doughnut||`` in ``||sprites:set doughnut position to||``. Use the image below as a guide for where the different ``||sprites:x||`` and ``||sprites:y||`` values will place the ``||sprites:Sprite||``.
-
-![Positioning Hint](/static/tutorials/eat-the-doughnut/position-hint.png)
+Select ``||sprites:x||`` and ``||sprites:y||`` positions for the ``||variables:doughnut||`` in ``||sprites:set doughnut position to||``.
+Click on the ``x`` and ``y`` then use the picker to help with the coordinates.
 
 ```blocks
 enum SpriteKind {
