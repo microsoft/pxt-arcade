@@ -53,34 +53,7 @@ mySprite = sprites.create(img`
 
 In the ``||sprites:sprite of kind Player||`` block, click on the grey box to open the **image editor**. Use it to design your own image for the ``||sprites:Sprite||``, and then click outside of the image editor.
 
-This will assign the character you created a new image, making them show up on the screen.
-
-```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let mySprite: Sprite = null
-scene.setBackgroundColor(7)
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. 3 3 . . . . . . . . . . 3 . . 
-. . 3 3 . . . . . . . . 3 3 . . 
-. . . 3 3 . . . . . . 3 3 . . . 
-. . . . 3 3 3 3 3 3 3 3 . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-```
+![Image editor](/static/tutorials/eat-the-doughnut/image-editor.gif)
 
 ## Step 4 @fullscreen
 
@@ -329,7 +302,7 @@ doughnut.setPosition(140, 100)
 
 ## Step 9 @fullscreen
 
-Find ``||info:start countdown 10s||`` in ``||info:Info||``. Drag it into the ``||loops:on start||`` after ``||sprites:set doughnut position to||``, and change the ``10`` to ``5``.
+Find ``||info:start countdown 10s||`` in ``||info:Info||``. Drag it into the ``||loops:on start||`` after ``||sprites:set doughnut position to||``, and change the ``10`` to ``3``.
 
 This will start a countdown that will soon end the game; we'd better add a way to win!
 
@@ -379,7 +352,7 @@ a a 3 3 3 d d d a a 4 4 4 e e .
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
 doughnut.setPosition(140, 100)
-info.startCountdown(5)
+info.startCountdown(3)
 ```
 
 ## Step 10 @fullscreen
@@ -451,10 +424,12 @@ let doughnut: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     doughnut.setPosition(Math.randomRange(20, 140), Math.randomRange(20, 80))
-    info.startCountdown(5)
+    info.startCountdown(3)
 })
 ```
 
 ## Complete @fullscreen
+
+![Game animation](/static/tutorials/eat-the-doughnut.gif)
 
 Congratulations, you have completed your game! Try to move your character around the screen to collect the doughnut before time runs out!
