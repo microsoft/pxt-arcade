@@ -148,11 +148,9 @@ doughnut = sprites.create(img`
 
 ## Step 6 @fullscreen
 
-Click on the grey box for ``||variables:doughnut||``, and then select the Gallery view. Scroll to find the image of a small doughnut (without sprinkles), and select it to load it into the image editor.
+Click on the grey box for ``||variables:doughnut||``, and then select the Gallery view. Scroll to find the image of a small doughnut (or any other image you like!), and select it to load it into the image editor.
 
-The Gallery has a lot of other images in it; feel free to look around and choose different image if one looks better to you!
-
-![Image editor](/static/tutorials/eat-the-doughnut/set-position.gif)
+![Image editor](/static/tutorials/eat-the-doughnut/image-gallery.gif)
 
 ## Step 7 @fullscreen
 
@@ -212,7 +210,7 @@ doughnut.setPosition(0, 0)
 Select ``||sprites:x||`` and ``||sprites:y||`` positions for the ``||variables:doughnut||`` in ``||sprites:set doughnut position to||``.
 Click on the ``x`` and ``y`` then use the picker to help with the coordinates.
 
-
+![Image editor](/static/tutorials/eat-the-doughnut/set-position.gif)
 
 ## Step 9 @fullscreen
 
