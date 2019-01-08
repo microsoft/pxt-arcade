@@ -6,7 +6,7 @@
 
 Games can be made from any idea you have, but general need two things: a way for the player to win, and a way for the player to lose. 
 
-In this tutorial, you will build a fairly simple game, with the goal of collecting a doughnut before time runs out.
+In this tutorial, you will build a fairly simple game, with the goal of eating a doughnut before time runs out. When the player eats a doughnut, the countdown is restarted.
 
 ## Step 1 @fullscreen
 
@@ -443,60 +443,60 @@ info.startCountdown(5)
 
 ## Step 11 @fullscreen
 
-Find ``||game:game over||`` in ``||game:Game||``, and drag it into the ``||sprites:on overlap||`` event. Click on the ``(+)`` to add an option to win the game, and make sure it is set to ``||logic:true||``.
-
-This will make it so that when the ``||sprites:overlap event||`` occurs, the player will win the game.
+When an overlap is detected, the player should receive a point.
+Find the ``||info:change score by||`` block in ``||info||`` and add it to the ``||sprites:on ... overlap ...||`` event.
 
 ```blocks
 enum SpriteKind {
     Player,
-    Enemy
+    Enemy,
+    Food,
+    Projectile
 }
 let doughnut: Sprite = null
-let mySprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-	game.over(true)
+    info.changeScoreBy(1)
 })
-scene.setBackgroundColor(7)
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. 3 3 . . . . . . . . . . 3 . . 
-. . 3 3 . . . . . . . . 3 3 . . 
-. . . 3 3 . . . . . . 3 3 . . . 
-. . . . 3 3 3 3 3 3 3 3 . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-doughnut = sprites.create(img`
-. . . . . . b b b b a a . . . . 
-. . . . b b d d d 3 3 3 a a . . 
-. . . b d d d 3 3 3 3 3 3 a a . 
-. . b d d 3 3 3 3 3 3 3 3 3 a . 
-. b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
-. b 3 3 3 3 3 a a 3 3 3 3 3 a b 
-b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
-b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
-b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
-a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
-a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
-a a 3 3 3 d d d a a 4 4 4 e e . 
-. e a a a a a a 4 4 4 4 e e . . 
-. . e e b b 4 4 4 4 b e e . . . 
-. . . e e e e e e e e . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Enemy)
-doughnut.setPosition(140, 100)
-info.startCountdown(5)
+```
+
+## Step 12 @fullscreen
+
+When an overlap is detected, the doughnut should be moved to another position on the screen.
+The screen is 160 wide by 120 high and we want to have the doughnut away from the side so that it does not get clipped. Using the ``||math:pick random||`` block, we can generate an ``x`` position from ``20`` to ``140``
+and a ``y`` position from ``20`` to ``100``.
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy,
+    Food,
+    Projectile
+}
+let doughnut: Sprite = null
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+    doughnut.setPosition(Math.randomRange(20, 140), Math.randomRange(20, 80))
+})
+```
+
+## Step 13 @fullscreen
+
+When an overlap is detected, the countdown should be restarted. 
+Drag another ``||info:start countdown||`` into the ``||sprites: on ... overlap ...||`` event.
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy,
+    Food,
+    Projectile
+}
+let doughnut: Sprite = null
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+    doughnut.setPosition(Math.randomRange(20, 140), Math.randomRange(20, 80))
+    info.startCountdown(5)
+})
 ```
 
 ## Complete
