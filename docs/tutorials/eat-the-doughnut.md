@@ -4,15 +4,16 @@
 
 ## Introduction @unplugged
 
-Games can be made from any idea you have, but general need two things: a way for the player to win, and a way for the player to lose. 
+![Game animation](/static/tutorials/eat-the-doughnut.gif)
 
-In this tutorial, you will build a fairly simple game, with the goal of collecting a doughnut before time runs out.
+In this tutorial, you will build a fairly simple game, with the goal of eating a doughnut before time runs out. When the player eats a doughnut, the countdown is restarted.
 
 ## Step 1 @fullscreen
 
 Find ``||scene:set background color to||`` in ``||scene:Scene||``. Drag it into the ``||loops:on start||``, and then click on the grey box and select a new background color.
 
 ```blocks
+// @highlight
 scene.setBackgroundColor(7)
 ```
 
@@ -29,6 +30,7 @@ enum SpriteKind {
 }
 let mySprite: Sprite = null
 scene.setBackgroundColor(7)
+// @highlight
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -53,36 +55,9 @@ mySprite = sprites.create(img`
 
 In the ``||sprites:sprite of kind Player||`` block, click on the grey box to open the **image editor**. Use it to design your own image for the ``||sprites:Sprite||``, and then click outside of the image editor.
 
-This will assign the character you created a new image, making them show up on the screen.
+![Image editor](/static/tutorials/eat-the-doughnut/image-editor.gif)
 
-```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let mySprite: Sprite = null
-scene.setBackgroundColor(7)
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. 3 3 . . . . . . . . . . 3 . . 
-. . 3 3 . . . . . . . . 3 3 . . 
-. . . 3 3 . . . . . . 3 3 . . . 
-. . . . 3 3 3 3 3 3 3 3 . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-```
-
-## Step 4 
+## Step 4 @fullscreen
 
 Find ``||controller:move mySprite with buttons||`` in ``||controller:Controller||``, and drag it into the ``||loops:on start||`` after ``||variables:set mySprite to||``.
 
@@ -113,6 +88,7 @@ mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
+// @highlight
 controller.moveSprite(mySprite)
 ```
 
@@ -149,6 +125,7 @@ mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
 controller.moveSprite(mySprite)
+// @highlight
 doughnut = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -169,58 +146,13 @@ doughnut = sprites.create(img`
 `, SpriteKind.Player)
 ```
 
-## Step 6
+## Step 6 @fullscreen
 
 Click on the grey box for ``||variables:doughnut||``, and then select the Gallery view. Scroll to find the image of a small doughnut (without sprinkles), and select it to load it into the image editor.
 
 The Gallery has a lot of other images in it; feel free to look around and choose different image if one looks better to you!
 
-```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let doughnut: Sprite = null
-let mySprite: Sprite = null
-scene.setBackgroundColor(7)
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. 3 3 . . . . . . . . . . 3 . . 
-. . 3 3 . . . . . . . . 3 3 . . 
-. . . 3 3 . . . . . . 3 3 . . . 
-. . . . 3 3 3 3 3 3 3 3 . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-doughnut = sprites.create(img`
-. . . . . . b b b b a a . . . . 
-. . . . b b d d d 3 3 3 a a . . 
-. . . b d d d 3 3 3 3 3 3 a a . 
-. . b d d 3 3 3 3 3 3 3 3 3 a . 
-. b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
-. b 3 3 3 3 3 a a 3 3 3 3 3 a b 
-b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
-b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
-b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
-a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
-a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
-a a 3 3 3 d d d a a 4 4 4 e e . 
-. e a a a a a a 4 4 4 4 e e . . 
-. . e e b b 4 4 4 4 b e e . . . 
-. . . e e e e e e e e . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-```
+![Image editor](/static/tutorials/eat-the-doughnut/set-position.gif)
 
 ## Step 7 @fullscreen
 
@@ -271,66 +203,20 @@ a a 3 3 3 d d d a a 4 4 4 e e .
 . . . e e e e e e e e . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
+// @highlight
 doughnut.setPosition(0, 0)
 ```
 
 ## Step 8 @fullscreen
 
-Select ``||sprites:x||`` and ``||sprites:y||`` positions for the ``||variables:doughnut||`` in ``||sprites:set doughnut position to||``. Use the image below as a guide for where the different ``||sprites:x||`` and ``||sprites:y||`` values will place the ``||sprites:Sprite||``.
+Select ``||sprites:x||`` and ``||sprites:y||`` positions for the ``||variables:doughnut||`` in ``||sprites:set doughnut position to||``.
+Click on the ``x`` and ``y`` then use the picker to help with the coordinates.
 
-![Positioning Hint](/static/tutorials/eat-the-doughnut/position-hint.png)
 
-```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let doughnut: Sprite = null
-let mySprite: Sprite = null
-scene.setBackgroundColor(7)
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. 3 3 . . . . . . . . . . 3 . . 
-. . 3 3 . . . . . . . . 3 3 . . 
-. . . 3 3 . . . . . . 3 3 . . . 
-. . . . 3 3 3 3 3 3 3 3 . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-doughnut = sprites.create(img`
-. . . . . . b b b b a a . . . . 
-. . . . b b d d d 3 3 3 a a . . 
-. . . b d d d 3 3 3 3 3 3 a a . 
-. . b d d 3 3 3 3 3 3 3 3 3 a . 
-. b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
-. b 3 3 3 3 3 a a 3 3 3 3 3 a b 
-b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
-b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
-b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
-a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
-a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
-a a 3 3 3 d d d a a 4 4 4 e e . 
-. e a a a a a a 4 4 4 4 e e . . 
-. . e e b b 4 4 4 4 b e e . . . 
-. . . e e e e e e e e . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-doughnut.setPosition(140, 100)
-```
 
-## Step 9
+## Step 9 @fullscreen
 
-Find ``||info:start countdown 10s||`` in ``||info:Info||``. Drag it into the ``||loops:on start||`` after ``||sprites:set doughnut position to||``, and change the ``10`` to ``5``.
+Find ``||info:start countdown 10s||`` in ``||info:Info||``. Drag it into the ``||loops:on start||`` after ``||sprites:set doughnut position to||``, and change the ``10`` to ``3``.
 
 This will start a countdown that will soon end the game; we'd better add a way to win!
 
@@ -380,7 +266,8 @@ a a 3 3 3 d d d a a 4 4 4 e e .
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
 doughnut.setPosition(140, 100)
-info.startCountdown(5)
+// @highlight
+info.startCountdown(3)
 ```
 
 ## Step 10 @fullscreen
@@ -394,111 +281,74 @@ enum SpriteKind {
     Player,
     Enemy
 }
-let doughnut: Sprite = null
-let mySprite: Sprite = null
+// @highlight
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
 	
 })
-scene.setBackgroundColor(7)
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. 3 3 . . . . . . . . . . 3 . . 
-. . 3 3 . . . . . . . . 3 3 . . 
-. . . 3 3 . . . . . . 3 3 . . . 
-. . . . 3 3 3 3 3 3 3 3 . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-doughnut = sprites.create(img`
-. . . . . . b b b b a a . . . . 
-. . . . b b d d d 3 3 3 a a . . 
-. . . b d d d 3 3 3 3 3 3 a a . 
-. . b d d 3 3 3 3 3 3 3 3 3 a . 
-. b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
-. b 3 3 3 3 3 a a 3 3 3 3 3 a b 
-b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
-b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
-b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
-a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
-a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
-a a 3 3 3 d d d a a 4 4 4 e e . 
-. e a a a a a a 4 4 4 4 e e . . 
-. . e e b b 4 4 4 4 b e e . . . 
-. . . e e e e e e e e . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Enemy)
-doughnut.setPosition(140, 100)
-info.startCountdown(5)
 ```
 
 ## Step 11 @fullscreen
 
-Find ``||game:game over||`` in ``||game:Game||``, and drag it into the ``||sprites:on overlap||`` event. Click on the ``(+)`` to add an option to win the game, and make sure it is set to ``||logic:true||``.
-
-This will make it so that when the ``||sprites:overlap event||`` occurs, the player will win the game.
+When an overlap is detected, the player should receive a point.
+Find the ``||info:change score by||`` block in ``||info||`` and add it to the ``||sprites:on ... overlap ...||`` event.
 
 ```blocks
 enum SpriteKind {
     Player,
-    Enemy
+    Enemy,
+    Food,
+    Projectile
 }
-let doughnut: Sprite = null
-let mySprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-	game.over(true)
+    // @highlight
+    info.changeScoreBy(1)
 })
-scene.setBackgroundColor(7)
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. 3 3 . . . . . . . . . . 3 . . 
-. . 3 3 . . . . . . . . 3 3 . . 
-. . . 3 3 . . . . . . 3 3 . . . 
-. . . . 3 3 3 3 3 3 3 3 . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-doughnut = sprites.create(img`
-. . . . . . b b b b a a . . . . 
-. . . . b b d d d 3 3 3 a a . . 
-. . . b d d d 3 3 3 3 3 3 a a . 
-. . b d d 3 3 3 3 3 3 3 3 3 a . 
-. b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
-. b 3 3 3 3 3 a a 3 3 3 3 3 a b 
-b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
-b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
-b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
-a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
-a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
-a a 3 3 3 d d d a a 4 4 4 e e . 
-. e a a a a a a 4 4 4 4 e e . . 
-. . e e b b 4 4 4 4 b e e . . . 
-. . . e e e e e e e e . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Enemy)
-doughnut.setPosition(140, 100)
-info.startCountdown(5)
 ```
 
-## Complete
+## Step 12 @fullscreen
+
+When an overlap is detected, the doughnut should be moved to another position on the screen.
+The screen is 160 wide by 120 high and we want to have the doughnut away from the side so that it does not get clipped. Using the ``||math:pick random||`` block, we can generate an ``x`` position from ``20`` to ``140``
+and a ``y`` position from ``20`` to ``100``.
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy,
+    Food,
+    Projectile
+}
+let doughnut: Sprite = null
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+    // @highlight
+    doughnut.setPosition(Math.randomRange(20, 140), Math.randomRange(20, 80))
+})
+```
+
+## Step 13 @fullscreen
+
+When an overlap is detected, the countdown should be restarted. 
+Drag another ``||info:start countdown||`` into the ``||sprites: on ... overlap ...||`` event.
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy,
+    Food,
+    Projectile
+}
+let doughnut: Sprite = null
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+    doughnut.setPosition(Math.randomRange(20, 140), Math.randomRange(20, 80))
+    // @highlight
+    info.startCountdown(3)
+})
+```
+
+## Complete @fullscreen
+
+![Game animation](/static/tutorials/eat-the-doughnut.gif)
 
 Congratulations, you have completed your game! Try to move your character around the screen to collect the doughnut before time runs out!
