@@ -69,7 +69,7 @@
         "dockerImage": "pext/yotta:latest",
         "codalTarget": {
             "branches": {
-                "https://github.com/lancaster-university/codal-core": "36dafe77219239c1397ece44ed37a7f6e6f50d5a"
+                "https://github.com/lancaster-university/codal-core": "5ac59869975aa8869770e2ccc9ed51a5f834b9c2"
             }
         }
     },
@@ -119,7 +119,6 @@
                 "openocdScriptAlt": "source [find interface/cmsis-dap.cfg]; set CHIPNAME at91samd51g19; source [find target/at91samdXX.cfg]",
                 "openocdScript": "source [find interface/stlink-v2.cfg]; set CPUTAPID 0x2ba01477; set CHIPNAME at91samd51g19; source [find target/at91samdXX.cfg]",
                 "ramSize": 196608,
-                "webUSB": false,
                 "uf2Family": "0x55114460",
                 "vtableShift": 4
             },
@@ -127,7 +126,7 @@
                 "codalTarget": {
                     "name": "codal-itsybitsy-m4",
                     "url": "https://github.com/lancaster-university/codal-itsybitsy-m4",
-                    "branch": "v0.0.13",
+                    "branch": "v0.0.15",
                     "type": "git"
                 },
                 "codalBinary": "ITSYBITSY_M4",
