@@ -246,6 +246,7 @@
         "monacoFieldEditors": ["image-editor"],
         "scriptManager": true,
         "saveInMenu": true,
+        "saveAsPNG": true,
         "experiments": [
             "debugger"
         ],
