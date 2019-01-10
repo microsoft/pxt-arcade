@@ -43,29 +43,6 @@ namespace pxsim {
         return runtime.board as Board;
     }
 
-    const openMeInMakeCode = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAACBAgMAAACA` +
-        `3hMIAAAACVBMVEX///+rq6sAAACQF3jzAAAAdklEQVQY05WQsQ2FMAxE3/8KDZUp2CcjMBIlYorUTIntuLA` +
-        `UCcHpFRfp4kuMaqqIKGa61kpxfqgis4ghKYOzMipl+pCqfpjzcFHCfOjaUtfmXViLeLVExgIljuN70jYcyH` +
-        `PUhAosRi969a920E7azHWx/zvm4QZrZxQ87RClwwAAAABJRU5ErkJggg==`
-
-    export function loadImageAsync(url: string) {
-        return new Promise<HTMLCanvasElement>((resolve, reject) => {
-            const img = new Image();
-            img.src = url
-            img.onload = () => {
-                const canvas = document.createElement("canvas")
-                canvas.width = img.width
-                canvas.height = img.height
-                const ctx = canvas.getContext("2d")
-                ctx.drawImage(img, 0, 0);
-                resolve(canvas)
-            };
-            img.onerror = () => {
-                reject(new Error("Cannot load image"))
-            }
-        })
-    }
-
     /**
      * Represents the entire state of the executing program.
      * Do not store state anywhere else!
@@ -135,42 +112,13 @@ namespace pxsim {
         private receiveScreenshot(msg: SimulatorMessage) {
             if (msg.type == "screenshot") {
                 const smsg = msg as SimulatorScreenshotMessage;
-                this.screenshotAsync(smsg.title || pxsim.title || "...", !!smsg.force)
-                    .then(img => {
-                        Runtime.postMessage(
-                            { type: "screenshot", data: img } as SimulatorScreenshotMessage)
-                    })
+                if (!this.lastScreenshot || smsg.force)
+                    this.takeScreenshot();
+                const img = this.rawScreenshot();
+                Runtime.postMessage({ type: "screenshot", data: img } as SimulatorScreenshotMessage);
             }
             else if (msg.type == "rawscreenshot")
                 console.log(this.rawScreenshot())
-        }
-
-        private screenshotAsync(title: string, force: boolean) {
-            let w = this.screenState.width
-            let h = this.screenState.height
-            let work = document.createElement("canvas")
-            let border = 16
-            let bottom = 32
-            work.width = w + border * 2
-            work.height = h + border * 2 + bottom
-            let ctx = work.getContext("2d")
-            ctx.imageSmoothingEnabled = false
-            ctx.fillStyle = 'white'
-            ctx.fillRect(0, 0, work.width, work.height)
-            let id = ctx.getImageData(border, border, w, h)
-            if (!this.lastScreenshot || force)
-                this.takeScreenshot()
-            new Uint32Array(id.data.buffer).set(this.lastScreenshot)
-            ctx.putImageData(id, border, border)
-            let lblTop = 2 * border + h + 4
-            ctx.fillStyle = 'black'
-            ctx.font = '13px sans-serif'
-            ctx.fillText(title, border, lblTop, w)
-            return loadImageAsync(openMeInMakeCode)
-                .then(openme => {
-                    ctx.drawImage(openme, border + w + 3, border)
-                    return work.toDataURL("image/png")
-                })
         }
 
         private rawScreenshot() {
