@@ -1,4 +1,4 @@
-# Problem Set: Intro to JavaScript Functions
+# Problem Set: Intro to Functions
 
 This section contains a number of selected problems for the Intro to JavaScript Functions section.
 

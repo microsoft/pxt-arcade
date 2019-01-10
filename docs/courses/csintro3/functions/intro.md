@@ -1,4 +1,4 @@
-# Activity: Intro to JavaScript Functions
+# Activity: Intro to Functions
 
 In Blocks, ``||functions:functions||`` served as a powerful tool in making complex games easier to read, as well as reducing redundancy within the games.
 
