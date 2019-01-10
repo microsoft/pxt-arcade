@@ -1,6 +1,8 @@
 {
     "id": "arcade",
     "name": "arcade",
+    "nickname": "arcade",
+    "thumbnailName": "MakeCode Arcade",
     "title": "MakeCode Arcade",
     "corepkg": "core",
     "cloud": {
