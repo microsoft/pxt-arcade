@@ -715,6 +715,8 @@ declare const enum DAL {
     REF_TAG_IMAGE = 3,
     REF_TAG_USER = 32,
     // /pxtapp/configkeys.h
+    CFG_MAGIC0 = 513675505,
+    CFG_MAGIC1 = 539130489,
     CFG_PIN_ACCELEROMETER_INT = 1,
     CFG_PIN_ACCELEROMETER_SCL = 2,
     CFG_PIN_ACCELEROMETER_SDA = 3,
@@ -782,11 +784,11 @@ declare const enum DAL {
     CFG_PIN_JACK_SND = 65,
     CFG_PIN_JACK_BUSLED = 66,
     CFG_PIN_JACK_COMMLED = 67,
-    CFG_PIN_BTNMX_LATCH = 66,
-    CFG_PIN_BTNMX_CLOCK = 67,
-    CFG_PIN_BTNMX_DATA = 68,
     CFG_PIN_BTN_SOFT_RESET = 69,
     CFG_ACCELEROMETER_TYPE = 70,
+    CFG_PIN_BTNMX_LATCH = 71,
+    CFG_PIN_BTNMX_CLOCK = 72,
+    CFG_PIN_BTNMX_DATA = 73,
     ACCELEROMETER_TYPE_LIS3DH = 50,
     ACCELEROMETER_TYPE_MMA8453 = 56,
     ACCELEROMETER_TYPE_FXOS8700 = 60,
@@ -832,6 +834,7 @@ declare const enum DAL {
     CFG_RAM_BYTES = 205,
     CFG_SYSTEM_HEAP_BYTES = 206,
     CFG_LOW_MEM_SIMULATION_KB = 207,
+    CFG_BOOTLOADER_BOARD_ID = 208,
     // /pxtapp/hf2dbg.h
     HF2DBG_H = 1,
     // /pxtapp/mixer---none/melody.h
@@ -839,6 +842,7 @@ declare const enum DAL {
     SW_SAWTOOTH = 2,
     SW_SINE = 3,
     SW_NOISE = 4,
+    SW_REAL_NOISE = 5,
     SW_SQUARE_10 = 11,
     SW_SQUARE_50 = 15,
     // /pxtapp/pins.h
@@ -851,7 +855,6 @@ declare const enum DAL {
     // /pxtapp/platform.h
     PAGE_SIZE = 512,
     DEV_NUM_PINS = 64,
-    PXT_BOOTLOADER_CFG_MAGIC = 3191854542,
     PXT_74HC165 = 1,
     IMAGE_BITS = 4,
     PA00 = 0,
@@ -960,6 +963,10 @@ declare const enum DAL {
     GC = 0,
     // /pxtapp/pxtconfig.h
     PXT_GC = 1,
+    PXT_UF2_FAMILY = 1427194976,
+    // /pxtapp/uf2format.h
+    BOOTLOADER_START = 0,
+    BOOTLOADER_END = 8192,
     // /pxtapp/uf2hid.h
     UF2_HID_H = 1,
 }
