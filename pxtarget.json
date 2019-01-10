@@ -51,6 +51,7 @@
         "gc": true,
         "upgrades": [],
         "webUSB": true,
+        "saveAsPNG": true,
         "patches": {
             "0.0.0 - 0.1.1": [{
                 "type": "api",
@@ -245,7 +246,6 @@
         "monacoFieldEditors": ["image-editor"],
         "scriptManager": true,
         "saveInMenu": false,
-        "saveAsPNG": true,
         "experiments": [
             "debugger"
         ],
