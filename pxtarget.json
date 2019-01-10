@@ -38,7 +38,6 @@
         "libs/jacdac",
         "libs/jacdac-drivers",
         "libs/jacdac-game",
-        "libs/particles",
         "libs/local-multiplayer"
     ],
     "compile": {
@@ -245,7 +244,7 @@
         },
         "monacoFieldEditors": ["image-editor"],
         "scriptManager": true,
-        "saveInMenu": true,
+        "saveInMenu": false,
         "saveAsPNG": true,
         "experiments": [
             "debugger"
