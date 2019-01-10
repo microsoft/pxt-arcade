@@ -69,7 +69,7 @@
         "dockerImage": "pext/yotta:latest",
         "codalTarget": {
             "branches": {
-                "https://github.com/lancaster-university/codal-core": "5ac59869975aa8869770e2ccc9ed51a5f834b9c2"
+                "https://github.com/lancaster-university/codal-core": "818a334e00578c6fc404c4cb3c7a57ec3d417afc"
             }
         }
     },
@@ -85,7 +85,7 @@
                 "codalTarget": {
                     "name": "codal-big-brainpad",
                     "url": "https://github.com/lancaster-university/codal-big-brainpad",
-                    "branch": "v1.0.16-newusb.2",
+                    "branch": "v1.0.17",
                     "type": "git"
                 },
                 "codalBinary": "STM32",
