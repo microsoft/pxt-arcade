@@ -18,7 +18,7 @@ let topImage: Image = null
 let anim: animation.Animation = null
 let gap = 0
 let mySprite: Sprite = null
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite.vy = -100
     animation.setAction(mySprite, ActionKind.Jumping)
 })

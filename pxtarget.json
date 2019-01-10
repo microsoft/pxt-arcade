@@ -38,7 +38,6 @@
         "libs/jacdac",
         "libs/jacdac-drivers",
         "libs/jacdac-game",
-        "libs/particles",
         "libs/local-multiplayer"
     ],
     "compile": {
@@ -52,6 +51,7 @@
         "gc": true,
         "upgrades": [],
         "webUSB": true,
+        "saveAsPNG": true,
         "patches": {
             "0.0.0 - 0.1.1": [{
                 "type": "api",
@@ -244,10 +244,11 @@
         },
         "monacoFieldEditors": ["image-editor"],
         "scriptManager": true,
-        "saveInMenu": true,
+        "saveInMenu": false,
         "experiments": [
             "debugger"
         ],
-        "extendEditor": true
+        "extendEditor": true,
+        "simScreenshot": true
     }
 }
