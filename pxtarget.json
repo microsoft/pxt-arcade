@@ -243,7 +243,8 @@
         },
         "monacoFieldEditors": ["image-editor"],
         "scriptManager": true,
-        "saveInMenu": true,
+        "saveInMenu": false,
+        "saveAsPNG": true,
         "experiments": [
             "debugger"
         ],
