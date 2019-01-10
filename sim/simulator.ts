@@ -133,17 +133,19 @@ namespace pxsim {
         7. run for f in * ; do echo $f; node -p '"data:image/png;base64," + require("fs").readFileSync("'$f'").toString("base64")' ; done
         */
         private receiveScreenshot(msg: SimulatorMessage) {
-            if (msg.type == "screenshot")
-                this.screenshotAsync((msg as SimulatorScreenshotMessage).title || pxsim.title || "...")
+            if (msg.type == "screenshot") {
+                const smsg = msg as SimulatorScreenshotMessage;
+                this.screenshotAsync(smsg.title || pxsim.title || "...", !!smsg.force)
                     .then(img => {
                         Runtime.postMessage(
                             { type: "screenshot", data: img } as SimulatorScreenshotMessage)
                     })
+            }
             else if (msg.type == "rawscreenshot")
                 console.log(this.rawScreenshot())
         }
 
-        private screenshotAsync(title: string) {
+        private screenshotAsync(title: string, force: boolean) {
             let w = this.screenState.width
             let h = this.screenState.height
             let work = document.createElement("canvas")
@@ -156,7 +158,7 @@ namespace pxsim {
             ctx.fillStyle = 'white'
             ctx.fillRect(0, 0, work.width, work.height)
             let id = ctx.getImageData(border, border, w, h)
-            if (!this.lastScreenshot)
+            if (!this.lastScreenshot || force)
                 this.takeScreenshot()
             new Uint32Array(id.data.buffer).set(this.lastScreenshot)
             ctx.putImageData(id, border, border)
