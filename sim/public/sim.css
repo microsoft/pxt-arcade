@@ -64,6 +64,14 @@ canvas {
     width: 100%;
 }
 
+#debug-stats {
+    position: absolute;
+    bottom: 1.5%;
+    left: 5%;
+    color: #3c3cff;
+    font-size: 11px;
+}
+
 #controls {
     position: absolute;
     width: 100%;
