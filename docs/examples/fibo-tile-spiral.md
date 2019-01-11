@@ -1,5 +1,7 @@
 # Fibonacci Tiles and Spiral
 
+![Fibonacci tiling and spiral](/static/examples/fibo-tile-spiral/fibo-tile-spiral.gif)
+
 Fibonacci numbers are series of numbers, or a _sequence_, where every next number is the sum of the previous two numbers. The sequence starts with `0` and the next number is `1`. The third number is also `1` because `0 + 1 = 1`. The numbers following that are `1 + 1 = 2`, `1 + 2 = 3`, and so on. For the first 10 numbers in the sequence, we have:
 
 ``0, 1, 1, 2, 3, 5, 8, 13, 21, 34``
