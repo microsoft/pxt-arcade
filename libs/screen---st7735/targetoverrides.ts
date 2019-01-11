@@ -31,6 +31,7 @@ namespace _screen_internal {
         setupScreenStatusBar(8);
 
         const status = image.create(160, 8)
+        updateScreenStatusBar(status) // clear the status area
 
         control.__screen.setupUpdate(() => updateScreen(img))
         control.EventContext.onStats = function (msg: string) {
