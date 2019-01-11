@@ -1,7 +1,6 @@
 // This is the last thing executed before user code
 
 game.setWaitAnyButton(controller.pauseUntilAnyButtonIsPressed)
-game.gameOverSound = function () { music.wawawawaa.play(); }
 // force first game engine
 game.eventContext()
 
