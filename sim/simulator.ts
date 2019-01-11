@@ -112,23 +112,24 @@ namespace pxsim {
         private receiveScreenshot(msg: SimulatorMessage) {
             if (msg.type == "screenshot") {
                 const smsg = msg as SimulatorScreenshotMessage;
-                if (!this.lastScreenshot || smsg.force)
-                    this.takeScreenshot();
-                const img = this.rawScreenshot();
-                Runtime.postMessage({ type: "screenshot", data: img } as SimulatorScreenshotMessage);
+                const img = this.rawScreenshot(smsg.force);
+                Runtime.postMessage({
+                    type: "screenshot",
+                    data: img
+                } as SimulatorScreenshotMessage);
             }
             else if (msg.type == "rawscreenshot")
-                console.log(this.rawScreenshot())
+                console.log(this.rawScreenshot(true))
         }
 
-        private rawScreenshot() {
+        private rawScreenshot(force: boolean) {
             let work = document.createElement("canvas")
             work.width = this.screenState.width
             work.height = this.screenState.height
             let ctx = work.getContext("2d")
             let id = ctx.getImageData(0, 0, work.width, work.height)
-            if (!this.lastScreenshot)
-                this.takeScreenshot()
+            if (!this.lastScreenshot || force)
+                this.takeScreenshot(true)
             new Uint32Array(id.data.buffer).set(this.lastScreenshot)
             ctx.putImageData(id, 0, 0)
             return work.toDataURL("image/png")
@@ -138,16 +139,19 @@ namespace pxsim {
             let now = Date.now()
             // if there was a key since last screenshot and at least 100ms ago,
             // and last screenshot was at least 3s ago, record a new one
-            if (now - this.lastScreenshotTime > 3000 &&
-                this.lastKey < now - 100 &&
-                (!this.lastScreenshot || this.lastKey > this.lastScreenshotTime))
-                this.takeScreenshot();
+            if (!this.lastScreenshot 
+                || (now - this.lastScreenshotTime > 2000 && Math.random() > 0.5))
+                this.takeScreenshot(false);
         }
 
-        takeScreenshot() {
-            let now = Date.now()
-            this.lastScreenshot = this.screenState.screen.slice(0)
-            this.lastScreenshotTime = now
+        takeScreenshot(force: boolean) {
+            let now = Date.now();
+            const bright = this.screenState.screen.some(c => !!c);
+            if (bright || force) {
+                console.log(`screenshot`)
+                this.lastScreenshot = this.screenState.screen.slice(0);
+                this.lastScreenshotTime = now
+            }
         }
 
         initAsync(msg: pxsim.SimulatorRunMessage): Promise<void> {
