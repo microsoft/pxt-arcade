@@ -94,7 +94,7 @@ controller.moveSprite(mySprite)
 
 ## Step 5 @fullscreen
 
-Drag another ``||variables:set mySprite to||`` into the ``||loops:on start||``. Click on ``||variables:mySprite||``, select ``||variables:Create a new variable||``, and enter ``doughnut`` as the variable name.
+Drag another ``||variables:set mySprite to||`` into the ``||loops:on start||``. Click on ``||variables:mySprite||``, select ``||variables:New variable||``, and enter ``doughnut`` as the variable name.
 
 This will create **another** ``||sprites:Sprite||``, but one that isn't controlled by the player.
 
