@@ -4,7 +4,7 @@ interface SortingAlgorithm {
     title: string;
     algorithm: (values: number[]) => number[];
     a?: number[];
-    place?: number
+    place?: string;
 }
 
 interface MenuItem {
@@ -95,8 +95,18 @@ function start() {
         const run = currentRun;
         v.place = undefined;
         v.algorithm(v.a);
-        if (run == currentRun)
-            v.place = currentPlace++;
+        if (run == currentRun) {
+            const place = currentPlace++;
+            const lastDigit = place % 10;
+            if (lastDigit === 1)
+                v.place = place + "st";
+            else if (lastDigit === 2)
+                v.place = place + "nd";
+            else if (lastDigit === 3)
+                v.place = place + "rd";
+            else
+                v.place = place + "th";
+        }
     }));
 }
 
@@ -134,7 +144,7 @@ function drawCurrentState(s: SortingAlgorithm, height: number, yOffset: number) 
     }
     screen.print(title, BORDER, yOffset + 1, 0x2, image.font5);
     if (s.place) {
-        screen.print(s.place + "", BORDER, yOffset + 3 + image.font5.charHeight, 0x2, image.font5);
+        screen.print(s.place, BORDER, yOffset + 3 + image.font5.charHeight, 0x2, image.font5);
     }
 }
 
