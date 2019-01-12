@@ -4,7 +4,7 @@
 namespace pxsim {
     export type CommonBoard = Board
 
-    let forcedUpdateLoop: any
+    let forcedUpdateLoop: boolean
 
     /**
      * This function gets called each time the program restarts
@@ -14,10 +14,11 @@ namespace pxsim {
         initGamepad();
 
         if (!forcedUpdateLoop) {
+            forcedUpdateLoop = true;
             // this is used to force screen update if game loop is stuck or not set up properly
-            forcedUpdateLoop = setInterval(() => {
+            //forcedUpdateLoop = setInterval(() => {
                 //board().screenState.maybeForceUpdate()
-            }, 100)
+            //}, 100)
             const body = document.getElementById("root")
             window.onfocus = () => {
                 indicateFocus(true);
