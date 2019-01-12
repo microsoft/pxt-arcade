@@ -2,8 +2,9 @@
 ```typescript
 interface SortingAlgorithm {
     title: string;
-    algorithm: (values: number[]) => void;
+    algorithm: (values: number[]) => number[];
     a?: number[];
+    place?: number
 }
 
 interface MenuItem {
@@ -17,6 +18,8 @@ const LINE_WIDTH = 2;
 const BORDER = 2;
 let pauseDuration = 10;
 let ySegment: number;
+let currentPlace: number;
+let currentRun = 0;
 
 /**
  * Final example set up will be:
@@ -52,16 +55,17 @@ for (let i = 0; i < 2; i++) {
 }
 
 start();
+
 game.onPaint(() => show());
 
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    start();
-})
+controller.A.onEvent(ControllerButtonEvent.Pressed, () => start())
+
 controller.down.onEvent(ControllerButtonEvent.Pressed, () => {
     moveRandom(running, notRunning);
     start();
 })
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+
+controller.up.onEvent(ControllerButtonEvent.Pressed, () => {
     moveRandom(notRunning, running);
     start();
 })
@@ -73,7 +77,7 @@ function moveRandom<T>(a: T[], b: T[]) {
     }
 }
 
-function addExample(title: string, sortAlgorithm: (values: number[]) => void) {
+function addExample(title: string, sortAlgorithm: (values: number[]) => number[]) {
     let output: SortingAlgorithm = {
         title: title,
         algorithm: sortAlgorithm
@@ -83,9 +87,17 @@ function addExample(title: string, sortAlgorithm: (values: number[]) => void) {
 
 function start() {
     const r = new Math.FastRandom();
+    ++currentRun;
+    currentPlace = 1;
     ySegment = Math.floor(screen.height / running.length);
     running.forEach(v => v.a = fillWithDefault(r, COUNT, ySegment - (image.font5.charHeight + 2)));
-    running.forEach(v => control.runInParallel(() => v.algorithm(v.a)));
+    running.forEach(v => control.runInParallel(() => {
+        const run = currentRun;
+        v.place = undefined;
+        v.algorithm(v.a);
+        if (run == currentRun)
+            v.place = currentPlace++;
+    }));
 }
 
 function fillWithDefault(r: Math.FastRandom, count: number, maxHeight: number): number[] {
@@ -101,11 +113,13 @@ function fillWithDefault(r: Math.FastRandom, count: number, maxHeight: number): 
 
 function show() {
     running.forEach(function (value: SortingAlgorithm, index: number) {
-        drawCurrentState(value.a, value.title, ySegment, index * ySegment);
+        drawCurrentState(value, ySegment, index * ySegment);
     });
 }
 
-function drawCurrentState(a: number[], title: string, height: number, yOffset: number) {
+function drawCurrentState(s: SortingAlgorithm, height: number, yOffset: number) {
+    const a = s.a
+    const title = s.title;
     for (let i = 0; i < a.length; ++i) {
         if (a[i] > 0) {
             const maxValue = ySegment - (image.font5.charHeight + 2);
@@ -119,6 +133,9 @@ function drawCurrentState(a: number[], title: string, height: number, yOffset: n
         }
     }
     screen.print(title, BORDER, yOffset + 1, 0x2, image.font5);
+    if (s.place) {
+        screen.print(s.place + "", BORDER, yOffset + 3 + image.font5.charHeight, 0x2, image.font5);
+    }
 }
 
 function swap(a: number[], i: number, j: number) {
@@ -165,6 +182,7 @@ namespace sorts {
                 swap(a, i, min);
             }
         }
+
         return a;
     }
 
@@ -176,6 +194,8 @@ namespace sorts {
                 }
             }
         }
+
+        return a;
     }
 
     export function shellSort(a: number[]) {
@@ -199,11 +219,13 @@ namespace sorts {
                 increment = Math.floor(increment * 5 / 11);
             }
         }
+
         return a;
     }
 
     export function quickSort(a: number[]) {
         qsort(a, 0, a.length - 1);
+        return a;
 
         function qsort(a: number[], lo: number, hi: number) {
             if (lo < hi) {
@@ -265,6 +287,8 @@ namespace sorts {
             swap(a, 0, i);
             heapify(a, 0, i);
         }
+
+        return a;
     }
 
     export function mergeSort(a: number[]) {
@@ -322,7 +346,7 @@ namespace sorts {
             return result;
         }
 
-        const final = msort(a, 0, a);
+        return msort(a, 0, a);
     }
 
     export function isSorted(a: number[]) {
