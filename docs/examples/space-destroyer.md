@@ -11,8 +11,6 @@ enum SpriteKind {
 let ship: Sprite = null
 let projectile: Sprite = null
 let asteroids: Image[] = []
-let otherSprite: Sprite = null
-let sprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     game.over()
 })

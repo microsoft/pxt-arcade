@@ -21,7 +21,6 @@ declare interface Button {
      */
     //% help=input/button/on-event
     //% blockId=buttonEvent block="on %button|%event"
-    //% parts="buttons"
     //% blockNamespace=input
     //% button.fieldEditor="gridpicker"
     //% button.fieldOptions.width=220
@@ -37,7 +36,6 @@ declare interface Button {
     //% help=input/button/is-pressed
     //% block="%button|is pressed"
     //% blockId=buttonIsPressed
-    //% parts="buttons"
     //% blockNamespace=input
     //% button.fieldEditor="gridpicker"
     //% button.fieldOptions.width=220
@@ -53,7 +51,6 @@ declare interface Button {
     //% help=input/button/was-pressed
     //% block="%button|was pressed"
     //% blockId=buttonWasPressed
-    //% parts="buttons"
     //% blockNamespace=input
     //% button.fieldEditor="gridpicker"
     //% button.fieldOptions.width=220

@@ -1,11 +1,14 @@
 {
     "id": "arcade",
     "name": "arcade",
+    "nickname": "arcade",
+    "thumbnailName": "MakeCode Arcade",
     "title": "MakeCode Arcade",
     "corepkg": "core",
     "cloud": {
         "workspace": false,
         "sharing": true,
+        "thumbnails": true,
         "importing": true,
         "packages": true,
         "publishing": true,
@@ -23,7 +26,6 @@
         "libs/hw",
         "libs/hw---rpi",
         "libs/hw---stm32f401",
-        "libs/hw---stm32f103",
         "libs/hw---samd51",
         "libs/screen",
         "libs/screen---st7735",
@@ -39,12 +41,10 @@
         "libs/jacdac",
         "libs/jacdac-drivers",
         "libs/jacdac-game",
-        "libs/particles",
         "libs/local-multiplayer"
     ],
     "compile": {
         "useUF2": true,
-        "webUSB": false,
         "deployDrives": ".*",
         "deployFileMarker": "INFO_UF2.TXT",
         "driveName": "ARCADE",
@@ -53,6 +53,8 @@
         "nativeType": "thumb",
         "gc": true,
         "upgrades": [],
+        "webUSB": true,
+        "saveAsPNG": true,
         "patches": {
             "0.0.0 - 0.1.1": [{
                 "type": "api",
@@ -70,7 +72,7 @@
         "dockerImage": "pext/yotta:latest",
         "codalTarget": {
             "branches": {
-                "https://github.com/lancaster-university/codal-core": "f2b9522ed0260bf1c5706d9652d7a23d76086263"
+                "https://github.com/lancaster-university/codal-core": "189d873e9d75e4e7050926995cccb41851daa0a7"
             }
         }
     },
@@ -79,13 +81,14 @@
             "compile": {
                 "hasHex": true,
                 "openocdScript": "source [find interface/stlink-v2.cfg]; source [find target/stm32f4x.cfg]",
+                "uf2Family": "0x57755a57",
                 "vtableShift": 4
             },
             "compileService": {
                 "codalTarget": {
                     "name": "codal-big-brainpad",
                     "url": "https://github.com/lancaster-university/codal-big-brainpad",
-                    "branch": "v1.0.16",
+                    "branch": "v1.0.18",
                     "type": "git"
                 },
                 "codalBinary": "STM32",
@@ -97,6 +100,8 @@
             "compile": {
                 "hasHex": true,
                 "openocdScript": "source [find interface/stlink-v2.cfg]; source [find target/stm32f1x.cfg]",
+                "uf2Family": "0x5ee21072",
+                "webUSB": false,
                 "vtableShift": 4
             },
             "compileService": {
@@ -117,13 +122,14 @@
                 "openocdScriptAlt": "source [find interface/cmsis-dap.cfg]; set CHIPNAME at91samd51g19; source [find target/at91samdXX.cfg]",
                 "openocdScript": "source [find interface/stlink-v2.cfg]; set CPUTAPID 0x2ba01477; set CHIPNAME at91samd51g19; source [find target/at91samdXX.cfg]",
                 "ramSize": 196608,
+                "uf2Family": "0x55114460",
                 "vtableShift": 4
             },
             "compileService": {
                 "codalTarget": {
                     "name": "codal-itsybitsy-m4",
                     "url": "https://github.com/lancaster-university/codal-itsybitsy-m4",
-                    "branch": "v0.0.13",
+                    "branch": "v0.0.18",
                     "type": "git"
                 },
                 "codalBinary": "ITSYBITSY_M4",
@@ -138,6 +144,7 @@
                 "runtimeIsARM": true,
                 "vtableShift": 4,
                 "flashCodeAlign": 256,
+                "webUSB": false,
                 "stackAlign": 2
             },
             "compileService": {
@@ -197,8 +204,7 @@
         "betaUrl": "https://github.com/Microsoft/pxt-arcade",
         "githubUrl": "https://github.com/Microsoft/pxt-arcade",
         "boardName": "Arcade",
-        "docMenu": [
-            {
+        "docMenu": [{
                 "name": "About",
                 "path": "/about"
             },
@@ -241,10 +247,11 @@
         },
         "monacoFieldEditors": ["image-editor"],
         "scriptManager": true,
-        "saveInMenu": true,
+        "saveInMenu": false,
         "experiments": [
             "debugger"
         ],
-        "extendEditor": true
+        "extendEditor": true,
+        "simScreenshot": true
     }
 }

@@ -8,7 +8,6 @@
   "name": "Walking Hero",
   "description": "Learn about how characters are represent in games by making your own. New Concepts: Sprites, The image editor, Moving a sprite",
   "url": "/concepts/walking-hero",
-  "label": "New? Start Here!",
   "labelClass": "green ribbon huge",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/walking-hero.gif"

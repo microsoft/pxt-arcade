@@ -4,7 +4,7 @@
 namespace pxsim {
     export type CommonBoard = Board
 
-    let forcedUpdateLoop: any
+    let forcedUpdateLoop: boolean
 
     /**
      * This function gets called each time the program restarts
@@ -14,10 +14,11 @@ namespace pxsim {
         initGamepad();
 
         if (!forcedUpdateLoop) {
+            forcedUpdateLoop = true;
             // this is used to force screen update if game loop is stuck or not set up properly
-            forcedUpdateLoop = setInterval(() => {
+            //forcedUpdateLoop = setInterval(() => {
                 //board().screenState.maybeForceUpdate()
-            }, 100)
+            //}, 100)
             const body = document.getElementById("root")
             window.onfocus = () => {
                 indicateFocus(true);
@@ -43,37 +44,14 @@ namespace pxsim {
         return runtime.board as Board;
     }
 
-    const openMeInMakeCode = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAACBAgMAAACA` +
-        `3hMIAAAACVBMVEX///+rq6sAAACQF3jzAAAAdklEQVQY05WQsQ2FMAxE3/8KDZUp2CcjMBIlYorUTIntuLA` +
-        `UCcHpFRfp4kuMaqqIKGa61kpxfqgis4ghKYOzMipl+pCqfpjzcFHCfOjaUtfmXViLeLVExgIljuN70jYcyH` +
-        `PUhAosRi969a920E7azHWx/zvm4QZrZxQ87RClwwAAAABJRU5ErkJggg==`
-
-    export function loadImageAsync(url: string) {
-        return new Promise<HTMLCanvasElement>((resolve, reject) => {
-            const img = new Image();
-            img.src = url
-            img.onload = () => {
-                const canvas = document.createElement("canvas")
-                canvas.width = img.width
-                canvas.height = img.height
-                const ctx = canvas.getContext("2d")
-                ctx.drawImage(img, 0, 0);
-                resolve(canvas)
-            };
-            img.onerror = () => {
-                reject(new Error("Cannot load image"))
-            }
-        })
-    }
-
     /**
      * Represents the entire state of the executing program.
      * Do not store state anywhere else!
      */
     export class Board extends pxsim.BaseBoard
         implements pxsim.MusicBoard
-        // , pxsim.JacDacBoard
-        {
+    // , pxsim.JacDacBoard
+    {
         public id: string;
         public bus: EventBus;
         //public jacdacState: pxsim.JacDacState;
@@ -81,6 +59,7 @@ namespace pxsim {
         public background: HTMLDivElement;
         public controlsDiv: HTMLDivElement;
         public canvas: HTMLCanvasElement;
+        public stats: HTMLElement;
         public screen: Uint32Array;
         public startTime = Date.now()
         public screenState: ScreenState
@@ -121,64 +100,68 @@ namespace pxsim {
             }
         }
 
+        /*
+        Screenshot instructions:
+        0. run your program; press any button (A/B/left/...)
+        1. run in JS console: E.sim.driver.postMessage({type:"rawscreenshot"})
+        2. click on the data URL
+        3. do "Save As"
+        4. repeat for all screenshots you want
+        5. drop files at https://tinypng.com/
+        6. download compressed files in a folder
+        7. run for f in * ; do echo $f; node -p '"data:image/png;base64," + require("fs").readFileSync("'$f'").toString("base64")' ; done
+        */
         private receiveScreenshot(msg: SimulatorMessage) {
-            if (msg.type == "screenshot")
-                this.screenshotAsync((msg as SimulatorScreenshotMessage).title || pxsim.title || "...")
-                    .then(img => {
-                        Runtime.postMessage(
-                            { type: "screenshot", data: img } as SimulatorScreenshotMessage)
-                    })
+            if (msg.type == "screenshot") {
+                const smsg = msg as SimulatorScreenshotMessage;
+                const img = this.rawScreenshot(smsg.force);
+                Runtime.postMessage({
+                    type: "screenshot",
+                    data: img
+                } as SimulatorScreenshotMessage);
+            }
+            else if (msg.type == "rawscreenshot")
+                console.log(this.rawScreenshot(true))
         }
 
-        private screenshotAsync(title: string) {
-            let w = this.screenState.width
-            let h = this.screenState.height
+        private rawScreenshot(force: boolean) {
             let work = document.createElement("canvas")
-            let border = 16
-            let bottom = 32
-            work.width = w + border * 2
-            work.height = h + border * 2 + bottom
+            work.width = this.screenState.width
+            work.height = this.screenState.height
             let ctx = work.getContext("2d")
-            ctx.imageSmoothingEnabled = false
-            ctx.fillStyle = 'white'
-            ctx.fillRect(0, 0, work.width, work.height)
-            let id = ctx.getImageData(border, border, w, h)
-            if (this.lastScreenshot)
-                new Uint32Array(id.data.buffer).set(this.lastScreenshot)
-            else
-                new Uint32Array(id.data.buffer).fill(0xff000000)
-            ctx.putImageData(id, border, border)
-            let lblTop = 2 * border + h + 4
-            ctx.fillStyle = 'black'
-            ctx.font = '13px sans-serif'
-            ctx.fillText(title, border, lblTop, w)
-            return loadImageAsync(openMeInMakeCode)
-                .then(openme => {
-                    ctx.drawImage(openme, border + w + 3, border)
-                    return work.toDataURL("image/png")
-                })
+            let id = ctx.getImageData(0, 0, work.width, work.height)
+            if (!this.lastScreenshot || force)
+                this.takeScreenshot(true)
+            new Uint32Array(id.data.buffer).set(this.lastScreenshot)
+            ctx.putImageData(id, 0, 0)
+            return work.toDataURL("image/png")
         }
 
         tryScreenshot() {
             let now = Date.now()
             // if there was a key since last screenshot and at least 100ms ago,
             // and last screenshot was at least 3s ago, record a new one
-            if (now - this.lastScreenshotTime > 3000 &&
-                this.lastKey < now - 100 &&
-                (!this.lastScreenshot || this.lastKey > this.lastScreenshotTime))
-                this.takeScreenshot();
+            if (!this.lastScreenshot 
+                || (now - this.lastScreenshotTime > 2000 && Math.random() > 0.5))
+                this.takeScreenshot(false);
         }
 
-        takeScreenshot() {
-            let now = Date.now()
-            this.lastScreenshot = this.screenState.screen.slice(0)
-            this.lastScreenshotTime = now
+        takeScreenshot(force: boolean) {
+            let now = Date.now();
+            const bright = this.screenState.screen.some(c => !!c);
+            if (bright || force) {
+                console.log(`screenshot`)
+                this.lastScreenshot = this.screenState.screen.slice(0);
+                this.lastScreenshotTime = now
+            }
         }
 
         initAsync(msg: pxsim.SimulatorRunMessage): Promise<void> {
             this.runOptions = msg;
             this.background = document.getElementById("screen-back") as HTMLDivElement;
             this.canvas = document.getElementById("paint-surface") as HTMLCanvasElement;
+            this.stats = document.getElementById("debug-stats");
+            this.stats.className = "stats"
             this.canvas.width = 16;
             this.canvas.height = 16;
             this.id = msg.id;
@@ -203,6 +186,7 @@ namespace pxsim {
         }
 
         updateStats() {
+            this.stats.textContent = this.screenState.stats;
             this.tryScreenshot();
         }
 
@@ -374,7 +358,7 @@ namespace pxsim {
             return {
                 width: screenWidth,
                 height: screenHeight,
-                left: (boundsWidth - screenWidth ) / 2,
+                left: (boundsWidth - screenWidth) / 2,
                 top: (boundsHeight - screenHeight) / 2,
                 area: screenWidth * screenHeight
             }
@@ -421,10 +405,19 @@ namespace pxsim {
                 this.onResize();
             }
             else {
-                for (let x = 0; x < this.state.width; x++) {
-                    for (let y = 0; y < this.state.height; y++) {
-                        this.context.fillStyle = this.palette[this.state.lastImage.data[x + y * this.state.width] & 0xff]
-                        this.context.fillRect(x * this.cellWidth, y * this.cellWidth, this.cellWidth, this.cellWidth);
+                if (this.cellWidth == 1) {
+                    if (this.state.width && this.state.height) {
+                        let img = this.context.getImageData(0, 0, this.state.width, this.state.height)
+                        new Uint32Array(img.data.buffer).set(this.state.screen)
+                        this.context.putImageData(img, 0, 0)
+                    }
+                } else {
+                    const mask = this.palette.length - 1
+                    for (let x = 0; x < this.state.width; x++) {
+                        for (let y = 0; y < this.state.height; y++) {
+                            this.context.fillStyle = this.palette[this.state.lastImage.data[x + y * this.state.width] & mask]
+                            this.context.fillRect(x * this.cellWidth, y * this.cellWidth, this.cellWidth, this.cellWidth);
+                        }
                     }
                 }
             }
