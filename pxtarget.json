@@ -183,7 +183,7 @@
         ]
     },
     "simulator": {
-        "autoRun": true,
+        "autoRun": false,
         "aspectRatio": 0.85,
         "dynamicBoardDefinition": true
     },
