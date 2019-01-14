@@ -187,7 +187,7 @@ namespace pxsim {
 
         updateStats() {
             this.stats.textContent = this.screenState.stats;
-            this.tryScreenshot();
+            // screenshots are handled in the share dialog
         }
 
         layout() {
