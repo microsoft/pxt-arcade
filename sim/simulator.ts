@@ -4,7 +4,7 @@
 namespace pxsim {
     export type CommonBoard = Board
 
-    let forcedUpdateLoop: any
+    let forcedUpdateLoop: boolean
 
     /**
      * This function gets called each time the program restarts
@@ -14,10 +14,11 @@ namespace pxsim {
         initGamepad();
 
         if (!forcedUpdateLoop) {
+            forcedUpdateLoop = true;
             // this is used to force screen update if game loop is stuck or not set up properly
-            forcedUpdateLoop = setInterval(() => {
+            //forcedUpdateLoop = setInterval(() => {
                 //board().screenState.maybeForceUpdate()
-            }, 100)
+            //}, 100)
             const body = document.getElementById("root")
             window.onfocus = () => {
                 indicateFocus(true);
@@ -58,6 +59,7 @@ namespace pxsim {
         public background: HTMLDivElement;
         public controlsDiv: HTMLDivElement;
         public canvas: HTMLCanvasElement;
+        public stats: HTMLElement;
         public screen: Uint32Array;
         public startTime = Date.now()
         public screenState: ScreenState
@@ -158,6 +160,8 @@ namespace pxsim {
             this.runOptions = msg;
             this.background = document.getElementById("screen-back") as HTMLDivElement;
             this.canvas = document.getElementById("paint-surface") as HTMLCanvasElement;
+            this.stats = document.getElementById("debug-stats");
+            this.stats.className = "stats"
             this.canvas.width = 16;
             this.canvas.height = 16;
             this.id = msg.id;
@@ -182,6 +186,7 @@ namespace pxsim {
         }
 
         updateStats() {
+            this.stats.textContent = this.screenState.stats;
             this.tryScreenshot();
         }
 
