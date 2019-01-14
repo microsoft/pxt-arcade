@@ -21,6 +21,11 @@
         "game---hw": "file:../game---hw",
         "jacdac-game": "file:../jacdac-game"
     },
+    "yotta": {
+        "config": {
+            "DEVICE_USB": 1
+        }
+    },
     "public": true,
     "dalDTS": {
         "corePackage": "../core---samd"
