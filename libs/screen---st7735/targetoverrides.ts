@@ -7,9 +7,8 @@ function img(lits: any, ...args: any[]): Image { return null }
 
 // set palette before creating screen, so the JS version has the right BPP
 image.setPalette(hex`__palette`)
-let screen = image.create(
-    control.getConfigValue(DAL.CFG_DISPLAY_WIDTH, 160), 
-    control.getConfigValue(DAL.CFG_DISPLAY_HEIGHT, 128))
+//% whenUsed
+const screen = _screen_internal.createScreen();
 
 namespace image {
     //% shim=pxt::setPalette
@@ -22,8 +21,27 @@ namespace _screen_internal {
     //% shim=pxt::updateStats
     function updateStats(msg: string): void { }
 
-    control.__screen.setupUpdate(() => updateScreen(screen))
-    control.EventContext.onStats = function (msg: string) {
-        updateStats(msg);
+    //% shim=pxt::updateScreenStatusBar
+    function updateScreenStatusBar(img: Image): void { }
+    //% shim=pxt::setupScreenStatusBar
+    function setupScreenStatusBar(barHeight: int32): void { }
+
+    export function createScreen() {
+        const img = image.create(160, 120);
+        setupScreenStatusBar(8);
+
+        const status = image.create(160, 8)
+        updateScreenStatusBar(status) // clear the status area
+
+        control.__screen.setupUpdate(() => updateScreen(img))
+        control.EventContext.onStats = function (msg: string) {
+            status.fill(0)
+            status.print(msg, 2, 2, 1, image.font5)
+            updateScreenStatusBar(status)
+            updateStats(msg);
+        }
+
+        return img;
     }
+
 }
