@@ -3,18 +3,3 @@
 game.setWaitAnyButton(controller.pauseUntilAnyButtonIsPressed)
 // force first game engine
 game.eventContext()
-
-scene.systemMenu.addEntry(
-    function () { return "volume up" },
-    function () {
-        const v = music.volume();
-        music.setVolume(v + 32);
-        music.playTone(440, 500);
-    }, true);
-scene.systemMenu.addEntry(
-    function () { return "volume down" },
-    function () {
-        const v = music.volume();
-        music.setVolume(v - 32);
-        music.playTone(440, 500);
-    }, true);
