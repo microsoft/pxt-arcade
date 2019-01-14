@@ -2,6 +2,7 @@
 
 game.setWaitAnyButton(controller.pauseUntilAnyButtonIsPressed)
 game.gameOverSound = function () { music.wawawawaa.play(); }
+game.gameWinSound = function() { music.powerUp.play();}
 // force first game engine
 game.eventContext()
 
