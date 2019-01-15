@@ -17,6 +17,12 @@ Boards that will run Arcade games. Choose a board here to find out more about it
         "imageUrl": "/static/hardware/adafruitm4.jpg",
         "learnMoreUrl": "https://learn.adafruit.com/makecode-arcade-m4",
         "variant": "hw---samd51"
+    },
+    {
+        "name": "Adafruit Joy Bonnet",
+        "imageUrl": "/static/hardware/adafruitjoybonnet.jpg",
+        "learnMoreUrl": "https://learn.adafruit.com/makecode-arcade-pi-zero",
+        "variant": "hw---rpi"
     }
 ]
 ```
