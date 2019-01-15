@@ -22,9 +22,9 @@ namespace _screen_internal {
     function updateStats(msg: string): void { }
 
     //% shim=pxt::updateScreenStatusBar
-    function updateScreenStatusBar(img: Image): void { }
+    function updateScreenStatusBar(img: Image): void { return }
     //% shim=pxt::setupScreenStatusBar
-    function setupScreenStatusBar(barHeight: int32): void { }
+    function setupScreenStatusBar(barHeight: number): void { return }
 
     export function createScreen() {
         const img = image.create(160, 120);

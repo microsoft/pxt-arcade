@@ -183,7 +183,7 @@
         ]
     },
     "simulator": {
-        "autoRun": true,
+        "autoRun": false,
         "aspectRatio": 0.85,
         "dynamicBoardDefinition": true
     },
@@ -204,13 +204,20 @@
         "betaUrl": "https://github.com/Microsoft/pxt-arcade",
         "githubUrl": "https://github.com/Microsoft/pxt-arcade",
         "boardName": "Arcade",
-        "docMenu": [{
-                "name": "About",
-                "path": "/about"
-            },
+        "docMenu": [
             {
                 "name": "Docs",
-                "path": "/docs"
+                "path": "/docs",
+                "popout": true
+            },
+            {
+                "name": "Hardware",
+                "path": "/hardware",
+                "popout": true
+            },
+            {
+                "name": "Forum",
+                "path": "https://forum.makecode.com"
             }
         ],
         "coloredToolbox": true,
