@@ -1,3 +1,4 @@
+# Sorting Algorithms
 
 ```typescript
 interface SortingAlgorithm {
@@ -7,40 +8,14 @@ interface SortingAlgorithm {
     place?: string;
 }
 
-interface MenuItem {
-    name: () => string;
-    clickHandler: () => void;
-    repeat?: boolean;
-}
-
-const COUNT = 52;
-const LINE_WIDTH = 2;
-const BORDER = 2;
+let currCount = 26;
 let pauseDuration = 10;
 let ySegment: number;
 let currentPlace: number;
 let currentRun = 0;
 
-/**
- * Final example set up will be:
- * - insertion sort and quicksort on by default (in 'running' / running currently)
- * - all other elements in other array 'notRunning'
- * - start show on paint below, then bring up menu screen (once start, any button press returns to menu)
- * menu set up:
- *     start
- *         runs start();
- *     add
- *         list all titles from notRunning in pop up, chosen is moved to running
- *     disable
- *         list all titles from running in pop up, chosen is moved to notRunning
- *     rate up
- *          lower pauseDuration
- *     rate down
- *          increase pauseDuration
- */
 let running: SortingAlgorithm[] = [];
-let notRunning: SortingAlgorithm[] = []
-
+let notRunning: SortingAlgorithm[] = [];
 
 addExample("selection sort", sorts.selectionSort);
 addExample("insertion sort", sorts.insertionSort);
@@ -50,24 +25,46 @@ addExample("heap sort", sorts.heapSort);
 addExample("quick sort", sorts.quickSort);
 addExample("merge sort", sorts.mergeSort);
 
+// Start off with two random algorithms running
 for (let i = 0; i < 2; i++) {
     moveRandom(notRunning, running);
 }
 
 start();
 
-game.onPaint(() => show());
+game.onPaint(() => {
+    show();
+});
 
-controller.A.onEvent(ControllerButtonEvent.Pressed, () => start())
+// start over with a new seed
+controller.A.onEvent(ControllerButtonEvent.Pressed, () => {
+    start();
+});
 
-controller.down.onEvent(ControllerButtonEvent.Pressed, () => {
+// remove a sorting algorithm from the group of running sorts
+controller.left.onEvent(ControllerButtonEvent.Pressed, () => {
     moveRandom(running, notRunning);
     start();
-})
+});
 
-controller.up.onEvent(ControllerButtonEvent.Pressed, () => {
+// display a new sorting algorithm if possible
+controller.right.onEvent(ControllerButtonEvent.Pressed, () => {
     moveRandom(notRunning, running);
     start();
+});
+
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (currCount + 4 < screen.width / 2) {
+        currCount += 4;
+        start();
+    }
+});
+
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (currCount - 4 > 6) {
+        currCount -= 4;
+        start();
+    }
 })
 
 function moveRandom<T>(a: T[], b: T[]) {
@@ -87,25 +84,19 @@ function addExample(title: string, sortAlgorithm: (values: number[]) => number[]
 
 function start() {
     const r = new Math.FastRandom();
+    // need to keep track of which run we are on to determine whether a given sort is from
+    // this round or a previous one
     ++currentRun;
     currentPlace = 1;
     ySegment = Math.floor(screen.height / running.length);
-    running.forEach(v => v.a = fillWithDefault(r, COUNT, ySegment - (image.font5.charHeight + 2)));
+    running.forEach(v => v.a = fillWithDefault(r, currCount, ySegment - (image.font5.charHeight + 2)));
     running.forEach(v => control.runInParallel(() => {
         const run = currentRun;
         v.place = undefined;
         v.algorithm(v.a);
-        if (run == currentRun) {
+        if (run === currentRun) {
             const place = currentPlace++;
-            const lastDigit = place % 10;
-            if (lastDigit === 1)
-                v.place = place + "st";
-            else if (lastDigit === 2)
-                v.place = place + "nd";
-            else if (lastDigit === 3)
-                v.place = place + "rd";
-            else
-                v.place = place + "th";
+            v.place = place + ordinalIndicator(place);
         }
     }));
 }
@@ -123,29 +114,27 @@ function fillWithDefault(r: Math.FastRandom, count: number, maxHeight: number): 
 
 function show() {
     running.forEach(function (value: SortingAlgorithm, index: number) {
-        drawCurrentState(value, ySegment, index * ySegment);
+        drawCurrentState(value, currCount, ySegment, index * ySegment);
     });
 }
 
-function drawCurrentState(s: SortingAlgorithm, height: number, yOffset: number) {
+function drawCurrentState(s: SortingAlgorithm, count: number, height: number, yOffset: number) {
     const a = s.a
     const title = s.title;
+    const lineWidth = Math.floor(screen.width / count) - 1;
+    const borderWidth = (screen.width - (count * (lineWidth + 1))) / 2;
+
     for (let i = 0; i < a.length; ++i) {
         if (a[i] > 0) {
             const maxValue = ySegment - (image.font5.charHeight + 2);
-            // 14 possible colors
-            const c = sorts.isSorted(a) ?
-                1
-                :
-                Math.clamp(0x1, 0xE, Math.floor(a[i] * 14 / maxValue));
-            screen.fillRect(BORDER + i * (LINE_WIDTH + 1),
-                height + yOffset - a[i], LINE_WIDTH, a[i], c);
+            let c = Math.clamp(0x1, 0xE, Math.floor(a[i] * 14 / maxValue));
+            screen.fillRect(borderWidth + i * (lineWidth + 1), height + yOffset - a[i], lineWidth, a[i], c);
         }
     }
-    screen.print(title, BORDER, yOffset + 1, 0x2, image.font5);
-    if (s.place) {
-        screen.print(s.place, BORDER, yOffset + 3 + image.font5.charHeight, 0x2, image.font5);
-    }
+
+    screen.print(title, borderWidth, yOffset + 1, 0x2, image.font5);
+    if (s.place)
+        screen.print(s.place, borderWidth, yOffset + 3 + image.font5.charHeight, 0x2, image.font5);
 }
 
 function swap(a: number[], i: number, j: number) {
@@ -159,6 +148,18 @@ function returnControl() {
     // pause to let control return if pauseDuration is set
     if (pauseDuration)
         pause(pauseDuration);
+}
+
+function ordinalIndicator(input: number) {
+    const lastDigit = input % 10;
+    if (lastDigit === 1)
+        return "st";
+    else if (lastDigit === 2)
+        return "nd";
+    else if (lastDigit === 3)
+        return "rd";
+    else
+        return "th";
 }
 
 /**
