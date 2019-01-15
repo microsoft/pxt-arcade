@@ -230,6 +230,11 @@
         "hasAudio": true,
         "allowPackageExtensions": true,
         "homeScreenHero": "./static/hero.png",
+        "socialOptions": {
+            "twitterHandle": "msmakecode",
+            "orgTwitterHandle": "MSMakeCode",
+            "hashtags": "MakeCode"
+        },
         "blocklyOptions": {
             "grid": {
                 "spacing": 20,
