@@ -59,10 +59,10 @@ namespace pxsim {
         public background: HTMLDivElement;
         public controlsDiv: HTMLDivElement;
         public canvas: HTMLCanvasElement;
+        public stats: HTMLElement;
         public screen: Uint32Array;
         public startTime = Date.now()
         public screenState: ScreenState
-        private lastKey = 0
         private lastScreenshot: Uint32Array
         private lastScreenshotTime = 0;
         private view: ScreenView;
@@ -91,7 +91,7 @@ namespace pxsim {
         }
 
         handleKeyEvent(key: Key, isPressed: boolean) {
-            this.lastKey = Date.now()
+            //this.lastKey = Date.now()
             this.bus.queue(isPressed ? INTERNAL_KEY_DOWN : INTERNAL_KEY_UP, key)
             this.bus.queue(isPressed ? INTERNAL_KEY_DOWN : INTERNAL_KEY_UP, 0) // "any" key
             if (this.controls) {
@@ -113,7 +113,7 @@ namespace pxsim {
         private receiveScreenshot(msg: SimulatorMessage) {
             if (msg.type == "screenshot") {
                 const smsg = msg as SimulatorScreenshotMessage;
-                const img = this.rawScreenshot(smsg.force);
+                const img = this.rawScreenshot(true);
                 Runtime.postMessage({
                     type: "screenshot",
                     data: img
@@ -159,6 +159,8 @@ namespace pxsim {
             this.runOptions = msg;
             this.background = document.getElementById("screen-back") as HTMLDivElement;
             this.canvas = document.getElementById("paint-surface") as HTMLCanvasElement;
+            this.stats = document.getElementById("debug-stats");
+            this.stats.className = "stats"
             this.canvas.width = 16;
             this.canvas.height = 16;
             this.id = msg.id;
@@ -183,7 +185,8 @@ namespace pxsim {
         }
 
         updateStats() {
-            this.tryScreenshot();
+            this.stats.textContent = this.screenState.stats || '';
+            // screenshots are handled in the share dialog
         }
 
         layout() {

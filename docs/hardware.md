@@ -2,7 +2,7 @@
 
 ## Boards
 
-Boards that will run Arcade games. Choose a board here to find out more about it and where you can get one!
+These boards run MakeCode Arcade games. Choose a board to find out more about it and where you can get one!
 
 ```codecard
 [
@@ -13,3 +13,7 @@ Boards that will run Arcade games. Choose a board here to find out more about it
     }
 ]
 ```
+
+## Adding Arcade to a New Board
+
+See the [Arcade Hardware Development](/hardware/dev) page to find out how to add Arcade to a new board.
