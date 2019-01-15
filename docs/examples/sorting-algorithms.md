@@ -1,6 +1,25 @@
 # Sorting Algorithms
 
+Identifying efficient ways 
+
+## Selection Sort
+
+## Insertion Sort
+
+## Bubble Sort
+
+## Shell Sort
+
+## Heap Sort
+
+## Quick Sort
+
+## Merge Sort
+
+
 ```typescript
+const pauseDuration = 10;
+
 interface SortingAlgorithm {
     title: string;
     algorithm: (values: number[]) => number[];
@@ -9,10 +28,10 @@ interface SortingAlgorithm {
 }
 
 let currCount = 26;
-let pauseDuration = 10;
+let currentRun = 0;
+
 let ySegment: number;
 let currentPlace: number;
-let currentRun = 0;
 
 let running: SortingAlgorithm[] = [];
 let notRunning: SortingAlgorithm[] = [];
@@ -84,12 +103,13 @@ function addExample(title: string, sortAlgorithm: (values: number[]) => number[]
 
 function start() {
     const r = new Math.FastRandom();
-    // need to keep track of which run we are on to determine whether a given sort is from
-    // this round or a previous one
     ++currentRun;
     currentPlace = 1;
+
     ySegment = Math.floor(screen.height / running.length);
+
     running.forEach(v => v.a = fillWithDefault(r, currCount, ySegment - (image.font5.charHeight + 2)));
+
     running.forEach(v => control.runInParallel(() => {
         const run = currentRun;
         v.place = undefined;
@@ -127,6 +147,7 @@ function drawCurrentState(s: SortingAlgorithm, count: number, height: number, yO
     for (let i = 0; i < a.length; ++i) {
         if (a[i] > 0) {
             const maxValue = ySegment - (image.font5.charHeight + 2);
+            // pick color between 0x1 and 0xE based on value
             let c = Math.clamp(0x1, 0xE, Math.floor(a[i] * 14 / maxValue));
             screen.fillRect(borderWidth + i * (lineWidth + 1), height + yOffset - a[i], lineWidth, a[i], c);
         }
@@ -141,13 +162,12 @@ function swap(a: number[], i: number, j: number) {
     let tmp = a[i];
     a[i] = a[j];
     a[j] = tmp;
-    returnControl();
+    pause(pauseDuration);
 }
 
-function returnControl() {
-    // pause to let control return if pauseDuration is set
-    if (pauseDuration)
-        pause(pauseDuration);
+function compare(a: number, b: number) {
+    pause(pauseDuration)
+    return a < b;
 }
 
 function ordinalIndicator(input: number) {
@@ -170,9 +190,9 @@ namespace sorts {
         for (let i = 0; i < a.length; i++) {
             let value = a[i]
             let j: number;
-            for (j = i - 1; j > -1 && a[j] > value; --j) {
+            for (j = i - 1; j > -1 && compare(value, a[j]); --j) {
                 a[j + 1] = a[j];
-                returnControl();
+                pause(pauseDuration);
             }
             a[j + 1] = value;
         }
@@ -184,9 +204,9 @@ namespace sorts {
         for (let i = 0; i < a.length; i++) {
             let min = i;
             for (let j = i + 1; j < a.length; j++) {
-                returnControl();
-                if (a[j] < a[min]) {
+                if (compare(a[j], a[min])) {
                     min = j;
+                    pause(pauseDuration);
                 }
             }
             if (i !== min) {
@@ -200,7 +220,8 @@ namespace sorts {
     export function bubbleSort(a: number[]) {
         for (let i = 0; i < a.length; ++i) {
             for (let j = 0; j < i; ++j) {
-                if (a[i] < a[j]) {
+
+                if (compare(a[i], a[j])) {
                     swap(a, i, j);
                 }
             }
@@ -216,10 +237,10 @@ namespace sorts {
                 let j = i;
                 let t = a[i];
 
-                while (j >= increment && a[j - increment] > t) {
+                while (j >= increment && compare(t, a[j - increment])) {
                     a[j] = a[j - increment];
                     j = j - increment;
-                    returnControl();
+                    pause(pauseDuration);
                 }
                 a[j] = t;
             }
@@ -249,12 +270,14 @@ namespace sorts {
         function partition(a: number[], lo: number, hi: number) {
             let pivot = a[hi];
             let i = lo - 1;
-            for (let j = lo; j < hi; ++j) {
+
+            for (let j = lo; compare(j, hi); ++j) {
                 if (a[j] < pivot) {
                     i++;
                     swap(a, i, j);
                 }
             }
+
             swap(a, i + 1, hi);
             return i + 1;
         }
@@ -276,17 +299,15 @@ namespace sorts {
                 const right = left + 1;
                 let curr = i;
 
-                if (left < max && heap[left] > heap[curr]) {
+                if (left < max && compare(heap[curr], heap[left])) {
                     curr = left;
                 }
 
-                if (right < max && heap[right] > heap[curr]) {
+                if (right < max && compare(heap[curr], heap[right])) {
                     curr = right;
                 }
 
-                if (curr == i) {
-                    return;
-                }
+                if (curr == i) return;
 
                 swap(heap, i, curr);
                 i = curr;
@@ -322,11 +343,10 @@ namespace sorts {
 
             const merged = merge(left, right);
 
-            // This is not a step in mergesort; this is solely here so that the
-            // screen can be updated with a preview
+            // Update preview on screen
             merged.forEach(function (value: number, index: number) {
                 original[offset + index] = value;
-                returnControl();
+                pause(pauseDuration);
             });
 
             return merged;
@@ -338,7 +358,7 @@ namespace sorts {
             let rIndex = 0;
 
             while (lIndex < left.length && rIndex < right.length) {
-                if (left[lIndex] < right[rIndex]) {
+                if (compare(left[lIndex], right[rIndex])) {
                     result.push(left[lIndex]);
                     ++lIndex;
                 } else {
