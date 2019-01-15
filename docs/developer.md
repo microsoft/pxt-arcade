@@ -26,6 +26,10 @@ Documentation on how to import and use images in Arcade can be found [here](/dev
 
 Documentation on how to create music and sound effects is [here](/developer/sound).
 
+## Controller Buttons
+
+Use the [button tester](/developer/button-tester) to verify the proper button assignents on your controller.
+
 ## Getting Help
 
 To get help, you can ask the [MakeCode community](https://aka.ms/makecodecommunity) at/on our public discord channel for arcade.
