@@ -1,21 +1,18 @@
 # Sorting Algorithms
 
-Identifying efficient ways 
+Arrays are used often to store large amounts of data; for example, numbers or characters. To make sure it is easy to find things in the array, developers will often need to **sort** arrays; that is, rearrange the elements so that smaller things appear at the beginning, and larger things appear at the end.
 
-## Selection Sort
+Identifying efficient ways to sort data is a challenge that has been optimized by software developers for years. This is done by developing different sorting **algorithms**: sets of rules or instructions on how to properly sort the data as efficiently as possible.
 
-## Insertion Sort
+In the example below, a selection of general purpose sorting algorithms - algorithms that can be used on any type of data where elements can be compared - are shown on the screen. To start, two random algorithms are shown sorting a random series of numbers, represented by rectangles on the screen. The name of the sorting algorithm being used is shown in the upper left corner of the section of the screen where the sorting algorithm is being used to sort the numbers.
 
-## Bubble Sort
+## Controls:
 
-## Shell Sort
-
-## Heap Sort
-
-## Quick Sort
-
-## Merge Sort
-
+* ``A`` button: restart the current algorithms with a new group of initial values
+* ``up`` button: increase the number of elements being sorted if possible, and restart
+* ``down`` button: decrease the number of elements being sorted if possible, and restart
+* ``left`` button: remove a random sorting algorithm from the group being displayed if possible, and restart
+* ``right`` button: add a random sorting algorithm to the group being displayed if possible, and restart
 
 ```typescript
 const pauseDuration = 10;
@@ -51,9 +48,7 @@ for (let i = 0; i < 2; i++) {
 
 start();
 
-game.onPaint(() => {
-    show();
-});
+game.onPaint(() => show());
 
 // start over with a new seed
 controller.A.onEvent(ControllerButtonEvent.Pressed, () => {
@@ -62,26 +57,32 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, () => {
 
 // remove a sorting algorithm from the group of running sorts
 controller.left.onEvent(ControllerButtonEvent.Pressed, () => {
-    moveRandom(running, notRunning);
-    start();
-});
-
-// display a new sorting algorithm if possible
-controller.right.onEvent(ControllerButtonEvent.Pressed, () => {
-    moveRandom(notRunning, running);
-    start();
-});
-
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (currCount + 4 < screen.width / 2) {
-        currCount += 4;
+    if (running.length > 1) {
+        moveRandom(running, notRunning)
         start();
     }
 });
 
+// display a new sorting algorithm if possible
+controller.right.onEvent(ControllerButtonEvent.Pressed, () => {
+    if (notRunning.length > 0) {
+        moveRandom(notRunning, running)
+        start();
+    }
+});
+
+// increase the number of elements to sort if possible
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (currCount + 6 < screen.width / 2) {
+        currCount += 6;
+        start();
+    }
+});
+
+// decrease the number of elements to sort if possible
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (currCount - 4 > 6) {
-        currCount -= 4;
+    if (currCount > 6) {
+        currCount -= 6;
         start();
     }
 })
@@ -108,14 +109,29 @@ function start() {
 
     ySegment = Math.floor(screen.height / running.length);
 
+    // clear old arrays to quickly cull other threads as much as possible;
+    // only merge sort will survive as it is not in place
+    running.forEach(v => {
+        while (v.a && v.a.length != 0)
+            v.a.pop();
+    });
+
+    // create a new starting array for each of the algorithms
     running.forEach(v => v.a = fillWithDefault(r, currCount, ySegment - (image.font5.charHeight + 2)));
 
+    // run the comparison
     running.forEach(v => control.runInParallel(() => {
         const run = currentRun;
         v.place = undefined;
         v.algorithm(v.a);
         if (run === currentRun) {
             const place = currentPlace++;
+            if (place === 1)
+                music.powerUp.play();
+            else if (place === running.length)
+                music.wawawawaa.play();
+
+            // ordinal indicator is 'st', 'nd', 'rd', or 'th'
             v.place = place + ordinalIndicator(place);
         }
     }));
@@ -129,6 +145,7 @@ function fillWithDefault(r: Math.FastRandom, count: number, maxHeight: number): 
     for (let i = 0; i < count; ++i) {
         output.push(r.randomRange(0, maxHeight));
     }
+
     return output;
 }
 
@@ -158,18 +175,6 @@ function drawCurrentState(s: SortingAlgorithm, count: number, height: number, yO
         screen.print(s.place, borderWidth, yOffset + 3 + image.font5.charHeight, 0x2, image.font5);
 }
 
-function swap(a: number[], i: number, j: number) {
-    let tmp = a[i];
-    a[i] = a[j];
-    a[j] = tmp;
-    pause(pauseDuration);
-}
-
-function compare(a: number, b: number) {
-    pause(pauseDuration)
-    return a < b;
-}
-
 function ordinalIndicator(input: number) {
     const lastDigit = input % 10;
     if (lastDigit === 1)
@@ -186,6 +191,18 @@ function ordinalIndicator(input: number) {
  * Sorting Algorithm Implementations
  */
 namespace sorts {
+    function swap(a: number[], i: number, j: number) {
+        let tmp = a[i];
+        a[i] = a[j];
+        a[j] = tmp;
+        pause(pauseDuration);
+    }
+    
+    function compare(a: number, b: number) {
+        pause(pauseDuration)
+        return a < b;
+    }
+
     export function insertionSort(a: number[]) {
         for (let i = 0; i < a.length; i++) {
             let value = a[i]
@@ -220,7 +237,7 @@ namespace sorts {
     export function bubbleSort(a: number[]) {
         for (let i = 0; i < a.length; ++i) {
             for (let j = 0; j < i; ++j) {
-
+                
                 if (compare(a[i], a[j])) {
                     swap(a, i, j);
                 }
@@ -390,3 +407,17 @@ namespace sorts {
     };
 }
 ```
+
+## Selection Sort
+
+## Insertion Sort
+
+## Bubble Sort
+
+## Shell Sort
+
+## Heap Sort
+
+## Quick Sort
+
+## Merge Sort
