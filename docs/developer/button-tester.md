@@ -1,6 +1,6 @@
 # Button tester
 
-A simple game to see which button is being pressed.
+A simple game to see which button is being pressed. This game is helpful for testing button assignments when adding support for new hardware. The buttons are represented visually on the screen so that you can relate them to he button locations on the controller.
 
 ## Code
 
