@@ -222,6 +222,7 @@
         ],
         "coloredToolbox": true,
         "monacoToolbox": true,
+        "selectLanguage": true,
         "invertedMenu": true,
         "showHomeScreen": true,
         "highContrast": true,
