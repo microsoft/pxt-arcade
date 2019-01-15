@@ -238,3 +238,62 @@ By returning early, it avoids doing the unnecessary ``// Omitted complicated set
 1. What needs to be added to a function so that it will return a value?
 2. If a function returns a value in one case, does it need to return a value in all cases?
 3. What happens if you call a function with a return value without storing or using the returned value?
+
+### ~hint
+
+## Case Study
+
+### Return the Sprites
+
+In the ``enemy`` namespace, modify the ``createEnemy`` function so that it returns the ``||sprites:Sprite||`` that is created.
+
+Next, in the ``ship`` namespace, modify the ``initialize`` function to create the ``||sprites:Sprite||`` as a local variable (rather than just immediately storing it as the ``player``), and return the newly created ``||sprites:Sprite||``.
+
+After doing this, modify the declaration of ``||variables:player||`` in ``ship`` so that it is also **initialized** to the value returned by the call to ``initialize``. Now, it is a bit more clear what the value is assigned to, as you no longer have to look into different functions to see where it is first given a value.
+
+### Solution
+
+Notice that the name of the sprite created in ``ship.initialize`` was changed from ``||variables:player||`` to ``||variables:sprite||`` in the example solution below; this isn't required to complete this task, but it does make it a bit more clear that the value is not the same as the one that is outside the function.
+
+```typescript-ignore
+/**
+ * Creates and controls the enemies in the game
+ */
+namespace enemy {
+    createEnemy();
+
+    function createEnemy(): Sprite {
+        let enemy = sprites.create(spritesheet.enemy, SpriteKind.Enemy);
+        setPosition(enemy, 10);
+        enemy.vy = 10;
+        return enemy;
+    }
+
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
+    }
+}
+
+/**
+ * Creates and controls the player's ship
+ */
+namespace ship {
+    export let player: Sprite = initialize();
+
+    function initialize(): Sprite {
+        let sprite = sprites.create(spritesheet.player, SpriteKind.Player)
+        controller.moveSprite(sprite, 80, 30);
+        sprite.x = screen.width / 2;
+        sprite.y = screen.height - 20;
+        return sprite;
+    }
+
+    // When the player presses A, fire a laser from the spaceship
+    controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+        sprites.createProjectile(spritesheet.laser, 0, -40, SpriteKind.Laser, player);
+    });
+}
+```
+
+### ~

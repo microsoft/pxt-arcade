@@ -1,116 +1,6 @@
-# Additions to Case Study
+# Case study catch up
 
-At this point, you have the knowledge necessary to deal with a larger pieces of code - in particular, by using comments to leave information for anyone reading it in the future, as well as namespaces to split code into logical chunks.
-
-To get a head start on future topics, there are a few more namespaces that we will add in to make the game a bit more interesting, and give a framework for future tasks to build upon.
-
-Below are two snippets of code.
-
-The first is the current state of the example game, with a few minor changes; in particular, removing the ``||game:splash||`` screen and ``||game:prompt||`` for user input, as well as the initial blast of ``||sprites:Asteroids||``. These can be left in your game if you'd like (just make sure that they remain at the end of the code, so they are executed after everything is set up), but have been removed to make it easier to focus on the game.
-
-The second is the version that will be referenced going forward. This includes a number of new namespaces that will make the game a bit more interesting. Play the game and see what has changed, and duplicate the changes from this page into your own game.
-
-### ~hint
-
-In future activities, the solutions will be limited to show the sections of the code that have been updated - in particular, any namespaces that were changed, as well any top level code that was modified.
-
-This will help focus on the sections of the code that are relevant to each task, without having to search through the entire game's code for every single change.
-
-### ~
-
-## Current Game
-
-```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Asteroid
-}
-
-/**
- * Contains the images used in the game
- */
-namespace spritesheet {
-    export let player: Image = img`
-        . . . . 8 . . . .
-        . . . 8 8 8 . . .
-        . . . 8 1 8 . . .
-        . . 2 8 1 8 2 . .
-        . 2 2 8 8 8 2 2 .
-        2 2 2 8 8 8 2 2 2
-        . . . 5 . 5 . . .
-    `;
-
-    export let enemy: Image = img`
-        5 5 . . . . 5 5
-        7 7 7 7 7 7 7 7
-        . 9 9 7 7 9 9 .
-        . 7 7 7 7 7 7 .
-        . . . 9 9 . . .
-    `;
-
-    export let asteroid: Image = sprites.space.spaceAsteroid0;
-}
-
-/**
- * Creates and controls the asteroids within the game
- */
-namespace asteroids {
-    sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
-        sprite.setImage(spritesheet.asteroid);
-        sprite.setFlag(SpriteFlag.AutoDestroy, true);
-        setPosition(sprite, 10);
-        setMotion(sprite);
-    });
-
-    game.onUpdateInterval(1500, function () {
-        sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Asteroid);
-    });
-
-    function setMotion(asteroid: Sprite) {
-        asteroid.vx = Math.randomRange(-8, 8);
-        asteroid.vy = Math.randomRange(35, 20);
-    }
-
-    function setPosition(sprite: Sprite, edge: number) {
-        sprite.x = Math.randomRange(edge, screen.width - edge);
-        sprite.y = 0;
-    }
-}
-
-/**
- * Creates and controls the player's ship
- */
-namespace ship {
-    export let player = sprites.create(spritesheet.player, SpriteKind.Player);
-
-    controller.moveSprite(player, 80, 30);
-    player.x = screen.width / 2;
-    player.y = screen.height - 20;
-}
-
-/**
- * Creates and controls the enemies in the game
- */
-namespace enemy {
-    let enemy = sprites.create(spritesheet.enemy, SpriteKind.Enemy);
-    enemy.x = ship.player.x;
-    enemy.y = 20;
-    enemy.vy = 10;
-}
-```
-
-## New Version
-
-### Change List:
-
-* [ ] Added two more SpriteKinds: PowerUp, and Laser
-* [ ] Added another enum, PowerUpType
-* [ ] Added images in spritesheet for PowerUp and Laser
-* [ ] Added powerups namespace, which creates and handles powerups
-* [ ] Added overlapevents namespace, which contains events to handle overlaps between different sprites
-* [ ] Added status namespace, which will contain things related to the state of the game
+At the end of the functions section, the case study should resemble this example solution:
 
 ```typescript
 enum SpriteKind {
@@ -209,11 +99,18 @@ namespace asteroids {
  * Creates and controls the player's ship
  */
 namespace ship {
-    export let player = sprites.create(spritesheet.player, SpriteKind.Player);
+    export let player: Sprite = initialize();
 
-    controller.moveSprite(player, 80, 30);
-    player.x = screen.width / 2;
-    player.y = screen.height - 20;
+    /**
+     * @returns a player sprite that moves with the directional buttons
+     */
+    function initialize(): Sprite {
+        let sprite = sprites.create(spritesheet.player, SpriteKind.Player)
+        controller.moveSprite(sprite, 80, 30);
+        sprite.x = screen.width / 2;
+        sprite.y = screen.height - 20;
+        return sprite;
+    }
 
     // When the player presses A, fire a laser from the spaceship
     controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -225,10 +122,27 @@ namespace ship {
  * Creates and controls the enemies in the game
  */
 namespace enemy {
-    let enemy = sprites.create(spritesheet.enemy, SpriteKind.Enemy);
-    enemy.x = ship.player.x;
-    enemy.y = 20;
-    enemy.vy = 10;
+    createEnemy();
+
+    /**
+     * @returns an enemy sprite that is positioned at the top of the screen
+     */
+    function createEnemy(): Sprite {
+        let enemy = sprites.create(spritesheet.enemy, SpriteKind.Enemy);
+        setPosition(enemy, 10);
+        enemy.vy = 10;
+        return enemy;
+    }
+
+    /**
+     * Place the given sprite at a random location at the top of the screen
+     * @param sprite the sprite to place at the top of the screen
+     * @param edge how many pixels between either edge of the screen to set
+     */
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
+    }
 }
 
 /**
@@ -318,7 +232,16 @@ namespace overlapevents {
  * Set up the state of the game
  */
 namespace status {
-    info.setLife(3);
-    info.setScore(0);
+    initialize(4, 0);
+
+    /**
+     * Sets up the initial state of the game
+     * @param life the initial life to set
+     * @param score the initial score to set
+     */
+    function initialize(life: number, score: number) {
+        info.setLife(life);
+        info.setScore(score);
+    }
 }
 ```

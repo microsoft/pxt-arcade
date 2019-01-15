@@ -219,3 +219,89 @@ function sayMyName(name: string): string {
 
 1. In your own words, describe why comments for functions are helpful.
 2. Why is it important to keep a consistent structure for how comments are written?
+
+### ~hint
+
+## Case Study
+
+### Commenting!
+
+Review the previous case study examples, and add comments to the functions that you added in previous lessons to clarify what exactly they are supposed to do. This includes the following functions:
+
+* ``ship.initialize``
+* ``enemy.createEnemy``
+* ``enemy.setPosition``
+* ``status.initialize``
+
+### Solution
+
+```typescript-ignore
+/**
+ * Creates and controls the enemies in the game
+ */
+namespace enemy {
+    createEnemy();
+
+    /**
+     * @returns an enemy sprite that is positioned at the top of the screen
+     */
+    function createEnemy(): Sprite {
+        let enemy = sprites.create(spritesheet.enemy, SpriteKind.Enemy);
+        setPosition(enemy, 10);
+        enemy.vy = 10;
+        return enemy;
+    }
+
+    /**
+     * Place the given sprite at a random location at the top of the screen
+     * @param sprite the sprite to place at the top of the screen
+     * @param edge how many pixels between either edge of the screen to set
+     */
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
+    }
+}
+
+/**
+ * Creates and controls the player's ship
+ */
+namespace ship {
+    export let player: Sprite = initialize();
+
+    /**
+     * @returns a player sprite that moves with the directional buttons
+     */
+    function initialize(): Sprite {
+        let sprite = sprites.create(spritesheet.player, SpriteKind.Player)
+        controller.moveSprite(sprite, 80, 30);
+        sprite.x = screen.width / 2;
+        sprite.y = screen.height - 20;
+        return sprite;
+    }
+
+    // When the player presses A, fire a laser from the spaceship
+    controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+        sprites.createProjectile(spritesheet.laser, 0, -40, SpriteKind.Laser, player);
+    });
+}
+
+/**
+ * Set up the state of the game
+ */
+namespace status {
+    initialize(4, 0);
+
+    /**
+     * Sets up the initial state of the game
+     * @param life the initial life to set
+     * @param score the initial score to set
+     */
+    function initialize(life: number, score: number) {
+        info.setLife(life);
+        info.setScore(score);
+    }
+}
+```
+
+### ~

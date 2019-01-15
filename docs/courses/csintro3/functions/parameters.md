@@ -133,3 +133,55 @@ changeByFive(15, false);
 
 1. How do parameters allow for more flexible code?
 2. Review the functions you have learned, like ``||game:game.splash||`` and ``console.log``, and identify which ones have parameters.
+
+### ~hint
+
+## Case Study
+
+### Set Up Values
+
+Modify the ``initialize`` function in the ``status`` namespace to accept **two** parameters: one for the initial ``life`` value, and one for the initial ``score`` value. Update the **call** to that function so that the behavior remains the same.
+
+### Enemies!
+
+Move all of the code that is currently in the ``enemy`` namespace into a function named ``createEnemy``. Call this function to create a single enemy.
+
+Next, create a function named ``setPosition``, which accepts a ``||sprites:Sprite||`` (call it ``sprite``) and a ``||math:number||`` (call it ``edge``). This should place the given ``||sprites:Sprite||`` in a **random x position** between ``edge`` and ``screen.width - edge``.
+
+Call this function from ``createEnemy`` so that each time an enemy is created it starts in a random position. You should also remove the places where the ``x`` and ``y`` positions are set.
+
+### Solution
+
+```typescript-ignore
+/**
+ * Set up the state of the game
+ */
+namespace status {
+    initialize(4, 0);
+
+    function initialize(life: number, score: number) {
+        info.setLife(life);
+        info.setScore(score);
+    }
+}
+
+/**
+ * Creates and controls the enemies in the game
+ */
+namespace enemy {
+    createEnemy();
+
+    function createEnemy() {
+        let enemy = sprites.create(spritesheet.enemy, SpriteKind.Enemy);
+        setPosition(enemy, 10);
+        enemy.vy = 10;
+    }
+
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
+    }
+}
+```
+
+### ~
