@@ -172,3 +172,55 @@ However, because the variable in the function has a different **scope**, the var
 This type of bug is very subtle, and can be hard to catch when looking through long segments of code; in the next few lessons better ways to handle this type of behavior will be shown.
 
 ### ~
+
+### ~hint
+
+## Case Study
+
+### Initialization and Initialize
+
+Add a function named ``initialize`` to the ``status`` namespace, which sets the initial values for ``life`` to 4 and ``score`` to 0.
+
+After writing the function, call the function in the ``status`` namespace, and remove the ``info.setLife`` and ``info.setScore`` that are currently in the namespace.
+
+### Sprite Setup
+
+Add a function named ``initialize`` to the ``ship`` namespace, which sets up the ship sprite at the start of the game. This function should set up the initial values for 
+
+### Solution
+
+```typescript-ignore
+/**
+ * Set up the state of the game
+ */
+namespace status {
+    initialize();
+
+    function initialize() {
+        info.setLife(4);
+        info.setScore(0);
+    }
+}
+
+/**
+ * Creates and controls the player's ship
+ */
+namespace ship {
+    export let player: Sprite;
+    initialize();
+
+    function initialize() {
+        player = sprites.create(spritesheet.player, SpriteKind.Player)
+        controller.moveSprite(player, 80, 30);
+        player.x = screen.width / 2;
+        player.y = screen.height - 20;
+    }
+
+    // When the player presses A, fire a laser from the spaceship
+    controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+        sprites.createProjectile(spritesheet.laser, 0, -40, SpriteKind.Laser, player);
+    });
+}
+```
+
+### ~
