@@ -11,6 +11,8 @@ OK, let's get started by making our ``Player`` sprite. Start by placing a ``||va
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let mySprite: Sprite = null
@@ -30,6 +32,8 @@ We want to put our sprite character nearer to the left side of the screen so dra
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let mySprite: Sprite = null
@@ -61,6 +65,8 @@ Drag a ``||sprites:set mySprite x||`` into the ``||loops:on start||``, click the
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let mySprite: Sprite = null
@@ -207,6 +213,8 @@ We need to make sure that the sprite is on the ground before jumping, so drag an
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let mySprite: Sprite = null
@@ -266,7 +274,9 @@ Our final step is to end the game if a barrel touches the sprite player. Drag an
 ```blocks
 enum SpriteKind {
     Player,
-    Projectile
+    Projectile,
+    Food,
+    Enemy
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     game.over(false)
