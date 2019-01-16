@@ -2,7 +2,7 @@
 
 In this activity, you will practice using a coordinate grid.
 
-The game Sink A Ship is perhaps the most fun a student can have practicing using a coordinate grid. The original [Sink A Ship](https://www.bing.com/search?q=battleship+game) game is a 10x10 grid with numbers on one axis and letters on the other.
+The game Sink A Ship is perhaps the most fun a student can have practicing using a coordinate grid. The original Sink A Ship game is a 10x10 grid with numbers on one axis and letters on the other.
 
 This will help us practice using the correct x and y coordinates instead of letters and numbers. Each student should make two grids. One grid is for placing their own ships and keeping track of their opponent's hits and misses and the other grid is for keeping track of their own hits and misses while trying to determine the location of their opponent's ships.
 
