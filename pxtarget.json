@@ -64,13 +64,16 @@
                     }
                 }
             ],
-            "0.0.0 - 0.3.24": [
+            "0.0.0 - 0.3.23": [
                 {
                     "type": "package",
                     "map": {
                         "local-multiplayer": ""
                     }
-                }, {
+                }
+            ],
+            "0.0.0 - 0.3.24": [
+                {
                     "type": "api",
                     "map": {
                         "sprites\\.createEmptySprite\\(([^)]+)\\)": "sprites.create(img`.`, $1)"
