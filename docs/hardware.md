@@ -9,19 +9,19 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "GHI Arcade",
         "imageUrl": "/static/hardware/ghiarcade.jpg",
-        "learnMoreUrl": "https://brainpad.com/arcade",
+        "url": "https://brainpad.com/arcade",
         "variant": "hw---stm32f401"
     },
     {
         "name": "Adafruit M4",
         "imageUrl": "/static/hardware/adafruitm4.jpg",
-        "learnMoreUrl": "https://learn.adafruit.com/makecode-arcade-m4",
+        "url": "https://learn.adafruit.com/makecode-arcade-m4",
         "variant": "hw---samd51"
     },
     {
         "name": "Adafruit Joy Bonnet",
         "imageUrl": "/static/hardware/adafruitjoybonnet.jpg",
-        "learnMoreUrl": "https://learn.adafruit.com/makecode-arcade-pi-zero",
+        "url": "https://learn.adafruit.com/makecode-arcade-pi-zero",
         "variant": "hw---rpi"
     }
 ]
