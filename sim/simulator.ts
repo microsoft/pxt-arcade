@@ -181,6 +181,8 @@ namespace pxsim {
             throttleAnimation(cb => window.onresize = cb, () => this.layout())
             indicateFocus(document.hasFocus());
 
+            pxsim.U.addClass(this.canvas, "borders");
+
             return Promise.resolve();
         }
 
