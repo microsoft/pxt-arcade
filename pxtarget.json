@@ -72,6 +72,12 @@
                 "map": {
                     "sprites\\.createEmptySprite\\(([^)]+)\\)": "sprites.create(img`1`, $1)"
                 }
+            }, {
+                "type": "blockId",
+                "map": {
+                    "keysdx": "keydx",
+                    "keysdy": "keydy"
+                }
             }]
         }
     },
