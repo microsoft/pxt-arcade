@@ -63,7 +63,11 @@ namespace pxsim {
             let inside: KeyBinding = null
             let close: KeyBinding[] = []
 
-            if (!document.hasFocus()) window.focus();
+            // IE bug: it seems that IE does not maintain the focus state properly
+            //         harmless to request focus on each keystroke
+            //if (!document.hasFocus()) {
+            window.focus();
+            //}
 
             const x = ev.pageX
             const y = ev.pageY
