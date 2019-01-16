@@ -169,7 +169,7 @@ e e e e e e e e
 
 ## Step 8
 
-Find ``||variables:set myTile to||`` in ``||scene:Scene||``, and drag it into the ``||game:on game update interval||``. Set the ``||scene:col||`` to 9, and the ``||scene:row||`` to 5, so that the ``||sprites:projectile||`` starts just above the 
+Find ``||variables:set myTile to||`` in ``||scene:Scene||``, and drag it into the ``||game:on game update interval||``. Set the ``||scene:col||`` to 9, and the ``||scene:row||`` to 5, which is the tile on the right side of the screen directly above the wall. Drag ``||scene:on top of myTile place mySprite||`` after ``||variables:set myTile to||``, and change ``||variables:mySprite||`` to ``||variables:projectile||``.
 
 ```blocks
 let projectile: Sprite = null
