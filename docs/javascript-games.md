@@ -19,6 +19,13 @@ Here are some fun programs for your @boardname@!
   "url":"/examples/bouncer-bucket",
   "cardType": "example",
   "imageUrl": "/static/examples/bouncer-bucket.png"
+},
+{
+  "name": "Sorting Algorithms",
+  "description": "A visualization of different sorting algorithms",
+  "url":"/examples/sorting-algorithms",
+  "cardType": "example",
+  "imageUrl": "/static/examples/sorting-algorithms.gif"
 }
 ]
 ```
