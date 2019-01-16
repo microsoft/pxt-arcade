@@ -203,7 +203,7 @@ game.onUpdateInterval(500, function () {
             } else {
                 info.setScore(0)
             }
-            game.over(false)
+            game.over()
         }
     }
 })

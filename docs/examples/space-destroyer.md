@@ -12,7 +12,7 @@ let ship: Sprite = null
 let projectile: Sprite = null
 let asteroids: Image[] = []
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    game.over(false)
+    game.over()
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.destroy()

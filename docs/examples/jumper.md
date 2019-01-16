@@ -67,7 +67,7 @@ player.x = 20;
 player.y = ground;
 
 player.onOverlap(function (other: Sprite) {
-    game.over(false);
+    game.over();
 });
 
 

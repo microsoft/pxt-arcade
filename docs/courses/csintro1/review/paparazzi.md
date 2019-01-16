@@ -85,7 +85,7 @@ Collette wants to add in a splash screen that shows the score the player reached
 ```blocks
 info.onCountdownEnd(function () {
     game.splash("")
-    game.over(false)
+    game.over()
 })
 ```
 

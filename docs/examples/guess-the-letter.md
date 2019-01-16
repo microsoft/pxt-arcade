@@ -26,6 +26,6 @@ while (info.life() > 0) {
         }
     }
 }
-game.over(false)
+game.over()
 
 ```

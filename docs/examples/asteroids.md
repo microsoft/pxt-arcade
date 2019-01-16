@@ -64,7 +64,7 @@ const rocketImg = img`
 `
 
 spaceship.onOverlap(function (other: Sprite) {
-    game.over(false)
+    game.over()
 })
 spaceship.z = 10
 

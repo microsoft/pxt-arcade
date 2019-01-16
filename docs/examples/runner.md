@@ -73,7 +73,7 @@ game.onUpdate(function () {
         jumper.vy = -100
 
     if (jumper.y > screen.height)
-        game.over(false)
+        game.over()
     if (currHouse.right + gap < screen.width)
         newHouse()
 })
