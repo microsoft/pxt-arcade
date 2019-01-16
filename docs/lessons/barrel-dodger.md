@@ -269,7 +269,7 @@ e e e e e e e e
 
 ## Step 12
 
-Our final step is to end the game if a barrel touches the sprite player. Drag an ``||sprites:on sprite overlaps||`` onto the editor. Set the sprite kind for ``otherSprite`` to ``Projectile``. End the game with a ``||game:game over lose||`` block inside.
+Our final step is to end the game if a barrel touches the sprite player. Drag an ``||sprites:on sprite overlaps||`` onto the editor. Set the sprite kind for ``otherSprite`` to ``Projectile``. End the game with a ``||game:game over||`` block inside.
 
 ```blocks
 enum SpriteKind {
@@ -279,7 +279,7 @@ enum SpriteKind {
     Enemy
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    game.over(false)
+    game.over()
 })
 ```
 
