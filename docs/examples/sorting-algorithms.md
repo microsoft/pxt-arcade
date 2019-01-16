@@ -1,10 +1,10 @@
 # Sorting Algorithms
 
-Arrays are used often to store large amounts of data; for example, numbers or characters. To make sure it is easy to find things in the array, developers will often need to **sort** arrays; that is, rearrange the elements so that smaller things appear at the beginning, and larger things appear at the end.
+Arrays are often used to store large amounts of data such as numbers or text characters. To make it easier to find things in the array, a program will often **sort** an array first; that is, rearrange the elements so that smaller things appear at the beginning, and larger things appear at the end.
 
-Identifying efficient ways to sort data is a challenge that has been optimized by software developers for years. This is done by developing different sorting **algorithms**: sets of rules or instructions on how to properly sort the data as efficiently as possible.
+Finding efficient ways to sort data is a challenge that software developers have been attempting for years. This is done by developing different sorting **algorithms**: sets of rules or instructions on how to properly sort the data as efficiently as possible.
 
-In the example below, a selection of general purpose sorting algorithms are shown on the screen. These are algorithms that can be used on any type of data where elements can be compared. To start, two random algorithms are shown sorting a random series of numbers, represented by rectangles on the screen. The name of the sorting algorithm being used is shown in the upper left corner of the section of the screen where the sorting algorithm is being used to sort the numbers.
+In the following example, a selection of general purpose sorting algorithms are shown on the screen. These are algorithms that can be used on any type of data where elements are compared. To start, two random algorithms are shown sorting a random series of numbers represented by rectangles on the screen. The name of the sorting algorithm being used is shown in the upper left corner of the section of the screen where the sorting algorithm is used.
 
 ## Controls:
 
