@@ -55,30 +55,34 @@
         "webUSB": true,
         "saveAsPNG": true,
         "patches": {
-            "0.0.0 - 0.1.1": [{
-                "type": "api",
-                "map": {
-                    "controller\\.controlSprite": "controller.moveSprite",
-                    "controller\\.controlPlayer": "controller.movePlayer"
+            "0.0.0 - 0.1.1": [
+                {
+                    "type": "api",
+                    "map": {
+                        "controller\\.controlSprite": "controller.moveSprite",
+                        "controller\\.controlPlayer": "controller.movePlayer"
+                    }
                 }
-            }],
-            "0.0.0 - 0.3.24": [{
-                "type": "api",
-                "map": {
-                    "sprites\\.createEmptySprite\\(([^)]+)\\)": "sprites.create(img`1`, $1)"
+            ],
+            "0.0.0 - 0.3.24": [
+                {
+                    "type": "package",
+                    "map": {
+                        "local-multiplayer": ""
+                    }
+                }, {
+                    "type": "api",
+                    "map": {
+                        "sprites\\.createEmptySprite\\(([^)]+)\\)": "sprites.create(img`.`, $1)"
+                    }
+                }, {
+                    "type": "blockId",
+                    "map": {
+                        "keysdx": "keydx",
+                        "keysdy": "keydy"
+                    }
                 }
-            }, {
-                "type": "blockId",
-                "map": {
-                    "keysdx": "keydx",
-                    "keysdy": "keydy"
-                }
-            }, {
-                "type": "package",
-                "map": {
-                    "local-multiplayer": ""
-                }
-            }]
+            ]
         }
     },
     "compileService": {
