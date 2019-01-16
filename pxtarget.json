@@ -67,6 +67,11 @@
                 "map": {
                     "game\\.over\\(\\)": "game.over(false)"
                 }
+            }, {
+                "type": "api",
+                "map": {
+                    "sprites\\.createEmptySprite\\(([^)]+)\\)": "sprites.create(img`1`, $1)"
+                }
             }]
         }
     },
