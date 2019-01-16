@@ -33,6 +33,13 @@ Here are some fun programs for your @boardname@!
   "url":"/examples/level-game",
   "cardType": "example",
   "imageUrl": "/static/examples/level-game.png"
+},
+{
+  "name": "Catch",
+  "description": "Don't let the balls hit the floor",
+  "url":"/examples/catch",
+  "cardType": "example",
+  "imageUrl": "/static/examples/catch-game.png"
 }
 ]
 ```
