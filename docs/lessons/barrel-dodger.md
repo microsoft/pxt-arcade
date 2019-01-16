@@ -25,7 +25,7 @@ Draw your player sprite's image using the image editor.
 
 ## Step 3
 
-We want to put our sprite character nearer to the left side so the screen so drag a ``||sprites:set mySprite position||`` into ``||loops:on start||`` and set ``x`` to `40` and ``y`` to `70`.
+We want to put our sprite character nearer to the left side so the screen so drag a ``||sprites:set mySprite position||`` into ``||loops:on start||`` and set ``x`` to `20` and ``y`` to `70`.
 
 ```blocks
 enum SpriteKind {
@@ -51,14 +51,18 @@ mySprite = sprites.create(img`
 . . . f f f f f f f f f f . . . 
 . . . . . f f . . f f . . . . . 
 `, SpriteKind.Player)
-mySprite.setPosition(40, 70)
+mySprite.setPosition(20, 70)
 ```
 
 ## Step 4
 
-Drag a ``||sprites:set mySprite x(horizontal position)||`` into the ``||loops:on start||``, click the dropdown and select ``ay (acceleration y)``. Set the value to `500` so that character is pulled down by "gravity".
+Drag a ``||sprites:set mySprite x||`` into the ``||loops:on start||``, click the dropdown and select ``ay (acceleration y)``. Set the value to `500` so that character is pulled down by "gravity".
 
 ```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . 5 . 5 . . . . . . . 
@@ -77,17 +81,16 @@ mySprite = sprites.create(img`
 . . . f 3 3 5 3 3 5 3 3 f . . . 
 . . . f f f f f f f f f f . . . 
 . . . . . f f . . f f . . . . . 
-`, 0)
-mySprite.setPosition(40, 70)
+`, SpriteKind.Player)
+mySprite.setPosition(20, 70)
 mySprite.ay = 500
 ```
 
 ## Step 5
 
-Now let's create a platform base at the bottom of the screen. Drag a ``||scene:set tile to||`` into ``||loops:on start||``. Set the tile index color. This index value is set in the tile map where we want the platform tiles to show up in the scene. In the next box, fill in the tile image with the pixels you want with the image editor. Click 
-the **(+)** symbol and turn the ``wall`` attribute **on**. This makes the sprite stop when it moves into the tile and it will won't fall through our platform.
+Now let's create a platform base at the bottom of the screen. Drag a ``||scene:set tile to||`` into ``||loops:on start||``. Set the tile index color. This index value is set in the tile map where we want the platform tiles to show up in the scene. In the next box, fill in the tile image with the pixels you want with the image editor. Click the **(+)** symbol and turn the ``wall`` attribute **on**. This makes the sprite stop when it moves into the tile and it will won't fall through our platform.
 
-Get a ``||scene:set tilemap to||`` and put it under the ``||scene:set tile to||``. Using the tile index color value, draw the platform at the bottom of the map.
+Get a ``||scene:set tilemap to||`` and put it under the ``||scene:set tile to||``. Using the tile index color value, draw the platform at the bottom of the map - make sure that it is **two tiles tall** from the bottom of the screen.
 
 ```blocks
 scene.setTile(3, img`
@@ -122,15 +125,15 @@ scene.setTileMap(img`
 
 ## Step 6
 
-Next, let's have some barrels moving at random speeds. Make them start from the right side of the screen and fly towards the player sprite. Move an ``||game:on game update every||`` onto the editor and set the interval time to `750` milliseconds. Drag a ``||sprites:projectile from side||`` into it. Click the empty image box in the projectile block and change the dimensions to 8x8. Draw the barrel.
+Next, let's have some barrels moving at random speeds. Make them start from the right side of the screen and fly towards the player sprite. Move an ``||game:on game update every||`` onto the editor and set the interval time to `1500` milliseconds. Drag a ``||sprites:projectile from side||`` into it. Click the empty image box in the projectile block and change the dimensions to 8x8. Draw the barrel.
 
 ![Draw a barrel in the image editor](/static/lessons/barrel-dodger/draw-barrel.gif)
 
-After that, drag a ``||math:pick random||`` block into where ``vx`` is and set the range from ``-80`` to ``-100``.
+After that, drag a ``||math:pick random||`` block into where ``vx`` is and set the range from ``-100`` to ``-80``.
 
 ```blocks
 let projectile: Sprite = null
-game.onUpdateInterval(750, function () {
+game.onUpdateInterval(1500, function () {
     projectile = sprites.createProjectileFromSide(img`
 . e e e e e e . 
 e e e e e e e e 
@@ -140,17 +143,17 @@ e e e e e e e e
 1 1 1 1 1 1 1 1 
 e e e e e e e e 
 . e e e e e e . 
-`, Math.randomRange(-80, -100), 0)
+`, Math.randomRange(-100, -80), 0)
 })
 ```
 
 ## Step 7
 
-Now we want add a ``||sprites:set mySprite x(horizontal position)||`` to ``||game:on game update every||``. Get one of those and in the dropdown, select ``lifespan``. Change the variable to ``projectile`` instead of ``mySprite``. Make the lifespan value be `60`. Drag a  ``||sprites:set mySprite position to||`` into the bottom of ``||game:on game update every||`` and change the variable to ``projectile``. Set the ``x`` value to `160` and the ``y`` value to `90`.
+Now we want add a ``||sprites:set mySprite x(horizontal position)||`` to ``||game:on game update every||``. Drag a  ``||sprites:set mySprite position to||`` into the bottom of ``||game:on game update every||`` and change the variable to ``projectile``.
 
 ```blocks
 let projectile: Sprite = null
-game.onUpdateInterval(750, function () {
+game.onUpdateInterval(1500, function () {
     projectile = sprites.createProjectileFromSide(img`
 . e e e e e e . 
 e e e e e e e e 
@@ -160,13 +163,34 @@ e e e e e e e e
 1 1 1 1 1 1 1 1 
 e e e e e e e e 
 . e e e e e e . 
-`, Math.randomRange(-80, -100), 0)
-    projectile.lifespan = 60
-    projectile.setPosition(160, 90)
+`, Math.randomRange(-100, -80), 0)
 })
 ```
 
 ## Step 8
+
+Find ``||variables:set myTile to||`` in ``||scene:Scene||``, and drag it into the ``||game:on game update interval||``. Set the ``||scene:col||`` to 9, and the ``||scene:row||`` to 5, so that the ``||sprites:projectile||`` starts just above the 
+
+```blocks
+let projectile: Sprite = null
+let myTile: tiles.Tile = null
+game.onUpdateInterval(1500, function () {
+    projectile = sprites.createProjectileFromSide(img`
+. e e e e e e . 
+e e e e e e e e 
+1 1 1 1 1 1 1 1 
+e e e e e e e e 
+e e e e e e e e 
+1 1 1 1 1 1 1 1 
+e e e e e e e e 
+. e e e e e e . 
+`, Math.randomRange(-100, -80), 0)
+    myTile = scene.getTile(9, 5)
+    myTile.place(projectile)
+})
+```
+
+## Step 9
 
 Let's give the sprite the ability to jump when we press a button. We do this with  ``||controller:on any button pressed||``. Find that block and drag it out onto the editor. Change the button from ``any`` to ``A``.
 
@@ -176,9 +200,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 9
+## Step 10
 
-We need to make sure that the sprite is on the ground before jumping, so drag an ``||logic:if then||`` conditional into the ``||controller:on A button pressed||``. Replace `true` with ``||scene:is mySprite hitting wall||`` and change ``left`` side ``bottom``. Finally, put in a ``||sprites:set mySprite x(horizontal position)||`` and  choose ``||sprites:vy (velocity y)||`` from the dropdown. Set the value to `-150`.
+We need to make sure that the sprite is on the ground before jumping, so drag an ``||logic:if then||`` conditional into the ``||controller:on A button pressed||``. Replace `true` with ``||scene:is mySprite hitting wall||`` and change ``left`` side ``bottom``. Finally, put in a ``||sprites:set mySprite x||`` and choose ``||sprites:vy (velocity y)||`` from the dropdown. Set the value to `-250`.
 
 ```blocks
 enum SpriteKind {
@@ -203,21 +227,22 @@ mySprite = sprites.create(img`
 . . . f 3 3 5 3 3 5 3 3 f . . . 
 . . . f f f f f f f f f f . . . 
 . . . . . f f . . f f . . . . . 
-`, 0)
+`, SpriteKind.Player)
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (mySprite.isHittingTile(CollisionDirection.Bottom)) {
-        mySprite.vy = -150
+        mySprite.vy = -250
     }
 })
 ```
 
-## Step 10
+## Step 11
 
 Each time a barrel starts to move we want to increase the score. Get a ``||info:change score by||`` and put it into ``||game:on game update every||``. Leave the value at `1`.
 
 ```blocks
 let projectile: Sprite = null
-game.onUpdateInterval(750, function () {
+let myTile: tiles.Tile = null
+game.onUpdateInterval(1500, function () {
     projectile = sprites.createProjectileFromSide(img`
 . e e e e e e . 
 e e e e e e e e 
@@ -227,16 +252,16 @@ e e e e e e e e
 1 1 1 1 1 1 1 1 
 e e e e e e e e 
 . e e e e e e . 
-`, Math.randomRange(-80, -100), 0)
-    projectile.lifespan = 60
-    projectile.setPosition(160, 90)
+`, Math.randomRange(-100, -80), 0)
     info.changeScoreBy(1)
+    myTile = scene.getTile(9, 5)
+    myTile.place(projectile)
 })
 ```
 
-## Step 11
+## Step 12
 
-Our final step is to end the game if a barrel touches the sprite player. Drag an ``||sprites:on sprite overlaps||`` onto the editor. Set the sprite kind for ``otherSprite`` to ``Projectile``. End the game with a ``||game:game over||`` block inside.
+Our final step is to end the game if a barrel touches the sprite player. Drag an ``||sprites:on sprite overlaps||`` onto the editor. Set the sprite kind for ``otherSprite`` to ``Projectile``. End the game with a ``||game:game over lose||`` block inside.
 
 ```blocks
 enum SpriteKind {
@@ -244,13 +269,12 @@ enum SpriteKind {
     Projectile
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    game.over()
+    game.over(false)
 })
 ```
 
 ## Complete
 
 Awesome! Congratulations on making the Barrel Dodger game! You are on your way to making amazing games with  @boardname@.
-
 
 ![Barrel Dodger game playing](/static/lessons/barrel-dodger/barrel-dodger.gif)
