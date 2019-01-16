@@ -2,7 +2,7 @@
 
 Example
 
-```blocks
+```typescript
 
 let arr = [1]
 for (let i = 0; i < 42; ++i)
