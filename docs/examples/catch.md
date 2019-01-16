@@ -1,5 +1,6 @@
 # Catch
 
+```blocks
 enum SpriteKind {
     Player,
     Projectile,
@@ -196,3 +197,4 @@ game.onUpdateInterval(2200, function () {
     mySprite4.vx = 10 * s4Dir
     s4Dir = s4Dir * -1
 })
+```
