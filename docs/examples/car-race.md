@@ -51,7 +51,7 @@ ddx = 1
 const road = sprites.create(roadImg)
 
 car.onOverlap(function (other: Sprite) {
-    game.over()
+    game.over(false)
 })
 car.z = 10
 

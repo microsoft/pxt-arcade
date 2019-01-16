@@ -47,7 +47,7 @@ game.onUpdate(function () {
         if (ball.right > screen.width || ball.left < 0)
             ball.vx = -ball.vx;
         if (ball.y > screen.height)
-            game.over();
+            game.over(false);
         if (counter % 10 == 0)
             ball.ay++;
     }

@@ -320,7 +320,7 @@ enum SpriteKind {
 let pizza: Sprite = null
 let princess: Sprite = null
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
-    game.over()
+    game.over(false)
 })
 princess = sprites.create(img`
 . . . . . f f 4 4 f f . . . . . 

@@ -102,7 +102,7 @@ game.onPaint(function () {
             n = (x << 8) | y
         }
         if (snake.indexOf(n) >= 0 || isEdge(x, y)) {
-            game.over()
+            game.over(false)
             return
         }
         snake.unshift(n)

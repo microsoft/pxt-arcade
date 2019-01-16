@@ -23,7 +23,7 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.setAction(mySprite, ActionKind.Jumping)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    game.over()
+    game.over(false)
 })
 scene.setBackgroundColor(9)
 mySprite = sprites.create(img`
@@ -525,7 +525,7 @@ game.onUpdate(function () {
         animation.setAction(mySprite, ActionKind.Idle)
     }
     if (mySprite.bottom > 120 || mySprite.top < 0) {
-        game.over()
+        game.over(false)
     }
 })
 

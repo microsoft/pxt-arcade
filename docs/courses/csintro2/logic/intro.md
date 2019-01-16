@@ -68,7 +68,7 @@ sprites.onDestroyed(SpriteKind.Enemy, function (sprite) {
     info.changeScoreBy(1)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    game.over()
+    game.over(false)
 })
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 

@@ -10,7 +10,7 @@ enum SpriteKind {
 let projectile: Sprite = null
 let sprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    game.over()
+    game.over(false)
 })
 sprite = sprites.create(img`
 4 4 4 4 4 4 4 4

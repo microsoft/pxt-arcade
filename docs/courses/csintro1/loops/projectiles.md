@@ -164,7 +164,7 @@ enum SpriteKind {
 let projectile: Sprite = null
 let mySprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    game.over()
+    game.over(false)
 })
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
