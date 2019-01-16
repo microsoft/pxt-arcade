@@ -48,7 +48,11 @@ for (let i = 0; i < 2; i++) {
 
 start();
 
-game.onPaint(() => show());
+game.onPaint(() => {
+    running.forEach(function (value: SortingAlgorithm, index: number) {
+        drawCurrentState(value, currCount, ySegment, index * ySegment);
+    });
+});
 
 // start over with a new seed
 controller.A.onEvent(ControllerButtonEvent.Pressed, () => {
@@ -147,12 +151,6 @@ function fillWithDefault(r: Math.FastRandom, count: number, maxHeight: number): 
     }
 
     return output;
-}
-
-function show() {
-    running.forEach(function (value: SortingAlgorithm, index: number) {
-        drawCurrentState(value, currCount, ySegment, index * ySegment);
-    });
 }
 
 function drawCurrentState(s: SortingAlgorithm, count: number, height: number, yOffset: number) {
