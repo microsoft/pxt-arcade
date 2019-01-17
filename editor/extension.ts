@@ -118,6 +118,57 @@ namespace pxt.editor {
                 });
             });
         });
+
+        /* Convert
+         *  <block type="spritecreateempty">
+         *      <value name="kind">
+         *          <shadow type="spritetype">
+         *          <field name="MEMBER">Ball</field>
+         *          </shadow>
+         *      </value>
+         *  </block>
+         * 
+         * to
+         * 
+         *  <block type="variables_set">
+         *      <field name="VAR" id="@bNB}-u`Y_kq+;gbQGBC" variabletype="">mySprite</field>
+         *      <value name="VALUE">
+         *      <shadow type="math_number">
+         *          <field name="NUM">0</field>
+         *      </shadow>
+         *      <block type="spritescreate">
+         *          <value name="img">
+         *          <shadow type="screen_image_picker">
+         *              <field name="img">img`
+         *          . . . . . . . . . . . . . . . . 
+         *          . . . . . . . . . . . . . . . . 
+         *          . . . . . . . . . . . . . . . . 
+         *          . . . . . . . . . . . . . . . . 
+         *          . . . . . . . . . . . . . . . . 
+         *          . . . . . . . . . . . . . . . . 
+         *          . . . . . . . . . . . . . . . . 
+         *          . . . . . . . . . . . . . . . . 
+         *          . . . . . . . . . . . . . . . . 
+         *          . . . . . . . . . . . . . . . . 
+         *          . . . . . . . . . . . . . . . . 
+         *          . . . . . . . . . . . . . . . . 
+         *          . . . . . . . . . . . . . . . . 
+         *          . . . . . . . . . . . . . . . . 
+         *          . . . . . . . . . . . . . . . . 
+         *          . . . . . . . . . . . . . . . . 
+         *          `
+         *              </field>
+         *          </shadow>
+         *          </value>
+         *          <value name="kind">
+         *          <shadow type="spritetype">
+         *              <field name="MEMBER">Projectile</field>
+         *          </shadow>
+         *          </value>
+         *      </block>
+         *      </value>
+         *  </block>
+         */
     }
 
     function changeVariableToSpriteReporter(varBlockOrShadow: Element, reporterName: string) {
