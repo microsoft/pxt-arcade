@@ -21,9 +21,9 @@ Here are some fun programs for your @boardname@!
   "imageUrl": "/static/examples/space-destroyer.png"
 },
 {
-  "name": "Dodge the Rocks",
-  "description": "Don't get hit by the flying boulders",
-  "url":"/examples/dodge-rock",
+  "name": "Dodge the Burgers",
+  "description": "Don't get hit by the flying burgers",
+  "url":"/examples/dodge-the-burgers",
   "cardType": "example",
   "imageUrl": "/static/examples/dodge-rock.png"
 },
