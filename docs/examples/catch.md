@@ -15,8 +15,6 @@ let basket: Sprite = null
 let mySprite4: Sprite = null
 let falling: Sprite = null
 let s4Dir = 0
-let otherSprite: Sprite = null
-let sprite: Sprite = null
 scene.onHitTile(SpriteKind.Projectile, 5, function (sprite) {
     sprite.vx = -1 * sprite.vx
 })
