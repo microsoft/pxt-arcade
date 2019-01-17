@@ -35,6 +35,7 @@
 
 ## See Also
 
+[Eat the Doughnut](/tutorials/eat-the-doughnut),
 [Simple Maze](/tutorials/simple-maze),
 [Happy Flower](/tutorials/happy-flower),
 [Simple Extensions](/tutorials/simple-extensions)
