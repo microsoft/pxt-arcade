@@ -57,3 +57,8 @@
     * [Function](/types/function)
     * [Image](/types/image)
     * [Sprite](/types/sprite)
+
+## Hardware
+
+* [Current Hardware](/hardware)
+    * [Adding New Board](/hardware/adding)

@@ -7,7 +7,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
 ```codecard
 [
     {
-        "name": "GHI Arcade",
+        "name": "BrainPad Arcade",
         "imageUrl": "/static/hardware/ghiarcade.jpg",
         "url": "https://brainpad.com/arcade",
         "variant": "hw---stm32f401"
@@ -29,4 +29,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
 
 ## Adding Arcade to a New Board
 
-See the [Arcade Hardware Development](/hardware/dev) page to find out how to add Arcade to a new board.
+If you want to design a board with Arcade support, refer to [Adding Board](/hardware/adding) page.
+
+There is some minimal documentation about adding new MCUs in the
+[Arcade Hardware Development](/hardware/dev) page.

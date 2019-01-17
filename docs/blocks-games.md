@@ -21,9 +21,9 @@ Here are some fun programs for your @boardname@!
   "imageUrl": "/static/examples/space-destroyer.png"
 },
 {
-  "name": "Dodge the Rocks",
-  "description": "Don't get hit by the flying boulders",
-  "url":"/examples/dodge-rock",
+  "name": "Dodge the Burgers",
+  "description": "Don't get hit by the flying burgers",
+  "url":"/examples/dodge-the-burgers",
   "cardType": "example",
   "imageUrl": "/static/examples/dodge-rock.png"
 },
@@ -40,6 +40,13 @@ Here are some fun programs for your @boardname@!
   "url":"/examples/memory",
   "cardType": "example",
   "imageUrl": "/static/examples/memory.png"
+},
+{
+  "name": "Catch",
+  "description": "Don't let the balls hit the floor",
+  "url":"/examples/catch",
+  "cardType": "example",
+  "imageUrl": "/static/examples/catch-game.gif"
 }
 ]
 ```
