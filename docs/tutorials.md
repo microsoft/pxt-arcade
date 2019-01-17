@@ -24,12 +24,6 @@
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/happy-flower.gif"
 }, {
-  "name": "Star Field",
-  "description": "Create a starry night for the next hit space game",
-  "url": "/tutorials/star-field",
-  "cardType": "tutorial",
-  "imageUrl": "/static/tutorials/star-field.gif"
-}, {
   "name": "Simple Extensions",
   "description": "Learn the basics of using extensions and create a platformer",
   "url": "/tutorials/simple-extensions",
@@ -43,5 +37,4 @@
 
 [Simple Maze](/tutorials/simple-maze),
 [Happy Flower](/tutorials/happy-flower),
-[Star Field](/tutorials/star-field),
 [Simple Extensions](/tutorials/simple-extensions)
