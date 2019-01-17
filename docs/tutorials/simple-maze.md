@@ -74,7 +74,7 @@ mySprite = sprites.create(img`
 
 ## Step 3
 
-Now, let's make our sprite figure move with the controller arrow keys. Get a ``||controller:control sprite||`` from ``||controller:Controller||`` and put it under ``||variables:set mySprite to||``.
+Now, let's make our sprite figure move with the controller arrow keys. Get a ``||controller:move mySprite with buttons||`` from ``||controller:Controller||`` and put it under ``||variables:set mySprite to||``.
 
 ```blocks
 enum SpriteKind {

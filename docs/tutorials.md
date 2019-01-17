@@ -16,7 +16,7 @@
   "description": "Learn the basics of creating a maze with this simple program",
   "url": "/tutorials/simple-maze",
   "cardType": "tutorial",
-  "imageUrl": "/static/tutorials/simple-maze.png"
+  "imageUrl": "/static/tutorials/simple-maze.gif"
 }, {
   "name": "Happy Flower",
   "description": "Create a flower that exudes happiness",
