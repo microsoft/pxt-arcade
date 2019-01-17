@@ -33,6 +33,13 @@ Here are some fun programs for your @boardname@!
   "url":"/examples/level-game",
   "cardType": "example",
   "imageUrl": "/static/examples/level-game.png"
+},
+{
+  "name": "Memory",
+  "description": "How well can you remember the sequence?",
+  "url":"/examples/memory",
+  "cardType": "example",
+  "imageUrl": "/static/examples/memory.png"
 }
 ]
 ```

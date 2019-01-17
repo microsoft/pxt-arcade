@@ -26,7 +26,22 @@ Here are some fun programs for your @boardname@!
   "url":"/examples/sorting-algorithms",
   "cardType": "example",
   "imageUrl": "/static/examples/sorting-algorithms.gif"
+},
+{
+  "name": "Planet Putt Putt",
+  "description": "Golf your way through the galaxy",
+  "url":"/examples/planet-putt-putt",
+  "cardType": "example",
+  "imageUrl": "/static/examples/planet-putt-putt.png"
+},
+{
+  "name": "Cube Land",
+  "description": "Save the Cube Lad from the Cube Lord",
+  "url":"/examples/cube-land",
+  "cardType": "example",
+  "imageUrl": "/static/examples/cube-land.png"
 }
+
 ]
 ```
 
