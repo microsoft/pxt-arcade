@@ -12,8 +12,6 @@ enum SpriteKind {
 let asteroids: Image[] = []
 let ship: Sprite = null
 let projectile: Sprite = null
-let otherSprite: Sprite = null
-let sprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     scene.cameraShake(4, 500)
     otherSprite.destroy(effects.disintegrate)
@@ -38,8 +36,6 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     `, ship, 0, -140)
     projectile.startEffect(effects.coolRadial, 100)
 })
-sprite = null
-otherSprite = null
 asteroids = [sprites.space.spaceSmallAsteroid1, sprites.space.spaceSmallAsteroid0, sprites.space.spaceAsteroid0, sprites.space.spaceAsteroid1, sprites.space.spaceAsteroid4, sprites.space.spaceAsteroid3]
 ship = sprites.create(sprites.space.spaceRedShip, SpriteKind.Player)
 ship.setFlag(SpriteFlag.StayInScreen, true)

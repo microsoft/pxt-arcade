@@ -9,8 +9,10 @@ enum SpriteKind {
     Food,
     Enemy
 }
-let mySprite: Sprite = null
 let projectile: Sprite = null
+let mySprite: Sprite = null
+let otherSprite: Sprite = null
+let sprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
     scene.cameraShake(4, 500)
@@ -45,9 +47,9 @@ controller.moveSprite(mySprite, 100, 100)
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
 info.setLife(3)
 game.onUpdateInterval(500, function () {
-    if (Math.percentChance(50)) {
+    if (Math.percentChance(33)) {
         projectile = sprites.createProjectileFromSide(sprites.food.smallBurger, -60, 0)
-    } else if (false) {
+    } else if (Math.percentChance(33)) {
         projectile = sprites.createProjectileFromSide(sprites.food.smallPizza, 60, 0)
     } else {
         projectile = sprites.createProjectileFromSide(sprites.food.smallStrawberry, 55, 0)
