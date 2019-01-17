@@ -30,7 +30,8 @@ This will create a new character in the game -- but there is no image to represe
 ```blocks
 enum SpriteKind {
     Player,
-    Enemy
+    Enemy,
+    Food
 }
 let mySprite: Sprite = null
 scene.setBackgroundColor(7)
@@ -70,7 +71,8 @@ This block allows the person playing the game to move the ``||sprites:Sprite||``
 ```blocks
 enum SpriteKind {
     Player,
-    Enemy
+    Enemy,
+    Food
 }
 let mySprite: Sprite = null
 scene.setBackgroundColor(7)
@@ -98,14 +100,15 @@ controller.moveSprite(mySprite)
 
 ## Step 5 @fullscreen
 
-Drag another ``||variables:set mySprite to||`` into the ``||loops:on start||``. Click on ``||variables:mySprite||``, select ``||variables:New variable||``, and enter ``doughnut`` as the variable name.
+Drag another ``||variables:set mySprite to||`` into the ``||loops:on start||``. Click on ``||variables:mySprite||``, select ``||variables:New variable||``, and enter ``doughnut`` as the variable name. Change the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Food||``.
 
 This will create **another** ``||sprites:Sprite||``, but one that isn't controlled by the player.
 
 ```blocks
 enum SpriteKind {
     Player,
-    Enemy
+    Enemy,
+    Food
 }
 let mySprite: Sprite = null
 let doughnut: Sprite = null
@@ -147,7 +150,7 @@ doughnut = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
+`, SpriteKind.Food)
 ```
 
 ## Step 6 @fullscreen
@@ -158,14 +161,15 @@ Click on the grey box for ``||variables:doughnut||`` and then select the Gallery
 
 ## Step 7 @fullscreen
 
-Find ``||info:start countdown 10s||`` in ``||info:Info||``. Drag it into the ``||loops:on start||`` after ``||sprites:set doughnut position to||`` and change the ``10`` to ``3``.
+Find ``||info:start countdown 10s||`` in ``||info:Info||``. Drag it down to bottom of the ``||loops:on start||`` and change the ``10`` to ``3``.
 
 This will start a countdown that will soon end the game; we'll need to add a way to win!
 
 ```blocks
 enum SpriteKind {
     Player,
-    Enemy
+    Enemy,
+    Food
 }
 let doughnut: Sprite = null
 let mySprite: Sprite = null
@@ -206,24 +210,25 @@ a a 3 3 3 d d d a a 4 4 4 e e .
 . . e e b b 4 4 4 4 b e e . . . 
 . . . e e e e e e e e . . . . . 
 . . . . . . . . . . . . . . . . 
-`, SpriteKind.Enemy)
+`, SpriteKind.Food)
 // @highlight
 info.startCountdown(3)
 ```
 
 ## Step 8 @fullscreen
 
-Find ``||sprites:on sprite of kind Player overlaps otherSprite of kind Enemy||`` in ``||sprites:Sprites||`` and drag it into the workspace. In the ``||variables:doughnut||`` ``||sprites:Sprite||``, change the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Enemy||``.
+Find ``||sprites:on sprite of kind Player overlaps otherSprite of kind Food||`` in ``||sprites:Sprites||`` and drag it into the workspace. In the ``||variables:doughnut||`` ``||sprites:Sprite||``, change the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Food||``.
 
-This will create an **event** that occurs when a ``||sprites:Player Sprite||`` touches and ``||sprites:Enemy Sprite||``. Events allow you to set blocks to run whenever something occurs; for example, ``||loops:on start||`` is an event that lets you set code to run as soon as the game is started!
+This will create an **event** that occurs when a ``||sprites:Player Sprite||`` touches and ``||sprites:Food Sprite||``. Events allow you to set blocks to run whenever something occurs; for example, ``||loops:on start||`` is an event that lets you set code to run as soon as the game is started!
 
 ```blocks
 enum SpriteKind {
     Player,
-    Enemy
+    Enemy,
+    Food
 }
 // @highlight
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
 	
 })
 ```
@@ -239,7 +244,7 @@ enum SpriteKind {
     Food,
     Projectile
 }
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     // @highlight
     info.changeScoreBy(1)
 })
@@ -260,7 +265,7 @@ enum SpriteKind {
     Projectile
 }
 let doughnut: Sprite = null
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     // @highlight
     doughnut.setPosition(Math.randomRange(20, 140), Math.randomRange(20, 80))
@@ -279,7 +284,7 @@ enum SpriteKind {
     Projectile
 }
 let doughnut: Sprite = null
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     doughnut.setPosition(Math.randomRange(20, 140), Math.randomRange(20, 80))
     // @highlight
@@ -292,4 +297,3 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 Congratulations, you have completed your game! Try to move your character around the screen to collect the doughnut before time runs out!
 
 ![Game animation](/static/tutorials/eat-the-doughnut.gif)
-
