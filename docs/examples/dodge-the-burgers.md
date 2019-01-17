@@ -9,9 +9,8 @@ enum SpriteKind {
     Food,
     Enemy
 }
+let mySprite: Sprite = null
 let projectile: Sprite = null
-let otherSprite: Sprite = null
-let sprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
     scene.cameraShake(4, 500)
@@ -24,7 +23,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
     music.baDing.play()
 })
 scene.setBackgroundColor(13)
-sprite = sprites.create(img`
+mySprite = sprites.create(img`
     . . . . . . f f f f . . . . . .
     . . . . f f f 2 2 f f f . . . .
     . . . f f f 2 2 2 2 f f f . . .
@@ -42,8 +41,8 @@ sprite = sprites.create(img`
     . . . . . f f f f f f . . . . .
     . . . . . f f . . f f . . . . .
 `, SpriteKind.Player)
-controller.moveSprite(sprite, 100, 100)
-sprite.setFlag(SpriteFlag.StayInScreen, true)
+controller.moveSprite(mySprite, 100, 100)
+mySprite.setFlag(SpriteFlag.StayInScreen, true)
 info.setLife(3)
 game.onUpdateInterval(500, function () {
     if (Math.percentChance(50)) {
