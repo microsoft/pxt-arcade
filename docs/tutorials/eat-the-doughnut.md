@@ -343,6 +343,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## Complete @fullscreen
 
+Congratulations, you have completed your game! Try to move your character around the screen to collect the doughnut before time runs out!
+
 ![Game animation](/static/tutorials/eat-the-doughnut.gif)
 
-Congratulations, you have completed your game! Try to move your character around the screen to collect the doughnut before time runs out!
