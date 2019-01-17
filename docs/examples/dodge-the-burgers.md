@@ -1,6 +1,6 @@
 # Dodge the Burgers
 
-Dodge the burgers and eat the frutis!
+Dodge the burgers and eat the fruits!
 
 ```blocks
 enum SpriteKind {
