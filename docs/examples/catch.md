@@ -196,3 +196,7 @@ game.onUpdateInterval(2200, function () {
     s4Dir = s4Dir * -1
 })
 ```
+
+## About the author
+
+This project was contributed by Erik Pasternak from the [Blockly](https://developers.google.com/blockly) team.
