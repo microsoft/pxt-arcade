@@ -265,6 +265,7 @@
             "print"
         ],
         "extendEditor": true,
-        "simScreenshot": true
+        "simScreenshot": true,
+        "simScreenshotKey": "P"
     }
 }

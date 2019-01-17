@@ -58,6 +58,7 @@ namespace pxsim {
             case 79: // O
                 return Key.B + 7
 
+            // system keys
             // screenshot
             case 80: // P
                 return Key.Screenshot;

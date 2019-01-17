@@ -17,7 +17,7 @@ namespace pxsim {
             forcedUpdateLoop = true;
             // this is used to force screen update if game loop is stuck or not set up properly
             //forcedUpdateLoop = setInterval(() => {
-                //board().screenState.maybeForceUpdate()
+            //board().screenState.maybeForceUpdate()
             //}, 100)
             const body = document.getElementById("root")
             window.onfocus = () => {
@@ -92,11 +92,13 @@ namespace pxsim {
 
         handleKeyEvent(key: Key, isPressed: boolean) {
             // handle system keys
-            if (key == Key.Screenshot) {
-                const b = board();
-                if (b)
-                    b.takeScreenshot(true);
-                return;
+            switch (key) {
+                case Key.Screenshot:
+                    if (isPressed) {
+                        const b = board();
+                        if (b) b.sendScreenshot(true);
+                    }
+                    return;
             }
 
             //this.lastKey = Date.now()
@@ -119,14 +121,8 @@ namespace pxsim {
         7. run for f in * ; do echo $f; node -p '"data:image/png;base64," + require("fs").readFileSync("'$f'").toString("base64")' ; done
         */
         private receiveScreenshot(msg: SimulatorMessage) {
-            if (msg.type == "screenshot") {
-                const smsg = msg as SimulatorScreenshotMessage;
-                const img = this.rawScreenshot(true);
-                Runtime.postMessage({
-                    type: "screenshot",
-                    data: img
-                } as SimulatorScreenshotMessage);
-            }
+            if (msg.type == "screenshot")
+                this.sendScreenshot(true);
             else if (msg.type == "rawscreenshot")
                 console.log(this.rawScreenshot(true))
         }
@@ -144,11 +140,19 @@ namespace pxsim {
             return work.toDataURL("image/png")
         }
 
+        sendScreenshot(force: boolean) {
+            const img = this.rawScreenshot(force);
+            Runtime.postMessage({
+                type: "screenshot",
+                data: img
+            } as SimulatorScreenshotMessage);
+        }
+
         tryScreenshot() {
             let now = Date.now()
             // if there was a key since last screenshot and at least 100ms ago,
             // and last screenshot was at least 3s ago, record a new one
-            if (!this.lastScreenshot 
+            if (!this.lastScreenshot
                 || (now - this.lastScreenshotTime > 2000 && Math.random() > 0.5))
                 this.takeScreenshot(false);
         }
