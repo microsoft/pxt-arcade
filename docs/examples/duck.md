@@ -14,8 +14,8 @@ enum ActionKind {
     Idle,
     Jumping
 }
-let anim: animation.Animation = null
 let bottomImage: Image = null
+let anim: animation.Animation = null
 let projectile: Sprite = null
 let topImage: Image = null
 let gap = 0
@@ -23,7 +23,7 @@ let mySprite: Sprite = null
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite.vy = -100
     animation.setAction(mySprite, ActionKind.Jumping)
-    mySprite.startEffect(effects.rings, 200)
+    mySprite.startEffect(effects.rings, 300)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     game.over()
