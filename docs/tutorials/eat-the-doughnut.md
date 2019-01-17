@@ -262,7 +262,7 @@ a a 3 3 3 d d d a a 4 4 4 e e .
 . . . e e e e e e e e . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
-doughnut.setPosition(140, 100)
+doughnut.setPosition(140, 120)
 // @highlight
 info.startCountdown(3)
 ```
