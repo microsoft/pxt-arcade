@@ -7,7 +7,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
 ```codecard
 [
     {
-        "name": "GHI Arcade",
+        "name": "BrainPad Arcade",
         "imageUrl": "/static/hardware/ghiarcade.jpg",
         "url": "https://brainpad.com/arcade",
         "variant": "hw---stm32f401"
