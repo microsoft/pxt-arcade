@@ -91,6 +91,14 @@ namespace pxsim {
         }
 
         handleKeyEvent(key: Key, isPressed: boolean) {
+            // handle system keys
+            if (key == Key.Screenshot) {
+                const b = board();
+                if (b)
+                    b.takeScreenshot(true);
+                return;
+            }
+
             //this.lastKey = Date.now()
             this.bus.queue(isPressed ? INTERNAL_KEY_DOWN : INTERNAL_KEY_UP, key)
             this.bus.queue(isPressed ? INTERNAL_KEY_DOWN : INTERNAL_KEY_UP, 0) // "any" key
@@ -149,7 +157,6 @@ namespace pxsim {
             let now = Date.now();
             const bright = this.screenState.screen.some(c => !!c);
             if (bright || force) {
-                console.log(`screenshot`)
                 this.lastScreenshot = this.screenState.screen.slice(0);
                 this.lastScreenshotTime = now
             }
