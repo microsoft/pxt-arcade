@@ -78,7 +78,7 @@ basket = sprites.create(img`
     . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
 basket.setPosition(80, 100)
-controller.moveSprite(basket, 240, 0)
+controller.moveSprite(basket, 160, 0)
 sprite_list = sprites.allOfKind(SpriteKind.Projectile)
 mySprite4 = sprites.create(img`
     . . . . . . . . . . . . . . . .
