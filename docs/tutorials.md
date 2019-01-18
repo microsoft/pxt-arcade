@@ -6,11 +6,11 @@
 ```codecard
 [
 {
-  "name": "Eat the Doughnut",
-  "description": "Learn the basics of creating a game with this doughnut collecting program",
-  "url": "/tutorials/eat-the-doughnut",
+  "name": "Chase the Pizza",
+  "description": "Learn the basics of creating a game with this pizza collecting program",
+  "url": "/tutorials/chase-the-pizza",
   "cardType": "tutorial",
-  "imageUrl": "/static/tutorials/eat-the-doughnut.gif"
+  "imageUrl": "/static/tutorials/chase-the-pizza.gif"
 }, {
   "name": "Simple Maze",
   "description": "Learn the basics of creating a maze with this simple program",
