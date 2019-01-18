@@ -14,9 +14,9 @@ let deathpill: Sprite = null
 let taco: Sprite = null
 let cherry: Sprite = null
 let princess: Sprite = null
-let tree: Sprite = null
+let strawberry: Sprite = null
 /**
- * Eating tree or cherry gives 1 point
+ * Eating a strawberry or a cherry gives 1 point
  * 
  * Eating taco gives 10 points
  * 
