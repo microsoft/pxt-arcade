@@ -5,7 +5,7 @@ git:
   submodules:
     false
 before_install:
-  - echo -e "machine github.com\n  login $PXT_LOGIN\n  password $PXT_PW" >~/.netrc
+  - echo -e "\n\nmachine github.com\n  $GH_TOKEN\n" >~/.netrc
   - git submodule update --init --recursive
 script:
   - "node node_modules/pxt-core/built/pxt.js travis"
