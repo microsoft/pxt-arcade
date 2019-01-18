@@ -66,7 +66,7 @@ namespace pxsim {
 
         protected keys: KeyBinding[] = [];
 
-        constructor(parent: Element) {
+        constructor(protected parent: Element) {
             this.dPadRoot = new s.SVG(parent);
             this.buttonsRoot = new s.SVG(parent);
 
@@ -79,6 +79,10 @@ namespace pxsim {
 
         private handleStopEvent(ev: MouseEvent) {
             this.keys.forEach(k => k.updatePointer(ev, false));
+
+            // don't need to release pointer capture,
+            // since pointer is already being destroyed
+
             ev.preventDefault();
             return false;
         }
@@ -88,7 +92,12 @@ namespace pxsim {
             //         harmless to request focus on each keystroke
             //if (!document.hasFocus()) {
             window.focus();
-            //}    
+            //}
+
+            // tell the browser to point this pointer on the parent
+            const pev = ev as PointerEvent;
+            if (pev && pev.pointerId && this.parent.setPointerCapture)
+                this.parent.setPointerCapture(pev.pointerId);
 
             let inside: KeyBinding = null
             let close: KeyBinding[] = []
