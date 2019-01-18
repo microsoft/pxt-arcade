@@ -19,6 +19,7 @@ namespace pxsim {
         }
 
         updatePointer(ev: MouseEvent, down: boolean) {
+            const b = board();
             let id = 0;
             const pev = ev as PointerEvent;
             if (pev && pev.pointerId)
@@ -27,14 +28,15 @@ namespace pxsim {
             if (down && idx < 0) {
                 this.pointerIds.push(id);
                 console.log(`key ${this.key} down pointer ${idx} ${this.pointerIds.length}`)
-                if (this.pointerIds.length == 1) // first touch event
-                    board().handleKeyEvent(this.key, true);
+                if (b && this.pointerIds.length == 1) { // first touch event
+                    b.handleKeyEvent(this.key, true);
+                }
             }
             else if (!down && idx > -1) {
                 this.pointerIds.splice(idx, 1);
                 console.log(`key ${this.key} up pointer ${idx} ${this.pointerIds.length}`)
-                if(!this.pointerIds.length) // last touch event
-                    board().handleKeyEvent(this.key, false);
+                if(b && !this.pointerIds.length) // last touch event
+                    b.handleKeyEvent(this.key, false);
             }
         }
 
