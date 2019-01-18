@@ -74,7 +74,11 @@ namespace pxsim {
             this.menu = new s.SVG(parent);
 
             this.buildDom();
-            svg.buttonEvents(parent, ev => this.btnEvent(ev), ev => this.btnEvent(ev), ev => this.handleStopEvent(ev))
+            svg.buttonEvents(parent, ev => this.btnEvent(ev), ev => this.btnEvent(ev), ev => this.handleStopEvent(ev));
+
+            (document as any).addEventListener('touchstart', (e: TouchEvent) => {
+                e.preventDefault();
+            }, {passive: false});
         }
 
         private handleStopEvent(ev: MouseEvent) {
@@ -82,9 +86,9 @@ namespace pxsim {
 
             // don't need to release pointer capture,
             // since pointer is already being destroyed
-
-            ev.preventDefault();
-            return false;
+            //ev.preventDefault();
+            //return false;
+            return true;
         }
 
         private btnEvent(ev: MouseEvent) {
