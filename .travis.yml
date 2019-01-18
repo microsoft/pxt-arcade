@@ -1,8 +1,14 @@
 language: node_js
 node_js:
   - "8.9.0"
+git:
+  submodules:
+    false
+before_install:
+  - echo -e "\n\nmachine github.com\n  login $GH_TOKEN\n" >~/.netrc
+  - git submodule update --init --recursive
 script:
-  - "node node_modules/pxt-core/built/pxt.js travis"  
+  - "node node_modules/pxt-core/built/pxt.js travis"
 sudo: false
 cache:
   directories:
