@@ -1,6 +1,6 @@
-# Eat the Doughnut
+# Chase the Pizza
 
-### ~button /#tutorial:tutorials/eat-the-doughnut
+### ~button /#tutorial:tutorials/chase-the-pizza
 
 Try this tutorial!
 
@@ -8,9 +8,9 @@ Try this tutorial!
 
 ## Introduction @unplugged
 
-![Game animation](/static/tutorials/eat-the-doughnut.gif)
+![Game animation](/static/tutorials/chase-the-pizza.gif)
 
-In this tutorial, you will build a fairly simple game with the goal of eating a doughnut before time runs out. When the player eats a doughnut, the countdown is restarted.
+In this tutorial, you will build a fairly simple game with the goal of eating a pizza before time runs out. When the player eats a slice of pizza, the countdown is restarted.
 
 ## Step 1 @fullscreen
 
@@ -60,7 +60,7 @@ mySprite = sprites.create(img`
 
 In the ``||sprites:sprite of kind Player||`` block, click on the grey box to open the **image editor**. Use it to design your own image for the ``||sprites:Sprite||`` and then click outside of the image editor.
 
-![Image editor](/static/tutorials/eat-the-doughnut/image-editor.gif)
+![Image editor](/static/tutorials/chase-the-pizza/image-editor.gif)
 
 ## Step 4 @fullscreen
 
@@ -77,22 +77,22 @@ enum SpriteKind {
 let mySprite: Sprite = null
 scene.setBackgroundColor(7)
 mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. 3 3 . . . . . . . . . . 3 . . 
-. . 3 3 . . . . . . . . 3 3 . . 
-. . . 3 3 . . . . . . 3 3 . . . 
-. . . . 3 3 3 3 3 3 3 3 . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . 5 5 5 5 5 5 . . . . . 
+. . . 5 5 5 5 5 5 5 5 5 5 . . . 
+. . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
+. 5 5 5 f f 5 5 5 5 f f 5 5 5 .
+5 5 5 5 f f 5 5 5 5 f f 5 5 5 5 
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+5 5 f 5 5 5 5 5 5 5 5 5 5 f 5 5 
+5 5 5 f 5 5 5 5 5 5 5 5 f 5 5 5 
+. 5 5 5 f 5 5 5 5 5 5 f 5 5 5 . 
+. 5 5 5 5 f f f f f f 5 5 5 5 . 
+. . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
+. . . 5 5 5 5 5 5 5 5 5 5 . . . 
+. . . . . 5 5 5 5 5 5 . . . . .
 `, SpriteKind.Player)
 // @highlight
 controller.moveSprite(mySprite)
@@ -100,7 +100,7 @@ controller.moveSprite(mySprite)
 
 ## Step 5 @fullscreen
 
-Drag another ``||variables:set mySprite to||`` into the ``||loops:on start||``. Click on ``||variables:mySprite||``, select ``||variables:New variable||``, and enter ``doughnut`` as the variable name. Change the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Food||``.
+Drag another ``||variables:set mySprite to||`` into the ``||loops:on start||``. Click on ``||variables:mySprite||``, select ``||variables:New variable||``, and enter ``pizza`` as the variable name. Change the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Food||``.
 
 This will create **another** ``||sprites:Sprite||``, but one that isn't controlled by the player.
 
@@ -111,29 +111,29 @@ enum SpriteKind {
     Food
 }
 let mySprite: Sprite = null
-let doughnut: Sprite = null
+let pizza: Sprite = null
 scene.setBackgroundColor(7)
 mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. 3 3 . . . . . . . . . . 3 . . 
-. . 3 3 . . . . . . . . 3 3 . . 
-. . . 3 3 . . . . . . 3 3 . . . 
-. . . . 3 3 3 3 3 3 3 3 . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . 5 5 5 5 5 5 . . . . . 
+. . . 5 5 5 5 5 5 5 5 5 5 . . . 
+. . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
+. 5 5 5 f f 5 5 5 5 f f 5 5 5 .
+5 5 5 5 f f 5 5 5 5 f f 5 5 5 5 
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+5 5 f 5 5 5 5 5 5 5 5 5 5 f 5 5 
+5 5 5 f 5 5 5 5 5 5 5 5 f 5 5 5 
+. 5 5 5 f 5 5 5 5 5 5 f 5 5 5 . 
+. 5 5 5 5 f f f f f f 5 5 5 5 . 
+. . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
+. . . 5 5 5 5 5 5 5 5 5 5 . . . 
+. . . . . 5 5 5 5 5 5 . . . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite)
 // @highlight
-doughnut = sprites.create(img`
+pizza = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -155,9 +155,9 @@ doughnut = sprites.create(img`
 
 ## Step 6 @fullscreen
 
-Click on the grey box for ``||variables:doughnut||`` and then select the Gallery view. Scroll to find the image of a small doughnut (or any other image you like!) and select it to load into the image editor.
+Click on the grey box for ``||variables:pizza||`` and then select the Gallery view. Scroll to find the image of a small pizza (or any other image you like!) and select it to load into the image editor.
 
-![Image editor](/static/tutorials/eat-the-doughnut/image-gal.gif)
+![Image editor](/static/tutorials/chase-the-pizza/image-gal.gif)
 
 ## Step 7 @fullscreen
 
@@ -171,45 +171,45 @@ enum SpriteKind {
     Enemy,
     Food
 }
-let doughnut: Sprite = null
+let pizza: Sprite = null
 let mySprite: Sprite = null
 scene.setBackgroundColor(7)
 mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . 8 8 . . . . 8 8 . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. . . . . . . 4 . . . . . . . . 
-. 3 3 . . . . . . . . . . 3 . . 
-. . 3 3 . . . . . . . . 3 3 . . 
-. . . 3 3 . . . . . . 3 3 . . . 
-. . . . 3 3 3 3 3 3 3 3 . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . 5 5 5 5 5 5 . . . . . 
+. . . 5 5 5 5 5 5 5 5 5 5 . . . 
+. . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
+. 5 5 5 f f 5 5 5 5 f f 5 5 5 .
+5 5 5 5 f f 5 5 5 5 f f 5 5 5 5 
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+5 5 f 5 5 5 5 5 5 5 5 5 5 f 5 5 
+5 5 5 f 5 5 5 5 5 5 5 5 f 5 5 5 
+. 5 5 5 f 5 5 5 5 5 5 f 5 5 5 . 
+. 5 5 5 5 f f f f f f 5 5 5 5 . 
+. . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
+. . . 5 5 5 5 5 5 5 5 5 5 . . . 
+. . . . . 5 5 5 5 5 5 . . . . . 
 `, SpriteKind.Player)
 controller.moveSprite(mySprite)
-doughnut = sprites.create(img`
-. . . . . . b b b b a a . . . . 
-. . . . b b d d d 3 3 3 a a . . 
-. . . b d d d 3 3 3 3 3 3 a a . 
-. . b d d 3 3 3 3 3 3 3 3 3 a . 
-. b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
-. b 3 3 3 3 3 a a 3 3 3 3 3 a b 
-b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
-b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
-b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
-a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
-a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
-a a 3 3 3 d d d a a 4 4 4 e e . 
-. e a a a a a a 4 4 4 4 e e . . 
-. . e e b b 4 4 4 4 b e e . . . 
-. . . e e e e e e e e . . . . . 
-. . . . . . . . . . . . . . . . 
+pizza = sprites.create(img`
+. . . . . . b b b b . . . . . .
+. . . . . . b 4 4 4 b . . . . .
+. . . . . . b b 4 4 4 b . . . .
+. . . . . b 4 b b b 4 4 b . . .
+. . . . b d 5 5 5 4 b 4 4 b . .
+. . . . b 3 2 3 5 5 4 e 4 4 b .
+. . . b d 2 2 2 5 7 5 4 e 4 4 e
+. . . b 5 3 2 3 5 5 5 5 e e e e
+. . b d 7 5 5 5 3 2 3 5 5 e e e
+. . b 5 5 5 5 5 2 2 2 5 5 d e e
+. b 3 2 3 5 7 5 3 2 3 5 d d e 4
+. b 2 2 2 5 5 5 5 5 5 d d e 4 .
+b d 3 2 d 5 5 5 d d d 4 4 . . .
+b 5 5 5 5 d d 4 4 4 4 . . . . .
+4 d d d 4 4 4 . . . . . . . . .
+4 4 4 4 . . . . . . . . . . . .
 `, SpriteKind.Food)
 // @highlight
 info.startCountdown(3)
@@ -217,7 +217,7 @@ info.startCountdown(3)
 
 ## Step 8 @fullscreen
 
-Find ``||sprites:on sprite of kind Player overlaps otherSprite of kind Food||`` in ``||sprites:Sprites||`` and drag it into the workspace. In the ``||variables:doughnut||`` ``||sprites:Sprite||``, change the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Food||``.
+Find ``||sprites:on sprite of kind Player overlaps otherSprite of kind Food||`` in ``||sprites:Sprites||`` and drag it into the workspace. In the ``||variables:pizza||`` ``||sprites:Sprite||``, change the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Food||``.
 
 This will create an **event** that occurs when a ``||sprites:Player Sprite||`` touches and ``||sprites:Food Sprite||``. Events allow you to set blocks to run whenever something occurs; for example, ``||loops:on start||`` is an event that lets you set code to run as soon as the game is started!
 
@@ -252,10 +252,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ## Step 10 @fullscreen
 
-Also, when the overlap happens, the doughnut should move to another position on the screen.
+Also, when the overlap happens, the pizza should move to another position on the screen.
 Using the ``||math:pick random||`` block, we can generate an ``x`` position from ``20`` to ``140`` and a ``y`` position from ``20`` to ``100``.
 
-The screen is 160 pixels wide by 120 pixels high and we want to have the doughnut away from the side so that it doesn't get clipped. 
+The screen is 160 pixels wide by 120 pixels high and we want to have the pizza away from the side so that it doesn't get clipped. 
 
 ```blocks
 enum SpriteKind {
@@ -264,11 +264,11 @@ enum SpriteKind {
     Food,
     Projectile
 }
-let doughnut: Sprite = null
+let pizza: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     // @highlight
-    doughnut.setPosition(Math.randomRange(20, 140), Math.randomRange(20, 80))
+    pizza.setPosition(Math.randomRange(20, 140), Math.randomRange(20, 100))
 })
 ```
 
@@ -283,10 +283,10 @@ enum SpriteKind {
     Food,
     Projectile
 }
-let doughnut: Sprite = null
+let pizza: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
-    doughnut.setPosition(Math.randomRange(20, 140), Math.randomRange(20, 80))
+    pizza.setPosition(Math.randomRange(20, 140), Math.randomRange(20, 80))
     // @highlight
     info.startCountdown(3)
 })
@@ -294,6 +294,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ## Complete @fullscreen
 
-Congratulations, you have completed your game! Try to move your character around the screen to collect the doughnut before time runs out!
+Congratulations, you have completed your game! Try to move your character around the screen to collect the pizza before time runs out!
 
-![Game animation](/static/tutorials/eat-the-doughnut.gif)
+![Game animation](/static/tutorials/chase-the-pizza.gif)
