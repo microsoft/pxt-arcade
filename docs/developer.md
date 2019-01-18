@@ -1,10 +1,10 @@
-# Tips and Tricks
+# Developer Tips and Tricks
 
 ## Finding examples and documentation
 
-There are a number of examples you can try out on the https://arcade.makecode.com homepage.
-We also have several courses in development that are located [here](https://arcade.makecode.com/courses).
-API reference docs are located [here](https://arcade.makecode.com/reference).
+There are a number of examples you can try out on the [MakeCode Arcade](@homeurl@) homepage.
+We also have several courses in development that are located [here](/courses).
+API reference docs are located [here](/reference).
 
 ## "JavaScript" == "TypeScript"
 
@@ -22,14 +22,17 @@ into multiple repositories or libraries. Find more information [here](https://ma
 
 ## Music and Art
 
-Documentation on how to import and use images in Arcade can be found [here](https://arcade.makecode.com/developer/images).
+Documentation on how to import and use images in Arcade can be found [here](/developer/images).
 
-Documentation on how to create music and sound effects is [here](https://arcade.makecode.com/developer/sound).
+Documentation on how to create music and sound effects is [here](/developer/sound).
 
-## Getting help
+## Controller Buttons
+
+Use the [button tester](/developer/button-tester) to verify the proper button assignents on your controller.
+
+## Getting Help
 
 To get help, you can ask the [MakeCode community](https://aka.ms/makecodecommunity) at/on our public discord channel for arcade.
-
 
 ## Bugs and Features
 
@@ -38,4 +41,4 @@ If you would also like to submit a fix, feel free to open a pull request!
 
 The arcade editor is located in [pxt-arcade](https://github.com/Microsoft/pxt-arcade). The game engine and runtime code is in [pxt-common-packages](https://github.com/Microsoft/pxt-common-packages).
 
-Most of the code related to Arcade can be found in the `libs/game` directory of that repo.
+Most of the code related to Arcade can be found in the [libs/game](https://github.com/Microsoft/pxt-common-packages/tree/master/libs/game) directory of that repo.

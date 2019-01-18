@@ -13,7 +13,12 @@ namespace pxsim {
         Down = 4,
         A = 5,
         B = 6,
-        Menu = 7
+        Menu = 7,
+
+        // Player 2 keys here too
+
+        // system keys
+        Screenshot = -1
     }
 
     export function mapKey(which: number): Key {
@@ -52,6 +57,12 @@ namespace pxsim {
                 return Key.A + 7
             case 79: // O
                 return Key.B + 7
+
+            // system keys
+            // screenshot
+            case 80: // P
+                return Key.Screenshot;
+
             default: return Key.None
         }
     }

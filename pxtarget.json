@@ -40,8 +40,7 @@
         "libs/device",
         "libs/jacdac",
         "libs/jacdac-drivers",
-        "libs/jacdac-game",
-        "libs/local-multiplayer"
+        "libs/jacdac-game"
     ],
     "compile": {
         "useUF2": true,
@@ -56,13 +55,37 @@
         "webUSB": true,
         "saveAsPNG": true,
         "patches": {
-            "0.0.0 - 0.1.1": [{
-                "type": "api",
-                "map": {
-                    "controller\\.controlSprite": "controller.moveSprite",
-                    "controller\\.controlPlayer": "controller.movePlayer"
+            "0.0.0 - 0.1.1": [
+                {
+                    "type": "api",
+                    "map": {
+                        "controller\\.controlSprite": "controller.moveSprite",
+                        "controller\\.controlPlayer": "controller.movePlayer"
+                    }
                 }
-            }]
+            ],
+            "0.0.0 - 0.3.23": [
+                {
+                    "type": "package",
+                    "map": {
+                        "local-multiplayer": ""
+                    }
+                }
+            ],
+            "0.0.0 - 0.3.24": [
+                {
+                    "type": "api",
+                    "map": {
+                        "sprites\\.createEmptySprite\\(([^)]+)\\)": "sprites.create(img`.`, $1)"
+                    }
+                }, {
+                    "type": "blockId",
+                    "map": {
+                        "keysdx": "keydx",
+                        "keysdy": "keydy"
+                    }
+                }
+            ]
         }
     },
     "compileService": {
@@ -183,7 +206,8 @@
         ]
     },
     "simulator": {
-        "autoRun": false,
+        "autoRun": true,
+        "autoRunLight": false,
         "aspectRatio": 0.85,
         "dynamicBoardDefinition": true
     },
@@ -222,13 +246,18 @@
         ],
         "coloredToolbox": true,
         "monacoToolbox": true,
+        "selectLanguage": true,
         "invertedMenu": true,
         "showHomeScreen": true,
         "highContrast": true,
-        "print": true,
         "hasAudio": true,
         "allowPackageExtensions": true,
         "homeScreenHero": "./static/hero.png",
+        "socialOptions": {
+            "twitterHandle": "msmakecode",
+            "orgTwitterHandle": "MSMakeCode",
+            "hashtags": "MakeCode"
+        },
         "blocklyOptions": {
             "grid": {
                 "spacing": 20,
@@ -256,9 +285,11 @@
         "scriptManager": true,
         "saveInMenu": false,
         "experiments": [
-            "debugger"
+            "debugger",
+            "print"
         ],
         "extendEditor": true,
-        "simScreenshot": true
+        "simScreenshot": true,
+        "simScreenshotKey": "P"
     }
 }

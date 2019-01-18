@@ -51,6 +51,9 @@ canvas {
 
 #paint-surface {
     position: absolute;
+}
+
+#paint-surface.borders {
     /* filter: drop-shadow(0px 0px 10px #6B4F76) */
     border-right: 0.5rem inset #2f99a1;
     border-left: 0.5rem outset #2f99a1;

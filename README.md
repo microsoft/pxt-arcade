@@ -3,7 +3,8 @@
 * [Try it live!](https://arcade.makecode.com)
 
 [![Build Status](https://travis-ci.org/Microsoft/pxt-arcade.svg?branch=master)](https://travis-ci.org/Microsoft/pxt-arcade)
-[![Community Discord](https://img.shields.io/discord/448979533891371018.svg)](https://aka.ms/makecodecommunity)
+[![Community Discord (chat)](https://img.shields.io/discord/448979533891371018.svg)](https://aka.ms/makecodecommunity)
+[Forum](https://forum.makecode.com)
 
 This repo contains an editor built with [Microsoft MakeCode (PXT)](https://github.com/Microsoft/pxt).
 

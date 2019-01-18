@@ -32,6 +32,13 @@
   "url": "/concepts/bouncing-burger",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/bouncing-burger.gif"
+}, 
+{
+  "name": "Star Field",
+  "description": "Create a starry night for the next hit space game",
+  "url": "/concepts/star-field",
+  "cardType": "tutorial",
+  "imageUrl": "/static/concepts/star-field.gif"
 },
 {
   "name": "Throw a Bone",
@@ -70,6 +77,7 @@
 [Picnic Food](/concepts/picnic-food),
 [Princess Pizza](/concepts/princess-pizza),
 [Bouncing Burger](/concepts/bouncing-burger),
+[Star Field](/tutorials/star-field),
 [Throw a Bone](/concepts/throw-a-bone),
 [Sunday Drive](/concepts/sunday-drive),
 [Which Button](/concepts/which-button),

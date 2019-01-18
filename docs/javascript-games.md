@@ -7,17 +7,45 @@ Here are some fun programs for your @boardname@!
 ```codecard
 [
 {
+  "name": "Planet Putt Putt",
+  "description": "Golf your way through the galaxy",
+  "url":"/examples/planet-putt-putt",
+  "cardType": "codeExample",
+  "imageUrl": "/static/examples/planet-putt-putt.png"
+},
+{
+  "name": "Cube Land",
+  "description": "Save the Cube Lad from the Cube Lord",
+  "url":"/examples/cube-land",
+  "cardType": "codeExample",
+  "imageUrl": "/static/examples/cube-land.png"
+},
+{
+  "name": "Particle Effects Demo",
+  "description": "A demonstration of ramped up particle effects",
+  "url":"/examples/particle-effects-demo",
+  "cardType": "codeExample",
+  "imageUrl": "/static/examples/particle-effects-demo.gif"
+},
+{
+  "name": "Sorting Algorithms",
+  "description": "A visualization of different sorting algorithms",
+  "url":"/examples/sorting-algorithms",
+  "cardType": "codeExample",
+  "imageUrl": "/static/examples/sorting-algorithms.gif"
+},
+{
   "name": "Guess the Letter",
   "description": "Try and guess the letter",
   "url":"/examples/guess-the-letter",
-  "cardType": "example",
+  "cardType": "codeExample",
   "imageUrl": "/static/examples/guess-the-letter.png"
 },
 {
   "name": "Bouncer Bucket",
   "description": "Try to catch the bouncing balls in your bucket",
   "url":"/examples/bouncer-bucket",
-  "cardType": "example",
+  "cardType": "codeExample",
   "imageUrl": "/static/examples/bouncer-bucket.png"
 }
 ]

@@ -6,15 +6,6 @@
     * [Cherry Pickr](/lessons/cherry-pickr)
     * [Barrel Dodger](/lessons/barrel-dodger)
 
-## Classic Games
-
-* [Classics](/classics)
-    * [Ping Pong](/examples/ping-pong)
-    * [Eater Princess](/examples/eater-princess)
-    * [Food Machine](/examples/food-machine)
-    * [Treasure Hunt](/examples/treasure-hunt)
-    * [Jewels](/examples/jewels)
-
 ## Courses
 
 * [Courses](/courses)
@@ -58,3 +49,8 @@
     * [Function](/types/function)
     * [Image](/types/image)
     * [Sprite](/types/sprite)
+
+## Hardware
+
+* [Current Hardware](/hardware)
+    * [Adding New Board](/hardware/adding)

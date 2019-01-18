@@ -21,11 +21,11 @@ Here are some fun programs for your @boardname@!
   "imageUrl": "/static/examples/space-destroyer.png"
 },
 {
-  "name": "Dodge the Rocks",
-  "description": "Don't get hit by the flying boulders",
-  "url":"/examples/dodge-rock",
+  "name": "Eat the Fruit",
+  "description": "Don't get hit by the flying junk food",
+  "url":"/examples/eat-the-fruit",
   "cardType": "example",
-  "imageUrl": "/static/examples/dodge-rock.png"
+  "imageUrl": "/static/examples/eat-the-fruit.gif"
 },
 {
   "name": "Level Up!",
@@ -33,6 +33,27 @@ Here are some fun programs for your @boardname@!
   "url":"/examples/level-game",
   "cardType": "example",
   "imageUrl": "/static/examples/level-game.png"
+},
+{
+  "name": "Memory",
+  "description": "How well can you remember the sequence?",
+  "url":"/examples/memory",
+  "cardType": "example",
+  "imageUrl": "/static/examples/memory.png"
+},
+{
+  "name": "Catch",
+  "description": "Don't let the balls hit the floor",
+  "url":"/examples/catch",
+  "cardType": "example",
+  "imageUrl": "/static/examples/catch-game.gif"
+},
+{
+  "name": "Eater Princess",
+  "description": "Feed the princess",
+  "url":"/examples/eater-princess",
+  "cardType": "example",
+  "imageUrl": "/static/examples/eater-princess.png"
 }
 ]
 ```

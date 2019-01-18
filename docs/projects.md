@@ -5,7 +5,7 @@
     {
         "name": "Tutorials",
         "url": "tutorials",
-        "imageUrl": "/static/tutorials/eat-the-doughnut.gif"
+        "imageUrl": "/static/tutorials/chase-the-pizza.gif"
     },
     {
         "name": "Game Design Concepts",
@@ -18,14 +18,9 @@
         "imageUrl": "/static/examples/duck.png"
     },
     {
-        "name": "Classics",
-        "url": "classics",
-        "imageUrl": "/static/examples/eater-princess.png"
-    },
-    {
         "name": "JavaScript Games",
         "url": "javascript-games",
-        "imageUrl": "/static/examples/guess-the-letter.png"
+        "imageUrl": "/static/examples/planet-putt-putt.png"
     },
     {
         "name": "Lessons",
@@ -40,7 +35,6 @@
 [Tutorials](tutorials),
 [Game Design Concepts](concepts),
 [Blocks Games](blocks-games),
-[Classics](classics),
 [JavaScript Games](javascript-games),
 [Lessons](lessons)
 

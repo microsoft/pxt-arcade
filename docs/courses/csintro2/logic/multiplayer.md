@@ -2,7 +2,7 @@
 
 So far, games have been primarily been intended for a single user. These are called **single player games**: the player is alone in the world created by developers.
 
-In this section, the ``||controller:local-multiplayer||`` extension will be used to facilitate **multiplayer**, so that more than one person can play at the same time.
+In this section, we will create **multiplayer** games, so that more than one person can play at the same time.
 
 ![Final Game](/static/courses/csintro2/logic/pong.gif)
 
@@ -10,11 +10,12 @@ In these activities, students will work with:
 
 * ``||logic:if then ... else if||`` conditions
 * Comparison operators
-* The ``||controller:local-multiplayer||`` extension
+* The ``||controller:controller||`` multiplayer blocks
+* The ``||logic:info||`` multiplayer blocks
 
 ## Concept: Local Multiplayer
 
-The ``||controller:local-multiplayer||`` extension allows for multiple users to play games with each other in the browser.
+The ``||controller:multiplayer||`` blocks allows for multiple users to play games with each other in the browser.
 
 Using a QWERTY keyboard, the keys for both players are listed below
 
@@ -42,62 +43,61 @@ Additionally, multiple gamepads can be used to allow for more than the two playe
 ## Example #1: Player one
 
 1. Review the code below
-2. Notice the two new blocks, ``||controller:set sprite for player one to||`` and ``||controller:control player one with vx 0 vy 0||``
-3. Identify whether these blocks are similar to other blocks that were previously used
+2. Notice that this is the same type
 
 ```blocks
 enum SpriteKind {
     Player,
     Enemy
 }
-controller.setPlayerSprite(PlayerNumber.One, sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . 5 . . . . . 5 . . . . . 
-. . . . 5 . . . . . 5 . . . . . 
-. . . . 5 . . . . . 5 . . . . . 
-. . . . 5 . . . . . 5 . . . . . 
-. . . . 5 . . . . . 5 . . . . . 
-. . . . 5 . . . . . 5 . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . 5 . . 
-. 5 . . . . . . . . . . 5 5 . . 
-. 5 5 5 . . . . . . . 5 5 . . . 
-. . . 5 5 5 5 . . . 5 5 . . . . 
-. . . . . . 5 5 5 5 5 . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player));
-controller.movePlayer(PlayerNumber.One, 100, 100);
+let player1 = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . 5 . . . . . 5 . . . . . 
+    . . . . 5 . . . . . 5 . . . . . 
+    . . . . 5 . . . . . 5 . . . . . 
+    . . . . 5 . . . . . 5 . . . . . 
+    . . . . 5 . . . . . 5 . . . . . 
+    . . . . 5 . . . . . 5 . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . 5 . . 
+    . 5 . . . . . . . . . . 5 5 . . 
+    . 5 5 5 . . . . . . . 5 5 . . . 
+    . . . 5 5 5 5 . . . 5 5 . . . . 
+    . . . . . . 5 5 5 5 5 . . . . . 
+    . . . . . . . . . . . . . . . . 
+`, SpriteKind.Player);
+controller.moveSprite(player1);
 ```
 
 ## Student Task #1: Loading Player Two
 
-1. Load the ``||controller:local-multiplayer||`` extension from the ``Extensions`` menu. This will add new options in the ``||controller:Controller||`` category
-2. Start with the code from example #1
-3. Get another ``||controller:set sprite for player one to||``, and replace ``||controller:one||`` with ``||controller:two||``. Draw a different smiley face for the image
-4. Get another ``||controller:control player one with vx 0 vy 0||``, and set both vx and vy to 100. Change ``||controller:one||`` to ``||controller:two||``
+1. Start with the code from example #1
+2. Get another ``||variables:set mySprite to||``. Draw a different smiley face for the image, and change the variable name to ``||variables:player2||``
+3. Get a ``||controller:player 2 move mySprite with buttons||``. Change ``||variables:mySprite||`` to ``||variables:player2||``
 
-With this task complete, you can now play games with two players in it: these players can currently only move around the screen, but you can implement any other behavior you want. If you need access to the sprites, you can use ``||controller:player one sprite||`` to get the sprite currently assigned to player one.
+With this task complete, you can now play games with two players in it: these players can currently only move around the screen, but you can implement any other behavior you want.
 
 ## Concept: Pong
 
 Pong is a game based off of table tennis (Ping Pong). Pong was one of the first 2 dimensional games ever released, in which two players can play against one another trying to hit a ball past the opponent.
 
-In the rest of this lesson, we will implement a simple version of pong using ``||controller:local-multiplayer||``. For each of the following tasks, you will build on the code introduced in example 2 to create your final game.
+In the rest of this lesson, we will implement a simple version of pong using ``||controller:multiplayer||``. For each of the following tasks, you will build on the code introduced in example 2 to create your final game.
 
 ## Example #2: Paddles
 
 1. Review the code below
 2. Identify what is being done to set up the players on the **left** and **right** side of the screen
 3. Identify where on the screen the player can move
+4. Notice how both player's scores are shown in the corners of the screen, along with the player number
 
 ```blocks
 enum SpriteKind {
     Player,
     Enemy
 }
-controller.setPlayerSprite(PlayerNumber.One, sprites.create(img`
+let player1 = sprites.create(img`
 2 2 2 2 2 . . . . . . . . . . . 
 2 2 2 2 2 . . . . . . . . . . . 
 2 2 2 2 2 . . . . . . . . . . . 
@@ -114,11 +114,13 @@ controller.setPlayerSprite(PlayerNumber.One, sprites.create(img`
 2 2 2 2 2 . . . . . . . . . . . 
 2 2 2 2 2 . . . . . . . . . . . 
 2 2 2 2 2 . . . . . . . . . . . 
-`, SpriteKind.Player));
-controller.movePlayer(PlayerNumber.One, 0, 100);
-controller.playerSprite(PlayerNumber.One).x = 0
-controller.playerSprite(PlayerNumber.One).setFlag(SpriteFlag.StayInScreen, true)
-controller.setPlayerSprite(PlayerNumber.Two, sprites.create(img`
+`, SpriteKind.Player);
+controller.moveSprite(player1, 0, 100)
+player1.x = 0
+player1.setFlag(SpriteFlag.StayInScreen, true)
+info.setScore(0)
+
+let player2 = sprites.create(img`
 . . . . . . . . . . . 8 8 8 8 8 
 . . . . . . . . . . . 8 8 8 8 8 
 . . . . . . . . . . . 8 8 8 8 8 
@@ -135,10 +137,11 @@ controller.setPlayerSprite(PlayerNumber.Two, sprites.create(img`
 . . . . . . . . . . . 8 8 8 8 8 
 . . . . . . . . . . . 8 8 8 8 8 
 . . . . . . . . . . . 8 8 8 8 8 
-`, SpriteKind.Player));
-controller.movePlayer(PlayerNumber.Two, 0, 100);
-controller.playerSprite(PlayerNumber.Two).x = scene.screenWidth()
-controller.playerSprite(PlayerNumber.Two).setFlag(SpriteFlag.StayInScreen, true)
+`, SpriteKind.Player);
+controller.player2.moveSprite(player2, 0, 100)
+player2.x = scene.screenWidth()
+player2.setFlag(SpriteFlag.StayInScreen, true)
+info.player2.setScore(0)
 ```
 
 ## Student Task #2: Create a Ball
@@ -168,11 +171,11 @@ controller.playerSprite(PlayerNumber.Two).setFlag(SpriteFlag.StayInScreen, true)
 1. Add another ``||logic:if then ... else if then||`` block inside of the ``||game:on game update||`` event
 2. ``||logic:if||`` the ``||variables:currentBall||``'s ``||sprites:x||`` position is less than 0, then
     * ``||sprites:destroy||`` the ``||variables:currentBall||``
-    * Add one to player two's score with ``||info:change player two score||``
+    * Add one to player two's score with ``||info:change player two score by||``
     * Assign ``||variables:currentBall||`` to a new ``||sprites:sprite of kind Ball||``
 3. Otherwise, ``||logic:if||`` the ``||variables:currentBall||``'s ``||sprites:x||`` position is greater than ``||scene:screen width||``, then
     * ``||sprites:destroy||`` the ``||variables:currentBall||``
-    * Add one to player one's score with ``||info:change player one score||``
+    * Add one to player one's score with ``||info:change score by||``
     * Assign ``||variables:currentBall||`` to a new ``||sprites:sprite of kind Ball||``
 4. In the ``||loops:on start||``, use ``||info:set player one score||`` and ``||info:set player two score||`` to start both players off with a score of 0
 
@@ -191,7 +194,3 @@ controller.playerSprite(PlayerNumber.Two).setFlag(SpriteFlag.StayInScreen, true)
 
 1. How does having multiple players at once in a single game allow for new and compelling games?
 2. Were there any difficulties in implementing the multiplayer game? Was it easier or harder than a single player game?
-
-```package
-local-multiplayer
-```

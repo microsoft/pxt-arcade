@@ -19,7 +19,7 @@ let Y = 0
 Y = Math.sqrt(RADIUS ** 2 - X ** 2)
 ```
 
-### The Decision Paramter
+### The Decision Parameter
 
 The problem is the real value for **Y** isn't always an integer and a we need to decide what integer value would be the best to use for **Y**.
 
