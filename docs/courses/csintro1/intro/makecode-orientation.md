@@ -33,7 +33,7 @@ https://youtu.be/iEQa-Wd3MRs
 
 [Alternative Video Location](https://aka.ms/40544a-orientation2)
 
-## Student Task #2: Starting your own game #task-2
+## Student Task #2: Starting and saving your own game #task-2
 
 1. Press the "Home" button in the upper left corner to return to the homepage
 2. Press the "New Project" button
