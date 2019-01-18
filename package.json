@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "pxt-common-packages": "6.1.3",
-    "pxt-core": "5.4.3"
+    "pxt-core": "5.4.5"
   },
   "scripts": {
     "serve": "node node_modules/pxt-core/built/pxt.js serve"
