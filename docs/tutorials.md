@@ -19,7 +19,7 @@
   "imageUrl": "/static/tutorials/simple-maze.gif"
 }, {
   "name": "Happy Flower",
-  "description": "Create a flower that exudes happiness",
+  "description": "Create a flower that sends back happy bees",
   "url": "/tutorials/happy-flower",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/happy-flower.gif"
