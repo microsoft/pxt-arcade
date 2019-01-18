@@ -6,15 +6,6 @@
     * [Cherry Pickr](/lessons/cherry-pickr)
     * [Barrel Dodger](/lessons/barrel-dodger)
 
-## Classic Games
-
-* [Classics](/classics)
-    * [Ping Pong](/examples/ping-pong)
-    * [Eater Princess](/examples/eater-princess)
-    * [Food Machine](/examples/food-machine)
-    * [Treasure Hunt](/examples/treasure-hunt)
-    * [Jewels](/examples/jewels)
-
 ## Courses
 
 * [Courses](/courses)

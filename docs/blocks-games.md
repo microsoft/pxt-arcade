@@ -47,6 +47,13 @@ Here are some fun programs for your @boardname@!
   "url":"/examples/catch",
   "cardType": "example",
   "imageUrl": "/static/examples/catch-game.gif"
+},
+{
+  "name": "Eater Princess",
+  "description": "Feed the princess",
+  "url":"/examples/eater-princess",
+  "cardType": "example",
+  "imageUrl": "/static/examples/eater-princess.png"
 }
 ]
 ```
