@@ -2,7 +2,7 @@
 
 ## Introduction @unplugged
 
-Flowers make everyone around them happier. To show this, we can create a flower that sends out happy thoughts.
+Flowers make everyone around them happier, especially the bees who get nector from them. To show this, we can create a flower that sends happy little bees back to the hive.
 
 ![Happy thoughts](/static/tutorials/happy-flower/happy-thoughts.gif)
 
@@ -17,28 +17,28 @@ enum SpriteKind {
 }
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
-. . . 2 2 . 2 2 2 . 2 2 . . . . 
-. . . 2 2 2 2 3 2 2 2 2 . . . . 
-. . . 2 3 3 2 3 3 3 3 2 . . . . 
-. . . 2 3 1 3 2 3 3 3 2 . . . . 
-. . . 2 3 3 1 3 2 3 3 2 . . . . 
-. . . . 2 3 3 1 3 3 2 . . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
-. . . . . . . 7 . . . . . . . . 
-. . 7 7 7 . . 7 . . 7 7 7 . . . 
-. . 7 6 7 7 . 7 . 7 7 6 7 . . . 
-. . 7 7 6 7 7 7 7 7 6 7 7 . . . 
-. . . 7 7 6 7 7 7 6 7 7 . . . . 
-. . . . 7 6 6 6 6 6 7 . . . . . 
-. . . . 7 7 7 6 7 7 7 . . . . . 
-. . . . . . 7 7 7 . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . 4 . . . . . . 2 2 . . . .
+. . . 4 4 4 3 . 3 2 2 . . . . .
+. . . . 4 e 5 5 5 e 2 . . . . .
+. . . . 3 5 5 5 5 5 3 . . . . .
+. . . . . 5 5 e 5 5 . . . . . .
+. . . . 3 5 5 5 5 5 3 . . . . .
+. . . . 2 e 5 5 5 e 4 . . . . .
+. . . . 2 2 3 7 3 4 4 4 . . . .
+. . . 2 2 . . 7 . . . 4 . . . .
+. . . . . . . 7 . . . . . . . .
+. . . 7 7 7 . 7 . 7 7 . . . . .
+. . . . 7 7 . 7 . 7 7 . . . . .
+. . . . . 7 7 7 7 7 . . . . . .
+. . . . . . 7 7 7 . . . . . . .
+. . . . . . . 7 . . . . . . . .
+. . . . . . . 7 . . . . . . . .
 `, SpriteKind.Player)
 ```
 
 ## Step 2
 
-Find in ``||game:on update every 500 ms||`` and ``||game:Game||``, and drag it into the workspace.
+Find in ``||game:on update every 500 ms||`` and ``||game:Game||``, and drag it into the workspace. Set the time to ``1000 ms``.
 
 ```blocks
 enum SpriteKind {
@@ -47,31 +47,31 @@ enum SpriteKind {
 }
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
-. . . 2 2 . 2 2 2 . 2 2 . . . . 
-. . . 2 2 2 2 3 2 2 2 2 . . . . 
-. . . 2 3 3 2 3 3 3 3 2 . . . . 
-. . . 2 3 1 3 2 3 3 3 2 . . . . 
-. . . 2 3 3 1 3 2 3 3 2 . . . . 
-. . . . 2 3 3 1 3 3 2 . . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
-. . . . . . . 7 . . . . . . . . 
-. . 7 7 7 . . 7 . . 7 7 7 . . . 
-. . 7 6 7 7 . 7 . 7 7 6 7 . . . 
-. . 7 7 6 7 7 7 7 7 6 7 7 . . . 
-. . . 7 7 6 7 7 7 6 7 7 . . . . 
-. . . . 7 6 6 6 6 6 7 . . . . . 
-. . . . 7 7 7 6 7 7 7 . . . . . 
-. . . . . . 7 7 7 . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . 4 . . . . . . 2 2 . . . .
+. . . 4 4 4 3 . 3 2 2 . . . . .
+. . . . 4 e 5 5 5 e 2 . . . . .
+. . . . 3 5 5 5 5 5 3 . . . . .
+. . . . . 5 5 e 5 5 . . . . . .
+. . . . 3 5 5 5 5 5 3 . . . . .
+. . . . 2 e 5 5 5 e 4 . . . . .
+. . . . 2 2 3 7 3 4 4 4 . . . .
+. . . 2 2 . . 7 . . . 4 . . . .
+. . . . . . . 7 . . . . . . . .
+. . . 7 7 7 . 7 . 7 7 . . . . .
+. . . . 7 7 . 7 . 7 7 . . . . .
+. . . . . 7 7 7 7 7 . . . . . .
+. . . . . . 7 7 7 . . . . . . .
+. . . . . . . 7 . . . . . . . .
+. . . . . . . 7 . . . . . . . .
 `, SpriteKind.Player)
-game.onUpdateInterval(500, function () {
+game.onUpdateInterval(1000, function () {
 
 })
 ```
 
 ## Step 3
 
-Find ``||sprites:projectile from mySprite||`` in ``||sprites:Sprites||``. Pull it out and put it into the ``||game:on game update every 500 ms||``.
+Find ``||sprites:set projectile to projectile from mySprite||`` in ``||sprites:Sprites||``. Pull it out and put it into the ``||game:on game update every 1000 ms||``.
 
 ```blocks
 enum SpriteKind {
@@ -80,24 +80,24 @@ enum SpriteKind {
 }
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
-. . . 2 2 . 2 2 2 . 2 2 . . . . 
-. . . 2 2 2 2 3 2 2 2 2 . . . . 
-. . . 2 3 3 2 3 3 3 3 2 . . . . 
-. . . 2 3 1 3 2 3 3 3 2 . . . . 
-. . . 2 3 3 1 3 2 3 3 2 . . . . 
-. . . . 2 3 3 1 3 3 2 . . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
-. . . . . . . 7 . . . . . . . . 
-. . 7 7 7 . . 7 . . 7 7 7 . . . 
-. . 7 6 7 7 . 7 . 7 7 6 7 . . . 
-. . 7 7 6 7 7 7 7 7 6 7 7 . . . 
-. . . 7 7 6 7 7 7 6 7 7 . . . . 
-. . . . 7 6 6 6 6 6 7 . . . . . 
-. . . . 7 7 7 6 7 7 7 . . . . . 
-. . . . . . 7 7 7 . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . 4 . . . . . . 2 2 . . . .
+. . . 4 4 4 3 . 3 2 2 . . . . .
+. . . . 4 e 5 5 5 e 2 . . . . .
+. . . . 3 5 5 5 5 5 3 . . . . .
+. . . . . 5 5 e 5 5 . . . . . .
+. . . . 3 5 5 5 5 5 3 . . . . .
+. . . . 2 e 5 5 5 e 4 . . . . .
+. . . . 2 2 3 7 3 4 4 4 . . . .
+. . . 2 2 . . 7 . . . 4 . . . .
+. . . . . . . 7 . . . . . . . .
+. . . 7 7 7 . 7 . 7 7 . . . . .
+. . . . 7 7 . 7 . 7 7 . . . . .
+. . . . . 7 7 7 7 7 . . . . . .
+. . . . . . 7 7 7 . . . . . . .
+. . . . . . . 7 . . . . . . . .
+. . . . . . . 7 . . . . . . . .
 `, SpriteKind.Player)
-game.onUpdateInterval(500, function () {
+game.onUpdateInterval(1000, function () {
     let projectile = sprites.createProjectileFromSprite(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -121,7 +121,7 @@ game.onUpdateInterval(500, function () {
 
 ## Step 4
 
-Click on the grey box in ``||sprites:projectile||`` and make a small smiley face.
+Click on the grey box in ``||sprites:projectile||`` and make a nice little bee.
 
 ```blocks
 enum SpriteKind {
@@ -130,33 +130,41 @@ enum SpriteKind {
 }
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
-. . . 2 2 . 2 2 2 . 2 2 . . . . 
-. . . 2 2 2 2 3 2 2 2 2 . . . . 
-. . . 2 3 3 2 3 3 3 3 2 . . . . 
-. . . 2 3 1 3 2 3 3 3 2 . . . . 
-. . . 2 3 3 1 3 2 3 3 2 . . . . 
-. . . . 2 3 3 1 3 3 2 . . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
+. . . 4 . . . . . . 2 2 . . . .
+. . . 4 4 4 3 . 3 2 2 . . . . .
+. . . . 4 e 5 5 5 e 2 . . . . .
+. . . . 3 5 5 5 5 5 3 . . . . .
+. . . . . 5 5 e 5 5 . . . . . .
+. . . . 3 5 5 5 5 5 3 . . . . .
+. . . . 2 e 5 5 5 e 4 . . . . .
+. . . . 2 2 3 7 3 4 4 4 . . . .
+. . . 2 2 . . 7 . . . 4 . . . .
+. . . . . . . 7 . . . . . . . .
+. . . 7 7 7 . 7 . 7 7 . . . . .
+. . . . 7 7 . 7 . 7 7 . . . . .
+. . . . . 7 7 7 7 7 . . . . . .
+. . . . . . 7 7 7 . . . . . . .
+. . . . . . . 7 . . . . . . . .
 . . . . . . . 7 . . . . . . . . 
-. . 7 7 7 . . 7 . . 7 7 7 . . . 
-. . 7 6 7 7 . 7 . 7 7 6 7 . . . 
-. . 7 7 6 7 7 7 7 7 6 7 7 . . . 
-. . . 7 7 6 7 7 7 6 7 7 . . . . 
-. . . . 7 6 6 6 6 6 7 . . . . . 
-. . . . 7 7 7 6 7 7 7 . . . . . 
-. . . . . . 7 7 7 . . . . . . . 
-. . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-game.onUpdateInterval(500, function () {
+game.onUpdateInterval(1000, function () {
     let projectile = sprites.createProjectileFromSprite(img`
-. . . . . . . . 
-. . 5 . . 5 . . 
-. . 5 . . 5 . . 
-. . . . . . . . 
-. 5 . . . . 5 . 
-. . 5 5 5 5 . . 
-. . . . . . . . 
-. . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . b b . . b . . . . . . .
+. . . . . b b b b . . . . . . .
+. . . . . . . b b . . . . . . .
+. . . . . f 5 f 5 f . . . . . .
+. . . . 5 f 5 f 5 f 1 . . . . .
+. . . . 5 f 5 f 5 f 5 b . . . .
+. . . . . . 5 f 5 f 5 . . . . .
+. . . . . e . . . e . . . . . .
+. . . . e . . . . e . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, mySprite, 0, 100)
 })
 ```
@@ -172,33 +180,41 @@ enum SpriteKind {
 }
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
-. . . 2 2 . 2 2 2 . 2 2 . . . . 
-. . . 2 2 2 2 3 2 2 2 2 . . . . 
-. . . 2 3 3 2 3 3 3 3 2 . . . . 
-. . . 2 3 1 3 2 3 3 3 2 . . . . 
-. . . 2 3 3 1 3 2 3 3 2 . . . . 
-. . . . 2 3 3 1 3 3 2 . . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
+. . . 4 . . . . . . 2 2 . . . .
+. . . 4 4 4 3 . 3 2 2 . . . . .
+. . . . 4 e 5 5 5 e 2 . . . . .
+. . . . 3 5 5 5 5 5 3 . . . . .
+. . . . . 5 5 e 5 5 . . . . . .
+. . . . 3 5 5 5 5 5 3 . . . . .
+. . . . 2 e 5 5 5 e 4 . . . . .
+. . . . 2 2 3 7 3 4 4 4 . . . .
+. . . 2 2 . . 7 . . . 4 . . . .
+. . . . . . . 7 . . . . . . . .
+. . . 7 7 7 . 7 . 7 7 . . . . .
+. . . . 7 7 . 7 . 7 7 . . . . .
+. . . . . 7 7 7 7 7 . . . . . .
+. . . . . . 7 7 7 . . . . . . .
+. . . . . . . 7 . . . . . . . .
 . . . . . . . 7 . . . . . . . . 
-. . 7 7 7 . . 7 . . 7 7 7 . . . 
-. . 7 6 7 7 . 7 . 7 7 6 7 . . . 
-. . 7 7 6 7 7 7 7 7 6 7 7 . . . 
-. . . 7 7 6 7 7 7 6 7 7 . . . . 
-. . . . 7 6 6 6 6 6 7 . . . . . 
-. . . . 7 7 7 6 7 7 7 . . . . . 
-. . . . . . 7 7 7 . . . . . . . 
-. . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-game.onUpdateInterval(500, function () {
+game.onUpdateInterval(1000, function () {
     let projectile = sprites.createProjectileFromSprite(img`
-. . . . . . . . 
-. . 5 . . 5 . . 
-. . 5 . . 5 . . 
-. . . . . . . . 
-. 5 . . . . 5 . 
-. . 5 5 5 5 . . 
-. . . . . . . . 
-. . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . b b . . b . . . . . . .
+. . . . . b b b b . . . . . . .
+. . . . . . . b b . . . . . . .
+. . . . . f 5 f 5 f . . . . . .
+. . . . 5 f 5 f 5 f 1 . . . . .
+. . . . 5 f 5 f 5 f 5 b . . . .
+. . . . . . 5 f 5 f 5 . . . . .
+. . . . . e . . . e . . . . . .
+. . . . e . . . . e . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, mySprite, Math.randomRange(-25, 25), 100)
 })
 ```
@@ -214,40 +230,48 @@ enum SpriteKind {
 }
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
-. . . 2 2 . 2 2 2 . 2 2 . . . . 
-. . . 2 2 2 2 3 2 2 2 2 . . . . 
-. . . 2 3 3 2 3 3 3 3 2 . . . . 
-. . . 2 3 1 3 2 3 3 3 2 . . . . 
-. . . 2 3 3 1 3 2 3 3 2 . . . . 
-. . . . 2 3 3 1 3 3 2 . . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
+. . . 4 . . . . . . 2 2 . . . .
+. . . 4 4 4 3 . 3 2 2 . . . . .
+. . . . 4 e 5 5 5 e 2 . . . . .
+. . . . 3 5 5 5 5 5 3 . . . . .
+. . . . . 5 5 e 5 5 . . . . . .
+. . . . 3 5 5 5 5 5 3 . . . . .
+. . . . 2 e 5 5 5 e 4 . . . . .
+. . . . 2 2 3 7 3 4 4 4 . . . .
+. . . 2 2 . . 7 . . . 4 . . . .
+. . . . . . . 7 . . . . . . . .
+. . . 7 7 7 . 7 . 7 7 . . . . .
+. . . . 7 7 . 7 . 7 7 . . . . .
+. . . . . 7 7 7 7 7 . . . . . .
+. . . . . . 7 7 7 . . . . . . .
+. . . . . . . 7 . . . . . . . .
 . . . . . . . 7 . . . . . . . . 
-. . 7 7 7 . . 7 . . 7 7 7 . . . 
-. . 7 6 7 7 . 7 . 7 7 6 7 . . . 
-. . 7 7 6 7 7 7 7 7 6 7 7 . . . 
-. . . 7 7 6 7 7 7 6 7 7 . . . . 
-. . . . 7 6 6 6 6 6 7 . . . . . 
-. . . . 7 7 7 6 7 7 7 . . . . . 
-. . . . . . 7 7 7 . . . . . . . 
-. . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-game.onUpdateInterval(500, function () {
+game.onUpdateInterval(1000, function () {
     let projectile = sprites.createProjectileFromSprite(img`
-. . . . . . . . 
-. . 5 . . 5 . . 
-. . 5 . . 5 . . 
-. . . . . . . . 
-. 5 . . . . 5 . 
-. . 5 5 5 5 . . 
-. . . . . . . . 
-. . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . b b . . b . . . . . . .
+. . . . . b b b b . . . . . . .
+. . . . . . . b b . . . . . . .
+. . . . . f 5 f 5 f . . . . . .
+. . . . 5 f 5 f 5 f 1 . . . . .
+. . . . 5 f 5 f 5 f 5 b . . . .
+. . . . . . 5 f 5 f 5 . . . . .
+. . . . . e . . . e . . . . . .
+. . . . e . . . . e . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, mySprite, Math.randomRange(-25, 25), Math.randomRange(-25, 25))
 })
 ```
 
 ## Step 7 @fullscreen
 
-Find the ``||sprites:set mySprite x (horizontal position) to 0||`` in ``||sprites:Sprites||``, place it after ``||variables:set projectile to||``, and change ``||variables:mySprite||`` to ``||variables:projectile||``. Change ``||sprites:x (horizontal position)||`` to ``||sprites:lifespan||`` and set ``0`` to ``2000``.
+Find the ``||sprites:set mySprite x to 0||`` in ``||sprites:Sprites||``, place it after ``||variables:set projectile to||``, and change ``||variables:mySprite||`` to ``||variables:projectile||``. Change ``||sprites:x||`` to ``||sprites:lifespan||`` and set ``0`` to ``3000``.
 
 ![Adding life span](/static/tutorials/happy-flower/life-span.gif)
 
@@ -259,41 +283,49 @@ enum SpriteKind {
 let projectile: Sprite = null
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
-. . . 2 2 . 2 2 2 . 2 2 . . . . 
-. . . 2 2 2 2 3 2 2 2 2 . . . . 
-. . . 2 3 3 2 3 3 3 3 2 . . . . 
-. . . 2 3 1 3 2 3 3 3 2 . . . . 
-. . . 2 3 3 1 3 2 3 3 2 . . . . 
-. . . . 2 3 3 1 3 3 2 . . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
+. . . 4 . . . . . . 2 2 . . . .
+. . . 4 4 4 3 . 3 2 2 . . . . .
+. . . . 4 e 5 5 5 e 2 . . . . .
+. . . . 3 5 5 5 5 5 3 . . . . .
+. . . . . 5 5 e 5 5 . . . . . .
+. . . . 3 5 5 5 5 5 3 . . . . .
+. . . . 2 e 5 5 5 e 4 . . . . .
+. . . . 2 2 3 7 3 4 4 4 . . . .
+. . . 2 2 . . 7 . . . 4 . . . .
+. . . . . . . 7 . . . . . . . .
+. . . 7 7 7 . 7 . 7 7 . . . . .
+. . . . 7 7 . 7 . 7 7 . . . . .
+. . . . . 7 7 7 7 7 . . . . . .
+. . . . . . 7 7 7 . . . . . . .
+. . . . . . . 7 . . . . . . . .
 . . . . . . . 7 . . . . . . . . 
-. . 7 7 7 . . 7 . . 7 7 7 . . . 
-. . 7 6 7 7 . 7 . 7 7 6 7 . . . 
-. . 7 7 6 7 7 7 7 7 6 7 7 . . . 
-. . . 7 7 6 7 7 7 6 7 7 . . . . 
-. . . . 7 6 6 6 6 6 7 . . . . . 
-. . . . 7 7 7 6 7 7 7 . . . . . 
-. . . . . . 7 7 7 . . . . . . . 
-. . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-game.onUpdateInterval(500, function () {
+game.onUpdateInterval(1000, function () {
     projectile = sprites.createProjectileFromSprite(img`
-. . . . . . . . 
-. . 5 . . 5 . . 
-. . 5 . . 5 . . 
-. . . . . . . . 
-. 5 . . . . 5 . 
-. . 5 5 5 5 . . 
-. . . . . . . . 
-. . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . b b . . b . . . . . . .
+. . . . . b b b b . . . . . . .
+. . . . . . . b b . . . . . . .
+. . . . . f 5 f 5 f . . . . . .
+. . . . 5 f 5 f 5 f 1 . . . . .
+. . . . 5 f 5 f 5 f 5 b . . . .
+. . . . . . 5 f 5 f 5 . . . . .
+. . . . . e . . . e . . . . . .
+. . . . e . . . . e . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, mySprite, Math.randomRange(-25, 25), Math.randomRange(-25, 25))
-    projectile.lifespan = 2000
+    projectile.lifespan = 3000
 })
 ```
 
 ## Step 9
 
-Get another ``||sprites:set mySprite x (horizontal position) to 0||`` in ``||sprites:Sprites||``, place it after ``||variables:set projectile to||``, and change ``||variables:mySprite||`` to ``||variables:projectile||``. Change ``||sprites:x (horizontal position)||`` to ``||sprites:z (depth)||`` and set `0` to `-1`.
+Get an ``||logic:if then||`` and put it just before the ``||sprites:lifespan||``. Replace the ``true`` with a ``||logic:0 < 0||``. Put ``||sprites:projectile vx (velocity)||`` in where the first `0` is. Inside the ``||logic:if then||``, flip the image of the bee when it's moving left using ``||images:flip projectile image horizontally||``.
 
 ```blocks
 enum SpriteKind {
@@ -303,39 +335,49 @@ enum SpriteKind {
 let projectile: Sprite = null
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
-. . . 2 2 . 2 2 2 . 2 2 . . . . 
-. . . 2 2 2 2 3 2 2 2 2 . . . . 
-. . . 2 3 3 2 3 3 3 3 2 . . . . 
-. . . 2 3 1 3 2 3 3 3 2 . . . . 
-. . . 2 3 3 1 3 2 3 3 2 . . . . 
-. . . . 2 3 3 1 3 3 2 . . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
-. . . . . . . 7 . . . . . . . . 
-. . 7 7 7 . . 7 . . 7 7 7 . . . 
-. . 7 6 7 7 . 7 . 7 7 6 7 . . . 
-. . 7 7 6 7 7 7 7 7 6 7 7 . . . 
-. . . 7 7 6 7 7 7 6 7 7 . . . . 
-. . . . 7 6 6 6 6 6 7 . . . . . 
-. . . . 7 7 7 6 7 7 7 . . . . . 
-. . . . . . 7 7 7 . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . 4 . . . . . . 2 2 . . . .
+. . . 4 4 4 3 . 3 2 2 . . . . .
+. . . . 4 e 5 5 5 e 2 . . . . .
+. . . . 3 5 5 5 5 5 3 . . . . .
+. . . . . 5 5 e 5 5 . . . . . .
+. . . . 3 5 5 5 5 5 3 . . . . .
+. . . . 2 e 5 5 5 e 4 . . . . .
+. . . . 2 2 3 7 3 4 4 4 . . . .
+. . . 2 2 . . 7 . . . 4 . . . .
+. . . . . . . 7 . . . . . . . .
+. . . 7 7 7 . 7 . 7 7 . . . . .
+. . . . 7 7 . 7 . 7 7 . . . . .
+. . . . . 7 7 7 7 7 . . . . . .
+. . . . . . 7 7 7 . . . . . . .
+. . . . . . . 7 . . . . . . . .
+. . . . . . . 7 . . . . . . . .
 `, SpriteKind.Player)
-game.onUpdateInterval(500, function () {
+game.onUpdateInterval(1000, function () {
     projectile = sprites.createProjectileFromSprite(img`
-. . . . . . . . 
-. . 5 . . 5 . . 
-. . 5 . . 5 . . 
-. . . . . . . . 
-. 5 . . . . 5 . 
-. . 5 5 5 5 . . 
-. . . . . . . . 
-. . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . b b . . b . . . . . . .
+. . . . . b b b b . . . . . . .
+. . . . . . . b b . . . . . . .
+. . . . . f 5 f 5 f . . . . . .
+. . . . 5 f 5 f 5 f 1 . . . . .
+. . . . 5 f 5 f 5 f 5 b . . . .
+. . . . . . 5 f 5 f 5 . . . . .
+. . . . . e . . . e . . . . . .
+. . . . e . . . . e . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, mySprite, Math.randomRange(-25, 25), Math.randomRange(-25, 25))
-    projectile.z = -1
-    projectile.lifespan = 2000
+    if (projectile.vx < 0) {
+        projectile.image.flipX()
+    }
+    projectile.lifespan = 3000
 })
 ```
 
 ## Complete
 
-Congratulations, your happy flower is complete! It will now spread happiness all around.
+Congratulations, your happy flower is complete! It will now send back joyful little bees.
