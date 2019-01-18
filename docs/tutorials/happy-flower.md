@@ -387,7 +387,7 @@ game.onUpdateInterval(1000, function () {
 
 ## Step 9
 
-In **Advanced** go to ``||images:Images||`` and find the ``||images:flip picture horizontally||``. Pull it out and place it into the ``||logic:if then||``. Now, back in ``||sprites:Sprites||``, get a ``||sprites:mySprite picture||`` and place it in the ``||images:flip||`` where ``||variables:picture||`` is. Change the ``||variables:mySprite||`` to ``||variables:projectile||``.
+In **Advanced** go to ``||images:Images||`` and find the ``||images:flip picture horizontally||``. Pull it out and place it into the ``||logic:if then||``. Now, back in ``||sprites:Sprites||``, get a ``||sprites:mySprite image||`` and place it in the ``||images:flip||`` where ``||variables:picture||`` is. Change the ``||variables:mySprite||`` to ``||variables:projectile||``.
 
 ```blocks
 enum SpriteKind {
