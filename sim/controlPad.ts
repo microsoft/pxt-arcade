@@ -83,8 +83,9 @@ namespace pxsim {
             // don't need to release pointer capture,
             // since pointer is already being destroyed
 
-            ev.preventDefault();
-            return false;
+            //ev.preventDefault();
+            //return false;
+            return true;
         }
 
         private btnEvent(ev: MouseEvent) {
@@ -139,6 +140,7 @@ namespace pxsim {
             this.keys.forEach(k => k.updatePointer(ev, close.indexOf(k) > -1));
 
             ev.preventDefault();
+            ev.stopPropagation();
             return false;
         }
 
