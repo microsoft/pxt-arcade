@@ -124,7 +124,8 @@ namespace pxsim {
                 close = close.slice(0, 2)
             }
 
-            close.forEach(k => k.updatePointer(ev, true));
+            // update all keys
+            this.keys.forEach(k => k.updatePointer(ev, close.indexOf(k) > -1));
 
             ev.preventDefault();
             return false;
