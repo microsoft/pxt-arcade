@@ -5,7 +5,7 @@ git:
   submodules:
     false
 before_install:
-  - echo -e "\n\nmachine github.com\n  login $test\n" >~/.netrc
+  - echo -e "\n\nmachine github.com\n  login $GH_TOKEN\n" >~/.netrc
   - cat ~/.netrc
   - git submodule update --init --recursive
 script:
