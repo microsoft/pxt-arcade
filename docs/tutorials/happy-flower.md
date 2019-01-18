@@ -330,62 +330,6 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 9
-
-Get an ``||logic:if then||`` and put it just before the ``||sprites:lifespan||``. Replace the ``true`` with a ``||logic:0 < 0||``. Put ``||sprites:projectile vx (velocity)||`` in where the first `0` is. Inside the ``||logic:if then||``, flip the image of the bee when it's moving left using ``||images:flip projectile image horizontally||``.
-
-```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let projectile: Sprite = null
-let mySprite: Sprite = null
-scene.setBackgroundColor(9)
-mySprite = sprites.create(img`
-. . . 4 . . . . . . 2 2 . . . .
-. . . 4 4 4 3 . 3 2 2 . . . . .
-. . . . 4 e 5 5 5 e 2 . . . . .
-. . . . 3 5 5 5 5 5 3 . . . . .
-. . . . . 5 5 e 5 5 . . . . . .
-. . . . 3 5 5 5 5 5 3 . . . . .
-. . . . 2 e 5 5 5 e 4 . . . . .
-. . . . 2 2 3 7 3 4 4 4 . . . .
-. . . 2 2 . . 7 . . . 4 . . . .
-. . . . . . . 7 . . . . . . . .
-. . . 7 7 7 . 7 . 7 7 . . . . .
-. . . . 7 7 . 7 . 7 7 . . . . .
-. . . . . 7 7 7 7 7 . . . . . .
-. . . . . . 7 7 7 . . . . . . .
-. . . . . . . 7 . . . . . . . .
-. . . . . . . 7 . . . . . . . .
-`, SpriteKind.Player)
-game.onUpdateInterval(1000, function () {
-    projectile = sprites.createProjectileFromSprite(img`
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . b b . . b . . . . . . .
-. . . . . b b b b . . . . . . .
-. . . . . . . b b . . . . . . .
-. . . . . f 5 f 5 f . . . . . .
-. . . . 5 f 5 f 5 f 1 . . . . .
-. . . . 5 f 5 f 5 f 5 b . . . .
-. . . . . . 5 f 5 f 5 . . . . .
-. . . . . e . . . e . . . . . .
-. . . . e . . . . e . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-`, mySprite, Math.randomRange(-25, 25), Math.randomRange(-25, 25))
-    if (projectile.vx < 0) {
-        projectile.image.flipX()
-    }
-    projectile.lifespan = 3000
-})
-```
-
 ## Complete
 
 Congratulations, your happy flower is complete! It will now send back joyful little bees.
