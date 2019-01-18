@@ -21,6 +21,13 @@ Here are some fun programs for your @boardname@!
   "imageUrl": "/static/examples/cube-land.png"
 },
 {
+  "name": "Particle Effects Demo",
+  "description": "A demonstration of ramped up particle effects",
+  "url":"/examples/particle-effects-demo",
+  "cardType": "codeExample",
+  "imageUrl": "/static/examples/particle-effects-demo.gif"
+},
+{
   "name": "Sorting Algorithms",
   "description": "A visualization of different sorting algorithms",
   "url":"/examples/sorting-algorithms",

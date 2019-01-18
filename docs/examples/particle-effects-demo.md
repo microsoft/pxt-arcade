@@ -5,6 +5,10 @@ interface ParticleDemonstration {
     start(): particles.ParticleSource[];
 }
 
+// show controls
+const blankLine = "                         ";
+game.showLongText(blankLine + blankLine + "Controls:" + blankLine + "                Press A to add an effect " + blankLine + "Press B to remove an    effect ", DialogLayout.Full);
+
 const myDemonstrations: ParticleDemonstration[] = [];
 const mySources: particles.ParticleSource[] = [];
 let count = 1;
@@ -98,7 +102,7 @@ namespace demonstrations {
         start() {
             class StarFactory extends particles.ParticleFactory {
                 protected galois: Math.FastRandom;
-                protected possibleColors: number[]
+                protected possibleColors: number[];
                 images: Image[];
 
                 constructor(possibleColors?: number[]) {
@@ -107,12 +111,11 @@ namespace demonstrations {
                     this.images = [
                         img`
                             1
-                        `,
-                        img`
+                        `, img`
                             1 . 1
                             . 1 .
                             1 . 1
-                      `, img`
+                        `, img`
                             . 1 .
                             1 1 1
                             . 1 .
@@ -120,7 +123,7 @@ namespace demonstrations {
                     ];
 
                     if (possibleColors && possibleColors.length)
-                        this.possibleColors = possibleColors
+                        this.possibleColors = possibleColors;
                     else
                         this.possibleColors = [1];
                 }
@@ -169,8 +172,8 @@ namespace demonstrations {
                     screen.drawImage(selected, Fx.toInt(x), Fx.toInt(y));
                 }
             }
-            const sources: particles.ParticleSource[] = [];
 
+            const sources: particles.ParticleSource[] = [];
             const colors = [1];
             for (let i = 0; i < 4; i++)
                 colors.push(Math.randomRange(2, 0xE));
@@ -190,7 +193,7 @@ function makeSimpleAnchor(): particles.ParticleAnchor {
     };
 }
 
-// Radial group as a lot of different possible configurations, so double it's probability
+// Radial group as a lot of different possible configurations, so make it twice as likely as others
 for (let i = 0; i < 2; i++) {
     myDemonstrations.push(new demonstrations.RadialGroup());
 }

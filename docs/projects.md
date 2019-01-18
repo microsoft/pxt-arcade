@@ -20,7 +20,7 @@
     {
         "name": "JavaScript Games",
         "url": "javascript-games",
-        "imageUrl": "/static/examples/guess-the-letter.png"
+        "imageUrl": "/static/examples/planet-putt-putt.png"
     },
     {
         "name": "Lessons",
