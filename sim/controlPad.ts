@@ -83,9 +83,8 @@ namespace pxsim {
             // don't need to release pointer capture,
             // since pointer is already being destroyed
 
-            //ev.preventDefault();
-            //return false;
-            return true;
+            ev.preventDefault();
+            return false;
         }
 
         private btnEvent(ev: MouseEvent) {
