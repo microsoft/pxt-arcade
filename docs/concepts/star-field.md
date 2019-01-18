@@ -4,7 +4,7 @@
 
 Having stars in the background is important to show motion for a game that takes place in space. Stars filling the screen as moving projectiles give the illusion of a player sprite speeding through space, even if it remains at the same location on the screen.
 
-![Star field background playing](/static/tutorials/star-field/star-field-background.gif)
+![Star field background playing](/static/concepts/star-field/star-field-background.gif)
 
 ## Step 1
 
@@ -51,7 +51,7 @@ game.onUpdate(function () {
 
 Click on the grey box in ``||variables:set projectile to||`` and create a single white pixel for the star.
 
-![Creating star image](/static/tutorials/star-field/creating-star-image.gif)
+![Creating star image](/static/concepts/star-field/creating-star-image.gif)
 
 ```blocks
 enum SpriteKind {
@@ -84,7 +84,7 @@ game.onUpdate(function () {
 
 Find ``||Math:pick random 0 to 10||``. Change the ``0`` to ``20``, and the ``10`` to ``30``. Place it in ``||sprites:vy||`` in ``||sprites:projectile||``.
 
-![Random Speed](/static/tutorials/star-field/random-speed.gif)
+![Random Speed](/static/concepts/star-field/random-speed.gif)
 
 ```blocks
 enum SpriteKind {
@@ -181,7 +181,7 @@ game.onUpdate(function () {
 
 At this point, too many stars are being created. This is fixed by surrounding the blocks inside ``||game:on game update||`` with an ``||logic:if then||`` block.
 
-![Surround with if then](/static/tutorials/star-field/surround-if-then.gif)
+![Surround with if then](/static/concepts/star-field/surround-if-then.gif)
 
 ```blocks
 enum SpriteKind {
