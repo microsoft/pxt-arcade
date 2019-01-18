@@ -8,7 +8,7 @@ Flowers make everyone around them happier, especially the bees who get nector fr
 
 ## Step 1
 
-Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``, and draw a flower.
+Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``, and draw a flower. Also, drag in a ``||scene:set background color to||`` and choose ``light blue``.
 
 ```blocks
 enum SpriteKind {
@@ -16,6 +16,7 @@ enum SpriteKind {
     Enemy
 }
 let mySprite: Sprite = null
+scene.setBackgroundColor(9)
 mySprite = sprites.create(img`
 . . . 4 . . . . . . 2 2 . . . .
 . . . 4 4 4 3 . 3 2 2 . . . . .
@@ -46,6 +47,7 @@ enum SpriteKind {
     Enemy
 }
 let mySprite: Sprite = null
+scene.setBackgroundColor(9)
 mySprite = sprites.create(img`
 . . . 4 . . . . . . 2 2 . . . .
 . . . 4 4 4 3 . 3 2 2 . . . . .
@@ -79,6 +81,7 @@ enum SpriteKind {
     Enemy
 }
 let mySprite: Sprite = null
+scene.setBackgroundColor(9)
 mySprite = sprites.create(img`
 . . . 4 . . . . . . 2 2 . . . .
 . . . 4 4 4 3 . 3 2 2 . . . . .
@@ -129,6 +132,7 @@ enum SpriteKind {
     Enemy
 }
 let mySprite: Sprite = null
+scene.setBackgroundColor(9)
 mySprite = sprites.create(img`
 . . . 4 . . . . . . 2 2 . . . .
 . . . 4 4 4 3 . 3 2 2 . . . . .
@@ -179,6 +183,7 @@ enum SpriteKind {
     Enemy
 }
 let mySprite: Sprite = null
+scene.setBackgroundColor(9)
 mySprite = sprites.create(img`
 . . . 4 . . . . . . 2 2 . . . .
 . . . 4 4 4 3 . 3 2 2 . . . . .
@@ -229,6 +234,7 @@ enum SpriteKind {
     Enemy
 }
 let mySprite: Sprite = null
+scene.setBackgroundColor(9)
 mySprite = sprites.create(img`
 . . . 4 . . . . . . 2 2 . . . .
 . . . 4 4 4 3 . 3 2 2 . . . . .
@@ -282,6 +288,7 @@ enum SpriteKind {
 }
 let projectile: Sprite = null
 let mySprite: Sprite = null
+scene.setBackgroundColor(9)
 mySprite = sprites.create(img`
 . . . 4 . . . . . . 2 2 . . . .
 . . . 4 4 4 3 . 3 2 2 . . . . .
@@ -334,6 +341,7 @@ enum SpriteKind {
 }
 let projectile: Sprite = null
 let mySprite: Sprite = null
+scene.setBackgroundColor(9)
 mySprite = sprites.create(img`
 . . . 4 . . . . . . 2 2 . . . .
 . . . 4 4 4 3 . 3 2 2 . . . . .
