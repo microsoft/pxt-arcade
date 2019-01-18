@@ -7,27 +7,6 @@ Here are some fun programs for your @boardname@!
 ```codecard
 [
 {
-  "name": "Guess the Letter",
-  "description": "Try and guess the letter",
-  "url":"/examples/guess-the-letter",
-  "cardType": "codeExample",
-  "imageUrl": "/static/examples/guess-the-letter.png"
-},
-{
-  "name": "Bouncer Bucket",
-  "description": "Try to catch the bouncing balls in your bucket",
-  "url":"/examples/bouncer-bucket",
-  "cardType": "codeExample",
-  "imageUrl": "/static/examples/bouncer-bucket.png"
-},
-{
-  "name": "Sorting Algorithms",
-  "description": "A visualization of different sorting algorithms",
-  "url":"/examples/sorting-algorithms",
-  "cardType": "codeExample",
-  "imageUrl": "/static/examples/sorting-algorithms.gif"
-},
-{
   "name": "Planet Putt Putt",
   "description": "Golf your way through the galaxy",
   "url":"/examples/planet-putt-putt",
@@ -40,8 +19,28 @@ Here are some fun programs for your @boardname@!
   "url":"/examples/cube-land",
   "cardType": "codeExample",
   "imageUrl": "/static/examples/cube-land.png"
+},
+{
+  "name": "Sorting Algorithms",
+  "description": "A visualization of different sorting algorithms",
+  "url":"/examples/sorting-algorithms",
+  "cardType": "codeExample",
+  "imageUrl": "/static/examples/sorting-algorithms.gif"
+},
+{
+  "name": "Guess the Letter",
+  "description": "Try and guess the letter",
+  "url":"/examples/guess-the-letter",
+  "cardType": "codeExample",
+  "imageUrl": "/static/examples/guess-the-letter.png"
+},
+{
+  "name": "Bouncer Bucket",
+  "description": "Try to catch the bouncing balls in your bucket",
+  "url":"/examples/bouncer-bucket",
+  "cardType": "codeExample",
+  "imageUrl": "/static/examples/bouncer-bucket.png"
 }
-
 ]
 ```
 
