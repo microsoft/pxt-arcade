@@ -21,11 +21,11 @@ Here are some fun programs for your @boardname@!
   "imageUrl": "/static/examples/space-destroyer.png"
 },
 {
-  "name": "Dodge the Burgers",
-  "description": "Don't get hit by the flying burgers",
-  "url":"/examples/dodge-the-burgers",
+  "name": "Eat the Fruit",
+  "description": "Don't get hit by the flying junk food",
+  "url":"/examples/eat-the-fruit",
   "cardType": "example",
-  "imageUrl": "/static/examples/dodge-rock.png"
+  "imageUrl": "/static/examples/eat-the-fruit.gif"
 },
 {
   "name": "Level Up!",
