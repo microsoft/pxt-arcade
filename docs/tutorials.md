@@ -44,5 +44,5 @@
 [Eat the Doughnut](/tutorials/eat-the-doughnut),
 [Simple Maze](/tutorials/simple-maze),
 [Happy Flower](/tutorials/happy-flower),
-[Lemom Leak](/tutorials/lemon-leak),
+[Lemon Leak](/tutorials/lemon-leak),
 [Simple Extensions](/tutorials/simple-extensions)
