@@ -1,3 +1,0 @@
-[submodule "sim"]
-	path = sim
-	url = https://github.com/Microsoft/pxt-arcade-sim.git
