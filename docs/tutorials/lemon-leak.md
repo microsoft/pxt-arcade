@@ -87,6 +87,7 @@ info.startCountdown(30)
 Now, pull out a ``||game:on game update every||`` from ``||game:Game||``. Set the interval time to `1000`. Back in ``||sprites:Sprites||``, get the ``||variables:set projectile to||`` ``||sprites:projectile from  side||`` block an put it inside.  Click on the grey box and then select the strawberry from the gallery.
 
 ```blocks
+let projectile: Sprite = null
 game.onUpdateInterval(1000, function () {
     projectile = sprites.createProjectileFromSide(img`
         . . . . . . . 6 . . . . . . . .
@@ -114,6 +115,7 @@ game.onUpdateInterval(1000, function () {
 Over in the ``||math:Math||`` drawer, pick up a ``||math: pick random||`` and put it in ``vx`` slot for the projectile. In ``||math:pick random||`` change the first `0` to `-50` and the second `0` to `50`. Dupicate this block and put its copy in the slot for ``vy``.
 
 ```blocks
+let projectile: Sprite = null
 game.onUpdateInterval(1000, function () {
     projectile = sprites.createProjectileFromSide(img`
         . . . . . . . 6 . . . . . . . .
