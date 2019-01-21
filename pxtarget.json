@@ -16,6 +16,7 @@
     },
     "bundleddirs": [
         "libs/animation",
+        "libs/accelerometer",
         "libs/base",
         "libs/core",
         "libs/core---samd",

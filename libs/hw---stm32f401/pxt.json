@@ -13,6 +13,9 @@
         "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAAB4AgMAAAAIzBH8AAAADFBMVEUAP62OLsT/////gTWS8ip5AAAB1ElEQVRYw+2UQW7bMBBFCa6MOUXQFaH79D6EVoVOQXQlfAHmvgGkA/UGXUj9Q0oRF7VCwA2iOPm2yZnP54+RBMh8r9QX+CAgstaSa9GeBcz9RmytFucCse0omVOBxfyZPyH4cruxUScEs/abfTYQ6aQoUWw4B/gR3o9f4N3gJ1efNxskcAsCA6En8I2FCTvo8ibOOeK9bamOlfcQ2wYjwfWiKU6TnBMuxMWSsq039oftRLyeSecc154rwcbbkECIIQzbi0hDUFg4rkT6nCg6AJizJgq6nwT1yGVxntxp4j4jm1YTu8Zzxo6fYL12mix6mK86mKaFwHwiNYCvAp+M+d9gCMegrQb9AQhfgOFgRl+CfS2IGhCq1IhWr4BpyIuGvwL2tSCqQX93YuNRNSPNS81VS7C8u9hBfwO8POmMbfFkboPfTAH2B+ClBMMBaErQ3wQbUDtoboL8leb9oCDpECz1yKAAeMjX/FKptwT/TGsxx935Fzi/2HF3ShDzrwkLaINnI9cY2W+OVnQXw3a4jhPNke2MOE/XMWl1tETUxClepwXaJhATZvCf4+qwSiBjYzL177/nZ6bzWzi6P2vicB04xxCHCNpTHK7bjMnRiu7yjk/mL60FrJ8EJ7HMAAAAAElFTkSuQmCC"
     },
     "compileServiceVariant": "stm32f401",
+    "cppDependencies": {
+        "accelerometer": "file:../accelerometer"
+    },
     "dependencies": {
         "core---stm32": "file:../core---stm32",
         "screen---st7735": "file:../screen---st7735",
@@ -24,7 +27,8 @@
     "public": true,
     "yotta": {
         "config": {
-            "DEVICE_USB": 1
+            "DEVICE_USB": 0,
+            "PXT_DEFUALT_ACCELEROMETER": "ACCELEROMETER_TYPE_MMA8453"
         }
     },
     "dalDTS": {
