@@ -64,7 +64,6 @@ namespace pxsim {
         public screen: Uint32Array;
         public startTime = Date.now()
         public screenState: ScreenState
-        private lastScreenshot: Uint32Array
         private lastScreenshotTime = 0;
         private view: ScreenView;
 
@@ -111,39 +110,16 @@ namespace pxsim {
             }
         }
 
+        
         screenshotAsync(): Promise<ImageData> {
-            const img = this.rawScreenshot(true);
-            return Promise.resolve(img);
-        }
-
-        private rawScreenshot(force: boolean): ImageData {
-            let work = document.createElement("canvas")
-            work.width = this.screenState.width
-            work.height = this.screenState.height
-            let ctx = work.getContext("2d")
-            let id = ctx.getImageData(0, 0, work.width, work.height)
-            if (!this.lastScreenshot || force)
-                this.takeScreenshot(true)
-            new Uint32Array(id.data.buffer).set(this.lastScreenshot);
-            return id;
+            const cvs = this.view.canvas;
+            const ctx = this.view.context;
+            const id = ctx.getImageData(0, 0, cvs.width, cvs.height);
+            return Promise.resolve(id);
         }
 
         tryScreenshot() {
-            let now = Date.now()
-            // if there was a key since last screenshot and at least 100ms ago,
-            // and last screenshot was at least 3s ago, record a new one
-            if (!this.lastScreenshot
-                || (now - this.lastScreenshotTime > 2000 && Math.random() > 0.5))
-                this.takeScreenshot(false);
-        }
-
-        takeScreenshot(force: boolean) {
-            let now = Date.now();
-            const bright = this.screenState.screen.some(c => !!c);
-            if (bright || force) {
-                this.lastScreenshot = this.screenState.screen.slice(0);
-                this.lastScreenshotTime = now
-            }
+            // ignore
         }
 
         initAsync(msg: pxsim.SimulatorRunMessage): Promise<void> {
