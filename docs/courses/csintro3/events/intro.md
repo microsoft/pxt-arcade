@@ -174,7 +174,7 @@ Use ``||sprites:sprite.setFlag(SpriteFlag.StayInScreen, true)||`` in the ``ship`
 
 ### Solution
 
-```typescript
+```typescript-ignore
 enum SpriteKind {
     Player,
     Projectile,

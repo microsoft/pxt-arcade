@@ -11,6 +11,7 @@ enum SpriteKind {
     Asteroid,
     PowerUp,
     Laser,
+    EnemyLaser,
     Star
 }
 
@@ -125,7 +126,7 @@ namespace ship {
  * Creates and controls the enemies in the game
  */
 namespace enemy {
-    createEnemy();
+    let myEnemy = createEnemy();
 
     /**
      * @returns an enemy sprite that is positioned at the top of the screen
@@ -146,14 +147,28 @@ namespace enemy {
         sprite.x = Math.randomRange(edge, screen.width - edge);
         sprite.y = 0;
     }
+
+    game.onUpdateInterval(200, function () {
+        // Create a laser 10% of the time
+        if (Math.percentChance(10)) {
+            sprites.createProjectile(img`3`, 0, 70, SpriteKind.EnemyLaser, myEnemy);
+        }
+
+        // follow the player
+        if (myEnemy.x < ship.player.x) {
+            myEnemy.vx = 15;
+        } else {
+            myEnemy.vx = -15;
+        }
+    });
 }
 
 /**
  * Creates and controls the stars in the game
  */
 namespace star {
-    game.onUpdate(function () {
-        if (Math.percentChance(10)) {
+    game.onUpdateInterval(200, function () {
+        if (Math.percentChance(50)) {
             let star = sprites.createProjectile(img`1`, 0, 50, SpriteKind.Star);
             star.x = Math.randomRange(0, screen.width);
             star.setFlag(SpriteFlag.Ghost, true);
