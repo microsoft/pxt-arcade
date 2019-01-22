@@ -95,6 +95,9 @@ namespace pxsim {
                     if (isPressed)
                         Runtime.postScreenshotAsync().done();
                     return;
+                case Key.Gif:
+                    Runtime.toggleRecording();
+                    break;
             }
 
             //this.lastKey = Date.now()
