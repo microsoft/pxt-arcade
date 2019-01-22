@@ -21,8 +21,8 @@ In the ``||loops:on start||`` block put in the ``||scene:set background color||`
 ```blocks
 enum SpriteKind {
     Player,
-    Enemy,
     Projectile,
+    Enemy,
     Food
 }
 scene.setBackgroundColor(10)
@@ -54,8 +54,8 @@ To keep the lemon from leaving the screen, drag over a ``||sprites:set mySprite 
 ```blocks
 enum SpriteKind {
     Player,
-    Enemy,
     Projectile,
+    Enemy,
     Food
 }
 scene.setBackgroundColor(10)
@@ -140,17 +140,17 @@ game.onUpdateInterval(1000, function () {
 
 ## Step 5
 
-From ``||sprites:Sprites||`` again, get out an ``||sprites:on sprite of kind overlaps||`` block. Set the kind for ``otherSprite`` to ``Enemy``. Find a ``||sprites:mySprite start effect||`` and put it in. Set the effect to ``spray`` and click the **(+)** button. Make the time for the effect be `200`. After that, drop in a ``||info:change score by||``.
+From ``||sprites:Sprites||`` again, get out an ``||sprites:on sprite of kind overlaps||`` block. Set the kind for ``otherSprite`` to ``Projectile``. Find a ``||sprites:mySprite start effect||`` and put it in. Set the effect to ``spray`` and click the **(+)** button. Make the time for the effect be `200`. After that, drop in a ``||info:change score by||``.
 
 ```blocks
 enum SpriteKind {
     Player,
-    Enemy,
     Projectile,
+    Enemy,
     Food
 }
 let mySprite: Sprite = null
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     mySprite.startEffect(effects.spray, 200)
     info.changeScoreBy(1)
 })
