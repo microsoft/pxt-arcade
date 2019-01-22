@@ -23,6 +23,7 @@ Find ``||sprites:projectile from side||`` in ``||sprites:Sprites||``. Drag it in
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 game.onUpdate(function () {
@@ -56,6 +57,7 @@ Click on the grey box in ``||variables:set projectile to||`` and create a single
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 game.onUpdate(function () {
@@ -82,13 +84,12 @@ game.onUpdate(function () {
 
 ## Step 4 @fullscreen
 
-Find ``||Math:pick random 0 to 10||``. Change the ``0`` to ``20``, and the ``10`` to ``30``. Place it in ``||sprites:vy||`` in ``||sprites:projectile||``.
-
-![Random Speed](/static/concepts/star-field/random-speed.gif)
+Find ``||Math:pick random 0 to 10||`` in ``||Math:Math||``. Change the ``0`` to ``20``, and the ``10`` to ``30``. Place it in ``||sprites:vy||`` in ``||sprites:projectile||``.
 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 game.onUpdate(function () {
@@ -120,6 +121,7 @@ Find ``||sprites:set mySprite position to||`` in ``||sprites:Sprites||``. Place 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 game.onUpdate(function () {
@@ -152,6 +154,7 @@ Grab another ``||Math:pick random 0 to 10||`` and put it in as the ``||sprites:x
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 game.onUpdate(function () {
@@ -186,6 +189,7 @@ At this point, too many stars are being created. This is fixed by surrounding th
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 game.onUpdate(function () {
@@ -220,6 +224,7 @@ Get a ``||Math:0 % chance||`` block and replace the ``true`` condition in the ``
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 game.onUpdate(function () {
@@ -262,6 +267,7 @@ This will also have a large effect on the frame rate, as the game can ignore the
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 game.onUpdate(function () {
