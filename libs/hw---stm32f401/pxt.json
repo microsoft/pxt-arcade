@@ -27,7 +27,7 @@
     "public": true,
     "yotta": {
         "config": {
-            "DEVICE_USB": 0,
+            "DEVICE_USB": 1,
             "PXT_DEFUALT_ACCELEROMETER": "ACCELEROMETER_TYPE_MMA8453"
         }
     },
