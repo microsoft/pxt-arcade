@@ -1,15 +1,17 @@
 # Case Study Catch Up
 
-At the end of the functions section, the case study should resemble this example solution:
+At the end of the events section, the case study should resemble this example solution:
 
 ```typescript
+
 enum SpriteKind {
     Player,
     Projectile,
     Enemy,
     Asteroid,
     PowerUp,
-    Laser
+    Laser,
+    Star
 }
 
 enum PowerUpType {
@@ -109,6 +111,7 @@ namespace ship {
         controller.moveSprite(sprite, 80, 30);
         sprite.x = screen.width / 2;
         sprite.y = screen.height - 20;
+        sprite.setFlag(SpriteFlag.StayInScreen, true);
         return sprite;
     }
 
@@ -143,6 +146,20 @@ namespace enemy {
         sprite.x = Math.randomRange(edge, screen.width - edge);
         sprite.y = 0;
     }
+}
+
+/**
+ * Creates and controls the stars in the game
+ */
+namespace star {
+    game.onUpdate(function () {
+        if (Math.percentChance(10)) {
+            let star = sprites.createProjectile(img`1`, 0, 50, SpriteKind.Star);
+            star.x = Math.randomRange(0, screen.width);
+            star.setFlag(SpriteFlag.Ghost, true);
+            star.z = -1;
+        }
+    });
 }
 
 /**

@@ -1,6 +1,6 @@
 # Activity: On Game Update Event
 
-An event is something that happens. Holidays, Birthdays, and the end of the school year are all big events for all those involved.
+An event is something that happens. Holidays, Birthdays, and the end of the school year are all big events for anyone involved.
 
 In JavaScript, ``||functions:functions||`` can be used to identify code to run whenever these events occur. This is very common in **event-driven programming**, where much of the program comes down to responding to user input.
 
@@ -62,6 +62,7 @@ For example, in the previous course's [multiplayer lesson](/courses/csintro2/log
 
 1. Review the code below
 2. Identify when a new ``||sprites:Star||`` is created
+3. Notice the ``||sprites:star.SetFlag(SpriteFlag.Ghost, true)``; this is used to identify the ``||sprites:sprite||`` as a ``Ghost`` that will not interact with other ``||sprites:sprites||``
 
 ```typescript
 enum SpriteKind {
@@ -72,6 +73,7 @@ enum SpriteKind {
 game.onUpdate(function () {
     let star = sprites.createProjectile(img`1`, 50, 0, SpriteKind.Star);
     star.y = Math.randomRange(0, screen.height);
+    star.setFlag(SpriteFlag.Ghost, true);
 });
 ```
 
@@ -117,6 +119,7 @@ enum SpriteKind {
     Asteroid,
     Projectile
 }
+
 let mySprite: Sprite = sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Asteroid);
 mySprite.vx = 50;
 
@@ -148,3 +151,77 @@ game.onUpdate(function () {
     * tell each other they care
     * make food
     * observe different occasions
+
+### ~hint
+
+## Case Study
+
+### Stars!
+
+Use a ``||game:game.onUpdate||`` event to spawn ``||sprites:sprites||`` of kind ``Star``, similar to the ones shown in example #2. Make them a single pixel (or another small image, of your choice).
+
+Use ``||math:Math.percentChance||`` and an ``||logic:if||`` statement 
+
+Set the stars so that they move from the **top** of the screen and to the **bottom**, rather that from left to right (you will need to switch ``screen.height`` to ``screen.width``).
+
+Finally, set each ``star`` to have a ``z`` index of -1, so that they show up **behind** all other ``||sprite:sprites||``.
+
+Create a new namespace, ``stars``, to keep track of stars that will make up the background - put the code related to the stars that you created into this new namespace.
+
+### Stay in Bounds
+
+Use ``||sprites:sprite.setFlag(SpriteFlag.StayInScreen, true)||`` in the ``ship`` ``initialize`` function, so that the player cannot leave the screen.
+
+### Solution
+
+```typescript
+enum SpriteKind {
+    Player,
+    Projectile,
+    Enemy,
+    Asteroid,
+    PowerUp,
+    Laser,
+    Star
+}
+
+/**
+ * Creates and controls the stars in the game
+ */
+namespace star {
+    game.onUpdate(function () {
+        if (Math.percentChance(10)) {
+            let star = sprites.createProjectile(img`1`, 0, 50, SpriteKind.Star);
+            star.x = Math.randomRange(0, screen.width);
+            star.setFlag(SpriteFlag.Ghost, true);
+            star.z = -1;
+        }
+    });
+}
+
+/**
+ * Creates and controls the player's ship
+ */
+namespace ship {
+    export let player: Sprite = initialize();
+
+    /**
+     * @returns a player sprite that moves with the directional buttons
+     */
+    function initialize(): Sprite {
+        let sprite = sprites.create(spritesheet.player, SpriteKind.Player)
+        controller.moveSprite(sprite, 80, 30);
+        sprite.x = screen.width / 2;
+        sprite.y = screen.height - 20;
+        sprite.setFlag(SpriteFlag.StayInScreen, true);
+        return sprite;
+    }
+
+    // When the player presses A, fire a laser from the spaceship
+    controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+        sprites.createProjectile(spritesheet.laser, 0, -40, SpriteKind.Laser, player);
+    });
+}
+```
+
+### ~
