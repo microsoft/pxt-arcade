@@ -49,13 +49,14 @@ namespace pxsim {
      * Do not store state anywhere else!
      */
     export class Board extends pxsim.BaseBoard
-        implements pxsim.MusicBoard
+        implements pxsim.MusicBoard, pxsim.AccelerometerBoard
     // , pxsim.JacDacBoard
     {
         public id: string;
         public bus: EventBus;
         //public jacdacState: pxsim.JacDacState;
         public audioState: AudioState;
+        public accelerometerState: AccelerometerState;
         public background: HTMLDivElement;
         public controlsDiv: HTMLDivElement;
         public canvas: HTMLCanvasElement;
@@ -74,6 +75,7 @@ namespace pxsim {
             this.bus = new EventBus(runtime);
             this.screenState = new ScreenState(null)
             this.audioState = new AudioState();
+            this.accelerometerState = new AccelerometerState(runtime);
         }
 
         getDefaultPitchPin(): Pin {
