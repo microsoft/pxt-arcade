@@ -105,12 +105,12 @@ namespace pxsim {
             }
         }
 
-        screenshotAsync(): Promise<string> {
+        screenshotAsync(): Promise<ImageData> {
             const img = this.rawScreenshot(true);
             return Promise.resolve(img);
         }
 
-        private rawScreenshot(force: boolean) {
+        private rawScreenshot(force: boolean): ImageData {
             let work = document.createElement("canvas")
             work.width = this.screenState.width
             work.height = this.screenState.height
@@ -118,9 +118,8 @@ namespace pxsim {
             let id = ctx.getImageData(0, 0, work.width, work.height)
             if (!this.lastScreenshot || force)
                 this.takeScreenshot(true)
-            new Uint32Array(id.data.buffer).set(this.lastScreenshot)
-            ctx.putImageData(id, 0, 0)
-            return work.toDataURL("image/png")
+            new Uint32Array(id.data.buffer).set(this.lastScreenshot);
+            return id;
         }
 
         tryScreenshot() {

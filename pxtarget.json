@@ -291,6 +291,7 @@
         "extendEditor": true,
         "simScreenshot": true,
         "simScreenshotKey": "P",
-        "simScreenshotMaxUriLength": 500000
+        "simScreenshotMaxUriLength": 500000,
+        "simGif": true
     }
 }
