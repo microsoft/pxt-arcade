@@ -13,6 +13,9 @@
         "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAAB4AgMAAAAIzBH8AAAADFBMVEUAP6143FL/////gTVGSMBYAAABuUlEQVRYw+2UQY6cMBBFLa9adYpRVhb3yX2sXnIKL62PhPcZCQ6UG2QB+WVD2os0Y6kThfT0b+Sq+n5Ul0HCfG3UC3wiEKo9ojhnA+nzqrZxTrDAO3FesKQv8BGwsOcFodqTvca5wP/h+/gCHwI/uWIJNkhgCAIDoSeRWahBV4I454hHe6V6Zr3wZt0ILop2cRJIO+FCVywpe/WGMeaOBHrnuEauBDtvQwYhCoGwEMwziONKJJaOoi74l6VjAcuWKzLWl0o7VjNuHfvOc8aev2C9Vl1UUK5+O7XVc38qdYBvAt+M+dNgCMegbQb9AQhfgeFgRl+DsRVECwhVLkSzD8A85EWbfwDGVhDNoH+4Y+fRNCPNS8upJVg+XdxAfwe8vOmM1+rN3Ae/mAqMB+ClBsMBaGrQ3wU7UDfQ3AXrfepxUJB1CNZ6ZlAAPOWHfm3U3wR/zFuypJvzO3D5ZaebU4NYvs1YQRvcm7imxHp3NKO7GpbDOM00J5YL0jKPU9bmaIqkHec0ziu0zCBmLOCd0+YwyyDbpmzq7d+Xd3bnVTka37XjMA6cY0hDAu05DeM+Y3Y0o7v+wzfzE7dceA3DdxxnAAAAAElFTkSuQmCC"
     },
     "compileServiceVariant": "samd51",
+    "cppDependencies": {
+        "accelerometer": "file:../accelerometer"
+    },
     "dependencies": {
         "core---samd": "file:../core---samd",
         "screen---st7735": "file:../screen---st7735",
