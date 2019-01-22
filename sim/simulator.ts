@@ -96,7 +96,8 @@ namespace pxsim {
                         Runtime.postScreenshotAsync().done();
                     return;
                 case Key.Gif:
-                    Runtime.toggleRecording();
+                    if (isPressed)
+                        Runtime.requestToggleRecording();
                     break;
             }
 
