@@ -233,20 +233,29 @@ namespace overlapevents {
         otherSprite.destroy();
     });
 
+    // When the player hits an enemy, damage the player and destroy the enemy
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
+        info.changeLifeBy(-1);
+        otherSprite.destroy();
+    });
+
     // When a laser hits an asteroid, destroy both sprites
     sprites.onOverlap(SpriteKind.Laser, SpriteKind.Asteroid, function (sprite: Sprite, otherSprite: Sprite) {
+        info.changeScoreBy(1);
         otherSprite.destroy(effects.fire, 200);
         sprite.destroy();
     });
 
     // When a laser hits an enemy, destroy both sprites
     sprites.onOverlap(SpriteKind.Laser, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
+        info.changeScoreBy(1);
         otherSprite.destroy(effects.bubbles);
         sprite.destroy();
     });
 
-    // When an  enemy laser hits the player, destroy the laser and say "ow!"
+    // When an  enemy laser hits the player, destroy the laser, say "ow!", and lose life
     sprites.onOverlap(SpriteKind.Player, SpriteKind.EnemyLaser, function (sprite: Sprite, otherSprite: Sprite) {
+        info.changeLifeBy(-1);
         otherSprite.destroy();
         sprite.say("ow!", 500);
     });
@@ -280,5 +289,15 @@ namespace status {
         info.setLife(life);
         info.setScore(score);
     }
+
+    info.onLifeZero(function () {
+        let playerContinue = game.ask("Continue?", "Cost: 50 points");
+        if (playerContinue) {
+            info.setLife(3);
+            info.changeScoreBy(-50);
+        } else {
+            game.over();
+        }
+    });
 }
 ```

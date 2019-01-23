@@ -179,6 +179,12 @@ namespace overlapevents {
         otherSprite.destroy();
     });
 
+    // When the player hits an enemy, damage the player and destroy the enemy
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
+        info.changeLifeBy(-1);
+        otherSprite.destroy();
+    });
+
     // When a laser hits an asteroid, destroy both sprites
     sprites.onOverlap(SpriteKind.Laser, SpriteKind.Asteroid, function (sprite: Sprite, otherSprite: Sprite) {
         otherSprite.destroy(effects.fire, 200);

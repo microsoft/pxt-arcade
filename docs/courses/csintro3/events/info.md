@@ -82,7 +82,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite: Sprite,
 
 ## Concept: ``||info:Info||`` Events
 
-By default, getting down to 0 (or fewer) ``||info:lives||`` or running out of time for a ``||info:countdown||`` causes a ``||game:game over||``. If a game requires a different behavior for this situation, then this behavior can be handled using one of two events: ``||info:info.onLifeZero||`` and ``||info:info.onCountdownEnd||``.
+By default, getting down to 0 ``||info:lives||`` or running out of time for a ``||info:countdown||`` causes a ``||game:game over||``. If a game requires a different behavior for this situation, then this behavior can be handled using one of two events: ``||info:info.onLifeZero||`` and ``||info:info.onCountdownEnd||``.
 
 ## Example #2: Running out of Lives
 
@@ -135,3 +135,101 @@ If you completed the **challenge** in task #1, you will likely want to lower the
 
 1. How are the properties in the ``||info:Info||`` category **different** from the ``||variables:Variables||`` we create?
 2. How do the ``||info:Info||`` events add more options to the games we create?
+
+### ~hint
+
+## Case Study
+
+### Taking Damage
+
+In the ``||info:on overlap||`` event between ``Player`` and ``EnemyLaser`` ``||sprites:sprites||``, make the player **lose health** by changing their life by ``-1``.
+
+### Score!
+
+In the ``||info:on overlap||`` event between one of the player's ``Laser``s and other ``||sprites:sprites||`` that they destroy (``Asteroid`` and ``Enemy``), increase the player's score by ``1``.
+
+### Continue?
+
+Create an ``||info:on life zero||`` event in the ``status`` namespace. In the case that this occurs, use ``||game:game.ask||`` to ask the user if they wish to continue playing (and note that it will cost them 50 points).
+
+``||logic:if||`` they respond that they wish to continue, set their life to ``3`` and change their score by ``-50`` as a penalty.
+
+Otherwise, end the game with ``||game:game.over||`.
+
+### Solution
+
+```typescript-ignore
+namespace overlapevents {
+    // When the player hits an asteroid, damage the player and destroy the asteroid
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.Asteroid, function (sprite: Sprite, otherSprite: Sprite) {
+        info.changeLifeBy(-1);
+        otherSprite.destroy();
+    });
+
+    // When the player hits an enemy, damage the player and destroy the enemy
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
+        info.changeLifeBy(-1);
+        otherSprite.destroy();
+    });
+
+    // When a laser hits an asteroid, destroy both sprites
+    sprites.onOverlap(SpriteKind.Laser, SpriteKind.Asteroid, function (sprite: Sprite, otherSprite: Sprite) {
+        info.changeScoreBy(1);
+        otherSprite.destroy(effects.fire, 200);
+        sprite.destroy();
+    });
+
+    // When a laser hits an enemy, destroy both sprites
+    sprites.onOverlap(SpriteKind.Laser, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
+        info.changeScoreBy(1);
+        otherSprite.destroy(effects.bubbles);
+        sprite.destroy();
+    });
+
+    // When an  enemy laser hits the player, destroy the laser, say "ow!", and lose life
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.EnemyLaser, function (sprite: Sprite, otherSprite: Sprite) {
+        info.changeLifeBy(-1);
+        otherSprite.destroy();
+        sprite.say("ow!", 500);
+    });
+
+    // When a player hits a powerup, apply the bonus for that powerup
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.PowerUp, function (sprite: Sprite, otherSprite: Sprite) {
+        let powerUp: number = powerups.getType(otherSprite);
+        otherSprite.destroy();
+        if (powerUp == PowerUpType.Health) {
+            sprite.say("Got health!", 500);
+            info.changeLifeBy(1);
+        } else if (powerUp == PowerUpType.Score) {
+            sprite.say("Score!", 500);
+            info.changeScoreBy(15);
+        }
+    });
+}
+
+namespace status {
+    initialize(4, 0);
+
+    /**
+     * Sets up the initial state of the game
+     * @param life the initial life to set
+     * @param score the initial score to set
+     */
+    function initialize(life: number, score: number) {
+        info.setLife(life);
+        info.setScore(score);
+    }
+
+    info.onLifeZero(function () {
+        let playerContinue = game.ask("Continue?", "Cost: 50 points");
+        if (playerContinue) {
+            info.setLife(3);
+            info.changeScoreBy(-50);
+        } else {
+            game.over();
+        }
+    });
+}
+```
+
+### ~
