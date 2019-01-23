@@ -251,6 +251,7 @@
         "invertedMenu": true,
         "showHomeScreen": true,
         "highContrast": true,
+        "greenScreen": true,
         "hasAudio": true,
         "allowPackageExtensions": true,
         "homeScreenHero": "./static/hero.png",
