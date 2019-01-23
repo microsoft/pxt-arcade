@@ -133,7 +133,7 @@ The ``||controller:Repeated||`` ``||controller:Button||`` event can modified usi
 
 ``repeatDelay`` is the time delay, in milliseconds, between when the button is first pressed, and when the button repeat should start to trigger.
 
-``repeatInterval`` is the delay between each occurence of the event after the first.
+``repeatInterval`` is the delay between each occurence of the event.
 
 In the snippet below, the ``repeatDelay`` is set so that the score won't be changed until after the button has been held for 1 full second, and the ``repeatInterval`` will cause the score to change every fifth of a second the button is held after that point.
 
@@ -158,10 +158,71 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 
 ## Case Study
 
+### Repeating Lasers
+
+Having to press the ``||controller:A||`` button each time you want to fire the laser can be a bit annoying; instead, you should just be able to hold down the button.
+
+Add an ``||controller:on A button Released||`` event in the ``ship`` namespace that fires a ``Laser`` like the ``||controller:on A button Pressed||`` event (consider using a helper function that is called from both events).
+
+Set the ``||controller:A||`` button ``repeatInterval`` to 400, so that the lasers get fired every 200ms.
+
+### Limited Charge
+
+With lasers thare repeat as long as the button is held, the game becomes a bit too easy. Add a charge level that limits how many lasers can be fired at once.
+
+To do this, keep two more variables in the ``ship`` namespace: ``maxCharge``, to keep track of the max number Lasers the Player can fire at a time, and ``currentCharge``, which represents the number of Lasers remaining (set it to ``maxCharge`` to start).
+
+Whenever the player tries to fire a ``Laser`` (by pressing or holding the ``||controller:A||`` button), first check if they have energy remaining (``currentCharge > 0``). If they can, decrement ``currentCharge`` and create a ``Laser`` ``||sprites:projectile||`` - otherwise, do nothing.
+
+This makes the game a bit too hard, as the energy doesn't ever replenish; to fix this, create an ``||game:on game update interval 750ms||`` event. In this event, first check that ``currentCharge < maxCharge``; if it is, increment currentCharge. This way, whenever the player fires ``Laser``s, ``currentCharge`` will return to ``maxCharge`` over time.
+
 ### Solution
 
 ```typescript
+namespace ship {
+    export let player: Sprite = initialize();
+    export let maxCharge = 3;
+    export let currentCharge = maxCharge;
 
+    /**
+     * @returns a player sprite that moves with the directional buttons
+     */
+    function initialize(): Sprite {
+        let sprite = sprites.create(spritesheet.player, SpriteKind.Player)
+        controller.moveSprite(sprite, 80, 30);
+        controller.A.repeatInterval = 400;
+        sprite.x = screen.width / 2;
+        sprite.y = screen.height - 20;
+        sprite.setFlag(SpriteFlag.StayInScreen, true);
+        return sprite;
+    }
+
+    // When the player presses A, fire a laser from the spaceship
+    controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+        fireLaser();
+    });
+
+    // When the player holds A, also fire the laser
+    controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
+        fireLaser();
+    });
+
+    /**
+     * Fires a laser from the player's ship if they have the energy to do so
+     */
+    function fireLaser() {
+        if (currentCharge > 0) {
+            currentCharge--;
+            sprites.createProjectile(spritesheet.laser, 0, -40, SpriteKind.Laser, player);
+        }
+    }
+
+    game.onUpdateInterval(750, function () {
+        if (currentCharge < maxCharge) {
+            currentCharge++;
+        }
+    });
+}
 ```
 
 ### ~

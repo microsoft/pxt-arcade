@@ -102,6 +102,8 @@ namespace asteroids {
  */
 namespace ship {
     export let player: Sprite = initialize();
+    export let maxCharge = 3;
+    export let currentCharge = maxCharge;
 
     /**
      * @returns a player sprite that moves with the directional buttons
@@ -109,6 +111,7 @@ namespace ship {
     function initialize(): Sprite {
         let sprite = sprites.create(spritesheet.player, SpriteKind.Player)
         controller.moveSprite(sprite, 80, 30);
+        controller.A.repeatInterval = 400;
         sprite.x = screen.width / 2;
         sprite.y = screen.height - 20;
         sprite.setFlag(SpriteFlag.StayInScreen, true);
@@ -117,7 +120,28 @@ namespace ship {
 
     // When the player presses A, fire a laser from the spaceship
     controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-        sprites.createProjectile(spritesheet.laser, 0, -40, SpriteKind.Laser, player);
+        fireLaser();
+    });
+
+    // When the player holds A, also fire the laser
+    controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
+        fireLaser();
+    });
+
+    /**
+     * Fires a laser from the player's ship if they have the energy to do so
+     */
+    function fireLaser() {
+        if (currentCharge > 0) {
+            currentCharge--;
+            sprites.createProjectile(spritesheet.laser, 0, -40, SpriteKind.Laser, player);
+        }
+    }
+
+    game.onUpdateInterval(750, function () {
+        if (currentCharge < maxCharge) {
+            currentCharge++;
+        }
     });
 }
 
