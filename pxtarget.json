@@ -293,7 +293,7 @@
         "simScreenshot": true,
         "simScreenshotKey": "P",
         "simScreenshotMaxUriLength": 300000,
-        "simGif": true,
+        "simGif": false,
         "simGifKey": "R"
     }
 }
