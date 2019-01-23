@@ -50,11 +50,62 @@ in the power supply).
 * a transistor for power management
 * JST connector for battery; this is optional if the battery is integrated
 * optional LiPo charging circuit
-* optional LIS3DH or MSA300 (cheaper) accelerometer; or other
+* optional accelerometer
 * a magnetic speaker (transducer) with some sort of amplifier
-* a [JACDAC](https://jacdac.org/) connector
+* an optional [JACDAC](https://jacdac.org/) connector
 
 If you have good reasons to use a different screen or accelerometer, let us know.
+
+## Schematics
+
+We are aware of various configuration needs for screen controllers, as well as different
+accelerometers etc. coming in future. We generate the same UF2 file
+for all boards of a given variant, and have the runtime look for configuration
+values in the bootloader area.
+
+See https://github.com/Microsoft/uf2/blob/master/cf2.md for more details on the format.
+The bootloaders can be binary patched with new configuration data if needed.
+
+The configuration data also includes assignment of a GPIO pin header.
+Generally, the header isn't essential to this board, but it's recommended
+to at least leave holes for people to solder it in.
+
+The exact pins where the various `BTN_*`, `JACK_*`, and `DISPLAY_*` lines are connected
+is specified in the bootloader. You can change them, as described above.
+
+### Buttons
+
+The 4 directional buttons, the A/B buttons, and the MENU button are to be connected
+to GND and a respective MCU pin, as in the schematics below.
+There is an internal pull-up enabled on the MCU, so no need for external
+pull-ups.
+The RESET button is to be connected to the MCU hardware RESET line (refer to the MCU
+documentation how to exactly connect it and if it needs any additional components).
+
+The schematics also shows the recommended button arrangement - directional buttons
+on the left of the screen, while A/B are on the right of the screen.
+A is above and to the right of B.
+
+MENU is best placed somewhere below the other buttons, and RESET is best placed next to
+the USB connector.
+
+![Button connection](/static/hardware/buttons.png)
+
+### Screen
+
+The screen needs to be connected to the hardware SPI module.
+
+On some screens:
+* the RS/DC is called A0
+* the DATA is called MOSI or SDA
+* the CLOCK is called SCK or SCL
+* LEDK is called LED-
+* LEDA is called LED+
+* RESET is called RST
+
+The purpose of the `DISPLAY_BL` is to dim or shut off the screen.
+The schematics shows one way of doing this.
+Experiment with the value of `R2` to get optimal brightness.
 
 We have found the following part numbers for screens:
 
@@ -64,19 +115,61 @@ We have found the following part numbers for screens:
 However, others are also available - searching for ST7735 or ILI9163 usually yields
 the right ones. They are around $2.
 
-## Configuration
+![Screen connection](/static/hardware/screen.png)
 
-We are aware of various configuration needs for screen controllers, as well as different
-accelerometers etc. coming in future. We generate the same UF2 file
-for all boards of a given variant, and have the runtime look for configuration
-values in the bootloader area.
+### Audio
 
-See https://github.com/Microsoft/uf2/blob/master/cf2.md for more details on the format.
-The bootloaders can be even binary patched with new configuration data if needed.
+The board should have a buzzer. You need to figure out how to connect it properly
+and what kind of amplifier you might need.
+Below is a schematic with a simple low-pass filter and a headphone jack for audio.
+You only need low-pass filter when there is no DAC on board (you need low-pass
+filter for F401, but you don't need it for D51).
 
-The configuration data also includes assignment of a GPIO pin header.
-Generally, the header isn't essential to this board, but it's recommended
-to at least leave holes for people to solder it in.
+The headphone jack is optional.
+Also note that this is not for JACDAC networking, for that see below.
+
+![Audio connection](/static/hardware/audio.png)
+
+### JACDAC
+
+[JACDAC](https://jacdac.org) is a protocol for networking over a single-wire
+connection with optional power delivery.
+It lets you play multiplayer games by connecting two (or more with a headphone splitter) Arcades
+together.
+You can implement JACDAC with or without power delivery, by using one of the
+schematics below.
+
+While the schematics use a 3.5mm jack connector with switches, you can also use
+one without switches, as they are not used.
+
+#### JACDAC with power delivery
+
+The F1 fuse can be replaced with 500mA (or similar) current limiting circuit.
+
+Power delivery is useful when an external accessory is connected,
+which requires power (eg., a joystick, a BLE dongle, or a WiFi dongle).
+There are currently no accessories available yet though.
+
+![JACDAC with power](/static/hardware/fulljacdac.png)
+
+#### JACDAC without power delivery
+
+This is sufficient to play multiplayer games.
+
+![JACDAC without power](/static/hardware/nopowerjacdac.png)
+
+### Accelerometer
+
+We currently support the following accelerometers:
+
+* LIS3DH
+* MMA8453
+* MMA8653
+
+If requested, we can add support for MSA300, which seems to be cheaper.
+
+The accelerometers should have the SDA, SCL and INT1 lines connected
+to respective `ACCELEROMETER_*` lines as defined in the bootloader.
 
 ## Power management
 
@@ -85,10 +178,32 @@ The board will have auto-power-off feature to improve battery life.
 Currently, we plan to shut down display back light, and accelerometer if any,
 and put the CPU in sleep mode.
 
+## Pin notes
+
+Buttons can be generally on any pin.
+MENU button should be a pin which can wake the MCU up from sleep mode
+(usually requires EIC).
+
+## Variant notes
+
+### F401
+
+STM32F4 requires an external crystal for stable USB operation.
+The software takes the installed crystal frequency from a specific bootloader location,
+but best to stick to 8MHz.
+
+### D51
+
+JACK_TX needs to be on a pin with external IRQ and PAD0 of some SERCOM.
+
+JACK_SND needs to be on PA02 (DAC output).
+
+
+
 ## Bootloaders
 
 * F401: https://github.com/mmoskal/uf2-stm32f
-* D51: https://github.com/Microsoft/uf2-samdx1 use `arcade` branch for now
+* D51: https://github.com/Microsoft/uf2-samdx1
 * N840: https://github.com/adafruit/Adafruit_nRF52840_Bootloader
 
 The first two bootloaders already implement the CF2 configuration data section.
