@@ -3,7 +3,6 @@
 At the end of the events section, the case study should resemble this example solution:
 
 ```typescript
-
 enum SpriteKind {
     Player,
     Projectile,
@@ -236,14 +235,20 @@ namespace overlapevents {
 
     // When a laser hits an asteroid, destroy both sprites
     sprites.onOverlap(SpriteKind.Laser, SpriteKind.Asteroid, function (sprite: Sprite, otherSprite: Sprite) {
-        otherSprite.destroy();
+        otherSprite.destroy(effects.fire, 200);
         sprite.destroy();
     });
 
     // When a laser hits an enemy, destroy both sprites
     sprites.onOverlap(SpriteKind.Laser, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
-        otherSprite.destroy();
+        otherSprite.destroy(effects.bubbles);
         sprite.destroy();
+    });
+
+    // When an  enemy laser hits the player, destroy the laser and say "ow!"
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.EnemyLaser, function (sprite: Sprite, otherSprite: Sprite) {
+        otherSprite.destroy();
+        sprite.say("ow!", 500);
     });
 
     // When a player hits a powerup, apply the bonus for that powerup
@@ -251,10 +256,10 @@ namespace overlapevents {
         let powerUp: number = powerups.getType(otherSprite);
         otherSprite.destroy();
         if (powerUp == PowerUpType.Health) {
-            sprite.say("Got health!")
+            sprite.say("Got health!", 500);
             info.changeLifeBy(1);
         } else if (powerUp == PowerUpType.Score) {
-            sprite.say("Score!")
+            sprite.say("Score!", 500);
             info.changeScoreBy(15);
         }
     });

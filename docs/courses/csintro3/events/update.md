@@ -120,7 +120,7 @@ First, you will need to keep a reference to the enemy - store the result of the 
 
 Use an ``||game:on game update interval||`` event with an interval of 200ms to control the enemy. In this, use a ``||math:percent chance||`` and ``||logic:if statement||`` to create a ``||sprites:projectile||`` from ``||variables:myEnemy||`` with a 10% chance. This projectile should be of kind ``EnemyLaser``, and have a ``||sprites:vy||`` of 70.
 
-Next, you need to make the enemy **follow** the player. This can be done by changing the ``||sprites:vx||`` to make it move in the direction of the player's ship: in the ``||game:on game update interval||`` event, compare ``||variables:myEnemy||`` and ``||variables:ship.player||``'s ``||sprites:x positions||``. If ``myEnemy.x`` is **less than** ``ship.player.x``, set ``myEnemy.vx`` to 15; otherwise, set it to -15.
+Next, you need to make the enemy **follow** the player. This can be done by changing the ``||sprites:vx||`` to make it move in the direction of the player's ship: in the ``||game:on game update interval||`` event, compare ``||variables:myEnemy||`` and ``||variables:ship.player||``'s ``||sprites:x positions||``. ``||logic:If||`` ``myEnemy.x`` is **less than** ``ship.player.x``, set ``myEnemy.vx`` to 15; ``||logic:else||``, set it to -15.
 
 ### Solution
 

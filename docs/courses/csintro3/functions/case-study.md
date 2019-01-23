@@ -219,10 +219,10 @@ namespace overlapevents {
         let powerUp: number = powerups.getType(otherSprite);
         otherSprite.destroy();
         if (powerUp == PowerUpType.Health) {
-            sprite.say("Got health!")
+            sprite.say("Got health!", 500);
             info.changeLifeBy(1);
         } else if (powerUp == PowerUpType.Score) {
-            sprite.say("Score!")
+            sprite.say("Score!", 500);
             info.changeScoreBy(15);
         }
     });
