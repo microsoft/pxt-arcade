@@ -46,6 +46,18 @@ declare interface Image {
     fill(c: int32): void;
 
     /**
+     * Copy row(s) of pixel from image to buffer (8 bit per pixel).
+     */
+    //% shim=ImageMethods::getRows
+    getRows(x: int32, dst: Buffer): void;
+
+    /**
+     * Copy row(s) of pixel from buffer to image.
+     */
+    //% shim=ImageMethods::setRows
+    setRows(x: int32, src: Buffer): void;
+
+    /**
      * Return a copy of the current image
      */
     //% shim=ImageMethods::clone
