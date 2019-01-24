@@ -154,7 +154,7 @@ Create an ``||info:on life zero||`` event in the ``status`` namespace. In the ca
 
 ``||logic:if||`` they respond that they wish to continue, set their life to ``3`` and change their score by ``-50`` as a penalty.
 
-Otherwise, end the game with ``||game:game.over||`.
+Otherwise, end the game with ``||game:game.over||``.
 
 ### Solution
 

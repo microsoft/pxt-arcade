@@ -170,11 +170,11 @@ Set the ``||controller:A||`` button ``repeatInterval`` to 400, so that the laser
 
 With lasers thare repeat as long as the button is held, the game becomes a bit too easy. Add a charge level that limits how many lasers can be fired at once.
 
-To do this, keep two more variables in the ``ship`` namespace: ``maxCharge``, to keep track of the max number Lasers the Player can fire at a time, and ``currentCharge``, which represents the number of Lasers remaining (set it to ``maxCharge`` to start).
+To do this, keep two more variables in the ``ship`` namespace: ``||variables:maxCharge||``, to keep track of the max number Lasers the Player can fire at a time, and ``||variables:currentCharge||``, which represents the number of Lasers remaining (set it to ``||variables:maxCharge||`` to start).
 
-Whenever the player tries to fire a ``Laser`` (by pressing or holding the ``||controller:A||`` button), first check if they have energy remaining (``currentCharge > 0``). If they can, decrement ``currentCharge`` and create a ``Laser`` ``||sprites:projectile||`` - otherwise, do nothing.
+Whenever the player tries to fire a ``Laser`` (by pressing or holding the ``||controller:A||`` button), first check if they have energy remaining (``currentCharge > 0``). If they can, decrement ``||variables:currentCharge||`` and create a ``Laser`` ``||sprites:projectile||`` - otherwise, do nothing.
 
-This makes the game a bit too hard, as the energy doesn't ever replenish; to fix this, create an ``||game:on game update interval 750ms||`` event. In this event, first check that ``currentCharge < maxCharge``; if it is, increment currentCharge. This way, whenever the player fires ``Laser``s, ``currentCharge`` will return to ``maxCharge`` over time.
+This makes the game a bit too hard, as the energy doesn't ever replenish; to fix this, create an ``||game:on game update interval 750ms||`` event. In this event, first check that ``currentCharge < maxCharge``; if it is, increment currentCharge. This way, whenever the player fires ``Laser``s, ``||variables:currentCharge||`` will return to ``||variables:maxCharge||`` over time.
 
 ### Solution
 

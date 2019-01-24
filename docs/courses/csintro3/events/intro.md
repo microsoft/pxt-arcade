@@ -164,7 +164,7 @@ Use ``||math:Math.percentChance||`` and an ``||logic:if||`` statement
 
 Set the stars so that they move from the **top** of the screen and to the **bottom**, rather that from left to right (you will need to switch ``screen.height`` to ``screen.width``).
 
-Finally, set each ``star`` to have a ``z`` index of -1, so that they show up **behind** all other ``||sprite:sprites||``.
+Finally, set each ``star`` to have a ``z`` index of -1, so that they show up **behind** all other ``||sprites:sprites||``.
 
 Create a new namespace, ``stars``, to keep track of stars that will make up the background - put the code related to the stars that you created into this new namespace.
 
