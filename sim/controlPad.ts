@@ -10,12 +10,40 @@ namespace pxsim {
     const BUTTON_SVG_WIDTH = 13.533;
     export const MENU_RESET_ASPECT_RATIO = 45 / 120;
 
-    export interface KeyBinding {
-        el: Element;
-        key: Key;
-        closenessFactor: number;
-        isDown?: boolean;
+    export class KeyBinding {
         dist?: number;
+        pointerIds: number[] = [];
+
+        get isDown(): boolean {
+            return !!this.pointerIds.length;
+        }
+
+        updatePointer(ev: MouseEvent, down: boolean) {
+            const b = board();
+            let id = 0;
+            const pev = ev as PointerEvent;
+            if (pev && pev.pointerId)
+                id = pev.pointerId;
+            const idx = this.pointerIds.indexOf(id);
+            if (down && idx < 0) {
+                this.pointerIds.push(id);
+                console.log(`key ${this.key} down pointer ${idx} ${this.pointerIds.length}`)
+                if (b && this.pointerIds.length == 1) { // first touch event
+                    b.handleKeyEvent(this.key, true);
+                }
+            }
+            else if (!down && idx > -1) {
+                this.pointerIds.splice(idx, 1);
+                console.log(`key ${this.key} up pointer ${idx} ${this.pointerIds.length}`)
+                if(b && !this.pointerIds.length) // last touch event
+                    b.handleKeyEvent(this.key, false);
+            }
+        }
+
+        constructor(public el: Element,
+            public key: Key,
+            public closenessFactor: number) {
+        }
     }
 
     export class ControlPad {
@@ -38,7 +66,7 @@ namespace pxsim {
 
         protected keys: KeyBinding[] = [];
 
-        constructor(parent: Element) {
+        constructor(protected parent: Element) {
             this.dPadRoot = new s.SVG(parent);
             this.buttonsRoot = new s.SVG(parent);
 
@@ -46,28 +74,37 @@ namespace pxsim {
             this.menu = new s.SVG(parent);
 
             this.buildDom();
+            svg.buttonEvents(parent, ev => this.btnEvent(ev), ev => this.btnEvent(ev), ev => this.handleStopEvent(ev));
 
-            const clearBtns = () => {
-                for (let k of this.keys) {
-                    if (k.isDown) {
-                        k.isDown = false
-                        board().handleKeyEvent(k.key, k.isDown)
-                    }
-                }
-            }
+            (document as any).addEventListener('touchstart', (e: TouchEvent) => {
+                e.preventDefault();
+            }, {passive: false});
+        }
 
-            svg.buttonEvents(parent, ev => this.btnEvent(ev), ev => this.btnEvent(ev), clearBtns)
+        private handleStopEvent(ev: MouseEvent) {
+            this.keys.forEach(k => k.updatePointer(ev, false));
+
+            // don't need to release pointer capture,
+            // since pointer is already being destroyed
+            //ev.preventDefault();
+            //return false;
+            return true;
         }
 
         private btnEvent(ev: MouseEvent) {
-            let inside: KeyBinding = null
-            let close: KeyBinding[] = []
-
             // IE bug: it seems that IE does not maintain the focus state properly
             //         harmless to request focus on each keystroke
             //if (!document.hasFocus()) {
             window.focus();
             //}
+
+            // tell the browser to point this pointer on the parent
+            const pev = ev as PointerEvent;
+            if (pev && pev.pointerId && this.parent.setPointerCapture)
+                this.parent.setPointerCapture(pev.pointerId);
+
+            let inside: KeyBinding = null
+            let close: KeyBinding[] = []
 
             const x = ev.pageX
             const y = ev.pageY
@@ -102,15 +139,12 @@ namespace pxsim {
                 close = close.slice(0, 2)
             }
 
-            for (let k of this.keys) {
-                const isDown = close.indexOf(k) >= 0
-                if (isDown != k.isDown) {
-                    k.isDown = isDown
-                    board().handleKeyEvent(k.key, k.isDown)
-                }
-            }
+            // update all keys
+            this.keys.forEach(k => k.updatePointer(ev, close.indexOf(k) > -1));
 
             ev.preventDefault();
+            ev.stopPropagation();
+            return false;
         }
 
         public mirrorKey(key: Key, down: boolean, realEvent?: boolean) {
@@ -241,7 +275,7 @@ namespace pxsim {
         }
 
         protected bindPadEvents(pad: s.Rect | s.Circle | s.SVG, target: Key, closenessFactor: number = 3) {
-            this.keys.push({ el: pad.el, key: target, closenessFactor })
+            this.keys.push(new KeyBinding(pad.el, target, closenessFactor))
         }
 
         protected drawButtonGroup() {

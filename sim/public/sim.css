@@ -86,6 +86,10 @@ canvas {
     text-align: center;
 }
 
+#controls * {
+    pointer-events: none;
+}
+
 #controls.no-focus {
     opacity: 0.5;
     -moz-filter: grayscale();

@@ -19,21 +19,33 @@ namespace pxsim {
             //forcedUpdateLoop = setInterval(() => {
             //board().screenState.maybeForceUpdate()
             //}, 100)
-            const body = document.getElementById("root")
-            window.onfocus = () => {
+            window.onfocus = function (e) {
                 indicateFocus(true);
+                e.preventDefault();
+                return false;
             }
-            window.onblur = () => {
+            window.onblur = function (e) {
                 indicateFocus(false);
+                e.preventDefault();
+                return false;
             }
-            window.onkeydown = (e) => {
+            window.onkeydown = function (e) {
                 const b = board()
                 if (b) b.setKey((typeof e.which == "number") ? e.which : e.keyCode, true, e)
+                e.preventDefault();
+                return false;
             }
-            window.onkeyup = (e) => {
+            window.onkeyup = function (e) {
                 const b = board()
                 if (b) b.setKey((typeof e.which == "number") ? e.which : e.keyCode, false, e)
+                e.preventDefault();
+                return false;
             }
+            window.oncontextmenu = function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            };
         }
     };
 
@@ -105,9 +117,8 @@ namespace pxsim {
             //this.lastKey = Date.now()
             this.bus.queue(isPressed ? INTERNAL_KEY_DOWN : INTERNAL_KEY_UP, key)
             this.bus.queue(isPressed ? INTERNAL_KEY_DOWN : INTERNAL_KEY_UP, 0) // "any" key
-            if (this.controls) {
+            if (this.controls)
                 this.controls.mirrorKey(key, isPressed);
-            }
         }
 
         
