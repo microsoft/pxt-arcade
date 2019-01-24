@@ -149,3 +149,73 @@ game.onUpdateInterval(1000, function () {
 
 1. In your own words, explain why the **event handler** for the overlap event has two parameters.
 2. Why is the ``||sprites:Sprite||`` ``||sprites:Ghost||`` flag commonly used in ``||sprites:overlap||`` events?
+
+### ~hint
+
+## Case Study
+
+### Enemy Lasers
+
+In the previous lesson, a basic level of artificial intelligence to the game; the enemy will "follow" the player for as long as it survives, and randomly fire it's laser. There's one big problem, though; the laser doesn't do anything.
+
+Add an ``||sprites:on overlap||`` event between ``Player`` and ``EnemyLaser`` ``||sprites:sprites||``. In the overlap, destroy the ``EnemyLaser`` ``||sprites:sprite||``, and make the ``Player`` ``||sprites:sprite||`` ``||sprites:say||`` "ow!" for 500ms.
+
+### Destroy Effects
+
+In the ``||sprites:on overlap||`` event between ``Laser`` and ``Enemy``, modify the ``otherSprite.destroy`` to use the ``effects.bubble`` effect.
+
+In the ``||sprites:on overlap||`` event between ``Laser`` and ``Asteroid``, modify the ``otherSprite.destroy`` to use the ``effects.fire`` effect, with a duration of 200ms.
+
+### Solution
+
+```typescript-ignore
+/**
+ * Handle overlaps between different sprites
+ */
+namespace overlapevents {
+    // When the player hits an asteroid, damage the player and destroy the asteroid
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.Asteroid, function (sprite: Sprite, otherSprite: Sprite) {
+        info.changeLifeBy(-1);
+        otherSprite.destroy();
+    });
+
+    // When the player hits an enemy, damage the player and destroy the enemy
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
+        info.changeLifeBy(-1);
+        otherSprite.destroy();
+    });
+
+    // When a laser hits an asteroid, destroy both sprites
+    sprites.onOverlap(SpriteKind.Laser, SpriteKind.Asteroid, function (sprite: Sprite, otherSprite: Sprite) {
+        otherSprite.destroy(effects.fire, 200);
+        sprite.destroy();
+    });
+
+    // When a laser hits an enemy, destroy both sprites
+    sprites.onOverlap(SpriteKind.Laser, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
+        otherSprite.destroy(effects.bubbles);
+        sprite.destroy();
+    });
+
+    // When an  enemy laser hits the player, destroy the laser and say "ow!"
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.EnemyLaser, function (sprite: Sprite, otherSprite: Sprite) {
+        otherSprite.destroy();
+        sprite.say("ow!");
+    });
+
+    // When a player hits a powerup, apply the bonus for that powerup
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.PowerUp, function (sprite: Sprite, otherSprite: Sprite) {
+        let powerUp: number = powerups.getType(otherSprite);
+        otherSprite.destroy();
+        if (powerUp == PowerUpType.Health) {
+            sprite.say("Got health!", 500);
+            info.changeLifeBy(1);
+        } else if (powerUp == PowerUpType.Score) {
+            sprite.say("Score!", 500);
+            info.changeScoreBy(15);
+        }
+    });
+}
+```
+
+### ~

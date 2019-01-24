@@ -1,6 +1,6 @@
 # Case Study Catch Up
 
-At the end of the functions section, the case study should resemble this example solution:
+At the end of the events section, the case study should resemble this example solution:
 
 ```typescript
 enum SpriteKind {
@@ -9,7 +9,9 @@ enum SpriteKind {
     Enemy,
     Asteroid,
     PowerUp,
-    Laser
+    Laser,
+    EnemyLaser,
+    Star
 }
 
 enum PowerUpType {
@@ -100,6 +102,8 @@ namespace asteroids {
  */
 namespace ship {
     export let player: Sprite = initialize();
+    export let maxCharge = 3;
+    export let currentCharge = maxCharge;
 
     /**
      * @returns a player sprite that moves with the directional buttons
@@ -107,14 +111,37 @@ namespace ship {
     function initialize(): Sprite {
         let sprite = sprites.create(spritesheet.player, SpriteKind.Player)
         controller.moveSprite(sprite, 80, 30);
+        controller.A.repeatInterval = 400;
         sprite.x = screen.width / 2;
         sprite.y = screen.height - 20;
+        sprite.setFlag(SpriteFlag.StayInScreen, true);
         return sprite;
     }
 
     // When the player presses A, fire a laser from the spaceship
     controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-        sprites.createProjectile(spritesheet.laser, 0, -40, SpriteKind.Laser, player);
+        fireLaser();
+    });
+
+    // When the player holds A, also fire the laser
+    controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
+        fireLaser();
+    });
+
+    /**
+     * Fires a laser from the player's ship if they have the energy to do so
+     */
+    function fireLaser() {
+        if (currentCharge > 0) {
+            currentCharge--;
+            sprites.createProjectile(spritesheet.laser, 0, -40, SpriteKind.Laser, player);
+        }
+    }
+
+    game.onUpdateInterval(750, function () {
+        if (currentCharge < maxCharge) {
+            currentCharge++;
+        }
     });
 }
 
@@ -122,7 +149,7 @@ namespace ship {
  * Creates and controls the enemies in the game
  */
 namespace enemy {
-    createEnemy();
+    let myEnemy = createEnemy();
 
     /**
      * @returns an enemy sprite that is positioned at the top of the screen
@@ -143,6 +170,34 @@ namespace enemy {
         sprite.x = Math.randomRange(edge, screen.width - edge);
         sprite.y = 0;
     }
+
+    game.onUpdateInterval(200, function () {
+        // Create a laser 10% of the time
+        if (Math.percentChance(10)) {
+            sprites.createProjectile(img`3`, 0, 70, SpriteKind.EnemyLaser, myEnemy);
+        }
+
+        // follow the player
+        if (myEnemy.x < ship.player.x) {
+            myEnemy.vx = 15;
+        } else {
+            myEnemy.vx = -15;
+        }
+    });
+}
+
+/**
+ * Creates and controls the stars in the game
+ */
+namespace star {
+    game.onUpdateInterval(200, function () {
+        if (Math.percentChance(50)) {
+            let star = sprites.createProjectile(img`1`, 0, 50, SpriteKind.Star);
+            star.x = Math.randomRange(0, screen.width);
+            star.setFlag(SpriteFlag.Ghost, true);
+            star.z = -1;
+        }
+    });
 }
 
 /**
@@ -210,14 +265,23 @@ namespace overlapevents {
 
     // When a laser hits an asteroid, destroy both sprites
     sprites.onOverlap(SpriteKind.Laser, SpriteKind.Asteroid, function (sprite: Sprite, otherSprite: Sprite) {
-        otherSprite.destroy();
+        info.changeScoreBy(1);
+        otherSprite.destroy(effects.fire, 200);
         sprite.destroy();
     });
 
     // When a laser hits an enemy, destroy both sprites
     sprites.onOverlap(SpriteKind.Laser, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
-        otherSprite.destroy();
+        info.changeScoreBy(1);
+        otherSprite.destroy(effects.bubbles);
         sprite.destroy();
+    });
+
+    // When an  enemy laser hits the player, destroy the laser, say "ow!", and lose life
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.EnemyLaser, function (sprite: Sprite, otherSprite: Sprite) {
+        info.changeLifeBy(-1);
+        otherSprite.destroy();
+        sprite.say("ow!", 500);
     });
 
     // When a player hits a powerup, apply the bonus for that powerup
@@ -249,5 +313,15 @@ namespace status {
         info.setLife(life);
         info.setScore(score);
     }
+
+    info.onLifeZero(function () {
+        let playerContinue = game.ask("Continue?", "Cost: 50 points");
+        if (playerContinue) {
+            info.setLife(3);
+            info.changeScoreBy(-50);
+        } else {
+            game.over();
+        }
+    });
 }
 ```

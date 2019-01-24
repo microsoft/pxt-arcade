@@ -103,3 +103,90 @@ Run the code above and you'll likely see an issue: the game starts to hang betwe
 This occurs because the event occurs as part of the game update; by calling ``||loops:pause||``, the **entire** game will pause. This behavior will also occur if ``||loops:pause||`` is used in ``||game:on game update interval||``. For this reason,it is important to pay attention to the side effects of using any event.
 
 ### ~
+
+### ~hint
+
+## Case Study
+
+### Stars! 2.0
+
+Change the ``||game:on game update||`` event thar creates stars in the ``star`` namespace to an ``||game:on game update interval||`` event with an interval of 200ms. Change the ``||math:percent chance||`` from 10 to 50 percent, as this event will occur less often than the ``||game:on game update||``
+
+### Enemy AI
+
+Currently, the 'enemy' in the game doesn't do much - it is created, and moves down the screen, and the gets destroyed automatically. In this task, you will start to make the enemy more interesting.
+
+First, you will need to keep a reference to the enemy - store the result of the call to ``createEnemy`` in the variable ``||variables:myEnemy||``.
+
+Use an ``||game:on game update interval||`` event with an interval of 200ms to control the enemy. In this, use a ``||math:percent chance||`` and ``||logic:if statement||`` to create a ``||sprites:projectile||`` from ``||variables:myEnemy||`` with a 10% chance. This projectile should be of kind ``EnemyLaser``, and have a ``||sprites:vy||`` of 70.
+
+Next, you need to make the enemy **follow** the player. This can be done by changing the ``||sprites:vx||`` to make it move in the direction of the player's ship: in the ``||game:on game update interval||`` event, compare ``||variables:myEnemy||`` and ``||variables:ship.player||``'s ``||sprites:x positions||``. ``||logic:If||`` ``myEnemy.x`` is **less than** ``ship.player.x``, set ``myEnemy.vx`` to 15; ``||logic:else||``, set it to -15.
+
+### Solution
+
+```typescript-ignore
+enum SpriteKind {
+    Player,
+    Projectile,
+    Enemy,
+    Asteroid,
+    PowerUp,
+    Laser,
+    EnemyLaser,
+    Star
+}
+
+namespace star {
+    game.onUpdateInterval(200, function () {
+        if (Math.percentChance(50)) {
+            let star = sprites.createProjectile(img`1`, 0, 50, SpriteKind.Star);
+            star.x = Math.randomRange(0, screen.width);
+            star.setFlag(SpriteFlag.Ghost, true);
+            star.z = -1;
+        }
+    });
+}
+
+/**
+ * Creates and controls the enemies in the game
+ */
+namespace enemy {
+    let myEnemy = createEnemy();
+
+    /**
+     * @returns an enemy sprite that is positioned at the top of the screen
+     */
+    function createEnemy(): Sprite {
+        let enemy = sprites.create(spritesheet.enemy, SpriteKind.Enemy);
+        setPosition(enemy, 10);
+        enemy.vy = 10;
+        return enemy;
+    }
+
+    /**
+     * Place the given sprite at a random location at the top of the screen
+     * @param sprite the sprite to place at the top of the screen
+     * @param edge how many pixels between either edge of the screen to set
+     */
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
+    }
+
+    game.onUpdateInterval(200, function () {
+        // Create a laser 10% of the time
+        if (Math.percentChance(10)) {
+            sprites.createProjectile(img`3`, 0, 70, SpriteKind.EnemyLaser, myEnemy);
+        }
+
+        // follow the player
+        if (myEnemy.x < ship.player.x) {
+            myEnemy.vx = 15;
+        } else {
+            myEnemy.vx = -15;
+        }
+    });
+}
+```
+
+### ~
