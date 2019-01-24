@@ -251,6 +251,7 @@
         "invertedMenu": true,
         "showHomeScreen": true,
         "highContrast": true,
+        "greenScreen": true,
         "hasAudio": true,
         "allowPackageExtensions": true,
         "homeScreenHero": "./static/hero.png",
@@ -291,6 +292,9 @@
         ],
         "extendEditor": true,
         "simScreenshot": true,
-        "simScreenshotKey": "P"
+        "simScreenshotKey": "P",
+        "simScreenshotMaxUriLength": 300000,
+        "simGif": false,
+        "simGifKey": "R"
     }
 }

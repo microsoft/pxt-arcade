@@ -64,7 +64,6 @@ namespace pxsim {
         public screen: Uint32Array;
         public startTime = Date.now()
         public screenState: ScreenState
-        private lastScreenshot: Uint32Array
         private lastScreenshotTime = 0;
         private view: ScreenView;
 
@@ -76,8 +75,6 @@ namespace pxsim {
             this.screenState = new ScreenState(null)
             this.audioState = new AudioState();
             this.accelerometerState = new AccelerometerState(runtime);
-            //this.jacdacState = new JacDacState(this);
-            this.addMessageListener(this.receiveScreenshot.bind(this));
         }
 
         getDefaultPitchPin(): Pin {
@@ -96,11 +93,13 @@ namespace pxsim {
             // handle system keys
             switch (key) {
                 case Key.Screenshot:
-                    if (isPressed) {
-                        const b = board();
-                        if (b) b.sendScreenshot(true);
-                    }
+                    if (isPressed)
+                        Runtime.postScreenshotAsync().done();
                     return;
+                case Key.Gif:
+                    if (isPressed)
+                        Runtime.requestToggleRecording();
+                    break;
             }
 
             //this.lastKey = Date.now()
@@ -111,61 +110,16 @@ namespace pxsim {
             }
         }
 
-        /*
-        Screenshot instructions:
-        0. run your program; press any button (A/B/left/...)
-        1. run in JS console: E.sim.driver.postMessage({type:"rawscreenshot"})
-        2. click on the data URL
-        3. do "Save As"
-        4. repeat for all screenshots you want
-        5. drop files at https://tinypng.com/
-        6. download compressed files in a folder
-        7. run for f in * ; do echo $f; node -p '"data:image/png;base64," + require("fs").readFileSync("'$f'").toString("base64")' ; done
-        */
-        private receiveScreenshot(msg: SimulatorMessage) {
-            if (msg.type == "screenshot")
-                this.sendScreenshot(true);
-            else if (msg.type == "rawscreenshot")
-                console.log(this.rawScreenshot(true))
-        }
-
-        private rawScreenshot(force: boolean) {
-            let work = document.createElement("canvas")
-            work.width = this.screenState.width
-            work.height = this.screenState.height
-            let ctx = work.getContext("2d")
-            let id = ctx.getImageData(0, 0, work.width, work.height)
-            if (!this.lastScreenshot || force)
-                this.takeScreenshot(true)
-            new Uint32Array(id.data.buffer).set(this.lastScreenshot)
-            ctx.putImageData(id, 0, 0)
-            return work.toDataURL("image/png")
-        }
-
-        sendScreenshot(force: boolean) {
-            const img = this.rawScreenshot(force);
-            Runtime.postMessage({
-                type: "screenshot",
-                data: img
-            } as SimulatorScreenshotMessage);
+        
+        screenshotAsync(): Promise<ImageData> {
+            const cvs = this.view.canvas;
+            const ctx = this.view.context;
+            const id = ctx.getImageData(0, 0, cvs.width, cvs.height);
+            return Promise.resolve(id);
         }
 
         tryScreenshot() {
-            let now = Date.now()
-            // if there was a key since last screenshot and at least 100ms ago,
-            // and last screenshot was at least 3s ago, record a new one
-            if (!this.lastScreenshot
-                || (now - this.lastScreenshotTime > 2000 && Math.random() > 0.5))
-                this.takeScreenshot(false);
-        }
-
-        takeScreenshot(force: boolean) {
-            let now = Date.now();
-            const bright = this.screenState.screen.some(c => !!c);
-            if (bright || force) {
-                this.lastScreenshot = this.screenState.screen.slice(0);
-                this.lastScreenshotTime = now
-            }
+            // ignore
         }
 
         initAsync(msg: pxsim.SimulatorRunMessage): Promise<void> {
