@@ -178,7 +178,7 @@ This makes the game a bit too hard, as the energy doesn't ever replenish; to fix
 
 ### Solution
 
-```typescript
+```typescript-ignore
 namespace ship {
     export let player: Sprite = initialize();
     export let maxCharge = 3;
