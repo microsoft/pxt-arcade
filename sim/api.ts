@@ -18,7 +18,8 @@ namespace pxsim {
         // Player 2 keys here too
 
         // system keys
-        Screenshot = -1
+        Screenshot = -1,
+        Gif = -2
     }
 
     export function mapKey(which: number): Key {
@@ -62,6 +63,8 @@ namespace pxsim {
             // screenshot
             case 80: // P
                 return Key.Screenshot;
+            case 82: // R
+                return Key.Gif;
 
             default: return Key.None
         }

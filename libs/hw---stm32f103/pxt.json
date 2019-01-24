@@ -13,6 +13,9 @@
         "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAAB4AgMAAAAIzBH8AAAADFBMVEVcQGwknKP/////gTX6bFWdAAAB2klEQVRYw+2UQW6kMBBFLa9adYpoVhb3mfuUWI04hTUrq5DwfiLBgeYGs4D5ZdMxidK0pU4U0snvll31/VyUQWB+VuobvBNQslJUjHU+CJjXJS2UVNIschww5wXMew4FynMwOxk/DPjiMGqcneOA0BZcT3QcUGQFkl6+XMcAP8P38Ru8GfziCnmynjwmT2KE4JGwt2JDAV2eyDkHPNgW6hBx68l2ZMi7QFrFkQftCANwsqBsy8b+QnVitalzDmPACLBh6xMoZADjogAbDoYCkcMIJOSKpA0IrlYq/mZKSy4L/eRMK5YeAbbaY9cweuzw85Y1a4KC1HI+tSdJp/5CakS4Cnww5q1B7/dBWw3yDii8Af1Oj7wFQy0oNaCoUkIaXQFTkyctfgUMtaBUg3xzxYalqkeYp5pTk7e4u1JAvgCeHrTHdvNkLoM/zAYMO+BpC/odECogXwQbgQpoLoJlPel2kCTpClh0z2B+C+9QS6XeE/w3rcEci/MaOD/ZsThbUOY/kywCW7A2YowR+dnRCO5ikPbDOMEckc4S52kYk1ZHQ4lacYrDtIimCZRJZsHOcXUQJRBlYzJ1+9/5EdXxL06KHrViP/Too499FNhT7Idzj8nRCO7ygU/mP5iqpNe2Fy0tAAAAAElFTkSuQmCC"
     },
     "compileServiceVariant": "stm32f103",
+    "cppDependencies": {
+        "accelerometer": "file:../accelerometer"
+    },
     "dependencies": {
         "core---stm32": "file:../core---stm32",
         "screen---st7735": "file:../screen---st7735",

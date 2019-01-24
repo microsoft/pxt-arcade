@@ -24,6 +24,12 @@
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/happy-flower.gif"
 }, {
+  "name": "Lemon Leak",
+  "description": "Stay away from the wild strawberries or you'll lose your juice!",
+  "url": "/tutorials/lemon-leak",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/lemon-leak.gif"
+}, {
   "name": "Simple Extensions",
   "description": "Learn the basics of using extensions and create a platformer",
   "url": "/tutorials/simple-extensions",
@@ -38,4 +44,5 @@
 [Eat the Doughnut](/tutorials/eat-the-doughnut),
 [Simple Maze](/tutorials/simple-maze),
 [Happy Flower](/tutorials/happy-flower),
+[Lemon Leak](/tutorials/lemon-leak),
 [Simple Extensions](/tutorials/simple-extensions)
