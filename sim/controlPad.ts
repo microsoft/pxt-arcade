@@ -155,8 +155,8 @@ namespace pxsim {
             this.setOverlayState(this.down, down);
             this.setOverlayState(this.primary, down);
             this.setOverlayState(this.secondary, down);
-            this.setOverlayState(this.menu, down);
-            this.setOverlayState(this.reset, down);
+            //this.setOverlayState(this.menu, down);
+            //this.setOverlayState(this.reset, down);
         }
 
         public mirrorKey(key: Key, down: boolean, realEvent?: boolean) {
@@ -179,12 +179,12 @@ namespace pxsim {
                 case Key.B:
                     this.setOverlayState(this.secondary, down);
                     break;
-                case Key.Menu:
-                    this.setOverlayState(this.menu, down);
-                    break;
-                case Key.Reset:
-                    this.setOverlayState(this.reset, down);
-                    break;
+                //case Key.Menu:
+                //    this.setOverlayState(this.menu, down);
+                //    break;
+                //case Key.Reset:
+                //    this.setOverlayState(this.reset, down);
+                //    break;
                 default:
                     break;
             }
