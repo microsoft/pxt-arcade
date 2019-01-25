@@ -110,7 +110,7 @@ namespace pxsim {
                             type: "simulator",
                             command: "restart"
                         })
-                    break;
+                    return;
                 case Key.Screenshot:
                     if (isPressed)
                         Runtime.postScreenshotAsync().done();
