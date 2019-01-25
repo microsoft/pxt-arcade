@@ -28,6 +28,7 @@
         "libs/hw---rpi",
         "libs/hw---stm32f401",
         "libs/hw---samd51",
+        "libs/meowbit",
         "libs/screen",
         "libs/screen---st7735",
         "libs/screen---linux",
@@ -202,8 +203,7 @@
         "listsBlocks": true,
         "bannedCategories": [
             "pins",
-            "control",
-            "input"
+            "control"
         ]
     },
     "simulator": {

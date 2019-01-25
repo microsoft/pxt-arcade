@@ -1,0 +1,39 @@
+{
+    "name": "meowbit",
+    "description": "Meowbit based on STM32F401",
+    "files": [
+        "README.md",
+        "config.ts",
+        "device.d.ts",
+        "board.json",
+        "board.svg"
+    ],
+    "core": true,
+    "cppDependencies": {
+        "accelerometer": "file:../accelerometer"
+    },
+    "dependencies": {
+        "core": "file:../core---stm32",
+        "screen": "file:../screen---st7735",
+        "mixer": "file:../mixer---stm32",
+        "buttons": "file:../buttons",
+        "game": "file:../game---hw",
+        "jacdac-game": "file:../jacdac-game"
+    },
+    "card": {
+        "name": "Meowbit",
+        "imageUrl": "/static/hardware/meowbit.png",
+        "url": "https://kittenbot.github.io/meowbit-tutorials/",
+        "variant": "hw---stm32f401"
+    },
+    "public": true,
+    "yotta": {
+        "config": {
+            "DEVICE_USB": 1,
+            "PXT_DEFUALT_ACCELEROMETER": "ACCELEROMETER_TYPE_MPU6050"
+        }
+    },
+    "dalDTS": {
+        "corePackage": "../core---stm32"
+    }
+}
