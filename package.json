@@ -35,7 +35,7 @@
   "dependencies": {
     "pxt-common-packages": "6.1.11",
     "pxt-core": "5.4.14",
-    "pxt-arcade-sim": "git+https://github.com/Microsoft/pxt-arcade-sim.git#v0.5.7"
+    "pxt-arcade-sim": "git+https://github.com/Microsoft/pxt-arcade-sim.git#v0.6.0"
   },
   "scripts": {
     "serve": "node node_modules/pxt-core/built/pxt.js serve"
