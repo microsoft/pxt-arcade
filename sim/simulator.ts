@@ -145,7 +145,7 @@ namespace pxsim {
             this.background = document.getElementById("screen-back") as HTMLDivElement;
             this.canvas = document.getElementById("paint-surface") as HTMLCanvasElement;
             this.stats = document.getElementById("debug-stats");
-            this.stats.className = "stats"
+            this.stats.className = "stats no-select"
             this.canvas.width = 16;
             this.canvas.height = 16;
             this.id = msg.id;
