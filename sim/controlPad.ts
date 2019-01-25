@@ -27,14 +27,14 @@ namespace pxsim {
             const idx = this.pointerIds.indexOf(id);
             if (down && idx < 0) {
                 this.pointerIds.push(id);
-                console.log(`key ${this.key} down pointer ${idx} ${this.pointerIds.length}`)
+                //console.log(`key ${this.key} down pointer ${idx} ${this.pointerIds.length}`)
                 if (b && this.pointerIds.length == 1) { // first touch event
                     b.handleKeyEvent(this.key, true);
                 }
             }
             else if (!down && idx > -1) {
                 this.pointerIds.splice(idx, 1);
-                console.log(`key ${this.key} up pointer ${idx} ${this.pointerIds.length}`)
+                //console.log(`key ${this.key} up pointer ${idx} ${this.pointerIds.length}`)
                 if(b && !this.pointerIds.length) // last touch event
                     b.handleKeyEvent(this.key, false);
             }
@@ -147,6 +147,18 @@ namespace pxsim {
             return false;
         }
 
+        public init() {
+            const down = false;
+            this.setOverlayState(this.left, down);
+            this.setOverlayState(this.up, down);
+            this.setOverlayState(this.right, down);
+            this.setOverlayState(this.down, down);
+            this.setOverlayState(this.primary, down);
+            this.setOverlayState(this.secondary, down);
+            //this.setOverlayState(this.menu, down);
+            //this.setOverlayState(this.reset, down);
+        }
+
         public mirrorKey(key: Key, down: boolean, realEvent?: boolean) {
             switch (key) {
                 case Key.Up:
@@ -167,6 +179,12 @@ namespace pxsim {
                 case Key.B:
                     this.setOverlayState(this.secondary, down);
                     break;
+                //case Key.Menu:
+                //    this.setOverlayState(this.menu, down);
+                //    break;
+                //case Key.Reset:
+                //    this.setOverlayState(this.reset, down);
+                //    break;
                 default:
                     break;
             }
@@ -222,12 +240,7 @@ namespace pxsim {
             this.drawMenuReset(this.reset, svg.resetButton);
             this.drawMenuReset(this.menu, svg.menuButton);
 
-            this.reset.el.addEventListener("click", () => {
-                pxsim.Runtime.postMessage(<pxsim.SimulatorCommandMessage>{
-                    type: "simulator",
-                    command: "restart"
-                })
-            });
+            this.bindPadEvents(this.reset, Key.Reset, 0.1);
             this.bindPadEvents(this.menu, Key.Menu, 0.25);
 
             this.moveDPad(0, 0, COMPONENT_WIDTH)
@@ -306,7 +319,7 @@ namespace pxsim {
             return overlay;
         }
 
-        protected setOverlayState(overlay: s.Rect | s.Circle, down: boolean) {
+        protected setOverlayState(overlay: s.Rect | s.Circle | s.SVG, down: boolean) {
             if (down) {
                 overlay.setClass("controller-button-overlay pressed");
             }

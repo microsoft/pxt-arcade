@@ -104,6 +104,13 @@ namespace pxsim {
         handleKeyEvent(key: Key, isPressed: boolean) {
             // handle system keys
             switch (key) {
+                case Key.Reset:
+                    if (isPressed)
+                        pxsim.Runtime.postMessage(<pxsim.SimulatorCommandMessage>{
+                            type: "simulator",
+                            command: "restart"
+                        })
+                    return;
                 case Key.Screenshot:
                     if (isPressed)
                         Runtime.postScreenshotAsync().done();
@@ -121,7 +128,7 @@ namespace pxsim {
                 this.controls.mirrorKey(key, isPressed);
         }
 
-        
+
         screenshotAsync(): Promise<ImageData> {
             const cvs = this.view.canvas;
             const ctx = this.view.context;
@@ -138,7 +145,7 @@ namespace pxsim {
             this.background = document.getElementById("screen-back") as HTMLDivElement;
             this.canvas = document.getElementById("paint-surface") as HTMLCanvasElement;
             this.stats = document.getElementById("debug-stats");
-            this.stats.className = "stats"
+            this.stats.className = "stats no-select"
             this.canvas.width = 16;
             this.canvas.height = 16;
             this.id = msg.id;
@@ -153,6 +160,7 @@ namespace pxsim {
                 }
             }
 
+            this.controls.init();
             this.view = new ScreenView(this.screenState, this.canvas, () => this.layout(), () => this.updateStats());
             this.layout()
 
