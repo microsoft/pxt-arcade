@@ -19,7 +19,8 @@ namespace pxsim {
 
         // system keys
         Screenshot = -1,
-        Gif = -2
+        Gif = -2,
+        Reset = -3
     }
 
     export function mapKey(which: number): Key {

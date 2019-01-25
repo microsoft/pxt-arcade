@@ -104,6 +104,13 @@ namespace pxsim {
         handleKeyEvent(key: Key, isPressed: boolean) {
             // handle system keys
             switch (key) {
+                case Key.Reset:
+                    if (isPressed)
+                        pxsim.Runtime.postMessage(<pxsim.SimulatorCommandMessage>{
+                            type: "simulator",
+                            command: "restart"
+                        })
+                    break;
                 case Key.Screenshot:
                     if (isPressed)
                         Runtime.postScreenshotAsync().done();
@@ -121,7 +128,7 @@ namespace pxsim {
                 this.controls.mirrorKey(key, isPressed);
         }
 
-        
+
         screenshotAsync(): Promise<ImageData> {
             const cvs = this.view.canvas;
             const ctx = this.view.context;
@@ -153,6 +160,7 @@ namespace pxsim {
                 }
             }
 
+            this.controls.init();
             this.view = new ScreenView(this.screenState, this.canvas, () => this.layout(), () => this.updateStats());
             this.layout()
 
