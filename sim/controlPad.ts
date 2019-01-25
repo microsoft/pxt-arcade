@@ -27,14 +27,14 @@ namespace pxsim {
             const idx = this.pointerIds.indexOf(id);
             if (down && idx < 0) {
                 this.pointerIds.push(id);
-                console.log(`key ${this.key} down pointer ${idx} ${this.pointerIds.length}`)
+                //console.log(`key ${this.key} down pointer ${idx} ${this.pointerIds.length}`)
                 if (b && this.pointerIds.length == 1) { // first touch event
                     b.handleKeyEvent(this.key, true);
                 }
             }
             else if (!down && idx > -1) {
                 this.pointerIds.splice(idx, 1);
-                console.log(`key ${this.key} up pointer ${idx} ${this.pointerIds.length}`)
+                //console.log(`key ${this.key} up pointer ${idx} ${this.pointerIds.length}`)
                 if(b && !this.pointerIds.length) // last touch event
                     b.handleKeyEvent(this.key, false);
             }
