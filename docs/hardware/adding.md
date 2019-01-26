@@ -53,6 +53,7 @@ in the power supply).
 * optional accelerometer
 * a magnetic speaker (transducer) with some sort of amplifier
 * an optional [JACDAC](https://jacdac.org/) connector
+* **no** power LED - please skip that one, unless you're also including PWREN line, which will shut it down; otherwise auto power-off will be difficult
 
 If you have good reasons to use a different screen or accelerometer, let us know.
 
@@ -170,6 +171,14 @@ If requested, we can add support for MSA300, which seems to be cheaper.
 
 The accelerometers should have the SDA, SCL and INT1 lines connected
 to respective `ACCELEROMETER_*` lines as defined in the bootloader.
+If possible, keep this separate from the SDA/SCL exposed on the header,
+so the one on the header can be used as a general digital IO.
+
+## Vibration motor
+
+An optional vibration motor can be connected to `VIBRATION` line.
+Software will keep it low during normal operation, and pull it high
+to activate the motor.
 
 ## Power management
 
@@ -178,11 +187,63 @@ The board will have auto-power-off feature to improve battery life.
 Currently, we plan to shut down display back light, and accelerometer if any,
 and put the CPU in sleep mode.
 
+There is an optional `PWREN` pin. If defined, the software will pull it high on
+boot, and keep it low during sleep.
+The idea is for it to control power supply to display, accelerometer,
+and other on-board components. 
+
+Please do not provide a power LED that cannot be turned off from the MCU.
+It's fine for power LED supply to be controlled by PWREN.
+
+An optional `BATTSENSE` can be connected to a voltage divider and to battery.
+This is not yet supported in software.
+
+## LEDs
+
+Up to 4 LEDs can be defined.
+The first two can be also used for JACDAC status.
+
+## Pin header
+
+Following is the recommended pinout of the header.
+Header is optional, but at least holes are nice to have.
+If there's limited space for header pins D10-D11 should be dropped,
+and then D8-D9.
+
+| Pin | Function | F401 | D51 |
+| --- | -------- | ---- | --- |
+| D1  | TX       | PA02 |     |
+| D2  | RX       | PA03 |     |
+| D3  | MOSI     | PB15 |     |
+| D4  | MISO     | PB14 |     |
+| D5  | SCK      | PB13 |     |
+| D6  | SCL      | PB08 |     |
+| D7  | SDA      | PB07 |     |
+| D8  | SERVO1   | PA00 |     |
+| D9  | SERVO2   | PA01 |     |
+| D10 | I/O      | PC05 |     |
+| D11 | I/O      | PC11 |     |
+
 ## Pin notes
 
-Buttons can be generally on any pin.
-MENU button should be a pin which can wake the MCU up from sleep mode
-(usually requires EIC).
+While there is recommended pinout in this document, you can use any different
+pinout.
+You need to put your pinout in the bootloader, and flash the bootloader.
+Then, when you get a UF2 file from Arcade website, it will at runtime look for
+settings in the bootloader and use the right pins.
+
+There are some restrictions on the pinout:
+
+* screen needs to be on SPI pins (of course)
+* DISPLAY_BL should be on a pin with PWM (so we can dim it)
+* MENU button should be a pin which can wake the MCU up from sleep mode (usually requires `EIC`/`EVENTOUT`)
+* other buttons can be on any pin
+* the MENU2 button is optional
+* JACK_TX if present needs to be on UART_TX pin with EVENTOUT on F401, and on PAD0 of a SERCOM with EIC on D51
+* JACK_SND if present needs to be on TIM1_CH* pin of F401 and DAC0 of D51 (PA02)
+
+Of course, if you're building a guide about how to connect screen and buttons to
+an existing board, all components are really optional. 
 
 ## Variant notes
 
@@ -191,6 +252,46 @@ MENU button should be a pin which can wake the MCU up from sleep mode
 STM32F4 requires an external crystal for stable USB operation.
 The software takes the installed crystal frequency from a specific bootloader location,
 but best to stick to 8MHz.
+
+Following is the recommended pinout. The recommended pinout for
+header is defined above. It's consistent with the config for the generic F401
+in the bootloader repo.
+
+```
+PIN_ACCELEROMETER_INT = PC13
+PIN_ACCELEROMETER_SCL = PB10
+PIN_ACCELEROMETER_SDA = PB03
+
+PIN_BTN_A = PC00
+PIN_BTN_B = PC01
+PIN_BTN_DOWN = PB02
+PIN_BTN_LEFT = PA04
+PIN_BTN_MENU = PC02
+PIN_BTN_MENU2 = PC03
+PIN_BTN_RIGHT = PC09
+PIN_BTN_UP = PB05
+
+PIN_DISPLAY_BL = PB09
+PIN_DISPLAY_CS = PB12
+PIN_DISPLAY_DC = PB04
+PIN_DISPLAY_MISO = PA06
+PIN_DISPLAY_MOSI = PA07
+PIN_DISPLAY_RST = PC12
+PIN_DISPLAY_SCK = PA05
+
+PIN_JACK_PWREN = PC10
+PIN_JACK_SND = PA08
+PIN_JACK_TX = PB06
+
+PIN_LED1 = PB00
+PIN_LED2 = PB01
+PIN_LED3 = PC07
+PIN_LED4 = PC06
+
+PIN_BATTSENSE = PC04
+PIN_PWREN = PA15
+PIN_VIBRATION = PC08
+```
 
 ### D51
 
