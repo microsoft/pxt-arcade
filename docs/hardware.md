@@ -28,7 +28,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "variant": "hw---rpi"
     },
     {
-        "name": "Add Custom Board",
+        "name": "Add Board",
         "description": "Are you looking to build your own hardware to run Arcade games? This in-depth guide provides the technical details and specifications to get started.",
         "url": "/hardware/adding"
     }
