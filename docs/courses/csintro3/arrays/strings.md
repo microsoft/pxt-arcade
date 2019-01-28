@@ -150,3 +150,73 @@ list[Math.randomRange[0, list.length - 1]];
 
 1. How do ``||arrays:push||`` and ``||arrays:pop||`` allow for easy array manipulation?
 2. How can random behavior improve games?
+
+### ~hint
+
+## Case Study
+
+### Redundant Sayings
+
+In the ``||sprites:overlap event||`` between ``Player`` and ``PowerUp``, the player always ``||sprite:say||``s something based off the power up that has been collected. Reduce the redundancy between the ``||logic:if||`` and ``||logic:else if||`` branches by storing the possible responses in an array of strings, with each response stored at the index corresponding to the ``PowerUpType``.
+
+### Star Field Effect
+
+In previous sections, ``Star``s were added to the background as projectiles. These look nice, but the stars can be handled more easily with the ``starField`` particle effect. In the ``status`` namespace, start the effect using the snippet below and remove the previous ``Star``s from the game (or leave them as is, if you prefer the simple stars to this effect).
+
+```typescript
+effects.starField.startScreenEffect();
+```
+
+As a side note, this is an example of something that can happen regularly when developing software: working on a feature for a bit (in this case, stars for the background), only to find out about an easier way to do it later on and get rid of the code you wrote. It is important to know that **this is a good thing!**
+
+You likely learned new things while writing the code, and finding a better solution means that you learned more now, too; recognizing how new things you've learned can be applied to handle older work more easily is an important part of software development.
+
+### Solution
+
+Note: the ``star`` namespace was also deleted from the example in this lesson.
+
+```typescript-ignore
+enum SpriteKind {
+    Player,
+    Projectile,
+    Enemy,
+    Asteroid,
+    PowerUp,
+    Laser,
+    EnemyLaser
+}
+
+namespace powerups {
+    let availablePowerUps = [
+        PowerUpType.Health,
+        PowerUpType.Score,
+        PowerUpType.EnergyUp
+    ];
+
+    export let responses: string[] = [];
+    responses[PowerUpType.Health] = "Got health!";
+    responses[PowerUpType.Score] = "Score!";
+    responses[PowerUpType.EnergyUp] = "More Energy!";
+}
+
+namespace overlapevents {
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.PowerUp, function (sprite: Sprite, otherSprite: Sprite) {
+        let powerUp: number = powerups.getType(otherSprite);
+        otherSprite.destroy();
+        sprite.say(powerups.responses[powerUp], 500);
+        if (powerUp == PowerUpType.Health) {
+            info.changeLifeBy(1);
+        } else if (powerUp == PowerUpType.Score) {
+            info.changeScoreBy(15);
+        } else if (powerUp == PowerUpType.EnergyUp) {
+            ship.maxCharge++;
+        }
+    });
+}
+
+namespace status {
+    effects.starField.startScreenEffect();
+}
+```
+
+### ~

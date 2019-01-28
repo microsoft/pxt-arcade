@@ -163,16 +163,6 @@ namespace enemy {
         return enemy;
     }
 
-    /**
-     * Place the given sprite at a random location at the top of the screen
-     * @param sprite the sprite to place at the top of the screen
-     * @param edge how many pixels between either edge of the screen to set
-     */
-    function setPosition(sprite: Sprite, edge: number) {
-        sprite.x = Math.randomRange(edge, screen.width - edge);
-        sprite.y = 0;
-    }
-
     game.onUpdateInterval(200, function () {
         // Create a laser 10% of the time
         if (Math.percentChance(10)) {

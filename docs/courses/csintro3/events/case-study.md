@@ -204,11 +204,13 @@ namespace star {
  * Generates powerups for the player to collect
  */
 namespace powerups {
+    let availablePowerUps = [
+        PowerUpType.Health,
+        PowerUpType.Score
+    ];
+
     sprites.onCreated(SpriteKind.PowerUp, function (sprite: Sprite) {
-        sprite.data = Math.pickRandom([
-            PowerUpType.Health,
-            PowerUpType.Score
-        ]);
+        sprite.data = Math.pickRandom(availablePowerUps);
         sprite.setFlag(SpriteFlag.AutoDestroy, true);
         setPosition(sprite, 10);
         setMotion(sprite);

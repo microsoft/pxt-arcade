@@ -173,18 +173,6 @@ In the ``||sprites:on overlap||`` event between ``Laser`` and ``Asteroid``, modi
  * Handle overlaps between different sprites
  */
 namespace overlapevents {
-    // When the player hits an asteroid, damage the player and destroy the asteroid
-    sprites.onOverlap(SpriteKind.Player, SpriteKind.Asteroid, function (sprite: Sprite, otherSprite: Sprite) {
-        info.changeLifeBy(-1);
-        otherSprite.destroy();
-    });
-
-    // When the player hits an enemy, damage the player and destroy the enemy
-    sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
-        info.changeLifeBy(-1);
-        otherSprite.destroy();
-    });
-
     // When a laser hits an asteroid, destroy both sprites
     sprites.onOverlap(SpriteKind.Laser, SpriteKind.Asteroid, function (sprite: Sprite, otherSprite: Sprite) {
         otherSprite.destroy(effects.fire, 200);
@@ -201,19 +189,6 @@ namespace overlapevents {
     sprites.onOverlap(SpriteKind.Player, SpriteKind.EnemyLaser, function (sprite: Sprite, otherSprite: Sprite) {
         otherSprite.destroy();
         sprite.say("ow!");
-    });
-
-    // When a player hits a powerup, apply the bonus for that powerup
-    sprites.onOverlap(SpriteKind.Player, SpriteKind.PowerUp, function (sprite: Sprite, otherSprite: Sprite) {
-        let powerUp: number = powerups.getType(otherSprite);
-        otherSprite.destroy();
-        if (powerUp == PowerUpType.Health) {
-            sprite.say("Got health!", 500);
-            info.changeLifeBy(1);
-        } else if (powerUp == PowerUpType.Score) {
-            sprite.say("Score!", 500);
-            info.changeScoreBy(15);
-        }
     });
 }
 ```

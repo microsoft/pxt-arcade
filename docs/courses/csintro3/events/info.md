@@ -192,34 +192,9 @@ namespace overlapevents {
         otherSprite.destroy();
         sprite.say("ow!", 500);
     });
-
-    // When a player hits a powerup, apply the bonus for that powerup
-    sprites.onOverlap(SpriteKind.Player, SpriteKind.PowerUp, function (sprite: Sprite, otherSprite: Sprite) {
-        let powerUp: number = powerups.getType(otherSprite);
-        otherSprite.destroy();
-        if (powerUp == PowerUpType.Health) {
-            sprite.say("Got health!", 500);
-            info.changeLifeBy(1);
-        } else if (powerUp == PowerUpType.Score) {
-            sprite.say("Score!", 500);
-            info.changeScoreBy(15);
-        }
-    });
 }
 
 namespace status {
-    initialize(4, 0);
-
-    /**
-     * Sets up the initial state of the game
-     * @param life the initial life to set
-     * @param score the initial score to set
-     */
-    function initialize(life: number, score: number) {
-        info.setLife(life);
-        info.setScore(score);
-    }
-
     info.onLifeZero(function () {
         let playerContinue = game.ask("Continue?", "Cost: 50 points");
         if (playerContinue) {

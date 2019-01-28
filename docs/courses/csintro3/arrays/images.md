@@ -192,4 +192,118 @@ The other ``||sprites:Asteroid||`` ``||images:images||`` can be referenced using
 ## What did we learn?
 
 1. How does using multiple ``||images:images||`` allow for games that are more visually appealing?
-2. How is the **remainder** operator used to make sure the code never accesses an invalid index in the ``||arrays:array||``?
+2. How is the **remainder** ``%`` operator used to make sure the code never accesses an invalid index in the ``||arrays:array||``?
+
+### ~hint
+
+## Case Study
+
+### Power Up Images
+
+In the ``spritesheet`` namespace, change the ``||variables:powerUp||`` ``||images:image||`` to an ``||arrays:array||`` of ``||images:images||``, and rename it to ``||variables:powerUps||``. Create a custom ``||images:image||`` for each type of ``PowerUp``, and store them at the index for the given type (similar to ``||variables:powerups.responses||``).
+
+In order to use these images, when creating a ``||sprites:sprite||`` set the ``||images:image||`` to some default value (a single pixel ``||images:image||``, or one of the ``PowerUp`` images), and then set the ``||images:image||`` appropriately for the chosen type in the ``||sprites:on created||`` event. Because the type will be stored in both the ``data`` and as the index for the ``||images:image||``, you should store the result of ``||math:Math.pickRandom(availablePowerUps)||`` so that it can be referenced in both parts where it is necessary.
+
+### Asteroids!
+
+Instead of using a single image for all asteroids, create an ``||arrays:array||`` of ``||images:images||`` and ``||math:pick||`` one at random whenever you create a new asteroid.
+
+### Solution
+
+```typescript-ignore
+namespace spritesheet {
+    export let asteroids: Image[] = [
+        sprites.space.spaceAsteroid0,
+        sprites.space.spaceAsteroid1,
+        sprites.space.spaceAsteroid2,
+        sprites.space.spaceAsteroid3,
+        sprites.space.spaceAsteroid4
+    ];
+
+    export let powerUps: Image[] = [];
+
+    powerUps[PowerUpType.Health] = img`
+        . . . 1 1 1 1 1 . . .
+        . . 1 1 1 1 1 1 1 . .
+        . 1 1 1 1 1 1 1 1 1 .
+        1 1 1 2 2 1 2 2 1 1 1
+        1 1 2 2 2 2 2 3 2 1 1
+        1 1 f 2 2 2 3 2 2 1 1
+        1 1 f 2 2 2 2 2 2 1 1
+        1 1 1 f 2 2 2 2 1 1 1
+        . 1 1 1 f 2 2 1 1 1 .
+        . . 1 1 1 f 1 1 1 . .
+        . . . 1 1 1 1 1 . . .
+    `;
+
+    powerUps[PowerUpType.Score] = img`
+        . . . 5 5 5 5 5 . . .
+        . . 5 5 5 f 5 5 5 . .
+        . 5 5 5 f f f 5 5 5 .
+        5 5 5 f 5 f 5 f 5 5 5
+        5 5 5 5 f 5 5 5 5 5 5
+        5 5 5 5 5 f 5 5 5 5 5
+        5 5 5 5 5 5 f 5 5 5 5
+        5 5 5 f 5 f 5 f 5 5 5
+        . 5 5 5 f f f 5 5 5 .
+        . . 5 5 5 f 5 5 5 . .
+        . . . 5 5 5 5 5 . . .
+    `;
+
+    powerUps[PowerUpType.EnergyUp] = img`
+        . . . 8 8 8 8 8 . . .
+        . . 8 8 8 f 8 8 8 . .
+        . 8 8 f f f f f 8 8 .
+        8 8 8 f 8 d 8 f 8 8 8
+        8 8 8 f d d d f 8 8 8
+        8 8 8 f 8 d 8 f 8 8 8
+        8 8 8 f 8 8 8 f 8 8 8
+        8 8 8 f d d d f 8 8 8
+        . 8 8 f 8 8 8 f 8 8 .
+        . . 8 f f f f f 8 . .
+        . . . 8 8 8 8 8 . . .
+    `;
+
+    powerUps[PowerUpType.RechargeRateUp] = img`
+        . . . e e e e e . . .
+        . . e e e 5 4 e e . .
+        . e e e 5 5 e e e e .
+        e e e 5 5 4 4 4 e e e
+        e e 5 5 5 5 5 5 5 5 e
+        e e e e e 5 5 5 4 e e
+        e e e e 5 5 5 4 e e e
+        e e e 5 5 5 4 e e e e
+        . e e 5 5 4 e e e e .
+        . . e e 5 4 e e e . .
+        . . . e e e e e . . .
+    `;
+}
+
+namespace asteroids {
+    game.onUpdateInterval(1500, function () {
+        sprites.create(Math.pickRandom(spritesheet.asteroids), SpriteKind.Asteroid);
+    });
+}
+
+namespace powerups {
+    sprites.onCreated(SpriteKind.PowerUp, function (sprite: Sprite) {
+        let typeOfPowerUp = Math.pickRandom(availablePowerUps);
+        sprite.data = typeOfPowerUp;
+        sprite.setImage(spritesheet.powerUps[typeOfPowerUp]);
+        sprite.setFlag(SpriteFlag.AutoDestroy, true);
+        setPosition(sprite, 10);
+        setMotion(sprite);
+    });
+
+    game.onUpdateInterval(600, function () {
+        if (Math.percentChance(50)) {
+            let currentPowerUps = sprites.allOfKind(SpriteKind.PowerUp);
+            if (currentPowerUps.length() < 2) {
+                sprites.create(img`1`, SpriteKind.PowerUp);
+            }
+        }
+    });
+}
+```
+
+### ~

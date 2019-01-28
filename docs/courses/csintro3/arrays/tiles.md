@@ -206,3 +206,82 @@ scene.cameraFollowSprite(player);
 1. What does a ``||scene:on hit tile||`` event allow you to do?
 2. What is the relationship between ``||scene:Tiles||`` and ``||scene:tile maps||``?
 3. How can ``||scene:scene.getTilesByType||`` allow ``||sprites:Sprites||`` to be placed in different locations on the screen more easily?
+
+### ~hint
+
+## Case Study
+
+### Recharge Rate Up
+
+Add a new type of PowerUp, which makes the ``ships`` energy recharge faster.
+
+In the current game, you have the energy recharge based off an ``||game:on game update interval||`` event, which occurs every 750ms. It may seem like this is an easy change, by just using a ``||variables:variable||`` for the interval instead of a specific time, but this doesn't quite work. The ``||game:game.onUpdateInterval||`` function takes in an **interval in milliseconds** and an **event handler** function, and causes the **event handler** to occur on the interval
+
+To fix this, you will need to change the ``||game:on game update interval||`` event in the ``ship`` namespace to an ``||game:on game update||`` event, and keep track of the time yourself. The ``||game:game.runtime||`` function is useful for this, as it gives the time since the game game was started, in milliseconds.
+
+First, create two new variables in the ``ship`` namespace: ``||variables:rechargeDelay||`` and ``||variables:lastRecharge||``. ``||variables:rechargeDelay||`` should keep track of the current delay between recharges, and should start at 750ms (like the previous ``||game:on game update interval||``). ``||variables:lastRecharge||`` should keep track of the last time that the ship's ``currentCharge`` was incremented.
+
+In the ``||game:on game update||`` event, get the current time, and check if the time that has passed since the ``||variables:lastRecharge||`` is greater than or equal to the ``||variables:rechargeDelay||``. If it is, update ``||variables:lastRecharge||`` to the current time, and increment ``||variables:currentCharge||`` if it is less than ``||variables:maxCharge||``.
+
+Finally, add the new ``RechargeRateUp`` ``PowerUp`` to the game. In the ``||sprites:overlap event||`` between ``Player`` and ``PowerUp``, decrement the ``||variables:ship.rechargeDelay||`` by **20** if the ``PowerUp`` is of type ``RechargeRateUp``. Set the ``response`` for this ``PowerUp`` to "Faster Charge!".
+
+### Solution
+
+```typescript-ignore
+enum PowerUpType {
+    Health,
+    Score,
+    EnergyUp,
+    RechargeRateUp
+}
+
+namespace ship {
+    export let rechargeDelay = 750;
+    let lastRecharge = 0;
+
+    game.onUpdate(function () {
+        let currentTime = game.runtime();
+        if (currentTime - lastRecharge >= rechargeDelay) {
+            lastRecharge = currentTime;
+            if (currentCharge < maxCharge) {
+                currentCharge++;
+            }
+        }
+    });
+}
+
+namespace powerups {
+    let availablePowerUps = [
+        PowerUpType.Health,
+        PowerUpType.Score,
+        PowerUpType.EnergyUp,
+        PowerUpType.RechargeRateUp
+    ];
+
+    export let responses: string[] = [];
+    responses[PowerUpType.Health] = "Got health!";
+    responses[PowerUpType.Score] = "Score!";
+    responses[PowerUpType.EnergyUp] = "More Energy!";
+    responses[PowerUpType.RechargeRateUp] = "Faster Charge!";
+}
+
+namespace overlapevents {
+    // When a player hits a powerup, apply the bonus for that powerup
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.PowerUp, function (sprite: Sprite, otherSprite: Sprite) {
+        let powerUp: number = powerups.getType(otherSprite);
+        otherSprite.destroy();
+        sprite.say(powerups.responses[powerUp], 500);
+        if (powerUp == PowerUpType.Health) {
+            info.changeLifeBy(1);
+        } else if (powerUp == PowerUpType.Score) {
+            info.changeScoreBy(15);
+        } else if (powerUp == PowerUpType.EnergyUp) {
+            ship.maxCharge++;
+        } else if (powerUp == PowerUpType.RechargeRateUp) {
+            ship.rechargeDelay -= 20;
+        }
+    });
+}
+```
+
+### ~

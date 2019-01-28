@@ -160,13 +160,13 @@ Review the code snippet below.
 
 ```typescript
 let arr: number[] = [];
-arr[5] = 100000;
+arr[3] = 100000;
 game.splash(arr.length + "");
 ```
 
-The result may seem surprising. Why is the length of ``||variables:arr||`` 6, even though there is only one value in it?
+The result may seem surprising. Why is the length of ``||variables:arr||`` 4, even though there is only one value in it?
 
-The ``||arrays:length||`` of an array is determined by the index of the last element, not an exact count of the number of indices assigned a value.
+The ``||arrays:length||`` of an array is determined by the index of the last element, not an exact count of the number of indices assigned a value. In this case, index ``3`` has been assigned a value, so the values considered to be 'within' the array are indices ``0``, ``1``, ``2``, and ``3``, a total of 4 elements.
 
 ### ~
 
@@ -176,7 +176,106 @@ The ``||arrays:length||`` of an array is determined by the index of the last ele
 2. Given an array of numbers ``||variables:arr||`` and a ``||loops:for||`` loop declared like the one below, what is the difference between ``||variables:i||`` and ``||variables:arr[i]||``?
 
 ```typescript-ignore
-for (let i = 0; i <= arr.length; i++) {
+for (let i = 0; i < arr.length; i++) {
 
 }
 ```
+
+### ~hint
+
+## Case Study
+
+### New Bonus!
+
+Currently, the game lacks a feeling of progression; no matter how long you play, the only things that will permanently change are the values for ``||info:score||`` and ``||info:life||``.
+
+One way to address this is to add a way for the player to grow more powerful as they play the game. Add a new type of ``PowerUp`` called ``EnergyUp``, which should add ``1`` to the ships maximum energy to allow the player to fire more lasers at once before having to wait for them to recharge.
+
+To do this, you will need to add the new power up to the ``PowerUpType`` enum, and update the ``||arrays:availablePowerUps||`` array in the ``powerups`` namespace to include the new possible powerup.
+
+Finally, in the ``||sprites:overlap event||`` between ``Player`` and ``PowerUp``, add another ``||logic:else if||`` for when the ``PowerUp`` is the new power up, which should say "More Energy!" and increase ``||variables:ship.maxCharge||``.
+
+### Draw My Energy
+
+Currently, there is no indication of how much energy the player's ship has, besides when you run out and it doesn't fire a ``Laser`` anymore. To do so, add the following snippet to the ``status`` namespace:
+
+```typescript-ignore
+game.onPaint(function () {
+    let x = 1;
+    let y = screen.height - image.font5.charHeight - 1;
+    let color = 0x3;
+
+    if (ship.currentCharge == ship.maxCharge) {
+        color = 0x7;
+    } else if (ship.currentCharge == 0) {
+        color = 0x2;
+    }
+
+    let energyState = "energy: " + ship.currentCharge + "/" + ship.maxCharge;
+    screen.print(energyState, x, y, color, image.font5);
+});
+```
+
+This uses the ``||game:on paint||`` event, which occurs immediately before any ``||sprites:Sprites||`` are drawn onto the screen. With this, whenever the screen is updated, the current energy will be printed in the **bottom left corner** of the screen. Feel free to modify it to your liking!
+
+### Solution
+
+```typescript-ignore
+enum PowerUpType {
+    Health,
+    Score,
+    EnergyUp
+}
+
+namespace powerups {
+    let availablePowerUps = [
+        PowerUpType.Health,
+        PowerUpType.Score,
+        PowerUpType.EnergyUp
+    ];
+
+    sprites.onCreated(SpriteKind.PowerUp, function (sprite: Sprite) {
+        sprite.data = Math.pickRandom(availablePowerUps);
+        sprite.setFlag(SpriteFlag.AutoDestroy, true);
+        setPosition(sprite, 10);
+        setMotion(sprite);
+    });
+}
+
+namespace overlapevents {
+    // When a player hits a powerup, apply the bonus for that powerup
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.PowerUp, function (sprite: Sprite, otherSprite: Sprite) {
+        let powerUp: number = powerups.getType(otherSprite);
+        otherSprite.destroy();
+        if (powerUp == PowerUpType.Health) {
+            sprite.say("Got health!", 500);
+            info.changeLifeBy(1);
+        } else if (powerUp == PowerUpType.Score) {
+            sprite.say("Score!", 500);
+            info.changeScoreBy(15);
+        } else if (powerUp == PowerUpType.EnergyUp) {
+            sprite.say("More Energy!", 500);
+            ship.maxCharge++;
+        }
+    });
+}
+
+namespace status {
+    game.onPaint(function () {
+        let x = 1;
+        let y = screen.height - image.font5.charHeight - 1;
+        let color = 0x3;
+
+        if (ship.currentCharge == ship.maxCharge) {
+            color = 0x7;
+        } else if (ship.currentCharge == 0) {
+            color = 0x2;
+        }
+
+        let energyState = "energy: " + ship.currentCharge + "/" + ship.maxCharge;
+        screen.print(energyState, x, y, color, image.font5);
+    });
+}
+```
+
+### ~

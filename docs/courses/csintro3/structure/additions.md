@@ -12,9 +12,9 @@ The second is the version that will be referenced going forward. This includes a
 
 ### ~hint
 
-In future activities, the solutions will be limited to show the sections of the code that have been updated - in particular, any namespaces that were changed, as well any top level code that was modified.
+In future activities, the solutions will be limited to show the sections of the code that have been updated.
 
-This will help focus on the sections of the code that are relevant to each task, without having to search through the entire game's code for every single change.
+This will help focus on the sections of the code that are relevant to each task, without having to search through the entire game's code for every single change. If a portion of a namespace or a certain function is not shown, that will usually mean the code is to remain **unmodified**, not that it should be **deleted**.
 
 ### ~
 
@@ -235,11 +235,13 @@ namespace enemy {
  * Generates powerups for the player to collect
  */
 namespace powerups {
+    let availablePowerUps = [
+        PowerUpType.Health,
+        PowerUpType.Score
+    ];
+
     sprites.onCreated(SpriteKind.PowerUp, function (sprite: Sprite) {
-        sprite.data = Math.pickRandom([
-            PowerUpType.Health,
-            PowerUpType.Score
-        ]);
+        sprite.data = Math.pickRandom(availablePowerUps);
         sprite.setFlag(SpriteFlag.AutoDestroy, true);
         setPosition(sprite, 10);
         setMotion(sprite);

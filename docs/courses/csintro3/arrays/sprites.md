@@ -193,3 +193,74 @@ It's likely that the enemies will overlap, and eventually all occupy the same lo
 
 1. In your own words, explain why the snippet in "Getting All the Sprites" did not work at first (that is, why the pizza wasn't always destroyed).
 2. How does ``||sprites:sprites.allOfKind||`` help when dealing with multiple ``||sprites:Sprites||``?
+
+### ~hint
+
+## Case Study
+
+### Multiple Enemies
+
+The game currently has a single enemy (``||variables:myEnemy||``), which will follow the player until it is destroyed or moves off the screen. Prior to this section, there was no way to properly keep track of and update multiple enemies on the screen at the same time. With the ability to get an ``||arrays:array||`` of all ``Enemy``s, you can now have multiple enemies in the game at a single time.
+
+To start, remove the following line of code from the ``enemies`` namespace:
+
+```typescript-ignore
+let myEnemy = createEnemy();
+```
+
+This will cause some errors, which will identify the places that you need to update. In the ``||game:on update interval||`` event in the ``enemies`` namespace, call ``||sprites:sprites.allOfKind(SpriteKind.Enemy)||`` to obtain an ``||arrays:array||`` of all ``Enemy`` ``||sprites:Sprites||``. Use a loop to iterate through all the ``||sprites:sprites||`` in this ``||arrays:array||``, and apply the updates to each of them (that is, adjust their ``||sprites:vx||`` and possibly create an ``EnemyLaser`` ``||sprites:projectile||``). You may want to lower the chances of ``Laser``s being created to account for having more than a single ``Enemy``.
+
+After this is done, you'll likely notice something is wrong: the game works, but no enemies are created! This can be fixed by adding a call to ``createEnemy`` to the ``||game:on update interval||`` event, before the ``Enemy`` ``||sprites:sprites||`` are updated. Start off creating an ``Enemy`` about 5 percent of the time, and adjust it to your liking.
+
+### Limit the PowerUps
+
+Power ups should feel like special bonuses, but they show up randomly - in some cases, you might even end up with three or four on the screen at the same time!
+
+To address this, we can limit the number of PowerUps that are on the screen at once. In the ``powerups`` namespace, when a ``PowerUp`` ``||sprites:Sprite||`` would be created, instead get an ``||arrays:array||`` of all existing ``||sprites:sprites||`` of ``||sprites:kind||`` ``PowerUp``. ``||logic:If||`` the ``||arrays:length||`` of that ``||arrays:array||`` is less than 2, create a ``PowerUp`` like normal. Otherwise, do not create a ``PowerUp`` ``||sprites:Sprite||``.
+
+With this, you will avoid creating new ``PowerUp``s when there are too many on the screen. This brings up an extra option for customizing your game, as well - you can increase the rate at which ``PowerUp``s are created without making the game too easy, which provides a benefit for gathering ``PowerUp``s as quickly as possible - the faster they are gathered, the faster more will come.
+
+### Solution
+
+Note: the variable ``||variables:myEnemy||`` in the ``enemy`` namespace was removed in this lesson, because enemies are now created in an ``||game:on update interval||`` event instead of just a single one at the beginning of the game.
+
+```typescript-ignore
+/**
+ * Creates and controls the enemies in the game
+ */
+namespace enemy {
+    game.onUpdateInterval(200, function () {
+        if (Math.percentChance(5)) {
+            createEnemy();
+        }
+
+        let allEnemies = sprites.allOfKind(SpriteKind.Enemy);
+        for (let i = 0; i < allEnemies.length; i++) {
+            // Create a laser 4% of the time
+            if (Math.percentChance(4)) {
+                sprites.createProjectile(img`3`, 0, 70, SpriteKind.EnemyLaser, allEnemies[i]);
+            }
+
+            // follow the player
+            if (allEnemies[i].x < ship.player.x) {
+                allEnemies[i].vx = 15;
+            } else {
+                allEnemies[i].vx = -15;
+            }
+        }
+    });
+}
+
+namespace powerups {
+    game.onUpdateInterval(600, function () {
+        if (Math.percentChance(50)) {
+            let currentPowerUps = sprites.allOfKind(SpriteKind.PowerUp);
+            if (currentPowerUps.length() < 2) {
+                sprites.create(spritesheet.powerUp, SpriteKind.PowerUp);
+            }
+        }
+    });
+}
+```
+
+### ~

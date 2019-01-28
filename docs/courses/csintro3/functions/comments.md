@@ -279,11 +279,6 @@ namespace ship {
         sprite.y = screen.height - 20;
         return sprite;
     }
-
-    // When the player presses A, fire a laser from the spaceship
-    controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-        sprites.createProjectile(spritesheet.laser, 0, -40, SpriteKind.Laser, player);
-    });
 }
 
 /**
