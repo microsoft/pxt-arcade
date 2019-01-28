@@ -8,21 +8,29 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
 [
     {
         "name": "BrainPad Arcade",
+        "description": "Learn how BrainPad Arcade lets you run games on a small handheld console.",
         "imageUrl": "/static/hardware/ghiarcade.jpg",
         "url": "https://brainpad.com/arcade",
         "variant": "hw---stm32f401"
     },
     {
         "name": "Adafruit M4",
+        "description": "Learn how to run your games on micro-controllers from Adafruit",
         "imageUrl": "/static/hardware/adafruitm4.jpg",
         "url": "https://learn.adafruit.com/makecode-arcade-m4",
         "variant": "hw---samd51"
     },
     {
         "name": "Adafruit Joy Bonnet",
+        "description": "Learn how to run your games on Raspberry Pi Zero and Adafruit Joy Bonnet.",
         "imageUrl": "/static/hardware/adafruitjoybonnet.jpg",
         "url": "https://learn.adafruit.com/makecode-arcade-pi-zero",
         "variant": "hw---rpi"
+    },
+    {
+        "name": "Add Custom Board",
+        "description": "Are you looking to build your own hardware to run Arcade games? This in-depth guide provides the technical details and specifications to get started.",
+        "url": "/hardware/adding"
     }
 ]
 ```

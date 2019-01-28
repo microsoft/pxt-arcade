@@ -8,11 +8,6 @@
         "imageUrl": "/static/tutorials/chase-the-pizza.gif"
     },
     {
-        "name": "Game Design Concepts",
-        "url": "concepts",
-        "imageUrl": "/static/concepts/walking-hero.gif"
-    },
-    {
         "name": "Blocks Games",
         "url": "blocks-games",
         "imageUrl": "/static/examples/duck.png"
@@ -23,9 +18,19 @@
         "imageUrl": "/static/examples/planet-putt-putt.png"
     },
     {
+        "name": "Game Design Concepts",
+        "url": "concepts",
+        "imageUrl": "/static/concepts/walking-hero.gif"
+    },
+    {
         "name": "Lessons",
         "url": "lessons",
         "imageUrl": "/static/lessons/cherry-pickr.png"
+    },
+    {
+        "name": "Hardware",
+        "url": "hardware",
+        "imageUrl": "/static/hardware/ghiarcade.jpg"
     }
 ]
 ```
@@ -33,8 +38,9 @@
 ## See Also
 
 [Tutorials](tutorials),
-[Game Design Concepts](concepts),
 [Blocks Games](blocks-games),
 [JavaScript Games](javascript-games),
-[Lessons](lessons)
+[Game Design Concepts](concepts),
+[Lessons](lessons),
+[Hardware](hardware)
 
