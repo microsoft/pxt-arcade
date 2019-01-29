@@ -302,6 +302,25 @@ same website.
 
 The patching website can also remove config entires, just specify the value as `null`.
 
+### Bootloader protection
+
+End users will typically update the bootloader by copying a special UF2 file, which
+has a user-level application, which overwrites the bootloader.
+
+To prevent misuse of this feature (eg., one student emailing to a another a malicious UF2 
+file which writes a non-functional bootloader), some bootloaders (currently only F401)
+implement a protection feature.
+When booting, the bootloader will check if it's write-protected (this is done by setting bits
+in flash, which only take effect upon reset).
+If the write-protection is disabled, presumably during a bootloader update process,
+the bootloader will present a screen to the user, asking if they really want to update
+the bootloader, and they it may brick the board.
+If the users agrees to upgrade, the app is allowed to run (and presumably update the booloader).
+Otherwise, the protection is re-enabled.
+
+The default configuration of the bootloaders have this feature disabled to ease the
+development process. To enable it, set `BOOTLOADER_PROTECTION = 1`.
+
 ## Variant notes
 
 ### F401
