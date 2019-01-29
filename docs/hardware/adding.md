@@ -103,6 +103,7 @@ On some screens:
 * LEDK is called LED-
 * LEDA is called LED+
 * RESET is called RST
+* most screens don't have MISO line
 
 The purpose of the `DISPLAY_BL` is to dim or shut off the screen.
 The schematics shows one way of doing this.
@@ -210,19 +211,23 @@ Header is optional, but at least holes are nice to have.
 If there's limited space for header pins D10-D11 should be dropped,
 and then D8-D9.
 
-| Pin | Function | F401 | D51 |
-| --- | -------- | ---- | --- |
-| D1  | TX       | PA02 |     |
-| D2  | RX       | PA03 |     |
-| D3  | MOSI     | PB15 |     |
-| D4  | MISO     | PB14 |     |
-| D5  | SCK      | PB13 |     |
-| D6  | SCL      | PB08 |     |
-| D7  | SDA      | PB07 |     |
-| D8  | SERVO1   | PA00 |     |
-| D9  | SERVO2   | PA01 |     |
-| D10 | I/O      | PC05 |     |
-| D11 | I/O      | PC11 |     |
+The assignment is shown for 64 pin (or larger) version of F401.
+For the 48 pin version, drop D8-D11 and connect accelerometer SDA/SCL
+on the header.
+
+| Pin | Function | F401 | F401-48 |
+| --- | -------- | ---- | ------- |
+| D1  | TX       | PA02 | PA02    |
+| D2  | RX       | PA03 | PA03    |
+| D3  | MOSI     | PB15 | PB15    |
+| D4  | MISO     | PB14 | PB14    |
+| D5  | SCK      | PB13 | PB13    |
+| D6  | SCL      | PB08 | PB10    |
+| D7  | SDA      | PB07 | PB03    |
+| D8  | SERVO1   | PA00 | -       |
+| D9  | SERVO2   | PA01 | -       |
+| D10 | I/O      | PC05 | -       |
+| D11 | I/O      | PC11 | -       |
 
 ## Pin notes
 
@@ -234,7 +239,7 @@ settings in the bootloader and use the right pins.
 
 There are some restrictions on the pinout:
 
-* screen needs to be on SPI pins (of course)
+* screen needs to be on SPI pins (of course); on F401 use SPI1 as it's faster
 * DISPLAY_BL should be on a pin with PWM (so we can dim it)
 * MENU button should be a pin which can wake the MCU up from sleep mode (usually requires `EIC`/`EVENTOUT`)
 * other buttons can be on any pin
@@ -244,6 +249,58 @@ There are some restrictions on the pinout:
 
 Of course, if you're building a guide about how to connect screen and buttons to
 an existing board, all components are really optional. 
+
+### Generating bootloader
+
+If you're compiling bootloader on your own, you will need to create `board.h` file.
+Start from an existing, generic arcade board (README in bootloader should have instructions).
+Then:
+
+* if you don't have accelerometer, remove all lines with `ACCELEROMETER` word
+* if you don't have vibration motor, remove line for `PIN_VIBRATION`
+* if you are not doing a pin header:
+  * maybe you can at least leave holes for people to solder a header in?
+  * otherwise, remove all `PIN_Dx`, and `PIN_SDA`, `PIN_SCL`, `PIN_MISO`, `PIN_MOSI`, 
+    `PIN_SCK`, `PIN_SERVO_x`
+* if you have less than 4 LEDs remove `PIN_LEDx`
+* if you do not have a way to disable power to external components, remove `PIN_PWREN`
+* if you don't have JACDAC, remove `PIN_JACK_*`
+* if you don't have JACDAC power, remove `PIN_JACK_PWREN`
+* if you don't have second menu button (it's not needed), remove `PIN_BTN_MENU2`
+* if you don't have voltage divider for measuring battery level (which isn't supported yet anyway),
+  remove `PIN_BATTSENSE`
+
+Once you're done with all these changes, drop the `board.h` file on https://microsoft.github.io/uf2/patcher/
+
+This should load the config, with stuff removed.
+Now you can patch the config with your pin out.
+You should at least change `BOOTLOADER_BOARD_ID` to a new random value. 
+Don't generate it by banging on the board or using clever hex string, 
+just use `printf "0x%04x%04x\n" $RANDOM $RANDOM` to minimize the risk of conflict
+
+If you're seeing strange effects on the screen, you can try one of the following
+configs:
+
+```
+DISPLAY_CFG0 = 0x01000080 
+DISPLAY_CFG1 = 0x00000603
+# or:
+DISPLAY_CFG0 = 0x00000080 
+DISPLAY_CFG1 = 0x00000603
+# or:
+DISPLAY_CFG0 = 0x00000090
+DISPLAY_CFG1 = 0x000e14ff
+```
+
+Once you're done patching, press "Apply my patch", which will download new `board.h`.
+
+Note that you need to use the patching website to put the right header and size
+in the configuration data.
+
+It's also possible to patch a binary file of bootloader with new config using the
+same website.
+
+The patching website can also remove config entires, just specify the value as `null`.
 
 ## Variant notes
 
@@ -258,6 +315,8 @@ header is defined above. It's consistent with the config for the generic F401
 in the bootloader repo.
 
 ```
+# 64 pin package F401
+
 PIN_ACCELEROMETER_INT = PC13
 PIN_ACCELEROMETER_SCL = PB10
 PIN_ACCELEROMETER_SDA = PB03
@@ -291,6 +350,44 @@ PIN_LED4 = PC06
 PIN_BATTSENSE = PC04
 PIN_PWREN = PA15
 PIN_VIBRATION = PC08
+```
+
+```
+# 48 pin package F401
+
+PIN_ACCELEROMETER_INT = PC13
+PIN_ACCELEROMETER_SCL = PB10
+PIN_ACCELEROMETER_SDA = PB03
+
+PIN_BTN_A = PC14
+PIN_BTN_B = PC15
+PIN_BTN_DOWN = PB02
+PIN_BTN_LEFT = PA04
+PIN_BTN_MENU = PA01
+PIN_BTN_MENU2 = null # or PB01
+PIN_BTN_RIGHT = PC09
+PIN_BTN_UP = PB05
+
+PIN_DISPLAY_BL = PB09
+PIN_DISPLAY_CS = PB12
+PIN_DISPLAY_DC = PB04
+PIN_DISPLAY_MISO = PA06
+PIN_DISPLAY_MOSI = PA07
+PIN_DISPLAY_RST = PB07
+PIN_DISPLAY_SCK = PA05
+
+PIN_JACK_PWREN = PA00
+PIN_JACK_SND = PA08
+PIN_JACK_TX = PB06
+
+PIN_LED1 = PB00
+PIN_LED2 = PB01 # or null
+PIN_LED3 = null
+PIN_LED4 = null
+
+PIN_BATTSENSE = null
+PIN_PWREN = PA15
+PIN_VIBRATION = PB08
 ```
 
 ### D51
