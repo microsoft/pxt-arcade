@@ -1,20 +1,36 @@
 # Additions to Case Study
 
-At this point, you have the knowledge necessary to deal with a larger pieces of code - in particular, by using comments to leave information for anyone reading it in the future, as well as namespaces to split code into logical chunks.
+At this point, you have the knowledge necessary to deal with a larger pieces of code -
+in particular, by using comments to leave information for anyone reading it in the future,
+as well as namespaces to split code into logical chunks.
 
-To get a head start on future topics, there are a few more namespaces that we will add in to make the game a bit more interesting, and give a framework for future tasks to build upon.
+To get a head start on future topics, there are a few more namespaces that we will add
+in to make the game a bit more interesting,
+and give a framework for future tasks to build upon.
 
 Below are two snippets of code.
 
-The first is the current state of the example game, with a few minor changes; in particular, removing the ``||game:splash||`` screen and ``||game:prompt||`` for user input, as well as the initial blast of ``||sprites:Asteroids||``. These can be left in your game if you'd like (just make sure that they remain at the end of the code, so they are executed after everything is set up), but have been removed to make it easier to focus on the game.
+The first is the current state of the example game, with a few minor changes;
+in particular, removing the ``||game:splash||`` screen and ``||game:prompt||``
+for user input, as well as the initial blast of ``||sprites:Asteroids||``.
+These can be left in your game if you'd like (just make sure that they remain
+at the end of the code, so they are executed after everything is set up),
+but have been removed to make it easier to focus on the game.
 
-The second is the version that will be referenced going forward. This includes a number of new namespaces that will make the game a bit more interesting. Play the game and see what has changed, and duplicate the changes from this page into your own game.
+The second is the version that will be referenced going forward.
+This includes a number of new namespaces that will make the game a bit more interesting.
+Play the game and see what has changed,
+and duplicate the changes from this page into your own game.
 
 ### ~hint
 
-In future activities, the solutions will be limited to show the sections of the code that have been updated.
+In future activities, the solutions will be limited to show the sections
+of the code that have been updated.
 
-This will help focus on the sections of the code that are relevant to each task, without having to search through the entire game's code for every single change. If a portion of a namespace or a certain function is not shown, that will usually mean the code is to remain **unmodified**, not that it should be **deleted**.
+This will help focus on the sections of the code that are relevant to each task,
+without having to search through the entire game's code for every single change.
+If a portion of a namespace or a certain function is not shown,
+that will usually mean the code is to remain **unmodified**, not that it should be **deleted**.
 
 ### ~
 
@@ -109,7 +125,8 @@ namespace enemy {
 * [ ] Added another enum, PowerUpType
 * [ ] Added images in spritesheet for PowerUp and Laser
 * [ ] Added powerups namespace, which creates and handles powerups
-* [ ] Added overlapevents namespace, which contains events to handle overlaps between different sprites
+* [ ] Added overlapevents namespace, which contains events to handle
+overlaps between different sprites
 * [ ] Added status namespace, which will contain things related to the state of the game
 
 ```typescript

@@ -2,11 +2,17 @@
 
 This section contains a number of selected problems for the Types section.
 
-It is recommended that you review the problems, and complete a few before moving on to the next section.
+It is recommended that you review the problems, and complete a few before
+moving on to the next section.
 
 ## Problem #1: Confusing Types!
 
-After reading through the types lecture, an eager student decided to test their knowledge by ``||game:splash||``ing their favorite number to the screen. Knowing that ``||game:splash||`` requires a string to be passed, they made sure to declare their variable as a string, but to their surprise, it still didn't work.
+After reading through the types lecture,
+an eager student decided to test their knowledge by ``||game:splash||``ing
+their favorite number to the screen.
+Knowing that ``||game:splash||`` requires a string to be passed,
+they made sure to declare their variable as a string,
+but to their surprise, it still didn't work.
 
 ```typescript-ignore
 let myFavoriteNumber: string = 7;
@@ -28,7 +34,9 @@ I can eat: 3
 
 ## Problem #3: Making Types Up
 
-For each of the following types of information, identify whether you would want use a ``string`` or a ``number`` to store the value. If both options seem reasonable, explain why.
+For each of the following types of information,
+identify whether you would want use a ``string`` or a ``number`` to store the value.
+If both options seem reasonable, explain why.
 
 * The amount of money in a persons pocket
 * The name of your favorite food
@@ -40,7 +48,10 @@ For each of the following types of information, identify whether you would want 
 
 ## Problem #4: What Type is That?
 
-The following code is all ready to go for our next big game, except for one big issue: we forgot to declare the variables! Add variable declarations before the current code so that the code runs, without changing any of the provided code.
+The following code is all ready to go for our next big game,
+except for one big issue: we forgot to declare the variables!
+Add variable declarations before the current code so that the code runs,
+without changing any of the provided code.
 
 ```typescript-ignore
 color = "red";
@@ -58,7 +69,11 @@ game.splash(response + output);
 
 ## Problem #5: Swapping!
 
-Change the following code so that it will ``||game:splash||`` "Red Light". This must be done using **only** string reassignment from one variable to another variable - do not change any of the current lines of code, or reassign anything directly to a new string (that is, adding the line ``a = "light";`` before ``game.splash`` is **not** allowed)
+Change the following code so that it will ``||game:splash||`` "Red Light".
+This must be done using **only** string reassignment from one variable to another
+variable - do not change any of the current lines of code, or reassign anything
+directly to a new string
+(that is, adding the line ``a = "light";`` before ``game.splash`` is **not** allowed)
 
 
 ```typescript

@@ -2,25 +2,35 @@
 
 This section contains a number of selected problems for the Sprites section.
 
-It is recommended that you review the problems, and complete a few before moving on to the next section.
+It is recommended that you review the problems, and complete a few before
+moving on to the next section.
 
 ## Problem #1: Duck, Duck, Goose
 
 You've decided to make a game based off of "Duck, Duck, Goose".
 
-You notice that there is an image of a duck already included in the gallery, which is perfect for the game. Create **two** ``||sprites:sprites||`` using the ``||sprites:sprites.duck.duck1||`` image from the gallery.
+You notice that there is an image of a duck already included in the gallery,
+which is perfect for the game. Create **two** ``||sprites:sprites||`` using
+the ``||sprites:sprites.duck.duck1||`` image from the gallery.
 
-There is still one thing missing, though: the "Goose." Create a third ``||sprites:sprite||``, and use the image editor to draw the "Goose" for your game.
+There is still one thing missing, though: the "Goose."
+Create a third ``||sprites:sprite||``,
+and use the image editor to draw the "Goose" for your game.
 
 ## Problem #2: The Main Character
 
-``||sprites:Sprites||`` allow for the representation of characters in games. The main character of a game will often be a ``||sprites:Sprite||`` that the player controls.
+``||sprites:Sprites||`` allow for the representation of characters in games.
+The main character of a game will often be a ``||sprites:Sprite||``
+that the player controls.
 
-Create a ``||sprites:sprite||`` that uses an image of a character from the gallery. Make the character move around using the ``||controller:controller||``.
+Create a ``||sprites:sprite||`` that uses an image of a character from the
+gallery. Make the character move around using the ``||controller:controller||``.
 
 ## Problem #3: Quick Animation
 
-Many of the ``||sprites:sprites||`` in the gallery form a sequence: slightly different images of the same character that can be used to 'animate' the sprite.
+Many of the ``||sprites:sprites||`` in the gallery form a sequence:
+slightly different images of the same character that can be used to
+'animate' the sprite.
 
 ```typescript
 enum SpriteKind {
@@ -37,11 +47,17 @@ for (let i = 0; i < 10; i++) {
 }
 ```
 
-``||sprites:setImage||`` can be used to change the image for a sprite that has already been made. The previous snippet shows an example of switching between two images for the ``||sprites:sprite||`` ``||variables:duck||``.
+``||sprites:setImage||`` can be used to change the image for a sprite that
+has already been made. The previous snippet shows an example of switching
+between two images for the ``||sprites:sprite||`` ``||variables:duck||``.
 
-``||loops:Pause||`` is used after each ``||sprites:setImage||``, so that the images will be displayed on the screen for a little while before changing.
+``||loops:Pause||`` is used after each ``||sprites:setImage||``,
+so that the images will be displayed on the screen for a little
+while before changing.
 
-Fill out the animation with more calls to ``||sprites:setImage||`` and ``||loops:pause||`` in the ``||loops:for||`` loop. Add the following images to create an animation like the one below.
+Fill out the animation with more calls to ``||sprites:setImage||``
+and ``||loops:pause||`` in the ``||loops:for||`` loop.
+Add the following images to create an animation like the one below.
 
 1. ``||sprites:sprites.duck.duck3||``
 2. ``||sprites:sprites.duck.duck4||``
@@ -52,13 +68,17 @@ Fill out the animation with more calls to ``||sprites:setImage||`` and ``||loops
 
 ## Problem #4: To the Left
 
-In games, ``||sprites:Enemy||`` ``||sprites:sprites||`` will often need to move on their own to make the game harder for the player.
+In games, ``||sprites:Enemy||`` ``||sprites:sprites||`` will often need to
+move on their own to make the game harder for the player.
 
-Create a ``||sprites:projectile||`` with the ``||sprites:kind||`` ``||sprites:Enemy||``, and set it's ``||sprites:vx||`` to be 100.
+Create a ``||sprites:projectile||`` with the ``||sprites:kind||``
+``||sprites:Enemy||``, and set it's ``||sprites:vx||`` to be 100.
 
-Create another ``||sprites:projectile||`` with the ``||sprites:kind||`` ``||sprites:Enemy||``, and set it's ``||sprites:vx||`` to be -100.
+Create another ``||sprites:projectile||`` with the ``||sprites:kind||``
+``||sprites:Enemy||``, and set it's ``||sprites:vx||`` to be -100.
 
-Create a unique image for each ``||sprites:sprite||``, and pay attention to where they start and how they move.
+Create a unique image for each ``||sprites:sprite||``,
+and pay attention to where they start and how they move.
 
 ## Problem #5: Picky Positioning
 
@@ -100,12 +120,19 @@ if (hero.x >= 40 && hero.y > 100) {
 }
 ```
 
-The ``||variables:hero||`` is a bit picky about where they want to be. Change the ``||sprites:x||`` and ``||sprites:y||`` position of the ``||variables:hero||`` after each ``||loops:pause||`` to make them only say "That is good!" and "Perfect!"
+The ``||variables:hero||`` is a bit picky about where they want to be.
+Change the ``||sprites:x||`` and ``||sprites:y||`` position of the
+``||variables:hero||`` after each ``||loops:pause||`` to make them
+only say "That is good!" and "Perfect!"
 
 ## Problem #6: Ten of Me
 
-Use a ``||loops:for||`` loop to create **twelve** ``||sprites:sprites||`` with an image of your choice.
+Use a ``||loops:for||`` loop to create **twelve** ``||sprites:sprites||``
+with an image of your choice.
 
-Give each ``||sprites:sprite||`` a velocity to make it move to the left. Set their ``||sprites:y||`` position to 10 times the loop variable (``||variables:i||``), and their ``||sprites:x||`` position to ``||scene:screen.width||``.
+Give each ``||sprites:sprite||`` a velocity to make it move to the left.
+Set their ``||sprites:y||`` position to 10 times the loop variable
+(``||variables:i||``), and their ``||sprites:x||`` position to
+``||scene:screen.width||``.
 
 ``||loops:Pause||`` for 500 ms between enemies so they do not all appear at once.

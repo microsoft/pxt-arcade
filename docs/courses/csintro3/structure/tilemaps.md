@@ -2,7 +2,9 @@
 
 ``||scene:Tile maps||`` allow developers to easily create maps for sprites to traverse.
 
-Well designed maps can serve as a world for the player to explore, and can be easily populated with distinct images for each tile that make the world more visually appealing.
+Well designed maps can serve as a world for the player to explore,
+and can be easily populated with distinct images for each tile that
+make the world more visually appealing.
 
 ## Concept: Creating a Tile Map
 
@@ -25,11 +27,14 @@ scene.setTileMap(img`
 `);
 ```
 
-This function accepts an ``||images:Image||``, and initializes the ``||scene:tile map||`` based off this image.
+This function accepts an ``||images:Image||``,
+and initializes the ``||scene:tile map||`` based off this image.
 
-By default, the image will be shown on the screen, with each pixel corresponding to a **16 x 16** square of the same color.
+By default, the image will be shown on the screen,
+with each pixel corresponding to a **16 x 16** square of the same color.
 
-Using the ``||scene:setTile||`` function, this behavior can be changed to instead display an image in place of the color.
+Using the ``||scene:setTile||`` function,
+this behavior can be changed to instead display an image in place of the color.
 
 ```sig
 scene.setTile(0, null, false);
@@ -49,14 +54,17 @@ scene.setTileMap(img`
 scene.setTile(1, sprites.castle.tileGrass1);
 ```
 
-This function accepts an ``index`` of a color, and a **16 x 16** ``||images:Image||`` to replace the color in the ``||scene:tile map||``.
+This function accepts an ``index`` of a color,
+and a **16 x 16** ``||images:Image||`` to replace the color in the ``||scene:tile map||``.
 
 ## Example 1: Beach Day
 
 1. Review the code below
 2. Identify where the ``||scene:tile map||`` is defined
-3. Identify where the different colors of the ``||scene:tile map||`` are assigned a different ``||images:Image||``
-4. Move the character around the screen; notice that the player cannot leave the ``||scene:tile map||``
+3. Identify where the different colors of the ``||scene:tile map||``
+are assigned a different ``||images:Image||``
+4. Move the character around the screen;
+notice that the player cannot leave the ``||scene:tile map||``
 
 ```typescript
 enum SpriteKind {
@@ -134,9 +142,14 @@ scene.setTile(8, img`
 
 ## Student Task #1: Starter Scene
 
-1. Create a new project. Create a new sprite, and set it to be a ``||controller:controlled sprite||``
-2. Create a new ``||scene:tile map||``. Use at least **three** different colors
-3. Create a design for each color used in the ``||scene:tile map||``. For at least one of the tile images, make the image something the player should **not** be able to walk on, like water or a large rock
+1. Create a new project. Create a new sprite,
+and set it to be a ``||controller:controlled sprite||``
+2. Create a new ``||scene:tile map||``.
+Use at least **three** different colors
+3. Create a design for each color used in the ``||scene:tile map||``.
+For at least one of the tile images,
+make the image something the player should **not** be able to walk on,
+like water or a large rock
 
 ### ~hint
 
@@ -150,11 +163,16 @@ You can try to replicate one of these, or create one entirely of your own design
 
 ## Concept: Walls
 
-Tiles can be set to be ``||scene:walls||``, which sprites usually won't be able to move through. This allows maps to be interactive, and set boundaries for the players to explore.
+Tiles can be set to be ``||scene:walls||``,
+which sprites usually won't be able to move through.
+This allows maps to be interactive,
+and set boundaries for the players to explore.
 
 ### ~hint
 
-If you do not want a sprite to be confined to the ``||scene:tile map||`` or blocked by ``||scene:walls||``, the ``||sprites:Ghost||`` flag can be set. ``||sprites:Ghosts||`` can go through walls, and escape the ``||scene:tile map||``.
+If you do not want a sprite to be confined to the ``||scene:tile map||``
+or blocked by ``||scene:walls||``, the ``||sprites:Ghost||`` flag can be set.
+``||sprites:Ghosts||`` can go through walls, and escape the ``||scene:tile map||``.
 
 ### ~
 
@@ -198,17 +216,24 @@ scene.setTile(7, sprites.castle.tileGrass1);
 
 ### ~hint
 
-Note that the ``||scene:cameraFollowSprite||`` function was used to make the camera follow ``||variables:mySprite||``; if you have a large ``||scene:tile map||``, you will have to modify the camera to see different parts of it.
+Note that the ``||scene:cameraFollowSprite||`` function was used to make
+the camera follow ``||variables:mySprite||``;
+if you have a large ``||scene:tile map||``,
+you will have to modify the camera to see different parts of it.
 
 ### ~
 
 ## Student Task #2: Interactive Scene
 
 1. Start with the code from task #1
-2. In your scene, set the tile that the player should **not** be able to walk on to be a ``||scene:wall||``
+2. In your scene, set the tile that the player should **not**
+be able to walk on to be a ``||scene:wall||``
 3. Use ``||scene:cameraFollowSprite||`` to make the camera follow the player sprite
-4. Expand the ``||scene:tile map||`` image to **16 x 16**, and fill it in to make a larger ``||scene:tile map||`` for the player to explore
-5. **Challenge:** create at least **two** other types of ``||scene:Tiles||``, and use them in your ``||scene:tile map||``. Make at least one of them be a different type of ``||scene:Wall||``
+4. Expand the ``||scene:tile map||`` image to **16 x 16**,
+and fill it in to make a larger ``||scene:tile map||`` for the player to explore
+5. **Challenge:** create at least **two** other types of ``||scene:Tiles||``,
+and use them in your ``||scene:tile map||``.
+Make at least one of them be a different type of ``||scene:Wall||``
 
 ## What did we learn?
 
@@ -217,7 +242,9 @@ Note that the ``||scene:cameraFollowSprite||`` function was used to make the cam
 
 ### ~hint
 
-Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/structure/tilemaps-problems) for this section to review the material and practice the concepts introduced in this section.
+Before moving on to the next lesson, it is recommended that you check out the
+[selected problems](/courses/csintro3/structure/tilemaps-problems) for this section
+to review the material and practice the concepts introduced in this section.
 
 ### ~
 
@@ -227,11 +254,17 @@ Before moving on to the next lesson, it is recommended that you check out the [s
 
 ### Creating an Enemy
 
-``||scene:Tile Maps||`` will not be used in the example case study game. Instead, this section will include another ``||sprites:Sprite||`` that needs to be created: an ``||sprites:Enemy||``!
+``||scene:Tile Maps||`` will not be used in the example case study game.
+Instead, this section will include another ``||sprites:Sprite||`` that
+needs to be created: an ``||sprites:Enemy||``!
 
-Create a sprite of ``||sprites:Kind||`` ``||sprites:Enemy||``. Set their ``||sprites:x||`` position to be the **same** as the ``||variables:player||``s ``||sprites:x||`` position, and it's ``||sprites:y||`` position to 20. Create a unique image for your new enemy.
+Create a sprite of ``||sprites:Kind||`` ``||sprites:Enemy||``.
+Set their ``||sprites:x||`` position to be the **same** as the
+``||variables:player||``s ``||sprites:x||`` position, and it's
+``||sprites:y||`` position to 20. Create a unique image for your new enemy.
 
-Set the ``||variables:enemy||`` to have a ``||sprites:vy||`` of 10, so that it moves down the screen slowly.
+Set the ``||variables:enemy||`` to have a ``||sprites:vy||`` of 10,
+so that it moves down the screen slowly.
 
 ### Solution
 

@@ -2,13 +2,18 @@
 
 This section contains a number of selected problems for the Arrays of Numbers section.
 
-It is recommended that you review the problems, and complete a few before moving on to the next section.
+It is recommended that you review the problems, and complete a few before
+moving on to the next section.
 
 ## Problem #1: Minor Refactoring
 
-**Code Refactoring** is the process of restructuring (changing) code without changing the external behavior. This can be done for a variety of reasons, but a common one is to make complicated or long code clearer.
+**Code Refactoring** is the process of restructuring (changing)
+code without changing the external behavior.
+This can be done for a variety of reasons,
+but a common one is to make complicated or long code clearer.
 
-**Refactor** the code snippet below to use an ``||arrays:Array||`` of numbers. Ideally, there should be only a single ``console.log`` in your final solution.
+**Refactor** the code snippet below to use an ``||arrays:Array||`` of numbers.
+Ideally, there should be only a single ``console.log`` in your final solution.
 
 ```typescript
 let a1: number = 5;
@@ -26,7 +31,8 @@ console.log("" + a5);
 
 ## Problem #2: Some Setup Required
 
-Recreate the code snippet below, and add **assignment statements** to make ``||variables:arr||`` store the values in the table below.
+Recreate the code snippet below, and add **assignment statements** to make
+``||variables:arr||`` store the values in the table below.
 
 | Index in arr  | Value |
 | :-----------: | :---: |
@@ -45,7 +51,8 @@ let arr: number[] = [1, 0, 0, 1];
 
 ``||arrays:Arrays||`` allow you to keep track of a large number of values at once. 
 
-Start with the code in the snippet below, and fill out ``||functions:iFoundThree||`` to behave as the comment describes.
+Start with the code in the snippet below, and fill out ``||functions:iFoundThree||``
+to behave as the comment describes.
 
 ```typescript
 /**
@@ -66,15 +73,20 @@ console.log("Done!");
 
 ### ~hint
 
-The ``||functions:iFoundThree||`` function should iterate through all elements of ``||variables:values||``, and compare each element to the number 3. Whenever a value is equal to three, it should print to the console.
+The ``||functions:iFoundThree||`` function should iterate through all elements of
+``||variables:values||``, and compare each element to the number 3.
+Whenever a value is equal to three, it should print to the console.
 
 ### ~
 
 ## Problem #4: Sum of These
 
-``||arrays:Arrays||`` are often used to store a variety of information. Sometimes, each element of this information is useful on it's own, but often the information will be more useful when viewed as a whole.
+``||arrays:Arrays||`` are often used to store a variety of information.
+Sometimes, each element of this information is useful on it's own,
+but often the information will be more useful when viewed as a whole.
 
-Review the code snippet below, and then fill ``||functions:sum||`` as described in it's comment.
+Review the code snippet below, and then fill ``||functions:sum||``
+as described in it's comment.
 
 ```typescript
 /**
@@ -101,9 +113,12 @@ A sum is the result of adding two or more values numbers.
 
 ## Problem #5: Contains a Problem
 
-In the snippet below, ``||functions:contains||`` is intended to check if a given value is found in the given array.
+In the snippet below, ``||functions:contains||`` is intended to check
+if a given value is found in the given array.
 
-Unfortunately, it has a bug that causes it to not always work correctly. Review the code, and identify when it will fail to return the correct thing, and how to fix it.
+Unfortunately, it has a bug that causes it to not always work correctly.
+Review the code, and identify when it will fail to return the correct thing,
+and how to fix it.
 
 ```typescript
 /**

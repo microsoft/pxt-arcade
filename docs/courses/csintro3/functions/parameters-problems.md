@@ -2,12 +2,14 @@
 
 This section contains a number of selected problems for the Parameters section.
 
-It is recommended that you review the problems, and complete a few before moving on to the next section.
+It is recommended that you review the problems, and complete a few before
+moving on to the next section.
 
 ## Problem #1: Urgent Message!
 
 Implement a ``||functions:function||`` called ``||functions:urgentLog||`` that accepts a
-string called ``||variables:message||`` and a number called ``||variables:numOfTimes||`` as parameters.
+string called ``||variables:message||`` and a number called ``||variables:numOfTimes||``
+as parameters.
 
 The function should take the ``||variables:message||``, and ``log`` it to the console a
 total of ``||variables:numOfTimes||`` times.
@@ -20,8 +22,9 @@ The `Caps Lock` key on a keyboard is used to modify whether the letters you type
 Implement a ``||functions:function||`` called ``||functions:printHello||`` that accepts
 a ``||logic:boolean||`` value called ``||variables:capsLock||``.
 
-``||logic:If||`` ``||variables:capsLock||`` is ``||logic:true||``, the ``||functions:function||``
-should print ``HELLO WORLD`` to the console; otherwise, it should print ``hello world``.
+``||logic:If||`` ``||variables:capsLock||`` is ``||logic:true||``,
+the ``||functions:function||`` should print ``HELLO WORLD`` to the console;
+otherwise, it should print ``hello world``.
 
 ## Problem #3: Pizza Place
 

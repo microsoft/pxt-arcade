@@ -1,14 +1,25 @@
 # Appendix: Switch Statement
 
-When implementing powerups in the case study game, the same ``||sprites:Kind||`` was used to maintain the same behavior for all the different powerups. The PowerUp type was kept seperate, and obtained using the ``powerUps.getType`` function, which took in a sprite and returned the type of power up that it represented.
+When implementing powerups in the case study game,
+the same ``||sprites:Kind||`` was used to maintain the
+same behavior for all the different powerups.
+The PowerUp type was kept seperate, and obtained using the ``powerUps.getType``
+function, which took in a sprite and returned the type of power up that it represented.
 
-This structure simplifed the behavior of the power ups - as they shared behavior outside of the bonus they gave the player - but required a long chain of ``||logic:if ... else if||`` checks in the event, with each ``||logic:if condition||`` simply checking the type returned by ``powerUps.getType`` against a different type of power up.
+This structure simplifed the behavior of the power ups -
+as they shared behavior outside of the bonus they gave the player -
+but required a long chain of ``||logic:if ... else if||`` checks in the event,
+with each ``||logic:if condition||`` simply checking the type returned by
+``powerUps.getType`` against a different type of power up.
 
-To more appropriately handle a situation like this, the ``switch`` statement can be used. This accepts a value, uses that value to select an appropriate ``case`` to run.
+To more appropriately handle a situation like this, the ``switch`` statement can be used.
+This accepts a value, uses that value to select an appropriate ``case`` to run.
 
 ## Concept: Switch-Case Syntax
 
-The ``switch`` statement takes a value and checks that value against a series of ``case``s. Combined, this is often called a ``switch case``, as neither statement is particularly useful without the other.
+The ``switch`` statement takes a value and checks that value against a series of ``case``s.
+Combined, this is often called a ``switch case``,
+as neither statement is particularly useful without the other.
 
 ```typescript-ignore
 switch (valueToCheck) {
@@ -24,7 +35,11 @@ switch (valueToCheck) {
 }
 ```
 
-In this case, ``valueToCheck`` is the value that the switch case will match the case for: in the case study, this would be the ``type`` of the power up. ``FirstCase`` and ``SecondCase`` are two of the ``cases`` being checked: these would be two of the different ``PowerUpType``s, like ``PowerUpType.Health`` and ``PowerUpType.Score``. 
+In this case, ``valueToCheck`` is the value that the switch case will match the case for:
+in the case study, this would be the ``type`` of the power up.
+``FirstCase`` and ``SecondCase`` are two of the ``cases`` being checked:
+these would be two of the different ``PowerUpType``s,
+like ``PowerUpType.Health`` and ``PowerUpType.Score``. 
 
 ## Example #1: What Number?
 
@@ -73,9 +88,15 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Concept: Fall Through and Default Case
 
-The ``break;`` statement at the end of each case is used to stop running the ``switch case``, but is optional. Without it, the switch case will continue you "fall through" the cases until it reaches the end of the final ``case`` or a ``break`` statement. This can be used to handle multiple cases in the same way.
+The ``break;`` statement at the end of each case is used to stop running the
+``switch case``, but is optional.
+Without it, the switch case will continue you "fall through" the cases until
+it reaches the end of the final ``case`` or a ``break`` statement.
+This can be used to handle multiple cases in the same way.
 
-Additionally, a ``default`` case can be added, which will run only if no other case was selected. This can be thought of as an ``||logic:else||`` branch for the ``||logic:if .. else if||`` blocks.
+Additionally, a ``default`` case can be added, which will match any value.
+This can be thought of as an ``||logic:else||`` branch for the
+``||logic:if .. else if||`` blocks.
 
 ## Example #2: Using Fall Through and Default
 
@@ -109,8 +130,10 @@ switch (myNumber) {
 ## Student Task #2: More Options
 
 1. Start with the code from task #1
-2. Add cases for 3, 4, and 5. These should ``||game:splash||`` "My number is three, four, or five!"
-3. Add a default case that will ``||game:splash||`` "That is a lot of points!"
+2. Add cases for 3, 4, and 5. These should ``||game:splash||``
+"My number is three, four, or five!"
+3. Add a default case that will ``||game:splash||``
+"That is a lot of points!"
 
 ## Concept: Strings
 
@@ -118,16 +141,22 @@ Strings can also be used as values in the switch case.
 
 ### ~hint
 
-In JavaScript, it is typically best to use the switch case with only numbers and strings. For other values, they are compared based of strict equality - that is, that the values occupy the same location in memory - which is rarely the intended behavior.
+In JavaScript, it is typically best to use the switch case with only numbers and strings.
+For other values, they are compared based of strict equality -
+that is, that the values occupy the same location in memory -
+which is rarely the intended behavior.
 
 ### ~
 
 ## Example #3: Switch Mystery
 
 1. Review the code below, and copy it into a new project
-2. Before running the code, identify what the expected output is for each of the three ``||variables:mysteryInput``s
+2. Before running the code, identify what the expected output is
+for each of the three ``||variables:mysteryInput``s
 3. Identify how the switch case is used to assign ``||variables:output||`` different values
-4. Uncomment the first commented assignment of ``||variables:mysteryInput||`` and run the code. Check the code against your expected output from step 2
+4. Uncomment the first commented assignment of ``||variables:mysteryInput||``
+and run the code.
+Check the code against your expected output from step 2
 5. Repeat step 4 for the second and third assignments of ``||variables:mysteryInput||``
 
 ```typescript
@@ -177,5 +206,3 @@ if (input == "good") {
     game.splash("I don't understand.");
 }
 ```
-
-### TODO: After adding case study throughout, show the refactoring of the powerups to switch case here

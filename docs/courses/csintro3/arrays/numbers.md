@@ -1,8 +1,10 @@
 # Activity: Arrays of Numbers
 
-At the end of the previous course, ``||arrays:Arrays||`` were introduced as a way to store multiple related values.
+At the end of the previous course, ``||arrays:Arrays||`` were introduced
+as a way to store multiple related values.
 
-In JavaScript, ``||arrays:Arrays||`` have a simple syntax, allowing them to be used as an easy way to store multiple values.
+In JavaScript, ``||arrays:Arrays||`` have a simple syntax,
+allowing them to be used as an easy way to store multiple values.
 
 ## Concept: Array Syntax
 
@@ -14,9 +16,13 @@ For example, an array of numbers can be created as follows:
 let arr: number[] = [];
 ```
 
-To create an array of values, you simply add square brackets following the type of the values that will be stored in the ``||arrays:array||``: ``number[]`` is the type for a ``||arrays:number array||``.
+To create an array of values, you simply add square brackets following
+the type of the values that will be stored in the ``||arrays:array||``:
+``number[]`` is the type for a ``||arrays:number array||``.
 
-Square brackets are also used to set and get values in an array. The following snippet will **set** the value at index 0 to be 5, and then **get** that value and splash it on screen.
+Square brackets are also used to set and get values in an array.
+The following snippet will **set** the value at index 0 to be 5,
+and then **get** that value and splash it on screen.
 
 ```typescript
 let arr: number[] = [];
@@ -36,7 +42,8 @@ let arr3: number = 2;
 let arr4: number = 1;
 ```
 
-This will store 5 ``||variables:variables||``. Using an ``||arrays:Array||`` could look similar to the code below.
+This will store 5 ``||variables:variables||``.
+Using an ``||arrays:Array||`` could look similar to the code below.
 
 ```typescript-ignore
 let arr: number[] = [];
@@ -71,14 +78,22 @@ for (let i = 0; i < 5; i++) {
 ## Student Task #1: Increment Each Value
 
 1. Start with the code from example #1
-2. After a value is ``||game:splash||``ed in the second ``||loops:loop||``, increment the value stored at that index
-3. Add a **third** ``||loops:for||`` loop, which will splash the **new value** stored in each index in the previous step. The first message splashed from this should be ``0 is now 1``
+2. After a value is ``||game:splash||``ed in the second ``||loops:loop||``,
+increment the value stored at that index
+3. Add a **third** ``||loops:for||`` loop,
+which will splash the **new value** stored in each index in the previous step.
+The first message splashed from this should be ``0 is now 1``
 
 ## Concept: Adding Initial Values
 
-The square brackets used to create a new array also allow for a quick declaration of the initial contents of the array. This can be done by adding comma ``,`` separated values between the opening ``[`` and closing ``]`` brackets.
+The square brackets used to create a new array also allow for a quick declaration
+of the initial contents of the array.
+This can be done by adding comma ``,``
+separated values between the opening ``[`` and closing ``]`` brackets.
 
-When creating an array with initial values in it, the first value listed will be stored at index 0, the second value will be stored at index 1, and so on. 
+When creating an array with initial values in it,
+the first value listed will be stored at index 0,
+the second value will be stored at index 1, and so on. 
 
 ## Example #2: Quick Creation
 
@@ -95,9 +110,11 @@ for (let i = 0; i < 3; i++) {
 
 ### ~hint
 
-The way arrays were created in the first example is the same arrays are created in this example.
+The way arrays were created in the first example is the same arrays
+are created in this example.
 
-The only difference is that the first example's array started off **empty**, as there were no values between the square brackets.
+The only difference is that the first example's array started off **empty**,
+as there were no values between the square brackets.
 
 ### ~
 
@@ -105,21 +122,29 @@ The only difference is that the first example's array started off **empty**, as 
 
 In this task, use the new way to create an array that contains elements to start with.
 
-1. In a new project, create two new ``||arrays:arrays||``, ``||variables:evens||`` and ``||variables:odds||``
-2. Initialize ``||variables:evens||`` with the **even** values between 0 to 10 (including 0 and 10)
+1. In a new project, create two new ``||arrays:arrays||``,
+``||variables:evens||`` and ``||variables:odds||``
+2. Initialize ``||variables:evens||`` with the **even** values
+between 0 to 10 (including 0 and 10)
 3. Initialize ``||variables:odds||`` with the **odd** between 0 and 10
-4. ``||game:game.splash||`` each value in ``||variables:evens||`` and ``||variables:odds||``
+4. ``||game:game.splash||`` each value in ``||variables:evens||``
+and ``||variables:odds||``
 
 ## Concept: Array ``||arrays:Length||``
 
-The ``||arrays:array length||`` property can be used to identify how many values are contained in an array. Even when the length of an array is predetermined, it is common to refer to the ``||arrays:array.length||`` property for both consistency and readability.
+The ``||arrays:array length||`` property can be used to identify how many
+values are contained in an array.
+Even when the length of an array is predetermined,
+it is common to refer to the ``||arrays:array.length||`` property for
+both consistency and readability.
 
 ## Example #3: How Many Numbers?
 
 1. Review the code below
 2. Identify how many values are contained within each array
 3. Identify the ``||arrays:length||`` of each array
-4. **Challenge:** identify how the ``||arrays:length||`` of each array corresponds to the last index in the array that contains a value
+4. **Challenge:** identify how the ``||arrays:length||`` of each array
+corresponds to the last index in the array that contains a value
 
 ```typescript
 let a: number[] = [1, 2, 3, 4];
@@ -164,16 +189,24 @@ arr[3] = 100000;
 game.splash(arr.length + "");
 ```
 
-The result may seem surprising. Why is the length of ``||variables:arr||`` 4, even though there is only one value in it?
+The result may seem surprising. Why is the length of ``||variables:arr||`` 4,
+even though there is only one value in it?
 
-The ``||arrays:length||`` of an array is determined by the index of the last element, not an exact count of the number of indices assigned a value. In this case, index ``3`` has been assigned a value, so the values considered to be 'within' the array are indices ``0``, ``1``, ``2``, and ``3``, a total of 4 elements.
+The ``||arrays:length||`` of an array is determined by the index of the last element,
+not an exact count of the number of indices assigned a value.
+In this case, index ``3`` has been assigned a value,
+so the values considered to be 'within' the array are indices ``0``, ``1``, ``2``,
+and ``3``, a total of 4 elements.
 
 ### ~
 
 ## What did we learn
 
-1. In your own words, explain why an ``||arrays:array||`` can often be more useful than a group of ``||variables:variables||``.
-2. Given an array of numbers ``||variables:arr||`` and a ``||loops:for||`` loop declared like the one below, what is the difference between ``||variables:i||`` and ``||variables:arr[i]||``?
+1. In your own words, explain why an ``||arrays:array||`` can often be more useful
+than a group of ``||variables:variables||``.
+2. Given an array of numbers ``||variables:arr||`` and a ``||loops:for||`` loop
+declared like the one below,
+what is the difference between ``||variables:i||`` and ``||variables:arr[i]||``?
 
 ```typescript-ignore
 for (let i = 0; i < arr.length; i++) {
@@ -187,17 +220,29 @@ for (let i = 0; i < arr.length; i++) {
 
 ### New Bonus!
 
-Currently, the game lacks a feeling of progression; no matter how long you play, the only things that will permanently change are the values for ``||info:score||`` and ``||info:life||``.
+Currently, the game lacks a feeling of progression; no matter how long you play,
+the only things that will permanently change are the values for ``||info:score||``
+and ``||info:life||``.
 
-One way to address this is to add a way for the player to grow more powerful as they play the game. Add a new type of ``PowerUp`` called ``EnergyUp``, which should add ``1`` to the ships maximum energy to allow the player to fire more lasers at once before having to wait for them to recharge.
+One way to address this is to add a way for the player to grow more powerful as
+they play the game.
+Add a new type of ``PowerUp`` called ``EnergyUp``,
+which should add ``1`` to the ships maximum energy to allow the player to fire
+more lasers at once before having to wait for them to recharge.
 
-To do this, you will need to add the new power up to the ``PowerUpType`` enum, and update the ``||arrays:availablePowerUps||`` array in the ``powerups`` namespace to include the new possible powerup.
+To do this, you will need to add the new power up to the ``PowerUpType`` enum,
+and update the ``||arrays:availablePowerUps||`` array in the ``powerups`` namespace
+to include the new possible powerup.
 
-Finally, in the ``||sprites:overlap event||`` between ``Player`` and ``PowerUp``, add another ``||logic:else if||`` for when the ``PowerUp`` is the new power up, which should say "More Energy!" and increase ``||variables:ship.maxCharge||``.
+Finally, in the ``||sprites:overlap event||`` between ``Player`` and ``PowerUp``,
+add another ``||logic:else if||`` for when the ``PowerUp`` is the new power up,
+which should say "More Energy!" and increase ``||variables:ship.maxCharge||``.
 
 ### Draw My Energy
 
-Currently, there is no indication of how much energy the player's ship has, besides when you run out and it doesn't fire a ``Laser`` anymore. To do so, add the following snippet to the ``status`` namespace:
+Currently, there is no indication of how much energy the player's ship has,
+besides when you run out and it doesn't fire a ``Laser`` anymore. To do so,
+add the following snippet to the ``status`` namespace:
 
 ```typescript-ignore
 game.onPaint(function () {
@@ -216,7 +261,10 @@ game.onPaint(function () {
 });
 ```
 
-This uses the ``||game:on paint||`` event, which occurs immediately before any ``||sprites:Sprites||`` are drawn onto the screen. With this, whenever the screen is updated, the current energy will be printed in the **bottom left corner** of the screen. Feel free to modify it to your liking!
+This uses the ``||game:on paint||`` event, which occurs immediately before any
+``||sprites:Sprites||`` are drawn onto the screen. With this,
+whenever the screen is updated, the current energy will be printed in the
+**bottom left corner** of the screen. Feel free to modify it to your liking!
 
 ### Solution
 

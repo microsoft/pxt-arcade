@@ -1,16 +1,25 @@
 # Activity: Namespaces and Comments
 
-As the code we write starts to get to be dozens of lines long (or more), it is important to be able to make sure that the code remains easy to follow and understand.
+As the code we write starts to get to be dozens of lines long (or more),
+it is important to be able to make sure that the code remains easy to follow and understand.
 
-In this lesson, two ways to approach this issue will be introduced: namespaces, which allow code to be separated into discrete sections, and comments, which allow for code to be documented for anyone who will read it in the future.
+In this lesson, two ways to approach this issue will be introduced:
+namespaces, which allow code to be separated into discrete sections,
+and comments, which allow for code to be documented for anyone who will
+read it in the future.
 
 ## Concept: Commenting Your Own Code
 
-Sharing code in @boardname@ allows for the code you write to be used in other projects - whether those projects are your own, your friends, or anyone else you give the link to.
+Sharing code in @boardname@ allows for the code you write to be used in other projects -
+whether those projects are your own, your friends, or anyone else you give the link to.
 
-There are still some important topics to cover before the code we write can be written in a way that is easy to use without causing issues. One of those issues is making the code easy to understand, so that others can use it without having to ask questions about every detail of the code.
+There are still some important topics to cover before the code we write can be written
+in a way that is easy to use without causing issues.
+One of those issues is making the code easy to understand,
+so that others can use it without having to ask questions about every detail of the code.
 
-Comments allow developers to leave **documentation** for those reading their code: whether that be someone else who's never seen it before, or themselves in a year or two.
+Comments allow developers to leave **documentation** for those reading their code:
+whether that be someone else who's never seen it before, or themselves in a year or two.
 
 In JavaScript, there are two different formats for comments:
 
@@ -27,11 +36,18 @@ game.splash("//hello!//") // Another single line comments
 /* Also works with a single line */
 ```
 
-When a line contains two slashes in a row (``//``) that are not in a string, that signifies that the line is finished, and anything else on that line is simply a comment - something for humans to read, that the computer will otherwise ignore.
+When a line contains two slashes in a row (``//``) that are not in a string,
+that signifies that the line is finished,
+and anything else on that line is simply a comment -
+something for humans to read, that the computer will otherwise ignore.
 
-Similarly, multiline comments (which start with ``/*`` and end with ``*/``) allow for sections of text that the computer will ignore. Anything between the start and end will not be run by the program, and only intended as an annotation for the user.
+Similarly, multiline comments (which start with ``/*`` and end with ``*/``)
+allow for sections of text that the computer will ignore.
+Anything between the start and end will not be run by the program,
+and only intended as an annotation for the user.
 
-In this course, multiline comments will use the style shown below, so that it is easier to identify where the comments start and end.
+In this course, multiline comments will use the style shown below,
+so that it is easier to identify where the comments start and end.
 
 ```typescript
 /**
@@ -45,13 +61,19 @@ In this course, multiline comments will use the style shown below, so that it is
 
 Namespaces are used to break up code into distinct topics.
 
-Breaking up the code into smaller sections (namespaces) allow for several issues to be solved:
+Breaking up the code into smaller sections (namespaces)
+allow for several issues to be solved:
 
-1. It can be easier to identify where a particular feature is implemented, as the code related to that feature can be kept in a single location
-2. The different features can work in their own area, with their own variables that are not needed elsewhere in the code
-3. If multiple people are writing code for the same project, the code can be separated into the different tasks they are working on, without having to worry about variable names conflicting
+1. It can be easier to identify where a particular feature is implemented,
+as the code related to that feature can be kept in a single location
+2. The different features can work in their own area,
+with their own variables that are not needed elsewhere in the code
+3. If multiple people are writing code for the same project,
+the code can be separated into the different tasks they are working on,
+without having to worry about variable names conflicting
 
-Creating a namespace is fairly simple: the ``names`` namespace is created with the following snippet
+Creating a namespace is fairly simple: the ``names`` namespace
+is created with the following snippet
 
 ```typescript
 namespace names {
@@ -75,23 +97,35 @@ namespace names {
 }
 ```
 
-The behavior in this case is no different from if the values were placed outside the namespace; however, the variables ``||variables:bill||`` and ``||variables:amy||`` are not accessible outside the ``names`` namespace
+The behavior in this case is no different from if the values were placed
+outside the namespace; however,
+the variables ``||variables:bill||`` and ``||variables:amy||``
+are not accessible outside the ``names`` namespace
 
 ## Student Task #1: Name Length
 
 1. Start with the code from example #1
 2. Add another namespace, ``namelength``
-3. In the ``namelength`` namespace, assign ``||variables:bill||`` the number 5, and ``||variables:amy||`` the value 6 (these numbers represent the length of their full names)
+3. In the ``namelength`` namespace, assign ``||variables:bill||`` the number 5,
+and ``||variables:amy||`` the value 6
+(these numbers represent the length of their full names)
 4. Log to the console both values
-5. Run the code, and verify that it runs without any problem (even though there are now two variables in each namespace with the same name)
+5. Run the code, and verify that it runs without any problem
+(even though there are now two variables in each namespace with the same name)
 
 ## Concept: Export
 
-By default, any variables declared inside of a namespace are only accessible within that namespace. This is helpful because it allows for variables to be "hidden" in the namespace if they are only needed there - this way, only the values that are useful outside of the namespace are accessible.
+By default, any variables declared inside of a namespace are only accessible
+within that namespace. This is helpful because it allows for variables to be
+"hidden" in the namespace if they are only needed there - this way, only the
+values that are useful outside of the namespace are accessible.
 
-The ``export`` keyword can be used to make the variables accessible outside of the namespace.
+The ``export`` keyword can be used to make the variables accessible outside
+of the namespace.
 
-After ``export``ing the variable, it can be referenced outside of the namespace by adding the namespace and a dot ``.`` before the variable name; that is, ``namespaceName.variableName``.
+After ``export``ing the variable, it can be referenced outside of the namespace
+by adding the namespace and a dot ``.`` before the variable name;
+that is, ``namespaceName.variableName``.
 
 ## Example #2: Exporting Names
 
@@ -113,7 +147,9 @@ game.splash("Hello " + names.amy);
 
 1. Start with the code from task #1, and add in the changes from example #2
 2. Export both variables in ``nameslength``
-3. Change the ``||game:game.splash||``es so that they will splash the variables for each name from both the ``names`` and ``namelength`` namespaces in the following messages:
+3. Change the ``||game:game.splash||``es so that they will splash the variables
+for each name from both the ``names`` and ``namelength`` namespaces in the
+following messages:
     * "Billy has 5 letters"
     * "Amelia has 6 letters"
 
@@ -122,10 +158,11 @@ game.splash("Hello " + names.amy);
 1. Why is the ``export`` keyword used within namespaces?
 2. Why are comments useful as code starts to get complex?
 
-
 ### ~hint
 
-Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/structure/namespaces-problems) for this section to review the material and practice the concepts introduced in this section.
+Before moving on to the next lesson, it is recommended that you check out the
+[selected problems](/courses/csintro3/structure/namespaces-problems) for this section
+to review the material and practice the concepts introduced in this section.
 
 ### ~
 
@@ -135,29 +172,50 @@ Before moving on to the next lesson, it is recommended that you check out the [s
 
 ### Separate Sprite Images
 
-As the game gets increasingly complicated, it becomes increasingly important to separate out the different portions of the code. One portion that can be helpful to separate are the images for the different ``||sprites:Sprites||``; by keeping them in a different namespace, there can be a single location for all the images, without interrupting the rest of the code.
+As the game gets increasingly complicated, it becomes increasingly important
+to separate out the different portions of the code.
+One portion that can be helpful to separate are the images for the different
+``||sprites:Sprites||``; by keeping them in a different namespace,
+there can be a single location for all the images,
+without interrupting the rest of the code.
 
-Create a new namespace, ``spritesheet``, which will store all of the images used in this game. In it, create and export three images (the type for images in @boardname@ is ``||images:Image||``):
+Create a new namespace, ``spritesheet``,
+which will store all of the images used in this game.
+In it, create and export three images
+(the type for images in @boardname@ is ``||images:Image||``):
 
-* ``||variables:player||``, which stores the ``||images:Image||`` for the player's space ship
-* ``||variables:enemy||``, which stores the ``||images:Image||`` for the enemy space ship
-* ``||variables:asteroid||``, which stores the ``||images:Image||`` for the asteroids
+* ``||variables:player||``, which stores the
+``||images:Image||`` for the player's space ship
+* ``||variables:enemy||``, which stores the
+``||images:Image||`` for the enemy space ship
+* ``||variables:asteroid||``, which stores the
+``||images:Image||`` for the asteroids
 
 ### The ship and enemy Namespaces
 
-It's time to create a namespace for the player's space ship. Create a new namespace, ``ship``, and move the code related to the player's ship into that namespace: this should include the code that:
+It's time to create a namespace for the player's space ship.
+Create a new namespace, ``ship``, and move the code related
+to the player's ship into that namespace: this should include the code that:
 
 * Creates the ``||variables:player||`` ``||sprites:Sprite||``
-* Sets the ``||variables:player||``'s initial ``||sprites:x||`` and ``||sprites:y||`` positions
-* Makes the ``||variables:player||`` be controlled with the directional buttons
+* Sets the ``||variables:player||``'s initial ``||sprites:x||`` and
+``||sprites:y||`` positions
+* Makes the ``||variables:player||`` be controlled with the
+directional buttons
 
-After moving the code, ``export`` ``||variables:player||``, so that it will be accessible outside of the ``ship`` namespace. Make sure to update any sections that use the ``||variables:player||`` to instead refer to ``ship.player``.
+After moving the code, ``export`` ``||variables:player||``,
+so that it will be accessible outside of the ``ship`` namespace.
+Make sure to update any sections that use the ``||variables:player||``
+to instead refer to ``ship.player``.
 
-Create one last new namespace, ``enemy``, which contains the code relating to the ``||variables:enemy||``.
+Create one last new namespace, ``enemy``,
+which contains the code relating to the ``||variables:enemy||``.
 
 ### Documentation
 
-Document the game a bit by adding a short comment to each of the three namespaces added in this section: ``spritesheet``, ``ship``, and ``enemy``. These comments should give an indication of what each namespace contains.
+Document the game a bit by adding a short comment to each of the
+three namespaces added in this section: ``spritesheet``, ``ship``, and ``enemy``.
+These comments should give an indication of what each namespace contains.
 
 For example, a comment for the ``asteroids`` namespace might look like the following:
 

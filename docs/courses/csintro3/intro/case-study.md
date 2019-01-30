@@ -2,17 +2,31 @@
 
 This course is about learning to program through making games using JavaScript.
 
-The lessons are typically based on very short pieces of code, to teach the concepts in bite-sized snippets. These short snippets allow us to focus on the new behaviors, but it will not always be obvious how the different snippets can be integrated into a final product.
+The lessons are typically based on very short pieces of code, to teach the concepts
+in bite-sized snippets.
+These short snippets allow us to focus on the new behaviors,
+but it will not always be obvious how the different snippets can be integrated
+into a final product.
 
-To make sure this goal stays in sight throughout the course, most lessons include a **Case Study** section at the end, with small tasks that will be incorporated into the game.
+To make sure this goal stays in sight throughout the course,
+most lessons include a **Case Study** section at the end,
+with small tasks that will be incorporated into the game.
 
-Following these sections throughout the course will give experience turning a rough concept - of a game with asteroids flying across the screen at random - into a complete, full featured game.
+Following these sections throughout the course will give experience turning a rough concept -
+of a game with asteroids flying across the screen at random -
+into a complete, full featured game.
 
-The first snippets below show the beginning and end of this process. The initial code is what you will start with, and add to each lesson.
+The first snippets below show the beginning and end of this process.
+The initial code is what you will start with, and add to each lesson.
 
-Below that snippet is an example of the final product, including many of the "Challenge" features. If you get stuck when implementing any of the sections, feel free to take a peek at the solution below the problem, or return here and look at the final goal.
+Below that snippet is an example of the final product,
+including many of the "Challenge" features.
+If you get stuck when implementing any of the sections,
+feel free to take a peek at the solution below the problem,
+or return here and look at the final goal.
 
-The point of the case study is to learn how the code works together while building up a larger game, not as a challenge for each individual topic.
+The point of the case study is to learn how the code works together while building
+up a larger game, not as a challenge for each individual topic.
 
 ## Initial Code
 

@@ -2,7 +2,8 @@
 
 This section contains a number of selected problems for the Operators section.
 
-It is recommended that you review the problems, and complete a few before moving on to the next section.
+It is recommended that you review the problems, and complete a few before
+moving on to the next section.
 
 ## Problem #1: Random Modification
 
@@ -13,10 +14,12 @@ game.splash("Value A is " + n);
 game.splash("Value B is " + n);
 ```
 
-The code above will output a random number between ``1`` and ``10`` twice, with different names ("Value A" and "Value B") for each
+The code above will output a random number between ``1`` and ``10`` twice,
+with different names ("Value A" and "Value B") for each
 
 1. Start with the snippet above
-2. Replace the ``...`` with a line of code that changes the value assigned to ``||variables:n||`` so that the second value ``||game:splashed||`` matches the expected output
+2. Replace the ``...`` with a line of code that changes the value assigned to
+``||variables:n||`` so that the second value ``||game:splashed||`` matches the expected output
 
 |           | Expected Output                                               |
 | :-------: | :------------------------------------------------------------ |
@@ -53,13 +56,14 @@ num++;
 console.log("j: " + num);
 ```
 
-After walking through the code, run it and check for any errors. If there were any values that did not match what you expected, start from the first error and correct any mistakes.
+After walking through the code, run it and check for any errors.
+If there were any values that did not match what you expected,
+start from the first error and correct any mistakes.
 
 ## Problem #3: What Did You Say?
 
-
-Replace the ``...`` in the snippet below with a line of code so the value logged is "The user says: " followed by the value the user inputted.
-
+Replace the ``...`` in the snippet below with a line of code so the value logged is
+"The user says: " followed by the value the user inputted.
 
 ```typescript-ignore
 let output: string = "The user says: ";
@@ -70,11 +74,13 @@ console.log(output);
 
 ## Problem #4: What is This Assignment?
 
-In the code snippet below, change the values used in the assignment operators to make each ``console.log`` a true statement.
+In the code snippet below, change the values used in the assignment operators to
+make each ``console.log`` a true statement.
 
 ### ~hint
 
-The only portions of the code you can change in this problem are the ``0``s in the assignment. Do not change the type of assignment operator that is used.
+The only portions of the code you can change in this problem are the ``0``s in the assignment.
+Do not change the type of assignment operator that is used.
 
 ### ~
 

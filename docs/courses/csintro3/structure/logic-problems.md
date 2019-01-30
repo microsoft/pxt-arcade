@@ -2,7 +2,8 @@
 
 This section contains a number of selected problems for the Logic section.
 
-It is recommended that you review the problems, and complete a few before moving on to the next section.
+It is recommended that you review the problems, and complete a few before
+moving on to the next section.
 
 ## Problem #1: This or That
 
@@ -35,7 +36,11 @@ Determine whether the following expressions evaluate to ``||logic:true||`` or ``
 
 ## Problem #3: Mysterious Logging
 
-Fill in the table below for the output of the following code based on the initial values of ``||variables:bool1||`` and ``||variables:bool2||``. If multiple values are logged, use a slash ``/`` to separate the different lines. The case where ``||variables:bool1||`` and ``||variables:bool2||`` are both ``||logic:true||`` is filled in as an example.
+Fill in the table below for the output of the following code based on the initial values
+of ``||variables:bool1||`` and ``||variables:bool2||``.
+If multiple values are logged, use a slash ``/`` to separate the different lines.
+The case where ``||variables:bool1||`` and ``||variables:bool2||`` are both
+``||logic:true||`` is filled in as an example.
 
 |                           | ``bool1 == true`` | ``bool1 == false``    |
 | :-----------------------: | :---------------: | --------------------- |
@@ -61,13 +66,18 @@ if (bool1 && 10 > 4) {
 
 ## Problem #4: Rain or Shine
 
-Translate the following statements into a program that ``||game:splashes||`` a clothing choice. Use a number variable ``||variables:temp||`` for the temperature and a boolean variable ``||variables:isRaining||`` for whether or not it is raining.
+Translate the following statements into a program that ``||game:splashes||`` a clothing choice.
+Use a number variable ``||variables:temp||`` for the temperature and a boolean variable
+``||variables:isRaining||`` for whether or not it is raining.
 
-If the temperature is less than 30 degrees, then I wear my winter coat. Otherwise, if it is raining, I wear my rain jacket.  In all other cases, I'll just wear a sweatshirt.
+If the temperature is less than 30 degrees, then I wear my winter coat.
+Otherwise, if it is raining, I wear my rain jacket. 
+In all other cases, I'll just wear a sweatshirt.
 
 ## Problem #5: Implication
 
-Create a boolean expression that generates the following results given boolean variables ``||variables:a||`` and ``||variables:b||``.
+Create a boolean expression that generates the following results given
+boolean variables ``||variables:a||`` and ``||variables:b||``.
 
 | ``a``     | ``b``     | Result    |
 | --------- | --------- | --------- |
@@ -75,9 +85,3 @@ Create a boolean expression that generates the following results given boolean v
 | ``true``  | ``false`` | ``false`` |
 | ``false`` | ``true``  | ``true``  |
 | ``false`` | ``false`` | ``true``  |
-
-### ~hint
-
-This expression is known as an *implication*. This means that ``||variables:a||`` *implies* ``||variables:b||``. When this expression evaluates to ``||logic:true||``, if ``||variables:a||`` is true, then ``||variables:b||`` must also be true.
-
-### ~

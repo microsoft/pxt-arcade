@@ -1,16 +1,25 @@
 # Activity: Function Documentation
 
-In previous lessons, ``||functions:functions||`` have been shown to have a wide variety of uses, with many different features.
+In previous lessons, ``||functions:functions||`` have been shown to
+have a wide variety of uses, with many different features.
 
-For those reasons, we will maintain a particular format for ``||functions:function||`` comments. This way, anyone who wants to learn about the function will have a consistent and easy way in which to identify these features, without having to go back and forth looking for what the different aspects of the function are.
+For those reasons,
+we will maintain a particular format for ``||functions:function||`` comments.
+This way,
+anyone who wants to learn about the function will have a consistent and easy way
+in which to identify these features,
+without having to go back and forth looking for what the different aspects of the function are.
 
 ## Concept: Commenting Simple Functions
 
-The first functions discussed in the [Intro Lesson](/courses/csintro3/functions/intro) were fairly basic; they accepted no input, and did not produce any output.
+The first functions discussed in the [Intro Lesson](/courses/csintro3/functions/intro)
+were fairly basic; they accepted no input, and did not produce any output.
 
-The ``||functions:sayHello||`` function is a simple demonstration of this; whenever it is called, it will ``||game:splash||`` "hello" to the person playing the game.
+The ``||functions:sayHello||`` function is a simple demonstration of this;
+whenever it is called, it will ``||game:splash||`` "hello" to the person playing the game.
 
-To add a comment to a function like this, simply describe in a short sentence what the function is actually doing.
+To add a comment to a function like this,
+simply describe in a short sentence what the function is actually doing.
 
 ## Example #1: Commenting on ``||functions:sayHello||``
 
@@ -29,9 +38,12 @@ function sayHello() {
 sayHello();
 ```
 
-Notice that the comment does not go into much detail on the behavior - saying the exact greeting, or how it is done. If someone wants to know these things, they can read the code itself.
+Notice that the comment does not go into much detail on the behavior -
+saying the exact greeting, or how it is done.
+If someone wants to know these things, they can read the code itself.
 
-Even if the function were changed to display different text in a slightly different way (as done below), the same comment could still be used to describe the function.
+Even if the function were changed to display different text in a slightly different way
+(as done below), the same comment could still be used to describe the function.
 
 ```typescript
 /**
@@ -49,7 +61,8 @@ sayHello();
 1. Review the code below
 2. Fill in the comment for the ``||functions:introduction||`` function
 3. Fill in the comment for the ``||functions:goodbye||`` function
-4. **Challenge:** should a description of ``||variables:word||`` show up in the comment for ``||functions:goodbye||``?
+4. **Challenge:** should a description of ``||variables:word||``
+show up in the comment for ``||functions:goodbye||``?
 
 ```typescript
 /**
@@ -73,15 +86,18 @@ function goodbye() {
 Hints for Challenge:
 
 * Is ``||variables:word||`` accessible outside of ``||functions:goodbye||``?
-* How is the behavior of ``||functions:goodbye||`` different from ``||functions:helloWorld||``? Is ``||variables:word||`` part of that difference?
+* How is the behavior of ``||functions:goodbye||`` different from
+``||functions:helloWorld||``? Is ``||variables:word||`` part of that difference?
 
 ### ~
 
 ## Concept: Parameters
 
-To comment on a parameter, start the line with ``@param``, followed by the parameter's name, and then a short description of what the function will do.
+To comment on a parameter, start the line with ``@param``, followed by the
+parameter's name, and then a short description of what the function will do.
 
-For example, a section of a comment describing a parameter ``count`` of type ``number`` that determines how many times a value will be printed could be commented on as
+For example, a section of a comment describing a parameter ``count`` of type
+``number`` that determines how many times a value will be printed could be commented on as
 
 ```typescript-ignore
 /**
@@ -95,7 +111,8 @@ For example, a section of a comment describing a parameter ``count`` of type ``n
 1. Review the code below
 2. Identify what the function will do
 3. Read the comment for the function: identify how it describes the function's behavior
-4. Hover over the function call and the parameter that is passed to the function call to see how the editor displays function 
+4. Hover over the function call and the parameter that is passed to the function
+call to see how the editor displays function 
 
 ```typescript
 /**
@@ -136,9 +153,13 @@ function moveMySprite(mySprite: Sprite) {
 
 ## Concept: Return Values
 
-Return values are incredibly important; if they are not documented properly, then oftentimes the behavior of the function will be entirely unpredictable.
+Return values are incredibly important; if they are not documented properly,
+then oftentimes the behavior of the function will be entirely unpredictable.
 
-To document return values, start the comment with ``@returns``, and then give a short description of what the value returned represents. Generally, we will put the ``@returns`` annotation after any parameters for the functions we describe.
+To document return values, start the comment with ``@returns``,
+and then give a short description of what the value returned represents.
+Generally, we will put the ``@returns`` annotation after any parameters
+for the functions we describe.
 
 ```typescript-ignore
 /**
@@ -167,7 +188,10 @@ function highFive(): number {
 
 ## Example #3b: Describing Only Return Values
 
-If the function's only purpose is to return a value, and nothing else that will affect the person calling it is done, then you can omit the short description of the function itself and include only the ``@returns``.
+If the function's only purpose is to return a value,
+and nothing else that will affect the person calling it is done,
+then you can omit the short description of the function itself
+and include only the ``@returns``.
 
 1. Review the code below
 2. Identify what the function will do
@@ -226,7 +250,9 @@ function sayMyName(name: string): string {
 
 ### Commenting!
 
-Review the previous case study examples, and add comments to the functions that you added in previous lessons to clarify what exactly they are supposed to do. This includes the following functions:
+Review the previous case study examples, and add comments to the functions
+that you added in previous lessons to clarify what exactly they are supposed to do.
+This includes the following functions:
 
 * ``ship.initialize``
 * ``enemy.createEnemy``

@@ -1,6 +1,7 @@
 # Activity: Logic
 
-Just like in Blocks, using ``||logic:Logic||`` in JavaScript allows for games that react to user input and the state of the game.
+Just like in Blocks, using ``||logic:Logic||`` in JavaScript allows for games that react
+to user input and the state of the game.
 
 Just like in Blocks, a boolean value can be stored as a variable in JavaScript.
 
@@ -16,7 +17,9 @@ let x: boolean = true;
 
 ## Concept If and Else Statements 
 
-The ``||logic:if then||`` and ``||logic:else||`` blocks were amongst the most important in the ``||logic:Logic||`` category in the previous course, and remain just as important in JavaScript.
+The ``||logic:if then||`` and ``||logic:else||`` blocks were amongst the most important
+in the ``||logic:Logic||`` category in the previous course,
+and remain just as important in JavaScript.
 
 In JavaScript, these can be expressed as:
 
@@ -36,7 +39,9 @@ if (condition) {
 }
 ``` 
 
-In these snippets, ``||variables:condition||`` is a boolean value (an expression that evaluates to ``||logic:true||`` or ``||logic:false||``). In Blocks, these often took the form of elongated hexagons:
+In these snippets, ``||variables:condition||`` is a boolean value
+(an expression that evaluates to ``||logic:true||`` or ``||logic:false||``).
+In Blocks, these often took the form of elongated hexagons:
 
 ```block
 let x = true
@@ -44,7 +49,8 @@ let x = true
 
 ## Concept: Comparisons
 
-In blocks, there were many ways to compare two numbers. In JavaScript, these same comparisons are available.
+In blocks, there were many ways to compare two numbers. In JavaScript,
+these same comparisons are available.
 
 | Name                      | Symbol    | JavaScript            |
 | :------------------------ | :-------: | :-------------------:	|
@@ -82,13 +88,17 @@ if (num == 1) {
 }
 ```
 
-Notice how the code above uses curly braces (``{`` and ``}``) and indentation to separate the code that is contained within each logical block. This is done for two major reasons:
+Notice how the code above uses curly braces (``{`` and ``}``)
+and indentation to separate the code that is contained within each logical block.
+This is done for two major reasons:
 
 ### ~hint
 
 ### Readability
 
-Anyone can look at the code and easily decipher what is part of the if statement and what is not, even if they have never seen it before. The indentation provides a visual distinction for where different statements will run.
+Anyone can look at the code and easily decipher what is part of the if statement
+and what is not, even if they have never seen it before.
+The indentation provides a visual distinction for where different statements will run.
 
 ### ~
 
@@ -96,7 +106,9 @@ Anyone can look at the code and easily decipher what is part of the if statement
 
 ### Functionality
 
-JavaScript ignores indentation, but does not ignore curly braces. Curly braces are used to group code together, which makes it possible to include multiple expressions in the conditional statements.
+JavaScript ignores indentation, but does not ignore curly braces.
+Curly braces are used to group code together,
+which makes it possible to include multiple expressions in the conditional statements.
 
 ```typescript
 let num: number = 1;
@@ -130,11 +142,13 @@ Boolean operators allow boolean values to be manipulated.
 | And   | 2nd   | ``bool1 && bool2``                |
 | Or    | 3rd   | ``bool1`` &vert;&vert; ``bool2``  |
 
-Just like in math, the order of operations becomes important when there are multiple operators being used at once.
+Just like in math, the order of operations becomes important when there are
+multiple operators being used at once.
 
 ### ~hint
 
-The vertical bar (``|``) character is used when writing ``||logic:or||``. Be sure to find where it is located on your keyboard!
+The vertical bar (``|``) character is used when writing ``||logic:or||``.
+Be sure to find where it is located on your keyboard!
 
 ### ~
 
@@ -150,11 +164,15 @@ let bool3: boolean = false;
 let bool4: boolean = bool1 && bool2 || !bool3;
 ```
 
-Following the order of operations, the value assigned to ``||variables:bool4||`` is evaluated as follows
+Following the order of operations, the value assigned to
+``||variables:bool4||`` is evaluated as follows
 
 1. Negate ``||variables:bool3||``, which evaluates to ``||logic:true||``
-2. Check ``||variables:bool1||`` **and** ``||variables:bool2||``, which evaluates to ``||logic:false||``
-3. Check the result of step 1 **or** the result of step 2, (that is, ``||logic:true||`` ``||logic:or||`` ``||logic:false||``) which evaluates to ``||logic:true||``
+2. Check ``||variables:bool1||`` **and** ``||variables:bool2||``,
+which evaluates to ``||logic:false||``
+3. Check the result of step 1 **or** the result of step 2,
+(that is, ``||logic:true||`` ``||logic:or||`` ``||logic:false||``)
+which evaluates to ``||logic:true||``
 
 This results in ``||variables:bool4||`` storing ``||logic:true||``.
 
@@ -168,11 +186,14 @@ let bool3: boolean = false;
 let bool4: boolean = bool1 && (bool2 || !bool3);
 ```
 
-Following the order of operations, the value assigned to ``||variables:bool4||`` is evaluated as follows:
+Following the order of operations, the value assigned to
+``||variables:bool4||`` is evaluated as follows:
 
 1. Negate ``||variables:bool3||``, which evaluates to ``||logic:true||``
-2. Check ``||variables:bool2||`` **or** the result of step 1, which evaluates to ``||logic:true||``
-3. Check ``||variables:bool1||`` **and** the result of step 3, which evaluates to ``||logic:false||``
+2. Check ``||variables:bool2||`` **or** the result of step 1,
+which evaluates to ``||logic:true||``
+3. Check ``||variables:bool1||`` **and** the result of step 3,
+which evaluates to ``||logic:false||``
 
 This results in ``||variables:bool4||`` storing ``||logic:false||`` instead.
 
@@ -219,13 +240,16 @@ if (num > 2 || bool) {
 
 1. How do logical comparisons allow games to be more reactive to different conditions?
 2. In JavaScript, how can the order in which an expression is evaluated be changed?
-3. **Challenge:** consider the following expressions for different values of ``bool1`` and ``bool2``. When will they be the same, when will they be different?
+3. **Challenge:** consider the following expressions for different values of
+``bool1`` and ``bool2``. When will they be the same, when will they be different?
     * ``!bool1 && !bool2``
     * ``!(bool1 || bool2)``
 
 ### ~hint
 
-Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/structure/logic-problems) for this section to review the material and practice the concepts introduced in this section.
+Before moving on to the next lesson, it is recommended that you check out the
+[selected problems](/courses/csintro3/structure/logic-problems) for this section to review
+the material and practice the concepts introduced in this section.
 
 ### ~
 
@@ -235,9 +259,15 @@ Before moving on to the next lesson, it is recommended that you check out the [s
 
 ### That's My Name!
 
-When somebody enters their name, we should make sure they know who made this game. Store the result of the call to ``||game:game.askForString||`` that asks for the users name in the variable ``||variables:playerName||``.
+When somebody enters their name, we should make sure they know who made this game.
+Store the result of the call to ``||game:game.askForString||`` that asks for the
+users name in the variable ``||variables:playerName||``.
 
-Before adding it to ``||variables:name||``, check if the player has entered your name by comparing (with ``||logic:==||``) ``||variables:playerName||`` and a string containing your first name. If the player has entered your name, append a " 2" to ``||variables:playerName||``, to make sure they know they're not the first one to play this game.
+Before adding it to ``||variables:name||``, check if the player has entered your
+name by comparing (with ``||logic:==||``) ``||variables:playerName||`` and a
+string containing your first name. If the player has entered your name,
+append a " 2" to ``||variables:playerName||``, to make sure they know they're
+not the first one to play this game.
 
 (In the example solution, "myName!" will be used to represent the games author)
 

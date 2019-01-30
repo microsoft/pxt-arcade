@@ -1,20 +1,27 @@
 # Activity: Arrays of Images
 
-``||images:Images||`` are used to represent many things on screen in @boardname@ - ``||scene:backgrounds||``, ``||sprites:Sprites||``, many other elements of the games.
+``||images:Images||`` are used to represent many things on screen in @boardname@ -
+``||scene:backgrounds||``, ``||sprites:Sprites||``, many other elements of the games.
 
-A number of complex behaviors can be handled easily using ``||arrays:arrays||`` of ``||images:Images||``, allowing for games with a larger variety of content for the person playing to experience.
+A number of complex behaviors can be handled easily using ``||arrays:arrays||`` of
+``||images:Images||``, allowing for games with a larger variety of content for
+the person playing to experience.
 
 ## Concept: Simple Animations
 
-Animations in games are represented as a series of different images that get shown in a sequence.
+Animations in games are represented as a series of different images that
+get shown in a sequence.
 
-Using ``||arrays:arrays||``, these ``||images:images||`` can be stored in a single location and referenced much more easily than they could be using individual variables.
+Using ``||arrays:arrays||``, these ``||images:images||`` can be stored in
+a single location and referenced much more easily than they could be using
+individual variables.
 
 ## Example #1: Flapping Duck
 
 1. Review the code below
 2. Identify how the ``||images:Image||`` array is created
-3. Identify how the ``||loops:for||`` loop is used to iterate through the different ``||images:images||`` of the ``||sprites:ducks||``
+3. Identify how the ``||loops:for||`` loop is used to iterate through the
+different ``||images:images||`` of the ``||sprites:ducks||``
 
 ```typescript
 enum SpriteKind {
@@ -42,8 +49,10 @@ for (let index = 0; index < characterImages.length; index++) {
 ## Student Task #1: Walking Hero
 
 1. Start with the code from example #1
-2. Modify the code to show a **hero walking** instead of a **flying duck**, by replacing the images in ``||variables:characterImages||``
-3. Use a second ``||loops:for||`` loop that causes the current ``||loops:for||`` loop to repeat **20** times, so that the animation will continue to repeat
+2. Modify the code to show a **hero walking** instead of a **flying duck**,
+by replacing the images in ``||variables:characterImages||``
+3. Use a second ``||loops:for||`` loop that causes the current ``||loops:for||``
+loop to repeat **20** times, so that the animation will continue to repeat
 
 ### ~hint
 
@@ -58,9 +67,11 @@ The ``||images:images||`` of a hero walking can be referenced using the followin
 
 ## Concept: Remainder Operator
 
-Creating an animation using arrays is useful, but does lead to some issues. For example, what if the intention is to run it in the background, forever?
+Creating an animation using arrays is useful, but does lead to some issues.
+For example, what if the intention is to run it in the background, forever?
 
-One approach would be to use the ``||game:on update interval||`` event. Using this with the previous example might look like the snippet below.
+One approach would be to use the ``||game:on update interval||`` event.
+Using this with the previous example might look like the snippet below.
 
 ```typescript-ignore
 let count = 0;
@@ -70,7 +81,8 @@ game.onUpdateInterval(150, function () {
 });
 ```
 
-However, this won't quite work; after the last index in the array, the code will crash, because you will be trying to refer to an ``||images:image||`` that **doesn't exist**.
+However, this won't quite work; after the last index in the array, the code will crash,
+because you will be trying to refer to an ``||images:image||`` that **doesn't exist**.
 
 This could be handled using ``||logic:logic||`` to reset the value when it gets too high.
 
@@ -85,11 +97,14 @@ game.onUpdateInterval(150, function () {
 });
 ```
 
-The **remainder** operator, ``%``, can be used to handle this case more appropriately. This operator is used to signify the **remainder** of integer division between two numbers: that is, ``5 % 3`` is equal to 2, because 5 goes into 3 one time, with **two remaining**.
+The **remainder** operator, ``%``, can be used to handle this case more appropriately.
+This operator is used to signify the **remainder** of integer division between two numbers:
+that is, ``5 % 3`` is equal to 2, because 5 goes into 3 one time, with **two remaining**.
 
 ### ~hint
 
-The remainder operator is often referred to as the ``mod`` operator, short for modulo or modulus.
+The remainder operator is often referred to as the ``mod`` operator,
+short for modulo or modulus.
 
 ### ~
 
@@ -97,7 +112,8 @@ The remainder operator is often referred to as the ``mod`` operator, short for m
 
 1. Review the code below
 2. Identify how ``||variables:count||`` is used
-3. Identify how the remainder (``%``) operator is used to refer to a value within the ``||images:image||`` ``||arrays:array||``
+3. Identify how the remainder (``%``) operator is used to refer to a value
+within the ``||images:image||`` ``||arrays:array||``
 
 ```typescript
 enum SpriteKind {
@@ -126,14 +142,18 @@ game.onUpdateInterval(150, function () {
 ## Student Task #2: Continuous Walking Animation
 
 1. Start with the code from task #1
-2. Replace the ``||loops:for||`` loops with the ``||game:on update interval||`` event with a ``||variables:counter||`` as shown in example #2 to make the animation run indefinitely
+2. Replace the ``||loops:for||`` loops with the ``||game:on update interval||``
+event with a ``||variables:counter||`` as shown in example #2 to make the
+animation run indefinitely
 3. Make the hero ``||controller:move||`` with the directional buttons
 
 ## Concept: Random Images
 
-In games, ``||sprites:sprites||`` will often need to be created a large number of times, to represent ``||sprites:enemies||``, ``||sprites:collectible items||``, or anything else.
+In games, ``||sprites:sprites||`` will often need to be created a large number of times,
+to represent ``||sprites:enemies||``, ``||sprites:collectible items||``, or anything else.
 
-To make the games more visually appealing, these ``||sprites:Sprites||`` can be given different ``||images:images||`` to make sure they do not all look the same.
+To make the games more visually appealing, these ``||sprites:Sprites||``
+can be given different ``||images:images||`` to make sure they do not all look the same.
 
 The ``||sprites.onCreated||`` event is helpful for handling this type of behavior.
 
@@ -144,9 +164,11 @@ sprites.onCreated(0, null);
 ## Example #3: Asteroids!
 
 1. Review the code below
-2. Identify how the different images for ``||sprites:Asteroid||``s are defined, and what happens to the image originally set for the ``||sprites:Sprite||``
+2. Identify how the different images for ``||sprites:Asteroid||``s are defined,
+and what happens to the image originally set for the ``||sprites:Sprite||``
 3. Identify what occurs when an ``||sprites:Asteroid||`` is ``||sprites:created||``
-4. Identify how ``||math:Math.pickRandom||`` is used to pick a ``||math:random||`` ``||images:image||``
+4. Identify how ``||math:Math.pickRandom||`` is used to pick a
+``||math:random||`` ``||images:image||``
 
 ```typescript
 enum SpriteKind {
@@ -175,13 +197,16 @@ sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
 ## Student Task #3: Falling Asteroids
 
 1. Start with the code from example #3
-2. In the ``||sprites:on created||`` event, set the ``||variables:sprite||`` ``||sprites:y||`` position to be 0, so it starts at the top of the screen
-3. After setting the ``||sprites:y||`` position, set the ``||sprites:vy||`` to a ``||math:random value between||`` 30 and 50
+2. In the ``||sprites:on created||`` event, set the ``||variables:sprite||``
+``||sprites:y||`` position to be 0, so it starts at the top of the screen
+3. After setting the ``||sprites:y||`` position, set the ``||sprites:vy||``
+to a ``||math:random value between||`` 30 and 50
 4. Set the ``||sprites:Ghost||`` flag for every ``||sprites:Asteroid||`` to ``||logic:true||``
 
 ### ~hint
 
-The other ``||sprites:Asteroid||`` ``||images:images||`` can be referenced using the following ``||variables:variables||``:
+The other ``||sprites:Asteroid||`` ``||images:images||`` can be referenced
+using the following ``||variables:variables||``:
 
 * ``||sprites:sprites.space.spaceAsteroid2||``
 * ``||sprites:sprites.space.spaceAsteroid3||``
@@ -191,8 +216,10 @@ The other ``||sprites:Asteroid||`` ``||images:images||`` can be referenced using
 
 ## What did we learn?
 
-1. How does using multiple ``||images:images||`` allow for games that are more visually appealing?
-2. How is the **remainder** ``%`` operator used to make sure the code never accesses an invalid index in the ``||arrays:array||``?
+1. How does using multiple ``||images:images||`` allow for games that are
+more visually appealing?
+2. How is the **remainder** ``%`` operator used to make sure the code never
+accesses an invalid index in the ``||arrays:array||``?
 
 ### ~hint
 
@@ -200,13 +227,28 @@ The other ``||sprites:Asteroid||`` ``||images:images||`` can be referenced using
 
 ### Power Up Images
 
-In the ``spritesheet`` namespace, change the ``||variables:powerUp||`` ``||images:image||`` to an ``||arrays:array||`` of ``||images:images||``, and rename it to ``||variables:powerUps||``. Create a custom ``||images:image||`` for each type of ``PowerUp``, and store them at the index for the given type (similar to ``||variables:powerups.responses||``).
+In the ``spritesheet`` namespace, change the ``||variables:powerUp||`` ``||images:image||``
+to an ``||arrays:array||`` of ``||images:images||``,
+and rename it to ``||variables:powerUps||``.
+Create a custom ``||images:image||`` for each type of ``PowerUp``,
+and store them at the index for the given type
+(similar to ``||variables:powerups.responses||``).
 
-In order to use these images, when creating a ``||sprites:sprite||`` set the ``||images:image||`` to some default value (a single pixel ``||images:image||``, or one of the ``PowerUp`` images), and then set the ``||images:image||`` appropriately for the chosen type in the ``||sprites:on created||`` event. Because the type will be stored in both the ``data`` and as the index for the ``||images:image||``, you should store the result of ``||math:Math.pickRandom(availablePowerUps)||`` so that it can be referenced in both parts where it is necessary.
+In order to use these images, when creating a ``||sprites:sprite||`` set the
+``||images:image||`` to some default value (a single pixel ``||images:image||``,
+or one of the ``PowerUp`` images), and then set the ``||images:image||``
+appropriately for the chosen type in the ``||sprites:on created||`` event.
+
+Because the type will be stored in both the ``data`` and as the index for
+the ``||images:image||``, you should store the result of
+``||math:Math.pickRandom(availablePowerUps)||`` so that it can be
+referenced in both parts where it is necessary.
 
 ### Asteroids!
 
-Instead of using a single image for all asteroids, create an ``||arrays:array||`` of ``||images:images||`` and ``||math:pick||`` one at random whenever you create a new asteroid.
+Instead of using a single image for all asteroids,
+create an ``||arrays:array||`` of ``||images:images||`` and ``||math:pick||``
+one at random whenever you create a new asteroid.
 
 ### Solution
 

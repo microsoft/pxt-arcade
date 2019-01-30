@@ -1,12 +1,15 @@
 # Activity: Returns
 
-In the previous section, functions were shown to accept input in the form of **parameters**. These allow developers to pass values **to** a function.
+In the previous section, functions were shown to accept input in the form of **parameters**.
+These allow developers to pass values **to** a function.
 
-**Return values** allow a function to return (give back) a value at the end of a function call. This **ends** the call to the function, continuing the code from where the function was called.
+**Return values** allow a function to return (give back) a value at the end of a function call.
+This **ends** the call to the function, continuing the code from where the function was called.
 
 ## Concept: Returning a Value
 
-Functions can be given return value by using the return value, and giving the function a type.
+Functions can be given return value by using the return value,
+and giving the function a type.
 
 ```typescript-ignore
 function name(parameter: parameterType): outputType {
@@ -21,15 +24,20 @@ There are four new elements added to this snippet since the previous lesson:
 * ``return``: the start of the **return statement**; the value that follows this will be returned
 * ``output;``: the value that is returned
 * ``: outputType``: the type of the value that is going to be returned by the function
-* ``let returnedValue: outputType = ``:  storing the returned value from ``||functions:name||`` in a variable. If the returned variable is not stored like this, the returned value will not be accessible afterwards.
+* ``let returnedValue: outputType = ``:
+storing the returned value from ``||functions:name||`` in a variable.
+If the returned variable is not stored like this,
+the returned value will not be accessible afterwards.
 
-``returnedValue`` will store the result of the call to ``||functions:name||``, allowing that value to be used outside of the function.
+``returnedValue`` will store the result of the call to ``||functions:name||``,
+allowing that value to be used outside of the function.
 
 ## Example #1: Gimme 5
 
 1. Review the code below
 2. Identify what the return type of this function will be
-3. Identify what will be stored in ``||variables:returnedValue||`` after ``||functions:giveMeFive||`` is finished
+3. Identify what will be stored in ``||variables:returnedValue||``
+after ``||functions:giveMeFive||`` is finished
 
 ```typescript
 function giveMeFive(): number {
@@ -43,17 +51,21 @@ let returnedValue: number = giveMeFive();
 
 1. Create a function named ``||functions:aName||``
 2. Add a return value to ``||functions:aName||``, which returns "Bill"
-3. After calling the function, store the returned value in the variable ``||variables:theName||``
+3. After calling the function, store the returned value
+in the variable ``||variables:theName||``
 4. Use ``||game:game.splash||`` to display ``||variables:theName||``
-5. **Challenge:** give ``||functions:aName||`` a parameter ``name`` of type ``||text:string||``. Modify the return value to return ``name`` instead
+5. **Challenge:** give ``||functions:aName||`` a parameter ``name``
+of type ``||text:string||``. Modify the return value to return ``name`` instead
 
 ## Concept: Different Return Values
 
-Return statements are very useful when writing functions, but require some care to make sure the code runs properly.
+Return statements are very useful when writing functions,
+but require some care to make sure the code runs properly.
 
 ### Error #1: Returning too early
 
-In the following snippet, the intention of ``hello`` is to return the value 5, and also ``||game:splash||`` "5 is returned!".
+In the following snippet, the intention of ``hello`` is to return the value 5,
+and also ``||game:splash||`` "5 is returned!".
 
 ```typescript
 function hello(): number {
@@ -64,7 +76,11 @@ function hello(): number {
 }
 ```
 
-However, because the return statement comes before the ``||game:splash||``, the function ends before the value is ``||game:splashed||``. This can be fixed in this case by switching the order of the statements, so that the return value is at the **end** of the function.
+However, because the return statement comes before the ``||game:splash||``,
+
+the function ends before the value is ``||game:splashed||``.
+This can be fixed in this case by switching the order of the statements,
+so that the return value is at the **end** of the function.
 
 ```typescript
 function hello(): number {
@@ -101,7 +117,9 @@ function world(): number {
 }
 ```
 
-Another way to address this issue is to only have a single return statement, and create an ``||variables:output||`` variable to return. For example, the above code could be rewritten as the following:
+Another way to address this issue is to only have a single return statement,
+and create an ``||variables:output||`` variable to return.
+For example, the above code could be rewritten as the following:
 
 ```typescript
 function world(): number {
@@ -131,17 +149,24 @@ function world(num: number): number {
 
 This code will fail to run, giving the error that ``Not all code paths return a value.``
 
-This may seem odd; if ``num`` is not less than 0, then we can generally reason that ``num`` **must be** greater than or equal to 0.
+This may seem odd; if ``num`` is not less than 0,
+then we can generally reason that ``num`` **must be** greater than or equal to 0.
 
-However, there are some cases where that statement is incorrect that we have not covered yet - and even if it were the case, the code should be written so that it does not require this sort of reasoning. To make this code work properly, one of the fixes for error #2 should be applied here as well.
+However, there are some cases where that statement is incorrect that we have not covered yet -
+and even if it were the case,
+the code should be written so that it does not require this sort of reasoning.
+To make this code work properly,
+one of the fixes for error #2 should be applied here as well.
 
 ### ~
 
 ## Example #2: Absolute Value
 
 1. Review the code below
-2. Identify what ``||functions:makePositive||`` will return in the three commented out ``console.log`` statements
-3. Recreate the code, and uncomment the three statements to verify the results are correct
+2. Identify what ``||functions:makePositive||`` will return in the
+three commented out ``console.log`` statements
+3. Recreate the code, and uncomment the three statements to verify
+the results are correct
 
 ```typescript
 function makePositive(num: number): number {
@@ -161,19 +186,24 @@ function makePositive(num: number): number {
 ## Student Task #2: Up or Down
 
 1. Create a function named ``||functions:addOrRemove||``
-2. Add two parameters to the function: ``input`` of type ``||Math:number||``, and ``up`` of type ``||logic:boolean||``
+2. Add two parameters to the function: ``input`` of type ``||Math:number||``,
+and ``up`` of type ``||logic:boolean||``
 3. Add an ``||logic:if ... else||`` to the function
     * if ``||logic:up||`` is true, return ``input`` plus one
     * otherwise, return ``input`` minus one
-4. **Challenge:** create **four** test cases for ``||functions:addOrRemove||``, with different values for ``input`` and ``up`` that verify the function is working properly
+4. **Challenge:** create **four** test cases for ``||functions:addOrRemove||``,
+with different values for ``input`` and ``up`` that verify the function is working properly
 
 ## Example #3: Sprites
 
 Like parameters, the return type of a function can be of any type.
 
 1. Review the code below
-2. Identify what ``||functions:copyCat||`` accepts as a parameter, and what it returns
-3. Recreate the example and create a ``||sprites:sprite||``. Call the function using that new ``||sprites:sprite||`` as a parameter, and identify what is returned.
+2. Identify what ``||functions:copyCat||`` accepts as a parameter,
+and what it returns
+3. Recreate the example and create a ``||sprites:sprite||``.
+Call the function using that new ``||sprites:sprite||`` as a parameter,
+and identify what is returned.
 
 ```typescript
 function copyCat(originalSprite: Sprite): Sprite {
@@ -183,7 +213,9 @@ function copyCat(originalSprite: Sprite): Sprite {
 
 ## Concept: Ending a Function
 
-The ``return`` keyword causes the function to stop running and return. This can be very helpful when searching for a value, or reaching a case in which the function should end early.
+The ``return`` keyword causes the function to stop running and return.
+This can be very helpful when searching for a value,
+or reaching a case in which the function should end early.
 
 ## Example #4: Finding Three
 
@@ -203,15 +235,24 @@ found = containsThree(5, 10);
 console.log("" + found);
 ```
 
-``||functions:containsThree||`` will go through all values starting at ``||variables:min||`` and ending at ``||variables:max||``, ``logging`` the value of each until it finds the value 3. If it finds 3, it will return true; otherwise, it will return false.
+``||functions:containsThree||`` will go through all values starting at
+``||variables:min||`` and ending at ``||variables:max||``,
+``logging`` the value of each until it finds the value 3.
+If it finds 3, it will return true;
+otherwise, it will return false.
 
-In the first case shown in the code (``||functions:containsThree(0, 5)||``), the function only logs ``0``, ``1``, ``2``, and ``3`` because the function stopped once it found ``3`` and returned ``true``.
+In the first case shown in the code (``||functions:containsThree(0, 5)||``),
+the function only logs ``0``, ``1``, ``2``, and ``3``
+because the function stopped once it found ``3`` and returned ``true``.
 
-In the first case shown in the code (``||functions:containsThree(5, 10)||``), the function logs all values between ``5`` and ``10`` because it never finds ``3``, and returns ``false``.
+In the first case shown in the code (``||functions:containsThree(5, 10)||``),
+the function logs all values between ``5`` and ``10``
+because it never finds ``3``, and returns ``false``.
 
 ### ~hint
 
-A ``return`` statement can also be used without a value; in this case, the function call will end, and nothing will be returned.
+A ``return`` statement can also be used without a value;
+in this case, the function call will end, and nothing will be returned.
 
 ```typescript
 function printCountTimes(words: string, count: number) {
@@ -227,7 +268,8 @@ function printCountTimes(words: string, count: number) {
 }
 ```
 
-In the above snippet, ``||functions:printCountTimes||`` will ``return`` early if count is less than or equal to ``0``.
+In the above snippet, ``||functions:printCountTimes||`` will ``return``
+early if count is less than or equal to ``0``.
 
 By returning early, it avoids doing the unnecessary ``// Omitted complicated set up code``.
 
@@ -237,7 +279,8 @@ By returning early, it avoids doing the unnecessary ``// Omitted complicated set
 
 1. What needs to be added to a function so that it will return a value?
 2. If a function returns a value in one case, does it need to return a value in all cases?
-3. What happens if you call a function with a return value without storing or using the returned value?
+3. What happens if you call a function with a return value without
+storing or using the returned value?
 
 ### ~hint
 
@@ -245,15 +288,27 @@ By returning early, it avoids doing the unnecessary ``// Omitted complicated set
 
 ### Return the Sprites
 
-In the ``enemy`` namespace, modify the ``createEnemy`` function so that it returns the ``||sprites:Sprite||`` that is created.
+In the ``enemy`` namespace, modify the ``createEnemy`` function so that
+it returns the ``||sprites:Sprite||`` that is created.
 
-Next, in the ``ship`` namespace, modify the ``initialize`` function to create the ``||sprites:Sprite||`` as a local variable (rather than just immediately storing it as the ``player``), and return the newly created ``||sprites:Sprite||``.
+Next, in the ``ship`` namespace, modify the ``initialize`` function to
+create the ``||sprites:Sprite||`` as a local variable
+(rather than just immediately storing it as the ``player``),
+and return the newly created ``||sprites:Sprite||``.
 
-After doing this, modify the declaration of ``||variables:player||`` in ``ship`` so that it is also **initialized** to the value returned by the call to ``initialize``. Now, it is a bit more clear what the value is assigned to, as you no longer have to look into different functions to see where it is first given a value.
+After doing this, modify the declaration of ``||variables:player||``
+in ``ship`` so that it is also **initialized** to the value returned by
+the call to ``initialize``.
+Now, it is a bit more clear what the value is assigned to,
+as you no longer have to look into different functions to see where it is first given a value.
 
 ### Solution
 
-Notice that the name of the sprite created in ``ship.initialize`` was changed from ``||variables:player||`` to ``||variables:sprite||`` in the example solution below; this isn't required to complete this task, but it does make it a bit more clear that the value is not the same as the one that is outside the function.
+Notice that the name of the sprite created in ``ship.initialize``
+was changed from ``||variables:player||`` to ``||variables:sprite||``
+in the example solution below; this isn't required to complete this task,
+but it does make it a bit more clear that the value is not the same
+as the one that is outside the function.
 
 ```typescript-ignore
 /**

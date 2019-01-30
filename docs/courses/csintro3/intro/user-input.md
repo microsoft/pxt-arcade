@@ -1,8 +1,11 @@
 # Activity: User Input
 
-Accepting user input in games is a great way to make interactive games, in which players can name their characters or respond to questions posed by the game.
+Accepting user input in games is a great way to make interactive games,
+in which players can name their characters or respond to questions posed by the game.
 
-In @boardname@, the ``||game:ask for string with text||`` block allowed developers to prompt users with a virtual keyboard to respond to their questions. In JavaScript, this function is just as easy to use.
+In @boardname@, the ``||game:ask for string with text||`` block allowed developers
+to prompt users with a virtual keyboard to respond to their questions.
+In JavaScript, this function is just as easy to use.
 
 ```sig
 game.askForString("")
@@ -10,7 +13,8 @@ game.askForString("")
 
 ## Concept: Names
 
-Saving user input in variables is useful, as it allows the values the user inputs into the game to continue to exist - rather than just being ignored.
+Saving user input in variables is useful, as it allows the values the user inputs
+into the game to continue to exist - rather than just being ignored.
 
 ## Example #1: Storing a Name
 
@@ -22,33 +26,44 @@ Saving user input in variables is useful, as it allows the values the user input
 let userInput: string = game.askForString("Give me data!");
 ```
 
-The ``||game:game.askForString||`` function prompts the user to input a string with the phrase "Give me data!", and then the response the user gives is stored in the variable ``||variables:userInput||`` as a ``||text:string||``.
+The ``||game:game.askForString||`` function prompts the user to input a string
+with the phrase "Give me data!", and then the response the user gives is stored
+in the variable ``||variables:userInput||`` as a ``||text:string||``.
 
 ## Student Task #1: Say my Name
 
 1. Start with the code from example #1
 2. Change the **prompt** to ask the user for their name (``"What is your name?"``)
 3. After asking for their name, use ``||game:game.splash||`` to display their name
-4. Add a short message to the ``||game:game.splash||`` to appear before the name (``"hello, "``)
-5. **Challenge:** ``||game:ask||`` the user for their favorite color. Respond with a ``||game:game.splash||`` that says their favorite color is your favorite color too.
+4. Add a short message to the ``||game:game.splash||`` to appear before
+the name (``"hello, "``)
+5. **Challenge:** ``||game:ask||`` the user for their favorite color.
+Respond with a ``||game:game.splash||`` that says their favorite color
+is your favorite color too.
 
 ## Example #2: Immediate Responses
 
 1. Review the code below
 2. Identify how the response from ``||game:game.askForString||`` is used
-3. Identify whether the response from the user is available to be used again after the ``||game:game.splash||``
+3. Identify whether the response from the user is available to be used
+again after the ``||game:game.splash||``
 
 ```typescript
 game.splash("I like " + game.askForString("What food do you like?"));
 ```
 
-In the above example, the response of ``||game:game.askForString||`` is used **without** storing the result in a variable. The result will be used in the ``||game:game.splash||``, but is inaccessible outside of that.
+In the above example, the response of ``||game:game.askForString||``
+is used **without** storing the result in a variable.
+The result will be used in the ``||game:game.splash||``,
+but is inaccessible outside of that.
 
 ## Student Task #2: Asking another Quick Question
 
 1. Start with the code from example #2
 2. Add another line containing a ``||game:game.splash||``
-3. In the new ``||game:game.splash||``, ask the user what they had for lunch with ``||game:game.askForString||``, to ``||game:splash||`` it on the screen
+3. In the new ``||game:game.splash||``, ask the user what
+they had for lunch with ``||game:game.askForString||``,
+to ``||game:splash||`` it on the screen
 
 ## Example #3: Give me a Word
 
@@ -64,8 +79,10 @@ console.log("Mary had a little " + animal);
 
 1. Create a short story that is at least **5** sentences long
 2. In each sentence, pick out one or two words that are important to the story
-3. Remove those words from the sentence, and replace them with the part of speech that relates to it (noun, adjective, and so on)
-4. After you have chosen words for every sentence, use ``||game:game.askForString||`` to prompt the user to give you words to replace the original with, and store each in a variable
+3. Remove those words from the sentence, and replace them with the part of speech
+that relates to it (noun, adjective, and so on)
+4. After you have chosen words for every sentence, use ``||game:game.askForString||``
+to prompt the user to give you words to replace the original with, and store each in a variable
 5. After asking for all the words, create a string for each sentence with the words replaced
 6. Use ``console.log`` to print each sentence in order
 
@@ -137,11 +154,14 @@ console.log(sentence1);
 ## What did we learn?
 
 1. Explain how accepting user input can make your games more interesting and interactive.
-2. What does storing the value in a variable do that using it directly in a ``||game:game.splash||`` not allow?
+2. What does storing the value in a variable do that using it directly in a
+``||game:game.splash||`` not allow?
 
 ### ~hint
 
-Before moving on to the next lesson, it is recommended that you check out the [selected problems](/courses/csintro3/intro/user-input-problems) for this section to review the material and practice the concepts introduced in this section.
+Before moving on to the next lesson, it is recommended that you check out the
+[selected problems](/courses/csintro3/intro/user-input-problems) for this section to
+review the material and practice the concepts introduced in this section.
 
 ### ~
 
@@ -151,7 +171,8 @@ Before moving on to the next lesson, it is recommended that you check out the [s
 
 ### Ask for a Name
 
-Ask the user for their name with ``||game:game.askForString||``, so that the game can use their name to personalize messages to them in the future.
+Ask the user for their name with ``||game:game.askForString||``,
+so that the game can use their name to personalize messages to them in the future.
 
 ### Solution
 
