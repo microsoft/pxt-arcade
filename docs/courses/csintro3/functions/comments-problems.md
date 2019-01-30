@@ -6,7 +6,7 @@ It is recommended that you review the problems, and complete a few before moving
 
 ## Problem #1: Create a Skelly
 
-Write a descriptive comment for the following function.
+Write a descriptive comment for the following ``||functions:function||``.
 
 ```typescript
 function createSkeleton() {
@@ -41,7 +41,7 @@ function createSkeleton() {
 
 ## Problem #2: Create Your Own 
 
-Implement the function ``placeSkeleton`` as described in the comment below.
+Implement the ``||functions:function||`` ``||functions:placeSkeleton||`` as described in the comment below.
 
 ```typescript
 /**
@@ -53,7 +53,7 @@ Implement the function ``placeSkeleton`` as described in the comment below.
 
 ## Problem #3: Party Time
 
-Write a descriptive comment for the following function.
+Write a descriptive comment for the following ``||functions:function||``.
 
 ```typescript
 function party(sprite: Sprite) {
@@ -64,13 +64,7 @@ function party(sprite: Sprite) {
 
 ## Problem #4: Mean Comment
 
-Implement the function ``average`` as described in the comment below.
-
-### ~hint
-
-The average of two numbers can be founding by adding them together and then dividing by two.
-
-### ~
+Implement the ``||functions:function||`` ``||functions:average||`` as described in the comment below.
 
 ```typescript
 /**
@@ -81,9 +75,15 @@ The average of two numbers can be founding by adding them together and then divi
  */
 ```
 
+### ~hint
+
+The average of two numbers can be founding by adding them together and then dividing by two.
+
+### ~
+
 ## Problem #5: Move Me!
 
-Write a descriptive comment for the following function.
+Write a descriptive comment for the following ``||functions:function||``.
 
 ```typescript
 function moveMe(sprite: Sprite, distance: number) {

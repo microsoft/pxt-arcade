@@ -6,152 +6,81 @@ It is recommended that you review the problems, and complete a few before moving
 
 ## Problem #1: Current Season
 
-Write a basic function called ``currentSeason`` that takes in no parameters and returns a string describing the current season (e.g. "Spring", "Summer", "Autumn", or Winter).
+Implement a ``||functions:function||`` called ``||functions:currentSeason||`` that
+returns a ``||text:string||`` describing the current season
+(for example, "Spring", "Summer", "Autumn", or "Winter").
 
 ## Problem #2: Favorite Food
 
-In your program it can be a good idea to have functions whose only purpose is to return the value of a variable. 
+Write a short program in which you create a variable called ``||variables:favoriteFood||``,
+and set it equal to the string describing what the player's favorite food is
+(use ``||game:game.askForString||``).
 
-Write a short program in which you create a variable called ``favoriteFood`` and set it equal to the string describing what your favorite food is.
+Then, implement a ``||functions:function||`` called ``||functions:getFavoriteFood||``
+that takes in no parameters and returns the current value of ``||variables:favoriteFood||``.
 
-Then, write a function called ``getFavoriteFood`` that takes in no parameters and returns ``favoriteFood``.
+## Problem #3: createEnemy
 
-## Problem #3: Down for the Count
+Implement a ``||functions:function||`` called ``||functions:createEnemy||`` that takes no
+parameters and uses ``||sprites:sprites.create||`` to return a ``||sprites:sprite||`` of
+kind ``Enemy`` with an evil looking image.
 
-Functions can be a great way to create a variable with specific 
+## Problem #4: Brick Builder
 
-Write a function called ``count`` that takes in a number ``max`` as a parameter and returns a string that consists of all of the numbers up to and including ``max``.
+Implement a ``||functions:function||`` called ``||functions:createBrick||`` that takes in
+three numbers as parameters: ``||variables:width||``, ``||variables:height||``,
+and ``||variables:color||``.
+The function should then return an ``||images:Image||`` with these attributes.
+To do this, you will need to use two new functions, ``||images:image.create||``
+and ``||images:Image.fill||``.
 
-The following is a table of expected output for given inputs.
+The function ``||images:image.create||`` takes in a ``||variables:width||`` and
+a ``||variables:height||`` and returns a transparent ``||images:Image||`` with those dimensions.
 
-| ``max`` | ``count(max)``   |
-|:--------|:-----------------|
-| 0       | "0"              |
-| 1       | "01"             |
-| 2       | "012"            |
-| 3       | "0123"           |
-| 5       | "012345"         |
-| 9       | "0123456789"     |
-| 10      | "012345678910"   |
-| 11      | "01234567891011" |
-
-## Problem #4: Celsius &hArr; Fahrenheit
-
-Temperature can be difficult to express to people if they are used to using a different temperature scale. The two main temperature scales used are Fahrenheit and Celsius.
-
-Write a function called ``toFahrenheit`` that takes a number called ``tempInCels`` as a parameter and returns a number. The parameter ``tempInCels`` represents a temperature in Celsius and the output of the function should be the temperature converted to the Fahrenheit scale.
-
-### ~hint
-
-The mathematical formula for converting a temperature from Celsius (C) to Fahrenheit (F) is:
-
-```F = 32 + (9 / 5) * C```
-
-### ~ 
-
-Write a function called ``toCelsius`` that takes a number called ``tempInFahr`` as a parameter and returns a number. The parameter ``tempInFahr`` represents a temperature in Fahrenheit and the output of the function should be the temperature converted to the Celsius scale.
-
-### ~hint
-
-The mathematical formula for converting a temperature from Fahrenheit (F) to Celsius (C) is:
-
-```C = (5 / 9) * (F - 32)```
-
-### ~ 
-
-## Problem #5: To Radians
-
-Writing code that deals with angles can be tricky because there are two basic units for angles. For day-to-day use, degrees are often used to describe angles, but for computations, radians are usual used. 
-
-Radians describe the ratio between the length of the outer arc of an angle and the radius of the angle (i.e. the distance from the center to the outer arc or perimeter)
-
-Degrees are more arbitrarily chosen to be values more understandable by humans.
-
-Since they measure the same thing, we can convert between the two.
-
-Write a function called ``toRadians`` that takes an input called ``angle`` that is an angle represented in degrees (e.g. 90, 180, 45, 30) and returns the radian equivalent of that angle (e.g. π/2, π, π/4, π/6).
-
-### ~hint
-
-To convert a number from degrees to radians, divide by 180 and multiply by ``||Math:Math.PI||``.
-
-### ~
-
-### Challenge: To Degrees
-
-Write a function called ``toDegrees`` that takes an input called ``angle`` that is an angle represented in radians ((e.g. π/2, π, π/4, π/6) and returns the degree equivalent of that angle (e.g. 90, 180, 45, 30).
-
-## Problem #6: Create and give me an enemy
-
-The ``||sprites:sprites.create||`` function takes in a parameter of an ``||images:image||`` and ``||sprites:SpriteKind||`` and returns a sprite with that ``||images:image||`` and ``||sprites:SpriteKind||``. 
-
-Write a similar function called ``createEnemy`` that takes no parameters and uses ``||sprites:sprites.create||`` to return an Enemy sprite with some evil looking image.
-
-## Problem #7: Brick Builder
-
-``||images:Images||`` have shown themselves to be crucial to game development, but there hasn't really been a way to create ``||images:images||`` dynamically using code. This means not explicitly saying what pixel goes where. 
-
-Write a function called ``createBrick`` that takes in 3 numbers as parameters, ``height``, ``width``, and ``color``. The function should then return an ``||images:Image||`` with these attributes. 
-
-To do this, there are two functions that might be helpful.
-
-The function ``image.create(width: number, height: number)`` takes in a ``width`` and a ``height`` and will return a transparent ``||images:Image||`` with those dimensions.
-
-Example:
-
-```typescript-ignore
-let someImage: Image = image.create(10, 10);
+```sig
+image.create(0, 0);
 ```
 
-This creates a 10x10 transparent ``||images:Image||`` called ``someImage``
+Once you have an ``||images:Image||`` ``||variables:myImage||``,
+calling the function``||images:myImage.fill||`` will modify the ``||images:image||``
+be completely filled with the given ``||variables:color||``.
 
-Once you have an ``||images:Image||``, calling the function ``fill(color: number)`` on that ``||images:image||`` will modify the ``||images:image||`` to be the color given.
-
-Example:
-
-```typescript-ignore
-someImage.fill(2);
+```sig
+image.create(0, 0).fill(0);
 ```
 
-This makes ``someImage`` completely red.
+When you are done, add it to the following snippet:
+the result should be a red bar across the center of the screen.
 
-## Problem #8: Wholesome Numbers
+```typescript-ignore
+// Your function here
 
-When writing code, it can be helpful to know if a given number is a whole number (i.e. a number with no numbers after the decimal) or not.
+let myBrick = createBrick(screen.width, 16, 2);
 
-Write a function called ``isWholeNumber`` that takes in a number called ``numToCheck`` and returns a boolean representing whether or not that number is a whole number.
+sprites.create(myBrick);
+```
 
-The following is a table of expected output for given inputs.
+## Problem #5: Conversions
 
-| ``numToCheck`` | ``isWholeNumber(numToCheck)`` |
-|:---------------|:------------------------------|
-| 2              | true                          |
-| 2.5            | false                         |
-| 4              | true                          |
-| 5.33333        | false                         |
-| 3.14           | false                         |
-| 3              | true                          |
+Angles can be tricky because there are two basic units: **degrees** and **radians**.
+Degrees tend to be more commonly used for day-to-day purposes,
+but radians are more commonly used in math and science.
+In this problem, you will implement two ``||functions:functions||`` to allow you
+to convert from one to the other.
 
-### ~hint
+It is important to know how exactly the values are measured when trying to convert
+from one unit to another.
 
-``||math:math.round||`` will take in a number and return the nearest whole number. If the number returned is the same as the number given, then that would mean that the number given must be a whole number.
+A full circle can be represented by 360 degrees and by 2π radians
+(π, or pi, is represented in JavaScript as ``||math:Math.PI||``):
+if you divide both by two, you can see that ``180 degrees`` is equal to ``π radians``.
+Using this information, you can convert a number from degrees to radians by multiplying
+the value by ``||Math:Math.PI||`` and dividing it by 180.
 
-### ~
+Implement a ``||functions:function||`` called ``||functions:toRadians||`` that takes an
+input called ``||variables:angle||`` that is an angle represented in degrees and returns
+the radian equivalent of that angle.
 
-### Challenge: isDivisible
-
-Write a function called ``isDivisible`` that takes in two numbers, ``divisor`` and ``dividend``. The function should return a boolean for whether or not the ``dividend`` is divisible ``divisor``. 
-
-A ``dividend`` is defined to be divisible by a ``divisor`` if the ``dividend`` divided by the ``divisor`` is a whole number.
-
-### Challenge: isPrime
-
-Prime numbers are numbers that are not divisible by any numbers other than 1 and itself.
-
-Write a function called ``isPrime`` that takes in a number called ``numToTest``. The function should return a boolean for whether or not ``numToTest`` is prime.
-
-### ~hint
-
-You only need to check if ``numToTest`` is divisible by numbers less than itself since a number can not be divisible by a number greater than itself.
-
-### ~
+Finally, implement another ``||functions:function||`` called ``||functions:toDegrees||``
+that takes an input called ``||variables:angle||`` that is an angle represented in radians
+and returns the degree equivalent of that angle.
