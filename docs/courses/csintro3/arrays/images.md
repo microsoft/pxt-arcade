@@ -223,6 +223,14 @@ accesses an invalid index in the ``||arrays:array||``?
 
 ### ~hint
 
+Before moving on to the next lesson, it is recommended that you check out the
+[selected problems](/courses/csintro3/arrays/images-problems) for this
+section to review the material and practice the concepts introduced in this section.
+
+### ~
+
+### ~hint
+
 ## Case Study
 
 ### Power Up Images

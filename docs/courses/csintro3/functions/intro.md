@@ -186,6 +186,14 @@ and convert it to blocks - what looks different?
 
 ### ~hint
 
+Before moving on to the next lesson, it is recommended that you check out the
+[selected problems](/courses/csintro3/functions/intro-problems) for this
+section to review the material and practice the concepts introduced in this section.
+
+### ~
+
+### ~hint
+
 Another case where variable scope matters is with **variable shadowing**.
 This will be discussed in more detail later in the course,
 but an example of the problem can be found in the following snippet:

@@ -177,6 +177,14 @@ commonly used in ``||sprites:overlap||`` events?
 
 ### ~hint
 
+Before moving on to the next lesson, it is recommended that you check out the
+[selected problems](/courses/csintro3/events/overlap-problems) for this
+section to review the material and practice the concepts introduced in this section.
+
+### ~
+
+### ~hint
+
 ## Case Study
 
 ### Enemy Lasers
