@@ -22,8 +22,8 @@ Create 3 counters to display hours, minutes, and seconds. Set the display size o
 ```blocks
 enum SpriteKind {
     Player,
-    Enemy,
     Projectile,
+    Enemy,
     Food
 }
 let colon: Sprite = null

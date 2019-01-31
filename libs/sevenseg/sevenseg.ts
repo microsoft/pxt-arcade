@@ -20,8 +20,8 @@ enum SegmentScale {
 /**
 * Seven segment display digits and gizmos
 */
-//% weight=100 color=#20b2aa icon="\uf2a1"
-//% groups='["Create, "Digits", "Position", "Counter"]'
+//% icon="\uf2a1" color="#4682B4" blockGap=8
+//% groups='["Create", "Counter", "Digits", "Position"]'
 namespace sevenseg {
 
     const fullSegment: number[][] = [
@@ -94,6 +94,8 @@ namespace sevenseg {
     //% blockId=sevenseg_create block="create seven segment digit || of %thickness with value %value"
     //% expandableArgumentMode=toggle
     //% blockSetVariable=myDigit
+    //% value.min=0 value.max=9 value.defl=0
+    //% weight=99
     export function createDigit(thickness: SegmentStyle = SegmentStyle.Thick, value: number = 0): SevenSegDigit {
         return new SevenSegDigit(thickness, value)
     }
@@ -108,12 +110,14 @@ namespace sevenseg {
     //% blockId=sevenseg_createcounter block="create counter || of %thickness segments at %scale size with %numDigits digits"
     //% expandableArgumentMode=toggle
     //% blockSetVariable=myCounter
+    //% numDigits.min=1 numDigits.max=5 numDigits.defl=1
+    //% weight=100
     export function createCounter(thickness: SegmentStyle = SegmentStyle.Thick, scale: SegmentScale = SegmentScale.Full, numDigits: number = 1): DigitCounter {
         return new DigitCounter(thickness, scale, numDigits)
     }
 }
 
-//% blockNamespace=sevenseg color="#20b2aa" blockGap=8
+//% blockNamespace=sevenseg color="#4682B4" blockGap=8
 class SevenSegDigit {
     private digit: Image;
     private digitSprite: Sprite;
@@ -141,7 +145,9 @@ class SevenSegDigit {
      * @param value the display value, eg: 0
      */
     //% group="Digits"
+    //% value.min=1 value.max=9 value.defl=0
     //% blockId=sevenseg_setvalue block="set %sevenseg(myDigit) display value to %value"
+    //% weight=90
     setDigitValue(value: number): void {
         value = value | 0;
         if (value != this.value) {
@@ -157,7 +163,9 @@ class SevenSegDigit {
      * @param value the display value, eg: 0
     */
     //% group="Digits"
+    //% value.min=1 value.max=9 value.defl=0
     //% blockId=sevenseg_changevalue block="change %sevenseg(myDigit) display value by %value"
+    //% weight=89
     changeDigitValue(value: number): void {
         value = value | 0;
         if (value > -10 && value < 10) {
@@ -177,6 +185,7 @@ class SevenSegDigit {
      */
     //% group="Digits"
     //% blockId=sevenseg_setalpha block="set %sevenseg(myDigit) display value to %alphaChar"
+    //% weight=88
     setDigitAlpha(alphaChar: string) {
         const matchChars = "0123456789";
         let value = 0;
@@ -197,6 +206,7 @@ class SevenSegDigit {
      */
     //% group="Digits"
     //% blockId=sevenseg_getvalue block="get display value of %sevenseg(myDigit)"
+    //% weight=87
     getDigitValue(): number {
         return this.value;
     }
@@ -207,6 +217,7 @@ class SevenSegDigit {
      */
     //% group="Digits"
     //% blockId=sevenseg_setcolor block="set %sevenseg(myDigit) display color to %color=colorindexpicker"
+    //% weight=86
     setDigitColor(color: number): void {
         this.color = color;
         sevenseg.drawDigit(this.digit, this.value, this.thickness, this.scale, this.color);
@@ -255,6 +266,7 @@ class SevenSegDigit {
      */
     //% group="Digits"
     //% blockId=sevenseg_setdigitscale block="set %sevenseg(myDigit) to %scale size"
+    //% weight=85
     setScale(scale: SegmentScale): void {
         if (scale != this.scale) {
             this.scale = scale;
@@ -269,16 +281,9 @@ class SevenSegDigit {
            sevenseg.drawDigit(this.digit, this.value, this.thickness,this.scale, this.color);
         }
     }
-
-    /**
-     * Destroy the seven segment display
-     */
-    destroy() {
-        this.digitSprite.destroy();
-    }
 }
 
-//% blockNamespace=sevenseg color="#afeeee" blockGap=8
+//% blockNamespace=sevenseg color="#4682B4" blockGap=8
 class DigitCounter {
     private _count: number;
     private limit: number
@@ -334,6 +339,7 @@ class DigitCounter {
      */
     //% group="Counter"
     //% blockId=sevenseg_increment block="add one to %sevenseg(myCounter)"
+    //% weight=86
     increment() {
         if (this._count < this.limit) {
             this._count++;
@@ -349,6 +355,7 @@ class DigitCounter {
      */
     //% group="Counter"
     //% blockId=sevenseg_setcountervalueolor block="set %sevenseg(myCounter) count value to %value"
+    //% weight=89
     setCounterValue(value: number): void {
         if (value >= 0 && value < this.limit) {
             this._count = value;
@@ -392,6 +399,7 @@ class DigitCounter {
      */
     //% group="Counter"
     //% blockId=sevenseg_setcountercolor block="set %sevenseg(myCounter) display color to %color=colorindexpicker"
+    //% weight=87
     setDigitColor(color: number): void {
         this.color = color;
         for (let i = 0; i < this.numDigits; i++) {
