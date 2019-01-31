@@ -1,4 +1,6 @@
 enum SegmentStyle {
+    //% block="blank"
+    Blank = 0,
     //% block="thin"
     Thin = 1,
     //% block="narrow"
@@ -9,22 +11,40 @@ enum SegmentStyle {
     Thick = 4
 }
 
+enum SegmentScale {
+    //% block="full"
+    Full,
+    //% block="half"
+    Half
+}
 /**
 * Seven segment display digits and gizmos
 */
-//% weight=100 color=#ffb266 icon="\uf2a1"
-//% groups='["Create, "Digits", "Position", "Timer", "Clock"]'
+//% weight=100 color=#20b2aa icon="\uf2a1"
+//% groups='["Create, "Digits", "Position", "Counter"]'
 namespace sevenseg {
-    
-    let segmentA = [1, 0, 14, 0, 2, 1, 13, 1, 3, 2, 12, 2, 4, 3, 11, 3];
-    let segmentB = [15, 2, 15, 14, 14, 3, 14, 13, 13, 4, 13, 12, 12, 5, 12, 11];
-    let segmentC = [15, 17, 15, 29, 14, 18, 14, 28, 13, 19, 13, 27, 12, 20, 12, 26];
-    let segmentD = [1, 31, 14, 31, 2, 30, 13, 30, 3, 29, 12, 29, 4, 28, 11, 28];
-    let segmentE = [0, 17, 0, 29, 1, 18, 1, 28, 2, 19, 2, 27, 3, 20, 3, 26];
-    let segmentF = [0, 2, 0, 14, 1, 3, 1, 13, 2, 4, 2, 12, 3, 5, 3, 11]
-    let segmentG = [2, 15, 13, 15, 2, 16, 13, 16, 3, 14, 12, 14, 3, 17, 12, 17];
-    
-    let segmap = ["abcdef", "bc", "abdeg", "abcdg", "bcfg", "acdfg", "acdefg", "abc", "abcdefg", "abcdfg"];
+
+    const fullSegment: number[][] = [
+        [1, 0, 14, 0, 2, 1, 13, 1, 3, 2, 12, 2, 4, 3, 11, 3],
+        [15, 2, 15, 14, 14, 3, 14, 13, 13, 4, 13, 12, 12, 5, 12, 11],
+        [15, 17, 15, 29, 14, 18, 14, 28, 13, 19, 13, 27, 12, 20, 12, 26],
+        [1, 31, 14, 31, 2, 30, 13, 30, 3, 29, 12, 29, 4, 28, 11, 28],
+        [0, 17, 0, 29, 1, 18, 1, 28, 2, 19, 2, 27, 3, 20, 3, 26],
+        [0, 2, 0, 14, 1, 3, 1, 13, 2, 4, 2, 12, 3, 5, 3, 11],
+        [2, 15, 13, 15, 2, 16, 13, 16, 3, 14, 12, 14, 3, 17, 12, 17]
+    ];
+ 
+    const halfSegment: number[][] = [
+        [1, 0, 6, 0, 2, 1, 5, 1],
+        [7, 2, 7, 6, 6, 3, 6, 5],
+        [7, 8, 7, 13, 6, 9, 6, 12],
+        [1, 15, 6, 15, 2, 14, 5, 14],
+        [0, 8, 0, 13, 1, 9, 1, 12],
+        [0, 2, 0, 6, 1, 3, 1, 5],
+        [2, 7, 5, 7, 2, 7, 5, 7]
+    ];
+
+    const segmap = ["abcdef", "bc", "abdeg", "abcdg", "bcfg", "acdfg", "acdefg", "abc", "abcdefg", "abcdfg"];
     
     export function drawSegment(digit: Image, segment: number[], thickness: SegmentStyle, color: number) {
         let x0 = 0;
@@ -43,18 +63,23 @@ namespace sevenseg {
         }
     }
     
-    export function drawDigit(digit: Image, value: number, thickness: SegmentStyle, color: number) {
+    export function drawDigit(digit: Image, value: number, thickness: SegmentStyle, scale: SegmentScale, color: number) {
         let segment: number[] = null;
+        let index = 0;
         digit.fill(0);
         for (let seg of segmap[value]) {
             switch (seg) {
-                case 'a': segment = segmentA; break;
-                case 'b': segment = segmentB; break;
-                case 'c': segment = segmentC; break;
-                case 'd': segment = segmentD; break;
-                case 'e': segment = segmentE; break;
-                case 'f': segment = segmentF; break;
-                case 'g': segment = segmentG; break;
+                case 'a': index = 0; break;
+                case 'b': index = 1; break;
+                case 'c': index = 2; break;
+                case 'd': index = 3; break;
+                case 'e': index = 4; break;
+                case 'f': index = 5; break;
+                case 'g': index = 6; break;
+            }
+            segment = scale == SegmentScale.Full ? fullSegment[index] : halfSegment[index];
+            if (scale == SegmentScale.Half && thickness > SegmentStyle.Narrow) {
+                thickness = SegmentStyle.Narrow;
             }
             drawSegment(digit, segment, thickness, color)
         }
@@ -76,35 +101,39 @@ namespace sevenseg {
     /**
      * Create a seven segment counter display
      * @param thickness the width of the segements, eg: SegmentStyle.Thick
+     * @param scale the size of the segements, eg: SegmentScale.Full
      * @param numDigits the number of digits displayed, eg: 1
      */
     //% group="Create"
-    //% blockId=sevenseg_createcounter block="create seven segment counter || of %thickness with %numDigits digits"
+    //% blockId=sevenseg_createcounter block="create counter || of %thickness segments at %scale size with %numDigits digits"
     //% expandableArgumentMode=toggle
     //% blockSetVariable=myCounter
-    export function createCounter(thickness: SegmentStyle = SegmentStyle.Thick, numDigits: number = 1): DigitCounter {
-        return new DigitCounter(thickness, numDigits)
+    export function createCounter(thickness: SegmentStyle = SegmentStyle.Thick, scale: SegmentScale = SegmentScale.Full, numDigits: number = 1): DigitCounter {
+        return new DigitCounter(thickness, scale, numDigits)
     }
 }
 
-//% blockNamespace=sevenseg color="#ffb266" blockGap=8
+//% blockNamespace=sevenseg color="#20b2aa" blockGap=8
 class SevenSegDigit {
     private digit: Image;
     private digitSprite: Sprite;
     private value: number;
-    private letter: string;
     private thickness: SegmentStyle;
     private color: number;
-    private numDigits: number;
+    private scale: SegmentScale;
+    private _x: number;
+    private _y: number;
     
     constructor(thickness: SegmentStyle = SegmentStyle.Thick, value: number = 0) {
         this.value = value;
-        this.letter = "0";
         this.digit = image.create(16, 32);
         this.digitSprite = sprites.create(this.digit, 0);
+        this._x = this.digitSprite.x
+        this._y = this.digitSprite.y
         this.thickness = thickness;
-        this.color = 2
-        sevenseg.drawDigit(this.digit, this.value, thickness, this.color);
+        this.color = 2;
+        this.scale = SegmentScale.Full;
+        sevenseg.drawDigit(this.digit, this.value, thickness, this.scale, this.color);
     }
 
     /**
@@ -118,7 +147,7 @@ class SevenSegDigit {
         if (value != this.value) {
             if (value >= 0 && value < 10) {
                 this.value = value;
-                sevenseg.drawDigit(this.digit, value, this.thickness, this.color);
+                sevenseg.drawDigit(this.digit, value, this.thickness, this.scale, this.color);
             }
         }
     }
@@ -138,7 +167,7 @@ class SevenSegDigit {
             } else if (this.value > 9) {
                 this.value = this.value - 10;
             }
-            sevenseg.drawDigit(this.digit, value, this.thickness, this.color);
+            sevenseg.drawDigit(this.digit, value, this.thickness, this.scale, this.color);
         }
     }
 
@@ -159,7 +188,7 @@ class SevenSegDigit {
                     break;
                 }
             }
-            sevenseg.drawDigit(this.digit, value, this.thickness, this.color);
+            sevenseg.drawDigit(this.digit, value, this.thickness, this.scale, this.color);
         }
     }
     
@@ -180,7 +209,7 @@ class SevenSegDigit {
     //% blockId=sevenseg_setcolor block="set %sevenseg(myDigit) display color to %color=colorindexpicker"
     setDigitColor(color: number): void {
         this.color = color;
-        sevenseg.drawDigit(this.digit, this.value, this.thickness, this.color);
+        sevenseg.drawDigit(this.digit, this.value, this.thickness, this.scale, this.color);
     }
 
     //% group="Position" blockSetVariable="myDigit"
@@ -192,6 +221,7 @@ class SevenSegDigit {
     //% group="Position" blockSetVariable="myDigit"
     //% blockCombine block="x"
     set x(v: number) {
+        this._x = v;
         this.digitSprite.x = v;
     }
 
@@ -203,6 +233,7 @@ class SevenSegDigit {
     //% group="Position" blockSetVariable="myDigit"
     //% blockCombine block="y"
     set y(v: number) {
+        this._y = v;
         this.digitSprite.y = v;
     }
 
@@ -217,6 +248,27 @@ class SevenSegDigit {
     get height(): number {
         return this.digitSprite.height;
     }
+    
+    /**
+     * Set the display digit size
+     * @param scale of the digit display, eg: SegmentScale.Full
+     */
+    //% group="Digits"
+    //% blockId=sevenseg_setdigitscale block="set %sevenseg(myDigit) to %scale size"
+    setScale(scale: SegmentScale): void {
+        if (scale != this.scale) {
+            this.scale = scale;
+            if (scale == SegmentScale.Full) {
+                this.digit = image.create(16, 32)
+           } else {
+                this.digit = image.create(8, 16)
+           }
+           this.digitSprite.setImage(this.digit);
+           this.digitSprite.x = this._x;
+           this.digitSprite.y = this._y;
+           sevenseg.drawDigit(this.digit, this.value, this.thickness,this.scale, this.color);
+        }
+    }
 
     /**
      * Destroy the seven segment display
@@ -226,7 +278,7 @@ class SevenSegDigit {
     }
 }
 
-//% blockNamespace=sevenseg color="#ffb266" blockGap=8
+//% blockNamespace=sevenseg color="#afeeee" blockGap=8
 class DigitCounter {
     private _count: number;
     private limit: number
@@ -237,17 +289,20 @@ class DigitCounter {
     private digits: SevenSegDigit[];
     private thickness: SegmentStyle;
     private color: number;
-    
-    constructor(thickness: SegmentStyle = SegmentStyle.Thick, numDigits: number = 1) {
+    private scale: SegmentScale;
+
+    constructor(thickness: SegmentStyle = SegmentStyle.Thick, scale: SegmentScale = SegmentScale.Full, numDigits: number = 1) {
         this._count = 0;
         this.maxDigits = 5;
         this.color = 2
+        this.scale = scale;
         numDigits = Math.clamp(1, this.maxDigits, numDigits);
 
         this.thickness = thickness;
         this.digits = [];
         this.digits.push(new SevenSegDigit(this.thickness, 0));
-        this.digits[0].setDigitColor(this.color)
+        this.digits[0].setScale(this.scale);
+        this.digits[0].setDigitColor(this.color);
         this.numDigits = 1;
         this.limit = 10;
         this._x = this.digits[0].x;
@@ -261,12 +316,11 @@ class DigitCounter {
     /**
      * Add a digit to the counter
      */
-    //% group="Counter"
-    //% blockId=sevenseg_adddigit block="add digit to %sevenseg(myCounter)"
     addDigit() {
         let newDigit: SevenSegDigit = null
         if (this.numDigits < this.maxDigits) {
             newDigit = new SevenSegDigit(this.thickness, 0);
+            newDigit.setScale(this.scale)
             newDigit.setDigitColor(this.color)
             this.digits.push(newDigit);
             this.numDigits += 1;
@@ -287,6 +341,19 @@ class DigitCounter {
             this._count = 0;
         }
         this.updateDisplayValue()
+    }
+
+    /**
+     * Set the count value
+     * @param value of the digit display, eg: 0
+     */
+    //% group="Counter"
+    //% blockId=sevenseg_setcountervalueolor block="set %sevenseg(myCounter) count value to %value"
+    setCounterValue(value: number): void {
+        if (value >= 0 && value < this.limit) {
+            this._count = value;
+            this.updateDisplayValue()
+        }
     }
 
     private updateDisplayValue()
@@ -332,26 +399,26 @@ class DigitCounter {
         }
     }
 
-    //% group="Position" blockSetVariable="myCounter"
+    //% group="Counter" blockSetVariable="myCounter"
     //% blockCombine block="x"
     get x(): number {
         return this._x;
     }
 
-    //% group="Position" blockSetVariable="myCounter"
+    //% group="Counter" blockSetVariable="myCounter"
     //% blockCombine block="x"
     set x(v: number) {
         this.digits[0].x += v - this._x;
         this.moveDigits()
     }
 
-    //% group="Position" blockSetVariable="myCounter"
+    //% group="Counter" blockSetVariable="myCounter"
     //% blockCombine block="y"
     get y(): number {
         return this._y;
     }
 
-    //% group="Position" blockSetVariable="myCounter"
+    //% group="Counter" blockSetVariable="myCounter"
     //% blockCombine block="y"
     set y(v: number) {
         this.digits[0].y = v;
