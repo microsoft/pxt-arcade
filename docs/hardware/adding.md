@@ -292,6 +292,13 @@ DISPLAY_CFG0 = 0x00000090
 DISPLAY_CFG1 = 0x000e14ff
 ```
 
+For the ST7735 screen:
+* the low byte of `CFG0` is the MADCTL register
+* the next two bytes of `CFG0` are offset X and Y (if the screen doesn't start at 0, 0)
+* the lowest bit of high byte of `CFG0` can be set to enabled XOR of palette
+* `CFG1` is FRMCTR1
+* the low byte of `CFG2` is the desired SPI frequency in MHz
+
 Once you're done patching, press "Apply my patch", which will download new `board.h`.
 
 Note that you need to use the patching website to put the right header and size
