@@ -84,7 +84,7 @@ info.startCountdown(30)
 
 ## Step 3
 
-Now, pull out a ``||game:on game update every||`` from ``||game:Game||``. Set the interval time to `1000`. Back in ``||sprites:Sprites||``, get the ``||variables:set projectile to||`` ``||sprites:projectile from  side||`` block an put it inside.  Click on the grey box and then select the strawberry from the gallery.
+Now, pull out a ``||game:on game update every||`` from ``||game:Game||``. Set the interval time to `1000` ms, or 1 second. From ``||sprites:Sprites||``, drag the ``||variables:set projectile to||`` ``||sprites:projectile from side||`` block and drop it inside the ``||game:on game update every||``. Click on the grey image box and select the strawberry from the gallery.
 
 ```blocks
 let projectile: Sprite = null
@@ -110,7 +110,7 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-# step 4
+## Step 4
 
 Over in the ``||math:Math||`` drawer, pick up a ``||math: pick random||`` and put it in ``vx`` slot for the projectile. In ``||math:pick random||`` change the first `0` to `-50` and the second `0` to `50`. Dupicate this block and put its copy in the slot for ``vy``.
 
@@ -140,7 +140,7 @@ game.onUpdateInterval(1000, function () {
 
 ## Step 5
 
-From ``||sprites:Sprites||`` again, get out an ``||sprites:on sprite of kind overlaps||`` block. Set the kind for ``otherSprite`` to ``Projectile``. Find a ``||sprites:mySprite start effect||`` and put it in. Set the effect to ``spray`` and click the **(+)** button. Make the time for the effect be `200`. After that, drop in a ``||info:change score by||``.
+From ``||sprites:Sprites||``, drag an ``||sprites:on sprite of kind overlaps||`` block onto the Workspace. Set the kind for ``otherSprite`` to ``Projectile``. From ``||sprites:Sprites||``, drag a ``||sprites:mySprite start effect||`` block and drop inside the ``||sprites:overlaps||`` block. Click the **(+)** icon to expand the block and set the time for the effect be ``200`` ms. Lastly, from ``||info:Info||``, drag a ``||info:change score by||`` block in after the ``||sprites:effects||`` block.
 
 ```blocks
 enum SpriteKind {
