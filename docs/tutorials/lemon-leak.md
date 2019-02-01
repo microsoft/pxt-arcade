@@ -140,7 +140,24 @@ game.onUpdateInterval(1000, function () {
 
 ## Step 5
 
-From ``||sprites:Sprites||``, drag an ``||sprites:on sprite of kind overlaps||`` block onto the Workspace. Set the kind for ``otherSprite`` to ``Projectile``. From ``||sprites:Sprites||``, drag a ``||sprites:mySprite start effect||`` block and drop inside the ``||sprites:overlaps||`` block. Click the **(+)** icon to expand the block and set the time for the effect be ``200`` ms. Lastly, from ``||info:Info||``, drag a ``||info:change score by||`` block in after the ``||sprites:effects||`` block.
+From ``||sprites:Sprites||``, drag an ``||sprites:on sprite of kind overlaps||`` block onto the Workspace. Set the kind for ``otherSprite`` to ``Projectile``. From ``||sprites:Sprites||``, drag a ``||sprites:mySprite start effect||`` block and drop inside the ``||sprites:overlaps||`` block. Click the **(+)** icon to expand the block and set the time for the effect be ``200`` ms.
+
+```blocks
+enum SpriteKind {
+    Player,
+    Projectile,
+    Enemy,
+    Food
+}
+let mySprite: Sprite = null
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    mySprite.startEffect(effects.spray, 200)
+})
+```
+
+## Step 6
+
+Lastly, to score hits by the strawberries on the lemon, drag a ``||info:change score by||`` block from ``||info:Info||`` in after the ``||sprites:mySprite start effect||`` block.
 
 ```blocks
 enum SpriteKind {
