@@ -65,24 +65,18 @@ namespace sevenseg {
     const segmap = ["abcdef", "bc", "abdeg", "abcdg", "bcfg", "acdfg", "acdefg", "abc", "abcdefg", "abcdfg"];
     
     export function drawSegment(digit: Image, segment: Buffer, thickness: SegmentStyle, color: number) {
-        let x0 = 0;
-        let y0 = 1;
-        let x1 = 2;
-        let y1 = 3;
+        let offset = 0;
     
         if (segment.length >= thickness * 4) {
             for (let i = 0; i < thickness; i++) {
                 digit.drawLine(
-                    segment.getNumber(NumberFormat.Int8LE, x0),
-                    segment.getNumber(NumberFormat.Int8LE, y0),
-                    segment.getNumber(NumberFormat.Int8LE, x1),
-                    segment.getNumber(NumberFormat.Int8LE, y1),
+                    segment.getNumber(NumberFormat.Int8LE, offset),
+                    segment.getNumber(NumberFormat.Int8LE, offset + 1),
+                    segment.getNumber(NumberFormat.Int8LE, offset + 2),
+                    segment.getNumber(NumberFormat.Int8LE, offset + 3),
                     color
                 );
-                x0 += 4;
-                y0 += 4;
-                x1 += 4;
-                y1 += 4;
+                offset += 4;
             }
         }
     }
