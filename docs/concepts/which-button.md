@@ -31,7 +31,7 @@ info.setLife(5)
 
 Find ``||info:start countdown 10 (s)||`` in ``||info:Info||``, and drag it into ``||loops:on start||``.
 
-This will start a countdown of 10 seconds, after which the player the game is over. This also places a large timer at the top of the screen, so that the player knows they need to rush.
+This will start a countdown of 10 seconds, after which the game is over. This also places a large timer at the top of the screen, so that the player knows they need to rush.
 
 ```blocks
 info.setScore(0)
@@ -41,7 +41,7 @@ info.startCountdown(10)
 
 ## Step 4 @fullscreen
 
-Find ``||controller:on any button pressed||`` in ``||controller:Controller||``, and drag it into the workspace. Change ``||controller:any||`` to ``||controller:A||``.
+Find ``||controller:on A button pressed||`` in ``||controller:Controller||``, and drag it into the workspace.
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
