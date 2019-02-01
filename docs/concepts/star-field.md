@@ -86,9 +86,7 @@ game.onUpdate(function () {
 
 ## Step 4 @fullscreen
 
-Find ``||Math:pick random 0 to 10||``. Change the ``0`` to ``20``, and the ``10`` to ``30``. Place it in ``||sprites:vy||`` in ``||sprites:projectile||``.
-
-![Random Speed](/static/concepts/star-field/random-speed.gif)
+Find ``||Math:pick random 0 to 10||`` in ``||Math:Math||``. Change the ``0`` to ``20``, and the ``10`` to ``30``. Place it in ``||sprites:vy||`` in ``||sprites:projectile||``.
 
 ```blocks
 enum SpriteKind {
