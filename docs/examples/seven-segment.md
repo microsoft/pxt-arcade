@@ -4,7 +4,7 @@ Examples of using the seven segment display extension.
 
 ## 5 Digit Counter
 
-Create a counter with `5` digits and add one to the current count value every `100` millisecons.
+Create a counter with `5` digits and add one to the current count value every `100` milliseconds.
 
 ```blocks
 let myCounter: DigitCounter = null

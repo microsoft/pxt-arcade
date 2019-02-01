@@ -23,7 +23,25 @@ enum SegmentScale {
 //% icon="\uf2a1" color="#4682B4" blockGap=8
 //% groups='["Create", "Counter", "Digits", "Position"]'
 namespace sevenseg {
-
+    const fullSegment: Buffer[] = [
+        hex`01000e0002010d0103020c0204030b03`,
+        hex`0f020f0e0e030e0d0d040d0c0c050c0b`,
+        hex`0f110f1d0e120e1c0d130d1b0c140c1a`,
+        hex`011f0e1f021e0d1e031d0c1d041c0b1c`,
+        hex`0011001d0112011c0213021b0314031a`,
+        hex`0002000e0103010d0204020c0305030b`,
+        hex`020f0d0f02100d10030e0c0e03110c11`
+    ];
+    const halfSegment: Buffer[] = [
+        hex`0100060002010501`,
+        hex`0702070606030605`,
+        hex`0708070d0609060c`,
+        hex`010f060f020e050e`,
+        hex`0008000d0109010c`,
+        hex`0002000601030105`,
+        hex`0207050702070507`
+    ];
+/*
     const fullSegment: number[][] = [
         [1, 0, 14, 0, 2, 1, 13, 1, 3, 2, 12, 2, 4, 3, 11, 3],
         [15, 2, 15, 14, 14, 3, 14, 13, 13, 4, 13, 12, 12, 5, 12, 11],
@@ -33,7 +51,7 @@ namespace sevenseg {
         [0, 2, 0, 14, 1, 3, 1, 13, 2, 4, 2, 12, 3, 5, 3, 11],
         [2, 15, 13, 15, 2, 16, 13, 16, 3, 14, 12, 14, 3, 17, 12, 17]
     ];
- 
+
     const halfSegment: number[][] = [
         [1, 0, 6, 0, 2, 1, 5, 1],
         [7, 2, 7, 6, 6, 3, 6, 5],
@@ -43,10 +61,10 @@ namespace sevenseg {
         [0, 2, 0, 6, 1, 3, 1, 5],
         [2, 7, 5, 7, 2, 7, 5, 7]
     ];
-
+*/
     const segmap = ["abcdef", "bc", "abdeg", "abcdg", "bcfg", "acdfg", "acdefg", "abc", "abcdefg", "abcdfg"];
     
-    export function drawSegment(digit: Image, segment: number[], thickness: SegmentStyle, color: number) {
+    export function drawSegment(digit: Image, segment: Buffer, thickness: SegmentStyle, color: number) {
         let x0 = 0;
         let y0 = 1;
         let x1 = 2;
@@ -54,7 +72,13 @@ namespace sevenseg {
     
         if (segment.length >= thickness * 4) {
             for (let i = 0; i < thickness; i++) {
-                digit.drawLine(segment[x0], segment[y0], segment[x1], segment[y1], color);
+                digit.drawLine(
+                    segment.getNumber(NumberFormat.Int8LE, x0),
+                    segment.getNumber(NumberFormat.Int8LE, y0),
+                    segment.getNumber(NumberFormat.Int8LE, x1),
+                    segment.getNumber(NumberFormat.Int8LE, y1),
+                    color
+                );
                 x0 += 4;
                 y0 += 4;
                 x1 += 4;
@@ -64,7 +88,7 @@ namespace sevenseg {
     }
     
     export function drawDigit(digit: Image, value: number, thickness: SegmentStyle, scale: SegmentScale, color: number) {
-        let segment: number[] = null;
+        let segment: Buffer = null;
         let index = 0;
         digit.fill(0);
         for (let seg of segmap[value]) {
