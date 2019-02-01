@@ -33,6 +33,8 @@ Find ``||sprites:projectile from side||`` in ``||sprites:Sprites||``, and drag i
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let projectile: Sprite = null;
@@ -65,6 +67,8 @@ In the ``||sprites:projectile||``, set the ``||sprites:vx||`` to 40, so that it 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let projectile: Sprite = null;
@@ -97,6 +101,8 @@ In the ``||sprites:projectile||``, set the ``||sprites:vy||`` to 0, so that the 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let projectile: Sprite = null;
@@ -129,6 +135,8 @@ Find ``||sprites:set mySprite x to 0||`` from ``||sprites:Sprites||``, and drag 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let projectile: Sprite = null;
@@ -164,6 +172,8 @@ This will place the ``||variables:projectile||`` in a random ``||sprites:y||`` p
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let projectile: Sprite = null;
@@ -199,6 +209,8 @@ Find ``||scene:screen height||`` in ``||scene:Scene||``. Replace the 10 in ``||m
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let projectile: Sprite = null;
