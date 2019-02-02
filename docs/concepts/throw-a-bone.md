@@ -334,7 +334,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     . . . . 1 1 . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
-    `, mySprite, 50, -15)
+    `, mySprite, 50, -15);
 })
 ```
 
