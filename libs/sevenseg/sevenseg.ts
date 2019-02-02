@@ -23,6 +23,24 @@ enum SegmentScale {
 //% icon="\uf2a1" color="#4682B4" blockGap=8
 //% groups='["Create", "Counter", "Digits", "Position"]'
 namespace sevenseg {
+
+    // Copy these array sets along with the array mapping string into Node to get the
+    // formatting of the segment buffer data.
+
+    /*
+    var fullSegment: number[][] = [
+        [1, 0, 14, 0, 2, 1, 13, 1, 3, 2, 12, 2, 4, 3, 11, 3],
+        [15, 2, 15, 14, 14, 3, 14, 13, 13, 4, 13, 12, 12, 5, 12, 11],
+        [15, 17, 15, 29, 14, 18, 14, 28, 13, 19, 13, 27, 12, 20, 12, 26],
+        [1, 31, 14, 31, 2, 30, 13, 30, 3, 29, 12, 29, 4, 28, 11, 28],
+        [0, 17, 0, 29, 1, 18, 1, 28, 2, 19, 2, 27, 3, 20, 3, 26],
+        [0, 2, 0, 14, 1, 3, 1, 13, 2, 4, 2, 12, 3, 5, 3, 11],
+        [2, 15, 13, 15, 2, 16, 13, 16, 3, 14, 12, 14, 3, 17, 12, 17]
+    ];
+    "hex`" + fullSegment.map(n => n.toString(16)).map(n => n.length < 2 ? "0" + n : n).join("") + "`"
+    */
+
+    // packed metrics of pixel drawing for full size digit segements
     const fullSegment: Buffer[] = [
         hex`01000e0002010d0103020c0204030b03`,
         hex`0f020f0e0e030e0d0d040d0c0c050c0b`,
@@ -32,6 +50,21 @@ namespace sevenseg {
         hex`0002000e0103010d0204020c0305030b`,
         hex`020f0d0f02100d10030e0c0e03110c11`
     ];
+
+    /*
+    var halfSegment: number[][] = [
+        [1, 0, 6, 0, 2, 1, 5, 1],
+        [7, 2, 7, 6, 6, 3, 6, 5],
+        [7, 8, 7, 13, 6, 9, 6, 12],
+        [1, 15, 6, 15, 2, 14, 5, 14],
+        [0, 8, 0, 13, 1, 9, 1, 12],
+        [0, 2, 0, 6, 1, 3, 1, 5],
+        [2, 7, 5, 7, 2, 7, 5, 7]
+    ];
+    "hex`" + halfSegment.map(n => n.toString(16)).map(n => n.length < 2 ? "0" + n : n).join("") + "`"
+    */
+
+    // packed metrics of pixel drawing for half size digit segements
     const halfSegment: Buffer[] = [
         hex`0100060002010501`,
         hex`0702070606030605`,
@@ -41,29 +74,39 @@ namespace sevenseg {
         hex`0002000601030105`,
         hex`0207050702070507`
     ];
-/*
-    const fullSegment: number[][] = [
-        [1, 0, 14, 0, 2, 1, 13, 1, 3, 2, 12, 2, 4, 3, 11, 3],
-        [15, 2, 15, 14, 14, 3, 14, 13, 13, 4, 13, 12, 12, 5, 12, 11],
-        [15, 17, 15, 29, 14, 18, 14, 28, 13, 19, 13, 27, 12, 20, 12, 26],
-        [1, 31, 14, 31, 2, 30, 13, 30, 3, 29, 12, 29, 4, 28, 11, 28],
-        [0, 17, 0, 29, 1, 18, 1, 28, 2, 19, 2, 27, 3, 20, 3, 26],
-        [0, 2, 0, 14, 1, 3, 1, 13, 2, 4, 2, 12, 3, 5, 3, 11],
-        [2, 15, 13, 15, 2, 16, 13, 16, 3, 14, 12, 14, 3, 17, 12, 17]
-    ];
 
-    const halfSegment: number[][] = [
-        [1, 0, 6, 0, 2, 1, 5, 1],
-        [7, 2, 7, 6, 6, 3, 6, 5],
-        [7, 8, 7, 13, 6, 9, 6, 12],
-        [1, 15, 6, 15, 2, 14, 5, 14],
-        [0, 8, 0, 13, 1, 9, 1, 12],
-        [0, 2, 0, 6, 1, 3, 1, 5],
-        [2, 7, 5, 7, 2, 7, 5, 7]
+    // Seven segment layout and id assignments
+    //
+    //          a
+    //      =========
+    //     ||       ||
+    //   f ||       || b
+    //     ||   g   ||
+    //      =========
+    //     ||       ||
+    //   e ||       || c
+    //     ||   d   ||
+    //      =========
+
+    /*
+    const segmapIds = ["abcdef", "bc", "abdeg", "abcdg", "bcfg", "acdfg", "acdefg", "abc", "abcdefg", "abcdfg"];
+    var segmap = [
+        0b11111100, // '0' digit maps "abcdef.."
+        0b01100000, // '1' digit maps ".bc....."
+        0b11011010, // '2' digit maps "ab.de.g."
+        0b11110010, // '3' digit maps "abcd..g."
+        0b01100110, // '4' digit maps ".bc..fg."
+        0b10110110, // '5' digit maps "a.cd.fg."
+        0b10111110, // '6' digit maps "a.cdefg."
+        0b11100000, // '7' digit maps "abc....."
+        0b11111110, // '8' digit maps "abcdefg."
+        0b11110110  // '9' digit maps "abcd.fg."
     ];
-*/
-    const segmap = ["abcdef", "bc", "abdeg", "abcdg", "bcfg", "acdfg", "acdefg", "abc", "abcdefg", "abcdfg"];
+    "hex`" + segmap.map(n => n.toString(16)).map(n => n.length < 2 ? "0" + n : n).join("") + "`"
+    */
     
+    const segmap: Buffer = hex`fc60daf266b6bee0fef6`;
+
     export function drawSegment(digit: Image, segment: Buffer, thickness: SegmentStyle, color: number) {
         let offset = 0;
     
@@ -83,23 +126,18 @@ namespace sevenseg {
     
     export function drawDigit(digit: Image, value: number, thickness: SegmentStyle, scale: SegmentScale, color: number) {
         let segment: Buffer = null;
-        let index = 0;
+        let digitMap = segmap.getNumber(NumberFormat.Int8LE, value)
+
         digit.fill(0);
-        for (let seg of segmap[value]) {
-            switch (seg) {
-                case 'a': index = 0; break;
-                case 'b': index = 1; break;
-                case 'c': index = 2; break;
-                case 'd': index = 3; break;
-                case 'e': index = 4; break;
-                case 'f': index = 5; break;
-                case 'g': index = 6; break;
+        for (let i = 0; digitMap != 0; i++) {
+            if ((digitMap & 0x80) != 0) {
+                segment = scale == SegmentScale.Full ? fullSegment[i] : halfSegment[i];
+                if (scale == SegmentScale.Half && thickness > SegmentStyle.Narrow) {
+                    thickness = SegmentStyle.Narrow;
+                }
+                drawSegment(digit, segment, thickness, color)
             }
-            segment = scale == SegmentScale.Full ? fullSegment[index] : halfSegment[index];
-            if (scale == SegmentScale.Half && thickness > SegmentStyle.Narrow) {
-                thickness = SegmentStyle.Narrow;
-            }
-            drawSegment(digit, segment, thickness, color)
+            digitMap = digitMap << 1;
         }
     }
     
