@@ -28,20 +28,30 @@ but these usually follow from the RAM size.
 
 We currently support two hardware variants which match these criteria:
 * **D51** based on Microchip **ATSAMD51G19A** (Cortex M4F, 192kB of RAM, 512kB of flash, 120MHz)
-* **F401** based on ST Micro **STM32F401RE** (Cortex M4F, 96kB of RAM, 512kB of flash, 84MHz)
+* **F4** (formely F401) based on one of the ST Micro **STM32F4xx** chips:
+  * **STM32F401xE** (Cortex M4F, 96kB of RAM, 512kB of flash, 84MHz)
+  * **STM32F411xE** (Cortex M4F, 128kB of RAM, 512kB of flash, 96MHz)
+  * **STM32F412xE** (Cortex M4F, 128kB of RAM, 512kB of flash, 96MHz)
+  * **STM32F412xG** (Cortex M4F, 256kB of RAM, 1024kB of flash, 96MHz)
+
+The STM32F41x are listed at 100MHz, but to support USB we need to run them at 96MHz.
+We support 48 pin as well as larger packages.
+Only STM32F412 in 64 pin and larger packages supports parallel screen interface,
+which is required if you want to use ILI9341 320x240 screen.
 
 Additionally, we're considering adding the following in the future:
 * **N840** based on Nordic **NRF52840** (Cortex M4F, 256kB of RAM, 1024kB of flash, 64MHz)
 
 Other choices are possible, and we would love to hear your feedback.
-We recommend D51 unless there are good reasons to go with F401
-(price, etc.), since it's faster and has more memory.
 
 Other than the MCU the two variants contain the same components (with optional variations
 in the power supply).
 
 * 160x128 color TFT screen based on ST7735 or ILI9163C controller chip in SPI version 
-  - we skip using 8 bottom rows of the screen to upscaling to 320x240 in future
+  - we skip using 8 bottom rows of the screen to upscaling to 320x240
+* alternatively, 320x240 color TFT screen based on ILI9341 controller chip in 
+  8 bit parallel version (not SPI!); this requires STM32F412RE or better and is not
+  implemented yet
 * 6 buttons, for directions, A, and B
 * 2 buttons for reset and menu
 * female microUSB connector for power and UF2 programming
@@ -94,6 +104,8 @@ the USB connector.
 
 ### Screen
 
+#### ST7735 at 160x128
+
 The screen needs to be connected to the hardware SPI module.
 
 On some screens:
@@ -119,13 +131,17 @@ the right ones. They are around $2.
 
 ![Screen connection](/static/hardware/screen.png)
 
+#### ILI9134 at 320x240
+
+This is not implemented yet.
+
 ### Audio
 
 The board should have a buzzer. You need to figure out how to connect it properly
 and what kind of amplifier you might need.
 Below is a schematic with a simple low-pass filter and a headphone jack for audio.
 You only need low-pass filter when there is no DAC on board (you need low-pass
-filter for F401, but you don't need it for D51).
+filter for F4, but you don't need it for D51).
 
 The headphone jack is optional.
 Also note that this is not for JACDAC networking, for that see below.
@@ -145,6 +161,8 @@ While the schematics use a 3.5mm jack connector with switches, you can also use
 one without switches, as they are not used.
 
 #### JACDAC with power delivery
+
+**The schematic below is broken, the MOSFET doesn't work.**
 
 The F1 fuse can be replaced with 500mA (or similar) current limiting circuit.
 
@@ -211,11 +229,11 @@ Header is optional, but at least holes are nice to have.
 If there's limited space for header pins D10-D11 should be dropped,
 and then D8-D9.
 
-The assignment is shown for 64 pin (or larger) version of F401.
+The assignment is shown for 64 pin (or larger) version of F4.
 For the 48 pin version, drop D8-D11 and connect accelerometer SDA/SCL
 on the header.
 
-| Pin | Function | F401 | F401-48 |
+| Pin | Function | F4   | F4-48   |
 | --- | -------- | ---- | ------- |
 | D1  | TX       | PA02 | PA02    |
 | D2  | RX       | PA03 | PA03    |
@@ -239,13 +257,13 @@ settings in the bootloader and use the right pins.
 
 There are some restrictions on the pinout:
 
-* screen needs to be on SPI pins (of course); on F401 use SPI1 as it's faster
+* screen needs to be on SPI pins (of course); on F4 use SPI1 as it's faster
 * DISPLAY_BL should be on a pin with PWM (so we can dim it)
 * MENU button should be a pin which can wake the MCU up from sleep mode (usually requires `EIC`/`EVENTOUT`)
 * other buttons can be on any pin
 * the MENU2 button is optional
-* JACK_TX if present needs to be on UART_TX pin with EVENTOUT on F401, and on PAD0 of a SERCOM with EIC on D51
-* JACK_SND if present needs to be on TIM1_CH* pin of F401 and DAC0 of D51 (PA02)
+* JACK_TX if present needs to be on UART_TX pin with EVENTOUT on F4, and on PAD0 of a SERCOM with EIC on D51
+* JACK_SND if present needs to be on TIM1_CH* pin of F4 and DAC0 of D51 (PA02)
 
 Of course, if you're building a guide about how to connect screen and buttons to
 an existing board, all components are really optional. 
@@ -315,7 +333,7 @@ End users will typically update the bootloader by copying a special UF2 file, wh
 has a user-level application, which overwrites the bootloader.
 
 To prevent misuse of this feature (eg., one student emailing to a another a malicious UF2 
-file which writes a non-functional bootloader), some bootloaders (currently only F401)
+file which writes a non-functional bootloader), some bootloaders (currently only F4)
 implement a protection feature.
 When booting, the bootloader will check if it's write-protected (this is done by setting bits
 in flash, which only take effect upon reset).
@@ -330,18 +348,18 @@ development process. To enable it, set `BOOTLOADER_PROTECTION = 1`.
 
 ## Variant notes
 
-### F401
+### F4
 
 STM32F4 requires an external crystal for stable USB operation.
 The software takes the installed crystal frequency from a specific bootloader location,
 but best to stick to 8MHz.
 
 Following is the recommended pinout. The recommended pinout for
-header is defined above. It's consistent with the config for the generic F401
+header is defined above. It's consistent with the config for the generic F4
 in the bootloader repo.
 
 ```
-# 64 pin package F401
+# 64 pin package F4
 
 PIN_ACCELEROMETER_INT = PC13
 PIN_ACCELEROMETER_SCL = PB10
@@ -379,7 +397,7 @@ PIN_VIBRATION = PC08
 ```
 
 ```
-# 48 pin package F401
+# 48 pin package F4
 
 PIN_ACCELEROMETER_INT = PC13
 PIN_ACCELEROMETER_SCL = PB10
@@ -426,7 +444,7 @@ JACK_SND needs to be on PA02 (DAC output).
 
 ## Bootloaders
 
-* F401: https://github.com/mmoskal/uf2-stm32f
+* F4: https://github.com/mmoskal/uf2-stm32f
 * D51: https://github.com/Microsoft/uf2-samdx1
 * N840: https://github.com/adafruit/Adafruit_nRF52840_Bootloader
 
