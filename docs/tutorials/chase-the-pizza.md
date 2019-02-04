@@ -217,7 +217,7 @@ info.startCountdown(3)
 
 ## Step 8 @fullscreen
 
-Find ``||sprites:on sprite of kind Player overlaps otherSprite of kind Food||`` in ``||sprites:Sprites||`` and drag it into the workspace. In the ``||variables:pizza||`` ``||sprites:Sprite||``, change the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Food||``.
+Find the ``||sprites:on sprite overlaps otherSprite||`` block in ``||sprites:Sprites||`` and drag it into the workspace. Change the ``||sprites:kind||`` of ``||variables:otherSprite||`` from ``||sprites:Player||`` to ``||sprites:Food||``.
 
 This will create an **event** that occurs when a ``||sprites:Player Sprite||`` touches and ``||sprites:Food Sprite||``. Events allow you to set blocks to run whenever something occurs; for example, ``||loops:on start||`` is an event that lets you set code to run as soon as the game is started!
 
