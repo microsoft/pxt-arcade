@@ -123,6 +123,8 @@ Find ``||variables:set mySprite to||`` and drag it into ``||loops:on start||`` t
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let mySprite: Sprite = null
@@ -183,6 +185,8 @@ This will let the player move the character around the map that is displayed on 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let mySprite: Sprite = null
@@ -244,6 +248,8 @@ This will set the tile you created to be a ``||scene:Wall||``, so that the playe
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let mySprite: Sprite = null

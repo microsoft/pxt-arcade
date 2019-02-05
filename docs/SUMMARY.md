@@ -32,9 +32,10 @@
 ## Reference #reference
 
 * [Reference](/reference)
-    * [game](/reference/game)
     * [sprites](/reference/sprites)
     * [controller](/reference/controller)
+    * [game](/reference/game)
+    * [music](/reference/music)
     * [scene](/reference/scene)
     * [info](/reference/info)
     * [images](/reference/images)

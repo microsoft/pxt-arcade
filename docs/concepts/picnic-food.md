@@ -17,9 +17,10 @@ Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
-
 let cherry = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -47,6 +48,8 @@ Open the image editor for ``||variables:cherry||``. You can either draw your own
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let cherry: Sprite = null
@@ -79,6 +82,8 @@ This will place the ``||variables:cherry||`` at the top of the screen, a little 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let cherry: Sprite = null
@@ -112,6 +117,8 @@ This will move the sprite **down** the screen by 45 pixels.
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let cherry: Sprite = null
@@ -143,6 +150,8 @@ Create another ``||sprites:Sprite||``, and rename it ``||variables:chicken||``. 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let chicken: Sprite = null
@@ -193,6 +202,8 @@ Set the ``||variables:chicken||``'s ``||sprites:x||`` position 120, and it's ``|
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let chicken: Sprite = null
