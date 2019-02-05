@@ -288,5 +288,22 @@ declare interface SPI {
     //% shim=SPIMethods::setMode
     setMode(mode: int32): void;
 }
+declare namespace light {
+
+    /**
+     * Send a programmable light buffer to the specified digital pin
+     * @param pin The pin that the light are connected to
+     * @param mode the color encoding mode
+     * @param buf The buffer to send to the pin
+     */
+    //% parts="neopixel" shim=light::sendBuffer
+    function sendBuffer(pin: DigitalInOutPin, mode: int32, buf: Buffer): void;
+
+    /**
+     * Sends a single color to a single onboard LED programmable light
+     */
+    //% shim=light::sendPixelBuffer
+    function sendPixelBuffer(buf: Buffer): void;
+}
 
 // Auto-generated. Do not edit. Really.
