@@ -20,30 +20,30 @@ enum SpriteKind {
     Enemy
 }
 let mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . f f f f . . . . . . . . . . 
-. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
-. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
-. . . . . f f f c 1 1 1 1 1 1 1 f . . . . . . . 
-. . . f c 1 1 1 c d 1 1 1 1 1 1 1 f . . . . . . 
-. . . f 1 b 1 b 1 b 1 1 1 1 d d d f . . . . . . 
-. . . f b f b f f c f 1 1 f c d d f . . . . . . 
-. . . . . . f c f 1 1 1 1 1 1 b b f . . . . . . 
-. . . . . . . c c b d b 1 b 1 f c f . . . . . . 
-. . . . . . . f f f b f b f d f f . . . . . . . 
-. . . . . . . . f f f f f f f f . . . . . . . . 
-. . . . . . . . f f f f f f f f f f f . . . . . 
-. . . . . . . . . f f f f f c 1 1 1 c f . . . . 
-. . . . . . . . . f f f f f 1 b 1 b 1 f . . . . 
-. . . . . . . . . . f f f f b f b f b f . . . . 
-. . . . . . . . . . . f f f f . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . f f f f . . . . . . . . . .
+. . . . . . . . f f 1 1 1 1 f f . . . . . . . .
+. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . .
+. . . . . f f f c 1 1 1 1 1 1 1 f . . . . . . .
+. . . f c 1 1 1 c d 1 1 1 1 1 1 1 f . . . . . .
+. . . f 1 b 1 b 1 b 1 1 1 1 d d d f . . . . . .
+. . . f b f b f f c f 1 1 f c d d f . . . . . .
+. . . . . . f c f 1 1 1 1 1 1 b b f . . . . . .
+. . . . . . . c c b d b 1 b 1 f c f . . . . . .
+. . . . . . . f f f b f b f d f f . . . . . . .
+. . . . . . . . f f f f f f f f . . . . . . . .
+. . . . . . . . f f f f f f f f f f f . . . . .
+. . . . . . . . . f f f f f c 1 1 1 c f . . . .
+. . . . . . . . . f f f f f 1 b 1 b 1 f . . . .
+. . . . . . . . . . f f f f b f b f b f . . . .
+. . . . . . . . . . . f f f f . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
 ```
 
@@ -61,30 +61,30 @@ enum SpriteKind {
     Enemy
 }
 let mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . f f f f . . . . . . . . . . 
-. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
-. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
-. . . . . f f f c 1 1 1 1 1 1 1 f . . . . . . . 
-. . . f c 1 1 1 c d 1 1 1 1 1 1 1 f . . . . . . 
-. . . f 1 b 1 b 1 b 1 1 1 1 d d d f . . . . . . 
-. . . f b f b f f c f 1 1 f c d d f . . . . . . 
-. . . . . . f c f 1 1 1 1 1 1 b b f . . . . . . 
-. . . . . . . c c b d b 1 b 1 f c f . . . . . . 
-. . . . . . . f f f b f b f d f f . . . . . . . 
-. . . . . . . . f f f f f f f f . . . . . . . . 
-. . . . . . . . f f f f f f f f f f f . . . . . 
-. . . . . . . . . f f f f f c 1 1 1 c f . . . . 
-. . . . . . . . . f f f f f 1 b 1 b 1 f . . . . 
-. . . . . . . . . . f f f f b f b f b f . . . . 
-. . . . . . . . . . . f f f f . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . f f f f . . . . . . . . . .
+. . . . . . . . f f 1 1 1 1 f f . . . . . . . .
+. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . .
+. . . . . f f f c 1 1 1 1 1 1 1 f . . . . . . .
+. . . f c 1 1 1 c d 1 1 1 1 1 1 1 f . . . . . .
+. . . f 1 b 1 b 1 b 1 1 1 1 d d d f . . . . . .
+. . . f b f b f f c f 1 1 f c d d f . . . . . .
+. . . . . . f c f 1 1 1 1 1 1 b b f . . . . . .
+. . . . . . . c c b d b 1 b 1 f c f . . . . . .
+. . . . . . . f f f b f b f d f f . . . . . . .
+. . . . . . . . f f f f f f f f . . . . . . . .
+. . . . . . . . f f f f f f f f f f f . . . . .
+. . . . . . . . . f f f f f c 1 1 1 c f . . . .
+. . . . . . . . . f f f f f 1 b 1 b 1 f . . . .
+. . . . . . . . . . f f f f b f b f b f . . . .
+. . . . . . . . . . . f f f f . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
 let projectile = sprites.createProjectileFromSprite(img`
 . . . . . . . . . . . . . . . .
@@ -118,30 +118,30 @@ enum SpriteKind {
     Enemy
 }
 let mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . f f f f . . . . . . . . . . 
-. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
-. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
-. . . . . f f f c 1 1 1 1 1 1 1 f . . . . . . . 
-. . . f c 1 1 1 c d 1 1 1 1 1 1 1 f . . . . . . 
-. . . f 1 b 1 b 1 b 1 1 1 1 d d d f . . . . . . 
-. . . f b f b f f c f 1 1 f c d d f . . . . . . 
-. . . . . . f c f 1 1 1 1 1 1 b b f . . . . . . 
-. . . . . . . c c b d b 1 b 1 f c f . . . . . . 
-. . . . . . . f f f b f b f d f f . . . . . . . 
-. . . . . . . . f f f f f f f f . . . . . . . . 
-. . . . . . . . f f f f f f f f f f f . . . . . 
-. . . . . . . . . f f f f f c 1 1 1 c f . . . . 
-. . . . . . . . . f f f f f 1 b 1 b 1 f . . . . 
-. . . . . . . . . . f f f f b f b f b f . . . . 
-. . . . . . . . . . . f f f f . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . f f f f . . . . . . . . . .
+. . . . . . . . f f 1 1 1 1 f f . . . . . . . .
+. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . .
+. . . . . f f f c 1 1 1 1 1 1 1 f . . . . . . .
+. . . f c 1 1 1 c d 1 1 1 1 1 1 1 f . . . . . .
+. . . f 1 b 1 b 1 b 1 1 1 1 d d d f . . . . . .
+. . . f b f b f f c f 1 1 f c d d f . . . . . .
+. . . . . . f c f 1 1 1 1 1 1 b b f . . . . . .
+. . . . . . . c c b d b 1 b 1 f c f . . . . . .
+. . . . . . . f f f b f b f d f f . . . . . . .
+. . . . . . . . f f f f f f f f . . . . . . . .
+. . . . . . . . f f f f f f f f f f f . . . . .
+. . . . . . . . . f f f f f c 1 1 1 c f . . . .
+. . . . . . . . . f f f f f 1 b 1 b 1 f . . . .
+. . . . . . . . . . f f f f b f b f b f . . . .
+. . . . . . . . . . . f f f f . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
 let projectile = sprites.createProjectileFromSprite(img`
 . . . . . . . . . . . . . . . .
@@ -175,30 +175,30 @@ enum SpriteKind {
     Enemy
 }
 let mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . f f f f . . . . . . . . . . 
-. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
-. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
-. . . . . f f f c 1 1 1 1 1 1 1 f . . . . . . . 
-. . . f c 1 1 1 c d 1 1 1 1 1 1 1 f . . . . . . 
-. . . f 1 b 1 b 1 b 1 1 1 1 d d d f . . . . . . 
-. . . f b f b f f c f 1 1 f c d d f . . . . . . 
-. . . . . . f c f 1 1 1 1 1 1 b b f . . . . . . 
-. . . . . . . c c b d b 1 b 1 f c f . . . . . . 
-. . . . . . . f f f b f b f d f f . . . . . . . 
-. . . . . . . . f f f f f f f f . . . . . . . . 
-. . . . . . . . f f f f f f f f f f f . . . . . 
-. . . . . . . . . f f f f f c 1 1 1 c f . . . . 
-. . . . . . . . . f f f f f 1 b 1 b 1 f . . . . 
-. . . . . . . . . . f f f f b f b f b f . . . . 
-. . . . . . . . . . . f f f f . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . f f f f . . . . . . . . . .
+. . . . . . . . f f 1 1 1 1 f f . . . . . . . .
+. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . .
+. . . . . f f f c 1 1 1 1 1 1 1 f . . . . . . .
+. . . f c 1 1 1 c d 1 1 1 1 1 1 1 f . . . . . .
+. . . f 1 b 1 b 1 b 1 1 1 1 d d d f . . . . . .
+. . . f b f b f f c f 1 1 f c d d f . . . . . .
+. . . . . . f c f 1 1 1 1 1 1 b b f . . . . . .
+. . . . . . . c c b d b 1 b 1 f c f . . . . . .
+. . . . . . . f f f b f b f d f f . . . . . . .
+. . . . . . . . f f f f f f f f . . . . . . . .
+. . . . . . . . f f f f f f f f f f f . . . . .
+. . . . . . . . . f f f f f c 1 1 1 c f . . . .
+. . . . . . . . . f f f f f 1 b 1 b 1 f . . . .
+. . . . . . . . . . f f f f b f b f b f . . . .
+. . . . . . . . . . . f f f f . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
 let projectile = sprites.createProjectileFromSprite(img`
 . . . . . . . . . . . . . . . .
@@ -232,30 +232,30 @@ enum SpriteKind {
     Enemy
 }
 let mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . f f f f . . . . . . . . . . 
-. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
-. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
-. . . . . f f f c 1 1 1 1 1 1 1 f . . . . . . . 
-. . . f c 1 1 1 c d 1 1 1 1 1 1 1 f . . . . . . 
-. . . f 1 b 1 b 1 b 1 1 1 1 d d d f . . . . . . 
-. . . f b f b f f c f 1 1 f c d d f . . . . . . 
-. . . . . . f c f 1 1 1 1 1 1 b b f . . . . . . 
-. . . . . . . c c b d b 1 b 1 f c f . . . . . . 
-. . . . . . . f f f b f b f d f f . . . . . . . 
-. . . . . . . . f f f f f f f f . . . . . . . . 
-. . . . . . . . f f f f f f f f f f f . . . . . 
-. . . . . . . . . f f f f f c 1 1 1 c f . . . . 
-. . . . . . . . . f f f f f 1 b 1 b 1 f . . . . 
-. . . . . . . . . . f f f f b f b f b f . . . . 
-. . . . . . . . . . . f f f f . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . f f f f . . . . . . . . . .
+. . . . . . . . f f 1 1 1 1 f f . . . . . . . .
+. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . .
+. . . . . f f f c 1 1 1 1 1 1 1 f . . . . . . .
+. . . f c 1 1 1 c d 1 1 1 1 1 1 1 f . . . . . .
+. . . f 1 b 1 b 1 b 1 1 1 1 d d d f . . . . . .
+. . . f b f b f f c f 1 1 f c d d f . . . . . .
+. . . . . . f c f 1 1 1 1 1 1 b b f . . . . . .
+. . . . . . . c c b d b 1 b 1 f c f . . . . . .
+. . . . . . . f f f b f b f d f f . . . . . . .
+. . . . . . . . f f f f f f f f . . . . . . . .
+. . . . . . . . f f f f f f f f f f f . . . . .
+. . . . . . . . . f f f f f c 1 1 1 c f . . . .
+. . . . . . . . . f f f f f 1 b 1 b 1 f . . . .
+. . . . . . . . . . f f f f b f b f b f . . . .
+. . . . . . . . . . . f f f f . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
 let projectile = sprites.createProjectileFromSprite(img`
 . . . . . . . . . . . . . . . .
@@ -279,9 +279,9 @@ let projectile = sprites.createProjectileFromSprite(img`
 
 ## Step 6 @fullscreen
 
-Find ``||controller:on any button pressed||`` in ``||controller:Controller||``, and drag it into the workspace. Drag ``||variables:set projectile to||`` from ``||loops:on start||`` into ``||controller:on any button pressed||``.
+Find ``||controller:on A button pressed||`` in ``||controller:Controller||``, and drag it into the workspace. Drag ``||variables:set projectile to||`` from ``||loops:on start||`` into ``||controller:on A button pressed||``.
 
-This will create an event that occurs whenever the person playing the game presses a button. Whenever that event occurs, ``||variables:mySprite||`` will 'throw' a new bone up and to the right.
+This will create an event that occurs whenever the person playing the game presses the ``||controller:A||`` button. Whenever that event occurs, ``||variables:mySprite||`` will 'throw' a new bone up and to the right.
 
 ```blocks
 enum SpriteKind {
@@ -291,30 +291,30 @@ enum SpriteKind {
     Enemy
 }
 let mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . f f f f . . . . . . . . . . 
-. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
-. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
-. . . . . f f f c 1 1 1 1 1 1 1 f . . . . . . . 
-. . . f c 1 1 1 c d 1 1 1 1 1 1 1 f . . . . . . 
-. . . f 1 b 1 b 1 b 1 1 1 1 d d d f . . . . . . 
-. . . f b f b f f c f 1 1 f c d d f . . . . . . 
-. . . . . . f c f 1 1 1 1 1 1 b b f . . . . . . 
-. . . . . . . c c b d b 1 b 1 f c f . . . . . . 
-. . . . . . . f f f b f b f d f f . . . . . . . 
-. . . . . . . . f f f f f f f f . . . . . . . . 
-. . . . . . . . f f f f f f f f f f f . . . . . 
-. . . . . . . . . f f f f f c 1 1 1 c f . . . . 
-. . . . . . . . . f f f f f 1 b 1 b 1 f . . . . 
-. . . . . . . . . . f f f f b f b f b f . . . . 
-. . . . . . . . . . . f f f f . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . f f f f . . . . . . . . . .
+. . . . . . . . f f 1 1 1 1 f f . . . . . . . .
+. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . .
+. . . . . f f f c 1 1 1 1 1 1 1 f . . . . . . .
+. . . f c 1 1 1 c d 1 1 1 1 1 1 1 f . . . . . .
+. . . f 1 b 1 b 1 b 1 1 1 1 d d d f . . . . . .
+. . . f b f b f f c f 1 1 f c d d f . . . . . .
+. . . . . . f c f 1 1 1 1 1 1 b b f . . . . . .
+. . . . . . . c c b d b 1 b 1 f c f . . . . . .
+. . . . . . . f f f b f b f d f f . . . . . . .
+. . . . . . . . f f f f f f f f . . . . . . . .
+. . . . . . . . f f f f f f f f f f f . . . . .
+. . . . . . . . . f f f f f c 1 1 1 c f . . . .
+. . . . . . . . . f f f f f 1 b 1 b 1 f . . . .
+. . . . . . . . . . f f f f b f b f b f . . . .
+. . . . . . . . . . . f f f f . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     let projectile = sprites.createProjectileFromSprite(img`
@@ -334,68 +334,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     . . . . 1 1 . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
-    `, mySprite, 50, -15)
-})
-```
-
-## Step 7 @fullscreen
-
-In the ``||controller:on any button pressed||`` event, click on ``||controller:any||`` and change it to ``||controller:A||``.
-
-This will make it so the skeleton only throws a bone if the ``||controller:A||`` button is pressed, and not if any of the other buttons are pressed.
-
-```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
-let mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . f f f f . . . . . . . . . . 
-. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
-. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
-. . . . . f f f c 1 1 1 1 1 1 1 f . . . . . . . 
-. . . f c 1 1 1 c d 1 1 1 1 1 1 1 f . . . . . . 
-. . . f 1 b 1 b 1 b 1 1 1 1 d d d f . . . . . . 
-. . . f b f b f f c f 1 1 f c d d f . . . . . . 
-. . . . . . f c f 1 1 1 1 1 1 b b f . . . . . . 
-. . . . . . . c c b d b 1 b 1 f c f . . . . . . 
-. . . . . . . f f f b f b f d f f . . . . . . . 
-. . . . . . . . f f f f f f f f . . . . . . . . 
-. . . . . . . . f f f f f f f f f f f . . . . . 
-. . . . . . . . . f f f f f c 1 1 1 c f . . . . 
-. . . . . . . . . f f f f f 1 b 1 b 1 f . . . . 
-. . . . . . . . . . f f f f b f b f b f . . . . 
-. . . . . . . . . . . f f f f . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    let projectile = sprites.createProjectileFromSprite(img`
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . 1 1 . . . .
-    . . . . . . . . . 1 1 1 . . . .
-    . . . . . . . . . 1 1 1 . . . .
-    . . . . . . . . . 1 1 1 1 1 . .
-    . . . . . . . 1 1 1 1 1 1 1 . .
-    . . . . . . 1 1 1 1 . 1 1 1 . .
-    . . 1 1 . 1 1 1 1 . . . . . . .
-    . 1 1 1 1 1 1 . . . . . . . . .
-    . 1 1 1 1 1 . . . . . . . . . .
-    . . 1 1 1 1 . . . . . . . . . .
-    . . . 1 1 1 . . . . . . . . . .
-    . . . . 1 1 . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    `, mySprite, 50, -15)
+    `, mySprite, 50, -15);
 })
 ```
 

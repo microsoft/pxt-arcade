@@ -200,6 +200,16 @@
         "variablesBlocks": true,
         "textBlocks": true,
         "functionBlocks": true,
+        "functionsOptions": {
+            "useNewFunctions": true,
+            "extraFunctionEditorTypes": [
+                {
+                    "typeName": "Sprite",
+                    "icon": "send",
+                    "defaultName": "mySprite"
+                }
+            ]
+        },
         "listsBlocks": true,
         "bannedCategories": [
             "pins",

@@ -17,6 +17,8 @@ This ``||sprites:Sprite||`` will represent the main character in the game; for n
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 
@@ -49,8 +51,11 @@ When you close the image editor by clicking outside of it, the image you drew wi
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
+
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . . . 7 7 . . . . . . 
@@ -81,6 +86,8 @@ Find ``||controller:move mySprite with buttons||`` in ``||controller:Controller|
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let mySprite: Sprite = null
