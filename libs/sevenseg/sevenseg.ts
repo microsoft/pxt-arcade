@@ -11,6 +11,17 @@ enum SegmentStyle {
     Thick = 4
 }
 
+enum DigitRadix {
+    //% block="decimal"
+    Decimal = 10,
+    //% block="hex"
+    Hex = 16,
+    //% block="octal"
+    Octal = 8,
+    //% block="alpha"
+    Alpha = 25
+}
+
 enum SegmentScale {
     //% block="full"
     Full,
@@ -21,7 +32,7 @@ enum SegmentScale {
 * Seven segment display digits and gizmos
 */
 //% icon="\uf2a1" color="#4682B4" blockGap=8
-//% groups='["Create", "Counter", "Digits", "Position"]'
+//% groups='["Create", "Counter", "Digits", "Properties"]'
 namespace sevenseg {
 
     // Copy these array sets along with the array mapping string into Node to get the
@@ -100,25 +111,38 @@ namespace sevenseg {
         0b10111110, // '6' digit maps "a.cdefg."
         0b11100000, // '7' digit maps "abc....."
         0b11111110, // '8' digit maps "abcdefg."
-        0b11110110  // '9' digit maps "abcd.fg."
+        0b11110110, // '9' digit maps "abcd.fg."
+        0b11101110, // 'A' digit maps "abc.efg."
+        0b00111110, // 'b' digit maps "..cdefg."
+        0b10011100, // 'C' digit maps "a..def.."
+        0b01111010, // 'd' digit maps ".bcde.g."
+        0b10011110, // 'E' digit maps "a..defg."
+        0b10001110, // 'F' digit maps "a...efg."
+        0b01101110, // 'H' digit maps ".bc.efg."
+        0b01111000, // 'J' digit maps ".bcde..."
+        0b00011100, // 'L' digit maps "...def.."
+        0b00111010, // 'o' digit maps "..cde.g."
+        0b11001110, // 'P' digit maps "ab..efg."
+        0b01111100, // 'U' digit maps ".bcdef.."
+        0b01110110, // 'Y' digit maps ".bcd.fg."
+        0b00000010, // '-' digit maps "......g."
+        0b11000110  // '°' digit maps "ab...fg."
     ];
     "hex`" + segmap.map(n => n.toString(16)).map(n => n.length < 2 ? "0" + n : n).join("") + "`"
     */
     
-    const segmap: Buffer = hex`fc60daf266b6bee0fef6`;
+    const segmap: Buffer = hex`fc60daf266b6bee0fef6ee3e9c7a9e8e6e781c3ace7c7602c6`;
 
     export function drawSegment(digit: Image, segment: Buffer, thickness: SegmentStyle, color: number) {
         let offset = 0;
-    
+        let x, y, w, h = 0;
         if (segment.length >= thickness * 4) {
             for (let i = 0; i < thickness; i++) {
-                digit.drawLine(
-                    segment.getNumber(NumberFormat.Int8LE, offset),
-                    segment.getNumber(NumberFormat.Int8LE, offset + 1),
-                    segment.getNumber(NumberFormat.Int8LE, offset + 2),
-                    segment.getNumber(NumberFormat.Int8LE, offset + 3),
-                    color
-                );
+                x = segment.getNumber(NumberFormat.Int8LE, offset + 0);
+                y = segment.getNumber(NumberFormat.Int8LE, offset + 1);
+                w = segment.getNumber(NumberFormat.Int8LE, offset + 2) - x + 1;
+                h = segment.getNumber(NumberFormat.Int8LE, offset + 3) - y + 1;
+                digit.fillRect(x, y, w, h, color);
                 offset += 4;
             }
         }
@@ -183,6 +207,7 @@ class SevenSegDigit {
     private scale: SegmentScale;
     private _x: number;
     private _y: number;
+    private _radix: number;
     
     constructor(thickness: SegmentStyle = SegmentStyle.Thick, value: number = 0) {
         this.value = value;
@@ -193,6 +218,7 @@ class SevenSegDigit {
         this.thickness = thickness;
         this.color = 2;
         this.scale = SegmentScale.Full;
+        this._radix = DigitRadix.Decimal;
         sevenseg.drawDigit(this.digit, this.value, thickness, this.scale, this.color);
     }
 
@@ -207,31 +233,33 @@ class SevenSegDigit {
     setDigitValue(value: number): void {
         value = value | 0;
         if (value != this.value) {
-            if (value >= 0 && value < 10) {
+            if (value >= 0 && value < this._radix) {
                 this.value = value;
-                sevenseg.drawDigit(this.digit, value, this.thickness, this.scale, this.color);
+            } else {
+                this.value = value % this._radix;
             }
+            sevenseg.drawDigit(this.digit, this.value, this.thickness, this.scale, this.color);
         }
     }
 
     /**
-     * Change the display value by some amount 0 - 9
+     * Change the display value by some amount 0 - radix base value
      * @param value the display value, eg: 0
     */
     //% group="Digits"
-    //% value.min=1 value.max=9 value.defl=0
+    //% value.defl=0
     //% blockId=sevenseg_changevalue block="change %sevenseg(myDigit) display value by %value"
     //% weight=89
     changeDigitValue(value: number): void {
         value = value | 0;
-        if (value > -10 && value < 10) {
+        if (value > -this._radix && value < this._radix) {
             this.value += value;
             if (this.value < 0) {
                 this.value = 0;
-            } else if (this.value > 9) {
-                this.value = this.value - 10;
+            } else if (this.value >= this._radix) {
+                this.value = this.value - this._radix;
             }
-            sevenseg.drawDigit(this.digit, value, this.thickness, this.scale, this.color);
+            sevenseg.drawDigit(this.digit, this.value, this.thickness, this.scale, this.color);
         }
     }
 
@@ -243,7 +271,7 @@ class SevenSegDigit {
     //% blockId=sevenseg_setalpha block="set %sevenseg(myDigit) display value to %alphaChar"
     //% weight=88
     setDigitAlpha(alphaChar: string) {
-        const matchChars = "0123456789";
+        const matchChars = "0123456789ABCDEFHJLoPUY-°";
         let value = 0;
 
         if (alphaChar.length > 0) {
@@ -279,43 +307,55 @@ class SevenSegDigit {
         sevenseg.drawDigit(this.digit, this.value, this.thickness, this.scale, this.color);
     }
 
-    //% group="Position" blockSetVariable="myDigit"
+    //% group="Properties" blockSetVariable="myDigit"
     //% blockCombine block="x"
     get x(): number {
         return this.digitSprite.x;
     }
 
-    //% group="Position" blockSetVariable="myDigit"
+    //% group="Properties" blockSetVariable="myDigit"
     //% blockCombine block="x"
     set x(v: number) {
         this._x = v;
         this.digitSprite.x = v;
     }
 
-    //% group="Position" blockSetVariable="myDigit"
+    //% group="Properties" blockSetVariable="myDigit"
     //% blockCombine block="y"
     get y(): number {
         return this.digitSprite.y;
     }
-    //% group="Position" blockSetVariable="myDigit"
+
+    //% group="Properties" blockSetVariable="myDigit"
     //% blockCombine block="y"
     set y(v: number) {
         this._y = v;
         this.digitSprite.y = v;
     }
 
-    //% group="Position" blockSetVariable="myDigit"
+    //% group="Properties" blockSetVariable="myDigit"
     //% blockCombine block="height"
     get width(): number {
         return this.digitSprite.width;
     }
 
-    //% group="Position" blockSetVariable="myDigit"
+    //% group="Properties" blockSetVariable="myDigit"
     //% blockCombine block="height"
     get height(): number {
         return this.digitSprite.height;
     }
-    
+
+    /**
+     * Set the display radix of the digit
+     * @param radix of the digit display, eg: DigitRadix.Decimal
+     */
+    //% blockId=sevenseg_setradix block="set display radix of %sevenseg(myDigit) to %radix"
+    //% group="Properties"
+    setRadix(radix: DigitRadix) {
+        this._radix = radix;
+        sevenseg.drawDigit(this.digit, this.value, this.thickness, this.scale, this.color);
+    }
+
     /**
      * Set the display digit size
      * @param scale of the digit display, eg: SegmentScale.Full
