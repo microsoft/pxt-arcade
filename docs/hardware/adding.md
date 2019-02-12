@@ -270,10 +270,10 @@ There are some restrictions on the pinout:
 
 * screen needs to be on SPI pins (of course); on F4 use SPI1 as it's faster
 * DISPLAY_BL should be on a pin with PWM (so we can dim it)
-* MENU button should be a pin which can wake the MCU up from sleep mode (usually requires `EIC`/`EVENTOUT`)
+* MENU button should be a pin which can wake the MCU up from sleep mode (on D51 it requires `EIC`; on F4 it can be any pin)
 * other buttons can be on any pin
 * the MENU2 button is optional
-* JACK_TX if present needs to be on UART_TX pin with EVENTOUT on F4, and on PAD0 of a SERCOM with EIC on D51
+* JACK_TX if present needs to be on UART_TX pin on F4, and on PAD0 of a SERCOM with EIC on D51
 * JACK_SND if present needs to be on TIM1_CH* pin of F4 and DAC0 of D51 (PA02)
 
 Of course, if you're building a guide about how to connect screen and buttons to
