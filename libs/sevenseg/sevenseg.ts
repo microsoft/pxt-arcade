@@ -272,16 +272,15 @@ class SevenSegDigit {
     //% weight=88
     setDigitAlpha(alphaChar: string) {
         const matchChars = "0123456789ABCDEFHJLoPUY-°";
-        let value = 0;
-
+        let maxChars = Math.min(this._radix, matchChars.length)
         if (alphaChar.length > 0) {
-            for (let i = 0; i < matchChars.length; i++) {
-                if (matchChars[i] == alphaChar[0]) {
-                    value = i;
+            for (let i = 0; i < maxChars; i++) {
+                if (matchChars[i] == alphaChar[0] && i != this.value) {
+                    this.value = i;
+                    sevenseg.drawDigit(this.digit, this.value, this.thickness, this.scale, this.color);
                     break;
                 }
             }
-            sevenseg.drawDigit(this.digit, value, this.thickness, this.scale, this.color);
         }
     }
     
