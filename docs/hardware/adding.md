@@ -1,5 +1,11 @@
 # Adding your own hardware to Arcade
 
+## ~ hint
+**Warning**: this document is preliminary and is going to change.
+It's fine build prototypes according to it and experiment,
+but not to go to production.
+## ~
+
 Arcade features the following virtual device specification:
 
 * 160x120 pixel screen
@@ -150,6 +156,13 @@ Also note that this is not for JACDAC networking, for that see below.
 
 ### JACDAC
 
+## ~ hint
+**Warning**: JACDAC is under development now and is going to change.
+It's fine build prototypes according to this schematics,
+but not to go to production just yet.
+## ~
+
+
 [JACDAC](https://jacdac.org) is a protocol for networking over a single-wire
 connection with optional power delivery.
 It lets you play multiplayer games by connecting two (or more with a headphone splitter) Arcades
@@ -161,8 +174,6 @@ While the schematics use a 3.5mm jack connector with switches, you can also use
 one without switches, as they are not used.
 
 #### JACDAC with power delivery
-
-**The schematic below is broken, the MOSFET doesn't work.**
 
 The F1 fuse can be replaced with 500mA (or similar) current limiting circuit.
 
