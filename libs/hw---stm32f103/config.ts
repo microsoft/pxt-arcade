@@ -41,4 +41,7 @@ namespace config {
     export const DISPLAY_CFG2 = 22; // MHz
     export const DISPLAY_WIDTH = 160;
     export const DISPLAY_HEIGHT = 128;
+
+    // 2 minute timeout before going to sleep
+    export const POWER_DEEPSLEEP_TIMEOUT = 120;
 }
