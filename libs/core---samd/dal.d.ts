@@ -276,6 +276,7 @@ declare const enum DAL {
     // /libraries/codal-core/inc/driver-models/LowLevelTimer.h
     TimerModeTimer = 0,
     TimerModeCounter = 1,
+    TimerModeAlternateFunction = 2,
     BitMode8 = 0,
     BitMode16 = 1,
     BitMode24 = 2,
@@ -447,6 +448,9 @@ declare const enum DAL {
     MAG_CTRL_REG2 = 17,
     MAG3110_SAMPLE_RATES = 11,
     MAG3110_WHOAMI_VAL = 196,
+    // /libraries/codal-core/inc/drivers/MMA8453.h
+    MMA8453_DEFAULT_ADDR = 56,
+    MMA8453_WHOAMI_VAL = 58,
     // /libraries/codal-core/inc/drivers/MMA8653.h
     MICROBIT_ACCEL_PITCH_ROLL_VALID = 2,
     MICROBIT_ACCEL_ADDED_TO_IDLE = 4,
@@ -463,6 +467,10 @@ declare const enum DAL {
     MMA8653_WHOAMI_VAL = 90,
     MMA8653_SAMPLE_RANGES = 3,
     MMA8653_SAMPLE_RATES = 8,
+    // /libraries/codal-core/inc/drivers/MPU6050.h
+    MPU6050_DEFAULT_ADDR = 104,
+    MPU6050_WHOAMI = 117,
+    MPU6050_WHOAMI_VAL = 52,
     // /libraries/codal-core/inc/drivers/MultiButton.h
     MULTI_BUTTON_STATE_1 = 1,
     MULTI_BUTTON_STATE_2 = 2,
@@ -714,6 +722,9 @@ declare const enum DAL {
     REF_TAG_BUFFER = 2,
     REF_TAG_IMAGE = 3,
     REF_TAG_USER = 32,
+    // /pxtapp/accelerometer/axis.h
+    ACC_SYSTEM = 3,
+    ACC_ROTATION = 0,
     // /pxtapp/configkeys.h
     CFG_MAGIC0 = 513675505,
     CFG_MAGIC1 = 539130489,
@@ -789,6 +800,10 @@ declare const enum DAL {
     CFG_PIN_BTNMX_LATCH = 71,
     CFG_PIN_BTNMX_CLOCK = 72,
     CFG_PIN_BTNMX_DATA = 73,
+    CFG_PIN_BTN_MENU2 = 74,
+    CFG_PIN_BATTSENSE = 75,
+    CFG_PIN_VIBRATION = 76,
+    CFG_PIN_PWREN = 77,
     ACCELEROMETER_TYPE_LIS3DH = 50,
     ACCELEROMETER_TYPE_MMA8453 = 56,
     ACCELEROMETER_TYPE_FXOS8700 = 60,
@@ -835,16 +850,20 @@ declare const enum DAL {
     CFG_SYSTEM_HEAP_BYTES = 206,
     CFG_LOW_MEM_SIMULATION_KB = 207,
     CFG_BOOTLOADER_BOARD_ID = 208,
+    CFG_UF2_FAMILY = 209,
+    CFG_PINS_PORT_SIZE = 210,
+    CFG_BOOTLOADER_PROTECTION = 211,
+    CFG_POWER_DEEPSLEEP_TIMEOUT = 212,
+    CFG_PIN_LORA_MISO = 1001,
+    CFG_PIN_LORA_MOSI = 1002,
+    CFG_PIN_LORA_SCK = 1003,
+    CFG_PIN_LORA_CS = 1004,
+    CFG_PIN_LORA_BOOT = 1005,
+    CFG_PIN_LORA_RESET = 1006,
+    CFG_PIN_IRRXLED = 1007,
+    CFG_PIN_IRTXLED = 1008,
     // /pxtapp/hf2dbg.h
     HF2DBG_H = 1,
-    // /pxtapp/mixer---none/melody.h
-    SW_TRIANGLE = 1,
-    SW_SAWTOOTH = 2,
-    SW_SINE = 3,
-    SW_NOISE = 4,
-    SW_REAL_NOISE = 5,
-    SW_SQUARE_10 = 11,
-    SW_SQUARE_50 = 15,
     // /pxtapp/pins.h
     BUTTON_ACTIVE_HIGH_PULL_DOWN = 17,
     BUTTON_ACTIVE_HIGH_PULL_UP = 33,
@@ -943,6 +962,7 @@ declare const enum DAL {
     RefCollection = 6,
     RefRefLocal = 7,
     RefMap = 8,
+    RefMImage = 9,
     User0 = 16,
     Int8LE = 1,
     UInt8LE = 2,
@@ -964,9 +984,13 @@ declare const enum DAL {
     // /pxtapp/pxtconfig.h
     PXT_GC = 1,
     PXT_UF2_FAMILY = 1427194976,
+    // /pxtapp/thermometer/target_temperature.h
+    TEMPERATURE_NOMINAL_VALUE = 25,
+    TEMPERATURE_NOMINAL_READING = 10000,
+    TEMPERATURE_BETA = 3380,
+    TEMPERATURE_SERIES_RESISTOR = 10000,
     // /pxtapp/uf2format.h
     BOOTLOADER_START = 0,
-    BOOTLOADER_END = 8192,
     // /pxtapp/uf2hid.h
     UF2_HID_H = 1,
 }
