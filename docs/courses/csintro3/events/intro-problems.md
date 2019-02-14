@@ -5,75 +5,145 @@ This section contains a number of selected problems for the Intro section.
 It is recommended that you review the problems, and complete a few before
 moving on to the next section.
 
-## Problem #1: Where you at?
+## Problem #1: Where are You?
 
-When debugging games, it can be helpful to know the exact position of the sprites.
-Create a program that has one sprite that moves with keyboard controls.
-Use an ``||game:on game update||`` event to have the sprite ``||sprites:say||`` it position.
-For example, if the the sprite's x-position was 40 and its y-position was 80,
-it would ``||sprites:say||`` ``x = 40, y = 80``.
+Create a program that has one ``||sprites:sprite||`` that you can move around the screen.
 
-## Problem #2: Black and White
+Use an ``||game:on game update||`` event to have the ``||sprites:sprite||``
+``||sprites:say||`` it's current  position.
 
-As the sprites move around the screen,
-it can be nice to have them interact with the background.
-Create a game that uses an ``||game:on game update||`` event that sets
-the background color based on the position of a sprite.
-If the sprite is on the left half of the screen,
-set the background color to black (15) otherwise set the background color to white (1).
+For example, if the ``||sprites:sprite||``'s ``||sprites:x position||`` is 40 and
+its ``||sprites:y position||`` is 80, it could ``||sprites:say||`` ``x=40, y=80``.
 
-## Problem #3: Loop
+## Problem #2: Loopy Duck
 
-Setting the velocity of a sprite can be a nice way to make games more
-interesting by having sprites move.
-However, if a sprite has a non-zero velocity in either the x or y direction,
-that sprite is bound to end of off the screen.
-There are many solutions to avoid this,
-but imagine the case in which a sprite goes off the right side of a
-screen and appears on the left side of the screen. 
+The duck in the animation below loops back around to the left side of the screen
+when it leaves the screen.
 
-Use an ``||game:on game update||`` event to detect if a certain sprite has
-gone off the right side of the screen and if it has,
-change its position to appear on the left side of the screen.
+![Loopy duck](/static/courses/csintro3/events/loopy-duck.gif)
 
-## Problem #4: Portals
+Recreate this in a new project by using an ``||game:on game update||`` event
+to detect if the duck ``||sprites:sprite||`` has left the screen. ``||logic:If||``
+it has, reset the ``||sprites:sprite||``'s ``||sprites:x position||`` so that
+it is returned to the left side of the screen.
 
-Perhaps there are cooler and more interesting solutions the problem
-presented in the Loop problem above. Imagine the idea of a portal?
-That is kind of what is presented previously, but only along the x-axis.
-Imagine if a sprite when off the right side of the screen
-and came out the top part of the screen.
-And went through the bottom part of the screen,
-but came out the left side of the screen. 
+### ~hint
 
-Create a program that uses an ``||game:on game update||``
-event to do this with the following conditions,
+You may want to use the ``||sprites:left||`` and ``||sprites:right||`` properties
+when comparing and resetting the ``||sprites:sprites||``,
+rather than the ``||sprites:x position||`` property.
+These properties are based off the ``||sprites:x position||`` **and**
+the dimensions of the ``||images:Image||`` provided to the ``||sprites:sprite||``.
 
-* When a sprite come out of a certain side,
-it should come out of the center of that side
-(e.g. if the sprite is coming out of the top,
-its x-position should be 80 since that is half of the screen width).
-* When going through a portal,
-the velocities of the x and y axis should switch.
-Think about how to do this without losing the value of one of the velocities.
+To use them, you would want to check that the ``||sprites:left position||`` for the
+``||sprites:sprite||`` is off the ``||scene:screen||``, and then set the
+``||sprites:right position||`` to 0.
+
+### ~
+
+## Problem #3: Portals
+
+The animation below is similar to the one from problem #2,
+except the ``||sprites:sprite||`` moves from the right side of the screen
+to the top (and from the bottom to the left side).
 
 ![Portals](/static/courses/csintro3/events/portals.gif)
 
-## Problem #5: Delta Duck
+Notice that the ``||sprites:sprite||`` always comes out of the **center** of a side,
+and that the ``||sprites:vx||`` and ``||sprites:vy||`` are **swapped** whenever
+the ``||sprites:sprite||`` 'teleports' to the other side of the screen. 
 
-Sprites can have more complex behavior than just setting their initial position,
-velocity, and acceleration. These properties can be adjusted based on the state
-of the game using ``||game:on game update||`` events.
-Create a game that has the following behavior.
+Recreate this animation in a new project.
+You might want to start with the solution for problem #2,
+if you have completed it.
 
-* Create a sprite with the initial position of (80, 60) and initial x-velocity of -50.
-* If the sprite's x-position is less than 30,
-set the sprite's x-velocity to 50 and its y-velocity to -50.
-* If the sprite's y-position is less than 10,
-set the sprite's x-velocity to 50 and its y-velocity to 50.
-* If the sprite's x-position is greater than 130,
-set the sprite's x-velocity to 50 and its y-velocity to 0.
+## Problem #4: Tracing a Path
 
-Below is animation that may help visualize what is going on.
+In "Hansel and Gretel," a popular fairy tale,
+a trail of bread crumbs was used to indicate the path the
+children took into the woods.
+This was intended to help them find their way back,
+in case they got lost.
 
-![Delta Duck](/static/courses/csintro3/events/delta-duck.gif)
+Create a new project with a ``||sprites:sprite||`` that
+``||controller:moves||`` with the directional buttons.
+In an ``||game:on game update||`` event,
+draw the path the ``||sprites:sprite||`` is taking onto the ``||scene:background image||``.
+
+![Bread Crumbs](/static/courses/csintro3/events/bread-crumbs.gif)
+
+To do this, you will need to use a few functions that you may not have used before.
+``||scene:scene.backgroundImage()||`` returns the ``||images:Image||`` that is used as
+the background.
+With this, you can call the ``||images:setPixel||`` function on the
+``||scene:background image||`` to change the color of a single pixel.
+
+```sig
+image.create(0, 0).setPixel(0, 0, 0);
+```
+
+In the example below, ``||images:setPixel||`` is used to set a pixel in the top left corner
+of the screen to be red.
+
+```typescript
+let myBackground = scene.backgroundImage();
+myBackground.setPixel(5, 5, 2);
+```
+
+To make the trail, use ``||images:set pixel||`` in an ``||game:on game update||`` event to
+set the pixel the ``||sprites:sprite||`` is currently at to be red.
+
+When you are done, try changing the ``||sprites:sprite||`` to have the
+``||sprites:bounce on wall||`` flag turned on,
+and give a random initial velocity instead of moving with the controller.
+The ``||sprites:Sprite||`` should start to bounce around the screen,
+drawing the path it has taken along the way.
+
+### Challenge: Interpolation
+
+You might have noticed that the trail didn't fill in every single pixel that the
+``||sprites:sprite||`` crossed when moving fast,
+resulting in a dotted line rather than a solid one.
+``||sprites:Sprites||`` can move more than a single pixel per ``||game:game update||``,
+while only a single pixel is drawn.
+
+If you would prefer to have a solid line,
+you can **interpolate** the pixels in between ``||game:updates||``
+by drawing a line instead of a single pixel.
+
+![Tracer](/static/courses/csintro3/events/tracer.gif)
+
+To do this, you can use the ``||images:drawLine||`` function on the
+``||scene:background image||``.
+
+```sig
+image.create(0, 0).drawLine(0, 0, 0, 0, 0);
+```
+
+This draws a line from the first two parameters
+(``||variables:x0||`` and ``||variables:y0||``)
+to the second pair of parameters
+(``||variables:x1||`` and ``||variables:y1||``)
+that is given the given color.
+
+In the example below, a red (``2``) line is drawn from the point
+``x=5, y=5`` to the point ``x=25, y=10`` on the background.
+
+```typescript
+let myBackground = scene.backgroundImage();
+myBackground.drawLine(5, 5, 25, 10, 2);
+```
+
+Declare two new variables, ``||variables:lastX||`` and ``||variables:lastY||``.
+Initialize them to the ``||sprites:sprite||``'s position at the beginning of the game.
+
+In the ``||game:on game update||``, instead of using ``||images:setPixel||``,
+use ``||images:drawLine||`` to draw a line **from** ``||variables:lastX||`` and
+``||variables:lastY||`` **to** ``||sprites:sprite.x||`` and ``||sprites:sprite.y||``.
+
+This will **interpolate** the line between the previous position and the current position;
+if you move 5 pixels away, the line will be drawn to show that path.
+
+**After** drawing the line in the event, update ``||variables:lastX||``
+and ``||variables:lastY||`` to the ``||sprites:sprite||``'s current position,
+so the next ``||game:game update||`` draws from the correct position.

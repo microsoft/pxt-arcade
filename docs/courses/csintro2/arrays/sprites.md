@@ -96,7 +96,7 @@ c a 8 a a c c c c a a f f f 8 a
 ## Student Task #1: Moving a Random Asteroid
 
 1. Start with the code from example #1
-2. Instead of moving every asteroid, use select a random asteroid from ``||variables:my sprite array||`` and move only that asteroid when the ``||controller:A||`` button is pressed
+2. Instead of moving every asteroid, select a random asteroid from ``||variables:my sprite array||`` and move only that asteroid when the ``||controller:A||`` button is pressed
 3. **Challenge:** choose another random asteroid, and have it ``||sprites:say||`` "woosh" for 300 ms. Are the two randomly chosen asteroids the same? (Can they be the same?)
 
 ## Concept: Arrays from Functions

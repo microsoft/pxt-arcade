@@ -89,7 +89,7 @@ where the ball is on the screen.
 
 1. Review the code below
 2. Identify when a new ``||sprites:Star||`` is created
-3. Notice the ``||sprites:star.SetFlag(SpriteFlag.Ghost, true)``;
+3. Notice the ``||sprites:star.SetFlag(SpriteFlag.Ghost, true)||``;
 this is used to identify the ``||sprites:sprite||`` as a ``Ghost``
 that will not interact with other ``||sprites:sprites||``
 

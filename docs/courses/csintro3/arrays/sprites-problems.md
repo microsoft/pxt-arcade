@@ -88,3 +88,35 @@ this will make it so the game knows to ignore collisions,
 and allow the code to run faster.
 
 ### ~
+
+## Problem #5: Chase the Fruit
+
+Create a game where ``Person`` ``||sprites:sprites||`` chase
+a ``Fruit`` the player controls around the screen,
+without all the ``||sprites:sprites||`` bunching up together.
+
+![Animation of people chasing fruit in a game](/static/courses/csintro3/arrays/chase-the-fruit.gif)
+
+Review the problem **Pushing the Food** from the
+[Overlap Problems](/courses/csintro3/events/overlap-problems) section.
+You should start with a solution to that problem,
+with a few changes:
+
+* The ``Fire`` should be changed to a ``Person``,
+with an appropriate ``||images:image||``
+* The ``Food`` ``||images:image||`` should be changed to a fruit
+* The ``||sprites:overlap||`` event should be modified to be between
+``Person`` and ``Person``,
+so that it will occur between any ``Person`` ``||sprites:sprites||``
+* The ``Food`` ``||controller:moves with buttons||``,
+instead of the ``Person``
+
+Next, make all ``Person`` ``||sprites:sprites||`` follow the ``Fruit``,
+as shown in [Task #3 from the Sprites section](/courses/csintro3/arrays/sprites).
+Now, the ``Person`` ``||sprites:sprites||`` will follow the fruit around the screen,
+bumping off each other so they do not all go into the same location.
+
+If you want to make the following behavior smoother,
+you could consider using more advanced comparisons in the ``||game:on game update||`` event; 
+for example, making the ``Person`` move to the **right** if it is to the **left** of the fruit,
+at a more constant speed.

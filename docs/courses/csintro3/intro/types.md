@@ -145,10 +145,9 @@ instead of having to read through all of the code.
 
 ## Student Task #3: Adding types
 
-1. Review the code below: it has errors in it, so it will not run
-2. Identify the type that each variable stores
-3. Change the first **3** lines of code by adding in type definitions
-4. Make sure the code runs without any errors once the previous step has been completed
+1. Identify the type that each variable in the snippet below stores
+2. Change the first **3** lines of code by adding in type definitions
+3. Make sure the code runs without any errors once the previous step has been completed
 
 ```typescript-ignore
 let x;

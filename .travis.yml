@@ -3,6 +3,8 @@ node_js:
   - "8.9.0"
 before_install:
   - echo -e "\n\nmachine github.com\n  login $GH_TOKEN\n" >~/.netrc
+install:
+  - "npm install --no-optional --no-shrinkwrap"
 script:
   - "node node_modules/pxt-core/built/pxt.js travis"
 sudo: false
