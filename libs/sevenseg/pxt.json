@@ -1,0 +1,12 @@
+{
+    "name": "sevenseg",
+    "description": "Seven segment digit display",
+    "files": [
+        "README.md",
+        "sevenseg.ts"
+    ],
+    "public": true,
+    "dependencies": {
+        "game": "file:../game"
+    }
+}

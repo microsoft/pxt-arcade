@@ -826,6 +826,7 @@ declare const enum DAL {
     CFG_RAM_BYTES = 205,
     CFG_SYSTEM_HEAP_BYTES = 206,
     CFG_LOW_MEM_SIMULATION_KB = 207,
+    CFG_POWER_DEEPSLEEP_TIMEOUT = 212,
     // /pxtapp/hf2dbg.h
     HF2DBG_H = 1,
     // /pxtapp/mixer---none/melody.h

@@ -1,5 +1,11 @@
 # Adding your own hardware to Arcade
 
+## ~ hint
+**Warning**: this document is preliminary and is going to change.
+It's fine build prototypes according to it and experiment,
+but not to go to production.
+## ~
+
 Arcade features the following virtual device specification:
 
 * 160x120 pixel screen
@@ -150,6 +156,13 @@ Also note that this is not for JACDAC networking, for that see below.
 
 ### JACDAC
 
+## ~ hint
+**Warning**: JACDAC is under development now and is going to change.
+It's fine build prototypes according to this schematics,
+but not to go to production just yet.
+## ~
+
+
 [JACDAC](https://jacdac.org) is a protocol for networking over a single-wire
 connection with optional power delivery.
 It lets you play multiplayer games by connecting two (or more with a headphone splitter) Arcades
@@ -161,8 +174,6 @@ While the schematics use a 3.5mm jack connector with switches, you can also use
 one without switches, as they are not used.
 
 #### JACDAC with power delivery
-
-**The schematic below is broken, the MOSFET doesn't work.**
 
 The F1 fuse can be replaced with 500mA (or similar) current limiting circuit.
 
@@ -259,10 +270,10 @@ There are some restrictions on the pinout:
 
 * screen needs to be on SPI pins (of course); on F4 use SPI1 as it's faster
 * DISPLAY_BL should be on a pin with PWM (so we can dim it)
-* MENU button should be a pin which can wake the MCU up from sleep mode (usually requires `EIC`/`EVENTOUT`)
+* MENU button should be a pin which can wake the MCU up from sleep mode (on D51 it requires `EIC`; on F4 it can be any pin)
 * other buttons can be on any pin
 * the MENU2 button is optional
-* JACK_TX if present needs to be on UART_TX pin with EVENTOUT on F4, and on PAD0 of a SERCOM with EIC on D51
+* JACK_TX if present needs to be on UART_TX pin on F4, and on PAD0 of a SERCOM with EIC on D51
 * JACK_SND if present needs to be on TIM1_CH* pin of F4 and DAC0 of D51 (PA02)
 
 Of course, if you're building a guide about how to connect screen and buttons to
@@ -403,13 +414,13 @@ PIN_ACCELEROMETER_INT = PC13
 PIN_ACCELEROMETER_SCL = PB10
 PIN_ACCELEROMETER_SDA = PB03
 
-PIN_BTN_A = PC14
-PIN_BTN_B = PC15
+PIN_BTN_A = PB08
+PIN_BTN_B = PA15
 PIN_BTN_DOWN = PB02
 PIN_BTN_LEFT = PA04
 PIN_BTN_MENU = PA01
 PIN_BTN_MENU2 = null # or PB01
-PIN_BTN_RIGHT = PC09
+PIN_BTN_RIGHT = PA10
 PIN_BTN_UP = PB05
 
 PIN_DISPLAY_BL = PB09
@@ -430,8 +441,8 @@ PIN_LED3 = null
 PIN_LED4 = null
 
 PIN_BATTSENSE = null
-PIN_PWREN = PA15
-PIN_VIBRATION = PB08
+PIN_PWREN = PC15
+PIN_VIBRATION = PC14
 ```
 
 ### D51

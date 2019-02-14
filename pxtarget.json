@@ -28,6 +28,7 @@
         "libs/hw---rpi",
         "libs/hw---stm32f401",
         "libs/hw---samd51",
+        "libs/sevenseg",
         "libs/screen",
         "libs/screen---st7735",
         "libs/screen---linux",
@@ -41,7 +42,8 @@
         "libs/device",
         "libs/jacdac",
         "libs/jacdac-drivers",
-        "libs/jacdac-game"
+        "libs/jacdac-game",
+        "libs/power"
     ],
     "compile": {
         "useUF2": true,
@@ -96,7 +98,7 @@
         "dockerImage": "pext/yotta:latest",
         "codalTarget": {
             "branches": {
-                "https://github.com/lancaster-university/codal-core": "bef70d8a5a49826bf5ecdc44fd09b0be6ead6b88"
+                "https://github.com/lancaster-university/codal-core": "93cb4083eb4c3315b893911dd96741ae5987e208"
             }
         }
     },
@@ -112,7 +114,7 @@
                 "codalTarget": {
                     "name": "codal-big-brainpad",
                     "url": "https://github.com/lancaster-university/codal-big-brainpad",
-                    "branch": "v1.0.19",
+                    "branch": "v1.0.21",
                     "type": "git"
                 },
                 "codalBinary": "STM32",
@@ -199,6 +201,16 @@
         "variablesBlocks": true,
         "textBlocks": true,
         "functionBlocks": true,
+        "functionsOptions": {
+            "useNewFunctions": true,
+            "extraFunctionEditorTypes": [
+                {
+                    "typeName": "Sprite",
+                    "icon": "send",
+                    "defaultName": "mySprite"
+                }
+            ]
+        },
         "listsBlocks": true,
         "bannedCategories": [
             "pins",
