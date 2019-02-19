@@ -209,7 +209,7 @@ a a a a a a a a a a a a a a a a
 
 ## Step 6
 
-Add a ``||scene:set tile map||`` to ``||loops:on start||``. For it's image, draw a maze using the same color as the tile you just made. Leave an opening on the left side of the maze.
+Add a ``||scene:set tile map||`` to ``||loops:on start||``. For its image, draw a maze using the same color as the tile you just made. Leave an opening on the left side of the maze.
 
 ```blocks
 enum SpriteKind {
