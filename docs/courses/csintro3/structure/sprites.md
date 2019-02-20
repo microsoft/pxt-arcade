@@ -105,7 +105,7 @@ controller.moveSprite(player, 100, 100);
 ```
 
 This code will need some explanation. It includes two features of JavaScript -
-called ``enums`` and ``tagged templates`` - that are a bit advanced,
+``enums`` and ``tagged templates`` - that are a bit advanced,
 and out of the scope of this course to cover in detail.
 For our purposes, we can use the following simplified descriptions:
 
@@ -113,12 +113,14 @@ For our purposes, we can use the following simplified descriptions:
 
 An ``enum`` is a set of named constant values.
 In this snippet, the ``||sprites:SpriteKind||`` enum is used to list out
-different kinds of sprites,
+different types of sprites in our game,
 so that the different ``||sprites:Kind||``s of ``||sprites:Sprites||`` can be identified.
 
 In the first example, you might have noticed that the ``||sprites:Kind||``
 used was a number. The values in the ``||sprites:SpriteKind||`` enum are
-all actually just numbers that are given special names to make the code more readable.
+all stored as numbers that are given special names to make the code more readable -
+it is generally easier to remember that one character is the ``Player``,
+rather than kind 0.
 
 ### ~
 
@@ -132,10 +134,18 @@ In this course, ``img`` is the only ``tagged template`` we will discuss.
 Each character in the tagged template (the numbers 1-9, letters a-f, and period ``.``)
 is converted to a color, and made into a single pixel in the image.
 
-If you zoom out, you might be able to see an outline of the princess sprite
-from the ``img`` ``template string`` in the ``||sprites:sprites.create||`` above.
+The image editor can be used to easily create these ``img tagged templates`` -
+click on the paint palette to the left of the ``img`` to open it up and draw
+your masterpiece.
 
-The image editor can be used to easily create these ``tagged templates``.
+![Opening the image editor animation](/static/courses/csintro3/structure/monaco-image-editor.gif)
+
+After you exit the image editor,
+the values between the backticks will be updated to represent the image
+you created.
+It may also hide the contents of the image after you close the editor;
+the ``+`` or ``-`` buttons that appear when hovering near the paint palette
+allow portions of code to be collapsed depending on the level of indentation.
 
 ### ~
 
@@ -248,15 +258,6 @@ around the screen, dodging the asteroids.
 Notice how the game changes when the ``||variables:player||`` if the player
 is created **before** or **after** the loop added in the previous activity.
 
-### Initial Position
-
-Earlier on in the case study,
-the variables ``||variables:x||`` and ``||variables:y||`` were created to
-store the location the player should start at.
-Move these assignments after the creation of the ``||variables:player||``,
-and then change it to set ``||variables:player.x||`` instead of ``||variables:x||``,
-and ``||variables:player.y||`` instead of ``||variables:y||``.
-
 ### Solution
 
 ```typescript
@@ -302,6 +303,9 @@ intro += name;
 intro += "! This is my Space Game!";
 game.splash(intro);
 
+let x: number = screen.width / 2;
+let y: number = screen.height - 20;
+
 for (let i = 0; i < 10; i++) {
     sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Asteroid);
     pause(250);
@@ -318,8 +322,6 @@ let player = sprites.create(img`
 `, SpriteKind.Player);
 
 controller.moveSprite(player, 80, 30);
-player.x = screen.width / 2;
-player.y = screen.height - 20;
 ```
 
 ### ~
