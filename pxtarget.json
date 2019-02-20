@@ -241,6 +241,7 @@
         "betaUrl": "https://github.com/Microsoft/pxt-arcade",
         "githubUrl": "https://github.com/Microsoft/pxt-arcade",
         "boardName": "Arcade",
+        "addNewTypeScriptFile": true,
         "docMenu": [
             {
                 "name": "Docs",
