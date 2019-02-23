@@ -118,6 +118,45 @@ namespace pxt.editor {
                 });
             });
         });
+
+        /**
+         * Upgrade for scene.setTile() which went from being expandable to not
+         */
+        U.toArray(dom.querySelectorAll("block[type=gamesettile]")).forEach(block => {
+            const mutation = getMutation(block);
+
+            if (!mutation) return; // Already upgraded
+
+            const expanded = mutation.getAttribute("_expanded") !== "0";
+            block.removeChild(mutation);
+
+            if (expanded) {
+                // The value input must already be in the XML, so no changes needed
+                return;
+            }
+            else {
+                // There might be a value input present, but we should remove it
+                // and replace it with the default to replicate the unexpanded behavior
+                const value = getChildNode(block, "value", "name", "wall");
+                if (value) {
+                    block.removeChild(value);
+                }
+
+                const newValue = document.createElement("value");
+                newValue.setAttribute("name", "wall");
+
+                const shadow = document.createElement("shadow");
+                shadow.setAttribute("type", "toggleOnOff");
+
+                const field = document.createElement("field");
+                field.setAttribute("name", "on");
+                field.textContent = "false";
+
+                shadow.appendChild(field);
+                newValue.appendChild(shadow);
+                block.appendChild(newValue);
+            }
+        });
     }
 
     function changeVariableToSpriteReporter(varBlockOrShadow: Element, reporterName: string) {
@@ -148,6 +187,16 @@ namespace pxt.editor {
         for (let i = 0; i < parent.children.length; i++) {
             const child = parent.children.item(i);
             if (child.tagName === nodeType && child.getAttribute(idAttribute) === idValue) {
+                return child;
+            }
+        }
+        return undefined;
+    }
+
+    function getMutation(parent: Element) {
+        for (let i = 0; i < parent.children.length; i++) {
+            const child = parent.children.item(i);
+            if (child.tagName === "mutation") {
                 return child;
             }
         }
