@@ -9,6 +9,7 @@ Functions allow for code to be structured and reused. In this example, start by 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null

@@ -19,6 +19,7 @@ In this activity, students will:
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let myTile: tiles.Tile = null
@@ -99,6 +100,7 @@ The ``||scene:on top of myTile place mySprite||`` allows for sprites to be place
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -191,6 +193,7 @@ This example sets two random tiles from the first two rows of walls to be tiles 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Pizza
 }
@@ -321,6 +324,7 @@ Using the concepts from tasks #1 and #2, the development of multi-level games be
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let player: Sprite = null

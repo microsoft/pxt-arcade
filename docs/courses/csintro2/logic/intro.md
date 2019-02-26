@@ -1,8 +1,9 @@
-# Activity: If statements
+# Activity: Logic Intro
 
 Logic in software development allows for flexible programs that respond appropriately to different conditions. In this section, we will identify how comparisons can be used within our code.
 
 In these activities, students will work with:
+
 * ``||logic:if||`` block
 * Comparison operators
 
@@ -60,6 +61,7 @@ https://youtu.be/s7sFOn7xXC0
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -160,6 +162,7 @@ https://youtu.be/EhRPChFc1Us
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Cherry
 }
@@ -239,6 +242,7 @@ https://youtu.be/BDCHtIFuEhw
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let projectile: Sprite = null
@@ -331,6 +335,7 @@ When the player is on their final life, the image of the sprite changes and the 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null

@@ -122,6 +122,7 @@ Below is a sprite with an acceleration applied. We set the sprite position to th
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null

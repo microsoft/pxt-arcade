@@ -11,6 +11,7 @@
 * [Courses](/courses)
     * [CS Intro 1](/courses/csintro1)
     * [CS Intro 2](/courses/csintro2)
+    * [CS Intro 3](/courses/csintro3)
 
 ## JavaScript Games
 

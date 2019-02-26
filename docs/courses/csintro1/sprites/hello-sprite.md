@@ -26,7 +26,8 @@ A **method** is an action that an object supports. For example, sprites (an obje
 
 ```blocks
 enum SpriteKind {
-    Player
+    Player,
+    Projectile
 }
 let msg: string = "Hello World!"
 let mySprite: Sprite = null

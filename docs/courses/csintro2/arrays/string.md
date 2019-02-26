@@ -23,6 +23,7 @@ One way in which we can use arrays of strings is to form a "script" for our spri
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let text_list: string[] = []
@@ -101,6 +102,7 @@ Another way in which you can use string arrays in your games is to create reacti
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let text_list: string[] = []

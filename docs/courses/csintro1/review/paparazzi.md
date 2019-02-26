@@ -69,6 +69,7 @@ Emma decides that she does not like the Stars being destroyed when the ``||varia
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Camera,
     Star

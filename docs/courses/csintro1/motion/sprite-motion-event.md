@@ -30,6 +30,7 @@ https://youtu.be/O27uzdkbgK4
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let agent: Sprite = null
@@ -86,6 +87,7 @@ If we have a positive `X` velocity, for example, then our sprite will continue t
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let agent: Sprite = null
@@ -142,6 +144,7 @@ We have created motion by capturing the key pad events and incrementing (or decr
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let ball: Sprite = null
@@ -205,6 +208,7 @@ Flipping an image creates a mirror image when we use ``||images:flip horizontal|
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 function flipHorizontal() {

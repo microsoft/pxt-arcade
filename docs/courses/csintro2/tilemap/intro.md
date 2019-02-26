@@ -1,4 +1,4 @@
-# Activity: Tile Map
+# Activity: Tile Map Intro
 
 Maps and levels form the basis of many of the most common types of video games; they allow a canvas for the games story to progress, and for the player to explore. 
 
@@ -264,6 +264,7 @@ https://youtu.be/YHYBQ03ecOk
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let HomeOwner: Sprite = null

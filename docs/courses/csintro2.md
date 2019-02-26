@@ -1,4 +1,4 @@
-# Advanced Blocks Beta
+# CS Intro 2
 
 ### ~hint
 
@@ -29,7 +29,7 @@ This course is currently in beta - this means that it is likely to have bugs and
     "url": "/courses/csintro2/review",
     "imageUrl": "/static/courses/csintro2/review.gif"
 }, {
-    "name": "Final Project",
+    "name": "Unit 2 Project",
     "url": "/courses/csintro2/final-project",
     "imageUrl": "/static/courses/csintro2/final-project.gif"
 }
@@ -47,21 +47,21 @@ This course is currently in beta - this means that it is likely to have bugs and
 ### [Functions](/courses/csintro2/functions)
 
 * [Unplugged: Making a Sandwich](/courses/csintro2/functions/unplugged)
-* [Intro to Functions](/courses/csintro2/functions/intro)
+* [Functions Intro](/courses/csintro2/functions/intro)
 * [Reducing Redundancy with Functions](/courses/csintro2/functions/redundancy)
 * [Using Extensions](/courses/csintro2/functions/extensions)
 * [Project](/courses/csintro2/functions/project)
 
-### [Tilemap](/courses/csintro2/tilemap)
+### [Tile Map](/courses/csintro2/tilemap)
 
-* [Intro](/courses/csintro2/tilemap/intro)
+* [Tile Map Intro](/courses/csintro2/tilemap/intro)
 * [Interactions](/courses/csintro2/tilemap/interactions)
 * [Using Corgio Extension](/courses/csintro2/tilemap/extensions)
 * [Project](/courses/csintro2/tilemap/project)
 
 ### [Logic](/courses/csintro2/logic)
 
-* [Introduction](/courses/csintro2/logic/intro)
+* [Logic Intro](/courses/csintro2/logic/intro)
 * [If and Else](/courses/csintro2/logic/if-else)
 * [Multiplayer](/courses/csintro2/logic/multiplayer)
 * [Booleans](/courses/csintro2/logic/booleans)
@@ -71,17 +71,16 @@ This course is currently in beta - this means that it is likely to have bugs and
 
 ### [Arrays](/courses/csintro2/arrays)
 
-* [Intro](/courses/csintro2/arrays/intro)
+* [Arrays Intro](/courses/csintro2/arrays/intro)
 * [String Arrays](/courses/csintro2/arrays/string)
 * [Sprite Arrays](/courses/csintro2/arrays/sprites)
 * [Tile Arrays](/courses/csintro2/arrays/tilemap)
 * [Project](/courses/csintro2/arrays/project)
 
-### [Review](/courses/csintro2/review)
+### [Unit 2 Review](/courses/csintro2/review)
 
 * [Side Scroller](/courses/csintro2/review/side-scroller)
 * [Blockbuster Film](/courses/csintro2/review/blockbuster)
 * [Functionally the Same](/courses/csintro2/review/functions)
 
-
-### [Final Project](/courses/csintro2/final-project)
+### [Unit 2 Project](/courses/csintro2/final-project)

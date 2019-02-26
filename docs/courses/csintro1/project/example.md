@@ -247,6 +247,7 @@ We came up with the following game to turn in for this project.
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Trampoline,
     Wall

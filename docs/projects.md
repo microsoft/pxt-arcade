@@ -4,32 +4,32 @@
 [
     {
         "name": "Tutorials",
-        "url": "/tutorials",
+        "url": "tutorials",
         "imageUrl": "/static/tutorials/chase-the-pizza.gif"
     },
     {
         "name": "Blocks Games",
-        "url": "/blocks-games",
+        "url": "blocks-games",
         "imageUrl": "/static/examples/duck.png"
     },
     {
         "name": "JavaScript Games",
-        "url": "/javascript-games",
+        "url": "javascript-games",
         "imageUrl": "/static/examples/planet-putt-putt.png"
     },
     {
         "name": "Game Design Concepts",
-        "url": "/concepts",
+        "url": "concepts",
         "imageUrl": "/static/concepts/walking-hero.gif"
     },
     {
         "name": "Lessons",
-        "url": "/lessons",
+        "url": "lessons",
         "imageUrl": "/static/lessons/cherry-pickr.png"
     },
     {
         "name": "Hardware",
-        "url": "/hardware",
+        "url": "hardware",
         "imageUrl": "/static/hardware/ghiarcade.jpg"
     }
 ]
@@ -37,10 +37,10 @@
 
 ## See Also
 
-[Tutorials](/tutorials),
-[Blocks Games](/blocks-games),
-[JavaScript Games](/javascript-games),
-[Game Design Concepts](/concepts),
-[Lessons](/lessons),
-[Hardware](/hardware)
+[Tutorials](tutorials),
+[Blocks Games](blocks-games),
+[JavaScript Games](javascript-games),
+[Game Design Concepts](concepts),
+[Lessons](lessons),
+[Hardware](hardware)
 

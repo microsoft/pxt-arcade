@@ -9,7 +9,7 @@ Functions serve as a powerful tool to clarify the intent of your code, and to ma
     "url": "/courses/csintro2/functions/unplugged",
     "imageUrl": "/static/courses/csintro2/functions/unplugged.png"
 }, {
-    "name": "Intro to Functions",
+    "name": "Functions Intro",
     "url": "/courses/csintro2/functions/intro",
     "imageUrl": "/static/courses/csintro2/functions/intro.gif"
 }, {
@@ -31,7 +31,7 @@ Functions serve as a powerful tool to clarify the intent of your code, and to ma
 ## Lessons
 
 * [Unplugged: Making a Sandwich](/courses/csintro2/functions/unplugged)
-* [Intro to Functions](/courses/csintro2/functions/intro)
+* [Functions Intro](/courses/csintro2/functions/intro)
 * [Reducing Redundancy with Functions](/courses/csintro2/functions/redundancy)
 * [Using Extensions](/courses/csintro2/functions/extensions)
 * [Functions Project](/courses/csintro2/functions/project)

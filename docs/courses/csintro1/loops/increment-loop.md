@@ -78,6 +78,7 @@ A spiral increases the length of each side. In the example below the sides are 5
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -155,6 +156,7 @@ The ``||loops:for||`` loop is another common loop. This loop has a counter varia
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null

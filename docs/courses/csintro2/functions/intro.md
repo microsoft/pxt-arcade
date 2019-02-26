@@ -1,4 +1,4 @@
-# Activity: Functions
+# Activity: Functions Intro
 
 Functions are a way to group sections of code to be run together. They are regularly used when writing code both to increase the readability of code, and to allow for reuse of common actions. 
 
@@ -27,6 +27,7 @@ https://youtu.be/LGDwglUEb_8
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Human,
     Cow,
@@ -92,6 +93,7 @@ In the next examples, we will simplify the ``||loops:on start||`` code by splitt
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Human,
     Cow,
@@ -181,6 +183,7 @@ Try re-ordering the ``||functions:function calls||`` in your ``||loops:on start|
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Human,
     Cow,
@@ -237,6 +240,7 @@ In this task, we will clean up the ``||controller:on A button pressed||`` event 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Princess,
     Enemy
 }

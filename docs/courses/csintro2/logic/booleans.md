@@ -7,6 +7,7 @@ Comparison statements are centered around **Boolean Logic**, with the conditions
 The values of these expressions are stored and used as `boolean` variables. Whenever we see the term boolean, it means we have something that can evaluate to ``||logic:true||`` or ``||logic:false||``.
 
 In these activities students will work with:
+
 * Boolean flags and values (``||logic:true||`` and ``||logic:false||``)
 * ``||logic:and||`` 
 * ``||logic:or||``
@@ -60,6 +61,7 @@ When we have a boolean value, we have seen that we can write code that runs when
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -117,6 +119,7 @@ We can also use the ``||logic:not||`` block when assigning a boolean. So if we w
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let projectile: Sprite = null
@@ -183,7 +186,7 @@ game.onUpdateInterval(500, function () {
 
 ## Concept: ``||logic:and||`` and ``||logic:or||``
 
-Beyond just using a single boolean value, there are several ways in which we can combine these values. The most commonly used are ``||logic:and||`` and ``||logic:or||``. These are used similarly to the the use in English language; for example, the statement
+Beyond just using a single boolean value, there are several ways in which we can combine these values. The most commonly used are ``||logic:and||`` and ``||logic:or||``. These are used similarly to their usage in the English language; for example, the statement
 
 ### ~hint
 

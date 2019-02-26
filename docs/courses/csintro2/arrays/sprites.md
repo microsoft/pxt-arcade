@@ -2,7 +2,7 @@
 
 So far we have used arrays of numbers and strings. We will see that arrays can be used with any variable type, including sprites.
 
-In this activity, we will use arrays of sprites to to create unique behaviors for the characters in our games, as well as introduce the basics of artificial intelligence for our enemy characters.
+In this activity, we will use arrays of sprites to create unique behaviors for the characters in our games, as well as introduce the basics of artificial intelligence for our enemy characters.
 
 In this activity, students will:
 * Create arrays of sprites
@@ -29,6 +29,7 @@ A sprite array is useful when implementing the same behavior for several sprites
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Asteroid
 }
@@ -95,7 +96,7 @@ c a 8 a a c c c c a a f f f 8 a
 ## Student Task #1: Moving a Random Asteroid
 
 1. Start with the code from example #1
-2. Instead of moving every asteroid, use select a random asteroid from ``||variables:my sprite array||`` and move only that asteroid when the ``||controller:A||`` button is pressed
+2. Instead of moving every asteroid, select a random asteroid from ``||variables:my sprite array||`` and move only that asteroid when the ``||controller:A||`` button is pressed
 3. **Challenge:** choose another random asteroid, and have it ``||sprites:say||`` "woosh" for 300 ms. Are the two randomly chosen asteroids the same? (Can they be the same?)
 
 ## Concept: Arrays from Functions
@@ -113,6 +114,7 @@ The ``||sprites:array of sprites of kind||`` block (located in the ``||arrays:ar
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Asteroid
 }
@@ -153,6 +155,7 @@ c a 8 a a c c c c a a f f f 8 a
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Firework
 }
@@ -205,6 +208,7 @@ We can implement this behavior easily using ``||logic:logic||`` blocks in an ``|
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let enemy: Sprite = null

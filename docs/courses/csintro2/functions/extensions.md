@@ -31,6 +31,7 @@ https://youtu.be/VVjxMS29jjU
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Foot_Ball,
     Goal
@@ -142,6 +143,7 @@ Do any of the names of the tabs in the explorer look similar to the name of the 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let projectile: Sprite = null

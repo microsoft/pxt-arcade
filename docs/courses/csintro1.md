@@ -1,4 +1,4 @@
-# CS INTRO BETA
+# CS INTRO 1
 
 ### ~hint
 
@@ -29,7 +29,7 @@ This course is currently in beta - this means that it is likely to have bugs and
     "url": "/courses/csintro1/review",
     "imageUrl": "/static/courses/csintro1/review.gif"
 }, {
-    "name": "Final Project",
+    "name": "Unit 1 Project",
     "url": "/courses/csintro1/project/final",
     "imageUrl": "/static/courses/csintro1/final-project.gif"
 }
@@ -69,19 +69,19 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Random](/courses/csintro1/motion/random)
 * [Overlap Section 2](/courses/csintro1/motion/overlap2)
 * [Create Sprite & On Create](/courses/csintro1/motion/create-on-create-sprites)
-* [Project](/courses/csintro1/motion/project)
+* [Motion Project](/courses/csintro1/motion/project)
 
 ### [Loops](/courses/csintro1/loops)
 
-* [Intro](/courses/csintro1/loops/intro)
+* [Loops Intro](/courses/csintro1/loops/intro)
 * [Unplugged: Circle a Chair](/courses/csintro1/loops/unplugged)
 * [Increment Loop](/courses/csintro1/loops/increment-loop)
 * [Projectiles](/courses/csintro1/loops/projectiles)
 * [Projectiles from Sprites](/courses/csintro1/loops/projectile-from)
 * [Physics](/courses/csintro1/loops/physics)
-* [Project](/courses/csintro1/loops/project)
+* [Loops Project](/courses/csintro1/loops/project)
 
-### [Review](/courses/csintro1/review)
+### [Unit 1 Review](/courses/csintro1/review)
 
 * [Extend "touch the button"](/courses/csintro1/review/touch-the-button)
 * [Paparazzi](/courses/csintro1/review/paparazzi)
@@ -92,4 +92,4 @@ This course is currently in beta - this means that it is likely to have bugs and
 ### Projects
 
 * [Example Section Project](/courses/csintro1/project/example)
-* [Final Project](/courses/csintro1/project/final)
+* [Unit 1 Project](/courses/csintro1/project/final)

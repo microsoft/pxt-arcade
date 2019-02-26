@@ -24,6 +24,7 @@ https://youtu.be/TY0kSXUaPkg
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let hotSauce: Sprite = null
@@ -81,6 +82,7 @@ If the sprites are not moving to where you expect them to when you set their coo
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let hotSauce: Sprite = null

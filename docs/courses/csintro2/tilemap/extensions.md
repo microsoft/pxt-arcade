@@ -37,6 +37,7 @@ After adding corgio to your project, a new tab titled ``||corgio:Corgio||`` will
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let myCorg: Corgio = corgio.create(SpriteKind.Player);

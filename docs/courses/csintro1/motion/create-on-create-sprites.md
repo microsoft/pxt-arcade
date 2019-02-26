@@ -24,6 +24,7 @@ This example uses the ``||sprites:on created||`` event to set the sprite image a
 ```blocks
 enum SpriteKind {
     Helicopter,
+    Projectile,
     Cloud,
     Player,
     Enemy
