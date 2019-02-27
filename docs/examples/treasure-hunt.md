@@ -73,7 +73,7 @@ scene.setTile(0, img`
 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-`)
+`, false)
 sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . b b b b b b b b . . . . . 

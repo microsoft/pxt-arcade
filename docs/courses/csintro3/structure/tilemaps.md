@@ -51,7 +51,7 @@ scene.setTileMap(img`
 . . . 1 1 1 . . . . 
 . . . . . . . . . . 
 `);
-scene.setTile(1, sprites.castle.tileGrass1);
+scene.setTile(1, sprites.castle.tileGrass1, false);
 ```
 
 This function accepts an ``index`` of a color,
@@ -101,7 +101,7 @@ scene.setTile(5, img`
 5 5 5 f 5 5 5 5 5 5 5 5 5 5 5 5 
 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-`);
+`, false);
 scene.setTile(13, img`
 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
 5 f 5 5 5 5 5 5 5 5 5 f 5 5 5 5 
@@ -119,7 +119,7 @@ scene.setTile(13, img`
 8 8 8 9 9 6 8 6 6 8 8 8 8 8 8 8 
 8 8 8 9 6 6 8 8 8 8 8 8 8 8 8 8 
 8 8 9 9 8 8 8 8 8 8 8 8 8 8 8 8 
-`);
+`, false);
 scene.setTile(8, img`
 8 8 8 8 8 9 9 9 8 8 8 8 8 8 8 8 
 8 8 8 8 9 9 6 6 8 8 8 8 8 8 8 8 
@@ -137,7 +137,7 @@ scene.setTile(8, img`
 8 8 6 8 8 8 8 8 8 8 9 6 8 8 8 8 
 8 8 8 8 8 8 8 8 8 8 6 8 8 8 8 8 
 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
-`);
+`, false);
 ```
 
 ## Student Task #1: Starter Scene
@@ -211,7 +211,7 @@ f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
 f f f f f f f f f f f f f f f f 
 `);
 scene.setTile(15, sprites.castle.rock0, true);
-scene.setTile(7, sprites.castle.tileGrass1);
+scene.setTile(7, sprites.castle.tileGrass1, false);
 ```
 
 ### ~hint

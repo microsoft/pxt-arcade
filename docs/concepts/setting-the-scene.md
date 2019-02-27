@@ -76,7 +76,7 @@ scene.setTile(5, img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`)
+`, false)
 ```
 
 ## Step 4 @fullscreen
@@ -113,7 +113,7 @@ scene.setTile(5, img`
 5 5 5 5 4 4 4 4 5 5 5 5 4 4 4 4 
 5 5 5 5 4 4 4 4 5 5 5 5 4 4 4 4 
 5 5 5 5 4 4 4 4 5 5 5 5 4 4 4 4 
-`)
+`, false)
 ```
 
 ## Step 5 @fullscreen
@@ -155,7 +155,7 @@ scene.setTile(5, img`
 5 5 5 5 4 4 4 4 5 5 5 5 4 4 4 4 
 5 5 5 5 4 4 4 4 5 5 5 5 4 4 4 4 
 5 5 5 5 4 4 4 4 5 5 5 5 4 4 4 4 
-`)
+`, false)
 mySprite = sprites.create(img`
 . . . . . . f f f f . . . . . . 
 . . . . f f f 2 2 f f f . . . . 
@@ -217,7 +217,7 @@ scene.setTile(5, img`
 5 5 5 5 4 4 4 4 5 5 5 5 4 4 4 4 
 5 5 5 5 4 4 4 4 5 5 5 5 4 4 4 4 
 5 5 5 5 4 4 4 4 5 5 5 5 4 4 4 4 
-`)
+`, false)
 mySprite = sprites.create(img`
 . . . . . . f f f f . . . . . . 
 . . . . f f f 2 2 f f f . . . . 
