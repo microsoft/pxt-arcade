@@ -84,7 +84,7 @@ scene.setTile(5, img`
 5 5 5 a a a a a a a a a a a a a 
 5 5 a a a a a a a a a a a a a a 
 5 a a a a a a a a a a a a a a a 
-`)
+`, false)
 ```
 
 ## Student Task #2: Add tile to tile map
@@ -130,7 +130,7 @@ f f f f f f f f f f f f f f f f
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
-`)
+`, false)
 scene.setTile(3, img`
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
@@ -148,7 +148,7 @@ f f f f 1 1 1 1 1 1 1 f f f f f
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
-`)
+`, false)
 scene.setTile(6, img`
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
@@ -166,7 +166,7 @@ f f f f f f f f f f f f f f f f
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
-`)
+`, false)
 scene.setTile(5, img`
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
@@ -184,7 +184,7 @@ f f f f 1 1 1 1 1 1 1 f f f f f
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
-`)
+`, false)
 scene.setTile(4, img`
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
@@ -202,7 +202,7 @@ f f f f f f f f f f f f f f f f
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
-`)
+`, false)
 scene.setTile(7, img`
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
@@ -220,7 +220,7 @@ f f f f f f f f f f f f f f f f
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
-`)
+`, false)
 scene.setTile(8, img`
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
@@ -238,7 +238,7 @@ f f f f f f f f f f f f f f f f
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
-`)
+`, false)
 ```
 
 In this example, the tiles are changed to correspond to images with letters on them.
