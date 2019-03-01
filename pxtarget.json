@@ -215,7 +215,8 @@
         "bannedCategories": [
             "pins",
             "control",
-            "input"
+            "input",
+            "power"
         ]
     },
     "simulator": {
