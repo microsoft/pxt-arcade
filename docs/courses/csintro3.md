@@ -1,4 +1,4 @@
-# JavaScript Beta
+# CS Intro 3
 
 ### ~hint
 
