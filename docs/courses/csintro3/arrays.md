@@ -5,7 +5,7 @@
     {
         "name": "Arrays of Numbers",
         "url": "/courses/csintro3/arrays/numbers",
-        "imageUrl": "/static/courses/csintro3/arrays/numbers.gif"
+        "imageUrl": "/static/courses/csintro3/arrays/numbers.png"
     }, {
         "name": "Arrays Manipulation",
         "url": "/courses/csintro3/arrays/strings",
@@ -31,3 +31,4 @@
 * [Arrays of Sprites](/courses/csintro3/arrays/sprites)
 * [Tiles](/courses/csintro3/arrays/tiles)
 * [Images](/courses/csintro3/arrays/images)
+* [Case Study Final](/cources/csintro3/arrays/case-study)
