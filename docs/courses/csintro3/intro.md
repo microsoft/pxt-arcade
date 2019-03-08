@@ -4,32 +4,32 @@
 [
     {
         "name": "Case Study",
-        "url": "/courses/csintro3/case-study",
+        "url": "/courses/csintro3/intro/case-study",
         "imageUrl": "/static/courses/csintro3/intro/case-study.gif"
     },
     {
         "name": "Initialization",
-        "url": "/courses/csintro3/initialization",
+        "url": "/courses/csintro3/intro/initialization",
         "imageUrl": "/static/courses/csintro3/intro/initialization.png"
     },
     {
         "name": "Types",
-        "url": "/courses/csintro3/types",
+        "url": "/courses/csintro3/intro/types",
         "imageUrl": "/static/courses/csintro3/intro/types.gif"
     },
     {
         "name": "User Input",
-        "url": "/courses/csintro3/user-input",
+        "url": "/courses/csintro3/intro/user-input",
         "imageUrl": "/static/courses/csintro3/intro/user-input.gif"
     },
     {
         "name": "Math",
-        "url": "/courses/csintro3/math",
+        "url": "/courses/csintro3/intro/math",
         "imageUrl": "/static/courses/csintro3/intro/math.png"
     },
     {
         "name": "Operators",
-        "url": "/courses/csintro3/operators",
+        "url": "/courses/csintro3/intro/operators",
         "imageUrl": "/static/courses/csintro3/intro/operators.gif"
     }
 ]

@@ -4,35 +4,35 @@
 [
     {
         "name": "Logic",
-        "url": "/courses/csintro3/logic",
+        "url": "/courses/csintro3/structure/logic",
         "imageUrl": "/static/courses/csintro3/structure/logic.png"
     }, {
         "name": "Loops",
-        "url": "/courses/csintro3/loops",
+        "url": "/courses/csintro3/structure/loops",
         "imageUrl": "/static/courses/csintro3/structure/loops.gif"
     }, {
         "name": "Sprites",
-        "url": "/courses/csintro3/sprites",
+        "url": "/courses/csintro3/structure/sprites",
         "imageUrl": "/static/courses/csintro3/structure/sprites.gif"
     }, {
         "name": "Projectiles",
-        "url": "/courses/csintro3/projectiles",
+        "url": "/courses/csintro3/structure/projectiles",
         "imageUrl": "/static/courses/csintro3/structure/projectiles.gif"
     }, {
         "name": "Tile Maps",
-        "url": "/courses/csintro3/tilemaps",
+        "url": "/courses/csintro3/structure/tilemaps",
         "imageUrl": "/static/courses/csintro3/structure/tilemaps.gif"
     }, {
         "name": "Corgio Extension",
-        "url": "/courses/csintro3/extensions",
+        "url": "/courses/csintro3/structure/extensions",
         "imageUrl": "/static/courses/csintro3/structure/extensions.gif"
     }, {
         "name": "Namespaces",
-        "url": "/courses/csintro3/namespaces",
+        "url": "/courses/csintro3/structure/namespaces",
         "imageUrl": "/static/courses/csintro3/structure/namespaces.gif"
     }, {
         "name": "Case Study Additions",
-        "url": "/courses/csintro3/additions",
+        "url": "/courses/csintro3/structure/additions",
         "imageUrl": "/static/courses/csintro3/structure/additions.gif"
     }
 ]
