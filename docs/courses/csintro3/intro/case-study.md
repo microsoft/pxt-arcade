@@ -59,54 +59,6 @@ namespace asteroids {
 }
 ```
 
-## First few additions:
-
-```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Asteroid,
-    Laser
-}
-
-namespace asteroids {
-    sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
-        sprite.setFlag(SpriteFlag.AutoDestroy, true);
-        setPosition(sprite, 10);
-        setMotion(sprite);
-    });
-
-    game.onUpdateInterval(1500, function () {
-        sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Asteroid);
-    });
-
-    function setMotion(asteroid: Sprite) {
-        asteroid.vx = Math.randomRange(-8, 8);
-        asteroid.vy = Math.randomRange(35, 20);
-    }
-
-    function setPosition(sprite: Sprite, edge: number) {
-        sprite.x = Math.randomRange(edge, screen.width - edge);
-        sprite.y = 0;
-    }
-}
-
-let player = sprites.create(img`
-    . . . . 8 . . . .
-    . . . 8 8 8 . . .
-    . . . 8 1 8 . . .
-    . . 2 8 1 8 2 . .
-    . 2 2 8 8 8 2 2 .
-    2 2 2 8 8 8 2 2 2
-    . . . 5 . 5 . . .
-`, SpriteKind.Player);
-player.setFlag(SpriteFlag.StayInScreen, true);
-
-controller.moveSprite(player, 80, 30);
-player.y = screen.height - 20;
-```
-
 ## Final Result
 
 ```typescript
@@ -114,96 +66,66 @@ enum SpriteKind {
     Player,
     Projectile,
     Enemy,
-    PowerUp,
     Asteroid,
+    PowerUp,
     Laser,
-    Star,
-    EnemyLaser,
-    BrokenAsteroid,
-    PowerUpTrail
+    EnemyLaser
 }
 
 enum PowerUpType {
     Health,
     Score,
-    Attack,
-    MaxEnergy,
-    Ghost
+    EnergyUp,
+    RechargeRateUp
 }
 
+/**
+ * Contains the images used in the game
+ */
 namespace spritesheet {
-    export let asteroids: Image[] = [
-        sprites.space.spaceAsteroid0,
-        sprites.space.spaceAsteroid1,
-        sprites.space.spaceAsteroid2
-    ];
-
-    export let brokenAsteroids: Image[] = [
-        sprites.space.spaceSmallAsteroid0,
-        sprites.space.spaceSmallAsteroid1,
-        sprites.space.spaceSmallAsteroid2,
-        sprites.space.spaceSmallAsteroid3,
-        sprites.space.spaceSmallAsteroid4,
-        sprites.space.spaceSmallAsteroid5
-    ];
-
-    export let laser: Image = img`
-        4
-        4
+    export let player: Image = img`
+        . . . . 8 . . . .
+        . . . 8 8 8 . . .
+        . . . 8 1 8 . . .
+        . . 2 8 1 8 2 . .
+        . 2 2 8 8 8 2 2 .
+        2 2 2 8 8 8 2 2 2
+        . . . 5 . 5 . . .
     `;
 
-    export let player: Image[] = [
-        img`
-            8 8 . . . . . .
-            8 1 8 . . . . .
-            . 8 1 8 2 2 2 2
-            . . 8 8 8 2 2 .
-            . . 2 8 8 8 5 .
-            . . 2 2 8 . . .
-            . . 2 2 5 . . .
-            . . 2 . . . . .
-        `, img`
-            . . . . 8 . . . .
-            . . . 8 8 8 . . .
-            . . . 8 1 8 . . .
-            . . 2 8 1 8 2 . .
-            . 2 2 8 8 8 2 2 .
-            2 2 2 8 8 8 2 2 2
-            . . . 5 . 5 . . .
-        `
-    ];
-
-    player.push(player[0].clone());
-    player[2].flipX();
-
-    export let enemy: Image[] = [img`
+    export let enemy: Image = img`
         5 5 . . . . 5 5
         7 7 7 7 7 7 7 7
         . 9 9 7 7 9 9 .
         . 7 7 7 7 7 7 .
         . . . 9 9 . . .
-    `];
-
-    export let enemyLaser = img`
-        7
-        7
     `;
 
-    export let powerUp: Image[] = [];
-    powerUp[PowerUpType.Health] = img`
-        . . . 7 7 7 7 7 . . .
-        . . 7 7 7 7 7 7 7 . .
-        . 7 7 2 7 7 7 2 7 7 .
-        7 7 7 2 7 7 7 2 7 7 7
-        7 7 7 2 7 7 7 2 7 7 7
-        7 7 7 2 2 2 2 2 7 7 7
-        7 7 7 2 7 7 7 2 7 7 7
-        7 7 7 2 7 7 7 2 7 7 7
-        . 7 7 2 7 7 7 2 7 7 .
-        . . 7 7 7 7 7 7 7 . .
-        . . . 7 7 7 7 7 . . .
+    export let asteroids: Image[] = [
+        sprites.space.spaceAsteroid0,
+        sprites.space.spaceAsteroid1,
+        sprites.space.spaceAsteroid2,
+        sprites.space.spaceAsteroid3,
+        sprites.space.spaceAsteroid4
+    ];
+
+    export let powerUps: Image[] = [];
+
+    powerUps[PowerUpType.Health] = img`
+        . . . 1 1 1 1 1 . . .
+        . . 1 1 1 1 1 1 1 . .
+        . 1 1 1 1 1 1 1 1 1 .
+        1 1 1 2 2 1 2 2 1 1 1
+        1 1 2 2 2 2 2 3 2 1 1
+        1 1 f 2 2 2 3 2 2 1 1
+        1 1 f 2 2 2 2 2 2 1 1
+        1 1 1 f 2 2 2 2 1 1 1
+        . 1 1 1 f 2 2 1 1 1 .
+        . . 1 1 1 f 1 1 1 . .
+        . . . 1 1 1 1 1 . . .
     `;
-    powerUp[PowerUpType.Score] = img`
+
+    powerUps[PowerUpType.Score] = img`
         . . . 5 5 5 5 5 . . .
         . . 5 5 5 f 5 5 5 . .
         . 5 5 5 f f f 5 5 5 .
@@ -216,374 +138,331 @@ namespace spritesheet {
         . . 5 5 5 f 5 5 5 . .
         . . . 5 5 5 5 5 . . .
     `;
-    powerUp[PowerUpType.Attack] = img`
-        . . . 6 6 6 6 6 . . .
-        . . 6 6 6 6 6 6 6 . .
-        . 6 6 1 6 6 6 1 6 6 .
-        6 6 1 1 1 6 1 1 1 6 6
-        6 1 6 1 6 1 6 1 6 1 6
-        6 6 6 1 6 6 6 1 6 6 6
-        6 6 6 1 6 6 6 1 6 6 6
-        6 6 6 1 6 6 6 1 6 6 6
-        . 6 6 1 6 6 6 1 6 6 .
-        . . 6 6 6 6 6 6 6 . .
-        . . . 6 6 6 6 6 . . .
-    `;
-    powerUp[PowerUpType.MaxEnergy] = img`
-        . . . c c c c c . . . 
-        . . c c c c c c c . . 
-        . c c b b b b b c c . 
-        c c c b c c c c c c c 
-        c c c b c c c c c c c 
-        c c c b b b b c c c c 
-        c c c b c c c c c c c 
-        c c c b c c c c c c c 
-        . c c b b b b b c c . 
-        . . c c c c c c c . . 
-        . . . c c c c c . . . 
-    `;
-    powerUp[PowerUpType.Ghost] = img`
-        . . . b b b b b . . . 
-        . . b b b b b b b . . 
-        . b b 1 1 1 1 1 b b . 
-        b b b 1 f 1 f 1 b b b 
-        b b b 1 f 1 f 1 b b b 
-        b b b 1 1 1 1 1 b b b 
-        b b b 1 1 1 1 1 b b b 
-        b b 1 1 1 1 1 1 1 b b 
-        . b b b b b b b b b . 
-        . . b b b b b b b . . 
-        . . . b b b b b . . . 
+
+    powerUps[PowerUpType.EnergyUp] = img`
+        . . . 8 8 8 8 8 . . .
+        . . 8 8 8 f 8 8 8 . .
+        . 8 8 f f f f f 8 8 .
+        8 8 8 f 8 d 8 f 8 8 8
+        8 8 8 f d d d f 8 8 8
+        8 8 8 f 8 d 8 f 8 8 8
+        8 8 8 f 8 8 8 f 8 8 8
+        8 8 8 f d d d f 8 8 8
+        . 8 8 f 8 8 8 f 8 8 .
+        . . 8 f f f f f 8 . .
+        . . . 8 8 8 8 8 . . .
     `;
 
-    export let stars: Image[] = [
-        img`
-            1 1
-        `,
-        img`
-            1
-        `,
-        img`
-            3 . . 1
-        `,
-        img`
-            3 .
-            . .
-            . .
-            . 1
-        `
-    ];
+    powerUps[PowerUpType.RechargeRateUp] = img`
+        . . . e e e e e . . .
+        . . e e e 5 4 e e . .
+        . e e e 5 5 e e e e .
+        e e e 5 5 4 4 4 e e e
+        e e 5 5 5 5 5 5 5 5 e
+        e e e e e 5 5 5 4 e e
+        e e e e 5 5 5 4 e e e
+        e e e 5 5 5 4 e e e e
+        . e e 5 5 4 e e e e .
+        . . e e 5 4 e e e . .
+        . . . e e e e e . . .
+    `;
+
+    export let laser: Image = img`
+        4
+        4
+    `;
 }
 
+/**
+ * Creates and controls the asteroids within the game
+ */
 namespace asteroids {
     sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
         sprite.setFlag(SpriteFlag.AutoDestroy, true);
-        misc.setPosition(sprite, 10);
+        setPosition(sprite, 10);
         setMotion(sprite);
     });
 
-    sprites.onDestroyed(SpriteKind.Asteroid, function (sprite: Sprite) {
-        info.changeScoreBy(1);
-    });
-
     game.onUpdateInterval(1500, function () {
-        sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Asteroid);
+        sprites.create(Math.pickRandom(spritesheet.asteroids), SpriteKind.Asteroid);
     });
 
+    /**
+     * Set the initial velocities for the given sprite
+     * @param asteroid the asteroid to set the initial velocities of
+     */
     function setMotion(asteroid: Sprite) {
         asteroid.vx = Math.randomRange(-8, 8);
         asteroid.vy = Math.randomRange(35, 20);
     }
-}
 
-namespace stars {
-    sprites.onCreated(SpriteKind.Star, function (sprite: Sprite) {
-        misc.setPosition(sprite);
-        setMotion(sprite);
-        sprite.setFlag(SpriteFlag.Ghost, true);
-        sprite.setFlag(SpriteFlag.AutoDestroy, true);
-        sprite.z = -1;
-    });
-
-    game.onUpdateInterval(50, function () {
-        if (Math.percentChance(33)) {
-            sprites.create(Math.pickRandom(spritesheet.stars), SpriteKind.Star);
-        }
-    });
-
-    fillScreen();
-
-    function setMotion(star: Sprite) {
-        star.vy = 20;
-    }
-
-    function fillScreen() {
-        for (let row = 0; row < screen.height / 10; row++) {
-            sprites.create(Math.pickRandom(spritesheet.stars), SpriteKind.Star);
-        }
-
-        for (let star of sprites.allOfKind(SpriteKind.Star)) {
-            star.y = Math.randomRange(0, screen.height);
-        }
+    /**
+     * Place the given sprite at a random location at the top of the screen
+     * @param sprite the sprite to place at the top of the screen
+     * @param edge how many pixels between either edge of the screen to set
+     */
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
     }
 }
 
+/**
+ * Creates and controls the player's ship
+ */
+namespace ship {
+    export let player: Sprite = initialize();
+    export let maxCharge = 3;
+    export let currentCharge = maxCharge;
+    export let rechargeDelay = 750;
+    let lastRecharge = 0;
+
+    /**
+     * @returns a player sprite that moves with the directional buttons
+     */
+    function initialize(): Sprite {
+        let sprite = sprites.create(spritesheet.player, SpriteKind.Player)
+        controller.moveSprite(sprite, 80, 30);
+        controller.A.repeatInterval = 400;
+        sprite.x = screen.width / 2;
+        sprite.y = screen.height - 20;
+        sprite.setFlag(SpriteFlag.StayInScreen, true);
+        return sprite;
+    }
+
+    // When the player presses A, fire a laser from the spaceship
+    controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+        fireLaser();
+    });
+
+    // When the player holds A, also fire the laser
+    controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
+        fireLaser();
+    });
+
+    /**
+     * Fires a laser from the player's ship if they have the energy to do so
+     */
+    function fireLaser() {
+        if (currentCharge > 0) {
+            currentCharge--;
+            sprites.createProjectile(spritesheet.laser, 0, -40, SpriteKind.Laser, player);
+        }
+    }
+
+    game.onUpdate(function () {
+        let currentTime = game.runtime();
+        if (currentTime - lastRecharge >= rechargeDelay) {
+            lastRecharge = currentTime;
+            if (currentCharge < maxCharge) {
+                currentCharge++;
+            }
+        }
+    });
+}
+
+/**
+ * Creates and controls the enemies in the game
+ */
+namespace enemy {
+    /**
+     * @returns an enemy sprite that is positioned at the top of the screen
+     */
+    function createEnemy(): Sprite {
+        let enemy = sprites.create(spritesheet.enemy, SpriteKind.Enemy);
+        setPosition(enemy, 10);
+        enemy.vy = 10;
+        return enemy;
+    }
+
+    /**
+     * Place the given sprite at a random location at the top of the screen
+     * @param sprite the sprite to place at the top of the screen
+     * @param edge how many pixels between either edge of the screen to set
+     */
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
+    }
+
+    game.onUpdateInterval(200, function () {
+        if (Math.percentChance(5)) {
+            createEnemy();
+        }
+
+        let allEnemies = sprites.allOfKind(SpriteKind.Enemy);
+        for (let i = 0; i < allEnemies.length; i++) {
+            // Create a laser 4% of the time
+            if (Math.percentChance(4)) {
+                sprites.createProjectile(img`3`, 0, 70, SpriteKind.EnemyLaser, allEnemies[i]);
+            }
+
+            // follow the player
+            if (allEnemies[i].x < ship.player.x) {
+                allEnemies[i].vx = 15;
+            } else {
+                allEnemies[i].vx = -15;
+            }
+        }
+    });
+}
+
+/**
+ * Generates powerups for the player to collect
+ */
 namespace powerups {
+    let availablePowerUps = [
+        PowerUpType.Health,
+        PowerUpType.Score,
+        PowerUpType.EnergyUp,
+        PowerUpType.RechargeRateUp
+    ];
+
+    export let responses: string[] = [];
+    responses[PowerUpType.Health] = "Got health!";
+    responses[PowerUpType.Score] = "Score!";
+    responses[PowerUpType.EnergyUp] = "More Energy!";
+    responses[PowerUpType.RechargeRateUp] = "Faster Charge!";
+
     sprites.onCreated(SpriteKind.PowerUp, function (sprite: Sprite) {
+        let typeOfPowerUp = Math.pickRandom(availablePowerUps);
+        sprite.data = typeOfPowerUp;
+        sprite.setImage(spritesheet.powerUps[typeOfPowerUp]);
         sprite.setFlag(SpriteFlag.AutoDestroy, true);
-        misc.setPosition(sprite, 10);
+        setPosition(sprite, 10);
         setMotion(sprite);
     });
 
-    sprites.onDestroyed(SpriteKind.PowerUp, function (sprite: Sprite) {
-        ship.player.say("missed it :(", 500);
-    });
+    /**
+     * Place the given sprite at a random location at the top of the screen
+     * @param sprite the sprite to place at the top of the screen
+     * @param edge how many pixels between either edge of the screen to set
+     */
+    function setPosition(sprite: Sprite, edge: number) {
+        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.y = 0;
+    }
 
+    /**
+     * Set the initial velocities for the given sprite
+     * @param powerUp the powerUp to set the initial velocities of
+     */
     function setMotion(powerUp: Sprite) {
         powerUp.vy = 60;
     }
 
-    export function getType(powerUp: Sprite): number {
-        return spritesheet.powerUp.indexOf(powerUp.image);
+    /**
+     * @param powerUp sprite to get type of
+     * @returns the type of the given powerUp
+     */
+    export function getType(powerUp: Sprite): PowerUpType {
+        return powerUp.data;
     }
 
-    game.onUpdateInterval(1000, function () {
-        if (Math.percentChance(33)) {
-            sprites.create(Math.pickRandom(spritesheet.powerUp), SpriteKind.PowerUp);
-        }
-    });
-
-    game.onUpdate(function () {
-        for (let powerUp of sprites.allOfKind(SpriteKind.PowerUp)) {
-            if (Math.percentChance(60)) {
-                let trail = sprites.createProjectile(img`1`, 0, 0, SpriteKind.PowerUpTrail, powerUp);
-                trail.lifespan = 300 + Math.randomRange(-150, 150);
-                trail.x += Math.randomRange(-5, 5);
-                trail.setFlag(SpriteFlag.Ghost, true);
-                trail.image.fill(Math.randomRange(1, 14));
-                trail.z = -1;
+    game.onUpdateInterval(600, function () {
+        if (Math.percentChance(50)) {
+            let currentPowerUps = sprites.allOfKind(SpriteKind.PowerUp);
+            if (currentPowerUps.length() < 2) {
+                sprites.create(img`1`, SpriteKind.PowerUp);
             }
         }
     });
 }
 
-namespace enemy {
-    sprites.onCreated(SpriteKind.Enemy, function (sprite: Sprite) {
-        misc.setPosition(sprite, 10);
-        setMotion(sprite);
-        sprite.setFlag(SpriteFlag.AutoDestroy, true);
-    });
-
-    function setMotion(enemy: Sprite) {
-        enemy.vy = 15;
-    }
-
-    sprites.onDestroyed(SpriteKind.Enemy, function (sprite: Sprite) {
-        info.changeScoreBy(3);
-    });
-
-    game.onUpdateInterval(1500, function () {
-        if (Math.percentChance(40)) {
-            sprites.create(Math.pickRandom(spritesheet.enemy), SpriteKind.Enemy);
-        }
-    });
-
-    game.onUpdate(function () {
-        for (let enemy of sprites.allOfKind(SpriteKind.Enemy)) {
-            let diff: number = enemy.x - ship.player.x;
-            if (diff < -2) {
-                enemy.vx = 8;
-            } else if (diff > 2) {
-                enemy.vx = -8;
-            } else {
-                enemy.vx = 0;
-            }
-            if (Math.percentChance(4)) {
-                sprites.createProjectile(spritesheet.enemyLaser, 0, 45, SpriteKind.EnemyLaser, enemy);
-            }
-        }
-    });
-}
-
-namespace ship {
-    export let player = sprites.create(spritesheet.player[1], SpriteKind.Player);
-    player.setFlag(SpriteFlag.StayInScreen, true);
-
-    info.setLife(3);
-    info.setScore(0);
-
-    controller.moveSprite(player, 80, 30);
-    player.y = screen.height - 20;
-
-    controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-        if (state.charge > 0) {
-            sprites.createProjectile(spritesheet.laser, controller.dx() * 4, -40, SpriteKind.Laser, player);
-            state.charge--;
-        }
-    });
-
-    controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-        if (state.boostCharge > 0) {
-            let left = sprites.createProjectile(spritesheet.laser, controller.dx() * 4, -40, SpriteKind.Laser, player);
-            let right = sprites.createProjectile(spritesheet.laser, controller.dx() * 4, -40, SpriteKind.Laser, player);
-            left.x -= 2;
-            right.x += 2;
-            state.boostCharge--;
-        } else {
-            player.say("no more boost", 500);
-        }
-    });
-
-    game.onUpdate(function () {
-        if (player.vx < -1) {
-            player.setImage(spritesheet.player[0]);
-        } else if (player.vx <= 1) {
-            player.setImage(spritesheet.player[1]);
-        } else {
-            player.setImage(spritesheet.player[2]);
-        }
-    });
-}
-
+/**
+ * Handle overlaps between different sprites
+ */
 namespace overlapevents {
-    let powerUpStrings: string[] = [];
-    powerUpStrings[PowerUpType.Health] = "health!";
-    powerUpStrings[PowerUpType.Score] = "score!";
-    powerUpStrings[PowerUpType.Attack] = "laser boost!";
-    powerUpStrings[PowerUpType.MaxEnergy] = "more energy!";
-    powerUpStrings[PowerUpType.Ghost] = "ghost mode!";
-
+    // When the player hits an asteroid, damage the player and destroy the asteroid
     sprites.onOverlap(SpriteKind.Player, SpriteKind.Asteroid, function (sprite: Sprite, otherSprite: Sprite) {
         info.changeLifeBy(-1);
-        info.changeScoreBy(-1);
         otherSprite.destroy();
     });
 
-    sprites.onOverlap(SpriteKind.Player, SpriteKind.BrokenAsteroid, function (sprite: Sprite, otherSprite: Sprite) {
+    // When the player hits an enemy, damage the player and destroy the enemy
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
         info.changeLifeBy(-1);
-        info.changeScoreBy(-1);
         otherSprite.destroy();
     });
 
+    // When a laser hits an asteroid, destroy both sprites
     sprites.onOverlap(SpriteKind.Laser, SpriteKind.Asteroid, function (sprite: Sprite, otherSprite: Sprite) {
-        otherSprite.destroy();
-        sprite.destroy();
-    });
-
-    sprites.onOverlap(SpriteKind.Laser, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
-        otherSprite.destroy();
-        sprite.destroy();
-    });
-
-    sprites.onOverlap(SpriteKind.Laser, SpriteKind.BrokenAsteroid, function (sprite: Sprite, otherSprite: Sprite) {
         info.changeScoreBy(1);
-        otherSprite.destroy();
+        otherSprite.destroy(effects.fire, 200);
+        sprite.destroy();
     });
 
+    // When a laser hits an enemy, destroy both sprites
+    sprites.onOverlap(SpriteKind.Laser, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
+        info.changeScoreBy(1);
+        otherSprite.destroy(effects.bubbles);
+        sprite.destroy();
+    });
+
+    // When an  enemy laser hits the player, destroy the laser, say "ow!", and lose life
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.EnemyLaser, function (sprite: Sprite, otherSprite: Sprite) {
+        info.changeLifeBy(-1);
+        otherSprite.destroy();
+        sprite.say("ow!", 500);
+    });
+
+    // When a player hits a powerup, apply the bonus for that powerup
     sprites.onOverlap(SpriteKind.Player, SpriteKind.PowerUp, function (sprite: Sprite, otherSprite: Sprite) {
         let powerUp: number = powerups.getType(otherSprite);
         otherSprite.destroy();
-        if (powerUp != -1) {
-            ship.player.say(powerUpStrings[powerUp], 500);
-        }
+        sprite.say(powerups.responses[powerUp], 500);
         if (powerUp == PowerUpType.Health) {
             info.changeLifeBy(1);
         } else if (powerUp == PowerUpType.Score) {
             info.changeScoreBy(15);
-        } else if (powerUp == PowerUpType.Attack) {
-            state.boostCharge = Math.min(state.boostCharge + 5, 20);
-        } else if (powerUp == PowerUpType.MaxEnergy) {
-            state.maxCharge++;
-            state.charge++;
-        } else if (powerUp == PowerUpType.Ghost) {
-            misc.tempGhost(ship.player, 1000);
+        } else if (powerUp == PowerUpType.EnergyUp) {
+            ship.maxCharge++;
+        } else if (powerUp == PowerUpType.RechargeRateUp) {
+            ship.rechargeDelay -= 20;
         }
-    });
-
-    sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
-        info.changeLifeBy(-2);
-        info.changeScoreBy(-3);
-        otherSprite.destroy();
-    });
-
-    sprites.onOverlap(SpriteKind.Player, SpriteKind.EnemyLaser, function (sprite: Sprite, otherSprite: Sprite) {
-        info.changeLifeBy(-1);
-        otherSprite.destroy();
-    });
-
-    sprites.onOverlap(SpriteKind.Asteroid, SpriteKind.EnemyLaser, function (sprite: Sprite, otherSprite: Sprite) {
-        sprite.setFlag(SpriteFlag.Ghost, true);
-        let left = sprites.createProjectile(Math.pickRandom(spritesheet.brokenAsteroids),
-            Math.randomRange(-20, -10),
-            sprite.vy * (1 + Math.random()),
-            SpriteKind.BrokenAsteroid,
-            sprite);
-        let right = sprites.createProjectile(Math.pickRandom(spritesheet.brokenAsteroids),
-            Math.randomRange(10, 20),
-            sprite.vy * (1 + Math.random()),
-            SpriteKind.BrokenAsteroid,
-            sprite);
-        sprite.destroy();
-        otherSprite.destroy();
     });
 }
 
-namespace state {
+/**
+ * Set up the state of the game
+ */
+namespace status {
+    initialize(4, 0);
+    effects.starField.startScreenEffect();
+
+    /**
+     * Sets up the initial state of the game
+     * @param life the initial life to set
+     * @param score the initial score to set
+     */
+    function initialize(life: number, score: number) {
+        info.setLife(life);
+        info.setScore(score);
+    }
+
     info.onLifeZero(function () {
-        let deduction: number = Math.min(50, info.score());
-        if (game.ask("Continue?", "Cost: " + deduction + " points")) {
-            info.changeScoreBy(-deduction);
-            info.setLife(2);
-            misc.tempGhost(ship.player, 350);
+        let playerContinue = game.ask("Continue?", "Cost: 50 points");
+        if (playerContinue) {
+            info.setLife(3);
+            info.changeScoreBy(-50);
         } else {
             game.over();
         }
     });
 
-    export let maxCharge: number = 5;
-    export let charge: number = maxCharge;
-    export let boostCharge: number = 0;
+    game.onPaint(function () {
+        let x = 1;
+        let y = screen.height - image.font5.charHeight - 1;
+        let color = 0x3;
 
-    let chargeBar = sprites.create(image.create(7, 30));
+        if (ship.currentCharge == ship.maxCharge) {
+            color = 0x7;
+        } else if (ship.currentCharge == 0) {
+            color = 0x2;
+        }
 
-    chargeBar.z = 50;
-    chargeBar.setFlag(SpriteFlag.Ghost, true);
-    chargeBar.right = screen.width - 2;
-    chargeBar.bottom = screen.height - 2;
-
-    let boostDisplay = sprites.create(image.create(15, 10));
-    boostDisplay.right = chargeBar.left - 2;
-    boostDisplay.bottom = chargeBar.bottom;
-
-    game.onUpdateInterval(1000, function () {
-        charge = Math.min(charge + 1, maxCharge);
+        let energyState = "energy: " + ship.currentCharge + "/" + ship.maxCharge;
+        screen.print(energyState, x, y, color, image.font5);
     });
-
-    game.onUpdate(function () {
-        let bar: Image = chargeBar.image;
-        let startFilled = Math.floor(bar.height * charge / maxCharge);
-        bar.fill(7);
-        bar.fillRect(0, startFilled, bar.width, bar.height - startFilled, 2);
-
-        let display = boostDisplay.image;
-        display.fill(0);
-        display.print("" + boostCharge, 0, 0);
-    });
-}
-
-namespace misc {
-    export function tempGhost(character: Sprite, time: number) {
-        character.setFlag(SpriteFlag.Ghost, true);
-        control.runInParallel(function () {
-            pause(time);
-            character.setFlag(SpriteFlag.Ghost, false);
-        });
-    }
-
-    export function setPosition(star: Sprite, edge?: number) {
-        if (edge === undefined) edge = 0;
-        star.x = Math.randomRange(edge, screen.width - edge);
-        star.y = 0;
-    }
 }
 ```

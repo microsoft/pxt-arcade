@@ -1,4 +1,4 @@
-# Additions to Case Study
+# Case Study Additions
 
 At this point, you have the knowledge necessary to deal with a larger pieces of code -
 in particular, by using comments to leave information for anyone reading it in the future,

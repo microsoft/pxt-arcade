@@ -1,4 +1,4 @@
-# Activity: Namespaces and Comments
+# Activity: Namespaces
 
 As the code we write starts to get to be dozens of lines long (or more),
 it is important to be able to make sure that the code remains easy to follow and understand.
