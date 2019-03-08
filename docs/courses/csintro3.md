@@ -7,22 +7,33 @@ This course is currently in beta - this means that it is likely to have bugs and
 ### ~
 
 ```codecard
-[{
-    "name": "Intro",
-    "url": "/courses/csintro3/intro"
-},{
-    "name": "Structure",
-    "url": "/courses/csintro3/structure"
-}, {
-    "name": "Functions",
-    "url": "/courses/csintro3/functions"
-}, {
-    "name": "Events",
-    "url": "/courses/csintro3/events"
-}, {
-    "name": "Arrays",
-    "url": "/courses/csintro3/arrays"
-}]
+[
+    {
+        "name": "Intro",
+        "url": "/courses/csintro3/intro",
+        "imageUrl": "/static/courses/csintro3/intro.gif"
+    }, {
+        "name": "Structure",
+        "url": "/courses/csintro3/structure",
+        "imageUrl": "/static/courses/csintro3/structure.gif"
+    }, {
+        "name": "Functions",
+        "url": "/courses/csintro3/functions",
+        "imageUrl": "/static/courses/csintro3/functions.gif"
+    }, {
+        "name": "Events",
+        "url": "/courses/csintro3/events",
+        "imageUrl": "/static/courses/csintro3/events.gif"
+    }, {
+        "name": "Arrays",
+        "url": "/courses/csintro3/arrays",
+        "imageUrl": "/static/courses/csintro3/arrays.gif"
+    }, {
+        "name": "Appendix",
+        "url": "/courses/csintro3/appendix,
+        "imageUrl": "/static/courses/csintro3/appendix.gif"
+    }
+]
 ```
 
 ## Table of Contents
