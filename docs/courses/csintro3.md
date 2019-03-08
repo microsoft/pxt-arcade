@@ -30,7 +30,7 @@ This course is currently in beta - this means that it is likely to have bugs and
         "imageUrl": "/static/courses/csintro3/arrays.gif"
     }, {
         "name": "Appendix",
-        "url": "/courses/csintro3/appendix,
+        "url": "/courses/csintro3/appendix",
         "imageUrl": "/static/courses/csintro3/appendix.gif"
     }
 ]

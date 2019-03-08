@@ -1,9 +1,9 @@
-# Course 3 Introduction
+# Introduction
 
 ```codecard
 [
     {
-        "name": "case-study",
+        "name": "Case Study",
         "url": "/courses/csintro3/case-study",
         "imageUrl": "/static/courses/csintro3/intro/case-study.gif"
     },
