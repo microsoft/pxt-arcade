@@ -5,7 +5,7 @@
     {
         "name": "Logic",
         "url": "/courses/csintro3/logic",
-        "imageUrl": "/static/courses/csintro3/structure/logic.gif"
+        "imageUrl": "/static/courses/csintro3/structure/logic.png"
     }, {
         "name": "Loops",
         "url": "/courses/csintro3/loops",
@@ -27,11 +27,11 @@
         "url": "/courses/csintro3/extensions",
         "imageUrl": "/static/courses/csintro3/structure/extensions.gif"
     }, {
-        "name": "Namespaces and Comments",
+        "name": "Namespaces",
         "url": "/courses/csintro3/namespaces",
         "imageUrl": "/static/courses/csintro3/structure/namespaces.gif"
     }, {
-        "name": "Additions to Case Study",
+        "name": "Case Study Additions",
         "url": "/courses/csintro3/additions",
         "imageUrl": "/static/courses/csintro3/structure/additions.gif"
     }
@@ -44,5 +44,5 @@
 * [Projectiles](/courses/csintro3/structure/projectiles)
 * [Tile Maps](/courses/csintro3/structure/tilemaps)
 * [Corgio Extension](/courses/csintro3/structure/extensions)
-* [Namespaces and Comments](/courses/csintro3/structure/namespaces)
-* [Additions to Case Study](/courses/csintro3/structure/additions)
+* [Namespaces](/courses/csintro3/structure/namespaces)
+* [Case Study Additions](/courses/csintro3/structure/additions)
