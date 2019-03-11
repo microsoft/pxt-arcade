@@ -16,7 +16,7 @@ game.askForString("")
 Saving user input in variables is useful, as it allows the values the user inputs
 into the game to continue to exist - rather than just being ignored.
 
-## Example #1: Storing a Name
+## Example #1: Storing Your Data
 
 1. Review the code below
 2. Identify what **type** of value is returned by ``||game:game.askForString||``
@@ -38,10 +38,11 @@ in the variable ``||variables:userInput||`` as a ``||text:string||``.
 4. Add a short message to the ``||game:game.splash||`` to appear before
 the name (``"hello, "``)
 5. **Challenge:** ``||game:ask||`` the user for their favorite color.
-Respond with a ``||game:game.splash||`` that says their favorite color
-is your favorite color too.
+Respond with a ``||game:game.splash||`` that repeats their favorite color back to them
 
 ## Example #2: Immediate Responses
+
+![Animation of user inputting favorite food](/static/courses/csintro3/intro/ask-for-food.gif)
 
 1. Review the code below
 2. Identify how the response from ``||game:game.askForString||`` is used
@@ -57,7 +58,7 @@ is used **without** storing the result in a variable.
 The result will be used in the ``||game:game.splash||``,
 but is inaccessible outside of that.
 
-## Student Task #2: Asking another Quick Question
+## Student Task #2: Asking Another Quick Question
 
 1. Start with the code from example #2
 2. Add another line containing a ``||game:game.splash||``
@@ -65,7 +66,7 @@ but is inaccessible outside of that.
 they had for lunch with ``||game:game.askForString||``,
 to ``||game:splash||`` it on the screen
 
-## Example #3: Give me a Word
+## Example #3: Give Me a Word
 
 1. Review the code below
 2. Identify how the prompt used relates to how the value is logged using ``console.log``
@@ -86,7 +87,7 @@ to prompt the user to give you words to replace the original with, and store eac
 5. After asking for all the words, create a string for each sentence with the words replaced
 6. Use ``console.log`` to print each sentence in order
 
-Here's one example sentence to show each step
+Here's one example sentence to show each step:
 
 ### ~hint
 
@@ -108,7 +109,7 @@ Here's one example sentence to show each step
 
 ### Step 3: Replace the words
 
-> My friend NAME told me their room was ADJECTIVE.
+> My friend **NAME** told me their room was **ADJECTIVE**.
 
 ### ~
 
