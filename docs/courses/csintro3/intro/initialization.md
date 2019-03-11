@@ -25,6 +25,8 @@ how the block is defined - and how the block is used in the last snippet,
 with ``||game:game.||`` in front.
 These details will become more important in future sections.
 
+![Animation of typing code snippet](/static/courses/csintro3/intro/first-function-call.gif)
+
 For now, carefully read the JavaScript code to identify the following portions:
 
 * ``||game:game.splash()||``: The **function** that is called
@@ -113,8 +115,8 @@ Variables can only be **declared** a single time.
 This means that you cannot declare two variables with the same name - for example,
 
 ```typescript-ignore
-let word = "hello"
-let word = "goodbye"
+let word = "hello";
+let word = "goodbye";
 ```
 
 is invalid, as the second line is attempting to declare a variable that already exists.
@@ -129,8 +131,8 @@ and scope will be discussed, which both change this rule.
 However, variables can be **reassigned** (assigned a new value) as often as needed.
 
 ```typescript
-let word = "hello"
-word = "goodbye"
+let word = "hello";
+word = "goodbye";
 ```
 
 This code will
@@ -149,6 +151,8 @@ The old value is gone - there is no way to reference it anymore.
 ### ~
 
 ## Student Task #3: Splash a Variable
+
+![Animation of task being completed](/static/courses/csintro3/intro/changing-variables.gif)
 
 1. Start with the (valid) code from example #3
 2. Immediately after the first line, add a new line to ``||game:game.splash||``
