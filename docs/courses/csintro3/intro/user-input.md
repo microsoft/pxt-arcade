@@ -204,7 +204,7 @@ namespace asteroids {
     }
 }
 
-let intro: string = "Hello! This is my Space Game!"
+let intro: string = "Hello! This is my Space Game!";
 game.splash(intro);
 let name: string = game.askForString("What is your name?");
 

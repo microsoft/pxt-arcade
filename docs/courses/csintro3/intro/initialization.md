@@ -220,7 +220,7 @@ namespace asteroids {
     }
 }
 
-let intro = "Hello! This is my Space Game!"
+let intro = "Hello! This is my Space Game!";
 game.splash(intro);
 ```
 
