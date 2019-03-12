@@ -42,20 +42,22 @@ scene.setTile(0, null, false);
 
 ```typescript
 scene.setTileMap(img`
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . 1 . 1 . . . . 
-. . . 1 . 1 . . . . 
-. . . . . . . . . . 
-. . 1 . . . 1 . . . 
-. . . 1 1 1 . . . . 
-. . . . . . . . . . 
+    . . . . . . . . . . 
+    . . . . . . . . . . 
+    . . . 1 . 1 . . . . 
+    . . . 1 . 1 . . . . 
+    . . . . . . . . . . 
+    . . 1 . . . 1 . . . 
+    . . . 1 1 1 . . . . 
+    . . . . . . . . . . 
 `);
 scene.setTile(1, sprites.castle.tileGrass1, false);
 ```
 
 This function accepts an ``index`` of a color,
 and a **16 x 16** ``||images:Image||`` to replace the color in the ``||scene:tile map||``.
+
+![Image of the tilemap created in the previous snippet](/static/courses/csintro3/structure/first-tilemap.png)
 
 ## Example 1: Beach Day
 
@@ -177,6 +179,8 @@ or blocked by ``||scene:walls||``, the ``||sprites:Ghost||`` flag can be set.
 ### ~
 
 ## Example #2: Town Walls
+
+![Examples of a large tile map](/static/courses/csintro3/structure/large-tilemap.gif)
 
 1. Review the code below
 2. Identify which ``||scene:tiles||`` are ``||scene:walls||``
