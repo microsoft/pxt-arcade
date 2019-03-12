@@ -12,6 +12,8 @@ a player controls provide a way for the player to interact with the game.
 
 ## Example #1: Starter Sprites
 
+![Animation of player character moving around screen](/static/courses/csintro3/structure/first-player-character.gif)
+
 1. Review the code below
 2. Identify how the ``||sprites:Sprite||`` is created
 3. Identify how the player can move the ``||sprites:Sprite||`` in the game
