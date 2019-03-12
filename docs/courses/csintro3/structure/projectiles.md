@@ -32,6 +32,8 @@ to create a character on the screen for the player to see and interact with.
 
 ## Example #1: Speedy Taxi
 
+![Animation of a taxi projectile](/static/courses/csintro3/structure/speedy-taxi.gif)
+
 1. Review the code below
 2. Identify how ``||sprites:projectile from side||`` is used to create
 a car moving across the screen
@@ -151,6 +153,8 @@ turn the ``||sprites:BounceOnWall||`` flag **off**
 (``||sprites:set||`` it to ``||logic:false||``)
 
 ## Concept: Particle Effects
+
+![Animation of the fire particle effect](/static/courses/csintro3/structure/fire-animation.gif)
 
 Particle effects are **visual** effects that can be applied in your game.
 They typically will not impact the game,
