@@ -36,6 +36,8 @@ that will usually mean the code is to remain **unmodified**, not that it should 
 
 ## Current Game
 
+![Animation of current case study game](/static/courses/csintro3/structure/current-case-study.gif)
+
 ```typescript
 enum SpriteKind {
     Player,
@@ -118,6 +120,8 @@ namespace enemy {
 ```
 
 ## New Version
+
+![Animation of updated case study game](/static/courses/csintro3/structure/updated-case-study.gif)
 
 ### Change List:
 

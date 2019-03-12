@@ -35,14 +35,14 @@ let mySprite: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.
 controller.moveSprite(mySprite, 100, 100);
 
 scene.setTileMap(img`
-7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 
-7 7 f 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 f 7 
-7 7 7 f 7 7 7 f 7 7 
-7 7 7 7 7 7 7 f 7 7 
-7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 
+    7 7 f 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 f 7 
+    7 7 7 f 7 7 7 f 7 7 
+    7 7 7 7 7 7 7 f 7 7 
+    7 7 7 7 7 7 7 7 7 7 
 `);
 
 scene.setBackgroundColor(6);
@@ -92,14 +92,14 @@ scene.setTileAt(null, 0);
 
 ```typescript
 scene.setTileMap(img`
-f f f f f f f f f f
-f f f f f f f f f f
-f f f f f f f f f f
-f f f f f f f f f f
-f f f f f f f f f f
-f f f f f f f f f f
-f f f f f f f f f f
-f f f f f f f f f f
+    f f f f f f f f f f
+    f f f f f f f f f f
+    f f f f f f f f f f
+    f f f f f f f f f f
+    f f f f f f f f f f
+    f f f f f f f f f f
+    f f f f f f f f f f
+    f f f f f f f f f f
 `);
 for (let i = 0; i < 8; i++) {
     let currentTile: tiles.Tile = scene.getTile(i, i);
@@ -138,14 +138,14 @@ enum SpriteKind {
     Flower
 }
 scene.setTileMap(img`
-7 6 7 6 7 6 7 6 7 6 
-6 7 6 7 6 7 6 7 6 7 
-7 6 7 6 7 6 7 6 7 6 
-6 7 6 7 6 7 6 7 6 7 
-7 6 7 6 7 6 7 6 7 6 
-6 7 6 7 6 7 6 7 6 7 
-7 6 7 6 7 6 7 6 7 6 
-6 7 6 7 6 7 6 7 6 7 
+    7 6 7 6 7 6 7 6 7 6 
+    6 7 6 7 6 7 6 7 6 7 
+    7 6 7 6 7 6 7 6 7 6 
+    6 7 6 7 6 7 6 7 6 7 
+    7 6 7 6 7 6 7 6 7 6 
+    6 7 6 7 6 7 6 7 6 7 
+    7 6 7 6 7 6 7 6 7 6 
+    6 7 6 7 6 7 6 7 6 7 
 `);
 
 let player: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player);
@@ -200,14 +200,14 @@ enum SpriteKind {
 }
 
 scene.setTileMap(img`
-7 6 7 6 7 6 7 6 7 6 
-6 7 6 7 6 7 6 7 6 7 
-7 6 7 6 7 6 7 6 7 6 
-6 7 6 7 6 7 6 7 6 7 
-7 6 7 6 7 6 7 6 7 6 
-6 7 6 7 6 7 6 7 6 7 
-7 6 7 6 7 6 7 6 7 6 
-6 7 6 7 6 7 6 7 6 7 
+    7 6 7 6 7 6 7 6 7 6 
+    6 7 6 7 6 7 6 7 6 7 
+    7 6 7 6 7 6 7 6 7 6 
+    6 7 6 7 6 7 6 7 6 7 
+    7 6 7 6 7 6 7 6 7 6 
+    6 7 6 7 6 7 6 7 6 7 
+    7 6 7 6 7 6 7 6 7 6 
+    6 7 6 7 6 7 6 7 6 7 
 `);
 
 let flowerTiles: tiles.Tile[] = scene.getTilesByType(6);

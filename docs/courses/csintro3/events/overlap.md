@@ -39,14 +39,14 @@ enum SpriteKind {
 }
 
 let mySprite = sprites.create(img`
-1 1 1
+    1 1 1
 `, SpriteKind.Player);
 controller.moveSprite(mySprite, 100, 100);
 
 let enemy = sprites.create(img`
-5 2 5
-2 5 2
-5 2 5
+    5 2 5
+    2 5 2
+    5 2 5
 `, SpriteKind.Enemy);
 enemy.x += 50;
 
@@ -89,14 +89,14 @@ enum SpriteKind {
 }
 
 let mySprite = sprites.create(img`
-1 1 1
+    1 1 1
 `, SpriteKind.Player);
 controller.moveSprite(mySprite, 100, 100);
 
 let enemy = sprites.create(img`
-5 2 5
-2 5 2
-5 2 5
+    5 2 5
+    2 5 2
+    5 2 5
 `, SpriteKind.Enemy);
 enemy.x += 50;
 
@@ -133,26 +133,26 @@ enum SpriteKind {
 }
 
 let paddle: Sprite = sprites.create(img`
-d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
-d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
-d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
-d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
-d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
-d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
-d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
 `, SpriteKind.Paddle);
 paddle.y += 50;
 controller.moveSprite(paddle, 100, 0)
 
 game.onUpdateInterval(1000, function () {
     let ball: Sprite = sprites.createProjectile(img`
-. . 1 1 . .
-. 1 1 1 1 .
-1 1 d d 1 1
-1 1 d d 1 1
-. 1 1 1 1 .
-. . 1 1 . . 
-`, Math.randomRange(-40, 40), 30, SpriteKind.Ball);
+        . . 1 1 . .
+        . 1 1 1 1 .
+        1 1 d d 1 1
+        1 1 d d 1 1
+        . 1 1 1 1 .
+        . . 1 1 . . 
+    `, Math.randomRange(-40, 40), 30, SpriteKind.Ball);
     ball.x = screen.width / 2;
     ball.y = screen.height / 2;
 })

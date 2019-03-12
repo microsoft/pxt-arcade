@@ -13,14 +13,14 @@ and one for each **direction** of the road (that is, horizontal and vertical seg
 
 ```typescript
 scene.setTileMap(img`
-. . . . . . . . . . 
-. a 7 7 7 7 7 7 b . 
-. 6 . . . . . . 6 . 
-. 6 . . . . . . 6 . 
-. 6 . . . . . . 6 . 
-. 6 . . . . . . 6 . 
-. c 7 7 7 7 7 7 d . 
-. . . . . . . . . . 
+    . . . . . . . . . . 
+    . a 7 7 7 7 7 7 b . 
+    . 6 . . . . . . 6 . 
+    . 6 . . . . . . 6 . 
+    . 6 . . . . . . 6 . 
+    . 6 . . . . . . 6 . 
+    . c 7 7 7 7 7 7 d . 
+    . . . . . . . . . . 
 `);
 ```
 
@@ -55,32 +55,32 @@ side of the ``||scene:tile map||``.
 
 ```typescript
 scene.setTileMap(img`
-. . . . . . . . d . 
-. . . . . . . . d . 
-. . . . . . . . d . 
-. . . . . . . . d . 
-. . . . . . . . d . 
-. . . . . . . . d . 
-. . . . . . . . d . 
-. . . . . . . . d . 
+    . . . . . . . . d . 
+    . . . . . . . . d . 
+    . . . . . . . . d . 
+    . . . . . . . . d . 
+    . . . . . . . . d . 
+    . . . . . . . . d . 
+    . . . . . . . . d . 
+    . . . . . . . . d . 
 `);
 scene.setTile(13, img`
-f e e e e e e e . . . . . . . . 
-e e e e e e e e . . . . . . . . 
-e e e e d e e e . . . . . . . . 
-f e e e d e e e . . . . . . . . 
-e e e e d e e e . . . . . . . . 
-e e e e d e e e . . . . . . . . 
-f e e e e e e e . . . . . . . . 
-e d e e e e e e . . . . . . . . 
-e d e e e e e e . . . . . . . . 
-f d e e e e e e . . . . . . . . 
-e d e e e e e e . . . . . . . . 
-e d e e e d e e . . . . . . . . 
-f e e e e d e e . . . . . . . . 
-e e e e e d e e . . . . . . . . 
-f e e e e e e e . . . . . . . . 
-f e e e e e e e . . . . . . . . 
+    f e e e e e e e . . . . . . . . 
+    e e e e e e e e . . . . . . . . 
+    e e e e d e e e . . . . . . . . 
+    f e e e d e e e . . . . . . . . 
+    e e e e d e e e . . . . . . . . 
+    e e e e d e e e . . . . . . . . 
+    f e e e e e e e . . . . . . . . 
+    e d e e e e e e . . . . . . . . 
+    e d e e e e e e . . . . . . . . 
+    f d e e e e e e . . . . . . . . 
+    e d e e e e e e . . . . . . . . 
+    e d e e e d e e . . . . . . . . 
+    f e e e e d e e . . . . . . . . 
+    e e e e e d e e . . . . . . . . 
+    f e e e e e e e . . . . . . . . 
+    f e e e e e e e . . . . . . . . 
 `, true);
 ```
 
@@ -102,14 +102,14 @@ it's up to you to fill it!
 
 ```typescript
 scene.setTileMap(img`
-d d d d d d d d d d 
-e d d 9 b 9 d 2 e d 
-d 2 d d d d b d d d 
-d e d 2 d b 9 d d d 
-d d d d e d d d 2 d 
-d b d b d d d 2 e d 
-d d 9 d 9 d e d d d 
-d d d d d d d d d d 
+    d d d d d d d d d d 
+    e d d 9 b 9 d 2 e d 
+    d 2 d d d d b d d d 
+    d e d 2 d b 9 d d d 
+    d d d d e d d d 2 d 
+    d b d b d d d 2 e d 
+    d d 9 d 9 d e d d d 
+    d d d d d d d d d d 
 `);
 ```
 
@@ -138,33 +138,33 @@ enum SpriteKind {
 }
 
 let fire: Image = img`
-. 2 . . . . . . . . . . . . . . 
-4 2 . . 2 . . . . 2 . . . . . . 
-4 2 . . 2 . . 4 4 . . 4 4 2 . . 
-. 4 4 4 . . 4 4 4 . . 4 4 4 . . 
-4 4 4 4 . 4 4 2 4 4 4 2 4 4 . . 
-4 4 4 4 4 4 2 2 4 2 2 2 4 4 . . 
-. 4 4 4 2 2 2 2 2 5 2 2 4 4 . . 
-. 4 4 2 2 2 2 2 5 5 2 2 2 4 . . 
-4 4 4 2 2 2 2 5 5 5 2 2 2 4 . . 
-4 4 4 2 2 5 5 5 5 2 2 2 4 4 . . 
-. 4 4 2 5 5 5 2 2 2 2 4 4 4 . . 
-. 4 4 2 2 2 2 2 2 2 4 4 4 4 . . 
-. 4 4 4 2 2 2 2 2 4 4 4 4 4 . . 
-. . 4 4 4 2 2 4 4 4 4 4 4 . . . 
-. . 4 4 4 4 4 4 4 4 4 . . . . . 
-. . . . 4 4 4 4 4 . . . . . . . 
+    . 2 . . . . . . . . . . . . . . 
+    4 2 . . 2 . . . . 2 . . . . . . 
+    4 2 . . 2 . . 4 4 . . 4 4 2 . . 
+    . 4 4 4 . . 4 4 4 . . 4 4 4 . . 
+    4 4 4 4 . 4 4 2 4 4 4 2 4 4 . . 
+    4 4 4 4 4 4 2 2 4 2 2 2 4 4 . . 
+    . 4 4 4 2 2 2 2 2 5 2 2 4 4 . . 
+    . 4 4 2 2 2 2 2 5 5 2 2 2 4 . . 
+    4 4 4 2 2 2 2 5 5 5 2 2 2 4 . . 
+    4 4 4 2 2 5 5 5 5 2 2 2 4 4 . . 
+    . 4 4 2 5 5 5 2 2 2 2 4 4 4 . . 
+    . 4 4 2 2 2 2 2 2 2 4 4 4 4 . . 
+    . 4 4 4 2 2 2 2 2 4 4 4 4 4 . . 
+    . . 4 4 4 2 2 4 4 4 4 4 4 . . . 
+    . . 4 4 4 4 4 4 4 4 4 . . . . . 
+    . . . . 4 4 4 4 4 . . . . . . . 
 `
 
 scene.setTileMap(img`
-1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 f 1 1 1 1 1 
-1 1 1 1 f 1 1 1 1 1 
-1 1 1 1 f 1 1 1 1 1 
-1 1 1 1 f 1 1 1 1 1 
-1 1 1 1 f 1 1 1 1 1 
-1 1 1 1 f 1 1 1 1 1 
-1 1 1 1 1 1 1 1 1 1 
+    1 1 1 1 1 1 1 1 1 1 
+    1 1 1 1 f 1 1 1 1 1 
+    1 1 1 1 f 1 1 1 1 1 
+    1 1 1 1 f 1 1 1 1 1 
+    1 1 1 1 f 1 1 1 1 1 
+    1 1 1 1 f 1 1 1 1 1 
+    1 1 1 1 f 1 1 1 1 1 
+    1 1 1 1 1 1 1 1 1 1 
 `);
 
 loops.forever(function () {

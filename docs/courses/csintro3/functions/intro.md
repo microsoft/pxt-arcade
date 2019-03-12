@@ -110,15 +110,16 @@ for (let i = 0; i < 5; i++) {
 This could quickly become a mess as the program being developed
 gets to be dozens (or hundreds) of lines long.
 
-Similarly, variables declared **inside** of a function are only
+Similarly, variables declared **inside** of a function or loop are only
 accessible **within** the function.
 
 ```typescript
 let a = 0;
 function example() {
     let b = 1;
-    a = 2;
+    a = 2; // can use `a` here, as it is declared outside the function
 }
+// can't use `b` here, as it is declared inside the function
 ```
 
 In this snippet, ``||variables:b||`` is only accessible within ``example``
