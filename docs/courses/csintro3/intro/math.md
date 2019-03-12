@@ -24,31 +24,31 @@ evaluating math by hand or with a scientific calculator.
 
 ### Example #1a: Addition and Subtraction
 
-```blocks
+```block
 let num: number = 1 + 2 - 3;
 ```
 
-```typescript
+```typescript-ignore
 let num: number = 1 + 2 - 3;
 ```
 
 ### Example #1b: Addition and Multiplication
 
-```blocks
+```block
 let num: number = 5 + 3 * 2;
 ```
 
-```typescript
+```typescript-ignore
 let num: number = 5 + 3 * 2;
 ```
 
 ### Example #1c: Division and Multiplication
 
-```blocks
+```block
 let num: number = 5 + 3 * 2;
 ```
 
-```typescript
+```typescript-ignore
 let num: number = 24 / 3 * 4;
 ```
 
