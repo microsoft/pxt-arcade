@@ -44,6 +44,8 @@ but only serve as a necessary part of the syntax for now.
 
 ## Example #1: Say Hello
 
+![Animation of typing out first function](/static/courses/csintro3/functions/creating-first-function.gif)
+
 1. Review the code below
 2. Convert the code to Blocks
 3. Identify which blocks came from which parts of the code
@@ -87,7 +89,7 @@ that is the **scope** of the variable.
 for (let i = 0; i < 5; i++) {
     console.log("Hello!");
 }
-console.log("I just logged " + i + " times!");
+console.log("I just logged " + i + " times!"); // error! Can't find variable `i`!
 ```
 
 This may seem like a problem at first,
@@ -119,7 +121,7 @@ function example() {
     let b = 1;
     a = 2; // can use `a` here, as it is declared outside the function
 }
-// can't use `b` here, as it is declared inside the function
+// can't use `b` here, as it is declared inside the function`
 ```
 
 In this snippet, ``||variables:b||`` is only accessible within ``example``
