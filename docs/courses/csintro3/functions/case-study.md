@@ -2,6 +2,8 @@
 
 At the end of the functions section, the case study should resemble this example solution:
 
+![Animation of current case study](/static/courses/csintro3/functions/end-section-case-study.gif)
+
 ```typescript
 enum SpriteKind {
     Player,

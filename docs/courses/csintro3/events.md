@@ -31,4 +31,4 @@
 * [Sprite Overlap Events](/courses/csintro3/events/overlap)
 * [Button Press Events](/courses/csintro3/events/buttons)
 * [Info Events](/courses/csintro3/events/info)
-* [Case Study](/cources/csintro3/events/case-study)
+* [Case Study](/courses/csintro3/events/case-study)

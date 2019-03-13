@@ -26,4 +26,4 @@
 * [Parameters](/courses/csintro3/functions/parameters)
 * [Return Values](/courses/csintro3/functions/returns)
 * [Commenting Functions](/courses/csintro3/functions/comments)
-* [Case Study](/cources/csintro3/functions/case-study)
+* [Case Study](/courses/csintro3/functions/case-study)

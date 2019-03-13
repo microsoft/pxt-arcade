@@ -31,4 +31,4 @@
 * [Arrays of Sprites](/courses/csintro3/arrays/sprites)
 * [Tiles](/courses/csintro3/arrays/tiles)
 * [Images](/courses/csintro3/arrays/images)
-* [Case Study Final](/cources/csintro3/arrays/case-study)
+* [Case Study Final](/courses/csintro3/arrays/case-study)
