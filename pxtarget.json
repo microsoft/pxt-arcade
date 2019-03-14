@@ -43,7 +43,8 @@
         "libs/jacdac",
         "libs/jacdac-drivers",
         "libs/jacdac-game",
-        "libs/power"
+        "libs/power",
+        "libs/controller"
     ],
     "compile": {
         "useUF2": true,
