@@ -25,7 +25,7 @@
     {
         "name": "Courses",
         "url": "/courses",
-        "imageUrl": "/static/courses/csintro1.gif"
+        "imageUrl": "/static/courses/csintro3.gif"
     },
     {
         "name": "Hardware",

@@ -10,15 +10,22 @@ These courses are currently in beta - this means that they are likely to have bu
 
 ```codecard
 [
-{
-    "name": "CS Intro 1",
-    "description": "A semester length computer science course for beginning coders",
-    "url":"/courses/csintro1"
-}, {
-    "name": "CS Intro 2",
-    "description": "A continuation of the Intro to CS course",
-    "url":"/courses/csintro2"
-}
+    {
+        "name": "CS Intro 1",
+        "description": "A semester length computer science course for beginning coders",
+        "url":"/courses/csintro1",
+        "imageUrl": "/static/courses/csintro1.gif"
+    }, {
+        "name": "CS Intro 2",
+        "description": "A continuation of the Intro to CS course",
+        "url":"/courses/csintro2",
+        "imageUrl": "/static/courses/csintro2.gif"
+    }, {
+        "name": "CS Intro 3",
+        "description": "A quarter length transition from blocks to JavaScript",
+        "url": "/courses/csintro3",
+        "imageUrl": "/static/courses/csintro3.gif"
+    }
 ]
 ```
 
