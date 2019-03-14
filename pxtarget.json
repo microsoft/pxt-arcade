@@ -262,6 +262,10 @@
         "coloredToolbox": true,
         "monacoToolbox": true,
         "selectLanguage": true,
+        "availableLocales": [
+            "en",
+            "zh-CN"
+        ],
         "invertedMenu": true,
         "showHomeScreen": true,
         "highContrast": true,
