@@ -25,7 +25,7 @@
     {
         "name": "Courses",
         "url": "/courses",
-        "imageUrl": "/static/courses/csintro3.gif"
+        "imageUrl": "/static/courses/csintro1.gif"
     },
     {
         "name": "Hardware",
@@ -41,6 +41,6 @@
 [Blocks Games](/blocks-games),
 [JavaScript Games](/javascript-games),
 [Game Design Concepts](/concepts),
-[Lessons](/lessons),
+[Courses](/courses),
 [Hardware](/hardware)
 
