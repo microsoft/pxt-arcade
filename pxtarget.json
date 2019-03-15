@@ -304,8 +304,8 @@
         "monacoFieldEditors": ["image-editor"],
         "scriptManager": true,
         "saveInMenu": false,
+        "debugger": true,
         "experiments": [
-            "debugger",
             "print"
         ],
         "extendEditor": true,
