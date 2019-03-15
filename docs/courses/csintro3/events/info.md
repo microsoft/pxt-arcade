@@ -78,14 +78,14 @@ enum SpriteKind {
 }
 
 let mySprite = sprites.create(img`
-1 1 1
+    1 1 1
 `, SpriteKind.Player);
 controller.moveSprite(mySprite, 100, 100);
 
 let enemy = sprites.create(img`
-5 2 5
-2 5 2
-5 2 5
+    5 2 5
+    2 5 2
+    5 2 5
 `, SpriteKind.Enemy);
 enemy.x += 50;
 
