@@ -14,7 +14,8 @@
     },
     "compileServiceVariant": "stm32f401",
     "cppDependencies": {
-        "accelerometer": "file:../accelerometer"
+        "accelerometer": "file:../accelerometer",
+        "lightsensor": "file:../lightsensor"
     },
     "dependencies": {
         "core---stm32": "file:../core---stm32",
