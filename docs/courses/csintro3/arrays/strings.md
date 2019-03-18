@@ -212,7 +212,7 @@ section to review the material and practice the concepts introduced in this sect
 ### Redundant Sayings
 
 In the ``||sprites:overlap event||`` between ``Player`` and ``PowerUp``,
-the player always ``||sprite:say||``s something based off the power up that
+the player always ``||sprites:say||``s something based off the power up that
 has been collected. Reduce the redundancy between the ``||logic:if||`` and
 ``||logic:else if||`` branches by storing the possible responses in an array of strings,
 with each response stored at the index corresponding to the ``PowerUpType``.
