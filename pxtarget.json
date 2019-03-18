@@ -17,6 +17,7 @@
     "bundleddirs": [
         "libs/animation",
         "libs/accelerometer",
+        "libs/lightsensor",
         "libs/base",
         "libs/core",
         "libs/core---samd",
@@ -99,7 +100,7 @@
         "dockerImage": "pext/yotta:latest",
         "codalTarget": {
             "branches": {
-                "https://github.com/lancaster-university/codal-core": "cf86bdc8cbd5b16f065846335cd0a693a8948b23"
+                "https://github.com/lancaster-university/codal-core": "4a6a2f165498e138894b4b0868a0a147fd747993"
             }
         }
     },
@@ -304,8 +305,8 @@
         "monacoFieldEditors": ["image-editor"],
         "scriptManager": true,
         "saveInMenu": false,
+        "debugger": true,
         "experiments": [
-            "debugger",
             "print"
         ],
         "extendEditor": true,
