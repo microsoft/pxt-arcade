@@ -23,6 +23,7 @@
         "libs/core---samd",
         "libs/core---stm32",
         "libs/core---linux",
+        "libs/serial",
         "libs/corgio",
         "libs/darts",
         "libs/hw",
@@ -217,7 +218,8 @@
         "bannedCategories": [
             "pins",
             "control",
-            "input"
+            "input",
+            "serial"
         ]
     },
     "simulator": {
