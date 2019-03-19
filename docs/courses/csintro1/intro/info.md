@@ -18,9 +18,7 @@ The first example will be a simple one - simply counting the number of buttons p
 
 ## Example #1: Counting button presses
 
-https://youtu.be/7JkbbfBJCdI
-
-[Alternative Video Location](https://aka.ms/40544a-infoproperties1)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-infoproperties1)
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -55,9 +53,7 @@ Beyond score, another important value to keep track of is the players life total
 
 ## Example #2: changing ``||info:life||`` totals
 
-https://youtu.be/YiZ-yl5CbYM
-
-[Alternative Video Location](https://aka.ms/40544a-infoproperties2)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-infoproperties2)
 
 1. Review the code below
 2. Create the sample code and run the code
