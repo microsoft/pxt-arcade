@@ -42,9 +42,11 @@ enum SpriteKind {
     Enemy
 }
 let player: Sprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player);
-let enemies: Sprite[] = [sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy),
-                        sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy),
-                        sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy)];
+let enemies: Sprite[] = [
+    sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy),
+    sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy),
+    sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy)
+];
 enemies[0].x = Math.randomRange(10, screen.width - 10);
 enemies[1].x = Math.randomRange(10, screen.width - 10);
 enemies[2].x = Math.randomRange(10, screen.width - 10);

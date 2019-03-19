@@ -20,9 +20,12 @@ off and used when dinner is made.
 In JavaScript, an array can be treated like a stack by using ``||arrays:array.push||``
 and ``||arrays:array.pop||``.
 
+![Image of shapes in array being pushed and popped](/static/courses/csintro3/arrays/push-pop.png)
+
 The ``||arrays:array.push||`` function is used to add a new value to the **end**
 of an array (the **top** of the stack), and the ``||arrays:array.pop||``
 function is used to obtain (and remove) the value at the end of the array.
+
 
 ## Example #1a: Push
 
