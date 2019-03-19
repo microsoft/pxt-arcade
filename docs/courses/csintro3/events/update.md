@@ -1,4 +1,4 @@
-# Activity: On Game Update Interval
+# Activity: On Update Interval
 
 In the previous lesson, the ``||game:on game update||`` event was used to
 handle events that should occur every time the game updates.

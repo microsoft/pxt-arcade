@@ -1,4 +1,4 @@
-# Activity: String Array Manipulation
+# Activity: Array Manipulation
 
 Arrays can be made for any type of value.
 This allows arrays to be used in a wide variety of circumstances,

@@ -1,4 +1,4 @@
-# Activity: On Game Update Event
+# Activity: Intro to Events
 
 An event is something that happens. Holidays, Birthdays,
 and the end of the school year are all big events for anyone involved.

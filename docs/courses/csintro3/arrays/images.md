@@ -1,4 +1,4 @@
-# Activity: Arrays of Images
+# Activity: Images
 
 ``||images:Images||`` are used to represent many things on screen in @boardname@ -
 ``||scene:backgrounds||``, ``||sprites:Sprites||``, many other elements of the games.

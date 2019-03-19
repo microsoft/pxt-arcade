@@ -1,4 +1,4 @@
-# Activity: Info
+# Activity: Info Events
 
 The ``||info:Info||`` category has three values that it can keep track of by default:
 a player's ``||info:score||`` and ``||info:health||``,
