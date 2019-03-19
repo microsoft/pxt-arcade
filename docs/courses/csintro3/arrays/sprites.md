@@ -24,14 +24,18 @@ enum SpriteKind {
     Projectile,
     Enemy
 }
+
 let player: Sprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player);
 let enemy1: Sprite = sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy);
 let enemy2: Sprite = sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy);
 let enemy3: Sprite = sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy);
+
 enemy1.x = Math.randomRange(10, screen.width - 10);
 enemy2.x = Math.randomRange(10, screen.width - 10);
 enemy3.x = Math.randomRange(10, screen.width - 10);
 ```
+
+![Animation of translating from example 1a to example 1b](/static/courses/csintro3/arrays/convert-sprites-to-array.gif)
 
 ### Example #1b: ``||variables:enemies||`` Array
 
@@ -41,12 +45,14 @@ enum SpriteKind {
     Projectile,
     Enemy
 }
+
 let player: Sprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player);
 let enemies: Sprite[] = [
     sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy),
     sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy),
     sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy)
 ];
+
 enemies[0].x = Math.randomRange(10, screen.width - 10);
 enemies[1].x = Math.randomRange(10, screen.width - 10);
 enemies[2].x = Math.randomRange(10, screen.width - 10);
@@ -231,6 +237,8 @@ so that you can have that ready for your future games.
 ### ~
 
 ## Student Task #3: They're All Following!
+
+![Animation of completed task, with sprites following a piazza](/static/courses/csintro3/arrays/following-pizza.gif)
 
 1. Start with the code from example #3
 2. Create at least **5** enemies in a loop.
