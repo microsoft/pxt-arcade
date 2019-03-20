@@ -47,4 +47,5 @@ In the future CS Intro 3 and CS Intro 4 courses, students will transition the sk
 
 [Courses Home Page](/courses),
 [CS Intro 1](/courses/csintro1),
-[CS Intro 2](/courses/csintro2)
+[CS Intro 2](/courses/csintro2),
+[CS Intro 3](/courses/csintro3)
