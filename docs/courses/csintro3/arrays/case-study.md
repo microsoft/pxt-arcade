@@ -1,5 +1,7 @@
 # Case Study Catch Up
 
+![Animation of completed case study game](/static/courses/csintro3/arrays/case-study-final.gif)
+
 At the end of the arrays section, the case study should resemble this example solution:
 
 ```typescript
