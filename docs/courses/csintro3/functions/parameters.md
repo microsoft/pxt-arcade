@@ -32,6 +32,7 @@ value is provided when the function is called.
 
 ## Example #1: Reducing Redundancy with Parameters
 
+![Animation of combining two functions with parameters](/static/courses/csintro3/functions/adding-first-parameter.gif)
 Parameters can be used to reduce redundancy between different functions.
 
 1. Review the two code snippets below
@@ -90,6 +91,8 @@ match the order the parameters were defined in; in this case,
 ``parameterOne`` will store ``valueOne``, and ``parameterTwo`` will store ``valueTwo``.
 
 ## Example #2: Choose for Me
+
+![Animation of using a function with multiple parameters](/static/courses/csintro3/functions/using-multiple-parameters.gif)
 
 1. Review the code below
 2. Identify how the two parameters are being used

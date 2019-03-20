@@ -1,5 +1,7 @@
 # Case Study Catch Up
 
+![Animation of Case Study at the end of the section](/static/courses/csintro3/events/end-of-section-case-study.gif)
+
 At the end of the events section, the case study should resemble this example solution:
 
 ```typescript

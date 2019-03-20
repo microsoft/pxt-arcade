@@ -68,6 +68,7 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Parameters](/courses/csintro3/functions/parameters)
 * [Return Values](/courses/csintro3/functions/returns)
 * [Commenting Functions](/courses/csintro3/functions/comments)
+* [Case Study](/courses/csintro3/functions/case-study)
 
 ### [Events](/courses/csintro3/events)
 
@@ -76,6 +77,7 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Sprite Overlap Events](/courses/csintro3/events/overlap)
 * [Info Events](/courses/csintro3/events/info)
 * [Button Press Events](/courses/csintro3/events/buttons)
+* [Case Study](/courses/csintro3/events/case-study)
 
 ### [Arrays](/courses/csintro3/arrays)
 
@@ -84,6 +86,7 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Arrays of Sprites](/courses/csintro3/arrays/sprites)
 * [Tiles](/courses/csintro3/arrays/tiles)
 * [Images](/courses/csintro3/arrays/images)
+* [Case Study](/courses/csintro3/arrays/case-study)
 
 ### [Appendix](/courses/csintro3/appendix)
 

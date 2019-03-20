@@ -47,6 +47,7 @@ Using an ``||arrays:Array||`` could look similar to the code below.
 
 ```typescript-ignore
 let arr: number[] = [];
+
 arr[0] = 5;
 arr[1] = 4;
 arr[2] = 3;
@@ -66,6 +67,7 @@ arr[4] = 1;
 
 ```typescript
 let arr: number[] = [];
+
 for (let i = 0; i < 5; i++) {
     arr[i] = i * 2;
 }
@@ -115,6 +117,8 @@ are created in this example.
 
 The only difference is that the first example's array started off **empty**,
 as there were no values between the square brackets.
+
+![Animation](/static/courses/csintro3/arrays/changing-example-one.gif)
 
 ### ~
 
