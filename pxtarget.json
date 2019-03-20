@@ -46,7 +46,8 @@
         "libs/jacdac-drivers",
         "libs/jacdac-game",
         "libs/power",
-        "libs/controller"
+        "libs/controller",
+        "libs/edge-connector"
     ],
     "compile": {
         "useUF2": true,
