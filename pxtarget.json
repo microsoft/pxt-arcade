@@ -62,6 +62,15 @@
         "webUSB": true,
         "saveAsPNG": true,
         "patches": {
+            "0.0.0 - *": [
+                {
+                    "type": "missingPackage",
+                    "map": {
+                        "(DigitalPin|AnalogPin|pins)\\.P\\d\\d?": "edge-connector",
+                        "serial\\.": "serial"
+                    }
+                }
+            ],
             "0.0.0 - 0.1.1": [
                 {
                     "type": "api",
@@ -85,7 +94,8 @@
                     "map": {
                         "sprites\\.createEmptySprite\\(([^)]+)\\)": "sprites.create(img`.`, $1)"
                     }
-                }, {
+                },
+                {
                     "type": "blockId",
                     "map": {
                         "keysdx": "keydx",
@@ -305,7 +315,9 @@
         "monacoColors": {
             "editor.background": "#FFFAE7"
         },
-        "monacoFieldEditors": ["image-editor"],
+        "monacoFieldEditors": [
+            "image-editor"
+        ],
         "scriptManager": true,
         "saveInMenu": false,
         "debugger": true,
