@@ -23,6 +23,11 @@
         "imageUrl": "/static/concepts/walking-hero.gif"
     },
     {
+        "name": "Lessons",
+        "url": "/lessons",
+        "imageUrl": "/static/lessons/cherry-pickr.png"
+    },
+    {
         "name": "Courses",
         "url": "/courses",
         "imageUrl": "/static/courses/csintro1.gif"
@@ -41,6 +46,7 @@
 [Blocks Games](/blocks-games),
 [JavaScript Games](/javascript-games),
 [Game Design Concepts](/concepts),
+[Lessons](/lessons),
 [Courses](/courses),
 [Hardware](/hardware)
 
