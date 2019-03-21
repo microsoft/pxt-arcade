@@ -1,6 +1,6 @@
 # TODO
 
-test## Simulator
+## Simulator
 
 * [ ] add SVG around the screen
 * [ ] add buttons in SVG, especially for usage on a mobile phone
