@@ -1,4 +1,4 @@
-# Activity: Arrays of Images
+# Activity: Images
 
 ``||images:Images||`` are used to represent many things on screen in @boardname@ -
 ``||scene:backgrounds||``, ``||sprites:Sprites||``, many other elements of the games.
@@ -110,6 +110,8 @@ short for modulo or modulus.
 
 ## Example #2: Continually Flapping Duck
 
+![Animation of a duck from this example](/static/courses/csintro3/arrays/duck-animation.gif)
+
 1. Review the code below
 2. Identify how ``||variables:count||`` is used
 3. Identify how the remainder (``%``) operator is used to refer to a value
@@ -136,6 +138,7 @@ let count: number = 0;
 
 game.onUpdateInterval(150, function () {
     duck.setImage(characterImages[count % characterImages.length]);
+    count++;
 });
 ```
 
@@ -162,6 +165,8 @@ sprites.onCreated(0, null);
 ```
 
 ## Example #3: Asteroids!
+
+![Animation of asteroids being created using this example](/static/courses/csintro3/arrays/asteroid-spawning.gif)
 
 1. Review the code below
 2. Identify how the different images for ``||sprites:Asteroid||``s are defined,

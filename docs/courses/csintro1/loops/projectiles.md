@@ -15,9 +15,7 @@ In this activity, students will use:
 
 ## Concept: Flying Birds!
 
-https://youtu.be/K4feIZBn56g
-
-[Alternative Video Location](https://aka.ms/40544a-projectiles1)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-projectiles1)
 
 We can use projectiles to create sprites that move across the screen. Let's start off by making a simple bird projectile.
 
@@ -144,9 +142,7 @@ Games often create many projectiles, one after another. We can create multiple p
 
 ### Example #2: Projectile Loop
 
-https://youtu.be/Rox0yQ8k9dU
-
-[Alternative Video Location](https://aka.ms/40544a-projectiles2) 
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-projectiles2)
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -252,9 +248,7 @@ pause(300)
 
 ## Concept: Projectiles from Corners
 
-https://youtu.be/59hNi1CGCTo
-
-[Alternative Video Location](https://aka.ms/40544a-projectiles3)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-projectiles3)
 
 Projectiles with only a ``||sprites:y||`` velocity will start on the top or bottom of the game screen, and projectiles with only a ``||sprites:x||`` velocity will start from the left or right by default. If the projectile has both an ``||sprites:x||`` and ``||sprites:y||`` velocity, they will start from one of the corners.
 

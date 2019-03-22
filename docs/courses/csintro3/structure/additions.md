@@ -1,4 +1,4 @@
-# Additions to Case Study
+# Case Study Additions
 
 At this point, you have the knowledge necessary to deal with a larger pieces of code -
 in particular, by using comments to leave information for anyone reading it in the future,
@@ -35,6 +35,8 @@ that will usually mean the code is to remain **unmodified**, not that it should 
 ### ~
 
 ## Current Game
+
+![Animation of current case study game](/static/courses/csintro3/structure/current-case-study.gif)
 
 ```typescript
 enum SpriteKind {
@@ -118,6 +120,8 @@ namespace enemy {
 ```
 
 ## New Version
+
+![Animation of updated case study game](/static/courses/csintro3/structure/updated-case-study.gif)
 
 ### Change List:
 

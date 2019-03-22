@@ -14,7 +14,8 @@
     },
     "compileServiceVariant": "samd51",
     "cppDependencies": {
-        "accelerometer": "file:../accelerometer"
+        "accelerometer": "file:../accelerometer",
+        "lightsensor": "file:../lightsensor"
     },
     "dependencies": {
         "core---samd": "file:../core---samd",

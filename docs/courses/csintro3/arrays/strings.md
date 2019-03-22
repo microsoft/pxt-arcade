@@ -1,4 +1,4 @@
-# Activity: String Array Manipulation
+# Activity: Array Manipulation
 
 Arrays can be made for any type of value.
 This allows arrays to be used in a wide variety of circumstances,
@@ -20,9 +20,12 @@ off and used when dinner is made.
 In JavaScript, an array can be treated like a stack by using ``||arrays:array.push||``
 and ``||arrays:array.pop||``.
 
+![Image of shapes in array being pushed and popped](/static/courses/csintro3/arrays/push-pop.png)
+
 The ``||arrays:array.push||`` function is used to add a new value to the **end**
 of an array (the **top** of the stack), and the ``||arrays:array.pop||``
 function is used to obtain (and remove) the value at the end of the array.
+
 
 ## Example #1a: Push
 
@@ -212,7 +215,7 @@ section to review the material and practice the concepts introduced in this sect
 ### Redundant Sayings
 
 In the ``||sprites:overlap event||`` between ``Player`` and ``PowerUp``,
-the player always ``||sprite:say||``s something based off the power up that
+the player always ``||sprites:say||``s something based off the power up that
 has been collected. Reduce the redundancy between the ``||logic:if||`` and
 ``||logic:else if||`` branches by storing the possible responses in an array of strings,
 with each response stored at the index corresponding to the ``PowerUpType``.

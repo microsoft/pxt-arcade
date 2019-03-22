@@ -16,9 +16,7 @@ In this activity, students are introduced to:
 
 ## Concept: Opening a game
 
-https://youtu.be/GsvBCViybPs
-
-[Alternative Video Location](https://aka.ms/40544a-orientation1)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-orientation1)
 
 ## Student Task #1: Playing Space Destroyer #task-1
 
@@ -29,9 +27,7 @@ https://youtu.be/GsvBCViybPs
 
 ### New Project
 
-https://youtu.be/iEQa-Wd3MRs
-
-[Alternative Video Location](https://aka.ms/40544a-orientation2)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-orientation2)
 
 ## Student Task #2: Starting and saving your own game #task-2
 

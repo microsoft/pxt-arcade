@@ -1,4 +1,4 @@
-# JavaScript Beta
+# CS Intro 3
 
 ### ~hint
 
@@ -7,22 +7,29 @@ This course is currently in beta - this means that it is likely to have bugs and
 ### ~
 
 ```codecard
-[{
-    "name": "Intro",
-    "url": "/courses/csintro3/intro"
-},{
-    "name": "Structure",
-    "url": "/courses/csintro3/structure"
-}, {
-    "name": "Functions",
-    "url": "/courses/csintro3/functions"
-}, {
-    "name": "Events",
-    "url": "/courses/csintro3/events"
-}, {
-    "name": "Arrays",
-    "url": "/courses/csintro3/arrays"
-}]
+[
+    {
+        "name": "Intro",
+        "url": "/courses/csintro3/intro",
+        "imageUrl": "/static/courses/csintro3/intro.gif"
+    }, {
+        "name": "Structure",
+        "url": "/courses/csintro3/structure",
+        "imageUrl": "/static/courses/csintro3/structure.gif"
+    }, {
+        "name": "Functions",
+        "url": "/courses/csintro3/functions",
+        "imageUrl": "/static/courses/csintro3/functions.gif"
+    }, {
+        "name": "Events",
+        "url": "/courses/csintro3/events",
+        "imageUrl": "/static/courses/csintro3/events.gif"
+    }, {
+        "name": "Arrays",
+        "url": "/courses/csintro3/arrays",
+        "imageUrl": "/static/courses/csintro3/arrays.gif"
+    }
+]
 ```
 
 ## Table of Contents
@@ -52,8 +59,8 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Projectiles](/courses/csintro3/structure/projectiles)
 * [Tile Maps](/courses/csintro3/structure/tilemaps)
 * [Corgio Extension](/courses/csintro3/structure/extensions)
-* [Namespaces and Comments](/courses/csintro3/structure/namespaces)
-* [Additions to Case Study](/courses/csintro3/structure/additions)
+* [Namespaces](/courses/csintro3/structure/namespaces)
+* [Case Study Additions](/courses/csintro3/structure/additions)
 
 ### [Functions](/courses/csintro3/functions)
 
@@ -61,6 +68,7 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Parameters](/courses/csintro3/functions/parameters)
 * [Return Values](/courses/csintro3/functions/returns)
 * [Commenting Functions](/courses/csintro3/functions/comments)
+* [Case Study](/courses/csintro3/functions/case-study)
 
 ### [Events](/courses/csintro3/events)
 
@@ -69,6 +77,7 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Sprite Overlap Events](/courses/csintro3/events/overlap)
 * [Info Events](/courses/csintro3/events/info)
 * [Button Press Events](/courses/csintro3/events/buttons)
+* [Case Study](/courses/csintro3/events/case-study)
 
 ### [Arrays](/courses/csintro3/arrays)
 
@@ -77,6 +86,7 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Arrays of Sprites](/courses/csintro3/arrays/sprites)
 * [Tiles](/courses/csintro3/arrays/tiles)
 * [Images](/courses/csintro3/arrays/images)
+* [Case Study](/courses/csintro3/arrays/case-study)
 
 ### [Appendix](/courses/csintro3/appendix)
 

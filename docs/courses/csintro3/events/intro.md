@@ -1,4 +1,4 @@
-# Activity: On Game Update Event
+# Activity: Intro to Events
 
 An event is something that happens. Holidays, Birthdays,
 and the end of the school year are all big events for anyone involved.
@@ -178,8 +178,10 @@ game.onUpdate(function () {
 
 ## Student Task #3: Bouncing All Around
 
+![Animation of asteroid bouncing around wall](/static/courses/csintro3/events/meteor-wall-bounce.gif)
+
 1. Start with the code from example #3
-2. Before the loop, give the asteroid an inital ``||sprites:vy||`` of 50
+2. Before the event, give the asteroid an inital ``||sprites:vy||`` of 50
 3. In the ``||game:game.onUpdate||`` event,
 add an additional ``||logic:if ... else if||`` section after the first one
 4. In this ``||logic:if ... else if||`` section,

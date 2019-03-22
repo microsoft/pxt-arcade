@@ -1,4 +1,4 @@
-# Activity: On Game Update Interval
+# Activity: On Update Interval
 
 In the previous lesson, the ``||game:on game update||`` event was used to
 handle events that should occur every time the game updates.
@@ -16,6 +16,8 @@ game.onUpdateInterval(500, undefined);
 ```
 
 ## Example #1: Visualizing the Rate
+
+![Animation of Console Graph](/static/courses/csintro3/events/graphing-value-a.gif)
 
 1. Review the code below
 2. Identify the **period** of the event
@@ -62,6 +64,8 @@ This allows for ``||sprites:sprites||`` that are created regularly,
 without overwhelming the player or the screen.
 
 ## Example #2: Fewer Stars
+
+![Animation of example stars](/static/courses/csintro3/events/star-background.gif)
 
 1. Review the code below
 2. Identify the **period** of the event

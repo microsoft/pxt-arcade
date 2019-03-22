@@ -823,13 +823,13 @@ namespace level {
 
     function setupScene(): void {
         scene.setBackgroundImage(customImages.levelTwo_bg);
-        scene.setTile(1, customArt.stars);
+        scene.setTile(1, customArt.stars, false);
         scene.setTile(2, customArt.ufo, true);
         scene.setTile(3, customArt.black_hole_center, true);
-        scene.setTile(4, customArt.black_hole_up);
-        scene.setTile(5, customArt.black_hole_down);
-        scene.setTile(6, customArt.black_hole_left);
-        scene.setTile(7, customArt.black_hole_right);
+        scene.setTile(4, customArt.black_hole_up, false);
+        scene.setTile(5, customArt.black_hole_down, false);
+        scene.setTile(6, customArt.black_hole_left, false);
+        scene.setTile(7, customArt.black_hole_right, false);
         scene.setTile(8, customArt.floor_inner, true);
         scene.setTile(9, customArt.meteor_front, true);
         scene.setTile(10, customArt.meteor_middle, true);

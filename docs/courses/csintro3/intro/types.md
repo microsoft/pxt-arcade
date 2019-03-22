@@ -18,6 +18,8 @@ In MakeCode JavaScript, variables can be explicitly given a type for the compute
 In MakeCode JavaScript, variables can be assigned a type at declaration by using ``: type``
 after the name of the variable.
 
+![Animation of adding explicit typing](/static/courses/csintro3/intro/explicit-typing.gif)
+
 ```typescript
 let x: number = 5;
 let word: string = "Hello";
@@ -110,10 +112,10 @@ exact output listed in step 1
 console.logValue(7, "is the number!");
 ```
 
-## Concept: Situations that Require Explicit Typing
+## Concept: Benefits of Explicit Typing
 
-Occasionally, explicitly defining a type is actually required.
-One such situation is a fairly common one in JavaScript:
+Explictly adding types to variables can make understanding complex code much easier.
+One situation where it can be particular important is a fairly common one in JavaScript:
 when a variable is defined without immediately assigning it a value.
 
 For now, this may seem like an uncommon situation, but as the programs
@@ -142,6 +144,17 @@ game.splash(c + a);
 In this example, the type of the variables is defined before any values are assigned to them.
 This way, anyone reading the code can identify the type of the value with a glance,
 instead of having to read through all of the code.
+
+Another benefit can be seen within the editor itself;
+hover over each of the variables to see what type is assigned to each variable.
+
+![Animation of hover text](/static/courses/csintro3/intro/editor-type-hinting.gif)
+
+In the tooltip that shows up when you hover over the variable,
+you will see the types known for the variable;
+if a type is not known when declaring the variable,
+it will be left as ``any`` type,
+which does not give any information on what the variable can be used for.
 
 ## Student Task #3: Adding types
 
@@ -229,7 +242,7 @@ namespace asteroids {
     }
 }
 
-let intro: string = "Hello! This is my Space Game!"
+let intro: string = "Hello! This is my Space Game!";
 game.splash(intro);
 
 let x: number = 80;

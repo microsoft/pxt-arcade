@@ -1,4 +1,4 @@
-# Activity: Function Documentation
+# Activity: Commenting Functions
 
 In previous lessons, ``||functions:functions||`` have been shown to
 have a wide variety of uses, with many different features.

@@ -410,11 +410,11 @@ function level1Setup() {
         . . . . . . . . . . . . . . . . . . . . . . . 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
     `);
     scene.setTile(9, projectImages.Stone, true);
-    scene.setTile(6, projectImages.Gate);
-    scene.setTile(3, projectImages.Boy);
-    scene.setTile(2, projectImages.Flower);
-    scene.setTile(1, projectImages.Flower_2);
-    scene.setTile(4, projectImages.Flag);
+    scene.setTile(6, projectImages.Gate, false);
+    scene.setTile(3, projectImages.Boy, false);
+    scene.setTile(2, projectImages.Flower, false);
+    scene.setTile(1, projectImages.Flower_2, false);
+    scene.setTile(4, projectImages.Flag, false);
     boySprite.setPosition(398, 268);
     girlSprite.setPosition(30, 200);
     boss1Sprite.setPosition(360, 178);
@@ -477,12 +477,12 @@ function level2Setup() {
         9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
     `);
     scene.setTile(9, projectImages.Stone, true);
-    scene.setTile(6, projectImages.Gate);
-    scene.setTile(7, projectImages.Gate_H)
-    scene.setTile(3, projectImages.Boy);
-    scene.setTile(2, projectImages.Flower);
-    scene.setTile(1, projectImages.Flower_2);
-    scene.setTile(4, projectImages.Flag);
+    scene.setTile(6, projectImages.Gate, false);
+    scene.setTile(7, projectImages.Gate_H, false)
+    scene.setTile(3, projectImages.Boy, false);
+    scene.setTile(2, projectImages.Flower, false);
+    scene.setTile(1, projectImages.Flower_2, false);
+    scene.setTile(4, projectImages.Flag, false);
     boySprite.setPosition(398, 268);
     girlSprite.setPosition(30, 200);
     boss1Sprite.setPosition(130, 292);

@@ -26,6 +26,8 @@ the ``||sprites:sprite||`` of the other kind that is listed.
 
 ## Example #1: Adding an Overlap Event
 
+![Adding Overlap Event](/static/courses/csintro3/events/adding-overlap.gif)
+
 1. Review the code snippet below
 2. Identify how the overlap event is added to the code
 3. Identify which sprite in the **event handler** is ``||variables:mySprite||``,
@@ -39,14 +41,14 @@ enum SpriteKind {
 }
 
 let mySprite = sprites.create(img`
-1 1 1
+    1 1 1
 `, SpriteKind.Player);
 controller.moveSprite(mySprite, 100, 100);
 
 let enemy = sprites.create(img`
-5 2 5
-2 5 2
-5 2 5
+    5 2 5
+    2 5 2
+    5 2 5
 `, SpriteKind.Enemy);
 enemy.x += 50;
 
@@ -54,8 +56,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite: Sprite,
     sprite.say("ouch!", 250);
 });
 ```
-
-![Adding Overlap Event](/static/courses/csintro3/events/adding-overlap.gif)
 
 ## Student Task #1: Adding to an Overlap Event
 
@@ -89,14 +89,14 @@ enum SpriteKind {
 }
 
 let mySprite = sprites.create(img`
-1 1 1
+    1 1 1
 `, SpriteKind.Player);
 controller.moveSprite(mySprite, 100, 100);
 
 let enemy = sprites.create(img`
-5 2 5
-2 5 2
-5 2 5
+    5 2 5
+    2 5 2
+    5 2 5
 `, SpriteKind.Enemy);
 enemy.x += 50;
 
@@ -133,32 +133,34 @@ enum SpriteKind {
 }
 
 let paddle: Sprite = sprites.create(img`
-d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
-d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
-d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
-d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
-d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
-d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
-d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
 `, SpriteKind.Paddle);
 paddle.y += 50;
-controller.moveSprite(paddle, 100, 0)
+controller.moveSprite(paddle, 100, 0);
 
 game.onUpdateInterval(1000, function () {
     let ball: Sprite = sprites.createProjectile(img`
-. . 1 1 . .
-. 1 1 1 1 .
-1 1 d d 1 1
-1 1 d d 1 1
-. 1 1 1 1 .
-. . 1 1 . . 
-`, Math.randomRange(-40, 40), 30, SpriteKind.Ball);
+        . . 1 1 . .
+        . 1 1 1 1 .
+        1 1 d d 1 1
+        1 1 d d 1 1
+        . 1 1 1 1 .
+        . . 1 1 . . 
+    `, Math.randomRange(-40, 40), 30, SpriteKind.Ball);
     ball.x = screen.width / 2;
     ball.y = screen.height / 2;
-})
+});
 ```
 
 ## Student Task #3: Bounce on the Paddle
+
+![Animation of difference between example and completed task 3](/static/courses/csintro3/events/bounce-task.gif)
 
 1. Start with the code from example #3
 2. Add an ``||sprites:overlap||`` event between ``||sprites:sprites||``

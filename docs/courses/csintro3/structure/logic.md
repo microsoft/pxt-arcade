@@ -15,7 +15,9 @@ is equivalent to
 let x: boolean = true;
 ```
 
-## Concept If and Else Statements 
+## Concept: If and Else Statements
+
+![Animation of if-else structure being written](/static/courses/csintro3/structure/writing-if-else.gif)
 
 The ``||logic:if then||`` and ``||logic:else||`` blocks were amongst the most important
 in the ``||logic:Logic||`` category in the previous course,
@@ -206,6 +208,7 @@ This results in ``||variables:bool4||`` storing ``||logic:false||`` instead.
 
 ### Example #3a: Greater Than and Equal To
 
+
 ```typescript
 let val1: number = 5;
 let val2: number = 0;
@@ -213,6 +216,12 @@ if (val1 > 2 && val2 == 0) {
     console.log("The condition is true");
 }
 ```
+
+This expression can be evaluated by hand by breaking it into smaller subproblems.
+The animation below shows it being broken up into single comparisons,
+piece by piece.
+
+![Animation of expression being evaluated piece by piece](/static/courses/csintro3/structure/evaluating-expression.gif)
 
 ### Example #3b: Greater Than or Equal To
 

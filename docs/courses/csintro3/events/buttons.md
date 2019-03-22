@@ -38,13 +38,6 @@ This indicates that the event should occur when the given button is pressed
 
 ### ~hint
 
-Another type of ``||controller:ControllerButtonEvent||`` is ``||controller:Released||``.
-This will occur when a button that was pressed is let go.
-
-### ~
-
-### ~hint
-
 The auto-complete feature in the editor can be helpful when writing button events.
 
 ![Auto complete for button events](/static/courses/csintro3/events/controller-auto-complete.gif)
@@ -143,6 +136,8 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 ```
 
 ## Student Task #3: Play Catch
+
+![Animation of completed task](/static/courses/csintro3/events/button-event-types.gif)
 
 1. Start with the code from example #3
 2. When the ``||controller:down||`` button is ``||controller:Pressed||``,

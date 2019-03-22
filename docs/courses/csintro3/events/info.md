@@ -1,4 +1,4 @@
-# Activity: Info
+# Activity: Info Events
 
 The ``||info:Info||`` category has three values that it can keep track of by default:
 a player's ``||info:score||`` and ``||info:health||``,
@@ -51,6 +51,8 @@ info.startCountdown(15);
 
 ## Student Task #1: Losing Life
 
+![Animation of initial code below](/static/courses/csintro3/events/info-overlap.gif)
+
 1. Review the code below, and copy it into a new project
 2. Set the ``||info:life||`` to 100 to start
 3. Modify the ``||sprites:Overlap||`` event so that it will
@@ -78,20 +80,20 @@ enum SpriteKind {
 }
 
 let mySprite = sprites.create(img`
-1 1 1
+    1 1 1
 `, SpriteKind.Player);
 controller.moveSprite(mySprite, 100, 100);
 
 let enemy = sprites.create(img`
-5 2 5
-2 5 2
-5 2 5
+    5 2 5
+    2 5 2
+    5 2 5
 `, SpriteKind.Enemy);
 enemy.x += 50;
 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
     sprite.say("ouch!", 250);
-})
+});
 ```
 
 ## Concept: ``||info:Info||`` Events
@@ -103,6 +105,8 @@ then this behavior can be handled using one of two events:
 ``||info:info.onLifeZero||`` and ``||info:info.onCountdownEnd||``.
 
 ## Example #2: Running out of Lives
+
+![Animation of example being with life going down](/static/courses/csintro3/events/try-again.gif)
 
 1. Review the code below
 2. Identify how the ``||info:info.onLifeZero||`` changes the behavior of the game

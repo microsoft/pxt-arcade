@@ -18,6 +18,8 @@ scene.onHitTile(0, 0, null);
 
 ## Example #1: Rock Collector
 
+![Animation of tile collision](/static/courses/csintro3/arrays/animation-of-tile-collision.gif)
+
 1. Review the code below
 2. Identify how the ``||scene:scene.onTileHit||`` event is used to make the
 sprite interact with the scene
@@ -35,14 +37,14 @@ let mySprite: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.
 controller.moveSprite(mySprite, 100, 100);
 
 scene.setTileMap(img`
-7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 
-7 7 f 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 f 7 
-7 7 7 f 7 7 7 f 7 7 
-7 7 7 7 7 7 7 f 7 7 
-7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 
+    7 7 f 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 f 7 
+    7 7 7 f 7 7 7 f 7 7 
+    7 7 7 7 7 7 7 f 7 7 
+    7 7 7 7 7 7 7 7 7 7 
 `);
 
 scene.setBackgroundColor(6);
@@ -92,14 +94,14 @@ scene.setTileAt(null, 0);
 
 ```typescript
 scene.setTileMap(img`
-f f f f f f f f f f
-f f f f f f f f f f
-f f f f f f f f f f
-f f f f f f f f f f
-f f f f f f f f f f
-f f f f f f f f f f
-f f f f f f f f f f
-f f f f f f f f f f
+    f f f f f f f f f f
+    f f f f f f f f f f
+    f f f f f f f f f f
+    f f f f f f f f f f
+    f f f f f f f f f f
+    f f f f f f f f f f
+    f f f f f f f f f f
+    f f f f f f f f f f
 `);
 for (let i = 0; i < 8; i++) {
     let currentTile: tiles.Tile = scene.getTile(i, i);
@@ -138,14 +140,14 @@ enum SpriteKind {
     Flower
 }
 scene.setTileMap(img`
-7 6 7 6 7 6 7 6 7 6 
-6 7 6 7 6 7 6 7 6 7 
-7 6 7 6 7 6 7 6 7 6 
-6 7 6 7 6 7 6 7 6 7 
-7 6 7 6 7 6 7 6 7 6 
-6 7 6 7 6 7 6 7 6 7 
-7 6 7 6 7 6 7 6 7 6 
-6 7 6 7 6 7 6 7 6 7 
+    7 6 7 6 7 6 7 6 7 6 
+    6 7 6 7 6 7 6 7 6 7 
+    7 6 7 6 7 6 7 6 7 6 
+    6 7 6 7 6 7 6 7 6 7 
+    7 6 7 6 7 6 7 6 7 6 
+    6 7 6 7 6 7 6 7 6 7 
+    7 6 7 6 7 6 7 6 7 6 
+    6 7 6 7 6 7 6 7 6 7 
 `);
 
 let player: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player);
@@ -200,14 +202,14 @@ enum SpriteKind {
 }
 
 scene.setTileMap(img`
-7 6 7 6 7 6 7 6 7 6 
-6 7 6 7 6 7 6 7 6 7 
-7 6 7 6 7 6 7 6 7 6 
-6 7 6 7 6 7 6 7 6 7 
-7 6 7 6 7 6 7 6 7 6 
-6 7 6 7 6 7 6 7 6 7 
-7 6 7 6 7 6 7 6 7 6 
-6 7 6 7 6 7 6 7 6 7 
+    7 6 7 6 7 6 7 6 7 6 
+    6 7 6 7 6 7 6 7 6 7 
+    7 6 7 6 7 6 7 6 7 6 
+    6 7 6 7 6 7 6 7 6 7 
+    7 6 7 6 7 6 7 6 7 6 
+    6 7 6 7 6 7 6 7 6 7 
+    7 6 7 6 7 6 7 6 7 6 
+    6 7 6 7 6 7 6 7 6 7 
 `);
 
 let flowerTiles: tiles.Tile[] = scene.getTilesByType(6);
@@ -223,6 +225,8 @@ scene.cameraFollowSprite(player);
 ```
 
 ## Student Task #4: Fill in the Neighborhood
+
+![Animation of player moving around map with house](/static/courses/csintro3/arrays/place-houses.gif)
 
 1. Start with the code from example #4
 2. Expand the ``||scene:tile map||`` to be **16 x 16**,

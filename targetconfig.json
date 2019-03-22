@@ -11,8 +11,9 @@
         "Tutorials": "tutorials",
         "Blocks Games": "blocks-games",
         "JavaScript Games": "javascript-games",
-        "Game Design Concepts": "concepts",        
+        "Game Design Concepts": "concepts",
         "Lessons": "lessons",
+        "Courses": "courses",
         "Hardware": "hardware"
     }
 }

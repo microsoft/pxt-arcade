@@ -17,11 +17,13 @@
     "bundleddirs": [
         "libs/animation",
         "libs/accelerometer",
+        "libs/lightsensor",
         "libs/base",
         "libs/core",
         "libs/core---samd",
         "libs/core---stm32",
         "libs/core---linux",
+        "libs/serial",
         "libs/corgio",
         "libs/darts",
         "libs/hw",
@@ -43,7 +45,9 @@
         "libs/jacdac",
         "libs/jacdac-drivers",
         "libs/jacdac-game",
-        "libs/power"
+        "libs/power",
+        "libs/controller",
+        "libs/edge-connector"
     ],
     "compile": {
         "useUF2": true,
@@ -98,7 +102,7 @@
         "dockerImage": "pext/yotta:latest",
         "codalTarget": {
             "branches": {
-                "https://github.com/lancaster-university/codal-core": "93cb4083eb4c3315b893911dd96741ae5987e208"
+                "https://github.com/lancaster-university/codal-core": "dbf2121bdde4131f2aedd23e93811858c6f05b23"
             }
         }
     },
@@ -215,7 +219,8 @@
         "bannedCategories": [
             "pins",
             "control",
-            "input"
+            "input",
+            "serial"
         ]
     },
     "simulator": {
@@ -261,6 +266,10 @@
         "coloredToolbox": true,
         "monacoToolbox": true,
         "selectLanguage": true,
+        "availableLocales": [
+            "en",
+            "zh-CN"
+        ],
         "invertedMenu": true,
         "showHomeScreen": true,
         "highContrast": true,
@@ -299,8 +308,8 @@
         "monacoFieldEditors": ["image-editor"],
         "scriptManager": true,
         "saveInMenu": false,
+        "debugger": true,
         "experiments": [
-            "debugger",
             "print",
             "python"
         ],

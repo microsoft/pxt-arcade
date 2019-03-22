@@ -28,6 +28,11 @@
         "imageUrl": "/static/lessons/cherry-pickr.png"
     },
     {
+        "name": "Courses",
+        "url": "/courses",
+        "imageUrl": "/static/courses/csintro1.gif"
+    },
+    {
         "name": "Hardware",
         "url": "/hardware",
         "imageUrl": "/static/hardware/ghiarcade.jpg"
@@ -42,5 +47,6 @@
 [JavaScript Games](/javascript-games),
 [Game Design Concepts](/concepts),
 [Lessons](/lessons),
+[Courses](/courses),
 [Hardware](/hardware)
 

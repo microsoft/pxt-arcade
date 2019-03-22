@@ -33,7 +33,7 @@ Using the ``+=`` operator, the example code above can also be written as
 num += 5;
 ```
 
-This process of condensing the expression extends to all operators, so
+This process of condensing the expression extends to all operators, so...
 
 * ``num -= 5;`` is equivalent to ``num = num - 5;``
 * ``num *= 5;`` is equivalent to ``num = num * 5;``
@@ -90,7 +90,7 @@ This is done using the **Increment Operator**, represented by two plus signs.
 ``num++;`` is equivalent to the two expressions above.
 
 Similarly, the **Decrement Operator** is represented by two minus signs,
-meaning ``num = num - 1;`` is equal to both ``num -= 1;`` and ``num--;``;
+meaning ``num = num - 1;`` is the same as both ``num -= 1;`` and ``num--;``.
 
 ## Example #2: Incrementing Values
 

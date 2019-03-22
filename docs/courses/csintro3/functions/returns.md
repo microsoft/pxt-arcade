@@ -1,4 +1,4 @@
-# Activity: Returns
+# Activity: Return Values
 
 In the previous section, functions were shown to accept input in the form of **parameters**.
 These allow developers to pass values **to** a function.
