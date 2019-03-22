@@ -6,6 +6,8 @@ It's fine build prototypes according to it and experiment,
 but not to go to production.
 ## ~
 
+[Debug connector information](/hardware/dbg)
+
 Arcade features the following virtual device specification:
 
 * 160x120 pixel screen
