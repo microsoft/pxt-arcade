@@ -16,7 +16,8 @@ however these require a part to be soldered on the board.
 Otherwise, people use a footprint on the PCB to which they connect a 
 special proprietary (and expensive) connector cable.
 
-Here we propose simple and cost effective solutions, which do not require soldering.
+Here we propose simple and cost effective solutions, which do not require soldering,
+and has zero PCB cost.
 
 ## One row connector
 
@@ -27,7 +28,7 @@ and connect female jumper cables on the long side.
 The header will bend a little, forcing good electrical connection.
 You usually want to plug it starting from the edge.
 
-![Debug connector](/static/hardware/dbg.jpg)
+![Debug connector](/docs/static/hardware/dbg.jpg)
 
 
 ## Two row connector
