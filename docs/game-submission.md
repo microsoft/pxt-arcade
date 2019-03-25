@@ -16,7 +16,7 @@ If the game is approved, it will be linked back to your GitHub user account.
 
 > Go the gearwheel menu, click Project settings and enter a description.
 
-3. Click on the Share button to create a shared link.
+3. Click on the Share button to create a shared link. Copy that URL, you'll need it later.
 
 > Use the camera and gif generated to create a screenshot of your game.
 
@@ -24,13 +24,15 @@ If the game is approved, it will be linked back to your GitHub user account.
 
 1. fork the [Microsoft/pxt-arcade](https://github.com/Microsoft/pxt-arcade) repository
 
-2. create a new **.md** file under ``/docs/community`` and name it after your game.
+2. create a new **.ts** file under ``/docs/community`` and name it after your game.
 
-3. copy the **shared link** into this file.
+3. paste the shared URL in this file.
 
-4. commit your changes
+4. paste the **JavaScript** source code into this file. In the editor, click on the **JavaScript** toggle and copy the entire text.
 
-5. click on **create new pull request** and fill out the template
+5. commit your changes
 
-6. click on **create new pull request** to finalize your 
+6. click on **create new pull request** and fill out the template
+
+7. click on **create new pull request** to finalize your 
 submission
