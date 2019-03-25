@@ -51,7 +51,7 @@ namespace sevenseg {
     "hex`" + fullSegment.map(n => n.toString(16)).map(n => n.length < 2 ? "0" + n : n).join("") + "`"
     */
 
-    // packed metrics of pixel drawing for full size digit segements
+    // packed metrics of pixel drawing for full size digit segments
     const fullSegment: Buffer[] = [
         hex`01000e0002010d0103020c0204030b03`,
         hex`0f020f0e0e030e0d0d040d0c0c050c0b`,
@@ -75,7 +75,7 @@ namespace sevenseg {
     "hex`" + halfSegment.map(n => n.toString(16)).map(n => n.length < 2 ? "0" + n : n).join("") + "`"
     */
 
-    // packed metrics of pixel drawing for half size digit segements
+    // packed metrics of pixel drawing for half size digit segments
     const halfSegment: Buffer[] = [
         hex`0100060002010501`,
         hex`0702070606030605`,
@@ -167,7 +167,7 @@ namespace sevenseg {
     
     /**
      * Create a seven segment display digit
-     * @param thickness the width of the segements, eg: SegmentStyle.Thick
+     * @param thickness the width of the segments, eg: SegmentStyle.Thick
      * @param value optional initial display value, eg: 0
      */
     //% group="Create"
@@ -182,8 +182,8 @@ namespace sevenseg {
 
     /**
      * Create a seven segment counter display
-     * @param thickness the width of the segements, eg: SegmentStyle.Thick
-     * @param scale the size of the segements, eg: SegmentScale.Full
+     * @param thickness the width of the segments, eg: SegmentStyle.Thick
+     * @param scale the size of the segments, eg: SegmentScale.Full
      * @param numDigits the number of digits displayed, eg: 1
      */
     //% group="Create"
