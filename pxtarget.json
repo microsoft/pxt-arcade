@@ -234,8 +234,9 @@
         ]
     },
     "simulator": {
-        "autoRun": true,
+        "autoRun": false,
         "autoRunLight": false,
+        "emptyRunCode": "pxsim.pxtcore.updateScreen(new pxsim.RefImage(160, 120, 4))",
         "aspectRatio": 0.85,
         "dynamicBoardDefinition": true
     },
@@ -322,7 +323,8 @@
         "saveInMenu": false,
         "debugger": true,
         "experiments": [
-            "print"
+            "print",
+            "python"
         ],
         "extendEditor": true,
         "simScreenshot": true,
