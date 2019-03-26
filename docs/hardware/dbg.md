@@ -21,8 +21,8 @@ and has zero PCB cost.
 
 ## One row connector
 
-Use a standard 0.01" spacing header holes with 40mil drill and place them so that
-the middle of the holes are exactly 0.01" from the edge of the board.
+Use a standard 0.1" spacing header holes with 40mil drill and place them so that
+the middle of the holes are exactly 0.1" from the edge of the board.
 Then use a two-row male header, and plug it into the holes on the short side
 and connect female jumper cables on the long side.
 The header will bend a little, forcing good electrical connection.
