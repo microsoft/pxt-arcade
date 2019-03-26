@@ -96,6 +96,8 @@ This course is currently in beta - this means that it is likely to have bugs and
 
 ### [Unit 3 Project](/courses/csintro3/final-project)
 
+### [Unit 3 Project](/courses/csintro3/final-project)
+
 ### [Appendix](/courses/csintro3/appendix)
 
 * [Switch Statements](/courses/csintro3/appendix/switch)
