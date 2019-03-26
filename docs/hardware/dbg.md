@@ -40,12 +40,21 @@ Like the above, but use castellated holes for the second row of pins.
 The recommended pinout of one row header:
 
 ```
-SWCLK GND SWDIO 3V
+GND SWCLK 3V SWDIO
 ```
 
 Do not put 3V and GND on opposite ends, since plugging the connector the wrong way
 would cause -3V to run through MCU.
-Keep 3V at the edge, since it's optional to connect.
+
+You can add another GND connection to the right to make the plug symmetric as far
+as power is concerned.
+If you want to add a RESET pin, or a logging pin (possibly SWO, but can be custom as well),
+also add it to the right.
+
+Note that with the two row cable plugged into a one row of holes, it only
+matter if you plug it in from the top or bottom of the board, which is quite
+easy to notice.
+Rotating the connector will result in no electrical connection.
 
 ## Credits
 
