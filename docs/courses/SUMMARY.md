@@ -116,6 +116,7 @@
         * [Arrays of Sprites](/courses/csintro3/arrays/sprites)
         * [Tiles](/courses/csintro3/arrays/tiles)
         * [Images](/courses/csintro3/arrays/images)
+    * [Unit 3 Project](/courses/csintro3/final-project)
     * [Appendix](/courses/csintro3/appendix)
         * [Switch Statements](/courses/csintro3/appendix/switch)
         * [Anonymous Functions](/courses/csintro3/appendix/anonymous)
