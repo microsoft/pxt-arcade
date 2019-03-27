@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "pxt-common-packages": "6.5.15",
-    "pxt-core": "5.7.4"
+    "pxt-core": "5.7.5"
   },
   "optionalDependencies": {
     "pxt-arcade-sim": "Microsoft/pxt-arcade-sim.git#v0.6.2"
