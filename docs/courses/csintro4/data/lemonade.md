@@ -629,19 +629,19 @@ This lesson will use the data set with the namespace ``lemonadedata``. This is a
 |Name| Description |
 |---|---|
 |``lemonadedata.NUMBER_OF_DAYS: number`` | Returns the number of days recorded in the data set|
-|``lemonadedata.getTempature(day: number): number``| Returns the temperature recorded for the day specified|
+|``lemonadedata.getTemperature(day: number): number``| Returns the temperature recorded for the day specified|
 |``lemonadedata.getSales(day: number): number``| Returns the amount of lemonade sold (in glasses) on the day specified|
 
 
 ```typescript
-let tempatures: number[] = [];
+let temperatures: number[] = [];
 let sales: number[] = [];
 
 for (let i = 0; i < lemonadedata.NUMBER_OF_DAYS; i++) {
-    tempatures.push(lemonadedata.getTempature(i));
+    temperatures.push(lemonadedata.getTemperature(i));
     sales.push(lemonadedata.getSales(i));
 }
-game.splash("Tempature Mean: " + stats.mean(tempatures));
+game.splash("Temperature Mean: " + stats.mean(temperatures));
 game.splash("Sales Mean: " + stats.mean(sales));
 ```
 
