@@ -30,7 +30,7 @@
         "libs/hw---rpi",
         "libs/hw---stm32f401",
         "libs/hw---samd51",
-        "libs/hw---meowbit",
+        "libs/meowbit",
         "libs/sevenseg",
         "libs/screen",
         "libs/screen---st7735",

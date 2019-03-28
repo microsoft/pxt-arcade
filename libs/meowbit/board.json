@@ -1,0 +1,45 @@
+{
+    "driveDisplayName": "MEOWBIT",
+    "visual": {
+      "image": "pkg://board.svg",
+      "useCrocClips": true,
+      "width": 320,
+      "height": 500,
+      "pinDist": 15,
+      "pinBlocks": [
+        {
+          "x": 20.172131195303123,
+          "y": 110.4249268863333,
+          "labels": [
+            "A3"
+          ]
+        }
+      ]
+    },
+    "gpioPinMap": {
+      "A3": "A3",
+      "A2": "A2",
+      "A9": "A9",
+      "A4": "A4",
+      "A5": "A5",
+      "A0": "A0",
+      "A1": "A1",
+      "A8": "A8",
+      "A7": "A7",
+      "A6": "A6",
+      "JACK_TX": "A6"
+    },
+    "groundPins": [],
+    "threeVoltPins": [],
+    "i2cPins": {
+      "SDA": "SDA",
+      "SCL": "SCL"
+    },
+    "onboardComponents": ["buttons"],
+    "marginWhenBreadboarding": [
+      0,
+      0,
+      80,
+      0
+    ]
+  }

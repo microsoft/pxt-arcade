@@ -14,6 +14,12 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "variant": "hw---stm32f401"
     },
     {
+        "name": "Meowbit",
+        "imageUrl": "/static/hardware/meowbit.png",
+        "url": "https://kittenbot.github.io/meowbit-tutorials/",
+        "variant": "hw---stm32f401"
+    },
+    {
         "name": "Adafruit M4",
         "description": "Learn how to run your games on micro-controllers from Adafruit",
         "imageUrl": "/static/hardware/adafruitm4.jpg",

@@ -17,21 +17,14 @@
         "screen": "file:../screen---st7735",
         "mixer": "file:../mixer---stm32",
         "buttons": "file:../buttons",
-        "game---hw": "file:../game---hw",
-        "jacdac-game": "file:../jacdac-game",
-        "accelerometer": "file:../accelerometer",
-        "lightsensor": "file:../lightsensor"
+        "game": "file:../game---hw",
+        "jacdac-game": "file:../jacdac-game"
     },
     "card": {
         "name": "Meowbit",
-        "description": "Meowbit for arcade from kittenbot team",
-        "imageUrl": "https://cdn.kittenbot.cn/meowbit/meowbit.png",
-        "learnMoreUrl": "https://meowbit-doc.kittenbot.cn/",
+        "imageUrl": "/static/hardware/meowbit.png",
+        "url": "https://kittenbot.github.io/meowbit-tutorials/",
         "variant": "hw---stm32f401"
-    },
-    "screenSize": {
-        "width": 160,
-        "height": 128
     },
     "public": true,
     "yotta": {
