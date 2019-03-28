@@ -30,6 +30,8 @@ You usually want to plug it starting from the edge.
 
 ![Debug connector](/docs/static/hardware/dbg.jpg)
 
+![Plugging it in](/docs/static/hardware/dbgplug.gif)
+
 
 ## Two row connector
 
