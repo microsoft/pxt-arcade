@@ -1,8 +1,6 @@
 # Activity: Math Operators with Variables 
 
-https://youtu.be/79vikAMjpBs
-
-[Alternative Video Location](https://aka.ms/40544a-intromath)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-intromath)
 
 A variable points to a container that can store data. We have previously used variable names for sprites (for example, ``||variables:mySprite||``). Variables act like an address, and allow us to store, retrieve, and update data. For the examples in the [Sprites](/courses/csintro1/intro/sprites
 ) lesson, the variable ``||variables:mySprite||`` allowed us to interact with the sprite in our game. The word "variable" also means change. We can update the values our variable point to, such as updating the ``||variables:mySprite||`` variable to point to a completely different sprite.
@@ -28,15 +26,11 @@ In this activity, students are introduced to:
 
 ## Concept: Assign Number Variables and displaying numeric values
 
-https://youtu.be/nlp6Cqfxmb4
-
-[Alternative Video Location](https://aka.ms/40544a-variablesmath1)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-variablesmath1)
 
 ## Concept: Using Math Operators with Variables
 
-https://youtu.be/Dv-5K9bWcps
-
-[Alternative Video Location](https://aka.ms/40544a-variablesmath2)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-variablesmath2)
 
 ## Example #1: Math equation in a variable #example-1
 
@@ -75,9 +69,7 @@ The splash screen is primarily designed for short sentences. This limits the len
 
 ## Concept: Basic math operators with variables 
 
-https://youtu.be/EiWXa52oIgU
-
-[Alternative Video Location](https://aka.ms/40544a-variablesmath3)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-variablesmath3)
 
 We can convert variable based math equations, like `A = B + C`, into code using our code variables and math operators.
 
@@ -88,7 +80,7 @@ In JavaScript, the following order of operation precedence applies:
 * Multiplication (`*`) and Division (`/`)
 * Addition (`+`) and Subtraction (`-`)
 
-Note that JavaScript uses the ``||math:*||`` symbol for multiplication the ``||math:/||`` for division division. In order to change this order of operations, you can use parentheses `( )` around expressions just like in math.
+Note that JavaScript uses the ``||math:*||`` symbol for multiplication the ``||math:/||`` for division. In order to change this order of operations, you can use parentheses `( )` around expressions just like in math.
 
 ## Example #2: Displaying expressions with ``||game:splash||`` #example-2
 
@@ -112,9 +104,7 @@ game.splash("5 * 7 = " + answer)
 
 ## Student Task #2: Basic math operators with variables
 
-https://youtu.be/C_UY8V-ufiI
-
-[Alternative Video Location](https://aka.ms/40544a-variablesmath4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-variablesmath4)
 
 1. Start with [example #2](#example-2)
 2. Add a ``||variables:thirdNumber||`` variable with a unique value
@@ -169,9 +159,7 @@ Click edit to fix code. ``||game:splash||`` can display string characters. Revie
 
 ## Variables Summary
 
-https://youtu.be/BPX2MHXmXJw
-
-[Alternative Video Location](https://aka.ms/40544a-variabledatatype)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-variabledatatype)
 
 * Variables are names that point to a container that can be updated to hold different data types.
 * Data Types used in variables so far are ``||variables:Sprite||``, ``||variables:numbers||`` and ``||variables:strings||``.

@@ -17,9 +17,7 @@ In these activities, the student will use:
 
 ## Change position with controller event
 
-https://youtu.be/O27uzdkbgK4
-
-[Alternative Video Location](https://aka.ms/40544a-spritemoevent1)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-spritemoevent1)
 
 ## Example #1: Increment position left and right #example-1
 
@@ -30,6 +28,7 @@ https://youtu.be/O27uzdkbgK4
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let agent: Sprite = null
@@ -69,9 +68,7 @@ agent = sprites.create(img`
 
 ## Concept: Sprite Motion Velocity
 
-https://youtu.be/Gl0Y2sHY_MA 
-
-[Alternative Video Location](https://aka.ms/40544a-spritemoevent2velocity)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-spritemoevent2velocity)
 
 Velocity is speed in a particular direction. In our games we typically track movement in `X` and `Y` directions. 
 
@@ -86,6 +83,7 @@ If we have a positive `X` velocity, for example, then our sprite will continue t
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let agent: Sprite = null
@@ -125,9 +123,7 @@ agent = sprites.create(img`
 
 ## Concept: Shorter ``||sprites:dx||``/``||sprites:dy||`` approach
 
-https://youtu.be/TPpg3jp2lx4
-
-[Alternative Video Location](https://aka.ms/40544a-spritemoevent3shortmethod)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-spritemoevent3shortmethod)
 
 We have created motion by capturing the key pad events and incrementing (or decrementing) a location coordinate or a velocity. Now that we have seen how this works for the four directional buttons, we can use a shorter method to handle this.
 
@@ -142,6 +138,7 @@ We have created motion by capturing the key pad events and incrementing (or decr
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let ball: Sprite = null
@@ -186,9 +183,7 @@ The ``||sprites:stay in screen||`` block is in the sprite menu.
 
 ## Concept: Flip Image
 
-https://youtu.be/1tae8OZpt4w
-
-[Alternative Video Location](https://aka.ms/40544a-spritemoevent4flip)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-spritemoevent4flip)
 
 By making a mirror flip of a sprite we can simulate walking by making each leg appear differently. 
 
@@ -205,6 +200,7 @@ Flipping an image creates a mirror image when we use ``||images:flip horizontal|
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 function flipHorizontal() {

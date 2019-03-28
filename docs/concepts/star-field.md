@@ -24,6 +24,7 @@ Find ``||sprites:projectile from side||`` in ``||sprites:Sprites||``. Drag it in
 enum SpriteKind {
     Player,
     Projectile,
+    Food,
     Enemy
 }
 game.onUpdate(function () {
@@ -58,6 +59,7 @@ Click on the grey box in ``||variables:set projectile to||`` and create a single
 enum SpriteKind {
     Player,
     Projectile,
+    Food,
     Enemy
 }
 game.onUpdate(function () {
@@ -90,6 +92,7 @@ Find ``||Math:pick random 0 to 10||`` in ``||Math:Math||``. Change the ``0`` to 
 enum SpriteKind {
     Player,
     Projectile,
+    Food,
     Enemy
 }
 game.onUpdate(function () {
@@ -122,6 +125,7 @@ Find ``||sprites:set mySprite position to||`` in ``||sprites:Sprites||``. Place 
 enum SpriteKind {
     Player,
     Projectile,
+    Food,
     Enemy
 }
 game.onUpdate(function () {
@@ -155,6 +159,7 @@ Grab another ``||Math:pick random 0 to 10||`` and put it in as the ``||sprites:x
 enum SpriteKind {
     Player,
     Projectile,
+    Food,
     Enemy
 }
 game.onUpdate(function () {
@@ -190,6 +195,7 @@ At this point, too many stars are being created. This is fixed by surrounding th
 enum SpriteKind {
     Player,
     Projectile,
+    Food,
     Enemy
 }
 game.onUpdate(function () {
@@ -225,6 +231,7 @@ Get a ``||Math:0 % chance||`` block and replace the ``true`` condition in the ``
 enum SpriteKind {
     Player,
     Projectile,
+    Food,
     Enemy
 }
 game.onUpdate(function () {
@@ -268,6 +275,7 @@ This will also have a large effect on the frame rate, as the game can ignore the
 enum SpriteKind {
     Player,
     Projectile,
+    Food,
     Enemy
 }
 game.onUpdate(function () {

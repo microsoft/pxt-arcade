@@ -11,9 +11,7 @@ In this activity, students will use:
 
 We can pick a random number in a range using ``||math:pick random||``. First, we will use this to display a random value on the screen.
 
-https://youtu.be/PS8clbMInjw
-
-[Alternative Video Location](https://aka.ms/40544a-randomsplash)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-randomsplash)
 
 ## Example #1: Pick Random
 
@@ -38,9 +36,7 @@ game.splash("Random Number is " + randomNumber)
 
 ## Concept: Pick a Random Location
 
-https://youtu.be/Ggj4rOXw6ns
-
-[Alternative Video Location](https://aka.ms/40544a-randomposition)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-randomposition)
 
 Games often have an element of luck and surprise to keep the player engaged. In this example, we will use random numbers to place a sprite on the screen in a random location. We can use a random range because we know the dimensions of the screen.
 
@@ -54,6 +50,7 @@ Games often have an element of luck and surprise to keep the player engaged. In 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -100,9 +97,7 @@ mySprite.vy = 0
 
 ## Example #3: Random and Overlaps
 
-https://youtu.be/OgyWVwCJJIk
-
-[Alternative Video Location](https://aka.ms/40544a-randompositionoverlap)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-randompositionoverlap)
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -111,6 +106,7 @@ https://youtu.be/OgyWVwCJJIk
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Hat
 }

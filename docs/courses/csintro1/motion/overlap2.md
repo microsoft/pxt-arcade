@@ -12,9 +12,7 @@ In this activity, the student will continue to work with:
 
 ## Concept: ``||sprites:Kind||`` Overlap Event "bump" action
 
-https://youtu.be/hAFzGASNgN0
-
-[Alternative Video Location](https://aka.ms/40544a-overlap2bumpfinal)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-overlap2bumpfinal)
 
 Having sprites bump rather than pass over each other is useful game behavior for a ``||sprites:kind||`` overlap event. One way to simulate a bump is:
 
@@ -40,6 +38,7 @@ Having sprites bump rather than pass over each other is useful game behavior for
 ```blocks
 enum SpriteKind {
     Helicopter,
+    Projectile,
     Cloud,
     LandingPad,
     Player,

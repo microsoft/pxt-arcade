@@ -19,9 +19,7 @@ In this activity, students will work with:
 
 ## Concept: ``||logic:if||`` and ``||logic:else||`` Statement
 
-https://youtu.be/FuABS3PVnAM 
-
-[Alternative Video Location](https://aka.ms/40544a-if-else-pre)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-if-else-pre)
 
 We have seen in the previous lesson ``||logic:if||`` statements perform a test and if the logic test evaluates to true, then it will run code that is given. 
 
@@ -31,7 +29,7 @@ if (info.life() > 2) {
 }
 ```
 
-When we use an ``||logic:if||`` statement, we have the option to add an ``||logic:else||`` statement. An else block will only run in the event that the logic test given evaluates to false. In other words, if the test is true, then the ``||logic:if||`` block’s code will run, else, the ``||logic:else||`` block’s code will run. 
+When we use an ``||logic:if||`` statement, we have the option to add an ``||logic:else||`` statement. An else block will only run in the event that the logic test given evaluates to false. In other words, if the test is true, then the ``||logic:if||`` block's code will run, else, the ``||logic:else||`` block's code will run. 
 
 To use an ``||logic:else||`` click on the plus sign of an existing ``||logic:if||`` block.
 
@@ -81,9 +79,7 @@ If it is not greater than 50, it will run the else section and rank the player a
 
 Make sprite alternate between saying "A" and "B"
 
-https://youtu.be/sMFHdR6KzPo 
-
-[Alternative Video Location](https://aka.ms/40544a-if-else-examples)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-if-else-examples)
 
 For each example below,
 
@@ -98,6 +94,7 @@ For each example below,
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -147,6 +144,7 @@ generate()
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -202,6 +200,7 @@ generate()
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -251,9 +250,7 @@ generate()
 
 ## Student Task #1a: ``||logic:else||`` with an Incorrect Response
 
-https://youtu.be/zW7JyNiJeKI
-
-[Alternative Video Location](https://aka.ms/40544a-if-else-tasks)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-if-else-tasks)
 
 Now that we have the basic functionality of our game, make it so that the player loses points when they press the wrong button.
 
@@ -266,8 +263,8 @@ Now that we have the basic functionality of our game, make it so that the player
 Now add a timer, and congratulate the player at the end of the game, giving them a specific message based on their ``||info:score||``.
 
 1. Create an event for when the countdown ends by using the ``||info:on countdown end||`` block
-2. Check to see if the player’s ``||info:score||`` is less than `20`. If it is, use a splash block to say “Beginner score of ” and then the player’s ``||info:score||``
-3. Use an ``||logic:else||`` block to do the same for if the player’s ``||info:score||`` was greater than or equal to `20` but say “Pro score of ” and then the player’s ``||info:score||``
+2. Check to see if the player's ``||info:score||`` is less than `20`. If it is, use a splash block to say “Beginner score of " and then the player's ``||info:score||``
+3. Use an ``||logic:else||`` block to do the same for if the player's ``||info:score||`` was greater than or equal to `20` but say "Pro score of " and then the player's ``||info:score||``
 4. Use a game over block to let the game know that it is over and that the player won
 
     ### ~hint 

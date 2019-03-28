@@ -13,9 +13,7 @@ In this activity, students will be introduced to:
 
 ## Concept: Overlap Event
 
-https://youtu.be/rdZdXltoWXE
-
-[Alternative Video Location](https://aka.ms/40544a-overlap1spritekind)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-overlap1spritekind)
 
 We use ``||sprites:kind||`` to classify our sprites. We can have sprites in our games that represent many different things - players, enemies, coins, food, or anything else you might want to represent in your games. 
 
@@ -35,6 +33,7 @@ Sometimes there will be only a single sprite of a given ``||sprites:kind||`` (fo
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let head: Sprite = null
@@ -115,9 +114,7 @@ Use ``||loops:pause||`` before using sprite destroy, otherwise the sprite will b
 
 ## Set ``||sprites:sprite||`` ghost on
 
-https://youtu.be/rN1UyX6YkQE
-
-[Alternative Video Location](https://aka.ms/40544a-overlap1spritekindtask)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-overlap1spritekindtask)
 
 The ``||sprites:ghost on||`` setting for sprites, when turned on, makes the sprite ignore ``||sprites:on overlap||`` events. By default, the setting is off.
 
@@ -132,6 +129,7 @@ The ``||sprites:ghost on||`` setting for sprites, when turned on, makes the spri
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let head: Sprite = null
@@ -201,9 +199,7 @@ game.onUpdate(function () {
 
 ## Student Task #2: Ghost Off and On #task-2
 
-https://youtu.be/FwDty0LxzSM
-
-[Alternative Video Location](https://aka.ms/40544a-overlap1ghostntask)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-overlap1ghostntask)
 
 1. Start with [example #2](#example-2) or [task #1](#task-1)
 2. Create 3 sprites in different locations across the screen
@@ -214,9 +210,7 @@ https://youtu.be/FwDty0LxzSM
 
 ## Student Task #3: Multiple ``||sprites:kind||``s
 
-https://youtu.be/Nasu00HvaYE
-
-[Alternative Video Location](https://aka.ms/40544a-overlap1task3)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-overlap1task3)
 
 1. Start with [task #2](#task-2) or your own similar code
 2. Enable the sprite to move anywhere on screen along x and y axis

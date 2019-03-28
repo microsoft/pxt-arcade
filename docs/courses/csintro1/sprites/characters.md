@@ -10,11 +10,12 @@ The characters are all represented as sprites, allowing them to be positioned on
 
 1. Review the code below
 2. Create the sample code and run the code
-3. Save the code for the task (name it “characters”)
+3. Save the code for the task (name it "characters")
 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let dorothy: Sprite = null

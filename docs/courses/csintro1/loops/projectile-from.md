@@ -11,9 +11,7 @@ In this activity, students will use:
 
 ## Concept: Projectile from Sprite
 
-https://youtu.be/Y7_-noa6_FU 
-
-[Alternative Video Location](https://aka.ms/40544a-projectile-from-sprite) 
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-projectile-from-sprite)
 
 There are many games that have sprites sending out projectile sprites. We can set projectiles to originate from a sprite to drop coins, create obstacles, kick a ball or send a laser beam to destroy an asteroid by using ``||sprites:projectile from sprite||``.
 
@@ -95,9 +93,7 @@ mySprite.setPosition(145, 60)
 
 ## Concept: Projectiles from other Projectile Sprites
 
-https://youtu.be/EkG5UxwfxG8 
-
-[Alternative Video Location](https://aka.ms/40544a-projectile-from-projectile)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-projectile-from-projectile)
 
 We can use projectiles to create an animation. The following examples build a projectile raining cloud (that is also a projectile). 
 
@@ -196,7 +192,7 @@ Try removing the ``||sprites:ghosts||`` block and see how much the performance g
 
 ### Example #2c: Cloud projectile that widely emits projectile rain
 
-We can make the the rain drops show up at different places so that they don't all appear in the same location relative to the cloud. We'll set the raindrop `X` property to a random value. 
+We can make the rain drops show up at different places so that they don't all appear in the same location relative to the cloud. We'll set the raindrop `X` property to a random value. 
 
 ```block
 let raindrop: Sprite = null
@@ -319,13 +315,11 @@ sprites.onDestroyed(SpriteKind.Cloud, function (sprite: Sprite) {
 })
 ```
 
-Note the new ``||sprites:set cloud kind to Cloud||`` block was added in as well; the cloud ``||sprites:Projectile||``'s ``||sprites:kind||`` needed to be changed so that a different ``||sprites:on destroyed||`` event can be applied to to the clouds and the rain drops.
+Note the new ``||sprites:set cloud kind to Cloud||`` block was added in as well; the cloud ``||sprites:Projectile||``'s ``||sprites:kind||`` needed to be changed so that a different ``||sprites:on destroyed||`` event can be applied to the clouds and the rain drops.
 
 ## Student Task #2: Projectile from Projectile
 
-https://youtu.be/qlijC56n88k
-
-[Alternative Video Location](https://aka.ms/40544a-projectile-from-proj-task)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-projectile-from-proj-task)
 
 Make a projectile move across the bottom of the screen that, while moving, gives off different projectiles that "float" to the top of the screen. Use parts of example code above for inspiration to start you project.
 

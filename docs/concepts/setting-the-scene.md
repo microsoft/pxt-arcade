@@ -76,7 +76,7 @@ scene.setTile(5, img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`)
+`, false)
 ```
 
 ## Step 4 @fullscreen
@@ -113,7 +113,7 @@ scene.setTile(5, img`
 5 5 5 5 4 4 4 4 5 5 5 5 4 4 4 4 
 5 5 5 5 4 4 4 4 5 5 5 5 4 4 4 4 
 5 5 5 5 4 4 4 4 5 5 5 5 4 4 4 4 
-`)
+`, false)
 ```
 
 ## Step 5 @fullscreen
@@ -123,6 +123,8 @@ Find ``||variables:set mySprite to||`` and drag it into ``||loops:on start||`` t
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let mySprite: Sprite = null
@@ -153,7 +155,7 @@ scene.setTile(5, img`
 5 5 5 5 4 4 4 4 5 5 5 5 4 4 4 4 
 5 5 5 5 4 4 4 4 5 5 5 5 4 4 4 4 
 5 5 5 5 4 4 4 4 5 5 5 5 4 4 4 4 
-`)
+`, false)
 mySprite = sprites.create(img`
 . . . . . . f f f f . . . . . . 
 . . . . f f f 2 2 f f f . . . . 
@@ -183,6 +185,8 @@ This will let the player move the character around the map that is displayed on 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let mySprite: Sprite = null
@@ -213,7 +217,7 @@ scene.setTile(5, img`
 5 5 5 5 4 4 4 4 5 5 5 5 4 4 4 4 
 5 5 5 5 4 4 4 4 5 5 5 5 4 4 4 4 
 5 5 5 5 4 4 4 4 5 5 5 5 4 4 4 4 
-`)
+`, false)
 mySprite = sprites.create(img`
 . . . . . . f f f f . . . . . . 
 . . . . f f f 2 2 f f f . . . . 
@@ -244,6 +248,8 @@ This will set the tile you created to be a ``||scene:Wall||``, so that the playe
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let mySprite: Sprite = null

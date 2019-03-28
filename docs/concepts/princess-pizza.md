@@ -13,6 +13,8 @@ Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let princess = sprites.create(img`
@@ -42,6 +44,8 @@ Open the image editor for ``||variables:princess||``, and select or create an im
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let princess: Sprite = null
@@ -72,6 +76,8 @@ Find ``||controller:move mySprite with buttons||`` in ``||controller:Controller|
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let princess: Sprite = null
@@ -103,6 +109,8 @@ Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let pizza: Sprite = null
@@ -153,6 +161,8 @@ Find ``||sprites:set mySprite position to x 0 y 0||`` in ``||sprites:Sprites||``
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let pizza: Sprite = null
@@ -199,13 +209,15 @@ pizza.setPosition(140, 100)
 
 ## Step 6 @fullscreen
 
-In the ``||variables:pizza||`` ``||sprites:Sprite||``, select ``||sprites:kind Player||`` and change it to ``||sprites:kind Enemy||``.
+In the ``||variables:pizza||`` ``||sprites:Sprite||``, select ``||sprites:kind Player||`` and change it to ``||sprites:kind Food||``.
 
 A ``||sprites:Sprite|``'s ``||sprites:Kind||`` is used to identify what type of sprite it is; this helps to group different sprites together.
 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let pizza: Sprite = null
@@ -246,24 +258,26 @@ b d 3 2 d 5 5 5 d d d 4 4 . . .
 b 5 5 5 5 d d 4 4 4 4 . . . . . 
 4 d d d 4 4 4 . . . . . . . . . 
 4 4 4 4 . . . . . . . . . . . . 
-`, SpriteKind.Enemy)
+`, SpriteKind.Food)
 pizza.setPosition(140, 100)
 ```
 
 ## Step 7 @fullscreen
 
-Find ``||sprites:on sprite of kind Player overlaps otherSprite of kind Player||`` in ``||sprites:Sprites||``, and drag it into the workspace. Change the first ``||sprites:kind Player||`` to ``||sprites:kind Enemy||``.
+Find ``||sprites:on sprite of kind Player overlaps otherSprite of kind Player||`` in ``||sprites:Sprites||``, and drag it into the workspace. Change the first ``||sprites:kind Player||`` to ``||sprites:kind Food||``.
 
 This event will occur whenever two ``||sprites:Sprites||`` of the given ``||sprites:kinds||`` are on top of eachother.
 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let pizza: Sprite = null
 let princess: Sprite = null
-sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Food, SpriteKind.Player, function (sprite, otherSprite) {
 
 })
 princess = sprites.create(img`
@@ -302,7 +316,7 @@ b d 3 2 d 5 5 5 d d d 4 4 . . .
 b 5 5 5 5 d d 4 4 4 4 . . . . . 
 4 d d d 4 4 4 . . . . . . . . . 
 4 4 4 4 . . . . . . . . . . . . 
-`, SpriteKind.Enemy)
+`, SpriteKind.Food)
 pizza.setPosition(140, 100)
 ```
 
@@ -315,11 +329,13 @@ This will cause the game to end when the ``||sprites:princess||`` touches the ``
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 let pizza: Sprite = null
 let princess: Sprite = null
-sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Food, SpriteKind.Player, function (sprite, otherSprite) {
     game.over()
 })
 princess = sprites.create(img`
@@ -358,7 +374,7 @@ b d 3 2 d 5 5 5 d d d 4 4 . . .
 b 5 5 5 5 d d 4 4 4 4 . . . . . 
 4 d d d 4 4 4 . . . . . . . . . 
 4 4 4 4 . . . . . . . . . . . . 
-`, SpriteKind.Enemy)
+`, SpriteKind.Food)
 pizza.setPosition(140, 100)
 ```
 

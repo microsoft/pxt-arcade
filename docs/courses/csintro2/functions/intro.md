@@ -1,4 +1,4 @@
-# Activity: Functions
+# Activity: Functions Intro
 
 Functions are a way to group sections of code to be run together. They are regularly used when writing code both to increase the readability of code, and to allow for reuse of common actions. 
 
@@ -16,9 +16,7 @@ Functions allow us to break up code into different sections. In doing so, we can
 
 ## Example #1a: Creating Sprites
 
-https://youtu.be/LGDwglUEb_8 
-
-[Alternative Video Location](https://aka.ms/40544a-function-redundant-example)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-redundant-example)
 
 1. Review the code below 
 2. Create the sample code and run the code
@@ -27,6 +25,7 @@ https://youtu.be/LGDwglUEb_8
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Human,
     Cow,
@@ -92,6 +91,7 @@ In the next examples, we will simplify the ``||loops:on start||`` code by splitt
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Human,
     Cow,
@@ -159,9 +159,7 @@ Each function ends up being a chapter in the book with more details on what exac
 
 ## Student Task #1a: Make your own Functions
 
-https://youtu.be/MXQTc9At7Ts 
-
-[Alternative Video Location](https://aka.ms/40544a-function-redundant-task1)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-redundant-task1)
 
 1. Review the code below 
 2. Create the sample code and run the code
@@ -181,6 +179,7 @@ Try re-ordering the ``||functions:function calls||`` in your ``||loops:on start|
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Human,
     Cow,
@@ -217,9 +216,7 @@ info.startCountdown(10)
 
 ## Student Task #1b: Functions in Events
 
-https://youtu.be/46mdlB941Yo
-
-[Alternative Video Location](https://aka.ms/40544a-function-redundant-task2)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-redundant-task2)
 
 Functions can be used throughout your code - not just in the ``||loops:on start||`` block. 
 
@@ -237,6 +234,7 @@ In this task, we will clean up the ``||controller:on A button pressed||`` event 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Princess,
     Enemy
 }

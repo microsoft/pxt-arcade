@@ -1,8 +1,9 @@
-# Activity: If statements
+# Activity: Logic Intro
 
 Logic in software development allows for flexible programs that respond appropriately to different conditions. In this section, we will identify how comparisons can be used within our code.
 
 In these activities, students will work with:
+
 * ``||logic:if||`` block
 * Comparison operators
 
@@ -47,9 +48,7 @@ When we make comparisons, we have two numbers, in a specific order, and what is 
 
 ### Example #1: Less than 
 
-https://youtu.be/s7sFOn7xXC0 
-
-[Alternative Video Location](https://aka.ms/40544a-ifless)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-ifless)
 
 1. Play the game linked below
 2. Review the code that uses comparisons
@@ -60,6 +59,7 @@ https://youtu.be/s7sFOn7xXC0
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -122,9 +122,7 @@ When the game creates a new enemy, it checks to see if the player's score is les
 
 If that is the case, the player has just started playing the game, so the game makes it easier for the player by decreasing the speed in which the projectiles are thrown at the player.
 
-https://youtu.be/VYmc4szD5mU 
-
-[Alternative Video Location](https://aka.ms/40544a-ifless-task)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-ifless-task)
 
 ## Task #1a: Scoring
 
@@ -147,9 +145,7 @@ The player is on the left half of the screen if their ``||sprites:x position||``
 
 ### Example #2: Greater Than
 
-https://youtu.be/EhRPChFc1Us 
-
-[Alternative Video Location](https://aka.ms/40544a-ifgreater)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-ifgreater)
 
 1. Play the game linked above
 2. Review the code that uses comparisons
@@ -160,6 +156,7 @@ https://youtu.be/EhRPChFc1Us
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Cherry
 }
@@ -226,9 +223,7 @@ When the player collects a cherry, if the player has collected more than 5, then
 
 ### Example #3: Equality
 
-https://youtu.be/BDCHtIFuEhw 
-
-[Alternative Video Location](https://aka.ms/40544a-ifequal)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-ifequal)
 
 1. Play the game linked above
 2. Review the code that uses comparisons
@@ -239,6 +234,7 @@ https://youtu.be/BDCHtIFuEhw
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let projectile: Sprite = null
@@ -331,6 +327,7 @@ When the player is on their final life, the image of the sprite changes and the 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null

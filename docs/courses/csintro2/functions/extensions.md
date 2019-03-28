@@ -18,9 +18,7 @@ We can make even make our own packages of code to share or reuse in our games.
 
 ## Example #1: Using a Package
 
-https://youtu.be/VVjxMS29jjU
-
-[Alternative Video Location](https://aka.ms/40544a-extensiondart) 
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-extensiondart)
 
 1. Open a new project (name it "football")
 2. Using the extensions menu, look for "darts". Notice how a new section is added to the menu, above ``||game:Game||``
@@ -31,6 +29,7 @@ https://youtu.be/VVjxMS29jjU
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Foot_Ball,
     Goal
@@ -94,9 +93,7 @@ Using the darts extension package, we do not have to worry as much about algebra
 
 ## Student Task #1: Build an Obstacle Course
 
-https://youtu.be/HmhCPIvfKe8
-
-[Alternative Video Location](https://aka.ms/40544a-darttask)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-darttask)
 
 1. Start with the code from example #1
 2. Add at least 3 new sprites of kind ``||sprites:Obstacle||``
@@ -116,9 +113,7 @@ Creating new blocks like the ones in example #1 requires the use of JavaScript o
 
 ## Example #2: Spawn a Single Bird
 
-https://youtu.be/kZNYHZSdhdY
-
-[Alternative Video Location](https://aka.ms/40544a-starrynight)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-starrynight)
 
 Follow these steps as shown in the video
 
@@ -142,6 +137,7 @@ Do any of the names of the tabs in the explorer look similar to the name of the 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let projectile: Sprite = null

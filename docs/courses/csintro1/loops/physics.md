@@ -12,9 +12,7 @@ In this activity, student will use:
 
 ## Concept: Velocity
 
-https://youtu.be/aNYPqyIFRT0 
-
-[Alternative Video Location](https://aka.ms/40544a-physics-velocity) 
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-physics-velocity)
 
 Velocity is defined as speed in a given direction. Velocity is the distance at which an object's position changes, along with its direction, over some period of time.
 
@@ -103,9 +101,7 @@ game.onUpdateInterval(1000, function () {
 
 ## Concept: Acceleration
 
-https://youtu.be/pRUlsEekmUg
-
-[Alternative Video Location](https://aka.ms/40544a-physics-acceleration) 
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-physics-acceleration)
 
 Acceleration represents the rate of change in velocity. We think of this as how much an object is speeding up or slowing down in a particular direction. Gravity is a good example of acceleration where falling objects increase in velocity, falling faster and faster, in the down direction.
 
@@ -122,6 +118,7 @@ Below is a sprite with an acceleration applied. We set the sprite position to th
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -215,9 +212,7 @@ game.onUpdateInterval(1000, function () {
 
 ## Student Task #1a: Water balloons
 
-https://youtu.be/lMLLUf4NQF0 
-
-[Alternative Video Location](https://aka.ms/40544a-physics-task-a) 
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-physics-task-a)
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -326,9 +321,7 @@ balloon.x += -50
 
 ## Student Task #1b: Flying Duck
 
-https://youtu.be/mmRhSMyFtaY
-
-[Alternative Video Location](https://aka.ms/40544a-physics-task-b) 
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-physics-task-b)
 
 In this task, you will make a basic version of a flying bird game. In it, the bird will fall due to gravity, and whenever the player presses ``||controller:A||`` button, the bird flies into the sky.
 

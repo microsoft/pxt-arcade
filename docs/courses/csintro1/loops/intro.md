@@ -1,4 +1,4 @@
-# Activity: Intro to loops
+# Activity: Loops Intro
 
 When writing code, we often want to repeat the same action. Using loops, we can reduce redundancy in our code - that is, we can avoid writing the same code multiple times. 
 
@@ -32,9 +32,7 @@ Start off by trying to solve a small task: slowly move a ghost from the center o
 
 ## Example #1: Moving a Ghost (the long way)
 
-https://youtu.be/Y2Y-n4p1QNI
-
-[Alternative Video Location](https://aka.ms/40544a-loop-intro)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-loop-intro)
 
 1. Open up [this sample code](https://makecode.com/_VDCA0g4VmRkF)
 2. Run the code. The ghost should scroll off to the bottom right area of the screen and peek just over the edge
@@ -43,6 +41,7 @@ https://youtu.be/Y2Y-n4p1QNI
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let sprite: Sprite = null
@@ -141,9 +140,7 @@ Start with the code in the example. The solution isn't much different from the e
 
 ## Student Task #3: Boomerang
 
-https://youtu.be/5as0a991-IY
-
-[Alternative Video Location](https://aka.ms/40544a-loop-intro2)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-loop-intro2)
 
 1. Add a single loop to the following code so that the boomerang goes to the right 50 pixels over the period of two seconds
 2. Make the boomerang return to it's original location over the course of two seconds using a loop
@@ -158,6 +155,7 @@ Motion and flips will both occur very quickly unless you include the ``||loops:p
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let boomerang: Sprite = null

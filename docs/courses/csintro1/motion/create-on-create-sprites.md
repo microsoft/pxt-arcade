@@ -8,9 +8,7 @@ The ``||sprites:on created||`` block uses the sprite's ``||sprites:kind||`` so w
 
 ## Concept: Create with on created event 
 
-https://youtu.be/eXCpLH74tF4
-
-[Alternative Video Location](https://aka.ms/40544a-createoncreate)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-createoncreate)
 
 ## Example #1: Random clouds #example-1
 
@@ -24,6 +22,7 @@ This example uses the ``||sprites:on created||`` event to set the sprite image a
 ```blocks
 enum SpriteKind {
     Helicopter,
+    Projectile,
     Cloud,
     Player,
     Enemy

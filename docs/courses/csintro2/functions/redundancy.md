@@ -10,9 +10,7 @@ In this activity, students will:
 
 ## Example #1a: Movement
 
-https://youtu.be/NsENrceOCDw 
-
-[Alternative Video Location](https://aka.ms/40544a-function-refactoring)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-refactoring)
 
 1. Review the code below 
 2. Create the sample code and run the code
@@ -21,6 +19,7 @@ https://youtu.be/NsENrceOCDw
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -78,6 +77,7 @@ In this case, the ``||loops:pause||``, ``||sprites:movement||``, and ``||music:t
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -119,9 +119,7 @@ mySprite.destroy()
 
 ## Student Task #1: Simplification
 
-https://youtu.be/-50-av1tblc 
-
-[Alternative Video Location](https://aka.ms/40544a-function-refactoring-task1a)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-refactoring-task1a)
 
 1. Review the code below 
 2. Create the sample code and run the code
@@ -132,6 +130,7 @@ https://youtu.be/-50-av1tblc
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let projectile: Sprite = null
@@ -207,9 +206,7 @@ game.over()
 
 ## Student Task #2: Events
 
-https://youtu.be/m4AamaGjDoE 
-
-[Alternative Video Location](https://aka.ms/40544a-function-refactoring-task2a)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-refactoring-task2a)
 
 1. Review the code below 
 2. Create the sample code and run the code
@@ -220,6 +217,7 @@ https://youtu.be/m4AamaGjDoE
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let projectile: Sprite = null

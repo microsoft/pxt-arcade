@@ -13,6 +13,8 @@ Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 
@@ -45,6 +47,8 @@ This will set the image of the ``||sprites:Sprite||`` to a burger; run the code 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 
@@ -94,6 +98,8 @@ This will make the sprite move to the **right** across the screen, because the `
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 
@@ -144,6 +150,8 @@ This will make the sprite move **downwards** across the screen, because the ``||
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 
@@ -193,6 +201,8 @@ Find ``||sprites:set mySprite stay in screen||`` in ``||sprites:Sprites||``. Pla
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 
@@ -246,6 +256,8 @@ This will make it so that when the burger its a wall, it will 'bounce' off the w
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
+    Food,
     Enemy
 }
 

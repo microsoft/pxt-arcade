@@ -8,9 +8,7 @@ In this activity, students will be introduced to:
 
 ## Concept: ``||sprites:say||``
 
-https://youtu.be/iufK6TM9OkM
-
-[Alternative Video Location](https://aka.ms/40544a-spritesay_final)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-spritesay_final)
 
 Sprites have a method ``||sprites:say||`` that displays a text box over the sprite when used. 
 
@@ -26,7 +24,8 @@ A **method** is an action that an object supports. For example, sprites (an obje
 
 ```blocks
 enum SpriteKind {
-    Player
+    Player,
+    Projectile
 }
 let msg: string = "Hello World!"
 let mySprite: Sprite = null
@@ -67,9 +66,7 @@ mySprite.say(msg)
 
 # Example #2: console.log()
 
-https://youtu.be/9xSWNoDOAQc
-
-[Alternative Video Location](https://aka.ms/40544a-consolelog)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-consolelog)
 
 1. Start a new project, and name it "console"
 2. Switch to JavaScript view and replace all code with the code below
@@ -98,9 +95,7 @@ The code `console.log()` doesn't use **mySprite** like ``||sprites:say||`` does.
 
 ## Student Task #2: More Sprites
 
-https://youtu.be/1xQWu1tHFCo
-
-[Alternative Video Location](https://aka.ms/40544a-spritesaylog)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-spritesaylog)
 
 1. Start with the above project and add another sprite (make sure to give both unique variable names)
 2. Add in a ``||sprite:say||`` messages to have a conversation with the first sprite

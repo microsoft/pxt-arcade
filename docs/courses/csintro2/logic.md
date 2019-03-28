@@ -5,7 +5,7 @@ Logical operations allow the user to create behaviors that respond to the changi
 ```codecard
 [
 {
-    "name": "Logic Introduction",
+    "name": "Logic Intro",
     "url": "/courses/csintro2/logic/intro",
     "imageUrl": "/static/courses/csintro2/logic/intro.gif"
 }, {
@@ -38,7 +38,7 @@ Logical operations allow the user to create behaviors that respond to the changi
 
 ## Lessons
 
-* [Introduction](/courses/csintro2/logic/intro)
+* [Logic Intro](/courses/csintro2/logic/intro)
 * [If and Else](/courses/csintro2/logic/if-else)
 * [Multiplayer](/courses/csintro2/logic/multiplayer)
 * [Booleans](/courses/csintro2/logic/booleans)

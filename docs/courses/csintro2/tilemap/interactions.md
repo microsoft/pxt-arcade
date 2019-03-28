@@ -11,9 +11,7 @@ In this activity, students will use:
 
 ## Example #1: Creating a course
 
-https://youtu.be/ZPMexvC1BfY 
-
-[Alternative Video Location](https://aka.ms/40544a-tilemap-golf )
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-tilemap-golf )
 
 1. Make a new project (name it "Golf Course")
 2. Review the code below
@@ -23,6 +21,7 @@ https://youtu.be/ZPMexvC1BfY
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     GolfBall,
     Hole
@@ -87,9 +86,7 @@ This behavior can be fixed using the ``||scene:on sprite of kind hits wall||`` b
 
 ## Student Task #2: Make it stop
 
-https://youtu.be/VBzh-vZeWKs 
-
-[Alternative Video Location](https://aka.ms/40544a-tilemap-longgolf)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-tilemap-longgolf)
 
 1. Start with the code from task #1
 2. Create an ``||scene:on sprite of kind hits wall||`` between the golf ball (kind ``||sprites:GolfBall||``) and the brown wall

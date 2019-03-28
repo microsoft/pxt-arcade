@@ -58,6 +58,7 @@ Example: "We want to run this code until the player guesses it correctly" is the
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy,
     Fireball,
     Fire,
@@ -65,7 +66,6 @@ enum SpriteKind {
 }
 let fireSource: Sprite = null
 let mySprite: Sprite = null
-let sprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.stopCountdown()
 })

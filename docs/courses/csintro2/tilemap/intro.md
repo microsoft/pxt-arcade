@@ -1,4 +1,4 @@
-# Activity: Tile Map
+# Activity: Tile Map Intro
 
 Maps and levels form the basis of many of the most common types of video games; they allow a canvas for the games story to progress, and for the player to explore. 
 
@@ -20,9 +20,7 @@ A ``||scene:tile map||`` is called a "map" because it "maps" a tile map color to
 
 ### Example #1: Making a tile map
 
-https://youtu.be/eBLl_sQ2bGU 
-
-[Alternative Video Location](https://aka.ms/40544a-intro-tilemap) 
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-intro-tilemap)
 
 1. Review the code below
 2. Copy the code below into your project and run it
@@ -49,9 +47,7 @@ In this example, we have used ``||scene:set tile map to||`` to set the tile map 
 
 ### Example #2: Creating tiles in a tile map
 
-https://youtu.be/S2fHt1qqCYY 
-
-[Alternative Video Location](https://aka.ms/40544a-tile-in-tilemap) 
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-tile-in-tilemap)
 
 1. Review the code below
 2. Copy the code below into your project and run it
@@ -84,7 +80,7 @@ scene.setTile(5, img`
 5 5 5 a a a a a a a a a a a a a 
 5 5 a a a a a a a a a a a a a a 
 5 a a a a a a a a a a a a a a a 
-`)
+`, false)
 ```
 
 ## Student Task #2: Add tile to tile map
@@ -94,9 +90,7 @@ scene.setTile(5, img`
 
 ### Example #3: Words!
 
-https://youtu.be/bqU8zBSoKl4 
-
-[Alternative Video Location](https://aka.ms/40544a-tile-words )
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-tile-words )
 
 1. Make a new project (name it "tilemapWords")
 2. Review the code below
@@ -130,7 +124,7 @@ f f f f f f f f f f f f f f f f
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
-`)
+`, false)
 scene.setTile(3, img`
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
@@ -148,7 +142,7 @@ f f f f 1 1 1 1 1 1 1 f f f f f
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
-`)
+`, false)
 scene.setTile(6, img`
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
@@ -166,7 +160,7 @@ f f f f f f f f f f f f f f f f
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
-`)
+`, false)
 scene.setTile(5, img`
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
@@ -184,7 +178,7 @@ f f f f 1 1 1 1 1 1 1 f f f f f
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
-`)
+`, false)
 scene.setTile(4, img`
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
@@ -202,7 +196,7 @@ f f f f f f f f f f f f f f f f
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
-`)
+`, false)
 scene.setTile(7, img`
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
@@ -220,7 +214,7 @@ f f f f f f f f f f f f f f f f
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
-`)
+`, false)
 scene.setTile(8, img`
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
@@ -238,7 +232,7 @@ f f f f f f f f f f f f f f f f
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
-`)
+`, false)
 ```
 
 In this example, the tiles are changed to correspond to images with letters on them.
@@ -251,9 +245,7 @@ In this example, the tiles are changed to correspond to images with letters on t
 
 ### Example #4: A brand new home
 
-https://youtu.be/YHYBQ03ecOk 
-
-[Alternative Video Location](https://aka.ms/40544a-tilemap-home )
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-tilemap-home )
 
 1. Make a new project (name it "newHome")
 2. Review the code below
@@ -264,6 +256,7 @@ https://youtu.be/YHYBQ03ecOk
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let HomeOwner: Sprite = null

@@ -1,8 +1,6 @@
 # Activity: Collage
 
-https://youtu.be/kKeuxhqnZ4U
-
-[Alternative Video Location](https://aka.ms/40544a-04_collage_intro_final)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-04_collage_intro_final)
 
 **Visual Design** is an important part of Game Development. This activity builds skills needed to create multiple sprites placed on a game screen by building a "Personal Interest Collage". The student will create sprites with custom variable names, and arrange the sprites on a game screen using sprite properties to set the coordinates.
 
@@ -17,13 +15,12 @@ In this activity, students will be introduced to:
 
 This sprite example is larger than the default 16x16, and uses a custom variable name ``||variables:hotSauce||``. However, the image does not show up properly on the screen with the default background, so we must change the background color for the image to show up correctly.
 
-https://youtu.be/TY0kSXUaPkg
-
-[Alternative Video Location](https://aka.ms/40544a-collage1)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-collage1)
 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let hotSauce: Sprite = null
@@ -66,9 +63,7 @@ hotSauce = sprites.create(img`
 
 ## Example #1: Sprite placement
 
-https://youtu.be/PsIZ_08eEYk
-
-[Alternative Video Location](https://aka.ms/40544a-collage2)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-collage2)
 
 This example uses sprite properties to set the `X` and `Y` coordinates on the game screen.
 
@@ -81,6 +76,7 @@ If the sprites are not moving to where you expect them to when you set their coo
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let hotSauce: Sprite = null
@@ -124,9 +120,7 @@ hotSauce.y = 40
 
 ## Student Task #1: Build a "Personal Interest Collage"
 
-https://youtu.be/AV8YIkXE1N8
-
-[Alternative Video Location](https://aka.ms/40544a-collage3)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-collage3)
 
 Make a collage with different images scattered around the screen. It can be about a hobby, a favorite musician, sports, clothes - anything that helps tell a story that is about you.
 

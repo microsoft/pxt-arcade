@@ -18,9 +18,7 @@ The first example will be a simple one - simply counting the number of buttons p
 
 ## Example #1: Counting button presses
 
-https://youtu.be/7JkbbfBJCdI
-
-[Alternative Video Location](https://aka.ms/40544a-infoproperties1)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-infoproperties1)
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -55,9 +53,7 @@ Beyond score, another important value to keep track of is the players life total
 
 ## Example #2: changing ``||info:life||`` totals
 
-https://youtu.be/YiZ-yl5CbYM
-
-[Alternative Video Location](https://aka.ms/40544a-infoproperties2)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-infoproperties2)
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -105,6 +101,7 @@ When a nurse needs to take a patient's heart rate with their other vital signs, 
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -145,6 +142,7 @@ To join more than just two strings and numbers, press the **+** to add more loca
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null

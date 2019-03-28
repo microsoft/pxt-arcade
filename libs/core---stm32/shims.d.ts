@@ -2,6 +2,12 @@
 declare namespace pins {
 
     /**
+     * Get a pin by configuration id (DAL.CFG_PIN...)
+     */
+    //% shim=pins::pinByCfg
+    function pinByCfg(key: int32): DigitalInOutPin;
+
+    /**
      * Create a new zero-initialized buffer.
      * @param size number of bytes in the buffer
      */
@@ -222,52 +228,77 @@ declare namespace control {
     //% shim=control::dmesgPtr
     function dmesgPtr(str: string, ptr: Object): void;
 }
-declare namespace pins {
 
+
+declare interface I2C {
     /**
      * Read `size` bytes from a 7-bit I2C `address`.
      */
-    //% repeat.defl=0 shim=pins::i2cReadBuffer
-    function i2cReadBuffer(address: int32, size: int32, repeat?: boolean): Buffer;
+    //% repeat.defl=0 shim=I2CMethods::readBuffer
+    readBuffer(address: int32, size: int32, repeat?: boolean): Buffer;
 
     /**
      * Write bytes to a 7-bit I2C `address`.
      */
-    //% repeat.defl=0 shim=pins::i2cWriteBuffer
-    function i2cWriteBuffer(address: int32, buf: Buffer, repeat?: boolean): int32;
+    //% repeat.defl=0 shim=I2CMethods::writeBuffer
+    writeBuffer(address: int32, buf: Buffer, repeat?: boolean): int32;
 }
 declare namespace pins {
 
     /**
-     * Write to the SPI slave and return the response
-     * @param value Data to be sent to the SPI slave
+     * Opens a Serial communication driver
      */
-    //% help=pins/spi-write weight=5 advanced=true
-    //% blockId=spi_write block="spi write %value" shim=pins::spiWrite
-    function spiWrite(value: int32): int32;
+    //% help=pins/create-i2c
+    //% parts=i2c shim=pins::createI2C
+    function createI2C(sda: DigitalInOutPin, scl: DigitalInOutPin): I2C;
+}
+declare namespace pins {
 
     /**
-     * Writes a given command to SPI bus, and afterwards reads the response.
+     * Opens a SPI driver
      */
-    //% help=pins/spi-transfer weight=4 advanced=true
-    //% blockId=spi_transfer block="spi transfer %command into %response" shim=pins::spiTransfer
-    function spiTransfer(command: Buffer, response: Buffer): void;
+    //% help=pins/create-spi
+    //% parts=spi shim=pins::createSPI
+    function createSPI(mosiPin: DigitalInOutPin, misoPin: DigitalInOutPin, sckPin: DigitalInOutPin): SPI;
+}
+
+
+declare interface SPI {
+    /**
+     * Write to the SPI bus
+     */
+    //% shim=SPIMethods::write
+    write(value: int32): int32;
 
     /**
-     * Sets the SPI frequency
-     * @param frequency the clock frequency, eg: 1000000
+     * Transfer buffers over the SPI bus
      */
-    //% help=pins/spi-frequency weight=4 advanced=true
-    //% blockId=spi_frequency block="spi frequency %frequency" shim=pins::spiFrequency
-    function spiFrequency(frequency: int32): void;
+    //% shim=SPIMethods::transfer
+    transfer(command: Buffer, response: Buffer): void;
 
     /**
-     * Sets the SPI mode and bits
-     * @param mode the mode, eg: 3
+     * Sets the SPI clock frequency
      */
-    //% help=pins/spi-mode weight=3 advanced=true
-    //% blockId=spi_mode block="spi mode %mode" shim=pins::spiMode
-    function spiMode(mode: int32): void;
+    //% shim=SPIMethods::setFrequency
+    setFrequency(frequency: int32): void;
+
+    /**
+     * Sets the SPI bus mode
+     */
+    //% shim=SPIMethods::setMode
+    setMode(mode: int32): void;
+}
+declare namespace light {
+
+    /**
+     * Send a programmable light buffer to the specified digital pin
+     * @param data The pin that the light are connected to
+     * @param clk the clock line if nay
+     * @param mode the color encoding mode
+     * @param buf The buffer to send to the pin
+     */
+    //% shim=light::sendBuffer
+    function sendBuffer(data: DigitalInOutPin, clk: DigitalInOutPin, mode: int32, buf: Buffer): void;
 }
 
 // Auto-generated. Do not edit. Really.

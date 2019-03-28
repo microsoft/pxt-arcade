@@ -15,9 +15,7 @@ In this activity, students are introduced to:
 
 ## Concept: Set a ``||sprites:Sprite||`` variable to an image using the image editor
 
-https://youtu.be/tGISp5qcrR4
-
-[Alternative Video Location](https://aka.ms/40544a-02_1_variablesprite_final)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-02_1_variablesprite_final)
 
 The blocks needed to create sprites are found in the ``||sprites:Sprites||`` menu. The ``||variables:set mySprite to||`` is the first block in this category that we will discuss. The following example shows the creation of a sprite with a blank image.
 
@@ -26,6 +24,7 @@ The blocks needed to create sprites are found in the ``||sprites:Sprites||`` men
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -61,6 +60,7 @@ Look at the blocks, and note that a name for the sprite (``||variables:mySprite|
 ```blocks
 enum SpriteKind {
     Player,
+    Projectile,
     Enemy
 }
 let mySprite: Sprite = null
@@ -99,9 +99,7 @@ When using the image editor the pixel dimensions are displayed in the lower righ
 
 ## Student Task #2: Build a "rainbow numbers" sprite that uses every color in the editor 
 
-https://youtu.be/oupwql9r-80
-
-[Alternative Video Location](https://aka.ms/40544a-02_2variablespritetask)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-02_2variablespritetask)
 
 1. Make a blank **32x32** sprite
 2. Hover over every color and find color index 0 and add that color on the far left
