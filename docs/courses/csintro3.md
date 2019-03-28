@@ -37,10 +37,10 @@ This course is currently in beta - this means that it is likely to have bugs and
 ### [About](/courses/csintro3/about)
 
 * [Where to Start](/courses/csintro3/about/start)
-* [Style](/courses/csintro3/about/style)
 * [Programming Language](/courses/csintro3/about/script)
 * [For Teachers](/courses/csintro3/about/teachers)
 * [Authors](/courses/csintro3/about/authors)
+* [Style](/courses/csintro3/about/style)
 
 ### [Intro](/courses/csintro3/intro)
 
@@ -87,11 +87,3 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Tiles](/courses/csintro3/arrays/tiles)
 * [Images](/courses/csintro3/arrays/images)
 * [Case Study](/courses/csintro3/arrays/case-study)
-
-### [Appendix](/courses/csintro3/appendix)
-
-* [Switch Statements](/courses/csintro3/appendix/switch)
-* [Anonymous Functions](/courses/csintro3/appendix/anonymous)
-* [For Each Loops](/courses/csintro3/appendix/for-each)
-* [Nested Functions](/courses/csintro3/appendix/nested-functions)
-* [Optional Parameters](/courses/csintro3/appendix/optional)
