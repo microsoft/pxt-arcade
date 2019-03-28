@@ -323,8 +323,7 @@
         "saveInMenu": false,
         "debugger": true,
         "experiments": [
-            "print",
-            "python"
+            "print"
         ],
         "extendEditor": true,
         "simScreenshot": true,
