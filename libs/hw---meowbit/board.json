@@ -1,0 +1,57 @@
+{
+    "driveDisplayName": "MEOWBIT",
+    "visual": {
+      "image": "pkg://board.svg",
+      "useCrocClips": true,
+      "width": 320,
+      "height": 500,
+      "pinDist": 15,
+      "attachPowerOnRight": true
+    },
+    "gpioPinBlocks": [
+      ["A0"],
+      ["A1"],
+      ["A2"],
+      ["A3"],
+      ["P2", "P3", "P4", "P5", "P6"]
+    ],
+    "gpioPinMap": {
+      "P0": "P0",
+      "P1": "P1",
+      "P2": "P2",
+      "P3": "P3",
+      "P4": "P4",
+      "P5": "P5",
+      "P6": "P6",
+      "P7": "P7",
+      "P8": "P8",
+      "P9": "P9",
+      "P10": "P10",
+      "P11": "P11",
+      "P12": "P12",
+      "P13": "P13",
+      "P14": "P14",
+      "P15": "P15",
+      "P16": "P16",
+      "P19": "P19",
+      "P20": "P20"
+    },
+    "i2cPins": {
+      "SDA": "P2",
+      "SCL": "P3"
+    },
+    "analogInPins": ["A0", "A1", "A2", "A3", "A4", "A5"],
+    "groundPins": ["GND_0", "GND_1", "GND_2"],
+    "threeVoltPins": ["PWR_0", "PWR_2"],
+    "i2cPins": {
+      "SDA": "SDA",
+      "SCL": "SCL"
+    },
+    "onboardComponents": ["accelerometer", "buttonpair", "thermometer", "lightsensor"],
+    "marginWhenBreadboarding": [
+      0,
+      0,
+      80,
+      0
+    ]
+  }
