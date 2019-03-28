@@ -1,6 +1,6 @@
 # Group Project
 
-Split into groups of 2-5 students
+Split into groups of 2-3 students
 
 ## Roles
 
@@ -72,14 +72,30 @@ as well as a splash screen to introduce the game when it is loaded.
 
 ## Assets
 
+### main.ts
+
+```typescript
+enum SpriteKind {
+    Player,
+    Projectile
+}
+```
+
 ### spritesheet.ts
 
 ```typescript
 namespace spritesheet {
+    // replace this with any images you need to export for other group members
     export star: Image = img`1`;
 }
 
 namespace animations {
-
+    // fill this with any animations you need to export for other group members
 }
+```
+
+### scene.ts
+
+```typescript
+
 ```
