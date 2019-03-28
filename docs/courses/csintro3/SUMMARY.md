@@ -42,14 +42,4 @@
     * [Tiles](/courses/csintro3/arrays/tiles)
     * [Images](/courses/csintro3/arrays/images)
     * [Case Study](/courses/csintro3/arrays/case-study)
-<<<<<<< HEAD
 * [Unit 3 Final Project](/courses/csintro3/final-project)
-=======
-* [Unit 3 Final Project](/courses/csintro3/final-project)
-* [Appendix](/courses/csintro3/appendix)
-    * [Switch Statements](/courses/csintro3/appendix/switch)
-    * [Anonymous Functions](/courses/csintro3/appendix/anonymous)
-    * [For Each Loops](/courses/csintro3/appendix/for-each)
-    * [Nested Functions](/courses/csintro3/appendix/nested-functions)
-    * [Optional Parameters](/courses/csintro3/appendix/optional)
->>>>>>> eefe2a8... added final project to csintro3

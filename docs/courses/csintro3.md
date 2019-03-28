@@ -90,19 +90,6 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Arrays of Sprites](/courses/csintro3/arrays/sprites)
 * [Tiles](/courses/csintro3/arrays/tiles)
 * [Images](/courses/csintro3/arrays/images)
-<<<<<<< HEAD
 * [Case Study](/courses/csintro3/arrays/case-study)
-=======
 
 ### [Unit 3 Project](/courses/csintro3/final-project)
-
-### [Unit 3 Project](/courses/csintro3/final-project)
-
-### [Appendix](/courses/csintro3/appendix)
-
-* [Switch Statements](/courses/csintro3/appendix/switch)
-* [Anonymous Functions](/courses/csintro3/appendix/anonymous)
-* [For Each Loops](/courses/csintro3/appendix/for-each)
-* [Nested Functions](/courses/csintro3/appendix/nested-functions)
-* [Optional Parameters](/courses/csintro3/appendix/optional)
->>>>>>> a11a599... added final project
