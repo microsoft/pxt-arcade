@@ -88,7 +88,7 @@ let player: Sprite = sprites.create(img`
 player.x = 0;
 ```
 
-![Demonstration of Task](/static/courses/csintro3/appendix/splash-and-dash.gif)
+![Demonstration of Task](/static/courses/csintro4/appendix/splash-and-dash.gif)
 
 ## Concept: Anonymous Functions
 
@@ -169,7 +169,7 @@ game.onUpdateInterval(2000, function () {
 });
 ```
 
-![Conversion to anonymous function](/static/courses/csintro3/appendix/anonymous-again.gif)
+![Conversion to anonymous function](/static/courses/csintro4/appendix/anonymous-again.gif)
 
 ## What did we learn?
 
