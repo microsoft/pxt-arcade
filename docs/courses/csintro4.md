@@ -23,7 +23,7 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Test Studying](/courses/csintro4/data/tests)
 * [Corgi vs Flowers](/courses/csintro4/data/corgi)
 
-### [Appendix](/courses/csintro4/appendix)
+### [Advanced Topics](/courses/csintro4/appendix)
 
 * [Switch Statements](/courses/csintro4/appendix/switch)
 * [Anonymous Functions](/courses/csintro4/appendix/anonymous)

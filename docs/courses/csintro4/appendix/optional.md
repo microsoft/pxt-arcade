@@ -1,4 +1,4 @@
-# Appendix: Optional and Default Parameters
+# Advanced Topics: Optional and Default Parameters
 
 In the [Function Parameters lesson](/courses/csintro3/functions/parameters),
 each function specified exactly the parameters it required.

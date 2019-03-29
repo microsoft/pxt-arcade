@@ -136,7 +136,7 @@
         * [Lemonade Sale](/courses/csintro4/data/lemonade)
         * [Test Studying](/courses/csintro4/data/tests)
         * [Corgi vs Flowers](/courses/csintro4/data/corgi)
-    * [Appendix](/courses/csintro4/appendix)
+    * [Advanced Topics](/courses/csintro4/appendix)
         * [Switch Statements](/courses/csintro4/appendix/switch)
         * [Anonymous Functions](/courses/csintro4/appendix/anonymous)
         * [For Each Loops](/courses/csintro4/appendix/for-each)

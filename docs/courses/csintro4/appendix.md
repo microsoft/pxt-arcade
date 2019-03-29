@@ -1,4 +1,4 @@
-# Appendix
+# Advanced Topics
 
 * [Switch Statements](/courses/csintro4/appendix/switch)
 * [Anonymous Functions](/courses/csintro4/appendix/anonymous)

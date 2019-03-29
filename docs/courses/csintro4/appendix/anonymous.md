@@ -1,4 +1,4 @@
-# Appendix: Anonymous Functions
+# Advanced Topics: Anonymous Functions
 
 The parameters of an event look a bit different than parameters for other functions.
 They accept **other functions** as parameters,
