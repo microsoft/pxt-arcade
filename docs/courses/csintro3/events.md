@@ -22,6 +22,10 @@
         "name": "Info Events",
         "url": "/courses/csintro3/events/info",
         "imageUrl": "/static/courses/csintro3/events/info.gif"
+    }, {
+        "name": "Project",
+        "url": "/courses/csintro3/events/project",
+        "imageUrl": "/static/courses/csintro3/events/project.gif"
     }
 ]
 ```
@@ -32,3 +36,4 @@
 * [Button Press Events](/courses/csintro3/events/buttons)
 * [Info Events](/courses/csintro3/events/info)
 * [Case Study](/courses/csintro3/events/case-study)
+* [Project](/courses/csintro3/events/project)

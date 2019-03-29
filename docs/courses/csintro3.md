@@ -65,6 +65,7 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Corgio Extension](/courses/csintro3/structure/extensions)
 * [Namespaces](/courses/csintro3/structure/namespaces)
 * [Case Study Additions](/courses/csintro3/structure/additions)
+* [Project](/courses/csintro3/structure/project)
 
 ### [Functions](/courses/csintro3/functions)
 
@@ -73,6 +74,7 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Return Values](/courses/csintro3/functions/returns)
 * [Commenting Functions](/courses/csintro3/functions/comments)
 * [Case Study](/courses/csintro3/functions/case-study)
+* [Project](/courses/csintro3/functions/project)
 
 ### [Events](/courses/csintro3/events)
 
@@ -82,6 +84,7 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Info Events](/courses/csintro3/events/info)
 * [Button Press Events](/courses/csintro3/events/buttons)
 * [Case Study](/courses/csintro3/events/case-study)
+* [Project](/courses/csintro3/events/project)
 
 ### [Arrays](/courses/csintro3/arrays)
 
@@ -91,5 +94,6 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Tiles](/courses/csintro3/arrays/tiles)
 * [Images](/courses/csintro3/arrays/images)
 * [Case Study](/courses/csintro3/arrays/case-study)
+* [Project](/courses/csintro3/arrays/project)
 
 ### [Unit 3 Project](/courses/csintro3/final-project)
