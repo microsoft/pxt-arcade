@@ -203,6 +203,16 @@ namespace pxt.editor {
         return undefined;
     }
 
+    function getSimulatorIframe(): HTMLIFrameElement {
+        const simContainer = document.getElementById("simulators");
+        const simFrames = simContainer && simContainer.getElementsByTagName("iframe");
+
+        if (simFrames && simFrames.length) {
+            return simFrames.item(0);
+        }
+        return undefined;
+    }
+
     initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
         pxt.debug('loading arcade target extensions...')
 
@@ -210,6 +220,42 @@ namespace pxt.editor {
             blocklyPatch: patchBlocks
         };
 
+        const frameDomain = ((window as any).pxtConfig || {}).simUrl;
+
+        if (pxt.BrowserUtils.isChrome()) {
+            /**
+             * Chrome doesn't fire mouse-leave events when the cursor leaves an iframe. The sim
+             * needs those events so that it can release all of the buttons when the cursor leaves
+             * the sim area, so to workaround that behavior we need to pipe mousemove events from
+             * the editor to the sim (mousemove does not fire when the cursor is over an iframe).
+             *
+             * More info about the bug here:
+             * https://stackoverflow.com/questions/52208673/mouseup-lost-when-leaving-iframe-leads-to-reversed-input
+             */
+            document.addEventListener("mousemove", debounce(() => {
+                if (document.activeElement && document.activeElement.tagName === "IFRAME") {
+                    const sim = getSimulatorIframe();
+                    if (document.activeElement === sim) {
+                        sim.contentWindow.postMessage({
+                            event: "mouseout"
+                        }, frameDomain);
+                    }
+                }
+            }, 2000));
+        }
+
         return Promise.resolve<pxt.editor.ExtensionResult>(res);
+    }
+
+    function debounce(cb: () => void, minInterval: number) {
+        // This behavior is different from pxt.Util.debounce()
+        let lastTime = Date.now();
+
+        return () => {
+            if (Date.now() - lastTime > minInterval) {
+                cb();
+                lastTime = Date.now();
+            }
+        };
     }
 }
