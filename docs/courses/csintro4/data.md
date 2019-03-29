@@ -1,4 +1,4 @@
-# Appendix
+# Data Analysis
 
 * [Intro to Data](/courses/csintro4/data/intro)
 * [Operations on Data](/courses/csintro4/data/operations)
