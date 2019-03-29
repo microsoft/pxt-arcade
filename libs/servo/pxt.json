@@ -1,0 +1,8 @@
+{
+    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/servo",
+    "dependencies": {
+        "core": "file:../core",
+        "edge-connector": "file:../edge-connector",
+        "jacdac": "file:../jacdac"
+    }
+}

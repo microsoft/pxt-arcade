@@ -38,6 +38,7 @@
         "libs/game---hw",
         "libs/buttons",
         "libs/mixer",
+        "libs/servo",
         "libs/mixer---stm32",
         "libs/mixer---none",
         "libs/mixer---linux",
