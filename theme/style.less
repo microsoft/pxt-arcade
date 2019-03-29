@@ -53,9 +53,12 @@
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
-/* This is the overlay with the play button on top of the simulator */
-.ui.embed>.icon:after {
+#simulators .ui.embed .icon.xicon::after {
     border-radius: 12px;
+}
+
+#simulators .ui.embed .icon.xicon::before {
+    top: 33%
 }
 
 /* Mobile */
@@ -79,5 +82,9 @@
         padding-left: 0;
         padding-right: 0;
         padding-bottom: 0;
+    }
+
+    #simulators .ui.embed .icon.xicon::before {
+        top: 50%
     }
 }
