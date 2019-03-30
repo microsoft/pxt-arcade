@@ -604,7 +604,7 @@ const origPalette = hex`
 
 The extension pxt-arcade-graphing extension has many helpful functions for displaying data. The first one to look at ``display.plotSeries``. 
 
-```typescript
+```typescript-ignore
 let xValues: number[] = [1, 2, 3, 4, 5, 6];
 let yValues: number[] = [6, 5, 4, 3, 2, 1];
 
@@ -633,7 +633,7 @@ This lesson will use the data set with the namespace ``lemonadedata``. This is a
 |``lemonadedata.getSales(day: number): number``| Returns the amount of lemonade sold (in glasses) on the day specified|
 
 
-```typescript
+```typescript-ignore
 let temperatures: number[] = [];
 let sales: number[] = [];
 
@@ -670,7 +670,7 @@ The correlation of data falls between -1 and 1. If the correlation is 0, then th
 
 Correlation can be calculated the following way:
 
-```typescript
+```typescript-ignore
 let xValues: number[] = [10, 20, 30, 40, 50, 60];
 let yValues: number[] = [70, 50, 50, 20, 30, 0];
 
@@ -699,7 +699,7 @@ Use the following functions when using the line of best fit
 |``stats.lineOfBestFit(xValues: number[], yValues: number[]): number[]``| Returns a 2 element array consisting of the form [slope, intercept] for the line of best fit|
 
 
-```typescript
+```typescript-ignore
 let xValues: number[] = [10, 20, 30, 40, 50, 60];
 let yValues: number[] = [70, 50, 50, 20, 30, 0];
 
@@ -726,8 +726,3 @@ To approximate customer sales for a given temperature, simply use the following 
 *sales* &approx; (*slope* &times; *temperature*) + *intercept*
 
 ### ~
-
-```package
-pxt-arcade-graphing=github:chasemor/pxt-arcade-graphing
-pxt-arcade-datasets=github:chasemor/pxt-arcade-datasets
-```

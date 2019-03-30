@@ -19,7 +19,7 @@ For this section, the data set ``corgidata`` will be used. This is a data set th
 
 When plotting data, it can be helpful to plot multiple data series at the same time. This allows for better comparison between data series. There could be patterns and relationships between data series that are only highlighted when the two series are plotted on top of each other.
 
-```typescript
+```typescript-ignore
 let seriesA: number[] = [0, 10, 20, 30, 20, 10, 0];
 let seriesB: number[] = [70, 60, 50, 40, 50, 60, 70];
 let times: number[] = [0, 10, 20, 30, 40, 50, 60];
@@ -57,7 +57,7 @@ When looking at these two populations with time as the x axis, it can be difficu
 
 To normalize the data, simply use the function ``stats.normalize``. This function takes in the array that is to be normalized and returns the normalized array. 
 
-```typescript
+```typescript-ignore
 let seriesA: number[] = [0, 5000, 8000, 9000, 8000, 5000, 0];
 let seriesB: number[] = [130, 80, 50, 40, 50, 80, 130];
 let times: number[] = [0, 10, 20, 30, 40, 50, 60];
@@ -73,8 +73,3 @@ display.graphSeries(times, seriesB);
 
 1. Copy the solution for Task #1a
 2. Normalize the data so that it is easier to see both populations at the same time
-
-```package
-pxt-arcade-graphing=github:chasemor/pxt-arcade-graphing
-pxt-arcade-datasets=github:chasemor/pxt-arcade-datasets
-```

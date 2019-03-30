@@ -15,7 +15,7 @@ It is expected that when studying for an exam or quiz, the more a student studie
 
 When graphing all of the scores of a specific student, two arrays of data are needed, the hours studied by the student (xValues), and the actual test results of the student (yValues). To build these arrays, simply go over each test in a ``for loop`` as follows:
 
-```typescript
+```typescript-ignore
 // The id of the specific student to look at
 let studentNumber: number = 0;
 
@@ -147,9 +147,3 @@ let ages: number[] = [];
 
 1. Copy the code above
 2. Modify the code from the example to build an array of just the ages of the people involved 
-
-
-```package
-pxt-arcade-graphing=github:chasemor/pxt-arcade-graphing
-pxt-arcade-datasets=github:chasemor/pxt-arcade-datasets
-```

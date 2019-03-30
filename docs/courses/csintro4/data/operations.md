@@ -21,7 +21,7 @@ So for this particular set, the mean would be ``6 / 3`` which is equal ``2``.
 
 ## Student Task #1: Mean numbers on the rise
 
-```typescript
+```typescript-ignore
 /**
  * Calculates the mean of the data given
  * 
@@ -93,7 +93,7 @@ So the median is ``2.5``
 
 ## Student Task #2: Stuck in the Middle
 
-```typescript
+```typescript-ignore
 /**
  * Calculates the median of the data given
  * 
