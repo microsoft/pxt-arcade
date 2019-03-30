@@ -162,26 +162,16 @@ It's fine build prototypes according to this schematics,
 but not to go to production just yet.
 ## ~
 
-
 [JACDAC](https://jacdac.org) is a protocol for networking over a single-wire
 connection with optional power delivery.
 It lets you play multiplayer games by connecting two (or more with a headphone splitter) Arcades
 together.
-You can implement JACDAC with or without power delivery, by using one of the
-schematics below.
+
+JACDAC power delivery is still under development.
+**You should leave the tip of the jack connector disconnected.**
 
 While the schematics use a 3.5mm jack connector with switches, you can also use
 one without switches, as they are not used.
-
-#### JACDAC with power delivery
-
-The F1 fuse can be replaced with 500mA (or similar) current limiting circuit.
-
-Power delivery is useful when an external accessory is connected,
-which requires power (eg., a joystick, a BLE dongle, or a WiFi dongle).
-There are currently no accessories available yet though.
-
-![JACDAC with power](/static/hardware/fulljacdac.png)
 
 #### JACDAC without power delivery
 
