@@ -356,6 +356,7 @@ game.onUpdate(function () {
 
 Change the ``<`` condition in ``||logic:0 < 0||`` to ``<=``. Find the ``||sprites:mySprite x||`` block and put it in where the first `0` is. Click the dropdown and select ``left``.
 
+```blocks
 let mySprite: Sprite = null
 game.onUpdate(function () {
     if (mySprite.left <= 0) {
