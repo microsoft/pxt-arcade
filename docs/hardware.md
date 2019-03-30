@@ -15,8 +15,9 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     },
     {
         "name": "Meowbit",
+        "description": "A programmble retro game console for stem education from Kittenbot team",
         "imageUrl": "/static/hardware/meowbit.png",
-        "url": "https://kittenbot.github.io/meowbit-tutorials/",
+        "url": "https://meowbit.kittenbot.cc/",
         "variant": "hw---stm32f401"
     },
     {
