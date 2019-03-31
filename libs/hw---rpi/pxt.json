@@ -23,5 +23,6 @@
         "screen---linux": "file:../screen---linux",
         "game": "file:../game"
     },
-    "public": true
+    "public": true,
+    "skipLocalization": true
 }
