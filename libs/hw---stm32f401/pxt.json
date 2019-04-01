@@ -26,6 +26,7 @@
         "jacdac-game": "file:../jacdac-game"
     },
     "public": true,
+    "skipLocalization": true,
     "yotta": {
         "config": {
             "DEVICE_USB": 1,

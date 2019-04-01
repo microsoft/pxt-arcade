@@ -10,5 +10,6 @@
         "mixer": "file:../mixer",
         "game": "file:../game"
     },
-    "public": true
+    "public": true,
+    "skipLocalization": true
 }
