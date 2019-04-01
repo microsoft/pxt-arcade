@@ -18,7 +18,7 @@ game.onUpdate(function () {
 
 ## Step 2
 
-Find ``||sprites:projectile from side||`` in ``||sprites:Sprites||``. Drag it into the ``||game:on game update||``.
+Find ``||sprites:projectile from side||`` in ``||sprites:Sprites||``. Drag it into the ``||game:on game update||``. Change `vx` to `0` and `vy` to `100`. 
 
 ```blocks
 enum SpriteKind {
