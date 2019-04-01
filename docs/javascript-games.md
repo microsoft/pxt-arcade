@@ -25,14 +25,16 @@ Here are some fun programs for your @boardname@!
   "description": "A demonstration of ramped up particle effects",
   "url":"/examples/particle-effects-demo",
   "cardType": "codeExample",
-  "imageUrl": "/static/examples/particle-effects-demo.gif"
+  "imageUrl": "/static/examples/particle-effects-demo.png",
+  "largeImageUrl": "/static/examples/particle-effects-demo.gif"
 },
 {
   "name": "Sorting Algorithms",
   "description": "A visualization of different sorting algorithms",
   "url":"/examples/sorting-algorithms",
   "cardType": "codeExample",
-  "imageUrl": "/static/examples/sorting-algorithms.gif"
+  "imageUrl": "/static/examples/sorting-algorithms.png",
+  "largeImageUrl": "/static/examples/sorting-algorithms.gif"
 },
 {
   "name": "Guess the Letter",

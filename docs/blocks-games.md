@@ -25,7 +25,8 @@ Here are some fun programs for your @boardname@!
   "description": "Don't get hit by the flying junk food",
   "url":"/examples/eat-the-fruit",
   "cardType": "example",
-  "imageUrl": "/static/examples/eat-the-fruit.gif"
+  "imageUrl": "/static/examples/eat-the-fruit.png",
+  "largeImageUrl": "/static/examples/eat-the-fruit.gif"
 },
 {
   "name": "Level Up!",
@@ -46,7 +47,8 @@ Here are some fun programs for your @boardname@!
   "description": "Don't let the balls hit the floor",
   "url":"/examples/catch",
   "cardType": "example",
-  "imageUrl": "/static/examples/catch-game.gif"
+  "imageUrl": "/static/examples/catch-game.png",
+  "largeImageUrl": "/static/examples/catch-game.gif"
 },
 {
   "name": "Eater Princess",
