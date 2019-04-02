@@ -144,16 +144,12 @@ This is not implemented yet.
 
 ### Audio
 
-The board should have a buzzer. You need to figure out how to connect it properly
+The board should have a sounder. You need to figure out how to connect it properly
 and what kind of amplifier you might need.
-Below is a schematic with a simple low-pass filter and a headphone jack for audio.
-You only need low-pass filter when there is no DAC on board (you need low-pass
-filter for F4, but you don't need it for D51).
 
 The headphone jack is optional.
 Also note that this is not for JACDAC networking, for that see below.
 
-![Audio connection](/static/hardware/audio.png)
 
 ### JACDAC
 
