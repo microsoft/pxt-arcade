@@ -193,6 +193,22 @@
                 "dockerImage": "pext/rpi:alsa",
                 "serviceId": "rpi"
             }
+        },
+        "vm": {
+            "compile": {
+                "hasHex": true,
+                "useELF": true,
+                "flashCodeAlign": 256,
+                "webUSB": false,
+                "nativeType": "vm",
+                "stackAlign": 2
+            },
+            "compileService": {
+                "buildEngine": "dockermake",
+                "dockerImage": "multiarch/crossbuild",
+                "dockerArgs": ["-e", "CROSS_TRIPLE=osx"],
+                "serviceId": "vmosx"
+            }
         }
     },
     "serial": {

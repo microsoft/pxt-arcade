@@ -3,7 +3,6 @@
     "description": "VM",
     "files": [
         "config.ts",
-        "gamesel.cpp",
         "enums.d.ts",
         "shims.d.ts",
         "device.d.ts"
@@ -14,7 +13,7 @@
         "learnMoreUrl": "https://arcade.makecode.com/hardware#vm",
         "cardType": "hw"
     },
-    "compileServiceVariant": "rpi",
+    "compileServiceVariant": "vm",
     "dependencies": {
         "core---linux": "file:../core---vm",
         "mixer---none": "file:../mixer---none",
