@@ -354,12 +354,12 @@ game.onUpdate(function () {
 
 ## Step 10
 
-Change the ``<`` condition in ``||logic:0 < 0||`` to ``<=``. Find the ``||sprites:mySprite x||`` block and put it in where the first `0` is. Click the dropdown and select ``left``.
+Find the ``||sprites:mySprite x||`` block and put it in where the first `0` is. Click the dropdown and select ``left``.
 
 ```blocks
 let mySprite: Sprite = null
 game.onUpdate(function () {
-    if (mySprite.left <= 0) {
+    if (mySprite.left < 0) {
     }
 })
 ```
@@ -371,7 +371,7 @@ Put a ``||game:game over||`` inside of ``||logic:if then||``. Click the **(+)** 
 ```blocks
 let mySprite: Sprite = null
 game.onUpdate(function () {
-    if (mySprite.left <= 0) {
+    if (mySprite.left < 0) {
         game.over(true)
     }
 })
