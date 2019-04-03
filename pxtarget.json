@@ -44,6 +44,7 @@
         "libs/mixer---linux",
         "libs/device",
         "libs/jacdac",
+        "libs/jacdac-ts",
         "libs/jacdac-drivers",
         "libs/jacdac-game",
         "libs/power",
