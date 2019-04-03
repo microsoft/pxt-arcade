@@ -14,8 +14,7 @@ Arcade features the following virtual device specification:
 * 4 directional buttons, 2 action buttons (A and B), 1 utility (menu/select/pause) button, 1 reset button
 * 1-channel sound output (either a DAC or PWM with DMA support); this is multiplexed in software
 
-Students can run and create Arcade games in the browser,
-either on a computer or a mobile device.
+Students can run and create Arcade games in the browser, either on a computer or a mobile device.
 
 While the focus of Arcade is clearly games, the screen and the buttons give flexibility
 in the kind of programs that can be created to teach various computer science concepts.
@@ -35,7 +34,7 @@ but these usually follow from the RAM size.
 
 We currently support two hardware variants which match these criteria:
 * **D51** based on Microchip **ATSAMD51G19A** (Cortex M4F, 192kB of RAM, 512kB of flash, 120MHz)
-* **F4** (formely F401) based on one of the ST Micro **STM32F4xx** chips:
+* **F4** (formerly F401) based on one of the ST Micro **STM32F4xx** chips:
   * **STM32F401xE** (Cortex M4F, 96kB of RAM, 512kB of flash, 84MHz)
   * **STM32F411xE** (Cortex M4F, 128kB of RAM, 512kB of flash, 96MHz)
   * **STM32F412xE** (Cortex M4F, 128kB of RAM, 512kB of flash, 96MHz)
@@ -192,13 +191,13 @@ to respective `ACCELEROMETER_*` lines as defined in the bootloader.
 If possible, keep this separate from the SDA/SCL exposed on the header,
 so the one on the header can be used as a general digital IO.
 
-## Vibration motor #vibrationmotor
+### Vibration motor #vibrationmotor
 
 An optional vibration motor can be connected to `VIBRATION` line.
 Software will keep it low during normal operation, and pull it high
 to activate the motor.
 
-## Power management #power
+### Power management #power
 
 The board will have auto-power-off feature to improve battery life.
 
@@ -216,12 +215,12 @@ It's fine for power LED supply to be controlled by PWREN.
 An optional `BATTSENSE` can be connected to a voltage divider and to battery.
 This is not yet supported in software.
 
-## LEDs #leds
+### LEDs #leds
 
 Up to 4 LEDs can be defined.
 The first two can be also used for JACDAC status.
 
-## Pin header #pins
+### Pin header #pins
 
 Following is the recommended pinout of the header.
 Header is optional, but at least holes are nice to have.
@@ -246,7 +245,7 @@ on the header.
 | D10 | I/O      | PC05 | -       |
 | D11 | I/O      | PC11 | -       |
 
-### Pin notes
+#### Pin notes
 
 While there is recommended pinout in this document, you can use any different
 pinout.
@@ -267,7 +266,19 @@ There are some restrictions on the pinout:
 Of course, if you're building a guide about how to connect screen and buttons to
 an existing board, all components are really optional. 
 
-## Bootloader #bootloader
+## Bootloaders #bootloaders
+
+There are 2 bootloader variants to support the hardware variants.
+These bootloaders support the CF2 configuration data section.
+
+* F4: https://github.com/mmoskal/uf2-stm32f
+* D51: https://github.com/Microsoft/uf2-samdx1
+
+The following bootloaders do **not** support the CF2 configuration data section yet.
+
+* N840: https://github.com/adafruit/Adafruit_nRF52840_Bootloader
+
+### Compilation
 
 If you're compiling bootloader on your own, you will need to create `board.h` file.
 Start from an existing, generic arcade board (README in bootloader should have instructions).
@@ -324,9 +335,9 @@ in the configuration data.
 It's also possible to patch a binary file of bootloader with new config using the
 same website.
 
-The patching website can also remove config entires, just specify the value as `null`.
+The patching website can also remove config entries, just specify the value as `null`.
 
-### Bootloader protection
+### Bootloader protection #protection
 
 End users will typically update the bootloader by copying a special UF2 file, which
 has a user-level application, which overwrites the bootloader.
@@ -339,15 +350,15 @@ in flash, which only take effect upon reset).
 If the write-protection is disabled, presumably during a bootloader update process,
 the bootloader will present a screen to the user, asking if they really want to update
 the bootloader, and they it may brick the board.
-If the users agrees to upgrade, the app is allowed to run (and presumably update the booloader).
+If the users agrees to upgrade, the app is allowed to run (and presumably update the bootloader).
 Otherwise, the protection is re-enabled.
 
 The default configuration of the bootloaders have this feature disabled to ease the
 development process. To enable it, set `BOOTLOADER_PROTECTION = 1`.
 
-## Variant notes
+### Variant notes #variants
 
-### F4
+#### F4 #f4
 
 STM32F4 requires an external crystal for stable USB operation.
 The software takes the installed crystal frequency from a specific bootloader location,
@@ -433,16 +444,8 @@ PIN_PWREN = PC15
 PIN_VIBRATION = PC14
 ```
 
-### D51
+#### D51 #d51
 
 JACK_TX needs to be on a pin with external IRQ and PAD0 of some SERCOM.
 
 JACK_SND needs to be on PA02 (DAC output).
-
-### Bootloaders
-
-* F4: https://github.com/mmoskal/uf2-stm32f
-* D51: https://github.com/Microsoft/uf2-samdx1
-* N840: https://github.com/adafruit/Adafruit_nRF52840_Bootloader
-
-The first two bootloaders already implement the CF2 configuration data section.
