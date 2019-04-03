@@ -4,8 +4,8 @@
 
 **Warning**: this document is preliminary and is going to change.
 It's fine build prototypes according to it and experiment,
-but not to go to production.  If you want to produce Arcade-compatible
-boards, please contact us at arcadehdw@microsoft.com 
+but not to go to production.  **If you want to produce Arcade-compatible
+boards, please contact us at arcadehdw@microsoft.com.**
 
 ## ~
 
