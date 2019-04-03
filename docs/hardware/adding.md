@@ -34,6 +34,51 @@ sprite operations. This, together with heap fragmentation concerns,
 though more is clearly better. In addition, **512kB of flash and 64MHz or more** are recommended,
 but these usually follow from the RAM size.
 
+## Overview #overview
+
+Other than the MCU, variants contain the same components (with optional variations
+in the power supply).
+
+* a compatible MCU to support Arcade game engine. (see [MCU](#mcu))
+* 160x128 color TFT screen based on ST7735 or ILI9163C controller chip in SPI version (see [screen](#screen))
+  - we skip using 8 bottom rows of the screen to upscaling to 320x240
+* alternatively, 320x240 color TFT screen based on ILI9341 controller chip in 
+  8 bit parallel version (not SPI!); this requires STM32F412RE or better and is not implemented yet
+* 8 buttons for directional pad (`left`, `up`, `right`, `down`), `A`, `B`, `Reset` and `Menu` (see [buttons](#buttons))
+* an audio output system (see [audio](#audio))
+* female microUSB connector for power and UF2 programming
+* ESD protection for the microUSB
+* a 3.3V regulator (see [power](#power))
+* a transistor for power management
+* JST connector for battery; this is optional if the battery is integrated
+* optional LiPo charging circuit
+* optional accelerometer (see [accelerometer](#accelerometer))
+* an optional [JACDAC](https://jacdac.org/) connector (see [JACDAC](#jacdac)) and option status LEDs (see [LEDs](#leds))
+* **no** power LED - please skip that one, unless you're also including `PWREN` line, which will shut it down; otherwise auto power-off will be difficult (see [power](#power))
+
+If you have good reasons to use a different screen or accelerometer, let us know.
+
+## Configuration #cf2
+
+We are aware of various configuration needs for screen controllers, as well as different
+accelerometers etc. coming in future. We generate the same UF2 file
+for all boards of a given variant, and have the runtime look for configuration
+values in the bootloader area (called **CF2** configuration).
+
+See https://github.com/Microsoft/uf2/blob/master/cf2.md for more details on the format.
+The [bootloaders](#bootloaders) can be binary patched with new configuration data if needed.
+
+The configuration data also includes assignment of a GPIO pin header.
+Generally, the header isn't essential to this board, but it's recommended
+to at least leave holes for people to solder it in.
+
+The exact pins where the various `BTN_*`, `JACK_*`, and `DISPLAY_*` lines are connected
+is specified in the bootloader. You can change them, as described above.
+
+## Components #components
+
+### MCU #mcu
+
 We currently support two hardware variants which match these criteria:
 * **D51** based on Microchip **ATSAMD51G19A** (Cortex M4F, 192kB of RAM, 512kB of flash, 120MHz)
 * **F4** (formerly F401) based on one of the ST Micro **STM32F4xx** chips:
@@ -51,46 +96,6 @@ Additionally, we're considering adding the following in the future:
 * **N840** based on Nordic **NRF52840** (Cortex M4F, 256kB of RAM, 1024kB of flash, 64MHz)
 
 Other choices are possible, and we would love to hear your feedback.
-
-Other than the MCU the two variants contain the same components (with optional variations
-in the power supply).
-
-* 160x128 color TFT screen based on ST7735 or ILI9163C controller chip in SPI version 
-  - we skip using 8 bottom rows of the screen to upscaling to 320x240
-* alternatively, 320x240 color TFT screen based on ILI9341 controller chip in 
-  8 bit parallel version (not SPI!); this requires STM32F412RE or better and is not
-  implemented yet
-* 6 buttons, for directions, A, and B
-* 2 buttons for reset and menu
-* female microUSB connector for power and UF2 programming
-* ESD protection for the microUSB
-* a 3.3V regulator
-* a transistor for power management
-* JST connector for battery; this is optional if the battery is integrated
-* optional LiPo charging circuit
-* optional accelerometer
-* a magnetic speaker (transducer) with some sort of amplifier
-* an optional [JACDAC](https://jacdac.org/) connector
-* **no** power LED - please skip that one, unless you're also including PWREN line, which will shut it down; otherwise auto power-off will be difficult
-
-If you have good reasons to use a different screen or accelerometer, let us know.
-
-## Schematics #schematics
-
-We are aware of various configuration needs for screen controllers, as well as different
-accelerometers etc. coming in future. We generate the same UF2 file
-for all boards of a given variant, and have the runtime look for configuration
-values in the bootloader area.
-
-See https://github.com/Microsoft/uf2/blob/master/cf2.md for more details on the format.
-The bootloaders can be binary patched with new configuration data if needed.
-
-The configuration data also includes assignment of a GPIO pin header.
-Generally, the header isn't essential to this board, but it's recommended
-to at least leave holes for people to solder it in.
-
-The exact pins where the various `BTN_*`, `JACK_*`, and `DISPLAY_*` lines are connected
-is specified in the bootloader. You can change them, as described above.
 
 ### Buttons #buttons
 
@@ -111,6 +116,8 @@ the USB connector.
 ![Button connection](/static/hardware/buttons.png)
 
 ### Screen #screen
+
+If you have good reasons to use a screen not listed below, let us know.
 
 #### ST7735 at 160x128
 
@@ -149,7 +156,7 @@ The board should have a sounder. You need to figure out how to connect it proper
 and what kind of amplifier you might need.
 
 The headphone jack is optional.
-Also note that this is not for JACDAC networking, for that see below.
+Also note that this is not for JACDAC networking, for that see [JACDAC](#jacdac).
 
 
 ### JACDAC #jacdac
@@ -190,7 +197,7 @@ If requested, we can add support for MSA300, which seems to be cheaper.
 
 The accelerometers should have the SDA, SCL and INT1 lines connected
 to respective `ACCELEROMETER_*` lines as defined in the bootloader.
-If possible, keep this separate from the SDA/SCL exposed on the header,
+If possible, keep this separate from the `SDA`/`SCL` exposed on the header,
 so the one on the header can be used as a general digital IO.
 
 ### Vibration motor #vibrationmotor
@@ -212,7 +219,7 @@ The idea is for it to control power supply to display, accelerometer,
 and other on-board components. 
 
 Please do not provide a power LED that cannot be turned off from the MCU.
-It's fine for power LED supply to be controlled by PWREN.
+It's fine for power LED supply to be controlled by `PWREN`.
 
 An optional `BATTSENSE` can be connected to a voltage divider and to battery.
 This is not yet supported in software.
@@ -271,12 +278,12 @@ an existing board, all components are really optional.
 ## Bootloaders #bootloaders
 
 There are 2 bootloader variants to support the hardware variants.
-These bootloaders support the CF2 configuration data section.
+These bootloaders support the [CF2 configuration data section](#cf2).
 
 * F4: https://github.com/mmoskal/uf2-stm32f
 * D51: https://github.com/Microsoft/uf2-samdx1
 
-The following bootloaders do **not** support the CF2 configuration data section yet.
+The following bootloaders do **not** support the [CF2 configuration data section](#cf2) yet.
 
 * N840: https://github.com/adafruit/Adafruit_nRF52840_Bootloader
 
