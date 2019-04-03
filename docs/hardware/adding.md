@@ -1,10 +1,12 @@
 # Adding your own hardware to Arcade
 
 ## ~ hint
+
 **Warning**: this document is preliminary and is going to change.
 It's fine build prototypes according to it and experiment,
 but not to go to production.  If you want to produce Arcade-compatible
 boards, please contact us at arcadehdw@microsoft.com 
+
 ## ~
 
 Arcade features the following virtual device specification:
@@ -225,10 +227,10 @@ The first two can be also used for JACDAC status.
 Following is the recommended pinout of the header.
 Header is optional, but at least holes are nice to have.
 If there's limited space for header pins D10-D11 should be dropped,
-and then D8-D9.
+and then `D8`-`D9`.
 
 The assignment is shown for 64 pin (or larger) version of F4.
-For the 48 pin version, drop D8-D11 and connect accelerometer SDA/SCL
+For the 48 pin version, drop `D8`-`D11` and connect accelerometer `SDA`/`SCL`
 on the header.
 
 | Pin | Function | F4   | F4-48   |
@@ -260,8 +262,8 @@ There are some restrictions on the pinout:
 * MENU button should be a pin which can wake the MCU up from sleep mode (on D51 it requires `EIC`; on F4 it can be any pin)
 * other buttons can be on any pin
 * the MENU2 button is optional
-* JACK_TX if present needs to be on UART_TX pin on F4, and on PAD0 of a SERCOM with EIC on D51
-* JACK_SND if present needs to be on TIM1_CH* pin of F4 and DAC0 of D51 (PA02)
+* `JACK_TX` if present needs to be on `UART_TX` pin on F4, and on PAD0 of a SERCOM with EIC on D51
+* `JACK_SND` if present needs to be on TIM1_CH* pin of F4 and DAC0 of D51 (PA02)
 
 Of course, if you're building a guide about how to connect screen and buttons to
 an existing board, all components are really optional. 
@@ -446,6 +448,6 @@ PIN_VIBRATION = PC14
 
 #### D51 #d51
 
-JACK_TX needs to be on a pin with external IRQ and PAD0 of some SERCOM.
+`JACK_TX` needs to be on a pin with external IRQ and `PAD0` of some SERCOM.
 
-JACK_SND needs to be on PA02 (DAC output).
+`JACK_SND` needs to be on ``PA02` (DAC output).
