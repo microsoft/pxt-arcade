@@ -74,7 +74,7 @@ in the power supply).
 
 If you have good reasons to use a different screen or accelerometer, let us know.
 
-## Schematics
+## Schematics #schematics
 
 We are aware of various configuration needs for screen controllers, as well as different
 accelerometers etc. coming in future. We generate the same UF2 file
@@ -91,7 +91,7 @@ to at least leave holes for people to solder it in.
 The exact pins where the various `BTN_*`, `JACK_*`, and `DISPLAY_*` lines are connected
 is specified in the bootloader. You can change them, as described above.
 
-### Buttons
+### Buttons #buttons
 
 The 4 directional buttons, the A/B buttons, and the MENU button are to be connected
 to GND and a respective MCU pin, as in the schematics below.
@@ -109,7 +109,7 @@ the USB connector.
 
 ![Button connection](/static/hardware/buttons.png)
 
-### Screen
+### Screen #screen
 
 #### ST7735 at 160x128
 
@@ -142,7 +142,7 @@ the right ones. They are around $2.
 
 This is not implemented yet.
 
-### Audio
+### Audio #audio
 
 The board should have a sounder. You need to figure out how to connect it properly
 and what kind of amplifier you might need.
@@ -151,7 +151,7 @@ The headphone jack is optional.
 Also note that this is not for JACDAC networking, for that see below.
 
 
-### JACDAC
+### JACDAC #jacdac
 
 ## ~ hint
 **Warning**: JACDAC is under development now and is going to change.
@@ -177,7 +177,7 @@ This is sufficient to play multiplayer games.
 
 ![JACDAC without power](/static/hardware/nopowerjacdac.png)
 
-### Accelerometer
+### Accelerometer #accelerometer
 
 We currently support the following accelerometers:
 
@@ -192,13 +192,13 @@ to respective `ACCELEROMETER_*` lines as defined in the bootloader.
 If possible, keep this separate from the SDA/SCL exposed on the header,
 so the one on the header can be used as a general digital IO.
 
-## Vibration motor
+## Vibration motor #vibrationmotor
 
 An optional vibration motor can be connected to `VIBRATION` line.
 Software will keep it low during normal operation, and pull it high
 to activate the motor.
 
-## Power management
+## Power management #power
 
 The board will have auto-power-off feature to improve battery life.
 
@@ -216,12 +216,12 @@ It's fine for power LED supply to be controlled by PWREN.
 An optional `BATTSENSE` can be connected to a voltage divider and to battery.
 This is not yet supported in software.
 
-## LEDs
+## LEDs #leds
 
 Up to 4 LEDs can be defined.
 The first two can be also used for JACDAC status.
 
-## Pin header
+## Pin header #pins
 
 Following is the recommended pinout of the header.
 Header is optional, but at least holes are nice to have.
@@ -246,7 +246,7 @@ on the header.
 | D10 | I/O      | PC05 | -       |
 | D11 | I/O      | PC11 | -       |
 
-## Pin notes
+### Pin notes
 
 While there is recommended pinout in this document, you can use any different
 pinout.
@@ -267,7 +267,7 @@ There are some restrictions on the pinout:
 Of course, if you're building a guide about how to connect screen and buttons to
 an existing board, all components are really optional. 
 
-### Generating bootloader
+## Bootloader #bootloader
 
 If you're compiling bootloader on your own, you will need to create `board.h` file.
 Start from an existing, generic arcade board (README in bootloader should have instructions).
@@ -439,9 +439,7 @@ JACK_TX needs to be on a pin with external IRQ and PAD0 of some SERCOM.
 
 JACK_SND needs to be on PA02 (DAC output).
 
-
-
-## Bootloaders
+### Bootloaders
 
 * F4: https://github.com/mmoskal/uf2-stm32f
 * D51: https://github.com/Microsoft/uf2-samdx1
