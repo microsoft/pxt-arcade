@@ -4,7 +4,7 @@
 **Warning**: this document is preliminary and is going to change.
 It's fine build prototypes according to it and experiment,
 but not to go to production.  If you want to produce Arcade-compatible
-boards, please contact us at arcadehdw@microsoft.com 
+boards, please [email us](mailto:arcadehdw@microsoft.com).
 ## ~
 
 Arcade features the following virtual device specification:
@@ -156,8 +156,8 @@ Also note that this is not for JACDAC networking, for that see below.
 ## ~ hint
 **Warning**: JACDAC is under development now and is going to change.
 It's fine build prototypes according to this schematics,
-but not to go to production just yet. Please contact arcadehdw@microsoft.com
-for more information.
+but not to go to production just yet. Please 
+[email us](mailto:arcadehdw@microsoft.com) for more information.
 ## ~
 
 [JACDAC](https://jacdac.org) is a protocol for networking over a single-wire
