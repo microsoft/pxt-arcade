@@ -152,7 +152,7 @@ This is not implemented yet.
 
 ### Audio #audio
 
-The board should have a sounder. You need to figure out how to connect it properly
+The board should have a sound source. You need to figure out how to connect it properly
 and what kind of amplifier you might need.
 
 The headphone jack is optional.
@@ -196,7 +196,7 @@ We currently support the following accelerometers:
 If requested, we can add support for MSA300, which might be a cheaper alternative.
 
 The accelerometers should have the SDA, SCL and INT1 lines connected
-to each respective `ACCELEROMETER_*` lines as defined in the bootloader.
+to each respective `ACCELEROMETER_*` line as defined in the bootloader.
 If possible, keep this separate from the `SDA`/`SCL` exposed on the header
 to keep the one on the header available as a general digital IO line.
 
@@ -256,15 +256,15 @@ on the header.
 
 #### Pin notes
 
-While there is recommended pinout in this document, you can use any different
+While there is recommended pinout in this document, you can use a different
 pinout.
-You need to put your pinout in the bootloader, and flash the bootloader.
+You need to put your pinout in the bootloader and flash the bootloader.
 Then, when you get a UF2 file from Arcade website, it will at runtime look for
 settings in the bootloader and use the right pins.
 
 There are some restrictions on the pinout:
 
-* screen needs to be on SPI pins (of course); on F4 use SPI1 as it's faster
+* the screen needs to be on SPI pins (of course); on F4 use SPI1 as it's faster
 * DISPLAY_BL should be on a pin with PWM (so we can dim it)
 * MENU button should be a pin which can wake the MCU up from sleep mode (on D51 it requires `EIC`; on F4 it can be any pin)
 * other buttons can be on any pin
@@ -272,12 +272,12 @@ There are some restrictions on the pinout:
 * `JACK_TX` if present needs to be on `UART_TX` pin on F4, and on PAD0 of a SERCOM with EIC on D51
 * `JACK_SND` if present needs to be on TIM1_CH* pin of F4 and DAC0 of D51 (PA02)
 
-Of course, if you're building a guide about how to connect screen and buttons to
-an existing board, all components are really optional. 
+Of course, if you're building a guide about how to just connect a screen and buttons to
+an existing board, all other components really are optional. 
 
 ## Bootloaders #bootloaders
 
-There are 2 bootloader variants to support the hardware variants.
+There are 2 different bootloaders to support the hardware variants.
 These bootloaders support the [CF2 configuration data section](#cf2).
 
 * F4: https://github.com/mmoskal/uf2-stm32f
@@ -289,31 +289,31 @@ The following bootloaders do **not** support the [CF2 configuration data section
 
 ### Compilation
 
-If you're compiling bootloader on your own, you will need to create `board.h` file.
+If you're compiling a bootloader on your own, you will need to create a `board.h` file.
 Start from an existing, generic arcade board (README in bootloader should have instructions).
 Then:
 
-* if you don't have accelerometer, remove all lines with `ACCELEROMETER` word
-* if you don't have vibration motor, remove line for `PIN_VIBRATION`
+* if you don't have accelerometer, remove all lines with the `ACCELEROMETER` word
+* if you don't have vibration motor, remove the line for `PIN_VIBRATION`
 * if you are not doing a pin header:
   * maybe you can at least leave holes for people to solder a header in?
   * otherwise, remove all `PIN_Dx`, and `PIN_SDA`, `PIN_SCL`, `PIN_MISO`, `PIN_MOSI`, 
-    `PIN_SCK`, `PIN_SERVO_x`
+    `PIN_SCK`, `PIN_SERVO_x` entries
 * if you have less than 4 LEDs remove `PIN_LEDx`
 * if you do not have a way to disable power to external components, remove `PIN_PWREN`
 * if you don't have JACDAC, remove `PIN_JACK_*`
 * if you don't have JACDAC power, remove `PIN_JACK_PWREN`
-* if you don't have second menu button (it's not needed), remove `PIN_BTN_MENU2`
+* if you don't have second menu button (it's not required), remove `PIN_BTN_MENU2`
 * if you don't have voltage divider for measuring battery level (which isn't supported yet anyway),
   remove `PIN_BATTSENSE`
 
-Once you're done with all these changes, drop the `board.h` file on https://microsoft.github.io/uf2/patcher/
+Once you're done with all these changes, drop the `board.h` file onto https://microsoft.github.io/uf2/patcher/.
 
 This should load the config, with stuff removed.
 Now you can patch the config with your pin out.
 You should at least change `BOOTLOADER_BOARD_ID` to a new random value. 
 Don't generate it by banging on the board or using clever hex string, 
-just use `printf "0x%04x%04x\n" $RANDOM $RANDOM` to minimize the risk of conflict
+just use `printf "0x%04x%04x\n" $RANDOM $RANDOM` to minimize the risk of a conflict
 
 If you're seeing strange effects on the screen, you can try one of the following
 configs:
@@ -341,7 +341,7 @@ Once you're done patching, press "Apply my patch", which will download new `boar
 Note that you need to use the patching website to put the right header and size
 in the configuration data.
 
-It's also possible to patch a binary file of bootloader with new config using the
+It's also possible to patch a binary file of the bootloader with new config using the
 same website.
 
 The patching website can also remove config entries, just specify the value as `null`.
@@ -349,7 +349,7 @@ The patching website can also remove config entries, just specify the value as `
 ### Bootloader protection #protection
 
 End users will typically update the bootloader by copying a special UF2 file, which
-has a user-level application, which overwrites the bootloader.
+has a user-level application that overwrites the bootloader.
 
 To prevent misuse of this feature (eg., one student emailing to a another a malicious UF2 
 file which writes a non-functional bootloader), some bootloaders (currently only F4)
@@ -357,8 +357,8 @@ implement a protection feature.
 When booting, the bootloader will check if it's write-protected (this is done by setting bits
 in flash, which only take effect upon reset).
 If the write-protection is disabled, presumably during a bootloader update process,
-the bootloader will present a screen to the user, asking if they really want to update
-the bootloader, and they it may brick the board.
+the bootloader will present a screen to the user asking if they really want to update
+the bootloader and that doing so could possibly brick the board.
 If the users agrees to upgrade, the app is allowed to run (and presumably update the bootloader).
 Otherwise, the protection is re-enabled.
 
@@ -373,8 +373,8 @@ STM32F4 requires an external crystal for stable USB operation.
 The software takes the installed crystal frequency from a specific bootloader location,
 but best to stick to 8MHz.
 
-Following is the recommended pinout. The recommended pinout for
-header is defined above. It's consistent with the config for the generic F4
+The following is the recommended pinout. The recommended pinout for
+header was described above. It's consistent with the config for the generic F4
 in the bootloader repo.
 
 ```
