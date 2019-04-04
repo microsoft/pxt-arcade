@@ -34,6 +34,13 @@
   "imageUrl": "/static/tutorials/lemon-leak.png",
   "largeImageUrl": "/static/tutorials/lemon-leak.gif"
 }, {
+  "name": "Galga",
+  "description": "Fly through the attacking aircraft and fire a darts at them, don't get hit!",
+  "url": "/tutorials/galga",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/galga.png",
+  "largeImageUrl": "/static/tutorials/galga.gif"
+}, {
   "name": "Simple Extensions",
   "description": "Learn the basics of using extensions and create a platformer",
   "url": "/tutorials/simple-extensions",
