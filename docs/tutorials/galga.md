@@ -8,15 +8,15 @@ Try this tutorial!
 
 ## Introduction @unplugged
 
-Fly your jet plane through the on coming bogey aircraft. Can you survive the continous attack? You can take only three hits. See if you can blast away the enemy planes before they hit you.
+Fly your space plane through the on coming bogey spaceraft. Can you survive the continous attack? You can take only three hits. See if you can blast away the enemy before they hit you.
 
-![Jet plane and attacking aircraft](/static/tutorials/galga.gif)
+![Space plane and attacking aircraft](/static/tutorials/galga.gif)
 
 ## Step 1 @fullscreen
 
-Get a ``||sprites:set mySprite to sprite of kind player||`` block an put it in the ``||loops:on start||``. Click on the ``||variables:mySprite||`` variable, select ``Rename variable...``, and rename it to ``jetPlane``. Click on the empty sprite image to open the image editor. Draw a picture of a jet airplane.
+Get a ``||sprites:set mySprite to sprite of kind player||`` block an put it in the ``||loops:on start||``. Click on the ``||variables:mySprite||`` variable, select ``Rename variable...``, and rename it to ``spacePlane``. Click on the empty sprite image to open the image editor. Draw a picture of a Space Plane.
 
-![Jet plane sprite image](/static/tutorials/galga/jet-plane.jpg)
+![Space plane sprite image](/static/tutorials/galga/space-plane.jpg)
 
 ```blocks
 enum SpriteKind {
@@ -25,8 +25,8 @@ enum SpriteKind {
     Food,
     Enemy
 }
-let jetPlane: Sprite = null
-jetPlane = sprites.create(img`
+let spacePlane: Sprite = null
+spacePlane = sprites.create(img`
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -64,7 +64,7 @@ jetPlane = sprites.create(img`
 
 ## Step 2
 
-Go back to ``||sprites:Sprites||`` again and pull out a ``||sprites:set mySprite stay in screen||`` and put it in after the other sprite block. Change the ``||variables:mySprite||`` to ``||variables:jetPlane||``. Click the ``OFF`` button to make it switch to ``ON``. Go over to ``||info:Info||``, get a ``||info:set life to||`` block, and put it in there too. Set the life count to `3`.
+Go back to ``||sprites:Sprites||`` again and pull out a ``||sprites:set mySprite stay in screen||`` and put it in after the other sprite block. Change the ``||variables:mySprite||`` to ``||variables:spacePlane||``. Click the ``OFF`` button to make it switch to ``ON``. Go over to ``||info:Info||``, get a ``||info:set life to||`` block, and put it in there too. Set the life count to `3`.
 
 ```blocks
 enum SpriteKind {
@@ -73,8 +73,8 @@ enum SpriteKind {
     Food,
     Enemy
 }
-let jetPlane: Sprite = null
-jetPlane = sprites.create(img`
+let spacePlane: Sprite = null
+spacePlane = sprites.create(img`
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -108,7 +108,7 @@ jetPlane = sprites.create(img`
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
-jetPlane.setFlag(SpriteFlag.StayInScreen, true)
+spacePlane.setFlag(SpriteFlag.StayInScreen, true)
 info.setLife(3)
 ```
 
@@ -123,8 +123,8 @@ enum SpriteKind {
     Food,
     Enemy
 }
-let jetPlane: Sprite = null
-jetPlane = sprites.create(img`
+let spacePlane: Sprite = null
+spacePlane = sprites.create(img`
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -158,21 +158,21 @@ jetPlane = sprites.create(img`
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
-jetPlane.setFlag(SpriteFlag.StayInScreen, true)
+spacePlane.setFlag(SpriteFlag.StayInScreen, true)
 info.setLife(3)
-controller.moveSprite(jetPlane, 200, 200)
+controller.moveSprite(spacePlane, 200, 200)
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
 ## Step 4 @fullscreen
 
-Back in ``||sprites:Sprites||``, find a ``||sprites:set projectile to projectile from mySprite||`` block and put it in the ``||controller:on A button pressed||``. Click on the ``||variables:projectile||`` variable, select ``Rename variable...``, and rename it to ``dart``. Switch the ``||variables:mySprite||`` variable to ``||variables:jetPlane||`` and set the `vx` value to `200`. Click on the empty sprite image to open the image editor. Draw a picture of a dart.
+Back in ``||sprites:Sprites||``, find a ``||sprites:set projectile to projectile from mySprite||`` block and put it in the ``||controller:on A button pressed||``. Click on the ``||variables:projectile||`` variable, select ``Rename variable...``, and rename it to ``dart``. Switch the ``||variables:mySprite||`` variable to ``||variables:spacePlane||`` and set the `vx` value to `200`. Click on the empty sprite image to open the image editor. Draw a picture of a dart.
 
 ![Dart projectile](/static/tutorials/galga/dart.jpg)
 
 ```blocks
-let jetPlane: Sprite = null
+let spacePlane: Sprite = null
 let dart: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     dart = sprites.createProjectileFromSprite(img`
@@ -192,7 +192,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
-    `, jetPlane, 200, 0)
+    `, spacePlane, 200, 0)
 })
 ```
 
@@ -358,6 +358,6 @@ game.onUpdateInterval(500, function () {
 
 ## Complete @fullscreen
 
-Congratulations, you have completed your game! Use the direction buttons to move your jet plane to miss the bogeys. Use button **A** to shoot a darts at them.
+Congratulations, you have completed your game! Use the direction buttons to move your space plane to miss the bogeys. Use button **A** to shoot darts at them.
 
-![Jet plane and attacking aircraft](/static/tutorials/galga.gif)
+![Space plane and attacking aircraft](/static/tutorials/galga.gif)

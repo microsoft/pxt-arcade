@@ -35,7 +35,7 @@
   "largeImageUrl": "/static/tutorials/lemon-leak.gif"
 }, {
   "name": "Galga",
-  "description": "Fly through the attacking aircraft and fire a darts at them, don't get hit!",
+  "description": "Fly through the attacking spacecraft and fire a darts at them, don't get hit!",
   "url": "/tutorials/galga",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/galga.png",
