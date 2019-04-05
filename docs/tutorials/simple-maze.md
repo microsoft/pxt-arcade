@@ -1,5 +1,11 @@
 # Simple Maze
 
+### ~button /#tutorial:tutorials/simple-maze
+
+Try this tutorial!
+
+### ~
+
 ## Introduction @unplugged
 
 Welcome to @boardname@! Let's get started by creating a simple game where your player tries to get out of a maze while there's still time!
