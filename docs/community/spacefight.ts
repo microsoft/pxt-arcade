@@ -1,4 +1,4 @@
-// https://makecode.com/_6djW8h3zYFPa
+// https://makecode.com/_F5gefWYUjHct
 enum SpriteKind {
     Player,
     Projectile,
@@ -254,7 +254,7 @@ function createSplashBase() {
     splashBase = image.create(scene.screenWidth(), scene.screenHeight())
     currFont = drawStrings.createFontInfo(FontName.Font5, 2)
     drawStrings.writeCenter(
-    "SPACEWAR!",
+    "SPACEFIGHT!",
     splashBase,
     2,
     7,
@@ -299,7 +299,7 @@ function createSplashBase() {
     )
 }
 function buildSplashScreens() {
-    headlines = [["Spacewar! was", "developed in 1962"], ["Programmed by", "Steve Russell"], ["Collaborator", "Martin Graetz"], ["Collaborator", "Wayne Wiitanen"], ["Collaborator", "Bob Saunders"], ["Collaborator", "Steve Piner"], ["Programmed in ", "MakeCode Arcade"], ["by", "Alex K."]]
+    headlines = [["Inspired by", "Spacewar!"], ["Spacewar! was", "developed in 1962"], ["Programmed by", "Steve Russell"], ["Collaborator", "Martin Graetz"], ["Collaborator", "Wayne Wiitanen"], ["Collaborator", "Bob Saunders"], ["Collaborator", "Steve Piner"], ["Programmed in", "MakeCode Arcade"], ["by", "Alex K."]]
     currFont = drawStrings.createFontInfo(FontName.Font5)
     splashScreens = []
     for (let value of headlines) {
