@@ -51,7 +51,8 @@ Here are some fun programs for your @boardname@!
   "description": "How well can you remember the sequence?",
   "url":"/examples/memory",
   "cardType": "example",
-  "imageUrl": "/static/examples/memory.png"
+  "imageUrl": "/static/examples/memory.png",
+  "largeImageUrl": "/static/examples/memory.gif"
 },
 {
   "name": "Catch",
@@ -66,7 +67,8 @@ Here are some fun programs for your @boardname@!
   "description": "Feed the princess",
   "url":"/examples/eater-princess",
   "cardType": "example",
-  "imageUrl": "/static/examples/eater-princess.png"
+  "imageUrl": "/static/examples/eater-princess.png",
+  "largeImageUrl": "/static/examples/eater-princess.gif"
 }
 ]
 ```
