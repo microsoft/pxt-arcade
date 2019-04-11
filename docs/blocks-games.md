@@ -43,7 +43,8 @@ Here are some fun programs for your @boardname@!
   "description": "Eat your food to level up",
   "url":"/examples/level-game",
   "cardType": "example",
-  "imageUrl": "/static/examples/level-game.png"
+  "imageUrl": "/static/examples/level-game.png",
+  "largeImageUrl": "/static/examples/level-game.gif"
 },
 {
   "name": "Memory",
