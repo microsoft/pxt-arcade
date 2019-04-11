@@ -19,7 +19,8 @@ Here are some fun programs for your @boardname@!
   "description": "Destroy the Asteroids",
   "url":"/examples/space-destroyer",
   "cardType": "example",
-  "imageUrl": "/static/examples/space-destroyer.png"
+  "imageUrl": "/static/examples/space-destroyer.png",
+  "largeImageUrl": "/static/examples/space-destroyer.gif"
 },
 {
   "name": "Jumpy Platformer",
