@@ -21,6 +21,14 @@ Here are some fun programs for your @boardname@!
   "imageUrl": "/static/examples/space-destroyer.png"
 },
 {
+  "name": "Jumpy Platformer",
+  "description": "A short platformer game with tile map levels",
+  "url": "/examples/jumpy-platformer",
+  "cardType": "example",
+  "imageUrl": "/static/examples/jumpy-platformer.png",
+  "largeImageUrl": "/static/examples/jumpy-platformer.gif"
+},
+{
   "name": "Eat the Fruit",
   "description": "Don't get hit by the flying junk food",
   "url":"/examples/eat-the-fruit",
