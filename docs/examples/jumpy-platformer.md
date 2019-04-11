@@ -779,6 +779,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Bumper, function (sprite, otherS
     if ((sprite.vy > 0 && !sprite.isHittingTile(CollisionDirection.Bottom)) || sprite.y < otherSprite.top) {
         otherSprite.destroy(effects.ashes, 250);
         otherSprite.vy = -50;
+        sprite.vy = -2 * pixelsToMeters;
         info.changeScoreBy(1);
         music.powerUp.play();
     } else {
