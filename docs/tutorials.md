@@ -35,7 +35,7 @@
   "largeImageUrl": "/static/tutorials/lemon-leak.gif"
 }, {
   "name": "Galga",
-  "description": "Fly through the attacking spacecraft and fire a darts at them, don't get hit!",
+  "description": "Fly through the attacking spacecraft and fire darts at them, don't get hit!",
   "url": "/tutorials/galga",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/galga.png",
@@ -57,4 +57,5 @@
 [Simple Maze](/tutorials/simple-maze),
 [Happy Flower](/tutorials/happy-flower),
 [Lemon Leak](/tutorials/lemon-leak),
+[Galga](/tutorials/galga),
 [Simple Extensions](/tutorials/simple-extensions)
