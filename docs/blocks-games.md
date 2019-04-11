@@ -11,7 +11,8 @@ Here are some fun programs for your @boardname@!
   "description": "Avoid the trees and go for a high score!",
   "url":"/examples/duck",
   "cardType": "example",
-  "imageUrl": "/static/examples/duck.png"
+  "imageUrl": "/static/examples/duck.png",
+  "largeImageUrl": "/static/examples/duck.gif"
 },
 {
   "name": "Space Destroyer",

@@ -12,7 +12,7 @@
         "name": "Blocks Games",
         "url": "/blocks-games",
         "imageUrl": "/static/examples/duck.png",
-        "largeImageUrl": "/static/examples/jumpy-platformer.gif"
+        "largeImageUrl": "/static/examples/duck.gif"
     },
     {
         "name": "JavaScript Games",
