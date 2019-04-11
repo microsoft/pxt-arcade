@@ -292,7 +292,9 @@
         "socialOptions": {
             "twitterHandle": "msmakecode",
             "orgTwitterHandle": "MSMakeCode",
-            "hashtags": "MakeCode"
+            "hashtags": "MakeCode",
+            "discourse": "https://forum.makecode.com/",
+            "discourseCategory": "Arcade"
         },
         "blocklyOptions": {
             "grid": {
