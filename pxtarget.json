@@ -294,7 +294,8 @@
             "orgTwitterHandle": "MSMakeCode",
             "hashtags": "MakeCode",
             "discourse": "https://forum.makecode.com/",
-            "discourseCategory": "Arcade"
+            "discourseCategory": "Arcade",
+            "qrCode": true
         },
         "blocklyOptions": {
             "grid": {
