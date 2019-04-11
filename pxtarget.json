@@ -334,6 +334,7 @@
         "simScreenshotKey": "P",
         "simScreenshotMaxUriLength": 300000,
         "simGif": false,
-        "simGifKey": "R"
+        "simGifKey": "R",
+        "qrCode": true
     }
 }
