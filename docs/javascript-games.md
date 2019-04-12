@@ -48,7 +48,8 @@ Here are some fun programs for your @boardname@!
   "description": "Try to catch the bouncing balls in your bucket",
   "url":"/examples/bouncer-bucket",
   "cardType": "codeExample",
-  "imageUrl": "/static/examples/bouncer-bucket.png"
+  "imageUrl": "/static/examples/bouncer-bucket.png",
+  "largeImageUrl": "/static/examples/bouncer-bucket.gif"
 }
 ]
 ```
