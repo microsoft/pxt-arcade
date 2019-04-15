@@ -142,18 +142,7 @@ namespace pxt.editor {
                     block.removeChild(value);
                 }
 
-                const newValue = document.createElement("value");
-                newValue.setAttribute("name", "wall");
-
-                const shadow = document.createElement("shadow");
-                shadow.setAttribute("type", "toggleOnOff");
-
-                const field = document.createElement("field");
-                field.setAttribute("name", "on");
-                field.textContent = "false";
-
-                shadow.appendChild(field);
-                newValue.appendChild(shadow);
+                const newValue = replaceToggle("wall", "toggleOnOff", "on", "false");
                 block.appendChild(newValue);
             }
         });
@@ -187,23 +176,12 @@ namespace pxt.editor {
                 }
             }
 
-            // remove old value to replace it with new 'gameWon'
+            // Remove old value to replace it with new 'gameWon'
             if (value) {
                 block.removeChild(value);
             }
 
-            const newValue = document.createElement("value");
-            newValue.setAttribute("name", "gameWon");
-
-            const shadow = document.createElement("shadow");
-            shadow.setAttribute("type", "toggleWinLose");
-
-            const field = document.createElement("field");
-            field.setAttribute("name", "win");
-            field.textContent = win;
-
-            shadow.appendChild(field);
-            newValue.appendChild(shadow);
+            const newValue = replaceToggle("gameWon", "toggleWinLose", "win", win);
             block.appendChild(newValue);
         });
     }
@@ -260,5 +238,21 @@ namespace pxt.editor {
         };
 
         return Promise.resolve<pxt.editor.ExtensionResult>(res);
+    }
+
+    function replaceToggle(valueName: string, shadowType: string, fieldName: string, fieldValue: string) {
+        const newValue = document.createElement("value");
+        newValue.setAttribute("name", valueName);
+
+        const shadow = document.createElement("shadow");
+        shadow.setAttribute("type", shadowType);
+
+        const field = document.createElement("field");
+        field.setAttribute("name", fieldName);
+        field.textContent = fieldValue;
+
+        shadow.appendChild(field);
+        newValue.appendChild(shadow);
+        return newValue;
     }
 }
