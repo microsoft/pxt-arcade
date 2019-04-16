@@ -146,44 +146,29 @@ namespace pxt.editor {
                 block.appendChild(newValue);
             }
         });
-
         /**
          * Upgrade for game.over() which went from being expandable twice to being expandable once
          */
-        U.toArray(dom.querySelectorAll("block[type=gameOver]")).forEach(block => {
-            const gameWon = getChildNode(block, "value", "name", "gameWon");
-            if (gameWon) return; // Already upgraded
+        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "0.9.11") < 0) {
+            U.toArray(dom.querySelectorAll("block[type=gameOver]")).forEach(block => {
+                const mutation = getMutation(block);
+                const value = getChildNode(block, "value", "name", "win");
+                const expansion = mutation.getAttribute("_expanded")
 
-            const mutation = getMutation(block);
-
-            const value = getChildNode(block, "value", "name", "win");
-            const expansion = mutation.getAttribute("_expanded");
-            let win = "false";
-            
-            if (expansion !== "0") {
-                // Decrement expansion level, as win is now required
-                mutation.setAttribute("_expanded", (Number(expansion) - 1) + "");
-
-                // Preserve old 'win' value
-                if (value) {
-                    const oldShadow = getChildNode(value, "shadow", "type", "toggleWinLose");
-                    if (oldShadow) {
-                        const oldField = getChildNode(oldShadow, "field", "name", "win");
-                        if (oldField) {
-                            win = oldField.textContent;
-                        }
+                if (expansion !== "0") {
+                    // Decrement expansion level, as win is now required
+                    mutation.setAttribute("_expanded", (Number(expansion) - 1) + "");
+                } else {
+                    // Remove old value to replace it default to maintain current behavior
+                    if (value) {
+                        block.removeChild(value);
                     }
+
+                    const newValue = replaceToggle("win", "toggleWinLose", "win", "false");
+                    block.appendChild(newValue);
                 }
-            }
-
-            // Remove old value to replace it with new 'gameWon'
-            if (value) {
-                block.removeChild(value);
-            }
-
-            const newValue = replaceToggle("gameWon", "toggleWinLose", "win", win);
-            block.appendChild(newValue);
-        });
+            });
+        }
     }
 
     function changeVariableToSpriteReporter(varBlockOrShadow: Element, reporterName: string) {
