@@ -360,7 +360,7 @@ class DigitCounter {
     private color: number;
     private scale: SegmentScale;
 
-    constructor(thickness: SegmentStyle = SegmentStyle.Thick, scale: SegmentScale = SegmentScale.Full, numDigits: number = 1) {
+    constructor(thickness: SegmentStyle = SegmentStyle.Thick, scale: SegmentScale = SegmentScale.Full, numDigits: number = 3) {
         this._count = 0;
         this.maxDigits = 5;
         this.color = 2
