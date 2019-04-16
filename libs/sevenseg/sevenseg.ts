@@ -429,21 +429,6 @@ class DigitCounter {
         }
     }
 
-    /**
-     * Add a one to the counter's count value
-     */
-    //% group="Counter"
-    //% blockId=sevenseg_increment block="add one to %sevenseg(myCounter)"
-    //% weight=85
-    increment() {
-        if (this._count < this.limit) {
-            this._count++;
-        } else {
-            this._count = 0;
-        }
-        this.updateDisplayValue()
-    }
-
     //% group="Counter" blockSetVariable="myCounter"
     //% blockCombine block="count"
     get count() {

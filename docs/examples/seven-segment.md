@@ -11,7 +11,7 @@ let myCounter: DigitCounter = null
 myCounter = sevenseg.createCounter(SegmentStyle.Narrow, SegmentScale.Full, 5)
 myCounter.count = 54321
 game.onUpdateInterval(100, function () {
-    myCounter.increment()
+    myCounter += 1
 })
 ```
 
