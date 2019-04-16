@@ -149,7 +149,7 @@ namespace pxt.editor {
         /**
          * Upgrade for game.over() which went from being expandable twice to being expandable once
          */
-        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "0.9.11") < 0) {
+        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "0.10.0") < 0) {
             U.toArray(dom.querySelectorAll("block[type=gameOver]")).forEach(block => {
                 const mutation = getMutation(block);
                 const value = getChildNode(block, "value", "name", "win");
