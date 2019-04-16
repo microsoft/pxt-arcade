@@ -28,6 +28,41 @@ enum SegmentScale {
     //% block="half"
     Half
 }
+
+// "ABCDEFHJLoPUY-°"
+enum SegmentCharacter {
+    //% block="A"
+    A = 10,
+    //% block="B"
+    B,
+    //% block="C"
+    C,
+    //% block="D"
+    D,
+    //% block="E"
+    E,
+    //% block="F"
+    F,
+    //% block="H"
+    H,
+    //% block="J"
+    J,
+    //% block="L"
+    L,
+    //% block="o"
+    o,
+    //% block="P"
+    P,
+    //% block="U"
+    U,
+    //% block="Y"
+    Y,
+    //% block="-"
+    Hyphen,
+    //% block="°"
+    Degree
+}
+
 /**
 * Seven segment display digits and gizmos
 */
@@ -229,18 +264,12 @@ class SevenSegDigit {
     //% group="Digits"
     //% blockId=sevenseg_setalpha block="set %sevenseg(myDigit) display value to %alphaChar"
     //% weight=40
-    setDigitAlpha(alphaChar: string) {
+    setDigitAlpha(alphaChar: SegmentCharacter) {
         const matchChars = "0123456789ABCDEFHJLoPUY-°";
-        let maxChars = Math.min(this._radix, matchChars.length)
-        if (alphaChar.length > 0) {
-            for (let i = 0; i < maxChars; i++) {
-                if (matchChars[i] == alphaChar[0] && i != this.value) {
-                    this.value = i;
-                    sevenseg.drawDigit(this.digit, this.value, this.thickness, this.scale, this.color);
-                    break;
-                }
-            }
-        }
+        if (alphaChar == this.value || alphaChar < 0 || alphaChar >= matchChars.length)
+            return;
+        this.value = alphaChar;
+        sevenseg.drawDigit(this.digit, this.value, this.thickness, this.scale, this.color);
     }
 
     //% group="Digits" blockSetVariable="myDigit"

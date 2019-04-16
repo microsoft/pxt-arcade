@@ -92,9 +92,9 @@ game.onUpdateInterval(1000, function () {
     minutes.count = time / 60 % 60
     let hourAdjust = Math.trunc(time / (60 * 60) % 60)
     if (hourAdjust > 11) {
-        ampm.setDigitAlpha("P")
+        ampm.setDigitAlpha(SegmentCharacter.P)
     } else {
-        ampm.setDigitAlpha("A")
+        ampm.setDigitAlpha(SegmentCharacter.A)
     }
     if (hourAdjust > 12) {
         hourAdjust += -12
