@@ -15,8 +15,8 @@
 @headerFont        : "Share Tech Mono", Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
 @pageFont          : "Share Tech Mono", Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
 
-@docsHeaderFont: @headerFont;
-@docsPageFont: @pageFont;
+@docsHeaderFont: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@docsPageFont: 'Helvetica Neue', Arial, Helvetica, sans-serif;
 
 @importGoogleFonts: false;
 @fontName: "Share Tech Mono";
