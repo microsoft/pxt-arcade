@@ -434,7 +434,7 @@ class DigitCounter {
      */
     //% group="Counter"
     //% blockId=sevenseg_increment block="add one to %sevenseg(myCounter)"
-    //% weight=86
+    //% weight=85
     increment() {
         if (this._count < this.limit) {
             this._count++;
@@ -456,6 +456,16 @@ class DigitCounter {
             this._count = value;
             this.updateDisplayValue()
         }
+    }
+
+    /**
+     * Get the count value
+     */
+    //% group="Counter"
+    //% blockId=sevenseggetcountervalue block="get %sevenseg(myCounter) count value"
+    //% weight=88
+    get count() {
+        return this._count;
     }
 
     private updateDisplayValue()
@@ -494,7 +504,7 @@ class DigitCounter {
      */
     //% group="Counter"
     //% blockId=sevenseg_setcountercolor block="set %sevenseg(myCounter) display color to %color=colorindexpicker"
-    //% weight=87
+    //% weight=86
     setDigitColor(color: number): void {
         this.color = color;
         for (let i = 0; i < this.numDigits; i++) {
