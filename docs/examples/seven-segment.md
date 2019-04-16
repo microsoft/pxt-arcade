@@ -9,7 +9,7 @@ Create a counter with `5` digits and add one to the current count value every `1
 ```blocks
 let myCounter: DigitCounter = null
 myCounter = sevenseg.createCounter(SegmentStyle.Narrow, SegmentScale.Full, 5)
-myCounter.setCounterValue(54321)
+myCounter.count = 54321
 game.onUpdateInterval(100, function () {
     myCounter.increment()
 })
@@ -88,8 +88,8 @@ game.onUpdateInterval(1000, function () {
     if (time >= 24 * 60 * 60) {
         time = 0
     }
-    seconds.setCounterValue(time % 60)
-    minutes.setCounterValue(time / 60 % 60)
+    seconds.count = time % 60
+    minutes.count = time / 60 % 60
     let hourAdjust = Math.trunc(time / (60 * 60) % 60)
     if (hourAdjust > 11) {
         ampm.setDigitAlpha("P")
@@ -101,7 +101,7 @@ game.onUpdateInterval(1000, function () {
     } else if (hourAdjust == 0) {
         hourAdjust = 12
     }
-    hours.setCounterValue(hourAdjust)
+    hours.count = hourAdjust
     time += 1
 })
 ```

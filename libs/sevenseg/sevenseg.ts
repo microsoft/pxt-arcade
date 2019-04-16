@@ -444,28 +444,19 @@ class DigitCounter {
         this.updateDisplayValue()
     }
 
-    /**
-     * Set the count value
-     * @param value of the digit display, eg: 0
-     */
-    //% group="Counter"
-    //% blockId=sevenseg_setcountervalueolor block="set %sevenseg(myCounter) count value to %value"
-    //% weight=89
-    setCounterValue(value: number): void {
+    //% group="Counter" blockSetVariable="myCounter"
+    //% blockCombine block="count"
+    get count() {
+        return this._count;
+    }
+
+    //% group="Counter" blockSetVariable="myCounter"
+    //% blockCombine block="count"
+    set count(value: number) {
         if (value >= 0 && value < this.limit) {
             this._count = value;
             this.updateDisplayValue()
         }
-    }
-
-    /**
-     * Get the count value
-     */
-    //% group="Counter"
-    //% blockId=sevenseggetcountervalue block="%sevenseg(myCounter) count"
-    //% weight=88
-    get count() {
-        return this._count;
     }
 
     private updateDisplayValue()
