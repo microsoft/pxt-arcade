@@ -462,7 +462,7 @@ class DigitCounter {
      * Get the count value
      */
     //% group="Counter"
-    //% blockId=sevenseggetcountervalue block="get %sevenseg(myCounter) count value"
+    //% blockId=sevenseggetcountervalue block="%sevenseg(myCounter) count"
     //% weight=88
     get count() {
         return this._count;
