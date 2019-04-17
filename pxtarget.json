@@ -308,7 +308,9 @@
         "socialOptions": {
             "twitterHandle": "msmakecode",
             "orgTwitterHandle": "MSMakeCode",
-            "hashtags": "MakeCode"
+            "hashtags": "MakeCode",
+            "discourse": "https://forum.makecode.com/",
+            "discourseCategory": "Arcade"
         },
         "blocklyOptions": {
             "grid": {
@@ -348,6 +350,7 @@
         "simScreenshotKey": "P",
         "simScreenshotMaxUriLength": 300000,
         "simGif": false,
-        "simGifKey": "R"
+        "simGifKey": "R",
+        "qrCode": true
     }
 }
