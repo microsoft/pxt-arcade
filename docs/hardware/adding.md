@@ -9,6 +9,8 @@ boards, please contact us at arcadehdw@microsoft.com.**
 
 ## ~
 
+[Debug connector information](/hardware/dbg)
+
 Arcade features the following virtual device specification:
 
 * 160x120 pixel screen
