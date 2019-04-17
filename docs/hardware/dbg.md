@@ -28,9 +28,9 @@ and connect female jumper cables on the long side.
 The header will bend a little, forcing good electrical connection.
 You usually want to plug it starting from the edge.
 
-![Debug connector](/docs/static/hardware/dbg.jpg)
+![Debug connector](/static/hardware/dbg.jpg)
 
-![Plugging it in](/docs/static/hardware/dbgplug.gif)
+![Plugging it in](/static/hardware/dbgplug.gif)
 
 
 ## Two row connector
