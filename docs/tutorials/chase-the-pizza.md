@@ -1,6 +1,6 @@
 # Chase the Pizza
 
-### ~button /#tutorial:tutorials/chase-the-pizza
+### ~button /#tutorial:/tutorials/chase-the-pizza
 
 Try this tutorial!
 
