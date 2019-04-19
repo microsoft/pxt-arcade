@@ -95,7 +95,7 @@ let circle: Image = null
 circle = image.create(64, 64)
 circleSprite = sprites.create(circle, 0)
 
-forever(function () {
+game.forever(function () {
     circle.fill(6)
     d = 3 - 2 * radius
     x = 0

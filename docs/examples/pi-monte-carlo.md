@@ -142,7 +142,7 @@ game.onUpdateInterval(100, function () {
     delay += 1
 })
 
-forever(function () {
+game.forever(function () {
     // A simple Monte Carlo simulation to approximate Pi
     //
     while (j < dots && simulate) {
