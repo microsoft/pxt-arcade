@@ -1,6 +1,6 @@
 # Simple Maze
 
-### ~button /#tutorial:tutorials/simple-maze
+### ~button /#tutorial:/tutorials/simple-maze
 
 Try this tutorial!
 

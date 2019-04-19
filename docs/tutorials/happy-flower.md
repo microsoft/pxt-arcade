@@ -1,6 +1,6 @@
 # Happy Flower
 
-### ~button /#tutorial:tutorials/happy-flower
+### ~button /#tutorial:/tutorials/happy-flower
 
 Try this tutorial!
 
