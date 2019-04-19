@@ -103,6 +103,19 @@
                         "keysdy": "keydy"
                     }
                 }
+            ], "0.0.0 - 0.11.0": [
+                {
+                    "type": "api",
+                    "map": {
+                        "forever(": "game.forever("
+                    }
+                },
+                {
+                    "type": "blockId",
+                    "map": {
+                        "forever": "gameForever"
+                    }
+                }
             ]
         }
     },
