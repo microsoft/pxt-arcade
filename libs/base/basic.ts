@@ -14,10 +14,10 @@ function pauseUntil(condition: () => boolean, timeOut?: number): void {
  * Repeats the code forever in the background. On each iteration, allows other codes to run.
  * @param body code to execute
  */
-//% help=loops/forever weight=100 afterOnStart=true blockNamespace="loops"
+//% help=loops/forever weight=100 afterOnStart=true blockNamespace="game"
 //% blockId=forever block="forever" blockAllowMultiple=1 deprecated=true
 function forever(a: () => void): void {
-    loops.forever(a);
+    game.forever(a);
 }
 
 /**
