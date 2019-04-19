@@ -107,7 +107,7 @@
                 {
                     "type": "api",
                     "map": {
-                        "forever(": "game.forever("
+                        "forever\\(": "game.forever("
                     }
                 },
                 {
