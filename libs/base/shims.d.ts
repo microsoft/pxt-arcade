@@ -181,6 +181,12 @@ declare namespace control {
     function heapDump(): void;
 
     /**
+     * Force GC and halt waiting for debugger to do a full heap dump.
+     */
+    //% shim=control::setDebugFlags
+    function setDebugFlags(flags: int32): void;
+
+    /**
      * Return true if profiling is enabled in the current build.
      */
     //% shim=control::profilingEnabled

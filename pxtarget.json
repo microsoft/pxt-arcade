@@ -204,10 +204,9 @@
                 "stackAlign": 2
             },
             "compileService": {
-                "buildEngine": "dockermake",
-                "dockerImage": "multiarch/crossbuild",
-                "dockerArgs": ["-e", "CROSS_TRIPLE=osx"],
-                "serviceId": "vmosx"
+                "buildEngine": "dockercross",
+                "dockerImage": "pext/crossbuild",
+                "serviceId": "crossbuild"
             }
         }
     },
