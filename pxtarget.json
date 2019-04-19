@@ -206,7 +206,7 @@
             "compileService": {
                 "buildEngine": "dockermake",
                 "dockerImage": "multiarch/crossbuild",
-                "dockerArgs": ["-e", "CROSS_TRIPLE=linux"],
+                "dockerArgs": ["-e", "CROSS_TRIPLE=osx"],
                 "serviceId": "vmosx"
             }
         }
