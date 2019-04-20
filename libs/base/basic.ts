@@ -49,4 +49,8 @@ namespace basic {
     export function pause(millis: number) {
         loops.pause(millis);
     }
+
+    export function forever(a: () => void) {
+        game.forever(a);
+    }
 }
