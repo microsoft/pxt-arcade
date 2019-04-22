@@ -150,7 +150,7 @@ game.onUpdateInterval(2000, function () {
         minus.setDigitColor(7)
     }
 })
-ontroller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     celsius = !(celsius)
 })
 ```
