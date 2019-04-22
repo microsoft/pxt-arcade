@@ -106,7 +106,7 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Temerature Meter
+## Temperature Meter
 
 Make a temperature meter that shows the average Summer temperature on the coast of Antarctica. Switch between Celsius and Fahrenheit when button **A** is pressed.
 
