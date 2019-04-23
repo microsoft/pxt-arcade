@@ -9,3 +9,4 @@ projects/
 packaged
 gh-pages
 _locales
+package-lock.json
