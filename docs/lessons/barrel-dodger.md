@@ -279,7 +279,7 @@ enum SpriteKind {
     Enemy
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    game.over()
+    game.over(false)
 })
 ```
 
