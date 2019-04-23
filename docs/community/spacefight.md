@@ -1,7 +1,8 @@
 # SpaceFight!
+
 https://makecode.com/_e2LM0JKsiFee
 
-```blocks
+```typescript
 enum SpriteKind {
     Player,
     Projectile,
@@ -697,4 +698,11 @@ game.onUpdateInterval(5000, function () {
         player2Torpedoes += 1
     }
 })
+```
+
+
+```package
+animation
+pxt-arcade-display-strings=github:robo-technical-group/pxt-arcade-display-strings#v1.0.10
+pxt-arcade-image-transform=github:robo-technical-group/pxt-arcade-image-transform#v1.0.8
 ```
