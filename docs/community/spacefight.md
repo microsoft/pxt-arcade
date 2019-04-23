@@ -708,7 +708,7 @@ pxt-arcade-image-transform=github:robo-technical-group/pxt-arcade-image-transfor
 
 ## About the authors
 
-This game was contributed by [Alex Kulcsar](http://www.alexkulcsar.com),
+This game was contributed by [Alex Kulcsar](https://github.com/alex-kulcsar),
 a software engineer and educator from Dexter, Michigan.
 
 The game itself was originally introduced in a post on the
