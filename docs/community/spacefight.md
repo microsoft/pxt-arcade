@@ -1,7 +1,8 @@
 # SpaceFight!
+
 https://makecode.com/_e2LM0JKsiFee
 
-```blocks
+```typescript
 enum SpriteKind {
     Player,
     Projectile,
@@ -698,3 +699,17 @@ game.onUpdateInterval(5000, function () {
     }
 })
 ```
+
+```package
+animation
+pxt-arcade-display-strings=github:robo-technical-group/pxt-arcade-display-strings#v1.0.10
+pxt-arcade-image-transform=github:robo-technical-group/pxt-arcade-image-transform#v1.0.8
+```
+
+## About the authors
+
+This game was contributed by [Alex Kulcsar](https://github.com/alex-kulcsar),
+a software engineer and educator from Dexter, Michigan.
+
+The game itself was originally introduced in a post on the
+[MakeCode Form](https://forum.makecode.com/t/presenting-spacewar/107).
