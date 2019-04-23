@@ -13,6 +13,11 @@ Games submitted by the MakeCode community.
         "cardType": "codeExample",
         "imageUrl": "/static/community/spacefight.png",
         "largeImageUrl": "/static/community/spacefight.gif"
+    },
+    {
+        "name": "Add Game",
+        "description": "Are you looking to contribute your own game? These instructions will explain how to submit your game for the chance to appear in this carousel.",
+        "url": "/game-submission"
     }
 ]
 ```
