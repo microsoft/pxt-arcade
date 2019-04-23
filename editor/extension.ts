@@ -142,21 +142,33 @@ namespace pxt.editor {
                     block.removeChild(value);
                 }
 
-                const newValue = document.createElement("value");
-                newValue.setAttribute("name", "wall");
-
-                const shadow = document.createElement("shadow");
-                shadow.setAttribute("type", "toggleOnOff");
-
-                const field = document.createElement("field");
-                field.setAttribute("name", "on");
-                field.textContent = "false";
-
-                shadow.appendChild(field);
-                newValue.appendChild(shadow);
+                const newValue = replaceToggle("wall", "toggleOnOff", "on", "false");
                 block.appendChild(newValue);
             }
         });
+        /**
+         * Upgrade for game.over() which went from being expandable twice to being expandable once
+         */
+        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "0.10.0") < 0) {
+            U.toArray(dom.querySelectorAll("block[type=gameOver]")).forEach(block => {
+                const mutation = getMutation(block);
+                const value = getChildNode(block, "value", "name", "win");
+                const expansion = mutation.getAttribute("_expanded")
+
+                if (expansion !== "0") {
+                    // Decrement expansion level, as win is now required
+                    mutation.setAttribute("_expanded", (Number(expansion) - 1) + "");
+                } else {
+                    // Remove old value to replace it default to maintain current behavior
+                    if (value) {
+                        block.removeChild(value);
+                    }
+
+                    const newValue = replaceToggle("win", "toggleWinLose", "win", "false");
+                    block.appendChild(newValue);
+                }
+            });
+        }
     }
 
     function changeVariableToSpriteReporter(varBlockOrShadow: Element, reporterName: string) {
@@ -211,5 +223,21 @@ namespace pxt.editor {
         };
 
         return Promise.resolve<pxt.editor.ExtensionResult>(res);
+    }
+
+    function replaceToggle(valueName: string, shadowType: string, fieldName: string, fieldValue: string) {
+        const newValue = document.createElement("value");
+        newValue.setAttribute("name", valueName);
+
+        const shadow = document.createElement("shadow");
+        shadow.setAttribute("type", shadowType);
+
+        const field = document.createElement("field");
+        field.setAttribute("name", fieldName);
+        field.textContent = fieldValue;
+
+        shadow.appendChild(field);
+        newValue.appendChild(shadow);
+        return newValue;
     }
 }

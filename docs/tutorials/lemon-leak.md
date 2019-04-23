@@ -1,6 +1,6 @@
 # Lemon Leak
 
-### ~button /#tutorial:tutorials/lemon-leak
+### ~button /#tutorial:/tutorials/lemon-leak
 
 Try this tutorial!
 

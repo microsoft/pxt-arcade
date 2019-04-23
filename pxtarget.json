@@ -27,9 +27,9 @@
         "libs/corgio",
         "libs/darts",
         "libs/hw",
-        "libs/hw---rpi",
         "libs/hw---stm32f401",
         "libs/hw---samd51",
+        "libs/hw---rpi",
         "libs/sevenseg",
         "libs/screen",
         "libs/screen---st7735",
@@ -292,7 +292,9 @@
         "socialOptions": {
             "twitterHandle": "msmakecode",
             "orgTwitterHandle": "MSMakeCode",
-            "hashtags": "MakeCode"
+            "hashtags": "MakeCode",
+            "discourse": "https://forum.makecode.com/",
+            "discourseCategory": "Arcade"
         },
         "blocklyOptions": {
             "grid": {
@@ -332,6 +334,7 @@
         "simScreenshotKey": "P",
         "simScreenshotMaxUriLength": 300000,
         "simGif": false,
-        "simGifKey": "R"
+        "simGifKey": "R",
+        "qrCode": true
     }
 }

@@ -125,7 +125,7 @@ sprites.onOverlap(SpriteKind.Ball, SpriteKind.Player, function (sprite, otherSpr
 })
 info.onCountdownEnd(function () {
     playing = false
-    game.over()
+    game.over(false)
 })
 sprites.onDestroyed(SpriteKind.Ball, function (sprite) {
     for (let j = 0; j <= bouncers.length - 1; j++) {

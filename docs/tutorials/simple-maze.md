@@ -1,6 +1,6 @@
 # Simple Maze
 
-### ~button /#tutorial:tutorials/simple-maze
+### ~button /#tutorial:/tutorials/simple-maze
 
 Try this tutorial!
 
@@ -360,12 +360,24 @@ game.onUpdate(function () {
 
 ## Step 10
 
-Change the ``<`` condition in ``||logic:0 < 0||`` to ``<=``. Find the ``||sprites:mySprite x (horizontal position)||`` block and put it in where the first `0` is. Click the dropdown and select ``left``. Put a ``||game:game over||`` inside of ``||logic:if then||``.
+Find the ``||sprites:mySprite x||`` block and put it in where the first `0` is. Click the dropdown and select ``left``.
 
 ```blocks
 let mySprite: Sprite = null
 game.onUpdate(function () {
-    if (mySprite.left <= 0) {
+    if (mySprite.left < 0) {
+    }
+})
+```
+
+## Step 11
+
+Put a ``||game:game over||`` inside of ``||logic:if then||``. Click the **(+)** symbol and click on the ``LOSE`` button to make it say ``WIN``.
+
+```blocks
+let mySprite: Sprite = null
+game.onUpdate(function () {
+    if (mySprite.left < 0) {
         game.over(true)
     }
 })
