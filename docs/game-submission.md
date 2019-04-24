@@ -14,13 +14,13 @@ If the game is approved, it will be linked back to your GitHub user account.
 
 ## Submission steps
 
-### 1 - Fork Arcade
+### 1 - Open a submission file
 
-Make your own fork of the  [Microsoft/pxt-arcade](https://github.com/Microsoft/pxt-arcade/fork) repository.
+Use this **[community](https://github.com/Microsoft/pxt-arcade/new/master/docs/community)** folder link to add to the document tree for [Microsoft/pxt-arcade](https://github.com/Microsoft/pxt-arcade). You will be asked to fork the repository if you don't have a fork of it already. This will allow you to make a proposed file change in which you will add your game submission.
 
-### 2 - Markdown game file
+### 2 - Markdown file name
 
-The code for your game is submitted as a markdown document. In your forked copy of [Microsoft/pxt-arcade](https://github.com/Microsoft/pxt-arcade), go to the ``/docs/community`` folder. Click on **Create new file** and GitHub will provide an editor for you to create your new file. In the file path, insert the name for the new markdown (**.md**) file. If your game is named ``Walker``, then the new game file is ``walker.md``. 
+The code for your game is submitted as a markdown document. In your forked copy of [Microsoft/pxt-arcade](https://github.com/Microsoft/pxt-arcade), you'll be in the ``/docs/community`` folder. GitHub provides an editor for you to create your new file here. At the end of the file path, insert the name for the new markdown (**.md**) file. If your game is named ``Walker``, then the new game file is ``walker.md``. 
 
 ### 3 - Create a title and description
 
@@ -71,7 +71,7 @@ info.changeScoreBy(10)
 
 ### 6 - Commit your submission file
 
-When you're finished inserting the game code into the GitHub editor, scroll to the bottom of the page. Add a commit description for your new submission and select ``Create a new branch for this commit``. You can make a commit name there or just use the default one. Click the **Propose new file** button.
+When you're finished inserting the game code into the GitHub editor, scroll to the bottom of the page. Add a commit description for your new submission. Also, you can make a commit branch name there or just use the default one. Click the **Propose new file** or the **Commit new file** button.
 
 Before you commit, make sure you've inserted all of the necessary parts for the submission file. Here's an example of a complete submission file for the ``Walker`` game:
 
