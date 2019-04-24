@@ -325,10 +325,10 @@
         "scriptManager": true,
         "saveInMenu": false,
         "debugger": true,
+        "importExtensionFiles": true,
         "experiments": [
             "print",
             "python",
-            "importExtensionFiles",
             "debugExtensionCode"
         ],
         "extendEditor": true,
