@@ -1,4 +1,4 @@
-loops# Review: Side Scroller
+# Review: Side Scroller
 
 A "Side-scroller" is a common form of game based off the character primarily moving in the ``x`` direction, and is viewed from the side.
 
