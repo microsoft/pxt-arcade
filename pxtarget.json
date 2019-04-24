@@ -328,7 +328,8 @@
         "experiments": [
             "print",
             "python",
-            "importExtensionFiles"
+            "importExtensionFiles",
+            "debugExtensionCode"
         ],
         "extendEditor": true,
         "simScreenshot": true,
