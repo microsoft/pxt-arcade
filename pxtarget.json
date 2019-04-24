@@ -328,7 +328,9 @@
         "debugger": true,
         "experiments": [
             "print",
-            "python"
+            "python",
+            "importExtensionFiles",
+            "debugExtensionCode"
         ],
         "extendEditor": true,
         "simScreenshot": true,
