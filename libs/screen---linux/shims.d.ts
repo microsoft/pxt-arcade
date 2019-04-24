@@ -15,7 +15,7 @@ declare interface Image {
     height: int32;
 
     /**
-     * True iff the image is monochromatic (black and white)
+     * True if the image is monochromatic (black and white)
      */
     //% property shim=ImageMethods::isMono
     isMono: boolean;
