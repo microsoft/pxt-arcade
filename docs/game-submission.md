@@ -22,17 +22,16 @@ If the game is approved, it will be linked back to your GitHub user account.
 
 ## Submission steps
 
-1. fork the [Microsoft/pxt-arcade](https://github.com/Microsoft/pxt-arcade) repository
+1. Fork the [Microsoft/pxt-arcade](https://github.com/Microsoft/pxt-arcade) repository
 
-2. create a new **.ts** file under ``/docs/community`` and name it after your game.
+2. Create a new **.md** file under ``/docs/community`` and name it after your game.
 
-3. paste the shared URL in this file.
+3. Paste the shared URL in this file.
 
-4. paste the **JavaScript** source code into this file. In the editor, click on the **JavaScript** toggle and copy the entire text.
+4. Paste the **JavaScript** source code into this file. In the editor, click on the **JavaScript** toggle and copy the entire text.
 
-5. commit your changes
+5. Commit your changes
 
-6. click on **create new pull request** and fill out the template
+6. Click on **create new pull request** and fill out the template
 
-7. click on **create new pull request** to finalize your 
-submission
+7. Click on **create new pull request** to finalize your submission

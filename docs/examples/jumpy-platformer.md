@@ -717,8 +717,26 @@ function initializeFlierAnimations() {
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
     `);
-    flierIdle = animation.createAnimation(ActionKind.Idle, 100);
     flierFlying.addAnimationFrame(img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . f f f f f f f . . . .
+        . . . . f 4 4 4 4 4 4 4 f . . .
+        . . . f 4 5 5 4 4 4 5 5 4 f . .
+        . f . f 4 4 4 5 4 5 4 4 4 f . f
+        . f f 4 4 4 4 4 4 4 4 4 4 4 f f
+        . f 4 4 4 4 4 5 4 5 4 4 4 4 4 f
+        . f 4 4 4 4 4 5 4 5 4 4 4 4 4 f
+        . f f 4 4 4 4 4 4 4 4 4 4 4 f f
+        . . . f 4 4 5 5 5 5 5 4 4 f . .
+        . . . . f 4 5 4 4 4 5 4 f . . .
+        . . . . . f f f f f f f . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `);
+    flierIdle = animation.createAnimation(ActionKind.Idle, 100);
+    flierIdle.addAnimationFrame(img`
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .

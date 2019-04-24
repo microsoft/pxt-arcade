@@ -41,6 +41,12 @@
         "name": "Hardware",
         "url": "/hardware",
         "imageUrl": "/static/hardware/ghiarcade.jpg"
+    },
+    {
+        "name": "Community",
+        "url": "/community",
+        "imageUrl": "/static/community/spacefight.png",
+        "largeImageUrl": "/static/community/spacefight.gif"
     }
 ]
 ```
@@ -53,5 +59,6 @@
 [Game Design Concepts](/concepts),
 [Lessons](/lessons),
 [Courses](/courses),
-[Hardware](/hardware)
+[Hardware](/hardware),
+[Community](/community)
 
