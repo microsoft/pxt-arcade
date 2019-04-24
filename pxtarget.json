@@ -325,9 +325,11 @@
         "scriptManager": true,
         "saveInMenu": false,
         "debugger": true,
+        "importExtensionFiles": true,
         "experiments": [
             "print",
-            "python"
+            "python",
+            "debugExtensionCode"
         ],
         "extendEditor": true,
         "simScreenshot": true,
