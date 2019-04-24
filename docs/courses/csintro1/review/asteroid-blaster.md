@@ -28,8 +28,8 @@ Add the ability for the player to fire lasers
 
 Add asteroids for the player to avoid, that are created more quickly as time goes on
 
-1. Create a ``||game:forever||`` loop
-2. Inside the ``||game:forever||`` loop, create a projectile with an image of an asteroid. Change it to be of ``||sprites:kind||`` ``Asteroid``
+1. Create a ``||loops:forever||`` loop
+2. Inside the ``||loops:forever||`` loop, create a projectile with an image of an asteroid. Change it to be of ``||sprites:kind||`` ``Asteroid``
 3. Change both the ``x`` and ``y`` velocities of the ``Asteroid`` to be ``||math:random||`` values between -50 and 50
 4. After creating the ``Asteroid``, use ``||loops:pause||`` to pause for `2000 - (30 x` ``||info:score||`` `)` ms. As the player scores **more points**, the time between asteroids being created **decreases**
 

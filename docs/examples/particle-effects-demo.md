@@ -202,7 +202,7 @@ myDemonstrations.push(new demonstrations.BubbleConfetti());
 myDemonstrations.push(new demonstrations.Spinner());
 myDemonstrations.push(new demonstrations.Fire());
 
-game.forever(() => {
+forever(() => {
     mySources
         .forEach(src => src.destroy());
 
