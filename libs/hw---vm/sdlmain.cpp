@@ -2,9 +2,9 @@
 #include <SDL.h>
 #include <stdio.h>
 
-#if defined( __MACOSX__ )
+#if defined(__MACOSX__)
 #define SONAME "libpxt.dylib"
-#elif defined( __WINDOWS__)
+#elif defined(__WINDOWS__)
 #define SONAME "pxt.dll"
 #else
 #define SONAME "libpxt.so"
@@ -85,25 +85,22 @@ typedef void (*vm_start_t)(const char *fn);
         exit(1);                                                                                   \
     }
 
-
 void *loadPXTLib(char *argv[]) {
-    char prevDir[PATH_MAX];
-    getwd(prevDir);
     const char *exename = argv[0];
     if (exename == NULL || !strchr(exename, '/'))
         exename = "./vm";
-    char namebuf[strlen(exename)];
+    int solen = strlen(exename) + strlen(SONAME);
+    char namebuf[solen + 1];
     strcpy(namebuf, exename);
-    *strrchr(namebuf, '/') = 0;
     strcpy(strrchr(namebuf, '/') + 1, SONAME);
 
-    printf("so=%s",namebuf);
-
-    void *vmDLL = SDL_LoadObject(namebuf+2);
+    void *vmDLL = SDL_LoadObject(namebuf);
     if (!vmDLL) {
         fprintf(stderr, "can't load %s SDL_Error: %s\n", namebuf, SDL_GetError());
         exit(1);
     }
+
+    return vmDLL;
 }
 
 extern "C" int main(int argc, char *argv[]) {
@@ -118,8 +115,9 @@ extern "C" int main(int argc, char *argv[]) {
 
     SDL_CHECK(SDL_Init(SDL_INIT_VIDEO) >= 0);
 
-    SDL_Window *window = SDL_CreateWindow("MakeCode Arcade64", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-                              SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+    SDL_Window *window =
+        SDL_CreateWindow("MakeCode Arcade64", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+                         SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 
     SDL_CHECK(window != NULL);
 
