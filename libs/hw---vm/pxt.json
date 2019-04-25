@@ -2,6 +2,7 @@
     "name": "hw---vm",
     "description": "VM",
     "files": [
+        "sdlmain.cpp",
         "config.ts",
         "enums.d.ts",
         "shims.d.ts",
