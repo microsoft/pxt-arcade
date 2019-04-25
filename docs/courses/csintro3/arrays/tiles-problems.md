@@ -167,7 +167,7 @@ scene.setTileMap(img`
     1 1 1 1 1 1 1 1 1 1 
 `);
 
-loops.forever(function () {
+forever(function () {
 
 });
 ```
@@ -176,10 +176,10 @@ This contains the three things you need to get started:
 an ``||images:image||`` of fire, a ``||scene:tile map||`` with a row
 of black tiles set for the trap, and a ``||loops:forever||`` loop.
 
-The ``||loops:loops.forever||`` at the end will run in the background, forever.
+The ``||loops:forever||`` at the end will run in the background, forever.
 This is where the trap will be implemented.
 
-In ``||loops:loops.forever||``, use ``||scene:scene.getTilesByType||`` to obtain
+In ``||loops:forever||``, use ``||scene:scene.getTilesByType||`` to obtain
 an array of all the black ``||scene:tiles||``.
 Iterate over each of these in a loop.
 In this loop, 
