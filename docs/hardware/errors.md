@@ -183,7 +183,6 @@ but the easiest thing to do is make sure ``||sprites:sprites||`` are destroyed w
 the ``||sprites:auto destroy||`` ``||sprites:SpriteFlag||`` can be a good first step,
 as it will get rid of the ``||sprites:sprite||`` when it goes off screen.
 
-
 ## 981: Failed cast on undefined #981
 
 This error is very similar to [error #989](#989) -
