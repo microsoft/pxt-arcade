@@ -1,16 +1,4 @@
 /**
- * Busy wait for a condition to be true
- * @param condition condition to test for
- * @param timeOut if positive, maximum duration to wait for in milliseconds
- */
-//% blockId="pxt_pause_until"
-function pauseUntil(condition: () => boolean, timeOut?: number): void {
-    if (!condition || condition()) return; // optimistic path
-    if (!timeOut) timeOut = 0;
-    control.__queuePollEvent(timeOut, condition, undefined);
-}
-
-/**
  * Repeats the code forever in the background. On each iteration, allows other codes to run.
  * @param body code to execute
  */
