@@ -28,6 +28,14 @@ Try computer graphics methods and visual math concepts as Arcade games.
 ```codecard
 [
 {
+  "name": "Sorting Algorithms",
+  "description": "A visualization of different sorting algorithms",
+  "url":"/examples/sorting-algorithms",
+  "cardType": "codeExample",
+  "imageUrl": "/static/examples/sorting-algorithms.png",
+  "largeImageUrl": "/static/examples/sorting-algorithms.gif"
+},
+{
   "name": "Pi Monte Carlo",
   "description": "Approximate Pi with the Monte Carlo method",
   "url": "/examples/pi-monte-carlo",
