@@ -9,7 +9,7 @@ the device might run out of memory or run slower than in the simulator.
 When a program crashes on hardware,
 you will usually see a three-digit error code accompanied by a frowny face.
 
-## \#989: Failed cast on null
+## 989: Failed cast on null #989
 
 This error typically occurs when trying to use something that is not yet created (non-existant object) -
 for example, setting the position of a sprite that does not yet exist.
@@ -122,7 +122,7 @@ In this case, the game will crash if the player does not press the ``||controlle
 within the first 2 seconds of the game. This is because the second ``||sprites:sprite||``
 wasn't created before being used with the ``||sprites:set position||`` block.
 
-## \#021: Out of memory: too many objects
+## 021: Out of memory: too many objects #021
 
 This error occurs when the device runs out of memory for objects.
 This can occur pretty easily on hardware since
@@ -183,7 +183,7 @@ but the easiest thing to do is make sure ``||sprites:sprites||`` are destroyed w
 Setting the ``||sprites:auto destroy||`` ``||sprites:SpriteFlag||`` can be a good first step
 as it will get rid of the ``||sprites:sprite||`` when it goes off screen.
 
-## \#981: Failed cast on undefined
+## 981: Failed cast on undefined #981
 
 This error is very similar to [error #989](#989) -
 it occurs when a value is ``undefined`` and you try to use it.
@@ -203,7 +203,7 @@ console.log("" + myTile)
 In this case, ``||scene:tile||`` evaluates to ``undefined``,
 because there is no ``||scene:tile map||`` created to get a ``||scene:tile||`` from.
 
-## \#020: Out of memory: too many fibers
+## 020: Out of memory: too many fibers #020
 
 This error occurs when the system runs out of memory for events or fibers.
 This is unlikely to occur in blocks, because the structure of blocks makes it unlikey that you'll create
