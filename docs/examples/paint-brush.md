@@ -1,6 +1,6 @@
 # Paint Brush
 
-Creates a unique 'work of art' by drawing random brush strokes across the screen.
+Creates a unique 'work of art' by painting random brush strokes across the screen.
 
 Press ``||controller:A||`` to switch the size of the brush from small to big.
 
