@@ -1,17 +1,17 @@
 # Errors on Hardware
 
 When developing games, you might run into bugs that cause your game to crash.
-In the browser, these errors can be identified by using the debugger,
-or reading the messages displayed with the error.
+In the browser, these errors can be identified by using the debugger
+or by reading the messages displayed along with the error.
 
 Occasionally, you might run into errors that only occur on physical devices - for example,
-the device might run out of memory, or run slower than in the simulator. 
+the device might run out of memory or run slower than in the simulator. 
 When a program crashes on hardware,
 you will usually see a three-digit error code accompanied by a frowny face.
 
-## 989: Failed cast on null #989
+## \#989: Failed cast on null
 
-This error typically occurs when trying to use something that has not been created yet -
+This error typically occurs when trying to use something that is not yet created (non-existant object) -
 for example, setting the position of a sprite that does not yet exist.
 
 ```blocks
@@ -62,11 +62,11 @@ mySprite2 = sprites.create(img`
 ```
 
 In this case, the fix is fairly simple;
-just move the ``||sprites:set position||`` block to be after the second ``||sprites:sprite||``
+just move the ``||sprites:set position||`` block to be somewhere after the place where the second ``||sprites:sprite||``
 is created.
 
 This can be hard to identify when games get more and more complex;
-for example, you might be relying on something existing that may depend on the user input.
+for example, your code might rely on an object that is created by user input.
 
 ```blocks
 enum SpriteKind {
@@ -119,16 +119,16 @@ mySprite2.setPosition(0, 0)
 ```
 
 In this case, the game will crash if the player does not press the ``||controller:A||`` button
-within the first 2 seconds of the game, because the second ``||sprites:sprite||``
-will not be created in that situation.
+within the first 2 seconds of the game. This is because the second ``||sprites:sprite||``
+wasn't created before being used with the ``||sprites:set position||`` block.
 
-## 021: Out of memory: too many objects #021
+## \#021: Out of memory: too many objects
 
 This error occurs when the device runs out of memory for objects.
-This can occur pretty easily on hardware,
-as the devices that run these games often have much lower memory than a computer;
-for example, the minimum RAM expected to run @boardname@ games is only 96 kilobytes,
-and each screen-sized image is approximately 10 kilobytes alone.
+This can occur pretty easily on hardware since
+the devices that run these games often have much less memory than a computer.
+For example, the minimum RAM expected to run an @boardname@ game is only 96 kilobytes
+and each screen-sized image is already almost 10 kilobytes just by itself.
 
 ```blocks
 function randomRectangle() {
@@ -151,49 +151,49 @@ game.onUpdateInterval(200, function () {
 })
 ```
 
-In the example above, each time the background image is changed,
+In the example above, every time the background image is changed,
 the image is stored in an ``||arrays:array||``.
 This will likely behave fine on your computer,
-but will crash almost immediately on your device.
+but will probably crash almost immediately on your device.
 This is because modern computers typically have RAM measured in gigabytes,
 each of which is one million kilobytes.
 
-Fixing this error will depend upon the device you are creating your game for,
+Fixing this error will depend upon the capabilities/capacities of the device you are creating the game for,
 as well as what exactly is taking up too much memory.
 Often, this will be due to the creation of too many ``||sprites:sprites||``
-or ``||images:images||`` at once.
+or ``||images:images||`` at any one time.
 
 There are a few general guidelines to minimize the memory footprint of your games:
 
-* **Compute is cheap**: if you have the choice to store a value created in your program
+* **Compute is cheap**: you might have the choice to store a value created in your program
 or recomputing it as needed.
 You should consider how long it takes to recreate the values you store (and test it!) - 
-processors on the devices are often powerful enough to recreate these images fairly quickly,
-which could easily save 10% of the devices entire memory per image at no perceptible performance penalty.
-* **Prefer pre-drawn images**: if you draw an image in the image editor
-instead of modifying it when the game is running,
-the image will be stored with the code in flash memory,
+processors on the devices are often powerful enough to recreate these images fairly quickly.
+That could easily save 10% of the device's entire memory per image with no noticeable performance penalty.
+* **Prefer pre-drawn images**: if you draw the image in the image editor
+rather than modifying it when the game is running,
+the image will be stored with the code in flash memory
 and won't take up as much space at runtime. For example,
-if you want the player to switch from green to red,
-consider changing the color in the image editor and storing it as a separate image,
-rather than using ``||images:clone||`` and ``||images:change color in picture from .. to ..||``.
+if you want the image in the player sprite to switch from green to red,
+consider changing the color in the image editor and storing it as a separate image.
+Less runtime memory is needed using this method rather than of using ``||images:clone||`` and ``||images:change color in picture from .. to ..||``.
 * **Leave it behind**: if an object won't be used anymore, get rid of it!
-This can often be easier done in JavaScript than in blocks,
-but the easiest thing to do is make sure ``||sprites:sprites||`` are destroyed when they're no longer needed - 
-the ``||sprites:auto destroy||`` ``||sprites:SpriteFlag||`` can be a good first step,
+This is often easier done in JavaScript than in blocks,
+but the easiest thing to do is make sure ``||sprites:sprites||`` are destroyed when they're no longer needed. 
+Setting the ``||sprites:auto destroy||`` ``||sprites:SpriteFlag||`` can be a good first step
 as it will get rid of the ``||sprites:sprite||`` when it goes off screen.
 
-## 981: Failed cast on undefined #981
+## \#981: Failed cast on undefined
 
 This error is very similar to [error #989](#989) -
 it occurs when a value is ``undefined`` and you try to use it.
 
 This error code is more common when developing in JavaScript than in Blocks.
 In JavaScript, when you declare a variable without assigning it a value,
-the value will be left as ``undefined``,
-but in blocks these objects will often be initialized to ``null`` instead.
+the value is left as ``undefined``.
+In blocks these objects will often be initialized to ``null`` instead.
 
-This can occur when using the result of a block or function that evaluated to undefined.
+This can occur when using the result of a block or function that had no value to evaluate to.
 
 ```blocks
 let myTile = scene.getTile(0, 0)
@@ -203,11 +203,11 @@ console.log("" + myTile)
 In this case, ``||scene:tile||`` evaluates to ``undefined``,
 because there is no ``||scene:tile map||`` created to get a ``||scene:tile||`` from.
 
-## 020: Out of memory: too many fibers #020
+## \#020: Out of memory: too many fibers
 
 This error occurs when the system runs out of memory for events or fibers.
-This is unlikely to occur in blocks, as there are not as many opportunities to create
-an increasing number of events; in JavaScript, however, you can nest events or create them in loops.
+This is unlikely to occur in blocks, because the structure of blocks makes it unlikey that you'll create
+an increasing number of events. In JavaScript, however, you can nest events or create them in loops.
 
 ```typescript
 let count = 0;
