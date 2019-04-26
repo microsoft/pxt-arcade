@@ -18,7 +18,7 @@
         "name": "JavaScript Games",
         "url": "/javascript-games",
         "imageUrl": "/static/examples/planet-putt-putt.png",
-        "largeImageUrl": "/static/examples/particle-effects-demo.gif"
+        "largeImageUrl": "/static/examples/darker-duck.gif"
     },
     {
         "name": "Game Design Concepts",
