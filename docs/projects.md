@@ -45,8 +45,8 @@
     {
         "name": "Community",
         "url": "/community",
-        "imageUrl": "/static/community/spacefight.png",
-        "largeImageUrl": "/static/community/spacefight.gif"
+        "imageUrl": "/static/community/spacefight/spacefight.png",
+        "largeImageUrl": "/static/community/spacefight/spacefight.gif"
     }
 ]
 ```
