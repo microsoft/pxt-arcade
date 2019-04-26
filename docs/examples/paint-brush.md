@@ -1,6 +1,7 @@
 # Paint Brush
 
-Generates random 'art' by drawing across the screen
+Generates random 'art' by drawing across the screen.
+Press ``||controller:A||`` to change the size of the brush.
 
 ```blocks
 enum SpriteKind {
@@ -35,11 +36,17 @@ let mySprite = sprites.create(img`
 let lastX = myPointer.left;
 let lastY = myPointer.bottom;
 let color = 1;
+let large = false;
 myPointer.setFlag(SpriteFlag.BounceOnWall, true);
 
 game.onUpdate(function () {
     let background = scene.backgroundImage();
     background.drawLine(lastX, lastY, myPointer.left, myPointer.bottom, color);
+    if (large) {
+        background.drawLine(lastX + 1, lastY, myPointer.left, myPointer.bottom, color);
+        background.drawLine(lastX, lastY + 1, myPointer.left, myPointer.bottom, color);
+        background.drawLine(lastX + 1, lastY + 1, myPointer.left, myPointer.bottom, color);
+    }
     lastX = myPointer.left;
     lastY = myPointer.bottom;
     mySprite.left = myPointer.left;
@@ -50,5 +57,9 @@ game.onUpdateInterval(2000, function () {
     myPointer.ax = Math.randomRange(0 - ACCELERATION, ACCELERATION);
     myPointer.ay = Math.randomRange(0 - ACCELERATION, ACCELERATION);
     color = Math.randomRange(0, 15);
+});
+
+controller.A.onEvent(ControllerButtonEvent.Pressed, () => {
+    large = !large;
 });
 ```
