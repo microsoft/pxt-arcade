@@ -1,7 +1,8 @@
 # Paint Brush
 
-Generates random 'art' by drawing across the screen.
-Press ``||controller:A||`` to change the size of the brush.
+Creates a unique 'work of art' by drawing random brush strokes across the screen.
+
+Press ``||controller:A||`` to switch the size of the brush from small to big.
 
 ```blocks
 enum SpriteKind {
