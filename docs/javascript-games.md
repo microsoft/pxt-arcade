@@ -21,6 +21,14 @@ Here are some fun programs for your @boardname@!
   "imageUrl": "/static/examples/cube-land.png"
 },
 {
+  "name": "Darker Duck",
+  "description": "A remix of Falling Duck with custom lighting effects",
+  "url": "/examples/darker-duck",
+  "cardType": "codeExample",
+  "imageUrl": "/static/examples/darker-duck.png",
+  "largeImageUrl": "/static/examples/darker-duck.gif"
+},
+{
   "name": "Particle Effects Demo",
   "description": "A demonstration of ramped up particle effects",
   "url":"/examples/particle-effects-demo",

@@ -18,7 +18,7 @@
         "name": "JavaScript Games",
         "url": "/javascript-games",
         "imageUrl": "/static/examples/planet-putt-putt.png",
-        "largeImageUrl": "/static/examples/particle-effects-demo.gif"
+        "largeImageUrl": "/static/examples/darker-duck.gif"
     },
     {
         "name": "Game Design Concepts",
@@ -45,8 +45,8 @@
     {
         "name": "Community",
         "url": "/community",
-        "imageUrl": "/static/community/spacefight.png",
-        "largeImageUrl": "/static/community/spacefight.gif"
+        "imageUrl": "/static/community/spacefight/spacefight.png",
+        "largeImageUrl": "/static/community/spacefight/spacefight.gif"
     },
     {
         "name": "Graphics and Math",
