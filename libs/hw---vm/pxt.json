@@ -16,8 +16,8 @@
     },
     "compileServiceVariant": "vm",
     "dependencies": {
-        "core---linux": "file:../core---vm",
-        "mixer---none": "file:../mixer---none",
+        "core---vm": "file:../core---vm",
+        "mixer---ext": "file:../mixer---ext",
         "screen---ext": "file:../screen---ext",
         "game": "file:../game"
     },

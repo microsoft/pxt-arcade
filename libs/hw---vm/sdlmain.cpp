@@ -80,6 +80,9 @@ typedef void (*raise_event_t)(int src, int val);
 typedef void (*vm_start_t)(const char *fn);
 typedef int (*get_logs_t)(int logtype, char *dst, int maxSize);
 typedef int (*get_panic_code_t)();
+typedef void (*get_audio_samples_t)(int16_t *buf, unsigned numSamples);
+
+get_audio_samples_t pxt_get_audio_samples;
 
 void fatal(const char *msg, const char *info) {
     SDL_LogCritical(SDL_LOG_CATEGORY_APPLICATION, "%s %s (SDL Error: %s)", msg, info ? info : "",
@@ -130,6 +133,26 @@ void flush_logs(get_logs_t get_logs) {
     }
 }
 
+void audioCallback(void *userdata, Uint8 *stream, int len) {
+    pxt_get_audio_samples((int16_t*)stream, len / 2);
+}
+
+void openAudio() {
+    SDL_AudioSpec wanted, actual;
+
+    SDL_zero(wanted);
+    SDL_zero(actual);
+    wanted.freq = 44100;
+    wanted.format = AUDIO_S16SYS;
+    wanted.channels = 1;
+    wanted.samples = 1024;
+    wanted.callback = audioCallback;
+
+    SDL_CHECK(SDL_OpenAudio(&wanted, &actual) == 0);
+
+    SDL_Log("audio device %d Hz, %d ch, %d sampl", actual.freq, actual.channels, actual.samples);
+}
+
 extern "C" int main(int argc, char *argv[]) {
     SDL_LogSetAllPriority(SDL_LOG_PRIORITY_INFO);
 
@@ -140,12 +163,13 @@ extern "C" int main(int argc, char *argv[]) {
     get_logs_t get_logs = (get_logs_t)SDL_LoadFunction(vmDLL, "pxt_get_logs");
     get_panic_code_t get_panic_code =
         (get_panic_code_t)SDL_LoadFunction(vmDLL, "pxt_get_panic_code");
+    pxt_get_audio_samples = (get_audio_samples_t)SDL_LoadFunction(vmDLL, "pxt_get_audio_samples");
 
-    if (!get_pixels || !vm_start || !raise_event || !get_logs || !get_panic_code) {
+    if (!get_pixels || !vm_start || !raise_event || !get_logs || !get_panic_code || !pxt_get_audio_samples) {
         fatal("can't load pxt function from DLL", "");
     }
 
-    SDL_CHECK(SDL_Init(SDL_INIT_VIDEO) >= 0);
+    SDL_CHECK(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) >= 0);
 
     SDL_Window *window =
         SDL_CreateWindow("MakeCode Arcade64", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
@@ -161,11 +185,9 @@ extern "C" int main(int argc, char *argv[]) {
 
     SDL_CHECK(surf != NULL);
 
-    for (int y = 0; y < HEIGHT; ++y)
-        for (int x = 0; x < WIDTH; ++x) {
-            ((uint32_t *)surf->pixels)[y * WIDTH + x] =
-                x == y ? 0xffffffff : 0xff000000 | ((x * 2) << 8);
-        }
+    openAudio();
+
+    memset(surf->pixels, 0, HEIGHT * WIDTH * 4);
 
     SDL_Texture *tex = SDL_CreateTextureFromSurface(renderer, surf);
 
@@ -187,6 +209,7 @@ extern "C" int main(int argc, char *argv[]) {
 
         if (nextLoad && now >= nextLoad) {
             vm_start(argv[1]);
+            SDL_PauseAudio(0);
             lastLoad = now;
             nextLoad = 0;
         }
