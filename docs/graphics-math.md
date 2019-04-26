@@ -19,6 +19,13 @@ Try computer graphics methods and visual math concepts as Arcade games.
   "url": "/examples/game-of-life",
   "imageUrl": "/static/examples/game-of-life.png",
   "largeImageUrl": "/static/examples/game-of-life.gif"
+},
+{
+  "name": "Paint Brush",
+  "description": "Generates random 'art' by drawing across the screen",
+  "url": "/examples/paint-brush",
+  "imageUrl": "/static/examples/paint-brush.png",
+  "largeImageUrl": "/static/examples/paint-brush.gif"
 }
 ]
 ```
