@@ -9,6 +9,7 @@ Games submitted by the MakeCode community.
     {
         "name": "Space Fight",
         "description": "Compete with a friend for the high score in a space adventure, by Alex Kulcsar",
+        "author": "Alex Kulcsar",
         "url": "/community/spacefight",
         "cardType": "codeExample",
         "imageUrl": "/static/community/spacefight/spacefight.png",
@@ -17,6 +18,7 @@ Games submitted by the MakeCode community.
     {
         "name": "Jewel Raider",
         "description": "Collect jewels in this multi-level adventure, by Stu Lowe",
+        "author": "Stu Lowe",
         "url": "https://forum.makecode.com/t/presenting-jewel-raider/127",
         "imageUrl": "/static/community/jewel-raider/jewel-raider.png",
         "largeImageUrl": "/static/community/jewel-raider/jewel-raider.gif"
@@ -24,6 +26,7 @@ Games submitted by the MakeCode community.
     {
         "name": "Snowy Slopes",
         "description": "Race down a snowy hill to avoid obstacles and collect goodies, by Nate Murray",
+        "author": "Nate Murray",
         "url": "https://forum.makecode.com/t/snowy-slopes-game/52",
         "imageUrl": "/static/community/snowy-slopes/snowy-slopes.png",
         "largeImageUrl": "/static/community/snowy-slopes/snowy-slopes.gif"
@@ -31,6 +34,7 @@ Games submitted by the MakeCode community.
     {
         "name": "Jetpack Jenny",
         "description": "Avoid missiles, asteroids, and electric charges in this side scrolling adventure, by Stu Lowe",
+        "author": "Stu Lowe",
         "url": "https://forum.makecode.com/t/jet-pack-jenny-game/113",
         "imageUrl": "/static/community/jetpack-jenny/jetpack-jenny.png",
         "largeImageUrl": "/static/community/jetpack-jenny/jetpack-jenny.gif"
