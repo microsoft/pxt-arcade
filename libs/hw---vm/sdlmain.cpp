@@ -78,11 +78,18 @@ int mapKeyCode(int sdlCode) {
 typedef void (*get_pixels_t)(int width, int height, uint32_t *screen);
 typedef void (*raise_event_t)(int src, int val);
 typedef void (*vm_start_t)(const char *fn);
+typedef int (*get_logs_t)(int logtype, char *dst, int maxSize);
+typedef int (*get_panic_code_t)();
+
+void fatal(const char *msg, const char *info) {
+    SDL_LogCritical(SDL_LOG_CATEGORY_APPLICATION, "%s %s (SDL Error: %s)", msg, info ? info : "",
+                    SDL_GetError());
+    exit(1);
+}
 
 #define SDL_CHECK(call)                                                                            \
     if (!(call)) {                                                                                 \
-        fprintf(stderr, "SDL error: %s - %s", #call, SDL_GetError());                              \
-        exit(1);                                                                                   \
+        fatal("SDL Call error", #call);                                                            \
     }
 
 void *loadPXTLib(char *argv[]) {
@@ -96,21 +103,46 @@ void *loadPXTLib(char *argv[]) {
 
     void *vmDLL = SDL_LoadObject(namebuf);
     if (!vmDLL) {
-        fprintf(stderr, "can't load %s SDL_Error: %s\n", namebuf, SDL_GetError());
-        exit(1);
+        fatal("can't load DLL", namebuf);
     }
 
     return vmDLL;
 }
 
+char logtmp[64 * 1024];
+
+void flush_logs(get_logs_t get_logs) {
+    while (1) {
+        int sz = get_logs(0, logtmp, sizeof(logtmp) - 1);
+        if (sz <= 0)
+            break;
+        for (int i = 0; i < sz;) {
+            int j;
+            for (j = i; j < sz; ++j) {
+                if (logtmp[j] == '\n') {
+                    break;
+                }
+            }
+            logtmp[j] = 0;
+            SDL_Log("%s", logtmp + i);
+            i = j + 1;
+        }
+    }
+}
+
 extern "C" int main(int argc, char *argv[]) {
+    SDL_LogSetAllPriority(SDL_LOG_PRIORITY_INFO);
+
     void *vmDLL = loadPXTLib(argv);
     get_pixels_t get_pixels = (get_pixels_t)SDL_LoadFunction(vmDLL, "pxt_screen_get_pixels");
     vm_start_t vm_start = (vm_start_t)SDL_LoadFunction(vmDLL, "pxt_vm_start");
     raise_event_t raise_event = (raise_event_t)SDL_LoadFunction(vmDLL, "pxt_raise_event");
-    if (!get_pixels || !vm_start || !raise_event) {
-        printf("can't load fun from dylib SDL_Error: %s\n", SDL_GetError());
-        exit(1);
+    get_logs_t get_logs = (get_logs_t)SDL_LoadFunction(vmDLL, "pxt_get_logs");
+    get_panic_code_t get_panic_code =
+        (get_panic_code_t)SDL_LoadFunction(vmDLL, "pxt_get_panic_code");
+
+    if (!get_pixels || !vm_start || !raise_event || !get_logs || !get_panic_code) {
+        fatal("can't load pxt function from DLL", "");
     }
 
     SDL_CHECK(SDL_Init(SDL_INIT_VIDEO) >= 0);
@@ -141,7 +173,9 @@ extern "C" int main(int argc, char *argv[]) {
     SDL_RenderCopy(renderer, tex, NULL, NULL);
     SDL_RenderPresent(renderer);
 
-    vm_start(argv[1]);
+    int now = SDL_GetTicks();
+    int lastLoad = 0;
+    int nextLoad = now;
 
     SDL_Event e;
     int quit = 0;
@@ -149,6 +183,14 @@ extern "C" int main(int argc, char *argv[]) {
     int prevTicks = SDL_GetTicks();
 
     while (!quit) {
+        now = SDL_GetTicks();
+
+        if (nextLoad && now >= nextLoad) {
+            vm_start(argv[1]);
+            lastLoad = now;
+            nextLoad = 0;
+        }
+
         while (SDL_PollEvent(&e)) {
             if (e.type == SDL_QUIT) {
                 quit = 1;
@@ -173,6 +215,22 @@ extern "C" int main(int argc, char *argv[]) {
         SDL_RenderClear(renderer);
         SDL_RenderCopy(renderer, tex, NULL, NULL);
         SDL_RenderPresent(renderer);
+
+        flush_logs(get_logs);
+
+        if (!nextLoad) {
+            int code = get_panic_code();
+            if (code == -1) {
+                SDL_Log("restarting image at user req");
+                nextLoad = lastLoad + 3000; // this will likely be in the past
+            } else if (code >= 1000) {
+                SDL_Log("hit soft crash, code=%d; restarting", code - 1000);
+                nextLoad = now + 3000;
+            } else if (code != 0) {
+                SDL_LogCritical(SDL_LOG_CATEGORY_APPLICATION, "fatal runtime error %d; bye", code);
+                exit(1);
+            }
+        }
 
         numFr++;
         int now = SDL_GetTicks();
