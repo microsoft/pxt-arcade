@@ -40,6 +40,14 @@ Games submitted by the MakeCode community.
         "largeImageUrl": "/static/community/jetpack-jenny/jetpack-jenny.gif"
     },
     {
+        "name": "Chicken Run",
+        "description": "Cross the road during rush hour traffic to save your eggs, by Greg Norris",
+        "author": "Greg Norris",
+        "url": "https://forum.makecode.com/t/chicken-run-game/34",
+        "imageUrl": "/static/community/chicken-run/chicken-run.png",
+        "largeImageUrl": "/static/community/chicken-run/chicken-run.gif"
+    },
+    {
         "name": "Add Game",
         "description": "Are you looking to contribute your own game? These instructions will explain how to submit your game for the chance to appear in this carousel.",
         "imageUrl": "/static/community/add-game.png",

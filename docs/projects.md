@@ -21,7 +21,7 @@
         "largeImageUrl": "/static/examples/darker-duck.gif"
     },
     {
-        "name": "Community",
+        "name": "Community Games",
         "url": "/community",
         "imageUrl": "/static/community/spacefight/spacefight.png",
         "largeImageUrl": "/static/community/spacefight/spacefight.gif"
@@ -62,7 +62,7 @@
 [Tutorials](/tutorials),
 [Blocks Games](/blocks-games),
 [JavaScript Games](/javascript-games),
-[Community](/community),
+[Community Games](/community),
 [Game Design Concepts](/concepts),
 [Graphics and Math](/graphics-math),
 [Lessons](/lessons),
