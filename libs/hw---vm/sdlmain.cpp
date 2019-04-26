@@ -27,12 +27,16 @@ enum Key {
     KEY_A,
     KEY_B,
     KEY_MENU,
-    KEY_RESET,
-    KEY_EXIT,
+    KEY_RESET = 100, // passed as event to TS, which does control.reset()
+    KEY_EXIT, // handled here
 };
 
 int mapKeyCode(int sdlCode) {
     switch (sdlCode) {
+    case SDLK_ESCAPE:
+        return KEY_EXIT;
+    case '/':
+        return KEY_RESET;
     case 'a':
     case SDLK_LEFT:
         return KEY_LEFT;
@@ -134,7 +138,7 @@ void flush_logs(get_logs_t get_logs) {
 }
 
 void audioCallback(void *userdata, Uint8 *stream, int len) {
-    pxt_get_audio_samples((int16_t*)stream, len / 2);
+    pxt_get_audio_samples((int16_t *)stream, len / 2);
 }
 
 void openAudio() {
@@ -165,7 +169,8 @@ extern "C" int main(int argc, char *argv[]) {
         (get_panic_code_t)SDL_LoadFunction(vmDLL, "pxt_get_panic_code");
     pxt_get_audio_samples = (get_audio_samples_t)SDL_LoadFunction(vmDLL, "pxt_get_audio_samples");
 
-    if (!get_pixels || !vm_start || !raise_event || !get_logs || !get_panic_code || !pxt_get_audio_samples) {
+    if (!get_pixels || !vm_start || !raise_event || !get_logs || !get_panic_code ||
+        !pxt_get_audio_samples) {
         fatal("can't load pxt function from DLL", "");
     }
 
@@ -221,6 +226,10 @@ extern "C" int main(int argc, char *argv[]) {
             if ((e.type == SDL_KEYDOWN || e.type == SDL_KEYUP) && !e.key.repeat) {
                 int ev = e.type == SDL_KEYDOWN ? INTERNAL_KEY_DOWN : INTERNAL_KEY_UP;
                 int kk = mapKeyCode(e.key.keysym.sym);
+                if (kk == KEY_EXIT) {
+                    quit = 1;
+                    break;
+                }
                 if (kk) {
                     raise_event(ev, kk);
                     raise_event(ev, 0); // any key
