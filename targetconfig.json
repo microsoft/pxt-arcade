@@ -11,11 +11,11 @@
         "Tutorials": "tutorials",
         "Blocks Games": "blocks-games",
         "JavaScript Games": "javascript-games",
+        "Graphics and Math": "graphics-math",
         "Game Design Concepts": "concepts",
         "Lessons": "lessons",
         "Courses": "courses",
         "Hardware": "hardware",
-        "Community": "community",
-        "Graphics and Math": "graphics-math"
+        "Community": "community"
     }
 }

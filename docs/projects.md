@@ -21,6 +21,12 @@
         "largeImageUrl": "/static/examples/darker-duck.gif"
     },
     {
+        "name": "Graphics and Math",
+        "url": "/graphics-math",
+        "imageUrl": "/static/examples/bresenham-circle.png",
+        "largeImageUrl": "/static/examples/bresenham-circle.gif"
+    },
+    {
         "name": "Game Design Concepts",
         "url": "/concepts",
         "imageUrl": "/static/concepts/walking-hero.png",
@@ -47,12 +53,6 @@
         "url": "/community",
         "imageUrl": "/static/community/spacefight/spacefight.png",
         "largeImageUrl": "/static/community/spacefight/spacefight.gif"
-    },
-    {
-        "name": "Graphics and Math",
-        "url": "/graphics-math",
-        "imageUrl": "/static/examples/bresenham-circle.png",
-        "largeImageUrl": "/static/examples/bresenham-circle.gif"
     }
 ]
 ```
@@ -62,10 +62,10 @@
 [Tutorials](/tutorials),
 [Blocks Games](/blocks-games),
 [JavaScript Games](/javascript-games),
+[Graphics and Math](/graphics-math),
 [Game Design Concepts](/concepts),
 [Lessons](/lessons),
 [Courses](/courses),
 [Hardware](/hardware),
-[Community](/community),
-[Graphics and Math](/graphics-math)
+[Community](/community)
 
