@@ -176,7 +176,7 @@ the image will be stored with the code in flash memory
 and won't take up as much space at runtime. For example,
 if you want the image in the player sprite to switch from green to red,
 consider changing the color in the image editor and storing it as a separate image.
-Less runtime memory is needed using this method rather than of using ``||images:clone||`` and ``||images:change color in picture from .. to ..||``.
+Less runtime memory is needed using this method instead of using ``||images:clone||`` and ``||images:change color in picture from .. to ..||``.
 * **Leave it behind**: if an object won't be used anymore, get rid of it!
 This is often easier done in JavaScript than in blocks,
 but the easiest thing to do is make sure ``||sprites:sprites||`` are destroyed when they're no longer needed. 
