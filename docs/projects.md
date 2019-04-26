@@ -47,6 +47,12 @@
         "url": "/community",
         "imageUrl": "/static/community/spacefight.png",
         "largeImageUrl": "/static/community/spacefight.gif"
+    },
+    {
+        "name": "Graphics and Math",
+        "url": "/graphics-math",
+        "imageUrl": "/static/examples/bresenham-circle.png",
+        "largeImageUrl": "/static/examples/bresenham-circle.gif"
     }
 ]
 ```
@@ -60,5 +66,6 @@
 [Lessons](/lessons),
 [Courses](/courses),
 [Hardware](/hardware),
-[Community](/community)
+[Community](/community),
+[Graphics and Math](/graphics-math)
 
