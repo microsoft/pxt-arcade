@@ -20,7 +20,7 @@
     "dependencies": {
         "core---samd": "file:../core---samd",
         "screen---st7735": "file:../screen---st7735",
-        "mixer---none": "file:../mixer---none",
+        "mixer---samd": "file:../mixer---samd",
         "buttons": "file:../buttons",
         "game---hw": "file:../game---hw",
         "jacdac-game": "file:../jacdac-game"
