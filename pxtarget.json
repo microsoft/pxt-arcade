@@ -116,7 +116,8 @@
             "branches": {
                 "https://github.com/lancaster-university/codal-core": "8905a056f8e38d913361f0b5a6314f4148479529",
                 "https://github.com/lancaster-university/codal-samd": "f4135d467c7d70841af1cf5bd38ff76ff279de06",
-                "https://github.com/lancaster-university/codal-stm32": "2e01d43e0fdd38df01b0a6a49785b24235763c43"
+                "https://github.com/lancaster-university/codal-stm32": "2e01d43e0fdd38df01b0a6a49785b24235763c43",
+                "https://github.com/lancaster-university/codal-big-brainpad": "aa764d2edebd5ff86335ee03df55fbb4efb631e7"
             }
         }
     },
