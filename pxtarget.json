@@ -39,6 +39,7 @@
         "libs/buttons",
         "libs/mixer",
         "libs/servo",
+        "libs/light",
         "libs/mixer---stm32",
         "libs/mixer---none",
         "libs/mixer---linux",
