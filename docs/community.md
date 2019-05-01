@@ -10,8 +10,7 @@ Games submitted by the MakeCode community.
         "name": "Space Fight",
         "description": "Compete with a friend for the high score in a space adventure, by Alex Kulcsar",
         "author": "Alex Kulcsar",
-        "url": "/community/spacefight",
-        "cardType": "codeExample",
+        "url": "https://forum.makecode.com/t/presenting-spacewar/107",
         "imageUrl": "/static/community/spacefight/spacefight.png",
         "largeImageUrl": "/static/community/spacefight/spacefight.gif"
     },
