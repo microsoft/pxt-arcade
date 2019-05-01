@@ -40,6 +40,7 @@
         "libs/mixer",
         "libs/servo",
         "libs/light",
+        "libs/mixer---samd",
         "libs/mixer---stm32",
         "libs/mixer---none",
         "libs/mixer---linux",
