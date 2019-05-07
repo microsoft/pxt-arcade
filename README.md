@@ -2,7 +2,7 @@
 
 * [Try it live!](https://arcade.makecode.com)
 
-[![Build Status](https://travis-ci.org/Microsoft/pxt-arcade.svg?branch=master)](https://travis-ci.org/Microsoft/pxt-arcade)
+[![Build Status](https://travis-ci.org/microsoft/pxt-arcade.svg?branch=master)](https://travis-ci.org/microsoft/pxt-arcade)
 [![Community Discord (chat)](https://img.shields.io/discord/448979533891371018.svg)](https://aka.ms/makecodecommunity)
 [Forum](https://forum.makecode.com)
 
