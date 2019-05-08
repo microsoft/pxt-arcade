@@ -18,7 +18,7 @@ const mySources: particles.ParticleSource[] = [];
 let count = 1;
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    count = Math.min(count + 1, 3);
+    count = Math.min(count + 1, 6);
 });
 
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
