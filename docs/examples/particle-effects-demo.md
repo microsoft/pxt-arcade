@@ -1,6 +1,6 @@
 # Particle Effects Demo
 
-This demonstrates how to generate more complex particle effects. The ``particles`` animations in TypeScript are extended to create new effects. The some of the effects created are spinning pinwheels, floating bubbles, and falling stars. Pressing button **A** will add an effect to the display. The effects are combined and displayed together by running them in parallel. Pressing button **B** will remove one of the effects currently shown.
+This demonstrates how to generate more complex particle effects. The ``particles`` animations in TypeScript are extended to create new effects. The some of the effects created are spinning pinwheels, floating bubbles, and falling stars. Pressing button **A** will add an effect to the display. The effects are combined and displayed together. Pressing button **B** will remove one of the effects currently shown.
 
 ```typescript
 interface ParticleDemonstration {
