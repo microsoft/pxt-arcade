@@ -80,19 +80,21 @@ namespace demonstrations {
             const radius = Math.percentChance(50) ? 0 : 20;
             const increaseRate = Math.percentChance(50);
 
-            for (let i = 0; i < 3; ++i) {
-                const colors = Math.percentChance(10) ?
-                    [0xC, 0xD, 0xE]
-                    :
-                    Math.percentChance(50) ?
-                        [0x6, 0x7, 0x8, 0x9, 0xA]
+            control.runInParallel(() => {
+                for (let i = 0; i < 3; ++i) {
+                    const colors = Math.percentChance(10) ?
+                        [0xC, 0xD, 0xE]
                         :
-                        undefined;
-                let factory: particles.ParticleFactory = new particles.RadialFactory(radius, 90, 5, colors);
-                const src = new particles.ParticleSource(anchor, increaseRate ? 50 + (i * 50) : 100, factory);
-                sources.push(src);
-                pause(350);
-            }
+                        Math.percentChance(50) ?
+                            [0x6, 0x7, 0x8, 0x9, 0xA]
+                            :
+                            undefined;
+                    let factory: particles.ParticleFactory = new particles.RadialFactory(radius, 90, 5, colors);
+                    const src = new particles.ParticleSource(anchor, increaseRate ? 50 + (i * 50) : 100, factory);
+                    sources.push(src);
+                    pause(350);
+                }
+            });
 
             return sources;
         }
