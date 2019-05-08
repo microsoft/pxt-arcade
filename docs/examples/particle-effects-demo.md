@@ -14,7 +14,6 @@ let msgSprite = sprites.create(ctlMessage);
 let msgInterval = 0;
 
 const myDemonstrations: ParticleDemonstration[] = [];
-const mySources: particles.ParticleSource[] = [];
 let count = 1;
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -209,17 +208,13 @@ myDemonstrations.push(new demonstrations.Spinner());
 myDemonstrations.push(new demonstrations.Fire());
 
 forever(() => {
-    mySources
-        .forEach(src => src.destroy());
-
-    while (mySources.length)
-        mySources.pop();
+    particles.disableAll()
 
     for (let i = 0; i < count; ++i) {
         Math.pickRandom(myDemonstrations)
-            .start()
-            .forEach(src => mySources.push(src));
+            .start();
     }
+
     msgSprite.top = scene.screenHeight();
     msgSprite.top += msgInterval % 5 == 0 ? -10 : 0;
     msgInterval += 1;
