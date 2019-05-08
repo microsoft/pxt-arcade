@@ -8,10 +8,10 @@ interface ParticleDemonstration {
 }
 
 // show controls
-let ctlMessage = image.create(scene.screenWidth(), 10)
-ctlMessage.printCenter("'A' to add, 'B' to remove", 0, 0)
-let msgSprite = sprites.create(ctlMessage)
-msgSprite.top = scene.screenHeight() - 10
+let ctlMessage = image.create(scene.screenWidth(), 10);
+ctlMessage.printCenter("Effects: 'A' (+), 'B' (-)", 0, 0);
+let msgSprite = sprites.create(ctlMessage);
+let msgInterval = 0;
 
 const myDemonstrations: ParticleDemonstration[] = [];
 const mySources: particles.ParticleSource[] = [];
@@ -220,7 +220,9 @@ forever(() => {
             .start()
             .forEach(src => mySources.push(src));
     }
-
+    msgSprite.top = scene.screenHeight();
+    msgSprite.top += msgInterval % 5 == 0 ? -10 : 0;
+    msgInterval += 1;
     pause(3000);
 });
 ```
