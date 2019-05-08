@@ -8,8 +8,10 @@ interface ParticleDemonstration {
 }
 
 // show controls
-const blankLine = "                         ";
-game.showLongText(blankLine + blankLine + "Controls:" + blankLine + "                Press A to add an effect " + blankLine + "Press B to remove an    effect ", DialogLayout.Full);
+let ctlMessage = image.create(scene.screenWidth(), 10)
+ctlMessage.printCenter("'A' to add, 'B' to remove", 0, 0)
+let msgSprite = sprites.create(ctlMessage)
+msgSprite.top = scene.screenHeight() - 10
 
 const myDemonstrations: ParticleDemonstration[] = [];
 const mySources: particles.ParticleSource[] = [];
