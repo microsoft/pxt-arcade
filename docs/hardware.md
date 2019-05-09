@@ -21,17 +21,10 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "variant": "hw---stm32f401"
     },
     {
-        "name": "Adafruit pyBadge",
+        "name": "Adafruit PyBadge and PyBadge LC",
         "description": "It's a badge, it's an arcade, it's a pyBadge!",
         "imageUrl": "/static/hardware/pybadge.jpg",
         "url": "https://www.adafruit.com/product/4200",
-        "variant": "hw---samd51"
-    },
-    {
-        "name": "Adafruit pyBadge LC",
-        "description": "Low-cost bare bone pyBadge",
-        "imageUrl": "/static/hardware/pybadgelc.jpg",
-        "url": "https://www.adafruit.com/product/3939",
         "variant": "hw---samd51"
     },
     {
