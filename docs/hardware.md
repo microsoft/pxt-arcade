@@ -22,7 +22,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     },
     {
         "name": "PyBadge and PyBadge LC",
-        "description": "It's a badge, it's an arcade, it's a PyBadge!",
+        "description": "It's a badge, it's an arcade, it's an Adafruit PyBadge!",
         "imageUrl": "/static/hardware/pybadge.jpg",
         "url": "https://www.adafruit.com/product/4200",
         "variant": "hw---samd51"
