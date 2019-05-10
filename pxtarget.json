@@ -139,26 +139,6 @@
                 "dockerImage": "pext/yotta:latest"
             }
         },
-        "stm32f103": {
-            "compile": {
-                "hasHex": true,
-                "openocdScript": "source [find interface/stlink-v2.cfg]; source [find target/stm32f1x.cfg]",
-                "uf2Family": "0x5ee21072",
-                "webUSB": false,
-                "vtableShift": 4
-            },
-            "compileService": {
-                "codalTarget": {
-                    "name": "codal-stm32f103",
-                    "url": "https://github.com/mmoskal/codal-stm32f103",
-                    "branch": "v1.0.15",
-                    "type": "git"
-                },
-                "codalBinary": "STM32",
-                "serviceId": "codal2stm32",
-                "dockerImage": "pext/yotta:latest"
-            }
-        },
         "samd51": {
             "compile": {
                 "hasHex": true,
