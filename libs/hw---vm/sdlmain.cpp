@@ -149,6 +149,7 @@ void audioCallback(void *userdata, Uint8 *stream, int len) {
     pxt_get_audio_samples((int16_t *)stream, len / 2);
 }
 
+SDL_AudioDeviceID audioDev;
 void openAudio() {
     SDL_AudioSpec wanted, actual;
 
@@ -160,7 +161,14 @@ void openAudio() {
     wanted.samples = 1024;
     wanted.callback = audioCallback;
 
-    SDL_CHECK(SDL_OpenAudio(&wanted, &actual) == 0);
+    int n = SDL_GetNumAudioDevices(0);
+    for (int i = 0; i < n; ++i) {
+        SDL_Log("audio %d %s", i, SDL_GetAudioDeviceName(i, 0));
+    }
+
+    audioDev = SDL_OpenAudioDevice(NULL, 0, &wanted, &actual, 0);
+
+    // SDL_CHECK(SDL_OpenAudio(&wanted, &actual) == 0);
 
     SDL_Log("audio device %d Hz, %d ch, %d sampl", actual.freq, actual.channels, actual.samples);
 }
@@ -177,7 +185,6 @@ static void SDLCALL logOutput(void *userdata, int category, SDL_LogPriority prio
 #if defined(__WIN32__)
     /* Way too many allocations here, urgh */
     /* Note: One can't call SDL_SetError here, since that function itself logs. */
-    char *output;
     LPTSTR tstr;
 
     BOOL attachResult;
@@ -308,7 +315,8 @@ extern "C" int main(int argc, char *argv[]) {
 
         if (nextLoad && now >= nextLoad) {
             vm_start(argv[1]);
-            SDL_PauseAudio(0);
+            SDL_PauseAudioDevice(audioDev, 0);
+            //SDL_PauseAudio(0);
             lastLoad = now;
             nextLoad = 0;
         }
