@@ -2,6 +2,14 @@
 #include <SDL.h>
 #include <stdio.h>
 
+#if defined(__WINDOWS__)
+#include <windows.h>
+#define WIN_StringToUTF8(S)                                                                        \
+    SDL_iconv_string("UTF-8", "UTF-16LE", (char *)(S), (SDL_wcslen(S) + 1) * sizeof(WCHAR))
+#define WIN_UTF8ToString(S)                                                                        \
+    (WCHAR *)SDL_iconv_string("UTF-16LE", "UTF-8", (char *)(S), SDL_strlen(S) + 1)
+#endif
+
 #if defined(__MACOSX__)
 #define SONAME "libpxt.dylib"
 #elif defined(__WINDOWS__)
@@ -28,7 +36,7 @@ enum Key {
     KEY_B,
     KEY_MENU,
     KEY_RESET = 100, // passed as event to TS, which does control.reset()
-    KEY_EXIT, // handled here
+    KEY_EXIT,        // handled here
 };
 
 int mapKeyCode(int sdlCode) {
@@ -157,8 +165,93 @@ void openAudio() {
     SDL_Log("audio device %d Hz, %d ch, %d sampl", actual.freq, actual.channels, actual.samples);
 }
 
+#if defined(__WIN32__)
+static int consoleAttached = 0;
+static HANDLE stderrHandle = NULL;
+#endif
+
+static void SDLCALL logOutput(void *userdata, int category, SDL_LogPriority priority,
+                              const char *message) {
+    (void)userdata;
+
+#if defined(__WIN32__)
+    /* Way too many allocations here, urgh */
+    /* Note: One can't call SDL_SetError here, since that function itself logs. */
+    char *output;
+    LPTSTR tstr;
+
+    BOOL attachResult;
+    DWORD attachError;
+    unsigned long charsWritten;
+    DWORD consoleMode;
+
+    /* Maybe attach console and get stderr handle */
+    if (consoleAttached == 0) {
+        attachResult = AttachConsole(ATTACH_PARENT_PROCESS);
+        if (!attachResult) {
+            attachError = GetLastError();
+            if (attachError == ERROR_INVALID_HANDLE) {
+                /* This is expected when running from Visual Studio */
+                /*OutputDebugString(TEXT("Parent process has no console\r\n"));*/
+                consoleAttached = -1;
+            } else if (attachError == ERROR_GEN_FAILURE) {
+                OutputDebugString(TEXT("Could not attach to console of parent process\r\n"));
+                consoleAttached = -1;
+            } else if (attachError == ERROR_ACCESS_DENIED) {
+                /* Already attached */
+                consoleAttached = 1;
+            } else {
+                OutputDebugString(TEXT("Error attaching console\r\n"));
+                consoleAttached = -1;
+            }
+        } else {
+            /* Newly attached */
+            consoleAttached = 1;
+        }
+
+        if (consoleAttached == 1) {
+            stderrHandle = GetStdHandle(STD_ERROR_HANDLE);
+
+            if (GetConsoleMode(stderrHandle, &consoleMode) == 0) {
+                /* WriteConsole fails if the output is redirected to a file. Must use WriteFile
+                 * instead. */
+                consoleAttached = 2;
+            }
+        }
+    }
+
+    tstr = (char *)message; // WIN_UTF8ToString(message);
+
+    /* Output to debugger */
+    OutputDebugString(tstr);
+
+    /* Screen output to stderr, if console was attached. */
+    if (consoleAttached == 1) {
+        if (!WriteConsole(stderrHandle, tstr, lstrlen(tstr), &charsWritten, NULL)) {
+            OutputDebugString(TEXT("Error calling WriteConsole\r\n"));
+            if (GetLastError() == ERROR_NOT_ENOUGH_MEMORY) {
+                OutputDebugString(TEXT("Insufficient heap memory to write message\r\n"));
+            }
+        }
+
+        WriteConsole(stderrHandle, "\r\n", 2, &charsWritten, NULL);
+
+    } else if (consoleAttached == 2) {
+        if (!WriteFile(stderrHandle, tstr, lstrlenA(tstr), &charsWritten, NULL)) {
+            OutputDebugString(TEXT("Error calling WriteFile\r\n"));
+        }
+    }
+#else
+    fprintf(stderr, "%s\n", message);
+#endif
+}
+
 extern "C" int main(int argc, char *argv[]) {
     SDL_LogSetAllPriority(SDL_LOG_PRIORITY_INFO);
+
+    SDL_LogSetOutputFunction(logOutput, NULL);
+
+    SDL_Log("loading %s", SONAME);
 
     void *vmDLL = loadPXTLib(argv);
     get_pixels_t get_pixels = (get_pixels_t)SDL_LoadFunction(vmDLL, "pxt_screen_get_pixels");
