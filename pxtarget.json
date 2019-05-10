@@ -208,7 +208,8 @@
             "compileService": {
                 "buildEngine": "dockercross",
                 "dockerImage": "pext/crossbuild",
-                "serviceId": "crossbuild"
+                "serviceId": "crossbuild",
+                "skipCloudBuild": true
             }
         }
     },
