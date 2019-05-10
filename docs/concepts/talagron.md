@@ -1,6 +1,6 @@
 # Tale of Talagron
 
-![Scrolling story text](/static/examples/talagron.jpg)
+![Scrolling story text](/static/concepts/talagron.jpg)
 
 Maybe you want to introduce your game with a text story line that slowly scrolls so the player can read multiple sentences of your game saga. The game dialogs provide a way display short interactive messages but for text with effects you need something else.
 

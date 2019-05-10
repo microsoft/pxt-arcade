@@ -76,6 +76,14 @@
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/setting-the-scene.png",
   "largeImageUrl": "/static/concepts/setting-the-scene.gif"
+},
+{
+  "name": "Tale of Talagron",
+  "description": "Introduce your game with story text and effects",
+  "url":"/concepts/talagron",
+  "cardType": "codeExample",
+  "imageUrl": "/static/concepts/talagron.jpg",
+  "largeImageUrl": "/static/concepts/talagron.gif"
 }
 ]
 ```
