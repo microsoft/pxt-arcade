@@ -86,6 +86,7 @@ game.onUpdate(function () {
     if (Math.percentChance(25) || hyper) {
         star = sprites.create(img`1`, SpriteKind.Star)
         star.setFlag(SpriteFlag.AutoDestroy, true)
+        star.setFlag(SpriteFlag.Ghost, true)
         star.x = Math.randomRange(0, scene.screenWidth())
         star.y = Math.randomRange(0, scene.screenHeight())
         star.vx = (star.x < scene.screenWidth() / 2) ? -2 : 2
