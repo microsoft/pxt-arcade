@@ -10,6 +10,8 @@ In this activity, students will:
 
 ## Concept: Tiles
 
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-array-tile)
+
 ## Example #1: Getting and Using Tiles
 
 1. Review the code below
