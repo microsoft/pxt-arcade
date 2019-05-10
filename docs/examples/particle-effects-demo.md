@@ -1,20 +1,23 @@
 # Particle Effects Demo
 
+This demonstrates how to generate more complex particle effects. The ``particles`` animations in TypeScript are extended to create new effects. The some of the effects created are spinning pinwheels, floating bubbles, and falling stars. Pressing button **A** will add an effect to the display. The effects are combined and displayed together. Pressing button **B** will remove one of the effects currently shown.
+
 ```typescript
 interface ParticleDemonstration {
     start(): particles.ParticleSource[];
 }
 
 // show controls
-const blankLine = "                         ";
-game.showLongText(blankLine + blankLine + "Controls:" + blankLine + "                Press A to add an effect " + blankLine + "Press B to remove an    effect ", DialogLayout.Full);
+let ctlMessage = image.create(scene.screenWidth(), 10);
+ctlMessage.printCenter("Effects: 'A' (+), 'B' (-)", 0, 0);
+let msgSprite = sprites.create(ctlMessage);
+let msgInterval = 0;
 
 const myDemonstrations: ParticleDemonstration[] = [];
-const mySources: particles.ParticleSource[] = [];
 let count = 1;
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    count = Math.min(count + 1, 3);
+    count = Math.min(count + 1, 6);
 });
 
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -80,19 +83,21 @@ namespace demonstrations {
             const radius = Math.percentChance(50) ? 0 : 20;
             const increaseRate = Math.percentChance(50);
 
-            for (let i = 0; i < 3; ++i) {
-                const colors = Math.percentChance(10) ?
-                    [0xC, 0xD, 0xE]
-                    :
-                    Math.percentChance(50) ?
-                        [0x6, 0x7, 0x8, 0x9, 0xA]
+            control.runInParallel(() => {
+                for (let i = 0; i < 3; ++i) {
+                    const colors = Math.percentChance(10) ?
+                        [0xC, 0xD, 0xE]
                         :
-                        undefined;
-                let factory: particles.ParticleFactory = new particles.RadialFactory(radius, 90, 5, colors);
-                const src = new particles.ParticleSource(anchor, increaseRate ? 50 + (i * 50) : 100, factory);
-                sources.push(src);
-                pause(350);
-            }
+                        Math.percentChance(50) ?
+                            [0x6, 0x7, 0x8, 0x9, 0xA]
+                            :
+                            undefined;
+                    let factory: particles.ParticleFactory = new particles.RadialFactory(radius, 90, 5, colors);
+                    const src = new particles.ParticleSource(anchor, increaseRate ? 50 + (i * 50) : 100, factory);
+                    sources.push(src);
+                    pause(350);
+                }
+            });
 
             return sources;
         }
@@ -203,18 +208,16 @@ myDemonstrations.push(new demonstrations.Spinner());
 myDemonstrations.push(new demonstrations.Fire());
 
 forever(() => {
-    mySources
-        .forEach(src => src.destroy());
-
-    while (mySources.length)
-        mySources.pop();
+    particles.disableAll()
 
     for (let i = 0; i < count; ++i) {
         Math.pickRandom(myDemonstrations)
-            .start()
-            .forEach(src => mySources.push(src));
+            .start();
     }
 
+    msgSprite.top = scene.screenHeight();
+    msgSprite.top += msgInterval % 5 == 0 ? -10 : 0;
+    msgInterval += 1;
     pause(3000);
 });
 ```

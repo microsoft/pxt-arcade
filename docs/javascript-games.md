@@ -21,20 +21,20 @@ Here are some fun programs for your @boardname@!
   "imageUrl": "/static/examples/cube-land.png"
 },
 {
+  "name": "Darker Duck",
+  "description": "A remix of Falling Duck with custom lighting effects",
+  "url": "/examples/darker-duck",
+  "cardType": "codeExample",
+  "imageUrl": "/static/examples/darker-duck.png",
+  "largeImageUrl": "/static/examples/darker-duck.gif"
+},
+{
   "name": "Particle Effects Demo",
   "description": "A demonstration of ramped up particle effects",
   "url":"/examples/particle-effects-demo",
   "cardType": "codeExample",
   "imageUrl": "/static/examples/particle-effects-demo.png",
   "largeImageUrl": "/static/examples/particle-effects-demo.gif"
-},
-{
-  "name": "Sorting Algorithms",
-  "description": "A visualization of different sorting algorithms",
-  "url":"/examples/sorting-algorithms",
-  "cardType": "codeExample",
-  "imageUrl": "/static/examples/sorting-algorithms.png",
-  "largeImageUrl": "/static/examples/sorting-algorithms.gif"
 },
 {
   "name": "Guess the Letter",

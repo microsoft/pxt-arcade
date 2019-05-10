@@ -1,6 +1,6 @@
 # Galga
 
-### ~button /#tutorial:tutorials/galga
+### ~button /#tutorial:/tutorials/galga
 
 Try this tutorial!
 

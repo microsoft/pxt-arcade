@@ -55,3 +55,4 @@
 
 * [Current Hardware](/hardware)
     * [Adding New Board](/hardware/adding)
+    * [Debug connector](/hardware/dbg)
