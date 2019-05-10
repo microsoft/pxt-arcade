@@ -136,6 +136,7 @@ sagaSprite.onDestroyed(function () {
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
+    ship.startEffect(effects.warmRadial)
     hyper = true
     for (let slowStar of sprites.allOfKind(SpriteKind.Star)) {
         slowStar.ax = slowStar.vx * 1000
