@@ -240,6 +240,7 @@ static void SDLCALL logOutput(void *userdata, int category, SDL_LogPriority prio
         if (!WriteFile(stderrHandle, tstr, lstrlenA(tstr), &charsWritten, NULL)) {
             OutputDebugString(TEXT("Error calling WriteFile\r\n"));
         }
+        WriteFile(stderrHandle, "\r\n", 2, &charsWritten, NULL);
     }
 #else
     fprintf(stderr, "%s\n", message);
