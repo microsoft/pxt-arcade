@@ -121,7 +121,7 @@ sagaSprite.onDestroyed(function () {
     . . . . . . . . . . e e e e 5 3 3 5 e e e e . . . . . . . . . .
     . . . . . . . . . 4 e e e 5 3 5 2 2 5 e e e 4 . . . . . . . . .
     . . . . . . . 7 7 e e e e 5 2 2 5 5 2 e e e e 7 7 . . . . . . .
-    . . . . . . 7 e e e e e e 2 2 5 2 3 3 e e e e e e 7 7 . . . . .
+    . . . . . . 7 e e e e e e 2 2 5 2 3 3 e e e e e e 7 . . . . . .
     . . . . 7 e e e e e e e e 5 2 2 2 5 2 e e e e e e e e 7 . . . .
     . . e e e e e e e e e e e e 3 5 5 2 e e e e e e e e e e e e . .
     . e e e e e e . . . 7 e e e e e e e e e e 7 . . . e e e e e e .
