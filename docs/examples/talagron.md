@@ -48,11 +48,11 @@ let storyLines = [
     "your way now and good luck!"
 ]
 scroll = true
-txtImage = image.create(scene.screenWidth(), 10 * storyLines.length)
+sagaImage = image.create(scene.screenWidth(), 10 * storyLines.length)
 for (let i = 0; i <= storyLines.length - 1; i++) {
-    txtImage.printCenter(storyLines[i], i * 10, i > 0 ? 7 : 4)
+    sagaImage.printCenter(storyLines[i], i * 10, i > 0 ? 7 : 4)
 }
-sagaSprite = sprites.create(txtImage, 0)
+sagaSprite = sprites.create(sagaImage, 0)
 sagaSprite.top = scene.screenHeight() - 1
 sagaSprite.setFlag(SpriteFlag.AutoDestroy, true)
 sagaSprite.vy = -10
