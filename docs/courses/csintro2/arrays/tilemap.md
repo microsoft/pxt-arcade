@@ -10,7 +10,7 @@ In this activity, students will:
 
 ## Concept: Tiles
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-array-tile)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-array-tile1)
 
 ## Example #1: Getting and Using Tiles
 
@@ -316,6 +316,8 @@ b 5 5 5 5 d d 4 4 4 4 . . . . .
 ## Concept: Multiple Levels
 
 Using the concepts from tasks #1 and #2, the development of multi-level games becomes much easier. This is can be done by creating an array of tile maps and transitioning through the levels, while using the blocks discussed earlier in this activity to help set up and move through the levels.
+
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-array-tile2)
 
 ## Example #3: Multiple Tile maps
 
