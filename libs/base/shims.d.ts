@@ -193,7 +193,7 @@ declare namespace control {
     function heapDump(): void;
 
     /**
-     * Force GC and halt waiting for debugger to do a full heap dump.
+     * Set flags used when connecting an external debugger.
      */
     //% shim=control::setDebugFlags
     function setDebugFlags(flags: int32): void;
