@@ -262,7 +262,8 @@
         "selectLanguage": true,
         "availableLocales": [
             "en",
-            "zh-CN"
+            "zh-CN",
+            "zh-TW"
         ],
         "invertedMenu": true,
         "showHomeScreen": true,
