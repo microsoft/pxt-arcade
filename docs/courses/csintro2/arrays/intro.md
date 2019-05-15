@@ -17,7 +17,7 @@ In this activity, students will:
 
 ## Concept: Creating Arrays
 
-## Coming Soon: VIDEO
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-array-intro)
 
 ## Example #1: Creating an Array of Numbers
 
