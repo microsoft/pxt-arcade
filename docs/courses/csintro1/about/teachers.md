@@ -1,4 +1,4 @@
-# Teacher resources
+# Teacher Resources
 
 In addition to the online course, materials are available to assist in teaching this course for a structured classroom setting.
 
