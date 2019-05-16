@@ -178,13 +178,15 @@ but it's recommended to connect it to A0 (defined in bootloader as `DISPLAY_DC`)
 
 The choice of the WR pin should be in `DISPLAY_MOSI` bootloader config,
 and `DISPLAY_MISO` should contain `PC5` if the display read line is connected.
-Otherwise it `DISPLAY_MISO` should be undefined.
+Otherwise `DISPLAY_MISO` should be undefined.
+`DISPLAY_SCK` should always be undefined.
 
 Also, use the following display configuration to begin with:
 
 ```
 DISPLAY_CFG0 = 0x08
 DISPLAY_CFG1 = 0x0018ff
+DISPLAY_CFG2 = 0x1000004
 ```
 
 
