@@ -40,6 +40,8 @@ Additionally, multiple gamepads can be used to allow for more than the two playe
 
 ### ~
 
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-logic-multi)
+
 ## Example #1: Player one
 
 1. Review the code below
@@ -84,6 +86,9 @@ With this task complete, you can now play games with two players in it: these pl
 Pong is a game based off of table tennis (Ping Pong). Pong was one of the first 2 dimensional games ever released, in which two players can play against one another trying to hit a ball past the opponent.
 
 In the rest of this lesson, we will implement a simple version of pong using ``||controller:multiplayer||``. For each of the following tasks, you will build on the code introduced in example 2 to create your final game.
+
+
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-logic-ball)
 
 ## Example #2: Paddles
 
@@ -151,6 +156,8 @@ info.player2.setScore(0)
 3. Give the ball a ``||sprites:vx||`` of either -75 or 75, with a ``||math:50 % chance||`` of each (use an ``||logic:if then ... else||`` block to handle this)
 4. Give the ball a random ``||sprites:vy||`` between -75 and 75
 5. Assign the variable ``||variables:currentBall||`` to ``||sprites:sprite of kind Ball||`` in ``||loops:on start||``, to create a ball when the game starts
+
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-logic-complete-multi)
 
 ## Student Task #3: Wall Bounce
 
