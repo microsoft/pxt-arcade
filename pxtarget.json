@@ -115,7 +115,7 @@
         "dockerImage": "pext/yotta:latest",
         "codalTarget": {
             "branches": {
-                "https://github.com/lancaster-university/codal-core": "dbf2121bdde4131f2aedd23e93811858c6f05b23"
+                "https://github.com/lancaster-university/codal-core": "06e319138cf8884e03f5991a7d14879d0acb0ff8"
             }
         }
     },
