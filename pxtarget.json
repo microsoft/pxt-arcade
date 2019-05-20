@@ -40,6 +40,7 @@
         "libs/mixer",
         "libs/servo",
         "libs/light",
+        "libs/mixer---samd",
         "libs/mixer---stm32",
         "libs/mixer---none",
         "libs/mixer---linux",
@@ -114,7 +115,7 @@
         "dockerImage": "pext/yotta:latest",
         "codalTarget": {
             "branches": {
-                "https://github.com/lancaster-university/codal-core": "dbf2121bdde4131f2aedd23e93811858c6f05b23"
+                "https://github.com/lancaster-university/codal-core": "06e319138cf8884e03f5991a7d14879d0acb0ff8"
             }
         }
     },
@@ -130,27 +131,7 @@
                 "codalTarget": {
                     "name": "codal-big-brainpad",
                     "url": "https://github.com/lancaster-university/codal-big-brainpad",
-                    "branch": "v1.0.21",
-                    "type": "git"
-                },
-                "codalBinary": "STM32",
-                "serviceId": "codal2stm32",
-                "dockerImage": "pext/yotta:latest"
-            }
-        },
-        "stm32f103": {
-            "compile": {
-                "hasHex": true,
-                "openocdScript": "source [find interface/stlink-v2.cfg]; source [find target/stm32f1x.cfg]",
-                "uf2Family": "0x5ee21072",
-                "webUSB": false,
-                "vtableShift": 4
-            },
-            "compileService": {
-                "codalTarget": {
-                    "name": "codal-stm32f103",
-                    "url": "https://github.com/mmoskal/codal-stm32f103",
-                    "branch": "v1.0.15",
+                    "branch": "v1.0.22",
                     "type": "git"
                 },
                 "codalBinary": "STM32",
@@ -161,8 +142,8 @@
         "samd51": {
             "compile": {
                 "hasHex": true,
-                "openocdScriptAlt": "source [find interface/cmsis-dap.cfg]; set CHIPNAME at91samd51g19; source [find target/at91samdXX.cfg]",
-                "openocdScript": "source [find interface/stlink-v2.cfg]; set CPUTAPID 0x2ba01477; set CHIPNAME at91samd51g19; source [find target/at91samdXX.cfg]",
+                "openocdScript": "source [find interface/cmsis-dap.cfg]; set CHIPNAME at91samd51g19; source [find target/at91samdXX.cfg]",
+                "openocdScriptAlt": "source [find interface/stlink-v2.cfg]; set CPUTAPID 0x2ba01477; set CHIPNAME at91samd51g19; source [find target/at91samdXX.cfg]",
                 "ramSize": 196608,
                 "uf2Family": "0x55114460",
                 "vtableShift": 4
@@ -171,7 +152,7 @@
                 "codalTarget": {
                     "name": "codal-itsybitsy-m4",
                     "url": "https://github.com/lancaster-university/codal-itsybitsy-m4",
-                    "branch": "v0.0.18",
+                    "branch": "v0.0.22",
                     "type": "git"
                 },
                 "codalBinary": "ITSYBITSY_M4",
@@ -281,7 +262,8 @@
         "selectLanguage": true,
         "availableLocales": [
             "en",
-            "zh-CN"
+            "zh-CN",
+            "zh-TW"
         ],
         "invertedMenu": true,
         "showHomeScreen": true,
