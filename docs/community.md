@@ -48,7 +48,7 @@ Games submitted by the MakeCode community.
     },
     {
         "name": "DuckSplat!",
-        "description": "Cross the road during rush hour traffic to save your eggs, by Dean Faizal",
+        "description": "Avoid getting splatted by falling plungers, by Dean Faizal",
         "author": "Dean Faizal",
         "url": "https://forum.makecode.com/t/ducksplat-game/196",
         "imageUrl": "/static/community/ducksplat/ducksplat.png",
