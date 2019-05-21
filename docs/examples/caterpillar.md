@@ -85,8 +85,6 @@ const shinyLeafImage = img`
     f 6 7 7 f f . 1
     f f f f f . 1 .
 `;
-
-scene.setBackgroundColor(0x7);
 placeFruit();
 info.setScore(0);
 
