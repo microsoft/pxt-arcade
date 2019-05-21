@@ -33,7 +33,7 @@ let caterpillarHead = sprites.create(img`
 caterpillarHead.left = 4 * size;
 caterpillarHead.top = 12 * size;
 
-scene.setBackgroundColor(0x1);
+scene.setBackgroundColor(0x7);
 placeFruit();
 info.setScore(0);
 
@@ -88,7 +88,12 @@ forever(function () {
             . 1 1 1 1 1 1 .
             . . 1 1 1 1 . .
         `, SpriteKind.Tail);
-        newSection.image.replace(0x1, Math.randomRange(0x2, 0xE));
+
+        let newColor: number;
+        do {
+            newColor = Math.randomRange(0x1, 0xE);
+        } while (newColor === 0x7);
+        newSection.image.replace(0x1, newColor);
 
         newSection.x = caterpillarHead.x;
         newSection.y = caterpillarHead.y;
@@ -181,23 +186,23 @@ function setDirection(targetDir: Direction, oppositeDir: Direction, i: Image) {
 }
 
 function placeFruit() {
-    const fruit = sprites.create(img`
-        . . . . . . 6 7
-        . . . 6 6 6 7 6
-        . . 6 7 7 6 6 6
-        . 6 7 7 6 7 7 6
-        . 6 7 6 7 7 7 6
-        6 7 6 7 7 7 6 .
-        6 7 7 7 6 6 . .
-        6 6 6 6 . . . .
+    const leaf = sprites.create(img`
+        . . . . . . f 7
+        . . . f f f 6 f
+        . . f 6 7 f f f
+        . f 6 7 f 7 7 f
+        . f 7 f 7 7 7 f
+        f 6 f 7 7 7 f .
+        f 6 7 7 f f . .
+        f f f f . . . .
     `, SpriteKind.Food);
     do {
-        fruit.left = Math.randomRange(0, 19) * size;
-        fruit.top = Math.randomRange(0, 14) * size;
+        leaf.left = Math.randomRange(0, 19) * size;
+        leaf.top = Math.randomRange(0, 14) * size;
     } while (
         sprites
             .allOfKind(SpriteKind.Tail)
-            .some(s => s.overlapsWith(fruit))
+            .some(s => s.overlapsWith(leaf))
     );
 }
 ```
