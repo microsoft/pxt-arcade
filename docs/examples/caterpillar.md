@@ -20,7 +20,7 @@ enum Direction {
 
 const size = 8;
 
-let caterpillarHead = sprites.create(img`
+const caterpillarHead = sprites.create(img`
     . . 3 3 3 3 . .
     . 3 2 2 2 2 3 .
     3 2 f 2 2 f 2 3
@@ -32,6 +32,59 @@ let caterpillarHead = sprites.create(img`
 `, SpriteKind.Player);
 caterpillarHead.left = 4 * size;
 caterpillarHead.top = 12 * size;
+let currentLeaf: Sprite;
+
+scene.setTileMap(img`
+    6 6 6 6 6 6 6 6 6 6
+    6 6 6 6 6 6 6 6 6 6
+    6 6 6 6 6 6 6 6 6 6
+    6 6 6 6 6 6 6 6 6 6
+    6 6 6 6 6 6 6 6 6 6
+    6 6 6 6 6 6 6 6 6 6
+    6 6 6 6 6 6 6 6 6 6
+    6 6 6 6 6 6 6 6 6 6
+`);
+
+scene.setTile(0x6, img`
+    7 6 7 6 6 6 6 6 6 6 6 6 6 6 6 6
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+    6 6 6 6 6 7 6 6 6 6 6 6 6 6 6 6
+    6 6 6 7 6 7 7 6 6 6 6 6 7 6 6 6
+    6 6 8 7 7 6 7 6 7 7 6 6 6 6 6 6
+    6 6 6 8 7 6 6 7 7 8 6 6 6 6 6 6
+    6 6 6 6 8 6 6 7 8 6 6 6 6 6 6 6
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+    6 6 7 6 6 6 6 6 6 6 6 6 6 6 6 6
+    6 6 6 6 6 6 6 6 6 6 6 7 7 6 6 6
+    6 6 6 6 6 6 6 6 6 6 7 7 8 6 6 6
+    6 6 6 6 6 6 6 6 7 7 6 8 6 6 6 6
+    6 6 6 6 6 6 6 6 6 7 7 6 6 6 6 6
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 7
+    6 6 7 6 6 6 6 6 6 6 6 6 6 6 6 7
+`);
+
+const leafImage = img`
+    . . . . . f f 7
+    . . . f f f 6 f
+    . . f 6 7 f f f
+    . f 6 7 f 7 7 f
+    f f 7 f 7 7 7 f
+    f 6 f 7 7 7 f .
+    f 6 7 7 f f . .
+    f f f f f . . .
+`;
+
+const shinyLeafImage = img`
+    . . 1 . . f f 7
+    . 1 . f f f 6 f
+    1 . f 6 7 f f f
+    . f 6 7 f 7 7 f
+    f f 7 f 7 7 7 f
+    f 6 f 7 7 7 f .
+    f 6 7 7 f f . 1
+    f f f f f . 1 .
+`;
 
 scene.setBackgroundColor(0x7);
 placeFruit();
@@ -45,7 +98,7 @@ let timeout = 500;
 
 forever(function () {
     if (caterpillarHead.left < 0 || caterpillarHead.right > screen.width
-        || caterpillarHead.top < 0 || caterpillarHead.bottom > screen.height) {
+            || caterpillarHead.top < 0 || caterpillarHead.bottom > screen.height) {
         game.over(false);
     }
 
@@ -92,7 +145,7 @@ forever(function () {
         let newColor: number;
         do {
             newColor = Math.randomRange(0x1, 0xE);
-        } while (newColor === 0x7);
+        } while (newColor === 0x6);
         newSection.image.replace(0x1, newColor);
 
         newSection.x = caterpillarHead.x;
@@ -177,32 +230,31 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     `);
 });
 
-function setDirection(targetDir: Direction, oppositeDir: Direction, i: Image) {
+function setDirection(targetDir: Direction, oppositeDir: Direction, im: Image) {
     if (!enqueued && direction !== targetDir && direction !== oppositeDir) {
-        caterpillarHead.setImage(i);
+        caterpillarHead.setImage(im);
         direction = targetDir;
         enqueued = true;
     }
 }
 
 function placeFruit() {
-    const leaf = sprites.create(img`
-        . . . . . . f 7
-        . . . f f f 6 f
-        . . f 6 7 f f f
-        . f 6 7 f 7 7 f
-        . f 7 f 7 7 7 f
-        f 6 f 7 7 7 f .
-        f 6 7 7 f f . .
-        f f f f . . . .
-    `, SpriteKind.Food);
+    currentLeaf = sprites.create(leafImage, SpriteKind.Food);
     do {
-        leaf.left = Math.randomRange(0, 19) * size;
-        leaf.top = Math.randomRange(0, 14) * size;
+        currentLeaf.left = Math.randomRange(0, 19) * size;
+        currentLeaf.top = Math.randomRange(0, 14) * size;
     } while (
         sprites
             .allOfKind(SpriteKind.Tail)
-            .some(s => s.overlapsWith(leaf))
+            .some(s => s.overlapsWith(currentLeaf))
     );
 }
+
+game.onUpdateInterval(500, function () {
+    if (currentLeaf.image === leafImage) {
+        currentLeaf.setImage(shinyLeafImage);
+    } else {
+        currentLeaf.setImage(leafImage);
+    }
+});
 ```
