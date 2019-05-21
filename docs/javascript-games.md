@@ -32,7 +32,9 @@ Here are some fun programs for your @boardname@!
   "name": "Caterpillar",
   "description": "Collect leaves to feed the caterpillar",
   "url": "/examples/caterpillar",
-  "cardType": "codeExample"
+  "cardType": "codeExample",
+  "imageUrl": "/static/examples/caterpillar.png",
+  "largeImageUrl": "/static/examples/caterpillar.gif"
 },
 {
   "name": "Particle Effects Demo",
