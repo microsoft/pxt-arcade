@@ -132,21 +132,27 @@ forever(function () {
 
     function addToBody() {
         const newSection = sprites.create(img`
-            . . 1 1 1 1 . .
-            . 1 1 1 1 1 1 .
-            1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1
-            . 1 1 1 1 1 1 .
-            . . 1 1 1 1 . .
+            . . f f f f . .
+            . f 1 1 1 1 f .
+            f 1 1 1 1 1 1 f
+            f 1 1 1 1 1 1 f
+            f 1 1 1 1 1 1 f
+            f 1 1 1 1 1 1 f
+            . f 1 1 1 1 f .
+            . . f f f f . .
         `, SpriteKind.Tail);
 
         let newColor: number;
+
         do {
             newColor = Math.randomRange(0x1, 0xE);
         } while (newColor === 0x6);
         newSection.image.replace(0x1, newColor);
+
+        do {
+            newColor = Math.randomRange(0x1, 0xE);
+        } while (newColor === 0x6);
+        newSection.image.replace(0xF, newColor);
 
         newSection.x = caterpillarHead.x;
         newSection.y = caterpillarHead.y;
