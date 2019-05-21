@@ -29,6 +29,12 @@ Here are some fun programs for your @boardname@!
   "largeImageUrl": "/static/examples/darker-duck.gif"
 },
 {
+  "name": "Caterpillar",
+  "description": "Collect leaves to feed the caterpillar",
+  "url": "/examples/caterpillar",
+  "cardType": "codeExample"
+},
+{
   "name": "Particle Effects Demo",
   "description": "A demonstration of ramped up particle effects",
   "url":"/examples/particle-effects-demo",
