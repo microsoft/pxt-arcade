@@ -94,6 +94,7 @@ forever(function () {
         caterpillarHead.data = newSection;
         addSection = false;
     }
+
     function move(piece: Sprite) {
         if (piece.data) {
             move(piece.data);
@@ -114,7 +115,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite: Sprite, 
 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Tail, function (sprite: Sprite, otherSprite: Sprite) {
     game.over(false);
-})
+});
 
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     setDirection(Direction.Up, Direction.Down, img`
