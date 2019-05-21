@@ -31,6 +31,7 @@ let caterpillarHead = sprites.create(img`
 caterpillarHead.left = 4 * size;
 caterpillarHead.top = 12 * size;
 
+scene.setBackgroundColor(0x1);
 placeFruit();
 info.setScore(0);
 
@@ -85,7 +86,7 @@ forever(function () {
             . 1 1 1 1 1 1 .
             . . 1 1 1 1 . .
         `, SpriteKind.Tail);
-        newSection.image.replace(0x1, Math.randomRange(1, 0xE));
+        newSection.image.replace(0x1, Math.randomRange(0x2, 0xE));
 
         newSection.x = caterpillarHead.x;
         newSection.y = caterpillarHead.y;
