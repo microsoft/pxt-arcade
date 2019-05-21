@@ -250,6 +250,8 @@ function placeFruit() {
         currentLeaf.left = Math.randomRange(0, 19) * size;
         currentLeaf.top = Math.randomRange(0, 14) * size;
     } while (
+        currentLeaf.top != 0 &&
+        currentLeaf.right != screen.width &&
         sprites
             .allOfKind(SpriteKind.Tail)
             .some(s => s.overlapsWith(currentLeaf))
