@@ -48,7 +48,7 @@ Games submitted by the MakeCode community.
     },
     {
         "name": "DuckSplat!",
-        "description": "Avoid getting splatted by falling plungers, by Dean Faizal",
+        "description": "Avoid the falling plungers or you'll go splat, by Dean Faizal",
         "author": "Dean Faizal",
         "url": "https://forum.makecode.com/t/ducksplat-game/196",
         "imageUrl": "/static/community/ducksplat/ducksplat.png",
