@@ -30,7 +30,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     },
     {
         "name": "Adafruit PyGamer",
-        "description": "An entry-level gaming handheld for DIY gaming",
+        "description": "The upgraded PyBadge",
         "imageUrl": "/static/hardware/pygamer.jpg",
         "url": "https://www.adafruit.com/product/4242",
         "variant": "hw---samd51",
