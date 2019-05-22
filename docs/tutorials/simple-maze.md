@@ -46,7 +46,7 @@ mySprite = sprites.create(img`
 
 ## Step 2 @fullscreen
 
-Click on the grey box in ``||variables:set mySprite to||`` an draw your player's image. It can be anything, solid block or a figure.
+Click on the grey box in ``||variables:set mySprite to||`` and draw your player's image. It can be anything, solid block or a figure.
 
 ![Draw a figure for the sprite](/static/tutorials/simple-maze/draw-sprite-figure.gif)
 

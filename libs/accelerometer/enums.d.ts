@@ -87,6 +87,11 @@
     //% block="free fall"
     FreeFall = 7,  // ACCELEROMETER_EVT_FREEFALL
     /**
+     * Raised when a 2G shock is detected
+     */
+    //% block="2g (step)"
+    TwoG = 12,  // ACCELEROMETER_EVT_2G
+    /**
      * Raised when a 3G shock is detected
      */
     //% block="3g"
