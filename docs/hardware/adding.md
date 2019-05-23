@@ -2,7 +2,7 @@
 
 ## ~ hint
 
-**Warning**: this document is preliminary and changes to it will occur frequently.
+**Warning**: this document is still preliminary and changes to it will occur.
 It's fine to build prototypes according to the information presented for experimention only,
 but do not make production hardware.  **If you want to produce Arcade-compatible
 boards other than hobby prototypes, please contact us at arcadehdw@microsoft.com.**
@@ -17,54 +17,43 @@ The MakeCode Arcade system is designed to support a variety of physical gaming d
 
 Arcade hardware must meet the following specifications:
 
-* 160x120 pixel screen
-* 15 colors plus transparency; user-controllable palette
-* 4 directional buttons, 2 action buttons (A and B), 1 utility button (menu/select/pause), 1 reset button
-* single channel sound output 
+* An ARM Cortex M microcontroller (see [MCU](#mcu))
+* 160x120 pixel screen (see [screen](#screen))
+* 4 directional buttons, 2 action buttons (A and B), 1 utility button (menu/select/pause), 1 reset button (see [buttons](#buttons))
+* single channel sound output (see [audio](#audio))
 * USB connector for programming and power
 
 In addition we encourage the inclusion of:
 
-* 3.5mm stereo audio connector for multi-player communications
+* 3.5mm stereo audio connector for multi-player communications (see [JACDAC](#jacdac))
 * provision for battery power: a battery connector, a battery holder and/or a LiPo recharging circuit
 
 Other optional elements include:
-* an accelerometer
+* an accelerometer or other motion sensor (see [accelerometer](#accelerometer))
 * a vibration motor
 * a second 3.5mm stereo audio connector for headphones
+* additional flash memory
 * an electrical expansion connector to support the use of plug-in accessories and connection of external circuits
 
-We currently require an ARM Cortex-based MCU with 96kB RAM and 512kB flash. A firmware configuration system allows a lot of flexibility regarding specific component choices and circuit designs to meet the above specification, see [Configuration](#cf2). The rest of this page provides details for each of the main components and describes a reference design we have built.
+We have built a minimal open source hardware reference design for an Arcade board. This consists of a schematic (available as PDF and as Altium .SchDoc), a layout (available as Gerbers and related CAM files plus an Altium .PcbDoc), and a BoM (available as a Microsoft Excel file). 
 
-## Components #components
-
-We have built a minimal reference design for an Arcade board. This contains:
-
-* a compatible MCU (see [MCU](#mcu))
-* a 160x128 color TFT screen based on ST7735 or ILI9163C controller chip in SPI version (see [screen](#screen))
-  
-* 8 buttons for directional pad (`left`, `up`, `right`, `down`), `A`, `B`, `Reset` and `Menu` (see [buttons](#buttons))
-* an audio output system (see [audio](#audio))
-* micro USB socket for power and UF2 programming
-* ESD protection for the micro USB
-* a 3.3V regulator (see [power](#power))
-* a transistor for power management of the LCD
-* a JST connector for battery; this is optional if the battery is integrated
+A firmware configuration system allows a lot of flexibility regarding specific component choices and circuit designs to meet the above specification, see [Configuration](#cf2). The rest of this page provides details for each of the main components and describes a reference design we have built.
 
 * optional LiPo charging circuit
 * optional accelerometer (see [accelerometer](#accelerometer))
 * an optional [JACDAC](https://jacdac.org/) connector (see [JACDAC](#jacdac)) and optional status LEDs (see [LEDs](#leds))
 * **no** power LED - please skip that one, unless you're also including `PWREN` line, which will shut it down; otherwise auto power-off will be difficult (see [power](#power))
 
-### MCU #mcu
+## Components #components
 
-MakeCode Arcade currently only targets ARM Cortex MCUs, and we have only tested Cortex M4F. 
-Screen data for resolution and depth at 160x120x4 bits takes a little under 10kB. We need at least two
-sets of screen data for double-buffering and the user is very likely to use two or three more for various
-sprite operations. This, together with heap fragmentation concerns,
-effectively requires the hardware to have **at least 96kB of RAM**. Programs with heavy memory requirements
-may only run if there is more than 96kB of RAM.
-In addition **512kB of flash** and a processor speed of **64MHz** or more are recommended.
+## MCU #mcu
+
+MakeCode Arcade currently only targets ARM Cortex-based MCUs, and we have only tested Cortex M4F.
+
+The Arcade screen resolution and colour depth requires 160x120x4 bits for a screen bugger, taking a little under 10kB.
+We need at least two sets of screen data for double-buffering and the user is very likely to use two or three more for various
+sprite operations. This, together with heap fragmentation concerns,  requires the hardware to have **at least 96kB of RAM**. Programs with heavy memory requirements may only run if there is more than 96kB of RAM.
+In addition **512kB of flash** and a processor speed of at least **64MHz** or more are recommended.
 
 We currently support two hardware variants which match the above criteria:
 * **D51** based on Microchip **ATSAMD51G19A** (Cortex M4F, 192kB of RAM, 512kB of flash, 120MHz)
@@ -76,70 +65,67 @@ We currently support two hardware variants which match the above criteria:
 
 The STM32F41x series is listed to run at 100MHz, but to support USB we need to run them at 96MHz.
 We support 48 pin and larger packages. Only STM32F412 in 64 pin and larger packages support a parallel screen interface,
-which is required if you want to use an ILI9341 320x240 screen.
+which is required if you want to use an ILI9341 320x240 screen (see [screen](#screen)).
 
 Additionally, we're considering adding support for the following in the future:
 * **N840** based on Nordic **NRF52840** (Cortex M4F, 256kB of RAM, 1024kB of flash, 64MHz)
 
 Of course, many other choices are possible and we would love to hear your feedback.
 
-### Buttons #buttons
+## Buttons #buttons
 
+We require a total of 8 buttons: `left`, `up`, `right`, `down` (in a directional pad or d-pad layout), `A`, `B`, `Menu` and `Reset`.
 The 4 directional buttons, the A/B buttons, and the MENU button are to be connected
-to GND and a respective MCU pin, as in the schematic below.
-There is an internal pull-up enabled on the MCU, so thers's no need for external
-pull-ups.
-The RESET button is to be connected to the MCU hardware RESET line (refer to the MCU
-documentation how to exactly connect it and if it needs any additional components).
+to an MCU GPIO pin to provide digital inputs. Our configuration system (see [Configuration](#cf2)) allows for
+active high or active low button inputs. 
+One function of the `Menu` button is to exit low-power sleep mode. For an MCU with a 'wakeup' input pin that takes the MCU out of a deep sleep low power mode, `Menu` should be wired to that pin. The `Reset` button should be wired to the MCU reset pin.
+If the MCU has internal pull-ups or pull-downs, there is no need for external pull-ups.
 
-The schematic also shows the recommended button arrangement - directional buttons
-on the left of the screen, while A/B are on the right of the screen.
-A is above and to the right of B.
+Arcade boards should have 'soft power off' rather than a physical on-off switch. The firmware automatically switches the 
+device off if it is not in use, unless the user has switched this feature off. 
 
-MENU is best placed somewhere below the other buttons, and RESET is best placed next to
-the USB connector.
+The recommended button arrangement is to have the directional buttons in a 'd-pad' layout on the left of the board, while the `A` and `B` buttons are to the right. `A` is above and to the right of `B`. `Menu` is best placed somewhere near the other buttons, and `Reset` is best placed next to the USB connector.
 
 ![Button connection](/static/hardware/buttons.png)
 
-### Screen #screen
+## Screen #screen
 
 When using a 160x128 pixel display we do not use the 8 bottom rows of the screen, to make
-it easier to upscale to a 320x240 display. The displays we have tested are listed below, but 
+it easier to upscale to a 320x240 display. We use 15 colors plus transparency along with
+a user-controllable palette. The displays we have tested are listed below, but 
 if you have good reasons to use a different display please let us know.
 
-#### 160x128 based on ST7735
+### 160x128 based on ST7735 or ILI9163C controller chip
 
-The screen connection is through the hardware SPI module.
+The display is connected to the MCU using SPI.
 
-On some screens:
-* the RS/DC is called A0
-* the DATA is called MOSI or SDA
-* the CLOCK is called SCK or SCL
-* LEDK is called LED-
-* LEDA is called LED+
-* RESET is called RST
-* most screens don't have MISO line
+Different displays use different names for the same pins. The following are all equivalent:
+* RS, DC or A0
+* MOSI, SDA or DATA
+* SCK, SCLK, SCL or CLOCK
+* LEDK or LED-
+* LEDA or LED+
+* RESET or RST
 
-The purpose of the `DISPLAY_BL` is to dim or shut off the screen.
-The schematic shows one way of doing this.
-Experiment with the value of `R2` to get optimal brightness.
+Most screens don't have a MISO line and in any case this does not need to be connected.
 
-We have found the following part numbers for screens:
+The purpose of the `LCD_BL` signal is to modulate power to the LCD backlight in order to dim or shut off the screen.
+The reference design shows one way of doing this. 
 
-* [MTF0177SN-10](http://www.microtech-lcd.com/tftlcd/TFT-LCD-Module9.html)
+We have found the following part numbers for displays:
+
+* [MTF0177SN-10](http://www.microtech-lcd.com/tftlcd/177-14-pin128160-custom-lcd-di.html)
 * [Z180SN009](https://www.ezsolutionkr.com/tft-lcd-z180sn009-v0-0)
-
-Others, however, are also available - searching for ST7735 or ILI9163 usually yields
-the right ones. They cost out at around $2.
+* [JD-T18003-T01](https://cdn-shop.adafruit.com/datasheets/JD-T1800.pdf)
 
 ![Screen connection](/static/hardware/screen.png)
 
-#### 320x240 based on ILI9134
+### 320x240 based on ILI9134
 
-This requires an 8 bit parallel interface because SPI is not fast enough. Therefore STM32F412RE or better is required. 
-This is not implemented yet.
+This requires an 8 bit parallel interface because SPI is not fast enough, therefore an MCU which supports a parallel
+interface is required, such as STM32F412RE or better. The firmware implementation to support this is underway.
 
-### Audio #audio
+## Audio #audio
 
 Single channel mono audio requires either a DAC or PWM with DMA support. The corresponding audio output from the MCU
 should be connected to an amplifier and an on-board sounder or speaker. A headphone jack for sound is optional, but note
@@ -149,19 +135,54 @@ that this IS SEPARATE FROM the stereo jack for networking (see [multi-player com
 
 ## ~ hint
 **Warning**: Multi-player communications is under development now and it may change.
-It's fine build prototypes, but for production hardware please contact us at arcadehdw@microsoft.com.
+It's fine to build prototypes, but before any production hardware please contact us at arcadehdw@microsoft.com.
 ## ~
 
-Multi-player communications between Arcade devices is based on [JACDAC](https://jacdac.org), a protocol for networking over a single-wire connection. It lets you play multiplayer games by connecting Arcades together with standard stereo audio cables. More than two arcades can be connected using headphone splitters.
+Multi-player communications between Arcade devices is based on [JACDAC](https://jacdac.org), a protocol for networking over a single-wire connection. It lets you play multiplayer games by connecting Arcades together with standard stereo audio cables. More than two arcades can be connected using commonly available headphone splitters.
 
-Note that JACDAC power delivery is still under development so **you should leave the tip of the jack connector disconnected**.
+Note that JACDAC power delivery is still under development so **you must leave the tip of the jack connector disconnected**.
 
-While the schematics use a 3.5mm jack connector with switches, you can also use
-one without switches, as they are not used.
+The multi-player connector can either be a 3-way or a 4-way 3.5mm audio jack socket. Contact switching is not required. Many alternative connectors exist, the second page of the reference design schematic lists some of these. Please test a connector
+before designing it in to make sure it does not short together the base of the shaft and the tip during insertion. 
 
 ![JACDAC without power](/static/hardware/nopowerjacdac.png)
 
-### Accelerometer #accelerometer
+## Power management #power
+
+Arcade supports 'soft' power control and a hardware power switch is therefore unnecessary. Not
+only does this reduce cost, the auto-power-off feature improves battery life.
+Please do not include a power LED that cannot be turned off from the MCU.
+
+A 3.3V regulator is likely to be needed. It should be robust to any unfiltered transients on the USB power line
+and to downstream short-circuits which may occur if the Arcade board has no enclosure. If it is possible to
+touch the regulator, it must not get too hot to touch under any circumstances.
+
+There is an optional `PWREN` signal - if defined, the software will pull it high on
+boot, and keep it low during sleep. The idea is for it to control the power supply to the display, accelerometer,
+and other on-board components. We shut down display back lighting and the accelerometer (if any) in sleep mode. 
+We also put the CPU into deep sleep. If you want to include a power LED, control it via the `PWREN` signal.
+
+An optional `BATTSENSE` can be connected to a voltage divider and to the battery.
+This is not yet supported in software.
+
+## USB connector #usb
+
+Arcade must have a micro USB socket for power and UF2 programming. We recommend a part with through-hole 
+mechanical solder-down tabs to provide more strength, especially if there is no physical enclosure to
+add mechanical strength. We recommend adding ESD protection for the USB data lines and a zener diode
+to clamp the Vbus power line and thereby limit over-voltage transients during USB connection. 
+
+## Battery power #battery
+
+Arcade boards should ideally have provision for battery power: a battery connector, 
+a battery holder and/or a LiPo recharging circuit. For regular batteries we suggest using a JST connector
+of the same style and polarity as that used on the Adafruit Circuit Playground Express.  
+
+## LEDs #leds
+
+Up to 4 LEDs can be defined. The first two can be also used for JACDAC status.
+
+## Accelerometer #accelerometer
 
 An accelerometer is optional. We currently support the following parts:
 
@@ -173,39 +194,16 @@ If requested, we can potentially add support for other accelerometers such as MS
 
 The accelerometers should have the SDA, SCL and INT1 lines connected
 to each respective `ACCELEROMETER_*` line as defined in the bootloader.
+
+## Vibration motor #vibrationmotor
+
+An optional vibration motor can be connected. Software will keep it low during normal operation, and drive it high
+to activate the motor. It should be connected to the `VIBRATION` line as defined in the bootloader.
+
+## Pin header #pins
+
 If possible, keep this separate from the `SDA`/`SCL` exposed on the header
 to keep the one on the header available as a general digital IO line.
-
-### Vibration motor #vibrationmotor
-
-An optional vibration motor can be connected to `VIBRATION` line.
-Software will keep it low during normal operation, and pull it high
-to activate the motor.
-
-### Power management #power
-
-Arcade supports 'soft' power control and a hardware power switch is therefore unnecessary. Not
-only does this remove cost, the auto-power-off feature improves battery life.
-Please do not provide a power LED that cannot be turned off from the MCU.
-It's fine for a power LED supply to be controlled by `PWREN`.
-
-Currently, we shut down display back lighting, and the accelerometer if any,
-and put the CPU in sleep mode.
-
-There is an optional `PWREN` pin. If defined, the software will pull it high on
-boot, and keep it low during sleep.
-The idea is for it to control the power supply to the display, accelerometer,
-and other on-board components. 
-
-An optional `BATTSENSE` can be connected to a voltage divider and to the battery.
-This is not yet supported in software.
-
-### LEDs #leds
-
-Up to 4 LEDs can be defined.
-The first two can be also used for JACDAC status.
-
-### Pin header #pins
 
 Following is the recommended pinout of the header.
 A header is optional, but at having least holes to add pins later are nice to have.
@@ -230,7 +228,7 @@ on the header.
 | D10 | I/O      | PC05 | -       |
 | D11 | I/O      | PC11 | -       |
 
-#### Pin notes
+### Pin notes
 
 While there is recommended pinout in this document, you can use a different
 pinout.
@@ -263,7 +261,7 @@ The following bootloaders do **not** support the [CF2 configuration data section
 
 * N840: https://github.com/adafruit/Adafruit_nRF52840_Bootloader
 
-### Compilation
+## Compilation
 
 If you're compiling a bootloader on your own, you will need to create a `board.h` file.
 Start from an existing, generic arcade board (README in bootloader should have instructions).
@@ -322,7 +320,7 @@ same website.
 
 The patching website can also remove config entries, just specify the value as `null`.
 
-### Bootloader protection #protection
+## Bootloader protection #protection
 
 End users will typically update the bootloader by copying a special UF2 file, which
 has a user-level application that overwrites the bootloader.
@@ -341,9 +339,9 @@ Otherwise, the protection is re-enabled.
 The default configuration of the bootloaders have this feature disabled to ease the
 development process. To enable it, set `BOOTLOADER_PROTECTION = 1`.
 
-### Variant notes #variants
+## Variant notes #variants
 
-#### F4 #f4
+### F4 #f4
 
 STM32F4 requires an external crystal for stable USB operation.
 The software takes the installed crystal frequency from a specific bootloader location,
@@ -429,7 +427,7 @@ PIN_PWREN = PC15
 PIN_VIBRATION = PC14
 ```
 
-#### D51 #d51
+### D51 #d51
 
 `JACK_TX` needs to be on a pin with external IRQ and `PAD0` of some SERCOM.
 
