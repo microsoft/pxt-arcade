@@ -116,9 +116,9 @@
         "dockerImage": "pext/yotta:latest",
         "codalTarget": {
             "branches": {
-                "https://github.com/lancaster-university/codal-core": "45b0f732456b889131b555df1dcbacf5b04589ac",
-                "https://github.com/lancaster-university/codal-samd": "ef27e73b3bae70c9b87b3038a616ed83d45951cd",
-                "https://github.com/lancaster-university/codal-stm32": "2e01d43e0fdd38df01b0a6a49785b24235763c43"
+                "https://github.com/lancaster-university/codal-core": "87066bd34285d82181ac764d703727304b297df5",
+                "https://github.com/lancaster-university/codal-samd": "460d6662d1d2408b03bdeaeac72b8b07c5c465be",
+                "https://github.com/lancaster-university/codal-stm32": "4ea1023e7a4613e93faf4b5dc1152ca4248baa6f"
             }
         }
     },
