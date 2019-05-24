@@ -22,5 +22,6 @@
         "game": "file:../game"
     },
     "public": true,
-    "skipLocalization": true
+    "skipLocalization": true,
+    "experimentalHw": true
 }

@@ -335,7 +335,8 @@
         "experiments": [
             "print",
             "python",
-            "debugExtensionCode"
+            "debugExtensionCode",
+            "experimentalHw"
         ],
         "extendEditor": true,
         "simScreenshot": true,
