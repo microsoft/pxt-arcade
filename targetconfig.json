@@ -4,7 +4,14 @@
             "Microsoft"
         ],
         "approvedRepos": [
-            "adafruit/Circuit-Playground-Character-Icons"
+            "adafruit/Circuit-Playground-Character-Icons",
+            "adafruit/pxt-seesaw",
+            "jwunderl/pxt-button-combos"
+        ],
+        "preferredRepos": [
+            "adafruit/Circuit-Playground-Character-Icons",
+            "adafruit/pxt-seesaw",
+            "jwunderl/pxt-button-combos"
         ]
     },
     "galleries": {

@@ -1,14 +1,14 @@
 {
     "name": "hw---stm32f401",
-    "description": "STM32F401 board",
+    "description": "STM32F4 board",
     "files": [
         "config.ts",
         "device.d.ts"
     ],
     "card": {
-        "name": "F401",
-        "description": "Board based on STM32F401",
-        "learnMoreUrl": "https://arcade.makecode.com/hardware#f401",
+        "name": "F4",
+        "description": "Board based on STM32F4xx",
+        "learnMoreUrl": "https://arcade.makecode.com/hardware#f4",
         "cardType": "hw",
         "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAAB4BAMAAACHjORcAAAAD1BMVEUAP62OLsT/gTX///8AAAAWHMbsAAABvklEQVRo3u2WDW7DIAyFkTjBpJ4gXMCKTxAp9z/TbEPcNJRtJdbKMj9R6xnMF35SteHDWA504C8Cb2vRovlyDohFi+b/C0gnaADUS5HsNFA3OzDwvuF1NQEKROHGwOU2MDC/gze7SxFnAlz2bnDgSpKNGwFVDuwFrqvVpdT5tYF0Ysd8rL8iDnSgAx3owO+ALpeN4G5jCFgPR+RuMdSoXGL8CRAgllQVI03l7mLKgw9PRhrmuLVcBAw7AiHT1EgtRQaoeIAXo89mSK6udoIIPJ1NIYsRp8oDCmQelhVSe75C2Ayp8B+3LHHXJIV86DUwoBi9FPm4rqiILDAEShwbiAFPAaM5EPqAzZuL2HeGEJpAsAaiERBV8KTzFBDr3554DgjWQDQHwttXGBEIYHmGwB+rW0aUglhsDYQXgRD1DMXW35QeYKTQAEIHkGMTGPqAoQWEDiBuegYMrwOb00UDAHGvTmBbDvx7QNwUXINrMpYDd0oP2VwNvQWYcJpnjqUxJeUejmI0ksRQQRM4pwnTNLORhjwpiSc742Eop6Q2UGg6C3l9GcgrxOOQAr/cssR7o8lJ+pP2qNGCq7yHnfoEQuYXTuqHoj8AAAAASUVORK5CYII="
     },

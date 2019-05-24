@@ -8,7 +8,7 @@ Try this tutorial!
 
 ## Introduction @unplugged
 
-Fly your space plane through the on coming bogey spacecraft. Can you survive the continous attack? You can take only three hits. See if you can blast away the enemy before they hit you.
+Fly your space plane through the on coming bogey spacecraft. Can you survive the continuous attack? You can take only three hits. See if you can blast away the enemy before they hit you.
 
 ![Space plane and attacking spacecraft](/static/tutorials/galga.gif)
 

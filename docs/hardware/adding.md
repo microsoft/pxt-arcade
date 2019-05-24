@@ -9,6 +9,10 @@ boards, please contact us at arcadehdw@microsoft.com.**
 
 ## ~
 
+## ~ hint
+**Recent changes**: dropped pin header recommendation; added info on the 320x240 screen.
+## ~
+
 [Debug connector information](/hardware/dbg)
 
 Arcade features the following virtual device specification:
@@ -45,7 +49,8 @@ in the power supply).
 * 160x128 color TFT screen based on ST7735 or ILI9163C controller chip in SPI version (see [screen](#screen))
   - we skip using 8 bottom rows of the screen to upscaling to 320x240
 * alternatively, 320x240 color TFT screen based on ILI9341 controller chip in 
-  8 bit parallel version (not SPI!); this requires STM32F412RE or better and is not implemented yet
+  8 bit parallel version (not SPI!); this requires STM32F412RE or better and is not 
+  fully implemented yet
 * 8 buttons for directional pad (`left`, `up`, `right`, `down`), `A`, `B`, `Reset` and `Menu` (see [buttons](#buttons))
 * an audio output system (see [audio](#audio))
 * female microUSB connector for power and UF2 programming
@@ -94,7 +99,7 @@ We support 48 pin and larger packages.
 Only STM32F412 in 64 pin and larger packages support a parallel screen interface,
 which is required if you want to use ILI9341 320x240 screen.
 
-Additionally, we're considering adding the following in the future:
+Additionally, we're considering adding the following in the future (but not in the next 6 months):
 * **N840** based on Nordic **NRF52840** (Cortex M4F, 256kB of RAM, 1024kB of flash, 64MHz)
 
 Other choices are possible, and we would love to hear your feedback.
@@ -150,7 +155,40 @@ the right ones. They cost out at around $2.
 
 #### ILI9134 at 320x240
 
-This is not implemented yet.
+The FSMC controller on STM32F412 in 64 pin version enforces
+the following pin connections.
+
+| Screen   | Function | STM32F412RE |
+| -------- | -------- | ------- |
+| RD       | NOE      | PC5     |
+| WR       | NWE      | PC2/PD2 | 
+| RS (D/C) | A0       | PC3     |
+| D0       | D0       | PB14    |
+| D1       | D1       | PC6     |
+| D2       | D2       | PC11    |
+| D3       | D3       | PC12    |
+| D4       | D4       | PA2     |
+| D5       | D5       | PA3     |
+| D6       | D6       | PA4     |
+| D7       | D7       | PA5     |
+
+The CS pin of the screen can be connected anywhere (defined in bootloader as `DISPLAY_CS`)
+The RS pin is also currently handled in software, so could be anywhere, 
+but it's recommended to connect it to A0 (defined in bootloader as `DISPLAY_DC`).
+
+The choice of the WR pin should be in `DISPLAY_MOSI` bootloader config,
+and `DISPLAY_MISO` should contain `PC5` if the display read line is connected.
+Otherwise `DISPLAY_MISO` should be undefined.
+`DISPLAY_SCK` should always be undefined.
+
+Also, use the following display configuration to begin with:
+
+```
+DISPLAY_CFG0 = 0x08
+DISPLAY_CFG1 = 0x0018ff
+DISPLAY_CFG2 = 0x1000004
+```
+
 
 ### Audio #audio
 
@@ -233,28 +271,8 @@ The first two can be also used for JACDAC status.
 
 ### Pin header #pins
 
-Following is the recommended pinout of the header.
-A header is optional, but at having least holes to add pins later are nice to have.
-If there's limited space for header pins, `D10`-`D11` should be dropped
-but leave `D8`-`D9` remaining.
-
-The assignment is shown for the 64 pin (or larger) version of F4.
-For the 48 pin version, drop `D8`-`D11` and connect the accelerometer `SDA`/`SCL`
-on the header.
-
-| Pin | Function | F4   | F4-48   |
-| --- | -------- | ---- | ------- |
-| D1  | TX       | PA02 | PA02    |
-| D2  | RX       | PA03 | PA03    |
-| D3  | MOSI     | PB15 | PB15    |
-| D4  | MISO     | PB14 | PB14    |
-| D5  | SCK      | PB13 | PB13    |
-| D6  | SCL      | PB08 | PB10    |
-| D7  | SDA      | PB07 | PB03    |
-| D8  | SERVO1   | PA00 | -       |
-| D9  | SERVO2   | PA01 | -       |
-| D10 | I/O      | PC05 | -       |
-| D11 | I/O      | PC11 | -       |
+If pins are to be exposed, we recommend a micro:bit compatible edge-connector.
+The recommended pinout is being finalized.
 
 #### Pin notes
 
@@ -266,7 +284,7 @@ settings in the bootloader and use the right pins.
 
 There are some restrictions on the pinout:
 
-* the screen needs to be on SPI pins (of course); on F4 use SPI1 as it's faster
+* if using SPI screen, if needs to be on SPI pins (of course); on F4 use SPI1 as it's faster
 * DISPLAY_BL should be on a pin with PWM (so we can dim it)
 * MENU button should be a pin which can wake the MCU up from sleep mode (on D51 it requires `EIC`; on F4 it can be any pin)
 * other buttons can be on any pin
@@ -331,12 +349,12 @@ DISPLAY_CFG0 = 0x00000090
 DISPLAY_CFG1 = 0x000e14ff
 ```
 
-For the ST7735 screen:
+For the ST7735 and ILI9341 screens:
 * the low byte of `CFG0` is the MADCTL register
 * the next two bytes of `CFG0` are offset X and Y (if the screen doesn't start at 0, 0)
 * the lowest bit of high byte of `CFG0` can be set to enabled XOR of palette
 * `CFG1` is FRMCTR1
-* the low byte of `CFG2` is the desired SPI frequency in MHz
+* the low byte of `CFG2` is the desired SPI frequency in MHz (ignored for ILI9341)
 
 Once you're done patching, press "Apply my patch", which will download new `board.h`.
 

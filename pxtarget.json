@@ -18,6 +18,7 @@
         "libs/animation",
         "libs/accelerometer",
         "libs/lightsensor",
+        "libs/thermometer",
         "libs/base",
         "libs/core",
         "libs/core---samd",
@@ -119,7 +120,7 @@
         "dockerImage": "pext/yotta:latest",
         "codalTarget": {
             "branches": {
-                "https://github.com/lancaster-university/codal-core": "dbf2121bdde4131f2aedd23e93811858c6f05b23"
+                "https://github.com/lancaster-university/codal-core": "06e319138cf8884e03f5991a7d14879d0acb0ff8"
             }
         }
     },
@@ -136,26 +137,6 @@
                     "name": "codal-big-brainpad",
                     "url": "https://github.com/lancaster-university/codal-big-brainpad",
                     "branch": "v1.0.22",
-                    "type": "git"
-                },
-                "codalBinary": "STM32",
-                "serviceId": "codal2stm32",
-                "dockerImage": "pext/yotta:latest"
-            }
-        },
-        "stm32f103": {
-            "compile": {
-                "hasHex": true,
-                "openocdScript": "source [find interface/stlink-v2.cfg]; source [find target/stm32f1x.cfg]",
-                "uf2Family": "0x5ee21072",
-                "webUSB": false,
-                "vtableShift": 4
-            },
-            "compileService": {
-                "codalTarget": {
-                    "name": "codal-stm32f103",
-                    "url": "https://github.com/mmoskal/codal-stm32f103",
-                    "branch": "v1.0.15",
                     "type": "git"
                 },
                 "codalBinary": "STM32",
@@ -302,7 +283,8 @@
         "selectLanguage": true,
         "availableLocales": [
             "en",
-            "zh-CN"
+            "zh-CN",
+            "zh-TW"
         ],
         "invertedMenu": true,
         "showHomeScreen": true,
