@@ -24,6 +24,7 @@
         "libs/core---samd",
         "libs/core---stm32",
         "libs/core---linux",
+        "libs/core---vm",
         "libs/serial",
         "libs/corgio",
         "libs/darts",
@@ -31,10 +32,12 @@
         "libs/hw---stm32f401",
         "libs/hw---samd51",
         "libs/hw---rpi",
+        "libs/hw---vm",
         "libs/sevenseg",
         "libs/screen",
         "libs/screen---st7735",
         "libs/screen---linux",
+        "libs/screen---ext",
         "libs/game",
         "libs/game---hw",
         "libs/buttons",
@@ -45,6 +48,7 @@
         "libs/mixer---stm32",
         "libs/mixer---none",
         "libs/mixer---linux",
+        "libs/mixer---ext",
         "libs/device",
         "libs/jacdac",
         "libs/jacdac-drivers",
@@ -177,6 +181,22 @@
                 "buildEngine": "dockermake",
                 "dockerImage": "pext/rpi:alsa",
                 "serviceId": "rpi"
+            }
+        },
+        "vm": {
+            "compile": {
+                "hasHex": true,
+                "useELF": true,
+                "flashCodeAlign": 256,
+                "webUSB": false,
+                "nativeType": "vm",
+                "stackAlign": 2
+            },
+            "compileService": {
+                "buildEngine": "dockercross",
+                "dockerImage": "pext/crossbuild",
+                "serviceId": "crossbuild",
+                "skipCloudBuild": true
             }
         }
     },
@@ -315,7 +335,8 @@
         "experiments": [
             "print",
             "python",
-            "debugExtensionCode"
+            "debugExtensionCode",
+            "experimentalHw"
         ],
         "extendEditor": true,
         "simScreenshot": true,
