@@ -193,6 +193,12 @@ declare namespace control {
     function heapDump(): void;
 
     /**
+     * Set flags used when connecting an external debugger.
+     */
+    //% shim=control::setDebugFlags
+    function setDebugFlags(flags: int32): void;
+
+    /**
      * Return true if profiling is enabled in the current build.
      */
     //% shim=control::profilingEnabled
