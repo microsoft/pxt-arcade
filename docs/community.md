@@ -7,12 +7,12 @@ Games submitted by the MakeCode community.
 ```codecard
 [
     {
-        "name": "Space Fight",
-        "description": "Compete with a friend for the high score in a space adventure, by Alex Kulcsar",
+        "name": "Salvo!",
+        "description": "Place ships and fire torpedoes to beat up to three friends or AIs, by Alex Kulcsar",
         "author": "Alex Kulcsar",
-        "url": "https://forum.makecode.com/t/presenting-spacewar/107",
-        "imageUrl": "/static/community/spacefight/spacefight.png",
-        "largeImageUrl": "/static/community/spacefight/spacefight.gif"
+        "url": "https://forum.makecode.com/t/presenting-salvo/199",
+        "imageUrl": "/static/community/salvo/salvo.png",
+        "largeImageUrl": "/static/community/salvo/salvo.gif"
     },
     {
         "name": "Jewel Raider",
@@ -55,12 +55,12 @@ Games submitted by the MakeCode community.
         "largeImageUrl": "/static/community/ducksplat/ducksplat.gif"
     },
     {
-        "name": "Salvo!",
-        "description": "Place ships and fire torpedoes to beat up to three friends or AIs, by Alex Kulcsar",
+        "name": "Space Fight",
+        "description": "Compete with a friend for the high score in a space adventure, by Alex Kulcsar",
         "author": "Alex Kulcsar",
-        "url": "https://forum.makecode.com/t/presenting-salvo/199",
-        "imageUrl": "/static/community/salvo/salvo.png",
-        "largeImageUrl": "/static/community/salvo/salvo.gif"
+        "url": "https://forum.makecode.com/t/presenting-spacewar/107",
+        "imageUrl": "/static/community/spacefight/spacefight.png",
+        "largeImageUrl": "/static/community/spacefight/spacefight.gif"
     },
     {
         "name": "Add Game",
