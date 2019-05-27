@@ -55,6 +55,14 @@ Games submitted by the MakeCode community.
         "largeImageUrl": "/static/community/ducksplat/ducksplat.gif"
     },
     {
+        "name": "Salvo!",
+        "description": "Place ships and fire torpedoes to beat up to three friends or AIs, by Alex Kulcsar",
+        "author": "Alex Kulcsar",
+        "url": "https://forum.makecode.com/t/presenting-salvo/199",
+        "imageUrl": "/static/community/salvo/salvo.png",
+        "largeImageUrl": "/static/community/salvo/salvo.gif"
+    },
+    {
         "name": "Add Game",
         "description": "Are you looking to contribute your own game? These instructions will explain how to submit your game for the chance to appear in this carousel.",
         "imageUrl": "/static/community/add-game.png",
