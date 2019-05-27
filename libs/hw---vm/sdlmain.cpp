@@ -3,10 +3,10 @@
 #include <stdint.h>
 #include <stdio.h>
 
-#ifdef TARGET_OS_IPHONE
-#define STATIC 1
-#define IOS 1
-#define TOUCH 1
+#if TARGET_OS_IPHONE
+#define PXT_STATIC 1
+#define PXT_IOS 1
+#define PXT_TOUCH 1
 #endif
 
 #if defined(__WINDOWS__)
@@ -17,7 +17,7 @@
     (WCHAR *)SDL_iconv_string("UTF-16LE", "UTF-8", (char *)(S), SDL_strlen(S) + 1)
 #endif
 
-#ifndef STATIC
+#ifndef PXT_STATIC
 #if defined(__MACOSX__)
 #define SONAME "libpxt.dylib"
 #elif defined(__WINDOWS__)
@@ -109,7 +109,7 @@ typedef int (*get_logs_t)(int logtype, char *dst, int maxSize);
 typedef int (*get_panic_code_t)();
 typedef void (*get_audio_samples_t)(int16_t *buf, unsigned numSamples);
 
-#ifdef STATIC
+#ifdef PXT_STATIC
 extern "C" {
 void pxt_screen_get_pixels(int width, int height, uint32_t *screen);
 void pxt_raise_event(int src, int val);
@@ -134,9 +134,10 @@ void fatal(const char *msg, const char *info = "") {
     exit(1);
 }
 
-#ifndef TOUCH
+#ifndef PXT_TOUCH
 void init_touch_keys() {}
 void draw_touch_keys() {}
+void handle_touch_events(SDL_Event &) {}
 #else
 struct OnScreenKey {
     Key keyId;
@@ -296,7 +297,7 @@ void handle_touch_events(SDL_Event &e) {
         fatal("SDL Call error", #call);                                                            \
     }
 
-#ifndef STATIC
+#ifndef PXT_STATIC
 void *loadPXTLib(char *argv[]) {
     const char *exename = argv[0];
     if (exename == NULL || !strchr(exename, '/'))
@@ -396,7 +397,7 @@ extern "C" int main(int argc, char *argv[]) {
 
     SDL_LogSetOutputFunction(logOutput, NULL);
 
-#ifndef STATIC
+#ifndef PXT_STATIC
     SDL_Log("loading %s", SONAME);
 
     void *vmDLL = loadPXTLib(argv);
@@ -527,7 +528,7 @@ extern "C" int main(int argc, char *argv[]) {
             numFr = 0;
         }
 
-#ifdef IOS
+#ifdef PXT_IOS
         SDL_Delay(25);
 #endif
     }
