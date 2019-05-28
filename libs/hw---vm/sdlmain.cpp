@@ -206,7 +206,7 @@ void draw_touch_keys() {
         SDL_SetRenderDrawColor(renderer, 255, keys[i].isPressed ? 255 : 0, 0, 255);
         keyR.x = keys[i].center.x - sz;
         keyR.y = keys[i].center.y - sz;
-        SDL_RenderDrawRect(renderer, &keyR);
+        SDL_RenderFillRect(renderer, &keyR);
     }
 }
 
