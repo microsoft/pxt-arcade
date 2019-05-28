@@ -110,6 +110,14 @@
                         "keysdy": "keydy"
                     }
                 }
+            ],
+            "0.0.0 - 0.11.22": [
+                {
+                    "type": "api",
+                    "map": {
+                        "enum\\s*SpriteKind\\s*\\{((\\s*\\n\\s*(Player|Projectile|Food|Enemy))\\s*,?)+\\s*\\n\\s*\\}": ""
+                    }
+                }
             ]
         }
     },
