@@ -466,7 +466,11 @@ extern "C" int main(int argc, char *argv[]) {
         now = SDL_GetTicks();
 
         if (nextLoad && now >= nextLoad) {
-            pxt_vm_start("sprite-white.pxt64");
+#ifdef PXT_IOS
+            pxt_vm_start("binary.pxt64");
+#else
+            pxt_vm_start(argv[1]);
+#endif
             SDL_PauseAudioDevice(audioDev, 0);
             // SDL_PauseAudio(0);
             lastLoad = now;
