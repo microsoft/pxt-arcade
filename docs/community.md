@@ -7,12 +7,12 @@ Games submitted by the MakeCode community.
 ```codecard
 [
     {
-        "name": "Space Fight",
-        "description": "Compete with a friend for the high score in a space adventure, by Alex Kulcsar",
+        "name": "Salvo!",
+        "description": "Strategically place ships and fire torpedoes to win sea battles against your friends or AIs, by Alex Kulcsar",
         "author": "Alex Kulcsar",
-        "url": "https://forum.makecode.com/t/presenting-spacewar/107",
-        "imageUrl": "/static/community/spacefight/spacefight.png",
-        "largeImageUrl": "/static/community/spacefight/spacefight.gif"
+        "url": "https://forum.makecode.com/t/presenting-salvo/199",
+        "imageUrl": "/static/community/salvo/salvo.png",
+        "largeImageUrl": "/static/community/salvo/salvo.gif"
     },
     {
         "name": "Jewel Raider",
@@ -53,6 +53,14 @@ Games submitted by the MakeCode community.
         "url": "https://forum.makecode.com/t/ducksplat-game/196",
         "imageUrl": "/static/community/ducksplat/ducksplat.png",
         "largeImageUrl": "/static/community/ducksplat/ducksplat.gif"
+    },
+    {
+        "name": "Space Fight",
+        "description": "Compete with a friend for the high score in a space adventure, by Alex Kulcsar",
+        "author": "Alex Kulcsar",
+        "url": "https://forum.makecode.com/t/presenting-spacewar/107",
+        "imageUrl": "/static/community/spacefight/spacefight.png",
+        "largeImageUrl": "/static/community/spacefight/spacefight.gif"
     },
     {
         "name": "Add Game",

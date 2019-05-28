@@ -23,8 +23,8 @@
     {
         "name": "Community Games",
         "url": "/community",
-        "imageUrl": "/static/community/spacefight/spacefight.png",
-        "largeImageUrl": "/static/community/spacefight/spacefight.gif"
+        "imageUrl": "/static/community/salvo/salvo.png",
+        "largeImageUrl": "/static/community/salvo/salvo.gif"
     },
     {
         "name": "Game Design Concepts",
