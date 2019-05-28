@@ -8,7 +8,7 @@ Games submitted by the MakeCode community.
 [
     {
         "name": "Salvo!",
-        "description": "Place ships and fire torpedoes to beat up to three friends or AIs, by Alex Kulcsar",
+        "description": "Strategically place ships and fire torpedoes to win sea battles against your friends or AIs, by Alex Kulcsar",
         "author": "Alex Kulcsar",
         "url": "https://forum.makecode.com/t/presenting-salvo/199",
         "imageUrl": "/static/community/salvo/salvo.png",
