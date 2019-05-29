@@ -3,10 +3,10 @@
 #include <stdint.h>
 #include <stdio.h>
 
-#if TARGET_OS_IPHONE
+#if defined(__IPHONEOS__) || defined(__ANDROID__)
 #define PXT_STATIC 1
-#define PXT_IOS 1
 #define PXT_TOUCH 1
+#define PXT_IOS 1
 #endif
 
 #if defined(__WINDOWS__)
