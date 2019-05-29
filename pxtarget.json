@@ -51,7 +51,7 @@
         "libs/mixer---ext",
         "libs/device",
         "libs/jacdac",
-        "libs/jacdac-drivers",
+        "libs/jacdac-services",
         "libs/jacdac-game",
         "libs/power",
         "libs/controller",
