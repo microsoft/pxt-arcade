@@ -12,8 +12,6 @@ boards other than hobby prototypes, please contact us at arcadehdw@microsoft.com
 
 ## Overview #overview
 
-[Debug connector information](/hardware/dbg)
-
 The MakeCode Arcade system is designed to support a variety of physical gaming devices in addition to a more virtual experience on a PC or mobile device. We encourage others to design and build new variants of MakeCode Arcade hardware using the guidelines presented in this document. 
 
 Arcade hardware must meet the following specifications:
