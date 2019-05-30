@@ -6,11 +6,11 @@
         "device.d.ts"
     ],
     "card": {
-        "name": "D51",
+        "name": "D5",
         "description": "Board based on Microchip ATSAMD51",
-        "learnMoreUrl": "https://arcade.makecode.com/hardware#d51",
+        "learnMoreUrl": "https://arcade.makecode.com/hardware#d5",
         "cardType": "hw",
-        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAAB4AgMAAAAIzBH8AAAADFBMVEUAP6143FL/////gTVGSMBYAAABuUlEQVRYw+2UQY6cMBBFLa9adYpRVhb3yX2sXnIKL62PhPcZCQ6UG2QB+WVD2os0Y6kThfT0b+Sq+n5Ul0HCfG3UC3wiEKo9ojhnA+nzqrZxTrDAO3FesKQv8BGwsOcFodqTvca5wP/h+/gCHwI/uWIJNkhgCAIDoSeRWahBV4I454hHe6V6Zr3wZt0ILop2cRJIO+FCVywpe/WGMeaOBHrnuEauBDtvQwYhCoGwEMwziONKJJaOoi74l6VjAcuWKzLWl0o7VjNuHfvOc8aev2C9Vl1UUK5+O7XVc38qdYBvAt+M+dNgCMegbQb9AQhfgeFgRl+DsRVECwhVLkSzD8A85EWbfwDGVhDNoH+4Y+fRNCPNS8upJVg+XdxAfwe8vOmM1+rN3Ae/mAqMB+ClBsMBaGrQ3wU7UDfQ3AXrfepxUJB1CNZ6ZlAAPOWHfm3U3wR/zFuypJvzO3D5ZaebU4NYvs1YQRvcm7imxHp3NKO7GpbDOM00J5YL0jKPU9bmaIqkHec0ziu0zCBmLOCd0+YwyyDbpmzq7d+Xd3bnVTka37XjMA6cY0hDAu05DeM+Y3Y0o7v+wzfzE7dceA3DdxxnAAAAAElFTkSuQmCC"
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAAB4BAMAAACHjORcAAAAD1BMVEUAP6143FL/gTX///8AAACgtqsbAAABr0lEQVRo3u2WgY2DMAxFI2WCk24CsoDFnwCJ/Wc622lwUxpVgHWlNF+p9eOYRwiUEH6c1YEd+I/A31k1mZfeESBUk3nWVwB53fyAMwvIQJebMlVRdWKgXrAjUPWFQMfHZlYBTsCS6cArAu31NavcX7B+m5T5awPXG/10rk+RDuzADuzADnwF7OryEZmNIWA9HKFpNRFcbuYVkCjmrinGwDluxbCKMYGHJZZ2KxLYI5AybTFam41J+jKZ5dxkRTHUAiQdswm0mOrMecCAPATxVraeIRUjMqBdskZr0C7ZWtfAADH1TQldV1SEiByBGs8NRMAhYHQH0j4gQA0g9q0hhSaQvIFwAmIRPUkeAmK998RjQPIGwh1Ib59hBDHAcw1Jfl53GdCCqPYZkDYCKWolqW38U7YDI4cGkLYDNTaBYR8wtIC0A4iiZ8CwHSihXXgCIO7lAKzVgZ8HxE39a/30GpzVgXdKVW+sht4GTBjGkWNpQkk5I1GMRZYaLmgCxzQgDaMYbZCDknpwEg9DuctqA4VmR0Hml4EyQzwOVcDmJWu0xgcnzaclY6YUXOU53Kk/Y5YfN7mU0qQAAAAASUVORK5CYII="
     },
     "compileServiceVariant": "samd51",
     "cppDependencies": {
@@ -20,7 +20,7 @@
     "dependencies": {
         "core---samd": "file:../core---samd",
         "screen---st7735": "file:../screen---st7735",
-        "mixer---none": "file:../mixer---none",
+        "mixer---samd": "file:../mixer---samd",
         "buttons": "file:../buttons",
         "game---hw": "file:../game---hw",
         "jacdac-game": "file:../jacdac-game"

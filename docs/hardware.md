@@ -21,6 +21,22 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "variant": "hw---stm32f401"
     },
     {
+        "name": "Adafruit PyBadge",
+        "description": "It's a badge, it's an arcade, it's a PyBadge",
+        "imageUrl": "/static/hardware/pybadge.jpg",
+        "url": "https://www.adafruit.com/product/4200",
+        "variant": "hw---samd51",
+        "label": "beta"
+    },
+    {
+        "name": "Adafruit PyGamer",
+        "description": "The upgraded PyBadge",
+        "imageUrl": "/static/hardware/pygamer.jpg",
+        "url": "https://www.adafruit.com/product/4242",
+        "variant": "hw---samd51",
+        "label": "beta"
+    },
+    {
         "name": "Adafruit M4",
         "description": "Learn how to run your games on micro-controllers from Adafruit",
         "imageUrl": "/static/hardware/adafruitm4.jpg",

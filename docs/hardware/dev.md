@@ -1,10 +1,10 @@
 # Arcade Hardware Development
 
-## Adding new board using supported MCU
+## Creating a new board based on a supported MCU
 
-* [Adding new hardware](/hardware/adding)
+* [Creating new hardware](/hardware/adding)
 
-## Adding new MCU support
+## Adding support for a new MCU
 
 * [Hardware Definitions](/hardware/dev/hw-definition)
 * [Core Extension](/hardware/dev/hw-core)
