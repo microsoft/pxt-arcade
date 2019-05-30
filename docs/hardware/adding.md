@@ -9,9 +9,6 @@ boards other than hobby prototypes, please contact us at arcadehdw@microsoft.com
 
 ## ~
 
-## ~ hint
-**Recent changes**: dropped pin header recommendation; added info on the 320x240 screen.
-## ~
 
 ## Overview #overview
 
@@ -288,7 +285,7 @@ settings in the bootloader and use the right pins.
 
 There are some restrictions on the pinout:
 
-* if using SPI screen, if needs to be on SPI pins (of course); on F4 best use SPI1 as it may allow for faster refresh in the future
+* if using SPI screen, if needs to be on SPI pins; on F4 best use SPI1 as it may allow for faster refresh in the future
 * DISPLAY_BL should be on a pin with PWM (so we can dim it)
 * MENU button should be a pin which can wake the MCU up from sleep mode (on D51 it requires `EIC`; on F4 it can be any pin)
 * other buttons can be on any pin
