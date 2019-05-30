@@ -49,23 +49,6 @@ The rest of this page is split into three main sections, each of which refers to
 * [Hardware design notes](#hardwaredev) provides additional hardware circuit design considerations
 * [Firmware development notes](#firmwaredev) describes aspects of firmware development and configuration
 
-## Configuration #cf2
-
-We anticipate the future need of various configurations for screen controllers, as well as different
-accelerometers, etc. Thus, we generate the same UF2 file
-for all boards of a given variant, and have the runtime look for configuration
-values in the bootloader area (called **CF2** configuration).
-
-See https://github.com/Microsoft/uf2/blob/master/cf2.md for more details on the configuration format.
-The [bootloaders](#bootloaders) can be binary patched with new configuration data if needed.
-
-The configuration data also includes the assignment of a GPIO pin header.
-Generally, the header isn't essential to this board, but it's recommended
-to at least leave holes for people to solder it in.
-
-The exact pins where the various `BTN_*`, `JACK_*`, and `DISPLAY_*` lines are connected
-are specified in the bootloader. You can change them as described above.
-
 ## Components #components
 
 ### MCU #mcu
