@@ -72,3 +72,14 @@ Here are some fun programs for your @boardname@!
     }
 ]
 ```
+
+## See also
+
+[Falling Duck](/blocks-games/duck),
+[Space Destroyer](/blocks-games/space-destroyer),
+[Jumpy Platformer](/blocks-games/jumpy-platformer),
+[Eat the Fruit](/blocks-games/eat-the-fruit),
+[Level Up!](/blocks-games/level-game),
+[Memory](/blocks-games/memory),
+[Catch](/blocks-games/catch),
+[Eater Princess](/blocks-games/eater-princess)
