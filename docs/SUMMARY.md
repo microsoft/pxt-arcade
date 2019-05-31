@@ -13,22 +13,6 @@
     * [CS Intro 2](/courses/csintro2)
     * [CS Intro 3](/courses/csintro3)
 
-## JavaScript Games
-
-* [JavaScript Games](/javascript-games)
-    * [Asteroids](/examples/asteroids)
-    * [Bouncer Bucket](/examples/bouncer-bucket)
-    * [Car Race](/examples/car-race)
-    * [Collisions](/examples/collisions)
-    * [Duck](/examples/duck)
-    * [Guess the Letter](/examples/guess-the-letter)
-    * [Jumper](/examples/jumper)
-    * [Mega Bounce](/examples/mega-bounce)
-    * [Pallete](/examples/palette)
-    * [Runner](/examples/runner)
-    * [Snake](/examples/snake)
-    * [Sorting](/examples/sorting)
-
 ## Reference #reference
 
 * [Reference](/reference)
