@@ -11,14 +11,14 @@
     {
         "name": "Blocks Games",
         "url": "/blocks-games",
-        "imageUrl": "/static/examples/duck.png",
-        "largeImageUrl": "/static/examples/duck.gif"
+        "imageUrl": "/static/blocks-games/duck.png",
+        "largeImageUrl": "/static/blocks-games/duck.gif"
     },
     {
         "name": "JavaScript Games",
         "url": "/javascript-games",
-        "imageUrl": "/static/examples/planet-putt-putt.png",
-        "largeImageUrl": "/static/examples/darker-duck.gif"
+        "imageUrl": "/static/javascript-games/planet-putt-putt.png",
+        "largeImageUrl": "/static/javascript-games/planet-putt-putt.gif"
     },
     {
         "name": "Community Games",
@@ -35,8 +35,8 @@
     {
         "name": "Graphics and Math",
         "url": "/graphics-math",
-        "imageUrl": "/static/examples/bresenham-circle.png",
-        "largeImageUrl": "/static/examples/bresenham-circle.gif"
+        "imageUrl": "/static/graphics-math/bresenham-circle.png",
+        "largeImageUrl": "/static/graphics-math/bresenham-circle.gif"
     },
     {
         "name": "Lessons",

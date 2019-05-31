@@ -11,7 +11,8 @@ Here are some fun programs for your @boardname@!
         "description": "Golf your way through the galaxy",
         "url":"/javascript-games/planet-putt-putt",
         "cardType": "codeExample",
-        "imageUrl": "/static/javascript-games/planet-putt-putt.png"
+        "imageUrl": "/static/javascript-games/planet-putt-putt.png",
+        "largeImageUrl": "/static/javascript-games/planet-putt-putt.gif"
     },
     {
         "name": "Cube Land",
