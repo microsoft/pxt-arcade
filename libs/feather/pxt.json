@@ -1,0 +1,12 @@
+{
+    "name": "feather",
+    "description": "Adafruit Feather pinout",
+    "files": [
+        "README.md",
+        "pins.d.ts"
+    ],
+    "dependencies": {
+        "hw": "file:../hw"
+    },
+    "public": true
+}

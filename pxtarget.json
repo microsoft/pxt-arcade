@@ -33,6 +33,7 @@
         "libs/hw---samd51",
         "libs/hw---rpi",
         "libs/hw---vm",
+        "libs/feather",
         "libs/sevenseg",
         "libs/screen",
         "libs/screen---st7735",
