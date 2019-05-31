@@ -1,6 +1,6 @@
 # Fibonacci Tiles and Spiral
 
-![Fibonacci tiling and spiral](/static/examples/fibo-tile-spiral/fibo-tile-spiral.gif)
+![Fibonacci tiling and spiral](/static/graphics-math/fibo-tile-spiral/fibo-tile-spiral.gif)
 
 Fibonacci numbers are series of numbers, or a _sequence_, where every next number is the sum of the previous two numbers. The sequence starts with `0` and the next number is `1`. The third number is also `1` because `0 + 1 = 1`. The numbers following that are `1 + 1 = 2`, `1 + 2 = 3`, and so on. For the first 10 numbers in the sequence, we have:
 
@@ -8,7 +8,7 @@ Fibonacci numbers are series of numbers, or a _sequence_, where every next numbe
 
 Because of how each number in the sequence is the sum of the previous two, the Fibonacci numbers are sometimes used to represent natural growth rates.
 
-![Fibonacci tiling with a spiral inside](/static/examples/fibo-tile-spiral/fibo-tile-spiral.jpg)
+![Fibonacci tiling with a spiral inside](/static/graphics-math/fibo-tile-spiral/fibo-tile-spiral.jpg)
 
 In the picture above, squares are drawn with sides that are the length of a Fibonacci number. You see that squares are tiled together perfectly in a spiral pattern starting at the smallest square and then moving out in a counter-clockwise direction. Also, an actual spiral is inscribed within the squares using quarter-circle arcs that are the radius of the Fibonacci number for that square. As more squares and arcs are drawn, the drawing surface will fill "naturally". Each larger square will tile next to the smaller ones without any gaps and the spiral will grow smoothly with a natural bend.
 

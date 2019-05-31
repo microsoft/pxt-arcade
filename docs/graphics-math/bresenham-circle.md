@@ -25,7 +25,7 @@ The problem is the real value for **Y** isn't always an integer and a we need to
 
 You can see in the picture below that a pixel on the left is plotted and there are two choices for plotting the next pixel, the blue pixel above the line or the red pixel below it.
 
-![](/static/examples/bresenham-circle/decision-points.jpg)
+![](/static/graphics-math/bresenham-circle/decision-points.jpg)
 
 The goal is to choose the pixel that is closest to the edge of the real circle. To decide which of the two choices is best for the next pixel location, something called a _decision parameter_ is created. You see that the lengths of the blue and red lines are different than the length of the radius line. These lengths compared to the circle radius to give a radius error for the two pixel choices. The decision parameter is the combination of the two radius errors and becomes either a negative or positive number. If it's negative, the blue pixel chosen. If positive, the red pixel is used.
 
@@ -54,7 +54,7 @@ So, this is the value of the decision parameter for the current pixel choice. To
 
 When the blue pixel is closest to the actual circle edge we know that the decision parameter will be negative because the positive distance above the circle is less then the negative distance of the red pixel below. In the opposite case, the red pixel is closest to the circle when the decision paramter is positive. This is because the negative distance from the circle is less than the positive distance of the blue pixel above.
 
-![](/static/examples/bresenham-circle/error-spans.jpg)
+![](/static/graphics-math/bresenham-circle/error-spans.jpg)
 
 For the pixel error shown in the picture, the pixel chosen will be the blue pixel as you can see that it's closer and the value for both errors combined is negative.
 
@@ -78,7 +78,7 @@ d += 4 * (x -y) + 10
 
 The program draws new circles with either an increasing or decreasing radius. The value of ``x`` varies from `0` to ``radius`` to pick pixels for just one-eighth of the circle, an _octant_. The pixels for the other 7 corresponding octants are plotted based on the symmetry properties of a circle.
 
-![](/static/examples/bresenham-circle/octants.jpg)
+![](/static/graphics-math/bresenham-circle/octants.jpg)
 
 The decision parameter is set to an inital value where ``Xi = 0`` and ``Yi = radius``. Using these values in the equation for ``Di`` gives us: ``Di = 3 - 2 * radius``. Both the pixel choice and the ``Dj`` calculation occur in the conditionals for ``Di <= 0`` or ``Di > 0``.
 
