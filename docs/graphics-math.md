@@ -6,27 +6,27 @@ Try computer graphics methods and visual math concepts as Arcade games.
 
 ```codecard
 [
-{
-  "name": "Bresenham Circles",
-  "description": "Draw circles using the Bresenham algorithm",
-  "url": "/graphics-math/bresenham-circle",
-  "imageUrl": "/static/graphics-math/bresenham-circle.png",
-  "largeImageUrl": "/static/graphics-math/bresenham-circle.gif"
-},
-{
-  "name": "Game of Life",
-  "description": "Enjoy watching a rainbow variant of the famous zero-player game",
-  "url": "/graphics-math/game-of-life",
-  "imageUrl": "/static/graphics-math/game-of-life.png",
-  "largeImageUrl": "/static/graphics-math/game-of-life.gif"
-},
-{
-  "name": "Paint Brush",
-  "description": "Generates random 'art' by drawing across the screen",
-  "url": "/graphics-math/paint-brush",
-  "imageUrl": "/static/graphics-math/paint-brush.png",
-  "largeImageUrl": "/static/graphics-math/paint-brush.gif"
-}
+    {
+        "name": "Bresenham Circles",
+        "description": "Draw circles using the Bresenham algorithm",
+        "url": "/graphics-math/bresenham-circle",
+        "imageUrl": "/static/graphics-math/bresenham-circle.png",
+        "largeImageUrl": "/static/graphics-math/bresenham-circle.gif"
+    },
+    {
+        "name": "Game of Life",
+        "description": "Enjoy watching a rainbow variant of the famous zero-player game",
+        "url": "/graphics-math/game-of-life",
+        "imageUrl": "/static/graphics-math/game-of-life.png",
+        "largeImageUrl": "/static/graphics-math/game-of-life.gif"
+    },
+    {
+        "name": "Paint Brush",
+        "description": "Generates random 'art' by drawing across the screen",
+        "url": "/graphics-math/paint-brush",
+        "imageUrl": "/static/graphics-math/paint-brush.png",
+        "largeImageUrl": "/static/graphics-math/paint-brush.gif"
+    }
 ]
 ```
 
