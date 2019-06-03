@@ -110,6 +110,14 @@
                         "keysdy": "keydy"
                     }
                 }
+            ],
+            "0.0.0 - 0.11.20": [
+                {
+                    "type": "api",
+                    "map": {
+                        "SpriteKind": "SpriteKindLegacy"
+                    }
+                }
             ]
         }
     },
