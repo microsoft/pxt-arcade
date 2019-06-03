@@ -486,7 +486,7 @@ extern "C" int main(int argc, char *argv[]) {
                     }
                     break;
                 }
-                SDL_Delay(2000);
+                SDL_Delay(200);
             }
             // pxt_vm_start("binary.pxt64");
 #else
