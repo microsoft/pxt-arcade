@@ -130,6 +130,7 @@ void pxt_get_audio_samples(int16_t *buf, unsigned numSamples);
 #else
 get_audio_samples_t pxt_get_audio_samples;
 raise_event_t pxt_raise_event;
+vm_start_buffer_t pxt_vm_start_buffer;
 #endif
 
 void raise_key(Key k, int ev) {
@@ -186,7 +187,7 @@ void add_key(Key kid, char name, int x, int y) {
 void init_touch_keys() {
     int widthLeft = activeDisplayRect.x;
     int widthRight = win_width - activeDisplayRect.x - activeDisplayRect.w;
- 
+
     int kps = widthLeft / 2 - 10;
     if (kps > win_height / 6)
         kps = win_height / 6;
@@ -255,7 +256,7 @@ void handle_touch_events(SDL_Event &e) {
                     nearest = &keys[j];
                 }
             }
-            
+
             fingers[i].secondLastKey = NULL;
             auto minDistance = (win_height / 5) * (win_height / 5);
             if (nearestDistance > minDistance)
@@ -264,14 +265,15 @@ void handle_touch_events(SDL_Event &e) {
                 auto secondNearest = &keys[0];
                 auto secondNearestDist = -1;
                 for (int j = 0; j < NUM_KEYS; ++j) {
-                    if(&keys[j] == nearest) continue;
+                    if (&keys[j] == nearest)
+                        continue;
                     auto dist = distance(p, keys[j].center);
-                    if ( secondNearestDist == -1 || secondNearestDist > dist) {
+                    if (secondNearestDist == -1 || secondNearestDist > dist) {
                         secondNearestDist = dist;
                         secondNearest = &keys[j];
                     }
                 }
-                
+
                 auto maxDist = nearestDistance * 16 / 10;
                 if (secondNearestDist < maxDist) {
                     fingers[i].secondLastKey = secondNearest;
@@ -400,8 +402,17 @@ static void SDLCALL logOutput(void *userdata, int category, SDL_LogPriority prio
 #endif
 }
 
-extern "C" void startCompile();
-extern "C" const char *getCompileResult(bool *isError, int *size);
+#ifdef PXT_IOS
+extern "C" void fetchSources(const char *scriptId);
+extern "C" void gotCompileResult(const char *errorDesc, uint8_t *data, int datalen) {
+    if (errorDesc) {
+        SDL_Log("Compilation error: %s", errorDesc);
+    } else {
+        SDL_Log("Compilation OK!");
+        pxt_vm_start_buffer(data, datalen);
+    }
+}
+#endif
 
 extern "C" int main(int argc, char *argv[]) {
 
@@ -416,15 +427,15 @@ extern "C" int main(int argc, char *argv[]) {
     get_pixels_t pxt_screen_get_pixels =
         (get_pixels_t)SDL_LoadFunction(vmDLL, "pxt_screen_get_pixels");
     vm_start_t pxt_vm_start = (vm_start_t)SDL_LoadFunction(vmDLL, "pxt_vm_start");
-    vm_start_buffer_t pxt_vm_start_buffer = (vm_start_buffer_t)SDL_LoadFunction(vmDLL, "pxt_vm_start_buffer");
+    pxt_vm_start_buffer = (vm_start_buffer_t)SDL_LoadFunction(vmDLL, "pxt_vm_start_buffer");
     pxt_raise_event = (raise_event_t)SDL_LoadFunction(vmDLL, "pxt_raise_event");
     get_logs_t pxt_get_logs = (get_logs_t)SDL_LoadFunction(vmDLL, "pxt_get_logs");
     get_panic_code_t pxt_get_panic_code =
         (get_panic_code_t)SDL_LoadFunction(vmDLL, "pxt_get_panic_code");
     pxt_get_audio_samples = (get_audio_samples_t)SDL_LoadFunction(vmDLL, "pxt_get_audio_samples");
 
-    if (!pxt_screen_get_pixels || !pxt_vm_start || !pxt_vm_start_buffer || !pxt_raise_event || !pxt_get_logs ||
-        !pxt_get_panic_code || !pxt_get_audio_samples) {
+    if (!pxt_screen_get_pixels || !pxt_vm_start || !pxt_vm_start_buffer || !pxt_raise_event ||
+        !pxt_get_logs || !pxt_get_panic_code || !pxt_get_audio_samples) {
         fatal("can't load pxt function from DLL", "");
     }
 #endif
@@ -480,22 +491,7 @@ extern "C" int main(int argc, char *argv[]) {
 
         if (nextLoad && now >= nextLoad) {
 #ifdef PXT_IOS
-            startCompile();
-            for (;;) {
-                bool isError;
-                int size;
-                const char *data = getCompileResult(&isError, &size);
-                if (data != NULL) {
-                    if (isError) {
-                        SDL_Log("Compilation error: %s", data);
-                    } else {
-                        SDL_Log("Compilation OK!");
-                        pxt_vm_start_buffer((uint8_t*)data, size);
-                    }
-                    break;
-                }
-                SDL_Delay(200);
-            }
+            fetchSources("_7cX8UcKfrXDg");
             // pxt_vm_start("binary.pxt64");
 #else
             pxt_vm_start(argv[1]);
