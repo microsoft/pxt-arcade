@@ -2,6 +2,14 @@
 #include <stdint.h>
 #include <stdio.h>
 
+#if UINTPTR_MAX == 0xffffffff
+#define BINSUFF "-32"
+#elif UINTPTR_MAX == 0xffffffffffffffff
+#define BINSUFF ""
+#else
+#error "UINTPTR_MAX has invalid value"
+#endif
+
 #if defined(__IPHONEOS__) || defined(__ANDROID__)
 #define PXT_STATIC 1
 #define PXT_TOUCH 1
@@ -18,11 +26,11 @@
 
 #ifndef PXT_STATIC
 #if defined(__MACOSX__)
-#define SONAME "libpxt.dylib"
+#define SONAME "libpxt" BINSUFF ".dylib"
 #elif defined(__WINDOWS__)
-#define SONAME "pxt.dll"
+#define SONAME "pxt" BINSUFF ".dll"
 #else
-#define SONAME "libpxt.so"
+#define SONAME "libpxt" BINSUFF ".so"
 #endif
 #endif
 
@@ -402,7 +410,7 @@ extern "C" int main(int argc, char *argv[]) {
     SDL_LogSetOutputFunction(logOutput, NULL);
 
 #ifndef PXT_STATIC
-    SDL_Log("loading %s", SONAME);
+    SDL_Log("loading %s ...", SONAME);
 
     void *vmDLL = loadPXTLib(argv);
     get_pixels_t pxt_screen_get_pixels =
