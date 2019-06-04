@@ -1,4 +1,3 @@
-
 #include "SDL.h"
 #include <stdint.h>
 #include <stdio.h>
@@ -105,6 +104,7 @@ int mapKeyCode(int sdlCode) {
 typedef void (*get_pixels_t)(int width, int height, uint32_t *screen);
 typedef void (*raise_event_t)(int src, int val);
 typedef void (*vm_start_t)(const char *fn);
+typedef void (*vm_start_buffer_t)(uint8_t *data, unsigned len);
 typedef int (*get_logs_t)(int logtype, char *dst, int maxSize);
 typedef int (*get_panic_code_t)();
 typedef void (*get_audio_samples_t)(int16_t *buf, unsigned numSamples);
@@ -114,6 +114,7 @@ extern "C" {
 void pxt_screen_get_pixels(int width, int height, uint32_t *screen);
 void pxt_raise_event(int src, int val);
 void pxt_vm_start(const char *fn);
+void pxt_vm_start_buffer(uint8_t *data, unsigned len);
 int pxt_get_logs(int logtype, char *dst, int maxSize);
 int pxt_get_panic_code();
 void pxt_get_audio_samples(int16_t *buf, unsigned numSamples);
@@ -391,6 +392,9 @@ static void SDLCALL logOutput(void *userdata, int category, SDL_LogPriority prio
 #endif
 }
 
+extern "C" void startCompile();
+extern "C" const char *getCompileResult(bool *isError, int *size);
+
 extern "C" int main(int argc, char *argv[]) {
 
     SDL_LogSetAllPriority(SDL_LOG_PRIORITY_INFO);
@@ -404,13 +408,14 @@ extern "C" int main(int argc, char *argv[]) {
     get_pixels_t pxt_screen_get_pixels =
         (get_pixels_t)SDL_LoadFunction(vmDLL, "pxt_screen_get_pixels");
     vm_start_t pxt_vm_start = (vm_start_t)SDL_LoadFunction(vmDLL, "pxt_vm_start");
+    vm_start_buffer_t pxt_vm_start_buffer = (vm_start_buffer_t)SDL_LoadFunction(vmDLL, "pxt_vm_start_buffer");
     pxt_raise_event = (raise_event_t)SDL_LoadFunction(vmDLL, "pxt_raise_event");
     get_logs_t pxt_get_logs = (get_logs_t)SDL_LoadFunction(vmDLL, "pxt_get_logs");
     get_panic_code_t pxt_get_panic_code =
         (get_panic_code_t)SDL_LoadFunction(vmDLL, "pxt_get_panic_code");
     pxt_get_audio_samples = (get_audio_samples_t)SDL_LoadFunction(vmDLL, "pxt_get_audio_samples");
 
-    if (!pxt_screen_get_pixels || !pxt_vm_start || !pxt_raise_event || !pxt_get_logs ||
+    if (!pxt_screen_get_pixels || !pxt_vm_start || !pxt_vm_start_buffer || !pxt_raise_event || !pxt_get_logs ||
         !pxt_get_panic_code || !pxt_get_audio_samples) {
         fatal("can't load pxt function from DLL", "");
     }
@@ -467,7 +472,23 @@ extern "C" int main(int argc, char *argv[]) {
 
         if (nextLoad && now >= nextLoad) {
 #ifdef PXT_IOS
-            pxt_vm_start("binary.pxt64");
+            startCompile();
+            for (;;) {
+                bool isError;
+                int size;
+                const char *data = getCompileResult(&isError, &size);
+                if (data != NULL) {
+                    if (isError) {
+                        SDL_Log("Compilation error: %s", data);
+                    } else {
+                        SDL_Log("Compilation OK!");
+                        pxt_vm_start_buffer((uint8_t*)data, size);
+                    }
+                    break;
+                }
+                SDL_Delay(200);
+            }
+            // pxt_vm_start("binary.pxt64");
 #else
             pxt_vm_start(argv[1]);
 #endif
