@@ -51,7 +51,7 @@
         "libs/mixer---ext",
         "libs/device",
         "libs/jacdac",
-        "libs/jacdac-drivers",
+        "libs/jacdac-services",
         "libs/jacdac-game",
         "libs/power",
         "libs/controller",
@@ -108,6 +108,14 @@
                     "map": {
                         "keysdx": "keydx",
                         "keysdy": "keydy"
+                    }
+                }
+            ],
+            "0.0.0 - 0.11.20": [
+                {
+                    "type": "api",
+                    "map": {
+                        "SpriteKind": "SpriteKindLegacy"
                     }
                 }
             ]

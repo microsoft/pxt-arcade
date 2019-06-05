@@ -10,8 +10,6 @@ void playTone(int frequency, int ms);
 
 namespace pxt {
 
-static uint64_t configuredPins;
-
 enum class Key {
     LEFT = 1,
     UP,
@@ -20,6 +18,12 @@ enum class Key {
     A,
     B,
     MENU,
+    LEFT2,
+    UP2,
+    RIGHT2,
+    DOWN2,
+    A2,
+    B2,
     RESET,
     EXIT,
 };
@@ -42,7 +46,6 @@ static int adcFD;
 #define SWAP(v) (uint16_t)((v >> 8) | (v << 8))
 #define MID 0x3300
 #define DEAD 0x1000
-
 
 static int readADC(int channel) {
     if (!adcFD) {
@@ -67,23 +70,32 @@ static int readADC(int channel) {
 }
 
 #define SET(s) r |= 1 << (int)(Key::s)
-#define KEY(s)                                                                                 \
-    if (isPressed("BTN_" #s))                                                                                   \
+#define KEY(s)                                                                                     \
+    if (isPressed("BTN_" #s, (int)Key::s))                                                         \
     SET(s)
 
-static int isPressed(const char *name) {
-    auto pins = getConfigInts(name);
-    for (int i = 0; pins[i] != ENDMARK; ++i) {
-        auto p = pins[i];
-        auto mask = 1ULL << p;
-        if (!(configuredPins & mask)) {
+static int isPressed(const char *name, int keyPos) {
+    static uint64_t parsedPin[(int)Key::EXIT + 1];
+
+    if (parsedPin[keyPos] == 0) {
+        auto pins = getConfigInts(name);
+        for (int i = 0; pins[i] != ENDMARK; ++i) {
+            auto p = pins[i];
+            auto mask = 1ULL << p;
+            parsedPin[keyPos] |= mask;
             pinMode(p, INPUT);
             pullUpDnControl(p, PUD_UP);
-            configuredPins |= mask;
         }
-        if (!digitalRead(p))
-            return 1;
+        // make sure it's non-zero
+        parsedPin[keyPos] |= 1ULL << 63;
     }
+
+    for (int i = 0; i < 63; ++i) {
+        if ((parsedPin[keyPos] >> i) & 1)
+            if (!digitalRead(i))
+                return 1;
+    }
+
     return 0;
 }
 
@@ -99,7 +111,14 @@ static uint32_t readBtns() {
     KEY(MENU);
     KEY(EXIT);
     KEY(RESET);
-    
+
+    KEY(A2);
+    KEY(B2);
+    KEY(LEFT2);
+    KEY(RIGHT2);
+    KEY(UP2);
+    KEY(DOWN2);
+
     uint16_t ch0 = readADC(0), ch1 = readADC(1);
 
     if (ch0 < MID - DEAD)
