@@ -1,5 +1,18 @@
 # Recipes
 
+## Basics
+
+```codecard
+[
+{
+  "name": "Background",
+  "description": "Change the background color or image",
+  "url": "/recipes/background",
+  "cardType": "tutorial"
+}
+]
+```
+
 ## Game Design
 
 ```codecard
