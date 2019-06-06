@@ -1,6 +1,7 @@
 #include "SDL.h"
 #include <stdint.h>
 #include <stdio.h>
+#include <ctype.h>
 
 #if UINTPTR_MAX == 0xffffffff
 #define BINSUFF "-32"
@@ -479,22 +480,26 @@ extern "C" int main(int argc, char *argv[]) {
 
     int now = SDL_GetTicks();
     int lastLoad = 0;
-    int nextLoad = now;
+    int nextLoad = now + 100;
 
     SDL_Event e;
     int quit = 0;
     int numFr = 0;
     int prevTicks = SDL_GetTicks();
 
+    const char *imageName = argv[0];
+#ifdef PXT_IOS
+    imageName = NULL;
+#endif
+
     while (!quit) {
         now = SDL_GetTicks();
 
-        if (nextLoad && now >= nextLoad) {
+        if (imageName && nextLoad && now >= nextLoad) {
 #ifdef PXT_IOS
-            fetchSources("_7cX8UcKfrXDg");
-            // pxt_vm_start("binary.pxt64");
+            fetchSources(imageName);
 #else
-            pxt_vm_start(argv[1]);
+            pxt_vm_start(imageName);
 #endif
             SDL_PauseAudioDevice(audioDev, 0);
             // SDL_PauseAudio(0);
@@ -516,6 +521,35 @@ extern "C" int main(int argc, char *argv[]) {
                 if (kk)
                     raise_key(kk, ev);
             }
+#ifdef PXT_IOS
+            if (e.type == SDL_DROPFILE) {
+                char *p = e.drop.file;
+                while (*p && *p != ':')
+                    p++;
+                while (*p && (*p == ':' || *p == '/'))
+                    p++;
+                char *beg = p;
+                if (*p == '_') {
+                    p++;
+                    while (isalnum(*p))
+                        p++;
+                } else if (isdigit(*p)) {
+                    while (isdigit(*p) || *p == '-')
+                        p++;
+                }
+                if (p - beg > 8) {
+                    *p = 0;
+                    if (imageName) {
+                        nextLoad = now + 300;
+                        SDL_free((void*)imageName);
+                    } else
+                        nextLoad = now;
+                    imageName = SDL_strdup(beg);
+                }
+                SDL_free(e.drop.file);
+            }
+#endif
+
             if (e.type == SDL_MOUSEBUTTONDOWN) {
                 // quit = 1;
             }
