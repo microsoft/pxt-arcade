@@ -134,7 +134,11 @@ raise_event_t pxt_raise_event;
 vm_start_buffer_t pxt_vm_start_buffer;
 #endif
 
+int exitReq;
+
 void raise_key(Key k, int ev) {
+    if (k == KEY_EXIT && ev == INTERNAL_KEY_UP)
+        exitReq = 1;
     pxt_raise_event(ev, k);
     pxt_raise_event(ev, 0); // any
 }
@@ -163,7 +167,7 @@ struct TrackedFinger {
 };
 
 #define NUM_FINGERS 10
-#define NUM_KEYS 6
+#define NUM_KEYS 8
 
 OnScreenKey keys[NUM_KEYS];
 TrackedFinger fingers[NUM_FINGERS];
@@ -193,7 +197,11 @@ void init_touch_keys() {
     if (kps > win_height / 6)
         kps = win_height / 6;
     int kpx = widthLeft / 2;
-    int kpy = win_height / 2;
+    int menuY = win_height / 10;
+    int kpy = win_height / 2 + menuY;
+
+    add_key(KEY_MENU, 'M', kpx - kps, menuY);
+    add_key(KEY_EXIT, 'E', kpx + kps, menuY);
 
     add_key(KEY_LEFT, '<', kpx - kps, kpy);
     add_key(KEY_RIGHT, '<', kpx + kps, kpy);
@@ -475,8 +483,8 @@ extern "C" int main(int argc, char *argv[]) {
     SDL_RenderPresent(renderer);
 
     int now = SDL_GetTicks();
-    int lastLoad = 0;
     int nextLoad = now + 100;
+    int lastLoad = 0;
 
     SDL_Event e;
     int quit = 0;
@@ -494,15 +502,16 @@ extern "C" int main(int argc, char *argv[]) {
 
         if (nextLoad && now >= nextLoad) {
 #ifdef PXT_IOS
-            if (imageID)
+            if (imageID) {
                 fetchSources(imageID);
-            else
+                imageID = NULL;
+            } else
 #endif
                 pxt_vm_start(imageName);
             SDL_PauseAudioDevice(audioDev, 0);
             // SDL_PauseAudio(0);
-            lastLoad = now;
             nextLoad = 0;
+            lastLoad = now;
         }
 
         while (SDL_PollEvent(&e)) {
@@ -538,7 +547,7 @@ extern "C" int main(int argc, char *argv[]) {
                 if (p - beg > 8) {
                     *p = 0;
                     nextLoad = now + 300;
-                    SDL_free((void*)imageID);
+                    SDL_free((void *)imageID);
                     imageID = SDL_strdup(beg);
                 }
                 SDL_free(e.drop.file);
@@ -564,11 +573,18 @@ extern "C" int main(int argc, char *argv[]) {
 
         flush_logs(pxt_get_logs);
 
+        if (exitReq) {
+            if (!nextLoad && now > 2000 + lastLoad) {
+                SDL_Log("exit at key request");
+                nextLoad = now;
+            }
+            exitReq = 0;
+        }
+
         if (!nextLoad) {
             int code = pxt_get_panic_code();
             if (code == -1) {
-                SDL_Log("restarting image at user req");
-                nextLoad = lastLoad + 3000; // this will likely be in the past
+                SDL_Log("in restart at user req");
             } else if (code >= 1000) {
                 SDL_Log("hit soft crash, code=%d; restarting", code - 1000);
                 nextLoad = now + 3000;
