@@ -48,7 +48,7 @@ Games submitted by the MakeCode community.
     },
     {
         "name": "Jumpy Mateo Platformer",
-        "description": "Get to the flag at the end of each level, by Adri314",
+        "description": "Jump to move up or avoid pitfalls, get the flag at the end of each level, by Adri314",
         "author": "Adri314",
         "url": "https://forum.makecode.com/t/jumping-mateo-platformer/230",
         "imageUrl": "/static/community/jumping-mateo-platformer/jumping-mateo-platformer.png",
