@@ -78,6 +78,14 @@
   "largeImageUrl": "/static/concepts/setting-the-scene.gif"
 },
 {
+  "name": "Breadcrumb Trail",
+  "description": "Learn about how tile maps can be used to place sprites around the screen. New Concepts: Tiles, Arrays, For Element Loops, Placing Sprites",
+  "url": "/concepts/breadcrumb-trail",
+  "cardType": "tutorial",
+  "imageUrl": "/static/concepts/breadcrumb-trail.png",
+  "largeImageUrl": "/static/concepts/breadcrumb-trail.gif"
+},
+{
   "name": "Tale of Talagron",
   "description": "Introduce your game with story text and effects",
   "url":"/concepts/talagron",
