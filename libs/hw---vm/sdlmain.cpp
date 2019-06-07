@@ -405,17 +405,13 @@ static void SDLCALL logOutput(void *userdata, int category, SDL_LogPriority prio
 
 #ifdef PXT_IOS
 extern "C" void fetchSources(const char *scriptId);
-extern "C" void gotCompileResult(const char *errorDesc, uint8_t *data, int datalen) {
-    if (errorDesc) {
-        SDL_Log("Compilation error: %s", errorDesc);
-    } else {
-        SDL_Log("Compilation OK!");
-        pxt_vm_start_buffer(data, datalen);
-    }
-}
+extern "C" void initCache();
 #endif
 
 extern "C" int main(int argc, char *argv[]) {
+#ifdef PXT_IOS
+    initCache();
+#endif
 
     SDL_LogSetAllPriority(SDL_LOG_PRIORITY_INFO);
 
@@ -487,20 +483,22 @@ extern "C" int main(int argc, char *argv[]) {
     int numFr = 0;
     int prevTicks = SDL_GetTicks();
 
-    const char *imageName = argv[0];
+    const char *imageName = argv[1];
 #ifdef PXT_IOS
-    imageName = NULL;
+    const char *imageID = NULL;
+    imageName = "menu.pxt64";
 #endif
 
     while (!quit) {
         now = SDL_GetTicks();
 
-        if (imageName && nextLoad && now >= nextLoad) {
+        if (nextLoad && now >= nextLoad) {
 #ifdef PXT_IOS
-            fetchSources(imageName);
-#else
-            pxt_vm_start(imageName);
+            if (imageID)
+                fetchSources(imageID);
+            else
 #endif
+                pxt_vm_start(imageName);
             SDL_PauseAudioDevice(audioDev, 0);
             // SDL_PauseAudio(0);
             lastLoad = now;
@@ -539,12 +537,9 @@ extern "C" int main(int argc, char *argv[]) {
                 }
                 if (p - beg > 8) {
                     *p = 0;
-                    if (imageName) {
-                        nextLoad = now + 300;
-                        SDL_free((void*)imageName);
-                    } else
-                        nextLoad = now;
-                    imageName = SDL_strdup(beg);
+                    nextLoad = now + 300;
+                    SDL_free((void*)imageID);
+                    imageID = SDL_strdup(beg);
                 }
                 SDL_free(e.drop.file);
             }
