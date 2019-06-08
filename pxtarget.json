@@ -18,6 +18,7 @@
         "libs/animation",
         "libs/accelerometer",
         "libs/lightsensor",
+        "libs/thermometer",
         "libs/base",
         "libs/core",
         "libs/core---samd",
