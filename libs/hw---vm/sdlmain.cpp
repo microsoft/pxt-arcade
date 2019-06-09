@@ -584,7 +584,7 @@ extern "C" int main(int argc, char *argv[]) {
         if (!nextLoad) {
             int code = pxt_get_panic_code();
             if (code == -1) {
-                SDL_Log("in restart at user req");
+                // restart done in user code
             } else if (code >= 1000) {
                 SDL_Log("hit soft crash, code=%d; restarting", code - 1000);
                 nextLoad = now + 3000;
