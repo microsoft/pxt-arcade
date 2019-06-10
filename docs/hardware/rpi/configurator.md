@@ -39,6 +39,16 @@ const pinImg = img`
     b c c c c c c b
     b b b b b b b b
 `
+const bcmImg = img`
+    d d d d d d d d
+    d c c c c c c d
+    d c c c c c c d
+    d c c c c c c d
+    d c c c c c c d
+    d c c c c c c d
+    d c c c c c c d
+    d d d d d d d d
+`
 const pinSelectedImg = img`
     1 1 1 1 1 1 1 1
     1 5 5 5 5 5 5 1
@@ -115,9 +125,11 @@ for (let line of arcadeCfg.split('\n')) {
     if (line.indexOf("BTN_") != 0) continue;
     const parts = line.substr(4).split('=');
     const name = parts[0];
-    const index = bcmToPins[parseInt(parts[1]).toString()] as number;
+    const bcm = parseInt(parts[1]);
+    const index = bcmToPins[bcm] as number;
     const sprite = pinout[index - 1];
     sprite.data["name"] = name;
+    sprite.setImage(bcmImg);
     if (name == "RESET") {
         bkg.print(`RESET ${index}`, 10, 80, 2)
         sprite.setImage(sprite.image.clone())
@@ -182,7 +194,7 @@ function select(name: string) {
 }
 function unselect(name: string) {
     const sprite = pinout.filter(pin => pin.data["name"] == name)[0];
-    sprite.setImage(pinImg);
+    sprite.setImage(bcmImg);
     buttonName.say("", 0);
 }
 function setup(btn: controller.Button, name: string) {
