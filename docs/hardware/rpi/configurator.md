@@ -40,14 +40,14 @@ const pinImg = img`
     b b b b b b b b
 `
 const bcmImg = img`
-    d d d d d d d d
-    d c c c c c c d
-    d c c c c c c d
-    d c c c c c c d
-    d c c c c c c d
-    d c c c c c c d
-    d c c c c c c d
-    d d d d d d d d
+    9 9 9 9 9 9 9 9
+    9 c c c c c c 9
+    9 c c c c c c 9
+    9 c c c c c c 9
+    9 c c c c c c 9
+    9 c c c c c c 9
+    9 c c c c c c 9
+    9 9 9 9 9 9 9 9
 `
 const pinSelectedImg = img`
     1 1 1 1 1 1 1 1
@@ -132,18 +132,21 @@ for (let line of arcadeCfg.split('\n')) {
     sprite.setImage(bcmImg);
     if (name == "RESET") {
         bkg.print(`RESET ${index}`, 10, 80, 2)
+        sprite.setImage(pinImg)
         sprite.setImage(sprite.image.clone())
-        sprite.image.replace(5, 2);
+        sprite.image.replace(0xc, 2);
     }
     else if (name == "EXIT") {
         bkg.print(`EXIT ${index}`, 10, 90, 3)
+        sprite.setImage(pinImg)
         sprite.setImage(sprite.image.clone())
-        sprite.image.replace(5, 3);
+        sprite.image.replace(0xc, 3);
     }
     else if (name == "MENU") {
         bkg.print(`MENU ${index}`, 10, 100, 4)
+        sprite.setImage(pinImg)
         sprite.setImage(sprite.image.clone())
-        sprite.image.replace(5, 4);
+        sprite.image.replace(0xc, 4);
     }
 }
 
