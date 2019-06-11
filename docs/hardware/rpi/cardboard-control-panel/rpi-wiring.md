@@ -5,7 +5,7 @@
 
 ### Install the firmware
 
-Follow the [Firmware Installation Instructions](https://learn.adafruit.com/...)
+Follow the [Firmware Installation Instructions](https://learn.adafruit.com/makecode-arcade-with-raspberry-pi-zero/firmware#firmware-3-1)
 to re-image your Raspberry Pi memory card with the MakeCode Arcade firmware.
 
 ### Update arcade.cfg
