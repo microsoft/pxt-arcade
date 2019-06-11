@@ -31,7 +31,7 @@ use the box of the monitor.
 
 ### Tools
 
-* **Cardboard cutting tools**: scissors, rotary cutters, carboard knife. You'll need something to cut into the cardboard.
+* **cardboard cutting tools**: scissors, rotary cutters, carboard knife. You'll need something to cut into the cardboard.
 * **Wire stripper, cutter** to cut and strip some of the jumper wires.
 * **crayon or sharpie** to mark where to drill.
 * **Glue gun** (optional): if you make a mistake, a glue gun can easily save the day. Optional but recommended.
