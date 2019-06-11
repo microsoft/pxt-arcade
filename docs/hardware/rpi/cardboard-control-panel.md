@@ -87,6 +87,14 @@ The hole should be large enough to let a **zip tie** go through (or a machine sc
 
 ![](/static/hardware/rpi/cardboard-control-panel/joystickdrill.jpg)
 
+### ~ hint
+
+#### Fresh paint!
+
+If you plan to paint or customize your control panel, **now** is a great time to do it... Before it gets populated with the electronics.
+
+### ~
+
 - [ ] try squeezing a few buttons and zip ties in the holes. If they don't fit it, try rotating them in just like a screw.
 
 ![](/static/hardware/rpi/cardboard-control-panel/squeeze.jpg)
@@ -94,11 +102,6 @@ The hole should be large enough to let a **zip tie** go through (or a machine sc
 - [ ] cut an access door at the back to allow easier wiring later on
 
 ![](/static/hardware/rpi/cardboard-control-panel/backdoor.jpg)
-
-![](/static/hardware/rpi/cardboard-control-panel/wired.jpg)
-![](/static/hardware/rpi/cardboard-control-panel/buttons.jpg)
-![](/static/hardware/rpi/cardboard-control-panel/zip.jpg)
-
 
 ## Prepping the buttons
 
@@ -168,3 +171,19 @@ You can use small zip ties to bundle cables together and avoid a spaghetti-like 
 
 - [ ] strip the **male** connector of a jumper wire and connect it to the bundle
 
+## Assembly
+
+- [ ] insert a zip tie at each corners of the joystick and use another zip tie inside the box to secure the joystick base
+
+![](/static/hardware/rpi/cardboard-control-panel/zip.jpg)
+
+- [ ] insert all the buttons and secure the plastic rings 
+
+![](/static/hardware/rpi/cardboard-control-panel/buttons.jpg)
+
+- [ ] attach all the button bases to the plastic buttons
+
+![](/static/hardware/rpi/cardboard-control-panel/wired.jpg)
+
+
+**WELL DONE**, we are now ready to connect the control panel to the Raspberry Pi Zero!
