@@ -1,7 +1,15 @@
-
 #include "SDL.h"
 #include <stdint.h>
 #include <stdio.h>
+#include <ctype.h>
+
+#if UINTPTR_MAX == 0xffffffff
+#define BINSUFF "-32"
+#elif UINTPTR_MAX == 0xffffffffffffffff
+#define BINSUFF ""
+#else
+#error "UINTPTR_MAX has invalid value"
+#endif
 
 #if defined(__IPHONEOS__) || defined(__ANDROID__)
 #define PXT_STATIC 1
@@ -19,11 +27,11 @@
 
 #ifndef PXT_STATIC
 #if defined(__MACOSX__)
-#define SONAME "libpxt.dylib"
+#define SONAME "libpxt" BINSUFF ".dylib"
 #elif defined(__WINDOWS__)
-#define SONAME "pxt.dll"
+#define SONAME "pxt" BINSUFF ".dll"
 #else
-#define SONAME "libpxt.so"
+#define SONAME "libpxt" BINSUFF ".so"
 #endif
 #endif
 
@@ -105,6 +113,7 @@ int mapKeyCode(int sdlCode) {
 typedef void (*get_pixels_t)(int width, int height, uint32_t *screen);
 typedef void (*raise_event_t)(int src, int val);
 typedef void (*vm_start_t)(const char *fn);
+typedef void (*vm_start_buffer_t)(uint8_t *data, unsigned len);
 typedef int (*get_logs_t)(int logtype, char *dst, int maxSize);
 typedef int (*get_panic_code_t)();
 typedef void (*get_audio_samples_t)(int16_t *buf, unsigned numSamples);
@@ -114,6 +123,7 @@ extern "C" {
 void pxt_screen_get_pixels(int width, int height, uint32_t *screen);
 void pxt_raise_event(int src, int val);
 void pxt_vm_start(const char *fn);
+void pxt_vm_start_buffer(uint8_t *data, unsigned len);
 int pxt_get_logs(int logtype, char *dst, int maxSize);
 int pxt_get_panic_code();
 void pxt_get_audio_samples(int16_t *buf, unsigned numSamples);
@@ -121,9 +131,14 @@ void pxt_get_audio_samples(int16_t *buf, unsigned numSamples);
 #else
 get_audio_samples_t pxt_get_audio_samples;
 raise_event_t pxt_raise_event;
+vm_start_buffer_t pxt_vm_start_buffer;
 #endif
 
+int exitReq;
+
 void raise_key(Key k, int ev) {
+    if (k == KEY_EXIT && ev == INTERNAL_KEY_UP)
+        exitReq = 1;
     pxt_raise_event(ev, k);
     pxt_raise_event(ev, 0); // any
 }
@@ -152,7 +167,7 @@ struct TrackedFinger {
 };
 
 #define NUM_FINGERS 10
-#define NUM_KEYS 6
+#define NUM_KEYS 8
 
 OnScreenKey keys[NUM_KEYS];
 TrackedFinger fingers[NUM_FINGERS];
@@ -177,12 +192,16 @@ void add_key(Key kid, char name, int x, int y) {
 void init_touch_keys() {
     int widthLeft = activeDisplayRect.x;
     int widthRight = win_width - activeDisplayRect.x - activeDisplayRect.w;
- 
+
     int kps = widthLeft / 2 - 10;
     if (kps > win_height / 6)
         kps = win_height / 6;
     int kpx = widthLeft / 2;
-    int kpy = win_height / 2;
+    int menuY = win_height / 10;
+    int kpy = win_height / 2 + menuY;
+
+    add_key(KEY_MENU, 'M', kpx - kps, menuY);
+    add_key(KEY_EXIT, 'E', kpx + kps, menuY);
 
     add_key(KEY_LEFT, '<', kpx - kps, kpy);
     add_key(KEY_RIGHT, '<', kpx + kps, kpy);
@@ -246,7 +265,7 @@ void handle_touch_events(SDL_Event &e) {
                     nearest = &keys[j];
                 }
             }
-            
+
             fingers[i].secondLastKey = NULL;
             auto minDistance = (win_height / 5) * (win_height / 5);
             if (nearestDistance > minDistance)
@@ -255,14 +274,15 @@ void handle_touch_events(SDL_Event &e) {
                 auto secondNearest = &keys[0];
                 auto secondNearestDist = -1;
                 for (int j = 0; j < NUM_KEYS; ++j) {
-                    if(&keys[j] == nearest) continue;
+                    if (&keys[j] == nearest)
+                        continue;
                     auto dist = distance(p, keys[j].center);
-                    if ( secondNearestDist == -1 || secondNearestDist > dist) {
+                    if (secondNearestDist == -1 || secondNearestDist > dist) {
                         secondNearestDist = dist;
                         secondNearest = &keys[j];
                     }
                 }
-                
+
                 auto maxDist = nearestDistance * 16 / 10;
                 if (secondNearestDist < maxDist) {
                     fingers[i].secondLastKey = secondNearest;
@@ -391,27 +411,36 @@ static void SDLCALL logOutput(void *userdata, int category, SDL_LogPriority prio
 #endif
 }
 
+#ifdef PXT_IOS
+extern "C" void fetchSources(const char *scriptId);
+extern "C" void initCache();
+#endif
+
 extern "C" int main(int argc, char *argv[]) {
+#ifdef PXT_IOS
+    initCache();
+#endif
 
     SDL_LogSetAllPriority(SDL_LOG_PRIORITY_INFO);
 
     SDL_LogSetOutputFunction(logOutput, NULL);
 
 #ifndef PXT_STATIC
-    SDL_Log("loading %s", SONAME);
+    SDL_Log("loading %s ...", SONAME);
 
     void *vmDLL = loadPXTLib(argv);
     get_pixels_t pxt_screen_get_pixels =
         (get_pixels_t)SDL_LoadFunction(vmDLL, "pxt_screen_get_pixels");
     vm_start_t pxt_vm_start = (vm_start_t)SDL_LoadFunction(vmDLL, "pxt_vm_start");
+    pxt_vm_start_buffer = (vm_start_buffer_t)SDL_LoadFunction(vmDLL, "pxt_vm_start_buffer");
     pxt_raise_event = (raise_event_t)SDL_LoadFunction(vmDLL, "pxt_raise_event");
     get_logs_t pxt_get_logs = (get_logs_t)SDL_LoadFunction(vmDLL, "pxt_get_logs");
     get_panic_code_t pxt_get_panic_code =
         (get_panic_code_t)SDL_LoadFunction(vmDLL, "pxt_get_panic_code");
     pxt_get_audio_samples = (get_audio_samples_t)SDL_LoadFunction(vmDLL, "pxt_get_audio_samples");
 
-    if (!pxt_screen_get_pixels || !pxt_vm_start || !pxt_raise_event || !pxt_get_logs ||
-        !pxt_get_panic_code || !pxt_get_audio_samples) {
+    if (!pxt_screen_get_pixels || !pxt_vm_start || !pxt_vm_start_buffer || !pxt_raise_event ||
+        !pxt_get_logs || !pxt_get_panic_code || !pxt_get_audio_samples) {
         fatal("can't load pxt function from DLL", "");
     }
 #endif
@@ -454,27 +483,35 @@ extern "C" int main(int argc, char *argv[]) {
     SDL_RenderPresent(renderer);
 
     int now = SDL_GetTicks();
+    int nextLoad = now + 100;
     int lastLoad = 0;
-    int nextLoad = now;
 
     SDL_Event e;
     int quit = 0;
     int numFr = 0;
     int prevTicks = SDL_GetTicks();
 
+    const char *imageName = argv[1];
+#ifdef PXT_IOS
+    const char *imageID = NULL;
+    imageName = "menu.pxt64";
+#endif
+
     while (!quit) {
         now = SDL_GetTicks();
 
         if (nextLoad && now >= nextLoad) {
 #ifdef PXT_IOS
-            pxt_vm_start("binary.pxt64");
-#else
-            pxt_vm_start(argv[1]);
+            if (imageID) {
+                fetchSources(imageID);
+                imageID = NULL;
+            } else
 #endif
+                pxt_vm_start(imageName);
             SDL_PauseAudioDevice(audioDev, 0);
             // SDL_PauseAudio(0);
-            lastLoad = now;
             nextLoad = 0;
+            lastLoad = now;
         }
 
         while (SDL_PollEvent(&e)) {
@@ -491,6 +528,32 @@ extern "C" int main(int argc, char *argv[]) {
                 if (kk)
                     raise_key(kk, ev);
             }
+#ifdef PXT_IOS
+            if (e.type == SDL_DROPFILE) {
+                char *p = e.drop.file;
+                while (*p && *p != ':')
+                    p++;
+                while (*p && (*p == ':' || *p == '/'))
+                    p++;
+                char *beg = p;
+                if (*p == '_') {
+                    p++;
+                    while (isalnum(*p))
+                        p++;
+                } else if (isdigit(*p)) {
+                    while (isdigit(*p) || *p == '-')
+                        p++;
+                }
+                if (p - beg > 8) {
+                    *p = 0;
+                    nextLoad = now + 300;
+                    SDL_free((void *)imageID);
+                    imageID = SDL_strdup(beg);
+                }
+                SDL_free(e.drop.file);
+            }
+#endif
+
             if (e.type == SDL_MOUSEBUTTONDOWN) {
                 // quit = 1;
             }
@@ -510,11 +573,18 @@ extern "C" int main(int argc, char *argv[]) {
 
         flush_logs(pxt_get_logs);
 
+        if (exitReq) {
+            if (!nextLoad && now > 2000 + lastLoad) {
+                SDL_Log("exit at key request");
+                nextLoad = now;
+            }
+            exitReq = 0;
+        }
+
         if (!nextLoad) {
             int code = pxt_get_panic_code();
             if (code == -1) {
-                SDL_Log("restarting image at user req");
-                nextLoad = lastLoad + 3000; // this will likely be in the past
+                // restart done in user code
             } else if (code >= 1000) {
                 SDL_Log("hit soft crash, code=%d; restarting", code - 1000);
                 nextLoad = now + 3000;

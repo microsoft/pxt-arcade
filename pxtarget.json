@@ -111,6 +111,14 @@
                         "keysdy": "keydy"
                     }
                 }
+            ],
+            "0.0.0 - 0.11.20": [
+                {
+                    "type": "api",
+                    "map": {
+                        "SpriteKind": "SpriteKindLegacy"
+                    }
+                }
             ]
         }
     },
@@ -334,7 +342,8 @@
             "print",
             "python",
             "debugExtensionCode",
-            "experimentalHw"
+            "experimentalHw",
+            "recipes"
         ],
         "extendEditor": true,
         "simScreenshot": true,
