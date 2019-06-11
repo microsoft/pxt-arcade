@@ -28,6 +28,7 @@
     },
     "public": true,
     "skipLocalization": true,
+    "additionalFilePath": "../hw",
     "yotta": {
         "config": {
             "DEVICE_USB": 1,
