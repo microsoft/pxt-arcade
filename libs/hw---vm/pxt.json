@@ -21,6 +21,7 @@
         "screen---ext": "file:../screen---ext",
         "game": "file:../game"
     },
+    "additionalFilePath": "../hw",
     "public": true,
     "skipLocalization": true,
     "experimentalHw": true

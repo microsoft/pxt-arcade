@@ -3,6 +3,7 @@
     "description": "SAMD51 board",
     "files": [
         "config.ts",
+        "basepins.d.ts",
         "device.d.ts"
     ],
     "card": {
@@ -30,6 +31,7 @@
             "DEVICE_USB": 1
         }
     },
+    "additionalFilePath": "../hw",
     "public": true,
     "skipLocalization": true,
     "dalDTS": {
