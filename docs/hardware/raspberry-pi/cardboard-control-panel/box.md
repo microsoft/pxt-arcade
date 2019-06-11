@@ -6,7 +6,7 @@ Find a cardboard box large enough to hold your buttons and joystick. If you have
 
 We recommend add 1 or 2 layers of cardboard on the surface that will hold the buttons and joystick.
 
-- [ ] cut out additional cardboard sheets 
+- [ ] cut out additional cardboard sheets.
 
 ![](/static/hardware/raspberry-pi/cardboard-control-panel/cardboardlayers.jpg)
 
