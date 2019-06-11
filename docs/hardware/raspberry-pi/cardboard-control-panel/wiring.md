@@ -1,4 +1,4 @@
-# Raspberry Pi Wiring
+# Wiring
 
 ## Firwmare setup
 
@@ -259,11 +259,12 @@ Squeeze the bundle of wires attached to the buttons through the wires hole.
 Use the program above to identity which header is ground on the Raspberry Pi.
 Connect the header attached to the bundles of wire to a ground header (header **6** for example).
 
-### Connect RESET, SELECT, MENU
+### Connect EXIT, MENU
 
 Use the program to determine which header those buttons go to.
 
-- [ ] pressing RESET restarts the Pi
+- [ ] pressing EXIT exits the current game and goes back to the selection screen
+- [ ] pressing MENU pops up the in-game menu
 
 ### Connect the rest of the buttons
 

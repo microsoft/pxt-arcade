@@ -3,7 +3,7 @@
 This guide will show you how to make a 2 player Arcade control panel **made of cardboard!**
 You do not need any particular building skills to successfully build your own, let's do it!
 
-![](/static/hardware/rpi/cardboard-control-panel/controlpanel.jpg)
+![](/static/hardware/raspberry-pi/cardboard-control-panel/controlpanel.jpg)
 
 ## Materials
 
@@ -17,7 +17,7 @@ many different ways.
 
 ### ~
 
-![](/static/hardware/rpi/cardboard-control-panel/materials.jpg)
+![](/static/hardware/raspberry-pi/cardboard-control-panel/materials.jpg)
 
 ### Parts
 
@@ -38,7 +38,7 @@ use the box of the monitor.
 
 ## Instructions
 
-* [Cardboard box](/hardware/rpi/cardboard-control-panel/box)
-* [Prepping Wires](/hardware/rpi/cardboard-control-panel/wires)
-* [Assembly](/hardware/rpi/cardboard-control-panel/assembly)
-* [Raspberry Pi Zero Setup](/hardware/rpi/cardboard-control-panel/rpi-wiring)
+* [Cardboard box](/hardware/raspberry-pi/cardboard-control-panel/box)
+* [Prepping Wires](/hardware/raspberry-pi/cardboard-control-panel/wires)
+* [Assembly](/hardware/raspberry-pi/cardboard-control-panel/assembly)
+* [Raspberry Pi Zero Setup](/hardware/raspberry-pi/cardboard-control-panel/wiring)
