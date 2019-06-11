@@ -68,3 +68,10 @@ You can use small zip ties to bundle cables together and avoid a spaghetti-like 
 
 - [ ] strip the **male** connector of a jumper wire and connect it to the bundle
 
+## Next step...
+
+## ~button /hardware/raspberry-pi/cardboard-control-panel/assembly
+
+Next, assemble the buttons and joysticks
+
+## ~

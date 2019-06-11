@@ -17,7 +17,10 @@ We recommend add 1 or 2 layers of cardboard on the surface that will hold the bu
 
 ## Button layout
 
-Use a marker to **trace** where your buttons and joysticks will go on the box. 
+Use a marker to **trace** where your buttons and joysticks will go on the box.
+
+https://youtu.be/hdFZYOBV4_c
+
 For the buttons, use the black plastic ring to trace their size; for the joystick, remove the stick if needed to trace them.
 
 ![](/static/hardware/raspberry-pi/cardboard-control-panel/layout.jpg)
@@ -67,3 +70,10 @@ If you plan to paint or customize your control panel, **now** is a great time to
 
 ![](/static/hardware/raspberry-pi/cardboard-control-panel/backdoor.jpg)
 
+## Next step...
+
+## ~button /hardware/raspberry-pi/cardboard-control-panel/wires
+
+Prepping the wires
+
+## ~

@@ -20,4 +20,11 @@ You could also use any kind of machine screws to secure the joystick.
 
 ![](/static/hardware/raspberry-pi/cardboard-control-panel/wired.jpg)
 
+## Next step...
 
+
+## ~button /hardware/raspberry-pi/cardboard-control-panel/wiring
+
+Next, Raspberry Pi Zero setup
+
+## ~

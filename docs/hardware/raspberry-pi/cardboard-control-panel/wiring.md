@@ -6,11 +6,11 @@
 ### Install the firmware
 
 Follow the [Firmware Installation Instructions](https://learn.adafruit.com/makecode-arcade-with-raspberry-pi-zero/firmware#firmware-3-1)
-to re-image your Raspberry Pi memory card with the MakeCode Arcade firmware.
+to re-image your Raspberry Pi SD card with the MakeCode Arcade firmware.
 
-### Update arcade.cfg
+### Update ``arcade.cfg``
 
-Make sure the **arcade.cfg** file on your Raspberry Pi Zero image contains the following text:
+Make sure the ``arcade.cfg`` file on your Raspberry Pi Zero image contains the following text:
 
 ```
 BTN_MENU=20
@@ -33,7 +33,7 @@ BTN_DOWN2=18
 ### Download the configuration program
 
 Load the program below in the MakeCode Arcade editor and download the .UF2 file onto the
-memory stick.
+SD card.
 
 You can use this program in your browser or on the Raspberry Pi cabinet to help you with wiring.
 
@@ -243,7 +243,7 @@ function setup(btn: controller.Button, name: string) {
 
 It's time to try out the firmware.
 
-- [ ] Insert the memory card in the Raspberry Pi Zero
+- [ ] Insert the SD card in the Raspberry Pi Zero
 - [ ] connect the screen cable
 - [ ] connect USB power cable (double check which one!) 
 - [ ] connect the USB data cable
@@ -282,4 +282,3 @@ Connect the header attached to the bundles of wire to a ground header (header **
 ### Connect the rest of the buttons
 
 Use the program to determine which header the buttons go to. You can connect them randomly then use the program to reorder them.
-

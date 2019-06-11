@@ -43,3 +43,9 @@ use the box of the monitor.
 * [Prepping Wires](/hardware/raspberry-pi/cardboard-control-panel/wires)
 * [Assembly](/hardware/raspberry-pi/cardboard-control-panel/assembly)
 * [Raspberry Pi Zero Setup](/hardware/raspberry-pi/cardboard-control-panel/wiring)
+
+## ~button /hardware/raspberry-pi/cardboard-control-panel/box
+
+Let's get started!
+
+## ~
