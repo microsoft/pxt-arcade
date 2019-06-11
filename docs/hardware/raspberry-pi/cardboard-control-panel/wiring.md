@@ -254,6 +254,8 @@ You should see the game selection dialog.
 
 Squeeze the bundle of wires attached to the buttons through the wires hole.
 
+![](/static/hardware/raspberry-pi/cardboard-control-panel/cable-stick.jpg)
+
 ### Connect GROUND pin
 
 Use the program above to identity which header is ground on the Raspberry Pi.
