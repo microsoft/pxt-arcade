@@ -3,6 +3,7 @@
     "description": "SAMD51 board",
     "files": [
         "config.ts",
+        "basepins.d.ts",
         "device.d.ts"
     ],
     "card": {
