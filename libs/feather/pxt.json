@@ -3,10 +3,10 @@
     "description": "Adafruit Feather pinout",
     "files": [
         "README.md",
-        "pins.d.ts"
+        "device.d.ts"
     ],
     "dependencies": {
-        "hw": "file:../hw"
+        "core": "file:../core"
     },
     "public": true
 }
