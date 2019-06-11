@@ -1,5 +1,7 @@
 # Prepping the cardboard box
 
+Find a cardboard box large enough to hold your buttons and joystick. If you have purchased a computer monitor for the arcade, use the box from the screen.
+
 ## Reinforcement
 
 We recommend add 1 or 2 layers of cardboard on the surface that will hold the buttons and joystick.
