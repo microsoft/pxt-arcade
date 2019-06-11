@@ -1,12 +1,3 @@
 {
-    "name": "feather",
-    "description": "Adafruit Feather pinout",
-    "files": [
-        "README.md",
-        "device.d.ts"
-    ],
-    "dependencies": {
-        "core": "file:../core"
-    },
-    "public": true
+    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/feather"
 }
