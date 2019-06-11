@@ -16,7 +16,7 @@ You could also use any kind of machine screws to secure the joystick.
 
 ![](/static/hardware/raspberry-pi/cardboard-control-panel/buttons.jpg)
 
-- [ ] attach all the button bases to the plastic buttons
+- [ ] attach all the button bases to the plastic buttons.
 
 ![](/static/hardware/raspberry-pi/cardboard-control-panel/wired.jpg)
 
