@@ -12,7 +12,7 @@ You could also use any kind of machine screws to secure the joystick.
 
 ##
 
-- [ ] insert all the buttons and secure the plastic rings 
+- [ ] insert all the buttons and secure the plastic rings.
 
 ![](/static/hardware/raspberry-pi/cardboard-control-panel/buttons.jpg)
 
