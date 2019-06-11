@@ -32,7 +32,7 @@ use the box of the monitor.
 ### Tools
 
 * **cardboard cutting tools**: scissors, rotary cutters, carboard knife. You'll need something to cut into the cardboard.
-* **Wire stripper, cutter** to cut and strip some of the jumper wires.
+* **wire stripper, cutter** to cut and strip some of the jumper wires.
 * **crayon or sharpie** to mark where to drill.
 * **Glue gun** (optional): if you make a mistake, a glue gun can easily save the day. Optional but recommended.
 * **1 inch drill bit + cordless drill** (optional): while you can drill the button holes with a manual tool, the 1" drill bit is the best at making a clean hole for the buttons. Recommended.
