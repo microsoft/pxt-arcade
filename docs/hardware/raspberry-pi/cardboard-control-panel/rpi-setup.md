@@ -62,7 +62,7 @@ Route all of the female header connecters on the jumper wires from the inside of
 ### Connect GROUND pins
 
 Use the Test Program to identity which header is Ground on the Raspberry Pi Zero. 
-You should have **3 jumper wires** with **female header** connectors wrapped with electrical tape. These to connect on the **GROUND**
+You should have **3 jumper wires** with **female header** connectors wrapped with electrical tape. These connect to the **GROUND**
 pins.
 
 ### Connect the all of the buttons except EXIT, MENU

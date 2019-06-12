@@ -29,7 +29,7 @@ Each of the buttons will need wires prepared and connected to them:
 
 ![A bundle of stripped jumper wire cables](/static/hardware/raspberry-pi/cardboard-control-panel/bundle.jpg)
 
-* Strip the **male** connector off of another jumper wire and thread it around the bundle of you just created. Use electrical tape to secure it all.
+* Strip the **male** connector off of another jumper wire and thread it around the bundle of wires you just created. Use electrical tape to secure it all.
 
 ![A jumper wire attached to the bundle of jumper wires](/static/hardware/raspberry-pi/cardboard-control-panel/gndwire.jpg)
 
