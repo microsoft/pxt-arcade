@@ -1,5 +1,7 @@
 # Wiring
 
+![Arcade control panel connected to Raspberry Pi and screen]((/static/hardware/raspberry-pi/cardboard-control-panel/gallery.jpg)
+
 ## Firwmare setup
 
 
