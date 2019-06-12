@@ -2,6 +2,9 @@
 
 Find a cardboard box large enough to hold your buttons and joystick. If you have purchased a computer monitor for the arcade, use the box from the screen.
 
+![An Arcade control panel made of cardboard](/static/hardware/raspberry-pi/cardboard-control-panel/controlpanel.jpg)
+
+
 ## Reinforcement
 
 We recommend adding 1 or 2 layers of cardboard on the surface that will hold the buttons and joystick.
