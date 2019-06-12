@@ -6,7 +6,7 @@ Find a cardboard box large enough to hold your buttons and joystick. If you have
 
 We recommend add 1 or 2 layers of cardboard on the surface that will hold the buttons and joystick.
 
-- [ ] cut out additional cardboard sheets 
+- [ ] cut out additional cardboard sheets.
 
 ![](/static/hardware/raspberry-pi/cardboard-control-panel/cardboardlayers.jpg)
 
@@ -41,7 +41,7 @@ We purposely did not provide precise measurements in order to encourage you to c
 For best results, we recommend using a drill bit and a cordless drill. You could also use manual cardboard
 cutting tools but it is hard to achieve a perfect hole cut.
 
-- [ ] Use a 1" bit to drill the holes for the buttons and joystick stick. 
+- [ ] use a 1" bit to drill the holes for the buttons and joystick stick. 
 
 ![](/static/hardware/raspberry-pi/cardboard-control-panel/oneinchdrill.jpg)
 

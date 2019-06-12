@@ -265,8 +265,8 @@ Connect the header attached to the bundles of wire to a ground header (header **
 
 Use the program to determine which header those buttons go to.
 
-- [ ] pressing EXIT exits the current game and goes back to the selection screen
-- [ ] pressing MENU pops up the in-game menu
+- [ ] pressing EXIT exits the current game and goes back to the selection screen.
+- [ ] pressing MENU pops up the in-game menu.
 
 ### Connect the rest of the buttons
 
