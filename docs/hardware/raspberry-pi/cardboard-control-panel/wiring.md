@@ -264,36 +264,36 @@ It's time to try out the firmware.
 
 You should see the game selection dialog.
 
-## Buttons Wiring
+## Wiring
 
-Squeeze the bundle of wires attached to the buttons through the wires hole.
+Squeeze all the female headers from the inside of the box to the hole for wires.
 
 ![A bunch of jumper wires sticking out from the center hole on the control panel](/static/hardware/raspberry-pi/cardboard-control-panel/cable-stick.jpg)
 
-### Connect GROUND pin
+### Connect GROUND pins
 
-Use the program above to identity which header is ground on the Raspberry Pi.
-Connect the header attached to the bundles of wire to a ground header (header **6** for example).
+Use the program above to identity which header is ground on the Raspberry Pi. 
+You should have **3 female headers** marked with electrical tape to connect on the **GROUND**
+pins.
 
-### Connect the all of the buttons except EXIT
+### Connect the all of the buttons except EXIT, MENU
 
-Use the program to determine which header the buttons go to. You can connect them randomly then use the program to reorder them.
+Use the program to determine which header the buttons go to. You can connect them randomly then use the program to reorder them:
 
-### Connect EXIT
+* connect a wire to a valid pin location
+* press the buttons until you identity which button this wire connects to
+* move the jumper wire to the correct jumper using the pinout map
+* press the button again to test the correct mapping
+
+#### ~ hint
+
+This process is **much** easier if you name each jumper wire using clear tape and a sharpie.
+
+#### ~
+
+### Connect EXIT, MENU
 
 Use the program to determine which header those buttons go to.
 
 - [ ] pressing EXIT exits the current game and goes back to the selection screen.
-
-## Joystick wiring
-
-For each joystick, squeeze the bundle of cables through the wire hole. 
-
-### Connect GROUND pin
-
-Use the program above to identity which header is ground on the Raspberry Pi.
-Connect the header attached to the bundles of wire to a ground header (header **6** for example).
-
-### Connect the rest of the buttons
-
-Use the program to determine which header the buttons go to. You can connect them randomly then use the program to reorder them.
+- [ ] pressing MENU will pop up the game menu
