@@ -10,7 +10,7 @@ It's time to put it all together.
 
 You could also use any kind of machine screws to secure the joystick.
 
-##
+## ~
 
 - [ ] insert all the buttons and secure the plastic rings.
 
@@ -20,8 +20,15 @@ You could also use any kind of machine screws to secure the joystick.
 
 ![Buttons and joysticks secured.](/static/hardware/raspberry-pi/cardboard-control-panel/wired.jpg)
 
-## Next step...
+## Raspberry Pi
 
+- [ ] If needed, solder the headers on the Raspberry Pi Zero
+- [ ] Attach USB power cable, regular USB cable and HDMI cable to screen
+- [ ] Use small nails, sewing or even hot glue to secure the Pi on the card board.
+
+![A Raspberry Pi held by Chicken Wire nails.](/static/hardware/raspberry-pi/cardboard-control-panel/pi.jpg)
+
+## Next step...
 
 ## ~button /hardware/raspberry-pi/cardboard-control-panel/wiring
 
