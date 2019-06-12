@@ -77,6 +77,8 @@ Use the program to determine which header the buttons go to. You can connect the
 * move the jumper wire to the correct jumper using the pinout map
 * press the button again to test the correct mapping
 
+https://youtu.be/-P5I_BzoYdg
+
 #### ~ hint
 
 This process is **much** easier if you name each jumper wire using clear tape and a sharpie.
