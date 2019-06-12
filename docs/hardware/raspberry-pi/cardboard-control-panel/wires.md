@@ -8,7 +8,7 @@ For each of the buttons,
 
 ![An arcade button with a JST cable](/static/hardware/raspberry-pi/cardboard-control-panel/button.jpg)
 
-- [ ] insert 2 male jumper wires into the JST connector
+- [ ] insert 2 male jumper wires into the JST connector.
 
 ![A JST connector with 2 female jumper wires attached](/static/hardware/raspberry-pi/cardboard-control-panel/headers.jpg)
 
