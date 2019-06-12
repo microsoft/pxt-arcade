@@ -16,7 +16,9 @@ For each of the buttons,
 
 ![Electrical tape to secure the jumper cables](/static/hardware/rpi/cardboard-control-panel/headerstape.jpg)
 
-- [ ] using the wire stripper, strip one of the female jumper wire (strip around 1/2" or 1cm).
+- [ ] using the wire stripper, strip one of the female jumper wire (strip around 1/2" or 1cm)
+
+- [ ] (optional) attach a piece of clear tape and mark the name of the button with a sharpie. It will make wiring much easier...
 
 ![A female jumper wire and a stripped jumper wire](/static/hardware/raspberry-pi/cardboard-control-panel/strip.jpg)
 

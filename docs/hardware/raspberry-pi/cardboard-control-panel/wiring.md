@@ -35,6 +35,8 @@ BTN_DOWN2=18
 Load the program below in the MakeCode Arcade editor and download the .UF2 file onto the
 SD card.
 
+https://makecode.com/_dycMdHUYRFrX
+
 You can use this program in your browser or on the Raspberry Pi cabinet to help you with wiring.
 
 ```typescript
@@ -55,16 +57,24 @@ BTN_LEFT2=17
 BTN_RIGHT2=27
 BTN_UP2=22
 BTN_DOWN2=18
-`
+`;
 
-
+const p1Col = 13;
+const p2Col = 6;
 const bkg = image.create(160, 120);
-bkg.fillRect(0, 10, 160, 60, 7)
+bkg.fillRect(0, 10, 160, 66, 7)
+for (let i = 0; i < 4; ++i) {
+    bkg.print((2 * i + 1).toString(), 154 - 8 * i, 44, 1);
+    bkg.print((2 * i + 2).toString(), 154 - 8 * i, 68, 1);
+}
+bkg.print("P1", 80, 80, p1Col);
+bkg.print("P2", 80, 90, p2Col);
+
 scene.setBackgroundImage(bkg)
 
 const pinImg = img`
     b b b b b b b b
-    b c c c c c c b
+    b 0 c c c c c b
     b c c c c c c b
     b c c c c c c b
     b c c c c c c b
@@ -139,7 +149,7 @@ const gnds = [6, 9, 14, 20, 25, 30, 34, 39]
 
 let pinout: Sprite[] = []
 for (let i = 0; i < 40; i++) {
-    const pin = sprites.create(pinImg, 0)
+    const pin = sprites.create(pinImg.clone(), 0)
     pin.data = {};
     pinout.push(pin)
     pin.left = 160 - ((i >> 1) + 1) * 8
@@ -162,7 +172,7 @@ for (let line of arcadeCfg.split('\n')) {
     const index = bcmToPins[bcm] as number;
     const sprite = pinout[index - 1];
     sprite.data["name"] = name;
-    sprite.setImage(bcmImg);
+    sprite.setImage(bcmImg.clone());
     if (name == "RESET") {
         bkg.print(`RESET ${index}`, 10, 80, 2)
         sprite.setImage(pinImg)
@@ -180,6 +190,8 @@ for (let line of arcadeCfg.split('\n')) {
         sprite.setImage(pinImg)
         sprite.setImage(sprite.image.clone())
         sprite.image.replace(0xc, 4);
+    } else {
+        sprite.image.print(name[0], 2, 2, name[name.length - 1] == "2" ? p2Col : p1Col, image.font5)
     }
 }
 
@@ -225,12 +237,12 @@ setup(controller.player2.right, "RIGHT2");
 function select(name: string) {
     const sprite = pinout.filter(pin => pin.data["name"] == name)[0];
     const index = pinout.indexOf(sprite) + 1;
-    sprite.setImage(pinSelectedImg);
+    sprite.image.replace(0xc, 5)
     buttonName.say(`${name} ${index}`, 0);
 }
 function unselect(name: string) {
     const sprite = pinout.filter(pin => pin.data["name"] == name)[0];
-    sprite.setImage(bcmImg);
+    sprite.image.replace(5, 0xc)
     buttonName.say("", 0);
 }
 function setup(btn: controller.Button, name: string) {
@@ -261,16 +273,15 @@ Squeeze the bundle of wires attached to the buttons through the wires hole.
 Use the program above to identity which header is ground on the Raspberry Pi.
 Connect the header attached to the bundles of wire to a ground header (header **6** for example).
 
-### Connect EXIT, MENU
+### Connect the all of the buttons except EXIT
+
+Use the program to determine which header the buttons go to. You can connect them randomly then use the program to reorder them.
+
+### Connect EXIT
 
 Use the program to determine which header those buttons go to.
 
 - [ ] pressing EXIT exits the current game and goes back to the selection screen.
-- [ ] pressing MENU pops up the in-game menu.
-
-### Connect the rest of the buttons
-
-Use the program to determine which header the buttons go to. You can connect them randomly then use the program to reorder them.
 
 ## Joystick wiring
 

@@ -27,11 +27,11 @@ use the box of the monitor.
 * **33 Male-to-Female jumper wires** to connect the buttons to the Raspberry Pi. Buy a few more in case you make a mistake.
 * **electrical tape** to secure the jumper wires to the arcade button connectors.
 * **zip ties** to secure the joysticks; you can also use machine screws if you have some at hand.
-* **Raspberry Pi Zero Kit** with Raspberry Pi Zero (Wifi/BLE not required), HDMI cable, power supply, memory card.
+* **Raspberry Pi Zero Kit** with Raspberry Pi Zero (Wifi/BLE not required), HDMI cable, power supply, memory card (not all kits have one).
 
 ### Tools
 
-* **cardboard cutting tools**: scissors, rotary cutters, carboard knife. You'll need something to cut into the cardboard.
+* **cardboard cutting tools**: scissors, rotary cutters, carboard knife. You'll need something to cut into the cardboard. (Our favorite is the Canary Yellow Knife).
 * **wire stripper, cutter** to cut and strip some of the jumper wires.
 * **crayon or sharpie** to mark where to drill.
 * **Glue gun** (optional): if you make a mistake, a glue gun can easily save the day. Optional but recommended.
