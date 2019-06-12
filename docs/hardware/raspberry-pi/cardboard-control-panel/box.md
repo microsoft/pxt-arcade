@@ -48,6 +48,8 @@ cutting tools but it is hard to achieve a perfect hole cut.
 
 ![A 1 inch drill bit](/static/hardware/raspberry-pi/cardboard-control-panel/oneinchdrill.jpg)
 
+https://youtu.be/NqXG0nbPK8k
+
 - [ ] drill 1 additional hole in the center to pass the wires.
 
 ![The control panel with holes drilled](/static/hardware/raspberry-pi/cardboard-control-panel/layoutholes.jpg)
