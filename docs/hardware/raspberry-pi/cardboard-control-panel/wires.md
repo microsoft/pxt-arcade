@@ -47,7 +47,7 @@ For each of joysticks,
 ![Connection wires on the joystick terminals](/static/hardware/raspberry-pi/cardboard-control-panel/joystick.jpg)
 
 - [ ] connect 2 jumper wires to the JST connector.
-- [ ] strip one jumper wire for each connector
+- [ ] strip one jumper wire for each connector.
 
 Repeat these steps for the 4 connectors of the joystick.
 
