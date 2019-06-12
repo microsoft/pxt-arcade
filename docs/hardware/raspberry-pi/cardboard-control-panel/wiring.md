@@ -244,7 +244,7 @@ function setup(btn: controller.Button, name: string) {
 It's time to try out the firmware.
 
 - [ ] insert the SD card in the Raspberry Pi Zero.
-- [ ] connect the screen cable
+- [ ] connect the screen cable.
 - [ ] connect USB power cable. Double check which one you plug in!
 - [ ] connect the USB data cable.
 
