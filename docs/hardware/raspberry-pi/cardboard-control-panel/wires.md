@@ -66,7 +66,7 @@ You can use small zip ties to bundle cables together and avoid a spaghetti-like 
 
 ![A bundle of stripped jumper cables from the joystick terminals](/static/hardware/raspberry-pi/cardboard-control-panel/joystickbundle.jpg)
 
-- [ ] strip the **male** connector of a jumper wire and connect it to the bundle
+- [ ] strip the **male** connector of a jumper wire and connect it to the bundle.
 
 ## Next step...
 
