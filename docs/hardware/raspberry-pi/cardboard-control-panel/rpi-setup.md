@@ -33,61 +33,59 @@ BTN_DOWN2=18
 
 ## Test the firmware
 
-It's time to try out the firmware.
+Now, let's try out the firmware.
 
 - [ ] insert the SD card in the Raspberry Pi Zero.
 - [ ] connect the screen cable.
 - [ ] connect USB power cable. Double check which one you plug in!
 - [ ] connect the USB data cable.
 
-You should see the game selection dialog.
+You should see the game selection dialog on the screen.
 
 ![Screen displaying the game menu dialog](/static/hardware/raspberry-pi/cardboard-control-panel/gamemenu.jpg)
 
 ### Download the configuration program
 
-Load the program below in the MakeCode Arcade editor and download the .UF2 file onto the
+Load this [Test Program](https://makecode.com/_dycMdHUYRFrX) into the [MakeCode Arcade](@homeurl@) editor and download the .UF2 file onto the
 SD card.
 
-https://makecode.com/_dycMdHUYRFrX
-
-You can use this program in your browser or on the Raspberry Pi cabinet to help you with wiring.
+You can use this program in your browser, or on the Raspberry Pi panel to help make sure your wiring is correct.   
 
 https://youtu.be/wOGvokzL-7c
 
-
 ## Wiring
 
-Squeeze all the female headers from the inside of the box to the hole for wires.
+Route all of the female header connecters on the jumper wires from the inside of the box through the hole for the wires.
 
 ![A bunch of jumper wires sticking out from the center hole on the control panel](/static/hardware/raspberry-pi/cardboard-control-panel/cable-stick.jpg)
 
 ### Connect GROUND pins
 
-Use the program above to identity which header is ground on the Raspberry Pi. 
+Use the Test Program to identity which header is Ground on the Raspberry Pi Zero. 
 You should have **3 female headers** marked with electrical tape to connect on the **GROUND**
 pins.
 
 ### Connect the all of the buttons except EXIT, MENU
 
-Use the program to determine which header the buttons go to. You can connect them randomly then use the program to reorder them:
+Use the Test Program to determine which header the buttons will go to. You can connect them randomly then use the program to reorder them:
 
-* connect a wire to a valid pin location
-* press the buttons until you identity which button this wire connects to
-* move the jumper wire to the correct jumper using the pinout map
-* press the button again to test the correct mapping
+- [ ] connect a wire to a valid pin location
+- [ ] press the buttons until you identity which button this wire connects to
+- [ ] move the jumper wire to the correct jumper using the pinout map
+- [ ] press the button again to test the correct mapping
 
+<br/>
 https://youtu.be/-P5I_BzoYdg
 
 #### ~ hint
 
-This process is **much** easier if you name each jumper wire using clear tape and a sharpie.
+This process is **much** easier if you name each jumper wire with a label using clear tape and a marker.
 
 #### ~
 
 ### Connect EXIT, MENU
 
-Use the program to determine which header those buttons go to.
+Use the program to determine which header those buttons will go to.
 
 - [ ] pressing EXIT exits the current game and goes back to the selection screen.
 - [ ] pressing MENU will pop up the game menu
