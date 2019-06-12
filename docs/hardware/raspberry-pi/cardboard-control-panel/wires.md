@@ -4,7 +4,7 @@
 
 For each of the buttons, 
 
-- [ ] connect the JST button connector cable. Those are the cables that came with your Arcade game kit and end with a white square plastic connector (named JST connector)
+- [ ] connect the JST button connector cable. Those are the cables that came with your Arcade game kit and end with a white square plastic connector (named JST connector).
 
 ![An arcade button with a JST cable](/static/hardware/raspberry-pi/cardboard-control-panel/button.jpg)
 
