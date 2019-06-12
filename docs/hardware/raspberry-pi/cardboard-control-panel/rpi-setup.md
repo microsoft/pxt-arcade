@@ -1,4 +1,4 @@
-# Raspberry Pi Setup
+# Raspberry Pi Zero Setup
 
 ![An Arcade control panel made of cardboard](/static/hardware/raspberry-pi/cardboard-control-panel/pisetup.jpg)
 
@@ -62,7 +62,7 @@ Route all of the female header connecters on the jumper wires from the inside of
 ### Connect GROUND pins
 
 Use the Test Program to identity which header is Ground on the Raspberry Pi Zero. 
-You should have **3 female headers** marked with electrical tape to connect on the **GROUND**
+You should have **3 jumper wires** with **female header** connectors wrapped with electrical tape. These to connect on the **GROUND**
 pins.
 
 ### Connect the all of the buttons except EXIT, MENU

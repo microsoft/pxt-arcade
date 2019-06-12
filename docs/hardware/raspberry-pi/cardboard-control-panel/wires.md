@@ -29,7 +29,7 @@ Each of the buttons will need wires prepared and connected to them:
 
 ![A bundle of stripped jumper wire cables](/static/hardware/raspberry-pi/cardboard-control-panel/bundle.jpg)
 
-* Strip the **male** connector of a jumper wire and thread it around the bundle of you just created. Use electrical tape to secure it all.
+* Strip the **male** connector off of another jumper wire and thread it around the bundle of you just created. Use electrical tape to secure it all.
 
 ![A jumper wire attached to the bundle of jumper wires](/static/hardware/raspberry-pi/cardboard-control-panel/gndwire.jpg)
 
@@ -43,7 +43,7 @@ If you have access to a soldering iron, it's a good idea to add a bit of solder 
 
 ## Prepping the joysticks
 
-For each of joysticks, they have 4 direction switches to prepare:
+For each joystick, they have 4 direction switches to prepare:
 
 * Connect the joystick cable to the **COM** and **NO** terminals of the switch.
 
@@ -69,7 +69,7 @@ You can use small zip ties to bundle wires together and avoid a spaghetti-like m
 
 ![A bundle of stripped jumper cables from the joystick terminals](/static/hardware/raspberry-pi/cardboard-control-panel/joystickbundle.jpg)
 
-* Strip the **male** connector of a jumper wire and connect it to the bundle.
+* Strip the **male** connector off of one more jumper wire and connect it to the bundle.
 
 ## Next step...
 
