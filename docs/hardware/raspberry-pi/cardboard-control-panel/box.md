@@ -4,7 +4,7 @@ Find a cardboard box large enough to hold your buttons and joystick. If you have
 
 ## Reinforcement
 
-We recommend add 1 or 2 layers of cardboard on the surface that will hold the buttons and joystick.
+We recommend adding 1 or 2 layers of cardboard on the surface that will hold the buttons and joystick.
 
 - [ ] cut out additional cardboard sheets.
 
