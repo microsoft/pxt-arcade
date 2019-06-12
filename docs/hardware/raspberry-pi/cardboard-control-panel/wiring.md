@@ -246,7 +246,7 @@ It's time to try out the firmware.
 - [ ] insert the SD card in the Raspberry Pi Zero.
 - [ ] connect the screen cable
 - [ ] connect USB power cable (double check which one!) 
-- [ ] connect the USB data cable
+- [ ] connect the USB data cable.
 
 You should see the game selection dialog.
 
