@@ -23,11 +23,12 @@ many different ways.
 
 * **a cardboard box** that will become the control panel. If you are buying a PC monitor to build the Arcade,
 use the box of the monitor.
-* **2 joysticks & 7 buttons** for a 2 players OR **1 joystick & 5 buttons** for 1 player. Search for "Arcade Game Kit" to find a kit near you (stay away from the LED buttons and the analog joysticks).
-* **33 Male-to-Female jumper wires** to connect the buttons to the Raspberry Pi. Buy a few more in case you make a mistake.
+* **2 joysticks & 6 buttons** for a 2 players OR **1 joystick & 4 buttons** for 1 player, + 1 extra optional RESET button. Search for "Arcade Game Kit" to find a kit near you (stay away from the LED buttons and the analog joysticks).
+* **31 Male-to-Female jumper wires** to connect the buttons to the Raspberry Pi. Buy a few more in case you make a mistake.
 * **electrical tape** to secure the jumper wires to the arcade button connectors.
 * **zip ties** to secure the joysticks; you can also use machine screws if you have some at hand.
 * **Raspberry Pi Zero Kit** with Raspberry Pi Zero (Wifi/BLE not required), HDMI cable, power supply, memory card (not all kits have one).
+* **clear tape** (optional) to name jumper wire
 
 ### Tools
 
