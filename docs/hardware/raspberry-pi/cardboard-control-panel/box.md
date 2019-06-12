@@ -8,11 +8,11 @@ We recommend add 1 or 2 layers of cardboard on the surface that will hold the bu
 
 - [ ] cut out additional cardboard sheets.
 
-![](/static/hardware/raspberry-pi/cardboard-control-panel/cardboardlayers.jpg)
+![Multiple sheets of cardboard to be glued](/static/hardware/raspberry-pi/cardboard-control-panel/cardboardlayers.jpg)
 
 - [ ] use a glue gun to attach them to the control panel surface.
 
-![](/static/hardware/raspberry-pi/cardboard-control-panel/sandwich.jpg)
+![Side cut view of 3 layers of cardboard](/static/hardware/raspberry-pi/cardboard-control-panel/sandwich.jpg)
 
 
 ## Button layout
@@ -23,7 +23,7 @@ https://youtu.be/hdFZYOBV4_c
 
 For the buttons, use the black plastic ring to trace their size; for the joystick, remove the stick if needed to trace them.
 
-![](/static/hardware/raspberry-pi/cardboard-control-panel/layout.jpg)
+![Button and joystick layout drawn on the cardboard](/static/hardware/raspberry-pi/cardboard-control-panel/layout.jpg)
 
 ### ~ hint
 
@@ -43,16 +43,16 @@ cutting tools but it is hard to achieve a perfect hole cut.
 
 - [ ] use a 1" bit to drill the holes for the buttons and joystick stick. 
 
-![](/static/hardware/raspberry-pi/cardboard-control-panel/oneinchdrill.jpg)
+![A 1 inch drill bit](/static/hardware/raspberry-pi/cardboard-control-panel/oneinchdrill.jpg)
 
 - [ ] drill 1 additional hole in the center to pass the wires.
 
-![](/static/hardware/raspberry-pi/cardboard-control-panel/layoutholes.jpg)
+![The control panel with holes drilled](/static/hardware/raspberry-pi/cardboard-control-panel/layoutholes.jpg)
 
 - [ ] use a screwdriver or the blade of the scissor to cut a **small** hole on the corner of the joystick.
 The hole should be large enough to let a **zip tie** go through (or a machine screw).
 
-![](/static/hardware/raspberry-pi/cardboard-control-panel/joystickdrill.jpg)
+![A screwdriver used as a drill for the joystick holes](/static/hardware/raspberry-pi/cardboard-control-panel/joystickdrill.jpg)
 
 ## ~ hint
 
@@ -64,11 +64,11 @@ If you plan to paint or customize your control panel, **now** is a great time to
 
 - [ ] try squeezing a few buttons and zip ties in the holes. If they don't fit it, try rotating them in just like a screw.
 
-![](/static/hardware/raspberry-pi/cardboard-control-panel/squeeze.jpg)
+![Two buttons squeezed into cardboard holes](/static/hardware/raspberry-pi/cardboard-control-panel/squeeze.jpg)
 
 - [ ] cut an access door at the back to allow easier wiring later on
 
-![](/static/hardware/raspberry-pi/cardboard-control-panel/backdoor.jpg)
+![An opening at the back of the control panel to help with wiring.](/static/hardware/raspberry-pi/cardboard-control-panel/backdoor.jpg)
 
 ## Next step...
 
