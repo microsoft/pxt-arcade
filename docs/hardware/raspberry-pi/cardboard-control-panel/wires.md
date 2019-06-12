@@ -14,13 +14,13 @@ For each of the buttons,
 
 - [ ] secure the male jumper with some electrical tape. Make sure to pull hard on the tape to stretch it as you tape it.
 
-![Electrical tape to secure the jumper cables](/static/hardware/rpi/cardboard-control-panel/headerstape.jpg)
+![Electrical tape to secure the jumper cables](/static/hardware/raspberry-pi/cardboard-control-panel/headerstape.jpg)
 
 - [ ] using the wire stripper, strip one of the female jumper wire (strip around 1/2" or 1cm)
 
-- [ ] (optional) attach a piece of clear tape and mark the name of the button with a sharpie. It will make wiring much easier...
-
 ![A female jumper wire and a stripped jumper wire](/static/hardware/raspberry-pi/cardboard-control-panel/strip.jpg)
+
+- [ ] (optional) attach a piece of clear tape and mark the name of the button with a sharpie. It will make wiring much easier...
 
 Repeat this process for the 7 arcade buttons.
 
