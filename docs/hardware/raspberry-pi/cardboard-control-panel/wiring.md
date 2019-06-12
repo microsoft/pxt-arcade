@@ -31,15 +31,6 @@ BTN_UP2=22
 BTN_DOWN2=18
 ```
 
-### Download the configuration program
-
-Load the program below in the MakeCode Arcade editor and download the .UF2 file onto the
-SD card.
-
-https://makecode.com/_dycMdHUYRFrX
-
-You can use this program in your browser or on the Raspberry Pi cabinet to help you with wiring.
-
 ## Test the firmware
 
 It's time to try out the firmware.
@@ -52,6 +43,17 @@ It's time to try out the firmware.
 You should see the game selection dialog.
 
 ![Screen displaying the game menu dialog](/static/hardware/raspberry-pi/cardboard-control-panel/gamemenu.jpg)
+
+### Download the configuration program
+
+Load the program below in the MakeCode Arcade editor and download the .UF2 file onto the
+SD card.
+
+https://makecode.com/_dycMdHUYRFrX
+
+You can use this program in your browser or on the Raspberry Pi cabinet to help you with wiring.
+
+https://youtu.be/wOGvokzL-7c
 
 
 ## Wiring
