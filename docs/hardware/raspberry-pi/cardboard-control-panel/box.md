@@ -66,7 +66,7 @@ If you plan to paint or customize your control panel, **now** is a great time to
 
 ![Two buttons squeezed into cardboard holes](/static/hardware/raspberry-pi/cardboard-control-panel/squeeze.jpg)
 
-- [ ] cut an access door at the back to allow easier wiring later on
+- [ ] cut an access door at the back to allow easier wiring later on.
 
 ![An opening at the back of the control panel to help with wiring.](/static/hardware/raspberry-pi/cardboard-control-panel/backdoor.jpg)
 
