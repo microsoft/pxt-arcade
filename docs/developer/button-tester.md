@@ -5,33 +5,37 @@ A simple game to see which button is being pressed. This game is helpful for tes
 ## Code
 
 ```typescript
-function createButton(name: string, b: controller.Button, x: number, y: number) {
-    const n = 24;
-    const img = image.create(n, n);
-    img.fill(6)
-    img.printCenter(name, n / 2 - image.font8.charHeight / 2, 0, image.font8);
-    const imgPressed = image.create(n, n);
-    imgPressed.fill(7)
-    imgPressed.printCenter(name, n / 2 - image.font8.charHeight / 2, 0, image.font8);
+game.onPaint(function () {
+    screen.print("PLAYER 1", 5, 3, 1)
+    drawButtonState("A", controller.A.isPressed(), 10, 5)
+    drawButtonState("B", controller.B.isPressed(), 25, 5)
+    drawButtonState("UP", controller.up.isPressed(), 40, 5)
+    drawButtonState("RIGHT", controller.right.isPressed(), 55, 5)
+    drawButtonState("DOWN", controller.down.isPressed(), 70, 5)
+    drawButtonState("LEFT", controller.left.isPressed(), 85, 5)
+    drawButtonState("MENU", controller.menu.isPressed(), 100, 5)
 
-    const sprite = sprites.create(b.isPressed() ? imgPressed : img);
-    sprite.setPosition(x, y);
-    b.onEvent(ControllerButtonEvent.Pressed, function () {
-        sprite.setImage(imgPressed);        
-    })
-    b.onEvent(ControllerButtonEvent.Released, function () {
-        sprite.setImage(img);
-    })
-    b.onEvent(ControllerButtonEvent.Repeated, function () {
-        sprite.say("repeat", 200)
-    })
+    screen.print("PLAYER 2", 85, 3, 1)
+    drawButtonState("A", controller.player2.A.isPressed(), 10, 85)
+    drawButtonState("B", controller.player2.B.isPressed(), 25, 85)
+    drawButtonState("UP", controller.player2.up.isPressed(), 40, 85)
+    drawButtonState("RIGHT", controller.player2.right.isPressed(), 55, 85)
+    drawButtonState("DOWN", controller.player2.down.isPressed(), 70, 85)
+    drawButtonState("LEFT", controller.player2.left.isPressed(), 85, 85)
+})
+
+controller.menu.onEvent(ControllerButtonEvent.Pressed, function () {
+
+})
+
+const height = 10;
+const bWidth = 30;
+const tWidth = 40;
+
+function drawButtonState(id: string, pressed: boolean, top: number, left: number) {
+    top += 6;
+    screen.fillRect(left, top, bWidth + tWidth, height, 1)
+    screen.fillRect(left + tWidth + (pressed ? 0 : -8), top + 1, bWidth - 1, height - 2, pressed ? 2 : 7)
+    screen.print(id, left + 1, top + 1, 15)
 }
-
-scene.setBackgroundColor(8)
-createButton("A", controller.A, 145, 30)
-createButton("B", controller.B, 115, 60)
-createButton("L", controller.left, 15, 60)
-createButton("U", controller.up, 45, 30)
-createButton("D", controller.down, 45, 90)
-createButton("R", controller.right, 75, 60)
 ```
