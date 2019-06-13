@@ -1,6 +1,6 @@
 # Button tester
 
-A simple game to see which button is being pressed. This game is helpful for testing button assignments when adding support for new hardware. The buttons are represented visually on the screen so that you can relate them to he button locations on the controller.
+This script lets you test the buttons of your arcade.
 
 ## Code
 
@@ -35,7 +35,7 @@ const tWidth = 40;
 function drawButtonState(id: string, pressed: boolean, top: number, left: number) {
     top += 6;
     screen.fillRect(left, top, bWidth + tWidth, height, 1)
-    screen.fillRect(left + tWidth + (pressed ? 0 : -8), top + 1, bWidth - 1, height - 2, pressed ? 2 : 7)
+    screen.fillRect(left + tWidth + (pressed ? 0 : -8), top + 1, bWidth - 1, height - 2, pressed ? 8 : 7)
     screen.print(id, left + 1, top + 1, 15)
-}
+} 
 ```
