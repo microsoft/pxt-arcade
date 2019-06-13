@@ -46,7 +46,7 @@ You should see the game selection dialog on the screen.
 
 ### Download the configuration program
 
-Load this [Test Program](https://makecode.com/_dycMdHUYRFrX) into the [MakeCode Arcade](@homeurl@) editor and download the .UF2 file onto the
+Load this [Test Program](https://makecode.com/_Yj3E9f4kz31X) into the [MakeCode Arcade](@homeurl@) editor and download the .UF2 file onto the
 SD card.
 
 You can use this program in your browser, or on the Raspberry Pi panel to help make sure your wiring is correct.   
