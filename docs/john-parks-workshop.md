@@ -8,7 +8,7 @@
 [
     {
         "name": "Trash Panda",
-        "description": "Create buttton combinations and watch as a raccoon climbs a tower",
+        "description": "Add button combinations to your game and animate a raccoon that climbs a tower",
         "youTubeId": "uS3X4a6amM0?t=479s",
         "imageUrl": "/static/john-parks-workshop/trash-panda.png"
     },
