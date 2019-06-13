@@ -1,0 +1,28 @@
+{
+    "name": "hw---vm",
+    "description": "VM",
+    "files": [
+        "sdlmain.cpp",
+        "config.ts",
+        "enums.d.ts",
+        "shims.d.ts",
+        "device.d.ts"
+    ],
+    "card": {
+        "name": "VM",
+        "description": "VM",
+        "learnMoreUrl": "https://arcade.makecode.com/hardware#vm",
+        "cardType": "hw"
+    },
+    "compileServiceVariant": "vm",
+    "dependencies": {
+        "core---vm": "file:../core---vm",
+        "mixer---ext": "file:../mixer---ext",
+        "screen---ext": "file:../screen---ext",
+        "game": "file:../game"
+    },
+    "additionalFilePath": "../hw",
+    "public": true,
+    "skipLocalization": true,
+    "experimentalHw": true
+}
