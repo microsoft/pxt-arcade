@@ -8,26 +8,26 @@
 [
     {
         "name": "Next Level Games",
-        "description": "See how you can create arpeggio music and a shipping game of your own",
-        "youTubeId": "mZeyxi75Kyo?t=405",
+        "description": "Make arpeggio music and get tips on polishing up your games to pro studio quality",
+        "youTubeId": "mZeyxi75Kyo&t=405s",
         "imageUrl": "/static/john-parks-workshop/next-level-games.png"
     },
     {
         "name": "Re-MakeCode Racing Games",
-        "description": "See how you can align characters to grids and create a racing game",
-        "youTubeId": "llgKiQGPb0k?t=437",
+        "description": "Learn how to use grid alignment to position characters and objects, then make a racing game",
+        "youTubeId": "llgKiQGPb0k&t=438s",
         "imageUrl": "/static/john-parks-workshop/re-makecode-racing-games.png"
     },
     {
         "name": "Sparky Invaders",
         "description": "See how you can create a space game with tile maps",
-        "youTubeId": "1GnPTmTzqV0?t=498",
+        "youTubeId": "1GnPTmTzqV0&t=498s",
         "imageUrl": "/static/john-parks-workshop/sparky-invaders.png"
     },
     {
         "name": "Platformer Game Maps",
-        "description": "See how you can create streets and platformer levels",
-        "youTubeId": "EAJ9By08IU0?t=394",
+        "description": "Create scenes and design game level maps using tiles and tile maps",
+        "youTubeId": "EAJ9By08IU0&t=394s",
         "imageUrl": "/static/john-parks-workshop/platformer-game-maps.png"
     },
     {
