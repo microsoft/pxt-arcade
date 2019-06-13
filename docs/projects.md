@@ -57,7 +57,7 @@
     {
         "name": "John Park's Workshop",
         "url": "/john-parks-workshop",
-        "imageUrl": "/static/john-parks-workshop/next-level-games.png"
+        "imageUrl": "/static/john-parks-workshop/trash-panda.png"
     }
 ]
 ```
