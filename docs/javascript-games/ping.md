@@ -81,7 +81,7 @@ game.onUpdate(function () {
             // tagged as destroyed
             if (b.data) return;
 
-            const scoreRight = b.left < 1;
+            const scoreRight = b.left < -1;
             const scoreLeft = b.right > screen.width + 1;
 
             if (scoreRight) {
@@ -136,7 +136,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy,
         pingMessage = !pingMessage;
 
         // time out this event so it doesn't retrigger on the same collision
-        pause(200);
+        pause(500);
     }
 );
 
