@@ -1,7 +1,10 @@
 # Ping!
 
-Bounce a ball between two paddles.
-Paddles that aren't controlled will move on their own.
+Bounce a ball between two paddles at either side of the screen.
+You and another player can move the paddles to return a ball.
+However, paddles that aren't controlled will move on their own.
+The auto-controlled paddles happen at the beginning of the game or
+shortly after a player input stops.
 
 If you're feeling courageous,
 you can press ``||controller:a||`` to add more balls to the screen,
