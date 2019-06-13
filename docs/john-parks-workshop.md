@@ -7,6 +7,12 @@
 ```codecard
 [
     {
+        "name": "Trash Panda",
+        "description": "Create buttton combinations and watch as a raccoon climbs a tower",
+        "youTubeId": "uS3X4a6amM0?t=479s",
+        "imageUrl": "/static/john-parks-workshop/trash-panda.png"
+    },
+    {
         "name": "Next Level Games",
         "description": "Make arpeggio music and get tips on polishing up your games to pro studio quality",
         "youTubeId": "mZeyxi75Kyo&t=405s",
