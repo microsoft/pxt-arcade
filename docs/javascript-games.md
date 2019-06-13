@@ -24,7 +24,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Ping!",
-        "description": "Bounce a ball in this 0-2 player game of ping-pong",
+        "description": "Return the ball with the paddle in this 0-2 player game of ping-pong",
         "url": "/javascript-games/ping",
         "cardType": "codeExample",
         "imageUrl": "/static/javascript-games/ping.png",
@@ -40,7 +40,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Cube Land",
-        "description": "Save the Cube Lad from the Cube Lord",
+        "description": "Save the Cube Lad from the Cube Lord in Cube Land",
         "url":"/javascript-games/cube-land",
         "cardType": "codeExample",
         "imageUrl": "/static/javascript-games/cube-land.png"
