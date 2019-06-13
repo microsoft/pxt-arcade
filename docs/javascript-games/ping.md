@@ -101,7 +101,6 @@ game.onUpdate(function () {
 
             if (scoreLeft || scoreRight) {
                 b.destroy(effects.disintegrate, 500);
-                b.setFlag(SpriteFlag.BounceOnWall, false);
                 b.data = true;
                 control.runInParallel(function () {
                     pause(250);
