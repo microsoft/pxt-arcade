@@ -27,7 +27,7 @@ const PADDING_FROM_WALL = 3;
 let pingMessage = false;
 
 // if player doesn't interact for 'TIMEOUT' time, revert to ai
-const TIMEOUT = 3000;
+const TIMEOUT = 5000;
 let playerOneLastMove = -TIMEOUT;
 let playerTwoLastMove = -TIMEOUT;
 
@@ -81,8 +81,8 @@ game.onUpdate(function () {
             // tagged as destroyed
             if (b.data) return;
 
-            const scoreRight = b.left < -1;
-            const scoreLeft = b.right > screen.width + 1;
+            const scoreRight = b.x < 0;
+            const scoreLeft = b.x >= screen.width;
 
             if (scoreRight) {
                 info.player2.changeScoreBy(1)
