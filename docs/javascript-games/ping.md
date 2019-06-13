@@ -128,8 +128,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy,
         sprite.startEffect(effects.ashes, 100);
 
         otherSprite.image.setPixel(
-            Math.randomRange(1, otherSprite.image.width - 1),
-            Math.randomRange(1, otherSprite.image.height - 1),
+            Math.randomRange(1, otherSprite.image.width - 2),
+            Math.randomRange(1, otherSprite.image.height - 2),
             sprite.image.getPixel(0, 0)
         );
 
