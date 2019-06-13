@@ -32,7 +32,7 @@ scene.setBackgroundImage(bkg)
 
 const pinImg = img`
     b b b b b b b b
-    b 0 c c c c c b
+    b c c c c c c b
     b c c c c c c b
     b c c c c c c b
     b c c c c c c b
@@ -70,6 +70,8 @@ const gndPinImg = img`
     d 1 1 f 1 1 1 d
     d d d d d d d d
 `
+bkg.drawImage(gndPinImg, 80, 100)
+bkg.print("GND", 90, 100)
 
 // BCM -> pin index
 const bcmToPins: any = {
