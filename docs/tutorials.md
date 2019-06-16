@@ -41,6 +41,13 @@
   "imageUrl": "/static/tutorials/galga.png",
   "largeImageUrl": "/static/tutorials/galga.gif"
 }, {
+  "name": "Name Tag",
+  "description": "A simple name tag with cool effects",
+  "url": "/tutorials/name-tag",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/name-tag.png",
+  "largeImageUrl": "/static/tutorials/name-tag.gif"
+}, {
   "name": "Simple Extensions",
   "description": "Learn the basics of using extensions and create a platformer",
   "url": "/tutorials/simple-extensions",

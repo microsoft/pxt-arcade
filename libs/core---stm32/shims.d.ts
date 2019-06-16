@@ -300,5 +300,35 @@ declare namespace light {
     //% shim=light::sendBuffer
     function sendBuffer(data: DigitalInOutPin, clk: DigitalInOutPin, mode: int32, buf: Buffer): void;
 }
+declare namespace configStorage {
+
+    /**
+     * Puts an entry in the device storage. Key may have up to 16 characters (bytes).
+     * @param key the identifier (max 16 characters)
+     * @param value the data (max 32 characters)
+     */
+    //% shim=configStorage::setBuffer
+    function setBuffer(key: string, value: Buffer): void;
+
+    /**
+     * Gets an entry from the device storage. Key may have up to 16 characters (bytes).
+     * @param key the identifier (max 16 characters)
+     */
+    //% shim=configStorage::getBuffer
+    function getBuffer(key: string): Buffer;
+
+    /**
+     * Removes the key from local storage
+     * @param key the identifier (max 16 characters)
+     */
+    //% shim=configStorage::removeItem
+    function removeItem(key: string): void;
+
+    /**
+     * Clears the local storage
+     */
+    //% shim=configStorage::clear
+    function clear(): void;
+}
 
 // Auto-generated. Do not edit. Really.

@@ -51,6 +51,13 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "variant": "hw---rpi"
     },
     {
+        "name": "Cardboard Panel",
+        "description": "Turn a cardboard box into a tabletop arcade.",
+        "imageUrl": "/static/hardware/controlpanel.jpg",
+        "url": "/hardware/raspberry-pi/cardboard-control-panel",
+        "variant": "hw---rpi"
+    },
+    {
         "name": "Add Board",
         "description": "Are you looking to build your own hardware to run Arcade games? This in-depth guide provides the technical details and specifications to get started.",
         "url": "/hardware/adding"
