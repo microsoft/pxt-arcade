@@ -352,7 +352,7 @@
         "simGif": false,
         "simGifKey": "R",
         "qrCode": true,
-        "browserBlacklist": [
+        "unsupportedBrowsers": [
             "ie"
         ]
     },
