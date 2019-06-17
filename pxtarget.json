@@ -351,10 +351,10 @@
         "simScreenshotMaxUriLength": 300000,
         "simGif": false,
         "simGifKey": "R",
-        "qrCode": true,
-        "unsupportedBrowsers": [
-            "ie"
-        ]
+        "qrCode": true
     },
-    "ignoreDocsErrors": true
+    "ignoreDocsErrors": true,
+    "unsupportedBrowsers": [
+        "ie"
+    ]
 }
