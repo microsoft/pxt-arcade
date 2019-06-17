@@ -242,7 +242,8 @@
             "pins",
             "control",
             "input",
-            "serial"
+            "serial",
+            "power"
         ]
     },
     "simulator": {
