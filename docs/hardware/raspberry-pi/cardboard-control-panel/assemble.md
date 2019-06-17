@@ -42,7 +42,7 @@ You could also use any kind of machine screws to attach and secure the joystick.
 
 ![A line of headers with tape](/static/hardware/raspberry-pi/cardboard-control-panel/headerstaped.jpg)
 
-# you can use a zip tie or tap to secure the wire bundle
+* you can use a zip tie or tap to secure the wire bundle
 
 ![A bundle of wires secured by a zip tie](/static/hardware/raspberry-pi/cardboard-control-panel/ziptiecables.jpg)
 
