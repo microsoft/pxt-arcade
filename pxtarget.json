@@ -314,7 +314,8 @@
         "experiments": [
             "print",
             "python",
-            "debugExtensionCode"
+            "debugExtensionCode",
+            "spriteWizard"
         ],
         "extendEditor": true,
         "simScreenshot": true,
