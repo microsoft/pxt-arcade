@@ -51,7 +51,7 @@ myCorg.updateSprite()
 
 ## Step 4
 
-Pull ``||scene:set tile||`` from ``||scene:Scene||`` into ``||loops:on start||``. Fill the whole tile with one color in the image editor. Click on the color bubble in ``||scene:set tile||`` and change the color index to the same color you filled the tile with. Click on the **(+)** and set ``wall`` to `ON`.
+Pull ``||scene:set tile to with wall||`` from ``||scene:Scene||`` into ``||loops:on start||``. Fill the whole tile with one color in the image editor. Click on the color bubble in ``||scene:set tile to with wall||`` and change the color index to the same color you filled the tile with. Click the ``wall`` setting to `ON`.
 
 ```blocks
 enum SpriteKind {
