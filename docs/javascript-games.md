@@ -15,13 +15,6 @@ Here are some fun programs for your @boardname@!
         "largeImageUrl": "/static/javascript-games/planet-putt-putt.gif"
     },
     {
-        "name": "Cube Land",
-        "description": "Save the Cube Lad from the Cube Lord",
-        "url":"/javascript-games/cube-land",
-        "cardType": "codeExample",
-        "imageUrl": "/static/javascript-games/cube-land.png"
-    },
-    {
         "name": "Darker Duck",
         "description": "A remix of Falling Duck with custom lighting effects",
         "url": "/javascript-games/darker-duck",
@@ -30,12 +23,27 @@ Here are some fun programs for your @boardname@!
         "largeImageUrl": "/static/javascript-games/darker-duck.gif"
     },
     {
+        "name": "Ping!",
+        "description": "Return the ball with the paddle in this 0-2 player game of ping-pong",
+        "url": "/javascript-games/ping",
+        "cardType": "codeExample",
+        "imageUrl": "/static/javascript-games/ping.png",
+        "largeImageUrl": "/static/javascript-games/ping.gif"
+    },
+    {
         "name": "Caterpillar",
         "description": "Collect leaves to feed the caterpillar",
         "url": "/javascript-games/caterpillar",
         "cardType": "codeExample",
         "imageUrl": "/static/javascript-games/caterpillar.png",
         "largeImageUrl": "/static/javascript-games/caterpillar.gif"
+    },
+    {
+        "name": "Cube Land",
+        "description": "Save the Cube Lad from the Cube Lord in Cube Land",
+        "url":"/javascript-games/cube-land",
+        "cardType": "codeExample",
+        "imageUrl": "/static/javascript-games/cube-land.png"
     },
     {
         "name": "Particle Effects Demo",
@@ -65,13 +73,11 @@ Here are some fun programs for your @boardname@!
 
 ## See also
 
-[Asteroids](/javascript-games/asteroids),
-[Car Race](/javascript-games/car-race),
-[Snake](/javascript-games/snake),
-[Jumping Runner](/javascript-games/runner),
-[Jumper](/javascript-games/jumper),
-[Mega Bounce](/javascript-games/mega-bounce),
-[Collisions](/javascript-games/collisions),
-[Sorting](/javascript-games/sorting),
-[Palette](/javascript-games/palette),
+[Planet Putt Putt](/javascript-games/planet-putt-putt),
+[Darker Duck](/javascript-games/darker-duck),
+[Ping!](/javascript-games/ping),
+[Caterpillar](/javascript-games/caterpillar),
+[Cube Land](/javascript-games/cube-land),
+[Particle Effects Demo](/javascript-games/particle-effects-demo),
+[Guess the Letter](/javascript-games/guess-the-letter),
 [Bouncer Bucket](/javascript-games/bouncer-bucket)

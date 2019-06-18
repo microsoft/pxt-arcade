@@ -1,32 +1,33 @@
-# Raspberry Pi Configurator
-
-Deploy this script to your Arcade Raspberry Pi to help with configurating the buttons.
-
-If needed update the **arcadeCfg** content with your ``arcade.cfg`` file content.
-
-```typescript
 // update this string with your arcade cfg if needed
 const arcadeCfg = `
-BTN_MENU=20
-BTN_EXIT=24
-BTN_RESET=12
-BTN_A=16
-BTN_B=23
-BTN_LEFT=26
-BTN_RIGHT=19
+BTN_RESET=4
+BTN_EXIT=3
+BTN_MENU=2
+BTN_A=26
+BTN_B=19
+BTN_LEFT=13
 BTN_UP=6
-BTN_DOWN=13
-BTN_A2=5
-BTN_B2=25
-BTN_LEFT2=17
-BTN_RIGHT2=27
+BTN_RIGHT=5
+BTN_DOWN=0
+BTN_A2=11
+BTN_B2=9
+BTN_LEFT2=10
 BTN_UP2=22
-BTN_DOWN2=18
-`
+BTN_RIGHT2=27
+BTN_DOWN2=17
+`;
 
-
+const p1Col = 13;
+const p2Col = 6;
 const bkg = image.create(160, 120);
-bkg.fillRect(0, 10, 160, 60, 7)
+bkg.fillRect(0, 10, 160, 66, 7)
+for (let i = 0; i < 4; ++i) {
+    bkg.print((2 * i + 1).toString(), 154 - 8 * i, 44, 1);
+    bkg.print((2 * i + 2).toString(), 154 - 8 * i, 68, 1);
+}
+bkg.print("P1", 80, 80, p1Col);
+bkg.print("P2", 80, 90, p2Col);
+
 scene.setBackgroundImage(bkg)
 
 const pinImg = img`
@@ -69,6 +70,21 @@ const gndPinImg = img`
     d 1 1 f 1 1 1 d
     d d d d d d d d
 `
+const srcPinImg = img`
+    e e e e e e e e
+    e 2 2 2 2 2 2 e
+    e 2 2 2 f 2 2 e
+    e 2 2 2 f 2 2 e
+    e 2 f f f f f e
+    e 2 2 2 f 2 2 e
+    e 2 2 2 f 2 2 e
+    e e e e e e e e
+`
+
+bkg.drawImage(gndPinImg, 80, 100)
+bkg.print("GND", 90, 100)
+bkg.drawImage(srcPinImg, 80, 110)
+bkg.print("+5V", 90, 110)
 
 // BCM -> pin index
 const bcmToPins: any = {
@@ -102,11 +118,13 @@ const bcmToPins: any = {
     21: 40,
 }
 // ground pin indixes
-const gnds = [6, 9, 14, 20, 25, 30, 34, 39]
+const gnds = [6, 9, 14, 20, 25, 30, 34, 39];
+const srcs = [1, 17]
+
 
 let pinout: Sprite[] = []
 for (let i = 0; i < 40; i++) {
-    const pin = sprites.create(pinImg, 0)
+    const pin = sprites.create(pinImg.clone(), 0)
     pin.data = {};
     pinout.push(pin)
     pin.left = 160 - ((i >> 1) + 1) * 8
@@ -118,6 +136,8 @@ for (let i = 0; i < 40; i++) {
 
     if (gnds.indexOf(pinout.length) > -1)
         pin.setImage(gndPinImg);
+    if (srcs.indexOf(pinout.length) > -1)
+        pin.setImage(srcPinImg);
 }
 
 // parse arcade.cfg, store name in sprites
@@ -129,12 +149,12 @@ for (let line of arcadeCfg.split('\n')) {
     const index = bcmToPins[bcm] as number;
     const sprite = pinout[index - 1];
     sprite.data["name"] = name;
-    sprite.setImage(bcmImg);
+    sprite.setImage(bcmImg.clone());
     if (name == "RESET") {
-        bkg.print(`RESET ${index}`, 10, 80, 2)
+        bkg.print(`RESET ${index}`, 10, 80, 10)
         sprite.setImage(pinImg)
         sprite.setImage(sprite.image.clone())
-        sprite.image.replace(0xc, 2);
+        sprite.image.replace(0xc, 10);
     }
     else if (name == "EXIT") {
         bkg.print(`EXIT ${index}`, 10, 90, 3)
@@ -147,6 +167,8 @@ for (let line of arcadeCfg.split('\n')) {
         sprite.setImage(pinImg)
         sprite.setImage(sprite.image.clone())
         sprite.image.replace(0xc, 4);
+    } else {
+        sprite.image.print(name[0], 2, 2, name[name.length - 1] == "2" ? p2Col : p1Col, image.font5)
     }
 }
 
@@ -192,16 +214,15 @@ setup(controller.player2.right, "RIGHT2");
 function select(name: string) {
     const sprite = pinout.filter(pin => pin.data["name"] == name)[0];
     const index = pinout.indexOf(sprite) + 1;
-    sprite.setImage(pinSelectedImg);
+    sprite.image.replace(0xc, 5)
     buttonName.say(`${name} ${index}`, 0);
 }
 function unselect(name: string) {
     const sprite = pinout.filter(pin => pin.data["name"] == name)[0];
-    sprite.setImage(bcmImg);
+    sprite.image.replace(5, 0xc)
     buttonName.say("", 0);
 }
 function setup(btn: controller.Button, name: string) {
     btn.onEvent(ControllerButtonEvent.Pressed, function () { select(name) })
     btn.onEvent(ControllerButtonEvent.Released, function () { unselect(name) });
 }
-```

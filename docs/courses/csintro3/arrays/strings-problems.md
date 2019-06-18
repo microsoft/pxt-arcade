@@ -70,7 +70,7 @@ function printArray(words: string[], separator: string) {
 }
 
 // Tests!
-printArray(["Simple", "Test"]);             // Should output `Simple Test`
+printArray(["Simple", "Test"], " ");        // Should output `Simple Test`
 printArray(["Hi", "I", "am", "me"], "!");   // Should output `Hi!I!am!me`
 printArray(["Test", "Code", "Here"], "<>"); // Should output `Test<>Code<>Here`
 ```
