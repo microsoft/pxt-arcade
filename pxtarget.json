@@ -299,6 +299,7 @@
         "showHomeScreen": true,
         "highContrast": true,
         "greenScreen": true,
+        "print": true,
         "hasAudio": true,
         "allowPackageExtensions": true,
         "homeScreenHero": "./static/hero.png",
@@ -340,9 +341,9 @@
         "debugger": true,
         "importExtensionFiles": true,
         "experiments": [
-            "print",
             "python",
             "debugExtensionCode",
+            "simGif",
             "experimentalHw",
             "recipes"
         ],
