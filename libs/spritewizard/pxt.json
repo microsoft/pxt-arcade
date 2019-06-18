@@ -14,7 +14,7 @@
         "group": "Create",
         "label": "Create a sprite...",
         "outputType": "blocks",
-        "initialOutput": "enum SpriteKind {\nPlayer,\nProjectile,\nFood,\nEnemy\n}\nlet $spriteName = sprites.create($spriteImage, $spriteKind)",
+        "initialOutput": "let $spriteName = sprites.create($spriteImage, $spriteKind)",
         "questions": [
             {
                 "title": "What should your sprite be called?",
