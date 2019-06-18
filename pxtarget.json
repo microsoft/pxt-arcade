@@ -355,6 +355,6 @@
     },
     "ignoreDocsErrors": true,
     "unsupportedBrowsers": [
-        "ie"
+        { "id" : "ie" }
     ]
 }
