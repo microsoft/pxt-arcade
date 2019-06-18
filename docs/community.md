@@ -11,6 +11,7 @@ Games submitted by the MakeCode community.
         "description": "Strategically place ships and fire torpedoes to win sea battles against your friends or AIs, by Alex Kulcsar",
         "author": "Alex Kulcsar",
         "url": "https://forum.makecode.com/t/presenting-salvo/199",
+        "cardType": "forumUrl",
         "imageUrl": "/static/community/salvo/salvo.png",
         "largeImageUrl": "/static/community/salvo/salvo.gif"
     },
@@ -19,6 +20,7 @@ Games submitted by the MakeCode community.
         "description": "Collect jewels in this multi-level adventure, by Stu Lowe",
         "author": "Stu Lowe",
         "url": "https://forum.makecode.com/t/presenting-jewel-raider/127",
+        "cardType": "forumUrl",
         "imageUrl": "/static/community/jewel-raider/jewel-raider.png",
         "largeImageUrl": "/static/community/jewel-raider/jewel-raider.gif"
     },
@@ -27,6 +29,7 @@ Games submitted by the MakeCode community.
         "description": "Race down a snowy hill to avoid obstacles and collect goodies, by Nate Murray",
         "author": "Nate Murray",
         "url": "https://forum.makecode.com/t/snowy-slopes-game/52",
+        "cardType": "forumUrl",
         "imageUrl": "/static/community/snowy-slopes/snowy-slopes.png",
         "largeImageUrl": "/static/community/snowy-slopes/snowy-slopes.gif"
     },
@@ -35,6 +38,7 @@ Games submitted by the MakeCode community.
         "description": "Avoid missiles, asteroids, and electric charges in this side scrolling adventure, by Stu Lowe",
         "author": "Stu Lowe",
         "url": "https://forum.makecode.com/t/jet-pack-jenny-game/113",
+        "cardType": "forumUrl",
         "imageUrl": "/static/community/jetpack-jenny/jetpack-jenny.png",
         "largeImageUrl": "/static/community/jetpack-jenny/jetpack-jenny.gif"
     },
@@ -43,6 +47,7 @@ Games submitted by the MakeCode community.
         "description": "Cross the road during rush hour traffic to save your eggs, by Greg Norris",
         "author": "Greg Norris",
         "url": "https://forum.makecode.com/t/chicken-run-game/34",
+        "cardType": "forumUrl",
         "imageUrl": "/static/community/chicken-run/chicken-run.png",
         "largeImageUrl": "/static/community/chicken-run/chicken-run.gif"
     },
@@ -51,6 +56,7 @@ Games submitted by the MakeCode community.
         "description": "Jump to move up or avoid pitfalls, get the flag at the end of each level, by Adri314",
         "author": "Adri314",
         "url": "https://forum.makecode.com/t/jumping-mateo-platformer/230",
+        "cardType": "forumUrl",
         "imageUrl": "/static/community/jumping-mateo-platformer/jumping-mateo-platformer.png",
         "largeImageUrl": "/static/community/jumping-mateo-platformer/jumping-mateo-platformer.gif"
     },
@@ -59,6 +65,7 @@ Games submitted by the MakeCode community.
         "description": "Avoid the falling plungers or you'll go splat, by Dean Faizal",
         "author": "Dean Faizal",
         "url": "https://forum.makecode.com/t/ducksplat-game/196",
+        "cardType": "forumUrl",
         "imageUrl": "/static/community/ducksplat/ducksplat.png",
         "largeImageUrl": "/static/community/ducksplat/ducksplat.gif"
     },
@@ -67,6 +74,7 @@ Games submitted by the MakeCode community.
         "description": "Compete with a friend for the high score in a space adventure, by Alex Kulcsar",
         "author": "Alex Kulcsar",
         "url": "https://forum.makecode.com/t/presenting-spacewar/107",
+        "cardType": "forumUrl",
         "imageUrl": "/static/community/spacefight/spacefight.png",
         "largeImageUrl": "/static/community/spacefight/spacefight.gif"
     },
