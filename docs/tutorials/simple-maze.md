@@ -113,7 +113,7 @@ controller.moveSprite(mySprite, 100, 100)
 
 ## Step 4
 
-Next, make a tile to set into the scene. Pull ``||scene:set tile||`` from ``||scene:Scene||`` into ``||loops:on start||``. Fill the whole tile with one color in the image editor.
+Next, make a tile to set into the scene. Pull ``||scene:set tile with wall||`` from ``||scene:Scene||`` into ``||loops:on start||``. Fill the whole tile with one color in the image editor.
 
 ```blocks
 enum SpriteKind {
@@ -164,7 +164,7 @@ a a a a a a a a a a a a a a a a
 
 ## Step 5
 
-Click on the color bubble in ``||scene:set tile||`` and change the color index to the same color you filled the tile with. Click on the **(+)**  and set ``wall`` to `ON`.
+Click on the color bubble in ``||scene:set tile with wall||`` and change the color index to the same color you filled the tile with. Turn the ``wall`` setting `ON`.
 
 ```blocks
 enum SpriteKind {
