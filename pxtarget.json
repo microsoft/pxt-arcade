@@ -355,5 +355,8 @@
         "simGifKey": "R",
         "qrCode": true
     },
-    "ignoreDocsErrors": true
+    "ignoreDocsErrors": true,
+    "unsupportedBrowsers": [
+        { "id" : "ie" }
+    ]
 }
