@@ -1,8 +1,7 @@
 {
     "name": "{0}",
     "dependencies": {
-        "device": "file:../device",
-        "spritewizard": "file:../spritewizard"
+        "device": "file:../device"
     },
     "description": "",
     "files": [
