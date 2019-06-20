@@ -343,6 +343,7 @@
         "experiments": [
             "python",
             "debugExtensionCode",
+            "snippetBuilder",
             "simGif",
             "experimentalHw",
             "recipes"
