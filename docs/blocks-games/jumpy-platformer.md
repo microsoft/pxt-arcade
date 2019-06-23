@@ -1,15 +1,11 @@
 # Jumpy Platformer
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy,
-    Bumper,
-    Goal,
-    Coin,
-    Flier
+namespace SpriteKind {
+    export const Bumper = SpriteKind.create();
+    export const Goal = SpriteKind.create();
+    export const Coin = SpriteKind.create();
+    export const Flier = SpriteKind.create();
 }
 
 enum ActionKind {
@@ -774,7 +770,7 @@ game.onUpdate(function () {
         } else {
             animation.setAction(hero, ActionKind.CrouchRight);
         }
-    } else if (hero.vy < 20 && hero.ay != 0) {
+    } else if (hero.vy < 20 && !hero.isHittingTile(CollisionDirection.Bottom)) {
         if (heroFacingLeft) {
             animation.setAction(hero, ActionKind.JumpingLeft);
         } else {
@@ -1438,10 +1434,7 @@ game.onUpdate(function () {
 // Reset double jump when standing on wall
 game.onUpdate(function () {
     if (hero.isHittingTile(CollisionDirection.Bottom)) {
-        hero.ay = 0;
         canDoubleJump = true;
-    } else {
-        hero.ay = gravity;
     }
 });
 ```
