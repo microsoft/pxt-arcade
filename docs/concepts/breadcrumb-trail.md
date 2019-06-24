@@ -267,12 +267,6 @@ This will create a new ``||sprites:Sprite||`` for every red ``||scene:tile||`` i
 ``||scene:tile map||``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
 let mySprite: Sprite = null
 scene.setTileMap(img`
     2 7 7 7 7 7 7 7 7 7
@@ -353,12 +347,6 @@ Make sure ``||variables:mySprite||`` is the ``||variables:variable||`` for the
 This will place the breadcrumbs on each **red** ``||scene:tile||``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
 let mySprite: Sprite = null
 scene.setTileMap(img`
     2 7 7 7 7 7 7 7 7 7
@@ -436,12 +424,6 @@ Congratulations, your forest is complete! If you want to see the breadcrumbs pla
 add a ``||loops:pause||`` inside the ``||loops:for element||`` loop.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
 let mySprite: Sprite = null
 scene.setTileMap(img`
     2 7 7 7 7 7 7 7 7 7
