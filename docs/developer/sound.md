@@ -86,6 +86,22 @@ The `metallic` tone contains a (very pseudo) random sample, which sounds metalli
 
 The `noise` is an actual white noise.
 
+### Command: set end frequency
+
+To set the end for the generated notes:
+
+```
+^\d+
+```
+
+When the end frequency is set, the tone will linear ramp the frequency from the initial set frequency to the end frequency over the duration of the tone.
+
+Here are some examples:
+
+* `!2000,1000^100` will start at `2000` Hz and ramp to `100` Hz over the course of `1000` ms
+* `!1300,200^50` will start at `1300` Hz and ramp to `50` Hz over the course of `200` ms
+* `!150,500^800` will start at `150` Hz and ramp to `800` Hz over the course of `500` ms
+
 ## Sound Instructions
 
 The low-level music API exposed in JavaScript revolves around sound "instructions".
@@ -100,6 +116,7 @@ frequency (hz)  | 16
 duration (ms)   | 16
 start volume    | 16
 end volume      | 16
+end frequency   | 16
 
 Volume is a scalar value that ranges from 0 to 1024. See the table in previous section for
 the available values for waveform.

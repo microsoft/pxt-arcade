@@ -169,6 +169,15 @@ namespace pxt.editor {
                 }
             });
         }
+
+        /**
+         * Upgrade for enum SpriteKind -> SpriteKindLegacy
+         */
+        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "0.11.20") < 0) {
+            pxt.U.toArray(dom.querySelectorAll("variable[type=SpriteKind]")).forEach(block => {
+                block.setAttribute("type", "SpriteKindLegacy")
+            });
+        }
     }
 
     function changeVariableToSpriteReporter(varBlockOrShadow: Element, reporterName: string) {

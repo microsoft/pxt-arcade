@@ -94,7 +94,7 @@ mySprite.ay = 500
 
 ## Step 5
 
-Now let's create a platform base at the bottom of the screen. Drag a ``||scene:set tile to||`` into ``||loops:on start||``. Set the tile index color. This index value is set in the tile map where we want the platform tiles to show up in the scene. In the next box, fill in the tile image with the pixels you want with the image editor. Click the **(+)** symbol and turn the ``wall`` attribute **on**. This makes the sprite stop when it moves into the tile and it will won't fall through our platform.
+Now let's create a platform base at the bottom of the screen. Drag a ``||scene:set tile to||`` into ``||loops:on start||``. Set the tile index color. This index value is set in the tile map where we want the platform tiles to show up in the scene. In the next box, fill in the tile image with the pixels you want with the image editor. Turn the ``wall`` attribute **ON**. This makes the sprite stop when it moves into the tile and it will won't fall through our platform.
 
 Get a ``||scene:set tilemap to||`` and put it under the ``||scene:set tile to||``. Using the tile index color value, draw the platform at the bottom of the map - make sure that it is **two tiles tall** from the bottom of the screen.
 
