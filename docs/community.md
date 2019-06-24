@@ -31,6 +31,15 @@ Games submitted by the MakeCode community.
         "largeImageUrl": "/static/community/snowy-slopes/snowy-slopes.gif"
     },
     {
+        "name": "Raptor Run",
+        "description": "Jump and avoid enemies in this infinite runner, by Adri314",
+        "author": "Adri314",
+        "url": "https://forum.makecode.com/t/raptor-run-microsoft-makecode/291",
+        "cardType": "forumUrl",
+        "imageUrl": "/static/community/raptor-run/raptor-run.png",
+        "largeImageUrl": "/static/community/raptor-run/raptor-run.gif"
+    },
+    {
         "name": "Jetpack Jenny",
         "description": "Avoid missiles, asteroids, and electric charges in this side scrolling adventure, by Stu Lowe",
         "author": "Stu Lowe",
