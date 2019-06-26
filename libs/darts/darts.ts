@@ -11,7 +11,7 @@ namespace darts {
      * @param x optional initial x position, eg: 10
      * @param y optional initial y position, eg: 110
      */
-    //% blockId=dartsCreate block="dart %img=screen_image_picker of kind %kind=spritetype || at x %x y %y"
+    //% blockId=dartsCreate block="dart %img=screen_image_picker of kind %kind=spritekind || at x %x y %y"
     //% expandableArgumentMode=toggle
     //% inlineInputMode=inline
     //% blockSetVariable=myDart
