@@ -18,7 +18,8 @@
                 "output": "",
                 "goto": {
                     "question": 2
-                }
+                },
+                "hint": "This answer will be used to set a name for your sprite. This name will be used whenever your game needs to change, destroy, or build your sprite. Read more at makecode.com/docs/setsprite"
             },
             {
                 "title": "Where should your sprite be placed?",
@@ -27,13 +28,17 @@
                         "label": "x:",
                         "defaultAnswer": 80,
                         "answerToken": "xLocation",
-                        "type": "number"
+                        "type": "number",
+                        "min": 0,
+                        "max": 160
                     },
                     {
                         "label": "y:",
                         "defaultAnswer": 60,
                         "answerToken": "yLocation",
-                        "type": "number"
+                        "type": "number",
+                        "min": 0,
+                        "max": 120
                     }
                 ],
                 "output": "$spriteName.setPosition($xLocation,$yLocation)",
@@ -60,7 +65,13 @@
                     {
                         "answerToken": "spriteKind",
                         "defaultAnswer": "SpriteKind.Player",
-                        "type": "dropdown"
+                        "type": "dropdown",
+                        "options": {
+                            "SpriteKind.Player": "Player",
+                             "SpriteKind.Enemy": "Enemy",
+                            "SpriteKind.Food": "Food",
+                            "SpriteKind.Projectile": "Projectile"
+                        } 
                     }
                 ],
                 "goto": {
@@ -76,10 +87,34 @@
                     {
                         "answerToken": "gameLives",
                         "defaultAnswer": 3,
+                        "max": 20,
                         "type": "number"
                     }
                 ],
-                "output": "info.setLife($gameLives)"
+                "output": "info.setLife($gameLives)",
+                "goto": {
+                    "question": 5
+                }
+            },
+            {
+                "title": "How should your sprite move?",
+                "inputs": [
+                    {
+                        "answerToken": "moveX",
+                        "type": "number",
+                        "label": "vx",
+                        "defaultAnswer": 100,
+                        "max": 500
+                    },
+                    {
+                        "answerToken": "moveY",
+                        "type": "number",
+                        "label": "vy",
+                        "defaultAnswer": 100,
+                        "max": 500
+                    }
+                ],
+                "output": "controller.moveSprite($spriteName, $moveX, $moveY)"
             }
         ]
     }]
