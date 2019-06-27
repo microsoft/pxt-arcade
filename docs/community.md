@@ -35,7 +35,6 @@ Games submitted by the MakeCode community.
         "description": "Jump and avoid enemies in this infinite runner, by Adri314",
         "author": "Adri314",
         "url": "https://forum.makecode.com/t/raptor-run-microsoft-makecode/291",
-        "cardType": "forumUrl",
         "imageUrl": "/static/community/raptor-run/raptor-run.png",
         "largeImageUrl": "/static/community/raptor-run/raptor-run.gif"
     },
