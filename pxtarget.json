@@ -56,7 +56,8 @@
         "libs/jacdac-game",
         "libs/power",
         "libs/controller",
-        "libs/edge-connector"
+        "libs/edge-connector",
+        "libs/esp32spi"
     ],
     "compile": {
         "useUF2": true,
