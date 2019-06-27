@@ -32,7 +32,7 @@ Games submitted by the MakeCode community.
     },
     {
         "name": "Raptor Run",
-        "description": "Jump and avoid enemies in this infinite runner, by Adri314",
+        "description": "See how long your dinosaur can run across the ancient landscape, jump to avoid deadly obstacles along the way, by Adri314",
         "author": "Adri314",
         "url": "https://forum.makecode.com/t/raptor-run-microsoft-makecode/291",
         "imageUrl": "/static/community/raptor-run/raptor-run.png",
