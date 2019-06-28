@@ -57,7 +57,8 @@
         "libs/power",
         "libs/controller",
         "libs/edge-connector",
-        "libs/esp32spi"
+        "libs/esp32spi",
+        "libs/azureiot"
     ],
     "compile": {
         "useUF2": true,
