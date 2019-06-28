@@ -58,7 +58,8 @@
         "libs/controller",
         "libs/edge-connector",
         "libs/esp32spi",
-        "libs/azureiot"
+        "libs/azureiot",
+        "libs/net"
     ],
     "compile": {
         "useUF2": true,
