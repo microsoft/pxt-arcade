@@ -1,0 +1,11 @@
+{
+    "name": "spritewizard",
+    "description": "A wizard for building your first sprite.",
+    "files": [
+        "pxtsnippets.json"
+    ],
+    "public": true,
+    "dependencies": {
+        "game": "file:../game"
+    }
+}
