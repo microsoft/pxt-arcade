@@ -1,20 +1,3 @@
 {
-    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/esp32spi",
-    "name": "esp32spi",
-    "description": "ESP32 over SPI",
-    "files": [
-        "esp32spi.ts",
-        "socket.ts",
-        "requests.ts",
-        "wifimanager.ts",
-        "README.md"
-    ],
-    "testFiles": [
-        "test.ts"
-    ],
-    "public": true,
-    "dependencies": {
-        "core": "file:../core",
-        "net": "file:../net"
-    }
+    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/esp32spi"
 }
