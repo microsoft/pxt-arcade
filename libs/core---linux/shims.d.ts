@@ -21,6 +21,12 @@ declare namespace control {
     /** Write data to DMESG debugging buffer. */
     //% shim=control::dmesg
     function dmesg(s: string): void;
+
+    /**
+     * Determines if the USB has been enumerated.
+     */
+    //% shim=control::isUSBInitialized
+    function isUSBInitialized(): boolean;
 }
 declare namespace serial {
 

@@ -12,7 +12,6 @@ or ``||controller:b||`` to lower the number of balls.
 Beware that both of these actions will cost you **2** points!
 
 ```typescript
-enum SpriteKind { Player, Enemy }
 const BALL_IMAGE = img`
     . . e e 1 e e e . .
     . e 1 1 d d d d e .
@@ -34,15 +33,7 @@ const TIMEOUT = 5000;
 let playerOneLastMove = -TIMEOUT;
 let playerTwoLastMove = -TIMEOUT;
 
-[
-    controller.up,
-    controller.down,
-    controller.player2.up,
-    controller.player2.down
-].forEach(b => {
-    b.repeatInterval = 1000;
-    b.repeatDelay = -2 * b.repeatInterval;
-});
+controller.setRepeatDefault(0, 1000);
 
 controller.up.onEvent(ControllerButtonEvent.Repeated, () => playerOneLastMove = game.runtime());
 controller.down.onEvent(ControllerButtonEvent.Repeated, () => playerOneLastMove = game.runtime());

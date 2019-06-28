@@ -1,4 +1,12 @@
 // Auto-generated. Do not edit.
+declare namespace control {
+
+    /**
+     * Determines if the USB has been enumerated.
+     */
+    //% shim=control::isUSBInitialized
+    function isUSBInitialized(): boolean;
+}
 declare namespace pins {
 
     /**
