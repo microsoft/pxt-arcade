@@ -5,3 +5,4 @@ namespace config {
 }
 
 control.internalOnEvent(INTERNAL_KEY_DOWN, 100, () => control.reset())
+console.addListener((pri, txt) => control.dmesg("C: " + txt))
