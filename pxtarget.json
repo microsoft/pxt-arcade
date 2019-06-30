@@ -200,7 +200,7 @@
             },
             "compileService": {
                 "buildEngine": "dockercross",
-                "dockerImage": "pext/crossbuild",
+                "dockerImage": "pext/rpi:alsa",
                 "serviceId": "crossbuild",
                 "skipCloudBuild": true
             }
