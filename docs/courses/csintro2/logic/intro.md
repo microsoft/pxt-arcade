@@ -48,8 +48,6 @@ When we make comparisons, we have two numbers, in a specific order, and what is 
 
 ### Example #1: Less than 
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-ifless)
-
 1. Play the game linked below
 2. Review the code that uses comparisons
 3. Look at how it uses ``||logic:if||`` logic and a less than comparison to modify the game
@@ -68,7 +66,7 @@ sprites.onDestroyed(SpriteKind.Enemy, function (sprite) {
     info.changeScoreBy(1)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    game.over()
+    game.over(false)
 })
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 

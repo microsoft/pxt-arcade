@@ -4,16 +4,26 @@
             "Microsoft"
         ],
         "approvedRepos": [
-            "adafruit/Circuit-Playground-Character-Icons"
+            "adafruit/Circuit-Playground-Character-Icons",
+            "adafruit/pxt-seesaw",
+            "jwunderl/pxt-button-combos"
+        ],
+        "preferredRepos": [
+            "adafruit/Circuit-Playground-Character-Icons",
+            "adafruit/pxt-seesaw",
+            "jwunderl/pxt-button-combos"
         ]
     },
     "galleries": {
         "Tutorials": "tutorials",
         "Blocks Games": "blocks-games",
         "JavaScript Games": "javascript-games",
+        "Community Games": "community",
         "Game Design Concepts": "concepts",
+        "Graphics and Math": "graphics-math",
         "Lessons": "lessons",
         "Courses": "courses",
-        "Hardware": "hardware"
+        "Hardware": "hardware",
+        "John Park's Workshop": "john-parks-workshop"
     }
 }

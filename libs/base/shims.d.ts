@@ -5,6 +5,18 @@
     //% indexerGet=BufferMethods::getByte indexerSet=BufferMethods::setByte
 declare interface Buffer {
     /**
+     * Reads an unsigned byte at a particular location
+     */
+    //% shim=BufferMethods::getUint8
+    getUint8(off: int32): int32;
+
+    /**
+     * Writes an unsigned byte at a particular location
+     */
+    //% shim=BufferMethods::setUint8
+    setUint8(off: int32, v: int32): void;
+
+    /**
      * Write a number in specified format in the buffer.
      */
     //% shim=BufferMethods::setNumber
@@ -179,6 +191,12 @@ declare namespace control {
      */
     //% shim=control::heapDump
     function heapDump(): void;
+
+    /**
+     * Set flags used when connecting an external debugger.
+     */
+    //% shim=control::setDebugFlags
+    function setDebugFlags(flags: int32): void;
 
     /**
      * Return true if profiling is enabled in the current build.

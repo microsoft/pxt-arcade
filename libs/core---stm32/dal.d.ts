@@ -250,10 +250,12 @@ declare const enum DAL {
     ACCELEROMETER_EVT_6G = 9,
     ACCELEROMETER_EVT_8G = 10,
     ACCELEROMETER_EVT_SHAKE = 11,
+    ACCELEROMETER_EVT_2G = 12,
     ACCELEROMETER_REST_TOLERANCE = 200,
     ACCELEROMETER_TILT_TOLERANCE = 200,
     ACCELEROMETER_FREEFALL_TOLERANCE = 400,
     ACCELEROMETER_SHAKE_TOLERANCE = 400,
+    ACCELEROMETER_2G_TOLERANCE = 2048,
     ACCELEROMETER_3G_TOLERANCE = 3072,
     ACCELEROMETER_6G_TOLERANCE = 6144,
     ACCELEROMETER_8G_TOLERANCE = 8192,
@@ -724,10 +726,10 @@ declare const enum DAL {
     REF_TAG_BUFFER = 2,
     REF_TAG_IMAGE = 3,
     REF_TAG_USER = 32,
-    // /pxtapp/accelerometer/axis.h
-    ACC_SYSTEM = 3,
-    ACC_ROTATION = 0,
     // /pxtapp/configkeys.h
+    CFG_PIN_NAME_MSK = 65535,
+    CFG_PIN_CONFIG_MSK = 4294901760,
+    CFG_PIN_CONFIG_ACTIVE_LO = 65536,
     CFG_MAGIC0 = 513675505,
     CFG_MAGIC1 = 539130489,
     CFG_PIN_ACCELEROMETER_INT = 1,
@@ -889,6 +891,8 @@ declare const enum DAL {
     CFG_PINS_PORT_SIZE = 210,
     CFG_BOOTLOADER_PROTECTION = 211,
     CFG_POWER_DEEPSLEEP_TIMEOUT = 212,
+    CFG_ANALOG_BUTTON_THRESHOLD = 213,
+    CFG_CONTROLLER_LIGHT_MAX_BRIGHTNESS = 215,
     CFG_PIN_B0 = 300,
     CFG_PIN_B1 = 301,
     CFG_PIN_B2 = 302,
@@ -992,14 +996,6 @@ declare const enum DAL {
     CFG_NUM_LCD_ROWS = 1016,
     // /pxtapp/hf2dbg.h
     HF2DBG_H = 1,
-    // /pxtapp/mixer---stm32/melody.h
-    SW_TRIANGLE = 1,
-    SW_SAWTOOTH = 2,
-    SW_SINE = 3,
-    SW_NOISE = 4,
-    SW_REAL_NOISE = 5,
-    SW_SQUARE_10 = 11,
-    SW_SQUARE_50 = 15,
     // /pxtapp/pins.h
     BUTTON_ACTIVE_HIGH_PULL_DOWN = 17,
     BUTTON_ACTIVE_HIGH_PULL_UP = 33,
@@ -1122,7 +1118,7 @@ declare const enum DAL {
     GC = 0,
     // /pxtapp/pxtconfig.h
     PXT_GC = 1,
-    PXT_UF2_FAMILY = 1467308631,
+    PXT_UF2_FAMILY = 1591873650,
     // /pxtapp/uf2hid.h
     UF2_HID_H = 1,
 }

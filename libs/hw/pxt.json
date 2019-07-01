@@ -2,6 +2,7 @@
     "name": "hw",
     "description": "Hardware definition - web-browser only",
     "files": [
+        "basepins.d.ts",
         "config.ts"
     ],
     "dependencies": {
@@ -10,5 +11,6 @@
         "mixer": "file:../mixer",
         "game": "file:../game"
     },
-    "public": true
+    "public": true,
+    "skipLocalization": true
 }

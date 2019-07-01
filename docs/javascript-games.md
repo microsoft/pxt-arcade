@@ -6,60 +6,78 @@ Here are some fun programs for your @boardname@!
 
 ```codecard
 [
-{
-  "name": "Planet Putt Putt",
-  "description": "Golf your way through the galaxy",
-  "url":"/examples/planet-putt-putt",
-  "cardType": "codeExample",
-  "imageUrl": "/static/examples/planet-putt-putt.png"
-},
-{
-  "name": "Cube Land",
-  "description": "Save the Cube Lad from the Cube Lord",
-  "url":"/examples/cube-land",
-  "cardType": "codeExample",
-  "imageUrl": "/static/examples/cube-land.png"
-},
-{
-  "name": "Particle Effects Demo",
-  "description": "A demonstration of ramped up particle effects",
-  "url":"/examples/particle-effects-demo",
-  "cardType": "codeExample",
-  "imageUrl": "/static/examples/particle-effects-demo.gif"
-},
-{
-  "name": "Sorting Algorithms",
-  "description": "A visualization of different sorting algorithms",
-  "url":"/examples/sorting-algorithms",
-  "cardType": "codeExample",
-  "imageUrl": "/static/examples/sorting-algorithms.gif"
-},
-{
-  "name": "Guess the Letter",
-  "description": "Try and guess the letter",
-  "url":"/examples/guess-the-letter",
-  "cardType": "codeExample",
-  "imageUrl": "/static/examples/guess-the-letter.png"
-},
-{
-  "name": "Bouncer Bucket",
-  "description": "Try to catch the bouncing balls in your bucket",
-  "url":"/examples/bouncer-bucket",
-  "cardType": "codeExample",
-  "imageUrl": "/static/examples/bouncer-bucket.png"
-}
+    {
+        "name": "Planet Putt Putt",
+        "description": "Golf your way through the galaxy",
+        "url":"/javascript-games/planet-putt-putt",
+        "cardType": "codeExample",
+        "imageUrl": "/static/javascript-games/planet-putt-putt.png",
+        "largeImageUrl": "/static/javascript-games/planet-putt-putt.gif"
+    },
+    {
+        "name": "Darker Duck",
+        "description": "A remix of Falling Duck with custom lighting effects",
+        "url": "/javascript-games/darker-duck",
+        "cardType": "codeExample",
+        "imageUrl": "/static/javascript-games/darker-duck.png",
+        "largeImageUrl": "/static/javascript-games/darker-duck.gif"
+    },
+    {
+        "name": "Ping!",
+        "description": "Return the ball with the paddle in this 0-2 player game of ping-pong",
+        "url": "/javascript-games/ping",
+        "cardType": "codeExample",
+        "imageUrl": "/static/javascript-games/ping.png",
+        "largeImageUrl": "/static/javascript-games/ping.gif"
+    },
+    {
+        "name": "Caterpillar",
+        "description": "Collect leaves to feed the caterpillar",
+        "url": "/javascript-games/caterpillar",
+        "cardType": "codeExample",
+        "imageUrl": "/static/javascript-games/caterpillar.png",
+        "largeImageUrl": "/static/javascript-games/caterpillar.gif"
+    },
+    {
+        "name": "Cube Land",
+        "description": "Save the Cube Lad from the Cube Lord in Cube Land",
+        "url":"/javascript-games/cube-land",
+        "cardType": "codeExample",
+        "imageUrl": "/static/javascript-games/cube-land.png"
+    },
+    {
+        "name": "Particle Effects Demo",
+        "description": "A demonstration of ramped up particle effects",
+        "url":"/javascript-games/particle-effects-demo",
+        "cardType": "codeExample",
+        "imageUrl": "/static/javascript-games/particle-effects-demo.png",
+        "largeImageUrl": "/static/javascript-games/particle-effects-demo.gif"
+    },
+    {
+        "name": "Guess the Letter",
+        "description": "Try and guess the letter",
+        "url":"/javascript-games/guess-the-letter",
+        "cardType": "codeExample",
+        "imageUrl": "/static/javascript-games/guess-the-letter.png"
+    },
+    {
+        "name": "Bouncer Bucket",
+        "description": "Try to catch the bouncing balls in your bucket",
+        "url":"/javascript-games/bouncer-bucket",
+        "cardType": "codeExample",
+        "imageUrl": "/static/javascript-games/bouncer-bucket.png",
+        "largeImageUrl": "/static/javascript-games/bouncer-bucket.gif"
+    }
 ]
 ```
 
 ## See also
 
-[Asteroids](/examples/asteroids),
-[Car Race](/examples/car-race),
-[Snake](/examples/snake),
-[Jumping Runner](/examples/runner),
-[Jumper](/examples/jumper),
-[Mega Bounce](/examples/mega-bounce),
-[Collisions](/examples/collisions),
-[Sorting](/examples/sorting),
-[Palette](/examples/palette),
-[Bouncer Bucket](/examples/bouncer-bucket)
+[Planet Putt Putt](/javascript-games/planet-putt-putt),
+[Darker Duck](/javascript-games/darker-duck),
+[Ping!](/javascript-games/ping),
+[Caterpillar](/javascript-games/caterpillar),
+[Cube Land](/javascript-games/cube-land),
+[Particle Effects Demo](/javascript-games/particle-effects-demo),
+[Guess the Letter](/javascript-games/guess-the-letter),
+[Bouncer Bucket](/javascript-games/bouncer-bucket)

@@ -225,7 +225,7 @@ namespace corgio {
      * @param x optional initial x position, eg: 10
      * @param y optional initial y position, eg: 70
      */
-    //% blockId=corgiCreate block="corgi of kind %kind=spritetype || at x %x y %y"
+    //% blockId=corgiCreate block="corgi of kind %kind=spritekind || at x %x y %y"
     //% expandableArgumentMode=toggle
     //% inlineInputMode=inline
     //% blockSetVariable=myCorg

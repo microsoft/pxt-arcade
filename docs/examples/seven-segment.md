@@ -9,9 +9,9 @@ Create a counter with `5` digits and add one to the current count value every `1
 ```blocks
 let myCounter: DigitCounter = null
 myCounter = sevenseg.createCounter(SegmentStyle.Narrow, SegmentScale.Full, 5)
-myCounter.setCounterValue(54321)
+myCounter.count = 54321
 game.onUpdateInterval(100, function () {
-    myCounter.increment()
+    myCounter.count += 1
 })
 ```
 
@@ -88,21 +88,70 @@ game.onUpdateInterval(1000, function () {
     if (time >= 24 * 60 * 60) {
         time = 0
     }
-    seconds.setCounterValue(time % 60)
-    minutes.setCounterValue(time / 60 % 60)
+    seconds.count = time % 60
+    minutes.count = time / 60 % 60
     let hourAdjust = Math.trunc(time / (60 * 60) % 60)
     if (hourAdjust > 11) {
-        ampm.setDigitAlpha("P")
+        ampm.setDigitAlpha(SegmentCharacter.P)
     } else {
-        ampm.setDigitAlpha("A")
+        ampm.setDigitAlpha(SegmentCharacter.A)
     }
     if (hourAdjust > 12) {
         hourAdjust += -12
     } else if (hourAdjust == 0) {
         hourAdjust = 12
     }
-    hours.setCounterValue(hourAdjust)
+    hours.count = hourAdjust
     time += 1
+})
+```
+
+## Temperature Meter
+
+Make a temperature meter that shows the average Summer temperature on the coast of Antarctica. Switch between Celsius and Fahrenheit when button **A** is pressed.
+
+```blocks
+let temp = 0
+let celsius = false
+celsius = true
+let tempurature = sevenseg.createCounter(SegmentStyle.Thick, SegmentScale.Full, 2)
+tempurature.setDigitColor(7)
+let minus = sevenseg.createDigit(SegmentStyle.Thick)
+minus.setDigitColor(7)
+minus.x += -30
+minus.setRadix(DigitRadix.Alpha)
+minus.setDigitAlpha(SegmentCharacter.Hyphen)
+let degree = sevenseg.createDigit(SegmentStyle.Thick)
+degree.setScale(SegmentScale.Half)
+degree.setDigitColor(7)
+degree.x += 30
+degree.y += -8
+degree.setRadix(DigitRadix.Alpha)
+degree.setDigitAlpha(SegmentCharacter.Degree)
+let unit = sevenseg.createDigit(SegmentStyle.Thick)
+unit.setScale(SegmentScale.Half)
+unit.setDigitColor(7)
+unit.setRadix(DigitRadix.Alpha)
+unit.setDigitAlpha(SegmentCharacter.C)
+unit.x += 40
+unit.y += -8
+game.onUpdateInterval(2000, function () {
+    temp = Math.randomRange(-1, -5)
+    if (celsius) {
+        unit.setDigitAlpha(SegmentCharacter.C)
+    } else {
+        temp = temp * 9 / 5 + 32
+        unit.setDigitAlpha(SegmentCharacter.F)
+    }
+    tempurature.count = Math.abs(temp)
+    if (temp > 0) {
+        minus.setDigitColor(0)
+    } else {
+        minus.setDigitColor(7)
+    }
+})
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    celsius = !(celsius)
 })
 ```
 

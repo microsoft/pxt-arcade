@@ -44,7 +44,7 @@ scene.setTileMap(img`
 
 ## Step 3 @fullscreen
 
-Find ``||scene:set tile to||`` in ``||scene:Scene||``, and drag it into ``||loops:on start||``. Click on the first grey box (the color picker), and select one of the colors you used in the tile map image.
+Find ``||scene:set tile to with wall||`` in ``||scene:Scene||``, and drag it into ``||loops:on start||``. Click on the first grey box (the color picker), and select one of the colors you used in the tile map image.
 
 This will temporarily make that tile appear to disappear on the screen, but that's just because we haven't set an image for the tile yet.
 
@@ -81,7 +81,7 @@ scene.setTile(5, img`
 
 ## Step 4 @fullscreen
 
-Click on the other gray box in ``||scene:set tile to||`` to open the image editor, and draw an image for the tile.
+Click on the other gray box in ``||scene:set tile to with wall||`` to open the image editor, and draw an image for the tile.
 
 Any tiles that are assigned the color you specified in the ``||scene:tile map||`` will now be displayed as the image that you drew.
 
@@ -241,7 +241,7 @@ controller.moveSprite(mySprite)
 
 ## Step 7 @fullscreen
 
-Click on the ``(+)`` to expand the in ``||scene:set tile to||`` to expand it to ``||scene:set tile to with wall off||``, and click on ``||scene:off||`` to turn it ``||scene:on||``.
+In the ``||scene:set tile to with wall||`` click on ``||scene:off||`` to turn it ``||scene:on||``.
 
 This will set the tile you created to be a ``||scene:Wall||``, so that the player cannot move through it.
 

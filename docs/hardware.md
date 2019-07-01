@@ -14,6 +14,29 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "variant": "hw---stm32f401"
     },
     {
+        "name": "Meowbit",
+        "description": "A retro game console for STEM education from Kittenbot team",
+        "imageUrl": "/static/hardware/meowbit.png",
+        "url": "https://www.kittenbot.cc/collections/frontpage/products/meowbit-codable-console-for-microsoft-makecode-arcade",
+        "variant": "hw---stm32f401"
+    },
+    {
+        "name": "Adafruit PyBadge",
+        "description": "It's a badge, it's an arcade, it's a PyBadge",
+        "imageUrl": "/static/hardware/pybadge.jpg",
+        "url": "https://www.adafruit.com/product/4200",
+        "variant": "hw---samd51",
+        "label": "beta"
+    },
+    {
+        "name": "Adafruit PyGamer",
+        "description": "The upgraded PyBadge",
+        "imageUrl": "/static/hardware/pygamer.jpg",
+        "url": "https://www.adafruit.com/product/4242",
+        "variant": "hw---samd51",
+        "label": "beta"
+    },
+    {
         "name": "Adafruit M4",
         "description": "Learn how to run your games on micro-controllers from Adafruit",
         "imageUrl": "/static/hardware/adafruitm4.jpg",
@@ -25,6 +48,13 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "description": "Learn how to run your games on Raspberry Pi Zero and Adafruit Joy Bonnet.",
         "imageUrl": "/static/hardware/adafruitjoybonnet.jpg",
         "url": "https://learn.adafruit.com/makecode-arcade-pi-zero",
+        "variant": "hw---rpi"
+    },
+    {
+        "name": "Cardboard Panel",
+        "description": "Turn a cardboard box into a tabletop arcade.",
+        "imageUrl": "/static/hardware/controlpanel.jpg",
+        "url": "/hardware/raspberry-pi/cardboard-control-panel",
         "variant": "hw---rpi"
     },
     {

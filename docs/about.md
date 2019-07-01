@@ -1,5 +1,11 @@
-# About Sample Target
+# About MakeCode Arcade
 
-Example of editor target for [Microsoft MakeCode](https://makecode.com/).
+MakeCode Arcade is a code editor to build Retro Arcade games for the browser
+and handheld consoles.
 
-See [GitHub repo](https://github.com/Microsoft/pxt-arcade) for details.
+* [Try it now!](https://arcade.makecode.com)
+
+
+* [Projects](/projects)
+* [Documentation](/docs)
+* [Hardware](/hardware)

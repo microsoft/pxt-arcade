@@ -94,7 +94,7 @@ mySprite.ay = 500
 
 ## Step 5
 
-Now let's create a platform base at the bottom of the screen. Drag a ``||scene:set tile to||`` into ``||loops:on start||``. Set the tile index color. This index value is set in the tile map where we want the platform tiles to show up in the scene. In the next box, fill in the tile image with the pixels you want with the image editor. Click the **(+)** symbol and turn the ``wall`` attribute **on**. This makes the sprite stop when it moves into the tile and it will won't fall through our platform.
+Now let's create a platform base at the bottom of the screen. Drag a ``||scene:set tile to||`` into ``||loops:on start||``. Set the tile index color. This index value is set in the tile map where we want the platform tiles to show up in the scene. In the next box, fill in the tile image with the pixels you want with the image editor. Turn the ``wall`` attribute **ON**. This makes the sprite stop when it moves into the tile and it will won't fall through our platform.
 
 Get a ``||scene:set tilemap to||`` and put it under the ``||scene:set tile to||``. Using the tile index color value, draw the platform at the bottom of the map - make sure that it is **two tiles tall** from the bottom of the screen.
 
@@ -155,26 +155,6 @@ e e e e e e e e
 
 ## Step 7
 
-Now, we want to add a ``||sprites:set mySprite x(horizontal position)||`` to ``||game:on game update every||``. Drag a  ``||sprites:set mySprite position to||`` into the bottom of ``||game:on game update every||`` and change the variable to ``projectile``.
-
-```blocks
-let projectile: Sprite = null
-game.onUpdateInterval(1500, function () {
-    projectile = sprites.createProjectileFromSide(img`
-. e e e e e e . 
-e e e e e e e e 
-1 1 1 1 1 1 1 1 
-e e e e e e e e 
-e e e e e e e e 
-1 1 1 1 1 1 1 1 
-e e e e e e e e 
-. e e e e e e . 
-`, Math.randomRange(-100, -80), 0)
-})
-```
-
-## Step 8
-
 Find ``||variables:set myTile to||`` in ``||scene:Scene||`` and drag it into the ``||game:on game update interval||``. Set the ``||scene:col||`` to 9 and the ``||scene:row||`` to 5, which is the tile on the right side of the screen directly above the wall. Drag ``||scene:on top of myTile place mySprite||`` after ``||variables:set myTile to||`` and change ``||variables:mySprite||`` to ``||variables:projectile||``.
 
 ```blocks
@@ -196,7 +176,7 @@ e e e e e e e e
 })
 ```
 
-## Step 9
+## Step 8
 
 Let's give the sprite the ability to jump when we press a button. We do this with  ``||controller:on any button pressed||``. Find that block and drag it out onto the editor. Change the button from ``any`` to ``A``.
 
@@ -206,7 +186,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 10
+## Step 9
 
 We need to make sure that the sprite is on the ground before jumping, so drag an ``||logic:if then||`` conditional into the ``||controller:on A button pressed||``. Replace `true` with ``||scene:is mySprite hitting wall||`` and change ``left`` side ``bottom``. Finally, put in a ``||sprites:set mySprite x||`` and choose ``||sprites:vy (velocity y)||`` from the dropdown. Set the value to `-250`.
 
@@ -243,7 +223,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 11
+## Step 10
 
 Each time a barrel starts to move we want to increase the score. Get a ``||info:change score by||`` and put it into ``||game:on game update every||``. Leave the value at `1`.
 
@@ -267,7 +247,7 @@ e e e e e e e e
 })
 ```
 
-## Step 12
+## Step 11
 
 Our final step is to end the game if a barrel touches the sprite player. Drag an ``||sprites:on sprite overlaps||`` onto the editor. Set the sprite kind for ``otherSprite`` to ``Projectile``. End the game with a ``||game:game over||`` block inside.
 
@@ -279,7 +259,7 @@ enum SpriteKind {
     Enemy
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    game.over()
+    game.over(false)
 })
 ```
 
@@ -288,3 +268,86 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 Awesome! Congratulations on making the Barrel Dodger game! You are on your way to making amazing games with @boardname@.
 
 ![Barrel Dodger game playing](/static/lessons/barrel-dodger/barrel-dodger.gif)
+
+```blocks
+enum SpriteKind {
+    Player,
+    Projectile,
+    Food,
+    Enemy
+}
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (mySprite.isHittingTile(CollisionDirection.Bottom)) {
+        mySprite.vy = -250
+    }
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    game.over(false)
+})
+let myTile: tiles.Tile = null
+let projectile: Sprite = null
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
+    . . . . . . 5 . 5 . . . . . . .
+    . . . . . f 5 5 5 f f . . . . .
+    . . . . f 1 5 2 5 1 6 f . . . .
+    . . . f 1 6 6 6 6 6 1 6 f . . .
+    . . . f 6 6 f f f f 6 1 f . . .
+    . . . f 6 f f d d f f 6 f . . .
+    . . f 6 f d f d d f d f 6 f . .
+    . . f 6 f d 3 d d 3 d f 6 f . .
+    . . f 6 6 f d d d d f 6 6 f . .
+    . f 6 6 f 3 f f f f 3 f 6 6 f .
+    . . f f d 3 5 3 3 5 3 d f f . .
+    . . f d d f 3 5 5 3 f d d f . .
+    . . . f f 3 3 3 3 3 3 f f . . .
+    . . . f 3 3 5 3 3 5 3 3 f . . .
+    . . . f f f f f f f f f f . . .
+    . . . . . f f . . f f . . . . .
+`, SpriteKind.Player)
+mySprite.setPosition(20, 70)
+mySprite.ay = 500
+scene.setTile(3, img`
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+`, true)
+scene.setTileMap(img`
+    . . . . . . . . . .
+    . . . . . . . . . .
+    . . . . . . . . . .
+    . . . . . . . . . .
+    . . . . . . . . . .
+    . . . . . . . . . .
+    3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3
+`)
+game.onUpdateInterval(1500, function () {
+    projectile = sprites.createProjectileFromSide(img`
+        1 e e e e e e 1
+        e e e e e e e e
+        1 1 1 1 1 1 1 1
+        e e e e e e e e
+        e e e e e e e e
+        1 1 1 1 1 1 1 1
+        e e e e e e e e
+        1 e e e e e e 1
+    `, Math.randomRange(-100, -80), 0)
+    info.changeScoreBy(1)
+    myTile = scene.getTile(9, 5)
+    myTile.place(projectile)
+})
+```

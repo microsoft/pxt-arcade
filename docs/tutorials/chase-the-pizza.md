@@ -1,6 +1,6 @@
 # Chase the Pizza
 
-### ~button /#tutorial:tutorials/chase-the-pizza
+### ~button /#tutorial:/tutorials/chase-the-pizza
 
 Try this tutorial!
 
@@ -100,7 +100,7 @@ controller.moveSprite(mySprite)
 
 ## Step 5 @fullscreen
 
-Drag another ``||variables:set mySprite to||`` into the ``||loops:on start||``. Click on ``||variables:mySprite||``, select ``||variables:New variable||``, and enter ``pizza`` as the variable name. Change the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Food||``.
+Find the ``||variables:set mySprite2 to||`` block in ``||sprites:Sprites||`` and drag it to the end of the ``||loops:on start||``. Click on ``||variables:mySprite2||`` in the block, select ``Rename variable...``, and enter ``pizza`` as the new variable name. Change the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Food||``.
 
 This will create **another** ``||sprites:Sprite||``, but one that isn't controlled by the player.
 
