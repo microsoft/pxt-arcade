@@ -17,3 +17,4 @@
     * [For Each Loops](/courses/csintro4/appendix/for-each)
     * [Nested Functions](/courses/csintro4/appendix/nested-functions)
     * [Optional Parameters](/courses/csintro4/appendix/optional)
+* [Group Project](/courses/csintro4/project-guidelines)
