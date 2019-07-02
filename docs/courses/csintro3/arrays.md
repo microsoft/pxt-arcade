@@ -22,6 +22,10 @@
         "name": "Images",
         "url": "/courses/csintro3/arrays/images",
         "imageUrl": "/static/courses/csintro3/arrays/images.gif"
+    }, {
+        "name": "Project",
+        "url": "/courses/csintro3/arrays/project",
+        "imageUrl": "/static/courses/csintro3/arrays/project.gif"
     }
 ]
 ```
@@ -32,3 +36,4 @@
 * [Tiles](/courses/csintro3/arrays/tiles)
 * [Images](/courses/csintro3/arrays/images)
 * [Case Study Final](/courses/csintro3/arrays/case-study)
+* [Project](/courses/csintro3/arrays/project)

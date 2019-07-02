@@ -40,7 +40,7 @@ just like in ``||loops:loops||`` or ``||functions:functions||``.
 
 The syntax for this will likely seem a bit weird to start.
 More details on why the function call is written in the way it is
-can be found in the [Anonymous Functions Appendix](/courses/csintro3/appendix/anonymous).
+can be found in the [Anonymous Functions Appendix](/courses/csintro4/appendix/anonymous).
 
 ### ~
 

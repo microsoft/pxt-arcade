@@ -7,3 +7,9 @@ Eric Camplin is a Senior Content Developer at Microsoft Learning with a focus on
 ![Joey's picture](/static/courses/csintro1/about/joey.png)
 
 Joey Wunderlich is a Software Developer. He was a Senior TA for the Computer Science Department at the University of Washington for 8 quarters, teaching sections of the two introductory courses and the Data Structures and Algorithms course.
+
+![Chase's picture](/static/courses/csintro1/about/chase.png)
+
+Chase Mortensen is a Software Developer
+He was a TA for the University of Washington Computer Science Department where he taught introductory programming classes. 
+He is passionate about diversity, education, and using software to make the world a better place.

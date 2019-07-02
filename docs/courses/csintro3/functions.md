@@ -18,6 +18,10 @@
         "name": "Commenting Functions",
         "url": "/courses/csintro3/functions/comments",
         "imageUrl": "/static/courses/csintro3/functions/comments.gif"
+    }, {
+        "name": "Project",
+        "url": "/courses/csintro3/functions/project",
+        "imageUrl": "/static/courses/csintro3/functions/project.gif"
     }
 ]
 ```
@@ -27,3 +31,4 @@
 * [Return Values](/courses/csintro3/functions/returns)
 * [Commenting Functions](/courses/csintro3/functions/comments)
 * [Case Study](/courses/csintro3/functions/case-study)
+* [Project](/courses/csintro3/functions/project)

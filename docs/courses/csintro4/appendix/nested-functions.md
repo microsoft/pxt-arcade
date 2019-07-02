@@ -1,4 +1,4 @@
-# Appendix: Nested Functions
+# Advanced Topics: Nested Functions
 
 When ``||functions:functions||`` get to be particularly complex,
 it can be helpful to break them up into smaller functions to clarify
