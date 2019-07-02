@@ -56,8 +56,7 @@
         "libs/jacdac-game",
         "libs/power",
         "libs/controller",
-        "libs/edge-connector",
-        "libs/spritewizard"
+        "libs/edge-connector"
     ],
     "compile": {
         "useUF2": true,
