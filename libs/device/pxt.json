@@ -16,7 +16,8 @@
         "sprites.space.ts",
         "sprites.vehicle.ts",
         "sprites.vehicle.jres",
-        "startup.ts"
+        "startup.ts",
+        "pxtsnippets.json"
     ],
     "core": true,
     "dependencies": {
