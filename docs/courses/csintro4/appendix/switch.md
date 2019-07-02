@@ -1,4 +1,4 @@
-# Appendix: Switch Statement
+# Advanced Topics: Switch Statement
 
 When implementing powerups in the case study game,
 the same ``||sprites:Kind||`` was used to maintain the

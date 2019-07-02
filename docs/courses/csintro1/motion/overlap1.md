@@ -13,7 +13,7 @@ In this activity, students will be introduced to:
 
 ## Concept: Overlap Event
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-overlap1spritekind)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-overlap1spritekindtask)
 
 We use ``||sprites:kind||`` to classify our sprites. We can have sprites in our games that represent many different things - players, enemies, coins, food, or anything else you might want to represent in your games. 
 
@@ -113,8 +113,6 @@ Use ``||loops:pause||`` before using sprite destroy, otherwise the sprite will b
 ### ~
 
 ## Set ``||sprites:sprite||`` ghost on
-
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-overlap1spritekindtask)
 
 The ``||sprites:ghost on||`` setting for sprites, when turned on, makes the sprite ignore ``||sprites:on overlap||`` events. By default, the setting is off.
 

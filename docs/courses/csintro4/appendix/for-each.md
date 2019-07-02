@@ -1,4 +1,4 @@
-# Appendix: For Each Loops
+# Advanced Topics: For Each Loops
 
 ``||arrays:Arrays||`` can be traversed using a simple ``||loops:for||`` loop,
 using each index from 0 to one less than the ``||arrays:length||`` of
