@@ -1,6 +1,6 @@
 # Which Button?
 
-[Open this tutorial in the editor!](/#tutorial:concepts/which-button)
+[Open this tutorial in the editor!](/#tutorial:/concepts/which-button)
 
 ## Introduction @unplugged
 
