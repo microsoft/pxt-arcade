@@ -18,7 +18,7 @@ For example, they could ``||sprites:say||`` "Go team go!".
 ## Problem #2: Stop the Stars
 
 Create a star field like the one from the
-[Star Field](/#tutorial:tutorials/star-field) tutorial.
+[Star Field](/#tutorial:/tutorials/star-field) tutorial.
 
 Add an ``||controller:on any button pressed||`` event that **stops** all the stars
 in their current position, so that the stars that are currently on the screen stay

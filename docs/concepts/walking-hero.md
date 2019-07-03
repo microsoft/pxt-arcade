@@ -1,6 +1,6 @@
 # Walking Hero
 
-[Open this tutorial in the editor!](/#tutorial:concepts/walking-hero)
+[Open this tutorial in the editor!](/#tutorial:/concepts/walking-hero)
 
 ## Introduction @unplugged
 

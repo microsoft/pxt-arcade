@@ -21,11 +21,11 @@ and blocks that are unique to game development.
 The following tutorials may also be useful in learning about concepts that
 you might not have seen elsewhere:
 
-* [Eat the Doughnut](/#tutorial:tutorials/eat-the-doughnut)
-* [Simple Maze](/#tutorial:tutorials/simple-maze)
-* [Star Field](/#tutorial:tutorials/star-field)
-* [Happy Flower](/#tutorial:tutorials/happy-flower)
-* [Simple Extensions](/#tutorial:tutorials/simple-extensions)
+* [Eat the Doughnut](/#tutorial:/tutorials/eat-the-doughnut)
+* [Simple Maze](/#tutorial:/tutorials/simple-maze)
+* [Star Field](/#tutorial:/tutorials/star-field)
+* [Happy Flower](/#tutorial:/tutorials/happy-flower)
+* [Simple Extensions](/#tutorial:/tutorials/simple-extensions)
 
 Additionally, you may find it useful to check out the review material
 for the previous courses:
