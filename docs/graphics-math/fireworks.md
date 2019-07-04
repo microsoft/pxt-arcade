@@ -414,5 +414,5 @@ function generatePastel() {
 ```
 
 ```package
-pxt-color=github:jwunderl/pxt-color#v0.0.27
+pxt-color=github:jwunderl/pxt-color#v0.0.29
 ```
