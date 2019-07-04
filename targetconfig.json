@@ -6,12 +6,14 @@
         "approvedRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
             "adafruit/pxt-seesaw",
-            "jwunderl/pxt-button-combos"
+            "jwunderl/pxt-button-combos",
+            "jwunderl/pxt-color"
         ],
         "preferredRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
             "adafruit/pxt-seesaw",
-            "jwunderl/pxt-button-combos"
+            "jwunderl/pxt-button-combos",
+            "jwunderl/pxt-color"
         ]
     },
     "galleries": {
