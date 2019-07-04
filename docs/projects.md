@@ -35,8 +35,8 @@
     {
         "name": "Graphics and Math",
         "url": "/graphics-math",
-        "imageUrl": "/static/graphics-math/bresenham-circle.png",
-        "largeImageUrl": "/static/graphics-math/bresenham-circle.gif"
+        "imageUrl": "/static/graphics-math/fireworks.png",
+        "largeImageUrl": "/static/graphics-math/fireworks.gif"
     },
     {
         "name": "Lessons",

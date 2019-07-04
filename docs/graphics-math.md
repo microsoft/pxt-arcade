@@ -7,6 +7,14 @@ Try computer graphics methods and visual math concepts as Arcade games.
 ```codecard
 [
     {
+        "name": "Fireworks",
+        "description": "Enjoy a variety of randomly generated fireworks",
+        "url": "/graphics-math/fireworks",
+        "cardType": "codeExample",
+        "imageUrl": "/static/graphics-math/fireworks.png",
+        "largeImageUrl": "/static/graphics-math/fireworks.gif"
+    },
+    {
         "name": "Bresenham Circles",
         "description": "Draw circles using the Bresenham algorithm",
         "url": "/graphics-math/bresenham-circle",
