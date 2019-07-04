@@ -399,7 +399,7 @@ forever(() => {
             0x1,
             0xA
         )
-        .startUntilDone(1000)
+        .startUntilDone(500);
 })
 
 function generatePastel() {
