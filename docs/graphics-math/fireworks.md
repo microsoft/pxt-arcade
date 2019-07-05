@@ -1,37 +1,37 @@
 # Fireworks!
 
-Enjoy the fireworks being launched in the background,
-or create some of your own by pressing buttons!
+Enjoy the fireworks! Watch them being launched in the background, and even
+create some of your own by pressing buttons.
 
 ```typescript
 /**
  * particle effects
  * 
- * The particle effects you've seen in arcade are formed through the combination
+ * The particle effects you see in arcade are formed through the combination
  * of several objects:
  * 
  * **Particles** are the individual elements you see on the screen -
- * they contain a small amount of information too convey where and how they can be represented.
+ * they contain a small amount of information that conveys where and how they are represented.
  * 
- * **ParticleFactories** describe how the particles should be created,
+ * **ParticleFactories** describe how the particles are created
  * and how they should be be displayed on the screen. This sets things like initial speed,
- * color, and how long the particle should survive
+ * color, and how long the particle survives
  * 
  * **ParticleSources** control when Particles are allowed to be created,
- * apply updates to the particles, display them to the screen,
+ * they apply updates to the particles, they display them to the screen,
  * and make sure the state is clean (e.g. getting rid of particles when their lifespan runs out).
- * They use ParticleFactories to handle the creation of sprites, so a single source
+ * They use ParticleFactories to handle the creation of the sprites involved, so a single source
  * can have a wide variety of actual behaviors by attaching different types of factories to it.
  * Most effects in Arcade use the standard particle source, but some use slightly modified versions
- * to add special behavior - in particle, the Fire effect has a special source that makes
- * particles move toward each other to get a flame-like 'wave', and bubbles have a source
+ * to add special behaviors. In particles, for example, the Fire effect has a special source that makes
+ * particles move toward each other to get a flame-like 'wave'. Bubbles though, have a source
  * that makes the individual bubbles oscillate left and right, and change state (grow bigger / smaller)
  * 
  * Finally, **ParticleEffects** create a combination of a ParticleSource and a ParticleFactory,
- * which will then be displayed on the screen - typically attached to a sprite or other screen element.
+ * which display on the screen - typically attached to a sprite or other screen element.
  * 
- * Many of these are derived from particle effects that have already been created,
- * if you're interested, you can find those effects in
+ * Many of these are derived from particle effects that have already been created.
+ * If you're interested, you can find those effects in
  * pxt-common-packages/libs/game/particleeffects.ts,
  * with some factories defined in
  * pxt-common-packages/libs/game/particlefactories.ts,
