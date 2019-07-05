@@ -23,7 +23,7 @@ create some of your own by pressing buttons.
  * They use ParticleFactories to handle the creation of the sprites involved, so a single source
  * can have a wide variety of actual behaviors by attaching different types of factories to it.
  * Most effects in Arcade use the standard particle source, but some use slightly modified versions
- * to add special behaviors. In particles, for example, the Fire effect has a special source that makes
+ * to add special behaviors. In particular, the Fire effect has a special source that makes
  * particles move toward each other to get a flame-like 'wave'. Bubbles though, have a source
  * that makes the individual bubbles oscillate left and right, and change state (grow bigger / smaller)
  * 
