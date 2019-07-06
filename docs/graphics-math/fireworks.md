@@ -56,7 +56,13 @@ const fireworkEffects: effects.ParticleEffect[] = [
                     return p;
                 }
             }
-            return new ShortRadial(2, 50, 5, randomPalette(3));
+
+            return new ShortRadial(
+                2,
+                50,
+                5,
+                randomPalette(Math.randomRange(2, 5))
+            );
         }
     ),
     /** Brocade: forms an 'umbrella like' pattern. I started building this off of the 'fountain' particle **/
@@ -371,12 +377,12 @@ function tryToFire() {
     }
 }
 
-game.onUpdateInterval(1000, function () {
+game.onUpdate(function () {
     if (lastFired + 1000 < game.runtime()) {
         // auto fire if there hasn't been any for a while
         tryToFire();
     }
-})
+});
 
 
 sprites.onDestroyed(SpriteKind.Projectile, s => {
