@@ -56,49 +56,53 @@ const fireworkEffects: effects.ParticleEffect[] = [
                     return p;
                 }
             }
-            return new ShortRadial(2, 50, 5, [2, 4, 5])
+            return new ShortRadial(2, 50, 5, randomPalette(3));
         }
     ),
     /** Brocade: forms an 'umbrella like' pattern. I started building this off of the 'fountain' particle **/
     new effects.ParticleEffect(600, 500, function (anchor: particles.ParticleAnchor, particlesPerSecond: number) {
         class BrocadeFactory extends particles.SprayFactory {
             galois: Math.FastRandom;
+            palette: number[];
 
             constructor() {
                 super(110, 180, 359);
                 this.galois = new Math.FastRandom();
+                this.palette = randomPalette(2);
             }
 
             createParticle(anchor: particles.ParticleAnchor) {
                 const p = super.createParticle(anchor);
 
                 if (this.galois.percentChance(25)) {
-                    p.color = 5;
+                    p.color = this.palette[0];
                     p.lifespan = Math.randomRange(50, 150);
                 } else {
-                    p.color = 9;
+                    p.color = this.palette[1];
                     p.lifespan = Math.randomRange(50, 350);
                 }
                 return p;
             }
 
             drawParticle(p: particles.Particle, x: Fx8, y: Fx8) {
-                // always just fill a pixel if color is yellow, otherwise single pixel 3/4 the time
-                if (p.color == 5 || this.galois.percentChance(85)) {
+                // always just fill a pixel if color is first color, otherwise single pixel 3/4 the time
+                if (p.color == this.palette[0] || this.galois.percentChance(85)) {
                     screen.setPixel(Fx.toInt(x), Fx.toInt(y), p.color);
                 } else {
+                    const toPrint = this.galois.randomBool()
+                        ? img`
+                            . 1 .
+                            1 1 1
+                            . 1 .
+                        `
+                        : img`
+                            1 . 1
+                            . 1 .
+                            1 . 1
+                        `;
+                    toPrint.replace(0x1, p.color);
                     screen.drawTransparentImage(
-                        this.galois.randomBool()
-                            ? img`
-                                . 9 .
-                                9 9 9
-                                . 9 .
-                            `
-                            : img`
-                                9 . 9
-                                . 9 .
-                                9 . 9
-                            `,
+                        toPrint,
                         Fx.toInt(x),
                         Fx.toInt(y)
                     );
@@ -118,10 +122,12 @@ const fireworkEffects: effects.ParticleEffect[] = [
         () => {
             class SparklerFactory extends particles.SprayFactory {
                 galois: Math.FastRandom;
+                palette: number[];
 
                 constructor() {
                     super(50, 180, 359);
                     this.galois = new Math.FastRandom();
+                    this.palette = randomPalette(2);
                 }
 
                 createParticle(anchor: particles.ParticleAnchor) {
@@ -129,10 +135,10 @@ const fireworkEffects: effects.ParticleEffect[] = [
                     p.data = Math.randomRange(0, 10);
 
                     if (this.galois.percentChance(25)) {
-                        p.color = 5;
+                        p.color = this.palette[0];
                         p.lifespan = Math.randomRange(100, 250);
                     } else {
-                        p.color = 1;
+                        p.color = this.palette[2];
                         p.lifespan = Math.randomRange(150, 450);
                     }
 
@@ -182,11 +188,13 @@ const fireworkEffects: effects.ParticleEffect[] = [
                 galois: Math.FastRandom;
                 anchor: particles.ParticleAnchor;
                 particlesRemaining: number
+                palette: number[];
 
                 constructor() {
                     super(40, 180, 359);
                     this.galois = new Math.FastRandom();
                     this.particlesRemaining = 8;
+                    this.palette = randomPalette(2);
                 }
 
                 createParticle(anchor: particles.ParticleAnchor) {
@@ -199,7 +207,7 @@ const fireworkEffects: effects.ParticleEffect[] = [
                     const particleRateMultiple = Fx8(Math.randomRange(60, 100) / 100);
                     p.vx = Fx.mul(p.vx, particleRateMultiple);
                     p.vy = Fx.mul(p.vy, particleRateMultiple);
-                    p.color = this.galois.randomBool() ? 0x1 : 0x5;
+                    p.color = this.palette[this.galois.randomRange(0, 1)];;
 
                     p.lifespan = Math.randomRange(600, 800);
                     return p;
@@ -240,7 +248,6 @@ const fireworkEffects: effects.ParticleEffect[] = [
             return new CrossetteFactory();
         }
     ),
-
 ]
 
 /**
@@ -410,6 +417,28 @@ function generatePastel() {
         1,
         Math.randomRange(75, 95) / 100
     );
+}
+
+/**
+ * Generates a value to be used to specify the colors for each firework,
+ * so that the colors aren't always the same between fireworks that run
+ * at the same time (value between 1 and 8, so there will always be )
+ */
+function randomPalette(len: number) {
+    if (len > 8) {
+        len = 8;
+    }
+    const palette: number[] = [];
+    for (let i = 0; i < len; i++) {
+        while (palette.length == i) {
+            const selected = Math.randomRange(1, 0xA);
+            if (palette.indexOf(selected) < 0) {
+                palette.push(selected);
+            }
+        }
+    }
+
+    return palette;
 }
 ```
 
