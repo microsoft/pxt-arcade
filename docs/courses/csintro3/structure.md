@@ -34,6 +34,10 @@
         "name": "Case Study Additions",
         "url": "/courses/csintro3/structure/additions",
         "imageUrl": "/static/courses/csintro3/structure/additions.gif"
+    }, {
+        "name": "Project",
+        "url": "/courses/csintro3/structure/project",
+        "imageUrl": "/static/courses/csintro3/structure/project.gif"
     }
 ]
 ```
@@ -46,3 +50,4 @@
 * [Corgio Extension](/courses/csintro3/structure/extensions)
 * [Namespaces](/courses/csintro3/structure/namespaces)
 * [Case Study Additions](/courses/csintro3/structure/additions)
+* [Project](/courses/csintro3/structure/project)

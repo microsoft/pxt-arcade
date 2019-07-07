@@ -30,9 +30,23 @@ You could also use any kind of machine screws to attach and secure the joystick.
 
 * If needed, solder the headers on the Raspberry Pi Zero.
 * Attach the USB power cable, regular USB cable, and HDMI cable to screen.
-* Use small nails, sewing thread, or even hot glue to secure the Pi on the card board.
+* Use small nails, sewing thread, or even hot glue to secure the Pi on the cardboard.
+
+![A Raspberry Pi help by hot glue on the corners](/static/hardware/raspberry-pi/cardboard-control-panel/gluecorners.jpg)
 
 ![A Raspberry Pi held using Chicken Wire staples](/static/hardware/raspberry-pi/cardboard-control-panel/pi.jpg)
+
+* Install the connectors onto the header pins as shown in this picture.
+
+![A line of headers without tape](/static/hardware/raspberry-pi/cardboard-control-panel/headersloose.jpg)
+
+* Wrap tape around the connectors and any exposed pins to secure them together with the header.
+
+![A line of headers with tape](/static/hardware/raspberry-pi/cardboard-control-panel/headerstaped.jpg)
+
+* Bundle the wires using a zip tie or tape to secure them together.
+
+![A bundle of wires secured by a zip tie](/static/hardware/raspberry-pi/cardboard-control-panel/ziptiecables.jpg)
 
 ## Next step...
 

@@ -1,6 +1,6 @@
 # Sunday Drive
 
-[Open this tutorial in the editor!](/#tutorial:concepts/sunday-drive)
+[Open this tutorial in the editor!](/#tutorial:/concepts/sunday-drive)
 
 ## Introduction @unplugged
 

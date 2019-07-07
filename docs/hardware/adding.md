@@ -106,10 +106,26 @@ We have found the following part numbers for ST7735 and ILI9163C displays:
 
 ![Screen connection](/static/hardware/screen.png)
 
-#### 320x240 based on ILI9134
+#### 320x240 based on ILI9134 via SPI
 
-This requires an 8 bit parallel interface because SPI is not fast enough, therefore an MCU which supports a parallel
-interface is required, such as STM32F412RE or better. The firmware implementation to support this is underway.
+On D5, the SPI can run up to 50MHz and most displays seem to be able to handle that,
+which results in about 36fps.
+
+Also, use the following display configuration to begin with:
+
+```
+DISPLAY_TYPE = 9341
+DISPLAY_WIDTH = 320
+DISPLAY_HEIGHT = 240
+DISPLAY_CFG0 = 0x08
+DISPLAY_CFG1 = 0x0010ff
+DISPLAY_CFG2 = 50
+```
+
+#### 320x240 based on ILI9134 via 8-bit parallel
+
+On F4, this requires an 8 bit parallel interface because SPI at 42Mhz is unstable;
+int this case STM32F412RE or better is required.
 
 The FSMC controller on STM32F412 in 64 pin version enforces
 the following pin connections.
@@ -140,8 +156,11 @@ Otherwise `DISPLAY_MISO` should be undefined.
 Also, use the following display configuration to begin with:
 
 ```
+DISPLAY_TYPE = 9341
+DISPLAY_WIDTH = 320
+DISPLAY_HEIGHT = 240
 DISPLAY_CFG0 = 0x08
-DISPLAY_CFG1 = 0x0018ff
+DISPLAY_CFG1 = 0x0010ff
 DISPLAY_CFG2 = 0x1000004
 ```
 

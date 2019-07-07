@@ -1,6 +1,6 @@
 # Bouncing Burger
 
-[Open this tutorial in the editor!](/#tutorial:concepts/bouncing-burger)
+[Open this tutorial in the editor!](/#tutorial:/concepts/bouncing-burger)
 
 ## Introduction @unplugged
 

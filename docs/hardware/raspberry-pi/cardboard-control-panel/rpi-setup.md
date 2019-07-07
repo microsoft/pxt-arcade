@@ -14,21 +14,21 @@ to re-image your Raspberry Pi SD card with the MakeCode Arcade firmware.
 Make sure the ``arcade.cfg`` file on your Raspberry Pi Zero image contains the following text:
 
 ```
-BTN_MENU=20
-BTN_EXIT=24
-BTN_RESET=12
-BTN_A=16
-BTN_B=23
-BTN_LEFT=26
-BTN_RIGHT=19
+BTN_RESET=4
+BTN_EXIT=3
+BTN_MENU=2
+BTN_A=26
+BTN_B=19
+BTN_LEFT=13
 BTN_UP=6
-BTN_DOWN=13
-BTN_A2=5
-BTN_B2=25
-BTN_LEFT2=17
-BTN_RIGHT2=27
+BTN_RIGHT=5
+BTN_DOWN=0
+BTN_A2=11
+BTN_B2=9
+BTN_LEFT2=10
 BTN_UP2=22
-BTN_DOWN2=18
+BTN_RIGHT2=27
+BTN_DOWN2=17
 ```
 
 ## Test the firmware
@@ -46,10 +46,12 @@ You should see the game selection dialog on the screen.
 
 ### Download the configuration program
 
-**Download the [Configuration Program](https://makecode.com/_2miFR8UfkTob) into the [MakeCode Arcade](@homeurl@) editor and download the .UF2 file onto the
-SD card.**
+Download or copy the **[Configuration Program](https://makecode.com/_332e7oWrDYoa)** into the [MakeCode Arcade](@homeurl@) editor and then download the .UF2 file onto the
+SD card.
 
-You can use this program in your browser, or on the Raspberry Pi panel to help make sure your wiring is correct.   
+![A screenshot of the configuration game](/static/hardware/raspberry-pi/cardboard-control-panel/configurator.png)
+
+You can use this program in your browser, or on the Raspberry Pi panel to help make sure your wiring is correct.
 
 https://youtu.be/wOGvokzL-7c
 

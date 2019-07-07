@@ -1,6 +1,6 @@
 # Throw a Bone
 
-[Open this tutorial in the editor!](/#tutorial:concepts/throw-a-bone)
+[Open this tutorial in the editor!](/#tutorial:/concepts/throw-a-bone)
 
 ## Introduction @unplugged
 

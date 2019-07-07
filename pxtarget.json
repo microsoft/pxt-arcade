@@ -144,7 +144,7 @@
                 "codalTarget": {
                     "name": "codal-big-brainpad",
                     "url": "https://github.com/lancaster-university/codal-big-brainpad",
-                    "branch": "v1.0.23-jacdac-v0.0",
+                    "branch": "v1.1.0",
                     "type": "git"
                 },
                 "codalBinary": "STM32",
@@ -158,6 +158,7 @@
                 "openocdScript": "source [find interface/cmsis-dap.cfg]; set CHIPNAME at91samd51g19; source [find target/at91samdXX.cfg]",
                 "openocdScriptAlt": "source [find interface/stlink-v2.cfg]; set CPUTAPID 0x2ba01477; set CHIPNAME at91samd51g19; source [find target/at91samdXX.cfg]",
                 "ramSize": 196608,
+                "flashEnd": 524288,
                 "uf2Family": "0x55114460",
                 "vtableShift": 4
             },
@@ -165,7 +166,7 @@
                 "codalTarget": {
                     "name": "codal-itsybitsy-m4",
                     "url": "https://github.com/lancaster-university/codal-itsybitsy-m4",
-                    "branch": "v0.0.23-jacdac-v0.2",
+                    "branch": "v0.2.2",
                     "type": "git"
                 },
                 "codalBinary": "ITSYBITSY_M4",
@@ -242,7 +243,8 @@
             "pins",
             "control",
             "input",
-            "serial"
+            "serial",
+            "power"
         ]
     },
     "simulator": {
@@ -298,6 +300,7 @@
         "showHomeScreen": true,
         "highContrast": true,
         "greenScreen": true,
+        "print": true,
         "hasAudio": true,
         "allowPackageExtensions": true,
         "homeScreenHero": "./static/hero.png",
@@ -339,9 +342,10 @@
         "debugger": true,
         "importExtensionFiles": true,
         "experiments": [
-            "print",
             "python",
             "debugExtensionCode",
+            "snippetBuilder",
+            "simGif",
             "experimentalHw",
             "recipes"
         ],
@@ -353,5 +357,8 @@
         "simGifKey": "R",
         "qrCode": true
     },
-    "ignoreDocsErrors": true
+    "ignoreDocsErrors": true,
+    "unsupportedBrowsers": [
+        { "id" : "ie" }
+    ]
 }
