@@ -142,10 +142,10 @@ const fireworkEffects: effects.ParticleEffect[] = [
 
                     if (this.galois.percentChance(25)) {
                         p.color = this.palette[0];
-                        p.lifespan = Math.randomRange(100, 250);
+                        p.lifespan = Math.randomRange(250, 450);
                     } else {
                         p.color = this.palette[2];
-                        p.lifespan = Math.randomRange(150, 450);
+                        p.lifespan = Math.randomRange(500, 750);
                     }
 
                     return p;
@@ -343,7 +343,7 @@ controller.anyButton.onEvent(
     tryToFire
 );
 
-const TIMEOUT = 250;
+const TIMEOUT = 200;
 let lastFired = game.runtime();
 function tryToFire() {
     const time = game.runtime();
@@ -378,7 +378,7 @@ function tryToFire() {
 }
 
 game.onUpdate(function () {
-    if (lastFired + 1000 < game.runtime()) {
+    if (lastFired + (3 * TIMEOUT) < game.runtime()) {
         // auto fire if there hasn't been any for a while
         tryToFire();
     }
