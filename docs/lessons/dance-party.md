@@ -2,7 +2,7 @@
 
 Press the arrow keys that match the ones appearing in blocks on the screen. When your player collides with an arrow block you will get points. Try to beat your high score and dance away!
 
-![Game view in simulator](/static/lessons/dance-party.png)
+![Game view in simulator](/static/lessons/dance-party/working-game.gif)
 
 ## Learning Objectives
 
@@ -31,16 +31,16 @@ Go to the [MakeCode Arcade](@homeurl@) editor and select **New Project** to crea
 
 Once the editor loads, you will see a green ``||loops:on start||`` block already in the editor Workspace.
 
-First, we want to set up the scene for our game. To do this we will set up our background and tile map. Pull from ``||scene:scene||`` a ``||scene:set background color to||`` block and place it inside your ``||loops:on start||`` block. Then click on the color oval and set the background color to ``black``. 
+First, we want to set up the scene for our game. To do this we will set up our background and tile map. Find ``||scene:set background color to||`` in ``||scene:scene||`` and place it inside your ``||loops:on start||`` block. Then click on the color oval and set the background color to ``light purple``. 
 
 Next, we need to set the tile map. Drag a ``||scene:set tile to with wall||`` block from ``||scene:scene||`` and put it into ``||loops:on start||``. Then click on the grey color oval and select ``white``. Go into the editor and take a bucket of paint with white selected and make the entire tile white. Switch wall to on. 
 
-Now we need to actually create the tile map. To do this, go into ``||scene:scene||`` once again and grab a ``||scene:set tile map to||`` block and drag it under ``||scene:set tile to with wall||``. Go into the tile map editor and take the same color we used for setting the tile and draw a line at the bottom of the screen. Now we have a "wall" at the bottom of the screen. 
+Now we need to actually create the tile map. To do this, go into ``||scene:scene||`` once again and grab a ``||scene:set tile map to||`` block and drag it under ``||scene:set tile to with wall||``. Go into the tile map editor and take the same color we used for setting the tile, white, and draw a line at the bottom of the screen. Now we have a "wall" at the bottom of the screen. 
 
 To make the background less plain you can add some scene effects. Get a ``||scene:start screen effect||`` block from ``||scene:Scene||`` to do this. Go to the drop down in the block and select star field to create an outer space theme. 
 
 ```blocks
-scene.setBackgroundColor(15)
+scene.setBackgroundColor(11)
 scene.setTile(1, img`
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
@@ -132,7 +132,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-![Player moving on the screen](/static/lessons/dance-party/movingplayer.gif)
+![Player moving on the screen](/static/lessons/dance-party/moving-player.gif)
 
 ## Part Four: Setting Speed Variables
 
@@ -157,9 +157,9 @@ game.onUpdateInterval(2000, function () {
 
 ## Part Five: Spawning Projectiles
 
-Every half a second we want the projectiles to spawn. So go into ``||game:Game||`` and grab ``||game:on game update every ms||`` and place it in your workspace. Set the interval time at ``500 ms``. Next, we want to choose which "lane" to spawn our projectile in. We'll need a lane variable for this. To create this variable go into ``||variables:Variables||`` and grab ``||variables:set var to||``. Rename the variable to ``Lane`` and then grab a ``||math:pick random||`` from ``||math:Math||`` and place it after the to in our ``||variables:set Lane to||``. Set the first number to ``1`` and the second to ``4``. 
+Every half a second we want the projectiles to spawn. So go into ``||game:Game||`` and grab ``||game:on game update every ms||`` and place it in your workspace. Set the interval time at ``500 ms``. Next, we want to choose which "lane" to spawn our projectile in. We'll need a lane variable for this. To create this variable go into ``||variables:Variables||`` and grab ``||variables:set var to||``. Rename the variable to ``lane`` and then grab a ``||math:pick random||`` from ``||math:Math||`` and place it after the to in our ``||variables:set lane to||``. Set the first number to ``1`` and the second to ``4``. 
 
-Now we want to create the projectiles for each lane. Grab an ``||logic: if then else if||`` block from ``||logic:Logic||`` and place it under the ``Lane`` variable. Then from ``||logic:Logic||`` take a ``||Logic:_ = _||`` block and place it in the first ``||logic:if then||`` statement. Now drag a ``||variables:Lane||`` block and put it in the first section and type ``1`` in the second section. Duplicate this equal statement 3 times and set each second section to ``2``, ``3``, and ``4`` respectively. Click the **(+)** symbol twice in the ``||logic:if else||`` statement block and drag these equal statements into the ``||logic:else||`` statements. 
+Now we want to create the projectiles for each lane. Grab an ``||logic: if then else if||`` block from ``||logic:Logic||`` and place it under the ``lane`` variable. Then from ``||logic:Logic||`` take a ``||Logic:_ = _||`` block and place it in the first ``||logic:if then||`` statement. Now drag a ``||variables:lane||`` block and put it in the first section and type ``1`` in the second section. Duplicate this equal statement 3 times and set each second section to ``2``, ``3``, and ``4`` respectively. Click the **(+)** symbol twice in the ``||logic:if else||`` statement block and drag these equal statements into the ``||logic:else||`` statements. 
 
 Now grab 4 ``||sprites:set mySprite to sprite of kind||`` and drag one into each of the 4 positions in the ``||logic:if||`` statement. Set each variable for each ``||logic:if||`` statement like this:
 
@@ -181,12 +181,12 @@ From ``||sprites:Sprites||`` grab a ``||sprites:set position to||`` block for ea
 
 Congrats, now we can spawn projectiles!
 
-![Spawning Projectiles](/static/lessons/dance-party/spawningprojectiles.gif)
+![Spawning Projectiles](/static/lessons/dance-party/spawning-projectiles.gif)
 
 ```blocks
 game.onUpdateInterval(500, function () {
-    Lane = Math.randomRange(1, 4)
-    if (Lane == 1) {
+    lane = Math.randomRange(1, 4)
+    if (lane == 1) {
         let left: Sprite = null
         left = sprites.create(img`
             . . . . . . . . . . . . . . . .
@@ -208,7 +208,7 @@ game.onUpdateInterval(500, function () {
         `, SpriteKind.Projectile)
         left.setVelocity(0, Speed)
         left.setPosition(30, 8)
-    } else if (Lane == 2) {
+    } else if (lane == 2) {
         let up: Sprite = null
         up = sprites.create(img`
             . . . . . . . . . . . . . . . .
@@ -230,7 +230,7 @@ game.onUpdateInterval(500, function () {
         `, SpriteKind.Projectile)
         up.setVelocity(0, Speed)
         up.setPosition(60, 8)
-    } else if (Lane == 3) {
+    } else if (lane == 3) {
         let down: Sprite = null
         down = sprites.create(img`
             . . . . . . . . . . . . . . . .
@@ -305,7 +305,7 @@ When a projectile hits the bottom wall, we want that to be a collision and to ha
 
 Now go into ``||sprites:Sprite||``, select ``||sprites:destroy sprite with effect||``, and drag it into on ``||scene:sprite of kind hits wall||``. Then select the effect to as ``fire`` and click the **(+)** symbol next to it. Set the time to ``100 ms``. Drag out a ``||info:change life by||`` and put it under ``||sprites:destroy sprite with effect||``. Set the number to ``-1``. Now whenever a projectile collides with the bottom, it will be destroyed and the player's remaining lives will go down.
 
-![Player moving on the screen](/static/lessons/dance-party/missedcollision.gif)
+![Player moving on the screen](/static/lessons/dance-party/missed-collision.gif)
 
 ```blocks
 scene.onHitTile(SpriteKind.Projectile, 1, function (sprite) {
@@ -316,7 +316,7 @@ scene.onHitTile(SpriteKind.Projectile, 1, function (sprite) {
 
 When the player collides with a projectile, their score should increase and the projectile should be destroyed. Go to ``||sprites:Sprites||`` and grab ``||sprites:on sprite of kind player overlaps otherSprite of kind||`` and drag it into your workspace. Change the field after ``otherSprite`` from ``player`` to ``projectile``. Now go back into ``||sprites:Sprites||`` and drag ``||sprites:destroy sprite with effect||`` into it. Set the effect to be ``disintegrate`` and then click the **(+)** symbol and enter ``100 ms``. Now go to ``||info:Info|`` and grab ``||info:change score by||`` and drag it under ``||sprites:destroy sprite with effect||``. 
 
-![Player moving on the screen](/static/lessons/dance-party/collisionprojectiles.gif)
+![Player moving on the screen](/static/lessons/dance-party/collision-projectiles.gif)
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
@@ -340,27 +340,27 @@ scene.onHitTile(SpriteKind.Projectile, 1, function (sprite) {
     info.changeLifeBy(-1)
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    Steve.setPosition(30, 100)
+    steve.setPosition(30, 100)
 })
 info.onLifeZero(function () {
     game.over(true, effects.confetti)
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    Steve.setPosition(130, 100)
+    steve.setPosition(130, 100)
 })
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    Steve.setPosition(60, 100)
+    steve.setPosition(60, 100)
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    Steve.setPosition(100, 100)
+    steve.setPosition(100, 100)
 })
 let right: Sprite = null
 let down: Sprite = null
 let up: Sprite = null
 let left: Sprite = null
-let Lane = 0
-let Steve: Sprite = null
-scene.setBackgroundColor(15)
+let lane = 0
+let steve: Sprite = null
+scene.setBackgroundColor(11)
 scene.setTile(1, img`
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
@@ -390,7 +390,7 @@ scene.setTileMap(img`
     . . . . . . . . . .
     1 1 1 1 1 1 1 1 1 1
 `)
-Steve = sprites.create(img`
+steve = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
@@ -408,13 +408,13 @@ Steve = sprites.create(img`
     . . . . . . c . c . . . . . . .
     . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
-Steve.setPosition(80, 100)
+steve.setPosition(80, 100)
 info.setScore(0)
 info.setLife(5)
 let Speed = 40
 game.onUpdateInterval(500, function () {
-    Lane = Math.randomRange(1, 4)
-    if (Lane == 1) {
+    lane = Math.randomRange(1, 4)
+    if (lane == 1) {
         left = sprites.create(img`
             . . . . . . . . . . . . . . . .
             . . . . . . . . . . . . . . . .
@@ -435,7 +435,7 @@ game.onUpdateInterval(500, function () {
         `, SpriteKind.Projectile)
         left.setVelocity(0, Speed)
         left.setPosition(30, 8)
-    } else if (Lane == 2) {
+    } else if (lane == 2) {
         up = sprites.create(img`
             . . . . . . . . . . . . . . . .
             . . . . . . . . . . . . . . . .
@@ -456,7 +456,7 @@ game.onUpdateInterval(500, function () {
         `, SpriteKind.Projectile)
         up.setVelocity(0, Speed)
         up.setPosition(60, 8)
-    } else if (Lane == 3) {
+    } else if (lane == 3) {
         down = sprites.create(img`
             . . . . . . . . . . . . . . . .
             . . . . . . . . . . . . . . . .
@@ -505,4 +505,4 @@ game.onUpdateInterval(2000, function () {
 })
 ```
 
-![Working Game](/static/lessons/dance-party/workinggame.gif)
+![Working Game](/static/lessons/dance-party/working-game.gif)
