@@ -21,7 +21,7 @@
   "name": "Dance Party",
   "description": "Create a basic dance collision game!",
   "url": "/lessons/dance-party",
-  "imageUrl": "/static/lessons/barrel-dodger.png"
+  "imageUrl": "/static/lessons/dance-party.png"
 }
 ]
 ```
