@@ -29,4 +29,5 @@
 ## See Also
 
 [Cherry Pickr](/lessons/cherry-pickr),
-[Barrel Dodger](/lessons/barrel-dodger)
+[Barrel Dodger](/lessons/barrel-dodger),
+[Dance Party](/lessons/dance-party)
