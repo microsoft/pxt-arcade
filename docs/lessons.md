@@ -19,7 +19,7 @@
 },
 {
   "name": "Dance Party",
-  "description": "Create a basic dance collision game!",
+  "description": "Create a basic dance collision game using sprite overlap events and controller buttons!",
   "url": "/lessons/dance-party",
   "imageUrl": "/static/lessons/dance-party.png"
 }
@@ -29,4 +29,5 @@
 ## See Also
 
 [Cherry Pickr](/lessons/cherry-pickr),
-[Barrel Dodger](/lessons/barrel-dodger)
+[Barrel Dodger](/lessons/barrel-dodger),
+[Dance Party](/lessons/dance-party)
