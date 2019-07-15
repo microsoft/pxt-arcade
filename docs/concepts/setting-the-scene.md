@@ -1,6 +1,6 @@
 # Setting the Scene
 
-[Open this tutorial in the editor!](/#tutorial:concepts/setting-the-scene)
+[Open this tutorial in the editor!](/#tutorial:/concepts/setting-the-scene)
 
 ## Introduction @unplugged
 

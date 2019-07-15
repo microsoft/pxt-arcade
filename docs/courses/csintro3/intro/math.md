@@ -45,7 +45,7 @@ let num: number = 5 + 3 * 2;
 ### Example #1c: Division and Multiplication
 
 ```block
-let num: number = 5 + 3 * 2;
+let num: number = 24 / 3 * 4;
 ```
 
 ```typescript-ignore

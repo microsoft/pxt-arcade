@@ -1,6 +1,6 @@
 # Picnic Food
 
-[Open this tutorial in the editor!](/#tutorial:concepts/picnic-food)
+[Open this tutorial in the editor!](/#tutorial:/concepts/picnic-food)
 
 ## Introduction @unplugged
 
