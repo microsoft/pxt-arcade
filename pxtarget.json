@@ -59,7 +59,8 @@
         "libs/edge-connector",
         "libs/esp32spi",
         "libs/mqtt",
-        "libs/net"
+        "libs/net",
+        "libs/azureiot"
     ],
     "compile": {
         "useUF2": true,
