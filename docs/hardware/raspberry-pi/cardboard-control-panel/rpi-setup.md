@@ -58,7 +58,7 @@ You should see the game selection dialog on the screen.
 
 ### Download the configuration program
 
-Download or copy the **[Configuration Program](https://makecode.com/_332e7oWrDYoa)** into the [MakeCode Arcade](@homeurl@) editor and then download the .UF2 file onto the
+Download or copy the **[Configuration Program](https://makecode.com/_gCyify35UE4K)** into the [MakeCode Arcade](@homeurl@) editor and then download the .UF2 file onto the
 SD card.
 
 ![A screenshot of the configuration game](/static/hardware/raspberry-pi/cardboard-control-panel/configurator.png)
