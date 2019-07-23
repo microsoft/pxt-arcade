@@ -15,18 +15,30 @@ BTN_LEFT2=10
 BTN_UP2=22
 BTN_RIGHT2=27
 BTN_DOWN2=17
+BTN_A3=21
+BTN_B3=20
+BTN_LEFT3=16
+BTN_UP3=12
+BTN_RIGHT3=1
+BTN_DOWN3=7
+BTN_A4=8
+BTN_B4=25
+BTN_LEFT4=24
+BTN_UP4=23
+BTN_RIGHT4=18
+BTN_DOWN4=15
 `;
 
-const p1Col = 13;
-const p2Col = 6;
+const pCols = [13, 3, 7, 9]
 const bkg = image.create(160, 120);
 bkg.fillRect(0, 10, 160, 66, 7)
 for (let i = 0; i < 4; ++i) {
     bkg.print((2 * i + 1).toString(), 154 - 8 * i, 44, 1);
     bkg.print((2 * i + 2).toString(), 154 - 8 * i, 68, 1);
 }
-bkg.print("P1", 80, 80, p1Col);
-bkg.print("P2", 80, 90, p2Col);
+for (let i = 0; i < pCols.length; ++i) {
+    bkg.print("P" + (i + 1), 80 + i * (image.font8.charWidth * 3), 80, pCols[i]);
+}
 
 scene.setBackgroundImage(bkg)
 
@@ -81,10 +93,10 @@ const srcPinImg = img`
     e e e e e e e e
 `
 
-bkg.drawImage(gndPinImg, 80, 100)
-bkg.print("GND", 90, 100)
-bkg.drawImage(srcPinImg, 80, 110)
-bkg.print("+5V", 90, 110)
+bkg.drawImage(gndPinImg, 80, 90)
+bkg.print("GND", 90, 90)
+bkg.drawImage(srcPinImg, 80, 100)
+bkg.print("+3.3/5V", 90, 100)
 
 // BCM -> pin index
 const bcmToPins: any = {
@@ -119,7 +131,7 @@ const bcmToPins: any = {
 }
 // ground pin indixes
 const gnds = [6, 9, 14, 20, 25, 30, 34, 39];
-const srcs = [1, 17]
+const srcs = [1, 17, 2, 4]
 
 
 let pinout: Sprite[] = []
@@ -168,7 +180,8 @@ for (let line of arcadeCfg.split('\n')) {
         sprite.setImage(sprite.image.clone())
         sprite.image.replace(0xc, 4);
     } else {
-        sprite.image.print(name[0], 2, 2, name[name.length - 1] == "2" ? p2Col : p1Col, image.font5)
+        const i = (parseInt(name[name.length - 1]) || 1) - 1;
+        sprite.image.print(name[0], 2, 2, pCols[i], image.font5)
     }
 }
 
@@ -210,6 +223,18 @@ setup(controller.player2.up, "UP2");
 setup(controller.player2.down, "DOWN2");
 setup(controller.player2.left, "LEFT2");
 setup(controller.player2.right, "RIGHT2");
+setup(controller.player3.A, "A3");
+setup(controller.player3.B, "B3");
+setup(controller.player3.up, "UP3");
+setup(controller.player3.down, "DOWN3");
+setup(controller.player3.left, "LEFT3");
+setup(controller.player3.right, "RIGHT3");
+setup(controller.player4.A, "A4");
+setup(controller.player4.B, "B4");
+setup(controller.player4.up, "UP4");
+setup(controller.player4.down, "DOWN4");
+setup(controller.player4.left, "LEFT4");
+setup(controller.player4.right, "RIGHT4");
 
 function select(name: string) {
     const sprite = pinout.filter(pin => pin.data["name"] == name)[0];
