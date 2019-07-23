@@ -28,6 +28,8 @@
         "libs/serial",
         "libs/corgio",
         "libs/darts",
+        "libs/keyboard",
+        "libs/mouse",
         "libs/hw",
         "libs/hw---stm32f401",
         "libs/hw---samd51",
