@@ -132,9 +132,8 @@ and the player needs avoid being hit by it.
 To implement this behavior, start with the code snippet below.
 
 ```typescript
-enum SpriteKind {
-    Flame,
-    Projectile
+namespace SpriteKind {
+    export const Flame = SpriteKind.create();
 }
 
 let fire: Image = img`

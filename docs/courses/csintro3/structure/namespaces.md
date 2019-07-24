@@ -228,11 +228,8 @@ For example, a comment for the ``asteroids`` namespace might look like the follo
 ### Solution
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Asteroid
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
 }
 
 /**

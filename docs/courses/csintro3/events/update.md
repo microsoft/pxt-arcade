@@ -71,9 +71,8 @@ without overwhelming the player or the screen.
 2. Identify the **period** of the event
 
 ```typescript
-enum SpriteKind {
-    Star,
-    Projectile
+namespace SpriteKind {
+    export const Star = SpriteKind.create();
 }
 
 game.onUpdateInterval(250, function () {
@@ -120,9 +119,8 @@ This approach could be used to limit the rate at which stars are created,
 like in the snippet below.
 
 ```typescript
-enum SpriteKind {
-    Star,
-    Projectile
+namespace SpriteKind {
+    export const Star = SpriteKind.create();
 }
 
 game.onUpdate(function () {
@@ -182,15 +180,11 @@ set ``myEnemy.vx`` to 15; ``||logic:else||``, set it to -15.
 ### Solution
 
 ```typescript-ignore
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Asteroid,
-    PowerUp,
-    Laser,
-    EnemyLaser,
-    Star
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
+    export const PowerUp = SpriteKind.create();
+    export const Laser = SpriteKind.create();
+    export const Star = SpriteKind.create();
 }
 
 namespace star {

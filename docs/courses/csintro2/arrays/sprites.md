@@ -27,11 +27,8 @@ A sprite array is useful when implementing the same behavior for several sprites
 3. Save the code for the task (name it "Sprite Arrays") 
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Asteroid
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
 }
 let my_sprite_array: Sprite[] = []
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -114,11 +111,8 @@ The ``||sprites:array of sprites of kind||`` block (located in the ``||arrays:ar
 3. Save the code for the task (name it "Sprite of Kind Arrays") 
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Asteroid
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
 }
 let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -155,11 +149,8 @@ c a 8 a a c c c c a a f f f 8 a
 3. Save the code for the task (name it "Firework") 
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Firework
+namespace SpriteKind {
+    export const Firework = SpriteKind.create();
 }
 let firework: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -210,11 +201,7 @@ We can implement this behavior easily using ``||logic:logic||`` blocks in an ``|
 3. Save the code for the task (name it "itsFollowing") 
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let enemy: Sprite = null
 let player: Sprite = null
 player = sprites.create(img`

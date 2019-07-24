@@ -39,11 +39,7 @@ Start off by trying to solve a small task: slowly move a ghost from the center o
 3. Review the blocks that caused this to happen. What would you need to add if the screen was twice as large as it is?
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let sprite: Sprite = null
 sprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -153,11 +149,7 @@ Motion and flips will both occur very quickly unless you include the ``||loops:p
 ### ~
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let boomerang: Sprite = null
 boomerang = sprites.create(img`
 . . . . . . . . . . . . . . . . 

@@ -3,12 +3,8 @@
 Your caterpiller can grow by getting leaves for nourishment. Guide the caterpiller's movement toward a leaf. Be careful though, if it touches the side of the screen it won't live to be a butterfly.
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy,
-    Tail
+namespace SpriteKind {
+    export const Tail = SpriteKind.create();
 }
 
 enum Direction {

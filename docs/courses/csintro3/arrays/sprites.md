@@ -19,11 +19,7 @@ the ``||variables:enemies||`` array
 ### Example #1a: No Arrays
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 
 let player: Sprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player);
 let enemy1: Sprite = sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy);
@@ -40,11 +36,7 @@ enemy3.x = Math.randomRange(10, screen.width - 10);
 ### Example #1b: ``||variables:enemies||`` Array
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 
 let player: Sprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player);
 let enemies: Sprite[] = [
@@ -82,10 +74,7 @@ but it can be hard to keep track of which sprites still exist when new ones get
 For example, consider the following snippet:
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile
-}
+
 
 let characters: Sprite[] = [];
 
@@ -137,10 +126,7 @@ return an array that contains all ``||sprites:sprites||`` of a given
 identify all sprites of ``||sprites:kind||`` ``||sprites:Player||``
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile
-}
+
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     let newCharacter: Sprite = sprites.create(sprites.food.smallPizza, SpriteKind.Player);
@@ -202,11 +188,7 @@ with a hungry adventurer chasing the pizza around the screen.
 2. Identify how the enemy is made to "follow" the player
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 
 let player: Sprite = sprites.create(sprites.food.smallPizza, SpriteKind.Player);
 let enemy: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Enemy);

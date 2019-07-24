@@ -20,12 +20,9 @@ This example uses the ``||sprites:on created||`` event to set the sprite image a
 4. Carefully examine the ``||sprites:sprite of kind||`` block and ``||sprites:on created||`` event
 
 ```blocks
-enum SpriteKind {
-    Helicopter,
-    Projectile,
-    Cloud,
-    Player,
-    Enemy
+namespace SpriteKind {
+    export const Helicopter = SpriteKind.create();
+    export const Cloud = SpriteKind.create();
 }
 let agent: Sprite = null
 let cloud: Sprite = null

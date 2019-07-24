@@ -5,14 +5,11 @@
 At the end of the arrays section, the case study should resemble this example solution:
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Asteroid,
-    PowerUp,
-    Laser,
-    EnemyLaser
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
+    export const PowerUp = SpriteKind.create();
+    export const Laser = SpriteKind.create();
+    export const EnemyLaser = SpriteKind.create();
 }
 
 enum PowerUpType {

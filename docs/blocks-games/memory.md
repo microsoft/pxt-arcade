@@ -1,13 +1,9 @@
 # Sorting Algorithms
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy,
-    glyph,
-    UI
+namespace SpriteKind {
+    export const glyph = SpriteKind.create();
+    export const UI = SpriteKind.create();
 }
 let CursorAt = 0
 let CursorSprite: Sprite = null

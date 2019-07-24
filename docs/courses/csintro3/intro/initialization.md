@@ -193,9 +193,8 @@ Use it to ``||game:splash||`` the introduction you just created.
 ### Solution
 
 ```typescript
-enum SpriteKind {
-    Asteroid,
-    Projectile
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
 }
 
 namespace asteroids {

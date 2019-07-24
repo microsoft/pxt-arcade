@@ -23,13 +23,10 @@ Functions allow us to break up code into different sections. In doing so, we can
 3. Save the code for the example (name it "placeSprites")
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Human,
-    Cow,
-    Asteroid
+namespace SpriteKind {
+    export const Human = SpriteKind.create();
+    export const Cow = SpriteKind.create();
+    export const Asteroid = SpriteKind.create();
 }
 let asteroid: Sprite = null
 let cow: Sprite = null
@@ -89,13 +86,10 @@ In the next examples, we will simplify the ``||loops:on start||`` code by splitt
 3. Save the code for the example (name it "placeSpritesWithFunctions")
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Human,
-    Cow,
-    Asteroid
+namespace SpriteKind {
+    export const Human = SpriteKind.create();
+    export const Cow = SpriteKind.create();
+    export const Asteroid = SpriteKind.create();
 }
 let asteroid: Sprite = null
 let cow: Sprite = null
@@ -177,13 +171,10 @@ Try re-ordering the ``||functions:function calls||`` in your ``||loops:on start|
 ### ~
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Human,
-    Cow,
-    Asteroid
+namespace SpriteKind {
+    export const Human = SpriteKind.create();
+    export const Cow = SpriteKind.create();
+    export const Asteroid = SpriteKind.create();
 }
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
@@ -232,11 +223,8 @@ In this task, we will clean up the ``||controller:on A button pressed||`` event 
     * an additional function (for example, ``||functions:playerConversation||``, or ``||functions:movePlayer||``)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Princess,
-    Enemy
+namespace SpriteKind {
+    export const Princess = SpriteKind.create();
 }
 let princess: Sprite = null
 let player: Sprite = null
