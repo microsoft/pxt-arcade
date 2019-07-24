@@ -149,6 +149,7 @@ let Speed = 40
 We can increase the speed at which projectiles fall. To do this go to ``||game: on game update every ms||`` and drag it into workspace. Then change the number to ``2000 ms``. Go to ``||variables:Variables||`` and select ``||variables:change by||`` and drag it into ``||game:on game update||``. Select the drop down and choose the speed variable. Now every two seconds, the projectile speed will increment by 1.
 
 ```blocks
+let Speed = 40
 game.onUpdateInterval(2000, function () {
     Speed += 1
 })
@@ -185,7 +186,7 @@ Congrats, now we can spawn projectiles!
 
 ```blocks
 game.onUpdateInterval(500, function () {
-    lane = Math.randomRange(1, 4)
+    let lane = Math.randomRange(1, 4)
     if (lane == 1) {
         let left: Sprite = null
         left = sprites.create(img`
