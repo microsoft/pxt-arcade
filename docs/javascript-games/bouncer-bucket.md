@@ -41,9 +41,8 @@ There are two modes of play: single ball and multiple balls. Press the **A** but
 Here's the code for the _bouncer bucket_ game. Have fun!
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Ball
+namespace SpriteKind {
+    export const Ball = SpriteKind.create();
 }
 let bouncers: Sprite[] = []
 let balls: Image[] = []

@@ -283,9 +283,8 @@ not the first one to play this game.
 ### Solution
 
 ```typescript
-enum SpriteKind {
-    Asteroid,
-    Projectile
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
 }
 
 namespace asteroids {

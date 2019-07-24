@@ -254,11 +254,7 @@ In this example, the tiles are changed to correspond to images with letters on t
 [NewHome project](https://makecode.com/_2X5PdkLjp5p5)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let HomeOwner: Sprite = null
 HomeOwner = sprites.create(img`
 . . . . . . . . . . . . . . . . 

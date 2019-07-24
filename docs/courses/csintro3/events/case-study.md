@@ -5,15 +5,11 @@
 At the end of the events section, the case study should resemble this example solution:
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Asteroid,
-    PowerUp,
-    Laser,
-    EnemyLaser,
-    Star
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
+    export const PowerUp = SpriteKind.create();
+    export const Laser = SpriteKind.create();
+    export const Star = SpriteKind.create();
 }
 
 enum PowerUpType {

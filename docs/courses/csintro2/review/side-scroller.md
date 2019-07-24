@@ -13,11 +13,8 @@ Create a project with the code below - the images for the trees and car are avai
 Make sure the tilemap you draw always has at least **two** clear tiles next to eachother in each column besides the beginning, so that the car can make it all the way through the forest.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Car
+namespace SpriteKind {
+    export const Car = SpriteKind.create();
 }
 let myCar: Sprite = null
 myCar = sprites.create(img`

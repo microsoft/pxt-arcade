@@ -41,10 +41,7 @@ game.splash("Cherry Pickr")
 To set the background, click on ``||scene:Scene||`` in the Toolbox and drag the ``||scene:set tile map to||`` block into the ``||loops:on start||`` block. Go ahead and click the gray box and draw whatever you want the background to look like.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
+
 game.splash("Cherry Pickr")
 scene.setTileMap(img`
 6 6 6 6 6 6 6 6 6 6 
@@ -67,10 +64,7 @@ Our next step is to create a movable character. To do this, go to  ``||sprites:S
 Next, draw what you want the agent to look like. Click the square grey box inside the ``||sprites:set agent to||`` block. A paint editor will pop up and this is where you will draw what you want your player to look like.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
+
 let agent: Sprite = null
 game.splash("Cherry Pickr")
 scene.setTileMap(img`
@@ -104,10 +98,7 @@ We do this so that when the player moves around the map, they will remain at the
 To make the player move faster, set the ``vx`` and ``vy`` to `150`.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
+
 let agent: Sprite = null
 game.splash("Cherry Pickr")
 scene.setTileMap(img`
@@ -138,10 +129,8 @@ Next we will define what a cherry is by going to ``||sprites:Sprites||`` and dra
 Click the drop down and change ``agent`` to ``item``. Click the gray square box to draw what you want your item to look like. Then click the drop down that says ``Player`` and click ``Add a new kind...``. Name your kind ``Item``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-    Item
+namespace SpriteKind {
+    export const Item = SpriteKind.create();
 }
 let item: Sprite = null
 game.onUpdateInterval(500, function () {
@@ -156,10 +145,8 @@ To make the cherry spawn randomly on the map, go to the ``||math:Math||`` tab an
 Change the values for the first ``||math:pick random||`` block to `0` and `160`. Change the values for the second ``||math:pick random||`` block to `0` and `120`.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-    Item
+namespace SpriteKind {
+    export const Item = SpriteKind.create();
 }
 let item: Sprite = null
 game.onUpdateInterval(500, function () {
@@ -183,10 +170,8 @@ We will add to the score in [Part Six: Picking Up Cherries](#part-six-picking-up
 The game simulator will automatically show the timer and score at the top of the screen.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-    Item
+namespace SpriteKind {
+    export const Item = SpriteKind.create();
 }
 let agent: Sprite = null
 game.splash("Cherry Pickr")
@@ -222,10 +207,8 @@ To change the score when the cherry is touched, go to the ``||info:Info||`` tab 
 To remove the cherry that the player picks up, go to ``||sprites:Sprites||`` in the Toolbox and under **Lifecycle**, drag the ``||sprites:destroy||`` block into the ``||sprites:on agent of kind Player overlaps||`` block. Change ``agent`` to ``item``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-    Item
+namespace SpriteKind {
+    export const Item = SpriteKind.create();
 }
 let item: Sprite = null
 let agent: Sprite = null

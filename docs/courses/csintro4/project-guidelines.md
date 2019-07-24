@@ -75,10 +75,7 @@ as well as a splash screen to introduce the game when it is loaded.
 ### main.ts
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile
-}
+
 ```
 
 ### spritesheet.ts

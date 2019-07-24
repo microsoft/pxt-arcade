@@ -31,12 +31,7 @@ game.onUpdateInterval(1000, function () {
 Find ``||sprites:projectile from side||`` in ``||sprites:Sprites||``, and drag it into the ``||loops:on game update interval||``. Open the image editor for ``||variables:projectile||``, and select or create an image of a car that is facing **right**.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let projectile: Sprite = null;
 game.onUpdateInterval(1000, function () {
     projectile = sprites.createProjectileFromSide(img`
@@ -65,12 +60,7 @@ game.onUpdateInterval(1000, function () {
 In the ``||sprites:projectile||``, set the ``||sprites:vx||`` to 40, so that it drives across the screen.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let projectile: Sprite = null;
 game.onUpdateInterval(1000, function () {
     projectile = sprites.createProjectileFromSide(img`
@@ -99,12 +89,7 @@ game.onUpdateInterval(1000, function () {
 In the ``||sprites:projectile||``, set the ``||sprites:vy||`` to 0, so that the cars drive **only** to the right.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let projectile: Sprite = null;
 game.onUpdateInterval(1000, function () {
     projectile = sprites.createProjectileFromSide(img`
@@ -133,12 +118,7 @@ game.onUpdateInterval(1000, function () {
 Find ``||sprites:set mySprite x to 0||`` from ``||sprites:Sprites||``, and drag it after the ``||variables:set projectile to||``. Change ``||variables:mySprite||`` to ``||variables:projectile||``, and change ``||sprites:x||`` to ``||sprites:y||``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let projectile: Sprite = null;
 game.onUpdateInterval(1000, function () {
     projectile = sprites.createProjectileFromSide(img`
@@ -170,12 +150,7 @@ Find ``||math:pick random 0 to 10||`` in ``||math:Math||``, and replace the 0 in
 This will place the ``||variables:projectile||`` in a random ``||sprites:y||`` position between 0 and 10.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let projectile: Sprite = null;
 game.onUpdateInterval(1000, function () {
     projectile = sprites.createProjectileFromSide(img`
@@ -207,12 +182,7 @@ Find ``||scene:screen height||`` in ``||scene:Scene||``. Replace the 10 in ``||m
 ``||scene:screen height||`` is the height of the screen (120), so this will place the ``||variables:projectile||`` in a random position on the left side of the screen.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let projectile: Sprite = null;
 game.onUpdateInterval(1000, function () {
     projectile = sprites.createProjectileFromSide(img`

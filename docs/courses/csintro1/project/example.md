@@ -245,12 +245,9 @@ Unfortunately, at this point, we could not figure out how to end the game based 
 We came up with the following game to turn in for this project.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Trampoline,
-    Wall
+namespace SpriteKind {
+    export const Trampoline = SpriteKind.create();
+    export const Wall = SpriteKind.create();
 }
 let player: Sprite = null
 let trampoline: Sprite = null

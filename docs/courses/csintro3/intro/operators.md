@@ -195,9 +195,8 @@ this way, they will be addressed as Captain whenever their name is used.
 ### Solution
 
 ```typescript
-enum SpriteKind {
-    Asteroid,
-    Projectile
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
 }
 
 namespace asteroids {

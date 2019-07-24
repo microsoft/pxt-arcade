@@ -36,13 +36,10 @@ Having sprites bump rather than pass over each other is useful game behavior for
 [Helicopter Example](https://makecode.com/_UhT3dj2UjKPv)
 
 ```blocks
-enum SpriteKind {
-    Helicopter,
-    Projectile,
-    Cloud,
-    LandingPad,
-    Player,
-    Enemy
+namespace SpriteKind {
+    export const Helicopter = SpriteKind.create();
+    export const Cloud = SpriteKind.create();
+    export const LandingPad = SpriteKind.create();
 }
 let cloud3: Sprite = null
 let cloud2: Sprite = null

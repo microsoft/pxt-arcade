@@ -67,12 +67,9 @@ game.splash("Hello! This will count down from 5 for you!")
 Emma decides that she does not like the Stars being destroyed when the ``||variables:camera||`` overlap them, so she removes the ``||sprites:destroy||`` block so that the ``Star``s remain. However, this makes the game score behave weirdly, and no longer represent the number of stars that have been overlapped. What went wrong? (**Challenge:** can you fix it?)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Camera,
-    Star
+namespace SpriteKind {
+    export const Camera = SpriteKind.create();
+    export const Star = SpriteKind.create();
 }
 sprites.onOverlap(SpriteKind.Camera, SpriteKind.Star, function (sprite, otherSprite) {
     info.changeScoreBy(1)

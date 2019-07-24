@@ -48,11 +48,7 @@ Games often have an element of luck and surprise to keep the player engaged. In 
 4. Examine the use of ``||math:pick random||`` in the sprite location block. The code does not assign the chosen random number to a variable before using it
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -104,11 +100,8 @@ mySprite.vy = 0
 3. Examine the use of the sprite's ``||sprites:kind||`` in the overlap event
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Hat
+namespace SpriteKind {
+    export const Hat = SpriteKind.create();
 }
 let mySprite: Sprite = null
 let hat: Sprite = null

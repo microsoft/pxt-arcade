@@ -11,12 +11,7 @@
 Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``. Click on ``||variables:mySprite||``, select ``rename variable...``, and change the name from ``||variables:mySprite||`` to ``||variables:princess||``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let princess = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -42,12 +37,7 @@ let princess = sprites.create(img`
 Open the image editor for ``||variables:princess||``, and select or create an image of a princess.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let princess: Sprite = null
 princess = sprites.create(img`
 . . . . . f f 4 4 f f . . . . . 
@@ -74,12 +64,7 @@ f b b f f f e e e e f f f b b f
 Find ``||controller:move mySprite with buttons||`` in ``||controller:Controller||``. Place it after ``||variables:set princess to||``. Change ``||variables:mySprite||`` to ``||variables:princess||``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let princess: Sprite = null
 princess = sprites.create(img`
 . . . . . f f 4 4 f f . . . . . 
@@ -107,12 +92,7 @@ controller.moveSprite(princess)
 Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``. Rename ``||variables:mySprite||`` to ``||variables:pizza||``. Open the image editor, and select or create an image of a pizza.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let pizza: Sprite = null
 let princess: Sprite = null
 princess = sprites.create(img`
@@ -159,12 +139,7 @@ b 5 5 5 5 d d 4 4 4 4 . . . . .
 Find ``||sprites:set mySprite position to x 0 y 0||`` in ``||sprites:Sprites||``. Change ``||variables:mySprite||`` to ``||variables:pizza||``, ``||sprites:x||`` to 140, and ``||sprites:y||`` to 100.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let pizza: Sprite = null
 let princess: Sprite = null
 princess = sprites.create(img`
@@ -214,12 +189,7 @@ In the ``||variables:pizza||`` ``||sprites:Sprite||``, select ``||sprites:kind P
 A ``||sprites:Sprite|``'s ``||sprites:Kind||`` is used to identify what type of sprite it is; this helps to group different sprites together.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let pizza: Sprite = null
 let princess: Sprite = null
 princess = sprites.create(img`
@@ -269,12 +239,7 @@ Find ``||sprites:on sprite of kind Player overlaps otherSprite of kind Player||`
 This event will occur whenever two ``||sprites:Sprites||`` of the given ``||sprites:kinds||`` are on top of eachother.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let pizza: Sprite = null
 let princess: Sprite = null
 sprites.onOverlap(SpriteKind.Food, SpriteKind.Player, function (sprite, otherSprite) {
@@ -327,12 +292,7 @@ Find ``||game:game over||`` in ``||game:Game||``, and drag it into the ``||sprit
 This will cause the game to end when the ``||sprites:princess||`` touches the ``||sprites:pizza||``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let pizza: Sprite = null
 let princess: Sprite = null
 sprites.onOverlap(SpriteKind.Food, SpriteKind.Player, function (sprite, otherSprite) {

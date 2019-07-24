@@ -27,12 +27,9 @@ We can make even make our own packages of code to share or reuse in our games.
 ![Finding Dart Extension](/static/courses/csintro2/functions/finding-darts.gif)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Foot_Ball,
-    Goal
+namespace SpriteKind {
+    export const Foot_Ball = SpriteKind.create();
+    export const Goal = SpriteKind.create();
 }
 let mySprite: Sprite = null
 let myDart: Dart = null
@@ -135,11 +132,7 @@ Do any of the names of the tabs in the explorer look similar to the name of the 
 ### ~
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let projectile: Sprite = null
 projectile = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 

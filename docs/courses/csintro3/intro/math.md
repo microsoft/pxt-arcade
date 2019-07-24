@@ -192,9 +192,8 @@ stores ``||scene:screen.width / 2||``, and ``||variables:y||`` stores
 ### Solution
 
 ```typescript
-enum SpriteKind {
-    Asteroid,
-    Projectile
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
 }
 
 namespace asteroids {

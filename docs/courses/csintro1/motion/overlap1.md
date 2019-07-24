@@ -31,11 +31,7 @@ Sometimes there will be only a single sprite of a given ``||sprites:kind||`` (fo
 [Overlap event](https://makecode.com/_e77ia1MAyA0U)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let head: Sprite = null
 let food: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -125,11 +121,7 @@ The ``||sprites:ghost on||`` setting for sprites, when turned on, makes the spri
 [Ghost and Overlap](https://makecode.com/_FR3ciEHqR8YE)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let head: Sprite = null
 let food: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
