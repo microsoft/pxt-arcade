@@ -63,7 +63,7 @@
         "libs/mqtt",
         "libs/net",
         "libs/azureiot",
-        "libs/colors",
+        "libs/color",
         "libs/palette",
         "libs/storyboard"
     ],
