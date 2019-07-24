@@ -62,7 +62,9 @@
         "libs/esp32spi",
         "libs/mqtt",
         "libs/net",
-        "libs/azureiot"
+        "libs/azureiot",
+        "libs/colors",
+        "libs/palette"
     ],
     "compile": {
         "useUF2": true,
