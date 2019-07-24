@@ -64,7 +64,8 @@
         "libs/net",
         "libs/azureiot",
         "libs/colors",
-        "libs/palette"
+        "libs/palette",
+        "libs/storyboard"
     ],
     "compile": {
         "useUF2": true,
