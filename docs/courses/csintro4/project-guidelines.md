@@ -83,7 +83,7 @@ as well as a splash screen to introduce the game when it is loaded.
 ```typescript
 namespace spritesheet {
     // replace this with any images you need to export for other group members
-    export star: Image = img`1`;
+    export const star: Image = img`1`;
 }
 
 namespace animations {

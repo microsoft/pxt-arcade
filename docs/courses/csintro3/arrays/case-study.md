@@ -9,6 +9,7 @@ namespace SpriteKind {
     export const Asteroid = SpriteKind.create();
     export const PowerUp = SpriteKind.create();
     export const Laser = SpriteKind.create();
+    export const EnemyLaser = SpriteKind.create();
 }
 
 enum PowerUpType {
