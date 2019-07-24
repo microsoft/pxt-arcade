@@ -20,12 +20,7 @@ game.onUpdateInterval(100, function () {
 Create 3 counters to display hours, minutes, and seconds. Set the display size of the seconds counter to `half`. Insert a sprite to show a colon character between the minutes and hours display. Use a color for the digits and screen background that will simulate the look of a LCD display.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Food
-}
+
 let time = 0
 let seconds: DigitCounter = null
 let minutes: DigitCounter = null

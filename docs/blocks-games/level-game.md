@@ -3,12 +3,7 @@
 A game with an example of how to do levels and use the timer.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-    Food,
-    Projectile
-}
+
 let food: Sprite = null
 let player: Sprite = null
 let level = 0

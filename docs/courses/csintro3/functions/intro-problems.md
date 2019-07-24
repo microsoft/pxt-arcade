@@ -59,9 +59,8 @@ The ``||functions:function||`` in the code snippet below places a pizza
 after taking one second to make the pizza.
 
 ```typescript
-enum SpriteKind {
-    Pizza,
-    Projectile
+namespace SpriteKind {
+    export const Pizza = SpriteKind.create();
 }
 
 function makePizza() {

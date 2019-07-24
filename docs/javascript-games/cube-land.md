@@ -327,11 +327,11 @@ namespace palettes {
         000000`;
 }
 
-enum SpriteKind {
-    Girl,
-    Boss,
-    Chest,
-    Boy
+namespace SpriteKind {
+    export const Girl = SpriteKind.create();
+    export const Boss = SpriteKind.create();
+    export const Chest = SpriteKind.create();
+    export const Boy = SpriteKind.create();
 }
 
 function introSequence() {

@@ -10,12 +10,8 @@ This example shows story text prior to the start of gameplay. The text scrolls f
 
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy,
-    Star
+namespace SpriteKind {
+    export const Star = SpriteKind.create();
 }
 
 let ship: Sprite = null

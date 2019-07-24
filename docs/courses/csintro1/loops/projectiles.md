@@ -27,11 +27,7 @@ We can use projectiles to create sprites that move across the screen. Let's star
 4. Look for what portion of the blocks makes the bird move across the screen, instead of just staying still
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let projectile: Sprite = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -55,11 +51,7 @@ let projectile: Sprite = sprites.createProjectileFromSide(img`
 It may seem surprising that there's only a single block inside the ``||loops:on start||`` to create a projectile. Projectiles are an easy way to create temporary sprites with motion. 
 
 ```blocks 
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let projectile: Sprite = null
 sprites.onDestroyed(SpriteKind.Projectile, function (sprite) {
     info.changeScoreBy(1)
@@ -106,11 +98,7 @@ Notice that the ``||sprites:kind||`` of the ``||sprites:projectile||`` is ``Proj
 4. **Challenge:** when the two projectiles overlap one another, have them ``||sprites:say||`` hello to each other
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 
 let projectile: Sprite = null
 sprites.onDestroyed(SpriteKind.Projectile, function (sprite) {
@@ -151,11 +139,7 @@ Games often create many projectiles, one after another. We can create multiple p
 This example randomly places the projectiles on the screen with a random velocity.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 
 let projectile: Sprite = null
 let mySprite: Sprite = null
@@ -218,11 +202,7 @@ We have seen that it is useful for projectiles to come from random positions, bu
 5. Modify the ``||sprites:set projectile y to||`` block to set the projectiles' ``||sprites:y||`` position to the value `10 * index`, so that they start further down the screen on each iteration
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let projectile: Sprite = null
 projectile = sprites.createProjectileFromSide(img`
 . 6 . . . . . . . . . . . . . . 
@@ -260,11 +240,7 @@ Projectiles with only a ``||sprites:y||`` velocity will start on the top or bott
 4. Save the code for the task (name it "Top Left")
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let projectile: Sprite = null
 projectile = sprites.createProjectileFromSide(img`
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 

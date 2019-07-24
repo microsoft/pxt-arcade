@@ -19,12 +19,7 @@ Get a ``||sprites:set mySprite to sprite of kind player||`` block an put it in t
 ![Space plane sprite image](/static/tutorials/galga/space-plane.jpg)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let spacePlane: Sprite = null
 spacePlane = sprites.create(img`
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -67,12 +62,7 @@ spacePlane = sprites.create(img`
 Go back to ``||sprites:Sprites||`` again and pull out a ``||sprites:set mySprite stay in screen||`` and put it in after the other sprite block. Change the ``||variables:mySprite||`` to ``||variables:spacePlane||``. Click the ``OFF`` button to make it switch to ``ON``. Go over to ``||info:Info||``, get a ``||info:set life to||`` block, and put it in there too. Set the life count to `3`.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let spacePlane: Sprite = null
 spacePlane = sprites.create(img`
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -117,12 +107,7 @@ info.setLife(3)
 Now, let's add some button actions. In ``||controller:Controller||`` pull out a ``||controller:move mySprite with buttons||``. Click on the **(+)** symbol and change both `vx` and `vy` to `200`. Next, get the ``||controller:on A button pressed||`` from ``||controller:Controller||`` and put it out in the Workspace somehwere.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let spacePlane: Sprite = null
 spacePlane = sprites.create(img`
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -201,12 +186,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 From ``||sprites:Sprites||`` get a ``||sprites:on sprite of kind Player overlaps||`` block. Switch the second ``kind`` type at the end of the block to ``Enemy``. Pull a ``||sprites:destroy mySprite||`` in there. Go up and grab the ``||variables:otherSprite||`` from the outer block and drop it onto ``||variables:mySprite||`` in  ``||sprites:destroy mySprite||``. Go get a ``||info:change life by||`` and drop it in after ``||sprites:destroy otherSprite||``. Set the life change value to `-1`.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()
     info.changeLifeBy(-1)
@@ -218,12 +198,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 Make a copy of ``||sprites:on sprite of kind Player overlaps||`` by clicking on it with the `right` mouse button and selecting **Duplicate**. In that new block, change the first ``kind`` from ``Player`` to ``Projectile``. Also, in the ``||info:change life by||`` make the life change value be a `1`.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()
     info.changeLifeBy(1)
@@ -235,12 +210,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 Duplicate the ``||sprites:destroy otherSprite||`` and place the new copy after the first one. Like you did earlier, pull a ``||variables:sprite||`` from the ``||sprites:on sprite of kind Projectile overlaps||`` and drop it onto ``||variables:mySprite||`` in the ``||sprites:destroy sprite||`` block. Click on the **(+)** symbol and choose the ``fire`` effect. Also, set effect time to ``100 ms``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()
     sprite.destroy(effects.fire, 100)
@@ -255,12 +225,7 @@ Over in ``||game:Game||`` pickup an ``||game:on update interval||`` an place it 
 ![Enemy airplane image](/static/tutorials/galga/bogey.jpg)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let mySprite: Sprite = null
 game.onUpdateInterval(500, function () {
     mySprite = sprites.create(img`
@@ -289,12 +254,7 @@ game.onUpdateInterval(500, function () {
 Find the ``||sprites:set mySprite velocity to||`` and put it after the sprite you just made. Set `vx` to `-100`. Add in a ``||sprites:set mySprite position to||`` block. Set the `x` value to `180`. Over in ``||math:Math||``, get the ``||math:pick random||`` block and drop it into the `y` value slot.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let mySprite: Sprite = null
 game.onUpdateInterval(500, function () {
     mySprite = sprites.create(img`
@@ -325,12 +285,7 @@ game.onUpdateInterval(500, function () {
 In the ``||math:pick random||`` set the first value as `8` and the second value as `112`. Finally, click on the first ``||variables:mySprite||`` variable, select ``Rename variable...``, and rename it to ``bogey``. Did you notice that all of the ``||variables:mySprite||`` variables turned into ``||variables:bogey||``?
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let bogey: Sprite = null
 game.onUpdateInterval(500, function () {
     bogey = sprites.create(img`

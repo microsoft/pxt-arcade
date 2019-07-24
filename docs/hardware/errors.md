@@ -15,12 +15,7 @@ This error typically occurs when trying to use something that is not yet created
 for example, setting the position of a sprite that does not yet exist.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let mySprite2: Sprite = null
 let mySprite = sprites.create(img`
     . . . . . . . e c 7 . . . . . .
@@ -69,12 +64,7 @@ This can be hard to identify when games get more and more complex;
 for example, your code might rely on an object that is created by user input.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite2 = sprites.create(img`
         4 4 4 . . 4 4 4 4 4 . . . . . .

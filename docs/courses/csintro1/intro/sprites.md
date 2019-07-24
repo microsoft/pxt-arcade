@@ -22,11 +22,7 @@ The blocks needed to create sprites are found in the ``||sprites:Sprites||`` men
 [Empty Sprite Example](https://makecode.com/_g3CcuWigwKR8)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let mySprite: Sprite = null
 
 mySprite = sprites.create(img`
@@ -58,11 +54,7 @@ Look at the blocks, and note that a name for the sprite (``||variables:mySprite|
 [Hot Sauce Example Sprite](https://makecode.com/_VEXXpq9RtRfT)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 

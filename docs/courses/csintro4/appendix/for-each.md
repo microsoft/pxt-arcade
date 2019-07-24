@@ -44,11 +44,7 @@ all ``||sprites:Enemy||``s
 3. Identify what is done to each ``||sprites:Enemy||`` in the ``||loops:for ... of||`` loop
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 
 for (let i = 0; i < 15; i++) {
     let skeleton: Sprite = sprites.create(sprites.castle.skellyFront, SpriteKind.Enemy);
@@ -135,11 +131,7 @@ and then iterate over any remaining elements in the ``||arrays:array||``.
 that are on the **right** half of the screen
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 
 for (let i = 0; i < 15; i++) {
     let skeleton: Sprite = sprites.create(sprites.castle.skellyFront, SpriteKind.Enemy);
@@ -186,11 +178,7 @@ This is an alternate form of a function that is not covered in detail in this co
 but allows for clearer formatting when programming in this style.
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 
 for (let i = 0; i < 15; i++) {
     let skeleton: Sprite = sprites.create(sprites.castle.skellyFront, SpriteKind.Enemy);

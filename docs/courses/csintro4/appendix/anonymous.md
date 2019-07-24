@@ -69,11 +69,7 @@ defined to move the player and splash on the screen
 ``||functions:splashAndDash||`` to pass it as a parameter
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 
 function splashAndDash() {
     game.splash("Hello!");
@@ -150,11 +146,7 @@ This task is demonstrated in the GIF below the snippet.
 pass the anonymous function itself to the function without storing it separately
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 
 let player: Sprite = sprites.create(img`
 1 1 1
