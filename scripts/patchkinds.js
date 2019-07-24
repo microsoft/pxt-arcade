@@ -17,11 +17,10 @@ function patch(file) {
 ${entries.map(entry => `    export const ${entry} = SpriteKind.create();`).join('\n')}
 }`;
         });
-        if (patched != src) {
-            console.log(`  patched ${file}`)
-            if (mode && demo++ == 0)
-                console.log(patched)
-                //fs.writeFile(file, { encoding: "utf8"}, patched);
+        if (patched != src) {            
+            fs.writeFile(file, patched, { encoding: "utf8"}, () => { 
+                console.log(`  patched ${file}`)
+            });
         }
     })
 }
