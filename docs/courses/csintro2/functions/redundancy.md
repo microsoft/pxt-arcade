@@ -17,11 +17,7 @@ In this activity, students will:
 3. Save the code for the example (name it "moveSprite")
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -75,11 +71,7 @@ In this case, the ``||loops:pause||``, ``||sprites:movement||``, and ``||music:t
 3. Save the code for the example (name it "moveSpriteUsingFunctions")
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let mySprite: Sprite = null
 function move() {
     pause(1000)
@@ -128,11 +120,7 @@ mySprite.destroy()
 5. **Challenge:** change the behavior of the game by making the projectiles move at twice the rate in the horizontal direction (from -20 to -40), and by making the ``||music:play tone||`` block play a ``||music:Middle A||``
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let projectile: Sprite = null
 projectile = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
@@ -215,11 +203,7 @@ game.over(false)
 5. **Challenge:** add in both a ``||sprites:set projectile ax to||`` and a ``||sprites:set projectile ay to||`` to ``||functions:function buttonPress||``, and set the newly created projectile to have random accelerations between -50 and 50
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let projectile: Sprite = null
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     music.playTone(415, music.beat(BeatFraction.Sixteenth))

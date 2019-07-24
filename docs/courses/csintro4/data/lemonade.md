@@ -255,12 +255,7 @@ namespace lemonadeprompt {
         })
     }
 } 
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 
 let storeSprites = [sprites.create(img`0`), sprites.create(img`0`), sprites.create(img`0`)];
 let customerTimes: number[] = [];

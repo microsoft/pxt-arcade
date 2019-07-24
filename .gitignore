@@ -1,4 +1,5 @@
 node_modules
+pxt_modules
 *.sw?
 built
 typings/

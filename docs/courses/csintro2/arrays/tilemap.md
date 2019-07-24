@@ -19,11 +19,7 @@ In this activity, students will:
 3. Save the code for the task (name it "Get Out Of Jail Free Button") 
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let myTile: tiles.Tile = null
 let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -100,11 +96,7 @@ The ``||scene:on top of myTile place mySprite||`` allows for sprites to be place
 3. Save the code for the task (name it "Random Maze")
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let mySprite: Sprite = null
 scene.onHitTile(SpriteKind.Player, 7, function (sprite) {
     game.over(true)
@@ -193,11 +185,8 @@ This example sets two random tiles from the first two rows of walls to be tiles 
 3. Save the code for the task (name it "set up")
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Pizza
+namespace SpriteKind {
+    export const Pizza = SpriteKind.create();
 }
 let pizza: Sprite = null
 let tile_list: tiles.Tile[] = []
@@ -326,11 +315,7 @@ Using the concepts from tasks #1 and #2, the development of multi-level games be
 3. Save the code for the task (name it "move levels")
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let player: Sprite = null
 let nextLevel = 0
 let levels: Image[] = []

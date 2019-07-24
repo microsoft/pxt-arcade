@@ -175,12 +175,7 @@ namespace lighting {
     }
 }
 
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 enum ActionKind {
     Walking,
     Idle,

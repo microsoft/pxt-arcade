@@ -15,12 +15,7 @@ Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into 
 This ``||sprites:Sprite||`` will represent the main character in the game; for now, it has no image and doesn't do anything, though.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 
 let mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -49,12 +44,7 @@ Click on the grey box in ``||variables:set mySprite to||`` to open the image edi
 When you close the image editor by clicking outside of it, the image you drew will show up in the center of the screen in the simulator.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
@@ -84,12 +74,7 @@ This ``||sprites:Sprite||`` represents the main character in our game, so it sho
 Find ``||controller:move mySprite with buttons||`` in ``||controller:Controller||``. Place it after ``||variables:set mySprite to||``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . . . 7 7 . . . . . . 

@@ -5,12 +5,8 @@ Creates a unique 'work of art' by painting random brush strokes across the scree
 Press ``||controller:A||`` to switch the size of the brush from small to big, or big to small.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy,
-    PaintBrush
+namespace SpriteKind {
+    export const PaintBrush = SpriteKind.create();
 }
 
 let ACCELERATION = 500;

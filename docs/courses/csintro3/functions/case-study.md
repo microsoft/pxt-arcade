@@ -5,13 +5,10 @@ At the end of the functions section, the case study should resemble this example
 ![Animation of current case study](/static/courses/csintro3/functions/end-section-case-study.gif)
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Asteroid,
-    PowerUp,
-    Laser
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
+    export const PowerUp = SpriteKind.create();
+    export const Laser = SpriteKind.create();
 }
 
 enum PowerUpType {

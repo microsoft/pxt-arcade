@@ -45,7 +45,7 @@ let num: number = 5 + 3 * 2;
 ### Example #1c: Division and Multiplication
 
 ```block
-let num: number = 5 + 3 * 2;
+let num: number = 24 / 3 * 4;
 ```
 
 ```typescript-ignore
@@ -192,9 +192,8 @@ stores ``||scene:screen.width / 2||``, and ``||variables:y||`` stores
 ### Solution
 
 ```typescript
-enum SpriteKind {
-    Asteroid,
-    Projectile
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
 }
 
 namespace asteroids {

@@ -29,6 +29,18 @@ BTN_LEFT2=10
 BTN_UP2=22
 BTN_RIGHT2=27
 BTN_DOWN2=17
+BTN_A3=21
+BTN_B3=20
+BTN_LEFT3=16
+BTN_UP3=12
+BTN_RIGHT3=1
+BTN_DOWN3=7
+BTN_A4=8
+BTN_B4=25
+BTN_LEFT4=24
+BTN_UP4=23
+BTN_RIGHT4=18
+BTN_DOWN4=15
 ```
 
 ## Test the firmware
@@ -46,7 +58,7 @@ You should see the game selection dialog on the screen.
 
 ### Download the configuration program
 
-Download or copy the **[Configuration Program](https://makecode.com/_332e7oWrDYoa)** into the [MakeCode Arcade](@homeurl@) editor and then download the .UF2 file onto the
+Download or copy the **[Configuration Program](https://makecode.com/_gCyify35UE4K)** into the [MakeCode Arcade](@homeurl@) editor and then download the .UF2 file onto the
 SD card.
 
 ![A screenshot of the configuration game](/static/hardware/raspberry-pi/cardboard-control-panel/configurator.png)

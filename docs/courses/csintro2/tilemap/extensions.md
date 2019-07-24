@@ -35,11 +35,7 @@ After adding corgio to your project, a new tab titled ``||corgio:Corgio||`` will
 4. Notice how the corgio rests on top of the wall tiles, and that the jumps reset as if the corgio were touching the bottom of the screen
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let myCorg: Corgio = corgio.create(SpriteKind.Player);
 scene.setTileMap(img`
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
