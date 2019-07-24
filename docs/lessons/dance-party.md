@@ -185,6 +185,7 @@ Congrats, now we can spawn projectiles!
 
 ```blocks
 game.onUpdateInterval(500, function () {
+    let lane = 0
     lane = Math.randomRange(1, 4)
     if (lane == 1) {
         let left: Sprite = null
