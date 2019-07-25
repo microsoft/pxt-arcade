@@ -28,7 +28,9 @@
     },
     "yotta": {
         "config": {
-            "DEVICE_USB": 1
+            "DEVICE_USB": 1,
+            "DEVICE_WEBUSB": 1,
+            "DEVICE_JACDAC_DEBUG": 1
         }
     },
     "additionalFilePath": "../hw",
