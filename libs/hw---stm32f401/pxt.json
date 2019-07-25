@@ -32,7 +32,9 @@
     "yotta": {
         "config": {
             "DEVICE_USB": 1,
-            "PXT_DEFUALT_ACCELEROMETER": "ACCELEROMETER_TYPE_MMA8453"
+            "DEVICE_WEBUSB": 1,
+            "DEVICE_JACDAC_DEBUG": 1,
+            "PXT_DEFAULT_ACCELEROMETER": "ACCELEROMETER_TYPE_MMA8453"
         }
     },
     "dalDTS": {
