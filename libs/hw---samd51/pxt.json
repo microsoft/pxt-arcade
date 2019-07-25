@@ -27,10 +27,12 @@
         "jacdac-game": "file:../jacdac-game"
     },
     "yotta": {
+        "optionalConfig": {
+            "DEVICE_JACDAC_DEBUG": 1
+        },
         "config": {
             "DEVICE_USB": 1,
-            "DEVICE_WEBUSB": 1,
-            "DEVICE_JACDAC_DEBUG": 1
+            "DEVICE_WEBUSB": 1
         }
     },
     "additionalFilePath": "../hw",
