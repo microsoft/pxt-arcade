@@ -124,33 +124,27 @@ Now we are able to move our player! In the simulator, test out the movement of t
 
 We want cherries to appear randomly on the screen every half a second. In order to do this, go into ``||game:Game||`` in the Toolbox and drag out the ``||game:on game update every||`` block onto the editor.  
 
-Next we will define what a cherry is by going to ``||sprites:Sprites||`` and dragging out the ``||sprites:set mySprite to||`` block inside the ``||game:on game update every||`` block.  
+Next we will define what a cherry is, by going to ``||sprites:Sprites||`` and dragging out the ``||sprites:set mySprite to||`` block inside the ``||game:on game update every||`` block.  
 
-Click the drop down and rename ``mySprite`` to ``item``. Click the gray square box to draw what you want your item to look like. Then click the drop down that says ``Player`` and click ``Add a new kind...``. Name your kind ``Item``.
+Click the drop down and rename ``||variables:mySprite||`` to ``||variables:item||``. Click the gray square box to draw what you want your item to look like. Then click the drop down that says ``||sprites:Player||`` and change the kind ``||sprites:Food||``.
 
 ```blocks
-namespace SpriteKind {
-    export const Item = SpriteKind.create();
-}
 let item: Sprite = null
 game.onUpdateInterval(500, function () {
-    item = sprites.create(sprites.food.smallCherries, SpriteKind.Item)
+    item = sprites.create(sprites.food.smallCherries, SpriteKind.Food)
 })
 ```
 
-To spawn cherries on the screen, we need to set a random x and y coordinate. Go to the ``||sprites:Sprites||`` tab and drag the ``||sprites:set mySprite position to||`` inside the ``||sprites:on game update every||`` block. Change ``mySprite`` to ``item``.  
+To spawn cherries on the screen, we need to set a random x and y coordinate. Go to the ``||sprites:Sprites||`` tab and drag the ``||sprites:set mySprite position to||`` inside the ``||sprites:on game update every||`` block. Change ``||variables:mySprite||`` to ``||variables:item||``.  
 
-To make the cherry spawn randomly on the map, go to the ``||math:Math||`` tab and drag one ``||math:pick random||`` block into the x-value of the ``||sprites:set item position to||``. Drag another into the y-value.  
+To make the cherry spawn randomly on the map, go to the ``||math:Math||`` tab and drag one ``||math:pick random||`` block into the x-value of ``||sprites:set item position to||``. Drag another into the y-value.  
 
 Change the values for the first ``||math:pick random||`` block to `0` and `160`. Change the values for the second ``||math:pick random||`` block to `0` and `120`.
 
 ```blocks
-namespace SpriteKind {
-    export const Item = SpriteKind.create();
-}
 let item: Sprite = null
 game.onUpdateInterval(500, function () {
-    item = sprites.create(sprites.food.smallCherries, SpriteKind.Item)   
+    item = sprites.create(sprites.food.smallCherries, SpriteKind.Food)   
     item.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
 })
 ```
@@ -170,9 +164,6 @@ We will add to the score in [Part Six: Picking Up Cherries](#part-six-picking-up
 The game simulator will automatically show the timer and score at the top of the screen.
 
 ```blocks
-namespace SpriteKind {
-    export const Item = SpriteKind.create();
-}
 let mySprite: Sprite = null
 game.splash("Cherry Pickr")
 scene.setTileMap(img`
@@ -194,9 +185,9 @@ info.setScore(0)
 
 ## Part Six: Picking Up Cherries
 
-The last task is to let our player to actually collect cherries. Go to ``||sprites:Sprites||`` and under the **Overlaps** category, drag out ``||sprites:on sprite of kind Player overlaps||``. Change the second ``||sprites:Player||`` kind to ``||sprites:Item||``. The block header should now say ``||sprites:on sprite of kind Player overlaps otherSprite of kind Item||``.
+The last task is to let our player to actually collect cherries. Go to ``||sprites:Sprites||`` and under the **Overlaps** category, drag out ``||sprites:on sprite of kind Player overlaps||``. Change the second ``||sprites:Player||`` kind to ``||sprites:Food||``. The block header should now say ``||sprites:on sprite of kind Player overlaps otherSprite of kind Food||``.
 
-This block will run every time a ``||sprites:Player||`` sprite overlaps an ``||sprites:Item||`` sprite.
+This block will run every time a ``||sprites:Player||`` sprite overlaps a ``||sprites:Food||`` sprite.
 
 ### Changing the Score
 
@@ -204,19 +195,16 @@ To change the score when the cherry is touched, go to the ``||info:Info||`` tab 
 
 ### Removing the Item
 
-To remove the cherry that the player picks up, go to ``||sprites:Sprites||`` in the Toolbox and, under **Lifecycle**, drag the ``||sprites:destroy||`` block into the ``||sprites:on sprite of kind Player overlaps||`` block.
+When this block runs, two new variables are created: ``||variables:sprite||`` and ``||variables:otherSprite||``. We need to remove ``||variables:otherSprite||`` from the game, which is the ``||sprites:Food||`` that collided with the ``||sprites:Player||``.
 
-When this block runs, two new variables are created: ``||variables:sprite||`` and ``||variables:otherSprite||``. We need to destroy ``||variables:otherSprite||``, which is the ``||sprites:Item||`` that collided with the ``||sprites:Player||``. To do so, drag the ``||variables:otherSprite||`` variable from the top of the block into the ``||sprites:destroy||`` block.
+To do so, go to ``||sprites:Sprites||`` in the Toolbox and, under **Lifecycle**, drag the ``||sprites:destroy||`` block into the ``||sprites:on sprite of kind Player overlaps||`` block. Then, drag the ``||variables:otherSprite||`` variable from the top of the block into the ``||sprites:destroy||`` block.
 
 You might notice that the ``||variables:mySprite||`` block is removed from the ``||sprites:destroy||`` block when you replace it with ``||variables:otherSprite||``. You can delete that block by dragging it to the Toolbox.
 
 ```blocks
-namespace SpriteKind {
-    export const Item = SpriteKind.create();
-}
 let item: Sprite = null
 let mySprite: Sprite = null
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Item, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     otherSprite.destroy()
 })
@@ -237,7 +225,7 @@ scene.cameraFollowSprite(mySprite)
 info.startCountdown(60)
 info.setScore(0)
 game.onUpdateInterval(500, function () {
-    item = sprites.create(sprites.food.smallCherries, SpriteKind.Item)
+    item = sprites.create(sprites.food.smallCherries, SpriteKind.Food)
     item.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
 })
 ```
@@ -248,6 +236,6 @@ And now we have a fully functioning game!
 
 ## ~hint
 
-The variables ``||variables:sprite||`` and ``||variables:otherSprite||`` are called _local variables_. They are created when the block for the collision runs, and they can only be used inside of that block. When that block runs, the ``||variables:sprite||`` variable holds the ``||sprites:Player||`` sprite involved in the collision, and the ``||variables:otherSprite||`` variable holds the ``||sprites:Item||`` sprite.
+The variables ``||variables:sprite||`` and ``||variables:otherSprite||`` are called _local variables_. They are created when the block for the collision runs, and they can only be used inside of that block. When that block runs, the ``||variables:sprite||`` variable holds the ``||sprites:Player||`` sprite involved in the collision, and the ``||variables:otherSprite||`` variable holds the ``||sprites:Food||`` sprite.
 
 ## ~
