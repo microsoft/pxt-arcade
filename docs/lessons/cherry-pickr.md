@@ -126,7 +126,7 @@ We want cherries to appear randomly on the screen every half a second. In order 
 
 Next we will define what a cherry is, by going to ``||sprites:Sprites||`` and dragging out the ``||sprites:set mySprite to||`` block inside the ``||game:on game update every||`` block.  
 
-Click the drop down and rename ``||variables:mySprite||`` to ``||variables:item||``. Click the gray square box to draw what you want your item to look like. Then click the drop down that says ``||sprites:Player||`` and change the kind ``||sprites:Food||``.
+Click the drop down and rename the variable to ``||variables:item||``. Click the gray square box to draw what you want your item to look like. Then click the drop down that says ``||sprites:Player||`` and change the kind ``||sprites:Food||``.
 
 ```blocks
 let item: Sprite = null
