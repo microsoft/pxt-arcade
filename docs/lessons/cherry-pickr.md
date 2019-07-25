@@ -126,26 +126,26 @@ We want cherries to appear randomly on the screen every half a second. In order 
 
 Next we will define what a cherry is, by going to ``||sprites:Sprites||`` and dragging out the ``||sprites:set mySprite to||`` block inside the ``||game:on game update every||`` block.  
 
-Click the drop down and rename the variable to ``||variables:item||``. Click the gray square box to draw what you want your item to look like. Then click the drop down that says ``||sprites:Player||`` and change the kind ``||sprites:Food||``.
+Click the drop down and rename the variable to ``||variables:cherry||``. Click the gray square box to draw what you want your item to look like. Then click the drop down that says ``||sprites:Player||`` and change the kind ``||sprites:Food||``.
 
 ```blocks
-let item: Sprite = null
+let cherry: Sprite = null
 game.onUpdateInterval(500, function () {
-    item = sprites.create(sprites.food.smallCherries, SpriteKind.Food)
+    cherry = sprites.create(sprites.food.smallCherries, SpriteKind.Food)
 })
 ```
 
-To spawn cherries on the screen, we need to set a random x and y coordinate. Go to the ``||sprites:Sprites||`` tab and drag the ``||sprites:set mySprite position to||`` inside the ``||sprites:on game update every||`` block. Change ``||variables:mySprite||`` to ``||variables:item||``.  
+To spawn cherries on the screen, we need to set a random x and y coordinate. Go to the ``||sprites:Sprites||`` tab and drag the ``||sprites:set mySprite position to||`` inside the ``||sprites:on game update every||`` block. Change ``||variables:mySprite||`` to ``||variables:cherry||``.  
 
 To make the cherry spawn randomly on the map, go to the ``||math:Math||`` tab and drag one ``||math:pick random||`` block into the x-value of ``||sprites:set item position to||``. Drag another into the y-value.  
 
 Change the values for the first ``||math:pick random||`` block to `0` and `160`. Change the values for the second ``||math:pick random||`` block to `0` and `120`.
 
 ```blocks
-let item: Sprite = null
+let cherry: Sprite = null
 game.onUpdateInterval(500, function () {
-    item = sprites.create(sprites.food.smallCherries, SpriteKind.Food)   
-    item.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
+    cherry = sprites.create(sprites.food.smallCherries, SpriteKind.Food)   
+    cherry.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
 })
 ```
 
@@ -185,7 +185,7 @@ info.setScore(0)
 
 ## Part Six: Picking Up Cherries
 
-The last task is to let our player to actually collect cherries. Go to ``||sprites:Sprites||`` and under the **Overlaps** category, drag out ``||sprites:on sprite of kind Player overlaps||``. Change the second ``||sprites:Player||`` kind to ``||sprites:Food||``. The block header should now say ``||sprites:on sprite of kind Player overlaps otherSprite of kind Food||``.
+The last task is to let our player to actually collect cherries. Go to ``||sprites:Sprites||`` and, from the **Overlaps** category, drag out ``||sprites:on sprite of kind Player overlaps||``. Change the second ``||sprites:Player||`` kind to ``||sprites:Food||``. The block header should now say ``||sprites:on sprite of kind Player overlaps otherSprite of kind Food||``.
 
 This block will run every time a ``||sprites:Player||`` sprite overlaps a ``||sprites:Food||`` sprite.
 
@@ -202,7 +202,7 @@ To do so, go to ``||sprites:Sprites||`` in the Toolbox and, under **Lifecycle**,
 You might notice that the ``||variables:mySprite||`` block is removed from the ``||sprites:destroy||`` block when you replace it with ``||variables:otherSprite||``. You can delete that block by dragging it to the Toolbox.
 
 ```blocks
-let item: Sprite = null
+let cherry: Sprite = null
 let mySprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
@@ -225,8 +225,8 @@ scene.cameraFollowSprite(mySprite)
 info.startCountdown(60)
 info.setScore(0)
 game.onUpdateInterval(500, function () {
-    item = sprites.create(sprites.food.smallCherries, SpriteKind.Food)
-    item.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
+    cherry = sprites.create(sprites.food.smallCherries, SpriteKind.Food)
+    cherry.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
 })
 ```
 
