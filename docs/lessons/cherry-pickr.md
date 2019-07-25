@@ -206,7 +206,7 @@ To change the score when the cherry is touched, go to the ``||info:Info||`` tab 
 
 To remove the cherry that the player picks up, go to ``||sprites:Sprites||`` in the Toolbox and, under **Lifecycle**, drag the ``||sprites:destroy||`` block into the ``||sprites:on sprite of kind Player overlaps||`` block.
 
-When this block runs, two new variables are created: ``||variables:sprite||`` and ``||variables:otherSprite||``. These special variables are called _local variables_, and they can only be used inside of this block. When this block runs, the ``||variables:sprite||`` variable holds the ``||sprites:Player||`` sprite involved in the collision, and the ``||variables:otherSprite||`` variable holds the ``||sprites:Item||`` sprite. We need to destroy ``||variables:otherSprite||``. To do so, drag the ``||variables:otherSprite||`` variable from the top of the block into the ``||sprites:destroy||`` block.
+When this block runs, two new variables are created: ``||variables:sprite||`` and ``||variables:otherSprite||``. We need to destroy ``||variables:otherSprite||``, which is the ``||sprites:Item||`` that collided with the ``||sprites:Player||``. To do so, drag the ``||variables:otherSprite||`` variable from the top of the block into the ``||sprites:destroy||`` block.
 
 You might notice that the ``||variables:mySprite||`` block is removed from the ``||sprites:destroy||`` block when you replace it with ``||variables:otherSprite||``. You can delete that block by dragging it to the Toolbox.
 
@@ -245,3 +245,9 @@ game.onUpdateInterval(500, function () {
 And now we have a fully functioning game!
 
 ![Working Game](/static/lessons/cherry-pickr/workinggame.gif)
+
+## ~hint
+
+The variables ``||variables:sprite||`` and ``||variables:otherSprite||`` are called _local variables_. They are created when the block for the collision runs, and they can only be used inside of that block. When that block runs, the ``||variables:sprite||`` variable holds the ``||sprites:Player||`` sprite involved in the collision, and the ``||variables:otherSprite||`` variable holds the ``||sprites:Item||`` sprite.
+
+## ~
