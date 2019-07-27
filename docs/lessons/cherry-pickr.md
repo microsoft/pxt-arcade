@@ -185,7 +185,7 @@ info.setScore(0)
 
 ## Part Six: Picking Up Cherries
 
-The last task is to let our player to actually collect cherries. Go to ``||sprites:Sprites||`` and, from the **Overlaps** category, drag out ``||sprites:on sprite of kind Player overlaps||``. Change the second ``||sprites:Player||`` kind to ``||sprites:Food||``. The block header should now say ``||sprites:on sprite of kind Player overlaps otherSprite of kind Food||``.
+The last task is to let our player to actually collect cherries. Go to ``||sprites:Sprites||`` and, from the **Overlaps** category, drag out ``||sprites:on sprite of kind Player overlaps||``. Change the second ``||sprites:Player||`` kind to ``||sprites:Food||``. The text for the block should now say ``||sprites:on sprite of kind Player overlaps otherSprite of kind Food||``.
 
 This block will run every time a ``||sprites:Player||`` sprite overlaps a ``||sprites:Food||`` sprite.
 
