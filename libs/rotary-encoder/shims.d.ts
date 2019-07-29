@@ -31,10 +31,9 @@ declare interface RotaryEncoder {
      * Get current encoder position.
      */
     //% blockNamespace="encoders"
-    //% blockId=rotaryencoderposition
-    //% property
+    //% blockId=rotaryencoderposition block="$encoder position"
     //% weight=79 blockGap=8 shim=RotaryEncoderMethods::position
-    position: int32;
+    position(): int32;
 }
 
 // Auto-generated. Do not edit. Really.
