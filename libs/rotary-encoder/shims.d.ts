@@ -10,7 +10,6 @@ declare namespace encoders {
     /**
      * Create a new rotary encoder connected to given pins
      */
-    //% blockId=inputCreateRotaryEncoder block="create rotary encoder with pins $pinA and B $pinB"
     //% weight=99 shim=encoders::createRotaryEncoder
     function createRotaryEncoder(pinA: DigitalInOutPin, pinB: DigitalInOutPin): RotaryEncoder;
 }
@@ -31,7 +30,7 @@ declare interface RotaryEncoder {
      * Get current encoder position.
      */
     //% blockNamespace="encoders"
-    //% blockId=rotaryencoderposition block="$encoder position"
+    //% blockId=rotaryencoderposition block="%this position"
     //% weight=79 blockGap=8 shim=RotaryEncoderMethods::position
     position(): int32;
 }
