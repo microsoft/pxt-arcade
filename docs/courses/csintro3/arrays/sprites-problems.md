@@ -42,10 +42,9 @@ The code snippet below can be used to create fireworks that fly up the screen.
 However, there is one problem: they don't explode!
 
 ```typescript
-enum SpriteKind {
-    Firework,
-    Projectile,
-    Particle
+namespace SpriteKind {
+    export const Firework = SpriteKind.create();
+    export const Particle = SpriteKind.create();
 }
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {

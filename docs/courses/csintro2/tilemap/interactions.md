@@ -19,12 +19,9 @@ In this activity, students will use:
 4. Copy the code below into your project and run it
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    GolfBall,
-    Hole
+namespace SpriteKind {
+    export const GolfBall = SpriteKind.create();
+    export const Hole = SpriteKind.create();
 }
 let golfBall: Dart = null
 scene.setTileMap(img`

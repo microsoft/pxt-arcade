@@ -1629,11 +1629,8 @@ class GolfPhysicsEngine extends ArcadePhysicsEngine {
 const physicsEngine = new GolfPhysicsEngine();
 game.currentScene().physicsEngine = physicsEngine;
 
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Goal,
+namespace SpriteKind {
+    export const Goal = SpriteKind.create();
 }
 
 let levelInProgress = false;

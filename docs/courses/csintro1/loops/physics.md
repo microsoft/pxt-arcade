@@ -31,11 +31,7 @@ A sprite's ``||sprites:vy||``, represents the sprite's velocity in the vertical 
 3. Notice how the behavior for the two sprites is similar, and how it is different
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let second: Sprite = null
 let first: Sprite = null
 first = sprites.create(img`
@@ -116,11 +112,7 @@ In @boardname@, a sprite's acceleration is defined in terms of **pixels per seco
 Below is a sprite with an acceleration applied. We set the sprite position to the bottom of the screen every 2 seconds in order to see how the velocity changes over time. We see the sprite has a greater velocity with each pass.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -155,11 +147,7 @@ mySprite.destroy()
 3. Notice how the behavior for the two sprites is similar, and how it is different
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
+
 let second: Sprite = null
 let first: Sprite = null
 first = sprites.createProjectileFromSide(img`
@@ -227,12 +215,9 @@ In total, this loop should include 4 blocks - the generation of a random ``||var
 ### ~
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Balloon,
-    Splash
+namespace SpriteKind {
+    export const Balloon = SpriteKind.create();
+    export const Splash = SpriteKind.create();
 }
 let projectile: Sprite = null
 let yDirection = 0

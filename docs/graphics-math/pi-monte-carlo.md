@@ -58,9 +58,9 @@ The amount of dots that fit in the circle is shown as the game score. Anytime, b
 You're notified that the simulation is complete in the [onLifeZero](/reference/info/on-life-zero) event. The last dot score is shown and the final approximation value is shown in a text dialog.
 
 ```blocks
-enum SpriteKind {
-    Square,
-    Circle
+namespace SpriteKind {
+    export const Square = SpriteKind.create();
+    export const Circle = SpriteKind.create();
 }
 let sqImage: Image = null
 let cirImage: Image = null

@@ -39,11 +39,8 @@ that will usually mean the code is to remain **unmodified**, not that it should 
 ![Animation of current case study game](/static/courses/csintro3/structure/current-case-study.gif)
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Asteroid
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
 }
 
 /**
@@ -134,13 +131,10 @@ overlaps between different sprites
 * [ ] Added status namespace, which will contain things related to the state of the game
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Asteroid,
-    PowerUp,
-    Laser
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
+    export const PowerUp = SpriteKind.create();
+    export const Laser = SpriteKind.create();
 }
 
 enum PowerUpType {

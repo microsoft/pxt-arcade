@@ -94,9 +94,8 @@ this is used to identify the ``||sprites:sprite||`` as a ``Ghost``
 that will not interact with other ``||sprites:sprites||``
 
 ```typescript
-enum SpriteKind {
-    Star,
-    Projectile
+namespace SpriteKind {
+    export const Star = SpriteKind.create();
 }
 
 game.onUpdate(function () {
@@ -157,9 +156,8 @@ as it will be run each time the game updates and the ``||sprites:Sprite||`` is m
 3. Run the code and verify it behaves as expected
 
 ```typescript
-enum SpriteKind {
-    Asteroid,
-    Projectile
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
 }
 
 let mySprite: Sprite = sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Asteroid);
@@ -239,14 +237,11 @@ Use ``||sprites:sprite.setFlag(SpriteFlag.StayInScreen, true)||`` in the ``ship`
 ### Solution
 
 ```typescript-ignore
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Asteroid,
-    PowerUp,
-    Laser,
-    Star
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
+    export const PowerUp = SpriteKind.create();
+    export const Laser = SpriteKind.create();
+    export const Star = SpriteKind.create();
 }
 
 /**

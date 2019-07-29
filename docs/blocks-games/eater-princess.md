@@ -3,12 +3,8 @@
 The Princess is hungry, feed her! But watch out for death pill.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-    Taco,
-    Food,
-    Projectile
+namespace SpriteKind {
+    export const Taco = SpriteKind.create();
 }
 let deathpill: Sprite = null
 let taco: Sprite = null

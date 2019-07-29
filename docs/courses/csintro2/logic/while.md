@@ -56,13 +56,10 @@ Example: "We want to run this code until the player guesses it correctly" is the
 2. Create the sample code and run the code
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Fireball,
-    Fire,
-    FireSource
+namespace SpriteKind {
+    export const Fireball = SpriteKind.create();
+    export const Fire = SpriteKind.create();
+    export const FireSource = SpriteKind.create();
 }
 let fireSource: Sprite = null
 let mySprite: Sprite = null

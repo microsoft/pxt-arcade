@@ -28,6 +28,8 @@
         "libs/serial",
         "libs/corgio",
         "libs/darts",
+        "libs/keyboard",
+        "libs/mouse",
         "libs/hw",
         "libs/hw---stm32f401",
         "libs/hw---samd51",
@@ -56,7 +58,11 @@
         "libs/jacdac-game",
         "libs/power",
         "libs/controller",
-        "libs/edge-connector"
+        "libs/edge-connector",
+        "libs/esp32spi",
+        "libs/mqtt",
+        "libs/net",
+        "libs/azureiot"
     ],
     "compile": {
         "useUF2": true,

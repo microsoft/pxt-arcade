@@ -28,11 +28,7 @@ Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into 
 This will create a new character in the game -- but there is no image to represent this character yet.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-    Food
-}
+
 let mySprite: Sprite = null
 scene.setBackgroundColor(7)
 // @highlight
@@ -69,11 +65,7 @@ Find ``||controller:move mySprite with buttons||`` in ``||controller:Controller|
 This block allows the person playing the game to move the ``||sprites:Sprite||`` with the directional buttons; try pressing the different buttons to move your character around the screen!
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-    Food
-}
+
 let mySprite: Sprite = null
 scene.setBackgroundColor(7)
 mySprite = sprites.create(img`
@@ -105,11 +97,7 @@ Find the ``||variables:set mySprite2 to||`` block in ``||sprites:Sprites||`` and
 This will create **another** ``||sprites:Sprite||``, but one that isn't controlled by the player.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-    Food
-}
+
 let mySprite: Sprite = null
 let pizza: Sprite = null
 scene.setBackgroundColor(7)
@@ -166,11 +154,7 @@ Find ``||info:start countdown 10s||`` in ``||info:Info||``. Drag it down to bott
 This will start a countdown that will soon end the game; we'll need to add a way to win!
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-    Food
-}
+
 let pizza: Sprite = null
 let mySprite: Sprite = null
 scene.setBackgroundColor(7)
@@ -222,11 +206,7 @@ Find the ``||sprites:on sprite overlaps otherSprite||`` block in ``||sprites:Spr
 This will create an **event** that occurs when a ``||sprites:Player Sprite||`` touches and ``||sprites:Food Sprite||``. Events allow you to set blocks to run whenever something occurs; for example, ``||loops:on start||`` is an event that lets you set code to run as soon as the game is started!
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-    Food
-}
+
 // @highlight
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
 	
@@ -238,12 +218,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 When an overlap is detected, the player should have a point added to their score. Find the ``||info:change score by||`` block in ``||info:Info||`` and add it to the ``||sprites:on ... overlap ...||`` event.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-    Food,
-    Projectile
-}
+
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     // @highlight
     info.changeScoreBy(1)
@@ -258,12 +233,7 @@ Using the ``||math:pick random||`` block, we can generate an ``x`` position from
 The screen is 160 pixels wide by 120 pixels high and we want to have the pizza away from the side so that it doesn't get clipped. 
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-    Food,
-    Projectile
-}
+
 let pizza: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
@@ -277,12 +247,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 One final thing for the overlap event, the countdown should also restart. Drag another ``||info:start countdown||`` into the ``||sprites: on ... overlap ...||`` event. Set the countdown to `3` seconds.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-    Food,
-    Projectile
-}
+
 let pizza: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)

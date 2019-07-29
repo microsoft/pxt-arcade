@@ -144,9 +144,8 @@ so that the extra ``||sprites:sprites||`` get created over the course of 2.5 sec
 ### Solution
 
 ```typescript
-enum SpriteKind {
-    Asteroid,
-    Projectile
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
 }
 
 namespace asteroids {

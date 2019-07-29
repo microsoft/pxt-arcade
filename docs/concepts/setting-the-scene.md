@@ -121,12 +121,7 @@ scene.setTile(5, img`
 Find ``||variables:set mySprite to||`` and drag it into ``||loops:on start||`` to create a ``||sprites:Sprite||``. Open the image editor for the ``||sprites:Sprite||`` and create an image to represent it on the screen.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let mySprite: Sprite = null
 scene.setTileMap(img`
 . . . . . . . . . . 
@@ -183,12 +178,7 @@ Find ``||controller:move mySprite with buttons||`` and drag it into ``||loops:on
 This will let the player move the character around the map that is displayed on the screen. However, there is one issue; the player can move straight through the beautiful tiles we designed! This can be fixed by changing the tile to be a ``||scene:Wall||``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let mySprite: Sprite = null
 scene.setTileMap(img`
 . . . . . . . . . . 
@@ -246,12 +236,7 @@ In the ``||scene:set tile to with wall||`` click on ``||scene:off||`` to turn it
 This will set the tile you created to be a ``||scene:Wall||``, so that the player cannot move through it.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 let mySprite: Sprite = null
 scene.setTileMap(img`
 . . . . . . . . . . 

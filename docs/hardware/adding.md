@@ -1,14 +1,15 @@
 # Creating your own Arcade hardware
 
-## ~ hint
+## ~ alert
 
-**Warning**: this document is still preliminary and changes to it will occur.
+### Warning
+
+This document is still preliminary and changes to it will occur.
 It's fine to build prototypes according to the information presented for experimention only,
 but do not make production hardware.  **If you want to produce Arcade-compatible
 boards other than hobby prototypes, please contact us at arcadehdw@microsoft.com.**
 
 ## ~
-
 
 ## Overview #overview
 
@@ -143,8 +144,9 @@ the following pin connections.
 | D5       | D5       | PA3     |
 | D6       | D6       | PA4     |
 | D7       | D7       | PA5     |
+<br/>
 
-The CS pin of the screen can be connected anywhere (defined in bootloader as `DISPLAY_CS`)
+The CS pin of the screen can be connected anywhere (defined in bootloader as `DISPLAY_CS`).
 The RS pin is also currently handled in software, so could be anywhere, 
 but it's recommended to connect it to A0 (defined in bootloader as `DISPLAY_DC`).
 
@@ -177,7 +179,7 @@ One function of the `Menu` button is to exit low-power sleep mode. For an MCU wi
 
 Arcade boards should have 'soft power off' rather than a physical on-off switch, see [power management](#power).
 
-![Button connection](/static/hardware/buttons.png)
+![Button connections](/static/hardware/buttons.png)
 
 
 ### Audio #audio
@@ -196,10 +198,14 @@ to clamp the Vbus power line and thereby limit over-voltage transients during US
 
 ### Multi-player communications #jacdac
 
-## ~ hint
-**Warning**: Multi-player communications is under development now and it may change.
+### ~ alert
+
+#### Warning
+
+Multi-player communications is under development now and it may change.
 It's fine to build prototypes, but before any production hardware please contact us at arcadehdw@microsoft.com.
-## ~
+
+### ~
 
 Multi-player communications between Arcade devices is based on [JACDAC](https://jacdac.org), a protocol for networking over a single-wire connection. It lets you play multiplayer games by connecting Arcades together with standard stereo audio cables. More than two arcades can be connected using commonly available headphone splitters.
 

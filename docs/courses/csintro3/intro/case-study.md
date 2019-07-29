@@ -33,9 +33,8 @@ up a larger game, not as a challenge for each individual topic.
 ## Initial Code
 
 ```typescript
-enum SpriteKind {
-    Asteroid,
-    Projectile
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
 }
 
 namespace asteroids {
@@ -69,14 +68,10 @@ you will produce a full game similar to the one below.
 ![Animation of final space asteroid game](/static/courses/csintro3/intro/case-study-final-game.gif)
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Asteroid,
-    PowerUp,
-    Laser,
-    EnemyLaser
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
+    export const PowerUp = SpriteKind.create();
+    export const Laser = SpriteKind.create();
 }
 
 enum PowerUpType {
