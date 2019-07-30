@@ -139,7 +139,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 To get started with our speed variables, drag a ``||variables:set var to||`` and drag it into start. Rename the variable to speed and set it to ``40``. 
 
 ```blocks
-let Speed = 40
+let speed = 40
 ```
 
 ### ~hint
@@ -149,9 +149,9 @@ let Speed = 40
 We can increase the speed at which projectiles fall. To do this go to ``||game: on game update every ms||`` and drag it into workspace. Then change the number to ``2000 ms``. Go to ``||variables:Variables||`` and select ``||variables:change by||`` and drag it into ``||game:on game update||``. Select the drop down and choose the speed variable. Now every two seconds, the projectile speed will increment by 1.
 
 ```blocks
-let Speed = 40
+let speed = 40
 game.onUpdateInterval(2000, function () {
-    Speed += 1
+    speed += 1
 })
 ```
 ### ~
@@ -185,6 +185,7 @@ Congrats, now we can spawn projectiles!
 ![Spawning Projectiles](/static/lessons/dance-party/spawning-projectiles.gif)
 
 ```blocks
+let speed = 40
 game.onUpdateInterval(500, function () {
     let lane = Math.randomRange(1, 4)
     if (lane == 1) {
@@ -207,7 +208,7 @@ game.onUpdateInterval(500, function () {
             . . . . . . . . . . . . . . . .
             . . . . . . . . . . . . . . . .
         `, SpriteKind.Projectile)
-        left.setVelocity(0, Speed)
+        left.setVelocity(0, speed)
         left.setPosition(30, 8)
     } else if (lane == 2) {
         let up: Sprite = null
@@ -229,7 +230,7 @@ game.onUpdateInterval(500, function () {
             . . . . . . . . . . . . . . . .
             . . . . . . . . . . . . . . . .
         `, SpriteKind.Projectile)
-        up.setVelocity(0, Speed)
+        up.setVelocity(0, speed)
         up.setPosition(60, 8)
     } else if (lane == 3) {
         let down: Sprite = null
@@ -251,7 +252,7 @@ game.onUpdateInterval(500, function () {
             . . . . . . . . . . . . . . . .
             . . . . . . . . . . . . . . . .
         `, SpriteKind.Projectile)
-        down.setVelocity(0, Speed)
+        down.setVelocity(0, speed)
         down.setPosition(100, 8)
     } else {
         let right: Sprite = null
@@ -273,7 +274,7 @@ game.onUpdateInterval(500, function () {
             . . . . . . . . . . . . . . . .
             . . . . . . . . . . . . . . . .
         `, SpriteKind.Projectile)
-        right.setVelocity(0, Speed)
+        right.setVelocity(0, speed)
         right.setPosition(130, 8)
     }
 })
@@ -412,7 +413,7 @@ steve = sprites.create(img`
 steve.setPosition(80, 100)
 info.setScore(0)
 info.setLife(5)
-let Speed = 40
+let speed = 40
 game.onUpdateInterval(500, function () {
     lane = Math.randomRange(1, 4)
     if (lane == 1) {
@@ -434,7 +435,7 @@ game.onUpdateInterval(500, function () {
             . . . . . . . . . . . . . . . .
             . . . . . . . . . . . . . . . .
         `, SpriteKind.Projectile)
-        left.setVelocity(0, Speed)
+        left.setVelocity(0, speed)
         left.setPosition(30, 8)
     } else if (lane == 2) {
         up = sprites.create(img`
@@ -455,7 +456,7 @@ game.onUpdateInterval(500, function () {
             . . . . . . . . . . . . . . . .
             . . . . . . . . . . . . . . . .
         `, SpriteKind.Projectile)
-        up.setVelocity(0, Speed)
+        up.setVelocity(0, speed)
         up.setPosition(60, 8)
     } else if (lane == 3) {
         down = sprites.create(img`
@@ -476,7 +477,7 @@ game.onUpdateInterval(500, function () {
             . . . . . . . . . . . . . . . .
             . . . . . . . . . . . . . . . .
         `, SpriteKind.Projectile)
-        down.setVelocity(0, Speed)
+        down.setVelocity(0, speed)
         down.setPosition(100, 8)
     } else {
         right = sprites.create(img`
@@ -497,12 +498,12 @@ game.onUpdateInterval(500, function () {
             . . . . . . . . . . . . . . . .
             . . . . . . . . . . . . . . . .
         `, SpriteKind.Projectile)
-        right.setVelocity(0, Speed)
+        right.setVelocity(0, speed)
         right.setPosition(130, 8)
     }
 })
 game.onUpdateInterval(2000, function () {
-    Speed += 1
+    speed += 1
 })
 ```
 
