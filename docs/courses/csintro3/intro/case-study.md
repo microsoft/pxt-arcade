@@ -35,6 +35,7 @@ up a larger game, not as a challenge for each individual topic.
 ```typescript
 namespace SpriteKind {
     export const Asteroid = SpriteKind.create();
+    export const EnemyLaser = SpriteKind.create();
 }
 
 namespace asteroids {
@@ -70,6 +71,7 @@ you will produce a full game similar to the one below.
 ```typescript
 namespace SpriteKind {
     export const Asteroid = SpriteKind.create();
+    export const EnemyLaser = SpriteKind.create();
     export const PowerUp = SpriteKind.create();
     export const Laser = SpriteKind.create();
 }
