@@ -108,7 +108,7 @@ Use the program to determine which header those buttons will go to.
 
 If you want to customize the menu displayed on the Pi, 
 
-* open the program https://makecode.com/_CMgeUJ0Jp0KY
+* compile the [menu program](/hardware/raspberry-pi/menu) 
 * click ``|Download|`` and select the **Pi 0** hardware profile
 * test your menu changes in the simulator
 * make sure that your project is named **.menu**
