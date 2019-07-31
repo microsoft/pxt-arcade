@@ -373,4 +373,4 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Complete @fullscreen
 
-Congratulations, you have completed your game! Now try and make your own levels!
+Congratulations, you have completed your game! Now try and make more levels!
