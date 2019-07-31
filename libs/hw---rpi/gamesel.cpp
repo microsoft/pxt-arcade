@@ -4,6 +4,7 @@
 #include <dirent.h>
 #include <sys/stat.h>
 #include <stdio.h>
+#include <unistd.h>
 
 namespace control {
 
@@ -39,6 +40,17 @@ void runProgram(String prog) {
     initialArgv[0] = p;
     initialArgv[1] = (char*)"--run";
     initialArgv[2] = 0;
+    target_reset();
+}
+
+/**
+ * Deletes a user program
+ */
+//%
+void deleteProgram(String prog) {
+    char *p;
+    asprintf(&p, "%s/%s.elf", PROGDIR, prog->getUTF8Data());
+    unlink(p);
     target_reset();
 }
 
