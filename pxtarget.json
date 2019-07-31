@@ -60,7 +60,7 @@
         "libs/power",
         "libs/controller",
         "libs/edge-connector",
-        "libs/esp32spi",
+        "libs/esp32",
         "libs/mqtt",
         "libs/net",
         "libs/azureiot",
