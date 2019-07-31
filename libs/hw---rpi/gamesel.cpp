@@ -51,7 +51,6 @@ void deleteProgram(String prog) {
     char *p;
     asprintf(&p, "%s/%s.elf", PROGDIR, prog->getUTF8Data());
     unlink(p);
-    target_reset();
 }
 
 } // namespace control
