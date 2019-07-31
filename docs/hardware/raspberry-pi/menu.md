@@ -65,11 +65,11 @@ function showMenu() {
 
     game.onPaint(function () {
         screen.fillRect(0, 0, 160, 20, 12)
-        screen.print("create your game", 60, 3, 1, image.font5)
-        screen.print("at makecode.com!", 60, 12, 1, image.font5)
+        //screen.print("more games", 60, 3, 1, image.font5)
+        //screen.print("at makecode.com!", 60, 12, 1, image.font5)
         screen.drawTransparentImage(logo, 4, 4)
         for (let i = 0; i < 9; ++i) {
-            let e = menuelts[i + offset] || ""
+            let e = menuelts[i + offset] || "";
             e = e.split('_').join(' ')
             e = e.split('-').join(' ')
             let y = 25 + i * 11
