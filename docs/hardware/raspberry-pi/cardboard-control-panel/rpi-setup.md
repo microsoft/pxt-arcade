@@ -103,3 +103,13 @@ Use the program to determine which header those buttons will go to.
 
 - [ ] pressing EXIT exits the current game and goes back to the selection screen.
 - [ ] pressing MENU will pop up the game menu
+
+### Update or customize the menu
+
+If you want to customize the menu displayed on the Pi, 
+
+* open the program https://makecode.com/_CMgeUJ0Jp0KY
+* click ``|Download|`` and select the **Pi 0** hardware profile
+* test your menu changes in the simulator
+* make sure that your project is named **.menu**
+* **Compile** and drop the menu into your ARCADE drive after connecting your Pi to the computer. 
