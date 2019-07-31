@@ -233,7 +233,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 9 @fullscreen
 
-When the sprite hits the lunar surface it gets destroyed. So from ``||scene:Scene||`` grab a ``||scene: on sprite of kind Player hits wall||`` and place it in the workspace. Make sure the color is the same as the lunar surface, white. From ``||sprites:Sprite||`` grab a ``||sprites:destroy sprite||``. Change the sprite to ``||variables:lander||`` and click on the **(+)** symbol. Set the effect to ``fire`` and the time to ``500 ms``. From ``||game:Game||`` grab a ``||game:game over lose||`` and click the **(+)** symbol and set the effect to ``dissolve``.
+When the sprite hits the lunar surface it gets destroyed. So from ``||scene:Scene||`` grab a ``||scene: on sprite of kind Player hits wall||`` and place it in the workspace. Make sure the color is the same as the lunar surface, white. From ``||sprites:Sprite||`` grab a ``||sprites:destroy sprite||``. Change the sprite to ``||variables:lander||`` and click on the **(+)** symbol. Set the effect to ``fire`` and the time to ``500`` ms. From ``||game:Game||`` grab a ``||game:game over lose||`` and click the **(+)** symbol and set the effect to ``dissolve``.
 
 ```blocks
 let lander: Sprite = null
@@ -257,7 +257,7 @@ scene.onHitTile(SpriteKind.Player, 4, function (sprite) {
 
 ## Step 11 @fullscreen
 
-Find ``||game:game over||`` in ``||game:Game||``, and drag it into the first section of the ``||logic:if then ... else||`` statement. Switch the toggle to **Win**, then click the **(+)** sign and select ``star field``. Then, find ``||sprites:destroy sprite||`` in ``||sprites:Sprites||``, drag it into the ``||logic:else||``, and switch ``||variables:mySprite||`` to ``||variables:Lander||``. Click the **(+)** sign and choose the ``fire`` effect and 500 ms. Finally, grab another ``||game:game over||`` and place it after the ``||sprites:destroy sprite||`` block. Click the **(+)** sign and set the effect to ``dissolve``.
+Find ``||game:game over||`` in ``||game:Game||``, and drag it into the first section of the ``||logic:if then ... else||`` statement. Switch the toggle to **Win**, then click the **(+)** sign and select ``star field``. Then, find ``||sprites:destroy sprite||`` in ``||sprites:Sprites||``, drag it into the ``||logic:else||``, and switch ``||variables:mySprite||`` to ``||variables:Lander||``. Click the **(+)** sign and choose the ``fire`` effect and ``500`` ms. Finally, grab another ``||game:game over||`` and place it after the ``||sprites:destroy sprite||`` block. Click the **(+)** sign and set the effect to ``dissolve``.
 
 ```blocks
 let lander: Sprite = null
