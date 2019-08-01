@@ -1,3 +1,6 @@
 {
-    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/edge-connector"
+    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/edge-connector",
+    "requiredCategories": [
+        "pins"
+    ]
 }

@@ -1,3 +1,6 @@
 {
-    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/feather"
+    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/feather",
+    "requiredCategories": [
+        "pins"
+    ]
 }
