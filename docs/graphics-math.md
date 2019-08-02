@@ -15,15 +15,9 @@ Try computer graphics methods and visual math concepts as Arcade games.
         "largeImageUrl": "/static/graphics-math/fireworks.gif"
     },
     {
-        "name": "Bresenham Circles",
-        "description": "Draw circles using the Bresenham algorithm",
-        "url": "/graphics-math/bresenham-circle",
-        "imageUrl": "/static/graphics-math/bresenham-circle.png",
-        "largeImageUrl": "/static/graphics-math/bresenham-circle.gif"
-    },
-    {
         "name": "Game of Life",
         "description": "Enjoy watching a rainbow variant of the famous zero-player game",
+        "cardType": "codeExample",
         "url": "/graphics-math/game-of-life",
         "imageUrl": "/static/graphics-math/game-of-life.png",
         "largeImageUrl": "/static/graphics-math/game-of-life.gif"
@@ -31,9 +25,25 @@ Try computer graphics methods and visual math concepts as Arcade games.
     {
         "name": "Paint Brush",
         "description": "Generates random 'art' by drawing across the screen",
+        "cardType": "codeExample",
         "url": "/graphics-math/paint-brush",
         "imageUrl": "/static/graphics-math/paint-brush.png",
         "largeImageUrl": "/static/graphics-math/paint-brush.gif"
+    },
+    {
+        "name": "Animated Sand",
+        "description": "Sand dots moving accross the screen, ported from Adafruit Animated LED Sand",
+        "cardType": "codeExample",
+        "url": "/graphics-math/animated-sand",
+        "imageUrl": "/static/graphics-math/animated-sand.png",
+        "largeImageUrl": "/static/graphics-math/animated-sand.gif"
+    },
+    {
+        "name": "Bresenham Circles",
+        "description": "Draw circles using the Bresenham algorithm",
+        "url": "/graphics-math/bresenham-circle",
+        "imageUrl": "/static/graphics-math/bresenham-circle.png",
+        "largeImageUrl": "/static/graphics-math/bresenham-circle.gif"
     }
 ]
 ```
