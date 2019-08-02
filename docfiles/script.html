@@ -136,24 +136,41 @@
 	</div>
 
 	<script>
+		function isIFrame() {
+			try {
+				return window && window.self !== window.top;
+			} catch (e) {
+				return true;
+			}
+		}
+
 		var editorEmbedURL = "/@versionsuff@#sandbox:@id@";
 		var gameEmbedURL = "/@versionsuff@--run?fullscreen=1&nofooter=1&id=@id@";
+		var editorOpenUrl = "/@versionsuff@#pub:@id@";
 		var showCodeButton = document.getElementById("show-code-button");
 		var frame = document.getElementById("embed-frame");
 
-		var isGame = true;
-
-		showCodeButton.addEventListener("click", function() {
-			if (isGame) {
-				frame.setAttribute("src", editorEmbedURL);
-				showCodeButton.textContent = "Show Game";
-			}
-			else {
-				frame.setAttribute("src", gameEmbedURL);
-				showCodeButton.textContent = "Show Code";
-			}
-			isGame = !isGame;
-		});
+		if (isIFrame()) {
+			// load readonly editor when hosted in some kind of iframe
+			var isGame = true;
+			showCodeButton.addEventListener("click", function() {
+				if (isGame) {
+					frame.setAttribute("src", editorEmbedURL);
+					showCodeButton.textContent = "Show Game";
+				}
+				else {
+					frame.setAttribute("src", gameEmbedURL);
+					showCodeButton.textContent = "Show Code";
+				}
+				isGame = !isGame;
+			});
+		} else {
+			// go straight into the editor
+			showCodeButton.innerText = "Edit this game";
+			showCodeButton.addEventListener("click", function() {
+				window.location.href = editorOpenUrl;
+			});
+		}
 	</script>
 
 	<!-- @include tracking.html -->
