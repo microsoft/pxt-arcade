@@ -1,7 +1,6 @@
 # Animated sand
 
-This is a port of the [Animated LED Sand](https://learn.adafruit.com/animated-led-sand/code)
-sample from Adafruit.
+This a MakeCode version of the [Animated LED Sand](https://learn.adafruit.com/animated-led-sand/code) project example from Adafruit. The program reads the acceleration in the `X` and `Y` dimensions to shift "sand" on the screen. It creates an effect where grains of sand slide across the screen in the direction of tilt.
 
 ```typescript
 // Animated LED sand ported from
