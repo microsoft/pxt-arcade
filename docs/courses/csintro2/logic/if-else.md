@@ -92,7 +92,6 @@ For each example below,
 [Example #1a](https://makecode.com/_HXMRAzYY4YkU)
 
 ```blocks
-
 let mySprite: Sprite = null
 let randomPick = 0
 function generate() {
@@ -138,7 +137,6 @@ generate()
 [Example #1b](https://makecode.com/_LigLWHR00d74)
 
 ```blocks
-
 let mySprite: Sprite = null
 let randomPick = 0
 function generate() {
@@ -190,7 +188,6 @@ generate()
 [Example #1c](https://makecode.com/_FDoAgwhKdh1X)
 
 ```blocks
-
 let mySprite: Sprite = null
 let randomPick = 0
 function generate() {

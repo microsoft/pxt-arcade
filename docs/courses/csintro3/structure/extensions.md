@@ -24,7 +24,6 @@ For example, ``||corgio:corgio.create||`` can be used to create a new ``||corgio
 
 ```blocks
 
-
 let myCorg: Corgio = corgio.create(SpriteKind.Player);
 ```
 
@@ -57,7 +56,6 @@ it so the ``||corgio:Corgio||`` can move left and right across the screen.
 behavior of the ``||corgio:Corgio||``
 
 ```blocks
-
 
 let myCorg: Corgio = corgio.create(SpriteKind.Player);
 myCorg.horizontalMovement();

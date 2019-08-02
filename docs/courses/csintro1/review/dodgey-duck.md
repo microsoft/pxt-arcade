@@ -16,7 +16,6 @@ Additionally, note that this projectile will move faster as the game moves on: e
 
 ```blocks
 
-
 let mySprite: Sprite = null
 let projectile: Sprite = null
 mySprite = sprites.create(img`

@@ -254,7 +254,6 @@ In this example, the tiles are changed to correspond to images with letters on t
 [NewHome project](https://makecode.com/_2X5PdkLjp5p5)
 
 ```blocks
-
 let HomeOwner: Sprite = null
 HomeOwner = sprites.create(img`
 . . . . . . . . . . . . . . . . 

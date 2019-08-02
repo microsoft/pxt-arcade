@@ -13,7 +13,6 @@ This allows you to easily create things like asteroids that move across the scre
 Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``, and drag it into the ``||loops:on start||``. Open the image editor for ``||variables:mySprite||``, and select or create an image of a skeleton.
 
 ```blocks
-
 let mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . . . . . . . . . .
@@ -49,7 +48,6 @@ Find ``||sprites:projectile from mySprite||`` in ``||sprites:Sprites||``, and dr
 This will create a ``||sprites:Sprite||`` that starts in the same location as ``||sprites:mySprite||``, no matter where it is on the screen.
 
 ```blocks
-
 let mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . . . . . . . . . .
@@ -101,7 +99,6 @@ let projectile = sprites.createProjectileFromSprite(img`
 Open the image editor for ``||variables:projectile||``, and draw an image of a bone.
 
 ```blocks
-
 let mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . . . . . . . . . .
@@ -153,7 +150,6 @@ let projectile = sprites.createProjectileFromSprite(img`
 In ``||sprites:projectile||``, change ``||sprites:vy||`` from 100 to -15, so that it moves **upwards** instead of **downwards**.
 
 ```blocks
-
 let mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . . . . . . . . . .
@@ -205,7 +201,6 @@ let projectile = sprites.createProjectileFromSprite(img`
 In ``||sprites:projectile||``, set ``||sprites:vx||`` to 50. Run the game, and notice that the ``||variables:projectile||`` now moves to the **right** as well.
 
 ```blocks
-
 let mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . . . . . . . . . .
@@ -259,7 +254,6 @@ Find ``||controller:on A button pressed||`` in ``||controller:Controller||``, an
 This will create an event that occurs whenever the person playing the game presses the ``||controller:A||`` button. Whenever that event occurs, ``||variables:mySprite||`` will 'throw' a new bone up and to the right.
 
 ```blocks
-
 let mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . . . . . . . . . .

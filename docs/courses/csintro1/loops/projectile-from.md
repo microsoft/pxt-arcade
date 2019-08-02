@@ -38,7 +38,6 @@ ball = sprites.createProjectileFromSprite(img`
 3. Save the code for the task (name it "Throw Ball") 
 
 ```blocks
-
 let mySprite: Sprite = null
 let ball: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -98,7 +97,6 @@ We can use projectiles to create an animation. The following examples build a pr
 ### Example #2a: Cloud projectile
 
 ```blocks
-
 let cloud: Sprite = null
 cloud = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
@@ -127,7 +125,6 @@ There's not much to this code; it spawns a cloud, which slowly moves across the 
 Review the code carefully for the use of ``||sprites:ghost on||`` and ``||sprites:projectile from sprite||`` for the raindrop projectiles. 
 
 ```blocks
-
 
 let raindrop: Sprite = null
 let cloud: Sprite = null
@@ -186,7 +183,6 @@ raindrop.x += Math.randomRange(1, 14)
 ```
 
 ```blocks
-
 
 let raindrop: Sprite = null
 let cloud: Sprite = null

@@ -3,7 +3,6 @@
 Jump to avoid the trees!
 
 ```blocks
-
 enum ActionKind {
     Walking,
     Idle,

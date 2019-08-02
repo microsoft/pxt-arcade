@@ -3,7 +3,6 @@
 An example program that uses blocks and built-in images.
 
 ```blocks
-
 let asteroids: Image[] = []
 let ship: Sprite = null
 let projectile: Sprite = null

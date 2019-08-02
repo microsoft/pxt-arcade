@@ -17,7 +17,6 @@ Flowers make everyone around them happier, especially the bees who get nector fr
 Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``, and draw a flower. Also, drag in a ``||scene:set background color to||`` and choose ``light blue``.
 
 ```blocks
-
 let mySprite: Sprite = null
 scene.setBackgroundColor(9)
 mySprite = sprites.create(img`
@@ -45,7 +44,6 @@ mySprite = sprites.create(img`
 Find in ``||game:on update every 500 ms||`` and ``||game:Game||``, and drag it into the workspace. Set the time to ``1000 ms``.
 
 ```blocks
-
 let mySprite: Sprite = null
 scene.setBackgroundColor(9)
 mySprite = sprites.create(img`
@@ -76,7 +74,6 @@ game.onUpdateInterval(1000, function () {
 Find ``||sprites:set projectile to projectile from mySprite||`` in ``||sprites:Sprites||``. Pull it out and put it into the ``||game:on game update every 1000 ms||``.
 
 ```blocks
-
 let mySprite: Sprite = null
 scene.setBackgroundColor(9)
 mySprite = sprites.create(img`
@@ -124,7 +121,6 @@ game.onUpdateInterval(1000, function () {
 Click on the grey box in ``||sprites:projectile||`` and make a nice little bee.
 
 ```blocks
-
 let mySprite: Sprite = null
 scene.setBackgroundColor(9)
 mySprite = sprites.create(img`
@@ -172,7 +168,6 @@ game.onUpdateInterval(1000, function () {
 Go get a ``||Math:pick random 0 to 10||``. Place it in the ``||sprites:vx||`` slot of ``||sprites:projectile||``. Change the ``0`` to ``-25`` and the ``10`` to ``25``. 
 
 ```blocks
-
 let mySprite: Sprite = null
 scene.setBackgroundColor(9)
 mySprite = sprites.create(img`
@@ -220,7 +215,6 @@ game.onUpdateInterval(1000, function () {
 Duplicate the ``||Math:pick random -25 to 25||`` block and place it in the ``||sprites:vy||`` slot of ``||sprites:projectile||``.
 
 ```blocks
-
 let mySprite: Sprite = null
 scene.setBackgroundColor(9)
 mySprite = sprites.create(img`
@@ -270,7 +264,6 @@ Find the ``||sprites:set mySprite x to 0||`` in ``||sprites:Sprites||``, place i
 ![Adding life span](/static/tutorials/happy-flower/life-span.gif)
 
 ```blocks
-
 let projectile: Sprite = null
 let mySprite: Sprite = null
 scene.setBackgroundColor(9)
@@ -320,7 +313,6 @@ game.onUpdateInterval(1000, function () {
 Get an ``||logic:if then||`` and put it after the ``||sprites:lifespan||``. Replace the ``true`` with a ``||logic:0 < 0||``. Put a ``||sprites:mySprite x||`` in where the first `0` is. Change the ``||variables:mySprite||`` to ``||variables:projectile||`` and change the ``||sprites:x||`` to ``||sprites:vx (velocity x)||``.
 
 ```blocks
-
 let projectile: Sprite = null
 let mySprite: Sprite = null
 scene.setBackgroundColor(9)
@@ -372,7 +364,6 @@ game.onUpdateInterval(1000, function () {
 In **Advanced** go to ``||images:Images||`` and find the ``||images:flip picture horizontally||``. Pull it out and place it into the ``||logic:if then||``. Now, back in ``||sprites:Sprites||``, get a ``||sprites:mySprite image||`` and place it in the ``||images:flip||`` where ``||variables:picture||`` is. Change the ``||variables:mySprite||`` to ``||variables:projectile||``.
 
 ```blocks
-
 let projectile: Sprite = null
 let mySprite: Sprite = null
 scene.setBackgroundColor(9)
