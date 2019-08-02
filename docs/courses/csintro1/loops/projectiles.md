@@ -97,7 +97,6 @@ Notice that the ``||sprites:kind||`` of the ``||sprites:projectile||`` is ``Proj
 4. **Challenge:** when the two projectiles overlap one another, have them ``||sprites:say||`` hello to each other
 
 ```blocks
-
 let projectile: Sprite = null
 sprites.onDestroyed(SpriteKind.Projectile, function (sprite) {
     info.changeScoreBy(1)
@@ -137,7 +136,6 @@ Games often create many projectiles, one after another. We can create multiple p
 This example randomly places the projectiles on the screen with a random velocity.
 
 ```blocks
-
 let projectile: Sprite = null
 let mySprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {

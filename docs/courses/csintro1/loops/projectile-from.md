@@ -16,7 +16,6 @@ In this activity, students will use:
 There are many games that have sprites sending out projectile sprites. We can set projectiles to originate from a sprite to drop coins, create obstacles, kick a ball or send a laser beam to destroy an asteroid by using ``||sprites:projectile from sprite||``.
 
 ```block
-
 let ball: Sprite = null
 let mySprite: Sprite = null
 ball = sprites.createProjectileFromSprite(img`
@@ -125,7 +124,6 @@ There's not much to this code; it spawns a cloud, which slowly moves across the 
 Review the code carefully for the use of ``||sprites:ghost on||`` and ``||sprites:projectile from sprite||`` for the raindrop projectiles. 
 
 ```blocks
-
 let raindrop: Sprite = null
 let cloud: Sprite = null
 cloud = sprites.createProjectileFromSide(img`
@@ -183,7 +181,6 @@ raindrop.x += Math.randomRange(1, 14)
 ```
 
 ```blocks
-
 let raindrop: Sprite = null
 let cloud: Sprite = null
 cloud = sprites.createProjectileFromSide(img`

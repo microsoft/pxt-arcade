@@ -368,7 +368,6 @@
         "simGifKey": "R",
         "qrCode": true
     },
-    "ignoreDocsErrors": true,
     "unsupportedBrowsers": [
         { "id" : "ie" }
     ]

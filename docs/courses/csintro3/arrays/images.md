@@ -24,8 +24,6 @@ individual variables.
 different ``||images:images||`` of the ``||sprites:ducks||``
 
 ```typescript
-
-
 let characterImages: Image[] = [
     sprites.duck.duck1,
     sprites.duck.duck2,
@@ -114,8 +112,6 @@ short for modulo or modulus.
 within the ``||images:image||`` ``||arrays:array||``
 
 ```typescript
-
-
 let characterImages: Image[] = [
     sprites.duck.duck1,
     sprites.duck.duck2,
