@@ -32,7 +32,7 @@ Try computer graphics methods and visual math concepts as Arcade games.
     },
     {
         "name": "Animated Sand",
-        "description": "Sand dots moving accross the screen, ported from Adafruit Animated LED Sand",
+        "description": "Sand dots sliding across the screen, ported from Adafruit Animated LED Sand",
         "cardType": "codeExample",
         "url": "/graphics-math/animated-sand",
         "imageUrl": "/static/graphics-math/animated-sand.png",
