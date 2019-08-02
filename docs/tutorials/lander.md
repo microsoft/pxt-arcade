@@ -248,6 +248,7 @@ scene.onHitTile(SpriteKind.Player, 1, function (sprite) {
 Next grab from ``||scene:Scene||`` a ``||scene:on sprite of kind Player hits wall||`` and drag it into the workspace. Make sure to set the color to the landing pad, orange. Then grab a ``||logic:if then else||`` and drag it inside. Again, from ``||logic:Logic||`` grab a ``||logic:0 = 0||`` and drag it into the ``||logic:if||`` statement. Grab the ``||variables:angle||`` from the ``||variables:Variable||`` drawer and place it in the first field of the ``||logic:0 = 0||``. Grab a ``" "`` from ``||text:Text||`` and place it in the second field and type the string ``straight``. 
 
 ```blocks
+let angle = ""
 scene.onHitTile(SpriteKind.Player, 4, function (sprite) {
     if (angle == "straight") {
     } else {
@@ -261,6 +262,7 @@ Find ``||game:game over||`` in ``||game:Game||``, and drag it into the first sec
 
 ```blocks
 let lander: Sprite = null
+let angle: string;
 scene.onHitTile(SpriteKind.Player, 4, function (sprite) {
     if (angle == "straight") {
         game.over(true, effects.starField)
@@ -278,7 +280,7 @@ From ``||controller:Controller||`` grab ``||controller:on A button pressed||`` a
 ```blocks
 let lander: Sprite = null
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    angle = "left"
+    let angle = "left"
     lander.setImage(img`
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
@@ -306,6 +308,7 @@ Right click on the ``||controller:on left button pressed||`` and duplicate it tw
 
 ```blocks
 let lander: Sprite = null
+let angle: string;
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     angle = "left"
     lander.setImage(img`

@@ -124,7 +124,6 @@ Given that 1 die is expected to roll a value around ``3.5``, what is expected th
 5. Calculate the mean and median of data and compare them to the estimate in step 2
 
 ```sim
-
 let choice = 0
 let dice: Sprite[] = []
 let sum = 0

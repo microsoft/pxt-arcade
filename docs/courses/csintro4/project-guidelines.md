@@ -72,11 +72,6 @@ as well as a splash screen to introduce the game when it is loaded.
 
 ## Assets
 
-### main.ts
-
-```typescript
-```
-
 ### spritesheet.ts
 
 ```typescript
@@ -88,9 +83,4 @@ namespace spritesheet {
 namespace animations {
     // fill this with any animations you need to export for other group members
 }
-```
-
-### scene.ts
-
-```typescript
 ```
