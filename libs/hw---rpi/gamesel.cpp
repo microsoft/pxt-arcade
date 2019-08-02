@@ -14,6 +14,7 @@ namespace control {
 RefCollection *programList() {
     DIR *d = opendir(PROGDIR);
     auto res = Array_::mk();
+    registerGCObj(res);
     for (;;) {
         struct dirent *ent = readdir(d);
         if (!ent)
@@ -25,9 +26,13 @@ RefCollection *programList() {
             continue;
         ent->d_name[len - 4] = 0; // chop extension
         //DMESG("add: '%s'", ent->d_name);
-        res->head.push((TValue)mkString(ent->d_name, -1));
+        auto tmp = (TValue)mkString(ent->d_name, -1);
+        registerGCPtr(tmp);
+        res->head.push(tmp);
+        unregisterGCPtr(tmp);
     }
     closedir(d);
+    unregisterGCObj(res);
     return res;
 }
 
