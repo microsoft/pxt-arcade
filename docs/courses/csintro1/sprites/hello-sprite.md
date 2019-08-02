@@ -23,7 +23,6 @@ A **method** is an action that an object supports. For example, sprites (an obje
 3. View the code in JavaScript
 
 ```blocks
-
 let msg: string = "Hello World!"
 let mySprite: Sprite = null
 mySprite = sprites.create(img`

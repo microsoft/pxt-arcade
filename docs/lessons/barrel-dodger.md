@@ -9,7 +9,6 @@ Make an action game where the player has to react quickly to avoid fast moving b
 OK, let's get started by making our ``Player`` sprite. Start by placing a ``||variables:set mySprite to||`` block in an ``||loops:on start||`` block to create your sprite.
 
 ```blocks
-
 let mySprite: Sprite = null
 mySprite = sprites.create(img``, SpriteKind.Player)
 ```
@@ -25,7 +24,6 @@ Draw your player sprite's image using the image editor.
 We want to put our sprite character nearer to the left side of the screen so drag a ``||sprites:set mySprite position||`` into ``||loops:on start||`` and set ``x`` to `20` and ``y`` to `70`.
 
 ```blocks
-
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . 5 . 5 . . . . . . . 
@@ -53,7 +51,6 @@ mySprite.setPosition(20, 70)
 Drag a ``||sprites:set mySprite x||`` into the ``||loops:on start||``, click the dropdown, and select ``ay (acceleration y)``. Set the value to `500` so that character is pulled down by "gravity".
 
 ```blocks
-
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . 5 . 5 . . . . . . . 
@@ -176,7 +173,6 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 We need to make sure that the sprite is on the ground before jumping, so drag an ``||logic:if then||`` conditional into the ``||controller:on A button pressed||``. Replace `true` with ``||scene:is mySprite hitting wall||`` and change ``left`` side ``bottom``. Finally, put in a ``||sprites:set mySprite x||`` and choose ``||sprites:vy (velocity y)||`` from the dropdown. Set the value to `-250`.
 
 ```blocks
-
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . 5 . 5 . . . . . . . 
@@ -232,7 +228,6 @@ e e e e e e e e
 Our final step is to end the game if a barrel touches the sprite player. Drag an ``||sprites:on sprite overlaps||`` onto the editor. Set the sprite kind for ``otherSprite`` to ``Projectile``. End the game with a ``||game:game over||`` block inside.
 
 ```blocks
-
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     game.over(false)
 })
@@ -245,7 +240,6 @@ Awesome! Congratulations on making the Barrel Dodger game! You are on your way t
 ![Barrel Dodger game playing](/static/lessons/barrel-dodger/barrel-dodger.gif)
 
 ```blocks
-
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (mySprite.isHittingTile(CollisionDirection.Bottom)) {
         mySprite.vy = -250

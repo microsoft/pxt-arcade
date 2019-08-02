@@ -48,7 +48,6 @@ Additionally, multiple gamepads can be used to allow for more than the two playe
 2. Notice that this is the same type
 
 ```blocks
-
 let player1 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -95,7 +94,6 @@ In the rest of this lesson, we will implement a simple version of pong using ``|
 4. Notice how both player's scores are shown in the corners of the screen, along with the player number
 
 ```blocks
-
 let player1 = sprites.create(img`
 2 2 2 2 2 . . . . . . . . . . . 
 2 2 2 2 2 . . . . . . . . . . . 

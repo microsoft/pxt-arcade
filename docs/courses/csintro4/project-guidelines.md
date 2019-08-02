@@ -75,7 +75,6 @@ as well as a splash screen to introduce the game when it is loaded.
 ### main.ts
 
 ```typescript
-
 ```
 
 ### spritesheet.ts
@@ -94,5 +93,4 @@ namespace animations {
 ### scene.ts
 
 ```typescript
-
 ```

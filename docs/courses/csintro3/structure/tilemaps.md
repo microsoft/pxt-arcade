@@ -69,7 +69,6 @@ are assigned a different ``||images:Image||``
 notice that the player cannot leave the ``||scene:tile map||``
 
 ```typescript
-
 let mySprite: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player);
 controller.moveSprite(mySprite, 100, 100);
 scene.setTileMap(img`
@@ -183,7 +182,6 @@ or blocked by ``||scene:walls||``, the ``||sprites:Ghost||`` flag can be set.
 3. Explore the "town" by moving around the screen
 
 ```typescript
-
 let mySprite: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player);
 scene.cameraFollowSprite(mySprite);
 controller.moveSprite(mySprite, 100, 100);

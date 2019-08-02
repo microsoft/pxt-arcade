@@ -19,7 +19,6 @@ In this activity, students will:
 3. Save the code for the task (name it "Get Out Of Jail Free Button") 
 
 ```blocks
-
 let myTile: tiles.Tile = null
 let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -96,7 +95,6 @@ The ``||scene:on top of myTile place mySprite||`` allows for sprites to be place
 3. Save the code for the task (name it "Random Maze")
 
 ```blocks
-
 let mySprite: Sprite = null
 scene.onHitTile(SpriteKind.Player, 7, function (sprite) {
     game.over(true)
@@ -315,7 +313,6 @@ Using the concepts from tasks #1 and #2, the development of multi-level games be
 3. Save the code for the task (name it "move levels")
 
 ```blocks
-
 let player: Sprite = null
 let nextLevel = 0
 let levels: Image[] = []

@@ -201,7 +201,6 @@ We can implement this behavior easily using ``||logic:logic||`` blocks in an ``|
 3. Save the code for the task (name it "itsFollowing") 
 
 ```blocks
-
 let enemy: Sprite = null
 let player: Sprite = null
 player = sprites.create(img`

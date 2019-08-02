@@ -21,7 +21,6 @@ One way in which we can use arrays of strings is to form a "script" for our spri
 3. Save the code for the example (name it "Princess Dialogue")
 
 ```blocks
-
 let text_list: string[] = []
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
@@ -98,7 +97,6 @@ Another way in which you can use string arrays in your games is to create reacti
 3. Save the code for the example (name it "Princess Dialogue")
 
 ```blocks
-
 let text_list: string[] = []
 let mySprite: Sprite = null
 scene.onHitTile(SpriteKind.Player, 15, function (sprite) {

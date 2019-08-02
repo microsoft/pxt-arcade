@@ -3,7 +3,6 @@
 Dodge the junk and eat the fruits!
 
 ```blocks
-
 let projectile: Sprite = null
 let mySprite: Sprite = null
 let choice = 0
