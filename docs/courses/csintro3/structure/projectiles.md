@@ -196,8 +196,6 @@ You can find more details and examples of effects in the documentation for
 3. Identify how ``effects.blizzard`` is used to create a 'snowstorm' background
 
 ```typescript
-
-
 let myLogs = sprites.create(img`
     e e e e . . . . . e e . . . . .
     . e e e e e . e e e d e e . . .

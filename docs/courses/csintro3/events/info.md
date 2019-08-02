@@ -73,8 +73,6 @@ Notice that this is the same snippet from the examples in the
 ### ~
 
 ```typescript
-
-
 let mySprite = sprites.create(img`
     1 1 1
 `, SpriteKind.Player);

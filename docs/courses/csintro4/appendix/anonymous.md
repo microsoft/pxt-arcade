@@ -69,8 +69,6 @@ defined to move the player and splash on the screen
 ``||functions:splashAndDash||`` to pass it as a parameter
 
 ```typescript
-
-
 function splashAndDash() {
     game.splash("Hello!");
     player.x += 5;
@@ -146,8 +144,6 @@ This task is demonstrated in the GIF below the snippet.
 pass the anonymous function itself to the function without storing it separately
 
 ```typescript
-
-
 let player: Sprite = sprites.create(img`
 1 1 1
 1 1 1

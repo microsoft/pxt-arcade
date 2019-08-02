@@ -27,8 +27,6 @@ sprite interact with the scene
 event correspond to the type of tile that is used?
 
 ```typescript
-
-
 let mySprite: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player);
 controller.moveSprite(mySprite, 100, 100);
 
