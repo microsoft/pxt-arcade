@@ -1,23 +1,23 @@
 # Game Loop
 
-A ``game loop`` is part of the core flow of a game; it describes the order in which things happen.
+A ``game loop`` is part of the core flow of a game. It manages the order of actions and responses to changes in state during the game.
 In MakeCode @boardname@, the main game loop is defined by the active ``||scene:Scene||``.
 
 ### ~hint
 
 MakeCode @boardname@ is currently in beta, so the exact ordering of the game loop is subject to change prior to the full release. This page describes the game loop in version [INSERT VERSION THIS IS ACCURATE FOR] of the editor.
 
-If you are editting a file in another version and things are not working exactly as you expect, you can see the exact implementation in the ``scene.ts`` file under ``game``, or see the current file on [GitHub](https://github.com/microsoft/pxt-common-packages/blob/master/libs/game/scene.ts).
+If you are editing a file in another version and find that things are not working exactly as you expect, you can see the exact implementation in the ``scene.ts`` file under ``game``, or see the current file on [GitHub](https://github.com/microsoft/pxt-common-packages/blob/master/libs/game/scene.ts).
 
 ### ~
 
 ## Scene Game Loop
 
-Each frame, the following steps will occur (in order):
+In each frame, the following steps will occur (in order):
 
 1. The controller state will be updated, identifying whether buttons are pressed, released, or held down.
 2. ``||sprites:Sprites||`` controlled with ``||controller:controller.moveSprite||`` will be moved depending on which buttons are pressed.
-3. Physics are applied to sprites, moving them around the screen and calculating collisions. See [the description of the physics step](#physics) for more details.
+3. Physics are applied to the sprites, moving them around the screen and calculating collisions. See [the description of the physics step](#physics) for more details.
 4. All ``||game:on game update interval||`` events are run if it has been long enough since the last time that event was run.
 5. All ``||game:on game update||`` events are run.
 6. The current state of the game is rendered to the screen. See [the description of the game ender step](#render) for more details.
@@ -26,21 +26,21 @@ Each frame, the following steps will occur (in order):
 
 ### Physics Step #physics
 
-The physics step is the step in which sprites move around the screen based off their velocity and acceleration, and any ``||scene:collisions||`` and ``||sprites:overlaps||`` are calculated. The movements in this step are interpolated into small steps for fast moving ``||sprites:sprites||``, to avoid ``||sprites:sprites||`` moving through walls or missing ``||sprites:sprite overlap events||``.
+The physics step is the step in which sprites move around the screen based on their velocity and acceleration, and any ``||scene:collisions||`` and ``||sprites:overlaps||`` are calculated. The movements in this step are interpolated into small increments for fast moving ``||sprites:sprites||`` inorder to avoid ``||sprites:sprites||`` moving through walls or missing ``||sprites:sprite overlap events||``.
 
-1. Each sprite in the scene has it's velocity updated by it's acceleration and the maximum speed set for the current physics engine. These velocities are then split up into small steps that will be taken once at a time, and stored for each sprite.
+1. Each sprite in the scene has it's velocity updated by it's acceleration and the maximum set speed for the current physics engine. These velocities are then split up into small steps that will be taken once at a time, and stored for each sprite.
 2. Obstacles are cleared from each sprite that is moving.
 3. Each sprite is moved one step:
-    1. The stored velocities are compared to the sprite's current velocities, in case some event has caused the sprite to turn around. If the sprite has turned around, adjust the movement so that the sprite doesn't move in the wrong direction.
+    1. The stored velocities are compared to the sprite's current velocities, in case some event has caused the sprite to turn around. If the sprite has turned around, the movement is adjusted so that the sprite doesn't move in the wrong direction.
     2. The sprite is moved a few pixels according to it's speed.
     3. If the sprite is not a ghost and a tile map exists, the sprite is checked for collisions with the tile map. If it has hit something, the sprite may be stopped and an collision event with that type of wall is run.
-    4. If the sprite is not finished moving, it is stored to move more steps.
+    4. If the sprite has not finished moving, it is stored to move again in future steps.
 4. After all the sprites have moved, sprite overlaps are checked, and any overlap events between sprites that are not currently running are set to run [independent from the game loop](#fibers).
-5. If there are sprites that are not finished moving, return to step 3 and continue moving the sprites. Otherwise, the physics movement is complete for this frame.
+5. If there are sprites that still need to move, step 3 is repeated to continue moving the sprites. Otherwise, the physics movement is complete for this frame.
 
 ### Game Render Step #render
 
-Rendering elements to the screen is handled by drawing different elements depending on their ``z index``. Elements with lower ``z indices`` are drawn to the screen before elements with higher ``z indices``. Ties in ``z index`` are broken by creation order - newer elements are drawn on top of older elements when they are at the same ``z index``.
+Rendering elements to the screen is handled by drawing different elements depending on their ``z index``. Elements with lower ``z indices`` are drawn to the screen before elements with higher ``z indices``. A tie in ``z index`` equivalency is resolved by using creation order - newer elements are drawn on top of older elements when they are at the same ``z index``.
 
 1. The background is drawn to the screen, clearing anything else on the screen. This can be either a color or an image. This is always done first.
 2. ``z index -20``: ``on paint`` events are run and applied to the screen.
@@ -57,7 +57,7 @@ It's possible to run things independently from the ``||scene:Scene||`` game loop
 * ``||loops:forever||`` loops will run only when the ``||scene:Scene||`` they are created in is active, but will continue independently while running; this means that they could occur more or less than once per frame.
 * ``||sprites:sprite overlap events||`` are created within game loop, but run independently after they are created. For example, you can play a series of ``||music:melodies||`` when the player touches a piano sprite, without causing the entire game to stop.
 
-Because these run outside of the core game loop, they will not necessarily be bound to a particular ``||scene:Scene||`` while running; after the event starts, it will continue until it is complete, even if the scene changes. This can be confusing at times if you have multiple things running; for example, if you have an ``||sprites:on overlap||`` event with a delay, it may happen in another scene:
+Because these run outside of the core game loop, they are not necessarily bound to a particular ``||scene:Scene||`` while running; after the event starts, it will continue until it is complete, even if the scene changes. This can be confusing at times if you have multiple things running; for example, if you have an ``||sprites:on overlap||`` event with a delay, it may happen in another scene:
 
 ```typescript
 sprites.create(img`
@@ -102,7 +102,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, (sprite, otherSprite) => 
 });
 ```
 
-In this case, the two sprites overlap immediately, so the ``||game:splash screen||`` will show up after three seconds, even if you open the menu. If you want to wait until the player leaves the menu to create the ``||game:splash screen||``, one option is to store a reference to the current scene, and wait until the player returns to that screen.
+In this case, the two sprites overlap immediately, so the ``||game:splash screen||`` will show up after three seconds, even if you open the menu. If you want to wait until the player leaves the menu to create the ``||game:splash screen||``, one option is to store a reference to the current scene and wait until the player returns to that screen.
 
 ```typescript
 const myMainScene = game.currentScene();
@@ -149,4 +149,4 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, (sprite, otherSprite) => 
 });
 ```
 
-It is generally better to avoid doing this whenever possible, though, as it can make the game state much harder to reason about.
+It is generally better to avoid doing this whenever possible though, as it can make the game state much harder to reason about.
