@@ -18,118 +18,117 @@ Next, starting with `3`, every **third** number is eliminated leaving:
 2, 3, _, 5, _, 7, _, _, __, 11, __, 13, __, __...
 ```
 
-This continues on until you've elimiated all multiples of each number until you reach the limit of the numbers your testing, like `15` in the case of this example. The numbers that remain are the prime numbers out of the sequence you tested.
+This continues on until you've elimiated all multiples of each number and then reach the limit of the numbers your testing, like `15` in the case of this example. The numbers that remain are the prime numbers out of the sequence you tested.
 
 Once the first pass using `2` is complete, you don't need to test any of the other ``even`` numbers because they're already eliminated.
 
 ## Seive game
 
 ```blocks
-function popSquare() {
-    bsprite.startEffect(effects.disintegrate, 200)
-    aay = bsprite.y - scene.screenHeight() / 2
-    aax = bsprite.x - scene.screenWidth() / 2
-    if (aax < 0) {
-        bsprite.ax = 12 * (scene.screenHeight() - bsprite.x)
-    } else {
-        bsprite.ax = 12 * (bsprite.x - scene.screenHeight())
-    }
-    if (aay < 0) {
-        bsprite.ay = 12 * (scene.screenHeight() - bsprite.y)
-    } else {
-        bsprite.ay = 12 * (bsprite.y - scene.screenHeight())
-    }
-}
+let spriteList: Sprite[] = null
 let j = 0
-let aax = 0
-let aay = 0
-let bsprite: Sprite = null
+let boxSprite: Sprite = null
+let boxX = 0
+let boxY = 0
 enum SieveSteps {
+    list,
     scan,
     collect,
     idle
 }
-let boxY = 5
-let boxX = 4
-game.splash("Sieve of Eratosthenes")
-for (let i = 2; boxY + 14 < scene.screenHeight(); i++) {
-    if (boxX + 16 >= scene.screenWidth()) {
-        boxX = 4
-        boxY += 14
-    }
-    bsprite = sprites.create(img`
-        b b b b b b b b b b b b b b b b
-        b 4 4 4 4 4 4 4 4 4 4 4 4 4 4 b
-        b 4 4 4 4 4 4 4 4 4 4 4 4 4 4 b
-        b 4 4 4 4 4 4 4 4 4 4 4 4 4 4 b
-        b 4 4 4 4 4 4 4 4 4 4 4 4 4 4 b
-        b 4 4 4 4 4 4 4 4 4 4 4 4 4 4 b
-        b 4 4 4 4 4 4 4 4 4 4 4 4 4 4 b
-        b 4 4 4 4 4 4 4 4 4 4 4 4 4 4 b
-        b 4 4 4 4 4 4 4 4 4 4 4 4 4 4 b
-        b 4 4 4 4 4 4 4 4 4 4 4 4 4 4 b
-        b 4 4 4 4 4 4 4 4 4 4 4 4 4 4 b
-        b b b b b b b b b b b b b b b b
-    `, 0)
-    bsprite.image.printCenter("" + i, 2)
-    bsprite.left = boxX
-    bsprite.top = boxY
-    boxX += 17
-    music.playTone(Note.C, BeatFraction.Sixteenth)
-    pause(100)
-}
-game.showDialog("Press A to scan", "")
 let factor = 2
-let step = SieveSteps.scan
-let spriteList = sprites.allOfKind(0)
+let step = SieveSteps.list
+game.splash("Sieve of Eratosthenes")
 forever(function () {
-    if (step == SieveSteps.scan) {
-        j += factor
-        if (j < spriteList.length) {
-            if (spriteList[j].image.getPixel(0, 0) > 0) {
-                spriteList[j].startEffect(effects.disintegrate, 200)
-                spriteList[j].image.fill(0)
-                music.playTone(523, BeatFraction.Sixteenth)
-                pause(200)
-            }
-        } else {
-            factor += 1
-            j = factor - 2
-        }
-        if (factor > 73) {
-            step = SieveSteps.collect
-        } else {
-            info.setScore(factor)
-        }
-    } else if (step == SieveSteps.collect) {
-        boxY = 5
-        boxX = 4
-        for (let box of spriteList) {
-            if (box.image.getPixel(0, 0) > 0) {
+    switch (step) {
+        case SieveSteps.list: {
+            boxY = 5
+            boxX = 4
+            let i = 2
+            while (boxY + 14 < scene.screenHeight()) {
                 if (boxX + 16 >= scene.screenWidth()) {
                     boxX = 4
                     boxY += 14
+                } else {
+                    boxSprite = sprites.create(img`
+                        b b b b b b b b b b b b b b b b
+                        b 4 4 4 4 4 4 4 4 4 4 4 4 4 4 b
+                        b 4 4 4 4 4 4 4 4 4 4 4 4 4 4 b
+                        b 4 4 4 4 4 4 4 4 4 4 4 4 4 4 b
+                        b 4 4 4 4 4 4 4 4 4 4 4 4 4 4 b
+                        b 4 4 4 4 4 4 4 4 4 4 4 4 4 4 b
+                        b 4 4 4 4 4 4 4 4 4 4 4 4 4 4 b
+                        b 4 4 4 4 4 4 4 4 4 4 4 4 4 4 b
+                        b 4 4 4 4 4 4 4 4 4 4 4 4 4 4 b
+                        b 4 4 4 4 4 4 4 4 4 4 4 4 4 4 b
+                        b 4 4 4 4 4 4 4 4 4 4 4 4 4 4 b
+                        b b b b b b b b b b b b b b b b
+                    `, SpriteKind.Player)
+                    boxSprite.setFlag(SpriteFlag.BounceOnWall, true)
+                    boxSprite.image.printCenter("" + i, 2)
+                    boxSprite.left = boxX
+                    boxSprite.top = boxY
+                    boxX += 17
+                    i += 1
+                    music.playTone(Note.C, BeatFraction.Sixteenth)
+                    pause(100)
                 }
-                box.left = boxX
-                box.top = boxY
-                boxX += 17
-                music.playTone(370, BeatFraction.Sixteenth)
-                pause(200)
+            }
+            spriteList = sprites.allOfKind(SpriteKind.Player)
+            game.showLongText("Scan for primes in the sequence of numbers. The score will show your current factor", DialogLayout.Center)
+            step = SieveSteps.scan
+        }
+            break
+
+        case SieveSteps.scan: {
+            j += factor
+            if (j < spriteList.length) {
+                if (spriteList[j].image.getPixel(0, 0) > 0) {
+                    spriteList[j].startEffect(effects.disintegrate, 200)
+                    spriteList[j].image.fill(0)
+                    music.playTone(523, BeatFraction.Sixteenth)
+                    pause(200)
+                }
+            } else {
+                if (factor > 2) {
+                    factor += 2
+                } else {
+                    factor += 1
+                }
+                j = factor - 2
+            }
+            if (factor > spriteList.length + 2) {
+                step = SieveSteps.collect
+            } else {
+                info.setScore(factor)
             }
         }
-        step = SieveSteps.idle
-        pause(200)
-        music.jumpDown.play()
-        pause(1500)
-        music.magicWand.play()
-        for (let k = spriteList.length - 1; k >= 0; k--) {
-            if (spriteList[k].image.getPixel(0, 0) > 0) {
-                spriteList[k].ay = Math.randomRange(800, 1600)
-                pause(100)
+            break
+
+        case SieveSteps.collect:
+            boxY = 5
+            boxX = 4
+            for (let box of spriteList) {
+                if (box.image.getPixel(0, 0) > 0) {
+                    if (boxX + 16 >= scene.screenWidth()) {
+                        boxX = 4
+                        boxY += 14
+                    }
+                    box.left = boxX
+                    box.top = boxY
+                    boxX += 17
+                    music.playTone(370, BeatFraction.Sixteenth)
+                    pause(200)
+                }
             }
-        }
-        pause(1000)
-        game.over(true, effects.bubbles)
+            step = SieveSteps.idle
+            pause(200)
+            music.jumpDown.play()
+            pause(1500)
+            music.magicWand.play()
+            for (let box2 of spriteList) {
+                box2.ay = Math.randomRange(100, 400)
+            }
     }
 })
 ```
