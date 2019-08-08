@@ -26,10 +26,15 @@ Once the very first pass using `2` is complete, you don't need to test any facto
 
 ```typescript
 enum SieveSteps {
-    list,
-    scan,
-    collect,
-    idle
+    StartList,
+    PrintList,
+    EndList,
+    Scan,
+    StartCollect,
+    DoCollect,
+    EndCollect,
+    DropBounce,
+    Idle
 }
 
 let spriteList: Sprite[] = null
@@ -38,17 +43,23 @@ let boxX = 0
 let boxY = 0
 let j = 0
 let factor = 2
-let step = SieveSteps.list
-
+let idleCount = 0
+let idleReturn = SieveSteps.Idle
+let step = SieveSteps.StartList
+let naturals = 0
 game.splash("Sieve of Eratosthenes")
 
-forever(function () {
+game.onUpdateInterval(10, function () {
     switch (step) {
-        case SieveSteps.list: {
+        case SieveSteps.StartList:
             boxY = 5
             boxX = 4
-            let i = 2
-            while (boxY + 14 < scene.screenHeight()) {
+            naturals = 2
+            step = SieveSteps.PrintList
+            break
+
+        case SieveSteps.PrintList:
+            if (boxY + 14 < scene.screenHeight()) {
                 if (boxX + 16 >= scene.screenWidth()) {
                     boxX = 4
                     boxY += 14
@@ -68,29 +79,37 @@ forever(function () {
                         b b b b b b b b b b b b b b b b
                     `, SpriteKind.Player)
                     boxSprite.setFlag(SpriteFlag.BounceOnWall, true)
-                    boxSprite.image.printCenter("" + i, 2)
+                    boxSprite.image.printCenter("" + naturals, 2)
                     boxSprite.left = boxX
                     boxSprite.top = boxY
                     boxX += 17
-                    i += 1
+                    naturals += 1
                     music.playTone(Note.C, BeatFraction.Sixteenth)
-                    pause(100)
+                    idleCount = 5
+                    idleReturn = SieveSteps.PrintList
+                    step = SieveSteps.Idle
                 }
+            } else {
+                step = SieveSteps.EndList
             }
-            spriteList = sprites.allOfKind(SpriteKind.Player)
-            game.showLongText("Scan for primes in the sequence of numbers. The score will show your current factor", DialogLayout.Center)
-            step = SieveSteps.scan
-        }
             break
 
-        case SieveSteps.scan: {
+        case SieveSteps.EndList:
+            spriteList = sprites.allOfKind(SpriteKind.Player)
+            game.showLongText("Scan for primes in the sequence of numbers. The score will show your current factor.", DialogLayout.Center)
+            step = SieveSteps.Scan
+            break
+
+        case SieveSteps.Scan:
             j += factor
             if (j < spriteList.length) {
                 if (spriteList[j].image.getPixel(0, 0) > 0) {
                     spriteList[j].startEffect(effects.disintegrate, 200)
                     spriteList[j].image.fill(0)
                     music.playTone(Note.C5, BeatFraction.Sixteenth)
-                    pause(200)
+                    idleCount = 10
+                    idleReturn = SieveSteps.Scan
+                    step = SieveSteps.Idle
                 }
             } else {
                 if (factor > 2) {
@@ -101,36 +120,64 @@ forever(function () {
                 j = factor - 2
             }
             if (factor > spriteList.length + 2) {
-                step = SieveSteps.collect
+                step = SieveSteps.StartCollect
             } else {
                 info.setScore(factor)
             }
-        }
             break
 
-        case SieveSteps.collect:
+        case SieveSteps.StartCollect:
             boxY = 5
             boxX = 4
-            for (let box of spriteList) {
-                if (box.image.getPixel(0, 0) > 0) {
+            j = 0
+            step = SieveSteps.DoCollect
+            break
+
+        case SieveSteps.DoCollect:
+            if (j < spriteList.length) {
+                if (spriteList[j].image.getPixel(0, 0) > 0) {
                     if (boxX + 16 >= scene.screenWidth()) {
                         boxX = 4
                         boxY += 14
                     }
-                    box.left = boxX
-                    box.top = boxY
+                    spriteList[j].left = boxX
+                    spriteList[j].top = boxY
                     boxX += 17
                     music.playTone(Note.FSharp4, BeatFraction.Sixteenth)
-                    pause(200)
+                    idleCount = 10
+                    idleReturn = SieveSteps.DoCollect
+                    step = SieveSteps.Idle
                 }
+                j += 1
+            } else {
+                idleCount = 2
+                idleReturn = SieveSteps.EndCollect
+                step = SieveSteps.Idle
             }
-            step = SieveSteps.idle
-            pause(200)
+            break
+
+        case SieveSteps.EndCollect:
+            step = SieveSteps.Idle
             music.jumpDown.play()
-            pause(1500)
+            idleCount = 100
+            idleReturn = SieveSteps.DropBounce
+            step = SieveSteps.Idle
+            break
+
+        case SieveSteps.DropBounce:
             music.magicWand.play()
             for (let box of spriteList) {
                 box.ay = Math.randomRange(100, 400)
+            }
+            idleCount = -1
+            step = SieveSteps.Idle
+            break
+
+        case SieveSteps.Idle:
+            if (idleCount > 0) {
+                idleCount += -1
+            } else if (idleCount == 0) {
+                step = idleReturn
             }
             break
     }
