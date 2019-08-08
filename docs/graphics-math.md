@@ -73,6 +73,13 @@ Try computer graphics methods and visual math concepts as Arcade games.
   "url": "/graphics-math/fibo-tile-spiral",
   "imageUrl": "/static/graphics-math/fibo-tile-spiral.png",
   "largeImageUrl": "/static/graphics-math/fibo-tile-spiral.gif"
+},
+{
+  "name": "Sieve of Eratosthenes",
+  "description": "Find prime numbers using the Sieve of Eratosthenes method",
+  "url": "/graphics-math/sieve-eratosthenes",
+  "imageUrl": "/static/graphics-math/sieve-eratosthenes.png",
+  "largeImageUrl": "/static/graphics-math/sieve-eratosthenes.gif"
 }
 ]
 ```
@@ -84,5 +91,6 @@ Try computer graphics methods and visual math concepts as Arcade games.
 [Paint Brush](/graphics-math/paint-brush),
 [Sorting Algorithms](/graphics-math/sorting-algorithms),
 [Pi Monte Carlo](/graphics-math/pi-monte-carlo),
-[Fibonacci Tiles and Spiral](/graphics-math/fibo-tile-spiral)
+[Fibonacci Tiles and Spiral](/graphics-math/fibo-tile-spiral),
+[Sieve of Eratosthenes](/graphics-math/sieve-eratosthenes)
 

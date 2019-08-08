@@ -18,27 +18,30 @@ Next, starting with `3`, every **third** number is eliminated leaving:
 2, 3, _, 5, _, 7, _, _, __, 11, __, 13, __, __...
 ```
 
-This continues on until you've elimiated all multiples of each number and then reach the limit of the numbers your testing, like `15` in the case of this example. The numbers that remain are the prime numbers out of the sequence you tested.
+This continues on until you've elimiated all multiples of each number and then reach the limit of the numbers your testing, like `15` in the case of this example. The numbers that remain are the prime numbers frome the sequence of numbers you scanned.
 
-Once the first pass using `2` is complete, you don't need to test any of the other ``even`` numbers because they're already eliminated.
+Once the very first pass using `2` is complete, you don't need to test any factors that are ``even`` numbers because they're already eliminated.
 
 ## Seive game
 
-```blocks
-let spriteList: Sprite[] = null
-let j = 0
-let boxSprite: Sprite = null
-let boxX = 0
-let boxY = 0
+```typescript
 enum SieveSteps {
     list,
     scan,
     collect,
     idle
 }
+
+let spriteList: Sprite[] = null
+let boxSprite: Sprite = null
+let boxX = 0
+let boxY = 0
+let j = 0
 let factor = 2
 let step = SieveSteps.list
+
 game.splash("Sieve of Eratosthenes")
+
 forever(function () {
     switch (step) {
         case SieveSteps.list: {
@@ -86,7 +89,7 @@ forever(function () {
                 if (spriteList[j].image.getPixel(0, 0) > 0) {
                     spriteList[j].startEffect(effects.disintegrate, 200)
                     spriteList[j].image.fill(0)
-                    music.playTone(523, BeatFraction.Sixteenth)
+                    music.playTone(Note.C5, BeatFraction.Sixteenth)
                     pause(200)
                 }
             } else {
@@ -117,7 +120,7 @@ forever(function () {
                     box.left = boxX
                     box.top = boxY
                     boxX += 17
-                    music.playTone(370, BeatFraction.Sixteenth)
+                    music.playTone(Note.FSharp4, BeatFraction.Sixteenth)
                     pause(200)
                 }
             }
@@ -126,9 +129,10 @@ forever(function () {
             music.jumpDown.play()
             pause(1500)
             music.magicWand.play()
-            for (let box2 of spriteList) {
-                box2.ay = Math.randomRange(100, 400)
+            for (let box of spriteList) {
+                box.ay = Math.randomRange(100, 400)
             }
+            break
     }
 })
 ```
