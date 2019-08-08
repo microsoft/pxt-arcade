@@ -18,7 +18,7 @@ Next, starting with `3`, every **third** number is eliminated leaving:
 2, 3, _, 5, _, 7, _, _, __, 11, __, 13, __, __...
 ```
 
-This continues on until you've elimiated all multiples of each number and then reach the limit of the numbers your testing, like `15` in the case of this example. The numbers that remain are the prime numbers frome the sequence of numbers you scanned.
+This continues on until you've eliminated all multiples of each number and then reach the limit of the numbers your testing, like `15` in the case of this example. The numbers that remain are the prime numbers frome the sequence of numbers you scanned.
 
 Once the very first pass using `2` is complete, you don't need to test any factors that are ``even`` numbers because they're already eliminated.
 
