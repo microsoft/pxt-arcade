@@ -14,7 +14,7 @@ Fly your space plane through the on coming bogey spacecraft. Can you survive the
 
 ## Step 1 @fullscreen
 
-Get a ``||sprites:set mySprite to sprite of kind player||`` block an put it in the ``||loops:on start||``. Click on the ``||variables:mySprite||`` variable, select ``Rename variable...``, and rename it to ``spacePlane``. Click on the empty sprite image to open the image editor. Draw a picture of a Space Plane.
+Get a ``||sprites:set mySprite to sprite of kind player||`` block an put it in the ``||loops:on start||``. Click on the ``||variables:mySprite||`` variable, select ``||variables:Rename variable...||``, and rename it to ``||variables:spacePlane||``. Click on the empty sprite image to open the image editor. Draw a picture of a Space Plane.
 
 ![Space plane sprite image](/static/tutorials/galga/space-plane.jpg)
 
@@ -58,7 +58,7 @@ spacePlane = sprites.create(img`
 
 ## Step 2
 
-Go back to ``||sprites:Sprites||`` again and pull out a ``||sprites:set mySprite stay in screen||`` and put it in after the other sprite block. Change the ``||variables:mySprite||`` to ``||variables:spacePlane||``. Click the ``OFF`` button to make it switch to ``ON``. Go over to ``||info:Info||``, get a ``||info:set life to||`` block, and put it in there too. Set the life count to `3`.
+Go back to ``||sprites:Sprites||`` again and pull out a ``||sprites:set mySprite stay in screen||`` and put it in after the other sprite block. Change ``||variables:mySprite||`` to ``||variables:spacePlane||``. Click the ``OFF`` button to make it switch to ``ON``. Go over to ``||info:Info||``, get a ``||info:set life to||`` block, and put it in there, too. Set the life count to `3`.
 
 ```blocks
 let spacePlane: Sprite = null
@@ -102,7 +102,7 @@ info.setLife(3)
 
 ## Step 3
 
-Now, let's add some button actions. In ``||controller:Controller||`` pull out a ``||controller:move mySprite with buttons||``. Click on the **(+)** symbol and change both `vx` and `vy` to `200`. Next, get the ``||controller:on A button pressed||`` from ``||controller:Controller||`` and put it out in the Workspace somehwere.
+Now, let's add some button actions. In ``||controller:Controller||`` pull out a ``||controller:move mySprite with buttons||``. As before, change ``||variables:mySprite||`` to ``||variables:spacePlane||``. Click on the **(+)** symbol and change both `vx` and `vy` to `200`. Next, get the ``||controller:on A button pressed||`` from ``||controller:Controller||`` and put it out in the Workspace somehwere.
 
 ```blocks
 let spacePlane: Sprite = null
@@ -149,7 +149,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 4 @fullscreen
 
-Back in ``||sprites:Sprites||``, find a ``||sprites:set projectile to projectile from mySprite||`` block and put it in the ``||controller:on A button pressed||``. Click on the ``||variables:projectile||`` variable, select ``Rename variable...``, and rename it to ``dart``. Switch the ``||variables:mySprite||`` variable to ``||variables:spacePlane||`` and set the `vx` value to `200`. Click on the empty sprite image to open the image editor. Draw a picture of a dart.
+Back in ``||sprites:Sprites||``, find a ``||sprites:set projectile to projectile from mySprite||`` block and put it in the ``||controller:on A button pressed||``. Click on the ``||variables:projectile||`` variable, select ``||variables:Rename variable...||``, and rename it to ``||variables:dart||``. Switch the ``||variables:mySprite||`` variable to ``||variables:spacePlane||``,  set the `vx` value to `200`, and set the `vy` value to `0`. Click on the empty sprite image to open the image editor. Draw a picture of a dart.
 
 ![Dart projectile](/static/tutorials/galga/dart.jpg)
 
@@ -180,7 +180,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 5
 
-From ``||sprites:Sprites||`` get a ``||sprites:on sprite of kind Player overlaps||`` block. Switch the second ``kind`` type at the end of the block to ``Enemy``. Pull a ``||sprites:destroy mySprite||`` in there. Go up and grab the ``||variables:otherSprite||`` from the outer block and drop it onto ``||variables:mySprite||`` in  ``||sprites:destroy mySprite||``. Go get a ``||info:change life by||`` and drop it in after ``||sprites:destroy otherSprite||``. Set the life change value to `-1`.
+From ``||sprites:Sprites||`` get a ``||sprites:on sprite of kind Player overlaps||`` block. Switch the second ``kind`` type at the end of the block to ``||sprites:Enemy||``. Then, drop a ``||sprites:destroy mySprite||`` block in there. Go up and grab the ``||variables:otherSprite||`` variable from the top of the block and drop it onto ``||variables:mySprite||`` in  ``||sprites:destroy mySprite||``. You may notice that the ``||variables:mySprite||`` block moves to the workspace. You can delete it by dragging it to the toolbar. (It will glow red with an icon of a trash can when you do so.) Now, go get a ``||info:change life by||`` block from the ``||info:Info||`` toolbox and drop it in after ``||sprites:destroy otherSprite||``. Set the life change value to `-1`.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -191,7 +191,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## Step 6
 
-Make a copy of ``||sprites:on sprite of kind Player overlaps||`` by clicking on it with the `right` mouse button and selecting **Duplicate**. In that new block, change the first ``kind`` from ``Player`` to ``Projectile``. Also, in the ``||info:change life by||`` make the life change value be a `1`.
+Make a copy of ``||sprites:on sprite of kind Player overlaps||`` by clicking on it with the `right` mouse button and selecting **Duplicate**. In that new block, change the first ``kind`` from ``Player`` to ``Projectile``. Also, in the ``||info:change life by||``, make the life change value be a `1`.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -202,7 +202,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 
 ## Step 7
 
-Duplicate the ``||sprites:destroy otherSprite||`` and place the new copy after the first one. Like you did earlier, pull a ``||variables:sprite||`` from the ``||sprites:on sprite of kind Projectile overlaps||`` and drop it onto ``||variables:mySprite||`` in the ``||sprites:destroy sprite||`` block. Click on the **(+)** symbol and choose the ``fire`` effect. Also, set effect time to ``100 ms``.
+Duplicate the ``||sprites:destroy otherSprite||`` and place the new copy after the first one. Like you did earlier, pull the ``||variables:sprite||`` variable from the ``||sprites:on sprite of kind Projectile overlaps||`` and drop it onto ``||variables:otherSprite||`` in the ``||sprites:destroy sprite||`` block. As before, delete the ``||variables:otherSprite||`` block from the worksapce by dragging it to the toolbox. Then, click on the **(+)** symbol and choose the ``fire`` effect. Also, set effect time to ``100 ms``.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -214,7 +214,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 
 ## Step 8 @fullscreen
 
-Over in ``||game:Game||`` pickup an ``||game:on update interval||`` an place it out on the Workspace. Get a ``||sprites:set mySprite to sprite of kind player||`` block an put it into the ``||game:on update interval||``. Change the ``kind`` from ``Player`` to ``Enemy``. Click on the empty sprite image to open the image editor. Draw a picture of a enemy airplane.
+Over in ``||game:Game||`` pickup an ``||game:on game update every||`` an place it out on the Workspace. Get a ``||sprites:set mySprite to sprite of kind player||`` block an put it into the ``||game:on update interval||``. Rename the variable to ``||variables:enemyPlane||``. Then, change the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Enemy||``. Click on the empty sprite image to open the image editor. Draw a picture of a enemy airplane.
 
 ![Enemy airplane image](/static/tutorials/galga/bogey.jpg)
 
@@ -244,7 +244,7 @@ game.onUpdateInterval(500, function () {
 
 ## Step 9
 
-Find the ``||sprites:set mySprite velocity to||`` and put it after the sprite you just made. Set `vx` to `-100`. Add in a ``||sprites:set mySprite position to||`` block. Set the `x` value to `180`. Over in ``||math:Math||``, get the ``||math:pick random||`` block and drop it into the `y` value slot.
+Find the ``||sprites:set mySprite velocity to||`` and put it after the sprite you just made. Change the variable to ``||variables:enemyPlane||``. Then, set `vx` to `-100` and `vy` to `0`. Add in a ``||sprites:set mySprite position to||`` block. Again, change the variable to ``||variables:enemyPlane||``. Set the `x` value to `180`. Over in ``||math:Math||``, get the ``||math:pick random||`` block and drop it into the `y` value slot.
 
 ```blocks
 let mySprite: Sprite = null
@@ -274,7 +274,7 @@ game.onUpdateInterval(500, function () {
 
 ## Step 10
 
-In the ``||math:pick random||`` set the first value as `8` and the second value as `112`. Finally, click on the first ``||variables:mySprite||`` variable, select ``Rename variable...``, and rename it to ``bogey``. Did you notice that all of the ``||variables:mySprite||`` variables turned into ``||variables:bogey||``?
+In the ``||math:pick random||`` block, set the first value as `8` and the second value as `112`.
 
 ```blocks
 let bogey: Sprite = null
