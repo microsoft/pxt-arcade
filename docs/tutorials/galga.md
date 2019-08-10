@@ -214,14 +214,14 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 
 ## Step 8 @fullscreen
 
-Over in ``||game:Game||`` pickup an ``||game:on game update every||`` an place it out on the Workspace. Get a ``||sprites:set mySprite to sprite of kind player||`` block an put it into the ``||game:on update interval||``. Rename the variable to ``||variables:enemyPlane||``. Then, change the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Enemy||``. Click on the empty sprite image to open the image editor. Draw a picture of a enemy airplane.
+Over in ``||game:Game||`` pickup an ``||game:on game update every||`` an place it out on the Workspace. Get a ``||sprites:set mySprite to sprite of kind player||`` block an put it into the ``||game:on update interval||``. Rename the variable to ``||variables:bogey||``. Then, change the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Enemy||``. Click on the empty sprite image to open the image editor. Draw a picture of a enemy airplane.
 
 ![Enemy airplane image](/static/tutorials/galga/bogey.jpg)
 
 ```blocks
-let mySprite: Sprite = null
+let bogey: Sprite = null
 game.onUpdateInterval(500, function () {
-    mySprite = sprites.create(img`
+    bogey = sprites.create(img`
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
@@ -244,12 +244,12 @@ game.onUpdateInterval(500, function () {
 
 ## Step 9
 
-Find the ``||sprites:set mySprite velocity to||`` and put it after the sprite you just made. Change the variable to ``||variables:enemyPlane||``. Then, set `vx` to `-100` and `vy` to `0`. Add in a ``||sprites:set mySprite position to||`` block. Again, change the variable to ``||variables:enemyPlane||``. Set the `x` value to `180`. Over in ``||math:Math||``, get the ``||math:pick random||`` block and drop it into the `y` value slot.
+Find the ``||sprites:set mySprite velocity to||`` and put it after the sprite you just made. Change the variable to ``||variables:bogey||``. Then, set `vx` to `-100` and `vy` to `0`. Add in a ``||sprites:set mySprite position to||`` block. Again, change the variable to ``||variables:bogey||``. Set the `x` value to `180`. Over in ``||math:Math||``, get the ``||math:pick random||`` block and drop it into the `y` value slot.
 
 ```blocks
-let mySprite: Sprite = null
+let bogey: Sprite = null
 game.onUpdateInterval(500, function () {
-    mySprite = sprites.create(img`
+    bogey = sprites.create(img`
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
@@ -267,8 +267,8 @@ game.onUpdateInterval(500, function () {
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
     `, SpriteKind.Enemy)
-    mySprite.setVelocity(-100, 0)
-    mySprite.setPosition(180, Math.randomRange(0, 10))
+    bogey.setVelocity(-100, 0)
+    bogey.setPosition(180, Math.randomRange(0, 10))
 })
 ```
 
