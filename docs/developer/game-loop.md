@@ -5,7 +5,7 @@ In MakeCode @boardname@, the main game loop is defined by the active ``||scene:S
 
 ### ~hint
 
-MakeCode @boardname@ is currently in beta, so the exact ordering of the game loop is subject to change prior to the full release. This page describes the game loop in version [INSERT VERSION THIS IS ACCURATE FOR] of the editor.
+MakeCode @boardname@ is currently in beta, so the exact ordering of the game loop is subject to change prior to the full release. This page describes the game loop in version v0.13.21 of the editor.
 
 If you are editing a file in another version and find that things are not working exactly as you expect, you can see the exact implementation in the ``scene.ts`` file under ``game``, or see the current file on [GitHub](https://github.com/microsoft/pxt-common-packages/blob/master/libs/game/scene.ts).
 
