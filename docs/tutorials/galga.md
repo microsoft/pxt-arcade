@@ -202,7 +202,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 
 ## Step 7
 
-Duplicate the ``||sprites:destroy otherSprite||`` and place the new copy after the first one. Like you did earlier, pull the ``||variables:sprite||`` variable from the ``||sprites:on sprite of kind Projectile overlaps||`` and drop it onto ``||variables:otherSprite||`` in the ``||sprites:destroy sprite||`` block. As before, delete the ``||variables:otherSprite||`` block from the worksapce by dragging it to the toolbox. Then, click on the **(+)** symbol and choose the ``fire`` effect. Also, set effect time to ``100 ms``.
+Duplicate the ``||sprites:destroy otherSprite||`` and place the new copy after the first one. Like you did earlier, pull the ``||variables:sprite||`` variable from the ``||sprites:on sprite of kind Projectile overlaps||`` and drop it onto ``||variables:otherSprite||`` in the ``||sprites:destroy sprite||`` block. As before, delete the ``||variables:otherSprite||`` block from the workspace by dragging it to the toolbox. Then, click on the **(+)** symbol and choose the ``fire`` effect. Also, set effect time to ``100 ms``.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -214,7 +214,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 
 ## Step 8 @fullscreen
 
-Over in ``||game:Game||`` pickup an ``||game:on game update every||`` an place it out on the Workspace. Get a ``||sprites:set mySprite to sprite of kind player||`` block an put it into the ``||game:on update interval||``. Rename the variable to ``||variables:bogey||``. Then, change the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Enemy||``. Click on the empty sprite image to open the image editor. Draw a picture of a enemy airplane.
+Over in ``||game:Game||`` pickup an ``||game:on game update every||`` an place it out on the Workspace. Get a ``||sprites:set mySprite to sprite of kind player||`` block an put it into the ``||game:on update interval||``. Rename the variable to ``||variables:bogey||``. Then, change the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Enemy||``. Click on the empty sprite image to open the image editor. Draw a picture of an enemy airplane.
 
 ![Enemy airplane image](/static/tutorials/galga/bogey.jpg)
 
