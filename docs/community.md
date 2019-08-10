@@ -15,6 +15,14 @@ Games submitted by the MakeCode community.
         "largeImageUrl": "/static/community/salvo/salvo.gif"
     },
     {
+        "name": "Blocky Boss Battle",
+        "description": "Avoid enemy attacks while launching your own in this difficult boss battle, by henrym",
+        "author": "henrym",
+        "url": "https://forum.makecode.com/t/blocky-boss-battle/421",
+        "imageUrl": "/static/community/blocky-boss-battle/blocky-boss-battle.png",
+        "largeImageUrl": "/static/community/blocky-boss-battle/blocky-boss-battle.gif"
+    },
+    {
         "name": "Jewel Raider",
         "description": "Collect jewels in this multi-level adventure, by Stu Lowe",
         "author": "Stu Lowe",
