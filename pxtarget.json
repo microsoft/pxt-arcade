@@ -39,6 +39,7 @@
         "libs/feather",
         "libs/sevenseg",
         "libs/settings",
+        "libs/settings---files",
         "libs/screen",
         "libs/screen---st7735",
         "libs/screen---linux",

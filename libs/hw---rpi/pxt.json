@@ -22,6 +22,7 @@
         "core---linux": "file:../core---linux",
         "mixer---linux": "file:../mixer---linux",
         "screen---linux": "file:../screen---linux",
+        "settings---files": "file:../settings---files",
         "game": "file:../game"
     },
     "public": true,

@@ -8,7 +8,6 @@
 
 namespace control {
 
-#define PROGDIR "/sd/prj"
 
 //%
 RefCollection *programList() {
