@@ -5,6 +5,8 @@ In MakeCode @boardname@, the main game loop is defined by the active ``||scene:S
 
 ### ~hint
 
+#### Loop Behavior
+
 MakeCode @boardname@ is currently in beta, so the exact ordering of the game loop is subject to change prior to the full release. This page describes the game loop in version v0.13.21 of the editor.
 
 If you are editing a file in another version and find that things are not working exactly as you expect, you can see the exact implementation in the ``scene.ts`` file under ``game``, or see the current file on [GitHub](https://github.com/microsoft/pxt-common-packages/blob/master/libs/game/scene.ts).
@@ -13,9 +15,11 @@ If you are editing a file in another version and find that things are not workin
 
 ## Scene Game Loop
 
+The Scene game loop sequences all the actions and updates to the game scene based on physics set for and events occuring to the game objects. The loop frame interval is timed internally to provide frequent enough updates for smooth scene transitions. The loop yields long enough for servicing of other fibers related to the game.
+
 In each frame, the following steps will occur (in order):
 
-1. The controller state will be updated, identifying whether buttons are pressed, released, or held down.
+1. The controller state is updated, identifying whether buttons are pressed, released, or held down.
 2. ``||sprites:Sprites||`` controlled with ``||controller:controller.moveSprite||`` will be moved depending on which buttons are pressed.
 3. Physics are applied to the sprites, moving them around the screen and calculating collisions. See [the description of the physics step](#physics) for more details.
 4. All ``||game:on game update interval||`` events are run if it has been long enough since the last time that event was run.
@@ -26,7 +30,7 @@ In each frame, the following steps will occur (in order):
 
 ### Physics Step #physics
 
-The physics step is the step in which sprites move around the screen based on their velocity and acceleration, and any ``||scene:collisions||`` and ``||sprites:overlaps||`` are calculated. The movements in this step are interpolated into small increments for fast moving ``||sprites:sprites||`` in order to avoid ``||sprites:sprites||`` moving through walls or missing ``||sprites:sprite overlap events||``.
+This is the step where sprites are moved around the screen using the current velocity and acceleration set for them, and any ``||scene:collisions||`` and ``||sprites:overlaps||`` are calculated. The movements in this step are interpolated into small increments for fast moving ``||sprites:sprites||`` in order to avoid having ``||sprites:sprites||`` moving through walls or missing ``||sprites:sprite overlap events||``.
 
 1. Each sprite in the scene has it's velocity updated by it's acceleration and the maximum set speed for the current physics engine. These velocities are then split up into small steps that will be taken once at a time, and stored for each sprite.
 2. Obstacles are cleared from each sprite that is moving.
