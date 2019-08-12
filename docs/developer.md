@@ -20,6 +20,10 @@ projects, MakeCode has GitHub integration. Read more [here](https://makecode.com
 MakeCode also supports "extensions" (libraries or packages) in projects, so it's possible to split your project
 into multiple repositories or libraries. Find more information [here](https://makecode.com/extensions).
 
+## Game Loop, Physics, and Rendering
+
+Documentation on the core game loop, physics system, and rendering can be found [here](/developer/game-loop).
+
 ## Music and Art
 
 Documentation on how to import and use images in Arcade can be found [here](/developer/images).

@@ -30,7 +30,7 @@ In each frame, the following steps will occur (in order):
 
 ### Physics Step #physics
 
-This is the step where sprites are moved around the screen using the current velocity and acceleration set for them, and any ``||scene:collisions||`` and ``||sprites:overlaps||`` are calculated. The movements in this step are interpolated into small increments for fast moving ``||sprites:sprites||`` in order to avoid having ``||sprites:sprites||`` moving through walls or missing ``||sprites:sprite overlap events||``.
+This is the step where sprites are moved around the screen using the current velocity and acceleration set for them, and any ``||scene:collisions||`` and ``||sprites:overlaps||`` are calculated. The movements in this step are interpolated into small increments for fast moving ``||sprites:sprites||`` in order to avoid have ``||sprites:sprites||`` moving through walls or miss ``||sprites:sprite overlap events||``.
 
 1. Each sprite in the scene has it's velocity updated by it's acceleration and the maximum set speed for the current physics engine. These velocities are then split up into small steps that will be taken once at a time, and stored for each sprite.
 2. Obstacles are cleared from each sprite that is moving.
