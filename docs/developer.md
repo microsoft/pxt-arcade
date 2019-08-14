@@ -1,5 +1,8 @@
 # Developer Tips and Tricks
 
+If you want to customize and extend the Arcade game experience, or just code you games for better performance,
+this page directs you to several topics with helpul tips and guidance.
+
 ## Finding examples and documentation
 
 There are a number of examples you can try out on the [MakeCode Arcade](@homeurl@) homepage.
