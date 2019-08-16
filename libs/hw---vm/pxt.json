@@ -19,6 +19,7 @@
         "core---vm": "file:../core---vm",
         "mixer---ext": "file:../mixer---ext",
         "screen---ext": "file:../screen---ext",
+        "settings---files": "file:../settings---files",
         "game": "file:../game"
     },
     "additionalFilePath": "../hw",
