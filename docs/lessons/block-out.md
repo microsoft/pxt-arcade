@@ -120,10 +120,14 @@ Now we are going to offset the blocks dependent on the row they are spawned in. 
 ### ~hint
 Now your block should look as follows.
 ```blocks
+for (let index = 0; index <= 9; index++) {
+    for (let index2 = 0; index2 <= 2; index2++) {
         x = index * 18
         if (index2 % 2 == 1) {
             x = index * 18 + 8
         }
+    }
+}
 ```
 ### ~
 
@@ -140,6 +144,9 @@ Lastly, from ``||sprites:Sprites||`` grab a ``||sprites:set mySprite position to
 namespace SpriteKind {
     export const block = SpriteKind.create()
 }
+let tile:Sprite=null
+let x = 0
+let tilePick = 0
 for (let index = 0; index <= 9; index++) {
     for (let index2 = 0; index2 <= 2; index2++) {
         x = index * 18
@@ -205,7 +212,6 @@ for (let index = 0; index <= 9; index++) {
                 . b b b b b b b b b b b 4 4 4 4
             `, SpriteKind.block)
         }
-        let tile:Sprite=null;
         tile.setPosition(x, index2 * 18 + 20)
     }
 }
@@ -262,6 +268,7 @@ Duplicate the entire block (what started off as ``||logic:0<0||``) and place it 
 Congrats, we have now made a function!
 
 ```blocks
+let direction = 0
 function getPos (sprite: Sprite, otherSprite: Sprite) {
     if (sprite.x < otherSprite.x - 8 || sprite.x > otherSprite.x + 8) {
         direction = 1
@@ -288,6 +295,7 @@ Duplicate the entire ``||sprites:set mySprite velocity to||`` block and place it
 Lastly, outside of the if statement, drag a ``||sprites:destroy mySprite||`` from ``||sprites:Sprites||``. Drag an ``otherSprite`` from the overlaps block and place it over the mySprite.
 
 ```blocks
+let direction = 0
 namespace SpriteKind {
     export const block = SpriteKind.create()
 }
