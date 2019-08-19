@@ -120,6 +120,7 @@ Now we are going to offset the blocks dependent on the row they are spawned in. 
 ### ~hint
 Now your block should look as follows.
 ```blocks
+let x=0
 for (let index = 0; index <= 9; index++) {
     for (let index2 = 0; index2 <= 2; index2++) {
         x = index * 18
