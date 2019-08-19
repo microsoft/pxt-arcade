@@ -22,7 +22,7 @@ Learn the basics to a basic bouncing projectile game!
 * [Part Three: Finishing the Setup](#part-three-finishing-the-setup)
 * [Part Four: Ball and Paddle Interactions](#part-four-Ball-and-paddle-interactions)
 * [Part Five: Directional Bouncing](#part-five-directional-bouncing)
-* [Part Six: Setting Score and Creating Collisions](#part-six-setting-score-and-creating-collisions)
+* [Part Six: Creating Block Collisions](#part-six-creating-block-collisions)
 * [Part Seven: Ending the Game](#part-seven-ending-the-game)
 
 ## Part One: Creating the Sprites
