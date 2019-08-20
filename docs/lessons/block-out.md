@@ -31,15 +31,15 @@ Go to the [MakeCode Arcade](@homeurl@) editor and select **New Project** to crea
 
 Once the editor loads, you will see a green ``||loops:on start||`` block already in the editor Workspace.
 
-First we want to create the main player of the game which in our case will be a paddle. Drag a ``||sprites:set mySprite to sprite of kind player||`` from ``||sprites:Sprites||`` and place it in the ``||loops:on start||`` block. Then click on mySprite and select rename variable. Name your variable to paddle. Then in the image editor, click on the ``16x16`` block until it reads ``32x32``. Then draw a purple line near the bottom of the image editor.
+At first, we want to create the main player of the game which in our case will be a paddle. Drag a ``||sprites:set mySprite to sprite of kind player||`` from ``||sprites:Sprites||`` and place it in the ``||loops:on start||`` block. Then click on ``||variables:mySprite||`` and select ``rename variable``. Name your variable to ``paddle``. Then in the image editor, click on the ``16x16`` block until it reads ``32x32``. Draw a purple line near the bottom of the image.
 
 ![Switching sizes](/static/lessons/block-out/32x32Blockout.gif)
 
-Next, drag a ``||sprites:set mySprite position to x y||`` from ``||sprites:Sprites||`` and drag it into the ``||loops:on start||`` block. Set the **x** to **79** and the **y** to **100**. Again from ``||sprites:Sprites||`` drag a ``||sprites:set mySprite stay in screen||`` into the ``||loops:on start||``. Change mySprite to paddle and then switch the toggle from off to on. Next in ``||controller:Controller||`` grab a ``||controller:move mySprite with buttons||`` and drag it into ``||loops:on start||``. Then change mySprite to paddle. Click the **(+)** sign and then set **vx** to **100** and **vy** to **0**.  
+Next, drag a ``||sprites:set mySprite position to x y||`` from ``||sprites:Sprites||`` and put it into the ``||loops:on start||`` block. Set the **x** value to **79** and the **y** value to **100**. Again, from ``||sprites:Sprites||``, drag a ``||sprites:set mySprite stay in screen||`` into the ``||loops:on start||``. Change ``mySprite`` to ``paddle`` and then switch the toggle from **OFF** to **ON**. Now in ``||controller:Controller||``, grab a ``||controller:move mySprite with buttons||`` and drag it into ``||loops:on start||``. Also, change ``mySprite`` to ``paddle``. Click the **(+)** sign and set the **vx** value to **100** and **vy** value to **0**.  
 
 ![Player moving on the screen](/static/lessons/block-out/moving-player.gif)
 
-Next we will make the projectile that will be bouncing on the paddle, walls, and blocks. Go into ``||sprites:Sprites||`` and grab a ``||sprites:set projectile to projectile from mySprite||`` and then place it in the ``||lopps:on start||``. Click on the image editor and draw a ball and then change mySprite to paddle and set **vx** to **50** and **vy** to **-55**. Then from ``||sprites:Sprites||`` grab a ``||sprites:set mySprite stay in screen||`` and drag it into the workspace. Then set the mySprite to projectile and then change the stay in screen to destroy on wall. Keep the toggle to off. Right click on the ``||sprites:set projectile destroy on wall off||`` and duplicate the block and drag into ``||loops:on start||``. Change destroy on wall to bounce on wall and switch the toggle to on.
+Next, we will make the projectile that will bounce against the paddle, walls, and blocks. Go into ``||sprites:Sprites||`` and grab a ``||sprites:set projectile to projectile from mySprite||`` and then place it in the ``||lopps:on start||``. Click on the image editor and draw a ball. Change ``mySprite`` to ``paddle`` and set **vx** to **50** and **vy** to **-55**. Go to ``||sprites:Sprites||``, grab a ``||sprites:set mySprite stay in screen||``, and drag it into the workspace. Then set the ``mySprite`` to ``projectile`` and then change the ``stay in screen`` to ``destroy on wall``. Keep the toggle set to **OFF**. Right click on the ``||sprites:set projectile destroy on wall off||`` and duplicate the block. Drag it into ``||loops:on start||``. Change ``destroy on wall`` to ``bounce on wall`` and switch the toggle to **ON**.
 
 ```blocks
 let paddle = sprites.create(img`
@@ -105,9 +105,9 @@ Congratulations! You have now created the main sprites for the game.
 
 ## Part Two: Creating the Blocks
 
-Next we are going to create the blocks. Go into ``||loops:Loops||`` and grab a ``||loops:for index from 0 to||`` and drag it into the workspace. Change the field input to **9**. Duplicate the same block and place it inside the first loop. Now change the field input from **9** to **2**. Go into ``||variables:Variables||`` and create a new variable called ``index2``.  Next drag out ``||variables:index2||`` and place it in the ``input`` of the second ``||loops:for loop||``. 
+In this part of the lesson we are going to create the blocks. Go into ``||loops:Loops||``, grab a ``||loops:for index from 0 to||``, and drag it into the workspace. Change the field input to **9**. Duplicate the same block and place it inside the first loop. Now change the field input from **9** to **2**. Go into ``||variables:Variables||`` and create a new variable called ``index2``.  Next drag out the ``||variables:index2||`` and place it in the ``input`` of the second ``||loops:for loop||``. 
 
-#### Creating an Offset
+### Creating an Offset
 
 ![Block Offset](/static/lessons/block-out/offset.png)
 
