@@ -127,6 +127,12 @@ declare namespace control {
     function millis(): int32;
 
     /**
+     * Gets current time in microseconds. Overflows every ~18 minutes.
+     */
+    //% shim=control::micros
+    function micros(): int32;
+
+    /**
      * Used internally
      */
     //% flags.defl=16 shim=control::internalOnEvent
