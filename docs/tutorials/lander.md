@@ -262,7 +262,7 @@ Find ``||game:game over||`` in ``||game:Game||``, and drag it into the first sec
 
 ```blocks
 let lander: Sprite = null
-let angle: string;
+let angle: string = null;
 scene.onHitTile(SpriteKind.Player, 4, function (sprite) {
     if (angle == "straight") {
         game.over(true, effects.starField)
