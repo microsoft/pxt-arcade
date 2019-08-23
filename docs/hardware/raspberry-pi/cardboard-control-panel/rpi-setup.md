@@ -43,6 +43,12 @@ BTN_RIGHT4=18
 BTN_DOWN4=15
 ```
 
+### Update ``config.txt``
+
+If supported by your screen, uncomment this line in ``config.txt``.
+
+    disable_overscan=1
+
 ## Test the firmware
 
 Now, let's try out the firmware.
@@ -79,7 +85,7 @@ Use the Test Program to identity which header is Ground on the Raspberry Pi Zero
 You should have **3 jumper wires** with **female header** connectors wrapped with electrical tape. These connect to the **GROUND**
 pins.
 
-### Connect the all of the buttons except EXIT, MENU
+### Connect the all of the buttons except EXIT, MENU, RESET
 
 Use the Test Program to determine which header the buttons will go to. You can connect them randomly then use the program to reorder them:
 
@@ -90,12 +96,6 @@ Use the Test Program to determine which header the buttons will go to. You can c
 
 <br/>
 https://youtu.be/-P5I_BzoYdg
-
-#### ~ hint
-
-This process is **much** easier if you name each jumper wire with a label using clear tape and a marker.
-
-#### ~
 
 ### Connect EXIT, MENU
 
