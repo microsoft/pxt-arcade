@@ -27,11 +27,6 @@ In the ``||scene:set background color||`` block, click on the grey color oval to
 
 ![Choose background color](/static/tutorials/chase-the-pizza/background-color.jpg)
 
-```blocks
-// @highlight
-scene.setBackgroundColor(7)
-```
-
 ## Step 3
 
 Open the ``||sprites:Sprites||`` Toolbox drawer and drag the first block, ``||variables:set mySprite||`` into the ``||loops:on start|`` block on your Workspace. This will create a new ``||sprites:Player||`` character for your game.
@@ -140,16 +135,14 @@ mySprite2 = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, SpriteKind.Food)
+`, SpriteKind.Player)
 ```
 
 ## Step 7
 
 In the ``||variables:set mySprite2||`` block, click on ``||variables:mySprite2||`` to open the menu, and select ``Rename variable...`` Type in ``pizza`` as the new sprite name and click **Ok**.
 
-![Rename mySprite2](/static/tutorials/chase-the-pizza/rename-mysprite2.jpg)
-
-![Variable name dialog](/static/tutorials/chase-the-pizza/rename-dialog.jpg)
+![Rename mySprite2](/static/tutorials/chase-the-pizza/rename-mysprite2.gif)
 
 ## Step 8
 
@@ -161,7 +154,7 @@ In the ``||variables:set pizza||`` block, click on the ``||sprites:Player||`` ki
 
 Click on the grey box for ``||variables:set pizza||`` and then select the **Gallery** view. Scroll to find the image of a small pizza (or any other image you like!) and select it to load into the image editor.
 
-![Image gallery](/static/tutorials/chase-the-pizza/image-gallery.jpg)
+![Image gallery](/static/tutorials/chase-the-pizza/image-gallery.gif)
 
 ## Step 10
 
@@ -216,13 +209,13 @@ info.startCountdown(10)
 
 In the ``||info:start countdown||`` block, click on the ``10`` second value and change the countdown time from ``10`` to ``3`` seconds.
 
-```block
+```blocks
 info.startCountdown(3)
 ```
 
 ## Step 12
 
-Open the ``|sprites:Sprites||`` Toolbox drawer and drag the ``||sprites:on sprite overlaps otherSprite||`` block onto your Workspace (you can place this anywhere).
+Open the ``||sprites:Sprites||`` Toolbox drawer and drag the ``||sprites:on sprite overlaps otherSprite||`` block onto your Workspace (you can place this anywhere).
 
 ```blocks
 // @highlight
@@ -283,7 +276,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 The Arcade game screen is `160` pixels wide, and `120` pixels high. In the first ``||math:pick random||`` block in the `x` coordinate of the ``||sprites:set pizza position||`` block, change the maximum value from ``10`` to **160**. In the second ``||math:pick random||`` block in the ``y`` coordinate, change the maximum value from ``10`` to **120**.
 
-```block
+```blocks
 let pizza: Sprite = null
 pizza.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
 ```
