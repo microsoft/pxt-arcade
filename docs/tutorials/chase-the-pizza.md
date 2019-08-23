@@ -10,22 +10,31 @@ Try this tutorial!
 
 ![Game animation](/static/tutorials/chase-the-pizza.gif)
 
-In this tutorial, you will build a fairly simple game with the goal of eating a pizza before time runs out. When the player eats a slice of pizza, the countdown is restarted.
+In this tutorial you will create a game with 2 sprites, a ``||sprites:Player||`` sprite and a ``||sprites:Food||`` sprite. The goal of the game is to eat as much pizza as you can before the time runs out! Each time your player catches the pizza, you gain points and the countdown is restarted.
 
-## Step 1 @fullscreen
+## Step 1
 
-Find ``||scene:set background color to||`` in ``||scene:Scene||``. Drag it into the ``||loops:on start||`` and then click on the grey box to select a new background color.
+Open the ``||scene:Scene||`` Toolbox drawer and drag the ``||scene:set background color||`` block into the ``||loops:on start||`` block on your Workspace. Click **Next** to go to the next step in the Tutorial.
+
+```blocks
+// @highlight
+scene.setBackgroundColor(0)
+```
+
+## Step 2
+
+In the ``||scene:set background color||`` block, click on the grey color oval to open the color palette and select a background color. To see what this looks like in your game, look at the Game Simulator on the left side of the screen.
+
+![Choose background color](/static/tutorials/chase-the-pizza/background-color.jpg)
 
 ```blocks
 // @highlight
 scene.setBackgroundColor(7)
 ```
 
-## Step 2 @fullscreen
+## Step 3
 
-Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||`` **after** ``||scene:set background color to||``.
-
-This will create a new character in the game -- but there is no image to represent this character yet.
+Open the ``||sprites:Sprites||`` Toolbox drawer and drag the first block, ``||variables:set mySprite||`` into the ``||loops:on start|`` block on your Workspace. This will create a new ``||sprites:Player||`` character for your game.
 
 ```blocks
 let mySprite: Sprite = null
@@ -51,17 +60,15 @@ mySprite = sprites.create(img`
 `, SpriteKind.Player)
 ```
 
-## Step 3 @fullscreen
+## Step 4
 
-In the ``||sprites:sprite of kind Player||`` block, click on the grey box to open the **image editor**. Use it to design your own image for the ``||sprites:Sprite||`` and then click outside of the image editor.
+Draw your ``||sprites:Player||`` character by clicking on the grey square in the ``||variables:set mySprite||`` block to open the Sprite Editor. Use the color palette and design tools to draw an image on the canvas. Click **Done** when you are finished.
 
 ![Image editor](/static/tutorials/chase-the-pizza/image-editor.gif)
 
-## Step 4 @fullscreen
+## Step 5
 
-Find ``||controller:move mySprite with buttons||`` in ``||controller:Controller||`` and drag it into the ``||loops:on start||`` after ``||variables:set mySprite to||``.
-
-This block allows the person playing the game to move the ``||sprites:Sprite||`` with the directional buttons; try pressing the different buttons to move your character around the screen!
+Open the ``||controller:Controller||`` Toolbox drawer and drag the ``||controller:move mySprite with buttons||`` block after the ``||variables:set mySprite||`` block. This will allow you to move your ``||sprites:Player||`` sprite around the screen with the arrow keys. Try it out in the Game Simulator
 
 ```blocks
 let mySprite: Sprite = null
@@ -88,15 +95,13 @@ mySprite = sprites.create(img`
 controller.moveSprite(mySprite)
 ```
 
-## Step 5 @fullscreen
+## Step 6
 
-Find the ``||variables:set mySprite2 to||`` block in ``||sprites:Sprites||`` and drag it to the end of the ``||loops:on start||``. Click on ``||variables:mySprite2||`` in the block, select ``Rename variable...``, and enter ``pizza`` as the new variable name. Change the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Food||``.
-
-This will create **another** ``||sprites:Sprite||``, but one that isn't controlled by the player.
+Open the ``||sprites:Sprites||`` Toolbox drawer and drag another ``||variables:set mySprite2||`` block into the ``||loops:on start||`` block on your Workspace. This will be the **pizza** sprite in our game.
 
 ```blocks
 let mySprite: Sprite = null
-let pizza: Sprite = null
+let mySprite2: Sprite = null
 scene.setBackgroundColor(7)
 mySprite = sprites.create(img`
 . . . . . 5 5 5 5 5 5 . . . . . 
@@ -118,7 +123,7 @@ mySprite = sprites.create(img`
 `, SpriteKind.Player)
 controller.moveSprite(mySprite)
 // @highlight
-pizza = sprites.create(img`
+mySprite2 = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -138,17 +143,29 @@ pizza = sprites.create(img`
 `, SpriteKind.Food)
 ```
 
-## Step 6 @fullscreen
+## Step 7
 
-Click on the grey box for ``||variables:pizza||`` and then select the Gallery view. Scroll to find the image of a small pizza (or any other image you like!) and select it to load into the image editor.
+In the ``||variables:set mySprite2||`` block, click on ``||variables:mySprite2||`` to open the menu, and select ``Rename variable...`` Type in ``pizza`` as the new sprite name and click **Ok**.
 
-![Image editor](/static/tutorials/chase-the-pizza/image-gal.gif)
+![Rename mySprite2](/static/tutorials/chase-the-pizza/rename-mysprite2.jpg)
 
-## Step 7 @fullscreen
+![Variable name dialog](/static/tutorials/chase-the-pizza/rename-dialog.jpg)
 
-Find ``||info:start countdown 10s||`` in ``||info:Info||``. Drag it down to bottom of the ``||loops:on start||`` and change the ``10`` to ``3``.
+## Step 8
 
-This will start a countdown that will soon end the game; we'll need to add a way to win!
+In the ``||variables:set pizza||`` block, click on the ``||sprites:Player||`` kind to open the menu of different Sprite kinds. Select ``||sprites:Food||`` as your ``||variables:pizza||`` sprite kind.
+
+![Set sprite kind](/static/tutorials/chase-the-pizza/sprite-kind.jpg)
+
+## Step 9
+
+Click on the grey box for ``||variables:set pizza||`` and then select the **Gallery** view. Scroll to find the image of a small pizza (or any other image you like!) and select it to load into the image editor.
+
+![Image gallery](/static/tutorials/chase-the-pizza/image-gallery.jpg)
+
+## Step 10
+
+Open the ``||info:Info||`` Toolbox drawer and drag the ``||info:start countdown||`` block into the ``||loops:on start||`` block on your Workspace.
 
 ```blocks
 let pizza: Sprite = null
@@ -192,65 +209,149 @@ b 5 5 5 5 d d 4 4 4 4 . . . . .
 4 4 4 4 . . . . . . . . . . . .
 `, SpriteKind.Food)
 // @highlight
+info.startCountdown(10)
+```
+
+## Step 11
+
+In the ``||info:start countdown||`` block, click on the ``10`` second value and change the countdown time from ``10`` to ``3`` seconds.
+
+```block
 info.startCountdown(3)
 ```
 
-## Step 8 @fullscreen
+## Step 12
 
-Find the ``||sprites:on sprite overlaps otherSprite||`` block in ``||sprites:Sprites||`` and drag it into the workspace. Change the ``||sprites:kind||`` of ``||variables:otherSprite||`` from ``||sprites:Player||`` to ``||sprites:Food||``.
-
-This will create an **event** that occurs when a ``||sprites:Player Sprite||`` touches and ``||sprites:Food Sprite||``. Events allow you to set blocks to run whenever something occurs; for example, ``||loops:on start||`` is an event that lets you set code to run as soon as the game is started!
+Open the ``|sprites:Sprites||`` Toolbox drawer and drag the ``||sprites:on sprite overlaps otherSprite||`` block onto your Workspace (you can place this anywhere).
 
 ```blocks
 // @highlight
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
 	
 })
 ```
 
-## Step 9 @fullscreen
+## Step 13
 
-When an overlap is detected, the player should have a point added to their score. Find the ``||info:change score by||`` block in ``||info:Info||`` and add it to the ``||sprites:on ... overlap ...||`` event.
+In the ``||sprites:on sprite overlaps otherSprite||`` block, click on the second ``||sprites:Player||`` kind after ``||variables:otherSprite||`` to open the menu. Select ``||sprites:Food||`` as its kind.
+
+![Overlap sprite kind](/static/tutorials/chase-the-pizza/overlap-kind-sprite.png)
+
+## Step 14
+
+When our ``||sprites:Player||`` overlaps with the ``||variables:pizza||`` sprite, let’s add a point to our game score. Open the ``||info:Info||`` Toolbox drawer and drag the ``||info:change score||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     // @highlight
-    info.changeScoreBy(1)
+	info.changeScoreBy(1)
 })
 ```
 
-## Step 10 @fullscreen
+## Step 15
 
-Also, when the overlap happens, the pizza should move to another position on the screen.
-Using the ``||math:pick random||`` block, we can generate an ``x`` position from ``20`` to ``140`` and a ``y`` position from ``20`` to ``100``.
-
-The screen is 160 pixels wide by 120 pixels high and we want to have the pizza away from the side so that it doesn't get clipped. 
+Let’s set the position for ``||variables:pizza||`` to random locations around the screen. Open the ``||sprites:Sprites||`` Toolbox drawer and drag the ``||sprites:set mySprite position||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block on your Workspace.
 
 ```blocks
-let pizza: Sprite = null
+let mySprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-    info.changeScoreBy(1)
+	info.changeScoreBy(1)
     // @highlight
-    pizza.setPosition(Math.randomRange(20, 140), Math.randomRange(20, 100))
+    mySprite.setPosition(0, 0)
 })
 ```
 
-## Step 11 @fullscreen
+## Step 16
 
-One final thing for the overlap event, the countdown should also restart. Drag another ``||info:start countdown||`` into the ``||sprites: on ... overlap ...||`` event. Set the countdown to `3` seconds.
+In the ``||sprites:set mySprite position||`` block, click on the ``||variables:mySprite||`` variable to open the menu, and select your ``||variables:pizza||`` sprite.
+
+![Change mySprite to pizza](/static/tutorials/chase-the-pizza/sprite-position-rename.png)
+
+## Step 17
+
+Open the ``||math:Math||`` Toolbox drawer and drag two ``||math:pick random||`` blocks onto the Workspace. Drop one into the ``x`` coordinate of the ``||sprites:set pizza position||`` block, and the other into the ``y`` coordinate replacing the ``0`` values.
 
 ```blocks
 let pizza: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-    info.changeScoreBy(1)
-    pizza.setPosition(Math.randomRange(20, 140), Math.randomRange(20, 80))
+	info.changeScoreBy(1)
+    pizza.setPosition(Math.randomRange(0, 10), Math.randomRange(0, 10))
+})
+```
+
+## Step 18
+
+The Arcade game screen is `160` pixels wide, and `120` pixels high. In the first ``||math:pick random||`` block in the `x` coordinate of the ``||sprites:set pizza position||`` block, change the maximum value from ``10`` to **160**. In the second ``||math:pick random||`` block in the ``y`` coordinate, change the maximum value from ``10`` to **120**.
+
+```block
+let pizza: Sprite = null
+pizza.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
+```
+
+## Step 19
+
+Let’s restart our countdown each time. Open the ``||info:Info||`` Toolbox drawer and drag another ``||info:start countdown||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block on your Workspace. Set the countdown to ``3`` seconds.
+
+```blocks
+let pizza: Sprite = null
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+	info.changeScoreBy(1)
+    pizza.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
     // @highlight
     info.startCountdown(3)
 })
 ```
+## Complete
 
-## Complete @fullscreen
+Congratulations, you have completed your game! Use the Game Simulator to play by moving your ``||sprites:Player||`` around the screen to try and eat as much pizza as possible before the time runs out. What’s your high score?
 
-Congratulations, you have completed your game! Try to move your character around the screen to collect the pizza before time runs out!
+```blocks
+let pizza: Sprite = null
+let mySprite: Sprite = null
+scene.setBackgroundColor(7)
+mySprite = sprites.create(img`
+. . . . . 5 5 5 5 5 5 . . . . . 
+. . . 5 5 5 5 5 5 5 5 5 5 . . . 
+. . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
+. 5 5 5 f f 5 5 5 5 f f 5 5 5 .
+5 5 5 5 f f 5 5 5 5 f f 5 5 5 5 
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+5 5 f 5 5 5 5 5 5 5 5 5 5 f 5 5 
+5 5 5 f 5 5 5 5 5 5 5 5 f 5 5 5 
+. 5 5 5 f 5 5 5 5 5 5 f 5 5 5 . 
+. 5 5 5 5 f f f f f f 5 5 5 5 . 
+. . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
+. . . 5 5 5 5 5 5 5 5 5 5 . . . 
+. . . . . 5 5 5 5 5 5 . . . . . 
+`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+pizza = sprites.create(img`
+. . . . . . b b b b . . . . . .
+. . . . . . b 4 4 4 b . . . . .
+. . . . . . b b 4 4 4 b . . . .
+. . . . . b 4 b b b 4 4 b . . .
+. . . . b d 5 5 5 4 b 4 4 b . .
+. . . . b 3 2 3 5 5 4 e 4 4 b .
+. . . b d 2 2 2 5 7 5 4 e 4 4 e
+. . . b 5 3 2 3 5 5 5 5 e e e e
+. . b d 7 5 5 5 3 2 3 5 5 e e e
+. . b 5 5 5 5 5 2 2 2 5 5 d e e
+. b 3 2 3 5 7 5 3 2 3 5 d d e 4
+. b 2 2 2 5 5 5 5 5 5 d d e 4 .
+b d 3 2 d 5 5 5 d d d 4 4 . . .
+b 5 5 5 5 d d 4 4 4 4 . . . . .
+4 d d d 4 4 4 . . . . . . . . .
+4 4 4 4 . . . . . . . . . . . .
+`, SpriteKind.Food)
+info.startCountdown(3)
 
-![Game animation](/static/tutorials/chase-the-pizza.gif)
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+	info.changeScoreBy(1)
+    pizza.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
+    // @highlight
+    info.startCountdown(3)
+})
+```
