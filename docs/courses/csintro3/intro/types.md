@@ -99,7 +99,7 @@ both a ``string`` and a ``number``, and displays them both.
 console.logValue("The number is", 7);
 ```
 
-Notice that it separates the ``string`` from the ``number`` with a colon and a space.
+Notice that when it prints out, it separates the ``string`` from the ``number`` with a colon and a space.
 
 ## Student Task #2: Typos
 
