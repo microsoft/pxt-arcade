@@ -4,15 +4,16 @@
 #include <dirent.h>
 #include <sys/stat.h>
 #include <stdio.h>
+#include <unistd.h>
 
 namespace control {
 
-#define PROGDIR "/sd/prj"
 
 //%
 RefCollection *programList() {
     DIR *d = opendir(PROGDIR);
     auto res = Array_::mk();
+    registerGCObj(res);
     for (;;) {
         struct dirent *ent = readdir(d);
         if (!ent)
@@ -24,9 +25,13 @@ RefCollection *programList() {
             continue;
         ent->d_name[len - 4] = 0; // chop extension
         //DMESG("add: '%s'", ent->d_name);
-        res->head.push((TValue)mkString(ent->d_name, -1));
+        auto tmp = (TValue)mkString(ent->d_name, -1);
+        registerGCPtr(tmp);
+        res->head.push(tmp);
+        unregisterGCPtr(tmp);
     }
     closedir(d);
+    unregisterGCObj(res);
     return res;
 }
 
@@ -40,6 +45,16 @@ void runProgram(String prog) {
     initialArgv[1] = (char*)"--run";
     initialArgv[2] = 0;
     target_reset();
+}
+
+/**
+ * Deletes a user program
+ */
+//%
+void deleteProgram(String prog) {
+    char *p;
+    asprintf(&p, "%s/%s.elf", PROGDIR, prog->getUTF8Data());
+    unlink(p);
 }
 
 } // namespace control

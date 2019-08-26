@@ -7,7 +7,6 @@ Functions allow for code to be structured and reused. In this example, start by 
 ## Starter Code
 
 ```blocks
-
 let mySprite: Sprite = null
 let index = 0
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {

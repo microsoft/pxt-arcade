@@ -13,7 +13,6 @@ The characters are all represented as sprites, allowing them to be positioned on
 3. Save the code for the task (name it "characters")
 
 ```blocks
-
 let dorothy: Sprite = null
 let lion: Sprite = null
 let tinMan: Sprite = null

@@ -48,7 +48,6 @@ Games often have an element of luck and surprise to keep the player engaged. In 
 4. Examine the use of ``||math:pick random||`` in the sprite location block. The code does not assign the chosen random number to a variable before using it
 
 ```blocks
-
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 

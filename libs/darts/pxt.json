@@ -8,5 +8,6 @@
     "public": true,
     "dependencies": {
         "game": "file:../game"
-    }
+    },
+    "weight": 78
 }

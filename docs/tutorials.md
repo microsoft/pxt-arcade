@@ -7,7 +7,7 @@
 [
 {
   "name": "Chase the Pizza",
-  "description": "Learn the basics of creating a game with this pizza collecting program",
+  "description": "Get started creating a simple game to chase a pizza around the screen and collect as many points as possible before time runs out!",
   "url": "/tutorials/chase-the-pizza",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/chase-the-pizza.png",
@@ -40,6 +40,13 @@
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/galga.png",
   "largeImageUrl": "/static/tutorials/galga.gif"
+}, {
+  "name": "Lander",
+  "description": "Land your spacecraft on platforms and try not to destroy it!",
+  "url": "/tutorials/lander",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/lander.png",
+  "largeImageUrl": "/static/tutorials/lander.gif"
 }, {
   "name": "Name Tag",
   "description": "A simple name tag with cool effects",

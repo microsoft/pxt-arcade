@@ -55,7 +55,6 @@ When we make comparisons, we have two numbers, in a specific order, and what is 
 [Less Than Example](https://makecode.com/_YERAiggVK6mH)
 
 ```blocks
-
 let mySprite: Sprite = null
 let projectile: Sprite = null
 sprites.onDestroyed(SpriteKind.Enemy, function (sprite) {
@@ -223,7 +222,6 @@ When the player collects a cherry, if the player has collected more than 5, then
 [Equality Example](https://makecode.com/_3pgH9LA5kL9b)
 
 ```blocks
-
 let projectile: Sprite = null
 let mySprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -312,7 +310,6 @@ When the player is on their final life, the image of the sprite changes and the 
 [Multiple comparisons](https://makecode.com/_FhqaRpe6Riau)
 
 ```blocks
-
 let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (mySprite.x < scene.screenWidth() / 2) {

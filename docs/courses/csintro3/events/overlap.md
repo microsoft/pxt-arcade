@@ -34,8 +34,6 @@ the ``||sprites:sprite||`` of the other kind that is listed.
 and which is ``||variables:enemy||``
 
 ```typescript
-
-
 let mySprite = sprites.create(img`
     1 1 1
 `, SpriteKind.Player);
@@ -78,8 +76,6 @@ this can be done using ``||sprites:setFlag||``.
 into a ``||sprites:Ghost||`` 
 
 ```typescript
-
-
 let mySprite = sprites.create(img`
     1 1 1
 `, SpriteKind.Player);

@@ -44,8 +44,6 @@ all ``||sprites:Enemy||``s
 3. Identify what is done to each ``||sprites:Enemy||`` in the ``||loops:for ... of||`` loop
 
 ```typescript
-
-
 for (let i = 0; i < 15; i++) {
     let skeleton: Sprite = sprites.create(sprites.castle.skellyFront, SpriteKind.Enemy);
     skeleton.x = Math.randomRange(0, screen.width);
@@ -131,8 +129,6 @@ and then iterate over any remaining elements in the ``||arrays:array||``.
 that are on the **right** half of the screen
 
 ```typescript
-
-
 for (let i = 0; i < 15; i++) {
     let skeleton: Sprite = sprites.create(sprites.castle.skellyFront, SpriteKind.Enemy);
     skeleton.x = Math.randomRange(0, screen.width);
@@ -178,8 +174,6 @@ This is an alternate form of a function that is not covered in detail in this co
 but allows for clearer formatting when programming in this style.
 
 ```typescript
-
-
 for (let i = 0; i < 15; i++) {
     let skeleton: Sprite = sprites.create(sprites.castle.skellyFront, SpriteKind.Enemy);
     skeleton.x = Math.randomRange(0, screen.width);

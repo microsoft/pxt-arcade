@@ -94,8 +94,6 @@ where the player can ``||controller:move||`` a spaceship back and forth
 and fire lasers at oncoming asteroids.
 
 ```typescript
-
-
 let mySprite: Sprite = sprites.create(img`
     . . . . . . . 5 . . . . . . .
     . . . . . . 5 4 5 . . . . . .
@@ -153,8 +151,6 @@ You can start with the example below,
 or create your own from scratch.
 
 ```typescript
-
-
 let mySprite: Sprite = sprites.create(sprites.castle.princess2Front, SpriteKind.Player);
 controller.moveSprite(mySprite);
 

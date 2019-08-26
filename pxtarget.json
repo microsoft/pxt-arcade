@@ -38,6 +38,8 @@
         "libs/hw---vm",
         "libs/feather",
         "libs/sevenseg",
+        "libs/settings",
+        "libs/settings---files",
         "libs/screen",
         "libs/screen---st7735",
         "libs/screen---linux",
@@ -59,6 +61,7 @@
         "libs/jacdac-game",
         "libs/power",
         "libs/controller",
+        "libs/controller---none",
         "libs/edge-connector",
         "libs/esp32",
         "libs/mqtt",
@@ -155,7 +158,7 @@
                 "codalTarget": {
                     "name": "codal-big-brainpad",
                     "url": "https://github.com/lancaster-university/codal-big-brainpad",
-                    "branch": "v1.1.2",
+                    "branch": "v1.1.3",
                     "type": "git"
                 },
                 "codalBinary": "STM32",
@@ -368,7 +371,6 @@
         "simGifKey": "R",
         "qrCode": true
     },
-    "ignoreDocsErrors": true,
     "unsupportedBrowsers": [
         { "id" : "ie" }
     ]

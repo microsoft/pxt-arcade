@@ -80,8 +80,6 @@ the image editor, and sprite ``||sprites:kinds||``.
 and the portions that are different
 
 ```typescript
-
-
 let player = sprites.create(img`
     . . . . . . b . b . . . . . . . 
     . . . . . f b b b f f . . . . . 

@@ -41,7 +41,6 @@ game.splash("Cherry Pickr")
 To set the background, click on ``||scene:Scene||`` in the Toolbox and drag the ``||scene:set tile map to||`` block into the ``||loops:on start||`` block. Go ahead and click the gray box and draw whatever you want the background to look like.
 
 ```blocks
-
 game.splash("Cherry Pickr")
 scene.setTileMap(img`
 6 6 6 6 6 6 6 6 6 6 
@@ -64,7 +63,6 @@ Our next step is to create a movable character. To do this, go to  ``||sprites:S
 Next, draw what you want the player to look like. Click the square grey box inside the ``||sprites:set mySprite to||`` block. A paint editor will pop up and this is where you will draw what you want your player to look like.
 
 ```blocks
-
 let mySprite: Sprite = null
 game.splash("Cherry Pickr")
 scene.setTileMap(img`
@@ -98,7 +96,6 @@ We do this so that when the player moves around the map, they will remain at the
 To make the player move faster, set the ``vx`` and ``vy`` to `150`.
 
 ```blocks
-
 let mySprite: Sprite = null
 game.splash("Cherry Pickr")
 scene.setTileMap(img`

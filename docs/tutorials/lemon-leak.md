@@ -19,7 +19,6 @@ In the ``||loops:on start||`` block put in the ``||scene:set background color||`
 ![Pick the lemon image](/static/tutorials/lemon-leak/pick-a-lemon.gif)
 
 ```blocks
-
 scene.setBackgroundColor(10)
 let mySprite = sprites.create(img`
     4 4 4 . . 4 4 4 4 4 . . . . . .
@@ -47,7 +46,6 @@ controller.moveSprite(mySprite)
 To keep the lemon from leaving the screen, drag over a ``||sprites:set mySprite stay in screen||`` block. Slide the switch for it to ``ON``. Find the ``||info:start countdown||`` block and put it in at the end. Change the time from `10` to `30` seconds.
 
 ```blocks
-
 scene.setBackgroundColor(10)
 let mySprite = sprites.create(img`
     4 4 4 . . 4 4 4 4 4 . . . . . .
@@ -133,7 +131,6 @@ game.onUpdateInterval(1000, function () {
 From ``||sprites:Sprites||``, drag an ``||sprites:on sprite of kind overlaps||`` block onto the Workspace. Set the kind for ``otherSprite`` to ``Projectile``. From ``||sprites:Sprites||``, drag a ``||sprites:mySprite start effect||`` block and drop inside the ``||sprites:overlaps||`` block. Click the **(+)** icon to expand the block and set the time for the effect to ``200`` ms.
 
 ```blocks
-
 let mySprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     mySprite.startEffect(effects.spray, 200)
@@ -145,7 +142,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 Lastly, to score hits by the strawberries on the lemon, drag a ``||info:change score by||`` block from ``||info:Info||`` in after the ``||sprites:mySprite start effect||`` block.
 
 ```blocks
-
 let mySprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     mySprite.startEffect(effects.spray, 200)

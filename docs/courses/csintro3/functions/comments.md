@@ -214,7 +214,6 @@ function lowFive(): number {
 4. **Challenge:** fill in the comment for the ``||functions:sayMyName||`` function
 
 ```typescript
-
 /**
  * 
  */
