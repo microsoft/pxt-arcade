@@ -45,10 +45,10 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [For Teachers](/courses/csintro3/about/teachers)
 * [Authors](/courses/csintro3/about/authors)
 * [Style](/courses/csintro3/about/style)
+* [Case Study](/courses/csintro3/about/case-study)
 
 ### [Intro](/courses/csintro3/intro)
 
-* [Case Study](/courses/csintro3/intro/case-study)
 * [Initialization](/courses/csintro3/intro/initialization)
 * [Types](/courses/csintro3/intro/types)
 * [User Input](/courses/csintro3/intro/user-input)
