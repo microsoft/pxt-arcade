@@ -95,74 +95,74 @@ The ``||scene:on top of myTile place mySprite||`` allows for sprites to be place
 3. Save the code for the task (name it "Random Maze")
 
 ```blocks
-let mySprite: Sprite = null
 scene.onHitTile(SpriteKind.Player, 7, function (sprite) {
     game.over(true)
 })
 scene.setTileMap(img`
-1 1 1 1 1 1 1 1 1 1 
-f f f f f f f f f f 
-1 1 1 1 1 1 1 1 1 1 
-f f f f f f f f f f 
-1 1 1 1 1 1 1 1 1 1 
-1 f f f f f f f f 1 
-1 1 1 f 7 7 7 f 1 1 
-1 1 1 f 1 1 1 f 1 1 
+    1 1 1 1 1 1 1 1 1 1
+    f f f f f f f f f f
+    1 1 1 1 1 1 1 1 1 1
+    f f f f f f f f f f
+    1 1 1 1 1 1 1 1 1 1
+    1 f f f f f f f f 1
+    1 1 1 f 7 7 7 f 1 1
+    1 1 1 f 1 1 1 f 1 1
 `)
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . f . . . . f . . . . . . 
-. . . . f . . . . f . . . . . . 
-. . . . f . . . . f . . . . . . 
-. . . . f . . . . f . . . . . . 
-. . . . f . . . . f . . . . . . 
-. . . . f . . . . f . . . . . . 
-. . . . . . . . . . . . . . . . 
-. f f . . . . . . . . f f . . . 
-. . f . . . . . . . . f . . . . 
-. . f f . . . . . . f f . . . . 
-. . . . f f f f f f . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+let mySprite = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . f . . . . f . . . . . .
+    . . . . f . . . . f . . . . . .
+    . . . . f . . . . f . . . . . .
+    . . . . f . . . . f . . . . . .
+    . . . . f . . . . f . . . . . .
+    . . . . f . . . . f . . . . . .
+    . . . . . . . . . . . . . . . .
+    . f f . . . . . . . . f f . . .
+    . . f . . . . . . . . f . . . .
+    . . f f . . . . . . f f . . . .
+    . . . . f f f f f f . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
+scene.cameraFollowSprite(mySprite)
 controller.moveSprite(mySprite, 100, 100)
 scene.setTile(15, img`
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 . . . . . . . . . . 2 2 2 
-2 2 2 . 2 2 2 2 2 2 2 2 . 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 . . 2 2 2 2 2 2 2 2 2 2 . . 2 
-2 . 2 2 2 2 2 2 2 2 2 2 2 2 . 2 
-2 . 2 2 2 2 2 2 2 2 2 2 2 2 . 2 
-2 . 2 2 2 2 2 2 2 2 2 2 2 2 . 2 
-2 . 2 2 2 2 2 2 2 2 2 2 2 2 . 2 
-2 . 2 2 2 2 2 2 2 2 2 2 2 2 . 2 
-2 . 2 2 2 2 2 2 2 2 2 2 2 2 . 2 
-2 . . 2 2 2 2 2 2 2 2 2 2 . . 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 . 2 2 2 2 2 2 2 2 . 2 2 2 
-2 2 2 . . . . . . . . . . 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 . . . . . . . . . . 2 2 2
+    2 2 2 . 2 2 2 2 2 2 2 2 . 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 . . 2 2 2 2 2 2 2 2 2 2 . . 2
+    2 . 2 2 2 2 2 2 2 2 2 2 2 2 . 2
+    2 . 2 2 2 2 2 2 2 2 2 2 2 2 . 2
+    2 . 2 2 2 2 2 2 2 2 2 2 2 2 . 2
+    2 . 2 2 2 2 2 2 2 2 2 2 2 2 . 2
+    2 . 2 2 2 2 2 2 2 2 2 2 2 2 . 2
+    2 . 2 2 2 2 2 2 2 2 2 2 2 2 . 2
+    2 . . 2 2 2 2 2 2 2 2 2 2 . . 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 . 2 2 2 2 2 2 2 2 . 2 2 2
+    2 2 2 . . . . . . . . . . 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
 `, true)
 scene.setTile(7, img`
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 f f f 7 7 7 7 7 7 7 
-7 7 7 7 7 7 f f f 7 7 7 7 7 7 7 
-7 7 7 7 7 7 f f f 7 7 7 7 7 7 7 
-7 7 7 7 7 7 f f f 7 7 7 7 7 7 7 
-7 7 7 7 7 7 f f f 7 7 7 7 7 7 7 
-7 7 7 7 7 7 f f f 7 7 7 7 7 7 7 
-7 7 7 7 7 7 f f f 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 f f f 7 7 7 7 7 7 7 
-7 7 7 7 7 7 f f f 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+    7 7 7 7 7 7 f f f 7 7 7 7 7 7 7
+    7 7 7 7 7 7 f f f 7 7 7 7 7 7 7
+    7 7 7 7 7 7 f f f 7 7 7 7 7 7 7
+    7 7 7 7 7 7 f f f 7 7 7 7 7 7 7
+    7 7 7 7 7 7 f f f 7 7 7 7 7 7 7
+    7 7 7 7 7 7 f f f 7 7 7 7 7 7 7
+    7 7 7 7 7 7 f f f 7 7 7 7 7 7 7
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+    7 7 7 7 7 7 f f f 7 7 7 7 7 7 7
+    7 7 7 7 7 7 f f f 7 7 7 7 7 7 7
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
 `, true)
 scene.getTile(5, 0).place(mySprite)
 scene.setTileAt(scene.getTile(Math.randomRange(0, 9), 1), 1)
@@ -296,9 +296,10 @@ b 5 5 5 5 d d 4 4 4 4 . . . . .
 ## Student Task #2: Spawning Enemies
 
 1. Start with the code from example #2b
-2. Use ``||scene:array of all tiles||`` and a ``||loops:for element value in||`` loop to create an 'enemy' for each red tile on the screen. Place the enemies on top of the tiles
-3. Add an ``||sprites:on overlap||`` event between the enemies and the player that causes the game to be over
-4. **Challenge:** add another row of walls, and pick one at random to change into a non-wall tile. Are there any rows in which choosing randomly might make the game impossible, or too easy?
+2. Add a ``||scene:array of all tiles||`` block to create an ``||arrays:array||`` of all of the red tiles
+3. Use a ``||loops:for element value in||`` loop to loop through each tile and place an 'enemy' on top of each red tile
+4. Add an ``||sprites:on overlap||`` event between the enemies and the player that causes the game to be over
+5. **Challenge:** add another row of walls, and pick one at random to change into a non-wall tile. Are there any rows in which choosing randomly might make the game impossible, or too easy?
 
 ## Concept: Multiple Levels
 
