@@ -158,63 +158,6 @@ Click on the grey box for ``||variables:set pizza||`` and then select the **Gall
 
 ## Step 10
 
-Open the ``||info:Info||`` Toolbox drawer and drag the ``||info:start countdown||`` block into the ``||loops:on start||`` block on your Workspace.
-
-```blocks
-let pizza: Sprite = null
-let mySprite: Sprite = null
-scene.setBackgroundColor(7)
-mySprite = sprites.create(img`
-. . . . . 5 5 5 5 5 5 . . . . . 
-. . . 5 5 5 5 5 5 5 5 5 5 . . . 
-. . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
-. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
-. 5 5 5 f f 5 5 5 5 f f 5 5 5 .
-5 5 5 5 f f 5 5 5 5 f f 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 f 5 5 5 5 5 5 5 5 5 5 f 5 5 
-5 5 5 f 5 5 5 5 5 5 5 5 f 5 5 5 
-. 5 5 5 f 5 5 5 5 5 5 f 5 5 5 . 
-. 5 5 5 5 f f f f f f 5 5 5 5 . 
-. . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
-. . . 5 5 5 5 5 5 5 5 5 5 . . . 
-. . . . . 5 5 5 5 5 5 . . . . . 
-`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-pizza = sprites.create(img`
-. . . . . . b b b b . . . . . .
-. . . . . . b 4 4 4 b . . . . .
-. . . . . . b b 4 4 4 b . . . .
-. . . . . b 4 b b b 4 4 b . . .
-. . . . b d 5 5 5 4 b 4 4 b . .
-. . . . b 3 2 3 5 5 4 e 4 4 b .
-. . . b d 2 2 2 5 7 5 4 e 4 4 e
-. . . b 5 3 2 3 5 5 5 5 e e e e
-. . b d 7 5 5 5 3 2 3 5 5 e e e
-. . b 5 5 5 5 5 2 2 2 5 5 d e e
-. b 3 2 3 5 7 5 3 2 3 5 d d e 4
-. b 2 2 2 5 5 5 5 5 5 d d e 4 .
-b d 3 2 d 5 5 5 d d d 4 4 . . .
-b 5 5 5 5 d d 4 4 4 4 . . . . .
-4 d d d 4 4 4 . . . . . . . . .
-4 4 4 4 . . . . . . . . . . . .
-`, SpriteKind.Food)
-// @highlight
-info.startCountdown(10)
-```
-
-## Step 11
-
-In the ``||info:start countdown||`` block, click on the ``10`` second value and change the countdown time from ``10`` to ``3`` seconds.
-
-```blocks
-info.startCountdown(3)
-```
-
-## Step 12
-
 Open the ``||sprites:Sprites||`` Toolbox drawer and drag the ``||sprites:on sprite overlaps otherSprite||`` block onto your Workspace (you can place this anywhere).
 
 ```blocks
@@ -224,13 +167,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherS
 })
 ```
 
-## Step 13
+## Step 11
 
 In the ``||sprites:on sprite overlaps otherSprite||`` block, click on the second ``||sprites:Player||`` kind after ``||variables:otherSprite||`` to open the menu. Select ``||sprites:Food||`` as its kind.
 
 ![Overlap sprite kind](/static/tutorials/chase-the-pizza/overlap-kind-sprite.png)
 
-## Step 14
+## Step 12
 
 When our ``||sprites:Player||`` overlaps with the ``||variables:pizza||`` sprite, let’s add a point to our game score. Open the ``||info:Info||`` Toolbox drawer and drag the ``||info:change score||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block.
 
@@ -241,7 +184,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 ```
 
-## Step 15
+## Step 13
 
 Let’s set the position for ``||variables:pizza||`` to random locations around the screen. Open the ``||sprites:Sprites||`` Toolbox drawer and drag the ``||sprites:set mySprite position||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block on your Workspace.
 
@@ -254,13 +197,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 ```
 
-## Step 16
+## Step 14
 
 In the ``||sprites:set mySprite position||`` block, click on the ``||variables:mySprite||`` variable to open the menu, and select your ``||variables:pizza||`` sprite.
 
 ![Change mySprite to pizza](/static/tutorials/chase-the-pizza/sprite-position-rename.png)
 
-## Step 17
+## Step 15
 
 Open the ``||math:Math||`` Toolbox drawer and drag two ``||math:pick random||`` blocks onto the Workspace. Drop one into the ``x`` coordinate of the ``||sprites:set pizza position||`` block, and the other into the ``y`` coordinate replacing the ``0`` values.
 
@@ -272,7 +215,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 ```
 
-## Step 18
+## Step 16
 
 The Arcade game screen is `160` pixels wide, and `120` pixels high. In the first ``||math:pick random||`` block in the `x` coordinate of the ``||sprites:set pizza position||`` block, change the maximum value from ``10`` to **160**. In the second ``||math:pick random||`` block in the ``y`` coordinate, change the maximum value from ``10`` to **120**.
 
@@ -281,9 +224,9 @@ let pizza: Sprite = null
 pizza.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
 ```
 
-## Step 19
+## Step 17
 
-Let’s restart our countdown each time. Open the ``||info:Info||`` Toolbox drawer and drag another ``||info:start countdown||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block on your Workspace. Set the countdown to ``3`` seconds.
+Let’s restart our countdown each time. Open the ``||info:Info||`` Toolbox drawer and drag another ``||info:start countdown||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block on your Workspace.
 
 ```blocks
 let pizza: Sprite = null
@@ -291,7 +234,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 	info.changeScoreBy(1)
     pizza.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
     // @highlight
-    info.startCountdown(3)
+    info.startCountdown(10)
 })
 ```
 ## Complete
@@ -339,12 +282,12 @@ b 5 5 5 5 d d 4 4 4 4 . . . . .
 4 d d d 4 4 4 . . . . . . . . .
 4 4 4 4 . . . . . . . . . . . .
 `, SpriteKind.Food)
-info.startCountdown(3)
+info.startCountdown(10)
 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
 	info.changeScoreBy(1)
     pizza.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
     // @highlight
-    info.startCountdown(3)
+    info.startCountdown(10)
 })
 ```
