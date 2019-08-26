@@ -1,4 +1,4 @@
-# Activity: Corgio Extension
+# Activity: Corgio Extension in JavaScript
 
 In previous lessons, the ``||corgio:Corgio||`` extension handled the intricate
 parts of making a character for a platformer.

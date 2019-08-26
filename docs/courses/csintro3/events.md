@@ -3,11 +3,11 @@
 ```codecard
 [
     {
-        "name": "Intro to Events",
+        "name": "On Game Update Event",
         "url": "/courses/csintro3/events/intro",
         "imageUrl": "/static/courses/csintro3/events/intro.gif"
     }, {
-        "name": "On Update Interval",
+        "name": "On Game Update Interval",
         "url": "/courses/csintro3/events/update",
         "imageUrl": "/static/courses/csintro3/events/update.gif"
     }, {
@@ -30,8 +30,8 @@
 ]
 ```
 
-* [Intro to Events](/courses/csintro3/events/intro)
-* [On Update Interval](/courses/csintro3/events/update)
+* [On Game Update Event](/courses/csintro3/events/intro)
+* [On Game Update Interval](/courses/csintro3/events/update)
 * [Sprite Overlap Events](/courses/csintro3/events/overlap)
 * [Button Press Events](/courses/csintro3/events/buttons)
 * [Info Events](/courses/csintro3/events/info)
