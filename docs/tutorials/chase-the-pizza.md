@@ -158,7 +158,7 @@ Click on the grey box for ``||variables:set pizza||`` and then select the **Gall
 
 ## Step 10
 
-Open the ``||sprites:Sprites||`` Toolbox drawer and drag the ``||sprites:on sprite overlaps otherSprite||`` block onto your Workspace (you can place this anywhere).  Click on the second ``||sprites:Player||`` and select ``||sprites:Food||`` as its kind.
+Open the ``||sprites:Sprites||`` Toolbox drawer and drag the ``||sprites:on sprite overlaps otherSprite||`` block onto your Workspace (you can place this anywhere).
 
 ```blocks
 // @highlight
@@ -167,9 +167,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherS
 })
 ```
 
+## Step 11
+
+In the ``||sprites:on sprite overlaps otherSprite||`` block, click on the second ``||sprites:Player||`` kind after ``||variables:otherSprite||`` to open the menu. Select ``||sprites:Food||`` as its kind.
+
 ![Overlap sprite kind](/static/tutorials/chase-the-pizza/overlap-kind-sprite.png)
 
-## Step 11
+## Step 12
 
 When our ``||sprites:Player||`` overlaps with the ``||variables:pizza||`` sprite, let’s add a point to our game score. Open the ``||info:Info||`` Toolbox drawer and drag the ``||info:change score||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block.
 
@@ -180,7 +184,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 ```
 
-## Step 12
+## Step 13
 
 Let’s set the position for ``||variables:pizza||`` to random locations around the screen. Open the ``||sprites:Sprites||`` Toolbox drawer and drag the ``||sprites:set mySprite position||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block on your Workspace.
 
@@ -193,13 +197,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 ```
 
-## Step 13
+## Step 14
 
 In the ``||sprites:set mySprite position||`` block, click on the ``||variables:mySprite||`` variable to open the menu, and select your ``||variables:pizza||`` sprite.
 
 ![Change mySprite to pizza](/static/tutorials/chase-the-pizza/sprite-position-rename.png)
 
-## Step 14
+## Step 15
 
 Open the ``||math:Math||`` Toolbox drawer and drag two ``||math:pick random||`` blocks onto the Workspace. Drop one into the ``x`` coordinate of the ``||sprites:set pizza position||`` block, and the other into the ``y`` coordinate replacing the ``0`` values.
 
@@ -211,7 +215,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 ```
 
-## Step 15
+## Step 16
 
 The Arcade game screen is `160` pixels wide, and `120` pixels high. In the first ``||math:pick random||`` block in the `x` coordinate of the ``||sprites:set pizza position||`` block, change the maximum value from ``10`` to **160**. In the second ``||math:pick random||`` block in the ``y`` coordinate, change the maximum value from ``10`` to **120**.
 
@@ -220,7 +224,7 @@ let pizza: Sprite = null
 pizza.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
 ```
 
-## Step 16
+## Step 17
 
 Let’s restart our countdown each time. Open the ``||info:Info||`` Toolbox drawer and drag another ``||info:start countdown||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block on your Workspace.
 
