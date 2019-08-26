@@ -61,6 +61,7 @@
         "libs/jacdac-game",
         "libs/power",
         "libs/controller",
+        "libs/controller---none"m,
         "libs/edge-connector",
         "libs/esp32spi",
         "libs/mqtt",
