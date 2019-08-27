@@ -58,7 +58,7 @@ let num: number = 24 / 3 * 4;
 2. Recreate the expression below in **JavaScript**
 3. To confirm the JavaScript expression is correct, switch to Blocks
 and check that the result is the same
-4. **Challenge:** change the ``+`` to a ``-``, and switch back to JavaScript.
+4. **Challenge:** change the ``+`` to a ``×``, and switch back to JavaScript.
 What has changed?
 
 ```blocks
