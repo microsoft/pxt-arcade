@@ -103,10 +103,10 @@ c a 8 a a c c c c a a f f f 8 a
 . . . c c b b b 6 6 a c c c c . 
 . . . . c c a b b c c c . . . . 
 . . . . . c c c c c c . . . . . 
-`, -300, 0, SpriteKind.Enemy)
+`, -150, 0, SpriteKind.Enemy)
     projectile.setPosition(scene.screenWidth(), Math.randomRange(0, scene.screenHeight()))
     if (info.score() < 10) {
-        projectile.vx += 200
+        projectile.vx += 100
     }
 })
 ```
