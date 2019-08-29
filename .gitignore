@@ -13,3 +13,4 @@ _locales
 package-lock.json
 .vscode/ipch
 
+*.DS_STORE
