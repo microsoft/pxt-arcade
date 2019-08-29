@@ -1,0 +1,10 @@
+.game-embed {
+    height: 100%;
+    width: 100%;
+}
+
+.game-embed-frame {
+    border: none;
+    height: 100%;
+    width: 100%;
+}

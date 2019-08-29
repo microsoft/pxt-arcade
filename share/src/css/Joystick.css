@@ -1,0 +1,17 @@
+.game-joystick {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    opacity: 0.5;
+
+    touch-action: none;
+}
+
+.game-joystick .spacer {
+    flex-grow: 1;
+}
