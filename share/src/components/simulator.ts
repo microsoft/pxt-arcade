@@ -47,12 +47,14 @@ export class Simulator {
 
     removeChangeListener(cb: (button: SimulatorButton, pressed: boolean) => void) {
         const index = this.changeListeners.indexOf(cb);
-        if (index != -1) {
+        if (index !== -1) {
             this.changeListeners.splice(index, 1);
         }
     }
 
     protected sendButtonState(button: SimulatorButton, pressed: boolean) {
+        this.updateButtonState(button, pressed);
+
         if (this.frame && this.frame.contentWindow) {
             this.frame.contentWindow.postMessage({
 
