@@ -14,6 +14,8 @@
         "sprites.castle.ts",
         "sprites.dialog.jres",
         "sprites.dialog.ts",
+        "sprites.dungeon.jres",
+        "sprites.dungeon.ts",
         "sprites.space.jres",
         "sprites.space.ts",
         "sprites.vehicle.ts",
