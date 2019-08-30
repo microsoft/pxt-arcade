@@ -4,7 +4,7 @@ So far, games have been primarily been intended for a single user. These are cal
 
 In this section, we will create **multiplayer** games, so that more than one person can play at the same time.
 
-![Final Game](/static/courses/csintro2/logic/pong.gif)
+![Final Game](/static/courses/csintro2/logic/paddle-game.gif)
 
 In these activities, students will work with:
 
@@ -77,11 +77,11 @@ controller.moveSprite(player1);
 
 With this task complete, you can now play games with two players in it: these players can currently only move around the screen, but you can implement any other behavior you want.
 
-## Concept: Pong
+## Concept: Paddle Game
 
-Pong is a game based off of table tennis (Ping Pong). Pong was one of the first 2 dimensional games ever released, in which two players can play against one another trying to hit a ball past the opponent.
+The Paddle Game is a game based off of table tennis (Ping Pong). The Paddle Game was one of the first 2 dimensional games ever released, in which two players can play against one another trying to hit a ball past the opponent.
 
-In the rest of this lesson, we will implement a simple version of pong using ``||controller:multiplayer||``. For each of the following tasks, you will build on the code introduced in example 2 to create your final game.
+In the rest of this lesson, we will implement a simple version of The Paddle Game using ``||controller:multiplayer||``. For each of the following tasks, you will build on the code introduced in example 2 to create your final game.
 
 
 [![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-logic-ball)
@@ -180,7 +180,7 @@ info.player2.setScore(0)
 
 ## Student Task #5: Hit the Paddle
 
-![Final Game](/static/courses/csintro2/logic/pong.gif)
+![Final Game](/static/courses/csintro2/logic/paddle-game.gif)
 
 1. Create an ``||sprites:on overlap||`` event between a ``||sprites:Player||`` and a ``||sprites:Ball||``, so that ``||variables:sprite||`` corresponds to the ``||sprites:Player||``
 2. In the ``||sprites:overlap||`` event, first ``||sprites:set otherSprite ghost on||``

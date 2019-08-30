@@ -5,3 +5,4 @@
 * [For Teachers](/courses/csintro3/about/teachers)
 * [Authors](/courses/csintro3/about/authors)
 * [Style](/courses/csintro3/about/style)
+* [Case Study](/courses/csintro3/about/case-study)

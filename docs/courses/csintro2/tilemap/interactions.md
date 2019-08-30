@@ -83,14 +83,14 @@ This behavior can be fixed using the ``||scene:on sprite of kind hits wall||`` b
 
 ## Student Task #2: Make it stop
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-tilemap-longgolf)
-
 1. Start with the code from task #1
 2. Create an ``||scene:on sprite of kind hits wall||`` between the golf ball (kind ``||sprites:GolfBall||``) and the brown wall
 3. Inside of that event, use the ``||darts:stop golfBall||`` to force the golf ball to stop in it's current position
 4. Verify that the golf ball now correctly stops when it touches a wall
 
 ## Student Task #3: Make a real course
+
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-tilemap-longgolf)
 
 Now that we have a functioning game of mini golf, we should make an interesting course for players to try to make it through. To do so, we will need to create a larger tile map.
 

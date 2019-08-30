@@ -5,7 +5,7 @@
 A variable points to a container that can store data. We have previously used variable names for sprites (for example, ``||variables:mySprite||``). Variables act like an address, and allow us to store, retrieve, and update data. For the examples in the [Sprites](/courses/csintro1/intro/sprites
 ) lesson, the variable ``||variables:mySprite||`` allowed us to interact with the sprite in our game. The word "variable" also means change. We can update the values our variable point to, such as updating the ``||variables:mySprite||`` variable to point to a completely different sprite.
 
-Variables are used extensively in code. Variables allow code to be written in a generic way, and allow for easier reuse of our code. Math equations, like `X = 2Y`, provide familiar examples in the use of variables that apply to code by assigning know values to variables to calculate unknown variable values. 
+Variables are used extensively in code. Variables allow code to be written in a generic way, and allow for easier reuse of our code. Math equations, like `X = 2Y`, provide familiar examples in the use of variables that apply to code by assigning known values to variables to calculate unknown variable values. 
 
 If we know `Y = 3` we can calculate `X` from our equation. Later on, `Y` can have a different value, like `Y = 7`. We can reuse the equation, `X = 2Y`, for both values of `Y`. This way, the value of `X` will change alongside the value of `Y`.
 

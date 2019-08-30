@@ -19,7 +19,7 @@ Use at least **four** of the following concepts from [structure](/courses/csintr
 * [Sprites](/courses/csintro3/structure/sprites)
 * [Projectiles](/courses/csintro3/structure/projectiles)
 * [Tile Maps](/courses/csintro3/structure/tilemaps)
-* [Corgio Extension](/courses/csintro3/structure/extensions)
+* [Corgio Extension in JavaScript](/courses/csintro3/structure/extensions)
 * [Namespaces](/courses/csintro3/structure/namespaces)
 
 Use at least **one** of the following concepts from [Functions](/courses/csintro3/functions)
@@ -30,7 +30,7 @@ Use at least **one** of the following concepts from [Functions](/courses/csintro
 Use at least **three** of the following concepts from [Events](/courses/csintro3/events)
 
 * [On Game Update Event](/courses/csintro3/events/intro)
-* [On Update Interval](/courses/csintro3/events/update)
+* [On Game Update Interval](/courses/csintro3/events/update)
 * [Sprite Overlap Events](/courses/csintro3/events/overlap)
 * [Button Press Events](/courses/csintro3/events/buttons)
 * [Info Events](/courses/csintro3/events/info)
@@ -40,7 +40,7 @@ Use at least **one** of the following concepts from [Arrays](/courses/csintro3/a
 * [Arrays of Numbers](/courses/csintro3/arrays/numbers)
 * [Arrays of Sprites](/courses/csintro3/arrays/sprites)
 * [Tiles](/courses/csintro3/arrays/tiles)
-* [Images](/courses/csintro3/arrays/images)
+* [Images Array](/courses/csintro3/arrays/images)
 
 
 
