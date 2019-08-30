@@ -319,7 +319,6 @@
         "allowPackageExtensions": true,
         "homeScreenHero": "./static/hero.png",
         "socialOptions": {
-            "twitterHandle": "msmakecode",
             "orgTwitterHandle": "MSMakeCode",
             "hashtags": "MakeCode",
             "discourse": "https://forum.makecode.com/",
