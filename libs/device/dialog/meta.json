@@ -6,5 +6,6 @@
     "star": {
         "namespace": "sprites.dialog",
         "mimeType": "image/x-mkcd-f4"
-    }
+    },
+    "tags": "dialog"
 }
