@@ -28,7 +28,10 @@ you might not have seen elsewhere:
 * [Galga](/#tutorial:/tutorials/galga)
 * [Lander](/#tutorial:/tutorials/lander)
 * [Name Tag](/#tutorial:/tutorials/name-tag)
-* [Simple Extensions](/#tutorial:/tutorials/simple-extensions)
+* [Walking Hero](/#tutorial:/concepts/walking-hero)
+* [Picnic Food](/#tutorial:/concepts/picnic-food)
+* [Princess Pizza](/#tutorial:/concepts/princess-pizza)
+* [Bouncing Burger](/#tutorial:/concepts/bouncing-burger)
 
 Additionally, you may find it useful to check out the review material
 for the previous courses:
