@@ -296,7 +296,7 @@ b 5 5 5 5 d d 4 4 4 4 . . . . .
 ## Student Task #2: Spawning Enemies
 
 1. Start with the code from example #2b
-2. Add a ``||scene:array of all tiles||`` block to create an ``||arrays:array||`` of all of the red tiles
+2. Add an ``||scene:array of all tiles||`` block to create an ``||arrays:array||`` of all of the red tiles
 3. Use a ``||loops:for element value in||`` loop to loop through each tile and place an 'enemy' on top of each red tile
 4. Add an ``||sprites:on overlap||`` event between the enemies and the player that causes the game to be over
 5. **Challenge:** add another row of walls, and pick one at random to change into a non-wall tile. Are there any rows in which choosing randomly might make the game impossible, or too easy?
