@@ -82,8 +82,7 @@ export class Joystick extends React.Component<JoystickProps, {}> {
 
     protected updateDirection(button: SVGRectElement | undefined, isPressed: boolean) {
         if (button) {
-            button.setAttribute("stroke", isPressed ? "white" : "#cecece");
-            button.setAttribute("fill", isPressed ? "white" : "none");
+            button.setAttribute("fill", isPressed ? "#a8769a" : "none");
         }
     }
 
@@ -122,8 +121,10 @@ export class Joystick extends React.Component<JoystickProps, {}> {
         });
 
         div.addEventListener("pointerleave", ev => {
-            this.updateJoystickDrag(ev.clientX, ev.clientY);
-            this.startAnimation();
+            if (inGesture) {
+                this.updateJoystickDrag(ev.clientX, ev.clientY);
+                this.startAnimation();
+            }
             inGesture = false;
         });
     }

@@ -17,6 +17,16 @@ export class Simulator {
 
     constructor(frame?: HTMLIFrameElement) {
         this.frame = frame;
+
+        window.addEventListener("message", ev => {
+            console.log("GOT MESSAGE " + JSON.stringify(ev.data));
+
+            if (ev.data.type === "ready") {
+                if (this.frame && this.frame.contentWindow) {
+                    this.frame.contentWindow.postMessage({ justScreen: true }, "*");
+                }
+            }
+        });
     }
 
     setFrame(frame: HTMLIFrameElement | null) {
@@ -57,7 +67,7 @@ export class Simulator {
 
         if (this.frame && this.frame.contentWindow) {
             this.frame.contentWindow.postMessage({
-
+                button, pressed
             }, "*" /* FIXME: This isn't a security sensitive codepath, but we should use the origin anyways */)
         }
     }

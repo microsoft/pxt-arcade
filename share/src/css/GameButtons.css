@@ -13,3 +13,8 @@
 .game-buttons .spacer {
     flex-grow: 1;
 }
+
+.game-button-svg {
+    user-select: none;
+    touch-action: none;
+}
