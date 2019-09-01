@@ -243,8 +243,13 @@
 					} else if (d.type == "simulator") {
 						switch (d.command) {
 							case "restart":
-								stopSim();
-								setState("splash");
+								if (d.controlReset) {
+									// just restart on control.reset()
+									startSim();
+								} else {
+									stopSim();
+									setState("splash");
+								}
 								break;
 							case "setstate":
 								simState[d.stateKey] = d.stateValue
