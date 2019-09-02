@@ -266,8 +266,7 @@
         "autoRunLight": false,
         "emptyRunCode": "pxsim.pxtcore.updateScreen(new pxsim.RefImage(160, 120, 4))",
         "aspectRatio": 0.85,
-        "dynamicBoardDefinition": true,
-        "leanShare": true
+        "dynamicBoardDefinition": true
     },
     "appTheme": {
         "logoUrl": "https://github.com/Microsoft/pxt-arcade",
@@ -275,6 +274,8 @@
         "docsLogo": "./static/logo.svg",
         "portraitLogo": "./static/logo.svg",
         "footerLogo": "./static/logo.svg",
+        "thumbLogo": "./static/arcade-logo.png",
+        "leanShare": true,
         "organization": "Microsoft MakeCode",
         "organizationUrl": "https://makecode.com/org",
         "organizationLogo": "./static/Micorsoft_logo_rgb_W-white_D-square.png",

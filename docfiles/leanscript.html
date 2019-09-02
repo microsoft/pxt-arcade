@@ -110,7 +110,7 @@
 			<h1>@name@</h1>
 			<p>@description@</p>
 			<div>
-				<img id="thumb" src="https://arcade.makecode.com/api/@id@/thumb" />
+				<img id="thumb" src="@cardLogo@" />
 			</div>
 			<div>
 				<button id="play">Play!</button>
@@ -170,7 +170,7 @@
 							startSim();
 						}
 					};
-					xhttp.open("GET", "/api/@id@/js?v=@simversion@", true);
+					xhttp.open("GET", "@cdnUrl@/api/@id@/js?v=@simversion@", true);
 					xhttp.send();
 				}
 
