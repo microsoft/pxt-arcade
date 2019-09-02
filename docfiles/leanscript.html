@@ -11,92 +11,11 @@
 	<meta name="viewport"
 		content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
 
-	<link rel="stylesheet" href="./static/script-page.css" />
+	<link rel="stylesheet" href="./static/leanscript.css" />
 
 	<link rel="alternate" type="application/json+oembed" href="@oembedurl@&format=json" />
 	<link rel="alternate" type="text/xml+oembed" href="@oembedurl@&format=xml" />
 
-	<style>
-		/* fix for iOS; see https://github.com/PierBover/ios-iframe-fix */
-		#wrap {
-			position: fixed;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			overflow-y: hidden;
-			-webkit-overflow-scrolling: touch;
-		}
-
-		html {
-			width: 100%;
-			height: 100%;
-			overflow: hidden;
-		}
-
-		body {
-			height: 100%;
-		}
-
-		#wrap iframe {
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-		}
-
-		#splash {
-			text-align: center;
-			position: relative;
-		}
-
-		#loading {
-			background: rgba(255, 255, 255, 0.9);
-			position: absolute;
-			left: 0;
-			right: 0;
-			top: 0;
-			bottom: 0;
-			display: none;
-		}
-
-		#loading h2 {
-			font-size: 3em;
-			margin: 5em 0;
-		}
-
-		[data-state="loading"] #loading {
-			display: block;
-		}
-
-		[data-state="run"] #splash {
-			display: none;
-		}
-
-		#wrap {
-			display: none;
-		}
-
-		[data-state="run"] #wrap {
-			display: block;
-		}
-
-		#play {
-			border: none;
-			background: #f00;
-			color: white;
-			font-size: 2em;
-			padding: 0.2em 1em;
-			margin: 1em;
-		}
-
-		#thumb {
-			width: 320px;
-			height: 240px;
-			image-rendering: pixelated;
-		}
-	</style>
 	<style id="injected-style">
 	</style>
 </head>
@@ -265,7 +184,7 @@
 
 	</div>
 
-	<!-- @include tracking.html -->
+	<!-- no tracking here! -->
 </body>
 
 </html>
