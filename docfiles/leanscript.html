@@ -63,6 +63,20 @@
                     </div>
                 </div>
             </div>
+
+            <div id='abusemodal'>
+                <h2>Report abuse</h2>
+                <div id="abusecontent" class="content">
+                    <label>Why do you find it offensive?</label>
+                    <textarea id='abusetext' rows="4"></textarea>
+
+                    <div class="actions">
+                        <button id="abuse-submit">Submit</button>
+                        <button id="abuse-cancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
             <div id="loading">
                 <h2>loading...</h2>
             </div>
@@ -85,15 +99,28 @@
                 var started = false;
 
                 function fetchCode() {
+                    sendReq("@cdnUrl@/api/@id@/js?v=@simversion@", null, function (c, status) {
+                        if (status != 200)
+                            return;
+                        code = c;
+                        startSim();
+                    })
+                }
+
+                function sendReq(url, data, cb) {
                     var xhttp = new XMLHttpRequest();
                     xhttp.onreadystatechange = function () {
-                        if (xhttp.readyState == 4 && xhttp.status == 200) {
-                            code = xhttp.responseText;
-                            startSim();
+                        if (xhttp.readyState == 4) {
+                            cb(xhttp.status == 200, xhttp.responseText)
                         }
                     };
-                    xhttp.open("GET", "@cdnUrl@/api/@id@/js?v=@simversion@", true);
-                    xhttp.send();
+                    xhttp.open(data ? "POST" : "GET", url, true);
+                    if (data) {
+                        xhttp.setRequestHeader("Content-Type", "application/json");
+                        xhttp.send(JSON.stringify(data))
+                    } else {
+                        xhttp.send();
+                    }
                 }
 
                 function startSim() {
@@ -144,18 +171,50 @@
                     // document.location.hash = "#" + st
                 }
 
-                function setPlay(id) {
-                    document.getElementById(id).addEventListener("click", function () {
-                        started = true;
-                        setState("loading");
-                        // for testing "loading..." screen
-                        //setTimeout(startSim, 1000);
-                        startSim();
-                    })
+                function setClick(id, fn) {
+                    document.getElementById(id).addEventListener("click", fn)
                 }
 
-                setPlay("play");
-                setPlay("thumb");
+                function playBtn() {
+                    started = true;
+                    setState("loading");
+                    // for testing "loading..." screen
+                    //setTimeout(startSim, 1000);
+                    startSim();
+                }
+
+                setClick("play", playBtn);
+                setClick("thumb", playBtn);
+
+                var abusemodal = document.getElementById("abusemodal");
+
+                function abuseMsg(msg) {
+                    document.getElementById("abusecontent").textContent = msg;
+                }
+                var submitting = false;
+                setClick("abuse", function () {
+                    abusemodal.style.display = "block";
+                })
+                setClick("abuse-cancel", function () {
+                    abusemodal.style.display = "none";
+                })
+                setClick("abuse-submit", function () {
+                    var reason = document.getElementById("abusetext").value;
+                    if (!reason || reason.length < 5) {
+                        alert("You have to give a reason.")
+                        return;
+                    }
+                    abuseMsg("Submitting...");
+                    sendReq("/api/@id@/abusereports", {
+                        text: reason
+                    }, function (resp, code) {
+                        if (code == 200) {
+                            abuseMsg("Thank you for helping keep Microsoft MakeCode a friendly place!")
+                        } else {
+                            abuseMsg("Submission failed: " + resp)
+                        }
+                    })
+                })
 
                 window.addEventListener('message', function (ev) {
                     var d = ev.data

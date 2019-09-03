@@ -52,8 +52,8 @@ body {
     position: relative;
 }
 
-#loading {
-    background: rgba(255, 255, 255, 0.9);
+#loading, #abusemodal {
+    background: rgba(255, 255, 255, 0.95);
     position: absolute;
     left: 0;
     right: 0;
@@ -65,6 +65,21 @@ body {
 #loading h2 {
     font-size: 3em;
     margin: 5em 0;
+}
+
+#abusemodal {
+    text-align: center;
+    padding: 3em 0;
+}
+
+#abusemodal label {
+    display: block;
+    margin: 0.5em 0;
+}
+
+#abusemodal textarea {
+    width: 30em;
+    height: 5em;
 }
 
 [data-state="loading"] #loading {
