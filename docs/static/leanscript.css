@@ -98,17 +98,56 @@ body {
     display: block;
 }
 
-#play {
+#actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+#actions > button {
     border: none;
     background: #f00;
     color: white;
     font-size: 2em;
     padding: 0.2em 1em;
-    margin: 1em;
+    border-radius: 4px;
+    font-family: monospace;
 }
 
-#thumb {
-    width: 320px;
-    height: 240px;
+#actions > button:last-child {
+    margin-left: 0.5em;
+}
+
+#sim {
+    background: #fcf7e4;
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
+    border: 5px solid #96266c !important;
+    border-radius: 12px;
+}
+
+#sim > img {
+    width: calc(100% - 2em);
+    margin: 0.5em;
     image-rendering: pixelated;
+    border-right: 0.5rem inset #2f99a1;
+    border-left: 0.5rem outset #2f99a1;
+    border-top: 0.5rem outset #f290c1;
+    border-bottom: 0.5rem inset #f290c1;
+    clip-path: polygon(0% 8px, 8px 0%, calc(100% - 8px) 0%, 100% 8px,
+        100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px));
+}
+
+#buttons {
+    display: flex;
+    opacity: 0.5;
+    filter: grayscale();
+}
+
+#buttons > div {
+    flex: 1;
+}
+
+#buttons > div > svg {
+    width: 100%;
 }
