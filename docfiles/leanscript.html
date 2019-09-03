@@ -111,7 +111,7 @@
                     var xhttp = new XMLHttpRequest();
                     xhttp.onreadystatechange = function () {
                         if (xhttp.readyState == 4) {
-                            cb(xhttp.status == 200, xhttp.responseText)
+                            cb(xhttp.responseText, xhttp.status)
                         }
                     };
                     xhttp.open(data ? "POST" : "GET", url, true);
