@@ -18,3 +18,9 @@
     user-select: none;
     touch-action: none;
 }
+
+@media (max-aspect-ratio: 1/1) {
+    .game-buttons {
+        height: calc(100% - 3em);
+    }
+}

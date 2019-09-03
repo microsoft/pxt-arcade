@@ -50,7 +50,7 @@ export class Joystick extends React.Component<JoystickProps, {}> {
         return (
             <div ref="joystick-container" className="game-joystick">
                 <div className="spacer" />
-                <svg xmlns="http://www.w3.org/2000/svg" ref="joystick-bounds" viewBox="0 0 40 40" width="200px" height="200px">
+                <svg xmlns="http://www.w3.org/2000/svg" ref="joystick-bounds" viewBox="1 0 40 40" width="200px" height="200px">
                     <circle id="joystick-background" cx="20" cy="20" r="16" fill="#dedede" stroke="#cecece" strokeWidth="2"/>
                     <rect ref="dpad-up" x="16" y="6" width="8" height="12" rx="2" fill="none" stroke="#cecece" strokeWidth="1" />
                     <rect ref="dpad-down" x="16" y="22" width="8" height="12" rx="2" fill="none" stroke="#cecece" strokeWidth="1" />
