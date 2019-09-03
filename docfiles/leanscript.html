@@ -2,189 +2,192 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
 
 <head>
-	<meta charset="UTF-8">
-	<title>@name@</title>
+    <meta charset="UTF-8">
+    <title>@name@</title>
 
-	<!-- @include meta.html -->
+    <!-- @include meta.html -->
 
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<meta name="viewport"
-		content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport"
+        content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
 
-	<link rel="stylesheet" href="./static/leanscript.css" />
+    <link rel="stylesheet" href="./static/leanscript.css" />
 
-	<link rel="alternate" type="application/json+oembed" href="@oembedurl@&format=json" />
-	<link rel="alternate" type="text/xml+oembed" href="@oembedurl@&format=xml" />
+    <link rel="alternate" type="application/json+oembed" href="@oembedurl@&format=json" />
+    <link rel="alternate" type="text/xml+oembed" href="@oembedurl@&format=xml" />
 
-	<style id="injected-style">
-	</style>
+    <style id="injected-style">
+    </style>
 </head>
 
 <body id='root' data-state="splash" class='root expandIt share-page'>
 
-	<!-- @include macros.html -->
+    <!-- @include macros.html -->
 
-	<div class="ui main container mainbody script-content">
-		<div id="splash">
-			<h1>@name@</h1>
-			<p>@description@</p>
-			<div>
-				<img id="thumb" src="@cardLogo@" />
-			</div>
-			<div>
-				<button id="play">Play!</button>
-			</div>
-			<div>
-				<a href="https://arcade.makecode.com/#pub:@id@">Edit code</a>
-			</div>
-			<div class="abuse content">
-				<p>
-					The content above is provided by a user, and is not endorsed by Microsoft.
-					<a style='text-decoration:underline' id="abuse" href="#">Report abuse</a> if you think it's not
-					appropriate.
-				</p>
-			</div>
+    <div class="ui main container mainbody script-content">
+        <div id="splash">
+            <h1>@name@</h1>
+            <p>@description@</p>
+            <div>
+                <img id="thumb" src="@cardLogo@" />
+            </div>
+            <div>
+                <button id="play">Play!</button>
+            </div>
+            <div>
+                <a href="/@versionsuff@#pub:@id@">Edit code</a>
+            </div>
+            <div>
+                <a href="/@versionsuff@#sandbox:@id@">Read code</a>
+            </div>
+            <div class="abuse content">
+                <p>
+                    The content above is provided by a user, and is not endorsed by Microsoft.
+                    <a style='text-decoration:underline' id="abuse" href="#">Report abuse</a> if you think it's not
+                    appropriate.
+                </p>
+            </div>
 
-			<div class="script-bookend">
-				<div style="text-align: center;">
+            <div class="script-bookend">
+                <div style="text-align: center;">
 
-					<div class="ui container horizontal mini link list">
-						<!-- <a class="ui item " href="https://makecode.com/contact " target="_blank " rel="noopener ">Contact Us</a> -->
-						<a class="ui item " href="https://makecode.com/privacy " target="_blank "
-							rel="noopener ">Privacy &amp; Cookies</a>
-						<a class="ui item " href="https://makecode.com/termsofuse " target="_blank " rel="noopener ">
-							Terms Of Use</a>
-						<a class="ui item " href="https://makecode.com/trademarks " target="_blank "
-							rel="noopener ">Trademarks</a>
-						<div class="ui item ">© 2019 Microsoft</div>
-					</div>
-				</div>
-			</div>
-			<div id="loading">
-				<h2>loading...</h2>
-			</div>
-		</div>
-		<div id="wrap">
-			<div class="simframe ui embed">
-				<iframe id="simframe" title="Simulator" allowfullscreen="" allow="autoplay"
-					sandbox="allow-same-origin allow-scripts" class="no-select" src="/sim/simulator.html"
-					frameborder="0">
-				</iframe>
-			</div>
-		</div>
+                    <div class="ui container horizontal mini link list">
+                        <!-- <a class="ui item " href="https://makecode.com/contact " target="_blank " rel="noopener ">Contact Us</a> -->
+                        <a class="ui item " href="https://makecode.com/privacy " target="_blank "
+                            rel="noopener ">Privacy &amp; Cookies</a>
+                        <a class="ui item " href="https://makecode.com/termsofuse " target="_blank " rel="noopener ">
+                            Terms Of Use</a>
+                        <a class="ui item " href="https://makecode.com/trademarks " target="_blank "
+                            rel="noopener ">Trademarks</a>
+                        <div class="ui item ">© 2019 Microsoft</div>
+                    </div>
+                </div>
+            </div>
+            <div id="loading">
+                <h2>loading...</h2>
+            </div>
+        </div>
+        <div id="wrap">
+            <div class="simframe ui embed">
+                <iframe id="simframe" title="Simulator" allowfullscreen="" allow="autoplay"
+                    sandbox="allow-same-origin allow-scripts" class="no-select" src="/sim/simulator.html"
+                    frameborder="0">
+                </iframe>
+            </div>
+        </div>
 
-		<script type="text/javascript">
-			(function () {
-				var code = "";
-				var isReady = false;
-				var simState = {}
-				var simStateChanged = false
-				var started = false;
+        <script type="text/javascript">
+            (function () {
+                var code = "";
+                var isReady = false;
+                var simState = {}
+                var simStateChanged = false
+                var started = false;
 
-				function fetchCode() {
-					var xhttp = new XMLHttpRequest();
-					xhttp.onreadystatechange = function () {
-						if (xhttp.readyState == 4 && xhttp.status == 200) {
-							code = xhttp.responseText;
-							startSim();
-						}
-					};
-					xhttp.open("GET", "@cdnUrl@/api/@id@/js?v=@simversion@", true);
-					xhttp.send();
-				}
+                function fetchCode() {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (xhttp.readyState == 4 && xhttp.status == 200) {
+                            code = xhttp.responseText;
+                            startSim();
+                        }
+                    };
+                    xhttp.open("GET", "@cdnUrl@/api/@id@/js?v=@simversion@", true);
+                    xhttp.send();
+                }
 
-				function startSim() {
-					if (!code || !isReady || !started)
-						return
-					setState("run");
-					const runMsg = {
-						type: "run",
-						parts: [],
-						"code": code,
-						partDefinitions: {},
-						cdnUrl: "/cdn/",
-						version: "lean:@id@",
-						storedState: simState,
-						frameCounter: 1,
-						options: {
-							"theme": "green",
-							"player": ""
-						},
-						"id": "green-" + Math.random()
-					}
-					const frame = document.getElementById("simframe");
-					frame.contentWindow.postMessage(runMsg, "*");
-				}
+                function startSim() {
+                    if (!code || !isReady || !started)
+                        return
+                    setState("run");
+                    const runMsg = {
+                        type: "run",
+                        parts: [],
+                        "code": code,
+                        partDefinitions: {},
+                        cdnUrl: "/cdn/",
+                        version: "lean:@id@",
+                        storedState: simState,
+                        frameCounter: 1,
+                        options: {
+                            "theme": "green",
+                            "player": ""
+                        },
+                        "id": "green-" + Math.random()
+                    }
+                    const frame = document.getElementById("simframe");
+                    frame.contentWindow.postMessage(runMsg, "*");
+                }
 
-				function stopSim() {
-					const frame = document.getElementById("simframe");
-					frame.contentWindow.postMessage({
-						type: "stop"
-					}, "*");
-				}
+                function stopSim() {
+                    const frame = document.getElementById("simframe");
+                    frame.contentWindow.postMessage({
+                        type: "stop"
+                    }, "*");
+                }
 
-				fetchCode()
+                fetchCode()
 
-				try {
-					simState = JSON.parse(localStorage["sim-@id@"])
-				} catch (e) {
-					simState = {}
-				}
-				setInterval(function () {
-					if (simStateChanged)
-						localStorage["sim-@id@"] = JSON.stringify(simState)
-					simStateChanged = false
-				}, 200)
+                try {
+                    simState = JSON.parse(localStorage["sim-@id@"])
+                } catch (e) {
+                    simState = {}
+                }
+                setInterval(function () {
+                    if (simStateChanged)
+                        localStorage["sim-@id@"] = JSON.stringify(simState)
+                    simStateChanged = false
+                }, 200)
 
-				function setState(st) {
-					document.getElementById("root").setAttribute("data-state", st);
-					// document.location.hash = "#" + st
-				}
+                function setState(st) {
+                    document.getElementById("root").setAttribute("data-state", st);
+                    // document.location.hash = "#" + st
+                }
 
-				function setPlay(id) {
-					document.getElementById(id).addEventListener("click", function () {
-						started = true;
-						setState("loading");
-						// for testing "loading..." screen
-						//setTimeout(startSim, 1000);
-						startSim();
-					})
-				}
+                function setPlay(id) {
+                    document.getElementById(id).addEventListener("click", function () {
+                        started = true;
+                        setState("loading");
+                        // for testing "loading..." screen
+                        //setTimeout(startSim, 1000);
+                        startSim();
+                    })
+                }
 
-				setPlay("play");
-				setPlay("thumb");
+                setPlay("play");
+                setPlay("thumb");
 
-				window.addEventListener('message', function (ev) {
-					var d = ev.data
-					if (d.type == "ready") {
-						isReady = true;
-						startSim();
-					} else if (d.type == "simulator") {
-						switch (d.command) {
-							case "restart":
-								if (d.controlReset) {
-									// just restart on control.reset()
-									startSim();
-								} else {
-									stopSim();
-									setState("splash");
-								}
-								break;
-							case "setstate":
-								simState[d.stateKey] = d.stateValue
-								simStateChanged = true
-								break;
-						}
-					} else {
-						console.log(d)
-					}
-				}, false);
-			})()
-		</script>
+                window.addEventListener('message', function (ev) {
+                    var d = ev.data
+                    if (d.type == "ready") {
+                        isReady = true;
+                        startSim();
+                    } else if (d.type == "simulator") {
+                        switch (d.command) {
+                            case "restart":
+                                if (d.controlReset) {
+                                    // just restart on control.reset()
+                                    startSim();
+                                } else {
+                                    stopSim();
+                                    setState("splash");
+                                }
+                                break;
+                            case "setstate":
+                                simState[d.stateKey] = d.stateValue
+                                simStateChanged = true
+                                break;
+                        }
+                    } else {
+                        console.log(d)
+                    }
+                }, false);
+            })()
+        </script>
 
-	</div>
+    </div>
 
-	<!-- no tracking here! -->
+    <!-- no tracking here! -->
 </body>
 
 </html>
