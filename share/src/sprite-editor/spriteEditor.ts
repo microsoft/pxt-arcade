@@ -48,7 +48,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
     private sidebar: SideBar;
     private header: SpriteHeader;
     private bottomBar: ReporterBar;
-    //private gallery: Gallery;
+    // private gallery: Gallery;
 
     private state: CanvasState;
 
@@ -58,7 +58,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
     private edit: Edit;
     private activeTool: PaintTool = PaintTool.Normal;
     private toolWidth = 1;
-    private color = 1;
+    public color = 1;
 
     private cursorCol = 0;
     private cursorRow = 0;
@@ -76,7 +76,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
 
     private closeHandler: () => void;
 
-    constructor(bitmap: Bitmap, blocksInfo: any /*TODO*/, protected lightMode = false) {
+    constructor(bitmap: Bitmap, blocksInfo?: {}, protected lightMode = false, public scale = 1) {
         this.colors = [
             "#ffffff",
             "#ff2121",
@@ -94,7 +94,6 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
             "#91463d",
             "#000000"
         ]
-
         this.columns = bitmap.width;
         this.rows = bitmap.height;
 
@@ -105,13 +104,14 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
         this.group = this.root.group();
         this.createDefs();
 
-        this.paintSurface = new CanvasGrid(this.colors, this.state.copy(), this.lightMode);
+        this.paintSurface = new CanvasGrid(this.colors, this.state.copy(), this.lightMode, this.scale);
 
         this.paintSurface.drag((col, row) => {
             this.debug("gesture (" + PaintTool[this.activeTool] + ")");
             if (!this.altDown) {
                 this.setCell(col, row, this.color, false);
             }
+
             this.bottomBar.updateCursor(col, row);
         });
 
@@ -161,10 +161,17 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
         this.sidebar.setColor(this.colors.length >= 3 ? 3 : 1); // colors omits 0
 
         // this.header = new SpriteHeader(this);
-        //this.gallery = null;//new Gallery(blocksInfo);
+        // this.gallery = new Gallery(blocksInfo);
         this.bottomBar = new ReporterBar(this.group, this, REPORTER_BAR_HEIGHT);
 
         this.updateUndoRedo();
+
+        // Sets canvas scale
+        this.scale = scale;
+    }
+
+    setSidebarColor(color: number) {
+        this.sidebar.setColor(color);
     }
 
     setCell(col: number, row: number, color: number, commit: boolean): void {
@@ -190,7 +197,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
 
     render(el: HTMLDivElement): void {
         // el.appendChild(this.header.getElement());
-        //el.appendChild(this.gallery.getElement());
+        // el.appendChild(this.gallery.getElement());
         this.paintSurface.render(el);
         el.appendChild(this.root.el);
         this.layout();
@@ -215,7 +222,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
         this.paintSurface.updateBounds(paintAreaTop, paintAreaLeft, CANVAS_HEIGHT, CANVAS_HEIGHT);
         this.bottomBar.layout(paintAreaTop + CANVAS_HEIGHT + REPORTER_BAR_CANVAS_MARGIN, paintAreaLeft, CANVAS_HEIGHT);
 
-        //this.gallery.layout(0, HEADER_HEIGHT, TOTAL_HEIGHT - HEADER_HEIGHT);
+        // this.gallery.layout(0, HEADER_HEIGHT, TOTAL_HEIGHT - HEADER_HEIGHT);
         // this.header.layout();
     }
 
@@ -333,18 +340,18 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
 
     showGallery() {
         /*
-                    this.gallery.show((result: Bitmap, err?: string) => {
-                        if (err && err !== "cancelled") {
-                            console.error(err);
-                        }
-                        else if (result) {
-                            this.redoStack = [];
-                            this.pushState(true);
-                            this.restore(new CanvasState(result));
-                            this.hideGallery();
-                            this.header.toggle.toggle(true);
-                        }
-                    });*/
+        this.gallery.show((result: Bitmap, err?: string) => {
+            if (err && err !== "cancelled") {
+                console.error(err);
+            }
+            else if (result) {
+                this.redoStack = [];
+                this.pushState(true);
+                this.restore(new CanvasState(result));
+                this.hideGallery();
+                this.header.toggle.toggle(true);
+            }
+        });*/
     }
 
     hideGallery() {
@@ -374,16 +381,16 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
 
         switch (tool) {
             case PaintTool.Rectangle:
-                updateIcon(btn, "\uf096", "Rectangle");
+                updateIcon(btn, "\uf096", ("Rectangle"));
                 break;
             case PaintTool.Circle:
-                updateIcon(btn, "\uf10c", "Circle");
+                updateIcon(btn, "\uf10c", ("Circle"));
                 break;
             case PaintTool.Normal:
-                updateIcon(btn, "\uf040", "Pencil");
+                updateIcon(btn, "\uf040", ("Pencil"));
                 break;
             case PaintTool.Line:
-                updateIcon(btn, "\uf07e", "Line");
+                updateIcon(btn, "\uf07e", ("Line"));
                 break;
             default:  // no alternate icon, do not change
                 return;

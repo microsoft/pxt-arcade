@@ -87,7 +87,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
                     <div className="questions">
                         {/* <h1>Mod your game!</h1>
                         <p>Fill in the questions to create your very own game.</p> */}
-                        <h2>Draw your hero!</h2>
+                        <h1>Draw your hero!</h1>
                         {/* <input placeholder="purple dragon">
                         </input>
                         <button ref="play-btn">

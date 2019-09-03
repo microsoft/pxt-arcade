@@ -13,7 +13,7 @@ export class CanvasGrid {
     private gesture: GestureState;
     private context: CanvasRenderingContext2D;
     private fadeAnimation: Fade;
-    private selectAnimation: NodeJS.Timer;
+    private selectAnimation: number;
 
     protected backgroundLayer: HTMLCanvasElement;
     protected paintLayer: HTMLCanvasElement;
@@ -22,7 +22,10 @@ export class CanvasGrid {
     mouseCol: number;
     mouseRow: number;
 
-    constructor(protected palette: string[], public state: CanvasState, protected lightMode = false) {
+    scale: number;
+
+    constructor(protected palette: string[], public state: CanvasState, protected lightMode = false, scale: number) {
+        this.scale = scale;
         this.paintLayer = document.createElement("canvas");
         this.paintLayer.setAttribute("class", "sprite-editor-canvas");
         this.overlayLayer = document.createElement("canvas")
@@ -51,7 +54,7 @@ export class CanvasGrid {
         /* TODO
         const eyedropperClass = "sprite-editor-eyedropper";
 
-        const toApply = on ? pxt.BrowserUtils.addClass : pxt.BrowserUtils.removeClass;
+        const toApply = on ? utils.addClass : utils.removeClass;
         toApply(this.paintLayer, eyedropperClass);
         toApply(this.overlayLayer, eyedropperClass);
         if (!this.lightMode) {
@@ -338,8 +341,8 @@ export class CanvasGrid {
         const left = bounds.left + (window.scrollX !== null ? window.scrollX : window.pageXOffset);
         const top = bounds.top + (window.scrollY !== null ? window.scrollY : window.pageYOffset);
 
-        this.mouseCol = Math.floor((coord.clientX - left) / this.cellWidth);
-        this.mouseRow = Math.floor((coord.clientY - top) / this.cellHeight);
+        this.mouseCol = Math.floor((((coord.clientX) - left) / this.cellWidth) / this.scale);
+        this.mouseRow = Math.floor((((coord.clientY) - top) / this.cellHeight) / this.scale);
 
         return [
             this.mouseCol,
@@ -377,7 +380,7 @@ export class CanvasGrid {
                 requestAnimationFrame(() => this.drawSelectionAnimation(dashOffset));
             };
 
-            this.selectAnimation = setInterval(drawLayer, 40)
+            this.selectAnimation = window.setInterval(drawLayer, 40)
         }
     }
 
