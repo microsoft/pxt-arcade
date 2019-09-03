@@ -221,7 +221,10 @@ The Arcade game screen is `160` pixels wide, and `120` pixels high. In the first
 
 ```blocks
 let pizza: Sprite = null
-pizza.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+	info.changeScoreBy(1)
+    pizza.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
+})
 ```
 
 ## Step 17
