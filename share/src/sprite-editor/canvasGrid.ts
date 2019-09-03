@@ -209,8 +209,8 @@ export class CanvasGrid {
         this.cellWidth = width | 0;
         this.cellHeight = height | 0;
 
-        const canvasWidth = this.cellWidth * this.image.width;
-        const canvasHeight = this.cellHeight * this.image.height;
+        const canvasWidth = this.cellWidth * this.image.width // * this.scale;
+        const canvasHeight = this.cellHeight * this.image.height // * this.scale;
 
         this.paintLayer.width = canvasWidth;
         this.paintLayer.height = canvasHeight;
@@ -341,8 +341,8 @@ export class CanvasGrid {
         const left = bounds.left + (window.scrollX !== null ? window.scrollX : window.pageXOffset);
         const top = bounds.top + (window.scrollY !== null ? window.scrollY : window.pageYOffset);
 
-        this.mouseCol = Math.floor((((coord.clientX) - left) / this.cellWidth) / this.scale);
-        this.mouseRow = Math.floor((((coord.clientY) - top) / this.cellHeight) / this.scale);
+        this.mouseCol = Math.floor((((coord.clientX) - left) / this.cellWidth));
+        this.mouseRow = Math.floor((((coord.clientY) - top) / this.cellHeight));
 
         return [
             this.mouseCol,

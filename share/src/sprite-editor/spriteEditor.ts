@@ -212,15 +212,18 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
             return;
         }
 
-        this.paintSurface.setGridDimensions(CANVAS_HEIGHT);
+        this.paintSurface.setGridDimensions(CANVAS_HEIGHT * this.scale);
 
         // The width of the palette + editor
-        const paintAreaTop = HEADER_HEIGHT + HEADER_CANVAS_MARGIN;
-        const paintAreaLeft = PADDING + SIDEBAR_WIDTH + SIDEBAR_CANVAS_MARGIN;
+        const paintAreaTop = (HEADER_HEIGHT + HEADER_CANVAS_MARGIN) * this.scale;
+        const paintAreaLeft = (PADDING + SIDEBAR_WIDTH + SIDEBAR_CANVAS_MARGIN) * this.scale;
 
-        this.sidebar.translate(PADDING, paintAreaTop);
-        this.paintSurface.updateBounds(paintAreaTop, paintAreaLeft, CANVAS_HEIGHT, CANVAS_HEIGHT);
-        this.bottomBar.layout(paintAreaTop + CANVAS_HEIGHT + REPORTER_BAR_CANVAS_MARGIN, paintAreaLeft, CANVAS_HEIGHT);
+        this.sidebar.translate(PADDING * this.scale, paintAreaTop);
+        // TODO(dz): hacky scaling
+        this.paintSurface.updateBounds(paintAreaTop, paintAreaLeft, CANVAS_HEIGHT * this.scale, CANVAS_HEIGHT * this.scale);
+        this.bottomBar.layout(
+            HEADER_HEIGHT + HEADER_CANVAS_MARGIN + (CANVAS_HEIGHT + REPORTER_BAR_CANVAS_MARGIN),
+            PADDING + SIDEBAR_WIDTH + SIDEBAR_CANVAS_MARGIN, CANVAS_HEIGHT);
 
         // this.gallery.layout(0, HEADER_HEIGHT, TOTAL_HEIGHT - HEADER_HEIGHT);
         // this.header.layout();
@@ -327,11 +330,11 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
     }
 
     outerWidth() {
-        return WIDTH;
+        return WIDTH * this.scale;
     }
 
     outerHeight() {
-        return TOTAL_HEIGHT;
+        return TOTAL_HEIGHT * this.scale;
     }
 
     bitmap() {

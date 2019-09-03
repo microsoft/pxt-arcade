@@ -19,7 +19,8 @@
     "noEmit": true,
     "jsx": "react",
     "strictPropertyInitialization": false,
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "downlevelIteration": true
   },
   "include": [
     "./src/**/**/*",

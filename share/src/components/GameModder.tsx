@@ -46,12 +46,40 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         if (!this.spriteEditorHolder)
             return;
 
+        let scale = 1.5; // TODO: compute from client width/height
+
         // const { value } = this.props;
         // const stateSprite = value && this.stripImageLiteralTags(value)
         const state = imageLiteralToBitmap('', DEFAULT_SPRITE_STATE);
 
-        let spriteEditor = new SpriteEditor(state, null, false);
+        let body = document.getElementsByTagName('body')[0]
+        let actualWidth = body.clientWidth
+        let actualHeight = body.clientHeight
+        // let width = 
+        // 
+        let spriteEditor = new SpriteEditor(state, null, false, scale);
         spriteEditor.render(this.spriteEditorHolder);
+        // HACK: scaling
+        function scaleAtt(el: Element, attName: string, scale: number) {
+            let oldW = parseInt(el.getAttribute(attName))
+            let newW = oldW * scale
+            el.setAttribute(attName, newW.toString())
+        }
+        let canvases = document.getElementsByClassName("sprite-editor-canvas")
+        for (let c of canvases) {
+            // scaleAtt(c, "width", scale)
+            // scaleAtt(c, "height", scale)
+        }
+        let controls = document.getElementsByClassName("sprite-canvas-controls")
+        for (let c of controls) {
+            let oldW = parseInt(c.getAttribute("width").replace("px", ""))
+            let oldH = parseInt(c.getAttribute("height").replace("px", ""))
+            let newW = oldW / scale
+            let newH = oldH / scale
+            c.setAttribute("viewBox", `0 0 ${newW} ${newH}`)
+        }
+        // END HACK
+
         spriteEditor.rePaint();
         spriteEditor.setActiveColor(1, true);
         spriteEditor.setSizePresets([
@@ -78,6 +106,8 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             // this.props.onChange(newSpriteState);
             // spriteEditor = undefined;
         });
+
+
     }
 
     render() {
