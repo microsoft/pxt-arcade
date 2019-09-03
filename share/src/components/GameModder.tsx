@@ -30,6 +30,8 @@ const DEFAULT_SPRITE_STATE = `
 . . . . . . . . . . . . . . . .
 `;
 
+const SPRITE_EDITOR_ASPECT_RATIO = 539.0 / 500.0;
+
 export class GameModder extends React.Component<GameModderProps, GameModderState> {
     protected playBtn: HTMLButtonElement | undefined;
     protected spriteEditorHolder: HTMLDivElement | undefined;
@@ -66,6 +68,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         spriteEditor.addKeyListeners();
         spriteEditor.onClose(() => {
             console.log("Closing sprite editor!")
+            this.props.playHandler()
             // const newSpriteState = pxtsprite
             //     .bitmapToImageLiteral(spriteEditor.bitmap().image);
             // this.setState({
@@ -82,21 +85,20 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             <div className="game-modder">
                 <div className="grid">
                     <div className="questions">
-                        <h1>Mod your game!</h1>
-                        <p>Fill in the questions to create your very own game.</p>
-                        <h2>Name your hero:</h2>
-                        <input placeholder="purple dragon">
+                        {/* <h1>Mod your game!</h1>
+                        <p>Fill in the questions to create your very own game.</p> */}
+                        <h2>Draw your hero!</h2>
+                        {/* <input placeholder="purple dragon">
                         </input>
                         <button ref="play-btn">
                             Play
                         </button>
                         <button ref="play-btn2">
                             Play2
-                        </button>
+                        </button> */}
                         <div ref="sprite-editor-holder">
 
                         </div>
-                        <p>(Sprite Editor here)</p>
                     </div>
                 </div>
             </div>
@@ -109,7 +111,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
 
         // events
         let that = this
-        this.playBtn.addEventListener('click', that.props.playHandler)
+        // this.playBtn.addEventListener('click', that.props.playHandler)
 
         // TODO(dz):
         this.renderSpriteEditor()

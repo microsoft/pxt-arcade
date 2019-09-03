@@ -18,7 +18,7 @@ const PADDING = 10;
 const DROP_DOWN_PADDING = 4;
 
 // Height of toolbar (the buttons above the canvas)
-export const HEADER_HEIGHT = 50;
+export const HEADER_HEIGHT = 0;
 
 // Spacing between the toolbar and the canvas
 const HEADER_CANVAS_MARGIN = 10;
@@ -160,7 +160,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
         this.sidebar = new SideBar(['url("#alpha-background")'].concat(this.colors), this, this.group);
         this.sidebar.setColor(this.colors.length >= 3 ? 3 : 1); // colors omits 0
 
-        this.header = new SpriteHeader(this);
+        // this.header = new SpriteHeader(this);
         //this.gallery = null;//new Gallery(blocksInfo);
         this.bottomBar = new ReporterBar(this.group, this, REPORTER_BAR_HEIGHT);
 
@@ -189,7 +189,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
     }
 
     render(el: HTMLDivElement): void {
-        el.appendChild(this.header.getElement());
+        // el.appendChild(this.header.getElement());
         //el.appendChild(this.gallery.getElement());
         this.paintSurface.render(el);
         el.appendChild(this.root.el);
@@ -216,7 +216,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
         this.bottomBar.layout(paintAreaTop + CANVAS_HEIGHT + REPORTER_BAR_CANVAS_MARGIN, paintAreaLeft, CANVAS_HEIGHT);
 
         //this.gallery.layout(0, HEADER_HEIGHT, TOTAL_HEIGHT - HEADER_HEIGHT);
-        this.header.layout();
+        // this.header.layout();
     }
 
     rePaint() {

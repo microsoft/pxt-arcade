@@ -36,7 +36,7 @@ export class ReporterBar {
 
         this.root.appendChild(this.sizeButton.getElement());
 
-        this.doneButton = new StandaloneTextButton(("Done"), height);
+        this.doneButton = new StandaloneTextButton(("Play"), height);
         this.doneButton.addClass("sprite-editor-confirm-button");
         this.doneButton.onClick(() => this.host.closeEditor());
 

@@ -27,7 +27,7 @@
   cursor: pointer;
 }
 .sprite-editor-dropdown.blocklyDropDownDiv {
-  background: linear-gradient(#4B7BEC 50px, #2c3e50 50px, #2c3e50 100%);
+  background: #2c3e50;
 }
 .sprite-editor-dropdown.blocklyDropDownDiv .blocklyDropDownArrow.arrowTop {
   background: #4B7BEC;
@@ -128,7 +128,7 @@
   fill: white;
 }
 .sprite-editor-dropdown-bg {
-  background: linear-gradient(#4B7BEC 50px, #2c3e50 50px, #2c3e50 100%);
+  background: #2c3e50;
   border-radius: 4px;
   padding-top: 4px;
   position: relative;
