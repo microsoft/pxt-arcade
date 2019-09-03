@@ -210,7 +210,7 @@ Open the ``||math:Math||`` Toolbox drawer and drag two ``||math:pick random||`` 
 ```blocks
 let pizza: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-	info.changeScoreBy(1)
+    info.changeScoreBy(1)
     pizza.setPosition(Math.randomRange(0, 10), Math.randomRange(0, 10))
 })
 ```
