@@ -18,10 +18,10 @@
         "OuterWest2",
         "SwitchUp",
         "SwitchDown",
-        "innerNorthWest",
-        "innerNorthEast",
-        "innerSouthEast",
-        "innerSouthWest"
+        "InnerNorthWest",
+        "InnerNorthEast",
+        "InnerSouthEast",
+        "InnerSouthWest"
     ],
     "tags": "tile"
 }
