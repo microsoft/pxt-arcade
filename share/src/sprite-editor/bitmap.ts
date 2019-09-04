@@ -10,7 +10,7 @@ export interface Coord {
  * 16-color sprite
  */
 export class Bitmap {
-    protected buf: Uint8Array;
+    public buf: Uint8Array;
 
     constructor(public width: number, public height: number, public x0 = 0, public y0 = 0) {
         this.buf = new Uint8Array(Math.ceil(width * height / 2));

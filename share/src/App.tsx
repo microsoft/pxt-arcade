@@ -15,22 +15,24 @@ export class App extends React.Component<{}, AppState> {
             mode: "mod"
         }
 
-        this.toggleState = this.toggleState.bind(this)
+        this.playGame = this.playGame.bind(this)
     }
 
     render() {
         return (
             <div className="App">
                 {this.state.mode === "mod"
-                    ? <GameModder playHandler={this.toggleState} />
+                    ? <GameModder playHandler={this.playGame} />
                     : <GamePlayer />
                 }
             </div>
         );
     }
 
-    toggleState() {
-        this.setState({ mode: this.state.mode === "mod" ? "play" : "mod" })
+    playGame(binJs: string) {
+        console.log(`I want to play this game that's ${Math.round((binJs.length / 256) / 1034)}kb!`)
+        // TODO: connect to simulator
+        this.setState({ mode: "play" })
     }
 }
 
