@@ -4,7 +4,7 @@ import { SpriteEditor } from '../sprite-editor/spriteEditor'
 import '../css/GameModder.css';
 import '../css/SpriteEditor.css';
 import { imageLiteralToBitmap, bitmapToImageLiteral, Bitmap } from '../sprite-editor/bitmap';
-import { bunnyHopBinJs } from '../games/bunny_hop.js';
+import { bunnyHopBinJs } from '../games/bunny_hop_min.js';
 
 export interface GameModderProps {
     playHandler: (binJs: string) => void
