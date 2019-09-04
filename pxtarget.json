@@ -369,7 +369,8 @@
         "simScreenshotMaxUriLength": 300000,
         "simGif": false,
         "simGifKey": "R",
-        "qrCode": true
+        "qrCode": true,
+        "shareFinishedTutorials": true
     },
     "unsupportedBrowsers": [
         { "id" : "ie" }
