@@ -30,8 +30,6 @@ const DEFAULT_SPRITE_STATE = `
 . . . . . . . . . . . . . . . .
 `;
 
-const SPRITE_EDITOR_ASPECT_RATIO = 539.0 / 500.0;
-
 export class GameModder extends React.Component<GameModderProps, GameModderState> {
     protected playBtn: HTMLButtonElement | undefined;
     protected spriteEditorHolder: HTMLDivElement | undefined;
@@ -46,15 +44,23 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         if (!this.spriteEditorHolder)
             return;
 
-        let scale = 1.5; // TODO: compute from client width/height
 
         // const { value } = this.props;
         // const stateSprite = value && this.stripImageLiteralTags(value)
         const state = imageLiteralToBitmap('', DEFAULT_SPRITE_STATE);
 
         let body = document.getElementsByTagName('body')[0]
-        let actualWidth = body.clientWidth
-        let actualHeight = body.clientHeight
+        let header = document.getElementById('header')
+        const MARGIN = 20
+        let actualWidth = body.clientWidth - MARGIN
+        // const BANNER_H = 40 + 21 + 21
+        let actualHeight = body.clientHeight - header.clientHeight - MARGIN
+        let refWidth = 539.0
+        let refHeight = 500.0
+        let wScale = actualWidth / refWidth
+        let hScale = actualHeight / refHeight
+        let scale = Math.min(wScale, hScale)
+        // let scale = 1.5; // TODO: compute from client width/height
         // let width = 
         // 
         let spriteEditor = new SpriteEditor(state, null, false, scale);
@@ -117,7 +123,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
                 {/* <div className="questions"> */}
                 {/* <h1>Mod your game!</h1>
                         <p>Fill in the questions to create your very own game.</p> */}
-                <h1>Draw your hero!</h1>
+                <h1 id="header">Draw your hero!</h1>
                 {/* <input placeholder="purple dragon">
                         </input>
                         <button ref="play-btn">

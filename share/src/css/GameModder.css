@@ -8,6 +8,15 @@
     margin: 0;
     padding: 0;
     font-size: 16rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+    line-height: 64rem;
 }
 
 html {
