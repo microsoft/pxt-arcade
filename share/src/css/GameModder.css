@@ -13,11 +13,11 @@
 html {
     font-size: 1px;
 }
-
+/* 
 * {
     box-sizing: border-box;
-}
-
+} */
+/* 
 .grid {
     display: grid;
     grid-template: 20px 1fr / 1fr 600px 1fr;
@@ -40,7 +40,6 @@ html {
     display: flex;
     justify-content: center;
     flex-flow: column nowrap;
-    /* background: hsl(0, 0%, 40%); */
 }
 .questions > * {
     align-self: flex-start;
@@ -56,4 +55,4 @@ html {
 button {
     fill: #ffffff;
     stroke: #999;
-}
+} */

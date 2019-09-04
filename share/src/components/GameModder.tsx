@@ -113,12 +113,12 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
     render() {
         return (
             <div className="game-modder">
-                <div className="grid">
-                    <div className="questions">
-                        {/* <h1>Mod your game!</h1>
+                {/* <div className="grid"> */}
+                {/* <div className="questions"> */}
+                {/* <h1>Mod your game!</h1>
                         <p>Fill in the questions to create your very own game.</p> */}
-                        <h1>Draw your hero!</h1>
-                        {/* <input placeholder="purple dragon">
+                <h1>Draw your hero!</h1>
+                {/* <input placeholder="purple dragon">
                         </input>
                         <button ref="play-btn">
                             Play
@@ -126,10 +126,10 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
                         <button ref="play-btn2">
                             Play2
                         </button> */}
-                        <div ref="sprite-editor-holder">
+                <div ref="sprite-editor-holder">
 
-                        </div>
-                    </div>
+                    {/* </div> */}
+                    {/* </div> */}
                 </div>
             </div>
         )
