@@ -51,7 +51,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
 
         let body = document.getElementsByTagName('body')[0]
         let header = document.getElementById('header')
-        const MARGIN = 20
+        const MARGIN = 2
         let actualWidth = body.clientWidth - MARGIN
         // const BANNER_H = 40 + 21 + 21
         let actualHeight = body.clientHeight - header.clientHeight - MARGIN
