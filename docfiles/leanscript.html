@@ -84,7 +84,7 @@
         <div id="wrap">
             <div class="simframe ui embed">
                 <iframe id="simframe" title="Simulator" allowfullscreen="" allow="autoplay"
-                    sandbox="allow-same-origin allow-scripts" class="no-select" src="/sim/simulator.html"
+                    sandbox="allow-same-origin allow-scripts" class="no-select" 
                     frameborder="0">
                 </iframe>
             </div>
@@ -241,6 +241,9 @@
                         console.log(d)
                     }
                 }, false);
+
+                // only load the iframe once we've set up the message listener
+                document.getElementById("simframe").setAttribute("src", "/sim/simulator.html");
             })()
         </script>
 
