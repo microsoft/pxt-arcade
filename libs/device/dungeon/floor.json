@@ -1,0 +1,20 @@
+{
+    "frames": [
+        "Light0",
+        "Light1",
+        "Light2",
+        "Light3",
+        "Light4",
+        "Light5",
+        "Dark0",
+        "Dark1",
+        "Dark2",
+        "Dark3",
+        "Dark4",
+        "Dark5",
+        "DarkDiamond",
+        "LightMoss",
+        "Mixed"
+    ],
+    "tags": "tile"
+}
