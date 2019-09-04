@@ -6,15 +6,18 @@ import GameButtons from './GameButtons';
 
 import '../css/GamePlayer.css';
 import { Simulator } from './simulator';
-import { bunnyHopBinJs } from '../games/bunny_hop_min.js';
 
 
 let sim: Simulator;
 
-const GamePlayer: React.FC = () => {
+export interface GamePlayerProps {
+    binJs: string
+}
+
+const GamePlayer: React.FC<GamePlayerProps> = props => {
     if (!sim) sim = new Simulator();
 
-    sim.runCode(bunnyHopBinJs);
+    sim.runCode(props.binJs);
 
     return (
         <div className="game-player">
