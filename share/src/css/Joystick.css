@@ -15,3 +15,9 @@
 .game-joystick .spacer {
     flex-grow: 1;
 }
+
+@media (max-aspect-ratio: 1/1) {
+    .game-joystick {
+        height: calc(100% - 3em);
+    }
+}
