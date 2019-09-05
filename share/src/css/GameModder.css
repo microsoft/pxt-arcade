@@ -33,7 +33,8 @@
 h1 {
     margin: 0;
     font-size: 40px;
-    line-height: 70px;
+    line-height: 50px;
+    white-space: nowrap;
 }
 .sprite-picker {
     width: 100%

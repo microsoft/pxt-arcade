@@ -401,6 +401,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         this.spriteEditor = new SpriteEditor(state, null, false, scale);
         this.spriteEditor.render(this.spriteEditorHolder);
         // HACK: scaling
+        header.setAttribute("style", `transform: scale(${scale})`);
         function scaleAtt(el: Element, attName: string, scale: number) {
             let oldW = parseInt(el.getAttribute(attName))
             let newW = oldW * scale
