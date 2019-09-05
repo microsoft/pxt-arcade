@@ -11,7 +11,7 @@
 
 @media (max-aspect-ratio: 1/1) {
     .game-embed-frame {
-        margin-top: 4em;
-        height: calc(100% - 4em);
+        margin-top: 3.5rem;
+        height: calc(100% - 3.5em);
     }
 }

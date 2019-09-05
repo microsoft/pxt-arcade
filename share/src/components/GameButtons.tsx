@@ -35,6 +35,9 @@ class GameButtons extends React.Component<GameButtonsProps, {}>  {
         return (
             <div className="game-buttons">
                 <div className="spacer" />
+                <div className="action-button">
+                    <button className="share-mod-button">Share</button>
+                </div>
                 <svg xmlns="http://www.w3.org/2000/svg" ref="button-bounds" className="game-button-svg" viewBox="0 0 40 40" width="200px" height="200px">
                     <circle ref="button-b" cx="15" cy="28" r="8" fill="#ffffff" stroke="#999" strokeWidth="1" />
                     <text ref="label-b" x="15" y="28" textAnchor="middle" dy="2.5" fontSize="8">B</text>

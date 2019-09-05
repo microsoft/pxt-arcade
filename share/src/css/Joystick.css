@@ -7,8 +7,6 @@
     left: 0;
     top: 0;
 
-    opacity: 0.5;
-
     touch-action: none;
 }
 
@@ -19,6 +17,7 @@
 .game-joystick-svg {
     width: 200px;
     height: 200px;
+    opacity: 0.5;
 }
 
 @media (max-aspect-ratio: 1/1) {
