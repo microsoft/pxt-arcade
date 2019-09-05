@@ -134,10 +134,18 @@ function textToBitmap(text: string): Bitmap {
         return null;
     }
 }
-function bitmapToUrl(bmp: Bitmap) {
+function bitmapToSvgEl(bmp: Bitmap): SVGForeignObjectElement {
+    let canv = bitmapToCanvas(bmp)
+    const fe = document.createElementNS("http://www.w3.org/2000/svg", "foreignObject");
+    fe.appendChild(canv)
+    return fe
+    // let fe = 
+}
+function bitmapToSquareCanvas(bmp: Bitmap) {
     const WIDTH = 32;
 
     const colors = defaultPalletColors.slice(1)
+    // const canvas = document.createElementNS("http://www.w3.org/2000/svg", "canvas");
     const canvas = document.createElement("canvas");
     canvas.width = WIDTH;
     canvas.height = WIDTH;
@@ -164,7 +172,39 @@ function bitmapToUrl(bmp: Bitmap) {
         }
     }
 
-    return canvas.toDataURL();
+    return canvas;
+}
+function bitmapToCanvas(bmp: Bitmap, scale: number = 4) {
+    const colors = defaultPalletColors.slice(1)
+    // const canvas = document.createElementNS("http://www.w3.org/2000/svg", "canvas");
+    const canvas = document.createElement("canvas");
+    let width = canvas.width = bmp.width * scale;
+    let height = canvas.height = bmp.height * scale;
+
+    let cellSize = scale
+
+    // TODO: Center the image if it isn't square
+    const xOffset = 0
+    const yOffset = 0
+
+    let context: CanvasRenderingContext2D;
+    context = canvas.getContext("2d");
+
+    for (let c = 0; c < bmp.width; c++) {
+        for (let r = 0; r < bmp.height; r++) {
+            const color = bmp.get(c, r);
+
+            if (color) {
+                context.fillStyle = colors[color - 1];
+                context.fillRect(xOffset + c * cellSize, yOffset + r * cellSize, cellSize, cellSize);
+            }
+        }
+    }
+
+    return canvas;
+}
+function bitmapToUrl(bmp: Bitmap): string {
+    return bitmapToCanvas(bmp).toDataURL();
 }
 
 function mkPxtJson(): string {
@@ -202,21 +242,31 @@ async function getTxtFile(url: string): Promise<string> {
     });
 };
 
-function createSvgImg(x: number, y: number, w: number, h: number, bmp?: Bitmap): SVGImageElement {
+function createPngImg(x: number, y: number, w: number, h: number, bmp?: Bitmap): SVGImageElement {
     let img = document.createElementNS("http://www.w3.org/2000/svg", "image")
     img.setAttribute("x", `${x}`)
     img.setAttribute("y", `${y}`)
     img.setAttribute("width", `${w}px`)
     img.setAttribute("height", `${h}px`)
     if (bmp) {
-        updateSvgImg(img, bmp)
+        updatePngImg(img, bmp)
     }
     return img
 }
 
-function updateSvgImg(img: SVGImageElement, bmp: Bitmap) {
+function updatePngImg(img: SVGImageElement, bmp: Bitmap) {
     let imgData = bitmapToUrl(bmp)
     img.setAttributeNS("http://www.w3.org/1999/xlink", "href", `${imgData}`)
+}
+
+function createSvgImg(x: number, y: number, bmp: Bitmap) {
+    let el = bitmapToSvgEl(bmp)
+    el.setAttribute("x", `${x}`)
+    el.setAttribute("y", `${y}`)
+    const w = 32
+    el.setAttribute("width", `${w}px`)
+    el.setAttribute("height", `${w}px`)
+    return el
 }
 
 const moddableImages: { [k: string]: string } = {
@@ -421,10 +471,10 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         let body = document.getElementsByTagName("body")[0]
         topBarHolder.appendChild(topBarSvg)
 
-        let dummyImg = createSvgImg(R, TAB_MARGIN + R, ICON_W, ICON_W)
+        let dummyImg = createPngImg(R, TAB_MARGIN + R, ICON_W, ICON_W)
         topBarSvg.appendChild(dummyImg)
         setInterval(() => {
-            updateSvgImg(dummyImg, this.spriteEditor.bitmap().image)
+            updatePngImg(dummyImg, this.spriteEditor.bitmap().image)
         }, 500)
 
         function getImages(ts: string) {
@@ -450,10 +500,15 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             .map(k => moddableImages[k])
             .map(textToBitmap)
 
+        targetImgs.forEach(b => console.log(`(${b.width},${b.height})`));
+
         imgsAsBmps
             .filter(i1 => targetImgs.some(i2 => i1.equals(i2)))
             .forEach((img, i) => {
-                let imgSvg = createSvgImg(tabStart + R + R + i * (R * 2 + ICON_W), TAB_MARGIN + R, ICON_W, ICON_W, img)
+                let x = tabStart + R + R + i * (R * 2 + ICON_W)
+                let y = TAB_MARGIN + R
+                // let imgSvg = createSvgImg(x, y, img)
+                let imgSvg = createPngImg(x, y, ICON_W, ICON_W, img)
                 topBarSvg.appendChild(imgSvg)
             })
     }
