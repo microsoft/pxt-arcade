@@ -1,0 +1,16 @@
+.sprite-picker {
+    line-height: 0px;
+    width: 100%
+}
+.sprite-picker image {
+    cursor: pointer;
+}
+/* #2c3e50 */
+.sprite-picker path {
+    fill: #4b7becaa;
+    background-color: #4b7becaa;
+}
+.sprite-picker path {
+    stroke-width: 2px;
+    stroke:#4b7bec;
+}
