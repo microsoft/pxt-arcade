@@ -470,11 +470,16 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         const OUT = TAB_MARGIN_T + TAB_MARGIN_B + 5
 
         topBarSvg.setAttribute('viewBox', `0 0 ${SVG_W} ${TAB_SVG_H}`)
-        let tabStart = LEFT_SPACE - R
         const TOTAL_TAB_W = R * 4 + ICON_W
-        let tabFinish = SVG_W - (tabStart + TOTAL_TAB_W)
-        let tabPath = `M -${OUT},${(TAB_SVG_H - TAB_MARGIN_B) + OUT} l 0,-${OUT} l ${OUT},0 h ${tabStart} q ${R},0 ${R},-${R} v -${ICON_H} q 0,-${R} ${R},-${R} h ${ICON_W} q ${R},0 ${R},${R} v ${ICON_H} q 0,${R} ${R},${R} h ${tabFinish} l ${OUT},0 l 0,${OUT} z`
-        tabEl.setAttribute("d", tabPath)
+        const TABS_START = LEFT_SPACE - R
+        function setTab(idx: number) {
+            let tabW = ICON_W + R * 2
+            let tabStart = TABS_START + tabW * idx
+            let tabFinish = SVG_W - (tabStart + tabW)
+            let tabPath = `M -${OUT},${(TAB_SVG_H - TAB_MARGIN_B) + OUT} l 0,-${OUT} l ${OUT},0 h ${tabStart} q ${R},0 ${R},-${R} v -${ICON_H} q 0,-${R} ${R},-${R} h ${ICON_W} q ${R},0 ${R},${R} v ${ICON_H} q 0,${R} ${R},${R} h ${tabFinish} l ${OUT},0 l 0,${OUT} z`
+            tabEl.setAttribute("d", tabPath)
+        }
+        setTab(0)
         topBarSvg.appendChild(tabEl)
         let body = document.getElementsByTagName("body")[0]
         topBarHolder.appendChild(topBarSvg)
@@ -514,10 +519,15 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         //     .filter(i1 => targetImgs.some(i2 => i1.equals(i2)))
         targetImgs
             .forEach((img, i) => {
-                let x = tabStart + R + R + i * IMG_SPACE
+                let x = TABS_START + R + R + i * IMG_SPACE
                 let y = TAB_MARGIN_T + R
                 // let imgSvg = createSvgImg(x, y, img)
                 let imgSvg = createPngImg(x, y, ICON_W, ICON_W, img)
+                imgSvg.setAttribute("data-idx", "" + i)
+                imgSvg.addEventListener("click", () => {
+                    let idx = parseInt(imgSvg.getAttribute("data-idx"))
+                    setTab(idx)
+                })
                 topBarSvg.appendChild(imgSvg)
             })
 

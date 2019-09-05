@@ -41,6 +41,10 @@ h1 {
     line-height: 0px;
     width: 100%
 }
+.sprite-picker image,
+.sprite-gallery image {
+    cursor: pointer;
+}
 /* #2c3e50 */
 .sprite-picker path,
 .sprite-gallery path,
