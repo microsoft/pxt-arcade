@@ -128,8 +128,8 @@
   fill: white;
 }
 .sprite-editor-dropdown-bg {
-  background: #2c3e50;
-  border-radius: 4px;
+  /* background: #2c3e50; */
+  /* border-radius: 4px; */
   /* padding-top: 4px; */
   position: relative;
 }

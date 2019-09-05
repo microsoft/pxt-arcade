@@ -386,7 +386,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         let header = this.refs['header'] as HTMLDivElement
         header.textContent = "Draw your character!"
         // const MARGIN = 20
-        const MARGIN = 2
+        const MARGIN = 0
         let actualWidth = body.clientWidth - MARGIN
         let actualHeight = body.clientHeight - header.clientHeight - MARGIN
         let refWidth = 539.0
@@ -465,11 +465,13 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         const IMG_SPACE = R * 2 + ICON_W
         const TOTAL_IMG_SPACE = IMG_SPACE * Object.keys(moddableImages).length
         const LEFT_SPACE = (SVG_W - TOTAL_IMG_SPACE) / 2
+        const OUT = TAB_MARGIN + 5
+
         topBarSvg.setAttribute('viewBox', `0 0 ${SVG_W} ${SVG_H}`)
         let tabStart = LEFT_SPACE - R
         const TOTAL_TAB_W = R * 4 + ICON_W
         let tabFinish = SVG_W - (tabStart + TOTAL_TAB_W)
-        let tabPath = `M 0,${SVG_H - TAB_MARGIN} h ${tabStart} q ${R},0 ${R},-${R} v -${ICON_H} q 0,-${R} ${R},-${R} h ${ICON_W} q ${R},0 ${R},${R} v ${ICON_H} q 0,${R} ${R},${R} h ${tabFinish}`
+        let tabPath = `M -${OUT},${(SVG_H - TAB_MARGIN) + OUT} l 0,-${OUT} l ${OUT},0 h ${tabStart} q ${R},0 ${R},-${R} v -${ICON_H} q 0,-${R} ${R},-${R} h ${ICON_W} q ${R},0 ${R},${R} v ${ICON_H} q 0,${R} ${R},${R} h ${tabFinish} l ${OUT},0 l 0,${OUT} z`
         tabEl.setAttribute("d", tabPath)
         topBarSvg.appendChild(tabEl)
         let body = document.getElementsByTagName("body")[0]
@@ -506,8 +508,9 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
 
         targetImgs.forEach(b => console.log(`(${b.width},${b.height})`));
 
-        imgsAsBmps
-            .filter(i1 => targetImgs.some(i2 => i1.equals(i2)))
+        // imgsAsBmps
+        //     .filter(i1 => targetImgs.some(i2 => i1.equals(i2)))
+        targetImgs
             .forEach((img, i) => {
                 let x = tabStart + R + R + i * IMG_SPACE
                 let y = TAB_MARGIN + R
@@ -515,6 +518,16 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
                 let imgSvg = createPngImg(x, y, ICON_W, ICON_W, img)
                 topBarSvg.appendChild(imgSvg)
             })
+
+        // GALLERY
+        let galleryHolder = this.refs["sprite-gallery"] as HTMLDivElement
+        let gallerySvg = document.createElementNS("http://www.w3.org/2000/svg", "svg")// as unknown as SVGSVGElement;
+        let galleryEnd = document.createElementNS("http://www.w3.org/2000/svg", "path")
+        let galleryEndPath = `M -${OUT},-${OUT} l 0,${OUT} l 0,${SVG_H - TAB_MARGIN} l ${OUT},0 h ${tabStart + TOTAL_TAB_W + tabFinish} l ${OUT},0 l 0,-${SVG_H - TAB_MARGIN} l 0,-${OUT} z`
+        galleryEnd.setAttribute("d", galleryEndPath)
+        gallerySvg.setAttribute('viewBox', `0 0 ${SVG_W} ${SVG_H}`)
+        gallerySvg.appendChild(galleryEnd)
+        galleryHolder.appendChild(gallerySvg)
     }
 
     render() {
@@ -536,6 +549,19 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
                 </div>
                 <div ref="sprite-editor-holder" className="sprite-editor-holder">
                 </div>
+                <div ref="sprite-gallery" className="sprite-gallery">
+                    {/* <div className="sprite-tab-spacer">
+                    </div> */}
+                    {/* <div className="sprite-tab">
+                    </div>
+                    <div className="sprite-tab">
+                    </div>
+                    <div className="sprite-tab">
+                    </div>
+                    <div className="sprite-tab">
+                    </div> */}
+                </div>
+
                 <button ref="play-btn">Play!</button>
             </div>
         )

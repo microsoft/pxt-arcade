@@ -36,15 +36,26 @@ h1 {
     line-height: 50px;
     white-space: nowrap;
 }
-.sprite-picker {
+.sprite-picker,
+.sprite-gallery {
+    line-height: 0px;
     width: 100%
 }
-.sprite-picker path {
-    stroke-width: 5px;
+/* #2c3e50 */
+.sprite-picker path,
+.sprite-gallery path,
+.sprite-editor-container {
+    fill: #4b7becaa;
+    background-color: #4b7becaa;
+}
+.sprite-picker path,
+.sprite-gallery path {
+    stroke-width: 2px;
     stroke:#4b7bec;
-    fill: none;
 }
 button {
+    border-width: 0px;
+    border-color:#4b7bec;
     color: white;
     background-color: #4b7bec;
     width: 95%;
@@ -52,7 +63,6 @@ button {
     font-size: 32px;
     line-height: 60px;
     border-radius: 5px;
-    border-width: 0;
     padding: 0;
 }
 button:hover {
