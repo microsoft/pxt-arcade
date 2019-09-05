@@ -201,24 +201,62 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         });
 
         // canvas start is 10rem + 65rem + 10rem
+        this.renderTopBar();
+    }
 
+    renderTopBar() {
+        //
+        // TOP SPRITE PICKER BAR
+        //
+        let topBarHolder = this.refs["sprite-picker"] as HTMLDivElement
+        let topBarSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg")// as unknown as SVGSVGElement;
+        // topBarSvg.setAttribute("width", `500px`)
+        // topBarSvg.setAttribute("height", `100px`)
+        let tabEl = document.createElementNS("http://www.w3.org/2000/svg", "path")// as unknown as SVGPathElement
+        const R = 20
+        const ICON_H = 50
+        const ICON_W = 50
+        const TAB_MARGIN = 20
+        const SVG_W = 541
+        const SVG_H = R * 2 + ICON_H + TAB_MARGIN * 2
+        topBarSvg.setAttribute('viewBox', `0 0 ${SVG_W} ${SVG_H}`)
+        let tabStart = 100
+        const TOTAL_TAB_W = R * 4 + ICON_W
+        let tabFinish = SVG_W - (tabStart + TOTAL_TAB_W)
+        let tabPath = `M 0,${SVG_H - TAB_MARGIN} h ${tabStart} q ${R},0 ${R},-${R} v -${ICON_H} q 0,-${R} ${R},-${R} h ${ICON_W} q ${R},0 ${R},${R} v ${ICON_H} q 0,${R} ${R},${R} h ${tabFinish}`
+        tabEl.setAttribute("d", tabPath)
+        topBarSvg.appendChild(tabEl)
+        let body = document.getElementsByTagName("body")[0]
+        topBarHolder.appendChild(topBarSvg)
+
+        // <image xlink:href=""
+        // x="9" y="9" width="32px" height="32px"></image>
+        let img = document.createElementNS("http://www.w3.org/2000/svg", "image")
+        let imgData = 'iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABiklEQVRYR2P832j6nwELYKw/zYgsjEsdulZ0fdjMRhZjHDwOKL2C6thuHVQ+ujwur6HpIxQiiBAYKAcsaZ4PTgPR/6ZB/ITuEM5vEPHvXBAaxkcPAZg8ujg0RHCFBOOAOwDmYLhDirPwJ1z0EED3OS55HCEBz2qDxgGOXqrgEJDSdCWUhckLKbSQwAgBujuAYCKkLBwQuQaWVtBDYMAdEOOQAy4HOnsjqBP3xIYYLCQGnwO2FGIvEYn1GS516CUqzhAYKAcsdjyJ1+fPru+mbhpBD4FB44BnPv2oPoXV79BakmohgSsE6O4AWKKFZUdCUQFTDwsJ9ERPbB2ytBfS/oDXBYPOAURHBSzbQoMCQx+OFlLsfnP8IUB3B+BMC+g+Q/MxroIP5gGYPCxtwNJOefEK1BAYNA4g5BCSqwRc/QlYOYDLQIxcQbLNUA3kOgA9JGB8D2djMBPej0Bz2FIm1FY1Rn8DvedEyGOwkBgwB6A7EN1BhDwACzGYOliIwHpKKF1wQoaB5KntAAAGmCxGspzgrwAAAABJRU5ErkJggg=='
+        img.setAttributeNS("http://www.w3.org/1999/xlink", "href", `data:image/png;base64,${imgData}`)
+        img.setAttribute("x", `${9}`)
+        img.setAttribute("y", `${9}`)
+        img.setAttribute("width", `${ICON_W}px`)
+        img.setAttribute("height", `${ICON_W}px`)
+        topBarSvg.appendChild(img)
     }
 
     render() {
         return (
             <div className="game-modder">
                 <h1 ref="header">Mod your game!</h1>
-                <div className="sprite-picker">
+
+                <div ref="sprite-picker" className="sprite-picker">
                     {/* <div className="sprite-tab-spacer">
                     </div> */}
-                    <div className="sprite-tab">
+                    {/* <div className="sprite-tab">
                     </div>
                     <div className="sprite-tab">
                     </div>
                     <div className="sprite-tab">
                     </div>
                     <div className="sprite-tab">
-                    </div>
+                    </div> */}
                 </div>
                 <div ref="sprite-editor-holder" className="sprite-editor-holder">
                 </div>

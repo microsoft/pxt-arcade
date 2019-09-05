@@ -40,9 +40,15 @@ html {
     font-size: 1px;
 }
 .sprite-picker {
-    /* margin-left: 20rem; */
+    width: 100%
+}
+.sprite-picker path {
+    stroke-width: 5px;
+    stroke: green;
+    fill: none;
+}
+/* .sprite-picker {
     width: 70%;
-    /* border:5rem solid black; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -61,7 +67,7 @@ html {
     height: 65rem;
     border:5rem solid blue;
     margin: 10rem;
-}
+} */
 
 /* 
 .grid {
