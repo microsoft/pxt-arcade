@@ -121,6 +121,57 @@ function encodeImage(bitmap: Bitmap): string {
     return f4EncodeImg(bitmap.width, bitmap.height, 4, bitmap.get.bind(bitmap))
 }
 
+function textToBitmap(bmp: Bitmap): string {
+    return bitmapToImageLiteral(bmp);
+}
+function bitmapToText(text: string): Bitmap {
+    const bmp = imageLiteralToBitmap(text);
+
+    // Ignore invalid bitmaps
+    if (bmp && bmp.width && bmp.height) {
+        return bmp
+    } else {
+        return null;
+    }
+}
+
+/**
+ * Scales the image to 32x32 and returns a data uri. In light mode the preview
+ * is drawn with no transparency (alpha is filled with background color)
+ */
+function bitmapToUrl(bmp: Bitmap) {
+    let width = 32;
+
+    const colors = defaultPalletColors.slice(1)
+    const canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = width;
+
+    // Works well for all of our default sizes, does not work well if the size is not
+    // a multiple of 2 or is greater than 32 (i.e. from the decompiler)
+    const cellSize = Math.min(width / bmp.width, width / bmp.height);
+
+    // Center the image if it isn't square
+    const xOffset = Math.max(Math.floor((width * (1 - (bmp.width / bmp.height))) / 2), 0);
+    const yOffset = Math.max(Math.floor((width * (1 - (bmp.height / bmp.width))) / 2), 0);
+
+    let context: CanvasRenderingContext2D;
+    context = canvas.getContext("2d");
+
+    for (let c = 0; c < bmp.width; c++) {
+        for (let r = 0; r < bmp.height; r++) {
+            const color = bmp.get(c, r);
+
+            if (color) {
+                context.fillStyle = colors[color - 1];
+                context.fillRect(xOffset + c * cellSize, yOffset + r * cellSize, cellSize, cellSize);
+            }
+        }
+    }
+
+    return canvas.toDataURL();
+}
+
 export class GameModder extends React.Component<GameModderProps, GameModderState> {
     protected playBtn: HTMLButtonElement | undefined;
     protected spriteEditorHolder: HTMLDivElement | undefined;
@@ -229,16 +280,26 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         let body = document.getElementsByTagName("body")[0]
         topBarHolder.appendChild(topBarSvg)
 
-        // <image xlink:href=""
-        // x="9" y="9" width="32px" height="32px"></image>
         let img = document.createElementNS("http://www.w3.org/2000/svg", "image")
-        let imgData = 'iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABiklEQVRYR2P832j6nwELYKw/zYgsjEsdulZ0fdjMRhZjHDwOKL2C6thuHVQ+ujwur6HpIxQiiBAYKAcsaZ4PTgPR/6ZB/ITuEM5vEPHvXBAaxkcPAZg8ujg0RHCFBOOAOwDmYLhDirPwJ1z0EED3OS55HCEBz2qDxgGOXqrgEJDSdCWUhckLKbSQwAgBujuAYCKkLBwQuQaWVtBDYMAdEOOQAy4HOnsjqBP3xIYYLCQGnwO2FGIvEYn1GS516CUqzhAYKAcsdjyJ1+fPru+mbhpBD4FB44BnPv2oPoXV79BakmohgSsE6O4AWKKFZUdCUQFTDwsJ9ERPbB2ytBfS/oDXBYPOAURHBSzbQoMCQx+OFlLsfnP8IUB3B+BMC+g+Q/MxroIP5gGYPCxtwNJOefEK1BAYNA4g5BCSqwRc/QlYOYDLQIxcQbLNUA3kOgA9JGB8D2djMBPej0Bz2FIm1FY1Rn8DvedEyGOwkBgwB6A7EN1BhDwACzGYOliIwHpKKF1wQoaB5KntAAAGmCxGspzgrwAAAABJRU5ErkJggg=='
-        img.setAttributeNS("http://www.w3.org/1999/xlink", "href", `data:image/png;base64,${imgData}`)
-        img.setAttribute("x", `${9}`)
-        img.setAttribute("y", `${9}`)
+
+        img.setAttribute("x", `${tabStart + R + R}`)
+        img.setAttribute("y", `${TAB_MARGIN + R}`)
         img.setAttribute("width", `${ICON_W}px`)
         img.setAttribute("height", `${ICON_W}px`)
         topBarSvg.appendChild(img)
+
+        setInterval(() => {
+            // <image xlink:href=""
+            // x="9" y="9" width="32px" height="32px"></image>
+            // console.log("new img:")
+            // console.dir(imgData)
+            // let refImgData = 'iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABiklEQVRYR2P832j6nwELYKw/zYgsjEsdulZ0fdjMRhZjHDwOKL2C6thuHVQ+ujwur6HpIxQiiBAYKAcsaZ4PTgPR/6ZB/ITuEM5vEPHvXBAaxkcPAZg8ujg0RHCFBOOAOwDmYLhDirPwJ1z0EED3OS55HCEBz2qDxgGOXqrgEJDSdCWUhckLKbSQwAgBujuAYCKkLBwQuQaWVtBDYMAdEOOQAy4HOnsjqBP3xIYYLCQGnwO2FGIvEYn1GS516CUqzhAYKAcsdjyJ1+fPru+mbhpBD4FB44BnPv2oPoXV79BakmohgSsE6O4AWKKFZUdCUQFTDwsJ9ERPbB2ytBfS/oDXBYPOAURHBSzbQoMCQx+OFlLsfnP8IUB3B+BMC+g+Q/MxroIP5gGYPCxtwNJOefEK1BAYNA4g5BCSqwRc/QlYOYDLQIxcQbLNUA3kOgA9JGB8D2djMBPej0Bz2FIm1FY1Rn8DvedEyGOwkBgwB6A7EN1BhDwACzGYOliIwHpKKF1wQoaB5KntAAAGmCxGspzgrwAAAABJRU5ErkJggg=='
+            // let refImgUrl = `data:image/png;base64,${refImgData}`
+            // console.log("ref img:")
+            // console.dir(refImgUrl)
+            let imgData = bitmapToUrl(this.spriteEditor.bitmap().image)
+            img.setAttributeNS("http://www.w3.org/1999/xlink", "href", `${imgData}`)
+        }, 500)
     }
 
     render() {
