@@ -1,0 +1,10 @@
+{
+    "frames": [
+        "Water",
+        "Lava0",
+        "Lava1",
+        "Hole",
+        "Spike"
+    ],
+    "tags": "tile"
+}

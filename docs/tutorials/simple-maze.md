@@ -330,7 +330,7 @@ game.onUpdate(function () {
 
 ## Step 11
 
-Put a ``||game:game over||`` inside of ``||logic:if then||``. Click the **(+)** symbol and click on the ``LOSE`` button to make it say ``WIN``.
+Put a ``||game:game over||`` inside of ``||logic:if then||``. Click on the ``LOSE`` toggle switch to make it say ``WIN``.
 
 ```blocks
 let mySprite: Sprite = null

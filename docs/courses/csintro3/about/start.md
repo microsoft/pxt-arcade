@@ -21,11 +21,17 @@ and blocks that are unique to game development.
 The following tutorials may also be useful in learning about concepts that
 you might not have seen elsewhere:
 
-* [Eat the Doughnut](/#tutorial:/tutorials/eat-the-doughnut)
+* [Chase the Pizza](/#tutorial:/tutorials/chase-the-pizza)
 * [Simple Maze](/#tutorial:/tutorials/simple-maze)
-* [Star Field](/#tutorial:/tutorials/star-field)
 * [Happy Flower](/#tutorial:/tutorials/happy-flower)
-* [Simple Extensions](/#tutorial:/tutorials/simple-extensions)
+* [Lemon Leak](/#tutorial:/tutorials/lemon-leak)
+* [Galga](/#tutorial:/tutorials/galga)
+* [Lander](/#tutorial:/tutorials/lander)
+* [Name Tag](/#tutorial:/tutorials/name-tag)
+* [Walking Hero](/#tutorial:/concepts/walking-hero)
+* [Picnic Food](/#tutorial:/concepts/picnic-food)
+* [Princess Pizza](/#tutorial:/concepts/princess-pizza)
+* [Bouncing Burger](/#tutorial:/concepts/bouncing-burger)
 
 Additionally, you may find it useful to check out the review material
 for the previous courses:

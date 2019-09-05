@@ -319,7 +319,6 @@
         "allowPackageExtensions": true,
         "homeScreenHero": "./static/hero.png",
         "socialOptions": {
-            "twitterHandle": "msmakecode",
             "orgTwitterHandle": "MSMakeCode",
             "hashtags": "MakeCode",
             "discourse": "https://forum.makecode.com/",
@@ -369,7 +368,8 @@
         "simScreenshotMaxUriLength": 300000,
         "simGif": false,
         "simGifKey": "R",
-        "qrCode": true
+        "qrCode": true,
+        "shareFinishedTutorials": true
     },
     "unsupportedBrowsers": [
         { "id" : "ie" }
