@@ -8,6 +8,8 @@ interface AppState {
     mode: "mod" | "play"
 }
 
+let lastBinary: string;
+
 export class App extends React.Component<{}, AppState> {
     constructor(props: {}) {
         super(props)
@@ -23,7 +25,7 @@ export class App extends React.Component<{}, AppState> {
             <div className="App">
                 {this.state.mode === "mod"
                     ? <GameModder playHandler={this.playGame} />
-                    : <GamePlayer />
+                    : <GamePlayer binJs={lastBinary} />
                 }
             </div>
         );
@@ -32,6 +34,7 @@ export class App extends React.Component<{}, AppState> {
     playGame(binJs: string) {
         console.log(`I want to play this game that's ${Math.round((binJs.length / 256) / 1034)}kb!`)
         // TODO: connect to simulator
+        lastBinary = binJs;
         this.setState({ mode: "play" })
     }
 }

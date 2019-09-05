@@ -8,6 +8,7 @@
     top: 0;
 
     opacity: 0.5;
+
 }
 
 .game-buttons .spacer {
@@ -22,5 +23,21 @@
 @media (max-aspect-ratio: 1/1) {
     .game-buttons {
         height: calc(100% - 3em);
+    }
+}
+
+.game-button-svg {
+    width: 200px;
+    height: 200px;
+}
+
+@media (max-width: 400px) and (max-aspect-ratio: 1/1) {
+    .game-buttons {
+        max-width: 50%;
+    }
+
+    .game-button-svg {
+        width: 100%;
+        height: initial;
     }
 }

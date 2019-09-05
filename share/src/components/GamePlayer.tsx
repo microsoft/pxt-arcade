@@ -10,8 +10,14 @@ import { Simulator } from './simulator';
 
 let sim: Simulator;
 
-const GamePlayer: React.FC = () => {
+export interface GamePlayerProps {
+    binJs: string
+}
+
+const GamePlayer: React.FC<GamePlayerProps> = props => {
     if (!sim) sim = new Simulator();
+
+    sim.runCode(props.binJs);
 
     return (
         <div className="game-player">
