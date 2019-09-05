@@ -8,10 +8,3 @@
     height: 100%;
     width: 100%;
 }
-
-@media (max-aspect-ratio: 1/1) {
-    .game-embed-frame {
-        margin-top: 3.5rem;
-        height: calc(100% - 3.5em);
-    }
-}

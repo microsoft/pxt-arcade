@@ -3,6 +3,7 @@ import './App.css';
 
 import GamePlayer from './components/GamePlayer';
 import GameModder from './components/GameModder';
+import HeaderBar from './components/HeaderBar';
 
 import { loadAppInsights, tickEvent } from './telemetry/appinsights';
 
@@ -28,6 +29,7 @@ export class App extends React.Component<{}, AppState> {
     render() {
         return (
             <div className="App">
+                <HeaderBar />
                 {this.state.mode === "mod"
                     ? <GameModder playHandler={this.playGame} />
                     : <GamePlayer binJs={lastBinary} />
