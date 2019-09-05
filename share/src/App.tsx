@@ -4,11 +4,14 @@ import './App.css';
 import GamePlayer from './components/GamePlayer';
 import GameModder from './components/GameModder';
 
+import { loadAppInsights, tickEvent } from './telemetry/appinsights';
+
 interface AppState {
     mode: "mod" | "play"
 }
 
 let lastBinary: string;
+let playTimestamp: number;
 
 export class App extends React.Component<{}, AppState> {
     constructor(props: {}) {
@@ -17,7 +20,9 @@ export class App extends React.Component<{}, AppState> {
             mode: "mod"
         }
 
-        this.playGame = this.playGame.bind(this)
+        this.playGame = this.playGame.bind(this);
+
+        loadAppInsights(false);
     }
 
     render() {
@@ -35,7 +40,20 @@ export class App extends React.Component<{}, AppState> {
         console.log(`I want to play this game that's ${Math.round((binJs.length / 256) / 1034)}kb!`)
         // TODO: connect to simulator
         lastBinary = binJs;
+        playTimestamp = Date.now();
+
         this.setState({ mode: "play" })
+        tickEvent("shareExperiment.play");
+    }
+
+    modGame() {
+        if (playTimestamp) {
+            tickEvent("shareExperiment.playtime", {"duration": Date.now() - playTimestamp});
+            playTimestamp = null;
+        }
+
+        this.setState({ mode: "mod" });
+        tickEvent("shareExperiment.mod");
     }
 }
 

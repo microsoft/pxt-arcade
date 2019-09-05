@@ -1,7 +1,7 @@
 import { PaintTool, getPaintToolShortcut } from "./tools";
 import {
     Button, CursorMultiButton,
-    mkXIconButton, mkIconButton
+    mkXIconButton, mkIconButton, UndoRedoGroup, UndoRedoHost
 } from "./buttons";
 import * as svg from './svgUtil'
 
@@ -19,6 +19,10 @@ const BUTTON_GROUP_SPACING = 3;
 const SELECTED_BORDER_WIDTH = 2;
 const COLOR_PREVIEW_HEIGHT = 30;
 const COLOR_MARGIN = 7;
+
+const UNDO_REDO_START = 430;
+const UNDO_REDO_WIDTH = 65;
+const UNDO_REDO_HEIGHT = 31;
 
 const TOOL_BUTTON_WIDTH = (TOOLBAR_WIDTH - INNER_BUTTON_MARGIN) / 2;
 const PALLETTE_SWATCH_WIDTH = (TOOLBAR_WIDTH - PALETTE_BORDER_WIDTH * 3) / 2;
@@ -45,14 +49,22 @@ export class SideBar {
     protected selectedSwatch: svg.Rect;
     protected colorPreview: svg.Rect;
 
-    constructor(palette: string[], host: SideBarHost, parent: svg.Group) {
+    public undoRedo: UndoRedoGroup;
+
+    constructor(palette: string[], host: SideBarHost & UndoRedoHost, parent: svg.Group) {
         this.palette = palette;
         this.host = host;
         this.root = parent.group().id("sprite-editor-sidebar");
 
+        this.undoRedo = new UndoRedoGroup(this.root, host, UNDO_REDO_WIDTH, UNDO_REDO_HEIGHT);
+
         this.initSizes();
         this.initTools();
         this.initPalette();
+    }
+
+    updateUndoRedo(undo: boolean, redo: boolean) {
+        this.undoRedo.updateState(undo, redo);
     }
 
     public setTool(tool: PaintTool) {
@@ -130,6 +142,7 @@ export class SideBar {
         this.marqueeTool.translate(0, (TOOL_BUTTON_WIDTH + INNER_BUTTON_MARGIN) << 1);
 
         this.setTool(PaintTool.Normal);
+        this.undoRedo.translate(0, UNDO_REDO_START);
     }
 
     protected initPalette() {

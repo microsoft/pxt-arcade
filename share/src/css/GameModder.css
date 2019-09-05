@@ -3,28 +3,86 @@
     height: 100%;
     background: #2c3e50;
     color: #FFF;
-    font-family: "Roboto Mono", monospace;
+    font-family: "Monaco", monospace;
     text-align: center;
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    /* font-size: 16px; */
     display: flex;
     flex-direction: column;
     justify-items: center;
     align-items: center;
 }
+.sprite-editor-container {
+    /* font-size: 10rem; */
+    display: flex;
+    flex-direction: row;
+    justify-items: space-between;
+}
+.sprite-editor-container > * {
+    margin-left: 10rem;
+}
+.sprite-canvas-container {
+    position: relative;
+}
+
+* {
+    box-sizing: border-box;
+}
 
 h1 {
     margin: 0;
-    font-size: 48px;
-    line-height: 64px;
+    font-size: 40px;
+    line-height: 70px;
 }
+.sprite-picker {
+    width: 100%
+}
+.sprite-picker path {
+    stroke-width: 5px;
+    stroke:#4b7bec;
+    fill: none;
+}
+button {
+    color: white;
+    background-color: #4b7bec;
+    width: 95%;
+    height: 60rem;
+    font-size: 32rem;
+    line-height: 60rem;
+    border-radius: 5rem;
+    border-width: 0;
+    padding: 0;
+}
+button:hover {
+    background-color: #294da0;
+}
+/*shade over blue: rgba(52,73,94,.2);*/
+/*text on white: rgb(75, 123, 236);*/
 
 
-/*
-* {
-    box-sizing: border-box;
+/* .sprite-picker {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-width: 5rem 5rem 0 5rem;
+    border-color: green;
+    border-style: solid;
+    border-radius: 20rem 20rem 0rem 0rem;
+}
+.sprite-tab-spacer {
+    width: 85rem;
+    height: 85rem;
+    border: 5rem solid yellow;
+}
+.sprite-tab {
+    width: 65rem;
+    height: 65rem;
+    border:5rem solid blue;
+    margin: 10rem;
 } */
+
 /*
 .grid {
     display: grid;
@@ -59,8 +117,4 @@ h1 {
     font-size: 20rem;
     height: 50rem;
 }
-
-button {
-    fill: #ffffff;
-    stroke: #999;
-} */
+ */

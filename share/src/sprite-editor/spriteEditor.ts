@@ -9,7 +9,7 @@ import {
 } from './tools';
 import { Bitmap, resizeBitmap } from './bitmap';
 import { CanvasState } from './canvasState';
-import { TextButton } from './buttons';
+import { TextButton, UndoRedoGroup } from './buttons';
 
 export const TOTAL_HEIGHT = 500;
 
@@ -42,12 +42,12 @@ const WIDTH = PADDING + SIDEBAR_WIDTH + SIDEBAR_CANVAS_MARGIN + CANVAS_HEIGHT + 
 
 export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
     private group: svg.Group;
-    private root: svg.SVG;
+    private toolbarRoot: svg.SVG;
 
     private paintSurface: CanvasGrid;
     private sidebar: SideBar;
     private header: SpriteHeader;
-    private bottomBar: ReporterBar;
+    // private bottomBar: ReporterBar;
     // private gallery: Gallery;
 
     private state: CanvasState;
@@ -65,6 +65,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
 
     private undoStack: CanvasState[] = [];
     private redoStack: CanvasState[] = [];
+    private undoRedo: UndoRedoGroup = undefined;
 
     private columns: number = 16;
     private rows: number = 16;
@@ -99,9 +100,9 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
 
         this.state = new CanvasState(bitmap.copy())
 
-        this.root = new svg.SVG();
-        this.root.setClass("sprite-canvas-controls");
-        this.group = this.root.group();
+        this.toolbarRoot = new svg.SVG();
+        this.toolbarRoot.setClass("sprite-canvas-controls");
+        this.group = this.toolbarRoot.group();
         this.createDefs();
 
         this.paintSurface = new CanvasGrid(this.colors, this.state.copy(), this.lightMode, this.scale);
@@ -112,7 +113,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
                 this.setCell(col, row, this.color, false);
             }
 
-            this.bottomBar.updateCursor(col, row);
+            // this.bottomBar.updateCursor(col, row);
         });
 
         this.paintSurface.up((col, row) => {
@@ -144,7 +145,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
         this.paintSurface.move((col, row) => {
             this.drawCursor(col, row);
             this.shiftAction()
-            this.bottomBar.updateCursor(col, row);
+            // this.bottomBar.updateCursor(col, row);
         });
 
         this.paintSurface.leave(() => {
@@ -154,7 +155,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
                     this.commit();
                 }
             }
-            this.bottomBar.hideCursor();
+            // this.bottomBar.hideCursor();
         });
 
         this.sidebar = new SideBar(['url("#alpha-background")'].concat(this.colors), this, this.group);
@@ -162,7 +163,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
 
         // this.header = new SpriteHeader(this);
         // this.gallery = new Gallery(blocksInfo);
-        this.bottomBar = new ReporterBar(this.group, this, REPORTER_BAR_HEIGHT);
+        // this.bottomBar = new ReporterBar(this.group, this, REPORTER_BAR_HEIGHT);
 
         this.updateUndoRedo();
 
@@ -198,17 +199,21 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
     render(el: HTMLDivElement): void {
         // el.appendChild(this.header.getElement());
         // el.appendChild(this.gallery.getElement());
-        this.paintSurface.render(el);
-        el.appendChild(this.root.el);
+        el.appendChild(this.toolbarRoot.el);
         this.layout();
-        this.root.attr({ "width": this.outerWidth() + "px", "height": this.outerHeight() + "px" });
-        this.root.el.style.position = "absolute";
-        this.root.el.style.top = "0px";
-        this.root.el.style.left = "0px";
+        this.toolbarRoot.attr({ "width": `${65 * this.scale}px`, "height": this.outerHeight() + "px" });
+        // this.toolbarRoot.el.style.position = "absolute";
+        // this.toolbarRoot.el.style.top = "0px";
+        // this.toolbarRoot.el.style.left = "0px";
+
+        let canvasHolder = document.createElement("div")
+        canvasHolder.setAttribute("class", "sprite-canvas-container")
+        el.appendChild(canvasHolder)
+        this.paintSurface.render(canvasHolder);
     }
 
     layout(): void {
-        if (!this.root) {
+        if (!this.toolbarRoot) {
             return;
         }
 
@@ -218,12 +223,12 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
         const paintAreaTop = (HEADER_HEIGHT + HEADER_CANVAS_MARGIN) * this.scale;
         const paintAreaLeft = (PADDING + SIDEBAR_WIDTH + SIDEBAR_CANVAS_MARGIN) * this.scale;
 
-        this.sidebar.translate(PADDING * this.scale, paintAreaTop);
+        // this.sidebar.translate(PADDING * this.scale, paintAreaTop);
         // TODO(dz): hacky scaling
         this.paintSurface.updateBounds(paintAreaTop, paintAreaLeft, CANVAS_HEIGHT * this.scale, CANVAS_HEIGHT * this.scale);
-        this.bottomBar.layout(
-            HEADER_HEIGHT + HEADER_CANVAS_MARGIN + (CANVAS_HEIGHT + REPORTER_BAR_CANVAS_MARGIN),
-            PADDING + SIDEBAR_WIDTH + SIDEBAR_CANVAS_MARGIN, CANVAS_HEIGHT);
+        // this.bottomBar.layout(
+        //     HEADER_HEIGHT + HEADER_CANVAS_MARGIN + (CANVAS_HEIGHT + REPORTER_BAR_CANVAS_MARGIN),
+        //     PADDING + SIDEBAR_WIDTH + SIDEBAR_CANVAS_MARGIN, CANVAS_HEIGHT);
 
         // this.gallery.layout(0, HEADER_HEIGHT, TOTAL_HEIGHT - HEADER_HEIGHT);
         // this.header.layout();
@@ -318,7 +323,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
     }
 
     setSizePresets(presets: [number, number][]) {
-        this.bottomBar.setSizePresets(presets, this.columns, this.rows);
+        // this.bottomBar.setSizePresets(presets, this.columns, this.rows);
     }
 
     canvasWidth() {
@@ -539,7 +544,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
         this.columns = this.state.width;
         this.rows = this.state.height;
         this.paintSurface.restore(this.state, true);
-        this.bottomBar.updateDimensions(this.columns, this.rows);
+        // this.bottomBar.updateDimensions(this.columns, this.rows);
         this.layout();
 
         if (showOverlay) this.paintSurface.showResizeOverlay();
@@ -608,7 +613,8 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
     }
 
     private updateUndoRedo() {
-        this.bottomBar.updateUndoRedo(this.undoStack.length === 0, this.redoStack.length === 0)
+        // this.bottomBar.updateUndoRedo(this.undoStack.length === 0, this.redoStack.length === 0)
+        this.sidebar.updateUndoRedo(this.undoStack.length === 0, this.redoStack.length === 0)
     }
 
     private paintCell(col: number, row: number, color: number) {
@@ -670,7 +676,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
     }
 
     private createDefs() {
-        this.root.define(defs => {
+        this.toolbarRoot.define(defs => {
             const p = defs.create("pattern", "alpha-background")
                 .size(10, 10)
                 .units(svg.PatternUnits.userSpaceOnUse);

@@ -7,7 +7,7 @@
 }
 .palette-selected {
   stroke: orange;
-  stroke-width: 2px;
+  stroke-width: 2rem;
 }
 .palette-unselected {
   stroke: none;
@@ -37,11 +37,11 @@
 }
 #sprite-editor-header {
   z-index: 1002;
-  height: 50px;
+  height: 50rem;
   width: inherit;
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0rem;
+  left: 0rem;
 }
 #sprite-editor-header-controls {
   width: 100%;
@@ -60,7 +60,7 @@
   background: #2c3e50;
 }
 .sprite-editor-card {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10px' height='10px'%3E%3Crect x='0' y='0' width='10px' height='10px' fill='white'%3E%3C/rect%3E%3Crect x='0' y='0' width='5px' height='5px' fill='%23dedede'%3E%3C/rect%3E%3Crect x='5' y='5' width='5px' height='5px' fill='%23dedede'%3E%3C/rect%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10rem' height='10rem'%3E%3Crect x='0' y='0' width='10rem' height='10rem' fill='white'%3E%3C/rect%3E%3Crect x='0' y='0' width='5rem' height='5rem' fill='%23dedede'%3E%3C/rect%3E%3Crect x='5' y='5' width='5rem' height='5rem' fill='%23dedede'%3E%3C/rect%3E%3C/svg%3E");
 }
 .sprite-editor-icon {
   fill: white;
@@ -129,8 +129,8 @@
 }
 .sprite-editor-dropdown-bg {
   background: #2c3e50;
-  border-radius: 4px;
-  padding-top: 4px;
+  border-radius: 4rem;
+  /* padding-top: 4rem; */
   position: relative;
 }
 .sprite-editor-glyph {
@@ -145,29 +145,29 @@
   border-radius: 50%;
 }
 .sprite-focus-hover:hover {
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 0 3rem rgba(0, 0, 0, 0.35);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
 .sprite-editor-glyph.sprite-focus-hover:hover {
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0 0 0 2rem rgba(0, 0, 0, 0.35);
 }
 .sprite-gallery-button {
   display: inline-block;
   float: left;
   padding: 0;
-  margin: 4px;
-  border-radius: 4px;
+  margin: 4rem;
+  border-radius: 4rem;
   outline: none;
-  border: 1px solid;
+  border: 1rem solid;
   transition: box-shadow 0.1s;
   cursor: pointer;
 }
 .sprite-gallery-button-hover {
-  box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.2);
+  box-shadow: 0rem 0rem 0rem 4rem rgba(255, 255, 255, 0.2);
 }
 .sprite-gallery-button:active {
-  box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.2);
+  box-shadow: 0rem 0rem 0rem 6rem rgba(255, 255, 255, 0.2);
 }
 .sprite-gallery-button > img {
   width: 80%;
@@ -183,7 +183,7 @@
 /** Sprite Editor React component styling*/
 .ui.popup.sprite-editor-snippet-popup {
   background: none;
-  transform: translate(-141px, 0px);
+  transform: translate(-141rem, 0rem);
   top: auto;
   right: auto;
   max-width: none;
@@ -191,7 +191,7 @@
   padding: 0;
   border: none;
   position: fixed;
-  margin-top: 5px;
+  margin-top: 5rem;
 }
 .ui.popup.sprite-editor-snippet-popup:before {
   content: none;
