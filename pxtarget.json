@@ -369,7 +369,8 @@
         "simGif": false,
         "simGifKey": "R",
         "qrCode": true,
-        "shareFinishedTutorials": true
+        "shareFinishedTutorials": true,
+        "nameProjectFirst": true
     },
     "unsupportedBrowsers": [
         { "id" : "ie" }
