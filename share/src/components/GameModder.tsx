@@ -121,10 +121,10 @@ function scale_color(v: number) {
 function bitmapToBinHex(bitmap: Bitmap): string {
     return f4EncodeImg(bitmap.width, bitmap.height, 4, bitmap.get.bind(bitmap))
 }
-function textToBitmap(bmp: Bitmap): string {
+function bitmapToText(bmp: Bitmap): string {
     return bitmapToImageLiteral(bmp);
 }
-function bitmapToText(text: string): Bitmap {
+function textToBitmap(text: string): Bitmap {
     const bmp = imageLiteralToBitmap(text);
 
     // Ignore invalid bitmaps
@@ -201,6 +201,23 @@ async function getTxtFile(url: string): Promise<string> {
         xhr.send();
     });
 };
+
+function createSvgImg(x: number, y: number, w: number, h: number, bmp?: Bitmap): SVGImageElement {
+    let img = document.createElementNS("http://www.w3.org/2000/svg", "image")
+    img.setAttribute("x", `${x}`)
+    img.setAttribute("y", `${y}`)
+    img.setAttribute("width", `${w}px`)
+    img.setAttribute("height", `${h}px`)
+    if (bmp) {
+        updateSvgImg(img, bmp)
+    }
+    return img
+}
+
+function updateSvgImg(img: SVGImageElement, bmp: Bitmap) {
+    let imgData = bitmapToUrl(bmp)
+    img.setAttributeNS("http://www.w3.org/1999/xlink", "href", `${imgData}`)
+}
 
 export class GameModder extends React.Component<GameModderProps, GameModderState> {
     protected playBtn: HTMLButtonElement | undefined;
@@ -285,7 +302,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         this.renderTopBar();
     }
 
-    renderTopBar() {
+    async renderTopBar() {
         //
         // TOP SPRITE PICKER BAR
         //
@@ -294,9 +311,9 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         // topBarSvg.setAttribute("width", `500px`)
         // topBarSvg.setAttribute("height", `100px`)
         let tabEl = document.createElementNS("http://www.w3.org/2000/svg", "path")// as unknown as SVGPathElement
-        const R = 20
-        const ICON_H = 50
-        const ICON_W = 50
+        const R = 10
+        const ICON_H = 64
+        const ICON_W = 64
         const TAB_MARGIN = 20
         const SVG_W = 541
         const SVG_H = R * 2 + ICON_H + TAB_MARGIN * 2
@@ -310,35 +327,34 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         let body = document.getElementsByTagName("body")[0]
         topBarHolder.appendChild(topBarSvg)
 
-        let img = document.createElementNS("http://www.w3.org/2000/svg", "image")
-
-        img.setAttribute("x", `${tabStart + R + R}`)
-        img.setAttribute("y", `${TAB_MARGIN + R}`)
-        img.setAttribute("width", `${ICON_W}px`)
-        img.setAttribute("height", `${ICON_W}px`)
-        topBarSvg.appendChild(img)
-
+        let dummyImg = createSvgImg(R, TAB_MARGIN + R, ICON_W, ICON_W)
+        topBarSvg.appendChild(dummyImg)
         setInterval(() => {
-            // <image xlink:href=""
-            // x="9" y="9" width="32px" height="32px"></image>
-            // console.log("new img:")
-            // console.dir(imgData)
-            // let refImgData = 'iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABiklEQVRYR2P832j6nwELYKw/zYgsjEsdulZ0fdjMRhZjHDwOKL2C6thuHVQ+ujwur6HpIxQiiBAYKAcsaZ4PTgPR/6ZB/ITuEM5vEPHvXBAaxkcPAZg8ujg0RHCFBOOAOwDmYLhDirPwJ1z0EED3OS55HCEBz2qDxgGOXqrgEJDSdCWUhckLKbSQwAgBujuAYCKkLBwQuQaWVtBDYMAdEOOQAy4HOnsjqBP3xIYYLCQGnwO2FGIvEYn1GS516CUqzhAYKAcsdjyJ1+fPru+mbhpBD4FB44BnPv2oPoXV79BakmohgSsE6O4AWKKFZUdCUQFTDwsJ9ERPbB2ytBfS/oDXBYPOAURHBSzbQoMCQx+OFlLsfnP8IUB3B+BMC+g+Q/MxroIP5gGYPCxtwNJOefEK1BAYNA4g5BCSqwRc/QlYOYDLQIxcQbLNUA3kOgA9JGB8D2djMBPej0Bz2FIm1FY1Rn8DvedEyGOwkBgwB6A7EN1BhDwACzGYOliIwHpKKF1wQoaB5KntAAAGmCxGspzgrwAAAABJRU5ErkJggg=='
-            // let refImgUrl = `data:image/png;base64,${refImgData}`
-            // console.log("ref img:")
-            // console.dir(refImgUrl)
-            let imgData = bitmapToUrl(this.spriteEditor.bitmap().image)
-            img.setAttributeNS("http://www.w3.org/1999/xlink", "href", `${imgData}`)
+            updateSvgImg(dummyImg, this.spriteEditor.bitmap().image)
         }, 500)
 
-        let blocksProm = getTxtFile("/games/bunny_hop/main.blocks")
-            .then((v) => {
-                console.log("Response!")
-                console.log(v);
-            })
-            .catch((e) => {
-                console.log(e)
-            })
+        function getImages(ts: string) {
+            let imgRegex = /img`([\d\s\.a-f]*)`/gm
+            let match = imgRegex.exec(ts);
+            let res: string[] = []
+            while (match != null) {
+                res.push(match[1])
+                match = imgRegex.exec(ts);
+            }
+            return res
+        }
+
+        let mainTs = await getTxtFile("/games/bunny_hop/main.ts")
+        // TODO: find images
+        let imgs = getImages(mainTs)
+        // console.dir(imgs)
+
+        let imgsAsBmps = imgs.map(textToBitmap)
+        imgsAsBmps.forEach((img, i) => {
+            let imgSvg = createSvgImg(tabStart + R + R + i * (R * 2 + ICON_W), TAB_MARGIN + R, ICON_W, ICON_W, img)
+            topBarSvg.appendChild(imgSvg)
+        })
+        // console.dir(imgsAsBmps)
     }
 
     render() {
