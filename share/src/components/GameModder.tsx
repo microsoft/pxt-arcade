@@ -462,8 +462,11 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         const TAB_MARGIN = 20
         const SVG_W = 541
         const SVG_H = R * 2 + ICON_H + TAB_MARGIN * 2
+        const IMG_SPACE = R * 2 + ICON_W
+        const TOTAL_IMG_SPACE = IMG_SPACE * Object.keys(moddableImages).length
+        const LEFT_SPACE = (SVG_W - TOTAL_IMG_SPACE) / 2
         topBarSvg.setAttribute('viewBox', `0 0 ${SVG_W} ${SVG_H}`)
-        let tabStart = 100
+        let tabStart = LEFT_SPACE - R
         const TOTAL_TAB_W = R * 4 + ICON_W
         let tabFinish = SVG_W - (tabStart + TOTAL_TAB_W)
         let tabPath = `M 0,${SVG_H - TAB_MARGIN} h ${tabStart} q ${R},0 ${R},-${R} v -${ICON_H} q 0,-${R} ${R},-${R} h ${ICON_W} q ${R},0 ${R},${R} v ${ICON_H} q 0,${R} ${R},${R} h ${tabFinish}`
@@ -506,7 +509,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         imgsAsBmps
             .filter(i1 => targetImgs.some(i2 => i1.equals(i2)))
             .forEach((img, i) => {
-                let x = tabStart + R + R + i * (R * 2 + ICON_W)
+                let x = tabStart + R + R + i * IMG_SPACE
                 let y = TAB_MARGIN + R
                 // let imgSvg = createSvgImg(x, y, img)
                 let imgSvg = createPngImg(x, y, ICON_W, ICON_W, img)
