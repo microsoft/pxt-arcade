@@ -219,6 +219,100 @@ function updateSvgImg(img: SVGImageElement, bmp: Bitmap) {
     img.setAttributeNS("http://www.w3.org/1999/xlink", "href", `${imgData}`)
 }
 
+const moddableImages: { [k: string]: string } = {
+    "character": `
+        . . . . . . . . . . . .
+        . . . 1 1 . 1 1 . . . .
+        . . . 1 3 . 1 3 . . . .
+        . . . . 1 3 . 1 3 . . .
+        . . . . 1 3 . 1 3 . . .
+        . . . 1 1 1 1 1 1 . . .
+        . . 1 1 1 1 1 1 1 1 . .
+        . . 1 1 1 f 1 1 f 1 . .
+        . . 1 1 1 1 1 1 1 1 . .
+        . . 1 1 1 1 f f 1 1 . .
+        . . . 1 1 1 1 1 1 . . .
+        . 1 1 1 1 1 1 1 1 1 1 .
+        . 1 1 1 1 1 1 1 1 1 1 .
+        . . . . 1 1 1 1 . . . .
+        . . . . 1 1 1 1 . . . .
+        . . . . 1 1 1 1 . . . .
+        . . . . 1 1 1 1 . . . .
+        . . . . . 1 1 . . . . .
+        . . . . . . 1 . . . . .
+        . . . . . . . . . . . .
+        . . . . . . . . . . . .
+    `,
+    "obstacle1": `
+        . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . 7 . . . . . . . . . . .
+        . . . . . . . . . . 7 7 . . . . . . . . . .
+        . . . . . . . . . 6 7 7 . . . . . . . . . .
+        . . . . . . . . 6 6 7 7 7 . . . . . . . . .
+        . . . . . . . . 6 6 7 7 7 . . . . . . . . .
+        . . . . . . . . 6 6 7 7 7 7 . . . . . . . .
+        . . . . . . . 6 6 7 7 7 7 7 . . . . . . . .
+        . . . . . . 6 6 6 7 7 7 7 7 . . . . . . . .
+        . . . . . . . . 6 6 6 6 6 . . . . . . . . .
+        . . . . . . . . 6 6 6 6 . . . . . . . . . .
+        . . . . . . . 6 6 6 6 6 7 7 . . . . . . . .
+        . . . . . . 6 6 6 7 7 7 7 7 7 . . . . . . .
+        . . . . . . 6 6 6 7 7 7 7 7 7 7 . . . . . .
+        . . . . . . 6 6 7 7 7 7 7 7 7 7 7 . . . . .
+        . . 6 6 6 6 6 7 7 7 7 7 7 7 7 7 7 7 7 . . .
+        . . . 6 6 6 6 6 7 7 7 7 7 6 6 6 6 6 . . . .
+        . . . . . . . . 6 6 6 6 7 7 . . . . . . . .
+        . . . . . . . . 6 6 6 7 7 7 . . . . . . . .
+        . . . . . . 6 6 7 7 7 7 7 7 7 . . . . . . .
+        . . . 6 6 6 7 7 7 7 7 7 7 7 7 7 7 . . . . .
+        6 6 6 6 7 7 7 7 7 7 7 7 7 7 7 7 7 7 . . . .
+        6 6 6 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6
+        . . . 6 6 6 6 6 6 7 7 7 7 7 7 7 7 7 7 7 6 .
+        . . . . . 6 6 6 6 e e e e 7 7 7 7 7 6 6 6 .
+        . . . . . . . . . e e e e . . . . . . . . .
+        . . . . . . . . . e e e e . . . . . . . . .
+        . . . . . . . . . e e e e . . . . . . . . .
+        . . . . . . . 6 . e e e e . . 6 . . . . . .
+        . . . 6 6 6 . . . e e e e . 6 . . . . . . .
+        . . . 6 . 6 . . . e e e e . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . .
+   `,
+    "obstacle2": `
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . e e e e e . . . . .
+        . . . . e e b b b e e . . . .
+        . . . e e b e e e b e e . . .
+        . . . e e b e e b b e e . . .
+        . . . . e e b b e e e . . . .
+        . . . e b e e e e b b e . . .
+        . . . e e b b b b e e e . . e
+        . . . e e e e e e e e . . e .
+        . . . e b e e b e b e . e . e
+        . . . e b e e e e b e e . . .
+        . . . e e e b e e e e . . . .
+        . . e e b e b e b e e e . . .
+        . e e e e e e e e e e e e . .
+        . . . . . . e e . . . . . . .
+   `
+}
+
 export class GameModder extends React.Component<GameModderProps, GameModderState> {
     protected playBtn: HTMLButtonElement | undefined;
     protected spriteEditorHolder: HTMLDivElement | undefined;
@@ -350,11 +444,18 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         // console.dir(imgs)
 
         let imgsAsBmps = imgs.map(textToBitmap)
-        imgsAsBmps.forEach((img, i) => {
-            let imgSvg = createSvgImg(tabStart + R + R + i * (R * 2 + ICON_W), TAB_MARGIN + R, ICON_W, ICON_W, img)
-            topBarSvg.appendChild(imgSvg)
-        })
         // console.dir(imgsAsBmps)
+
+        let targetImgs = Object.keys(moddableImages)
+            .map(k => moddableImages[k])
+            .map(textToBitmap)
+
+        imgsAsBmps
+            .filter(i1 => targetImgs.some(i2 => i1.equals(i2)))
+            .forEach((img, i) => {
+                let imgSvg = createSvgImg(tabStart + R + R + i * (R * 2 + ICON_W), TAB_MARGIN + R, ICON_W, ICON_W, img)
+                topBarSvg.appendChild(imgSvg)
+            })
     }
 
     render() {
