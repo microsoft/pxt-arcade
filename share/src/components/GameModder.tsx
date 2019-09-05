@@ -396,7 +396,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         let scale = Math.min(wScale, hScale)
         console.log(`Sprite editor scale: ${scale}`)
         let htmlEl = document.getElementsByTagName('html')[0]
-        htmlEl.setAttribute("style", `font-size: ${scale}px`)
+        // htmlEl.setAttribute("style", `font-size: ${scale}px`)
 
         this.spriteEditor = new SpriteEditor(state, null, false, scale);
         this.spriteEditor.render(this.spriteEditorHolder);

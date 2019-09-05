@@ -14,13 +14,13 @@
     align-items: center;
 }
 .sprite-editor-container {
-    /* font-size: 10rem; */
+    /* font-size: 10px; */
     display: flex;
     flex-direction: row;
     justify-items: space-between;
 }
 .sprite-editor-container > * {
-    margin-left: 10rem;
+    margin-left: 10px;
 }
 .sprite-canvas-container {
     position: relative;
@@ -47,10 +47,10 @@ button {
     color: white;
     background-color: #4b7bec;
     width: 95%;
-    height: 60rem;
-    font-size: 32rem;
-    line-height: 60rem;
-    border-radius: 5rem;
+    height: 60px;
+    font-size: 32px;
+    line-height: 60px;
+    border-radius: 5px;
     border-width: 0;
     padding: 0;
 }
@@ -66,21 +66,21 @@ button:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-width: 5rem 5rem 0 5rem;
+    border-width: 5px 5px 0 5px;
     border-color: green;
     border-style: solid;
-    border-radius: 20rem 20rem 0rem 0rem;
+    border-radius: 20px 20px 0px 0px;
 }
 .sprite-tab-spacer {
-    width: 85rem;
-    height: 85rem;
-    border: 5rem solid yellow;
+    width: 85px;
+    height: 85px;
+    border: 5px solid yellow;
 }
 .sprite-tab {
-    width: 65rem;
-    height: 65rem;
-    border:5rem solid blue;
-    margin: 10rem;
+    width: 65px;
+    height: 65px;
+    border:5px solid blue;
+    margin: 10px;
 } */
 
 /*
@@ -114,7 +114,7 @@ button:hover {
     text-align: center;
 }
 .questions input, button {
-    font-size: 20rem;
-    height: 50rem;
+    font-size: 20px;
+    height: 50px;
 }
  */
