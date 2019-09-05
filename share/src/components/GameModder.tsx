@@ -1,5 +1,6 @@
 import React from 'react';
 import { SpriteEditor } from '../sprite-editor/spriteEditor'
+import * as SE from '../sprite-editor/spriteEditor'
 
 import '../css/GameModder.css';
 import '../css/icons.css';
@@ -390,7 +391,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         let actualWidth = body.clientWidth - MARGIN
         let actualHeight = body.clientHeight - header.clientHeight - MARGIN
         let refWidth = 539.0
-        let refHeight = 500.0
+        let refHeight = SE.TOTAL_HEIGHT
         let wScale = actualWidth / refWidth
         let hScale = actualHeight / refHeight
         let scale = Math.min(wScale, hScale)
@@ -459,25 +460,26 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         const R = 10
         const ICON_H = 64
         const ICON_W = 64
-        const TAB_MARGIN = 20
+        const TAB_MARGIN_T = 10
+        const TAB_MARGIN_B = 20
         const SVG_W = 541
-        const SVG_H = R * 2 + ICON_H + TAB_MARGIN * 2
+        const TAB_SVG_H = R * 2 + ICON_H + TAB_MARGIN_T + TAB_MARGIN_B
         const IMG_SPACE = R * 2 + ICON_W
         const TOTAL_IMG_SPACE = IMG_SPACE * Object.keys(moddableImages).length
         const LEFT_SPACE = (SVG_W - TOTAL_IMG_SPACE) / 2
-        const OUT = TAB_MARGIN + 5
+        const OUT = TAB_MARGIN_T + TAB_MARGIN_B + 5
 
-        topBarSvg.setAttribute('viewBox', `0 0 ${SVG_W} ${SVG_H}`)
+        topBarSvg.setAttribute('viewBox', `0 0 ${SVG_W} ${TAB_SVG_H}`)
         let tabStart = LEFT_SPACE - R
         const TOTAL_TAB_W = R * 4 + ICON_W
         let tabFinish = SVG_W - (tabStart + TOTAL_TAB_W)
-        let tabPath = `M -${OUT},${(SVG_H - TAB_MARGIN) + OUT} l 0,-${OUT} l ${OUT},0 h ${tabStart} q ${R},0 ${R},-${R} v -${ICON_H} q 0,-${R} ${R},-${R} h ${ICON_W} q ${R},0 ${R},${R} v ${ICON_H} q 0,${R} ${R},${R} h ${tabFinish} l ${OUT},0 l 0,${OUT} z`
+        let tabPath = `M -${OUT},${(TAB_SVG_H - TAB_MARGIN_B) + OUT} l 0,-${OUT} l ${OUT},0 h ${tabStart} q ${R},0 ${R},-${R} v -${ICON_H} q 0,-${R} ${R},-${R} h ${ICON_W} q ${R},0 ${R},${R} v ${ICON_H} q 0,${R} ${R},${R} h ${tabFinish} l ${OUT},0 l 0,${OUT} z`
         tabEl.setAttribute("d", tabPath)
         topBarSvg.appendChild(tabEl)
         let body = document.getElementsByTagName("body")[0]
         topBarHolder.appendChild(topBarSvg)
 
-        let dummyImg = createPngImg(R, TAB_MARGIN + R, ICON_W, ICON_W)
+        let dummyImg = createPngImg(R, TAB_MARGIN_T + R, ICON_W, ICON_W)
         topBarSvg.appendChild(dummyImg)
         setInterval(() => {
             updatePngImg(dummyImg, this.spriteEditor.bitmap().image)
@@ -513,19 +515,23 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         targetImgs
             .forEach((img, i) => {
                 let x = tabStart + R + R + i * IMG_SPACE
-                let y = TAB_MARGIN + R
+                let y = TAB_MARGIN_T + R
                 // let imgSvg = createSvgImg(x, y, img)
                 let imgSvg = createPngImg(x, y, ICON_W, ICON_W, img)
                 topBarSvg.appendChild(imgSvg)
             })
 
         // GALLERY
+        const GAL_MARGIN_B = 50
+        const GAL_SVG_H = 10 + GAL_MARGIN_B
+        // const GAL_MARGIN_B = 20
+        // const GAL_SVG_H = 40
         let galleryHolder = this.refs["sprite-gallery"] as HTMLDivElement
         let gallerySvg = document.createElementNS("http://www.w3.org/2000/svg", "svg")// as unknown as SVGSVGElement;
         let galleryEnd = document.createElementNS("http://www.w3.org/2000/svg", "path")
-        let galleryEndPath = `M -${OUT},-${OUT} l 0,${OUT} l 0,${SVG_H - TAB_MARGIN} l ${OUT},0 h ${tabStart + TOTAL_TAB_W + tabFinish} l ${OUT},0 l 0,-${SVG_H - TAB_MARGIN} l 0,-${OUT} z`
+        let galleryEndPath = `M -${OUT},-${OUT} l 0,${OUT} l 0,${GAL_SVG_H - GAL_MARGIN_B} l ${OUT},0 h ${SVG_W} l ${OUT},0 l 0,-${GAL_SVG_H - GAL_MARGIN_B} l 0,-${OUT} z`
         galleryEnd.setAttribute("d", galleryEndPath)
-        gallerySvg.setAttribute('viewBox', `0 0 ${SVG_W} ${SVG_H}`)
+        gallerySvg.setAttribute('viewBox', `0 0 ${SVG_W} ${GAL_SVG_H}`)
         gallerySvg.appendChild(galleryEnd)
         galleryHolder.appendChild(gallerySvg)
     }
