@@ -16,8 +16,24 @@
     flex-grow: 1;
 }
 
+.game-joystick-svg {
+    width: 200px;
+    height: 200px;
+}
+
 @media (max-aspect-ratio: 1/1) {
     .game-joystick {
         height: calc(100% - 3em);
+    }
+}
+
+@media (max-width: 400px) and (max-aspect-ratio: 1/1) {
+    .game-joystick {
+        max-width: 50%;
+    }
+
+    .game-joystick-svg {
+        width: 100%;
+        height: initial;
     }
 }
