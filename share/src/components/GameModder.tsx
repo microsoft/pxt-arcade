@@ -5,7 +5,7 @@ import '../css/GameModder.css';
 import '../css/icons.css';
 import '../css/SpriteEditor.css';
 import { imageLiteralToBitmap, bitmapToImageLiteral, Bitmap } from '../sprite-editor/bitmap';
-import { bunnyHopBinJs } from '../games/bunny_hop_min.js';
+// import { bunnyHopBinJs } from '../../public/games/bunny_hop/bunny_hop_min.js.js';
 
 export interface GameModderProps {
     playHandler: (binJs: string) => void
@@ -117,10 +117,10 @@ function scale_color(v: number) {
     return v * v
 }
 
-function encodeImage(bitmap: Bitmap): string {
+// TODO: either we need binHexToBitmap or we need the original source code
+function bitmapToBinHex(bitmap: Bitmap): string {
     return f4EncodeImg(bitmap.width, bitmap.height, 4, bitmap.get.bind(bitmap))
 }
-
 function textToBitmap(bmp: Bitmap): string {
     return bitmapToImageLiteral(bmp);
 }
@@ -134,26 +134,21 @@ function bitmapToText(text: string): Bitmap {
         return null;
     }
 }
-
-/**
- * Scales the image to 32x32 and returns a data uri. In light mode the preview
- * is drawn with no transparency (alpha is filled with background color)
- */
 function bitmapToUrl(bmp: Bitmap) {
-    let width = 32;
+    const WIDTH = 32;
 
     const colors = defaultPalletColors.slice(1)
     const canvas = document.createElement("canvas");
-    canvas.width = width;
-    canvas.height = width;
+    canvas.width = WIDTH;
+    canvas.height = WIDTH;
 
     // Works well for all of our default sizes, does not work well if the size is not
     // a multiple of 2 or is greater than 32 (i.e. from the decompiler)
-    const cellSize = Math.min(width / bmp.width, width / bmp.height);
+    const cellSize = Math.min(WIDTH / bmp.width, WIDTH / bmp.height);
 
     // Center the image if it isn't square
-    const xOffset = Math.max(Math.floor((width * (1 - (bmp.width / bmp.height))) / 2), 0);
-    const yOffset = Math.max(Math.floor((width * (1 - (bmp.height / bmp.width))) / 2), 0);
+    const xOffset = Math.max(Math.floor((WIDTH * (1 - (bmp.width / bmp.height))) / 2), 0);
+    const yOffset = Math.max(Math.floor((WIDTH * (1 - (bmp.height / bmp.width))) / 2), 0);
 
     let context: CanvasRenderingContext2D;
     context = canvas.getContext("2d");
@@ -171,6 +166,41 @@ function bitmapToUrl(bmp: Bitmap) {
 
     return canvas.toDataURL();
 }
+
+function mkPxtJson(): string {
+    let json = {
+        "name": "SampleIMages",
+        "dependencies": {
+            "device": "*"
+        },
+        "description": "",
+        "files": [
+            "main.blocks",
+            "main.ts",
+            "README.md"
+        ],
+        "preferredEditor": "blocksprj"
+    }
+    return JSON.stringify(json)
+}
+
+async function getTxtFile(url: string): Promise<string> {
+    return new Promise((resolve, reject) => {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.responseType = 'text';
+        xhr.onload = function () {
+            var status = xhr.status;
+            if (status === 200) {
+                resolve(xhr.response);
+            } else {
+                const err = new Error(`Error response (${status}) from '${url}'; content: ${xhr.response}`);
+                reject(err)
+            }
+        };
+        xhr.send();
+    });
+};
 
 export class GameModder extends React.Component<GameModderProps, GameModderState> {
     protected playBtn: HTMLButtonElement | undefined;
@@ -300,6 +330,15 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             let imgData = bitmapToUrl(this.spriteEditor.bitmap().image)
             img.setAttributeNS("http://www.w3.org/1999/xlink", "href", `${imgData}`)
         }, 500)
+
+        let blocksProm = getTxtFile("/games/bunny_hop/main.blocks")
+            .then((v) => {
+                console.log("Response!")
+                console.log(v);
+            })
+            .catch((e) => {
+                console.log(e)
+            })
     }
 
     render() {
@@ -342,11 +381,11 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         this.spriteEditorHolder = undefined;
     }
 
-    onPlay() {
+    async onPlay() {
         // const newSpriteState = bitmapToImageLiteral(.image);
         // let newHexString = 
-        const gameBinJs = bunnyHopBinJs;
-        const newHexImg = encodeImage(this.spriteEditor.bitmap().image)
+        const gameBinJs = await getTxtFile("/games/bunny_hop/bin.js");
+        const newHexImg = bitmapToBinHex(this.spriteEditor.bitmap().image)
         let oldImageBin = "87040c0015000000000000000000000000000000000000000010010000000000000000111110010000000000100110111111010000000000101311111111111101000000003013f1111111111100000010011011f11111111101000010131111f111111101000000003013f11111010000000000000000111110010000000000000000000010010000000000000000000000000000000000"
         console.log(oldImageBin)
         console.log("==>")
