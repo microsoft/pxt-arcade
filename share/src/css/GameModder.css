@@ -3,30 +3,66 @@
     height: 100%;
     background: #2c3e50;
     color: #FFF;
-    font-family: "Roboto Mono", monospace;
+    font-family: "Monaco", monospace;
     text-align: center;
     margin: 0;
     padding: 0;
-    font-size: 16rem;
+    /* font-size: 16rem; */
     display: flex;
     flex-direction: column;
     justify-items: center;
     align-items: center;
 }
+.sprite-editor-container {
+    /* font-size: 10rem; */
+    display: flex;
+    flex-direction: row;
+    justify-items: space-between;
+}
+.sprite-editor-container > * {
+    margin-left: 10rem;
+}
+.sprite-canvas-container {
+    position: relative;
+}
+
+* {
+    box-sizing: border-box;
+}
 
 h1 {
     margin: 0;
-    font-size: 48rem;
-    line-height: 64rem;
+    font-size: 40rem;
+    line-height: 70rem;
 }
 
 html {
     font-size: 1px;
 }
-/* 
-* {
-    box-sizing: border-box;
-} */
+.sprite-picker {
+    /* margin-left: 20rem; */
+    width: 70%;
+    /* border:5rem solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-width: 5rem 5rem 0 5rem;
+    border-color: green;
+    border-style: solid;
+    border-radius: 20rem 20rem 0rem 0rem;
+}
+.sprite-tab-spacer {
+    width: 85rem;
+    height: 85rem;
+    border: 5rem solid yellow;
+}
+.sprite-tab {
+    width: 65rem;
+    height: 65rem;
+    border:5rem solid blue;
+    margin: 10rem;
+}
+
 /* 
 .grid {
     display: grid;
@@ -61,8 +97,15 @@ html {
     font-size: 20rem;
     height: 50rem;
 }
-
+ */
 button {
-    fill: #ffffff;
-    stroke: #999;
-} */
+    color: white;
+    background-color: #2f7daa;
+    width: 95%;
+    height: 60rem;
+    font-size: 32rem;
+    line-height: 60rem;
+    border-radius: 5rem;
+    border-width: 0;
+    padding: 0;
+}

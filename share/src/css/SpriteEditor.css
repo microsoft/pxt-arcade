@@ -64,12 +64,12 @@
 }
 .sprite-editor-icon {
   fill: white;
-  font-size: 19rem;
+  font-size: 19px;
 }
 .sprite-editor-xicon {
   fill: white;
   font-family: "xicon";
-  font-size: 19rem;
+  font-size: 19px;
 }
 .sprite-editor-button {
   cursor: pointer;
@@ -130,7 +130,7 @@
 .sprite-editor-dropdown-bg {
   background: #2c3e50;
   border-radius: 4rem;
-  padding-top: 4rem;
+  /* padding-top: 4rem; */
   position: relative;
 }
 .sprite-editor-glyph {

@@ -2,6 +2,7 @@ import React from 'react';
 import { SpriteEditor } from '../sprite-editor/spriteEditor'
 
 import '../css/GameModder.css';
+import '../css/icons.css';
 import '../css/SpriteEditor.css';
 import { imageLiteralToBitmap, bitmapToImageLiteral, Bitmap } from '../sprite-editor/bitmap';
 import { bunnyHopBinJs } from '../games/bunny_hop_min.js';
@@ -116,21 +117,6 @@ function scale_color(v: number) {
     return v * v
 }
 
-function closestColor(buf: Uint8Array, pix: number, palette: number[][], alpha = true) {
-    if (alpha && buf[pix + 3] < 100)
-        return 0 // transparent
-    let mindelta = 0
-    let idx = -1
-    for (let i = alpha ? 1 : 0; i < palette.length; ++i) {
-        let delta = scale_color(palette[i][0] - buf[pix + 0]) + scale_color(palette[i][1] - buf[pix + 1]) + scale_color(palette[i][2] - buf[pix + 2])
-        if (idx < 0 || delta < mindelta) {
-            idx = i
-            mindelta = delta
-        }
-    }
-    return idx
-}
-
 function encodeImage(bitmap: Bitmap): string {
     return f4EncodeImg(bitmap.width, bitmap.height, 4, bitmap.get.bind(bitmap))
 }
@@ -155,19 +141,21 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         const state = imageLiteralToBitmap('', DEFAULT_SPRITE_STATE);
 
         let body = document.getElementsByTagName('body')[0]
-        let header = document.getElementById('header')
+        let header = this.refs['header'] as HTMLDivElement
+        header.textContent = "Draw your character!"
+        // const MARGIN = 20
         const MARGIN = 2
         let actualWidth = body.clientWidth - MARGIN
-        // const BANNER_H = 40 + 21 + 21
         let actualHeight = body.clientHeight - header.clientHeight - MARGIN
         let refWidth = 539.0
         let refHeight = 500.0
         let wScale = actualWidth / refWidth
         let hScale = actualHeight / refHeight
         let scale = Math.min(wScale, hScale)
-        // let scale = 1.5; // TODO: compute from client width/height
-        // let width = 
-        // 
+        console.log(`Sprite editor scale: ${scale}`)
+        let htmlEl = document.getElementsByTagName('html')[0]
+        htmlEl.setAttribute("style", `font-size: ${scale}px`)
+
         this.spriteEditor = new SpriteEditor(state, null, false, scale);
         this.spriteEditor.render(this.spriteEditorHolder);
         // HACK: scaling
@@ -185,9 +173,11 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         for (let c of controls) {
             let oldW = parseInt(c.getAttribute("width").replace("px", ""))
             let oldH = parseInt(c.getAttribute("height").replace("px", ""))
-            let newW = oldW / scale
-            let newH = oldH / scale
-            c.setAttribute("viewBox", `0 0 ${newW} ${newH}`)
+            // fudge of 5 for scale 1.892
+            const fudge = 0 // 5 * scale
+            let newW = (oldW - fudge) / scale
+            let newH = (oldH - fudge) / scale
+            c.setAttribute("viewBox", `${fudge} ${fudge} ${newW} ${newH}`)
         }
         // END HACK
 
@@ -200,8 +190,8 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             [10, 8]
         ]);
 
-        this.spriteEditorHolder.style.height = (this.spriteEditor.outerHeight() + 3) + "px";
-        this.spriteEditorHolder.style.width = (this.spriteEditor.outerWidth() + 3) + "px";
+        this.spriteEditorHolder.style.height = (this.spriteEditor.outerHeight()) + "px";
+        this.spriteEditorHolder.style.width = (this.spriteEditor.outerWidth()) + "px";
         this.spriteEditorHolder.style.overflow = "hidden";
         this.spriteEditorHolder.className = 'sprite-editor-container sprite-editor-dropdown-bg sprite-editor-dropdown';
         this.spriteEditor.addKeyListeners();
@@ -210,30 +200,29 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             this.onPlay()
         });
 
+        // canvas start is 10rem + 65rem + 10rem
 
     }
 
     render() {
         return (
             <div className="game-modder">
-                {/* <div className="grid"> */}
-                {/* <div className="questions"> */}
-                {/* <h1>Mod your game!</h1>
-                        <p>Fill in the questions to create your very own game.</p> */}
-                <h1 id="header">Draw your hero!</h1>
-                {/* <input placeholder="purple dragon">
-                        </input>
-                        <button ref="play-btn">
-                            Play
-                        </button>
-                        <button ref="play-btn2">
-                            Play2
-                        </button> */}
-                <div ref="sprite-editor-holder">
-
-                    {/* </div> */}
-                    {/* </div> */}
+                <h1 ref="header">Mod your game!</h1>
+                <div className="sprite-picker">
+                    {/* <div className="sprite-tab-spacer">
+                    </div> */}
+                    <div className="sprite-tab">
+                    </div>
+                    <div className="sprite-tab">
+                    </div>
+                    <div className="sprite-tab">
+                    </div>
+                    <div className="sprite-tab">
+                    </div>
                 </div>
+                <div ref="sprite-editor-holder" className="sprite-editor-holder">
+                </div>
+                <button ref="play-btn">Play!</button>
             </div>
         )
     }
@@ -243,8 +232,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         this.spriteEditorHolder = this.refs['sprite-editor-holder'] as HTMLDivElement;
 
         // events
-        let that = this
-        // this.playBtn.addEventListener('click', that.props.playHandler)
+        this.playBtn.addEventListener('click', this.onPlay.bind(this))
 
         // TODO(dz):
         this.renderSpriteEditor()
