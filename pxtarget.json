@@ -64,6 +64,7 @@
         "libs/controller---none",
         "libs/edge-connector",
         "libs/esp32",
+        "libs/esp32-game",
         "libs/mqtt",
         "libs/net",
         "libs/azureiot",
