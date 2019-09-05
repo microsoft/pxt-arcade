@@ -323,10 +323,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         // TODO(dz):
         this.renderSpriteEditor()
         await this.renderGallery();
-        // TODO: remove
-        setTimeout(() => {
-            this.renderExperiments();
-        }, 100)
+        // await this.renderExperiments();
     }
 
     componentWillUnmount() {

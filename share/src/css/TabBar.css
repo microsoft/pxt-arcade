@@ -1,16 +1,16 @@
-.sprite-picker {
+.tab-bar {
     line-height: 0px;
     width: 100%
 }
-.sprite-picker image {
+.tab-bar image {
     cursor: pointer;
 }
 /* #2c3e50 */
-.sprite-picker path {
+.tab-bar path {
     fill: #4b7becaa;
     background-color: #4b7becaa;
 }
-.sprite-picker path {
+.tab-bar path {
     stroke-width: 2px;
     stroke:#4b7bec;
 }

@@ -36,23 +36,23 @@ h1 {
     line-height: 50px;
     white-space: nowrap;
 }
-.sprite-picker,
+.tab-bar,
 .sprite-gallery {
     line-height: 0px;
     width: 100%
 }
-.sprite-picker image,
+.tab-bar image,
 .sprite-gallery image {
     cursor: pointer;
 }
 /* #2c3e50 */
-.sprite-picker path,
+.tab-bar path,
 .sprite-gallery path,
 .sprite-editor-container {
     fill: #4b7becaa;
     background-color: #4b7becaa;
 }
-.sprite-picker path,
+.tab-bar path,
 .sprite-gallery path {
     stroke-width: 2px;
     stroke:#4b7bec;
@@ -76,7 +76,7 @@ button:hover {
 /*text on white: rgb(75, 123, 236);*/
 
 
-/* .sprite-picker {
+/* .tab-bar {
     width: 70%;
     display: flex;
     flex-direction: row;
