@@ -13,7 +13,15 @@ import { textToBitmap, createPngImg, updatePngImg, bitmapToBinHex } from '../bit
 export interface GameModderProps {
     playHandler: (binJs: string) => void
 }
+
+export interface UserImage {
+    data: Bitmap,
+    name: string,
+    callToAction: string,
+}
 export interface GameModderState {
+    userImages: UserImage[]
+    currentImg: number,
 }
 
 const DEFAULT_SPRITE_STATE = `
@@ -166,6 +174,11 @@ const moddableImages: { [k: string]: string } = {
         . . . . . . e e . . . . . . .
    `
 }
+const CALL_TO_ACTION: { [k: string]: string } = {
+    "character": "Draw your character!",
+    "obstacle1": "Draw an obstacle!",
+    "obstacle2": "Draw another obstacle!"
+}
 
 export class GameModder extends React.Component<GameModderProps, GameModderState> {
     protected playBtn: HTMLButtonElement | undefined;
@@ -175,7 +188,20 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
 
     constructor(props: GameModderProps) {
         super(props);
+
+        const mkBlank = () => imageLiteralToBitmap('', DEFAULT_SPRITE_STATE);
+        let imgs = Object.keys(moddableImages)
+            .map((name) => {
+                return {
+                    data: mkBlank(),
+                    name: name,
+                    callToAction: CALL_TO_ACTION[name]
+                } as UserImage;
+            })
+
         this.state = {
+            userImages: imgs,
+            currentImg: 0
         }
 
         this.tabImages = Object.keys(moddableImages)
@@ -189,11 +215,9 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
 
         // const { value } = this.props;
         // const stateSprite = value && this.stripImageLiteralTags(value)
-        const state = imageLiteralToBitmap('', DEFAULT_SPRITE_STATE);
 
         let body = document.getElementsByTagName('body')[0]
         let header = this.refs['header'] as HTMLDivElement
-        header.textContent = "Draw your character!"
         // const MARGIN = 20
         const MARGIN = 0
         let actualWidth = body.clientWidth - MARGIN
@@ -207,7 +231,8 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         let htmlEl = document.getElementsByTagName('html')[0]
         // htmlEl.setAttribute("style", `font-size: ${scale}px`)
 
-        this.spriteEditor = new SpriteEditor(state, null, false, scale);
+        let currImg = this.state.userImages[this.state.currentImg].data
+        this.spriteEditor = new SpriteEditor(currImg, null, false, scale);
         this.spriteEditor.render(this.spriteEditorHolder);
         // HACK: scaling
         header.setAttribute("style", `transform: scale(${scale})`);
@@ -299,11 +324,44 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         galleryHolder.appendChild(gallerySvg)
     }
 
+    save() {
+        function updateUserImage(old: UserImage, nw: Bitmap): UserImage {
+            return {
+                data: nw,
+                name: old.name,
+                callToAction: old.callToAction
+            }
+        }
+        this.setState({
+            userImages: this.state.userImages.map((m, i) =>
+                i === this.state.currentImg
+                    ? updateUserImage(m, this.spriteEditor.bitmap().image) //.copy()
+                    : m)
+        })
+        console.log('save')
+        console.dir(this.state.userImages)
+    }
+    load(idx: number) {
+        console.log(`load: ${idx}`)
+        let currImg = this.state.userImages[idx].data
+        console.dir(currImg)
+        this.spriteEditor.bitmap().image = currImg // .copy()
+        this.spriteEditor.rePaint()
+    }
+
+    onTabChange(idx: number) {
+        console.log(`TAB: ${idx}`)
+        this.save()
+        this.setState({ currentImg: idx })
+        this.load(idx)
+    }
+
     render() {
+        let currImg = this.state.userImages[this.state.currentImg]
         return (
             <div className="game-modder">
-                <h1 ref="header">Mod your game!</h1>
-                <TabBar ref="tab-bar" tabImages={this.tabImages} />
+                <h1 ref="header">{currImg.callToAction}</h1>
+                <TabBar ref="tab-bar" tabImages={this.tabImages} tabChange={this.onTabChange.bind(this)} />
                 <div ref="sprite-editor-holder" className="sprite-editor-holder">
                 </div>
                 <div ref="sprite-gallery" className="sprite-gallery">
@@ -332,6 +390,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
     }
 
     async onPlay() {
+        this.save()
         // const newSpriteState = bitmapToImageLiteral(.image);
         // let newHexString =
         const gameBinJs = await getTxtFile("/games/bunny_hop/bin.js");

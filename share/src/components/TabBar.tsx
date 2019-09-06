@@ -6,7 +6,8 @@ import '../css/TabBar.css';
 import { bitmapToUrl } from '../bitmap_helpers';
 
 interface TabBarProps {
-    tabImages: Bitmap[]
+    tabImages: Bitmap[],
+    tabChange: (idx: number) => void
 }
 interface TabBarState {
     currentTab: number
@@ -72,9 +73,9 @@ export class TabBar extends React.Component<TabBarProps, TabBarState>
                     data: bitmapToUrl(img)
                 }
             })
-        let comp = this
-        function clickHandler(this: number) {
-            comp.setState({ currentTab: this })
+        function clickHandler(this: TabBar, idx: number) {
+            this.setState({ currentTab: idx })
+            this.props.tabChange(idx)
         }
         return (
             <div ref="tab-bar" className="tab-bar">
@@ -82,10 +83,10 @@ export class TabBar extends React.Component<TabBarProps, TabBarState>
                     <path ref="tab-path" d={tabPath}>
                     </path>
                     {tabImgs.map(i =>
-                        <image x={i.x} y={i.y}
+                        <image key={i.idx} x={i.x} y={i.y}
                             width={i.w} height={i.h}
                             href={i.data}
-                            onClick={clickHandler.bind(i.idx)}></image>)}
+                            onClick={clickHandler.bind(this, i.idx)}></image>)}
                 </svg>
             </div>
         );

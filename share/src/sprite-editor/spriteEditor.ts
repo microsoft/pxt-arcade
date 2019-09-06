@@ -235,6 +235,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
     }
 
     rePaint() {
+        this.commit();
         this.paintSurface.repaint();
     }
 
