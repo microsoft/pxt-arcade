@@ -5,6 +5,7 @@ import { Simulator, SimulatorButton } from './simulator';
 
 export interface GameButtonsProps {
     simulator: Simulator;
+    changeMode: (mode: "play" | "share" | "mod") => void;
 }
 
 const SVG_WIDTH = 40;
@@ -32,11 +33,12 @@ class GameButtons extends React.Component<GameButtonsProps, {}>  {
     }
 
     render() {
+        const { changeMode } = this.props;
         return (
             <div className="game-buttons">
                 <div className="spacer" />
                 <div className="action-button">
-                    <button className="share-mod-button">Share</button>
+                    <button className="share-mod-button" onClick={() => changeMode("share")}>Share</button>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" ref="button-bounds" className="game-button-svg" viewBox="0 0 40 40" width="200px" height="200px">
                     <circle ref="button-b" cx="13" cy="28" r="9" fill="#333" stroke="#397382" strokeWidth="2.5" />

@@ -6,6 +6,7 @@ import '../css/Joystick.css';
 
 export interface JoystickProps {
     simulator: Simulator;
+    changeMode: (mode: "play" | "share" | "mod") => void;
 }
 
 const SVG_WIDTH = 40;
@@ -47,11 +48,12 @@ export class Joystick extends React.Component<JoystickProps, {}> {
     }
 
     render() {
+        const { changeMode } = this.props;
         return (
             <div ref="joystick-container" className="game-joystick">
                 <div className="spacer" />
                 <div className="action-button">
-                    <button className="share-mod-button">Mod</button>
+                    <button className="share-mod-button" onClick={() => changeMode("mod")}>Mod</button>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" ref="joystick-bounds" className="game-joystick-svg" viewBox="1 0 40 40" width="200px" height="200px">
                     <circle id="joystick-background" cx="20" cy="20" r="16" fill="#397382" stroke="#397382" strokeWidth="2"/>

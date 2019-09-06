@@ -12,7 +12,8 @@ import { tickEvent } from '../telemetry/appinsights';
 // import { bunnyHopBinJs } from '../../public/games/bunny_hop/bunny_hop_min.js.js';
 
 export interface GameModderProps {
-    playHandler: (binJs: string) => void
+    playHandler: (binJs: string) => void;
+    changeMode: (mode: "play" | "share" | "mod") => void;
 }
 
 export interface UserImage {
