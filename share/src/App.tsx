@@ -4,6 +4,7 @@ import './App.css';
 import GamePlayer from './components/GamePlayer';
 import GameModder from './components/GameModder';
 import Share from './components/Share';
+import HeaderBar from './components/HeaderBar';
 
 import { loadAppInsights, tickEvent } from './telemetry/appinsights';
 

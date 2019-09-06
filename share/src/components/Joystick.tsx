@@ -54,13 +54,13 @@ export class Joystick extends React.Component<JoystickProps, {}> {
                     <button className="share-mod-button">Mod</button>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" ref="joystick-bounds" className="game-joystick-svg" viewBox="1 0 40 40" width="200px" height="200px">
-                    <circle id="joystick-background" cx="20" cy="20" r="16" fill="#dedede" stroke="#cecece" strokeWidth="2"/>
-                    <rect ref="dpad-up" x="16" y="6" width="8" height="12" rx="2" fill="none" stroke="#cecece" strokeWidth="1" />
-                    <rect ref="dpad-down" x="16" y="22" width="8" height="12" rx="2" fill="none" stroke="#cecece" strokeWidth="1" />
-                    <rect ref="dpad-right" x="22" y="16" width="12" height="8" ry="2" fill="none" stroke="#cecece" strokeWidth="1" />
-                    <rect ref="dpad-left" x="6" y="16" width="12" height="8" ry="2" fill="none" stroke="#cecece" strokeWidth="1" />
-                    <circle cx="20" cy="20" r="6" fill="#999" />
-                    <circle ref="joystick-handle" cx="20" cy="20" r="6" fill="#ffffff" stroke="#999" strokeWidth="1" />
+                    <circle id="joystick-background" cx="20" cy="20" r="16" fill="#397382" stroke="#397382" strokeWidth="2"/>
+                    <rect ref="dpad-up" x="16" y="6" width="8" height="12" rx="2" fill="#cecece" stroke="none" strokeWidth="1" />
+                    <rect ref="dpad-down" x="16" y="22" width="8" height="12" rx="2" fill="#cecece" stroke="none" strokeWidth="1" />
+                    <rect ref="dpad-right" x="22" y="16" width="12" height="8" ry="2" fill="#cecece" stroke="none" strokeWidth="1" />
+                    <rect ref="dpad-left" x="6" y="16" width="12" height="8" ry="2" fill="#cecece" stroke="none" strokeWidth="1" />
+                    <circle cx="20" cy="20" r="6" fill="#cecece" />
+                    <circle ref="joystick-handle" cx="20" cy="20" r="6" fill="#333" stroke="#999" strokeWidth="2" />
                 </svg>
             </div>
         )
@@ -85,7 +85,7 @@ export class Joystick extends React.Component<JoystickProps, {}> {
 
     protected updateDirection(button: SVGRectElement | undefined, isPressed: boolean) {
         if (button) {
-            button.setAttribute("fill", isPressed ? "#a8769a" : "none");
+            button.setAttribute("fill", isPressed ? "#249ca3" : "#cecece");
         }
     }
 

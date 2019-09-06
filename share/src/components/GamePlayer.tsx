@@ -24,6 +24,10 @@ const GamePlayer: React.FC<GamePlayerProps> = props => {
             <Joystick simulator={sim} />
             <SimFrame simulator={sim} />
             <GameButtons simulator={sim} />
+            <div className="game-player-background"></div>
+            <div className="game-player-logo">MAKECODE</div>
+            <div className="game-player-msft"></div>
+            <div className="game-player-vent"></div>
         </div>
     );
 }

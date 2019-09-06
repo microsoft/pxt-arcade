@@ -3,11 +3,13 @@
     flex-direction: column;
 
     height: 100%;
+    width: 50%;
     position: fixed;
     left: 0;
     top: 0;
 
     touch-action: none;
+    z-index: 20;
 }
 
 .game-joystick .spacer {
@@ -17,12 +19,11 @@
 .game-joystick-svg {
     width: 200px;
     height: 200px;
-    opacity: 0.5;
 }
 
 @media (max-aspect-ratio: 1/1) {
     .game-joystick {
-        height: calc(100% - 3em);
+        height: 95%;
     }
 }
 

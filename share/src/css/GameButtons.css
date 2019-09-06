@@ -3,9 +3,12 @@
     flex-direction: column;
 
     height: 100%;
+    width: 50%;
     position: fixed;
     right: 0;
     top: 0;
+
+    z-index: 20;
 }
 
 .game-buttons .spacer {
@@ -18,37 +21,69 @@
 }
 
 .action-button {
+    position: relative;
     width: 100%;
     height: 3.5rem;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
+}
 
+.action-button button:hover {
+    background-color: #397382;
+    color: #333;
+}
+
+.game-buttons .action-button {
+    left: -0.2rem;
+    text-align: left;
+}
+
+.game-buttons .action-button button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.game-joystick .action-button {
+    left: 0.2rem;
+    text-align: right;
+}
+
+.game-joystick .action-button button {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .share-mod-button {
-    padding: 1rem;
-    color: #ffffff;
-    background-color: #e95153;
+    color: #cecece;
+    background-color: #999;
     text-align: center;
     width: 80%;
     height: 100%;
     border-radius: 4rem;
-    border: 2px solid rgb(138, 77, 89);
-    font-size: 18px;
+    border: 0.4em solid #333;
+    font-size: 28px;
+    box-sizing: content-box;
+    font-family: monospace;
+    text-transform: uppercase;
 
     display: inline-block;
 }
 
+.game-buttons svg text {
+    fill: #cecece;
+    stroke: #cecece;
+    stroke-width: 0.4;
+}
+
 @media (max-aspect-ratio: 1/1) {
     .game-buttons {
-        height: calc(100% - 3em);
+        height: 95%;
     }
 }
 
 .game-button-svg {
     width: 200px;
     height: 200px;
-    opacity: 0.5;
 }
 
 @media (max-width: 400px) and (max-aspect-ratio: 1/1) {
