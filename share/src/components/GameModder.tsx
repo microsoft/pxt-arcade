@@ -25,25 +25,21 @@ export interface GameModderState {
     currentImg: number,
 }
 
-const DEFAULT_SPRITE_STATE = `
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-`;
-
+function CreateEmptyImageText(w: number, h: number) {
+    let res = "\n"
+    for (let i = 0; i < h; i++)
+        res += ".".repeat(w) + "\n"
+    return res
+}
+function GetImageTextDimensions(s: string): { w: number, h: number } {
+    s = s.trim()
+    let lns = s.split("\n")
+    let ln1 = lns[0].replace(/\s/g, "")
+    return {
+        w: ln1.length,
+        h: lns.length
+    }
+}
 
 // TODO: either we need binHexToBitmap or we need the original source code
 
@@ -175,17 +171,14 @@ const moddableImages: { [k: string]: string } = {
         . . . . . . e e . . . . . . .
    `
 }
-// TODO:
-const MOD_TARGET_HEXS: { [k: string]: string } = {
-    "character": "87040c0015000000000000000000000000000000000000000010010000000000000000111110010000000000100110111111010000000000101311111111111101000000003013f1111111111100000010011011f11111111101000010131111f111111101000000003013f11111010000000000000000111110010000000000000000000010010000000000000000000000000000000000",
-    "obstacle1": "Draw an obstacle!",
-    "obstacle2": "Draw another obstacle!"
-}
 const CALL_TO_ACTION: { [k: string]: string } = {
     "character": "Draw your character!",
     "obstacle1": "Draw an obstacle!",
     "obstacle2": "Draw another obstacle!"
 }
+// TODO:
+// 15x32 stump
+// 22x32 tree
 
 export class GameModder extends React.Component<GameModderProps, GameModderState> {
     protected playBtn: HTMLButtonElement | undefined;
@@ -196,14 +189,19 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
     constructor(props: GameModderProps) {
         super(props);
 
-        const mkBlank = () => imageLiteralToBitmap('', DEFAULT_SPRITE_STATE);
         let imgs = Object.keys(moddableImages)
             .map((name) => {
+                let def = moddableImages[name]
+                // TODO: match the original dimensions? One difficulty with this
+                // is the sprite editor canvas can't handle this
+                // let { w, h } = GetImageTextDimensions(moddableImages[name])
+                let [w, h] = [16, 16]
+                let blank = CreateEmptyImageText(w, h);
                 return {
-                    data: mkBlank(),
+                    data: imageLiteralToBitmap(blank),
                     name: name,
                     callToAction: CALL_TO_ACTION[name],
-                    default: textToBitmap(moddableImages[name])
+                    default: textToBitmap(def)
                 };
             })
 
@@ -402,23 +400,23 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         this.save()
 
         function modImg(bin: string, img: UserImage) {
-            const old = bitmapToBinHex(img.default)
-            const nw = bitmapToBinHex(img.data)
-            return bin.replace(old, nw)
+            // HACK: for some reason the compiler emits image prefixes that look like:
+            // 8704100010000000
+            // whereas ours look like:
+            // e4101000
+            const MOD_PREFIX_LEN = "e4101000".length
+            const BIN_PREFIX_LEN = "8704100010000000".length
+
+            const oldToFind = bitmapToBinHex(img.default)
+                .slice(MOD_PREFIX_LEN)
+            let oldStartIncl = bin.indexOf(oldToFind) - BIN_PREFIX_LEN
+            let oldEndExcl = bin.indexOf(`"`, oldStartIncl)
+            let oldHex = bin.slice(oldStartIncl, oldEndExcl)
+
+            const newHex = bitmapToBinHex(img.data)
+
+            return bin.replace(oldHex, newHex)
         }
-        // const newSpriteState = bitmapToImageLiteral(.image);
-        // let newHexString =
-        // const newHexImg = bitmapToBinHex(this.spriteEditor.bitmap().image)
-        let oldImageBin = "87040c0015000000000000000000000000000000000000000010010000000000000000111110010000000000100110111111010000000000101311111111111101000000003013f1111111111100000010011011f11111111101000010131111f111111101000000003013f11111010000000000000000111110010000000000000000000010010000000000000000000000000000000000"
-        console.log("oldImageBin")
-        console.log(oldImageBin)
-        console.log("f4PreProcess:")
-        console.log(textToBinHex(moddableImages["character"]))
-        // console.log(newHexImg)
-        console.log("bitmap")
-        console.log(bitmapToBinHex(this.state.userImages[0].default))
-        console.log("user image")
-        console.log(bitmapToBinHex(this.state.userImages[0].data))
 
         let gameBinJs = await getTxtFile("/games/bunny_hop/bin.js");
         for (let i of this.state.userImages) {
