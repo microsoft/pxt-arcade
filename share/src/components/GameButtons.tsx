@@ -39,10 +39,10 @@ class GameButtons extends React.Component<GameButtonsProps, {}>  {
                     <button className="share-mod-button">Share</button>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" ref="button-bounds" className="game-button-svg" viewBox="0 0 40 40" width="200px" height="200px">
-                    <circle ref="button-b" cx="15" cy="28" r="8" fill="#ffffff" stroke="#999" strokeWidth="1" />
-                    <text ref="label-b" x="15" y="28" textAnchor="middle" dy="2.5" fontSize="8">B</text>
-                    <circle ref="button-a" cx="30" cy="13" r="8" fill="#ffffff" stroke="#999" strokeWidth="1" />
-                    <text ref="label-a" x="30" y="13" textAnchor="middle" dy="2.5" fontSize="8">A</text>
+                    <circle ref="button-b" cx="13" cy="28" r="9" fill="#333" stroke="#397382" strokeWidth="2.5" />
+                    <text ref="label-b" x="13" y="28" textAnchor="middle" dy="2.5" fontSize="8">B</text>
+                    <circle ref="button-a" cx="28" cy="11" r="9" fill="#333" stroke="#397382" strokeWidth="2.5" />
+                    <text ref="label-a" x="28" y="11" textAnchor="middle" dy="2.5" fontSize="8">A</text>
                 </svg>
             </div>
         )
@@ -72,9 +72,9 @@ class GameButtons extends React.Component<GameButtonsProps, {}>  {
         const label = isAButton ? this.aLabel : this.bLabel;
 
         if (circle && label) {
-            const pressedColor = isAButton ? "#ff8135" : "#f290c1";
-            circle.setAttribute("fill", pressed ? pressedColor : "#ffffff")
-            label.setAttribute("fill", pressed ? "#ffffff" : "")
+            const pressedColor = "#249ca3";
+            circle.setAttribute("fill", pressed ? pressedColor : "#333")
+            label.setAttribute("fill", pressed ? "#333" : "")
         }
 
         const { simulator } = this.props;
