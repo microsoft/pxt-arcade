@@ -334,12 +334,12 @@
         },
         "blockColors": {
             "loops": "#17884C",
-            "logic": "#0E7AC8",
+            "logic": "#0B609D",
             "math": "#9B4DE8",
             "variables": "#E9183C",
             "text": "#8D7408",
             "arrays": "#B36200",
-            "functions": "#1446A0"
+            "functions": "#0D3277"
         },
         "simAnimationEnter": "fly right in",
         "simAnimationExit": "fly right out",
