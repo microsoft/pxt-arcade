@@ -42,10 +42,6 @@ function GetImageTextDimensions(s: string): { w: number, h: number } {
         h: lns.length
     }
 }
-function IsBlank(s: string): boolean {
-    let img = s.replace(/\.\s/g, "")
-    return img.length > 0
-}
 
 // TODO: either we need binHexToBitmap or we need the original source code
 
@@ -431,7 +427,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             const BIN_PREFIX_LEN = "8704100010000000".length
 
             let newHex = bitmapToBinHex(img.data)
-            let newIsBlank = newHex.slice(MOD_PREFIX_LEN).replace("0", "").length > 0
+            let newIsBlank = newHex.slice(MOD_PREFIX_LEN).replace(/0/g, "").length == 0
             if (newIsBlank)
                 newHex = bitmapToBinHex(img.default)
 
