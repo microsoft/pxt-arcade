@@ -36,6 +36,50 @@ export function f4EncodeImg(w: number, h: number, bpp: number, getPix: (x: numbe
     }
 }
 
+export function f4PreProcess(s: string) {
+    let matrix: number[][] = []
+    let line: number[] = []
+    let tbl: { [k: string]: number } = {}
+    let maxLen = 0
+    // attrs.groups.forEach((str, n) => {
+    //     for (let c of str) tbl[c] = n
+    // })
+    s += "\n"
+    for (let i = 0; i < s.length; ++i) {
+        let c = s[i]
+        switch (c) {
+            case ' ':
+            case '\t':
+                break
+            case '\n':
+                if (line.length > 0) {
+                    matrix.push(line)
+                    maxLen = Math.max(line.length, maxLen)
+                    line = []
+                }
+                break
+            default:
+                let v = tbl[c] // U.lookup(tbl, c) //TODO(dz):
+                if (v == null) {
+                    //     if (attrs.groups.length == 2)
+                    // v = 1 // default anything non-zero to one
+                    //     else
+                    //         throw unhandled(node, lf("invalid character in image literal: '{0}'", v), 9273)
+                }
+                line.push(v)
+                break
+        }
+    }
+
+    let bpp = 8
+    // if (attrs.groups.length <= 2) {
+    //     bpp = 1
+    // } else if (attrs.groups.length <= 16) {
+    bpp = 4 // TODO:
+    // }
+    return f4EncodeImg(maxLen, matrix.length, bpp, (x, y) => matrix[y][x] || 0)
+}
+
 export function toNumbers(colors: string[]): number[][] {
     const res: number[][] = [];
     for (let i = 0; i < colors.length; i++) {
@@ -84,7 +128,12 @@ export const defaultColorArray = toNumbers(defaultPalletColors);
 function scale_color(v: number) {
     return v * v
 }
+export function textToBinHex(text: string): string {
+    // TODO(dz): does this behave different than a roundtrip through Bitmap?
+    return f4PreProcess(text)
+}
 export function bitmapToBinHex(bitmap: Bitmap): string {
+    // return f4PreProcess(
     return f4EncodeImg(bitmap.width, bitmap.height, 4, bitmap.get.bind(bitmap))
 }
 export function bitmapToText(bmp: Bitmap): string {

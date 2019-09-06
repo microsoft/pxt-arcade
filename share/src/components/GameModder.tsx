@@ -7,7 +7,7 @@ import '../css/GameModder.css';
 import '../css/icons.css';
 import '../css/SpriteEditor.css';
 import { imageLiteralToBitmap, Bitmap } from '../sprite-editor/bitmap';
-import { textToBitmap, createPngImg, updatePngImg, bitmapToBinHex } from '../bitmap_helpers';
+import { textToBitmap, createPngImg, updatePngImg, bitmapToBinHex, textToBinHex } from '../bitmap_helpers';
 // import { bunnyHopBinJs } from '../../public/games/bunny_hop/bunny_hop_min.js.js';
 
 export interface GameModderProps {
@@ -15,6 +15,7 @@ export interface GameModderProps {
 }
 
 export interface UserImage {
+    default: Bitmap,
     data: Bitmap,
     name: string,
     callToAction: string,
@@ -174,6 +175,12 @@ const moddableImages: { [k: string]: string } = {
         . . . . . . e e . . . . . . .
    `
 }
+// TODO:
+const MOD_TARGET_HEXS: { [k: string]: string } = {
+    "character": "87040c0015000000000000000000000000000000000000000010010000000000000000111110010000000000100110111111010000000000101311111111111101000000003013f1111111111100000010011011f11111111101000010131111f111111101000000003013f11111010000000000000000111110010000000000000000000010010000000000000000000000000000000000",
+    "obstacle1": "Draw an obstacle!",
+    "obstacle2": "Draw another obstacle!"
+}
 const CALL_TO_ACTION: { [k: string]: string } = {
     "character": "Draw your character!",
     "obstacle1": "Draw an obstacle!",
@@ -195,8 +202,9 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
                 return {
                     data: mkBlank(),
                     name: name,
-                    callToAction: CALL_TO_ACTION[name]
-                } as UserImage;
+                    callToAction: CALL_TO_ACTION[name],
+                    default: textToBitmap(moddableImages[name])
+                };
             })
 
         this.state = {
@@ -329,7 +337,8 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             return {
                 data: nw,
                 name: old.name,
-                callToAction: old.callToAction
+                callToAction: old.callToAction,
+                default: old.default
             }
         }
         this.setState({
@@ -391,18 +400,32 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
 
     async onPlay() {
         this.save()
+
+        function modImg(bin: string, img: UserImage) {
+            const old = bitmapToBinHex(img.default)
+            const nw = bitmapToBinHex(img.data)
+            return bin.replace(old, nw)
+        }
         // const newSpriteState = bitmapToImageLiteral(.image);
         // let newHexString =
-        const gameBinJs = await getTxtFile("/games/bunny_hop/bin.js");
-        const newHexImg = bitmapToBinHex(this.spriteEditor.bitmap().image)
+        // const newHexImg = bitmapToBinHex(this.spriteEditor.bitmap().image)
         let oldImageBin = "87040c0015000000000000000000000000000000000000000010010000000000000000111110010000000000100110111111010000000000101311111111111101000000003013f1111111111100000010011011f11111111101000010131111f111111101000000003013f11111010000000000000000111110010000000000000000000010010000000000000000000000000000000000"
+        console.log("oldImageBin")
         console.log(oldImageBin)
-        console.log("==>")
-        console.log(newHexImg)
+        console.log("f4PreProcess:")
+        console.log(textToBinHex(moddableImages["character"]))
+        // console.log(newHexImg)
+        console.log("bitmap")
+        console.log(bitmapToBinHex(this.state.userImages[0].default))
+        console.log("user image")
+        console.log(bitmapToBinHex(this.state.userImages[0].data))
 
-        const newGameBinJs = gameBinJs.replace(oldImageBin, newHexImg)
+        let gameBinJs = await getTxtFile("/games/bunny_hop/bin.js");
+        for (let i of this.state.userImages) {
+            gameBinJs = modImg(gameBinJs, i)
+        }
 
-        this.props.playHandler(newGameBinJs)
+        this.props.playHandler(gameBinJs)
     }
 }
 
