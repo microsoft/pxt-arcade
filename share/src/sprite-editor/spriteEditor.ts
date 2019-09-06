@@ -11,7 +11,7 @@ import { Bitmap, resizeBitmap } from './bitmap';
 import { CanvasState } from './canvasState';
 import { TextButton, UndoRedoGroup } from './buttons';
 
-export const TOTAL_HEIGHT = 500;
+export const TOTAL_HEIGHT = 465;
 
 const PADDING = 10;
 
@@ -35,7 +35,7 @@ const SIDEBAR_CANVAS_MARGIN = 10;
 const SIDEBAR_WIDTH = 65;
 
 // Total allowed height of paint surface
-const CANVAS_HEIGHT = TOTAL_HEIGHT - HEADER_HEIGHT - HEADER_CANVAS_MARGIN
+const CANVAS_HEIGHT = 500 - HEADER_HEIGHT - HEADER_CANVAS_MARGIN
     - REPORTER_BAR_HEIGHT - REPORTER_BAR_CANVAS_MARGIN - PADDING + DROP_DOWN_PADDING * 2;
 
 const WIDTH = PADDING + SIDEBAR_WIDTH + SIDEBAR_CANVAS_MARGIN + CANVAS_HEIGHT + PADDING - DROP_DOWN_PADDING * 2;
@@ -235,6 +235,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
     }
 
     rePaint() {
+        this.commit();
         this.paintSurface.repaint();
     }
 

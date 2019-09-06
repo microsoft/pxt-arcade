@@ -1,211 +1,48 @@
 import React from 'react';
 import { SpriteEditor } from '../sprite-editor/spriteEditor'
+import * as SE from '../sprite-editor/spriteEditor'
+import TabBar from './TabBar'
 
 import '../css/GameModder.css';
 import '../css/icons.css';
 import '../css/SpriteEditor.css';
-import { imageLiteralToBitmap, bitmapToImageLiteral, Bitmap } from '../sprite-editor/bitmap';
+import { imageLiteralToBitmap, Bitmap } from '../sprite-editor/bitmap';
+import { textToBitmap, createPngImg, updatePngImg, bitmapToBinHex, textToBinHex } from '../bitmap_helpers';
+import { tickEvent } from '../telemetry/appinsights';
 // import { bunnyHopBinJs } from '../../public/games/bunny_hop/bunny_hop_min.js.js';
 
 export interface GameModderProps {
     playHandler: (binJs: string) => void
 }
+
+export interface UserImage {
+    default: Bitmap,
+    data: Bitmap,
+    name: string,
+    callToAction: string,
+}
 export interface GameModderState {
+    userImages: UserImage[]
+    currentImg: number,
 }
 
-const DEFAULT_SPRITE_STATE = `
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-`;
-
-export function f4EncodeImg(w: number, h: number, bpp: number, getPix: (x: number, y: number) => number) {
-    let r = hex2(0xe0 | bpp) + hex2(w) + hex2(h) + "00"
-    let ptr = 4
-    let curr = 0
-    let shift = 0
-
-    let pushBits = (n: number) => {
-        curr |= n << shift
-        if (shift == 8 - bpp) {
-            r += hex2(curr)
-            ptr++
-            curr = 0
-            shift = 0
-        } else {
-            shift += bpp
-        }
-    }
-
-    for (let i = 0; i < w; ++i) {
-        for (let j = 0; j < h; ++j)
-            pushBits(getPix(i, j))
-        while (shift != 0)
-            pushBits(0)
-        if (bpp > 1) {
-            while (ptr & 3)
-                pushBits(0)
-        }
-    }
-
-    return r
-
-    function hex2(n: number) {
-        return ("0" + n.toString(16)).slice(-2)
-    }
+function CreateEmptyImageText(w: number, h: number) {
+    let res = "\n"
+    for (let i = 0; i < h; i++)
+        res += ".".repeat(w) + "\n"
+    return res
 }
-
-export function toNumbers(colors: string[]): number[][] {
-    const res: number[][] = [];
-    for (let i = 0; i < colors.length; i++) {
-        const color = parseColorString(colors[i]);
-        res.push([_r(color), _g(color), _b(color)]);
+function GetImageTextDimensions(s: string): { w: number, h: number } {
+    s = s.trim()
+    let lns = s.split("\n")
+    let ln1 = lns[0].replace(/\s/g, "")
+    return {
+        w: ln1.length,
+        h: lns.length
     }
-    return res;
-}
-
-function parseColorString(color: string) {
-    if (color) {
-        if (color.length === 6) {
-            return parseInt("0x" + color);
-        }
-        else if (color.length === 7) {
-            return parseInt("0x" + color.substr(1));
-        }
-    }
-    return 0;
-}
-
-function _r(color: number) { return (color >> 16) & 0xff }
-function _g(color: number) { return (color >> 8) & 0xff }
-function _b(color: number) { return color & 0xff }
-
-const defaultPalletColors = [
-    "#000000",
-    "#ffffff",
-    "#ff2121",
-    "#ff93c4",
-    "#ff8135",
-    "#fff609",
-    "#249ca3",
-    "#78dc52",
-    "#003fad",
-    "#87f2ff",
-    "#8e2ec4",
-    "#a4839f",
-    "#5c406c",
-    "#e5cdc4",
-    "#91463d",
-    "#000000"
-]
-const defaultColorArray = toNumbers(defaultPalletColors);
-
-function scale_color(v: number) {
-    return v * v
 }
 
 // TODO: either we need binHexToBitmap or we need the original source code
-function bitmapToBinHex(bitmap: Bitmap): string {
-    return f4EncodeImg(bitmap.width, bitmap.height, 4, bitmap.get.bind(bitmap))
-}
-function bitmapToText(bmp: Bitmap): string {
-    return bitmapToImageLiteral(bmp);
-}
-function textToBitmap(text: string): Bitmap {
-    const bmp = imageLiteralToBitmap(text);
-
-    // Ignore invalid bitmaps
-    if (bmp && bmp.width && bmp.height) {
-        return bmp
-    } else {
-        return null;
-    }
-}
-function bitmapToSvgEl(bmp: Bitmap): SVGForeignObjectElement {
-    let canv = bitmapToCanvas(bmp)
-    const fe = document.createElementNS("http://www.w3.org/2000/svg", "foreignObject");
-    fe.appendChild(canv)
-    return fe
-    // let fe =
-}
-function bitmapToSquareCanvas(bmp: Bitmap) {
-    const WIDTH = 32;
-
-    const colors = defaultPalletColors.slice(1)
-    // const canvas = document.createElementNS("http://www.w3.org/2000/svg", "canvas");
-    const canvas = document.createElement("canvas");
-    canvas.width = WIDTH;
-    canvas.height = WIDTH;
-
-    // Works well for all of our default sizes, does not work well if the size is not
-    // a multiple of 2 or is greater than 32 (i.e. from the decompiler)
-    const cellSize = Math.min(WIDTH / bmp.width, WIDTH / bmp.height);
-
-    // Center the image if it isn't square
-    const xOffset = Math.max(Math.floor((WIDTH * (1 - (bmp.width / bmp.height))) / 2), 0);
-    const yOffset = Math.max(Math.floor((WIDTH * (1 - (bmp.height / bmp.width))) / 2), 0);
-
-    let context: CanvasRenderingContext2D;
-    context = canvas.getContext("2d");
-
-    for (let c = 0; c < bmp.width; c++) {
-        for (let r = 0; r < bmp.height; r++) {
-            const color = bmp.get(c, r);
-
-            if (color) {
-                context.fillStyle = colors[color - 1];
-                context.fillRect(xOffset + c * cellSize, yOffset + r * cellSize, cellSize, cellSize);
-            }
-        }
-    }
-
-    return canvas;
-}
-function bitmapToCanvas(bmp: Bitmap, scale: number = 4) {
-    const colors = defaultPalletColors.slice(1)
-    // const canvas = document.createElementNS("http://www.w3.org/2000/svg", "canvas");
-    const canvas = document.createElement("canvas");
-    let width = canvas.width = bmp.width * scale;
-    let height = canvas.height = bmp.height * scale;
-
-    let cellSize = scale
-
-    // TODO: Center the image if it isn't square
-    const xOffset = 0
-    const yOffset = 0
-
-    let context: CanvasRenderingContext2D;
-    context = canvas.getContext("2d");
-
-    for (let c = 0; c < bmp.width; c++) {
-        for (let r = 0; r < bmp.height; r++) {
-            const color = bmp.get(c, r);
-
-            if (color) {
-                context.fillStyle = colors[color - 1];
-                context.fillRect(xOffset + c * cellSize, yOffset + r * cellSize, cellSize, cellSize);
-            }
-        }
-    }
-
-    return canvas;
-}
-function bitmapToUrl(bmp: Bitmap): string {
-    return bitmapToCanvas(bmp).toDataURL();
-}
 
 function mkPxtJson(): string {
     let json = {
@@ -241,33 +78,6 @@ async function getTxtFile(url: string): Promise<string> {
         xhr.send();
     });
 };
-
-function createPngImg(x: number, y: number, w: number, h: number, bmp?: Bitmap): SVGImageElement {
-    let img = document.createElementNS("http://www.w3.org/2000/svg", "image")
-    img.setAttribute("x", `${x}`)
-    img.setAttribute("y", `${y}`)
-    img.setAttribute("width", `${w}px`)
-    img.setAttribute("height", `${h}px`)
-    if (bmp) {
-        updatePngImg(img, bmp)
-    }
-    return img
-}
-
-function updatePngImg(img: SVGImageElement, bmp: Bitmap) {
-    let imgData = bitmapToUrl(bmp)
-    img.setAttributeNS("http://www.w3.org/1999/xlink", "href", `${imgData}`)
-}
-
-function createSvgImg(x: number, y: number, bmp: Bitmap) {
-    let el = bitmapToSvgEl(bmp)
-    el.setAttribute("x", `${x}`)
-    el.setAttribute("y", `${y}`)
-    const w = 32
-    el.setAttribute("width", `${w}px`)
-    el.setAttribute("height", `${w}px`)
-    return el
-}
 
 const moddableImages: { [k: string]: string } = {
     "character": `
@@ -362,16 +172,48 @@ const moddableImages: { [k: string]: string } = {
         . . . . . . e e . . . . . . .
    `
 }
+const CALL_TO_ACTION: { [k: string]: string } = {
+    "character": "Draw your character!",
+    "obstacle1": "Draw an obstacle!",
+    "obstacle2": "Draw another obstacle!"
+}
+// TODO:
+// 15x32 stump
+// 22x32 tree
 
 export class GameModder extends React.Component<GameModderProps, GameModderState> {
     protected playBtn: HTMLButtonElement | undefined;
     protected spriteEditorHolder: HTMLDivElement | undefined;
     protected spriteEditor: SpriteEditor;
+    private tabImages: Bitmap[];
 
     constructor(props: GameModderProps) {
         super(props);
+
+        let imgs = Object.keys(moddableImages)
+            .map((name) => {
+                let def = moddableImages[name]
+                // TODO: match the original dimensions? One difficulty with this
+                // is the sprite editor canvas can't handle this
+                // let { w, h } = GetImageTextDimensions(moddableImages[name])
+                let [w, h] = [16, 16]
+                let blank = CreateEmptyImageText(w, h);
+                return {
+                    data: imageLiteralToBitmap(blank),
+                    name: name,
+                    callToAction: CALL_TO_ACTION[name],
+                    default: textToBitmap(def)
+                };
+            })
+
         this.state = {
+            userImages: imgs,
+            currentImg: 0
         }
+
+        this.tabImages = Object.keys(moddableImages)
+            .map(k => moddableImages[k])
+            .map(textToBitmap)
     }
 
     renderSpriteEditor() {
@@ -380,17 +222,15 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
 
         // const { value } = this.props;
         // const stateSprite = value && this.stripImageLiteralTags(value)
-        const state = imageLiteralToBitmap('', DEFAULT_SPRITE_STATE);
 
         let body = document.getElementsByTagName('body')[0]
         let header = this.refs['header'] as HTMLDivElement
-        header.textContent = "Draw your character!"
         // const MARGIN = 20
-        const MARGIN = 2
+        const MARGIN = 0
         let actualWidth = body.clientWidth - MARGIN
         let actualHeight = body.clientHeight - header.clientHeight - MARGIN
         let refWidth = 539.0
-        let refHeight = 500.0
+        let refHeight = SE.TOTAL_HEIGHT
         let wScale = actualWidth / refWidth
         let hScale = actualHeight / refHeight
         let scale = Math.min(wScale, hScale)
@@ -398,9 +238,11 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         let htmlEl = document.getElementsByTagName('html')[0]
         // htmlEl.setAttribute("style", `font-size: ${scale}px`)
 
-        this.spriteEditor = new SpriteEditor(state, null, false, scale);
+        let currImg = this.state.userImages[this.state.currentImg].data
+        this.spriteEditor = new SpriteEditor(currImg, null, false, scale);
         this.spriteEditor.render(this.spriteEditorHolder);
         // HACK: scaling
+        header.setAttribute("style", `transform: scale(${scale})`);
         function scaleAtt(el: Element, attName: string, scale: number) {
             let oldW = parseInt(el.getAttribute(attName))
             let newW = oldW * scale
@@ -441,38 +283,12 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             console.log("Closing sprite editor!")
             this.onPlay()
         });
-
-        // canvas start is 10rem + 65rem + 10rem
-        this.renderTopBar();
     }
 
-    async renderTopBar() {
-        //
-        // TOP SPRITE PICKER BAR
-        //
-        let topBarHolder = this.refs["sprite-picker"] as HTMLDivElement
-        let topBarSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg")// as unknown as SVGSVGElement;
-        // topBarSvg.setAttribute("width", `500px`)
-        // topBarSvg.setAttribute("height", `100px`)
-        let tabEl = document.createElementNS("http://www.w3.org/2000/svg", "path")// as unknown as SVGPathElement
-        const R = 10
-        const ICON_H = 64
-        const ICON_W = 64
-        const TAB_MARGIN = 20
-        const SVG_W = 541
-        const SVG_H = R * 2 + ICON_H + TAB_MARGIN * 2
-        topBarSvg.setAttribute('viewBox', `0 0 ${SVG_W} ${SVG_H}`)
-        let tabStart = 100
-        const TOTAL_TAB_W = R * 4 + ICON_W
-        let tabFinish = SVG_W - (tabStart + TOTAL_TAB_W)
-        let tabPath = `M 0,${SVG_H - TAB_MARGIN} h ${tabStart} q ${R},0 ${R},-${R} v -${ICON_H} q 0,-${R} ${R},-${R} h ${ICON_W} q ${R},0 ${R},${R} v ${ICON_H} q 0,${R} ${R},${R} h ${tabFinish}`
-        tabEl.setAttribute("d", tabPath)
-        topBarSvg.appendChild(tabEl)
-        let body = document.getElementsByTagName("body")[0]
-        topBarHolder.appendChild(topBarSvg)
-
-        let dummyImg = createPngImg(R, TAB_MARGIN + R, ICON_W, ICON_W)
-        topBarSvg.appendChild(dummyImg)
+    async renderExperiments() {
+        let tabBar = this.refs["tab-bar"] as TabBar
+        let dummyImg = createPngImg(20, 20, 64, 64)
+        tabBar.TabBarSvg.appendChild(dummyImg)
         setInterval(() => {
             updatePngImg(dummyImg, this.spriteEditor.bitmap().image)
         }, 500)
@@ -495,49 +311,77 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
 
         let imgsAsBmps = imgs.map(textToBitmap)
         // console.dir(imgsAsBmps)
+    }
 
-        let targetImgs = Object.keys(moddableImages)
-            .map(k => moddableImages[k])
-            .map(textToBitmap)
+    async renderGallery() {
+        // TODO: move to seperate component
+        const SVG_W = 541
+        const OUT = 40
+        const GAL_MARGIN_B = 50
+        const GAL_SVG_H = 10 + GAL_MARGIN_B
+        // const GAL_MARGIN_B = 20
+        // const GAL_SVG_H = 40
+        let galleryHolder = this.refs["sprite-gallery"] as HTMLDivElement
+        let gallerySvg = document.createElementNS("http://www.w3.org/2000/svg", "svg")// as unknown as SVGSVGElement;
+        let galleryEnd = document.createElementNS("http://www.w3.org/2000/svg", "path")
+        let galleryEndPath = `M -${OUT},-${OUT} l 0,${OUT} l 0,${GAL_SVG_H - GAL_MARGIN_B} l ${OUT},0 h ${SVG_W} l ${OUT},0 l 0,-${GAL_SVG_H - GAL_MARGIN_B} l 0,-${OUT} z`
+        galleryEnd.setAttribute("d", galleryEndPath)
+        gallerySvg.setAttribute('viewBox', `0 0 ${SVG_W} ${GAL_SVG_H}`)
+        gallerySvg.appendChild(galleryEnd)
+        galleryHolder.appendChild(gallerySvg)
+    }
 
-        targetImgs.forEach(b => console.log(`(${b.width},${b.height})`));
+    save() {
+        function updateUserImage(old: UserImage, nw: Bitmap): UserImage {
+            tickEvent("shareExperiment.mod.image");
+            return {
+                data: nw,
+                name: old.name,
+                callToAction: old.callToAction,
+                default: old.default
+            }
+        }
+        this.setState({
+            userImages: this.state.userImages.map((m, i) =>
+                i === this.state.currentImg
+                    ? updateUserImage(m, this.spriteEditor.bitmap().image) //.copy()
+                    : m)
+        })
+        console.log('save')
+        console.dir(this.state.userImages)
+    }
+    load(idx: number) {
+        console.log(`load: ${idx}`)
+        let currImg = this.state.userImages[idx].data
+        console.dir(currImg)
+        this.spriteEditor.bitmap().image = currImg // .copy()
+        this.spriteEditor.rePaint()
+    }
 
-        imgsAsBmps
-            .filter(i1 => targetImgs.some(i2 => i1.equals(i2)))
-            .forEach((img, i) => {
-                let x = tabStart + R + R + i * (R * 2 + ICON_W)
-                let y = TAB_MARGIN + R
-                // let imgSvg = createSvgImg(x, y, img)
-                let imgSvg = createPngImg(x, y, ICON_W, ICON_W, img)
-                topBarSvg.appendChild(imgSvg)
-            })
+    onTabChange(idx: number) {
+        console.log(`TAB: ${idx}`)
+        this.save()
+        this.setState({ currentImg: idx })
+        this.load(idx)
+        tickEvent("shareExperiment.mod.tabChange");
     }
 
     render() {
+        let currImg = this.state.userImages[this.state.currentImg]
         return (
             <div className="game-modder">
-                <h1 ref="header">Mod your game!</h1>
-
-                <div ref="sprite-picker" className="sprite-picker">
-                    {/* <div className="sprite-tab-spacer">
-                    </div> */}
-                    {/* <div className="sprite-tab">
-                    </div>
-                    <div className="sprite-tab">
-                    </div>
-                    <div className="sprite-tab">
-                    </div>
-                    <div className="sprite-tab">
-                    </div> */}
-                </div>
+                <h1 ref="header">{currImg.callToAction}</h1>
+                <TabBar ref="tab-bar" tabImages={this.tabImages} tabChange={this.onTabChange.bind(this)} />
                 <div ref="sprite-editor-holder" className="sprite-editor-holder">
+                </div>
+                <div ref="sprite-gallery" className="sprite-gallery">
                 </div>
                 <button ref="play-btn">Play!</button>
             </div>
         )
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         this.playBtn = this.refs["play-btn"] as HTMLButtonElement;
         this.spriteEditorHolder = this.refs['sprite-editor-holder'] as HTMLDivElement;
 
@@ -546,6 +390,8 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
 
         // TODO(dz):
         this.renderSpriteEditor()
+        await this.renderGallery();
+        // await this.renderExperiments();
     }
 
     componentWillUnmount() {
@@ -554,18 +400,33 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
     }
 
     async onPlay() {
-        // const newSpriteState = bitmapToImageLiteral(.image);
-        // let newHexString =
-        const gameBinJs = await getTxtFile("/games/bunny_hop/bin.js");
-        const newHexImg = bitmapToBinHex(this.spriteEditor.bitmap().image)
-        let oldImageBin = "87040c0015000000000000000000000000000000000000000010010000000000000000111110010000000000100110111111010000000000101311111111111101000000003013f1111111111100000010011011f11111111101000010131111f111111101000000003013f11111010000000000000000111110010000000000000000000010010000000000000000000000000000000000"
-        console.log(oldImageBin)
-        console.log("==>")
-        console.log(newHexImg)
+        this.save()
 
-        const newGameBinJs = gameBinJs.replace(oldImageBin, newHexImg)
+        function modImg(bin: string, img: UserImage) {
+            // HACK: for some reason the compiler emits image prefixes that look like:
+            // 8704100010000000
+            // whereas ours look like:
+            // e4101000
+            const MOD_PREFIX_LEN = "e4101000".length
+            const BIN_PREFIX_LEN = "8704100010000000".length
 
-        this.props.playHandler(newGameBinJs)
+            const oldToFind = bitmapToBinHex(img.default)
+                .slice(MOD_PREFIX_LEN)
+            let oldStartIncl = bin.indexOf(oldToFind) - BIN_PREFIX_LEN
+            let oldEndExcl = bin.indexOf(`"`, oldStartIncl)
+            let oldHex = bin.slice(oldStartIncl, oldEndExcl)
+
+            const newHex = bitmapToBinHex(img.data)
+
+            return bin.replace(oldHex, newHex)
+        }
+
+        let gameBinJs = await getTxtFile("/games/bunny_hop/bin.js");
+        for (let i of this.state.userImages) {
+            gameBinJs = modImg(gameBinJs, i)
+        }
+
+        this.props.playHandler(gameBinJs)
     }
 }
 

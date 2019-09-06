@@ -25,6 +25,7 @@ export class App extends React.Component<{}, AppState> {
         this.playGame = this.playGame.bind(this);
 
         loadAppInsights(false);
+        tickEvent("shareExperiment.landing");
     }
 
     render() {
@@ -41,8 +42,6 @@ export class App extends React.Component<{}, AppState> {
     }
 
     playGame(binJs: string) {
-        console.log(`I want to play this game that's ${Math.round((binJs.length / 256) / 1034)}kb!`)
-        // TODO: connect to simulator
         lastBinary = binJs;
         playTimestamp = Date.now();
 
@@ -52,7 +51,8 @@ export class App extends React.Component<{}, AppState> {
 
     modGame() {
         if (playTimestamp) {
-            tickEvent("shareExperiment.playtime", {"duration": Date.now() - playTimestamp});
+            // TODO ensure that time is calculated on play -> share page navigation as well
+            tickEvent("shareExperiment.playtime", { "duration": Date.now() - playTimestamp });
             playTimestamp = null;
         }
 

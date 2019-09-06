@@ -32,18 +32,34 @@
 
 h1 {
     margin: 0;
-    font-size: 40px;
-    line-height: 70px;
+    font-size: 38px;
+    line-height: 50px;
+    white-space: nowrap;
 }
-.sprite-picker {
+.tab-bar,
+.sprite-gallery {
+    line-height: 0px;
     width: 100%
 }
-.sprite-picker path {
-    stroke-width: 5px;
+.tab-bar image,
+.sprite-gallery image {
+    cursor: pointer;
+}
+/* #2c3e50 */
+.tab-bar path,
+.sprite-gallery path,
+.sprite-editor-container {
+    fill: #4b7becaa;
+    background-color: #4b7becaa;
+}
+.tab-bar path,
+.sprite-gallery path {
+    stroke-width: 2px;
     stroke:#4b7bec;
-    fill: none;
 }
 button {
+    border-width: 0px;
+    border-color:#4b7bec;
     color: white;
     background-color: #4b7bec;
     width: 95%;
@@ -51,7 +67,6 @@ button {
     font-size: 32px;
     line-height: 60px;
     border-radius: 5px;
-    border-width: 0;
     padding: 0;
 }
 button:hover {
@@ -61,7 +76,7 @@ button:hover {
 /*text on white: rgb(75, 123, 236);*/
 
 
-/* .sprite-picker {
+/* .tab-bar {
     width: 70%;
     display: flex;
     flex-direction: row;
