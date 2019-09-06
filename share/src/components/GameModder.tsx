@@ -324,7 +324,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             return res
         }
 
-        let mainTs = await getTxtFile("/games/bunny_hop/main.ts")
+        let mainTs = await getTxtFile("games/bunny_hop/main.ts")
         // TODO: find images
         let imgs = getImages(mainTs)
         // console.dir(imgs)
@@ -440,7 +440,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             return bin.replace(oldHex, newHex)
         }
 
-        let gameBinJs = await getTxtFile("/games/bunny_hop/bin.js");
+        let gameBinJs = await getTxtFile("games/bunny_hop/bin.js");
         for (let i of this.state.userImages) {
             gameBinJs = modImg(gameBinJs, i)
         }
