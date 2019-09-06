@@ -11,7 +11,8 @@ import { Simulator } from './simulator';
 let sim: Simulator;
 
 export interface GamePlayerProps {
-    binJs: string
+    binJs: string;
+    changeMode: (mode: "play" | "share" | "mod") => void;
 }
 
 const GamePlayer: React.FC<GamePlayerProps> = props => {
@@ -21,9 +22,9 @@ const GamePlayer: React.FC<GamePlayerProps> = props => {
 
     return (
         <div className="game-player">
-            <Joystick simulator={sim} />
+            <Joystick simulator={sim} changeMode={props.changeMode} />
             <SimFrame simulator={sim} />
-            <GameButtons simulator={sim} />
+            <GameButtons simulator={sim} changeMode={props.changeMode} />
             <div className="game-player-background"></div>
             <div className="game-player-logo">MAKECODE</div>
             <div className="game-player-msft"></div>
