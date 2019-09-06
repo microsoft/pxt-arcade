@@ -8,6 +8,7 @@ import '../css/icons.css';
 import '../css/SpriteEditor.css';
 import { imageLiteralToBitmap, Bitmap } from '../sprite-editor/bitmap';
 import { textToBitmap, createPngImg, updatePngImg, bitmapToBinHex, textToBinHex } from '../bitmap_helpers';
+import { tickEvent } from '../telemetry/appinsights';
 // import { bunnyHopBinJs } from '../../public/games/bunny_hop/bunny_hop_min.js.js';
 
 export interface GameModderProps {
@@ -332,6 +333,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
 
     save() {
         function updateUserImage(old: UserImage, nw: Bitmap): UserImage {
+            tickEvent("shareExperiment.mod.image");
             return {
                 data: nw,
                 name: old.name,
@@ -361,6 +363,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         this.save()
         this.setState({ currentImg: idx })
         this.load(idx)
+        tickEvent("shareExperiment.mod.tabChange");
     }
 
     render() {

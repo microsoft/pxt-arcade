@@ -23,6 +23,7 @@ export class App extends React.Component<{}, AppState> {
         this.playGame = this.playGame.bind(this);
 
         loadAppInsights(false);
+        tickEvent("shareExperiment.landing");
     }
 
     render() {
@@ -46,6 +47,7 @@ export class App extends React.Component<{}, AppState> {
 
     modGame() {
         if (playTimestamp) {
+            // TODO ensure that time is calculated on play -> share page navigation as well
             tickEvent("shareExperiment.playtime", { "duration": Date.now() - playTimestamp });
             playTimestamp = null;
         }
