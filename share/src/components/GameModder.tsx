@@ -41,6 +41,10 @@ function GetImageTextDimensions(s: string): { w: number, h: number } {
         h: lns.length
     }
 }
+function IsBlank(s: string): boolean {
+    let img = s.replace(/\.\s/g, "")
+    return img.length > 0
+}
 
 // TODO: either we need binHexToBitmap or we need the original source code
 
@@ -180,6 +184,57 @@ const CALL_TO_ACTION: { [k: string]: string } = {
 // TODO:
 // 15x32 stump
 // 22x32 tree
+
+const BACKGROUND_ICON = [`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . b . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . b . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . b . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . b b . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . b b b b . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . b b b b b b . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . b b . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . b b b b . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . b b b b b b . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . b b b b b b b b . . . . . . . . . . . . .
+. . . . . . . . . . . . . . b b . . b b b b b b . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . b b b b . . b b b . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . b b . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . b b b b . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . b b b b b b . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . b b b b b . b b . . . . . . . . . . . . .
+. . . . . . . . . . . . . . b b b b b b b b b b . . . . . . . . . . . .
+. . . . . . . . . . . . b b b b . b b b b b b b . . . . . . . . . . . .
+. . . . . . . . . . b b b b b . . b b b b b . b b b b . . . . . . . . .
+. . . . . . . . . . . . . . . . b b b b b b . . . b b b . . . . . . . .
+. . . . . . . . . . . . . . . b b b b b b b b . . . . . . . . . . . . .
+. . . . . . . . . . . . . . b b b b b b . b b . . . . . . . . . . . . .
+. . . . . . . . . . . b b b b b b b b b b b b b . . . . . . . . . . . .
+. . . . . . . . . b b b b b b . . b b b b . b b b . . . . . . . . . . .
+. . . . . . . . . . b b b b b . . b b b b . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . b b b b b b b . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . b b b b b b b b b . . . . . . . . . . . .
+. . . . . . . . . . . . . b b b b b b b b b . . . . . . . . . . . . . .
+. . . . . . . . . . . b b b b b b b b b b b b b b b b b . . . . . . . .
+. . . . . . . . . . b b b b b b b b b b b b b b b b b . . . . . . . . .
+. . . . . . . . . b b b b . b b b b b b b b . . . . . . . . . . . . . .
+. . . . . . . . b b . . . . b b b b b b b b b . . . . . . . . . . . . .
+. . . . . . . . . . . . b b b b b b b b b b b b b . . . . . . . . . . .
+. . . . . . . . b b b b b b b b b b b b b b b b b b b b . . . . . . . .
+. . . . . . . b b b b b b b b b b b b b b b b b b b b b b b . . . . . .
+. . . . . . b b b b b b b b . . . b b b b b b b b b . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+`][0];
 
 export class GameModder extends React.Component<GameModderProps, GameModderState> {
     protected playBtn: HTMLButtonElement | undefined;
@@ -347,19 +402,14 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
                     ? updateUserImage(m, this.spriteEditor.bitmap().image) //.copy()
                     : m)
         })
-        console.log('save')
-        console.dir(this.state.userImages)
     }
     load(idx: number) {
-        console.log(`load: ${idx}`)
         let currImg = this.state.userImages[idx].data
-        console.dir(currImg)
-        this.spriteEditor.bitmap().image = currImg // .copy()
+        this.spriteEditor.bitmap().image = currImg
         this.spriteEditor.rePaint()
     }
 
     onTabChange(idx: number) {
-        console.log(`TAB: ${idx}`)
         this.save()
         this.setState({ currentImg: idx })
         this.load(idx)
@@ -410,13 +460,16 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             const MOD_PREFIX_LEN = "e4101000".length
             const BIN_PREFIX_LEN = "8704100010000000".length
 
+            let newHex = bitmapToBinHex(img.data)
+            let newIsBlank = newHex.slice(MOD_PREFIX_LEN).replace("0", "").length > 0
+            if (newIsBlank)
+                newHex = bitmapToBinHex(img.default)
+
             const oldToFind = bitmapToBinHex(img.default)
                 .slice(MOD_PREFIX_LEN)
             let oldStartIncl = bin.indexOf(oldToFind) - BIN_PREFIX_LEN
             let oldEndExcl = bin.indexOf(`"`, oldStartIncl)
             let oldHex = bin.slice(oldStartIncl, oldEndExcl)
-
-            const newHex = bitmapToBinHex(img.data)
 
             return bin.replace(oldHex, newHex)
         }
