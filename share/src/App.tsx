@@ -31,12 +31,12 @@ export class App extends React.Component<{}, AppState> {
     render() {
         return (
             <div className="App">
-                {/* {this.state.mode === "mod"
+                {this.state.mode === "mod"
                     ? <GameModder playHandler={this.playGame} />
                     : <GamePlayer binJs={lastBinary} />
-                } */}
+                }
 
-                <Share />
+                {/* <Share /> */}
             </div>
         );
     }
