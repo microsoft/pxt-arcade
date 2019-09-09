@@ -1,3 +1,6 @@
 html, body, #root, .App {
     height: 100%;
+    /*Attempt to stop iOS from scrolling:*/
+    overflow: hidden;
+    position: fixed;
 }
