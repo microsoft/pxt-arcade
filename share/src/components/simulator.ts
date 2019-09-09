@@ -37,7 +37,7 @@ type SentMessage = SimulatorRunMessage | SimulatorButtonMessage;
 type ReceivedMessage = SimulatorReadyMessage | SimulatorRestartMessage;
 
 // No trailing slash!!!
-const baseurl = "http://localhost:3232"
+const baseurl = "https://trg-arcade.userpxt.io/beta---simulator"
 
 export class Simulator {
     protected frame: HTMLIFrameElement | undefined;
