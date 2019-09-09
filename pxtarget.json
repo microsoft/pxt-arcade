@@ -72,8 +72,8 @@
         "libs/storyboard",
         "libs/rotary-encoder",
         "libs/d5prj",
-        "libs/f4",
-        "libs/rpi"
+        "libs/f4prj",
+        "libs/rpiprj"
     ],
     "compile": {
         "useUF2": true,
