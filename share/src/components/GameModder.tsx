@@ -413,6 +413,13 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         this.renderSpriteEditor()
         await this.renderGallery();
         // await this.renderExperiments();
+
+
+
+        // Disable scrolling in iOS
+        document.ontouchmove = function (e) {
+            e.preventDefault();
+        }
     }
 
     componentWillUnmount() {

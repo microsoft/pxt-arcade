@@ -15,6 +15,12 @@ interface AppState {
 let lastBinary: string;
 let playTimestamp: number;
 
+
+// Disable scrolling in iOS
+document.ontouchmove = function (e) {
+    e.preventDefault();
+}
+
 export class App extends React.Component<{}, AppState> {
     constructor(props: {}) {
         super(props)
