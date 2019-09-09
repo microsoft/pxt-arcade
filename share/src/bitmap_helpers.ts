@@ -199,3 +199,12 @@ export function updatePngImg(img: SVGImageElement, bmp: Bitmap) {
     let imgData = bitmapToUrl(bmp)
     img.setAttributeNS("http://www.w3.org/1999/xlink", "href", `${imgData}`)
 }
+
+export function isEmptyBitmap(bmp: Bitmap) {
+    for (let x = 0; x < bmp.width; x++) {
+        for (let y = 0; y < bmp.height; y++) {
+            if (bmp.get(x, y)) return false;
+        }
+    }
+    return true;
+}

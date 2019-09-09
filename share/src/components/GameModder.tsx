@@ -7,12 +7,13 @@ import '../css/GameModder.css';
 import '../css/icons.css';
 import '../css/SpriteEditor.css';
 import { imageLiteralToBitmap, Bitmap } from '../sprite-editor/bitmap';
-import { textToBitmap, createPngImg, updatePngImg, bitmapToBinHex, textToBinHex } from '../bitmap_helpers';
+import { textToBitmap, createPngImg, updatePngImg, bitmapToBinHex, bitmapToText, isEmptyBitmap } from '../bitmap_helpers';
 import { tickEvent } from '../telemetry/appinsights';
+import { UserProject } from './util';
 // import { bunnyHopBinJs } from '../../public/games/bunny_hop/bunny_hop_min.js.js';
 
 export interface GameModderProps {
-    playHandler: (binJs: string) => void;
+    playHandler: (proj: UserProject) => void;
     changeMode: (mode: "play" | "share" | "mod") => void;
 }
 
@@ -422,6 +423,8 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
     async onPlay() {
         this.save()
 
+        const toReplace = this.state.userImages.filter(ui => !isEmptyBitmap(ui.data));
+
         function modImg(bin: string, img: UserImage) {
             // HACK: for some reason the compiler emits image prefixes that look like:
             // 8704100010000000
@@ -431,9 +434,6 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             const BIN_PREFIX_LEN = "8704100010000000".length
 
             let newHex = bitmapToBinHex(img.data)
-            let newIsBlank = newHex.slice(MOD_PREFIX_LEN).replace("0", "").length > 0
-            if (newIsBlank)
-                newHex = bitmapToBinHex(img.default)
 
             const oldToFind = bitmapToBinHex(img.default)
                 .slice(MOD_PREFIX_LEN)
@@ -445,12 +445,50 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         }
 
         let gameBinJs = await getTxtFile("/games/bunny_hop/bin.js");
-        for (let i of this.state.userImages) {
+        let gameMainTs = await getTxtFile("/games/bunny_hop/main.ts");
+        let gameMainBlocks = await getTxtFile("/games/bunny_hop/main.blocks");
+
+        for (let i of toReplace) {
+            const def = bitmapToText(i.default);
+            const user = bitmapToText(i.data);
             gameBinJs = modImg(gameBinJs, i)
+            gameMainTs = replaceImages(gameMainTs, def, user);
+            gameMainBlocks = replaceImages(gameMainBlocks, def, user);
         }
 
-        this.props.playHandler(gameBinJs)
+        this.props.playHandler({
+            binJs: gameBinJs,
+            mainTs: gameMainTs,
+            mainBlocks: gameMainBlocks
+        });
     }
+}
+
+function replaceImages(sourceFile: string, toReplace: string, userImage: string) {
+    const sourceLines = sourceFile.split(/\n/).map(l => l.trim());
+    const replaceLines = toReplace.split(/\n/).map(l => l.trim()).slice(1, -1);
+
+    userImage = userImage.replace("img`", "").replace("`", "");
+
+    let foundMatch = false;
+    for (let i = 0; i < sourceLines.length; i++) {
+        if (sourceLines[i] === replaceLines[0]) {
+            foundMatch = true;
+
+            for (let j = 1; j < replaceLines.length; j++) {
+                if (sourceLines[i + j] != replaceLines[j]) {
+                    foundMatch = false;
+                    break;
+                }
+            }
+
+            if (foundMatch) {
+                sourceLines.splice(i, replaceLines.length, userImage);
+            }
+        }
+    }
+
+    return sourceLines.join("\n");
 }
 
 export default GameModder;

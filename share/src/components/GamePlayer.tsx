@@ -6,19 +6,20 @@ import GameButtons from './GameButtons';
 
 import '../css/GamePlayer.css';
 import { Simulator } from './simulator';
+import { UserProject } from './util';
 
 
 let sim: Simulator;
 
 export interface GamePlayerProps {
-    binJs: string;
+    proj: UserProject;
     changeMode: (mode: "play" | "share" | "mod") => void;
 }
 
 const GamePlayer: React.FC<GamePlayerProps> = props => {
     if (!sim) sim = new Simulator();
 
-    sim.runCode(props.binJs);
+    sim.runCode(props.proj.binJs);
 
     return (
         <div className="game-player">

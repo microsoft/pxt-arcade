@@ -7,19 +7,20 @@ import Share from './components/Share';
 import HeaderBar from './components/HeaderBar';
 
 import { loadAppInsights, tickEvent } from './telemetry/appinsights';
+import { UserProject } from './components/util';
 
 interface AppState {
     mode: "mod" | "play" | "share"
 }
 
-let lastBinary: string;
+let lastBinary: UserProject;
 let playTimestamp: number;
 
 export class App extends React.Component<{}, AppState> {
     constructor(props: {}) {
         super(props)
         this.state = {
-            mode: "mod"
+            mode: "share"
         }
 
         this.playGame = this.playGame.bind(this);
@@ -35,15 +36,15 @@ export class App extends React.Component<{}, AppState> {
                     <GameModder playHandler={this.playGame} changeMode={this.changeMode} /> :
                     (
                         this.state.mode === "play" ?
-                            <GamePlayer binJs={lastBinary} changeMode={this.changeMode} /> :
-                            <Share changeMode={this.changeMode} />
+                            <GamePlayer proj={lastBinary} changeMode={this.changeMode} /> :
+                            <Share proj={lastBinary} changeMode={this.changeMode} />
                     )
                 }
             </div>
         );
     }
 
-    playGame(binJs: string) {
+    playGame(binJs: UserProject) {
         lastBinary = binJs;
         playTimestamp = Date.now();
 
