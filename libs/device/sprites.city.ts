@@ -13,6 +13,8 @@ namespace sprites.city {
     //% fixedInstance jres blockIdentity=images._image
     export const cat1 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
+    export const cat2 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
     export const citizen1WalkFront1 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     export const citizen1WalkFront2 = image.ofBuffer(hex``);
@@ -124,6 +126,8 @@ namespace sprites.city {
     export const dog0 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     export const dog1 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
+    export const dog2 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     export const furnitureRug = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
