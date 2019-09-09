@@ -281,7 +281,7 @@ declare interface SPI {
     /**
      * Transfer buffers over the SPI bus
      */
-    //% shim=SPIMethods::transfer
+    //% argsNullable shim=SPIMethods::transfer
     transfer(command: Buffer, response: Buffer): void;
 
     /**

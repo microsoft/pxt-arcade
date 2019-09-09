@@ -28,7 +28,7 @@ or return here and look at the final goal.
 The point of the case study is to learn how the code works together while building
 up a larger game, not as a challenge for each individual topic.
 
-![Animation of initial space asteroid game](/static/courses/csintro3/intro/case-study-initial-game.gif)
+![Animation of initial space asteroid game](/static/courses/csintro3/about/case-study-initial-game.gif)
 
 ## Initial Code
 
@@ -66,7 +66,7 @@ namespace asteroids {
 After completing all sections **Case Study** sections,
 you will produce a full game similar to the one below.
 
-![Animation of final space asteroid game](/static/courses/csintro3/intro/case-study-final-game.gif)
+![Animation of final space asteroid game](/static/courses/csintro3/about/case-study-final-game.gif)
 
 ```typescript
 namespace SpriteKind {

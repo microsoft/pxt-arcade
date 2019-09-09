@@ -1,0 +1,27 @@
+{
+    "frames": [
+        "OuterNorthWest",
+        "OuterNorth0",
+        "OuterNorth1",
+        "OuterNorth2",
+        "OuterNorthEast",
+        "OuterEast0",
+        "OuterEast1",
+        "OuterEast2",
+        "OuterSouthEast",
+        "OuterSouth0",
+        "OuterSouth1",
+        "OuterSouth2",
+        "OuterSouthWest",
+        "OuterWest0",
+        "OuterWest1",
+        "OuterWest2",
+        "SwitchUp",
+        "SwitchDown",
+        "InnerNorthWest",
+        "InnerNorthEast",
+        "InnerSouthEast",
+        "InnerSouthWest"
+    ],
+    "tags": "tile"
+}

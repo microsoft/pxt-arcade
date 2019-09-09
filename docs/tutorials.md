@@ -7,7 +7,7 @@
 [
 {
   "name": "Chase the Pizza",
-  "description": "Learn the basics of creating a game with this pizza collecting program",
+  "description": "Get started creating a simple game to chase a pizza around the screen and collect as many points as possible before time runs out!",
   "url": "/tutorials/chase-the-pizza",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/chase-the-pizza.png",

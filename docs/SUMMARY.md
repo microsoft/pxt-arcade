@@ -6,6 +6,7 @@
     * [Cherry Pickr](/lessons/cherry-pickr)
     * [Barrel Dodger](/lessons/barrel-dodger)
     * [Dance Party](/lessons/dance-party)
+    * [BlockOut](/lessons/block-out)
 
 ## Courses
 

@@ -3,11 +3,6 @@
 ```codecard
 [
     {
-        "name": "Case Study",
-        "url": "/courses/csintro3/intro/case-study",
-        "imageUrl": "/static/courses/csintro3/intro/case-study.gif"
-    },
-    {
         "name": "Initialization",
         "url": "/courses/csintro3/intro/initialization",
         "imageUrl": "/static/courses/csintro3/intro/initialization.png"
@@ -35,7 +30,6 @@
 ]
 ```
 
-* [Case Study](/courses/csintro3/intro/case-study)
 * [Initialization](/courses/csintro3/intro/initialization)
 * [Types](/courses/csintro3/intro/types)
 * [User Input](/courses/csintro3/intro/user-input)

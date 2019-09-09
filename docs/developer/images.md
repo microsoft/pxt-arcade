@@ -5,7 +5,7 @@
 Images in arcade are stored using 4 bits per color. The color `0` is reserved for transparency
 so, at any one time, you have the remaining 15 colors available to work with. The image color
 values are really indices that map to 16 entries of the current palette of RGB colors.
-The default palette for the MakeCode UI is here:
+The color values in the default palette for the MakeCode UI are listed here:
 
 ```
 #000000     // transparency
@@ -26,6 +26,7 @@ The default palette for the MakeCode UI is here:
 #000000
 ```
 
+![Default color chart](/static/developer/default-colors.jpg)
 
 ### Changing the default palette
 
@@ -51,6 +52,7 @@ like so:
         "main.ts",
         "README.md"
     ],
+    "preferredEditor": "blocksprj",
     "palette": [
         "#000000",
         "#ffffff",
@@ -72,18 +74,65 @@ like so:
 }
 ```
 
-Note that it doesn't matter what you set the first color in the array to because
+### ~ hint
+
+#### Mapped colors
+
+Note that it doesn't matter what you set as the first color in the array because
 it always maps to transparency. Be sure that the palette array you enter has **exactly** 16 colors.
 
+### ~
 
 ### Changing the palette at runtime
 
 To change the palette at runtime, you can use the `image.setPalette()` API, which takes
 a `Buffer` of RGB values. Each color channel has one byte, giving you a total of three
-bytes per color. You can use the tool at https://riknoll.github.io/pxt-arcade-asset-tool/
-to import palettes in the `.gpl`, `.txt`, or `.hex` formats. Palettes cannot contain more
-than 16 colors (including color `0` for transparency).
+bytes per color. The entire palette buffer is exactly 48 bytes. Here's an example of a palette created directly in a program:
 
+```typescript
+let palBuf: Buffer = hex`000000ffffff7b68eeff93c4eee8aafff609249ca378dc52003fad87f2ff8e2ec4a4839fdda0dde5cdc491463d000000`
+image.setPalette(palBuf)
+```
+
+### Palette files
+
+You can use the tool at https://riknoll.github.io/pxt-arcade-asset-tool/
+to import palettes in the `.gpl`, `.txt`, or `.hex` formats. Palettes cannot contain more
+than 16 colors (including color `0` for transparency). The exported ``assets.ts`` file will contain the buffer code for the palette.
+
+```typescript
+// assets.ts
+
+namespace palettes {
+    //% fixedInstance
+    export const Cool_Colors = hex`0000007f0622d62411ff8426ffd100fafdffff80a4ff267494216a43006723497568aed4bfff3c10d275007899002859`;
+}
+```
+
+https://lospec.com/palette-list is an amazing resource for finding color palettes.
+
+If you already have a palette that isn't in one of the above formats, you can easily create a
+`.hex` file by hand. Simply put each color's hex string on a separate line and save a file
+with the `.hex` extension. For example, the ``my-palette.hex`` file could have these colors:
+
+```
+000000
+ffffff
+ff2121
+ff93c4
+ff8135
+fff609
+249ca3
+78dc52
+003fad
+87f2ff
+8e2ec4
+a4839f
+5c406c
+e5cdc4
+91463d
+000000
+```
 
 ## Importing custom art and palettes
 
@@ -102,27 +151,17 @@ file to the project. Drag your palette file ( `.gpl`, `.txt`, or `.hex` format)
 onto the page to have it appear in the palette dropdown beneath each image entry. If your
 sprites come out looking weird, you should double check the palette you're using.
 
-https://lospec.com/palette-list is an amazing resource for finding color palettes.
+As an example, let's say you uploaded an image file `mosaic.png` with a palette called `cool-colors.txt`. In the asset tool you select the `Cool Colors` palette to use with the image. The exported ``assets.ts`` file contains a custom image that uses the `Cool_Colors` palette.
 
-If you already have a palette that isn't in one of the above formats, you can easily create a
-`.hex` file by hand. Simply put each color's hex string on a separate line and save a file
-with the `.hex` extension. For example:
+```typescript
+// assets.ts
 
-```
-#000000
-#ffffff
-#ff2121
-#ff93c4
-#ff8135
-#fff609
-#249ca3
-#78dc52
-#003fad
-#87f2ff
-#8e2ec4
-#a4839f
-#5c406c
-#e5cdc4
-#91463d
-#000000
+namespace projectImages {
+    //% fixedInstance
+    export const mosaic = image.ofBuffer(hex`e4101000dddddddddddddddd5d55454444eeeede5d55646666e4eede5d4566666646eede5d6466666666e4de4d666688686646de4d668688886646de4d668628886646dd4d668688886646d94d666688686646d9dd646666666694d9dd4d6666664699d9dddd6466669499d9dddd4d44449999d9dddddddd999999d9dddddddddddddddd`);
+}
+namespace palettes {
+    //% fixedInstance
+    export const Cool_Colors = hex`00000016171a7f0622d62411ff8426ffd100fafdffff80a4ff267494216a43006723497568aed4bfff3c10d275007899002859`;
+}
 ```

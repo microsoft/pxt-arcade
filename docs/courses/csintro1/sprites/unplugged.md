@@ -24,7 +24,7 @@ Your grid: Mark where your ships are and keep track of your opponent's hits and 
 
 <br />
 
-![Your Grid Example](/static/courses/csintro1/sprites/your-grid.png)
+![Your Grid Example](/static/courses/csintro1/sprites/your-grid.jpg)
 
 Opponent's grid: Keep track of your hits and misses while trying to locate your opponent's ships.
 
@@ -38,7 +38,7 @@ Opponent's grid: Keep track of your hits and misses while trying to locate your 
 
 <br />
 
-![Opponent's Grid Example](/static/courses/csintro1/sprites/opponents-grid.png)
+![Opponent's Grid Example](/static/courses/csintro1/sprites/opponents-grid.jpg)
 
 Pair up with another student. Conceal your ships on your 5x5 grid.
 

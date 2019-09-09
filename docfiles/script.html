@@ -22,6 +22,7 @@
 					</div>
 					<div class="page-header-item show-code-toggle">
 						<button id="show-code-button" class="ui tiny default button">Show Code</button>
+						<button id="mode-code-button" class="ui tiny secondary button">Mod</button>
 					</div>
 					<div class="page-header-item no-grow">
 						<a href="https://makecode.com/org" title="Go to Microsoft MakeCode" aria-label="Microsoft MakeCode Logo" role="menuitem" target="blank" rel="noopener" class="ui item logo organization">
@@ -127,7 +128,7 @@
 						<a class="ui item " href="https://makecode.com/privacy " target="_blank " rel="noopener ">Privacy &amp; Cookies</a>
 						<a class="ui item " href="https://makecode.com/termsofuse " target="_blank " rel="noopener "> Terms Of Use</a>
 						<a class="ui item " href="https://makecode.com/trademarks " target="_blank " rel="noopener ">Trademarks</a>
-						<div class="ui item ">© 2018 Microsoft</div>
+						<div class="ui item ">© 2019 Microsoft</div>
 					</div>
 				</div>
 		</div>
@@ -136,41 +137,33 @@
 	</div>
 
 	<script>
-		function isIFrame() {
-			try {
-				return window && window.self !== window.top;
-			} catch (e) {
-				return true;
-			}
-		}
-
 		var editorEmbedURL = "/@versionsuff@#sandbox:@id@";
 		var gameEmbedURL = "/@versionsuff@--run?fullscreen=1&nofooter=1&id=@id@";
 		var editorOpenUrl = "/@versionsuff@#pub:@id@";
 		var showCodeButton = document.getElementById("show-code-button");
+		var modButton = document.getElementById("mod-code-button");
 		var frame = document.getElementById("embed-frame");
 
-		if (isIFrame()) {
-			// load readonly editor when hosted in some kind of iframe
-			var isGame = true;
-			showCodeButton.addEventListener("click", function() {
-				if (isGame) {
-					frame.setAttribute("src", editorEmbedURL);
-					showCodeButton.textContent = "Show Game";
-				}
-				else {
-					frame.setAttribute("src", gameEmbedURL);
-					showCodeButton.textContent = "Show Code";
-				}
-				isGame = !isGame;
-			});
-		} else {
-			// go straight into the editor
-			showCodeButton.innerText = "Edit this game";
-			showCodeButton.addEventListener("click", function() {
-				window.location.href = editorOpenUrl;
-			});
-		}
+		var isGame = true;
+
+		showCodeButton.addEventListener("click", function() {
+			// toggle game vs code view
+			if (isGame) {
+				frame.setAttribute("src", editorEmbedURL);
+				showCodeButton.textContent = "Show Game";
+			}
+			else {
+				frame.setAttribute("src", gameEmbedURL);
+				showCodeButton.textContent = "Show Code";
+			}
+			isGame = !isGame;
+		});
+
+		// go straight into the editor
+		modButton.innerText = "Edit this game";
+		modButton.addEventListener("click", function() {
+			window.location.href = editorOpenUrl;
+		});
 	</script>
 
 	<!-- @include tracking.html -->
