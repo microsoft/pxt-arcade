@@ -12,6 +12,8 @@
         "sprites.duck.ts",
         "sprites.castle.jres",
         "sprites.castle.ts",
+        "sprites.city.jres",
+        "sprites.city.ts",
         "sprites.dialog.jres",
         "sprites.dialog.ts",
         "sprites.dungeon.jres",
