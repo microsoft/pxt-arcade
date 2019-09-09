@@ -15,7 +15,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "postbuild": "mv build ../docs/static/game-modder",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -34,5 +33,5 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://arcade.makecode.com/@cdnUrl@/static/game-modder/"
+  "homepage": "https://makecode.com/static/game-modder/"
 }
