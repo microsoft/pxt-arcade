@@ -4,7 +4,7 @@
     "blockIdentity": "images._image",
     "creator": "image.ofBuffer",
     "star": {
-        "namespace": "sprites.city",
+        "namespace": "sprites.builtin",
         "mimeType": "image/x-mkcd-f4"
     }
 }
