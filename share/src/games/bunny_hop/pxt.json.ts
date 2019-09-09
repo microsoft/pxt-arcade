@@ -1,3 +1,4 @@
+export const bunny_hop_pxt_json: string = `
 {
     "name": "Bunny Hop",
     "dependencies": {
@@ -19,3 +20,4 @@
         "pxt": "5.21.6"
     }
 }
+`;

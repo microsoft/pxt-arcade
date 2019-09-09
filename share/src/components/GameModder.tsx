@@ -9,6 +9,8 @@ import '../css/SpriteEditor.css';
 import { imageLiteralToBitmap, Bitmap } from '../sprite-editor/bitmap';
 import { textToBitmap, createPngImg, updatePngImg, bitmapToBinHex, textToBinHex } from '../bitmap_helpers';
 import { tickEvent } from '../telemetry/appinsights';
+import { bunny_hop_bin_js } from '../games/bunny_hop/bin.js';
+import { bunny_hop_main_ts } from '../games/bunny_hop/main.ts';
 // import { bunnyHopBinJs } from '../../public/games/bunny_hop/bunny_hop_min.js.js';
 
 export interface GameModderProps {
@@ -324,7 +326,10 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             return res
         }
 
-        let mainTs = await getTxtFile("games/bunny_hop/main.ts")
+        // HACK:
+        let mainTs = bunny_hop_main_ts;
+        // let mainTs = await getTxtFile("games/bunny_hop/main.ts")
+
         // TODO: find images
         let imgs = getImages(mainTs)
         // console.dir(imgs)
@@ -440,7 +445,8 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             return bin.replace(oldHex, newHex)
         }
 
-        let gameBinJs = await getTxtFile("games/bunny_hop/bin.js");
+        // HACK:
+        let gameBinJs = bunny_hop_bin_js;
         for (let i of this.state.userImages) {
             gameBinJs = modImg(gameBinJs, i)
         }
