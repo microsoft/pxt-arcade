@@ -116,6 +116,49 @@
 									})
 									.modal("show");
 							})
+
+							function tickEvent(id, data) {
+								if (!pxt.aiTrackEvent) return;
+								if (!data) pxt.aiTrackEvent(id);
+								else {
+									var props = {};
+									var measures = {};
+									for (var k in data)
+										if (typeof data[k] == "string") props[k] = data[k];
+										else measures[k] = data[k];
+									pxt.aiTrackEvent(id, props, measures);
+								}
+							}
+
+							var startTime;
+							var totalTime = 0;
+							var logTimer;
+							window.addEventListener("message", function (evt) {
+								let command = evt && evt.data;
+								if (command) {
+									switch (command.tick) {
+										case "simulator.focus":
+											startTime = command.data.timestamp;
+											clearTimeout(logTimer);
+											break;
+										case "simulator.blur":
+											if (startTime) {
+												totalTime += (command.data.timestamp - startTime);
+												startTime = null;
+											}
+											clearTimeout(logTimer);
+											logTimer = setTimeout(() => {
+												tickEvent("simulator.playtime", { "duration": totalTime });
+												totalTime = 0;
+											}, 10 * 60 * 1000);
+											break;
+									}
+								}
+							})
+							window.addEventListener("onbeforeunload", function () {
+								clearTimeout(logTimer);
+								tickEvent("simulator.playtime", { "duration": totalTime });
+							})
 						})
 					</script>
 		</div>
