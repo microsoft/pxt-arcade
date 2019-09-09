@@ -1,0 +1,10 @@
+{
+    "name": "d5",
+    "files": [],
+    "description": "",
+    "hidden": true,
+    "dependencies": {
+        "device": "file:../device",
+        "hw---samd51": "file:../hw---samd51"
+    }
+}
