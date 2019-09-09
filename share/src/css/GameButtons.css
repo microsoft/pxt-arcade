@@ -96,3 +96,14 @@
         height: initial;
     }
 }
+
+@media (min-aspect-ratio: 5/8) {
+    .action-button {
+        height: 2.5rem;
+        margin-bottom: 1.4rem;
+    }
+
+    .share-mod-button {
+        line-height: 2.5rem;
+    }
+}

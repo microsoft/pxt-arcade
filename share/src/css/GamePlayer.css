@@ -73,3 +73,13 @@
         display: none;
     }
 }
+
+@media (min-aspect-ratio: 5/8) {
+    .game-player-background {
+        height: 52%;
+    }
+
+    .game-player-logo {
+        display: none;
+    }
+}
