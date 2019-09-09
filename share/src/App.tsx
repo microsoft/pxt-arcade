@@ -16,6 +16,12 @@ interface AppState {
 let lastBinary: UserProject;
 let playTimestamp: number;
 
+
+// Disable scrolling in iOS
+document.ontouchmove = function (e) {
+    e.preventDefault();
+}
+
 export class App extends React.Component<{}, AppState> {
     constructor(props: {}) {
         super(props)
@@ -66,6 +72,11 @@ export class App extends React.Component<{}, AppState> {
     protected changeMode = (mode: "play" | "share" | "mod") => {
         this.setState({ mode });
     }
+}
+
+// Disable scrolling in iOS
+document.ontouchmove = function (e) {
+    e.preventDefault();
 }
 
 export default App;

@@ -10,7 +10,9 @@ import { imageLiteralToBitmap, Bitmap } from '../sprite-editor/bitmap';
 import { textToBitmap, createPngImg, updatePngImg, bitmapToBinHex, bitmapToText, isEmptyBitmap } from '../bitmap_helpers';
 import { tickEvent } from '../telemetry/appinsights';
 import { UserProject } from './util';
-// import { bunnyHopBinJs } from '../../public/games/bunny_hop/bunny_hop_min.js.js';
+import { bunny_hop_bin_js } from '../games/bunny_hop/bin.js';
+import { bunny_hop_main_ts } from '../games/bunny_hop/main.ts';
+import { bunny_hop_main_blocks } from '../games/bunny_hop/main.blocks';
 
 export interface GameModderProps {
     playHandler: (proj: UserProject) => void;
@@ -42,10 +44,6 @@ function GetImageTextDimensions(s: string): { w: number, h: number } {
         w: ln1.length,
         h: lns.length
     }
-}
-function IsBlank(s: string): boolean {
-    let img = s.replace(/\.\s/g, "")
-    return img.length > 0
 }
 
 // TODO: either we need binHexToBitmap or we need the original source code
@@ -329,7 +327,10 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             return res
         }
 
-        let mainTs = await getTxtFile("/games/bunny_hop/main.ts")
+        // HACK:
+        let mainTs = bunny_hop_main_ts;
+        // let mainTs = await getTxtFile("games/bunny_hop/main.ts")
+
         // TODO: find images
         let imgs = getImages(mainTs)
         // console.dir(imgs)
@@ -413,6 +414,13 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         this.renderSpriteEditor()
         await this.renderGallery();
         // await this.renderExperiments();
+
+
+
+        // Disable scrolling in iOS
+        document.ontouchmove = function (e) {
+            e.preventDefault();
+        }
     }
 
     componentWillUnmount() {
@@ -420,7 +428,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         this.spriteEditorHolder = undefined;
     }
 
-    async onPlay() {
+    onPlay() {
         this.save()
 
         const toReplace = this.state.userImages.filter(ui => !isEmptyBitmap(ui.data));
@@ -444,9 +452,9 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             return bin.replace(oldHex, newHex)
         }
 
-        let gameBinJs = await getTxtFile("/games/bunny_hop/bin.js");
-        let gameMainTs = await getTxtFile("/games/bunny_hop/main.ts");
-        let gameMainBlocks = await getTxtFile("/games/bunny_hop/main.blocks");
+        let gameBinJs = bunny_hop_bin_js
+        let gameMainTs = bunny_hop_main_ts
+        let gameMainBlocks = bunny_hop_main_blocks;
 
         for (let i of toReplace) {
             const def = bitmapToText(i.default);

@@ -37,7 +37,7 @@ type SentMessage = SimulatorRunMessage | SimulatorButtonMessage;
 type ReceivedMessage = SimulatorReadyMessage | SimulatorRestartMessage;
 
 // No trailing slash!!!
-const baseurl = "http://localhost:3232"
+const baseurl = "https://trg-arcade.userpxt.io/beta---simulator"
 
 export class Simulator {
     protected frame: HTMLIFrameElement | undefined;
@@ -100,7 +100,7 @@ export class Simulator {
 
                 const id = `sim-frame-${Math.random() * 1000000}`;
                 this.frame.setAttribute("id", id);
-                this.frame.src = `${baseurl}/sim/simulator.html?justscreen=1&run=${id}#${id}`;
+                this.frame.src = `${baseurl}?justscreen=1&run=${id}#${id}`;
 
                 this.waitForSimReadyAsync()
                     .then(() => {
