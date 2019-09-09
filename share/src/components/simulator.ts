@@ -100,7 +100,7 @@ export class Simulator {
 
                 const id = `sim-frame-${Math.random() * 1000000}`;
                 this.frame.setAttribute("id", id);
-                this.frame.src = `${baseurl}/sim/simulator.html?justscreen=1&run=${id}#${id}`;
+                this.frame.src = `${baseurl}?justscreen=1&run=${id}#${id}`;
 
                 this.waitForSimReadyAsync()
                     .then(() => {
