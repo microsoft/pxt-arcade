@@ -67,4 +67,9 @@ export class App extends React.Component<{}, AppState> {
     }
 }
 
+// Disable scrolling in iOS
+document.ontouchmove = function (e) {
+    e.preventDefault();
+}
+
 export default App;
