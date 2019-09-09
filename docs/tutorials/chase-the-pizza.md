@@ -285,7 +285,6 @@ b 5 5 5 5 d d 4 4 4 4 . . . . .
 4 d d d 4 4 4 . . . . . . . . .
 4 4 4 4 . . . . . . . . . . . .
 `, SpriteKind.Food)
-info.startCountdown(10)
 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
 	info.changeScoreBy(1)
