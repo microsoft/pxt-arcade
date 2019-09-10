@@ -426,9 +426,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         await this.renderGallery();
         // await this.renderExperiments();
 
-
-
-        // Disable scrolling in iOS
+        // HACK: Disable scrolling in iOS
         document.ontouchmove = function (e) {
             e.preventDefault();
         }

@@ -16,7 +16,7 @@ let lastBinary: string;
 let playTimestamp: number;
 export let gameModderState: GameModderState | {} = {};
 
-// Disable scrolling in iOS
+// HACK: Disable scrolling in iOS
 document.ontouchmove = function (e) {
     e.preventDefault();
 }
@@ -71,11 +71,6 @@ export class App extends React.Component<{}, AppState> {
     protected changeMode = (mode: "play" | "share" | "mod") => {
         this.setState({ mode });
     }
-}
-
-// Disable scrolling in iOS
-document.ontouchmove = function (e) {
-    e.preventDefault();
 }
 
 export default App;
