@@ -350,15 +350,13 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         let hScale = actualHeight / refHeight
         this.scale = Math.min(wScale, hScale)
 
-        console.log("currIMg")
-        console.log(this.state.currentImg)
         return (
             <div className="game-modder">
                 <h1 ref="header">{currImg.callToAction}</h1>
                 <TabBar ref="tab-bar" tabImages={this.tabImages}
                     tabChange={this.onTabChange.bind(this)} startTab={this.state.currentImg} />
                 {isBackgroundTab
-                    ? <ColorPicker height={SE.TOTAL_HEIGHT * this.scale}></ColorPicker> :
+                    ? <ColorPicker colors={SE.COLORS} height={SE.TOTAL_HEIGHT * this.scale}></ColorPicker> :
                     <SpriteEditorComp ref="sprite-editor" startImage={this.state.userImages[this.state.currentImg].data}
                         onPlay={this.onPlay} scale={this.scale}></SpriteEditorComp>}
                 <div ref="sprite-gallery" className="sprite-gallery">
