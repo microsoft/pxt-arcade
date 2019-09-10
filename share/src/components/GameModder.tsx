@@ -1,6 +1,4 @@
 import React from 'react';
-import { SpriteEditor } from '../sprite-editor/spriteEditor'
-import * as SE from '../sprite-editor/spriteEditor'
 import TabBar from './TabBar'
 import ColorPicker from './ColorPicker'
 
@@ -13,6 +11,8 @@ import { tickEvent } from '../telemetry/appinsights';
 import { bunny_hop_bin_js } from '../games/bunny_hop/bin.js';
 import { bunny_hop_main_ts } from '../games/bunny_hop/main.ts';
 import { gameModderState } from '../App';
+import { SpriteEditorComp } from './SpriteEditor';
+import * as SE from '../sprite-editor/spriteEditor'
 // import { bunnyHopBinJs } from '../../public/games/bunny_hop/bunny_hop_min.js.js';
 
 export interface GameModderProps {
@@ -210,9 +210,10 @@ const CALL_TO_ACTION: { [k: string]: string } = {
 
 export class GameModder extends React.Component<GameModderProps, GameModderState> {
     protected playBtn: HTMLButtonElement | undefined;
-    protected spriteEditorHolder: HTMLDivElement | undefined;
-    protected spriteEditor: SpriteEditor;
+    protected spriteEditor: SpriteEditorComp;
+    protected header: HTMLHeadingElement | undefined;
     private tabImages: Bitmap[];
+    private scale: number = 1.0;
 
     constructor(props: GameModderProps) {
         super(props);
@@ -250,105 +251,37 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             .map(textToBitmap)
     }
 
-    renderSpriteEditor() {
-        if (!this.spriteEditorHolder)
-            return;
 
-        // const { value } = this.props;
-        // const stateSprite = value && this.stripImageLiteralTags(value)
+    // async renderExperiments() {
+    //     let tabBar = this.refs["tab-bar"] as TabBar
+    //     let dummyImg = createPngImg(20, 20, 64, 64)
+    //     tabBar.TabBarSvg.appendChild(dummyImg)
+    //     setInterval(() => {
+    //         updatePngImg(dummyImg, this.spriteEditor.bitmap().image)
+    //     }, 500)
 
-        let body = document.getElementsByTagName('body')[0]
-        let header = this.refs['header'] as HTMLDivElement
-        // const MARGIN = 20
-        const MARGIN = 0
-        let actualWidth = body.clientWidth - MARGIN
-        let actualHeight = body.clientHeight - header.clientHeight - MARGIN
-        let refWidth = 539.0
-        let refHeight = SE.TOTAL_HEIGHT
-        let wScale = actualWidth / refWidth
-        let hScale = actualHeight / refHeight
-        let scale = Math.min(wScale, hScale)
-        console.log(`Sprite editor scale: ${scale}`)
-        let htmlEl = document.getElementsByTagName('html')[0]
-        // htmlEl.setAttribute("style", `font-size: ${scale}px`)
+    //     function getImages(ts: string) {
+    //         let imgRegex = /img`([\d\s\.a-f]*)`/gm
+    //         let match = imgRegex.exec(ts);
+    //         let res: string[] = []
+    //         while (match != null) {
+    //             res.push(match[1])
+    //             match = imgRegex.exec(ts);
+    //         }
+    //         return res
+    //     }
 
-        let currImg = this.state.userImages[this.state.currentImg].data
-        this.spriteEditor = new SpriteEditor(currImg, null, false, scale);
-        this.spriteEditor.render(this.spriteEditorHolder);
-        // HACK: scaling
-        header.setAttribute("style", `transform: scale(${scale})`);
-        function scaleAtt(el: Element, attName: string, scale: number) {
-            let oldW = parseInt(el.getAttribute(attName))
-            let newW = oldW * scale
-            el.setAttribute(attName, newW.toString())
-        }
-        let canvases = document.getElementsByClassName("sprite-editor-canvas")
-        for (let c of canvases) {
-            // scaleAtt(c, "width", scale)
-            // scaleAtt(c, "height", scale)
-        }
-        let controls = document.getElementsByClassName("sprite-canvas-controls")
-        for (let c of controls) {
-            let oldW = parseInt(c.getAttribute("width").replace("px", ""))
-            let oldH = parseInt(c.getAttribute("height").replace("px", ""))
-            // fudge of 5 for scale 1.892
-            const fudge = 0 // 5 * scale
-            let newW = (oldW - fudge) / scale
-            let newH = (oldH - fudge) / scale
-            c.setAttribute("viewBox", `${fudge} ${fudge} ${newW} ${newH}`)
-        }
-        // END HACK
+    //     // HACK:
+    //     let mainTs = bunny_hop_main_ts;
+    //     // let mainTs = await getTxtFile("games/bunny_hop/main.ts")
 
-        this.spriteEditor.rePaint();
-        this.spriteEditor.setActiveColor(1, true);
-        this.spriteEditor.setSizePresets([
-            [8, 8],
-            [16, 16],
-            [32, 32],
-            [10, 8]
-        ]);
+    //     // TODO: find images
+    //     let imgs = getImages(mainTs)
+    //     // console.dir(imgs)
 
-        this.spriteEditorHolder.style.height = (this.spriteEditor.outerHeight()) + "px";
-        this.spriteEditorHolder.style.width = (this.spriteEditor.outerWidth()) + "px";
-        this.spriteEditorHolder.style.overflow = "hidden";
-        this.spriteEditorHolder.className += ' sprite-editor-container sprite-editor-dropdown-bg sprite-editor-dropdown';
-        this.spriteEditor.addKeyListeners();
-        this.spriteEditor.onClose(() => {
-            console.log("Closing sprite editor!")
-            this.onPlay()
-        });
-    }
-
-    async renderExperiments() {
-        let tabBar = this.refs["tab-bar"] as TabBar
-        let dummyImg = createPngImg(20, 20, 64, 64)
-        tabBar.TabBarSvg.appendChild(dummyImg)
-        setInterval(() => {
-            updatePngImg(dummyImg, this.spriteEditor.bitmap().image)
-        }, 500)
-
-        function getImages(ts: string) {
-            let imgRegex = /img`([\d\s\.a-f]*)`/gm
-            let match = imgRegex.exec(ts);
-            let res: string[] = []
-            while (match != null) {
-                res.push(match[1])
-                match = imgRegex.exec(ts);
-            }
-            return res
-        }
-
-        // HACK:
-        let mainTs = bunny_hop_main_ts;
-        // let mainTs = await getTxtFile("games/bunny_hop/main.ts")
-
-        // TODO: find images
-        let imgs = getImages(mainTs)
-        // console.dir(imgs)
-
-        let imgsAsBmps = imgs.map(textToBitmap)
-        // console.dir(imgsAsBmps)
-    }
+    //     let imgsAsBmps = imgs.map(textToBitmap)
+    //     // console.dir(imgsAsBmps)
+    // }
 
     async renderGallery() {
         // TODO: move to seperate component
@@ -381,7 +314,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         let newState = {
             userImages: this.state.userImages.map((m, i) =>
                 i === this.state.currentImg
-                    ? updateUserImage(m, this.spriteEditor.bitmap().image) //.copy()
+                    ? updateUserImage(m, this.spriteEditor.editor.bitmap().image) //.copy()
                     : m)
         }
         this.setState(newState)
@@ -389,8 +322,8 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
     }
     load(idx: number) {
         let currImg = this.state.userImages[idx].data
-        this.spriteEditor.bitmap().image = currImg
-        this.spriteEditor.rePaint()
+        this.spriteEditor.editor.bitmap().image = currImg
+        this.spriteEditor.editor.rePaint()
     }
 
     onTabChange(idx: number) {
@@ -405,17 +338,29 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
     render() {
         let currImg = this.state.userImages[this.state.currentImg]
         let isBackgroundTab = this.state.currentImg === 3
-        let spriteEditorClass = "sprite-editor-holder"
-        if (isBackgroundTab)
-            spriteEditorClass += ` hidden`
+
+        let body = document.getElementsByTagName('body')[0]
+        // const MARGIN = 20
+        const HEADER_HEIGHT = 50
+        let actualWidth = body.clientWidth
+        let actualHeight = body.clientHeight - HEADER_HEIGHT
+        let refWidth = 539.0
+        let refHeight = SE.TOTAL_HEIGHT
+        let wScale = actualWidth / refWidth
+        let hScale = actualHeight / refHeight
+        this.scale = Math.min(wScale, hScale)
+
+        console.log("currIMg")
+        console.log(this.state.currentImg)
         return (
             <div className="game-modder">
                 <h1 ref="header">{currImg.callToAction}</h1>
                 <TabBar ref="tab-bar" tabImages={this.tabImages}
                     tabChange={this.onTabChange.bind(this)} startTab={this.state.currentImg} />
-                {isBackgroundTab ? <ColorPicker></ColorPicker> : <></>}
-                <div ref="sprite-editor-holder">
-                </div>
+                {isBackgroundTab
+                    ? <ColorPicker></ColorPicker> : <></>}
+                <SpriteEditorComp ref="sprite-editor" startImage={this.state.userImages[this.state.currentImg].data}
+                    onPlay={this.onPlay} scale={this.scale}></SpriteEditorComp>
                 <div ref="sprite-gallery" className="sprite-gallery">
                 </div>
                 <button ref="play-btn">Play!</button>
@@ -425,15 +370,18 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
 
     async componentDidMount() {
         this.playBtn = this.refs["play-btn"] as HTMLButtonElement;
-        this.spriteEditorHolder = this.refs['sprite-editor-holder'] as HTMLDivElement;
+        this.spriteEditor = this.refs["sprite-editor"] as SpriteEditorComp;
+        this.header = this.refs['header'] as HTMLHeadingElement
 
         // events
         this.playBtn.addEventListener('click', this.onPlay.bind(this))
 
         // TODO(dz):
-        this.renderSpriteEditor()
         await this.renderGallery();
         // await this.renderExperiments();
+
+        // HACK: scaling
+        this.header.setAttribute("style", `transform: scale(${this.scale})`);
 
         // HACK: Disable scrolling in iOS
         document.ontouchmove = function (e) {
@@ -443,7 +391,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
 
     componentWillUnmount() {
         this.playBtn = undefined;
-        this.spriteEditorHolder = undefined;
+        this.spriteEditor = undefined;
     }
 
     async onPlay() {
