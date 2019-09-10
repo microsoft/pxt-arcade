@@ -2,6 +2,7 @@ import React from 'react';
 import { SpriteEditor } from '../sprite-editor/spriteEditor'
 import * as SE from '../sprite-editor/spriteEditor'
 import TabBar from './TabBar'
+import ColorPicker from './ColorPicker'
 
 import '../css/GameModder.css';
 import '../css/icons.css';
@@ -310,7 +311,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         this.spriteEditorHolder.style.height = (this.spriteEditor.outerHeight()) + "px";
         this.spriteEditorHolder.style.width = (this.spriteEditor.outerWidth()) + "px";
         this.spriteEditorHolder.style.overflow = "hidden";
-        this.spriteEditorHolder.className = 'sprite-editor-container sprite-editor-dropdown-bg sprite-editor-dropdown';
+        this.spriteEditorHolder.className += ' sprite-editor-container sprite-editor-dropdown-bg sprite-editor-dropdown';
         this.spriteEditor.addKeyListeners();
         this.spriteEditor.onClose(() => {
             console.log("Closing sprite editor!")
@@ -404,12 +405,16 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
     render() {
         let currImg = this.state.userImages[this.state.currentImg]
         let isBackgroundTab = this.state.currentImg === 3
+        let spriteEditorClass = "sprite-editor-holder"
+        if (isBackgroundTab)
+            spriteEditorClass += ` hidden`
         return (
             <div className="game-modder">
                 <h1 ref="header">{currImg.callToAction}</h1>
                 <TabBar ref="tab-bar" tabImages={this.tabImages}
                     tabChange={this.onTabChange.bind(this)} startTab={this.state.currentImg} />
-                <div ref="sprite-editor-holder" className="sprite-editor-holder">
+                {isBackgroundTab ? <ColorPicker></ColorPicker> : <></>}
+                <div ref="sprite-editor-holder">
                 </div>
                 <div ref="sprite-gallery" className="sprite-gallery">
                 </div>
