@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 import GamePlayer from './components/GamePlayer';
-import GameModder from './components/GameModder';
+import GameModder, { GameModderState } from './components/GameModder';
 import Share from './components/Share';
 import HeaderBar from './components/HeaderBar';
 
@@ -14,7 +14,7 @@ interface AppState {
 
 let lastBinary: string;
 let playTimestamp: number;
-
+export let gameModderState: GameModderState | {} = {};
 
 // Disable scrolling in iOS
 document.ontouchmove = function (e) {

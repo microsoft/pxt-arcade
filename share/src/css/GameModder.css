@@ -12,6 +12,7 @@
     flex-direction: column;
     justify-items: center;
     align-items: center;
+    /* TODO: media query and reasonable desktop sizing */
 }
 .sprite-editor-container {
     /* font-size: 10px; */

@@ -11,6 +11,7 @@ import { textToBitmap, createPngImg, updatePngImg, bitmapToBinHex, textToBinHex 
 import { tickEvent } from '../telemetry/appinsights';
 import { bunny_hop_bin_js } from '../games/bunny_hop/bin.js';
 import { bunny_hop_main_ts } from '../games/bunny_hop/main.ts';
+import { gameModderState } from '../App';
 // import { bunnyHopBinJs } from '../../public/games/bunny_hop/bunny_hop_min.js.js';
 
 export interface GameModderProps {
@@ -27,6 +28,9 @@ export interface UserImage {
 export interface GameModderState {
     userImages: UserImage[]
     currentImg: number,
+}
+function IsGameModderState(s: any): s is GameModderState {
+    return !!(s as GameModderState).userImages
 }
 
 function CreateEmptyImageText(w: number, h: number) {
@@ -228,9 +232,14 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
                 };
             })
 
-        this.state = {
-            userImages: imgs,
-            currentImg: 0
+        if (IsGameModderState(gameModderState))
+            this.state = gameModderState
+        else {
+            this.state = {
+                userImages: imgs,
+                currentImg: 0
+            }
+            Object.assign(gameModderState, this.state)
         }
 
         this.tabImages = Object.keys(moddableImages)
@@ -402,6 +411,9 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         )
     }
 
+    componentWillUpdate() {
+        Object.assign(gameModderState, this.state)
+    }
     async componentDidMount() {
         this.playBtn = this.refs["play-btn"] as HTMLButtonElement;
         this.spriteEditorHolder = this.refs['sprite-editor-holder'] as HTMLDivElement;
