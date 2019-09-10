@@ -50,13 +50,16 @@ h1 {
 .tab-bar path,
 .sprite-gallery path,
 .sprite-editor-container {
-    fill: #4b7becaa;
-    background-color: #4b7becaa;
+    fill: hsl(222, 45%, 48%);
+    background-color: hsl(222, 45%, 48%);
 }
 .tab-bar path,
 .sprite-gallery path {
     stroke-width: 2px;
     stroke:#4b7bec;
+}
+.sprite-gallery {
+    margin-top: -1px;
 }
 button {
     border-width: 0px;
