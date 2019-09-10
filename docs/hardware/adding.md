@@ -1,14 +1,15 @@
 # Creating your own Arcade hardware
 
-## ~ hint
+## ~ alert
 
-**Warning**: this document is still preliminary and changes to it will occur.
+### Warning
+
+This document is still preliminary and changes to it will occur.
 It's fine to build prototypes according to the information presented for experimention only,
 but do not make production hardware.  **If you want to produce Arcade-compatible
 boards other than hobby prototypes, please contact us at arcadehdw@microsoft.com.**
 
 ## ~
-
 
 ## Overview #overview
 
@@ -106,10 +107,26 @@ We have found the following part numbers for ST7735 and ILI9163C displays:
 
 ![Screen connection](/static/hardware/screen.png)
 
-#### 320x240 based on ILI9134
+#### 320x240 based on ILI9134 via SPI
 
-This requires an 8 bit parallel interface because SPI is not fast enough, therefore an MCU which supports a parallel
-interface is required, such as STM32F412RE or better. The firmware implementation to support this is underway.
+On D5, the SPI can run up to 50MHz and most displays seem to be able to handle that,
+which results in about 36fps.
+
+Also, use the following display configuration to begin with:
+
+```
+DISPLAY_TYPE = 9341
+DISPLAY_WIDTH = 320
+DISPLAY_HEIGHT = 240
+DISPLAY_CFG0 = 0x08
+DISPLAY_CFG1 = 0x0010ff
+DISPLAY_CFG2 = 50
+```
+
+#### 320x240 based on ILI9134 via 8-bit parallel
+
+On F4, this requires an 8 bit parallel interface because SPI at 42Mhz is unstable;
+int this case STM32F412RE or better is required.
 
 The FSMC controller on STM32F412 in 64 pin version enforces
 the following pin connections.
@@ -127,8 +144,9 @@ the following pin connections.
 | D5       | D5       | PA3     |
 | D6       | D6       | PA4     |
 | D7       | D7       | PA5     |
+<br/>
 
-The CS pin of the screen can be connected anywhere (defined in bootloader as `DISPLAY_CS`)
+The CS pin of the screen can be connected anywhere (defined in bootloader as `DISPLAY_CS`).
 The RS pin is also currently handled in software, so could be anywhere, 
 but it's recommended to connect it to A0 (defined in bootloader as `DISPLAY_DC`).
 
@@ -140,8 +158,11 @@ Otherwise `DISPLAY_MISO` should be undefined.
 Also, use the following display configuration to begin with:
 
 ```
+DISPLAY_TYPE = 9341
+DISPLAY_WIDTH = 320
+DISPLAY_HEIGHT = 240
 DISPLAY_CFG0 = 0x08
-DISPLAY_CFG1 = 0x0018ff
+DISPLAY_CFG1 = 0x0010ff
 DISPLAY_CFG2 = 0x1000004
 ```
 
@@ -158,7 +179,7 @@ One function of the `Menu` button is to exit low-power sleep mode. For an MCU wi
 
 Arcade boards should have 'soft power off' rather than a physical on-off switch, see [power management](#power).
 
-![Button connection](/static/hardware/buttons.png)
+![Button connections](/static/hardware/buttons.png)
 
 
 ### Audio #audio
@@ -177,10 +198,14 @@ to clamp the Vbus power line and thereby limit over-voltage transients during US
 
 ### Multi-player communications #jacdac
 
-## ~ hint
-**Warning**: Multi-player communications is under development now and it may change.
+### ~ alert
+
+#### Warning
+
+Multi-player communications is under development now and it may change.
 It's fine to build prototypes, but before any production hardware please contact us at arcadehdw@microsoft.com.
-## ~
+
+### ~
 
 Multi-player communications between Arcade devices is based on [JACDAC](https://jacdac.org), a protocol for networking over a single-wire connection. It lets you play multiplayer games by connecting Arcades together with standard stereo audio cables. More than two arcades can be connected using commonly available headphone splitters.
 

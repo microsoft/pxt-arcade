@@ -15,11 +15,6 @@ In particular, this comes from the ``||sprites:set projectile y to||`` section: 
 Additionally, note that this projectile will move faster as the game moves on: each time one moves off screen, the player scores points, and new ducks will move faster.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile
-}
-
 let mySprite: Sprite = null
 let projectile: Sprite = null
 mySprite = sprites.create(img`

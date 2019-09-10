@@ -1,5 +1,8 @@
 # Developer Tips and Tricks
 
+If you want to customize and extend the Arcade game experience, or just code you games for better performance,
+this page directs you to several topics with helpul tips and guidance.
+
 ## Finding examples and documentation
 
 There are a number of examples you can try out on the [MakeCode Arcade](@homeurl@) homepage.
@@ -19,6 +22,10 @@ projects, MakeCode has GitHub integration. Read more [here](https://makecode.com
 
 MakeCode also supports "extensions" (libraries or packages) in projects, so it's possible to split your project
 into multiple repositories or libraries. Find more information [here](https://makecode.com/extensions).
+
+## Game Loop, Physics, and Rendering
+
+Documentation on the core game loop, physics system, and rendering can be found [here](/developer/game-loop).
 
 ## Music and Art
 

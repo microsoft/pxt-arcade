@@ -13,7 +13,7 @@ In this activity, students will be introduced to:
 
 ## Concept: Overlap Event
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-overlap1spritekind)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-overlap1spritekindtask)
 
 We use ``||sprites:kind||`` to classify our sprites. We can have sprites in our games that represent many different things - players, enemies, coins, food, or anything else you might want to represent in your games. 
 
@@ -31,11 +31,6 @@ Sometimes there will be only a single sprite of a given ``||sprites:kind||`` (fo
 [Overlap event](https://makecode.com/_e77ia1MAyA0U)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let head: Sprite = null
 let food: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -114,8 +109,6 @@ Use ``||loops:pause||`` before using sprite destroy, otherwise the sprite will b
 
 ## Set ``||sprites:sprite||`` ghost on
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-overlap1spritekindtask)
-
 The ``||sprites:ghost on||`` setting for sprites, when turned on, makes the sprite ignore ``||sprites:on overlap||`` events. By default, the setting is off.
 
 ## Example #2: Sprite Overlap and ghost on #example-2
@@ -127,11 +120,6 @@ The ``||sprites:ghost on||`` setting for sprites, when turned on, makes the spri
 [Ghost and Overlap](https://makecode.com/_FR3ciEHqR8YE)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let head: Sprite = null
 let food: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {

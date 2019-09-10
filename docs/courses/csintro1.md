@@ -68,7 +68,7 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Overlap Section 1](/courses/csintro1/motion/overlap1)
 * [Random](/courses/csintro1/motion/random)
 * [Overlap Section 2](/courses/csintro1/motion/overlap2)
-* [Create Sprite & On Create](/courses/csintro1/motion/create-on-create-sprites)
+* [On Created](/courses/csintro1/motion/create-on-create-sprites)
 * [Motion Project](/courses/csintro1/motion/project)
 
 ### [Loops](/courses/csintro1/loops)

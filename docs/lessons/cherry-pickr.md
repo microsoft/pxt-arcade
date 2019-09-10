@@ -8,7 +8,7 @@ Collect as many cherries as you can before time runs out!
 
 Learn the basic requirements to build a functional game!
 
-* The concept of sprite (in this tutorial, "agent")
+* The concept of a sprite
 * How to set up a map tile
 * Spawning cherries on the map  
 * Setting and moving a character 
@@ -41,10 +41,6 @@ game.splash("Cherry Pickr")
 To set the background, click on ``||scene:Scene||`` in the Toolbox and drag the ``||scene:set tile map to||`` block into the ``||loops:on start||`` block. Go ahead and click the gray box and draw whatever you want the background to look like.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
 game.splash("Cherry Pickr")
 scene.setTileMap(img`
 6 6 6 6 6 6 6 6 6 6 
@@ -62,16 +58,12 @@ a a a a a a a a a a
 
 ### Creating
 
-Our next step is to create a movable character. To do this, go to  ``||sprites:Sprites||`` in the Toolbox under the **Create** category and drag a ``||sprites:set agent to||`` block into ``||loops:on start|``.  
+Our next step is to create a movable character. To do this, go to  ``||sprites:Sprites||`` in the Toolbox under the **Create** category and drag a ``||sprites:set mySprite to||`` block into ``||loops:on start|``.  
 
-Next, draw what you want the agent to look like. Click the square grey box inside the ``||sprites:set agent to||`` block. A paint editor will pop up and this is where you will draw what you want your player to look like.
+Next, draw what you want the player to look like. Click the square grey box inside the ``||sprites:set mySprite to||`` block. A paint editor will pop up and this is where you will draw what you want your player to look like.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let agent: Sprite = null
+let mySprite: Sprite = null
 game.splash("Cherry Pickr")
 scene.setTileMap(img`
 6 6 6 6 6 6 6 6 6 6 
@@ -83,32 +75,28 @@ scene.setTileMap(img`
 2 2 2 2 2 2 2 2 2 2 
 a a a a a a a a a a 
 `)
-agent = sprites.create(sprites.castle.princessFront0, SpriteKind.Player)
+mySprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player)
 ```
 
 OK, We've created our player!
 
 ## ~hint
 
-We can rename our character from ``agent`` to ``player`` by clicking the drop down anywhere you see the ``agent`` variable and selecting ``Rename variable...``.
+We can rename our character from ``mySprite`` to ``player`` (or anything else that you'd like) by clicking the drop down anywhere you see the ``mySprite`` variable and selecting ``Rename variable...``. If you change the variable's name, keep that in mind as you go through the rest of this lesson. Each time you see ``mySprite``, use your variable name instead.
 
 ## ~
 
 ### Moving
 
-To move the player, click ``||controller:Controller||`` in the Toolbox and drag out a ``||controller:control sprite||`` block into the ``|||loops:on start||`` block. Make sure the variable selected is ``agent``.  
+To move the player, click ``||controller:Controller||`` in the Toolbox and drag out a ``||controller:control sprite||`` block into the ``||loops:on start||`` block. Make sure the variable selected is ``mySprite``.
 
-Then go to ``||scene:Scene||`` and under the **Camera** category, drag the ``||scene:camera follow sprite||`` block into the ``||loops:on start||`` block. Make sure the variable selected is ``agent``.  
+Then go to ``||scene:Scene||`` and under the **Camera** category, drag the ``||scene:camera follow sprite||`` block into the ``||loops:on start||`` block. Again, make sure the variable selected is ``mySprite``.  
 
 We do this so that when the player moves around the map, they will remain at the center of the screen.  
 To make the player move faster, set the ``vx`` and ``vy`` to `150`.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let agent: Sprite = null
+let mySprite: Sprite = null
 game.splash("Cherry Pickr")
 scene.setTileMap(img`
 6 6 6 6 6 6 6 6 6 6 
@@ -120,9 +108,9 @@ scene.setTileMap(img`
 2 2 2 2 2 2 2 2 2 2 
 a a a a a a a a a a 
 `)
-agent = sprites.create(sprites.castle.princessFront0, SpriteKind.Player)
-controller.moveSprite(agent, 150, 150)
-scene.cameraFollowSprite(agent)
+mySprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player)
+controller.moveSprite(mySprite, 150, 150)
+scene.cameraFollowSprite(mySprite)
 ```
 
 Now we are able to move our player! In the simulator, test out the movement of the player.  
@@ -133,38 +121,28 @@ Now we are able to move our player! In the simulator, test out the movement of t
 
 We want cherries to appear randomly on the screen every half a second. In order to do this, go into ``||game:Game||`` in the Toolbox and drag out the ``||game:on game update every||`` block onto the editor.  
 
-Next we will define what a cherry is by going to ``||sprites:Sprites||`` and dragging out the ``||sprites:set agent to||`` block inside the ``||game:on game update every||`` block.  
+Next we will define what a cherry is, by going to ``||sprites:Sprites||`` and dragging out the ``||sprites:set mySprite to||`` block inside the ``||game:on game update every||`` block.  
 
-Click the drop down and change ``agent`` to ``item``. Click the gray square box to draw what you want your item to look like. Then click the drop down that says ``Player`` and click ``Add a new kind...``. Name your kind ``Item``.
+Click the drop down and rename the variable to ``||variables:cherry||``. Click the gray square box to draw what you want your item to look like. Then click the drop down that says ``||sprites:Player||`` and change the kind ``||sprites:Food||``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-    Item
-}
-let item: Sprite = null
+let cherry: Sprite = null
 game.onUpdateInterval(500, function () {
-    item = sprites.create(sprites.food.smallCherries, SpriteKind.Item)
+    cherry = sprites.create(sprites.food.smallCherries, SpriteKind.Food)
 })
 ```
 
-To spawn cherries on the screen, we need to make a random x and y coordinate. Go to the ``||sprites:Sprites||`` tab and drag the ``||sprites:set agent position to||`` inside the ``||sprites:on game update every||`` block. Change ``agent`` to ``item``.  
+To spawn cherries on the screen, we need to set a random x and y coordinate. Go to the ``||sprites:Sprites||`` tab and drag the ``||sprites:set mySprite position to||`` inside the ``||sprites:on game update every||`` block. Change ``||variables:mySprite||`` to ``||variables:cherry||``.  
 
-To make the cherry spawn randomly on the map, go to the ``||math:Math||`` tab and drag one ``||math:pick random||`` block into the x-value of the ``||sprites:set item position to||`` and another into the y-value.  
+To make the cherry spawn randomly on the map, go to the ``||math:Math||`` tab and drag one ``||math:pick random||`` block into the x-value of ``||sprites:set item position to||``. Drag another into the y-value.  
 
 Change the values for the first ``||math:pick random||`` block to `0` and `160`. Change the values for the second ``||math:pick random||`` block to `0` and `120`.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-    Item
-}
-let item: Sprite = null
+let cherry: Sprite = null
 game.onUpdateInterval(500, function () {
-    item = sprites.create(sprites.food.smallCherries, SpriteKind.Item)   
-    item.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
+    cherry = sprites.create(sprites.food.smallCherries, SpriteKind.Food)   
+    cherry.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
 })
 ```
 
@@ -183,12 +161,7 @@ We will add to the score in [Part Six: Picking Up Cherries](#part-six-picking-up
 The game simulator will automatically show the timer and score at the top of the screen.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-    Item
-}
-let agent: Sprite = null
+let mySprite: Sprite = null
 game.splash("Cherry Pickr")
 scene.setTileMap(img`
 6 6 6 6 6 6 6 6 6 6 
@@ -200,38 +173,37 @@ scene.setTileMap(img`
 2 2 2 2 2 2 2 2 2 2 
 a a a a a a a a a a 
 `)
-agent = sprites.create(sprites.castle.princessFront0, SpriteKind.Player)
-controller.moveSprite(agent, 150, 150)
-scene.cameraFollowSprite(agent)
+mySprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player)
+controller.moveSprite(mySprite, 150, 150)
+scene.cameraFollowSprite(mySprite)
 info.startCountdown(60)
 info.setScore(0)
 ```
 
 ## Part Six: Picking Up Cherries
 
-The last task is to let our player to actually collect cherries. Go to ``||sprites:Sprites||`` and under the **Overlaps** category, drag out ``||sprites:on sprite of kind Player overlaps||``. 
+The last task is to let our player to actually collect cherries. Go to ``||sprites:Sprites||`` and, from the **Overlaps** category, drag out ``||sprites:on sprite of kind Player overlaps||``. Change the second ``||sprites:Player||`` kind to ``||sprites:Food||``. The text for the block should now say ``||sprites:on sprite of kind Player overlaps otherSprite of kind Food||``.
 
-Next, in the ``||variables:Variables||`` tab, drag the ``item`` variable onto the ``otherSprite`` variable to replace it. Also, drag out the ``agent`` variable and drop it onto the ``sprite`` variable. Then go to the second ``Player`` drop down and select ``Item``.  
+This block will run every time a ``||sprites:Player||`` sprite overlaps a ``||sprites:Food||`` sprite.
 
 ### Changing the Score
 
-To change the score when the cherry is touched, go to the ``||info:Info||`` tab and drag the ``||info:change score by||`` block into the ``||sprites:on agent of kind Player overlaps||`` block. Leave the value at `1`.  
+To change the score when the cherry is touched, go to the ``||info:Info||`` tab and drag the ``||info:change score by||`` block into the ``||sprites:on sprite of kind Player overlaps||`` block. Leave the value at `1`.  
 
 ### Removing the Item
 
-To remove the cherry that the player picks up, go to ``||sprites:Sprites||`` in the Toolbox and under **Lifecycle**, drag the ``||sprites:destroy||`` block into the ``||sprites:on agent of kind Player overlaps||`` block. Change ``agent`` to ``item``.
+When this block runs, two new variables are created: ``||variables:sprite||`` and ``||variables:otherSprite||``. We need to remove ``||variables:otherSprite||`` from the game, which is the ``||sprites:Food||`` that collided with the ``||sprites:Player||``.
+
+To do so, go to ``||sprites:Sprites||`` in the Toolbox and, under **Lifecycle**, drag the ``||sprites:destroy||`` block into the ``||sprites:on sprite of kind Player overlaps||`` block. Then, drag the ``||variables:otherSprite||`` variable from the top of the block into the ``||sprites:destroy||`` block.
+
+You might notice that the ``||variables:mySprite||`` block is removed from the ``||sprites:destroy||`` block when you replace it with ``||variables:otherSprite||``. You can delete that block by dragging it to the Toolbox.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-    Item
-}
-let item: Sprite = null
-let agent: Sprite = null
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Item, function (agent, item) {
+let cherry: Sprite = null
+let mySprite: Sprite = null
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
-    item.destroy()
+    otherSprite.destroy()
 })
 game.splash("Cherry Pickr")
 scene.setTileMap(img`
@@ -244,17 +216,23 @@ scene.setTileMap(img`
 2 2 2 2 2 2 2 2 2 2 
 a a a a a a a a a a 
 `)
-agent = sprites.create(sprites.castle.princessFront0, SpriteKind.Player)
-controller.moveSprite(agent, 150, 150)
-scene.cameraFollowSprite(agent)
+mySprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player)
+controller.moveSprite(mySprite, 150, 150)
+scene.cameraFollowSprite(mySprite)
 info.startCountdown(60)
 info.setScore(0)
 game.onUpdateInterval(500, function () {
-    item = sprites.create(sprites.food.smallCherries, SpriteKind.Item)
-    item.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
+    cherry = sprites.create(sprites.food.smallCherries, SpriteKind.Food)
+    cherry.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
 })
 ```
 
 And now we have a fully functioning game!
 
 ![Working Game](/static/lessons/cherry-pickr/workinggame.gif)
+
+## ~hint
+
+The variables ``||variables:sprite||`` and ``||variables:otherSprite||`` are called _local variables_. They are created when the block for the collision runs, and they can only be used inside of that block. When that block runs, the ``||variables:sprite||`` variable holds the ``||sprites:Player||`` sprite involved in the collision, and the ``||variables:otherSprite||`` variable holds the ``||sprites:Food||`` sprite.
+
+## ~

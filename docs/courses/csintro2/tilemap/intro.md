@@ -18,7 +18,7 @@ Each pixel in a tile map image translates to and area of 16x16 pixels on the 160
 
 A ``||scene:tile map||`` is called a "map" because it "maps" a tile map color to an image that is stored as a tile.
 
-### Example #1: Making a tile map
+## Example #1: Making a tile map
 
 [![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-intro-tilemap)
 
@@ -45,7 +45,7 @@ In this example, we have used ``||scene:set tile map to||`` to set the tile map 
 1. Start with example #1
 2. Modify the image to create a tile map of your creation (name it "intro tile map 1")
 
-### Example #2: Creating tiles in a tile map
+## Example #2: Creating tiles in a tile map
 
 [![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-tile-in-tilemap)
 
@@ -88,7 +88,7 @@ scene.setTile(5, img`
 1. Start with your "intro tile map 1" code
 2. **Modify** the code to include a tile image that is used in the tile map
 
-### Example #3: Words!
+## Example #3: Words!
 
 [![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-tile-words )
 
@@ -243,7 +243,7 @@ In this example, the tiles are changed to correspond to images with letters on t
 2. Change the ``||scene:tile map||`` image so that it displays "Hello World" instead of just "Word"
 3. **Challenge:** create a new tile with an exclamation mark, and change the tile map so that "Hello World**!**" is displayed
 
-### Example #4: A brand new home
+## Example #4: A brand new home
 
 [![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-tilemap-home )
 
@@ -254,11 +254,6 @@ In this example, the tiles are changed to correspond to images with letters on t
 [NewHome project](https://makecode.com/_2X5PdkLjp5p5)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let HomeOwner: Sprite = null
 HomeOwner = sprites.create(img`
 . . . . . . . . . . . . . . . . 

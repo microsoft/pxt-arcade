@@ -92,11 +92,6 @@ For each example below,
 [Example #1a](https://makecode.com/_HXMRAzYY4YkU)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let mySprite: Sprite = null
 let randomPick = 0
 function generate() {
@@ -142,11 +137,6 @@ generate()
 [Example #1b](https://makecode.com/_LigLWHR00d74)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let mySprite: Sprite = null
 let randomPick = 0
 function generate() {
@@ -198,11 +188,6 @@ generate()
 [Example #1c](https://makecode.com/_FDoAgwhKdh1X)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let mySprite: Sprite = null
 let randomPick = 0
 function generate() {

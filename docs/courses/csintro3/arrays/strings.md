@@ -248,14 +248,10 @@ older work more easily is an important part of software development.
 Note: the ``star`` namespace was also deleted from the example in this lesson.
 
 ```typescript-ignore
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Asteroid,
-    PowerUp,
-    Laser,
-    EnemyLaser
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
+    export const PowerUp = SpriteKind.create();
+    export const Laser = SpriteKind.create();
 }
 
 namespace powerups {

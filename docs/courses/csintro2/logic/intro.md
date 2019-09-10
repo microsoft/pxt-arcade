@@ -55,11 +55,6 @@ When we make comparisons, we have two numbers, in a specific order, and what is 
 [Less Than Example](https://makecode.com/_YERAiggVK6mH)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let mySprite: Sprite = null
 let projectile: Sprite = null
 sprites.onDestroyed(SpriteKind.Enemy, function (sprite) {
@@ -108,10 +103,10 @@ c a 8 a a c c c c a a f f f 8 a
 . . . c c b b b 6 6 a c c c c . 
 . . . . c c a b b c c c . . . . 
 . . . . . c c c c c c . . . . . 
-`, -300, 0, SpriteKind.Enemy)
+`, -150, 0, SpriteKind.Enemy)
     projectile.setPosition(scene.screenWidth(), Math.randomRange(0, scene.screenHeight()))
     if (info.score() < 10) {
-        projectile.vx += 200
+        projectile.vx += 100
     }
 })
 ```
@@ -152,11 +147,8 @@ The player is on the left half of the screen if their ``||sprites:x position||``
 [Greater than example](https://makecode.com/_3M85jR4tCAXA)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Cherry
+namespace SpriteKind {
+    export const Cherry = SpriteKind.create();
 }
 let projectile: Sprite = null
 let mySprite: Sprite = null
@@ -230,11 +222,6 @@ When the player collects a cherry, if the player has collected more than 5, then
 [Equality Example](https://makecode.com/_3pgH9LA5kL9b)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let projectile: Sprite = null
 let mySprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -323,11 +310,6 @@ When the player is on their final life, the image of the sprite changes and the 
 [Multiple comparisons](https://makecode.com/_FhqaRpe6Riau)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (mySprite.x < scene.screenWidth() / 2) {

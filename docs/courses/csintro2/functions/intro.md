@@ -16,20 +16,17 @@ Functions allow us to break up code into different sections. In doing so, we can
 
 ## Example #1a: Creating Sprites
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-redundant-example)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-refactoring)
 
 1. Review the code below 
 2. Create the sample code and run the code
 3. Save the code for the example (name it "placeSprites")
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Human,
-    Cow,
-    Asteroid
+namespace SpriteKind {
+    export const Human = SpriteKind.create();
+    export const Cow = SpriteKind.create();
+    export const Asteroid = SpriteKind.create();
 }
 let asteroid: Sprite = null
 let cow: Sprite = null
@@ -89,13 +86,10 @@ In the next examples, we will simplify the ``||loops:on start||`` code by splitt
 3. Save the code for the example (name it "placeSpritesWithFunctions")
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Human,
-    Cow,
-    Asteroid
+namespace SpriteKind {
+    export const Human = SpriteKind.create();
+    export const Cow = SpriteKind.create();
+    export const Asteroid = SpriteKind.create();
 }
 let asteroid: Sprite = null
 let cow: Sprite = null
@@ -159,7 +153,7 @@ Each function ends up being a chapter in the book with more details on what exac
 
 ## Student Task #1a: Make your own Functions
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-redundant-task1)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-refactoring-task1a)
 
 1. Review the code below 
 2. Create the sample code and run the code
@@ -177,13 +171,10 @@ Try re-ordering the ``||functions:function calls||`` in your ``||loops:on start|
 ### ~
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Human,
-    Cow,
-    Asteroid
+namespace SpriteKind {
+    export const Human = SpriteKind.create();
+    export const Cow = SpriteKind.create();
+    export const Asteroid = SpriteKind.create();
 }
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
@@ -216,7 +207,7 @@ info.startCountdown(10)
 
 ## Student Task #1b: Functions in Events
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-redundant-task2)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-refactoring-task2a)
 
 Functions can be used throughout your code - not just in the ``||loops:on start||`` block. 
 
@@ -232,11 +223,8 @@ In this task, we will clean up the ``||controller:on A button pressed||`` event 
     * an additional function (for example, ``||functions:playerConversation||``, or ``||functions:movePlayer||``)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Princess,
-    Enemy
+namespace SpriteKind {
+    export const Princess = SpriteKind.create();
 }
 let princess: Sprite = null
 let player: Sprite = null

@@ -18,11 +18,6 @@ This sprite example is larger than the default 16x16, and uses a custom variable
 [![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-collage1)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let hotSauce: Sprite = null
 scene.setBackgroundColor(1)
 hotSauce = sprites.create(img`
@@ -74,11 +69,6 @@ If the sprites are not moving to where you expect them to when you set their coo
 ### ~
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let hotSauce: Sprite = null
 hotSauce = sprites.create(img`
 . . 3 . . . . 2 . . . . . . . 3 . . . . . . 3 . . . . . . . . . 

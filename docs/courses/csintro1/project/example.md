@@ -10,7 +10,7 @@ After identifying three unique concepts for a game, we chose our favorite as a g
 
 We discussed the idea for the game with another group. They thought it would be cool if the trampolines moved around, making it harder for the player to score points, and we agreed.
 
-![Initial Drawing](/static/courses/csintro1/project/trampoline-drawing.png)
+![Initial Drawing](/static/courses/csintro1/project/trampoline-drawing.jpg)
 
 We create the following list of features that were the most **crucial** to implement in order to make this game fun:
 
@@ -245,12 +245,9 @@ Unfortunately, at this point, we could not figure out how to end the game based 
 We came up with the following game to turn in for this project.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Trampoline,
-    Wall
+namespace SpriteKind {
+    export const Trampoline = SpriteKind.create();
+    export const Wall = SpriteKind.create();
 }
 let player: Sprite = null
 let trampoline: Sprite = null

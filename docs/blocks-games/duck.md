@@ -3,12 +3,6 @@
 Jump to avoid the trees!
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
 enum ActionKind {
     Walking,
     Idle,

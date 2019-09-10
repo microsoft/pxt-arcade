@@ -3,12 +3,6 @@
 Dodge the junk and eat the fruits!
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
 let projectile: Sprite = null
 let mySprite: Sprite = null
 let choice = 0

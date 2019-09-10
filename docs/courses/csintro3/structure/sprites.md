@@ -80,11 +80,6 @@ the image editor, and sprite ``||sprites:kinds||``.
 and the portions that are different
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile
-}
-
 let player = sprites.create(img`
     . . . . . . b . b . . . . . . . 
     . . . . . f b b b f f . . . . . 
@@ -158,10 +153,8 @@ allow portions of code to be collapsed depending on the level of indentation.
 How is it different?
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Square
+namespace SpriteKind {
+    export const Square = SpriteKind.create();
 }
 
 let square = sprites.create(img`
@@ -200,9 +193,8 @@ These properties and functions can be easily browsed using the autocomplete feat
 3. Notice the use of ``||loops:pause||`` to make the modification occur after 1 second
 
 ```typescript
-enum SpriteKind {
-    Square,
-    Projectile
+namespace SpriteKind {
+    export const Square = SpriteKind.create();
 }
 
 let player = sprites.create(img`
@@ -263,10 +255,8 @@ is created **before** or **after** the loop added in the previous activity.
 ### Solution
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Asteroid
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
 }
 
 namespace asteroids {

@@ -77,11 +77,6 @@ instead of having to stick with the default behavior.
 3. Identify which ``||controller:button||``(s) cause the event to trigger
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let mySprite: Sprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player);
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite.x -= 5;
@@ -110,11 +105,6 @@ Identify which events occurs
 4. Release the button, and identify which event occurs
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let topSprite: Sprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player);
 let middleSprite: Sprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player);
 let bottomSprite: Sprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player);

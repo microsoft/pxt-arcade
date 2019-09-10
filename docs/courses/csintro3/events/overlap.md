@@ -34,12 +34,6 @@ the ``||sprites:sprite||`` of the other kind that is listed.
 and which is ``||variables:enemy||``
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
-
 let mySprite = sprites.create(img`
     1 1 1
 `, SpriteKind.Player);
@@ -82,12 +76,6 @@ this can be done using ``||sprites:setFlag||``.
 into a ``||sprites:Ghost||`` 
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
-
 let mySprite = sprites.create(img`
     1 1 1
 `, SpriteKind.Player);
@@ -126,10 +114,9 @@ in particular, the sections that will
     * give the ``||variables:ball||`` an initial position
 
 ```typescript
-enum SpriteKind {
-    Paddle,
-    Projectile,
-    Ball
+namespace SpriteKind {
+    export const Paddle = SpriteKind.create();
+    export const Ball = SpriteKind.create();
 }
 
 let paddle: Sprite = sprites.create(img`

@@ -19,11 +19,6 @@ Use the coordinate walker example to move around the screen and track `X` and `Y
 Open the [coordinate walker program](https://makecode.com/_huXKRL3r24iC) or open the simulator for the following code to complete the tasks.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     game.splash("X=" + Math.trunc(player1.x) + " Y=" + Math.trunc(player1.y))
 })

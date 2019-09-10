@@ -29,7 +29,25 @@ BTN_LEFT2=10
 BTN_UP2=22
 BTN_RIGHT2=27
 BTN_DOWN2=17
+BTN_A3=21
+BTN_B3=20
+BTN_LEFT3=16
+BTN_UP3=12
+BTN_RIGHT3=1
+BTN_DOWN3=7
+BTN_A4=8
+BTN_B4=25
+BTN_LEFT4=24
+BTN_UP4=23
+BTN_RIGHT4=18
+BTN_DOWN4=15
 ```
+
+### Update ``config.txt``
+
+If supported by your screen, uncomment this line in ``config.txt``.
+
+    disable_overscan=1
 
 ## Test the firmware
 
@@ -46,7 +64,7 @@ You should see the game selection dialog on the screen.
 
 ### Download the configuration program
 
-Download or copy the **[Configuration Program](https://makecode.com/_332e7oWrDYoa)** into the [MakeCode Arcade](@homeurl@) editor and then download the .UF2 file onto the
+Download or copy the **[Configuration Program](https://makecode.com/_gCyify35UE4K)** into the [MakeCode Arcade](@homeurl@) editor and then download the .UF2 file onto the
 SD card.
 
 ![A screenshot of the configuration game](/static/hardware/raspberry-pi/cardboard-control-panel/configurator.png)
@@ -67,7 +85,7 @@ Use the Test Program to identity which header is Ground on the Raspberry Pi Zero
 You should have **3 jumper wires** with **female header** connectors wrapped with electrical tape. These connect to the **GROUND**
 pins.
 
-### Connect the all of the buttons except EXIT, MENU
+### Connect the all of the buttons except EXIT, MENU, RESET
 
 Use the Test Program to determine which header the buttons will go to. You can connect them randomly then use the program to reorder them:
 
@@ -79,15 +97,20 @@ Use the Test Program to determine which header the buttons will go to. You can c
 <br/>
 https://youtu.be/-P5I_BzoYdg
 
-#### ~ hint
-
-This process is **much** easier if you name each jumper wire with a label using clear tape and a marker.
-
-#### ~
-
 ### Connect EXIT, MENU
 
 Use the program to determine which header those buttons will go to.
 
 - [ ] pressing EXIT exits the current game and goes back to the selection screen.
 - [ ] pressing MENU will pop up the game menu
+
+### Update or customize the menu
+
+If you want to customize the menu displayed on the Pi, 
+
+* clone https://github.com/microsoft/pxt-arcade-cabinet-menu
+* follow instructions to build project
+* click ``|Download|`` and select the **Pi 0** hardware profile
+* test your menu changes in the simulator
+* make sure that your project is named **.menu**
+* **Compile** and drop the menu into your ARCADE drive after connecting your Pi to the computer. 

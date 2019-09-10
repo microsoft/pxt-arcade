@@ -1,6 +1,6 @@
 # Bouncing Burger
 
-[Open this tutorial in the editor!](/#tutorial:concepts/bouncing-burger)
+[Open this tutorial in the editor!](/#tutorial:/concepts/bouncing-burger)
 
 ## Introduction @unplugged
 
@@ -11,13 +11,6 @@
 Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
-
 let mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -45,13 +38,6 @@ Click on the grey box in ``||variables:set mySprite to||`` to open the image edi
 This will set the image of the ``||sprites:Sprite||`` to a burger; run the code and make sure you see it on the screen!
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
-
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . . . . . . c c c c c 6 6 6 6 6 . . . . . . . . . . . 
@@ -96,13 +82,6 @@ Find ``||sprites:set mySprite x to 0||`` in ``||sprites:Sprites||``. Place it af
 This will make the sprite move to the **right** across the screen, because the ``||sprites:x||`` position will be **increasing**.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
-
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . . . . . . c c c c c 6 6 6 6 6 . . . . . . . . . . . 
@@ -148,13 +127,6 @@ Find ``||sprites:set mySprite x to 0||`` in ``||sprites:Sprites||``. Place it af
 This will make the sprite move **downwards** across the screen, because the ``||sprites:y||`` position will be **increasing**.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
-
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . . . . . . c c c c c 6 6 6 6 6 . . . . . . . . . . . 
@@ -199,13 +171,6 @@ mySprite.vy = 60
 Find ``||sprites:set mySprite stay in screen||`` in ``||sprites:Sprites||``. Place it after ``||variables:set mySprite to||``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
-
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . . . . . . c c c c c 6 6 6 6 6 . . . . . . . . . . . 
@@ -254,13 +219,6 @@ Change ``||sprites:stay in screen||`` to ``||sprites:bounce on wall||``, and cli
 This will make it so that when the burger its a wall, it will 'bounce' off the wall, changing the ``||sprites:vx||`` or ``||sprites:vy||``
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
-
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . . . . . . c c c c c 6 6 6 6 6 . . . . . . . . . . . 

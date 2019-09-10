@@ -127,6 +127,12 @@ declare namespace control {
     function millis(): int32;
 
     /**
+     * Gets current time in microseconds. Overflows every ~18 minutes.
+     */
+    //% shim=control::micros
+    function micros(): int32;
+
+    /**
      * Used internally
      */
     //% flags.defl=16 shim=control::internalOnEvent
@@ -167,6 +173,13 @@ declare namespace control {
     //% blockId="control_device_serial_number" block="device serial number" weight=9
     //% help=control/device-serial-number shim=control::deviceSerialNumber
     function deviceSerialNumber(): int32;
+
+    /**
+     * Derive a unique, consistent 64-bit serial number of this device from internal data.
+     */
+    //% blockId="control_device_long_serial_number" block="device long serial number" weight=9
+    //% help=control/device-long-serial-number shim=control::deviceLongSerialNumber
+    function deviceLongSerialNumber(): Buffer;
 
     /**
      *

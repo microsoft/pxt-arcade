@@ -61,11 +61,6 @@ When we have a boolean value, we have seen that we can write code that runs when
 [Example #2](https://makecode.com/_Ug9eu36KRW2o)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let mySprite: Sprite = null
 let isHungry = false
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -121,11 +116,6 @@ We can also use the ``||logic:not||`` block when assigning a boolean. So if we w
 ## Example #3: Alternating Booleans
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let projectile: Sprite = null
 let left = false
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {

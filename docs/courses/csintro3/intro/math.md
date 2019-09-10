@@ -45,7 +45,7 @@ let num: number = 5 + 3 * 2;
 ### Example #1c: Division and Multiplication
 
 ```block
-let num: number = 5 + 3 * 2;
+let num: number = 24 / 3 * 4;
 ```
 
 ```typescript-ignore
@@ -58,7 +58,7 @@ let num: number = 24 / 3 * 4;
 2. Recreate the expression below in **JavaScript**
 3. To confirm the JavaScript expression is correct, switch to Blocks
 and check that the result is the same
-4. **Challenge:** change the ``+`` to a ``-``, and switch back to JavaScript.
+4. **Challenge:** change the ``+`` to a ``×``, and switch back to JavaScript.
 What has changed?
 
 ```blocks
@@ -192,9 +192,8 @@ stores ``||scene:screen.width / 2||``, and ``||variables:y||`` stores
 ### Solution
 
 ```typescript
-enum SpriteKind {
-    Asteroid,
-    Projectile
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
 }
 
 namespace asteroids {

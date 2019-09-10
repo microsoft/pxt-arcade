@@ -27,12 +27,6 @@ sprite interact with the scene
 event correspond to the type of tile that is used?
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
-
 let mySprite: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player);
 controller.moveSprite(mySprite, 100, 100);
 
@@ -134,10 +128,8 @@ in different locations around the map.
 ``||scene:tile map||``. Can it be placed in between two tiles?
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Flower
+namespace SpriteKind {
+    export const Flower = SpriteKind.create();
 }
 scene.setTileMap(img`
     7 6 7 6 7 6 7 6 7 6 
@@ -195,10 +187,8 @@ scene.getTilesByType(0);
 4. Identify how the ``||scene:Tile||`` ``||arrays:array||`` is used
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Flower
+namespace SpriteKind {
+    export const Flower = SpriteKind.create();
 }
 
 scene.setTileMap(img`

@@ -26,11 +26,6 @@ In these activities, the student will use:
 3. Save the code for the task (name it "motionLR")
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let agent: Sprite = null
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     agent.x += 3
@@ -81,11 +76,6 @@ If we have a positive `X` velocity, for example, then our sprite will continue t
 3. Save the code for the task (name it "velocityLR")
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let agent: Sprite = null
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     agent.vx += 1
@@ -136,11 +126,6 @@ We have created motion by capturing the key pad events and incrementing (or decr
 5. Note the blocks in ``||game:on game update||``
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let ball: Sprite = null
 scene.setBackgroundColor(1)
 ball = sprites.create(img`
@@ -198,11 +183,6 @@ Flipping an image creates a mirror image when we use ``||images:flip horizontal|
 5. Find the ``||sprites:sprite image||`` block in the sprites menu that is the image that is flipped
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 function flipHorizontal() {
     mySprite.image.flipX()
     pause(200)

@@ -12,11 +12,18 @@
         "sprites.duck.ts",
         "sprites.castle.jres",
         "sprites.castle.ts",
+        "sprites.builtin.jres",
+        "sprites.builtin.ts",
+        "sprites.dialog.jres",
+        "sprites.dialog.ts",
+        "sprites.dungeon.jres",
+        "sprites.dungeon.ts",
         "sprites.space.jres",
         "sprites.space.ts",
         "sprites.vehicle.ts",
         "sprites.vehicle.jres",
-        "startup.ts"
+        "startup.ts",
+        "pxtsnippets.json"
     ],
     "core": true,
     "dependencies": {

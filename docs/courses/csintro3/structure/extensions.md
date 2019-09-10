@@ -1,4 +1,4 @@
-# Activity: Corgio Extension
+# Activity: Corgio Extension in JavaScript
 
 In previous lessons, the ``||corgio:Corgio||`` extension handled the intricate
 parts of making a character for a platformer.
@@ -23,22 +23,10 @@ The ``||corgio:Corgio||`` extension remains easy to use in JavaScript.
 For example, ``||corgio:corgio.create||`` can be used to create a new ``||corgio:Corgio||``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
-
 let myCorg: Corgio = corgio.create(SpriteKind.Player);
 ```
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
-
 let myCorg: Corgio = corgio.create(SpriteKind.Player);
 ```
 
@@ -65,23 +53,11 @@ it so the ``||corgio:Corgio||`` can move left and right across the screen.
 behavior of the ``||corgio:Corgio||``
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
-
 let myCorg: Corgio = corgio.create(SpriteKind.Player);
 myCorg.horizontalMovement();
 ```
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
-
 let myCorg: Corgio = corgio.create(SpriteKind.Player);
 myCorg.horizontalMovement();
 ```
@@ -110,12 +86,6 @@ Another feature of the ``||corgio:Corgio||`` is to maintain a group of words
 the ``||corgio:Corgio||`` has learned to ``||corgio:bark||``. 
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
-
 let myCorg: Corgio = corgio.create(SpriteKind.Player);
 myCorg.addToScript("bark");
 myCorg.bark();

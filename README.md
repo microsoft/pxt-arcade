@@ -115,15 +115,15 @@ npm run build
 
 ```
 npm install
-npm link ../pxt
+pxt link ../pxt
 ```
 
 * go to ``pxt-arcade`` and run
 
 ```
 npm install
-npm link ../pxt
-npm link ../pxt-common-packages
+pxt link ../pxt
+pxt link ../pxt-common-packages
 ```
 
 ## to run the local server
@@ -132,7 +132,7 @@ From root github folder,
 
 ```
 cd pxt-arcade
-pxt serve
+pxt serve --rebundle
 ```
 
 More instructions at https://github.com/Microsoft/pxt#running-a-target-from-localhost

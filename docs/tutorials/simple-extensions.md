@@ -11,10 +11,6 @@ Extensions in @boardname@ allow users to easily develop and share portions of th
 The first thing we'll do is make our corgio. Find the ``||variables:set myCorg to||`` in ``||corgio:Corgi||``. Drag it into the ``||loops:on start||``. The corgio should appear on the left side of the screen.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
 let myCorg: Corgio = null
 myCorg = corgio.create(SpriteKind.Player)
 ```
@@ -24,10 +20,6 @@ myCorg = corgio.create(SpriteKind.Player)
 Now, let's make our sprite figure move left and right with the controller arrow keys. Get a ``||corgio:make myCorg move left and right with arrow keys||`` and a ``||corgio:make myCorg jump if up arrow key is pressed||`` from ``||corgio:Corgi||`` and put it under ``||variables:set myCorg to||``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
 let myCorg: Corgio = null
 myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
@@ -38,10 +30,6 @@ myCorg.horizontalMovement()
 The corgio is a bit boring when it's image doesn't change; to fix this, get a ``||corgio:change image when myCorg is moving||`` block from ``||corgio:Corgio||`` and put it under ``||variables:set myCorg to||``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
 let myCorg: Corgio = null
 myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
@@ -54,10 +42,6 @@ myCorg.updateSprite()
 Pull ``||scene:set tile to with wall||`` from ``||scene:Scene||`` into ``||loops:on start||``. Fill the whole tile with one color in the image editor. Click on the color bubble in ``||scene:set tile to with wall||`` and change the color index to the same color you filled the tile with. Click the ``wall`` setting to `ON`.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
 let myCorg: Corgio = null
 myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
@@ -90,10 +74,6 @@ Add a ``||scene:set tile map||`` to ``||loops:on start||``. For it's image, crea
 ![Drawing a platform](/static/tutorials/simple-extensions/draw-platforms.gif)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
 let myCorg: Corgio = null
 myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
@@ -134,10 +114,6 @@ scene.setTile(4, img`
 Open up the image editor of ``||scene:set tile map||`` again, and change the size of the image until you get to **32x8**. Draw more platforms for the corgio to jump on.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
 let myCorg: Corgio = null
 scene.setTileMap(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . 4 . . . . . . 
@@ -178,10 +154,6 @@ scene.setTile(4, img`
 To make it so the camera follows the corgio as it leaves the screen, add ``||corgio:make camera follow myCorg left and right||`` from ``||corgio:Corgio||`` and put it under ``||variables:set myCorg to||``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
 let myCorg: Corgio = null
 scene.setTileMap(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . 4 . . . . . . 
@@ -225,10 +197,6 @@ At the end of the tile map, draw a column that is a different color than the cur
 ![Add winning event](/static/tutorials/simple-extensions/add-goal.png)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
 let myCorg: Corgio = null
 scene.setTileMap(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . 4 . . . . . 7 
@@ -290,10 +258,6 @@ Add a ``||scene:on sprite of kind Player hits wall||`` block from ``||scene:Scen
 ![Add winning event](/static/tutorials/simple-extensions/game-win-event.gif)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
 let myCorg: Corgio = null
 scene.onHitTile(SpriteKind.Player, 7, function (sprite) {
     game.over(true)

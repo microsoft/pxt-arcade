@@ -34,6 +34,10 @@
         "name": "Case Study Additions",
         "url": "/courses/csintro3/structure/additions",
         "imageUrl": "/static/courses/csintro3/structure/additions.gif"
+    }, {
+        "name": "Project",
+        "url": "/courses/csintro3/structure/project",
+        "imageUrl": "/static/courses/csintro3/structure/project.gif"
     }
 ]
 ```
@@ -43,6 +47,7 @@
 * [Sprites](/courses/csintro3/structure/sprites)
 * [Projectiles](/courses/csintro3/structure/projectiles)
 * [Tile Maps](/courses/csintro3/structure/tilemaps)
-* [Corgio Extension](/courses/csintro3/structure/extensions)
+* [Corgio Extension in JavaScript](/courses/csintro3/structure/extensions)
 * [Namespaces](/courses/csintro3/structure/namespaces)
 * [Case Study Additions](/courses/csintro3/structure/additions)
+* [Project](/courses/csintro3/structure/project)

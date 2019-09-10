@@ -27,12 +27,9 @@ We can make even make our own packages of code to share or reuse in our games.
 ![Finding Dart Extension](/static/courses/csintro2/functions/finding-darts.gif)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Foot_Ball,
-    Goal
+namespace SpriteKind {
+    export const Foot_Ball = SpriteKind.create();
+    export const Goal = SpriteKind.create();
 }
 let mySprite: Sprite = null
 let myDart: Dart = null
@@ -113,8 +110,6 @@ Creating new blocks like the ones in example #1 requires the use of JavaScript o
 
 ## Example #2: Spawn a Single Bird
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-starrynight)
-
 Follow these steps as shown in the video
 
 1. Review the code below, and load it into a new project (name it "birdy")
@@ -135,11 +130,6 @@ Do any of the names of the tabs in the explorer look similar to the name of the 
 ### ~
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let projectile: Sprite = null
 projectile = sprites.createProjectile(img`
 . . . . . . . . . . . . . . . . 
@@ -162,6 +152,8 @@ projectile = sprites.createProjectile(img`
 ```
 
 ## Student Task #2: Making the Stars go by
+
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-starrynight)
 
 1. Create a new project (name it "starryNight") that we will include in other projects
 2. Add an ``||game:on game update every 500ms||`` block

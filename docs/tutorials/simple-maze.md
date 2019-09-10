@@ -17,12 +17,6 @@ Welcome to @boardname@! Let's get started by creating a simple game where your p
 The first thing we'll do is make our player. Find the ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -51,12 +45,6 @@ Click on the grey box in ``||variables:set mySprite to||`` and draw your player'
 ![Draw a figure for the sprite](/static/tutorials/simple-maze/draw-sprite-figure.gif)
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -83,12 +71,6 @@ mySprite = sprites.create(img`
 Now, let's make our sprite figure move with the controller arrow keys. Get a ``||controller:move mySprite with buttons||`` from ``||controller:Controller||`` and put it under ``||variables:set mySprite to||``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -116,12 +98,6 @@ controller.moveSprite(mySprite, 100, 100)
 Next, make a tile to set into the scene. Pull ``||scene:set tile to with wall||`` from ``||scene:Scene||`` into ``||loops:on start||``. Fill the whole tile with one color in the image editor.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -167,12 +143,6 @@ a a a a a a a a a a a a a a a a
 Click on the color bubble in ``||scene:set tile to with wall||`` and change the color index to the same color you filled the tile with. Turn the ``wall`` setting `ON`.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -218,12 +188,6 @@ a a a a a a a a a a a a a a a a
 Add a ``||scene:set tile map||`` to ``||loops:on start||``. For its image, draw a maze using the same color as the tile you just made. Leave an opening on the left side of the maze.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -279,12 +243,6 @@ a a a a a a a a a a
 Put a ``||info:start countdown||`` after ``||scene:set tile map||`` to set the amount of time for the game.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -372,7 +330,7 @@ game.onUpdate(function () {
 
 ## Step 11
 
-Put a ``||game:game over||`` inside of ``||logic:if then||``. Click the **(+)** symbol and click on the ``LOSE`` button to make it say ``WIN``.
+Put a ``||game:game over||`` inside of ``||logic:if then||``. Click on the ``LOSE`` toggle switch to make it say ``WIN``.
 
 ```blocks
 let mySprite: Sprite = null

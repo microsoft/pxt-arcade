@@ -3,12 +3,6 @@
 An example program that uses blocks and built-in images.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Food
-}
 let asteroids: Image[] = []
 let ship: Sprite = null
 let projectile: Sprite = null

@@ -33,11 +33,6 @@ slightly different images of the same character that can be used to
 'animate' the sprite.
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let duck: Sprite = sprites.create(sprites.duck.duck1, SpriteKind.Player);
 for (let i = 0; i < 10; i++) {
     duck.setImage(sprites.duck.duck1);
@@ -71,12 +66,6 @@ Add the following images to create an animation like the one below.
 Review the code in the snippet below.
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
-
 let hero: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player);
 
 pause (1000);

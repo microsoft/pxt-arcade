@@ -16,11 +16,6 @@ In this activity, students will use:
 There are many games that have sprites sending out projectile sprites. We can set projectiles to originate from a sprite to drop coins, create obstacles, kick a ball or send a laser beam to destroy an asteroid by using ``||sprites:projectile from sprite||``.
 
 ```block
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let ball: Sprite = null
 let mySprite: Sprite = null
 ball = sprites.createProjectileFromSprite(img`
@@ -42,11 +37,6 @@ ball = sprites.createProjectileFromSprite(img`
 3. Save the code for the task (name it "Throw Ball") 
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let mySprite: Sprite = null
 let ball: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -106,10 +96,6 @@ We can use projectiles to create an animation. The following examples build a pr
 ### Example #2a: Cloud projectile
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile
-}
 let cloud: Sprite = null
 cloud = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
@@ -138,11 +124,6 @@ There's not much to this code; it spawns a cloud, which slowly moves across the 
 Review the code carefully for the use of ``||sprites:ghost on||`` and ``||sprites:projectile from sprite||`` for the raindrop projectiles. 
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile
-}
-
 let raindrop: Sprite = null
 let cloud: Sprite = null
 cloud = sprites.createProjectileFromSide(img`
@@ -200,11 +181,6 @@ raindrop.x += Math.randomRange(1, 14)
 ```
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile
-}
-
 let raindrop: Sprite = null
 let cloud: Sprite = null
 cloud = sprites.createProjectileFromSide(img`
@@ -255,10 +231,8 @@ game.onUpdateInterval(50, function () {
 The ghost raindrop sprites don't cause an overlap event. We can use other events though, like ``||sprites:on sprite destroyed||``. We can count the raindrops that make it to the bottom of the screen by adding them up in their destroyed event.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Cloud
+namespace SpriteKind {
+    export const Cloud = SpriteKind.create();
 }
 
 let raindrop: Sprite = null

@@ -21,11 +21,6 @@ One way in which we can use arrays of strings is to form a "script" for our spri
 3. Save the code for the example (name it "Princess Dialogue")
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let text_list: string[] = []
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
@@ -83,6 +78,8 @@ In Blocks, this is the ``||loops:for element||`` loop, but the behavior is often
 
 ### ~
 
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-array-string2)
+
 ## Student Task #1b: Using ``||loops:for element||``
 
 1. Start with the code from task #1a
@@ -93,8 +90,6 @@ In Blocks, this is the ``||loops:for element||`` loop, but the behavior is often
 
 Another way in which you can use string arrays in your games is to create reactions to different events - for example, the player running into another character, or losing a life. This can be used both to personalize your game, and to make the game feel more alive, as the characters respond 'randomly' to the player's actions.
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-array-string2)
-
 ## Example #2: Reacting to Collisions
 
 1. Review the code below
@@ -102,11 +97,6 @@ Another way in which you can use string arrays in your games is to create reacti
 3. Save the code for the example (name it "Princess Dialogue")
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let text_list: string[] = []
 let mySprite: Sprite = null
 scene.onHitTile(SpriteKind.Player, 15, function (sprite) {

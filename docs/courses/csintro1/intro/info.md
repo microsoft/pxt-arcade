@@ -99,11 +99,6 @@ When a nurse needs to take a patient's heart rate with their other vital signs, 
 7. **Challenge:** instead of outputting an exact estimate, give a range that the button presses will likely fall into - estimate this by making the low end of the range correspond to `(score - 1) * 10`, and the high end of the range correspond to `(score + 1) * 10`. For example, if the score were 5, the output should be something along the lines of "between 40 and 60"
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
 })
@@ -140,11 +135,6 @@ When doing the challenge, remember to pay careful attention to the order of oper
 To join more than just two strings and numbers, press the **+** to add more locations to combine strings
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 

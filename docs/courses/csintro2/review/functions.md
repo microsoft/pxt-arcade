@@ -7,11 +7,6 @@ Functions allow for code to be structured and reused. In this example, start by 
 ## Starter Code
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
 let mySprite: Sprite = null
 let index = 0
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {

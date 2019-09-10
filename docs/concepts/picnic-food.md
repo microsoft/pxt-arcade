@@ -1,6 +1,6 @@
 # Picnic Food
 
-[Open this tutorial in the editor!](/#tutorial:concepts/picnic-food)
+[Open this tutorial in the editor!](/#tutorial:/concepts/picnic-food)
 
 ## Introduction @unplugged
 
@@ -15,12 +15,6 @@ A ``||sprites:y||`` position of 0 will place the sprite at the **top** of the sc
 Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``. Click on ``||variables:mySprite||``, select ``rename variable...``, and change the name from ``||variables:mySprite||`` to ``||variables:cherry||``.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
 let cherry = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -46,12 +40,6 @@ let cherry = sprites.create(img`
 Open the image editor for ``||variables:cherry||``. You can either draw your own image of a cherry, or open the Gallery and find a premade picture in there.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
 let cherry: Sprite = null
 cherry = sprites.create(img`
 . . . . . . . . . . . 6 6 6 6 6 
@@ -80,12 +68,6 @@ Find ``||sprites:set mySprite position to x 0 y 0||`` in ``||sprites:Sprites||``
 This will place the ``||variables:cherry||`` at the top of the screen, a little bit away (25 pixels) from the left side.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
 let cherry: Sprite = null
 cherry = sprites.create(img`
 . . . . . . . . . . . 6 6 6 6 6 
@@ -115,12 +97,6 @@ In ``||sprites:set mySprite position to x 0 y 0||``, change ``||sprites:y||`` to
 This will move the sprite **down** the screen by 45 pixels.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
 let cherry: Sprite = null
 cherry = sprites.create(img`
 . . . . . . . . . . . 6 6 6 6 6 
@@ -148,12 +124,6 @@ cherry.setPosition(25, 45)
 Create another ``||sprites:Sprite||``, and rename it ``||variables:chicken||``. Find (or create) an image of chicken to represent it.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
 let chicken: Sprite = null
 let cherry: Sprite = null
 cherry = sprites.create(img`
@@ -200,12 +170,6 @@ chicken = sprites.create(img`
 Set the ``||variables:chicken||``'s ``||sprites:x||`` position 120, and it's ``||sprites:y||`` position to 80.
 
 ```blocks
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
 let chicken: Sprite = null
 let cherry: Sprite = null
 cherry = sprites.create(img`

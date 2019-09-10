@@ -72,12 +72,7 @@ With the default ``SpriteKind`` in blocks,
 this corresponds to ``SpriteKind.Projectile``.
 
 ```typescript-ignore
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
+
 ```
 
 If you need to use another ``SpriteKind``,
@@ -201,13 +196,6 @@ You can find more details and examples of effects in the documentation for
 3. Identify how ``effects.blizzard`` is used to create a 'snowstorm' background
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Food,
-    Enemy
-}
-
 let myLogs = sprites.create(img`
     e e e e . . . . . e e . . . . .
     . e e e e e . e e e d e e . . .
@@ -274,10 +262,8 @@ and ``||variables:player.y||`` instead of ``||variables:y||``.
 ### Solution
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Asteroid
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
 }
 
 namespace asteroids {

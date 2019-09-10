@@ -1,0 +1,18 @@
+{
+    "frames": [
+        "NorthWest0",
+        "North",
+        "NorthEast0",
+        "East",
+        "SouthEast0",
+        "South",
+        "SouthWest0",
+        "West",
+        "Center",
+        "NorthWest1",
+        "NorthEast1",
+        "SouthEast1",
+        "SouthWest1"
+    ],
+    "tags": "tile"
+}

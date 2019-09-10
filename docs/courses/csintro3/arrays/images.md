@@ -24,12 +24,6 @@ individual variables.
 different ``||images:images||`` of the ``||sprites:ducks||``
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
-
 let characterImages: Image[] = [
     sprites.duck.duck1,
     sprites.duck.duck2,
@@ -118,12 +112,6 @@ short for modulo or modulus.
 within the ``||images:image||`` ``||arrays:array||``
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy
-}
-
 let characterImages: Image[] = [
     sprites.duck.duck1,
     sprites.duck.duck2,
@@ -176,11 +164,8 @@ and what happens to the image originally set for the ``||sprites:Sprite||``
 ``||math:random||`` ``||images:image||``
 
 ```typescript
-enum SpriteKind {
-    Player,
-    Projectile,
-    Enemy,
-    Asteroid
+namespace SpriteKind {
+    export const Asteroid = SpriteKind.create();
 }
 
 let asteroids: Image[] = [
