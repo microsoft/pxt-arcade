@@ -20,6 +20,7 @@ Games submitted by the MakeCode community.
         "description": "Avoid enemy attacks while launching your own in this difficult boss battle, by henrym",
         "author": "henrym",
         "url": "https://forum.makecode.com/t/blocky-boss-battle/421",
+        "cardType": "forumUrl",
         "imageUrl": "/static/community/blocky-boss-battle/blocky-boss-battle.png",
         "largeImageUrl": "/static/community/blocky-boss-battle/blocky-boss-battle.gif"
     },
