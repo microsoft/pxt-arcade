@@ -127,7 +127,7 @@ export class SideBar {
             .id("sprite-editor-tools")
             .translate(0, TOOL_BUTTON_TOP);
 
-        this.pencilTool = this.initButton(("Pencil"), "\uf0b2", PaintTool.Normal);
+        this.pencilTool = this.initButton(("Pencil"), "\uf040", PaintTool.Normal);
 
         this.eraseTool = this.initButton(("Erase"), "\uf12d", PaintTool.Erase);
         this.eraseTool.translate(1 + TOOL_BUTTON_WIDTH + INNER_BUTTON_MARGIN, 0);
