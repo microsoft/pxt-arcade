@@ -395,6 +395,8 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
     onTabChange(idx: number) {
         this.save()
         this.setState({ currentImg: idx })
+        if (IsGameModderState(gameModderState))
+            gameModderState.currentImg = idx
         this.load(idx)
         tickEvent("shareExperiment.mod.tabChange");
     }
@@ -405,7 +407,8 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         return (
             <div className="game-modder">
                 <h1 ref="header">{currImg.callToAction}</h1>
-                <TabBar ref="tab-bar" tabImages={this.tabImages} tabChange={this.onTabChange.bind(this)} />
+                <TabBar ref="tab-bar" tabImages={this.tabImages}
+                    tabChange={this.onTabChange.bind(this)} startTab={this.state.currentImg} />
                 <div ref="sprite-editor-holder" className="sprite-editor-holder">
                 </div>
                 <div ref="sprite-gallery" className="sprite-gallery">
