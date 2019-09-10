@@ -9,6 +9,7 @@
     width: 100%;
     bottom: 0rem;
     height: 50%;
+    max-height: calc(100vh - (0.75 * (100vw - 2em)) - 1.5em);
     background: #249ca3;
 }
 
@@ -78,7 +79,9 @@
     .game-player-background {
         height: 52%;
     }
+}
 
+@media (min-aspect-ratio: 7/12) {
     .game-player-logo {
         display: none;
     }
