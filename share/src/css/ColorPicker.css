@@ -1,7 +1,5 @@
 .color-picker {
     line-height: 0px;
     width: 100%;
-    /*TODO*/
-    height: 200px;
-    background-color: red;
+    background-color: hsl(222, 45%, 48%);
 }

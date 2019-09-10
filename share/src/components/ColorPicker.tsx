@@ -3,12 +3,15 @@ import React from 'react';
 import '../css/ColorPicker.css';
 
 interface ColorPickerProps {
+    height: number
 }
 interface ColorPickerState {
 }
 
 export class ColorPicker extends React.Component<ColorPickerProps, ColorPickerState>
 {
+    private colorPicker: HTMLDivElement | undefined;
+
     constructor(props: ColorPickerProps) {
         super(props);
 
@@ -18,17 +21,19 @@ export class ColorPicker extends React.Component<ColorPickerProps, ColorPickerSt
     }
 
     componentDidMount() {
-        // this.ColorPickerSvg = this.refs["color-picker-svg"] as SVGSVGElement
+        this.colorPicker = this.refs["color-picker"] as HTMLDivElement
+
+        this.colorPicker.setAttribute("style", `height:${this.props.height}px`)
     }
     componentWillUnmount() {
-        // this.ColorPickerSvg = undefined
+        this.colorPicker = undefined
     }
 
     render() {
 
         return (
             <div ref="color-picker" className="color-picker">
-                Hi
+                TODO: color swatches
                 {/* <svg ref="color-picker-svg" viewBox={viewBox}>
                 </svg> */}
             </div>

@@ -358,9 +358,9 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
                 <TabBar ref="tab-bar" tabImages={this.tabImages}
                     tabChange={this.onTabChange.bind(this)} startTab={this.state.currentImg} />
                 {isBackgroundTab
-                    ? <ColorPicker></ColorPicker> : <></>}
-                <SpriteEditorComp ref="sprite-editor" startImage={this.state.userImages[this.state.currentImg].data}
-                    onPlay={this.onPlay} scale={this.scale}></SpriteEditorComp>
+                    ? <ColorPicker height={SE.TOTAL_HEIGHT * this.scale}></ColorPicker> :
+                    <SpriteEditorComp ref="sprite-editor" startImage={this.state.userImages[this.state.currentImg].data}
+                        onPlay={this.onPlay} scale={this.scale}></SpriteEditorComp>}
                 <div ref="sprite-gallery" className="sprite-gallery">
                 </div>
                 <button ref="play-btn">Play!</button>
