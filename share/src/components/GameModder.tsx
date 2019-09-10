@@ -216,25 +216,27 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
     constructor(props: GameModderProps) {
         super(props);
 
-        let imgs = Object.keys(moddableImages)
-            .map((name) => {
-                let def = moddableImages[name]
-                // TODO: match the original dimensions? One difficulty with this
-                // is the sprite editor canvas can't handle this
-                // let { w, h } = GetImageTextDimensions(moddableImages[name])
-                let [w, h] = [16, 16]
-                let blank = CreateEmptyImageText(w, h);
-                return {
-                    data: imageLiteralToBitmap(blank),
-                    name: name,
-                    callToAction: CALL_TO_ACTION[name],
-                    default: textToBitmap(def)
-                };
-            })
-
-        if (IsGameModderState(gameModderState))
+        if (IsGameModderState(gameModderState)) {
+            // Loading previous modder state
             this.state = gameModderState
-        else {
+        } else {
+            // Creating new modder state
+            let imgs = Object.keys(moddableImages)
+                .map((name) => {
+                    let def = moddableImages[name]
+                    // TODO: match the original dimensions? One difficulty with this
+                    // is the sprite editor canvas can't handle this
+                    // let { w, h } = GetImageTextDimensions(moddableImages[name])
+                    let [w, h] = [16, 16]
+                    let blank = CreateEmptyImageText(w, h);
+                    return {
+                        data: imageLiteralToBitmap(blank),
+                        name: name,
+                        callToAction: CALL_TO_ACTION[name],
+                        default: textToBitmap(def)
+                    };
+                })
+
             this.state = {
                 userImages: imgs,
                 currentImg: 0
@@ -375,12 +377,14 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
                 default: old.default
             }
         }
-        this.setState({
+        let newState = {
             userImages: this.state.userImages.map((m, i) =>
                 i === this.state.currentImg
                     ? updateUserImage(m, this.spriteEditor.bitmap().image) //.copy()
                     : m)
-        })
+        }
+        this.setState(newState)
+        Object.assign(gameModderState, newState)
     }
     load(idx: number) {
         let currImg = this.state.userImages[idx].data
@@ -411,9 +415,6 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         )
     }
 
-    componentWillUpdate() {
-        Object.assign(gameModderState, this.state)
-    }
     async componentDidMount() {
         this.playBtn = this.refs["play-btn"] as HTMLButtonElement;
         this.spriteEditorHolder = this.refs['sprite-editor-holder'] as HTMLDivElement;
