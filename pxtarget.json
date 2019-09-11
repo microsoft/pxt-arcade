@@ -361,7 +361,6 @@
             "python",
             "debugExtensionCode",
             "snippetBuilder",
-            "simGif",
             "experimentalHw",
             "recipes"
         ],
@@ -369,7 +368,7 @@
         "simScreenshot": true,
         "simScreenshotKey": "P",
         "simScreenshotMaxUriLength": 300000,
-        "simGif": false,
+        "simGif": true,
         "simGifKey": "R",
         "qrCode": true,
         "shareFinishedTutorials": true,
