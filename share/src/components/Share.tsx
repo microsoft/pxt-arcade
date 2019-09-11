@@ -32,17 +32,14 @@ class Share extends React.Component<ShareProps, ShareState> {
         const screenshot = proj ? proj.screenshot : testURL;
         return (
             <div className="share-page">
-                <div className="share-header">
-                    <div className="back-arrow-button" title="Mod" role="button" onClick={() => changeMode("mod")}>
-                        <div className="back-arrow"></div>
-                        <div className="back-arrow-label">Mod</div>
-                    </div>
-                </div>
                 <h1>Share your game!</h1>
                 <div className="share-screenshot-container">
                     <img className="share-screenshot" src={screenshot} ></img>
                 </div>
                 { (this.state && this.state.publishID) ? this.renderShared() : this.renderUnshared() }
+                <div className="share-action">
+                    <button className="share-button play-button" onClick={() => changeMode("play")}>Play Again</button>
+                </div>
             </div>
         )
     }
@@ -53,8 +50,8 @@ class Share extends React.Component<ShareProps, ShareState> {
             <div className="share-legal-text">
                 {legalText}
             </div>
-            <div className="publish-action">
-                <button className="publish-button" onClick={this.publishScript}>{pending ? <div className="spinner"/> : "Publish"}</button>
+            <div className="share-action">
+                <button className="share-button publish-button" onClick={this.publishScript}>{pending ? <div className="spinner"/> : "Publish"}</button>
             </div>
         </div>
     }
