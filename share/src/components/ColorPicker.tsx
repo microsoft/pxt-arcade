@@ -12,12 +12,6 @@ interface ColorPickerState {
     selection: number
 }
 
-function range(len: number): number[] {
-    return new Array(len)
-        .fill(undefined)
-        .map((_, i) => i)
-}
-
 interface SwatchProps {
     color: string,
     selected: boolean,

@@ -405,6 +405,67 @@ const SAMPLE_OBSTACLES = [`.`, `
     f f f f f f f f f f f f f f f f
 `].map(resizeTo24x24)
 
+const SAMPLE_OBSTACLES2 = [`.`, `
+    . . . . . . . 6 . . . . . . . .
+    . . . . . . 8 6 6 . . . 6 8 . .
+    . . . e e e 8 8 6 6 . 6 7 8 . .
+    . . e 2 2 2 2 e 8 6 6 7 6 . . .
+    . e 2 2 4 4 2 7 7 7 7 7 8 6 . .
+    . e 2 4 4 2 6 7 7 7 6 7 6 8 8 .
+    e 2 4 5 2 2 6 7 7 6 2 7 7 6 . .
+    e 2 4 4 2 2 6 7 6 2 2 6 7 7 6 .
+    e 2 4 2 2 2 6 6 2 2 2 e 7 7 6 .
+    e 2 4 2 2 4 2 2 2 4 2 2 e 7 6 .
+    e 2 4 2 2 2 2 2 2 2 2 2 e c 6 .
+    e 2 2 2 2 2 2 2 4 e 2 e e c . .
+    e e 2 e 2 2 4 2 2 e e e c . . .
+    e e e e 2 e 2 2 e e e c . . . .
+    e e e 2 e e c e c c c . . . . .
+    . c c c c c c c . . . . . . . .
+`, `
+    . . . . . c c b b b . . . . . .
+    . . . . c b d d d d b . . . . .
+    . . . . c d d d d d d b b . . .
+    . . . . c d d d d d d d d b . .
+    . . . c b b d d d d d d d b . .
+    . . . c b b d d d d d d d b . .
+    . c c c c b b b b d d d b b b .
+    . c d d b c b b b b b b b b d b
+    c b b d d d b b b b b d d b d b
+    c c b b d d d d d d d b b b d c
+    c b c c c b b b b b b b d d c c
+    c c b b c c c c b d d d b c c b
+    . c c c c c c c c c c c b b b b
+    . . c c c c c b b b b b b b c .
+    . . . . . . c c b b b b c c . .
+    . . . . . . . . c c c c . . . .
+`, `
+    . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . f f f . . . . . . . .
+    . . . . . . . . . . . . f 2 f f f f f . . . . .
+    . . . . . . . . . . f f 2 2 e e e e e f f . . .
+    . . . . . . . . . f f 2 2 2 e e e e e e f f . .
+    . . . . . . . . . f e e e e f f f e e e e f . .
+    . . . . . . . . f e 2 2 2 2 e e e f f f f f . .
+    . . . . . . . . f 2 e f f f f f 2 2 2 e f f f .
+    . c c . . . . . f f f e e e f f f f f f f f f .
+    . c d c c . . . f e e 4 4 f b b e 4 4 e f e f .
+    . c c d d c c . . f e d d f b b 4 d 4 e e f . .
+    . . . c d d d c e e f d d d d d 4 e e e f . . .
+    . . . . c c d c d d e e 2 2 2 2 2 2 2 f . . . .
+    . . . . . c c c d d 4 4 e 5 4 4 4 4 4 f . . . .
+    . . . . . . . . e e e e f f f f f f f f . . . .
+    . . . . . . . . . . . . f f . . . f f f . . . .
+`].map(resizeTo24x24)
+
 console.dir(SAMPLE_CHARACTERS)
 console.dir(SAMPLE_OBSTACLES)
 
@@ -582,13 +643,17 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         let colorPickerHeight = (SE.TOTAL_HEIGHT + SPRITE_GALLERY_HEIGHT) * this.scale
 
         // TODO
-        let isCharacter = this.state.currentImg == 0
+        let samples = [
+            SAMPLE_CHARACTERS,
+            SAMPLE_OBSTACLES,
+            SAMPLE_OBSTACLES2
+        ]
         let spriteGalleryOptions =
-            (isCharacter ? SAMPLE_CHARACTERS : SAMPLE_OBSTACLES)
+            (samples[this.state.currentImg] || SAMPLE_CHARACTERS)
                 .map(i => imageLiteralToBitmap(i))
 
         let startImg = this.state.userImages[this.state.currentImg].data
-        let galKey = `${isCharacter}__` + spriteGalleryOptions.map(b => b.buf.toString()).join("_")
+        let galKey = `tab${this.state.currentImg}__` + spriteGalleryOptions.map(b => b.buf.toString()).join("_")
         return (
             <div className="game-modder">
                 <h1 ref="header">{currImg.callToAction}</h1>
