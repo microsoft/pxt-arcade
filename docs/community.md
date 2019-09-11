@@ -102,8 +102,8 @@ Games submitted by the MakeCode community.
         "author": "Miles Watson",
         "url": "https://forum.makecode.com/t/presenting-chomper/493",
         "cardType": "forumUrl",
-        "imageUrl": "/static/community/spacefight/gallery.png",
-        "largeImageUrl": "/static/community/spacefight/gallery.gif"
+        "imageUrl": "/static/community/chomper/gallery.png",
+        "largeImageUrl": "/static/community/chomper/gallery.gif"
     },
     {
         "name": "Add Game",
