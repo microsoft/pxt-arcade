@@ -566,7 +566,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
         this.paintSurface.applyEdit(edit, col, row, gestureEnd);
     }
 
-    private commit() {
+    public commit() {
         if (this.edit) {
             if (this.cachedState) {
                 this.cachedState = undefined;
