@@ -132,5 +132,47 @@
     border-radius: 5px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    font-size: 1.4rem;
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    color: #333;
+}
+
+.social-buttons {
+    display: flex;
+    flex-direction: row;
+    margin: 0.5rem;
+}
+
+.social-button {
+    height: 3.5rem;
+    width: 3.5rem;
+    background-color: #6b4f76;
+    border-radius: 5px;
+    display: block;
+    margin-right: 0.5rem;
+    color: #ffffff;
+    line-height: 3.5rem;
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+.social-button.facebook {
+    background-color: #3b5998;
+}
+
+.social-button.twitter {
+    background-color: #55acee;
+}
+
+.facebook, .twitter {
+    font-family: Icons;
+}
+
+.facebook:before {
+    content: "\f230";
+}
+
+.twitter:before {
+    content: "\f099";
 }
