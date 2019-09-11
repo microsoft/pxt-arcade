@@ -14,11 +14,11 @@ interface TabBarState {
     currentTab: number
 }
 
-const R = 10
-const ICON_H = 64
+const R = 7
+const ICON_H = 50
 const ICON_W = 64
-const TAB_MARGIN_T = 10
-const TAB_MARGIN_B = 20
+const TAB_MARGIN_T = 2
+const TAB_MARGIN_B = 10
 const SVG_W = 541
 const TAB_SVG_H = R * 2 + ICON_H + TAB_MARGIN_T + TAB_MARGIN_B
 const IMG_SPACE = R * 2 + ICON_W

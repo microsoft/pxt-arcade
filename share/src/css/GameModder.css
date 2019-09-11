@@ -33,8 +33,8 @@
 
 h1 {
     margin: 0;
-    font-size: 38px;
-    line-height: 50px;
+    font-size: 34px;
+    line-height: 40px;
     white-space: nowrap;
 }
 .tab-bar,
@@ -66,13 +66,14 @@ h1 {
     border-color:#4b7bec;
     color: white;
     background-color: #4b7bec;
-    width: 95%;
-    height: 60px;
+    width: 100%;
+    /* width: 80%; */
+    height: 40px;
     font-size: 32px;
-    line-height: 60px;
-    border-radius: 5px;
+    line-height: 40px;
+    /* border-radius: 5px; */
     padding: 0;
-    margin-top: 20px;
+    /* margin-top: 10px; */
 }
 .play-btn:hover {
     background-color: #294da0;

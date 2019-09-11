@@ -4,14 +4,18 @@
     background-color: hsl(222, 45%, 48%);
     display: grid;
     grid-template: 1fr / 1fr 1fr 1fr 1fr;
-    padding: 0 10px 10px 10px;
-    /* padding: 0 10px 0 15%; */
+    /* padding: 0 10px 0px 10px; */
+    padding: 0 0px 0 15%;
     justify-items: center;
     align-items: center;
 
     border-width: 0 0 2px 0;
+    border-width: 0 0 0px 0;
     border-style: solid;
     border-color:#4b7bec;
+
+    margin-top: -10px;
+    z-index: 2;
 }
 
 .sprite-gallery .item {
