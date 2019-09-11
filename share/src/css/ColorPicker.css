@@ -15,14 +15,21 @@
     background-color: cyan;
     /* margin: 10px; */
     border-radius: 5px;
-    /* border: solid 1px white; */
+    border: solid 1px black;
     cursor: pointer;
-    box-shadow: 1px 1px 1px 1px black;
+    /* box-shadow: 1px 1px 1px 1px black; */
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.color-picker .swatch img {
+    width: 40%;
 }
 
 .color-picker .swatch.selected{
     /* border: solid 5px orange; */
-    transform: scale(1.2);
+    transform: scale(1.3);
     /* transform: translate(-10px, -10px); */
     /* box-shadow: 3px 3px 1px 1px black; */
 }

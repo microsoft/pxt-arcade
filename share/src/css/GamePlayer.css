@@ -9,7 +9,8 @@
     width: 100%;
     bottom: 0rem;
     height: 50%;
-    max-height: calc(100vh - (0.75 * (100vw - 2em)) - 1.5em);
+    max-height: calc(100vh - 75vw);
+    max-height: calc(var(--vh, 1vh) * 100 - 75vw);
     background: #249ca3;
 }
 
