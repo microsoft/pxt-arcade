@@ -1,6 +1,7 @@
 import React, { CSSProperties } from 'react';
 
 import '../css/ColorPicker.css';
+import { textToBitmap, bitmapToUrl } from '../bitmap_helpers';
 
 interface ColorPickerProps {
     height: number,
@@ -22,8 +23,11 @@ const Swatch: React.FC<SwatchProps> = (props: SwatchProps) => {
         backgroundColor: props.color
     }
     let classes = `swatch ${props.selected ? "selected" : ""}`
+    let backgroundImg = bitmapToUrl(SAMPLE_TREE)
     return (
         <div className={classes} style={style} onClick={props.onClick}>
+            <img src={backgroundImg}>
+            </img>
         </div>
     );
 }
@@ -72,11 +76,7 @@ export class ColorPicker extends React.Component<ColorPickerProps, ColorPickerSt
 
 export default ColorPicker;
 
-// TODO: show trees & cloud over background tiles?
-function img(str: TemplateStringsArray): string {
-    return str[0]
-}
-let trees = [img`
+const TREES = [`
         . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -125,7 +125,7 @@ let trees = [img`
         . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
-   `, img`
+   `, `
         . . . . . . . . . . . . . . . . . . . b . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . . . . . b . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . . . . . b . . . . . . . . . . . . . . . .
@@ -174,7 +174,7 @@ let trees = [img`
         . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
-   `, img`
+   `, `
         . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -224,5 +224,6 @@ let trees = [img`
         . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
     `]
-let cloud = [
+const CLOUDS = [
 ]
+const SAMPLE_TREE = textToBitmap(TREES[0])
