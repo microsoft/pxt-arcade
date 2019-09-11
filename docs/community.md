@@ -106,6 +106,24 @@ Games submitted by the MakeCode community.
         "largeImageUrl": "/static/community/chomper/gallery.gif"
     },
     {
+        "name": "American Sign Language",
+        "description": "Learn ASL sign letters with this quiz game, by Greg Norris",
+        "author": "Greg Norris",
+        "url": "https://forum.makecode.com/t/american-sign-language-game/471",
+        "cardType": "forumUrl",
+        "imageUrl": "/static/community/asl/gallery.png",
+        "largeImageUrl": "/static/community/asl/gallery.gif"
+    },
+    {
+        "name": "3D map",
+        "description": "Navigate 3D dungeons, by Michal Moskal",
+        "author": "Michal Moskal",
+        "url": "https://forum.makecode.com/t/3d-raycasting-in-arcade/474",
+        "cardType": "forumUrl",
+        "imageUrl": "/static/community/3dmap/gallery.png",
+        "largeImageUrl": "/static/community/3dmap/gallery.gif"
+    },
+    {
         "name": "Add Game",
         "description": "Are you looking to contribute your own game? These instructions will explain how to submit your game for the chance to appear in this carousel.",
         "imageUrl": "/static/community/add-game.png",
