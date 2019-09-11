@@ -358,8 +358,10 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
     }
     load(idx: number) {
         let currImg = this.state.userImages[idx].data
-        this.spriteEditor.editor.bitmap().image = currImg
-        this.spriteEditor.editor.rePaint()
+        if (this.spriteEditor) {
+            this.spriteEditor.editor.bitmap().image = currImg
+            this.spriteEditor.editor.rePaint()
+        }
     }
 
     onTabChange(idx: number) {
