@@ -7,7 +7,8 @@ import { bitmapToUrl } from '../bitmap_helpers';
 
 interface TabBarProps {
     tabImages: Bitmap[],
-    tabChange: (idx: number) => void
+    tabChange: (idx: number) => void,
+    startTab: number
 }
 interface TabBarState {
     currentTab: number
@@ -36,7 +37,7 @@ export class TabBar extends React.Component<TabBarProps, TabBarState>
         super(props);
 
         this.state = {
-            currentTab: 0
+            currentTab: props.startTab
         }
 
         this.TOTAL_IMG_SPACE = IMG_SPACE * this.props.tabImages.length

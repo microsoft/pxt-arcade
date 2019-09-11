@@ -1,0 +1,28 @@
+.color-picker {
+    line-height: 0px;
+    width: 100%;
+    background-color: hsl(222, 45%, 48%);
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr;
+    padding: 0 10px 20px 10px;
+    justify-items: center;
+    align-items: center;
+}
+
+.color-picker .swatch {
+    width: 80%;
+    height: 80%;
+    background-color: cyan;
+    /* margin: 10px; */
+    border-radius: 5px;
+    /* border: solid 1px white; */
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px black;
+}
+
+.color-picker .swatch.selected{
+    /* border: solid 5px orange; */
+    transform: scale(1.2);
+    /* transform: translate(-10px, -10px); */
+    /* box-shadow: 3px 3px 1px 1px black; */
+}

@@ -111,11 +111,15 @@
 }
 
 .attached-copy-button {
+    border-radius: 5px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     height: 3.5rem;
     width: 3.5rem;
     background-color: #6b4f76;
+    color: #ffffff;
+    font-size: 2rem;
+    border: none;
 }
 
 .copy-button-icon {

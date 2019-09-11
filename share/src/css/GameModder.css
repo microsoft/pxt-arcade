@@ -12,6 +12,7 @@
     flex-direction: column;
     justify-items: center;
     align-items: center;
+    /* TODO: media query and reasonable desktop sizing */
 }
 .sprite-editor-container {
     /* font-size: 10px; */
@@ -49,15 +50,18 @@ h1 {
 .tab-bar path,
 .sprite-gallery path,
 .sprite-editor-container {
-    fill: #4b7becaa;
-    background-color: #4b7becaa;
+    fill: hsl(222, 45%, 48%);
+    background-color: hsl(222, 45%, 48%);
 }
 .tab-bar path,
 .sprite-gallery path {
     stroke-width: 2px;
     stroke:#4b7bec;
 }
-button {
+.sprite-gallery {
+    margin-top: -1px;
+}
+.play-btn {
     border-width: 0px;
     border-color:#4b7bec;
     color: white;
@@ -68,8 +72,9 @@ button {
     line-height: 60px;
     border-radius: 5px;
     padding: 0;
+    margin-top: 20px;
 }
-button:hover {
+.play-btn:hover {
     background-color: #294da0;
 }
 /*shade over blue: rgba(52,73,94,.2);*/

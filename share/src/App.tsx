@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 import GamePlayer from './components/GamePlayer';
-import GameModder from './components/GameModder';
+import GameModder, { GameModderState } from './components/GameModder';
 import Share from './components/Share';
 import HeaderBar from './components/HeaderBar';
 
@@ -15,9 +15,9 @@ interface AppState {
 
 let lastBinary: UserProject;
 let playTimestamp: number;
+export let gameModderState: GameModderState | {} = {};
 
-
-// Disable scrolling in iOS
+// HACK: Disable scrolling in iOS
 document.ontouchmove = function (e) {
     e.preventDefault();
 }
@@ -72,11 +72,6 @@ export class App extends React.Component<{}, AppState> {
     protected changeMode = (mode: "play" | "share" | "mod") => {
         this.setState({ mode });
     }
-}
-
-// Disable scrolling in iOS
-document.ontouchmove = function (e) {
-    e.preventDefault();
 }
 
 export default App;

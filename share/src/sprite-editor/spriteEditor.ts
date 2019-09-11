@@ -40,6 +40,24 @@ const CANVAS_HEIGHT = 500 - HEADER_HEIGHT - HEADER_CANVAS_MARGIN
 
 const WIDTH = PADDING + SIDEBAR_WIDTH + SIDEBAR_CANVAS_MARGIN + CANVAS_HEIGHT + PADDING - DROP_DOWN_PADDING * 2;
 
+export const COLORS = [
+    "#ffffff",
+    "#ff2121",
+    "#ff93c4",
+    "#ff8135",
+    "#fff609",
+    "#249ca3",
+    "#78dc52",
+    "#003fad",
+    "#87f2ff",
+    "#8e2ec4",
+    "#a4839f",
+    "#5c406c",
+    "#e5cdc4",
+    "#91463d",
+    "#000000"
+];
+
 export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
     private group: svg.Group;
     private toolbarRoot: svg.SVG;
@@ -69,7 +87,6 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
 
     private columns: number = 16;
     private rows: number = 16;
-    private colors: string[];
 
     private shiftDown: boolean = false;
     private altDown: boolean = false;
@@ -78,23 +95,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
     private closeHandler: () => void;
 
     constructor(bitmap: Bitmap, blocksInfo?: {}, protected lightMode = false, public scale = 1) {
-        this.colors = [
-            "#ffffff",
-            "#ff2121",
-            "#ff93c4",
-            "#ff8135",
-            "#fff609",
-            "#249ca3",
-            "#78dc52",
-            "#003fad",
-            "#87f2ff",
-            "#8e2ec4",
-            "#a4839f",
-            "#5c406c",
-            "#e5cdc4",
-            "#91463d",
-            "#000000"
-        ]
+
         this.columns = bitmap.width;
         this.rows = bitmap.height;
 
@@ -105,7 +106,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
         this.group = this.toolbarRoot.group();
         this.createDefs();
 
-        this.paintSurface = new CanvasGrid(this.colors, this.state.copy(), this.lightMode, this.scale);
+        this.paintSurface = new CanvasGrid(COLORS, this.state.copy(), this.lightMode, this.scale);
 
         this.paintSurface.drag((col, row) => {
             this.debug("gesture (" + PaintTool[this.activeTool] + ")");
@@ -158,8 +159,8 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
             // this.bottomBar.hideCursor();
         });
 
-        this.sidebar = new SideBar(['url("#alpha-background")'].concat(this.colors), this, this.group);
-        this.sidebar.setColor(this.colors.length >= 3 ? 3 : 1); // colors omits 0
+        this.sidebar = new SideBar(['url("#alpha-background")'].concat(COLORS), this, this.group);
+        this.sidebar.setColor(COLORS.length >= 3 ? 3 : 1); // colors omits 0
 
         // this.header = new SpriteHeader(this);
         // this.gallery = new Gallery(blocksInfo);
@@ -497,7 +498,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
             if (this.shiftDown) {
                 color += 9;
             }
-            if (color <= this.colors.length) { // colors omits 0
+            if (color <= COLORS.length) { // colors omits 0
                 this.sidebar.setColor(color);
             }
         }
@@ -565,7 +566,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
         this.paintSurface.applyEdit(edit, col, row, gestureEnd);
     }
 
-    private commit() {
+    public commit() {
         if (this.edit) {
             if (this.cachedState) {
                 this.cachedState = undefined;
