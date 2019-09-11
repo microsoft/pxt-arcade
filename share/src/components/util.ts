@@ -1,3 +1,4 @@
+import { Bitmap } from "../sprite-editor/bitmap";
 
 export interface HttpRequestOptions {
     url: string;
@@ -22,6 +23,7 @@ export interface UserProject {
     binJs: string;
     mainTs: string;
     mainBlocks: string;
+    screenshot: string;
 }
 
 export function requestAsync(options: HttpRequestOptions): Promise<HttpResponse> {

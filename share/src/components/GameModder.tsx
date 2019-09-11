@@ -16,6 +16,7 @@ import { gameModderState } from '../App';
 import { SpriteEditorComp } from './SpriteEditor';
 import * as SE from '../sprite-editor/spriteEditor'
 import SpriteGallery from './SpriteGallery';
+import { mkScreenshotAsync } from "./screenshot";
 // import { bunnyHopBinJs } from '../../public/games/bunny_hop/bunny_hop_min.js.js';
 
 export interface GameModderProps {
@@ -708,7 +709,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         this.header = undefined;
     }
 
-    onPlay() {
+    async onPlay() {
         this.save()
 
         const toReplace = this.state.userImages.filter(ui => !isEmptyBitmap(ui.data));
@@ -756,10 +757,13 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         }
         gameBinJs = modBackground(gameBinJs, this.state.currentBackground)
 
+        const screenshot = await mkScreenshotAsync(this.state.currentBackground + 1, this.state.userImages.map(u => isEmptyBitmap(u.data) ? u.default : u.data));
+
         this.props.playHandler({
             binJs: gameBinJs,
             mainTs: gameMainTs,
-            mainBlocks: gameMainBlocks
+            mainBlocks: gameMainBlocks,
+            screenshot
         });
     }
 }

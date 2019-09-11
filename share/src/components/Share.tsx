@@ -21,7 +21,9 @@ interface ShareState {
 class Share extends React.Component<ShareProps, ShareState> {
 
     render() {
-        const { changeMode } = this.props;
+        const { changeMode, proj } = this.props;
+
+        const screenshot = proj ? proj.screenshot : testURL;
         return (
             <div className="share-page">
                 <div className="share-header">
@@ -32,7 +34,7 @@ class Share extends React.Component<ShareProps, ShareState> {
                 </div>
                 <h1>Share your game!</h1>
                 <div className="share-screenshot-container">
-                    <img className="share-screenshot" src={testURL} ></img>
+                    <img className="share-screenshot" src={screenshot} ></img>
                 </div>
                 { (this.state && this.state.publishID) ? this.renderShared() : this.renderUnshared() }
             </div>
@@ -52,7 +54,7 @@ class Share extends React.Component<ShareProps, ShareState> {
 
     protected renderShared() {
         const { publishID } = this.state;
-        const shareLink = `https://arcade.makecode.com/beta#pub:${publishID}`;
+        const shareLink = `https://makecode.com/${publishID}`;
 
         return <div>
             <div className="copy-group">
@@ -90,7 +92,7 @@ class Share extends React.Component<ShareProps, ShareState> {
             .then(resp => {
                 console.log(resp.json);
                 this.setState({
-                    publishID: resp.json.id
+                    publishID: resp.json.shortid
                 });
             });
         }
