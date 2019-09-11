@@ -76,10 +76,10 @@ export class ColorPicker extends React.Component<ColorPickerProps, ColorPickerSt
 
 export default ColorPicker;
 
+// TODO: show trees & cloud over background tiles?
 function img(str: TemplateStringsArray): string {
     return str[0]
 }
-
 let trees = [img`
         . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -230,4 +230,3 @@ let trees = [img`
     `]
 let cloud = [
 ]
-// end
