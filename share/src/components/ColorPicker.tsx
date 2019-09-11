@@ -4,9 +4,11 @@ import '../css/ColorPicker.css';
 
 interface ColorPickerProps {
     height: number,
-    colors: string[]
+    colors: string[],
+    selected: number
 }
 interface ColorPickerState {
+    selection: number
 }
 
 function range(len: number): number[] {
@@ -17,7 +19,8 @@ function range(len: number): number[] {
 
 interface SwatchProps {
     color: string,
-    selected: boolean
+    selected: boolean,
+    onClick: () => void
 }
 const Swatch: React.FC<SwatchProps> = (props: SwatchProps) => {
     let style: CSSProperties = {
@@ -25,7 +28,7 @@ const Swatch: React.FC<SwatchProps> = (props: SwatchProps) => {
     }
     let classes = `swatch ${props.selected ? "selected" : ""}`
     return (
-        <div className={classes} style={style}>
+        <div className={classes} style={style} onClick={props.onClick}>
         </div>
     );
 }
@@ -37,6 +40,7 @@ export class ColorPicker extends React.Component<ColorPickerProps, ColorPickerSt
         super(props);
 
         this.state = {
+            selection: this.props.selected
         }
 
     }
@@ -50,14 +54,20 @@ export class ColorPicker extends React.Component<ColorPickerProps, ColorPickerSt
         this.colorPicker = undefined
     }
 
+    clickHandler(idx: number) {
+        this.setState({ selection: idx })
+    }
+
     render() {
         let swatchs = this.props.colors
             .map((c, i) =>
-                <Swatch key={`swatch-${i}`} color={c} selected={i == 0}></Swatch>
+                <Swatch key={`swatch-${i}`} color={c} selected={i == this.state.selection}
+                    onClick={this.clickHandler.bind(this, i)}></Swatch>
             )
 
         return (
-            <div ref="color-picker" className="color-picker">
+            <div ref="color-picker"
+                className="color-picker">
                 {swatchs}
             </div>
         );
@@ -65,3 +75,159 @@ export class ColorPicker extends React.Component<ColorPickerProps, ColorPickerSt
 }
 
 export default ColorPicker;
+
+function img(str: TemplateStringsArray): string {
+    return str[0]
+}
+
+let trees = [img`
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . b . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . b . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . b . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . b b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . b b b b b b . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . b b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . b b b b b b . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . b b b b b b b b . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . b b . . b b b b b b . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . b b b b . . b b b . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . b b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . b b b b b b . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . b b b b b . b b . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . b b b b b b b b b b . . . . . . . . . . . .
+        . . . . . . . . . . . . b b b b . b b b b b b b . . . . . . . . . . . .
+        . . . . . . . . . . b b b b b . . b b b b b . b b b b . . . . . . . . .
+        . . . . . . . . . . . . . . . . b b b b b b . . . b b b . . . . . . . .
+        . . . . . . . . . . . . . . . b b b b b b b b . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . b b b b b b . b b . . . . . . . . . . . . .
+        . . . . . . . . . . . b b b b b b b b b b b b b . . . . . . . . . . . .
+        . . . . . . . . . b b b b b b . . b b b b . b b b . . . . . . . . . . .
+        . . . . . . . . . . b b b b b . . b b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . b b b b b b b . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . b b b b b b b b b . . . . . . . . . . . .
+        . . . . . . . . . . . . . b b b b b b b b b . . . . . . . . . . . . . .
+        . . . . . . . . . . . b b b b b b b b b b b b b b b b b . . . . . . . .
+        . . . . . . . . . . b b b b b b b b b b b b b b b b b . . . . . . . . .
+        . . . . . . . . . b b b b . b b b b b b b b . . . . . . . . . . . . . .
+        . . . . . . . . b b . . . . b b b b b b b b b . . . . . . . . . . . . .
+        . . . . . . . . . . . . b b b b b b b b b b b b b . . . . . . . . . . .
+        . . . . . . . . b b b b b b b b b b b b b b b b b b b b . . . . . . . .
+        . . . . . . . b b b b b b b b b b b b b b b b b b b b b b b . . . . . .
+        . . . . . . b b b b b b b b . . . b b b b b b b b b . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+   `, img`
+        . . . . . . . . . . . . . . . . . . . b . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . b . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . b . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . b b b b b b . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . b b b b . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . b b b b b b b . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . b b b . b . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . b b b b b b b . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . b b b b b b b b . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b . b b b b . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . b b b b b b . . . . . . . . . . . . .
+        . . . . . . . . . . . . . b b b b b b b . b b b b . . . . . . . . . . .
+        . . . . . . . . . . . . b b b b b . b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . b b b b b . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . b b b b b b b b . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . b b b b b b b b b b . . . . . . . . . . . . .
+        . . . . . . . . . . . . b b b . . b b b b b b b b . . . . . . . . . . .
+        . . . . . . . . . . . b b b b . b b b b b b b b . b . . . . . . . . . .
+        . . . . . . . . . . . . b . . . b b b b b b b b b . . . . . . . . . . .
+        . . . . . . . . . . . . . . . b b b b b b b b b b b . . . . . . . . . .
+        . . . . . . . . . . . . . . b b b b b b b . b b b b . . . . . . . . . .
+        . . . . . . . . . . . . . b b b b b b b b b b b b b b b . . . . . . . .
+        . . . . . . . . . . . b b b b . b b b b b b b . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . b b b b b b . b b . . . . . . . . . . . .
+        . . . . . . . . . . . . . b b b b b b b b b b b b . . . . . . . . . . .
+        . . . . . . . . . . . . b b b b b b b b b b b b b b . . . . . . . . . .
+        . . . . . . . . . . . . b b b b b b b b b b . . b b b . . . . . . . . .
+        . . . . . . . . . b b b b b b b b b b b b b b . . b b b b . . . . . . .
+        . . . . . . . . b b . . . b b b b b b b b b . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . b b b b b b b b b b b . . . . . . . . . . .
+        . . . . . . . . . . . . b b b b . b b b b b b b b . . . . . . . . . . .
+        . . . . . . . . b b b b . b . . . b b b b b b b . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . b b b b b . . b b b b . . . . . . . . .
+        . . . . . . . . . . . . . b b b b b . b b b b b b b b . . . . . . . . .
+        . . . . . . . . . b b b b b b . . b b b b . . b b b b b . . . . . . . .
+        . . . . . . . . b b . b . . . . b b b b b . . . . . b b b . . . . . . .
+        . . . . . . . . . . . . . . . . b b b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+   `, img`
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . b . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . b . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . b . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . b . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . b b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . b b b b b . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . b b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . b b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . b b b b b . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . b b b b b b b . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . b b b b b b b b b b . . . . . . . . . . . .
+        . . . . . . . . . . . . b b b b . . b b b b b b b . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . b b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . b b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . b b b b b b . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . b b b b b b . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . b b b b b b b b . . . . . . . . . . . . .
+        . . . . . . . . . . . . b b b b b b b b b b b b b . . . . . . . . . . .
+        . . . . . . . . b b b b b b b b b b b b b b b b b b b b . . . . . . . .
+        . . . . . . . . . . . b b b b b b b b b b b b b b b b . . . . . . . . .
+        . . . . . . . . . . . . . . . . b b b b b b b . b . . . . . . . . . . .
+        . . . . . . . . . . . . . . b b b b b b b b b b b b b b b b . . . . . .
+        . . . . . . . . . . . b b b b b b b b b b b b b b b b b b . . . . . . .
+        . . . . . . . . b b b b b b b b b b b b b b b b b b b . . . . . . . . .
+        . . . . . . . . . . b b b b b . . . b b b b . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b . b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b . b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . b b b . . . . . . . . . . . . . . .
+    `]
+let cloud = [
+]
+// end

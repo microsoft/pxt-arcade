@@ -180,23 +180,55 @@ const moddableImages: { [k: string]: string } = {
         . . . . . . e e . . . . . . .
    `,
     "background": `
-   . . . . . . . . 1 1 1 1 1 1 1 1 . . . . . . . . . . . . . . . . .
-   . . . . . . . 1 1 1 1 1 1 1 1 1 1 . . . . . . . . . . . . . . . .
-   . . . . 1 1 1 1 1 1 1 1 1 1 1 1 1 1 . . . . . . . . . . . . . . .
-   . . . 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 . . . . . . . . . . . . . .
-   . . 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 . . . . . . . .
-   . . 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 . . . . . . .
-   . 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 . . . . . .
-   . 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 . . . . .
-   1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 . . . . .
-   1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 . . .
-   . 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 . .
-   . 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 .
-   . . 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-   . . . . . 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-   . . . . . . 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 . . .
-   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-   `
+    . . . d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d . . .
+    . . d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d . .
+    . d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d .
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d d b d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d d b d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d d b d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d d b d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d b b d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d b b b d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d b b b b d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d b b b b b d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d b b d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d b b b b d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d b b b b d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d b b b b b d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d b b b b b b b d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d b b b b b b b b b b d d d d d d d d d d d d
+    d d d d d d d d d d d d b b b b d d b b b b b b b d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d b b b b d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d b b b b d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d b b b b b b d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d b b b b b b d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d b b b b b b b b d d d d d d d d d d d d d
+    d d d d d d d d d d d d b b b b b b b b b b b b b d d d d d d d d d d d
+    d d d d d d d d b b b b b b b b b b b b b b b b b b b b d d d d d d d d
+    d d d d d d d d d d d b b b b b b b b b b b b b b b b d d d d d d d d d
+    d d d d d d d d d d d d d d d d b b b b b b b d b d d d d d d d d d d d
+    d d d d d d d d d d d d d d b b b b b b b b b b b b b b b b d d d d d d
+    d d d d d d d d d d d b b b b b b b b b b b b b b b b b b d d d d d d d
+    d d d d d d d d b b b b b b b b b b b b b b b b b b b d d d d d d d d d
+    d d d d d d d d d d b b b b b d d d b b b b d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d b b b d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d b d b d d d d d d d d d d d d d d d
+    . d d d d d d d d d d d d d d d d d b d b d d d d d d d d d d d d d d .
+    . . d d d d d d d d d d d d d d d d b b b d d d d d d d d d d d d d . .
+    . . . d d d d d d d d d d d d d d d b b b d d d d d d d d d d d d . . .
+`
 }
 const CALL_TO_ACTION: { [k: string]: string } = {
     "character": "Draw your character!",
@@ -350,13 +382,18 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         let hScale = actualHeight / refHeight
         this.scale = Math.min(wScale, hScale)
 
+        // TODO:
+        let currentBackgroundColor = 12;
+
         return (
             <div className="game-modder">
                 <h1 ref="header">{currImg.callToAction}</h1>
                 <TabBar ref="tab-bar" tabImages={this.tabImages}
                     tabChange={this.onTabChange.bind(this)} startTab={this.state.currentImg} />
                 {isBackgroundTab
-                    ? <ColorPicker colors={SE.COLORS} height={SE.TOTAL_HEIGHT * this.scale}></ColorPicker> :
+                    ?
+                    <ColorPicker selected={currentBackgroundColor} colors={SE.COLORS} height={SE.TOTAL_HEIGHT * this.scale}></ColorPicker>
+                    :
                     <SpriteEditorComp ref="sprite-editor" startImage={this.state.userImages[this.state.currentImg].data}
                         onPlay={this.onPlay} scale={this.scale}></SpriteEditorComp>}
                 <div ref="sprite-gallery" className="sprite-gallery">
