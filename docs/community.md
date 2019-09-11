@@ -97,6 +97,15 @@ Games submitted by the MakeCode community.
         "largeImageUrl": "/static/community/spacefight/spacefight.gif"
     },
     {
+        "name": "American Sign Language",
+        "description": "Learn ASL sign letters with this quiz game, by Greg Norris",
+        "author": "Greg Norris",
+        "url": "https://forum.makecode.com/t/american-sign-language-game/471",
+        "cardType": "forumUrl",
+        "imageUrl": "/static/community/asl/gallery.png",
+        "largeImageUrl": "/static/community/asl/gallery.gif"
+    },
+    {
         "name": "Add Game",
         "description": "Are you looking to contribute your own game? These instructions will explain how to submit your game for the chance to appear in this carousel.",
         "imageUrl": "/static/community/add-game.png",
