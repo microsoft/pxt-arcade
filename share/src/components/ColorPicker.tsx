@@ -5,7 +5,8 @@ import '../css/ColorPicker.css';
 interface ColorPickerProps {
     height: number,
     colors: string[],
-    selected: number
+    selected: number,
+    selectionChanged: (idx: number) => void,
 }
 interface ColorPickerState {
     selection: number
@@ -55,6 +56,7 @@ export class ColorPicker extends React.Component<ColorPickerProps, ColorPickerSt
     }
 
     clickHandler(idx: number) {
+        this.props.selectionChanged(idx)
         this.setState({ selection: idx })
     }
 

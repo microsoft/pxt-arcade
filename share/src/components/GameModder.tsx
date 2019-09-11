@@ -29,6 +29,7 @@ export interface UserImage {
 export interface GameModderState {
     userImages: UserImage[]
     currentImg: number,
+    currentBackground: number,
 }
 function IsGameModderState(s: any): s is GameModderState {
     return !!(s as GameModderState).userImages
@@ -273,7 +274,8 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
 
             this.state = {
                 userImages: imgs,
-                currentImg: 0
+                currentImg: 0,
+                currentBackground: 12
             }
             Object.assign(gameModderState, this.state)
         }
@@ -343,14 +345,16 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
                 default: old.default
             }
         }
-        let newState = {
-            userImages: this.state.userImages.map((m, i) =>
-                i === this.state.currentImg
-                    ? updateUserImage(m, this.spriteEditor.editor.bitmap().image) //.copy()
-                    : m)
+        if (this.spriteEditor) {
+            let newState = {
+                userImages: this.state.userImages.map((m, i) =>
+                    i === this.state.currentImg
+                        ? updateUserImage(m, this.spriteEditor.editor.bitmap().image) //.copy()
+                        : m)
+            }
+            this.setState(newState)
+            Object.assign(gameModderState, newState)
         }
-        this.setState(newState)
-        Object.assign(gameModderState, newState)
     }
     load(idx: number) {
         let currImg = this.state.userImages[idx].data
@@ -365,6 +369,12 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             gameModderState.currentImg = idx
         this.load(idx)
         tickEvent("shareExperiment.mod.tabChange");
+    }
+
+    onBackgroundColorChanged(idx: number) {
+        this.setState({ currentBackground: idx })
+        if (IsGameModderState(gameModderState))
+            gameModderState.currentBackground = idx
     }
 
     render() {
@@ -382,9 +392,6 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         let hScale = actualHeight / refHeight
         this.scale = Math.min(wScale, hScale)
 
-        // TODO:
-        let currentBackgroundColor = 12;
-
         return (
             <div className="game-modder">
                 <h1 ref="header">{currImg.callToAction}</h1>
@@ -392,7 +399,9 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
                     tabChange={this.onTabChange.bind(this)} startTab={this.state.currentImg} />
                 {isBackgroundTab
                     ?
-                    <ColorPicker selected={currentBackgroundColor} colors={SE.COLORS} height={SE.TOTAL_HEIGHT * this.scale}></ColorPicker>
+                    <ColorPicker selectionChanged={this.onBackgroundColorChanged.bind(this)}
+                        selected={this.state.currentBackground} colors={SE.COLORS}
+                        height={SE.TOTAL_HEIGHT * this.scale}></ColorPicker>
                     :
                     <SpriteEditorComp ref="sprite-editor" startImage={this.state.userImages[this.state.currentImg].data}
                         onPlay={this.onPlay} scale={this.scale}></SpriteEditorComp>}
@@ -432,7 +441,16 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
     async onPlay() {
         this.save()
 
-        function modImg(bin: string, img: UserImage) {
+        function modBackground(bin: string, newColor: number): string {
+            const originalColor = 13
+            const template = (color: number) => `scene_setBackgroundColor__P12360_mk(s);s.tmp_0.arg0=${color}`
+            let old = template(originalColor)
+            let newIdx = newColor + 1 // arcade function is 1-based b/c 0 is transparent
+            let nw = template(newIdx)
+            return bin.replace(old, nw)
+        }
+
+        function modImg(bin: string, img: UserImage): string {
             // HACK: for some reason the compiler emits image prefixes that look like:
             // 8704100010000000
             // whereas ours look like:
@@ -448,6 +466,8 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             const oldToFind = bitmapToBinHex(img.default)
                 .slice(MOD_PREFIX_LEN)
             let oldStartIncl = bin.indexOf(oldToFind) - BIN_PREFIX_LEN
+            if (oldStartIncl < 0)
+                return bin;
             let oldEndExcl = bin.indexOf(`"`, oldStartIncl)
             let oldHex = bin.slice(oldStartIncl, oldEndExcl)
 
@@ -459,6 +479,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         for (let i of this.state.userImages) {
             gameBinJs = modImg(gameBinJs, i)
         }
+        gameBinJs = modBackground(gameBinJs, this.state.currentBackground)
 
         this.props.playHandler(gameBinJs)
     }
