@@ -97,6 +97,15 @@ Games submitted by the MakeCode community.
         "largeImageUrl": "/static/community/spacefight/spacefight.gif"
     },
     {
+        "name": "Chomper",
+        "description": "Eat the dots, avoid the ghosts, by Miles Watson",
+        "author": "Miles Watson",
+        "url": "https://forum.makecode.com/t/presenting-chomper/493",
+        "cardType": "forumUrl",
+        "imageUrl": "/static/community/spacefight/gallery.png",
+        "largeImageUrl": "/static/community/spacefight/gallery.gif"
+    },
+    {
         "name": "Add Game",
         "description": "Are you looking to contribute your own game? These instructions will explain how to submit your game for the chance to appear in this carousel.",
         "imageUrl": "/static/community/add-game.png",
