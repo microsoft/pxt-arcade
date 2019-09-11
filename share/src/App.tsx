@@ -26,7 +26,7 @@ export class App extends React.Component<{}, AppState> {
     constructor(props: {}) {
         super(props)
         this.state = {
-            mode: "share"
+            mode: "mod"
         }
 
         this.playGame = this.playGame.bind(this);
