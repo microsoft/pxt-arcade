@@ -32,9 +32,16 @@ export class App extends React.Component<{}, AppState> {
 
         loadAppInsights(false);
         tickEvent("shareExperiment.landing");
+
+        window.addEventListener('resize', this.setVh);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.setVh);
     }
 
     render() {
+        this.setVh();
         return (
             <div className="App">
                 {this.state.mode === "mod" ?
@@ -70,6 +77,11 @@ export class App extends React.Component<{}, AppState> {
 
     protected changeMode = (mode: "play" | "share" | "mod") => {
         this.setState({ mode });
+    }
+
+    protected setVh = () => {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
 }
 

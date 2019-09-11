@@ -37,3 +37,9 @@
         height: initial;
     }
 }
+
+@media (min-aspect-ratio: 5/8) {
+    .game-joystick {
+        height: 98%;
+    }
+}

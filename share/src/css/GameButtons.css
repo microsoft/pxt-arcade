@@ -57,12 +57,11 @@
     color: #cecece;
     background-color: #999;
     text-align: center;
-    width: 80%;
-    height: 100%;
+    width: calc(100% - 0.5rem);
+    padding: 0.5rem 0rem;
     border-radius: 4rem;
-    border: 0.4em solid #333;
-    font-size: 28px;
-    box-sizing: content-box;
+    border: 0.8rem solid #333;
+    font-size: 2rem;
     font-family: monospace;
     text-transform: uppercase;
 
@@ -99,11 +98,26 @@
 
 @media (min-aspect-ratio: 5/8) {
     .action-button {
-        height: 2.5rem;
-        margin-bottom: 20%;
+        height: 1.2rem;
+        margin-bottom: 3rem;
     }
 
     .share-mod-button {
-        line-height: 2.5rem;
+        width: 80%;
+        line-height: 1.2rem;
+    }
+
+    .game-buttons {
+        height: 98%;
+    }
+}
+
+@media (min-aspect-ratio: 6/9) {
+    .action-button {
+        margin-bottom: 2.25rem;
+    }
+
+    .share-mod-button {
+        border-width: 0.5rem;
     }
 }
