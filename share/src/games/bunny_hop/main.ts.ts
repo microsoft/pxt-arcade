@@ -2,14 +2,13 @@ export const bunny_hop_main_ts: string = `
 namespace SpriteKind {
     export const Obstacle = SpriteKind.create()
 }
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    animation.stopAnimation(animation.AnimationTypes.All, bunny)
+controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     if (bunny.ay == 0) {
         bunny.vy = -160
         bunny.ay = gravity
     }
 })
-function setupFrames() {
+function setupFrames () {
     birdFrames = [img\`
         . . . . . . . . . . . .
         . . . . . 1 1 1 1 . . .
@@ -141,7 +140,12 @@ function setupFrames() {
         . . . . . . . . . . . .
         . . . . . . . . . . . .
     \`]
-    animation.loopImageAnimation(bird, birdFrames, 40)
+    animation.runImageAnimation(
+    bird,
+    birdFrames,
+    40,
+    true
+    )
     obstacles = [img\`
         . . . . . . . . . . . . . . . . . . . . . .
         . . . . . . . . . . 7 . . . . . . . . . . .
@@ -530,12 +534,12 @@ function setupFrames() {
         1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 . . . . . . . . . . . . . . . . . . . . .
     \`]
 }
-function createTree() {
+function createTree () {
     tree = sprites.createProjectileFromSide(trees[Math.randomRange(0, trees.length - 1)], (-100 - game.runtime() / 250) / 2, 0)
     tree.bottom = 100
     tree.z = -1
 }
-function createCloud() {
+function createCloud () {
     cloud = sprites.createProjectileFromSide(clouds[Math.randomRange(0, clouds.length - 1)], -30, 0)
     cloud.bottom = Math.randomRange(30, 55)
     cloud.z = -2
@@ -545,6 +549,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Obstacle, function (sprite, othe
 })
 let grass: Sprite = null
 let projectile: Sprite = null
+let newObstacle: Image = null
+let numObstacles = 0
+let osbstacleSpeed = 0
+let difficultyFactor = 0
 let cloud: Sprite = null
 let tree: Sprite = null
 let clouds: Image[] = []
@@ -555,6 +563,7 @@ let birdFrames: Image[] = []
 let bird: Sprite = null
 let gravity = 0
 let bunny: Sprite = null
+let theScore = 0
 scene.setBackgroundColor(13)
 bunny = sprites.create(img\`
     . . . . . . . . . . . .
@@ -618,19 +627,16 @@ game.onUpdate(function () {
 game.onUpdateInterval(100, function () {
     bird.x += -1
 })
-game.onUpdateInterval(100, function () {
-    info.changeScoreBy(1)
-})
 forever(function () {
-    let difficultyFactor = game.runtime() / 250
-    let osbstacleSpeed = 100 + difficultyFactor
-    let numObstacles = Math.randomRange(1, 3);
+    difficultyFactor = game.runtime() / 250
+    osbstacleSpeed = 100 + difficultyFactor
+    numObstacles = Math.randomRange(1, 3)
     for (let i = 0; i < numObstacles; i++) {
-        let newObstacle = obstacles[Math.randomRange(0, obstacles.length - 1)]
-        projectile = sprites.createProjectileFromSide(newObstacle, -osbstacleSpeed, 0)
+        newObstacle = obstacles[Math.randomRange(0, obstacles.length - 1)]
+        projectile = sprites.createProjectileFromSide(newObstacle, 0 - osbstacleSpeed, 0)
         projectile.bottom = 105
         projectile.setKind(SpriteKind.Obstacle)
-        pause(11500.0 / osbstacleSpeed)
+        pause(11500 / osbstacleSpeed)
     }
     pause(Math.randomRange(1500, 2500))
 })
@@ -639,6 +645,14 @@ game.onUpdateInterval(200, function () {
         grass = sprites.createProjectileFromSide(grassImages[Math.randomRange(0, grassImages.length - 1)], (-100 - game.runtime() / 250) / 2, 0)
         grass.bottom = 100
         grass.z = -1
+    }
+})
+game.onUpdateInterval(100, function () {
+    info.changeScoreBy(1)
+    if (info.score() > 0 && info.score() % 100 == 0) {
+        effects.confetti.startScreenEffect()
+    } else if (info.score() > 0 && (info.score() - 10) % 100 == 0) {
+        effects.confetti.endScreenEffect()
     }
 })
 game.onUpdateInterval(1000, function () {
@@ -656,4 +670,5 @@ forever(function () {
     }
     pause(1500)
 })
+
 `;
