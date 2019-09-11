@@ -61,7 +61,7 @@ h1 {
 .sprite-gallery {
     margin-top: -1px;
 }
-button {
+.play-btn {
     border-width: 0px;
     border-color:#4b7bec;
     color: white;
@@ -72,8 +72,9 @@ button {
     line-height: 60px;
     border-radius: 5px;
     padding: 0;
+    margin-top: 20px;
 }
-button:hover {
+.play-btn:hover {
     background-color: #294da0;
 }
 /*shade over blue: rgba(52,73,94,.2);*/

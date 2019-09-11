@@ -13,6 +13,7 @@ import { bunny_hop_main_ts } from '../games/bunny_hop/main.ts';
 import { gameModderState } from '../App';
 import { SpriteEditorComp } from './SpriteEditor';
 import * as SE from '../sprite-editor/spriteEditor'
+import SpriteGallery from './SpriteGallery';
 // import { bunnyHopBinJs } from '../../public/games/bunny_hop/bunny_hop_min.js.js';
 
 export interface GameModderProps {
@@ -394,6 +395,10 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         let hScale = actualHeight / refHeight
         this.scale = Math.min(wScale, hScale)
 
+        const SPRITE_GALLERY_HEIGHT = 100
+        let spriteGalleryHeight = SPRITE_GALLERY_HEIGHT * this.scale
+        let colorPickerHeight = (SE.TOTAL_HEIGHT + SPRITE_GALLERY_HEIGHT) * this.scale
+
         return (
             <div className="game-modder">
                 <h1 ref="header">{currImg.callToAction}</h1>
@@ -403,13 +408,16 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
                     ?
                     <ColorPicker selectionChanged={this.onBackgroundColorChanged.bind(this)}
                         selected={this.state.currentBackground} colors={SE.COLORS}
-                        height={SE.TOTAL_HEIGHT * this.scale}></ColorPicker>
+                        height={colorPickerHeight}></ColorPicker>
                     :
-                    <SpriteEditorComp ref="sprite-editor" startImage={this.state.userImages[this.state.currentImg].data}
-                        onPlay={this.onPlay} scale={this.scale}></SpriteEditorComp>}
-                <div ref="sprite-gallery" className="sprite-gallery">
-                </div>
-                <button ref="play-btn">Play!</button>
+                    [
+                        <SpriteEditorComp ref="sprite-editor" startImage={this.state.userImages[this.state.currentImg].data}
+                            onPlay={this.onPlay} scale={this.scale}></SpriteEditorComp>,
+                        <SpriteGallery height={spriteGalleryHeight}></SpriteGallery>
+                    ]}
+                {/* <div ref="sprite-gallery" className="sprite-gallery">
+                </div> */}
+                <button ref="play-btn" className="play-btn">Play!</button>
             </div>
         )
     }
@@ -423,7 +431,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         this.playBtn.addEventListener('click', this.onPlay.bind(this))
 
         // TODO(dz):
-        await this.renderGallery();
+        // await this.renderGallery();
         // await this.renderExperiments();
 
         // HACK: scaling

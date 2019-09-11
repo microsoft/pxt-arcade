@@ -4,7 +4,7 @@
     background-color: hsl(222, 45%, 48%);
     display: grid;
     grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr;
-    padding: 0 10px 0 10px;
+    padding: 0 10px 20px 10px;
     justify-items: center;
     align-items: center;
 }
