@@ -97,6 +97,15 @@ Games submitted by the MakeCode community.
         "largeImageUrl": "/static/community/spacefight/spacefight.gif"
     },
     {
+        "name": "Chomper",
+        "description": "Eat the dots, avoid the ghosts, by Miles Watson",
+        "author": "Miles Watson",
+        "url": "https://forum.makecode.com/t/presenting-chomper/493",
+        "cardType": "forumUrl",
+        "imageUrl": "/static/community/chomper/gallery.png",
+        "largeImageUrl": "/static/community/chomper/gallery.gif"
+    },
+    {
         "name": "American Sign Language",
         "description": "Learn ASL sign letters with this quiz game, by Greg Norris",
         "author": "Greg Norris",
