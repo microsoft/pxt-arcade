@@ -71,7 +71,10 @@
         "libs/color",
         "libs/palette",
         "libs/storyboard",
-        "libs/rotary-encoder"
+        "libs/rotary-encoder",
+        "libs/d5prj",
+        "libs/f4prj",
+        "libs/rpiprj"
     ],
     "compile": {
         "useUF2": true,
@@ -263,7 +266,7 @@
         ]
     },
     "simulator": {
-        "autoRun": false,
+        "autoRun": true,
         "autoRunLight": false,
         "emptyRunCode": "pxsim.pxtcore.updateScreen(new pxsim.RefImage(160, 120, 4))",
         "aspectRatio": 0.85,
@@ -370,7 +373,8 @@
         "simGif": false,
         "simGifKey": "R",
         "qrCode": true,
-        "shareFinishedTutorials": true
+        "shareFinishedTutorials": true,
+        "nameProjectFirst": true
     },
     "unsupportedBrowsers": [
         { "id" : "ie" }

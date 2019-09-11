@@ -1,0 +1,10 @@
+{
+    "name": "d5prj",
+    "files": [],
+    "description": "",
+    "hidden": true,
+    "dependencies": {
+        "device": "file:../device",
+        "hw---samd51": "file:../hw---samd51"
+    }
+}
