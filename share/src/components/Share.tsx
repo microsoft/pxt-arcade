@@ -16,9 +16,15 @@ interface ShareProps {
 
 interface ShareState {
     publishID?: string;
+    pending?: boolean;
 }
 
 class Share extends React.Component<ShareProps, ShareState> {
+
+    constructor(props: ShareProps) {
+        super(props);
+        this.state = {};
+    }
 
     render() {
         const { changeMode, proj } = this.props;
@@ -42,12 +48,13 @@ class Share extends React.Component<ShareProps, ShareState> {
     }
 
     protected renderUnshared() {
+        const { pending } = this.state;
         return <div>
             <div className="share-legal-text">
                 {legalText}
             </div>
             <div className="publish-action">
-                <button className="publish-button" onClick={this.publishScript}>Publish Project</button>
+                <button className="publish-button" onClick={this.publishScript}>{pending ? <div className="spinner"/> : "Publish"}</button>
             </div>
         </div>
     }
@@ -81,16 +88,19 @@ class Share extends React.Component<ShareProps, ShareState> {
     protected publishScript = () => {
         const { proj } = this.props;
 
+        this.setState({ pending: true });
+
         if (!proj) {
-            // Just for testing, it's impossible to hit this in the normal flow
-            this.setState({
-                publishID: "xxxx-xxxx-xxxx-xxxx"
-            })
+            // Just for testing, it's impossible to hit this case in the normal flow
+            setTimeout(() => {
+                this.setState({
+                    publishID: "xxxx-xxxx-xxxx-xxxx"
+                })
+            }, 2000);
         }
         else {
             util.shareScriptAsync(null, proj.mainTs, proj.mainBlocks)
             .then(resp => {
-                console.log(resp.json);
                 this.setState({
                     publishID: resp.json.shortid
                 });

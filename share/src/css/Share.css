@@ -180,3 +180,23 @@
 .twitter:before {
     content: "\f099";
 }
+
+@keyframes spin {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.spinner {
+    width: 2rem;
+    height: 2rem;
+    animation: spin 1s linear;
+    animation-iteration-count: infinite;
+    border-top: #999999 solid 4px;
+    border-radius: 100%;
+    margin: auto;
+}
