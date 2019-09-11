@@ -399,6 +399,12 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         let spriteGalleryHeight = SPRITE_GALLERY_HEIGHT * this.scale
         let colorPickerHeight = (SE.TOTAL_HEIGHT + SPRITE_GALLERY_HEIGHT) * this.scale
 
+        // TODO
+        let spriteGalleryOptions =
+            Object.keys(moddableImages)
+                .map(k => moddableImages[k])
+                .map(i => imageLiteralToBitmap(i))
+
         return (
             <div className="game-modder">
                 <h1 ref="header">{currImg.callToAction}</h1>
@@ -413,7 +419,9 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
                     [
                         <SpriteEditorComp ref="sprite-editor" startImage={this.state.userImages[this.state.currentImg].data}
                             onPlay={this.onPlay} scale={this.scale}></SpriteEditorComp>,
-                        <SpriteGallery height={spriteGalleryHeight}></SpriteGallery>
+                        <SpriteGallery height={spriteGalleryHeight}
+                            options={spriteGalleryOptions}
+                        ></SpriteGallery>
                     ]}
                 {/* <div ref="sprite-gallery" className="sprite-gallery">
                 </div> */}
