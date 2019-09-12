@@ -767,8 +767,6 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         gameBinJs = modBackground(gameBinJs, this.state.currentBackground)
         gameMainTs = modBackgroundTs(gameMainTs, this.state.currentBackground);
 
-        console.log(gameMainBlocks);
-
         const screenshot = await mkScreenshotAsync(this.state.currentBackground + 1, this.state.userImages.map(u => isEmptyBitmap(u.data) ? u.default : u.data));
 
         this.props.playHandler({
