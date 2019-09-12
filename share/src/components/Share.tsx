@@ -96,7 +96,7 @@ class Share extends React.Component<ShareProps, ShareState> {
             }, 2000);
         }
         else {
-            util.shareScriptAsync(null, proj.mainTs, proj.mainBlocks)
+            util.shareScriptAsync(proj.screenshot, proj.mainTs, proj.mainBlocks)
             .then(resp => {
                 this.setState({
                     publishID: resp.json.shortid
