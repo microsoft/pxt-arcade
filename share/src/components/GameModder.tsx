@@ -469,8 +469,8 @@ const SAMPLE_OBSTACLES2 = [`.`, `
     . . . . . . . . . . . . f f . . . f f f . . . .
 `].map(resizeTo24x24)
 
-console.dir(SAMPLE_CHARACTERS)
-console.dir(SAMPLE_OBSTACLES)
+// console.dir(SAMPLE_CHARACTERS)
+// console.dir(SAMPLE_OBSTACLES)
 
 export class GameModder extends React.Component<GameModderProps, GameModderState> {
     protected playBtn: HTMLButtonElement | undefined;
@@ -576,9 +576,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         }
     }
     private applyImage(bmp: Bitmap) {
-        console.log("apply 1")
         if (this.spriteEditor) {
-            console.log("apply 2")
             this.spriteEditor.editor.bitmap().image = bmp
             this.spriteEditor.editor.rePaint()
         }
