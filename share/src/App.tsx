@@ -66,17 +66,18 @@ export class App extends React.Component<{}, AppState> {
     }
 
     modGame() {
-        if (playTimestamp) {
-            // TODO ensure that time is calculated on play -> share page navigation as well
-            tickEvent("shareExperiment.playtime", { "duration": Date.now() - playTimestamp });
-            playTimestamp = null;
-        }
-
         this.setState({ mode: "mod" });
         tickEvent("shareExperiment.mod");
     }
 
     protected changeMode = (mode: "play" | "share" | "mod") => {
+        if (mode == "play") {
+            playTimestamp = Date.now();
+        } else if (this.state.mode == "play") {
+            tickEvent("shareExperiment.play.time", { "duration": Date.now() - playTimestamp });
+            playTimestamp = null;
+        }
+
         this.setState({ mode });
     }
 
