@@ -1,7 +1,8 @@
 .game-modder {
     width: 100%;
     height: 100%;
-    background: #2c3e50;
+    background: #333;
+    /* background: #2c3e50; */
     color: #FFF;
     font-family: "Monaco", monospace;
     text-align: center;
@@ -37,30 +38,39 @@
 /* #2c3e50 */
 .tab-bar path,
 .sprite-gallery path,
-.sprite-editor-container {
-    fill: hsl(222, 45%, 48%);
-    background-color: hsl(222, 45%, 48%);
+.sprite-editor-container,
+.sprite-gallery,
+.color-picker {
+    /* fill: hsl(222, 45%, 48%); */
+    /* background-color: hsl(222, 45%, 48%); */
+    background-color: hsl(183, 64%, 39%);
+    fill: hsl(183, 64%, 39%);
 }
 .tab-bar path,
 .sprite-gallery path {
     stroke-width: 2px;
-    stroke:#4b7bec;
+    stroke:	hsl(183, 81%, 61%);
+    /* stroke:	hsl(222, 81%, 61%); */
 }
 .play-btn {
-    border-width: 0px;
-    color: white;
-    background-color:hsl(148, 44%, 46%);
+    background-color: #2ecc71;
+    /* height: 100%; */
+    height: 3.5rem;
     width: 100%;
-    /* width: 95%; */
-    height: 10vw;
-    font-size: 7vw;
-    line-height: 10vw;
-    border-radius: 0 0 5px 5px;
-    padding: 0;
-    /* margin-top: 20px; */
+    text-align: center;
+    color: white;
+    border: none;
+    box-shadow: inset 0 -0.3em 0 0 rgba(34,36,38,.15);
+    border-radius: 0 0 0.2rem 0.2rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
 }
 .play-btn:hover {
-    background-color:hsl(148, 44%, 37%);
+    background-color:#20be63;
+    /* background-color:hsl(126, 65%, 40%); */
 }
 
 .sprite-editor-container {

@@ -2,10 +2,10 @@
     line-height: 0px;
     width: 100%;
     height: 101.90vw;
-    background-color: hsl(222, 45%, 48%);
+    /* background-color: hsl(222, 45%, 48%); */
     display: grid;
     grid-template: repeat(5, 1fr) / repeat(3, 1fr);
-    padding: 0 10px 20px 10px;
+    padding: 0 10px 10px 10px;
     justify-items: center;
     align-items: center;
 }
