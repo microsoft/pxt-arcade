@@ -699,7 +699,16 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
 
         function modBackground(bin: string, newColor: number): string {
             const originalColor = 13
-            const template = (color: number) => `scene_setBackgroundColor__P12360_mk(s);s.tmp_0.arg0=${color}`
+            const template = (color: number) => `scene_setBackgroundColor__P15776_mk(s);s.tmp_0.arg0=${color}`
+            let old = template(originalColor)
+            let newIdx = newColor + 1 // arcade function is 1-based b/c 0 is transparent
+            let nw = template(newIdx)
+            return bin.replace(old, nw)
+        }
+
+        function modBackgroundTs(bin: string, newColor: number): string {
+            const originalColor = 13
+            const template = (color: number) => `scene.setBackgroundColor(${color})`
             let old = template(originalColor)
             let newIdx = newColor + 1 // arcade function is 1-based b/c 0 is transparent
             let nw = template(newIdx)
@@ -739,6 +748,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             gameMainBlocks = replaceImages(gameMainBlocks, def, user);
         }
         gameBinJs = modBackground(gameBinJs, this.state.currentBackground)
+        gameMainTs = modBackgroundTs(gameMainTs, this.state.currentBackground);
 
         const screenshot = await mkScreenshotAsync(this.state.currentBackground + 1, this.state.userImages.map(u => isEmptyBitmap(u.data) ? u.default : u.data));
 
