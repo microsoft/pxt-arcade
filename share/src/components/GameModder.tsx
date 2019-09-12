@@ -576,7 +576,9 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         }
     }
     private applyImage(bmp: Bitmap) {
+        console.log("apply 1")
         if (this.spriteEditor) {
+            console.log("apply 2")
             this.spriteEditor.editor.bitmap().image = bmp
             this.spriteEditor.editor.rePaint()
         }
