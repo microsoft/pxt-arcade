@@ -202,7 +202,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
         // el.appendChild(this.gallery.getElement());
         el.appendChild(this.toolbarRoot.el);
         this.layout();
-        this.toolbarRoot.attr({ "width": `${65 * this.scale}px`, "height": this.outerHeight() + "px" });
+        // this.toolbarRoot.attr({ "width": `${65}px`, "height": this.outerHeight() + "px" });
         // this.toolbarRoot.el.style.position = "absolute";
         // this.toolbarRoot.el.style.top = "0px";
         // this.toolbarRoot.el.style.left = "0px";
@@ -218,15 +218,15 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
             return;
         }
 
-        this.paintSurface.setGridDimensions(CANVAS_HEIGHT * this.scale);
+        this.paintSurface.setGridDimensions(CANVAS_HEIGHT);
 
         // The width of the palette + editor
-        const paintAreaTop = (HEADER_HEIGHT + HEADER_CANVAS_MARGIN) * this.scale;
-        const paintAreaLeft = (PADDING + SIDEBAR_WIDTH + SIDEBAR_CANVAS_MARGIN) * this.scale;
+        const paintAreaTop = (HEADER_HEIGHT + HEADER_CANVAS_MARGIN);
+        const paintAreaLeft = (PADDING + SIDEBAR_WIDTH + SIDEBAR_CANVAS_MARGIN);
 
-        // this.sidebar.translate(PADDING * this.scale, paintAreaTop);
+        // this.sidebar.translate(PADDING, paintAreaTop);
         // TODO(dz): hacky scaling
-        this.paintSurface.updateBounds(paintAreaTop, paintAreaLeft, CANVAS_HEIGHT * this.scale, CANVAS_HEIGHT * this.scale);
+        this.paintSurface.updateBounds(paintAreaTop, paintAreaLeft, CANVAS_HEIGHT, CANVAS_HEIGHT);
         // this.bottomBar.layout(
         //     HEADER_HEIGHT + HEADER_CANVAS_MARGIN + (CANVAS_HEIGHT + REPORTER_BAR_CANVAS_MARGIN),
         //     PADDING + SIDEBAR_WIDTH + SIDEBAR_CANVAS_MARGIN, CANVAS_HEIGHT);
@@ -337,11 +337,11 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
     }
 
     outerWidth() {
-        return WIDTH * this.scale;
+        return WIDTH;
     }
 
     outerHeight() {
-        return TOTAL_HEIGHT * this.scale;
+        return TOTAL_HEIGHT;
     }
 
     bitmap() {

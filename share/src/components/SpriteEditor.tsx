@@ -2,11 +2,14 @@ import React from 'react';
 import { Bitmap } from '../sprite-editor/bitmap';
 import * as SE from '../sprite-editor/spriteEditor'
 import { SpriteEditor } from '../sprite-editor/spriteEditor';
+import SpriteGallery, { SpriteGalleryProps } from './SpriteGallery';
+import { TOOLBAR_WIDTH, TOOLBAR_HEIGHT } from '../sprite-editor/sidebar';
 
 interface SpriteEditorProps {
     onPlay: () => void;
     scale: number;
     startImage: Bitmap;
+    galleryProps: SpriteGalleryProps;
 }
 interface SpriteEditorState {
     image: Bitmap
@@ -34,6 +37,10 @@ export class SpriteEditorComp extends React.Component<SpriteEditorProps, SpriteE
         this.spriteEditorHolder = undefined;
     }
 
+    // resize() {
+    //     this.spriteEditorHolder.style.transform = `scale(${this.props.scale})`;
+    // }
+
     renderSpriteEditor() {
         if (!this.spriteEditorHolder)
             return;
@@ -60,12 +67,19 @@ export class SpriteEditorComp extends React.Component<SpriteEditorProps, SpriteE
         }
         let controls = document.getElementsByClassName("sprite-canvas-controls")
         for (let c of controls) {
-            let oldW = parseInt(c.getAttribute("width").replace("px", ""))
-            let oldH = parseInt(c.getAttribute("height").replace("px", ""))
+            // let oldW = parseInt(c.getAttribute("width").replace("px", ""))
+            // let oldH = parseInt(c.getAttribute("height").replace("px", ""))
+
+            // console.log(oldW)
+            // console.log(oldH)
+            let oldW = TOOLBAR_WIDTH
+            let oldH = TOOLBAR_HEIGHT
             // fudge of 5 for scale 1.892
             const fudge = 0 // 5 * scale
-            let newW = (oldW - fudge) / this.props.scale
-            let newH = (oldH - fudge) / this.props.scale
+            let newW = oldW
+            // let newW = (oldW - fudge) / this.props.scale
+            let newH = oldH
+            // let newH = (oldH - fudge) / this.props.scale
             c.setAttribute("viewBox", `${fudge} ${fudge} ${newW} ${newH}`)
         }
         // END HACK
@@ -79,20 +93,33 @@ export class SpriteEditorComp extends React.Component<SpriteEditorProps, SpriteE
             [10, 8]
         ]);
 
-        this.spriteEditorHolder.style.height = (spriteEditor.outerHeight()) + "px";
-        this.spriteEditorHolder.style.width = (spriteEditor.outerWidth()) + "px";
-        this.spriteEditorHolder.style.overflow = "hidden";
+        // this.spriteEditorHolder.style.height = (spriteEditor.outerHeight()) + "px";
+        // this.spriteEditorHolder.style.width = (spriteEditor.outerWidth()) + "px";
+        // this.spriteEditorHolder.style.overflow = "hidden";
         this.spriteEditorHolder.className += ' sprite-editor-container sprite-editor-dropdown-bg sprite-editor-dropdown';
         spriteEditor.addKeyListeners();
         spriteEditor.onClose(() => {
             console.log("Closing sprite editor!")
             this.props.onPlay()
         });
+
+        // let canvasContainer = document.getElementsByClassName("sprite-canvas-container")[0] as HTMLDivElement
+        // let refWidth = 432.0
+        // let actWidth = canvasContainer.clientWidth
+        // let scale = actWidth / refWidth
+        // console.log("SCALE2")
+        // console.log(scale)
+        // canvasContainer.style.transform = `scale(${scale})`
+        // canvasContainer.
     }
 
     render() {
+        let gp = this.props.galleryProps
         return (
             <div ref="sprite-editor-holder">
+                <SpriteGallery options={gp.options} onClick={gp.onClick} height={gp.height} >
+
+                </SpriteGallery>
             </div>
         );
     }

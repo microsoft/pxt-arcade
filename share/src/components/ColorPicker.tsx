@@ -47,7 +47,7 @@ export class ColorPicker extends React.Component<ColorPickerProps, ColorPickerSt
     componentDidMount() {
         this.colorPicker = this.refs["color-picker"] as HTMLDivElement
 
-        this.colorPicker.setAttribute("style", `height:${this.props.height}px`)
+        // this.colorPicker.setAttribute("style", `height:${this.props.height}px`)
     }
     componentWillUnmount() {
         this.colorPicker = undefined

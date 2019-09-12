@@ -35,14 +35,6 @@
 .sprite-editor-dropdown.blocklyDropDownDiv .blocklyDropDownArrow.arrowBottom {
   background: #2c3e50;
 }
-#sprite-editor-header {
-  z-index: 1002;
-  height: 50px;
-  width: inherit;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-}
 #sprite-editor-header-controls {
   width: 100%;
   height: 100%;

@@ -4,7 +4,7 @@ import '../css/SpriteGallery.css';
 import { Bitmap } from '../sprite-editor/bitmap';
 import { bitmapToUrl } from '../bitmap_helpers';
 
-interface SpriteGalleryProps {
+export interface SpriteGalleryProps {
     height: number,
     options: Bitmap[],
     onClick: (b: Bitmap) => void,
@@ -44,7 +44,7 @@ export class SpriteGallery extends React.Component<SpriteGalleryProps, SpriteGal
     componentDidMount() {
         this.spriteGallery = this.refs["sprite-gallery"] as HTMLDivElement
 
-        this.spriteGallery.setAttribute("style", `height:${this.props.height}px`)
+        // this.spriteGallery.setAttribute("style", `height:${this.props.height}px`)
     }
     componentWillUnmount() {
         this.spriteGallery = undefined

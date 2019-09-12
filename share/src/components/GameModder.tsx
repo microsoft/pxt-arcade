@@ -15,8 +15,8 @@ import { bunny_hop_main_blocks } from '../games/bunny_hop/main.blocks';
 import { gameModderState } from '../App';
 import { SpriteEditorComp } from './SpriteEditor';
 import * as SE from '../sprite-editor/spriteEditor'
-import SpriteGallery from './SpriteGallery';
 import { mkScreenshotAsync } from "./screenshot";
+import { SpriteGalleryProps } from './SpriteGallery';
 // import { bunnyHopBinJs } from '../../public/games/bunny_hop/bunny_hop_min.js.js';
 
 export interface GameModderProps {
@@ -548,24 +548,6 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
     //     // console.dir(imgsAsBmps)
     // }
 
-    async renderGallery() {
-        // TODO: move to seperate component
-        const SVG_W = 541
-        const OUT = 40
-        const GAL_MARGIN_B = 50
-        const GAL_SVG_H = 10 + GAL_MARGIN_B
-        // const GAL_MARGIN_B = 20
-        // const GAL_SVG_H = 40
-        let galleryHolder = this.refs["sprite-gallery"] as HTMLDivElement
-        let gallerySvg = document.createElementNS("http://www.w3.org/2000/svg", "svg")// as unknown as SVGSVGElement;
-        let galleryEnd = document.createElementNS("http://www.w3.org/2000/svg", "path")
-        let galleryEndPath = `M -${OUT},-${OUT} l 0,${OUT} l 0,${GAL_SVG_H - GAL_MARGIN_B} l ${OUT},0 h ${SVG_W} l ${OUT},0 l 0,-${GAL_SVG_H - GAL_MARGIN_B} l 0,-${OUT} z`
-        galleryEnd.setAttribute("d", galleryEndPath)
-        gallerySvg.setAttribute('viewBox', `0 0 ${SVG_W} ${GAL_SVG_H}`)
-        gallerySvg.appendChild(galleryEnd)
-        galleryHolder.appendChild(gallerySvg)
-    }
-
     private saveCurrentUserImage(bmp: Bitmap) {
         // TODO: set image bug somehow?
         function updateUserImage(old: UserImage, nw: Bitmap): UserImage {
@@ -657,9 +639,14 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
 
         let startImg = this.state.userImages[this.state.currentImg].data
         let galKey = `tab${this.state.currentImg}__` + spriteGalleryOptions.map(b => b.buf.toString()).join("_")
+        let galProps: SpriteGalleryProps = {
+            height: spriteGalleryHeight,
+            options: spriteGalleryOptions,
+            onClick: this.onSpriteGalleryPick.bind(this)
+        }
         return (
             <div className="game-modder">
-                <h1 ref="header">{currImg.callToAction}</h1>
+                <h1 ref="header" className="what-to-do-header">{currImg.callToAction}</h1>
                 <TabBar ref="tab-bar" tabImages={this.tabImages}
                     tabChange={this.onTabChange.bind(this)} startTab={this.state.currentImg} />
                 {isBackgroundTab
@@ -668,16 +655,12 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
                         selected={this.state.currentBackground} colors={SE.COLORS}
                         height={colorPickerHeight}></ColorPicker>
                     :
-                    [
-                        <SpriteEditorComp ref="sprite-editor" key="image-editor" startImage={startImg}
-                            onPlay={this.onPlay} scale={this.scale}></SpriteEditorComp>,
-                        <SpriteGallery key={galKey} height={spriteGalleryHeight}
-                            options={spriteGalleryOptions} onClick={this.onSpriteGalleryPick.bind(this)}
-                        ></SpriteGallery>
-                    ]}
+                    <SpriteEditorComp ref="sprite-editor" key="image-editor" startImage={startImg}
+                        onPlay={this.onPlay} scale={this.scale} galleryProps={galProps}></SpriteEditorComp>
+                }
                 {/* <div ref="sprite-gallery" className="sprite-gallery">
                 </div> */}
-                <button ref="play-btn" className="play-btn">Play!</button>
+                <button ref="play-btn" className="play-btn">Play</button>
             </div>
         )
     }
@@ -695,7 +678,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         // await this.renderExperiments();
 
         // HACK: scaling
-        this.header.setAttribute("style", `transform: scale(${this.scale})`);
+        // this.header.setAttribute("style", `transform: scale(${this.scale})`);
 
         // HACK: Disable scrolling in iOS
         document.ontouchmove = function (e) {

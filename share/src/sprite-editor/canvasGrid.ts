@@ -341,8 +341,11 @@ export class CanvasGrid {
         const left = bounds.left + (window.scrollX !== null ? window.scrollX : window.pageXOffset);
         const top = bounds.top + (window.scrollY !== null ? window.scrollY : window.pageYOffset);
 
-        this.mouseCol = Math.floor((((coord.clientX) - left) / this.cellWidth));
-        this.mouseRow = Math.floor((((coord.clientY) - top) / this.cellHeight));
+        let cellW = bounds.width / this.image.width
+        let cellH = bounds.width / this.image.width
+
+        this.mouseCol = Math.floor((coord.clientX - left) / cellW);
+        this.mouseRow = Math.floor((coord.clientY - top) / cellH);
 
         return [
             this.mouseCol,
@@ -494,11 +497,10 @@ export class CanvasGrid {
 
     }
 
-
     private layoutCanvas(canvas: HTMLCanvasElement, top: number, left: number, width: number, height: number) {
-        canvas.style.position = "absolute";
-        canvas.style.top = `0px`
-        canvas.style.left = `0px`
+        // canvas.style.position = "absolute";
+        // canvas.style.top = `0px`
+        // canvas.style.left = `0px`
 
         // if (this.image.width === this.image.height) {
         //     canvas.style.top = top + "px";
