@@ -12,7 +12,6 @@ interface SpriteEditorProps {
     galleryProps: SpriteGalleryProps;
 }
 interface SpriteEditorState {
-    image: Bitmap
 }
 
 export class SpriteEditorComp extends React.Component<SpriteEditorProps, SpriteEditorState>
@@ -24,7 +23,6 @@ export class SpriteEditorComp extends React.Component<SpriteEditorProps, SpriteE
         super(props);
 
         this.state = {
-            image: this.props.startImage
         }
 
     }
@@ -34,20 +32,31 @@ export class SpriteEditorComp extends React.Component<SpriteEditorProps, SpriteE
         this.renderSpriteEditor()
     }
     componentWillUnmount() {
+        this.removeSpriteEditor();
         this.spriteEditorHolder = undefined;
+    }
+    componentDidUpdate() {
+        this.removeSpriteEditor()
+        this.renderSpriteEditor()
     }
 
     // resize() {
     //     this.spriteEditorHolder.style.transform = `scale(${this.props.scale})`;
     // }
 
-    renderSpriteEditor() {
-        console.log("renderSpriteEditor 1")
-        if (!this.spriteEditorHolder || !!this.editor)
-            return;
-        console.log("renderSpriteEditor 2")
+    removeSpriteEditor() {
+        let toRemove: Element[] = []
+        for (let r of this.spriteEditorHolder.children)
+            toRemove.push(r)
+        toRemove
+            .filter(r => r.className !== "sprite-gallery")
+            .forEach(r =>
+                this.spriteEditorHolder.removeChild(r));
+        this.editor = null
+    }
 
-        let currImg = this.state.image
+    renderSpriteEditor() {
+        let currImg = this.props.startImage
         let spriteEditor = this.editor = new SpriteEditor(currImg, null, false, this.props.scale);
         spriteEditor.render(this.spriteEditorHolder);
         let controls = document.getElementsByClassName("sprite-canvas-controls")[0]

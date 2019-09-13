@@ -10,6 +10,7 @@ import {
 import { Bitmap, resizeBitmap } from './bitmap';
 import { CanvasState } from './canvasState';
 import { TextButton, UndoRedoGroup } from './buttons';
+import { tickEvent } from '../telemetry/appinsights';
 
 export const TOTAL_HEIGHT = 465;
 
@@ -129,6 +130,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
                     this.state = this.paintSurface.state.copy();
                     this.rePaint();
                 }
+                tickEvent("shareExperiment.mod.image");
                 this.commit();
                 this.shiftAction();
             }
@@ -236,7 +238,6 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
     }
 
     rePaint() {
-        this.commit();
         this.paintSurface.repaint();
     }
 

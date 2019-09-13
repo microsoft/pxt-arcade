@@ -548,7 +548,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
     //     // console.dir(imgsAsBmps)
     // }
 
-    private saveCurrentUserImage(bmp: Bitmap) {
+    private updateCurrentUserImage(bmp: Bitmap) {
         // TODO: set image bug somehow?
         function updateUserImage(old: UserImage, nw: Bitmap): UserImage {
             return {
@@ -569,22 +569,10 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
     }
 
     private save() {
-        if (this.spriteEditor) {
-            tickEvent("shareExperiment.mod.image");
+        if (this.spriteEditor && this.spriteEditor.editor) {
             this.spriteEditor.editor.commit()
-            this.saveCurrentUserImage(this.spriteEditor.editor.bitmap().image)
-        }
-    }
-    private applyImage(bmp: Bitmap) {
-        if (this.spriteEditor) {
-            this.spriteEditor.editor.bitmap().image = bmp
-            this.spriteEditor.editor.rePaint()
-        }
-    }
-    private load(idx: number) {
-        let currImg = this.state.userImages[idx].data
-        if (this.spriteEditor) {
-            this.applyImage(currImg)
+            let newImg = this.spriteEditor.editor.bitmap().image
+            this.updateCurrentUserImage(newImg)
         }
     }
 
@@ -593,7 +581,6 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         this.setState({ currentImg: idx })
         if (IsGameModderState(gameModderState))
             gameModderState.currentImg = idx
-        this.load(idx)
         tickEvent("shareExperiment.mod.tabChange");
     }
 
@@ -604,8 +591,8 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
     }
 
     onSpriteGalleryPick(bmp: Bitmap) {
-        this.saveCurrentUserImage(bmp)
-        this.applyImage(bmp)
+        tickEvent("shareExperiment.mod.galleryPick");
+        this.updateCurrentUserImage(bmp)
     }
 
     render() {
@@ -655,7 +642,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
                         selected={this.state.currentBackground} colors={SE.COLORS}
                         height={colorPickerHeight}></ColorPicker>
                     :
-                    <SpriteEditorComp ref="sprite-editor" key="image-editor" startImage={startImg}
+                    <SpriteEditorComp ref="sprite-editor" startImage={startImg}
                         onPlay={this.onPlay} scale={this.scale} galleryProps={galProps}></SpriteEditorComp>
                 }
                 {/* <div ref="sprite-gallery" className="sprite-gallery">
@@ -673,17 +660,14 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         // events
         this.playBtn.addEventListener('click', this.onPlay.bind(this))
 
-        // TODO(dz):
-        // await this.renderGallery();
-        // await this.renderExperiments();
-
-        // HACK: scaling
-        // this.header.setAttribute("style", `transform: scale(${this.scale})`);
-
         // HACK: Disable scrolling in iOS
         document.ontouchmove = function (e) {
             e.preventDefault();
         }
+    }
+
+    componentDidUpdate() {
+        this.spriteEditor = this.refs["sprite-editor"] as SpriteEditorComp;
     }
 
     componentWillUnmount() {
