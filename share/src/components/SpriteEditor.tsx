@@ -71,7 +71,7 @@ export class SpriteEditorComp extends React.Component<SpriteEditorProps, SpriteE
             [10, 8]
         ]);
 
-        this.spriteEditorHolder.className += ' sprite-editor-container sprite-editor-dropdown-bg sprite-editor-dropdown';
+        this.spriteEditorHolder.className = ' sprite-editor-container sprite-editor-dropdown-bg sprite-editor-dropdown';
         spriteEditor.addKeyListeners();
         spriteEditor.onClose(() => {
             this.props.onPlay()
