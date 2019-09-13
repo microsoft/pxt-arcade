@@ -9,15 +9,13 @@ import { Simulator } from './simulator';
 import { UserProject } from './util';
 
 
-let sim: Simulator;
-
 export interface GamePlayerProps {
     proj: UserProject;
     changeMode: (mode: "play" | "share" | "mod") => void;
 }
 
 const GamePlayer: React.FC<GamePlayerProps> = props => {
-    if (!sim) sim = new Simulator();
+    let sim = new Simulator();
 
     sim.runCode(props.proj.binJs);
 
