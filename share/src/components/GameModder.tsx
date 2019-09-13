@@ -586,12 +586,13 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
 
     onBackgroundColorChanged(idx: number) {
         this.setState({ currentBackground: idx })
+        tickEvent("shareExperiment.mod.changeBackground", { "color": idx });
         if (IsGameModderState(gameModderState))
             gameModderState.currentBackground = idx
     }
 
-    onSpriteGalleryPick(bmp: Bitmap) {
-        tickEvent("shareExperiment.mod.galleryPick");
+    onSpriteGalleryPick(bmp: Bitmap, idx?: number) {
+        tickEvent("shareExperiment.mod.galleryPick", {"tab": this.state.currentImg, "item": idx});
         this.updateCurrentUserImage(bmp)
     }
 

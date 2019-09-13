@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Simulator, SimulatorButton } from "./simulator";
+import { tickEvent } from '../telemetry/appinsights';
 
 import '../css/Joystick.css';
 
@@ -250,6 +251,7 @@ export class Joystick extends React.Component<JoystickProps, {}> {
         if (this.joystickAnimation) {
             cancelAnimationFrame(this.joystickAnimation);
             this.joystickAnimation = undefined;
+            tickEvent("shareExperiment.play.joystickGestureUp");
         }
     }
 

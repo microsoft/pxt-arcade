@@ -1,4 +1,5 @@
 import * as React from "react";
+import { tickEvent } from '../telemetry/appinsights';
 
 export interface SocialButtonProps {
     platform: "twitter" | "facebook";
@@ -10,7 +11,8 @@ export class SocialButton extends React.Component<SocialButtonProps, {}> {
         const { platform, shareUrl } = this.props;
         return <a
             className={`social-button ${platform}`}
-            href={platform === "twitter" ? getTwitterUrl(shareUrl) : getFacebookUrl(shareUrl)} />
+            href={platform === "twitter" ? getTwitterUrl(shareUrl) : getFacebookUrl(shareUrl)}
+            onClick={() => {logClick(platform)}} />
     }
 }
 
@@ -25,4 +27,8 @@ function getTwitterUrl(shareUrl: string) {
 
     return `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}` +
         `&text=${encodeURIComponent(text)}&hashtags=${encodeURIComponent(hashtags)}`;
+}
+
+function logClick(platform: string) {
+    tickEvent("shareExperiment.share.social", {"platform": platform});
 }
