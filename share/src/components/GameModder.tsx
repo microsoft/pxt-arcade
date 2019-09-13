@@ -581,7 +581,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         this.setState({ currentImg: idx })
         if (IsGameModderState(gameModderState))
             gameModderState.currentImg = idx
-        tickEvent("shareExperiment.mod.tabChange");
+        tickEvent("shareExperiment.mod.tabChange", { "tab": idx });
     }
 
     onBackgroundColorChanged(idx: number) {
