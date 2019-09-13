@@ -80,6 +80,10 @@ export class App extends React.Component<{}, AppState> {
         let vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
+
+    componentDidMount() {
+        document.title = "MakeCode Arcade"
+    }
 }
 
 export default App;
