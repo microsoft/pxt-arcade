@@ -7,7 +7,7 @@ import { bitmapToUrl } from '../bitmap_helpers';
 export interface SpriteGalleryProps {
     height: number,
     options: Bitmap[],
-    onClick: (b: Bitmap) => void,
+    onClick: (b: Bitmap, idx?: number) => void,
 }
 interface SpriteGalleryState {
 }
@@ -51,7 +51,7 @@ export class SpriteGallery extends React.Component<SpriteGalleryProps, SpriteGal
     }
 
     clickHandler(idx: number) {
-        this.props.onClick(this.props.options[idx])
+        this.props.onClick(this.props.options[idx], idx)
     }
 
     render() {

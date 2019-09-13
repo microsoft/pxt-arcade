@@ -2,6 +2,7 @@ import React from 'react';
 
 import '../css/GameButtons.css';
 import { Simulator, SimulatorButton } from './simulator';
+import { tickEvent } from '../telemetry/appinsights';
 
 export interface GameButtonsProps {
     simulator: Simulator;
@@ -80,7 +81,10 @@ class GameButtons extends React.Component<GameButtonsProps, {}>  {
         }
 
         const { simulator } = this.props;
-        if (pressed) simulator.pressButton(button);
+        if (pressed) {
+            tickEvent("shareExperiment.play.buttonPress", {"button": button});
+            simulator.pressButton(button);
+        }
         else simulator.releaseButton(button);
     }
 

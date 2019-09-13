@@ -291,6 +291,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
     undo() {
         if (this.undoStack.length) {
             this.debug("undo");
+            tickEvent("shareExperiment.mod.undo");
             const todo = this.undoStack.pop();
             this.pushState(false);
 
@@ -308,6 +309,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
     redo() {
         if (this.redoStack.length) {
             this.debug("redo");
+            tickEvent("shareExperiment.mod.redo");
             const todo = this.redoStack.pop();
             this.pushState(true);
             this.restore(todo);

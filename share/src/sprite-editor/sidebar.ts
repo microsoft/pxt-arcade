@@ -4,6 +4,7 @@ import {
     mkXIconButton, mkIconButton, UndoRedoGroup, UndoRedoHost
 } from "./buttons";
 import * as svg from './svgUtil'
+import { tickEvent } from "../telemetry/appinsights";
 
 export interface SideBarHost {
     setActiveTool(tool: PaintTool): void;
@@ -70,6 +71,7 @@ export class SideBar {
 
     public setTool(tool: PaintTool) {
         this.host.setActiveTool(tool);
+        tickEvent("shareExperiment.mod.changeTool", {"tool": PaintTool[tool].toLowerCase()});
 
         if (this.selectedTool) {
             this.selectedTool.removeClass("selected");
@@ -84,6 +86,7 @@ export class SideBar {
 
     public setColor(color: number) {
         this.host.setActiveColor(color);
+        tickEvent("shareExperiment.mod.setColor", {"color": color});
 
         if (this.selectedSwatch) {
             this.selectedSwatch.stroke("none");

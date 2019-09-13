@@ -14,7 +14,7 @@ interface AppState {
 }
 
 let lastBinary: UserProject;
-let playTimestamp: number;
+let timestamp: number;
 export let gameModderState: GameModderState | {} = {};
 
 // HACK: Disable scrolling in iOS
@@ -33,6 +33,7 @@ export class App extends React.Component<{}, AppState> {
 
         loadAppInsights(false);
         tickEvent("shareExperiment.landing");
+        timestamp = Date.now();
 
         window.addEventListener('resize', this.setVh);
     }
@@ -64,14 +65,13 @@ export class App extends React.Component<{}, AppState> {
     }
 
     protected changeMode = (mode: "play" | "share" | "mod") => {
-        tickEvent(`shareExperiment.${mode}`);
+        // log new mode
+        tickEvent(`shareExperiment.${mode}${this.state.mode == "share" ? ".again" : ""}`);
 
-        if (mode == "play") {
-            playTimestamp = Date.now();
-        } else if (this.state.mode == "play") {
-            tickEvent("shareExperiment.play.time", { "duration": Date.now() - playTimestamp });
-            playTimestamp = null;
-        }
+        // calculate time in previous
+        let now = Date.now();
+        tickEvent(`shareExperiment.${this.state.mode}.time`, { "duration": now - timestamp });
+        timestamp = now;
 
         this.setState({ mode });
     }
@@ -79,6 +79,10 @@ export class App extends React.Component<{}, AppState> {
     protected setVh = () => {
         let vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    componentDidMount() {
+        document.title = "MakeCode Arcade"
     }
 }
 

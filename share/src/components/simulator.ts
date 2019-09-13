@@ -1,3 +1,5 @@
+import { tickEvent } from '../telemetry/appinsights';
+
 export enum SimulatorButton {
     A,
     B,
@@ -144,7 +146,10 @@ export class Simulator {
                 if (this.readyPromise) this.readyPromise.resolve();
                 break;
             case "simulator":
-                if (msg.command === "restart") this.runCode(this.lastRunBinary);
+                if (msg.command === "restart") {
+                    tickEvent("shareExperiment.play.restart");
+                    this.runCode(this.lastRunBinary);
+                }
         }
     }
 
