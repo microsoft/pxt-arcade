@@ -36,10 +36,13 @@ class Share extends React.Component<ShareProps, ShareState> {
                 <div className="share-screenshot-container">
                     <img className="share-screenshot" src={screenshot} ></img>
                 </div>
-                { (this.state && this.state.publishID) ? this.renderShared() : this.renderUnshared() }
+                {(this.state && this.state.publishID) ? this.renderShared() : this.renderUnshared()}
                 <div className="share-action">
                     <button className="share-button play-button" onClick={() => changeMode("play")}>Play Again</button>
                 </div>
+                <p className="do-more-txt">
+                    Want to do more? Open the link above on a laptop to edit your project in the full MakeCode Arcade experience.
+                </p>
             </div>
         )
     }
@@ -51,7 +54,7 @@ class Share extends React.Component<ShareProps, ShareState> {
                 {legalText}
             </div>
             <div className="share-action">
-                <button className="share-button publish-button" onClick={this.publishScript}>{pending ? <div className="spinner"/> : "Publish"}</button>
+                <button className="share-button publish-button" onClick={this.publishScript}>{pending ? <div className="spinner" /> : "Publish"}</button>
             </div>
         </div>
     }
@@ -70,7 +73,7 @@ class Share extends React.Component<ShareProps, ShareState> {
                     autoComplete="off"
                     autoCorrect="off"
                     autoCapitalize="off"
-                    spellCheck={false}/>
+                    spellCheck={false} />
                 <button className="attached-copy-button" onClick={this.copyToClipboard}>
                     <div className="copy-button-icon" />
                 </button>
@@ -97,11 +100,11 @@ class Share extends React.Component<ShareProps, ShareState> {
         }
         else {
             util.shareScriptAsync(proj.screenshot, proj.mainTs, proj.mainBlocks)
-            .then(resp => {
-                this.setState({
-                    publishID: resp.json.shortid
+                .then(resp => {
+                    this.setState({
+                        publishID: resp.json.shortid
+                    });
                 });
-            });
         }
 
     }

@@ -180,3 +180,15 @@
     border-radius: 100%;
     margin: auto;
 }
+
+.do-more-txt {
+    color: white;
+
+    width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    font-size: 16px;
+    margin-block-start: 0px;
+}
