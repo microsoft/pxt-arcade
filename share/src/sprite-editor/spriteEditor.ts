@@ -120,6 +120,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
 
         this.paintSurface.up((col, row) => {
             this.debug("gesture end (" + PaintTool[this.activeTool] + ")");
+            tickEvent("shareExperiment.mod.paintGestureUp");
             if (this.altDown) {
                 const color = this.state.image.get(col, row);
                 this.sidebar.setColor(color);
@@ -130,7 +131,6 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
                     this.state = this.paintSurface.state.copy();
                     this.rePaint();
                 }
-                tickEvent("shareExperiment.mod.image");
                 this.commit();
                 this.shiftAction();
             }

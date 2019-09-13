@@ -59,18 +59,13 @@ export class App extends React.Component<{}, AppState> {
 
     playGame(binJs: UserProject) {
         lastBinary = binJs;
-        playTimestamp = Date.now();
 
-        this.setState({ mode: "play" })
-        tickEvent("shareExperiment.play");
-    }
-
-    modGame() {
-        this.setState({ mode: "mod" });
-        tickEvent("shareExperiment.mod");
+        this.changeMode("play")
     }
 
     protected changeMode = (mode: "play" | "share" | "mod") => {
+        tickEvent(`shareExperiment.${mode}`);
+
         if (mode == "play") {
             playTimestamp = Date.now();
         } else if (this.state.mode == "play") {
