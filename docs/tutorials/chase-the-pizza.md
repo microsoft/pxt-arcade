@@ -229,7 +229,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ## Step 17
 
-Let’s restart our countdown each time. Open the ``||info:Info||`` Toolbox drawer and drag another ``||info:start countdown||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block on your Workspace.
+Let’s restart our countdown each time. Open the ``||info:Info||`` Toolbox drawer and drag a ``||info:start countdown||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block on your Workspace.
 
 ```blocks
 let pizza: Sprite = null
