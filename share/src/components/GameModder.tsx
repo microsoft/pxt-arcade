@@ -684,7 +684,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
 
         function modBackground(bin: string, newColor: number): string {
             const originalColor = 13
-            const template = (color: number) => `scene_setBackgroundColor__P15776_mk(s);s.tmp_0.arg0=${color}`
+            const template = (color: number) => `scene_setBackgroundColor__P127472_mk(s);s.tmp_0.arg0=${color}`
             let old = template(originalColor)
             let newIdx = newColor + 1 // arcade function is 1-based b/c 0 is transparent
             let nw = template(newIdx)
