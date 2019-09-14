@@ -95,6 +95,9 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
 
     private closeHandler: () => void;
 
+    public paintGestureCount: number = 0;
+    public paintGestureInterval: any;
+
     constructor(bitmap: Bitmap, blocksInfo?: {}, protected lightMode = false, public scale = 1) {
 
         this.columns = bitmap.width;
@@ -118,9 +121,11 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
             // this.bottomBar.updateCursor(col, row);
         });
 
+        this.paintGestureInterval = setInterval(this.logEvents, 5000);
+
         this.paintSurface.up((col, row) => {
             this.debug("gesture end (" + PaintTool[this.activeTool] + ")");
-            tickEvent("shareExperiment.mod.paintGestureUp");
+            this.paintGestureCount += 1;
             if (this.altDown) {
                 const color = this.state.image.get(col, row);
                 this.sidebar.setColor(color);
@@ -428,6 +433,18 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
     setIconsToDefault() {
         this.switchIconTo(PaintTool.Rectangle);
         this.switchIconTo(PaintTool.Normal);
+    }
+
+    logEvents = () => {
+        if (this.paintGestureCount > 0) {
+            tickEvent("shareExperiment.mod.paintGestureUp", {"count": this.paintGestureCount});
+            this.paintGestureCount = 0;
+        }
+    }
+
+    cleanupInterval = () => {
+        clearInterval(this.paintGestureInterval);
+        this.paintGestureInterval = null;
     }
 
     private keyDown = (event: KeyboardEvent) => {

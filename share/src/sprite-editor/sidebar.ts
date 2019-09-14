@@ -71,7 +71,6 @@ export class SideBar {
 
     public setTool(tool: PaintTool) {
         this.host.setActiveTool(tool);
-        tickEvent("shareExperiment.mod.changeTool", {"tool": PaintTool[tool].toLowerCase()});
 
         if (this.selectedTool) {
             this.selectedTool.removeClass("selected");
@@ -86,7 +85,6 @@ export class SideBar {
 
     public setColor(color: number) {
         this.host.setActiveColor(color);
-        tickEvent("shareExperiment.mod.setColor", {"color": color});
 
         if (this.selectedSwatch) {
             this.selectedSwatch.stroke("none");
@@ -120,6 +118,7 @@ export class SideBar {
         const buttonGroup = new CursorMultiButton(this.sizeGroup, TOOLBAR_WIDTH);
         buttonGroup.onSelected(index => {
             this.setCursorSize(1 + (index * 2));
+            tickEvent("shareExperiment.mod.changeSize", {"size": 1 + (index * 2)});
         });
         // Sets the first button to show as selected
         buttonGroup.selected = 0;
@@ -190,7 +189,10 @@ export class SideBar {
                 .at(col ? PALETTE_BORDER_WIDTH * 2 + PALLETTE_SWATCH_WIDTH : PALETTE_BORDER_WIDTH, bgHeight + COLOR_MARGIN + PALETTE_BORDER_WIDTH + row * (PALETTE_BORDER_WIDTH + PALLETTE_SWATCH_WIDTH))
                 .fill(this.palette[i])
                 .clipPath("url(#sprite-editor-selected-color)")
-                .onClick(() => this.setColor(i));
+                .onClick(() => {
+                    tickEvent("shareExperiment.mod.setColor", {"color": i});
+                    this.setColor(i)
+                });
             swatch.title(`${i}`)
 
             this.colorSwatches.push(swatch);
@@ -208,6 +210,7 @@ export class SideBar {
         btn.onClick(() => {
             this.host.setIconsToDefault();
             this.setTool(tool);
+            tickEvent("shareExperiment.mod.changeTool", {"tool": PaintTool[tool].toLowerCase()});
         });
         this.buttonGroup.appendChild(btn.getElement());
         return btn;

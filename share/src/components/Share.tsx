@@ -41,9 +41,9 @@ class Share extends React.Component<ShareProps, ShareState> {
                 <div className="share-action">
                     <button className="share-button play-button" onClick={() => changeMode("play")}>Play Again</button>
                 </div>
-                <p className="do-more-txt">
+                {this.state && this.state.publishID && <p className="do-more-txt">
                     Want to do more? Open the link above on a laptop to edit your project in the full MakeCode Arcade experience.
-                </p>
+                </p>}
             </div>
         )
     }
@@ -60,7 +60,7 @@ class Share extends React.Component<ShareProps, ShareState> {
         </div>
     }
 
-    protected renderShared() {
+    protected renderShared(showSocial?: boolean) {
         const { publishID } = this.state;
         const shareLink = `https://makecode.com/${publishID}`;
 
@@ -79,10 +79,10 @@ class Share extends React.Component<ShareProps, ShareState> {
                     <div className="copy-button-icon" />
                 </button>
             </div>
-            <div className="social-buttons">
+            {showSocial && <div className="social-buttons">
                 <SocialButton platform="twitter" shareUrl={shareLink} />
                 <SocialButton platform="facebook" shareUrl={shareLink} />
-            </div>
+            </div>}
         </div>
     }
 
