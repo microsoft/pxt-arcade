@@ -49,7 +49,7 @@ If supported by your screen, uncomment this line in ``config.txt``.
 
     disable_overscan=1
 
-### VGA screens
+### 4:3 VGA screens
 
 If you are using a VGA screen via a HDMI->VGA adapter. Apply the following changes to ``config.txt``
 
