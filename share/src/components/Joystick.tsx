@@ -26,6 +26,9 @@ export class Joystick extends React.Component<JoystickProps, {}> {
     protected handleY = SVG_WIDTH >> 1;
     protected lastOctet: number | undefined;
 
+    protected joystickGestureCount: number = 0;
+    protected joystickGestureInterval: any;
+
     componentDidMount() {
         this.dPadUp = this.refs["dpad-up"] as SVGRectElement;
         this.dPadDown = this.refs["dpad-down"] as SVGRectElement;
@@ -46,6 +49,7 @@ export class Joystick extends React.Component<JoystickProps, {}> {
         this.joystickHandle = undefined;
 
         this.props.simulator.removeChangeListener(this.buttonChangeListener);
+        this.cleanupInterval();
     }
 
     render() {
@@ -104,6 +108,8 @@ export class Joystick extends React.Component<JoystickProps, {}> {
         else {
             this.bindMouseEvents(div);
         }
+
+        this.joystickGestureInterval = setInterval(this.logEvents, 5000);
     }
 
     protected bindPointerEvents(div: HTMLDivElement) {
@@ -251,8 +257,20 @@ export class Joystick extends React.Component<JoystickProps, {}> {
         if (this.joystickAnimation) {
             cancelAnimationFrame(this.joystickAnimation);
             this.joystickAnimation = undefined;
-            tickEvent("shareExperiment.play.joystickGestureUp");
+            this.joystickGestureCount += 1;
         }
+    }
+
+    protected logEvents = () => {
+        if (this.joystickGestureCount > 0) {
+            tickEvent("shareExperiment.play.joystickGestureUp", {"count": this.joystickGestureCount});
+            this.joystickGestureCount = 0;
+        }
+    }
+
+    protected cleanupInterval = () => {
+        clearInterval(this.joystickGestureInterval);
+        this.joystickGestureCount = 0;
     }
 
     /**

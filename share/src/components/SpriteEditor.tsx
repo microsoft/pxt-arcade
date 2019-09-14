@@ -36,6 +36,8 @@ export class SpriteEditorComp extends React.Component<SpriteEditorProps, SpriteE
         this.spriteEditorHolder = undefined;
     }
     componentDidUpdate() {
+        this.editor.logEvents();
+        this.editor.cleanupInterval();
         this.removeSpriteEditor()
         this.renderSpriteEditor()
     }

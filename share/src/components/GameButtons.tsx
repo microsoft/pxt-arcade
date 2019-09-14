@@ -16,6 +16,8 @@ class GameButtons extends React.Component<GameButtonsProps, {}>  {
     protected aLabel: SVGTextElement | undefined;
     protected bButton: SVGCircleElement | undefined;
     protected bLabel: SVGTextElement | undefined;
+    protected buttonPressCount: {[key: string]: number} = {};
+    protected buttonPressInterval: any;
 
     componentDidMount() {
         this.aButton = this.refs["button-a"] as SVGCircleElement;
@@ -31,6 +33,7 @@ class GameButtons extends React.Component<GameButtonsProps, {}>  {
         this.aLabel = undefined;
         this.bButton = undefined;
         this.bLabel = undefined;
+        this.cleanupInterval();
     }
 
     render() {
@@ -82,7 +85,8 @@ class GameButtons extends React.Component<GameButtonsProps, {}>  {
 
         const { simulator } = this.props;
         if (pressed) {
-            tickEvent("shareExperiment.play.buttonPress", {"button": button});
+            if (!this.buttonPressCount[SimulatorButton[button]]) this.buttonPressCount[SimulatorButton[button]] = 0;
+            this.buttonPressCount[SimulatorButton[button]] += 1;
             simulator.pressButton(button);
         }
         else simulator.releaseButton(button);
@@ -100,6 +104,8 @@ class GameButtons extends React.Component<GameButtonsProps, {}>  {
         else {
             this.bindMouseEvents(div);
         }
+
+        this.buttonPressInterval = setInterval(this.logEvents, 5000);
     }
 
     protected bindPointerEvents(div: HTMLElement) {
@@ -197,6 +203,18 @@ class GameButtons extends React.Component<GameButtonsProps, {}>  {
             }
             touchIdentifier = undefined;
         });
+    }
+
+    protected logEvents = () => {
+        if (Object.values(this.buttonPressCount).some(x => !!x)) {
+            tickEvent("shareExperiment.play.buttonPress", this.buttonPressCount);
+            Object.keys(this.buttonPressCount).forEach(k => this.buttonPressCount[k] = 0);
+        }
+    }
+
+    protected cleanupInterval = () => {
+        clearInterval(this.buttonPressInterval);
+        this.buttonPressCount = {};
     }
 }
 
