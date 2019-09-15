@@ -31,6 +31,14 @@ Here are some fun programs for your @boardname@!
         "largeImageUrl": "/static/blocks-games/jumpy-platformer.gif"
     },
     {
+        "name": "Hot Air Balloon",
+        "description": "Fly a hot air Balloon past mountains and bbstacles",
+        "url": "/blocks-games/hot-air-balloon",
+        "cardType": "example",
+        "imageUrl": "/static/blocks-games/hot-air-balloon.png",
+        "largeImageUrl": "/static/blocks-games/hot-air-balloon.gif"
+    },
+    {
         "name": "Eat the Fruit",
         "description": "Don't get hit by the flying junk food",
         "url":"/blocks-games/eat-the-fruit",
