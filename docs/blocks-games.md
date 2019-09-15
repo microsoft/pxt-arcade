@@ -32,7 +32,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Hot Air Balloon",
-        "description": "Fly a hot air Balloon past mountains and bbstacles",
+        "description": "Fly a hot air balloon past mountains and obstacles",
         "url": "/blocks-games/hot-air-balloon",
         "cardType": "example",
         "imageUrl": "/static/blocks-games/hot-air-balloon.png",
@@ -86,6 +86,7 @@ Here are some fun programs for your @boardname@!
 [Falling Duck](/blocks-games/duck),
 [Space Destroyer](/blocks-games/space-destroyer),
 [Jumpy Platformer](/blocks-games/jumpy-platformer),
+[Hot Air Balloon](/blocks-games/hot-air-balloon),
 [Eat the Fruit](/blocks-games/eat-the-fruit),
 [Level Up!](/blocks-games/level-game),
 [Memory](/blocks-games/memory),
