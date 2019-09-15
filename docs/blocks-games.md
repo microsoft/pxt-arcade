@@ -31,6 +31,14 @@ Here are some fun programs for your @boardname@!
         "largeImageUrl": "/static/blocks-games/jumpy-platformer.gif"
     },
     {
+        "name": "Hot Air Balloon",
+        "description": "Fly a hot air balloon past mountains and obstacles",
+        "url": "/blocks-games/hot-air-balloon",
+        "cardType": "example",
+        "imageUrl": "/static/blocks-games/hot-air-balloon.png",
+        "largeImageUrl": "/static/blocks-games/hot-air-balloon.gif"
+    },
+    {
         "name": "Eat the Fruit",
         "description": "Don't get hit by the flying junk food",
         "url":"/blocks-games/eat-the-fruit",
@@ -78,6 +86,7 @@ Here are some fun programs for your @boardname@!
 [Falling Duck](/blocks-games/duck),
 [Space Destroyer](/blocks-games/space-destroyer),
 [Jumpy Platformer](/blocks-games/jumpy-platformer),
+[Hot Air Balloon](/blocks-games/hot-air-balloon),
 [Eat the Fruit](/blocks-games/eat-the-fruit),
 [Level Up!](/blocks-games/level-game),
 [Memory](/blocks-games/memory),
