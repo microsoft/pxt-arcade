@@ -49,6 +49,14 @@ If supported by your screen, uncomment this line in ``config.txt``.
 
     disable_overscan=1
 
+### 4:3 VGA screens
+
+If you are using a VGA screen via a HDMI->VGA adapter. Apply the following changes to ``config.txt``
+
+    framebuffer_width=640
+    framebuffer_height=480
+    hdmi_mode=1
+
 ## Test the firmware
 
 Now, let's try out the firmware.
