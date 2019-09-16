@@ -240,7 +240,7 @@ direction = 1
 
 To create the interaction, go to ``||sprites:Sprites||`` and grab an ``||sprites:on sprite of kind player overlaps othersprite of kind player||`` and drag it anywhere in your workspace. Change the first ``player`` to ``projectile`` and check that the second is set to ``player``. Next, from ``||sprites:Sprites||``, grab a ``||sprites:set mySprite velocity to||`` and place it in the ``||sprites:on sprite of kind player overlaps||``. Drag ``sprite`` from the ``||sprites:overlaps||`` block and drag it into the ``mySprite`` section of the velocity block. 
 
-Back in ``||sprites:Sprites||`` grab a ``||sprit,es:mySprite x||`` block and drag it into the ``vx`` field. Drag the ``sprite`` out of the ``||sprites:overlap||`` block and place it over the ``mySprite`` in the ``vx`` field. Now click the ``x`` drop down and select ``vx (velocity x)``. 
+Back in ``||sprites:Sprites||`` grab a ``||sprites:mySprite x||`` block and drag it into the ``vx`` field. Drag the ``sprite`` out of the ``||sprites:overlap||`` block and place it over the ``mySprite`` in the ``vx`` field. Now click the ``x`` drop down and select ``vx (velocity x)``. 
 
 From ``||math:Math||`` grab a ``||math:0 x 0||`` block and place it in the ``vy`` section of the velocity block. Set the first field of the block to **-1** and, in ``||sprites:Sprites||``, grab a ``||sprites:mySprite x||`` and drag it into the second field. Click the drop down and select ``vy (velocity y)``. Drag ``sprite`` from the ``||sprites:overlap||`` block and place it over the ``mySprite`` in the ``||sprites:mySprite vy||``.
 
