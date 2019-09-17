@@ -34,6 +34,8 @@ export interface GameModderState {
     userImages: UserImage[]
     currentImg: number,
     currentBackground: number,
+    alert?: boolean;
+    playButtonClicked?: boolean;
 }
 function IsGameModderState(s: any): s is GameModderState {
     return !!(s as GameModderState).userImages
@@ -478,6 +480,8 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
     protected header: HTMLHeadingElement | undefined;
     private tabImages: Bitmap[];
     private scale: number = 1.0;
+    private alertInterval: any;
+    private alertTimeout: any;
 
     constructor(props: GameModderProps) {
         super(props);
@@ -514,8 +518,9 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         this.tabImages = Object.keys(moddableImages)
             .map(k => moddableImages[k])
             .map(textToBitmap)
-    }
 
+        if (!(gameModderState as GameModderState).playButtonClicked) this.alertInterval = setInterval(this.alertPlay, 15000);
+    }
 
     // async renderExperiments() {
     //     let tabBar = this.refs["tab-bar"] as TabBar
@@ -547,6 +552,16 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
     //     let imgsAsBmps = imgs.map(textToBitmap)
     //     // console.dir(imgsAsBmps)
     // }
+
+    private alertPlay = () => {
+        this.setState({alert: true});
+        this.alertTimeout = setTimeout(() => {this.setState({alert: false})}, 2000);
+    }
+
+    private clearTimers = () => {
+        clearTimeout(this.alertTimeout);
+        clearInterval(this.alertInterval);
+    }
 
     private updateCurrentUserImage(bmp: Bitmap) {
         // TODO: set image bug somehow?
@@ -648,7 +663,12 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
                 }
                 {/* <div ref="sprite-gallery" className="sprite-gallery">
                 </div> */}
-                <button ref="play-btn" className="play-btn">Play</button>
+                <div className="play-btn-container">
+                    <button ref="play-btn" className={`play-btn ${this.state.alert ? "shake" : ""}`}>
+                        <span>Play</span>
+                        <i className="icon play"></i>
+                    </button>
+                </div>
             </div>
         )
     }
@@ -675,10 +695,14 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
         this.playBtn = undefined;
         this.spriteEditor = undefined;
         this.header = undefined;
+
+        this.clearTimers();
     }
 
     async onPlay() {
-        this.save()
+        this.save();
+
+        (gameModderState as GameModderState).playButtonClicked = true;
 
         const toReplace = this.state.userImages.filter(ui => !isEmptyBitmap(ui.data));
 

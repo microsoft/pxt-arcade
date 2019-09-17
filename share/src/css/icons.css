@@ -115,3 +115,11 @@
 	text-decoration: inherit;
 	text-transform: none
 }
+
+.icon {
+    font-family: Icons;
+	font-style: normal;
+}
+i.icon.play:before {
+    content: "\f04b";
+}

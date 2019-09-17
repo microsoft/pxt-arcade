@@ -52,25 +52,78 @@
     stroke:	hsl(183, 81%, 61%);
     /* stroke:	hsl(222, 81%, 61%); */
 }
+.play-btn-container {
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+}
+.play-btn-container:before{
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
 .play-btn {
-    background-color: #2ecc71;
-    /* height: 100%; */
-    height: 3.5rem;
-    width: 100%;
-    text-align: center;
+    position: absolute;
+    width: calc(100% - 2rem);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     color: white;
+    background-color: #2ecc71;
+    text-align: center;
     border: none;
-    box-shadow: inset 0 -0.3em 0 0 rgba(34,36,38,.15);
-    border-radius: 0 0 0.2rem 0.2rem;
-    font-size: 1.4rem;
+    border-radius: 0.2rem;
+    font-size: 5rem;
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
+    margin: 1rem;
 }
 .play-btn:hover {
     background-color:#20be63;
-    /* background-color:hsl(126, 65%, 40%); */
+    /* background-color:hsl(126, 65%, 40%);*/
+}
+.play-btn i:before {
+    width: 5rem;
+    height: 5rem;
+    display: block;
+    margin: auto;
+    padding-left: 0.5rem;
+}
+.play-btn > span {
+    display: none;
+}
+
+@media (max-height: 540px) {
+    .play-btn-container {
+        width: 100%;
+    }
+    .play-btn {
+        font-size: 3rem;
+    }
+    .play-btn > span,
+    .play-btn i {
+        display: inline-block;
+    }
+    .play-btn i:before {
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+@media (max-height: 510px) {
+    .play-btn {
+        margin: 0.5rem;
+        width: calc(100% - 1rem);
+        font-size: 2rem;
+        min-height: 2rem;
+    }
+    .play-btn i:before {
+        width: 2rem;
+        height: 2rem;
+    }
 }
 
 .sprite-editor-container {
@@ -168,3 +221,16 @@
     height: 50px;
 }
  */
+
+.shake {
+    animation-duration: 750ms;
+    animation-name: shake;
+}
+
+@keyframes shake {
+    0% { transform: rotate(0); }
+    10%, 20% { transform: rotate(-3deg); }
+    30%, 50%, 70%, 90% { transform: rotate(3deg); }
+    40%, 60%, 80% { transform: rotate(-3deg); }
+    100% { transform: rotate(0); }
+}
