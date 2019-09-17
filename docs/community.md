@@ -124,6 +124,15 @@ Games submitted by the MakeCode community.
         "largeImageUrl": "/static/community/3dmap/gallery.gif"
     },
     {
+        "name": "HackMan",
+        "description": "Eat the 0s and 1, by Greg Norris",
+        "author": "Greg Norris",
+        "url": "https://forum.makecode.com/t/hackman-game/526",
+        "cardType": "forumUrl",
+        "imageUrl": "/static/community/hackman/gallery.png",
+        "largeImageUrl": "/static/community/hackman/gallery.gif"
+    },
+    {
         "name": "Add Game",
         "description": "Are you looking to contribute your own game? These instructions will explain how to submit your game for the chance to appear in this carousel.",
         "imageUrl": "/static/community/add-game.png",
@@ -131,7 +140,3 @@ Games submitted by the MakeCode community.
     }
 ]
 ```
-
-## See Also
-
-[Space Fight](/community/spacefight)
