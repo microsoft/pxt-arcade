@@ -866,8 +866,7 @@ switch (step) {
     globals.bird___22772 = (null);
     globals.gravity___22747 = (0);
     globals.bunny___22740 = (null);
-    s.tmp_0 = scene_setBackgroundColor__P935_mk(s);
-    s.tmp_0.arg0 = 13;
+    s.tmp_0 = scene_setBackgroundColor__P935_mk(s);s.tmp_0.arg0=13;
     s.pc = 38; return s.tmp_0;
   case 38:
     r0 = s.retval;
