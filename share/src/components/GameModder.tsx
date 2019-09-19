@@ -34,7 +34,8 @@ export interface GameModderState {
     userImages: UserImage[]
     currentImg: number,
     currentBackground: number,
-    alert?: boolean;
+    alertShown?: boolean;
+    pulse?: boolean;
 }
 function IsGameModderState(s: any): s is GameModderState {
     return !!(s as GameModderState).userImages
@@ -517,7 +518,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
             .map(k => moddableImages[k])
             .map(textToBitmap)
 
-        if (!(gameModderState as GameModderState).alert) this.alertTimeout = setTimeout(this.alertPlay, 5000);
+        if (!(gameModderState as GameModderState).alertShown) this.alertTimeout = setTimeout(this.alertPlay, 5000);
     }
 
     // async renderExperiments() {
@@ -553,7 +554,8 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
 
     private alertPlay = () => {
         this.save();
-        this.setState({alert: true});
+        (gameModderState as GameModderState).alertShown = true;
+        this.setState({pulse: true});
    }
 
     private clearTimers = () => {
@@ -661,7 +663,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
                 {/* <div ref="sprite-gallery" className="sprite-gallery">
                 </div> */}
                 <div className="play-btn-container">
-                    <button ref="play-btn" className={`play-btn ${this.state.alert ? "shake" : ""}`}>
+                    <button ref="play-btn" className={`play-btn ${this.state.pulse ? "shake" : ""}`}>
                         <span>Play</span>
                         <i className="icon play"></i>
                     </button>
@@ -698,6 +700,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
 
     async onPlay() {
         this.save();
+        (gameModderState as GameModderState).alertShown = true;
 
         const toReplace = this.state.userImages.filter(ui => !isEmptyBitmap(ui.data));
 
