@@ -362,7 +362,9 @@
             "debugExtensionCode",
             "snippetBuilder",
             "experimentalHw",
-            "recipes"
+            "recipes",
+            "alwaysGithubItemBlocks",
+            "githubBlocksDiff"
         ],
         "extendEditor": true,
         "simScreenshot": true,
@@ -373,9 +375,7 @@
         "qrCode": true,
         "shareFinishedTutorials": true,
         "nameProjectFirst": true,
-        "alwaysGithubItemBlocks": true,
-        "alwaysGithubItem": true,
-        "githubBlocksDiff": true
+        "alwaysGithubItem": true
     },
     "unsupportedBrowsers": [
         {
