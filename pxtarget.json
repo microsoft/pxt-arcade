@@ -146,8 +146,7 @@
         "gittag": "v0.6.3",
         "dockerImage": "pext/yotta:latest",
         "codalTarget": {
-            "branches": {
-            }
+            "branches": {}
         }
     },
     "variants": {
@@ -373,9 +372,14 @@
         "simGifKey": "R",
         "qrCode": true,
         "shareFinishedTutorials": true,
-        "nameProjectFirst": true
+        "nameProjectFirst": true,
+        "alwaysGithubItemBlocks": true,
+        "alwaysGithubItem": true,
+        "githubBlocksDiff": true
     },
     "unsupportedBrowsers": [
-        { "id" : "ie" }
+        {
+            "id": "ie"
+        }
     ]
 }
