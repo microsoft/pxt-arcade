@@ -65,17 +65,21 @@
             background: #ffffff;
             max-width: 800px;
             margin: 0px auto;
-            padding: 2em;
+            padding: 3em;
             box-shadow: 10px 10px 4px 0 rgba(0,0,0,0.3);
         }
-        
+
         .ui.button {
             margin-bottom: 2em;
             padding: 1.5em;
         }
 
-        h1, h2 {
-            margin-top: 0;
+        span.subheading {
+            line-height: 1.28571429;
+            margin-top: -.5em;
+            font-size: 1.75em;
+            font-weight: 700;
+            padding-bottom: 1em;
         }
 
         .logotext {
@@ -94,10 +98,8 @@
 
     <div id="main" role="presentation">
         <div role="presentation" id="flexcontainer">
-            <img class="logotext" alt="Surface official laptop of NFL logo" src="static/surface-nfl.png" />
-
             <h1>Microsoft MakeCode Arcade</h1>
-            <h2>with Surface and the NFL</h2>
+            <span role="presentation" class="subheading">with Surface and the NFL</span>
 
             <p>During football season this year, MakeCode is featuring Arcade football games that kids can play, mod, or create from scratch!</p>
 
@@ -119,6 +121,8 @@
             <p>The final challenge is for you to build your own game from scratch! Go through this tutorial and build "Catch the Football"</p>
             
             <a class="opentutorial ui button green" target="_blank" href="/#tutorial:/tutorials/chase-the-pizza">Open Tutorial</a>
+
+            <img class="logotext" alt="Surface official laptop of NFL logo" src="static/surface-nfl.png" />
         </div>
     </div>
 
