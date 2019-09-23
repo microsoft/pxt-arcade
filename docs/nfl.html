@@ -28,7 +28,7 @@
             }
 
             #main {
-                padding: 0 !important;
+                margin: 0 !important;
             }
         }
 
@@ -37,9 +37,15 @@
         }
 
         #main {
-            padding-top: 2em;
-            padding-bottom: 2em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
+            background: #FFFFFF;
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 1.5em 3em;
+            box-shadow: 10px 10px 4px 0 rgba(0,0,0,0.3);
         }
 
         #simulator {
@@ -54,22 +60,6 @@
             top: 0;
             left: 0;
             height: 400px;
-        }
-
-        div {
-            color: black;
-        }
-
-        #flexcontainer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            background: #ffffff;
-            max-width: 800px;
-            margin: 0px auto;
-            padding: 1.5em 3em;
-            box-shadow: 10px 10px 4px 0 rgba(0,0,0,0.3);
         }
 
         .ui.button {
@@ -110,33 +100,31 @@
     <div id="header" role="presentation" aria-hidden="true"></div>
 
     <div id="main" role="presentation">
-        <div role="presentation" id="flexcontainer">
-            <h1>Microsoft MakeCode Arcade</h1>
-            <span role="presentation" class="subheading">with Surface and the NFL</span>
+        <h1>Microsoft MakeCode Arcade</h1>
+        <span role="presentation" class="subheading">with Surface and the NFL</span>
 
-            <p>During football season this year, MakeCode is featuring Arcade football games that kids can play, mod, or create from scratch!</p>
+        <p>During football season this year, MakeCode is featuring Arcade football games that kids can play, mod, or create from scratch!</p>
 
-            <p>First, try playing this Arcade football game!</p>
+        <p>First, try playing this Arcade football game!</p>
 
-            <div id="simulator" role="presentation">
-                <iframe
-                    src="https://arcade.makecode.com/---run?id=_FdgeJredafpF"
-                    allowfullscreen="allowfullscreen"
-                    sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
-                    frameborder="0"
-                ></iframe>
-            </div>
-
-            <p>Now that you've played the game, try your hand at 'modding' or modifying the game by changing the team:</p>
-
-            <a class="openeditor ui button green" target="_blank" href="/#pub:_FdgeJredafpF">Open Editor</a>
-
-            <p>The final challenge is for you to build your own game from scratch! Go through this tutorial and build "Catch the Football"</p>
-            
-            <a class="opentutorial ui button green" target="_blank" href="/#tutorial:/tutorials/chase-the-pizza">Open Tutorial</a>
-
-            <img class="logotext" alt="Surface official laptop of NFL logo" src="static/surface-nfl.png" />
+        <div id="simulator" role="presentation">
+            <iframe
+                src="https://arcade.makecode.com/---run?id=_FdgeJredafpF"
+                allowfullscreen="allowfullscreen"
+                sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
+                frameborder="0"
+            ></iframe>
         </div>
+
+        <p>Now that you've played the game, try your hand at 'modding' or modifying the game by changing the team:</p>
+
+        <a class="openeditor ui button green" target="_blank" href="/#pub:_FdgeJredafpF">Open Editor</a>
+
+        <p>The final challenge is for you to build your own game from scratch! Go through this tutorial and build "Catch the Football"</p>
+
+        <a class="opentutorial ui button green" target="_blank" href="/#tutorial:/tutorials/chase-the-pizza">Open Tutorial</a>
+
+        <img class="logotext" alt="Surface official laptop of NFL logo" src="static/surface-nfl.png" />
     </div>
 
     <!-- @include footer.html -->
