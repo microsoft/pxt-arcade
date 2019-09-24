@@ -57,9 +57,9 @@ mySprite = sprites.create(img`
 
 ## Step 4
 
-Draw your ``||sprites:Player||`` character by clicking on the grey square in the ``||variables:set mySprite||`` block to open the Sprite Editor. Use the color palette and design tools to draw an image on the canvas. Click **Done** when you are finished.
+Choose your ``||sprites:Player||`` character by clicking on the grey square in the ``||variables:set mySprite||`` block to open the Sprite Editor. Click on the **Gallery** tab and choose your player image. Click **Done** when you are finished.
 
-![Edit player sprite image](/static/tutorials/catch-the-football/player-sprite-editor.gif)
+![Edit player sprite image](/static/tutorials/catch-the-football/choose-player-image.gif)
 
 ## Step 5
 
@@ -68,23 +68,23 @@ Open the ``||controller:Controller||`` Toolbox drawer and drag the ``||controlle
 ```blocks
 let mySprite: Sprite = null
 scene.setBackgroundColor(7)
-let mySprite = sprites.create(img` 
-    . . . . . . . . . . . . . . . . 
-    . . . e e e e e e . . . . . . . 
-    . . . e e f f f e e e e e . . . 
-    . . . e f f 4 4 f f f f f . . . 
-    . . . e f 4 4 4 e 4 e 4 f . . . 
-    . . . e f 4 4 4 4 4 4 4 f f . . 
-    . . . e f 4 4 4 3 3 3 3 f f . . 
-    . . . e f f f f f f f f f e . f 
-    . f . . e e e e e e e e e e f f 
-    . f f . . 4 4 4 4 4 4 . f f f . 
-    . . f f f 4 4 4 4 4 4 f . . . . 
-    . . . . . 4 4 4 4 4 4 . . . . . 
-    . . . . . 4 4 4 4 4 . . . . . . 
-    . . . . . . 4 4 4 4 f f . . . . 
-    . . . . . f f . . . . f f . . . 
-    . . . . f f . . . . . . f . . . 
+let mySprite = sprites.create(img`
+    . . . . f f f f . . . .
+    . . f f e e e e f f . .
+    . f f e e e e e e f f .
+    f f f f 4 e e e f f f f
+    f f f 4 4 4 e e f f f f
+    f f f 4 4 4 4 e e f f f
+    f 4 e 4 4 4 4 4 4 e 4 f
+    f 4 4 f f 4 4 f f 4 4 f
+    f e 4 d d d d d d 4 e f
+    . f e d d b b d d e f .
+    . f f e 4 4 4 4 e f f .
+    e 4 f b 1 1 1 1 b f 4 e
+    4 d f 1 1 1 1 1 1 f d 4
+    4 4 f 6 6 6 6 6 6 f 4 4
+    . . . f f f f f f . . .
+    . . . f f . . f f . . .
 `, SpriteKind.Player)
 // @highlight
 controller.moveSprite(mySprite)
@@ -98,23 +98,23 @@ Open the ``||sprites:Sprites||`` Toolbox drawer and drag another set ``||variabl
 let mySprite: Sprite = null
 let mySprite2: Sprite = null
 scene.setBackgroundColor(7)
-let mySprite = sprites.create(img` 
-    . . . . . . . . . . . . . . . . 
-    . . . e e e e e e . . . . . . . 
-    . . . e e f f f e e e e e . . . 
-    . . . e f f 4 4 f f f f f . . . 
-    . . . e f 4 4 4 e 4 e 4 f . . . 
-    . . . e f 4 4 4 4 4 4 4 f f . . 
-    . . . e f 4 4 4 3 3 3 3 f f . . 
-    . . . e f f f f f f f f f e . f 
-    . f . . e e e e e e e e e e f f 
-    . f f . . 4 4 4 4 4 4 . f f f . 
-    . . f f f 4 4 4 4 4 4 f . . . . 
-    . . . . . 4 4 4 4 4 4 . . . . . 
-    . . . . . 4 4 4 4 4 . . . . . . 
-    . . . . . . 4 4 4 4 f f . . . . 
-    . . . . . f f . . . . f f . . . 
-    . . . . f f . . . . . . f . . . 
+let mySprite = sprites.create(img`
+    . . . . f f f f . . . .
+    . . f f e e e e f f . .
+    . f f e e e e e e f f .
+    f f f f 4 e e e f f f f
+    f f f 4 4 4 e e f f f f
+    f f f 4 4 4 4 e e f f f
+    f 4 e 4 4 4 4 4 4 e 4 f
+    f 4 4 f f 4 4 f f 4 4 f
+    f e 4 d d d d d d 4 e f
+    . f e d d b b d d e f .
+    . f f e 4 4 4 4 e f f .
+    e 4 f b 1 1 1 1 b f 4 e
+    4 d f 1 1 1 1 1 1 f d 4
+    4 4 f 6 6 6 6 6 6 f 4 4
+    . . . f f f f f f . . .
+    . . . f f . . f f . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite)
 // @highlight
@@ -248,23 +248,23 @@ Congratulations, you have completed your game! Use the Game Simulator to play by
 let football: Sprite = null
 let mySprite: Sprite = null
 scene.setBackgroundColor(7)
-let mySprite = sprites.create(img` 
-    . . . . . . . . . . . . . . . . 
-    . . . e e e e e e . . . . . . . 
-    . . . e e f f f e e e e e . . . 
-    . . . e f f 4 4 f f f f f . . . 
-    . . . e f 4 4 4 e 4 e 4 f . . . 
-    . . . e f 4 4 4 4 4 4 4 f f . . 
-    . . . e f 4 4 4 3 3 3 3 f f . . 
-    . . . e f f f f f f f f f e . f 
-    . f . . e e e e e e e e e e f f 
-    . f f . . 4 4 4 4 4 4 . f f f . 
-    . . f f f 4 4 4 4 4 4 f . . . . 
-    . . . . . 4 4 4 4 4 4 . . . . . 
-    . . . . . 4 4 4 4 4 . . . . . . 
-    . . . . . . 4 4 4 4 f f . . . . 
-    . . . . . f f . . . . f f . . . 
-    . . . . f f . . . . . . f . . . 
+let mySprite = sprites.create(img`
+    . . . . f f f f . . . .
+    . . f f e e e e f f . .
+    . f f e e e e e e f f .
+    f f f f 4 e e e f f f f
+    f f f 4 4 4 e e f f f f
+    f f f 4 4 4 4 e e f f f
+    f 4 e 4 4 4 4 4 4 e 4 f
+    f 4 4 f f 4 4 f f 4 4 f
+    f e 4 d d d d d d 4 e f
+    . f e d d b b d d e f .
+    . f f e 4 4 4 4 e f f .
+    e 4 f b 1 1 1 1 b f 4 e
+    4 d f 1 1 1 1 1 1 f d 4
+    4 4 f 6 6 6 6 6 6 f 4 4
+    . . . f f f f f f . . .
+    . . . f f . . f f . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite)
 football = sprites.create(img` 
