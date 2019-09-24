@@ -2,12 +2,7 @@
 
 ## ~ alert
 
-### Warning
-
-This document is still preliminary and changes to it will occur.
-It's fine to build prototypes according to the information presented for experimention only,
-but do not make production hardware.  **If you want to produce Arcade-compatible
-boards other than hobby prototypes, please contact us at arcadehdw@microsoft.com.**
+**If you want to produce an Arcade-compatible product please let us know at arcadehdw@microsoft.com.**
 
 ## ~
 
@@ -39,7 +34,7 @@ Other optional elements include:
 * an electrical expansion connector to support the use of plug-in accessories and connection of external 
 circuits (see [expansion coonnector](#pins))
 
-We have built a minimal open source hardware reference design for an Arcade board. This consists of a schematic (available as PDF and as Altium .SchDoc), a layout (available as Gerbers and related CAM files plus an Altium .PcbDoc), and a BoM (available as a Microsoft Excel file). 
+We have built a minimal open source hardware reference design for an Arcade board. This consists of a schematic (available as PDF and as Altium .SchDoc), a layout (available as Gerbers and related CAM files plus an Altium .PcbDoc), and a BoM (available as a Microsoft Excel file). These files are available in a separate github repo [here](https://github.com/microsoft/pxt-arcade-hardware-designs).
 
 A firmware configuration system allows a lot of flexibility regarding specific component choices and circuit designs to meet the above specification, see [Configuration](#cf2). 
 
@@ -104,8 +99,6 @@ We have found the following part numbers for ST7735 and ILI9163C displays:
 * [MTF0177SN-10](http://www.microtech-lcd.com/tftlcd/177-14-pin128160-custom-lcd-di.html)
 * [Z180SN009](https://www.ezsolutionkr.com/tft-lcd-z180sn009-v0-0)
 * [JD-T18003-T01](https://cdn-shop.adafruit.com/datasheets/JD-T1800.pdf)
-
-![Screen connection](/static/hardware/screen.png)
 
 #### 320x240 based on ILI9134 via SPI
 
@@ -179,9 +172,6 @@ One function of the `Menu` button is to exit low-power sleep mode. For an MCU wi
 
 Arcade boards should have 'soft power off' rather than a physical on-off switch, see [power management](#power).
 
-![Button connections](/static/hardware/buttons.png)
-
-
 ### Audio #audio
 
 Single channel mono audio output requires either a DAC or PWM with DMA support. The corresponding audio output from the MCU
@@ -202,8 +192,8 @@ to clamp the Vbus power line and thereby limit over-voltage transients during US
 
 #### Warning
 
-Multi-player communications is under development now and it may change.
-It's fine to build prototypes, but before any production hardware please contact us at arcadehdw@microsoft.com.
+**Multi-player communications is under active development and it may change.
+It's fine to build prototypes, but before designing any production hardware please contact us at arcadehdw@microsoft.com.**
 
 ### ~
 
@@ -213,8 +203,6 @@ Note that JACDAC power delivery is still under development so **you must leave t
 
 The multi-player connector can either be a 3-way or a 4-way 3.5mm audio jack socket. Contact switching is not required. Many alternative connectors exist, the second page of the reference design schematic lists some of these. Please test a connector
 before designing it in to make sure it does not short together the base of the shaft and the tip during insertion. 
-
-![JACDAC without power](/static/hardware/nopowerjacdac.png)
 
 ### Battery power #battery
 
