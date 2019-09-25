@@ -43,20 +43,41 @@
         #simulator {
             position: relative;
             width: 300px;
-            height: 400px;
+            height: 380px;
             overflow: hidden;
+            margin: 1em auto;
         }
 
         #simulator iframe {
             position: absolute;
             top: 0;
             left: 0;
-            height: 400px;
+            height: 380px;
         }
 
         .ui.button {
-            margin-bottom: 2em;
+            width: 14em;
             padding: 1.5em;
+            margin: 2em auto;
+            background-color: #001A80;
+            color: #FFFFFF;
+            display: block;
+        }
+
+        ol li::before {
+            color: #1A572A !important;
+            font-size: 2.5em;
+            margin-left: -2rem !important;
+        }
+
+        .ui.button:focus, .ui.button:hover {
+            background-color: #003399;
+            color: #FFFFFF;
+        }
+
+        ol.ui.list {
+            padding-left: 2em;
+            align-self: stretch;
         }
 
         span.subheading {
@@ -96,24 +117,26 @@
 
         <p>During football season this year, MakeCode is featuring Arcade football games that kids can play, mod, or create from scratch!</p>
 
-        <p>1. First, try playing this Football game made in Arcade!</p>
+        <ol class="ui ordered list">
+            <li class="middle aligned content">First, try playing this Football game made in Arcade:</li>
 
-        <div id="simulator" role="presentation">
-            <iframe
-                src="https://arcade.makecode.com/---run?id=_FdgeJredafpF"
-                allowfullscreen="allowfullscreen"
-                sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
-                frameborder="0"
-            ></iframe>
-        </div>
+            <div id="simulator" role="presentation">
+                <iframe
+                    src="https://arcade.makecode.com/---run?id=_PDX2w3WFXWXy"
+                    allowfullscreen="allowfullscreen"
+                    sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
+                    frameborder="0"
+                ></iframe>
+            </div>
 
-        <p>2. Now that you've played the game, try your hand at 'modding' or modifying the game by changing the team:</p>
+            <li class="middle aligned content">Now that you've played the game, try your hand at 'modding' the game:</li>
 
-        <a class="openeditor ui button purple" target="_blank" href="/#pub:_FdgeJredafpF">Mod this game!</a>
+            <a class="openeditor ui button" target="_blank" href="/#pub:_PDX2w3WFXWXy">Mod this game!</a>
 
-        <p>3. The final challenge is for you to build your own game from scratch! Go through this tutorial and build "Catch the Football"</p>
+            <li class="middle aligned content">Finally, go through this tutorial and build "Catch the Football" from scratch:</li>
 
-        <a class="opentutorial ui button purple" target="_blank" href="/#tutorial:/tutorials/chase-the-pizza">Create your own game</a>
+            <a class="opentutorial ui button" target="_blank" href="/#tutorial:/tutorials/chase-the-pizza">Create your own game</a>
+        </ol>
 
         <p>Want to make more games? You can find more examples and tutorials on <a target="_blank" href="/">MakeCode Arcade!</a></p>
     </div>
