@@ -13,18 +13,7 @@
     <script src="/doccdn/semantic.js" type="text/javascript"></script>
 
     <style>
-        #header {
-            background-image: url('static/hero.png');
-            height: 300px;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
         @media only screen and (max-width: 813px) {
-            #header {
-                height: 10rem !important;
-            }
-
             #main {
                 margin: 0 !important;
             }
@@ -41,8 +30,9 @@
         #main {
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            text-align: center;
+            text-align: left;
             background: #FFFFFF;
             max-width: 800px;
             margin: 2em auto;
@@ -99,16 +89,14 @@
 </head>
 
 <body id="root" class="root">
-    <div id="header" role="presentation" aria-hidden="true"></div>
-
     <div id="main" role="presentation">
         <img class="logotext" alt="Surface official laptop of NFL logo" src="static/surface-nfl.png" />
         <h1>Microsoft MakeCode Arcade</h1>
-        <span role="presentation" class="subheading">with Surface and the NFL</span>
+        <span role="presentation" class="subheading">Surface and the NFL</span>
 
         <p>During football season this year, MakeCode is featuring Arcade football games that kids can play, mod, or create from scratch!</p>
 
-        <p>First, try playing this Arcade football game!</p>
+        <p>1. First, try playing this Football game made in Arcade!</p>
 
         <div id="simulator" role="presentation">
             <iframe
@@ -119,17 +107,15 @@
             ></iframe>
         </div>
 
-        <p>Now that you've played the game, try your hand at 'modding' or modifying the game by changing the team:</p>
+        <p>2. Now that you've played the game, try your hand at 'modding' or modifying the game by changing the team:</p>
 
-        <a class="openeditor ui button purple" target="_blank" href="/#pub:_FdgeJredafpF">Open Editor</a>
+        <a class="openeditor ui button purple" target="_blank" href="/#pub:_FdgeJredafpF">Mod this game!</a>
 
-        <p>The final challenge is for you to build your own game from scratch! Go through this tutorial and build "Catch the Football"</p>
+        <p>3. The final challenge is for you to build your own game from scratch! Go through this tutorial and build "Catch the Football"</p>
 
-        <a class="opentutorial ui button purple" target="_blank" href="/#tutorial:/tutorials/chase-the-pizza">Open Tutorial</a>
+        <a class="opentutorial ui button purple" target="_blank" href="/#tutorial:/tutorials/chase-the-pizza">Create your own game</a>
 
-        <p>Want to try make more games? You can find more examples and tutorials at arcade.makecode.com</p>
-
-        <a class="ui button green" target="_blank" href="/">Open Home Page</a>
+        <p>Want to make more games? You can find more examples and tutorials on <a target="_blank" href="/">MakeCode Arcade!</a></p>
     </div>
 
     <!-- @include footer.html -->
