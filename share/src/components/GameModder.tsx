@@ -555,8 +555,8 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
     private alertPlay = () => {
         this.save();
         (gameModderState as GameModderState).alertShown = true;
-        this.setState({pulse: true});
-   }
+        this.setState({ pulse: true });
+    }
 
     private clearTimers = () => {
         clearTimeout(this.alertTimeout);
@@ -606,7 +606,7 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
     }
 
     onSpriteGalleryPick(bmp: Bitmap, idx?: number) {
-        tickEvent("shareExperiment.mod.galleryPick", {"tab": this.state.currentImg, "item": idx});
+        tickEvent("shareExperiment.mod.galleryPick", { "tab": this.state.currentImg, "item": idx });
         this.updateCurrentUserImage(bmp)
     }
 
@@ -662,12 +662,10 @@ export class GameModder extends React.Component<GameModderProps, GameModderState
                 }
                 {/* <div ref="sprite-gallery" className="sprite-gallery">
                 </div> */}
-                <div className="play-btn-container">
-                    <button ref="play-btn" className={`play-btn ${this.state.pulse ? "shake" : ""}`}>
-                        <span>Play</span>
-                        <i className="icon play"></i>
-                    </button>
-                </div>
+                <button ref="play-btn" className={`play-btn ${this.state.pulse ? "shake" : ""}`}>
+                    <span>Play</span>
+                    <i className="icon play"></i>
+                </button>
             </div>
         )
     }
