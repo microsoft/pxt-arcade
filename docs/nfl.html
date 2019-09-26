@@ -74,9 +74,19 @@
         }
 
         ol li::before {
-            color: #1A572A !important;
-            font-size: 2.5em;
-            margin-left: -2rem !important;
+            color: #FFFFFF !important;
+            background-color: #57BB31 !important;
+            font-size: 2em;
+            font-weight: 600;
+
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-left: -3rem !important;
+            margin-top: -.5rem !important;
+
+            padding-right: 0.7rem;
+            padding-top: .6rem;
+            border-radius: 50%;
         }
 
         .ui.button:focus, .ui.button:hover {
@@ -85,7 +95,8 @@
         }
 
         ol.ui.list {
-            padding-left: 2em;
+            padding: 0 2em;
+            margin: 1em 1.25em;
             align-self: stretch;
         }
 
@@ -127,22 +138,22 @@
         <p>During football season this year, MakeCode is featuring Arcade football games that kids can play, mod, or create from scratch!</p>
 
         <ol class="ui ordered list">
-            <li class="middle aligned content">First, try playing this Football game made in Arcade:</li>
+            <li class="bottom aligned content">First, click on the simulator below and play the game:</li>
 
             <div id="simulator" role="presentation">
                 <iframe
-                    src="https://arcade.makecode.com/---run?id=_PDX2w3WFXWXy"
+                    src="https://arcade.makecode.com/---run?id=_1MPDMcF6CTTY"
                     allowfullscreen="allowfullscreen"
                     sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
                     frameborder="0"
                 ></iframe>
             </div>
 
-            <li class="middle aligned content">Now that you've played the game, try your hand at 'modding' the game:</li>
+            <li class="bottom aligned content">Now that you've played the game, try your hand at 'modding' the game:</li>
 
-            <a class="openeditor ui button" target="_blank" href="/#pub:_PDX2w3WFXWXy">Mod this game!</a>
+            <a class="openeditor ui button" target="_blank" href="/#pub:_1MPDMcF6CTTY">Mod this game!</a>
 
-            <li class="middle aligned content">Finally, go through this tutorial and build "Catch the Football" from scratch:</li>
+            <li class="bottom aligned content">Finally, go through this tutorial and build "Catch the Football" from scratch:</li>
 
             <a class="opentutorial ui button" target="_blank" href="/#tutorial:/tutorials/chase-the-pizza">Create your own game</a>
         </ol>
