@@ -52,23 +52,8 @@
     stroke:	hsl(183, 81%, 61%);
     /* stroke:	hsl(222, 81%, 61%); */
 }
-.play-btn-container {
-    position: relative;
-    width: 50%;
-    overflow: hidden;
-}
-.play-btn-container:before{
-    content: "";
-    display: block;
-    padding-top: 100%;
-}
 .play-btn {
-    position: absolute;
     width: calc(100% - 2rem);
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
     color: white;
     background-color: #2ecc71;
     text-align: center;
@@ -80,6 +65,7 @@
     -moz-user-select: none;
     user-select: none;
     margin: 1rem;
+    padding: 0.5rem 0;
 }
 .play-btn:hover {
     background-color:#20be63;
