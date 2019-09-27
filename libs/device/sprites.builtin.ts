@@ -75,8 +75,6 @@ namespace sprites.builtin {
     //% fixedInstance jres blockIdentity=images._image
     export const fieldGoal = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
-    export const football0 = image.ofBuffer(hex``);
-    //% fixedInstance jres blockIdentity=images._image
     export const football1 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     export const football2 = image.ofBuffer(hex``);
@@ -85,15 +83,9 @@ namespace sprites.builtin {
     //% fixedInstance jres blockIdentity=images._image
     export const football4 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
-    export const football5 = image.ofBuffer(hex``);
-    //% fixedInstance jres blockIdentity=images._image
     export const football6 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     export const football7 = image.ofBuffer(hex``);
-    //% fixedInstance jres blockIdentity=images._image
-    export const football8 = image.ofBuffer(hex``);
-    //% fixedInstance jres blockIdentity=images._image
-    export const football9 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     export const footballPlayer0 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
