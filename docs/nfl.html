@@ -124,12 +124,28 @@
     </style>
 
     <script>
- 
+        function registerTickEvents() {
+            function tickEvent(id, data, measures) {
+                window.appInsights.trackEvent(id, data, measures);
+            }
+
+            document.querySelector("#openmod").addEventListener("click", function() {
+                tickEvent("nfl.open.mod");
+            });
+
+            document.querySelector("#opentutorial").addEventListener("click", function() {
+                tickEvent("nfl.open.tutorial");
+            });
+
+            document.querySelector("#openhome").addEventListener("click", function() {
+                tickEvent("nfl.open.home");
+            });
+        };
     </script>
 
 </head>
 
-<body id="root" class="root">
+<body id="root" class="root" onload="registerTickEvents()">
     <div id="main" role="presentation">
         <img class="logotext" alt="Surface official laptop of NFL logo" src="static/surface-nfl.png" />
         <h1>Microsoft MakeCode Arcade</h1>
@@ -151,14 +167,14 @@
 
             <li class="bottom aligned content">Now that you've played the game, try your hand at 'modding' the game:</li>
 
-            <a class="openeditor ui button" target="_blank" href="/#pub:_YaA5zz6pW4i9">Mod this game!</a>
+            <a class="ui button" id="openmod" target="_blank" href="/#pub:_YaA5zz6pW4i9">Mod this game!</a>
 
             <li class="bottom aligned content">Finally, go through this tutorial and build "Catch the Football" from scratch:</li>
 
-            <a class="opentutorial ui button" target="_blank" href="/#tutorial:/tutorials/catch-the-football">Create your own game</a>
+            <a class="ui button" id="opentutorial" target="_blank" href="/#tutorial:/tutorials/catch-the-football">Create your own game</a>
         </ol>
 
-        <p>Want to make more games? You can find more examples and tutorials on <a target="_blank" href="/">MakeCode Arcade!</a></p>
+        <p>Want to make more games? You can find more examples and tutorials on <a target="_blank" id="openhome" href="/">MakeCode Arcade!</a></p>
     </div>
 
     <!-- @include footer.html -->
