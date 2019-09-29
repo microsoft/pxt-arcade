@@ -1,4 +1,4 @@
-# Chase the Pizza
+# Mod the Football
 
 ### ~button /#tutorial:/tutorials/football
 
