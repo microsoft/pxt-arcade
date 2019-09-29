@@ -69,8 +69,8 @@ If you want to change the computer team's color, just change ``||football:player
 ``||football:computer||``!
 
 ```blocks
-// @highlight
 football.createGame(league.kansasCityChiefs, league.oaklandRaiders);
+// @highlight
 football.setTeamAlternateColors(TeamId.Player, true);
 ```
 
