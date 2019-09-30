@@ -43,9 +43,8 @@ football.createGame(league.kansasCityChiefs, league.pittsburghSteelers);
 
 Click on the ``||football:Pittsburgh Steelers||`` to select the second team
 that will play in your game.
-When you have selected a different team,
-click on the simulator again,
-and they should show up on the right side of the screen!
+After a different team is selected,
+click on the simulator again, the new team should show up on the right side of the screen!
 
 ```blocks
 // @highlight
@@ -61,7 +60,7 @@ When you're done, you can click **Next** to see some more options for modifying 
 ## Step 6
 
 You can make each team use alternate colors by dragging out the
-``||football:set player team alternate colors on||`` block in the ``||loops:on start||``.
+``||football:set player team alternate colors on||`` block into the ``||loops:on start||``.
 This will **invert** the team colors - their main color will be used as their secondary color,
 and their secondary color will be used as their main color.
 
@@ -76,10 +75,10 @@ football.setTeamAlternateColors(TeamId.Player, true);
 
 ## Step 5
 
-You can try turning on **Hard Mode** in the game by dragging out the ``||football:set hard mode on||``
+Try playing the game in **Hard Mode** by dragging out the ``||football:set hard mode on||``
 block out from the ``||football:Football||`` Toolbox drawer.
 This will make the game harder - the ball will fly faster,
-the enemy will be harder to tackle,
+the opposing team players will be harder to tackle,
 and more!
 
 ```blocks
@@ -90,11 +89,11 @@ football.setHardMode(true);
 
 ## Step 6
 
-You can change how long each quarter in the game is by changing the **Quarter Length**.
+You can change the length of each quarter in the game by giving **Quarter Length** a different amount of time.
 To do this,
 click on the **+** on the ``||football:play as ... against ...||`` block.
 Then,
-in the new input that gets added,
+in the new input slot that's added,
 put in a number for the new quarter length in seconds - for example, 90 seconds.
 
 ```blocks
