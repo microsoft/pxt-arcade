@@ -32,6 +32,7 @@ export class App extends React.Component<{}, AppState> {
         this.playGame = this.playGame.bind(this);
 
         loadAppInsights(false);
+        tickEvent("shareExperiment.landing");
         timestamp = Date.now();
 
         window.addEventListener('resize', this.setVh);
@@ -83,7 +84,7 @@ export class App extends React.Component<{}, AppState> {
 
     componentDidMount() {
         document.title = "MakeCode Arcade";
-        tickEvent("shareExperiment.landing");
+        tickEvent("shareExperiment.enter");
     }
 }
 
