@@ -212,6 +212,12 @@ declare namespace control {
     function setDebugFlags(flags: int32): void;
 
     /**
+     * Record a heap snapshot to debug memory leaks.
+     */
+    //% shim=control::heapSnapshot
+    function heapSnapshot(): void;
+
+    /**
      * Return true if profiling is enabled in the current build.
      */
     //% shim=control::profilingEnabled
