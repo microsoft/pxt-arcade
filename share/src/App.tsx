@@ -36,10 +36,10 @@ export class App extends React.Component<{}, AppState> {
         timestamp = Date.now();
 
         window.addEventListener('resize', this.setVh);
+        window.addEventListener("beforeunload", this.exitTick);
     }
 
     componentWillUnmount() {
-        tickEvent("shareExperiment.exit");
         window.removeEventListener('resize', this.setVh);
     }
 
@@ -80,6 +80,12 @@ export class App extends React.Component<{}, AppState> {
     protected setVh = () => {
         let vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    protected exitTick = () => {
+        tickEvent("shareExperiment.exit");
+        (window as any).appInsights.flush();
+        window.removeEventListener("beforeunload", this.exitTick);
     }
 
     componentDidMount() {
