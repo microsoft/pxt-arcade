@@ -39,6 +39,14 @@ Here are some fun programs for your @boardname@!
         "largeImageUrl": "/static/blocks-games/hot-air-balloon.gif"
     },
     {
+        "name": "Bunny Hop",
+        "description": "Help your bunny get through the forest by jumping over the trees and stumps",
+        "url": "/blocks-games/bunny-hop",
+        "cardType": "example",
+        "imageUrl": "/static/blocks-games/bunny-hop.png",
+        "largeImageUrl": "/static/blocks-games/bunny-hop.gif"
+    },
+    {
         "name": "Eat the Fruit",
         "description": "Don't get hit by the flying junk food",
         "url":"/blocks-games/eat-the-fruit",

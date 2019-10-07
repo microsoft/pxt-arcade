@@ -34,6 +34,13 @@
   "imageUrl": "/static/tutorials/lemon-leak.png",
   "largeImageUrl": "/static/tutorials/lemon-leak.gif"
 }, {
+    "name": "Football",
+    "description": "Mod this game to put in your favorite teams and colors!",
+    "url": "/tutorials/football",
+    "cardType": "tutorial",
+    "imageUrl": "/static/tutorials/football.png",
+    "largeImageUrl": "/static/tutorials/football/header.gif"
+}, {
   "name": "Galga",
   "description": "Fly through the attacking spacecraft and fire darts at them, don't get hit!",
   "url": "/tutorials/galga",
