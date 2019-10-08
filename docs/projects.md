@@ -60,6 +60,11 @@
         "imageUrl": "/static/design-coding-cards/1-moving-character-thumb.jpg"
     },
     {
+        "name": "Build Your Game Videos",
+        "url": "/videos",
+        "imageUrl": "/static/videos/bunny-hop-thumb.jpg"
+    },
+    {
         "name": "John Park's Workshop",
         "url": "/john-parks-workshop",
         "imageUrl": "/static/john-parks-workshop/trash-panda.png"
@@ -79,5 +84,6 @@
 [Courses](/courses),
 [Hardware](/hardware),
 [Coding Cards](/design-coding-cards),
+[Build Your Game Videos](/videos),
 [John Park's Workshop](/john-parks-workshop)
 
