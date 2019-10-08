@@ -363,8 +363,7 @@
             "snippetBuilder",
             "experimentalHw",
             "recipes",
-            "alwaysGithubItemBlocks",
-            "githubBlocksDiff"
+            "alwaysGithubItemBlocks"
         ],
         "extendEditor": true,
         "simScreenshot": true,
