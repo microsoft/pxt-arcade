@@ -9,11 +9,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Microsoft/pxt-arcade.git"
+    "url": "git+https://github.com/microsoft/pxt-arcade.git"
   },
   "author": "",
   "license": "MIT",
-  "homepage": "https://github.com/Microsoft/pxt-arcade#readme",
+  "homepage": "https://github.com/microsoft/pxt-arcade#readme",
   "files": [
     "README.md",
     "pxtarget.json",

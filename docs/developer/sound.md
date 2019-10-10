@@ -5,7 +5,7 @@
 The high-level music API in arcade creates and processes melodies as a sequence of
 notes following a syntax form for each note. The melodies are authored using the
 `music.Melody` class in arcade which encodes them into a string with this syntax.
-For some examples of formatted melodies, see the [mixer extension/package](https://github.com/Microsoft/pxt-common-packages/blob/master/libs/mixer/melody.ts#L387).
+For some examples of formatted melodies, see the [mixer extension/package](https://github.com/microsoft/pxt-common-packages/blob/master/libs/mixer/melody.ts#L387).
 
 Melodies are constructed with a series of commands outlined below.
 

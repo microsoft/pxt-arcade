@@ -294,7 +294,7 @@ There are 2 different bootloaders to support the hardware variants.
 These bootloaders support the [CF2 configuration data section](#cf2).
 
 * F4: https://github.com/mmoskal/uf2-stm32f
-* D51: https://github.com/Microsoft/uf2-samdx1
+* D51: https://github.com/microsoft/uf2-samdx1
 
 The following bootloaders do **not** support the [CF2 configuration data section](#cf2) yet.
 
@@ -479,7 +479,7 @@ accelerometers, etc. Thus, we generate the same UF2 file
 for all boards of a given variant, and have the runtime look for configuration
 values in the bootloader area (called **CF2** configuration).
 
-See https://github.com/Microsoft/uf2/blob/master/cf2.md for more details on the configuration format.
+See https://github.com/microsoft/uf2/blob/master/cf2.md for more details on the configuration format.
 The [bootloaders](#bootloaders) can be binary patched with new configuration data if needed.
 
 The configuration data also includes the assignment of a GPIO pin header.

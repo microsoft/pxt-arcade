@@ -43,9 +43,9 @@ To get help, you can ask the [MakeCode community](https://aka.ms/makecodecommuni
 
 ## Bugs and Features
 
-Please report all bugs and feature requests to [pxt-arcade](https://github.com/Microsoft/pxt-arcade/issues).
+Please report all bugs and feature requests to [pxt-arcade](https://github.com/microsoft/pxt-arcade/issues).
 If you would also like to submit a fix, feel free to open a pull request!
 
-The arcade editor is located in [pxt-arcade](https://github.com/Microsoft/pxt-arcade). The game engine and runtime code is in [pxt-common-packages](https://github.com/Microsoft/pxt-common-packages).
+The arcade editor is located in [pxt-arcade](https://github.com/microsoft/pxt-arcade). The game engine and runtime code is in [pxt-common-packages](https://github.com/microsoft/pxt-common-packages).
 
-Most of the code related to Arcade can be found in the [libs/game](https://github.com/Microsoft/pxt-common-packages/tree/master/libs/game) directory of that repo.
+Most of the code related to Arcade can be found in the [libs/game](https://github.com/microsoft/pxt-common-packages/tree/master/libs/game) directory of that repo.
