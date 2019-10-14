@@ -85,6 +85,14 @@ Here are some fun programs for your @boardname@!
         "cardType": "example",
         "imageUrl": "/static/blocks-games/eater-princess.png",
         "largeImageUrl": "/static/blocks-games/eater-princess.gif"
+    },
+    {
+        "name": "Cat Jumper",
+        "description": "Make the cat leap to each level and collect all the coins",
+        "url": "/blocks-games/cat-jumper",
+        "cardType": "example",
+        "imageUrl": "/static/blocks-games/cat-platformer.png",
+        "largeImageUrl": "/static/blocks-games/cat-platformer.gif"
     }
 ]
 ```

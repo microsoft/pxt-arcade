@@ -31,14 +31,6 @@ Here are some fun programs for your @boardname@!
         "largeImageUrl": "/static/javascript-games/ping.gif"
     },
     {
-        "name": "Cat Jumper",
-        "description": "Make the cat leap to each level and collect all the coins",
-        "url": "/javascript-games/cat-jumper",
-        "cardType": "codeExample",
-        "imageUrl": "/static/javascript-games/cat-platformer.png",
-        "largeImageUrl": "/static/javascript-games/cat-platformer.gif"
-    },
-    {
         "name": "Delivery",
         "description": "Get those packages to delivered but be quick or you'll miss the address!",
         "url": "/javascript-games/delivery",
