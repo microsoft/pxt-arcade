@@ -1,14 +1,14 @@
-# Star Field
+# Starfield
 
 ## Introduction @unplugged
 
-Having stars in the background is important to show motion for a game that takes place in space. Stars filling the screen as moving projectiles give the illusion of a player sprite speeding through space, even if it remains at the same location on the screen.
+Having stars moving in the background of your scene is an effective way to show motion for a game that's set in space. Stars filling the screen as moving projectiles can create an illusion of a player sprite speeding through space, even if it remains at the same location on the screen.
 
-![Star field background playing](/static/concepts/star-field/star-field-background.gif)
+![Starfield background playing](/static/concepts/star-field/star-field-background.gif)
 
 ## Step 1
 
-Find ``||game:on game update||`` in ``||game:Game||``, and drag it into the workspace.
+In the ``||game:Game||`` Toolbox drawer, get an ``||game:on game update||`` block and drag it into the workspace.
 
 ```blocks
 game.onUpdate(function () {
@@ -18,7 +18,7 @@ game.onUpdate(function () {
 
 ## Step 2
 
-Find ``||sprites:projectile from side||`` in ``||sprites:Sprites||``. Drag it into the ``||game:on game update||``. Change `vx` to `0` and `vy` to `100`. 
+From ``||sprites:Sprites||``, find the ``||variables:set projectile to||`` block that has a ``||sprites:projectile from side||`` inside of it. Drag it into the ``||game:on game update||``. Change `vx` to `0` and `vy` to `100`. 
 
 ```blocks
 game.onUpdate(function () {
@@ -45,7 +45,7 @@ game.onUpdate(function () {
 
 ## Step 3 @fullscreen
 
-Click on the grey box in ``||variables:set projectile to||`` and create a single white pixel for the star.
+Click on the grey box in ``||sprites:projectile from side||`` and create a single white pixel for the star.
 
 ![Creating star image](/static/concepts/star-field/creating-star-image.gif)
 
@@ -74,7 +74,7 @@ game.onUpdate(function () {
 
 ## Step 4 @fullscreen
 
-Find ``||Math:pick random 0 to 10||`` in ``||Math:Math||``. Change the ``0`` to ``20``, and the ``10`` to ``30``. Place it in ``||sprites:vy||`` in ``||sprites:projectile||``.
+Grab a ``||Math:pick random 0 to 10||`` from ``||Math:Math||``. Place it in the  ``||sprites:vy||`` slot of ``||sprites:projectile||`` right over the ``100``. In the ``||Math:pick random 0 to 10||``, change the ``0`` to ``20``, and the ``10`` to ``30``
 
 ```blocks
 game.onUpdate(function () {
@@ -101,7 +101,7 @@ game.onUpdate(function () {
 
 ## Step 5
 
-Find ``||sprites:set mySprite position to||`` in ``||sprites:Sprites||``. Place it after ``||variables:set projectile to||`` and change ``||variables:mySprite||`` to ``||variables:projectile||``.
+Go back to ``||sprites:Sprites||`` and find the ``||sprites:set mySprite position to||``. Place it after ``||variables:set projectile to||`` and change ``||variables:mySprite||`` to ``||variables:projectile||``.
 
 ```blocks
 game.onUpdate(function () {
@@ -129,7 +129,7 @@ game.onUpdate(function () {
 
 ## Step 6
 
-Grab another ``||Math:pick random 0 to 10||`` and put it in as the ``||sprites:x||`` value for position. Find ``||scene:screen width||`` in ``||scene:Scene||``, and replace the ``10`` with it.
+Grab another ``||Math:pick random 0 to 10||`` and put it in as the ``||sprites:x||`` value for ``||sprites:set projectile position to||``. Find ``||scene:screen width||`` in ``||scene:Scene||`` and replace the ``10`` in the ``||Math:pick random 0 to 10||`` with it.
 
 ```blocks
 game.onUpdate(function () {
@@ -189,7 +189,7 @@ game.onUpdate(function () {
 
 ## Step 8
 
-Get a ``||Math:0 % chance||`` block and replace the ``true`` condition in the ``||logic: if then||`` with it. Change the ``0`` to ``25``.
+Get a ``||Math:0 % chance||`` block from ``||math:Math||`` and replace the ``true`` condition in the ``||logic: if then||`` with it. Change the percentage from ``0`` to ``25``.
  
 ```blocks
 game.onUpdate(function () {
@@ -219,15 +219,15 @@ game.onUpdate(function () {
 
 ## Complete
 
-Congratulations, your star field is complete! Build any game you wish on top of it, or continue to the next part for a challenge that helps optimize the code.
+Congratulations, your starfield is complete! Build any game you wish on top of it, or continue to the next step for a challenge that will help optimize the code.
 
 ## Extra Challenge @fullscreen
 
-In real outer space, stars are millions of light year away, so they shouldn't interact with anything else.
+In reality, the stars in outer space are millions of light years away from anything else. So, they shouldn't interact or collide with other objects out there.
 
-Find ``||sprites:set mySprite stay in screen||`` in ``||sprites:Sprites||``. Place it after ``||variables:set projectile to||`` and change ``||variables:mySprite||`` to ``||variables:projectile||``. Change ``||sprites:stay in screen||`` to ``||sprites:ghost||``, and click on ``off`` to turn it ``on``.
+Find ``||sprites:set mySprite stay in screen||`` in ``||sprites:Sprites||``. Place it after ``||variables:set projectile to||`` and change ``||variables:mySprite||`` to ``||variables:projectile||``. Change ``||sprites:stay in screen||`` to ``||sprites:ghost||``, and click on ``OFF`` to turn it ``ON``.
 
-This will also have a large effect on the frame rate, as the game can ignore the fact that the stars overlap with the other sprites in the game.
+This also has a large effect on the frame rate, as the game can skip processing any actions related to the stars overlapping other sprites in the game.
 
 ```blocks
 game.onUpdate(function () {
