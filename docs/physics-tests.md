@@ -1,5 +1,6 @@
 ## Physics Tests
 
+* [Bouncing Burger](/physics-tests/bouncing-burger)
 * [Double Collisions](/physics-tests/double-collisions)
 * [Shapes](/physics-tests/shapes)
 * [Single Collisions](/physics-tests/single-collisions)
