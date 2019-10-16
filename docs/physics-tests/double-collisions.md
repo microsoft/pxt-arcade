@@ -1,8 +1,10 @@
 # Double collisions
 
 When you move ``||variables:mySprite||`` down into the wall,
-it should exclaim both kindss of walls it hits -
+it should exclaim both kinds of walls it hits -
 by running both ``||scene:on hit tile||`` events.
+
+https://github.com/microsoft/pxt-common-packages/pull/920
 
 ```blocks
 scene.onHitTile(SpriteKind.Player, 1, function (sprite) {

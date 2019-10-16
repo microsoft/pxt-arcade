@@ -3,6 +3,8 @@
 Jump back and forth on the walls - when you're hitting one, you should be allowed to jump away.
 To add some distance between walls, press b.
 
+https://github.com/microsoft/pxt-common-packages/pull/891
+
 ```blocks
 enum ActionKind {
     Walking,

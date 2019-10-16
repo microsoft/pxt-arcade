@@ -2,6 +2,8 @@
 
 This game is fairly simple; maneuver the pink square into the green square to score *a single* point.
 
+https://github.com/microsoft/pxt-common-packages/pull/966
+
 ```blocks
 scene.onHitTile(SpriteKind.Player, 7, function (sprite) {
     scene.placeOnRandomTile(mySprite, 1)
