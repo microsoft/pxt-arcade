@@ -40,5 +40,9 @@
 ## Hardware
 
 * [Hardware](/hardware)
+    * [Errors](/hardware/errors)
     * [Adding New Board](/hardware/adding)
+    * [Raspberry Pi](/hardware/raspberry-pi)
+    * [Makey Makey](/hardware/makey-makey)
+    * [Dev](/hardware/dev)
     * [Debug connector](/hardware/dbg)
