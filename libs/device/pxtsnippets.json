@@ -1,118 +1,105 @@
-[{
-    "name": "Sprite Builder",
-    "namespace": "sprites",
-    "group": "Create",
-    "label": "Create a sprite...",
-    "outputType": "blocks",
-    "initialOutput": "let $spriteName = sprites.create($spriteImage, $spriteKind)",
-    "questions": [
-        {
-            "title": "What should your sprite be called?",
-            "inputs": [{
-                    "answerToken": "spriteName",
-                    "defaultAnswer": "mySprite",
-                    "type": "text"
-            }],
-            "output": "",
-            "goto": {
-                "question": 2
+[
+    {
+        "name": "Create a Sprite",
+        "namespace": "sprites",
+        "group": "Create",
+        "label": "Create a sprite...",
+        "outputType": "blocks",
+        "initialOutput": "let $spriteName = sprites.create($spriteImage, $spriteKind)",
+        "questions": [
+            {
+                "title": "Draw your sprite",
+                "inputs": [
+                    {
+                        "answerToken": "spriteImage",
+                        "type": "spriteEditor",
+                        "defaultAnswer": "img`\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n`"
+                    }
+                ],
+                "hint": "Sprites are 2D characters and objects used in all MakeCode Arcade games. Click and drag to draw your own sprite.",
+                "goto": {
+                    "question": 1
+                }
             },
-            "hint": "This answer will be used to set a name for your sprite. This name will be used whenever your game needs to change, destroy, or build your sprite. Read more at makecode.com/docs/setsprite"
-        },
-        {
-            "title": "Where should your sprite be placed?",
-            "inputs": [
-                {
-                    "label": "x:",
-                    "defaultAnswer": 80,
-                    "answerToken": "xLocation",
-                    "type": "number",
-                    "min": 0,
-                    "max": 160
+            {
+                "title": "Name your sprite",
+                "inputs": [
+                    {
+                        "answerToken": "spriteName",
+                        "defaultAnswer": "mySprite",
+                        "type": "text"
+                    }
+                ],
+                "output": "",
+                "hint": "Naming sprites is important because then you can refer to your sprite by name elsewhere in your program.",
+                "goto": {
+                    "question": 2
+                }
+            },
+            {
+                "title": "What kind of sprite is this?",
+                "inputs": [
+                    {
+                        "answerToken": "spriteKind",
+                        "defaultAnswer": "SpriteKind.Player",
+                        "type": "dropdown",
+                        "options": {
+                            "SpriteKind.Player": "Player",
+                            "SpriteKind.Enemy": "Enemy",
+                            "SpriteKind.Food": "Food"
+                        }
+                    }
+                ],
+                "goto": {
+                    "question": 3,
+                    "parameters": [
+                        {
+                            "spriteKind": "SpriteKind.Player",
+                            "question": 4
+                        }
+                    ]
                 },
-                {
-                    "label": "y:",
-                    "defaultAnswer": 60,
-                    "answerToken": "yLocation",
-                    "type": "number",
-                    "min": 0,
-                    "max": 120
-                }
-            ],
-            "output": "$spriteName.setPosition($xLocation,$yLocation)",
-            "goto": {
-                "question": 3
-            }
-        },
-        {
-            "title": "What should your sprite look like?",
-            "inputs": [
-                {
-                    "answerToken": "spriteImage",
-                    "type": "spriteEditor",
-                    "defaultAnswer": "img`\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n. . . . . . . . . . . . . . . .\n`"
-                }
-            ],
-            "goto": {
-                "question": 1
-            }
-        },
-        {
-            "title": "What kind of sprite should this be?",
-            "inputs": [
-                {
-                    "answerToken": "spriteKind",
-                    "defaultAnswer": "SpriteKind.Player",
-                    "type": "dropdown",
-                    "options": {
-                        "SpriteKind.Player": "Player",
-                         "SpriteKind.Enemy": "Enemy",
-                        "SpriteKind.Food": "Food",
-                        "SpriteKind.Projectile": "Projectile"
-                    } 
-                }
-            ],
-            "goto": {
-                "question": 4,
-                "parameters": {
-                    "spriteKind": 0
-                }
-            }
-        },
-        {
-            "title": "How many lives should your player have?",
-            "inputs": [
-                {
-                    "answerToken": "gameLives",
-                    "defaultAnswer": 3,
-                    "max": 20,
-                    "type": "number"
-                }
-            ],
-            "output": "info.setLife($gameLives)",
-            "goto": {
-                "question": 5
-            }
-        },
-        {
-            "title": "How should your sprite move?",
-            "inputs": [
-                {
-                    "answerToken": "moveX",
-                    "type": "number",
-                    "label": "vx",
-                    "defaultAnswer": 100,
-                    "max": 500
+                "hint": "Knowning the kind of sprite is important when sprites overlap other sprites.\n\nIf none of the kinds match your intent, just select \"Player\"."
+            },
+            {
+                "title": "Where should your sprite appear?",
+                "inputs": [
+                    {
+                        "label": "X (horizontal):",
+                        "defaultAnswer": 80,
+                        "answerToken": "xLocation",
+                        "type": "number",
+                        "min": 0,
+                        "max": 160
+                    },
+                    {
+                        "label": "Y (vertical):",
+                        "defaultAnswer": 60,
+                        "answerToken": "yLocation",
+                        "type": "number",
+                        "min": 0,
+                        "max": 120
+                    }
+                ],
+                "output": "$spriteName.setPosition($xLocation,$yLocation)",
+                "hint": "This will be the location your sprite starts at when the game begins. 0 for X means the left of the screen, 0 for Y means the top of the screen."
+            },
+            {
+                "title": "Do you want to control your player with direction buttons?",
+                "inputs": [
+                    {
+                        "type": "yesno",
+                        "defaultAnswer": false,
+                        "answerToken": "$moveWithButtons"
+                    }
+                ],
+                "output": "controller.moveSprite($spriteName)",
+                "outputConditionalOnAnswer": "true",
+                "goto": {
+                    "question": 3
                 },
-                {
-                    "answerToken": "moveY",
-                    "type": "number",
-                    "label": "vy",
-                    "defaultAnswer": 100,
-                    "max": 500
-                }
-            ],
-            "output": "controller.moveSprite($spriteName, $moveX, $moveY)"
-        }
-    ]
-}]
+                "hint": "If you choose \"Yes\", the direction buttons or \"D-Pad\" will move your player left, right, up and down respectively."
+            }
+        ]
+    }
+]
