@@ -5,7 +5,7 @@ To add some distance between walls, press b.
 
 https://github.com/microsoft/pxt-common-packages/pull/891
 
-```blocks
+```sim
 enum ActionKind {
     Walking,
     Idle,

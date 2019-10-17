@@ -4,7 +4,7 @@ Bounce a burger around the screen at a high rate
 
 https://github.com/microsoft/pxt-common-packages/pull/879
 
-```typescript
+```sim
 game.currentScene().physicsEngine = new ArcadePhysicsEngine(1000, 4, 8);
 let mySprite = sprites.create(img`
     . . . . c c c b b b b b . . . .

@@ -3,10 +3,12 @@
 Explicitly moving the sprite, instead of velocities / etc.
 
 https://github.com/microsoft/pxt-common-packages/pull/883
+
 https://forum.makecode.com/t/new-sprite-physics-in-beta/306/3
+
 https://forum.makecode.com/t/jumping-mateo-platformer/230/12
 
-```blocks
+```sim
 enum ActionKind {
     Walking,
     Idle,

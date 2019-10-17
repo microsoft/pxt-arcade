@@ -4,7 +4,7 @@ Everythings all right if these come out of the player in a spiral, along with on
 
 https://github.com/microsoft/pxt-arcade/issues/1104
 
-```blocks
+```sim
 let projectile: Sprite = null
 let me = sprites.create(img`
     2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2

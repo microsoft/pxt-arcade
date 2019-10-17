@@ -6,7 +6,7 @@ Press A to spawn a new sprite with a random shape.
 The purple circle is too large to fit into a single tile,
 so depending on the placement it could spawn in
 
-```typescript
+```sim
 let shapes = [
     img`
         . . . . . . . . . . . . . . . .

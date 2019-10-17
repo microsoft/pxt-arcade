@@ -6,9 +6,10 @@ initial screen and into uncharted territories
 (with the camera moving out of the initial 160x120 screen).
 
 https://github.com/microsoft/pxt-common-packages/pull/983
+
 https://github.com/microsoft/pxt-common-packages/pull/984
 
-```blocks
+```sim
 controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
     mySprite.startEffect(effects.fire);
     mySprite.vy += -30;

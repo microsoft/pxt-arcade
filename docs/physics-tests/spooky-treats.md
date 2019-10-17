@@ -5,7 +5,7 @@ Spooky treats are falling from the sky, catch them in your basket!
 These treats and enemies should be allowed to enter the screen without getting
 destroyed oor stopped (that is, they should have velocities along both axes)
 
-```blocks
+```sim
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(50)
     music.jumpUp.play()

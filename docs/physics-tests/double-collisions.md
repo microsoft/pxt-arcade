@@ -6,7 +6,7 @@ by running both ``||scene:on hit tile||`` events.
 
 https://github.com/microsoft/pxt-common-packages/pull/920
 
-```blocks
+```sim
 scene.onHitTile(SpriteKind.Player, 1, function (sprite) {
     game.showLongText("white", DialogLayout.Left)
 })

@@ -111,3 +111,61 @@ mySprite.y = 10
 mySprite.vx = 20
 mySprite.vy = 20
 ```
+
+https://github.com/microsoft/pxt-arcade/issues/1323
+
+```sim
+scene.setTile(14, img`
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+`, true)
+scene.setTileMap(img`
+    e e e e e e e e e e
+    e . . . e . . . . e
+    e . e . . . e e . e
+    e . e e . e e e . e
+    e . . . . 2 . . . e
+    e . e e . e . e . e
+    e . . . . . . . . e
+    e e e e e e e e e e
+`)
+let mySprite = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . 1 1 . . . . . . .
+    . . . . . . . 1 1 . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+`, SpriteKind.Food)
+let t = scene.getTile(5, 4)
+t.place(mySprite)
+game.consoleOverlay.setVisible(true)
+console.log(`
+    x: ${t.x} same pos: ${t.x === mySprite.x}
+    y: ${t.y} same pos: ${t.y === mySprite.y}
+`)
+```

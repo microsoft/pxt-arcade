@@ -4,7 +4,7 @@ This game is fairly simple; maneuver the pink square into the green square to sc
 
 https://github.com/microsoft/pxt-common-packages/pull/966
 
-```blocks
+```sim
 scene.onHitTile(SpriteKind.Player, 7, function (sprite) {
     scene.placeOnRandomTile(mySprite, 1)
     info.changeScoreBy(1)
