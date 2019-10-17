@@ -54,7 +54,8 @@
                     "question": 3,
                     "parameters": [
                         {
-                            "spriteKind": "SpriteKind.Player",
+                            "answer": "SpriteKind.Player",
+                            "token": "spriteKind",
                             "question": 4
                         }
                     ]

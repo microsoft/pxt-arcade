@@ -12,5 +12,11 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"settings": {
+		"workbench.colorCustomizations": {
+			"activityBar.background": "#541701",
+			"activityBar.foreground": "#f9e38e"
+		}
+	}
 }
