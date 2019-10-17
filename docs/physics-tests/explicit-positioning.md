@@ -500,12 +500,6 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     facingRight = 0
 })
-controller.combos.attachCombo("d+b", function () {
-    if (level < 10) {
-        level += 1
-        setLevel(level, mySprite)
-    }
-})
 scene.onHitTile(SpriteKind.Player, 3, function (sprite) {
     if (game.ask("Continue?")) {
         setLevel(level, mySprite)
