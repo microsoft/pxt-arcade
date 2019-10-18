@@ -1,7 +1,7 @@
 # Space Man
 
 Test physics in space (a non-tile map, off normal screen experience).
-You initially start on screen, but press then **A** (or move with dpad) to move the player off the
+You initially start on-screen, but then press **A** (or move with dpad) to move the player off the
 initial screen and into uncharted territory
 (along with the camera moving out of the initial 160x120 screen).
 
