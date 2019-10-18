@@ -4,7 +4,7 @@ When you move ``||variables:mySprite||`` down to the floor (wall tiles),
 it should show messages for both kinds of wall tiles it hits -
 it will run both ``||scene:on hit tile||`` events.
 
-**Feature tested**: Mulli-tile collision detection from [pxt-common-packages#920](https://github.com/microsoft/pxt-common-packages/pull/920).
+**Feature tested**: Multi-tile collision detection from [pxt-common-packages#920](https://github.com/microsoft/pxt-common-packages/pull/920).
 
 ```sim
 scene.onHitTile(SpriteKind.Player, 1, function (sprite) {
