@@ -1,7 +1,7 @@
 # Five Second Games
 
 Here is the final mashup of the first ever MakeCode Arcade Game Jam hosted on [itch.io](https://itch.io/jam/makecode-game-jam). This is a collection of a whole
-bunch of individual games that are intended to be played just 5 seconds! This is now "one" whole game that plays all of the 5 second games, one after the other.
+bunch of individual games that are intended to be played in just 5 seconds! This is now "one" whole game that plays all of the 5 second games, one after the other.
 
 Thanks again to all participants who contributed! Now, are you ready to jam?!?!
 
