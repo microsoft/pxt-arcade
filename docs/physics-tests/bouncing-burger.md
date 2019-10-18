@@ -1,8 +1,8 @@
 # Bouncing Burger
 
-Bounce a burger around the screen at a high rate
+Bounce a burger with a very high velocity off the sides of the screen.
 
-https://github.com/microsoft/pxt-common-packages/pull/879
+**Feature tested**: Speed enhancements from [pxt-common-packages#879](https://github.com/microsoft/pxt-common-packages/pull/879).
 
 ```sim
 game.currentScene().physicsEngine = new ArcadePhysicsEngine(1000, 4, 8);

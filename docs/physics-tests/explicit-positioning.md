@@ -1,12 +1,13 @@
 # Explicit Positioning
 
-Explicitly moving the sprite, instead of velocities / etc.
+Explicitly move the sprite instead of adjusting velocities, etc.
 
-https://github.com/microsoft/pxt-common-packages/pull/883
+This addresses the behavior reported in:
 
-https://forum.makecode.com/t/new-sprite-physics-in-beta/306/3
+- https://forum.makecode.com/t/new-sprite-physics-in-beta/306/3
+- https://forum.makecode.com/t/jumping-mateo-platformer/230/12
 
-https://forum.makecode.com/t/jumping-mateo-platformer/230/12
+**Feature tested**: Adjust sprite positions in relation to tile map from [pxt-common-packages#883](https://github.com/microsoft/pxt-common-packages/pull/883).
 
 ```sim
 enum ActionKind {

@@ -1,13 +1,12 @@
 # Space Man
 
 Test physics in space (a non-tile map, off normal screen experience).
-You start on screen, but press A (or move with dpad) to move the player off
-initial screen and into uncharted territories
-(with the camera moving out of the initial 160x120 screen).
+You inityially start on screen, but press then **A** (or move with dpad) to move the player off the
+initial screen and into uncharted territory
+(along with the camera moving out of the initial 160x120 screen).
 
-https://github.com/microsoft/pxt-common-packages/pull/983
 
-https://github.com/microsoft/pxt-common-packages/pull/984
+**Features tested**: Consider camera offset for projectile from side in [pxt-common-packages#983](https://github.com/microsoft/pxt-common-packages/pull/983) and detection of off-screen sprite collisions from [pxt-common-packages#984](https://github.com/microsoft/pxt-common-packages/pull/984).
 
 ```sim
 controller.A.onEvent(ControllerButtonEvent.Repeated, function () {

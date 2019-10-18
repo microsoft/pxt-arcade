@@ -1,10 +1,12 @@
 # Shapes
 
-Make a bunch of shapes bounce around the tile map.
-Press A to spawn a new sprite with a random shape.
+Make several of shapes bounce around in the tile map.
+Press the **A** button to spawn a new sprite with a random shape.
 
-The purple circle is too large to fit into a single tile,
-so depending on the placement it could spawn in
+The purple circle is too large to fit within a single tile,
+so depending on the placement, it could spawn in an area that is too small
+for it to fit in. Move the player sprite around in the maze to set
+spawn locations of different size.
 
 ```sim
 let shapes = [

@@ -1,8 +1,8 @@
 # Tiles
 
-A few quick tests in cases where tiles interactions have misbehaved before.
+A few quick tests in cases where tile interactions have misbehaved before.
 
-https://github.com/microsoft/pxt-common-packages/pull/615
+**Features tested**: Tile map collision policy changes from [pxt-common-packages#615](https://github.com/microsoft/pxt-common-packages/pull/615).
 
 ```sim
 let mySprite: Sprite = null
@@ -57,7 +57,9 @@ mySprite.setVelocity(50, 50)
 mySprite.ax = 50;
 ```
 
-https://github.com/microsoft/pxt-arcade/issues/517
+This addresses the behavior reported in:
+
+- [pxt-arcade#517](https://github.com/microsoft/pxt-arcade/issues/517)
 
 ```sim
 scene.setTileMap(img`
@@ -112,7 +114,7 @@ mySprite.vx = 20
 mySprite.vy = 20
 ```
 
-https://github.com/microsoft/pxt-arcade/issues/1323
+- [pxt-arcade#1323](https://github.com/microsoft/pxt-arcade/issues/1323)
 
 ```sim
 scene.setTile(14, img`
