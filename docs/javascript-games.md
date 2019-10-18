@@ -47,6 +47,14 @@ Here are some fun programs for your @boardname@!
         "largeImageUrl": "/static/javascript-games/caterpillar.gif"
     },
     {
+        "name": "Five Second Games",
+        "description": "A collection of five second games created in the first MakeCode Arcade Game Jam",
+        "url": "/javascript-games/five-second-games",
+        "cardType": "codeExample",
+        "imageUrl": "/static/javascript-games/five-second-games.png",
+        "largeImageUrl": "/static/javascript-games/five-second-games.gif"
+    },
+    {
         "name": "Cube Land",
         "description": "Save the Cube Lad from the Cube Lord in Cube Land",
         "url":"/javascript-games/cube-land",
