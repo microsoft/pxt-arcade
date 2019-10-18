@@ -1,8 +1,10 @@
 # From Player
 
-Everythings all right if these come out of the player in a spiral, along with one continuously flying down
+The behavior shown in this test is correct if the rectangles come "out" of the player sprite in a spiral pattern, along with one that continuously moves downward.
 
-https://github.com/microsoft/pxt-arcade/issues/1104
+This addresses the behavior reported in:
+
+- [pxt-arcade#1104](https://github.com/microsoft/pxt-arcade/issues/1104)
 
 ```sim
 let projectile: Sprite = null

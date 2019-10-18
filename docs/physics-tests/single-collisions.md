@@ -1,8 +1,8 @@
 # Single Collisions
 
-This game is fairly simple; maneuver the pink square into the green square to score *a single* point.
+This is a fairly simple game. Maneuver the pink square into the green square to score *a single* point.
 
-https://github.com/microsoft/pxt-common-packages/pull/966
+**Feature tested**: Detect only one collision with a tile of one color in a direction as in [pxt-common-packages#966](https://github.com/microsoft/pxt-common-packages/pull/966).
 
 ```sim
 scene.onHitTile(SpriteKind.Player, 7, function (sprite) {

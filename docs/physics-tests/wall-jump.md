@@ -1,9 +1,9 @@
 # Wall Bounce
 
 Jump back and forth on the walls - when you're hitting one, you should be allowed to jump away.
-To add some distance between walls, press b.
+To add some distance between walls, press **B**.
 
-https://github.com/microsoft/pxt-common-packages/pull/891
+**Feature tested**: Bounds check fix for upper corner tile collisions from [pxt-common-packages#891](https://github.com/microsoft/pxt-common-packages/pull/891).
 
 ```sim
 enum ActionKind {
