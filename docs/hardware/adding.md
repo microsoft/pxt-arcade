@@ -100,7 +100,7 @@ We have found the following part numbers for ST7735 and ILI9163C displays:
 * [Z180SN009](https://www.ezsolutionkr.com/tft-lcd-z180sn009-v0-0)
 * [JD-T18003-T01](https://cdn-shop.adafruit.com/datasheets/JD-T1800.pdf)
 
-#### 320x240 based on ILI9134 via SPI
+#### 320x240 based on ILI9341 via SPI
 
 On D5, the SPI can run up to 50MHz and most displays seem to be able to handle that,
 which results in about 36fps.
