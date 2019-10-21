@@ -8,6 +8,12 @@ namespace sprites.builtin {
     //% fixedInstance jres blockIdentity=images._image
     export const angelFish3 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
+    //% tags="background"
+    export const aquaticBackground0 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
+    //% tags="background"
+    export const aquaticBackground1 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
     export const bed0 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     export const bed1 = image.ofBuffer(hex``);
