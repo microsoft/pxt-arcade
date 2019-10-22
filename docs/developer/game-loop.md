@@ -24,7 +24,7 @@ In each frame, the following steps will occur (in order):
 3. Physics are applied to the sprites, moving them around the screen and calculating collisions. See [the description of the physics step](#physics) for more details.
 4. All ``||game:on game update interval||`` events are run if it has been long enough since the last time that event was run.
 5. All ``||game:on game update||`` events are run.
-6. The current state of the game is rendered to the screen. See [the description of the game ender step](#render) for more details.
+6. The current state of the game is rendered to the screen. See [the description of the game render step](#render) for more details.
 7. Any diagnostics are rendered to the screen, if enabled.
 8. The screen is updated and shown to the user.
 

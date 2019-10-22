@@ -63,6 +63,10 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
 ]
 ```
 
+## Other ways to play Arcade
+
+* [Makey Makey](/hardware/makey-makey), turn your banana keyboard into arcade consoles!
+
 ## Adding Arcade to a New Board
 
 If you want to design a board with Arcade support, refer to [Adding Board](/hardware/adding) page.

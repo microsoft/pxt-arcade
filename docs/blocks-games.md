@@ -55,6 +55,14 @@ Here are some fun programs for your @boardname@!
         "largeImageUrl": "/static/blocks-games/eat-the-fruit.gif"
     },
     {
+        "name": "Cat Jumper",
+        "description": "Make the cat leap to each level and collect all the coins",
+        "url": "/blocks-games/cat-jumper",
+        "cardType": "example",
+        "imageUrl": "/static/blocks-games/cat-platformer.png",
+        "largeImageUrl": "/static/blocks-games/cat-platformer.gif"
+    },
+    {
         "name": "Level Up!",
         "description": "Eat your food to level up",
         "url":"/blocks-games/level-game",
