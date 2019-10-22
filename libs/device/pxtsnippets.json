@@ -31,7 +31,7 @@
                     }
                 ],
                 "output": "",
-                "hint": "Naming sprites is important because then you can refer to your sprite by name elsewhere in your program.",
+                "hint": "Naming sprites is important because you can use the name to refer to your sprite elsewhere in your program.",
                 "goto": {
                     "question": 2
                 }
