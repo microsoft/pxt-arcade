@@ -60,7 +60,7 @@
                         }
                     ]
                 },
-                "hint": "Knowning the kind of sprite is important when sprites overlap other sprites.\n\nIf none of the kinds match your intent, just select \"Player\"."
+                "hint": "The kind of sprite is used when two sprites overlap.\n\nIf none of the kinds match your sprite, just select \"Player\"."
             },
             {
                 "title": "Where should your sprite appear?",
