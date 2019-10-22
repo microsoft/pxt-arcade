@@ -1,0 +1,45 @@
+.game-joystick {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    touch-action: none;
+    z-index: 20;
+}
+
+.game-joystick .spacer {
+    flex-grow: 1;
+}
+
+.game-joystick-svg {
+    width: 200px;
+    height: 200px;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    .game-joystick {
+        height: 95%;
+    }
+}
+
+@media (max-width: 400px) and (max-aspect-ratio: 1/1) {
+    .game-joystick {
+        max-width: 50%;
+    }
+
+    .game-joystick-svg {
+        width: 100%;
+        height: initial;
+    }
+}
+
+@media (min-aspect-ratio: 5/8) {
+    .game-joystick {
+        height: 98%;
+    }
+}

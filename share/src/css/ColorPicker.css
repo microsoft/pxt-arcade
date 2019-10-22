@@ -1,0 +1,36 @@
+.color-picker {
+    line-height: 0px;
+    width: 100%;
+    height: 101.90vw;
+    /* background-color: hsl(222, 45%, 48%); */
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(3, 1fr);
+    padding: 0 10px 10px 10px;
+    justify-items: center;
+    align-items: center;
+}
+
+.color-picker .swatch {
+    width: 80%;
+    height: 80%;
+    /* margin: 10px; */
+    border-radius: 5px;
+    border: solid 1px white;
+    cursor: pointer;
+    /* box-shadow: 1px 1px 1px 1px black; */
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.color-picker .swatch img {
+    width: 40%;
+}
+
+.color-picker .swatch.selected{
+    /* border: solid 5px orange; */
+    transform: scale(1.2);
+    border-width: 2px;
+    /* transform: translate(-10px, -10px); */
+    /* box-shadow: 3px 3px 1px 1px black; */
+}
