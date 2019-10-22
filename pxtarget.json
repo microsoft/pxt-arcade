@@ -272,7 +272,7 @@
         "dynamicBoardDefinition": true
     },
     "appTheme": {
-        "logoUrl": "https://github.com/Microsoft/pxt-arcade",
+        "logoUrl": "https://github.com/microsoft/pxt-arcade",
         "logo": "./static/logo.svg",
         "docsLogo": "./static/logo.svg",
         "portraitLogo": "./static/logo.svg",
@@ -285,8 +285,8 @@
         "embedUrl": "https://arcade.makecode.com/",
         "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
         "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
-        "betaUrl": "https://github.com/Microsoft/pxt-arcade",
-        "githubUrl": "https://github.com/Microsoft/pxt-arcade",
+        "betaUrl": "https://github.com/microsoft/pxt-arcade",
+        "githubUrl": "https://github.com/microsoft/pxt-arcade",
         "boardName": "Arcade",
         "addNewTypeScriptFile": true,
         "docMenu": [
