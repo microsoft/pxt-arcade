@@ -83,7 +83,7 @@
                     }
                 ],
                 "output": "$spriteName.setPosition($xLocation,$yLocation)",
-                "hint": "This will be the location your sprite starts at when the game begins. 0 for X means the left of the screen, 0 for Y means the top of the screen."
+                "hint": "This location is where your sprite will be when the game begins. 0 for X means the left of the screen, 0 for Y means the top of the screen."
             },
             {
                 "title": "Do you want to control your player with direction buttons?",
