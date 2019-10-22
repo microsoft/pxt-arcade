@@ -133,6 +133,24 @@ Games submitted by the MakeCode community.
         "largeImageUrl": "/static/community/hackman/gallery.gif"
     },
     {
+        "name": "Warehouse",
+        "description": "Move the inventory into the right places, by Adri314",
+        "author": "Adri314",
+        "url": "https://forum.makecode.com/t/warehouse-updated/658",
+        "cardType": "forumUrl",
+        "imageUrl": "/static/community/warehouse/gallery.png",
+        "largeImageUrl": "/static/community/warehouse/gallery.gif"
+    },
+    {
+        "name": "BAFTA YGD",
+        "description": "A YGD BAFTA style game design idea generator, by kjw",
+        "author": "kjw",
+        "url": "https://forum.makecode.com/t/presenting-bafta-ygd-idea-generator-for-makecode-arcade/608",
+        "cardType": "forumUrl",
+        "imageUrl": "/static/community/bafta-ygd/gallery.png",
+        "largeImageUrl": "/static/community/bafta-ygd/gallery.gif"
+    },
+    {
         "name": "Add Game",
         "description": "Are you looking to contribute your own game? These instructions will explain how to submit your game for the chance to appear in this carousel.",
         "imageUrl": "/static/community/add-game.png",

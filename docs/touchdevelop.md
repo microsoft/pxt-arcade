@@ -25,7 +25,7 @@ as well as a specially designed editor for editing Touch Develop programs
 using touch interfaces.
 
 MakeCode provides two code editors: a drag-and-drop block programming editor, 
-based on Google's [Blockly](https://developers.google.com/blockly/) and a text programming editor using the [TypeScript](http://www.typescriptlang.org) language and the Microsoft's [Monaco](https://github.com/Microsoft/monaco-editor) editor.
+based on Google's [Blockly](https://developers.google.com/blockly/) and a text programming editor using the [TypeScript](http://www.typescriptlang.org) language and the Microsoft's [Monaco](https://github.com/microsoft/monaco-editor) editor.
 
 TypeScript language, which is a superset of JavaScript; TypeScript compiles to plain JavaScript, a standards-based
 language supported on all modern web browsers.  

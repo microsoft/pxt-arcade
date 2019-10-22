@@ -100,7 +100,7 @@ We have found the following part numbers for ST7735 and ILI9163C displays:
 * [Z180SN009](https://www.ezsolutionkr.com/tft-lcd-z180sn009-v0-0)
 * [JD-T18003-T01](https://cdn-shop.adafruit.com/datasheets/JD-T1800.pdf)
 
-#### 320x240 based on ILI9134 via SPI
+#### 320x240 based on ILI9341 via SPI
 
 On D5, the SPI can run up to 50MHz and most displays seem to be able to handle that,
 which results in about 36fps.
@@ -116,7 +116,7 @@ DISPLAY_CFG1 = 0x0010ff
 DISPLAY_CFG2 = 50
 ```
 
-#### 320x240 based on ILI9134 via 8-bit parallel
+#### 320x240 based on ILI9341 via 8-bit parallel
 
 On F4, this requires an 8 bit parallel interface because SPI at 42Mhz is unstable;
 int this case STM32F412RE or better is required.
@@ -294,7 +294,7 @@ There are 2 different bootloaders to support the hardware variants.
 These bootloaders support the [CF2 configuration data section](#cf2).
 
 * F4: https://github.com/mmoskal/uf2-stm32f
-* D51: https://github.com/Microsoft/uf2-samdx1
+* D51: https://github.com/microsoft/uf2-samdx1
 
 The following bootloaders do **not** support the [CF2 configuration data section](#cf2) yet.
 
@@ -479,7 +479,7 @@ accelerometers, etc. Thus, we generate the same UF2 file
 for all boards of a given variant, and have the runtime look for configuration
 values in the bootloader area (called **CF2** configuration).
 
-See https://github.com/Microsoft/uf2/blob/master/cf2.md for more details on the configuration format.
+See https://github.com/microsoft/uf2/blob/master/cf2.md for more details on the configuration format.
 The [bootloaders](#bootloaders) can be binary patched with new configuration data if needed.
 
 The configuration data also includes the assignment of a GPIO pin header.

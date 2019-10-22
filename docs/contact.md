@@ -6,7 +6,7 @@ We also have a [a Discord server](https://aka.ms/makecodecommunity) with Arcade 
 
 You can also try [stack overflow](https://stackoverflow.com/), we monitor the ``makecode`` tag.
 
-You can file issues in [MakeCode Arcade GitHub repo](https://github.com/Microsoft/pxt-arcade/issues/new).
+You can file issues in [MakeCode Arcade GitHub repo](https://github.com/microsoft/pxt-arcade/issues/new).
 
 
 # Contact the MakeCode team
