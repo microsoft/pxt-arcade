@@ -360,7 +360,6 @@
         "experiments": [
             "python",
             "debugExtensionCode",
-            "snippetBuilder",
             "experimentalHw",
             "recipes",
             "alwaysGithubItemBlocks"
@@ -374,7 +373,8 @@
         "qrCode": true,
         "shareFinishedTutorials": true,
         "nameProjectFirst": true,
-        "alwaysGithubItem": true
+        "alwaysGithubItem": true,
+        "snippetBuilder": true
     },
     "unsupportedBrowsers": [
         {
