@@ -311,7 +311,8 @@
         "availableLocales": [
             "en",
             "zh-CN",
-            "zh-TW"
+            "zh-TW",
+            "de"
         ],
         "invertedMenu": true,
         "showHomeScreen": true,
