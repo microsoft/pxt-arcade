@@ -78,7 +78,7 @@
     ],
     "compile": {
         "useUF2": true,
-        "deployDrives": "ARCADE",
+        "deployDrives": "(ARCADE|PY)",
         "deployFileMarker": "INFO_UF2.TXT",
         "driveName": "ARCADE",
         "floatingPoint": true,
