@@ -35,6 +35,13 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "variant": "hw---samd51"
     },
     {
+        "name": "Kitronik ARCADE",
+        "description": "ARCADE is a programmable gamepad for use with MakeCode Arcade.",
+        "imageUrl": "/static/hardware/kitronik.jpg",
+        "url": "https://www.kitronik.co.uk/arcade",
+        "variant": "hw---samd51"
+    },
+    {
         "name": "Adafruit M4",
         "description": "Learn how to run your games on micro-controllers from Adafruit",
         "imageUrl": "/static/hardware/adafruitm4.jpg",
