@@ -5,7 +5,7 @@
     "thumbnailName": "MakeCode Arcade",
     "title": "Microsoft MakeCode Arcade",
     "description": "Develop your programming skills by quickly creating and modding retro arcade games with Blocks and JavaScript in the MakeCode editor",
-    "corepkg": "core",
+    "corepkg": "device",
     "cloud": {
         "workspace": false,
         "sharing": true,
