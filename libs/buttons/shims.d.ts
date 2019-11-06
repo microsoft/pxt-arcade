@@ -60,7 +60,7 @@ declare interface Button {
     wasPressed(): boolean;
 
     /**
-     * Gets the component identifier for the buton
+     * Gets the component identifier for the button
      */
     //% shim=ButtonMethods::id
     id(): int32;
