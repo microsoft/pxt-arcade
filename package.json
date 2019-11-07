@@ -33,8 +33,8 @@
     "typescript": "2.6.1"
   },
   "dependencies": {
-    "pxt-common-packages": "6.16.18",
-    "pxt-core": "5.28.12",
+    "pxt-common-packages": "6.16.21",
+    "pxt-core": "5.28.14",
     "@jacdac/jacdac-ts": "^0.0.9"
   },
   "optionalDependencies": {
