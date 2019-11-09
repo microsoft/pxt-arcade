@@ -1,4 +1,16 @@
 // Auto-generated. Do not edit.
+declare namespace light {
+
+    /**
+     * Send a programmable light buffer to the specified digital pin
+     * @param data The pin that the light are connected to
+     * @param clk the clock line if nay
+     * @param mode the color encoding mode
+     * @param buf The buffer to send to the pin
+     */
+    //% shim=light::sendBuffer
+    function sendBuffer(data: DigitalInOutPin, clk: DigitalInOutPin, mode: int32, buf: Buffer): void;
+}
 declare namespace control {
 
     /**
@@ -295,18 +307,6 @@ declare interface SPI {
      */
     //% shim=SPIMethods::setMode
     setMode(mode: int32): void;
-}
-declare namespace light {
-
-    /**
-     * Send a programmable light buffer to the specified digital pin
-     * @param data The pin that the light are connected to
-     * @param clk the clock line if nay
-     * @param mode the color encoding mode
-     * @param buf The buffer to send to the pin
-     */
-    //% shim=light::sendBuffer
-    function sendBuffer(data: DigitalInOutPin, clk: DigitalInOutPin, mode: int32, buf: Buffer): void;
 }
 declare namespace configStorage {
 

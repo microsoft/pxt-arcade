@@ -11,6 +11,14 @@ declare namespace serial {
 
 declare interface SerialDevice {
     /**
+     */
+    //% shim=SerialDeviceMethods::redirect
+    redirect(tx: DigitalInOutPin, rx: DigitalInOutPin, rate: BaudRate): void;
+}
+
+
+declare interface SerialDevice {
+    /**
      * Sets the size of the RX buffer in bytes
      */
     //% shim=SerialDeviceMethods::setRxBufferSize
@@ -45,11 +53,6 @@ declare interface SerialDevice {
      */
     //% shim=SerialDeviceMethods::writeBuffer
     writeBuffer(buffer: Buffer): void;
-
-    /**
-     */
-    //% shim=SerialDeviceMethods::redirect
-    redirect(tx: DigitalInOutPin, rx: DigitalInOutPin, rate: BaudRate): void;
 
     /**
      * Register code when a serial event occurs
