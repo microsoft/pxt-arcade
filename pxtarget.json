@@ -27,6 +27,7 @@
         "libs/core---linux",
         "libs/core---vm",
         "libs/serial",
+        "libs/serial---linux",
         "libs/corgio",
         "libs/darts",
         "libs/keyboard",

@@ -24,6 +24,7 @@
         "screen---linux": "file:../screen---linux",
         "settings---files": "file:../settings---files",
         "controller---none": "file:../controller---none",
+        "serial---linux": "file:../serial---linux",
         "game": "file:../game"
     },
     "public": true,

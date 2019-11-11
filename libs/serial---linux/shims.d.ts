@@ -5,15 +5,7 @@ declare namespace serial {
      * Opens a Serial communication driver
      */
     //% shim=serial::internalCreateSerialDevice
-    function internalCreateSerialDevice(tx: DigitalInOutPin, rx: DigitalInOutPin, id: int32): SerialDevice;
-}
-
-
-declare interface SerialDevice {
-    /**
-     */
-    //% shim=SerialDeviceMethods::redirect
-    redirect(tx: DigitalInOutPin, rx: DigitalInOutPin, rate: BaudRate): void;
+    function internalCreateSerialDevice(id: int32): SerialDevice;
 }
 
 
