@@ -1,9 +1,9 @@
 # Strawberry Lemonade
 
-Strawberries and lemons flying offscreen!
+Strawberries and lemons swirling and flying offscreen!
 
-This example is primarily just a visual test, to make sure things 'look right' at a glance;
-good for showing off the simulator, and just watching (it's a bit mesmerizing).
+This example is primarily a visual test to make sure the motion and position of things 'look right' at a glance. It's also
+good for showing off the simulator, or just to entertain your eyes (it's a bit mesmerizing).
 
 ```sim
 let degrees2 = 0
