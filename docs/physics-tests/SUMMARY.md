@@ -8,5 +8,6 @@
 * [Single Collisions](/physics-tests/single-collisions)
 * [Space Man](/physics-tests/space-man)
 * [Spooky Treats](/physics-tests/spooky-treats)
+* [Strawberry Lemonade](/physics-tests/strawberry-lemonade)
 * [Tiles](/physics-tests/tiles)
 * [Wall Jump](/physics-tests/wall-jump)
