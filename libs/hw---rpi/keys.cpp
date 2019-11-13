@@ -91,7 +91,7 @@ static int isPressed(const char *name, int keyPos) {
         auto pins = getConfigInts(name);
         for (int i = 0; pins[i] != ENDMARK; ++i) {
             auto p = pins[i];
-            if (pressedScanCodes[p])
+            if (p < (int)sizeof(pressedScanCodes) && pressedScanCodes[p])
                 return 1;
         }
         return 0;
