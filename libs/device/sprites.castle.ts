@@ -185,9 +185,6 @@ namespace sprites.castle {
     export const skellyWalkRight2 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     //% tags="tile forest"
-    export const tileGrass1 = image.ofBuffer(hex``);
-    //% fixedInstance jres blockIdentity=images._image
-    //% tags="tile forest"
     export const tileGrass2 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     //% tags="tile forest"
@@ -200,10 +197,7 @@ namespace sprites.castle {
     export const tilePath3 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     //% tags="tile forest"
-    export const tileDarkGrass1 = image.ofBuffer(hex``);
-    //% fixedInstance jres blockIdentity=images._image
-    //% tags="tile forest"
-    export const tileDarkGrass2 = image.ofBuffer(hex``);
+    export const tileGrass1 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     //% tags="tile forest"
     export const tilePath4 = image.ofBuffer(hex``);
@@ -218,9 +212,6 @@ namespace sprites.castle {
     export const tileGrass3 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     //% tags="tile forest"
-    export const tileDarkGrass3 = image.ofBuffer(hex``);
-    //% fixedInstance jres blockIdentity=images._image
-    //% tags="tile forest"
     export const tilePath7 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     //% tags="tile forest"
@@ -228,6 +219,15 @@ namespace sprites.castle {
     //% fixedInstance jres blockIdentity=images._image
     //% tags="tile forest"
     export const tilePath9 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
+    //% tags="tile forest"
+    export const tileDarkGrass1 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
+    //% tags="tile forest"
+    export const tileDarkGrass2 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
+    //% tags="tile forest"
+    export const tileDarkGrass3 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     export const treePine = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image

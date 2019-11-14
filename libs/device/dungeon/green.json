@@ -3,25 +3,29 @@
         "OuterNorthWest",
         "OuterNorth0",
         "OuterNorth1",
-        "OuterNorth2",
         "OuterNorthEast",
+
+        "OuterWest0",
+        "InnerNorthWest",
+        "InnerNorthEast",
         "OuterEast0",
+
+        "OuterWest1",
+        "InnerSouthWest",
+        "InnerSouthEast",
         "OuterEast1",
-        "OuterEast2",
+
         "OuterSouthEast",
         "OuterSouth0",
         "OuterSouth1",
-        "OuterSouth2",
         "OuterSouthWest",
-        "OuterWest0",
-        "OuterWest1",
+
+        "OuterNorth2",
+        "OuterEast2",
+        "OuterSouth2",
         "OuterWest2",
         "SwitchUp",
-        "SwitchDown",
-        "InnerNorthWest",
-        "InnerNorthEast",
-        "InnerSouthEast",
-        "InnerSouthWest"
+        "SwitchDown"
     ],
     "tags": "tile dungeon"
 }
