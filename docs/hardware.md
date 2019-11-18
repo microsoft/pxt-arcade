@@ -42,6 +42,13 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "variant": "hw---samd51"
     },
     {
+        "name": "Adafruit EdgeBadge",
+        "description": "It's the PyBadge with a zest of Machine learning",
+        "imageUrl": "/static/hardware/edgebadge.jpg",
+        "url": "https://www.adafruit.com/product/4400",
+        "variant": "hw---samd51"
+    },
+    {
         "name": "Adafruit M4",
         "description": "Learn how to run your games on micro-controllers from Adafruit",
         "imageUrl": "/static/hardware/adafruitm4.jpg",
