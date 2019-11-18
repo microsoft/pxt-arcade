@@ -21,13 +21,6 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "variant": "hw---stm32f401"
     },
     {
-        "name": "Ovobot Xtron",
-        "description": "A programmable microcomputer that can be used for making MakeCode Arcade games, controlling Scratch sprites and creating works from electronics to robots.",
-        "imageUrl": "/static/hardware/xtron.jpg",
-        "url": "https://www.ovobot.cn/product/detail/xtron/",
-        "variant": "hw---stm32f401"
-    },
-    {
         "name": "Adafruit PyBadge",
         "description": "It's a badge, it's an arcade, it's a PyBadge",
         "imageUrl": "/static/hardware/pybadge.jpg",
@@ -48,6 +41,13 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "url": "https://www.kitronik.co.uk/arcade",
         "variant": "hw---samd51"
     },
+    {
+        "name": "Ovobot Xtron",
+        "description": "A programmable microcomputer that can be used for making MakeCode Arcade games, controlling Scratch sprites and creating works from electronics to robots.",
+        "imageUrl": "/static/hardware/xtron.jpg",
+        "url": "https://www.ovobot.cn/product/detail/xtron/",
+        "variant": "hw---stm32f401"
+    },    
     {
         "name": "Adafruit M4",
         "description": "Learn how to run your games on micro-controllers from Adafruit",
