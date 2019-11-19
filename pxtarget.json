@@ -385,5 +385,6 @@
         {
             "id": "ie"
         }
-    ]
+    ],
+    "uploadDocs": true
 }
