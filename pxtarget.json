@@ -13,7 +13,10 @@
         "importing": true,
         "packages": true,
         "publishing": true,
-        "githubPackages": true
+        "githubPackages": true,
+        "cloudProviders": {
+            "github": {}
+        }
     },
     "bundleddirs": [
         "libs/animation",
