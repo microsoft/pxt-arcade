@@ -22,10 +22,10 @@ If you are using a VGA screen via a HDMI->VGA adapter. Apply the following chang
 
 Now, let's try out the firmware.
 
-- [ ] insert the SD card in the Raspberry Pi Zero.
-- [ ] connect the screen cable.
+- [ ] insert the SD card in the Raspberry Pi Zero
+- [ ] connect the screen cable
 - [ ] connect USB power cable. Double check which one you plug in!
-- [ ] connect the USB data cable.
+- [ ] connect the USB data cable
 
 You should see the Configuration Program:
 
@@ -61,20 +61,20 @@ https://youtu.be/-P5I_BzoYdg
 
 Use the program to determine which header those buttons will go to.
 
-- [ ] pressing EXIT exits the current game and goes back to the selection screen.
-- [ ] pressing MENU will pop up the game menu
+- [ ] pressing **EXIT** exits the current game and goes back to the selection screen
+- [ ] pressing **MENU** will pop up the game menu
 
-Once you're done connecting all the wires, press A B A B A B to terminate the configuration program.
-You should now see game selection menu.
-Next time you reboot your Pi, it will go straight to the menu, and skip the configuration program.
+Once you're done connecting all the wires, press the **A** an **B** buttons in this order, **A B A B A B**, to terminate the configuration program.
+You should now see the game selection menu.
+Next time you reboot your Pi, it will go straight to the menu and will not run the configuration program.
 
 ### Update or customize the menu
 
-If you want to customize the menu displayed on the Pi, 
+If you want to customize the menu displayed on the Pi:
 
 * clone https://github.com/microsoft/pxt-arcade-cabinet-menu
 * follow instructions to build project
 * click ``|Download|`` and select the **Pi 0** hardware profile
 * test your menu changes in the simulator
 * make sure that your project is named **.menu**
-* **Compile** and drop the menu into your ARCADE drive after connecting your Pi to the computer. 
+* **Compile** and drop the menu into your ARCADE drive after connecting your Pi to the computer
