@@ -4,6 +4,12 @@
 #include <wiringPiI2C.h>
 #include <pthread.h>
 
+#include <linux/input.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
 namespace music {
 void playTone(int frequency, int ms);
 }
@@ -43,6 +49,8 @@ const int INTERNAL_KEY_DOWN = 2051;
 
 static int adcFD;
 
+static int useScanCodes, scanCodeFD;
+
 #define SWAP(v) (uint16_t)((v >> 8) | (v << 8))
 #define MID 0x3300
 #define DEAD 0x1000
@@ -74,8 +82,20 @@ static int readADC(int channel) {
     if (isPressed("BTN_" #s, (int)Key::s))                                                         \
     SET(s)
 
+static uint8_t pressedScanCodes[256];
+
 static int isPressed(const char *name, int keyPos) {
     static uint64_t parsedPin[(int)Key::EXIT + 1];
+
+    if (useScanCodes) {
+        auto pins = getConfigInts(name);
+        for (int i = 0; pins[i] != ENDMARK; ++i) {
+            auto p = pins[i];
+            if (p < (int)sizeof(pressedScanCodes) && pressedScanCodes[p])
+                return 1;
+        }
+        return 0;
+    }
 
     if (parsedPin[keyPos] == 0) {
         auto pins = getConfigInts(name);
@@ -99,8 +119,23 @@ static int isPressed(const char *name, int keyPos) {
     return 0;
 }
 
+static void updateScanCodes() {
+    if (!useScanCodes)
+        return;
+
+    struct input_event ev[64];
+    int rd = read(scanCodeFD, ev, sizeof(ev));
+
+    for (int i = 0; i < rd / (int)sizeof(struct input_event); i++) {
+        if (ev[i].type == 1 && ev[i].code < sizeof(pressedScanCodes))
+            pressedScanCodes[ev[i].code] = ev[i].value;
+    }
+}
+
 static uint32_t readBtns() {
     uint32_t r = 0;
+
+    updateScanCodes();
 
     KEY(A);
     KEY(B);
@@ -177,7 +212,16 @@ void initKeys() {
     DMESG("init keys");
     // music::playTone(0, 0); // start music process early
 
-    wiringPiSetupGpio();
+    if (getConfigString("SCAN_CODES")) {
+        useScanCodes = 1;
+        scanCodeFD = open(getConfigString("SCAN_CODES"), O_RDONLY);
+        if (scanCodeFD < 0) {
+            DMESG("can't open %s", getConfigString("SCAN_CODES"));
+            return;
+        }
+    } else {
+        wiringPiSetupGpio();
+    }
 
     pthread_t disp;
     pthread_create(&disp, NULL, btnPoll, NULL);

@@ -8,46 +8,7 @@
 
 Follow the [Firmware Installation Instructions](https://learn.adafruit.com/makecode-arcade-with-raspberry-pi-zero/firmware#firmware-3-1)
 to re-image your Raspberry Pi SD card with the MakeCode Arcade firmware.
-
-### Update ``arcade.cfg``
-
-Make sure the ``arcade.cfg`` file on your Raspberry Pi Zero image contains the following text:
-
-```
-BTN_RESET=4
-BTN_EXIT=3
-BTN_MENU=2
-BTN_A=26
-BTN_B=19
-BTN_LEFT=13
-BTN_UP=6
-BTN_RIGHT=5
-BTN_DOWN=0
-BTN_A2=11
-BTN_B2=9
-BTN_LEFT2=10
-BTN_UP2=22
-BTN_RIGHT2=27
-BTN_DOWN2=17
-BTN_A3=21
-BTN_B3=20
-BTN_LEFT3=16
-BTN_UP3=12
-BTN_RIGHT3=1
-BTN_DOWN3=7
-BTN_A4=8
-BTN_B4=25
-BTN_LEFT4=24
-BTN_UP4=23
-BTN_RIGHT4=18
-BTN_DOWN4=15
-```
-
-### Update ``config.txt``
-
-If supported by your screen, uncomment this line in ``config.txt``.
-
-    disable_overscan=1
+Make sure to pick the `arcade-cardboard.zip` file.
 
 ### 4:3 VGA screens
 
@@ -61,25 +22,16 @@ If you are using a VGA screen via a HDMI->VGA adapter. Apply the following chang
 
 Now, let's try out the firmware.
 
-- [ ] insert the SD card in the Raspberry Pi Zero.
-- [ ] connect the screen cable.
+- [ ] insert the SD card in the Raspberry Pi Zero
+- [ ] connect the screen cable
 - [ ] connect USB power cable. Double check which one you plug in!
-- [ ] connect the USB data cable.
+- [ ] connect the USB data cable
 
-You should see the game selection dialog on the screen.
-
-![Screen displaying the game menu dialog](/static/hardware/raspberry-pi/cardboard-control-panel/gamemenu.jpg)
-
-### Download the configuration program
-
-Download or copy the **[Configuration Program](https://makecode.com/_gCyify35UE4K)** into the [MakeCode Arcade](@homeurl@) editor and then download the .UF2 file onto the
-SD card.
+You should see the Configuration Program:
 
 ![A screenshot of the configuration game](/static/hardware/raspberry-pi/cardboard-control-panel/configurator.png)
 
-You can use this program in your browser, or on the Raspberry Pi panel to help make sure your wiring is correct.
-
-https://youtu.be/wOGvokzL-7c
+You can use this program on the Raspberry Pi panel to help make sure your wiring is correct.
 
 ## Wiring
 
@@ -109,16 +61,20 @@ https://youtu.be/-P5I_BzoYdg
 
 Use the program to determine which header those buttons will go to.
 
-- [ ] pressing EXIT exits the current game and goes back to the selection screen.
-- [ ] pressing MENU will pop up the game menu
+- [ ] pressing **EXIT** exits the current game and goes back to the selection screen
+- [ ] pressing **MENU** will pop up the game menu
+
+Once you're done connecting all the wires, press the **A** an **B** buttons in this order, **A B A B A B**, to terminate the configuration program.
+You should now see the game selection menu.
+Next time you reboot your Pi, it will go straight to the menu and will not run the configuration program.
 
 ### Update or customize the menu
 
-If you want to customize the menu displayed on the Pi, 
+If you want to customize the menu displayed on the Pi:
 
 * clone https://github.com/microsoft/pxt-arcade-cabinet-menu
 * follow instructions to build project
 * click ``|Download|`` and select the **Pi 0** hardware profile
 * test your menu changes in the simulator
 * make sure that your project is named **.menu**
-* **Compile** and drop the menu into your ARCADE drive after connecting your Pi to the computer. 
+* **Compile** and drop the menu into your ARCADE drive after connecting your Pi to the computer
