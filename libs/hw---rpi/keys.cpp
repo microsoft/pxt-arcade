@@ -132,6 +132,9 @@ static void updateScanCodes() {
     }
 }
 
+static uint16_t ch0, ch1;
+static uint32_t state;
+
 static uint32_t readBtns() {
     uint32_t r = 0;
 
@@ -154,7 +157,8 @@ static uint32_t readBtns() {
     KEY(UP2);
     KEY(DOWN2);
 
-    uint16_t ch0 = readADC(0), ch1 = readADC(1);
+    ch0 = readADC(0);
+    ch1 = readADC(1);
 
     if (ch0 < MID - DEAD)
         SET(UP);
@@ -169,10 +173,53 @@ static uint32_t readBtns() {
     return r;
 }
 
+//% expose
+int pressureLevelByButtonId(int btnId, int codalId) {
+    int inv = 0;
+    int v = 0;
+
+    switch ((Key)btnId) {
+    case Key::DOWN:
+        v = ch0;
+        inv = 1;
+        break;
+    case Key::UP:
+        v = ch0;
+        inv = -1;
+        break;
+    case Key::RIGHT:
+        v = ch1;
+        inv = 1;
+        break;
+    case Key::LEFT:
+        v = ch1;
+        inv = -1;
+        break;
+    default:
+        break;
+    }
+
+    if (adcFD < 0 || inv == 0) {
+        return (state & (1 << btnId)) ? 512 : 0;
+    }
+
+    int dead = DEAD / 4;
+
+    v = (v - MID) * inv;
+    v = (v - dead) * 512 / (MID - dead);
+
+    if (v < 0)
+        v = 0;
+    if (v > 512)
+        v = 512;
+
+    return v;
+}
+
 static void *btnPoll(void *dummy) {
     (void)dummy;
 
-    uint32_t state = readBtns();
+    state = readBtns();
     int k = 0;
     while (1) {
         sleep_core_us(5000);

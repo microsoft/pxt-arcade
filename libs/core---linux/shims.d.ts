@@ -18,6 +18,13 @@ declare namespace control {
     //% help=control/allocate-notify-event shim=control::allocateNotifyEvent
     function allocateNotifyEvent(): int32;
 
+    /**
+     * Determine the version of system software currently running.
+     */
+    //% blockId="control_device_dal_version" block="device dal version"
+    //% help=control/device-dal-version shim=control::deviceDalVersion
+    function deviceDalVersion(): string;
+
     /** Write data to DMESG debugging buffer. */
     //% shim=control::dmesg
     function dmesg(s: string): void;
