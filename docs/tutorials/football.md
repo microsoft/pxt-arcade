@@ -102,5 +102,5 @@ football.createGame(league.kansasCityChiefs, league.oaklandRaiders, 90);
 ```
 
 ```package
-pxt-kickoff=github:jwunderl/pxt-kickoff#v1.2.1
+pxt-kickoff=github:microsoft/pxt-kickoff#v0.0.2
 ```
