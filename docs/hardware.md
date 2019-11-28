@@ -47,7 +47,8 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "imageUrl": "/static/hardware/xtron.jpg",
         "url": "https://www.ovobot.cn/product/detail/xtron/",
         "variant": "hw---stm32f401"
-    },    
+    },
+    {
         "name": "Adafruit EdgeBadge",
         "description": "It's the PyBadge with a zest of Machine learning",
         "imageUrl": "/static/hardware/edgebadge.jpg",
