@@ -12,7 +12,8 @@ Here are some fun programs for your @boardname@!
         "url":"/blocks-games/duck",
         "cardType": "example",
         "imageUrl": "/static/blocks-games/duck.png",
-        "largeImageUrl": "/static/blocks-games/duck.gif"
+        "largeImageUrl": "/static/blocks-games/duck.gif",
+        "videoUrl": "/static/blocks-games/duck.mp4"
     },
     {
         "name": "Space Destroyer",
@@ -20,7 +21,8 @@ Here are some fun programs for your @boardname@!
         "url":"/blocks-games/space-destroyer",
         "cardType": "example",
         "imageUrl": "/static/blocks-games/space-destroyer.png",
-        "largeImageUrl": "/static/blocks-games/space-destroyer.gif"
+        "largeImageUrl": "/static/blocks-games/space-destroyer.gif",
+        "videoUrl": "/static/blocks-games/space-destroyer.mp4"
     },
     {
         "name": "Jumpy Platformer",
@@ -28,7 +30,8 @@ Here are some fun programs for your @boardname@!
         "url": "/blocks-games/jumpy-platformer",
         "cardType": "example",
         "imageUrl": "/static/blocks-games/jumpy-platformer.png",
-        "largeImageUrl": "/static/blocks-games/jumpy-platformer.gif"
+        "largeImageUrl": "/static/blocks-games/jumpy-platformer.gif",
+        "videoUrl": "/static/blocks-games/jumpy-platformer.mp4"
     },
     {
         "name": "Hot Air Balloon",
@@ -36,7 +39,8 @@ Here are some fun programs for your @boardname@!
         "url": "/blocks-games/hot-air-balloon",
         "cardType": "example",
         "imageUrl": "/static/blocks-games/hot-air-balloon.png",
-        "largeImageUrl": "/static/blocks-games/hot-air-balloon.gif"
+        "largeImageUrl": "/static/blocks-games/hot-air-balloon.gif",
+        "videoUrl": "/static/blocks-games/hot-air-balloon.mp4"
     },
     {
         "name": "Bunny Hop",
@@ -44,7 +48,8 @@ Here are some fun programs for your @boardname@!
         "url": "/blocks-games/bunny-hop",
         "cardType": "example",
         "imageUrl": "/static/blocks-games/bunny-hop.png",
-        "largeImageUrl": "/static/blocks-games/bunny-hop.gif"
+        "largeImageUrl": "/static/blocks-games/bunny-hop.gif",
+        "videoUrl": "/static/blocks-games/bunny-hop.mp4"
     },
     {
         "name": "Eat the Fruit",
@@ -52,7 +57,8 @@ Here are some fun programs for your @boardname@!
         "url":"/blocks-games/eat-the-fruit",
         "cardType": "example",
         "imageUrl": "/static/blocks-games/eat-the-fruit.png",
-        "largeImageUrl": "/static/blocks-games/eat-the-fruit.gif"
+        "largeImageUrl": "/static/blocks-games/eat-the-fruit.gif",
+        "videoUrl": "/static/blocks-games/eat-the-fruit.mp4"
     },
     {
         "name": "Cat Jumper",
@@ -60,7 +66,8 @@ Here are some fun programs for your @boardname@!
         "url": "/blocks-games/cat-jumper",
         "cardType": "example",
         "imageUrl": "/static/blocks-games/cat-platformer.png",
-        "largeImageUrl": "/static/blocks-games/cat-platformer.gif"
+        "largeImageUrl": "/static/blocks-games/cat-platformer.gif",
+        "videoUrl": "/static/blocks-games/cat-platformer.mp4"
     },
     {
         "name": "Level Up!",
@@ -68,7 +75,8 @@ Here are some fun programs for your @boardname@!
         "url":"/blocks-games/level-game",
         "cardType": "example",
         "imageUrl": "/static/blocks-games/level-game.png",
-        "largeImageUrl": "/static/blocks-games/level-game.gif"
+        "largeImageUrl": "/static/blocks-games/level-game.gif",
+        "videoUrl": "/static/blocks-games/level-game.mp4"
     },
     {
         "name": "Memory",
@@ -76,7 +84,8 @@ Here are some fun programs for your @boardname@!
         "url":"/blocks-games/memory",
         "cardType": "example",
         "imageUrl": "/static/blocks-games/memory.png",
-        "largeImageUrl": "/static/blocks-games/memory.gif"
+        "largeImageUrl": "/static/blocks-games/memory.gif",
+        "videoUrl": "/static/blocks-games/memory.mp4"
     },
     {
         "name": "Catch",
@@ -84,7 +93,8 @@ Here are some fun programs for your @boardname@!
         "url":"/blocks-games/catch",
         "cardType": "example",
         "imageUrl": "/static/blocks-games/catch-game.png",
-        "largeImageUrl": "/static/blocks-games/catch-game.gif"
+        "largeImageUrl": "/static/blocks-games/catch-game.gif",
+        "videoUrl": "/static/blocks-games/catch-game.mp4"
     },
     {
         "name": "Eater Princess",
@@ -92,7 +102,8 @@ Here are some fun programs for your @boardname@!
         "url":"/blocks-games/eater-princess",
         "cardType": "example",
         "imageUrl": "/static/blocks-games/eater-princess.png",
-        "largeImageUrl": "/static/blocks-games/eater-princess.gif"
+        "largeImageUrl": "/static/blocks-games/eater-princess.gif",
+        "videoUrl": "/static/blocks-games/eater-princess.mp4"
     }
 ]
 ```

@@ -24,7 +24,8 @@
   "labelClass": "green ribbon huge",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/walking-hero.png",
-  "largeImageUrl": "/static/concepts/walking-hero.gif"
+  "largeImageUrl": "/static/concepts/walking-hero.gif",
+  "videoUrl": "/static/concepts/walking-hero.mp4"
 },
 {
   "name": "Picnic Food",
@@ -32,7 +33,8 @@
   "url": "/concepts/picnic-food",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/picnic-food.png",
-  "largeImageUrl": "/static/concepts/picnic-food.gif"
+  "largeImageUrl": "/static/concepts/picnic-food.gif",
+  "videoUrl": "/static/concepts/picnic-food.mp4"
 },
 {
   "name": "Princess Pizza",
@@ -40,7 +42,8 @@
   "url": "/concepts/princess-pizza",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/princess-pizza.png",
-  "largeImageUrl": "/static/concepts/princess-pizza.gif"
+  "largeImageUrl": "/static/concepts/princess-pizza.gif",
+  "videoUrl": "/static/concepts/princess-pizza.mp4"
 },
 {
   "name": "Bouncing Burger",
@@ -48,7 +51,8 @@
   "url": "/concepts/bouncing-burger",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/bouncing-burger.png",
-  "largeImageUrl": "/static/concepts/bouncing-burger.gif"
+  "largeImageUrl": "/static/concepts/bouncing-burger.gif",
+  "videoUrl": "/static/concepts/bouncing-burger.mp4"
 }, 
 {
   "name": "Star Field",
@@ -56,7 +60,8 @@
   "url": "/concepts/star-field",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/star-field.png",
-  "largeImageUrl": "/static/concepts/star-field.gif"
+  "largeImageUrl": "/static/concepts/star-field.gif",
+  "videoUrl": "/static/concepts/star-field.mp4"
 },
 {
   "name": "Throw a Bone",
@@ -64,7 +69,8 @@
   "url": "/concepts/throw-a-bone",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/throw-a-bone.png",
-  "largeImageUrl": "/static/concepts/throw-a-bone.gif"
+  "largeImageUrl": "/static/concepts/throw-a-bone.gif",
+  "videoUrl": "/static/concepts/throw-a-bone.mp4"
 },
 {
   "name": "Sunday Drive",
@@ -72,7 +78,8 @@
   "url": "/concepts/sunday-drive",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/sunday-drive.png",
-  "largeImageUrl": "/static/concepts/sunday-drive.gif"
+  "largeImageUrl": "/static/concepts/sunday-drive.gif",
+  "videoUrl": "/static/concepts/sunday-drive.mp4"
 },
 {
   "name": "Which Button?",
@@ -80,7 +87,8 @@
   "url": "/concepts/which-button",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/which-button.png",
-  "largeImageUrl": "/static/concepts/which-button.gif"
+  "largeImageUrl": "/static/concepts/which-button.gif",
+  "videoUrl": "/static/concepts/which-button.mp4"
 },
 {
   "name": "Setting the Scene",
@@ -88,7 +96,8 @@
   "url": "/concepts/setting-the-scene",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/setting-the-scene.png",
-  "largeImageUrl": "/static/concepts/setting-the-scene.gif"
+  "largeImageUrl": "/static/concepts/setting-the-scene.gif",
+  "videoUrl": "/static/concepts/setting-the-scene.mp4"
 },
 {
   "name": "Tale of Talagron",
@@ -96,7 +105,8 @@
   "url":"/concepts/talagron",
   "cardType": "codeExample",
   "imageUrl": "/static/concepts/talagron.jpg",
-  "largeImageUrl": "/static/concepts/talagron.gif"
+  "largeImageUrl": "/static/concepts/talagron.gif",
+  "videoUrl": "/static/concepts/talagron.mp4"
 }
 ]
 ```
