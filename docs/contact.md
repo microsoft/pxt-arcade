@@ -2,7 +2,7 @@
 
 We have [a forum](https://forum.makecode.com) which is good for sharing games and asking questions.
 
-We also have a [a Discord server](https://aka.ms/makecodecommunity) with Arcade channel for more real-time communication.
+We also have a [Discourse server](https://aka.ms/makecodecommunity) with an Arcade channel for more real-time communication.
 
 You can also try [stack overflow](https://stackoverflow.com/), we monitor the ``makecode`` tag.
 
