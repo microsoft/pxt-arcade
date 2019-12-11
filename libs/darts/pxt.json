@@ -7,7 +7,7 @@
     ],
     "public": true,
     "dependencies": {
-        "game": "file:../game"
+        "device": "file:../device"
     },
     "weight": 78
 }
