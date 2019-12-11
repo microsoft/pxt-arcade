@@ -27,7 +27,7 @@
                     {
                         "answerToken": "spriteName",
                         "defaultAnswer": "mySprite",
-                        "type": "text"
+                        "type": "variableName"
                     }
                 ],
                 "output": "",

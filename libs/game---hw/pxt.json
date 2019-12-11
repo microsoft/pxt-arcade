@@ -1,6 +1,7 @@
 {
     "name": "game",
     "additionalFilePath": "../game",
+    "partial": true,
     "dependencies": {
         "settings": "file:../settings",
         "screen---st7735": "file:../screen---st7735",

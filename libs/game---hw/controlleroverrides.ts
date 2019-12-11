@@ -20,4 +20,6 @@ namespace controller {
     export const player3 = new Controller(3, undefined);
     //% fixedInstance whenUsed block="player 4"
     export const player4 = new Controller(4, undefined);
+    //% fixedInstance whenUsed block="player 1"
+    export const player1 = controller._player1();
 }

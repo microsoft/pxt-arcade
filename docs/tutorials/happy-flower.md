@@ -8,7 +8,7 @@ Try this tutorial!
 
 ## Introduction @unplugged
 
-Flowers make everyone around them happier, especially the bees who get nector from them. To show this, we can create a flower that sends happy little bees back to the hive.
+Flowers make everyone around them happier, especially the bees who get nectar from them. To show this, we can create a flower that sends happy little bees back to the hive.
 
 ![Happy thoughts](/static/tutorials/happy-flower/happy-thoughts.gif)
 
@@ -41,7 +41,7 @@ mySprite = sprites.create(img`
 
 ## Step 2
 
-Find in ``||game:on update every 500 ms||`` and ``||game:Game||``, and drag it into the workspace. Set the time to ``1000 ms``.
+Find an ``||game:on update every 500 ms||`` in ``||game:Game||``, and drag it into the workspace. Set the time to ``1000 ms``.
 
 ```blocks
 let mySprite: Sprite = null

@@ -2,7 +2,7 @@
 
 ## Introduction @unplugged
 
-Extensions in @boardname@ allow users to easily develop and share portions of their code others. In this tutorial, you will be using the ``||corgio:corgio||`` extension to create a simple platformer. In this example the extension is automatically loaded: in other projects, you can load the extension as shown below.
+Extensions in @boardname@ allow users to easily develop and share portions of their code with others. In this tutorial, you will be using the ``||corgio:corgio||`` extension to create a simple platformer. In this example the extension is automatically loaded: in other projects, you can load the extension as shown below.
 
 ![Adding Corgio Extension](/static/tutorials/simple-extensions/add-corgio.gif)
 
@@ -253,7 +253,7 @@ scene.setTile(7, img`
 
 ## Step 9
 
-Add a ``||scene:on sprite of kind Player hits wall||`` block from ``||scene:Scene||``, and select the color of the new wall you made in the color bubble. Inside of that, add a ``||game:game over||`` inside of the ``||scene:on sprite of kind Player hits wall||``.
+Add a ``||scene:on sprite of kind Player hits wall||`` block from ``||scene:Scene||``, and select the color of the new wall you made in the color bubble. Inside of that, add a ``||game:game over||``.
 
 ![Add winning event](/static/tutorials/simple-extensions/game-win-event.gif)
 
