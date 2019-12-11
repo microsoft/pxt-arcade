@@ -16,5 +16,6 @@
         "DarkGrass2",
         "DarkGrass3"
     ],
-    "tags": "tile forest"
+    "tags": "tile forest",
+    "blockIdentity": "tiles._tileGetter"
 }

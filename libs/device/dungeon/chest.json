@@ -3,5 +3,6 @@
         "Closed",
         "Open"
     ],
-    "tags": "?tile dungeon"
+    "tags": "?tile dungeon",
+    "blockIdentity": "tiles._tileGetter"
 }

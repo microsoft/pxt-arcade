@@ -13,5 +13,6 @@
         "LockedNorth",
         "LockedEast"
     ],
-    "tags": "tile dungeon"
+    "tags": "tile dungeon",
+    "blockIdentity": "tiles._tileGetter"
 }

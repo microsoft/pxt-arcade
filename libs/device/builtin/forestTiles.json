@@ -1,3 +1,4 @@
 {
-    "tags": "tile forest"
+    "tags": "tile forest",
+    "blockIdentity": "tiles._tileGetter"
 }

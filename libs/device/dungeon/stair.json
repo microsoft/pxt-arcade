@@ -7,5 +7,6 @@
         "Large",
         "Ladder"
     ],
-    "tags": "tile dungeon"
+    "tags": "tile dungeon",
+    "blockIdentity": "tiles._tileGetter"
 }

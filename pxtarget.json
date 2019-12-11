@@ -257,6 +257,7 @@
             ]
         },
         "listsBlocks": true,
+        "tilesetFieldEditorIdentity": "",
         "bannedCategories": [
             "pins",
             "control",

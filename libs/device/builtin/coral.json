@@ -1,3 +1,4 @@
 {
-    "tags": "?tile aquatic"
+    "tags": "?tile aquatic",
+    "blockIdentity": "tiles._tileGetter"
 }

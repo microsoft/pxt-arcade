@@ -1,3 +1,4 @@
 {
-    "tags": "?tile misc"
+    "tags": "?tile misc",
+    "blockIdentity": "tiles._tileGetter"
 }

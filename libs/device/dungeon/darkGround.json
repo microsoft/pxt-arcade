@@ -14,5 +14,6 @@
         "SouthEast1",
         "SouthWest1"
     ],
-    "tags": "tile dungeon"
+    "tags": "tile dungeon",
+    "blockIdentity": "tiles._tileGetter"
 }

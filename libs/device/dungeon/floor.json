@@ -16,5 +16,6 @@
         "Dark4",
         "Dark5"
     ],
-    "tags": "tile dungeon"
+    "tags": "tile dungeon",
+    "blockIdentity": "tiles._tileGetter"
 }
