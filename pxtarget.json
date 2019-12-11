@@ -165,7 +165,7 @@
                 "codalTarget": {
                     "name": "codal-big-brainpad",
                     "url": "https://github.com/lancaster-university/codal-big-brainpad",
-                    "branch": "v1.1.3",
+                    "branch": "v1.1.4",
                     "type": "git"
                 },
                 "codalBinary": "STM32",
@@ -187,7 +187,7 @@
                 "codalTarget": {
                     "name": "codal-itsybitsy-m4",
                     "url": "https://github.com/lancaster-university/codal-itsybitsy-m4",
-                    "branch": "v0.2.4",
+                    "branch": "v0.2.6",
                     "type": "git"
                 },
                 "codalBinary": "ITSYBITSY_M4",
