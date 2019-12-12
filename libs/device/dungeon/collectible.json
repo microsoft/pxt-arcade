@@ -4,5 +4,6 @@
         "RedCrystal",
         "BlueCrystal"
     ],
-    "tags": "?tile"
+    "tags": "?tile dungeon",
+    "blockIdentity": "images._tile"
 }

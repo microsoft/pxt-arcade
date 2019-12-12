@@ -7,5 +7,6 @@
         "Pink",
         "PinkDepressed"
     ],
-    "tags": "?tile"
+    "tags": "?tile misc",
+    "blockIdentity": "images._tile"
 }

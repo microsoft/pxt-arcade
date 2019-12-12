@@ -13,5 +13,6 @@
         "LockedNorth",
         "LockedEast"
     ],
-    "tags": "tile"
+    "tags": "tile dungeon",
+    "blockIdentity": "images._tile"
 }

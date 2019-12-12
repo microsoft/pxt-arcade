@@ -3,16 +3,17 @@
         "NorthWest0",
         "North",
         "NorthEast0",
-        "East",
-        "SouthEast0",
-        "South",
-        "SouthWest0",
+        "NorthWest1",
         "West",
         "Center",
-        "NorthWest1",
+        "East",
         "NorthEast1",
+        "SouthWest0",
+        "South",
+        "SouthEast0",
         "SouthEast1",
         "SouthWest1"
     ],
-    "tags": "tile"
+    "tags": "tile dungeon",
+    "blockIdentity": "images._tile"
 }
