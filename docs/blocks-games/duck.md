@@ -8,6 +8,7 @@ enum ActionKind {
     Idle,
     Jumping
 }
+
 namespace SpriteKind {
     export const Gap = SpriteKind.create()
 }
