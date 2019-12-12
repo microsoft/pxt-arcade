@@ -17,5 +17,5 @@
         "Dark5"
     ],
     "tags": "tile dungeon",
-    "blockIdentity": "tiles._tileGetter"
+    "blockIdentity": "images._tile"
 }

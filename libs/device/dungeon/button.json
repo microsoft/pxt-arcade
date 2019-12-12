@@ -8,5 +8,5 @@
         "PinkDepressed"
     ],
     "tags": "?tile misc",
-    "blockIdentity": "tiles._tileGetter"
+    "blockIdentity": "images._tile"
 }

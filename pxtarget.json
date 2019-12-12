@@ -260,7 +260,7 @@
             ]
         },
         "listsBlocks": true,
-        "tilesetFieldEditorIdentity": "",
+        "tilesetFieldEditorIdentity": "images._tile",
         "bannedCategories": [
             "pins",
             "control",

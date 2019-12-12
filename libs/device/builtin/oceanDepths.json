@@ -1,4 +1,4 @@
 {
     "tags": "tile aquatic",
-    "blockIdentity": "tiles._tileGetter"
+    "blockIdentity": "images._tile"
 }
