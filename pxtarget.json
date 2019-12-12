@@ -354,7 +354,7 @@
         "simAnimationExit": "fly right out",
         "crowdinProject": "kindscript",
         "monacoColors": {
-            "editor.background": "#FFFAE7"
+            "editor.background": "#FEF3E0"
         },
         "monacoFieldEditors": [
             "image-editor"
