@@ -23,6 +23,7 @@ Now, let's make our sprite figure move left and right with the controller arrow 
 let myCorg: Corgio = null
 myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
+myCorg.verticalMovement()
 ```
 
 ## Step 3
