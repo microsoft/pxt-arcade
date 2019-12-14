@@ -307,4 +307,3 @@ game.onUpdateInterval(500, function () {
 Congratulations, you have completed your game! Use the direction buttons to move your space plane to miss the bogeys. Use button **A** to shoot darts at them.
 
 ![Space plane and attacking spacecraft](/static/tutorials/galga.gif)
-
