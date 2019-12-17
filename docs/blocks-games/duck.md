@@ -524,7 +524,7 @@ game.onUpdateInterval(1500, function () {
             . . . . . . e e 6 e e e e e e 6 e e f . . . . .
         `
     }
-    gapImage = image.create(topImage.width, scene.screenHeight())
+    gapImage = image.create(2, scene.screenHeight())
     gapImage.fill(1)
     gapSprite = sprites.create(gapImage, SpriteKind.Gap)
     gapSprite.setFlag(SpriteFlag.AutoDestroy, true)
