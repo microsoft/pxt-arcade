@@ -78,7 +78,8 @@
         "libs/rotary-encoder",
         "libs/d5prj",
         "libs/f4prj",
-        "libs/rpiprj"
+        "libs/rpiprj",
+        "libs/color-coded-tilemap"
     ],
     "compile": {
         "useUF2": true,
@@ -139,6 +140,21 @@
                     "type": "api",
                     "map": {
                         "SpriteKind": "SpriteKindLegacy"
+                    }
+                }
+            ],
+            "0.0.0 - 0.14.54": [
+                {
+                    "type": "missingPackage",
+                    "map": {
+                        "scene\\.setTileMap": "color-coded-tilemap",
+                        "scene\\.setTile": "color-coded-tilemap",
+                        "scene\\.getTile": "color-coded-tilemap",
+                        "scene\\.getTilesByType": "color-coded-tilemap",
+                        "scene\\.placeOnRandomTile": "color-coded-tilemap",
+                        "scene\\.setTileAt": "color-coded-tilemap",
+                        "scene\\.onHitTile": "color-coded-tilemap",
+                        "\\.tileHitFrom": "color-coded-tilemap"
                     }
                 }
             ]
