@@ -280,3 +280,7 @@ effects.confetti.startScreenEffect()
 ## Step 4 @unplugged
 
 Press ``||Download||`` and transfer your name tag to your device!
+
+## Complete
+
+Congratulations, your name tag is complete!
