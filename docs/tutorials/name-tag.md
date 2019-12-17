@@ -147,7 +147,7 @@ scene.setBackgroundImage(img`
 
 ## Step 3
 
-Drag a ``|sprites:start screen effect|`` block to add some cool particle animation on your tag.
+Drag a ``||scene:start screen effect||`` block to add some cool particle animation on your tag.
 
 ```blocks
 scene.setBackgroundColor(2)
