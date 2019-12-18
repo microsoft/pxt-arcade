@@ -30,7 +30,7 @@ function start_level () {
     } else {
         biome = 1
     }
-    scene.setTileMap(levels[current_level])
+    scene.setTileMap(levels[current_level]);
     scene.setTile(2, img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
