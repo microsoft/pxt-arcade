@@ -1313,4 +1313,5 @@ f f f f f f f f f f f f f f . .
 
 ```package
 animation
+color-coded-tilemap
 ```
