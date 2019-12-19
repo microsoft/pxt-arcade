@@ -1157,3 +1157,7 @@ game.onUpdate(function () {
 ```package
 animation
 ```
+
+```package
+color-coded-tilemap
+```

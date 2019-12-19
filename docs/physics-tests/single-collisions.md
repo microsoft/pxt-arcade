@@ -95,3 +95,7 @@ scene.setTile(1, img`
 `, false)
 scene.placeOnRandomTile(mySprite, 1)
 ```
+
+```package
+color-coded-tilemap
+```

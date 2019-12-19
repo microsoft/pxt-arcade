@@ -301,3 +301,7 @@ game.onUpdateInterval(4000, function () {
     Lolipop.setVelocity(Math.randomRange(0, 10) - 5, Speed + 10)
 })
 ```
+
+```package
+color-coded-tilemap
+```

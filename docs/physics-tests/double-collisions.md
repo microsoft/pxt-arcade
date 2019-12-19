@@ -80,3 +80,7 @@ scene.setTileMap(img`
 `)
 
 ```
+
+```package
+color-coded-tilemap
+```

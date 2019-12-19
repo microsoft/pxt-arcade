@@ -223,3 +223,7 @@ game.onUpdate(function () {
     mySprite2.setPosition(radius * Math.cos(angle2 + 3.14159) + 80, radius * Math.sin(angle2 + 3.14159) + 60)
 })
 ```
+
+```package
+color-coded-tilemap
+```

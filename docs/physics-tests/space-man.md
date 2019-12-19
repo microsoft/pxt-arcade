@@ -82,3 +82,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
     info.changeScoreBy(1);
 });
 ```
+
+```package
+color-coded-tilemap
+```

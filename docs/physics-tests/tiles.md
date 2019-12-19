@@ -171,3 +171,7 @@ console.log(`
     y: ${t.y} same pos: ${t.y === mySprite.y}
 `)
 ```
+
+```package
+color-coded-tilemap
+```
