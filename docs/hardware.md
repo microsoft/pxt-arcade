@@ -42,6 +42,13 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "variant": "hw---samd51"
     },
     {
+        "name": "Ovobot Xtron",
+        "description": "A programmable microcomputer that can be used for making MakeCode Arcade games.",
+        "imageUrl": "/static/hardware/xtron.jpg",
+        "url": "https://www.ovobot.cn/product/detail/xtron/",
+        "variant": "hw---stm32f401"
+    },
+    {
         "name": "Adafruit EdgeBadge",
         "description": "It's the PyBadge with a zest of Machine learning",
         "imageUrl": "/static/hardware/edgebadge.jpg",
