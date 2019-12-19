@@ -515,3 +515,7 @@ for (let value2 of tilelist2) {
     value2.place(redhouse)
 }
 ```
+
+```package
+color-coded-tilemap
+```

@@ -6288,4 +6288,5 @@ namespace _tap {
 ```package
 animation
 pxt-gamejam-timer=github:shakao/pxt-gamejam-timer#v0.0.22
+color-coded-tilemap
 ```

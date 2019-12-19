@@ -160,6 +160,10 @@ game.onUpdateInterval(2200, function () {
 })
 ```
 
+```package
+color-coded-tilemap
+```
+
 ## About the author
 
 This project was contributed by Erik Pasternak from the [Blockly](https://developers.google.com/blockly) team.

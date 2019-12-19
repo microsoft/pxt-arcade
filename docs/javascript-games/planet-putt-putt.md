@@ -686,7 +686,7 @@ namespace customPalettes {
     b189d3
     55139b
     ffffff
-    a076cb 
+    a076cb
     77ff8c`
     export const inGamePalette = hex`000000
     ffffff
@@ -711,14 +711,14 @@ namespace level {
         // The background color for the mini map
         public mapBackgroundColor: number;
 
-        // The type is the index of the tilemap that should be rendered on the mini map. 
+        // The type is the index of the tilemap that should be rendered on the mini map.
         // This can exclude things like stars/clouds. The color is the single pixel color
         // that is used in the map to show the usually 16x16 tile. This can be different than
         // the index used in the tilemap, and multiple maptiles can have the same color.
         public mapTilesToRender: Array<{ type: number, color: number }>;
 
         // This represents the index of the goal/hole(s) of the map. Note, if we decide to stop
-        // using the tilemap to track the hole and want to use a sprite instead, then we would 
+        // using the tilemap to track the hole and want to use a sprite instead, then we would
         // need to change the map code.
         public holeIndex: number;
 
@@ -1078,7 +1078,7 @@ namespace animation {
             return this.animations.length - 1;
         }
 
-        /** 
+        /**
          * Sets the active animation and resets that animation to its initial frame. Allows
          * passing in a callback that gets invoked any time the frame of the animation changes to
          * allow coordination between sprites.
@@ -1838,4 +1838,8 @@ scene.onHitTile(SpriteKind.Projectile, 15, (sprite: Sprite) => {
 showSplash();
 showInstructions();
 setupLevel(loadedLevel);
+```
+
+```package
+color-coded-tilemap
 ```
