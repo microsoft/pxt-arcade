@@ -19,8 +19,8 @@ or a scuba diver avoiding coral.
 
 ## Step 1 @fullscreen
 
-Find ``||scene:set tile map to||`` in ``||scene:Scene||``.
-Drag it into ``||loops:on start||``, and click on the gray box to open the tilemap editor.
+Find ``||scene:set tile map to||`` in ``||scene:Scene||`` and drag it into ``||loops:on start||``.
+Click on the gray box to open the tilemap editor.
 
 Go into the image editor, set the size to **10 x 8** (this will fill the screen)
 and draw obstacles for the player to avoid,
