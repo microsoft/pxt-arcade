@@ -172,7 +172,7 @@ let lander = sprites.create(img`
 
 ## Step 4 @fullscreen
 
-Find ``||sprites:set mySprite position to||`` under ``||sprites:Sprites||``, and drag it below ``||sprites:set lander to sprite of kind Player||``. Change ``||variables:mySprite||`` to ``||variables:lander||`` then use into the position selector (click the space for ``x`` and click on the position selector) and place it above where you placed your green tile.  
+Find ``||sprites:set mySprite position to||`` under ``||sprites:Sprites||``, and drag it below ``||sprites:set lander to sprite of kind Player||``. Change ``||variables:mySprite||`` to ``||variables:lander||`` then use into the position selector (click the space for ``x`` and click on the position selector) and place it above where you placed your green tile.
 
 ```blocks
 let lander: Sprite = null
@@ -199,7 +199,7 @@ let angle = "straight"
 
 ## Step 7 @fullscreen
 
-Drag an ``||controller:on A button pressed||`` from ``||controller:Controller||`` and place it in your workspace. From ``||logic:Logic||``, grab an ``||logic:if then else||`` statement and drag it into ``||controller:on A button pressed||``. Click the **(+)** symbol at the end. Grab a ``||logic:0 = 0||`` block from ``||logic:Logic||`` and place it in the ``||logic:if||``. Duplicate the ``||logic:0=0||`` block and place it in the ``||logic:if else||`` section. For both ``||logic:0 = 0||`` statements, set the first value to ``||variables:angle||``. Grab a ``||text:" "||`` and place it in the second value of both equal statements. For the first if statement set the ``||variables:angle||`` equal to ``straight``. For the else if set the ``||variables:angle||`` equal to ``"left"``. 
+Drag an ``||controller:on A button pressed||`` from ``||controller:Controller||`` and place it in your workspace. From ``||logic:Logic||``, grab an ``||logic:if then else||`` statement and drag it into ``||controller:on A button pressed||``. Click the **(+)** symbol at the end. Grab a ``||logic:0 = 0||`` block from ``||logic:Logic||`` and place it in the ``||logic:if||``. Duplicate the ``||logic:0=0||`` block and place it in the ``||logic:if else||`` section. For both ``||logic:0 = 0||`` statements, set the first value to ``||variables:angle||``. Grab a ``||text:" "||`` and place it in the second value of both equal statements. For the first if statement set the ``||variables:angle||`` equal to ``straight``. For the else if set the ``||variables:angle||`` equal to ``"left"``.
 
 ```blocks
 let angle = "straight"
@@ -244,7 +244,7 @@ scene.onHitTile(SpriteKind.Player, 1, function (sprite) {
 
 ## Step 10 @fullscreen
 
-Next grab from ``||scene:Scene||`` a ``||scene:on sprite of kind Player hits wall||`` and drag it into the workspace. Make sure to set the color to the landing pad, orange. Then grab a ``||logic:if then else||`` and drag it inside. Again, from ``||logic:Logic||`` grab a ``||logic:0 = 0||`` and drag it into the ``||logic:if||`` statement. Grab the ``||variables:angle||`` from the ``||variables:Variable||`` drawer and place it in the first field of the ``||logic:0 = 0||``. Grab a ``" "`` from ``||text:Text||`` and place it in the second field and type the string ``straight``. 
+Next grab from ``||scene:Scene||`` a ``||scene:on sprite of kind Player hits wall||`` and drag it into the workspace. Make sure to set the color to the landing pad, orange. Then grab a ``||logic:if then else||`` and drag it inside. Again, from ``||logic:Logic||`` grab a ``||logic:0 = 0||`` and drag it into the ``||logic:if||`` statement. Grab the ``||variables:angle||`` from the ``||variables:Variable||`` drawer and place it in the first field of the ``||logic:0 = 0||``. Grab a ``" "`` from ``||text:Text||`` and place it in the second field and type the string ``straight``.
 
 ```blocks
 let angle = ""
@@ -307,7 +307,7 @@ Right click on the ``||controller:on left button pressed||`` and duplicate it tw
 
 ```blocks
 let lander: Sprite = null
-let angle: string;
+let angle: string = null;
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     angle = "left"
     lander.setImage(img`

@@ -22,7 +22,7 @@ The following tutorials may also be useful in learning about concepts that
 you might not have seen elsewhere:
 
 * [Chase the Pizza](/#tutorial:/tutorials/chase-the-pizza)
-* [Simple Maze](/#tutorial:/tutorials/simple-maze)
+* [Maze](/#tutorial:/tutorials/maze)
 * [Happy Flower](/#tutorial:/tutorials/happy-flower)
 * [Lemon Leak](/#tutorial:/tutorials/lemon-leak)
 * [Galga](/#tutorial:/tutorials/galga)
