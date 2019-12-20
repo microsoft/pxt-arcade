@@ -62,19 +62,24 @@
 }
 
 .ui.primary.button.download-button {
-    background-color: @teal;
-}
-
-.simtoolbar .ui.button.icon, #editortools .ui.button.editortools-btn {
     background-color: @orange;
 }
 
+.simtoolbar .ui.button.icon, #editortools .ui.button.editortools-btn {
+    background-color: @teal;
+}
+
 #editortools .ui.button.hw-button {
-    background-color: darken(@teal, 10%);
+    background-color: darken(desaturate(@orange, 20%), 10%);
 }
 
 #simulator .ui.button.play-button .icon.play {
     color: @white!important;
+}
+
+
+#homemenu .ui.item, #mainmenu .ui.item {
+    color: @white;
 }
 
 /* Mobile */
