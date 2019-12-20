@@ -92,10 +92,34 @@ controller.moveSprite(mySprite, 100, 100)
 
 ## Step 4
 
-Next, make a tile to set into the scene. Pull ``||scene:set tile to with wall||`` from ``||scene:Scene||`` into ``||loops:on start||``. Fill the whole tile with one color in the image editor.
+Next, create a tilemap that will serve as your maze. Pull ``||scene:set tilemap to||`` from ``||scene:Scene||`` into ``||loops:on start||``.
+Click on the gray box to open a tilemap, select tiles, and use the tools to draw your own maze.
+Be sure to leave a path from the start to the end, so the user can escape.
+Leave an empty tile in both the start and end location.
 
 ```blocks
-let mySprite: Sprite = sprites.create(img`
+namespace myTiles {
+    //% blockIdentity=images._tile
+    export const tile0 = img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `
+}
+let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . 2 2 2 2 2 2 2 2 . . . . .
     . . 2 2 . . . . . . 2 . . . . .
@@ -114,32 +138,61 @@ let mySprite: Sprite = sprites.create(img`
     . . . 2 . . . . 2 2 . . . . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 100)
-scene.setTile(0, img`
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-`, false)
+tiles.setTilemap(tiles.createTilemap(
+    hex`100010000102020c0c1801020c0202180c0202030a0f0b0b0b0b090b0b0b0b0b0b0b0f17000b0b0b0b0b090b0b0b0b0f0b0b0b0d090b0b010c0c1b0f0b1a0707100b0b0d0a0b0b090b0b0b0b0b0d0f0b090b0b04090f0b0a0b0b0f0b0b0d0b0b0a0b0b04120b0b0a0b0b090f0b0d0b0f090f0b170a0b0b08100f090b0b0d0f0b120b0b0d090b0f0b0806090b0b0d0b0b0a0b0b040a0b0b0b0f0b090f0b0d0b0b090f0b0d0a0b0b0b0b0b090b0b0d0b0b090b0b04090b0b0c0c0c1b0b0f0b0b0f090b0b04120b0b0b0b0b0f0b0b0b0b0b090b0b170a0b0b0b0b0b090b0b0b0b0b0a0b0004090f0b0b0b0f090b0b0f0b0b090f0b0408070719070608060719060608060705`,
+    img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `,
+    [myTiles.tile0,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorthEast,sprites.dungeon.greenOuterEast0,sprites.dungeon.greenOuterSouthWest,sprites.dungeon.greenOuterSouth0,sprites.dungeon.greenOuterSouth1,sprites.dungeon.greenOuterSouthEast,sprites.dungeon.greenOuterWest1,sprites.dungeon.greenOuterWest0,sprites.dungeon.floorDark2,sprites.dungeon.greenOuterNorth1,sprites.dungeon.greenOuterEast1,sprites.dungeon.floorDark1,sprites.dungeon.floorDark5,sprites.dungeon.greenInnerNorthEast,sprites.dungeon.purpleInnerNorthWest,sprites.dungeon.greenOuterWest2,sprites.dungeon.stairWest,sprites.dungeon.stairEast,sprites.dungeon.stairLarge,sprites.dungeon.greenInnerSouthWest,sprites.dungeon.greenOuterEast2,sprites.dungeon.greenOuterNorth2,sprites.dungeon.greenOuterSouth2,sprites.dungeon.greenInnerNorthWest,sprites.dungeon.greenInnerSouthEast],
+    TileScale.Sixteen
+))
 ```
 
 ## Step 5
 
-Click on the color bubble in ``||scene:set tile to with wall||`` and change the color index to the same color you filled the tile with. Turn the ``wall`` setting `ON`.
+Fill in the two empty spaces in the tilemap that you left in the previous step with two new tiles:
+one that looks like something you can escape with (for example, a door or stairs),
+and the other with something to mark the starting location (for example, a ladder).
+Make sure these tiles aren't used anywhere else in the tilemap.
 
 ```blocks
-let mySprite: Sprite = sprites.create(img`
+namespace myTiles {
+    //% blockIdentity=images._tile
+    export const tile0 = img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `
+}
+let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . 2 2 2 2 2 2 2 2 . . . . .
     . . 2 2 . . . . . . 2 . . . . .
@@ -158,32 +211,61 @@ let mySprite: Sprite = sprites.create(img`
     . . . 2 . . . . 2 2 . . . . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 100)
-scene.setTile(10, img`
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-`, true)
+tiles.setTilemap(tiles.createTilemap(
+    hex`100010000102020c0c1801020c0202180c0202030a0f0b0b0b0b090b0b0b0b0b0b0b0f17130b0b0b0b0b090b0b0b0b0f0b0b0b0d090b0b010c0c1b0f0b1a0707100b0b0d0a0b0b090b0b0b0b0b0d0f0b090b0b04090f0b0a0b0b0f0b0b0d0b0b0a0b0b04120b0b0a0b0b090f0b0d0b0f090f0b170a0b0b08100f090b0b0d0f0b120b0b0d090b0f0b0806090b0b0d0b0b0a0b0b040a0b0b0b0f0b090f0b0d0b0b090f0b0d0a0b0b0b0b0b090b0b0d0b0b090b0b04090b0b0c0c0c1b0b0f0b0b0f090b0b04120b0b0b0b0b0f0b0b0b0b0b090b0b170a0b0b0b0b0b090b0b0b0b0b0a0b1c04090f0b0b0b0f090b0b0f0b0b090f0b0408070719070608060719060608060705`,
+    img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `,
+    [myTiles.tile0,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorthEast,sprites.dungeon.greenOuterEast0,sprites.dungeon.greenOuterSouthWest,sprites.dungeon.greenOuterSouth0,sprites.dungeon.greenOuterSouth1,sprites.dungeon.greenOuterSouthEast,sprites.dungeon.greenOuterWest1,sprites.dungeon.greenOuterWest0,sprites.dungeon.floorDark2,sprites.dungeon.greenOuterNorth1,sprites.dungeon.greenOuterEast1,sprites.dungeon.floorDark1,sprites.dungeon.floorDark5,sprites.dungeon.greenInnerNorthEast,sprites.dungeon.purpleInnerNorthWest,sprites.dungeon.greenOuterWest2,sprites.dungeon.stairWest,sprites.dungeon.stairEast,sprites.dungeon.stairLarge,sprites.dungeon.greenInnerSouthWest,sprites.dungeon.greenOuterEast2,sprites.dungeon.greenOuterNorth2,sprites.dungeon.greenOuterSouth2,sprites.dungeon.greenInnerNorthWest,sprites.dungeon.greenInnerSouthEast,sprites.dungeon.stairLadder],
+    TileScale.Sixteen
+))
 ```
 
 ## Step 6
 
-Add a ``||scene:set tile map||`` to ``||loops:on start||``. For its image, draw a maze using the same color as the tile you just made. Leave an opening on the left side of the maze.
+Find ``||scene:place mySprite on top of random||`` in ``||scene:Scene||``,
+and drag it into the ``||loops:on start||`` after ``||scene:set tilemap to||``.
+This will move the character you created to be on top of one of the selected tiles;
+click on the checkered tile and select the tile you chose as the starting point for the player.
 
 ```blocks
-let mySprite: Sprite = sprites.create(img`
+namespace myTiles {
+    //% blockIdentity=images._tile
+    export const tile0 = img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `
+}
+let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . 2 2 2 2 2 2 2 2 . . . . .
     . . 2 2 . . . . . . 2 . . . . .
@@ -202,42 +284,62 @@ let mySprite: Sprite = sprites.create(img`
     . . . 2 . . . . 2 2 . . . . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 100)
-scene.setTile(10, img`
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-`, true)
-scene.setTileMap(img`
-    a a a a a a a a a a
-    a . . . . . . . . a
-    a . . . . . . . . a
-    a . . a . . a a a a
-    a . . a . . . a . a
-    a . . a . . . . . a
-    . . . a . a . . . a
-    a a a a a a a a a a
-`)
+tiles.setTilemap(tiles.createTilemap(
+    hex`100010000102020c0c1801020c0202180c0202030a0f0b0b0b0b090b0b0b0b0b0b0b0f17130b0b0b0b0b090b0b0b0b0f0b0b0b0d090b0b010c0c1b0f0b1a0707100b0b0d0a0b0b090b0b0b0b0b0d0f0b090b0b04090f0b0a0b0b0f0b0b0d0b0b0a0b0b04120b0b0a0b0b090f0b0d0b0f090f0b170a0b0b08100f090b0b0d0f0b120b0b0d090b0f0b0806090b0b0d0b0b0a0b0b040a0b0b0b0f0b090f0b0d0b0b090f0b0d0a0b0b0b0b0b090b0b0d0b0b090b0b04090b0b0c0c0c1b0b0f0b0b0f090b0b04120b0b0b0b0b0f0b0b0b0b0b090b0b170a0b0b0b0b0b090b0b0b0b0b0a0b1c04090f0b0b0b0f090b0b0f0b0b090f0b0408070719070608060719060608060705`,
+    img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `,
+    [myTiles.tile0,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorthEast,sprites.dungeon.greenOuterEast0,sprites.dungeon.greenOuterSouthWest,sprites.dungeon.greenOuterSouth0,sprites.dungeon.greenOuterSouth1,sprites.dungeon.greenOuterSouthEast,sprites.dungeon.greenOuterWest1,sprites.dungeon.greenOuterWest0,sprites.dungeon.floorDark2,sprites.dungeon.greenOuterNorth1,sprites.dungeon.greenOuterEast1,sprites.dungeon.floorDark1,sprites.dungeon.floorDark5,sprites.dungeon.greenInnerNorthEast,sprites.dungeon.purpleInnerNorthWest,sprites.dungeon.greenOuterWest2,sprites.dungeon.stairWest,sprites.dungeon.stairEast,sprites.dungeon.stairLarge,sprites.dungeon.greenInnerSouthWest,sprites.dungeon.greenOuterEast2,sprites.dungeon.greenOuterNorth2,sprites.dungeon.greenOuterSouth2,sprites.dungeon.greenInnerNorthWest,sprites.dungeon.greenInnerSouthEast,sprites.dungeon.stairLadder],
+    TileScale.Sixteen
+))
+tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairLadder)
 ```
 
 ## Step 7
 
-Put a ``||info:start countdown||`` after ``||scene:set tile map||`` to set the amount of time for the game.
+The player is now off the screen, which makes the game a bit too hard;
+find ``||scene:camera follow sprite mySprite||`` in ``||scene:Scene||``,
+and drag it to the end of the ``||loops:on start||``.
+This will make the camera follow the players character as it moves around the screen.
 
 ```blocks
-let mySprite: Sprite = sprites.create(img`
+namespace myTiles {
+    //% blockIdentity=images._tile
+    export const tile0 = img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `
+}
+let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . 2 2 2 2 2 2 2 2 . . . . .
     . . 2 2 . . . . . . 2 . . . . .
@@ -256,82 +358,340 @@ let mySprite: Sprite = sprites.create(img`
     . . . 2 . . . . 2 2 . . . . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 100)
-scene.setTile(10, img`
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a
-`, true)
-scene.setTileMap(img`
-    a a a a a a a a a a
-    a . . . . . . . . a
-    a . . . . . . . . a
-    a . . a . . a a a a
-    a . . a . . . a . a
-    a . . a . . . . . a
-    . . . a . a . . . a
-    a a a a a a a a a a
-`)
-info.startCountdown(10)
+tiles.setTilemap(tiles.createTilemap(
+            hex`100010000102020c0c1801020c0202180c0202030a0f0b0b0b0b090b0b0b0b0b0b0b0f17130b0b0b0b0b090b0b0b0b0f0b0b0b0d090b0b010c0c1b0f0b1a0707100b0b0d0a0b0b090b0b0b0b0b0d0f0b090b0b04090f0b0a0b0b0f0b0b0d0b0b0a0b0b04120b0b0a0b0b090f0b0d0b0f090f0b170a0b0b08100f090b0b0d0f0b120b0b0d090b0f0b0806090b0b0d0b0b0a0b0b040a0b0b0b0f0b090f0b0d0b0b090f0b0d0a0b0b0b0b0b090b0b0d0b0b090b0b04090b0b0c0c0c1b0b0f0b0b0f090b0b04120b0b0b0b0b0f0b0b0b0b0b090b0b170a0b0b0b0b0b090b0b0b0b0b0a0b1c04090f0b0b0b0f090b0b0f0b0b090f0b0408070719070608060719060608060705`,
+            img`
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+            `,
+            [myTiles.tile0,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorthEast,sprites.dungeon.greenOuterEast0,sprites.dungeon.greenOuterSouthWest,sprites.dungeon.greenOuterSouth0,sprites.dungeon.greenOuterSouth1,sprites.dungeon.greenOuterSouthEast,sprites.dungeon.greenOuterWest1,sprites.dungeon.greenOuterWest0,sprites.dungeon.floorDark2,sprites.dungeon.greenOuterNorth1,sprites.dungeon.greenOuterEast1,sprites.dungeon.floorDark1,sprites.dungeon.floorDark5,sprites.dungeon.greenInnerNorthEast,sprites.dungeon.purpleInnerNorthWest,sprites.dungeon.greenOuterWest2,sprites.dungeon.stairWest,sprites.dungeon.stairEast,sprites.dungeon.stairLarge,sprites.dungeon.greenInnerSouthWest,sprites.dungeon.greenOuterEast2,sprites.dungeon.greenOuterNorth2,sprites.dungeon.greenOuterSouth2,sprites.dungeon.greenInnerNorthWest,sprites.dungeon.greenInnerSouthEast,sprites.dungeon.stairLadder],
+            TileScale.Sixteen
+        ))
+tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairLadder)
+scene.cameraFollowSprite(mySprite)
 ```
 
 ## Step 8
 
-Find ``||game:on game update||`` in ``||game:Game||``, and drag it into the workspace.
+Find ``||scene:on sprite of kind player overlaps at location||`` in ``||scene:Scene||``.
+This event will occur whenever the player is on top of a tile of the given type;
+click the checkered box and change it to be the tile selected for the end of the maze.
 
 ```blocks
-game.onUpdate(function () {
+namespace myTiles {
+    //% blockIdentity=images._tile
+    export const tile0 = img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `
+}
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairWest, function (sprite, location) {
 
 })
+let mySprite = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . 2 2 2 2 2 2 2 2 . . . . .
+    . . 2 2 . . . . . . 2 . . . . .
+    . . 2 . 1 . . . 1 . . 2 . . . .
+    . . 2 . . . . . . . . 2 . . . .
+    . . 2 . . . 1 . . . . 2 . . . .
+    . . 2 . . . . . . . . 2 . . . .
+    . . 2 2 2 . . . . . 2 2 . . . .
+    . . . . 2 2 2 2 2 2 2 . . . . .
+    . . . . . . 2 . . . . . . . . .
+    . 2 2 2 . . 2 . . . . 2 . . . .
+    . . . 2 2 2 2 2 2 2 2 2 . . . .
+    . . . . . . 2 . . . . . . . . .
+    . . . . . . 2 . . . . . . . . .
+    . . . 2 2 2 . 2 . . . . . . . .
+    . . . 2 . . . . 2 2 . . . . . .
+`, SpriteKind.Player)
+controller.moveSprite(mySprite, 100, 100)
+tiles.setTilemap(tiles.createTilemap(
+            hex`100010000102020c0c1801020c0202180c0202030a0f0b0b0b0b090b0b0b0b0b0b0b0f17130b0b0b0b0b090b0b0b0b0f0b0b0b0d090b0b010c0c1b0f0b1a0707100b0b0d0a0b0b090b0b0b0b0b0d0f0b090b0b04090f0b0a0b0b0f0b0b0d0b0b0a0b0b04120b0b0a0b0b090f0b0d0b0f090f0b170a0b0b08100f090b0b0d0f0b120b0b0d090b0f0b0806090b0b0d0b0b0a0b0b040a0b0b0b0f0b090f0b0d0b0b090f0b0d0a0b0b0b0b0b090b0b0d0b0b090b0b04090b0b0c0c0c1b0b0f0b0b0f090b0b04120b0b0b0b0b0f0b0b0b0b0b090b0b170a0b0b0b0b0b090b0b0b0b0b0a0b1c04090f0b0b0b0f090b0b0f0b0b090f0b0408070719070608060719060608060705`,
+            img`
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+            `,
+            [myTiles.tile0,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorthEast,sprites.dungeon.greenOuterEast0,sprites.dungeon.greenOuterSouthWest,sprites.dungeon.greenOuterSouth0,sprites.dungeon.greenOuterSouth1,sprites.dungeon.greenOuterSouthEast,sprites.dungeon.greenOuterWest1,sprites.dungeon.greenOuterWest0,sprites.dungeon.floorDark2,sprites.dungeon.greenOuterNorth1,sprites.dungeon.greenOuterEast1,sprites.dungeon.floorDark1,sprites.dungeon.floorDark5,sprites.dungeon.greenInnerNorthEast,sprites.dungeon.purpleInnerNorthWest,sprites.dungeon.greenOuterWest2,sprites.dungeon.stairWest,sprites.dungeon.stairEast,sprites.dungeon.stairLarge,sprites.dungeon.greenInnerSouthWest,sprites.dungeon.greenOuterEast2,sprites.dungeon.greenOuterNorth2,sprites.dungeon.greenOuterSouth2,sprites.dungeon.greenInnerNorthWest,sprites.dungeon.greenInnerSouthEast,sprites.dungeon.stairLadder],
+            TileScale.Sixteen
+        ))
+tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairLadder)
+scene.cameraFollowSprite(mySprite)
 ```
 
 ## Step 9
 
-We need to see if the player makes it out of the maze by adding a ``||logic:if then||`` block inside ``||game:on game update||``. Get a ``||logic:0 < 0||`` block and replace the `true` condition with it.
+Find ``||game:game over lose||`` in ``||game:Game||``, and drag it into the ``||scene:on sprite of kind player overlaps at location||``.
+Click ``LOSE`` to change it to ``WIN``.
+This will make it so the player wins when they touch the exit.
 
 ```blocks
-game.onUpdate(function () {
-    if (0 < 0) {
-
-    }
+namespace myTiles {
+    //% blockIdentity=images._tile
+    export const tile0 = img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `
+}
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairWest, function (sprite, location) {
+    game.over(true)
 })
+let mySprite = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . 2 2 2 2 2 2 2 2 . . . . .
+    . . 2 2 . . . . . . 2 . . . . .
+    . . 2 . 1 . . . 1 . . 2 . . . .
+    . . 2 . . . . . . . . 2 . . . .
+    . . 2 . . . 1 . . . . 2 . . . .
+    . . 2 . . . . . . . . 2 . . . .
+    . . 2 2 2 . . . . . 2 2 . . . .
+    . . . . 2 2 2 2 2 2 2 . . . . .
+    . . . . . . 2 . . . . . . . . .
+    . 2 2 2 . . 2 . . . . 2 . . . .
+    . . . 2 2 2 2 2 2 2 2 2 . . . .
+    . . . . . . 2 . . . . . . . . .
+    . . . . . . 2 . . . . . . . . .
+    . . . 2 2 2 . 2 . . . . . . . .
+    . . . 2 . . . . 2 2 . . . . . .
+`, SpriteKind.Player)
+controller.moveSprite(mySprite, 100, 100)
+tiles.setTilemap(tiles.createTilemap(
+            hex`100010000102020c0c1801020c0202180c0202030a0f0b0b0b0b090b0b0b0b0b0b0b0f17130b0b0b0b0b090b0b0b0b0f0b0b0b0d090b0b010c0c1b0f0b1a0707100b0b0d0a0b0b090b0b0b0b0b0d0f0b090b0b04090f0b0a0b0b0f0b0b0d0b0b0a0b0b04120b0b0a0b0b090f0b0d0b0f090f0b170a0b0b08100f090b0b0d0f0b120b0b0d090b0f0b0806090b0b0d0b0b0a0b0b040a0b0b0b0f0b090f0b0d0b0b090f0b0d0a0b0b0b0b0b090b0b0d0b0b090b0b04090b0b0c0c0c1b0b0f0b0b0f090b0b04120b0b0b0b0b0f0b0b0b0b0b090b0b170a0b0b0b0b0b090b0b0b0b0b0a0b1c04090f0b0b0b0f090b0b0f0b0b090f0b0408070719070608060719060608060705`,
+            img`
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+            `,
+            [myTiles.tile0,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorthEast,sprites.dungeon.greenOuterEast0,sprites.dungeon.greenOuterSouthWest,sprites.dungeon.greenOuterSouth0,sprites.dungeon.greenOuterSouth1,sprites.dungeon.greenOuterSouthEast,sprites.dungeon.greenOuterWest1,sprites.dungeon.greenOuterWest0,sprites.dungeon.floorDark2,sprites.dungeon.greenOuterNorth1,sprites.dungeon.greenOuterEast1,sprites.dungeon.floorDark1,sprites.dungeon.floorDark5,sprites.dungeon.greenInnerNorthEast,sprites.dungeon.purpleInnerNorthWest,sprites.dungeon.greenOuterWest2,sprites.dungeon.stairWest,sprites.dungeon.stairEast,sprites.dungeon.stairLarge,sprites.dungeon.greenInnerSouthWest,sprites.dungeon.greenOuterEast2,sprites.dungeon.greenOuterNorth2,sprites.dungeon.greenOuterSouth2,sprites.dungeon.greenInnerNorthWest,sprites.dungeon.greenInnerSouthEast,sprites.dungeon.stairLadder],
+            TileScale.Sixteen
+        ))
+tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairLadder)
+scene.cameraFollowSprite(mySprite)
 ```
 
 ## Step 10
 
-Find the ``||sprites:mySprite x||`` block and put it in where the first `0` is. Click the dropdown and select ``left``.
+Find ``||info:start countdown 10 (s)||`` in ``||info:Info||``, and drag it into the ``||loops:on start||``.
 
 ```blocks
-let mySprite: Sprite = null
-game.onUpdate(function () {
-    if (mySprite.left < 0) {
-    }
+namespace myTiles {
+    //% blockIdentity=images._tile
+    export const tile0 = img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `
+}
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairWest, function (sprite, location) {
+    game.over(true)
 })
+let mySprite = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . 2 2 2 2 2 2 2 2 . . . . .
+    . . 2 2 . . . . . . 2 . . . . .
+    . . 2 . 1 . . . 1 . . 2 . . . .
+    . . 2 . . . . . . . . 2 . . . .
+    . . 2 . . . 1 . . . . 2 . . . .
+    . . 2 . . . . . . . . 2 . . . .
+    . . 2 2 2 . . . . . 2 2 . . . .
+    . . . . 2 2 2 2 2 2 2 . . . . .
+    . . . . . . 2 . . . . . . . . .
+    . 2 2 2 . . 2 . . . . 2 . . . .
+    . . . 2 2 2 2 2 2 2 2 2 . . . .
+    . . . . . . 2 . . . . . . . . .
+    . . . . . . 2 . . . . . . . . .
+    . . . 2 2 2 . 2 . . . . . . . .
+    . . . 2 . . . . 2 2 . . . . . .
+`, SpriteKind.Player)
+controller.moveSprite(mySprite, 100, 100)
+tiles.setTilemap(tiles.createTilemap(
+            hex`100010000102020c0c1801020c0202180c0202030a0f0b0b0b0b090b0b0b0b0b0b0b0f17130b0b0b0b0b090b0b0b0b0f0b0b0b0d090b0b010c0c1b0f0b1a0707100b0b0d0a0b0b090b0b0b0b0b0d0f0b090b0b04090f0b0a0b0b0f0b0b0d0b0b0a0b0b04120b0b0a0b0b090f0b0d0b0f090f0b170a0b0b08100f090b0b0d0f0b120b0b0d090b0f0b0806090b0b0d0b0b0a0b0b040a0b0b0b0f0b090f0b0d0b0b090f0b0d0a0b0b0b0b0b090b0b0d0b0b090b0b04090b0b0c0c0c1b0b0f0b0b0f090b0b04120b0b0b0b0b0f0b0b0b0b0b090b0b170a0b0b0b0b0b090b0b0b0b0b0a0b1c04090f0b0b0b0f090b0b0f0b0b090f0b0408070719070608060719060608060705`,
+            img`
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+            `,
+            [myTiles.tile0,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorthEast,sprites.dungeon.greenOuterEast0,sprites.dungeon.greenOuterSouthWest,sprites.dungeon.greenOuterSouth0,sprites.dungeon.greenOuterSouth1,sprites.dungeon.greenOuterSouthEast,sprites.dungeon.greenOuterWest1,sprites.dungeon.greenOuterWest0,sprites.dungeon.floorDark2,sprites.dungeon.greenOuterNorth1,sprites.dungeon.greenOuterEast1,sprites.dungeon.floorDark1,sprites.dungeon.floorDark5,sprites.dungeon.greenInnerNorthEast,sprites.dungeon.purpleInnerNorthWest,sprites.dungeon.greenOuterWest2,sprites.dungeon.stairWest,sprites.dungeon.stairEast,sprites.dungeon.stairLarge,sprites.dungeon.greenInnerSouthWest,sprites.dungeon.greenOuterEast2,sprites.dungeon.greenOuterNorth2,sprites.dungeon.greenOuterSouth2,sprites.dungeon.greenInnerNorthWest,sprites.dungeon.greenInnerSouthEast,sprites.dungeon.stairLadder],
+            TileScale.Sixteen
+        ))
+tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairLadder)
+scene.cameraFollowSprite(mySprite)
+info.startCountdown(10)
 ```
 
-## Step 11
+## Step 11 @unplugged
 
-Put a ``||game:game over||`` inside of ``||logic:if then||``. Click on the ``LOSE`` toggle switch to make it say ``WIN``.
+Now you have a game with a target, and a time crunch... but the player can move through all the walls!
+Reopen the tilemap editor,
+and use the ``Draw walls`` tool to draw walls over all the things that should block the player in the tilemap,
+so they can't move through them.
 
 ```blocks
-let mySprite: Sprite = null
-game.onUpdate(function () {
-    if (mySprite.left < 0) {
-        game.over(true)
-    }
+namespace myTiles {
+    //% blockIdentity=images._tile
+    export const tile0 = img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `
+}
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairWest, function (sprite, location) {
+    game.over(true)
 })
+let mySprite = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . 2 2 2 2 2 2 2 2 . . . . .
+    . . 2 2 . . . . . . 2 . . . . .
+    . . 2 . 1 . . . 1 . . 2 . . . .
+    . . 2 . . . . . . . . 2 . . . .
+    . . 2 . . . 1 . . . . 2 . . . .
+    . . 2 . . . . . . . . 2 . . . .
+    . . 2 2 2 . . . . . 2 2 . . . .
+    . . . . 2 2 2 2 2 2 2 . . . . .
+    . . . . . . 2 . . . . . . . . .
+    . 2 2 2 . . 2 . . . . 2 . . . .
+    . . . 2 2 2 2 2 2 2 2 2 . . . .
+    . . . . . . 2 . . . . . . . . .
+    . . . . . . 2 . . . . . . . . .
+    . . . 2 2 2 . 2 . . . . . . . .
+    . . . 2 . . . . 2 2 . . . . . .
+`, SpriteKind.Player)
+controller.moveSprite(mySprite, 100, 100)
+tiles.setTilemap(tiles.createTilemap(
+            hex`100010000102020c0c1801020c0202180c0202030a0f0b0b0b0b090b0b0b0b0b0b0b0f17130b0b0b0b0b090b0b0b0b0f0b0b0b0d090b0b010c0c1b0f0b1a0707100b0b0d0a0b0b090b0b0b0b0b0d0f0b090b0b04090f0b0a0b0b0f0b0b0d0b0b0a0b0b04120b0b0a0b0b090f0b0d0b0f090f0b170a0b0b08100f090b0b0d0f0b120b0b0d090b0f0b0806090b0b0d0b0b0a0b0b040a0b0b0b0f0b090f0b0d0b0b090f0b0d0a0b0b0b0b0b090b0b0d0b0b090b0b04090b0b0c0c0c1b0b0f0b0b0f090b0b04120b0b0b0b0b0f0b0b0b0b0b090b0b170a0b0b0b0b0b090b0b0b0b0b0a0b1c04090f0b0b0b0f090b0b0f0b0b090f0b0408070719070608060719060608060705`,
+            img`
+                2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+                2 . . . . . 2 . . . . . . . . 2
+                . . . . . . 2 . . . . . . . . 2
+                2 . . 2 2 2 2 . . 2 2 2 2 . . 2
+                2 . . 2 . . . . . 2 . . 2 . . 2
+                2 . . 2 . . . . . 2 . . 2 . . 2
+                2 . . 2 . . 2 . . 2 . . 2 . . 2
+                2 . . 2 2 . 2 . . 2 . . 2 . . 2
+                2 . . . 2 2 2 . . 2 . . 2 . . 2
+                2 . . . . . 2 . . 2 . . 2 . . 2
+                2 . . . . . 2 . . 2 . . 2 . . 2
+                2 . . 2 2 2 2 . . . . . 2 . . 2
+                2 . . . . . . . . . . . 2 . . 2
+                2 . . . . . 2 . . . . . 2 . . 2
+                2 . . . . . 2 . . . . . 2 . . 2
+                2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+            `,
+            [myTiles.tile0,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorthEast,sprites.dungeon.greenOuterEast0,sprites.dungeon.greenOuterSouthWest,sprites.dungeon.greenOuterSouth0,sprites.dungeon.greenOuterSouth1,sprites.dungeon.greenOuterSouthEast,sprites.dungeon.greenOuterWest1,sprites.dungeon.greenOuterWest0,sprites.dungeon.floorDark2,sprites.dungeon.greenOuterNorth1,sprites.dungeon.greenOuterEast1,sprites.dungeon.floorDark1,sprites.dungeon.floorDark5,sprites.dungeon.greenInnerNorthEast,sprites.dungeon.purpleInnerNorthWest,sprites.dungeon.greenOuterWest2,sprites.dungeon.stairWest,sprites.dungeon.stairEast,sprites.dungeon.stairLarge,sprites.dungeon.greenInnerSouthWest,sprites.dungeon.greenOuterEast2,sprites.dungeon.greenOuterNorth2,sprites.dungeon.greenOuterSouth2,sprites.dungeon.greenInnerNorthWest,sprites.dungeon.greenInnerSouthEast,sprites.dungeon.stairLadder],
+            TileScale.Sixteen
+        ))
+tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairLadder)
+scene.cameraFollowSprite(mySprite)
+info.startCountdown(10)
 ```
 
 ## Complete
