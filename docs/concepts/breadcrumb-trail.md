@@ -61,7 +61,6 @@ tiles.setTilemap(tiles.createTilemap(
     [myTiles.tile0,sprites.castle.tileDarkGrass3],
     TileScale.Sixteen
 ))
-s
 ```
 
 ## Step 2
