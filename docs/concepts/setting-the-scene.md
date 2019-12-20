@@ -202,7 +202,7 @@ let mySprite = sprites.create(img`
 
 Find ``||controller:move mySprite with buttons||`` and drag it into ``||loops:on start||`` after ``||variables:set mySprite to||``.
 
-This will let the player move the character around the map that is displayed on the screen. However, there is one issue; the player can move straight through the beautiful tiles we designed! This can be fixed by changing the tiles to be ``||scene:Wall||``s.
+This lets the player move the character around the map that is displayed on the screen. However, there is one issue; the player can move straight through the beautiful tiles we designed! This is fixed by changing all of them to be ``||scene:Wall||`` tiles.
 
 ```blocks
 namespace myTiles {
@@ -292,7 +292,7 @@ controller.moveSprite(mySprite)
 ## Step 5 @fullscreen
 
 Open the tilemap editor, and click on the wall icon above `Gallery`.
-Use it to draw walls over the parts of your tilemap the player should not be able to move through.
+Use it to draw walls over the parts of your tilemap that the player shouldn't be able to move through.
 
 ![Example of drawing walls in the tilemap editor](/static/concepts/setting-the-scene/drawing-walls.gif)
 

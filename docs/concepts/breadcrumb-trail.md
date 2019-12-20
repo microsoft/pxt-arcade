@@ -14,7 +14,7 @@ In this case, you will create a scene where breadcrumbs are placed on the grass 
 
 Find ``||scene:set tile map to||`` in ``||scene:Scene||``
 and drag it into the ``||loops:on start||``.
-Open the tilemap editor and use the paint bucket to fill it with a grassy background.
+Open the tilemap editor and use the paint bucket tool to fill the canvas with a grassy background.
 
 ```blocks
 namespace myTiles {

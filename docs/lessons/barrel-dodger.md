@@ -74,10 +74,9 @@ mySprite.ay = 500
 ## Step 5
 
 Now let's create a platform base at the bottom of the screen.
-
 Get a ``||scene:set tilemap to||`` and put it in ``||loops:on start||``.
 Click on the gray box to open the ``tile map editor``.
-In the bottom left corner, set the size of the tilemap to ``10x8``,
+In the bottom left corner, set the size of the tilemap to ``10x8``
 and draw a platform for in the bottom two rows of the tilemap.
 Finally, click the `Wall` button, and fill in those two rows with walls.
 
