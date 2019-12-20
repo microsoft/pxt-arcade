@@ -60,6 +60,7 @@
 
 @mainMenuInvertedBackground: @orange;
 @mainMenuTutorialBackground: @teal;
+@mainMenuTutorialButtons: @orange;
 
 @mainMenuBlocksJsToggleColor: @primaryColor;
 
