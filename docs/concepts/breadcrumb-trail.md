@@ -311,7 +311,7 @@ and place it after ``||sprites:set mySprite to||``.
 Drag ``||variables:value||`` from the ``||loops:for loop||`` to ``||variables:tilemap col row||``.
 Make sure ``||variables:mySprite||`` is the ``||variables:variable||`` for the
 ``||sprites:sprite||`` you just created.
-This will place the breadcrumbs on each of the ``||scene:tile||``s in the diagonal line.
+This will place the breadcrumbs on each ``||scene:tile||`` of the diagonal line.
 
 ```blocks
 let mySprite: Sprite = null
