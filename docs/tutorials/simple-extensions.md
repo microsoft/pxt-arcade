@@ -193,7 +193,7 @@ Inside of that event, add a ``||game:game over lose||``.
 Click ``LOSE`` to change it to ``WIN``.
 
 ```blocks
-lnamespace myTiles {
+namespace myTiles {
     //% blockIdentity=images._tile
     export const tile0 = img`
         . . . . . . . . . . . . . . . .
