@@ -78,20 +78,20 @@ let projectile = sprites.createProjectileFromSprite(img`
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . . 
-`, mySprite, 0, 100)
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+`, mySprite, 50, 100)
 ```
 
 ## Step 3 @fullscreen
@@ -142,7 +142,7 @@ let projectile = sprites.createProjectileFromSprite(img`
 . . . . 1 1 . . . . . . . . . .
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
-`, mySprite, 0, 100)
+`, mySprite, 50, 100)
 ```
 
 ## Step 4 @fullscreen
@@ -193,61 +193,10 @@ let projectile = sprites.createProjectileFromSprite(img`
 . . . . 1 1 . . . . . . . . . .
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
-`, mySprite, 0, -15)
-```
-
-## Step 5 @fullscreen
-
-In ``||sprites:projectile||``, set ``||sprites:vx||`` to 50. Run the game, and notice that the ``||variables:projectile||`` now moves to the **right** as well.
-
-```blocks
-let mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . . . . . . . . . .
-. . . . . . . . . . f f f f . . . . . . . . . .
-. . . . . . . . f f 1 1 1 1 f f . . . . . . . .
-. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . .
-. . . . . f f f c 1 1 1 1 1 1 1 f . . . . . . .
-. . . f c 1 1 1 c d 1 1 1 1 1 1 1 f . . . . . .
-. . . f 1 b 1 b 1 b 1 1 1 1 d d d f . . . . . .
-. . . f b f b f f c f 1 1 f c d d f . . . . . .
-. . . . . . f c f 1 1 1 1 1 1 b b f . . . . . .
-. . . . . . . c c b d b 1 b 1 f c f . . . . . .
-. . . . . . . f f f b f b f d f f . . . . . . .
-. . . . . . . . f f f f f f f f . . . . . . . .
-. . . . . . . . f f f f f f f f f f f . . . . .
-. . . . . . . . . f f f f f c 1 1 1 c f . . . .
-. . . . . . . . . f f f f f 1 b 1 b 1 f . . . .
-. . . . . . . . . . f f f f b f b f b f . . . .
-. . . . . . . . . . . f f f f . . . . . . . . .
-. . . . . . . . . . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . . . . . . . . . .
-`, SpriteKind.Player)
-let projectile = sprites.createProjectileFromSprite(img`
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . 1 1 . . . .
-. . . . . . . . . 1 1 1 . . . .
-. . . . . . . . . 1 1 1 . . . .
-. . . . . . . . . 1 1 1 1 1 . .
-. . . . . . . 1 1 1 1 1 1 1 . .
-. . . . . . 1 1 1 1 . 1 1 1 . .
-. . 1 1 . 1 1 1 1 . . . . . . .
-. 1 1 1 1 1 1 . . . . . . . . .
-. 1 1 1 1 1 . . . . . . . . . .
-. . 1 1 1 1 . . . . . . . . . .
-. . . 1 1 1 . . . . . . . . . .
-. . . . 1 1 . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
 `, mySprite, 50, -15)
 ```
 
-## Step 6 @fullscreen
+## Step 5 @fullscreen
 
 Find ``||controller:on A button pressed||`` in ``||controller:Controller||``, and drag it into the workspace. Drag ``||variables:set projectile to||`` from ``||loops:on start||`` into ``||controller:on A button pressed||``.
 
