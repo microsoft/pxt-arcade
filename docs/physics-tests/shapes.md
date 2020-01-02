@@ -1,6 +1,6 @@
 # Shapes
 
-Make several shapes bounce around in the tile map.
+Make several shapes bounce around in the tilemap.
 Press the **A** button to spawn a new sprite with a random shape.
 
 The purple circle is too large to fit within a single tile,

@@ -24,22 +24,22 @@ One way in which we can use arrays of strings is to form a "script" for our spri
 let text_list: string[] = []
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
-. . . . . . 5 . 5 . . . . . . . 
-. . . . . f 5 5 5 f f . . . . . 
-. . . . f 1 5 2 5 1 6 f . . . . 
-. . . f 1 6 6 6 6 6 1 6 f . . . 
-. . . f 6 6 f f f f 6 1 f . . . 
-. . . f 6 f f d d f f 6 f . . . 
-. . f 6 f d f d d f d f 6 f . . 
-. . f 6 f d 3 d d 3 d f 6 f . . 
-. . f 6 6 f d d d d f 6 6 f . . 
-. f 6 6 f 3 f f f f 3 f 6 6 f . 
-. . f f d 3 5 3 3 5 3 d f f . . 
-. . f d d f 3 5 5 3 f d d f . . 
-. . . f f 3 3 3 3 3 3 f f . . . 
-. . . f 3 3 5 3 3 5 3 3 f . . . 
-. . . f f f f f f f f f f . . . 
-. . . . . f f . . f f . . . . . 
+. . . . . . 5 . 5 . . . . . . .
+. . . . . f 5 5 5 f f . . . . .
+. . . . f 1 5 2 5 1 6 f . . . .
+. . . f 1 6 6 6 6 6 1 6 f . . .
+. . . f 6 6 f f f f 6 1 f . . .
+. . . f 6 f f d d f f 6 f . . .
+. . f 6 f d f d d f d f 6 f . .
+. . f 6 f d 3 d d 3 d f 6 f . .
+. . f 6 6 f d d d d f 6 6 f . .
+. f 6 6 f 3 f f f f 3 f 6 6 f .
+. . f f d 3 5 3 3 5 3 d f f . .
+. . f d d f 3 5 5 3 f d d f . .
+. . . f f 3 3 3 3 3 3 f f . . .
+. . . f 3 3 5 3 3 5 3 3 f . . .
+. . . f f f f f f f f f f . . .
+. . . . . f f . . f f . . . . .
 `, SpriteKind.Player)
 text_list = ["Hello", "I am", "the", "Princess"]
 mySprite.say(text_list[0], 300)
@@ -56,7 +56,7 @@ pause(400)
 
 1. Start with the code from example #1
 2. Use a ``||loops:for index from 0 to 3||`` loop to reduce the redundancy found in the example, without changing the behavior of the code
-3. Add (at least) three more strings to the ``||variables:text list||`` array, describing what she had for lunch 
+3. Add (at least) three more strings to the ``||variables:text list||`` array, describing what she had for lunch
 4. Use the ``||arrays:length of array||`` block to change the bound of the loop, so that it will loop through the entire array no matter the size. Remember to pay attention to difference between the length of the array, and the last valid index
 5. **Challenge:** after the princess has given her speech, make her say it again backwards. You may find ``||arrays:reverse list||`` useful for completing this task
 
@@ -104,50 +104,50 @@ scene.onHitTile(SpriteKind.Player, 15, function (sprite) {
     mySprite.setPosition(50, 50)
 })
 scene.setTileMap(img`
-f f f f f f f f f f 
-f e e e e e e e e f 
-f e e e e e e e e f 
-f e e e e e e e e f 
-f e e e e e e e e f 
-f e e e e e e e e f 
-f e e e e e e e e f 
-f f f f f f f f f f 
+f f f f f f f f f f
+f e e e e e e e e f
+f e e e e e e e e f
+f e e e e e e e e f
+f e e e e e e e e f
+f e e e e e e e e f
+f e e e e e e e e f
+f f f f f f f f f f
 `)
 scene.setTile(15, img`
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f
+f f f f f f f f f f f f f f f f
+f f f f f f f f f f f f f f f f
+f f f f f f f f f f f f f f f f
+f f f f f f f f f f f f f f f f
+f f f f f f f f f f f f f f f f
+f f f f f f f f f f f f f f f f
+f f f f f f f f f f f f f f f f
+f f f f f f f f f f f f f f f f
+f f f f f f f f f f f f f f f f
+f f f f f f f f f f f f f f f f
+f f f f f f f f f f f f f f f f
+f f f f f f f f f f f f f f f f
+f f f f f f f f f f f f f f f f
+f f f f f f f f f f f f f f f f
+f f f f f f f f f f f f f f f f
 `, true)
 mySprite = sprites.create(img`
-. . . . . . 5 . 5 . . . . . . . 
-. . . . . f 5 5 5 f f . . . . . 
-. . . . f 1 5 2 5 1 6 f . . . . 
-. . . f 1 6 6 6 6 6 1 6 f . . . 
-. . . f 6 6 f f f f 6 1 f . . . 
-. . . f 6 f f d d f f 6 f . . . 
-. . f 6 f d f d d f d f 6 f . . 
-. . f 6 f d 3 d d 3 d f 6 f . . 
-. . f 6 6 f d d d d f 6 6 f . . 
-. f 6 6 f 3 f f f f 3 f 6 6 f . 
-. . f f d 3 5 3 3 5 3 d f f . . 
-. . f d d f 3 5 5 3 f d d f . . 
-. . . f f 3 3 3 3 3 3 f f . . . 
-. . . f 3 3 5 3 3 5 3 3 f . . . 
-. . . f f f f f f f f f f . . . 
-. . . . . f f . . f f . . . . . 
+. . . . . . 5 . 5 . . . . . . .
+. . . . . f 5 5 5 f f . . . . .
+. . . . f 1 5 2 5 1 6 f . . . .
+. . . f 1 6 6 6 6 6 1 6 f . . .
+. . . f 6 6 f f f f 6 1 f . . .
+. . . f 6 f f d d f f 6 f . . .
+. . f 6 f d f d d f d f 6 f . .
+. . f 6 f d 3 d d 3 d f 6 f . .
+. . f 6 6 f d d d d f 6 6 f . .
+. f 6 6 f 3 f f f f 3 f 6 6 f .
+. . f f d 3 5 3 3 5 3 d f f . .
+. . f d d f 3 5 5 3 f d d f . .
+. . . f f 3 3 3 3 3 3 f f . . .
+. . . f 3 3 5 3 3 5 3 3 f . . .
+. . . f f f f f f f f f f . . .
+. . . . . f f . . f f . . . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 100)
 text_list = ["oww", "no walls", "oh no", "I stubbed my toe"]
@@ -168,7 +168,7 @@ text_list = ["oww", "no walls", "oh no", "I stubbed my toe"]
 
 ### ~hint
 
-Review the corgio extension from the [Tile Map: Extensions](/courses/csintro2/tilemap/extensions) lesson; can you guess how the ``||corgio:make myCorg bark!||`` and ``||corgio:teach myCorg the word||`` blocks work?
+Review the corgio extension from the [Tilemap: Extensions](/courses/csintro2/tilemap/extensions) lesson; can you guess how the ``||corgio:make myCorg bark!||`` and ``||corgio:teach myCorg the word||`` blocks work?
 
 ```package
 corgio

@@ -1,14 +1,14 @@
-# Activity: Tile Maps
+# Activity: Tilemaps
 
-``||scene:Tile maps||`` allow developers to easily create maps for sprites to traverse.
+``||scene:Tilemaps||`` allow developers to easily create maps for sprites to traverse.
 
 Well designed maps can serve as a world for the player to explore,
 and can be easily populated with distinct images for each tile that
 make the world more visually appealing.
 
-## Concept: Creating a Tile Map
+## Concept: Creating a Tilemap
 
-The ``||scene:scene.setTileMap||`` function is used to create a tile map.
+The ``||scene:scene.setTileMap||`` function is used to create a tilemap.
 
 ```sig
 scene.setTileMap(null);
@@ -16,19 +16,19 @@ scene.setTileMap(null);
 
 ```typescript
 scene.setTileMap(img`
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . . . . . . . . 
+    . . . . . . . . . .
+    . . . . . . . . . .
+    . . . . . . . . . .
+    . . . . . . . . . .
+    . . . . . . . . . .
+    . . . . . . . . . .
+    . . . . . . . . . .
+    . . . . . . . . . .
 `);
 ```
 
 This function accepts an ``||images:Image||``,
-and initializes the ``||scene:tile map||`` based off this image.
+and initializes the ``||scene:tilemap||`` based off this image.
 
 By default, the image will be shown on the screen,
 with each pixel corresponding to a **16 x 16** square of the same color.
@@ -42,98 +42,98 @@ scene.setTile(0, null, false);
 
 ```typescript
 scene.setTileMap(img`
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . 1 . 1 . . . . 
-    . . . 1 . 1 . . . . 
-    . . . . . . . . . . 
-    . . 1 . . . 1 . . . 
-    . . . 1 1 1 . . . . 
-    . . . . . . . . . . 
+    . . . . . . . . . .
+    . . . . . . . . . .
+    . . . 1 . 1 . . . .
+    . . . 1 . 1 . . . .
+    . . . . . . . . . .
+    . . 1 . . . 1 . . .
+    . . . 1 1 1 . . . .
+    . . . . . . . . . .
 `);
 scene.setTile(1, sprites.castle.tileGrass1, false);
 ```
 
 This function accepts an ``index`` of a color,
-and a **16 x 16** ``||images:Image||`` to replace the color in the ``||scene:tile map||``.
+and a **16 x 16** ``||images:Image||`` to replace the color in the ``||scene:tilemap||``.
 
 ![Image of the tilemap created in the previous snippet](/static/courses/csintro3/structure/first-tilemap.png)
 
 ## Example 1: Beach Day
 
 1. Review the code below
-2. Identify where the ``||scene:tile map||`` is defined
-3. Identify where the different colors of the ``||scene:tile map||``
+2. Identify where the ``||scene:tilemap||`` is defined
+3. Identify where the different colors of the ``||scene:tilemap||``
 are assigned a different ``||images:Image||``
 4. Move the character around the screen;
-notice that the player cannot leave the ``||scene:tile map||``
+notice that the player cannot leave the ``||scene:tilemap||``
 
 ```typescript
 let mySprite: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player);
 controller.moveSprite(mySprite, 100, 100);
 scene.setTileMap(img`
-    5 5 5 5 5 5 5 5 5 d 
-    5 5 5 5 5 5 5 5 d 8 
-    5 5 5 5 5 5 5 d 8 8 
-    5 5 5 5 5 5 d 8 8 8 
-    5 5 5 5 5 d 8 8 8 8 
-    5 5 5 5 d 8 8 8 8 8 
-    5 5 5 d 8 8 8 8 8 8 
-    5 5 d 8 8 8 8 8 8 8 
+    5 5 5 5 5 5 5 5 5 d
+    5 5 5 5 5 5 5 5 d 8
+    5 5 5 5 5 5 5 d 8 8
+    5 5 5 5 5 5 d 8 8 8
+    5 5 5 5 5 d 8 8 8 8
+    5 5 5 5 d 8 8 8 8 8
+    5 5 5 d 8 8 8 8 8 8
+    5 5 d 8 8 8 8 8 8 8
 `);
 scene.setTile(5, img`
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-    5 f 5 5 5 5 5 5 5 5 5 f 5 5 5 5 
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-    5 f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-    5 5 5 5 5 5 5 5 5 5 5 5 5 f 5 5 
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-    5 5 5 5 5 5 5 5 5 5 5 f 5 5 5 5 
-    5 5 5 f 5 5 5 5 5 5 5 5 5 5 5 5 
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+    5 f 5 5 5 5 5 5 5 5 5 f 5 5 5 5
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+    5 f 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+    5 5 5 5 5 5 5 5 5 5 5 5 5 f 5 5
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+    5 5 5 5 5 5 5 5 5 5 5 f 5 5 5 5
+    5 5 5 f 5 5 5 5 5 5 5 5 5 5 5 5
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
 `, false);
 scene.setTile(13, img`
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-    5 f 5 5 5 5 5 5 5 5 5 f 5 5 5 5 
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 8 
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 8 
-    5 f 5 5 5 5 5 5 5 5 5 5 5 5 8 8 
-    5 5 5 5 5 5 5 5 5 5 5 5 8 8 8 8 
-    5 5 5 5 5 5 5 5 5 5 8 8 8 8 8 9 
-    5 5 5 8 8 8 5 5 5 8 8 8 8 9 9 9 
-    5 5 8 8 8 8 8 8 8 8 8 9 9 9 6 6 
-    5 8 8 8 8 8 8 8 8 9 9 9 6 6 8 8 
-    5 8 8 8 8 8 8 9 9 9 6 6 8 8 8 8 
-    8 8 8 8 9 9 9 9 6 6 6 8 8 8 8 8 
-    8 8 8 9 9 6 8 6 6 8 8 8 8 8 8 8 
-    8 8 8 9 6 6 8 8 8 8 8 8 8 8 8 8 
-    8 8 9 9 8 8 8 8 8 8 8 8 8 8 8 8 
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+    5 f 5 5 5 5 5 5 5 5 5 f 5 5 5 5
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 8
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 8
+    5 f 5 5 5 5 5 5 5 5 5 5 5 5 8 8
+    5 5 5 5 5 5 5 5 5 5 5 5 8 8 8 8
+    5 5 5 5 5 5 5 5 5 5 8 8 8 8 8 9
+    5 5 5 8 8 8 5 5 5 8 8 8 8 9 9 9
+    5 5 8 8 8 8 8 8 8 8 8 9 9 9 6 6
+    5 8 8 8 8 8 8 8 8 9 9 9 6 6 8 8
+    5 8 8 8 8 8 8 9 9 9 6 6 8 8 8 8
+    8 8 8 8 9 9 9 9 6 6 6 8 8 8 8 8
+    8 8 8 9 9 6 8 6 6 8 8 8 8 8 8 8
+    8 8 8 9 6 6 8 8 8 8 8 8 8 8 8 8
+    8 8 9 9 8 8 8 8 8 8 8 8 8 8 8 8
 `, false);
 scene.setTile(8, img`
-    8 8 8 8 8 9 9 9 8 8 8 8 8 8 8 8 
-    8 8 8 8 9 9 6 6 8 8 8 8 8 8 8 8 
-    8 8 8 9 9 6 8 8 8 8 8 8 8 8 8 8 
-    8 8 8 9 6 8 8 8 8 8 8 8 8 8 8 8 
-    8 8 9 6 6 8 8 8 9 8 8 8 8 8 8 8 
-    9 9 9 6 8 8 8 9 9 9 8 8 8 8 8 8 
-    9 6 6 8 8 8 9 9 6 8 8 8 8 8 8 8 
-    6 8 8 8 8 8 9 9 6 8 8 8 8 8 8 8 
-    8 8 8 8 8 9 9 6 8 8 8 8 8 8 8 8 
-    8 8 8 8 9 9 6 8 8 8 8 8 9 9 6 8 
-    8 8 8 9 9 6 8 8 8 8 8 8 9 6 8 8 
-    8 8 8 9 6 8 8 8 8 8 8 9 6 8 8 8 
-    8 8 9 6 8 8 8 8 8 8 9 9 6 8 8 8 
-    8 8 6 8 8 8 8 8 8 8 9 6 8 8 8 8 
-    8 8 8 8 8 8 8 8 8 8 6 8 8 8 8 8 
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+    8 8 8 8 8 9 9 9 8 8 8 8 8 8 8 8
+    8 8 8 8 9 9 6 6 8 8 8 8 8 8 8 8
+    8 8 8 9 9 6 8 8 8 8 8 8 8 8 8 8
+    8 8 8 9 6 8 8 8 8 8 8 8 8 8 8 8
+    8 8 9 6 6 8 8 8 9 8 8 8 8 8 8 8
+    9 9 9 6 8 8 8 9 9 9 8 8 8 8 8 8
+    9 6 6 8 8 8 9 9 6 8 8 8 8 8 8 8
+    6 8 8 8 8 8 9 9 6 8 8 8 8 8 8 8
+    8 8 8 8 8 9 9 6 8 8 8 8 8 8 8 8
+    8 8 8 8 9 9 6 8 8 8 8 8 9 9 6 8
+    8 8 8 9 9 6 8 8 8 8 8 8 9 6 8 8
+    8 8 8 9 6 8 8 8 8 8 8 9 6 8 8 8
+    8 8 9 6 8 8 8 8 8 8 9 9 6 8 8 8
+    8 8 6 8 8 8 8 8 8 8 9 6 8 8 8 8
+    8 8 8 8 8 8 8 8 8 8 6 8 8 8 8 8
+    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
 `, false);
 ```
 
@@ -141,18 +141,18 @@ scene.setTile(8, img`
 
 1. Create a new project. Create a new sprite,
 and set it to be a ``||controller:controlled sprite||``
-2. Create a new ``||scene:tile map||``.
+2. Create a new ``||scene:tilemap||``.
 Use at least **three** different colors
-3. Create a design for each color used in the ``||scene:tile map||``.
+3. Create a design for each color used in the ``||scene:tilemap||``.
 For at least one of the tile images,
 make the image something the player should **not** be able to walk on,
 like water or a large rock
 
 ### ~hint
 
-Here are some examples of ``||scene:tile maps||`` for this task.
+Here are some examples of ``||scene:tilemaps||`` for this task.
 
-![Examples of Tile Maps](/static/courses/csintro3/structure/example-tile-maps.png)
+![Examples of Tilemaps](/static/courses/csintro3/structure/example-tile-maps.png)
 
 You can try to replicate one of these, or create one entirely of your own design.
 
@@ -167,15 +167,15 @@ and set boundaries for the players to explore.
 
 ### ~hint
 
-If you do not want a sprite to be confined to the ``||scene:tile map||``
+If you do not want a sprite to be confined to the ``||scene:tilemap||``
 or blocked by ``||scene:walls||``, the ``||sprites:Ghost||`` flag can be set.
-``||sprites:Ghosts||`` can go through walls, and escape the ``||scene:tile map||``.
+``||sprites:Ghosts||`` can go through walls, and escape the ``||scene:tilemap||``.
 
 ### ~
 
 ## Example #2: Town Walls
 
-![Examples of a large tile map](/static/courses/csintro3/structure/large-tilemap.gif)
+![Examples of a large tilemap](/static/courses/csintro3/structure/large-tilemap.gif)
 
 1. Review the code below
 2. Identify which ``||scene:tiles||`` are ``||scene:walls||``
@@ -187,22 +187,22 @@ scene.cameraFollowSprite(mySprite);
 controller.moveSprite(mySprite, 100, 100);
 scene.setBackgroundColor(7);
 scene.setTileMap(img`
-    f f f f f f f f f f f f f f f f 
-    f 7 7 7 7 7 7 f 7 7 7 7 7 7 7 f 
-    f 7 7 7 7 7 7 f 7 7 7 7 7 7 7 f 
-    f 7 7 7 7 7 7 f 7 7 f 7 7 7 7 f 
-    f 7 7 7 7 7 7 f 7 7 f 7 7 7 7 f 
-    f 7 7 7 7 7 7 f 7 7 f 7 7 7 7 f 
-    f 7 7 7 7 7 7 7 7 7 f 7 7 7 7 f 
-    f 7 7 7 7 7 7 7 7 7 f 7 7 7 7 f 
-    f 7 7 7 7 7 7 7 7 7 f 7 7 7 7 f 
-    f 7 7 7 7 7 7 7 7 7 f 7 7 7 7 f 
-    f 7 7 7 7 7 7 7 7 7 f 7 7 7 7 f 
-    f 7 7 7 7 7 7 7 7 7 f f f f f f 
-    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f
+    f 7 7 7 7 7 7 f 7 7 7 7 7 7 7 f
+    f 7 7 7 7 7 7 f 7 7 7 7 7 7 7 f
+    f 7 7 7 7 7 7 f 7 7 f 7 7 7 7 f
+    f 7 7 7 7 7 7 f 7 7 f 7 7 7 7 f
+    f 7 7 7 7 7 7 f 7 7 f 7 7 7 7 f
+    f 7 7 7 7 7 7 7 7 7 f 7 7 7 7 f
+    f 7 7 7 7 7 7 7 7 7 f 7 7 7 7 f
+    f 7 7 7 7 7 7 7 7 7 f 7 7 7 7 f
+    f 7 7 7 7 7 7 7 7 7 f 7 7 7 7 f
+    f 7 7 7 7 7 7 7 7 7 f 7 7 7 7 f
+    f 7 7 7 7 7 7 7 7 7 f f f f f f
+    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
+    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
+    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
+    f f f f f f f f f f f f f f f f
 `);
 scene.setTile(15, sprites.castle.rock0, true);
 scene.setTile(7, sprites.castle.tileGrass1, false);
@@ -212,7 +212,7 @@ scene.setTile(7, sprites.castle.tileGrass1, false);
 
 Note that the ``||scene:cameraFollowSprite||`` function was used to make
 the camera follow ``||variables:mySprite||``;
-if you have a large ``||scene:tile map||``,
+if you have a large ``||scene:tilemap||``,
 you will have to modify the camera to see different parts of it.
 
 ### ~
@@ -223,16 +223,16 @@ you will have to modify the camera to see different parts of it.
 2. In your scene, set the tile that the player should **not**
 be able to walk on to be a ``||scene:wall||``
 3. Use ``||scene:cameraFollowSprite||`` to make the camera follow the player sprite
-4. Expand the ``||scene:tile map||`` image to **16 x 16**,
-and fill it in to make a larger ``||scene:tile map||`` for the player to explore
+4. Expand the ``||scene:tilemap||`` image to **16 x 16**,
+and fill it in to make a larger ``||scene:tilemap||`` for the player to explore
 5. **Challenge:** create at least **two** other types of ``||scene:Tiles||``,
-and use them in your ``||scene:tile map||``.
+and use them in your ``||scene:tilemap||``.
 Make at least one of them be a different type of ``||scene:Wall||``
 
 ## What did we learn?
 
 1. What is the behavior of a tile if no ``||images:image||`` is set to that color?
-2. How do ``||scene:tile maps||`` help make a level feel more personalized?
+2. How do ``||scene:tilemaps||`` help make a level feel more personalized?
 
 ### ~hint
 
@@ -248,7 +248,7 @@ to review the material and practice the concepts introduced in this section.
 
 ### Creating an Enemy
 
-``||scene:Tile Maps||`` will not be used in the example case study game.
+``||scene:Tilemaps||`` will not be used in the example case study game.
 Instead, this section will include another ``||sprites:Sprite||`` that
 needs to be created: an ``||sprites:Enemy||``!
 

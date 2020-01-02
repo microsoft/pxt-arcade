@@ -15,7 +15,7 @@ you make your games.
 },
 {
     "name": "Make a Platformer Game - Part 1",
-    "description": "Introduction to making a platformer game using sprites, movement and tile maps",
+    "description": "Introduction to making a platformer game using sprites, movement and tilemaps",
     "youTubeId": "jdjKWPeHnk8",
     "imageUrl": "/static/videos/platformer-1.jpg"
 },

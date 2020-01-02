@@ -38,7 +38,7 @@ game.splash("Cherry Pickr")
 
 ## Part Two: Set the Background
 
-To set the background, click on ``||scene:Scene||`` in the Toolbox and drag the ``||scene:set tile map to||`` block into the ``||loops:on start||`` block. Go ahead and click the gray box and draw whatever you want the background to look like .
+To set the background, click on ``||scene:Scene||`` in the Toolbox and drag the ``||scene:set tilemap to||`` block into the ``||loops:on start||`` block. Go ahead and click the gray box and draw whatever you want the background to look like .
 
 ```blocks
 game.splash("Cherry Pickr")

@@ -11,7 +11,7 @@
   "imageUrl": "/static/design-coding-cards/1-moving-character-thumb.jpg"
 },
 {
-  "name": "Build a Tile Map Level",
+  "name": "Build a Tilemap Level",
   "description": "Create tiles and setup a map to make a level.",
   "url": "https://drive.google.com/open?id=1csw-D1LJYA0SLdqMXNfSO4Ko7J-dYm5J",
   "imageUrl": "/static/design-coding-cards/2-tile-map-thumb.jpg"
@@ -30,7 +30,7 @@
 },
 {
   "name": "Run and Jump Platformer - Part 1",
-  "description": "Create the tile map and move your player in a Run and Jump game.",
+  "description": "Create the tilemap and move your player in a Run and Jump game.",
   "url": "https://drive.google.com/open?id=1vQYqfwIMgc7xal1kV_fa59IwfvsVPy74",
   "imageUrl": "/static/design-coding-cards/5-run-and-jump-platform1-thumb.jpg"
 },
@@ -106,7 +106,7 @@
 ## See Also
 
 [Create a Moving Character](https://drive.google.com/open?id=1pl37gAzZ1bAYmjzKgKOkNSAVgPvvmtCc),
-[Build a Tile Map Level](https://drive.google.com/open?id=1csw-D1LJYA0SLdqMXNfSO4Ko7J-dYm5J),
+[Build a Tilemap Level](https://drive.google.com/open?id=1csw-D1LJYA0SLdqMXNfSO4Ko7J-dYm5J),
 [Something to Collect](https://drive.google.com/open?id=1yGsM2nNtTG6HX1HnR4wHmXbFH6CM1GCv),
 [Array of Tiles](https://drive.google.com/open?id=1T9kaq0KuSCdTprVYyw94RWoAka7yX7T7),
 [Run and Jump Platformer - Part 1](https://drive.google.com/open?id=1vQYqfwIMgc7xal1kV_fa59IwfvsVPy74),

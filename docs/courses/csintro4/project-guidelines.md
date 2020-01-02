@@ -55,7 +55,7 @@ work properly within the scenes.
 Develop the scenes in which the game will take place.
 
 * Design the scenes for the game to take place in - for example,
-``||scene:tile maps||`` and/or ``||scene:backgrounds||``.
+``||scene:tilemaps||`` and/or ``||scene:backgrounds||``.
 * Work with the Player and AI developers to place characters in these scenes.
 * Work with the Artist to finalize art for the scenes.
 * Work with the Marketer to include the game's splash screen.

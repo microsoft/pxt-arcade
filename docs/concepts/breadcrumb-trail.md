@@ -2,7 +2,7 @@
 
 ## Introduction @unplugged
 
-Placing ``||sprites:sprites||`` on a ``||scene:tile map||`` can be a great way to set up levels
+Placing ``||sprites:sprites||`` on a ``||scene:tilemap||`` can be a great way to set up levels
 for your player to explore. These ``||sprites:sprites||`` can be used as decoration
 or as objects that the player can interact with.
 
@@ -12,7 +12,7 @@ In this case, you will create a scene where breadcrumbs are placed on the grass 
 
 ## Step 1
 
-Find ``||scene:set tile map to||`` in ``||scene:Scene||``
+Find ``||scene:set tilemap to||`` in ``||scene:Scene||``
 and drag it into the ``||loops:on start||``.
 Open the tilemap editor and use the paint bucket tool to fill the canvas with a grassy background.
 
@@ -65,7 +65,7 @@ tiles.setTilemap(tiles.createTilemap(
 
 ## Step 2
 
-Open the image editor for the ``||scene:tile map||`` again.
+Open the image editor for the ``||scene:tilemap||`` again.
 Draw a path from the **top left** to the **bottom right** with a different tile.
 
 ```blocks
@@ -234,7 +234,7 @@ Find ``||sprites:set mySprite to sprite of kind player||`` in ``||sprites:Sprite
 and drag it into the ``||loops:for element||`` loop.
 Draw breadcrumbs for the image of the sprite.
 This will create a new ``||sprites:Sprite||`` for every one of the
-selected ``||scene:tiles||`` in the ``||scene:tile map||``.
+selected ``||scene:tiles||`` in the ``||scene:tilemap||``.
 
 ```blocks
 namespace myTiles {
