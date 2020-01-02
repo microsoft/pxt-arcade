@@ -22,7 +22,6 @@ The following tutorials may also be useful in learning about concepts that
 you might not have seen elsewhere:
 
 * [Chase the Pizza](/#tutorial:/tutorials/chase-the-pizza)
-* [Maze](/#tutorial:/tutorials/maze)
 * [Happy Flower](/#tutorial:/tutorials/happy-flower)
 * [Lemon Leak](/#tutorial:/tutorials/lemon-leak)
 * [Galga](/#tutorial:/tutorials/galga)
@@ -32,6 +31,7 @@ you might not have seen elsewhere:
 * [Picnic Food](/#tutorial:/concepts/picnic-food)
 * [Princess Pizza](/#tutorial:/concepts/princess-pizza)
 * [Bouncing Burger](/#tutorial:/concepts/bouncing-burger)
+* [Maze](/#tutorial:/tutorials/maze)
 
 Additionally, you may find it useful to check out the review material
 for the previous courses:
