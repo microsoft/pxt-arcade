@@ -4,11 +4,11 @@
 
 ## Introduction @unplugged
 
-The maps and levels in a game are important to make the game interesting to explore. ``||scene:Tile maps||`` are used to create maps for the player to explore, which can even be set to prevent the player from moving past certain points.
+The maps and levels in a game are important to make the game interesting to explore. ``||scene:Tilemaps||`` are used to create maps for the player to explore, which can even be set to prevent the player from moving past certain points.
 
 ## Step 1 @fullscreen
 
-Find ``||scene:set tile map to||`` in ``||scene:Scene||``. Drag it into ``||loops:on start||``.
+Find ``||scene:set tilemap to||`` in ``||scene:Scene||``. Drag it into ``||loops:on start||``.
 
 ```blocks
 tiles.setTilemap(tiles.createTilemap(
@@ -39,9 +39,9 @@ tiles.setTilemap(tiles.createTilemap(
 
 ## Step 2 @fullscreen
 
-Click on the grey box in ``||scene:set tile map to||`` to open the tilemap editor. Pick a tile from the gallery (or create your own under `My Tiles`), and draw a small tilemap for the ``||scene:tile map||``.
+Click on the grey box in ``||scene:set tilemap to||`` to open the tilemap editor. Pick a tile from the gallery (or create your own under `My Tiles`), and draw a small tilemap for the ``||scene:tilemap||``.
 
-Run the code, and notice that the tile map is shown as the background. Each pixel of the drawing in the image editor is shown as a 16x16 square on the screen.
+Run the code, and notice that the tilemap is shown as the background. Each pixel of the drawing in the image editor is shown as a 16x16 square on the screen.
 
 ```blocks
 namespace myTiles {
@@ -384,4 +384,4 @@ controller.moveSprite(mySprite)
 
 ## Complete @fullscreen
 
-Congratulations, your first tile map is complete! Try to move the character around the screen, or create more types of ``||scene:tiles||``. If you expand the ``||scene:tile map||`` image, you can create a larger map - if you do, use ``||scene:camera follow sprite mySprite||`` to make it so the camera stays centered on the character you control, so that you can explore the entire map!
+Congratulations, your first tilemap is complete! Try to move the character around the screen, or create more types of ``||scene:tiles||``. If you expand the ``||scene:tilemap||`` image, you can create a larger map - if you do, use ``||scene:camera follow sprite mySprite||`` to make it so the camera stays centered on the character you control, so that you can explore the entire map!
