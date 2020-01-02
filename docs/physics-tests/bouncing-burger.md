@@ -75,3 +75,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
             : mySprite.vy - 100
 })
 ```
+
+```package
+color-coded-tilemap
+```

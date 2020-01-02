@@ -94,3 +94,7 @@ game.onUpdateInterval(250, function () {
     `, me, Math.sin(game.runtime() / 1000) * 50, Math.cos(game.runtime() / 1000) * 50)
 })
 ```
+
+```package
+color-coded-tilemap
+```

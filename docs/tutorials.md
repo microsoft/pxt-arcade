@@ -13,12 +13,12 @@
   "imageUrl": "/static/tutorials/chase-the-pizza.png",
   "largeImageUrl": "/static/tutorials/chase-the-pizza.gif"
 }, {
-  "name": "Simple Maze",
-  "description": "Learn the basics of creating a maze with this simple program",
-  "url": "/tutorials/simple-maze",
+  "name": "Maze",
+  "description": "Learn the basics of creating a maze",
+  "url": "/tutorials/maze",
   "cardType": "tutorial",
-  "imageUrl": "/static/tutorials/simple-maze.png",
-  "largeImageUrl": "/static/tutorials/simple-maze.gif"
+  "imageUrl": "/static/tutorials/maze.png",
+  "largeImageUrl": "/static/tutorials/maze.gif"
 }, {
   "name": "Happy Flower",
   "description": "Create a flower that sends back happy bees",
@@ -68,7 +68,7 @@
 ## See Also
 
 [Eat the Doughnut](/tutorials/eat-the-doughnut),
-[Simple Maze](/tutorials/simple-maze),
+[Maze](/tutorials/maze),
 [Happy Flower](/tutorials/happy-flower),
 [Lemon Leak](/tutorials/lemon-leak),
 [Galga](/tutorials/galga),

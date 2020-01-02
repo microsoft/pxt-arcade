@@ -263,3 +263,7 @@ game.onUpdateInterval(500, function () {
     }
 });
 ```
+
+```package
+color-coded-tilemap
+```

@@ -156,3 +156,7 @@ scene.setTile(15, img`
     f f f f f f f f f f f f f f f f
 `, true);
 ```
+
+```package
+color-coded-tilemap
+```
