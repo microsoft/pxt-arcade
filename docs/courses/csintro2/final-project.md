@@ -17,7 +17,7 @@ It is a good idea to start the game as a MVP (minimum viable project) to demonst
 >* The ``||darts:Darts||`` extension
 
 * For each of the above concepts, write a short sentence on how it allows your game to be more interesting or challenging for the player. Focus on the **Design Decisions** you made; what about the way you used the blocks made the game more appealing?
-* If one of the sections (tile maps, arrays, ...) does not seem to be relevant the game you are creating, then explain why the given section features are omitted in your game (check with instructor)
+* If one of the sections (tilemaps, arrays, ...) does not seem to be relevant the game you are creating, then explain why the given section features are omitted in your game (check with instructor)
 * For each of the above concepts, write a short sentence on how it allows your game to be more interesting or challenging for the player
 
 ### Challenge: Learning new blocks

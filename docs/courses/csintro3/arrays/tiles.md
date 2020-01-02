@@ -1,11 +1,11 @@
 # Activity: Tiles
 
-``||scene:Tile maps||`` allow for an easy way to design and structure maps
+``||scene:Tilemaps||`` allow for an easy way to design and structure maps
 that the player can explore.
 
 ``||scene:Wall collision||`` events and ``||scene:Tiles||`` allow for further
 control over how developers can interact with the individual ``||scene:tiles||``
-that make up the ``||scene:tile map||``.
+that make up the ``||scene:tilemap||``.
 
 ## Concept: On Hit Tile Events
 
@@ -31,14 +31,14 @@ let mySprite: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.
 controller.moveSprite(mySprite, 100, 100);
 
 scene.setTileMap(img`
-    7 7 7 7 7 7 7 7 7 7 
-    7 7 7 7 7 7 7 7 7 7 
-    7 7 f 7 7 7 7 7 7 7 
-    7 7 7 7 7 7 7 7 7 7 
-    7 7 7 7 7 7 7 7 f 7 
-    7 7 7 f 7 7 7 f 7 7 
-    7 7 7 7 7 7 7 f 7 7 
-    7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7
+    7 7 7 7 7 7 7 7 7 7
+    7 7 f 7 7 7 7 7 7 7
+    7 7 7 7 7 7 7 7 7 7
+    7 7 7 7 7 7 7 7 f 7
+    7 7 7 f 7 7 7 f 7 7
+    7 7 7 7 7 7 7 f 7 7
+    7 7 7 7 7 7 7 7 7 7
 `);
 
 scene.setBackgroundColor(6);
@@ -54,9 +54,9 @@ scene.onHitTile(SpriteKind.Player, 15, function (sprite: Sprite) {
 
 1. Start with the code from example #1
 2. Create at least **one** more tile that is **not** a wall,
-and add it to the ``||scene:tile map||``
+and add it to the ``||scene:tilemap||``
 3. Create at least **one** more type of ``||scene:wall||``,
-and add it to the ``||scene:tile map||``. Make the image be of
+and add it to the ``||scene:tilemap||``. Make the image be of
 something that looks like a "portal"
 4. Add an ``||scene:on hit tile||`` event that occurs when ``||variables:mySprite||``
 hits the new type of ``||scene:wall||``
@@ -65,12 +65,12 @@ hits the new type of ``||scene:wall||``
 
 ## Concept: Tiles
 
-A ``||scene:tile map||`` is made up of tiles of type ``||scene:tiles.Tile||``.
+A ``||scene:tilemap||`` is made up of tiles of type ``||scene:tiles.Tile||``.
 This type is defined in the ``||scene:tiles||`` namespace.
 
 The ``||scene:scene.getTile||`` and ``||scene:scene.setTileAt||`` functions
 can be used to get and modify the individual ``||scene:Tiles||`` in the
-``||scene:tile map||``.
+``||scene:tilemap||``.
 
 ```sig
 scene.getTile(0, 0);
@@ -106,7 +106,7 @@ for (let i = 0; i < 8; i++) {
 
 ## Student Task #2: Random Tiles
 
-1. Create a **10 x 8** ``||scene:tile map||``
+1. Create a **10 x 8** ``||scene:tilemap||``
 2. Create an ``||game:on update interval||`` event that runs every 2000 ms
 3. Inside the event, get a random tile by selecting a random row (between 0 and 7)
 and column (between 0 and 9)
@@ -125,21 +125,21 @@ in different locations around the map.
 2. Identify how and where the ``||variables:flower||`` sprite is
 ``||scene:placed||`` on ``||variables:myTile||``
 3. Identify where the ``||variables:player||`` can be placed on the
-``||scene:tile map||``. Can it be placed in between two tiles?
+``||scene:tilemap||``. Can it be placed in between two tiles?
 
 ```typescript
 namespace SpriteKind {
     export const Flower = SpriteKind.create();
 }
 scene.setTileMap(img`
-    7 6 7 6 7 6 7 6 7 6 
-    6 7 6 7 6 7 6 7 6 7 
-    7 6 7 6 7 6 7 6 7 6 
-    6 7 6 7 6 7 6 7 6 7 
-    7 6 7 6 7 6 7 6 7 6 
-    6 7 6 7 6 7 6 7 6 7 
-    7 6 7 6 7 6 7 6 7 6 
-    6 7 6 7 6 7 6 7 6 7 
+    7 6 7 6 7 6 7 6 7 6
+    6 7 6 7 6 7 6 7 6 7
+    7 6 7 6 7 6 7 6 7 6
+    6 7 6 7 6 7 6 7 6 7
+    7 6 7 6 7 6 7 6 7 6
+    6 7 6 7 6 7 6 7 6 7
+    7 6 7 6 7 6 7 6 7 6
+    6 7 6 7 6 7 6 7 6 7
 `);
 
 let player: Sprite = sprites.create(sprites.castle.heroWalkFront1, SpriteKind.Player);
@@ -158,11 +158,11 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
 
 1. Start with the code from example #3
 2. Create a type of tile that is the color orange (``4``),
-and add it somewhere on the ``||scene:tile map||``
+and add it somewhere on the ``||scene:tilemap||``
 3. Create a new sprite, ``||variables:house||``, that represents a house.
 Use the image of a blue house (``||sprites:sprites.castle.houseBlue||``)
 4. Use ``||scene:place||`` to place ``||variables:house||`` on top of the
-``||scene:tile||`` that was orange in the ``||scene:tile map||``
+``||scene:tile||`` that was orange in the ``||scene:tilemap||``
 
 ## Concept: Tiles by Type
 
@@ -171,7 +171,7 @@ extremely exciting to start, but becomes more useful when ``||scene:tiles||``
 are created in other ways.
 
 The function ``||scene:scene.getTilesByType||`` returns an array of all of the
-tiles in the ``||scene:tile map||`` of the color specified.
+tiles in the ``||scene:tilemap||`` of the color specified.
 This can be very useful to help set up levels,
 by placing characters and items in specific locations on the screen.
 
@@ -192,14 +192,14 @@ namespace SpriteKind {
 }
 
 scene.setTileMap(img`
-    7 6 7 6 7 6 7 6 7 6 
-    6 7 6 7 6 7 6 7 6 7 
-    7 6 7 6 7 6 7 6 7 6 
-    6 7 6 7 6 7 6 7 6 7 
-    7 6 7 6 7 6 7 6 7 6 
-    6 7 6 7 6 7 6 7 6 7 
-    7 6 7 6 7 6 7 6 7 6 
-    6 7 6 7 6 7 6 7 6 7 
+    7 6 7 6 7 6 7 6 7 6
+    6 7 6 7 6 7 6 7 6 7
+    7 6 7 6 7 6 7 6 7 6
+    6 7 6 7 6 7 6 7 6 7
+    7 6 7 6 7 6 7 6 7 6
+    6 7 6 7 6 7 6 7 6 7
+    7 6 7 6 7 6 7 6 7 6
+    6 7 6 7 6 7 6 7 6 7
 `);
 
 let flowerTiles: tiles.Tile[] = scene.getTilesByType(6);
@@ -219,7 +219,7 @@ scene.cameraFollowSprite(player);
 ![Animation of player moving around map with house](/static/courses/csintro3/arrays/place-houses.gif)
 
 1. Start with the code from example #4
-2. Expand the ``||scene:tile map||`` to be **16 x 16**,
+2. Expand the ``||scene:tilemap||`` to be **16 x 16**,
 and add orange (``4``) tiles on the map
 3. Use ``||scene:scene.getTilesByType||`` to obtain an array
 of all orange ``||scene:Tiles||``
@@ -230,7 +230,7 @@ for every orange ``||scene:Tile||``.
 ## What did we learn?
 
 1. What does a ``||scene:on hit tile||`` event allow you to do?
-2. What is the relationship between ``||scene:Tiles||`` and ``||scene:tile maps||``?
+2. What is the relationship between ``||scene:Tiles||`` and ``||scene:tilemaps||``?
 3. How can ``||scene:scene.getTilesByType||`` allow ``||sprites:Sprites||``
 to be placed in different locations on the screen more easily?
 

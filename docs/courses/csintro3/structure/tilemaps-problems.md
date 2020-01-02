@@ -1,13 +1,13 @@
-# Problem Set: Tile Maps
+# Problem Set: Tilemaps
 
-This section contains a number of selected problems for the Tile Maps section.
+This section contains a number of selected problems for the Tilemaps section.
 
 It is recommended that you review the problems, and complete a few before
 moving on to the next section.
 
 ## Problem #1: Say Hi!
 
-Using only ``||scene:scene.setTileMap||``, create an **8 x 8** ``||scene:tile map||``
+Using only ``||scene:scene.setTileMap||``, create an **8 x 8** ``||scene:tilemap||``
 that looks like it is saying "Hi!". Make the "H" **red**,
 the "i" **blue**, and the "!" **green**.
 
@@ -23,7 +23,7 @@ or one of the types of flowers or grass included in the gallery.
 
 ## Problem #3: Build a Road
 
-Create a **16 x 16** with a ``||scene:tile map||`` of a race track for cars.
+Create a **16 x 16** with a ``||scene:tilemap||`` of a race track for cars.
 Use at least **three** different types of ``||scene:tiles||`` for roads.
 
 Create a ``||sprites:Sprite||`` with an ``||images:image||`` of a car.
@@ -38,7 +38,7 @@ Make any ``||scene:tiles||`` on the map that are **not** roads into
 
 ## Problem #4: Build a Maze
 
-Create a **16 x 16** maze using the ``||scene:tile map||`` like the example below.
+Create a **16 x 16** maze using the ``||scene:tilemap||`` like the example below.
 
 ![Example Maze](/static/courses/csintro3/structure/example-maze.png)
 

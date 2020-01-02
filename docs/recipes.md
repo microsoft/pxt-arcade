@@ -49,7 +49,7 @@
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/bouncing-burger.png",
   "largeImageUrl": "/static/concepts/bouncing-burger.gif"
-}, 
+},
 {
   "name": "Star Field",
   "description": "Create a starry night for the next hit space game",
@@ -84,7 +84,7 @@
 },
 {
   "name": "Setting the Scene",
-  "description": "Learn about how tile maps are used to create levels for players to explore. New Concepts: Tile maps, Tile Images, Walls",
+  "description": "Learn about how tilemaps are used to create levels for players to explore. New Concepts: Tilemaps, Tile Images, Walls",
   "url": "/concepts/setting-the-scene",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/setting-the-scene.png",

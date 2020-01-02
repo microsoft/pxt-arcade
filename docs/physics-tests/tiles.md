@@ -2,7 +2,7 @@
 
 A few quick tests in cases where tile interactions have misbehaved before.
 
-**Features tested**: Tile map collision policy changes from [pxt-common-packages#615](https://github.com/microsoft/pxt-common-packages/pull/615).
+**Features tested**: Tilemap collision policy changes from [pxt-common-packages#615](https://github.com/microsoft/pxt-common-packages/pull/615).
 
 ```sim
 let mySprite: Sprite = null

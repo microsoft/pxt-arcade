@@ -24,7 +24,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Jumpy Platformer",
-        "description": "A short platformer game with tile map levels",
+        "description": "A short platformer game with tilemap levels",
         "url": "/blocks-games/jumpy-platformer",
         "cardType": "example",
         "imageUrl": "/static/blocks-games/jumpy-platformer.png",

@@ -137,7 +137,7 @@ tiles.setTilemap(tiles.createTilemap(
 
 ## Step 7
 
-At the end of the tile map, draw a column that is a different tile than the other tiles in the map.
+At the end of the tilemap, draw a column that is a different tile than the other tiles in the map.
 This will represent the goal for the player.
 
 ```blocks

@@ -18,7 +18,7 @@ Use at least **four** of the following concepts from [structure](/courses/csintr
 * [Loops](/courses/csintro3/structure/loops)
 * [Sprites](/courses/csintro3/structure/sprites)
 * [Projectiles](/courses/csintro3/structure/projectiles)
-* [Tile Maps](/courses/csintro3/structure/tilemaps)
+* [Tilemaps](/courses/csintro3/structure/tilemaps)
 * [Corgio Extension in JavaScript](/courses/csintro3/structure/extensions)
 * [Namespaces](/courses/csintro3/structure/namespaces)
 
@@ -46,7 +46,7 @@ Use at least **one** of the following concepts from [Arrays](/courses/csintro3/a
 
 For each of the above concepts, write a short sentence on how it allows your game to be more interesting or challenging for the player. Focus on the **Design Decisions** you made; what about the way you used the blocks made the game more appealing?
 
-If one of the sections (tile maps, arrays, ...) does not seem to be relevant the game you are creating, then explain why the given section features are omitted in your game (check with instructor)
+If one of the sections (tilemaps, arrays, ...) does not seem to be relevant the game you are creating, then explain why the given section features are omitted in your game (check with instructor)
 
 For each of the above concepts, write a short sentence on how it allows your game to be more interesting or challenging for the player
 

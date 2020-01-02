@@ -19,7 +19,7 @@ Make your own unique games!
 * Controller (dx) and ``||controller:move mySprite with buttons||``
 * ``||functions:Functions||``
 * ``||logic:Logic||``
-* ``||scene:Tile Maps||``
+* ``||scene:Tilemaps||``
 * ``||arrays:String Arrays||``
 * ``||arrays:Sprite Arrays||``
 * ``||arrays:Number Arrays||``

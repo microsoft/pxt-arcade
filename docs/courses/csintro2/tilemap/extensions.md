@@ -1,12 +1,12 @@
 # Activity: Level Design and the Corgio Extension
 
-The design of the area the player is in can make or break a game. If the play area is too sparse, the game can become boring and uninteresting, and if it is overly filled with objects, the game can become to hard too hard to follow. 
+The design of the area the player is in can make or break a game. If the play area is too sparse, the game can become boring and uninteresting, and if it is overly filled with objects, the game can become to hard too hard to follow.
 
 In this activity, students will use the ``||corgio:corgio||`` extension (based on the corgiodog breed) to make several sprite actions easy to implement. Using ``||corgio:corgio||`` allows us to focus on the design and structure of the game play without getting bogged down in some of the complex functionality that corgio handles for us.
 
 In this activity, students will:
 * Use a new extension
-* Design their own levels using a ``||scene:tile map||``
+* Design their own levels using a ``||scene:tilemap||``
 * Implement a platformer game
 
 ## Using the corgio package
@@ -27,42 +27,42 @@ After adding corgio to your project, a new tab titled ``||corgio:Corgio||`` will
 4. Finally, add the ``||corgio:make myCorg jump if up arrow key is pressed||`` block; try pressing the ``||controller:up||`` button multiple times before you hit the ground, or jumping away from a wall that you are currently touching
 5. **Challenge:** use the blocks in the ``||corgio:Speak||`` category to teach the corgio to say "hello", "goodbye", "jump", and "sit"; make the corgio ``||corgio:bark||`` when the user presses the ``||controller:A||`` button. Did it know any words before you taught it those four?
 
-## Example #1: Corgio with tile map
+## Example #1: Corgio with tilemap
 
 1. Open a new project (name it "myLevel")
 2. Using the extensions menu, search for "corgio"
-3. Review the example code below, and either recreate it or build something similar using a 64x8 tile map
+3. Review the example code below, and either recreate it or build something similar using a 64x8 tilemap
 4. Notice how the corgio rests on top of the wall tiles, and that the jumps reset as if the corgio were touching the bottom of the screen
 
 ```blocks
 let myCorg: Corgio = corgio.create(SpriteKind.Player);
 scene.setTileMap(img`
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f
 `)
 scene.setTile(15, img`
-e e e e e f f e e e e e e f f e 
-e e e e e f f e e e e e e f f e 
-e e e e e f f e e e e e e f f e 
-f f f f f f f f f f f f f f f f 
-f f e e e e e e e f f e e e e e 
-f f e e e e e e e f f e e e e e 
-f f e e e e e e e f f e e e e e 
-f f f f f f f f f f f f f f f f 
-e e e e e f f e e e e e e f f e 
-e e e e e f f e e e e e e f f e 
-e e e e e f f e e e e e e f f e 
-f f f f f f f f f f f f f f f f 
-f f e e e e e e e f f e e e e e 
-f f e e e e e e e f f e e e e e 
-f f e e e e e e e f f e e e e e 
-f f f f f f f f f f f f f f f f 
+e e e e e f f e e e e e e f f e
+e e e e e f f e e e e e e f f e
+e e e e e f f e e e e e e f f e
+f f f f f f f f f f f f f f f f
+f f e e e e e e e f f e e e e e
+f f e e e e e e e f f e e e e e
+f f e e e e e e e f f e e e e e
+f f f f f f f f f f f f f f f f
+e e e e e f f e e e e e e f f e
+e e e e e f f e e e e e e f f e
+e e e e e f f e e e e e e f f e
+f f f f f f f f f f f f f f f f
+f f e e e e e e e f f e e e e e
+f f e e e e e e e f f e e e e e
+f f e e e e e e e f f e e e e e
+f f f f f f f f f f f f f f f f
 `, true)
 myCorg.horizontalMovement()
 myCorg.updateSprite()
@@ -72,13 +72,13 @@ myCorg.verticalMovement()
 ## Student Task #2: Creating a side scroll game
 
 1. Either start with the code from example #1, or add a tilemap to task #1
-2. Add the ``||corgio:make camera follow myCorg left and right||`` block, so that the camera will follow the corgio while it moves across the tile map
-3. Open the tile map in the image editor, and add a red wall that is 3 tiles tall in the middle of the map.
+2. Add the ``||corgio:make camera follow myCorg left and right||`` block, so that the camera will follow the corgio while it moves across the tilemap
+3. Open the tilemap in the image editor, and add a red wall that is 3 tiles tall in the middle of the map.
 4. Set the red tile to be a wall, and give it a unique image
- 
+
 ## Goals, Puzzles, and Hazards
 
-Just having a single wall in your game does not make for a particularly challenging or fun experience; you need a bit more to make a game someone will actually want to try and play. To do so, we will introduce three things to the platformer: 
+Just having a single wall in your game does not make for a particularly challenging or fun experience; you need a bit more to make a game someone will actually want to try and play. To do so, we will introduce three things to the platformer:
 
 1. An end goal for the player to try and get to
 2. Walls that form a small puzzle to get through

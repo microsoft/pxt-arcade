@@ -37,7 +37,7 @@ This is the step where sprites are moved around the screen using the current vel
 3. Each sprite is moved one step:
     1. The stored velocities are compared to the sprite's current velocities, in case some event has caused the sprite to turn around. If the sprite has turned around, the movement is adjusted so that the sprite doesn't move in the wrong direction.
     2. The sprite is moved a few pixels according to it's speed.
-    3. If the sprite is not a ghost and a tile map exists, the sprite is checked for collisions with the tile map. If it has hit something, the sprite may be stopped and an collision event with that type of wall is run.
+    3. If the sprite is not a ghost and a tilemap exists, the sprite is checked for collisions with the tilemap. If it has hit something, the sprite may be stopped and an collision event with that type of wall is run.
     4. If the sprite has not finished moving, it is stored to move again in future steps.
 4. After all the sprites have moved, sprite overlaps are checked, and any overlap events between sprites that are not currently running are set to run [independent from the game loop](#fibers).
 5. If there are sprites that still need to move, step 3 is repeated to continue moving the sprites. Otherwise, the physics movement is complete for this frame.
@@ -48,7 +48,7 @@ Rendering elements to the screen is handled by drawing different elements depend
 
 1. The background is drawn to the screen, clearing anything else on the screen. This can be either a color or an image. This is always done first.
 2. ``z index -20``: ``on paint`` events are run and applied to the screen.
-3. ``z index -1``: the ``tile map`` is rendered to the screen.
+3. ``z index -1``: the ``tilemap`` is rendered to the screen.
 4. ``z index 0``: sprites are rendered at this index by default, unless they are reassigned a new ``z index``.
 5. ``z index 80``: ``on shade`` events are run and applied to the screen.
 6. ``z index 100``: ``HUD`` elements, such as ``life`` and ``score``, are drawn onto the screen.

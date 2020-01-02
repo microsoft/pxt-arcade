@@ -9,7 +9,7 @@ Press the arrow keys that match the ones appearing in blocks on the screen. When
 Learn the basics for a collision based game!
 
 * The concept of sprite
-* How to set up a tile map and scene
+* How to set up a tilemap and scene
 * Spawning and destroying projectiles
 * Setting and moving a character
 * Setting a score increment

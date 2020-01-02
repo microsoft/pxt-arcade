@@ -36,7 +36,7 @@
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/bouncing-burger.png",
   "largeImageUrl": "/static/concepts/bouncing-burger.gif"
-}, 
+},
 {
   "name": "Star Field",
   "description": "Create a starry night for the next hit space game. Concepts: Star motion, Particles",
@@ -71,7 +71,7 @@
 },
 {
   "name": "Setting the Scene",
-  "description": "Design tile maps to create scenes and levels for players to explore. Concepts: Tile maps, Tile Images, Walls",
+  "description": "Design tilemaps to create scenes and levels for players to explore. Concepts: Tilemaps, Tile Images, Walls",
   "url": "/concepts/setting-the-scene",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/setting-the-scene.png",
@@ -79,7 +79,7 @@
 },
 {
   "name": "Breadcrumb Trail",
-  "description": "Use tile maps to place sprites at different positions on the screen. Concepts: Tiles, Arrays, For Element Loops, Placing Sprites",
+  "description": "Use tilemaps to place sprites at different positions on the screen. Concepts: Tiles, Arrays, For Element Loops, Placing Sprites",
   "url": "/concepts/breadcrumb-trail",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/breadcrumb-trail.png",

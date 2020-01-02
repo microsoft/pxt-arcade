@@ -19,7 +19,7 @@
         "url": "/courses/csintro3/structure/projectiles",
         "imageUrl": "/static/courses/csintro3/structure/projectiles.gif"
     }, {
-        "name": "Tile Maps",
+        "name": "Tilemaps",
         "url": "/courses/csintro3/structure/tilemaps",
         "imageUrl": "/static/courses/csintro3/structure/tilemaps.gif"
     }, {
@@ -46,7 +46,7 @@
 * [Loops](/courses/csintro3/structure/loops)
 * [Sprites](/courses/csintro3/structure/sprites)
 * [Projectiles](/courses/csintro3/structure/projectiles)
-* [Tile Maps](/courses/csintro3/structure/tilemaps)
+* [Tilemaps](/courses/csintro3/structure/tilemaps)
 * [Corgio Extension in JavaScript](/courses/csintro3/structure/extensions)
 * [Namespaces](/courses/csintro3/structure/namespaces)
 * [Case Study Additions](/courses/csintro3/structure/additions)
