@@ -290,7 +290,8 @@
         "autoRunLight": false,
         "emptyRunCode": "pxsim.pxtcore.updateScreen(new pxsim.RefImage(160, 120, 4))",
         "aspectRatio": 0.85,
-        "dynamicBoardDefinition": true
+        "dynamicBoardDefinition": true,
+        "keymap": true
     },
     "appTheme": {
         "logoUrl": "https://github.com/microsoft/pxt-arcade",
