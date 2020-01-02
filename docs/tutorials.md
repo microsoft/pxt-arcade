@@ -13,13 +13,6 @@
   "imageUrl": "/static/tutorials/chase-the-pizza.png",
   "largeImageUrl": "/static/tutorials/chase-the-pizza.gif"
 }, {
-  "name": "Maze",
-  "description": "Learn the basics of creating a maze",
-  "url": "/tutorials/maze",
-  "cardType": "tutorial",
-  "imageUrl": "/static/tutorials/maze.png",
-  "largeImageUrl": "/static/tutorials/maze.gif"
-}, {
   "name": "Happy Flower",
   "description": "Create a flower that sends back happy bees",
   "url": "/tutorials/happy-flower",
@@ -61,6 +54,13 @@
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/simple-extensions.png",
   "largeImageUrl": "/static/tutorials/simple-extensions.gif"
+}, {
+  "name": "Maze",
+  "description": "Learn the basics of creating a maze",
+  "url": "/tutorials/maze",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/maze.png",
+  "largeImageUrl": "/static/tutorials/maze.gif"
 }
 ]
 ```
