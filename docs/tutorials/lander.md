@@ -179,7 +179,7 @@ let angle = "straight"
 
 ## Step 6 @fullscreen
 
-Drag an ``||controller:on A button pressed||`` from ``||controller:Controller||`` and place it in your workspace. From ``||logic:Logic||``, grab an ``||logic:if then else||`` statement and drag it into ``||controller:on A button pressed||``. Click the **(+)** symbol at the end. Grab a ``||logic:0 = 0||`` block from ``||logic:Logic||`` and place it in the ``||logic:if||``. Duplicate the ``||logic:0=0||`` block and place it in the ``||logic:if else||`` section. For both ``||logic:0 = 0||`` statements, set the first value to ``||variables:angle||``. Grab a ``||text:" "||`` and place it in the second value of both equal statements. For the first if statement set the ``||variables:angle||`` equal to ``straight``. For the else if set the ``||variables:angle||`` equal to ``"left"``.
+Drag an ``||controller:on A button pressed||`` from ``||controller:Controller||`` and place it in your workspace. From ``||logic:Logic||``, grab an ``||logic:if then else||`` statement and drag it into ``||controller:on A button pressed||``. Click the **(+)** symbol at the end. Grab a ``||logic:0 = 0||`` block from ``||logic:Logic||`` and place it in the ``||logic:if||``. Duplicate the ``||logic:0 = 0||`` block and place it in the ``||logic:if else||`` section. For both ``||logic:0 = 0||`` statements, set the first value to ``||variables:angle||``. Grab a ``||text:" "||`` and place it in the second value of both equal statements. For the first ``||logic:if||`` statement, check that ``||variables:angle||`` is equal to ``"straight"`` by changing ``" "`` to ``"straight"``. For the ``||logic:else if||``, check that ``||variables:angle||`` is equal to ``"left"``.
 
 ```blocks
 let angle = "straight"
