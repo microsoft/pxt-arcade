@@ -395,7 +395,8 @@
         "simGifKey": "R",
         "qrCode": true,
         "shareFinishedTutorials": true,
-        "nameProjectFirst": true
+        "nameProjectFirst": true,
+        "githubEditor": true
     },
     "unsupportedBrowsers": [
         {
