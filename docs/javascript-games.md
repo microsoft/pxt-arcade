@@ -82,7 +82,7 @@ Here are some fun programs for your @boardname@!
         "url":"/javascript-games/bouncer-bucket",
         "cardType": "codeExample",
         "imageUrl": "/static/javascript-games/bouncer-bucket.png",
-        "largeImageUrl": "/static/javascript-games/bouncer-bucket.gif"
+        "largeImageUrl": "/static/javascript-games/bouncer-bucket.mp4"
     }
 ]
 ```
