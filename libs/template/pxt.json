@@ -1,0 +1,8 @@
+{
+    "name": "template",
+    "description": "Contains overriden or additional files for the default project template",    
+    "hidden": true,
+    "files": [
+        "index.html"
+    ]
+}
