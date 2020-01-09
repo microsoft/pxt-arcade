@@ -18,7 +18,8 @@
         "name": "JavaScript Games",
         "url": "/javascript-games",
         "imageUrl": "/static/javascript-games/planet-putt-putt.png",
-        "largeImageUrl": "/static/javascript-games/planet-putt-putt.gif"
+        "largeImageUrl": "/static/javascript-games/planet-putt-putt.gif",
+        "videoUrl": "/static/javascript-games/bouncer-bucket.mp4"
     },
     {
         "name": "Community Games",
@@ -55,16 +56,6 @@
         "imageUrl": "/static/hardware/ghiarcade.jpg"
     },
     {
-        "name": "Coding Cards",
-        "url": "/design-coding-cards",
-        "imageUrl": "/static/design-coding-cards/1-moving-character-thumb.jpg"
-    },
-    {
-        "name": "Build Your Game Videos",
-        "url": "/videos",
-        "imageUrl": "/static/videos/bunny-hop-thumb.jpg"
-    },
-    {
         "name": "John Park's Workshop",
         "url": "/john-parks-workshop",
         "imageUrl": "/static/john-parks-workshop/trash-panda.png"
@@ -83,7 +74,5 @@
 [Lessons](/lessons),
 [Courses](/courses),
 [Hardware](/hardware),
-[Coding Cards](/design-coding-cards),
-[Build Your Game Videos](/videos),
 [John Park's Workshop](/john-parks-workshop)
 
