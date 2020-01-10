@@ -79,7 +79,8 @@
         "libs/d5prj",
         "libs/f4prj",
         "libs/rpiprj",
-        "libs/color-coded-tilemap"
+        "libs/color-coded-tilemap",
+        "libs/template"
     ],
     "compile": {
         "useUF2": true,

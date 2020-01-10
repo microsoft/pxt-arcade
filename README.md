@@ -1,10 +1,7 @@
-# Casual game editor using Microsoft MakeCode
+# Casual game editor using Microsoft MakeCode [![Build Status](https://travis-ci.org/microsoft/pxt-arcade.svg?branch=master)](https://travis-ci.org/microsoft/pxt-arcade)
 
-* [Try it live!](https://arcade.makecode.com)
-
-[![Build Status](https://travis-ci.org/microsoft/pxt-arcade.svg?branch=master)](https://travis-ci.org/microsoft/pxt-arcade)
-[![Community Discord (chat)](https://img.shields.io/discord/448979533891371018.svg)](https://aka.ms/makecodecommunity)
-[Forum](https://forum.makecode.com)
+* Try it [https://arcade.makecode.com](https://arcade.makecode.com)
+* [Forum](https://forum.makecode.com)
 
 This repo contains an editor built with [Microsoft MakeCode (PXT)](https://github.com/microsoft/pxt).
 
