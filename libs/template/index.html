@@ -9,10 +9,10 @@
     <meta name="description" content="{{ site.github.project_tagline }}" />
     <meta name="author" content="{{ site.github.owner_name }}">
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="{{ site.github.homepage }}" />
+    <meta name="twitter:site" content="/" />
     <meta name="twitter:title" content="{{ site.github.project_tagline }}" />
     <meta name="twitter:description" content="{{ site.github.project_tagline }}" />
-    <meta name="twitter:image" content="{{ site.github.homepage }}icon.png" />    
+    <meta name="twitter:image" content="./icon.png" />    
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="{{ site.github.project_title }}">
@@ -28,10 +28,10 @@
     <meta property="og:title" content="{{ site.github.project_title }}" />
     <meta property="og:site_name" content="{{ site.github.project_title }}" />
     <meta property="og:description" content="{{ site.github.project_tagline }}" />
-    <meta property="og:image" content="{{ site.github.homepage }}icon.png" />    
-    <link rel="apple-touch-icon" href="{{ site.github.homepage }}icon.png">
-    <link rel="icon" type="image/png" href="{{ site.github.homepage }}icon.png">
-    <link rel="shortcut icon" href="{{ site.github.homepage }}icon.png">
+    <meta property="og:image" content="./icon.png" />    
+    <link rel="apple-touch-icon" href="./icon.png">
+    <link rel="icon" type="image/png" href="./icon.png">
+    <link rel="shortcut icon" href="./icon.png">
     <style>
         body {
             background: black;
@@ -58,9 +58,50 @@
             color: grey;
         }
     </style>
+    <style>
+.lds-ripple {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+    </style>
 </head>
 
 <body>
+    <div id="loader" class="lds-ripple"><div></div><div></div></div>
     <iframe
         src="{{ site.makecode.home_url }}--run?fullscreen=1&nofooter=1&id=github:{{ site.github.owner_name }}/{{ site.github.repository_name }}"
         allowfullscreen="allowfullscreen" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
@@ -72,7 +113,7 @@
         <a href="{{ site.github.home_url }}">GitHub</a>
     </footer>
     <script>
-window.scrollTo(0,1);        
+window.scrollTo(0,1);
     </script>
 </body>
 </html>
