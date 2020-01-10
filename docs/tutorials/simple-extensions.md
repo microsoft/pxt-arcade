@@ -42,7 +42,7 @@ Set the size of the tilemap to ``20x8``,
 draw some platforms for the corgi to stand on,
 and set them as ``Walls``.
 
-![Animation showing completion of this step](/static/tutorials/simple-extensions/drawing-tilemap.gif)
+![Animation showing completion of this step](/static/tutorials/simple-extensions/create-tilemap.gif)
 
 ```blocks
 namespace myTiles {
