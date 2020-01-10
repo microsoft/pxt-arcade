@@ -5,14 +5,33 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>{{ site.github.name }}</title>
-    <meta name="description" content="{{ site.github.description }}" />
+    <title>{{ site.github.project_title }}</title>
+    <meta name="description" content="{{ site.github.project_tagline }}" />
     <meta name="author" content="{{ site.github.owner_name }}">
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="{{ site.github.homepage }}" />
-    <meta name="twitter:title" content="{{ site.github.description }}" />
-    <meta name="twitter:description" content="{{ site.github.description }}" />
+    <meta name="twitter:title" content="{{ site.github.project_tagline }}" />
+    <meta name="twitter:description" content="{{ site.github.project_tagline }}" />
     <meta name="twitter:image" content="{{ site.github.homepage }}icon.png" />    
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="{{ site.github.project_title }}">
+    <meta name="apple-mobile-web-app-status-bar-style" content="translucent-black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="application-name" content="{{ site.github.project_title }}">
+    <meta name="theme-color" content="#000">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@ptwitter@" />
+    <meta name="twitter:title" content="@name@" />
+    <meta name="twitter:description" content="@description@" />
+    <meta name="twitter:image" content="@cardLogo@" />
+    <meta property="og:title" content="{{ site.github.project_title }}" />
+    <meta property="og:site_name" content="{{ site.github.project_title }}" />
+    <meta property="og:description" content="{{ site.github.project_tagline }}" />
+    <meta property="og:image" content="{{ site.github.homepage }}icon.png" />    
+    <link rel="apple-touch-icon" href="{{ site.github.homepage }}icon.png">
+    <link rel="icon" type="image/png" href="{{ site.github.homepage }}icon.png">
+    <link rel="shortcut icon" href="{{ site.github.homepage }}icon.png">
     <style>
         body {
             background: black;
@@ -52,5 +71,8 @@
             href="https://github.com/{{ site.github.owner_name }}">{{ site.github.owner_name }}</a>.
         <a href="{{ site.github.home_url }}">GitHub</a>
     </footer>
+    <script>
+window.scrollTo(0,1);        
+    </script>
 </body>
 </html>
