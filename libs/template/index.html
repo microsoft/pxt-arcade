@@ -145,15 +145,7 @@
             var simState = {}
             var simStateChanged = false
             var started = false;
-
-            function fetchCode() {
-                sendReq("./static/binary.js", null, function (c, status) {
-                    if (status != 200)
-                        return;
-                    code = c;
-                    startSim();
-                })
-            }
+            var meta = undefined;
 
             function sendReq(url, data, cb) {
                 var xhttp = new XMLHttpRequest();
@@ -171,6 +163,27 @@
                 }
             }
 
+            function fetchCode() {
+                sendReq("./assets/js/binary.js", null, function (c, status) {
+                    if (status != 200)
+                        return;
+                    code = c;
+                    // find metadata
+                    code.replace(/^\/\/\s+meta=([^\n]+)\n/m, function (m, metasrc) {
+                        meta = JSON.parse(metasrc);
+                    })
+                    // load simulator with correct version
+                    document.getElementById("simframe")
+                        .setAttribute("src", meta.simUrl);
+                })
+            }
+
+            function postMessage(msg) {
+                const frame = document.getElementById("simframe");
+                if (frame)
+                    frame.contentWindow.postMessage(msg, meta.simUrl);
+            }
+
             function startSim() {
                 if (!code || !isReady || started)
                     return
@@ -181,7 +194,7 @@
                     parts: [],
                     code: code,
                     partDefinitions: {},
-                    cdnUrl: "{{ site.makecode.cdn_url }}",
+                    cdnUrl: meta.cdnUrl,
                     version: "ghpages",
                     storedState: simState,
                     frameCounter: 1,
@@ -191,15 +204,13 @@
                     },
                     id: "green-" + Math.random()
                 }
-                const frame = document.getElementById("simframe");
-                frame.contentWindow.postMessage(runMsg, "*");
+                postMessage(runMsg);
             }
 
             function stopSim() {
-                const frame = document.getElementById("simframe");
-                frame.contentWindow.postMessage({
+                postMessage({
                     type: "stop"
-                }, "*");
+                });
                 started = false;
             }
 
@@ -221,7 +232,9 @@
             window.addEventListener('message', function (ev) {
                 var d = ev.data
                 if (d.type == "ready") {
-                    document.getElementById("loader").remove();
+                    var loader = document.getElementById("loader");
+                    if (loader)
+                        loader.remove();
                     isReady = true;
                     startSim();
                 } else if (d.type == "simulator") {
@@ -238,10 +251,8 @@
                 }
             }, false);
 
-            // only load the iframe once we've set up the message listener
             fetchCode();
-            document.getElementById("simframe")
-                .setAttribute("src", "{{ site.makecode.sim_url }}");
+            // hide scrollbar
             window.scrollTo(0, 1);
         })()
     </script>
