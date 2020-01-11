@@ -43,6 +43,7 @@
             left: 0;
             width: 100%;
             height: calc(100% - 1.5em);
+            border: none;
         }
 
         footer {
@@ -131,131 +132,14 @@
         </svg>
     </div>
     <iframe id="simframe" allowfullscreen="allowfullscreen"
-        sandbox="allow-popups allow-forms allow-scripts allow-same-origin" frameborder="0">
+        sandbox="allow-popups allow-forms allow-scripts allow-same-origin">
     </iframe>
     <footer>
         Made with ♡ in <a href="https://arcade.makecode.com">MakeCode</a> by <a
             href="https://github.com/{{ site.github.owner_name }}">{{ site.github.owner_name }}</a>.
         <a href="https://github.com/{{ site.github.owner_name }}/{{ site.github.repository_name }}">GitHub</a>
     </footer>
-    <script type="text/javascript">
-        (function () {
-            var code = "";
-            var isReady = false;
-            var simState = {}
-            var simStateChanged = false
-            var started = false;
-            var meta = undefined;
-
-            function sendReq(url, data, cb) {
-                var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function () {
-                    if (xhttp.readyState == 4) {
-                        cb(xhttp.responseText, xhttp.status)
-                    }
-                };
-                xhttp.open(data ? "POST" : "GET", url, true);
-                if (data) {
-                    xhttp.setRequestHeader("Content-Type", "application/json");
-                    xhttp.send(JSON.stringify(data))
-                } else {
-                    xhttp.send();
-                }
-            }
-
-            function fetchCode() {
-                sendReq("./assets/js/binary.js", null, function (c, status) {
-                    if (status != 200)
-                        return;
-                    code = c;
-                    // find metadata
-                    code.replace(/^\/\/\s+meta=([^\n]+)\n/m, function (m, metasrc) {
-                        meta = JSON.parse(metasrc);
-                    })
-                    // load simulator with correct version
-                    document.getElementById("simframe")
-                        .setAttribute("src", meta.simUrl);
-                })
-            }
-
-            function postMessage(msg) {
-                const frame = document.getElementById("simframe");
-                if (frame)
-                    frame.contentWindow.postMessage(msg, meta.simUrl);
-            }
-
-            function startSim() {
-                if (!code || !isReady || started)
-                    return
-                setState("run");
-                started = true;
-                const runMsg = {
-                    type: "run",
-                    parts: [],
-                    code: code,
-                    partDefinitions: {},
-                    cdnUrl: meta.cdnUrl,
-                    version: "ghpages",
-                    storedState: simState,
-                    frameCounter: 1,
-                    options: {
-                        "theme": "green",
-                        "player": ""
-                    },
-                    id: "green-" + Math.random()
-                }
-                postMessage(runMsg);
-            }
-
-            function stopSim() {
-                postMessage({
-                    type: "stop"
-                });
-                started = false;
-            }
-
-            try {
-                simState = JSON.parse(localStorage["simstate"])
-            } catch (e) {
-                simState = {}
-            }
-            setInterval(function () {
-                if (simStateChanged)
-                    localStorage["simstate"] = JSON.stringify(simState)
-                simStateChanged = false
-            }, 200)
-
-            function setState(st) {
-                document.getElementById("root").setAttribute("data-state", st);
-            }
-
-            window.addEventListener('message', function (ev) {
-                var d = ev.data
-                if (d.type == "ready") {
-                    var loader = document.getElementById("loader");
-                    if (loader)
-                        loader.remove();
-                    isReady = true;
-                    startSim();
-                } else if (d.type == "simulator") {
-                    switch (d.command) {
-                        case "restart":
-                            stopSim();
-                            startSim();
-                            break;
-                        case "setstate":
-                            simState[d.stateKey] = d.stateValue
-                            simStateChanged = true
-                            break;
-                    }
-                }
-            }, false);
-
-            fetchCode();
-            // hide scrollbar
-            window.scrollTo(0, 1);
-        })()
-    </script>
+    <script type="text/javascript" src="https://makecode.com/gh-pages-sim.js"></script>
 </body>
 
 </html>
