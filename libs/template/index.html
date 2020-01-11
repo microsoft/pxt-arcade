@@ -42,7 +42,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: calc(100% - 1em);
+            height: calc(100% - 1.5em);
         }
 
         footer {
@@ -107,7 +107,7 @@
     </style>
 </head>
 
-<body>
+<body id="root">
     <div id="loader" class="lds-ripple">
         <div></div>
         <div></div>
@@ -130,18 +130,122 @@
                 id="path4210" fill="#fff" fill-opacity="1" />
         </svg>
     </div>
-    <iframe
-        src="{{ site.makecode.home_url }}--run?fullscreen=1&nofooter=1&nocookiebanner=1&id=github:{{ site.github.owner_name }}/{{ site.github.repository_name }}"
-        allowfullscreen="allowfullscreen" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
-        frameborder="0">
+    <iframe id="simframe" allowfullscreen="allowfullscreen"
+        sandbox="allow-popups allow-forms allow-scripts allow-same-origin" frameborder="0">
     </iframe>
     <footer>
         Made with ♡ in <a href="https://arcade.makecode.com">MakeCode</a> by <a
             href="https://github.com/{{ site.github.owner_name }}">{{ site.github.owner_name }}</a>.
         <a href="https://github.com/{{ site.github.owner_name }}/{{ site.github.repository_name }}">GitHub</a>
     </footer>
-    <script>
-        window.scrollTo(0, 1);
+    <script type="text/javascript">
+        (function () {
+            var code = "";
+            var isReady = false;
+            var simState = {}
+            var simStateChanged = false
+            var started = false;
+
+            function fetchCode() {
+                sendReq("./static/binary.js", null, function (c, status) {
+                    if (status != 200)
+                        return;
+                    code = c;
+                    startSim();
+                })
+            }
+
+            function sendReq(url, data, cb) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (xhttp.readyState == 4) {
+                        cb(xhttp.responseText, xhttp.status)
+                    }
+                };
+                xhttp.open(data ? "POST" : "GET", url, true);
+                if (data) {
+                    xhttp.setRequestHeader("Content-Type", "application/json");
+                    xhttp.send(JSON.stringify(data))
+                } else {
+                    xhttp.send();
+                }
+            }
+
+            function startSim() {
+                if (!code || !isReady || started)
+                    return
+                setState("run");
+                started = true;
+                const runMsg = {
+                    type: "run",
+                    parts: [],
+                    code: code,
+                    partDefinitions: {},
+                    cdnUrl: "{{ site.makecode.cdn_url }}",
+                    version: "ghpages",
+                    storedState: simState,
+                    frameCounter: 1,
+                    options: {
+                        "theme": "green",
+                        "player": ""
+                    },
+                    id: "green-" + Math.random()
+                }
+                const frame = document.getElementById("simframe");
+                frame.contentWindow.postMessage(runMsg, "*");
+            }
+
+            function stopSim() {
+                const frame = document.getElementById("simframe");
+                frame.contentWindow.postMessage({
+                    type: "stop"
+                }, "*");
+                started = false;
+            }
+
+            try {
+                simState = JSON.parse(localStorage["simstate"])
+            } catch (e) {
+                simState = {}
+            }
+            setInterval(function () {
+                if (simStateChanged)
+                    localStorage["simstate"] = JSON.stringify(simState)
+                simStateChanged = false
+            }, 200)
+
+            function setState(st) {
+                document.getElementById("root").setAttribute("data-state", st);
+            }
+
+            window.addEventListener('message', function (ev) {
+                var d = ev.data
+                if (d.type == "ready") {
+                    document.getElementById("loader").remove();
+                    isReady = true;
+                    startSim();
+                } else if (d.type == "simulator") {
+                    switch (d.command) {
+                        case "restart":
+                            stopSim();
+                            startSim();
+                            break;
+                        case "setstate":
+                            simState[d.stateKey] = d.stateValue
+                            simStateChanged = true
+                            break;
+                    }
+                } else {
+                    console.log(d)
+                }
+            }, false);
+
+            // only load the iframe once we've set up the message listener
+            fetchCode();
+            document.getElementById("simframe")
+                .setAttribute("src", "{{ site.makecode.sim_url }}");
+            window.scrollTo(0, 1);
+        })()
     </script>
 </body>
 
