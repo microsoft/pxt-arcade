@@ -100,7 +100,7 @@ game.onUpdateInterval(1000, function () {
 
 ## Step 4
 
-Over in the ``||math:Math||`` drawer, pick up a ``||math: pick random||`` and put it in ``vx`` slot for the projectile. In ``||math:pick random||`` change the first `0` to `-50` and the second from `10` to `50`. Dupicate this block and put its copy in the slot for ``vy``.
+Over in the ``||math:Math||`` drawer, pick up a ``||math: pick random||`` and put it in ``vx`` slot for the projectile. In ``||math:pick random||`` change the first `0` to `-50` and the second from `10` to `50`. Duplicate this block and put its copy in the slot for ``vy``.
 
 ```blocks
 let projectile: Sprite = null
