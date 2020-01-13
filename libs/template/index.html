@@ -42,7 +42,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: calc(100% - 1em);
+            height: calc(100% - 1.5em);
+            border: none;
         }
 
         footer {
@@ -107,7 +108,7 @@
     </style>
 </head>
 
-<body>
+<body id="root">
     <div id="loader" class="lds-ripple">
         <div></div>
         <div></div>
@@ -130,19 +131,15 @@
                 id="path4210" fill="#fff" fill-opacity="1" />
         </svg>
     </div>
-    <iframe
-        src="{{ site.makecode.home_url }}--run?fullscreen=1&nofooter=1&nocookiebanner=1&id=github:{{ site.github.owner_name }}/{{ site.github.repository_name }}"
-        allowfullscreen="allowfullscreen" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
-        frameborder="0">
+    <iframe id="simframe" allowfullscreen="allowfullscreen"
+        sandbox="allow-popups allow-forms allow-scripts allow-same-origin">
     </iframe>
-    <footer>
+    <footer id="footer">
         Made with ♡ in <a href="https://arcade.makecode.com">MakeCode</a> by <a
             href="https://github.com/{{ site.github.owner_name }}">{{ site.github.owner_name }}</a>.
         <a href="https://github.com/{{ site.github.owner_name }}/{{ site.github.repository_name }}">GitHub</a>
     </footer>
-    <script>
-        window.scrollTo(0, 1);
-    </script>
+    <script type="text/javascript" src="https://makecode.com/gh-pages-sim.js"></script>
 </body>
 
 </html>
