@@ -7,7 +7,7 @@
     },
     "files": [
         "index.html",
-        "assets/loader.js",
-        "assets/index.html"
+        "assets/index.html",
+        "assets/js/loader.js"
     ]
 }
