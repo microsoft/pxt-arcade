@@ -22,6 +22,9 @@ function makeCodeRun(options) {
             code.replace(/^\/\/\s+meta=([^\n]+)\n/m, function (m, metasrc) {
                 meta = JSON.parse(metasrc);
             })
+            var vel = document.getElementById("version");
+            if (meta.version && vel)
+                vel.innerText = "v" + meta.version;
             // load simulator with correct version
             document.getElementById("simframe")
                 .setAttribute("src", meta.simUrl);
