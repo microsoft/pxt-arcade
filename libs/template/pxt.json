@@ -6,6 +6,8 @@
         "device": "file:../device"
     },
     "files": [
-        "index.html"
+        "index.html",
+        "assets/index.html",
+        "assets/js/loader.js"
     ]
 }
