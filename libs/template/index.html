@@ -28,7 +28,7 @@
     <link rel="apple-touch-icon" href="./icon.png">
     <link rel="icon" type="image/png" href="./icon.png">
     <link rel="shortcut icon" href="./icon.png">
-    <script type="text/javascript" src="./assets/js/loader.js"></script>
+    <script type="text/javascript" src="./assets/js/loader.js?v={{ site.github.build_revision }}"></script>
     <style>
         body {
             background: black;
@@ -140,7 +140,7 @@
             href="https://github.com/{{ site.github.owner_name }}">{{ site.github.owner_name }}</a>.
         <a href="https://github.com/{{ site.github.owner_name }}/{{ site.github.repository_name }}">GitHub</a>
     </footer>
-    <script type="text/javascript">makeCodeRun({ assetsPath: "./assets" })</script>
+    <script type="text/javascript">makeCodeRun({ js: "./assets/js/binary.js?v={{ site.github.build_revision }}" })</script>
 </body>
 
 </html>

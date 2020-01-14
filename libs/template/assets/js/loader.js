@@ -14,7 +14,7 @@ function makeCodeRun(options) {
 
     // helpers
     function fetchCode() {
-        sendReq(options.assetsPath + "/js/binary.js", function (c, status) {
+        sendReq(options.js, function (c, status) {
             if (status != 200)
                 return;
             code = c;
