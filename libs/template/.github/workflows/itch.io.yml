@@ -1,0 +1,29 @@
+# Workflow that pushes compiled game to itch.io
+# Add a secret BUTLER_API_KEY to the project to enable uploading.
+# If needed update user and project name in script.
+name: itch.io
+on: 
+  push:
+    branches: master
+    paths: assets/**
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: install butler
+        run: |
+          curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+          unzip butler.zip
+          chmod +x butler
+      - name: push to itch.io
+        run: |
+          if [ "$BUTLER_API_KEY" != "" ]; then
+            ./butler push assets $ITCH_IO_PROJECT:$ITCH_IO_CHANNEL --userversion-file assets/version.txt
+          fi
+        env:
+          # Follow https://itch.io/docs/butler/login.html and butler key in repository secrets
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+          # the user/project of itch.io project
+          ITCH_IO_PROJECT: ${{ github.repository }}
+          ITCH_IO_CHANNEL: HTML

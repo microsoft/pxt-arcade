@@ -6,6 +6,10 @@
         "device": "file:../device"
     },
     "files": [
-        "index.html"
+        "index.html",
+        "assets/loader.js",
+        "assets/index.html",
+        "assets/version.txt",
+        ".github/workflows/itch.io.yml"
     ]
 }
