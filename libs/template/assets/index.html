@@ -20,8 +20,12 @@
             height: 100%;
             border: none;
         }
-    </style>
-    <style>
+        #fullscreen {
+            position: absolute;
+            right: 0.25rem;
+            bottom: 0;
+            cursor: pointer;
+        }
         .lds-ripple {
             width: 80px;
             height: 80px;
@@ -93,6 +97,7 @@
     <iframe id="simframe" allowfullscreen="allowfullscreen"
         sandbox="allow-popups allow-forms allow-scripts allow-same-origin">
     </iframe>
+    <div id="fullscreen">⇲</div>
     <script type="text/javascript">
 makeCodeRun({ js: "./js/binary.js"})
         </script>
