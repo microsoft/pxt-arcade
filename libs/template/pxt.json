@@ -7,6 +7,7 @@
     },
     "files": [
         "index.html",
+        ".gitattributes",
         "assets/index.html",
         "assets/js/loader.js"
     ]

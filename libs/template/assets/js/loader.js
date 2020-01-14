@@ -14,7 +14,7 @@ function makeCodeRun(options) {
 
     // helpers
     function fetchCode() {
-        sendReq(options.assetsPath + "/js/binary.js", function (c, status) {
+        sendReq(options.js, function (c, status) {
             if (status != 200)
                 return;
             code = c;
@@ -22,9 +22,13 @@ function makeCodeRun(options) {
             code.replace(/^\/\/\s+meta=([^\n]+)\n/m, function (m, metasrc) {
                 meta = JSON.parse(metasrc);
             })
+            var vel = document.getElementById("version");
+            if (meta.version && vel)
+                vel.innerText = "v" + meta.version;
             // load simulator with correct version
             document.getElementById("simframe")
                 .setAttribute("src", meta.simUrl);
+            initFullScreen();
         })
     }
 
@@ -116,5 +120,15 @@ function makeCodeRun(options) {
                 localStorage["simstate"] = JSON.stringify(simState)
             simStateChanged = false
         }, 200)
+    }
+    
+    function initFullScreen() {
+        var sim = document.getElementById("simframe");
+        var fs = document.getElementById("fullscreen");
+        if (fs && sim.requestFullscreen) {
+            fs.onclick = function() { sim.requestFullscreen(); }
+        } else if (fs) {
+            fs.remove();
+        }
     }
 }
