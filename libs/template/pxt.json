@@ -8,8 +8,6 @@
     "files": [
         "index.html",
         "assets/loader.js",
-        "assets/index.html",
-        "assets/version.txt",
-        ".github/workflows/itch.io.yml"
+        "assets/index.html"
     ]
 }
