@@ -6,9 +6,7 @@ This page describes various ways to publish your game and have friends play them
 
 The simplest way to publish your game is to press the **Share** button in the editor. It will create a unique URL that loads this game. This is a great to get started and is friction free.
 
-## GitHub repository
-
-### ~
+### ~ hint
 
 #### Beta only
 
@@ -16,16 +14,27 @@ The following features are available in https://arcade.makecode.com/beta only.
 
 ### ~
 
+## GitHub repository
+
 The downside of the default share is that the link changes on each publishing. If you plan to iterate on your game, you can use GitHub to improve your experience. By publishing to GitHub, you will have a stable URL with a full screen experience.
 
 * in MakeCode, click on the **GitHub** button
 * commit your changes
 * create a release, whenever you want to update your online game
 
+An example of exported game can be found at https://pelikhan.github.io/falling-duck/.
+
 ## Itch.io
 
 [itch.io](https://itch.io) is a popular indie game web site. 
-The following instructions will update your GitHub repository to push your game to itch.io.
+
+### Manual upload
+
+Zip the contents of the ``assets`` folder and upload them into your itch.io project. Make sure to mark your channel as ``HTML``.
+
+### Automated upload
+
+You can also consider your GitHub repository to upload your game to itch.io automatically on each release.
 
 * add a ``.github/workflows/itch.io.yml`` file in your repository
 with the following content
