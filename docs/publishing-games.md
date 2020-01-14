@@ -8,6 +8,14 @@ The simplest way to publish your game is to press the **Share** button in the ed
 
 ## GitHub repository
 
+### ~
+
+#### Beta only
+
+The following features are available in https://arcade.makecode.com/beta only.
+
+### ~
+
 The downside of the default share is that the link changes on each publishing. If you plan to iterate on your game, you can use GitHub to improve your experience. By publishing to GitHub, you will have a stable URL with a full screen experience.
 
 * in MakeCode, click on the **GitHub** button
