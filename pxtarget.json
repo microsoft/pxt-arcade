@@ -397,7 +397,8 @@
         "qrCode": true,
         "shareFinishedTutorials": true,
         "nameProjectFirst": true,
-        "githubEditor": true
+        "githubEditor": true,
+        "githubCompiledJs": true
     },
     "unsupportedBrowsers": [
         {
