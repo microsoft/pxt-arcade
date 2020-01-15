@@ -5,6 +5,10 @@
 
 This repo contains an editor built with [Microsoft MakeCode (PXT)](https://github.com/microsoft/pxt).
 
+## Creating and editing a package
+
+In the editor, you will find a GitHub icon next to the save icon. Use the GitHub integration to build a libray package. You do not need to install the local dev server; everything can happen in the editor.
+
 ## Local server setup
 
 This setup gives you a local version of the editor and the ability to load packages from your machine. This is the setup to develop new packages.
@@ -39,24 +43,6 @@ This command launches a local web server. Note that this web server is meant for
 ```
 npm run serve
 ```
-
-### Creating and editing a package
-
-* go to ``/projects`` under the ``pxt-arcade`` folder
-* clone your package repo, say ``pxt-helloworld``
-* launch the server with ``npm run serve`` from the ``pxt-arcade`` folder using ``npm serve``
-* create a new project
-* go to **project settings** and click on **Edit settings as text**
-* add an entry in the dependency section that points to your project
-```
-    "dependencies": {
-        "circuit-playground": "*",
-        "helloworld": "file:../pxt-helloworld"
-    },
-```
-* click on the **Blocks** icon to reload the blocks.
-
-Once this project is setup, simply reload the editor after making changes on disk.
 
 ### How to create sprite packs
 
