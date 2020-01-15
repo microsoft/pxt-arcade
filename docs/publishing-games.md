@@ -18,9 +18,10 @@ The following features are available in https://arcade.makecode.com/beta only.
 
 The downside of the default share is that the link changes on each publishing. If you plan to iterate on your game, you can use GitHub to improve your experience. By publishing to GitHub, you will have a stable URL with a full screen experience.
 
-* in MakeCode, click on the **GitHub** button
+* in MakeCode, click on the **GitHub** button (next to the **Save** button)
 * commit your changes
-* create a release, whenever you want to update your online game
+* click **create release** to upload the compiled project to your repository
+* click **open project** to navigate to the GitHub pages of your repository (https://OWNER.github.io/REPOSITORY_NAME for repo https://github.com/OWNER/REPOSITORY_NAME)
 
 An example of exported game can be found at https://pelikhan.github.io/falling-duck/.
 
