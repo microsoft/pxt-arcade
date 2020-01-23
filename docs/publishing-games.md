@@ -23,7 +23,7 @@ The downside of the default share is that the link changes on each publishing. I
 * click **create release** to upload the compiled project to your repository
 * click **open project** to navigate to the GitHub pages of your repository (https://OWNER.github.io/REPOSITORY_NAME for repo https://github.com/OWNER/REPOSITORY_NAME)
 
-An example of exported game can be found at https://pelikhan.github.io/falling-duck/.
+An example of exported game can be found at https://microsoft.github.io/pxt-kickoff/.
 
 ### Embed and No Footer
 
@@ -39,7 +39,7 @@ For example, these can be used when embedding the page on another platform simil
 <div>
   <iframe
     style="position:absolute;top:0;left:0;width:100%;height:100%;"
-    src="https://pelikhan.github.io/falling-duck/?nofooter=1&embed=1"
+    src="https://microsoft.github.io/pxt-kickoff/?embed=1&nofooter=1"
     allowfullscreen="allowfullscreen"
     sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
     frameborder="0"
