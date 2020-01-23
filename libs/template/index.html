@@ -169,12 +169,14 @@
             var root = document.querySelector("#root");
 
             if (noFooter) {
-                const footer = document.querySelector("#footer")
-                root.className += " nofooter";
-                footer && footer.remove();
+                var footer = document.querySelector("#footer");
+                if (root)
+                    root.className += " nofooter";
+                if (footer)
+                    footer.remove();
             }
 
-            if (embed) {
+            if (embed && root) {
                 root.className += " embed";
             }
         }
