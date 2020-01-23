@@ -25,9 +25,31 @@ The downside of the default share is that the link changes on each publishing. I
 
 An example of exported game can be found at https://pelikhan.github.io/falling-duck/.
 
+### Embed and No Footer
+
+The website generated above supports a few query parameters.
+These can be added to the end of the url after a `?` to change what is shown.
+
+* `nofooter=1`: removes the footer from the page so only the simulator is shown
+* `embed=1`: makes the background transparent for use when embedding the page
+
+For example, these can be used when embedding the page on another platform similar to the share page:
+
+```html
+<div>
+  <iframe
+    style="position:absolute;top:0;left:0;width:100%;height:100%;"
+    src="https://pelikhan.github.io/falling-duck/?nofooter=1&embed=1"
+    allowfullscreen="allowfullscreen"
+    sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
+    frameborder="0"
+  ></iframe>
+</div>
+```
+
 ## Itch.io
 
-[itch.io](https://itch.io) is a popular indie game web site. 
+[itch.io](https://itch.io) is a popular indie game web site.
 
 ### Manual upload
 
@@ -45,7 +67,7 @@ with the following content
 # Add a secret BUTLER_API_KEY to the project to enable uploading.
 # If needed update user and project name in script.
 name: itch.io
-on: 
+on:
   push:
     branches: master
     paths: assets/**
