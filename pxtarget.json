@@ -386,7 +386,8 @@
             "snippetBuilder",
             "experimentalHw",
             "recipes",
-            "alwaysGithubItemBlocks"
+            "alwaysGithubItemBlocks",
+            "blocksCollapsing"
         ],
         "extendEditor": true,
         "simScreenshot": true,
