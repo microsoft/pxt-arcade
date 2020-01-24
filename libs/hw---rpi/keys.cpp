@@ -275,4 +275,11 @@ void initKeys() {
     pthread_detach(disp);
 }
 
+//% expose
+void setupButton(int buttonId, int key) {
+    (void)buttonId;
+    (void)key;
+    // not needed on RPi
+}
+
 } // namespace pxt
