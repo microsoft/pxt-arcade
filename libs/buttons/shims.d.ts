@@ -64,12 +64,6 @@ declare interface Button {
      */
     //% shim=ButtonMethods::id
     id(): int32;
-
-    /**
-     * Gets the pressure level on the button 0 to 512.
-     */
-    //% shim=ButtonMethods::pressureLevel
-    pressureLevel(): int32;
 }
 
 // Auto-generated. Do not edit. Really.
