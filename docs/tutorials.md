@@ -60,7 +60,7 @@
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/simple-extensions.png",
   "largeImageUrl": "/static/tutorials/simple-extensions.gif",
-  "videoUrl": "/static/tutorials/simple-extensions.mp4",
+  "videoUrl": "/static/tutorials/simple-extensions.mp4"
 }, {
   "name": "Maze",
   "description": "Learn the basics of creating a maze",
