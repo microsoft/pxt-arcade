@@ -13,7 +13,8 @@
         "name": "Blocks Games",
         "url": "/blocks-games",
         "imageUrl": "/static/blocks-games/duck.png",
-        "largeImageUrl": "/static/blocks-games/duck.gif"
+        "largeImageUrl": "/static/blocks-games/duck.gif",
+        "videoUrl": "/static/blocks-games/duck.mp4"
     },
     {
         "name": "JavaScript Games",
