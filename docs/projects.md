@@ -20,7 +20,7 @@
         "url": "/javascript-games",
         "imageUrl": "/static/javascript-games/planet-putt-putt.png",
         "largeImageUrl": "/static/javascript-games/planet-putt-putt.gif",
-        "videoUrl": "/static/javascript-games/bouncer-bucket.mp4"
+        "videoUrl": "/static/javascript-games/planet-putt-putt.mp4"
     },
     {
         "name": "Community Games",
