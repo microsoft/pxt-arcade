@@ -39,7 +39,8 @@
         "name": "Graphics and Math",
         "url": "/graphics-math",
         "imageUrl": "/static/graphics-math/fireworks.png",
-        "largeImageUrl": "/static/graphics-math/fireworks.gif"
+        "largeImageUrl": "/static/graphics-math/fireworks.gif",
+        "videoUrl": "/static/graphics-math/fireworks.mp4"
     },
     {
         "name": "Lessons",
