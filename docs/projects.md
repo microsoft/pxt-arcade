@@ -27,7 +27,8 @@
         "name": "Community Games",
         "url": "/community",
         "imageUrl": "/static/community/salvo/salvo.png",
-        "largeImageUrl": "/static/community/salvo/salvo.gif"
+        "largeImageUrl": "/static/community/salvo/salvo.gif",
+        "videoUrl": "/static/community/salvo/salvo.mp4"
     },
     {
         "name": "Game Design Concepts",
