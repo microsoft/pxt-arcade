@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "pxt-common-packages": "6.18.4",
-    "pxt-core": "5.32.11",
+    "pxt-core": "5.32.13",
     "@jacdac/jacdac-ts": "^0.0.9"
   },
   "optionalDependencies": {
