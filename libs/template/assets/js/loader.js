@@ -23,8 +23,12 @@ function makeCodeRun(options) {
                 meta = JSON.parse(metasrc);
             })
             var vel = document.getElementById("version");
-            if (meta.version && vel)
-                vel.innerText = "v" + meta.version;
+            if (meta.version && vel) {
+                var ap = document.createElement("a");
+                ap.href = "https://github.com/pelikhan/madburger/releases/tag/v" + meta.version;
+                ap.innerText = "v" + meta.version;
+                vel.appendChild(ap);
+            }
             // load simulator with correct version
             document.getElementById("simframe")
                 .setAttribute("src", meta.simUrl);
