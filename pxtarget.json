@@ -385,7 +385,6 @@
             "debugExtensionCode",
             "snippetBuilder",
             "experimentalHw",
-            "recipes",
             "tutorialBlocksDiff",
             "blocksCollapsing"
         ],
@@ -401,7 +400,8 @@
         "githubEditor": true,
         "githubCompiledJs": true,
         "chooseLanguageRestrictionOnNewProject": true,
-        "openProjectNewTab": true
+        "openProjectNewTab": true,
+        "recipes": true
     },
     "unsupportedBrowsers": [
         {

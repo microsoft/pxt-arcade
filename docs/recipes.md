@@ -18,6 +18,12 @@
 ```codecard
 [
 {
+  "name": "Shark Splash",
+  "description": "SHARK",
+  "url": "/recipes/shark-splash/01-character",
+  "cardType": "tutorial"
+},
+{
   "name": "Walking Hero",
   "description": "Learn about how characters are represented in games by making your own. New Concepts: Sprites, The image editor, Moving a sprite",
   "url": "/concepts/walking-hero",
