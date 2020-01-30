@@ -399,7 +399,8 @@
         "shareFinishedTutorials": true,
         "nameProjectFirst": true,
         "githubEditor": true,
-        "githubCompiledJs": true
+        "githubCompiledJs": true,
+        "chooseLanguageRestrictionOnNewProject": true
     },
     "unsupportedBrowsers": [
         {
