@@ -386,7 +386,7 @@
             "snippetBuilder",
             "experimentalHw",
             "recipes",
-            "alwaysGithubItemBlocks",
+            "tutorialBlocksDiff",
             "blocksCollapsing"
         ],
         "extendEditor": true,
