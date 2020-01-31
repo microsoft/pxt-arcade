@@ -143,5 +143,5 @@ Now let's add code to destroy the enemies with your projectiles! Or, if you're f
 
 |      |      |      |
 |:----:|:----:|:----:|
-|  [![Projectiles](/static/recipes/03-projectiles.gif)](#recipe:/recipes/shark-splash/03-projectiles) | [![Moving enemies](/static/recipes/02-A-enemies.gif)](#recipe:/recipes/shark-splash/02-A-enemies) | [![Background](/static/recipes/04-background.png)](#recipe:/recipes/04-background) |
-| [**Projectile effects**](#recipe:/recipes/shark-splash/03-projectiles) | [**Moving enemies**](#recipe:/recipes/shark-splash/02-A-enemies) | [**Design a background**](#recipe:/recipes/shark-splash/04-background) |
+|  [![Projectiles](/static/recipes/03-projectiles.gif)](#recipe:/recipes/shark-splash/03-projectiles) | [![Add lives](/static/recipes/02-C-enemies.gif)](#recipe:/recipes/shark-splash/02-C-enemies) | [![Background](/static/recipes/04-background.png)](#recipe:/recipes/04-background) |
+| [**Projectile effects**](#recipe:/recipes/shark-splash/03-projectiles) | [**Add lives**](#recipe:/recipes/shark-splash/02-C-enemies) | [**Design a background**](#recipe:/recipes/shark-splash/04-background) |

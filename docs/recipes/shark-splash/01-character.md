@@ -106,9 +106,10 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Conclusion @unplugged
 
-Next, let's create some enemies for our hero to fight or set the scene with a background image!
+Now that you have a hero, let's customize your game. Maybe you want to add some villains who are attacking your character, or maybe you want to build the setting of your game--it's up to you!
 
 | |      | |      | |
 |--|:----:|-- |:----:|--|
 | &emsp;&emsp;&emsp;&emsp; | [![Enemies](/static/recipes/02-enemies.gif)](#recipe:/recipes/shark-splash/02-enemies) | &emsp;&emsp; | [![Background](/static/recipes/04-background.png)](#recipe:/recipes/shark-splash/04-background) | &emsp;&emsp;&emsp;&emsp; |
 | | [**Create enemies**](#recipe:/recipes/shark-splash/02-enemies) | | [**Design a background**](#recipe:/recipes/shark-splash/04-background) | |
+| | An enemy appears! Fight! | | Draw a world for your hero to explore | |

@@ -18,34 +18,11 @@
 ```codecard
 [
 {
-  "name": "Shark Splash",
-  "description": "SHARK",
+  "name": "Shark Attack",
+  "description": "Design a shooter game! We'll start by creating a hero that shoots projectiles, then you can customize the game with enemies, or a detailed setting.",
   "url": "/recipes/shark-splash/01-character",
-  "cardType": "tutorial"
-},
-{
-  "name": "Creating Enemies",
-  "description": "BAD SHARK",
-  "url": "/recipes/shark-splash/02-enemies",
-  "cardType": "tutorial"
-},
-{
-  "name": "Making the Enemies Move",
-  "description": "MOVE SHARK",
-  "url": "/recipes/shark-splash/02-A-enemies",
-  "cardType": "tutorial"
-},
-{
-  "name": "Using Multiple Enemy Images",
-  "description": "PRETTY SHARK",
-  "url": "/recipes/shark-splash/02-B-enemies",
-  "cardType": "tutorial"
-},
-{
-  "name": "Make Enemies Damage the Player",
-  "description": "DANGER SHARK",
-  "url": "/recipes/shark-splash/02-C-enemies",
-  "cardType": "tutorial"
+  "cardType": "tutorial",
+  "imageUrl": "/static/recipes/01-character.gif"
 },
 {
   "name": "Walking Hero",
