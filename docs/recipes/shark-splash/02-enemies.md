@@ -1,4 +1,4 @@
-# Creating enemey sprites
+# Creating Enemy Sprites
 
 ## Introduction @unplugged
 
@@ -22,6 +22,7 @@ grey square to open the sprite editor and draw an image for the enemy.
 ```blocks
 let enemySprite: Sprite = null
 game.onUpdateInterval(500, function () {
+    // @highlight
     enemySprite = sprites.create(img`
         . . . . . . . . . . . c c . . .
         . . . . . . . c c c c 6 3 c . .
@@ -69,6 +70,7 @@ game.onUpdateInterval(500, function () {
         c 5 5 5 5 c 5 5 5 5 c 4 c 5 c .
         . c c c c c c c c c . . c c c .
     `, SpriteKind.Enemy)
+    // @highlight
     enemySprite.setPosition(0, 0)
 })
 ```
@@ -99,6 +101,7 @@ game.onUpdateInterval(500, function () {
         c 5 5 5 5 c 5 5 5 5 c 4 c 5 c .
         . c c c c c c c c c . . c c c .
     `, SpriteKind.Enemy)
+    // @highlight
     enemySprite.setPosition(Math.randomRange(0, 160), 0)
 })
 ```
@@ -129,6 +132,7 @@ game.onUpdateInterval(500, function () {
         c 5 5 5 5 c 5 5 5 5 c 4 c 5 c .
         . c c c c c c c c c . . c c c .
     `, SpriteKind.Enemy)
+    // @highlight
     enemySprite.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
 })
 ```
@@ -161,7 +165,7 @@ game.onUpdateInterval(500, function () {
     enemySprite.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
 })
 
-
+// @highlight
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
 })
 ```
@@ -200,11 +204,14 @@ game.onUpdateInterval(500, function () {
 
 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    // @highlight
     otherSprite.destroy()
 })
 ```
 
 ## Conclusion @unplugged
 
-next steps
-create enemies
+|      |      |      |
+|:----:|:----:|:----:|
+|  [![Projectiles](/static/recipes/03-projectiles.gif)](#recipe:/recipes/shark-splash/03-projectiles) | [![Moving enemies](/static/recipes/02-a-enemies.gif)](#recipe:/recipes/shark-splash/02-a-enemies) | [![Background](/static/recipes/04-background.png)](#recipe:/recipes/04-background) |
+| [**Projectile effects**](#recipe:/recipes/shark-splash/03-projectiles) | [**Moving enemies**](#recipe:/recipes/shark-splash/02-a-enemies) | [**Design a background**](#recipe:/recipes/shark-splash/04-background) |

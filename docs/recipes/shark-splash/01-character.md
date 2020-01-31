@@ -70,7 +70,6 @@ let mySprite = sprites.create(img`
 controller.moveSprite(mySprite)
 ```
 
-
 ## Spawn projectiles
 
 Now lets have our hero shoot some projectiles! Find ``||controller:on A button pressed||`` in ``||controller:Controller||``, and drag it into the workspace.
@@ -80,7 +79,6 @@ Now lets have our hero shoot some projectiles! Find ``||controller:on A button p
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
-
 
 ## Draw your projectile
 
@@ -110,8 +108,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 Next, let's create some enemies for our hero to fight!
 
-
 |      |      |      |
 |:----:|:----:|:----:|
-| [![Walking hero](/static/concepts/walking-hero.png)](#recipe:/concepts/walking-hero) |  [![Walking hero](/static/concepts/picnic-food.png)](#recipe:/concepts/picnic-food) | [![Walking hero](/static/concepts/princess-pizza.png)](#recipe:/concepts/princess-pizza) |
-| [**Create enemies**](#recipe:/concepts/walking-hero) | [**Add background effects**](#recipe:/concepts/picnic-food) | [**Add new projectiles**](#recipe:/concepts/princess-pizza) |
+| [![Enemies](/static/recipes/02-enemies.gif)](#recipe:/recipes/shark-splash/02-enemies) |  [![Projectiles](/static/recipes/03-projectiles.gif)](#recipe:/recipes/shark-splash/03-projectiles) | [![Background](/static/recipes/04-background.png)](#recipe:/recipes/04-background) |
+| [**Create enemies**](#recipe:/recipes/shark-splash/02-enemies) | [**Projectile effects**](#recipe:/recipes/shark-splash/03-projectiles) | [**Design a background**](#recipe:/recipes/shark-splash/04-background) |
