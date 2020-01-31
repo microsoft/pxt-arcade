@@ -30,9 +30,15 @@
   "cardType": "tutorial"
 },
 {
-  "name": "Making the Enemies move",
+  "name": "Making the Enemies Move",
   "description": "MOVE SHARK",
   "url": "/recipes/shark-splash/02-A-enemies",
+  "cardType": "tutorial"
+},
+{
+  "name": "Using Multiple Enemy Images",
+  "description": "PRETTY SHARK",
+  "url": "/recipes/shark-splash/02-B-enemies",
   "cardType": "tutorial"
 },
 {
