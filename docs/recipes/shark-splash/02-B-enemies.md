@@ -5,6 +5,8 @@
 Use the ``||math:percent chance||`` block to assign a random image
 to your enemies.
 
+![Multiple Enemies](/static/recipes/02-B-enemies.gif)
+
 ## Step 1
 
 Drag an ``||sprites:on created||`` block into the workspace. Change the kind
@@ -137,6 +139,9 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 
 ## Conclusion @unplugged
 
-next steps
-create enemies
+Now let's add code to destroy the enemies with your projectiles! Or, if you're feeling creative, add a background to set the scene.
 
+|      |      |      |
+|:----:|:----:|:----:|
+|  [![Projectiles](/static/recipes/03-projectiles.gif)](#recipe:/recipes/shark-splash/03-projectiles) | [![Moving enemies](/static/recipes/02-A-enemies.gif)](#recipe:/recipes/shark-splash/02-A-enemies) | [![Background](/static/recipes/04-background.png)](#recipe:/recipes/04-background) |
+| [**Projectile effects**](#recipe:/recipes/shark-splash/03-projectiles) | [**Moving enemies**](#recipe:/recipes/shark-splash/02-A-enemies) | [**Design a background**](#recipe:/recipes/shark-splash/04-background) |

@@ -52,9 +52,11 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 })
 ```
 
-## Conclusion
+## Conclusion @unplugged
 
-| |      | |      | |
-| |:----:|-- |:----:| |
-| &emsp;&emsp;&emsp;&emsp; | [![Enemies](/static/recipes/02-enemies.gif)](#recipe:/recipes/shark-splash/02-enemies) | &emsp;&emsp; | [![Background](/static/recipes/04-background.png)](#recipe:/recipes/04-background) | &emsp;&emsp;&emsp;&emsp; |
-| | [**Create enemies**](#recipe:/recipes/shark-splash/02-enemies) | | [**Design a background**](#recipe:/recipes/shark-splash/04-background) | |
+Now try making your enemies move or spawning multiple kinds of enemies!
+
+|      |      |      |
+|:----:|:----:|:----:|
+|  [![Moving enemies](/static/recipes/02-A-enemies.gif)](#recipe:/recipes/shark-splash/02-A-enemies)  | [![Multiple enemies](/static/recipes/02-B-enemies.gif)](#recipe:/recipes/shark-splash/02-B-enemies) | [![Background](/static/recipes/04-background.png)](#recipe:/recipes/04-background) |
+| [**Moving enemies**](#recipe:/recipes/shark-splash/02-A-enemies)| [**Multiple enemies**](#recipe:/recipes/shark-splash/02-B-enemies) | [**Design a background**](#recipe:/recipes/shark-splash/04-background) |

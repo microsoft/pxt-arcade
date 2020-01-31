@@ -634,7 +634,7 @@ for (let index = 0; index <= 10; index++) {
 
 ## Update sprite x-position
 
-From ``||math:Math||``, drag the ``||math:0 x 0||`` block into the ``||sprites:x||`` slot of ``||sprites:set mySprite position||``. Change the first number to `16`, and drag the ``||variables:index||`` block into the second number.
+From ``||math:Math||``, drag the ``||math:0 x 0||`` block into the ``||sprites:x||`` slot of ``||sprites:set mySprite position||``. Change the first number to `16`, and drag the ``||variables:index||`` block into the second number. Continue adding decorations until you are satisifed with your scene!
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -816,6 +816,11 @@ for (let index = 0; index <= 10; index++) {
 ```
 
 
-## Conclusion
+## Conclusion @unplugged
 
-Continue adding different types of decorative sprite until you are satisifed with your scene!
+Next, let's create some enemies for our hero to fight!
+
+| |
+|:--:|
+| [![Enemies](/static/recipes/02-enemies.gif)](#recipe:/recipes/shark-splash/02-enemies) |
+| [**Create enemies**](#recipe:/recipes/shark-splash/02-enemies) |

@@ -106,9 +106,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Conclusion @unplugged
 
-Next, let's create some enemies for our hero to fight!
+Next, let's create some enemies for our hero to fight or set the scene with a background image!
 
-|      |      |      |
-|:----:|:----:|:----:|
-| [![Enemies](/static/recipes/02-enemies.gif)](#recipe:/recipes/shark-splash/02-enemies) |  [![Projectiles](/static/recipes/03-projectiles.gif)](#recipe:/recipes/shark-splash/03-projectiles) | [![Background](/static/recipes/04-background.png)](#recipe:/recipes/04-background) |
-| [**Create enemies**](#recipe:/recipes/shark-splash/02-enemies) | [**Projectile effects**](#recipe:/recipes/shark-splash/03-projectiles) | [**Design a background**](#recipe:/recipes/shark-splash/04-background) |
+| |      | |      | |
+|--|:----:|-- |:----:|--|
+| &emsp;&emsp;&emsp;&emsp; | [![Enemies](/static/recipes/02-enemies.gif)](#recipe:/recipes/shark-splash/02-enemies) | &emsp;&emsp; | [![Background](/static/recipes/04-background.png)](#recipe:/recipes/shark-splash/04-background) | &emsp;&emsp;&emsp;&emsp; |
+| | [**Create enemies**](#recipe:/recipes/shark-splash/02-enemies) | | [**Design a background**](#recipe:/recipes/shark-splash/04-background) | |

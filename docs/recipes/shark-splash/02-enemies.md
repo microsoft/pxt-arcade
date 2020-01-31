@@ -4,6 +4,8 @@
 
 Create enemies and spawn them at random locations!
 
+![Enemies](/static/recipes/02-enemies.gif)
+
 ## Step 1
 
 Add an ``||game:on update interval||`` block to the workspace.
@@ -211,7 +213,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## Conclusion @unplugged
 
+Now that you have enemies, let's add code to destroy the enemies with your projectiles! Or you can try your hand at making them move, or spawning different kinds of enemies.
+
 |      |      |      |
 |:----:|:----:|:----:|
-|  [![Projectiles](/static/recipes/03-projectiles.gif)](#recipe:/recipes/shark-splash/03-projectiles) | [![Moving enemies](/static/recipes/02-a-enemies.gif)](#recipe:/recipes/shark-splash/02-a-enemies) | [![Background](/static/recipes/04-background.png)](#recipe:/recipes/04-background) |
-| [**Projectile effects**](#recipe:/recipes/shark-splash/03-projectiles) | [**Moving enemies**](#recipe:/recipes/shark-splash/02-a-enemies) | [**Design a background**](#recipe:/recipes/shark-splash/04-background) |
+|  [![Projectiles](/static/recipes/03-projectiles.gif)](#recipe:/recipes/shark-splash/03-projectiles) | [![Moving enemies](/static/recipes/02-A-enemies.gif)](#recipe:/recipes/shark-splash/02-A-enemies) | [![Multiple enemies](/static/recipes/02-B-enemies.gif)](#recipe:/recipes/shark-splash/02-B-enemies) |
+| [**Projectile effects**](#recipe:/recipes/shark-splash/03-projectiles) | [**Moving enemies**](#recipe:/recipes/shark-splash/02-A-enemies) | [**Multiple enemies**](#recipe:/recipes/shark-splash/02-B-enemies) |
