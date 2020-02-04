@@ -1,11 +1,10 @@
 {
     "name": "game",
-    "additionalFilePath": "../game",
+    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/game---hw",
     "partial": true,
     "dependencies": {
         "settings": "file:../settings",
         "screen---st7735": "file:../screen---st7735",
-        "buttons": "file:../buttons",
         "power": "file:../power"
     }
 }

@@ -9,6 +9,7 @@
         "index.html",
         ".gitattributes",
         "assets/index.html",
-        "assets/js/loader.js"
+        "assets/js/loader.js",
+        ".github/workflows/makecode-release.yml"
     ]
 }

@@ -6,26 +6,29 @@
         "name": "Tutorials",
         "url": "/tutorials",
         "imageUrl": "/static/tutorials/chase-the-pizza.png",
-        "largeImageUrl": "/static/tutorials/chase-the-pizza.gif"
+        "largeImageUrl": "/static/tutorials/chase-the-pizza.gif",
+        "videoUrl": "/static/tutorials/chase-the-pizza.mp4"
     },
     {
         "name": "Blocks Games",
         "url": "/blocks-games",
         "imageUrl": "/static/blocks-games/duck.png",
-        "largeImageUrl": "/static/blocks-games/duck.gif"
+        "largeImageUrl": "/static/blocks-games/duck.gif",
+        "videoUrl": "/static/blocks-games/duck.mp4"
     },
     {
         "name": "JavaScript Games",
         "url": "/javascript-games",
         "imageUrl": "/static/javascript-games/planet-putt-putt.png",
         "largeImageUrl": "/static/javascript-games/planet-putt-putt.gif",
-        "videoUrl": "/static/javascript-games/bouncer-bucket.mp4"
+        "videoUrl": "/static/javascript-games/planet-putt-putt.mp4"
     },
     {
         "name": "Community Games",
         "url": "/community",
         "imageUrl": "/static/community/salvo/salvo.png",
-        "largeImageUrl": "/static/community/salvo/salvo.gif"
+        "largeImageUrl": "/static/community/salvo/salvo.gif",
+        "videoUrl": "/static/community/salvo/salvo.mp4"
     },
     {
         "name": "Game Design Concepts",
@@ -37,7 +40,8 @@
         "name": "Graphics and Math",
         "url": "/graphics-math",
         "imageUrl": "/static/graphics-math/fireworks.png",
-        "largeImageUrl": "/static/graphics-math/fireworks.gif"
+        "largeImageUrl": "/static/graphics-math/fireworks.gif",
+        "videoUrl": "/static/graphics-math/fireworks.mp4"
     },
     {
         "name": "Lessons",
