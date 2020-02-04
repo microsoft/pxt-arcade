@@ -1,0 +1,23 @@
+{
+    "productName": "MakeCode arcade",
+    "shortName": "makecode-arcade",
+    "targetConfigUrl": "https://makecode.com/api/config/arcade/targetconfig",
+    "allowDriveDeploy": true,
+    "windows": {
+        "updateUrl": "https://makecode.com/api/release/arcade/{{version}}",
+        "appIconPath": null,
+        "uninstallerIconUrl": null,
+        "loadingGifPath": null
+    },
+    "macos": {
+        "updateUrl": "https://makecode.com/api/release/arcade/{{version}}/mac64?json=1",
+        "appIconPath": null,
+        "appBundleId": "com.microsoft.makecode-arcade"
+    },
+    "filesToRemove": [
+        "docs/static/courses/csintro[1-4]/",
+        "docs/static/hardware/raspberry-pi",
+        "docs/game-modder",
+        "docs/courses"
+    ]
+}

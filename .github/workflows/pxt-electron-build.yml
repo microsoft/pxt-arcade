@@ -61,12 +61,11 @@ jobs:
       - name: npm install electron wrapper
         run: |
           git clone microsoft/pxt-electron
-          git clone microsoft/pxt-deployment-config
           cd pxt-electron
           npm install
       - name: package electron build
         run: |
-          gulp package -t .. --internalelectron --crowdintoken $CROWDIN_KEY --product ../pxt-deployment-config/electron/arcade/product.json --typings ../node_modules/pxt-core/localtypings
+          gulp package -t .. --internalelectron --crowdintoken $CROWDIN_KEY --product ../product.json --typings ../node_modules/pxt-core/localtypings
       - name: extract electron installer
         run: |
           gulp installer-only -target ..
@@ -110,12 +109,11 @@ jobs:
       - name: npm install electron wrapper
         run: |
           git clone microsoft/pxt-electron
-          git clone microsoft/pxt-deployment-config
           cd pxt-electron
           npm install
       - name: package electron build
         run: |
-          gulp mac-pre-distributable -t .. --internalelectron --crowdintoken $CROWDIN_KEY --product ../pxt-deployment-config/electron/arcade/product.json --typings ../node_modules/pxt-core/localtypings
+          gulp mac-pre-distributable -t .. --internalelectron --crowdintoken $CROWDIN_KEY --product ../product.json --typings ../node_modules/pxt-core/localtypings
       - name: upload app
         run: |
           gulp upload-release --unsigned -r $PXT_RELEASE_REPO -g $GITHUB_TOKEN
