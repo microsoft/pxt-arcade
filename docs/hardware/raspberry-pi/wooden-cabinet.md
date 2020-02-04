@@ -4,7 +4,8 @@ This instructions will let you build a full scale wooden cabinet to run your gam
 
 ### ~ hint
 
-To complete this project, you will need access to power tools. Make sure to follow all security procedures or
+To complete this project, you will need access to power tools. 
+Make sure to follow all security procedures or
 ask a professional for help.
 
 ### ~
