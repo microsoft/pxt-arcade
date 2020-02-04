@@ -5,3 +5,5 @@
     * [Prepping Wires](/hardware/raspberry-pi/cardboard-control-panel/wires)
     * [Assemble](/hardware/raspberry-pi/cardboard-control-panel/assemble)
     * [Raspberry Pi Zero Setup](/hardware/raspberry-pi/cardboard-control-panel/rpi-setup)
+* [Wooden Cabinet](/hardware/raspberry-pi/wooden-cabinet)
+* [MakeCode Wooden Cabinet](/hardware/raspberry-pi/makecode-wooden-cabinet)
