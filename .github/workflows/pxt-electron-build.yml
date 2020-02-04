@@ -15,31 +15,32 @@ jobs:
         node-version: [8.x]
 
     steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: npm install
-        run: |
-          sudo apt-get install xvfb
-          sudo npm install -g pxt
-          npm install
-      - name: pxt ci
-        run: |
-          pxt ci
-        env:
-          CROWDIN_KEY: ${{ secrets.CROWDIN_KEY }}
-          PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
-          PXT_RELEASE_REPO: ${{ secrets.PXT_RELEASE_REPO }}
-          NPM_ACCESS_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
-          CHROME_BIN: chromium-browser
-          DISPLAY: :99.0
-          CI: true
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install
+      run: |
+        sudo apt-get install xvfb
+        sudo npm install -g pxt
+        npm install
+    - name: pxt ci
+      run: |
+        pxt ci
+      env:
+        CROWDIN_KEY: ${{ secrets.CROWDIN_KEY }}
+        PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
+        PXT_RELEASE_REPO: ${{ secrets.PXT_RELEASE_REPO }}
+        NPM_ACCESS_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+        CHROME_BIN: chromium-browser
+        DISPLAY: :99.0
+        CI: true
 
   build-windows-electron:
     name: Create and upload windows electron app
     needs: build-release
+
     runs-on: windows-latest
 
     strategy:
@@ -47,46 +48,47 @@ jobs:
         node-version: [8.x]
 
     steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: npm install target
-        run: |
-          sudo apt-get install xvfb
-          sudo npm install -g pxt
-          sudo npm install -g gulp
-          npm install
-      - name: npm install electron wrapper
-        run: |
-          git clone microsoft/pxt-electron
-          cd pxt-electron
-          npm install
-      - name: package electron build
-        run: |
-          gulp package -t .. --internalelectron --crowdintoken $CROWDIN_KEY --product ../product.json --typings ../node_modules/pxt-core/localtypings
-      - name: extract electron installer
-        run: |
-          gulp installer-only -target ..
-          gulp extract-execution-stub
-          gulp clean-installer
-          gulp set-squirrel-icon --target ..
-      - name: upload app
-        run: |
-          gulp upload-release --unsigned -r $PXT_RELEASE_REPO -g $GITHUB_TOKEN
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install target
+      run: |
+        sudo apt-get install xvfb
+        sudo npm install -g pxt
+        sudo npm install -g gulp
+        npm install
+    - name: npm install electron wrapper
+      run: |
+        git clone microsoft/pxt-electron
+        cd pxt-electron
+        npm install
+    - name: package electron build
+      run: |
+        gulp package -t .. --internalelectron --crowdintoken $CROWDIN_KEY --product ../product.json --typings ../node_modules/pxt-core/localtypings
+    - name: extract electron installer
+      run: |
+        gulp installer-only -target ..
+        gulp extract-execution-stub
+        gulp clean-installer
+        gulp set-squirrel-icon --target ..
+    - name: upload app
+      run: |
+        gulp upload-release --unsigned -r $PXT_RELEASE_REPO -g $GITHUB_TOKEN
 
-        env:
-          CROWDIN_KEY: ${{ secrets.CROWDIN_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
-          PXT_RELEASE_REPO: ${{ secrets.PXT_RELEASE_REPO }}
-          CHROME_BIN: chromium-browser
-          DISPLAY: :99.0
-          CI: true
+      env:
+        CROWDIN_KEY: ${{ secrets.CROWDIN_KEY }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
+        PXT_RELEASE_REPO: ${{ secrets.PXT_RELEASE_REPO }}
+        CHROME_BIN: chromium-browser
+        DISPLAY: :99.0
+        CI: true
 
   build-mac-electron:
     name: Create and upload mac electron app
+
     needs: build-release
     runs-on: darwin-latest
 
@@ -95,34 +97,34 @@ jobs:
         node-version: [8.x]
 
     steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: npm install target
-        run: |
-          sudo apt-get install xvfb
-          sudo npm install -g pxt
-          sudo npm install -g gulp
-          npm install
-      - name: npm install electron wrapper
-        run: |
-          git clone microsoft/pxt-electron
-          cd pxt-electron
-          npm install
-      - name: package electron build
-        run: |
-          gulp mac-pre-distributable -t .. --internalelectron --crowdintoken $CROWDIN_KEY --product ../product.json --typings ../node_modules/pxt-core/localtypings
-      - name: upload app
-        run: |
-          gulp upload-release --unsigned -r $PXT_RELEASE_REPO -g $GITHUB_TOKEN
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install target
+      run: |
+        sudo apt-get install xvfb
+        sudo npm install -g pxt
+        sudo npm install -g gulp
+        npm install
+    - name: npm install electron wrapper
+      run: |
+        git clone microsoft/pxt-electron
+        cd pxt-electron
+        npm install
+    - name: package electron build
+      run: |
+        gulp mac-pre-distributable -t .. --internalelectron --crowdintoken $CROWDIN_KEY --product ../product.json --typings ../node_modules/pxt-core/localtypings
+    - name: upload app
+      run: |
+        gulp upload-release --unsigned -r $PXT_RELEASE_REPO -g $GITHUB_TOKEN
 
-        env:
-          CROWDIN_KEY: ${{ secrets.CROWDIN_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
-          PXT_RELEASE_REPO: ${{ secrets.PXT_RELEASE_REPO }}
-          CHROME_BIN: chromium-browser
-          DISPLAY: :99.0
-          CI: true
+      env:
+        CROWDIN_KEY: ${{ secrets.CROWDIN_KEY }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
+        PXT_RELEASE_REPO: ${{ secrets.PXT_RELEASE_REPO }}
+        CHROME_BIN: chromium-browser
+        DISPLAY: :99.0
+        CI: true
