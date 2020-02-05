@@ -58,7 +58,7 @@ You will also need to cut out the 2 sides of the arcade cabinet.
 
 For each board, 
 
-* cut out 2 slices and glue/pin them to the side
+* cut out 2 strips and glue/pin them to the side
 * use the jig to position the boards 1/4" from the sides.
 
 Once all the boards are secured, attach the upper side of the arcade and you're done!
