@@ -30,7 +30,7 @@ Tools needed
 
 All units are in inches and degree angles. Add 1/4" to the length when a miter is present, 1/2" when 2 miters are present.
 
-| Thickness | Width | Length   | Location | Miter
+| Thickness | Width | Length   | Location | Miter Angle
 | --------- | ----- | -------- | -------- | -------
 | 1/2       | 23    | 59 3/4   | K        | 22 1/2
 | 1/2       | 23    | 24 7/8   | B        | 0
