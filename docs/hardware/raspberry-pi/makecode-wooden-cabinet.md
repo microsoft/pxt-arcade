@@ -44,17 +44,17 @@ All units are in inches and angle in degrees. Add 1/4" to the length when a mite
 | 1/2       | 23    | 6 1/4    | H        | 31
 | 1/2       | 23    | 5        | D        | 25
 
-You will also need to cutout the 2 sides of the arcade cabinet.
+You will also need to cut out the 2 sides of the arcade cabinet.
 
 ## Cut Instructions
 
 * start by cutting and mitering all the cuts set aside
-* cutout the 2 profiles of the arcade. Once you have a side, you can use it as a template to cut out the other one (using a router)
+* cut out the 2 profiles of the arcade. Once you have a side, you can use it as a template to cut out the other one (using a router)
 
 ## Assembly instructions
 
 * create 2 jigs that let you position boards 1/4" from the side
-* cutout various 1" x 1/2" strips needed to secure the boards.
+* cut out various 1" x 1/2" strips needed to secure the boards.
 
 For each board, 
 
