@@ -66,7 +66,7 @@ jobs:
         npm install
     - name: package electron build
       run: |
-        gulp package -t .. --internalelectron --crowdintoken $CROWDIN_KEY --product ../product.json --typings ../node_modules/pxt-core/localtypings
+        gulp package -t .. --internalelectron --crowdintoken $CROWDIN_KEY --typings ../node_modules/pxt-core/localtypings
     - name: extract electron installer
       run: |
         gulp installer-only -target ..
@@ -75,7 +75,7 @@ jobs:
         gulp set-squirrel-icon --target ..
     - name: upload app
       run: |
-        gulp upload-release --unsigned -r $PXT_RELEASE_REPO -g $GITHUB_TOKEN
+        gulp upload-pre-release -r $PXT_RELEASE_REPO -g $GITHUB_TOKEN
 
       env:
         CROWDIN_KEY: ${{ secrets.CROWDIN_KEY }}
@@ -115,10 +115,10 @@ jobs:
         npm install
     - name: package electron build
       run: |
-        gulp mac-pre-distributable -t .. --internalelectron --crowdintoken $CROWDIN_KEY --product ../product.json --typings ../node_modules/pxt-core/localtypings
+        gulp mac-pre-distributable -t .. --internalelectron --crowdintoken $CROWDIN_KEY --typings ../node_modules/pxt-core/localtypings
     - name: upload app
       run: |
-        gulp upload-release --unsigned -r $PXT_RELEASE_REPO -g $GITHUB_TOKEN
+        gulp upload-pre-release -r $PXT_RELEASE_REPO -g $GITHUB_TOKEN
 
       env:
         CROWDIN_KEY: ${{ secrets.CROWDIN_KEY }}
