@@ -28,7 +28,7 @@ Tools needed
 
 ## Cut list
 
-All units are in inches and angle in degrees. Add 1/4" to the length when a miter is present, 1/2" when 2 miters are present.
+All units are in inches and degree angles. Add 1/4" to the length when a miter is present, 1/2" when 2 miters are present.
 
 | Thickness | Width | Length   | Location | Miter
 | --------- | ----- | -------- | -------- | -------
