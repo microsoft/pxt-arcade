@@ -27,7 +27,7 @@ Now, let's try out the firmware.
 - [ ] connect USB power cable. Double check which one you plug in!
 - [ ] connect the USB data cable
 
-You should see the Configuration Program:
+You should see the [Configuration Program](https://github.com/microsoft/pxt-arcade-cabinet-configurator):
 
 ![A screenshot of the configuration game](/static/hardware/raspberry-pi/cardboard-control-panel/configurator.png)
 
