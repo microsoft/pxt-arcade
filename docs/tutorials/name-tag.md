@@ -147,7 +147,7 @@ scene.setBackgroundImage(img`
 
 ## Step 3
 
-Drag a ``|sprites:start screen effect|`` block to add some cool particle animation on your tag.
+Drag a ``||scene:start screen effect||`` block to add some cool particle animation on your tag.
 
 ```blocks
 scene.setBackgroundColor(2)
@@ -280,3 +280,7 @@ effects.confetti.startScreenEffect()
 ## Step 4 @unplugged
 
 Press ``||Download||`` and transfer your name tag to your device!
+
+## Complete
+
+Congratulations, your name tag is complete!

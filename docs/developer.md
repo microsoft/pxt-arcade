@@ -1,5 +1,8 @@
 # Developer Tips and Tricks
 
+If you want to customize and extend the Arcade game experience, or just code you games for better performance,
+this page directs you to several topics with helpul tips and guidance.
+
 ## Finding examples and documentation
 
 There are a number of examples you can try out on the [MakeCode Arcade](@homeurl@) homepage.
@@ -20,6 +23,10 @@ projects, MakeCode has GitHub integration. Read more [here](https://makecode.com
 MakeCode also supports "extensions" (libraries or packages) in projects, so it's possible to split your project
 into multiple repositories or libraries. Find more information [here](https://makecode.com/extensions).
 
+## Game Loop, Physics, and Rendering
+
+Documentation on the core game loop, physics system, and rendering can be found [here](/developer/game-loop).
+
 ## Music and Art
 
 Documentation on how to import and use images in Arcade can be found [here](/developer/images).
@@ -36,9 +43,9 @@ To get help, you can ask the [MakeCode community](https://aka.ms/makecodecommuni
 
 ## Bugs and Features
 
-Please report all bugs and feature requests to [pxt-arcade](https://github.com/Microsoft/pxt-arcade/issues).
+Please report all bugs and feature requests to [pxt-arcade](https://github.com/microsoft/pxt-arcade/issues).
 If you would also like to submit a fix, feel free to open a pull request!
 
-The arcade editor is located in [pxt-arcade](https://github.com/Microsoft/pxt-arcade). The game engine and runtime code is in [pxt-common-packages](https://github.com/Microsoft/pxt-common-packages).
+The arcade editor is located in [pxt-arcade](https://github.com/microsoft/pxt-arcade). The game engine and runtime code is in [pxt-common-packages](https://github.com/microsoft/pxt-common-packages).
 
-Most of the code related to Arcade can be found in the [libs/game](https://github.com/Microsoft/pxt-common-packages/tree/master/libs/game) directory of that repo.
+Most of the code related to Arcade can be found in the [libs/game](https://github.com/microsoft/pxt-common-packages/tree/master/libs/game) directory of that repo.

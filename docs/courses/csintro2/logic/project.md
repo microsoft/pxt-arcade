@@ -24,8 +24,8 @@ Make your own unique games!
 * ``||loops:on game update||`` and ``||loops:on game update every||``
 * ``||loops:while||`` loop
 * ``||functions:Functions||``
-* ``||scene:tile map||``
-* ``||game:ask||`` and ``||game:ask for string with text||`` 
+* ``||scene:tilemap||``
+* ``||game:ask||`` and ``||game:ask for string with text||``
 * ``||logic:and||`` and ``||logic:or||``
 * Numeric Comparisons
 

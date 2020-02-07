@@ -9,3 +9,4 @@ and handheld consoles.
 * [Projects](/projects)
 * [Documentation](/docs)
 * [Hardware](/hardware)
+* [Publishing games](/publishing-games)

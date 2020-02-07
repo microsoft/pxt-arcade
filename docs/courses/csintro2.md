@@ -13,7 +13,7 @@ This course is currently in beta - this means that it is likely to have bugs and
     "url": "/courses/csintro2/functions",
     "imageUrl": "/static/courses/csintro2/functions.gif"
 }, {
-    "name": "Tile Map",
+    "name": "Tilemap",
     "url": "/courses/csintro2/tilemap",
     "imageUrl": "/static/courses/csintro2/tilemap.gif"
 }, {
@@ -52,9 +52,9 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Using Extensions](/courses/csintro2/functions/extensions)
 * [Project](/courses/csintro2/functions/project)
 
-### [Tile Map](/courses/csintro2/tilemap)
+### [Tilemap](/courses/csintro2/tilemap)
 
-* [Tile Map Intro](/courses/csintro2/tilemap/intro)
+* [Tilemap Intro](/courses/csintro2/tilemap/intro)
 * [Interactions](/courses/csintro2/tilemap/interactions)
 * [Using Corgio Extension](/courses/csintro2/tilemap/extensions)
 * [Project](/courses/csintro2/tilemap/project)

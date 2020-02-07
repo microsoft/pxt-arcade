@@ -1,0 +1,11 @@
+{
+    "frames": [
+        "Water",
+        "Lava0",
+        "Lava1",
+        "Hole",
+        "Spike"
+    ],
+    "tags": "tile misc",
+    "blockIdentity": "images._tile"
+}

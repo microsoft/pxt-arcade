@@ -26,13 +26,13 @@
     },
     {
         "name": "Sparky Invaders",
-        "description": "See how you can create a space game with tile maps",
+        "description": "See how you can create a space game with tilemaps",
         "youTubeId": "1GnPTmTzqV0?t=498s",
         "imageUrl": "/static/john-parks-workshop/sparky-invaders.png"
     },
     {
         "name": "Platformer Game Maps",
-        "description": "Create scenes and design game level maps using tiles and tile maps",
+        "description": "Create scenes and design game level maps using tiles and tilemaps",
         "youTubeId": "EAJ9By08IU0?t=394s",
         "imageUrl": "/static/john-parks-workshop/platformer-game-maps.png"
     },

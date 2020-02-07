@@ -18,8 +18,8 @@ Use at least **four** of the following concepts from [structure](/courses/csintr
 * [Loops](/courses/csintro3/structure/loops)
 * [Sprites](/courses/csintro3/structure/sprites)
 * [Projectiles](/courses/csintro3/structure/projectiles)
-* [Tile Maps](/courses/csintro3/structure/tilemaps)
-* [Corgio Extension](/courses/csintro3/structure/extensions)
+* [Tilemaps](/courses/csintro3/structure/tilemaps)
+* [Corgio Extension in JavaScript](/courses/csintro3/structure/extensions)
 * [Namespaces](/courses/csintro3/structure/namespaces)
 
 Use at least **one** of the following concepts from [Functions](/courses/csintro3/functions)
@@ -30,7 +30,7 @@ Use at least **one** of the following concepts from [Functions](/courses/csintro
 Use at least **three** of the following concepts from [Events](/courses/csintro3/events)
 
 * [On Game Update Event](/courses/csintro3/events/intro)
-* [On Update Interval](/courses/csintro3/events/update)
+* [On Game Update Interval](/courses/csintro3/events/update)
 * [Sprite Overlap Events](/courses/csintro3/events/overlap)
 * [Button Press Events](/courses/csintro3/events/buttons)
 * [Info Events](/courses/csintro3/events/info)
@@ -40,13 +40,13 @@ Use at least **one** of the following concepts from [Arrays](/courses/csintro3/a
 * [Arrays of Numbers](/courses/csintro3/arrays/numbers)
 * [Arrays of Sprites](/courses/csintro3/arrays/sprites)
 * [Tiles](/courses/csintro3/arrays/tiles)
-* [Images](/courses/csintro3/arrays/images)
+* [Images Array](/courses/csintro3/arrays/images)
 
 
 
 For each of the above concepts, write a short sentence on how it allows your game to be more interesting or challenging for the player. Focus on the **Design Decisions** you made; what about the way you used the blocks made the game more appealing?
 
-If one of the sections (tile maps, arrays, ...) does not seem to be relevant the game you are creating, then explain why the given section features are omitted in your game (check with instructor)
+If one of the sections (tilemaps, arrays, ...) does not seem to be relevant the game you are creating, then explain why the given section features are omitted in your game (check with instructor)
 
 For each of the above concepts, write a short sentence on how it allows your game to be more interesting or challenging for the player
 

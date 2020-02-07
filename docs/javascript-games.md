@@ -12,7 +12,8 @@ Here are some fun programs for your @boardname@!
         "url":"/javascript-games/planet-putt-putt",
         "cardType": "codeExample",
         "imageUrl": "/static/javascript-games/planet-putt-putt.png",
-        "largeImageUrl": "/static/javascript-games/planet-putt-putt.gif"
+        "largeImageUrl": "/static/javascript-games/planet-putt-putt.gif",
+        "videoUrl": "/static/javascript-games/planet-putt-putt.mp4"
     },
     {
         "name": "Darker Duck",
@@ -20,7 +21,8 @@ Here are some fun programs for your @boardname@!
         "url": "/javascript-games/darker-duck",
         "cardType": "codeExample",
         "imageUrl": "/static/javascript-games/darker-duck.png",
-        "largeImageUrl": "/static/javascript-games/darker-duck.gif"
+        "largeImageUrl": "/static/javascript-games/darker-duck.gif",
+        "videoUrl": "/static/javascript-games/darker-duck.mp4"
     },
     {
         "name": "Ping!",
@@ -28,7 +30,17 @@ Here are some fun programs for your @boardname@!
         "url": "/javascript-games/ping",
         "cardType": "codeExample",
         "imageUrl": "/static/javascript-games/ping.png",
-        "largeImageUrl": "/static/javascript-games/ping.gif"
+        "largeImageUrl": "/static/javascript-games/ping.gif",
+        "videoUrl": "/static/javascript-games/ping.mp4"
+    },
+    {
+        "name": "Delivery",
+        "description": "Get those packages to delivered but be quick or you'll miss the address!",
+        "url": "/javascript-games/delivery",
+        "cardType": "codeExample",
+        "imageUrl": "/static/javascript-games/delivery.png",
+        "largeImageUrl": "/static/javascript-games/delivery.gif",
+        "videoUrl": "/static/javascript-games/delivery.mp4"
     },
     {
         "name": "Caterpillar",
@@ -36,7 +48,17 @@ Here are some fun programs for your @boardname@!
         "url": "/javascript-games/caterpillar",
         "cardType": "codeExample",
         "imageUrl": "/static/javascript-games/caterpillar.png",
-        "largeImageUrl": "/static/javascript-games/caterpillar.gif"
+        "largeImageUrl": "/static/javascript-games/caterpillar.gif",
+        "videoUrl": "/static/javascript-games/caterpillar.mp4"
+    },
+    {
+        "name": "Five Second Games",
+        "description": "A collection of five second games created in the first MakeCode Arcade Game Jam",
+        "url": "/javascript-games/five-second-games",
+        "cardType": "codeExample",
+        "imageUrl": "/static/javascript-games/five-second-games.png",
+        "largeImageUrl": "/static/javascript-games/five-second-games.gif",
+        "videoUrl": "/static/javascript-games/five-second-games.mp4"
     },
     {
         "name": "Cube Land",
@@ -51,7 +73,8 @@ Here are some fun programs for your @boardname@!
         "url":"/javascript-games/particle-effects-demo",
         "cardType": "codeExample",
         "imageUrl": "/static/javascript-games/particle-effects-demo.png",
-        "largeImageUrl": "/static/javascript-games/particle-effects-demo.gif"
+        "largeImageUrl": "/static/javascript-games/particle-effects-demo.gif",
+        "videoUrl": "/static/javascript-games/particle-effects-demo.mp4"
     },
     {
         "name": "Guess the Letter",
@@ -66,7 +89,8 @@ Here are some fun programs for your @boardname@!
         "url":"/javascript-games/bouncer-bucket",
         "cardType": "codeExample",
         "imageUrl": "/static/javascript-games/bouncer-bucket.png",
-        "largeImageUrl": "/static/javascript-games/bouncer-bucket.gif"
+        "largeImageUrl": "/static/javascript-games/bouncer-bucket.gif",
+        "videoUrl": "/static/javascript-games/bouncer-bucket.mp4"
     }
 ]
 ```

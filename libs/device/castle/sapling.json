@@ -2,5 +2,7 @@
     "frames": [
         "Oak",
         "Pine"
-    ]
+    ],
+    "tags": "?tile misc",
+    "blockIdentity": "images._tile"
 }

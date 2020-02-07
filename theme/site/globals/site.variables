@@ -29,23 +29,23 @@
 @black            : #34495e;
 @green            : #2ecc71;
 @grey             : #7f8c8d;
-@orange           : #e67e22;
+@orange           : #F76820;
 @pink             : #E91E63;
-@teal             : #1abc9c;
+@teal             : #028B9B;
 @yellow           : #f1c40f;
 
 /* 32 colors */
 @purple           : #6B4F76;
-@blue             : #74E4EA;
-@beige            : #FFFAE7;
+@blue             : #B1E3DA;
+@beige            : #FEF3E0;
 @salmon           : #E95153;
 
 /*-------------------
     Brand Colors
 --------------------*/
 
-@primaryColor        : @purple;
-@secondaryColor      : @grey;
+@primaryColor        : @orange;
+@secondaryColor      : @orange;
 
 @lightPrimaryColor   : @lightBlue;
 @lightSecondaryColor : @lightGrey;
@@ -58,8 +58,9 @@
    Menu
 --------------------*/
 
-@mainMenuInvertedBackground: @salmon;
-@mainMenuTutorialBackground: @orange;
+@mainMenuInvertedBackground: @orange;
+@mainMenuTutorialBackground: @teal;
+@mainMenuTutorialButtons: @orange;
 
 @mainMenuBlocksJsToggleColor: @primaryColor;
 

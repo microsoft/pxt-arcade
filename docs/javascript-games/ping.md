@@ -12,6 +12,7 @@ or ``||controller:b||`` to lower the number of balls.
 Beware that both of these actions will cost you **2** points!
 
 ```typescript
+const DESTROYED_KEY = "__destroyed";
 const BALL_IMAGE = img`
     . . e e 1 e e e . .
     . e 1 1 d d d d e .
@@ -66,6 +67,7 @@ function createBall() {
     let ball = sprites.create(BALL_IMAGE.clone(), SpriteKind.Enemy);
     ball.vy = Math.randomRange(-20, 20);
     ball.vx = 60 * (Math.percentChance(50) ? 1 : -1);
+    ball.data = {};
 }
 
 game.onUpdate(function () {
@@ -73,7 +75,7 @@ game.onUpdate(function () {
         .allOfKind(SpriteKind.Enemy)
         .forEach(b => {
             // tagged as destroyed
-            if (b.data) return;
+            if (b.data[DESTROYED_KEY]) return;
 
             const scoreRight = b.x < 0;
             const scoreLeft = b.x >= screen.width;
@@ -92,7 +94,7 @@ game.onUpdate(function () {
 
             if (scoreLeft || scoreRight) {
                 b.destroy(effects.disintegrate, 500);
-                b.data = true;
+                b.data[DESTROYED_KEY] = true;
                 control.runInParallel(function () {
                     pause(250);
                     createBall();

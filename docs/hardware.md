@@ -25,16 +25,35 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "description": "It's a badge, it's an arcade, it's a PyBadge",
         "imageUrl": "/static/hardware/pybadge.jpg",
         "url": "https://www.adafruit.com/product/4200",
-        "variant": "hw---samd51",
-        "label": "beta"
+        "variant": "hw---samd51"
     },
     {
         "name": "Adafruit PyGamer",
         "description": "The upgraded PyBadge",
         "imageUrl": "/static/hardware/pygamer.jpg",
         "url": "https://www.adafruit.com/product/4242",
-        "variant": "hw---samd51",
-        "label": "beta"
+        "variant": "hw---samd51"
+    },
+    {
+        "name": "Kitronik ARCADE",
+        "description": "ARCADE is a programmable gamepad for use with MakeCode Arcade.",
+        "imageUrl": "/static/hardware/kitronik.jpg",
+        "url": "https://www.kitronik.co.uk/arcade",
+        "variant": "hw---samd51"
+    },
+    {
+        "name": "Ovobot Xtron",
+        "description": "A programmable microcomputer that can be used for making MakeCode Arcade games.",
+        "imageUrl": "/static/hardware/xtron.jpg",
+        "url": "https://www.ovobot.cn/product/detail/xtron/",
+        "variant": "hw---stm32f401"
+    },
+    {
+        "name": "Adafruit EdgeBadge",
+        "description": "It's the PyBadge with a zest of Machine learning",
+        "imageUrl": "/static/hardware/edgebadge.jpg",
+        "url": "https://www.adafruit.com/product/4400",
+        "variant": "hw---samd51"
     },
     {
         "name": "Adafruit M4",
@@ -64,6 +83,10 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     }
 ]
 ```
+
+## Other ways to play Arcade
+
+* [Makey Makey](/hardware/makey-makey), turn your banana keyboard into an arcade console!
 
 ## Adding Arcade to a New Board
 

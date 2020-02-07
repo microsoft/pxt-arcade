@@ -22,6 +22,12 @@
   "description": "Create a basic dance collision game using sprite overlap events and controller buttons!",
   "url": "/lessons/dance-party",
   "imageUrl": "/static/lessons/dance-party.png"
+},
+{
+  "name": "BlockOut",
+  "description": "Create a projectile collision game",
+  "url": "/lessons/block-out",
+  "imageUrl": "/static/lessons/block-out.png"
 }
 ]
 ```

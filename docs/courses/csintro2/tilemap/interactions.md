@@ -1,13 +1,14 @@
 # Activity: Interactions
 
-Tile maps can be used for more than just a nice way to create a background. In this activity, students will implement their own game of 'mini golf' using the darts extension, similar to the game shown below
+Tilemaps can be used for more than just a nice way to create a background. In this activity, students will implement their own game of 'mini golf' using the darts extension, similar to the game shown below
 
 ![Mini golf example game](/static/courses/csintro2/tilemap/mini-golf.gif)
 
-In this activity, students will use: 
+In this activity, students will use:
+
 * ``||scene:set tile to||``
 * ``||scene:on sprite of kind hits wall||``
-* ``||scene:set tile map to||``
+* ``||scene:set tilemap to||``
 
 ## Example #1: Creating a course
 
@@ -25,33 +26,33 @@ namespace SpriteKind {
 }
 let golfBall: Dart = null
 scene.setTileMap(img`
-e e e e e e e e e e 
-e . . . . . . . . e 
-e . . . . . . . . e 
-e . . . . . . . . e 
-e . . . . . . . . e 
-e . . . . . e . . e 
-e . . . . . e . . e 
-e e e e e e e e e e 
+e e e e e e e e e e
+e . . . . . . . . e
+e . . . . . . . . e
+e . . . . . . . . e
+e . . . . . . . . e
+e . . . . . e . . e
+e . . . . . e . . e
+e e e e e e e e e e
 `)
 scene.setBackgroundColor(7)
 golfBall = darts.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 1 1 1 . . . . . . 
-. . . . . . 1 1 d 1 1 . . . . . 
-. . . . . . 1 1 1 1 1 . . . . . 
-. . . . . . 1 1 1 1 . . . . . . 
-. . . . . . . 1 1 . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . 1 1 1 . . . . . .
+. . . . . . 1 1 d 1 1 . . . . .
+. . . . . . 1 1 1 1 1 . . . . .
+. . . . . . 1 1 1 1 . . . . . .
+. . . . . . . 1 1 . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, SpriteKind.GolfBall, 25, 105)
 golfBall.setTrace()
 golfBall.controlWithArrowKeys()
@@ -75,15 +76,13 @@ Play around with the game for a bit - what happens when the ball hits a wall? Tr
 
 ## Golf Ball Momentum
 
-The golf ball will keep on moving! For example, if the wall is below the ball, it will still move horizontally and maintain it's speed. 
+The golf ball will keep on moving! For example, if the wall is below the ball, it will still move horizontally and maintain it's speed.
 
 When the ball hits a wall, it should stop, so that it can be hit again.
 
 This behavior can be fixed using the ``||scene:on sprite of kind hits wall||`` block, which is an event that occurs whenever the given sprite touches the given wall tile.
 
 ## Student Task #2: Make it stop
-
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-tilemap-longgolf)
 
 1. Start with the code from task #1
 2. Create an ``||scene:on sprite of kind hits wall||`` between the golf ball (kind ``||sprites:GolfBall||``) and the brown wall
@@ -92,12 +91,14 @@ This behavior can be fixed using the ``||scene:on sprite of kind hits wall||`` b
 
 ## Student Task #3: Make a real course
 
-Now that we have a functioning game of mini golf, we should make an interesting course for players to try to make it through. To do so, we will need to create a larger tile map.
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-tilemap-longgolf)
+
+Now that we have a functioning game of mini golf, we should make an interesting course for players to try to make it through. To do so, we will need to create a larger tilemap.
 
 1. Start with the code from task #2
 2. Remove the walls that are currently on the right side of the image
-3. Open the image from the ``||scene:set tile map to||`` block, increase the size of the image to `64x8`, and add brown walls to create your own unique mini golf course
-4. Move the flag's ``||sprites:x||`` coordinate to `960` - this will be closer to the end of this new tile map
+3. Open the image from the ``||scene:set tilemap to||`` block, increase the size of the image to `64x8`, and add brown walls to create your own unique mini golf course
+4. Move the flag's ``||sprites:x||`` coordinate to `960` - this will be closer to the end of this new tilemap
 5. Use the ``||scene:camera follow sprite||`` and ``||darts:myDart sprite||`` blocks to make it so the camera follows the golf ball as it moves across the screen
 6. **Challenge**: add ``||scene:set tile||`` blocks to add new types of tiles that act as decorations (wall off) or obstacles (wall on)
 
@@ -105,9 +106,9 @@ Now that we have a functioning game of mini golf, we should make an interesting 
 darts
 ```
 
-## What did we learn? 
+## What did we learn?
 
-1. Describe how a tile in a tile map differs from a pixel in a sprite image.
-2. Make a hypothesis of how we would make ``||darts:dart||`` objects (like the golf ball) bounce off of tile map walls.
+1. Describe how a tile in a tilemap differs from a pixel in a sprite image.
+2. Make a hypothesis of how we would make ``||darts:dart||`` objects (like the golf ball) bounce off of tilemap walls.
 
 ### [Teacher Material](/courses/csintro2/about/teachers)

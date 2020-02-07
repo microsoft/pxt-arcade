@@ -6,6 +6,7 @@
     * [Cherry Pickr](/lessons/cherry-pickr)
     * [Barrel Dodger](/lessons/barrel-dodger)
     * [Dance Party](/lessons/dance-party)
+    * [BlockOut](/lessons/block-out)
 
 ## Courses
 
@@ -39,5 +40,9 @@
 ## Hardware
 
 * [Hardware](/hardware)
+    * [Errors](/hardware/errors)
     * [Adding New Board](/hardware/adding)
+    * [Raspberry Pi](/hardware/raspberry-pi)
+    * [Makey Makey](/hardware/makey-makey)
+    * [Dev](/hardware/dev)
     * [Debug connector](/hardware/dbg)

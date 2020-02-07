@@ -1,4 +1,4 @@
-# Activity: Tile Map Project
+# Activity: Tilemap Project
 
 Make your own unique games!
 
@@ -23,8 +23,8 @@ Make your own unique games!
 * Controller (dx) and ``||controller:move mySprite with buttons||``
 * ``||loops:on game update||`` and ``||loops:on game update every||``
 * ``||loops:repeat||`` and ``||loops:for||`` loop
-* ``||functions:Functions||`` 
-* ``||scene:set tile map to||``
+* ``||functions:Functions||``
+* ``||scene:set tilemap to||``
 * ``||scene:set tile to||``
 * ``extensions``
 

@@ -616,3 +616,7 @@ girlSprite.setFlag(SpriteFlag.StayInScreen, true);
 controller.moveSprite(girlSprite);
 scene.cameraFollowSprite(girlSprite);
 ```
+
+```package
+color-coded-tilemap
+```

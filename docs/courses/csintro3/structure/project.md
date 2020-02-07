@@ -17,7 +17,7 @@ Make your own unique games!
 * Loops
 * Sprites
 * Projectiles
-* Tile Maps
+* Tilemaps
 * Corgio Extension
 * Namespaces
 

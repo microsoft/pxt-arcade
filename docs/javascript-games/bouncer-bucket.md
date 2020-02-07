@@ -1,6 +1,6 @@
 # Bouncer Bucket
 
-![Ball dropping into a bucket](/static/javascript-games/bouncer-bucket/bouncer-bucket.png)
+![Ball dropping into a bucket](/static/javascript-games/bouncer-bucket.png)
 
 This game drops balls onto the screen and makes them bounce while moving left to right. The purpose of the game is to catch the balls in a bucket before they bounce away and leave the screen. The player scores points for each ball caught. Balls move at different speeds so catching a faster ball scores a higher point value.
 

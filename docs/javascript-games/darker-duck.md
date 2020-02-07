@@ -145,7 +145,7 @@ namespace lighting {
             this.init = true;
 
             let index = 0;
-            game.eventContext().registerFrameHandler(91, () => {
+            game.onShade(() => {
                 this.sources[index].apply();
             })
 

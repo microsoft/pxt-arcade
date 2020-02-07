@@ -45,10 +45,10 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [For Teachers](/courses/csintro3/about/teachers)
 * [Authors](/courses/csintro3/about/authors)
 * [Style](/courses/csintro3/about/style)
+* [Case Study](/courses/csintro3/about/case-study)
 
 ### [Intro](/courses/csintro3/intro)
 
-* [Case Study](/courses/csintro3/intro/case-study)
 * [Initialization](/courses/csintro3/intro/initialization)
 * [Types](/courses/csintro3/intro/types)
 * [User Input](/courses/csintro3/intro/user-input)
@@ -61,8 +61,8 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Loops](/courses/csintro3/structure/loops)
 * [Sprites](/courses/csintro3/structure/sprites)
 * [Projectiles](/courses/csintro3/structure/projectiles)
-* [Tile Maps](/courses/csintro3/structure/tilemaps)
-* [Corgio Extension](/courses/csintro3/structure/extensions)
+* [Tilemaps](/courses/csintro3/structure/tilemaps)
+* [Corgio Extension in JavaScript](/courses/csintro3/structure/extensions)
 * [Namespaces](/courses/csintro3/structure/namespaces)
 * [Case Study Additions](/courses/csintro3/structure/additions)
 * [Project](/courses/csintro3/structure/project)
@@ -72,14 +72,14 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Intro to Functions](/courses/csintro3/functions/intro)
 * [Parameters](/courses/csintro3/functions/parameters)
 * [Return Values](/courses/csintro3/functions/returns)
-* [Commenting Functions](/courses/csintro3/functions/comments)
+* [Function Documentation](/courses/csintro3/functions/comments)
 * [Case Study](/courses/csintro3/functions/case-study)
 * [Project](/courses/csintro3/functions/project)
 
 ### [Events](/courses/csintro3/events)
 
 * [On Game Update Event](/courses/csintro3/events/intro)
-* [On Update Interval](/courses/csintro3/events/update)
+* [On Game Update Interval](/courses/csintro3/events/update)
 * [Sprite Overlap Events](/courses/csintro3/events/overlap)
 * [Info Events](/courses/csintro3/events/info)
 * [Button Press Events](/courses/csintro3/events/buttons)
@@ -92,7 +92,7 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Array Manipulation](/courses/csintro3/arrays/strings)
 * [Arrays of Sprites](/courses/csintro3/arrays/sprites)
 * [Tiles](/courses/csintro3/arrays/tiles)
-* [Images](/courses/csintro3/arrays/images)
+* [Images Array](/courses/csintro3/arrays/images)
 * [Case Study](/courses/csintro3/arrays/case-study)
 * [Project](/courses/csintro3/arrays/project)
 

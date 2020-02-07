@@ -1,19 +1,21 @@
 {
     "frames": [
-        "Grass1",
         "Grass2",
         "Path1",
         "Path2",
         "Path3",
-        "DarkGrass1",
-        "DarkGrass2",
+        "Grass1",
         "Path4",
         "Path5",
         "Path6",
         "Grass3",
-        "DarkGrass3",
         "Path7",
         "Path8",
-        "Path9"
-    ]
+        "Path9",
+        "DarkGrass1",
+        "DarkGrass2",
+        "DarkGrass3"
+    ],
+    "tags": "tile forest",
+    "blockIdentity": "images._tile"
 }

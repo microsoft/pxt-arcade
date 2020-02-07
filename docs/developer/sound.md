@@ -5,7 +5,7 @@
 The high-level music API in arcade creates and processes melodies as a sequence of
 notes following a syntax form for each note. The melodies are authored using the
 `music.Melody` class in arcade which encodes them into a string with this syntax.
-For some examples of formatted melodies, see the [mixer extension/package](https://github.com/Microsoft/pxt-common-packages/blob/master/libs/mixer/melody.ts#L387).
+For some examples of formatted melodies, see the [mixer extension/package](https://github.com/microsoft/pxt-common-packages/blob/master/libs/mixer/melody.ts#L387).
 
 Melodies are constructed with a series of commands outlined below.
 
@@ -37,6 +37,7 @@ For example:
 ### Command: play tone
 
 To play a frequency for a duration in ms:
+
 ```
 !\d+,\d+
 ```
@@ -52,6 +53,7 @@ To set the ADSR envelope for the played sounds:
 ```
 
 Where the four values indicate:
+
 1. "Attack" in ms
 2. "Decay" in ms
 3. "Sustain" volume (0-255)
@@ -125,7 +127,13 @@ To play a sound buffer, use the `music.playInstructions()` API. Buffers can cont
 multiple instructions one after the other, so a single "effect" or "melody" should be
 constructed in a single Buffer.
 
+### ~ hint
+
+#### Getting buffers
+
 To create a `Buffer`, you can use the `control.createBuffer()` API.
+
+### ~
 
 ### Channels
 
@@ -144,6 +152,6 @@ Note that there is currently no way to play sound samples - the buffers below wo
 You can create static buffers using this tagged template literal syntax:
 
 ```typescript
-// The contents of the literal string should be the data in hex-encoding
+// The contents of the literal string should be data in hex-encoding
 const mySound: Buffer = hex`0123456789abcdef`;
 ```

@@ -8,7 +8,7 @@ Try this tutorial!
 
 ## Introduction @unplugged
 
-Flowers make everyone around them happier, especially the bees who get nector from them. To show this, we can create a flower that sends happy little bees back to the hive.
+Flowers make everyone around them happier, especially the bees who get nectar from them. To show this, we can create a flower that sends happy little bees back to the hive.
 
 ![Happy thoughts](/static/tutorials/happy-flower/happy-thoughts.gif)
 
@@ -41,7 +41,7 @@ mySprite = sprites.create(img`
 
 ## Step 2
 
-Find in ``||game:on update every 500 ms||`` and ``||game:Game||``, and drag it into the workspace. Set the time to ``1000 ms``.
+Find an ``||game:on update every 500 ms||`` in ``||game:Game||``, and drag it into the workspace. Set the time to ``1000 ms``.
 
 ```blocks
 let mySprite: Sprite = null
@@ -310,7 +310,12 @@ game.onUpdateInterval(1000, function () {
 
 ## Step 8
 
-Get an ``||logic:if then||`` and put it after the ``||sprites:lifespan||``. Replace the ``true`` with a ``||logic:0 < 0||``. Put a ``||sprites:mySprite x||`` in where the first `0` is. Change the ``||variables:mySprite||`` to ``||variables:projectile||`` and change the ``||sprites:x||`` to ``||sprites:vx (velocity x)||``.
+Congratulations, your happy flower is complete! It will now send back joyful little bees. Go run your program in the simulator and see the bees fly away. Did you notice that some of the bees are fly backwards? Do you want to try something extra? If so, we can have some of the bees fly off facing in the opposite direction. Continue on with the next step.
+
+## Step 9
+
+Let's setup a condition to change the image of the bee when it flys off toward the left.
+Get an ``||logic:if then||`` and put it after the ``||sprites:set projectile lifespan||``. Replace the ``true`` condition in the ``||logic:if then||`` with a ``||logic:0 < 0||``. Put a ``||sprites:mySprite x||`` in where the first `0` is. Change the ``||variables:mySprite||`` to ``||variables:projectile||`` and change the ``||sprites:x||`` to ``||sprites:vx (velocity x)||``.
 
 ```blocks
 let projectile: Sprite = null
@@ -359,9 +364,11 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 9
+## Step 10
 
-In **Advanced** go to ``||images:Images||`` and find the ``||images:flip picture horizontally||``. Pull it out and place it into the ``||logic:if then||``. Now, back in ``||sprites:Sprites||``, get a ``||sprites:mySprite image||`` and place it in the ``||images:flip||`` where ``||variables:picture||`` is. Change the ``||variables:mySprite||`` to ``||variables:projectile||``.
+Go to the Toolbox and open the **Advanced** categories. In ``||images:Images||`` find the ``||images:flip picture horizontally||`` block. Pull it out and place it inside the ``||logic:if then||``. Now, back in ``||sprites:Sprites||``, get a ``||sprites:mySprite image||`` and drop it over the ``||variables:picture||`` variable to replace it in ``||images:flip picture horzontally||``. Change the ``||variables:mySprite||`` to ``||variables:projectile||``.
+
+![Flip image of the bee](/static/tutorials/happy-flower/bee-flip.gif)
 
 ```blocks
 let projectile: Sprite = null
@@ -413,4 +420,4 @@ game.onUpdateInterval(1000, function () {
 
 ## Complete
 
-Congratulations, your happy flower is complete! It will now send back joyful little bees.
+Alright, now you have bees happily flying away in both directions!

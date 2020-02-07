@@ -1,0 +1,21 @@
+{
+    "frames": [
+        "Light0",
+        "Light1",
+        "Light2",
+        "LightMoss",
+        "Light3",
+        "Light4",
+        "Light5",
+        "Mixed",
+        "Dark0",
+        "Dark1",
+        "Dark2",
+        "DarkDiamond",
+        "Dark3",
+        "Dark4",
+        "Dark5"
+    ],
+    "tags": "tile dungeon",
+    "blockIdentity": "images._tile"
+}

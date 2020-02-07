@@ -1,0 +1,122 @@
+.game-buttons {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    right: 0;
+    top: 0;
+
+    z-index: 20;
+}
+
+.game-buttons .spacer {
+    flex-grow: 1;
+}
+
+.game-button-svg {
+    user-select: none;
+    touch-action: none;
+}
+
+.action-button {
+    position: relative;
+    width: 100%;
+    height: 3.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.action-button button:hover {
+    background-color: #397382;
+    color: #333;
+}
+
+.game-buttons .action-button {
+    left: -0.2rem;
+    text-align: left;
+}
+
+.game-buttons .action-button button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.game-joystick .action-button {
+    left: 0.2rem;
+    text-align: right;
+}
+
+.game-joystick .action-button button {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.share-mod-button {
+    color: #cecece;
+    background-color: #333;
+    text-align: center;
+    width: calc(100% - 0.5rem);
+    padding: 0.5rem 0rem;
+    border-radius: 4rem;
+    border: 0.8rem solid #397382;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+
+    display: inline-block;
+}
+
+.game-buttons svg text {
+    fill: #cecece;
+    stroke: #cecece;
+    stroke-width: 0.4;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    .game-buttons {
+        height: 95%;
+    }
+}
+
+.game-button-svg {
+    width: 200px;
+    height: 200px;
+}
+
+@media (max-width: 400px) and (max-aspect-ratio: 1/1) {
+    .game-buttons {
+        max-width: 50%;
+    }
+
+    .game-button-svg {
+        width: 100%;
+        height: initial;
+    }
+}
+
+@media (min-aspect-ratio: 5/8) {
+    .action-button {
+        height: 1.2rem;
+        margin-bottom: 3rem;
+    }
+
+    .share-mod-button {
+        width: 80%;
+        line-height: 1.2rem;
+    }
+
+    .game-buttons {
+        height: 98%;
+    }
+}
+
+@media (min-aspect-ratio: 6/9) {
+    .action-button {
+        margin-bottom: 2.25rem;
+    }
+
+    .share-mod-button {
+        border-width: 0.5rem;
+    }
+}

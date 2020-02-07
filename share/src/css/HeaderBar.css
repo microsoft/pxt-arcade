@@ -1,0 +1,25 @@
+.header-bar {
+    position: static;
+    top: 0;
+    height: 3.5rem;
+    background-color: #333333;
+    color: #ffffff;
+
+    display: flex;
+    flex-direction: row;
+    padding-left: 0.5rem;
+    padding-right: 0.25rem;
+}
+
+.header-bar .spacer {
+    flex-grow: 1;
+}
+
+.header-logo {
+    height: 3.5rem;
+    width: 3.5rem;
+}
+
+.ms-logo {
+    padding: 0.55rem;
+}

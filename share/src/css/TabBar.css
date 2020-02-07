@@ -1,0 +1,7 @@
+.tab-bar {
+    line-height: 0px;
+    width: 100%
+}
+.tab-bar image {
+    cursor: pointer;
+}

@@ -1,0 +1,18 @@
+{
+    "frames": [
+        "ClosedWest",
+        "ClosedSouth",
+        "ClosedNorth",
+        "ClosedEast",
+        "OpenWest",
+        "OpenSouth",
+        "OpenNorth",
+        "OpenEast",
+        "LockedWest",
+        "LockedSouth",
+        "LockedNorth",
+        "LockedEast"
+    ],
+    "tags": "tile dungeon",
+    "blockIdentity": "images._tile"
+}

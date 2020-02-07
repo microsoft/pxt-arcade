@@ -3,6 +3,7 @@
 Your caterpiller can grow by getting leaves for nourishment. Guide the caterpiller's movement toward a leaf. Be careful though, if it touches the side of the screen it won't live to be a butterfly.
 
 ```typescript
+const NEXT_SECTION_KEY = "__child_node";
 namespace SpriteKind {
     export const Tail = SpriteKind.create();
 }
@@ -28,6 +29,7 @@ const caterpillarHead = sprites.create(img`
 `, SpriteKind.Player);
 caterpillarHead.left = 4 * size;
 caterpillarHead.top = 12 * size;
+caterpillarHead.data = {};
 let currentLeaf: Sprite;
 
 scene.setTileMap(img`
@@ -92,7 +94,7 @@ let timeout = 500;
 
 forever(function () {
     if (caterpillarHead.left < 0 || caterpillarHead.right > screen.width
-            || caterpillarHead.top < 0 || caterpillarHead.bottom > screen.height) {
+        || caterpillarHead.top < 0 || caterpillarHead.bottom > screen.height) {
         game.over(false);
     }
 
@@ -135,6 +137,7 @@ forever(function () {
             . f 1 1 1 1 f .
             . . f f f f . .
         `, SpriteKind.Tail);
+        newSection.data = {};
 
         let newColor: number;
 
@@ -151,16 +154,17 @@ forever(function () {
         newSection.x = caterpillarHead.x;
         newSection.y = caterpillarHead.y;
 
-        newSection.data = caterpillarHead.data;
-        caterpillarHead.data = newSection;
+        newSection.data[NEXT_SECTION_KEY] = caterpillarHead.data[NEXT_SECTION_KEY];
+        caterpillarHead.data[NEXT_SECTION_KEY] = newSection;
         addSection = false;
     }
 
     function move(piece: Sprite) {
-        if (piece.data) {
-            move(piece.data);
-            piece.data.x = piece.x;
-            piece.data.y = piece.y;
+        const next = piece.data[NEXT_SECTION_KEY];
+        if (next) {
+            move(next);
+            next.x = piece.x;
+            next.y = piece.y;
         }
     }
 });
@@ -258,4 +262,8 @@ game.onUpdateInterval(500, function () {
         currentLeaf.setImage(leafImage);
     }
 });
+```
+
+```package
+color-coded-tilemap
 ```

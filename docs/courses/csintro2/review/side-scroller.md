@@ -18,50 +18,50 @@ namespace SpriteKind {
 }
 let myCar: Sprite = null
 myCar = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . 6 6 6 6 6 6 6 6 . . . . 
-. . . 6 9 6 6 6 6 6 6 c 6 . . . 
-. . 6 c 9 6 6 6 6 6 6 c c 6 . . 
-. 6 c c 9 9 9 9 9 9 6 c c 9 6 d 
-. 6 c 6 8 8 8 8 8 8 8 b c 9 6 6 
-. 6 6 8 b b 8 b b b 8 8 b 9 6 6 
-. 6 8 b b b 8 b b b b 8 6 6 6 6 
-. 8 8 6 6 6 8 6 6 6 6 6 8 6 6 6 
-. 8 8 8 8 8 8 f 8 8 8 f 8 6 d d 
-. 8 8 8 8 8 8 f 8 8 f 8 8 8 6 d 
-. 8 8 8 8 8 8 f f f 8 8 8 8 8 8 
-. 8 f f f f 8 8 8 8 f f f 8 8 8 
-. . f f f f f 8 8 f f f f f 8 . 
-. . . f f f . . . . f f f f . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . 6 6 6 6 6 6 6 6 . . . .
+. . . 6 9 6 6 6 6 6 6 c 6 . . .
+. . 6 c 9 6 6 6 6 6 6 c c 6 . .
+. 6 c c 9 9 9 9 9 9 6 c c 9 6 d
+. 6 c 6 8 8 8 8 8 8 8 b c 9 6 6
+. 6 6 8 b b 8 b b b 8 8 b 9 6 6
+. 6 8 b b b 8 b b b b 8 6 6 6 6
+. 8 8 6 6 6 8 6 6 6 6 6 8 6 6 6
+. 8 8 8 8 8 8 f 8 8 8 f 8 6 d d
+. 8 8 8 8 8 8 f 8 8 f 8 8 8 6 d
+. 8 8 8 8 8 8 f f f 8 8 8 8 8 8
+. 8 f f f f 8 8 8 8 f f f 8 8 8
+. . f f f f f 8 8 f f f f f 8 .
+. . . f f f . . . . f f f f . .
+. . . . . . . . . . . . . . . .
 `, SpriteKind.Car)
 scene.setTileMap(img`
-a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a 
-a . . . . . . a . . . . . . . a . . . . . . . a . . . . . . . . 
-a . . . . . . a . . . . . . . a . . . . . . . a . . . . . . . . 
-a . . . . . . a . . . . . . . a . . . . . . . a . . . . . . . . 
-a . . a . . . . . . . a . . . . . . . a . . . . . . . a . . . . 
-a . . a . . . . . . . a . . . . . . . a . . . . . . . a . . . . 
-a . . a . . . . . . . a . . . . . . . a . . . . . . . a . . . . 
-a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a 
+a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
+a . . . . . . a . . . . . . . a . . . . . . . a . . . . . . . .
+a . . . . . . a . . . . . . . a . . . . . . . a . . . . . . . .
+a . . . . . . a . . . . . . . a . . . . . . . a . . . . . . . .
+a . . a . . . . . . . a . . . . . . . a . . . . . . . a . . . .
+a . . a . . . . . . . a . . . . . . . a . . . . . . . a . . . .
+a . . a . . . . . . . a . . . . . . . a . . . . . . . a . . . .
+a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
 `)
 scene.setTile(10, img`
-. . . . . . 6 6 6 6 . . . . . . 
-. . . . . c 6 7 7 6 c . . . . . 
-. . . . c 6 7 5 7 7 6 c . . . . 
-. . 6 6 c c 6 5 5 6 c c 6 6 . . 
-6 6 6 5 5 5 6 7 5 6 5 5 7 6 6 6 
-6 6 7 7 7 5 7 6 7 5 5 7 7 7 7 6 
-. c c c 6 6 7 6 6 5 7 6 c c 6 . 
-6 c 6 6 6 6 6 c c 6 6 6 6 6 c 6 
-6 6 7 7 7 c c c c c c 7 7 7 6 6 
-6 7 7 7 6 6 c c c c 6 6 7 7 7 6 
-c 6 c c 6 7 6 c c 6 7 6 c c 6 c 
-. c c 5 5 7 6 7 7 6 7 5 5 c c . 
-. c 6 7 5 5 6 7 7 6 5 5 7 6 c . 
-. 6 6 7 7 6 6 5 5 6 6 7 7 6 6 . 
-. . 6 6 6 6 c 6 7 6 c 6 6 6 . . 
-. . . 6 6 c . 6 6 6 . c 6 . . . 
+. . . . . . 6 6 6 6 . . . . . .
+. . . . . c 6 7 7 6 c . . . . .
+. . . . c 6 7 5 7 7 6 c . . . .
+. . 6 6 c c 6 5 5 6 c c 6 6 . .
+6 6 6 5 5 5 6 7 5 6 5 5 7 6 6 6
+6 6 7 7 7 5 7 6 7 5 5 7 7 7 7 6
+. c c c 6 6 7 6 6 5 7 6 c c 6 .
+6 c 6 6 6 6 6 c c 6 6 6 6 6 c 6
+6 6 7 7 7 c c c c c c 7 7 7 6 6
+6 7 7 7 6 6 c c c c 6 6 7 7 7 6
+c 6 c c 6 7 6 c c 6 7 6 c c 6 c
+. c c 5 5 7 6 7 7 6 7 5 5 c c .
+. c 6 7 5 5 6 7 7 6 5 5 7 6 c .
+. 6 6 7 7 6 6 5 5 6 6 7 7 6 6 .
+. . 6 6 6 6 c 6 7 6 c 6 6 6 . .
+. . . 6 6 c . 6 6 6 . c 6 . . .
 `, true)
 scene.getTile(1, 3).place(myCar)
 ```
@@ -85,7 +85,7 @@ Make ``||variables:myCar||`` move, and simulate random 'bumps' in the terrain
 Make the terrain look nicer, and enjoy all of it
 
 1. Use ``||scene:set background color to||`` to set the background color to tan or brown
-2. Open the image editor for the ``||scene:tile map||``, and fill the portions that are not trees with a tan color
+2. Open the image editor for the ``||scene:tilemap||``, and fill the portions that are not trees with a tan color
 3. Use ``||scene:set tile to||`` to set the tan tiles to an image of dirt from the gallery - make sure that it is **not** a ``||scene:wall||``
 4. In ``||loops:on start||``, add ``||scene:camera follow sprite myCar||`` to make the camera follow ``||variables:myCar||``
 
@@ -104,7 +104,7 @@ To add some possibility for failure (and success) to the game, we will make a ho
 
 ### Winning
 
-1. Open the image editor for the ``||scene:tile map||``, and fill the far right side with yellow tiles
+1. Open the image editor for the ``||scene:tilemap||``, and fill the far right side with yellow tiles
 2. Use ``||scene:set tile to||`` to set the yellow tiles to an image of a road from the gallery. Click the ``+`` and set ``||scene:wall||`` to ``on``
 3. Create a ``||scene:on sprite of kind Car hits wall||`` event, and select the yellow tile
 4. In this ``||scene:on sprite of kind Car hits wall||`` event, place a ``||game:game over||`` block with ``||game:win||`` set to ``true``
@@ -113,7 +113,7 @@ To add some possibility for failure (and success) to the game, we will make a ho
 
 1. In ``||loops:on start||``, create a variable ``||variables:column||``, and set it to 0
 2. Create an ``||game:on game update every 3000 ms||`` event
-3. In the ``||game:on game update every||`` event, create a ``||loops:for index from 0 to 7||`` loop 
+3. In the ``||game:on game update every||`` event, create a ``||loops:for index from 0 to 7||`` loop
 4. In the ``||loops:for index||`` loop, create a sprite named ``||variables:duck||`` of ``||sprites:kind||`` ``||sprites:Enemy||``. Make the duck get destroyed when it goes off the screen using ``||sprites:set duck auto destroy on||``
 5. Get ``||variables:set myTile to||`` from ``||scene:Scene||``. Set ``||scene:col||`` to ``||variables:column||``, and ``||scene:row||`` to ``||variables:index||``
 6. Get ``||scene:on top of myTile place mySprite||``, and replace ``||variables:myTile||`` with ``||variables:duck||``

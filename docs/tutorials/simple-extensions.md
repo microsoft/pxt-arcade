@@ -2,7 +2,7 @@
 
 ## Introduction @unplugged
 
-Extensions in @boardname@ allow users to easily develop and share portions of their code others. In this tutorial, you will be using the ``||corgio:corgio||`` extension to create a simple platformer. In this example the extension is automatically loaded: in other projects, you can load the extension as shown below.
+Extensions in @boardname@ allow users to easily develop and share portions of their code with others. In this tutorial, you will be using the ``||corgio:corgio||`` extension to create a simple platformer. In this example the extension is automatically loaded: in other projects, you can load the extension as shown below.
 
 ![Adding Corgio Extension](/static/tutorials/simple-extensions/add-corgio.gif)
 
@@ -11,8 +11,7 @@ Extensions in @boardname@ allow users to easily develop and share portions of th
 The first thing we'll do is make our corgio. Find the ``||variables:set myCorg to||`` in ``||corgio:Corgi||``. Drag it into the ``||loops:on start||``. The corgio should appear on the left side of the screen.
 
 ```blocks
-let myCorg: Corgio = null
-myCorg = corgio.create(SpriteKind.Player)
+let myCorg: Corgio = corgio.create(SpriteKind.Player)
 ```
 
 ## Step 2
@@ -20,9 +19,9 @@ myCorg = corgio.create(SpriteKind.Player)
 Now, let's make our sprite figure move left and right with the controller arrow keys. Get a ``||corgio:make myCorg move left and right with arrow keys||`` and a ``||corgio:make myCorg jump if up arrow key is pressed||`` from ``||corgio:Corgi||`` and put it under ``||variables:set myCorg to||``.
 
 ```blocks
-let myCorg: Corgio = null
-myCorg = corgio.create(SpriteKind.Player)
+let myCorg: Corgio = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
+myCorg.verticalMovement()
 ```
 
 ## Step 3
@@ -30,289 +29,215 @@ myCorg.horizontalMovement()
 The corgio is a bit boring when it's image doesn't change; to fix this, get a ``||corgio:change image when myCorg is moving||`` block from ``||corgio:Corgio||`` and put it under ``||variables:set myCorg to||``.
 
 ```blocks
-let myCorg: Corgio = null
-myCorg = corgio.create(SpriteKind.Player)
+let myCorg: Corgio = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
 myCorg.verticalMovement()
 myCorg.updateSprite()
-```
-
-## Step 4
-
-Pull ``||scene:set tile to with wall||`` from ``||scene:Scene||`` into ``||loops:on start||``. Fill the whole tile with one color in the image editor. Click on the color bubble in ``||scene:set tile to with wall||`` and change the color index to the same color you filled the tile with. Click the ``wall`` setting to `ON`.
-
-```blocks
-let myCorg: Corgio = null
-myCorg = corgio.create(SpriteKind.Player)
-myCorg.horizontalMovement()
-myCorg.verticalMovement()
-myCorg.updateSprite()
-scene.setTile(4, img`
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-`, true)
 ```
 
 ## Step 5 @fullscreen
 
-Add a ``||scene:set tile map||`` to ``||loops:on start||``. For it's image, create two platforms for the corgi to stand on.
+Add a ``||scene:set tilemap to||`` from ``||scene:Scene||`` to ``||loops:on start||``.
+Set the size of the tilemap to ``20x8``,
+draw some platforms for the corgi to stand on,
+and set them as ``Walls``.
 
-![Drawing a platform](/static/tutorials/simple-extensions/draw-platforms.gif)
+![Animation showing completion of this step](/static/tutorials/simple-extensions/create-tilemap.gif)
 
 ```blocks
-let myCorg: Corgio = null
-myCorg = corgio.create(SpriteKind.Player)
+namespace myTiles {
+    //% blockIdentity=images._tile
+    export const tile0 = img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `
+}
+let myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
 myCorg.verticalMovement()
 myCorg.updateSprite()
-scene.setTileMap(img`
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . 4 4 4 4 4 4 . . 
-. . . . . . . . . . 
-4 4 4 4 4 4 4 4 4 4 
-`)
-scene.setTile(4, img`
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-`, true)
+tiles.setTilemap(tiles.createTilemap(
+    hex`1400080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001010101010100000000000000000000000000000000000000000001010101000000000000000000000000000000000000000000000000000000000101010101010101010101000000000000000000`,
+    img`
+        . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . .
+        . 2 2 2 2 2 2 . . . . . . . . . . . . .
+        . . . . . . . . 2 2 2 2 . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . .
+        2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . .
+    `,
+    [myTiles.tile0,sprites.builtin.oceanDepths4,sprites.builtin.oceanDepths0],
+    TileScale.Sixteen
+))
 ```
 
-## Step 6 @fullscreen
-
-Open up the image editor of ``||scene:set tile map||`` again, and change the size of the image until you get to **32x8**. Draw more platforms for the corgio to jump on.
-
-```blocks
-let myCorg: Corgio = null
-scene.setTileMap(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . 4 . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 4 . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 4 . . . . . . 
-. . . . . . . . . . . . . . . . 4 4 4 4 4 4 4 . . 4 . . . . . . 
-. . . . . . . . . . . . . . . . . . . 4 . . . . . 4 . . . . . . 
-. . 4 4 4 4 4 4 . . 4 4 4 4 4 4 . . . 4 . . . . . 4 . . . . . . 
-. . . . . . . . . . . . . . . . . . . 4 . . . . . . . . . . . . 
-4 4 4 4 4 4 4 4 4 4 . . . . . . . . . 4 . . . . . . . . 4 4 4 . 
-`)
-myCorg = corgio.create(SpriteKind.Player)
-myCorg.horizontalMovement()
-myCorg.verticalMovement()
-myCorg.updateSprite()
-scene.setTile(4, img`
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-`, true)
-```
-
-## Step 7
+## Step 6
 
 To make it so the camera follows the corgio as it leaves the screen, add ``||corgio:make camera follow myCorg left and right||`` from ``||corgio:Corgio||`` and put it under ``||variables:set myCorg to||``.
 
 ```blocks
-let myCorg: Corgio = null
-scene.setTileMap(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . 4 . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 4 . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 4 . . . . . . 
-. . . . . . . . . . . . . . . . 4 4 4 4 4 4 4 . . 4 . . . . . . 
-. . . . . . . . . . . . . . . . . . . 4 . . . . . 4 . . . . . . 
-. . 4 4 4 4 4 4 . . 4 4 4 4 4 4 . . . 4 . . . . . 4 . . . . . . 
-. . . . . . . . . . . . . . . . . . . 4 . . . . . . . . . . . . 
-4 4 4 4 4 4 4 4 4 4 . . . . . . . . . 4 . . . . . . . . 4 4 4 . 
-`)
-myCorg = corgio.create(SpriteKind.Player)
+namespace myTiles {
+    //% blockIdentity=images._tile
+    export const tile0 = img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `
+}
+let myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
 myCorg.verticalMovement()
 myCorg.updateSprite()
 myCorg.follow()
-scene.setTile(4, img`
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-`, true)
+tiles.setTilemap(tiles.createTilemap(
+    hex`1400080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001010101010100000000000000000000000000000000000000000001010101000000000000000000000000000000000000000000000000000000000101010101010101010101000000000000000000`,
+    img`
+        . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . .
+        . 2 2 2 2 2 2 . . . . . . . . . . . . .
+        . . . . . . . . 2 2 2 2 . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . .
+        2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . .
+    `,
+    [myTiles.tile0,sprites.builtin.oceanDepths4,sprites.builtin.oceanDepths0],
+    TileScale.Sixteen
+))
+```
+
+## Step 7
+
+At the end of the tilemap, draw a column that is a different tile than the other tiles in the map.
+This will represent the goal for the player.
+
+```blocks
+namespace myTiles {
+    //% blockIdentity=images._tile
+    export const tile0 = img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `
+}
+let myCorg = corgio.create(SpriteKind.Player)
+myCorg.horizontalMovement()
+myCorg.verticalMovement()
+myCorg.updateSprite()
+myCorg.follow()
+tiles.setTilemap(tiles.createTilemap(
+    hex`1400080000000000000000000000000000000000000000030000000000000000000000000000000000000003000000000000000000000000000000000000000300000000000000000000000000000202020200030001010101010100000000000000000200000003000000000000000001010101020202020000000300000000000000000000000002000000000000030101010101010101010101020000000000000003`,
+    img`
+        . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . 2 2 2 2 . .
+        . 2 2 2 2 2 2 . . . . . . . . 2 . . . .
+        . . . . . . . . 2 2 2 2 2 2 2 2 . . . .
+        . . . . . . . . . . . . 2 . . . . . . .
+        2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . .
+    `,
+    [myTiles.tile0,sprites.builtin.oceanDepths4,sprites.builtin.oceanDepths0,sprites.builtin.coral0],
+    TileScale.Sixteen
+))
+
 ```
 
 ## Step 8
 
-At the end of the tile map, draw a column that is a different color than the current walls. Set that tile to be a wall just like you did in step 4.
-
-![Add winning event](/static/tutorials/simple-extensions/add-goal.png)
-
-```blocks
-let myCorg: Corgio = null
-scene.setTileMap(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . 4 . . . . . 7 
-. . . . . . . . . . . . . . . . . . . . . . . . . 4 . . . . . 7 
-. . . . . . . . . . . . . . . . . . . . . . . . . 4 . . . . . 7 
-. . . . . . . . . . . . . . . . 4 4 4 4 4 4 4 . . 4 . . . . . 7 
-. . . . . . . . . . . . . . . . . . . 4 . . . . . 4 . . . . . 7 
-. . 4 4 4 4 4 4 . . 4 4 4 4 4 4 . . . 4 . . . . . 4 . . . . . 7 
-. . . . . . . . . . . . . . . . . . . 4 . . . . . . . . . . . 7 
-4 4 4 4 4 4 4 4 4 4 . . . . . . . . . 4 . . . . . . . . 4 4 4 7 
-`)
-myCorg = corgio.create(SpriteKind.Player)
-myCorg.horizontalMovement()
-myCorg.verticalMovement()
-myCorg.updateSprite()
-myCorg.follow()
-scene.setTile(4, img`
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-`, true)
-scene.setTile(7, img`
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-`, true)
-```
-
-## Step 9
-
-Add a ``||scene:on sprite of kind Player hits wall||`` block from ``||scene:Scene||``, and select the color of the new wall you made in the color bubble. Inside of that, add a ``||game:game over||`` inside of the ``||scene:on sprite of kind Player hits wall||``.
-
-![Add winning event](/static/tutorials/simple-extensions/game-win-event.gif)
+Add a ``||scene:on sprite of kind Player overlaps at location||`` block from ``||scene:Scene||``,
+then click on the checkered tile to find the tile you used as a goal.
+Inside of that event, add a ``||game:game over lose||``.
+Click ``LOSE`` to change it to ``WIN``.
 
 ```blocks
-let myCorg: Corgio = null
-scene.onHitTile(SpriteKind.Player, 7, function (sprite) {
-    game.over(true)
+namespace myTiles {
+    //% blockIdentity=images._tile
+    export const tile0 = img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `
+}
+scene.onOverlapTile(SpriteKind.Player, sprites.builtin.coral0, function (sprite, location) {
+    game.over(false)
 })
-scene.setTileMap(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . 4 . . . . . 7 
-. . . . . . . . . . . . . . . . . . . . . . . . . 4 . . . . . 7 
-. . . . . . . . . . . . . . . . . . . . . . . . . 4 . . . . . 7 
-. . . . . . . . . . . . . . . . 4 4 4 4 4 4 4 . . 4 . . . . . 7 
-. . . . . . . . . . . . . . . . . . . 4 . . . . . 4 . . . . . 7 
-. . 4 4 4 4 4 4 . . 4 4 4 4 4 4 . . . 4 . . . . . 4 . . . . . 7 
-. . . . . . . . . . . . . . . . . . . 4 . . . . . . . . . . . 7 
-4 4 4 4 4 4 4 4 4 4 . . . . . . . . . 4 . . . . . . . . 4 4 4 7 
-`)
-myCorg = corgio.create(SpriteKind.Player)
+let myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
 myCorg.verticalMovement()
 myCorg.updateSprite()
 myCorg.follow()
-scene.setTile(4, img`
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-`, true)
-scene.setTile(7, img`
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
-`, true)
+tiles.setTilemap(tiles.createTilemap(
+            hex`1400080000000000000000000000000000000000000000030000000000000000000000000000000000000003000000000000000000000000000000000000000300000000000000000000000000000202020200030001010101010100000000000000000200000003000000000000000001010101020202020000000300000000000000000000000002000000000000030101010101010101010101020000000000000003`,
+            img`
+                . . . . . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . 2 2 2 2 . .
+                . 2 2 2 2 2 2 . . . . . . . . 2 . . . .
+                . . . . . . . . 2 2 2 2 2 2 2 2 . . . .
+                . . . . . . . . . . . . 2 . . . . . . .
+                2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . .
+            `,
+            [myTiles.tile0,sprites.builtin.oceanDepths4,sprites.builtin.oceanDepths0,sprites.builtin.coral0],
+            TileScale.Sixteen
+        ))
+
 ```
 
 ## Complete

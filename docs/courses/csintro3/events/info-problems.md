@@ -44,7 +44,7 @@ for the player to reach.
 
 ![Example of a maze that players can escape](/static/courses/csintro3/events/timed-maze.png)
 
-After designing your ``||scene:tile map||``,
+After designing your ``||scene:tilemap||``,
 set the walls in your maze to be ``||scene:Wall||`` ``||scene:tiles||``.
 
 Create a ``Player`` ``||sprites:sprite||``,

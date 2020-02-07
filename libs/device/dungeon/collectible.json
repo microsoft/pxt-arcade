@@ -1,0 +1,9 @@
+{
+    "frames": [
+        "Insignia",
+        "RedCrystal",
+        "BlueCrystal"
+    ],
+    "tags": "?tile dungeon",
+    "blockIdentity": "images._tile"
+}

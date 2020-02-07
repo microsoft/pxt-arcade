@@ -1,0 +1,32 @@
+{
+    "frames": [
+        "OuterNorthWest",
+        "OuterNorth0",
+        "OuterNorth1",
+        "OuterNorthEast",
+
+        "OuterWest0",
+        "InnerNorthWest",
+        "InnerNorthEast",
+        "OuterEast0",
+
+        "OuterWest1",
+        "InnerSouthWest",
+        "InnerSouthEast",
+        "OuterEast1",
+
+        "OuterSouthEast",
+        "OuterSouth0",
+        "OuterSouth1",
+        "OuterSouthWest",
+
+        "OuterNorth2",
+        "OuterEast2",
+        "OuterSouth2",
+        "OuterWest2",
+        "SwitchUp",
+        "SwitchDown"
+    ],
+    "tags": "tile dungeon",
+    "blockIdentity": "images._tile"
+}

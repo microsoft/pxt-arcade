@@ -1,0 +1,18 @@
+.game-embed {
+    position: relative;
+    left: 0.5rem;
+    top: 0.5rem;
+    height: calc(100% - 1rem);
+    width: calc(100% - 1rem);
+    border: 0.5rem solid #333333;
+    background-color: #333;
+
+    clip-path: polygon(0% 8px, 8px 0%, calc(100% - 8px) 0%, 100% 8px,
+        100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px));
+}
+
+.game-embed-frame {
+    border: none;
+    height: 100%;
+    width: 100%;
+}

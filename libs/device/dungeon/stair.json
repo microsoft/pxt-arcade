@@ -1,0 +1,12 @@
+{
+    "frames": [
+        "West",
+        "South",
+        "North",
+        "East",
+        "Large",
+        "Ladder"
+    ],
+    "tags": "tile dungeon",
+    "blockIdentity": "images._tile"
+}

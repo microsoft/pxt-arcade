@@ -2,12 +2,7 @@
 
 ## ~ alert
 
-### Warning
-
-This document is still preliminary and changes to it will occur.
-It's fine to build prototypes according to the information presented for experimention only,
-but do not make production hardware.  **If you want to produce Arcade-compatible
-boards other than hobby prototypes, please contact us at arcadehdw@microsoft.com.**
+**If you want to produce an Arcade-compatible product please let us know at arcadehdw@microsoft.com.**
 
 ## ~
 
@@ -39,7 +34,7 @@ Other optional elements include:
 * an electrical expansion connector to support the use of plug-in accessories and connection of external 
 circuits (see [expansion coonnector](#pins))
 
-We have built a minimal open source hardware reference design for an Arcade board. This consists of a schematic (available as PDF and as Altium .SchDoc), a layout (available as Gerbers and related CAM files plus an Altium .PcbDoc), and a BoM (available as a Microsoft Excel file). 
+We have built a minimal open source hardware reference design for an Arcade board. This consists of a schematic (available as PDF and as Altium .SchDoc), a layout (available as Gerbers and related CAM files plus an Altium .PcbDoc), and a BoM (available as a Microsoft Excel file). These files are available in a separate github repo [here](https://github.com/microsoft/pxt-arcade-hardware-designs).
 
 A firmware configuration system allows a lot of flexibility regarding specific component choices and circuit designs to meet the above specification, see [Configuration](#cf2). 
 
@@ -105,9 +100,7 @@ We have found the following part numbers for ST7735 and ILI9163C displays:
 * [Z180SN009](https://www.ezsolutionkr.com/tft-lcd-z180sn009-v0-0)
 * [JD-T18003-T01](https://cdn-shop.adafruit.com/datasheets/JD-T1800.pdf)
 
-![Screen connection](/static/hardware/screen.png)
-
-#### 320x240 based on ILI9134 via SPI
+#### 320x240 based on ILI9341 via SPI
 
 On D5, the SPI can run up to 50MHz and most displays seem to be able to handle that,
 which results in about 36fps.
@@ -123,7 +116,7 @@ DISPLAY_CFG1 = 0x0010ff
 DISPLAY_CFG2 = 50
 ```
 
-#### 320x240 based on ILI9134 via 8-bit parallel
+#### 320x240 based on ILI9341 via 8-bit parallel
 
 On F4, this requires an 8 bit parallel interface because SPI at 42Mhz is unstable;
 int this case STM32F412RE or better is required.
@@ -179,9 +172,6 @@ One function of the `Menu` button is to exit low-power sleep mode. For an MCU wi
 
 Arcade boards should have 'soft power off' rather than a physical on-off switch, see [power management](#power).
 
-![Button connections](/static/hardware/buttons.png)
-
-
 ### Audio #audio
 
 Single channel mono audio output requires either a DAC or PWM with DMA support. The corresponding audio output from the MCU
@@ -202,8 +192,8 @@ to clamp the Vbus power line and thereby limit over-voltage transients during US
 
 #### Warning
 
-Multi-player communications is under development now and it may change.
-It's fine to build prototypes, but before any production hardware please contact us at arcadehdw@microsoft.com.
+**Multi-player communications is under active development and it may change.
+It's fine to build prototypes, but before designing any production hardware please contact us at arcadehdw@microsoft.com.**
 
 ### ~
 
@@ -213,8 +203,6 @@ Note that JACDAC power delivery is still under development so **you must leave t
 
 The multi-player connector can either be a 3-way or a 4-way 3.5mm audio jack socket. Contact switching is not required. Many alternative connectors exist, the second page of the reference design schematic lists some of these. Please test a connector
 before designing it in to make sure it does not short together the base of the shaft and the tip during insertion. 
-
-![JACDAC without power](/static/hardware/nopowerjacdac.png)
 
 ### Battery power #battery
 
@@ -306,7 +294,7 @@ There are 2 different bootloaders to support the hardware variants.
 These bootloaders support the [CF2 configuration data section](#cf2).
 
 * F4: https://github.com/mmoskal/uf2-stm32f
-* D51: https://github.com/Microsoft/uf2-samdx1
+* D51: https://github.com/microsoft/uf2-samdx1
 
 The following bootloaders do **not** support the [CF2 configuration data section](#cf2) yet.
 
@@ -491,7 +479,7 @@ accelerometers, etc. Thus, we generate the same UF2 file
 for all boards of a given variant, and have the runtime look for configuration
 values in the bootloader area (called **CF2** configuration).
 
-See https://github.com/Microsoft/uf2/blob/master/cf2.md for more details on the configuration format.
+See https://github.com/microsoft/uf2/blob/master/cf2.md for more details on the configuration format.
 The [bootloaders](#bootloaders) can be binary patched with new configuration data if needed.
 
 The configuration data also includes the assignment of a GPIO pin header.

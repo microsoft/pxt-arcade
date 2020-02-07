@@ -8,6 +8,12 @@ enum ActionKind {
     Idle,
     Jumping
 }
+
+namespace SpriteKind {
+    export const Gap = SpriteKind.create()
+}
+let gapSprite: Sprite = null
+let gapImage: Image = null
 let bottomImage: Image = null
 let anim: animation.Animation = null
 let projectile: Sprite = null
@@ -19,10 +25,16 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.setAction(mySprite, ActionKind.Jumping)
     mySprite.startEffect(effects.rings, 300)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Gap, function (sprite, otherSprite) {
+    if (otherSprite.right - sprite.left < 2) {
+        info.changeScoreBy(1)
+    }
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     game.over(false)
 })
 scene.setBackgroundColor(9)
+info.setScore(0)
 effects.blizzard.startScreenEffect()
 mySprite = sprites.create(img`
     . . . . . . . . . . b 5 b . . .
@@ -154,7 +166,6 @@ anim.addAnimationFrame(img`
 `)
 animation.attachAnimation(mySprite, anim)
 game.onUpdateInterval(1500, function () {
-    info.changeScoreBy(1)
     gap = Math.randomRange(0, 3)
     if (gap == 0) {
         topImage = img`
@@ -513,6 +524,13 @@ game.onUpdateInterval(1500, function () {
             . . . . . . e e 6 e e e e e e 6 e e f . . . . .
         `
     }
+    gapImage = image.create(2, scene.screenHeight())
+    gapImage.fill(1)
+    gapSprite = sprites.create(gapImage, SpriteKind.Gap)
+    gapSprite.setFlag(SpriteFlag.AutoDestroy, true)
+    gapSprite.setFlag(SpriteFlag.Invisible, true)
+    gapSprite.left = scene.screenWidth()
+    gapSprite.vx = -45
     projectile = sprites.createProjectileFromSide(topImage, -45, 0)
     projectile.top = 0
     projectile = sprites.createProjectileFromSide(bottomImage, -45, 0)

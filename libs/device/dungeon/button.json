@@ -1,0 +1,12 @@
+{
+    "frames": [
+        "Orange",
+        "OrangeDepressed",
+        "Teal",
+        "TealDepressed",
+        "Pink",
+        "PinkDepressed"
+    ],
+    "tags": "?tile misc",
+    "blockIdentity": "images._tile"
+}
