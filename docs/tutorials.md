@@ -38,14 +38,6 @@
   "largeImageUrl": "/static/tutorials/galga.gif",
   "videoUrl": "/static/tutorials/galga.mp4"
 }, {
-  "name": "Lander",
-  "description": "Land your spacecraft on platforms and try not to destroy it!",
-  "url": "/tutorials/lander",
-  "cardType": "tutorial",
-  "imageUrl": "/static/tutorials/lander.png",
-  "largeImageUrl": "/static/tutorials/lander.gif",
-  "videoUrl": "/static/tutorials/lander.mp4"
-}, {
   "name": "Name Tag",
   "description": "A simple name tag with cool effects",
   "url": "/tutorials/name-tag",

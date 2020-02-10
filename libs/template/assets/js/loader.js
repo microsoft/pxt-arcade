@@ -23,9 +23,9 @@ function makeCodeRun(options) {
                 meta = JSON.parse(metasrc);
             })
             var vel = document.getElementById("version");
-            if (meta.version && vel) {
+            if (meta.version && meta.repo && vel) {
                 var ap = document.createElement("a");
-                ap.href = "https://github.com/pelikhan/madburger/releases/tag/v" + meta.version;
+                ap.href = "https://github.com/" + meta.repo + "/releases/tag/v" + meta.version;
                 ap.innerText = "v" + meta.version;
                 vel.appendChild(ap);
             }

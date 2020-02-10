@@ -386,7 +386,7 @@
             "snippetBuilder",
             "experimentalHw",
             "recipes",
-            "alwaysGithubItemBlocks",
+            "tutorialBlocksDiff",
             "blocksCollapsing"
         ],
         "extendEditor": true,
@@ -399,7 +399,8 @@
         "shareFinishedTutorials": true,
         "nameProjectFirst": true,
         "githubEditor": true,
-        "githubCompiledJs": true
+        "githubCompiledJs": true,
+        "chooseLanguageRestrictionOnNewProject": true
     },
     "unsupportedBrowsers": [
         {
