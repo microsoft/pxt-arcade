@@ -44,6 +44,15 @@ This command launches a local web server. Note that this web server is meant for
 npm run serve
 ```
 
+### Refreshing the community.md file
+
+Run this command, then patch description, improve the screenshot (or record gifs) if necessary.
+
+```
+pxt ddt featured-game --md docs/community.md
+```
+
+
 ### How to create sprite packs
 
 Packs of images can be added to the editor using PXT packages. To create
