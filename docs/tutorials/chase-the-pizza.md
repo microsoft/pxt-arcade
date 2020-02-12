@@ -244,6 +244,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 Congratulations, you have completed your game! Use the Game Simulator to play by moving your ``||sprites:Player||`` around the screen to try and eat as much pizza as possible before the time runs out. What’s your high score?
 
+[![Runaway](/static/tutorials/chase-the-pizza/runaway-pizza.gif)](#recipe:/tutorials/chase-the-pizza/runaway-pizza)
+
 ```blocks
 let pizza: Sprite = null
 let mySprite: Sprite = null
