@@ -21,7 +21,7 @@ many different ways.
 
 ![Required materials to build control panel](/static/hardware/raspberry-pi/cardboard-control-panel/materials.jpg)
 
-### Parts
+### Materials
 
 * **Cardboard box** that will become the control panel. If you are buying a PC monitor to build the Arcade,
 use the box that the monitor came in.
