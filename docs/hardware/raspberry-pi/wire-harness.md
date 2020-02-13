@@ -12,6 +12,8 @@ This guide describes how to build a wire harness to connect arcade buttons and j
 * 2 **mini breadboard**
 * Electrical insulation tape
 
+![Materials for the wire harness](/static/hardware/raspberry-pi/wire-harness/materials.jpg)
+
 ## Joystick + A/B buttons
 
 Let's start by wiring a joystick with a 5-pin JST connector and two buttons. This is a typical setup for a player in MakeCode Arcade.
