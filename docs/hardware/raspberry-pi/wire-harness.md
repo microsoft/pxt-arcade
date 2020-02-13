@@ -1,0 +1,56 @@
+
+# Wire Harness
+
+This guide describes how to build a wire harness to connect arcade buttons and joysticks to a Raspberry Pi.
+
+## Materials
+
+* An **Arcade button kits** for 2 players, containing buttons and joysticks.
+* **Male-to-Male jumper cables**
+* 2 **mini breadboard**
+* Electrical insulation tape
+
+## Instructions
+
+Let's start by wiring a joystick with a 5-pin JST connector and two buttons. This is a typical setup for a player in MakeCode Arcade.
+
+The idea of the harness is to use the mini-breadboard as a centralized wiring point which can then be used to connect to the Raspberry Pi Zero. The mini breadboard allows to connect ground wires without having to strip and solder cables. Let's get started!
+
+## Step 1
+
+Connect 5 male jumper wires into the 5-pin JST connector of the joystick.
+Use electrical tape to secure the cables.
+
+![A button is connected](/static/hardware/raspberry-pi/wire-harness/joystick-tape.jpg)
+
+## Step 2
+
+Identify the ground wire in the JST connect, it is typically the wire without any kind printed pattern. Connect the jumper wire attached to the ground to one side of the mini breadboard.
+
+Connect the other 4 jumper wires to the other side of the breadboard. 
+Make sure to place them each in their own row.
+
+![A button is connected](/static/hardware/raspberry-pi/wire-harness/joystick-breadboard.jpg)
+
+## Step 3
+
+Connect 2 jumper wires in to the 2-pin JST connector of a button. 
+Use electrical tape to secure the cables.
+
+Connect one of jumper wire to the same row as the ground wire on the mini-bread board.
+
+Connect the other jumper wire next to the 4 jumper wires, on its own row.
+
+![A button is connected](/static/hardware/raspberry-pi/wire-harness/button-breadboard.jpg)
+
+## Step 7
+
+Repeat step 4 through 6 for the other button.
+
+![A button is connected](/static/hardware/raspberry-pi/wire-harness/buttons-breadboard.jpg)
+
+## Step 8
+
+Use electrical tape around the two group of wires to secure them together.
+
+![Wires with tape around them on a mini-breadboard](/static/hardware/raspberry-pi/wire-harness/breadboard-tape.jpg)

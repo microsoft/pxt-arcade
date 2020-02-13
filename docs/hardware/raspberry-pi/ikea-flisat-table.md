@@ -39,6 +39,7 @@ From your hardware store,
 
 ## Instructions
 
+* [Wire harness](/hardware/raspberry-pi/wires-harness)
 * [Convert the table](/hardware/raspberry-pi/ikea-flisat-table/make)
 
 ## ~button /hardware/raspberry-pi/ikea-flisat-table/make
