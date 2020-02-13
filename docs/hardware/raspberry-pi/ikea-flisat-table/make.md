@@ -41,6 +41,8 @@ Make sure to be at least 4" from the border to avoid touching the boxes. Keep at
 - [ ] Position the joystick upside down and center the stick with the hole
 - [ ] Mark the corner holes of the joystick with your pencil
 
+![A table with 3 holes](/static/hardware/raspberry-pi/ikea-flisat-table/mask-joystick.jpg)
+
 ### Step 5
 
 - [ ] Using a 5/16" bit, drill through each hole of the joystick
