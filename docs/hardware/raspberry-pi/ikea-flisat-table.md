@@ -6,6 +6,8 @@ The modifications on the IKEA FLISAT table were not verified or endorsed by IKEA
 
 ## ~
 
+![An IKEA FLISAT table turned into an arcade](/static/hardware/raspberry-pi/table/table-chairs.jpg)
+
 ### Materials
 
 * an [**IKEA FLISAT**](https://www.ikea.com/us/en/p/flisat-childrens-table-50298418/) from your local IKEA with 2 TROFAST storage boxes.
