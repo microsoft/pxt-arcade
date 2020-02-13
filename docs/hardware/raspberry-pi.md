@@ -1,6 +1,10 @@
 # Raspberry Pi
 
-Build full size MakeCode Arcade cabinets and kiosks using a Raspberry Pi Zero. The Raspberry Pi Zero can hold plenty of games and is programmed by dropping the compiled ``.UF2`` into the drive; just like other Arcade boards. 
+Build full size MakeCode Arcade cabinets and kiosks using a Raspberry Pi Zero. 
+
+* Kiosk mode operation: no internet, no operating system, just games.
+* Hold plenty of games (thousands?)
+* Drag and drop UF2 files into the pi just like the other boards.
 
 ## Guides
 
