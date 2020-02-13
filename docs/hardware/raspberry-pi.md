@@ -1,16 +1,12 @@
 # Raspberry Pi
 
-MakeCode Arcade can compile games to run on a Raspberry Pi Zero. The Raspberry Pi Zero can hold plenty of games and is programmed by dropping the compiled ``.UF2`` into the drive; just like other Arcade boards. 
+Build full size MakeCode Arcade cabinets and kiosks using a Raspberry Pi Zero. The Raspberry Pi Zero can hold plenty of games and is programmed by dropping the compiled ``.UF2`` into the drive; just like other Arcade boards. 
 
 ## Guides
 
 ```codecard
 [{
-    "name": "Adafruit Joy Bonnet",
-    "url": "https://learn.adafruit.com/makecode-arcade-with-raspberry-pi-zero"
-},
-{
-    "name": "Cardboard Control Panel",
+    "name": "Cardboard Panel",
     "url": "/hardware/raspberry-pi/cardboard-control-panel",
     "imageUrl": "/static/hardware/raspberry-pi/cardboard-control-panel/gallery.jpg"
 },
