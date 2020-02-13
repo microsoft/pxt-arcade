@@ -6,16 +6,18 @@ Build full size MakeCode Arcade cabinets and kiosks using a Raspberry Pi Zero. T
 
 ```codecard
 [{
+    "name": "Wire harness",
+    "url": "/hardware/raspberry-pi/wire-harness",
+    "imageUrl": "/static/hardware/raspberry-pi/wire-harness/gallery.jpg"
+},{
     "name": "Cardboard Panel",
     "url": "/hardware/raspberry-pi/cardboard-control-panel",
     "imageUrl": "/static/hardware/raspberry-pi/cardboard-control-panel/gallery.jpg"
-},
-{
+},{
     "name": "IKEA FLISAT table",
     "url": "/hardware/raspberry-pi/ikea-flisat-table",
     "imageUrl": "/static/hardware/raspberry-pi/ikea-flisat-table/gallery.jpg"
-},
-{
+},{
     "name": "Wooden Cabinet",
     "url": "/hardware/raspberry-pi/wooden-cabinet",
     "imageUrl": "/static/hardware/raspberry-pi/wooden-cabinet/gallery.jpg"
