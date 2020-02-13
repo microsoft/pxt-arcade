@@ -28,9 +28,13 @@ to the Raspberry-Pi
 - [ ] Using a ruler and a pencil, mark the center of joystick, A and B buttons.
 Make sure to be at least 4" from the border to avoid touching the boxes. Keep at least 2" between buttons.
 
+![A table with masking tape and drill points](/static/hardware/raspberry-pi/ikea-flisat-table/marked.jpg)
+
 ### Step 3
 
 - [ ] Using a 1 1/8" bit, drill the 3 holes as marked
+
+![A table with 3 holes](/static/hardware/raspberry-pi/ikea-flisat-table/drilled.jpg)
 
 ### Step 4
 
