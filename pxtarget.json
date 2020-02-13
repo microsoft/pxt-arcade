@@ -402,7 +402,8 @@
         "nameProjectFirst": true,
         "githubEditor": true,
         "githubCompiledJs": true,
-        "chooseLanguageRestrictionOnNewProject": true
+        "chooseLanguageRestrictionOnNewProject": true,
+        "openProjectNewTab": true
     },
     "unsupportedBrowsers": [
         {
