@@ -28,6 +28,7 @@ MakeCode Arcade can compile games to run on a Raspberry Pi Zero. The Raspberry P
 
 ## See Also
 
+* [Wire harness](/hardware/raspberry-pi/wire-harness)
 * [Adafruit Joy Bonnet](https://learn.adafruit.com/makecode-arcade-with-raspberry-pi-zero)
 * [Cardboard Control Panel](/hardware/raspberry-pi/cardboard-control-panel)
 * [IKEA FLISAT table](/hardware/raspberry-pi/ikea-flisat-table)
