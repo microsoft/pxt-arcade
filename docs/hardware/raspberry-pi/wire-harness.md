@@ -80,17 +80,12 @@ https://youtu.be/uCF_dTbmA0I
 - [ ] Connect one of jumper wire to the same row as the ground wire on the mini-bread board.
 - [ ] Connect the other jumper wire next to the 4 jumper wires, on its own row.
 
-## Step 2
+### Step 2
 
 - [ ] Repeat step 1 for the two other buttons
 
-## Step 3
+### Step 3
 
 - [ ] Use electrical tape around the two group of wires to secure them together.
 
 ![Wires with tape around them on a mini-breadboard](/static/hardware/raspberry-pi/wire-harness/breadboard-menu-harness.jpg)
-
-## Ready for installation!
-
-![A wire harness](/static/hardware/raspberry-pi/wire-harness/gallery.jpg)
-
