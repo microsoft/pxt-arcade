@@ -8,7 +8,8 @@ This guide describes how to build a wire harness to connect arcade buttons and j
 ## Materials
 
 * An **Arcade button kits** for 2 players, containing buttons and joysticks.
-* **Male-to-Male jumper cables**
+* **Male-to-male** jumper cables
+* **Male-to-female** jumper wires
 * 2 **mini breadboard**
 * Electrical insulation tape
 
@@ -19,6 +20,8 @@ This guide describes how to build a wire harness to connect arcade buttons and j
 Let's start by wiring a "Sanwa-style" joystick with a 5-pin JST connector and two buttons. This is a typical setup for a player in MakeCode Arcade.
 
 The idea of the harness is to use the mini-breadboard as a centralized wiring point which can then be used to connect to the Raspberry Pi Zero. The mini breadboard allows to connect ground wires without having to strip and solder cables. Let's get started!
+
+https://youtu.be/nb6OEdccT6w
 
 ### Step 1
 
@@ -55,8 +58,11 @@ Make sure to place them each in their own row.
 
 ![A button is connected](/static/hardware/raspberry-pi/wire-harness/buttons-breadboard.jpg)
 
+
 ### Step 5
 
+- [ ] Insert 6 **male-to-female** jumper wires in parallel to the logic wires.
+- [ ] Insert 1 **male-to-female** jumper wire on the ground row
 - [ ] Use electrical tape around the two group of wires to secure them together.
 
 ![Wires with tape around them on a mini-breadboard](/static/hardware/raspberry-pi/wire-harness/breadboard-tape.jpg)
@@ -66,6 +72,8 @@ This harness is ready! You can repeat the steps for player 2.
 ## Menu buttons
 
 There are 3 "system buttons" in arcade: ``RESET``, ``RESTART`` and ``MENU``. You can create a wire harness for those buttons and use the other side of the mini breadboard.
+
+https://youtu.be/uCF_dTbmA0I
 
 ### Step 1
 
