@@ -14,7 +14,7 @@ This guide describes how to build a wire harness to connect arcade buttons and j
 
 ![Materials for the wire harness](/static/hardware/raspberry-pi/wire-harness/materials.jpg)
 
-## 5-Pin Joystick
+## 5-Pin Joystick "Sanwa-style"
 
 Let's start by wiring a "Sanwa-style" joystick with a 5-pin JST connector and two buttons. This is a typical setup for a player in MakeCode Arcade.
 
