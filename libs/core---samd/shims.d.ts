@@ -214,6 +214,12 @@ declare interface PwmOnlyPin {
     //% name.fieldOptions.width=220
     //% name.fieldOptions.columns=4 shim=PwmOnlyPinMethods::servoSetPulse
     servoSetPulse(duration: int32): void;
+
+    /**
+     * Indicates if the servo is running continuously
+     */
+    //% blockHidden=1 shim=PwmOnlyPinMethods::servoSetContinuous
+    servoSetContinuous(continuous: boolean): void;
 }
 declare namespace control {
 
