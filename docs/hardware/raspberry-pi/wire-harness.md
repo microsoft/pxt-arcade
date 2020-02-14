@@ -14,9 +14,9 @@ This guide describes how to build a wire harness to connect arcade buttons and j
 
 ![Materials for the wire harness](/static/hardware/raspberry-pi/wire-harness/materials.jpg)
 
-## Joystick + A/B buttons
+## 5-Pin Joystick
 
-Let's start by wiring a joystick with a 5-pin JST connector and two buttons. This is a typical setup for a player in MakeCode Arcade.
+Let's start by wiring a "Sanwa-style" joystick with a 5-pin JST connector and two buttons. This is a typical setup for a player in MakeCode Arcade.
 
 The idea of the harness is to use the mini-breadboard as a centralized wiring point which can then be used to connect to the Raspberry Pi Zero. The mini breadboard allows to connect ground wires without having to strip and solder cables. Let's get started!
 
@@ -29,11 +29,13 @@ The idea of the harness is to use the mini-breadboard as a centralized wiring po
 
 ### Step 2
 
-- [ ] Identify the ground wire in the JST connect, it is typically the wire without any kind printed pattern. Connect the jumper wire attached to the ground to one side of the mini breadboard.
+- [ ] Identify the ground wire in the JST connect. Hold the joystick with the bottom facing you and the JST connector on the upper right, the ground wire is the upper wire.
 - [ ] Connect the other 4 jumper wires to the other side of the breadboard. 
 Make sure to place them each in their own row.
 
 ![A button is connected](/static/hardware/raspberry-pi/wire-harness/joystick-breadboard.jpg)
+
+## A+B buttons
 
 ### Step 3
 
