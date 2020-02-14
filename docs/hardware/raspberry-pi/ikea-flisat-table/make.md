@@ -108,5 +108,5 @@ minibreadboard has a sticky back.
 
 ## Next steps
 
-* [Setup the Raspberry Pi Zero](/hardware/raspberry-pi/setup)
+* [Setup the Raspberry Pi](/hardware/raspberry-pi/setup)
 * [Close the table](/hardware/raspberry-pi/close)

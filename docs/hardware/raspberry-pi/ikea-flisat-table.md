@@ -43,10 +43,6 @@ From your hardware store,
 ## Instructions
 
 * [Wire harness](/hardware/raspberry-pi/wire-harness)
-* [Convert the table](/hardware/raspberry-pi/ikea-flisat-table/make)
-
-## ~button /hardware/raspberry-pi/ikea-flisat-table/make
-
-Let's get started!
-
-## ~
+* [Installing the buttons](/hardware/raspberry-pi/ikea-flisat-table/make)
+* [Setup the Raspberry Pi](/hardware/raspberry-pi/setup)
+* [Close the table](/hardware/raspberry-pi/ikea-flisat-table/close)
