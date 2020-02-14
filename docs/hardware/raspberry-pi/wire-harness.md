@@ -89,3 +89,8 @@ https://youtu.be/uCF_dTbmA0I
 - [ ] Use electrical tape around the two group of wires to secure them together.
 
 ![Wires with tape around them on a mini breadboard](/static/hardware/raspberry-pi/wire-harness/breadboard-menu-harness.jpg)
+
+
+It's ready!
+
+![A wire harness with 5 buttons and a joystick](/static/hardware/raspberry-pi/wire-harness/menu-harness.jpg)
