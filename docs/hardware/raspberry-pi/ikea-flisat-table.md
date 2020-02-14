@@ -38,7 +38,6 @@ From your hardware store,
 * **3/16 inch drill bit**: to drill the holes to secure the joystick
 * (optional) **Cordless drill**: while you can drill the button holes with a manual tool, the 1 1/8" drill bit is the best at making a clean hole for the buttons. It's recommended that you use a drill if you have one and can use it safely.
 * (optional) **Counter sink bit**: it will predrill a hole and a cavity for the screw heads. Pro look guaranteed!
-* **Scissors or cutting tool**: to cut a hole in the TROFAST storage boxes.
 
 ## Instructions
 
