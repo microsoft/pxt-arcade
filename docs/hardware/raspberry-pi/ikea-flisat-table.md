@@ -1,14 +1,14 @@
-# IKEA FLISAT table
-
-Turn a cute IKEA children's table into a 2 player arcade... minimum making skills required, **you can do it!**
-
-![An IKEA FLISAT table turned into an arcade](/static/hardware/raspberry-pi/ikea-flisat-table/gallery.jpg)
-
 ## ~ hint
 
 The modifications to the IKEA FLISAT table are not verified or endorsed by IKEA.
 
 ## ~
+
+# IKEA FLISAT table
+
+Turn a cute IKEA children's table into a 2 player arcade... minimum making skills required, **you can do it!**
+
+![An IKEA FLISAT table turned into an arcade](/static/hardware/raspberry-pi/ikea-flisat-table/gallery.jpg)
 
 ### Materials
 
