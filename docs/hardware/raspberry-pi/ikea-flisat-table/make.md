@@ -17,11 +17,18 @@ to the Raspberry-Pi
 
 - [ ] Drill another hole at the back to snake the power supply cable
 
-## Drilling the holes
+## Drilling the table holes
 
 ### Step 1
 
 - [ ] (Optional) Apply a layer of masking tape on the board to avoid scratches
+
+#### ~ hint
+
+Use a **countersink bit** to pre-drill the holes and dig a spot for the screw head.
+It will make your work look much more pro!
+
+![A countersink bit](/static/hardware/raspberry-pi/ikea-flisat-table/countersink-bit.jpg)
 
 ### Step 2
 
@@ -46,7 +53,10 @@ Make sure to be at least 4" from the border to avoid touching the boxes. Keep at
 ### Step 5
 
 - [ ] Using a 5/16" bit, drill through each hole of the joystick
-- [ ] (optional) Use a ??? to create a well that will hole the screw head and keep your table flush
+- [ ] (optional) Use a drillbit to create a well that will hole the screw head and keep your table flush
+
+![A table with 3 holes](/static/hardware/raspberry-pi/ikea-flisat-table/holes.jpg)
+
 
 ### Step 6
 

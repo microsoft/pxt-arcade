@@ -30,6 +30,9 @@ The idea of the harness is to use the mini-breadboard as a centralized wiring po
 ### Step 2
 
 - [ ] Identify the ground wire in the JST connect. Hold the joystick with the bottom facing you and the JST connector on the upper right, the ground wire is the upper wire.
+
+![Finding ground](/static/hardware/raspberry-pi/wire-harness/5pin.jpg)
+
 - [ ] Connect the other 4 jumper wires to the other side of the breadboard. 
 Make sure to place them each in their own row.
 
