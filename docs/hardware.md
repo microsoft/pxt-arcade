@@ -77,6 +77,13 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "variant": "hw---rpi"
     },
     {
+        "name": "Arcade table",
+        "description": "Turn an IKEA FLISAT table into an arcade.",
+        "imageUrl": "/static/hardware/raspberry-pi/ikea-flisat-table/gallery.jpg",
+        "url": "/hardware/raspberry-pi/ikea-flisat-table",
+        "variant": "hw---rpi"
+    },
+    {
         "name": "Add Board",
         "description": "Are you looking to build your own hardware to run Arcade games? This in-depth guide provides the technical details and specifications to get started.",
         "url": "/hardware/adding"
