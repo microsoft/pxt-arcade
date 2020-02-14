@@ -4,22 +4,9 @@ An IKEA FLISAT table is modified to accept the Arcade joysticks and buttons. Set
 
 ![A table with buttons](/static/hardware/raspberry-pi/ikea-flisat-table/buttons-installed.jpg)
 
-## Preparing the boxes
-
-### Step 1
-
-- [ ] Remove the TROFAST boxes from the table.
-
-### Step 2
-
-- [ ] Using an 1 1/8" drill bit, drill in the middle of the long side of the table so
-that you can route the wires to the Raspberry-Pi.
-
-### Step 3
-
-- [ ] Drill another hole at the back to snake through the power supply cable.
-
 ## Drilling the table holes
+
+https://youtu.be/ltzou5LEL8g
 
 ### Step 1
 
@@ -66,7 +53,26 @@ It will make your work look much more pro!
 - [ ] Apply masking tape and mark 3 additional holes for the **RESET**, **RESTART**, **MENU** buttons.
 - [ ] Drill the 3 holes.
 
+## Preparing the boxes
+
+https://youtu.be/_KtwX1xxTW8
+
+### Step 1
+
+- [ ] Remove the TROFAST boxes from the table.
+
+### Step 2
+
+- [ ] Using an 1 1/8" drill bit, drill in the middle of the long side of the table so
+that you can route the wires to the Raspberry-Pi.
+
+### Step 3
+
+- [ ] Drill another hole at the back to snake through the power supply cable.
+
 ## Installing the wire harnesses
+
+https://youtu.be/Aq2tmcNKWnE
 
 ### Step 1
 
