@@ -105,10 +105,8 @@ minibreadboard has a sticky back.
 
 - [ ] Use electrical tape to secure all the headers added to the breadboard.
 
-## Closing the table
 
-Close up the table after:
+## Next steps
 
-- [ ] All the buttons are connected and tested.
-- [ ] Holes are pre-drilled on each corner of the plates.
-- [ ] Each corner is screwed into the drilled holes.
+* [Setup the Raspberry Pi Zero](/hardware/raspberry-pi/setup)
+* [Close the table](/hardware/raspberry-pi/close)
