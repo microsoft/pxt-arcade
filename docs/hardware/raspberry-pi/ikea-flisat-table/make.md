@@ -1,6 +1,6 @@
 # Make
 
-A IKEA FLISAT table is modified to accept the Arcade joysticks and buttons. Set up the table and get your tools and materials ready.
+An IKEA FLISAT table is modified to accept the Arcade joysticks and buttons. Set up the table and get your tools and materials ready.
 
 ![A table with buttons](/static/hardware/raspberry-pi/ikea-flisat-table/buttons-installed.jpg)
 
