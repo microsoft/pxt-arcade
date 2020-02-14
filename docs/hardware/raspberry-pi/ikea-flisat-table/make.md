@@ -22,16 +22,6 @@ to the Raspberry-Pi
 ### Step 1
 
 - [ ] (Optional) Apply a layer of masking tape on the board to avoid scratches
-
-#### ~ hint
-
-Use a **countersink bit** to pre-drill the holes and dig a spot for the screw head.
-It will make your work look much more pro!
-
-![A countersink bit](/static/hardware/raspberry-pi/ikea-flisat-table/countersink-bit.jpg)
-
-### Step 2
-
 - [ ] Using a ruler and a pencil, mark the center of joystick, A and B buttons.
 Make sure to be at least 4" from the border to avoid touching the boxes. Keep at least 2" between buttons.
 
@@ -53,10 +43,19 @@ Make sure to be at least 4" from the border to avoid touching the boxes. Keep at
 ### Step 5
 
 - [ ] Using a 5/16" bit, drill through each hole of the joystick
-- [ ] (optional) Use a drillbit to create a well that will hole the screw head and keep your table flush
 
 ![A table with 3 holes](/static/hardware/raspberry-pi/ikea-flisat-table/holes.jpg)
 
+#### ~ hint
+
+Use a **countersink bit** to pre-drill the holes and dig a spot for the screw head.
+It will make your work look much more pro!
+
+![A countersink bit](/static/hardware/raspberry-pi/ikea-flisat-table/countersink-bit.jpg)
+
+#### ~
+
+### Step 2
 
 ### Step 6
 

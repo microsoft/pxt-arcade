@@ -19,7 +19,7 @@ From your local IKEA,
 
 From your electronics shop,
 
-* A two player arcade kit: **2 joysticks** and **7 buttons** (avoid using any LED buttons or analog joysticks).
+* A two player arcade kit: **2 5-pin joysticks** and **7 buttons** (avoid using any LED buttons or analog joysticks).
 * **2 mini breadboards**
 * **Male-to-Male and Male-to-Female jumper wires** to connect the buttons to the Raspberry Pi (see later in this list).
 * **Raspberry Pi Zero Kit** with a [Raspberry Pi Zero](https://www.raspberrypi.org/products/raspberry-pi-zero/) (Wifi/BLE not required), HDMI adapter, power supply, memory card (not all kits have one).
