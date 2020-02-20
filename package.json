@@ -1,46 +1,46 @@
 {
-  "name": "pxt-arcade",
-  "version": "0.16.34",
-  "description": "Small arcade editor for MakeCode",
-  "keywords": [
-    "JavaScript",
-    "education",
-    "MakeCode"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/microsoft/pxt-arcade.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "homepage": "https://github.com/microsoft/pxt-arcade#readme",
-  "files": [
-    "README.md",
-    "pxtarget.json",
-    "targetconfig.json",
-    "built/*.js",
-    "built/*.json",
-    "built/*.d.ts",
-    "sim/public",
-    "docs/**"
-  ],
-  "devDependencies": {
-    "@types/bluebird": "^2.0.33",
-    "@types/marked": "^0.3.0",
-    "@types/node": "^9.3.0",
-    "@types/web-bluetooth": "0.0.4",
-    "semantic-ui-less": "2.2.14",
-    "typescript": "^3.7.5"
-  },
-  "dependencies": {
-    "pxt-common-packages": "6.21.5",
-    "pxt-core": "5.34.19",
-    "@jacdac/jacdac-ts": "^0.0.9"
-  },
-  "optionalDependencies": {
-    "pxt-arcade-sim": "microsoft/pxt-arcade-sim.git#v0.7.12"
-  },
-  "scripts": {
-    "serve": "node node_modules/pxt-core/built/pxt.js serve"
-  }
+    "name": "pxt-arcade",
+    "version": "0.16.34",
+    "description": "Small arcade editor for MakeCode",
+    "keywords": [
+        "JavaScript",
+        "education",
+        "MakeCode"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/microsoft/pxt-arcade.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "homepage": "https://github.com/microsoft/pxt-arcade#readme",
+    "files": [
+        "README.md",
+        "pxtarget.json",
+        "targetconfig.json",
+        "built/*.js",
+        "built/*.json",
+        "built/*.d.ts",
+        "sim/public",
+        "docs/**"
+    ],
+    "devDependencies": {
+        "@types/bluebird": "^2.0.33",
+        "@types/marked": "^0.3.0",
+        "@types/node": "^9.3.0",
+        "@types/web-bluetooth": "0.0.4",
+        "semantic-ui-less": "2.2.14",
+        "typescript": "^3.7.5"
+    },
+    "dependencies": {
+        "pxt-common-packages": "6.21.8",
+        "pxt-core": "5.35.1",
+        "@jacdac/jacdac-ts": "^0.0.9"
+    },
+    "optionalDependencies": {
+        "pxt-arcade-sim": "microsoft/pxt-arcade-sim.git#v0.7.12"
+    },
+    "scripts": {
+        "serve": "node node_modules/pxt-core/built/pxt.js serve"
+    }
 }
