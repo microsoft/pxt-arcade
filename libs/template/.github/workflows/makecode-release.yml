@@ -1,4 +1,4 @@
-name: MakeCode Arcade Binary Release
+name: MakeCode Arcade Release
 
 on: 
   release:
@@ -51,13 +51,13 @@ jobs:
           cp ./built/binary.uf2 binary-p0.uf2
       - name: bundle all
         run: |
-          cat binary-*.uf2 > built/arcade-all.uf2
+          cat binary-*.uf2 > built/arcade.uf2
       - name: upload bundled
         uses: actions/upload-release-asset@v1.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./built/arcade-all.uf2
-          asset_name: arcade-all.uf2
+          asset_path: ./built/arcade.uf2
+          asset_name: arcade.uf2
           asset_content_type: application/octet-stream

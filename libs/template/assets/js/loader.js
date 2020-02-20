@@ -26,7 +26,7 @@ function makeCodeRun(options) {
             if (meta.version && meta.repo && vel) {
                 var ap = document.createElement("a");
                 ap.download = "arcade.uf2";
-                ap.href = "https://github.com/" + meta.repo + "/releases/download/v" + meta.version + "/arcade-all.uf2";
+                ap.href = "https://github.com/" + meta.repo + "/releases/download/v" + meta.version + "/arcade.uf2";
                 ap.innerText = "v" + meta.version;
                 vel.appendChild(ap);
             }
