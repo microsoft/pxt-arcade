@@ -89,6 +89,8 @@ minibreadboard has a sticky back.
 
 ## Connecting to the Pi
 
+https://youtu.be/VmLae3ztJ-8
+
 ### Step 1
 
 - [ ] [Setup the Raspberry Pi](/hardware/raspberry-pi/setup) and connect it to a screen. It will show you where the pins should go.
