@@ -2,7 +2,7 @@
 
 An IKEA FLISAT table is modified to accept the Arcade joysticks and buttons. Set up the table and get your tools and materials ready.
 
-![A table with buttons](/static/hardware/raspberry-pi/ikea-flisat-table/buttons-installed.jpg)
+![A table with buttons](/docs/static/hardware/raspberry-pi/ikea-flisat-table/buttons-installed.jpg)
 
 ## Drilling the table holes
 
@@ -14,33 +14,33 @@ https://youtu.be/ltzou5LEL8g
 - [ ] Using a ruler and a pencil, mark the center of joystick, **A** and **B** buttons.
 Make sure you're at least 4" from the border to avoid touching the boxes. Keep at least 2" between buttons.
 
-![A table with masking tape and drill points](/static/hardware/raspberry-pi/ikea-flisat-table/marked.jpg)
+![A table with masking tape and drill points](/docs/static/hardware/raspberry-pi/ikea-flisat-table/marked.jpg)
 
 ### Step 2
 
 - [ ] Using an 1 1/8" bit, drill the 3 holes as marked.
 
-![A table with 3 holes](/static/hardware/raspberry-pi/ikea-flisat-table/drilled.jpg)
+![A table with 3 holes](/docs/static/hardware/raspberry-pi/ikea-flisat-table/drilled.jpg)
 
 ### Step 3
 
 - [ ] Position the joystick upside down and center the stick with the hole.
 - [ ] Mark the corner holes of the joystick with your pencil.
 
-![A table with 3 holes](/static/hardware/raspberry-pi/ikea-flisat-table/mask-joystick.jpg)
+![A table with 3 holes](/docs/static/hardware/raspberry-pi/ikea-flisat-table/mask-joystick.jpg)
 
 ### Step 4
 
 - [ ] Using a 5/16" bit, drill through each hole of the joystick.
 
-![A table with 3 holes](/static/hardware/raspberry-pi/ikea-flisat-table/holes.jpg)
+![A table with 3 holes](/docs/static/hardware/raspberry-pi/ikea-flisat-table/holes.jpg)
 
 #### ~ hint
 
 Use a **countersink bit** to pre-drill the holes and dig out a spot for the screw head.
 It will make your work look much more pro!
 
-![A countersink bit](/static/hardware/raspberry-pi/ikea-flisat-table/countersink-bit.jpg)
+![A countersink bit](/docs/static/hardware/raspberry-pi/ikea-flisat-table/countersink-bit.jpg)
 
 #### ~
 
@@ -93,7 +93,7 @@ https://youtu.be/VmLae3ztJ-8
 
 ### Step 1
 
-- [ ] [Setup the Raspberry Pi](/hardware/raspberry-pi/setup) and connect it to a screen. It will show you where the pins should go.
+- [ ] [Setup the Raspberry Pi](../setup) and connect it to a screen. It will show you where the pins should go.
 
 ### Step 2
 
@@ -116,5 +116,5 @@ https://youtu.be/VmLae3ztJ-8
 
 ## Next steps
 
-* [Setup the Raspberry Pi](/hardware/raspberry-pi/setup)
-* [Close the table](/hardware/raspberry-pi/close)
+* [Setup the Raspberry Pi](../setup)
+* [Close the table](../close)
