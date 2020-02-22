@@ -50,7 +50,7 @@ You could also use any kind of machine screws to attach and secure the joystick.
 
 ## Next step...
 
-## ~button /docs/hardware/raspberry-pi/setup
+## ~button ../setup
 
 Next, Raspberry Pi Zero setup
 
