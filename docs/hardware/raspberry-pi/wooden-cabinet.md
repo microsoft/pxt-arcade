@@ -11,6 +11,6 @@ https://www.instructables.com/id/Easy-Cab-arcade/
 
 ## Control panel
 
-Follow the wiring instructions of the [Cardboard Control Panel](/hardware/raspberry-pi/cardboard-control-panel) to wire the buttons and joysticks to the raspberry pi.
+Follow the wiring instructions of the [Cardboard Control Panel](./cardboard-control-panel) to wire the buttons and joysticks to the raspberry pi.
 
 That's it!
