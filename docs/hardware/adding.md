@@ -268,7 +268,7 @@ Provision must be made for commissioning boards following manufacture. Depending
 be possible to flash and test the board over USB. However, to-date we have used a debug connector
 which exposes SWD and other signals, as shown in the reference design. We use a standard 0.1" pitch
 single row header footprint for this, but we do not fit a connector to the PCB. Instead we use the technique
-described here: [Debug connector information](/hardware/dbg).
+described here: [Debug connector information](./dbg).
 
 ### Pin mapping
 
