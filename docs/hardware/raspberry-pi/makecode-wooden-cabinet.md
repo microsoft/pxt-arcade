@@ -65,7 +65,7 @@ Once all the boards are secured, attach the upper side of the arcade and you're 
 
 ## Control panel
 
-Follow the wiring instructions of the [cardboard control panel](/hardware/raspberry-pi/cardboard-control-panel) to wire the buttons and joysticks to the raspberry pi.
+Follow the wiring instructions of the [cardboard control panel](./cardboard-control-panel) to wire the buttons and joysticks to the raspberry pi.
 
 ## Screen
 
