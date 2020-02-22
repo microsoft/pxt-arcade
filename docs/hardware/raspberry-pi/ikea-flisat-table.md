@@ -8,7 +8,7 @@ The modifications to the IKEA FLISAT table are not verified or endorsed by IKEA.
 
 Turn a cute IKEA children's table into a 2 player arcade... minimum making skills required, **you can do it!**
 
-![An IKEA FLISAT table turned into an arcade](/static/hardware/raspberry-pi/ikea-flisat-table/gallery.jpg)
+![An IKEA FLISAT table turned into an arcade](/docs/static/hardware/raspberry-pi/ikea-flisat-table/gallery.jpg)
 
 ### Materials
 
@@ -41,7 +41,7 @@ From your hardware store,
 
 ## Instructions
 
-* [Wire harness](/hardware/raspberry-pi/wire-harness)
-* [Installing the buttons](/hardware/raspberry-pi/ikea-flisat-table/make)
-* [Setup the Raspberry Pi](/hardware/raspberry-pi/setup)
-* [Close the table](/hardware/raspberry-pi/ikea-flisat-table/close)
+* [Wire harness](./wire-harness)
+* [Installing the buttons](./ikea-flisat-table/make)
+* [Setup the Raspberry Pi](./setup)
+* [Close the table](./ikea-flisat-table/close)
