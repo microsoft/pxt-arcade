@@ -76,7 +76,7 @@ https://youtu.be/Aq2tmcNKWnE
 
 ### Step 1
 
-- [ ] Grab a player wire harness that you have previously [prepared](/hardware/raspberry-pi/wire-harness).
+- [ ] Grab a player wire harness that you have previously [prepared](../wire-harness).
 - [ ] Stick the mini-breadboard to the center of the board on the back side (hidden side). The 
 minibreadboard has a sticky back.
 - [ ] Mount both buttons on the board. The clicker can be removed in order to sleeve the button through the hole.
