@@ -3,7 +3,7 @@
 
 This guide describes how to build a wire harness to connect arcade buttons and joysticks to a Raspberry Pi.
 
-![A wire harness](/docs/static/hardware/raspberry-pi/wire-harness/gallery.jpg)
+![A wire harness](../../static/hardware/raspberry-pi/wire-harness/gallery.jpg)
 
 ## Materials
 
@@ -26,18 +26,18 @@ https://youtu.be/nb6OEdccT6w
 - [ ] Connect 5 male jumper wires into the 5-pin JST connector of the joystick.
 - [ ] Use electrical tape to secure the cables.
 
-![A button is connected](/docs/static/hardware/raspberry-pi/wire-harness/joystick-tape.jpg)
+![A button is connected](../../static/hardware/raspberry-pi/wire-harness/joystick-tape.jpg)
 
 ### Step 2
 
 - [ ] Identify the ground wire in the JST connector. Hold the joystick with the bottom facing you and the JST connector on the upper right, the ground wire is the upper wire.
 
-![Finding ground](/docs/static/hardware/raspberry-pi/wire-harness/5pin.jpg)
+![Finding ground](../../static/hardware/raspberry-pi/wire-harness/5pin.jpg)
 
 - [ ] Connect the other 4 jumper wires to the other side of the breadboard. 
 Make sure to place them each in their own row.
 
-![A button is connected](/docs/static/hardware/raspberry-pi/wire-harness/joystick-breadboard.jpg)
+![A button is connected](../../static/hardware/raspberry-pi/wire-harness/joystick-breadboard.jpg)
 
 ## A+B buttons
 
@@ -48,13 +48,13 @@ Make sure to place them each in their own row.
 - [ ] Connect one of jumper wires to the same row as the ground wire on the mini bread board.
 - [ ] Connect the other jumper wire next to the 4 jumper wires, on its own row.
 
-![A button is connected](/static/hardware/raspberry-pi/wire-harness/button-breadboard.jpg)
+![A button is connected](../../static/hardware/raspberry-pi/wire-harness/button-breadboard.jpg)
 
 ### Step 2
 
 - [ ] Repeat steps 4 through 6 for the other button.
 
-![A button is connected](/docs/static/hardware/raspberry-pi/wire-harness/buttons-breadboard.jpg)
+![A button is connected](../../static/hardware/raspberry-pi/wire-harness/buttons-breadboard.jpg)
 
 
 ### Step 3
@@ -63,7 +63,7 @@ Make sure to place them each in their own row.
 - [ ] Insert 1 **male-to-female** jumper wire on the ground row.
 - [ ] Use electrical tape around the two group of wires to secure them together.
 
-![Wires with tape around them on a mini breadboard](/docs/static/hardware/raspberry-pi/wire-harness/breadboard-tape.jpg)
+![Wires with tape around them on a mini breadboard](../../static/hardware/raspberry-pi/wire-harness/breadboard-tape.jpg)
 
 That harness is ready! You can repeat the steps for player 2.
 
@@ -88,9 +88,9 @@ https://youtu.be/uCF_dTbmA0I
 
 - [ ] Use electrical tape around the two group of wires to secure them together.
 
-![Wires with tape around them on a mini breadboard](/docs/static/hardware/raspberry-pi/wire-harness/breadboard-menu-harness.jpg)
+![Wires with tape around them on a mini breadboard](../../static/hardware/raspberry-pi/wire-harness/breadboard-menu-harness.jpg)
 
 
 It's ready!
 
-![A wire harness with 5 buttons and a joystick](/docs/static/hardware/raspberry-pi/wire-harness/menu-harness.jpg)
+![A wire harness with 5 buttons and a joystick](../../static/hardware/raspberry-pi/wire-harness/menu-harness.jpg)
