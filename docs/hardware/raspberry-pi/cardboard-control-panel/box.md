@@ -2,7 +2,7 @@
 
 Find a cardboard box large enough to hold your buttons and joystick. If you purchased a computer monitor for the arcade, just use the box that the screen came in.
 
-![An Arcade control panel made of cardboard](/docs/static/hardware/raspberry-pi/cardboard-control-panel/controlpanel.jpg)
+![An Arcade control panel made of cardboard](../../static/hardware/raspberry-pi/cardboard-control-panel/controlpanel.jpg)
 
 
 ## Reinforcement
@@ -13,13 +13,13 @@ By add adding 1 or 2 layers of cardboard to the surface that will hold the butto
 
 Cut out the additional cardboard sheets.
 
-![Multiple sheets of cardboard to be glued](/docs/static/hardware/raspberry-pi/cardboard-control-panel/cardboardlayers.jpg)
+![Multiple sheets of cardboard to be glued](../../static/hardware/raspberry-pi/cardboard-control-panel/cardboardlayers.jpg)
 
 ### Glue the layers together
 
 Use a glue gun to attach and layer them to the control panel surface.
 
-![Side cut view of 3 layers of cardboard](/docs/static/hardware/raspberry-pi/cardboard-control-panel/sandwich.jpg)
+![Side cut view of 3 layers of cardboard](../../static/hardware/raspberry-pi/cardboard-control-panel/sandwich.jpg)
 
 
 ## Button layout
@@ -30,7 +30,7 @@ https://youtu.be/hdFZYOBV4_c
 <br/>
 For the buttons, use the black plastic ring to trace a pattern for their hole size; for the joystick, remove the stick from its base if you need that to help you trace those.
 
-![Button and joystick layout drawn on the cardboard](/docs/static/hardware/raspberry-pi/cardboard-control-panel/layout.jpg)
+![Button and joystick layout drawn on the cardboard](../../static/hardware/raspberry-pi/cardboard-control-panel/layout.jpg)
 
 ### ~ hint
 
@@ -54,7 +54,7 @@ cutting tools but it is hard to achieve a nice clean hole cut.
 
 Use a 1" bit to drill the holes for the buttons and joystick centers. 
 
-![A 1" inch drill bit](/docs/static/hardware/raspberry-pi/cardboard-control-panel/oneinchdrill.jpg)
+![A 1" inch drill bit](../../static/hardware/raspberry-pi/cardboard-control-panel/oneinchdrill.jpg)
 
 https://youtu.be/NqXG0nbPK8k
 
@@ -62,14 +62,14 @@ https://youtu.be/NqXG0nbPK8k
 
 Drill 1 additional hole in the center to pass the wires through.
 
-![The control panel with holes drilled](/docs/static/hardware/raspberry-pi/cardboard-control-panel/layoutholes.jpg)
+![The control panel with holes drilled](../../static/hardware/raspberry-pi/cardboard-control-panel/layoutholes.jpg)
 
 ### Joystick zip ties
 
 Use a screwdriver or the blade of the scissor to cut **small** holes on the corners of the joystick.
 The holes should be large enough to let a **zip tie** go through (or a machine screw).
 
-![A screwdriver used as a drill for the joystick holes](/docs/static/hardware/raspberry-pi/cardboard-control-panel/joystickdrill.jpg)
+![A screwdriver used as a drill for the joystick holes](../../static/hardware/raspberry-pi/cardboard-control-panel/joystickdrill.jpg)
 
 ### ~ hint
 
@@ -83,13 +83,13 @@ If you plan to paint or put some style elements (marker drawings, stickers, etc.
 
 Try squeezing a few buttons and zip ties in the holes. If they don't fit it, try rotating them in just like a screw.
 
-![Two buttons squeezed into cardboard holes](/docs/static/hardware/raspberry-pi/cardboard-control-panel/squeeze.jpg)
+![Two buttons squeezed into cardboard holes](../../static/hardware/raspberry-pi/cardboard-control-panel/squeeze.jpg)
 
 ### Access door
 
 Cut an access door at the back to allow easier wiring later on.
 
-![An opening at the back of the control panel to help with wiring.](/docs/static/hardware/raspberry-pi/cardboard-control-panel/backdoor.jpg)
+![An opening at the back of the control panel to help with wiring.](../../static/hardware/raspberry-pi/cardboard-control-panel/backdoor.jpg)
 
 ## Next step...
 
