@@ -6,7 +6,7 @@ It's time to put it all together...
 
 * Insert a zip tie at each corner of the joystick and use another zip tie inside the box to secure the joystick base.
 
-![A zip tie securing the joystick to the panel](/docs/static/hardware/raspberry-pi/cardboard-control-panel/zip.jpg)
+![A zip tie securing the joystick to the panel](../../static/hardware/raspberry-pi/cardboard-control-panel/zip.jpg)
 
 ### ~ hint
 
@@ -20,11 +20,11 @@ You could also use any kind of machine screws to attach and secure the joystick.
 
 * Insert all the buttons and secure the plastic rings.
 
-![Buttons and joysticks inserted into the cardboard box](/docs/static/hardware/raspberry-pi/cardboard-control-panel/buttons.jpg)
+![Buttons and joysticks inserted into the cardboard box](../../static/hardware/raspberry-pi/cardboard-control-panel/buttons.jpg)
 
 * Attach all the button bases to the plastic buttons.
 
-![Buttons and joysticks secured.](/docs/static/hardware/raspberry-pi/cardboard-control-panel/wired.jpg)
+![Buttons and joysticks secured.](../../static/hardware/raspberry-pi/cardboard-control-panel/wired.jpg)
 
 ## Raspberry Pi
 
@@ -32,21 +32,21 @@ You could also use any kind of machine screws to attach and secure the joystick.
 * Attach the USB power cable, regular USB cable, and HDMI cable to screen.
 * Use small nails, sewing thread, or even hot glue to secure the Pi on the cardboard.
 
-![A Raspberry Pi help by hot glue on the corners](/docs/static/hardware/raspberry-pi/cardboard-control-panel/gluecorners.jpg)
+![A Raspberry Pi help by hot glue on the corners](../../static/hardware/raspberry-pi/cardboard-control-panel/gluecorners.jpg)
 
-![A Raspberry Pi held using Chicken Wire staples](/docs/static/hardware/raspberry-pi/cardboard-control-panel/pi.jpg)
+![A Raspberry Pi held using Chicken Wire staples](../../static/hardware/raspberry-pi/cardboard-control-panel/pi.jpg)
 
 * Install the connectors onto the header pins as shown in this picture.
 
-![A line of headers without tape](/docs/static/hardware/raspberry-pi/cardboard-control-panel/headersloose.jpg)
+![A line of headers without tape](../../static/hardware/raspberry-pi/cardboard-control-panel/headersloose.jpg)
 
 * Wrap tape around the connectors and any exposed pins to secure them together with the header.
 
-![A line of headers with tape](/docs/static/hardware/raspberry-pi/cardboard-control-panel/headerstaped.jpg)
+![A line of headers with tape](../../static/hardware/raspberry-pi/cardboard-control-panel/headerstaped.jpg)
 
 * Bundle the wires using a zip tie or tape to secure them together.
 
-![A bundle of wires secured by a zip tie](/docs/static/hardware/raspberry-pi/cardboard-control-panel/ziptiecables.jpg)
+![A bundle of wires secured by a zip tie](../../static/hardware/raspberry-pi/cardboard-control-panel/ziptiecables.jpg)
 
 ## Next step...
 
