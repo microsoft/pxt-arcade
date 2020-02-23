@@ -1,6 +1,6 @@
 # Raspberry Pi Zero Setup
 
-![An Arcade control panel made of cardboard](/docs/static/hardware/raspberry-pi/cardboard-control-panel/pisetup.jpg)
+![An Arcade control panel made of cardboard](../../static/hardware/raspberry-pi/cardboard-control-panel/pisetup.jpg)
 
 ## Firwmare setup
 
@@ -29,7 +29,7 @@ Now, let's try out the firmware.
 
 You should see the Configuration Program:
 
-![A screenshot of the configuration game](/docs/static/hardware/raspberry-pi/cardboard-control-panel/configurator.png)
+![A screenshot of the configuration game](../../static/hardware/raspberry-pi/cardboard-control-panel/configurator.png)
 
 You can use this program on the Raspberry Pi panel to help make sure your wiring is correct.
 
@@ -37,7 +37,7 @@ You can use this program on the Raspberry Pi panel to help make sure your wiring
 
 Route all of the female header connecters on the jumper wires from the inside of the box through the hole for the wires.
 
-![A bunch of jumper wires sticking out from the center hole on the control panel](/docs/static/hardware/raspberry-pi/cardboard-control-panel/cable-stick.jpg)
+![A bunch of jumper wires sticking out from the center hole on the control panel](../../static/hardware/raspberry-pi/cardboard-control-panel/cable-stick.jpg)
 
 ### Connect GROUND pins
 
