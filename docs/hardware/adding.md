@@ -49,7 +49,7 @@ The rest of this page is split into three main sections, each of which refers to
 
 MakeCode Arcade currently only targets ARM Cortex-based MCUs, and we have only tested Cortex M4F.
 
-The Arcade display resolution and colour depth requires 160x120x4 bits for a display bugger, taking a little under 10kB.
+The Arcade display resolution and colour depth requires 160x120x4 bits for a display buffer, taking a little under 10kB.
 We need at least two sets of display data for double-buffering and the user is very likely to use two or three more for various
 sprite operations. This, together with heap fragmentation concerns,  requires the hardware to have **at least 96kB of RAM**. Programs with heavy memory requirements may only run if there is more than 96kB of RAM.
 In addition **512kB of flash** and a processor speed of at least **64MHz** or more are recommended.
