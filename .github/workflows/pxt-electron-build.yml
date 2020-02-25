@@ -2,11 +2,12 @@ name: create release
 
 on:
   push:
+    # run on semantic releases...
     tags:
       - v[0-9]+.[0-9]+.[0-9]+
-    branches-ignore:
-      - '!stable[0-9]+.[0-9]+'
-
+    # that come from a stable branch
+    branches:
+      - stable[0-9]+.[0-9]+
 
 jobs:
   build-release:
@@ -59,9 +60,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install target
       run: |
-        sudo apt-get install xvfb
-        sudo npm install -g pxt
-        sudo npm install -g gulp
+        npm install -g pxt
+        npm install -g gulp
         npm install
     - name: npm install electron wrapper
       run: |
@@ -94,7 +94,7 @@ jobs:
     name: Create and upload mac electron app
 
     needs: build-release
-    runs-on: darwin-latest
+    runs-on: macos-latest
 
     strategy:
       matrix:
