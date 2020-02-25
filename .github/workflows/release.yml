@@ -2,12 +2,9 @@ name: create release
 
 on:
   push:
-    # run on semantic releases...
+    # run on semantic releases
     tags:
       - v[0-9]+.[0-9]+.[0-9]+
-    # that come from a stable branch
-    branches:
-      - stable[0-9]+.[0-9]+
 
 jobs:
   build-release:
@@ -92,8 +89,8 @@ jobs:
 
   build-mac-electron:
     name: Create and upload mac electron app
-
     needs: build-release
+
     runs-on: macos-latest
 
     strategy:

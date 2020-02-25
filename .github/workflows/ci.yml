@@ -1,0 +1,35 @@
+name: ci
+
+# Ideally, if a push also triggered release.yml, this should be ignored;
+# there is no obvious way to do that currently, so this will just run
+# an test build on those occasions for now
+on: [push, pull_request]
+
+jobs:
+  build-release:
+    name: Create and upload release
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [8.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install
+      run: |
+        sudo apt-get install xvfb
+        sudo npm install -g pxt
+        npm install
+    - name: pxt ci
+      run: |
+        pxt ci
+      env:
+        CHROME_BIN: chromium-browser
+        DISPLAY: :99.0
+        CI: true
