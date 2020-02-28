@@ -400,8 +400,7 @@
         "githubEditor": true,
         "githubCompiledJs": true,
         "chooseLanguageRestrictionOnNewProject": true,
-        "openProjectNewTab": true,
-        "recipes": true
+        "openProjectNewTab": true
     },
     "unsupportedBrowsers": [
         {
