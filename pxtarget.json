@@ -385,6 +385,7 @@
             "debugExtensionCode",
             "snippetBuilder",
             "experimentalHw",
+            "recipes",
             "tutorialBlocksDiff",
             "blocksCollapsing"
         ],
