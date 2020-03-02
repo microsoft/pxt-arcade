@@ -169,7 +169,9 @@ Games submitted by the MakeCode community.
     {
         "title": "North Shore Winter Adventure",
         "url": "https://forum.makecode.com/t/north-shore-winter-adventure/1313",
-        "imageUrl": "/static/discourse/22765-98788-64181-21037.gif",
+        "imageUrl": "/static/discourse/22765-98788-64181-21037.png",
+        "largeImageUrl": "/static/discourse/22765-98788-64181-21037.gif",
+        "videoUrl": "/static/discourse/22765-98788-64181-21037.mp4",
         "author": "",
         "cardType": "forumUrl",
         "description": ""
@@ -185,7 +187,9 @@ Games submitted by the MakeCode community.
     {
         "title": "Accel Racing",
         "url": "https://forum.makecode.com/t/accel-racing/1208",
-        "imageUrl": "/static/discourse/86233-37819-25265-86211.gif",
+        "imageUrl": "/static/discourse/86233-37819-25265-86211.png",
+        "largeImageUrl": "/static/discourse/86233-37819-25265-86211.gif",
+        "videoUrl": "/static/discourse/86233-37819-25265-86211.mp4",
         "author": "Minatsu Tukisima",
         "cardType": "forumUrl",
         "description": ""
@@ -201,7 +205,9 @@ Games submitted by the MakeCode community.
     {
         "title": "Introducing 10 PRINT",
         "url": "https://forum.makecode.com/t/introducing-10-print/1203",
-        "imageUrl": "/static/discourse/95293-25888-76147-12382.gif",
+        "imageUrl": "/static/discourse/95293-25888-76147-12382.png",
+        "largeImageUrl": "/static/discourse/95293-25888-76147-12382.gif",
+        "videoUrl": "/static/discourse/95293-25888-76147-12382.mp4",
         "author": "Adri314",
         "cardType": "forumUrl",
         "description": ""
@@ -209,16 +215,10 @@ Games submitted by the MakeCode community.
     {
         "title": "Fresh Slice!",
         "url": "https://forum.makecode.com/t/fresh-slice/1025",
-        "imageUrl": "/static/discourse/61682-36649-87994-88813.gif",
+        "imageUrl": "/static/discourse/61682-36649-87994-88813.png",
+        "largeImageUrl": "/static/discourse/61682-36649-87994-88813.gif",
+        "videoUrl": "/static/discourse/61682-36649-87994-88813.mp4",
         "author": "Pete",
-        "cardType": "forumUrl",
-        "description": ""
-    },
-    {
-        "title": "Adventures of Bevin Bombus Bumble: An Educational Experience (Game)",
-        "url": "https://forum.makecode.com/t/adventures-of-bevin-bombus-bumble-an-educational-experience-game/403",
-        "imageUrl": "https://pxt.azureedge.net/blob/e9dfde3b71399a21bd1f586efa4748d0fa6775a0/static/logo.svg",
-        "author": "Corey Zeneberg",
         "cardType": "forumUrl",
         "description": ""
     },
@@ -233,7 +233,9 @@ Games submitted by the MakeCode community.
     {
         "title": "Bat dungeon",
         "url": "https://forum.makecode.com/t/bat-dungeon/1004",
-        "imageUrl": "/static/discourse/76866-08647-86101-41081.gif",
+        "imageUrl": "/static/discourse/76866-08647-86101-41081.png",
+        "largeImageUrl": "/static/discourse/76866-08647-86101-41081.gif",
+        "videoUrl": "/static/discourse/76866-08647-86101-41081.mp4",
         "author": "asdfgh",
         "cardType": "forumUrl",
         "description": ""
