@@ -167,12 +167,6 @@ Games submitted by the MakeCode community.
         "videoUrl": "/static/community/bafta-ygd/gallery.mp4"
     },
     {
-        "name": "Add Game",
-        "description": "Are you looking to contribute your own game? These instructions will explain how to submit your game for the chance to appear in this carousel.",
-        "imageUrl": "/static/community/add-game.png",
-        "url": "/game-submission"
-    },
-    {
         "title": "North Shore Winter Adventure",
         "url": "https://forum.makecode.com/t/north-shore-winter-adventure/1313",
         "imageUrl": "/static/discourse/22765-98788-64181-21037.gif",
@@ -243,6 +237,12 @@ Games submitted by the MakeCode community.
         "author": "asdfgh",
         "cardType": "forumUrl",
         "description": ""
+    },
+    {
+        "name": "Add Game",
+        "description": "Are you looking to contribute your own game? These instructions will explain how to submit your game for the chance to appear in this carousel.",
+        "imageUrl": "/static/community/add-game.png",
+        "url": "/game-submission"
     }
 ]
 ```
