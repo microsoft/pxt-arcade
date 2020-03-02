@@ -171,6 +171,78 @@ Games submitted by the MakeCode community.
         "description": "Are you looking to contribute your own game? These instructions will explain how to submit your game for the chance to appear in this carousel.",
         "imageUrl": "/static/community/add-game.png",
         "url": "/game-submission"
+    },
+    {
+        "title": "North Shore Winter Adventure",
+        "url": "https://forum.makecode.com/t/north-shore-winter-adventure/1313",
+        "imageUrl": "/static/discourse/22765-98788-64181-21037.gif",
+        "author": "",
+        "cardType": "forumUrl",
+        "description": ""
+    },
+    {
+        "title": "Space in breakout",
+        "url": "https://forum.makecode.com/t/space-in-breakout/1266",
+        "imageUrl": "/static/discourse/63642-20606-38782-29855.png",
+        "author": "asdfgh",
+        "cardType": "forumUrl",
+        "description": ""
+    },
+    {
+        "title": "Accel Racing",
+        "url": "https://forum.makecode.com/t/accel-racing/1208",
+        "imageUrl": "/static/discourse/86233-37819-25265-86211.gif",
+        "author": "Minatsu Tukisima",
+        "cardType": "forumUrl",
+        "description": ""
+    },
+    {
+        "title": "Mini wars",
+        "url": "https://forum.makecode.com/t/mini-wars/951",
+        "imageUrl": "/static/discourse/09363-09116-82494-33886.png",
+        "author": "asdfgh",
+        "cardType": "forumUrl",
+        "description": ""
+    },
+    {
+        "title": "Introducing 10 PRINT",
+        "url": "https://forum.makecode.com/t/introducing-10-print/1203",
+        "imageUrl": "/static/discourse/95293-25888-76147-12382.gif",
+        "author": "Adri314",
+        "cardType": "forumUrl",
+        "description": ""
+    },
+    {
+        "title": "Fresh Slice!",
+        "url": "https://forum.makecode.com/t/fresh-slice/1025",
+        "imageUrl": "/static/discourse/61682-36649-87994-88813.gif",
+        "author": "Pete",
+        "cardType": "forumUrl",
+        "description": ""
+    },
+    {
+        "title": "Adventures of Bevin Bombus Bumble: An Educational Experience (Game)",
+        "url": "https://forum.makecode.com/t/adventures-of-bevin-bombus-bumble-an-educational-experience-game/403",
+        "imageUrl": "https://pxt.azureedge.net/blob/e9dfde3b71399a21bd1f586efa4748d0fa6775a0/static/logo.svg",
+        "author": "Corey Zeneberg",
+        "cardType": "forumUrl",
+        "description": ""
+    },
+    {
+        "title": "Pergamon arcade",
+        "url": "https://forum.makecode.com/t/pergamon-arcade/1078",
+        "imageUrl": "/static/discourse/36215-64773-32912-78425.png",
+        "author": "Clemens",
+        "cardType": "forumUrl",
+        "description": ""
+    },
+    {
+        "title": "Bat dungeon",
+        "url": "https://forum.makecode.com/t/bat-dungeon/1004",
+        "imageUrl": "/static/discourse/76866-08647-86101-41081.gif",
+        "author": "asdfgh",
+        "cardType": "forumUrl",
+        "description": ""
     }
 ]
 ```
