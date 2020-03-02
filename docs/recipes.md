@@ -18,6 +18,13 @@
 ```codecard
 [
 {
+  "name": "Shark Attack",
+  "description": "Design a shooter game! We'll start by creating a hero that shoots projectiles, then you can customize the game with enemies, or a detailed setting.",
+  "url": "/recipes/shark-splash/01-character",
+  "cardType": "tutorial",
+  "imageUrl": "/static/recipes/01-character.gif"
+},
+{
   "name": "Walking Hero",
   "description": "Learn about how characters are represented in games by making your own. New Concepts: Sprites, The image editor, Moving a sprite",
   "url": "/concepts/walking-hero",
