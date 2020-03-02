@@ -203,7 +203,7 @@ Games submitted by the MakeCode community.
         "description": ""
     },
     {
-        "name": "Introducing 10 PRINT",
+        "name": "10 PRINT",
         "url": "https://forum.makecode.com/t/introducing-10-print/1203",
         "imageUrl": "/static/discourse/95293-25888-76147-12382.png",
         "largeImageUrl": "/static/discourse/95293-25888-76147-12382.gif",
