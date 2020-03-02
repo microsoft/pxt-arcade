@@ -167,7 +167,7 @@ Games submitted by the MakeCode community.
         "videoUrl": "/static/community/bafta-ygd/gallery.mp4"
     },
     {
-        "title": "North Shore Winter Adventure",
+        "name": "North Shore Winter Adventure",
         "url": "https://forum.makecode.com/t/north-shore-winter-adventure/1313",
         "imageUrl": "/static/discourse/22765-98788-64181-21037.png",
         "largeImageUrl": "/static/discourse/22765-98788-64181-21037.gif",
@@ -177,7 +177,7 @@ Games submitted by the MakeCode community.
         "description": ""
     },
     {
-        "title": "Space in breakout",
+        "name": "Space in breakout",
         "url": "https://forum.makecode.com/t/space-in-breakout/1266",
         "imageUrl": "/static/discourse/63642-20606-38782-29855.png",
         "author": "asdfgh",
@@ -185,7 +185,7 @@ Games submitted by the MakeCode community.
         "description": ""
     },
     {
-        "title": "Accel Racing",
+        "name": "Accel Racing",
         "url": "https://forum.makecode.com/t/accel-racing/1208",
         "imageUrl": "/static/discourse/86233-37819-25265-86211.png",
         "largeImageUrl": "/static/discourse/86233-37819-25265-86211.gif",
@@ -195,7 +195,7 @@ Games submitted by the MakeCode community.
         "description": ""
     },
     {
-        "title": "Mini wars",
+        "name": "Mini wars",
         "url": "https://forum.makecode.com/t/mini-wars/951",
         "imageUrl": "/static/discourse/09363-09116-82494-33886.png",
         "author": "asdfgh",
@@ -203,7 +203,7 @@ Games submitted by the MakeCode community.
         "description": ""
     },
     {
-        "title": "Introducing 10 PRINT",
+        "name": "Introducing 10 PRINT",
         "url": "https://forum.makecode.com/t/introducing-10-print/1203",
         "imageUrl": "/static/discourse/95293-25888-76147-12382.png",
         "largeImageUrl": "/static/discourse/95293-25888-76147-12382.gif",
@@ -213,7 +213,7 @@ Games submitted by the MakeCode community.
         "description": ""
     },
     {
-        "title": "Fresh Slice!",
+        "name": "Fresh Slice!",
         "url": "https://forum.makecode.com/t/fresh-slice/1025",
         "imageUrl": "/static/discourse/61682-36649-87994-88813.png",
         "largeImageUrl": "/static/discourse/61682-36649-87994-88813.gif",
@@ -223,7 +223,7 @@ Games submitted by the MakeCode community.
         "description": ""
     },
     {
-        "title": "Pergamon arcade",
+        "name": "Pergamon arcade",
         "url": "https://forum.makecode.com/t/pergamon-arcade/1078",
         "imageUrl": "/static/discourse/36215-64773-32912-78425.png",
         "author": "Clemens",
@@ -231,7 +231,7 @@ Games submitted by the MakeCode community.
         "description": ""
     },
     {
-        "title": "Bat dungeon",
+        "name": "Bat dungeon",
         "url": "https://forum.makecode.com/t/bat-dungeon/1004",
         "imageUrl": "/static/discourse/76866-08647-86101-41081.png",
         "largeImageUrl": "/static/discourse/76866-08647-86101-41081.gif",
