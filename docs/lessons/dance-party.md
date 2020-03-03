@@ -366,7 +366,7 @@ Now go into ``||sprites:Sprite||``, select ``||sprites:destroy sprite with effec
 ![Player moving on the screen](/static/lessons/dance-party/missed-collision.gif)
 
 ```blocks
-scene.onHitTile(SpriteKind.Projectile, 1, function (sprite) {
+scene.onHitWall(SpriteKind.Projectile, function (sprite) {
     sprite.destroy(effects.fire, 100)
     info.changeLifeBy(-1)
 })
