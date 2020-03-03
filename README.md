@@ -3,7 +3,7 @@
 * Try it [https://arcade.makecode.com](https://arcade.makecode.com)
 * [Forum](https://forum.makecode.com)
 
-This repo contains an editor built with [Microsoft MakeCode (PXT)](https://github.com/microsoft/pxt).
+This repo contains the Arcade editor built with [Microsoft MakeCode (PXT)](https://github.com/microsoft/pxt).
 
 ## Creating and editing a package
 
@@ -118,7 +118,7 @@ pxt link ../pxt
 pxt link ../pxt-common-packages
 ```
 
-## to run the local server
+### to run the local server
 
 From root github folder,
 
@@ -128,6 +128,12 @@ pxt serve --rebundle
 ```
 
 More instructions at https://github.com/microsoft/pxt#running-a-target-from-localhost
+
+## Viewing documents
+
+Documents are rendered at the server and are viewable when received by the browser. Special styles and extended
+formatting are used which prevent them from rendering properly as generalized Markdown. While you can browse them
+here in the repo, they are not meant to render properly as GitHub document.
 
 # Contributing
 
