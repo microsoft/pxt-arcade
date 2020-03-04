@@ -401,7 +401,8 @@
         "githubEditor": true,
         "githubCompiledJs": true,
         "chooseLanguageRestrictionOnNewProject": true,
-        "openProjectNewTab": true
+        "openProjectNewTab": true,
+        "hasReferenceDocs": true
     },
     "unsupportedBrowsers": [
         {
