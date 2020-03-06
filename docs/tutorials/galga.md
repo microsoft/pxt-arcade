@@ -20,6 +20,7 @@ Get a ``||sprites:set mySprite to sprite of kind player||`` block an put it in t
 
 ```blocks
 let spacePlane: Sprite = null
+// @highlight
 spacePlane = sprites.create(img`
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -96,13 +97,15 @@ spacePlane = sprites.create(img`
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
+// @highlight
 spacePlane.setFlag(SpriteFlag.StayInScreen, true)
+// @highlight
 info.setLife(3)
 ```
 
 ## Step 3
 
-Now, let's add some button actions. In ``||controller:Controller||`` pull out a ``||controller:move mySprite with buttons||``. As before, change ``||variables:mySprite||`` to ``||variables:spacePlane||``. Click on the **(+)** symbol and change both `vx` and `vy` to `200`. Next, get the ``||controller:on A button pressed||`` from ``||controller:Controller||`` and put it out in the Workspace somehwere.
+Now, let's add some button actions. In ``||controller:Controller||`` pull out a ``||controller:move mySprite with buttons||``. As before, change ``||variables:mySprite||`` to ``||variables:spacePlane||``. Click on the **(+)** symbol and change both `vx` and `vy` to `200`.
 
 ```blocks
 let spacePlane: Sprite = null
@@ -142,14 +145,13 @@ spacePlane = sprites.create(img`
 `, SpriteKind.Player)
 spacePlane.setFlag(SpriteFlag.StayInScreen, true)
 info.setLife(3)
+// @highlight
 controller.moveSprite(spacePlane, 200, 200)
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-})
 ```
 
 ## Step 4 @fullscreen
 
-Back in ``||sprites:Sprites||``, find a ``||sprites:set projectile to projectile from mySprite||`` block and put it in the ``||controller:on A button pressed||``. Click on the ``||variables:projectile||`` variable, select ``||variables:Rename variable...||``, and rename it to ``||variables:dart||``. Switch the ``||variables:mySprite||`` variable to ``||variables:spacePlane||``,  set the `vx` value to `200`, and set the `vy` value to `0`. Click on the empty sprite image to open the image editor. Draw a picture of a dart.
+Get the ``||controller:on A button pressed||`` from ``||controller:Controller||`` and put it out in the Workspace somehwere. Back in ``||sprites:Sprites||``, find a ``||sprites:set projectile to projectile from mySprite||`` block and put it in the ``||controller:on A button pressed||``. Click on the ``||variables:projectile||`` variable, select ``||variables:Rename variable...||``, and rename it to ``||variables:dart||``. Switch the ``||variables:mySprite||`` variable to ``||variables:spacePlane||``,  set the `vx` value to `200`, and set the `vy` value to `0`. Click on the empty sprite image to open the image editor. Draw a picture of a dart.
 
 ![Dart projectile](/static/tutorials/galga/dart.jpg)
 
@@ -233,7 +235,9 @@ game.onUpdateInterval(500, function () {
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
     `, SpriteKind.Enemy)
+    // @highlight
     bogey.setVelocity(-100, 0)
+    // @highlight
     bogey.setPosition(180, Math.randomRange(0, 10))
 })
 ```
@@ -264,6 +268,7 @@ game.onUpdateInterval(500, function () {
         . . . . . . . . . . . . . . . .
     `, SpriteKind.Enemy)
     bogey.setVelocity(-100, 0)
+    // @highlight
     bogey.setPosition(180, Math.randomRange(8, 112))
 })
 ```
