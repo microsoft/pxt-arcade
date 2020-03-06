@@ -20,6 +20,7 @@ Get a ``||sprites:set mySprite to sprite of kind player||`` block an put it in t
 
 ```blocks
 let spacePlane: Sprite = null
+// @highlight
 spacePlane = sprites.create(img`
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -96,13 +97,15 @@ spacePlane = sprites.create(img`
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
+// @highlight
 spacePlane.setFlag(SpriteFlag.StayInScreen, true)
+// @highlight
 info.setLife(3)
 ```
 
 ## Step 3
 
-Now, let's add some button actions. In ``||controller:Controller||`` pull out a ``||controller:move mySprite with buttons||``. As before, change ``||variables:mySprite||`` to ``||variables:spacePlane||``. Click on the **(+)** symbol and change both `vx` and `vy` to `200`. Next, get the ``||controller:on A button pressed||`` from ``||controller:Controller||`` and put it out in the Workspace somehwere.
+Now, let's add some button actions. In ``||controller:Controller||`` pull out a ``||controller:move mySprite with buttons||``. As before, change ``||variables:mySprite||`` to ``||variables:spacePlane||``. Click on the **(+)** symbol and change both `vx` and `vy` to `200`.
 
 ```blocks
 let spacePlane: Sprite = null
@@ -142,14 +145,13 @@ spacePlane = sprites.create(img`
 `, SpriteKind.Player)
 spacePlane.setFlag(SpriteFlag.StayInScreen, true)
 info.setLife(3)
+// @highlight
 controller.moveSprite(spacePlane, 200, 200)
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-})
 ```
 
 ## Step 4 @fullscreen
 
-Back in ``||sprites:Sprites||``, find a ``||sprites:set projectile to projectile from mySprite||`` block and put it in the ``||controller:on A button pressed||``. Click on the ``||variables:projectile||`` variable, select ``||variables:Rename variable...||``, and rename it to ``||variables:dart||``. Switch the ``||variables:mySprite||`` variable to ``||variables:spacePlane||``,  set the `vx` value to `200`, and set the `vy` value to `0`. Click on the empty sprite image to open the image editor. Draw a picture of a dart.
+Get the ``||controller:on A button pressed||`` from ``||controller:Controller||`` and put it out in the Workspace somehwere. Back in ``||sprites:Sprites||``, find a ``||sprites:set projectile to projectile from mySprite||`` block and put it in the ``||controller:on A button pressed||``. Click on the ``||variables:projectile||`` variable, select ``||variables:Rename variable...||``, and rename it to ``||variables:dart||``. Switch the ``||variables:mySprite||`` variable to ``||variables:spacePlane||``,  set the `vx` value to `200`, and set the `vy` value to `0`. Click on the empty sprite image to open the image editor. Draw a picture of a dart.
 
 ![Dart projectile](/static/tutorials/galga/dart.jpg)
 
@@ -178,41 +180,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 5
-
-From ``||sprites:Sprites||`` get a ``||sprites:on sprite of kind Player overlaps||`` block. Switch the second ``kind`` type at the end of the block to ``||sprites:Enemy||``. Then, drop a ``||sprites:destroy mySprite||`` block in there. Go up and grab the ``||variables:otherSprite||`` variable from the top of the block and drop it onto ``||variables:mySprite||`` in  ``||sprites:destroy mySprite||``. You may notice that the ``||variables:mySprite||`` block moves to the workspace. You can delete it by dragging it to the toolbar. (It will glow red with an icon of a trash can when you do so.) Now, go get a ``||info:change life by||`` block from the ``||info:Info||`` toolbox and drop it in after ``||sprites:destroy otherSprite||``. Set the life change value to `-1`.
-
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    info.changeLifeBy(-1)
-})
-```
-
-## Step 6
-
-Make a copy of ``||sprites:on sprite of kind Player overlaps||`` by clicking on it with the `right` mouse button and selecting **Duplicate**. In that new block, change the first ``kind`` from ``Player`` to ``Projectile``. Also, in the ``||info:change life by||``, make the life change value be a `1`.
-
-```blocks
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    info.changeLifeBy(1)
-})
-```
-
-## Step 7
-
-Duplicate the ``||sprites:destroy otherSprite||`` and place the new copy after the first one. Like you did earlier, pull the ``||variables:sprite||`` variable from the ``||sprites:on sprite of kind Projectile overlaps||`` and drop it onto ``||variables:otherSprite||`` in the ``||sprites:destroy sprite||`` block. As before, delete the ``||variables:otherSprite||`` block from the workspace by dragging it to the toolbox. Then, click on the **(+)** symbol and choose the ``fire`` effect. Also, set effect time to ``100 ms``.
-
-```blocks
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    sprite.destroy(effects.fire, 100)
-    info.changeLifeBy(1)
-})
-```
-
-## Step 8 @fullscreen
+## Step 5 @fullscreen
 
 Over in ``||game:Game||`` pickup an ``||game:on game update every||`` an place it out on the Workspace. Get a ``||sprites:set mySprite to sprite of kind player||`` block an put it into the ``||game:on update interval||``. Rename the variable to ``||variables:bogey||``. Then, change the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Enemy||``. Click on the empty sprite image to open the image editor. Draw a picture of an enemy airplane.
 
@@ -242,7 +210,7 @@ game.onUpdateInterval(500, function () {
 })
 ```
 
-## Step 9
+## Step 6
 
 Find the ``||sprites:set mySprite velocity to||`` and put it after the sprite you just made. Change the variable to ``||variables:bogey||``. Then, set `vx` to `-100` and `vy` to `0`. Add in a ``||sprites:set mySprite position to||`` block. Again, change the variable to ``||variables:bogey||``. Set the `x` value to `180`. Over in ``||math:Math||``, get the ``||math:pick random||`` block and drop it into the `y` value slot.
 
@@ -267,12 +235,14 @@ game.onUpdateInterval(500, function () {
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
     `, SpriteKind.Enemy)
+    // @highlight
     bogey.setVelocity(-100, 0)
+    // @highlight
     bogey.setPosition(180, Math.randomRange(0, 10))
 })
 ```
 
-## Step 10
+## Step 7
 
 In the ``||math:pick random||`` block, set the first value as `8` and the second value as `112`.
 
@@ -298,7 +268,42 @@ game.onUpdateInterval(500, function () {
         . . . . . . . . . . . . . . . .
     `, SpriteKind.Enemy)
     bogey.setVelocity(-100, 0)
+    // @highlight
     bogey.setPosition(180, Math.randomRange(8, 112))
+})
+```
+
+## Step 8
+
+From ``||sprites:Sprites||`` get a ``||sprites:on sprite of kind Player overlaps||`` block. Switch the second ``kind`` type at the end of the block to ``||sprites:Enemy||``. Then, drop a ``||sprites:destroy mySprite||`` block in there. Go up and grab the ``||variables:otherSprite||`` variable from the top of the block and drop it onto ``||variables:mySprite||`` in  ``||sprites:destroy mySprite||``. You may notice that the ``||variables:mySprite||`` block moves to the workspace. You can delete it by dragging it to the toolbar. (It will glow red with an icon of a trash can when you do so.) Now, go get a ``||info:change life by||`` block from the ``||info:Info||`` toolbox and drop it in after ``||sprites:destroy otherSprite||``. Set the life change value to `-1`.
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    info.changeLifeBy(-1)
+})
+```
+
+## Step 9
+
+Make a copy of ``||sprites:on sprite of kind Player overlaps||`` by clicking on it with the `right` mouse button and selecting **Duplicate**. In that new block, change the first ``kind`` from ``Player`` to ``Projectile``. Also, in the ``||info:change life by||``, make the life change value be a `1`.
+
+```blocks
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    info.changeLifeBy(1)
+})
+```
+
+## Step 10
+
+Duplicate the ``||sprites:destroy otherSprite||`` and place the new copy after the first one. Like you did earlier, pull the ``||variables:sprite||`` variable from the ``||sprites:on sprite of kind Projectile overlaps||`` and drop it onto ``||variables:otherSprite||`` in the ``||sprites:destroy sprite||`` block. As before, delete the ``||variables:otherSprite||`` block from the workspace by dragging it to the toolbox. Then, click on the **(+)** symbol and choose the ``fire`` effect. Also, set effect time to ``100 ms``.
+
+```blocks
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    sprite.destroy(effects.fire, 100)
+    info.changeLifeBy(1)
 })
 ```
 
