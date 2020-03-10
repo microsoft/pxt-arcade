@@ -41,5 +41,8 @@ This section serves as a quick introduction to the @boardname@ environment, and 
 * [Variable Math](/courses/csintro1/intro/variable-math)
 * [Info Variable Properties](/courses/csintro1/intro/info)
 
+## Flipgrid
+
+The [Flipgrid](https://info.flipgrid.com/) topic for the **Introduction** chapter: https://flipgrid.com/b769222e
 
 [CS Intro Home](/courses/csintro1)

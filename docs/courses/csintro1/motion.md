@@ -46,5 +46,8 @@ Motion introduces the ability to control how a sprite moves around the screen.
 * [On Created](/courses/csintro1/motion/create-on-create-sprites)
 * [Motion Project](/courses/csintro1/motion/project)
 
+## Flipgrid
+
+The [Flipgrid](https://info.flipgrid.com/) topic for the **Motion** chapter: https://flipgrid.com/b66b56c7
 
 [CS Intro Home](/courses/csintro1)

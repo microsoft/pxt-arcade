@@ -36,5 +36,8 @@ Arrays are **data structures** that allow for users to store an indefinite amoun
 * [Tile Arrays](/courses/csintro2/arrays/tilemap)
 * [Arrays Project](/courses/csintro2/arrays/project)
 
+## Flipgrid
+
+The [Flipgrid](https://info.flipgrid.com/) topic for the **Arrays** chapter: https://flipgrid.com/d8680aca
 
 [CS Intro 2 Home](/courses/csintro2)
