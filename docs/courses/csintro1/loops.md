@@ -46,5 +46,8 @@ Loops serve as a powerful tool, both to reduce redundancy in the code we write, 
 * [Physics](/courses/csintro1/loops/physics)
 * [Loops Project](/courses/csintro1/loops/project)
 
+## Flipgrid
+
+The [Flipgrid](https://info.flipgrid.com/) topic for the **Loops** chapter: https://flipgrid.com/c5a85aec
 
 [CS Intro Home](/courses/csintro1)

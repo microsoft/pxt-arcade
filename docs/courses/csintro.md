@@ -8,6 +8,12 @@ These courses are currently in beta - this means that they are likely to have bu
 
 ### ~
 
+## Courses on Flipgrid
+
+Flipcode for the **Intro to CS** course grid: **[csintroarcade](https://flipgrid.com/csintroarcade)**
+
+## Course Sections
+
 ```codecard
 [
     {
