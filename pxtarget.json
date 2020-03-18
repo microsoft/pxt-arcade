@@ -301,7 +301,7 @@
         "portraitLogo": "./static/logo.svg",
         "footerLogo": "./static/logo.svg",
         "organization": "Microsoft MakeCode",
-        "organizationUrl": "https://makecode.com/org",
+        "organizationUrl": "https://makecode.com/",
         "organizationLogo": "./static/Micorsoft_logo_rgb_W-white_D-square.png",
         "organizationWideLogo": "./static/Micorsoft_logo_rgb_W-white_D.png",
         "homeUrl": "https://arcade.makecode.com/",
