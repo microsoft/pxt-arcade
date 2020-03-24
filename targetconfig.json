@@ -18,6 +18,7 @@
     },
     "galleries": {
         "Tutorials": "tutorials",
+        "Live Coding": "live-coding",
         "Blocks Games": "blocks-games",
         "JavaScript Games": "javascript-games",
         "Community Games": "community",
