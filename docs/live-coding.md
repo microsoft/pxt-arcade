@@ -10,7 +10,7 @@ Here are some videos of live tutorial sessions with the @boardname@!
     "name": "LIVE CODING",
     "description": "Subscribe to our mixer.com live coding stream.",
     "url": "https://mixer.com/MakeCode",
-    "imageUrl": "/static/live-coding/live.jpg"
+    "imageUrl": "/static/live-coding/live.png"
 },    
 {
     "name": "Chase The Pizza",
