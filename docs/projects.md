@@ -10,6 +10,11 @@
         "videoUrl": "/static/tutorials/chase-the-pizza.mp4"
     },
     {
+        "name": "Live Coding",
+        "url": "/live-coding",
+        "imageUrl": "/static/live-coding/live.jpg"
+    },
+    {
         "name": "Blocks Games",
         "url": "/blocks-games",
         "imageUrl": "/static/blocks-games/duck.png",
@@ -70,6 +75,7 @@
 ## See Also
 
 [Tutorials](/tutorials),
+[Live Coding](/live-coding),
 [Blocks Games](/blocks-games),
 [JavaScript Games](/javascript-games),
 [Community Games](/community),
