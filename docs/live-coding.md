@@ -7,7 +7,7 @@ Here are some videos of live tutorial sessions with the @boardname@!
 ```codecard
 [
 {
-    "name": "LIVE CODING",
+    "name": "Daily Coding Lessons!",
     "description": "Subscribe to our mixer.com live coding stream.",
     "url": "https://mixer.com/MakeCode",
     "imageUrl": "/static/live-coding/live.png"

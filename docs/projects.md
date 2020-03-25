@@ -12,7 +12,7 @@
     {
         "name": "Live Coding",
         "url": "/live-coding",
-        "imageUrl": "/static/live-coding/live.jpg"
+        "imageUrl": "/static/live-coding/live.png"
     },
     {
         "name": "Blocks Games",
