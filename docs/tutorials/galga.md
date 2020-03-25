@@ -14,7 +14,7 @@ Fly your space plane through the oncoming bogey spacecraft. Can you survive the 
 
 ## Step 1
 
-Add the code to create a ``||sprites:sprite||``, renamed ``||variables:spacePlane||``, and draw a plane or some kind of flying object in it.
+Add code to create a ``||sprites:sprite||``, rename it as ``||variables:spacePlane||``, and draw a plane or some kind of flying object in it.
 
 ![Space plane sprite image](/static/tutorials/galga/space-plane.jpg)
 
@@ -59,7 +59,7 @@ spacePlane = sprites.create(img`
 
 ## Step 2
 
-Add code to make ``||variables:spacePlane||`` ``||sprites:stay in the screen||``.
+``||sprites:set||`` the ``||variables:spacePlane||`` to ``||sprites:stay in the screen||``.
 
 ```blocks
 let spacePlane: Sprite = null
@@ -103,7 +103,7 @@ spacePlane.setFlag(SpriteFlag.StayInScreen, true)
 
 ## Step 3
 
-Add code to ``||info:set the life||`` to ``3``.
+Start the game with a few lives, so ``||info:set life to||`` to ``3``.
 
 ```blocks
 let spacePlane: Sprite = null
@@ -148,7 +148,7 @@ info.setLife(3)
 
 ## Step 4
 
-Add code to ``||controller:move||`` ``||variables:spacePlane||`` 
+Now ``||controller:move||`` the ``||variables:spacePlane||`` 
 with the ``||controller:controller buttons||`` and change the sensitivity
 ``vx`` and ``vy`` to ``200``.
 
@@ -197,7 +197,7 @@ controller.moveSprite(spacePlane, 200, 200)
 ## Step 5 @fullscreen
 
 Add an event to run code when ``||controller:button A is pressed||``.
-In that event, add code to create a ``||sprites:projectile sprite||``, renamed **dart**, launched ``||sprites:from||`` ``||variables:spacePlane||`` and set the sensitivity ``vx`` to ``200``
+In that event, create a ``||sprites:projectile sprite||`` named **dart** that is launched ``||sprites:from||`` the ``||variables:spacePlane||`` and set the sensitivity ``vx`` to ``200``
 and ``vy`` to ``0``.
 
 ```blocks
@@ -227,8 +227,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 6 @fullscreen
 
-Add an event to run code on ``||game:game update every half second||``.
-In that event, add code to create a ``||sprites:sprite||`` of kind ``||sprites:Enemy||``, renamed **bogey**, 
+Add another event to run code on ``||game:game update every half second||``.
+In that event, create a ``||sprites:sprite||`` of kind ``||sprites:Enemy||``, rename it to **bogey**, 
 and draw the enemy plane in it.
 
 ```blocks
@@ -257,8 +257,8 @@ game.onUpdateInterval(500, function () {
 
 ## Step 7
 
-Add code to ``||sprites:set the velocity||`` of ``||variables:bogey||`` to
-fly **horizontally** from **right to left**.
+On the ``||variables:bogey||`` sprite, ``||sprites:set the velocity||`` with
+values to have it fly **horizontally** from **right to left**.
 
 ```blocks
 let bogey: Sprite = null
@@ -288,8 +288,8 @@ game.onUpdateInterval(500, function () {
 
 ## Step 8
 
-Add code to ``||sprites::set the position||`` of ``||variables:bogey||`` to
-`x` to `180` and `y` to a `random number` between ``0`` and ``120``.
+Add code to ``||sprites:set the position||`` of ``||variables:bogey||`` to
+`x` to `180` and `y` to a ``||math:random number||`` between ``0`` and ``120``.
 
 ```blocks
 let bogey: Sprite = null
@@ -320,7 +320,7 @@ game.onUpdateInterval(500, function () {
 
 ## Step 9
 
-Add an event to run code when a ``||sprites:Player sprite||`` ``||sprites:overlaps||`` with a ``||sprites:Enemy sprite||``.
+Use one more event to run code when a ``||sprites:Player sprite||`` ``||sprites:overlaps||`` with an ``||sprites:Enemy sprite||``.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -329,7 +329,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## Step 10
 
-Add code to ``||sprites:destroy||`` ``||variables:otherSprite||``, the enemy sprite.
+Add code to ``||sprites:destroy||`` ``||variables:otherSprite||``, which is the enemy sprite.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -340,7 +340,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## Step 11
 
-Add code to ``||info:remove a life||`` (or change it by ``-1``).
+In that event, add code to ``||info:remove a life||`` (or change it by ``-1``). 
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -352,7 +352,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## Step 12
 
-Add an event to run code when a ``||sprites:Projectile sprite||`` ``||sprites:overlaps||`` with a ``||sprites:Enemy sprite||``.
+Put in an event to run code when a ``||sprites:Projectile sprite||`` ``||sprites:overlaps||`` with an ``||sprites:Enemy sprite||``.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -372,7 +372,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 
 ## Step 14
 
-Add code to ``||sprites:destroy||`` ``||variables:sprite||``, the projectile sprite,
+Insert code to ``||sprites:destroy||`` ``||variables:sprite||``, the projectile sprite,
 with a ``||sprites:fire effect||``.
 
 ```blocks
