@@ -197,7 +197,7 @@ controller.moveSprite(spacePlane, 200, 200)
 ## Step 5 @fullscreen
 
 Add an event to run code when ``||controller:button A is pressed||``.
-In that event, add code to create a ``||sprites:projectile sprite||``, renamed **dart**, launched from ``||variables:spacePlane||`` and set the sensitivity ``vx`` to ``200``
+In that event, add code to create a ``||sprites:projectile sprite||``, renamed **dart**, launched ``||sprites:from||`` ``||variables:spacePlane||`` and set the sensitivity ``vx`` to ``200``
 and ``vy`` to ``0``.
 
 ```blocks
@@ -228,8 +228,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ## Step 6 @fullscreen
 
 Add an event to run code on ``||game:game update every half second||``.
-In that event, add code to create a ``||sprites:sprite||``, renamed **bogey**,
-of kind ``||sprites:Enemy||``, and draw the enemy plane in it.
+In that event, add code to create a ``||sprites:sprite||`` of kind ``||sprites:Enemy||``, renamed **bogey**, 
+and draw the enemy plane in it.
 
 ```blocks
 let bogey: Sprite = null
@@ -372,11 +372,26 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 
 ## Step 14
 
+Add code to ``||sprites:destroy||`` ``||variables:sprite||``, the projectile sprite,
+with a ``||sprites:fire effect||``.
+
+```blocks
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    // @highlight
+    sprite.destroy(effects.fire, 100)
+})
+```
+
+## Step 15
+
 Add code to add ``||info:change the score by||`` by ``1``.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()
+    sprite.destroy(effects.fire, 100)
+    // @highlight
     info.changeScoreBy(1)
 })
 ```
