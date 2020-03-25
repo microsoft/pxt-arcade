@@ -12,9 +12,9 @@ Fly your space plane through the oncoming bogey spacecraft. Can you survive the 
 
 ![Space plane and attacking spacecraft](/static/tutorials/galga.gif)
 
-## Step 1 @fullscreen
+## Step 1
 
-Get a ``||sprites:set mySprite to sprite of kind player||`` block an put it in the ``||loops:on start||``. Click on the ``||variables:mySprite||`` variable, select ``||variables:Rename variable...||``, and rename it to ``||variables:spacePlane||``. Click on the empty sprite image to open the image editor. Draw a picture of a Space Plane.
+Add the code to create a ``||sprites:sprite||``, renamed ``||variables:spacePlane||``, and draw a plane or some kind of flying object in it.
 
 ![Space plane sprite image](/static/tutorials/galga/space-plane.jpg)
 
@@ -59,7 +59,7 @@ spacePlane = sprites.create(img`
 
 ## Step 2
 
-Go back to ``||sprites:Sprites||`` again and pull out a ``||sprites:set mySprite stay in screen||`` and put it in after the other sprite block. Change ``||variables:mySprite||`` to ``||variables:spacePlane||``. Click the ``OFF`` button to make it switch to ``ON``. Go over to ``||info:Info||``, get a ``||info:set life to||`` block, and put it in there, too. Set the life count to `3`.
+Add code to make ``||variables:spacePlane||`` ``||sprites:stay in the screen||``.
 
 ```blocks
 let spacePlane: Sprite = null
@@ -99,13 +99,58 @@ spacePlane = sprites.create(img`
 `, SpriteKind.Player)
 // @highlight
 spacePlane.setFlag(SpriteFlag.StayInScreen, true)
-// @highlight
-info.setLife(3)
 ```
 
 ## Step 3
 
-Now, let's add some button actions. In ``||controller:Controller||`` pull out a ``||controller:move mySprite with buttons||``. As before, change ``||variables:mySprite||`` to ``||variables:spacePlane||``. Click on the **(+)** symbol and change both `vx` and `vy` to `200`.
+Add code to ``||info:set the life||`` to ``3``.
+
+```blocks
+let spacePlane: Sprite = null
+spacePlane = sprites.create(img`
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . 8 2 . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . 1 1 1 . . . . . 9 9 9 9 9 . . . . . . . . . . . . . . .
+    . . . . 2 2 2 2 . . . 9 9 9 9 9 9 9 . . . . . . . . . . . . . .
+    . 4 4 4 f 8 6 6 6 6 6 6 9 9 9 9 9 6 6 6 . . . . . . . . . . . .
+    4 4 4 f 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . . .
+    . 4 4 f 6 8 8 8 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . .
+    . . 4 4 f 8 8 . . . . . 8 8 8 8 6 6 6 6 6 6 6 . . . . . . . . .
+    . . . . . . . . . . . 8 8 8 8 8 8 2 . . . . . . . . . . . . . .
+    . . . . . . . . . . . 8 8 8 8 8 2 . . . . . . . . . . . . . . .
+    . . . . . . . . . . 8 8 8 8 8 2 . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+`, SpriteKind.Player)
+spacePlane.setFlag(SpriteFlag.StayInScreen, true)
+// @highlight
+info.setLife(3)
+```
+
+## Step 4
+
+Add code to ``||controller:move||`` ``||variables:spacePlane||`` 
+with the ``||controller:controller buttons||`` and change the sensitivity
+``vx`` and ``vy`` to ``200``.
 
 ```blocks
 let spacePlane: Sprite = null
@@ -149,11 +194,11 @@ info.setLife(3)
 controller.moveSprite(spacePlane, 200, 200)
 ```
 
-## Step 4 @fullscreen
+## Step 5 @fullscreen
 
-Get the ``||controller:on A button pressed||`` from ``||controller:Controller||`` and put it out in the Workspace somehwere. Back in ``||sprites:Sprites||``, find a ``||sprites:set projectile to projectile from mySprite||`` block and put it in the ``||controller:on A button pressed||``. Click on the ``||variables:projectile||`` variable, select ``||variables:Rename variable...||``, and rename it to ``||variables:dart||``. Switch the ``||variables:mySprite||`` variable to ``||variables:spacePlane||``,  set the `vx` value to `200`, and set the `vy` value to `0`. Click on the empty sprite image to open the image editor. Draw a picture of a dart.
-
-![Dart projectile](/static/tutorials/galga/dart.jpg)
+Add an event to run code when ``||controller:button A is pressed||``.
+In that event, add code to create a ``||sprites:projectile sprite||``, renamed **dart**, launched ``||sprites:from||`` ``||variables:spacePlane||`` and set the sensitivity ``vx`` to ``200``
+and ``vy`` to ``0``.
 
 ```blocks
 let spacePlane: Sprite = null
@@ -180,39 +225,11 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 5 @fullscreen
+## Step 6 @fullscreen
 
-Over in ``||game:Game||`` pickup an ``||game:on game update every||`` an place it out on the Workspace. Get a ``||sprites:set mySprite to sprite of kind player||`` block an put it into the ``||game:on update interval||``. Rename the variable to ``||variables:bogey||``. Then, change the ``||sprites:kind||`` from ``||sprites:Player||`` to ``||sprites:Enemy||``. Click on the empty sprite image to open the image editor. Draw a picture of an enemy airplane.
-
-![Enemy airplane image](/static/tutorials/galga/bogey.jpg)
-
-```blocks
-let bogey: Sprite = null
-game.onUpdateInterval(500, function () {
-    bogey = sprites.create(img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . 9 9 . . . . . 5 . . . .
-        . . . 9 9 9 9 . . . 5 5 . . . .
-        2 2 2 2 9 9 2 2 2 2 2 f 4 4 . .
-        . . 2 2 2 2 5 5 5 2 2 f 4 4 4 .
-        . . . . . . 5 5 5 . . . . . . .
-        . . . . . . . 5 5 . . . . . . .
-        . . . . . . . . 5 . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `, SpriteKind.Enemy)
-})
-```
-
-## Step 6
-
-Find the ``||sprites:set mySprite velocity to||`` and put it after the sprite you just made. Change the variable to ``||variables:bogey||``. Then, set `vx` to `-100` and `vy` to `0`. Add in a ``||sprites:set mySprite position to||`` block. Again, change the variable to ``||variables:bogey||``. Set the `x` value to `180`. Over in ``||math:Math||``, get the ``||math:pick random||`` block and drop it into the `y` value slot.
+Add an event to run code on ``||game:game update every half second||``.
+In that event, add code to create a ``||sprites:sprite||`` of kind ``||sprites:Enemy||``, renamed **bogey**, 
+and draw the enemy plane in it.
 
 ```blocks
 let bogey: Sprite = null
@@ -235,16 +252,44 @@ game.onUpdateInterval(500, function () {
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
     `, SpriteKind.Enemy)
-    // @highlight
-    bogey.setVelocity(-100, 0)
-    // @highlight
-    bogey.setPosition(180, Math.randomRange(0, 10))
 })
 ```
 
 ## Step 7
 
-In the ``||math:pick random||`` block, set the first value as `8` and the second value as `112`.
+Add code to ``||sprites:set the velocity||`` of ``||variables:bogey||`` to
+fly **horizontally** from **right to left**.
+
+```blocks
+let bogey: Sprite = null
+game.onUpdateInterval(500, function () {
+    bogey = sprites.create(img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . 9 9 . . . . . 5 . . . .
+        . . . 9 9 9 9 . . . 5 5 . . . .
+        2 2 2 2 9 9 2 2 2 2 2 f 4 4 . .
+        . . 2 2 2 2 5 5 5 2 2 f 4 4 4 .
+        . . . . . . 5 5 5 . . . . . . .
+        . . . . . . . 5 5 . . . . . . .
+        . . . . . . . . 5 . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `, SpriteKind.Enemy)
+    // @highlight
+    bogey.setVelocity(-100, 0)
+})
+```
+
+## Step 8
+
+Add code to ``||sprites::set the position||`` of ``||variables:bogey||`` to
+`x` to `180` and `y` to a `random number` between ``0`` and ``120``.
 
 ```blocks
 let bogey: Sprite = null
@@ -269,41 +314,85 @@ game.onUpdateInterval(500, function () {
     `, SpriteKind.Enemy)
     bogey.setVelocity(-100, 0)
     // @highlight
-    bogey.setPosition(180, Math.randomRange(8, 112))
-})
-```
-
-## Step 8
-
-From ``||sprites:Sprites||`` get a ``||sprites:on sprite of kind Player overlaps||`` block. Switch the second ``kind`` type at the end of the block to ``||sprites:Enemy||``. Then, drop a ``||sprites:destroy mySprite||`` block in there. Go up and grab the ``||variables:otherSprite||`` variable from the top of the block and drop it onto ``||variables:mySprite||`` in  ``||sprites:destroy mySprite||``. You may notice that the ``||variables:mySprite||`` block moves to the workspace. You can delete it by dragging it to the toolbar. (It will glow red with an icon of a trash can when you do so.) Now, go get a ``||info:change life by||`` block from the ``||info:Info||`` toolbox and drop it in after ``||sprites:destroy otherSprite||``. Set the life change value to `-1`.
-
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    info.changeLifeBy(-1)
+    bogey.setPosition(180, Math.randomRange(0, 120))
 })
 ```
 
 ## Step 9
 
-Make a copy of ``||sprites:on sprite of kind Player overlaps||`` by clicking on it with the `right` mouse button and selecting **Duplicate**. In that new block, change the first ``kind`` from ``Player`` to ``Projectile``. Also, in the ``||info:change life by||``, make the life change value be a `1`.
+Add an event to run code when a ``||sprites:Player sprite||`` ``||sprites:overlaps||`` with a ``||sprites:Enemy sprite||``.
 
 ```blocks
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    info.changeLifeBy(1)
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
 })
 ```
 
 ## Step 10
 
-Duplicate the ``||sprites:destroy otherSprite||`` and place the new copy after the first one. Like you did earlier, pull the ``||variables:sprite||`` variable from the ``||sprites:on sprite of kind Projectile overlaps||`` and drop it onto ``||variables:otherSprite||`` in the ``||sprites:destroy sprite||`` block. As before, delete the ``||variables:otherSprite||`` block from the workspace by dragging it to the toolbox. Then, click on the **(+)** symbol and choose the ``fire`` effect. Also, set effect time to ``100 ms``.
+Add code to ``||sprites:destroy||`` ``||variables:otherSprite||``, the enemy sprite.
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    // @highlight
+    otherSprite.destroy()
+})
+```
+
+## Step 11
+
+Add code to ``||info:remove a life||`` (or change it by ``-1``).
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    // @highlight
+    info.changeLifeBy(-1)
+})
+```
+
+## Step 12
+
+Add an event to run code when a ``||sprites:Projectile sprite||`` ``||sprites:overlaps||`` with a ``||sprites:Enemy sprite||``.
+
+```blocks
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+})
+```
+
+## Step 13
+
+Add code to ``||sprites:destroy||`` ``||variables:otherSprite||``, the enemy sprite.
+
+```blocks
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    // @highlight
+    otherSprite.destroy()
+})
+```
+
+## Step 14
+
+Add code to ``||sprites:destroy||`` ``||variables:sprite||``, the projectile sprite,
+with a ``||sprites:fire effect||``.
+
+```blocks
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    // @highlight
+    sprite.destroy(effects.fire, 100)
+})
+```
+
+## Step 15
+
+Add code to add ``||info:change the score by||`` by ``1``.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()
     sprite.destroy(effects.fire, 100)
-    info.changeLifeBy(1)
+    // @highlight
+    info.changeScoreBy(1)
 })
 ```
 
