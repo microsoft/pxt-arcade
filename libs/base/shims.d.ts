@@ -94,14 +94,14 @@ declare namespace control {
      * Create a new zero-initialized buffer.
      * @param size number of bytes in the buffer
      */
-    //% shim=control::createBuffer
+    //% deprecated=1 shim=control::createBuffer
     function createBuffer(size: int32): Buffer;
 
     /**
      * Create a new buffer with UTF8-encoded string
      * @param str the string to put in the buffer
      */
-    //% shim=control::createBufferFromUTF8
+    //% deprecated=1 shim=control::createBufferFromUTF8
     function createBufferFromUTF8(str: string): Buffer;
 }
 declare namespace loops {

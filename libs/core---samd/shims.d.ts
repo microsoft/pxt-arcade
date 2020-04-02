@@ -286,6 +286,12 @@ declare namespace pins {
     //% help=pins/create-spi
     //% parts=spi shim=pins::createSPI
     function createSPI(mosiPin: DigitalInOutPin, misoPin: DigitalInOutPin, sckPin: DigitalInOutPin): SPI;
+
+    /**
+     * Opens a slave SPI driver
+     */
+    //% parts=spi shim=pins::createSlaveSPI
+    function createSlaveSPI(mosiPin: DigitalInOutPin, misoPin: DigitalInOutPin, sckPin: DigitalInOutPin, csPin: DigitalInOutPin): SPI;
 }
 
 
