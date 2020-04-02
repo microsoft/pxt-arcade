@@ -8,6 +8,21 @@ In this activity, students will:
 * Interact with string arrays
 * Use arrays with loops
 
+### ~hint
+
+#### Color Coded Tilemap
+
+This section uses the color coded tilemap in some of the examples.
+
+These were the original style of tilemaps, that got replaced with new blocks prior to the release of arcade.
+The new blocks show the tilemap in full as you draw it, allow more tiles at once, and let you set tiles as walls without changing the image.
+
+If you open any example using the edit button, the extension will be automatically added to the project.
+
+If you wish to use these blocks in another project, they can be added using the `color-coded-tilemap` extension.
+
+### ~
+
 ## Concept: Arrays for dialogue
 
 One way in which we can use arrays of strings is to form a "script" for our sprites to follow. By keeping the script inside of an array, you are able to keep it all located in one place - so if you need to fix a typo, or add in a new line, all the content remains in a single location for you to see.
@@ -182,3 +197,7 @@ corgio
 2. In task #1a, why did we use the ``||arrays:length of array||`` instead of just setting it to the new length (for example, changing it to be from `0 to 3` to `0 to 6`)?
 
 ### [Teacher Material](/courses/csintro2/about/teachers)
+
+```package
+color-coded-tilemap
+```
