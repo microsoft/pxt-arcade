@@ -67,7 +67,7 @@ For a guided example of this process, [see the example project page.](/courses/c
 
 ### ~hint
 
-### Build
+#### Build
 
 Implement a list of features
 
@@ -80,7 +80,7 @@ Implement a list of features
 
 ### ~hint
 
-### Test
+#### Test
 
 Gather feedback about the game from an outside source
 
@@ -96,7 +96,7 @@ Gather feedback about the game from an outside source
 
 ### ~hint
 
-### Learn
+#### Learn
 
 Convert the feedback into a list of features that to implement
 

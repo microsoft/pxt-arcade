@@ -23,6 +23,10 @@ If you wish to use these blocks in another project, they can be added using the 
 
 ### ~
 
+```package
+color-coded-tilemap
+```
+
 ## Concept: Arrays for dialogue
 
 One way in which we can use arrays of strings is to form a "script" for our sprites to follow. By keeping the script inside of an array, you are able to keep it all located in one place - so if you need to fix a typo, or add in a new line, all the content remains in a single location for you to see.
@@ -197,7 +201,3 @@ corgio
 2. In task #1a, why did we use the ``||arrays:length of array||`` instead of just setting it to the new length (for example, changing it to be from `0 to 3` to `0 to 6`)?
 
 ### [Teacher Material](/courses/csintro2/about/teachers)
-
-```package
-color-coded-tilemap
-```

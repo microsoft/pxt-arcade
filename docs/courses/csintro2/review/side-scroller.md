@@ -6,6 +6,25 @@ In this activity, you will build your own side-scrolling adventure where a car t
 
 ![Block Bouncer](/static/courses/csintro2/review/side-scroller.gif)
 
+### ~hint
+
+#### Color Coded Tilemap
+
+This section uses the color coded tilemap in some of the examples.
+
+These were the original style of tilemaps, that got replaced with new blocks prior to the release of arcade.
+The new blocks show the tilemap in full as you draw it, allow more tiles at once, and let you set tiles as walls without changing the image.
+
+If you open any example using the edit button, the extension will be automatically added to the project.
+
+If you wish to use these blocks in another project, they can be added using the `color-coded-tilemap` extension.
+
+### ~
+
+```package
+color-coded-tilemap
+```
+
 ## Starter Code
 
 Create a project with the code below - the images for the trees and car are available in the Gallery.
