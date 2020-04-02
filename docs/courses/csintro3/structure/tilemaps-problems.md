@@ -5,6 +5,25 @@ This section contains a number of selected problems for the Tilemaps section.
 It is recommended that you review the problems, and complete a few before
 moving on to the next section.
 
+### ~hint
+
+#### Color Coded Tilemap
+
+This section uses the color coded tilemap in some of the examples.
+
+These were the original style of tilemaps, that got replaced with new blocks prior to the release of arcade.
+The new blocks show the tilemap in full as you draw it, allow more tiles at once, and let you set tiles as walls without changing the image.
+
+If you open any example using the edit button, the extension will be automatically added to the project.
+
+If you wish to use these blocks in another project, they can be added using the `color-coded-tilemap` extension.
+
+### ~
+
+```package
+color-coded-tilemap
+```
+
 ## Problem #1: Say Hi!
 
 Using only ``||scene:scene.setTileMap||``, create an **8 x 8** ``||scene:tilemap||``

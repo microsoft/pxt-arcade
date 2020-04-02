@@ -21,7 +21,7 @@ Make your own unique games!
 
 ## Student Task #1: Initial Ideas
 
-1. Think of **at least** 3 ideas for games that use some of the "concepts learned" listed above. 
+1. Think of **at least** 3 ideas for games that use some of the "concepts learned" listed above.
 2. On a piece of paper, sketch out what each game will look like
 3. Discuss your ideas with a partner. Talk about:
     * What you like about the ideas
@@ -62,7 +62,7 @@ For a guided example of this process, [see the example project page.](/courses/c
 
 ### ~hint
 
-### Build
+#### Build
 
 Implement a list of features
 
@@ -75,7 +75,7 @@ Implement a list of features
 
 ### ~hint
 
-### Test
+#### Test
 
 Gather feedback about the game from an outside source
 
@@ -91,7 +91,7 @@ Gather feedback about the game from an outside source
 
 ### ~hint
 
-### Learn
+#### Learn
 
 Convert the feedback into a list of features that to implement
 
