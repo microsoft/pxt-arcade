@@ -13,7 +13,8 @@
             "adafruit/Circuit-Playground-Character-Icons",
             "adafruit/pxt-seesaw",
             "jwunderl/pxt-button-combos",
-            "jwunderl/pxt-color"
+            "jwunderl/pxt-color",
+            "microsoft/pxt-settings-blocks"
         ]
     },
     "galleries": {
