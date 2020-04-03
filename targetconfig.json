@@ -8,14 +8,16 @@
             "adafruit/pxt-seesaw",
             "jwunderl/pxt-button-combos",
             "jwunderl/pxt-color",
-            "microsoft/pxt-settings-blocks"
+            "microsoft/pxt-settings-blocks",
+            "microsoft/arcade-sprite-data"
         ],
         "preferredRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
             "adafruit/pxt-seesaw",
             "jwunderl/pxt-button-combos",
             "jwunderl/pxt-color",
-            "microsoft/pxt-settings-blocks"
+            "microsoft/pxt-settings-blocks",
+            "microsoft/arcade-sprite-data"
         ]
     },
     "galleries": {
