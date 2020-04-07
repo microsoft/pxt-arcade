@@ -14,27 +14,27 @@ Here are some videos of live tutorial sessions with the @boardname@!
 },
 {
     "name": "Falling Bird Part 1",
-    "description": "First of five video modifying and expanding Falling Duck to ",
+    "description": "First of five videos modifying and expanding the Falling Duck game",
     "youTubeId": "PxJZXTpvBVQ"
 },
 {
     "name": "Game Idea Generator",
-    "description": "Build a game idea generator to help decide on your next game",
+    "description": "Build a game idea generator to help you find a theme or concept for your next game",
     "youTubeId": "48uOkTLnpDk"
 },
 {
     "name": "Joe Gumshoe Part 1",
-    "description": "First of two videos creating a one button game gum collecting game",
+    "description": "First of two videos creating a one-button gum collecting game",
     "youTubeId": "w3qZJADON-4"
 },
 {
     "name": "Colorful Tundra Monkey",
-    "description": "Throw fruit so you can see the camouflaged enemies before they touch you",
+    "description": "Throw fruit so you can see camouflaged enemies before they touch you",
     "youTubeId": "Q054jOk51KQ"
 },
 {
     "name": "Body Building Part 1",
-    "description": "First of three videos creating a survival game set in a cave",
+    "description": "First of three videos creating a game to survive the dangers of a cave",
     "youTubeId": "SvXeJevUkb4"
 },
 {
