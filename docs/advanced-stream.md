@@ -23,7 +23,7 @@ Here are some videos of live tutorial sessions with the @boardname@!
     "youTubeId": "48uOkTLnpDk"
 },
 {
-    "name": "Sneaking Through the School",
+    "name": "Sneaking Through the School Part 1",
     "description": "First of two videos creating a one button game gum collecting game",
     "youTubeId": "w3qZJADON-4"
 },
@@ -33,7 +33,7 @@ Here are some videos of live tutorial sessions with the @boardname@!
     "youTubeId": "Q054jOk51KQ"
 },
 {
-    "name": "Survival: Body Building",
+    "name": "Survival: Body Building Part 1",
     "description": "First of three videos creating a survival game set in a cave",
     "youTubeId": "SvXeJevUkb4"
 },
