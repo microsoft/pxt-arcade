@@ -1,4 +1,4 @@
-# Live coding sessions
+# Advanced Stream sessions
 
 Here are some videos of live tutorial sessions with the @boardname@!
 
