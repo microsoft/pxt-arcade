@@ -29,6 +29,11 @@
         "videoUrl": "/static/javascript-games/planet-putt-putt.mp4"
     },
     {
+        "name": "Advanced Livestream",
+        "url": "/advanced-stream",
+        "imageUrl": "/static/advanced-stream/live.png"
+    },
+    {
         "name": "Community Games",
         "url": "/community",
         "imageUrl": "/static/community/salvo/salvo.png",
@@ -78,6 +83,7 @@
 [Live Coding](/live-coding),
 [Blocks Games](/blocks-games),
 [JavaScript Games](/javascript-games),
+[Advanced Livestream](/advanced-stream),
 [Community Games](/community),
 [Game Design Concepts](/concepts),
 [Graphics and Math](/graphics-math),
