@@ -29,6 +29,11 @@
         "videoUrl": "/static/javascript-games/planet-putt-putt.mp4"
     },
     {
+        "name": "Advanced Livestream",
+        "url": "/advanced-stream",
+        "imageUrl": "/static/advanced-stream/live.png"
+    },
+    {
         "name": "Community Games",
         "url": "/community",
         "imageUrl": "/static/community/salvo/salvo.png",
@@ -65,11 +70,6 @@
         "imageUrl": "/static/hardware/ghiarcade.jpg"
     },
     {
-        "name": "Build Your Game Videos",
-        "url": "/videos",
-        "imageUrl": "/static/videos/bunny-hop-thumb.jpg"
-    },
-    {
         "name": "John Park's Workshop",
         "url": "/john-parks-workshop",
         "imageUrl": "/static/john-parks-workshop/trash-panda.png"
@@ -83,12 +83,12 @@
 [Live Coding](/live-coding),
 [Blocks Games](/blocks-games),
 [JavaScript Games](/javascript-games),
+[Advanced Livestream](/advanced-stream),
 [Community Games](/community),
 [Game Design Concepts](/concepts),
 [Graphics and Math](/graphics-math),
 [Lessons](/lessons),
 [Courses](/courses),
 [Hardware](/hardware),
-[Build Your Game Videos](/videos),
 [John Park's Workshop](/john-parks-workshop)
 
