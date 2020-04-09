@@ -38,7 +38,7 @@
         "@jacdac/jacdac-ts": "^0.0.9"
     },
     "optionalDependencies": {
-        "pxt-arcade-sim": "microsoft/pxt-arcade-sim.git#v0.7.13"
+        "pxt-arcade-sim": "microsoft/pxt-arcade-sim.git#v0.7.15"
     },
     "scripts": {
         "serve": "node node_modules/pxt-core/built/pxt.js serve"
