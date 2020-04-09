@@ -79,6 +79,8 @@
         "libs/palette",
         "libs/storyboard",
         "libs/rotary-encoder",
+        "libs/radio",
+        "libs/radio-broadcast",
         "libs/d5prj",
         "libs/f4prj",
         "libs/rpiprj",
