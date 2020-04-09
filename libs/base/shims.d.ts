@@ -87,6 +87,12 @@ declare interface Buffer {
      */
     //% shim=BufferMethods::write
     write(dstOffset: int32, src: Buffer): void;
+
+    /**
+     * Compute k-bit FNV-1 non-cryptographic hash of the buffer.
+     */
+    //% shim=BufferMethods::hash
+    hash(bits: int32): uint32;
 }
 declare namespace control {
 

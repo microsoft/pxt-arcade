@@ -27,6 +27,7 @@
         "libs/core",
         "libs/core---samd",
         "libs/core---stm32",
+        "libs/core---nrf52",
         "libs/core---linux",
         "libs/core---vm",
         "libs/serial",
@@ -38,6 +39,8 @@
         "libs/hw",
         "libs/hw---stm32f401",
         "libs/hw---samd51",
+        "libs/hw---n3",
+        "libs/hw---n4",
         "libs/hw---rpi",
         "libs/hw---vm",
         "libs/feather",
@@ -84,7 +87,7 @@
     ],
     "compile": {
         "useUF2": true,
-        "deployDrives": "(ARCADE|PY)",
+        "deployDrives": "(ARCADE|PY|FTHR840BOOT)",
         "deployFileMarker": "INFO_UF2.TXT",
         "driveName": "ARCADE",
         "floatingPoint": true,
@@ -175,14 +178,13 @@
             "compile": {
                 "hasHex": true,
                 "openocdScript": "source [find interface/stlink-v2.cfg]; source [find target/stm32f4x.cfg]",
-                "uf2Family": "0x57755a57",
-                "vtableShift": 4
+                "uf2Family": "0x57755a57"
             },
             "compileService": {
                 "codalTarget": {
                     "name": "codal-big-brainpad",
                     "url": "https://github.com/lancaster-university/codal-big-brainpad",
-                    "branch": "v1.1.4",
+                    "branch": "v1.1.9",
                     "type": "git"
                 },
                 "codalBinary": "STM32",
@@ -193,18 +195,17 @@
         "samd51": {
             "compile": {
                 "hasHex": true,
-                "openocdScript": "source [find interface/cmsis-dap.cfg]; set CHIPNAME at91samd51g19; source [find target/at91samdXX.cfg]",
+                "openocdScript": "source [find interface/cmsis-dap.cfg]; set CHIPNAME at91samd51g19; source [find target/atsame5x.cfg]",
                 "openocdScriptAlt": "source [find interface/stlink-v2.cfg]; set CPUTAPID 0x2ba01477; set CHIPNAME at91samd51g19; source [find target/at91samdXX.cfg]",
                 "ramSize": 196608,
                 "flashEnd": 524288,
-                "uf2Family": "0x55114460",
-                "vtableShift": 4
+                "uf2Family": "0x55114460"
             },
             "compileService": {
                 "codalTarget": {
                     "name": "codal-itsybitsy-m4",
                     "url": "https://github.com/lancaster-university/codal-itsybitsy-m4",
-                    "branch": "v0.2.6",
+                    "branch": "v0.2.7",
                     "type": "git"
                 },
                 "codalBinary": "ITSYBITSY_M4",
@@ -212,12 +213,65 @@
                 "dockerImage": "pext/yotta:latest"
             }
         },
+        "nrf52840": {
+            "compile": {
+                "hasHex": true,
+                "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/nrf52.cfg]",
+                "webUSB": false,
+                "uf2Family": "0xada52840"
+            },
+            "compileService": {
+                "codalTarget": {
+                    "name": "codal-nrf52840-dk",
+                    "url": "https://github.com/mmoskal/codal-nrf52840-dk",
+                    "branch": "v1.1.6",
+                    "type": "git"
+                },
+                "codalBinary": "NRF52840_DK",
+                "serviceId": "codal2nrf52840",
+                "dockerImage": "pext/yotta:latest",
+                "yottaConfig": {
+                    "pxt": {
+                        "board": {
+                            "id": "BOARD_ID_NRF52840"
+                        }
+                    }
+                }
+            }
+        },
+        "nrf52833": {
+            "compile": {
+                "hasHex": true,
+                "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/nrf52.cfg]",
+                "webUSB": false,
+                "useUF2": false,
+                "deployDrives": ".*",
+                "deployFileMarker": "DETAILS.TXT"
+            },
+            "compileService": {
+                "codalTarget": {
+                    "name": "codal-nrf52833-dk",
+                    "url": "https://github.com/mmoskal/codal-nrf52833-dk",
+                    "branch": "v1.1.3",
+                    "type": "git"
+                },
+                "codalBinary": "NRF52840_DK",
+                "serviceId": "codal2nrf52840",
+                "dockerImage": "pext/yotta:latest",
+                "yottaConfig": {
+                    "pxt": {
+                        "board": {
+                            "id": "BOARD_ID_NRF52833"
+                        }
+                    }
+                }
+            }
+        },
         "rpi": {
             "compile": {
                 "hasHex": true,
                 "useELF": true,
                 "runtimeIsARM": true,
-                "vtableShift": 4,
                 "flashCodeAlign": 256,
                 "webUSB": false,
                 "stackAlign": 2
