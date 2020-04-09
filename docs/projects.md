@@ -95,6 +95,6 @@
 [Lessons](/lessons),
 [Courses](/courses),
 [Hardware](/hardware),
-[Build Your Game Videos](/videos),
+[How to Make a Game Videos](/videos),
 [John Park's Workshop](/john-parks-workshop)
 
