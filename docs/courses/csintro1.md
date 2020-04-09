@@ -6,6 +6,12 @@ This course is currently in beta - this means that it is likely to have bugs and
 
 ### ~
 
+## Course on Flipgrid
+
+Flipcode for the **Intro to CS** course grid: **[csintroarcade](https://flipgrid.com/csintroarcade)**
+
+## Lessons
+
 ```codecard
 [
 {

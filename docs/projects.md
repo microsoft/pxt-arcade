@@ -10,6 +10,11 @@
         "videoUrl": "/static/tutorials/chase-the-pizza.mp4"
     },
     {
+        "name": "Live Coding",
+        "url": "/live-coding",
+        "imageUrl": "/static/live-coding/live.png"
+    },
+    {
         "name": "Blocks Games",
         "url": "/blocks-games",
         "imageUrl": "/static/blocks-games/duck.png",
@@ -22,6 +27,11 @@
         "imageUrl": "/static/javascript-games/planet-putt-putt.png",
         "largeImageUrl": "/static/javascript-games/planet-putt-putt.gif",
         "videoUrl": "/static/javascript-games/planet-putt-putt.mp4"
+    },
+    {
+        "name": "Advanced Livestream",
+        "url": "/advanced-stream",
+        "imageUrl": "/static/advanced-stream/live.png"
     },
     {
         "name": "Community Games",
@@ -60,6 +70,11 @@
         "imageUrl": "/static/hardware/ghiarcade.jpg"
     },
     {
+        "name": "How to Make a Game Videos",
+        "url": "/how-to-make-a-game",
+        "imageUrl": "/static/how-to-make-a-game/bunny-hop-thumb.jpg"
+    },
+    {
         "name": "John Park's Workshop",
         "url": "/john-parks-workshop",
         "imageUrl": "/static/john-parks-workshop/trash-panda.png"
@@ -70,13 +85,16 @@
 ## See Also
 
 [Tutorials](/tutorials),
+[Live Coding](/live-coding),
 [Blocks Games](/blocks-games),
 [JavaScript Games](/javascript-games),
+[Advanced Livestream](/advanced-stream),
 [Community Games](/community),
 [Game Design Concepts](/concepts),
 [Graphics and Math](/graphics-math),
 [Lessons](/lessons),
 [Courses](/courses),
 [Hardware](/hardware),
+[How to Make a Game Videos](/how-to-make-a-game),
 [John Park's Workshop](/john-parks-workshop)
 

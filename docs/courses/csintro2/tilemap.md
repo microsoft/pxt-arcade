@@ -31,5 +31,8 @@ Tilemaps allow you to develop levels, and define playspaces for the characters i
 * [Using Corgio Extension](/courses/csintro2/tilemap/extensions)
 * [Tilemap Project](/courses/csintro2/tilemap/project)
 
+## Flipgrid
+
+The [Flipgrid](https://info.flipgrid.com/) topic for the **Loops** chapter: https://flipgrid.com/47b27c7c
 
 [CS Intro 2 Home](/courses/csintro2)

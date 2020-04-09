@@ -11,25 +11,25 @@ you make your games.
     "name": "Bunny Hop",
     "description": "Make a Bunny Hop game in just 20 minutes!",
     "youTubeId": "7mv43zXzJkY",
-    "imageUrl": "/static/videos/bunny-hop-thumb.jpg"
+    "imageUrl": "/static/how-to-make-a-game/bunny-hop-thumb.jpg"
 },
 {
-    "name": "Make a Platformer Game - Part 1",
+    "name": "How to Make a Platformer Game - Part 1",
     "description": "Introduction to making a platformer game using sprites, movement and tilemaps",
-    "youTubeId": "jdjKWPeHnk8",
-    "imageUrl": "/static/videos/platformer-1.jpg"
+    "youTubeId": "9bSX9Q5aP6E",
+    "imageUrl": "/static/how-to-make-a-game/platformer-1.jpg"
 },
 {
-    "name": "Make a Platformer Game - Part 2",
+    "name": "How to Make a Platformer Game - Part 2",
     "description": "Add some animations, AI, collisions and spawning to your platformer",
-    "youTubeId": "B-mr_zkPJfs",
-    "imageUrl": "/static/videos/platformer-2.jpg"
+    "youTubeId": "8DhGcCPfOU4",
+    "imageUrl": "/static/how-to-make-a-game/platformer-2.jpg"
 },
 {
-    "name": "Make a Platformer Game - Part 3",
+    "name": "How to Make a Platformer Game - Part 3",
     "description": "Create multiple levels, wall jumping, and add fireballs for your platformer",
-    "youTubeId": "g3iSdf6S6rk",
-    "imageUrl": "/static/videos/platformer-3.jpg"
+    "youTubeId": "CPkC37FzmnU",
+    "imageUrl": "/static/how-to-make-a-game/platformer-3.jpg"
 }
 ]
 ```

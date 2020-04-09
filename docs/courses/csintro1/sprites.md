@@ -35,5 +35,8 @@ Sprites allow developers to fill there games with unique characters that the pla
 * [Hello Sprite](/courses/csintro1/sprites/hello-sprite)
 * [Characters and Stories](/courses/csintro1/sprites/characters)
 
+## Flipgrid
+
+The [Flipgrid](https://info.flipgrid.com/) topic for the **Sprites** chapter: https://flipgrid.com/f9247917
 
 [CS Intro Home](/courses/csintro1)

@@ -36,5 +36,8 @@ Functions serve as a powerful tool to clarify the intent of your code, and to ma
 * [Using Extensions](/courses/csintro2/functions/extensions)
 * [Functions Project](/courses/csintro2/functions/project)
 
+## Flipgrid
+
+The [Flipgrid](https://info.flipgrid.com/) topic for the **Functions** chapter: https://flipgrid.com/8b96874f
 
 [CS Intro 2 Home](/courses/csintro2)

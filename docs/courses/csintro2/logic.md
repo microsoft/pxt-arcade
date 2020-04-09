@@ -46,5 +46,8 @@ Logical operations allow the user to create behaviors that respond to the changi
 * [Logic in Loops](/courses/csintro2/logic/while)
 * [Logic Project](/courses/csintro2/logic/project)
 
+## Flipgrid
+
+The [Flipgrid](https://info.flipgrid.com/) topic for the **Logic** chapter: https://flipgrid.com/b6f3efa8
 
 [CS Intro 2 Home](/courses/csintro2)

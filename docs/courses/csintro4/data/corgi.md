@@ -1,6 +1,6 @@
 # Berry-Eating Corgis
 
-In the country of Corgiland, corgis are free to run about in open fields. By far, their favorite thing to eat is corgiberries. Corgiberries grow naturally in the fields of Corgiland with their only danger being the corgis that eat them. If a field is full of corgiberries, corgis from all over will flock to the field. As the corgis eat the berries, less berries become available. With less berries available, corgis will begin to leave for other field where there is less competition for the berries.
+In Corgiland, corgis are free to run about in open fields. By far, their favorite thing to eat is corgiberries. Corgiberries grow naturally in the fields of Corgiland with their only danger being the corgis that eat them. If a field is full of corgiberries, corgis from all over will flock to the field. As the corgis eat the berries, less berries become available. With less berries available, corgis will begin to leave for other field where there is less competition for the berries.
 
 ![Corgis in a field](/static/courses/csintro4/data/corgis.gif)
 

@@ -214,6 +214,12 @@ declare interface PwmOnlyPin {
     //% name.fieldOptions.width=220
     //% name.fieldOptions.columns=4 shim=PwmOnlyPinMethods::servoSetPulse
     servoSetPulse(duration: int32): void;
+
+    /**
+     * Indicates if the servo is running continuously
+     */
+    //% blockHidden=1 shim=PwmOnlyPinMethods::servoSetContinuous
+    servoSetContinuous(continuous: boolean): void;
 }
 declare namespace control {
 
@@ -280,6 +286,12 @@ declare namespace pins {
     //% help=pins/create-spi
     //% parts=spi shim=pins::createSPI
     function createSPI(mosiPin: DigitalInOutPin, misoPin: DigitalInOutPin, sckPin: DigitalInOutPin): SPI;
+
+    /**
+     * Opens a slave SPI driver
+     */
+    //% parts=spi shim=pins::createSlaveSPI
+    function createSlaveSPI(mosiPin: DigitalInOutPin, misoPin: DigitalInOutPin, sckPin: DigitalInOutPin, csPin: DigitalInOutPin): SPI;
 }
 
 
