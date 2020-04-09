@@ -129,6 +129,22 @@ pxt serve --rebundle
 
 More instructions at https://github.com/microsoft/pxt#running-a-target-from-localhost
 
+### to watch for changes
+
+To rebuild automatically when changes are made, we need gulp.
+
+Install gulp:
+
+```
+npm install -g gulp
+```
+
+and in a seperate terminal from `pxt serve` and in the pxt/ folder, run:
+
+```
+gulp watch
+```
+
 ## Viewing documents
 
 Documents are rendered at the server and are viewable when received by the browser. Special styles and extended

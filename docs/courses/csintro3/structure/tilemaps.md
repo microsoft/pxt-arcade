@@ -6,6 +6,25 @@ Well designed maps can serve as a world for the player to explore,
 and can be easily populated with distinct images for each tile that
 make the world more visually appealing.
 
+### ~hint
+
+#### Color Coded Tilemap
+
+This section uses the color coded tilemap in some of the examples.
+
+These were the original style of tilemaps, that got replaced with new blocks prior to the release of arcade.
+The new blocks show the tilemap in full as you draw it, allow more tiles at once, and let you set tiles as walls without changing the image.
+
+If you open any example using the edit button, the extension will be automatically added to the project.
+
+If you wish to use these blocks in another project, they can be added using the `color-coded-tilemap` extension.
+
+### ~
+
+```package
+color-coded-tilemap
+```
+
 ## Concept: Creating a Tilemap
 
 The ``||scene:scene.setTileMap||`` function is used to create a tilemap.

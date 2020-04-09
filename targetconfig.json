@@ -7,13 +7,17 @@
             "adafruit/Circuit-Playground-Character-Icons",
             "adafruit/pxt-seesaw",
             "jwunderl/pxt-button-combos",
-            "jwunderl/pxt-color"
+            "jwunderl/pxt-color",
+            "microsoft/pxt-settings-blocks",
+            "microsoft/arcade-sprite-data"
         ],
         "preferredRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
             "adafruit/pxt-seesaw",
             "jwunderl/pxt-button-combos",
-            "jwunderl/pxt-color"
+            "jwunderl/pxt-color",
+            "microsoft/pxt-settings-blocks",
+            "microsoft/arcade-sprite-data"
         ]
     },
     "galleries": {
@@ -21,6 +25,7 @@
         "Live Coding": "live-coding",
         "Blocks Games": "blocks-games",
         "JavaScript Games": "javascript-games",
+        "Advanced Livestream": "advanced-stream",
         "Community Games": "community",
         "Game Design Concepts": "concepts",
         "Graphics and Math": "graphics-math",
