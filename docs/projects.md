@@ -71,8 +71,8 @@
     },
     {
         "name": "How to Make a Game Videos",
-        "url": "/videos",
-        "imageUrl": "/static/videos/bunny-hop-thumb.jpg"
+        "url": "/how-to-make-a-game",
+        "imageUrl": "/static/how-to-make-a-game/bunny-hop-thumb.jpg"
     },
     {
         "name": "John Park's Workshop",
@@ -95,6 +95,6 @@
 [Lessons](/lessons),
 [Courses](/courses),
 [Hardware](/hardware),
-[How to Make a Game Videos](/videos),
+[How to Make a Game Videos](/how-to-make-a-game),
 [John Park's Workshop](/john-parks-workshop)
 
