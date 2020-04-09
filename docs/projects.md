@@ -70,6 +70,11 @@
         "imageUrl": "/static/hardware/ghiarcade.jpg"
     },
     {
+        "name": "How to Make a Game Videos",
+        "url": "/how-to-make-a-game",
+        "imageUrl": "/static/how-to-make-a-game/bunny-hop-thumb.jpg"
+    },
+    {
         "name": "John Park's Workshop",
         "url": "/john-parks-workshop",
         "imageUrl": "/static/john-parks-workshop/trash-panda.png"
@@ -90,5 +95,6 @@
 [Lessons](/lessons),
 [Courses](/courses),
 [Hardware](/hardware),
+[How to Make a Game Videos](/how-to-make-a-game),
 [John Park's Workshop](/john-parks-workshop)
 
