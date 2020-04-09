@@ -1,0 +1,43 @@
+{
+    "name": "hw---n4",
+    "description": "NRF52840 board",
+    "files": [
+        "config.ts",
+        "basepins.d.ts",
+        "device.d.ts"
+    ],
+    "card": {
+        "name": "N4",
+        "description": "Board based on Nordic NRF52840",
+        "learnMoreUrl": "https://arcade.makecode.com/hardware#n4",
+        "cardType": "hw",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAAB4BAMAAACHjORcAAAAD1BMVEX/gTUAP63///+kg58AAADcmUjBAAAB50lEQVRo3u2YC3KEIAxAHW4AJzC5Qr2B3P9MJSGIulgtZl1byThs+D2S8G27L2XpGrABLwR6n9O5VgscEMeU5vx/B4aoTRjvFYABkYAx9wRgihz9qkyKYIaMPrdshgwchzsD2V2dnZJQ8yV+fuutNuE9gd6T8/FEVAEmGRuw8sT2XndSHnNJqV/07fXVgA3YgA14OdAqSwM+FQhZddbia7VDLmbFIXA7oLb7QAA3z/IYjrrTJwoXAsjIAkSqDmn6rIwKS34cDiJHlNjWMWACUgUZM40tblBrt7IfkYpdVJgcFVgDuasAgWIkFoItWwiTqRGAHMyZy3buMnuNwHEvuhzqgT04Miltp/xloOO/n0ARuN6pNwQiL/B6oFMHQh1wPXOzaa2LIdhNIGgDUQmY/w0AhcJTQHy9e9w5IGgDUR0IH7eQFhuiZgwLt3v9LCPK/WwXVhbX4SEg38/yBHE7O+U4MD5TikCoAsamRaCtA9otIFQAc/jdzol9DLh94G8+TK8FYnGTnQD+RhrwhsDjt157En8Y2OSNYha5frvqSqDBru8plY8oJpZQ2kthqooKNdiS3nRoyJig0IfUybAe1JBdVsUsNfgB2He5F5J9Agxm4LpqH2jYhuwyexQiRuUmx2GhcINnyzfOJXvHTJa1sgAAAABJRU5ErkJggg=="
+    },
+    "compileServiceVariant": "nrf52840",
+    "cppDependencies": {
+        "accelerometer": "file:../accelerometer"
+    },
+    "dependencies": {
+        "core---nrf52": "file:../core---nrf52",
+        "screen---st7735": "file:../screen---st7735",
+        "mixer---none": "file:../mixer---none",
+        "game---hw": "file:../game---hw",
+        "jacdac-game": "file:../jacdac-game"
+    },
+    "public": true,
+    "skipLocalization": true,
+    "additionalFilePath": "../hw",
+    "yotta": {
+        "optionalConfig": {
+            "DEVICE_JACDAC_DEBUG": 1
+        },
+        "config": {
+            "DEVICE_USB": 0,
+            "DEVICE_WEBUSB": 0
+        }
+    },
+    "experimentalHw": true,
+    "dalDTS": {
+        "corePackage": "../core---nrf52"
+    }
+}
