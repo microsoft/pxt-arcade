@@ -14,7 +14,7 @@ declare namespace keyboard {
     function __functionKey(key: KeyboardFunctionKey, event: KeyboardKeyEvent): void;
 
     //% shim=keyboard::__modifierKey hidden=1
-    function __modifierKey(modifier: KeyboardModifierKey, event: KeyboardKeyEvent): void;
+    function __modifierKey(modifier: uint16, event: KeyboardKeyEvent): void;
 }
 
 // Auto-generated. Do not edit. Really.

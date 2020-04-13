@@ -129,24 +129,4 @@
     Down = 2,
     }
 
-
-    declare const enum KeyboardModifierKey {
-    //% block="CTRL"
-    Control = 1,  // KEY_MOD_LCTRL
-    //% block="SHIFT"
-    Shift = 2,  // KEY_MOD_LSHIFT
-    //% block="ALT"
-    Alt = 4,  // KEY_MOD_LALT
-    //% block="META"
-    Meta = 8,  // KEY_MOD_LMETA
-    //% block="Right CTRL"
-    RightControl = 16,  // KEY_MOD_RCTRL
-    //% block="Right SHIFT"
-    RightShift = 32,  // KEY_MOD_RSHIFT
-    //% block="Right ALT"
-    RightAlt = 64,  // KEY_MOD_RALT
-    //% block="Right META"
-    RightMeta = 128,  // KEY_MOD_RMETA
-    }
-
 // Auto-generated. Do not edit. Really.
