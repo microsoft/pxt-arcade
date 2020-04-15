@@ -8,13 +8,13 @@ declare namespace keyboard {
     function __key(ckey: number, event: KeyboardKeyEvent): void;
 
     //% shim=keyboard::__mediaKey hidden=1
-    function __mediaKey(key: KeyboardMediaKey, event: KeyboardKeyEvent): void;
+    function __mediaKey(key: uint16, event: KeyboardKeyEvent): void;
 
     //% shim=keyboard::__functionKey hidden=1
-    function __functionKey(key: KeyboardFunctionKey, event: KeyboardKeyEvent): void;
+    function __functionKey(key: uint16, event: KeyboardKeyEvent): void;
 
     //% shim=keyboard::__modifierKey hidden=1
-    function __modifierKey(modifier: KeyboardModifierKey, event: KeyboardKeyEvent): void;
+    function __modifierKey(modifier: uint16, event: KeyboardKeyEvent): void;
 }
 
 // Auto-generated. Do not edit. Really.
