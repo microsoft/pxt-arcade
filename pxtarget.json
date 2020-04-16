@@ -443,7 +443,8 @@
             "experimentalHw",
             "recipes",
             "tutorialBlocksDiff",
-            "blocksCollapsing"
+            "blocksCollapsing",
+            "errorList"
         ],
         "extendEditor": true,
         "simScreenshot": true,
