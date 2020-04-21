@@ -1,5 +1,11 @@
 # Basketball Free Throw
 
+## Introduction @fullscreen
+
+Line up your shot and see if you can slam dunk this Basketball free throw game!
+
+![Free throw shot from player](/static/tutorials/free-throw/free-throw.gif)
+
 ## Step 1 - Set the Background image
 
 From the ``||scene:Scene||`` Toolbox drawer, drag a ``||scene:set background image||`` block onto
