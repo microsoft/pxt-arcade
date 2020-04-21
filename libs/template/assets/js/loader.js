@@ -83,8 +83,11 @@ function makeCodeRun(options) {
                     startSim();
                     break;
                 case "setstate":
-                    simState[d.stateKey] = d.stateValue
-                    simStateChanged = true
+                    if (d.stateValue === null)
+                        delete simState[d.stateKey];
+                    else
+                        simState[d.stateKey] = d.stateValue;
+                    simStateChanged = true;
                     break;
             }
         }
