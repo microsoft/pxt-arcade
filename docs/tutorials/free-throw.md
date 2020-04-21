@@ -450,9 +450,9 @@ mySprite.setVelocity(50, 0)
 ## Step 5 - Make the player bounce off walls
 
 Notice in the game console window that our player actually moves off the screen! We don’t want that.
-From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set||`` ``||variables:sprite||``
+From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set||`` ``||variables:mySprite||``
 ``||sprites:stay in screen||`` block and drop after the ``||sprites:set||`` ``||variables:mySprite||``
-``||sprites:velocity||`` block. In the ``||sprites:set||`` ``||variables:sprite||`` ``||sprites:stay in screen||``
+``||sprites:velocity||`` block. In the ``||sprites:set||`` ``||variables:mySprite||`` ``||sprites:stay in screen||``
 block, use the drop-down menu to select the property **bounce on wall**, and toggle the value to **true**.
 
 ```blocks
@@ -604,7 +604,7 @@ mySprite.setFlag(SpriteFlag.BounceOnWall, true)
 ## Step 6 - Create the Basketball Hoop
 
 From the ``||sprites:Sprites||`` Toolbox drawer, drag another ``||variables:set mySprite||`` block and drop
-after the ``||sprites:set||`` ``||variables:sprite||`` ``||sprites:bounce on wall||`` block. Click on the
+after the ``||sprites:set||`` ``||variables:mySprite||`` ``||sprites:bounce on wall||`` block. Click on the
 grey oval to open the sprite image editor, and draw an image of a basketball hoop.
 
 ```blocks
@@ -782,7 +782,7 @@ drop-down menu, select **Add a new kind**, and type in **Hoop**.
 
 From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set||`` ``||variables:mySprite||``
 ``||sprites:position||`` block and drop after the ``||variables:set mySprite2||`` block. In the
-``||sprites:set||`` ``||variables:sprite||`` ``||sprites:position||`` block, click on the ``||variables:mySprite||``
+``||sprites:set||`` ``||variables:mySprite||`` ``||sprites:position||`` block, click on the ``||variables:mySprite||``
 drop-down menu, and select ``||variables:mySprite2||``. Then click on the **x** coordinate, and using the coordinate
 picker, select a location at the top center of the screen.
 
@@ -839,7 +839,7 @@ value to **-100**.
 
 ## Step 12 - Win when we get a basket
 
-From the ``||sprites:Sprites||`` Toolbox drawer, drag an ``||sprites:on||`` ``||variables:sprite||``
+From the ``||sprites:Sprites||`` Toolbox drawer, drag an ``||sprites:on||`` ``||variables:mySprite||``
 ``||sprites:overlaps||``block and drop on the Workspace.
 
 ```blocks
