@@ -38,6 +38,14 @@
   "largeImageUrl": "/static/tutorials/galga.gif",
   "videoUrl": "/static/tutorials/galga.mp4"
 }, {
+  "name": "Free Throw",
+  "description": "Take your best shot and slam dunk this Basketball free throw game!",
+  "url": "/tutorials/free-throw",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/free-throw.png",
+  "largeImageUrl": "/static/tutorials/free-throw.gif",
+  "videoUrl": "/static/tutorials/free-throw.mp4"
+}, {
   "name": "Name Tag",
   "description": "A simple name tag with cool effects",
   "url": "/tutorials/name-tag",
