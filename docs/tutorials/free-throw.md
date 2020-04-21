@@ -12,7 +12,7 @@ From the ``||scene:Scene||`` Toolbox drawer, drag a ``||scene:set background ima
 the Workspace, and drop into the ``||loops:on start||`` block. In the ``||scene:set background image||``
 block, click on the grey oval to open the image editor, and draw half of a basketball court.
 
-``` blocks
+```blocks
 scene.setBackgroundImage(img`
     d d d d d d d d d d d d d d d d d d d d d d d d d d d d 1 1 1 d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 1 1 1 d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
     d d d d d d d d d d d d d d d d d d d d d d d d d d d d 1 1 1 d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 1 1 1 d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
@@ -266,7 +266,7 @@ scene.setBackgroundImage(img`
     d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
     d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
 `)
-mySprite = sprites.create(img`
+let mySprite = sprites.create(img`
     . f f f . f f f f . f f f .
     f f f f f c c c c f f f f f
     f f f f b c c c c b f f f f
@@ -807,6 +807,8 @@ block. Click on the grey oval to open the sprite image editor and draw an image 
 (hint: try using the circle tool in the image editor).
 
 ```blocks
+let mySprite: Sprite = null
+let projectile: Sprite = null
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . . . . . .
