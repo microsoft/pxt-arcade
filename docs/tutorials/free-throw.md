@@ -289,9 +289,9 @@ let mySprite = sprites.create(img`
 ## Step 3 - Position the Player Character at the bottom of the screen
 
 From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set sprite position||``
-block and drop after the ``||Sprites:set sprite||`` block. In the
-``||sprites:set||`` ``||variables:mySprite||`` ``||sprites:position||`` block, click on the
-**x** coordinate, and using the coordinate picker, select a location at the bottom of the screen.
+block and drop after the ``||Sprites:set sprite||`` block. In the ``||sprites:set||``
+``||variables:mySprite||`` ``||sprites:position||`` block, click on the **x** coordinate,
+and using the coordinate picker, select a location at the bottom of the screen.
 
 ![Set x position to 0](/static/tutorials/free-throw/x-position0.png)
 
