@@ -10,7 +10,7 @@ Join the MakeCode developers as we stream MakeCode Arcade live on mixer.com/make
         "name": "Live Coding",
         "description": "Subscribe to our mixer.com live coding stream.",
         "url": "https://mixer.com/makecode",
-        "imageUrl": "/static/advanced-stream/mixer.png"
+        "imageUrl": "/static/advanced-stream/live.png"
     },
     {
         "name": "First livestream!",

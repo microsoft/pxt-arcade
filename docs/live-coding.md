@@ -10,7 +10,7 @@ Live coding of tutorials for MakeCode Arcade on https://mixer.com/MakeCode
         "name": "Live Coding",
         "description": "Subscribe to our mixer.com live coding stream.",
         "url": "https://mixer.com/MakeCode",
-        "imageUrl": "/static/live-coding/mixer.png"
+        "imageUrl": "/static/live-coding/live.png"
     },
     {
         "name": "Chase the Pizza",
