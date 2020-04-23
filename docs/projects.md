@@ -12,7 +12,7 @@
     {
         "name": "Live Coding",
         "url": "/live-coding",
-        "imageUrl": "/static/live-coding/mixer.png"
+        "imageUrl": "/static/live-coding/live.png"
     },
     {
         "name": "Blocks Games",
@@ -31,7 +31,7 @@
     {
         "name": "Advanced Livestream",
         "url": "/advanced-stream",
-        "imageUrl": "/static/advanced-stream/mixer.png"
+        "imageUrl": "/static/advanced-stream/live.png"
     },
     {
         "name": "Community Games",
