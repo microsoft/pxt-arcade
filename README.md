@@ -52,6 +52,14 @@ Run this command, then patch description, improve the screenshot (or record gifs
 pxt ddt featured-game --md docs/community.md
 ```
 
+## Update playlists in markdown
+
+Get a Google API key and store it in the ``GOOGLE_API_KEY`` environment variables (turn on data from the app).
+
+```
+pxt downloadplaylists
+```
+
 
 ### How to create sprite packs
 
