@@ -111,7 +111,7 @@ Live coding of tutorials for MakeCode Arcade on https://mixer.com/MakeCode
     {
         "name": "PlayList",
         "description": "See entire playlist on YouTube",
-        "url": "https://www.youtube.com/watch?list=PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0",
+        "url": "https://www.youtube.com/playlist?list=PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0",
         "imageUrl": "/static/live-coding/playlist.png"
     }
 ]
@@ -119,5 +119,5 @@ Live coding of tutorials for MakeCode Arcade on https://mixer.com/MakeCode
 
 ## See Also
 
-[YouTube Playlist](https://www.youtube.com/watch?list=PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0)
+[YouTube Playlist](https://www.youtube.com/playlist?list=PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0)
 

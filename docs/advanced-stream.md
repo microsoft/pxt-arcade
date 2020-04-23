@@ -135,7 +135,7 @@ Join the MakeCode developers as we stream MakeCode Arcade live on mixer.com/make
     {
         "name": "PlayList",
         "description": "See entire playlist on YouTube",
-        "url": "https://www.youtube.com/watch?list=PLMMBk9hE-SeoHWvTpdezyL9JfF0tocJUT",
+        "url": "https://www.youtube.com/playlist?list=PLMMBk9hE-SeoHWvTpdezyL9JfF0tocJUT",
         "imageUrl": "/static/advanced-stream/playlist.png"
     }
 ]
@@ -143,5 +143,5 @@ Join the MakeCode developers as we stream MakeCode Arcade live on mixer.com/make
 
 ## See Also
 
-[YouTube Playlist](https://www.youtube.com/watch?list=PLMMBk9hE-SeoHWvTpdezyL9JfF0tocJUT)
+[YouTube Playlist](https://www.youtube.com/playlist?list=PLMMBk9hE-SeoHWvTpdezyL9JfF0tocJUT)
 
