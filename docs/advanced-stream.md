@@ -1,51 +1,147 @@
-# Advanced Stream sessions
+# Arcade Advanced Live
 
-Here are some videos of live tutorial sessions with the @boardname@!
+Join the MakeCode developers as we stream MakeCode Arcade live on mixer.com/makecode. Weekdays at 1:00pm PST
 
-## Fun stuff
+## Videos
 
 ```codecard
 [
-{
-    "name": "Daily Coding Lessons!",
-    "description": "Subscribe to our mixer.com live coding stream.",
-    "url": "https://mixer.com/MakeCode",
-    "imageUrl": "/static/advanced-stream/live.png"
-},
-{
-    "name": "Falling Bird Part 1",
-    "description": "First of five videos modifying and expanding the Falling Duck game",
-    "youTubeId": "PxJZXTpvBVQ"
-},
-{
-    "name": "Game Idea Generator",
-    "description": "Build a game idea generator to help you find a theme or concept for your next game",
-    "youTubeId": "48uOkTLnpDk"
-},
-{
-    "name": "Joe Gumshoe Part 1",
-    "description": "First of two videos creating a one-button gum collecting game",
-    "youTubeId": "w3qZJADON-4"
-},
-{
-    "name": "Colorful Tundra Monkey",
-    "description": "Throw fruit so you can see camouflaged enemies before they touch you",
-    "youTubeId": "Q054jOk51KQ"
-},
-{
-    "name": "Body Building Part 1",
-    "description": "First of three videos creating a game to survive the dangers of a cave",
-    "youTubeId": "SvXeJevUkb4"
-},
-{
-    "name": "Playlist",
-    "description": "See all the previous advanced live stream sessions",
-    "url": "https://www.youtube.com/playlist?list=PLMMBk9hE-SeoHWvTpdezyL9JfF0tocJUT",
-    "imageUrl": "/static/advanced-stream/playlist.png"
-}
+    {
+        "name": "Live Coding",
+        "description": "Watch the streams on mixer!",
+        "url": "https://mixer.com/makecode",
+        "imageUrl": "/static/advanced-stream/mixer.png"
+    },
+    {
+        "name": "First livestream!",
+        "description": "",
+        "youTubeId": "YoiLQdczTsI",
+        "imageUrl": "https://i.ytimg.com/vi/YoiLQdczTsI/mqdefault.jpg"
+    },
+    {
+        "name": "How to create a road crossing game (with alligators!)",
+        "description": "",
+        "youTubeId": "ykXhScb3LGQ",
+        "imageUrl": "https://i.ytimg.com/vi/ykXhScb3LGQ/mqdefault.jpg"
+    },
+    {
+        "name": "Road crossing game part two!",
+        "description": "",
+        "youTubeId": "2da3raAeYyU",
+        "imageUrl": "https://i.ytimg.com/vi/2da3raAeYyU/mqdefault.jpg"
+    },
+    {
+        "name": "One Room game jam stream!",
+        "description": "",
+        "youTubeId": "JU-xXJ6G1Uc",
+        "imageUrl": "https://i.ytimg.com/vi/JU-xXJ6G1Uc/mqdefault.jpg"
+    },
+    {
+        "name": "Remixing Falling Duck",
+        "description": "",
+        "youTubeId": "PxJZXTpvBVQ",
+        "imageUrl": "https://i.ytimg.com/vi/PxJZXTpvBVQ/mqdefault.jpg"
+    },
+    {
+        "name": "Falling duck remix, part two!",
+        "description": "",
+        "youTubeId": "wLEIYeeAsKo",
+        "imageUrl": "https://i.ytimg.com/vi/wLEIYeeAsKo/mqdefault.jpg"
+    },
+    {
+        "name": "Falling Duck Remix, Power Ups!",
+        "description": "",
+        "youTubeId": "dRd9QRkZ0W8",
+        "imageUrl": "https://i.ytimg.com/vi/dRd9QRkZ0W8/mqdefault.jpg"
+    },
+    {
+        "name": "Ramping up the difficulty in Falling Bird",
+        "description": "",
+        "youTubeId": "d1yP5oa8zTU",
+        "imageUrl": "https://i.ytimg.com/vi/d1yP5oa8zTU/mqdefault.jpg"
+    },
+    {
+        "name": "Creating Biomes in Falling Duck",
+        "description": "",
+        "youTubeId": "LaMNgJ7TPl8",
+        "imageUrl": "https://i.ytimg.com/vi/LaMNgJ7TPl8/mqdefault.jpg"
+    },
+    {
+        "name": "Game idea generator",
+        "description": "",
+        "youTubeId": "48uOkTLnpDk",
+        "imageUrl": "https://i.ytimg.com/vi/48uOkTLnpDk/mqdefault.jpg"
+    },
+    {
+        "name": "One-button sneaking around!",
+        "description": "",
+        "youTubeId": "w3qZJADON-4",
+        "imageUrl": "https://i.ytimg.com/vi/w3qZJADON-4/mqdefault.jpg"
+    },
+    {
+        "name": "Sneaking through the school",
+        "description": "",
+        "youTubeId": "j5t4RcTcMg0",
+        "imageUrl": "https://i.ytimg.com/vi/j5t4RcTcMg0/mqdefault.jpg"
+    },
+    {
+        "name": "A Colorful Tundra Monkey",
+        "description": "",
+        "youTubeId": "Q054jOk51KQ",
+        "imageUrl": "https://i.ytimg.com/vi/Q054jOk51KQ/mqdefault.jpg"
+    },
+    {
+        "name": "Making a survival game",
+        "description": "",
+        "youTubeId": "SvXeJevUkb4",
+        "imageUrl": "https://i.ytimg.com/vi/SvXeJevUkb4/mqdefault.jpg"
+    },
+    {
+        "name": "Mood lighting",
+        "description": "",
+        "youTubeId": "w7Y6Do9HPU4",
+        "imageUrl": "https://i.ytimg.com/vi/w7Y6Do9HPU4/mqdefault.jpg"
+    },
+    {
+        "name": "Survival Body Building",
+        "description": "",
+        "youTubeId": "glQRlOyNgtQ",
+        "imageUrl": "https://i.ytimg.com/vi/glQRlOyNgtQ/mqdefault.jpg"
+    },
+    {
+        "name": "Climbing a Tree",
+        "description": "",
+        "youTubeId": "M4n2j27jAZI",
+        "imageUrl": "https://i.ytimg.com/vi/M4n2j27jAZI/mqdefault.jpg"
+    },
+    {
+        "name": "Boots in Space",
+        "description": "",
+        "youTubeId": "8cjyVY6yfGM",
+        "imageUrl": "https://i.ytimg.com/vi/8cjyVY6yfGM/mqdefault.jpg"
+    },
+    {
+        "name": "Using settings",
+        "description": "",
+        "youTubeId": "qafMt6bPY58",
+        "imageUrl": "https://i.ytimg.com/vi/qafMt6bPY58/mqdefault.jpg"
+    },
+    {
+        "name": "Using settings Pt. 2",
+        "description": "",
+        "youTubeId": "ogpAcdx2pZY",
+        "imageUrl": "https://i.ytimg.com/vi/ogpAcdx2pZY/mqdefault.jpg"
+    },
+    {
+        "name": "PlayList",
+        "description": "See entire playlist on YouTube",
+        "url": "https://www.youtube.com/watch?list=PLMMBk9hE-SeoHWvTpdezyL9JfF0tocJUT",
+        "imageUrl": "/static/advanced-stream/playlist.png"
+    }
 ]
 ```
 
 ## See Also
 
-[YouTube Playlist](https://www.youtube.com/playlist?list=PLMMBk9hE-SeoHWvTpdezyL9JfF0tocJUT)
+[YouTube Playlist](https://www.youtube.com/watch?list=PLMMBk9hE-SeoHWvTpdezyL9JfF0tocJUT)
+
