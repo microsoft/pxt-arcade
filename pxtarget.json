@@ -36,6 +36,7 @@
         "libs/darts",
         "libs/keyboard",
         "libs/mouse",
+        "libs/microphone",
         "libs/hw",
         "libs/hw---stm32f401",
         "libs/hw---samd51",
