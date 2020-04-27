@@ -13,7 +13,7 @@ Get a ``||scene:set tilemap to||`` and put it in ``||loops:on start||``.
 Click on the gray box to open the ``tilemap editor``.
 In the bottom left corner, set the size of the tilemap to ``10x8``
 and draw a platform for in the bottom two rows of the tilemap.
-Finally, click the `Wall` button, and fill in those two rows with walls.
+Finally, click the `Wall` button, and fill in those two rows with wall tiles.
 
 ![Example of drawing tilemap](/static/lessons/barrel-dodger/draw-tilemap.gif)
 
@@ -59,7 +59,7 @@ tiles.setTilemap(tiles.createTilemap(
 
 ## Step 2
 
-Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``, and draw your player sprite.
+Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||`` and draw your player sprite.
 
 ```blocks
 namespace myTiles {
@@ -123,7 +123,7 @@ let mySprite: Sprite = sprites.create(img`
 ## Step 3
 
 Open the tilemap editor and find the tile position where you want to place your place (hint: it's 1, 5!). You can see the position on the lower left of the editor. 
-Use the ``||scene:place on tile||`` block to position your player on that tile.
+Use the ``||scene:place mySprite on top of tilemap col row||`` block to position your player on that tile.
 
 ```blocks
 namespace myTiles {
@@ -185,9 +185,9 @@ let mySprite: Sprite = sprites.create(img`
 tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 5))
 ```
 
-## Step 3
+## Step 4
 
-Drag a ``||sprites:set mySprite x||`` into the ``||loops:on start||``, click the dropdown, and select ``ay (acceleration y)``. Set the value to `500` so that character is pulled down by "gravity".
+Drag a ``||sprites:set mySprite x||`` into the ``||loops:on start||``, click the dropdown, and select ``||sprites:ay (acceleration y)||``. Set the value to `500` so that character is pulled down by "gravity".
 
 ```blocks
 namespace myTiles {
@@ -251,7 +251,7 @@ mySprite.ay = 500
 ```
 
 
-## Step 5
+## Step 6
 
 Let's have some barrels moving at random speeds. Make them start from the right side of the screen and fly towards the player sprite. Move an ``||game:on game update every||`` onto the editor and set the interval time to `2000` milliseconds. Drag a ``||sprites:projectile from side||`` into it and draw the barrel.
 
@@ -272,7 +272,7 @@ game.onUpdateInterval(2000, function () {
 })
 ```
 
-## Step 6
+## Step 7
 
 Drag a ``||math:pick random||`` block into where ``vx`` is and set the range from ``-100`` to ``-80``.
 
@@ -292,7 +292,7 @@ game.onUpdateInterval(2000, function () {
 })
 ```
 
-## Step 7
+## Step 8
 
 Find ``||scene:place mySprite on top of tilemap col row||`` and drag it into the ``||game:on game update interval||`` after ``||variables:set projectile to||``.
 Set the ``||scene:col||`` to 9 and the ``||scene:row||`` to 5, which is the tile on the right side of the screen directly above the wall.
@@ -315,7 +315,7 @@ game.onUpdateInterval(2000, function () {
 })
 ```
 
-## Step 8
+## Step 9
 
 Each time a barrel starts to move we want to increase the score. Get a ``||info:change score by||`` and put it into ``||game:on game update every||``.
 
@@ -337,7 +337,7 @@ game.onUpdateInterval(2000, function () {
 })
 ```
 
-## Step 9
+## Step 10
 
 Let's give the sprite the ability to jump when we press a button. We do this with  ``||controller:on any button pressed||``.
 
@@ -347,7 +347,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 10
+## Step 11
 
 We need to make sure that the sprite is on the ground before jumping, so drag an ``||logic:if then||`` conditional into the ``||controller:on A button pressed||``. Replace `true` with ``||scene:is mySprite hitting wall||`` and change ``left`` side ``bottom``. Finally, put in a ``||sprites:set mySprite x||`` and choose ``||sprites:vy (velocity y)||`` from the dropdown. Set the value to `-200`.
 
@@ -360,7 +360,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 12
+## Step 13
 
 Our final step is to end the game if a barrel touches the sprite player. Drag an ``||sprites:on sprite overlaps||`` onto the editor. Set the sprite kind for ``otherSprite`` to ``Projectile``. End the game with a ``||game:game over||`` block inside.
 
