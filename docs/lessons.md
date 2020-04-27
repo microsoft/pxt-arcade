@@ -12,12 +12,6 @@
   "imageUrl": "/static/lessons/cherry-pickr.png"
 },
 {
-  "name": "Barrel Dodger",
-  "description": "Use the sprite editor to make player, tile, and enemy images",
-  "url": "/lessons/barrel-dodger",
-  "imageUrl": "/static/lessons/barrel-dodger.png"
-},
-{
   "name": "Dance Party",
   "description": "Create a basic dance collision game using sprite overlap events and controller buttons!",
   "url": "/lessons/dance-party",
@@ -34,6 +28,6 @@
 
 ## See Also
 
+[Block Out](/lessons/block-out),
 [Cherry Pickr](/lessons/cherry-pickr),
-[Barrel Dodger](/lessons/barrel-dodger),
 [Dance Party](/lessons/dance-party)
