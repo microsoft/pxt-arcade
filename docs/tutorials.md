@@ -46,6 +46,12 @@
   "largeImageUrl": "/static/tutorials/free-throw.gif",
   "videoUrl": "/static/tutorials/free-throw.mp4"
 }, {
+  "name": "Barrel Dodger",
+  "description": "Jump and run to avoid the barrels",
+  "url": "/tutorials/barrel-dodger",
+  "cardType": "tutorial",
+  "imageUrl": "/static/lessons/barrel-dodger.png"
+}, {
   "name": "Name Tag",
   "description": "A simple name tag with cool effects",
   "url": "/tutorials/name-tag",
@@ -80,4 +86,5 @@
 [Happy Flower](/tutorials/happy-flower),
 [Lemon Leak](/tutorials/lemon-leak),
 [Galga](/tutorials/galga),
+[Barrel Dodger](/tutorials/barrel-dodger),
 [Simple Extensions](/tutorials/simple-extensions)
