@@ -187,6 +187,17 @@ tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 5))
 
 ## Step 4
 
+Let's give the sprite the ability to jump when we press a button. We do this with  ``||controller:on any button pressed||``.
+
+```blocks
+let mySprite: Sprite = null
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.vy = -200
+})
+```
+
+## Step 5
+
 Drag a ``||sprites:set mySprite x||`` into the ``||loops:on start||``, click the dropdown, and select ``||sprites:ay (acceleration y)||``. Set the value to `500` so that character is pulled down by "gravity".
 
 ```blocks
@@ -253,6 +264,19 @@ mySprite.ay = 500
 
 ## Step 6
 
+We need to make sure that the sprite is on the ground before jumping, so drag an ``||logic:if then||`` conditional into the ``||controller:on A button pressed||``. Replace `true` with ``||scene:is mySprite hitting wall||`` and change ``left`` side ``bottom``. Finally, put in a ``||sprites:set mySprite x||`` and choose ``||sprites:vy (velocity y)||`` from the dropdown. Set the value to `-200`.
+
+```blocks
+let mySprite: Sprite = null
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (mySprite.isHittingTile(CollisionDirection.Bottom)) {
+        mySprite.vy = -200
+    }
+})
+```
+
+## Step 7
+
 Let's have some barrels moving at random speeds. Make them start from the right side of the screen and fly towards the player sprite. Move an ``||game:on game update every||`` onto the editor and set the interval time to `2000` milliseconds. Drag a ``||sprites:projectile from side||`` into it and draw the barrel.
 
 ![Draw a barrel in the image editor](/static/lessons/barrel-dodger/draw-barrel.gif)
@@ -272,7 +296,7 @@ game.onUpdateInterval(2000, function () {
 })
 ```
 
-## Step 7
+## Step 8
 
 Drag a ``||math:pick random||`` block into where ``vx`` is and set the range from ``-100`` to ``-80``.
 
@@ -292,7 +316,7 @@ game.onUpdateInterval(2000, function () {
 })
 ```
 
-## Step 8
+## Step 9
 
 Find ``||scene:place mySprite on top of tilemap col row||`` and drag it into the ``||game:on game update interval||`` after ``||variables:set projectile to||``.
 Set the ``||scene:col||`` to 9 and the ``||scene:row||`` to 5, which is the tile on the right side of the screen directly above the wall.
@@ -315,7 +339,7 @@ game.onUpdateInterval(2000, function () {
 })
 ```
 
-## Step 9
+## Step 10
 
 Each time a barrel starts to move we want to increase the score. Get a ``||info:change score by||`` and put it into ``||game:on game update every||``.
 
@@ -337,30 +361,7 @@ game.onUpdateInterval(2000, function () {
 })
 ```
 
-## Step 10
-
-Let's give the sprite the ability to jump when we press a button. We do this with  ``||controller:on any button pressed||``.
-
-```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-
-})
-```
-
 ## Step 11
-
-We need to make sure that the sprite is on the ground before jumping, so drag an ``||logic:if then||`` conditional into the ``||controller:on A button pressed||``. Replace `true` with ``||scene:is mySprite hitting wall||`` and change ``left`` side ``bottom``. Finally, put in a ``||sprites:set mySprite x||`` and choose ``||sprites:vy (velocity y)||`` from the dropdown. Set the value to `-200`.
-
-```blocks
-let mySprite: Sprite = null
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (mySprite.isHittingTile(CollisionDirection.Bottom)) {
-        mySprite.vy = -200
-    }
-})
-```
-
-## Step 13
 
 Our final step is to end the game if a barrel touches the sprite player. Drag an ``||sprites:on sprite overlaps||`` onto the editor. Set the sprite kind for ``otherSprite`` to ``Projectile``. End the game with a ``||game:game over||`` block inside.
 
