@@ -13,6 +13,13 @@ Live coding of tutorials for MakeCode Arcade on https://mixer.com/MakeCode
         "imageUrl": "/static/live-coding/live.png"
     },
     {
+        "name": "Skeet",
+        "description": "Building another classic, a skeet game.",
+        "youTubeId": "JpE9ku3-XHk",
+        "youTubePlaylistId": "PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0",
+        "imageUrl": "/static/live-coding/JpE9ku3-XHk.jpg"
+    },
+    {
         "name": "Pong",
         "description": "Revisiting the classic game, pong.",
         "youTubeId": "ql_1yJulyC8",
