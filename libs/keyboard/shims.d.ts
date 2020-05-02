@@ -1,5 +1,7 @@
 // Auto-generated. Do not edit.
 declare namespace keyboard {
+    //% shim=keyboard::__flush hidden=1
+    function __flush(): void;
 
     //% shim=keyboard::__type hidden=1
     function __type(text: string): void;
