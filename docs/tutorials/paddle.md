@@ -241,7 +241,7 @@ function create_right_paddle() {
         8 8 1
         8 8 1
     `, SpriteKind.RightPaddles)
-    controller.moveSprite(right_paddle, 0, 150)
+    controller.player2.moveSprite(right_paddle, 0, 150)
     right_paddle.setFlag(SpriteFlag.StayInScreen, true)
     right_paddle.right = 160
 }
@@ -313,7 +313,7 @@ function create_right_paddle() {
         8 8 1
         8 8 1
     `, SpriteKind.RightPaddles)
-    controller.moveSprite(right_paddle, 0, 150)
+    controller.player2.moveSprite(right_paddle, 0, 150)
     right_paddle.setFlag(SpriteFlag.StayInScreen, true)
     right_paddle.right = 160
 }
@@ -334,7 +334,7 @@ with ``||variables:left_paddle||``.
 namespace SpriteKind {
     export const LeftPaddles = SpriteKind.create()
 }
-}sprites.onOverlap(SpriteKind.Player, SpriteKind.LeftPaddles, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.LeftPaddles, function (sprite, otherSprite) {
 })
 ```
 
@@ -347,7 +347,7 @@ on the paddle... and ``||info:add score||`` to the player.
 namespace SpriteKind {
     export const LeftPaddles = SpriteKind.create()
 }
-}sprites.onOverlap(SpriteKind.Player, SpriteKind.LeftPaddles, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.LeftPaddles, function (sprite, otherSprite) {
     sprite.vx = sprite.vx * -1
     info.changeScoreBy(1)
 })
@@ -362,7 +362,7 @@ with ``||variables:right_paddle||``, inverse the right paddle ``vx`` and ``||inf
 namespace SpriteKind {
     export const RightPaddles = SpriteKind.create()
 }
-}sprites.onOverlap(SpriteKind.Player, SpriteKind.RightPaddles, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.RightPaddles, function (sprite, otherSprite) {
     sprite.vx = sprite.vx * -1
     info.player2.changeScoreBy(1)
 })
