@@ -59,7 +59,7 @@
   "imageUrl": "/static/tutorials/paddle.png",
   "largeImageUrl": "/static/tutorials/paddle.gif",
   "videoUrl": "/static/tutorials/paddge.mp4"
-}, , {
+}, {
   "name": "Name Tag",
   "description": "A simple name tag with cool effects",
   "url": "/tutorials/name-tag",
