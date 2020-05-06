@@ -241,6 +241,73 @@ Games submitted by the MakeCode community.
         "description": ""
     },
     {
+        "url": "https://forum.makecode.com/t/castle-crawler/1343",
+        "imageUrl": "/static/discourse/35254-56735-93739-40713.png",
+        "cardType": "forumUrl",
+        "name": "Castle crawler",
+        "description": "",
+        "largeImageUrl": "/static/discourse/35254-56735-93739-40713.gif"
+    },
+    {
+        "url": "https://forum.makecode.com/t/dungeon/1906",
+        "imageUrl": "/static/discourse/71680-30649-43580-11759.png",
+        "cardType": "forumUrl",
+        "name": "Dungeon",
+        "description": "",
+        "largeImageUrl": "/static/discourse/71680-30649-43580-11759.gif"
+    },
+    {
+        "url": "https://forum.makecode.com/t/brailletranslator/1912",
+        "imageUrl": "/static/discourse/53929-36727-20379-52814.png",
+        "cardType": "forumUrl",
+        "name": "Brailletranslator",
+        "description": "",
+        "largeImageUrl": "/static/discourse/53929-36727-20379-52814.gif"
+    },
+    {
+        "url": "https://forum.makecode.com/t/fight-in-planes/1752",
+        "imageUrl": "/static/discourse/70817-67971-57383-73429.png",
+        "cardType": "forumUrl",
+        "name": "Fight-in-planes",
+        "description": ""
+    },
+    {
+        "url": "https://forum.makecode.com/t/alfies-adventure-v5/1677",
+        "imageUrl": "/static/discourse/46301-07177-85751-53625.png",
+        "cardType": "forumUrl",
+        "name": "Alfie's Adventure v5",
+        "description": ""
+    },
+    {
+        "url": "https://forum.makecode.com/t/bobo-the-monkey-a-platform-game/1844",
+        "imageUrl": "/static/discourse/04542-56087-78227-55343.png",
+        "cardType": "forumUrl",
+        "name": "Bobo the Monkey - A platform game",
+        "description": ""
+    },
+    {
+        "url": "https://forum.makecode.com/t/adventures-of-sam-and-nate/1690",
+        "imageUrl": "/static/discourse/08526-04421-77887-45962.png",
+        "cardType": "forumUrl",
+        "name": "Adventures of Sam and Nate",
+        "description": ""
+    },
+    {
+        "url": "https://forum.makecode.com/t/charred-earth-tank-game-update/1662",
+        "imageUrl": "/static/discourse/72397-33207-92675-41376.png",
+        "cardType": "forumUrl",
+        "name": "Charred Earth tank game update",
+        "description": ""
+    },
+    {
+        "url": "https://forum.makecode.com/t/racquetball/1483",
+        "imageUrl": "/static/discourse/79706-92624-82126-48770.png",
+        "cardType": "forumUrl",
+        "name": "Racquetball",
+        "description": "",
+        "largeImageUrl": "/static/discourse/79706-92624-82126-48770.gif"
+    },
+    {
         "name": "Add Game",
         "description": "Are you looking to contribute your own game? These instructions will explain how to submit your game for the chance to appear in this carousel.",
         "imageUrl": "/static/community/add-game.png",
