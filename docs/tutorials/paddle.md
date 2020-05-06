@@ -36,9 +36,7 @@ let ball = sprites.create(img`
     . . c b b d 1 c
     . . . c c b b .
 `, SpriteKind.Player)
-// @highlight
 ball.setVelocity(100, 100)
-// @highlight
 ball.setFlag(SpriteFlag.BounceOnWall, true)
 ```
 
@@ -58,7 +56,6 @@ let ball = sprites.create(img`
 `, SpriteKind.Player)
 ball.setVelocity(100, 100)
 ball.setFlag(SpriteFlag.BounceOnWall, true)
-// @highlight
 ball.y = Math.randomRange(0, 120)
 ```
 
@@ -142,7 +139,6 @@ let left_paddle = sprites.create(img`
     8 8 1
     8 8 1
 `, SpriteKind.LeftPaddles)
-// @highlight
 controller.moveSprite(left_paddle, 0, 150)
 ```
 
@@ -174,7 +170,6 @@ let left_paddle = sprites.create(img`
 `, SpriteKind.LeftPaddles)
 controller.moveSprite(left_paddle, 0, 150)
 left_paddle.setFlag(SpriteFlag.StayInScreen, true)
-// @highlight
 left_paddle.left = 0
 ```
 
