@@ -13,6 +13,20 @@ Live coding of tutorials for MakeCode Arcade on https://mixer.com/MakeCode
         "imageUrl": "/static/live-coding/live.png"
     },
     {
+        "name": "Smash Buddies Part 1",
+        "description": "Building a simple 2 player platformer game.",
+        "youTubeId": "XkKoEN7-2Pk",
+        "youTubePlaylistId": "PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0",
+        "imageUrl": "/static/live-coding/XkKoEN7-2Pk.jpg"
+    },
+    {
+        "name": "Pang part 1",
+        "description": "Building another classic, Pang.",
+        "youTubeId": "q-7uJfGar98",
+        "youTubePlaylistId": "PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0",
+        "imageUrl": "/static/live-coding/q-7uJfGar98.jpg"
+    },
+    {
         "name": "Skeet 2",
         "description": "Building another classic, a skeet game.",
         "youTubeId": "vnWzu5QZs1w",
