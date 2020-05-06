@@ -13,6 +13,27 @@ Join the MakeCode developers as we stream MakeCode Arcade live on mixer.com/make
         "imageUrl": "/static/advanced-stream/live.png"
     },
     {
+        "name": "Character Animations",
+        "description": "Join Richard, Shannon, Joey, and Daryl as they add walking and sword swinging animations to an adventure game hero.",
+        "youTubeId": "zRewjteisLw",
+        "youTubePlaylistId": "PLMMBk9hE-SeoHWvTpdezyL9JfF0tocJUT",
+        "imageUrl": "/static/advanced-stream/zRewjteisLw.jpg"
+    },
+    {
+        "name": "Character Animations",
+        "description": "Join Richard, Shannon, Joey, and Daryl as they add walking and sword swinging animations to an adventure game hero.",
+        "youTubeId": "zRewjteisLw",
+        "youTubePlaylistId": "PLMMBk9hE-SeoHWvTpdezyL9JfF0tocJUT",
+        "imageUrl": "/static/advanced-stream/zRewjteisLw.jpg"
+    },
+    {
+        "name": "Mars inventory, part two!",
+        "description": "Join Richard, Shannon, Joey, and Daryl as they finish up their inventory game! If you haven't watched part one, check it out here: https://www.youtube.com/watch?v=BoqKYryOm8w&feature=youtu.be",
+        "youTubeId": "slY3eITNFoo",
+        "youTubePlaylistId": "PLMMBk9hE-SeoHWvTpdezyL9JfF0tocJUT",
+        "imageUrl": "/static/advanced-stream/slY3eITNFoo.jpg"
+    },
+    {
         "name": "Collecting things on Mars",
         "description": "Join Daryl, Richard, and Shannon as they make a game about a rover picking up things on mars. In this video, we show how to create a player inventory in a game about collecting resources.",
         "youTubeId": "BoqKYryOm8w",
