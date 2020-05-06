@@ -56,6 +56,7 @@
   "description": "A variation on the 2 player pong game",
   "url": "/tutorials/paddle",
   "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/paddle.png",
   "largeImageUrl": "/static/tutorials/paddle.gif",
   "videoUrl": "/static/tutorials/paddge.mp4"
 }, {
