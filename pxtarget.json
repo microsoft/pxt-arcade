@@ -330,6 +330,11 @@
                     "typeName": "Sprite",
                     "icon": "send",
                     "defaultName": "mySprite"
+                },
+                {
+                    "typeName": "Image",
+                    "icon": "image outline",
+                    "defaultName": "myImage"
                 }
             ]
         },
