@@ -20,13 +20,6 @@ Join the MakeCode developers as we stream MakeCode Arcade live on mixer.com/make
         "imageUrl": "/static/advanced-stream/zRewjteisLw.jpg"
     },
     {
-        "name": "Character Animations",
-        "description": "Join Richard, Shannon, Joey, and Daryl as they add walking and sword swinging animations to an adventure game hero.",
-        "youTubeId": "zRewjteisLw",
-        "youTubePlaylistId": "PLMMBk9hE-SeoHWvTpdezyL9JfF0tocJUT",
-        "imageUrl": "/static/advanced-stream/zRewjteisLw.jpg"
-    },
-    {
         "name": "Mars inventory, part two!",
         "description": "Join Richard, Shannon, Joey, and Daryl as they finish up their inventory game! If you haven't watched part one, check it out here: https://www.youtube.com/watch?v=BoqKYryOm8w&feature=youtu.be",
         "youTubeId": "slY3eITNFoo",
