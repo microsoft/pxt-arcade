@@ -4,6 +4,7 @@
 
 A 2 player variation of the famous pong game!
 
+![A ball bouncing on paddles](/static/tutorials/paddle.gif)
 
 ## Step 1
 
@@ -35,9 +36,9 @@ let ball = sprites.create(img`
     . . c b b d 1 c
     . . . c c b b .
 `, SpriteKind.Player)
-//% highlight
+// @highlight
 ball.setVelocity(100, 100)
-//% highlight
+// @highlight
 ball.setFlag(SpriteFlag.BounceOnWall, true)
 ```
 
@@ -57,7 +58,7 @@ let ball = sprites.create(img`
 `, SpriteKind.Player)
 ball.setVelocity(100, 100)
 ball.setFlag(SpriteFlag.BounceOnWall, true)
-//% highlight
+// @highlight
 ball.y = Math.randomRange(0, 120)
 ```
 
@@ -141,7 +142,7 @@ let left_paddle = sprites.create(img`
     8 8 1
     8 8 1
 `, SpriteKind.LeftPaddles)
-//% highlight
+// @highlight
 controller.moveSprite(left_paddle, 0, 150)
 ```
 
@@ -173,7 +174,7 @@ let left_paddle = sprites.create(img`
 `, SpriteKind.LeftPaddles)
 controller.moveSprite(left_paddle, 0, 150)
 left_paddle.setFlag(SpriteFlag.StayInScreen, true)
-//% highlight
+// @highlight
 left_paddle.left = 0
 ```
 
