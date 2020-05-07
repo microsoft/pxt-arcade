@@ -21,7 +21,7 @@ declare namespace mouse {
      * Turn the mouse wheel
      **/
     //% help=mouse/turn-wheel
-    //% blockId=mouseWheel block="turn wheel %w"
+    //% blockId=mouseWheel block="mouse turn wheel %w"
     //% w.min=-128 w.max=127 shim=mouse::turnWheel
     function turnWheel(w: int32): void;
 }
