@@ -13,6 +13,27 @@ Live coding of tutorials for MakeCode Arcade on https://mixer.com/MakeCode
         "imageUrl": "/static/live-coding/live.png"
     },
     {
+        "name": "Lunar Lander Part 1",
+        "description": "Turn your Arcade into a Mouse clicker!",
+        "youTubeId": "m-SIWLuuzNI",
+        "youTubePlaylistId": "PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0",
+        "imageUrl": "/static/live-coding/m-SIWLuuzNI.jpg"
+    },
+    {
+        "name": "Mouse Clicker",
+        "description": "Turn your Arcade into a Mouse clicker!",
+        "youTubeId": "vJbEfkM9158",
+        "youTubePlaylistId": "PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0",
+        "imageUrl": "/static/live-coding/vJbEfkM9158.jpg"
+    },
+    {
+        "name": "Smash Buddies 2",
+        "description": "Building a simple 2 player platformer game.",
+        "youTubeId": "SRcQB1sPkBk",
+        "youTubePlaylistId": "PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0",
+        "imageUrl": "/static/live-coding/SRcQB1sPkBk.jpg"
+    },
+    {
         "name": "Smash Buddies Part 1",
         "description": "Building a simple 2 player platformer game.",
         "youTubeId": "XkKoEN7-2Pk",
