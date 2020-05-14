@@ -13,6 +13,13 @@ Live coding of tutorials for MakeCode Arcade on https://mixer.com/MakeCode
         "imageUrl": "/static/live-coding/live.png"
     },
     {
+        "name": "Lunar Lander Part 2",
+        "description": "",
+        "youTubeId": "E0QgyHKYv8Y",
+        "youTubePlaylistId": "PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0",
+        "imageUrl": "/static/live-coding/E0QgyHKYv8Y.jpg"
+    },
+    {
         "name": "Lunar Lander Part 1",
         "description": "Turn your Arcade into a Mouse clicker!",
         "youTubeId": "m-SIWLuuzNI",
