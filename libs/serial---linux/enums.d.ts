@@ -38,7 +38,7 @@
 
 
     declare const enum Delimiters {
-    //% block="new line"
+    //% block="new line (\n)"
     NewLine = 10,
     //% block=","
     Comma = 44,
@@ -50,14 +50,16 @@
     Fullstop = 46,
     //% block="#"
     Hash = 35,
-    //% block=";"
-    SemiColumn = 59,
-    //% block="space",
+    //% block="carriage return (\r)"
+    CarriageReturn = 13,
+    //% block="space"
     Space = 32,
-    //% block="tab"
+    //% block="tab (\t)"
     Tab = 9,
-    //% block="pipe"
+    //% block="|"
     Pipe = 124,
+    //% block=";"
+    SemiColon = 59,
     }
 
 // Auto-generated. Do not edit. Really.
