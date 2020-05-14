@@ -448,10 +448,10 @@
             "snippetBuilder",
             "experimentalHw",
             "recipes",
-            "tutorialBlocksDiff",
-            "blocksCollapsing",
-            "errorList"
+            "tutorialBlocksDiff"
         ],
+        "blocksCollapsing": true,
+        "errorList": true,
         "extendEditor": true,
         "simScreenshot": true,
         "simScreenshotKey": "P",
