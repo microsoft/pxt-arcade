@@ -14,13 +14,15 @@ namespace config {
     export const PIN_BTN_RIGHT = 1053
     export const PIN_BTN_MENU = 1054
 
-    export const PIN_DISPLAY_SCK = DAL.P0_17 
-    export const PIN_DISPLAY_MOSI = DAL.P0_13 
+    export const PIN_JACK_SND = DAL.P0_0
+
+    export const PIN_DISPLAY_SCK = DAL.P0_17
+    export const PIN_DISPLAY_MOSI = DAL.P0_13
     export const PIN_DISPLAY_MISO = DAL.P0_1
     export const PIN_DISPLAY_BL = DAL.P0_26
     export const PIN_DISPLAY_DC = DAL.P0_10
-    export const PIN_DISPLAY_RST =  DAL.P1_2
- 
+    export const PIN_DISPLAY_RST = DAL.P1_2
+
     export const DISPLAY_WIDTH = 160
     export const DISPLAY_HEIGHT = 128
 

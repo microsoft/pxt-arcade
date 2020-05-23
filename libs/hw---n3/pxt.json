@@ -20,7 +20,7 @@
     "dependencies": {
         "core---nrf52": "file:../core---nrf52",
         "screen---st7735": "file:../screen---st7735",
-        "mixer---none": "file:../mixer---none",
+        "mixer---nrf52": "file:../mixer---nrf52",
         "game---hw": "file:../game---hw",
         "jacdac-game": "file:../jacdac-game"
     },
