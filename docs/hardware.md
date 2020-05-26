@@ -87,6 +87,13 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "name": "Add Board",
         "description": "Are you looking to build your own hardware to run Arcade games? This in-depth guide provides the technical details and specifications to get started.",
         "url": "/hardware/adding"
+    },
+	{
+        "name": " TinkerGen GameGo",
+        "description": "A programmable game console that supports game programming on MakeCode Arcade and your retro arcade game ideas.",
+        "imageUrl": "/static/hardware/GameGo.jpg",
+        "url": "https://www.tinkergen.com/gamego",
+        "variant": "hw---stm32f401"
     }
 ]
 ```
