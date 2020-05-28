@@ -1,0 +1,158 @@
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, "HelveticaNeue-Light", sans-serif;
+    font-size: 16px;
+    background: #020213;
+}
+
+h1 {
+    line-height: 28px;
+    padding: 36px 0 4px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.hero {
+    overflow: hidden;
+}
+
+.banner {
+    width: 100%;
+    overflow: hidden;
+}
+.banner > img {
+    width: 100%;
+}
+
+.content {
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 0 2rem 2rem;
+    max-width: 54rem;
+}
+
+.segment {
+    margin: calc(2rem - .14285714em) 0 0;
+}
+.segment:first-child > p {
+    margin: 2rem 0;
+}
+
+/**** ACTION BUTTONS ****/
+
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    color: #fff;
+    background-color: #4c4d6d;
+    cursor: pointer;
+    margin: 0 1rem;
+    padding: 0.7rem 1rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 1.285rem;
+    text-align: center;
+}
+
+.button:hover {
+    color: #fff;
+    background-color: #6e6f93;
+    text-decoration: none;
+}
+
+/**** TIMER ****/
+
+#timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.5rem;
+}
+
+#timer > .label {
+    margin-right: 1rem;
+}
+
+#timer > div {
+    display: flex
+}
+
+.counter {
+    text-align: center;
+    margin: 0 1rem;
+}
+.counter > .number {
+    font-size: 1.714rem;
+}
+
+/**** STREAM SCHEDULE ****/
+
+#schedule {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1.5rem 0 2rem;
+    border-bottom: 1px solid #d9dae3;
+}
+
+#schedule > div {
+    display: flex;
+    flex-direction: row;
+}
+
+#schedule > div:nth-child(odd) {
+    background-color: #d9dae3;
+}
+
+#schedule > div:first-child {
+    color: #fff;
+    background-color: #6e6f93;
+    font-weight: 600;
+}
+
+#schedule > div > a,
+#schedule > div > div {
+    flex: 1;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 1rem 0.75rem;
+    cursor: pointer;
+}
+
+#schedule > div > div:first-child {
+    flex: 0.6;
+}
+
+#schedule > div > div:nth-child(3) {
+    flex: 1.5;
+}
+
+/**** MARKDOWN/RULES ****/
+
+#rules table thead {
+    display: none;
+}
+
+#rules table tr {
+    display: flex;
+    align-items: center;
+}
+
+#rules table td {
+    flex: 1;
+}
+
+#rules table img {
+    width: 100%;
+    padding: 1rem;
+}
