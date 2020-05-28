@@ -9,7 +9,7 @@ interface Session {
 const sessions: Session[] = [
     {
         "title": "Designing Game Levels",
-        "description": "Learn the basics level design with Sten Huebler from the Gears of War team.",
+        "description": "Learn the basics of level design with Sten Huebler from the Gears of War team.",
         "presenter": "Sten Huebler",
         "time": 13,
         "date": new Date(2020, 5, 4)
