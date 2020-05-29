@@ -37,9 +37,10 @@ Our expert panel of judges will determine the top 3 entries based on:
 
 The winners will receive an Arcade-compatible hand-held gaming device and a MakeCode Arcade T-shirt!
 
-Meowbit | Pygamer
+Meowbit | Pygamer | T-shirt
 -- | --
-![A Meowbit device for MakeCode Arcade](/static/gamejam/img/meowbit.png) | ![A Pygamer device for MakeCode Arcade](/static/gamejam/img/pygamer.jpg)
+![A Meowbit device for MakeCode Arcade](/static/gamejam/img/meowbit.png) | ![A MakeCode t-shirt with a pixel art strawberry](/static/gamejam/img/tshirt.jpg) | ![A Pygamer device for MakeCode Arcade](/static/gamejam/img/pygamer.jpg)
+
 
 ## Build Your Bag of Tricks
 

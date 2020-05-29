@@ -55,7 +55,7 @@ h1 {
     color: #fff;
     background-color: #4c4d6d;
     cursor: pointer;
-    margin: 0 1rem;
+    margin: 0.5rem 1rem;
     padding: 0.7rem 1rem;
     border-radius: 0.75rem;
     font-weight: 600;
@@ -100,42 +100,26 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 1.5rem 0 2rem;
-    border-bottom: 1px solid #d9dae3;
+    margin: 1.5rem 0 0;
 }
 
-#schedule > div {
-    display: flex;
-    flex-direction: row;
+#schedule .event {
+    margin-bottom: 1rem;
 }
 
-#schedule > div:nth-child(odd) {
-    background-color: #d9dae3;
-}
-
-#schedule > div:first-child {
+#schedule .title {
     color: #fff;
     background-color: #6e6f93;
     font-weight: 600;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
-#schedule > div > a,
-#schedule > div > div {
-    flex: 1;
-    text-align: center;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    padding: 1rem 0.75rem;
-    cursor: pointer;
+#schedule .date {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
-#schedule > div > div:first-child {
-    flex: 0.6;
-}
-
-#schedule > div > div:nth-child(3) {
-    flex: 1.5;
-}
 
 /**** MARKDOWN/RULES ****/
 
@@ -155,4 +139,63 @@ h1 {
 #rules table img {
     width: 100%;
     padding: 1rem;
+}
+
+/**** GALLERY ****/
+
+#gallery {
+    display: flex;
+    justify-content: space-around;
+}
+
+#gallery .game {
+    text-align: center;
+    margin: 1rem;
+}
+
+/**** FOOTER ****/
+
+.footer .ui.link.list .item {
+    color: #fff;
+}
+
+
+@media (max-width: 480px) {
+    .banner img {
+        width: unset;
+        height: 15rem;
+        transform: translateX(-50%);
+        margin-left: 50%;
+    }
+
+    h1 {
+        line-height: 2.3rem;
+    }
+
+    #timer > div {
+        flex: 1;
+    }
+    #timer > .label {
+        flex: 0.4;
+        margin-right: 0.2rem;
+    }
+    #timer .counter {
+        margin: 0.5rem;
+    }
+
+    #rules table td:nth-child(2) {
+        display: none;
+    }
+
+    .submit .actions,
+    #rules table tr,
+    #gallery {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 320px) {
+    .counter > div:last-child {
+        font-size: 0.8rem;
+    }
 }
