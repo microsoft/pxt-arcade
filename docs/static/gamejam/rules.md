@@ -8,6 +8,10 @@ The theme for this jam is "heists". In other words, we're looking for games abou
 
 You can interpret "heists" however you want, but someone playing your game should be able to see how it relates to the theme without extra explanation.
 
+Cat Burglary | Security Guard
+-- | --
+![A cat burglar game](/static/gamejam/img/heist-2.gif) | ![A security guard heist game](/static/gamejam/img/heist-1.gif)
+
 ## Duration
 **Start:** June 1, 2020  
 **End:** June 30, 2020
@@ -38,7 +42,7 @@ Our expert panel of judges will determine the top 3 entries based on:
 The winners will receive an Arcade-compatible hand-held gaming device and a MakeCode Arcade T-shirt!
 
 Meowbit | Pygamer | T-shirt
--- | --
+-- | -- | --
 ![A Meowbit device for MakeCode Arcade](/static/gamejam/img/meowbit.png) | ![A MakeCode t-shirt with a pixel art strawberry](/static/gamejam/img/tshirt.jpg) | ![A Pygamer device for MakeCode Arcade](/static/gamejam/img/pygamer.jpg)
 
 
