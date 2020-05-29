@@ -107,6 +107,24 @@ h1 {
     margin-bottom: 1rem;
 }
 
+#schedule .details {
+    display: flex;
+    align-items: center;
+}
+
+#schedule .image {
+    margin-right: 1rem;
+    flex: 0.5;
+}
+
+#schedule .image img {
+    width: 100%;
+}
+
+#schedule .text {
+    flex: 1;
+}
+
 #schedule .title {
     color: #fff;
     background-color: #6e6f93;
@@ -181,6 +199,10 @@ h1 {
     }
     #timer .counter {
         margin: 0.5rem;
+    }
+
+    #schedule .image {
+        display: none;
     }
 
     #rules table td:nth-child(2) {

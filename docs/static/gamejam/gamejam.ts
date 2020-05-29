@@ -2,6 +2,7 @@ interface Session {
     title: string;
     description: string;
     presenter: string;
+    imgSrc?: string;
     time: number; // hour in PST, 24 hr clock
     date: Date; // month and day pulled from date
 }
@@ -11,6 +12,7 @@ const sessions: Session[] = [
         "title": "Level Design in Games with Sten Huebler",
         "description": "Learn about the effect of different level layouts to the gameplay experience. Sten is a Senior Level Designer at The Coalition, working on Gears of War, making awesome looking and fun levels. He also worked on Crysis and has a passion for Flight Sims.",
         "presenter": "Sten Huebler",
+        "imgSrc": "/static/gamejam/img/sten.png",
         "time": 13,
         "date": new Date(2020, 5, 11)
     },
@@ -18,6 +20,7 @@ const sessions: Session[] = [
         "title": "Q & A with Stu Maxwell",
         "description": "Join Stu Maxwell, the lead VFX artist at The Coalition, as we talk about how to make games look great! Stu makes Gears games feel explosive and atmospheric, and also made the indie game Shape of the World.",
         "presenter": "Stu Maxwell",
+        "imgSrc": "/static/gamejam/img/stu.png",
         "time": 13,
         "date": new Date(2020, 5, 16)
     }
@@ -178,19 +181,32 @@ function makeSchedule() {
         const row = document.createElement("div");
         row.className = "event";
 
+        const text = document.createElement("div");
+        text.className = "text";
         const title = document.createElement("div");
         title.className = "title";
         title.innerText = session.title;
         row.appendChild(title)
 
+        const details = document.createElement("div");
+        details.className = "details";
+        const imgContainer = document.createElement("div");
+        imgContainer.className = "image"
+        const img = document.createElement("img");
+        img.src = session.imgSrc;
+        imgContainer.appendChild(img)
+        details.appendChild(imgContainer)
+
         const date = document.createElement("div");
         date.className = "date";
         date.innerText = `${formatDate(session.date)}, ${formatTime(session.time)}`;
-        row.appendChild(date);
+        text.appendChild(date);
 
         const description = document.createElement("div");
         description.innerText = session.description;
-        row.appendChild(description)
+        text.appendChild(description)
+        details.appendChild(text)
+        row.appendChild(details)
     
         parent.appendChild(row);
     }
