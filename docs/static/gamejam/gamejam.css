@@ -8,7 +8,7 @@ body {
     padding: 0;
     font-family: "Segoe UI", Arial, "HelveticaNeue-Light", sans-serif;
     font-size: 16px;
-    background: #020213;
+    background: #a9c8c3;
 }
 
 h1 {
@@ -53,7 +53,7 @@ h1 {
 
 .button {
     color: #fff;
-    background-color: #4c4d6d;
+    background-color: #638599;
     cursor: pointer;
     margin: 0.5rem 1rem;
     padding: 0.7rem 1rem;
@@ -65,7 +65,7 @@ h1 {
 
 .button:hover {
     color: #fff;
-    background-color: #6e6f93;
+    background-color: #bed2d2;
     text-decoration: none;
 }
 
@@ -127,7 +127,7 @@ h1 {
 
 #schedule .title {
     color: #fff;
-    background-color: #6e6f93;
+    background-color: #638599;
     font-weight: 600;
     padding: 0.5rem;
     margin-bottom: 0.5rem;
