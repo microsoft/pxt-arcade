@@ -8,9 +8,9 @@ The theme for this jam is "gardens". In other words, we're looking for games abo
 
 You can interpret "gardens" however you want, but someone playing your game should be able to see how it relates to the theme without extra explanation.
 
-Bee Helpful | Spooky Garden
+Bee Helpful | Bunny Defense
 -- | --
-![A gardening game with a bee](/static/gamejam/img/demo-1.gif) | ![A spooky garden text adventure](/static/gamejam/img/demo-2.gif)
+![A gardening game with a bee](/static/gamejam/img/demo-1.gif) | ![Defend the garden against bunnies!](/static/gamejam/img/demo-2.gif)
 
 ## Duration
 **Start:** June 1, 2020  
