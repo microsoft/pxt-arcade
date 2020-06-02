@@ -8,11 +8,15 @@ The theme for this jam is "gardens". In other words, we're looking for games abo
 
 You can interpret "gardens" however you want, but someone playing your game should be able to see how it relates to the theme without extra explanation.
 
+Bee Helpful | Spooky Garden
+-- | --
+![A gardening game with a bee](/static/gamejam/img/demo-1.gif) | ![A spooky garden text adventure](/static/gamejam/img/demo-2.gif)
+
 ## Duration
-**Start:** June 1, 2020
+**Start:** June 1, 2020  
 **End:** June 30, 2020
 
-You will have a month to build and submit your games for the competition!  For you procrastinators out there, we will accept games up until 11:59pm on June 30th
+You will have a month to build and submit your games for the competition!  For you procrastinators out there, we will accept games up until 11:59 PM (PDT) on June 30th.
 
 
 ## Rules
