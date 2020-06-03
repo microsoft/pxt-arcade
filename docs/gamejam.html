@@ -14,12 +14,12 @@
 		<meta name="twitter:image" content="/static/gamejam/img/preview.png">
 		<meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
 		<link rel="stylesheet" href="https://pxt.azureedge.net/blob/2163189fd5e35c0981ed55318415582a7c9aeb12/doccdn/semantic.css" type="text/css">
-		<link rel="stylesheet" href="/static/gamejam/gamejam.css">	
+		<link rel="stylesheet" href="/static/gamejam/gamejam.css">
 	</head>
 	
 <body>
 	<div class="hero">
-		<div class="banner"><img src="/static/gamejam/img/banner.png" /></div>
+		<div class="banner"><img class="top" src="/static/gamejam/img/banner.png" /></div>
 	</div>
 	<div class="content">
 		<h1>MakeCode Arcade Game Jam</h1>
@@ -33,15 +33,11 @@
 			</p>
 			<div id="timer"></div>
 		</div>
-		<div class="segment">
-			<h2>Livestream Schedule</h2>
+		<div class="segment" id="events">
+			<h2>Events</h2>
+			<a id="mixer" href="https://mixer.com/MakeCode" target="_blank" rel="noopener noreferrer" title="Watch on Mixer">Watch on <img src="/static/gamejam/img/mixer.png"></a>
 			<p>Weekly sessions on game design and implementation from professional game developers!</p>
 			<div id="schedule"></div>
-			<div class="actions">
-				<a class="button" href="https://mixer.com/MakeCode" target="_blank" rel="noopener noreferrer">
-					Watch on Mixer
-				</a>
-			</div>
 		</div>
 		<div class="segment">
 			<div id="rules"></div>
@@ -50,7 +46,7 @@
 			<h2>Submit</h2>
 			<p>You can submit your game either through Microsoft Forms or itch.io.</p>
 			<div class="actions">
-				<a class="button" href="https://itch.io/jam/makecode-arcade-heist-jam" target="_blank" rel="noopener noreferrer">Submit on itch.io</a>
+				<a class="button" href="https://itch.io/jam/makecode-arcade-garden-jam" target="_blank" rel="noopener noreferrer">Submit on itch.io</a>
 				<a class="button" href="https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRzM4TNWqcvxDiKJQyB7TdWpUQVZPSDI3WTJaQjBNQ0dQMEJYVk1QWFU2QS4u" target="_blank" rel="noopener noreferrer">Submit with Forms</a>
 			</div>
 		</div>
@@ -60,6 +56,7 @@
 			<div id="gallery"></div>
 		</div>
 	</div>
+	<div class="banner"><img class="bottom" src="/static/gamejam/img/footer.png" /></div>
 
     <!-- @include tracking.html -->
 	<!-- @include thin-footer.html -->

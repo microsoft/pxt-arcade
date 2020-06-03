@@ -5,6 +5,7 @@ interface Session {
     imgSrc?: string;
     time: number; // hour in PST, 24 hr clock
     date: Date; // month and day pulled from date
+    ics?: string; // ics file for event
 }
 
 const sessions: Session[] = [
@@ -14,7 +15,8 @@ const sessions: Session[] = [
         "presenter": "Sten Huebler",
         "imgSrc": "/static/gamejam/img/sten.png",
         "time": 13,
-        "date": new Date(2020, 5, 11)
+        "date": new Date(2020, 5, 11),
+        "ics": "/static/gamejam/Level Design in Games.ics"
     },
     {
         "title": "Q & A with Stu Maxwell",
@@ -22,7 +24,8 @@ const sessions: Session[] = [
         "presenter": "Stu Maxwell",
         "imgSrc": "/static/gamejam/img/stu.png",
         "time": 13,
-        "date": new Date(2020, 5, 16)
+        "date": new Date(2020, 5, 16),
+        "ics": "/static/gamejam/Q and A with Stu Maxwell.ics"
     }
 ]
 
@@ -127,6 +130,10 @@ function makeRules() {
         let markdown = marked(this.responseText);
         const parent = document.getElementById("rules");
         parent.innerHTML = markdown;
+
+        // insert schedule of events after rules
+        const node = document.getElementById("make-it-a-garden-party");
+        node.parentElement.insertBefore(document.getElementById("events"), node);
       }
 }
 
@@ -176,7 +183,6 @@ function makeGallery() {
 function makeSchedule() {
     const sorted = sessions.sort((a, b) => a.date < b.date ? -1 : 1);
     const parent = document.getElementById("schedule");
-    // parent.appendChild(makeHeader())
     for (const session of sorted) {
         const row = document.createElement("div");
         row.className = "event";
@@ -186,6 +192,15 @@ function makeSchedule() {
         const title = document.createElement("div");
         title.className = "title";
         title.innerText = session.title;
+
+        const ics = document.createElement("a");
+        ics.className = "ics";
+        ics.href = session.ics;
+        const icon = document.createElement("i");
+        icon.className = "icon calendar";
+        ics.appendChild(icon);
+        title.appendChild(ics);
+
         row.appendChild(title)
 
         const details = document.createElement("div");
@@ -211,24 +226,6 @@ function makeSchedule() {
         parent.appendChild(row);
     }
 }
-
-function makeHeader(): HTMLElement {
-    const header = document.createElement("div");
-    const dateCell = document.createElement("div");
-    dateCell.innerText = "Date";
-    header.appendChild(dateCell)
-    const timeCell = document.createElement("div");
-    timeCell.innerText = "Time";
-    header.appendChild(timeCell)
-    const titleCell = document.createElement("div");
-    titleCell.innerText = "Title";
-    header.appendChild(titleCell)
-    const presenterCell = document.createElement("div");
-    presenterCell.innerText = "Presenter";
-    header.appendChild(presenterCell)
-    return header;
-}
-
 function formatTime(time: number): string {
     const EST = time + 3;
     return `${time % 12 || 12} ${time < 12 ? "AM" : "PM"} PDT / ${EST % 12 || 12} ${EST < 12 ? "AM" : "PM"} EDT`;

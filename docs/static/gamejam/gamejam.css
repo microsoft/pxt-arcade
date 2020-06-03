@@ -96,6 +96,32 @@ h1 {
 
 /**** STREAM SCHEDULE ****/
 
+#events {
+    position: relative;
+}
+
+#mixer {
+    position: absolute;
+    top: 0;
+    left: 6rem;
+    background: #638599;
+    padding: 0.3rem 0.7rem;
+    color: #fff;
+    border-radius: 0.5rem;
+    margin-top: 0.2rem;
+}
+
+#mixer img {
+    width: 4rem;
+    margin-left: 0.25rem;
+    margin-bottom: -0.1rem;
+}
+
+#mixer:hover {
+    background-color: #bed2d2;
+    text-decoration: none;
+}
+
 #schedule {
     display: flex;
     flex-direction: column;
@@ -131,6 +157,15 @@ h1 {
     font-weight: 600;
     padding: 0.5rem;
     margin-bottom: 0.5rem;
+}
+
+#schedule .title .ics {
+    float: right;
+    color: #fff;
+}
+
+#schedule .title .ics:hover {
+    color: #a9c8c3;
 }
 
 #schedule .date {
@@ -177,15 +212,21 @@ h1 {
     color: #fff;
 }
 
-
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .banner img {
         width: unset;
-        height: 15rem;
         transform: translateX(-50%);
         margin-left: 50%;
     }
+    .banner .top {
+        height: 14rem;
+    }
+    .banner .bottom {
+        height: 5rem;
+    }
+}
 
+@media (max-width: 480px) {
     h1 {
         line-height: 2.3rem;
     }
