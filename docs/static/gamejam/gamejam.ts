@@ -46,9 +46,8 @@ const featured: Game[] = [
 ];
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-const START_DATE = 1590994800000; // midnight PST June 1st
-const END_DATE = 1593586800000; // midnight PST June 30th
-
+const START_DATE = new Date("2020-06-10 00:00:00 GMT-0700").getTime(); // midnight PST June 10
+const END_DATE = new Date("2020-07-02 00:00:00 GMT-0700").getTime(); // midnight PST July 1
 
 makeTimer();
 makeRules();
