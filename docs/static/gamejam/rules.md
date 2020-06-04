@@ -50,6 +50,7 @@ Meowbit | Pygamer | T-shirt
 
 ## Gardening tips
 
+* If you don't know where to start, try out [one of our tutorials](https://arcade.makecode.com/tutorials)!
 * When designing your game, keep in mind that Arcade is restricted to a 160x120 16-color screen and a 4 channel synthesizer for sound.
 * See [these instructions](https://arcade.makecode.com/developer/images) for information on importing images and color palettes into Arcade.
 * Check out the [developer documentation](https://arcade.makecode.com/developer) for more advanced tips to use in Arcade.

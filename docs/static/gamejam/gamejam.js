@@ -5,7 +5,8 @@ var sessions = [
         "presenter": "Sten Huebler",
         "imgSrc": "/static/gamejam/img/sten.png",
         "time": 13,
-        "date": new Date(2020, 5, 11)
+        "date": new Date(2020, 5, 11),
+        "ics": "/static/gamejam/Level Design in Games.ics"
     },
     {
         "title": "Q & A with Stu Maxwell",
@@ -13,7 +14,8 @@ var sessions = [
         "presenter": "Stu Maxwell",
         "imgSrc": "/static/gamejam/img/stu.png",
         "time": 13,
-        "date": new Date(2020, 5, 16)
+        "date": new Date(2020, 5, 16),
+        "ics": "/static/gamejam/Q and A with Stu Maxwell.ics"
     }
 ];
 var featured = [
@@ -97,6 +99,9 @@ function makeRules() {
         var markdown = marked(this.responseText);
         var parent = document.getElementById("rules");
         parent.innerHTML = markdown;
+        // insert schedule of events after rules
+        var node = document.getElementById("make-it-a-garden-party");
+        node.parentElement.insertBefore(document.getElementById("events"), node);
     }
 }
 function makeGallery() {
@@ -140,7 +145,6 @@ function makeGallery() {
 function makeSchedule() {
     var sorted = sessions.sort(function (a, b) { return a.date < b.date ? -1 : 1; });
     var parent = document.getElementById("schedule");
-    // parent.appendChild(makeHeader())
     for (var _i = 0, sorted_1 = sorted; _i < sorted_1.length; _i++) {
         var session = sorted_1[_i];
         var row = document.createElement("div");
@@ -150,6 +154,13 @@ function makeSchedule() {
         var title = document.createElement("div");
         title.className = "title";
         title.innerText = session.title;
+        var ics = document.createElement("a");
+        ics.className = "ics";
+        ics.href = session.ics;
+        var icon = document.createElement("i");
+        icon.className = "icon calendar";
+        ics.appendChild(icon);
+        title.appendChild(ics);
         row.appendChild(title);
         var details = document.createElement("div");
         details.className = "details";
@@ -170,22 +181,6 @@ function makeSchedule() {
         row.appendChild(details);
         parent.appendChild(row);
     }
-}
-function makeHeader() {
-    var header = document.createElement("div");
-    var dateCell = document.createElement("div");
-    dateCell.innerText = "Date";
-    header.appendChild(dateCell);
-    var timeCell = document.createElement("div");
-    timeCell.innerText = "Time";
-    header.appendChild(timeCell);
-    var titleCell = document.createElement("div");
-    titleCell.innerText = "Title";
-    header.appendChild(titleCell);
-    var presenterCell = document.createElement("div");
-    presenterCell.innerText = "Presenter";
-    header.appendChild(presenterCell);
-    return header;
 }
 function formatTime(time) {
     var EST = time + 3;
