@@ -104,7 +104,7 @@ h1 {
     position: absolute;
     top: 0;
     left: 6rem;
-    background: #638599;
+    background: #1e2551;
     padding: 0.3rem 0.7rem;
     color: #fff;
     border-radius: 0.5rem;
@@ -258,7 +258,8 @@ h1 {
 }
 
 @media (max-width: 320px) {
-    .counter > div:last-child {
+    .counter > div:last-child,
+    #mixer {
         font-size: 0.8rem;
     }
 }

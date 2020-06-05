@@ -55,6 +55,35 @@ makeRules();
 makeGallery();
 makeSchedule();
 
+initTelemetry();
+
+function initTelemetry() {
+    // Watch on mixer button
+    document.getElementById("mixer").addEventListener("click", () => {
+        (window as any).pxtTickEvent("gamejam.mixer")
+    })
+    // Submit on itch.io button
+    document.querySelector(".submit .button:nth-child(1)").addEventListener("click", () => {
+        (window as any).pxtTickEvent("gamejam.submit.itchio")
+    })
+    // Submit with office forms button
+    document.querySelector(".submit .button:nth-child(2)").addEventListener("click", () => {
+        (window as any).pxtTickEvent("gamejam.submit.forms")
+    })
+    // Try one of our tutorials text link
+    document.querySelector("#gardening-tips + ul a:nth-child(1)").addEventListener("click", () => {
+        (window as any).pxtTickEvent("gamejam.link.tutorial")
+    })
+    // How to import images text link
+    document.querySelector("#gardening-tips + ul a:nth-child(2)").addEventListener("click", () => {
+        (window as any).pxtTickEvent("gamejam.link.images")
+    })
+    // Developer documentation text link
+    document.querySelector("#gardening-tips + ul a:nth-child(3)").addEventListener("click", () => {
+        (window as any).pxtTickEvent("gamejam.link.developer")
+    })
+}
+
 function makeTimer() {
     const now = Date.now();
     if (now < END_DATE) {
