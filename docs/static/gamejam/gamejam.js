@@ -28,8 +28,8 @@ var featured = [
 */
 ];
 var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-var START_DATE = 1590994800000; // midnight PST June 1st
-var END_DATE = 1593586800000; // midnight PST June 30th
+var START_DATE = new Date("2020-06-10 00:00:00 GMT-0700").getTime(); // midnight PST June 10
+var END_DATE = new Date("2020-07-02 00:00:00 GMT-0700").getTime(); // midnight PST July 1
 makeTimer();
 makeRules();
 makeGallery();
