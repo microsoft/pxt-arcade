@@ -16,7 +16,7 @@ const sessions: Session[] = [
         "imgSrc": "/static/gamejam/img/sten.png",
         "time": 13,
         "date": new Date(2020, 5, 11),
-        "ics": "/static/gamejam/Level Design in Games.ics"
+        "ics": "/static/gamejam/Level-Design-in-Games.ics"
     },
     {
         "title": "Q & A with Stu Maxwell",
@@ -25,7 +25,7 @@ const sessions: Session[] = [
         "imgSrc": "/static/gamejam/img/stu.png",
         "time": 13,
         "date": new Date(2020, 5, 16),
-        "ics": "/static/gamejam/Q and A with Stu Maxwell.ics"
+        "ics": "/static/gamejam/Q-and-A-with-Stu-Maxwell.ics"
     }
 ]
 
@@ -69,16 +69,19 @@ function initTelemetry() {
     document.querySelector(".submit .button:nth-child(2)").addEventListener("click", () => {
         (window as any).pxtTickEvent("gamejam.submit.forms")
     })
+}
+
+function initRulesTelemetry() {
     // Try one of our tutorials text link
-    document.querySelector("#gardening-tips + ul a:nth-child(1)").addEventListener("click", () => {
+    document.querySelector("#gardening-tips + ul li:nth-child(1) a").addEventListener("click", () => {
         (window as any).pxtTickEvent("gamejam.link.tutorial")
     })
     // How to import images text link
-    document.querySelector("#gardening-tips + ul a:nth-child(2)").addEventListener("click", () => {
+    document.querySelector("#gardening-tips + ul li:nth-child(3) a").addEventListener("click", () => {
         (window as any).pxtTickEvent("gamejam.link.images")
     })
     // Developer documentation text link
-    document.querySelector("#gardening-tips + ul a:nth-child(3)").addEventListener("click", () => {
+    document.querySelector("#gardening-tips + ul li:nth-child(4) a").addEventListener("click", () => {
         (window as any).pxtTickEvent("gamejam.link.developer")
     })
 }
@@ -162,6 +165,7 @@ function makeRules() {
         // insert schedule of events after rules
         const node = document.getElementById("make-it-a-garden-party");
         node.parentElement.insertBefore(document.getElementById("events"), node);
+        initRulesTelemetry();
       }
 }
 

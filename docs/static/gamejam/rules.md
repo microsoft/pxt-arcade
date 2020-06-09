@@ -25,7 +25,7 @@ You will have a month to build and submit your games for the competition!  For y
 * Keep the games PG: no NSFW, offensive, or excessively violent content.
 * You must be at least 9 years old to participate.
 * All games must be submitted by someone who is at least 13 years old. Younger students are welcome to participate, but it must be in partnership with an adult and with parent permission.
-* See the [full contest rules](static/gamejam/Microsoft%20MakeCode%20Arcade%20Game%20Jam%20Contest%20Official%20Rules.pdf) for more detail.
+* See the [full contest rules](/static/gamejam/Microsoft_MakeCode_Arcade_Game_Jam_Contest_Official_Rules.pdf) for more detail.
 
 
 ## Make it a Garden Party
