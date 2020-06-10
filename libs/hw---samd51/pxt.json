@@ -22,8 +22,7 @@
         "core---samd": "file:../core---samd",
         "screen---st7735": "file:../screen---st7735",
         "mixer---samd": "file:../mixer---samd",
-        "game---hw": "file:../game---hw",
-        "jacdac-game": "file:../jacdac-game"
+        "game---hw": "file:../game---hw"
     },
     "yotta": {
         "optionalConfig": {
