@@ -18,8 +18,8 @@ A **method** is an action that an object supports. For example, sprites (an obje
 
 ## Example #1: Sprite Hello Blocks
 
-1. Create the code below in Blocks
-2. Name the code "sprite hello"
+1. Start a new project and name it “sprite hello”
+2. Create the code below in Blocks
 3. View the code in JavaScript
 
 ```blocks
@@ -66,7 +66,7 @@ mySprite.say(msg)
 
 1. Start a new project, and name it "console"
 2. Switch to JavaScript view and replace all code with the code below
-3. Press the **Show Console Simulator** button below the simulator to display `console` output
+3. Select the play button in the simulator, then select the **Show Console Simulator** button below the simulator to display `console` output
 
 ```typescript
 let msg: string = "Hello World!"
@@ -79,7 +79,7 @@ console.log("msg sent!")
 1. Open the "sprite hello" code saved above
 2. Add in console messages using `console.log()` for:
     * a string (example: "Hello console")
-    * a string variable (example: use ``||sprites:msg||`` variable from the prior example)
+    * a string variable (example: use ``||variables:msg||`` variable from the prior example)
 
 ### ~hint
 
@@ -94,7 +94,7 @@ The code `console.log()` doesn't use **mySprite** like ``||sprites:say||`` does.
 [![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-spritesaylog)
 
 1. Start with the above project and add another sprite (make sure to give both unique variable names)
-2. Add in a ``||sprite:say||`` messages to have a conversation with the first sprite
+2. Add in a ``||sprites:say||`` message to have a conversation with the first sprite
 3. Push the `+` on the ``||sprites:say||`` block and set the time for each message to be displayed (1000 millisecond = 1 second)
 4. **Challenge:** add additional sprites at different coordinates and use ``||sprites:say||`` to make messages for all of them
 5. **Challenge:** make larger 32x32 sprites with more detail than the smaller sprites allowed

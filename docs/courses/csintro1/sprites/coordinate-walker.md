@@ -16,7 +16,7 @@ In order to create games, we need to be able to place ``||sprites:Sprites||`` an
 
 Use the coordinate walker example to move around the screen and track `X` and `Y` coordinates.
 
-Open the [coordinate walker program](https://makecode.com/_huXKRL3r24iC) or open the simulator for the following code to complete the tasks.
+Use this code in the simulator to complete the tasks.
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -31,8 +31,8 @@ player1 = sprites.create(img`
 `, SpriteKind.Player)
 scene.setBackgroundColor(12)
 game.onUpdate(function () {
-    player1.x += controller.dx(15)
-    player1.y += controller.dy(15)
+    player1.x += controller.dx()
+    player1.y += controller.dy()
     if (player1.x < -10) {
         player1.x = -10
     }

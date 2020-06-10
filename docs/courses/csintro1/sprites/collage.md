@@ -9,7 +9,7 @@ In this activity, students will be introduced to:
 * Designing their own images
 * Use variables to create multiple sprites
 * Using coordinates on the screen to arrange our sprites into a scene
-* Changing a the background color
+* Changing the background color
 
 ## Example #1: Sprite & Background
 
@@ -117,7 +117,7 @@ Make a collage with different images scattered around the screen. It can be abou
 1. Initialize 6 or more Sprites with custom variable names the correspond to the images 
 2. Design sprites in the image editor to tell a story using custom images of varying sizes and styles
 3. Use sprite properties to place images across all areas of the game screen
-4. Save the collage as a shared link or download the PNG file
+4. Publish your collage as a shared link or save as a PNG file
 5. **Challenge:** create a large image by using multiple sprites and 'combining' them by carefully placing them next to each other (for example, sprites for head, body and legs that combine to represent a person)
 
 ## What did we learn?
