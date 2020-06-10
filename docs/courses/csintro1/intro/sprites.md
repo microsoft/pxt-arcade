@@ -11,15 +11,13 @@ In this activity, students are introduced to:
 * Using the Image Editor
 * Pixels and pixel Colors
 * Viewing JavaScript
-* Color codes in the mage editor, blocks and JavaScript
+* Color codes in the Image Editor, Blocks, and JavaScript
 
 ## Concept: Set a ``||sprites:Sprite||`` variable to an image using the image editor
 
 [![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-02_1_variablesprite_final)
 
 The blocks needed to create sprites are found in the ``||sprites:Sprites||`` menu. The ``||variables:set mySprite to||`` is the first block in this category that we will discuss. The following example shows the creation of a sprite with a blank image.
-
-[Empty Sprite Example](https://makecode.com/_g3CcuWigwKR8)
 
 ```blocks
 let mySprite: Sprite = null
@@ -49,8 +47,6 @@ Clicking on the image icon as shown in the video above will bring up the Image E
 ## Example #1: Sprites
 
 Look at the blocks, and note that a name for the sprite (``||variables:mySprite||``) is set to an image for the sprite (it's hot sauce!).
-
-[Hot Sauce Example Sprite](https://makecode.com/_VEXXpq9RtRfT)
 
 ```blocks
 let mySprite: Sprite = null
@@ -83,7 +79,9 @@ mySprite = sprites.create(img`
 
 ### ~hint
 
-When using the image editor the pixel dimensions are displayed in the lower right corner. Sizes include 8x8, 16x16, 32x32, and more.
+#### Pixel dimensions
+
+When using the image editor, the pixel dimensions are displayed in the lower left corner. The width is the first number and the height is the second number.
 
 ### ~
 
@@ -99,6 +97,8 @@ When using the image editor the pixel dimensions are displayed in the lower righ
 ![sprite rainbow numbers image](/static/courses/csintro1/intro/rainbow-numbers.png)
 
 ### ~hint
+
+#### Background color
 
 Try changing the background color using ``||scene:set background color to||`` in the ``||scene:Scene||`` category.
 
