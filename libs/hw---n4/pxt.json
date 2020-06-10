@@ -21,8 +21,7 @@
         "core---nrf52": "file:../core---nrf52",
         "screen---st7735": "file:../screen---st7735",
         "mixer---nrf52": "file:../mixer---nrf52",
-        "game---hw": "file:../game---hw",
-        "jacdac-game": "file:../jacdac-game"
+        "game---hw": "file:../game---hw"
     },
     "public": true,
     "skipLocalization": true,
