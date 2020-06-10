@@ -23,12 +23,19 @@ Sometimes there will be only a single sprite of a given ``||sprites:kind||`` (fo
 
 ## Example #1: Two Sprites overlap #example-1
 
-1. Review the code below 
-2. Create the sample code and run the code
-3. Save the code for the task (name it "eatFruit")
-4. Look at the overlap event - note which sprite is named ``||variables:sprite||``, and which is ``||sprites:otherSprite||``
+1. Review the code below
+2. Create a new project and name it “eatFruit”
+3. Create the sample code and run the code
+4. Look at the overlap event - note which sprite is named ``||variables:sprite||``, and which is ``||variables:otherSprite||``
 
-[Overlap event](https://makecode.com/_e77ia1MAyA0U)
+### ~ hint
+
+#### Draggable parameters
+
+To make it easy to use the event parameters with the blocks inside, you can drag
+them out of the event block and into the other blocks
+
+### ~
 
 ```blocks
 let head: Sprite = null
@@ -103,21 +110,19 @@ game.onUpdate(function () {
 
 ### ~hint
 
-Use ``||loops:pause||`` before using sprite destroy, otherwise the sprite will be destroyed before we see what it was saying.
+Use ``||loops:pause||`` before using ``||sprites:sprite destroy||`` , otherwise the sprite will be destroyed before we see what it was saying.
 
 ### ~
 
 ## Set ``||sprites:sprite||`` ghost on
 
-The ``||sprites:ghost on||`` setting for sprites, when turned on, makes the sprite ignore ``||sprites:on overlap||`` events. By default, the setting is off.
+The ``||sprites:ghost on||`` setting for sprites, when turned on, makes the sprite ignore ``||sprites:on overlap||`` events. By default, the setting is off. The ``||sprites:ghost on||`` setting is in the drop down list when you pull out the ``||sprites:stay in screen||`` block.
 
 ## Example #2: Sprite Overlap and ghost on #example-2
 
 1. Review the code below
 2. Create the sample code and run the code
 3. Try turning the ``||sprites:ghost||`` setting on and off and see the difference
-
-[Ghost and Overlap](https://makecode.com/_FR3ciEHqR8YE)
 
 ```blocks
 let head: Sprite = null
