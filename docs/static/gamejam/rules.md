@@ -13,11 +13,10 @@ Bee Helpful | Bunny Defense
 ![A gardening game with a bee](/static/gamejam/img/demo-1.gif) | ![Defend the garden against bunnies!](/static/gamejam/img/demo-2.gif)
 
 ## Duration
-**Start:** June 1, 2020  
-**End:** June 30, 2020
+**Start:** Wednesday June 10, 2020  
+**End:** Wednesday July 1, 2020
 
-You will have a month to build and submit your games for the competition!  For you procrastinators out there, we will accept games up until 11:59 PM (PDT) on June 30th.
-
+You will have 3 weeks to build and submit your games for the competition! For you procrastinators out there, we will accept games up until 11:59 PM PT on July 1st.
 
 ## Rules
 
@@ -27,13 +26,11 @@ You will have a month to build and submit your games for the competition!  For y
 * All games must be submitted by someone who is at least 13 years old. Younger students are welcome to participate, but it must be in partnership with an adult and with parent permission.
 * See the [full contest rules](/static/gamejam/Microsoft_MakeCode_Arcade_Game_Jam_Contest_Official_Rules.pdf) for more detail.
 
-
 ## Make it a Garden Party
 
 MakeCode Arcade brings programming to life for students of all ages. Create fun projects, get immediate feedback, and code using either drag-and-drop blocks or text programming!
 
 This game jam is designed to be an easy introduction to making games, even for folks without prior programming experience! We highly encourage parents and educators to work with interested students to bring their games to life.
-
 
 ## Take Home the Blue Ribbon
 
