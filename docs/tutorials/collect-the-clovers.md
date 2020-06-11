@@ -6,18 +6,19 @@ Try this tutorial!
 
 ### ~
 
-https://makecode.com/_VdDFHiTr4h4k
-
 ## Introduction @unplugged
 
 Create a garden game to collect 4-leaf clovers and avoid the bees! 
 
-![Collect the Clovers game in action](/static/tutorials/collect-the-clovers/collect-the-clovers.gif)
+![Collect the Clovers game in action](/static/tutorials/collect-the-clovers/collect-clovers-sim.gif)
 
 ## Step 1 - Set the Background image
 
-From the ``||scene:Scene||`` Toolbox drawer, drag a ``||scene:set background image||`` block onto the Workspace, and drop into the ``||loops:on start||`` block. 
-In the ``||scene:set background image||`` block, click on the grey oval to open the image editor, and draw a garden scene with flowers, trees any anything else you want in the background of your game. 
+From the ``||scene:Scene||`` Toolbox drawer, drag a ``||scene:set background image||``
+block onto the Workspace, and drop into the ``||loops:on start||`` block. In the
+``||scene:set background image||`` block, click on the grey oval to open the image
+editor, and draw a garden scene with flowers, trees any anything else you want in
+the background of your game. 
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -146,7 +147,10 @@ scene.setBackgroundImage(img`
 
 ## Step 2 - Create the Player Character
 
-From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set mySprite||`` block and drop after the ``||scene:set background image||`` block. Click on the grey oval to open the sprite image editor, and draw or select a **Gallery** image for your player. 
+From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||variables:set mySprite||``
+block and drop it after the ``||scene:set background image||`` block. Click on the
+grey oval to open the sprite image editor, and draw or select a **Gallery** image
+for your player. 
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -293,7 +297,9 @@ f b b f f f e e e e f f f b b f
 
 ## Step 3 - Move the Player Character
 
-Let’s add code to be able to move our player around the screen. From the ``||contorller:Controller||`` Toolbox drawer, drag a ``||controller:move mySprite||`` block and drop after the ``||sprites:set mySprite||`` block. 
+Let’s add code to be able to move our player around the screen. From the ``||contorller:Controller||``
+Toolbox drawer, drag a ``||controller:move mySprite||`` block and drop after the
+``||variables:set mySprite||`` block. 
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -441,9 +447,10 @@ controller.moveSprite(mySprite)
 
 ## Step 4 - Keep the Player in the screen
 
-Notice that we can actually move our player off the screen. Let’s prevent that. 
-From the ``||sprites:Sprites||`` Toolbox drawer, under the Effects category, drag a ``||sprites:Set Sprite Stay in Screen||`` block and drop after the Move Sprite block. 
-Click on the Off toggle to turn to On. 
+Notice that we can actually move our player off the screen. Let’s prevent that. From the
+``||sprites:Sprites||`` Toolbox drawer, under the **Effects** category, drag a
+``||sprites:set mySprite stay in screen||`` block and drop after the ``||controller:move mySprite||``
+block. Click on the **OFF** toggle to slide it to **ON**. 
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -592,8 +599,9 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 
 ## Step 5 - Initialize the Score and number of Player Lives
 
-Let’s set the score to 0 and give our player 3 lives to start the game. 
-From the Info Toolbox drawer, drag a Set Score block and a Set Life block and drop after the Set Sprite Stay in Screen block. 
+Let’s set the score to **0** and give our player **3** lives when the game starts. From the
+``||info:Info||`` Toolbox drawer, drag a ``||info:set score||`` block and a ``||info:set life||``
+block and drop after the ``||sprites:set mySprite stay in screen||`` block. 
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -744,9 +752,10 @@ info.setLife(3)
 
 ## Step 6 - Game Update
 
-Every 5 seconds, we want a clover and a bee to appear in our game. 
-From the Game Toolbox drawer, drag an On Game Update on Every block onto the Workspace (you can place this anywhere). 
-Click on the 500ms update interval and change to 5 seconds (or 5000 milliseconds). 
+Every 5 seconds, we want a clover and a bee to appear in our game. From the ``||game:Game||``
+Toolbox drawer, drag an ``||game:on game update on every||`` block onto the Workspace
+(you can place this anywhere). Click on the ``500 ms`` update interval and change to 5 seconds
+(or 5000 milliseconds). 
 
 ```blocks
 game.onUpdateInterval(5000, function () {
@@ -756,9 +765,10 @@ game.onUpdateInterval(5000, function () {
 
 ## Step 7 - Add a Clover Projectile
 
-A Projectile is a Sprite that moves on its own. 
-From the Sprites Toolbox drawer, drag a Set Projectile to Projectile from Side block and drop into the On Game Update on Every block. 
-Click on the grey oval to open the sprite image editor and draw an image of a 4-leaf Clover. 
+A Projectile is a Sprite that moves on its own. From the ``||sprites:Sprites||`` Toolbox drawer, drag a
+``||variables:set projectile to||`` ``||sprites:projectile from side||`` block and drop into the
+``||game:on game update on every||`` block. Click on the grey oval to open the sprite
+image editor and draw an image of a 4-leaf Clover. 
 
 ```blocks
 let projectile: Sprite = null
@@ -785,10 +795,11 @@ f f f f . . f 7 7 f f 7 7 f f .
 
 ## Step 8 - Add Random Movements
 
-Notice how our Clovers are always coming from the top right in a diagonal direction. Let’s add some random movements by setting the X and Y velocity values. 
-From the Math Toolbox drawer, drag out 2 Pick Random blocks onto the workspace. 
-Drop one into the vx value and drop the other into the vy value of the Projectile from Side block 
-In each of the Pick Random blocks, change the minimum and maximum values to -50 and 50 
+Notice how our Clovers are always coming from the top right in a diagonal direction. Let’s add some random
+movements by setting the **X** and **Y** velocity values. From the ``||math:Math||`` Toolbox drawer, drag out 2
+``||math:pick random||`` blocks onto the workspace. Drop one into the **vx** value and drop the other into
+the **vy** value of the ``||variables:set projectile to||`` ``||sprites:projectile from side||`` block. In each of the
+``||math:pick random||`` blocks, change the minimum and maximum values to `-50` and `50`.
 
 ```blocks
 let projectile: Sprite = null
@@ -815,10 +826,10 @@ f f f f . . f 7 7 f f 7 7 f f .
 
 ## Step 9 - Add Bee Projectile
 
-Now let’s add a Bee projectile. 
-Right-click on the Set Projectile to Projectile from Side clover block that we just created and select Duplicate. 
-Drop the copied block after the existing clover projectile block and click on the Projectile variable name drop-down and select New Variable. Name this variable “bee”. 
-Then click on the grey oval to open the sprite image editor and draw an image of a bee. 
+Now let’s add a Bee projectile. Right-click on the ``||variables:set projectile to||`` ``||sprites:projectile from side||``
+clover block that we just created and select **Duplicate**. Drop the copied block after the existing clover
+projectile block and click on the ``||variables:projectile||`` variable name drop-down and select **New variable**. Name this
+variable **"bee"**. Then click on the grey oval to open the sprite image editor and draw an image of a bee. 
 
 ![Create the bee projectile](/static/tutorials/collect-the-clovers/bee-projectile.png)
 
@@ -867,10 +878,11 @@ f f f f 5 f 5 f 5 f 5 f 5 f f f
 
 ## Step 10 - Set the Bee to Enemy
 
-To make the Bee an enemy sprite, we need to set its kind. 
-From the Sprites Toolbox drawer, under the Overlaps category, drag a Set Sprite Kind block, and drop after the Set bee to Projectile block. 
-Click on the mySprite variable drop-down menu and select the bee variable. 
-Click on the Player kind drop-down menu and select Enemy sprite kind. 
+To make the Bee an enemy sprite, we need to set its kind. From the ``||sprites:Sprites||`` Toolbox drawer,
+under the **Overlaps** category, drag a ``||sprites:set sprite kind||`` block, and drop after the
+``||variables:set bee to||`` ``||sprites:projectile||`` block. Click on the ``||variables:mySprite||`` variable
+drop-down menu and select the **bee** variable. Click on the ``||sprites:Player||`` kind drop-down menu and select
+``||sprites:Enemy||`` sprite kind. 
 
 ```blocks
 let projectile: Sprite = null
@@ -918,9 +930,10 @@ f f f f 5 f 5 f 5 f 5 f 5 f f f
 
 ## Step 11 - Add Overlaps behavior
 
-Now let’s add code that will increment our score when the Player collects a clover. 
-From the Sprites Toolbox drawer, in the Overlaps section, drag an On Sprite Overlaps block and drop on the Workspace (you can place this anywhere). 
-Click on the last Player kind drop-down menu and select Projectile sprite kind. 
+Now let’s add code that will increment our score when the ``||sprites:Player||`` collects a clover. 
+From the ``||sprites:Sprites||`` Toolbox drawer, in the **Overlaps** section, drag an
+``||sprites:on sprite overlaps||`` block and drop on the Workspace (you can place this anywhere). 
+Click on the last ``||sprites:Player||`` kind drop-down menu and select ``||sprites:Projectile||`` sprite kind. 
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
@@ -941,9 +954,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ## Step 13 - Add Effect
 
-In the Destroy Sprite block, click on the Plus (+) icon to expand. 
-Click on the spray effect drop-down menu and select an effect that you want to display when your Player collects a Clover. 
-Click on the 500ms drop-down menu and select 100 milliseconds for the duration of your effect.
+In the ``||sprites:destroy sprite||`` block, click on the Plus **(+)** icon to expand. 
+Click on the spray effect drop-down menu and select an effect that you want to display when your ``||sprites:Player||`` collects a Clover. 
+Click on the ``500 ms`` drop-down menu and select ``100 ms`` for the duration of your effect.
 
 ![Choose a destroy effect](/static/tutorials/collect-the-clovers/destroy-effect.png)
 
@@ -955,7 +968,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ## Step 14 - Play a Sound 
 
-From the Music Toolbox drawer, drag a Play Sound block, and drop after the Destroy Sprite block. 
+From the ``||music:Music||`` Toolbox drawer, drag a ``||music:play sound||`` block, and drop after
+the ``||sprites:destroy sprite||`` block. 
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
@@ -966,7 +980,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ## Step 15 - Change Score
 
-From the Info Toolbox drawer, drag a Change Score block and drop after the Play Sound block. 
+From the ``||info:Info||`` Toolbox drawer, drag a ``||info:change score||`` block and drop after
+the ``||music:play sound||`` block. 
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
@@ -978,9 +993,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ## Step 16 - Add Overlaps behavior for Bee
 
-Now let’s add behavior for when our Player runs into a bee. 
-Right-click on the the On Sprite Overlaps block that we were just working on, and select Duplicate to make a copy of this chunk of code. Don’t worry if it looks disabled, we’ll fix that. 
-In the copied On Sprite Overlaps block, click on the Projectile kind drop-down menu and select Enemy for the kind.
+Now let’s add behavior for when our ``||sprites:Player||`` runs into a bee. 
+Right-click on the the ``||sprites:on sprite overlaps||`` block that we were just working on,
+and select **Duplicate** to make a copy of this chunk of code. Don’t worry if it looks disabled, we’ll fix that. 
+In the copied ``||sprites:on sprite overlaps||`` block, click on the ``||sprites:Projectile||`` kind drop-down
+menu and select ``||sprites:Enemy||`` for the kind.
 
 ![Duplicate the overlap event for the enemy](/static/tutorials/collect-the-clovers/overlaps-enemy.png)
 
@@ -994,8 +1011,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## Step 17 - Change effects and sounds 
 
-In the Destroy enemy block, select a different effect when your player runs into a bee. 
-In the Play Sound block, select a different sound when your player runs into a bee. 
+In the ``||sprites:destroy||`` enemy block, select a different effect when your player runs into a bee. 
+In the ``||music:play sound||`` block, select a different sound when your player runs into a bee. 
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -1008,8 +1025,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ## Step 18 - Lose a life 
 
 Instead of adding a score, let’s change the code to lose a life when our player runs into a bee. 
-Delete the Change Score block. 
-From the Info Toolbox drawer, drag a Change Life block and drop after the Play Sound block. 
+Delete the ``||info:change score||`` block. 
+From the ``||info:Info||`` Toolbox drawer, drag a ``||info:change life||`` block and drop after
+the ``||music:play sound||`` block. 
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -1018,6 +1036,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     info.changeLifeBy(-1)
 })
 ```
+
 ## Step 19 - Play your Game!
 
-That’s it! Now try playing your game in the full screen simulator. You can also try downloading your game to a hardware device, or Share your game with others!
+That’s it! Now try playing your game in the full screen simulator. You can also try downloading
+your game to a hardware device, or Share your game with others!
