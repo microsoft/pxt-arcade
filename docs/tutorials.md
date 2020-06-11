@@ -46,6 +46,14 @@
   "largeImageUrl": "/static/tutorials/free-throw.gif",
   "videoUrl": "/static/tutorials/free-throw.mp4"
 }, {
+  "name": "Collect the Clovers",
+  "description": "Create a garden to collect 4-leaf clovers, avoid the bees!",
+  "url": "/tutorials/collect-the-clovers",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/collect-the-clovers.png",
+  "largeImageUrl": "/static/tutorials/collect-the-clovers.gif",
+  "videoUrl": "/static/tutorials/collect-the-clovers.mp4"
+}, {
   "name": "Barrel Dodger",
   "description": "Jump and run to avoid the barrels",
   "url": "/tutorials/barrel-dodger",

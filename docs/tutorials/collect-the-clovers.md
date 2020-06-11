@@ -8,7 +8,7 @@ Try this tutorial!
 
 ## Introduction @unplugged
 
-Create a garden game to collect 4-leaf clovers and avoid the bees! 
+Create a garden game to collect 4-leaf clovers and avoid the bees!
 
 ![Collect the Clovers game in action](/static/tutorials/collect-the-clovers/collect-clovers-sim.gif)
 
@@ -18,7 +18,7 @@ From the ``||scene:Scene||`` Toolbox drawer, drag a ``||scene:set background ima
 block onto the Workspace, and drop into the ``||loops:on start||`` block. In the
 ``||scene:set background image||`` block, click on the grey oval to open the image
 editor, and draw a garden scene with flowers, trees any anything else you want in
-the background of your game. 
+the background of your game.
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -150,7 +150,7 @@ scene.setBackgroundImage(img`
 From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||variables:set mySprite||``
 block and drop it after the ``||scene:set background image||`` block. Click on the
 grey oval to open the sprite image editor, and draw or select a **Gallery** image
-for your player. 
+for your player.
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -299,7 +299,7 @@ f b b f f f e e e e f f f b b f
 
 Let’s add code to be able to move our player around the screen. From the ``||contorller:Controller||``
 Toolbox drawer, drag a ``||controller:move mySprite||`` block and drop after the
-``||variables:set mySprite||`` block. 
+``||variables:set mySprite||`` block.
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -450,7 +450,7 @@ controller.moveSprite(mySprite)
 Notice that we can actually move our player off the screen. Let’s prevent that. From the
 ``||sprites:Sprites||`` Toolbox drawer, under the **Effects** category, drag a
 ``||sprites:set mySprite stay in screen||`` block and drop after the ``||controller:move mySprite||``
-block. Click on the **OFF** toggle to slide it to **ON**. 
+block. Click on the **OFF** toggle to slide it to **ON**.
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -601,7 +601,7 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 
 Let’s set the score to **0** and give our player **3** lives when the game starts. From the
 ``||info:Info||`` Toolbox drawer, drag a ``||info:set score||`` block and a ``||info:set life||``
-block and drop after the ``||sprites:set mySprite stay in screen||`` block. 
+block and drop after the ``||sprites:set mySprite stay in screen||`` block.
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -755,7 +755,7 @@ info.setLife(3)
 Every 5 seconds, we want a clover and a bee to appear in our game. From the ``||game:Game||``
 Toolbox drawer, drag an ``||game:on game update on every||`` block onto the Workspace
 (you can place this anywhere). Click on the ``500 ms`` update interval and change to 5 seconds
-(or 5000 milliseconds). 
+(or 5000 milliseconds).
 
 ```blocks
 game.onUpdateInterval(5000, function () {
@@ -768,7 +768,7 @@ game.onUpdateInterval(5000, function () {
 A Projectile is a Sprite that moves on its own. From the ``||sprites:Sprites||`` Toolbox drawer, drag a
 ``||variables:set projectile to||`` ``||sprites:projectile from side||`` block and drop into the
 ``||game:on game update on every||`` block. Click on the grey oval to open the sprite
-image editor and draw an image of a 4-leaf Clover. 
+image editor and draw an image of a 4-leaf Clover.
 
 ```blocks
 let projectile: Sprite = null
@@ -829,7 +829,7 @@ f f f f . . f 7 7 f f 7 7 f f .
 Now let’s add a Bee projectile. Right-click on the ``||variables:set projectile to||`` ``||sprites:projectile from side||``
 clover block that we just created and select **Duplicate**. Drop the copied block after the existing clover
 projectile block and click on the ``||variables:projectile||`` variable name drop-down and select **New variable**. Name this
-variable **"bee"**. Then click on the grey oval to open the sprite image editor and draw an image of a bee. 
+variable **"bee"**. Then click on the grey oval to open the sprite image editor and draw an image of a bee.
 
 ![Create the bee projectile](/static/tutorials/collect-the-clovers/bee-projectile.png)
 
@@ -882,7 +882,7 @@ To make the Bee an enemy sprite, we need to set its kind. From the ``||sprites:S
 under the **Overlaps** category, drag a ``||sprites:set sprite kind||`` block, and drop after the
 ``||variables:set bee to||`` ``||sprites:projectile||`` block. Click on the ``||variables:mySprite||`` variable
 drop-down menu and select the **bee** variable. Click on the ``||sprites:Player||`` kind drop-down menu and select
-``||sprites:Enemy||`` sprite kind. 
+``||sprites:Enemy||`` sprite kind.
 
 ```blocks
 let projectile: Sprite = null
@@ -932,8 +932,8 @@ f f f f 5 f 5 f 5 f 5 f 5 f f f
 
 Now let’s add code that will increment our score when the ``||sprites:Player||`` collects a clover. 
 From the ``||sprites:Sprites||`` Toolbox drawer, in the **Overlaps** section, drag an
-``||sprites:on sprite overlaps||`` block and drop on the Workspace (you can place this anywhere). 
-Click on the last ``||sprites:Player||`` kind drop-down menu and select ``||sprites:Projectile||`` sprite kind. 
+``||sprites:on sprite overlaps||`` block and drop on the Workspace (you can place this anywhere).
+Click on the last ``||sprites:Player||`` kind drop-down menu and select ``||sprites:Projectile||`` sprite kind.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
@@ -943,8 +943,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ## Step 12 - Destroy Clover
 
-From the Sprites Toolbox drawer, under the Effects category, drag a Destroy Sprite block and drop in the On Sprite Overlaps block. 
-In the On Sprite Overlaps block, drag the OtherSprite local variable (representing the specific overlapping clover) into the Destroy Sprite block replacing mySprite. 
+From the ``Sprites`` Toolbox drawer, under the **Effects** category, drag a ``||sprites:destroy sprite||`` block and drop in the ``||sprites:on sprite overlaps||`` block. 
+In the ``||sprites:on sprite overlaps||`` block, drag the ``||sprites:otherSprite||`` local variable (representing the specific overlapping clover) into the ``||sprites:destroy sprite||`` block replacing ``||sprites:mySprite||``.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
