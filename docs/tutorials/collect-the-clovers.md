@@ -820,7 +820,7 @@ Right-click on the Set Projectile to Projectile from Side clover block that we j
 Drop the copied block after the existing clover projectile block and click on the Projectile variable name drop-down and select New Variable. Name this variable “bee”. 
 Then click on the grey oval to open the sprite image editor and draw an image of a bee. 
 
-<beeprojectile.png>
+![Create the bee projectile](/static/tutorials/collect-the-clovers/bee-projectile.png)
 
 ```blocks
 let projectile: Sprite = null
@@ -943,7 +943,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 In the Destroy Sprite block, click on the Plus (+) icon to expand. 
 Click on the spray effect drop-down menu and select an effect that you want to display when your Player collects a Clover. 
-Click on the 500ms drop-down menu and select 100 milliseconds for the duration of your effect. 
+Click on the 500ms drop-down menu and select 100 milliseconds for the duration of your effect.
+
+![Choose a destroy effect](/static/tutorials/collect-the-clovers/destroy-effect.png)
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
@@ -978,7 +980,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 Now let’s add behavior for when our Player runs into a bee. 
 Right-click on the the On Sprite Overlaps block that we were just working on, and select Duplicate to make a copy of this chunk of code. Don’t worry if it looks disabled, we’ll fix that. 
-In the copied On Sprite Overlaps block, click on the Projectile kind drop-down menu and select Enemy for the kind. 
+In the copied On Sprite Overlaps block, click on the Projectile kind drop-down menu and select Enemy for the kind.
+
+![Duplicate the overlap event for the enemy](/static/tutorials/collect-the-clovers/overlaps-enemy.png)
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
