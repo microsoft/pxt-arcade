@@ -748,7 +748,11 @@ Every 5 seconds, we want a clover and a bee to appear in our game.
 From the Game Toolbox drawer, drag an On Game Update on Every block onto the Workspace (you can place this anywhere). 
 Click on the 500ms update interval and change to 5 seconds (or 5000 milliseconds). 
 
-<ongameupdate.png> 
+```blocks
+game.onUpdateInterval(5000, function () {
+
+})
+```
 
 ## Step 7 - Add a Clover Projectile
 
@@ -756,7 +760,28 @@ A Projectile is a Sprite that moves on its own.
 From the Sprites Toolbox drawer, drag a Set Projectile to Projectile from Side block and drop into the On Game Update on Every block. 
 Click on the grey oval to open the sprite image editor and draw an image of a 4-leaf Clover. 
 
-<cloverprojectile.png> 
+```blocks
+let projectile: Sprite = null
+game.onUpdateInterval(5000, function () {
+    projectile = sprites.createProjectileFromSide(img`
+f f f f f f . . . . f f f f f f 
+f 7 7 7 7 f f . . f f 7 7 7 7 f 
+f 7 7 7 7 7 f . . f 7 7 7 7 7 f 
+f 7 7 7 7 7 f f f f 7 7 7 7 7 f 
+f f 7 7 7 7 7 f 7 7 7 7 7 7 f f 
+. f f f 7 7 7 7 7 7 7 7 f f f . 
+. . . f f 7 7 7 7 7 f f . . . . 
+. f f f f 7 7 7 7 7 f f f f f . 
+f f 7 7 7 7 7 7 7 7 7 7 7 7 f f 
+f 7 7 7 7 7 f f 7 7 7 7 7 7 7 f 
+f 7 7 7 7 f f f f 7 7 7 7 7 7 f 
+f 7 7 7 f . f 7 f f 7 7 7 7 7 f 
+f 7 7 f f . f 7 . f 7 7 7 7 f . 
+f f f f . . f 7 7 f f 7 7 f f . 
+. . . . . . . f 7 7 . f f f . . 
+. . . . . . . f 7 f . . . . . . 
+`, 50, 50)
+```
 
 ## Step 8 - Add Random Movements
 
@@ -765,7 +790,28 @@ From the Math Toolbox drawer, drag out 2 Pick Random blocks onto the workspace.
 Drop one into the vx value and drop the other into the vy value of the Projectile from Side block 
 In each of the Pick Random blocks, change the minimum and maximum values to -50 and 50 
 
-<pickrandom.png> 
+```blocks
+let projectile: Sprite = null
+game.onUpdateInterval(5000, function () {
+    projectile = sprites.createProjectileFromSide(img`
+f f f f f f . . . . f f f f f f 
+f 7 7 7 7 f f . . f f 7 7 7 7 f 
+f 7 7 7 7 7 f . . f 7 7 7 7 7 f 
+f 7 7 7 7 7 f f f f 7 7 7 7 7 f 
+f f 7 7 7 7 7 f 7 7 7 7 7 7 f f 
+. f f f 7 7 7 7 7 7 7 7 f f f . 
+. . . f f 7 7 7 7 7 f f . . . . 
+. f f f f 7 7 7 7 7 f f f f f . 
+f f 7 7 7 7 7 7 7 7 7 7 7 7 f f 
+f 7 7 7 7 7 f f 7 7 7 7 7 7 7 f 
+f 7 7 7 7 f f f f 7 7 7 7 7 7 f 
+f 7 7 7 f . f 7 f f 7 7 7 7 7 f 
+f 7 7 f f . f 7 . f 7 7 7 7 f . 
+f f f f . . f 7 7 f f 7 7 f f . 
+. . . . . . . f 7 7 . f f f . . 
+. . . . . . . f 7 f . . . . . . 
+`, Math.randomRange(-50, 50), Math.randomRange(-50, 50))
+```
 
 ## Step 9 - Add Bee Projectile
 
@@ -774,7 +820,50 @@ Right-click on the Set Projectile to Projectile from Side clover block that we j
 Drop the copied block after the existing clover projectile block and click on the Projectile variable name drop-down and select New Variable. Name this variable “bee”. 
 Then click on the grey oval to open the sprite image editor and draw an image of a bee. 
 
-<beeprojectile.png> 
+<beeprojectile.png>
+
+```blocks
+let projectile: Sprite = null
+let bee: Sprite = null
+game.onUpdateInterval(5000, function () {
+    projectile = sprites.createProjectileFromSide(img`
+f f f f f f . . . . f f f f f f 
+f 7 7 7 7 f f . . f f 7 7 7 7 f 
+f 7 7 7 7 7 f . . f 7 7 7 7 7 f 
+f 7 7 7 7 7 f f f f 7 7 7 7 7 f 
+f f 7 7 7 7 7 f 7 7 7 7 7 7 f f 
+. f f f 7 7 7 7 7 7 7 7 f f f . 
+. . . f f 7 7 7 7 7 f f . . . . 
+. f f f f 7 7 7 7 7 f f f f f . 
+f f 7 7 7 7 7 7 7 7 7 7 7 7 f f 
+f 7 7 7 7 7 f f 7 7 7 7 7 7 7 f 
+f 7 7 7 7 f f f f 7 7 7 7 7 7 f 
+f 7 7 7 f . f 7 f f 7 7 7 7 7 f 
+f 7 7 f f . f 7 . f 7 7 7 7 f . 
+f f f f . . f 7 7 f f 7 7 f f . 
+. . . . . . . f 7 7 . f f f . . 
+. . . . . . . f 7 f . . . . . . 
+`, Math.randomRange(-50, 50), Math.randomRange(-50, 50))
+    bee = sprites.createProjectileFromSide(img`
+. . . . . . . f f f f f f . . . 
+f . . . . f f f 1 1 1 1 f f . . 
+. f . . . f 1 1 1 1 1 1 1 f f . 
+. f . . . f 1 1 f 1 f 1 1 1 f . 
+f f f . . f 1 1 f 1 f 1 1 1 f . 
+2 f f f f f f f f f f f f f f . 
+f f f f f f 5 f 5 f 5 f 5 f f f 
+f f f f 5 f 5 f 5 f 5 f 5 f f f 
+. . f f 5 f 5 f 5 f 5 f 5 f f 2 
+. . . f f f 5 f 5 f 5 f 5 5 f 2 
+. . . f f f f f 5 f 5 f 5 5 f f 
+. . . f 1 f 1 f f f f f f f f f 
+. . . f 1 f 1 f 1 f 1 1 1 f . . 
+. . f f 1 f 1 f 1 1 1 1 f . . . 
+. . f 1 1 1 1 1 1 1 f f . . . . 
+. . f f f f f f f f f . . . . . 
+`, Math.randomRange(-50, 50), Math.randomRange(-50, 50))
+})
+```
 
 ## Step 10 - Set the Bee to Enemy
 
@@ -783,7 +872,49 @@ From the Sprites Toolbox drawer, under the Overlaps category, drag a Set Sprite 
 Click on the mySprite variable drop-down menu and select the bee variable. 
 Click on the Player kind drop-down menu and select Enemy sprite kind. 
 
-<spritekind.png> 
+```blocks
+let projectile: Sprite = null
+let bee: Sprite = null
+game.onUpdateInterval(5000, function () {
+    projectile = sprites.createProjectileFromSide(img`
+f f f f f f . . . . f f f f f f 
+f 7 7 7 7 f f . . f f 7 7 7 7 f 
+f 7 7 7 7 7 f . . f 7 7 7 7 7 f 
+f 7 7 7 7 7 f f f f 7 7 7 7 7 f 
+f f 7 7 7 7 7 f 7 7 7 7 7 7 f f 
+. f f f 7 7 7 7 7 7 7 7 f f f . 
+. . . f f 7 7 7 7 7 f f . . . . 
+. f f f f 7 7 7 7 7 f f f f f . 
+f f 7 7 7 7 7 7 7 7 7 7 7 7 f f 
+f 7 7 7 7 7 f f 7 7 7 7 7 7 7 f 
+f 7 7 7 7 f f f f 7 7 7 7 7 7 f 
+f 7 7 7 f . f 7 f f 7 7 7 7 7 f 
+f 7 7 f f . f 7 . f 7 7 7 7 f . 
+f f f f . . f 7 7 f f 7 7 f f . 
+. . . . . . . f 7 7 . f f f . . 
+. . . . . . . f 7 f . . . . . . 
+`, Math.randomRange(-50, 50), Math.randomRange(-50, 50))
+    bee = sprites.createProjectileFromSide(img`
+. . . . . . . f f f f f f . . . 
+f . . . . f f f 1 1 1 1 f f . . 
+. f . . . f 1 1 1 1 1 1 1 f f . 
+. f . . . f 1 1 f 1 f 1 1 1 f . 
+f f f . . f 1 1 f 1 f 1 1 1 f . 
+2 f f f f f f f f f f f f f f . 
+f f f f f f 5 f 5 f 5 f 5 f f f 
+f f f f 5 f 5 f 5 f 5 f 5 f f f 
+. . f f 5 f 5 f 5 f 5 f 5 f f 2 
+. . . f f f 5 f 5 f 5 f 5 5 f 2 
+. . . f f f f f 5 f 5 f 5 5 f f 
+. . . f 1 f 1 f f f f f f f f f 
+. . . f 1 f 1 f 1 f 1 1 1 f . . 
+. . f f 1 f 1 f 1 1 1 1 f . . . 
+. . f 1 1 1 1 1 1 1 f f . . . . 
+. . f f f f f f f f f . . . . . 
+`, Math.randomRange(-50, 50), Math.randomRange(-50, 50))
+    bee.setKind(SpriteKind.Enemy)
+})
+```
 
 ## Step 11 - Add Overlaps behavior
 
@@ -791,33 +922,57 @@ Now let’s add code that will increment our score when the Player collects a cl
 From the Sprites Toolbox drawer, in the Overlaps section, drag an On Sprite Overlaps block and drop on the Workspace (you can place this anywhere). 
 Click on the last Player kind drop-down menu and select Projectile sprite kind. 
 
-<overlapsprojectile.png> 
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+
+})
+```
 
 ## Step 12 - Destroy Clover
 
 From the Sprites Toolbox drawer, under the Effects category, drag a Destroy Sprite block and drop in the On Sprite Overlaps block. 
 In the On Sprite Overlaps block, drag the OtherSprite local variable (representing the specific overlapping clover) into the Destroy Sprite block replacing mySprite. 
 
-<destroysprite.gif> 
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    otherSprite.destroy()
+})
+```
 
-## Step 13 - Add Effect 
+## Step 13 - Add Effect
+
 In the Destroy Sprite block, click on the Plus (+) icon to expand. 
 Click on the spray effect drop-down menu and select an effect that you want to display when your Player collects a Clover. 
 Click on the 500ms drop-down menu and select 100 milliseconds for the duration of your effect. 
 
-<destroyeffect.png> 
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.confetti, 100)
+})
+```
 
 ## Step 14 - Play a Sound 
 
 From the Music Toolbox drawer, drag a Play Sound block, and drop after the Destroy Sprite block. 
 
-<playsound.png> 
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.confetti, 100)
+    music.baDing.play()
+})
+```
 
 ## Step 15 - Change Score
 
 From the Info Toolbox drawer, drag a Change Score block and drop after the Play Sound block. 
 
-<changescore.png>
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.confetti, 100)
+    music.baDing.play()
+    info.changeScoreBy(1)
+})
+```
 
 ## Step 16 - Add Overlaps behavior for Bee
 
@@ -825,14 +980,26 @@ Now let’s add behavior for when our Player runs into a bee.
 Right-click on the the On Sprite Overlaps block that we were just working on, and select Duplicate to make a copy of this chunk of code. Don’t worry if it looks disabled, we’ll fix that. 
 In the copied On Sprite Overlaps block, click on the Projectile kind drop-down menu and select Enemy for the kind. 
 
-<overlapsenemy.png> 
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.confetti, 100)
+    music.baDing.play()
+    info.changeScoreBy(1)
+})
+```
 
 ## Step 17 - Change effects and sounds 
 
 In the Destroy enemy block, select a different effect when your player runs into a bee. 
 In the Play Sound block, select a different sound when your player runs into a bee. 
 
-<enemyeffectsound.png>
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.disintegrate, 100)
+    music.pewPew.play()
+    info.changeScoreBy(1)
+})
+```
 
 ## Step 18 - Lose a life 
 
@@ -840,8 +1007,13 @@ Instead of adding a score, let’s change the code to lose a life when our playe
 Delete the Change Score block. 
 From the Info Toolbox drawer, drag a Change Life block and drop after the Play Sound block. 
 
-<changelife.png>
-
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.disintegrate, 100)
+    music.pewPew.play()
+    info.changeLifeBy(-1)
+})
+```
 ## Step 19 - Play your Game!
 
 That’s it! Now try playing your game in the full screen simulator. You can also try downloading your game to a hardware device, or Share your game with others!
