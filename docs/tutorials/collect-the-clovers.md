@@ -791,6 +791,7 @@ f f f f . . f 7 7 f f 7 7 f f .
 . . . . . . . f 7 7 . f f f . . 
 . . . . . . . f 7 f . . . . . . 
 `, 50, 50)
+})
 ```
 
 ## Step 8 - Add Random Movements
@@ -822,6 +823,7 @@ f f f f . . f 7 7 f f 7 7 f f .
 . . . . . . . f 7 7 . f f f . . 
 . . . . . . . f 7 f . . . . . . 
 `, Math.randomRange(-50, 50), Math.randomRange(-50, 50))
+})
 ```
 
 ## Step 9 - Add Bee Projectile
