@@ -826,7 +826,7 @@ f f f f . . f 7 7 f f 7 7 f f .
 })
 ```
 
-## Step 9 - Add Bee Projectile
+## Step 9 - Add Bee Projectile @fullscreen
 
 Now let’s add a Bee projectile. Right-click on the ``||variables:set projectile to||`` ``||sprites:projectile from side||``
 clover block that we just created and select **Duplicate**. Drop the copied block after the existing clover
@@ -954,7 +954,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 })
 ```
 
-## Step 13 - Add Effect
+## Step 13 - Add Effect @fullscreen
 
 In the ``||sprites:destroy sprite||`` block, click on the Plus **(+)** icon to expand. 
 Click on the spray effect drop-down menu and select an effect that you want to display when your ``||sprites:Player||`` collects a Clover. 
@@ -993,7 +993,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 })
 ```
 
-## Step 16 - Add Overlaps behavior for Bee
+## Step 16 - Add Overlaps behavior for Bee @fullscreen
 
 Now let’s add behavior for when our ``||sprites:Player||`` runs into a bee. 
 Right-click on the the ``||sprites:on sprite overlaps||`` block that we were just working on,
