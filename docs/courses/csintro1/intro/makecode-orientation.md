@@ -32,7 +32,7 @@ In this activity, students are introduced to:
 ## Student Task #2: Starting and saving your own game #task-2
 
 1. Press the "Home" button in the upper left corner to return to the homepage
-2. Press the “New Project” button and name it “first game”
+2. Press the "New Project" button and name it "first game"
 3. Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``, and drag it into ``||loops:on start||``
 4. Make the new ``||sprites:Sprite||`` ``||sprites:say||`` something, by dragging ``||sprites:mySprite say||`` and placing it after ``||variables:set mySprite to||``
 
