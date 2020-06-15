@@ -26,7 +26,7 @@ For our MVP version of the game, we are going to start by focusing on making the
 
 ### ~hint
 
-### Build
+#### Build
 
 We first break down our features into simple tasks for us to do
 
@@ -41,13 +41,13 @@ We started working on the game as a group, and created a simple version that had
 
 When we were finished with this section, we created a share link to the game:
 
-> [`https://makecode.com/_88Fae4627DEk`](https://makecode.com/_88Fae4627DEk)
+> [`https://makecode.com/_79yVbeR8F33R`](https://makecode.com/_79yVbeR8F33R)
 
 ### ~
 
 ### ~hint
 
-### Test
+#### Test
 
 We found another group to present our game to. We gave a short description of the portions of the game that would be completed in the future: moving trampolines, scoring, and so on.
 
@@ -61,7 +61,7 @@ After playing the MVP game, they had some feedback for us:
 
 ### ~hint
 
-### Learn
+#### Learn
 
 We expected much of the feedback we got, as the portions they described were already on our list of things to do. However, sharing the game with the other group did let us know we were on the right track, and that they liked the idea of the game.
 
@@ -73,7 +73,7 @@ After getting this feedback, we decided that it was most important to add more o
 
 ### ~hint
 
-### Build
+#### Build
 
 We knew that we wanted the trampoline to move back and forth across the screen, but we struggled to find a way to do this. We could set the velocity of the trampoline in the ``||loops:on start||`` block, but we had a difficult time finding a way to make the trampoline turn around when it was about to leave the screen.
 
@@ -85,13 +85,13 @@ This helped us figure out a solution to the problem: we decided to add sprites t
 
 When we were finished with this section, we created a share link to the updated game:
 
-> [`https://makecode.com/_4KoccVPCaixe`](https://makecode.com/_4KoccVPCaixe)
+> [`https://makecode.com/_96E8HxdCdEHP`](https://makecode.com/_96E8HxdCdEHP)
 
 ### ~
 
 ### ~hint
 
-### Test
+#### Test
 
 We showed this version of game to another group.
 
@@ -105,7 +105,7 @@ They had some feedback on our new version of the game:
 
 ### ~hint
 
-### Learn
+#### Learn
 
 We knew from the other group's feedback that we were on the right track. We decided to focus on fixing their feedback before moving onto other features, so that we could see what they thought after we made those changes. We also decided that we should make the trampolines be placed randomly on the screen, to make each game unique.
 
@@ -115,13 +115,13 @@ We knew from the other group's feedback that we were on the right track. We deci
 
 ### ~hint
 
-### Build
+#### Build
 
 The first step (making the trampoline bigger) was simple to complete by just changing the size of the sprite.
 
 When we started working on making more sprites, we noticed that this seemed similar to the clouds from the [Create and On Create Sprites](/courses/csintro1/motion/create-on-create-sprites) lesson, so we decided to use that for making the trampolines.
 
-We used ``||sprites:create sprite||`` to create a trampoline, and decided to move the code for making the walls into an ``||sprites:on created||`` event. This way, no matter where the trampoline was made, the walls would be placed in the correct location.
+We used ``||variables:set mySprite to||`` blocks to create trampolines, and decided to move the code for making the walls into an ``||sprites:on created||`` event. This way, no matter where the trampoline was made, the walls would be placed in the correct location.
 
 To make the trampoline start in a random position, we used ``||math:pick random||`` in the ``||sprites:on created||`` event to pick a random starting position for the trampoline that was on the screen. The wall positions were already set based off the position of the trampoline, so nothing else was needed.
 
@@ -135,7 +135,7 @@ When we were finished with this section, we created a share link to the updated 
 
 ### ~hint
 
-### Test
+#### Test
 
 When we showed this to the other group, we got a lot of good feedback:
 
@@ -153,7 +153,7 @@ However, not all their feedback was praise:
 
 ### ~hint
 
-### Learn
+#### Learn
 
 After thinking about this feedback as a group, we decided that there were too many issues with the trampolines moving. We decided to get rid of that feature for now, and possibly come back to it if we found out how to make it work better in a future lesson.
 
@@ -165,7 +165,7 @@ We also decided that we should make the trampolines disappear when the player bo
 
 ### ~hint
 
-### Build
+#### Build
 
 To get rid of motion, we got rid of the walls and the portion that gave the trampoline a velocity.
 
@@ -183,7 +183,7 @@ When we were finished with this section, we created a share link to the updated 
 
 ### ~hint
 
-### Test
+#### Test
 
 We showed our build to the other group and they loved the changes! The main feedback were two things we were expecting:
 
@@ -194,7 +194,7 @@ We showed our build to the other group and they loved the changes! The main feed
 
 ### ~hint
 
-### Learn
+#### Learn
 
 From this feedback, we knew we were nearly done with the project. The gameplay was basically complete, we just needed to make it look nicer, and give the player a reason to keep jumping.
 
@@ -204,7 +204,7 @@ From this feedback, we knew we were nearly done with the project. The gameplay w
 
 ### ~hint
 
-### Build
+#### Build
 
 We went through the game, and made sure the small "nice to have" features were done:
 
@@ -222,7 +222,7 @@ When we were finished with this section, we created a share link to the updated 
 
 ### ~hint
 
-### Test
+#### Test
 
 We showed this version of the game to another group, and they liked it.
 
@@ -232,7 +232,7 @@ The only suggestion they had was to end the game when the player fell to the bot
 
 ### ~hint
 
-### Learn
+#### Learn
 
 The feedback we got was on how the game should end, which we agreed on.
 
