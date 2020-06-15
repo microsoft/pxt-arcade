@@ -2,6 +2,8 @@
 
 Now its time to put the concepts together and make your own unique games!
 
+Here are some example cards of some game ideas:
+
 ```codecard
 [
 {
@@ -19,17 +21,16 @@ Now its time to put the concepts together and make your own unique games!
 * Sprite Position (coordinates)
 * Controller (dx) and ``||controller:move mySprite with buttons||``
 * ``||sprites:overlap||`` Events / sprite ``||sprites:kind||``
-* "Spawning" sprites: ``||sprites:create||`` and ``||sprites:on create||``
+* "Spawning" sprites with ``||sprites:on created||``
 * ``||math:random||``
 * ``||info:score||`` and ``||info:life||``
 * ``||info:countdown||``
-* ``||image:flip||`` image
+* ``||images:flip||`` image
 * ``||sprites:stay in screen||`` and ``||sprites:ghost||``
 * sprite ``||sprites:say||``
 * ``||game:splash||``
-* ``||sprites:create||`` / ``||sprites:on create||``
 * ``||scene:set background color||``
-* ``||sprites:projectile||`` and ``||sprites:projectile from sprite||``
+* Create projectiles with ``||sprites:projectile from side||`` and ``||sprites:projectile from mySprite||``
 * "Crash", "bump" or other movements using ``||loops:repeat||`` or ``||loops:for||`` for a projectile
 
 ## Student Task #1: Initial Ideas
@@ -75,7 +76,7 @@ For a guided example of this process, [see the example project page.](/courses/c
 
 ### ~hint
 
-### Build
+#### Build
 
 Implement a list of features
 
@@ -88,7 +89,7 @@ Implement a list of features
 
 ### ~hint
 
-### Test
+#### Test
 
 Gather feedback about the game from an outside source
 
@@ -104,9 +105,9 @@ Gather feedback about the game from an outside source
 
 ### ~hint
 
-### Learn
+#### Learn
 
-Convert the feedback into a list of features that to implement
+Convert the feedback into a list of features to implement
 
 1. **Reflect** on the feedback you gathered from users testing your game
 2. **Identify** what features you would like to add based on what the users want
