@@ -150,7 +150,7 @@ cloud2 = sprites.create(img`
 The ``||sprites:on created||`` event allows us to set code to run whenever a new sprite is created. This is used to create new clouds multiple times with the same code. Now we will create new clouds with ``||variables:set cloud to||`` blocks with empty image editors.
 
 1. Start with example #1 or your own similar code
-2.	Add two more ``||variables:set cloud to||`` blocks for clouds
+2. Add two more ``||variables:set cloud to||`` blocks for clouds
 3.	Add a new ``||variables:set mySprite to||`` block for a different ``||sprites:kind||``. Use the ``||sprites:on created||`` event to
     * set an image for the sprite that is created (for example, a bird or a butterfly)
     * set the sprite to be in a random position
