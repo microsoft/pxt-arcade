@@ -1,4 +1,4 @@
-# Unit 1 Review Material
+# Unit 1 Course Review Material
 
 These sections cover *optional* review material that can be used to help transition to the final project.
 
