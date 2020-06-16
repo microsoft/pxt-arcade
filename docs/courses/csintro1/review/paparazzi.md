@@ -37,10 +37,10 @@ Create a star for the player to photograph
 
 Flash on the screen when the player snaps a picture of a star
 
-1.	Create an ``||sprites:on overlaps||`` event between the `Camera` and a `Star`
-2.	In the ``||sprite:overlap||``, create a projectile from the ``||variables:camera||`` sprite. Give the projectile sprite an image of a flash of light. Set the projectile ``||sprites:kind||`` to `Flash`
-3.	After creating the `Flash`, destroy the `Star` that is overlapped, and add one point to the score
-4.	Make the `Flash` projectile have a ``||sprites:lifespan||`` of 400 ms
+1. Create an ``||sprites:on overlaps||`` event between the `Camera` and a `Star`
+2. In the ``||sprite:overlap||``, create a projectile from the ``||variables:camera||`` sprite. Give the projectile sprite an image of a flash of light. Set the projectile ``||sprites:kind||`` to `Flash`
+3. After creating the `Flash`, destroy the `Star` that is overlapped, and add one point to the score
+4. Make the `Flash` projectile have a ``||sprites:lifespan||`` of 400 ms
 
 ## Student Task #5: Gameplay Elements
 
