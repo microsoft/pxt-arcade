@@ -21,8 +21,8 @@ The first example will be a simple one - simply counting the number of buttons p
 [![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-infoproperties1)
 
 1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it "button count")
+2. Create a new project and name it “button count”
+3. Create the sample code and run the code
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -56,8 +56,8 @@ Beyond score, another important value to keep track of is the players life total
 [![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-infoproperties2)
 
 1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it "do not touch the buttons")
+2. Create a new project and name it “do not touch the button”
+3. Create the sample code and run the code
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -70,7 +70,7 @@ This simple game gives the user a simple task - to not touch a button. If they d
 
 ## Student Task #2: Touch the button 15 times
 
-1. Start with the code saved as "do not touch the buttons" in the prior example
+1. Start with the code saved as "do not touch the button" in the prior example
 2. Modify the initial value of the life to be 15, instead of just 1
 3. Add in the ``||info:change score by||`` block used in the first task, and modify it to add 2 to the score each time a button is pressed
 4. Add in a ``||info:countdown||``, and set it to run out after 2 seconds
@@ -84,8 +84,8 @@ When a nurse needs to take a patient's heart rate with their other vital signs, 
 ### Coding
 
 1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it "button rate")
+2. Create a new project and name it “button rate”
+3. Create and run the code
 4. Change the ``||sprites:say||`` block so that after 6 seconds have passed it says the ``||info:score||``. You may also want it to show a message explaining what the value represents
 
     ### ~hint

@@ -35,10 +35,8 @@ In this activity, students are introduced to:
 ## Example #1: Math equation in a variable #example-1
 
 1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it "equation variable") 
-
-[Equation variable](https://makecode.com/_RdXJ5jMxubqA)
+2. Create a new project and name it “equation variable”
+3. Create the sample code and run the code
 
 ```blocks
 let answer = 0
@@ -51,11 +49,11 @@ game.splash("3 + 5 = " + answer)
 1. Starting with [example #1](#example-1)
 2. Experiment using different numbers in our equation (e.g. `9 + 2`)
 3. Test at least 3 different equations
-4. **Challenge:** make longer addition equations so that the code calculates the sum of 5 or more numbers. If the equation gets too long, then display using ``||game:show long text||``
+4. **Challenge:** make longer addition equations with ``||math:Math||`` blocks so that the code calculates the sum of 5 or more numbers. If the equation gets too long, then display using ``||game:show long text||``
 
 ### ~hint
 
-In order to combine multiple items we will need to add additional math blocks
+In order to combine multiple items we will need to add additional ``||math:Math||`` blocks
 
 ![animation: adding 3 numbers with blocks](/static/courses/csintro1/intro/add-3-numbers.gif)
 
@@ -77,16 +75,16 @@ We can convert variable based math equations, like `A = B + C`, into code using 
 
 In JavaScript, the following order of operation precedence applies:
 
-* Multiplication (`*`) and Division (`/`)
-* Addition (`+`) and Subtraction (`-`)
+1. Multiplication (`*`) and Division (`/`)
+2. Addition (`+`) and Subtraction (`-`)
 
-Note that JavaScript uses the ``||math:*||`` symbol for multiplication the ``||math:/||`` for division. In order to change this order of operations, you can use parentheses `( )` around expressions just like in math.
+**Note**: JavaScript uses the `*` symbol for multiplication the `/` for division. In order to change order of these operations, you can use parentheses `( )` around expressions just like in math.
 
 ## Example #2: Displaying expressions with ``||game:splash||`` #example-2
 
 1. Review the code below
 2. Create the sample code and run the code
-3. Press any button to see then second equation on splash message
+3. Press the A button to see the second equation on splash message
 
 ```blocks
 let answer = 0
@@ -151,11 +149,11 @@ It can be difficult to structure complicated expressions using blocks. Look at a
 
 ### ~hint
 
-Click edit to fix code. ``||game:splash||`` can display string characters. Review previous examples of using ``||game:splash||``.
+Click edit to fix code. ``||game:splash||`` can display string characters. Review the previous examples that use ``||game:splash||``.
 
 ### ~
 
-2. After you are able to run the code, the value of ``||variables:c||`` should be shown on the screen, but the value shown is not quite right. Rearrange the existing blocks so that it produces the correct output, without removing or adding any JavaScript or blocks beyond what was necessary for part 1. What went wrong? Fix the output.
+2. After you are able to run the code, the value of ``||variables:c||`` should be shown on the screen. There's a problem because the value shown is not quite right. Rearrange the existing blocks so that it produces the correct output, without removing or adding any JavaScript or blocks beyond what was necessary for part 1. What went wrong? Fix the output.
 
 ## Variables Summary
 

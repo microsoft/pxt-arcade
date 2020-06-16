@@ -12,7 +12,7 @@ In this activity, students are introduced to:
 * Creating a new game
 * The difference between blocks and script
 * "My Projects"
-* Sharing games by downloading, and creating a game link
+* Sharing games by saving and creating a game link
 
 ## Concept: Opening a game
 
@@ -32,13 +32,13 @@ In this activity, students are introduced to:
 ## Student Task #2: Starting and saving your own game #task-2
 
 1. Press the "Home" button in the upper left corner to return to the homepage
-2. Press the "New Project" button
+2. Press the "New Project" button and name it "first game"
 3. Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``, and drag it into ``||loops:on start||``
 4. Make the new ``||sprites:Sprite||`` ``||sprites:say||`` something, by dragging ``||sprites:mySprite say||`` and placing it after ``||variables:set mySprite to||``
 
     ![Sprite Say](/static/courses/csintro1/intro/sprite-say.gif)
 <br/>
-5. At the bottom of the screen, select a name to save this game as (for example, "first game"), and click "Download" to download it
+5. At the bottom of the screen, select the “Save” button to save your game
 
     ![Downloading the game](/static/courses/csintro1/intro/download.gif)
 <br/>
@@ -62,9 +62,17 @@ There is one other common way that we will keep track of our games: by making li
 
 1. Press the "Home" button in the upper left corner to return to the homepage
 2. Select your game from [task #2](#task-2) under "My Projects"
-3. Select the share button in the upper left corner, as shown below. Verify that you want to publish the code, and keep track of the URL it shows - that is a link directly to your code!
+3. Select the "Share" button in the upper left corner, as shown below. Verify that you want to publish the code, and keep track of the URL it shows - that is a link directly to your code!
 
 ![Sharing the game](/static/courses/csintro1/intro/sharing.gif)
+
+### ~ hint
+
+#### Saving and publishing games
+
+Besides sharing your game, you can save your game as a named project, download to hardware, and publish your game code to a repository on GitHub.
+
+### ~
 
 ## What did we learn?
 

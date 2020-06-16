@@ -5,7 +5,7 @@
     * [For Teachers](/courses/csintro1/about/teachers)
     * [Authors](/courses/csintro1/about/authors)
 * [Intro](/courses/csintro1/intro)
-    * [Orientation to Makecode](/courses/csintro1/intro/makecode-orientation)
+    * [Makecode Orientation](/courses/csintro1/intro/makecode-orientation)
     * [Birthday Algorithm](/courses/csintro1/intro/birthday-algorithm)
     * [Sprites](/courses/csintro1/intro/sprites)
     * [Unplugged: Rock Paper Scissors](/courses/csintro1/intro/unplugged)
