@@ -9,8 +9,8 @@ This example contains four fantasy characters.
 The characters are all represented as sprites, allowing them to be positioned on the screen and given a phrase to ``||sprites:say||``.
 
 1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it "characters")
+2. Start a new project and name it “characters”
+3. Create the sample code and run the code
 
 ```blocks
 let dorothy: Sprite = null
