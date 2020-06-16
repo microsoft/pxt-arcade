@@ -19,7 +19,7 @@ Start the project, and create a mitt for the player to control.
 Add balls for the player to attempt to collect.
 
 1. Get an ``||game:on game update every 500 ms||`` event
-2. Create a ``||sprites:projectile from side||`` representing a baseball inside the ``||game:on game update every||`` event and change the variable name from ``||variable:projectile||`` to ``||variable:baseball||``
+2. Create a ``||sprites:projectile from side||`` representing a baseball inside the ``||game:on game update every||`` event and change the variable name from ``||variables:projectile||`` to ``||variables:baseball||``
 3. Make ``||variables:baseball||`` move randomly in the `x` and `y` directions using ``||math:pick random 0 to 10||`` for the initial ``||sprites:vx||`` and ``||sprites:vy||``: make the range from `-50` and `50`
 4. Set ``||variables:baseball||`` to ``||sprites:kind||`` `Baseball`
 
