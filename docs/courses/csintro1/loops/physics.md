@@ -102,7 +102,7 @@ Acceleration represents the rate of change in velocity. We think of this as how 
 
 The relationship between acceleration and velocity is similar to the relationship between velocity and position. Velocity is the rate at which position is changing, and acceleration is the rate at which velocity is changing.
 
-In other words, acceleration tells us how quickly the velocity is changing. Braking in a car or speeding up in a rocket taking off are examples of acceleration. We feel a force pull on our bodies when there is acceleration.
+In other words, acceleration tells us how quickly the velocity is changing. Pressing on the gas makes a car go faster until a new speed is reached. This is an example of acceleration. Pressing the brakes in the car causes it to slow down which is negative acceleration (deceleration). We feel a force pull on our bodies when there is acceleration.
 
 In @boardname@, a sprite's acceleration is defined in terms of **pixels per second, per second** (pixels/s/s).
 
@@ -143,6 +143,7 @@ mySprite.destroy()
 1. Review the code below
 2. Create the sample code and run the code
 3. Notice how the behavior for the two sprites is similar, and how it is different
+4. Challenge: figure out how to place the projectiles distributed equally across the screen using ``||scene:screen width||`` and ``||scene:screen height||`` blocks with math expressions.
 
 ```blocks
 let second: Sprite = null
@@ -183,8 +184,8 @@ second = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, 20, 0)
-first.y += -10
-second.y += 10
+first.y = 35
+second.y = 60
 first.ax = 2
 game.onUpdate(function () {
     first.say("vx: " + Math.ceil(first.vx))
@@ -200,8 +201,8 @@ game.onUpdateInterval(1000, function () {
 [![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-physics-task-a)
 
 1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it "water balloon")
+2. Create a new project and name it "water balloon"
+3. Create the sample code and run the code
 4. Currently, when the balloon collides with the block, it creates only a single drop of a splash. Use a loop in the overlap event between sprites of kind ``Balloon`` and sprites of kind ``Enemy`` to create 50 drops of kind ``Splash`` instead
 5. **Challenge:** set the acceleration for every splash of water emitted from the balloon to be 40 so that the splashes will accelerate downwards at the same rate the balloon did
 

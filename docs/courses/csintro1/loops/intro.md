@@ -23,6 +23,7 @@ game.splash("5x4=" + output)
 ```
 
 In this activity students will be introduced to:
+
 * Sprite motion with loops
 * ``||loops:repeat||`` loop
 
@@ -34,7 +35,7 @@ Start off by trying to solve a small task: slowly move a ghost from the center o
 
 [![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-loop-intro)
 
-1. Open up [this sample code](https://makecode.com/_VDCA0g4VmRkF)
+1. Open the sample code below
 2. Run the code. The ghost should scroll off to the bottom right area of the screen and peek just over the edge
 3. Review the blocks that caused this to happen. What would you need to add if the screen was twice as large as it is?
 
@@ -110,13 +111,13 @@ pause(100)
 
 ## Student Task #1: Move to the upper left corner, and move faster
 
-1. Load up the blocks from the previous example
+1. Reuse the code from the previous example
 2. Make the sprite move up and to the left instead - to do so, change all movements to be in the opposite direction
 3. Change the ``||loops:pause||`` between each step to be only 50 ms, instead of 100 - we decided we want the ghost to be a little bit faster than it was
 
 ## Concept: Moving a sprite using the repeat block loop
 
-When completing the last task, you likely noticed that you were doing the same action repeatedly - moving in one direction, pausing, moving in another, pausing, and then repeating that. Instead of doing that by inserting the same chunk of code multiple times, we can, by using loops, repeat that chunk of code more easily.
+When completing the last task, you likely noticed that you were doing the same action repeatedly - moving in one direction, pausing, moving in another, pausing, and then repeating that. Instead of doing that by inserting the same chunk of code multiple times, we can, by using loops, ``||loops:repeat||`` that chunk of code more easily.
 
 ## Student Task #2: Add a second sprite using loops
 

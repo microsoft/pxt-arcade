@@ -22,8 +22,8 @@ We can use projectiles to create sprites that move across the screen. Let's star
 ### Example #1: Bird projectile
 
 1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it "Bird Projectile 1") 
+2. Create a new project and name it "Bird Projectile 1"
+3. Create the sample code and run the code
 4. Look for what portion of the blocks makes the bird move across the screen, instead of just staying still
 
 ```blocks
@@ -44,7 +44,7 @@ let projectile: Sprite = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 50, 0)
+`, 50, 50)
 ```
 
 It may seem surprising that there's only a single block inside the ``||loops:on start||`` to create a projectile. Projectiles are an easy way to create temporary sprites with motion. 
@@ -72,20 +72,18 @@ projectile = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, 50, 0)
+`, 50, 50)
 ```
 
 This modified version adds in an event that triggers when the projectile is destroyed - you should see that when the sprite goes off the screen, it is actually destroyed automatically!
 
 ### ~hint
 
-Notice that the ``||sprites:kind||`` of the ``||sprites:projectile||`` is ``Projectile``; this can be changed using the ``||sprites:set mySprite kind to Player||`` block.
+By default, the ``||sprites:kind||`` of a ``||sprites:projectile||`` is ``Projectile``; this can be changed using the ``||sprites:set mySprite kind to Player||`` block. 
 
 ### ~
 
-``||sprites:auto destroy||`` is available for all sprites using the ``||sprites:set sprite auto destroy on||`` flag, but projectiles have it added in for you automatically. 
-
-``||sprites:projectile from side||`` are created from the side of the screen opposite their initial speed, so that they can move across the screen. Projectiles need to have speed, so if none is set (that is, ``||sprites:vx||`` and ``||sprites:vy||`` are both 0), a random velocity will be assigned.
+``||sprites:auto destroy||`` is available for all sprites using the ``||sprites:set sprite auto destroy on||`` flag, but projectiles have it added in for you automatically. Select the ``||sprites:auto destroy||`` setting in the drop-down list of the ``||sprites:set sprite stay in screen||`` block.
 
 ## Student Task #1: Make a ball fall down
 
@@ -94,7 +92,8 @@ Notice that the ``||sprites:kind||`` of the ``||sprites:projectile||`` is ``Proj
 1. Start with the provided code below
 2. Modify the code so that the ball falls down the screen at a rate of **50** instead of **100**
 3. Create a second projectile that goes up the screen at a rate of 50 (moving in the direction opposite the ball)
-4. **Challenge:** when the two projectiles overlap one another, have them ``||sprites:say||`` hello to each other
+4. **Challenge:** set the position of the projectiles so they move down the center of the screen instead of the edge
+5. **Challenge:** when the two projectiles overlap one another, have them ``||sprites:say||`` hello to each other
 
 ```blocks
 let projectile: Sprite = null
@@ -123,17 +122,17 @@ projectile = sprites.createProjectileFromSide(img`
 
 ## Concept: Projectile Loop
 
-Games often create many projectiles, one after another. We can create multiple projectiles of the same kind inside the body of an update loop.
+Games often create many projectiles, one after another. We can create multiple projectiles of the same kind inside the body of an ``||game:on game update every||`` event.
 
 ### Example #2: Projectile Loop
 
 [![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-projectiles2)
 
 1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it "Random Dodge") 
+2. Create a new project and name it "Random Dodge"
+3. Create the sample code and run the code
 
-This example randomly places the projectiles on the screen with a random velocity.
+This example randomly places the projectiles on the screen with no velocity.
 
 ```blocks
 let projectile: Sprite = null
@@ -178,10 +177,10 @@ d d d d d d d d
 
 ## Student Task #2a: Add vertical projectiles that move down the screen
 
-1. Start with the example above. Currently, it will spawn meteors of ``||sprites:kind||`` ``Projectile`` that stay in random locations along the top of the screen
-2. Replace the ``||game:on update||`` with a ``||loops:repeat||`` loop in the ``||loops:on start||`` block
+1. Start with the example above. Currently, it will spawn projectiles of ``||sprites:kind||`` ``Projectile`` that stay in random locations along the top of the screen
+2. Replace the ``||game:on game update every||`` with a ```||loops:repeat||`` loop in the ``||loops:on start||` block
 3. Each time a projectile is created, add one (1) point to the score using the ``||info:change score by||`` block
-4. Modify the ``||sprites:create projectile||`` block so that each spawned meteor moves down the screen at a rate of 50
+4. Modify the ``||sprites:projectile from side||`` block so that each spawned projectile moves down the screen at a rate of 50
 5. **Challenge:** instead of moving at the current constant rate of 50, make the projectile move at a random rate between 40 and 60
 
 ## Student Task #2b: Offset Projectiles
@@ -190,9 +189,11 @@ d d d d d d d d
 
 We have seen that it is useful for projectiles to come from random positions, but there are times when we'll want to have projectiles spawned in a more structured manner. This tasks uses a loop to offset the `Y` position of each projectile using a ``||loops:for||`` loop index. 
 
+Remember that ``||loops:for||`` loops are different than ``||loops:repeat||`` loops since they use a conditon you specify instead of a simple limit value.
+
 1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it "screenFill")
+2. Create a new project and name it "screenFill"
+3. Create the sample code and run the code
 4. Move the code in the ``||loops:on start||`` block into a ``||loops:for index from 0 to 12||`` block, to create 13 projectiles, one every 300 ms
 5. Modify the ``||sprites:set projectile y to||`` block to set the projectiles' ``||sprites:y||`` position to the value `10 * index`, so that they start further down the screen on each iteration
 
@@ -219,48 +220,6 @@ projectile = sprites.createProjectileFromSide(img`
 projectile.y = 10
 pause(300)
 ```
-
-## Concept: Projectiles from Corners
-
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-projectiles3)
-
-Projectiles with only a ``||sprites:y||`` velocity will start on the top or bottom of the game screen, and projectiles with only a ``||sprites:x||`` velocity will start from the left or right by default. If the projectile has both an ``||sprites:x||`` and ``||sprites:y||`` velocity, they will start from one of the corners.
-
-### Example #3: Projectile from a corner
-
-1. Review the code below
-2. Create the sample code and run the code
-3. Notice how the **initial velocities** of the ``||sprites:projectile||`` relate to it's **initial position**
-4. Save the code for the task (name it "Top Left")
-
-```blocks
-let projectile: Sprite = null
-projectile = sprites.createProjectileFromSide(img`
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-`, 10, 10)
-```
-
-## Task #3: Projectile from upper right corner
-
-1. Create the example code above 
-2. Modify the code to make the sprite start from the upper right corner by default and move toward the lower left corner 
-3. Place the code in a loop to repeat 4 times with a short pause between loop iterations
-4. **Challenge:** inside the loop, make sprites originate from each of the 4 corners of the screen
 
 ## What did we learn?
 

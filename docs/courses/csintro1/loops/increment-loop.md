@@ -8,7 +8,7 @@ In these activities, the student will be introduced to:
 
 * ``||loops:repeat||`` loops
 * ``||loops:for index||`` loops
-* Variables with ``||variables:increase by||``
+* Variables with ``||variables:change by||``
 * ``||game:on game update every||``
 * Info ``||info:set score||``
 * Game ``||info:countdown||``
@@ -20,11 +20,11 @@ In these activities, the student will be introduced to:
 ## Examples: Incrementing a Variable
 
 1. Review each example below
-2. Create the sample and run the code
-3. Save the code for the start of the next task (name it "increment") 
+2. Create a new project and name it "increment"
+3. Create the sample code and run the code
 4. Note how changing the ``||variables:change by||`` amount changes the game score 
 
-### Example #1a: Increment with ``||game:on game update||`` #example-1a
+### Example #1a: Increment with ``||game:on game update every||`` #example-1a
 
 ```blocks
 let count = 0
@@ -111,7 +111,7 @@ We want to move a sprite in a spiral - starting small in a square like pattern, 
 
 1. Start with the code from [example #2](#example-2), add in a new variable ``||variables:increase||``
 2. Use the ``||variables:change by||`` block to increment ``||variables:increase||`` by 5 at the end of the code block for the loop
-3. Add math expressions like ``||math:+||`` and ``||math:-||`` to use the variable ``||variables:increase||`` to increase the distance the sprite moves on each step
+3. Add math expressions like `+` and `-` to use the variable ``||variables:increase||`` to increase the distance the sprite moves on each step
 
 ### ~hint
 

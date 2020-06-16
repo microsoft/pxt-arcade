@@ -13,7 +13,7 @@ In this activity, students will use:
 
 [![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-projectile-from-sprite)
 
-There are many games that have sprites sending out projectile sprites. We can set projectiles to originate from a sprite to drop coins, create obstacles, kick a ball or send a laser beam to destroy an asteroid by using ``||sprites:projectile from sprite||``.
+There are many games that have sprites sending out projectile sprites. We can set projectiles to originate from a sprite to drop coins, create obstacles, kick a ball or send a laser beam to destroy an asteroid by using ``||sprites:projectile from mySprite||``.
 
 ```block
 let ball: Sprite = null
@@ -33,8 +33,8 @@ ball = sprites.createProjectileFromSprite(img`
 ### Example #1: Throw ball #example-1
 
 1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it "Throw Ball") 
+2. Create a new project and name it "Throw Ball"
+3. Create the sample code and run the code
 
 ```blocks
 let mySprite: Sprite = null
@@ -115,13 +115,14 @@ cloud = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, 10, 0)
+cloud.y = 60
 ```
 
 There's not much to this code; it spawns a cloud, which slowly moves across the screen. However, what if we want to make the cloud rain? We can do this by adding projectiles that are emitted from the cloud itself!
 
 ### Example #2b: Cloud projectile that emits projectile rain
 
-Review the code carefully for the use of ``||sprites:ghost on||`` and ``||sprites:projectile from sprite||`` for the raindrop projectiles. 
+Review the code carefully for the use of ``||sprites:projectile from sprite||`` for the raindrop projectiles. 
 
 ```blocks
 let raindrop: Sprite = null
@@ -144,6 +145,7 @@ cloud = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, 10, 0)
+cloud.y = 60
 game.onUpdateInterval(50, function () {
     raindrop = sprites.createProjectileFromSprite(img`
 . . . . . . . . . . . . . . . . 
@@ -163,13 +165,8 @@ game.onUpdateInterval(50, function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, cloud, 0, 30)
-    raindrop.setFlag(SpriteFlag.Ghost, true)
 })
 ```
-
-Note that we set the raindrops to be ``||sprites:ghosts||``. This means that these ``||sprites:Sprites||`` **won't be detected when overlapping** with other sprites, and will pass through sprites as if there were no overlap events. The game can avoid checking for collisions with ghost sprites, which will help boost in performance and frame rate.
-
-Try removing the ``||sprites:ghosts||`` block and see how much the performance goes down.
 
 ### Example #2c: Cloud projectile that widely emits projectile rain
 
@@ -201,6 +198,7 @@ cloud = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, 10, 0)
+cloud.y = 60
 game.onUpdateInterval(50, function () {
     raindrop = sprites.createProjectileFromSprite(img`
 . . . . . . . . . . . . . . . . 
@@ -220,7 +218,6 @@ game.onUpdateInterval(50, function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, cloud, 0, 30)
-    raindrop.setFlag(SpriteFlag.Ghost, true)
     raindrop.y += 3
     raindrop.x += Math.randomRange(1, 14)
 })
@@ -228,7 +225,7 @@ game.onUpdateInterval(50, function () {
 
 ### Example #2d: Count destroyed raindrops
 
-The ghost raindrop sprites don't cause an overlap event. We can use other events though, like ``||sprites:on sprite destroyed||``. We can count the raindrops that make it to the bottom of the screen by adding them up in their destroyed event.
+We can count the raindrops that make it to the bottom of the screen by adding them up in an ``||sprites:on destroyed sprite of kind||`` event.
 
 ```blocks
 namespace SpriteKind {
@@ -256,6 +253,7 @@ cloud = sprites.createProjectileFromSide(img`
 . . . . . . . . . . . . . . . . 
 `, 10, 0)
 cloud.setKind(SpriteKind.Cloud)
+cloud.y = 60
 game.onUpdateInterval(50, function () {
     raindrop = sprites.createProjectileFromSprite(img`
 . . . . . . . . . . . . . . . . 
@@ -275,7 +273,6 @@ game.onUpdateInterval(50, function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, cloud, 0, 30)
-    raindrop.setFlag(SpriteFlag.Ghost, true)
     raindrop.y += 3
     raindrop.x += Math.randomRange(1, 14)
 })
@@ -298,14 +295,14 @@ Note the new ``||sprites:set cloud kind to Cloud||`` block was added in as well;
 Make a projectile move across the bottom of the screen that, while moving, gives off different projectiles that "float" to the top of the screen. Use parts of example code above for inspiration to start you project.
 
 1. Create a ``||sprites:projectile from side||`` that moves across the bottom of the screen
-2. Create a new ``||sprites:projectile from sprite||`` that floats from the original bottom projectile
-3. Use ``||loops:loops||`` or ``||game:on update||`` event to create more of the projectile from part 2
+2. Create a new ``||sprites:projectile from mySprite||`` that floats from the original bottom projectile
+3. Use ``||loops:loops||`` or ``||game:on update every||`` event to create more of the projectile from part 2
 4. **Challenge:** as the projectiles "float" up from the bottom of the game screen, give them a small random X velocity so they move at a slight angle to the left or right
 
 ## What did we learn?
 
 1. How can we make a sprite that came from a regular ``||sprites:sprite||`` act like a projectile sprite? Explain the block code to use.
-2. Give examples of using ghost and/or on overlap events in a game to make a projectiles that are decorations, laser beams, and coins (reward). Explain each. 
-3. **Challenge:** create a hypothesis on why making projectiles have ``||sprites:ghost on||`` might make your game run faster than leaving it off.
+2. Give examples of using on overlap events in a game to make projectiles that are decorations, laser beams, and coins (reward). Explain each.
+3. **Challenge:** create a hypothesis about why it might be useful to make projectiles have ``||sprites:ghost on||``.
 
 ### [Teacher Material](/courses/csintro1/about/teachers)
