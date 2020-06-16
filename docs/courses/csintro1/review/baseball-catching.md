@@ -16,12 +16,12 @@ Start the project, and create a mitt for the player to control.
 
 ## Student Task #2: Throwing Balls
 
-Add balls for the player to attempt to collect
+Add balls for the player to attempt to collect.
 
 1. Get an ``||game:on game update every 500 ms||`` event
-2. Create a projectile representing a baseball inside the ``||game:on game update every||`` event
-3. Change the variable name from ``||variables:projectile||`` to ``||variables:baseball||``, and the ``||sprites:kind||`` from ``Player`` to ``Baseball``
-4. Making ``||variables:baseball||`` move randomly in the ``x`` and ``y`` directions using ``||math:pick random 0 to 10||`` for the initial ``||sprites:vx||`` and ``||sprites:vy||``: make the range from `-50` and `50`
+2. Create a ``||sprites:projectile from side||`` representing a baseball inside the ``||game:on game update every||`` event and change the variable name from ``||variables:projectile||`` to ``||variables:baseball||``
+3. Make ``||variables:baseball||`` move randomly in the `x` and `y` directions using ``||math:pick random 0 to 10||`` for the initial ``||sprites:vx||`` and ``||sprites:vy||``: make the range from `-50` and `50`
+4. Set ``||variables:baseball||`` to ``||sprites:kind||`` `Baseball`
 
 ## Student Task #3: Gameplay
 
@@ -37,11 +37,11 @@ Add gameplay elements that make the game interesting to play.
 
 ### ~hint
 
-## Challenges
+#### Challenges
 
 Extend the material from this review by completing the following challenges!
 
-* When a ball is caught, use ``||music:play sound powerUp||`` to play music
+* When a ball is caught, use ``||music:play sound power up||`` to play music
 * Add another projectile that is created every 15 seconds, of ``||sprites:kind||`` ``||sprites:TimeBonus||``. Create an overlap event so that when the ``||variables:Mitt||`` overlaps with the ``||sprites:TimeBonus||``, the ``||info:countdown||`` is reset to 20 seconds
 
 ### ~

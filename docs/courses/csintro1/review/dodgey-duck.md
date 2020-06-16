@@ -36,7 +36,7 @@ mySprite = sprites.create(img`
 . . . . . . . . . f f . . . . . 
 `, SpriteKind.Player)
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
-controller.moveSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite)
 info.setScore(0)
 info.setLife(3)
 game.onUpdateInterval(1000, function () {
@@ -81,7 +81,7 @@ Right now, the game is a bit hard; as soon as the player hits a duck, they lose 
 
 Without some sort of objective beyond avoiding ducks, the game is a bit tedious. To fix this, add sprites for the player to try and collect.
 
-1. Create an ``||game:on game update every 4000 ms||`` event, which spawns a sprite. Make sure the sprite is ``16x16``, and change the ``||sprites:kind||`` to ``Collectible``
+1. Create an ``||game:on game update every 4000 ms||`` event, which spawns a sprite. Make sure the sprite is `16x16`, and set the ``||sprites:kind||`` to `Collectible`
 2. Duplicate the ``||sprites:set projectile y to||`` that sets the ``Enemy``'s ``||sprites:y||`` position, and make it position the ``Collectible`` in a random row on the screen
 3. Duplicate the previous step. Change ``||sprites:set projectile y to||`` to ``||sprites:set projectile x to||``, so that it chooses a random column, and change the ``7`` to a ``9``, because the screen is wider than it is tall
 4. Add an ``||sprites:overlap||`` event between the ``Player`` and a ``Collectible``, which adds 1 to ``||info:life||`` and ``||sprites:destroy||``s the ``Collectible``
