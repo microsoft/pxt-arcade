@@ -5,7 +5,7 @@ Motion introduces the ability to control how a sprite moves around the screen.
 ```codecard
 [
 {
-    "name": "Unplugged: Controller",
+    "name": "Unplugged: Using a Controller",
     "url": "/courses/csintro1/motion/unplugged",
     "imageUrl": "/static/courses/csintro1/motion/unplugged.png"
 }, {

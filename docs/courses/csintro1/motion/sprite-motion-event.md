@@ -12,7 +12,7 @@ In these activities, the student will use:
 * Incrementing ``||sprites:x||`` and ``||sprites:y||`` coordinates
 * Setting ``||sprites:vx||`` and ``||sprites:vy||`` velocity
 * Short methods and functions with motion
-* ``||sprites:stay on screen||``
+* ``||sprites:stay in screen||``
 * Flipping (and switching) images
 
 ## Change position with controller event
@@ -22,8 +22,8 @@ In these activities, the student will use:
 ## Example #1: Increment position left and right #example-1
 
 1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it "motionLR")
+2. Create a new project and name it “motionLR”
+3. Create the sample code and run the code
 
 ```blocks
 let agent: Sprite = null
@@ -50,7 +50,7 @@ agent = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
+`, SpriteKind.Enemy)
 ```
 
 ## Student Task #1: Increment position Y-axis (up and down)
@@ -72,8 +72,8 @@ If we have a positive `X` velocity, for example, then our sprite will continue t
 ## Example #2: Increment Velocity Left and Right #example-2
 
 1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it "velocityLR")
+2. Create a new project and name it “velocityLR”
+3. Create the sample code and run the code
 
 ```blocks
 let agent: Sprite = null
@@ -111,17 +111,17 @@ agent = sprites.create(img`
     * Add an ``||controller:A||`` button event move the sprite to the center of the game screen
     * Add a ``||controller:B||`` button event to stop the sprite (all velocities = 0)
 
-## Concept: Shorter ``||sprites:dx||``/``||sprites:dy||`` approach
+## Concept: Shorter ``||controller:dx||``/``||controller:dy||`` approach
 
 [![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-spritemoevent3shortmethod)
 
 We have created motion by capturing the key pad events and incrementing (or decrementing) a location coordinate or a velocity. Now that we have seen how this works for the four directional buttons, we can use a shorter method to handle this.
 
-## Example #3: Motion short ``||sprites:dx||`` / ``||sprites:dy||`` code method 
+## Example #3: Motion short ``||controller:dx||`` / ``||controller:dy||`` code method 
 
 1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it "motionShortMethod")
+2. Create a new project and name it “motionShortMethod”
+3. Create the sample code and run the code
 4. Note the ``||game:on game update||``; this is used to assign code to run whenever the game updates
 5. Note the blocks in ``||game:on game update||``
 
@@ -155,14 +155,16 @@ game.onUpdate(function () {
 ## Student Task #3: Create Velocity Motion
 
 1. Start with motion (short method) example above or similar code
-2. Explore the controller menu for ``||controller:control mySprite with vx 100 vy 100||``
+2. Explore the Controller menu for ``||controller:move mySprite with buttons||`` and select the plus sign in the block to see ``||controller:vx 100 and vy 100||``
 3. Change the key pad motion to use the discovered block by placing it in ``||game:on start||``
-3. Make the sprite stay in the screen boundary
-4. **Challenge:** add button events that stop the sprite's motion, and reset the sprite to the center of the screen
+4. Make the sprite stay in the screen boundary
+5. **Challenge:** add button events that stop the sprite's motion, and reset the sprite to the center of the screen
 
 ### ~hint
 
-The ``||sprites:stay in screen||`` block is in the sprite menu.
+#### Find the block
+
+The ``||sprites:stay in screen||`` block is in the Sprites menu.
 
 ### ~
 
@@ -177,10 +179,10 @@ By making a mirror flip of a sprite we can simulate walking by making each leg a
 Flipping an image creates a mirror image when we use ``||images:flip horizontal||`` block. This can be useful in creating a simple 2 frame walking animation.
 
 1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it "flipImage")
-4. Note use of the function called "flipHorizontal"
-5. Find the ``||sprites:sprite image||`` block in the sprites menu that is the image that is flipped
+2. Create a new project and name it “flipImage”
+3. Create the sample code and run the code
+4. Note use of the function called “flipHorizontal” 
+5. Find the ``||sprites:mySprite image||`` block in the Sprites menu – this is the image that is flipped
 
 ```blocks
 function flipHorizontal() {

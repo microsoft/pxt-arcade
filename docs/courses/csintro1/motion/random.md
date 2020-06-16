@@ -43,8 +43,8 @@ Games often have an element of luck and surprise to keep the player engaged. In 
 ## Example #2: Random Sprite Location #example-2
 
 1. Review the code below
-2. Create the sample code and run it
-3. Save the code for the task (name it "randomLocation")
+2. Create a new project and name it “randomLocation”
+3. Create the sample code and run it
 4. Examine the use of ``||math:pick random||`` in the sprite location block. The code does not assign the chosen random number to a variable before using it
 
 ```blocks

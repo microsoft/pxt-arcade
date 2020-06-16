@@ -2,6 +2,8 @@
 
 Now its time to put the concepts together and make your own unique games!
 
+Here are some example cards of some game ideas:
+
 ```codecard
 [
 {
@@ -20,12 +22,12 @@ Now its time to put the concepts together and make your own unique games!
 * Sprite Position (coordinates: ``x`` and ``y``)
 * Controller (``||controller:dx||``) and ``||controller:move mySprite with buttons||``
 * ``||sprites:overlap||`` Events / sprite ``||sprites:kind||``
-* "Spawning" sprites: ``||sprites:create||`` and ``||sprites:on create||``
+* "Spawning" sprites: ``||sprites:create||`` and ``||sprites:on created||``
 * ``||math:random||``
 * Displaying numbers (`1`, `2`, `3`) as a string (`"123"`)
 * ``||info:score||`` and ``||info:life||``
 * ``||info:countdown||``
-* ``||image:flip||`` image
+* ``||images:flip||`` image
 * ``||sprites:stay in screen||`` and ``||sprites:ghost||``
 * ``||sprites:set image||``
 * sprite ``||sprites:say||``
@@ -56,6 +58,8 @@ To create your MVP,
 
 ### ~hint
 
+#### Take a look in the gallery
+
 For an MVP game, you might want to avoid spending too much time getting bogged down making the perfect image for your sprite; instead, you can always just use some of the provided sprites in the Gallery. This allows you to focus on getting the concept for your game into a functional state and personalize it later on!
 
 ![Using Gallery](/static/courses/csintro1/project/image-gallery.gif)
@@ -66,7 +70,7 @@ For an MVP game, you might want to avoid spending too much time getting bogged d
 
 This is the development process we will use to turn an idea for a game into a finished product.
 
-The development cycle works by adding small changes and getting feedback as you develop. When you get to the end of the [Learn](#learn) section, if there are ideas that you would still like to implement, return to the [Build](#build) section and start implementing those ideas.
+The development cycle works by adding small changes and getting feedback as you develop. When you get to the end of the [Learn](#learn) section, if there are ideas you would still like to implement, return to the [Build](#build) section and start implementing those ideas.
 
 Repeat this cycle until you are satisfied with the game **and** the game has at least **8** concepts from the list of [Concepts Learned](#concepts-learned). If more time is available, create an MVP for another one of your original ideas and begin the development cycle on it.
 
@@ -74,7 +78,7 @@ For a guided example of this process, [see the example project page.](/courses/c
 
 ### ~hint
 
-### Build #build
+#### Build #build
 
 Implement a list of features
 
@@ -87,7 +91,7 @@ Implement a list of features
 
 ### ~hint
 
-### Test
+#### Test
 
 Gather feedback about the game from an outside source
 
@@ -103,7 +107,7 @@ Gather feedback about the game from an outside source
 
 ### ~hint
 
-### Learn #learn
+#### Learn #learn
 
 Convert the feedback into a list of features that to implement
 

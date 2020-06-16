@@ -2,11 +2,10 @@
 
 We use ``||sprites:kind||`` to give a label to our sprites so we can define how one ``||sprites:kind||`` of sprite will react when moving on top of another ``||sprites:kind||`` of sprite.
 
-In the previous activity, all "Cloud" ``||sprites:kind||``'s respond with the same action when overlapped with a "Helicopter" ``||sprites:kind||``. 
-
 By making several cloud shaped sprites with the same ``||sprites:kind||`` of `Cloud`, we can write code so that all of the clouds interact with the ``Helicopter`` in the same way with an overlap event.
 
 In this activity, the student will continue to work with:
+
 * ``||sprites:on overlap event||`` with a ``||sprites:kind||`` applied to several identical sprites
 * Overlap events
 
@@ -29,11 +28,9 @@ Having sprites bump rather than pass over each other is useful game behavior for
 ## Example #1: Bump action from overlap event #example-1
 
 1. Review the code below
-2. Create the sample code and run the code
-3. Save the code for the task (name it "copterBump1")
+2. Create a new project and name it “copterBump1”
+3. Create the sample code and run the code
 4. Look at the overlap event - note which sprite is named ``||variables:sprite||`` and which is ``||variables:otherSprite||``, and how the code creates the bump behavior
-
-[Helicopter Example](https://makecode.com/_UhT3dj2UjKPv)
 
 ```blocks
 namespace SpriteKind {
@@ -215,7 +212,7 @@ There is a "T" shaped landing area at the bottom of the example. The helicopter 
 
 ### ~hint
 
-Challenge hint:
+#### Challenge hint
 
 Erratic motion can be made by changing the sprite position back and forth multiple times. Try changes in velocity and/or position separated by short pauses.
 
@@ -225,7 +222,7 @@ Erratic motion can be made by changing the sprite position back and forth multip
 
 1. Starting with example code or [task #1](#task-1)
 2. Add a new sprite that looks nothing like a cloud (for example, a hat or a tree)
-3. Make sure the new sprite has ``||sprites:kind||`` of "Cloud" even though it is not a cloud
+3. Make sure the new sprite has ``||sprites:kind||`` of ``||sprites:Cloud||`` even though it is not a cloud
 4. Position the new sprite so it is not touching any other sprite
 5. **Challenge:** add another Sprite that looks different from the previous new sprite and give it a ``||sprites:kind||`` other than ``||sprites:Cloud||`` and make sure it has a unique overlap event action (e.g. - might say something new) 
 6. Test the overlaps on the new sprite(s)
