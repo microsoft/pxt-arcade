@@ -302,7 +302,7 @@ Make a projectile move across the bottom of the screen that, while moving, gives
 ## What did we learn?
 
 1. How can we make a sprite that came from a regular ``||sprites:sprite||`` act like a projectile sprite? Explain the block code to use.
-2.	Give examples of using on overlap events in a game to make projectiles that are decorations, laser beams, and coins (reward). Explain each.
-3.	**Challenge:** create a hypothesis about why it might be useful to make projectiles have ``||sprites:ghost on||``.
+2. Give examples of using on overlap events in a game to make projectiles that are decorations, laser beams, and coins (reward). Explain each.
+3. **Challenge:** create a hypothesis about why it might be useful to make projectiles have ``||sprites:ghost on||``.
 
 ### [Teacher Material](/courses/csintro1/about/teachers)

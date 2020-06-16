@@ -143,7 +143,7 @@ mySprite.destroy()
 1. Review the code below
 2. Create the sample code and run the code
 3. Notice how the behavior for the two sprites is similar, and how it is different
-4.	Challenge: figure out how to place the projectiles distributed equally across the screen using ``||scene:screen width||`` and ``||scene:screen height||`` blocks with math expressions.
+4. Challenge: figure out how to place the projectiles distributed equally across the screen using ``||scene:screen width||`` and ``||scene:screen height||`` blocks with math expressions.
 
 ```blocks
 let second: Sprite = null
