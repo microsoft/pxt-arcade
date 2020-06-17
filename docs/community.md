@@ -37,16 +37,6 @@ Games submitted by the MakeCode community.
         "videoUrl": "/static/community/jewel-raider/jewel-raider.mp4"
     },
     {
-        "name": "Snowy Slopes",
-        "description": "Race down a snowy hill to avoid obstacles and collect goodies, by Nate Murray",
-        "author": "Nate Murray",
-        "url": "https://forum.makecode.com/t/snowy-slopes-game/52",
-        "cardType": "forumUrl",
-        "imageUrl": "/static/community/snowy-slopes/snowy-slopes.png",
-        "largeImageUrl": "/static/community/snowy-slopes/snowy-slopes.gif",
-        "videoUrl": "/static/community/snowy-slopes/snowy-slopes.mp4"
-    },
-    {
         "name": "Raptor Run",
         "description": "See how long your dinosaur can run across the ancient landscape, jump to avoid deadly obstacles along the way, by Adri314",
         "author": "Adri314",
