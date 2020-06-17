@@ -280,7 +280,7 @@ function create_right_paddle() {
     `, SpriteKind.RightPaddles)
     controller.player2.moveSprite(right_paddle, 0, 150)
     right_paddle.setFlag(SpriteFlag.StayInScreen, true)
-    right_paddle.right = 0
+    right_paddle.right = 160
 }
 let right_paddle: Sprite = null
 create_right_paddle()
