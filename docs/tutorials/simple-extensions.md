@@ -215,7 +215,7 @@ namespace myTiles {
     `
 }
 scene.onOverlapTile(SpriteKind.Player, sprites.builtin.coral0, function (sprite, location) {
-    game.over(false)
+    game.over(true)
 })
 let myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
