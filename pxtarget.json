@@ -445,7 +445,8 @@
             "snippetBuilder",
             "experimentalHw",
             "recipes",
-            "tutorialBlocksDiff"
+            "tutorialBlocksDiff",
+            "blocksErrorList"
         ],
         "blocksCollapsing": true,
         "errorList": true,
