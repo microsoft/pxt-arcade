@@ -18,6 +18,13 @@ Bee Helpful | Bunny Defense
 
 You will have 3 weeks to build and submit your games for the competition! For you procrastinators out there, we will accept games up until 11:59 PM PT on July 1st.
 
+## Gardening tips
+
+* Get started with our ["Collect the Clovers" tutorial](https://arcade.makecode.com/#tutorial:/tutorials/collect-the-clovers)!
+* When designing your game, keep in mind that Arcade is restricted to a 160x120 16-color screen and a 4 channel synthesizer for sound.
+* See [these instructions](https://arcade.makecode.com/developer/images) for information on importing images and color palettes into Arcade.
+* Check out the [developer documentation](https://arcade.makecode.com/developer) for more advanced tips to use in Arcade.
+
 ## Rules
 
 * Your game must relate to the jam theme. Someone playing your game should be able to see how it relates to the theme without extra explanation.
@@ -45,11 +52,3 @@ The winners will receive an Arcade-compatible hand-held gaming device and a Make
 Meowbit | Pygamer | T-shirt
 -- | -- | --
 ![A Meowbit device for MakeCode Arcade](/static/gamejam/img/meowbit.png) | ![A MakeCode t-shirt with a pixel art strawberry](/static/gamejam/img/tshirt.jpg) | ![A Pygamer device for MakeCode Arcade](/static/gamejam/img/pygamer.jpg)
-
-
-## Gardening tips
-
-* If you don't know where to start, try out [one of our tutorials](https://arcade.makecode.com/tutorials)!
-* When designing your game, keep in mind that Arcade is restricted to a 160x120 16-color screen and a 4 channel synthesizer for sound.
-* See [these instructions](https://arcade.makecode.com/developer/images) for information on importing images and color palettes into Arcade.
-* Check out the [developer documentation](https://arcade.makecode.com/developer) for more advanced tips to use in Arcade.
