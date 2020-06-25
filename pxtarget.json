@@ -60,6 +60,7 @@
         "libs/light",
         "libs/mixer---samd",
         "libs/mixer---stm32",
+        "libs/mixer---nrf52",
         "libs/mixer---none",
         "libs/mixer---linux",
         "libs/mixer---ext",
