@@ -15,9 +15,9 @@ Create a garden game to collect 4-leaf clovers and avoid the bees!
 ## Step 1 - Set the Background image
 
 From the ``||scene:Scene||`` Toolbox drawer, drag a ``||scene:set background image||``
-block onto the Workspace, and drop into the ``||loops:on start||`` block. In the
+block onto the Workspace and drop into the ``||loops:on start||`` block. In the
 ``||scene:set background image||`` block, click on the grey oval to open the image
-editor, and draw a garden scene with flowers, trees any anything else you want in
+editor and draw a garden scene with flowers, trees, and anything else you want in
 the background of your game.
 
 ```blocks
@@ -149,8 +149,7 @@ scene.setBackgroundImage(img`
 
 From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||variables:set mySprite||``
 block and drop it after the ``||scene:set background image||`` block. Click on the
-grey oval to open the sprite image editor, and draw or select a **Gallery** image
-for your player.
+grey oval to open the sprite image editor and draw an image for your player, or just select one from the **Gallery**.
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -600,8 +599,8 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 ## Step 5 - Initialize the Score and number of Player Lives
 
 Let’s set the score to **0** and give our player **3** lives when the game starts. From the
-``||info:Info||`` Toolbox drawer, drag a ``||info:set score||`` block and a ``||info:set life||``
-block and drop after the ``||sprites:set mySprite stay in screen||`` block.
+``||info:Info||`` Toolbox drawer, drag both a ``||info:set score||`` block and a ``||info:set life||``
+block, and drop them in after the ``||sprites:set mySprite stay in screen||`` block.
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -754,7 +753,7 @@ info.setLife(3)
 
 Every 5 seconds, we want a clover and a bee to appear in our game. From the ``||game:Game||``
 Toolbox drawer, drag an ``||game:on game update on every||`` block onto the Workspace
-(you can place this anywhere). Click on the ``500 ms`` update interval and change to 5 seconds
+(you can place this anywhere). Click on the ``500 ms`` update interval and change it to 5 seconds
 (or 5000 milliseconds).
 
 ```blocks
@@ -830,7 +829,7 @@ f f f f . . f 7 7 f f 7 7 f f .
 
 Now let’s add a Bee projectile. Right-click on the ``||variables:set projectile to||`` ``||sprites:projectile from side||``
 clover block that we just created and select **Duplicate**. Drop the copied block after the existing clover
-projectile block and click on the ``||variables:projectile||`` variable name drop-down and select **New variable**. Name this
+projectile block, click on the ``||variables:projectile||`` variable name drop-down, and select **New variable**. Name this
 variable **"bee"**. Then click on the grey oval to open the sprite image editor and draw an image of a bee.
 
 ![Create the bee projectile](/static/tutorials/collect-the-clovers/bee-projectile.png)
@@ -881,7 +880,7 @@ f f f f 5 f 5 f 5 f 5 f 5 f f f
 ## Step 10 - Set the Bee to Enemy
 
 To make the Bee an enemy sprite, we need to set its kind. From the ``||sprites:Sprites||`` Toolbox drawer,
-under the **Overlaps** category, drag a ``||sprites:set sprite kind||`` block, and drop after the
+under the **Overlaps** category, drag a ``||sprites:set sprite kind||`` block and drop after the
 ``||variables:set bee to||`` ``||sprites:projectile||`` block. Click on the ``||variables:mySprite||`` variable
 drop-down menu and select the **bee** variable. Click on the ``||sprites:Player||`` kind drop-down menu and select
 ``||sprites:Enemy||`` sprite kind.
@@ -957,7 +956,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 ## Step 13 - Add Effect @fullscreen
 
 In the ``||sprites:destroy sprite||`` block, click on the Plus **(+)** icon to expand. 
-Click on the spray effect drop-down menu and select an effect that you want to display when your ``||sprites:Player||`` collects a Clover. 
+Click on the ``spray effect`` drop-down menu and select an effect that you want to display when your ``||sprites:Player||`` collects a Clover. 
 Click on the ``500 ms`` drop-down menu and select ``100 ms`` for the duration of your effect.
 
 ![Choose a destroy effect](/static/tutorials/collect-the-clovers/destroy-effect.png)
