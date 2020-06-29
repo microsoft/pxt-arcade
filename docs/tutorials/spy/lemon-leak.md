@@ -1,10 +1,6 @@
 # Lemon Leak
 
-### ~button /#tutorial:/tutorials/spy/lemon-leak
-
-Try this tutorial!
-
-### ~
+### @explicitHints true
 
 ## Introduction @unplugged
 
