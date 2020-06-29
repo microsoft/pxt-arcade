@@ -261,8 +261,6 @@ game.onUpdateInterval(1000, function () {
 After the code to create the ``||variables:projectile||``, add code to set ``||sprites:lifespan||``
 to `3000`.
 
-![Adding life span](/static/tutorials/happy-flower/life-span.gif)
-
 ```spy
 let projectile: Sprite = null
 let mySprite: Sprite = null
@@ -368,9 +366,7 @@ game.onUpdateInterval(1000, function () {
 ## Step 10
 
 Inside the code block that checks ``||logic:if||`` the ``vx`` velocity is less than `0`, put in code
-to ``||images:flip horizontally||`` the ``||sprites:image||`` for ``||variables:projectile||``
-
-![Flip image of the bee](/static/tutorials/happy-flower/bee-flip.gif)
+to ``||images:flip horizontally||`` the ``||sprites:image||`` for ``||variables:projectile||``.
 
 ```spy
 let projectile: Sprite = null

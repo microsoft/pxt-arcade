@@ -15,10 +15,6 @@
   "videoUrl": "/static/tutorials/chase-the-pizza.mp4",
   "otherActions": [{
     "url": "/tutorials/spy/chase-the-pizza",
-    "editor": "py",
-    "cardType": "tutorial"
-  }, {
-    "url": "/tutorials/spy/chase-the-pizza",
     "editor": "js",
     "cardType": "tutorial"
   }]
@@ -32,10 +28,6 @@
   "videoUrl": "/static/tutorials/happy-flower.mp4",
   "otherActions": [{
     "url": "/tutorials/spy/happy-flower",
-    "editor": "py",
-    "cardType": "tutorial"
-  }, {
-    "url": "/tutorials/spy/happy-flower",
     "editor": "js",
     "cardType": "tutorial"
   }]
@@ -48,10 +40,6 @@
   "largeImageUrl": "/static/tutorials/lemon-leak.gif",
   "videoUrl": "/static/tutorials/lemon-leak.mp4",
   "otherActions": [{
-    "url": "/tutorials/spy/lemon-leak",
-    "editor": "py",
-    "cardType": "tutorial"
-  }, {
     "url": "/tutorials/spy/lemon-leak",
     "editor": "js",
     "cardType": "tutorial"

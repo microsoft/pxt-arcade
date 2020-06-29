@@ -200,7 +200,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 Congratulations, you have completed your game! Use the Game Simulator to play by moving your ``||sprites:Player||`` around the screen to try and eat as much pizza as possible before the time runs out. What’s your high score?
 
-```blocks
+```spy
 let pizza: Sprite = null
 let mySprite: Sprite = null
 scene.setBackgroundColor(7)
