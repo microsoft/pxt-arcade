@@ -56,9 +56,8 @@ Use the color palette and design tools to draw an image on the canvas. Click **D
 Put in the code to ``||controller:move mySprite||`` with the ``||controller:controller||``.
 
 ```spy
-let mySprite: Sprite = null
 scene.setBackgroundColor(7)
-mySprite = sprites.create(img`
+let mySprite = sprites.create(img`
 . . . . . 5 5 5 5 5 5 . . . . . 
 . . . 5 5 5 5 5 5 5 5 5 5 . . . 
 . . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
@@ -86,10 +85,8 @@ Just like with ``||variables:mySprite||``, ``||create a sprite||`` again and set
 be the **pizza** sprite in our game.
 
 ```spy
-let mySprite: Sprite = null
-let mySprite2: Sprite = null
 scene.setBackgroundColor(7)
-mySprite = sprites.create(img`
+let mySprite = sprites.create(img`
 . . . . . 5 5 5 5 5 5 . . . . . 
 . . . 5 5 5 5 5 5 5 5 5 5 . . . 
 . . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
@@ -188,10 +185,9 @@ Let’s restart our countdown each time. Add the code to ``||info:start countdow
 count be `10`.
 
 ```spy
-let pizza: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
 	info.changeScoreBy(1)
-    pizza.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
+    otherSprite.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
     info.startCountdown(10)
 })
 ```
@@ -201,10 +197,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 Congratulations, you have completed your game! Use the Game Simulator to play by moving your ``||sprites:Player||`` around the screen to try and eat as much pizza as possible before the time runs out. What’s your high score?
 
 ```spy
-let pizza: Sprite = null
-let mySprite: Sprite = null
 scene.setBackgroundColor(7)
-mySprite = sprites.create(img`
+let mySprite = sprites.create(img`
 . . . . . 5 5 5 5 5 5 . . . . . 
 . . . 5 5 5 5 5 5 5 5 5 5 . . . 
 . . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
@@ -223,7 +217,7 @@ mySprite = sprites.create(img`
 . . . . . 5 5 5 5 5 5 . . . . . 
 `, SpriteKind.Player)
 controller.moveSprite(mySprite)
-pizza = sprites.create(img`
+let pizza = sprites.create(img`
 . . . . . . b b b b . . . . . .
 . . . . . . b 4 4 4 b . . . . .
 . . . . . . b b 4 4 4 b . . . .
@@ -244,7 +238,7 @@ b 5 5 5 5 d d 4 4 4 4 . . . . .
 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
 	info.changeScoreBy(1)
-    pizza.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
+    otherSprite.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
     info.startCountdown(10)
 })
 ```

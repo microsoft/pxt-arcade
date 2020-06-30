@@ -66,15 +66,14 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 info.startCountdown(30)
 ```
 
-## Step 3
+## Step 3 @resetDiff
 
 Add a ``||game:on game update every||`` event and set the interval time to `1000` ms, or 1 second. In the event, create a ``||variables:projectile||`` sprite and send the ``||sprites:projectile from side||``. In the image editor for ``||variables:projectile||``, go to
 the gallery and select the strawberry.
 
 ```spy
-let projectile: Sprite = null
 game.onUpdateInterval(1000, function () {
-    projectile = sprites.createProjectileFromSide(img`
+    let projectile = sprites.createProjectileFromSide(img`
         . . . . . . . 6 . . . . . . . .
         . . . . . . 8 6 6 . . . 6 8 . .
         . . . e e e 8 8 6 6 . 6 7 8 . .
@@ -100,9 +99,8 @@ game.onUpdateInterval(1000, function () {
 Now, set both the ``vx`` and ``vy`` values for ``||variables:projectile||`` to ``||math:pick a random||`` number. Set the range for the ``||math:random||`` number from `-50` and `50`.
 
 ```spy
-let projectile: Sprite = null
 game.onUpdateInterval(1000, function () {
-    projectile = sprites.createProjectileFromSide(img`
+    let projectile = sprites.createProjectileFromSide(img`
         . . . . . . . 6 . . . . . . . .
         . . . . . . 8 6 6 . . . 6 8 . .
         . . . e e e 8 8 6 6 . 6 7 8 . .
@@ -123,12 +121,11 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 5
+## Step 5 @resetDiff
 
 Add an ``||sprites:on overlap||`` event to your code. Set the kind which matches the ``otherSprite`` parameter to ``Projectile``. Put code into the event to ``||sprites:start spray effect||`` on ``||variables:sprite||``. Have the effect last for ``200`` ms.
 
 ```spy
-let mySprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     sprite.startEffect(effects.spray, 200)
 })
@@ -139,7 +136,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 Lastly, to score hits by the strawberries on the lemon, in the ``||sprites:on overlap||`` event ``||info:change score by||`` the value of `1`.
 
 ```spy
-let mySprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     sprite.startEffect(effects.spray, 200)
     info.changeScoreBy(1)

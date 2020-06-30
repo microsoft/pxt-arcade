@@ -13,9 +13,8 @@ Flowers make everyone around them happier, especially the bees who get nectar fr
 First, ``||scene:set background color to||`` ``light blue``. Create a new sprite called ``||variables:mySprite||``. Draw a flower as the image for the sprite.
 
 ```spy
-let mySprite: Sprite = null
 scene.setBackgroundColor(9)
-mySprite = sprites.create(img`
+let mySprite = sprites.create(img`
 . . . 4 . . . . . . 2 2 . . . .
 . . . 4 4 4 3 . 3 2 2 . . . . .
 . . . . 4 e 5 5 5 e 2 . . . . .
@@ -40,9 +39,8 @@ mySprite = sprites.create(img`
 Put in an ``||game:on update||`` event for an interval of ``1000`` milliseconds.
 
 ```spy
-let mySprite: Sprite = null
 scene.setBackgroundColor(9)
-mySprite = sprites.create(img`
+let mySprite = sprites.create(img`
 . . . 4 . . . . . . 2 2 . . . .
 . . . 4 4 4 3 . 3 2 2 . . . . .
 . . . . 4 e 5 5 5 e 2 . . . . .
@@ -72,9 +70,8 @@ variable to a ``||sprites:projectile sprite from||`` the ``||variables:mySprite|
 sprite. Set the velocities for both ``vx`` and ``vy`` to `0`.
 
 ```spy
-let mySprite: Sprite = null
 scene.setBackgroundColor(9)
-mySprite = sprites.create(img`
+let mySprite = sprites.create(img`
 . . . 4 . . . . . . 2 2 . . . .
 . . . 4 4 4 3 . 3 2 2 . . . . .
 . . . . 4 e 5 5 5 e 2 . . . . .
@@ -119,9 +116,8 @@ game.onUpdateInterval(1000, function () {
 In the image editor for ``||sprites:projectile||``, make a nice little bee.
 
 ```spy
-let mySprite: Sprite = null
 scene.setBackgroundColor(9)
-mySprite = sprites.create(img`
+let mySprite = sprites.create(img`
 . . . 4 . . . . . . 2 2 . . . .
 . . . 4 4 4 3 . 3 2 2 . . . . .
 . . . . 4 e 5 5 5 e 2 . . . . .
@@ -167,9 +163,8 @@ For ``||variables:projectile||``, use a ``||Math:random||`` number for the ``vx`
 the range to ``||Math:pick a random||`` between `-25` and `25`.
 
 ```spy
-let mySprite: Sprite = null
 scene.setBackgroundColor(9)
-mySprite = sprites.create(img`
+let mySprite = sprites.create(img`
 . . . 4 . . . . . . 2 2 . . . .
 . . . 4 4 4 3 . 3 2 2 . . . . .
 . . . . 4 e 5 5 5 e 2 . . . . .
@@ -214,9 +209,8 @@ game.onUpdateInterval(1000, function () {
 Now, for the ``vy`` velocity for ``||sprites:projectile||``, set it to ``||Math:pick a random||`` number from `-25` to `25`.
 
 ```spy
-let mySprite: Sprite = null
 scene.setBackgroundColor(9)
-mySprite = sprites.create(img`
+let mySprite = sprites.create(img`
 . . . 4 . . . . . . 2 2 . . . .
 . . . 4 4 4 3 . 3 2 2 . . . . .
 . . . . 4 e 5 5 5 e 2 . . . . .
@@ -262,10 +256,8 @@ After the code to create the ``||variables:projectile||``, add code to set ``||s
 to `3000`.
 
 ```spy
-let projectile: Sprite = null
-let mySprite: Sprite = null
 scene.setBackgroundColor(9)
-mySprite = sprites.create(img`
+let mySprite = sprites.create(img`
 . . . 4 . . . . . . 2 2 . . . .
 . . . 4 4 4 3 . 3 2 2 . . . . .
 . . . . 4 e 5 5 5 e 2 . . . . .
@@ -284,7 +276,7 @@ mySprite = sprites.create(img`
 . . . . . . . 7 . . . . . . . . 
 `, SpriteKind.Player)
 game.onUpdateInterval(1000, function () {
-    projectile = sprites.createProjectileFromSprite(img`
+    let projectile = sprites.createProjectileFromSprite(img`
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
@@ -317,10 +309,8 @@ Put in a conditional that checks ``||logic:if||`` the ``vx`` value for ``||varia
 less than `0`.
 
 ```spy
-let projectile: Sprite = null
-let mySprite: Sprite = null
 scene.setBackgroundColor(9)
-mySprite = sprites.create(img`
+let mySprite = sprites.create(img`
 . . . 4 . . . . . . 2 2 . . . .
 . . . 4 4 4 3 . 3 2 2 . . . . .
 . . . . 4 e 5 5 5 e 2 . . . . .
@@ -339,7 +329,7 @@ mySprite = sprites.create(img`
 . . . . . . . 7 . . . . . . . .
 `, SpriteKind.Player)
 game.onUpdateInterval(1000, function () {
-    projectile = sprites.createProjectileFromSprite(img`
+    let projectile = sprites.createProjectileFromSprite(img`
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
@@ -369,10 +359,8 @@ Inside the code block that checks ``||logic:if||`` the ``vx`` velocity is less t
 to ``||images:flip horizontally||`` the ``||sprites:image||`` for ``||variables:projectile||``.
 
 ```spy
-let projectile: Sprite = null
-let mySprite: Sprite = null
 scene.setBackgroundColor(9)
-mySprite = sprites.create(img`
+let mySprite = sprites.create(img`
 . . . 4 . . . . . . 2 2 . . . .
 . . . 4 4 4 3 . 3 2 2 . . . . .
 . . . . 4 e 5 5 5 e 2 . . . . .
@@ -391,7 +379,7 @@ mySprite = sprites.create(img`
 . . . . . . . 7 . . . . . . . .
 `, SpriteKind.Player)
 game.onUpdateInterval(1000, function () {
-    projectile = sprites.createProjectileFromSprite(img`
+    let projectile = sprites.createProjectileFromSprite(img`
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
