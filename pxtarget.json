@@ -185,7 +185,7 @@
                 "codalTarget": {
                     "name": "codal-big-brainpad",
                     "url": "https://github.com/lancaster-university/codal-big-brainpad",
-                    "branch": "v1.1.9",
+                    "branch": "v1.2.0",
                     "type": "git"
                 },
                 "codalBinary": "STM32",
