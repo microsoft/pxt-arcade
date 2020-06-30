@@ -105,7 +105,7 @@ let mySprite = sprites.create(img`
 . . . . . 5 5 5 5 5 5 . . . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite)
-pizza = sprites.create(img`
+let pizza = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
