@@ -33,16 +33,106 @@ interface Game {
     id: string;
     title: string;
     author?: string;
+    url?: string; // for overriding share with eg github.io
 }
 
 const featured: Game[] = [
-    /* fill in with real games once we have submissions
     {
-        id: "73451-52337-17892-07991",
-        title: "test game",
-        author: "test author"
+        id: "87634-72990-40818-00211",
+        title: "HUERTO",
+        author: "Dylan"
+    },
+    {
+        id: "09399-28551-17931-40709",
+        title: "AtomiPlants",
+        author: "Carlos"
+    },
+    {
+        id: "82223-71836-59602-57910",
+        title: "El Huerto caótico",
+        author: "Mario"
+    },
+    {
+        id: "17901-55867-81776-14236",
+        title: "Snail Hike",
+        author: "SPerkins25"
+    },
+    {
+        id: "04266-66499-51587-39007",
+        title: "Garden Bee",
+        author: "Erika"
+    },
+    {
+        id: "15478-16129-86844-94973",
+        title: "Harvest Valley",
+        author: "slimehunter"
+    },
+    {
+        id: "66435-55863-62998-47003",
+        title: "Gazpacho!!",
+        author: "Maria"
+    },
+    {
+        id: "89350-04190-01769-68724",
+        title: "Dani's Garden",
+        author: "Dani"
+    },
+    {
+        id: "94843-50198-80540-98444",
+        title: "Defiende la Granja",
+        author: "Miguel"
+    },
+    {
+        id: "16880-98642-94368-99631",
+        title: "La florista",
+        author: "Adrian"
+    },
+    {
+        id: "07053-84531-66495-40821",
+        title: "La Abeja Polinizadora",
+        author: "Mario"
+    },
+    {
+        id: "42885-92487-13042-52240",
+        title: "potato",
+        author: "Reyhan"
+    },
+    {
+        id: "63604-03269-61609-75308",
+        title: "Butterfly",
+        author: "Dancing Bottle"
+    },
+    {
+        id: "53409-51535-24300-75141",
+        title: "Slugs in a World",
+        author: "Jacob"
+    },
+    {
+        id: "33100-26828-51358-42312",
+        title: "Garden Gnome",
+        author: "LCProCODER"
+    },
+    {
+        id: "74308-47540-31847-67595",
+        title: "Tomb Seeker",
+        author: "The 2 Coderz "
+    },
+    {
+        id: "27880-64900-83420-03259",
+        title: "PinBall Garden",
+        author: "Rishi"
+    },
+    {
+        id: "17775-69042-79032-31406",
+        title: "Garden Puzzle",
+        author: "Rishi"
+    },
+    {
+        id: "56840-41664-03413-13147",
+        title: "Garden Crop Duster",
+        author: "jacob",
+        url: "https://jacobcarpenter.github.io/garden-crop-duster/"
     }
-    */
 ];
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -175,23 +265,25 @@ function makeGallery() {
         description.innerText = "Check back later to play some submitted games!"
     }
 
-    let submittedGames = featured.slice();
-    let selected = [];
-    for (let i = 0; i < 3; i++) {
+    // let submittedGames = featured.slice();
+    let selected = randomize(featured); // show all the games
+    /*for (let i = 0; i < 3; i++) {
         if (submittedGames.length) {
             let idx = Math.floor(Math.random() * submittedGames.length);
             selected.push(submittedGames[idx]);
             submittedGames.splice(idx, 1);
         }
-    }
+    }*/
 
     const parent = document.getElementById("gallery");
-    for (const game of selected) {
+    let row = document.createElement("div");
+    for (let i = 0; i < selected.length; i++) {
+        const game = selected[i];
         let card = document.createElement("div");
         card.className = "game";
 
         let link = document.createElement("a");
-        link.href = `https://arcade.makecode.com/${game.id}`;
+        link.href = game.url || `https://arcade.makecode.com/${game.id}`;
         let textLink = link.cloneNode() as HTMLElement;
         let img = document.createElement("img");
         img.src = `https://pxt.azureedge.net/api/${game.id}/thumb`;
@@ -207,8 +299,15 @@ function makeGallery() {
             label.appendChild(author);
         }
         card.appendChild(label);
+        row.appendChild(card);
 
-        parent.appendChild(card);
+        if (i % 3 == 2) {
+            parent.appendChild(row);
+            row = document.createElement("div")
+        }
+    }
+    if (selected.length % 3 != 0) {
+        parent.appendChild(row);
     }
 }
 
@@ -254,7 +353,7 @@ function makeSchedule() {
         text.appendChild(description)
         details.appendChild(text)
         row.appendChild(details)
-    
+
         parent.appendChild(row);
     }
 }
@@ -265,4 +364,13 @@ function formatTime(time: number): string {
 
 function formatDate(date: Date): string {
     return `${MONTHS[date.getMonth()]} ${date.getDate()}`
+}
+
+function randomize(arr) {
+    const randomized = arr.slice();
+    for (let i = randomized.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [randomized[i], randomized[j]] = [randomized[j], randomized[i]];
+    }
+    return randomized;
 }
