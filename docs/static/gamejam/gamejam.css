@@ -198,6 +198,11 @@ h1 {
 
 #gallery {
     display: flex;
+    flex-direction: column;
+}
+
+#gallery > div {
+    display: flex;
     justify-content: space-around;
 }
 

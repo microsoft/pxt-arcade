@@ -19,13 +19,76 @@ var sessions = [
     }
 ];
 var featured = [
-/* fill in with real games once we have submissions
-{
-    id: "73451-52337-17892-07991",
-    title: "test game",
-    author: "test author"
-}
-*/
+    {
+        id: "87634-72990-40818-00211",
+        title: "HUERTO",
+        author: "Dylan"
+    },
+    {
+        id: "09399-28551-17931-40709",
+        title: "AtomiPlants",
+        author: "Carlos"
+    },
+    {
+        id: "82223-71836-59602-57910",
+        title: "El Huerto caótico",
+        author: "Mario"
+    },
+    {
+        id: "17901-55867-81776-14236",
+        title: "Snail Hike",
+        author: "SPerkins25"
+    },
+    {
+        id: "04266-66499-51587-39007",
+        title: "Garden Bee",
+        author: "Erika"
+    },
+    {
+        id: "15478-16129-86844-94973",
+        title: "Harvest Valley",
+        author: "slimehunter"
+    },
+    {
+        id: "66435-55863-62998-47003",
+        title: "Gazpacho!!",
+        author: "Maria"
+    },
+    {
+        id: "89350-04190-01769-68724",
+        title: "Dani's Garden",
+        author: "Dani"
+    },
+    {
+        id: "94843-50198-80540-98444",
+        title: "Defiende la Granja",
+        author: "Miguel"
+    },
+    {
+        id: "16880-98642-94368-99631",
+        title: "La florista",
+        author: "Adrian"
+    },
+    {
+        id: "07053-84531-66495-40821",
+        title: "La Abeja Polinizadora",
+        author: "Mario"
+    },
+    {
+        id: "42885-92487-13042-52240",
+        title: "potato",
+        author: "Reyhan"
+    },
+    {
+        id: "63604-03269-61609-75308",
+        title: "Butterfly",
+        author: "Dancing Bottle"
+    } /**,
+    {
+        id: "",
+        title: "",
+        author: ""
+    } */
 ];
 var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 var START_DATE = new Date("2020-06-10 00:00:00 GMT-0700").getTime(); // midnight PST June 10
@@ -139,18 +202,19 @@ function makeGallery() {
         var description = document.querySelector(".gallery .description");
         description.innerText = "Check back later to play some submitted games!";
     }
-    var submittedGames = featured.slice();
-    var selected = [];
-    for (var i = 0; i < 3; i++) {
+    // let submittedGames = featured.slice();
+    var selected = randomize(featured); // show all the games
+    /*for (let i = 0; i < 3; i++) {
         if (submittedGames.length) {
-            var idx = Math.floor(Math.random() * submittedGames.length);
+            let idx = Math.floor(Math.random() * submittedGames.length);
             selected.push(submittedGames[idx]);
             submittedGames.splice(idx, 1);
         }
-    }
+    }*/
     var parent = document.getElementById("gallery");
-    for (var _i = 0, selected_1 = selected; _i < selected_1.length; _i++) {
-        var game = selected_1[_i];
+    var row = document.createElement("div");
+    for (var i = 0; i < selected.length; i++) {
+        var game = selected[i];
         var card = document.createElement("div");
         card.className = "game";
         var link = document.createElement("a");
@@ -169,7 +233,14 @@ function makeGallery() {
             label.appendChild(author);
         }
         card.appendChild(label);
-        parent.appendChild(card);
+        row.appendChild(card);
+        if (i % 3 == 2) {
+            parent.appendChild(row);
+            row = document.createElement("div");
+        }
+    }
+    if (selected.length % 3 != 0) {
+        parent.appendChild(row);
     }
 }
 function makeSchedule() {
@@ -218,4 +289,13 @@ function formatTime(time) {
 }
 function formatDate(date) {
     return MONTHS[date.getMonth()] + " " + date.getDate();
+}
+function randomize(arr) {
+    var _a;
+    var randomized = arr.slice();
+    for (var i = randomized.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        _a = [randomized[j], randomized[i]], randomized[i] = _a[0], randomized[j] = _a[1];
+    }
+    return randomized;
 }
