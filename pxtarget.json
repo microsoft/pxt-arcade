@@ -447,7 +447,8 @@
             "experimentalHw",
             "recipes",
             "tutorialBlocksDiff",
-            "blocksErrorList"
+            "blocksErrorList",
+            "openInStreamer"
         ],
         "blocksCollapsing": true,
         "errorList": true,
