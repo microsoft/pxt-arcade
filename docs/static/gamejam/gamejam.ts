@@ -33,6 +33,7 @@ interface Game {
     id: string;
     title: string;
     author?: string;
+    url?: string; // for overriding share with eg github.io
 }
 
 const featured: Game[] = [
@@ -100,12 +101,38 @@ const featured: Game[] = [
         id: "63604-03269-61609-75308",
         title: "Butterfly",
         author: "Dancing Bottle"
-    }/**,
+    },
     {
-        id: "",
-        title: "",
-        author: ""
-    } */
+        id: "53409-51535-24300-75141",
+        title: "Slugs in a World",
+        author: "Jacob"
+    },
+    {
+        id: "33100-26828-51358-42312",
+        title: "Garden Gnome",
+        author: "LCProCODER"
+    },
+    {
+        id: "74308-47540-31847-67595",
+        title: "Tomb Seeker",
+        author: "The 2 Coderz "
+    },
+    {
+        id: "27880-64900-83420-03259",
+        title: "PinBall Garden",
+        author: "Rishi"
+    },
+    {
+        id: "17775-69042-79032-31406",
+        title: "Garden Puzzle",
+        author: "Rishi"
+    },
+    {
+        id: "56840-41664-03413-13147",
+        title: "Garden Crop Duster",
+        author: "jacob",
+        url: "https://jacobcarpenter.github.io/garden-crop-duster/"
+    }
 ];
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -256,7 +283,7 @@ function makeGallery() {
         card.className = "game";
 
         let link = document.createElement("a");
-        link.href = `https://arcade.makecode.com/${game.id}`;
+        link.href = game.url || `https://arcade.makecode.com/${game.id}`;
         let textLink = link.cloneNode() as HTMLElement;
         let img = document.createElement("img");
         img.src = `https://pxt.azureedge.net/api/${game.id}/thumb`;
