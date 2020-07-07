@@ -441,7 +441,6 @@
         "debugger": true,
         "importExtensionFiles": true,
         "experiments": [
-            "python",
             "debugExtensionCode",
             "snippetBuilder",
             "experimentalHw",
@@ -464,7 +463,8 @@
         "githubCompiledJs": true,
         "chooseLanguageRestrictionOnNewProject": true,
         "openProjectNewTab": true,
-        "hasReferenceDocs": true
+        "hasReferenceDocs": true,
+        "python": true
     },
     "unsupportedBrowsers": [
         {
