@@ -178,6 +178,39 @@ namespace pxt.editor {
                 block.setAttribute("type", "SpriteKindLegacy")
             });
         }
+
+        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "0.18.8") < 0) {
+            /**
+             * Add draggable param for tile that was hit as child of sprite hit wall block
+            <value name="HANDLER_DRAG_PARAM_location">
+                <shadow type="argument_reporter_custom">
+                    <mutation typename="tiles.Location"/>
+                    <field name="VALUE">location</field>
+                </shadow>
+            </value>
+             */
+            U.toArray(dom.querySelectorAll("block[type=spriteshitwall]")).forEach(block => {
+                const doc = block.ownerDocument;
+                const tileHitParam = doc.createElement("value");
+                tileHitParam.setAttribute("name", "HANDLER_DRAG_PARAM_location");
+
+                const shadow = doc.createElement("shadow");
+                shadow.setAttribute("type", "argument_reporter_custom")
+
+                const mut = doc.createElement("mutation");
+                mut.setAttribute("typename", "tiles.Location");
+
+                const field = doc.createElement("field");
+                field.setAttribute("name", "VALUE");
+                field.textContent = "location";
+
+                shadow.appendChild(mut);
+                shadow.appendChild(field);
+
+                tileHitParam.appendChild(shadow);
+                block.appendChild(tileHitParam);
+            });
+        }
     }
 
     function changeVariableToSpriteReporter(varBlockOrShadow: Element, reporterName: string) {
