@@ -1,6 +1,6 @@
 {
     "name": "pxt-arcade",
-    "version": "0.18.7",
+    "version": "0.18.8",
     "description": "Small arcade editor for MakeCode",
     "keywords": [
         "JavaScript",
