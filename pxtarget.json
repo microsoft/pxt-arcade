@@ -434,7 +434,8 @@
             "editor.background": "#FEF3E0"
         },
         "monacoFieldEditors": [
-            "image-editor"
+            "image-editor",
+            "tilemap-editor"
         ],
         "scriptManager": true,
         "saveInMenu": false,
