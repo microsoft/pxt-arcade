@@ -349,6 +349,6 @@ info.startCountdown(20)
 
 ## Finish current tutorial or add artifacts @fullscreen
 
-Click [**this link**](#recipe:/recipies/wonder-woman-1984/artifact) to add items for Wonder Woman to collect!
+Click [**this link**](#recipe:/recipes/wonder-woman-1984/artifact) to add items for Wonder Woman to collect!
 
 ![Add Artifacts](/static/recipes/wonder-woman-1984/artifact-preview.png)

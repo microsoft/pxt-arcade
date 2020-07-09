@@ -64,6 +64,6 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.null, function (sprite, location)
 })
 ```
 
-## Step 6 @unplugged
+## Step 6 : Add more enemies
 
 Repeat these steps to create more enemies to add to your maze or start playing!

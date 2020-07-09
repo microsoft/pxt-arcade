@@ -3,7 +3,7 @@
 ## Intro @unplugged
 
 Now let's add some artifacts that Wonder Woman can collect for points!
-![Artifacts!](/recipes/wonder-woman-1984/artifact-preview.png)
+![Artifacts!](/static/recipes/wonder-woman-1984/artifact-preview.png)
 
 ## Step 1 : Make first item
 
@@ -21,7 +21,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.null, function (sprite, location)
 ## Step 2 : Place your artifacts
 
 Now, go back to the tilemap. Go to **My Tiles** and select your artifact. Place this artifact tile on your maze in all the places you want it to appear.
-![Artifacts!](/recipes/wonder-woman-1984/artifact-preview.png)
+![Artifacts!](/static/recipes/wonder-woman-1984/artifact-preview.png)
 
 ## Step 3 : Earn points when items are collected
 
@@ -66,5 +66,5 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.null, function (sprite, location)
 ## Step 6 @fullscreen 
 Repeat these steps to create more artifacts for Wonder Woman to collect   
 **OR** 
-Click [**this link**](#recipe:recipes/wonder-woman-1984/enemies) to add enemies to your maze!  
+Click [**this link**](#recipe:/recipes/wonder-woman-1984/enemies) to add enemies to your maze!  
 ![Enemies!](/static/recipes/wonder-woman-1984/enemies-preview.png)
