@@ -85,6 +85,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 From ``||sprites:Sprites||`` drag ``||variables:projectile from mySprite||`` into the ``||controller:on A button pressed||``. Set the ``||sprites:vy||`` to `0`, then click on the grey square to draw a projectile. Use the spacebar on your keyboard or click the **A** button in the simulator to try it out!
 
 ```blocks
+let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     // @highlight
     let projectile = sprites.createProjectileFromSprite(img`
