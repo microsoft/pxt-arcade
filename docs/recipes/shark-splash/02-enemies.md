@@ -4,7 +4,7 @@
 
 Create enemies and spawn them at random locations!
 
-![Enemies](/static/recipes/02-enemies.gif)
+![Enemies](/static/recipes/shark-splash/02-enemies.gif)
 
 ## Step 1
 
@@ -217,5 +217,5 @@ Now that you have enemies, let's add code to destroy the enemies with your proje
 
 |      |      |      |
 |:----:|:----:|:----:|
-|  [![Projectiles](/static/recipes/03-projectiles.gif)](#recipe:/recipes/shark-splash/03-projectiles) | [![Moving enemies](/static/recipes/02-A-enemies.gif)](#recipe:/recipes/shark-splash/02-A-enemies) | [![Multiple enemies](/static/recipes/02-B-enemies.gif)](#recipe:/recipes/shark-splash/02-B-enemies) |
+|  [![Projectiles](/static/recipes/shark-splash/03-projectiles.gif)](#recipe:/recipes/shark-splash/03-projectiles) | [![Moving enemies](/static/recipes/shark-splash/02-A-enemies.gif)](#recipe:/recipes/shark-splash/02-A-enemies) | [![Multiple enemies](/static/recipes/shark-splash/02-B-enemies.gif)](#recipe:/recipes/shark-splash/02-B-enemies) |
 | [**Projectile effects**](#recipe:/recipes/shark-splash/03-projectiles) | [**Moving enemies**](#recipe:/recipes/shark-splash/02-A-enemies) | [**Multiple enemies**](#recipe:/recipes/shark-splash/02-B-enemies) |

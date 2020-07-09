@@ -4,7 +4,7 @@
 
 Now that you have enemies and projectiles, let's give your projectiles some power!
 
-![Projectiles](/static/recipes/03-projectiles.gif)
+![Projectiles](/static/recipes/shark-splash/03-projectiles.gif)
 
 ## Detect sprite overlaps
 
@@ -58,5 +58,5 @@ Now try making your enemies move or spawning multiple kinds of enemies!
 
 |      |      |      |
 |:----:|:----:|:----:|
-|  [![Moving enemies](/static/recipes/02-A-enemies.gif)](#recipe:/recipes/shark-splash/02-A-enemies)  | [![Multiple enemies](/static/recipes/02-B-enemies.gif)](#recipe:/recipes/shark-splash/02-B-enemies) | [![Background](/static/recipes/04-background.png)](#recipe:/recipes/04-background) |
+|  [![Moving enemies](/static/recipes/shark-spalsh/02-A-enemies.gif)](#recipe:/recipes/shark-splash/02-A-enemies)  | [![Multiple enemies](/static/recipes/shark-splash/02-B-enemies.gif)](#recipe:/recipes/shark-splash/02-B-enemies) | [![Background](/static/recipes/shark-splash/04-background.png)](#recipe:/recipes/04-background) |
 | [**Moving enemies**](#recipe:/recipes/shark-splash/02-A-enemies)| [**Multiple enemies**](#recipe:/recipes/shark-splash/02-B-enemies) | [**Design a background**](#recipe:/recipes/shark-splash/04-background) |

@@ -4,7 +4,7 @@
 
 Use the ``||sprites:on created||`` event to make the enemies in your game move!
 
-![Moving Enemies](/static/recipes/02-A-enemies.gif)
+![Moving Enemies](/static/recipes/shark-splash/02-A-enemies.gif)
 
 ## Step 1
 
@@ -73,5 +73,5 @@ Now let's add code to destroy the enemies with your projectiles! Or, if you're f
 
 |      |      |      |
 |:----:|:----:|:----:|
-|  [![Projectiles](/static/recipes/03-projectiles.gif)](#recipe:/recipes/shark-splash/03-projectiles) | [![Multiple enemies](/static/recipes/02-B-enemies.gif)](#recipe:/recipes/shark-splash/02-B-enemies) | [![Background](/static/recipes/04-background.png)](#recipe:/recipes/04-background) |
+|  [![Projectiles](/static/recipes/shark-splash/03-projectiles.gif)](#recipe:/recipes/shark-splash/03-projectiles) | [![Multiple enemies](/static/recipes/shark-splash/02-B-enemies.gif)](#recipe:/recipes/shark-splash/02-B-enemies) | [![Background](/static/recipes/shark-splash/04-background.png)](#recipe:/recipes/04-background) |
 | [**Projectile effects**](#recipe:/recipes/shark-splash/03-projectiles) | [**Multiple enemies**](#recipe:/recipes/shark-splash/02-B-enemies) | [**Design a background**](#recipe:/recipes/shark-splash/04-background) |

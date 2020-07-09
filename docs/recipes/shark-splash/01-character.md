@@ -4,7 +4,7 @@
 
 Let's make a game! First, we'll create a main character that shoots some projectiles. Maybe that's a duck that shoots bubbles, or a monkey throwing bananas, or a cat that spits hairballs--it's up to you!
 
-![Duck bubbles](/static/recipes/01-character.gif)
+![Duck bubbles](/static/recipes/shark-splash/01-character.gif)
 
 ## Set the scene
 
@@ -110,6 +110,6 @@ Now that you have a hero, let's customize your game. Maybe you want to add some 
 
 | |      | |      | |
 |--|:----:|-- |:----:|--|
-| &emsp;&emsp;&emsp;&emsp; | [![Enemies](/static/recipes/02-enemies.gif)](#recipe:/recipes/shark-splash/02-enemies) | &emsp;&emsp; | [![Background](/static/recipes/04-background.png)](#recipe:/recipes/shark-splash/04-background) | &emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp; | [![Enemies](/static/recipes/shark-splash/02-enemies.gif)](#recipe:/recipes/shark-splash/02-enemies) | &emsp;&emsp; | [![Background](/static/recipes/shark-splash/04-background.png)](#recipe:/recipes/shark-splash/04-background) | &emsp;&emsp;&emsp;&emsp; |
 | | [**Create enemies**](#recipe:/recipes/shark-splash/02-enemies) | | [**Design a background**](#recipe:/recipes/shark-splash/04-background) | |
 | | An enemy appears! Fight! | | Draw a world for your hero to explore | |

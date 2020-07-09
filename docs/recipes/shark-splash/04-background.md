@@ -4,7 +4,7 @@
 
 Let's build a world for your hero to walk around in!
 
-![Background](/static/recipes/04-background.png)
+![Background](/static/recipes/shark-splash/04-background.png)
 
 ## Add a background
 
@@ -822,5 +822,5 @@ Next, let's create some enemies for our hero to fight!
 
 | |
 |:--:|
-| [![Enemies](/static/recipes/02-enemies.gif)](#recipe:/recipes/shark-splash/02-enemies) |
+| [![Enemies](/static/recipes/shark-spalsh/02-enemies.gif)](#recipe:/recipes/shark-splash/02-enemies) |
 | [**Create enemies**](#recipe:/recipes/shark-splash/02-enemies) |

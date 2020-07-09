@@ -5,7 +5,7 @@
 Use the ``||math:percent chance||`` block to assign a random image
 to your enemies.
 
-![Multiple Enemies](/static/recipes/02-B-enemies.gif)
+![Multiple Enemies](/static/recipes/shark-splash/02-B-enemies.gif)
 
 ## Step 1
 
@@ -143,5 +143,5 @@ Now let's add code to destroy the enemies with your projectiles! Or, if you're f
 
 |      |      |      |
 |:----:|:----:|:----:|
-|  [![Projectiles](/static/recipes/03-projectiles.gif)](#recipe:/recipes/shark-splash/03-projectiles) | [![Add lives](/static/recipes/02-C-enemies.gif)](#recipe:/recipes/shark-splash/02-C-enemies) | [![Background](/static/recipes/04-background.png)](#recipe:/recipes/04-background) |
+|  [![Projectiles](/static/recipes/shark-splash/03-projectiles.gif)](#recipe:/recipes/shark-splash/03-projectiles) | [![Add lives](/static/recipes/shark-splash/02-C-enemies.gif)](#recipe:/recipes/shark-splash/02-C-enemies) | [![Background](/static/recipes/shark-splash/04-background.png)](#recipe:/recipes/04-background) |
 | [**Projectile effects**](#recipe:/recipes/shark-splash/03-projectiles) | [**Add lives**](#recipe:/recipes/shark-splash/02-C-enemies) | [**Design a background**](#recipe:/recipes/shark-splash/04-background) |
