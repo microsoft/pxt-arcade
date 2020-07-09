@@ -822,5 +822,5 @@ Next, let's create some enemies for our hero to fight!
 
 | |
 |:--:|
-| [![Enemies](/static/recipes/shark-spalsh/02-enemies.gif)](#recipe:/recipes/shark-splash/02-enemies) |
+| [![Enemies](/static/recipes/shark-splash/02-enemies.gif)](#recipe:/recipes/shark-splash/02-enemies) |
 | [**Create enemies**](#recipe:/recipes/shark-splash/02-enemies) |
