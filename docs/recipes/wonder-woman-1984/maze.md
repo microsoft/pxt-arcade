@@ -2,7 +2,7 @@
 
 ## Introduction @unplugged
 
-![Game animation!](https://raw.githubusercontent.com/ksavage-work/wonder-woman-1984/master/wwSplash3.gif)
+![Game animation!](/static/recipes/wonder-woman-1984/ww-splash3.gif)
 Hey, let's make a game where Wonder Woman must find the way out of a tricky maze! In that maze, she can collect
 artifacts to gain points, but also needs to avoid her enemies that will steal points. 
 
@@ -33,7 +33,7 @@ let mySprite = sprites.create(img`
 `, SpriteKind.Player)
 ```
 
-![WW](https://raw.githubusercontent.com/ksavage-work/wonder-woman-1984/master/wonderWoman3.png)
+![WW](/static/recipes/wonder-woman-1984/wonder-woman3.png)
 
 ## Step 2 : Let's make Wonder Woman move!
 
@@ -144,21 +144,21 @@ tiles.setTilemap(tiles.createTilemap(
 
 This is how you will draw your maze in the next step. First fill in the canvas with a tile, then use the Erasor tool to draw the path for your maze.
 
-![Draw Maze gif!](https://raw.githubusercontent.com/ksavage-work/wonder-woman-1984/master/fillMaze.gif)
+![Draw Maze gif!](/static/recipes/wonder-woman-1984/fill-maze.gif)
 
 ## Step 5 : Draw your maze
 
 In the Set Tilemap block, click on the grey box to choose a color or tile for the walls of your maze, then use the bucket Fill tool to fill in the entire canvas with the tile you selected.
 Next, use the Erasor tool to draw the path for the maze. 
 
-![Draw Maze!](https://raw.githubusercontent.com/ksavage-work/wonder-woman-1984/master/drawMazeBackup.png)
+![Draw Maze!](/static/recipes/wonder-woman-1984/draw-maze-backup.png)
 
 
 ## Now draw the walls of your maze @unplugged
 
 Now, outline the walls of the maze with a Wall creation tool.
 
-![Draw Walls gif!](https://raw.githubusercontent.com/ksavage-work/wonder-woman-1984/master/fillWalls.gif)
+![Draw Walls gif!](/static/recipes/wonder-woman-1984/fill-walls.gif)
 
 ## Step 6 : Create the maze walls
 
@@ -166,7 +166,7 @@ Now that we know what the maze looks like, we need to show the program where the
 In the Tilemap Editor, click on the red Wall icon, then draw the walls around your Maze path. 
 Using this tool highlight all the walls that Wonder Woman should **NOT** be able to walk through.
 
-![Draw Walls](https://raw.githubusercontent.com/ksavage-work/wonder-woman-1984/master/drawWallsBackup.png)
+![Draw Walls](/static/recipes/wonder-woman-1984/draw-walls-backup.png)
 
 ## Step 7 : Create a Starting Position for Wonder Woman
 
@@ -277,7 +277,7 @@ scene.cameraFollowSprite(mySprite)
 
 Go back to your tilemap and choose a new tile from the Gallery to be the end location of the maze. Place it where you want the end of the maze to be.
 
-![End Position](https://raw.githubusercontent.com/ksavage-work/wonder-woman-1984/master/endPosition.png)
+![End Position](/static/recipes/wonder-woman-1984/end-position.png)
 
 ## Step 10 : Allow Wonder Woman to win the game
 
@@ -349,6 +349,6 @@ info.startCountdown(20)
 
 ## Finish current tutorial or add artifacts @fullscreen
 
-Click [**this link**](#recipe:https://github.com/ksavage-work/wonder-woman-1984/artifactTutorial) to add items for Wonder Woman to collect!
+Click [**this link**](#recipe:/recipies/wonder-woman-1984/artifact) to add items for Wonder Woman to collect!
 
-![Add Artifacts](https://raw.githubusercontent.com/ksavage-work/wonder-woman-1984/master/artifactPreview.png)
+![Add Artifacts](/static/recipes/wonder-woman-1984/artifact-preview.png)
