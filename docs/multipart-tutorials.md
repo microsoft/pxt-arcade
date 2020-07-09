@@ -1,4 +1,4 @@
-# Multi-Part Tutorials
+# Multipart Tutorials
 
 ## Game Design Concepts
 
