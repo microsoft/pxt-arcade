@@ -1,6 +1,6 @@
 ## Garden Jam Winners!
 
-We're thrilled to announce the winners of the MakeCode Arcade Garden Jam! Before we get to the good stuff, we also want to thank everyone who participated--it was wonderful to see the creative and unique interpretations of the "garden" theme, and we hope you're proud of your work. We've all enjoyed playing your games so much! Check out the full gallery of entries at the bottom of this page.
+We're thrilled to announce the winners of the MakeCode Arcade Garden Jam! Before we get to the good stuff, we also want to thank everyone who participated — it was wonderful to see the creative and unique interpretations of the "garden" theme, and we hope you're proud of your work. We've all enjoyed playing your games so much! Check out the full gallery of entries at the bottom of this page.
 
 ## First Place: Potato
 Click the large potato to earn points. Spend your points to develop your garden. Like a true garden, this game is a test of time and patience, and bees help a lot!
@@ -16,9 +16,9 @@ Creativity | Adherence to Theme | Correctness of Code
 
 *The judges say:*
 
-&nbsp;&nbsp;&nbsp;&nbsp;"Potato is a game that requires patience and rewards it richly with a bountiful harvest--and bees! The code takes advantage of the hardware to save user progress, though if you import it into the MakeCode Arcade Editor you will also be able to save your game."
+&nbsp;&nbsp;&nbsp;&nbsp;"Potato is a game that requires patience and rewards it richly with a bountiful harvest — and bees! The code takes advantage of the hardware to save user progress, though if you import it into the MakeCode Arcade Editor you will also be able to save your game."
 
-&nbsp;&nbsp;&nbsp;&nbsp;"Filling out my garden was satisfying and I love that it persists on hardware. The art is clean and it's fun just to watch your vegetables animate. Keep playing until you unlock the bees--they're worth the wait!"
+&nbsp;&nbsp;&nbsp;&nbsp;"Filling out my garden was satisfying and I love that it persists on hardware. The art is clean and it's fun just to watch your vegetables animate. Keep playing until you unlock the bees, they're worth the wait!"
 
 &nbsp;&nbsp;&nbsp;&nbsp;"This incremental game starts out slow, but gains a surprising amount of depth! The gameplay is straightforward, but there are nuances in which vegetables you plant, and the ratio of vegetables to bees (which improve a vegetable's production). There's a small bug in bee navigation which causes them to gather at the side of the screen, but the thoughtful save mechanics allow you to reset the game without losing progress!"
 
