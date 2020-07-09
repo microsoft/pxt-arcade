@@ -176,8 +176,11 @@ h1 {
 
 /**** MARKDOWN/RULES ****/
 
-#rules table thead {
+.content:not(.winners) #rules table thead {
     display: none;
+}
+.content:not(.winners) #rules table img {
+    padding: 1rem;
 }
 
 #rules table tr {
@@ -191,7 +194,16 @@ h1 {
 
 #rules table img {
     width: 100%;
-    padding: 1rem;
+}
+
+
+.winners #rules table {
+    margin: auto;
+    text-align: center;
+}
+
+.winners #rules th {
+    flex: 1;
 }
 
 /**** GALLERY ****/
@@ -210,6 +222,14 @@ h1 {
     text-align: center;
     margin: 1rem;
 }
+
+/***** WINNERS ****/
+
+.winners #events,
+.winners .submit {
+    display: none;
+}
+
 
 /**** FOOTER ****/
 
