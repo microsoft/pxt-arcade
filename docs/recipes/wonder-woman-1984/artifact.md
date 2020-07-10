@@ -3,6 +3,7 @@
 ## Intro @unplugged
 
 Now let's add some artifacts that Wonder Woman can collect for points!
+
 ![Artifacts!](/static/recipes/wonder-woman-1984/artifact-preview.png)
 
 ## Step 1 : Make first item
@@ -29,7 +30,7 @@ First, we need to create a score tracker for the game.
 Get the ``||info:set score to||`` block at put it in the ``||loops:on start||`` loop. 
 Now when you start the game, your score will be set to `0`.
 
-Next, get the ``||info:change score by||`` block and put it in the ``||scene:on sprite of kind overlaps||`` block.
+Next, get the ``||info:change score by||`` block and put it in the ``||scene:on sprite of kind overlaps||`` artifact block you added in the previous step.
 This means that when Wonder Woman overlaps with the item, 1 point will be added to the score.
 
 ```blocks
@@ -41,7 +42,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.null, function (sprite, location)
 
 ## Step 4 : Add a sound when items are collected
 
-In ``||music:Music||`` , get the ``||music:play sound||`` block. In the drop-down, choose the sound you want to hear when Wonder Woman picks up the item.
+From the ``||music:Music||`` Toolbox drawer, drag the ``||music:play sound||`` block into the ``||scene:on sprite of kind overlaps||`` artifact block. Then in the ``||music:play sound||`` block, click on the drop-down menu to select the sound you want to hear when Wonder Woman picks up the artifact.
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, myTiles.null, function (sprite, location) {
@@ -52,9 +53,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.null, function (sprite, location)
  
 ## Step 5 : Make the item disappear when collected
 
-From the "tile" section of ``||scene:Scene||``, get a ``||scene:set at tilemap||`` block. 
-Click on the grey box and choose the tile that matches the background of your maze.
-Replace the ``||variables:tilemap col row||`` with ``||variables:location||`` by dragging it from the ``||scene:on sprite of kind overlaps||`` block that's already in your workspace.
+Now we need to delete the artifact when Wonder Woman picks it up. From the ``||scene:Scene||`` Toolbox drawer, drag a ``||scene:set at tilemap||`` block and drop it into the ``||scene:on sprite of kind overlaps||`` artifact block after the ``||music:play sound||`` block. Then from the ``||scene:on sprite of kind overlaps||`` block, drag the ``||variables:location||`` block into the ``||scene:set at tilemap||`` block replacing the ``||scene:tilemap col row||`` block.
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, myTiles.null, function (sprite, location) {
@@ -64,9 +63,10 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.null, function (sprite, location)
 })
 ```
 
+![Drag Location](/static/recipes/wonder-woman-1984/artifacts-location.gif)
+
 ## Step 6 @fullscreen
 
-Repeat these steps to create more artifacts for Wonder Woman to collect   
-**OR** 
-Click [**this link**](#recipe:/recipes/wonder-woman-1984/enemies) to add enemies to your maze!  
+Repeat these steps to add more artifacts for Wonder Woman to collect in her Maze. When you're ready to move on to the next tutorial, click [**this link**](#recipe:/recipes/wonder-woman-1984/enemies) to add enemies to your maze! Otherwise, click **Finish**."
+ 
 ![Enemies!](/static/recipes/wonder-woman-1984/enemies-preview.png)
