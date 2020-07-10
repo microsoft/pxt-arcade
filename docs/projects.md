@@ -10,6 +10,10 @@
         "videoUrl": "/static/tutorials/chase-the-pizza.mp4"
     },
     {
+        "name": "Multipart Tutorials",
+        "url": "/multipart-tutorials"
+    },
+    {
         "name": "Live Coding",
         "url": "/live-coding",
         "imageUrl": "/static/live-coding/live.png"
@@ -85,6 +89,7 @@
 ## See Also
 
 [Tutorials](/tutorials),
+[Multipart Tutorials](/multipart-tutorials),
 [Live Coding](/live-coding),
 [Blocks Games](/blocks-games),
 [JavaScript Games](/javascript-games),

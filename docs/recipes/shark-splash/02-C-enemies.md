@@ -4,7 +4,7 @@
 
 Use the ``||info:change life by -1||`` block to damage the player when they overlap an enemy!
 
-![Enemy Damage](/static/recipes/02-C-enemies.gif)
+![Enemy Damage](/static/recipes/shark-splash/02-C-enemies.gif)
 
 ## Step 1
 
@@ -64,6 +64,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 |      |      |      |
 |:----:|:----:|:----:|
-|  [![Moving enemies](/static/recipes/02-A-enemies.gif)](#recipe:/recipes/shark-splash/02-A-enemies)  | [![Multiple enemies](/static/recipes/02-B-enemies.gif)](#recipe:/recipes/shark-splash/02-B-enemies) | [![Background](/static/recipes/04-background.png)](#recipe:/recipes/04-background) |
+|  [![Moving enemies](/static/recipes/shark-splash/02-A-enemies.gif)](#recipe:/recipes/shark-splash/02-A-enemies)  | [![Multiple enemies](/static/recipes/shark-splash/02-B-enemies.gif)](#recipe:/recipes/shark-splash/02-B-enemies) | [![Background](/static/recipes/shark-splash/04-background.png)](#recipe:/recipes/04-background) |
 | [**Moving enemies**](#recipe:/recipes/shark-splash/02-A-enemies)| [**Multiple enemies**](#recipe:/recipes/shark-splash/02-B-enemies) | [**Design a background**](#recipe:/recipes/shark-splash/04-background) |
 
