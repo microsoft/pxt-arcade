@@ -27,7 +27,7 @@ Go to the Tilemap Editor and click on **My Tiles**. Click on the **(+)** icon to
 ## Step 3 : Earn points when items are collected
 
 First, we need to create a score tracker for the game. 
-Get the ``||info:set score to||`` block at put it in the ``||loops:on start||`` loop. 
+Get the ``||info:set score to||`` block at put it in the ``||loops:on start||`` block. 
 Now when you start the game, your score will be set to `0`.
 
 Next, get the ``||info:change score by||`` block and put it in the ``||scene:on sprite of kind overlaps||`` artifact block you added in the previous step.
