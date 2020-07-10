@@ -187,7 +187,8 @@ tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 5))
 
 ## Step 4
 
-Let's give the sprite the ability to jump when we press a button. We do this with  ``||controller:on any button pressed||``.
+Let's give the sprite the ability to jump when we press a button. We do this by moving
+the player upward in an ``||controller:on A button pressed||`` event.
 
 ```blocks
 let mySprite: Sprite = null

@@ -8,6 +8,7 @@
             "adafruit/pxt-seesaw",
             "jwunderl/pxt-button-combos",
             "jwunderl/pxt-color",
+            "jwunderl/pxt-status-bar",
             "microsoft/pxt-settings-blocks",
             "microsoft/arcade-sprite-data"
         ],
@@ -16,12 +17,14 @@
             "adafruit/pxt-seesaw",
             "jwunderl/pxt-button-combos",
             "jwunderl/pxt-color",
+            "jwunderl/pxt-status-bar",
             "microsoft/pxt-settings-blocks",
             "microsoft/arcade-sprite-data"
         ]
     },
     "galleries": {
         "Tutorials": "tutorials",
+        "Multipart Tutorials": "multipart-tutorials",
         "Live Coding": "live-coding",
         "Blocks Games": "blocks-games",
         "JavaScript Games": "javascript-games",

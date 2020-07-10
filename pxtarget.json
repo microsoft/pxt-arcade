@@ -434,14 +434,14 @@
             "editor.background": "#FEF3E0"
         },
         "monacoFieldEditors": [
-            "image-editor"
+            "image-editor",
+            "tilemap-editor"
         ],
         "scriptManager": true,
         "saveInMenu": false,
         "debugger": true,
         "importExtensionFiles": true,
         "experiments": [
-            "python",
             "debugExtensionCode",
             "snippetBuilder",
             "experimentalHw",
@@ -464,7 +464,8 @@
         "githubCompiledJs": true,
         "chooseLanguageRestrictionOnNewProject": true,
         "openProjectNewTab": true,
-        "hasReferenceDocs": true
+        "hasReferenceDocs": true,
+        "python": true
     },
     "unsupportedBrowsers": [
         {
