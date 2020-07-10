@@ -12,7 +12,12 @@
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/chase-the-pizza.png",
   "largeImageUrl": "/static/tutorials/chase-the-pizza.gif",
-  "videoUrl": "/static/tutorials/chase-the-pizza.mp4"
+  "videoUrl": "/static/tutorials/chase-the-pizza.mp4",
+  "otherActions": [{
+    "url": "/tutorials/spy/chase-the-pizza",
+    "editor": "js",
+    "cardType": "tutorial"
+  }]
 }, {
   "name": "Happy Flower",
   "description": "Create a flower that sends back happy bees",
@@ -20,7 +25,12 @@
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/happy-flower.png",
   "largeImageUrl": "/static/tutorials/happy-flower.gif",
-  "videoUrl": "/static/tutorials/happy-flower.mp4"
+  "videoUrl": "/static/tutorials/happy-flower.mp4",
+  "otherActions": [{
+    "url": "/tutorials/spy/happy-flower",
+    "editor": "js",
+    "cardType": "tutorial"
+  }]
 }, {
   "name": "Lemon Leak",
   "description": "Stay away from the wild strawberries or you'll lose your juice!",
@@ -28,7 +38,12 @@
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/lemon-leak.png",
   "largeImageUrl": "/static/tutorials/lemon-leak.gif",
-  "videoUrl": "/static/tutorials/lemon-leak.mp4"
+  "videoUrl": "/static/tutorials/lemon-leak.mp4",
+  "otherActions": [{
+    "url": "/tutorials/spy/lemon-leak",
+    "editor": "js",
+    "cardType": "tutorial"
+  }]
 }, {
   "name": "Galga",
   "description": "Fly through the attacking spacecraft and fire darts at them, don't get hit!",
@@ -36,7 +51,8 @@
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/galga.png",
   "largeImageUrl": "/static/tutorials/galga.gif",
-  "videoUrl": "/static/tutorials/galga.mp4"
+  "videoUrl": "/static/tutorials/galga.mp4",
+  "otherActions": []
 }, {
   "name": "Free Throw",
   "description": "Take your best shot and slam dunk this Basketball free throw game!",
@@ -66,7 +82,8 @@
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/paddle.png",
   "largeImageUrl": "/static/tutorials/paddle.gif",
-  "videoUrl": "/static/tutorials/paddge.mp4"
+  "videoUrl": "/static/tutorials/paddge.mp4",
+  "otherActions": []
 }, {
   "name": "Name Tag",
   "description": "A simple name tag with cool effects",
