@@ -16,14 +16,44 @@
     "carPinkRight": "hwQQABAAAAAAAAAAAAAAAAAAMzOqqgoAADDMo6qq/wAAwzy6o6r/DzDdrbujqv8PMDOtu6Oq/w8wM62qqqr6ADAzrbvz/6oAMDOtu6P6qgAwM627o/r6ADAzo7qjr/8PMMy8qvOq/w8Aw8w7qqr/DwAw3T0zqvoPAAAzM9OjqgAAAD0z060KAA==",
     "carPinkBack": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoP//qqr/DwAzMzMzo6r/oMwzw6yqPfo60909yqvaCjozM9O8q6oKPDMz07yrqgo8MzMzvKuqCjozMzO8q6oKOjMzM8qr2gqgzDzDrKo9+gAzMzMzo6r/AKD//6qq/w8AAAAAAAAAAA==",
     "carPinkFront": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKD/r/oPAAAAM6MzqjoPAMPMzDzb3aMw0909s9zTPTA9MzPL3DMzMD0zM8vcMzMwMzMzy9wzMzAzMzPL3DMzMDMzM7Pc0z0Aw8zMPNvdowAAM6MzqjoPAACg/6/6/wAAAAAAAAAAAA==",
-    "roadTurn1": "hwQQABAAAAAAwMzMzMzMzAC8u7u7u7u7wLvd3d3d3d2827u7u7u7u7y9u7u7u7u7vL27u7u7u7u8vbu7u7u7u7y9u7u7vbu7vL27uxvRu7u8vbu7EbG7u7y9u9sRu7u7vL27u727u7u8vbu7u7u7u7y9u7u7u7vdvL27u7u727u8vbu7u7vbyw==",
-    "roadTurn2": "hwQQABAAAAC8vbu7u7vby7y9u7u7u9u7vL27u7u7u928vbu7u7u7u7y9u7u9u7u7vL272xG7u7u8vbu7EbG7u7y9u7sb0bu7vL27u7u9u7u8vbu7u7u7u7y9u7u7u7u7vL27u7u7u7u827u7u7u7u8C73d3d3d3dALy7u7u7u7sAwMzMzMzMzA==",
-    "roadIntersection1": "hwQQABAAAAC7vbu7u7vby9u7u7u7u9vLvbu7u7u728u7u7u7u7vby7u7u7u7u9vLu7u7u7u728u7u7u7u7vby7u7u7u7u9vLu7u7u7u728u7u7u7u7vby7u7u7u7u9vLu7u7u7u728u7u7u7u7vby727u7u7u9vL27u7u7u728u7vbu7u7vbyw==",
-    "roadIntersection2": "hwQQABAAAADMzMzMzMzMzLu7u7u7u7u73d3d3d3d3d27u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u727u7u7u7vb27u7u7u7u727vbu7u7vbuw==",
-    "roadTurn3": "hwQQABAAAADMzMzMzMwMALu7u7u7u8sA3d3d3d3duwy7u7u7u7u9y7u7u7u7u9vLu7u7u7u728u7u7u7u7vby7u727u7u9vLu7sdsbu728u7uxsRu7vby7u7uxG9u9vLu7u727u728u7u7u7u7vby927u7u7u9vLu727u7u728u8vbu7u7vbyw==",
-    "roadTurn4": "hwQQABAAAAC8vbu7u7vby7u9u7u7u9vL3bu7u7u728u7u7u7u7vby7u7u9u7u9vLu7u7Eb2728u7uxsRu7vby7u7HbG7u9vLu7vbu7u728u7u7u7u7vby7u7u7u7u9vLu7u7u7u728u7u7u7u7u9y93d3d3d3bsMu7u7u7u7ywDMzMzMzMwMAA==",
-    "roadIntersection3": "hwQQABAAAAC8vbu7u7vbu7y9u7u7u7u9vL27u7u7u9u8vbu7u7u7u7y9u7u7u7u7vL27u7u7u7u8vbu7u7u7u7y9u7u7u7u7vL27u7u7u7u8vbu7u7u7u7y9u7u7u7u7vL27u7u7u7u8vbu7u7u7u7y9u7u7u7vbvL27u7u7u728vbu7u7vbuw==",
-    "roadIntersection4": "hwQQABAAAAC7vbu7u7vbu9u7u7u7u7u9vbu7u7u7u9u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u93d3d3d3d3du7u7u7u7u7vMzMzMzMzMzA==",
-    "roadVertical": "hwQQABAAAADMzMzMzMzMzLu7u7u7u7u73d3d3d3d3d27u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u9sREbvbERG7GxHRuxsR0bu7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u93d3d3d3d3du7u7u7u7u7vMzMzMzMzMzA==",
-    "roadHorizontal": "hwQQABAAAAC8vbu7u7vby7y9uxu9u9vLvL27G7G728u8vbsbsbvby7y9uxuxu9vLvL2727G728u8vbu7u7vby7y9u7u7u9vLvL27u7u728u8vbsbvbvby7y9uxuxu9vLvL27G7G728u8vbsbsbvby7y9u9uxu9vLvL27u7u728u8vbu7u7vbyw=="
+    "roadTurn1": {
+        "data": "hwQQABAAAAAAwMzMzMzMzAC8u7u7u7u7wLvd3d3d3d2827u7u7u7u7y9u7u7u7u7vL27u7u7u7u8vbu7u7u7u7y9u7u7vbu7vL27uxvRu7u8vbu7EbG7u7y9u9sRu7u7vL27u727u7u8vbu7u7u7u7y9u7u7u7vdvL27u7u727u8vbu7u7vbyw==",
+        "tilemapTile": true
+    },
+    "roadTurn2": {
+        "data": "hwQQABAAAAC8vbu7u7vby7y9u7u7u9u7vL27u7u7u928vbu7u7u7u7y9u7u9u7u7vL272xG7u7u8vbu7EbG7u7y9u7sb0bu7vL27u7u9u7u8vbu7u7u7u7y9u7u7u7u7vL27u7u7u7u827u7u7u7u8C73d3d3d3dALy7u7u7u7sAwMzMzMzMzA==",
+        "tilemapTile": true
+    },
+    "roadIntersection1": {
+        "data": "hwQQABAAAAC7vbu7u7vby9u7u7u7u9vLvbu7u7u728u7u7u7u7vby7u7u7u7u9vLu7u7u7u728u7u7u7u7vby7u7u7u7u9vLu7u7u7u728u7u7u7u7vby7u7u7u7u9vLu7u7u7u728u7u7u7u7vby727u7u7u9vL27u7u7u728u7vbu7u7vbyw==",
+        "tilemapTile": true
+    },
+    "roadIntersection2": {
+        "data": "hwQQABAAAADMzMzMzMzMzLu7u7u7u7u73d3d3d3d3d27u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u727u7u7u7vb27u7u7u7u727vbu7u7vbuw==",
+        "tilemapTile": true
+    },
+    "roadTurn3": {
+        "data": "hwQQABAAAADMzMzMzMwMALu7u7u7u8sA3d3d3d3duwy7u7u7u7u9y7u7u7u7u9vLu7u7u7u728u7u7u7u7vby7u727u7u9vLu7sdsbu728u7uxsRu7vby7u7uxG9u9vLu7u727u728u7u7u7u7vby927u7u7u9vLu727u7u728u8vbu7u7vbyw==",
+        "tilemapTile": true
+    },
+    "roadTurn4": {
+        "data": "hwQQABAAAAC8vbu7u7vby7u9u7u7u9vL3bu7u7u728u7u7u7u7vby7u7u9u7u9vLu7u7Eb2728u7uxsRu7vby7u7HbG7u9vLu7vbu7u728u7u7u7u7vby7u7u7u7u9vLu7u7u7u728u7u7u7u7u9y93d3d3d3bsMu7u7u7u7ywDMzMzMzMwMAA==",
+        "tilemapTile": true
+    },
+    "roadIntersection3": {
+        "data": "hwQQABAAAAC8vbu7u7vbu7y9u7u7u7u9vL27u7u7u9u8vbu7u7u7u7y9u7u7u7u7vL27u7u7u7u8vbu7u7u7u7y9u7u7u7u7vL27u7u7u7u8vbu7u7u7u7y9u7u7u7u7vL27u7u7u7u8vbu7u7u7u7y9u7u7u7vbvL27u7u7u728vbu7u7vbuw==",
+        "tilemapTile": true
+    },
+    "roadIntersection4": {
+        "data": "hwQQABAAAAC7vbu7u7vbu9u7u7u7u7u9vbu7u7u7u9u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u93d3d3d3d3du7u7u7u7u7vMzMzMzMzMzA==",
+        "tilemapTile": true
+    },
+    "roadVertical": {
+        "data": "hwQQABAAAADMzMzMzMzMzLu7u7u7u7u73d3d3d3d3d27u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u9sREbvbERG7GxHRuxsR0bu7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u93d3d3d3d3du7u7u7u7u7vMzMzMzMzMzA==",
+        "tilemapTile": true
+    },
+    "roadHorizontal": {
+        "data": "hwQQABAAAAC8vbu7u7vby7y9uxu9u9vLvL27G7G728u8vbsbsbvby7y9uxuxu9vLvL2727G728u8vbu7u7vby7y9u7u7u9vLvL27u7u728u8vbsbvbvby7y9uxuxu9vLvL27G7G728u8vbsbsbvby7y9u9uxu9vLvL27u7u728u8vbu7u7vbyw==",
+        "tilemapTile": true
+    }
 }
