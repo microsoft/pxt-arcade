@@ -6,10 +6,14 @@ Now let's add some artifacts that Wonder Woman can collect for points!
 
 ![Artifacts!](/static/recipes/wonder-woman-1984/artifact-preview.png)
 
-## Step 1 : Make first item
+## Step 1 : Make an artifact
 
-Go to the tilemap and click on **My Tiles**. Click on the **(+)** and draw the artifact you want Wonder Woman to collect.
-It could be her golden lasso, a coin, or anything else Wonder Woman might need.
+Go to the Tilemap Editor and click on **My Tiles**. Click on the **(+)** icon to create a new tile where you can draw the artifact you want Wonder Woman to collect. It could be her golden lasso, a coin, or anything else Wonder Woman might need. Place this artifact tile on your maze in all the places you want it to appear.
+
+![Artifacts!](/static/recipes/wonder-woman-1984/artifact-preview.png)
+
+## Step 2 : Select the artifacts
+
 From the ``||scene:Scene||`` Toolbox drawer, get the on ``||scene:sprite of kind overlaps||`` block and drop onto the Workspace. Click on the checkered square and select the artifact you just made.
 
 ```blocks
@@ -17,12 +21,6 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.null, function (sprite, location)
 	
 })
 ```
-
-## Step 2 : Place your artifacts
-
-Go to the Tilemap Editor and click on **My Tiles**. Click on the **(+)** icon to create a new tile where you can draw the artifact you want Wonder Woman to collect. It could be her golden lasso, a coin, or anything else Wonder Woman might need. Place this artifact tile on your maze in all the places you want it to appear.
-
-![Artifacts!](/static/recipes/wonder-woman-1984/artifact-preview.png)
 
 ## Step 3 : Earn points when items are collected
 
