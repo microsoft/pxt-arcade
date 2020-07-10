@@ -179,7 +179,7 @@ namespace pxt.editor {
             });
         }
 
-        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "0.18.8") < 0) {
+        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "0.18.9") < 0) {
             /**
              * Add draggable param for tile that was hit as child of sprite hit wall block
             <value name="HANDLER_DRAG_PARAM_location">
