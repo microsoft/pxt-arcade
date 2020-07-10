@@ -4,17 +4,50 @@
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64"
     },
-    "buttonOrange": "hwQQABAAAAC7u7u7u7u7u8u7u7u7u7u8u05ERN1EvLvrRERERE3Eu0tERERE1MS7S0RERETUxLtLRERERNTEu0tERERE1MS7S0RERETUxLtLRERERNTEu0tERERE1MS7S0RERETUxLvrRERERE3Eu7tORETdRLy7y7u7u7u7u7y7u7u7u7u7uw==",
-    "buttonOrangeDepressed": "hwQQABAAAAC7u7u7u7u7u8u7u7u7u7u8u+tERNRNvLu7TkRERNTEu7tERERERM27u0REREREzbu7RERERETNu7tERERERM27u0REREREzbu7RERERETNu7tERERERM27u0REREREzbu7TkRERNTEu7vrRETUTby7y7u7u7u7u7y7u7u7u7u7uw==",
-    "buttonTeal": "hwQQABAAAAC7u7u7u7u7u8u7u7u7u7u8u2xmZplmvLvLZmZmZmnGu2tmZmZmlsa7a2ZmZmaWxrtrZmZmZpbGu2tmZmZmlsa7a2ZmZmaWxrtrZmZmZpbGu2tmZmZmlsa7a2ZmZmaWxrvLZmZmZmnGu7tsZmaZZry7y7u7u7u7u7y7u7u7u7u7uw==",
-    "buttonTealDepressed": "hwQQABAAAAC7u7u7u7u7u8u7u7u7u7u8u8tmZpZpvLu7bGZmZpbGu7tmZmZmZsm7u2ZmZmZmybu7ZmZmZmbJu7tmZmZmZsm7u2ZmZmZmybu7ZmZmZmbJu7tmZmZmZsm7u2ZmZmZmybu7bGZmZpbGu7vLZmaWaby7y7u7u7u7u7y7u7u7u7u7uw==",
-    "buttonPink": "hwQQABAAAAC7u7u7u7u7u8u7u7u7u7u8uzozMxEzvLurMzMzMzHDuzszMzMzE8O7OzMzMzMTw7s7MzMzMxPDuzszMzMzE8O7OzMzMzMTw7s7MzMzMxPDuzszMzMzE8O7OzMzMzMTw7urMzMzMzHDu7s6MzMRM7y7y7u7u7u7u7y7u7u7u7u7uw==",
-    "buttonPinkDepressed": "hwQQABAAAAC7u7u7u7u7u8u7u7u7u7u8u6szMxMxvLu7OjMzMxPDu7szMzMzM8G7uzMzMzMzwbu7MzMzMzPBu7szMzMzM8G7uzMzMzMzwbu7MzMzMzPBu7szMzMzM8G7uzMzMzMzwbu7OjMzMxPDu7urMzMTMby7y7u7u7u7u7y7u7u7u7u7uw==",
-    "chestClosed": "hwQQABAAAAAAu7u7y7y7C7Du7u677M6760Tk7rvs7rtLRETuu+zuC0tERO677O4LS0RE7rvs7gtLRETuu8vuC0tERO7NvO4LS0RE7s287gtLRETuu8vuC0tERO677O4LS0RE7rvs7gtLRETuu+zuC+tE5O677O67sO7u7rvszrsAu7u7y7y7Cw==",
-    "chestOpen": "hwQQABAAAACwuwu7u7u7C+vuu8zM6867S+S7zMzr7rtLRLvMzOvuC0tEu8zM6+4LS0S7zMzr7gtLRLvLzOvuC0tEzbzM6+4LS0TNvMzr7gtLRLvLzOvuC0tEu8zM6+4LS0S7zMzr7gtLRLvMzOvuC0vku8zM6+67S+67zMzrzruwuwu7u7u7Cw==",
-    "collectibleInsignia": "hwQQABAAAABmZmZmZmZmZpaZZpmZZplplmmWyZxplmmWZplpzJlmaWaWmWacmWlmZpmZZpmZmWaWyZmWZmaZaZbMnJaZZsZplmxmmWnJzGmWmWZmaZmcaWaZmZlmmZlmZpaZyWaZaWaWZpnMlplmaZZplsmcaZZplplmmZlmmWlmZmZmZmZmZg==",
-    "collectibleRedCrystal": "hwQQABAAAAAAAAAAAAAAAAAAAEREAAAAAAA0MyREAAAAMDMzMyIEAAA0MzMzI0IAADQzIyIzQgBANDMiIiIiBEBFIiJEJCIEQEUiQkREIgRARCJCREQiBABEEUJEREIAAEQRRUQkQgAAQFRVREIEAAAARERERAAAAAAAREQAAAAAAAAAAAAAAA==",
-    "collectibleBlueCrystal": "hwQQABAAAAAAAAAAAAAAAAAAAGZmAAAAAAB2d4ZmAAAAcHd3d4gGAAB2d3d3h2gAAHZ3h4h3aABgdneIiIiIBmBliIhmhogGYGWIaGZmiAZgZohoZmaIBgBmEWhmZmgAAGYRZWaGaAAAYFZVZmgGAAAAZmZmZgAAAAAAZmYAAAAAAAAAAAAAAA==",
+    "buttonOrange": {
+        "data": "hwQQABAAAAC7u7u7u7u7u8u7u7u7u7u8u05ERN1EvLvrRERERE3Eu0tERERE1MS7S0RERETUxLtLRERERNTEu0tERERE1MS7S0RERETUxLtLRERERNTEu0tERERE1MS7S0RERETUxLvrRERERE3Eu7tORETdRLy7y7u7u7u7u7y7u7u7u7u7uw==",
+        "tilemapTile": true
+    },
+    "buttonOrangeDepressed": {
+        "data": "hwQQABAAAAC7u7u7u7u7u8u7u7u7u7u8u+tERNRNvLu7TkRERNTEu7tERERERM27u0REREREzbu7RERERETNu7tERERERM27u0REREREzbu7RERERETNu7tERERERM27u0REREREzbu7TkRERNTEu7vrRETUTby7y7u7u7u7u7y7u7u7u7u7uw==",
+        "tilemapTile": true
+    },
+    "buttonTeal": {
+        "data": "hwQQABAAAAC7u7u7u7u7u8u7u7u7u7u8u2xmZplmvLvLZmZmZmnGu2tmZmZmlsa7a2ZmZmaWxrtrZmZmZpbGu2tmZmZmlsa7a2ZmZmaWxrtrZmZmZpbGu2tmZmZmlsa7a2ZmZmaWxrvLZmZmZmnGu7tsZmaZZry7y7u7u7u7u7y7u7u7u7u7uw==",
+        "tilemapTile": true
+    },
+    "buttonTealDepressed": {
+        "data": "hwQQABAAAAC7u7u7u7u7u8u7u7u7u7u8u8tmZpZpvLu7bGZmZpbGu7tmZmZmZsm7u2ZmZmZmybu7ZmZmZmbJu7tmZmZmZsm7u2ZmZmZmybu7ZmZmZmbJu7tmZmZmZsm7u2ZmZmZmybu7bGZmZpbGu7vLZmaWaby7y7u7u7u7u7y7u7u7u7u7uw==",
+        "tilemapTile": true
+    },
+    "buttonPink": {
+        "data": "hwQQABAAAAC7u7u7u7u7u8u7u7u7u7u8uzozMxEzvLurMzMzMzHDuzszMzMzE8O7OzMzMzMTw7s7MzMzMxPDuzszMzMzE8O7OzMzMzMTw7s7MzMzMxPDuzszMzMzE8O7OzMzMzMTw7urMzMzMzHDu7s6MzMRM7y7y7u7u7u7u7y7u7u7u7u7uw==",
+        "tilemapTile": true
+    },
+    "buttonPinkDepressed": {
+        "data": "hwQQABAAAAC7u7u7u7u7u8u7u7u7u7u8u6szMxMxvLu7OjMzMxPDu7szMzMzM8G7uzMzMzMzwbu7MzMzMzPBu7szMzMzM8G7uzMzMzMzwbu7MzMzMzPBu7szMzMzM8G7uzMzMzMzwbu7OjMzMxPDu7urMzMTMby7y7u7u7u7u7y7u7u7u7u7uw==",
+        "tilemapTile": true
+    },
+    "chestClosed": {
+        "data": "hwQQABAAAAAAu7u7y7y7C7Du7u677M6760Tk7rvs7rtLRETuu+zuC0tERO677O4LS0RE7rvs7gtLRETuu8vuC0tERO7NvO4LS0RE7s287gtLRETuu8vuC0tERO677O4LS0RE7rvs7gtLRETuu+zuC+tE5O677O67sO7u7rvszrsAu7u7y7y7Cw==",
+        "tilemapTile": true
+    },
+    "chestOpen": {
+        "data": "hwQQABAAAACwuwu7u7u7C+vuu8zM6867S+S7zMzr7rtLRLvMzOvuC0tEu8zM6+4LS0S7zMzr7gtLRLvLzOvuC0tEzbzM6+4LS0TNvMzr7gtLRLvLzOvuC0tEu8zM6+4LS0S7zMzr7gtLRLvMzOvuC0vku8zM6+67S+67zMzrzruwuwu7u7u7Cw==",
+        "tilemapTile": true
+    },
+    "collectibleInsignia": {
+        "data": "hwQQABAAAABmZmZmZmZmZpaZZpmZZplplmmWyZxplmmWZplpzJlmaWaWmWacmWlmZpmZZpmZmWaWyZmWZmaZaZbMnJaZZsZplmxmmWnJzGmWmWZmaZmcaWaZmZlmmZlmZpaZyWaZaWaWZpnMlplmaZZplsmcaZZplplmmZlmmWlmZmZmZmZmZg==",
+        "tilemapTile": true
+    },
+    "collectibleRedCrystal": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAEREAAAAAAA0MyREAAAAMDMzMyIEAAA0MzMzI0IAADQzIyIzQgBANDMiIiIiBEBFIiJEJCIEQEUiQkREIgRARCJCREQiBABEEUJEREIAAEQRRUQkQgAAQFRVREIEAAAARERERAAAAAAAREQAAAAAAAAAAAAAAA==",
+        "tilemapTile": true
+    },
+    "collectibleBlueCrystal": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAGZmAAAAAAB2d4ZmAAAAcHd3d4gGAAB2d3d3h2gAAHZ3h4h3aABgdneIiIiIBmBliIhmhogGYGWIaGZmiAZgZohoZmaIBgBmEWhmZmgAAGYRZWaGaAAAYFZVZmgGAAAAZmZmZgAAAAAAZmYAAAAAAAAAAAAAAA==",
+        "tilemapTile": true
+    },
     "darkGroundNorthWest0": {
         "data": "hwQQABAAAADMzMzMzMzMzLy7u7u7u7u7vMzMzMzMzMy8zMzMzMy8zLzMzMzMzMzMvMzMzLzMzMy8zLzMzMzMzLzMzMzMzMzLvMzMzMzMzMy8zMzMzMzMzLzMzMzMzMzMvMy8zLzMzMy8zMzMzMzMzLzMzMzMzLzMvMzMzMzMzMy8zMzMzMzMzA==",
         "tilemapTile": true
