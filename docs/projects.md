@@ -11,7 +11,10 @@
     },
     {
         "name": "Multipart Tutorials",
-        "url": "/multipart-tutorials"
+        "url": "/multipart-tutorials",
+        "imageUrl": "/static/recipes/shark-splash/shark-splash.png",
+        "largeImageUrl": "/static/recipes/shark-splash/02-C-enemies.gif",
+        "videoUrl": "/static/recipes/shark-splash/02-C-enemies.mp4"
     },
     {
         "name": "Live Coding",
