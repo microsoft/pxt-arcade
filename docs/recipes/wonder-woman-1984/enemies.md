@@ -9,7 +9,7 @@ Now let's add some of Wonder Woman's biggest enemies to the maze!
 
 Go to the tilemap and click on **My Tiles**. Click on the **+** and draw the enemy you want Wonder Woman to face.
 You could draw her enemy from the upcoming movie: **Cheetah**.
-From ``||scene||`` get the ``||scene: on sprite of kind overlaps||`` block. 
+From ``||scene:Scene||`` get the ``||scene:on sprite of kind overlaps||`` block. 
 Click on the grey square and find your villain! 
 
 ```blocks
@@ -27,10 +27,10 @@ Now, go back to the tilemap. Go to **My Tiles** and select your enemy. Place the
 
 Now, let's make Wonder Woman lose points when she runs into an enemy.
 First, we need to create a score tracker for the game. 
-Get the ``||info: set score to||`` block at put it in the ``||loops: on start||`` loop. 
+Get the ``||info:set score to||`` block at put it in the ``||loops:on start||`` loop. 
 Now when you start the game, your score will be set to 0.
 
-Next, get the ``||info: change score by||`` block and put it in the ``||scene: on sprite of kind overlaps||`` block.
+Next, get the ``||info:change score by||`` block and put it in the ``||scene:on sprite of kind overlaps||`` block.
 Now, when Wonder Woman overlaps with an enemy, the player will **lose one point**.
 
 ```blocks
@@ -41,7 +41,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.null, function (sprite, location)
 
 ## Step 4 : Add a sound when for the enemy
 
-In ``||music||`` , get the ``||music: play sound||`` block. In the drop-down, choose the sound that will play when you lose a point.
+In ``||music:Music||`` , get the ``||music:play sound||`` block. In the drop-down, choose the sound that will play when you lose a point.
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, myTiles.null, function (sprite, location) {
