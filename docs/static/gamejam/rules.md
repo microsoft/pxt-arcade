@@ -66,7 +66,7 @@ Creativity | Adherence to Theme | Correctness of Code
 These are some games that didn't make the top three, but the judges loved! Give them a play, we're sure you'll enjoy yourself.
 
 ### Gazpacho!!
-Go to your harden, gather all the ingredients for gazpacho before time runs out!
+Go to your garden, gather all the ingredients for gazpacho before time runs out!
 
 *The judges say:* "What a lovely concept: Gather ingredients from your garden to make gazpacho. I liked the smile effect when I found an ingredient. I would have liked to know how many ingredients I had left, and a nice game over screen showing the character enjoying a bowl of gazpacho would be cute :) The code is clear, understandable, and uncluttered. Nice job!"
 
