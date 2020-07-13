@@ -2,6 +2,14 @@
 declare namespace control {
 
     /**
+     * Determines if the USB has been enumerated.
+     */
+    //% shim=control::isUSBInitialized
+    function isUSBInitialized(): boolean;
+}
+declare namespace control {
+
+    /**
      * Announce that an event happened to registered handlers.
      * @param src ID of the MicroBit Component that generated the event
      * @param value Component specific code indicating the cause of the event.

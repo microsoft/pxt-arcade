@@ -2,6 +2,7 @@
     "name": "hw---pd",
     "description": "PlayDate by Panic",
     "files": [
+        "keys.cpp",
         "config.ts",
         "device.d.ts"
     ],
