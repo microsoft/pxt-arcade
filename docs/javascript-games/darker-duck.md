@@ -66,8 +66,8 @@ namespace lighting {
         apply() {
             const camera = game.currentScene().camera;
             const halfh = this.width;
-            const cx = this.anchor.x;
-            const cy = this.anchor.y;
+            const cx = this.anchor.x | 0;
+            const cy = this.anchor.y | 0;
 
             let prev: number;
             let offset: number;
