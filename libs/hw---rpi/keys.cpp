@@ -82,7 +82,7 @@ static int readADC(int channel) {
     if (isPressed("BTN_" #s, (int)Key::s))                                                         \
     SET(s)
 
-static uint8_t pressedScanCodes[256];
+static uint8_t pressedScanCodes[1024];
 
 static int isPressed(const char *name, int keyPos) {
     static uint64_t parsedPin[(int)Key::EXIT + 1];
