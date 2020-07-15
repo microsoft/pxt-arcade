@@ -44,7 +44,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "TinkerGen GameGo",
         "description": "A fun-sized console to play the games you code.",
-        "imageUrl": "/static/hardware/gamego.png",
+        "imageUrl": "/static/hardware/gamego.jpg",
         "url": "https://shop.tinkergen.com/gamego.html",
         "variant": "hw---stm32f401"
     },
