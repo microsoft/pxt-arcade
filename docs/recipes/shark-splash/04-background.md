@@ -627,7 +627,7 @@ for (let index = 0; index <= 10; index++) {
         . . 8 7 7 6 6 7 6 8 8 . . . . .
         . . . 8 6 7 6 7 7 8 8 . . . . .
     `, SpriteKind.Food)
-    mySprite4.setPosition(0, 96)
+    mySprite.setPosition(0, 96)
 }
 
 ```
@@ -810,7 +810,7 @@ for (let index = 0; index <= 10; index++) {
         . . 8 7 7 6 6 7 6 8 8 . . . . .
         . . . 8 6 7 6 7 7 8 8 . . . . .
     `, SpriteKind.Food)
-    mySprite4.setPosition(16 * index, 96)
+    mySprite.setPosition(16 * index, 96)
 }
 
 ```
