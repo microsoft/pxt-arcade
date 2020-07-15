@@ -53,7 +53,7 @@ int pressureLevelByButtonId(int btnId, int codalId) {
 uint32_t updateKeyEvents() {
     uint32_t nstate = readBtns();
     if (state == nstate || codal::EventModel::defaultEventBus == NULL)
-        return state;
+        return nstate;
 
     for (int i = 1; i < 32; ++i) {
         uint32_t mask = 1 << i;
