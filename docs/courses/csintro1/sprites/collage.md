@@ -15,7 +15,7 @@ In this activity, students will be introduced to:
 
 This sprite example is larger than the default 16x16, and uses a custom variable name ``||variables:hotSauce||``. However, the image does not show up properly on the screen with the default background, so we must change the background color for the image to show up correctly.
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-collage1)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/_0q2tEsrdbM)
 
 ```blocks
 let hotSauce: Sprite = null

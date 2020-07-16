@@ -15,7 +15,7 @@ In this activity, students will use:
 
 ## Concept: Flying Birds!
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-projectiles1)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/1CWWoSy0Tso)
 
 We can use projectiles to create sprites that move across the screen. Let's start off by making a simple bird projectile.
 

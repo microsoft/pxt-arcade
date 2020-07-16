@@ -13,7 +13,7 @@ In this activity, students will be introduced to:
 
 ## Concept: Overlap Event
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-overlap1spritekindtask)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/TSUsPc0Kuo8)
 
 We use ``||sprites:kind||`` to classify our sprites. We can have sprites in our games that represent many different things - players, enemies, coins, food, or anything else you might want to represent in your games. 
 
