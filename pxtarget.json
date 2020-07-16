@@ -162,6 +162,61 @@
                         "\\.tileHitFrom": "color-coded-tilemap"
                     }
                 }
+            ],
+            "0.0.0 - 1.1.2": [
+                {
+                    "type": "api",
+                    "map": {
+                        "tilemap\\s*\\.\\s*createTileSprite": "tiles.createTileSprite",
+                        "tilemap\\s*\\.\\s*coverAllTiles": "tiles.coverAllTiles",
+                        "tilemap\\s*\\.\\s*createSpritesOnTiles": "tiles.createSpritesOnTiles",
+                        "tilemap\\s*\\.\\s*destorySpritesOfKind": "tiles.destroySpritesOfKind",
+                        "tilemap\\s*\\.\\s*tileIs": "tiles.tileIs",
+                        "tilemap\\s*\\.\\s*tileIsWall": "tiles.tileIsWall",
+                        "tilemap\\s*\\.\\s*forEachTileOfKind": "tiles.forEachTileOfKind",
+                        "tilemap\\s*\\.\\s*forEachTileOfMap": "tiles.forEachTileOfMap",
+                        "tilemap\\s*\\.\\s*replaceAllTiles": "tiles.replaceAllTiles",
+                        "tilemap\\s*\\.\\s*columnInDirection": "tiles.columnInDirection",
+                        "tilemap\\s*\\.\\s*rowInDirection": "tiles.rowInDirection",
+                        "tilemap\\s*\\.\\s*forEachDirection": "tiles.forEachDirection",
+                        "tilemap\\s*\\.\\s*centerCameraOnTile": "tiles.centerCameraOnTile",
+                        "tilemap\\s*\\.\\s*locationOfSprite": "tiles.locationOfSprite",
+                        "tilemap\\s*\\.\\s*spriteRowCol": "tiles.spriteRowCol",
+                        "tilemap\\s*\\.\\s*locationColumn": "tiles.locationColumn",
+                        "tilemap\\s*\\.\\s*locationRow": "tiles.locationRow",
+                        "tilemap\\s*\\.\\s*XY": "tiles.XY",
+                        "tilemap\\s*\\.\\s*locationXY": "tiles.locationXY",
+                        "tilemap\\s*\\.\\s*locationInDirection": "tiles.locationInDirection",
+                        "tilemap\\s*\\.\\s*_directionEditor": "tiles._directionEditor",
+                        "tilemap\\s*\\.\\s*tileWidth": "tiles.tileWidth",
+                        "tilemap\\s*\\.\\s*tilemapColumns": "tiles.tilemapColumns",
+                        "tilemap\\s*\\.\\s*tilemapRows": "tiles.tilemapRows",
+                        "tilemap\\s*\\.\\s*screenCoordinateToTile": "tiles.screenCoordinateToTile",
+                        "tilemap\\s*\\.\\s*tileCoordinateToScreen": "tiles.tileCoordinateToScreen",
+                        "tilemap\\s*\\.\\s*centeredTileCoordinateToScreen": "tiles.centeredTileCoordinateToScreen",
+
+                        "tilemap\\s*\\.\\s*OVERWORLD_MAP_ID": "tiles.OVERWORLD_MAP_ID",
+                        "tilemap\\s*\\.\\s*MAP_LOADED_EVENT": "tiles.MAP_LOADED_EVENT",
+                        "tilemap\\s*\\.\\s*WorldMap": "tiles.WorldMap",
+                        "tilemap\\s*\\.\\s*WorldMapConnection": "tiles.WorldMapConnection",
+                        "tilemap\\s*\\.\\s*createMap": "tiles.createMap",
+                        "tilemap\\s*\\.\\s*copyMap": "tiles.copyMap",
+                        "tilemap\\s*\\.\\s*loadMap": "tiles.loadMap",
+                        "tilemap\\s*\\.\\s*getLoadedMap": "tiles.getLoadedMap",
+                        "tilemap\\s*\\.\\s*onMapLoaded": "tiles.onMapLoaded",
+                        "tilemap\\s*\\.\\s*onMapUnloaded": "tiles.onMapUnloaded",
+                        "tilemap\\s*\\.\\s*connectMapById": "tiles.connectMapById",
+                        "tilemap\\s*\\.\\s*loadConnectedMap": "tiles.loadConnectedMap",
+                        "tilemap\\s*\\.\\s*getConnectedMap": "tiles.getConnectedMap",
+                        "tilemap\\s*\\.\\s*setWorldLocationToMap": "tiles.setWorldLocationToMap",
+                        "tilemap\\s*\\.\\s*loadMapAt": "tiles.loadMapAt",
+                        "tilemap\\s*\\.\\s*getMapAtWorldLocation": "tiles.getMapAtWorldLocation",
+                        "tilemap\\s*\\.\\s*loadMapInDirection": "tiles.loadMapInDirection",
+                        "tilemap\\s*\\.\\s*loadedWorldColumn": "tiles.loadedWorldColumn",
+                        "tilemap\\s*\\.\\s*loadedWorldRow": "tiles.loadedWorldRow"
+
+                    }
+                }
             ]
         }
     },
