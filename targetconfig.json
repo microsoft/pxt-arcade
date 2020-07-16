@@ -19,7 +19,7 @@
             "microsoft/arcade-sprite-data"
         ],
         "upgrade": {
-            "microsoft/pxt-tilemaps": "min:v1.7.2",
+            "microsoft/pxt-tilemaps": "min:v1.8.0",
             "microsoft/arcade-sprite-data": "min:v0.0.6"
         }
     },
