@@ -308,14 +308,6 @@ Games submitted by the MakeCode community.
         "largeImageUrl": "/static/discourse/79706-92624-82126-48770.gif"
     },
     {
-        "url": "https://forum.makecode.com/t/tiny-wizards/2263",
-        "imageUrl": null,
-        "author": "SPerkins25",
-        "cardType": "forumUrl",
-        "name": "Tiny Wizards",
-        "description": ""
-    },
-    {
         "url": "https://forum.makecode.com/t/tiny-soccer-cars/2053",
         "imageUrl": "/static/discourse/32925-95037-89550-06105.png",
         "author": "theCobolKid",
@@ -323,22 +315,6 @@ Games submitted by the MakeCode community.
         "name": "Tiny Soccer Cars",
         "description": "",
         "largeImageUrl": "/static/discourse/32925-95037-89550-06105.gif"
-    },
-    {
-        "url": "https://forum.makecode.com/t/catch-the-apple-v1-0/2211",
-        "imageUrl": null,
-        "author": "Sirbull",
-        "cardType": "forumUrl",
-        "name": "Catch the Apple v1.0",
-        "description": ""
-    },
-    {
-        "url": "https://forum.makecode.com/t/bloons-tower-defense-v1-6rev3/2212",
-        "imageUrl": null,
-        "author": "UnsignedArduino",
-        "cardType": "forumUrl",
-        "name": "Bloons Tower Defense v1.6rev3",
-        "description": ""
     },
     {
         "url": "https://forum.makecode.com/t/boss-rush/2165",
@@ -365,14 +341,6 @@ Games submitted by the MakeCode community.
         "name": "Furry my favourite jump and run",
         "description": "",
         "largeImageUrl": "/static/discourse/49159-47146-69570-35115.gif"
-    },
-    {
-        "url": "https://forum.makecode.com/t/ghost-chase-mega-v2-final/2007",
-        "imageUrl": null,
-        "author": "Redjay1011",
-        "cardType": "forumUrl",
-        "name": "Ghost Chase Mega V2 final",
-        "description": ""
     },
     {
         "name": "Add Game",
