@@ -1097,7 +1097,7 @@ namespace animation {
                 return;
             }
 
-            let newImage = this.activeAnimation.image();
+            let newImage = this.activeAnimation.image;
 
             if (this._sprite.image !== newImage) {
                 this._sprite.setImage(newImage)

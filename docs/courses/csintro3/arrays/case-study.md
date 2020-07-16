@@ -302,7 +302,7 @@ namespace powerups {
     game.onUpdateInterval(600, function () {
         if (Math.percentChance(50)) {
             let currentPowerUps = sprites.allOfKind(SpriteKind.PowerUp);
-            if (currentPowerUps.length() < 2) {
+            if (currentPowerUps.length < 2) {
                 sprites.create(img`1`, SpriteKind.PowerUp);
             }
         }
