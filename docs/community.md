@@ -107,16 +107,6 @@ Games submitted by the MakeCode community.
         "videoUrl": "/static/community/spacefight/spacefight.mp4"
     },
     {
-        "name": "Chomper",
-        "description": "Eat the dots, avoid the ghosts, by Miles Watson",
-        "author": "Miles Watson",
-        "url": "https://forum.makecode.com/t/presenting-chomper/493",
-        "cardType": "forumUrl",
-        "imageUrl": "/static/community/chomper/gallery.png",
-        "largeImageUrl": "/static/community/chomper/gallery.gif",
-        "videoUrl": "/static/community/chomper/gallery.mp4"
-    },
-    {
         "name": "American Sign Language",
         "description": "Learn ASL sign letters with this quiz game, by Greg Norris",
         "author": "Greg Norris",
@@ -306,6 +296,41 @@ Games submitted by the MakeCode community.
         "name": "Racquetball",
         "description": "",
         "largeImageUrl": "/static/discourse/79706-92624-82126-48770.gif"
+    },
+    {
+        "url": "https://forum.makecode.com/t/tiny-soccer-cars/2053",
+        "imageUrl": "/static/discourse/32925-95037-89550-06105.png",
+        "author": "theCobolKid",
+        "cardType": "forumUrl",
+        "name": "Tiny Soccer Cars",
+        "description": "",
+        "largeImageUrl": "/static/discourse/32925-95037-89550-06105.gif"
+    },
+    {
+        "url": "https://forum.makecode.com/t/boss-rush/2165",
+        "imageUrl": "/static/discourse/35411-81806-93118-90238.png",
+        "author": "darzu",
+        "cardType": "forumUrl",
+        "name": "Boss Rush!",
+        "description": "",
+        "largeImageUrl": "/static/discourse/35411-81806-93118-90238.gif"
+    },
+    {
+        "url": "https://forum.makecode.com/t/freakout-bug-fix-update/2073",
+        "imageUrl": "/static/discourse/02852-65228-19302-51450.png",
+        "author": "oxters168",
+        "cardType": "forumUrl",
+        "name": "Freakout Bug Fix Update",
+        "description": ""
+    },
+    {
+        "url": "https://forum.makecode.com/t/furry-my-favourite-jump-and-run/2016",
+        "imageUrl": "/static/discourse/49159-47146-69570-35115.png",
+        "author": "Napomex",
+        "cardType": "forumUrl",
+        "name": "Furry my favourite jump and run",
+        "description": "",
+        "largeImageUrl": "/static/discourse/49159-47146-69570-35115.gif"
     },
     {
         "name": "Add Game",
