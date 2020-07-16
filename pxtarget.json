@@ -214,7 +214,6 @@
                         "tilemap\\s*\\.\\s*loadMapInDirection": "tiles.loadMapInDirection",
                         "tilemap\\s*\\.\\s*loadedWorldColumn": "tiles.loadedWorldColumn",
                         "tilemap\\s*\\.\\s*loadedWorldRow": "tiles.loadedWorldRow"
-
                     }
                 }
             ]

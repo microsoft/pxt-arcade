@@ -1,8 +1,5 @@
 {
     "packages": {
-        "approvedOrgs": [
-            "Microsoft"
-        ],
         "approvedRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
             "adafruit/pxt-seesaw",
@@ -20,7 +17,11 @@
             "jwunderl/pxt-status-bar",
             "microsoft/pxt-settings-blocks",
             "microsoft/arcade-sprite-data"
-        ]
+        ],
+        "upgrade": {
+            "microsoft/pxt-tilemaps": "min:v1.7.2",
+            "microsoft/arcade-sprite-data": "min:v0.0.6"
+        }
     },
     "galleries": {
         "Tutorials": "tutorials",
