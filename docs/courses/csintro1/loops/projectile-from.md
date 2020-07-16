@@ -11,7 +11,7 @@ In this activity, students will use:
 
 ## Concept: Projectile from Sprite
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-projectile-from-sprite)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/bX9FOLNmScA)
 
 There are many games that have sprites sending out projectile sprites. We can set projectiles to originate from a sprite to drop coins, create obstacles, kick a ball or send a laser beam to destroy an asteroid by using ``||sprites:projectile from mySprite||``.
 

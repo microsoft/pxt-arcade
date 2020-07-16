@@ -8,7 +8,7 @@ The ``||sprites:on created||`` block uses the sprite's ``||sprites:kind||`` so w
 
 ## Concept: Create with on created event 
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-createoncreate)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/XR8DmTOdgNc)
 
 ## Example #1: Random clouds #example-1
 
