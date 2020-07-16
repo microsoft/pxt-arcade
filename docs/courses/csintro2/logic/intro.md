@@ -7,15 +7,15 @@ In these activities, students will work with:
 * ``||logic:if||`` block
 * Comparison operators
 
-## Concept: Comparisons 
+## Concept: Comparisons
 
 Comparison logic with the ``||logic:if||`` statement
- 
+
 In our games we will often want to compare values and take an action when the comparison statement is true.
 
 > Example: Is myValue (3) smaller than a testValue (5)? If it is ``||logic:true||`` that myValue is smaller than the testValue, then we will add 1 to myValue.
 
-We perform comparison tests with ``||logic:if||`` 
+We perform comparison tests with ``||logic:if||``
 
 We have already seen similar behaviors in events like ``||sprites:on overlap||``. **If** the two sprites were overlapping and not ghosts, then the code for the event will run (for example, the score might increase).
 
@@ -46,7 +46,7 @@ When we make comparisons, we have two numbers, in a specific order, and what is 
 * ``||logic:<||`` (Less than): determines whether the first value given represents a quantity that is smaller than the second value
 * ``||logic:=||`` (Equal to): determines whether the two values given represent the same quantity
 
-### Example #1: Less than 
+### Example #1: Less than
 
 1. Play the game linked below
 2. Review the code that uses comparisons
@@ -64,22 +64,22 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     game.over(false)
 })
 mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . 7 7 . . . . . . . . . . . 
-. . . 7 7 7 7 . . . . . . . . . 
-. . . 7 . . 7 7 7 . . . . . . . 
-. . . 7 . . . . 7 7 7 . . . . . 
-. . . 7 . . . . . . 7 7 7 . . . 
-. . . 7 . . . . . . . . 7 7 7 . 
-. . . 7 . . . . . . 7 7 7 . . . 
-. . . 7 . . . . 7 7 7 . . . . . 
-. . . 7 . . 7 7 7 . . . . . . . 
-. . . 7 7 7 7 . . . . . . . . . 
-. . . 7 7 . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . 7 7 . . . . . . . . . . .
+. . . 7 7 7 7 . . . . . . . . .
+. . . 7 . . 7 7 7 . . . . . . .
+. . . 7 . . . . 7 7 7 . . . . .
+. . . 7 . . . . . . 7 7 7 . . .
+. . . 7 . . . . . . . . 7 7 7 .
+. . . 7 . . . . . . 7 7 7 . . .
+. . . 7 . . . . 7 7 7 . . . . .
+. . . 7 . . 7 7 7 . . . . . . .
+. . . 7 7 7 7 . . . . . . . . .
+. . . 7 7 . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite, 0, 50)
 mySprite.x = 8
@@ -87,24 +87,24 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 info.setScore(0)
 game.onUpdateInterval(500, function () {
     projectile = sprites.createProjectile(img`
-. . . . . . . . . c c 8 . . . . 
-. . . . . . 8 c c c f 8 c c . . 
-. . . c c 8 8 f c a f f f c c . 
-. . c c c f f f c a a f f c c c 
-8 c c c f f f f c c a a c 8 c c 
-c c c b f f f 8 a c c a a a c c 
-c a a b b 8 a b c c c c c c c c 
-a f c a a b b a c c c c c f f c 
-a 8 f c a a c c a c a c f f f c 
-c a 8 a a c c c c a a f f f 8 a 
-. a c a a c f f a a b 8 f f c a 
-. . c c b a f f f a b b c c 6 c 
-. . . c b b a f f 6 6 a b 6 c . 
-. . . c c b b b 6 6 a c c c c . 
-. . . . c c a b b c c c . . . . 
-. . . . . c c c c c c . . . . . 
+. . . . . . . . . c c 8 . . . .
+. . . . . . 8 c c c f 8 c c . .
+. . . c c 8 8 f c a f f f c c .
+. . c c c f f f c a a f f c c c
+8 c c c f f f f c c a a c 8 c c
+c c c b f f f 8 a c c a a a c c
+c a a b b 8 a b c c c c c c c c
+a f c a a b b a c c c c c f f c
+a 8 f c a a c c a c a c f f f c
+c a 8 a a c c c c a a f f f 8 a
+. a c a a c f f a a b 8 f f c a
+. . c c b a f f f a b b c c 6 c
+. . . c b b a f f 6 6 a b 6 c .
+. . . c c b b b 6 6 a c c c c .
+. . . . c c a b b c c c . . . .
+. . . . . c c c c c c . . . . .
 `, -150, 0, SpriteKind.Enemy)
-    projectile.setPosition(scene.screenWidth(), Math.randomRange(0, scene.screenHeight()))
+    projectile.setPosition(scene.screenWidth(), randint(0, scene.screenHeight()))
     if (info.score() < 10) {
         projectile.vx += 100
     }
@@ -160,45 +160,45 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Cherry, function (sprite, otherS
     }
 })
 mySprite = sprites.create(img`
-. . . . . . 5 . 5 . . . . . . . 
-. . . . . f 5 5 5 f f . . . . . 
-. . . . f 1 5 2 5 1 6 f . . . . 
-. . . f 1 6 6 6 6 6 1 6 f . . . 
-. . . f 6 6 f f f f 6 1 f . . . 
-. . . f 6 f f d d f f 6 f . . . 
-. . f 6 f d f d d f d f 6 f . . 
-. . f 6 f d 3 d d 3 d f 6 f . . 
-. . f 6 6 f d d d d f 6 6 f . . 
-. f 6 6 f 3 f f f f 3 f 6 6 f . 
-. . f f d 3 5 3 3 5 3 d f f . . 
-. . f d d f 3 5 5 3 f d d f . . 
-. . . f f 3 3 3 3 3 3 f f . . . 
-. . . f 3 3 5 3 3 5 3 3 f . . . 
-. . . f f f f f f f f f f . . . 
-. . . . . f f . . f f . . . . . 
+. . . . . . 5 . 5 . . . . . . .
+. . . . . f 5 5 5 f f . . . . .
+. . . . f 1 5 2 5 1 6 f . . . .
+. . . f 1 6 6 6 6 6 1 6 f . . .
+. . . f 6 6 f f f f 6 1 f . . .
+. . . f 6 f f d d f f 6 f . . .
+. . f 6 f d f d d f d f 6 f . .
+. . f 6 f d 3 d d 3 d f 6 f . .
+. . f 6 6 f d d d d f 6 6 f . .
+. f 6 6 f 3 f f f f 3 f 6 6 f .
+. . f f d 3 5 3 3 5 3 d f f . .
+. . f d d f 3 5 5 3 f d d f . .
+. . . f f 3 3 3 3 3 3 f f . . .
+. . . f 3 3 5 3 3 5 3 3 f . . .
+. . . f f f f f f f f f f . . .
+. . . . . f f . . f f . . . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 100)
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
 game.splash("Collect 5 cherries")
 game.onUpdateInterval(500, function () {
     projectile = sprites.createProjectile(img`
-. . . . . . . . . . . 6 6 6 6 6 
-. . . . . . . . . 6 6 7 7 7 7 8 
-. . . . . . 8 8 8 7 7 8 8 6 8 8 
-. . e e e e c 6 6 8 8 . 8 7 8 . 
-. e 2 5 4 2 e c 8 . . . 6 7 8 . 
-e 2 4 2 2 2 2 2 c . . . 6 7 8 . 
-e 2 2 2 2 2 2 2 c . . . 8 6 8 . 
-e 2 e e 2 2 2 2 e e e e c 6 8 . 
-c 2 e e 2 2 2 2 e 2 5 4 2 c 8 . 
-. c 2 e e e 2 e 2 4 2 2 2 2 c . 
-. . c 2 2 2 e e 2 2 2 2 2 2 2 e 
-. . . e c c e c 2 2 2 2 2 2 2 e 
-. . . . . . . c 2 e e 2 2 e 2 c 
-. . . . . . . c e e e e e e 2 c 
-. . . . . . . . c e 2 2 2 2 c . 
-. . . . . . . . . c c c c c . . 
-`, Math.randomRange(-30, 30), Math.randomRange(-30, 30), SpriteKind.Cherry)
+. . . . . . . . . . . 6 6 6 6 6
+. . . . . . . . . 6 6 7 7 7 7 8
+. . . . . . 8 8 8 7 7 8 8 6 8 8
+. . e e e e c 6 6 8 8 . 8 7 8 .
+. e 2 5 4 2 e c 8 . . . 6 7 8 .
+e 2 4 2 2 2 2 2 c . . . 6 7 8 .
+e 2 2 2 2 2 2 2 c . . . 8 6 8 .
+e 2 e e 2 2 2 2 e e e e c 6 8 .
+c 2 e e 2 2 2 2 e 2 5 4 2 c 8 .
+. c 2 e e e 2 e 2 4 2 2 2 2 c .
+. . c 2 2 2 e e 2 2 2 2 2 2 2 e
+. . . e c c e c 2 2 2 2 2 2 2 e
+. . . . . . . c 2 e e 2 2 e 2 c
+. . . . . . . c e e e e e e 2 c
+. . . . . . . . c e 2 2 2 2 c .
+. . . . . . . . . c c c c c . .
+`, randint(-30, 30), randint(-30, 30), SpriteKind.Cherry)
 })
 ```
 
@@ -230,78 +230,78 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     if (info.life() == 1) {
         mySprite.say("Last chance")
         mySprite.setImage(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . 2 2 . . . . . . . . . . . 
-. . . 2 2 2 2 . . . . . . . . . 
-. . . 2 . . 2 2 2 . . . . . . . 
-. . . 2 . . . . 2 2 2 . . . . . 
-. . . 2 . . . . . . 2 2 2 . . . 
-. . . 2 . . . . . . . . 2 2 2 . 
-. . . 2 . . . . . . 2 2 2 . . . 
-. . . 2 . . . . 2 2 2 . . . . . 
-. . . 2 . . 2 2 2 . . . . . . . 
-. . . 2 2 2 2 . . . . . . . . . 
-. . . 2 2 . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . 2 2 . . . . . . . . . . .
+. . . 2 2 2 2 . . . . . . . . .
+. . . 2 . . 2 2 2 . . . . . . .
+. . . 2 . . . . 2 2 2 . . . . .
+. . . 2 . . . . . . 2 2 2 . . .
+. . . 2 . . . . . . . . 2 2 2 .
+. . . 2 . . . . . . 2 2 2 . . .
+. . . 2 . . . . 2 2 2 . . . . .
+. . . 2 . . 2 2 2 . . . . . . .
+. . . 2 2 2 2 . . . . . . . . .
+. . . 2 2 . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `)
     }
 })
 mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . 7 7 . . . . . . . . . . . 
-. . . 7 7 7 7 . . . . . . . . . 
-. . . 7 . . 7 7 7 . . . . . . . 
-. . . 7 . . . . 7 7 7 . . . . . 
-. . . 7 . . . . . . 7 7 7 . . . 
-. . . 7 . . . . . . . . 7 7 7 . 
-. . . 7 . . . . . . 7 7 7 . . . 
-. . . 7 . . . . 7 7 7 . . . . . 
-. . . 7 . . 7 7 7 . . . . . . . 
-. . . 7 7 7 7 . . . . . . . . . 
-. . . 7 7 . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . 7 7 . . . . . . . . . . .
+. . . 7 7 7 7 . . . . . . . . .
+. . . 7 . . 7 7 7 . . . . . . .
+. . . 7 . . . . 7 7 7 . . . . .
+. . . 7 . . . . . . 7 7 7 . . .
+. . . 7 . . . . . . . . 7 7 7 .
+. . . 7 . . . . . . 7 7 7 . . .
+. . . 7 . . . . 7 7 7 . . . . .
+. . . 7 . . 7 7 7 . . . . . . .
+. . . 7 7 7 7 . . . . . . . . .
+. . . 7 7 . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 100)
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
 info.setLife(3)
 forever(function () {
     projectile = sprites.createProjectile(img`
-. . . . . . . . . c c 8 . . . . 
-. . . . . . 8 c c c f 8 c c . . 
-. . . c c 8 8 f c a f f f c c . 
-. . c c c f f f c a a f f c c c 
-8 c c c f f f f c c a a c 8 c c 
-c c c b f f f 8 a c c a a a c c 
-c a a b b 8 a b c c c c c c c c 
-a f c a a b b a c c c c c f f c 
-a 8 f c a a c c a c a c f f f c 
-c a 8 a a c c c c a a f f f 8 a 
-. a c a a c f f a a b 8 f f c a 
-. . c c b a f f f a b b c c 6 c 
-. . . c b b a f f 6 6 a b 6 c . 
-. . . c c b b b 6 6 a c c c c . 
-. . . . c c a b b c c c . . . . 
-. . . . . c c c c c c . . . . . 
-`, -100, Math.randomRange(-50, 50), SpriteKind.Enemy)
+. . . . . . . . . c c 8 . . . .
+. . . . . . 8 c c c f 8 c c . .
+. . . c c 8 8 f c a f f f c c .
+. . c c c f f f c a a f f c c c
+8 c c c f f f f c c a a c 8 c c
+c c c b f f f 8 a c c a a a c c
+c a a b b 8 a b c c c c c c c c
+a f c a a b b a c c c c c f f c
+a 8 f c a a c c a c a c f f f c
+c a 8 a a c c c c a a f f f 8 a
+. a c a a c f f a a b 8 f f c a
+. . c c b a f f f a b b c c 6 c
+. . . c b b a f f 6 6 a b 6 c .
+. . . c c b b b 6 6 a c c c c .
+. . . . c c a b b c c c . . . .
+. . . . . c c c c c c . . . . .
+`, -100, randint(-50, 50), SpriteKind.Enemy)
     pause(500)
 })
 ```
 
 When the player is on their final life, the image of the sprite changes and the sprite says "Last chance".
 
-## Task #3: Count to 10 
+## Task #3: Count to 10
 
 1. Create a new project
 2. Make it so that when the player presses the ``||controller:A||`` button the score increases by 1
 3. Make it so that after the score is increased, if the score is equal to 10, use the ``||game:game over||`` block to end the game
 
-### Example #4: Multiple ``||logic:if||`` Comparisons 
+### Example #4: Multiple ``||logic:if||`` Comparisons
 
 1. Play the game linked below
 2. Review the code that uses comparisons
@@ -320,22 +320,22 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 mySprite = sprites.create(img`
-. . . . . . 5 . 5 . . . . . . . 
-. . . . . f 5 5 5 f f . . . . . 
-. . . . f 1 5 2 5 1 6 f . . . . 
-. . . f 1 6 6 6 6 6 1 6 f . . . 
-. . . f 6 6 f f f f 6 1 f . . . 
-. . . f 6 f f d d f f 6 f . . . 
-. . f 6 f d f d d f d f 6 f . . 
-. . f 6 f d 3 d d 3 d f 6 f . . 
-. . f 6 6 f d d d d f 6 6 f . . 
-. f 6 6 f 3 f f f f 3 f 6 6 f . 
-. . f f d 3 5 3 3 5 3 d f f . . 
-. . f d d f 3 5 5 3 f d d f . . 
-. . . f f 3 3 3 3 3 3 f f . . . 
-. . . f 3 3 5 3 3 5 3 3 f . . . 
-. . . f f f f f f f f f f . . . 
-. . . . . f f . . f f . . . . . 
+. . . . . . 5 . 5 . . . . . . .
+. . . . . f 5 5 5 f f . . . . .
+. . . . f 1 5 2 5 1 6 f . . . .
+. . . f 1 6 6 6 6 6 1 6 f . . .
+. . . f 6 6 f f f f 6 1 f . . .
+. . . f 6 f f d d f f 6 f . . .
+. . f 6 f d f d d f d f 6 f . .
+. . f 6 f d 3 d d 3 d f 6 f . .
+. . f 6 6 f d d d d f 6 6 f . .
+. f 6 6 f 3 f f f f 3 f 6 6 f .
+. . f f d 3 5 3 3 5 3 d f f . .
+. . f d d f 3 5 5 3 f d d f . .
+. . . f f 3 3 3 3 3 3 f f . . .
+. . . f 3 3 5 3 3 5 3 3 f . . .
+. . . f f f f f f f f f f . . .
+. . . . . f f . . f f . . . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 100)
 info.setLife(5)
@@ -358,7 +358,7 @@ Notice how when the player presses the ``||controller:A||`` button, if they are 
 The background can be changed to a random color with the following block
 
 ```block
-scene.setBackgroundColor(Math.randomRange(1, 15))
+scene.setBackgroundColor(randint(1, 15))
 ```
 
 ### ~

@@ -52,52 +52,52 @@ let sitting = 0
 let playing = false
 game.splash("Bouncer Bucket", "A = 1 ball, B = 10 balls")
 balls.push(img`
-. . 7 7 7 7 . . 
-. 7 7 7 7 7 7 . 
-7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 
-7 7 7 7 7 7 7 7 
-. 7 7 7 7 7 7 . 
-. . 7 7 7 7 . . 
+. . 7 7 7 7 . .
+. 7 7 7 7 7 7 .
+7 7 7 7 7 7 7 7
+7 7 7 7 7 7 7 7
+7 7 7 7 7 7 7 7
+7 7 7 7 7 7 7 7
+. 7 7 7 7 7 7 .
+. . 7 7 7 7 . .
 `)
 balls.push(img`
-. . 2 2 2 2 . . 
-. 2 2 2 2 2 2 . 
-2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 
-2 2 2 2 2 2 2 2 
-. 2 2 2 2 2 2 . 
-. . 2 2 2 2 . . 
+. . 2 2 2 2 . .
+. 2 2 2 2 2 2 .
+2 2 2 2 2 2 2 2
+2 2 2 2 2 2 2 2
+2 2 2 2 2 2 2 2
+2 2 2 2 2 2 2 2
+. 2 2 2 2 2 2 .
+. . 2 2 2 2 . .
 `)
 balls.push(img`
-. . 4 4 4 4 . . 
-. 4 4 4 4 4 4 . 
-4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 
-. 4 4 4 4 4 4 . 
-. . 4 4 4 4 . . 
+. . 4 4 4 4 . .
+. 4 4 4 4 4 4 .
+4 4 4 4 4 4 4 4
+4 4 4 4 4 4 4 4
+4 4 4 4 4 4 4 4
+4 4 4 4 4 4 4 4
+. 4 4 4 4 4 4 .
+. . 4 4 4 4 . .
 `)
 catcher = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-1 . . . . . . . . . . . . . . 1 
-f e e . . . . . . . . . . e e f 
-1 f e e . . . . . . . . e e f 1 
-1 1 f e e e e e e e e e e f 1 1 
-. 1 e f e e e e e e e e f e 1 . 
-. 1 e f e e e e e e e e f e 1 . 
-. 1 e e f f e e e e f f e e 1 . 
-. 1 e e e e f f f f e e e e 1 . 
-. 1 1 e e e e e e e e e e 1 1 . 
-. . 1 e e e e e e e e e e 1 . . 
-. . 1 e e e e e e e e e e 1 . . 
-. . 1 1 e e e e e e e e 1 1 . . 
-. . . 1 e e e e e e e e 1 . . . 
-. . . 1 1 1 1 1 1 1 1 1 1 . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+1 . . . . . . . . . . . . . . 1
+f e e . . . . . . . . . . e e f
+1 f e e . . . . . . . . e e f 1
+1 1 f e e e e e e e e e e f 1 1
+. 1 e f e e e e e e e e f e 1 .
+. 1 e f e e e e e e e e f e 1 .
+. 1 e e f f e e e e f f e e 1 .
+. 1 e e e e f f f f e e e e 1 .
+. 1 1 e e e e e e e e e e 1 1 .
+. . 1 e e e e e e e e e e 1 . .
+. . 1 e e e e e e e e e e 1 . .
+. . 1 1 e e e e e e e e 1 1 . .
+. . . 1 e e e e e e e e 1 . . .
+. . . 1 1 1 1 1 1 1 1 1 1 . . .
 `, SpriteKind.Player)
 catcher.bottom = scene.screenHeight() - 1
 catcher.setFlag(SpriteFlag.StayInScreen, true)
@@ -151,11 +151,11 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 function makeBouncer() {
-    let ballChoice = Math.randomRange(0, 2)
+    let ballChoice = randint(0, 2)
     let ballsCount = bouncers.unshift(sprites.create(balls[ballChoice], SpriteKind.Ball))
     bouncers[0].setFlag(SpriteFlag.AutoDestroy, true)
-    bouncers[0].x = Math.randomRange(0, scene.screenWidth() / 4)
-    bouncers[0].y = Math.randomRange(0, scene.screenHeight() / 3)
+    bouncers[0].x = randint(0, scene.screenWidth() / 4)
+    bouncers[0].y = randint(0, scene.screenHeight() / 3)
     bouncers[0].vx = 10 + ballChoice * 10
     bouncers[0].ay = 100
 }
@@ -173,6 +173,6 @@ game.onUpdateInterval(10, function () {
             bouncer.ay = bouncer.ay + 20
         }
     }
-    sitting += 1    
+    sitting += 1
 })
 ```

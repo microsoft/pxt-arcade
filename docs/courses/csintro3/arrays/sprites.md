@@ -24,9 +24,9 @@ let enemy1: Sprite = sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy
 let enemy2: Sprite = sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy);
 let enemy3: Sprite = sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy);
 
-enemy1.x = Math.randomRange(10, screen.width - 10);
-enemy2.x = Math.randomRange(10, screen.width - 10);
-enemy3.x = Math.randomRange(10, screen.width - 10);
+enemy1.x = randint(10, screen.width - 10);
+enemy2.x = randint(10, screen.width - 10);
+enemy3.x = randint(10, screen.width - 10);
 ```
 
 ![Animation of translating from example 1a to example 1b](/static/courses/csintro3/arrays/convert-sprites-to-array.gif)
@@ -41,9 +41,9 @@ let enemies: Sprite[] = [
     sprites.create(sprites.food.smallIceCream, SpriteKind.Enemy)
 ];
 
-enemies[0].x = Math.randomRange(10, screen.width - 10);
-enemies[1].x = Math.randomRange(10, screen.width - 10);
-enemies[2].x = Math.randomRange(10, screen.width - 10);
+enemies[0].x = randint(10, screen.width - 10);
+enemies[1].x = randint(10, screen.width - 10);
+enemies[2].x = randint(10, screen.width - 10);
 ```
 
 ## Student Task #1: Redundancy and Randomness
@@ -74,8 +74,8 @@ let characters: Sprite[] = [];
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     let newCharacter: Sprite = sprites.create(sprites.food.smallPizza, SpriteKind.Player);
-    newCharacter.x = Math.randomRange(0, screen.width);
-    newCharacter.y = Math.randomRange(0, screen.height);
+    newCharacter.x = randint(0, screen.width);
+    newCharacter.y = randint(0, screen.height);
     characters.push(newCharacter);
 });
 
@@ -97,7 +97,7 @@ the ``||sprites:sprites||`` that were ``||sprites:destroy||``ed when
 ``||controller:B||`` was pressed.
 
 There are several approaches to fix this.
-One approach would be to use ``||math:Math.randomRange||``
+One approach would be to use ``||math:randint||``
 to select an index for the sprite, use ``||arrays:characters.removeAt||``
 (which takes in an index, and removes the value at the given index from the array)
 to remove the sprite at that index, and then ``||sprites:destroy||`` the sprite
@@ -122,8 +122,8 @@ identify all sprites of ``||sprites:kind||`` ``||sprites:Player||``
 ```typescript
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     let newCharacter: Sprite = sprites.create(sprites.food.smallPizza, SpriteKind.Player);
-    newCharacter.x = Math.randomRange(0, screen.width);
-    newCharacter.y = Math.randomRange(0, screen.height);
+    newCharacter.x = randint(0, screen.width);
+    newCharacter.y = randint(0, screen.height);
 })
 
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {

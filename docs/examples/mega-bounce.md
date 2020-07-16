@@ -16,8 +16,8 @@ function addBall(ay: number) {
 ..626
 ...6
 `)
-    ball.image.replace(6, Math.randomRange(1, 15))
-    ball.image.replace(2, Math.randomRange(1, 15))
+    ball.image.replace(6, randint(1, 15))
+    ball.image.replace(2, randint(1, 15))
     ball.ay = ay
     balls.push(ball);
 }
@@ -37,7 +37,7 @@ game.onUpdate(function () {
     for (const ball of balls) {
         if (ball.overlapsWith(paddle)) {
             ball.vy = -20 - ball.ay;
-            ball.vx = Math.randomRange(-40, 40)
+            ball.vx = randint(-40, 40)
             info.changeScoreBy(1)
             if (info.score() % 5 == 0) {
                 music.playSound(music.sounds(Sounds.PowerUp))

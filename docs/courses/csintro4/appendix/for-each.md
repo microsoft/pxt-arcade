@@ -46,8 +46,8 @@ all ``||sprites:Enemy||``s
 ```typescript
 for (let i = 0; i < 15; i++) {
     let skeleton: Sprite = sprites.create(sprites.castle.skellyFront, SpriteKind.Enemy);
-    skeleton.x = Math.randomRange(0, screen.width);
-    skeleton.y = Math.randomRange(0, screen.height);
+    skeleton.x = randint(0, screen.width);
+    skeleton.y = randint(0, screen.height);
 }
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -73,7 +73,7 @@ It may help to temporarily put the ``||loops:pause||`` inside that loop to test
 ### ~hint
 
 The ``||loops:for ... of||`` statement is sufficient in most all cases
-to handle this sort of behavior. 
+to handle this sort of behavior.
 
 The rest of this appendix is quite a bit more complex, and potentially confusing:
 it is included mostly as a reference for use as needed.
@@ -131,8 +131,8 @@ that are on the **right** half of the screen
 ```typescript
 for (let i = 0; i < 15; i++) {
     let skeleton: Sprite = sprites.create(sprites.castle.skellyFront, SpriteKind.Enemy);
-    skeleton.x = Math.randomRange(0, screen.width);
-    skeleton.y = Math.randomRange(0, screen.height);
+    skeleton.x = randint(0, screen.width);
+    skeleton.y = randint(0, screen.height);
 }
 
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -176,8 +176,8 @@ but allows for clearer formatting when programming in this style.
 ```typescript
 for (let i = 0; i < 15; i++) {
     let skeleton: Sprite = sprites.create(sprites.castle.skellyFront, SpriteKind.Enemy);
-    skeleton.x = Math.randomRange(0, screen.width);
-    skeleton.y = Math.randomRange(0, screen.height);
+    skeleton.x = randint(0, screen.width);
+    skeleton.y = randint(0, screen.height);
 }
 
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -192,7 +192,7 @@ The snippet above will behave exactly the same as example #2.
 The line ``element => element.x > screen.width / 2`` says
 "take the first element,
 pass it as a parameter to the function on the right side of the ``=>``,
-and return the result of the statement on the right. 
+and return the result of the statement on the right.
 
 Arrow Functions can also be created that are more than a single line
 using curly braces ``{}``,

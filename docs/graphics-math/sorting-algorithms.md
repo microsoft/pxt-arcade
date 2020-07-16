@@ -93,7 +93,7 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
 
 function moveRandom<T>(a: T[], b: T[]) {
     if (a.length > 0) {
-        const i = Math.randomRange(0, a.length - 1);
+        const i = randint(0, a.length - 1);
         b.push(a.removeAt(i));
     }
 }
@@ -195,7 +195,7 @@ namespace sorts {
         a[j] = tmp;
         pause(pauseDuration);
     }
-    
+
     function compare(a: number, b: number) {
         pause(pauseDuration)
         return a < b;
@@ -235,7 +235,7 @@ namespace sorts {
     export function bubbleSort(a: number[]) {
         for (let i = 0; i < a.length; ++i) {
             for (let j = 0; j < i; ++j) {
-                
+
                 if (compare(a[i], a[j])) {
                     swap(a, i, j);
                 }

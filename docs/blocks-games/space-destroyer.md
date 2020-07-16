@@ -38,8 +38,8 @@ controller.moveSprite(ship, 100, 100)
 info.setLife(3)
 effects.starField.startScreenEffect()
 game.onUpdateInterval(500, function () {
-    projectile = sprites.createProjectileFromSide(asteroids[Math.randomRange(0, asteroids.length - 1)], 0, 75)
+    projectile = sprites.createProjectileFromSide(asteroids[randint(0, asteroids.length - 1)], 0, 75)
     projectile.setKind(SpriteKind.Enemy)
-    projectile.x = Math.randomRange(10, 150)
+    projectile.x = randint(10, 150)
 })
 ```

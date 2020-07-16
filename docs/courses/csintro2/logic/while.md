@@ -2,7 +2,7 @@
 
 ``||logic:if||`` and ``||logic:else||`` conditions allows for the development games and programs that properly respond to different states and conditions - however, the condition only occurs a single time. The ``||loops:while||`` loop allows for conditions to be checked an indefinite number of times, until the condition becomes false - effectively serving as a looping ``||logic:if||`` statement.
 
-In this activity, students will: 
+In this activity, students will:
 * Use ``||loops:while||`` loops
 
 ## Concept: While loops
@@ -19,7 +19,7 @@ Using ``||loops:while||`` loops allows for actions and tasks that repeat until c
 
 ```blocks
 let guess = 0
-let value = Math.randomRange(1, 5)
+let value = randint(1, 5)
 game.splash("I'm thinking of a number between 1 and 5")
 while (guess != value) {
     guess = parseInt(game.askForString("What's your guess"))
@@ -28,9 +28,9 @@ game.splash("Correct!")
 game.over(true)
 ```
 
-This game requires the player to guess a number that the game has chosen. The game generates a random number, and then prompts the player to guess until they get it right. 
+This game requires the player to guess a number that the game has chosen. The game generates a random number, and then prompts the player to guess until they get it right.
 
-Another way to think about this task is that we want the code that prompts the player to guess to keep looping **while** they are getting the answer wrong. 
+Another way to think about this task is that we want the code that prompts the player to guess to keep looping **while** they are getting the answer wrong.
 
 ### ~hint
 
@@ -71,25 +71,25 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.FireSource, function (sprite, ot
     otherSprite.destroy()
 })
 sprites.onCreated(SpriteKind.FireSource, function (sprite) {
-    sprite.setPosition(Math.randomRange(0, scene.screenWidth()), Math.randomRange(0, scene.screenHeight()))
+    sprite.setPosition(randint(0, scene.screenWidth()), randint(0, scene.screenHeight()))
 })
 mySprite = sprites.create(img`
-. . . . . . . f f f . . . . . . 
-. . . . . . f 4 4 4 f . . . . . 
-. . . . . f 4 4 4 4 4 f . . . . 
-. . . . f 4 4 2 2 4 4 4 f . . . 
-. . . . f 4 4 2 2 2 4 4 4 f . . 
-. . . f 4 4 2 2 2 2 2 4 4 f . . 
-. . . f 4 4 2 2 2 2 2 2 4 4 f . 
-. . . f 4 4 2 2 2 5 5 2 4 4 f . 
-. . f 4 4 4 2 2 2 5 5 5 4 4 4 f 
-. f 4 4 4 2 2 2 5 5 5 5 4 4 4 f 
-f 4 4 2 2 2 2 5 5 5 5 5 5 4 4 f 
-f 4 4 2 2 2 2 5 5 5 5 5 5 4 4 f 
-. f 4 4 4 2 2 5 5 5 5 5 5 4 f . 
-. . f 4 4 4 4 4 4 4 4 4 4 4 f . 
-. . . f 4 4 4 4 4 4 4 4 f f . . 
-. . . . f f f f f f f f . . . . 
+. . . . . . . f f f . . . . . .
+. . . . . . f 4 4 4 f . . . . .
+. . . . . f 4 4 4 4 4 f . . . .
+. . . . f 4 4 2 2 4 4 4 f . . .
+. . . . f 4 4 2 2 2 4 4 4 f . .
+. . . f 4 4 2 2 2 2 2 4 4 f . .
+. . . f 4 4 2 2 2 2 2 2 4 4 f .
+. . . f 4 4 2 2 2 5 5 2 4 4 f .
+. . f 4 4 4 2 2 2 5 5 5 4 4 4 f
+. f 4 4 4 2 2 2 5 5 5 5 4 4 4 f
+f 4 4 2 2 2 2 5 5 5 5 5 5 4 4 f
+f 4 4 2 2 2 2 5 5 5 5 5 5 4 4 f
+. f 4 4 4 2 2 5 5 5 5 5 5 4 f .
+. . f 4 4 4 4 4 4 4 4 4 4 4 f .
+. . . f 4 4 4 4 4 4 4 4 f f . .
+. . . . f f f f f f f f . . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite, 50, 50)
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
@@ -97,27 +97,27 @@ info.setLife(15)
 info.startCountdown(3)
 game.onUpdateInterval(500, function () {
     fireSource = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . 2 2 2 2 2 2 . . 5 . . . . . 
-. . 2 . . . . 2 2 5 . . . . . . 
-. . 2 . . . . 2 2 2 . . . . . . 
-. . 2 2 2 2 2 2 2 2 . . . . . . 
-. . 2 f 2 2 2 2 f 2 . . . . . . 
-. . 2 2 f 2 2 f 2 2 . . . . . . 
-. . 2 2 2 f f 2 2 2 . . . . . . 
-. . 2 2 2 f f 2 2 2 . . . . . . 
-. . 2 2 2 f f 2 2 2 . . . . . . 
-. . 2 2 2 f f 2 2 2 . . . . . . 
-. . 2 2 f 2 2 f 2 2 . . . . . . 
-. . 2 f 2 2 2 2 f 2 . . . . . . 
-. . 2 2 2 2 2 2 2 2 . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . 2 2 2 2 2 2 . . 5 . . . . .
+. . 2 . . . . 2 2 5 . . . . . .
+. . 2 . . . . 2 2 2 . . . . . .
+. . 2 2 2 2 2 2 2 2 . . . . . .
+. . 2 f 2 2 2 2 f 2 . . . . . .
+. . 2 2 f 2 2 f 2 2 . . . . . .
+. . 2 2 2 f f 2 2 2 . . . . . .
+. . 2 2 2 f f 2 2 2 . . . . . .
+. . 2 2 2 f f 2 2 2 . . . . . .
+. . 2 2 2 f f 2 2 2 . . . . . .
+. . 2 2 f 2 2 f 2 2 . . . . . .
+. . 2 f 2 2 2 2 f 2 . . . . . .
+. . 2 2 2 2 2 2 2 2 . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, SpriteKind.FireSource)
 })
 ```
 
-This is a game in which the object is to keep throwing fireballs for as long as you can. The player's ``||info:score||`` is how many fireballs they have launched. The problem for the player is that they have a limited number of fireballs, which are stored as ``||info:life||``, and need to pickup fuel in order to get more. 
+This is a game in which the object is to keep throwing fireballs for as long as you can. The player's ``||info:score||`` is how many fireballs they have launched. The problem for the player is that they have a limited number of fireballs, which are stored as ``||info:life||``, and need to pickup fuel in order to get more.
 
 An important part is missing, though: the code that will fire the fireballs when the player says to start!
 

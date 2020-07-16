@@ -179,8 +179,8 @@ game.onUpdateInterval(1000, function () {
 
 sprites.onCreated(SpriteKind.Asteroid, function (sprite: Sprite) {
     sprite.setImage(Math.pickRandom(asteroids));
-    sprite.y = Math.randomRange(0, screen.height);
-    sprite.x = Math.randomRange(0, screen.width);
+    sprite.y = randint(0, screen.height);
+    sprite.x = randint(0, screen.width);
 });
 ```
 

@@ -81,22 +81,22 @@ and the portions that are different
 
 ```typescript
 let player = sprites.create(img`
-    . . . . . . b . b . . . . . . . 
-    . . . . . f b b b f f . . . . . 
-    . . . . f 1 b 7 b 1 c f . . . . 
-    . . . f 1 c c c c c 1 c f . . . 
-    . . . f c c f f f f c 1 f . . . 
-    . . . f c f f e e f f c f . . . 
-    . . f c f e f e e f e f c f . . 
-    . . f c f e a e e a e f c f . . 
-    . . f c c f e e e e f c c f . . 
-    . f c c f a f f f f a f c c f . 
-    . . f f e a b a a b a e f f . . 
-    . . f e e f a b b a f e e f . . 
-    . . . f f a a a a a a f f . . . 
-    . . . f a a b a a b a a f . . . 
-    . . . f f f f f f f f f f . . . 
-    . . . . . f f . . f f . . . . . 
+    . . . . . . b . b . . . . . . .
+    . . . . . f b b b f f . . . . .
+    . . . . f 1 b 7 b 1 c f . . . .
+    . . . f 1 c c c c c 1 c f . . .
+    . . . f c c f f f f c 1 f . . .
+    . . . f c f f e e f f c f . . .
+    . . f c f e f e e f e f c f . .
+    . . f c f e a e e a e f c f . .
+    . . f c c f e e e e f c c f . .
+    . f c c f a f f f f a f c c f .
+    . . f f e a b a a b a e f f . .
+    . . f e e f a b b a f e e f . .
+    . . . f f a a a a a a f f . . .
+    . . . f a a b a a b a a f . . .
+    . . . f f f f f f f f f f . . .
+    . . . . . f f . . f f . . . . .
 `, SpriteKind.Player);
 controller.moveSprite(player, 100, 100);
 ```
@@ -158,9 +158,9 @@ namespace SpriteKind {
 }
 
 let square = sprites.create(img`
-    1 1 1 
-    1 1 1 
-    1 1 1 
+    1 1 1
+    1 1 1
+    1 1 1
 `, SpriteKind.Square);
 controller.moveSprite(square, 100, 100);
 ```
@@ -198,9 +198,9 @@ namespace SpriteKind {
 }
 
 let player = sprites.create(img`
-    1 1 1 
-    1 1 1 
-    1 1 1 
+    1 1 1
+    1 1 1
+    1 1 1
 `, SpriteKind.Square);
 
 pause(1000);
@@ -271,12 +271,12 @@ namespace asteroids {
     });
 
     function setMotion(asteroid: Sprite) {
-        asteroid.vx = Math.randomRange(-8, 8);
-        asteroid.vy = Math.randomRange(35, 20);
+        asteroid.vx = randint(-8, 8);
+        asteroid.vy = randint(35, 20);
     }
 
     function setPosition(sprite: Sprite, edge: number) {
-        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.x = randint(edge, screen.width - edge);
         sprite.y = 0;
     }
 }

@@ -40,7 +40,7 @@ controller.moveSprite(mySprite, 100, 100)
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
 info.setLife(3)
 game.onUpdateInterval(500, function () {
-    choice = Math.randomRange(1, 3)
+    choice = randint(1, 3)
     if (choice == 1) {
         projectile = sprites.createProjectileFromSide(img`
             . . . . . . . . . . b b b . . .
@@ -100,6 +100,6 @@ game.onUpdateInterval(500, function () {
         `, 55, 0)
         projectile.setKind(SpriteKind.Food)
     }
-    projectile.y = Math.randomRange(10, 110)
+    projectile.y = randint(10, 110)
 })
 ```

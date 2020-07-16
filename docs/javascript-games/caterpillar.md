@@ -142,12 +142,12 @@ forever(function () {
         let newColor: number;
 
         do {
-            newColor = Math.randomRange(0x1, 0xE);
+            newColor = randint(0x1, 0xE);
         } while (newColor === 0x6);
         newSection.image.replace(0x1, newColor);
 
         do {
-            newColor = Math.randomRange(0x1, 0xE);
+            newColor = randint(0x1, 0xE);
         } while (newColor === 0x6);
         newSection.image.replace(0xF, newColor);
 
@@ -245,8 +245,8 @@ function setDirection(targetDir: Direction, oppositeDir: Direction, im: Image) {
 function placeFruit() {
     currentLeaf = sprites.create(leafImage, SpriteKind.Food);
     do {
-        currentLeaf.left = Math.randomRange(0, 19) * size;
-        currentLeaf.top = Math.randomRange(0, 14) * size;
+        currentLeaf.left = randint(0, 19) * size;
+        currentLeaf.top = randint(0, 14) * size;
     } while (
         (currentLeaf.top === 0 && currentLeaf.right === screen.width)
         || sprites

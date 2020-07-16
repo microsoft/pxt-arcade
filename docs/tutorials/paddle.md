@@ -56,7 +56,7 @@ let ball = sprites.create(img`
 `, SpriteKind.Player)
 ball.setVelocity(100, 100)
 ball.setFlag(SpriteFlag.BounceOnWall, true)
-ball.y = Math.randomRange(0, 120)
+ball.y = randint(0, 120)
 ```
 
 ## Step 4
@@ -76,7 +76,7 @@ function create_ball () {
     `, SpriteKind.Player)
     ball.setVelocity(100, 100)
     ball.setFlag(SpriteFlag.BounceOnWall, true)
-    ball.y = Math.randomRange(0, 120)
+    ball.y = randint(0, 120)
 }
 let ball: Sprite = null
 create_ball()
@@ -306,7 +306,7 @@ function create_ball () {
     `, SpriteKind.Player)
     ball.setVelocity(100, 100)
     ball.setFlag(SpriteFlag.BounceOnWall, true)
-    ball.y = Math.randomRange(0, 120)
+    ball.y = randint(0, 120)
 }
 function create_left_paddle() {
     left_paddle = sprites.create(img`
@@ -364,7 +364,7 @@ create_right_paddle()
 
 ## Step 12
 
-Add an event that runs code when ``||variables:ball||`` ``||sprites:overlaps||`` 
+Add an event that runs code when ``||variables:ball||`` ``||sprites:overlaps||``
 with ``||variables:left_paddle||``.
 
 ```blocks

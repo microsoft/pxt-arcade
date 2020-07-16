@@ -138,7 +138,7 @@ game.onUpdateInterval(1000, function () {
 . . . f f f . . . . f f f f . .
 . . . . . . . . . . . . . . . .
 `, 50, 0)
-    projectile.y = Math.randomRange(0, 10)
+    projectile.y = randint(0, 10)
 })
 ```
 
@@ -169,7 +169,7 @@ game.onUpdateInterval(1000, function () {
 . . . f f f . . . . f f f f . .
 . . . . . . . . . . . . . . . .
 `, 50, 0)
-    projectile.y = Math.randomRange(0, scene.screenHeight())
+    projectile.y = randint(0, scene.screenHeight())
 })
 ```
 

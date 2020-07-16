@@ -10,7 +10,7 @@ Try this tutorial!
 
 ![Game animation](/static/tutorials/catch-the-football.gif)
 
-In this tutorial you will create a game with 2 sprites, a ``||sprites:Player||`` sprite and a ``||sprites:Ball||`` sprite. The goal of the game is to catch as many balls as you can before the time runs out! Each time your player catches a ball, you gain points and the countdown is restarted. 
+In this tutorial you will create a game with 2 sprites, a ``||sprites:Player||`` sprite and a ``||sprites:Ball||`` sprite. The goal of the game is to catch as many balls as you can before the time runs out! Each time your player catches a ball, you gain points and the countdown is restarted.
 
 ## Step 1
 
@@ -36,22 +36,22 @@ let mySprite: Sprite = null
 scene.setBackgroundColor(7)
 // @highlight
 mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
 ```
 
@@ -119,22 +119,22 @@ let mySprite = sprites.create(img`
 controller.moveSprite(mySprite)
 // @highlight
 mySprite2 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
 ```
 
@@ -163,7 +163,7 @@ Open the ``||sprites:Sprites||`` Toolbox drawer and drag the ``||sprites:on spri
 ```blocks
 // @highlight
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
-	
+
 })
 ```
 
@@ -211,7 +211,7 @@ Open the ``||math:Math||`` Toolbox drawer and drag two ``||math:pick random||`` 
 let football: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     info.changeScoreBy(1)
-    football.setPosition(Math.randomRange(0, 10), Math.randomRange(0, 10))
+    football.setPosition(randint(0, 10), randint(0, 10))
 })
 ```
 
@@ -223,7 +223,7 @@ The Arcade game screen is `160` pixels wide, and `120` pixels high. In the first
 let football: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
 	info.changeScoreBy(1)
-    football.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
+    football.setPosition(randint(0, 160), randint(0, 120))
 })
 ```
 
@@ -235,7 +235,7 @@ Let’s restart our countdown each time. Open the ``||info:Info||`` Toolbox draw
 let football: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
 	info.changeScoreBy(1)
-    football.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
+    football.setPosition(randint(0, 160), randint(0, 120))
     // @highlight
     info.startCountdown(10)
 })
@@ -267,28 +267,28 @@ let mySprite = sprites.create(img`
     . . . f f . . f f . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite)
-football = sprites.create(img` 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . e e . . . . . . 
-    . . . . . . e e e e e e . . . . 
-    . . . . e e e e e e e e e e . . 
-    . . e e e e e e e e e e e e e . 
-    . e e e e e e e e e e e e e e e 
-    e e e 1 1 1 e 1 1 1 e 1 1 1 e e 
-    e e e e e e e e e e e e e e e e 
-    . e e e e e e e e e e e e e e e 
-    . . e e e e e e e e e e e e e . 
-    . . . . . e e e e e e e . . . . 
-    . . . . . . . e e e . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+football = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . e e . . . . . .
+    . . . . . . e e e e e e . . . .
+    . . . . e e e e e e e e e e . .
+    . . e e e e e e e e e e e e e .
+    . e e e e e e e e e e e e e e e
+    e e e 1 1 1 e 1 1 1 e 1 1 1 e e
+    e e e e e e e e e e e e e e e e
+    . e e e e e e e e e e e e e e e
+    . . e e e e e e e e e e e e e .
+    . . . . . e e e e e e e . . . .
+    . . . . . . . e e e . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
 `, SpriteKind.Projectile)
 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
 	info.changeScoreBy(1)
-    football.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
+    football.setPosition(randint(0, 160), randint(0, 120))
     // @highlight
     info.startCountdown(10)
 })

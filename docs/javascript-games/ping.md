@@ -65,7 +65,7 @@ function createPlayer(player: info.PlayerInfo) {
 
 function createBall() {
     let ball = sprites.create(BALL_IMAGE.clone(), SpriteKind.Enemy);
-    ball.vy = Math.randomRange(-20, 20);
+    ball.vy = randint(-20, 20);
     ball.vx = 60 * (Math.percentChance(50) ? 1 : -1);
     ball.data = {};
 }
@@ -123,8 +123,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy,
         sprite.startEffect(effects.ashes, 100);
 
         otherSprite.image.setPixel(
-            Math.randomRange(1, otherSprite.image.width - 2),
-            Math.randomRange(1, otherSprite.image.height - 2),
+            randint(1, otherSprite.image.width - 2),
+            randint(1, otherSprite.image.height - 2),
             sprite.image.getPixel(0, 0)
         );
 

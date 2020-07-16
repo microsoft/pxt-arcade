@@ -19,14 +19,14 @@ There are many games that have sprites sending out projectile sprites. We can se
 let ball: Sprite = null
 let mySprite: Sprite = null
 ball = sprites.createProjectileFromSprite(img`
-. . . . . . 7 7 
-. . . . . . 7 7 
-. . . . . . . . 
-. . . . . . . . 
-. . . . . . . . 
-. . . . . . . . 
-. . . . . . . . 
-. . . . . . . . 
+. . . . . . 7 7
+. . . . . . 7 7
+. . . . . . . .
+. . . . . . . .
+. . . . . . . .
+. . . . . . . .
+. . . . . . . .
+. . . . . . . .
 `, mySprite, -50, 0)
 ```
 
@@ -41,34 +41,34 @@ let mySprite: Sprite = null
 let ball: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     ball = sprites.createProjectileFromSprite(img`
-. . . . . . 7 7 
-. . . . . . 7 7 
-. . . . . . . . 
-. . . . . . . . 
-. . . . . . . . 
-. . . . . . . . 
-. . . . . . . . 
-. . . . . . . . 
+. . . . . . 7 7
+. . . . . . 7 7
+. . . . . . . .
+. . . . . . . .
+. . . . . . . .
+. . . . . . . .
+. . . . . . . .
+. . . . . . . .
 `, mySprite, -50, 0)
     pause(200)
 })
 mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . e e e e . . 7 7 . . 
-. . . . . . e d d e . . 7 9 . . 
-. . . . . . e d d e . . 4 . . . 
-. . . . . . . d d . 4 4 . . . . 
-. . . . . . 4 5 5 4 4 . . . . . 
-. . . . . 4 4 4 4 . . . . . . . 
-. . . 9 4 4 . 4 4 . . . . . . . 
-. . . . . . . 4 4 . . . . . . . 
-. . . . . . . 3 3 . . . . . . . 
-. . . . . . 3 3 3 . . . . . . . 
-. . . . . 3 3 . 3 3 . . . . . . 
-. . . . . 3 . . . 3 3 . . . . . 
-. . . . . 3 . . . . 3 . . . . . 
-. . . . 1 1 . . . 1 1 . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . e e e e . . 7 7 . .
+. . . . . . e d d e . . 7 9 . .
+. . . . . . e d d e . . 4 . . .
+. . . . . . . d d . 4 4 . . . .
+. . . . . . 4 5 5 4 4 . . . . .
+. . . . . 4 4 4 4 . . . . . . .
+. . . 9 4 4 . 4 4 . . . . . . .
+. . . . . . . 4 4 . . . . . . .
+. . . . . . . 3 3 . . . . . . .
+. . . . . . 3 3 3 . . . . . . .
+. . . . . 3 3 . 3 3 . . . . . .
+. . . . . 3 . . . 3 3 . . . . .
+. . . . . 3 . . . . 3 . . . . .
+. . . . 1 1 . . . 1 1 . . . . .
 `, SpriteKind.Player)
 mySprite.setPosition(145, 60)
 ```
@@ -76,7 +76,7 @@ mySprite.setPosition(145, 60)
 ## Student Task #1: Throw a ball at a target
 
 1. Start with the code from [example #1](#example-1)
-2. Modify the code to make a target sprite on the other side of the screen from the player sprite 
+2. Modify the code to make a target sprite on the other side of the screen from the player sprite
 3. Add a countdown timer
 4. Create an ``||sprites:on overlap||`` event for the ball and the target to add a point and destroy the ball
 5. **Challenge**: make the target into projectiles that move down the screen and add vertical motion to the player sprite
@@ -85,7 +85,7 @@ mySprite.setPosition(145, 60)
 
 [![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-projectile-from-projectile)
 
-We can use projectiles to create an animation. The following examples build a projectile raining cloud (that is also a projectile). 
+We can use projectiles to create an animation. The following examples build a projectile raining cloud (that is also a projectile).
 
 ## Example #2: Cloudy Day
 
@@ -98,22 +98,22 @@ We can use projectiles to create an animation. The following examples build a pr
 ```blocks
 let cloud: Sprite = null
 cloud = sprites.createProjectileFromSide(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . 1 1 1 1 1 . 1 . . . 
-. . 1 1 1 1 1 9 9 9 1 1 1 1 . . 
-. . 1 1 9 9 9 9 1 9 9 9 9 1 . . 
-. 1 1 9 9 1 9 9 1 9 9 1 9 1 . . 
-. 1 9 9 1 9 9 9 9 1 1 1 1 1 . . 
-. 1 1 1 1 1 1 1 1 1 1 . . . . . 
-. . . . . . 1 . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . 1 1 1 1 1 . 1 . . .
+. . 1 1 1 1 1 9 9 9 1 1 1 1 . .
+. . 1 1 9 9 9 9 1 9 9 9 9 1 . .
+. 1 1 9 9 1 9 9 1 9 9 1 9 1 . .
+. 1 9 9 1 9 9 9 9 1 1 1 1 1 . .
+. 1 1 1 1 1 1 1 1 1 1 . . . . .
+. . . . . . 1 . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, 10, 0)
 cloud.y = 60
 ```
@@ -122,104 +122,104 @@ There's not much to this code; it spawns a cloud, which slowly moves across the 
 
 ### Example #2b: Cloud projectile that emits projectile rain
 
-Review the code carefully for the use of ``||sprites:projectile from sprite||`` for the raindrop projectiles. 
+Review the code carefully for the use of ``||sprites:projectile from sprite||`` for the raindrop projectiles.
 
 ```blocks
 let raindrop: Sprite = null
 let cloud: Sprite = null
 cloud = sprites.createProjectileFromSide(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . 1 1 1 1 1 . 1 . . . 
-. . 1 1 1 1 1 9 9 9 1 1 1 1 . . 
-. . 1 1 9 9 9 9 1 9 9 9 9 1 . . 
-. 1 1 9 9 1 9 9 1 9 9 1 9 1 . . 
-. 1 9 9 1 9 9 9 9 1 1 1 1 1 . . 
-. 1 1 1 1 1 1 1 1 1 1 . . . . . 
-. . . . . . 1 . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . 1 1 1 1 1 . 1 . . .
+. . 1 1 1 1 1 9 9 9 1 1 1 1 . .
+. . 1 1 9 9 9 9 1 9 9 9 9 1 . .
+. 1 1 9 9 1 9 9 1 9 9 1 9 1 . .
+. 1 9 9 1 9 9 9 9 1 1 1 1 1 . .
+. 1 1 1 1 1 1 1 1 1 1 . . . . .
+. . . . . . 1 . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, 10, 0)
 cloud.y = 60
 game.onUpdateInterval(50, function () {
     raindrop = sprites.createProjectileFromSprite(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . 9 . . . . . . . . . . . . . 
-. . 9 . . . . . . . . . . . . . 
-. . 9 . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . 9 . . . . . . . . . . . . .
+. . 9 . . . . . . . . . . . . .
+. . 9 . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, cloud, 0, 30)
 })
 ```
 
 ### Example #2c: Cloud projectile that widely emits projectile rain
 
-We can make the rain drops show up at different places so that they don't all appear in the same location relative to the cloud. We'll set the raindrop `X` property to a random value. 
+We can make the rain drops show up at different places so that they don't all appear in the same location relative to the cloud. We'll set the raindrop `X` property to a random value.
 
 ```block
 let raindrop: Sprite = null
-raindrop.x += Math.randomRange(1, 14)
+raindrop.x += randint(1, 14)
 ```
 
 ```blocks
 let raindrop: Sprite = null
 let cloud: Sprite = null
 cloud = sprites.createProjectileFromSide(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . 1 1 1 1 1 . 1 . . . 
-. . 1 1 1 1 1 9 9 9 1 1 1 1 . . 
-. . 1 1 9 9 9 9 1 9 9 9 9 1 . . 
-. 1 1 9 9 1 9 9 1 9 9 1 9 1 . . 
-. 1 9 9 1 9 9 9 9 1 1 1 1 1 . . 
-. 1 1 1 1 1 1 1 1 1 1 . . . . . 
-. . . . . . 1 . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . 1 1 1 1 1 . 1 . . .
+. . 1 1 1 1 1 9 9 9 1 1 1 1 . .
+. . 1 1 9 9 9 9 1 9 9 9 9 1 . .
+. 1 1 9 9 1 9 9 1 9 9 1 9 1 . .
+. 1 9 9 1 9 9 9 9 1 1 1 1 1 . .
+. 1 1 1 1 1 1 1 1 1 1 . . . . .
+. . . . . . 1 . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, 10, 0)
 cloud.y = 60
 game.onUpdateInterval(50, function () {
     raindrop = sprites.createProjectileFromSprite(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . 9 . . . . . . . . . . . . . 
-. . 9 . . . . . . . . . . . . . 
-. . 9 . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . 9 . . . . . . . . . . . . .
+. . 9 . . . . . . . . . . . . .
+. . 9 . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, cloud, 0, 30)
     raindrop.y += 3
-    raindrop.x += Math.randomRange(1, 14)
+    raindrop.x += randint(1, 14)
 })
 ```
 
@@ -235,46 +235,46 @@ namespace SpriteKind {
 let raindrop: Sprite = null
 let cloud: Sprite = null
 cloud = sprites.createProjectileFromSide(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . 1 1 1 1 1 . 1 . . . 
-. . 1 1 1 1 1 9 9 9 1 1 1 1 . . 
-. . 1 1 9 9 9 9 1 9 9 9 9 1 . . 
-. 1 1 9 9 1 9 9 1 9 9 1 9 1 . . 
-. 1 9 9 1 9 9 9 9 1 1 1 1 1 . . 
-. 1 1 1 1 1 1 1 1 1 1 . . . . . 
-. . . . . . 1 . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . 1 1 1 1 1 . 1 . . .
+. . 1 1 1 1 1 9 9 9 1 1 1 1 . .
+. . 1 1 9 9 9 9 1 9 9 9 9 1 . .
+. 1 1 9 9 1 9 9 1 9 9 1 9 1 . .
+. 1 9 9 1 9 9 9 9 1 1 1 1 1 . .
+. 1 1 1 1 1 1 1 1 1 1 . . . . .
+. . . . . . 1 . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, 10, 0)
 cloud.setKind(SpriteKind.Cloud)
 cloud.y = 60
 game.onUpdateInterval(50, function () {
     raindrop = sprites.createProjectileFromSprite(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . 9 . . . . . . . . . . . . . 
-. . 9 . . . . . . . . . . . . . 
-. . 9 . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . 9 . . . . . . . . . . . . .
+. . 9 . . . . . . . . . . . . .
+. . 9 . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, cloud, 0, 30)
     raindrop.y += 3
-    raindrop.x += Math.randomRange(1, 14)
+    raindrop.x += randint(1, 14)
 })
 
 sprites.onDestroyed(SpriteKind.Projectile, function (sprite: Sprite) {

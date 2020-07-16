@@ -83,16 +83,16 @@ game.onUpdate(function () {
         star = sprites.create(img`1`, SpriteKind.Star)
         star.setFlag(SpriteFlag.AutoDestroy, true)
         star.setFlag(SpriteFlag.Ghost, true)
-        star.x = Math.randomRange(0, scene.screenWidth())
-        star.y = Math.randomRange(0, scene.screenHeight())
+        star.x = randint(0, scene.screenWidth())
+        star.y = randint(0, scene.screenHeight())
         star.vx = (star.x < scene.screenWidth() / 2) ? -2 : 2
         star.vy = (star.y < scene.screenHeight() / 2) ? -1 : 1
         if (hyper) {
             star.ax = star.vx * 1000
             star.ay = star.vy * 1000
             if (Math.percentChance(15)) {
-                ship.x = Math.randomRange(scene.screenWidth() / 2 - 5, scene.screenWidth() / 2 + 5)
-                ship.y = Math.randomRange(scene.screenHeight() / 2 - 2, scene.screenHeight() / 2 + 2)
+                ship.x = randint(scene.screenWidth() / 2 - 5, scene.screenWidth() / 2 + 5)
+                ship.y = randint(scene.screenHeight() / 2 - 2, scene.screenHeight() / 2 + 2)
             }
         }
     }

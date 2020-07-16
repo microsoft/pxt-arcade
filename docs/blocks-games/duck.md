@@ -166,7 +166,7 @@ anim.addAnimationFrame(img`
 `)
 animation.attachAnimation(mySprite, anim)
 game.onUpdateInterval(1500, function () {
-    gap = Math.randomRange(0, 3)
+    gap = randint(0, 3)
     if (gap == 0) {
         topImage = img`
             . . . . . 6 e e e e e e e e e e c e 6 . . . . .

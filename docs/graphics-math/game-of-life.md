@@ -108,7 +108,7 @@ function nextGeneration() {
             } else if (!lastGeneration[x][y] && neighbors == 3) {
                 // Previously empty location has new cell born
                 currGeneration[x][y] = true;
-                bkgd.setPixel(x, y, Math.randomRange(1, 0xd));
+                bkgd.setPixel(x, y, randint(1, 0xd));
             } else {
                 // State is unchanged
                 currGeneration[x][y] = lastGeneration[x][y];
@@ -430,7 +430,7 @@ namespace cells {
         if (!src) src = scene.backgroundImage();
 
         for (let i = 0; i < count; ++i)
-            src.setPixel(Math.randomRange(0, width), Math.randomRange(0, height), 1);
+            src.setPixel(randint(0, width), randint(0, height), 1);
     }
 }
 ```

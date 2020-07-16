@@ -26,7 +26,7 @@ for (let i = 0; i < 10; i++) {
     f1 = fibo
     fibo = f1 + f0
     pause(1000)
-} 
+}
 ```
 
 ## Fibonacci Tiling
@@ -86,7 +86,7 @@ game.onUpdateInterval(1000, function () {
 
 ## Fibonacci Spiral
 
-We can add a Fibonacci spiral to the squares in the program above using a function to draw arcs. The function can use the current value for the Fibonacci number as the arc radius. It follows the rotation sequence to know the direction to draw the arc. The arcs are drawn in the images for the squares using random dots that paint the arc line. 
+We can add a Fibonacci spiral to the squares in the program above using a function to draw arcs. The function can use the current value for the Fibonacci number as the arc radius. It follows the rotation sequence to know the direction to draw the arc. The arcs are drawn in the images for the squares using random dots that paint the arc line.
 
 ```blocks
 let f = 0
@@ -98,8 +98,8 @@ let fibSquare: Image = null
 function drawArc() {
     // draw a circle arc using random dots!
     for (let i = 0; i < 100000; i++) {
-        x = Math.randomRange(0, f)
-        y = Math.randomRange(0, f)
+        x = randint(0, f)
+        y = randint(0, f)
         // test if the point will draw the circle
         if (x * x + y * y >= (f - 1) ** 2 && x * x + y * y < (f + 1) ** 2) {
             if (rotate == 0) {
@@ -211,8 +211,8 @@ game.onUpdateInterval(1000, function () {
 function drawArc() {
     // draw a circle arc using random dots!
     for (let i = 0; i < 100000; i++) {
-        x = Math.randomRange(0, f)
-        y = Math.randomRange(0, f)
+        x = randint(0, f)
+        y = randint(0, f)
         // test if the point will draw the circle
         if (x * x + y * y >= (f - 1) ** 2 && x * x + y * y < (f + 1) ** 2) {
             if (rotate == 0) {

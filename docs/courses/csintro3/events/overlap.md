@@ -73,7 +73,7 @@ this can be done using ``||sprites:setFlag||``.
 
 1. Review the code below
 2. Identify the section of the code that makes the ``||sprites:Enemy||``
-into a ``||sprites:Ghost||`` 
+into a ``||sprites:Ghost||``
 
 ```typescript
 let mySprite = sprites.create(img`
@@ -120,13 +120,13 @@ namespace SpriteKind {
 }
 
 let paddle: Sprite = sprites.create(img`
-    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
-    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
-    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
-    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
-    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
-    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
-    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
+    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
 `, SpriteKind.Paddle);
 paddle.y += 50;
 controller.moveSprite(paddle, 100, 0);
@@ -138,8 +138,8 @@ game.onUpdateInterval(1000, function () {
         1 1 d d 1 1
         1 1 d d 1 1
         . 1 1 1 1 .
-        . . 1 1 . . 
-    `, Math.randomRange(-40, 40), 30, SpriteKind.Ball);
+        . . 1 1 . .
+    `, randint(-40, 40), 30, SpriteKind.Ball);
     ball.x = screen.width / 2;
     ball.y = screen.height / 2;
 });

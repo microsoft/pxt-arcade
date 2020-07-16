@@ -4,14 +4,14 @@
 game.splash("Car Race", "Avoid the borders!")
 
 const car = sprites.create(img`
- . . 9 9 
+ . . 9 9
  . 4 9 9 4
  . 4 9 9 4
- . . 9 9 
- . 9 9 9 9 
+ . . 9 9
+ . 9 9 9 9
  4 9 9 9 9 4
  4 9 9 9 9 4
- . 9 9 9 9 
+ . 9 9 9 9
  9 9 9 9 9 9
  `)
 car.y = 110
@@ -31,7 +31,7 @@ function drive(lines: number) {
     while (--lines >= 0) {
         let w2 = roadW >> 1
         if (curr == target) {
-            target = Math.randomRange(w2, 120 - w2)
+            target = randint(w2, 120 - w2)
         }
         const dx = Math.sign(target - curr) * ddx
         curr += dx

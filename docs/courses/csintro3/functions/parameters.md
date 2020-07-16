@@ -215,7 +215,7 @@ namespace enemy {
     }
 
     function setPosition(sprite: Sprite, edge: number) {
-        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.x = randint(edge, screen.width - edge);
         sprite.y = 0;
     }
 }

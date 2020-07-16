@@ -104,7 +104,7 @@ game.onUpdateInterval(500, function () {
         . c c c c c c c c c . . c c c .
     `, SpriteKind.Enemy)
     // @highlight
-    enemySprite.setPosition(Math.randomRange(0, 160), 0)
+    enemySprite.setPosition(randint(0, 160), 0)
 })
 ```
 
@@ -135,7 +135,7 @@ game.onUpdateInterval(500, function () {
         . c c c c c c c c c . . c c c .
     `, SpriteKind.Enemy)
     // @highlight
-    enemySprite.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
+    enemySprite.setPosition(randint(0, 160), randint(0, 120))
 })
 ```
 
@@ -164,7 +164,7 @@ game.onUpdateInterval(500, function () {
         c 5 5 5 5 c 5 5 5 5 c 4 c 5 c .
         . c c c c c c c c c . . c c c .
     `, SpriteKind.Enemy)
-    enemySprite.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
+    enemySprite.setPosition(randint(0, 160), randint(0, 120))
 })
 
 // @highlight
@@ -201,7 +201,7 @@ game.onUpdateInterval(500, function () {
         c 5 5 5 5 c 5 5 5 5 c 4 c 5 c .
         . c c c c c c c c c . . c c c .
     `, SpriteKind.Enemy)
-    enemySprite.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
+    enemySprite.setPosition(randint(0, 160), randint(0, 120))
 })
 
 

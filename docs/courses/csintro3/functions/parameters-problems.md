@@ -56,8 +56,8 @@ function makeOnePizza() {
         4 4 4 4 . . . . . . . . . . . .
     `);
     pizza.startEffect(effects.fire, 500);
-    pizza.x = Math.randomRange(0, screen.width);
-    pizza.y = Math.randomRange(0, screen.height);
+    pizza.x = randint(0, screen.width);
+    pizza.y = randint(0, screen.height);
 }
 ```
 

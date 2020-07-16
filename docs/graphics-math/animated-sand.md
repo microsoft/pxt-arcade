@@ -39,8 +39,8 @@ function setup() {
         grain.push(new Grain(0, 0, 0, 0));
         let j = 0;
         do {
-            grain[i].x = Math.randomRange(0, (WIDTH << 8) - 1); // Assign random position within
-            grain[i].y = Math.randomRange(0, (HEIGHT << 8) - 1); // the 'grain' coordinate space
+            grain[i].x = randint(0, (WIDTH << 8) - 1); // Assign random position within
+            grain[i].y = randint(0, (HEIGHT << 8) - 1); // the 'grain' coordinate space
             // Check if corresponding pixel position is already occupied...
             for (j = 0; (j < i) && (((grain[i].x >> 8) != (grain[j].x >> 8)) ||
                 ((grain[i].y >> 8) != (grain[j].y >> 8))); j++);
@@ -72,8 +72,8 @@ game.onUpdate(function () {
     let v;  // Absolute velocity
     for (let i = 0; i < N_GRAINS; i++) {
         const graini = grain[i];
-        graini.vx += ax + Math.randomRange(0, az2); // A little randomness makes
-        graini.vy += ay + Math.randomRange(0, az2); // tall stacks topple better!
+        graini.vx += ax + randint(0, az2); // A little randomness makes
+        graini.vy += ay + randint(0, az2); // tall stacks topple better!
         // Terminal velocity (in any direction) is 256 units -- equal to
         // 1 pixel -- which keeps moving grains from passing through each other
         // and other such mayhem.  Though it takes some extra math, velocity is

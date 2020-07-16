@@ -100,7 +100,7 @@ namespace SpriteKind {
 
 game.onUpdate(function () {
     let star = sprites.createProjectile(img`1`, 50, 0, SpriteKind.Star);
-    star.y = Math.randomRange(0, screen.height);
+    star.y = randint(0, screen.height);
     star.setFlag(SpriteFlag.Ghost, true);
 });
 ```
@@ -251,7 +251,7 @@ namespace star {
     game.onUpdate(function () {
         if (Math.percentChance(10)) {
             let star = sprites.createProjectile(img`1`, 0, 50, SpriteKind.Star);
-            star.x = Math.randomRange(0, screen.width);
+            star.x = randint(0, screen.width);
             star.setFlag(SpriteFlag.Ghost, true);
             star.z = -1;
         }

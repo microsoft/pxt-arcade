@@ -243,7 +243,7 @@ Congrats, now we can spawn projectiles!
 ```blocks
 let speed = 40
 game.onUpdateInterval(500, function () {
-    let lane = Math.randomRange(1, 4)
+    let lane = randint(1, 4)
     if (lane == 1) {
         let left: Sprite = null
         left = sprites.create(img`
@@ -519,7 +519,7 @@ info.setScore(0)
 info.setLife(5)
 let speed = 40
 game.onUpdateInterval(500, function () {
-    lane = Math.randomRange(1, 4)
+    lane = randint(1, 4)
     if (lane == 1) {
         left = sprites.create(img`
             . . . . . . . . . . . . . . . .

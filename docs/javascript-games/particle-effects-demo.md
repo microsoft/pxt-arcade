@@ -181,7 +181,7 @@ namespace demonstrations {
             const sources: particles.ParticleSource[] = [];
             const colors = [1];
             for (let i = 0; i < 4; i++)
-                colors.push(Math.randomRange(2, 0xE));
+                colors.push(randint(2, 0xE));
 
             const factory = new StarFactory(colors);
             const src = new particles.ParticleSource(makeSimpleAnchor(), 25, factory)

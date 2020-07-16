@@ -598,7 +598,7 @@ let chest10Sprite = sprites.create(projectImages.Chest, SpriteKind.Chest);
 let chest11Sprite = sprites.create(projectImages.Chest, SpriteKind.Chest);
 let chest12Sprite = sprites.create(projectImages.Chest, SpriteKind.Chest);
 
-let level = Math.randomRange(1, 2);
+let level = randint(1, 2);
 switch (level) {
     case 1:
         level1Setup();

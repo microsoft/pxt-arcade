@@ -168,7 +168,7 @@ let myTile: tiles.Tile = scene.getTile(1, 1);
 myTile.place(flower);
 
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
-    myTile = scene.getTile(Math.randomRange(0, 9), Math.randomRange(0, 7));
+    myTile = scene.getTile(randint(0, 9), randint(0, 7));
     myTile.place(player);
 });
 ```

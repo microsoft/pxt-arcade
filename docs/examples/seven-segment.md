@@ -130,7 +130,7 @@ unit.setDigitAlpha(SegmentCharacter.C)
 unit.x += 40
 unit.y += -8
 game.onUpdateInterval(2000, function () {
-    temp = Math.randomRange(-1, -5)
+    temp = randint(-1, -5)
     if (celsius) {
         unit.setDigitAlpha(SegmentCharacter.C)
     } else {

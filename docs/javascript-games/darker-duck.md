@@ -95,7 +95,7 @@ namespace lighting {
                 while (band > 0) {
                     offset = this.offsetTable[y * this.rings + band - 1]
                     if (offset) {
-                        offset += (Math.idiv(Math.randomRange(0, 11), 5))
+                        offset += (Math.idiv(randint(0, 11), 5))
                     }
 
                     // We reflect the circle-quadrant horizontally and vertically
@@ -327,7 +327,7 @@ anim.addAnimationFrame(img`
 animation.attachAnimation(mySprite, anim)
 game.onUpdateInterval(1500, function () {
     info.changeScoreBy(1)
-    gap = Math.randomRange(0, 3)
+    gap = randint(0, 3)
     if (gap == 0) {
         topImage = projectImages.stalagtite_small
         bottomImage = projectImages.stalagmite_xlarge

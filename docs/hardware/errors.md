@@ -120,11 +120,11 @@ and each screen-sized image is already almost 10 kilobytes just by itself.
 
 ```blocks
 function randomRectangle() {
-    startX = Math.randomRange(0, scene.screenWidth() - 10)
-    startY = Math.randomRange(0, scene.screenHeight() - 10)
-    width = Math.randomRange(0, 40)
-    height = Math.randomRange(0, 40)
-    scene.backgroundImage().fillRect(startX, startY, width, height, Math.randomRange(1, 14))
+    startX = randint(0, scene.screenWidth() - 10)
+    startY = randint(0, scene.screenHeight() - 10)
+    width = randint(0, 40)
+    height = randint(0, 40)
+    scene.backgroundImage().fillRect(startX, startY, width, height, randint(1, 14))
     list.push(scene.backgroundImage())
 }
 let height = 0

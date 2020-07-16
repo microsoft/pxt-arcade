@@ -53,13 +53,13 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     1
     `, SpriteKind.Firework);
     firework.vy = -15;
-    firework.setPosition(Math.randomRange(0, screen.width), screen.height);
+    firework.setPosition(randint(0, screen.width), screen.height);
     firework.setFlag(SpriteFlag.Ghost, true);
     firework.setFlag(SpriteFlag.AutoDestroy, true);
 });
 
 function randomizeParticleColor(particle: Sprite) {
-    particle.image.fill(Math.randomRange(1, 14))
+    particle.image.fill(randint(1, 14))
 }
 ```
 
@@ -116,6 +116,6 @@ Now, the ``Person`` ``||sprites:sprites||`` will follow the fruit around the scr
 bumping off each other so they do not all go into the same location.
 
 If you want to make the following behavior smoother,
-you could consider using more advanced comparisons in the ``||game:on game update||`` event; 
+you could consider using more advanced comparisons in the ``||game:on game update||`` event;
 for example, making the ``Person`` move to the **right** if it is to the **left** of the fruit,
 at a more constant speed.

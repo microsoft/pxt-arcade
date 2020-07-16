@@ -11,7 +11,7 @@ In this activity, students will use:
 * ``||sprites:projectile from side||`` sprites
 * ``||game:on game update every||``
 * ``||math:pick random||``
-* ``||loops:for||`` loop 
+* ``||loops:for||`` loop
 
 ## Concept: Flying Birds!
 
@@ -28,50 +28,50 @@ We can use projectiles to create sprites that move across the screen. Let's star
 
 ```blocks
 let projectile: Sprite = sprites.createProjectileFromSide(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . 8 8 8 . . . 8 8 . . 
-. . . . . 8 8 8 8 8 . 8 8 8 . . 
-. . . . . 8 8 f 8 8 8 8 8 f 8 . 
-. . . . . 8 8 8 f f 8 8 8 8 4 4 
-. . . . . . 8 8 8 f 8 8 8 8 8 . 
-. . . . . . . 8 8 8 8 3 3 3 . . 
-. . . . . . 8 8 8 8 8 3 3 3 . . 
-. . . . . . 8 8 8 8 8 3 3 . . . 
-. . . . . . . 8 f . . f . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . 8 8 8 . . . 8 8 . .
+. . . . . 8 8 8 8 8 . 8 8 8 . .
+. . . . . 8 8 f 8 8 8 8 8 f 8 .
+. . . . . 8 8 8 f f 8 8 8 8 4 4
+. . . . . . 8 8 8 f 8 8 8 8 8 .
+. . . . . . . 8 8 8 8 3 3 3 . .
+. . . . . . 8 8 8 8 8 3 3 3 . .
+. . . . . . 8 8 8 8 8 3 3 . . .
+. . . . . . . 8 f . . f . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, 50, 50)
 ```
 
-It may seem surprising that there's only a single block inside the ``||loops:on start||`` to create a projectile. Projectiles are an easy way to create temporary sprites with motion. 
+It may seem surprising that there's only a single block inside the ``||loops:on start||`` to create a projectile. Projectiles are an easy way to create temporary sprites with motion.
 
-```blocks 
+```blocks
 
 let projectile: Sprite = null
 sprites.onDestroyed(SpriteKind.Projectile, function (sprite) {
     info.changeScoreBy(1)
 })
 projectile = sprites.createProjectileFromSide(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . 8 8 8 . . . 8 8 . . 
-. . . . . 8 8 8 8 8 . 8 8 8 . . 
-. . . . . 8 8 f 8 8 8 8 8 f 8 . 
-. . . . . 8 8 8 f f 8 8 8 8 4 4 
-. . . . . . 8 8 8 f 8 8 8 8 8 . 
-. . . . . . . 8 8 8 8 3 3 3 . . 
-. . . . . . 8 8 8 8 8 3 3 3 . . 
-. . . . . . 8 8 8 8 8 3 3 . . . 
-. . . . . . . 8 f . . f . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . 8 8 8 . . . 8 8 . .
+. . . . . 8 8 8 8 8 . 8 8 8 . .
+. . . . . 8 8 f 8 8 8 8 8 f 8 .
+. . . . . 8 8 8 f f 8 8 8 8 4 4
+. . . . . . 8 8 8 f 8 8 8 8 8 .
+. . . . . . . 8 8 8 8 3 3 3 . .
+. . . . . . 8 8 8 8 8 3 3 3 . .
+. . . . . . 8 8 8 8 8 3 3 . . .
+. . . . . . . 8 f . . f . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, 50, 50)
 ```
 
@@ -79,7 +79,7 @@ This modified version adds in an event that triggers when the projectile is dest
 
 ### ~hint
 
-By default, the ``||sprites:kind||`` of a ``||sprites:projectile||`` is ``Projectile``; this can be changed using the ``||sprites:set mySprite kind to Player||`` block. 
+By default, the ``||sprites:kind||`` of a ``||sprites:projectile||`` is ``Projectile``; this can be changed using the ``||sprites:set mySprite kind to Player||`` block.
 
 ### ~
 
@@ -101,22 +101,22 @@ sprites.onDestroyed(SpriteKind.Projectile, function (sprite) {
     info.changeScoreBy(1)
 })
 projectile = sprites.createProjectileFromSide(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 8 . . . . . . . . 
-. . . . . 8 8 9 8 8 . . . . . . 
-. . . . 8 9 9 9 9 9 8 . . . . . 
-. . . 8 9 8 8 8 8 8 9 8 . . . . 
-. . . 8 9 8 9 9 9 8 9 8 . . . . 
-. . 8 9 9 8 9 8 9 8 9 9 8 . . . 
-. . . 8 9 8 9 9 9 8 9 8 . . . . 
-. . . 8 9 8 8 8 8 8 9 8 . . . . 
-. . . . 8 9 9 9 9 9 8 . . . . . 
-. . . . . 8 8 9 8 8 . . . . . . 
-. . . . . . . 8 . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . 8 . . . . . . . .
+. . . . . 8 8 9 8 8 . . . . . .
+. . . . 8 9 9 9 9 9 8 . . . . .
+. . . 8 9 8 8 8 8 8 9 8 . . . .
+. . . 8 9 8 9 9 9 8 9 8 . . . .
+. . 8 9 9 8 9 8 9 8 9 9 8 . . .
+. . . 8 9 8 9 9 9 8 9 8 . . . .
+. . . 8 9 8 8 8 8 8 9 8 . . . .
+. . . . 8 9 9 9 9 9 8 . . . . .
+. . . . . 8 8 9 8 8 . . . . . .
+. . . . . . . 8 . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, 0, 100)
 ```
 
@@ -141,37 +141,37 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
     game.over(false)
 })
 mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . 3 3 3 3 3 3 3 3 3 3 3 3 . . 
-. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
-. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 . 
-. . 3 3 3 3 3 3 3 3 3 3 3 3 . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . 3 3 3 3 3 3 3 3 3 3 3 3 . .
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 .
+. 3 3 3 3 3 3 3 3 3 3 3 3 3 3 .
+. . 3 3 3 3 3 3 3 3 3 3 3 3 . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
 mySprite.y = 100
 controller.moveSprite(mySprite, 100, 0)
 game.onUpdateInterval(200, function () {
     projectile = sprites.createProjectileFromSide(img`
-d d d d d d d d 
-d d d d d d d d 
-d d d d d d d d 
-d d d d d d d d 
-d d d d d d d d 
-d d d d d d d d 
-d d d d d d d d 
-d d d d d d d d 
+d d d d d d d d
+d d d d d d d d
+d d d d d d d d
+d d d d d d d d
+d d d d d d d d
+d d d d d d d d
+d d d d d d d d
+d d d d d d d d
 `, 0, 0)
-    projectile.x = Math.randomRange(0, scene.screenWidth())
+    projectile.x = randint(0, scene.screenWidth())
 })
 ```
 
@@ -187,7 +187,7 @@ d d d d d d d d
 
 ![spiral image](/static/courses/csintro1/loops/offset-projectiles-2b.png)
 
-We have seen that it is useful for projectiles to come from random positions, but there are times when we'll want to have projectiles spawned in a more structured manner. This tasks uses a loop to offset the `Y` position of each projectile using a ``||loops:for||`` loop index. 
+We have seen that it is useful for projectiles to come from random positions, but there are times when we'll want to have projectiles spawned in a more structured manner. This tasks uses a loop to offset the `Y` position of each projectile using a ``||loops:for||`` loop index.
 
 Remember that ``||loops:for||`` loops are different than ``||loops:repeat||`` loops since they use a conditon you specify instead of a simple limit value.
 
@@ -200,22 +200,22 @@ Remember that ``||loops:for||`` loops are different than ``||loops:repeat||`` lo
 ```blocks
 let projectile: Sprite = null
 projectile = sprites.createProjectileFromSide(img`
-. 6 . . . . . . . . . . . . . . 
-. 6 6 . . . . . . . . . . . . . 
-. 6 . 6 . . . . . . . . . . . . 
-. 6 . . 6 . . . . . . . . . . . 
-. 6 6 6 6 6 6 6 6 . . . . . . . 
-. 6 8 8 8 8 8 8 8 6 . . . . . . 
-. 6 8 6 6 6 6 6 6 8 6 . . . . . 
-. 6 8 6 6 6 6 6 6 6 8 6 . . . . 
-. 6 8 6 6 6 6 6 6 8 6 . . . . . 
-. 6 8 8 8 8 8 8 8 6 . . . . . . 
-. 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. 6 . . . . . . . . . . . . . .
+. 6 6 . . . . . . . . . . . . .
+. 6 . 6 . . . . . . . . . . . .
+. 6 . . 6 . . . . . . . . . . .
+. 6 6 6 6 6 6 6 6 . . . . . . .
+. 6 8 8 8 8 8 8 8 6 . . . . . .
+. 6 8 6 6 6 6 6 6 8 6 . . . . .
+. 6 8 6 6 6 6 6 6 6 8 6 . . . .
+. 6 8 6 6 6 6 6 6 8 6 . . . . .
+. 6 8 8 8 8 8 8 8 6 . . . . . .
+. 6 6 6 6 6 6 6 6 . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, 40, 0)
 projectile.y = 10
 pause(300)
@@ -223,7 +223,7 @@ pause(300)
 
 ## What did we learn?
 
-1. Describe two benefits of using projectiles rather than normal sprites. 
-2. How did using a loop in this section help reduce the amount of blocks that were used? 
+1. Describe two benefits of using projectiles rather than normal sprites.
+2. How did using a loop in this section help reduce the amount of blocks that were used?
 
 ### [Teacher Material](/courses/csintro1/about/teachers)

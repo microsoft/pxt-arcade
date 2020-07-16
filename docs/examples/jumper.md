@@ -123,7 +123,7 @@ function createObstacle() {
 
     // Randomly choose the obstacle height. The number of possible positions
     // increases over time.
-    s.y = ground - 15 * Math.floor(Math.randomRange(0, obstaclePositions - 1));
+    s.y = ground - 15 * Math.floor(randint(0, obstaclePositions - 1));
 
     // Keep score
     s.onDestroyed(function () {

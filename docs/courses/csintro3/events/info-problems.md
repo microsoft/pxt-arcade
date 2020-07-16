@@ -134,7 +134,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 game.onUpdateInterval(1000, function () {
     let myAsteroid: Sprite = sprites.createProjectile(sprites.space.spaceAsteroid0,
         0, 40, SpriteKind.Enemy);
-    myAsteroid.x = Math.randomRange(0, screen.width);
+    myAsteroid.x = randint(0, screen.width);
 });
 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
@@ -175,15 +175,15 @@ controller.moveSprite(mySprite);
 
 game.onUpdateInterval(1000, function () {
     let myFruit: Sprite = sprites.create(sprites.food.smallStrawberry, SpriteKind.Food);
-    myFruit.x = Math.randomRange(0, screen.width);
-    myFruit.y = Math.randomRange(0, screen.height);
+    myFruit.x = randint(0, screen.width);
+    myFruit.y = randint(0, screen.height);
     myFruit.lifespan = 2500;
 });
 
 game.onUpdateInterval(2000, function () {
     let myEnemy: Sprite = sprites.createProjectile(sprites.castle.skellyAttackFront2,
-                                                    Math.randomRange(-100, 100),
-                                                    Math.randomRange(-100, 100),
+                                                    randint(-100, 100),
+                                                    randint(-100, 100),
                                                     SpriteKind.Enemy);
 });
 

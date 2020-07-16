@@ -180,7 +180,7 @@ let tone = 440
 game.onUpdateInterval(500, function () {
     music.ringTone(tone)
     tone += 40
-    imagery = list[Math.randomRange(0, list.length - 1)]
+    imagery = list[randint(0, list.length - 1)]
     if (game.runtime() < 5000) {
         if (columcounter == 0) {
             left = sprites.createProjectileFromSide(imagery, 0, 100)

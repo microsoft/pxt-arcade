@@ -74,7 +74,7 @@ game.onUpdateInterval(100, function () {
         . . 2 e e 2 2 2 2 2 4 4 2 e . .
         . . . 2 2 e e 4 4 4 2 e e . . .
         . . . . . 2 2 e e e e . . . . .
-    `, Math.randomRange(-100, 100), Math.randomRange(-100, 100));
+    `, randint(-100, 100), randint(-100, 100));
     projectile.vx += mySprite.vx;
     projectile.vy += .85 * mySprite.vy;
 });

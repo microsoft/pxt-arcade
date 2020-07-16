@@ -8,7 +8,7 @@ moving on to the next section.
 ## Problem #1: Random Modification
 
 ```typescript-ignore
-let n: number = Math.randomRange(1, 10)
+let n: number = randint(1, 10)
 game.splash("Value A is " + n);
 ...
 game.splash("Value B is " + n);

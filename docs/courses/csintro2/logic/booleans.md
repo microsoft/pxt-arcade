@@ -1,21 +1,21 @@
 # Activity: Boolean Statements and Expressions
 
-In the previous lessons, we saw how ``||logic:if||`` and ``||logic:else||`` statements allow us to write code that can handle different situations by making comparisons between different numbers. 
+In the previous lessons, we saw how ``||logic:if||`` and ``||logic:else||`` statements allow us to write code that can handle different situations by making comparisons between different numbers.
 
-Comparison statements are centered around **Boolean Logic**, with the conditions evaluating to either ``||logic:true||`` or ``||logic:false||``. 
+Comparison statements are centered around **Boolean Logic**, with the conditions evaluating to either ``||logic:true||`` or ``||logic:false||``.
 
 The values of these expressions are stored and used as `boolean` variables. Whenever we see the term boolean, it means we have something that can evaluate to ``||logic:true||`` or ``||logic:false||``.
 
 In these activities students will work with:
 
 * Boolean flags and values (``||logic:true||`` and ``||logic:false||``)
-* ``||logic:and||`` 
+* ``||logic:and||``
 * ``||logic:or||``
 * ``||logic:not||``
 
 ## Concept: Boolean Flags
 
-Boolean values are regularly used to help maintain the **state** of a given piece of code. It is common to describe boolean variables as "boolean flags" - these often are used to turn on and off different behaviors that might be useful. 
+Boolean values are regularly used to help maintain the **state** of a given piece of code. It is common to describe boolean variables as "boolean flags" - these often are used to turn on and off different behaviors that might be useful.
 
 For example, ``||sprites:stay in screen||`` is a flag that we have set that forces the sprite to stay within the bounds of the screen when set to ``||logic:true||``.
 
@@ -71,22 +71,22 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 isHungry = true
 mySprite = sprites.create(img`
-. . . . . . 5 . 5 . . . . . . . 
-. . . . . f 5 5 5 f f . . . . . 
-. . . . f 1 5 2 5 1 6 f . . . . 
-. . . f 1 6 6 6 6 6 1 6 f . . . 
-. . . f 6 6 f f f f 6 1 f . . . 
-. . . f 6 f f d d f f 6 f . . . 
-. . f 6 f d f d d f d f 6 f . . 
-. . f 6 f d 3 d d 3 d f 6 f . . 
-. . f 6 6 f d d d d f 6 6 f . . 
-. f 6 6 f 3 f f f f 3 f 6 6 f . 
-. . f f d 3 5 3 3 5 3 d f f . . 
-. . f d d f 3 5 5 3 f d d f . . 
-. . . f f 3 3 3 3 3 3 f f . . . 
-. . . f 3 3 5 3 3 5 3 3 f . . . 
-. . . f f f f f f f f f f . . . 
-. . . . . f f . . f f . . . . . 
+. . . . . . 5 . 5 . . . . . . .
+. . . . . f 5 5 5 f f . . . . .
+. . . . f 1 5 2 5 1 6 f . . . .
+. . . f 1 6 6 6 6 6 1 6 f . . .
+. . . f 6 6 f f f f 6 1 f . . .
+. . . f 6 f f d d f f 6 f . . .
+. . f 6 f d f d d f d f 6 f . .
+. . f 6 f d 3 d d 3 d f 6 f . .
+. . f 6 6 f d d d d f 6 6 f . .
+. f 6 6 f 3 f f f f 3 f 6 6 f .
+. . f f d 3 5 3 3 5 3 d f f . .
+. . f d d f 3 5 5 3 f d d f . .
+. . . f f 3 3 3 3 3 3 f f . . .
+. . . f 3 3 5 3 3 5 3 3 f . . .
+. . . f f f f f f f f f f . . .
+. . . . . f f . . f f . . . . .
 `, SpriteKind.Player)
 game.onUpdateInterval(5000, function () {
     if (!(isHungry)) {
@@ -125,44 +125,44 @@ left = false
 game.onUpdateInterval(500, function () {
     if (left) {
         projectile = sprites.createProjectile(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . 9 9 . . . . . . . . . 
-. . . . . 9 . 9 9 . . . . . . . 
-. . . . . 9 . . . 9 9 . . . . . 
-. . . . . 9 . . . . . 9 9 . . . 
-. . . . . 9 . . . . . . . 9 9 . 
-. . . . . 9 . . . . . . . . . 9 
-. . . . . 9 . . . . . . . 9 9 . 
-. . . . . 9 . . . . . 9 9 . . . 
-. . . . . 9 . . . 9 9 . . . . . 
-. . . . . 9 . 9 9 . . . . . . . 
-. . . . . 9 9 . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, Math.randomRange(50, 100), 0, SpriteKind.Player)
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . 9 9 . . . . . . . . .
+. . . . . 9 . 9 9 . . . . . . .
+. . . . . 9 . . . 9 9 . . . . .
+. . . . . 9 . . . . . 9 9 . . .
+. . . . . 9 . . . . . . . 9 9 .
+. . . . . 9 . . . . . . . . . 9
+. . . . . 9 . . . . . . . 9 9 .
+. . . . . 9 . . . . . 9 9 . . .
+. . . . . 9 . . . 9 9 . . . . .
+. . . . . 9 . 9 9 . . . . . . .
+. . . . . 9 9 . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+`, randint(50, 100), 0, SpriteKind.Player)
     } else {
         projectile = sprites.createProjectile(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . 7 7 . . . . . 
-. . . . . . . 7 7 . 7 . . . . . 
-. . . . . 7 7 . . . 7 . . . . . 
-. . . 7 7 . . . . . 7 . . . . . 
-. 7 7 . . . . . . . 7 . . . . . 
-7 . . . . . . . . . 7 . . . . . 
-. 7 7 . . . . . . . 7 . . . . . 
-. . . 7 7 . . . . . 7 . . . . . 
-. . . . . 7 7 . . . 7 . . . . . 
-. . . . . . . 7 7 . 7 . . . . . 
-. . . . . . . . . 7 7 . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, Math.randomRange(-100, -50), 0, SpriteKind.Player)
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . 7 7 . . . . .
+. . . . . . . 7 7 . 7 . . . . .
+. . . . . 7 7 . . . 7 . . . . .
+. . . 7 7 . . . . . 7 . . . . .
+. 7 7 . . . . . . . 7 . . . . .
+7 . . . . . . . . . 7 . . . . .
+. 7 7 . . . . . . . 7 . . . . .
+. . . 7 7 . . . . . 7 . . . . .
+. . . . . 7 7 . . . 7 . . . . .
+. . . . . . . 7 7 . 7 . . . . .
+. . . . . . . . . 7 7 . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+`, randint(-100, -50), 0, SpriteKind.Player)
     }
-    projectile.y = Math.randomRange(0, scene.screenHeight())
+    projectile.y = randint(0, scene.screenHeight())
 })
 ```
 

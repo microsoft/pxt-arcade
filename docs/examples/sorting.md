@@ -5,7 +5,7 @@ Example
 ```typescript
 let arr = [1]
 for (let i = 0; i < 42; ++i)
-    arr.push(Math.randomRange(10, 100))
+    arr.push(randint(10, 100))
 
 function show() {
     screen.fill(0)
