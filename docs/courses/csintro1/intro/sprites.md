@@ -16,6 +16,7 @@ In this activity, students are introduced to:
 ## Concept: Set a ``||sprites:Sprite||`` variable to an image using the image editor
 
 [![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/gCtzHzg_BZM)
+
 The blocks needed to create sprites are found in the ``||sprites:Sprites||`` menu. The ``||variables:set mySprite to||`` is the first block in this category that we will discuss. The following example shows the creation of a sprite with a blank image.
 
 ```blocks
