@@ -211,6 +211,25 @@ namespace pxt.editor {
                 block.appendChild(tileHitParam);
             });
         }
+
+        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "1.1.2") < 0) {
+            /**
+             * move from tilemap namespace to tiles namespace
+             * <block type="tilemap_locationXY">
+                    <field name="xy">tilemap.XY.column</field>
+                    <value name="location">
+                        <block type="variables_get">
+                            <field name="VAR" id="L%xa3_Yy]Kq+]Q|yE{Fv">location</field>
+                        </block>
+                    </value>
+                </block>
+             */
+            U.toArray(dom.querySelectorAll("block[type=tilemap_locationXY]")).forEach(block => {
+                block.setAttribute("type", "tiles_locationXY");
+                const xyField = getField(block, "xy");
+                xyField.textContent = (xyField.textContent || "").replace(/^tilemap./, "tiles.");
+            });
+        }
     }
 
     function changeVariableToSpriteReporter(varBlockOrShadow: Element, reporterName: string) {
