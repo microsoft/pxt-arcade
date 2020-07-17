@@ -225,7 +225,6 @@ namespace pxt.editor {
                 </block>
              */
             U.toArray(dom.querySelectorAll("block[type=tilemap_locationXY]")).forEach(block => {
-                block.setAttribute("type", "tiles_locationXY");
                 const xyField = getField(block, "xy");
                 xyField.textContent = (xyField.textContent || "").replace(/^tilemap./, "tiles.");
             });
