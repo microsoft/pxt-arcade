@@ -181,6 +181,7 @@
                         "tilemap\\s*\\.\\s*forEachDirection": "tiles.forEachDirection",
                         "tilemap\\s*\\.\\s*centerCameraOnTile": "tiles.centerCameraOnTile",
                         "tilemap\\s*\\.\\s*locationOfSprite": "tiles.locationOfSprite",
+                        "tilemap\\s*\\.\\s*RowCol": "tiles.RowCol",
                         "tilemap\\s*\\.\\s*spriteRowCol": "tiles.spriteRowCol",
                         "tilemap\\s*\\.\\s*locationColumn": "tiles.locationColumn",
                         "tilemap\\s*\\.\\s*locationRow": "tiles.locationRow",
