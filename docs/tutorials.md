@@ -17,6 +17,10 @@
     "url": "/tutorials/spy/chase-the-pizza",
     "editor": "js",
     "cardType": "tutorial"
+  }, {
+    "url": "/tutorials/spy/chase-the-pizza",
+    "editor": "py",
+    "cardType": "tutorial"
   }]
 }, {
   "name": "Happy Flower",
@@ -30,6 +34,10 @@
     "url": "/tutorials/spy/happy-flower",
     "editor": "js",
     "cardType": "tutorial"
+  }, {
+    "url": "/tutorials/spy/happy-flower",
+    "editor": "py",
+    "cardType": "tutorial"
   }]
 }, {
   "name": "Lemon Leak",
@@ -42,6 +50,10 @@
   "otherActions": [{
     "url": "/tutorials/spy/lemon-leak",
     "editor": "js",
+    "cardType": "tutorial"
+  }, {
+    "url": "/tutorials/spy/lemon-leak",
+    "editor": "py",
     "cardType": "tutorial"
   }]
 }, {
@@ -83,7 +95,15 @@
   "imageUrl": "/static/tutorials/paddle.png",
   "largeImageUrl": "/static/tutorials/paddle.gif",
   "videoUrl": "/static/tutorials/paddge.mp4",
-  "otherActions": []
+  "otherActions": [{
+    "url": "/tutorials/spy/paddle",
+    "editor": "js",
+    "cardType": "tutorial"
+  }, {
+    "url": "/tutorials/spy/paddle",
+    "editor": "py",
+    "cardType": "tutorial"
+  }]
 }, {
   "name": "Name Tag",
   "description": "A simple name tag with cool effects",
