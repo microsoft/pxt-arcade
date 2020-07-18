@@ -19,9 +19,7 @@ Add code to create a ``||sprites:sprite||``, rename it as ``||variables:spacePla
 ![Space plane sprite image](/static/tutorials/galga/space-plane.jpg)
 
 ```blocks
-let spacePlane: Sprite = null
-// @highlight
-spacePlane = sprites.create(img`
+let spacePlane = sprites.create(img`
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -62,8 +60,7 @@ spacePlane = sprites.create(img`
 ``||sprites:set||`` the ``||variables:spacePlane||`` to ``||sprites:stay in the screen||``.
 
 ```blocks
-let spacePlane: Sprite = null
-spacePlane = sprites.create(img`
+let spacePlane = sprites.create(img`
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -106,8 +103,7 @@ spacePlane.setFlag(SpriteFlag.StayInScreen, true)
 Start the game with a few lives, so ``||info:set life to||`` to ``3``.
 
 ```blocks
-let spacePlane: Sprite = null
-spacePlane = sprites.create(img`
+let spacePlane = sprites.create(img`
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -153,8 +149,7 @@ with the ``||controller:controller buttons||`` and change the sensitivity
 ``vx`` and ``vy`` to ``200``.
 
 ```blocks
-let spacePlane: Sprite = null
-spacePlane = sprites.create(img`
+let spacePlane = sprites.create(img`
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -202,9 +197,8 @@ and ``vy`` to ``0``.
 
 ```blocks
 let spacePlane: Sprite = null
-let dart: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    dart = sprites.createProjectileFromSprite(img`
+    let dart = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
@@ -232,9 +226,8 @@ In that event, create a ``||sprites:sprite||`` of kind ``||sprites:Enemy||``, re
 and draw the enemy plane in it.
 
 ```blocks
-let bogey: Sprite = null
 game.onUpdateInterval(500, function () {
-    bogey = sprites.create(img`
+    let bogey = sprites.create(img`
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
@@ -261,9 +254,8 @@ On the ``||variables:bogey||`` sprite, ``||sprites:set the velocity||`` with
 values to have it fly **horizontally** from **right to left**.
 
 ```blocks
-let bogey: Sprite = null
 game.onUpdateInterval(500, function () {
-    bogey = sprites.create(img`
+    let bogey = sprites.create(img`
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
@@ -292,9 +284,8 @@ Add code to ``||sprites:set the position||`` of ``||variables:bogey||`` to
 `x` to `180` and `y` to a ``||math:random number||`` between ``0`` and ``120``.
 
 ```blocks
-let bogey: Sprite = null
 game.onUpdateInterval(500, function () {
-    bogey = sprites.create(img`
+    let bogey = sprites.create(img`
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
