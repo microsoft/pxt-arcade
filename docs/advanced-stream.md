@@ -153,13 +153,6 @@ Join the MakeCode developers as we stream MakeCode Arcade live on mixer.com/make
         "imageUrl": "/static/advanced-stream/zRewjteisLw.jpg"
     },
     {
-        "name": "Character Animations",
-        "description": "Join Richard, Shannon, Joey, and Daryl as they add walking and sword swinging animations to an adventure game hero.",
-        "youTubeId": "zRewjteisLw",
-        "youTubePlaylistId": "PLMMBk9hE-SeoHWvTpdezyL9JfF0tocJUT",
-        "imageUrl": "/static/advanced-stream/zRewjteisLw.jpg"
-    },
-    {
         "name": "Sprite Data",
         "description": "Join Richard, Daryl, Shannon, and Joey as they make some friends! In this stream we talk about how to add custom properties (like \"name\", or \"lives\") to a sprite using the arcade-sprite-data extension.",
         "youTubeId": "oIdu_k8d-94",
