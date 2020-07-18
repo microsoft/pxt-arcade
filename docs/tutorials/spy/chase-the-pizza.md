@@ -49,7 +49,7 @@ mySprite = sprites.create(img`
 Draw your ``||sprites:Player||`` character by using the image editor for  ``||variables:set mySprite||``.
 Use the color palette and design tools to draw an image on the canvas. Click **Done** when you are finished.
 
-![Image editor](/static/tutorials/chase-the-pizza/image-editor.gif)
+![Image editor](/static/tutorials/chase-the-pizza/image-editor-js.gif)
 
 ## Step 4
 
