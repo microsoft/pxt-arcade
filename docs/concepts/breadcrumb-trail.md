@@ -173,7 +173,7 @@ for (let value of list) {
 
 ## Step 4
 
-Find ``||scene:set tile list to array of all tiles||`` in ``||scene:Scene||``.
+Find ``||scene:array of all locations||`` in ``||scene:Scene||``.
 Place it in the ``||loops:for element value of list||`` block on top of ``||variables:list||``.
 Select the tile you drew diagonally across the map.
 The loop will now run once for every tile of that type in the tilemap.
