@@ -212,7 +212,7 @@ namespace pxt.editor {
             });
         }
 
-        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "1.1.2") < 0) {
+        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "0.18.9") < 0) {
             /**
              * move from tilemap namespace to tiles namespace
              * <block type="tilemap_locationXY">
