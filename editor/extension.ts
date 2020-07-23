@@ -205,7 +205,9 @@ namespace pxt.editor {
                 block.setAttribute("type", "SpriteKindLegacy");
                 const kindValue = (block.textContent || "").trim();
                 const withoutNum = /[0-9]*([^0-9].*)/.exec(kindValue);
-                legacyKindConversions[withoutNum[1]] = kindValue;
+                if (withoutNum) {
+                    legacyKindConversions[withoutNum[1]] = kindValue;
+                }
             });
 
             pxt.U.toArray(dom.querySelectorAll("shadow[type=spritetype], block[type=spritetype]")).forEach(block => {
