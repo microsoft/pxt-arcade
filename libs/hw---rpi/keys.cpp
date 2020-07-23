@@ -259,6 +259,8 @@ void initKeys() {
     DMESG("init keys");
     // music::playTone(0, 0); // start music process early
 
+    sleep_core_us(200000); // make sure screen update starts to avoid race on config
+
     if (getConfigString("SCAN_CODES")) {
         useScanCodes = 1;
         scanCodeFD = open(getConfigString("SCAN_CODES"), O_RDONLY);
