@@ -3,6 +3,28 @@
 Your caterpiller can grow by getting leaves for nourishment. Guide the caterpiller's movement toward a leaf. Be careful though, if it touches the side of the screen it won't live to be a butterfly.
 
 ```typescript
+namespace myTiles {
+    //% blockIdentity=images._tile
+    export const tile0 = img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `
+}
+
 const NEXT_SECTION_KEY = "__child_node";
 namespace SpriteKind {
     export const Tail = SpriteKind.create();
@@ -32,35 +54,16 @@ caterpillarHead.top = 12 * size;
 caterpillarHead.data = {};
 let currentLeaf: Sprite;
 
-scene.setTileMap(img`
-    6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6
-`);
-
-scene.setTile(0x6, img`
-    7 6 7 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 7 6 6 6 6 6 6 6 6 6 6
-    6 6 6 7 6 7 7 6 6 6 6 6 7 6 6 6
-    6 6 8 7 7 6 7 6 7 7 6 6 6 6 6 6
-    6 6 6 8 7 6 6 7 7 8 6 6 6 6 6 6
-    6 6 6 6 8 6 6 7 8 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 7 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 7 7 6 6 6
-    6 6 6 6 6 6 6 6 6 6 7 7 8 6 6 6
-    6 6 6 6 6 6 6 6 7 7 6 8 6 6 6 6
-    6 6 6 6 6 6 6 6 6 7 7 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 7
-    6 6 7 6 6 6 6 6 6 6 6 6 6 6 6 7
-`);
+tiles.setTilemap(tiles.createTilemap(hex`0a0008000101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101`, img`
+    . . . . . . . . . .
+    . . . . . . . . . .
+    . . . . . . . . . .
+    . . . . . . . . . .
+    . . . . . . . . . .
+    . . . . . . . . . .
+    . . . . . . . . . .
+    . . . . . . . . . .
+    `, [myTiles.tile0,sprites.castle.tileDarkGrass1], TileScale.Sixteen))
 
 const leafImage = img`
     . . . . . f f 7
@@ -262,8 +265,4 @@ game.onUpdateInterval(500, function () {
         currentLeaf.setImage(leafImage);
     }
 });
-```
-
-```package
-color-coded-tilemap
 ```
