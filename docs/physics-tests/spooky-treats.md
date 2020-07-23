@@ -231,8 +231,8 @@ game.onUpdateInterval(3000, function () {
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
     `, SpriteKind.Enemy)
-    Bat.setPosition(Math.randomRange(20, 140), 0)
-    Bat.setVelocity(Math.randomRange(0, 40) - 10, Speed + 20)
+    Bat.setPosition(randint(20, 140), 0)
+    Bat.setVelocity(randint(0, 40) - 10, Speed + 20)
 })
 game.onUpdateInterval(3500, function () {
     Ghost = sprites.create(img`
@@ -253,8 +253,8 @@ game.onUpdateInterval(3500, function () {
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
     `, SpriteKind.Enemy)
-    Ghost.setPosition(Math.randomRange(20, 140), 0)
-    Ghost.setVelocity(Math.randomRange(50, 20) - 100, Speed + 16)
+    Ghost.setPosition(randint(20, 140), 0)
+    Ghost.setVelocity(randint(50, 20) - 100, Speed + 16)
 })
 game.onUpdateInterval(3000, function () {
     Candy = sprites.create(img`
@@ -275,8 +275,8 @@ game.onUpdateInterval(3000, function () {
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
     `, SpriteKind.Food)
-    Candy.setPosition(Math.randomRange(20, 140), 0)
-    Candy.setVelocity(Math.randomRange(0, 10) - 5, Speed + 10)
+    Candy.setPosition(randint(20, 140), 0)
+    Candy.setVelocity(randint(0, 10) - 5, Speed + 10)
 })
 game.onUpdateInterval(4000, function () {
     Lolipop = sprites.create(img`
@@ -297,8 +297,8 @@ game.onUpdateInterval(4000, function () {
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
     `, SpriteKind.Food)
-    Lolipop.setPosition(Math.randomRange(20, 140), 0)
-    Lolipop.setVelocity(Math.randomRange(0, 10) - 5, Speed + 10)
+    Lolipop.setPosition(randint(20, 140), 0)
+    Lolipop.setVelocity(randint(0, 10) - 5, Speed + 10)
 })
 ```
 

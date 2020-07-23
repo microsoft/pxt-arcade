@@ -117,7 +117,7 @@ game.onUpdateInterval(1000, function () {
         e e e e 2 e 2 2 e e e c . . . .
         e e e 2 e e c e c c c . . . . .
         . c c c c c c c . . . . . . . .
-    `, Math.randomRange(-50, 50), Math.randomRange(-50, 50))
+    `, randint(-50, 50), randint(-50, 50))
 })
 ```
 

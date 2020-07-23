@@ -167,7 +167,7 @@ game.onUpdateInterval(10, function () {
         case SieveSteps.DropBounce:
             music.magicWand.play()
             for (let box of spriteList) {
-                box.ay = Math.randomRange(100, 400)
+                box.ay = randint(100, 400)
             }
             idleCount = -1
             step = SieveSteps.Idle

@@ -119,7 +119,7 @@ Another way in which you can use string arrays in your games is to create reacti
 let text_list: string[] = []
 let mySprite: Sprite = null
 scene.onHitTile(SpriteKind.Player, 15, function (sprite) {
-    mySprite.say(text_list[Math.randomRange(0, text_list.length - 1)], 250)
+    mySprite.say(text_list[randint(0, text_list.length - 1)], 250)
     mySprite.setPosition(50, 50)
 })
 scene.setTileMap(img`

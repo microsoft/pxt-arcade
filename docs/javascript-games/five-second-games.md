@@ -110,8 +110,8 @@ namespace _dogdodge {
                 . . . . . . . . . . . . . . . . . . . . . . . .
                 . . . . . . . . . . . . . . . . . . . . . . . .
             `, SpriteKind.Enemy)
-            evil.setPosition(Math.randomRange(10, 150), 0)
-            evil.setVelocity(0, Math.randomRange(80, 130))
+            evil.setPosition(randint(10, 150), 0)
+            evil.setVelocity(0, randint(80, 130))
             evil.setFlag(SpriteFlag.DestroyOnWall, true)
         })
         game.onUpdate(function () {
@@ -480,8 +480,8 @@ namespace _petdog {
                 . . . . . . c c 1 1 1 1 c c c c 1 1 1 1 1 1 1 1 1 1 1 1 c
                 . . . . . . . c c c c c c . . . c c c c 1 1 1 1 1 1 1 c .
                 . . . . . . . . . . . . . . . . . . . c c c c c c c c . .
-            `][Math.randomRange(0, 2)], SpriteKind.Cloud)
-            cloud.setPosition(xPos, Math.randomRange(10, 90))
+            `][randint(0, 2)], SpriteKind.Cloud)
+            cloud.setPosition(xPos, randint(10, 90))
             cloud.z = -5
             cloud.vx = -5
             cloud.setFlag(SpriteFlag.Ghost, true)
@@ -1797,7 +1797,7 @@ namespace _brush {
                 . . 7 6 . . . . . . . . . . . .
                 . . . . . . . . . . . . . . . .
             `, SpriteKind.Food)
-            gunk.setPosition(Math.randomRange(30, 130), Math.randomRange(40, 80))
+            gunk.setPosition(randint(30, 130), randint(40, 80))
         }
         let brush = sprites.create(img`
             . . . . . . . . 2 2 2 3 . . . .
@@ -1945,15 +1945,15 @@ namespace _chop {
             `)
             let x = 0;
             let y = 0;
-            if (Math.randomRange(0, 10) > 5) {
-                x = Math.randomRange(90, 130)
+            if (randint(0, 10) > 5) {
+                x = randint(90, 130)
             } else {
-                x = Math.randomRange(30, 50)
+                x = randint(30, 50)
             }
-            if (Math.randomRange(0, 10) > 5) {
-                y = Math.randomRange(70, 90)
+            if (randint(0, 10) > 5) {
+                y = randint(70, 90)
             } else {
-                y = Math.randomRange(30, 50)
+                y = randint(30, 50)
             }
             tree.setPosition(x, y)
             otherSprite.destroy()
@@ -2022,14 +2022,14 @@ namespace _chop {
         sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
             if (materials == 1) {
                 if (treeX < 90) {
-                    treeX = Math.randomRange(90, 130)
+                    treeX = randint(90, 130)
                 } else {
-                    treeX = Math.randomRange(30, 50)
+                    treeX = randint(30, 50)
                 }
                 if (treeY < 70) {
-                    treeY = Math.randomRange(70, 90)
+                    treeY = randint(70, 90)
                 } else {
-                    treeY = Math.randomRange(30, 50)
+                    treeY = randint(30, 50)
                 }
                 tree.setPosition(treeX, treeY)
                 tree.setImage(img`
@@ -2252,15 +2252,15 @@ namespace _chop {
         })
         // The axe will show up near the border of the screen.
         function setAxeLocation() {
-            if (Math.randomRange(0, 10) > 5) {
-                axeX = Math.randomRange(10, 30)
+            if (randint(0, 10) > 5) {
+                axeX = randint(10, 30)
             } else {
-                axeX = Math.randomRange(130, 150)
+                axeX = randint(130, 150)
             }
-            if (Math.randomRange(0, 10) > 5) {
-                axeY = Math.randomRange(10, 30)
+            if (randint(0, 10) > 5) {
+                axeY = randint(10, 30)
             } else {
-                axeY = Math.randomRange(90, 110)
+                axeY = randint(90, 110)
             }
             axe.setPosition(axeX, axeY)
         }
@@ -2334,7 +2334,7 @@ namespace _chop2 {
                 . . . 6 6 8 e e 7 7 6 8 8 6 7 7 8 8 6 6 6 . . .
                 . . . . . . e e 7 7 e e e e 7 7 e c e e . . . .
                 . . . . . . e e 6 e e e e e e 6 e e f . . . . .
-            `, Math.randomRange(0, 100), Math.randomRange(0, 99))
+            `, randint(0, 100), randint(0, 99))
         })
 
     }
@@ -2345,7 +2345,7 @@ namespace _conch {
         let Conch: Sprite = null
         sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
             music.baDing.play()
-            Conch.setPosition(Math.randomRange(50, 160), 112)
+            Conch.setPosition(randint(50, 160), 112)
             info.changeScoreBy(1)
             if (info.score() >= 5) {
                 game.over(true)
@@ -2410,7 +2410,7 @@ namespace _conch {
             . c c c c c c c c c a c c c . .
         `, SpriteKind.Food)
         Conch.setFlag(SpriteFlag.StayInScreen, true)
-        Conch.setPosition(Math.randomRange(0, 160), 112)
+        Conch.setPosition(randint(0, 160), 112)
         game.onUpdate(function () {
             if (DiverJoe.vx < 0) {
                 DiverJoe.setImage(img`
@@ -2559,7 +2559,7 @@ namespace _crossroad {
         `, SpriteKind.Food)
         goal.setPosition(150, 60)
         game.onUpdateInterval(500, function () {
-            vehicle = Math.randomRange(1, 3)
+            vehicle = randint(1, 3)
             if (vehicle == 1) {
                 projectile = sprites.createProjectileFromSide(img`
                     . . . . . . . . . . . . . . . .
@@ -3007,7 +3007,7 @@ namespace _date {
     }
 
     export function eitherOr() {
-        if (Math.randomRange(0, 1) == 0) {
+        if (randint(0, 1) == 0) {
             velocity = velMult * -1
         } else {
             velocity = velMult
@@ -3167,14 +3167,14 @@ namespace _dac {
             7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
         `, SpriteKind.Collect)
         let squaredron = [destroyMe, avoidMe, collectMe]
-        let random = squaredron.removeAt(Math.randomRange(0, 2))
-        random.setPosition(200, Math.randomRange(16, 104))
+        let random = squaredron.removeAt(randint(0, 2))
+        random.setPosition(200, randint(16, 104))
         random.setVelocity(-160, 0)
-        random = squaredron.removeAt(Math.randomRange(0, 1))
-        random.setPosition(280, Math.randomRange(16, 104))
+        random = squaredron.removeAt(randint(0, 1))
+        random.setPosition(280, randint(16, 104))
         random.setVelocity(-160, 0)
         random = squaredron.removeAt(0)
-        random.setPosition(360, Math.randomRange(16, 104))
+        random.setPosition(360, randint(16, 104))
         random.setVelocity(-160, 0)
 
 
@@ -3366,7 +3366,7 @@ namespace _dodge {
         gamejam.win(true)
         game.onUpdateInterval(1000, function () {
             if (GameActive) {
-                RandomNum = Math.randomRange(0, 3)
+                RandomNum = randint(0, 3)
                 if (RandomNum == 0) {
                     SpawnMissle(0, 0)
                 }
@@ -3427,7 +3427,7 @@ namespace _catchdog {
             . . . . . f f b b f f . . . . .
         `, SpriteKind.Player)
         sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-            doggie.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 120))
+            doggie.setPosition(randint(10, 160), randint(10, 120))
             info.changeScoreBy(1)
             if (info.score() >= 4 && !hit) {
                 gamejam.win(true)
@@ -3476,7 +3476,7 @@ namespace _catchdog {
                 . . . . . . . . . e e e e f f f f f f f f . . .
                 . . . . . . . . . . . . . f f . . . f f f . . .
             `, SpriteKind.Enemy)
-            bad_guy.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 120))
+            bad_guy.setPosition(randint(10, 160), randint(10, 120))
         })
     }
 }
@@ -3553,17 +3553,17 @@ namespace _guppy {
         hongryFish.startEffect(effects.bubbles, 500)
         controller.moveSprite(hongryFish, 125, 100)
         hongryFish.setFlag(SpriteFlag.StayInScreen, true)
-        let fish = Math.floor(Math.randomRange(3, 5))
+        let fish = Math.floor(randint(3, 5))
         let LimitMed = Math.floor(fish / 2)
         let LimitBig = fish - 1
         while (fishsetup < fish) {
-            xPos = Math.randomRange(10, 150)
-            yPos = Math.randomRange(20, 110)
+            xPos = randint(10, 150)
+            yPos = randint(20, 110)
             while (xPos >= 60 && xPos <= 100) {
-                xPos = Math.randomRange(10, 150)
+                xPos = randint(10, 150)
             }
             while (yPos >= 40 && yPos <= 80) {
-                yPos = Math.randomRange(20, 110)
+                yPos = randint(20, 110)
             }
             if (fishsetup < fish) {
                 if (fishsetup < LimitBig) {
@@ -3578,8 +3578,8 @@ namespace _guppy {
                             . . . . . . . .
                             . . . . . . . .
                         `, SpriteKind.SmolFood)
-                        xVel = Math.randomRange(-30, 30)
-                        yVel = Math.randomRange(-10, 10)
+                        xVel = randint(-30, 30)
+                        yVel = randint(-10, 10)
                         SmolFish.setPosition(xPos, yPos)
                         SmolFish.setVelocity(xVel, yVel)
                         SmolFish.setFlag(SpriteFlag.BounceOnWall, true)
@@ -3606,8 +3606,8 @@ namespace _guppy {
                             8 8 . 8 8 8 8 .
                             . . . . . . . .
                         `, SpriteKind.MedFood)
-                        xVel = Math.randomRange(-15, 15)
-                        yVel = Math.randomRange(-10, 10)
+                        xVel = randint(-15, 15)
+                        yVel = randint(-10, 10)
                         MedFish.setPosition(xPos, yPos)
                         MedFish.setVelocity(xVel, yVel)
                         MedFish.setFlag(SpriteFlag.BounceOnWall, true)
@@ -3643,8 +3643,8 @@ namespace _guppy {
                         . . . . . . . . . . . . . . . .
                         . . . . . . . . . . . . . . . .
                     `, SpriteKind.BigFood)
-                    xVel = Math.randomRange(-8, 8)
-                    yVel = Math.randomRange(-5, 5)
+                    xVel = randint(-8, 8)
+                    yVel = randint(-5, 5)
                     BigFish.setPosition(xPos, yPos)
                     BigFish.setVelocity(xVel, yVel)
                     BigFish.setFlag(SpriteFlag.BounceOnWall, true)
@@ -4408,14 +4408,14 @@ namespace _maze {
         lastCElls = ["r", "r"]
         while (curRow >= 1) {
             scene.setTileAt(scene.getTile(curCol, curRow), 12)
-            if (Math.randomRange(0, 2) == 0) {
+            if (randint(0, 2) == 0) {
                 curRow = curRow - 1
                 maze[curRow][curCol] = 1
                 removedCell = lastCElls.shift()
                 lastCElls.push("r")
             } else {
                 if (lastCElls.indexOf("c") == -1) {
-                    direction = directions[Math.randomRange(0, 1)]
+                    direction = directions[randint(0, 1)]
                     lastDirection = direction
                 } else {
                     direction = lastDirection
@@ -5011,7 +5011,7 @@ namespace _mice {
                 . . . . . . . . . . . . . . . .
                 . . . . . . . . . . . . . . . .
                 . . . . . . . . . . . . . . . .
-            `, Math.randomRange(0, 100), Math.randomRange(0, 100))
+            `, randint(0, 100), randint(0, 100))
         })
 
     }
@@ -5561,7 +5561,7 @@ namespace _spell {
         `]
         currLetter = 0
         letter.setImage(letters[currLetter])
-        letter.setPosition(Math.randomRange(8, 152), Math.randomRange(8, 112))
+        letter.setPosition(randint(8, 152), randint(8, 112))
 
         sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
             music.baDing.play()
@@ -5574,7 +5574,7 @@ namespace _spell {
                 gamejam.win()
             }
             letter.setImage(letters[currLetter])
-            letter.setPosition(Math.randomRange(8, 152), Math.randomRange(8, 112))
+            letter.setPosition(randint(8, 152), randint(8, 112))
         })
     }
 

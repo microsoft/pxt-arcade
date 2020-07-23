@@ -6,17 +6,17 @@ create some of your own by pressing buttons.
 ```typescript
 /**
  * particle effects
- * 
+ *
  * The particle effects you see in arcade are formed through the combination
  * of several objects:
- * 
+ *
  * **Particles** are the individual elements you see on the screen -
  * they contain a small amount of information that conveys where and how they are represented.
- * 
+ *
  * **ParticleFactories** describe how the particles are created
  * and how they should be be displayed on the screen. This sets things like initial speed,
  * color, and how long the particle survives
- * 
+ *
  * **ParticleSources** control when Particles are allowed to be created,
  * they apply updates to the particles, they display them to the screen,
  * and make sure the state is clean (e.g. getting rid of particles when their lifespan runs out).
@@ -26,16 +26,16 @@ create some of your own by pressing buttons.
  * to add special behaviors. In particular, the Fire effect has a special source that makes
  * particles move toward each other to get a flame-like 'wave'. Bubbles though, have a source
  * that makes the individual bubbles oscillate left and right, and change state (grow bigger / smaller)
- * 
+ *
  * Finally, **ParticleEffects** create a combination of a ParticleSource and a ParticleFactory,
  * which display on the screen - typically attached to a sprite or other screen element.
- * 
+ *
  * Many of these are derived from particle effects that have already been created.
  * If you're interested, you can find those effects in
  * pxt-common-packages/libs/game/particleeffects.ts,
  * with some factories defined in
  * pxt-common-packages/libs/game/particlefactories.ts,
- * and other logic (e.g. the ParticleSources) defined in 
+ * and other logic (e.g. the ParticleSources) defined in
  * pxt-common-packages/libs/game/particles.ts
  */
 const fireworkEffects: effects.ParticleEffect[] = [
@@ -52,7 +52,7 @@ const fireworkEffects: effects.ParticleEffect[] = [
             class ShortRadial extends particles.RadialFactory {
                 createParticle(anchor: particles.ParticleAnchor) {
                     const p = super.createParticle(anchor);
-                    p.lifespan = Math.randomRange(200, 450);
+                    p.lifespan = randint(200, 450);
                     return p;
                 }
             }
@@ -61,7 +61,7 @@ const fireworkEffects: effects.ParticleEffect[] = [
                 2,
                 50,
                 5,
-                randomPalette(Math.randomRange(2, 5))
+                randomPalette(randint(2, 5))
             );
         }
     ),
@@ -82,10 +82,10 @@ const fireworkEffects: effects.ParticleEffect[] = [
 
                 if (this.galois.percentChance(25)) {
                     p.color = this.palette[0];
-                    p.lifespan = Math.randomRange(50, 150);
+                    p.lifespan = randint(50, 150);
                 } else {
                     p.color = this.palette[1];
-                    p.lifespan = Math.randomRange(50, 350);
+                    p.lifespan = randint(50, 350);
                 }
                 return p;
             }
@@ -138,14 +138,14 @@ const fireworkEffects: effects.ParticleEffect[] = [
 
                 createParticle(anchor: particles.ParticleAnchor) {
                     const p = super.createParticle(anchor);
-                    p.data = Math.randomRange(0, 10);
+                    p.data = randint(0, 10);
 
                     if (this.galois.percentChance(25)) {
                         p.color = this.palette[0];
-                        p.lifespan = Math.randomRange(250, 450);
+                        p.lifespan = randint(250, 450);
                     } else {
                         p.color = this.palette[2];
-                        p.lifespan = Math.randomRange(500, 750);
+                        p.lifespan = randint(500, 750);
                     }
 
                     return p;
@@ -210,12 +210,12 @@ const fireworkEffects: effects.ParticleEffect[] = [
                     if (!this.anchor)
                         this.anchor = anchor;
                     const p = super.createParticle(anchor);
-                    const particleRateMultiple = Fx8(Math.randomRange(60, 100) / 100);
+                    const particleRateMultiple = Fx8(randint(60, 100) / 100);
                     p.vx = Fx.mul(p.vx, particleRateMultiple);
                     p.vy = Fx.mul(p.vy, particleRateMultiple);
                     p.color = this.palette[this.galois.randomRange(0, 1)];;
 
-                    p.lifespan = Math.randomRange(600, 800);
+                    p.lifespan = randint(600, 800);
                     return p;
                 }
 
@@ -259,7 +259,7 @@ const fireworkEffects: effects.ParticleEffect[] = [
 /**
  * This is copied from my original definition for it in
  * pxt-common-packages/libs/game/particleeffects.ts, as that isn't currently exported.
- * 
+ *
  * It is used to wrap simple particle factories that are created with a standard source
  * into effects that can be easily used
  */
@@ -317,10 +317,10 @@ const fireworkTrail = createEffect(
 
             createParticle(anchor: particles.ParticleAnchor) {
                 const p = super.createParticle(anchor);
-                p.vx = Fx.neg(Fx8(anchor.vx + Math.randomRange(-10, 10)));
+                p.vx = Fx.neg(Fx8(anchor.vx + randint(-10, 10)));
                 p.vy = Fx.neg(Fx8(anchor.vy >> 1));
-                p.lifespan = Math.randomRange(50, 500);
-                p.color = Math.percentChance(90) ? 0xE : Math.randomRange(0x1, 0xD);
+                p.lifespan = randint(50, 500);
+                p.color = Math.percentChance(90) ? 0xE : randint(0x1, 0xD);
                 return p;
             }
 
@@ -348,23 +348,23 @@ let lastFired = game.runtime();
 function tryToFire() {
     const time = game.runtime();
     if (lastFired + TIMEOUT < time) {
-        const vx = Math.randomRange(-35, 35);
+        const vx = randint(-35, 35);
         const firework = sprites.createProjectileFromSide(
             img`
                 e
                 e
             `,
             vx,
-            Math.randomRange(-150, -125)
+            randint(-150, -125)
         );
 
         if (!firework.vx || Math.percentChance(70)) {
-            firework.x = Math.randomRange(25, screen.width - 25);
+            firework.x = randint(25, screen.width - 25);
         } else {
             firework.y -= 20;
             firework.vy *= .8;
             if (Math.abs(firework.vx) < 10) {
-                firework.vx = Math.randomRange(30, 40) * (firework.vx < 0 ? -1 : 1);
+                firework.vx = randint(30, 40) * (firework.vx < 0 ? -1 : 1);
             } else {
                 firework.vx *= 2;
             }
@@ -372,7 +372,7 @@ function tryToFire() {
 
         firework.startEffect(fireworkTrail);
         firework.ay = 100;
-        firework.lifespan = Math.randomRange(800, 1200);
+        firework.lifespan = randint(800, 1200);
         lastFired = time;
     }
 }
@@ -391,7 +391,7 @@ sprites.onDestroyed(SpriteKind.Projectile, s => {
 
 /**
  * Color stuff
- * 
+ *
  * this uses the pxt-color extension to change the color palette at runtime.
  * To make all the fireworks unique, this generates a random palette of pastel-ish colors,
  * with the exception of 0xE (set to white) and 0xF (left as black).
@@ -419,9 +419,9 @@ function generatePastel() {
     // generate a random pastel-adjacent color:
     // pastels have 100% saturation and high luminosity ('brightness')
     return new color.HSL(
-        Math.randomRange(0, 359),
+        randint(0, 359),
         1,
-        Math.randomRange(75, 95) / 100
+        randint(75, 95) / 100
     );
 }
 
@@ -437,7 +437,7 @@ function randomPalette(len: number) {
     const palette: number[] = [];
     for (let i = 0; i < len; i++) {
         while (palette.length == i) {
-            const selected = Math.randomRange(1, 0xA);
+            const selected = randint(1, 0xA);
             if (palette.indexOf(selected) < 0) {
                 palette.push(selected);
             }

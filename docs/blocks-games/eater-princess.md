@@ -13,11 +13,11 @@ let princess: Sprite = null
 let strawberry: Sprite = null
 /**
  * Eating a strawberry or a cherry gives 1 point
- * 
+ *
  * Eating taco gives 10 points
- * 
+ *
  * If you try to eat the death pill you will lose a life, but gain 15 points.
- * 
+ *
  * Princess, you have 60 seconds and 3 life to finish the game.
  */
 function randomAssets() {
@@ -39,8 +39,8 @@ function randomAssets() {
         e e e 2 e e c e c c c . . . . .
         . c c c c c c c . . . . . . . .
     `, SpriteKind.Food)
-    strawberry.x = Math.randomRange(0, scene.screenWidth())
-    strawberry.y = Math.randomRange(0, scene.screenHeight())
+    strawberry.x = randint(0, scene.screenWidth())
+    strawberry.y = randint(0, scene.screenHeight())
     cherry = sprites.create(img`
         . . . . . . . . . . . 6 6 6 6 6
         . . . . . . . . . 6 6 7 7 7 7 8
@@ -59,8 +59,8 @@ function randomAssets() {
         . . . . . . . . c e 2 2 2 2 c .
         . . . . . . . . . c c c c c . .
     `, SpriteKind.Food)
-    cherry.x = Math.randomRange(0, scene.screenWidth())
-    cherry.y = Math.randomRange(0, scene.screenHeight())
+    cherry.x = randint(0, scene.screenWidth())
+    cherry.y = randint(0, scene.screenHeight())
     if (Math.percentChance(20)) {
         taco = sprites.create(img`
             . . . . . . . e e e e . . . . .
@@ -80,8 +80,8 @@ function randomAssets() {
             . 4 5 4 5 5 4 e . . . . . . . .
             . . 4 4 e e e . . . . . . . . .
         `, SpriteKind.Taco)
-        taco.x = Math.randomRange(0, scene.screenWidth())
-        taco.y = Math.randomRange(0, scene.screenHeight())
+        taco.x = randint(0, scene.screenWidth())
+        taco.y = randint(0, scene.screenHeight())
     } else {
         deathpill = sprites.create(img`
             . . . . . . . . . . . . . . . . . . . . . . . .
@@ -109,8 +109,8 @@ function randomAssets() {
             . . . . . . . . . . . . . . . . . . . . . . . .
             . . . . . . . . . . . . . . . . . . . . . . . .
         `, SpriteKind.Enemy)
-        deathpill.x = Math.randomRange(0, scene.screenWidth())
-        deathpill.y = Math.randomRange(0, scene.screenHeight())
+        deathpill.x = randint(0, scene.screenWidth())
+        deathpill.y = randint(0, scene.screenHeight())
     }
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {

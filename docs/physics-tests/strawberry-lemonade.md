@@ -172,7 +172,7 @@ scene.setBackgroundImage(img`
 `)
 game.onUpdateInterval(100, function () {
     for (let index = 0; index < 4; index++) {
-        angle = angle2 + Math.randomRange(-10, 10) / 10
+        angle = angle2 + randint(-10, 10) / 10
         projectile2 = sprites.createProjectileFromSprite(img`
             . . . . . . . 6 . . . . . . . .
             . . . . . . 8 6 6 . . . 6 8 . .
@@ -193,7 +193,7 @@ game.onUpdateInterval(100, function () {
         `, mySprite, 50 * Math.cos(angle), 50 * Math.sin(angle))
     }
     for (let index = 0; index < 4; index++) {
-        angle = angle2 + Math.randomRange(-10, 10) / 10 + 3.14159
+        angle = angle2 + randint(-10, 10) / 10 + 3.14159
         projectile2 = sprites.createProjectileFromSprite(img`
             4 4 4 . . 4 4 4 4 4 . . . . . .
             4 5 5 4 4 5 5 5 5 5 4 4 . . . .

@@ -24,7 +24,7 @@ So for this particular set, the mean would be ``6 / 3`` which is equal ``2``.
 ```typescript-ignore
 /**
  * Calculates the mean of the data given
- * 
+ *
  * @param data The numbers used for calculation of the mean
  * @returns The mean of the data given
  **/
@@ -38,7 +38,7 @@ function calculateMean(data: number[]): number {
 
 ## Example #2: Median
 
-When talking about data, the **Median** refers to the middle number. This is just like how the median on a highway is in the middle. 
+When talking about data, the **Median** refers to the middle number. This is just like how the median on a highway is in the middle.
 
 The process of calculating the median is as follows:
 
@@ -96,7 +96,7 @@ So the median is ``2.5``
 ```typescript-ignore
 /**
  * Calculates the median of the data given
- * 
+ *
  * @param data The numbers used for calculation of the median
  * @returns The median of the data given
  **/
@@ -309,7 +309,7 @@ forever(function () {
     sum = 0
     for (let value of dice) {
         for (let i = 0; i < 100; i++) {
-            choice = Math.randomRange(0, list.length - 1)
+            choice = randint(0, list.length - 1)
             value.setImage(list[choice])
             pause(10)
         }

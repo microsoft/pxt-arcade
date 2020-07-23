@@ -49,7 +49,7 @@ This method of filling coordinate points, counting them, and using the differenc
 
 To have our approximation of Pi seem like more like a game, we'll make it visual by drawing a circle inside a square and then filling in the shapes with dots.
 
-A circle image is drawn, or _inscribed_, inside a square image using the circle equation. Two sprites for the shapes are created and the Monte Carlo simulation is started. Shortly after starting, the sprites slide apart so you can watch each shape fill with dots. 
+A circle image is drawn, or _inscribed_, inside a square image using the circle equation. Two sprites for the shapes are created and the Monte Carlo simulation is started. Shortly after starting, the sprites slide apart so you can watch each shape fill with dots.
 
 A sample run of `1000000` dots for each shape is made. The simulation radius for the circle is set at `5000`. Since this so much bigger than the what the screen can show, we have to use it as a virtual radius for the actual shapes on the screen. The screen shape uses a scaled size for the circle radius.
 
@@ -120,8 +120,8 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 function drawCircle() {
     // draw a circle outline using random dots!
     for (let i = 0; i < dots; i++) {
-        xx = Math.randomRange(0, 2 * r) - r
-        yy = Math.randomRange(0, 2 * r) - r
+        xx = randint(0, 2 * r) - r
+        yy = randint(0, 2 * r) - r
         // test if the point will draw the circle
         if ((xx * xx + yy * yy >= r ** 2) && (xx * xx + yy * yy < (r + 1) ** 2)) {
             cirImage.setPixel(xx + r, yy + r, 1)
@@ -147,8 +147,8 @@ forever(function () {
     //
     while (j < dots && simulate) {
         // generate a point within the square
-        xx = Math.randomRange(0, 2 * r2) - r2
-        yy = Math.randomRange(0, 2 * r2) - r2
+        xx = randint(0, 2 * r2) - r2
+        yy = randint(0, 2 * r2) - r2
         sqImage.setPixel(xx * scale + r, yy * scale + r, 7)
         squareDots += 1
 

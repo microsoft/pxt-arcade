@@ -50,12 +50,12 @@ namespace asteroids {
     });
 
     function setMotion(asteroid: Sprite) {
-        asteroid.vx = Math.randomRange(-8, 8);
-        asteroid.vy = Math.randomRange(35, 20);
+        asteroid.vx = randint(-8, 8);
+        asteroid.vy = randint(35, 20);
     }
 
     function setPosition(sprite: Sprite, edge: number) {
-        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.x = randint(edge, screen.width - edge);
         sprite.y = 0;
     }
 }
@@ -196,8 +196,8 @@ namespace asteroids {
      * @param asteroid the asteroid to set the initial velocities of
      */
     function setMotion(asteroid: Sprite) {
-        asteroid.vx = Math.randomRange(-8, 8);
-        asteroid.vy = Math.randomRange(35, 20);
+        asteroid.vx = randint(-8, 8);
+        asteroid.vy = randint(35, 20);
     }
 
     /**
@@ -206,7 +206,7 @@ namespace asteroids {
      * @param edge how many pixels between either edge of the screen to set
      */
     function setPosition(sprite: Sprite, edge: number) {
-        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.x = randint(edge, screen.width - edge);
         sprite.y = 0;
     }
 }
@@ -285,7 +285,7 @@ namespace enemy {
      * @param edge how many pixels between either edge of the screen to set
      */
     function setPosition(sprite: Sprite, edge: number) {
-        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.x = randint(edge, screen.width - edge);
         sprite.y = 0;
     }
 
@@ -343,7 +343,7 @@ namespace powerups {
      * @param edge how many pixels between either edge of the screen to set
      */
     function setPosition(sprite: Sprite, edge: number) {
-        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.x = randint(edge, screen.width - edge);
         sprite.y = 0;
     }
 

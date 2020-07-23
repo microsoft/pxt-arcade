@@ -98,8 +98,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     const projectile = sprites.createProjectileFromSprite(
         Math.pickRandom(shapes),
         mySprite,
-        Math.randomRange(-150, 150),
-        Math.randomRange(-150, 150)
+        randint(-150, 150),
+        randint(-150, 150)
     );
     projectile.setFlag(SpriteFlag.DestroyOnWall, false);
     projectile.setFlag(SpriteFlag.BounceOnWall, true);

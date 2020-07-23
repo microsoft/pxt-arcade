@@ -74,14 +74,14 @@ game.onUpdate(function () {
 
     // metero
     if (Math.random() < 0.05) {
-        let m = sprites.createProjectile(meteor, 0, Math.randomRange(30, 80), 0)
-        m.x = Math.randomRange(10, 140)
+        let m = sprites.createProjectile(meteor, 0, randint(30, 80), 0)
+        m.x = randint(10, 140)
     }
     // stars
     if (Math.random() < 0.1) {
         let m = sprites.createProjectile(img`1`, 0, 40, 0)
-        m.x = Math.randomRange(0, screen.width)
-        m.lifespan = Math.randomRange(100, 120)
+        m.x = randint(0, screen.width)
+        m.lifespan = randint(100, 120)
         m.setFlag(SpriteFlag.Ghost, true);
     }
     let now = control.millis()

@@ -36,22 +36,22 @@ let mySprite: Sprite = null
 scene.setBackgroundColor(7)
 // @highlight
 mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
 ```
 
@@ -69,21 +69,21 @@ Open the ``||controller:Controller||`` Toolbox drawer and drag the ``||controlle
 let mySprite: Sprite = null
 scene.setBackgroundColor(7)
 mySprite = sprites.create(img`
-. . . . . 5 5 5 5 5 5 . . . . . 
-. . . 5 5 5 5 5 5 5 5 5 5 . . . 
-. . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
-. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
+. . . . . 5 5 5 5 5 5 . . . . .
+. . . 5 5 5 5 5 5 5 5 5 5 . . .
+. . 5 5 5 5 5 5 5 5 5 5 5 5 . .
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 .
 . 5 5 5 f f 5 5 5 5 f f 5 5 5 .
-5 5 5 5 f f 5 5 5 5 f f 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 f 5 5 5 5 5 5 5 5 5 5 f 5 5 
-5 5 5 f 5 5 5 5 5 5 5 5 f 5 5 5 
-. 5 5 5 f 5 5 5 5 5 5 f 5 5 5 . 
-. 5 5 5 5 f f f f f f 5 5 5 5 . 
-. . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
-. . . 5 5 5 5 5 5 5 5 5 5 . . . 
+5 5 5 5 f f 5 5 5 5 f f 5 5 5 5
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+5 5 f 5 5 5 5 5 5 5 5 5 5 f 5 5
+5 5 5 f 5 5 5 5 5 5 5 5 f 5 5 5
+. 5 5 5 f 5 5 5 5 5 5 f 5 5 5 .
+. 5 5 5 5 f f f f f f 5 5 5 5 .
+. . 5 5 5 5 5 5 5 5 5 5 5 5 . .
+. . . 5 5 5 5 5 5 5 5 5 5 . . .
 . . . . . 5 5 5 5 5 5 . . . . .
 `, SpriteKind.Player)
 // @highlight
@@ -99,42 +99,42 @@ let mySprite: Sprite = null
 let mySprite2: Sprite = null
 scene.setBackgroundColor(7)
 mySprite = sprites.create(img`
-. . . . . 5 5 5 5 5 5 . . . . . 
-. . . 5 5 5 5 5 5 5 5 5 5 . . . 
-. . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
-. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
+. . . . . 5 5 5 5 5 5 . . . . .
+. . . 5 5 5 5 5 5 5 5 5 5 . . .
+. . 5 5 5 5 5 5 5 5 5 5 5 5 . .
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 .
 . 5 5 5 f f 5 5 5 5 f f 5 5 5 .
-5 5 5 5 f f 5 5 5 5 f f 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 f 5 5 5 5 5 5 5 5 5 5 f 5 5 
-5 5 5 f 5 5 5 5 5 5 5 5 f 5 5 5 
-. 5 5 5 f 5 5 5 5 5 5 f 5 5 5 . 
-. 5 5 5 5 f f f f f f 5 5 5 5 . 
-. . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
-. . . 5 5 5 5 5 5 5 5 5 5 . . . 
+5 5 5 5 f f 5 5 5 5 f f 5 5 5 5
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+5 5 f 5 5 5 5 5 5 5 5 5 5 f 5 5
+5 5 5 f 5 5 5 5 5 5 5 5 f 5 5 5
+. 5 5 5 f 5 5 5 5 5 5 f 5 5 5 .
+. 5 5 5 5 f f f f f f 5 5 5 5 .
+. . 5 5 5 5 5 5 5 5 5 5 5 5 . .
+. . . 5 5 5 5 5 5 5 5 5 5 . . .
 . . . . . 5 5 5 5 5 5 . . . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite)
 // @highlight
 mySprite2 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
 ```
 
@@ -163,7 +163,7 @@ Open the ``||sprites:Sprites||`` Toolbox drawer and drag the ``||sprites:on spri
 ```blocks
 // @highlight
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
-	
+
 })
 ```
 
@@ -211,7 +211,7 @@ Open the ``||math:Math||`` Toolbox drawer and drag two ``||math:pick random||`` 
 let pizza: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
-    pizza.setPosition(Math.randomRange(0, 10), Math.randomRange(0, 10))
+    pizza.setPosition(randint(0, 10), randint(0, 10))
 })
 ```
 
@@ -223,7 +223,7 @@ The Arcade game screen is `160` pixels wide, and `120` pixels high. In the first
 let pizza: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
 	info.changeScoreBy(1)
-    pizza.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
+    pizza.setPosition(randint(0, 160), randint(0, 120))
 })
 ```
 
@@ -235,7 +235,7 @@ Let’s restart our countdown each time. Open the ``||info:Info||`` Toolbox draw
 let pizza: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
 	info.changeScoreBy(1)
-    pizza.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
+    pizza.setPosition(randint(0, 160), randint(0, 120))
     // @highlight
     info.startCountdown(10)
 })
@@ -249,22 +249,22 @@ let pizza: Sprite = null
 let mySprite: Sprite = null
 scene.setBackgroundColor(7)
 mySprite = sprites.create(img`
-. . . . . 5 5 5 5 5 5 . . . . . 
-. . . 5 5 5 5 5 5 5 5 5 5 . . . 
-. . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
-. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
+. . . . . 5 5 5 5 5 5 . . . . .
+. . . 5 5 5 5 5 5 5 5 5 5 . . .
+. . 5 5 5 5 5 5 5 5 5 5 5 5 . .
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 .
 . 5 5 5 f f 5 5 5 5 f f 5 5 5 .
-5 5 5 5 f f 5 5 5 5 f f 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 f 5 5 5 5 5 5 5 5 5 5 f 5 5 
-5 5 5 f 5 5 5 5 5 5 5 5 f 5 5 5 
-. 5 5 5 f 5 5 5 5 5 5 f 5 5 5 . 
-. 5 5 5 5 f f f f f f 5 5 5 5 . 
-. . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
-. . . 5 5 5 5 5 5 5 5 5 5 . . . 
-. . . . . 5 5 5 5 5 5 . . . . . 
+5 5 5 5 f f 5 5 5 5 f f 5 5 5 5
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+5 5 f 5 5 5 5 5 5 5 5 5 5 f 5 5
+5 5 5 f 5 5 5 5 5 5 5 5 f 5 5 5
+. 5 5 5 f 5 5 5 5 5 5 f 5 5 5 .
+. 5 5 5 5 f f f f f f 5 5 5 5 .
+. . 5 5 5 5 5 5 5 5 5 5 5 5 . .
+. . . 5 5 5 5 5 5 5 5 5 5 . . .
+. . . . . 5 5 5 5 5 5 . . . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite)
 pizza = sprites.create(img`
@@ -288,7 +288,7 @@ b 5 5 5 5 d d 4 4 4 4 . . . . .
 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
 	info.changeScoreBy(1)
-    pizza.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
+    pizza.setPosition(randint(0, 160), randint(0, 120))
     // @highlight
     info.startCountdown(10)
 })

@@ -51,10 +51,10 @@ function createSaucer () {
     400,
     true
     )
-    saucer.y = Math.randomRange(10, scene.screenHeight() - 10)
+    saucer.y = randint(10, scene.screenHeight() - 10)
 }
 function placeMountain (leftPosition: number) {
-    lastCreatedMountain = sprites.create(mountains[Math.randomRange(0, 1)], SpriteKind.Mountain)
+    lastCreatedMountain = sprites.create(mountains[randint(0, 1)], SpriteKind.Mountain)
     lastCreatedMountain.setFlag(SpriteFlag.Ghost, true)
     lastCreatedMountain.setFlag(SpriteFlag.AutoDestroy, true)
     lastCreatedMountain.bottom = scene.screenHeight()
@@ -125,10 +125,10 @@ function createCloud () {
         1 . . . . . . . . 1 1 1 1 1 1 1 1 1 1 1 . . . . . 1 1 . .
         1 1 1 1 1 1 1 1 1 1 1 1 1 1 . . . . . . . . . . . . . . .
     `]
-    cloud = sprites.createProjectileFromSide(cloudImages[Math.randomRange(0, cloudImages.length - 1)], -5, 0)
+    cloud = sprites.createProjectileFromSide(cloudImages[randint(0, cloudImages.length - 1)], -5, 0)
     cloud.z = -10
     cloud.setFlag(SpriteFlag.Ghost, true)
-    cloud.y = Math.randomRange(0, scene.screenHeight() * 0.6)
+    cloud.y = randint(0, scene.screenHeight() * 0.6)
 }
 controller.anyButton.onEvent(ControllerButtonEvent.Released, function () {
     balloon.ay = 50
@@ -167,7 +167,7 @@ function createBird () {
     100,
     true
     )
-    bird.y = Math.randomRange(12, scene.screenHeight() - 10)
+    bird.y = randint(12, scene.screenHeight() - 10)
 }
 function createAnimationArrays () {
     flyingSaucer = [img`
@@ -568,7 +568,7 @@ game.setDialogFrame(img`
 `)
 game.showLongText("Stay in the air as long as you can! Hold any   button to turn on the burner.", DialogLayout.Center)
 for (let index = 0; index <= 1; index++) {
-    spawnSomething(Math.randomRange(0, 40))
+    spawnSomething(randint(0, 40))
 }
 game.onUpdateInterval(200, function () {
     // changing position explicitly to avoid fractions of
@@ -581,7 +581,7 @@ game.onUpdateInterval(200, function () {
     }
 })
 game.onUpdateInterval(750, function () {
-    spawnSomething(Math.randomRange(0, 100))
+    spawnSomething(randint(0, 100))
 })
 game.onUpdate(function () {
     info.changeScoreBy(1)

@@ -7,7 +7,7 @@ let hint = ""
 let answer = ""
 let solution = ""
 info.setLife(3)
-solution = String.fromCharCode(Math.randomRange(97, 122))
+solution = String.fromCharCode(randint(97, 122))
 while (info.life() > 0) {
     answer = game.askForString("I'M THINKING OF A LETTER...", 1)
     if (answer == solution) {

@@ -66,8 +66,8 @@ namespace SpriteKind {
 function makePizza() {
     pause(1000);
     let pizza: Sprite = sprites.create(sprites.food.smallPizza, SpriteKind.Pizza);
-    pizza.x = Math.randomRange(0, screen.width);
-    pizza.y = Math.randomRange(0, screen.height);
+    pizza.x = randint(0, screen.width);
+    pizza.y = randint(0, screen.height);
 }
 ```
 
@@ -89,7 +89,7 @@ are in the given order,  and then use a ``||loops:for||`` loop to make that many
 Create a ``||functions:function||`` called ``||functions:fireAsteroid||``.
 
 In the function, create a new ``||sprites:projectile||`` representing
-an ``||sprites:Asteroid||``. 
+an ``||sprites:Asteroid||``.
 
 Set the ``||sprites:Asteroid||``'s ``||sprites:x||`` position to be a
 random position between 0 and ``||sprites:screen.width||``.

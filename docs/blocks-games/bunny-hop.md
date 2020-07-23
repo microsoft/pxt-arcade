@@ -7,7 +7,7 @@ namespace SpriteKind {
     export const Obstacle = SpriteKind.create()
 }
 function createTree () {
-    tree = sprites.createProjectileFromSide(trees[Math.randomRange(0, trees.length - 1)], -50, 0)
+    tree = sprites.createProjectileFromSide(trees[randint(0, trees.length - 1)], -50, 0)
     tree.bottom = 100
     tree.z = -1
 }
@@ -45,8 +45,8 @@ sprites.onDestroyed(SpriteKind.Obstacle, function (sprite) {
     info.changeScoreBy(1)
 })
 function createCloud () {
-    cloud = sprites.createProjectileFromSide(clouds[Math.randomRange(0, clouds.length - 1)], -30, 0)
-    cloud.bottom = Math.randomRange(30, 55)
+    cloud = sprites.createProjectileFromSide(clouds[randint(0, clouds.length - 1)], -30, 0)
+    cloud.bottom = randint(30, 55)
     cloud.z = -2
 }
 function setupFrames () {
@@ -940,7 +940,7 @@ bird.setVelocity(-120, 0)
 setupFrames()
 game.onUpdate(function () {
     if (bird.x < 0) {
-        bird.setPosition(Math.randomRange(160, 240), Math.randomRange(20, 60))
+        bird.setPosition(randint(160, 240), randint(20, 60))
     }
 })
 game.onUpdate(function () {
@@ -957,14 +957,14 @@ game.onUpdate(function () {
     }
 })
 game.onUpdateInterval(2000, function () {
-    obstacleImage = obstacles[Math.randomRange(0, obstacles.length - 1)]
+    obstacleImage = obstacles[randint(0, obstacles.length - 1)]
     projectile = sprites.createProjectileFromSide(obstacleImage, -100, 0)
     projectile.bottom = 105
     projectile.setKind(SpriteKind.Obstacle)
 })
 game.onUpdateInterval(200, function () {
     if (Math.percentChance(40)) {
-        grass = sprites.createProjectileFromSide(grassImages[Math.randomRange(0, grassImages.length - 1)], -50, 0)
+        grass = sprites.createProjectileFromSide(grassImages[randint(0, grassImages.length - 1)], -50, 0)
         grass.bottom = 100
         grass.z = -1
     }
@@ -973,7 +973,7 @@ forever(function () {
     if (Math.percentChance(60)) {
         createTree()
         if (Math.percentChance(50)) {
-            pause(Math.randomRange(150, 300))
+            pause(randint(150, 300))
             createTree()
         }
     }

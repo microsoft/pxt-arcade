@@ -77,7 +77,7 @@ rather than using a specific value.
 This was avoided because it can result in tricky behavior.
 An example of this can be seen in the code snippet below.
 The intention of the snippet is to print out each word in
-``||variables:script||`` backwards. 
+``||variables:script||`` backwards.
 
 ```typescript
 let script: string[] = ["Hello", "my", "name", "is", "Bob", ":)"];
@@ -93,7 +93,7 @@ as elements are ``||arrays:popped||`` off of it.
 
 This can be seen by modifying the previous snippet very slightly.
 This snippet will splash the value of ``||variables:i||`` and
-``||arrays:script.length||``. 
+``||arrays:script.length||``.
 
 ```typescript
 let script: string[] = ["Hello", "my", "name", "is", "Bob", ":)"];
@@ -188,7 +188,7 @@ For a given array ``||variables:list||``,
 choosing a random element can be handled using the following snippet:
 
 ```typescript-ignore
-list[Math.randomRange[0, list.length - 1]];
+list[randint[0, list.length - 1]];
 ```
 
 ``||math:Math.pickRandom||`` is typically a **lot** easier to read, though.

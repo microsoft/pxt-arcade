@@ -2,11 +2,11 @@
 
 Many games need to spawn sprites for the player to do things like collect coins or avoid oil spills.
 
-We will use the ``||sprites:set mySprite to||`` block from the Sprites menu to spawn a new empty sprite, with nothing in it yet. Then we can use an ``||sprites:on created||`` event to set the image and a random position for newly generated sprites. 
+We will use the ``||sprites:set mySprite to||`` block from the Sprites menu to spawn a new empty sprite, with nothing in it yet. Then we can use an ``||sprites:on created||`` event to set the image and a random position for newly generated sprites.
 
 The ``||sprites:on created||`` block uses the sprite's ``||sprites:kind||`` so we can give our new sprites the exact attributes we want, like an image, velocity, or position.
 
-## Concept: Create with on created event 
+## Concept: Create with on created event
 
 [![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/XR8DmTOdgNc)
 
@@ -41,25 +41,25 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 sprites.onCreated(SpriteKind.Cloud, function (newCloud) {
     newCloud.setImage(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . 1 1 1 1 1 8 . . . . . . 
-. . . 1 1 8 8 8 1 1 1 1 1 1 . . 
-. 8 1 1 8 8 8 8 8 8 8 8 8 1 1 . 
-. 1 8 8 8 1 8 8 8 1 1 8 8 8 1 . 
-1 1 8 8 1 1 1 1 1 8 8 8 1 1 1 . 
-1 1 8 8 8 8 8 1 1 8 1 8 1 1 . . 
-. 1 1 1 1 8 8 8 8 8 8 8 1 8 . . 
-. . . . 1 1 8 8 1 1 8 8 1 . . . 
-. . . . . . 8 8 8 1 1 1 1 . . . 
-. . . . . . 1 1 1 1 . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . 1 1 1 1 1 8 . . . . . .
+. . . 1 1 8 8 8 1 1 1 1 1 1 . .
+. 8 1 1 8 8 8 8 8 8 8 8 8 1 1 .
+. 1 8 8 8 1 8 8 8 1 1 8 8 8 1 .
+1 1 8 8 1 1 1 1 1 8 8 8 1 1 1 .
+1 1 8 8 8 8 8 1 1 8 1 8 1 1 . .
+. 1 1 1 1 8 8 8 8 8 8 8 1 8 . .
+. . . . 1 1 8 8 1 1 8 8 1 . . .
+. . . . . . 8 8 8 1 1 1 1 . . .
+. . . . . . 1 1 1 1 . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `)
-    newCloud.x = Math.randomRange(16, scene.screenWidth() - 16)
-    newCloud.y = Math.randomRange(20, scene.screenHeight() - 75)
+    newCloud.x = randint(16, scene.screenWidth() - 16)
+    newCloud.y = randint(20, scene.screenHeight() - 75)
 })
 sprites.onOverlap(SpriteKind.Helicopter, SpriteKind.Cloud, function (sprite, otherSprite) {
     sprite.x += -1 * sprite.vx
@@ -73,75 +73,75 @@ sprites.onOverlap(SpriteKind.Helicopter, SpriteKind.Cloud, function (sprite, oth
 game.splash("Generated Clouds", "on Sprite created")
 scene.setBackgroundColor(9)
 agent = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . f f f f . . . . . . 
-. . . . . f f f f . . . . . . . . . f f f f f f f . . . . . . . 
-. . . . . . . f f f f f f f f f f f f f . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . f . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . f . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . e f . . e e e . . . . . . . . . . . 
-. . . . f . . . . . . . . . e . . e e f f 1 1 . . . . . . . . . 
-. . f f f f f f f f . . . . e e e 2 f . 1 1 1 1 . . . . . . . . 
-. . . . . f . . . . . . e e e 2 2 2 f 1 1 1 1 1 . . . . . . . . 
-. . . . . f . . . e e e 2 2 2 2 2 2 f 1 1 1 1 1 e . . . . . . . 
-. . . . . f e e e e 2 2 2 2 2 2 2 2 f f 1 1 f 2 e . . . . . . . 
-. . . . . e e 2 2 2 2 2 2 2 2 2 2 2 f f f f f 2 e . . . . . . . 
-. . . . . e 2 2 2 2 2 2 2 2 2 2 2 2 f f f f f 2 e . . . . . . . 
-. . . . . e e 2 2 2 2 2 2 2 2 2 2 2 f f f f f 2 e . . . . . . . 
-. . . . . . e e 2 2 2 2 2 2 e 2 2 2 2 2 2 f f 2 e . . . . . . . 
-. . . . . . . e e 2 2 2 2 2 e e 2 2 2 2 2 2 2 e e . . . . . . . 
-. . . . . . . . e e e e 2 e e e 2 2 2 2 2 2 e e . . . . . . . . 
-. . . . . . . . . . . f e . . . e e e e e e . . . . . . . . . . 
-. . . . . . . . . . . f . . . . . . . . f . . . . . . . . . . . 
-. . . . . . f . . . . f . . . . . . . . f . . . . . f . . . . . 
-. . . . . . f f f f f f f f f f f f f f f f f f f f . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . f f f f . . . . . .
+. . . . . f f f f . . . . . . . . . f f f f f f f . . . . . . .
+. . . . . . . f f f f f f f f f f f f f . . . . . . . . . . . .
+. . . . . . . . . . . . . . . f . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . f . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . e f . . e e e . . . . . . . . . . .
+. . . . f . . . . . . . . . e . . e e f f 1 1 . . . . . . . . .
+. . f f f f f f f f . . . . e e e 2 f . 1 1 1 1 . . . . . . . .
+. . . . . f . . . . . . e e e 2 2 2 f 1 1 1 1 1 . . . . . . . .
+. . . . . f . . . e e e 2 2 2 2 2 2 f 1 1 1 1 1 e . . . . . . .
+. . . . . f e e e e 2 2 2 2 2 2 2 2 f f 1 1 f 2 e . . . . . . .
+. . . . . e e 2 2 2 2 2 2 2 2 2 2 2 f f f f f 2 e . . . . . . .
+. . . . . e 2 2 2 2 2 2 2 2 2 2 2 2 f f f f f 2 e . . . . . . .
+. . . . . e e 2 2 2 2 2 2 2 2 2 2 2 f f f f f 2 e . . . . . . .
+. . . . . . e e 2 2 2 2 2 2 e 2 2 2 2 2 2 f f 2 e . . . . . . .
+. . . . . . . e e 2 2 2 2 2 e e 2 2 2 2 2 2 2 e e . . . . . . .
+. . . . . . . . e e e e 2 e e e 2 2 2 2 2 2 e e . . . . . . . .
+. . . . . . . . . . . f e . . . e e e e e e . . . . . . . . . .
+. . . . . . . . . . . f . . . . . . . . f . . . . . . . . . . .
+. . . . . . f . . . . f . . . . . . . . f . . . . . f . . . . .
+. . . . . . f f f f f f f f f f f f f f f f f f f f . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 `, SpriteKind.Helicopter)
 
 cloud1 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, SpriteKind.Cloud)
 cloud2 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, SpriteKind.Cloud)
 ```
 
@@ -158,7 +158,7 @@ The ``||sprites:on created||`` event allows us to set code to run whenever a new
 5. **Challenge:** create an event for the ``||sprites:Helicopter||`` overlap with the new ``||sprites:kind||`` that has an action that gives the new ``||sprites:kind||`` a fast velocity so that it will fly off the screen after they overlap
 
 ## What did we learn?
- 
+
 1. Describe how a ``||sprites:kind||`` label is used in generating a sprite by creating an empty sprite block.
 2. Explain what the ``||sprites:on created||`` block does for you.
 

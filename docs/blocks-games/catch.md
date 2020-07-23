@@ -125,7 +125,7 @@ scene.setTileMap(img`
     5 6 6 6 6 6 6 6 6 5
 `)
 game.onUpdateInterval(2000, function () {
-    if (info.score() < 10 || Math.randomRange(1, Math.min(50, info.score())) < 10) {
+    if (info.score() < 10 || randint(1, Math.min(50, info.score())) < 10) {
         falling = sprites.create(img`
             . . 2 2 2 2 . .
             . 2 2 2 2 2 2 .
@@ -148,9 +148,9 @@ game.onUpdateInterval(2000, function () {
             . . 8 8 8 8 . .
         `, SpriteKind.Projectile2)
     }
-    falling.setPosition(Math.randomRange(20, 140), 20)
+    falling.setPosition(randint(20, 140), 20)
     limit = Math.min(10, info.score())
-    falling.setVelocity(Math.randomRange(-100, 100), Math.randomRange(0 - limit, 5))
+    falling.setVelocity(randint(-100, 100), randint(0 - limit, 5))
     falling.ay = 20
     falling.setFlag(SpriteFlag.BounceOnWall, true)
 })

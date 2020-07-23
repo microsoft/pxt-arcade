@@ -211,12 +211,12 @@ namespace asteroids {
     });
 
     function setMotion(asteroid: Sprite) {
-        asteroid.vx = Math.randomRange(-8, 8);
-        asteroid.vy = Math.randomRange(35, 20);
+        asteroid.vx = randint(-8, 8);
+        asteroid.vy = randint(35, 20);
     }
 
     function setPosition(sprite: Sprite, edge: number) {
-        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.x = randint(edge, screen.width - edge);
         sprite.y = 0;
     }
 }

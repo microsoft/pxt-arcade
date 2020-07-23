@@ -66,14 +66,14 @@ show up in the comment for ``||functions:goodbye||``?
 
 ```typescript
 /**
- * 
+ *
  */
 function introduction() {
     game.splash("Hi, my name is Bob!");
 }
 
 /**
- * 
+ *
  */
 function goodbye() {
     let word = "Goodbye!";
@@ -112,7 +112,7 @@ For example, a section of a comment describing a parameter ``count`` of type
 2. Identify what the function will do
 3. Read the comment for the function: identify how it describes the function's behavior
 4. Hover over the function call and the parameter that is passed to the function
-call to see how the editor displays function 
+call to see how the editor displays function
 
 ```typescript
 /**
@@ -137,14 +137,14 @@ printMessage("World");
 
 ```typescript
 /**
- * 
+ *
  */
 function printMyValue(value: number) {
     console.log("" + value);
 }
 
 /**
- * 
+ *
  */
 function moveMySprite(mySprite: Sprite) {
     mySprite.x += 20;
@@ -215,7 +215,7 @@ function lowFive(): number {
 
 ```typescript
 /**
- * 
+ *
  */
 function coinFlip(): boolean {
     return Math.percentChance(50);
@@ -230,7 +230,7 @@ function greetAndBill(): string {
 }
 
 /**
- * 
+ *
  */
 function sayMyName(name: string): string {
     game.splash("Your name is " + name);
@@ -291,7 +291,7 @@ namespace enemy {
      * @param edge how many pixels between either edge of the screen to set
      */
     function setPosition(sprite: Sprite, edge: number) {
-        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.x = randint(edge, screen.width - edge);
         sprite.y = 0;
     }
 }

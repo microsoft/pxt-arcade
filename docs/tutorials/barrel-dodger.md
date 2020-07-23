@@ -122,7 +122,7 @@ let mySprite: Sprite = sprites.create(img`
 
 ## Step 3
 
-Open the tilemap editor and find the tile position where you want to place your place (hint: it's 1, 5!). You can see the position on the lower left of the editor. 
+Open the tilemap editor and find the tile position where you want to place your place (hint: it's 1, 5!). You can see the position on the lower left of the editor.
 Use the ``||scene:place mySprite on top of tilemap col row||`` block to position your player on that tile.
 
 ```blocks
@@ -313,7 +313,7 @@ game.onUpdateInterval(2000, function () {
     1 1 1 1 1 1 1 1
     e e e e e e e e
     . e e e e e e .
-`, Math.randomRange(-100, -80), 0)
+`, randint(-100, -80), 0)
 })
 ```
 
@@ -334,7 +334,7 @@ game.onUpdateInterval(2000, function () {
         1 1 1 1 1 1 1 1
         e e e e e e e e
         . e e e e e e .
-    `, Math.randomRange(-100, -80), 0)
+    `, randint(-100, -80), 0)
     // @highlight
     tiles.placeOnTile(projectile, tiles.getTileLocation(9, 5))
 })
@@ -355,7 +355,7 @@ game.onUpdateInterval(2000, function () {
         1 1 1 1 1 1 1 1
         e e e e e e e e
         . e e e e e e .
-    `, Math.randomRange(-100, -80), 0)
+    `, randint(-100, -80), 0)
     tiles.placeOnTile(projectile, tiles.getTileLocation(9, 5))
     // @highlight
     info.changeScoreBy(1)

@@ -8,11 +8,11 @@ let player: Sprite = null
 let level = 0
 let count = 0
 function startLevel() {
-    scene.setBackgroundColor(Math.randomRange(3, 7))
+    scene.setBackgroundColor(randint(3, 7))
     count = 0
     for (let index = 0; index <= 10 + level; index++) {
         food = sprites.create(sprites.food.smallCherries, SpriteKind.Food)
-        food.setPosition(Math.randomRange(20, 140), Math.randomRange(20, 100))
+        food.setPosition(randint(20, 140), randint(20, 100))
     }
     player.say("Level " + level, 1000)
     info.startCountdown(10)

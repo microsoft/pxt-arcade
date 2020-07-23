@@ -51,8 +51,8 @@ function newFood() {
         music.playSound(music.sounds(Sounds.BaDing))
     }
     do {
-        foodX = Math.randomRange(1, w - 2)
-        foodY = Math.randomRange(1, h - 2)
+        foodX = randint(1, w - 2)
+        foodY = randint(1, h - 2)
     } while (inSnake(foodX, foodY));
 }
 

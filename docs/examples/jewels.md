@@ -52,7 +52,7 @@ score += neighbours.length * 10
     for (let j = board.length - 1; j >= 0; j--) {
         for (let k = board[0].length - 1; k >= 0; k--) {
             if (board[j][k] == -1) {
-                // Find height of block 
+                // Find height of block
                 let z = k;
                 let height = 0;
                 let found = 0;
@@ -86,7 +86,7 @@ score += neighbours.length * 10
         for (let m = board[0].length - 1; m >= 0; m--) {
             if (board[l][m] == -2) {
 
-                board[l][m] = Math.randomRange(0, list.length - 1)
+                board[l][m] = randint(0, list.length - 1)
             }
         }
     }
@@ -98,7 +98,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 function initialiseBoard() {
     for (let index2 = 0; index2 <= 10; index2++) {
         for (let index22 = 0; index22 <= 10; index22++) {
-            newType = Math.randomRange(0, list.length - 1)
+            newType = randint(0, list.length - 1)
             if (!(board[index2])) {
                 board[index2] = []
             }
@@ -135,7 +135,7 @@ function getNeighbours() {
     // reset
     curTraverseX = curX;
     curTraverseY = curY;
-    // traverse right 
+    // traverse right
     curTraverseX++;
     while (curTraverseX < maxXElement && board[curTraverseX][curTraverseY] == currentType) {
         neighbours2.push([curTraverseX, curTraverseY]);
@@ -167,108 +167,108 @@ function getNeighbours() {
 maxXElement = 9
 maxYElement = 7
 list = [img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . d d d d . . . . . . 
-. . . . d d d 4 4 d d d . . . . 
-. . . d d 4 4 4 4 4 4 d . . . . 
-. . d d 4 4 4 4 4 4 4 d d . . . 
-. d d 4 4 4 4 4 4 4 4 4 d d . . 
-. d 4 4 4 4 4 4 4 4 4 4 4 d . . 
-. d d 4 4 4 4 4 4 4 4 4 4 d . . 
-. . d d 4 4 4 4 4 4 4 4 d d . . 
-. . . d 4 4 4 4 4 4 4 d d . . . 
-. . . d d 4 4 4 4 4 d d . . . . 
-. . . . . d d d 4 d d . . . . . 
-. . . . . . d d d d . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . d d d d . . . . . .
+. . . . d d d 4 4 d d d . . . .
+. . . d d 4 4 4 4 4 4 d . . . .
+. . d d 4 4 4 4 4 4 4 d d . . .
+. d d 4 4 4 4 4 4 4 4 4 d d . .
+. d 4 4 4 4 4 4 4 4 4 4 4 d . .
+. d d 4 4 4 4 4 4 4 4 4 4 d . .
+. . d d 4 4 4 4 4 4 4 4 d d . .
+. . . d 4 4 4 4 4 4 4 d d . . .
+. . . d d 4 4 4 4 4 d d . . . .
+. . . . . d d d 4 d d . . . . .
+. . . . . . d d d d . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . 4 4 4 . . . . . . 
-. . . . . . 4 4 6 4 4 . . . . . 
-. . . . . 4 4 6 6 6 4 4 . . . . 
-. . . 4 4 4 6 6 6 6 6 4 4 . . . 
-. . 4 4 6 6 6 6 6 6 6 6 4 4 . . 
-. . 4 6 6 6 6 6 6 6 6 6 6 4 4 . 
-. 4 6 6 6 6 6 6 6 6 6 6 6 6 4 . 
-. 4 6 6 6 6 6 6 6 6 6 6 6 6 4 . 
-. 4 4 6 6 6 6 6 6 6 6 6 6 4 4 . 
-. . 4 4 6 6 6 6 6 6 6 6 4 4 . . 
-. . . 4 4 6 6 6 6 6 6 4 4 . . . 
-. . . . 4 4 6 6 6 6 6 4 . . . . 
-. . . . . . 4 6 6 6 4 4 . . . . 
-. . . . . . . 4 4 4 4 . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . 4 4 4 . . . . . .
+. . . . . . 4 4 6 4 4 . . . . .
+. . . . . 4 4 6 6 6 4 4 . . . .
+. . . 4 4 4 6 6 6 6 6 4 4 . . .
+. . 4 4 6 6 6 6 6 6 6 6 4 4 . .
+. . 4 6 6 6 6 6 6 6 6 6 6 4 4 .
+. 4 6 6 6 6 6 6 6 6 6 6 6 6 4 .
+. 4 6 6 6 6 6 6 6 6 6 6 6 6 4 .
+. 4 4 6 6 6 6 6 6 6 6 6 6 4 4 .
+. . 4 4 6 6 6 6 6 6 6 6 4 4 . .
+. . . 4 4 6 6 6 6 6 6 4 4 . . .
+. . . . 4 4 6 6 6 6 6 4 . . . .
+. . . . . . 4 6 6 6 4 4 . . . .
+. . . . . . . 4 4 4 4 . . . . .
+. . . . . . . . . . . . . . . .
 `, img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . 3 3 3 . . . . . . 
-. . . . . . 3 a a 3 3 . . . . . 
-. . . . . 3 3 a a a 3 3 . . . . 
-. . . . 3 3 a a a a a 3 . . . . 
-. . . 3 3 a a a a a a 3 3 . . . 
-. . 3 3 a a a a a a a a 3 3 . . 
-. 3 3 a a a a a a a a a a 3 3 . 
-. 3 a a a a a a a a a a a a 3 . 
-. 3 3 a a a a a a a a a a a 3 . 
-. . 3 a a a a a a a a a a 3 3 . 
-. . . 3 a a a a a a a a 3 3 . . 
-. . . 3 3 a a a a a 3 3 3 . . . 
-. . . . 3 3 a a a a 3 3 . . . . 
-. . . . . 3 3 3 3 3 3 . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . 3 3 3 . . . . . .
+. . . . . . 3 a a 3 3 . . . . .
+. . . . . 3 3 a a a 3 3 . . . .
+. . . . 3 3 a a a a a 3 . . . .
+. . . 3 3 a a a a a a 3 3 . . .
+. . 3 3 a a a a a a a a 3 3 . .
+. 3 3 a a a a a a a a a a 3 3 .
+. 3 a a a a a a a a a a a a 3 .
+. 3 3 a a a a a a a a a a a 3 .
+. . 3 a a a a a a a a a a 3 3 .
+. . . 3 a a a a a a a a 3 3 . .
+. . . 3 3 a a a a a 3 3 3 . . .
+. . . . 3 3 a a a a 3 3 . . . .
+. . . . . 3 3 3 3 3 3 . . . . .
+. . . . . . . . . . . . . . . .
 `, img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . a a a . . . . . . 
-. . . . . . a a e a a a . . . . 
-. . . . a a a e e e e a a . . . 
-. . . a a e e e e e e e a a . . 
-. . a a e e e e e e e e e a a . 
-. a a e e e e e e e e e e e a . 
-. a e e e e e e e e e e e e a . 
-. a e e e e e e e e e e e e a . 
-. a a e e e e e e e e e e a a . 
-. . a a e e e e e e e e a a . . 
-. . . a a e e e e e e a a . . . 
-. . . . a a e e e a a a . . . . 
-. . . . . a a e e a a . . . . . 
-. . . . . . a a a a . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . a a a . . . . . .
+. . . . . . a a e a a a . . . .
+. . . . a a a e e e e a a . . .
+. . . a a e e e e e e e a a . .
+. . a a e e e e e e e e e a a .
+. a a e e e e e e e e e e e a .
+. a e e e e e e e e e e e e a .
+. a e e e e e e e e e e e e a .
+. a a e e e e e e e e e e a a .
+. . a a e e e e e e e e a a . .
+. . . a a e e e e e e a a . . .
+. . . . a a e e e a a a . . . .
+. . . . . a a e e a a . . . . .
+. . . . . . a a a a . . . . . .
+. . . . . . . . . . . . . . . .
 `, img`
-. . . . . . . . . . . . . . . . 
-. . . . . . b b b . . . . . . . 
-. . . . . b b 5 b b b . . . . . 
-. . . . b b 5 5 5 5 b b . . . . 
-. . . b b 5 5 5 5 5 5 b b . . . 
-. . b b 5 5 5 5 5 5 5 5 b b . . 
-. b b 5 5 5 5 5 5 5 5 5 5 b b . 
-. b 5 5 5 5 5 5 5 5 5 5 5 5 b . 
-. b 5 5 5 5 5 5 5 5 5 5 5 b b . 
-. b b 5 5 5 5 5 5 5 5 5 b b . . 
-. . b b 5 5 5 5 5 5 5 b b . . . 
-. . . b b 5 5 5 5 5 5 b . . . . 
-. . . . b b 5 5 5 5 b . . . . . 
-. . . . . b b 5 b b b . . . . . 
-. . . . . . b b b . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . b b b . . . . . . .
+. . . . . b b 5 b b b . . . . .
+. . . . b b 5 5 5 5 b b . . . .
+. . . b b 5 5 5 5 5 5 b b . . .
+. . b b 5 5 5 5 5 5 5 5 b b . .
+. b b 5 5 5 5 5 5 5 5 5 5 b b .
+. b 5 5 5 5 5 5 5 5 5 5 5 5 b .
+. b 5 5 5 5 5 5 5 5 5 5 5 b b .
+. b b 5 5 5 5 5 5 5 5 5 b b . .
+. . b b 5 5 5 5 5 5 5 b b . . .
+. . . b b 5 5 5 5 5 5 b . . . .
+. . . . b b 5 5 5 5 b . . . . .
+. . . . . b b 5 b b b . . . . .
+. . . . . . b b b . . . . . . .
+. . . . . . . . . . . . . . . .
 `]
 cursorSprite = sprites.create(img`
-d d d d d d d d d d d d d d d d 
-d . . . . . . . . . . . . . . d 
-d . . . . . . . . . . . . . . d 
-d . . . . . . . . . . . . . . d 
-d . . . . . . . . . . . . . . d 
-d . . . . . . . . . . . . . . d 
-d . . . . . . . . . . . . . . d 
-d . . . . . . . . . . . . . . d 
-d . . . . . . . . . . . . . . d 
-d . . . . . . . . . . . . . . d 
-d . . . . . . . . . . . . . . d 
-d . . . . . . . . . . . . . . d 
-d . . . . . . . . . . . . . . d 
-d . . . . . . . . . . . . . . d 
-d . . . . . . . . . . . . . . d 
-d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d
+d . . . . . . . . . . . . . . d
+d . . . . . . . . . . . . . . d
+d . . . . . . . . . . . . . . d
+d . . . . . . . . . . . . . . d
+d . . . . . . . . . . . . . . d
+d . . . . . . . . . . . . . . d
+d . . . . . . . . . . . . . . d
+d . . . . . . . . . . . . . . d
+d . . . . . . . . . . . . . . d
+d . . . . . . . . . . . . . . d
+d . . . . . . . . . . . . . . d
+d . . . . . . . . . . . . . . d
+d . . . . . . . . . . . . . . d
+d . . . . . . . . . . . . . . d
+d d d d d d d d d d d d d d d d
 `)
 initialiseBoard()
 boardImage = image.create(scene.screenWidth(), scene.screenHeight())

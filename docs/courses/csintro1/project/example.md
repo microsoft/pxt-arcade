@@ -37,7 +37,7 @@ We first break down our features into simple tasks for us to do
 
 We started working on the game as a group, and created a simple version that had a quick implementation of the task items.
 
-![MVP](/static/courses/csintro1/project/trampoline-mvp.gif) 
+![MVP](/static/courses/csintro1/project/trampoline-mvp.gif)
 
 When we were finished with this section, we created a share link to the game:
 
@@ -81,7 +81,7 @@ We looked back at the lessons to see if we could find any way to implement this,
 
 This helped us figure out a solution to the problem: we decided to add sprites to the left and right side of the screen, and reverse the velocity of the trampoline when it overlapped the sprite
 
-![Version 2](/static/courses/csintro1/project/trampoline-v2.gif) 
+![Version 2](/static/courses/csintro1/project/trampoline-v2.gif)
 
 When we were finished with this section, we created a share link to the updated game:
 
@@ -125,7 +125,7 @@ We used ``||variables:set mySprite to||`` blocks to create trampolines, and deci
 
 To make the trampoline start in a random position, we used ``||math:pick random||`` in the ``||sprites:on created||`` event to pick a random starting position for the trampoline that was on the screen. The wall positions were already set based off the position of the trampoline, so nothing else was needed.
 
-![Version 3](/static/courses/csintro1/project/trampoline-v3.gif) 
+![Version 3](/static/courses/csintro1/project/trampoline-v3.gif)
 
 When we were finished with this section, we created a share link to the updated game:
 
@@ -173,7 +173,7 @@ To make the trampolines disappear and reappear when the player jumps on them, we
 
 We also changed the initial position of the player, so that it was more likely they would be able to hit one of the trampolines
 
-![Version 4](/static/courses/csintro1/project/trampoline-v4.gif) 
+![Version 4](/static/courses/csintro1/project/trampoline-v4.gif)
 
 When we were finished with this section, we created a share link to the updated game:
 
@@ -256,120 +256,120 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Trampoline, function (sprite, ot
     player.vy = -100
     otherSprite.destroy()
     trampoline = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, SpriteKind.Trampoline)
 })
 sprites.onCreated(SpriteKind.Trampoline, function (trampoline) {
     trampoline.setImage(img`
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-. . . . . . . . . . . . . 4 4 4 4 4 4 . . . . . . . . . . . . . 
-. . . . . . . . . . . 4 4 4 4 4 4 4 4 4 4 . . . . . . . . . . . 
-. . . . . . . . 4 4 4 4 4 . . . . . . 4 4 4 4 4 . . . . . . . . 
-. . . . . 4 4 4 4 4 . . . . . . . . . . . . 4 4 4 4 4 . . . . . 
-. . . 4 4 4 4 . . . . . . . . . . . . . . . . . . 4 4 4 4 . . . 
-4 4 4 4 . . . . . . . . . . . . . . . . . . . . . . . . 4 4 4 4 
-. 4 4 4 4 4 . . . . . . . . . . . . . . . . . . . . 4 4 4 4 4 . 
-. . . . 4 4 4 4 4 . . . . . . . . . . . . . . 4 4 4 4 4 . . . . 
-. . . . . . . 4 4 4 4 4 . . . . . . . . 4 4 4 4 4 . . . . . . . 
-. . . . . . . . . 4 4 4 4 4 4 . . 4 4 4 4 4 4 . . . . . . . . . 
-. . . . . . . . . . . . 4 4 4 4 4 4 4 4 . . . . . . . . . . . . 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+. . . . . . . . . . . . . 4 4 4 4 4 4 . . . . . . . . . . . . .
+. . . . . . . . . . . 4 4 4 4 4 4 4 4 4 4 . . . . . . . . . . .
+. . . . . . . . 4 4 4 4 4 . . . . . . 4 4 4 4 4 . . . . . . . .
+. . . . . 4 4 4 4 4 . . . . . . . . . . . . 4 4 4 4 4 . . . . .
+. . . 4 4 4 4 . . . . . . . . . . . . . . . . . . 4 4 4 4 . . .
+4 4 4 4 . . . . . . . . . . . . . . . . . . . . . . . . 4 4 4 4
+. 4 4 4 4 4 . . . . . . . . . . . . . . . . . . . . 4 4 4 4 4 .
+. . . . 4 4 4 4 4 . . . . . . . . . . . . . . 4 4 4 4 4 . . . .
+. . . . . . . 4 4 4 4 4 . . . . . . . . 4 4 4 4 4 . . . . . . .
+. . . . . . . . . 4 4 4 4 4 4 . . 4 4 4 4 4 4 . . . . . . . . .
+. . . . . . . . . . . . 4 4 4 4 4 4 4 4 . . . . . . . . . . . .
+4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
 `)
-    trampoline.bottom = Math.randomRange(trampoline.height, scene.screenHeight())
-    trampoline.x = Math.randomRange(0, scene.screenWidth())
+    trampoline.bottom = randint(trampoline.height, scene.screenHeight())
+    trampoline.x = randint(0, scene.screenWidth())
 })
 player = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . e e e e e e . . . . . . 
-. . . e e e e e e e e . . . . . 
-. . . e f f d d f f d . . . . . 
-. . . d f 1 d d 1 f d . . . . . 
-. . . d d d d d d d d . . . . . 
-. . . d d f d d f d d . . . . . 
-. d d . d d f f d d . d d . . . 
-. 4 4 . . d d d d . . 4 4 . . . 
-. 4 4 4 4 4 4 4 4 4 4 4 4 . . . 
-. . 4 4 4 4 4 4 4 4 4 4 4 . . . 
-. . . 4 4 4 4 4 4 4 4 4 . . . . 
-. . . . 8 8 8 8 8 8 8 . . . . . 
-. . . . 8 8 8 . 8 8 8 . . . . . 
-. . . . 8 8 8 . 8 8 8 . . . . . 
-. . . . 8 8 8 . 8 8 8 . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . e e e e e e . . . . . .
+. . . e e e e e e e e . . . . .
+. . . e f f d d f f d . . . . .
+. . . d f 1 d d 1 f d . . . . .
+. . . d d d d d d d d . . . . .
+. . . d d f d d f d d . . . . .
+. d d . d d f f d d . d d . . .
+. 4 4 . . d d d d . . 4 4 . . .
+. 4 4 4 4 4 4 4 4 4 4 4 4 . . .
+. . 4 4 4 4 4 4 4 4 4 4 4 . . .
+. . . 4 4 4 4 4 4 4 4 4 . . . .
+. . . . 8 8 8 8 8 8 8 . . . . .
+. . . . 8 8 8 . 8 8 8 . . . . .
+. . . . 8 8 8 . 8 8 8 . . . . .
+. . . . 8 8 8 . 8 8 8 . . . . .
 `, SpriteKind.Player)
 player.ay = 100
 player.y = 0
 scene.setBackgroundColor(9)
 trampoline = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, SpriteKind.Trampoline)
 trampoline = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, SpriteKind.Trampoline)
 trampoline = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, SpriteKind.Trampoline)
 game.onUpdate(function () {
     player.x += controller.dx()

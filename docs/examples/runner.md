@@ -43,18 +43,18 @@ let currHouse: Sprite
 let gap = 0
 
 function newHouse() {
-    let w = currHouse ? Math.randomRange(40, 80) : screen.width
+    let w = currHouse ? randint(40, 80) : screen.width
     let img = image.create(w, 70)
-    img.fill(Math.randomRange(2, 5))
+    img.fill(randint(2, 5))
     let s = sprites.createProjectile(img, -80, 0, 0)
     if (!currHouse) {
         s.y = 110
         s.x = screen.width / 2
     } else {
-        s.y = Math.randomRange(100, currHouse.y + 8)
+        s.y = randint(100, currHouse.y + 8)
         info.changeScoreBy(1)
     }
-    gap = Math.randomRange(5, 20)
+    gap = randint(5, 20)
     currHouse = s
 }
 

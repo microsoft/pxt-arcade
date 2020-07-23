@@ -93,7 +93,7 @@ function hello(): number {
 
 ### Error #2: Missing a Return
 
-In this example, the intention is to return 5 half the time, and otherwise return 10. 
+In this example, the intention is to return 5 half the time, and otherwise return 10.
 
 ```typescript-ignore
 function world(): number {
@@ -219,7 +219,7 @@ or reaching a case in which the function should end early.
 
 ## Example #4: Finding Three
 
-```typescript 
+```typescript
 function containsThree(min: number, max: number): boolean {
     for (let i = min; i <= max; i++) {
         console.log("" + i);
@@ -333,7 +333,7 @@ namespace enemy {
     }
 
     function setPosition(sprite: Sprite, edge: number) {
-        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.x = randint(edge, screen.width - edge);
         sprite.y = 0;
     }
 }

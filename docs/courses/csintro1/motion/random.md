@@ -2,7 +2,7 @@
 
 Random numbers provide an element of chance to our games that make them look and feel more natural. They can also provide surprises and introduce elements of "good" or "bad" luck.
 
-In this activity, students will use: 
+In this activity, students will use:
 * ``||math:pick random||`` to generate random numbers
 * Setting random sprite positions
 * Setting button press events
@@ -22,7 +22,7 @@ We can pick a random number in a range using ``||math:pick random||``. First, we
 
 ```blocks
 let randomNumber = 0
-randomNumber = Math.randomRange(0, 10)
+randomNumber = randint(0, 10)
 game.splash("Random Number is " + randomNumber)
 ```
 
@@ -50,24 +50,24 @@ Games often have an element of luck and surprise to keep the player engaged. In 
 ```blocks
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . 5 . . 5 . . 5 . . . . . . 
-. . . . 5 . 5 . 5 . . . . . . . 
-. . . . . 5 7 5 . . . . . . . . 
-. . . . 5 7 2 7 5 . . . . . . . 
-. . . . . 5 7 5 . . . . . . . . 
-. . . . . . 5 . . . . . . . . . 
-. . . . . . 1 . . . . . . . . . 
-. . 2 1 1 1 1 1 1 1 2 . . . . . 
-. . . . . . 1 . . . . . . . . . 
-. . . . . . 1 . . . . . . . . . 
-. . . . . . 1 . . . . . . . . . 
-. . . . . 1 . 1 . . . . . . . . 
-. . . . 7 . . . 7 . . . . . . . 
-. . . 7 . . . . . 7 . . . . . . 
-. . 2 2 . . . . . 2 2 . . . . . 
+. . . . . . . . . . . . . . . .
+. . . 5 . . 5 . . 5 . . . . . .
+. . . . 5 . 5 . 5 . . . . . . .
+. . . . . 5 7 5 . . . . . . . .
+. . . . 5 7 2 7 5 . . . . . . .
+. . . . . 5 7 5 . . . . . . . .
+. . . . . . 5 . . . . . . . . .
+. . . . . . 1 . . . . . . . . .
+. . 2 1 1 1 1 1 1 1 2 . . . . .
+. . . . . . 1 . . . . . . . . .
+. . . . . . 1 . . . . . . . . .
+. . . . . . 1 . . . . . . . . .
+. . . . . 1 . 1 . . . . . . . .
+. . . . 7 . . . 7 . . . . . . .
+. . . 7 . . . . . 7 . . . . . .
+. . 2 2 . . . . . 2 2 . . . . .
 `, SpriteKind.Player)
-mySprite.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+mySprite.setPosition(randint(15, 145), randint(15, 105))
 ```
 
 ## Student Task #2: Set random position using a button event #task-2
@@ -105,64 +105,64 @@ namespace SpriteKind {
 let mySprite: Sprite = null
 let hat: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+    mySprite.setPosition(randint(15, 145), randint(15, 105))
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Hat, function (sprite, otherSprite) {
     sprite.say("Excuse Me!", 500)
 })
 hat = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . 4 4 4 4 4 4 4 4 4 4 . . . . . . . . . . . . . . . 
-. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
-. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
-. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
-. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
-. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
-. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
-. . . . . . . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 . . . . . . . 
-. . . . . . . 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
-. . . . . . . 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
-. . . . . . . 6 4 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
-. . . . . 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
-. . . . . 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
-. . . . . 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
-. . . . . . 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
-. . . . . . 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
-. . . . . . . 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
-. . . . . . 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
-. . . . . . 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
-. . . . . . 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . . 
-. . . . . . 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . 4 4 4 4 4 4 4 4 4 4 . . . . . . . . . . . . . . .
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . .
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . .
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . .
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . .
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . .
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . .
+. . . . . . . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 . . . . . . .
+. . . . . . . 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . .
+. . . . . . . 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . .
+. . . . . . . 6 4 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . .
+. . . . . 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . .
+. . . . . 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . .
+. . . . . 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . .
+. . . . . . 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . .
+. . . . . . 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . .
+. . . . . . . 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . .
+. . . . . . 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . .
+. . . . . . 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . .
+. . . . . . 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . .
+. . . . . . 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 `, SpriteKind.Hat)
 mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . 5 . . 5 . . 5 . . . . . . 
-. . . . 5 . 5 . 5 . . . . . . . 
-. . . . . 5 7 5 . . . . . . . . 
-. . . . 5 7 2 7 5 . . . . . . . 
-. . . . . 5 7 5 . . . . . . . . 
-. . . . . . 5 . . . . . . . . . 
-. . . . . . 1 . . . . . . . . . 
-. . 2 1 1 1 1 1 1 1 2 . . . . . 
-. . . . . . 1 . . . . . . . . . 
-. . . . . . 1 . . . . . . . . . 
-. . . . . . 1 . . . . . . . . . 
-. . . . . 1 . 1 . . . . . . . . 
-. . . . 7 . . . 7 . . . . . . . 
-. . . 7 . . . . . 7 . . . . . . 
-. . 2 2 . . . . . 2 2 . . . . . 
+. . . . . . . . . . . . . . . .
+. . . 5 . . 5 . . 5 . . . . . .
+. . . . 5 . 5 . 5 . . . . . . .
+. . . . . 5 7 5 . . . . . . . .
+. . . . 5 7 2 7 5 . . . . . . .
+. . . . . 5 7 5 . . . . . . . .
+. . . . . . 5 . . . . . . . . .
+. . . . . . 1 . . . . . . . . .
+. . 2 1 1 1 1 1 1 1 2 . . . . .
+. . . . . . 1 . . . . . . . . .
+. . . . . . 1 . . . . . . . . .
+. . . . . . 1 . . . . . . . . .
+. . . . . 1 . 1 . . . . . . . .
+. . . . 7 . . . 7 . . . . . . .
+. . . 7 . . . . . 7 . . . . . .
+. . 2 2 . . . . . 2 2 . . . . .
 `, SpriteKind.Player)
-mySprite.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+mySprite.setPosition(randint(15, 145), randint(15, 105))
 hat.setPosition(35, 60)
 ```
 
@@ -174,7 +174,7 @@ hat.setPosition(35, 60)
 4. Test that the ``||sprites:overlap||`` works with different sprites of the same ``||sprites:kind||``
 5. **Challenge:** make multiple sprites randomly change position with the ``||controller:A||`` button and give two of the sprites a random velocity (use a range across negative and positive for ``||sprites:vx||`` and ``||sprites:vy||``)
 
-## What did we learn? 
+## What did we learn?
 
 1. Describe how the ability to generate a random value can make a game more interesting and/or challenging.
 2. Make a hypothesis of a good use of ``||math:pick random||`` that you would like to design into a future game - especially something we don't know how to do yet. Be descriptive of the game and how a random value would be needed.

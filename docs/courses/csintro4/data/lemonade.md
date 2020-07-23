@@ -2,13 +2,13 @@
 
 Below is a game called **Lemonade City**. THe object of the game is use data analysis to run a sucessful lemonade business.
 
-Each day, the player is told the weather forecast of the day. As expected the weather has large impact on the amount of lemonade sales. The hotter the day, the higher the demand for lemonade. 
+Each day, the player is told the weather forecast of the day. As expected the weather has large impact on the amount of lemonade sales. The hotter the day, the higher the demand for lemonade.
 
-It is the player's job to determine the optimal amount of lemonade that should be sold. Each glass of lemonade costs the player $0.50 and sells for $1.00. The other main cost is the cost of operation. Each lemonade store costs $20/day to operate. 
+It is the player's job to determine the optimal amount of lemonade that should be sold. Each glass of lemonade costs the player $0.50 and sells for $1.00. The other main cost is the cost of operation. Each lemonade store costs $20/day to operate.
 
 Any lemonade unpurchased at the end of the day is unable to last the night and is discarded.
 
-Over the course of 5 days, try to make as much money as possible. 
+Over the course of 5 days, try to make as much money as possible.
 
 ```sim
 namespace lemonadeprompt {
@@ -254,7 +254,7 @@ namespace lemonadeprompt {
             }
         })
     }
-} 
+}
 
 
 let storeSprites = [sprites.create(img`0`), sprites.create(img`0`), sprites.create(img`0`)];
@@ -516,7 +516,7 @@ function newDay() {
     let numberOfCustomers = calculateCustomers(temp);
     customerTimes = [];
     for (let i = 0; i < numberOfCustomers; i++) {
-        customerTimes.push(interval * Math.randomRange(1, (lengthOfDay / interval) - 1));
+        customerTimes.push(interval * randint(1, (lengthOfDay / interval) - 1));
     }
     sortCustomers();
 }
@@ -543,7 +543,7 @@ function sortCustomers() {
 
 function customerBuy() {
     if (info.hasLife() && info.life() > 0) {
-        const storeIndex = Math.randomRange(0, 2);
+        const storeIndex = randint(0, 2);
         storeSales[storeIndex]++;
         info.changeScoreBy(1);
         info.changeLifeBy(-1);
@@ -597,7 +597,7 @@ const origPalette = hex`
     TODO: Replace with actual extension name
 -->
 
-The extension pxt-arcade-graphing extension has many helpful functions for displaying data. The first one to look at ``display.plotSeries``. 
+The extension pxt-arcade-graphing extension has many helpful functions for displaying data. The first one to look at ``display.plotSeries``.
 
 ```typescript-ignore
 let xValues: number[] = [1, 2, 3, 4, 5, 6];
@@ -679,7 +679,7 @@ game.splash("Correlation = " + stats.correlation(xValues, yValues));
 
 ## Example #3: Line of Best Fit
 
-For every data sets with x and y values that contains at least 2 data points, there exists what is known as the **Line of Best Fit**. This is a line that best approximates the data. It's not guaranteed to go through every point, but it will at least be the closest to all the points in general. 
+For every data sets with x and y values that contains at least 2 data points, there exists what is known as the **Line of Best Fit**. This is a line that best approximates the data. It's not guaranteed to go through every point, but it will at least be the closest to all the points in general.
 
 Calculating the line of best fit is beyond the scope of this course, but the extensions used for this section contain functions that will calculate it.
 

@@ -9,7 +9,7 @@ Just like in Blocks, a boolean value can be stored as a variable in JavaScript.
 let x = true
 ```
 
-is equivalent to 
+is equivalent to
 
 ```typescript
 let x: boolean = true;
@@ -39,7 +39,7 @@ if (condition) {
 } else {
     console.log("The condition is false");
 }
-``` 
+```
 
 In these snippets, ``||variables:condition||`` is a boolean value
 (an expression that evaluates to ``||logic:true||`` or ``||logic:false||``).
@@ -61,7 +61,7 @@ these same comparisons are available.
 | Less Than                 | <         | ``value1 < value2``   |
 | Less Than or Equal To     | &le;      | ``value1 <= value2``  |
 | Greater Than              | >         | ``value1 > value2``   |
-| Greater Than or Equal To  | &ge;      | ``value1 >= value2``  |  
+| Greater Than or Equal To  | &ge;      | ``value1 >= value2``  |
 
 ## Example #1: Numeric Comparisons
 
@@ -76,7 +76,7 @@ these same comparisons are available.
 let num: number = -5;
 if (num < 0) {
     console.log("num is negative!");
-} 
+}
 ```
 
 ### Example #1b: Equal to
@@ -299,12 +299,12 @@ namespace asteroids {
     });
 
     function setMotion(asteroid: Sprite) {
-        asteroid.vx = Math.randomRange(-8, 8);
-        asteroid.vy = Math.randomRange(35, 20);
+        asteroid.vx = randint(-8, 8);
+        asteroid.vy = randint(35, 20);
     }
 
     function setPosition(sprite: Sprite, edge: number) {
-        sprite.x = Math.randomRange(edge, screen.width - edge);
+        sprite.x = randint(edge, screen.width - edge);
         sprite.y = 0;
     }
 }

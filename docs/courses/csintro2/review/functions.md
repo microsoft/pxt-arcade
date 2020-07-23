@@ -16,7 +16,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         mySprite.image.flipX()
         pause(Math.max(300 - 15 * index, 30))
     }
-    mySprite.setPosition(Math.randomRange(10, scene.screenWidth() - 10), Math.randomRange(10, scene.screenHeight() - 10))
+    mySprite.setPosition(randint(10, scene.screenWidth() - 10), randint(10, scene.screenHeight() - 10))
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite.say("teleporting!", 1000)
@@ -25,7 +25,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
         mySprite.image.flipX()
         pause(Math.max(300 - 15 * index, 30))
     }
-    mySprite.setPosition(Math.randomRange(10, scene.screenWidth() - 10), Math.randomRange(10, scene.screenHeight() - 10))
+    mySprite.setPosition(randint(10, scene.screenWidth() - 10), randint(10, scene.screenHeight() - 10))
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite.say("teleporting!", 1000)
@@ -34,7 +34,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
         mySprite.image.flipX()
         pause(Math.max(300 - 15 * index, 30))
     }
-    mySprite.setPosition(Math.randomRange(10, scene.screenWidth() - 10), Math.randomRange(10, scene.screenHeight() - 10))
+    mySprite.setPosition(randint(10, scene.screenWidth() - 10), randint(10, scene.screenHeight() - 10))
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite.say("teleporting!", 1000)
@@ -43,25 +43,25 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
         mySprite.image.flipX()
         pause(Math.max(300 - 15 * index, 30))
     }
-    mySprite.setPosition(Math.randomRange(10, scene.screenWidth() - 10), Math.randomRange(10, scene.screenHeight() - 10))
+    mySprite.setPosition(randint(10, scene.screenWidth() - 10), randint(10, scene.screenHeight() - 10))
 })
 mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . f f f f . . . . . . 
-. . . . f f f 2 2 f f f . . . . 
-. . . f f f 2 2 2 2 f f f . . . 
-. . f f f e e e e e e f f f . . 
-. . f f e 2 2 2 2 2 2 e e f . . 
-. f f e 2 f f f f f f 2 e f f . 
-. f f f f f e e e e f f f f f . 
-. . f e f b f 4 4 f b f e f . . 
-. f f e 4 1 f d d f 1 4 e f . . 
-f d f f e 4 d d d d 4 e f e . . 
-f b f e f 2 2 2 2 e d d 4 e . . 
-f b f 4 f 2 2 2 2 e d d e . . . 
-f c f . f 4 4 5 5 f e e . . . . 
-. f f . f f f f f f f . . . . . 
-. . . . f f f . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . f f f f . . . . . .
+. . . . f f f 2 2 f f f . . . .
+. . . f f f 2 2 2 2 f f f . . .
+. . f f f e e e e e e f f f . .
+. . f f e 2 2 2 2 2 2 e e f . .
+. f f e 2 f f f f f f 2 e f f .
+. f f f f f e e e e f f f f f .
+. . f e f b f 4 4 f b f e f . .
+. f f e 4 1 f d d f 1 4 e f . .
+f d f f e 4 d d d d 4 e f e . .
+f b f e f 2 2 2 2 e d d 4 e . .
+f b f 4 f 2 2 2 2 e d d e . . .
+f c f . f 4 4 5 5 f e e . . . .
+. f f . f f f f f f f . . . . .
+. . . . f f f . . . . . . . . .
 `, SpriteKind.Player)
 ```
 
@@ -102,7 +102,7 @@ To make the sprite move in a square, you can:
 
 ### ~
 
-### ~hint 
+### ~hint
 
 To fire out a blast of sunshine:
 

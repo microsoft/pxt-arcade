@@ -141,7 +141,7 @@ game.onUpdateInterval(1500, function () {
     1 1 1 1 1 1 1 1
     e e e e e e e e
     . e e e e e e .
-`, Math.randomRange(-100, -80), 0)
+`, randint(-100, -80), 0)
 })
 ```
 
@@ -162,7 +162,7 @@ game.onUpdateInterval(1500, function () {
         1 1 1 1 1 1 1 1
         e e e e e e e e
         . e e e e e e .
-    `, Math.randomRange(-100, -80), 0)
+    `, randint(-100, -80), 0)
     tiles.placeOnTile(projectile, tiles.getTileLocation(9, 5))
 })
 ```
@@ -222,7 +222,7 @@ game.onUpdateInterval(1500, function () {
         1 1 1 1 1 1 1 1
         e e e e e e e e
         . e e e e e e .
-    `, Math.randomRange(-100, -80), 0)
+    `, randint(-100, -80), 0)
     info.changeScoreBy(1)
     tiles.placeOnTile(projectile, tiles.getTileLocation(9, 5))
 })
@@ -318,7 +318,7 @@ game.onUpdateInterval(1500, function () {
         1 1 1 1 1 1 1 1
         e e e e e e e e
         1 e e e e e e 1
-    `, Math.randomRange(-100, -80), 0)
+    `, randint(-100, -80), 0)
     info.changeScoreBy(1)
     tiles.placeOnTile(projectile, tiles.getTileLocation(9, 5))
 })

@@ -20,7 +20,7 @@ In real life, you can think of velocity like being in a train or a car; the spee
 
 In @boardname@, a sprite's velocity is measured in **pixels per second**, and stored as a sprite's ``||sprites:vx||`` and ``||sprites:vy||``. This is because the game screen has dimensions, and therefore distance in the `X` or `Y` direction, measured in pixels.
 
-A sprite's ``||sprites:vx||`` represents the sprite's velocity on the horizontal axis and is how quickly the sprite's ``||sprites:x||`` value is changing in value moving left to right. 
+A sprite's ``||sprites:vx||`` represents the sprite's velocity on the horizontal axis and is how quickly the sprite's ``||sprites:x||`` value is changing in value moving left to right.
 
 A sprite's ``||sprites:vy||``, represents the sprite's velocity in the vertical axis, and is how quickly the sprite's ``||sprites:y||`` changes in value moving up and down.
 
@@ -34,40 +34,40 @@ A sprite's ``||sprites:vy||``, represents the sprite's velocity in the vertical 
 let second: Sprite = null
 let first: Sprite = null
 first = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . 2 . . . 
-. . . . . . . . . . . . 2 2 . . 
-. . . . . . . . . . . . 2 2 2 . 
-. . . . . . . . . . . . 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-. . . . . . . . . . . . 2 2 2 2 
-. . . . . . . . . . . . 2 2 2 . 
-. . . . . . . . . . . . 2 2 . . 
-. . . . . . . . . . . . 2 . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . 2 . . .
+. . . . . . . . . . . . 2 2 . .
+. . . . . . . . . . . . 2 2 2 .
+. . . . . . . . . . . . 2 2 2 2
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+. . . . . . . . . . . . 2 2 2 2
+. . . . . . . . . . . . 2 2 2 .
+. . . . . . . . . . . . 2 2 . .
+. . . . . . . . . . . . 2 . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
 second = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . 9 . . . 
-. . . . . . . . . . . . 9 9 . . 
-. . . . . . . . . . . . 9 9 9 . 
-. . . . . . . . . . . . 9 9 9 9 
-9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
-. . . . . . . . . . . . 9 9 9 9 
-. . . . . . . . . . . . 9 9 9 . 
-. . . . . . . . . . . . 9 9 . . 
-. . . . . . . . . . . . 9 . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . 9 . . .
+. . . . . . . . . . . . 9 9 . .
+. . . . . . . . . . . . 9 9 9 .
+. . . . . . . . . . . . 9 9 9 9
+9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+. . . . . . . . . . . . 9 9 9 9
+. . . . . . . . . . . . 9 9 9 .
+. . . . . . . . . . . . 9 9 . .
+. . . . . . . . . . . . 9 . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
 first.x += -80
 second.x += -80
@@ -113,22 +113,22 @@ Below is a sprite with an acceleration applied. We set the sprite position to th
 ```blocks
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . 1 1 1 1 1 1 1 1 1 1 1 . . 
-. . . 1 e e e e e e e e e 1 . . 
-. . . 1 e e e e e e e e e 1 . . 
-. . . 1 e e e e e e e e e 1 . . 
-. . . 1 e e e e e e e e e 1 . . 
-. . . 1 e e e e e e e e e 1 . . 
-. . . 1 e e e e e e e e e 1 . . 
-. . . 1 e e e e e e e e e 1 . . 
-. . . 1 1 1 1 1 1 1 1 1 1 1 . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . 1 1 1 1 1 1 1 1 1 1 1 . .
+. . . 1 e e e e e e e e e 1 . .
+. . . 1 e e e e e e e e e 1 . .
+. . . 1 e e e e e e e e e 1 . .
+. . . 1 e e e e e e e e e 1 . .
+. . . 1 e e e e e e e e e 1 . .
+. . . 1 e e e e e e e e e 1 . .
+. . . 1 e e e e e e e e e 1 . .
+. . . 1 1 1 1 1 1 1 1 1 1 1 . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
 mySprite.ay = -20
 for (let i = 0; i < 5; i++) {
@@ -149,40 +149,40 @@ mySprite.destroy()
 let second: Sprite = null
 let first: Sprite = null
 first = sprites.createProjectileFromSide(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . 2 . . . 
-. . . . . . . . . . . . 2 2 . . 
-. . . . . . . . . . . . 2 2 2 . 
-. . . . . . . . . . . . 2 2 2 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-. . . . . . . . . . . . 2 2 2 2 
-. . . . . . . . . . . . 2 2 2 . 
-. . . . . . . . . . . . 2 2 . . 
-. . . . . . . . . . . . 2 . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . 2 . . .
+. . . . . . . . . . . . 2 2 . .
+. . . . . . . . . . . . 2 2 2 .
+. . . . . . . . . . . . 2 2 2 2
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+. . . . . . . . . . . . 2 2 2 2
+. . . . . . . . . . . . 2 2 2 .
+. . . . . . . . . . . . 2 2 . .
+. . . . . . . . . . . . 2 . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, 20, 0)
 second = sprites.createProjectileFromSide(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . 9 . . . 
-. . . . . . . . . . . . 9 9 . . 
-. . . . . . . . . . . . 9 9 9 . 
-. . . . . . . . . . . . 9 9 9 9 
-9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
-. . . . . . . . . . . . 9 9 9 9 
-. . . . . . . . . . . . 9 9 9 . 
-. . . . . . . . . . . . 9 9 . . 
-. . . . . . . . . . . . 9 . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . 9 . . .
+. . . . . . . . . . . . 9 9 . .
+. . . . . . . . . . . . 9 9 9 .
+. . . . . . . . . . . . 9 9 9 9
+9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+. . . . . . . . . . . . 9 9 9 9
+. . . . . . . . . . . . 9 9 9 .
+. . . . . . . . . . . . 9 9 . .
+. . . . . . . . . . . . 9 . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, 20, 0)
 first.y = 35
 second.y = 60
@@ -224,11 +224,11 @@ let xDirection = 0
 let block: Sprite = null
 sprites.onOverlap(SpriteKind.Balloon, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.setFlag(SpriteFlag.Ghost, true)
-    xDirection = Math.randomRange(0, 50)
-    yDirection = Math.randomRange(0, 50)
+    xDirection = randint(0, 50)
+    yDirection = randint(0, 50)
     // create the splash
     projectile = sprites.createProjectileFromSprite(img`
-9 
+9
 `, sprite, xDirection, yDirection)
     // make the splash a ghost, so that it doesn't
     // interact with other sprites
@@ -244,58 +244,58 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     balloon.destroy()
     balloon = sprites.create(img`
-. . . . . . . 8 . . . . . . . . 
-. . . . . 8 8 9 8 8 . . . . . . 
-. . . . 8 9 9 9 9 9 8 . . . . . 
-. . . 8 9 9 8 8 8 9 9 8 . . . . 
-. . . 8 9 8 8 9 9 8 9 8 . . . . 
-. . 8 9 9 8 8 8 9 8 9 9 8 . . . 
-. . . 8 9 8 8 8 8 8 9 8 . . . . 
-. . . 8 9 9 8 8 8 9 9 8 . . . . 
-. . . . 8 9 9 9 9 9 8 . . . . . 
-. . . . . 8 8 9 8 8 . . . . . . 
-. . . . . . . 8 . . . . . . . . 
+. . . . . . . 8 . . . . . . . .
+. . . . . 8 8 9 8 8 . . . . . .
+. . . . 8 9 9 9 9 9 8 . . . . .
+. . . 8 9 9 8 8 8 9 9 8 . . . .
+. . . 8 9 8 8 9 9 8 9 8 . . . .
+. . 8 9 9 8 8 8 9 8 9 9 8 . . .
+. . . 8 9 8 8 8 8 8 9 8 . . . .
+. . . 8 9 9 8 8 8 9 9 8 . . . .
+. . . . 8 9 9 9 9 9 8 . . . . .
+. . . . . 8 8 9 8 8 . . . . . .
+. . . . . . . 8 . . . . . . . .
 `, SpriteKind.Balloon)
     balloon.setKind(SpriteKind.Balloon)
     balloon.x += -50
 })
 scene.setBackgroundColor(6)
 block = sprites.create(img`
-f f f f f f f f f f f f f f f f 
-f 1 2 2 1 1 2 2 2 1 2 1 1 2 1 f 
-f 1 2 1 2 1 2 1 2 1 2 2 1 2 1 f 
-f 1 2 1 2 1 2 2 2 1 2 1 2 2 1 f 
-f 1 2 2 1 1 2 1 2 1 2 1 1 2 1 f 
-f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f 
-f 1 2 2 2 1 2 2 2 1 2 2 2 1 1 f 
-f 1 2 1 1 1 2 1 1 1 2 1 2 1 1 f 
-f 1 2 1 2 1 2 2 1 1 2 2 2 1 1 f 
-f 1 2 2 2 1 2 2 2 1 2 1 1 2 1 f 
-f f f f f f f f f f f f f f f f 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+f f f f f f f f f f f f f f f f
+f 1 2 2 1 1 2 2 2 1 2 1 1 2 1 f
+f 1 2 1 2 1 2 1 2 1 2 2 1 2 1 f
+f 1 2 1 2 1 2 2 2 1 2 1 2 2 1 f
+f 1 2 2 1 1 2 1 2 1 2 1 1 2 1 f
+f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f
+f 1 2 2 2 1 2 2 2 1 2 2 2 1 1 f
+f 1 2 1 1 1 2 1 1 1 2 1 2 1 1 f
+f 1 2 1 2 1 2 2 1 1 2 2 2 1 1 f
+f 1 2 2 2 1 2 2 2 1 2 1 1 2 1 f
+f f f f f f f f f f f f f f f f
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, SpriteKind.Enemy)
 block.x += 50
 balloon = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . 8 . . . . . . . . 
-. . . . . 8 8 9 8 8 . . . . . . 
-. . . . 8 9 9 9 9 9 8 . . . . . 
-. . . 8 9 9 8 8 8 9 9 8 . . . . 
-. . . 8 9 8 8 9 9 8 9 8 . . . . 
-. . 8 9 9 8 8 8 9 8 9 9 8 . . . 
-. . . 8 9 8 8 8 8 8 9 8 . . . . 
-. . . 8 9 9 8 8 8 9 9 8 . . . . 
-. . . . 8 9 9 9 9 9 8 . . . . . 
-. . . . . 8 8 9 8 8 . . . . . . 
-. . . . . . . 8 . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . 8 . . . . . . . .
+. . . . . 8 8 9 8 8 . . . . . .
+. . . . 8 9 9 9 9 9 8 . . . . .
+. . . 8 9 9 8 8 8 9 9 8 . . . .
+. . . 8 9 8 8 9 9 8 9 8 . . . .
+. . 8 9 9 8 8 8 9 8 9 9 8 . . .
+. . . 8 9 8 8 8 8 8 9 8 . . . .
+. . . 8 9 9 8 8 8 9 9 8 . . . .
+. . . . 8 9 9 9 9 9 8 . . . . .
+. . . . . 8 8 9 8 8 . . . . . .
+. . . . . . . 8 . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, SpriteKind.Balloon)
 balloon.setKind(SpriteKind.Balloon)
 

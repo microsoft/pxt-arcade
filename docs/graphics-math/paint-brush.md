@@ -51,9 +51,9 @@ game.onUpdate(function () {
 });
 
 game.onUpdateInterval(2000, function () {
-    myPointer.ax = Math.randomRange(0 - ACCELERATION, ACCELERATION);
-    myPointer.ay = Math.randomRange(0 - ACCELERATION, ACCELERATION);
-    color = Math.randomRange(0, 15);
+    myPointer.ax = randint(0 - ACCELERATION, ACCELERATION);
+    myPointer.ay = randint(0 - ACCELERATION, ACCELERATION);
+    color = randint(0, 15);
 });
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, () => {

@@ -144,7 +144,7 @@ info.setLife(3)
 
 ## Step 4
 
-Now ``||controller:move||`` the ``||variables:spacePlane||`` 
+Now ``||controller:move||`` the ``||variables:spacePlane||``
 with the ``||controller:controller buttons||`` and change the sensitivity
 ``vx`` and ``vy`` to ``200``.
 
@@ -222,7 +222,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ## Step 6 @fullscreen
 
 Add another event to run code on ``||game:game update every half second||``.
-In that event, create a ``||sprites:sprite||`` of kind ``||sprites:Enemy||``, rename it to **bogey**, 
+In that event, create a ``||sprites:sprite||`` of kind ``||sprites:Enemy||``, rename it to **bogey**,
 and draw the enemy plane in it.
 
 ```blocks
@@ -305,7 +305,7 @@ game.onUpdateInterval(500, function () {
     `, SpriteKind.Enemy)
     bogey.setVelocity(-100, 0)
     // @highlight
-    bogey.setPosition(180, Math.randomRange(0, 120))
+    bogey.setPosition(180, randint(0, 120))
 })
 ```
 
@@ -331,7 +331,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## Step 11
 
-In that event, add code to ``||info:remove a life||`` (or change it by ``-1``). 
+In that event, add code to ``||info:remove a life||`` (or change it by ``-1``).
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {

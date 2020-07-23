@@ -24,7 +24,7 @@ A sprite array is useful when implementing the same behavior for several sprites
 
 1. Review the code below
 2. Create the sample code and run the code
-3. Save the code for the task (name it "Sprite Arrays") 
+3. Save the code for the task (name it "Sprite Arrays")
 
 ```blocks
 namespace SpriteKind {
@@ -33,60 +33,60 @@ namespace SpriteKind {
 let my_sprite_array: Sprite[] = []
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     for (let value of my_sprite_array) {
-        value.setPosition(Math.randomRange(0, scene.screenWidth()), Math.randomRange(0, scene.screenHeight()))
+        value.setPosition(randint(0, scene.screenWidth()), randint(0, scene.screenHeight()))
     }
 })
 my_sprite_array = [sprites.create(img`
-. . . . . . . . . c c 8 . . . . 
-. . . . . . 8 c c c f 8 c c . . 
-. . . c c 8 8 f c a f f f c c . 
-. . c c c f f f c a a f f c c c 
-8 c c c f f f f c c a a c 8 c c 
-c c c b f f f 8 a c c a a a c c 
-c a a b b 8 a b c c c c c c c c 
-a f c a a b b a c c c c c f f c 
-a 8 f c a a c c a c a c f f f c 
-c a 8 a a c c c c a a f f f 8 a 
-. a c a a c f f a a b 8 f f c a 
-. . c c b a f f f a b b c c 6 c 
-. . . c b b a f f 6 6 a b 6 c . 
-. . . c c b b b 6 6 a c c c c . 
-. . . . c c a b b c c c . . . . 
-. . . . . c c c c c c . . . . . 
+. . . . . . . . . c c 8 . . . .
+. . . . . . 8 c c c f 8 c c . .
+. . . c c 8 8 f c a f f f c c .
+. . c c c f f f c a a f f c c c
+8 c c c f f f f c c a a c 8 c c
+c c c b f f f 8 a c c a a a c c
+c a a b b 8 a b c c c c c c c c
+a f c a a b b a c c c c c f f c
+a 8 f c a a c c a c a c f f f c
+c a 8 a a c c c c a a f f f 8 a
+. a c a a c f f a a b 8 f f c a
+. . c c b a f f f a b b c c 6 c
+. . . c b b a f f 6 6 a b 6 c .
+. . . c c b b b 6 6 a c c c c .
+. . . . c c a b b c c c . . . .
+. . . . . c c c c c c . . . . .
 `, SpriteKind.Asteroid), sprites.create(img`
-. . . . . . . . . c c 8 . . . . 
-. . . . . . 8 c c c f 8 c c . . 
-. . . c c 8 8 f c a f f f c c . 
-. . c c c f f f c a a f f c c c 
-8 c c c f f f f c c a a c 8 c c 
-c c c b f f f 8 a c c a a a c c 
-c a a b b 8 a b c c c c c c c c 
-a f c a a b b a c c c c c f f c 
-a 8 f c a a c c a c a c f f f c 
-c a 8 a a c c c c a a f f f 8 a 
-. a c a a c f f a a b 8 f f c a 
-. . c c b a f f f a b b c c 6 c 
-. . . c b b a f f 6 6 a b 6 c . 
-. . . c c b b b 6 6 a c c c c . 
-. . . . c c a b b c c c . . . . 
-. . . . . c c c c c c . . . . . 
+. . . . . . . . . c c 8 . . . .
+. . . . . . 8 c c c f 8 c c . .
+. . . c c 8 8 f c a f f f c c .
+. . c c c f f f c a a f f c c c
+8 c c c f f f f c c a a c 8 c c
+c c c b f f f 8 a c c a a a c c
+c a a b b 8 a b c c c c c c c c
+a f c a a b b a c c c c c f f c
+a 8 f c a a c c a c a c f f f c
+c a 8 a a c c c c a a f f f 8 a
+. a c a a c f f a a b 8 f f c a
+. . c c b a f f f a b b c c 6 c
+. . . c b b a f f 6 6 a b 6 c .
+. . . c c b b b 6 6 a c c c c .
+. . . . c c a b b c c c . . . .
+. . . . . c c c c c c . . . . .
 `, SpriteKind.Asteroid), sprites.create(img`
-. . . . . . . . . c c 8 . . . . 
-. . . . . . 8 c c c f 8 c c . . 
-. . . c c 8 8 f c a f f f c c . 
-. . c c c f f f c a a f f c c c 
-8 c c c f f f f c c a a c 8 c c 
-c c c b f f f 8 a c c a a a c c 
-c a a b b 8 a b c c c c c c c c 
-a f c a a b b a c c c c c f f c 
-a 8 f c a a c c a c a c f f f c 
-c a 8 a a c c c c a a f f f 8 a 
-. a c a a c f f a a b 8 f f c a 
-. . c c b a f f f a b b c c 6 c 
-. . . c b b a f f 6 6 a b 6 c . 
-. . . c c b b b 6 6 a c c c c . 
-. . . . c c a b b c c c . . . . 
-. . . . . c c c c c c . . . . . 
+. . . . . . . . . c c 8 . . . .
+. . . . . . 8 c c c f 8 c c . .
+. . . c c 8 8 f c a f f f c c .
+. . c c c f f f c a a f f c c c
+8 c c c f f f f c c a a c 8 c c
+c c c b f f f 8 a c c a a a c c
+c a a b b 8 a b c c c c c c c c
+a f c a a b b a c c c c c f f c
+a 8 f c a a c c a c a c f f f c
+c a 8 a a c c c c a a f f f 8 a
+. a c a a c f f a a b 8 f f c a
+. . c c b a f f f a b b c c 6 c
+. . . c b b a f f 6 6 a b 6 c .
+. . . c c b b b 6 6 a c c c c .
+. . . . c c a b b c c c . . . .
+. . . . . c c c c c c . . . . .
 `, SpriteKind.Asteroid)]
 ```
 
@@ -108,7 +108,7 @@ The ``||sprites:array of sprites of kind||`` block (located in the ``||arrays:ar
 
 1. Review the code below
 2. Create the sample code and run the code
-3. Save the code for the task (name it "Sprite of Kind Arrays") 
+3. Save the code for the task (name it "Sprite of Kind Arrays")
 
 ```blocks
 namespace SpriteKind {
@@ -117,27 +117,27 @@ namespace SpriteKind {
 let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     for (let value of sprites.allOfKind(SpriteKind.Asteroid)) {
-        value.setPosition(Math.randomRange(0, scene.screenWidth()), Math.randomRange(0, scene.screenHeight()))
+        value.setPosition(randint(0, scene.screenWidth()), randint(0, scene.screenHeight()))
     }
 })
 for (let i = 0; i < 10; i++) {
     mySprite = sprites.create(img`
-. . . . . . . . . c c 8 . . . . 
-. . . . . . 8 c c c f 8 c c . . 
-. . . c c 8 8 f c a f f f c c . 
-. . c c c f f f c a a f f c c c 
-8 c c c f f f f c c a a c 8 c c 
-c c c b f f f 8 a c c a a a c c 
-c a a b b 8 a b c c c c c c c c 
-a f c a a b b a c c c c c f f c 
-a 8 f c a a c c a c a c f f f c 
-c a 8 a a c c c c a a f f f 8 a 
-. a c a a c f f a a b 8 f f c a 
-. . c c b a f f f a b b c c 6 c 
-. . . c b b a f f 6 6 a b 6 c . 
-. . . c c b b b 6 6 a c c c c . 
-. . . . c c a b b c c c . . . . 
-. . . . . c c c c c c . . . . . 
+. . . . . . . . . c c 8 . . . .
+. . . . . . 8 c c c f 8 c c . .
+. . . c c 8 8 f c a f f f c c .
+. . c c c f f f c a a f f c c c
+8 c c c f f f f c c a a c 8 c c
+c c c b f f f 8 a c c a a a c c
+c a a b b 8 a b c c c c c c c c
+a f c a a b b a c c c c c f f c
+a 8 f c a a c c a c a c f f f c
+c a 8 a a c c c c a a f f f 8 a
+. a c a a c f f a a b 8 f f c a
+. . c c b a f f f a b b c c 6 c
+. . . c b b a f f 6 6 a b 6 c .
+. . . c c b b b 6 6 a c c c c .
+. . . . c c a b b c c c . . . .
+. . . . . c c c c c c . . . . .
 `, SpriteKind.Asteroid)
 }
 ```
@@ -146,7 +146,7 @@ c a 8 a a c c c c a a f f f 8 a
 
 1. Review the code below
 2. Create the sample code and run the code
-3. Save the code for the task (name it "Firework") 
+3. Save the code for the task (name it "Firework")
 
 ```blocks
 namespace SpriteKind {
@@ -156,19 +156,19 @@ let firework: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     for (let i = 0; i < 30; i++) {
         let projectile = sprites.createProjectile(img`
-1 
-`, Math.randomRange(-100, 100), Math.randomRange(-100, 100), SpriteKind.Player, firework)
+1
+`, randint(-100, 100), randint(-100, 100), SpriteKind.Player, firework)
         firework.setFlag(SpriteFlag.Ghost, true)
-        projectile.image.fill(Math.randomRange(1, 14))
+        projectile.image.fill(randint(1, 14))
     }
     firework.destroy()
 })
 firework = sprites.create(img`
-1 1 1 
-1 2 1 
-1 1 1 
+1 1 1
+1 2 1
+1 1 1
 `, SpriteKind.Firework)
-firework.setPosition(Math.randomRange(0, scene.screenWidth()), Math.randomRange(0, scene.screenHeight()))
+firework.setPosition(randint(0, scene.screenWidth()), randint(0, scene.screenHeight()))
 firework.setFlag(SpriteFlag.Ghost, true)
 ```
 
@@ -198,28 +198,28 @@ We can implement this behavior easily using ``||logic:logic||`` blocks in an ``|
 
 1. Review the code below
 2. Create the sample code and run the code
-3. Save the code for the task (name it "itsFollowing") 
+3. Save the code for the task (name it "itsFollowing")
 
 ```blocks
 let enemy: Sprite = null
 let player: Sprite = null
 player = sprites.create(img`
-1 . . . 1 
-1 . . . 1 
-. . . . . 
-. . . . . 
-1 . . . 1 
-. 1 1 1 . 
+1 . . . 1
+1 . . . 1
+. . . . .
+. . . . .
+1 . . . 1
+. 1 1 1 .
 `, SpriteKind.Player)
 controller.moveSprite(player, 100, 100)
 enemy = sprites.create(img`
-2 . . 2 
-. . . . 
-. 2 2 . 
-2 . . 2 
+2 . . 2
+. . . .
+. 2 2 .
+2 . . 2
 `, SpriteKind.Enemy)
-enemy.x += Math.randomRange(-40, 40)
-enemy.y += Math.randomRange(-40, 40)
+enemy.x += randint(-40, 40)
+enemy.y += randint(-40, 40)
 game.onUpdate(function () {
     if (player.x > enemy.x) {
         enemy.vx = 2
@@ -243,7 +243,7 @@ This is also a great occasion to use arrays - that way, we can have more than a 
 1. Start with the code from example #3
 2. Add a ``||loops:repeat 20 times||`` loop that creates 20 enemies in random positions on the screen
 3. In the ``||game:on game update||`` event, use ``||sprites:array of sprites of kind Enemy||`` in a loop to make all the enemies follow the player, not just the last one that was created
-4. **Challenge:** add an ``||sprites:on overlap||`` event between two enemies, that moves both enemies between -2 and 2 pixels in both directions, so that the enemies no longer stack on top of each other 
+4. **Challenge:** add an ``||sprites:on overlap||`` event between two enemies, that moves both enemies between -2 and 2 pixels in both directions, so that the enemies no longer stack on top of each other
 
 ## What did we learn?
 

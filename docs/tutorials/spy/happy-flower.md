@@ -91,22 +91,22 @@ let mySprite = sprites.create(img`
 `, SpriteKind.Player)
 game.onUpdateInterval(1000, function () {
     let projectile = sprites.createProjectileFromSprite(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `, mySprite, 0, 0)
 })
 ```
@@ -133,7 +133,7 @@ let mySprite = sprites.create(img`
 . . . . . 7 7 7 7 7 . . . . . .
 . . . . . . 7 7 7 . . . . . . .
 . . . . . . . 7 . . . . . . . .
-. . . . . . . 7 . . . . . . . . 
+. . . . . . . 7 . . . . . . . .
 `, SpriteKind.Player)
 game.onUpdateInterval(1000, function () {
     let projectile = sprites.createProjectileFromSprite(img`
@@ -180,7 +180,7 @@ let mySprite = sprites.create(img`
 . . . . . 7 7 7 7 7 . . . . . .
 . . . . . . 7 7 7 . . . . . . .
 . . . . . . . 7 . . . . . . . .
-. . . . . . . 7 . . . . . . . . 
+. . . . . . . 7 . . . . . . . .
 `, SpriteKind.Player)
 game.onUpdateInterval(1000, function () {
     let projectile = sprites.createProjectileFromSprite(img`
@@ -200,7 +200,7 @@ game.onUpdateInterval(1000, function () {
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
-`, mySprite, Math.randomRange(-25, 25), 0)
+`, mySprite, randint(-25, 25), 0)
 })
 ```
 
@@ -226,7 +226,7 @@ let mySprite = sprites.create(img`
 . . . . . 7 7 7 7 7 . . . . . .
 . . . . . . 7 7 7 . . . . . . .
 . . . . . . . 7 . . . . . . . .
-. . . . . . . 7 . . . . . . . . 
+. . . . . . . 7 . . . . . . . .
 `, SpriteKind.Player)
 game.onUpdateInterval(1000, function () {
     let projectile = sprites.createProjectileFromSprite(img`
@@ -246,7 +246,7 @@ game.onUpdateInterval(1000, function () {
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
-`, mySprite, Math.randomRange(-25, 25), Math.randomRange(-25, 25))
+`, mySprite, randint(-25, 25), randint(-25, 25))
 })
 ```
 
@@ -273,7 +273,7 @@ let mySprite = sprites.create(img`
 . . . . . 7 7 7 7 7 . . . . . .
 . . . . . . 7 7 7 . . . . . . .
 . . . . . . . 7 . . . . . . . .
-. . . . . . . 7 . . . . . . . . 
+. . . . . . . 7 . . . . . . . .
 `, SpriteKind.Player)
 game.onUpdateInterval(1000, function () {
     let projectile = sprites.createProjectileFromSprite(img`
@@ -293,7 +293,7 @@ game.onUpdateInterval(1000, function () {
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
-`, mySprite, Math.randomRange(-25, 25), Math.randomRange(-25, 25))
+`, mySprite, randint(-25, 25), randint(-25, 25))
     projectile.lifespan = 3000
 })
 ```
@@ -346,7 +346,7 @@ game.onUpdateInterval(1000, function () {
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
-`, mySprite, Math.randomRange(-25, 25), Math.randomRange(-25, 25))
+`, mySprite, randint(-25, 25), randint(-25, 25))
     projectile.lifespan = 3000
     if (projectile.vx < 0) {
     }
@@ -396,7 +396,7 @@ game.onUpdateInterval(1000, function () {
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
-`, mySprite, Math.randomRange(-25, 25), Math.randomRange(-25, 25))
+`, mySprite, randint(-25, 25), randint(-25, 25))
     projectile.lifespan = 3000
     if (projectile.vx < 0) {
         projectile.image.flipX()
