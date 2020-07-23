@@ -5,18 +5,86 @@ namespace SpriteKind {
     export const Projectile2 = SpriteKind.create()
     export const snake = SpriteKind.create()
 }
-scene.onHitTile(SpriteKind.Projectile, 6, function (sprite) {
-    info.changeLifeBy(-1)
-    sprite.destroy()
-})
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, otherSprite) {
-    info.setScore(info.score() + 1)
-    sprite.destroy()
-})
-scene.onHitTile(SpriteKind.Projectile2, 6, function (sprite) {
-    info.changeLifeBy(-1)
-    sprite.destroy()
-})
+
+namespace myTiles {
+    //% blockIdentity=images._tile
+    export const transparency16 = img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `
+    //% blockIdentity=images._tile
+    export const tile1 = img`
+        f f f f f f f f f f f f f f f f
+        f f f f f f f f f f f f f f f f
+        f f f f f f f f f f f f f f f f
+        f f f f f f f f f f f f f f f f
+        f f f f f f f f f f f f f f f f
+        f f f f f f f f f f f f f f f f
+        f f f f f f f f f f f f f f f f
+        f f f f f f f f f f f f f f f f
+        f f f f f f f f f f f f f f f f
+        f f f f f f f f f f f f f f f f
+        f f f f f f f f f f f f f f f f
+        f f f f f f f f f f f f f f f f
+        f f f f f f f f f f f f f f f f
+        f f f f f f f f f f f f f f f f
+        f f f f f f f f f f f f f f f f
+        f f f f f f f f f f f f f f f f
+    `
+    //% blockIdentity=images._tile
+    export const tile2 = img`
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    `
+    //% blockIdentity=images._tile
+    export const tile3 = img`
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+    `
+}
+
 sprites.onOverlap(SpriteKind.Projectile2, SpriteKind.Player, function (sprite, otherSprite) {
     falling = sprites.create(img`
         . . 2 2 2 2 . .
@@ -33,6 +101,22 @@ sprites.onOverlap(SpriteKind.Projectile2, SpriteKind.Player, function (sprite, o
     falling.setVelocity(sprite.vx, 0 - sprite.vy)
     falling.ay = sprite.ay
     sprite.destroy()
+})
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, otherSprite) {
+    info.setScore(info.score() + 1)
+    sprite.destroy()
+})
+scene.onHitWall(SpriteKind.Projectile2, function (sprite, location) {
+    if (tiles.tileAtLocationEquals(location, myTiles.tile3)) {
+        info.changeLifeBy(-1)
+        sprite.destroy()
+    }
+})
+scene.onHitWall(SpriteKind.Projectile, function (sprite, location) {
+    if (tiles.tileAtLocationEquals(location, myTiles.tile3)) {
+        info.changeLifeBy(-1)
+        sprite.destroy()
+    }
 })
 let limit = 0
 let falling: Sprite = null
@@ -55,7 +139,7 @@ let basket = sprites.create(img`
     . . 7 1 7 1 7 1 7 1 7 1 7 . . .
     . . 7 7 7 7 7 7 7 7 7 7 7 . . .
     . . . . . . . . . . . . . . . .
-`, SpriteKind.Player)
+    `, SpriteKind.Player)
 basket.setPosition(80, 100)
 controller.moveSprite(basket, 160, 0)
 let mySprite4 = sprites.create(img`
@@ -75,55 +159,23 @@ let mySprite4 = sprites.create(img`
     . 8 8 8 8 8 8 8 1 1 1 1 1 . . .
     . . . 8 8 8 . . . . . . . . . .
     . . . . . . . . . . . . . . . .
-`, SpriteKind.snake)
+    `, SpriteKind.snake)
 mySprite4.setFlag(SpriteFlag.Ghost, true)
 mySprite4.setPosition(-7, 100)
-scene.setTile(5, img`
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-`, true)
-scene.setTile(6, img`
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-`, true)
-scene.setTileMap(img`
-    5 1 1 1 1 1 1 1 1 5
-    5 1 1 1 1 1 1 1 1 5
-    5 1 1 1 1 1 1 1 1 5
-    5 1 1 1 1 1 1 1 1 5
-    5 1 1 1 1 1 1 1 1 5
-    5 1 1 1 1 1 1 1 1 5
-    5 1 1 1 1 1 1 1 1 5
-    5 6 6 6 6 6 6 6 6 5
-`)
+tiles.setTilemap(tiles.createTilemap(hex`0a0008000102020202020202020101020202020202020201010202020202020202010102020202020202020101020202020202020201010202020202020202010102020202020202020101030303030303030301`, img`
+    2 . . . . . . . . 2
+    2 . . . . . . . . 2
+    2 . . . . . . . . 2
+    2 . . . . . . . . 2
+    2 . . . . . . . . 2
+    2 . . . . . . . . 2
+    2 . . . . . . . . 2
+    2 2 2 2 2 2 2 2 2 2
+    `, [myTiles.transparency16,myTiles.tile1,myTiles.tile2,myTiles.tile3], TileScale.Sixteen))
+game.onUpdateInterval(2200, function () {
+    mySprite4.vx = 10 * s4Dir
+    s4Dir = s4Dir * -1
+})
 game.onUpdateInterval(2000, function () {
     if (info.score() < 10 || randint(1, Math.min(50, info.score())) < 10) {
         falling = sprites.create(img`
@@ -135,7 +187,7 @@ game.onUpdateInterval(2000, function () {
             2 2 2 2 2 2 2 2
             . 2 2 2 2 2 2 .
             . . 2 2 2 2 . .
-        `, SpriteKind.Projectile)
+            `, SpriteKind.Projectile)
     } else {
         falling = sprites.create(img`
             . . 8 8 8 8 . .
@@ -146,7 +198,7 @@ game.onUpdateInterval(2000, function () {
             8 8 8 8 8 8 8 8
             . 8 8 8 8 8 8 .
             . . 8 8 8 8 . .
-        `, SpriteKind.Projectile2)
+            `, SpriteKind.Projectile2)
     }
     falling.setPosition(randint(20, 140), 20)
     limit = Math.min(10, info.score())
@@ -154,14 +206,6 @@ game.onUpdateInterval(2000, function () {
     falling.ay = 20
     falling.setFlag(SpriteFlag.BounceOnWall, true)
 })
-game.onUpdateInterval(2200, function () {
-    mySprite4.vx = 10 * s4Dir
-    s4Dir = s4Dir * -1
-})
-```
-
-```package
-color-coded-tilemap
 ```
 
 ## About the author
