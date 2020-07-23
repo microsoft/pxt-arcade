@@ -1,14 +1,9 @@
 # Catch
 
 ```blocks
-namespace SpriteKind {
-    export const Projectile2 = SpriteKind.create()
-    export const snake = SpriteKind.create()
-}
-
 namespace myTiles {
     //% blockIdentity=images._tile
-    export const transparency16 = img`
+    export const tile0 = img`
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
@@ -83,6 +78,11 @@ namespace myTiles {
         6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
         6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
     `
+}
+
+namespace SpriteKind {
+    export const Projectile2 = SpriteKind.create()
+    export const snake = SpriteKind.create()
 }
 
 sprites.onOverlap(SpriteKind.Projectile2, SpriteKind.Player, function (sprite, otherSprite) {
@@ -162,16 +162,21 @@ let mySprite4 = sprites.create(img`
     `, SpriteKind.snake)
 mySprite4.setFlag(SpriteFlag.Ghost, true)
 mySprite4.setPosition(-7, 100)
-tiles.setTilemap(tiles.createTilemap(hex`0a0008000102020202020202020101020202020202020201010202020202020202010102020202020202020101020202020202020201010202020202020202010102020202020202020101030303030303030301`, img`
-    2 . . . . . . . . 2
-    2 . . . . . . . . 2
-    2 . . . . . . . . 2
-    2 . . . . . . . . 2
-    2 . . . . . . . . 2
-    2 . . . . . . . . 2
-    2 . . . . . . . . 2
-    2 2 2 2 2 2 2 2 2 2
-    `, [myTiles.transparency16,myTiles.tile1,myTiles.tile2,myTiles.tile3], TileScale.Sixteen))
+tiles.setTilemap(tiles.createTilemap(
+            hex`0a0008000102020202020202020101020202020202020201010202020202020202010102020202020202020101020202020202020201010202020202020202010102020202020202020101030303030303030301`,
+            img`
+                2 . . . . . . . . 2
+                2 . . . . . . . . 2
+                2 . . . . . . . . 2
+                2 . . . . . . . . 2
+                2 . . . . . . . . 2
+                2 . . . . . . . . 2
+                2 . . . . . . . . 2
+                2 2 2 2 2 2 2 2 2 2
+            `,
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3],
+            TileScale.Sixteen
+        ))
 game.onUpdateInterval(2200, function () {
     mySprite4.vx = 10 * s4Dir
     s4Dir = s4Dir * -1
