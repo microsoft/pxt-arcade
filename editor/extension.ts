@@ -174,8 +174,47 @@ namespace pxt.editor {
          * Upgrade for enum SpriteKind -> SpriteKindLegacy
          */
         if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "0.11.20") < 0) {
+
+            /**
+             * Sometimes the getters for these omit the enum member's # improperly,
+             * so we need to map those numbers to the new values.
+             * e.g.
+             * bad:
+            <value name="kind">
+                <shadow type="spritekind">
+                    <field name="MEMBER">Cow</field>
+                </shadow>
+                <block type="spritetype">
+                    <field name="MEMBER">Player</field>
+                </block>
+            </value>
+             *
+             * good:
+            <value name="kind">
+                <shadow type="spritekind">
+                    <field name="MEMBER">7Cow</field>
+                </shadow>
+                <block type="spritetype">
+                    <field name="MEMBER">1Player</field>
+                </block>
+            </value>
+             */
+            const legacyKindConversions: pxt.Map<string> = {};
+
             pxt.U.toArray(dom.querySelectorAll("variable[type=SpriteKind]")).forEach(block => {
-                block.setAttribute("type", "SpriteKindLegacy")
+                block.setAttribute("type", "SpriteKindLegacy");
+                const kindValue = (block.textContent || "").trim();
+                const withoutNum = /[0-9]*([^0-9].*)/.exec(kindValue);
+                legacyKindConversions[withoutNum[1]] = kindValue;
+            });
+
+            pxt.U.toArray(dom.querySelectorAll("shadow[type=spritetype], block[type=spritetype]")).forEach(block => {
+                const memberField = getField(block, "MEMBER");
+                const cont = (memberField?.textContent || "").trim();
+
+                if (legacyKindConversions[cont]) {
+                    memberField.textContent = legacyKindConversions[cont];
+                }
             });
         }
 
