@@ -53,7 +53,7 @@ const featured: Game[] = [
         author: "Mario"
     },
     {
-        id: "17901-55867-81776-14236",
+        id: "31110-01182-14657-25677",
         title: "Snail Hike",
         author: "SPerkins25"
     },

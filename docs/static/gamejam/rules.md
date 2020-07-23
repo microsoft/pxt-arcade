@@ -45,9 +45,9 @@ Creativity | Adherence to Theme | Correctness of Code
 ## Third Place: Snail Hike
 Use your puzzle-solving skills to help the snails get to the exit! Snail Hike is a beautiful puzzle game with interesting platformer mechanics incorporated.
 
-| [![Snail Hike screenshot](/static/gamejam/img/snailhike.png)](https://arcade.makecode.com/17901-55867-81776-14236) |
+| [![Snail Hike screenshot](/static/gamejam/img/snailhike.png)](https://arcade.makecode.com/31110-01182-14657-25677) |
 | -- |
-| [Play it here!](https://arcade.makecode.com/17901-55867-81776-14236) |
+| [Play it here!](https://arcade.makecode.com/31110-01182-14657-25677) |
 
 
 Creativity | Adherence to Theme | Correctness of Code
