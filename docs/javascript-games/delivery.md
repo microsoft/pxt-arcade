@@ -3,9 +3,213 @@
 Get those packages to delivered but be quick or you'll miss the address!
 
 ```typescript
-namespace SpriteKind {
-    export const object = SpriteKind.create()
+namespace myTiles {
+    //% blockIdentity=images._tile
+    export const tile0 = img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `
+    //% blockIdentity=images._tile
+    export const tile1 = img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . a . . a . . . . . . . . . .
+        . . a . . a . . . . . . a a a .
+        . . a . . a . a a a . . a . a .
+        . . a a a a . a a . . . a a a .
+        . . a . . a . . a a . . a a . .
+        . . a . . a . . . a a . a . . .
+        . . . . . . . a a a . . a a a .
+        . . . . . . . a . . . . . . . .
+        . . . . . . . a . . . . . . . .
+        . . . . . . . a . . . . . . . .
+        . . . . . a . a . a . . . . . .
+        . . . . . . a a a . . . . . . .
+        . . . . . . . a . . . . . . . .
+    `
+    //% blockIdentity=images._tile
+    export const tile2 = img`
+        . . . . . . . 6 . . . . . . . .
+        . . . . . . 6 6 6 . . . . . . .
+        . . . . . 6 . 6 . 6 . . . . . .
+        . . . . . . . 6 . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . 6
+        . . 6 . . 6 . . 6 6 6 . . 6 6 6
+        . . 6 . . 6 . . 6 . . . . 6 . .
+        . . 6 . . 6 . . 6 . . . . 6 6 6
+        . . 6 6 6 6 . . 6 . . . . 6 . .
+        . . 6 . . 6 6 . 6 6 6 . . 6 . .
+        . . 6 . . 6 6 . . . 6 6 . 6 . .
+        . . 6 . . 6 . . 6 6 6 6 . 6 6 6
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `
+    //% blockIdentity=images._tile
+    export const tile3 = img`
+        c c c c c c c c c c c c c c b b
+        b b b b b b b b b b b b b b d d
+        d d d d d d d d d d d d d d b b
+        b b b b b b b b b b b b b b b b
+        b b b b b b b b b b b b b b b b
+        b b b b b b b b b b b b b b b b
+        b b b b b b b b b b b b b b b b
+        b 1 1 1 1 d b b b 1 1 1 1 d b b
+        b d 1 1 1 1 b b b d 1 1 1 1 b b
+        b b b b b b b b b b b b b b b b
+        b b b b b b b b b b b b b b b b
+        b b b b b b b b b b b b b b b b
+        b b b b b b b b b b b b b b b b
+        d d d d d d d d d d d d d d b b
+        b b b b b b b b b b b b b b d d
+        c c c c c c c c c c c c c c b b
+    `
+    //% blockIdentity=images._tile
+    export const tile4 = img`
+        b b c c c c c c c c c c c c c c
+        d d b b b b b b b b b b b b b b
+        b b d d d d d d d d d d d d d d
+        b b b b b b b b b b b b b b b b
+        b b b b b b b b b b b b b b b b
+        b b b b b b b b b b b b b b b b
+        b b b b b b b b b b b b b b b b
+        b 1 1 1 1 d b b b 1 1 1 1 d b b
+        b d 1 1 1 1 b b b d 1 1 1 1 b b
+        b b b b b b b b b b b b b b b b
+        b b b b b b b b b b b b b b b b
+        b b b b b b b b b b b b b b b b
+        b b b b b b b b b b b b b b b b
+        b b d d d d d d d d d d d d d d
+        d d b b b b b b b b b b b b b b
+        b b c c c c c c c c c c c c c c
+    `
+
 }
+namespace SpriteKind {
+    export const Object = SpriteKind.create()
+}
+// Game over when you reach the end of the
+// neighborhood
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile3, function (sprite, location) {
+    game.over(true, effects.confetti)
+})
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    car.setImage(img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . 3 3 3 3 3 3 . . . .
+        . . . . . 3 3 d d 3 3 3 3 . . .
+        . . . . . c d 3 3 3 3 3 c . . .
+        . . . . 3 c d 3 3 3 3 3 c 3 . .
+        . . . a 3 c d 3 3 3 3 3 c 3 a .
+        . . . f 3 c d 3 3 3 3 3 c 3 f .
+        . . . f a c 3 3 3 3 3 3 c a f .
+        . . . f 3 c 3 b b b b 3 c 3 f .
+        . . . a 3 3 b c c c c b 3 3 a .
+        . . . a a b c c c c c c b a a .
+        . . . f a d d d d d d d d a f .
+        . . . f a d 3 3 3 3 3 3 d a f .
+        . . . . 3 d d 3 3 3 3 d d 3 f .
+        . . . . f 3 d 3 3 3 3 d 3 f . .
+        . . . . . a 3 3 3 3 3 3 a . . .
+        `)
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    _package = sprites.createProjectileFromSprite(img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . e e e e e e e . .
+        . . . . . . e d d d d d e e . .
+        . . . . . e d d d d d d e e . .
+        . . . . e d d d d d d e d e . .
+        . . . . e e e e e e e d d e . .
+        . . . . e d d d d d e d d e . .
+        . . . . e d d d d d e d d e . .
+        . . . . e d d d d d e d d e . .
+        . . . . e d d d d d e d e e . .
+        . . . . e d d d d d e e e . . .
+        . . . . e e e e e e e e . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        `, car, 0, 50)
+})
+// Deliver packages up (A) or down (B)
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    _package2 = sprites.createProjectileFromSprite(img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . e e e e e e e . .
+        . . . . . . e d d d d d e e . .
+        . . . . . e d d d d d d e e . .
+        . . . . e d d d d d d e d e . .
+        . . . . e e e e e e e d d e . .
+        . . . . e d d d d d e d d e . .
+        . . . . e d d d d d e d d e . .
+        . . . . e d d d d d e d d e . .
+        . . . . e d d d d d e d e e . .
+        . . . . e d d d d d e e e . . .
+        . . . . e e e e e e e e . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        `, car, 0, -50)
+})
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    car.setImage(img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . 3 3 3 3 3 3 3 3 . .
+        . . . . . 3 c 3 3 3 3 3 3 d 3 .
+        . . . . 3 c c 3 3 3 3 3 3 d c 3
+        . . d 3 d c c 3 d d d d d d c c
+        . d 3 3 d c b a a a a a a a 3 c
+        . 3 3 3 d b a a b b b a b b a 3
+        . 3 3 3 3 3 a b b b b a b b b a
+        . 3 3 3 3 a 3 3 3 3 3 a 3 3 3 a
+        . 3 d d 3 a f a a a f a a a a a
+        . d d 3 a a a f a a f a a a a a
+        . a a a a a a a f f f a a a a a
+        . a a a a f f f a a a a f f f f
+        . . . a f f f f f a a f f f f f
+        . . . . f f f f . . . . f f f .
+        . . . . . . . . . . . . . . . .
+        `)
+})
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    car.setImage(img`
+        . . . . . . . . . . . . . . . .
+        . . . . 3 3 3 3 3 3 3 3 . . . .
+        . . . 3 d 3 3 3 3 3 3 c 3 . . .
+        . . 3 c d 3 3 3 3 3 3 c c 3 . .
+        . 3 c c d d d d d d 3 c c d 3 d
+        . 3 c 3 a a a a a a a b c d 3 3
+        . 3 3 a b b a b b b a a b d 3 3
+        . 3 a b b b a b b b b a 3 3 3 3
+        . a a 3 3 3 a 3 3 3 3 3 a 3 3 3
+        . a a a a a a f a a a f a 3 d d
+        . a a a a a a f a a f a a a 3 d
+        . a a a a a a f f f a a a a a a
+        . a f f f f a a a a f f f a a a
+        . . f f f f f a a f f f f f a .
+        . . . f f f . . . . f f f f . .
+        . . . . . . . . . . . . . . . .
+        `)
+})
 // Change the car image based on the direction it's
 // driving
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -26,364 +230,66 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . f a 3 d a a a a d 3 a f .
         . . . f f a a a a a a a a f f .
         . . . . f f . . . . . . f f . .
-    `)
-})
-// Deliver packages up (A) or down (B)
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    _package = sprites.createProjectileFromSprite(img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . e e e e e e e . .
-        . . . . . . e d d d d d e e . .
-        . . . . . e d d d d d d e e . .
-        . . . . e d d d d d d e d e . .
-        . . . . e e e e e e e d d e . .
-        . . . . e d d d d d e d d e . .
-        . . . . e d d d d d e d d e . .
-        . . . . e d d d d d e d d e . .
-        . . . . e d d d d d e d e e . .
-        . . . . e d d d d d e e e . . .
-        . . . . e e e e e e e e . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `, car, 0, -50)
-})
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    car.setImage(img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . 3 3 3 3 3 3 3 3 . .
-        . . . . . 3 c 3 3 3 3 3 3 d 3 .
-        . . . . 3 c c 3 3 3 3 3 3 d c 3
-        . . d 3 d c c 3 d d d d d d c c
-        . d 3 3 d c b a a a a a a a 3 c
-        . 3 3 3 d b a a b b b a b b a 3
-        . 3 3 3 3 3 a b b b b a b b b a
-        . 3 3 3 3 a 3 3 3 3 3 a 3 3 3 a
-        . 3 d d 3 a f a a a f a a a a a
-        . d d 3 a a a f a a f a a a a a
-        . a a a a a a a f f f a a a a a
-        . a a a a f f f a a a a f f f f
-        . . . a f f f f f a a f f f f f
-        . . . . f f f f . . . . f f f .
-        . . . . . . . . . . . . . . . .
-    `)
-})
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    _package = sprites.createProjectileFromSprite(img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . e e e e e e e . .
-        . . . . . . e d d d d d e e . .
-        . . . . . e d d d d d d e e . .
-        . . . . e d d d d d d e d e . .
-        . . . . e e e e e e e d d e . .
-        . . . . e d d d d d e d d e . .
-        . . . . e d d d d d e d d e . .
-        . . . . e d d d d d e d d e . .
-        . . . . e d d d d d e d e e . .
-        . . . . e d d d d d e e e . . .
-        . . . . e e e e e e e e . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `, car, 0, 50)
-})
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    car.setImage(img`
-        . . . . . . . . . . . . . . . .
-        . . . . 3 3 3 3 3 3 3 3 . . . .
-        . . . 3 d 3 3 3 3 3 3 c 3 . . .
-        . . 3 c d 3 3 3 3 3 3 c c 3 . .
-        . 3 c c d d d d d d 3 c c d 3 d
-        . 3 c 3 a a a a a a a b c d 3 3
-        . 3 3 a b b a b b b a a b d 3 3
-        . 3 a b b b a b b b b a 3 3 3 3
-        . a a 3 3 3 a 3 3 3 3 3 a 3 3 3
-        . a a a a a a f a a a f a 3 d d
-        . a a a a a a f a a f a a a 3 d
-        . a a a a a a f f f a a a a a a
-        . a f f f f a a a a f f f a a a
-        . . f f f f f a a f f f f f a .
-        . . . f f f . . . . f f f f . .
-        . . . . . . . . . . . . . . . .
-    `)
+        `)
 })
 // Score a point for delivering packages to houses
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.object, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Object, function (sprite, otherSprite) {
     music.magicWand.play()
     sprite.destroy(effects.confetti, 500)
     info.changeScoreBy(1)
 })
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    car.setImage(img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . 3 3 3 3 3 3 . . . .
-        . . . . . 3 3 d d 3 3 3 3 . . .
-        . . . . . c d 3 3 3 3 3 c . . .
-        . . . . 3 c d 3 3 3 3 3 c 3 . .
-        . . . a 3 c d 3 3 3 3 3 c 3 a .
-        . . . f 3 c d 3 3 3 3 3 c 3 f .
-        . . . f a c 3 3 3 3 3 3 c a f .
-        . . . f 3 c 3 b b b b 3 c 3 f .
-        . . . a 3 3 b c c c c b 3 3 a .
-        . . . a a b c c c c c c b a a .
-        . . . f a d d d d d d d d a f .
-        . . . f a d 3 3 3 3 3 3 d a f .
-        . . . . 3 d d 3 3 3 3 d d 3 f .
-        . . . . f 3 d 3 3 3 3 d 3 f . .
-        . . . . . a 3 3 3 3 3 3 a . . .
-    `)
-})
 // Lose a point for driving into a house
-sprites.onOverlap(SpriteKind.Player, SpriteKind.object, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Object, function (sprite, otherSprite) {
     music.playTone(147, music.beat(BeatFraction.Quarter))
     music.playTone(139, music.beat(BeatFraction.Quarter))
     music.playTone(131, music.beat(BeatFraction.Quarter))
     scene.cameraShake(2, 200)
     info.changeScoreBy(-1)
 })
-// Game over when you reach the end of the
-// neighborhood
-scene.onHitTile(SpriteKind.Player, 12, function (sprite) {
-    game.over(true, effects.confetti)
-})
+let _package2: Sprite = null
 let _package: Sprite = null
-let redhouse: Sprite = null
-let purplehouse: Sprite = null
+let myRedHouse: Sprite = null
+let myPurpleHouse: Sprite = null
 let car: Sprite = null
-scene.setTileMap(img`
-    d d d d d d d d d d d d d d d d d d d d d d d d d d e d d d d d
-    d d 1 d d e d d 1 d d e d d d 1 d e d d f d d 1 d e d f d e d d
-    d d d d d d d d d d d d e d d d d d d d d d d d d d d d d d d d
-    a 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 5 d e d
-    d d d d d d d d d e d d d d d d d d d d d d d d d d d d 7 d d d
-    d e d f d 6 d d e d d d 6 d d f d d d 6 d e d d f d d d 7 d d d
-    d d d d d d d d d d d d d e d d d d d d d d d d d e d d 7 f d d
-    d d d d d d d d d d d d d d d d d d d d d d d d d d d d 7 d d d
-    d e d d 1 d f d d 1 d d d d 1 d d f d d 1 d f d d d 1 d 7 e d d
-    d d d d d d d d d d d d f d d d d d d d d d d d d d d d 7 d e d
-    d d 4 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 3 d d d
-    d d 7 f d d d d d d d d d d d d d d d d d d d d d d d d d d d d
-    e d 7 d d d 6 d e d d 6 d d d e d 6 d d f d d 6 d d d f d d e d
-    d d 7 d d d d d d d d d d d f d d d d d d d d d d d d d e d d d
-    d d 7 d d f d d d d f d d d d d e d d d d d d e d d d d d d f d
-    f d 7 d d d d e d d d d d d d d d d d e d f d d d f d d d d d d
-    d d 7 d 1 d d d 1 d d e d 1 d f d d 1 d d d d 1 d d d 1 d e d d
-    d d 7 d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
-    e d 2 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 5 d d d
-    d d d d d d d d f d d d d d d d d d d d d d d d d d d d 7 d f d
-    d f d d d d 6 d d d d 6 d d e d 6 d f d d 6 d d d d 6 d 7 e d d
-    d d d d f d d d d e d d d f d d d d d d d d d f d d d d 7 d e d
-    d d d d d d d d d d d d d d d d d d d d d d d d d d e d 7 d d d
-    d e d d d 1 d d d d 1 d d d d 1 d d d d 1 d d d d 1 d d 7 d f d
-    d d d d d d d e d d d d d f d d d d e d d d d e d d d d 7 d d d
-    d d 4 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 3 d e d
-    d d 7 d d e d d e d d d e d d d d d d d d d d d f d d d d d d d
-    f f 7 d d d d 6 d d d d d d 6 d d d 6 d e d d d d d d d d f d d
-    d d 7 d d d d d d f d d f d d d d f d d d f d d d e d d d d d d
-    d d 7 d 1 d f d d d 1 d d e d d d d d d d d d d 1 d d d d d d d
-    d d 7 d d d d d e d d d d d d d d e d d d d d d d d d e d d d e
-    d d 2 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 c
-`, TileScale.Sixteen)
-scene.setTile(9, img`
-    c c c c c c c c c c c c c c c c
-    b b b b b b b b b b b b b b b b
-    d d d d d d d d d d d d d d d d
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b 1 1 1 1 d b b b 1 1 1 1 d b b
-    b d 1 1 1 1 b b b d 1 1 1 1 b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    d d d d d d d d d d d d d d d d
-    b b b b b b b b b b b b b b b b
-    c c c c c c c c c c c c c c c c
-`, false)
-scene.setTile(7, img`
-    c b d b b b b b b b b b b d b c
-    c b d b b b b d 1 b b b b d b c
-    c b d b b b b 1 1 b b b b d b c
-    c b d b b b b 1 1 b b b b d b c
-    c b d b b b b 1 1 b b b b d b c
-    c b d b b b b 1 d b b b b d b c
-    c b d b b b b b b b b b b d b c
-    c b d b b b b b b b b b b d b c
-    c b d b b b b b b b b b b d b c
-    c b d b b b b d 1 b b b b d b c
-    c b d b b b b 1 1 b b b b d b c
-    c b d b b b b 1 1 b b b b d b c
-    c b d b b b b 1 1 b b b b d b c
-    c b d b b b b 1 d b b b b d b c
-    c b d b b b b b b b b b b d b c
-    c b d b b b b b b b b b b d b c
-`, false)
-scene.setTile(5, img`
-    c c c c c c c c c c c c c . . .
-    b b b b b b b b b b b b b c . .
-    d d d d d d d d d d d d b b c .
-    b b b b b b b b b b b b d b b c
-    b b b b b b b b b b b b b d b c
-    b b b b b b b b b b b b b d b c
-    b b b b b b b b b b b b b d b c
-    b b b b b d b b b b b b b d b c
-    b b b b d 1 1 b b b b b b d b c
-    b b b b b 1 1 1 b b b b b d b c
-    b b b b b b 1 1 d b b b b d b c
-    b b b b b b b d b b b b b d b c
-    b b b b b b b b b b b b b d b c
-    d d b b b b b b b b b b b d b c
-    b b d b b b b b b b b b b d b c
-    c b d b b b b b b b b b b d b c
-`, false)
-scene.setTile(3, img`
-    c b d b b b b b b b b b b d b c
-    b b d b b b b b b b b b b d b c
-    d d b b b b b b b b b b b d b c
-    b b b b b b b b b b b b b d b c
-    b b b b b b b d b b b b b d b c
-    b b b b b b 1 1 d b b b b d b c
-    b b b b b 1 1 1 b b b b b d b c
-    b b b b d 1 1 b b b b b b d b c
-    b b b b b d b b b b b b b d b c
-    b b b b b b b b b b b b b d b c
-    b b b b b b b b b b b b b d b c
-    b b b b b b b b b b b b b d b c
-    b b b b b b b b b b b b d b b c
-    d d d d d d d d d d d d b b c .
-    b b b b b b b b b b b b b c . .
-    c c c c c c c c c c c c c . . .
-`, false)
-scene.setTile(4, img`
-    . . . c c c c c c c c c c c c c
-    . . c b b b b b b b b b b b b b
-    . c b b d d d d d d d d d d d d
-    c b b d b b b b b b b b b b b b
-    c b d b b b b b b b b b b b b b
-    c b d b b b b b b b b b b b b b
-    c b d b b b b b b b b b b b b b
-    c b d b b b b b b b d b b b b b
-    c b d b b b b b b 1 1 d b b b b
-    c b d b b b b b 1 1 1 b b b b b
-    c b d b b b b d 1 1 b b b b b b
-    c b d b b b b b d b b b b b b b
-    c b d b b b b b b b b b b b b b
-    c b d b b b b b b b b b b b d d
-    c b d b b b b b b b b b b d b b
-    c b d b b b b b b b b b b d b c
-`, false)
-scene.setTile(2, img`
-    c b d b b b b b b b b b b d b c
-    c b d b b b b b b b b b b d b b
-    c b d b b b b b b b b b b b d d
-    c b d b b b b b b b b b b b b b
-    c b d b b b b b d b b b b b b b
-    c b d b b b b d 1 1 b b b b b b
-    c b d b b b b b 1 1 1 b b b b b
-    c b d b b b b b b 1 1 d b b b b
-    c b d b b b b b b b d b b b b b
-    c b d b b b b b b b b b b b b b
-    c b d b b b b b b b b b b b b b
-    c b d b b b b b b b b b b b b b
-    c b b d b b b b b b b b b b b b
-    . c b b d d d d d d d d d d d d
-    . . c b b b b b b b b b b b b b
-    . . . c c c c c c c c c c c c c
-`, false)
-scene.setTile(13, img`
-    7 7 7 7 5 7 7 7 7 7 7 7 7 7 7 7
-    7 7 5 7 5 5 7 7 7 7 7 7 7 7 7 7
-    7 6 5 5 7 5 7 5 5 7 7 7 7 7 7 7
-    7 7 6 5 7 7 5 5 6 7 7 7 7 7 7 7
-    7 7 7 6 7 7 5 6 7 7 7 7 7 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 5 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 5 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 6 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 5 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 5 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 6 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 7 5 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-`, false)
-scene.setTile(14, img`
-    5 7 5 7 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 7 1 7 7
-    7 7 7 1 1 7 7 7 7 7 7 7 1 7 1 7
-    7 7 3 1 1 3 7 7 7 5 7 7 6 1 6 7
-    7 1 1 6 6 1 1 7 7 5 7 7 7 7 7 7
-    7 d 1 7 7 1 d 7 7 6 7 7 7 7 7 7
-    7 6 3 1 1 3 6 7 7 7 7 5 7 7 7 7
-    7 7 6 d d 6 7 7 7 7 5 5 6 7 7 7
-    7 7 7 7 7 7 7 1 7 7 5 6 7 7 7 7
-    7 7 7 7 7 7 1 7 1 7 7 7 1 1 7 7
-    7 7 1 7 7 7 6 1 6 7 7 3 1 1 3 7
-    7 1 7 1 7 7 7 7 7 7 1 1 6 6 1 1
-    7 6 1 6 7 7 7 7 7 7 d 1 7 7 1 d
-    7 7 7 7 7 7 7 7 7 7 6 3 1 1 3 6
-    7 7 7 7 7 7 7 7 7 7 7 6 d d 6 7
-    7 7 5 7 7 7 7 7 7 7 7 7 7 7 7 7
-`, false)
-scene.setTile(15, img`
-    7 7 7 7 7 7 7 c c 7 7 7 7 7 7 7
-    7 7 7 7 c c c 6 5 c 6 6 7 7 7 7
-    7 7 7 7 c 6 c 5 5 c 7 6 7 7 7 7
-    7 7 7 6 c c 7 5 5 7 c 6 6 7 7 7
-    7 7 c c 7 7 7 7 7 5 7 7 c 6 7 7
-    7 6 6 6 c 6 7 7 7 7 6 c c 6 6 7
-    c 7 7 7 6 c 7 c 6 7 6 7 7 7 7 6
-    c c c 6 6 6 c 6 6 6 6 7 7 6 6 6
-    7 c c 7 6 6 6 6 6 7 7 7 7 c 6 7
-    7 c 7 7 6 6 7 6 6 7 7 6 7 7 c 7
-    7 c c c c 7 7 6 f 7 7 c c c c 7
-    7 7 7 7 c 7 c f f c 7 c 7 7 7 7
-    7 7 7 7 7 6 f e e e c 7 7 7 7 7
-    7 7 7 7 7 e e e e e e 7 7 7 7 7
-    7 7 7 7 e e 7 e e 7 e e 7 7 7 7
-    7 7 7 7 7 7 7 e e 7 7 7 7 7 7 7
-`, false)
-scene.setTile(12, img`
-    c c c c c c c c c c c c c c c c
-    b b b b b b b b b b b b b b b b
-    d d d d d d d d d d d d d d d d
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b 1 1 1 1 d b b b 1 1 1 1 d b b
-    b d 1 1 1 1 b b b d 1 1 1 1 b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    d d d d d d d d d d d d d d d d
-    b b b b b b b b b b b b b b b b
-    c c c c c c c c c c c c c c c c
-`, true)
-scene.setTile(10, img`
-    c c c c c c c c c c c c c c c c
-    b b b b b b b b b b b b b b b b
-    d d d d d d d d d d d d d d d d
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b 1 1 1 1 d b b b 1 1 1 1 d b b
-    b d 1 1 1 1 b b b d 1 1 1 1 b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    d d d d d d d d d d d d d d d d
-    b b b b b b b b b b b b b b b b
-    c c c c c c c c c c c c c c c c
-`, false)
+scene.setBackgroundColor(7)
+tiles.setTilemap(tiles.createTilemap(
+    hex`2000200001010101010101010101010101010101010101010101010101010101010b0101010108010a010b010801010a01010108010b010a0101010801010a010a010101010101010101010101010a01010b010101010101010b0101010101010101010b0d0202020202020202020202020202020202020202020202020202020301010101010101010101010a01010101010101010101010101010101010101050a01010101010a0109010b010101010901010a01010109010101010a0101010501010101010b01010101010101010101010101010101010101010101010101050b010101010a01010101010101010b0101010101010b0101010101010101010501010a0101010108010a010108010101010801010a0101080101010a010801050101010101010101010101010101010a010101010101010101010101010101050101010101070202020202020202020202020202020202020202020202020204010b010101050b01010101010101010101010101010101010a010101010101010a0101010a0501010109010101010109010101010109010101010901010b01010101010b0105010a010101010a0101010101010a010101010101010b01010101010101010105010101010b0101010a01010b0101010101010101010101010a010101010101050b010b0101010101010101010101010b01010a01010101010101010101010b05010801010108010101010801010a01080101010108010a0108010101010101050101010a010101010a0101010101010101010101010101010101010a010a010602020202020202020202020202020202020202020202020202030101010101010101010b0101010101010101010101010b0101010101010101050101010101010b0101090101010109010101090101010101090101010109010501010a010101010101010101010b01010101010b0101010101010b0101010105010101010a010a010101010a010101010a01010b010a010101010a01010b01050a01010101010101080101010108010101010801010101080101010108010105010a010a01010101010101010101010101010101010101010b010101010101050101010101070202020202020202020202020202020202020202020202020204010101010105010101010101010b010101010101010101010101010101010101010101010105010a010109010a0101010901010a01010901010a010101010a0101010101010501010b0101010101010101010101010101010101010101010101010a010a0105010801010b010108010101010b0a0101010101010108010101010b0101010b050b01010101010b01010a010101010101010a01010101010b0101010101010106020202020202020202020202020202020202020202020202020202020c`,
+    img`
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+    `,
+    [myTiles.tile0,sprites.castle.tileGrass1,sprites.vehicle.roadHorizontal,sprites.vehicle.roadTurn2,sprites.vehicle.roadTurn4,sprites.vehicle.roadVertical,sprites.vehicle.roadTurn3,sprites.vehicle.roadTurn1,myTiles.tile1,myTiles.tile2,sprites.castle.saplingPine,sprites.castle.tileGrass2,myTiles.tile3,myTiles.tile4],
+    TileScale.Sixteen))
 car = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . 3 3 3 3 3 3 3 3 . . . .
@@ -401,14 +307,12 @@ car = sprites.create(img`
     . . f f f f f a a f f f f f a .
     . . . f f f . . . . f f f f . .
     . . . . . . . . . . . . . . . .
-`, SpriteKind.Player)
-car.setFlag(SpriteFlag.StayInScreen, true)
-scene.placeOnRandomTile(car, 10)
+    `, SpriteKind.Player)
+tiles.placeOnRandomTile(car, myTiles.tile4)
 controller.moveSprite(car)
 scene.cameraFollowSprite(car)
-let tilelist1 = scene.getTilesByType(1)
-for (let value of tilelist1) {
-    purplehouse = sprites.create(img`
+for (let value of tiles.getTilesByType(myTiles.tile1)) {
+    myPurpleHouse = sprites.create(img`
         . . . . . . . . . . . . . . . . . . . . 8 a 8 a a 8 a 8 . . . . . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . . . a a a 8 8 8 a a 8 a 8 a a a . . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . a a a 8 a a 8 a 8 a a 8 8 8 a a 8 a a a . . . . . . . . . . . . . .
@@ -457,12 +361,11 @@ for (let value of tilelist1) {
         . . . . b d d d d d d d d c b b f 3 b 3 3 b 3 3 b 3 3 b 3 3 b e b b c d d d d d d d d b . . . .
         . . . . . b d b b b d d d c b b f 3 b 3 3 b 3 3 b 3 3 b 3 3 b e b b c d d d b b b d b . . . . .
         . . . . . . b c c c b b b c b b e 3 b 3 3 b 3 3 b 3 3 b 3 3 b e b b c b b b c c c b . . . . . .
-    `, SpriteKind.object)
-    value.place(purplehouse)
+        `, SpriteKind.Object)
+    tiles.placeOnTile(myPurpleHouse, value)
 }
-let tilelist2 = scene.getTilesByType(6)
-for (let value2 of tilelist2) {
-    redhouse = sprites.create(img`
+for (let value2 of tiles.getTilesByType(myTiles.tile2)) {
+    myRedHouse = sprites.create(img`
         . . . . . . 6 c c c 6 6 6 c 6 6 e 4 e 4 4 e 4 4 e 4 4 e 4 4 e e 6 6 c 6 6 6 c c c 6 . . . . . .
         . . . . . 6 4 e e e 4 4 4 c 6 6 f 4 e 4 4 e 4 4 e 4 4 e 4 4 e e 6 6 c 4 4 4 e e e 4 6 . . . . .
         . . . . 6 4 4 4 4 4 4 4 4 c 6 6 f 4 e 4 4 e 4 4 e 4 4 e 4 4 e e 6 6 c 4 4 4 4 4 4 4 4 6 . . . .
@@ -511,11 +414,7 @@ for (let value2 of tilelist2) {
         . . . . . . . . . . . . . . 2 2 2 e 2 2 e 2 e 2 2 e e e 2 2 e 2 2 2 . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . . . 2 2 2 e e e 2 2 e 2 e 2 2 2 . . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . . . . . . e 2 e 2 2 e 2 e . . . . . . . . . . . . . . . . . . . .
-    `, SpriteKind.object)
-    value2.place(redhouse)
+        `, SpriteKind.Object)
+    tiles.placeOnTile(myRedHouse, value2)
 }
-```
-
-```package
-color-coded-tilemap
 ```
