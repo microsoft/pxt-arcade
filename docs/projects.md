@@ -36,6 +36,11 @@
         "videoUrl": "/static/javascript-games/planet-putt-putt.mp4"
     },
     {
+        "name": "Game Jam",
+        "url": "/game-jam",
+        "imageUrl": "https://pxt.azureedge.net/api/42885-92487-13042-52240/thumb"
+    },
+    {
         "name": "Advanced Livestream",
         "url": "/advanced-stream",
         "imageUrl": "/static/advanced-stream/live.png"
@@ -96,6 +101,7 @@
 [Live Coding](/live-coding),
 [Blocks Games](/blocks-games),
 [JavaScript Games](/javascript-games),
+[Game Jam](/game-jam),
 [Advanced Livestream](/advanced-stream),
 [Community Games](/community),
 [Game Design Concepts](/concepts),

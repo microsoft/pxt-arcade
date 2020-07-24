@@ -1,6 +1,5 @@
 # Game Jam: Garden
-
-
+Check out the winners of the 3rd Official Microsoft MakeCode Game Jam, featuring games around the theme of "gardens"! More details can be found on the [official game jam page](https://arcade.makecode.com/gamejam).
 
 ## Games
 
@@ -26,9 +25,9 @@
         "name": "Snail Hike",
         "description": "Use your puzzle-solving skills to help the snails get to the exit! ",
         "author": "SPerkins25",
-        "url": "https://arcade.makecode.com/17901-55867-81776-14236",
+        "url": "https://arcade.makecode.com/27830-69912-67539-85378",
         "cardType": "sharedExample",
-        "imageUrl": "https://pxt.azureedge.net/api/17901-55867-81776-14236/thumb"
+        "imageUrl": "https://pxt.azureedge.net/api/27830-69912-67539-85378/thumb"
     },
     {
         "name": "Garden Gnome",
@@ -66,7 +65,7 @@
         "name": "See more...",
         "description": "Check out all the entries on the official game jam page!",
         "imageUrl": "/static/gamejam/img/preview.png",
-        "url": "/gamejam"
+        "url": "https://arcade.makecode.com/gamejam"
     }
 ]
 ```
