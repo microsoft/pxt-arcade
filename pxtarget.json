@@ -527,5 +527,5 @@
             "id": "ie"
         }
     ],
-    "uploadDocs": false
+    "uploadDocs": true
 }
