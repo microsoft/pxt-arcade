@@ -27,7 +27,8 @@
     ],
     "core": true,
     "dependencies": {
-        "hw": "file:../hw"
+        "hw": "file:../hw",
+        "online-multiplayer": "file:../online-multiplayer"
     },
     "palette": [
         "#000000",
