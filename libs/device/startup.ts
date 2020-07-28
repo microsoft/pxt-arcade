@@ -5,5 +5,10 @@ game.setWaitAnyButton(controller.pauseUntilAnyButtonIsPressed)
 game.eventContext()
 
 game.eventContext().registerFrameHandler(scene.UPDATE_SCREEN_PRIORITY + 1, () => {
-    multiplayer.postImage(screen, "broadcast-screen")
+    if (multiplayer.getOrigin() == "server") {
+        multiplayer.postImage(screen);
+    } else {
+        const im: Image = multiplayer.getCurrentImage();
+        scene.setBackgroundImage(im);
+    }
 })
