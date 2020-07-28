@@ -5,5 +5,5 @@ game.setWaitAnyButton(controller.pauseUntilAnyButtonIsPressed)
 game.eventContext()
 
 game.eventContext().registerFrameHandler(scene.UPDATE_SCREEN_PRIORITY + 1, () => {
-    multiplayer.postImage(screen)
+    multiplayer.postImage(screen, "broadcast-screen")
 })
