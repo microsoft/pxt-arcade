@@ -4,6 +4,6 @@ game.setWaitAnyButton(controller.pauseUntilAnyButtonIsPressed)
 // force first game engine
 game.eventContext()
 
-game.eventContext().registerFrameHandler(UPDATE_SCREEN_PRIORITY + 1, () => {
+game.eventContext().registerFrameHandler(scene.UPDATE_SCREEN_PRIORITY + 1, () => {
     multiplayer.postImage(screen)
 })
