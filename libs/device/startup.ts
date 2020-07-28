@@ -6,7 +6,7 @@ game.eventContext()
 
 game.eventContext().registerFrameHandler(scene.UPDATE_SCREEN_PRIORITY + 1, () => {
     if (multiplayer.getOrigin() == "server") {
-        multiplayer.postImage(screen);
+        multiplayer.postImage(screen, "broadcast-screen");
     } else {
         const im: Image = multiplayer.getCurrentImage();
         scene.setBackgroundImage(im);
