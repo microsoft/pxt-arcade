@@ -82,7 +82,6 @@
         "libs/radio-broadcast",
         "libs/d5prj",
         "libs/f4prj",
-        "libs/rpiprj",
         "libs/color-coded-tilemap",
         "libs/template",
         "libs/online-multiplayer"
