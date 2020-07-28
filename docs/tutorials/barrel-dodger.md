@@ -299,7 +299,7 @@ game.onUpdateInterval(2000, function () {
 
 ## Step 8
 
-Drag a ``||math:pick random||`` block into where ``vx`` is and set the range from ``-100`` to ``-80``.
+Drag a ``||math:pick random||`` block into where ``vx`` is and set the range from ``-100`` to ``-80``. Also, set the ``vy`` for the projectile to ``0``. 
 
 ```blocks
 game.onUpdateInterval(2000, function () {
