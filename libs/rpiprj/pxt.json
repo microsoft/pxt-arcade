@@ -1,0 +1,10 @@
+{
+    "name": "rpiprj",
+    "files": [],
+    "description": "",
+    "hidden": true,
+    "dependencies": {
+        "device": "file:../device",
+        "hw---rpi": "file:../hw---rpi"
+    }
+}
