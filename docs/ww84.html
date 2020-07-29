@@ -1,180 +1,180 @@
 <!DOCTYPE html>
-<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+    <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Microsoft MakeCode Arcade and Wonder Woman 1984</title>
-    <meta name="Description" content="Wonder Woman 1984 in Microsoft MakeCode Arcade" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <head>
+        <meta charset="UTF-8">
+        <title>Microsoft MakeCode Arcade and Wonder Woman 1984</title>
+        <meta name="Description" content="Wonder Woman 1984 in Microsoft MakeCode Arcade" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-    <!-- @include scripthead.html -->
+        <!-- @include scripthead.html -->
 
-    <style>
-        @media only screen and (max-width: 813px) {
+        <style>
+            @media only screen and (max-width: 813px) {
+                #main {
+                    margin: 0 !important;
+                    padding: 1em !important;
+                }
+
+                ol.ui.list {
+                    margin: 0 0 !important;
+                }
+            }
+
+            h1, span.subheading {
+                text-align: center;
+            }
+
+            #root {
+                background: #003399;
+                display: block !important;
+            }
+
+            body, h1, .ui.button {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            }
+
             #main {
-                margin: 0 !important;
-                padding: 1em !important;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                text-align: left;
+                background: #FFFFFF;
+                max-width: 800px;
+                margin: 2em auto;
+                padding: 1.5em 3em;
+                box-shadow: 15px 15px 20px 0 hsla(0, 0%, 0%, 0.3);
+            }
+
+            #simulator {
+                position: relative;
+                height: 0;
+                padding-bottom: 117.6%;
+                overflow: hidden;
+                margin: 1.5em auto;
+            }
+
+            #simulator iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .ui.button {
+                width: 14em;
+                padding: 1.5em;
+                margin: 2em auto;
+                background-color: #001A80;
+                color: #FFFFFF;
+                display: block;
+            }
+
+            .ui.button:focus, .ui.button:hover {
+                background-color: #003399;
+                color: #FFFFFF;
+            }
+
+            ol li::before {
+                color: #FFFFFF !important;
+                background-color: #57BB31 !important;
+                font-size: 2em;
+                font-weight: 600;
+
+                width: 2.5rem;
+                height: 2.5rem;
+                margin-left: -3rem !important;
+                margin-top: -.5rem !important;
+
+                padding-right: 0.7rem;
+                padding-top: .6rem;
+                border-radius: 50%;
             }
 
             ol.ui.list {
-                margin: 0 0 !important;
-            }
-        }
-
-        h1, span.subheading {
-            text-align: center;
-        }
-
-        #root {
-            background: #003399;
-            display: block !important;
-        }
-
-        body, h1, .ui.button {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-        }
-
-        #main {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            text-align: left;
-            background: #FFFFFF;
-            max-width: 800px;
-            margin: 2em auto;
-            padding: 1.5em 3em;
-            box-shadow: 15px 15px 20px 0 hsla(0, 0%, 0%, 0.3);
-        }
-
-        #simulator {
-            position: relative;
-            height: 0;
-            padding-bottom: 117.6%;
-            overflow: hidden;
-            margin: 1.5em auto;
-        }
-
-        #simulator iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .ui.button {
-            width: 14em;
-            padding: 1.5em;
-            margin: 2em auto;
-            background-color: #001A80;
-            color: #FFFFFF;
-            display: block;
-        }
-
-        .ui.button:focus, .ui.button:hover {
-            background-color: #003399;
-            color: #FFFFFF;
-        }
-
-        ol li::before {
-            color: #FFFFFF !important;
-            background-color: #57BB31 !important;
-            font-size: 2em;
-            font-weight: 600;
-
-            width: 2.5rem;
-            height: 2.5rem;
-            margin-left: -3rem !important;
-            margin-top: -.5rem !important;
-
-            padding-right: 0.7rem;
-            padding-top: .6rem;
-            border-radius: 50%;
-        }
-
-        ol.ui.list {
-            padding: 0 2em;
-            margin: 1em 1.25em;
-            align-self: stretch;
-        }
-
-        span.subheading {
-            line-height: 1.28571429;
-            margin-top: -.5em;
-            font-size: 1.75em;
-            font-weight: 700;
-            padding-bottom: 1em;
-        }
-
-        .logotext {
-            max-width: 30%;
-        }
-
-        /** footer styling **/
-        footer {
-            background-color: #003399 !important;
-        }
-
-        footer.ui * {
-            color: white !important;
-            opacity: 0.9;
-        }
-        .ui.divider:not(.vertical):not(.horizontal) {
-            border-top: 1px solid hsla(0, 0%, 100%, 0.3);
-            border-bottom: 1px solid hsla(0, 0%, 55%, 0.1);
-        }
-    </style>
-
-    <script>
-        function registerTickEvents() {
-            function tickEvent(id, data, measures) {
-                window.appInsights.trackEvent(id, data, measures);
+                padding: 0 2em;
+                margin: 1em 1.25em;
+                align-self: stretch;
             }
 
-            document.querySelector("#opentutorial").addEventListener("click", function() {
-                tickEvent("ww84.tutorial");
-            });
+            span.subheading {
+                line-height: 1.28571429;
+                margin-top: -.5em;
+                font-size: 1.75em;
+                font-weight: 700;
+                padding-bottom: 1em;
+            }
 
-            document.querySelector("#openhome").addEventListener("click", function() {
-                tickEvent("ww84.home");
-            });
-        };
-    </script>
+            .logotext {
+                max-width: 30%;
+            }
 
-</head>
+            /** footer styling **/
+            footer {
+                background-color: #003399 !important;
+            }
 
-<body id="root" class="root" onload="registerTickEvents()">
-    <div id="main" role="presentation">
+            footer.ui * {
+                color: white !important;
+                opacity: 0.9;
+            }
+            .ui.divider:not(.vertical):not(.horizontal) {
+                border-top: 1px solid hsla(0, 0%, 100%, 0.3);
+                border-bottom: 1px solid hsla(0, 0%, 55%, 0.1);
+            }
+        </style>
 
-        <!-- stick a wonder woman image in like this <img class="logotext" alt="Surface official laptop of NFL logo" src="static/surface-nfl.png" /> -->
-        <h1>Microsoft MakeCode Arcade</h1>
-        <span role="presentation" class="subheading">Microsoft MakeCode and Wonder Woman 1984</span>
+        <script>
+            function registerTickEvents() {
+                function tickEvent(id, data, measures) {
+                    window.appInsights.trackEvent(id, data, measures);
+                }
 
-        <p>~~~ intro text ~~~</p>
+                document.querySelector("#opentutorial").addEventListener("click", function() {
+                    tickEvent("ww84.tutorial");
+                });
 
-        <ol class="ui ordered list">
-            <li class="bottom aligned content">First, click on the simulator below and play the game:</li>
+                document.querySelector("#openhome").addEventListener("click", function() {
+                    tickEvent("ww84.home");
+                });
+            };
+        </script>
 
-            <div id="simulator" role="application">
-                <iframe
-                    src="https://microsoft.github.io/pxt-kickoff/?embed=1&nofooter=1"
-                    allowfullscreen="allowfullscreen"
-                    sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
-                    frameborder="0"
-                ></iframe>
-            </div>
+    </head>
 
-            <li class="bottom aligned content">Go through this tutorial and build a chaos maze from scratch:</li>
+    <body id="root" class="root" onload="registerTickEvents()">
+        <div id="main" role="presentation">
 
-            <a class="ui button" id="opentutorial" target="_blank" href="/#tutorial:/recipes/wonder-woman-1984/maze">Create your own game</a>
-        </ol>
+            <!-- stick a wonder woman image in like this <img class="logotext" alt="Surface official laptop of NFL logo" src="static/surface-nfl.png" /> -->
+            <h1>Microsoft MakeCode Arcade</h1>
+            <span role="presentation" class="subheading">Microsoft MakeCode and Wonder Woman 1984</span>
 
-        <p>Want to make more games? You can find more examples on <a target="_blank" id="openhome" href="/">Microsoft MakeCode Arcade!</a></p>
-    </div>
+            <p>~~~ intro text ~~~</p>
 
-    <!-- @include footer.html -->
-    <!-- @include tracking.html -->
-</body>
+            <ol class="ui ordered list">
+                <li class="bottom aligned content">First, click on the simulator below and play the game:</li>
+
+                <div id="simulator" role="application">
+                    <iframe
+                        src="https://microsoft.github.io/pxt-kickoff/?embed=1&nofooter=1"
+                        allowfullscreen="allowfullscreen"
+                        sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
+                        frameborder="0"
+                    ></iframe>
+                </div>
+
+                <li class="bottom aligned content">Go through this tutorial and build a chaos maze from scratch:</li>
+
+                <a class="ui button" id="opentutorial" target="_blank" href="/#tutorial:/recipes/wonder-woman-1984/maze">Create your own game</a>
+            </ol>
+
+            <p>Want to make more games? You can find more examples on <a target="_blank" id="openhome" href="/">Microsoft MakeCode Arcade!</a></p>
+        </div>
+
+        <!-- @include footer.html -->
+        <!-- @include tracking.html -->
+    </body>
 
 </html>
