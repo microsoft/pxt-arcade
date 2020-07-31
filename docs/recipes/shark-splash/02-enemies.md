@@ -213,7 +213,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## Conclusion @unplugged
 
-Now that you have enemies, let's add code to destroy the enemies with your projectiles! You could also try adding code to make them move or spawn different kinds of enemies.
+Now that you have enemies, let's add code to destroy the enemies with your projectiles! Or,if you want, you can continue with making them move or with spawning different kinds of enemies.
 
 |      |      |      |
 |:----:|:----:|:----:|
