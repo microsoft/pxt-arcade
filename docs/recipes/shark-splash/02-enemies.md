@@ -80,7 +80,7 @@ game.onUpdateInterval(500, function () {
 ## Step 4
 
 For ``||sprites:x||`` value in the ``||sprites:set position to||`` block, place a ``||Math:pick random 0 to 10||``.
-Change the maximum random number from `10` to `160` (the width of the screen).
+Change the second number to `160` (the width of the screen) instead of `10`.
 
 ```blocks
 let enemySprite: Sprite = null
@@ -110,8 +110,7 @@ game.onUpdateInterval(500, function () {
 
 ## Step 5
 
-Get another ``||Math:pick random 0 to 10||`` block and put in inside the ``||sprites:y||`` value of ``||sprites:set position to||``.
-Change the maximum random number from `10` to `120` (the height of the screen).
+Get another ``||Math:pick random 0 to 10||`` block and put in inside the ``||sprites:y||`` value of ``||sprites:set position to||``. This time change the second number to `120` (the height of the screen).
 
 ```blocks
 let enemySprite: Sprite = null
