@@ -16,14 +16,12 @@ info.setLife(3)
 
 ## Step 2
 
-Drag an ``||sprites:on overlap||`` block into the workspace. Change the second dropdown to "Enemy". If you
-already have a ``||sprites:on overlap||`` block in your workspace for Player and Enemy sprites, use that
-instead.
+Drag an ``||sprites:on overlaps||`` block into the workspace. Change the second kind to ``||sprites:Enemy||`` in the dropdown. If you already have a ``||sprites:on overlaps||`` block in your workspace for the ``||sprites:Player||`` and ``||sprites:Enemy||`` sprites, use that instead.
 
 ## Step 3
 
-Place a ``||sprites:destroy sprite||`` block inside the ``||sprites:on overlap||`` event. Drag the
-``||variables:otherSprite||`` variable from the ``||sprites:on overlap||`` block and place it inside
+Place a ``||sprites:destroy sprite||`` block inside the ``||sprites:on overlaps||`` event. Drag the
+``||variables:otherSprite||`` variable from the ``||sprites:on overlaps||`` block and place it inside
 the ``||sprites:destroy sprite||``. You can skip this step if ``||variables:otherSprite||`` is already
 destroyed in this event.
 
@@ -36,7 +34,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## Step 4
 
-Place a ``||info:change life by -1||`` block inside the ``||sprites:on overlap||`` event.
+Place a ``||info:change life by -1||`` block inside the ``||sprites:on overlaps||`` event.
 
 ```blocks
 info.setLife(3)
@@ -48,8 +46,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## Step 5
 
-Place a ``||scene:camera shake||`` block inside the ``||sprites:on overlap||`` event. This will
-let the player know when they have been hit.
+Place a ``||scene:camera shake||`` block inside the ``||sprites:on overlaps||`` event. This
+lets the player know that they have been hit.
 
 ```blocks
 info.setLife(3)
