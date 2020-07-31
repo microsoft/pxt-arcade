@@ -140,7 +140,7 @@ game.onUpdateInterval(500, function () {
 
 ## Step 6
 
-Drag a ``||sprites:on overlap||`` block into the workspace. Change the second sprite kind to ``||sprites:Enemy||``.
+Drag a ``||sprites:on overlaps||`` block into the workspace. Change the second sprite kind to ``||sprites:Enemy||``.
 
 ```blocks
 let enemySprite: Sprite = null
@@ -173,8 +173,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## Step 7
 
-Inside the ``||sprites:on overlap||`` block, place a ``||sprites:destroy sprite||`` block. Drag the
-``||variables:otherSprite||`` variable from the ``||sprites:on overlap||`` block and place it inside
+Inside the ``||sprites:on overlaps||`` block, place a ``||sprites:destroy sprite||`` block. Drag the
+``||variables:otherSprite||`` variable from the ``||sprites:on overlaps||`` block and place it inside
 the  ``||sprites:destroy sprite||``.
 
 
