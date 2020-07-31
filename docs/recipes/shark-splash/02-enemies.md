@@ -17,8 +17,8 @@ game.onUpdateInterval(500, function () {
 
 ## Step 2
 
-Inside the ``||game:on update interval||`` event, place a ``||sprites:create sprite||`` block.
-Rename the variable to "enemySprite" and change the "Player" argument to "Enemy". Click on the
+Inside the ``||game:on update interval||`` event, place a ``||variables:set mySprite to||`` ``||sprites:sprite||`` block.
+Rename the variable to ``||variables:enemySprite||`` and change the ``||sprites:Player||`` kind to ``||sprites:Enemy||``. Click on the
 grey square to open the sprite editor and draw an image for the enemy.
 
 ```blocks
@@ -48,8 +48,8 @@ game.onUpdateInterval(500, function () {
 
 ## Step 3
 
-Place a ``||sprites:set position to||`` block underneath the ``||sprites:create sprite||`` block. Change
-the variable dropdown to "enemySprite".
+Place a ``||sprites:set position to||`` block right below the ``||variables:set enemySprite to||`` ``||sprites:sprite||`` block. Change
+the variable to ``||variables:enemySprite||`` in the dropdown list.
 
 ```blocks
 let enemySprite: Sprite = null
@@ -79,8 +79,8 @@ game.onUpdateInterval(500, function () {
 
 ## Step 4
 
-Inside the x argument of the ``||sprites:set position to||`` block, place a ``||Math:pick random 0 to 10||``.
-Change the second argument from 10 to 160 (the width of the screen).
+For ``||sprites:x||`` value in the ``||sprites:set position to||`` block, place a ``||Math:pick random 0 to 10||``.
+Change the maximum random number from `10` to `160` (the width of the screen).
 
 ```blocks
 let enemySprite: Sprite = null
@@ -110,8 +110,8 @@ game.onUpdateInterval(500, function () {
 
 ## Step 5
 
-Place another ``||Math:pick random 0 to 10||`` block inside the y argument of ``||sprites:set position to||``.
-Change the second argument from 10 to 120 (the height of the screen).
+Get another ``||Math:pick random 0 to 10||`` block and put in inside the ``||sprites:y||`` value of ``||sprites:set position to||``.
+Change the maximum random number from `10` to `120` (the height of the screen).
 
 ```blocks
 let enemySprite: Sprite = null
@@ -139,9 +139,9 @@ game.onUpdateInterval(500, function () {
 })
 ```
 
-## Step 5
+## Step 6
 
-Drag a ``||sprites:on overlap||`` block into the workspace. Change the second dropdown to "Enemy".
+Drag a ``||sprites:on overlap||`` block into the workspace. Change the second sprite kind to ``||sprites:Enemy||``.
 
 ```blocks
 let enemySprite: Sprite = null
@@ -172,7 +172,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Step 6
+## Step 7
 
 Inside the ``||sprites:on overlap||`` block, place a ``||sprites:destroy sprite||`` block. Drag the
 ``||variables:otherSprite||`` variable from the ``||sprites:on overlap||`` block and place it inside
@@ -213,7 +213,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## Conclusion @unplugged
 
-Now that you have enemies, let's add code to destroy the enemies with your projectiles! Or you can try your hand at making them move, or spawning different kinds of enemies.
+Now that you have enemies, let's add code to destroy the enemies with your projectiles! You could also try adding code to make them move or spawn different kinds of enemies.
 
 |      |      |      |
 |:----:|:----:|:----:|
