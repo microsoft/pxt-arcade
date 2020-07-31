@@ -17,7 +17,7 @@ scene.setBackgroundColor(8)
 
 ## Draw your hero
 
-From ``||sprites:Sprites||``, drag the ``||variables:set mySprite to||`` block into ``||loops:on start|``. Click on the grey box for ``||variables:set mySprite to||`` and then select the **Gallery** view. Select your hero!
+From ``||sprites:Sprites||``, drag the ``||variables:set mySprite to||`` block into ``||loops:on start|``. Click on the grey box in ``||variables:set mySprite to||`` and then select **Gallery** in the image editor. Choose your hero!
 
 ```blocks
 scene.setBackgroundColor(8)
@@ -44,7 +44,7 @@ let mySprite = sprites.create(img`
 
 ## Control your hero
 
-From ``||controller:Controller||``, drag the ``||controller:move mySprite with buttons||`` block **after** ``||variables:set mySprite||``. This will allow you to move your sprite around the screen. Try it out using the arrow keys on your keyboard or clicking the joystick in the simulator
+From ``||controller:Controller||``, drag the ``||controller:move mySprite with buttons||`` block **after** ``||variables:set mySprite||``. This will allow you to move your sprite around the screen. Try it out in the simulator using the arrow keys on your keyboard or by clicking the joystick.
 
 ```blocks
 scene.setBackgroundColor(8)
@@ -72,7 +72,7 @@ controller.moveSprite(mySprite)
 
 ## Spawn projectiles
 
-Now lets have our hero shoot some projectiles! Find ``||controller:on A button pressed||`` in ``||controller:Controller||``, and drag it into the workspace.
+Now lets have our hero shoot some projectiles! Find ``||controller:on A button pressed||`` in ``||controller:Controller||`` and drag it into the workspace.
 
 ```blocks
 // @highlight
@@ -82,7 +82,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Draw your projectile
 
-From ``||sprites:Sprites||`` drag ``||variables:projectile from mySprite||`` into the ``||controller:on A button pressed||``. Set the ``||sprites:vy||`` to `0`, then click on the grey square to draw a projectile. Use the spacebar on your keyboard or click the **A** button in the simulator to try it out!
+From ``||sprites:Sprites||`` drag ``||variables:projectile from mySprite||`` into the ``||controller:on A button pressed||``. Set the ``||sprites:vy||`` value to `0`, then click on the grey square to open the image editor and draw your projectile. Try shooting the projectile in the simulator using your keyboard or click the **A** button.
 
 ```blocks
 let mySprite: Sprite = null
@@ -107,7 +107,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Conclusion @unplugged
 
-Now that you have a hero, let's customize your game. Maybe you want to add some villains who are attacking your character, or maybe you want to build the setting of your game--it's up to you!
+Now that you have a hero character, let's customize your game. Maybe you want to add some villains who are attacking your character, or maybe you want to develop the scene of your game--it's up to you!
 
 | |      | |      | |
 |--|:----:|-- |:----:|--|
