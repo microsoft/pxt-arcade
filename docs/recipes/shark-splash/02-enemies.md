@@ -8,7 +8,7 @@ Create enemies and spawn them at random locations!
 
 ## Step 1
 
-Add an ``||game:on update interval||`` block to the workspace.
+Add an ``||game:on game update every||`` block to the workspace.
 
 ```blocks
 game.onUpdateInterval(500, function () {
@@ -17,7 +17,7 @@ game.onUpdateInterval(500, function () {
 
 ## Step 2
 
-Inside the ``||game:on update interval||`` event, place a ``||variables:set mySprite to||`` ``||sprites:sprite||`` block.
+Inside the ``||game:on game update every||`` event, place a ``||variables:set mySprite to||`` ``||sprites:sprite||`` block.
 Rename the variable to ``||variables:enemySprite||`` and change the ``||sprites:Player||`` kind to ``||sprites:Enemy||``. Click on the
 grey square to open the sprite editor and draw an image for the enemy.
 
