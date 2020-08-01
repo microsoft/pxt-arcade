@@ -44,7 +44,7 @@ let mySprite = sprites.create(img`
 
 ## Control your hero
 
-From ``||controller:Controller||``, drag the ``||controller:move mySprite with buttons||`` block **after** ``||variables:set mySprite||``. This will allow you to move your sprite around the screen. Try it out in the simulator using the arrow keys on your keyboard or by clicking the joystick.
+From ``||controller:Controller||``, drag the ``||controller:move mySprite with buttons||`` block **after** ``||variables:set mySprite to||``. This will allow you to move your sprite around the screen. Try it out in the simulator using the arrow keys on your keyboard or by clicking the joystick.
 
 ```blocks
 scene.setBackgroundColor(8)
