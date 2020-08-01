@@ -8,7 +8,7 @@ Now that you have enemies and projectiles, let's give your projectiles some powe
 
 ## Detect sprite overlaps
 
-From ``||sprites:Sprites||``, drag the ``||sprites:on sprite overlaps otherSprite||`` block into your workspace. Click the first dropdown and select ``||sprites:Projectile||`` then click the second and select  ``||sprites:Enemy||``.
+From ``||sprites:Sprites||``, drag the ``||sprites:on||`` ``||variables:sprite||`` ``||sprites:overlaps||``  ``||variables:otherSprite||`` block into your workspace. Click the first dropdown and select ``||sprites:Projectile||``, then click the second dropdown and select ``||sprites:Enemy||``.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -54,7 +54,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 
 ## Conclusion @unplugged
 
-Now try making your enemies move or spawning multiple kinds of enemies!
+Now try making your enemies move or spawn multiple kinds of enemies!
 
 |      |      |      |
 |:----:|:----:|:----:|
