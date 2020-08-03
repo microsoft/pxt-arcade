@@ -1,9 +1,8 @@
 name: playlists
 
 on:
-  push:
-    branches: 
-      - master
+  schedule:
+    - cron:  '30 1 * * *'
 
 jobs:
   build:
