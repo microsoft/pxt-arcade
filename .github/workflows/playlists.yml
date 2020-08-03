@@ -29,9 +29,6 @@ jobs:
           pxt downloadplaylists
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-      - name: updated summary
-        run: |
-          pxt buildtarget
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
