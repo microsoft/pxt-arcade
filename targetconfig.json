@@ -7,7 +7,11 @@
             "jwunderl/pxt-color",
             "jwunderl/pxt-status-bar",
             "microsoft/pxt-settings-blocks",
-            "microsoft/arcade-sprite-data"
+            "microsoft/arcade-sprite-data",
+            "darzu/arcade-minimap",
+            "darzu/arcade-timers",
+            "darzu/arcade-text",
+            "darzu/arcade-grid"
         ],
         "preferredRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
@@ -16,7 +20,11 @@
             "jwunderl/pxt-color",
             "jwunderl/pxt-status-bar",
             "microsoft/pxt-settings-blocks",
-            "microsoft/arcade-sprite-data"
+            "microsoft/arcade-sprite-data",
+            "darzu/arcade-minimap",
+            "darzu/arcade-timers",
+            "darzu/arcade-text",
+            "darzu/arcade-grid"
         ],
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
