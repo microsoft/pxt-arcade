@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Microsoft MakeCode Arcade and Wonder Woman 1984</title>
+    <meta name="Description" content="Wonder Woman 1984 in Microsoft MakeCode Arcade" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    <!-- @include scripthead.html -->
+
+    <style>
+        h1,
+        .subheading {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-top: 1em;
+        }
+
+        .subheading {
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .tagline {
+            opacity: 0.6;
+        }
+
+        .header-image {
+            margin: -1.5em -3em;
+        }
+
+        .header-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        #root {
+            background: #0d0015;
+            background-image: url('static/ww84-background.png');
+            display: block !important;
+        }
+
+        body,
+        h1,
+        .ui.button {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+            font-weight: 300;
+        }
+
+        a {
+            color: #e7107c;
+            font-weight: 400;
+        }
+
+        a:hover {
+
+            color: #df0571;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        #main {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+            background: #010102;
+            color: white;
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 1.5em 3em;
+            box-shadow: 2px 4px 88px 21px rgba(0, 0, 0, 0.75);
+        }
+
+        #simulator {
+            position: relative;
+            height: 0;
+            padding-bottom: 117.6%;
+            overflow: hidden;
+            margin: 1.5em auto;
+            margin-bottom: 3em;
+        }
+
+        #simulator iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .ui.button {
+            width: 14em;
+            padding: 1.5em;
+            margin: 2em auto;
+            background-image: linear-gradient(116deg, #df0571 0%, #1e00bd 100%);
+            color: #ffffff;
+            display: block;
+            font-size: 1.4em;
+            box-shadow: none;
+            transition: .25s;
+        }
+
+        .ui.button:focus,
+        .ui.button:hover {
+            background-image: linear-gradient(116deg, #df0571 0%, #1e00bd 100%);
+            box-shadow: 0 0 50px rgba(223, 5, 113, .75);
+            color: #ffffff;
+            filter: none;
+            transform: scale(1.05);
+        }
+
+        ol li::before {
+            color: #ffffff !important;
+            font-size: 2em;
+            font-weight: 300;
+            border-radius: 50%;
+
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-left: -3rem !important;
+            margin-top: -0.5rem !important;
+
+            padding-right: 0.7rem;
+            padding-top: 0.6rem;
+
+            background-color: #df0571 !important;
+            ;
+        }
+
+        ol.ui.list {
+            padding: 0 2em;
+            margin: 1em 1.25em;
+            align-self: stretch;
+        }
+
+        ol li p {
+            padding-left: 0.5em;
+            line-height: 1.5em;
+        }
+
+        .cta {
+            text-align: center;
+            max-width: 550px;
+            padding-bottom: 2em;
+        }
+
+        .legal {
+            font-size: .75em;
+        }
+
+        .logotext {
+            max-width: 30%;
+        }
+
+        /** footer styling **/
+        footer {
+            background-color: #0d0015 !important;
+            border-top: 1px solid hsla(0, 0%, 100%, 0.2) !important;
+            margin-top: 0 !important;
+            padding-top: 2rem !important;
+        }
+
+        footer.ui * {
+            color: white !important;
+            opacity: 0.9;
+        }
+
+        .ui.divider:not(.vertical):not(.horizontal) {
+            border-top: 1px solid hsla(0, 0%, 100%, 0.3);
+            border-bottom: 1px solid hsla(0, 0%, 55%, 0.1);
+        }
+
+        @media only screen and (max-width: 813px) {
+            #main {
+                margin: 0;
+                padding: 1em;
+            }
+
+            .header-image {
+                margin: -1em;
+            }
+
+            ol.ui.list {
+                margin: 0 0;
+            }
+
+            h1 {
+                font-size: 2.3em;
+            }
+        }
+    </style>
+
+    <script>
+        function handleOnLoad() {
+            document
+                .querySelector('#opentutorial')
+                .addEventListener('click', function () {
+                    window.pxtTickEvent('ww84.tutorial');
+                });
+
+            document
+                .querySelector('#openhome')
+                .addEventListener('click', function () {
+                    window.pxtTickEvent('ww84.home');
+                });
+
+            var langPicker = document.querySelector("#langpicker");
+            if (langPicker) {
+                langPicker.remove();
+            }
+        }
+    </script>
+</head>
+
+<body id="root" class="root" onload="handleOnLoad()">
+    <div id="main" role="presentation">
+        <div class="header-image"><img src="static/ww84-header.png" alt="Wonder Woman 1984"></img></div>
+        <h1>Microsoft MakeCode Arcade</h1>
+        <p role="presentation" class="subheading">Chaos Maze inspired by WONDER WOMAN 1984</p>
+        <p class='tagline'>
+            Wonder Woman is in the Smithsonian museum and needs your help!
+        </p>
+
+        <ol class="ui ordered list">
+            <li class="bottom aligned content">
+                <p>First, play the Chaos Maze game below to help her navigate
+                    through the Smithsonian Museum. She needs to collect all 13 artifacts, retrieve her lasso to defeat
+                    Barbara Minerva, and retrieve her armor to destroy the Shard of Chaos!</p>
+            </li>
+
+            <div id="simulator" role="application">
+                <iframe src="https://microsoft.github.io/arcade-chaos-maze/?embed=1&nofooter=1" allowfullscreen="allowfullscreen"
+                    sandbox="allow-popups allow-forms allow-scripts allow-same-origin" frameborder="0"></iframe>
+            </div>
+
+            <li class="bottom aligned content">
+                <p>Create your own version of the Chaos Maze game! Click the
+                    button below to follow an easy step-by-step tutorial which
+                    will help you code your very own game.</p>
+            </li>
+
+            <a class="ui button" id="opentutorial" target="_blank"
+                href="/#tutorial:/recipes/wonder-woman-1984/maze">Create your own game</a>
+        </ol>
+
+        <p class="cta">
+            Want to make more games? You can find more examples on
+            <a target="_blank" id="openhome" href="/">Microsoft MakeCode Arcade</a>
+        </p>
+
+        <p class="legal">
+            WONDER WOMAN 1984 TM & © DC and WBEI. RATED PG-13
+        </p>
+    </div>
+
+    <!-- @include footer.html -->
+    <!-- @include tracking.html -->
+    <!-- @include tickevent.html -->
+</body>
+
+</html>
