@@ -449,7 +449,8 @@
             "en",
             "zh-CN",
             "zh-TW",
-            "de"
+            "de",
+            "ja"
         ],
         "invertedMenu": true,
         "showHomeScreen": true,
