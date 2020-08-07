@@ -289,8 +289,7 @@
                 "useELF": true,
                 "useUF2": false,
                 "flashCodeAlign": 256,
-                "webUSB": false,
-                "stackAlign": 2
+                "webUSB": false
             },
             "compileService": {
                 "buildEngine": "dockermake",
