@@ -1,4 +1,4 @@
-# Wonder Woman Maze
+# Chaos Maze
 
 ## Introduction @unplugged
 
