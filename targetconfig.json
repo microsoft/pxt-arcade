@@ -8,11 +8,7 @@
             "jwunderl/pxt-status-bar",
             "microsoft/pxt-settings-blocks",
             "microsoft/arcade-sprite-data",
-            "microsoft/pxt-tilemaps",
-            "microsoft/arcade-minimap",
-            "microsoft/arcade-timers",
-            "microsoft/arcade-text",
-            "microsoft/arcade-grid"
+            "microsoft/arcade-text"
         ],
         "preferredRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
@@ -22,11 +18,7 @@
             "jwunderl/pxt-status-bar",
             "microsoft/pxt-settings-blocks",
             "microsoft/arcade-sprite-data",
-            "microsoft/pxt-tilemaps",
-            "microsoft/arcade-minimap",
-            "microsoft/arcade-timers",
-            "microsoft/arcade-text",
-            "microsoft/arcade-grid"
+            "microsoft/arcade-text"
         ],
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
