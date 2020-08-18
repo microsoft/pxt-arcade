@@ -8,10 +8,6 @@
             "jwunderl/pxt-status-bar",
             "microsoft/pxt-settings-blocks",
             "microsoft/arcade-sprite-data",
-            "microsoft/pxt-tilemaps",
-            "microsoft/arcade-minimap",
-            "microsoft/arcade-timers",
-            "microsoft/arcade-text",
             "microsoft/arcade-grid"
         ],
         "preferredRepos": [
@@ -22,10 +18,6 @@
             "jwunderl/pxt-status-bar",
             "microsoft/pxt-settings-blocks",
             "microsoft/arcade-sprite-data",
-            "microsoft/pxt-tilemaps",
-            "microsoft/arcade-minimap",
-            "microsoft/arcade-timers",
-            "microsoft/arcade-text",
             "microsoft/arcade-grid"
         ],
         "upgrades": {
