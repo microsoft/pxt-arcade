@@ -416,6 +416,7 @@
         "logoUrl": "https://github.com/microsoft/pxt-arcade",
         "logo": "./static/logo.svg",
         "docsLogo": "./static/logo.svg",
+        "cardLogo": "./static/logo.svg",
         "portraitLogo": "./static/logo.svg",
         "footerLogo": "./static/logo.svg",
         "organization": "Microsoft MakeCode",
