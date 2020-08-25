@@ -355,8 +355,12 @@ game.onUpdateInterval(1000, function () {
 
 ## Step 10
 
-Inside the code block that checks ``||logic:if||`` the ``vx`` velocity is less than `0`, put in code
-to ``||images:flip horizontally||`` the ``||sprites:image||`` for ``||variables:projectile||``.
+Inside the code block that checks ``||logic:if||`` the ``vx`` velocity is less than
+`0`, put in code to ``||images:flip horizontally||`` the ``||sprites:image||`` for
+``||variables:projectile||``. If you are using the Toolbox code, be careful to change
+the default image given for ``||images:flip horizontally||`` to be the image property
+for the ``||variables:projectile||`` instead.
+
 
 ```spy
 scene.setBackgroundColor(9)
