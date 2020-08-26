@@ -84,7 +84,8 @@
         "libs/f4prj",
         "libs/rpiprj",
         "libs/color-coded-tilemap",
-        "libs/template"
+        "libs/template",
+        "libs/video"
     ],
     "compile": {
         "useUF2": true,
