@@ -1,90 +1,10 @@
 # Catch
 
 ```blocks
-namespace myTiles {
-    //% blockIdentity=images._tile
-    export const tile0 = img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `
-    //% blockIdentity=images._tile
-    export const tile1 = img`
-        f f f f f f f f f f f f f f f f
-        f f f f f f f f f f f f f f f f
-        f f f f f f f f f f f f f f f f
-        f f f f f f f f f f f f f f f f
-        f f f f f f f f f f f f f f f f
-        f f f f f f f f f f f f f f f f
-        f f f f f f f f f f f f f f f f
-        f f f f f f f f f f f f f f f f
-        f f f f f f f f f f f f f f f f
-        f f f f f f f f f f f f f f f f
-        f f f f f f f f f f f f f f f f
-        f f f f f f f f f f f f f f f f
-        f f f f f f f f f f f f f f f f
-        f f f f f f f f f f f f f f f f
-        f f f f f f f f f f f f f f f f
-        f f f f f f f f f f f f f f f f
-    `
-    //% blockIdentity=images._tile
-    export const tile2 = img`
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    `
-    //% blockIdentity=images._tile
-    export const tile3 = img`
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    `
-}
-
 namespace SpriteKind {
     export const Projectile2 = SpriteKind.create()
     export const snake = SpriteKind.create()
 }
-
 sprites.onOverlap(SpriteKind.Projectile2, SpriteKind.Player, function (sprite, otherSprite) {
     falling = sprites.create(img`
         . . 2 2 2 2 . .
@@ -95,7 +15,7 @@ sprites.onOverlap(SpriteKind.Projectile2, SpriteKind.Player, function (sprite, o
         2 2 2 2 2 2 2 2
         . 2 2 2 2 2 2 .
         . . 2 2 2 2 . .
-    `, SpriteKind.Projectile)
+        `, SpriteKind.Projectile)
     falling.setFlag(SpriteFlag.BounceOnWall, true)
     falling.setPosition(sprite.x, sprite.y - 5)
     falling.setVelocity(sprite.vx, 0 - sprite.vy)
@@ -162,21 +82,7 @@ let mySprite4 = sprites.create(img`
     `, SpriteKind.snake)
 mySprite4.setFlag(SpriteFlag.Ghost, true)
 mySprite4.setPosition(-7, 100)
-tiles.setTilemap(tiles.createTilemap(
-            hex`0a0008000102020202020202020101020202020202020201010202020202020202010102020202020202020101020202020202020201010202020202020202010102020202020202020101030303030303030301`,
-            img`
-                2 . . . . . . . . 2
-                2 . . . . . . . . 2
-                2 . . . . . . . . 2
-                2 . . . . . . . . 2
-                2 . . . . . . . . 2
-                2 . . . . . . . . 2
-                2 . . . . . . . . 2
-                2 2 2 2 2 2 2 2 2 2
-            `,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3],
-            TileScale.Sixteen
-        ))
+tiles.setTilemap(tilemap`level`)
 game.onUpdateInterval(2200, function () {
     mySprite4.vx = 10 * s4Dir
     s4Dir = s4Dir * -1
@@ -211,6 +117,52 @@ game.onUpdateInterval(2000, function () {
     falling.ay = 20
     falling.setFlag(SpriteFlag.BounceOnWall, true)
 })
+```
+
+```jres
+{
+    "transparency16": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile0": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile1": {
+        "data": "hwQQABAAAAD//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////w==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile2": {
+        "data": "hwQQABAAAAAREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREQ==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile3": {
+        "data": "hwQQABAAAABmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZg==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "level": {
+        "id": "level",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAwYTAwMDgwMDAxMDIwMjAyMDIwMjAyMDIwMjAxMDEwMjAyMDIwMjAyMDIwMjAyMDEwMTAyMDIwMjAyMDIwMjAyMDIwMTAxMDIwMjAyMDIwMjAyMDIwMjAxMDEwMjAyMDIwMjAyMDIwMjAyMDEwMTAyMDIwMjAyMDIwMjAyMDIwMTAxMDIwMjAyMDIwMjAyMDIwMjAxMDEwMzAzMDMwMzAzMDMwMzAzMDEwMjAwMDAwMDIwMDIwMDAwMDAyMDAyMDAwMDAwMjAwMjAwMDAwMDIwMDIwMDAwMDAyMDAyMDAwMDAwMjAwMjAwMDAwMDIwMjIyMjIyMjIyMg==",
+        "tileset": [
+            "myTiles.tile0",
+            "myTiles.tile1",
+            "myTiles.tile2",
+            "myTiles.tile3"
+        ]
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myTiles"
+    }
+}
 ```
 
 ## About the author

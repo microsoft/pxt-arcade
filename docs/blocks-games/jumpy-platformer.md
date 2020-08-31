@@ -1,161 +1,6 @@
 # Jumpy Platformer
 
 ```blocks
-namespace myTiles {
-    //% blockIdentity=images._tile
-    export const tile0 = img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `
-    //% blockIdentity=images._tile
-    export const tile1 = img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . f f f f . . . . .
-        . . . . . . f 2 2 2 2 f f . . .
-        . . . . . . f 2 3 3 2 2 2 f . .
-        . . . . . . f 2 3 2 2 2 2 2 f .
-        . . . . . . f 3 2 2 2 2 2 f . .
-        . . . . . . f 2 2 2 2 f f . . .
-        . . . . . . f b d f f . . . . .
-        . . . . . . f b d f . . . . . .
-        . . . . . . f b d f . . . . . .
-        . . . . . . f b d f . . . . . .
-        . . . . . . f b d f . . . . . .
-        . . . . . . f d d f . . . . . .
-        . . . . . f f f f f f . . . . .
-        . . . . f f f f f f f f . . . .
-        . . . f f f f f f f f f f . . .
-    `
-    //% blockIdentity=images._tile
-    export const tile2 = img`
-        f f f f f f f f f f f f f f f f
-        6 7 7 7 7 3 5 3 7 6 7 2 7 6 7 7
-        7 7 7 6 6 7 3 7 6 7 2 4 2 7 7 7
-        7 7 6 6 6 6 6 7 6 6 7 2 6 6 7 7
-        7 6 6 e e e 6 6 6 6 6 6 6 6 6 7
-        6 6 e e d e e 6 e e 6 6 e e 6 6
-        6 e e e e e e e e e e e e e e 6
-        e e e e e d e e e d e e e e e e
-        e e e e e e e e e e e e e e d e
-        e e e e e e e e e e e e e e e e
-        e e e e e e e e e e e e e e e e
-        e e d e e e e e d e e e e e e e
-        e e e e e e e e e e e e e e e e
-        e e e e e e e e e e e e e e e d
-        e e e e e e e e e e e e e e e e
-        e d e e e e e e e d e e e e e e
-    `
-    //% blockIdentity=images._tile
-    export const tile3 = img`
-        f f f f f f f f f f f f f f f f
-        f f 2 2 2 2 2 2 2 f 2 2 2 2 f f
-        f 2 2 2 2 2 2 2 2 f 2 2 2 2 2 f
-        f 2 2 2 2 2 2 2 2 f 2 2 2 2 2 f
-        f 2 2 2 2 2 2 2 2 f 2 2 2 2 2 f
-        f f f f f f f f f f f f f f f f
-        f 2 2 2 2 f 2 2 2 2 2 2 2 2 2 f
-        f 2 2 2 2 f 2 2 2 2 4 4 2 2 2 f
-        f 2 2 2 2 f 2 2 2 4 4 2 2 2 2 f
-        f 2 2 2 2 f 2 2 2 2 2 2 2 2 2 f
-        f f f f f f f f f f f f f f f f
-        f 2 2 2 2 2 2 2 2 f 2 2 2 2 2 f
-        f 2 2 2 4 2 2 2 2 f 2 2 2 2 2 f
-        f 2 2 4 2 2 2 2 2 f 2 2 2 2 2 f
-        f f 2 2 2 2 2 2 2 f 2 2 2 2 f f
-        f f f f f f f f f f f f f f f f
-    `
-    //% blockIdentity=images._tile
-    export const tile4 = img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . f f f f f f . . . . . .
-        . . . f 7 2 7 7 7 2 f . . . . .
-        . . f 7 7 7 2 7 2 7 7 f . . . .
-        . . f 7 7 7 7 7 7 7 7 7 f . . .
-        . f 7 7 7 2 7 7 7 2 7 7 f . . .
-        . f 7 7 7 2 7 7 7 2 7 7 7 f . .
-        . f 7 7 7 7 7 7 7 7 7 7 7 7 f .
-        . f 7 7 7 7 2 2 2 7 7 7 7 7 f .
-        . . f 7 7 2 2 7 2 2 7 7 7 7 f .
-        . . f 7 7 2 7 7 7 2 2 7 7 7 f .
-        . . . f 7 7 7 7 7 7 7 7 7 7 f .
-        . . . . f f 7 7 7 7 7 7 7 f . .
-        . . . . . . f f f f f f f . . .
-        . . . . . . . . . . . . . . . .
-    `
-    //% blockIdentity=images._tile
-    export const tile5 = img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . f f f f . . . . . .
-        . . . . f f 5 5 5 5 f f . . . .
-        . . . . f 5 5 5 5 5 5 f . . . .
-        . . . f 5 5 5 4 4 5 5 5 f . . .
-        . . . f 5 5 5 4 4 5 5 5 f . . .
-        . . . f 5 5 5 4 4 5 5 5 f . . .
-        . . . f 5 5 5 4 4 5 5 5 f . . .
-        . . . . f 5 5 5 5 5 5 f . . . .
-        . . . . f f 5 5 5 5 f f . . . .
-        . . . . . . f f f f . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `
-    //% blockIdentity=images._tile
-    export const tile6 = img`
-        . . . . . . . . . . . . . . . .
-        . . . f f f f f f f f f f . . .
-        . . f e e e e e e e e e e f . .
-        . f e e e e e e e e e e e e f .
-        . f d e e d d d d d d d d d f .
-        . f d e d d f d d d d f d d f .
-        . f e d d d f d d d d f d d f .
-        . . f d d d f d d d d f d d f .
-        . . f d d d d d d d d d d d f .
-        . . f b a c c c c c c c c a f .
-        . . f d d d c c c c c c d d f .
-        . . f d d f f f b b f f f d f .
-        . . f b a a a a a a a a a f . .
-        . . . f b a a f f b a a f . . .
-        . . . f b a a f f b a a f . . .
-        . . . . f f f . . f f f . . . .
-    `
-    //% blockIdentity=images._tile
-    export const tile7 = img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . f f f f f f f . . . .
-        . . . . f 4 4 4 4 4 4 4 f . . .
-        . . . f 4 5 5 4 4 4 5 5 4 f . .
-        . f . f 4 4 4 5 4 5 4 4 4 f . f
-        . f f 4 4 4 4 4 4 4 4 4 4 4 f f
-        . f 4 4 4 4 4 5 4 5 4 4 4 4 4 f
-        . f 4 4 4 4 4 5 4 5 4 4 4 4 4 f
-        . f f 4 4 4 4 4 4 4 4 4 4 4 f f
-        . . . f 4 4 5 5 5 5 5 4 4 f . .
-        . . . . f 4 5 4 4 4 5 4 f . . .
-        . . . . . f f f f f f f . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `
-}
-
 enum ActionKind {
     RunningLeft,
     RunningRight,
@@ -435,93 +280,21 @@ function animateIdle () {
 function setLevelTileMap (level: number) {
     clearGame()
     if (level == 0) {
-        tiles.setTilemap(tiles.createTilemap(hex`2000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000005000000000000000000000000000000000000000000000000000000050000000000000000000000000000000000000000000000000000000006000000000000000000050000000000000000000000000000000000000000000000000000000003000005000300000000000000000000000000000000000300000000030000000300040000030000040003000400000400030001000000030202020203020202030202020203020202020302020202020203020202020203`, img`
-            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . 2 . . . . 2 . . . . . . . . . . . . . . . . . 2
-            . . . . 2 . . . 2 . . . . 2 . . . . 2 . . . . . . 2 . . . . . 2
-            2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-            `, [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6], TileScale.Sixteen))
+        tiles.setTilemap(tilemap`level`)
     } else if (level == 1) {
-        tiles.setTilemap(tiles.createTilemap(hex`2000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000000000000000000000000000000000000305030000000000000000000000000000000000030300030000000000000300030503000000000000000000000000000000000303030003000000000300030003050300000000000000000000030000000003030303000300000300030503050305030005050505050505050503060000000000000400030000030004000000040503000000000000000001000302020202020202020203020203020202020202020302020202020202020202`, img`
-            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . . . . . . . . . . . . . 2 . . . . . . . . . .
-            . . . . . . . . . . . . . . . . . . . 2 . 2 . . . . . . . . . .
-            . . . . . . . 2 2 . 2 . . . . . . 2 . 2 . 2 . . . . . . . . . .
-            . . . . . . 2 2 2 . 2 . . . . 2 . 2 . 2 . 2 . . . . . . . . . .
-            2 . . . . 2 2 2 2 . 2 . . 2 . 2 . 2 . 2 . 2 . . . . . . . . . .
-            2 . . . . . . . . . 2 . . 2 . . . . . . . 2 . . . . . . . . . .
-            2 2 2 2 2 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-            `, [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6], TileScale.Sixteen))
+        tiles.setTilemap(tilemap`level_0`)
     } else if (level == 2) {
-        tiles.setTilemap(tiles.createTilemap(hex`2000080000000000000000000000000000000000000000060000000000000000060606060000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020202020202000000000000000000000000000000000000000000000000020002060303030000000000000000000000000000030303000000000002000002000200030303000000000000000000000000000003030300040002000200000000020003030300000000000000000005000000000303030101010201020101010102010101010101010101010101010101010101010101`, img`
-            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . . 2 2 2 2 2 2 . . . . . . . . . . . . . . . .
-            . . . . . . . . 2 . 2 . . . . . . . . . . . . . . . . . . . . .
-            . . . . . 2 . . 2 . 2 . . . . . . . . . . . . . . . . . . . . .
-            . . . 2 . 2 . . . . 2 . . . . . . . . . . . . . . . . . . . . .
-            2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-            `, [myTiles.tile0,myTiles.tile2,myTiles.tile3,myTiles.tile5,myTiles.tile6,myTiles.tile1,myTiles.tile7], TileScale.Sixteen))
+        tiles.setTilemap(tilemap`level_1`)
     } else if (level == 3) {
-        tiles.setTilemap(tiles.createTilemap(hex`2000080000000000000000000000000300000007000000070000070007000000000000000000000000000000000000030000000000000000000000000000000000000000000000000000000300000003000000000000000000000000000000000000000000000000000300030000000000000000000000000000000000000000000000000000000303030303030303030303030303030303030303030303030303030300000000030000050000050005000005000500000500050000000500000005000000060303010000040004000000040000000000040000000400000004000000030202020302020202020202020202020202020202020202020202020202020203`, img`
-            . . . . . . . . . . . 2 . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . . . 2 . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . 2 . . . 2 . . . . . . . . . . . . . . . . . . . .
-            . . . . . 2 . 2 . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 .
-            . . . 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . 2 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
-            2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-            `, [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7], TileScale.Sixteen))
+        tiles.setTilemap(tilemap`level_2`)
     } else if (level == 4) {
-        tiles.setTilemap(tiles.createTilemap(hex`2000080000070700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000005050500000000000000000000050005000000000005050000030303030003000000000000000000000000000000000000050505000000050305050505000300000000000000000000060003040404040404030404040404030404040404030000000000000100000202020302020202020203020202020203020202020203020202020202020202`, img`
-            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . . . . . . . . . 2 2 2 2 . 2 . . . . . . . . .
-            . . . . . . . . . . . . . . . . 2 . . . . . 2 . . . . . . . . .
-            . . . 2 . . . . . . 2 . . . . . 2 . . . . . 2 . . . . . . . . .
-            2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-            `, [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7], TileScale.Sixteen))
+        tiles.setTilemap(tilemap`level_3`)
     } else if (level == 5) {
-        tiles.setTilemap(tiles.createTilemap(hex`2000080000070700000000000000000000000000000000000707000000000000000000000000000000000000000000000505000000000000000000000000000000000000000000000000000000000000050300000000000000000000000000000000000000000000000000000005050003030000000000000000050505050000000000000000000000050005000303000005050000030303030000000000000000000003030000000003000300050505000000050300000000000000000000000000000303060003000305030400030400000003030004000004000004000000000100030302020302030203020203020202020303020202020202020202020202020203`, img`
-            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . . . . . 2 . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . . . . 2 2 . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . 2 2 . . . . . . 2 2 2 2 . . . . . . . . . . 2
-            2 . . . . 2 . 2 . . . . . . . . 2 . . . . . . . . . . . . . . 2
-            2 . . 2 . 2 . 2 . . 2 . . . . 2 2 . . . . . . . . . . . . . . 2
-            2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-            `, [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7], TileScale.Sixteen))
+        tiles.setTilemap(tilemap`level_4`)
     } else if (level == 6) {
-        tiles.setTilemap(tiles.createTilemap(hex`27000800000000000606060606060606060606060606060606060606060606060606060606000003000000000003030303030303030303030303030303030303030303030303030303030303000003000000000000000000000000000000000000000000000000000000000000000000000000000003000000000000000006060606030400000000000400000004000004000004000004000000000003000000000000000003030303030303030303030303030303030303030303030303030303030303000000030000000000000000000000000000000000000000000000000000000000000000000000000000030500000004040000000000000406060606060604000606060600000000000000000000000100030202020202020202020202020202020202020202020202020202020202020202020202020202`, img`
-            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 . . .
-            . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . 2 . . .
-            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 . . .
-            . . . . . . . . . 2 . . . . . . . . . . . . . . . . . . . . . . . . . 2 . . .
-            . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . .
-            2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-            `, [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile6,myTiles.tile5], TileScale.Sixteen))
+        tiles.setTilemap(tilemap`level_5`)
     } else if (level == 7) {
-        tiles.setTilemap(tiles.createTilemap(hex`250008000000000000000000000000000000000000000000000000000000050505050505050000000000000000000000000700000000000000000003030000000700000505050505050500000000000000000000030300000000000303030000030300000000000003030303030303000000000000000000030000000000000000000000000000000000000000000000000000000000000000000000030000000000000000000000000000000000000000000000000000000000000003030000000000000000000000000000000000000000000000000000000000000000000000030304000000000006000000000006000000000600000000000000060000000000000001000303020202020202020202020202020202020202020202020202020202020202020202020202`, img`
-            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . . . . . . . . . . 2 2 . . . . . . . . . . . . . . . . .
-            . . . . . . 2 2 . . . . . 2 2 2 . . 2 2 . . . . . . 2 2 2 2 2 2 2 . . . .
-            . . . . . 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-            `, [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile6,myTiles.tile5,myTiles.tile4,myTiles.tile7], TileScale.Sixteen))
+        tiles.setTilemap(tilemap`level_6`)
     }
     initializeLevel(level)
 }
@@ -1232,7 +1005,7 @@ scene.setBackgroundImage(img`
     9899999998999999989999999899999998999999989999999899999998999999989999999899999998999999989999999899999998999999989999999899999998999999999999999999999999999999
     8989898989898989898989898989898989898989898989898989898989898989898989898989898989898989898989898989898989898989898989898989898989898989898989898989898989898989
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
-`)
+    `)
 initializeAnimations()
 createPlayer(hero)
 levelCount = 8
@@ -1311,7 +1084,177 @@ game.onUpdate(function () {
         }
     }
 })
+```
 
+```jres
+{
+    "transparency16": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile0": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile1": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8AAAAAAAAAD/AAAAAAAA8P8A//////////AiMrK7u/3/8DIj0t3d/f/wMiLy//////AiIvIAAPD/AC8iDwAAAP8ALyIPAAAA8ADw8gAAAAAAAAAPAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile2": {
+        "data": "hwQQABAAAABvd2fm7u7u7n93Zu7u7u7ef2fm7u7e7u5/Zu7u7u7u7n9m3u7u7u7uP2fu3u7u7u5fY+bu7u7u7j93Zu7u7u7uf2bm7u7e7u5vZ+be7u7u3n9yZu7u7u7uLyRm7u7u7u5/Yubu7u7u7m9n5u7u7u7uf3dm7u3u7u5/d2fm7u7e7g==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile3": {
+        "data": "hwQQABAAAAD///////////8i8iIiLyL/LyLyIiIvIvIvIvIiIi9C8i8i8iIiLyTyLyLy//8vIvIvIvIiIi8i8i8i8iIiLyLyLyLyIiIvIvL///8iJP///y8i8kIkLyLyLyLyQiIvIvIvIvIiIi8i8i8i8iIiLyLy/yLyIiIvIv///////////w==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile4": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAP//AAAAAAD/d3f/AAAA8Hd3d3cPAAB/d3d3d/cAAC93Inci9wAAf3J3J3J3DwB/d3cnd3cPAH9ydydydw8AL3cidyJ3DwDwd3d3J3cPAAB/d3d3dw8AAPB/d3d3DwAAAPB3d/cAAAAAAP//DwAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile5": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAA/1VV/wAAAABfVVX1AAAA8FVVVVUPAADwVUREVQ8AAPBVRERVDwAA8FVVVVUPAAAAX1VV9QAAAAD/VVX/AAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile6": {
+        "data": "hwQQABAAAAAAAAAAAAAAAADw/w8AAAAAAO/d/v//DwDw7u7dvd37D/Du3t2t3br78O7d3c39qvrw7v3/zfyq+vDu3d3N/PoP8O7d3c28+g/w7t3dzby6+/Du3d3N/Kr68O79/838qvrw7t3dzf36DwDv3d2t3Q8AAPD/////AAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile7": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAP//DwAAAAAA8EQPAAAAAPBPRPQAAAAAT0RERA8AAPBURERE9AAA8FRERFT1AADwREVVVPQAAPBERERU9AAA8ERFVVT0AADwVEREVPUAAPBURERE9AAAAE9EREQPAAAA8E9E9AAAAAAA8EQPAAAAAAD//w8AAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "level": {
+        "id": "level",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAyMDAwMDgwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA1MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDUwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA2MDAwMDAwMDAwMDAwMDAwMDAwMDUwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAzMDAwMDA1MDAwMzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMzAwMDAwMDAwMDMwMDAwMDAwMzAwMDQwMDAwMDMwMDAwMDQwMDAzMDAwNDAwMDAwNDAwMDMwMDAxMDAwMDAwMDMwMjAyMDIwMjAzMDIwMjAyMDMwMjAyMDIwMjAzMDIwMjAyMDIwMzAyMDIwMjAyMDIwMjAzMDIwMjAyMDIwMjAzMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDIwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAyMDAwMjAwMjAwMDAwMDIwMDAwMjAwMDAwMjAyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMg==",
+        "tileset": [
+            "myTiles.tile0",
+            "myTiles.tile1",
+            "myTiles.tile2",
+            "myTiles.tile3",
+            "myTiles.tile4",
+            "myTiles.tile5",
+            "myTiles.tile6"
+        ]
+    },
+    "level_0": {
+        "id": "level_0",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAyMDAwMDgwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMzA1MDMwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDMwMzAwMDMwMDAwMDAwMDAwMDAwMzAwMDMwNTAzMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMzAzMDMwMDAzMDAwMDAwMDAwMzAwMDMwMDAzMDUwMzAwMDAwMDAwMDAwMDAwMDAwMDAwMDMwMDAwMDAwMDAzMDMwMzAzMDAwMzAwMDAwMzAwMDMwNTAzMDUwMzA1MDMwMDA1MDUwNTA1MDUwNTA1MDUwNTAzMDYwMDAwMDAwMDAwMDAwNDAwMDMwMDAwMDMwMDA0MDAwMDAwMDQwNTAzMDAwMDAwMDAwMDAwMDAwMDAxMDAwMzAyMDIwMjAyMDIwMjAyMDIwMjAzMDIwMjAzMDIwMjAyMDIwMjAyMDIwMzAyMDIwMjAyMDIwMjAyMDIwMjAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMjAwMDAwMDAwMDAwMDAwMDAwMjAwMjAyMDAwMDIwMjAyMDAwMDAwMDAwMDAwMDAwMDAyMjAyMDIwMDIwMjAyMDIwMDAwMDAwMDAwMDAyMDAyMDIyMDIwMjIwMjAyMDIwMjAwMDAwMDAwMDAwMDIwMDAwMDAwMDAyMjAwMDAwMDAyMDAwMDAwMDAwMDAyMjIyMjIyMjIyMDIyMDIyMjIyMjIyMjIyMjIyMjIyMg==",
+        "tileset": [
+            "myTiles.tile0",
+            "myTiles.tile1",
+            "myTiles.tile2",
+            "myTiles.tile3",
+            "myTiles.tile4",
+            "myTiles.tile5",
+            "myTiles.tile6"
+        ]
+    },
+    "level_1": {
+        "id": "level_1",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAyMDAwMDgwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDYwMDAwMDAwMDAwMDAwMDAwMDYwNjA2MDYwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMjAyMDIwMjAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAyMDYwMzAzMDMwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDMwMzAzMDAwMDAwMDAwMDAyMDAwMDAyMDAwMjAwMDMwMzAzMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAzMDMwMzAwMDQwMDAyMDAwMjAwMDAwMDAwMDIwMDAzMDMwMzAwMDAwMDAwMDAwMDAwMDAwMDA1MDAwMDAwMDAwMzAzMDMwMTAxMDEwMjAxMDIwMTAxMDEwMTAyMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIyMjIyMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDIwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDIwMDAwMDAyMDAwMDAwMDAwMDAwMDAwMDAwMDAyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMg==",
+        "tileset": [
+            "myTiles.tile0",
+            "myTiles.tile2",
+            "myTiles.tile3",
+            "myTiles.tile5",
+            "myTiles.tile6",
+            "myTiles.tile1",
+            "myTiles.tile7"
+        ]
+    },
+    "level_2": {
+        "id": "level_2",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAyMDAwMDgwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMzAwMDAwMDA3MDAwMDAwMDcwMDAwMDcwMDA3MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDMwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMzAwMDAwMDAzMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMzAwMDMwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAwMDAwMDAwMDMwMDAwMDUwMDAwMDUwMDA1MDAwMDA1MDAwNTAwMDAwNTAwMDUwMDAwMDAwNTAwMDAwMDA1MDAwMDAwMDYwMzAzMDEwMDAwMDQwMDA0MDAwMDAwMDQwMDAwMDAwMDAwMDQwMDAwMDAwNDAwMDAwMDA0MDAwMDAwMDMwMjAyMDIwMzAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAzMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIwMjAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMg==",
+        "tileset": [
+            "myTiles.tile0",
+            "myTiles.tile1",
+            "myTiles.tile2",
+            "myTiles.tile3",
+            "myTiles.tile4",
+            "myTiles.tile5",
+            "myTiles.tile6",
+            "myTiles.tile7"
+        ]
+    },
+    "level_3": {
+        "id": "level_3",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAyMDAwMDgwMDAwMDcwNzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA1MDUwNTAwMDAwMDAwMDAwMDAwMDAwMDAwMDUwMDA1MDAwMDAwMDAwMDA1MDUwMDAwMDMwMzAzMDMwMDAzMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDUwNTA1MDAwMDAwMDUwMzA1MDUwNTA1MDAwMzAwMDAwMDAwMDAwMDAwMDAwMDAwMDYwMDAzMDQwNDA0MDQwNDA0MDMwNDA0MDQwNDA0MDMwNDA0MDQwNDA0MDMwMDAwMDAwMDAwMDAwMTAwMDAwMjAyMDIwMzAyMDIwMjAyMDIwMjAzMDIwMjAyMDIwMjAzMDIwMjAyMDIwMjAzMDIwMjAyMDIwMjAyMDIwMjAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAyMjAyMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMjAwMDAwMDAwMDAyMDAwMDAwMDAyMDAwMDAyMDAwMDAyMDAwMDAwMDAyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMg==",
+        "tileset": [
+            "myTiles.tile0",
+            "myTiles.tile1",
+            "myTiles.tile2",
+            "myTiles.tile3",
+            "myTiles.tile4",
+            "myTiles.tile5",
+            "myTiles.tile6",
+            "myTiles.tile7"
+        ]
+    },
+    "level_4": {
+        "id": "level_4",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAyMDAwMDgwMDAwMDcwNzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwNzA3MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwNTA1MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDUwMzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA1MDUwMDAzMDMwMDAwMDAwMDAwMDAwMDAwMDUwNTA1MDUwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDUwMDA1MDAwMzAzMDAwMDA1MDUwMDAwMDMwMzAzMDMwMDAwMDAwMDAwMDAwMDAwMDAwMDAzMDMwMDAwMDAwMDAzMDAwMzAwMDUwNTA1MDAwMDAwMDUwMzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMzAzMDYwMDAzMDAwMzA1MDMwNDAwMDMwNDAwMDAwMDAzMDMwMDA0MDAwMDA0MDAwMDA0MDAwMDAwMDAwMTAwMDMwMzAyMDIwMzAyMDMwMjAzMDIwMjAzMDIwMjAyMDIwMzAzMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAzMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDIwMDAwMjAyMjAyMDAwMDAwMDAyMDAyMDAyMDIwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDIwMDIyMDIwMjAwMDAyMDAyMDAyMDAwMDAwMDAwMDAwMjAyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMg==",
+        "tileset": [
+            "myTiles.tile0",
+            "myTiles.tile1",
+            "myTiles.tile2",
+            "myTiles.tile3",
+            "myTiles.tile4",
+            "myTiles.tile5",
+            "myTiles.tile6",
+            "myTiles.tile7"
+        ]
+    },
+    "level_5": {
+        "id": "level_5",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAyNzAwMDgwMDAwMDAwMDAwMDYwNjA2MDYwNjA2MDYwNjA2MDYwNjA2MDYwNjA2MDYwNjA2MDYwNjA2MDYwNjA2MDYwNjA2MDYwNjAwMDAwMzAwMDAwMDAwMDAwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAwMDAwMzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMzAwMDAwMDAwMDAwMDAwMDAwNjA2MDYwNjAzMDQwMDAwMDAwMDAwMDQwMDAwMDAwNDAwMDAwNDAwMDAwNDAwMDAwNDAwMDAwMDAwMDAwMzAwMDAwMDAwMDAwMDAwMDAwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAwMDAwMDAzMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAzMDUwMDAwMDAwNDA0MDAwMDAwMDAwMDAwMDQwNjA2MDYwNjA2MDYwNDAwMDYwNjA2MDYwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMDAzMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDAyMDIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDAwMDAwMDAwMDAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAyMDIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMg==",
+        "tileset": [
+            "myTiles.tile0",
+            "myTiles.tile1",
+            "myTiles.tile2",
+            "myTiles.tile3",
+            "myTiles.tile4",
+            "myTiles.tile6",
+            "myTiles.tile5"
+        ]
+    },
+    "level_6": {
+        "id": "level_6",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAyNTAwMDgwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwNTA1MDUwNTA1MDUwNTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA3MDAwMDAwMDAwMDAwMDAwMDAwMDMwMzAwMDAwMDA3MDAwMDA1MDUwNTA1MDUwNTA1MDAwMDAwMDAwMDAwMDAwMDAwMDAwMzAzMDAwMDAwMDAwMDAzMDMwMzAwMDAwMzAzMDAwMDAwMDAwMDAwMDMwMzAzMDMwMzAzMDMwMDAwMDAwMDAwMDAwMDAwMDAwMzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDMwMzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMzAzMDQwMDAwMDAwMDAwMDYwMDAwMDAwMDAwMDYwMDAwMDAwMDA2MDAwMDAwMDAwMDAwMDAwNjAwMDAwMDAwMDAwMDAwMDEwMDAzMDMwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIyMDAwMDIwMjIwMDIyMDAwMDAwMjIyMjIyMDIwMDAwMDAwMDAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMg==",
+        "tileset": [
+            "myTiles.tile0",
+            "myTiles.tile1",
+            "myTiles.tile2",
+            "myTiles.tile3",
+            "myTiles.tile6",
+            "myTiles.tile5",
+            "myTiles.tile4",
+            "myTiles.tile7"
+        ]
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myTiles"
+    }
+}
 ```
 
 ```package
