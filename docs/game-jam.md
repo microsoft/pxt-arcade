@@ -17,7 +17,7 @@ Check out the winners of the 3rd Official Microsoft MakeCode Game Jam, featuring
         "name": "Garden Crop Duster",
         "description": "Fly a biplane over fields and bomb them with fertilizer! Don't stall or crash.",
         "author": "jacob",
-        "url": "https://jacobcarpenter.github.io/garden-crop-duster/",
+        "url": "https://arcade.makecode.com/39914-74690-91645-64973",
         "cardType": "sharedExample",
         "imageUrl": "https://pxt.azureedge.net/api/56840-41664-03413-13147/thumb"
     },

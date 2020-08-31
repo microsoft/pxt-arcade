@@ -1,4 +1,4 @@
-# Wonder Woman Maze
+# Chaos Maze
 
 ## Introduction @unplugged
 
@@ -355,6 +355,6 @@ info.startCountdown(20)
 
 ## Finish current tutorial or add artifacts @fullscreen
 
-Congratulations on completing your Wonder Woman Chaos Maze! Click on [**this link**](#recipe:/recipes/wonder-woman-1984/artifact) to move to the next tutorial where you can add items for Wonder Woman to collect! Otherwise, click the **Finish** button.
+Congratulations on completing your Chaos Maze inspired by WONDER WOMAN 1984! Click on [**this link**](#recipe:/recipes/wonder-woman-1984/artifact) to move to the next tutorial where you can add items for Wonder Woman to collect! Otherwise, click the **Finish** button.
 
 ![Add Artifacts](/static/recipes/wonder-woman-1984/artifact-preview.png)
