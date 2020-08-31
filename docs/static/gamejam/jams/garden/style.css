@@ -1,0 +1,36 @@
+body {
+    background: #a9c8c3;
+}
+
+/**** ACTION BUTTONS ****/
+
+.button {
+    color: #fff;
+    background-color: #638599;
+}
+
+.button:hover {
+    color: #fff;
+    background-color: #bed2d2;
+}
+
+/**** STREAM SCHEDULE ****/
+
+#schedule .title {
+    color: #fff;
+    background-color: #638599;
+}
+
+#schedule .title .ics {
+    color: #fff;
+}
+
+#schedule .title .ics:hover {
+    color: #a9c8c3;
+}
+
+/**** FOOTER ****/
+
+.footer .ui.link.list .item {
+    color: #fff;
+}
