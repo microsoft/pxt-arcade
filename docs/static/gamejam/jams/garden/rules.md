@@ -5,7 +5,7 @@ We're thrilled to announce the winners of the MakeCode Arcade Garden Jam! Before
 ## First Place: Potato
 Click the large potato to earn points. Spend your points to develop your garden. Like a true garden, this game is a test of time and patience, and bees help a lot!
 
-| [![potato](/static/gamejam/img/potato.png)](https://arcade.makecode.com/42885-92487-13042-52240) |
+| [![potato](/static/gamejam/jams/garden/assets/potato.png)](https://arcade.makecode.com/42885-92487-13042-52240) |
 | -- |
 | [Play it here!](https://arcade.makecode.com/42885-92487-13042-52240) |
 
@@ -25,7 +25,7 @@ Creativity | Adherence to Theme | Correctness of Code
 ## Second Place: Garden Crop Duster
 Fly a biplane over fields and bomb them with fertilizer! Don't stall or crash. Controls are difficult at first, but stick with it! (Note: This game was made in Arcade beta.)
 
-| [![Garden Crop Duster screenshot](/static/gamejam/img/cropduster.png)](https://jacobcarpenter.github.io/garden-crop-duster/) |
+| [![Garden Crop Duster screenshot](/static/gamejam/jams/garden/assets/cropduster.png)](https://jacobcarpenter.github.io/garden-crop-duster/) |
 | -- |
 | [Play it here!](https://jacobcarpenter.github.io/garden-crop-duster/) |
 
@@ -45,7 +45,7 @@ Creativity | Adherence to Theme | Correctness of Code
 ## Third Place: Snail Hike
 Use your puzzle-solving skills to help the snails get to the exit! Snail Hike is a beautiful puzzle game with interesting platformer mechanics incorporated.
 
-| [![Snail Hike screenshot](/static/gamejam/img/snailhike.png)](https://arcade.makecode.com/27830-69912-67539-85378) |
+| [![Snail Hike screenshot](/static/gamejam/jams/garden/assets/snailhike.png)](https://arcade.makecode.com/27830-69912-67539-85378) |
 | -- |
 | [Play it here!](https://arcade.makecode.com/27830-69912-67539-85378) |
 
