@@ -11,10 +11,11 @@
 		<meta name="twitter:site" content="@MsMakeCode">
 		<meta name="twitter:creator" content="@MsMakeCode">
 		<meta name="twitter:description" content="A MakeCode Arcade game jam featuring games about gardening or in a garden-like environment.">
-		<meta name="twitter:image" content="/static/gamejam/img/preview.png">
+		<meta name="twitter:image" content="/static/gamejam/jams/garden/assets/preview.png">
 		<meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
 		<link rel="stylesheet" href="https://pxt.azureedge.net/blob/2163189fd5e35c0981ed55318415582a7c9aeb12/doccdn/semantic.css" type="text/css">
-		<link rel="stylesheet" href="/static/gamejam/gamejam.css">
+		<link rel="stylesheet" href="/static/gamejam/lib/gamejam.css">
+		<link rel="stylesheet" href="/static/gamejam/jams/garden/style.css">
 		<script type="text/javascript">
 			window.pxtSkipAnalyticsCookie = true;
 		</script>
@@ -22,7 +23,7 @@
 
 <body>
 	<div class="hero">
-		<div class="banner"><img class="top" src="/static/gamejam/img/banner.png" /></div>
+		<div class="banner"><img class="top" src="/static/gamejam/jams/garden/assets/banner.png" /></div>
 	</div>
 	<div class="content winners">
 		<h1>MakeCode Arcade Game Jam</h1>
@@ -38,7 +39,7 @@
 		</div>
 		<div class="segment" id="events">
 			<h2>Events</h2>
-			<a id="mixer" href="https://mixer.com/MakeCode" target="_blank" rel="noopener noreferrer" title="Watch on Mixer">Watch on <img src="/static/gamejam/img/mixer.png"></a>
+			<a id="stream" href="https://twitch.tv/MSMakeCode" target="_blank" rel="noopener noreferrer" title="Watch on Twitch">Watch on <img src="/static/gamejam/img/twitch.png"></a>
 			<p>Weekly sessions on game design and implementation from professional game developers!</p>
 			<div id="schedule"></div>
 		</div>
@@ -59,7 +60,7 @@
 			<div id="gallery"></div>
 		</div>
 	</div>
-	<div class="banner"><img class="bottom" src="/static/gamejam/img/footer.png" /></div>
+	<div class="banner"><img class="bottom" src="/static/gamejam/jams/garden/assets/footer.png" /></div>
 
     <!-- @include tracking.html -->
     <!-- @include tickevent.html -->
@@ -69,7 +70,10 @@
 		src="https://pxt.azureedge.net/blob/555c1dc1d9da18154cb48388d5e494f3f16119f8/marked/marked.min.js"></script>
 	<script type="text/javascript"
 		src="https://pxt.azureedge.net/blob/3c168a772b9e4cbf3ecb648148cfb2f966e8a578/pxtembed.js"></script>
-	<script src="/static/gamejam/gamejam.js"></script>
+	<script src="/static/gamejam/lib/gamejam.js"></script>
+	<script>
+		getInfo("/static/gamejam/jams/garden/info.json");
+	</script>
 
 </body>
 
