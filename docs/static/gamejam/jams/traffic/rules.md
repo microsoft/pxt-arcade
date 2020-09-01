@@ -10,7 +10,7 @@ You can interpret "traffic" however you want, but someone playing your game shou
 
 ROB G's Traffic School | 3D Race | Wheely Fast Game (FEAT. Todd)
 -- | --
-![ROB G's Traffic School]() | ![3D Race]() | ![Wheely Fast Game]()
+![ROB G's Traffic School](/static/gamejam/jams/traffic/assets/demo-1.gif) | ![3D Race](/static/gamejam/jams/traffic/assets/demo-2.gif) | ![Wheely Fast Game](/static/gamejam/jams/traffic/assets/demo-3.gif)
 
 ## Duration
 **Start:** September 14, 2020
