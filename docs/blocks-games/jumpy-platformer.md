@@ -21,6 +21,7 @@ namespace SpriteKind {
     export const Coin = SpriteKind.create()
     export const Flier = SpriteKind.create()
 }
+
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Bumper, function (sprite, otherSprite) {
     if (sprite.vy > 0 && !(sprite.isHittingTile(CollisionDirection.Bottom)) || sprite.y < otherSprite.top) {
         otherSprite.destroy(effects.ashes, 250)
