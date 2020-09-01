@@ -18,6 +18,12 @@ info.setLife(3)
 
 Drag an ``||sprites:on overlaps||`` block into the workspace. Change the second kind to ``||sprites:Enemy||`` in the dropdown. If you already have a ``||sprites:on overlaps||`` block in your workspace for the ``||sprites:Player||`` and ``||sprites:Enemy||`` sprites, use that instead.
 
+```blocks
+info.setLife(3)
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+})
+```
+
 ## Step 3
 
 Place a ``||sprites:destroy sprite||`` block inside the ``||sprites:on overlaps||`` event. Drag the
