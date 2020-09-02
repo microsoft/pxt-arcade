@@ -39,5 +39,8 @@
         "Hardware": "hardware",
         "How to Make a Game Videos": "how-to-make-a-game",
         "John Park's Workshop": "john-parks-workshop"
+    },
+    "electronManifest": {
+        "latest": "v1.2.6"
     }
 }
