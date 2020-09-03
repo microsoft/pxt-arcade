@@ -1,6 +1,6 @@
 # Caterpillar
 
-Your caterpiller can grow by getting leaves for nourishment. Guide the caterpiller's movement toward a leaf. Be careful though, if it touches the side of the screen it won't live to be a butterfly.
+Your caterpiller can grow by nibbling leaves for nourishment. Guide the caterpiller's movement toward a leaf. Be careful though, if it touches the side of the screen it won't live to be a butterfly.
 
 ```typescript
 const NEXT_SECTION_KEY = "__child_node";
@@ -32,35 +32,7 @@ caterpillarHead.top = 12 * size;
 caterpillarHead.data = {};
 let currentLeaf: Sprite;
 
-scene.setTileMap(img`
-    6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6
-`);
-
-scene.setTile(0x6, img`
-    7 6 7 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 7 6 6 6 6 6 6 6 6 6 6
-    6 6 6 7 6 7 7 6 6 6 6 6 7 6 6 6
-    6 6 8 7 7 6 7 6 7 7 6 6 6 6 6 6
-    6 6 6 8 7 6 6 7 7 8 6 6 6 6 6 6
-    6 6 6 6 8 6 6 7 8 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 7 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 7 7 6 6 6
-    6 6 6 6 6 6 6 6 6 6 7 7 8 6 6 6
-    6 6 6 6 6 6 6 6 7 7 6 8 6 6 6 6
-    6 6 6 6 6 6 6 6 6 7 7 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 7
-    6 6 7 6 6 6 6 6 6 6 6 6 6 6 6 7
-`);
+tiles.setTilemap(tilemap`level`);
 
 const leafImage = img`
     . . . . . f f 7
@@ -264,6 +236,31 @@ game.onUpdateInterval(500, function () {
 });
 ```
 
-```package
-color-coded-tilemap
+```jres
+{
+    "transparency16": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile1": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "level": {
+        "id": "level",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAxMDAwMTAwMDAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA==",
+        "tileset": [
+            "myTiles.transparency16",
+            "sprites.castle.tileDarkGrass1"
+        ]
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myTiles"
+    }
+}
 ```
