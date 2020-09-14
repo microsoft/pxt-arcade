@@ -195,7 +195,6 @@
                         "tilemap\\s*\\.\\s*screenCoordinateToTile": "tiles.screenCoordinateToTile",
                         "tilemap\\s*\\.\\s*tileCoordinateToScreen": "tiles.tileCoordinateToScreen",
                         "tilemap\\s*\\.\\s*centeredTileCoordinateToScreen": "tiles.centeredTileCoordinateToScreen",
-
                         "tilemap\\s*\\.\\s*OVERWORLD_MAP_ID": "tiles.OVERWORLD_MAP_ID",
                         "tilemap\\s*\\.\\s*MAP_LOADED_EVENT": "tiles.MAP_LOADED_EVENT",
                         "tilemap\\s*\\.\\s*WorldMap": "tiles.WorldMap",
@@ -507,7 +506,8 @@
             "experimentalHw",
             "recipes",
             "tutorialBlocksDiff",
-            "blocksErrorList"
+            "blocksErrorList",
+            "identity"
         ],
         "blocksCollapsing": true,
         "errorList": true,
