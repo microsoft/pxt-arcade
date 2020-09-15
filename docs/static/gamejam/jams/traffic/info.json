@@ -6,5 +6,31 @@
     },
     "start": "2020-09-14 00:00:00 GMT-0700",
     "end": "2020-010-05 00:00:00 GMT-0700",
-    "featured": []
+    "featured": [
+        {
+            "id": "71929-42418-05612-32436",
+            "title": "Split cars",
+            "author": "LCProCODER"
+        },
+        {
+            "id": "02340-91837-87735-14270",
+            "title": "Traffic Jam",
+            "author": "LCProCODER"
+        },
+        {
+            "id": "47207-15180-38494-73088",
+            "title": "Two player car racing",
+            "author": "Dreadmask197"
+        },
+        {
+            "id": "98855-73620-47488-77207",
+            "title": "Traffic rush",
+            "author": "Dreadmask197"
+        },
+        {
+            "id": "59599-88181-63191-85393",
+            "title": "Dodge the Car!",
+            "author": "Purna079"
+        }
+    ]
 }
