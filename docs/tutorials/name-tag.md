@@ -277,7 +277,7 @@ scene.setBackgroundImage(img`
 effects.confetti.startScreenEffect()
 ```
 
-## Step 4 @unplugged
+## Step 4
 
 Press ``||Download||`` and transfer your name tag to your device!
 

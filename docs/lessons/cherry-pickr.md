@@ -42,195 +42,7 @@ To set the background, click on ``||scene:Scene||`` in the Toolbox and drag the 
 
 ```blocks
 game.splash("Cherry Pickr")
-namespace myTiles {
-    //% blockIdentity=images._tile
-    export const tile0 = img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `
-    //% blockIdentity=images._tile
-    export const tile1 = img`
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    `
-    //% blockIdentity=images._tile
-    export const tile2 = img`
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    `
-    //% blockIdentity=images._tile
-    export const tile3 = img`
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    `
-    //% blockIdentity=images._tile
-    export const tile4 = img`
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    `
-    //% blockIdentity=images._tile
-    export const tile5 = img`
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-    `
-    //% blockIdentity=images._tile
-    export const tile6 = img`
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-    `
-    //% blockIdentity=images._tile
-    export const tile7 = img`
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    `
-    //% blockIdentity=images._tile
-    export const tile8 = img`
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-    `
-}
-tiles.setTilemap(tiles.createTilemap(
-    hex`0a0008000101010101010101010102020202020202020202030303030303030303030404040404040404040405050505050505050505060606060606060606060707070707070707070708080808080808080808`,
-    img`
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-    `,
-    [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8],
-    TileScale.Sixteen
-))
-
+tiles.setTilemap(tilemap`level`)
 ```
 
 ## Part Three: Create and Move the Player
@@ -244,205 +56,19 @@ Next, draw what you want the player to look like. Click the square grey box insi
 ```blocks
 let mySprite: Sprite = null
 game.splash("Cherry Pickr")
-namespace myTiles {
-    //% blockIdentity=images._tile
-    export const tile0 = img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `
-    //% blockIdentity=images._tile
-    export const tile1 = img`
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    `
-    //% blockIdentity=images._tile
-    export const tile2 = img`
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    `
-    //% blockIdentity=images._tile
-    export const tile3 = img`
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    `
-    //% blockIdentity=images._tile
-    export const tile4 = img`
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    `
-    //% blockIdentity=images._tile
-    export const tile5 = img`
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-    `
-    //% blockIdentity=images._tile
-    export const tile6 = img`
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-    `
-    //% blockIdentity=images._tile
-    export const tile7 = img`
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    `
-    //% blockIdentity=images._tile
-    export const tile8 = img`
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-    `
-}
-tiles.setTilemap(tiles.createTilemap(
-    hex`0a0008000101010101010101010102020202020202020202030303030303030303030404040404040404040405050505050505050505060606060606060606060707070707070707070708080808080808080808`,
-    img`
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-    `,
-    [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8],
-    TileScale.Sixteen
-))
-
+tiles.setTilemap(tilemap`level`)
 mySprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player)
 ```
 
 OK, We've created our player!
 
-## ~hint
+### ~hint
+
+#### Renaming the sprite variable
 
 We can rename our character from ``mySprite`` to ``player`` (or anything else that you'd like) by clicking the drop down anywhere you see the ``mySprite`` variable and selecting ``Rename variable...``. If you change the variable's name, keep that in mind as you go through the rest of this lesson. Each time you see ``mySprite``, use your variable name instead.
 
-## ~
+### ~
 
 ### Moving
 
@@ -456,195 +82,7 @@ To make the player move faster, set the ``vx`` and ``vy`` to `150`.
 ```blocks
 let mySprite: Sprite = null
 game.splash("Cherry Pickr")
-namespace myTiles {
-    //% blockIdentity=images._tile
-    export const tile0 = img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `
-    //% blockIdentity=images._tile
-    export const tile1 = img`
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    `
-    //% blockIdentity=images._tile
-    export const tile2 = img`
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    `
-    //% blockIdentity=images._tile
-    export const tile3 = img`
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    `
-    //% blockIdentity=images._tile
-    export const tile4 = img`
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    `
-    //% blockIdentity=images._tile
-    export const tile5 = img`
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-    `
-    //% blockIdentity=images._tile
-    export const tile6 = img`
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-    `
-    //% blockIdentity=images._tile
-    export const tile7 = img`
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    `
-    //% blockIdentity=images._tile
-    export const tile8 = img`
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-    `
-}
-tiles.setTilemap(tiles.createTilemap(
-    hex`0a0008000101010101010101010102020202020202020202030303030303030303030404040404040404040405050505050505050505060606060606060606060707070707070707070708080808080808080808`,
-    img`
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-    `,
-    [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8],
-    TileScale.Sixteen
-))
-
+tiles.setTilemap(tilemap`level`)
 mySprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player)
 controller.moveSprite(mySprite, 150, 150)
 scene.cameraFollowSprite(mySprite)
@@ -700,195 +138,7 @@ The game simulator will automatically show the timer and score at the top of the
 ```blocks
 let mySprite: Sprite = null
 game.splash("Cherry Pickr")
-namespace myTiles {
-    //% blockIdentity=images._tile
-    export const tile0 = img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `
-    //% blockIdentity=images._tile
-    export const tile1 = img`
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    `
-    //% blockIdentity=images._tile
-    export const tile2 = img`
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    `
-    //% blockIdentity=images._tile
-    export const tile3 = img`
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    `
-    //% blockIdentity=images._tile
-    export const tile4 = img`
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    `
-    //% blockIdentity=images._tile
-    export const tile5 = img`
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-    `
-    //% blockIdentity=images._tile
-    export const tile6 = img`
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-    `
-    //% blockIdentity=images._tile
-    export const tile7 = img`
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    `
-    //% blockIdentity=images._tile
-    export const tile8 = img`
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-    `
-}
-tiles.setTilemap(tiles.createTilemap(
-    hex`0a0008000101010101010101010102020202020202020202030303030303030303030404040404040404040405050505050505050505060606060606060606060707070707070707070708080808080808080808`,
-    img`
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-    `,
-    [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8],
-    TileScale.Sixteen
-))
-
+tiles.setTilemap(tilemap`level`)
 mySprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player)
 controller.moveSprite(mySprite, 150, 150)
 scene.cameraFollowSprite(mySprite)
@@ -922,195 +172,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
     otherSprite.destroy()
 })
 game.splash("Cherry Pickr")
-namespace myTiles {
-    //% blockIdentity=images._tile
-    export const tile0 = img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `
-    //% blockIdentity=images._tile
-    export const tile1 = img`
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    `
-    //% blockIdentity=images._tile
-    export const tile2 = img`
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    `
-    //% blockIdentity=images._tile
-    export const tile3 = img`
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    `
-    //% blockIdentity=images._tile
-    export const tile4 = img`
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    `
-    //% blockIdentity=images._tile
-    export const tile5 = img`
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-    `
-    //% blockIdentity=images._tile
-    export const tile6 = img`
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-    `
-    //% blockIdentity=images._tile
-    export const tile7 = img`
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    `
-    //% blockIdentity=images._tile
-    export const tile8 = img`
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-        c c c c c c c c c c c c c c c c
-    `
-}
-tiles.setTilemap(tiles.createTilemap(
-    hex`0a0008000101010101010101010102020202020202020202030303030303030303030404040404040404040405050505050505050505060606060606060606060707070707070707070708080808080808080808`,
-    img`
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-    `,
-    [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8],
-    TileScale.Sixteen
-))
-
+tiles.setTilemap(tilemap`level`)
 mySprite = sprites.create(sprites.castle.princessFront0, SpriteKind.Player)
 controller.moveSprite(mySprite, 150, 150)
 scene.cameraFollowSprite(mySprite)
@@ -1126,8 +188,86 @@ And now we have a fully functioning game!
 
 ![Working Game](/static/lessons/cherry-pickr/workinggame.gif)
 
-## ~hint
+### ~hint
+
+#### Local variables
 
 The variables ``||variables:sprite||`` and ``||variables:otherSprite||`` are called _local variables_. They are created when the block for the collision runs, and they can only be used inside of that block. When that block runs, the ``||variables:sprite||`` variable holds the ``||sprites:Player||`` sprite involved in the collision, and the ``||variables:otherSprite||`` variable holds the ``||sprites:Food||`` sprite.
 
-## ~
+### ~
+
+```jres
+{
+    "transparency16": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile0": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile1": {
+        "data": "hwQQABAAAABmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZg==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile2": {
+        "data": "hwQQABAAAAAzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMw==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile3": {
+        "data": "hwQQABAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVQ==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile4": {
+        "data": "hwQQABAAAAB3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3dw==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile5": {
+        "data": "hwQQABAAAACZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmQ==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile6": {
+        "data": "hwQQABAAAABERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile7": {
+        "data": "hwQQABAAAAAiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIg==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile8": {
+        "data": "hwQQABAAAADMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "level": {
+        "id": "level",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAwYTAwMDgwMDAxMDEwMTAxMDEwMTAxMDEwMTAxMDIwMjAyMDIwMjAyMDIwMjAyMDIwMzAzMDMwMzAzMDMwMzAzMDMwMzA0MDQwNDA0MDQwNDA0MDQwNDA0MDUwNTA1MDUwNTA1MDUwNTA1MDUwNjA2MDYwNjA2MDYwNjA2MDYwNjA3MDcwNzA3MDcwNzA3MDcwNzA3MDgwODA4MDgwODA4MDgwODA4MDgwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA==",
+        "tileset": [
+            "myTiles.tile0",
+            "myTiles.tile1",
+            "myTiles.tile2",
+            "myTiles.tile3",
+            "myTiles.tile4",
+            "myTiles.tile5",
+            "myTiles.tile6",
+            "myTiles.tile7",
+            "myTiles.tile8"
+        ]
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myTiles"
+    }
+}
+```
