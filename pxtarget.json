@@ -223,7 +223,7 @@
     "compileService": {
         "buildEngine": "codal",
         "githubCorePackage": "lancaster-university/codal",
-        "gittag": "v0.6.3",
+        "gittag": "v0.8.0",
         "dockerImage": "pext/yotta:latest",
         "codalTarget": {
             "branches": {}
@@ -234,6 +234,7 @@
             "compile": {
                 "hasHex": true,
                 "openocdScript": "source [find interface/stlink-v2.cfg]; source [find target/stm32f4x.cfg]",
+                "flashEnd": 524288,
                 "uf2Family": "0x57755a57"
             },
             "compileService": {
@@ -274,6 +275,7 @@
                 "hasHex": true,
                 "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/nrf52.cfg]",
                 "webUSB": false,
+                "flashEnd": 1007616,
                 "uf2Family": "0xada52840"
             },
             "compileService": {
@@ -301,6 +303,7 @@
                 "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/nrf52.cfg]",
                 "webUSB": false,
                 "useUF2": false,
+                "flashEnd": 524288,
                 "deployDrives": ".*",
                 "deployFileMarker": "DETAILS.TXT"
             },
@@ -413,6 +416,7 @@
         "logoUrl": "https://github.com/microsoft/pxt-arcade",
         "logo": "./static/logo.svg",
         "docsLogo": "./static/logo.svg",
+        "cardLogo": "./static/logo.svg",
         "portraitLogo": "./static/logo.svg",
         "footerLogo": "./static/logo.svg",
         "organization": "Microsoft MakeCode",

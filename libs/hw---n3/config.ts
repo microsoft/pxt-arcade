@@ -1,8 +1,5 @@
 // there's no UF2 bootloader for 52833 yet, so we specify example configuration here
 namespace config {
-    export const PIN_BTN_A = DAL.P0_14
-    export const PIN_BTN_B = DAL.P0_23
-
     export const PIN_BTNMX_LATCH = DAL.P0_9
     export const PIN_BTNMX_CLOCK = DAL.P1_0
     export const PIN_BTNMX_DATA = DAL.P0_1
@@ -12,7 +9,9 @@ namespace config {
     export const PIN_BTN_UP = 1051
     export const PIN_BTN_DOWN = 1052
     export const PIN_BTN_RIGHT = 1053
-    export const PIN_BTN_MENU = 1054
+    export const PIN_BTN_A = 1054
+    export const PIN_BTN_B = 1055
+    export const PIN_BTN_MENU = 1056
 
     export const PIN_JACK_SND = DAL.P0_0
 

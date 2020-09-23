@@ -165,6 +165,17 @@ DISPLAY_CFG1 = 0x0010ff
 DISPLAY_CFG2 = 0x1000004
 ```
 
+Note that the ILI9341 have 4 configuration pins IM3, IM2, IM1, IM0.
+The following configurations are supported:
+
+| IM3 | IM2 | IM1 | IM0 | Connection       |
+| --- | --- | --- | --- | ---------------- |
+|  0  |  0  |  0  |  0  | D[7:0]   - D7:D0 |
+|  1  |  0  |  0  |  1  | D[17:10] - D7:D0 |
+
+That is, in the first config connect pin D[7] to PA5, D[6] to PA4, etc.
+In the second config, connect D[17] to PA5, D[16] to PA4, etc.
+
 ### Buttons #buttons
 
 We require a total of 8 buttons: `left`, `up`, `right`, `down` (in a directional pad or d-pad layout), `A`, `B`, `Menu` and `Reset`.

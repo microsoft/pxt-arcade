@@ -8,7 +8,9 @@
             "jwunderl/pxt-status-bar",
             "microsoft/pxt-settings-blocks",
             "microsoft/arcade-sprite-data",
-            "microsoft/arcade-timers"
+            "microsoft/arcade-timers",
+            "microsoft/arcade-text",
+            "microsoft/pxt-tilemaps"
         ],
         "preferredRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
@@ -18,7 +20,9 @@
             "jwunderl/pxt-status-bar",
             "microsoft/pxt-settings-blocks",
             "microsoft/arcade-sprite-data",
-            "microsoft/arcade-timers"
+            "microsoft/arcade-timers",
+            "microsoft/arcade-text",
+            "microsoft/pxt-tilemaps"
         ],
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
@@ -41,5 +45,8 @@
         "Hardware": "hardware",
         "How to Make a Game Videos": "how-to-make-a-game",
         "John Park's Workshop": "john-parks-workshop"
+    },
+    "electronManifest": {
+        "latest": "v1.2.7"
     }
 }
