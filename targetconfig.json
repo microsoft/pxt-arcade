@@ -8,6 +8,7 @@
             "jwunderl/pxt-status-bar",
             "microsoft/pxt-settings-blocks",
             "microsoft/arcade-sprite-data",
+            "microsoft/arcade-timers",
             "microsoft/arcade-text",
             "microsoft/pxt-tilemaps"
         ],
@@ -19,6 +20,7 @@
             "jwunderl/pxt-status-bar",
             "microsoft/pxt-settings-blocks",
             "microsoft/arcade-sprite-data",
+            "microsoft/arcade-timers",
             "microsoft/arcade-text",
             "microsoft/pxt-tilemaps"
         ],
