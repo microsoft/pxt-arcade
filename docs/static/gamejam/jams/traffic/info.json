@@ -1,0 +1,66 @@
+
+{
+    "rules": {
+        "path": "/static/gamejam/jams/traffic/rules.md",
+        "tipsId": "join-the-club"
+    },
+    "start": "2020-09-14 00:00:00 GMT-0700",
+    "end": "2020-010-05 00:00:00 GMT-0700",
+    "featured": [
+        {
+            "id": "71929-42418-05612-32436",
+            "title": "Split cars",
+            "author": "LCProCODER"
+        },
+        {
+            "id": "02340-91837-87735-14270",
+            "title": "Traffic Jam",
+            "author": "LCProCODER"
+        },
+        {
+            "id": "47207-15180-38494-73088",
+            "title": "Two player car racing",
+            "author": "Dreadmask197"
+        },
+        {
+            "id": "98855-73620-47488-77207",
+            "title": "Traffic rush",
+            "author": "Dreadmask197"
+        },
+        {
+            "id": "59599-88181-63191-85393",
+            "title": "Dodge the Car!",
+            "author": "Purna079"
+        },
+        {
+            "id": "81274-47108-96990-89440",
+            "title": "Car Stop Maze",
+            "author": "Annapurna079"
+        },
+        {
+            "id": "05640-04622-60251-91939",
+            "title": "Perpetual Racer",
+            "author": "Flint Asher"
+        },
+        {
+            "id": "45380-68116-46272-17777",
+            "title": "Fast Car",
+            "author": "Purna079"
+        },
+        {
+            "id": "91183-51969-56712-08526",
+            "title": "Race Through NYCdet",
+            "author": "Kat"
+        },
+        {
+            "id": "97928-66031-26500-83480",
+            "title": "HONK!",
+            "author": "Unsigned_Arduino"
+        },
+        {
+            "id": "46985-72981-72214-04491",
+            "title": "Box Cars",
+            "author": "Lucas the Game Builder"
+        }
+    ]
+}

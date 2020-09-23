@@ -50,81 +50,7 @@ Go to the drop down in the block and select star field to create an outer space 
 ![Animation showing the completion of the tilemap from this set](/static/lessons/dance-party/drawing-tilemap.gif)
 
 ```blocks
-namespace myTiles {
-    //% blockIdentity=images._tile
-    export const tile0 = img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `
-    //% blockIdentity=images._tile
-    export const tile1 = img`
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    `
-    //% blockIdentity=images._tile
-    export const tile2 = img`
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-    `
-}
-tiles.setTilemap(tiles.createTilemap(
-    hex`0a0008000202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020201010101010101010101`,
-    img`
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-    `,
-    [myTiles.tile0,myTiles.tile1,myTiles.tile2],
-    TileScale.Sixteen
-))
-
+tiles.setTilemap(tilemap`level`)
 effects.starField.startScreenEffect()
 ```
 
@@ -421,80 +347,7 @@ let steve: Sprite = null
 scene.setBackgroundColor(11)
 
 effects.starField.startScreenEffect()
-namespace myTiles {
-    //% blockIdentity=images._tile
-    export const tile0 = img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `
-    //% blockIdentity=images._tile
-    export const tile1 = img`
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    `
-    //% blockIdentity=images._tile
-    export const tile2 = img`
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-    `
-}
-tiles.setTilemap(tiles.createTilemap(
-    hex`0a0008000202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020201010101010101010101`,
-    img`
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-    `,
-    [myTiles.tile0,myTiles.tile1,myTiles.tile2],
-    TileScale.Sixteen
-))
+tiles.setTilemap(tilemap`level`)
 
 steve = sprites.create(img`
     . . . . . . . . . . . . . . . .
@@ -612,3 +465,43 @@ game.onUpdateInterval(2000, function () {
 ```
 
 ![Working Game](/static/lessons/dance-party/working-game.gif)
+
+```jres
+{
+    "transparency16": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile0": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile1": {
+        "data": "hwQQABAAAAAREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREQ==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile2": {
+        "data": "hwQQABAAAAC7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7uw==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "level": {
+        "id": "level",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAwYTAwMDgwMDAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwMTAxMDEwMTAxMDEwMTAxMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA==",
+        "tileset": [
+            "myTiles.tile0",
+            "myTiles.tile1",
+            "myTiles.tile2"
+        ]
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myTiles"
+    }
+}
+```

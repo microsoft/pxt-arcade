@@ -14,7 +14,7 @@ Flowers make everyone around them happier, especially the bees who get nectar fr
 
 ## Step 1
 
-Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``, and draw a flower. Also, drag in a ``||scene:set background color to||`` and choose ``light blue``.
+Find ``||scene:set background color to||`` in ``||scene:Scene||`` and put it in the ``||loops:on start||``. Set the background color to **light blue**. Get a ``||variables:set mySprite to||`` in ``||sprites:Sprites||`` and drag it into the ``||loops:on start||`` too. Click on the empty sprite image to open the image editor and draw a flower.
 
 ```blocks
 let mySprite: Sprite = null
@@ -41,7 +41,7 @@ mySprite = sprites.create(img`
 
 ## Step 2
 
-Find an ``||game:on update every 500 ms||`` in ``||game:Game||``, and drag it into the workspace. Set the time to ``1000 ms``.
+Find an ``||game:on update every 500 ms||`` in ``||game:Game||``, and drag it into the workspace. Set the time to **1000** milliseconds (ms).
 
 ```blocks
 let mySprite: Sprite = null
@@ -71,7 +71,7 @@ game.onUpdateInterval(1000, function () {
 
 ## Step 3
 
-Find ``||sprites:set projectile to projectile from mySprite||`` in ``||sprites:Sprites||``. Pull it out and put it into the ``||game:on game update every 1000 ms||``.
+Find ``||variables:set projectile to||`` ``||sprites:projectile from mySprite||`` in ``||sprites:Sprites||``. Pull it out and put it into the ``||game:on game update every 1000 ms||``.
 
 ```blocks
 let mySprite: Sprite = null
@@ -118,7 +118,7 @@ game.onUpdateInterval(1000, function () {
 
 ## Step 4
 
-Click on the grey box in ``||sprites:projectile||`` and make a nice little bee.
+Click on the empty image in ``||sprites:projectile||`` to open the image editor. Create a nice little bee as the image for ``||sprites:projectile||``.
 
 ```blocks
 let mySprite: Sprite = null
@@ -165,7 +165,7 @@ game.onUpdateInterval(1000, function () {
 
 ## Step 5
 
-Go get a ``||Math:pick random 0 to 10||``. Place it in the ``||sprites:vx||`` slot of ``||sprites:projectile||``. Change the ``0`` to ``-25`` and the ``10`` to ``25``.
+Go get a ``||Math:pick random 0 to 10||`` from ``||math:Math||``. Place it in the ``||sprites:vx||`` slot of ``||sprites:projectile||``. In ``||Math:pick random 0 to 10||``, change the first value of **0** to **-25** and the second value from **10** to **25**.
 
 ```blocks
 let mySprite: Sprite = null
@@ -259,7 +259,7 @@ game.onUpdateInterval(1000, function () {
 
 ## Step 7 @fullscreen
 
-Find the ``||sprites:set mySprite x to 0||`` in ``||sprites:Sprites||``, place it after ``||variables:set projectile to||``, and change ``||variables:mySprite||`` to ``||variables:projectile||``. Change ``||sprites:x||`` to ``||sprites:lifespan||`` and set ``0`` to ``3000``.
+Find the ``||sprites:set mySprite x to 0||`` in ``||sprites:Sprites||``, place it after ``||variables:set projectile to||``, and change ``||variables:mySprite||`` to ``||variables:projectile||``. Click on the ``||sprites:x||`` and select ``||sprites:lifespan||`` from the list of properties. Set its value to **3000** instead of **0**.
 
 ![Adding life span](/static/tutorials/happy-flower/life-span.gif)
 
@@ -314,8 +314,59 @@ Congratulations, your happy flower is complete! It will now send back joyful lit
 
 ## Step 9
 
-Let's setup a condition to change the image of the bee when it flys off toward the left.
-Get an ``||logic:if then||`` and put it after the ``||sprites:set projectile lifespan||``. Replace the ``true`` condition in the ``||logic:if then||`` with a ``||logic:0 < 0||``. Put a ``||sprites:mySprite x||`` in where the first `0` is. Change the ``||variables:mySprite||`` to ``||variables:projectile||`` and change the ``||sprites:x||`` to ``||sprites:vx (velocity x)||``.
+The bees should point to the left when they fly away in that direction.
+Get an ``||logic:if then||`` from ``||logic:Logic||`` and put it after the ``||sprites:set projectile lifespan||``. Replace the ``||logic:true||`` condition in the ``||logic:if then||`` with ``||logic:0 < 0||``.
+
+```blocks
+let projectile: Sprite = null
+let mySprite: Sprite = null
+scene.setBackgroundColor(9)
+mySprite = sprites.create(img`
+. . . 4 . . . . . . 2 2 . . . .
+. . . 4 4 4 3 . 3 2 2 . . . . .
+. . . . 4 e 5 5 5 e 2 . . . . .
+. . . . 3 5 5 5 5 5 3 . . . . .
+. . . . . 5 5 e 5 5 . . . . . .
+. . . . 3 5 5 5 5 5 3 . . . . .
+. . . . 2 e 5 5 5 e 4 . . . . .
+. . . . 2 2 3 7 3 4 4 4 . . . .
+. . . 2 2 . . 7 . . . 4 . . . .
+. . . . . . . 7 . . . . . . . .
+. . . 7 7 7 . 7 . 7 7 . . . . .
+. . . . 7 7 . 7 . 7 7 . . . . .
+. . . . . 7 7 7 7 7 . . . . . .
+. . . . . . 7 7 7 . . . . . . .
+. . . . . . . 7 . . . . . . . .
+. . . . . . . 7 . . . . . . . .
+`, SpriteKind.Player)
+game.onUpdateInterval(1000, function () {
+    projectile = sprites.createProjectileFromSprite(img`
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . b b . . b . . . . . . .
+. . . . . b b b b . . . . . . .
+. . . . . . . b b . . . . . . .
+. . . . . f 5 f 5 f . . . . . .
+. . . . 5 f 5 f 5 f 1 . . . . .
+. . . . 5 f 5 f 5 f 5 b . . . .
+. . . . . . 5 f 5 f 5 . . . . .
+. . . . . e . . . e . . . . . .
+. . . . e . . . . e . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+`, mySprite, randint(-25, 25), randint(-25, 25))
+    projectile.lifespan = 3000
+    if (0 < 0) {
+    }
+})
+```
+
+## Step 10
+
+Replace the first **0** in the ``||logic:0 < 0||`` condition with ``||sprites:mySprite x||``. Change the ``||variables:mySprite||`` to ``||variables:projectile||`` and change the ``||sprites:x||`` to ``||sprites:vx (velocity x)||``.
 
 ```blocks
 let projectile: Sprite = null
@@ -364,7 +415,7 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 10
+## Step 11
 
 Go to the Toolbox and open the **Advanced** categories. In ``||images:Images||`` find the ``||images:flip picture horizontally||`` block. Pull it out and place it inside the ``||logic:if then||``. Now, back in ``||sprites:Sprites||``, get a ``||sprites:mySprite image||`` and drop it over the ``||variables:picture||`` variable to replace it in ``||images:flip picture horzontally||``. Change the ``||variables:mySprite||`` to ``||variables:projectile||``.
 
