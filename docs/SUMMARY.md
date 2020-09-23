@@ -37,6 +37,10 @@
     * [Image](/types/image)
     * [Sprite](/types/sprite)
 
+## #other
+
+* [Blocks Gallery](/block-gallery)
+
 ## Hardware
 
 * [Hardware](/hardware)
