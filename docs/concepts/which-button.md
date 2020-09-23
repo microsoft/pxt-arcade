@@ -69,7 +69,7 @@ info.startCountdown(10)
 
 ## Step 6 @fullscreen
 
-Get another ``||controller:on any button pressed||``, and drag it into the workspace. Change ``||controller:any||`` to ``||controller:B||``.
+Get another ``||controller:on any button pressed||``, and drag it into the workspace. Change ``||controller:A||`` to ``||controller:B||``.
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
