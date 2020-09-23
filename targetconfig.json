@@ -8,6 +8,7 @@
             "jwunderl/pxt-status-bar",
             "microsoft/pxt-settings-blocks",
             "microsoft/arcade-sprite-data",
+            "microsoft/arcade-text",
             "microsoft/pxt-tilemaps"
         ],
         "preferredRepos": [
@@ -18,6 +19,7 @@
             "jwunderl/pxt-status-bar",
             "microsoft/pxt-settings-blocks",
             "microsoft/arcade-sprite-data",
+            "microsoft/arcade-text",
             "microsoft/pxt-tilemaps"
         ],
         "upgrades": {
