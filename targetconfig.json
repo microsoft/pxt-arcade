@@ -7,6 +7,7 @@
             "jwunderl/pxt-color",
             "jwunderl/pxt-status-bar",
             "microsoft/pxt-settings-blocks",
+            "microsoft/arcade-block-objects",
             "microsoft/arcade-sprite-data"
         ],
         "preferredRepos": [
@@ -16,6 +17,7 @@
             "jwunderl/pxt-color",
             "jwunderl/pxt-status-bar",
             "microsoft/pxt-settings-blocks",
+            "microsoft/arcade-block-objects",
             "microsoft/arcade-sprite-data"
         ],
         "upgrades": {
