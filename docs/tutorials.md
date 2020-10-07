@@ -129,7 +129,7 @@
   "largeImageUrl": "/static/tutorials/maze.gif",
   "videoUrl": "/static/tutorials/maze.mp4"
 }, {
-  "name": "Side Stroller",
+  "name": "Side Scroller",
   "description": "Make a side-scrolling car racing game to jump over obstacles and win the race",
   "url": "/tutorials/side-scroller",
   "cardType": "tutorial",

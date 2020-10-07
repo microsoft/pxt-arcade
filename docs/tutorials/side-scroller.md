@@ -10,7 +10,7 @@ First, let’s set the color of the background for our racing game. From the ``|
 
 In the ``||scene:set background color||`` block, click on the grey oval to select a color.
 
-![Background color](/static/tutorials/side-stroller/background-color.png)
+![Background color](/static/tutorials/side-scroller/background-color.png)
 
 ```blocks
 scene.setBackgroundColor(6)
@@ -20,7 +20,7 @@ scene.setBackgroundColor(6)
 
 Now let’s use a tile map to represent the road for our game. From the ``||scene:Scene||`` Toolbox drawer, in the **Tiles** category, drag a ``||scene:set tilemap||`` block into the ``||loops:on start||`` block, after the ``||scene:set background color||`` block.
 
-![Set tilemap](/static/tutorials/side-stroller/set-tilemap.png)
+![Set tilemap](/static/tutorials/side-scroller/set-tilemap.png)
 
 ```blocks
 scene.setBackgroundColor(6)
@@ -33,7 +33,7 @@ In the ``||scene:set tilemap||`` block, click on the grey square to open up the 
 
 In the bottom left corner, set the dimensions for the canvas to **50** by **8** pixels. This will make our game background very wide and short.
 
-![Canvas size](/static/tutorials/side-stroller/canvas-size.png)
+![Canvas size](/static/tutorials/side-scroller/canvas-size.png)
 
 ## Step 4 - Draw the road
 
@@ -41,7 +41,7 @@ Select a **tile** from the Tile Gallery or draw your own tile to represent the r
 
 Click on the **Pencil** icon to draw the road along the bottom of your Tilemap canvas.
 
-![Road tile](/static/tutorials/side-stroller/road-tile.png)
+![Road tile](/static/tutorials/side-scroller/road-tile.png)
 
 ## Step 5 - Create obstacles
 
@@ -51,7 +51,7 @@ Select a tile from the Gallery or draw your own tile to represent an obstacle �
 
 Place up to three obstacle tiles in a row at various points in the middle of your road.
 
-![Obstacles](/static/tutorials/side-stroller/obstacles.png)
+![Obstacles](/static/tutorials/side-scroller/obstacles.png)
 
 ## Step 6 - Create finish line
 
@@ -59,7 +59,7 @@ Open up the Tilemap Editor again by clicking on the square in the ``||scene:set 
 
 Select a tile from the Gallery or draw your own tile to represent the finish line and draw it along the right side of our tilemap canvas.
 
-![Finish line](/static/tutorials/side-stroller/finish-line.png)
+![Finish line](/static/tutorials/side-scroller/finish-line.png)
 
 ## Step 7 - Draw the walls
 
@@ -67,7 +67,7 @@ Go one more time to the Tilemap Editor. The last thing we’re going to do in ou
 
 Click on the **Wall** tool, then draw along the road tiles.
 
-![Walls](/static/tutorials/side-stroller/walls.png)
+![Walls](/static/tutorials/side-scroller/walls.png)
 
 
 ## Step 8 - Create a player sprite
@@ -251,7 +251,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 From the ``||scene:Scene||`` Toolbox drawer, under the **Collisions** category, drag a ``||scene:is mySprite hitting wall||`` block, and drop into the ``||logic:if then||`` block replacing true. Click on the drop-down menu and select ``||sprites:bottom||`` for the wall direction.
 
-![Hitting Wall](/static/tutorials/side-stroller/hitting-wall.png)
+![Hitting Wall](/static/tutorials/side-scroller/hitting-wall.png)
 
 ```blocks
 let mySprite: Sprite = null
@@ -283,7 +283,7 @@ When our car runs into an obstacle, we should lose the game. And when our car ru
 
 From the ``||scene:Scene||`` Toolbox drawer, under the **Tiles** category, drag two ``||sprites:on sprite of kind overlaps tile||`` blocks onto the Workspace.
 
-![Sprite overlaps tile wall](/static/tutorials/side-stroller/sprite-overlaps-tile.png)
+![Sprite overlaps tile wall](/static/tutorials/side-scroller/sprite-overlaps-tile.png)
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, myTiles.transparency16, function (sprite, location) {
@@ -297,7 +297,7 @@ In the first ``||sprites:on sprite of kind overlaps tile||`` block, click on the
 
 In the second ``||sprites:on sprite of kind overlaps tile||`` block, click on the checkered square drop-down menu and select your Finish Line tile.
 
-![Sprite overlaps tile wall](/static/tutorials/side-stroller/obstacle-finish-tiles.png)
+![Sprite overlaps tile wall](/static/tutorials/side-scroller/obstacle-finish-tiles.png)
 
 ## Step 20 - Game over
 
