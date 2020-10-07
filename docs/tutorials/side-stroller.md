@@ -1,20 +1,12 @@
-# Car Race tutorial
+# Car race tutorial
 
 Create a side-scrolling car racing game to jump over obstacles and make it to the finish line.
 
 ![Car race game play](/static/tutorials/side-stroller/car-race.gif)
 
-## Step 1 - Set the Background color
+## Step 1 - Set the background color
 
-First, let’s set the color of the background for our racing game.
-
-From the ``||scene:Scene||`` Toolbox drawer, drag a ``||scene:set background color||`` block onto the Workspace.
-
-```blocks
-scene.setBackgroundColor(0)
-```
-
-Drop into the On Start block
+First, let’s set the color of the background for our racing game. From the ``||scene:Scene||`` Toolbox drawer, drag a ``||scene:set background color||`` block onto the Workspace. Drop it into the ``||loops:on start||`` block.
 
 In the ``||scene:set background color||`` block, click on the grey oval to select a color.
 
@@ -24,9 +16,9 @@ In the ``||scene:set background color||`` block, click on the grey oval to selec
 scene.setBackgroundColor(6)
 ```
 
-## Step 2 - Create the Tile Map
+## Step 2 - Create the tilemap
 
-Now let’s use a tile map to represent the road for our game. From the ``||scene:Scene||`` Toolbox drawer, in the ``||scene:Tiles||`` category, drag a ``||scene:set tilemap||`` block into the ``||loops:on start||`` block, after the ``||scene:set background color||`` block.
+Now let’s use a tile map to represent the road for our game. From the ``||scene:Scene||`` Toolbox drawer, in the **Tiles** category, drag a ``||scene:set tilemap||`` block into the ``||loops:on start||`` block, after the ``||scene:set background color||`` block.
 
 ![Set tilemap](/static/tutorials/side-stroller/set-tilemap.png)
 
@@ -35,52 +27,52 @@ scene.setBackgroundColor(6)
 tiles.setTilemap(tilemap`level_0`)
 ```
 
-## Step 3 - Set the Canvas Size
+## Step 3 - Set the canvas size
 
 In the ``||scene:set tilemap||`` block, click on the grey square to open up the Tilemap Editor.
 
-In the bottom left corner, set the dimensions for the canvas to 50 by 8 pixels. This will make our game background very wide and short.
+In the bottom left corner, set the dimensions for the canvas to **50** by **8** pixels. This will make our game background very wide and short.
 
 ![Canvas size](/static/tutorials/side-stroller/canvas-size.png)
 
-## Step 4 - Draw the Road
+## Step 4 - Draw the road
 
-Select a Tile from the Gallery or draw your own Tile to represent the road for your race. Note there is a road tile in the **Miscellaneous** category of the Tile Gallery.
+Select a **tile** from the Tile Gallery or draw your own tile to represent the road for your race. You will notice that there is a road tile in the **Miscellaneous** part of the Tile Gallery that you can use.
 
-Click on the Pencil icon to draw the road along the bottom of your Tilemap canvas.
+Click on the **Pencil** icon to draw the road along the bottom of your Tilemap canvas.
 
 ![Road tile](/static/tutorials/side-stroller/road-tile.png)
 
-## Step 5 - Create Obstacles
+## Step 5 - Create obstacles
 
-Open up the Tilemap Editor again by clicking on the square in the ``||scene:set tilemap||`` block. This time we are going to create an obstacle for your car to jump over.
+Go back to the Tilemap Editor again by clicking on the square in the ``||scene:set tilemap||`` block. This time we are going to create an obstacle for your car to jump over.
 
-Select a Tile from the Gallery or draw your own Tile to represent an obstacle – this could be water, hot lava or spikes!
+Select a tile from the Gallery or draw your own tile to represent an obstacle – this could be water, hot lava or spikes!
 
 Place up to three obstacle tiles in a row at various points in the middle of your road.
 
 ![Obstacles](/static/tutorials/side-stroller/obstacles.png)
 
-## Step 6 - Create Finish Line
+## Step 6 - Create finish line
 
 Open up the Tilemap Editor again by clicking on the square in the ``||scene:set tilemap||`` block. Now we are going to create the finish line for our race.
 
-Select a Tile from the Gallery or draw your own Tile to represent the finish line and draw it along the right side of our tilemap canvas.
+Select a tile from the Gallery or draw your own tile to represent the finish line and draw it along the right side of our tilemap canvas.
 
 ![Finish line](/static/tutorials/side-stroller/finish-line.png)
 
-## Step 7 - Draw the Walls
+## Step 7 - Draw the walls
 
-Open up the Tile Map Editor again by clicking on the square in the ``||scene:set tilemap||`` block. The last thing we’re going to do in our tilemap is to add walls on the road for our car to drive on.
+Go one more time to the Tilemap Editor. The last thing we’re going to do in our tilemap is to add walls on the road for our car to drive on.
 
-Click on the Wall tool, then draw along the road tiles.
+Click on the **Wall** tool, then draw along the road tiles.
 
 ![Walls](/static/tutorials/side-stroller/walls.png)
 
 
 ## Step 8 - Create a player sprite
 
-From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||variables:set mysprite||`` block into the ``||loops:on start||`` block after the ``||scene:set tilemap||`` block.
+From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||variables:set mySprite||`` block into the ``||loops:on start||`` block after the ``||scene:set tilemap||`` block.
 
 ```blocks
 scene.setBackgroundColor(6)
@@ -105,9 +97,9 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)
 ```
 
-## Step 9 - Design your Car sprite
+## Step 9 - Design your car sprite
 
-In the Sprite block, click on the grey image oval and select an image from the Gallery or draw your own Car sprite.
+In the ``||sprites:sprite||`` block, click on the grey image oval and select an image from the Gallery or draw your own **Car** sprite.
 
 ```blocks
 scene.setBackgroundColor(6)
@@ -132,15 +124,15 @@ mySprite = sprites.create(img`
     `, SpriteKind.Player)
 ```
 
-## Step 10 - Add Gravity
+## Step 10 - Add gravity
 
 Let’s add code to simulate gravity pulling our car down. We can do this by adding an acceleration force to our car.
 
-From the ``||sprites:Sprites||`` Toolbox drawer, drag a Set mySprite x to 0 block and drop after the ``||variables:set sprite||`` block.
+From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set mySprite x to 0||`` block and drop after the ``||variables:set mySprite||`` block.
 
-## Step 11 - Set Acceleration
+## Step 11 - Set acceleration
 
-In the Set mySprite x to 0 block, click on the x property drop-down menu and select ay (accleration along the Y vertical axis). Set the value to be 400. This will pull our car down, simulating gravity.
+In the ``||sprites:set mySprite x to 0||`` block, click on the ``||sprites:x||`` property drop-down menu and select ``||sprites:ay (accleration Y)||`` along the vertical axis. Set the value to be ``400``. This will pull our car down, simulating gravity.
 
 ```blocks
 scene.setBackgroundColor(6)
@@ -166,11 +158,11 @@ let mySprite = sprites.create(img`
 mySprite.ay = 400
 ```
 
-## Step 12 - Make the Car Move
+## Step 12 - Make the car move
 
 Now let’s add code that will make our car drive forward automatically.
 
-From the ``||sprites:Sprites||`` Toolbox drawer, drag another ``||sprites:set mySprite x to 0||`` block into the ``||loops:on start||`` block. This time, click on the x property drop-down menu and select vx (velocity along the X horizontal axis). Set the value to be 100. This will set the speed of our car to be moving to the right of the screen.
+From the ``||sprites:Sprites||`` Toolbox drawer, drag another ``||sprites:set mySprite x to 0||`` block into the ``||loops:on start||`` block. This time, click on the x property drop-down menu and select ``||sprites:vx (velocity x)||`` along the X horizontal axis. Set the value to be ``100``. This will set the speed of our car to be moving to the right of the screen.
 
 ```blocks
 scene.setBackgroundColor(6)
@@ -197,11 +189,11 @@ mySprite.ay = 400
 mySprite.vx = 100
 ```
 
-## Step 13 - Follow Sprite with Camera
+## Step 13 - Follow sprite with camera
 
 Notice in the game simulator, that our car jumps off the screen! We need to add some code to follow our car as it moves.
 
-In the ``||scene:Scene||`` Toolbox drawer, scroll to the bottom to see the ``||scene:Camera||`` category, drag a ``||scene:camera follow sprite||`` block and drop after the ``||variables:set sprite||`` block.
+In the ``||scene:Scene||`` Toolbox drawer, scroll to the bottom to see the **Camera** category, drag a ``||scene:camera follow sprite||`` block and drop after the last ``||sprites:set mySprite||`` block.
 
 ```blocks
 scene.setBackgroundColor(6)
@@ -241,7 +233,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 15 - Check that car is on Road
+## Step 15 - Check that car is on road
 
 We only want to be able to jump when our car is on the road – no flying cars! So we need to add a check.
 
@@ -255,7 +247,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 16 - Check that car is on Road (2)
+## Step 16 - Check for walls
 
 From the ``||scene:Scene||`` Toolbox drawer, under the **Collisions** category, drag a ``||scene:is mySprite hitting wall||`` block, and drop into the ``||logic:if then||`` block replacing true. Click on the drop-down menu and select ``||sprites:bottom||`` for the wall direction.
 
@@ -270,7 +262,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 17 - Make Car Jump
+## Step 17 - Make car jump
 
 From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set mySprite x to 0||`` block into the ``||logic:if then||`` block.
 
@@ -307,11 +299,11 @@ In the second ``||sprites:on sprite of kind overlaps tile||`` block, click on th
 
 ![Sprite overlaps tile wall](/static/tutorials/side-stroller/obstacle-finish-tiles.png)
 
-## Step 20 - Game Over
+## Step 20 - Game over
 
-From the ``||game:Game||`` Toolbox drawer, drag two ``||game:game over||`` blocks onto the Workspace – drop one into each of the ``||sprites:on sprite of kind overlaps tile||`` blocks.
+From the ``||game:Game||`` Toolbox drawer, drag **two** ``||game:game over||`` blocks onto the Workspace – drop one into each of the ``||sprites:on sprite of kind overlaps tile||`` blocks.
 
-In the second On Sprite of Kind Overlaps Tile Finish Line block, toggle the ``||game:game over||`` setting to **WIN**.
+In the second ``||sprites:on sprite of kind overlaps tile||`` Finish Line block, toggle the ``||game:game over||`` setting to **WIN**.
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location) {
@@ -322,7 +314,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenOuterEast0, function
 })
 ```
 
-## Step 21 - Play your Game!
+## Step 21 - Play your game!
 
 That’s it! Try playing your game in the full screen simulator – jump over obstacles to make it to the finish line! Next you can try adding different types of obstacles, or adding platforms for your car to jump onto.
 
