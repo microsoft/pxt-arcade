@@ -209,6 +209,7 @@ h1 {
 #gallery .game {
     text-align: center;
     margin: 1rem;
+    flex: 1;
 }
 
 /***** WINNERS ****/
