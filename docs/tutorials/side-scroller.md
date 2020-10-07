@@ -104,7 +104,7 @@ In the ``||sprites:sprite||`` block, click on the grey image oval and select an 
 ```blocks
 scene.setBackgroundColor(6)
 tiles.setTilemap(tilemap`level`)
-mySprite = sprites.create(img`
+let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . d 3 3 3 3 3 3 c . . . . 
