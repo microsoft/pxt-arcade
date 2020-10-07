@@ -2,7 +2,7 @@
 
 Create a side-scrolling car racing game to jump over obstacles and make it to the finish line.
 
-![Car race game play](/static/tutorials/side-stroller/car-race.gif)
+![Car race game play](/static/tutorials/car-race.gif)
 
 ## Step 1 - Set the background color
 
