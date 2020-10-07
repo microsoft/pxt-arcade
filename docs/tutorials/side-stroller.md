@@ -2,9 +2,7 @@
 
 Create a side-scrolling car racing game to jump over obstacles and make it to the finish line.
 
-https://makecode.com/_KUL5fy5JdRqm
-
-<Car Race.gif>
+![Car race game play](/static/tutorials/side-stroller/car-race.gif)
 
 ## Step 1 - Set the Background color
 
@@ -12,17 +10,30 @@ First, let’s set the color of the background for our racing game.
 
 From the ``||scene:Scene||`` Toolbox drawer, drag a ``||scene:set background color||`` block onto the Workspace.
 
+```blocks
+scene.setBackgroundColor(0)
+```
+
 Drop into the On Start block
 
 In the ``||scene:set background color||`` block, click on the grey oval to select a color.
 
 ![Background color](/static/tutorials/side-stroller/background-color.png)
 
+```blocks
+scene.setBackgroundColor(6)
+```
+
 ## Step 2 - Create the Tile Map
 
 Now let’s use a tile map to represent the road for our game. From the ``||scene:Scene||`` Toolbox drawer, in the ``||scene:Tiles||`` category, drag a ``||scene:set tilemap||`` block into the ``||loops:on start||`` block, after the ``||scene:set background color||`` block.
 
 ![Set tilemap](/static/tutorials/side-stroller/set-tilemap.png)
+
+```blocks
+scene.setBackgroundColor(6)
+tiles.setTilemap(tilemap`level_0`)
+```
 
 ## Step 3 - Set the Canvas Size
 
@@ -34,7 +45,7 @@ In the bottom left corner, set the dimensions for the canvas to 50 by 8 pixels. 
 
 ## Step 4 - Draw the Road
 
-Select a Tile from the Gallery or draw your own Tile to represent the road for your race. Note there is a road tile in the Miscellaneous category of the Tile Gallery.
+Select a Tile from the Gallery or draw your own Tile to represent the road for your race. Note there is a road tile in the **Miscellaneous** category of the Tile Gallery.
 
 Click on the Pencil icon to draw the road along the bottom of your Tilemap canvas.
 
@@ -42,7 +53,7 @@ Click on the Pencil icon to draw the road along the bottom of your Tilemap canva
 
 ## Step 5 - Create Obstacles
 
-Open up the Tile Map Editor again by clicking on the square in the Set Tilemap block. This time we are going to create an obstacle for your car to jump over.
+Open up the Tilemap Editor again by clicking on the square in the ``||scene:set tilemap||`` block. This time we are going to create an obstacle for your car to jump over.
 
 Select a Tile from the Gallery or draw your own Tile to represent an obstacle – this could be water, hot lava or spikes!
 
@@ -52,7 +63,7 @@ Place up to three obstacle tiles in a row at various points in the middle of you
 
 ## Step 6 - Create Finish Line
 
-Open up the Tile Map Editor again by clicking on the square in the Set Tilemap block. Now we are going to create the finish line for our race.
+Open up the Tilemap Editor again by clicking on the square in the ``||scene:set tilemap||`` block. Now we are going to create the finish line for our race.
 
 Select a Tile from the Gallery or draw your own Tile to represent the finish line and draw it along the right side of our tilemap canvas.
 
@@ -60,7 +71,7 @@ Select a Tile from the Gallery or draw your own Tile to represent the finish lin
 
 ## Step 7 - Draw the Walls
 
-Open up the Tile Map Editor again by clicking on the square in the Set Tilemap block. The last thing we’re going to do in our tilemap is to add walls on the road for our car to drive on.
+Open up the Tile Map Editor again by clicking on the square in the ``||scene:set tilemap||`` block. The last thing we’re going to do in our tilemap is to add walls on the road for our car to drive on.
 
 Click on the Wall tool, then draw along the road tiles.
 
@@ -337,6 +348,14 @@ That’s it! Try playing your game in the full screen simulator – jump over ob
             "sprites.vehicle.roadHorizontal",
             "myTiles.tile1",
             "sprites.dungeon.greenOuterEast0"
+        ]
+    },
+    "level_0": {
+        "id": "level_0",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAxMDAwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA==",
+        "tileset": [
+            "myTiles.transparency16"
         ]
     },
     "*": {
