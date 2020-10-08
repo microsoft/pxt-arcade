@@ -5,6 +5,117 @@
         "tipsId": "join-the-club"
     },
     "start": "2020-09-14 00:00:00 GMT-0700",
-    "end": "2020-010-05 00:00:00 GMT-0700",
-    "featured": []
+    "end": "2020-010-06 00:00:00 GMT-0700",
+    "featured": [
+        {
+            "id": "71929-42418-05612-32436",
+            "title": "Split cars",
+            "author": "LCProCODER"
+        },
+        {
+            "id": "02340-91837-87735-14270",
+            "title": "Traffic Jam",
+            "author": "LCProCODER"
+        },
+        {
+            "id": "47207-15180-38494-73088",
+            "title": "Two player car racing",
+            "author": "Dreadmask197"
+        },
+        {
+            "id": "98855-73620-47488-77207",
+            "title": "Traffic rush",
+            "author": "Dreadmask197"
+        },
+        {
+            "id": "59599-88181-63191-85393",
+            "title": "Dodge the Car!",
+            "author": "Purna079"
+        },
+        {
+            "id": "81274-47108-96990-89440",
+            "title": "Car Stop Maze",
+            "author": "Annapurna079"
+        },
+        {
+            "id": "05640-04622-60251-91939",
+            "title": "Perpetual Racer",
+            "author": "Flint Asher"
+        },
+        {
+            "id": "45380-68116-46272-17777",
+            "title": "Fast Car",
+            "author": "Purna079"
+        },
+        {
+            "id": "91183-51969-56712-08526",
+            "title": "Race Through NYCdet",
+            "author": "Kat"
+        },
+        {
+            "id": "97928-66031-26500-83480",
+            "title": "HONK!",
+            "author": "Unsigned_Arduino"
+        },
+        {
+            "id": "46985-72981-72214-04491",
+            "title": "Box Cars",
+            "author": "Lucas the Game Builder"
+        },
+        {
+            "id": "75401-05630-04319-67818",
+            "title": "Traffic Problem",
+            "author": "Ken"
+        },
+        {
+            "id": "08220-03361-90643-03076",
+            "title": "Traffic Jam",
+            "author": "Rishi"
+        },
+        {
+            "id": "30689-25471-65195-07312",
+            "title": "Traffic Jam Maze",
+            "author": "12Voic12"
+        },
+        {
+            "id": "69881-20222-27432-35145",
+            "title": "BB",
+            "author": "Mica5685"
+        },
+        {
+            "id": "90796-81096-31650-87632",
+            "title": "Road Trip",
+            "author": "Cate"
+        },
+        {
+            "id": "63418-25020-58432-17936",
+            "title": "UFOs control traffic",
+            "author": "logic_lab"
+        },
+        {
+            "id": "58044-36277-49498-43462",
+            "title": "Monster Truck",
+            "author": "logic_lab"
+        },
+        {
+            "id": "83930-56558-24400-88224",
+            "title": "AstroJam",
+            "author": "Kaylen"
+        },
+        {
+            "id": "50720-84339-05254-30236",
+            "title": "Race Delivery",
+            "author": "DriveCoreGames"
+        },
+        {
+            "id": "92804-31727-55284-01424",
+            "title": "Crossy Duck",
+            "author": "Adri314"
+        },
+        {
+            "id": "10339-72135-63683-52291",
+            "title": "Button Masher Race",
+            "author": "Adri314"
+        }
+    ]
 }
