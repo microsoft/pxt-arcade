@@ -18,7 +18,7 @@ scene.setBackgroundColor(6)
 
 ## Step 2 - Create the tilemap
 
-Now let’s use a tile map to represent the road for our game. From the ``||scene:Scene||`` Toolbox drawer, in the **Tiles** category, drag a ``||scene:set tilemap||`` block into the ``||loops:on start||`` block, after the ``||scene:set background color||`` block.
+Now let’s use a tile map to represent the road for our game. From the ``||scene:Scene||`` Toolbox drawer, drag a ``||scene:set tilemap||`` block into the ``||loops:on start||`` block, after the ``||scene:set background color||`` block.
 
 ![Set tilemap](/static/tutorials/side-scroller/set-tilemap.png)
 
@@ -132,7 +132,7 @@ From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set mySprite
 
 ## Step 11 - Set acceleration
 
-In the ``||sprites:set mySprite x to 0||`` block, click on the ``||sprites:x||`` property drop-down menu and select ``||sprites:ay (accleration Y)||`` along the vertical axis. Set the value to be ``400``. This will pull our car down, simulating gravity.
+In the ``||sprites:set mySprite x to 0||`` block, click on the ``||sprites:x||`` property drop-down menu and select ``||sprites:ay (acceleration Y)||`` along the vertical axis. Set the value to be ``400``. This will pull our car down, simulating gravity.
 
 ```blocks
 scene.setBackgroundColor(6)
@@ -162,7 +162,7 @@ mySprite.ay = 400
 
 Now let’s add code that will make our car drive forward automatically.
 
-From the ``||sprites:Sprites||`` Toolbox drawer, drag another ``||sprites:set mySprite x to 0||`` block into the ``||loops:on start||`` block. This time, click on the x property drop-down menu and select ``||sprites:vx (velocity x)||`` along the X horizontal axis. Set the value to be ``100``. This will set the speed of our car to be moving to the right of the screen.
+From the ``||sprites:Sprites||`` Toolbox drawer, drag another ``||sprites:set mySprite x to 0||`` block into the ``||loops:on start||`` block. This time, click on the ``||sprites:x||`` property drop-down menu and select ``||sprites:vx (velocity x)||`` along the X horizontal axis. Set the value to be ``100``. This will set the speed of our car to be moving to the right of the screen.
 
 ```blocks
 scene.setBackgroundColor(6)
@@ -193,7 +193,7 @@ mySprite.vx = 100
 
 Notice in the game simulator, that our car jumps off the screen! We need to add some code to follow our car as it moves.
 
-In the ``||scene:Scene||`` Toolbox drawer, scroll to the bottom to see the **Camera** category, drag a ``||scene:camera follow sprite||`` block and drop after the last ``||sprites:set mySprite||`` block.
+In the ``||scene:Scene||`` Toolbox drawer, drag a ``||scene:camera follow sprite||`` block and drop after the last ``||sprites:set mySprite||`` block.
 
 ```blocks
 scene.setBackgroundColor(6)
@@ -249,7 +249,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 16 - Check for walls
 
-From the ``||scene:Scene||`` Toolbox drawer, under the **Collisions** category, drag a ``||scene:is mySprite hitting wall||`` block, and drop into the ``||logic:if then||`` block replacing true. Click on the drop-down menu and select ``||sprites:bottom||`` for the wall direction.
+From the ``||scene:Scene||`` Toolbox drawer, drag a ``||scene:is mySprite hitting wall||`` block, and drop into the ``||logic:if then||`` block replacing true. Click on the drop-down menu and select ``||scene:bottom||`` for the wall direction.
 
 ![Hitting Wall](/static/tutorials/side-scroller/hitting-wall.png)
 
@@ -266,13 +266,13 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set mySprite x to 0||`` block into the ``||logic:if then||`` block.
 
-Click on the ``||sprites:x||`` property drop-down menu and select ``||sprites:vy (velocity along the Y vertical axis)||``. Set the value to be ``-200``. This will set the speed of our car to be moving up to jump.
+Click on the ``||sprites:x||`` property drop-down menu and select ``||sprites:vy (velocity y)||`` along the Y vertical axis. Set the value to be ``-200``. This will set the speed of our car to be moving up to jump.
 
 ```blocks
 let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (mySprite.isHittingTile(CollisionDirection.Bottom)) {
-        mySprite.x = -200
+        mySprite.vy = -200
     }
 })
 ```
@@ -281,7 +281,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 When our car runs into an obstacle, we should lose the game. And when our car runs into the finish line we should win the game. To write that code, we need to use ``||scene:sprite overlaps tile||`` blocks.
 
-From the ``||scene:Scene||`` Toolbox drawer, under the **Tiles** category, drag two ``||sprites:on sprite of kind overlaps tile||`` blocks onto the Workspace.
+From the ``||scene:Scene||`` Toolbox drawer, drag two ``||scene:on sprite of kind overlaps tile||`` blocks onto the Workspace.
 
 ![Sprite overlaps tile wall](/static/tutorials/side-scroller/sprite-overlaps-tile.png)
 
@@ -293,17 +293,17 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.transparency16, function (sprite,
 
 ## Step 19 - Specify obstacle and finish line tiles
 
-In the first ``||sprites:on sprite of kind overlaps tile||`` block, click on the checkered square drop-down menu and select your Obstacle tile.
+In the first ``||scene:on sprite of kind overlaps tile||`` block, click on the checkered square drop-down menu and select your Obstacle tile.
 
-In the second ``||sprites:on sprite of kind overlaps tile||`` block, click on the checkered square drop-down menu and select your Finish Line tile.
+In the second ``||scene:on sprite of kind overlaps tile||`` block, click on the checkered square drop-down menu and select your Finish Line tile.
 
 ![Sprite overlaps tile wall](/static/tutorials/side-scroller/obstacle-finish-tiles.png)
 
 ## Step 20 - Game over
 
-From the ``||game:Game||`` Toolbox drawer, drag **two** ``||game:game over||`` blocks onto the Workspace – drop one into each of the ``||sprites:on sprite of kind overlaps tile||`` blocks.
+From the ``||game:Game||`` Toolbox drawer, drag **two** ``||game:game over||`` blocks onto the Workspace – drop one into each of the ``||scene:on sprite of kind overlaps tile||`` blocks.
 
-In the second ``||sprites:on sprite of kind overlaps tile||`` Finish Line block, toggle the ``||game:game over||`` setting to **WIN**.
+In the second ``||scene:on sprite of kind overlaps tile||`` Finish Line block, toggle the ``||game:game over||`` setting to **WIN**.
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location) {
