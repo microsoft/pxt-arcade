@@ -15,7 +15,22 @@
         "publishing": true,
         "githubPackages": true,
         "cloudProviders": {
-            "github": {}
+            "github": {
+                "id": "github",
+                "name": "GitHub"
+            },
+            "microsoft": {
+                "id": "microsoft",
+                "name": "Microsoft",
+                "identity": true,
+                "redirect": true
+            },
+            "google": {
+                "id": "google",
+                "name": "Google",
+                "identity": true,
+                "redirect": true
+            }
         }
     },
     "bundleddirs": [
