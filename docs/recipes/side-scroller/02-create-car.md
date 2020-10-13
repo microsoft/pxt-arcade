@@ -161,10 +161,10 @@ scene.cameraFollowSprite(mySprite)
 
 Since there are obstacles on the way to the finish line, we need a way to jump over them. Go on and add a jump control to the car.
 
-|      |      |
-|:----:|:----:|
-|  [![Background](/static/recipes/side-scroller/01-background.png)](#recipe:/recipes/side-scroller/01-background) | [![Race car jumping](/static/recipes/side-scroller/03-control-car.gif)](#recipe:/recipes/side-scroller/03-control-car) |
-| [**Design a race course**](#recipe:/recipes/side-scroller/01-background) | [**Jump your car**](#recipe:/recipes/side-scroller/03-control-car) |
+|      |
+|:----:|
+| [![Race car jumping](/static/recipes/side-scroller/03-control-car.gif)](#recipe:/recipes/side-scroller/03-control-car) |
+| [**Jump your car**](#recipe:/recipes/side-scroller/03-control-car) |
 
 ```jres
 {

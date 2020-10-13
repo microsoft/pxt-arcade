@@ -84,10 +84,10 @@ tiles.setTilemap(tilemap`level`)
 
 Now, let's make a race car and give it some motion properties to move it along the race course you just created.
 
-|      |      |
-|:----:|:----:|
-| [![Create car](/static/recipes/side-scroller/02-create-car.gif)](#recipe:/recipes/side-scroller/02-create-car) | [![Control car](/static/recipes/side-scroller/03-control-car.gif)](#recipe:/recipes/side-scroller/03-control-car) |
-| [**Create a race car**](#recipe:/recipes/side-scroller/02-create-car) | [**Jump your car**](#recipe:/recipes/side-scroller/03-control-car) |
+|      |
+|:----:|
+| [![Create car](/static/recipes/side-scroller/02-create-car.gif)](#recipe:/recipes/side-scroller/02-create-car) |
+| [**Create a race car**](#recipe:/recipes/side-scroller/02-create-car) |
 
 
 ```jres
