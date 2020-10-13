@@ -103,11 +103,6 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenOuterEast0, function
 
 That’s it! Try playing your game in the full screen simulator – jump over obstacles to make it to the finish line! Next you can try adding different types of obstacles, or adding platforms for your car to jump onto.
 
-|      |      |
-|:----:|:----:|
-|  [![Background](/static/recipes/side-scroller/01-background.png)](#recipe:/recipes/side-scroller/01-background) | [![Create car](/static/recipes/side-scroller/02-create-car.gif)](#recipe:/recipes/side-scroller/02-create-car) |
-| [**Design a race course**](#recipe:/recipes/side-scroller/01-background) | [**Create a race car**](#recipe:/recipes/side-scroller/02-create-car) |
-
 ```jres
 {
     "transparency16": {
