@@ -526,7 +526,8 @@
         "chooseLanguageRestrictionOnNewProject": true,
         "openProjectNewTab": true,
         "hasReferenceDocs": true,
-        "python": true
+        "python": true,
+        "embedBlocksInSnapshot": true
     },
     "unsupportedBrowsers": [
         {
