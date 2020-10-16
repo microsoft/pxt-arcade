@@ -18,8 +18,8 @@
         />
 
         <!-- @include scripthead.html -->
-
-        <style></style>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./styles.css" />
 
         <script>
             function handleOnLoad() {
@@ -37,12 +37,12 @@
         </script>
     </head>
 
-    <body id="root" class="root" onload="handleOnLoad()">
+    <body id="root" class="root background-color-secondary" onload="handleOnLoad()">
         <div id="main" role="presentation">
             <nav>
                 <div class="arcade-logo">
                     <a href="/">
-                        <img src="" alt="" />
+                        <img src="../logo.svg" alt="MakeCode Arcade" />
                     </a>
                 </div>
 
@@ -51,50 +51,54 @@
                         href="https://www.microsoft.com/en-us/makecode"
                         target="_blank"
                     >
-                        <img src="" alt="" />
+                        <img src="../Micorsoft_logo_rgb_W-white_D.png" alt="Microsoft" />
                     </a>
                 </div>
             </nav>
 
-            <header>
+            <header class='background-color-primary'>
                 <div class="container">
                     <div class="left-content-block">
-                        <h3>Microsoft MakeCode Arcade</h3>
-                        <h1 class="display-font">Hour of Code™</h1>
+                        <h3 class='body-font'>Microsoft MakeCode Arcade</h3>
+                        <h1 class="display-font"><span class='first-line'>Hour</span><span class='small-heading'>of</span><span class='last-line'>Code<em class='trademark'>™</em></span></h1>
                         <h4 class="display-font">2020</h4>
                     </div>
 
                     <div class="right-content-block">
-                        <img src="" alt="" />
+                        <img src="./simulator.png" alt="MakeCode Arcade Simulator" />
                     </div>
                 </div>
             </header>
 
-            <section>
+            <section class='intro container'>
                 <div class="content-block">
                     <div class="text-content-block">
                         Join us in celebrating this year's Computer Science
                         Education Week by playing, designing and coding your
                         very own retro arcade games!
                     </div>
-                    <section class="educators-aside">
-                        <div class="text-content-block">
-                            Are you a <b>teacher</b> or <b>parent</b>? Find
-                            additional information about these activities here.
+                    <div class="panel-secondary educators-aside">
+                        <div class='content-block'>
+                            <img src='./apple.png' alt='For educators'/>
+                            <div class="text-content-block">
+                                Are you a <b>teacher</b> or <b>parent</b>? Find
+                                additional information about these activities here.
+                            </div>
                         </div>
+                        
                         <a class="action-button" href="/hour-of-code-educators"
                             >For Educators</a
                         >
-                    </section>
+                    </div>
                 </div>
             </section>
-            <section>
+            <section class='activities container'>
                 <div class="content-row">
-                    <div class="content-column one-third">
-                        <h2 class="display-font">Play</h2>
+                    <a href="https://makecode.com/_fvUd7TU4riER" class="content-column one-third panel-secondary">
+                        <h2 class="display-font panel-primary">Play</h2>
 
                         <div class="hero">
-                            <img src="" alt="" />
+                            <img src="./asphodel.png" alt="Asphodel follows directions" />
                         </div>
 
                         <div class="text-content-block">
@@ -103,19 +107,16 @@
                             game!
                         </div>
 
-                        <a
-                            class="action-button"
-                            href="https://makecode.com/_fvUd7TU4riER"
-                        >
+                        <div class="action-button">
                             Launch
-                        </a>
-                    </div>
+                        </div>
+                    </a>
 
-                    <div class="content-column one-third">
-                        <h2 class="display-font">Design</h2>
+                    <a href='' class="content-column one-third panel-secondary">
+                        <h2 class="display-font panel-primary">Design</h2>
 
                         <div class="hero">
-                            <img src="" alt="" />
+                            <img src="./asphodel.png" alt="" />
                         </div>
 
                         <div class="text-content-block">
@@ -123,14 +124,14 @@
                             this simple game template.
                         </div>
 
-                        <a class="action-button" href=""> Launch </a>
-                    </div>
+                        <div class="action-button">Launch</div>
+                    </a>
 
-                    <div class="content-column one-third">
-                        <h2 class="display-font">Code</h2>
+                    <a href="https://arcade.makecode.com/#tutorial:/recipes/shark-splash/01-character" class="content-column one-third panel-secondary">
+                        <h2 class="display-font panel-primary">Code</h2>
 
                         <div class="hero">
-                            <img src="" alt="" />
+                            <img src="./asphodel.png" alt="" />
                         </div>
 
                         <div class="text-content-block">
@@ -139,17 +140,14 @@
                             play!
                         </div>
 
-                        <a
-                            class="action-button"
-                            href="https://arcade.makecode.com/#tutorial:/recipes/shark-splash/01-character"
-                        >
+                        <div class="action-button">
                             Launch
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
             </section>
 
-            <section>
+            <section class='container certificate'>
                 <div class="content-block">
                     <h2 class="display-font">Get your Certificate</h2>
                     <div class="text-content-block">
@@ -162,51 +160,51 @@
                 </div>
             </section>
 
-            <section>
+            <section class='container additional'>
                 <div class="content-block">
                     <h2 class="display-font">Additional Activities</h2>
                     <div class="text-content-block">
                         Looking for more fun MakeCode Arcade games to build? Try
-                        any of these tutorials and share your games with your
+                        any of these tutorials and share your games for your
                         family and friends to play!
                     </div>
 
                     <div class="content-row">
                         <div class="content-column one-third">
                             <a href="" target="_blank">
-                                <img src="" alt="" />
+                                <img src="./asphodel.png" alt="" />
                             </a>
                         </div>
                         <div class="content-column one-third">
                             <a href="" target="_blank">
-                                <img src="" alt="" />
+                                <img src="./asphodel.png" alt="" />
                             </a>
                         </div>
                         <div class="content-column one-third">
                             <a href="" target="_blank">
-                                <img src="" alt="" />
+                                <img src="./asphodel.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="content-column one-third">
+                            <a href="www.google.com" target="_blank">
+                                <img src="./asphodel.png" alt="" />
                             </a>
                         </div>
                         <div class="content-column one-third">
                             <a href="" target="_blank">
-                                <img src="" alt="" />
+                                <img src="./asphodel.png" alt="" />
                             </a>
                         </div>
                         <div class="content-column one-third">
                             <a href="" target="_blank">
-                                <img src="" alt="" />
-                            </a>
-                        </div>
-                        <div class="content-column one-third">
-                            <a href="" target="_blank">
-                                <img src="" alt="" />
+                                <img src="./asphodel.png" alt="" />
                             </a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section>
+            <section class='container explore'>
                 <div class="content-block">
                     <h2 class="display-font">Explore More MakeCode</h2>
                 </div>
