@@ -74,6 +74,8 @@ section {
 .text-content-block {
     font-size: 1.8rem;
     line-height: 3rem;
+    max-width: 100rem;
+    margin: 0 auto;
 }
 
 h1 {
@@ -232,6 +234,13 @@ header .container .left-content-block h4 {
     margin-top: -1rem;
 }
 
+header .container .left-content-block h5 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-top: 0;
+}
+
 header .container .right-content-block {
     width: 60%;
     flex-grow: 1;
@@ -341,13 +350,6 @@ section.intro > .content-block > .text-content-block {
     padding-top: 3rem;
 }
 
-.certificate .text-content-block,
-.additional .text-content-block,
-.explore .text-content-block {
-    max-width: 100rem;
-    margin: 0 auto;
-}
-
 .certificate .action-button {
     margin: 0 auto;
     margin-top: 3rem;
@@ -447,4 +449,8 @@ section.intro > .content-block > .text-content-block {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+section.about {
+    padding-top: 7rem;
 }
