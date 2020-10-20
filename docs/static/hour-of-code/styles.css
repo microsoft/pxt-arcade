@@ -8,6 +8,16 @@ html {
     font-size: 10px;
 }
 
+#main,
+footer,
+footer > * {
+    min-height: unset;
+}
+
+.ui.vertical.segment.footer {
+    margin-top: 0;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-image: url('./pixel-background-secondary.png');
@@ -26,35 +36,35 @@ body {
     font-weight: 400;
 }
 
-img {
+#main img {
     display: block;
     width: 100%;
     height: auto;
 }
 
-.container {
+#main .container {
     width: 95%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-section {
+#main section {
     background-color: rgba(255, 255, 255, 0.75);
     margin: 0;
     padding: 5rem;
 }
 
-.container::after {
+#main .container::after {
     content: '';
     display: table;
     clear: both;
 }
 
-.color-primary {
+#main .color-primary {
     color: #ff7c23;
 }
 
-.color-secondary {
+#main .color-secondary {
     color: #fff2bd;
 }
 
@@ -66,34 +76,34 @@ section {
     background-color: #fff2bd;
 }
 
-.small-heading {
+#main .small-heading {
     font-size: 7rem;
     line-height: 0.9;
 }
 
-.text-content-block {
+#main .text-content-block {
     font-size: 1.8rem;
     line-height: 3rem;
     max-width: 100rem;
     margin: 0 auto;
 }
 
-h1 {
+#main h1 {
     font-size: 12.5rem;
     line-height: 0.9;
 }
 
-h2 {
+#main h2 {
     font-size: 4.8rem;
     line-height: 1;
     text-align: center;
 }
 
-h3 {
+#main h3 {
     font-size: 3rem;
 }
 
-.action-button {
+#main .action-button {
     display: block;
     border: solid;
     border-image-source: url('./shadowed-button-frame.png');
@@ -112,7 +122,7 @@ h3 {
     transition: 0.25s;
 }
 
-.action-button:hover {
+#main .action-button:hover {
     color: black;
     text-decoration: none;
     -moz-filter: brightness(80%) saturate(150%);
@@ -122,8 +132,8 @@ h3 {
     filter: brightness(80%) saturate(150%);
 }
 
-.panel-primary,
-.panel-secondary {
+#main .panel-primary,
+#main .panel-secondary {
     border: solid;
     border-image-source: url('./shadowed-primary-frame.png');
     border-image-slice: 30 45 45 30 fill;
@@ -133,13 +143,13 @@ h3 {
     padding-bottom: 5rem;
 }
 
-.panel-secondary {
+#main .panel-secondary {
     border-image-source: url('./shadowed-aside-frame.png');
 }
 
 /* Page Components ------------------------------------------------------------------- */
 
-nav {
+#main nav {
     height: 8.5rem;
     position: absolute;
     top: 0;
@@ -148,17 +158,17 @@ nav {
     padding: 2rem;
 }
 
-nav .arcade-logo {
+#main nav .arcade-logo {
     float: left;
     height: 100%;
 }
 
-nav .microsoft-logo {
+#main nav .microsoft-logo {
     float: right;
     height: 80%;
 }
 
-nav img {
+#main nav img {
     height: 100%;
     width: auto;
     filter: grayscale(100%);
@@ -170,7 +180,7 @@ nav img {
     filter: grayscale(1) invert(1);
 }
 
-header {
+#main header {
     padding-top: 10rem;
     background-image: url('./pixel-background-primary.png');
     background-size: cover;
@@ -178,13 +188,13 @@ header {
     background-position: top 10rem center;
 }
 
-header .container {
+#main header .container {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
 }
 
-header .container .left-content-block {
+#main header .container .left-content-block {
     flex-basis: 40%;
     flex-shrink: 1;
     max-width: 39rem;
@@ -193,32 +203,32 @@ header .container .left-content-block {
     padding-bottom: 3rem;
 }
 
-header .container .left-content-block h3 {
+#main header .container .left-content-block h3 {
     margin-bottom: 3rem;
     font-size: 2.6rem;
 }
 
-header .container .left-content-block h1 {
+#main header .container .left-content-block h1 {
     padding-left: 2.5rem;
     margin-bottom: 0;
 }
 
-header .container .left-content-block span {
+#main header .container .left-content-block span {
     display: block;
 }
 
-header .container .left-content-block h1 .small-heading {
+#main header .container .left-content-block h1 .small-heading {
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
 }
 
-header .container .left-content-block h1 .last-line {
+#main header .container .left-content-block h1 .last-line {
     position: relative;
     display: inline-block;
     line-height: 0.7;
 }
 
-header .container .left-content-block h1 em {
+#main header .container .left-content-block h1 em {
     font-style: normal;
     font-size: 2rem;
     position: absolute;
@@ -226,7 +236,7 @@ header .container .left-content-block h1 em {
     right: -2rem;
 }
 
-header .container .left-content-block h4 {
+#main header .container .left-content-block h4 {
     font-size: 7rem;
     padding-left: 2rem;
     letter-spacing: 7.3rem;
@@ -234,20 +244,20 @@ header .container .left-content-block h4 {
     margin-top: -1rem;
 }
 
-header .container .left-content-block h5 {
+#main header .container .left-content-block h5 {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 2rem;
     margin-top: 0;
 }
 
-header .container .right-content-block {
+#main header .container .right-content-block {
     width: 60%;
     flex-grow: 1;
     overflow: hidden;
 }
 
-header .container .right-content-block img {
+#Main header .container .right-content-block img {
     width: 100%;
     position: relative;
     bottom: 0;
@@ -255,12 +265,12 @@ header .container .right-content-block img {
     height: auto;
 }
 
-section.intro .content-block {
+#main section.intro .content-block {
     display: flex;
     align-items: center;
 }
 
-section.intro > .content-block > .text-content-block {
+#main section.intro > .content-block > .text-content-block {
     font-size: 2rem;
     line-height: 4rem;
     flex-shrink: 1;
@@ -403,52 +413,6 @@ section.intro > .content-block > .text-content-block {
 .explore {
     padding-top: 1rem;
     padding-bottom: 6rem;
-}
-
-.ui.vertical.segment.footer {
-    margin-top: 0;
-    background-color: #50dee8;
-    color: black;
-    padding-top: 5rem;
-    font-size: 1.6rem;
-}
-
-.docs.footer.inverted a.item {
-    margin: 0 3rem;
-}
-
-.docs.footer.inverted a.item i.icon {
-    font-size: 6rem;
-    color: black;
-}
-
-.docs.footer.inverted .divider {
-    display: none;
-}
-
-.ui.divided.horizontal.list .item {
-    font-size: 1.6rem;
-    color: black;
-}
-
-.ui.ui.divided.horizontal.list i.icon {
-    font-size: 1.6rem;
-    padding-right: 2.5rem;
-}
-
-.poweredBy span.item,
-.ui.horizontal.list.poweredBy > .item,
-.poweredBy a img {
-    display: none;
-}
-
-.ui.horizontal.list.poweredBy > a.middle {
-    height: 4rem;
-    display: block;
-    background-image: url('../Powered-By-Microsoft-logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
 section.about {
