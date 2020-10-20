@@ -24,18 +24,21 @@ void ArcadeFAT::addFiles() {
   addFile(readCfg, this, "config.bin",
           BOOTLOADER_END_ADDR - BOOTLOADER_START_ADDR);
 }
+#endif
 
 namespace storage {
 
 //%
 void init() {
+#if CONFIG_ENABLED(DEVICE_USB)
   auto msc = new ArcadeFAT();
+  msc->addFiles();
   usb.add(*msc);
+#endif
 }
 
 } // namespace storage
 
-#endif
 
 
 
