@@ -22,13 +22,15 @@
             "microsoft": {
                 "id": "microsoft",
                 "name": "Microsoft",
+                "icon": "./images/microsoft-logo.svg",
                 "identity": true,
                 "redirect": true
             },
             "google": {
                 "id": "google",
                 "name": "Google",
-                "identity": true,
+                "icon": "./images/google-logo.svg",
+                "identity": false,
                 "redirect": true
             }
         }
