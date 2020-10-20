@@ -23,11 +23,23 @@
 
         <script>
             function handleOnLoad() {
-                // document
-                //     .querySelector('#openhome')
-                //     .addEventListener('click', function () {
-                //         window.pxtTickEvent('hourofcode.home');
-                //     });
+                document
+                    .querySelector("#playbutton")
+                    .addEventListener('click', function () {
+                        window.pxtTickEvent('hourofcode.play');
+                    });
+
+                document
+                    .querySelector("#designbutton")
+                    .addEventListener('click', function () {
+                        window.pxtTickEvent('hourofcode.design');
+                    });
+
+                document
+                    .querySelector("#codebutton")
+                    .addEventListener('click', function () {
+                        window.pxtTickEvent('hourofcode.code');
+                    });
 
                 var langPicker = document.querySelector('#langpicker');
                 if (langPicker) {
@@ -107,7 +119,7 @@
                             game!
                         </div>
 
-                        <div class="action-button">
+                        <div id="playbutton" class="action-button">
                             Launch
                         </div>
                     </a>
@@ -124,7 +136,7 @@
                             this simple game template.
                         </div>
 
-                        <div class="action-button">Launch</div>
+                        <div id="designbutton" class="action-button">Launch</div>
                     </a>
 
                     <a href="https://arcade.makecode.com/#tutorial:/recipes/shark-splash/01-character" class="content-column one-third panel-secondary">
@@ -140,7 +152,7 @@
                             play!
                         </div>
 
-                        <div class="action-button">
+                        <div id="codebutton" class="action-button">
                             Launch
                         </div>
                     </a>
