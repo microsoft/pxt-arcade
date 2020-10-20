@@ -19,15 +19,15 @@
 
         <!-- @include scripthead.html -->
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./styles.css" />
+        <link rel="stylesheet" href="/static/hour-of-code/styles.css" />
 
         <script>
             function handleOnLoad() {
-                document
-                    .querySelector('#openhome')
-                    .addEventListener('click', function () {
-                        window.pxtTickEvent('hourofcode.home');
-                    });
+                // document
+                //     .querySelector('#openhome')
+                //     .addEventListener('click', function () {
+                //         window.pxtTickEvent('hourofcode.home');
+                //     });
 
                 var langPicker = document.querySelector('#langpicker');
                 if (langPicker) {
@@ -42,7 +42,7 @@
             <nav>
                 <div class="arcade-logo">
                     <a href="/">
-                        <img src="../logo.svg" alt="MakeCode Arcade" />
+                        <img src="/static/logo.svg" alt="MakeCode Arcade" />
                     </a>
                 </div>
 
@@ -51,7 +51,7 @@
                         href="https://www.microsoft.com/en-us/makecode"
                         target="_blank"
                     >
-                        <img src="../Micorsoft_logo_rgb_W-white_D.png" alt="Microsoft" />
+                        <img src="/static/Micorsoft_logo_rgb_W-white_D.png" alt="Microsoft" />
                     </a>
                 </div>
             </nav>
@@ -65,7 +65,7 @@
                     </div>
 
                     <div class="right-content-block">
-                        <img src="./simulator.png" alt="MakeCode Arcade Simulator" />
+                        <img src="/static/hour-of-code/simulator.png" alt="MakeCode Arcade Simulator" />
                     </div>
                 </div>
             </header>
@@ -79,14 +79,14 @@
                     </div>
                     <div class="panel-secondary educators-aside">
                         <div class='content-block'>
-                            <img src='./apple.png' alt='For educators'/>
+                            <img src='/static/hour-of-code/apple.png' alt='For educators'/>
                             <div class="text-content-block">
                                 Are you a <b>teacher</b> or <b>parent</b>? Find
                                 additional information about these activities here.
                             </div>
                         </div>
-                        
-                        <a class="action-button" href="./educators"
+
+                        <a class="action-button" href="/static/hour-of-code/educators"
                             >For Educators</a
                         >
                     </div>
@@ -98,7 +98,7 @@
                         <h2 class="display-font panel-primary">Play</h2>
 
                         <div class="hero">
-                            <img src="./asphodel.png" alt="Asphodel follows directions" />
+                            <img src="/static/hour-of-code/asphodel.png" alt="Asphodel follows directions" />
                         </div>
 
                         <div class="text-content-block">
@@ -116,7 +116,7 @@
                         <h2 class="display-font panel-primary">Design</h2>
 
                         <div class="hero">
-                            <img src="./design.png" alt="" />
+                            <img src="/static/hour-of-code/design.png" alt="" />
                         </div>
 
                         <div class="text-content-block">
@@ -131,7 +131,7 @@
                         <h2 class="display-font panel-primary">Code</h2>
 
                         <div class="hero">
-                            <img src="./shark-attack.png" alt="Shark Attack" />
+                            <img src="/static/hour-of-code/shark-attack.png" alt="Shark Attack" />
                         </div>
 
                         <div class="text-content-block">
@@ -172,37 +172,37 @@
                     <div class="content-row">
                         <div class="content-column one-third">
                             <a href="https://arcade.makecode.com/ww84" target="_blank">
-                                <img src="./ww-maze.png" alt="Wonder Woman Maze" />
+                                <img src="/static/hour-of-code/ww-maze.png" alt="Wonder Woman Maze" />
                                 <div class='action-button'>Wonder Woman Maze</div>
                             </a>
                         </div>
                         <div class="content-column one-third">
                             <a href="https://arcade.makecode.com/nfl" target="_blank">
-                                <img src="./nfl.png" alt="NFL Football" />
+                                <img src="/static/hour-of-code/nfl.png" alt="NFL Football" />
                                 <div class='action-button'>NFL Football</div>
                             </a>
                         </div>
                         <div class="content-column one-third">
                             <a href="https://arcade.makecode.com/#tutorial:/tutorials/chase-the-pizza" target="_blank">
-                                <img src="./chase-the-pizza.png" alt="Chase the Pizza" />
+                                <img src="/static/hour-of-code/chase-the-pizza.png" alt="Chase the Pizza" />
                                 <div class='action-button'>Chase the Pizza</div>
                             </a>
                         </div>
                         <div class="content-column one-third">
                             <a href="https://arcade.makecode.com/#tutorial:/tutorials/lemon-leak" target="_blank">
-                                <img src="./lemon-leak.png" alt="Lemon Leak" />
+                                <img src="/static/hour-of-code/lemon-leak.png" alt="Lemon Leak" />
                                 <div class='action-button'>Lemon Leak</div>
                             </a>
                         </div>
                         <div class="content-column one-third">
                             <a href="https://arcade.makecode.com/#tutorial:/tutorials/galga" target="_blank">
-                                <img src="./galga.png" alt="Galga" />
+                                <img src="/static/hour-of-code/galga.png" alt="Galga" />
                                 <div class='action-button'>Galga</div>
                             </a>
                         </div>
                         <div class="content-column one-third">
                             <a href="https://arcade.makecode.com/#tutorial:/tutorials/collect-the-clovers" target="_blank">
-                                <img src="./clovers.png" alt="Catch the Clovers" />
+                                <img src="/static/hour-of-code/clovers.png" alt="Catch the Clovers" />
                                 <div class='action-button'>Catch the Clovers</div>
                             </a>
                         </div>
@@ -213,25 +213,25 @@
             <section class='container explore'>
                 <div class="content-block">
                     <h2 class="display-font">Explore More MakeCode</h2>
-                    <div class='text-content-block'>Whether it's gaming, hacking, creating, or learning, 
-                        you can use MakeCode to bring your project to life. Explore everything MakeCode Arcade has to 
+                    <div class='text-content-block'>Whether it's gaming, hacking, creating, or learning,
+                        you can use MakeCode to bring your project to life. Explore everything MakeCode Arcade has to
                         offer, or check out our other platforms such as MakeCode Micro:Bit and MakeCode Minecraft.</div>
                     <div class="content-row">
                         <div class="content-column one-third">
                             <a href="https://arcade.makecode.com/" target="_blank">
-                                <img src="./arcade.png" alt="MakeCode Arcade" />
+                                <img src="/static/hour-of-code/arcade.png" alt="MakeCode Arcade" />
                                 <div class='action-button'>MakeCode Arcade</div>
                             </a>
                         </div>
                         <div class="content-column one-third">
                             <a href="https://makecode.microbit.org/" target="_blank">
-                                <img src="./micro-bit.png" alt="MakeCode Micro:bit" />
+                                <img src="/static/hour-of-code/micro-bit.png" alt="MakeCode Micro:bit" />
                                 <div class='action-button'>MakeCode Micro:bit</div>
                             </a>
                         </div>
                         <div class="content-column one-third">
                             <a href="https://minecraft.makecode.com/" target="_blank">
-                                <img src="./minecraft.png" alt="MakeCode Minecraft" />
+                                <img src="/static/hour-of-code/minecraft.png" alt="MakeCode Minecraft" />
                                 <div class='action-button'>MakeCode Minecraft</div>
                             </a>
                         </div>
