@@ -1,8 +1,10 @@
 /* Global --------------------------------------------------------------------------- */
+/*
 @font-face {
     font-family: 'Pixel';
     src: url('./display-font.ttf') format('truetype');
 }
+*/
 
 html {
     font-size: 10px;
@@ -19,7 +21,7 @@ footer > * {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-image: url('./pixel-background-secondary.png');
     background-size: cover;
     background-position: top 10rem center;
@@ -27,12 +29,12 @@ body {
 }
 
 .display-font {
-    font-family: 'Pixel', sans-serif;
-    letter-spacing: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    /*letter-spacing: 1.5rem;*/
 }
 
 .body-font {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
 
@@ -139,8 +141,9 @@ body {
     border-image-slice: 30 45 45 30 fill;
     border-image-width: 1.5rem 2.25rem 2.25rem 1.5rem;
     border-image-repeat: stretch;
-    padding: 3rem;
-    padding-bottom: 5rem;
+    padding: 1.5rem;
+    /* padding: 3rem;
+    padding-bottom: 5rem;*/
 }
 
 #main .panel-secondary {
@@ -209,8 +212,9 @@ body {
 }
 
 #main header .container .left-content-block h1 {
-    padding-left: 2.5rem;
+    /*padding-left: 2.5rem;*/
     margin-bottom: 0;
+    text-transform: uppercase;
 }
 
 #main header .container .left-content-block span {
@@ -220,12 +224,14 @@ body {
 #main header .container .left-content-block h1 .small-heading {
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
+    text-transform: uppercase;
 }
 
 #main header .container .left-content-block h1 .last-line {
     position: relative;
     display: inline-block;
-    line-height: 0.7;
+    /*line-height: 0.7;*/
+    text-transform: uppercase;
 }
 
 #main header .container .left-content-block h1 em {
@@ -238,10 +244,10 @@ body {
 
 #main header .container .left-content-block h4 {
     font-size: 7rem;
-    padding-left: 2rem;
-    letter-spacing: 7.3rem;
+    /*padding-left: 2rem;
+    letter-spacing: 7.3rem;*/
     margin: 0;
-    margin-top: -1rem;
+    /*margin-top: -1rem;*/
 }
 
 #main header .container .left-content-block h5 {
@@ -323,14 +329,14 @@ body {
 .activities .content-row .content-column h2 {
     display: block;
     top: -2rem;
-    padding-left: 4rem;
+    /*padding-left: 4rem;
     padding-right: 1.5rem;
     padding-top: 1.7rem;
-    padding-bottom: 1rem;
+    padding-bottom: 1rem; */
     right: 0.5rem;
     left: 0.5rem;
     position: absolute;
-    letter-spacing: auto;
+    /*letter-spacing: auto;*/
     text-align: center;
 }
 
