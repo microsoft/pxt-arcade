@@ -22,7 +22,6 @@ footer > * {
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-image: url('./pixel-background-secondary.png');
     background-size: cover;
     background-position: top 10rem center;
     background-repeat: repeat-y;
@@ -108,7 +107,6 @@ body {
 #main .action-button {
     display: block;
     border: solid;
-    border-image-source: url('./shadowed-button-frame.png');
     border-image-slice: 30 45 45 30 fill;
     border-image-width: 1.1rem 1.6rem 1.6rem 1.1rem;
     border-image-repeat: stretch;
@@ -137,17 +135,12 @@ body {
 #main .panel-primary,
 #main .panel-secondary {
     border: solid;
-    border-image-source: url('./shadowed-primary-frame.png');
     border-image-slice: 30 45 45 30 fill;
     border-image-width: 1.5rem 2.25rem 2.25rem 1.5rem;
     border-image-repeat: stretch;
     padding: 1.5rem;
     /* padding: 3rem;
     padding-bottom: 5rem;*/
-}
-
-#main .panel-secondary {
-    border-image-source: url('./shadowed-aside-frame.png');
 }
 
 /* Page Components ------------------------------------------------------------------- */
@@ -185,7 +178,6 @@ body {
 
 #main header {
     padding-top: 10rem;
-    background-image: url('./pixel-background-primary.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top 10rem center;

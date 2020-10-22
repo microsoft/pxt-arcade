@@ -19,9 +19,36 @@
 
         <!-- @include scripthead.html -->
         <link rel="stylesheet" href="/static/hour-of-code/styles.css" />
+        <style>
+            body {
+                background-image: url('/static/hour-of-code/pixel-background-secondary.png');
+            }
+
+            #main .action-button {
+                border-image-source: url('/static/hour-of-code/shadowed-button-frame.png');
+            }
+
+            #main .panel-primary {
+                border-image-source: url('/static/hour-of-code/shadowed-primary-frame.png');
+            }
+
+            #main .panel-secondary {
+                border-image-source: url('/static/hour-of-code/shadowed-aside-frame.png');
+            }
+
+            #main header {
+                background-image: url('/static/hour-of-code/pixel-background-primary.png');
+            }
+        </style>
 
         <script>
             function handleOnLoad() {
+                document
+                    .querySelector('#openhome')
+                    .addEventListener('click', function () {
+                        window.pxtTickEvent('hourofcode2020.home', { src: "main" });
+                    });
+
                 document
                     .querySelector("#playbutton")
                     .addEventListener('click', function () {
@@ -51,7 +78,7 @@
     <body id="root" class="root background-color-secondary" onload="handleOnLoad()">
         <div id="main" role="presentation">
             <nav>
-                <div class="arcade-logo">
+                <div class="arcade-logo" id="openhome">
                     <a href="/">
                         <img src="/static/logo.svg" alt="MakeCode Arcade" />
                     </a>
