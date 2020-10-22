@@ -212,6 +212,15 @@ h1 {
     flex: 1;
 }
 
+.game img {
+    width: 100%;
+}
+
+.game > div > div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 /***** WINNERS ****/
 
 .winners #events,
@@ -256,7 +265,7 @@ h1 {
         display: none;
     }
 
-    #rules table td:nth-child(2) {
+    .content:not(.winners) #rules table td:nth-child(2) {
         display: none;
     }
 
