@@ -19,6 +19,27 @@
 
         <!-- @include scripthead.html -->
         <link rel="stylesheet" href="/static/hour-of-code/styles.css" />
+        <style>
+            body {
+                background-image: url('/static/hour-of-code/pixel-background-secondary.png');
+            }
+
+            #main .action-button {
+                border-image-source: url('/static/hour-of-code/shadowed-button-frame.png');
+            }
+
+            #main .panel-primary {
+                border-image-source: url('/static/hour-of-code/shadowed-primary-frame.png');
+            }
+
+            #main .panel-secondary {
+                border-image-source: url('/static/hour-of-code/shadowed-aside-frame.png');
+            }
+
+            #main header {
+                background-image: url('/static/hour-of-code/pixel-background-primary.png');
+            }
+        </style>
 
         <script>
             function handleOnLoad() {
@@ -40,7 +61,7 @@
         <div id="main" role="presentation">
             <nav>
                 <div class="arcade-logo">
-                    <a href="/">
+                    <a href="/" id="openhome">
                         <img src="/static/logo.svg" alt="MakeCode Arcade" />
                     </a>
                 </div>
@@ -74,11 +95,11 @@
                 <div class="content-block">
                     <h2 class='display-font'>About MakeCode Arcade</h2>
                     <div class="text-content-block">
-                        Microsoft MakeCode Arcade is a free, open source retro 2D 
-                        game development environment. Students anywhere from 9 to 18 
-                        can use MakeCode Arcade to design and create their own games 
-                        online that they can then share with friends and family or 
-                        download to hand-held game devices. Learn more about Microsoft 
+                        Microsoft MakeCode Arcade is a free, open source retro 2D
+                        game development environment. Students anywhere from 9 to 18
+                        can use MakeCode Arcade to design and create their own games
+                        online that they can then share with friends and family or
+                        download to hand-held game devices. Learn more about Microsoft
                         MakeCode at <a href='http://aka.ms/makecode' target='_blank'>http://aka.ms/makecode</a>.
                     </div>
                 </div>
