@@ -17,21 +17,26 @@
         "cloudProviders": {
             "github": {
                 "id": "github",
-                "name": "GitHub"
+                "name": "GitHub",
+                "icon": "./static/providers/github-mark.png",
+                "identity": false,
+                "order": 3
             },
             "microsoft": {
                 "id": "microsoft",
                 "name": "Microsoft",
-                "icon": "./images/microsoft-logo.svg",
+                "icon": "./static/providers/microsoft-logo.svg",
                 "identity": true,
-                "redirect": true
+                "redirect": true,
+                "order": 1
             },
             "google": {
                 "id": "google",
                 "name": "Google",
-                "icon": "./images/google-logo.svg",
+                "icon": "./static/providers/google-logo.svg",
                 "identity": false,
-                "redirect": true
+                "redirect": true,
+                "order": 2
             }
         }
     },
