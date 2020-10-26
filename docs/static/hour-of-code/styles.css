@@ -10,6 +10,12 @@ html {
     font-size: 10px;
 }
 
+ol {
+	font-weight: bold;
+}
+
+li span { font-weight: normal; }
+    
 #main,
 footer,
 footer > * {
@@ -255,7 +261,7 @@ body {
     overflow: hidden;
 }
 
-#Main header .container .right-content-block img {
+#main header .container .right-content-block img {
     width: 100%;
     position: relative;
     bottom: 0;
