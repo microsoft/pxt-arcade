@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html
+    lang="en-US"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="http://www.facebook.com/2008/fbml"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Microsoft MakeCode Arcade Hour of Code 2020</title>
+        <meta
+            name="Description"
+            content="Microsoft MakeCode Arcade Hour of Code 2020"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=yes"
+        />
+
+        <!-- @include scripthead.html -->
+        <link rel="stylesheet" href="/static/hour-of-code/styles.css" />
+        <style>
+            body {
+                background-image: url('/static/hour-of-code/pixel-background-secondary.png');
+            }
+
+            #main .action-button {
+                border-image-source: url('/static/hour-of-code/shadowed-button-frame.png');
+            }
+
+            #main .panel-primary {
+                border-image-source: url('/static/hour-of-code/shadowed-primary-frame.png');
+            }
+
+            #main .panel-secondary {
+                border-image-source: url('/static/hour-of-code/shadowed-aside-frame.png');
+            }
+
+            #main header {
+                background-image: url('/static/hour-of-code/pixel-background-primary.png');
+            }
+        </style>
+
+        <script>
+            function handleOnLoad() {
+                document
+                    .querySelector('#openhome')
+                    .addEventListener('click', function () {
+                        window.pxtTickEvent('hourofcode2020.home', { src: "educators" });
+                    });
+
+                var langPicker = document.querySelector('#langpicker');
+                if (langPicker) {
+                    langPicker.remove();
+                }
+            }
+        </script>
+    </head>
+
+    <body id="root" class="root background-color-secondary" onload="handleOnLoad()">
+        <div id="main" role="presentation">
+            <nav>
+                <div class="arcade-logo">
+                    <a href="/" id="openhome">
+                        <img src="/static/logo.svg" alt="MakeCode Arcade" />
+                    </a>
+                </div>
+
+                <div class="microsoft-logo">
+                    <a
+                        href="https://www.microsoft.com/en-us/makecode"
+                        target="_blank"
+                    >
+                        <img src="/static/Micorsoft_logo_rgb_W-white_D.png" alt="Microsoft" />
+                    </a>
+                </div>
+            </nav>
+
+            <header class='background-color-primary'>
+                <div class="container">
+                    <div class="left-content-block">
+                        <h3 class='body-font'>Microsoft MakeCode Arcade</h3>
+                        <h1 class="display-font"><span class='first-line'>Hour</span><span class='small-heading'>of</span><span class='last-line'>Code<em class='trademark'>™</em></span></h1>
+                        <h4 class="display-font">2020</h4>
+                        <h5>Educator Information</h5>
+                    </div>
+
+                    <div class="right-content-block">
+                        <img src="/static/hour-of-code/simulator.png" alt="MakeCode Arcade Simulator" />
+                    </div>
+                </div>
+            </header>
+
+            <section class='about container'>
+                <div class="content-block">
+                    <h2 class='display-font'>About MakeCode Arcade</h2>
+                    <div class="text-content-block">
+                        Microsoft MakeCode Arcade is a free, open source retro 2D
+                        game development environment. Students anywhere from 9 to 18
+                        can use MakeCode Arcade to design and create their own games
+                        online that they can then share with friends and family or
+                        download to hand-held game devices. Learn more about Microsoft
+                        MakeCode at <a href='http://aka.ms/makecode' target='_blank'>http://aka.ms/makecode</a>.
+                    </div>
+                </div>
+            </section>
+
+            <section class='container'>
+                <div class="content-block">
+                    <h2 class='display-font'>Activity Requirements</h2>
+                    <div class="text-content-block">
+                        The MakeCode Arcade Hour of Code™ activities require students to
+                        have a computer with internet access. All activities run in the
+                        browser – no download or installation required.
+                    </div>
+                </div>
+            </section>
+
+            <section class='container'>
+                <div class="content-block">
+                    <h2 class='display-font'>Learning Outcomes</h2>
+                    <div class="text-content-block">
+                        <ol>
+                            <li><p>Asphodel Follows Directions game</p>
+                                <span>
+                                <p>In this multi-level game, students are challenged to pick up
+                                and move directional arrows through a maze to guide Asphodel through
+                                to reach her trophy. Students learn algorithmic thinking and problem
+                                decomposition by tracing the path Asphodel must follow, and then
+                                placing arrows in the appropriate places in sequence to map out her
+                                path.</p>
+                                <p>How to play:</p>
+                                </p><ul>
+                                    <li>Move the purple cursor with the joystick or the arrow keys on
+                                    the keyboard</li>
+                                    <li>Press the A button or the space bar on the keyboard to pick up
+                                    and put down the purple directional arrows</li>
+                                    <li>When you have completed placing all the purple arrows along
+                                    Asphodel’s path, press the B button or the enter key on the keyboard
+                                    to make Asphodel move up and follow the arrows</li>
+                                </ul></p>
+                                <p>There are 11 levels in the game that progress in difficulty.</p>
+                                <p>Levels 1-3 focus on sequencing and trial and error tactics to
+                                navigate Asphodel through progressively more complex mazes.</p>
+                                <p><img src="/static/hour-of-code/educators/asphodel-level1.png" alt="Level 1 of Asphodel Game" style="width:auto; height:auto"></p>
+                                <p>Levels 4-5 introduce a key object that Asphodel must pick up to unlock
+                                a gate blocking her path.</p>
+                                <p><img src="/static/hour-of-code/educators/asphodel-level4.png" alt="Level 4 of Asphodel Game" style="width:auto; height:auto"></p>
+                                <p>Level 6 more explicitly introduces the concept of <a href="https://en.wikipedia.org/wiki/Conditional_(computer_programming)">Conditional</a>
+                                statements. There are gates blocking Asphodel’s path that can only be
+                                opened if Asphodel’s hat is a certain color. Luckily, there are paint
+                                cans along the way that she can use to change the color of her hat!</p>
+                                <p><img src="/static/hour-of-code/educators/asphodel-level6.png" alt="Level 6 of Asphodel Game" style="width:auto; height:auto"></p>
+                                <p>Level 7 combines the key and the color gates! Challenge students
+                                to think about deconstructing the problem into separate discrete
+                                steps to solve:</p>
+                                <p><ul>
+                                    <li>Change hat to blue</li>
+                                    <li>Pick up key</li>
+                                    <li>Change hat to red</li>
+                                </ul></p>
+                                <p><img src="/static/hour-of-code/educators/asphodel-level7.png" alt="Level 7 of Asphodel Game" style="width:auto; height:auto"></p>
+                                <p>Level 9 introduces the concept of color gate switches. When
+                                Asphodel moves over a Color Switch, either the Red or Pink gates
+                                will open. You can think of these color switches as <a href="https://en.wikipedia.org/wiki/Boolean_data_type">Boolean</a> values
+                                and logic where either Red = true and Pink = false, or Red = false
+                                and Pink = true.</p>
+                                <p><img src="/static/hour-of-code/educators/asphodel-level9.png" alt="Level 9 of Asphodel Game" style="width:auto; height:auto"></p>
+                                <br/></span></li>
+                            <li><p>Design the Clovers game</p>
+                                <span>
+                                <p>In this tutorial, students will take an existing game, Collect
+                                the Clovers, and express their creativity and artistic talent by
+                                making the game their own. Prompt students to think about a story
+                                for their game:</p>
+                                <p><ul>
+                                    <li>Scene – what is the setting?</li>
+                                    <li>Characters – hero? enemy?</li>
+                                    <li>Object – what is the object to collect?</li>
+                                </ul></p>
+                                <p>Students will design and draw the characters and the background
+                                for their game. They will also select visual effects and sounds for
+                                their game. Students learn that games are a great way to combine code
+                                and art, music and storytelling to create a unique digital artifact
+                                that others can play.</p>
+                                <p><img src="/static/hour-of-code/educators/clover-design.gif" alt="Clover game design in simulator" style="width:auto; height:auto"></p>
+                                <br/></span>
+                            </li>
+                            <li><p>Shark Attack tutorial</p>
+                                <span>
+                                <p>Following a step-by-step tutorial, students will code their own game.
+                                Students will learn computer science concepts such as variables, events,
+                                random functions, and objects. In addition, students will learn game development
+                                concepts such as sprites, projectiles, position and velocity, and game loop.</p>
+                                <p><img src="/static/hour-of-code/educators/shark-attack-tutorial.png" alt="Shark Attack Tutorial screen" style="width:auto; height:auto"></p>
+                                </span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <section class='container'>
+                <div class="content-block">
+                    <h2 class='display-font'>Tips for Facilitation</h2>
+                    <div class="text-content-block">
+                        These MakeCode Arcade activities are meant to be self-guided.
+                        However, you can encourage students to do the following:
+                        <ul>
+                            <li>Help each other if they get stuck
+                            </li>
+                            <li>Click on the "Hint" button in any tutorial</li>
+                            <li>Share the games they create with others to play. Note that this generates a URL link that can be copied</li>
+                            <li>If they finish early, try some of the suggested additional activities</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class='container'>
+                <div class="content-block">
+                    <h2 class='display-font'>Additional Resources for Educators</h2>
+                    <div class="text-content-block">
+                        <ul>
+                            <li><a href="https://arcade.makecode.com/courses" target="_blank">MakeCode Arcade curriculum</a></li>
+                            <li><a href="https://arcade.makecode.com/hardware" target="_blank">MakeCode Arcade gaming devices</a></li>
+                            <li><a href="https://arcade.makecode.com/docs" target="_blank">MakeCode Arcade reference documentation</a></li>
+                            <li><a href="https://arcade.makecode.com/github" target="_blank">MakeCode Arcade with GitHub</a></li>
+                            <li><a href="https://makecode.microbit.org/online-learning" target="_blank">Using MakeCode with LMS</a></li>
+                            <li><a href="https://forum.makecode.com/" target="_blank">MakeCode forum</a></li>
+                            <li><a href="https://twitter.com/MSMakeCode" target="_blank">MakeCode on Twitter</a></li>
+                            <li><a href="https://www.youtube.com/microsoftmakecode" target="_blank">MakeCode on YouTube</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+    </div>
+        <!-- @include footer.html -->
+        <!-- @include tracking.html -->
+        <!-- @include tickevent.html -->
+    </body>
+</html>

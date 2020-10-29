@@ -548,7 +548,8 @@
         "chooseLanguageRestrictionOnNewProject": true,
         "openProjectNewTab": true,
         "hasReferenceDocs": true,
-        "python": true
+        "python": true,
+        "assetEditor": true
     },
     "unsupportedBrowsers": [
         {

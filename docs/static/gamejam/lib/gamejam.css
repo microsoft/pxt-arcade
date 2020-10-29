@@ -209,6 +209,16 @@ h1 {
 #gallery .game {
     text-align: center;
     margin: 1rem;
+    flex: 1;
+}
+
+.game img {
+    width: 100%;
+}
+
+.game > div > div {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /***** WINNERS ****/
@@ -255,7 +265,7 @@ h1 {
         display: none;
     }
 
-    #rules table td:nth-child(2) {
+    .content:not(.winners) #rules table td:nth-child(2) {
         display: none;
     }
 
