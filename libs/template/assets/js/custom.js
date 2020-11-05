@@ -6,4 +6,6 @@
  *      "disableTargetTemplateFiles": true
  * 
  * otherwise MakeCode will override your changes.
+ * 
+ * To register a constrol simmessages, use addSimMessageHandler
  */
