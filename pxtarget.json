@@ -529,6 +529,14 @@
         "python": true,
         "assetEditor": true
     },
+    "queryVariants": {
+        "skillsMap=1": {
+            "appTheme": {
+                "embeddedTutorial": true,
+                "allowParentController": true
+            }
+        }
+    },
     "unsupportedBrowsers": [
         {
             "id": "ie"
