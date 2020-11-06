@@ -27,9 +27,9 @@ but they are harder to find).
 Then we put 22mil holes on the PCB with standard 50mil pin spacing, but 62mil row spacing.
 The male pins lock into the holes.
 
-![Hack-connect XS parts](../../docs/static/hardware/dbg/xs-parts.jpg)
+![Hack-connect XS parts](/docs/static/hardware/dbg/xs-parts.jpg)
 
-![Hack-connect XS connected](../../docs/static/hardware/dbg/xs-connected.jpg)
+![Hack-connect XS connected](/docs/static/hardware/dbg/xs-connected.jpg)
 
 The restricted area (where the plastic from the header touches the PCB) is only about 5x3mm, 
 and is usually further reduced by placing the connector in the corner of the board.
@@ -37,7 +37,7 @@ Further, no components higher than 2mm can be placed under the connector itself
 (most small passives fit).
 We use the following pinout:
 
-![Hack-connect XS layout](../../docs/static/hardware/dbg/xs-layout.png)
+![Hack-connect XS layout](/docs/static/hardware/dbg/xs-layout.png)
 
 The white line on the silk shows the side of the PCB where the connector should be plugged in,
 and also the side where the red wire on the ribbon cable is.
@@ -60,18 +60,18 @@ Otherwise, the male header will often stay in the board when unplugging.
 It's also possible to create a connector with pogo pins for quick programming of a number of devices
 or use in a test rig.
 
-![Hack-connect XS pogo programming](../../docs/static/hardware/dbg/xs-pogo-prog.jpg)
+![Hack-connect XS pogo programming](/docs/static/hardware/dbg/xs-pogo-prog.jpg)
 
 Use P50-E2 0.68mm diameter pins (head diameter of 0.9mm).
 
 You can use two Hack-connector XS PCBs to hold the pins together,
 but you will need to order the holes a little bigger.
 
-![Hack-connect XS pogo with 2 PCBs](../../docs/static/hardware/dbg/xs-pogo-pcb.jpg)
+![Hack-connect XS pogo with 2 PCBs](/docs/static/hardware/dbg/xs-pogo-pcb.jpg)
 
 Once everything is in place, use glue gun or similar to secure the pins to the PCBs.
 
-![Hack-connect XS pogo with glue](../../docs/static/hardware/dbg/xs-pogo-glue.jpg)
+![Hack-connect XS pogo with glue](/docs/static/hardware/dbg/xs-pogo-glue.jpg)
 
 ### CAD files
 
