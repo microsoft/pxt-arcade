@@ -15,7 +15,29 @@
         "publishing": true,
         "githubPackages": true,
         "cloudProviders": {
-            "github": {}
+            "github": {
+                "id": "github",
+                "name": "GitHub",
+                "icon": "./static/providers/github-mark.png",
+                "identity": false,
+                "order": 3
+            },
+            "microsoft": {
+                "id": "microsoft",
+                "name": "Microsoft",
+                "icon": "./static/providers/microsoft-logo.svg",
+                "identity": true,
+                "redirect": true,
+                "order": 1
+            },
+            "google": {
+                "id": "google",
+                "name": "Google",
+                "icon": "./static/providers/google-logo.svg",
+                "identity": false,
+                "redirect": true,
+                "order": 2
+            }
         }
     },
     "bundleddirs": [
@@ -195,7 +217,6 @@
                         "tilemap\\s*\\.\\s*screenCoordinateToTile": "tiles.screenCoordinateToTile",
                         "tilemap\\s*\\.\\s*tileCoordinateToScreen": "tiles.tileCoordinateToScreen",
                         "tilemap\\s*\\.\\s*centeredTileCoordinateToScreen": "tiles.centeredTileCoordinateToScreen",
-
                         "tilemap\\s*\\.\\s*OVERWORLD_MAP_ID": "tiles.OVERWORLD_MAP_ID",
                         "tilemap\\s*\\.\\s*MAP_LOADED_EVENT": "tiles.MAP_LOADED_EVENT",
                         "tilemap\\s*\\.\\s*WorldMap": "tiles.WorldMap",
@@ -508,7 +529,8 @@
             "experimentalHw",
             "recipes",
             "tutorialBlocksDiff",
-            "blocksErrorList"
+            "blocksErrorList",
+            "identity"
         ],
         "blocksCollapsing": true,
         "errorList": true,
