@@ -38,7 +38,7 @@
     {
         "name": "Game Jam",
         "url": "/game-jam",
-        "imageUrl": "https://pxt.azureedge.net/api/25787-41781-39930-98285/thumb"
+        "imageUrl": "https://pxt.azureedge.net/api/42885-92487-13042-52240/thumb"
     },
     {
         "name": "Advanced Livestream",
