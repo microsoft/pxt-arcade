@@ -10,6 +10,7 @@
         ".gitattributes",
         "assets/index.html",
         "assets/js/loader.js",
+        "assets/js/custom.js",
         ".github/workflows/makecode-release.yml"
     ]
 }
