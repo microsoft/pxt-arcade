@@ -57,15 +57,15 @@ You will also need to cut out the 2 sides of the arcade cabinet.
 
 * using your profile template, mark 2 profiles on the plywood and cut with a jigsaw. 
 
-![Cutting the template](/static/hardware/wooden-cabinet/cuttemplate.jpg)
+![Cutting the template](/static/hardware/raspberry-pi/wooden-cabinet/cuttemplate.jpg)
 
 * The cuts do not have to be perfect as the router will clean it up.
 
-![Rough edges](/static/hardware/wooden-cabinet/roughedges.jpg)
+![Rough edges](/static/hardware/raspberry-pi/wooden-cabinet/roughedges.jpg)
 
 * Use a router to clean the edges
 
-![Route edges](/static/hardware/wooden-cabinet/routeedges.jpg)
+![Route edges](/static/hardware/raspberry-pi/wooden-cabinet/routeedges.jpg)
 
 * cut and miter all the cuts set aside
 
@@ -81,7 +81,7 @@ For each board,
 
 Once all the boards are secured, attach the upper side of the arcade and you're done!
 
-![Assembled cabinet](/static/hardware/wooden-cabinet/box.jpg)
+![Assembled cabinet](/static/hardware/raspberry-pi/wooden-cabinet/box.jpg)
 
 ## Control panel
 
@@ -94,3 +94,8 @@ Follow the wiring instructions of the [cardboard control panel](/hardware/raspbe
 * drill holes to allow power and HDMI cables to pass through the back of the screen
 
 To make it easier, we recommend building a jig to position and build this part.
+
+## Decoration
+
+This is your cabinet, have fun decorating it! We used the
+https://arcade-stencils.glitch.me/ to generate stencils and drawing on our cabinets.
