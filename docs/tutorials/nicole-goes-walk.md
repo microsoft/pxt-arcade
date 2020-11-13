@@ -912,3 +912,7 @@ game.onUpdate(function () {
     }
 }
 ```
+
+```package
+custom-game-over=github:shakao/custom-game-over
+```
