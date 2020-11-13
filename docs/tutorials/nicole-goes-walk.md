@@ -220,7 +220,7 @@ music.playMelody("C C5 D B E A F G ", 320)
 
 ## Step 5 - Change your Favorite things in the Tilemap
 
-Nicole’s favorite things are Boba Tea, Ramen, and Acai bowls. What are yours? Find the ``||scene:set tilemap||`` block in the ``||loops:on start||`` block. Click on the grey box to open up the **Tilemap** editor. Click on **My Tiles** on the left side of the screen to see the custom tiles in the game. Click the right arrow below to scroll through to the next page of tiles. Click on the Acai bowl image, and then click on the Pen and Paper icon to edit the image to be one of your favorite things! Find the Boba Tea and the Ramen bowl images, and customize those as well.
+Nicole’s favorite things are Boba Tea, Ramen, and Acai bowls. What are yours? Find the ``||scene:set tilemap||`` block in the ``||loops:on start||`` block. Click on the grey box to open up the **Tilemap** editor. Click on **My Tiles** on the left side of the screen and find the Boba Tea, Ramen, and Acai bowl images. Click to edit each image.
 
 ```block
 tiles.setTilemap(tilemap`level_0`)
