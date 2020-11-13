@@ -2,7 +2,7 @@
 
 This guide will let you build the same Arcade cabinets found in the MakeCode team roon in Microsoft offices.
 
-![Arcade cabinet](/static/hardware/raspberry-pi/makecode-wooden-cabinet/gallery.jpg)
+![Arcade cabinet](/static/hardware/raspberry-pi/wooden-cabinet/gallery.jpg)
 
 ### ~ hint
 
@@ -31,7 +31,7 @@ Tools needed
 
 Cut out this template precisely and keep as you master template for all future cuts.
 
-![Side template](/static/hardware/raspberry-pi/makecode-wooden-cabinet/template.jpg)
+![Side template](/static/hardware/raspberry-pi/wooden-cabinet/template.jpg)
 
 ## Cut list
 
@@ -61,7 +61,7 @@ You will also need to cut out the 2 sides of the arcade cabinet.
 
 * The cuts do not have to be perfect as the router will clean it up.
 
-![Rough edges](/static/hardware/wooden-cabinet/roughedge.jpg)
+![Rough edges](/static/hardware/wooden-cabinet/roughedges.jpg)
 
 * Use a router to clean the edges
 
@@ -81,7 +81,7 @@ For each board,
 
 Once all the boards are secured, attach the upper side of the arcade and you're done!
 
-![Assembled cabinet](/static.hardware/wooden-cabinet/box.jpg)
+![Assembled cabinet](/static/hardware/wooden-cabinet/box.jpg)
 
 ## Control panel
 
