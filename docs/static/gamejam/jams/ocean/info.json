@@ -1,0 +1,10 @@
+
+{
+    "rules": {
+        "path": "/static/gamejam/jams/ocean/rules.md",
+        "tipsId": "ship-off-together"
+    },
+    "start": "2020-11-30 00:00:01 GMT-0700",
+    "end": "2020-012-11 23:59:59 GMT-0700",
+    "featured": []
+}
