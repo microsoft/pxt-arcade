@@ -33,6 +33,11 @@
             "microsoft/arcade-sprite-data": "min:v0.0.6"
         }
     },
+    "shareLinks": {
+        "approved": [
+            "47391-81289-41510-55990"
+        ]
+    },
     "galleries": {
         "Tutorials": "tutorials",
         "Multipart Tutorials": "multipart-tutorials",
