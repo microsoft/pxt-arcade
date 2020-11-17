@@ -1,12 +1,12 @@
 # MakeCode Arcade Wooden Cabinet
 
-This guide will let you build the same Arcade cabinets found in the MakeCode team roon in Microsoft offices.
+This guide will let you build the same Arcade cabinets that are found in the MakeCode team room at the Microsoft offices.
 
 ![Arcade cabinet](/static/hardware/raspberry-pi/wooden-cabinet/gallery.jpg)
 
 ### ~ hint
 
-#### WARNING Power Tools needed
+#### WARNING: Power Tools required
 
 To complete this project, you will need access to power tools.
 Make sure to follow all safety procedures or ask a professional for help.
@@ -55,7 +55,7 @@ You will also need to cut out the 2 sides of the arcade cabinet.
 
 ## Cut Instructions
 
-* using your profile template, mark 2 profiles on the plywood and cut with a jigsaw. 
+* Using your profile template, mark 2 profiles on the plywood and cut with a jigsaw.
 
 ![Cutting the template](/static/hardware/raspberry-pi/wooden-cabinet/cuttemplate.jpg)
 
@@ -63,21 +63,21 @@ You will also need to cut out the 2 sides of the arcade cabinet.
 
 ![Rough edges](/static/hardware/raspberry-pi/wooden-cabinet/roughedges.jpg)
 
-* Use a router to clean the edges
+* Use a router to clean the edges.
 
 ![Route edges](/static/hardware/raspberry-pi/wooden-cabinet/routeedges.jpg)
 
-* cut and miter all the cuts set aside
+* Cut and miter all the cuts set aside.
 
 ## Assembly instructions
 
-* create 2 jigs that let you position boards 1/4" from the side
-* cut out various 1" x 1/2" strips needed to secure the boards.
+* Create 2 jigs that let you position boards 1/4" from the side.
+* Cut out various 1" x 1/2" strips needed to secure the boards.
 
 For each board, 
 
-* cut out 2 strips and glue/pin them to the side
-* use the jig to position the boards 1/4" from the sides.
+* Cut out 2 strips and glue/pin them to the side.
+* Use the jig to position the boards 1/4" from the sides.
 
 Once all the boards are secured, attach the upper side of the arcade and you're done!
 
@@ -89,13 +89,13 @@ Follow the wiring instructions of the [cardboard control panel](/hardware/raspbe
 
 ## Screen
 
-* place the screen on the wood panel and mark the position where the screen touches the wood.
-* pin nail the attachments to clamp the screen down
-* drill holes to allow power and HDMI cables to pass through the back of the screen
+* Place the screen on the wood panel and mark the position where the screen touches the wood.
+* Pin nail the attachments to clamp the screen down.
+* Drill holes to allow power and HDMI cables to pass through the back of the screen.
 
 To make it easier, we recommend building a jig to position and build this part.
 
 ## Decoration
 
-This is your cabinet, have fun decorating it! We used the
+This is your cabinet, have fun decorating it and personalize it the way you like! We used the
 https://arcade-stencils.glitch.me/ to generate stencils and drawing on our cabinets.
