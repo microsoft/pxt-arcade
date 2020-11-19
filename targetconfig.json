@@ -12,6 +12,7 @@
             "microsoft/arcade-minimap",
             "microsoft/arcade-timers",
             "microsoft/arcade-text",
+            "microsoft/pxt-tick-event",
             "microsoft/pxt-tilemaps"
         ],
         "preferredRepos": [
