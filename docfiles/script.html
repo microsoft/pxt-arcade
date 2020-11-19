@@ -183,6 +183,7 @@
                     unpackedData += String.fromCharCode(d.data[i]);
                 try {
                     const data = JSON.parse(unpackedData);
+                    data["shareurl"] = "@id@";
                     window.pxtTickEvent(
                         'simulator.user.tick',
                         data,
