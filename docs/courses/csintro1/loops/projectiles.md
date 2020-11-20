@@ -126,7 +126,7 @@ Games often create many projectiles, one after another. We can create multiple p
 
 ### Example #2: Projectile Loop
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-projectiles2)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/projectiles2.mp4)
 
 1. Review the code below
 2. Create a new project and name it "Random Dodge"

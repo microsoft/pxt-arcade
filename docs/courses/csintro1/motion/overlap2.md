@@ -11,7 +11,7 @@ In this activity, the student will continue to work with:
 
 ## Concept: ``||sprites:Kind||`` Overlap Event "bump" action
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-overlap2bumpfinal)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/overlap2BumpFinal.mp4)
 
 Having sprites bump rather than pass over each other is useful game behavior for a ``||sprites:kind||`` overlap event. One way to simulate a bump is:
 

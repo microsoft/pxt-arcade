@@ -16,7 +16,7 @@ In this activity, students are introduced to:
 
 ## Concept: Opening a game
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-orientation1)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/orientation1.mp4)
 
 ## Student Task #1: Playing Space Destroyer #task-1
 
@@ -27,7 +27,7 @@ In this activity, students are introduced to:
 
 ### New Project
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-orientation2)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/orientation2.mp4)
 
 ## Student Task #2: Starting and saving your own game #task-2
 
