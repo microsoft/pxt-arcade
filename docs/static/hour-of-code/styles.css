@@ -429,10 +429,8 @@ section.about {
 }
 
 /* 
-  ##Device = Most of the Smartphones Mobiles (Portrait)
-  ##Screen = B/w 320px to 479px
+    phone portrait
 */
-
 @media (min-width: 320px) and (max-width: 480px) {
     #main h1 {
         font-size: 9rem;
