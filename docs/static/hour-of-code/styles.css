@@ -422,3 +422,33 @@ body {
 section.about {
     padding-top: 7rem;
 }
+
+/* avoid blue on orange */
+.docs.footer.inverted a.item {
+    color: white;
+}
+
+/* 
+    phone portrait
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+    #main h1 {
+        font-size: 9rem;
+    }
+    #main .panel-secondary {
+        margin-bottom: 5.5rem;
+    }
+    .activities .content-row {
+        flex-wrap: wrap;
+    }    
+    #main section.intro .content-block {
+        flex-wrap: wrap;
+    }    
+    .educators-aside {
+        flex: 1;
+        margin-left: 0;
+    }
+    .content-column {
+        width: unset !important;
+    }    
+}
