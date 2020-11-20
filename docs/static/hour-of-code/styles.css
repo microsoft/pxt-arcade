@@ -304,6 +304,7 @@ body {
 .activities .content-row {
     display: flex;
     align-items: stretch;
+    flex-wrap: wrap;
 }
 
 .activities .content-row .content-column {
@@ -423,6 +424,9 @@ section.about {
     padding-top: 7rem;
 }
 
+.docs.footer.inverted a.item {
+    color: white;
+}
 
 /* 
   ##Device = Most of the Smartphones Mobiles (Portrait)
@@ -430,6 +434,22 @@ section.about {
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
+    #main h1 {
+        font-size: 9rem;
+    }
+    #main .panel-secondary {
+        margin-bottom: 5.5rem;
+    }
+    .activities .content-row {
+        flex-wrap: wrap;
+    }    
+    #main section.intro .content-block {
+        flex-wrap: wrap;
+    }    
+    .educators-aside {
+        flex: 1;
+        margin-left: 0;
+    }
     .content-column {
         width: unset !important;
     }    
