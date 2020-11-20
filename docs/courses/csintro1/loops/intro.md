@@ -33,7 +33,7 @@ Start off by trying to solve a small task: slowly move a ghost from the center o
 
 ## Example #1: Moving a Ghost (the long way)
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-loop-intro)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/loop-intro.mp4)
 
 1. Open the sample code below
 2. Run the code. The ghost should scroll off to the bottom right area of the screen and peek just over the edge
@@ -136,7 +136,7 @@ Start with the code in the example. The solution isn't much different from the e
 
 ## Student Task #3: Boomerang
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-loop-intro2)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/loop-intro2.mp4)
 
 1. Add a single loop to the following code so that the boomerang goes to the right 50 pixels over the period of two seconds
 2. Make the boomerang return to it's original location over the course of two seconds using a loop

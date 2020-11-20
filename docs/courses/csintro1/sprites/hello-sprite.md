@@ -8,7 +8,7 @@ In this activity, students will be introduced to:
 
 ## Concept: ``||sprites:say||``
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-spritesay_final)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/spriteSay_FINAL.mp4)
 
 Sprites have a method ``||sprites:say||`` that displays a text box over the sprite when used. 
 
@@ -62,7 +62,7 @@ mySprite.say(msg)
 
 # Example #2: console.log()
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-consolelog)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/consoleLog.mp4)
 
 1. Start a new project, and name it "console"
 2. Switch to JavaScript view and replace all code with the code below
@@ -91,7 +91,7 @@ The code `console.log()` doesn't use **mySprite** like ``||sprites:say||`` does.
 
 ## Student Task #2: More Sprites
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-spritesaylog)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/spriteSayLog.mp4)
 
 1. Start with the above project and add another sprite (make sure to give both unique variable names)
 2. Add in a ``||sprites:say||`` message to have a conversation with the first sprite

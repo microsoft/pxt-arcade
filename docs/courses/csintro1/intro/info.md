@@ -18,7 +18,7 @@ The first example will be a simple one - simply counting the number of buttons p
 
 ## Example #1: Counting button presses
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-infoproperties1)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/infoProperties1.mp4)
 
 1. Review the code below
 2. Create a new project and name it “button count”
@@ -53,7 +53,7 @@ Beyond score, another important value to keep track of is the players life total
 
 ## Example #2: changing ``||info:life||`` totals
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-infoproperties2)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/infoProperties2.mp4)
 
 1. Review the code below
 2. Create a new project and name it “do not touch the button”
