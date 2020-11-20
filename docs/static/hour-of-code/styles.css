@@ -423,6 +423,7 @@ section.about {
     padding-top: 7rem;
 }
 
+/* avoid blue on orange */
 .docs.footer.inverted a.item {
     color: white;
 }
