@@ -12,6 +12,7 @@
             "microsoft/arcade-minimap",
             "microsoft/arcade-timers",
             "microsoft/arcade-text",
+            "microsoft/pxt-tick-event",
             "microsoft/pxt-tilemaps"
         ],
         "preferredRepos": [
@@ -32,6 +33,11 @@
             "microsoft/pxt-tilemaps": "min:v1.8.1",
             "microsoft/arcade-sprite-data": "min:v0.0.6"
         }
+    },
+    "shareLinks": {
+        "approved": [
+            "53897-77132-13809-57062"
+        ]
     },
     "galleries": {
         "Tutorials": "tutorials",
