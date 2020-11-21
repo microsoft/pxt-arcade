@@ -173,7 +173,7 @@
 
                     window.pxtTickEvent(
                         'approved.shareurl.loaded',
-                        { shareurl: "@id@" },
+                        { shareurl: "@id@",  target: "arcade", cookie: "true" },
                     );
                 }
             });
@@ -189,6 +189,8 @@
                 try {
                     const data = JSON.parse(unpackedData);
                     data["shareurl"] = "@id@";
+                    data["target"] = "arcade";
+                    data["cookie"] = "true";
                     window.pxtTickEvent(
                         'simulator.user.tick',
                         data,
