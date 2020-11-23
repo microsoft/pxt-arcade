@@ -1511,3 +1511,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Basketball, function (sprite, ot
     info.startCountdown(5)
 })
 ```
+
+```package
+spacejam=github:microsoft/chase-the-basketball-sprites-extension#v0.0.1
+```
