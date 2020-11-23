@@ -19,7 +19,7 @@ Boolean values are regularly used to help maintain the **state** of a given piec
 
 For example, ``||sprites:stay in screen||`` is a flag that we have set that forces the sprite to stay within the bounds of the screen when set to ``||logic:true||``.
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-logic-boolean1)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40546A/intro%20cs:%20makecode%20arcade%20%28unit%202%29/logic-Boolean-1.mp4)
 
 ## Example #1: Are you hungry?
 
@@ -54,7 +54,7 @@ In this example, ``||variables:isHungry||`` is a flag that will change the behav
 
 When we have a boolean value, we have seen that we can write code that runs when it is true using a simple ``||logic:if||`` statement. However, we can also run code for when the boolean is false. This is done with the ``||logic:not||`` block.
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-logic-boolean2)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40546A/intro%20cs:%20makecode%20arcade%20%28unit%202%29/logic-boolean-2.mp4)
 
 ## Example #2: ``||logic:not||``
 
@@ -111,7 +111,7 @@ game.onUpdateInterval(5000, function () {
 
 We can also use the ``||logic:not||`` block when assigning a boolean. So if we wanted to, we could assign a boolean to be the opposite of another boolean. Setting a boolean to the opposite value of itself, 'switches' the variable state from ``||logic:true||`` to ``||logic:false||`` (or false to true).
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-logic-boolean3)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40546A/intro%20cs:%20makecode%20arcade%20%28unit%202%29/logic-boolean-3.mp4)
 
 ## Example #3: Alternating Booleans
 
@@ -200,7 +200,8 @@ Alternatively, the statement
 
 means that if **either** condition is true, I will go to the store. If I don't need to buy milk and I also don't need to buy eggs, then I will not end up going to the store.
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-logic-boolean4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40546A/intro%20cs:%20makecode%20arcade%20%28unit%202%29/logic-boolean-4.mp4)
+
 
 ## Example #4a: ``||logic:and||``
 

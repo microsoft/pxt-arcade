@@ -18,7 +18,7 @@ We can make even make our own packages of code to share or reuse in our games.
 
 ## Example #1: Using a Package
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-extensiondart)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/extension-dart.mp4)
 
 1. Open a new project (name it "football")
 2. Using the extensions menu, look for "darts". Notice how a new section is added to the menu, above ``||game:Game||``
@@ -90,7 +90,7 @@ Using the darts extension package, we do not have to worry as much about algebra
 
 ## Student Task #1: Build an Obstacle Course
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-darttask)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/extension-dart-task.mp4)
 
 1. Start with the code from example #1
 2. Add at least 3 new sprites of kind ``||sprites:Obstacle||``
@@ -153,7 +153,7 @@ projectile = sprites.createProjectile(img`
 
 ## Student Task #2: Making the Stars go by
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-starrynight)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/extension-starryNight.mp4)
 
 1. Create a new project (name it "starryNight") that we will include in other projects
 2. Add an ``||game:on game update every 500ms||`` block

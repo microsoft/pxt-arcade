@@ -39,7 +39,7 @@ A ``||scene:tilemap||`` is called a "map" because it "maps" a tilemap color to a
 
 ## Example #1: Making a tilemap
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-intro-tilemap)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/intro-tilemap.mp4)
 
 1. Review the code below
 2. Copy the code below into your project and run it
@@ -66,7 +66,8 @@ In this example, we have used ``||scene:set tilemap to||`` to set the tilemap to
 
 ## Example #2: Creating tiles in a tilemap
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-tile-in-tilemap)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/tile-in-tilemap.mp4)
+
 
 1. Review the code below
 2. Copy the code below into your project and run it
@@ -109,7 +110,7 @@ scene.setTile(5, img`
 
 ## Example #3: Words!
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-tile-words )
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/tile-words.mp4)
 
 1. Make a new project (name it "tilemapWords")
 2. Review the code below
@@ -264,7 +265,7 @@ In this example, the tiles are changed to correspond to images with letters on t
 
 ## Example #4: A brand new home
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-tilemap-home )
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/tilemap-home.mp4)
 
 1. Make a new project (name it "newHome")
 2. Review the code below

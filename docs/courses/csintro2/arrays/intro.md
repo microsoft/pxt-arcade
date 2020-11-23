@@ -17,7 +17,7 @@ In this activity, students will:
 
 ## Concept: Creating Arrays
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-array-intro)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40546A/intro%20cs:%20makecode%20arcade%20%28unit%202%29/array_intro.mp4)
 
 ## Example #1: Creating an Array of Numbers
 

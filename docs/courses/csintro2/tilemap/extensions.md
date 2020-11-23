@@ -36,7 +36,7 @@ To add the corgio extension to your project, open the extensions tab and look fo
 
 After adding corgio to your project, a new tab titled ``||corgio:Corgio||`` will appear in the toolbox, above ``||game:Game||``; this contains the blocks necessary to create and interact with the Corgio.
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-tilemap-corgio)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40546A/intro%20cs:%20makecode%20arcade%20%28unit%202%29/corgio.mp4)
 
 ## Student Task #1: Making your first corgio
 
