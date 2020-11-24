@@ -300,7 +300,7 @@ mySprite = sprites.create(img`
 
 ## Step 4
 
-In the `||sprites:Player||` block, click on the gray square to open the image editor and then select the **Gallery** view. Find and select a Space Jam character of your choice. You can also draw your own!
+In the `||sprites:Player||` block, click on the gray square to open the image editor and then select the **Gallery** view. Find and select a Space Jam character of your choice (scroll to the bottom of the gallery). You can also draw your own!
 
 ```blocks
 let mySprite: Sprite = null
@@ -1007,7 +1007,7 @@ mySprite2 = sprites.create(img`
 
 ## Step 8
 
-Click on the grey box for `||variables:set mySprite2||` and then select the **Gallery** view. Find and select a basketball sprite.
+Click on the grey box for `||variables:set mySprite2||` and then select the **Gallery** view. Find and select a basketball sprite (scroll to the bottom of the gallery).
 
 ```blocks
 namespace SpriteKind {
@@ -1513,5 +1513,5 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Basketball, function (sprite, ot
 ```
 
 ```package
-spacejam=github:microsoft/chase-the-basketball-sprites-extension#v0.0.1
+spacejam=github:microsoft/chase-the-basketball-sprites-extension#v0.0.2
 ```
