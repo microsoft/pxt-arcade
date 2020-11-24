@@ -29,7 +29,7 @@ color-coded-tilemap
 
 ## Concept: Tiles
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40546A/intro%20cs:%20makecode%20arcade%20%28unit%202%29/array_tile1.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-array-tile1)
 
 ## Example #1: Getting and Using Tiles
 
@@ -324,7 +324,7 @@ b 5 5 5 5 d d 4 4 4 4 . . . . .
 
 Using the concepts from tasks #1 and #2, the development of multi-level games becomes much easier. This is can be done by creating an array of tilemaps and transitioning through the levels, while using the blocks discussed earlier in this activity to help set up and move through the levels.
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40546A/intro%20cs:%20makecode%20arcade%20%28unit%202%29/array_tile2.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-array-tile2)
 
 ## Example #3: Multiple Tilemaps
 

@@ -16,8 +16,7 @@ Functions allow us to break up code into different sections. In doing so, we can
 
 ## Example #1a: Creating Sprites
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/function-refactoring.mp4)
-
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-refactoring)
 
 1. Review the code below 
 2. Create the sample code and run the code
@@ -154,7 +153,7 @@ Each function ends up being a chapter in the book with more details on what exac
 
 ## Student Task #1a: Make your own Functions
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/function-refactoring-task1a.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-refactoring-task1a)
 
 1. Review the code below 
 2. Create the sample code and run the code
@@ -208,7 +207,7 @@ info.startCountdown(10)
 
 ## Student Task #1b: Functions in Events
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/function-refactoring-task2a.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-refactoring-task2a)
 
 Functions can be used throughout your code - not just in the ``||loops:on start||`` block. 
 

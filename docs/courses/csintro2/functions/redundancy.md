@@ -10,7 +10,7 @@ In this activity, students will:
 
 ## Example #1a: Movement
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/function-redundant-example.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-redundant-example)
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -109,7 +109,7 @@ mySprite.destroy()
 
 ## Student Task #1: Simplification
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/function-redundant-task1.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-redundant-task1)
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -191,7 +191,7 @@ game.over(false)
 
 ## Student Task #2: Events
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/function-redundant-task2.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-redundant-task2)
 
 1. Review the code below
 2. Create the sample code and run the code

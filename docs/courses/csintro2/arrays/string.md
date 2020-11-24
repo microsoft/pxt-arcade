@@ -31,7 +31,7 @@ color-coded-tilemap
 
 One way in which we can use arrays of strings is to form a "script" for our sprites to follow. By keeping the script inside of an array, you are able to keep it all located in one place - so if you need to fix a typo, or add in a new line, all the content remains in a single location for you to see.
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40546A/intro%20cs:%20makecode%20arcade%20%28unit%202%29/array_string_1.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-array-string1)
 
 ## Example #1: Princess Dialogue
 
@@ -97,7 +97,7 @@ In Blocks, this is the ``||loops:for element||`` loop, but the behavior is often
 
 ### ~
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40546A/intro%20cs:%20makecode%20arcade%20%28unit%202%29/array_string_2.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-array-string2)
 
 ## Student Task #1b: Using ``||loops:for element||``
 
