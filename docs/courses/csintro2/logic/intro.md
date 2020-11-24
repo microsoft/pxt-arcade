@@ -115,7 +115,7 @@ When the game creates a new enemy, it checks to see if the player's score is les
 
 If that is the case, the player has just started playing the game, so the game makes it easier for the player by decreasing the speed in which the projectiles are thrown at the player.
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-ifless-task)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40546A/intro%20cs:%20makecode%20arcade%20%28unit%202%29/logic_intro_ifless.mp4)
 
 ## Task #1a: Scoring
 
@@ -138,7 +138,7 @@ The player is on the left half of the screen if their ``||sprites:x position||``
 
 ### Example #2: Greater Than
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-ifgreater)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40546A/intro%20cs:%20makecode%20arcade%20%28unit%202%29/logic_intro_ifgreater.mp4)
 
 1. Play the game linked above
 2. Review the code that uses comparisons
@@ -213,7 +213,7 @@ When the player collects a cherry, if the player has collected more than 5, then
 
 ### Example #3: Equality
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-ifequal)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40546A/intro%20cs:%20makecode%20arcade%20%28unit%202%29/logic_intro_ifequal.mp4)
 
 1. Play the game linked above
 2. Review the code that uses comparisons

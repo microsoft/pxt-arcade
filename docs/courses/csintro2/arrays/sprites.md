@@ -18,7 +18,7 @@ Creating arrays of sprites follow a similar process as creating arrays of number
 
 A sprite array is useful when implementing the same behavior for several sprites at once.
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-array-sprite1)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40546A/intro%20cs:%20makecode%20arcade%20%28unit%202%29/array_sprite1.mp4)
 
 ## Example #1: Moving all Asteroids
 
@@ -102,7 +102,7 @@ Building arrays by adding in values is a common and useful coding pattern. Array
 
 The ``||sprites:array of sprites of kind||`` block (located in the ``||arrays:arrays||`` category) is one example of a function that will return an array with all of the sprites currently in the game of a particular ``||sprites:kind||``. This makes it easier to implement behaviors for several sprites like we did in example #1, especially as  sprites are continually created and destroyed as we play the game.
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-array-sprite2)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40546A/intro%20cs:%20makecode%20arcade%20%28unit%202%29/array_sprite2.mp4)
 
 ## Example #2a: Using ``||sprites:array of sprites of kind||``
 
@@ -188,7 +188,7 @@ Using ``||sprites:array of sprites of kind||``, we can easily address both of th
 5. Select a firework from ``||variables:sprite list||`` at random, and store that in the variable ``||variables:origin||``. Replace all references to ``||variables:firework||`` in the event to refer to this new variable
 6. **Challenge:** change the ``||controller:on any button pressed||`` event to only trigger when the ``||controller:A||`` button is pressed, and make a ``||controller:on B button pressed||`` event that will create a new firework. Make sure to use either a ``||functions:function||`` or an ``||sprites:on created sprite of kind||`` event to reduce the redundancy between the new event and the ``||loops:on start||`` block
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-array-sprite2task)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40546A/intro%20cs:%20makecode%20arcade%20%28unit%202%29/array_sprite2_task.mp4)
 
 ## Example #3: Tracking with a Single Sprite
 
@@ -236,7 +236,7 @@ game.onUpdate(function () {
 
 This is also a great occasion to use arrays - that way, we can have more than a single enemy follow the player.
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-array-sprite3)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40546A/intro%20cs:%20makecode%20arcade%20%28unit%202%29/array_sprite3.mp4)
 
 ## Student Task #3: Tracking with All Sprites of a Kind
 

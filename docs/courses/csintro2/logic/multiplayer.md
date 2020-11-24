@@ -40,7 +40,7 @@ Additionally, multiple gamepads can be used to allow for more than the two playe
 
 ### ~
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-logic-multi)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40546A/intro%20cs:%20makecode%20arcade%20%28unit%202%29/logic-multiplayer.mp4)
 
 ## Example #1: Player one
 
@@ -83,8 +83,7 @@ The Paddle Game is a game based off of table tennis (Ping Pong). The Paddle Game
 
 In the rest of this lesson, we will implement a simple version of The Paddle Game using ``||controller:multiplayer||``. For each of the following tasks, you will build on the code introduced in example 2 to create your final game.
 
-
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-logic-ball)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40546A/intro%20cs:%20makecode%20arcade%20%28unit%202%29/logic-multi-ball.mp4)
 
 ## Example #2: Paddles
 
@@ -149,7 +148,7 @@ info.player2.setScore(0)
 4. Give the ball a random ``||sprites:vy||`` between -75 and 75
 5. Assign the variable ``||variables:currentBall||`` to ``||sprites:sprite of kind Ball||`` in ``||loops:on start||``, to create a ball when the game starts
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-logic-complete-multi)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40546A/intro%20cs:%20makecode%20arcade%20%28unit%202%29/logic_complete_paddle.mp4)
 
 ## Student Task #3: Wall Bounce
 
