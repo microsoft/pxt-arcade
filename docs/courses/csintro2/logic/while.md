@@ -9,7 +9,7 @@ In this activity, students will:
 
 Using ``||loops:while||`` loops allows for actions and tasks that repeat until certain conditions are met. One example of this can be found in making a game based off of guessing a number.
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-logic-while)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40546A/intro%20cs:%20makecode%20arcade%20%28unit%202%29/logic_loop_while.mp4)
 
 ## Example #1a: Guessing Game
 
