@@ -152,7 +152,7 @@ scene.setBackgroundImage(img`ddddd111ddddddddddddddddddddddddddddddddddd111ddddd
 
 ## Step 3
 
-Open the `||sprites:Sprites||` Toolbox drawer and drag the first block, `||variables:set mySprite||` into the `||loops:on start|` block on your Workspace. This will create a new `||sprites:Player||` character for your game.
+Open the `||sprites:Sprites||` Toolbox drawer and drag the first block you see, `||variables:set mySprite||`, into the `||loops:on start|` block on your Workspace. This will create a new `||sprites:Player||` character for your game.
 
 ```blocks
 let mySprite: Sprite = null
