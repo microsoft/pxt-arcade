@@ -13,7 +13,7 @@ The rules are lightweight and can be adjusted as necessary:
 
 ## Examples
 
-The theme for this game jam is **Ocean**. This could be games about swimming, or beaches, or marine life. Some real life examples of "ocean-themed" games might be Ecco the Dolphin, Sea of Thieves, or BioShock. Students should feel free to interpret the theme creatively! Some other game concepts that fit the theme include:
+The theme for this game jam is **Ocean**. This could be games about swimming, or beaches, or marine life. Some real life examples of "ocean-themed" games might be Ecco the Dolphin, Sea of Thieves, or Subnautica. Students should feel free to interpret the theme creatively! Some other game concepts that fit the theme include:
 -  Exploring the sea to find shipwrecks
 -  Doing surfing stunts to impress a panel of judges
 -  A lighthouse guiding ships to shore
