@@ -280,7 +280,7 @@ game.onUpdateInterval(500, function () {
 
 ## Step 8
 
-Add code to set ``||sprites:left||`` of ``||variables:bogey||`` to the ``||scene:screen width||`` and ``||sprites:y||`` to a ``||math:random number||`` between ``0`` and ````||scene:screen height||``.
+Add code to set ``||sprites:left||`` of ``||variables:bogey||`` to the ``||scene:screen width||`` and ``||sprites:y||`` to a ``||math:random number||`` between ``0`` and ``||scene:screen height||``.
 
 ```blocks
 game.onUpdateInterval(500, function () {
@@ -312,7 +312,7 @@ game.onUpdateInterval(500, function () {
 
 ## Step 9
 
-To keep the amount of ``||sprites:Enemy||`` sprites from increasing even though they leave the screen, set the ``||sprites:auto destroy||`` flag for ``||variables:bogey||`` to ``true``.
+To keep the amount of ``||sprites:Enemy||`` sprites from increasing even though they leave the screen, set the ``||sprites:auto destroy||`` flag for ``||variables:bogey||`` to **ON**.
 
 ```blocks
 game.onUpdateInterval(500, function () {
