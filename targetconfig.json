@@ -13,7 +13,8 @@
             "microsoft/arcade-timers",
             "microsoft/arcade-text",
             "microsoft/pxt-tick-event",
-            "microsoft/pxt-tilemaps"
+            "microsoft/pxt-tilemaps",
+            "microsoft/pxt-skillmap-sample"
         ],
         "preferredRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
@@ -38,6 +39,9 @@
         "approved": [
             "53897-77132-13809-57062"
         ]
+    },
+    "skillMap": {
+        "defaultPath": "github:microsoft/pxt-skillmap-sample/skillmap.md"
     },
     "galleries": {
         "Tutorials": "tutorials",
