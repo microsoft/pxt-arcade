@@ -6,7 +6,7 @@ body#root {
 
 body#root.share-page {
     font-family: 'Segoe UI', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    background-color: #92f9ff;
+    background-color: #fdf3e0;
 }
 
 body#root.share-page #pagemenu .ui.header {
