@@ -6,6 +6,7 @@ body#root {
 
 body#root.share-page {
     font-family: 'Segoe UI', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    background-color: #fdf3e0;
 }
 
 body#root.share-page #pagemenu .ui.header {
@@ -71,7 +72,7 @@ body#root.share-page .ui.mini.image.mclogo {
     flex-grow: 0;
 }
 
-.ui.container.script-content {
+.ui.script-content {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -113,7 +114,7 @@ body#root.share-page .ui.mini.image.mclogo {
     padding: 0.5rem;
 }
 @media only screen and (max-width: 1144px) {
-    .ui.container.mainbody {
+    .ui.mainbody {
         padding-left: 0!important;
         padding-right: 0!important;
         margin-left: auto!important;
@@ -127,13 +128,13 @@ body#root.share-page .ui.mini.image.mclogo {
         height: 2.8rem;
         min-height: 2.8rem !important;
     }
-    .ui.container.mainbody, .page-header .ui.container {
+    .ui.mainbody, .page-header .ui.script-content {
         margin: 0 !important;
     }
 }
 
 @media only screen and (min-width: 769px) {
-    .ui.container.mainbody, .page-header .ui.container {
+    .ui.mainbody, .page-header .ui.script-content {
         padding-left: 1em;
         padding-right: 1em;
     }
