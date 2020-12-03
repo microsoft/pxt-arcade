@@ -148,18 +148,18 @@
         var isGame = true;
 
         editCodeButton.addEventListener("click", function() {
-            window.pxtTickEvent('share.editcode');
+            window.pxtTickEvent('share.editcode', { target: "arcade" });
         })
 
         showCodeButton.addEventListener("click", function() {
             // toggle game vs. code view
             if (isGame) {
-                window.pxtTickEvent('share.showcode');
+                window.pxtTickEvent('share.showcode', { target: "arcade" });
                 frame.setAttribute("src", editorEmbedURL);
                 showCodeButton.textContent = "Show Game";
             }
             else {
-                window.pxtTickEvent('share.showgame');
+                window.pxtTickEvent('share.showgame', { target: "arcade" });
                 frame.setAttribute("src", gameEmbedURL);
                 showCodeButton.textContent = "Show Code";
             }
