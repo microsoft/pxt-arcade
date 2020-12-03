@@ -139,8 +139,7 @@
     </div>
 
     <script>
-        // TODO: @versionsuff@ here makes testing it locally hard (localhost elides versionsuff / replaces with "", so have to change file name locally)
-        var prebuiltJsSuff = !!/prebuilt(?:[:=])1/i.test(window.location.href) ? "&prebuilt=/static/builtjs/@id@@versionsuff@.json" : "";
+        var prebuiltJsSuff = !!/prebuilt(?:[:=])1/i.test(window.location.href) ? "&prebuilt=1" : "";
         var editorEmbedURL = "/@versionsuff@#sandbox:@id@";
         var gameEmbedURL = "/@versionsuff@--run?fullscreen=1&nofooter=1&id=@id@" + prebuiltJsSuff;
         var showCodeButton = document.getElementById("show-code-button");
