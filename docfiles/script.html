@@ -20,14 +20,14 @@
         <div class="ui container">
                 <div id="page-header-wrapper">
                     <div class="page-header-item page-header-content no-grow">
-                        <h2 class="ui item header">@title@</h2>
+                        <h2 class="ui item header no-select">@title@</h2>
                     </div>
                     <div class="page-header-item show-code-toggle">
                         <button id="show-code-button" class="ui tiny default button">Show Code</button>
                         <a href="/@versionsuff@#pub:@id@" class="ui tiny button landscape only">Edit Code</a>
                     </div>
                     <div class="page-header-item no-grow">
-                        <a href="https://makecode.com/org" title="Go to Microsoft MakeCode" aria-label="Microsoft MakeCode Logo" role="menuitem" target="blank" rel="noopener" class="ui item logo organization">
+                        <a href="https://makecode.com/org" title="Go to Microsoft MakeCode" aria-label="Microsoft MakeCode Logo" role="menuitem" target="blank" rel="noopener" class="ui item logo organization no-select">
                             <img class="ui logo portrait hide" src="./static/Microsoft-logo_rgb_c-gray.png" alt="Microsoft MakeCode Logo">
                             <img class="ui mini image portrait only" src="./static/Microsoft-logo_rgb_c-gray-square.png" alt="Microsoft MakeCode Logo">
                         </a>
@@ -149,10 +149,12 @@
         showCodeButton.addEventListener("click", function() {
             // toggle game vs. code view
             if (isGame) {
+                window.pxtTickEvent('share.showcode');
                 frame.setAttribute("src", editorEmbedURL);
                 showCodeButton.textContent = "Show Game";
             }
             else {
+                window.pxtTickEvent('share.showgame');
                 frame.setAttribute("src", gameEmbedURL);
                 showCodeButton.textContent = "Show Code";
             }
