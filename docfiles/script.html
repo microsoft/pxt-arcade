@@ -23,8 +23,8 @@
                         <h2 class="ui item header no-select">@title@</h2>
                     </div>
                     <div class="page-header-item show-code-toggle">
-                        <button id="show-code-button" class="ui tiny default button">Show Code</button>
-                        <a href="/@versionsuff@#pub:@id@" class="ui tiny button landscape only">Edit Code</a>
+                        <button id="show-code-button" class="ui mini default button">Show Code</button>
+                        <a id="editCodeButton" href="/@versionsuff@#pub:@id@" class="ui mini button landscape only">Edit Code</a>
                     </div>
                     <div class="page-header-item no-grow">
                         <a href="https://makecode.com/org" title="Go to Microsoft MakeCode" aria-label="Microsoft MakeCode Logo" role="menuitem" target="blank" rel="noopener" class="ui item logo organization no-select">
@@ -44,7 +44,7 @@
         <iframe id="embed-frame" class="script-embed" src="/@versionsuff@--run?fullscreen=1&nofooter=1&id=@id@" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
         frameborder="0"></iframe>
         <div class="script-bookend">
-                <div id="abuse-message" class="ui tiny blue message container no-select">
+                <div id="abuse-message" class="ui mini blue message container no-select">
                         <div class="ui grid padded">
                             <div class="abuse content">
                                 <p>
@@ -142,9 +142,14 @@
         var editorEmbedURL = "/@versionsuff@#sandbox:@id@";
         var gameEmbedURL = "/@versionsuff@--run?fullscreen=1&nofooter=1&id=@id@";
         var showCodeButton = document.getElementById("show-code-button");
+        var editCodeButton = document.getElementById("editCodeButton")
         var frame = document.getElementById("embed-frame");
 
         var isGame = true;
+
+        editCodeButton.addEventListener("click", function() {
+            window.pxtTickEvent('share.editcode');
+        })
 
         showCodeButton.addEventListener("click", function() {
             // toggle game vs. code view
