@@ -528,6 +528,15 @@
         "hasReferenceDocs": true,
         "python": true
     },
+    "queryVariants": {
+        "skillsMap=1": {
+            "appTheme": {
+                "embeddedTutorial": true,
+                "allowParentController": true,
+                "shareFinishedTutorials": false
+            }
+        }
+    },
     "unsupportedBrowsers": [
         {
             "id": "ie"
