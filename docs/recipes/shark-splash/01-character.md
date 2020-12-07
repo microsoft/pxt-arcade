@@ -2,7 +2,7 @@
 
 ## Introduction @unplugged
 
-Let's make a game! First, we'll create a main character that shoots some projectiles. Maybe that's a duck that shoots bubbles, or a monkey throwing bananas, or a cat that spits hairballs--it's up to you!
+Let's make a game! First, let's create a main character that shoots some projectiles. Maybe that's a duck that shoots bubbles, or a monkey throwing bananas, or a cat that spits hairballs--it's up to you!
 
 ![Duck bubbles](/static/recipes/shark-splash/01-character.gif)
 
