@@ -1,16 +1,3 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -47,6 +34,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -65,7 +65,6 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
             r[k] = a[j];
     return r;
 };
-/// <reference path="../localtypings/mscc" />
 var pxt;
 (function (pxt) {
 })(pxt || (pxt = {}));
@@ -93,11 +92,11 @@ var pxt;
             pxt.debug('setting up app insights');
             var te = pxt.tickEvent;
             pxt.tickEvent = function (id, data, opts) {
+                var _a;
                 if (te)
                     te(id, data, opts);
-                if (opts && opts.interactiveConsent && typeof mscc !== "undefined" && !mscc.hasConsent()) {
-                    mscc.setConsent();
-                }
+                if ((_a = opts) === null || _a === void 0 ? void 0 : _a.interactiveConsent)
+                    pxt.setInteractiveConsent(true);
                 if (!data)
                     pxt.aiTrackEvent(id);
                 else {
@@ -147,16 +146,6 @@ var pxt;
             };
         }
         analytics.enable = enable;
-        function isCookieBannerVisible() {
-            return typeof mscc !== "undefined" && !mscc.hasConsent();
-        }
-        analytics.isCookieBannerVisible = isCookieBannerVisible;
-        function enableCookies() {
-            if (isCookieBannerVisible()) {
-                mscc.setConsent();
-            }
-        }
-        analytics.enableCookies = enableCookies;
     })(analytics = pxt.analytics || (pxt.analytics = {}));
 })(pxt || (pxt = {}));
 var pxt;
@@ -215,7 +204,7 @@ var pxt;
         function tone(frequency) {
             if (_mute)
                 return;
-            if (frequency <= 0)
+            if (frequency < 0)
                 return;
             _frequency = frequency;
             var ctx = context();
@@ -512,28 +501,6 @@ var pxtc = ts.pxtc;
                 throw e;
             }
             Util.userError = userError;
-            function isPyLangPref() {
-                return localStorage.getItem("editorlangpref") == "py";
-            }
-            Util.isPyLangPref = isPyLangPref;
-            function getEditorLanguagePref() {
-                return localStorage.getItem("editorlangpref");
-            }
-            Util.getEditorLanguagePref = getEditorLanguagePref;
-            function setEditorLanguagePref(lang) {
-                if (lang.match(/prj$/))
-                    lang = lang.replace(/prj$/, "");
-                localStorage.setItem("editorlangpref", lang);
-            }
-            Util.setEditorLanguagePref = setEditorLanguagePref;
-            function getToolboxAnimation() {
-                return localStorage.getItem("toolboxanimation");
-            }
-            Util.getToolboxAnimation = getToolboxAnimation;
-            function setToolboxAnimation() {
-                localStorage.setItem("toolboxanimation", "1");
-            }
-            Util.setToolboxAnimation = setToolboxAnimation;
             // small deep equals for primitives, objects, arrays. returns error message
             function deq(a, b) {
                 if (a === b)
@@ -1458,6 +1425,46 @@ var ts;
                 return PromiseBuffer;
             }());
             Util.PromiseBuffer = PromiseBuffer;
+            function promisePoolAsync(maxConcurrent, inputValues, handler) {
+                return __awaiter(this, void 0, void 0, function () {
+                    var curr, promises, output, i, thread;
+                    var _this = this;
+                    return __generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0:
+                                curr = 0;
+                                promises = [];
+                                output = [];
+                                for (i = 0; i < maxConcurrent; i++) {
+                                    thread = (function () { return __awaiter(_this, void 0, void 0, function () {
+                                        var id, input, _a, _b;
+                                        return __generator(this, function (_c) {
+                                            switch (_c.label) {
+                                                case 0:
+                                                    if (!(curr < inputValues.length)) return [3 /*break*/, 2];
+                                                    id = curr++;
+                                                    input = inputValues[id];
+                                                    _a = output;
+                                                    _b = id;
+                                                    return [4 /*yield*/, handler(input)];
+                                                case 1:
+                                                    _a[_b] = _c.sent();
+                                                    return [3 /*break*/, 0];
+                                                case 2: return [2 /*return*/];
+                                            }
+                                        });
+                                    }); })();
+                                    promises.push(thread);
+                                }
+                                return [4 /*yield*/, Promise.all(promises)];
+                            case 1:
+                                _a.sent();
+                                return [2 /*return*/, output];
+                        }
+                    });
+                });
+            }
+            Util.promisePoolAsync = promisePoolAsync;
             function now() {
                 return Date.now();
             }
@@ -2000,6 +2007,8 @@ var ts;
                     client = new XMLHttpRequest();
                     if (options.responseArrayBuffer)
                         client.responseType = "arraybuffer";
+                    if (options.withCredentials)
+                        client.withCredentials = true;
                     client.onreadystatechange = function () {
                         if (resolved)
                             return; // Safari/iOS likes to call this thing more than once
@@ -2440,6 +2449,7 @@ var pxt;
             pxt.hwVariant = null;
             pxt.hwName = null;
         }
+        pxt.debug("hwVariant: " + pxt.hwVariant + " (" + pxt.hwName + ")");
     }
     pxt.setHwVariant = setHwVariant;
     function hasHwVariants() {
@@ -2576,6 +2586,7 @@ var pxt;
     pxt.SERIAL_EDITOR_FILE = "serial.txt";
     pxt.README_FILE = "README.md";
     pxt.GITIGNORE_FILE = ".gitignore";
+    pxt.ASSETS_FILE = "assets.json";
     pxt.CLOUD_ID = "pxt/";
     pxt.BLOCKS_PROJECT_NAME = "blocksprj";
     pxt.JAVASCRIPT_PROJECT_NAME = "tsprj";
@@ -2583,6 +2594,11 @@ var pxt;
     pxt.DEFAULT_GROUP_NAME = "other"; // used in flyout, for snippet groups
     pxt.TILEMAP_CODE = "tilemap.g.ts";
     pxt.TILEMAP_JRES = "tilemap.g.jres";
+    pxt.IMAGES_CODE = "images.g.ts";
+    pxt.IMAGES_JRES = "images.g.jres";
+    pxt.TUTORIAL_CODE_START = "_onCodeStart.ts";
+    pxt.TUTORIAL_CODE_STOP = "_onCodeStop.ts";
+    pxt.TUTORIAL_INFO_FILE = "tutorial-info-cache.json";
     function outputName(trg) {
         if (trg === void 0) { trg = null; }
         if (!trg)
@@ -2631,14 +2647,14 @@ var pxt;
                 return b;
             // normalize and validate common errors
             // made while translating
-            var nb = b.replace(/[^\\]%\s+/g, '%');
+            var nb = b.replace(/(?:^|[^\\])([%$])\s+/g, '$1');
             if (nb != b) {
                 err("block has extra spaces: " + b);
-                return b;
+                b = nb;
             }
             // remove spaces around %foo = ==> %foo=
             b = nb;
-            nb = b.replace(/(%\w+)\s*=\s*(\w+)/, '$1=$2');
+            nb = b.replace(/([%$]\w+)\s*=\s*(\w+)/, '$1=$2');
             if (nb != b) {
                 err("block has space between %name and = : " + b);
                 b = nb;
@@ -3220,7 +3236,8 @@ var pxt;
                     url: 'types/function/call',
                     category: 'functions',
                     block: {
-                        FUNCTIONS_CALL_TITLE: pxt.Util.lf("call")
+                        FUNCTIONS_CALL_TITLE: pxt.Util.lf("call"),
+                        FUNCTIONS_GO_TO_DEFINITION_OPTION: pxt.Util.lf("Go to Definition")
                     }
                 },
                 'function_call_output': {
@@ -3582,14 +3599,12 @@ var pxt;
             return 1;
         }
         BrowserUtils.devicePixelRatio = devicePixelRatio;
-        function browserDownloadBinText(text, name, contentType, userContextWindow, onError) {
-            if (contentType === void 0) { contentType = "application/octet-stream"; }
-            return browserDownloadBase64(ts.pxtc.encodeBase64(text), name, contentType, userContextWindow, onError);
+        function browserDownloadBinText(text, name, opt) {
+            return browserDownloadBase64(ts.pxtc.encodeBase64(text), name, opt);
         }
         BrowserUtils.browserDownloadBinText = browserDownloadBinText;
-        function browserDownloadText(text, name, contentType, userContextWindow, onError) {
-            if (contentType === void 0) { contentType = "application/octet-stream"; }
-            return browserDownloadBase64(ts.pxtc.encodeBase64(pxt.Util.toUTF8(text)), name, contentType, userContextWindow, onError);
+        function browserDownloadText(text, name, opt) {
+            return browserDownloadBase64(ts.pxtc.encodeBase64(pxt.Util.toUTF8(text)), name, opt);
         }
         BrowserUtils.browserDownloadText = browserDownloadText;
         function isBrowserDownloadInSameWindow() {
@@ -3635,7 +3650,7 @@ var pxt;
                 }
                 iframe.src = uri;
             }
-            else if (pxt.BrowserUtils.isEdge() || pxt.BrowserUtils.isIE()) {
+            else if (/^data:/i.test(uri) && (pxt.BrowserUtils.isEdge() || pxt.BrowserUtils.isIE())) {
                 //Fix for edge
                 var byteString = atob(uri.split(',')[1]);
                 var ia = pxt.Util.stringToUint8Array(byteString);
@@ -3657,9 +3672,8 @@ var pxt;
             }
         }
         BrowserUtils.browserDownloadDataUri = browserDownloadDataUri;
-        function browserDownloadUInt8Array(buf, name, contentType, userContextWindow, onError) {
-            if (contentType === void 0) { contentType = "application/octet-stream"; }
-            return browserDownloadBase64(ts.pxtc.encodeBase64(pxt.Util.uint8ArrayToString(buf)), name, contentType, userContextWindow, onError);
+        function browserDownloadUInt8Array(buf, name, opt) {
+            return browserDownloadBase64(ts.pxtc.encodeBase64(pxt.Util.uint8ArrayToString(buf)), name, opt);
         }
         BrowserUtils.browserDownloadUInt8Array = browserDownloadUInt8Array;
         function toDownloadDataUri(b64, contentType) {
@@ -3673,25 +3687,37 @@ var pxt;
             return dataurl;
         }
         BrowserUtils.toDownloadDataUri = toDownloadDataUri;
-        function browserDownloadBase64(b64, name, contentType, userContextWindow, onError) {
-            if (contentType === void 0) { contentType = "application/octet-stream"; }
+        function browserDownloadBase64(b64, name, opt) {
+            if (opt === void 0) { opt = {}; }
+            var _a;
             pxt.debug('trigger download');
-            var saveBlob = window.navigator.msSaveOrOpenBlob && !pxt.BrowserUtils.isMobile();
-            var dataurl = toDownloadDataUri(b64, name);
+            var _b = opt.contentType, contentType = _b === void 0 ? "application/octet-stream" : _b, userContextWindow = opt.userContextWindow, onError = opt.onError, maintainObjectURL = opt.maintainObjectURL;
+            var createObjectURL = (_a = window.URL) === null || _a === void 0 ? void 0 : _a.createObjectURL;
+            var asDataUri = pxt.appTarget.appTheme.disableBlobObjectDownload;
+            var downloadurl;
             try {
-                if (saveBlob) {
+                if (!!createObjectURL && !asDataUri) {
                     var b = new Blob([pxt.Util.stringToUint8Array(atob(b64))], { type: contentType });
-                    var result = window.navigator.msSaveOrOpenBlob(b, name);
+                    var objUrl = createObjectURL(b);
+                    browserDownloadDataUri(objUrl, name, userContextWindow);
+                    if (maintainObjectURL) {
+                        downloadurl = objUrl;
+                    }
+                    else {
+                        window.setTimeout(function () { return window.URL.revokeObjectURL(downloadurl); }, 0);
+                    }
                 }
-                else
-                    browserDownloadDataUri(dataurl, name, userContextWindow);
+                else {
+                    downloadurl = toDownloadDataUri(b64, name);
+                    browserDownloadDataUri(downloadurl, name, userContextWindow);
+                }
             }
             catch (e) {
                 if (onError)
                     onError(e);
                 pxt.debug("saving failed");
             }
-            return dataurl;
+            return downloadurl;
         }
         BrowserUtils.browserDownloadBase64 = browserDownloadBase64;
         function loadImageAsync(data) {
@@ -4227,6 +4253,7 @@ var pxt;
             var input = JSON.stringify(code) + pxt.appTarget.versions.pxt + "_" + pxt.appTarget.versions.target;
             return pxtc.U.sha256(input);
         }
+        BrowserUtils.getTutorialInfoHash = getTutorialInfoHash;
         function getTutorialInfoKey(filename, branch) {
             return filename + "|" + (branch || "master");
         }
@@ -4257,6 +4284,7 @@ var pxt;
                 });
             };
             TutorialInfoIndexedDb.prototype.getAsync = function (filename, code, branch) {
+                var _this = this;
                 var key = getTutorialInfoKey(filename, branch);
                 var hash = getTutorialInfoHash(code);
                 return this.db.getAsync(TutorialInfoIndexedDb.TABLE, key)
@@ -4266,6 +4294,8 @@ var pxt;
                         return res;
                     }
                     /* tslint:enable:possible-timing-attack */
+                    // delete stale db entry
+                    _this.db.deleteAsync(TutorialInfoIndexedDb.TABLE, key);
                     return undefined;
                 });
             };
@@ -4273,6 +4303,11 @@ var pxt;
                 pxt.perf.measureStart("tutorial info db setAsync");
                 var key = getTutorialInfoKey(filename, branch);
                 var hash = getTutorialInfoHash(code);
+                return this.setWithHashAsync(filename, blocks, hash);
+            };
+            TutorialInfoIndexedDb.prototype.setWithHashAsync = function (filename, blocks, hash, branch) {
+                pxt.perf.measureStart("tutorial info db setAsync");
+                var key = getTutorialInfoKey(filename, branch);
                 var entry = {
                     id: key,
                     hash: hash,
@@ -4281,6 +4316,13 @@ var pxt;
                 return this.db.setAsync(TutorialInfoIndexedDb.TABLE, entry)
                     .then(function () {
                     pxt.perf.measureEnd("tutorial info db setAsync");
+                });
+            };
+            TutorialInfoIndexedDb.prototype.clearAsync = function () {
+                return this.db.deleteAllAsync(TutorialInfoIndexedDb.TABLE)
+                    .then(function () { return console.debug("db: all clean"); })
+                    .catch(function (e) {
+                    console.error('db: failed to delete all');
                 });
             };
             TutorialInfoIndexedDb.TABLE = "info";
@@ -4294,6 +4336,25 @@ var pxt;
             return _tutorialInfoDbPromise;
         }
         BrowserUtils.tutorialInfoDbAsync = tutorialInfoDbAsync;
+        function clearTutorialInfoDbAsync() {
+            function deleteDbAsync() {
+                var n = TutorialInfoIndexedDb.dbName();
+                return IDBWrapper.deleteDatabaseAsync(n)
+                    .then(function () {
+                    _tutorialInfoDbPromise = undefined;
+                })
+                    .catch(function (e) {
+                    pxt.log("db: failed to delete " + n);
+                    _tutorialInfoDbPromise = undefined;
+                });
+            }
+            if (!_tutorialInfoDbPromise)
+                return deleteDbAsync();
+            return _tutorialInfoDbPromise
+                .then(function (db) { return db.clearAsync(); })
+                .catch(function (e) { return deleteDbAsync().done(); });
+        }
+        BrowserUtils.clearTutorialInfoDbAsync = clearTutorialInfoDbAsync;
         BrowserUtils.pointerEvents = (function () {
             if (hasPointerEvents()) {
                 return {
@@ -4660,11 +4721,9 @@ var pxt;
                 var pkg = mainPkgDeps_1[_i];
                 if (pkg.disablesVariant(pxt.appTargetVariant) ||
                     pkg.resolvedDependencies().some(function (d) { return d.disablesVariant(pxt.appTargetVariant); })) {
-                    if (pkg.id != "this") {
-                        if (disabledDeps)
-                            disabledDeps += ", ";
-                        disabledDeps += pkg.id;
-                    }
+                    if (disabledDeps)
+                        disabledDeps += ", ";
+                    disabledDeps += pkg.id;
                     pxt.debug("disable variant " + pxt.appTargetVariant + " due to " + pkg.id);
                     continue;
                 }
@@ -5235,6 +5294,7 @@ var pxt;
             var currSettings = U.clone(compileService.yottaConfig || {});
             var optSettings = {};
             var settingSrc = {};
+            var codalLibraries = {};
             function parseJson(pkg) {
                 var j0 = pkg.config.platformio;
                 if (j0 && j0.dependencies) {
@@ -5242,6 +5302,24 @@ var pxt;
                 }
                 if (res.npmDependencies && pkg.config.npmDependencies)
                     U.jsonCopyFrom(res.npmDependencies, pkg.config.npmDependencies);
+                var codal = pkg.config.codal;
+                if (isCodal && codal) {
+                    for (var _i = 0, _a = codal.libraries || []; _i < _a.length; _i++) {
+                        var lib = _a[_i];
+                        var repo = pxt.github.parseRepoId(lib);
+                        if (!repo)
+                            U.userError(lf("codal library {0} doesn't look like github repo", lib));
+                        var canonical = pxt.github.stringifyRepo(repo);
+                        var existing = U.lookup(codalLibraries, repo.project);
+                        if (existing) {
+                            if (pxt.github.stringifyRepo(existing) != canonical)
+                                U.userError(lf("conflict between codal libraries: {0} and {1}", pxt.github.stringifyRepo(existing), canonical));
+                        }
+                        else {
+                            codalLibraries[repo.project] = repo;
+                        }
+                    }
+                }
                 var json = pkg.config.yotta;
                 if (!json)
                     return;
@@ -5251,8 +5329,8 @@ var pxt;
                 }
                 if (json.config) {
                     var cfg = U.jsonFlatten(json.config);
-                    for (var _i = 0, _a = Object.keys(cfg); _i < _a.length; _i++) {
-                        var settingName = _a[_i];
+                    for (var _b = 0, _c = Object.keys(cfg); _b < _c.length; _b++) {
+                        var settingName = _c[_b];
                         var prev = U.lookup(settingSrc, settingName);
                         var settingValue = cfg[settingName];
                         if (!prev || prev.config.yotta.configIsJustDefaults) {
@@ -5273,8 +5351,8 @@ var pxt;
                 }
                 if (json.optionalConfig) {
                     var cfg = U.jsonFlatten(json.optionalConfig);
-                    for (var _b = 0, _c = Object.keys(cfg); _b < _c.length; _b++) {
-                        var settingName = _c[_b];
+                    for (var _d = 0, _e = Object.keys(cfg); _d < _e.length; _d++) {
+                        var settingName = _e[_d];
                         var settingValue = cfg[settingName];
                         // last one wins
                         optSettings[settingName] = settingValue;
@@ -5346,6 +5424,11 @@ var pxt;
                     var pkg = mainDeps_2[_b];
                     _loop_1(pkg);
                 }
+                if (!seenMain) {
+                    // this can happen if the main package is disabled in current variant
+                    shimsDTS.clear();
+                    enumsDTS.clear();
+                }
             }
             if (allErrors)
                 U.userError(allErrors);
@@ -5367,6 +5450,7 @@ var pxt;
                 Object.keys(optSettings)
                     .forEach(function (k) { return optSettings["YOTTA_CFG_" + k] = optSettings[k]; });
             }
+            optSettings["PXT_TARGET"] = JSON.stringify(pxt.appTarget.id);
             var configJson = U.jsonUnFlatten(optSettings);
             if (isDockerMake) {
                 var packageJson = {
@@ -5391,7 +5475,15 @@ var pxt;
                     // include these, because we use hash of this file to see if anything changed
                     "pxt_gitrepo": cs.githubCorePackage,
                     "pxt_gittag": cs.gittag,
+                    "libraries": U.values(codalLibraries).map(function (r) { return ({
+                        "name": r.project,
+                        "url": "https://github.com/" + r.fullName,
+                        "branch": r.tag || "master",
+                        "type": "git"
+                    }); })
                 };
+                if (codalJson.libraries.length == 0)
+                    delete codalJson.libraries;
                 U.iterMap(U.jsonFlatten(configJson), function (k, v) {
                     k = k.replace(/^codal\./, "device.").toUpperCase().replace(/\./g, "_");
                     cfg_1[k] = v;
@@ -5658,10 +5750,12 @@ var pxt;
         function downloadHexInfoCoreAsync(extInfo) {
             var hexurl = "";
             hexloader.showLoading(pxt.U.lf("Compiling (this may take a minute)..."));
+            pxt.tickEvent("cppcompile.start");
             return downloadHexInfoLocalAsync(extInfo)
                 .then(function (hex) {
                 if (hex) {
                     // Found the hex image in the local server cache, use that
+                    pxt.tickEvent("cppcompile.cachehit");
                     return hex;
                 }
                 return getCdnUrlAsync()
@@ -5672,12 +5766,30 @@ var pxt;
                     .then(function (r) { return r; }, function (e) {
                     return pxt.Cloud.privatePostAsync("compile/extension", { data: extInfo.compileData })
                         .then(function (ret) { return new Promise(function (resolve, reject) {
+                        var retry = 0;
+                        var delay = 8000; // ms
+                        var maxWait = 120000; // ms
+                        var startTry = pxt.U.now();
                         var tryGet = function () {
+                            retry++;
+                            if (pxt.U.now() - startTry > maxWait) {
+                                pxt.log("abandoning C++ build");
+                                pxt.tickEvent("cppcompile.cancel", { retry: retry });
+                                resolve(null);
+                                return null;
+                            }
                             var url = ret.hex.replace(/\.hex/, ".json");
-                            pxt.log("polling C++ build " + url);
+                            pxt.log("polling C++ build " + url + " (attempt #" + retry + ")");
+                            pxt.tickEvent("cppcompile.poll", { retry: retry });
                             return pxt.Util.httpGetJsonAsync(url)
                                 .then(function (json) {
+                                var _a;
                                 pxt.log("build log " + url.replace(/\.json$/, ".log"));
+                                pxt.tickEvent("cppcompile.done", {
+                                    success: ((_a = json) === null || _a === void 0 ? void 0 : _a.success) ? 1 : 0,
+                                    retry: retry,
+                                    duration: pxt.U.now() - startTry
+                                });
                                 if (!json.success) {
                                     pxt.log("build failed");
                                     if (json.mbedresponse && json.mbedresponse.result && json.mbedresponse.result.exception)
@@ -5689,7 +5801,8 @@ var pxt;
                                     resolve(pxt.U.httpGetTextAsync(hexurl + ".hex"));
                                 }
                             }, function (e) {
-                                setTimeout(tryGet, 1000);
+                                pxt.log("waiting " + ((delay / 1000) | 0) + "s for C++ build...");
+                                setTimeout(tryGet, delay);
                                 return null;
                             });
                         };
@@ -7261,7 +7374,7 @@ var pxt;
                 }
                 // remove tutorial macros
                 if (text)
-                    text = text.replace(/@(fullscreen|unplugged)/g, '');
+                    text = text.replace(/@(fullscreen|unplugged|showdialog|showhint)/gi, '');
                 return "<h" + level + " id=\"" + this.options.headerPrefix + id + "\">" + text + "</h" + level + ">";
             };
         }
@@ -7892,6 +8005,84 @@ var pxt;
             return prj;
         }
         gallery_1.parseExampleMarkdown = parseExampleMarkdown;
+        function parseCodeCards(md) {
+            var _a, _b;
+            // try to parse code cards as JSON
+            var cards = pxt.Util.jsonTryParse(md);
+            if (cards && !Array.isArray(cards))
+                cards = [cards];
+            if ((_a = cards) === null || _a === void 0 ? void 0 : _a.length)
+                return cards;
+            // not json, try parsing as sequence of key,value pairs, with line splits
+            cards = md.split(/^---$/gm)
+                .filter(function (cmd) { return !!cmd; })
+                .map(function (cmd) {
+                var cc = {};
+                cmd.replace(/^\s*(?:-|\*)\s+(\w+)\s*:\s*(.*)$/gm, function (m, n, v) {
+                    if (n == "flags")
+                        cc[n] = v.split(',');
+                    else if (n === "otherAction") {
+                        var parts = v.split(',').map(function (p) { var _a; return (_a = p) === null || _a === void 0 ? void 0 : _a.trim(); });
+                        var oas = (cc["otherActions"] || (cc["otherActions"] = []));
+                        oas.push({
+                            url: parts[0],
+                            editor: parts[1],
+                            cardType: parts[2]
+                        });
+                    }
+                    else
+                        cc[n] = v;
+                    return '';
+                });
+                return !!Object.keys(cc).length && cc;
+            })
+                .filter(function (cc) { return !!cc; });
+            if ((_b = cards) === null || _b === void 0 ? void 0 : _b.length)
+                return cards;
+            return undefined;
+        }
+        gallery_1.parseCodeCards = parseCodeCards;
+        function parseCodeCardsHtml(el) {
+            var _a;
+            var cards = [];
+            if (el.tagName === "CODE") {
+                // legacy JSON format
+                cards = pxt.Util.jsonTryParse(el.textContent);
+            }
+            else {
+                var card_1;
+                Array.from(el.children)
+                    .forEach(function (child) {
+                    if (child.tagName === "UL" || child.tagName === "OL") {
+                        if (!card_1)
+                            card_1 = {};
+                        // read fields into card
+                        Array.from(child.querySelectorAll("li"))
+                            .forEach(function (field) {
+                            var text = field.innerText;
+                            var m = /^\s*(\w+)\s*:\s*(.*)$/.exec(text);
+                            if (m) {
+                                var k = m[1];
+                                card_1[k] = m[2].trim();
+                                if (k === "flags")
+                                    card_1[k] = card_1[k].split(/,\s*/);
+                            }
+                        });
+                    }
+                    else if (child.tagName == "HR") {
+                        // flush current card
+                        if (card_1)
+                            cards.push(card_1);
+                        card_1 = undefined;
+                    }
+                });
+                // flush last card
+                if (card_1)
+                    cards.push(card_1);
+            }
+            return !!((_a = cards) === null || _a === void 0 ? void 0 : _a.length) && cards;
+        }
+        gallery_1.parseCodeCardsHtml = parseCodeCardsHtml;
         function parseGalleryMardown(md) {
             if (!md)
                 return [];
@@ -7901,32 +8092,30 @@ var pxt;
             var galleries = [];
             var incard = false;
             var name = undefined;
-            var cards = "";
+            var cardsSource = "";
             md.split(/\r?\n/).forEach(function (line) {
+                var _a;
                 // new category
-                if (/^##/.test(line)) {
+                if (/^## /.test(line)) {
                     name = line.substr(2).trim();
                 }
-                else if (/^```codecard$/.test(line)) {
+                else if (/^(### ~ |```)codecard$/.test(line)) {
                     incard = true;
                 }
-                else if (/^```$/.test(line)) {
+                else if (/^(### ~|```)$/.test(line)) {
                     incard = false;
-                    if (name && cards) {
-                        try {
-                            var cardsJSON = JSON.parse(cards);
-                            if (cardsJSON && cardsJSON.length > 0)
-                                galleries.push({ name: name, cards: cardsJSON });
-                        }
-                        catch (e) {
-                            pxt.log('invalid card format in gallery');
-                        }
+                    if (name && cardsSource) {
+                        var cards = parseCodeCards(cardsSource);
+                        if ((_a = cards) === null || _a === void 0 ? void 0 : _a.length)
+                            galleries.push({ name: name, cards: cards });
+                        else
+                            pxt.log("invalid gallery format");
                     }
-                    cards = "";
+                    cardsSource = "";
                     name = undefined;
                 }
                 else if (incard)
-                    cards += line + '\n';
+                    cardsSource += line + '\n';
             });
             // apply transformations
             galleries.forEach(function (gallery) { return gallery.cards.forEach(function (card) {
@@ -7950,6 +8139,20 @@ var pxt;
                 .then(function (md) { return parseGalleryMardown(md); });
         }
         gallery_1.loadGalleryAsync = loadGalleryAsync;
+        function codeCardsToMarkdown(cards) {
+            var md = "### ~ codecard\n\n" + (cards || []).map(function (card) { return Object.keys(card)
+                .filter(function (k) { return !!card[k]; })
+                .map(function (k) { return k === "otherActions"
+                ? otherActionsToMd(card[k])
+                : "* " + k + ": " + card[k]; }).join('\n'); })
+                .join("\n\n---\n\n") + "\n\n### ~\n";
+            return md;
+            function otherActionsToMd(oas) {
+                return oas.map(function (oa) { return "* otherAction: " + oa.url + " " + (oa.editor || "ts") + " " + (oa.cardType || ""); })
+                    .join('\n');
+            }
+        }
+        gallery_1.codeCardsToMarkdown = codeCardsToMarkdown;
     })(gallery = pxt.gallery || (pxt.gallery = {}));
 })(pxt || (pxt = {}));
 var pxt;
@@ -9686,7 +9889,8 @@ var pxt;
                 return this.io.reconnectAsync()
                     .then(function () { return _this.flashAsync(blocks); })
                     .then(function () { return Promise.delay(100); })
-                    .finally(function () { return _this.flashing = false; });
+                    .finally(function () { return _this.flashing = false; })
+                    .then(function () { return _this.reconnectAsync(); });
             };
             Wrapper.prototype.writeWordsAsync = function (addr, words) {
                 pxt.U.assert(words.length <= 64); // just sanity check
@@ -10400,6 +10604,7 @@ var pxt;
                 ".gitignore": "# MakeCode\nbuilt\nnode_modules\nyotta_modules\nyotta_targets\npxt_modules\n_site\n*.db\n*.tgz\n.header.json\n.simstate.json\n",
                 ".vscode/settings.json": "{\n    \"editor.formatOnType\": true,\n    \"files.autoSave\": \"afterDelay\",\n    \"files.watcherExclude\": {\n        \"**/.git/objects/**\": true,\n        \"**/built/**\": true,\n        \"**/node_modules/**\": true,\n        \"**/yotta_modules/**\": true,\n        \"**/yotta_targets\": true,\n        \"**/pxt_modules/**\": true\n    },\n    \"files.associations\": {\n        \"*.blocks\": \"html\",\n        \"*.jres\": \"json\"\n    },\n    \"search.exclude\": {\n        \"**/built\": true,\n        \"**/node_modules\": true,\n        \"**/yotta_modules\": true,\n        \"**/yotta_targets\": true,\n        \"**/pxt_modules\": true\n    }\n}",
                 ".github/workflows/makecode.yml": "name: MakeCode\n\non: [push]\n\njobs:\n  build:\n\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        node-version: [8.x]\n\n    steps:\n      - uses: actions/checkout@v1\n      - name: Use Node.js ${{ matrix.node-version }}\n        uses: actions/setup-node@v1\n        with:\n          node-version: ${{ matrix.node-version }}\n      - name: npm install\n        run: |\n          npm install -g pxt\n          pxt target @TARGET@\n      - name: build\n        run: |\n          pxt install\n          pxt build --cloud\n        env:\n          CI: true\n",
+                ".github/workflows/cfg-check.yml": "name: Check pxt.json\n\non:\n  push\n\njobs:\n  check-cfg:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        node-version: [8.x]\n    steps:\n      - uses: actions/checkout@v2\n      - name: Use Node.js ${{ matrix.node-version }}\n        uses: actions/setup-node@v1\n        with:\n          node-version: ${{ matrix.node-version }}\n      - name: npm install\n        run: npm install -g pxt\n      - name: Checkout current state\n        run: |\n          git checkout -- .\n          git clean -fd\n      - name: Fix files listed in config if necessary\n        run: pxt checkpkgcfg\n      - name: Create Pull Request\n        uses: peter-evans/create-pull-request@v3\n        with:\n          title: 'Removing missing files from pxt.json'\n          commit-message: 'Removing missing files from pxt.json'\n          delete-branch: true\n",
                 ".vscode/tasks.json": "\n// A task runner that calls the MakeCode (PXT) compiler\n{\n    \"version\": \"2.0.0\",\n    \"tasks\": [{\n        \"label\": \"pxt deploy\",\n        \"type\": \"shell\",\n        \"command\": \"pxt deploy --local\",\n        \"group\": \"build\",\n        \"problemMatcher\": [ \"$tsc\" ]\n    }, {\n        \"label\": \"pxt build\",\n        \"type\": \"shell\",\n        \"command\": \"pxt build --local\",\n        \"group\": \"build\",\n        \"problemMatcher\": [ \"$tsc\" ]\n    }, {\n        \"label\": \"pxt install\",\n        \"type\": \"shell\",\n        \"command\": \"pxt install\",\n        \"group\": \"build\",\n        \"problemMatcher\": [ \"$tsc\" ]\n    }, {\n        \"label\": \"pxt clean\",\n        \"type\": \"shell\",\n        \"command\": \"pxt clean\",\n        \"group\": \"test\",\n        \"problemMatcher\": [ \"$tsc\" ]\n    }]\n}\n"
             };
             // override files from target
@@ -10940,6 +11145,10 @@ var pxt;
         sprite_1.BLOCKLY_TILESET_TYPE = "BLOCKLY_TILESET_TYPE";
         sprite_1.TILE_PREFIX = "tile";
         sprite_1.TILE_NAMESPACE = "myTiles";
+        sprite_1.IMAGES_NAMESPACE = "myImages";
+        sprite_1.IMAGE_PREFIX = "image";
+        sprite_1.ANIMATION_NAMESPACE = "myAnimations";
+        sprite_1.ANIMATION_PREFIX = "anim";
         /**
          * 16-color sprite
          */
@@ -11099,6 +11308,19 @@ var pxt;
                 var layers = Bitmap.fromData(this.layers).copy().data();
                 return new TilemapData(tm, tileset, layers);
             };
+            TilemapData.prototype.equals = function (other) {
+                if (!(this.tilemap.equals(other.tilemap)
+                    && this.tileset.tileWidth == other.tileset.tileWidth
+                    && this.tileset.tiles.length == other.tileset.tiles.length
+                    && bitmapEquals(this.layers, other.layers))) {
+                    return false;
+                }
+                for (var i = 0; i < this.tileset.tiles.length; i++) {
+                    if (!pxt.assetEquals(this.tileset.tiles[i], other.tileset.tiles[i]))
+                        return false;
+                }
+                return true;
+            };
             return TilemapData;
         }());
         sprite_1.TilemapData = TilemapData;
@@ -11211,7 +11433,10 @@ var pxt;
         }
         sprite_1.getBitmap = getBitmap;
         function getBitmapFromJResURL(jresURL) {
-            var data = atob(jresURL.slice(jresURL.indexOf(",") + 1));
+            return hexToBitmap(atob(jresURL.slice(jresURL.indexOf(",") + 1)));
+        }
+        sprite_1.getBitmapFromJResURL = getBitmapFromJResURL;
+        function hexToBitmap(data) {
             var magic = data.charCodeAt(0);
             var w = data.charCodeAt(1);
             var h = data.charCodeAt(2);
@@ -11254,7 +11479,7 @@ var pxt;
             }
             return out;
         }
-        sprite_1.getBitmapFromJResURL = getBitmapFromJResURL;
+        sprite_1.hexToBitmap = hexToBitmap;
         function filterItems(target, tags) {
             tags = tags
                 .filter(function (el) { return !!el; })
@@ -11559,6 +11784,10 @@ var pxt;
             return res;
         }
         sprite_1.bitmapToImageLiteral = bitmapToImageLiteral;
+        function bitmapEquals(a, b) {
+            return pxt.sprite.Bitmap.fromData(a).equals(pxt.sprite.Bitmap.fromData(b));
+        }
+        sprite_1.bitmapEquals = bitmapEquals;
         function tileWidthToTileScale(tileWidth) {
             switch (tileWidth) {
                 case 8: return "TileScale.Eight";
@@ -11584,6 +11813,7 @@ var pxt;
                 r[i >> 1] = parseInt(hex.slice(i, i + 2), 16);
             return r;
         }
+        sprite_1.hexToUint8Array = hexToUint8Array;
         function uint8ArrayToHex(data) {
             var hex = "0123456789abcdef";
             var res = "";
@@ -11958,6 +12188,7 @@ var pxt;
             // handle invalid names downstream
             if (this.config.targetVersions
                 && this.config.targetVersions.target
+                && pxt.appTarget.versions
                 && pxt.semver.majorCmp(this.config.targetVersions.target, pxt.appTarget.versions.target) > 0)
                 pxt.U.userError(lf("{0} requires target version {1} (you are running {2})", this.config.name, this.config.targetVersions.target, pxt.appTarget.versions.target));
         };
@@ -12404,23 +12635,29 @@ var pxt;
             var fd = this.config.fileDependencies;
             if (this.config.fileDependencies)
                 res = res.filter(function (fn) {
-                    var cond = pxt.U.lookup(fd, fn);
-                    if (!cond)
-                        return true;
-                    cond = cond.trim();
-                    if (!cond)
-                        return true;
-                    if (/^[\w-]+$/.test(cond)) {
-                        var dep = _this.parent.resolveDep(cond);
-                        if (dep && !dep.cppOnly)
-                            return true;
+                    var evalCond = function (cond) {
+                        cond = cond.trim();
+                        if (cond[0] == '!')
+                            return !evalCond(cond.slice(1));
+                        if (/^[\w-]+$/.test(cond)) {
+                            var dep = _this.parent.resolveDep(cond);
+                            if (dep && !dep.cppOnly)
+                                return true;
+                            return false;
+                        }
+                        var m = /^target:(\w+)$/.exec(cond);
+                        if (m)
+                            return m[1] == pxt.appTarget.id || m[1] == pxt.appTarget.platformid;
+                        if (!Package.depWarnings[cond]) {
+                            Package.depWarnings[cond] = true;
+                            pxt.log("invalid dependency expression: " + cond + " in " + _this.id + "/" + fn);
+                        }
                         return false;
-                    }
-                    if (!Package.depWarnings[cond]) {
-                        Package.depWarnings[cond] = true;
-                        pxt.log("invalid dependency expression: " + cond + " in " + _this.id + "/" + fn);
-                    }
-                    return false;
+                    };
+                    var cond = pxt.U.lookup(fd, fn);
+                    if (!cond || !cond.trim())
+                        return true;
+                    return cond.split('||').some(function (c) { return c.split('&&').every(evalCond); });
                 });
             return res;
         };
@@ -12943,6 +13180,7 @@ var pxt;
                 namespace: ns,
                 mimeType: mimeType,
                 tilemapTile: v.tilemapTile,
+                displayName: v.displayName,
                 tileset: v.tileset
             };
         }
@@ -13415,8 +13653,7 @@ var ts;
             };
         }
         pxtc.BuildSourceMapHelpers = BuildSourceMapHelpers;
-        function computeUsedParts(resp, ignoreBuiltin) {
-            if (ignoreBuiltin === void 0) { ignoreBuiltin = false; }
+        function computeUsedParts(resp, filter) {
             if (!resp.usedSymbols || !pxt.appTarget.simulator || !pxt.appTarget.simulator.parts)
                 return [];
             var parts = [];
@@ -13434,10 +13671,16 @@ var ts;
                     }
                 }
             });
-            if (ignoreBuiltin) {
+            if (filter) {
                 var builtinParts_1 = pxt.appTarget.simulator.boardDefinition.onboardComponents;
-                if (builtinParts_1)
-                    parts = parts.filter(function (p) { return builtinParts_1.indexOf(p) < 0; });
+                if (builtinParts_1) {
+                    if (filter === "ignorebuiltin") {
+                        parts = parts.filter(function (p) { return builtinParts_1.indexOf(p) === -1; });
+                    }
+                    else if (filter === "onlybuiltin") {
+                        parts = parts.filter(function (p) { return builtinParts_1.indexOf(p) >= 0; });
+                    }
+                }
             }
             //sort parts (so breadboarding layout is stable w.r.t. code ordering)
             parts.sort();
@@ -13663,9 +13906,8 @@ var ts;
         pxtc.apiLocalizationStrings = {};
         function localizeApisAsync(apis, mainPkg) {
             var lang = pxtc.Util.userLanguage();
-            if (pxtc.Util.userLanguage() == "en")
+            if (lang == "en")
                 return Promise.resolve(cleanLocalizations(apis));
-            var errors = {};
             var langLower = lang.toLowerCase();
             var attrJsLocsKey = langLower + "|jsdoc";
             var attrBlockLocsKey = langLower + "|block";
@@ -13676,6 +13918,7 @@ var ts;
                 var attrLocs = fn.attributes.locs || {};
                 var locJsDoc = loc[fn.qName] || attrLocs[attrJsLocsKey];
                 if (locJsDoc) {
+                    fn.attributes._untranslatedJsDoc = fn.attributes.jsDoc;
                     fn.attributes.jsDoc = locJsDoc;
                     if (fn.parameters)
                         fn.parameters.forEach(function (pi) { return pi.description = loc[fn.qName + "|param|" + pi.name] || attrLocs[langLower + "|param|" + pi.name] || pi.description; });
@@ -13714,14 +13957,23 @@ var ts;
                     else if (fn.attributes.block && locBlock) {
                         var ps = pxt.blocks.compileInfo(fn);
                         var oldBlock = fn.attributes.block;
-                        fn.attributes.block = pxt.blocks.normalizeBlock(locBlock, function (err) { return errors[fn.attributes.blockId + "." + lang] = 1; });
+                        fn.attributes.block = pxt.blocks.normalizeBlock(locBlock, function (err) {
+                            pxt.tickEvent("loc.normalized", {
+                                block: fn.attributes.block,
+                                lang: lang,
+                                error: err,
+                            });
+                        });
                         fn.attributes._untranslatedBlock = oldBlock;
                         if (oldBlock != fn.attributes.block) {
                             updateBlockDef(fn.attributes);
                             var locps = pxt.blocks.compileInfo(fn);
                             if (!hasEquivalentParameters(ps, locps)) {
                                 pxt.log("block has non matching arguments: " + oldBlock + " vs " + fn.attributes.block);
-                                errors[fn.attributes.blockId + "." + lang] = 2;
+                                pxt.reportError("loc.errors", "invalid translations", {
+                                    block: fn.attributes.blockId,
+                                    lang: lang,
+                                });
                                 fn.attributes.block = oldBlock;
                                 updateBlockDef(fn.attributes);
                             }
@@ -13732,11 +13984,7 @@ var ts;
                     }
                 });
             })); })
-                .then(function () { return cleanLocalizations(apis); })
-                .finally(function () {
-                if (Object.keys(errors).length)
-                    pxt.reportError("loc.errors", "invalid translation", errors);
-            });
+                .then(function () { return cleanLocalizations(apis); });
         }
         pxtc.localizeApisAsync = localizeApisAsync;
         function cleanLocalizations(apis) {
@@ -15434,107 +15682,349 @@ var pxt;
 (function (pxt) {
     var IMAGE_MIME_TYPE = "image/x-mkcd-f4";
     var TILEMAP_MIME_TYPE = "application/mkcd-tilemap";
+    var ANIMATION_MIME_TYPE = "application/mkcd-animation";
+    var AssetCollection = /** @class */ (function () {
+        function AssetCollection() {
+            this.assets = [];
+            this.takenNames = {};
+            this.listeners = [];
+        }
+        AssetCollection.prototype.add = function (asset) {
+            if (this.takenNames[asset.id]) {
+                return this.update(asset.id, asset);
+            }
+            else {
+                var clone = cloneAsset(asset);
+                this.takenNames[clone.id] = true;
+                this.takenNames[getShortIDForAsset(clone)] = true;
+                if (clone.meta.displayName && clone.meta.displayName !== clone.id) {
+                    if (this.takenNames[clone.meta.displayName]) {
+                        clone.meta.displayName = this.generateNewDisplayName(clone.meta.displayName);
+                    }
+                    this.takenNames[clone.meta.displayName] = true;
+                }
+                this.assets.push(clone);
+                return cloneAsset(clone);
+            }
+        };
+        AssetCollection.prototype.getSnapshot = function (filter) {
+            if (filter) {
+                return this.assets.filter(function (a) { return filter(a); }).map(cloneAsset);
+            }
+            return this.assets.map(cloneAsset);
+        };
+        AssetCollection.prototype.update = function (id, newValue) {
+            var asset;
+            if (this.takenNames[id]) {
+                var existing = this.lookupByID(id);
+                if (!assetEquals(existing, newValue)) {
+                    this.removeByID(id);
+                    asset = this.add(newValue);
+                    this.notifyListener(newValue.internalID);
+                }
+            }
+            else {
+                asset = this.add(newValue);
+            }
+            return asset;
+        };
+        AssetCollection.prototype.removeByID = function (id) {
+            var _a, _b;
+            var existing = this.lookupByID(id);
+            this.assets = this.assets.filter(function (a) { return a.id !== id; });
+            delete this.takenNames[id];
+            if (existing) {
+                delete this.takenNames[getShortIDForAsset(existing)];
+            }
+            if ((_a = existing) === null || _a === void 0 ? void 0 : _a.meta.displayName) {
+                delete this.takenNames[(_b = existing) === null || _b === void 0 ? void 0 : _b.meta.displayName];
+            }
+        };
+        AssetCollection.prototype.getByID = function (id) {
+            var asset = this.lookupByID(id);
+            return asset && cloneAsset(asset);
+        };
+        AssetCollection.prototype.getByDisplayName = function (name) {
+            if (this.takenNames[name]) {
+                for (var _i = 0, _a = this.assets; _i < _a.length; _i++) {
+                    var asset = _a[_i];
+                    if (asset.meta.displayName === name || getShortIDForAsset(asset) === name) {
+                        return cloneAsset(asset);
+                    }
+                }
+            }
+            return undefined;
+        };
+        AssetCollection.prototype.isIDTaken = function (id) {
+            return !!this.takenNames[id];
+        };
+        AssetCollection.prototype.clone = function () {
+            var cloned = new AssetCollection();
+            cloned.assets = this.getSnapshot();
+            cloned.takenNames = __assign({}, this.takenNames);
+            return cloned;
+        };
+        AssetCollection.prototype.serializeToJRes = function (allJRes) {
+            if (allJRes === void 0) { allJRes = {}; }
+            for (var _i = 0, _a = this.assets; _i < _a.length; _i++) {
+                var asset = _a[_i];
+                addAssetToJRes(asset, allJRes);
+            }
+            return allJRes;
+        };
+        AssetCollection.prototype.addListener = function (internalID, listener) {
+            this.listeners.push({ internalID: internalID, callback: listener });
+        };
+        AssetCollection.prototype.removeListener = function (listener) {
+            this.listeners = this.listeners.filter(function (ref) { return ref.callback !== listener; });
+        };
+        AssetCollection.prototype.diff = function (past) {
+            var diff = {
+                before: [],
+                after: []
+            };
+            var handled = {};
+            for (var _i = 0, _a = past.assets; _i < _a.length; _i++) {
+                var pastAsset = _a[_i];
+                handled[pastAsset.internalID] = true;
+                var futureAsset = this.lookupByInternalID(pastAsset.internalID);
+                if (!futureAsset || !assetEquals(pastAsset, futureAsset)) {
+                    diff.before.push(pastAsset);
+                    diff.after.push(futureAsset);
+                }
+            }
+            for (var _b = 0, _c = this.assets.filter(function (a) { return !handled[a.internalID]; }); _b < _c.length; _b++) {
+                var futureAsset = _c[_b];
+                diff.before.push(null);
+                diff.after.push(futureAsset);
+            }
+            return diff;
+        };
+        AssetCollection.prototype.applyDiff = function (diff, backwards) {
+            if (backwards === void 0) { backwards = false; }
+            var before = backwards ? diff.after : diff.before;
+            var after = backwards ? diff.before : diff.after;
+            pxt.Util.assert(before.length === after.length);
+            for (var i = 0; i < before.length; i++) {
+                if (!before[i]) {
+                    this.assets.push(after[i]);
+                    this.notifyListener(after[i].internalID);
+                    continue;
+                }
+                this.removeByInternalID(before[i].internalID);
+                if (after[i]) {
+                    this.assets.push(after[i]);
+                }
+                this.notifyListener(before[i].internalID);
+            }
+            this.takenNames = {};
+            for (var _i = 0, _a = this.assets; _i < _a.length; _i++) {
+                var asset = _a[_i];
+                pxt.Util.assert(!this.takenNames[asset.id]);
+                this.takenNames[asset.id] = true;
+                this.takenNames[getShortIDForAsset(asset)] = true;
+                if (asset.meta.displayName) {
+                    if (asset.meta.displayName !== asset.id)
+                        pxt.Util.assert(!this.takenNames[asset.meta.displayName]);
+                    this.takenNames[asset.meta.displayName] = true;
+                }
+            }
+        };
+        AssetCollection.prototype.lookupByID = function (id) {
+            for (var _i = 0, _a = this.assets; _i < _a.length; _i++) {
+                var asset = _a[_i];
+                if (asset.id === id) {
+                    return asset;
+                }
+            }
+            return null;
+        };
+        AssetCollection.prototype.lookupByInternalID = function (id) {
+            for (var _i = 0, _a = this.assets; _i < _a.length; _i++) {
+                var asset = _a[_i];
+                if (asset.internalID === id) {
+                    return asset;
+                }
+            }
+            return null;
+        };
+        AssetCollection.prototype.removeByInternalID = function (id) {
+            this.assets = this.assets.filter(function (a) { return a.internalID !== id; });
+        };
+        AssetCollection.prototype.notifyListener = function (internalID) {
+            for (var _i = 0, _a = this.listeners; _i < _a.length; _i++) {
+                var listener = _a[_i];
+                if (listener.internalID === internalID)
+                    listener.callback();
+            }
+        };
+        AssetCollection.prototype.generateNewDisplayName = function (prefix) {
+            prefix = prefix.replace(/\d+$/, "");
+            var index = 0;
+            while (this.takenNames[prefix + index]) {
+                ++index;
+            }
+            return prefix + index;
+        };
+        return AssetCollection;
+    }());
     var TilemapProject = /** @class */ (function () {
         function TilemapProject() {
             this.needsRebuild = true;
             this.nextID = 0;
+            this.nextInternalID = 0;
+            this.committedState = {
+                revision: 0,
+                tilemaps: new AssetCollection(),
+                tiles: new AssetCollection(),
+                animations: new AssetCollection(),
+                images: new AssetCollection()
+            };
             this.state = {
-                revision: this.nextID++
+                revision: this.nextID++,
+                tilemaps: new AssetCollection(),
+                tiles: new AssetCollection(),
+                animations: new AssetCollection(),
+                images: new AssetCollection()
+            };
+            this.gallery = {
+                revision: 0,
+                tilemaps: new AssetCollection(),
+                tiles: new AssetCollection(),
+                animations: new AssetCollection(),
+                images: new AssetCollection()
             };
             this.undoStack = [];
             this.redoStack = [];
         }
+        TilemapProject.prototype.getNewInternalId = function () {
+            return this.nextInternalID++;
+        };
+        TilemapProject.prototype.createNewImage = function (width, height) {
+            if (width === void 0) { width = 16; }
+            if (height === void 0) { height = 16; }
+            var id = this.generateNewID("image" /* Image */, pxt.sprite.IMAGE_PREFIX, pxt.sprite.IMAGES_NAMESPACE);
+            var bitmap = new pxt.sprite.Bitmap(width, height).data();
+            var newImage = {
+                internalID: this.getNewInternalId(),
+                id: id,
+                type: "image" /* Image */,
+                bitmap: bitmap,
+                meta: {},
+                jresData: pxt.sprite.base64EncodeBitmap(bitmap)
+            };
+            return this.state.images.add(newImage);
+        };
+        TilemapProject.prototype.createNewAnimation = function (width, height) {
+            if (width === void 0) { width = 16; }
+            if (height === void 0) { height = 16; }
+            var id = this.generateNewID("animation" /* Animation */, pxt.sprite.ANIMATION_PREFIX, pxt.sprite.ANIMATION_NAMESPACE);
+            var bitmap = new pxt.sprite.Bitmap(width, height).data();
+            var newAnimation = {
+                internalID: this.getNewInternalId(),
+                id: id,
+                type: "animation" /* Animation */,
+                frames: [bitmap],
+                interval: 500,
+                meta: {},
+            };
+            return this.state.animations.add(newAnimation);
+        };
+        TilemapProject.prototype.createNewAnimationFromData = function (frames, interval, displayName) {
+            if (interval === void 0) { interval = 500; }
+            var id = this.generateNewID("animation" /* Animation */, pxt.sprite.ANIMATION_PREFIX, pxt.sprite.ANIMATION_NAMESPACE);
+            var newAnimation = {
+                internalID: this.getNewInternalId(),
+                id: id,
+                type: "animation" /* Animation */,
+                frames: frames,
+                interval: interval,
+                meta: { displayName: displayName },
+            };
+            return this.state.animations.add(newAnimation);
+        };
         TilemapProject.prototype.getGalleryTiles = function (tileWidth) {
             if (this.extensionTileSets) {
                 return this.extensionTileSets.map(function (collection) { return collection.tileSets.find(function (tileSet) { return tileSet.tileWidth === tileWidth; }); }).filter(function (tileSet) { var _a; return (_a = tileSet) === null || _a === void 0 ? void 0 : _a.tiles.length; });
             }
             return null;
         };
+        TilemapProject.prototype.getProjectImages = function () {
+            return this.state.images.getSnapshot();
+        };
         TilemapProject.prototype.getProjectTiles = function (tileWidth, createIfMissing) {
-            if (this.state.projectTileSet) {
-                var res = this.state.projectTileSet.tileSets.find(function (tileSet) { return tileSet.tileWidth === tileWidth; });
-                if (!res && createIfMissing) {
+            var tiles = this.state.tiles.getSnapshot(function (tile) { return tile.bitmap.width === tileWidth; });
+            if (tiles.length === 0) {
+                if (createIfMissing) {
                     // This will create a new tileset with the correct width
                     this.createNewTile(new pxt.sprite.Bitmap(tileWidth, tileWidth).data());
                     return this.getProjectTiles(tileWidth, false);
                 }
-                return res;
+                return null;
             }
-            return null;
+            return {
+                tileWidth: tileWidth,
+                tiles: tiles
+            };
         };
-        TilemapProject.prototype.createNewTile = function (data, id) {
+        TilemapProject.prototype.createNewTile = function (data, id, displayName) {
             this.onChange();
-            if (!id || this.state.takenNames[id]) {
-                var prefix = pxt.sprite.TILE_NAMESPACE + "." + pxt.sprite.TILE_PREFIX;
-                // Start at 1 because the legacy tilemaps used myTiles.myTile0 for transparency and
-                // we want to be able to count on that
-                var index = 1;
-                while (this.state.takenNames[prefix + index]) {
-                    ++index;
-                }
-                id = prefix + index;
+            if (!id || this.state.tiles.isIDTaken(id)) {
+                id = this.generateNewID("tile" /* Tile */, pxt.sprite.TILE_PREFIX, pxt.sprite.TILE_NAMESPACE);
             }
-            this.state.takenNames[id] = true;
             var newTile = {
+                internalID: this.getNewInternalId(),
                 id: id,
-                data: pxt.sprite.base64EncodeBitmap(data),
+                type: "tile" /* Tile */,
+                jresData: pxt.sprite.base64EncodeBitmap(data),
                 bitmap: data,
+                meta: {
+                    displayName: displayName
+                },
                 isProjectTile: true
             };
-            for (var _i = 0, _a = this.state.projectTileSet.tileSets; _i < _a.length; _i++) {
-                var tileSet = _a[_i];
-                if (tileSet.tileWidth === data.width) {
-                    tileSet.tiles.push(newTile);
-                    return newTile;
-                }
-            }
-            var newTileset = this.createTileset(data.width);
-            newTileset.tiles.push(newTile);
-            this.state.projectTileSet.tileSets.push(newTileset);
-            return newTile;
+            return this.state.tiles.add(newTile);
         };
-        TilemapProject.prototype.updateTile = function (id, data) {
+        TilemapProject.prototype.createNewProjectImage = function (data, displayName) {
             this.onChange();
-            for (var _i = 0, _a = this.state.projectTileSet.tileSets; _i < _a.length; _i++) {
-                var tileSet = _a[_i];
-                for (var _b = 0, _c = tileSet.tiles; _b < _c.length; _b++) {
-                    var tile = _c[_b];
-                    if (tile.id === id) {
-                        tile.bitmap = data;
-                        tile.data = pxt.sprite.base64EncodeBitmap(data);
-                        return tile;
+            var newImage = {
+                internalID: this.getNewInternalId(),
+                id: this.generateNewID("image" /* Image */, pxt.sprite.IMAGE_PREFIX, pxt.sprite.IMAGES_NAMESPACE),
+                type: "image" /* Image */,
+                jresData: pxt.sprite.base64EncodeBitmap(data),
+                meta: {
+                    displayName: displayName
+                },
+                bitmap: data
+            };
+            return this.state.images.add(newImage);
+        };
+        TilemapProject.prototype.updateTile = function (tile) {
+            this.onChange();
+            var existing = this.resolveProjectTileByInternalID(tile.internalID);
+            if (existing) {
+                this.state.tiles.update(existing.id, tile);
+                if (existing.id !== tile.id || !pxt.sprite.bitmapEquals(existing.bitmap, tile.bitmap)) {
+                    for (var _i = 0, _a = this.getAssets("tilemap" /* Tilemap */); _i < _a.length; _i++) {
+                        var tm = _a[_i];
+                        if (tm.data.tileset.tiles.some(function (t) { return t.internalID === tile.internalID; })) {
+                            tm.data.tileset.tiles = tm.data.tileset.tiles.map(function (t) { return t.internalID === tile.internalID ? tile : t; });
+                            this.updateTilemap(tm.id, tm.data);
+                        }
                     }
                 }
+                return tile;
             }
             return null;
         };
         TilemapProject.prototype.deleteTile = function (id) {
             this.onChange();
-            for (var _i = 0, _a = this.state.projectTileSet.tileSets; _i < _a.length; _i++) {
-                var tileSet = _a[_i];
-                tileSet.tiles = tileSet.tiles.filter(function (t) { return t.id !== id; });
-            }
+            this.state.tiles.removeByID(id);
         };
         TilemapProject.prototype.getProjectTilesetJRes = function () {
-            // FIXME: Need to only include tiles from tilemap.jres. Otherwise we're
-            // going to get duplicate entries for extra JRes files (e.g. in github projects)
-            var tiles = getAllTiles(this.state.projectTileSet);
             var blob = {};
-            for (var _i = 0, tiles_1 = tiles; _i < tiles_1.length; _i++) {
-                var tile = tiles_1[_i];
-                // Get the last part of the fully qualified name
-                var id = tile.id.substr(tile.id.lastIndexOf(".") + 1);
-                blob[id] = {
-                    data: tile.data,
-                    mimeType: IMAGE_MIME_TYPE,
-                    tilemapTile: true
-                };
-            }
-            for (var _a = 0, _b = this.state.projectTilemaps; _a < _b.length; _a++) {
-                var tilemap = _b[_a];
-                var jres = this.encodeTilemap(tilemap.data, tilemap.id);
-                blob[jres.id] = jres;
-            }
+            this.state.tiles.serializeToJRes(blob);
+            this.state.tilemaps.serializeToJRes(blob);
             blob["*"] = {
                 "mimeType": "image/x-mkcd-f4",
                 "dataEncoding": "base64",
@@ -15542,27 +16032,29 @@ var pxt;
             };
             return blob;
         };
-        TilemapProject.prototype.getTilemap = function (id) {
-            for (var _i = 0, _a = this.state.projectTilemaps; _i < _a.length; _i++) {
-                var tm = _a[_i];
-                if (tm.id === id) {
-                    return tm.data.cloneData();
-                }
-            }
-            return null;
+        TilemapProject.prototype.getProjectAssetsJRes = function () {
+            var blob = {};
+            this.state.images.serializeToJRes(blob);
+            this.state.animations.serializeToJRes(blob);
+            blob["*"] = {
+                "mimeType": "image/x-mkcd-f4",
+                "dataEncoding": "base64",
+                "namespace": pxt.sprite.IMAGES_NAMESPACE
+            };
+            return blob;
         };
-        TilemapProject.prototype.getAllTilemaps = function () {
-            var _a;
-            return ((_a = this.state.projectTilemaps) === null || _a === void 0 ? void 0 : _a.slice()) || [];
+        TilemapProject.prototype.getTilemap = function (id) {
+            return this.state.tilemaps.getByID(id);
         };
         TilemapProject.prototype.updateTilemap = function (id, data) {
-            for (var _i = 0, _a = this.state.projectTilemaps; _i < _a.length; _i++) {
-                var tm = _a[_i];
-                if (tm.id === id) {
-                    this.onChange();
-                    tm.data = data.cloneData();
-                }
+            var existing = this.state.tilemaps.getByID(id);
+            if (existing) {
+                this.onChange();
+                var newValue = __assign(__assign({}, existing), { data: data });
+                this.state.tilemaps.update(id, newValue);
+                return newValue;
             }
+            return null;
         };
         TilemapProject.prototype.createNewTilemap = function (name, tileWidth, width, height) {
             if (width === void 0) { width = 16; }
@@ -15581,87 +16073,99 @@ var pxt;
             return new pxt.sprite.TilemapData(tilemap, tileset, layers.data());
         };
         TilemapProject.prototype.resolveTile = function (id) {
-            var all = [this.state.projectTileSet].concat(this.extensionTileSets);
-            for (var _i = 0, all_1 = all; _i < all_1.length; _i++) {
-                var tileSets = all_1[_i];
-                var found = getTile(tileSets, id);
-                if (found)
-                    return found;
-            }
-            return null;
+            return this.lookupAsset("tile" /* Tile */, id);
+        };
+        TilemapProject.prototype.resolveProjectTileByInternalID = function (id) {
+            return this.state.tiles.getSnapshot(function (tile) { return tile.internalID === id; })[0];
         };
         TilemapProject.prototype.resolveTileByBitmap = function (data) {
-            var all = [this.state.projectTileSet].concat(this.extensionTileSets);
             var dataString = pxt.sprite.base64EncodeBitmap(data);
-            for (var _i = 0, all_2 = all; _i < all_2.length; _i++) {
-                var tileSets = all_2[_i];
-                for (var _a = 0, _b = tileSets.tileSets; _a < _b.length; _a++) {
-                    var tileSet = _b[_a];
-                    if (tileSet.tileWidth === data.width) {
-                        for (var _c = 0, _d = tileSet.tiles; _c < _d.length; _c++) {
-                            var tile = _d[_c];
-                            if (dataString === tile.data) {
-                                return tile;
-                            }
-                        }
-                    }
-                }
-            }
-            return null;
+            return this.state.tiles.getSnapshot(function (tile) { return tile.jresData === dataString; })[0];
         };
         TilemapProject.prototype.getTransparency = function (tileWidth) {
-            for (var _i = 0, _a = this.state.projectTileSet.tileSets; _i < _a.length; _i++) {
-                var tileSet = _a[_i];
-                if (tileSet.tileWidth === tileWidth) {
-                    return tileSet.tiles[0];
-                }
+            var id = pxt.sprite.TILE_NAMESPACE + ".transparency" + tileWidth;
+            var tile = this.state.tiles.getByID(id);
+            if (!tile) {
+                var bitmap = new pxt.sprite.Bitmap(tileWidth, tileWidth).data();
+                tile = {
+                    internalID: this.getNewInternalId(),
+                    id: id,
+                    type: "tile" /* Tile */,
+                    bitmap: bitmap,
+                    jresData: pxt.sprite.base64EncodeBitmap(bitmap),
+                    meta: {},
+                    isProjectTile: true
+                };
+                return this.state.tiles.add(tile);
             }
-            var newTileSet = this.createTileset(tileWidth);
-            this.state.projectTileSet.tileSets.push(newTileSet);
-            return newTileSet.tiles[0];
+            return tile;
         };
         TilemapProject.prototype.createNewTilemapFromData = function (data, name) {
             this.onChange();
-            if (!name)
-                name = lf("level");
-            var index = 0;
-            var base = name;
-            while (this.state.takenNames[name]) {
-                name = base + "_" + index;
-                ++index;
-            }
-            this.state.takenNames[name] = true;
-            this.state.projectTilemaps.push({
-                id: name,
+            var id = this.generateNewID("tilemap" /* Tilemap */, name || lf("level"));
+            this.state.tilemaps.add({
+                internalID: this.getNewInternalId(),
+                id: id,
+                type: "tilemap" /* Tilemap */,
+                meta: {
+                    displayName: id
+                },
                 data: data
             });
-            return [name, data];
+            return [id, data];
         };
         TilemapProject.prototype.cloneState = function () {
-            return __assign(__assign({}, this.state), { projectTileSet: __assign(__assign({}, this.state.projectTileSet), { tileSets: this.state.projectTileSet.tileSets.map(function (t) { return (__assign(__assign({}, t), { tiles: t.tiles.map(cloneTile) })); }) }), projectTilemaps: this.state.projectTilemaps.map(function (tm) { return (__assign({}, tm)); }), takenNames: __assign({}, this.state.takenNames) });
+            return {
+                revision: this.state.revision,
+                images: this.state.images.clone(),
+                tilemaps: this.state.tilemaps.clone(),
+                animations: this.state.animations.clone(),
+                tiles: this.state.tiles.clone(),
+            };
         };
         TilemapProject.prototype.undo = function () {
+            if (this.state.revision !== this.committedState.revision) {
+                this.pushUndo();
+            }
             if (this.undoStack.length) {
                 var undo = this.undoStack.pop();
-                this.redoStack.push(this.state);
-                this.state = undo;
+                this.state.tiles.applyDiff(undo.tiles, true);
+                this.state.images.applyDiff(undo.images, true);
+                this.state.tilemaps.applyDiff(undo.tilemaps, true);
+                this.state.animations.applyDiff(undo.animations, true);
+                this.state.revision = undo.beforeRevision;
+                this.redoStack.push(undo);
+                this.committedState = this.cloneState();
                 this.needsRebuild = true;
             }
         };
         TilemapProject.prototype.redo = function () {
             if (this.redoStack.length) {
                 var redo = this.redoStack.pop();
-                this.undoStack.push(this.state);
-                this.state = redo;
+                this.state.tiles.applyDiff(redo.tiles);
+                this.state.images.applyDiff(redo.images);
+                this.state.tilemaps.applyDiff(redo.tilemaps);
+                this.state.animations.applyDiff(redo.animations);
+                this.state.revision = redo.afterRevision;
+                this.undoStack.push(redo);
+                this.committedState = this.cloneState();
                 this.needsRebuild = true;
             }
         };
         TilemapProject.prototype.pushUndo = function () {
-            if (this.undoStack.length && this.undoStack[this.undoStack.length - 1].revision === this.state.revision)
+            if (this.undoStack.length && this.committedState.revision === this.state.revision)
                 return;
             this.redoStack = [];
-            this.undoStack.push(this.state);
-            this.state = this.cloneState();
+            this.undoStack.push({
+                beforeRevision: this.committedState.revision,
+                afterRevision: this.state.revision,
+                tiles: this.state.tiles.diff(this.committedState.tiles),
+                images: this.state.images.diff(this.committedState.images),
+                tilemaps: this.state.tilemaps.diff(this.committedState.tilemaps),
+                animations: this.state.animations.diff(this.committedState.animations)
+            });
+            this.committedState = this.cloneState();
+            this.cleanupTemporaryAssets();
         };
         TilemapProject.prototype.revision = function () {
             return this.state.revision;
@@ -15686,6 +16190,245 @@ var pxt;
         TilemapProject.prototype.forceUpdate = function () {
             this.onChange();
         };
+        TilemapProject.prototype.isNameTaken = function (assetType, name) {
+            switch (assetType) {
+                case "image" /* Image */:
+                    return this.state.images.isIDTaken(name) || this.gallery.images.isIDTaken(name);
+                case "tile" /* Tile */:
+                    return this.state.tiles.isIDTaken(name) || this.gallery.tiles.isIDTaken(name);
+                case "tilemap" /* Tilemap */:
+                    return this.state.tilemaps.isIDTaken(name) || this.gallery.tilemaps.isIDTaken(name);
+                case "animation" /* Animation */:
+                    return this.state.animations.isIDTaken(name) || this.gallery.animations.isIDTaken(name);
+            }
+        };
+        /**
+         * Checks if the asset is referenced anywhere in the user's code.
+         * If an asset is referenced in any block we return true, as well
+         * as if a tile is used in any tilemap.
+         *
+         * Ways to reference an asset in TS/Python:
+         *
+         * TILES:
+         * myTiles.shortId
+         * assets.tile`shortId`
+         * assets.tile`displayName`
+         *
+         * IMAGES:
+         * assets.image`shortId`
+         * assets.image`displayName`
+         *
+         * ANIMATIONS:
+         * assets.animation`shortId`
+         * assets.animation`displayName`
+         *
+         * TILEMAPS:
+         * tilemap`shortId`
+         *
+         * @param skipIDs string[] a list of string ids (block id, asset id, or file name) to ignore
+         **/
+        TilemapProject.prototype.isAssetUsed = function (asset, files, skipIDs) {
+            var _a, _b, _c, _d, _e;
+            var blockIds = ((_b = (_a = asset.meta) === null || _a === void 0 ? void 0 : _a.blockIDs) === null || _b === void 0 ? void 0 : _b.filter(function (id) { var _a; return !skipIDs || ((_a = skipIDs) === null || _a === void 0 ? void 0 : _a.indexOf(id)) < 0; })) || [];
+            if (blockIds.length > 0)
+                return true;
+            if (asset.type == "tile" /* Tile */) {
+                for (var _i = 0, _f = this.getAssets("tilemap" /* Tilemap */); _i < _f.length; _i++) {
+                    var tm = _f[_i];
+                    if (((_c = skipIDs) === null || _c === void 0 ? void 0 : _c.indexOf(tm.id)) >= 0) {
+                        continue;
+                    }
+                    else if (tm.data.tileset.tiles.some(function (t) { return t.internalID === asset.internalID; })) {
+                        return true;
+                    }
+                }
+            }
+            if (files) {
+                var shortId = getShortIDForAsset(asset);
+                var displayName = ((_d = asset.meta) === null || _d === void 0 ? void 0 : _d.displayName) || "";
+                var assetTsRefs = void 0;
+                switch (asset.type) {
+                    case "tile" /* Tile */:
+                        assetTsRefs = "myTiles." + shortId + "|assets.tile`" + shortId + "`";
+                        if (displayName)
+                            assetTsRefs += "|assets.tile`" + displayName + "`";
+                        break;
+                    case "tilemap" /* Tilemap */:
+                        assetTsRefs = "tilemap`" + shortId + "`";
+                        break;
+                    case "animation" /* Animation */:
+                        assetTsRefs = "assets.animation`" + shortId + "`";
+                        if (displayName)
+                            assetTsRefs += "|assets.animation`" + displayName + "`";
+                        break;
+                    default:
+                        assetTsRefs = "assets.image`" + shortId + "`";
+                        if (displayName)
+                            assetTsRefs += "|assets.image`" + displayName + "`";
+                        break;
+                }
+                var assetTsRegex = new RegExp(assetTsRefs, "gm");
+                var assetPyRefs = void 0;
+                switch (asset.type) {
+                    case "tile" /* Tile */:
+                        assetPyRefs = "myTiles." + shortId + "|assets.tile(\"\"\"" + shortId + "\"\"\")";
+                        if (displayName)
+                            assetPyRefs += "|assets.tile(\"\"\"" + displayName + "\"\"\")";
+                        break;
+                    case "tilemap" /* Tilemap */:
+                        assetPyRefs = "assets.tilemap(\"\"\"" + shortId + "\"\"\")";
+                        break;
+                    case "animation" /* Animation */:
+                        assetPyRefs = "assets.animation(\"\"\"" + shortId + "\"\"\")";
+                        if (displayName)
+                            assetPyRefs += "|assets.animation(\"\"\"" + displayName + "\"\"\")";
+                        break;
+                    default:
+                        assetPyRefs = "assets.image(\"\"\"" + shortId + "\"\"\")";
+                        if (displayName)
+                            assetPyRefs += "|assets.image(\"\"\"" + displayName + "\"\"\")";
+                        break;
+                }
+                var assetPyRegex = new RegExp(assetPyRefs, "gm");
+                for (var _g = 0, _h = Object.keys(files); _g < _h.length; _g++) {
+                    var filename = _h[_g];
+                    if (((_e = skipIDs) === null || _e === void 0 ? void 0 : _e.indexOf(filename)) >= 0)
+                        continue;
+                    var f = files[filename];
+                    // Match .ts files that are not generated (.g.ts)
+                    if (filename.match(/((?!\.g).{2}|^.{0,1})\.ts$/i)) {
+                        if (f.content.match(assetTsRegex))
+                            return true;
+                    }
+                    else if (filename.endsWith(".py")) {
+                        if (f.content.match(assetPyRegex))
+                            return true;
+                    }
+                }
+            }
+            return false;
+        };
+        TilemapProject.prototype.lookupAsset = function (assetType, name) {
+            switch (assetType) {
+                case "image" /* Image */:
+                    return this.state.images.getByID(name) || this.gallery.images.getByID(name);
+                case "tile" /* Tile */:
+                    return this.state.tiles.getByID(name) || this.gallery.tiles.getByID(name);
+                case "tilemap" /* Tilemap */:
+                    return this.state.tilemaps.getByID(name) || this.gallery.tilemaps.getByID(name);
+                case "animation" /* Animation */:
+                    return this.state.animations.getByID(name) || this.gallery.animations.getByID(name);
+            }
+        };
+        TilemapProject.prototype.lookupAssetByName = function (assetType, name) {
+            switch (assetType) {
+                case "image" /* Image */:
+                    return this.state.images.getByDisplayName(name);
+                case "tile" /* Tile */:
+                    return this.state.tiles.getByDisplayName(name);
+                case "tilemap" /* Tilemap */:
+                    return this.state.tilemaps.getByDisplayName(name);
+                case "animation" /* Animation */:
+                    return this.state.animations.getByDisplayName(name);
+            }
+        };
+        TilemapProject.prototype.getAssets = function (type) {
+            switch (type) {
+                case "image" /* Image */: return this.state.images.getSnapshot();
+                case "tile" /* Tile */: return this.state.tiles.getSnapshot();
+                case "tilemap" /* Tilemap */: return this.state.tilemaps.getSnapshot();
+                case "animation" /* Animation */: return this.state.animations.getSnapshot();
+            }
+        };
+        TilemapProject.prototype.lookupBlockAsset = function (type, blockID) {
+            var filter = function (a) { var _a, _b; return ((_b = (_a = a.meta) === null || _a === void 0 ? void 0 : _a.blockIDs) === null || _b === void 0 ? void 0 : _b.indexOf(blockID)) !== -1; };
+            switch (type) {
+                case "image" /* Image */: return this.state.images.getSnapshot(filter)[0];
+                case "tile" /* Tile */: return this.state.tiles.getSnapshot(filter)[0];
+                case "tilemap" /* Tilemap */: return this.state.tilemaps.getSnapshot(filter)[0];
+                case "animation" /* Animation */: return this.state.animations.getSnapshot(filter)[0];
+            }
+        };
+        TilemapProject.prototype.updateAsset = function (asset) {
+            this.onChange();
+            switch (asset.type) {
+                case "image" /* Image */:
+                    return this.state.images.update(asset.id, asset);
+                case "tile" /* Tile */:
+                    return this.updateTile(asset);
+                case "tilemap" /* Tilemap */:
+                    return this.state.tilemaps.update(asset.id, asset);
+                case "animation" /* Animation */:
+                    return this.state.animations.update(asset.id, asset);
+            }
+        };
+        TilemapProject.prototype.duplicateAsset = function (asset) {
+            var _a;
+            this.onChange();
+            var clone = cloneAsset(asset);
+            var displayName = (_a = clone.meta) === null || _a === void 0 ? void 0 : _a.displayName;
+            var newAsset;
+            switch (asset.type) {
+                case "image" /* Image */:
+                    newAsset = this.createNewProjectImage(clone.bitmap, displayName);
+                    break;
+                case "tile" /* Tile */:
+                    newAsset = this.createNewTile(clone.bitmap, null, displayName);
+                    break;
+                case "tilemap" /* Tilemap */:
+                    var _b = this.createNewTilemapFromData(clone.data, displayName), id = _b[0], tilemap = _b[1];
+                    newAsset = this.getTilemap(id);
+                    break;
+                case "animation" /* Animation */:
+                    newAsset = this.createNewAnimationFromData(clone.frames, clone.interval, displayName);
+            }
+            return newAsset;
+        };
+        TilemapProject.prototype.removeAsset = function (asset) {
+            this.onChange();
+            switch (asset.type) {
+                case "image" /* Image */:
+                    return this.state.images.removeByID(asset.id);
+                case "tile" /* Tile */:
+                    return this.state.tiles.removeByID(asset.id);
+                case "tilemap" /* Tilemap */:
+                    return this.state.tilemaps.removeByID(asset.id);
+                case "animation" /* Animation */:
+                    return this.state.animations.removeByID(asset.id);
+            }
+        };
+        TilemapProject.prototype.addChangeListener = function (asset, listener) {
+            switch (asset.type) {
+                case "image" /* Image */:
+                    this.state.images.addListener(asset.internalID, listener);
+                    break;
+                case "tile" /* Tile */:
+                    this.state.tiles.addListener(asset.internalID, listener);
+                    break;
+                case "tilemap" /* Tilemap */:
+                    this.state.tilemaps.addListener(asset.internalID, listener);
+                    break;
+                case "animation" /* Animation */:
+                    this.state.animations.addListener(asset.internalID, listener);
+                    break;
+            }
+        };
+        TilemapProject.prototype.removeChangeListener = function (type, listener) {
+            switch (type) {
+                case "image" /* Image */:
+                    this.state.images.removeListener(listener);
+                    break;
+                case "tile" /* Tile */:
+                    this.state.tiles.removeListener(listener);
+                    break;
+                case "tilemap" /* Tilemap */:
+                    this.state.tilemaps.removeListener(listener);
+                    break;
+                case "animation" /* Animation */:
+                    this.state.animations.removeListener(listener);
+                    break;
+            }
+        };
         TilemapProject.prototype.loadPackage = function (pack) {
             var _this = this;
             var allPackages = pack.sortedDeps();
@@ -15693,150 +16436,197 @@ var pxt;
             for (var _i = 0, allPackages_1 = allPackages; _i < allPackages_1.length; _i++) {
                 var dep = allPackages_1[_i];
                 var isProject = dep.id === "this";
-                var tiles = readTiles(dep.parseJRes(), dep.id, isProject);
-                if (tiles) {
-                    if (isProject) {
-                        this.state.projectTileSet = tiles;
+                var images = this.readImages(dep.parseJRes(), isProject);
+                for (var _a = 0, images_1 = images; _a < images_1.length; _a++) {
+                    var image = images_1[_a];
+                    if (image.type === "tile" /* Tile */) {
+                        if (isProject) {
+                            this.state.tiles.add(image);
+                        }
+                        else {
+                            this.gallery.tiles.add(image);
+                        }
+                    }
+                    else if (image.type === "image" /* Image */) {
+                        if (isProject) {
+                            this.state.images.add(image);
+                        }
+                        else {
+                            this.gallery.images.add(image);
+                        }
                     }
                     else {
-                        this.extensionTileSets.push(tiles);
+                        if (isProject) {
+                            this.state.animations.add(image);
+                        }
+                        else {
+                            this.gallery.animations.add(image);
+                        }
                     }
                 }
-                else if (isProject) {
-                    this.state.projectTileSet = {
-                        extensionID: "this",
-                        tileSets: []
-                    };
-                }
             }
-            this.state.projectTilemaps = getTilemaps(pack.parseJRes())
-                .map(function (tm) { return ({
-                id: tm.id,
-                data: decodeTilemap(tm, function (id) { return _this.resolveTile(id); })
-            }); });
-            // FIXME: we are re-parsing the jres here
-            var allJRes = pack.getJRes();
-            this.state.takenNames = {};
-            for (var _a = 0, _b = Object.keys(allJRes); _a < _b.length; _a++) {
-                var id = _b[_a];
-                this.state.takenNames[id] = true;
+            for (var _b = 0, _c = getTilemaps(pack.parseJRes()); _b < _c.length; _b++) {
+                var tm = _c[_b];
+                this.state.tilemaps.add({
+                    internalID: this.getNewInternalId(),
+                    type: "tilemap" /* Tilemap */,
+                    id: tm.id,
+                    meta: {
+                        // For tilemaps, use the id as the display name for backwards compat
+                        displayName: tm.displayName || tm.id
+                    },
+                    data: decodeTilemap(tm, function (id) { return _this.resolveTile(id); })
+                });
             }
+            this.committedState = this.cloneState();
+            this.undoStack = [];
+            this.redoStack = [];
         };
-        TilemapProject.prototype.loadJres = function (jres, skipDuplicates) {
-            var _a;
+        TilemapProject.prototype.loadTilemapJRes = function (jres, skipDuplicates) {
             var _this = this;
             if (skipDuplicates === void 0) { skipDuplicates = false; }
             jres = pxt.inflateJRes(jres);
-            var tiles = readTiles(jres, "this", true);
+            var tiles = this.readImages(jres, true).filter(function (im) { return im.type === "tile" /* Tile */; });
             // If we are loading JRES into an existing project (i.e. in multipart tutorials)
             // we need to correct the tile ids because the user may have created new tiles
             // and taken some of the ids that were used by the tutorial author
             var tileMapping = {};
-            if (tiles) {
-                for (var _i = 0, _b = tiles.tileSets; _i < _b.length; _i++) {
-                    var tileset = _b[_i];
-                    for (var _c = 0, _d = tileset.tiles; _c < _d.length; _c++) {
-                        var tile = _d[_c];
-                        if (skipDuplicates) {
-                            var existing = this.resolveTileByBitmap(tile.bitmap);
-                            if (existing) {
-                                tileMapping[tile.id] = existing.id;
-                                continue;
-                            }
-                        }
-                        var newTile = this.createNewTile(tile.bitmap, tile.id);
-                        if (newTile.id !== tile.id) {
-                            tileMapping[tile.id] = newTile.id;
-                        }
+            for (var _i = 0, tiles_1 = tiles; _i < tiles_1.length; _i++) {
+                var tile = tiles_1[_i];
+                if (skipDuplicates) {
+                    var existing = this.resolveTileByBitmap(tile.bitmap);
+                    if (existing) {
+                        tileMapping[tile.id] = existing.id;
+                        continue;
                     }
                 }
+                var newTile = this.createNewTile(tile.bitmap, tile.id, tile.meta.displayName);
+                if (newTile.id !== tile.id) {
+                    tileMapping[tile.id] = newTile.id;
+                }
             }
-            var maps = getTilemaps(jres)
-                .map(function (tm) { return ({
-                id: tm.id,
-                data: decodeTilemap(tm, function (id) {
-                    if (tileMapping[id]) {
-                        id = tileMapping[id];
-                    }
-                    return _this.resolveTile(id);
-                })
-            }); });
-            (_a = this.state.projectTilemaps).push.apply(_a, maps);
-            maps.forEach(function (tm) { return _this.state.takenNames[tm.id] = true; });
+            for (var _a = 0, _b = getTilemaps(jres); _a < _b.length; _a++) {
+                var tm = _b[_a];
+                this.state.tilemaps.add({
+                    internalID: this.getNewInternalId(),
+                    type: "tilemap" /* Tilemap */,
+                    id: tm.id,
+                    meta: {
+                        // For tilemaps, use the id as the display name for backwards compat
+                        displayName: tm.displayName || tm.id
+                    },
+                    data: decodeTilemap(tm, function (id) {
+                        if (tileMapping[id]) {
+                            id = tileMapping[id];
+                        }
+                        return _this.resolveTile(id);
+                    })
+                });
+            }
         };
-        TilemapProject.prototype.createTileset = function (tileWidth) {
-            this.needsRebuild = true;
-            var tileSet = {
-                tileWidth: tileWidth,
-                tiles: []
-            };
-            var baseID = pxt.sprite.TILE_NAMESPACE + ".transparency" + tileWidth;
-            var transparencyID = baseID;
+        TilemapProject.prototype.loadAssetsJRes = function (jres) {
+            for (var _i = 0, _a = Object.keys(jres); _i < _a.length; _i++) {
+                var key = _a[_i];
+                var entry = jres[key];
+                if (entry.mimeType === IMAGE_MIME_TYPE) {
+                    this.state.images.add({
+                        internalID: this.getNewInternalId(),
+                        type: "image" /* Image */,
+                        id: entry.id,
+                        meta: {
+                            displayName: entry.displayName
+                        },
+                        jresData: entry.data,
+                        bitmap: pxt.sprite.getBitmapFromJResURL("data:" + IMAGE_MIME_TYPE + ";base64," + entry.data).data()
+                    });
+                }
+            }
+        };
+        TilemapProject.prototype.removeInactiveBlockAssets = function (activeBlockIDs) {
+            cleanupCollection(this.state.images);
+            cleanupCollection(this.state.tiles);
+            cleanupCollection(this.state.tilemaps);
+            cleanupCollection(this.state.animations);
+            function cleanupCollection(collection) {
+                var inactiveAssets = collection.getSnapshot(function (asset) { var _a; return !asset.meta.displayName && ((_a = asset.meta.blockIDs) === null || _a === void 0 ? void 0 : _a.some(function (id) { return activeBlockIDs.indexOf(id) === -1; })); });
+                var toRemove = [];
+                for (var _i = 0, inactiveAssets_1 = inactiveAssets; _i < inactiveAssets_1.length; _i++) {
+                    var asset = inactiveAssets_1[_i];
+                    if (asset.meta.blockIDs.length === 1)
+                        toRemove.push(asset);
+                    else {
+                        asset.meta.blockIDs = asset.meta.blockIDs.filter(function (id) { return activeBlockIDs.indexOf(id) !== -1; });
+                        if (asset.meta.blockIDs.length === 0)
+                            toRemove.push(asset);
+                    }
+                }
+                for (var _a = 0, toRemove_1 = toRemove; _a < toRemove_1.length; _a++) {
+                    var asset = toRemove_1[_a];
+                    collection.removeByID(asset.id);
+                }
+            }
+        };
+        TilemapProject.prototype.generateNewID = function (type, varPrefix, namespaceString) {
+            varPrefix = varPrefix.replace(/\d+$/, "");
+            var prefix = namespaceString ? namespaceString + "." + varPrefix : varPrefix;
             var index = 1;
-            while (this.resolveTile(transparencyID)) {
-                transparencyID = baseID + "_" + index;
+            while (this.isNameTaken(type, prefix + index)) {
                 ++index;
             }
-            // Always create a transparent tile
-            var bitmap = new pxt.sprite.Bitmap(tileWidth, tileWidth).data();
-            tileSet.tiles.push({
-                id: transparencyID,
-                bitmap: bitmap,
-                data: pxt.sprite.base64EncodeBitmap(bitmap),
-                isProjectTile: true
-            });
-            return tileSet;
+            return prefix + index;
         };
         TilemapProject.prototype.onChange = function () {
             this.needsRebuild = true;
             this.state.revision = this.nextID++;
         };
+        TilemapProject.prototype.readImages = function (allJRes, isProjectFile) {
+            if (isProjectFile === void 0) { isProjectFile = false; }
+            var assets = [];
+            for (var _i = 0, _a = Object.keys(allJRes); _i < _a.length; _i++) {
+                var key = _a[_i];
+                var entry = allJRes[key];
+                if (entry.tilemapTile) {
+                    var tile = {
+                        internalID: this.getNewInternalId(),
+                        type: "tile" /* Tile */,
+                        jresData: entry.data,
+                        id: entry.id,
+                        meta: {
+                            displayName: entry.displayName
+                        },
+                        bitmap: pxt.sprite.getBitmapFromJResURL("data:" + IMAGE_MIME_TYPE + ";base64," + entry.data).data(),
+                        isProjectTile: isProjectFile
+                    };
+                    assets.push(tile);
+                }
+                else if (entry.mimeType === IMAGE_MIME_TYPE) {
+                    assets.push({
+                        internalID: this.getNewInternalId(),
+                        type: "image" /* Image */,
+                        jresData: entry.data,
+                        meta: {
+                            displayName: entry.displayName
+                        },
+                        id: entry.id,
+                        bitmap: pxt.sprite.getBitmapFromJResURL("data:" + IMAGE_MIME_TYPE + ";base64," + entry.data).data()
+                    });
+                }
+                else if (entry.mimeType === ANIMATION_MIME_TYPE) {
+                    assets.push(__assign(__assign({}, decodeAnimation(entry)), { internalID: this.getNewInternalId() }));
+                }
+            }
+            return assets;
+        };
+        TilemapProject.prototype.cleanupTemporaryAssets = function () {
+            var orphaned = this.state.images.getSnapshot(function (image) { var _a; return !image.meta.displayName && !((_a = image.meta.blockIDs) === null || _a === void 0 ? void 0 : _a.length); });
+            for (var _i = 0, orphaned_1 = orphaned; _i < orphaned_1.length; _i++) {
+                var image = orphaned_1[_i];
+                this.state.images.removeByID(image.id);
+            }
+        };
         return TilemapProject;
     }());
     pxt.TilemapProject = TilemapProject;
-    function readTiles(allJRes, id, isProjectTile) {
-        if (isProjectTile === void 0) { isProjectTile = false; }
-        var tiles = [];
-        for (var _i = 0, _a = Object.keys(allJRes); _i < _a.length; _i++) {
-            var key = _a[_i];
-            var entry = allJRes[key];
-            if (entry.tilemapTile) {
-                var tile = {
-                    data: entry.data,
-                    id: entry.id,
-                    bitmap: pxt.sprite.getBitmapFromJResURL("data:" + IMAGE_MIME_TYPE + ";base64," + entry.data).data(),
-                    isProjectTile: isProjectTile
-                };
-                tiles.push(tile);
-            }
-        }
-        var tileSets = [];
-        for (var _b = 0, tiles_2 = tiles; _b < tiles_2.length; _b++) {
-            var tile = tiles_2[_b];
-            var foundTileset = false;
-            for (var _c = 0, tileSets_1 = tileSets; _c < tileSets_1.length; _c++) {
-                var tileset = tileSets_1[_c];
-                if (tileset.tileWidth === tile.bitmap.width) {
-                    tileset.tiles.push(tile);
-                    foundTileset = true;
-                    break;
-                }
-            }
-            if (!foundTileset) {
-                tileSets.push({
-                    tileWidth: tile.bitmap.width,
-                    tiles: [tile]
-                });
-            }
-        }
-        if (!tileSets.length)
-            return null;
-        var collection = {
-            extensionID: id,
-            tileSets: tileSets
-        };
-        return collection;
-    }
     function getTilemaps(allJRes) {
         var res = [];
         for (var _i = 0, _a = Object.keys(allJRes); _i < _a.length; _i++) {
@@ -15848,30 +16638,12 @@ var pxt;
         }
         return res;
     }
-    function getAllTiles(tileSets) {
-        var allTiles = [];
-        for (var _i = 0, _a = tileSets.tileSets; _i < _a.length; _i++) {
-            var tileSet = _a[_i];
-            allTiles.push.apply(allTiles, tileSet.tiles);
-        }
-        return allTiles;
-    }
-    function getTile(tileSets, id) {
-        for (var _i = 0, _a = tileSets.tileSets; _i < _a.length; _i++) {
-            var tileSet = _a[_i];
-            for (var _b = 0, _c = tileSet.tiles; _b < _c.length; _b++) {
-                var tile = _c[_b];
-                if (tile.id === id)
-                    return tile;
-            }
-        }
-        return null;
-    }
     function emitTilemapsFromJRes(jres) {
         var entries = Object.keys(jres);
         var indent = "    ";
         var out = "";
         var tilemapEntries = [];
+        var tileEntries = [];
         for (var _i = 0, entries_1 = entries; _i < entries_1.length; _i++) {
             var key = entries_1[_i];
             if (key === "*")
@@ -15881,27 +16653,79 @@ var pxt;
                 // FIXME: we should get the "image.ofBuffer" and blockIdentity from pxtarget probably
                 out += indent + "//% fixedInstance jres blockIdentity=images._tile\n";
                 out += indent + "export const " + key + " = image.ofBuffer(hex``);\n";
+                tileEntries.push({ keys: [entry.displayName, getShortIDCore("tile" /* Tile */, key)], expression: key });
             }
             if (entry.mimeType === TILEMAP_MIME_TYPE) {
                 var tm = decodeTilemap(entry);
-                tilemapEntries.push("case \"" + key + "\": return " + pxt.sprite.encodeTilemap(tm, "typescript"));
+                tilemapEntries.push({ keys: [entry.displayName, getShortIDCore("tilemap" /* Tilemap */, entry.id)], expression: pxt.sprite.encodeTilemap(tm, "typescript") });
             }
         }
         if (tilemapEntries.length) {
-            out += "\n" +
-                (indent + "helpers.registerTilemapFactory(function(name: string) {\n") +
-                ("" + indent + indent + "switch(helpers.stringTrim(name)) {\n") +
-                tilemapEntries.map(function (t) { return "" + indent + indent + indent + t; }).join("\n") + "\n" +
-                ("" + indent + indent + "}\n") +
-                ("" + indent + indent + "return null;\n") +
-                (indent + "})\n");
+            out += emitFactoryHelper("tilemap", tilemapEntries);
+        }
+        if (tileEntries.length) {
+            out += emitFactoryHelper("tile", tileEntries);
         }
         var warning = lf("Auto-generated code. Do not edit.");
         return "// " + warning + "\nnamespace " + pxt.sprite.TILE_NAMESPACE + " {\n" + out + "\n}\n// " + warning + "\n";
     }
     pxt.emitTilemapsFromJRes = emitTilemapsFromJRes;
-    function cloneTile(tile) {
-        return __assign(__assign({}, tile), { bitmap: pxt.sprite.Bitmap.fromData(tile.bitmap).copy().data() });
+    function emitProjectImages(jres) {
+        var entries = Object.keys(jres);
+        var out = "";
+        var imageEntries = [];
+        var animationEntries = [];
+        for (var _i = 0, entries_2 = entries; _i < entries_2.length; _i++) {
+            var key = entries_2[_i];
+            if (key === "*")
+                continue;
+            var entry = jres[key];
+            if (typeof entry === "string" || entry.mimeType === IMAGE_MIME_TYPE) {
+                var expression = void 0;
+                var factoryKeys = [getShortIDCore("image" /* Image */, key)];
+                if (typeof entry === "string") {
+                    expression = pxt.sprite.bitmapToImageLiteral(pxt.sprite.getBitmapFromJResURL(entry), "typescript");
+                }
+                else {
+                    expression = pxt.sprite.bitmapToImageLiteral(pxt.sprite.getBitmapFromJResURL(entry.data), "typescript");
+                    factoryKeys.push(entry.displayName);
+                }
+                imageEntries.push({
+                    keys: factoryKeys,
+                    expression: expression
+                });
+            }
+            else if (entry.mimeType === ANIMATION_MIME_TYPE) {
+                var animation = decodeAnimation(entry);
+                animationEntries.push({
+                    keys: [entry.displayName, getShortIDCore("animation" /* Animation */, key)],
+                    expression: "[" + animation.frames.map(function (f) {
+                        return pxt.sprite.bitmapToImageLiteral(pxt.sprite.Bitmap.fromData(f), "typescript");
+                    }).join(", ") + "]"
+                });
+            }
+        }
+        var warning = lf("Auto-generated code. Do not edit.");
+        out += emitFactoryHelper("image", imageEntries);
+        out += emitFactoryHelper("animation", animationEntries);
+        return "// " + warning + "\nnamespace " + pxt.sprite.IMAGES_NAMESPACE + " {\n" + out + "\n}\n// " + warning + "\n";
+    }
+    pxt.emitProjectImages = emitProjectImages;
+    function emitFactoryHelper(factoryKind, expressions) {
+        var indent = "    ";
+        return "\n" +
+            (indent + "helpers._registerFactory(\"" + factoryKind + "\", function(name: string) {\n") +
+            ("" + indent + indent + "switch(helpers.stringTrim(name)) {\n") +
+            expressions.map(function (t) {
+                return t.keys.filter(function (k) { return !!k; }).map(function (key) { return "" + indent + indent + indent + "case \"" + key + "\":"; }).join("\n") +
+                    ("return " + t.expression + ";");
+            }).join("\n") + "\n" +
+            ("" + indent + indent + "}\n") +
+            ("" + indent + indent + "return null;\n") +
+            (indent + "})\n");
+    }
+    function cloneBitmap(bitmap) {
+        return pxt.sprite.Bitmap.fromData(bitmap).copy().data();
     }
     function decodeTilemap(jres, resolveTile) {
         var hex = atob(jres.data);
@@ -15918,6 +16742,195 @@ var pxt;
         var bitmapData = bytes.slice(tilemapStart + tmData.length);
         var layers = new pxt.sprite.Bitmap(tmWidth, tmHeight, 0, 0, new Uint8ClampedArray(bitmapData)).data();
         return new pxt.sprite.TilemapData(tilemap, tileset, layers);
+    }
+    function cloneAsset(asset) {
+        asset.meta = Object.assign({}, asset.meta);
+        switch (asset.type) {
+            case "tile" /* Tile */:
+            case "image" /* Image */:
+                return __assign(__assign({}, asset), { bitmap: cloneBitmap(asset.bitmap) });
+            case "animation" /* Animation */:
+                return __assign(__assign({}, asset), { frames: asset.frames.map(function (frame) { return cloneBitmap(frame); }) });
+            case "tilemap" /* Tilemap */:
+                return __assign(__assign({}, asset), { data: asset.data.cloneData() });
+        }
+    }
+    function addAssetToJRes(asset, allJRes) {
+        // Get the last part of the fully qualified name
+        var id = asset.id.substr(asset.id.lastIndexOf(".") + 1);
+        switch (asset.type) {
+            case "image" /* Image */:
+                allJRes[id] = asset.jresData;
+                if (asset.meta.displayName) {
+                    allJRes[id] = {
+                        data: asset.jresData,
+                        mimeType: IMAGE_MIME_TYPE,
+                        displayName: asset.meta.displayName
+                    };
+                }
+                break;
+            case "tile" /* Tile */:
+                allJRes[id] = {
+                    data: asset.jresData,
+                    mimeType: IMAGE_MIME_TYPE,
+                    tilemapTile: true,
+                    displayName: asset.meta.displayName
+                };
+                break;
+            case "tilemap" /* Tilemap */:
+                // we include the full ID for tilemaps
+                var serialized = serializeTilemap(asset.data, asset.id, asset.meta.displayName);
+                allJRes[serialized.id] = serialized;
+                break;
+            case "animation" /* Animation */:
+                allJRes[id] = serializeAnimation(asset);
+                break;
+        }
+    }
+    function assetEquals(a, b) {
+        if (a == b)
+            return true;
+        if (a.id !== b.id || a.type !== b.type ||
+            !arrayEquals(a.meta.tags, b.meta.tags) ||
+            !arrayEquals(a.meta.blockIDs, b.meta.blockIDs) ||
+            a.meta.displayName !== b.meta.displayName)
+            return false;
+        switch (a.type) {
+            case "image" /* Image */:
+            case "tile" /* Tile */:
+                return pxt.sprite.bitmapEquals(a.bitmap, b.bitmap);
+            case "animation" /* Animation */:
+                var bAnimation = b;
+                return a.interval === bAnimation.interval && arrayEquals(a.frames, bAnimation.frames, pxt.sprite.bitmapEquals);
+            case "tilemap" /* Tilemap */:
+                return a.data.equals(b.data);
+        }
+    }
+    pxt.assetEquals = assetEquals;
+    function validateAssetName(name) {
+        if (!name)
+            return false;
+        // Covers all punctuation/whitespace except for "-", "_", and " "
+        var bannedRegex = /[\u0000-\u001f\u0021-\u002c\u002e\u002f\u003a-\u0040\u005b-\u005e\u0060\u007b-\u007f]/;
+        return !bannedRegex.test(name);
+    }
+    pxt.validateAssetName = validateAssetName;
+    function getShortIDForAsset(asset) {
+        return getShortIDCore(asset.type, asset.id);
+    }
+    pxt.getShortIDForAsset = getShortIDForAsset;
+    function getShortIDCore(assetType, id) {
+        var prefix;
+        switch (assetType) {
+            case "image" /* Image */:
+                prefix = pxt.sprite.IMAGES_NAMESPACE + ".";
+                break;
+            case "tile" /* Tile */:
+                prefix = pxt.sprite.TILE_NAMESPACE + ".";
+                break;
+            case "tilemap" /* Tilemap */:
+                prefix = "";
+                break;
+            case "animation" /* Animation */:
+                prefix = pxt.sprite.ANIMATION_NAMESPACE + ".";
+                break;
+        }
+        if (prefix && id.startsWith(prefix)) {
+            var short = id.substr(prefix.length);
+            if (short.indexOf(".") === -1)
+                return short;
+        }
+        return id;
+    }
+    function arrayEquals(a, b, compare) {
+        if (compare === void 0) { compare = function (c, d) { return c === d; }; }
+        if (a == b)
+            return true;
+        if (!a && b || !b && a || a.length !== b.length)
+            return false;
+        for (var i = 0; i < a.length; i++) {
+            if (!compare(a[i], b[i]))
+                return false;
+        }
+        return true;
+    }
+    function serializeTilemap(tilemap, id, name) {
+        var tm = tilemap.tilemap.data();
+        var data = new Uint8ClampedArray(5 + tm.data.length + tilemap.layers.data.length);
+        data[0] = tilemap.tileset.tileWidth;
+        data[1] = tm.width & 0xff;
+        data[2] = (tm.width >> 8) & 0xff;
+        data[3] = tm.height & 0xff;
+        data[4] = (tm.height >> 8) & 0xff;
+        data.set(tm.data, 5);
+        data.set(tilemap.layers.data, 5 + tm.data.length);
+        return {
+            id: id,
+            mimeType: TILEMAP_MIME_TYPE,
+            data: btoa(pxt.sprite.uint8ArrayToHex(data)),
+            tileset: tilemap.tileset.tiles.map(function (t) { return t.id; }),
+            displayName: name
+        };
+    }
+    function serializeAnimation(asset) {
+        var encodedFrames = asset.frames.map(function (frame) { return frame.data; });
+        var data = new Uint8ClampedArray(8 + encodedFrames[0].length * encodedFrames.length);
+        // interval, frame width, frame height, frame count
+        set16Bit(data, 0, asset.interval);
+        set16Bit(data, 2, asset.frames[0].width);
+        set16Bit(data, 4, asset.frames[0].height);
+        set16Bit(data, 6, asset.frames.length);
+        var offset = 8;
+        encodedFrames.forEach(function (buf) {
+            data.set(buf, offset);
+            offset += buf.length;
+        });
+        return {
+            namespace: asset.id.substr(0, asset.id.lastIndexOf(".")),
+            id: asset.id.substr(asset.id.lastIndexOf(".") + 1),
+            mimeType: ANIMATION_MIME_TYPE,
+            data: btoa(pxt.sprite.uint8ArrayToHex(data)),
+            displayName: asset.meta.displayName
+        };
+    }
+    function decodeAnimation(jres) {
+        var hex = atob(jres.data);
+        var bytes = new Uint8ClampedArray(pxt.U.fromHex(hex));
+        var interval = read16Bit(bytes, 0);
+        var frameWidth = read16Bit(bytes, 2);
+        var frameHeight = read16Bit(bytes, 4);
+        var frameCount = read16Bit(bytes, 6);
+        var frameLength = (frameWidth * frameHeight) >> 1;
+        var offset = 8;
+        var decodedFrames = [];
+        for (var i = 0; i < frameCount; i++) {
+            var frameData = bytes.slice(offset, offset + frameLength);
+            decodedFrames.push({
+                x0: 0,
+                y0: 0,
+                width: frameWidth,
+                height: frameHeight,
+                data: frameData
+            });
+            offset += frameLength;
+        }
+        return {
+            type: "animation" /* Animation */,
+            internalID: 0,
+            id: jres.id,
+            interval: interval,
+            frames: decodedFrames,
+            meta: {
+                displayName: jres.displayName
+            }
+        };
+    }
+    function set16Bit(buf, offset, value) {
+        buf[offset] = value & 0xff;
+        buf[offset + 1] = (value >> 8) & 0xff;
+    }
+    function read16Bit(buf, offset) {
+        return buf[offset] | (buf[offset + 1] << 8);
     }
 })(pxt || (pxt = {}));
 var pxt;
@@ -16300,10 +17313,10 @@ var pxt;
                     contentMd: step,
                     headerContentMd: header
                 };
-                if (/@(fullscreen|unplugged)/.test(flags))
-                    info.fullscreen = true;
-                if (/@unplugged/.test(flags))
-                    info.unplugged = true;
+                if (/@(fullscreen|unplugged|showdialog|showhint)/i.test(flags))
+                    info.showHint = true;
+                if (/@(unplugged|showdialog)/i.test(flags))
+                    info.showDialog = true;
                 if (/@tutorialCompleted/.test(flags))
                     info.tutorialCompleted = true;
                 if (/@resetDiff/.test(flags))
@@ -16429,6 +17442,28 @@ var pxt;
             return { options: tutorialOptions, editor: tutorialInfo.editor };
         }
         tutorial.getTutorialOptions = getTutorialOptions;
+        function parseCachedTutorialInfo(json, id) {
+            var cachedInfo = pxt.Util.jsonTryParse(json);
+            if (!cachedInfo)
+                return Promise.resolve();
+            return pxt.BrowserUtils.tutorialInfoDbAsync()
+                .then(function (db) {
+                if (id && cachedInfo[id]) {
+                    var info = cachedInfo[id];
+                    if (info.usedBlocks && info.hash)
+                        db.setWithHashAsync(id, info.usedBlocks, info.hash);
+                }
+                else {
+                    for (var _i = 0, _a = Object.keys(cachedInfo); _i < _a.length; _i++) {
+                        var key = _a[_i];
+                        var info = cachedInfo[key];
+                        if (info.usedBlocks && info.hash)
+                            db.setWithHashAsync(key, info.usedBlocks, info.hash);
+                    }
+                }
+            }).catch(function (err) { });
+        }
+        tutorial.parseCachedTutorialInfo = parseCachedTutorialInfo;
         function resolveLocalizedMarkdown(ghid, files, fileName) {
             // if non-default language, find localized file if any
             var mfn = (fileName || ghid.fileName || "README") + ".md";
@@ -17606,23 +18641,12 @@ var pxt;
                     }, pkt).then(function (res) {
                         if (res.status != "ok")
                             _this.error("USB CTRL OUT transfer failed");
-                        else if (!isHF2)
-                            _this.recvOne();
                     });
                 }
                 return this.dev.transferOut(this.epOut.endpointNumber, pkt)
                     .then(function (res) {
                     if (res.status != "ok")
                         _this.error("USB OUT transfer failed");
-                });
-            };
-            WebUSBHID.prototype.recvOne = function () {
-                var _this = this;
-                this.recvPacketAsync()
-                    .then(function (buf) {
-                    _this.onData(buf);
-                }, function (err) {
-                    _this.onError(err);
                 });
             };
             WebUSBHID.prototype.readLoop = function () {
@@ -17710,16 +18734,22 @@ var pxt;
                         return false;
                     };
                     _this.log("got " + dev.configurations[0].interfaces.length + " interfaces");
-                    var iface = dev.configurations[0].interfaces.filter(matchesFilters)[0];
+                    var matching = dev.configurations[0].interfaces.filter(matchesFilters);
+                    var iface = matching[matching.length - 1];
+                    _this.log(matching.length + " matching interfaces; picking " + (iface ? "#" + iface.interfaceNumber : "n/a"));
                     if (!iface)
                         _this.error("cannot find supported USB interface");
                     _this.altIface = iface.alternates[0];
                     _this.iface = iface;
                     if (_this.altIface.endpoints.length) {
+                        _this.log("using dedicated endpoints");
                         _this.epIn = _this.altIface.endpoints.filter(function (e) { return e.direction == "in"; })[0];
                         _this.epOut = _this.altIface.endpoints.filter(function (e) { return e.direction == "out"; })[0];
                         pxt.Util.assert(_this.epIn.packetSize == 64);
                         pxt.Util.assert(_this.epOut.packetSize == 64);
+                    }
+                    else {
+                        _this.log("using ctrl pipe");
                     }
                     _this.log("claim interface");
                     return dev.claimInterface(iface.interfaceNumber);
@@ -17728,7 +18758,7 @@ var pxt;
                     _this.log("device ready");
                     _this.lastKnownDeviceSerialNumber = _this.dev.serialNumber;
                     _this.ready = true;
-                    if (_this.epIn || isHF2)
+                    if (isHF2)
                         _this.readLoop();
                     if (_this.onConnectionChanged)
                         _this.onConnectionChanged();
@@ -17750,11 +18780,26 @@ var pxt;
         }
         usb.pairAsync = pairAsync;
         function tryGetDevicesAsync() {
-            pxt.log("webusb: get devices");
-            return navigator.usb.getDevices()
-                .then(function (devs) {
-                devs = devs || [];
-                return devs;
+            return __awaiter(this, void 0, void 0, function () {
+                var devs, e_8;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            pxt.log("webusb: get devices");
+                            _a.label = 1;
+                        case 1:
+                            _a.trys.push([1, 3, , 4]);
+                            return [4 /*yield*/, navigator.usb.getDevices()];
+                        case 2:
+                            devs = _a.sent();
+                            return [2 /*return*/, devs || []];
+                        case 3:
+                            e_8 = _a.sent();
+                            pxt.reportException(e_8);
+                            return [2 /*return*/, []];
+                        case 4: return [2 /*return*/];
+                    }
+                });
             });
         }
         var _hid;
@@ -17773,20 +18818,72 @@ var pxt;
             usb.isEnabled = v;
         }
         usb.setEnabled = setEnabled;
+        var _available = undefined;
+        function checkAvailableAsync() {
+            var _a, _b;
+            return __awaiter(this, void 0, void 0, function () {
+                var _usb, m, e_9;
+                return __generator(this, function (_c) {
+                    switch (_c.label) {
+                        case 0:
+                            if (_available !== undefined)
+                                return [2 /*return*/];
+                            pxt.debug("webusb: checking availability");
+                            // not supported by editor, cut short
+                            if (!((_b = (_a = pxt.appTarget) === null || _a === void 0 ? void 0 : _a.compile) === null || _b === void 0 ? void 0 : _b.webUSB)) {
+                                _available = false;
+                                return [2 /*return*/];
+                            }
+                            if (pxt.BrowserUtils.isElectron() || pxt.BrowserUtils.isWinRT()) {
+                                pxt.debug("webusb: off, electron or winrt");
+                                pxt.tickEvent('webusb.off', { 'reason': 'electronwinrt' });
+                                _available = false;
+                                return [2 /*return*/];
+                            }
+                            _usb = navigator.usb;
+                            if (!_usb) {
+                                pxt.debug("webusb: off, not impl");
+                                pxt.tickEvent('webusb.off', { 'reason': 'notimpl' });
+                                _available = false;
+                                return [2 /*return*/];
+                            }
+                            m = /Windows NT (\d+\.\d+)/.exec(navigator.userAgent);
+                            if (m && parseFloat(m[1]) < 6.3) {
+                                pxt.debug("webusb: off, older windows version");
+                                pxt.tickEvent('webusb.off', { 'reason': 'oldwindows' });
+                                _available = false;
+                                return [2 /*return*/];
+                            }
+                            _c.label = 1;
+                        case 1:
+                            _c.trys.push([1, 3, , 4]);
+                            // iframes must specify allow="usb" in order to support WebUSB
+                            return [4 /*yield*/, _usb.getDevices()];
+                        case 2:
+                            // iframes must specify allow="usb" in order to support WebUSB
+                            _c.sent();
+                            return [3 /*break*/, 4];
+                        case 3:
+                            e_9 = _c.sent();
+                            pxt.debug("webusb: off, security exception");
+                            pxt.tickEvent('webusb.off', { 'reason': 'security' });
+                            _available = false;
+                            return [2 /*return*/];
+                        case 4:
+                            // yay!
+                            _available = true;
+                            return [2 /*return*/];
+                    }
+                });
+            });
+        }
+        usb.checkAvailableAsync = checkAvailableAsync;
         function isAvailable() {
-            if (pxt.BrowserUtils.isElectron() || pxt.BrowserUtils.isWinRT())
-                return false;
-            if (!!navigator.usb) {
-                // Windows versions:
-                // 5.1 - XP, 6.0 - Vista, 6.1 - Win7, 6.2 - Win8, 6.3 - Win8.1, 10.0 - Win10
-                // If on Windows, and Windows is older 8.1, don't enable WebUSB,
-                // as it requires signed INF files.
-                var m = /Windows NT (\d+\.\d+)/.exec(navigator.userAgent);
-                if (m && parseFloat(m[1]) < 6.3)
-                    return false;
-                return true;
+            if (_available === undefined) {
+                console.error("checkAvailableAsync not called");
+                checkAvailableAsync();
             }
-            return false;
+            return !!_available;
         }
         usb.isAvailable = isAvailable;
     })(usb = pxt.usb || (pxt.usb = {}));
@@ -19237,7 +20334,6 @@ var pxt;
     var Cloud;
     (function (Cloud) {
         var Util = pxtc.Util;
-        // hit /api/ to stay on same domain and avoid CORS
         Cloud.apiRoot = (pxt.BrowserUtils.isLocalHost() || Util.isNodeJS) ? "https://www.makecode.com/api/" : "/api/";
         Cloud.accessToken = "";
         Cloud.localToken = "";
@@ -19349,30 +20445,70 @@ var pxt;
         }
         Cloud.downloadScriptFilesAsync = downloadScriptFilesAsync;
         // 1h check on markdown content if not on development server
-        var MARKDOWN_EXPIRATION = pxt.BrowserUtils.isLocalHostDev() ? 1 : 1 * 60 * 60 * 1000;
+        var MARKDOWN_EXPIRATION = pxt.BrowserUtils.isLocalHostDev() ? 0 : 1 * 60 * 60 * 1000;
+        // 1w check don't use cached version and wait for new content
+        var FORCE_MARKDOWN_UPDATE = MARKDOWN_EXPIRATION * 24 * 7;
         function markdownAsync(docid, locale) {
-            locale = locale || pxt.Util.userLanguage();
-            var live = pxt.Util.localizeLive;
-            var branch = "";
-            return pxt.BrowserUtils.translationDbAsync()
-                .then(function (db) { return db.getAsync(locale, docid, "")
-                .then(function (entry) {
-                if (entry && Date.now() - entry.time > MARKDOWN_EXPIRATION)
-                    // background update,
-                    downloadMarkdownAsync(docid, locale, live, entry.etag)
-                        .then(function (r) { return db.setAsync(locale, docid, branch, r.etag, undefined, r.md || entry.md); })
-                        .catch(function () { }) // swallow errors
-                        .done();
-                // return cached entry
-                if (entry && entry.md)
-                    return entry.md;
-                // download and cache
-                else
-                    return downloadMarkdownAsync(docid, locale, live)
-                        .then(function (r) { return db.setAsync(locale, docid, branch, r.etag, undefined, r.md)
-                        .then(function () { return r.md; }); })
-                        .catch(function () { return ""; }); // no translation
-            }); });
+            return __awaiter(this, void 0, void 0, function () {
+                var live, branch, db, entry, downloadAndSetMarkdownAsync, timeDiff, shouldFetchInBackground, shouldWaitForNewContent;
+                var _this = this;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            locale = locale || pxt.Util.userLanguage();
+                            live = pxt.Util.localizeLive;
+                            branch = "";
+                            return [4 /*yield*/, pxt.BrowserUtils.translationDbAsync()];
+                        case 1:
+                            db = _a.sent();
+                            return [4 /*yield*/, db.getAsync(locale, docid, branch)];
+                        case 2:
+                            entry = _a.sent();
+                            downloadAndSetMarkdownAsync = function () { return __awaiter(_this, void 0, void 0, function () {
+                                var r, _a;
+                                var _b, _c;
+                                return __generator(this, function (_d) {
+                                    switch (_d.label) {
+                                        case 0:
+                                            _d.trys.push([0, 3, , 4]);
+                                            return [4 /*yield*/, downloadMarkdownAsync(docid, locale, live, (_b = entry) === null || _b === void 0 ? void 0 : _b.etag)];
+                                        case 1:
+                                            r = _d.sent();
+                                            return [4 /*yield*/, db.setAsync(locale, docid, branch, r.etag, undefined, r.md || ((_c = entry) === null || _c === void 0 ? void 0 : _c.md))];
+                                        case 2:
+                                            _d.sent();
+                                            return [2 /*return*/, r.md];
+                                        case 3:
+                                            _a = _d.sent();
+                                            return [2 /*return*/, ""]; // no translation
+                                        case 4: return [2 /*return*/];
+                                    }
+                                });
+                            }); };
+                            if (entry) {
+                                timeDiff = Date.now() - entry.time;
+                                shouldFetchInBackground = timeDiff > MARKDOWN_EXPIRATION;
+                                shouldWaitForNewContent = timeDiff > FORCE_MARKDOWN_UPDATE;
+                                if (!shouldWaitForNewContent) {
+                                    if (shouldFetchInBackground) {
+                                        pxt.tickEvent("markdown.update.background");
+                                        // background update, do not wait
+                                        downloadAndSetMarkdownAsync();
+                                    }
+                                    // return cached entry
+                                    if (entry.md) {
+                                        return [2 /*return*/, entry.md];
+                                    }
+                                }
+                                else {
+                                    pxt.tickEvent("markdown.update.wait");
+                                }
+                            }
+                            // download and cache
+                            return [2 /*return*/, downloadAndSetMarkdownAsync()];
+                    }
+                });
+            });
         }
         Cloud.markdownAsync = markdownAsync;
         function downloadMarkdownAsync(docid, locale, live, etag) {
