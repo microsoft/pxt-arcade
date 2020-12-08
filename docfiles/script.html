@@ -41,86 +41,86 @@
     </aside>
 
     <div class="ui main container mainbody script-content">
-        <iframe id="embed-frame" class="script-embed" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
-        frameborder="0"></iframe>
+        <div id="embed-frame"></div>
+        <!-- <iframe id="embed-frame" class="script-embed" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
+        frameborder="0"></iframe> -->
         <div class="script-bookend">
-                <div id="abuse-message" class="ui tiny blue message">
-                        <div class="ui grid padded">
-                            <div class="abuse content">
-                                <p>
-                                    The content above is provided by a user, and is not endorsed by Microsoft.
-                                    <a style='text-decoration:underline' id="abuse" href="#">Report abuse</a> if you think it's not appropriate.
-                                </p>
-                            </div>
+            <div id="abuse-message" class="ui tiny blue message">
+                <div class="ui grid padded">
+                    <div class="abuse content">
+                        <p>
+                            The content above is provided by a user, and is not endorsed by Microsoft.
+                            <a style='text-decoration:underline' id="abuse" href="#">Report abuse</a> if you think it's not appropriate.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui small modal" id='abusemodal'>
+                <div class="header">Report abuse</div>
+                <div class="content">
+                    <div class="ui form">
+                        <div class="field">
+                            <label>Why do you find it offensive?</label>
+                            <textarea id='abusetext' rows="2"></textarea>
                         </div>
                     </div>
-
-                    <div class="ui small modal" id='abusemodal'>
-                        <div class="header">Report abuse</div>
-                        <div class="content">
-                            <div class="ui form">
-                                <div class="field">
-                                    <label>Why do you find it offensive?</label>
-                                    <textarea id='abusetext' rows="2"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="actions">
-                            <div class="ui ok button violet">
-                                <i class='ui flag icon'></i> Submit
-                            </div>
-                            <div class="ui cancel button">
-                                <i class='ui cancel icon'></i> Cancel
-                            </div>
-                        </div>
+                </div>
+                <div class="actions">
+                    <div class="ui ok button violet">
+                        <i class='ui flag icon'></i> Submit
                     </div>
-
-                    <div class="ui small modal" id='abusedone'>
-                        <div class="header">Report sent</div>
-                        <div class="content">
-                            <p>
-                                Thank you for helping keep Microsoft MakeCode a friendly place!
-                            </p>
-                        </div>
-                        <div class="actions">
-                            <div class="ui ok green button">
-                                <i class='ui trophy icon'></i> OK
-                            </div>
-                        </div>
+                    <div class="ui cancel button">
+                        <i class='ui cancel icon'></i> Cancel
                     </div>
+                </div>
+            </div>
 
+            <div class="ui small modal" id='abusedone'>
+                <div class="header">Report sent</div>
+                <div class="content">
+                    <p>
+                        Thank you for helping keep Microsoft MakeCode a friendly place!
+                    </p>
+                </div>
+                <div class="actions">
+                    <div class="ui ok green button">
+                        <i class='ui trophy icon'></i> OK
+                    </div>
+                </div>
+            </div>
 
-                    <script>
-                        $(function() {
-                            var id = "@id@";
-                            var now = Math.round(Date.now()/1000);
-                            $(".humantime").each(function() {
-                                $(this).text(
-                                    describetime(now, parseInt($(this).data("time")))
-                                )
+            <script>
+                $(function() {
+                    var id = "@id@";
+                    var now = Math.round(Date.now()/1000);
+                    $(".humantime").each(function() {
+                        $(this).text(
+                            describetime(now, parseInt($(this).data("time")))
+                        )
+                    })
+                    $("#abuse").click(function() {
+                        $("#abusemodal")
+                            .modal({
+                                onApprove: function() {
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: '/api/@id@/abusereports',
+                                        data: JSON.stringify({
+                                            text: $('#abusetext').val()
+                                        }),
+                                        success: function() {
+                                            $("#abusedone").modal("show");
+                                        },
+                                        contentType: "application/json",
+                                        dataType: 'json'
+                                    });
+                                }
                             })
-                            $("#abuse").click(function() {
-                                $("#abusemodal")
-                                    .modal({
-                                        onApprove: function() {
-                                            $.ajax({
-                                                type: 'POST',
-                                                url: '/api/@id@/abusereports',
-                                                data: JSON.stringify({
-                                                    text: $('#abusetext').val()
-                                                }),
-                                                success: function() {
-                                                    $("#abusedone").modal("show");
-                                                },
-                                                contentType: "application/json",
-                                                dataType: 'json'
-                                            });
-                                        }
-                                    })
-                                    .modal("show");
-                            })
-                        })
-                    </script>
+                            .modal("show");
+                    })
+                })
+            </script>
         </div>
         <div class="script-bookend">
             <div style="text-align: center;">
@@ -138,68 +138,119 @@
         @body@
     </div>
 
+
+    <script type="text/javascript" src="/embed.js"></script>
     <script>
-        var prebuiltJsSuff = !!/prebuilt(?:[:=])1/i.test(window.location.href) ? "&prebuilt=1" : "";
-        var editorEmbedURL = "/@versionsuff@#sandbox:@id@";
-        var gameEmbedURL = "/@versionsuff@--run?fullscreen=1&nofooter=1&id=@id@" + prebuiltJsSuff;
-        var showCodeButton = document.getElementById("show-code-button");
-        var frame = document.getElementById("embed-frame");
-        frame.setAttribute("src", gameEmbedURL);
+        (function() {
+            var prebuiltJsSuff = !!/prebuilt(?:[:=])1/i.test(window.location.href) ? "&prebuilt=/blb/prebuiltsim/@id@.json" : "";
+            var editorEmbedURL = "/@versionsuff@#sandbox:@id@";
+            var gameEmbedURL = "/@versionsuff@--run?fullscreen=1&nofooter=1&id=@id@" + prebuiltJsSuff;
+            var showCodeButton = document.getElementById("show-code-button");
+            var embedContainer = document.getElementById("embed-frame");
 
-        var isGame = true;
-
-        showCodeButton.addEventListener("click", function() {
-            // toggle game vs. code view
-            if (isGame) {
-                frame.setAttribute("src", editorEmbedURL);
-                showCodeButton.textContent = "Show Game";
+            var builtSimJSPromise = Promise.resolve(undefined);
+            if (/prebuilt(?:[:=])1/i.test(window.location.href)) {
+                var versionsuff = /localhost:/.test(window.location.href) ? "" : "@versionsuff@";
+                var builtSimJsUrl = "/static/builtjs/" + id[1] + versionsuff + ".json"
+                // kick off fetch immediately, no need to wait for ksrunnerready
+                builtSimJSPromise = fetch(builtSimJsUrl)
+                    .then(resp => resp.json())
+                    .catch(e => {
+                        // TODO: send tick that something broke :(
+                        console.error("Failed to get prebuilt code")
+                    });
             }
-            else {
-                frame.setAttribute("src", gameEmbedURL);
-                showCodeButton.textContent = "Show Code";
-            }
-            isGame = !isGame;
-        });
 
-        var shareLinkIsApproved = false;
+            ksRunnerReady(function() {
+                buildSimulator(embedContainer);
+            });
 
-        window.pxtTargetConfigPromise
-            .then(function(targetConfig) {
-                var approvedShareLinks = targetConfig && targetConfig.shareLinks && targetConfig.shareLinks.approved;
-                if (approvedShareLinks && approvedShareLinks.indexOf("@id@") >= 0) {
-                    // This share link has been allow listed; remove cookie banner and allow sending of tick events
-                    shareLinkIsApproved = true;
-                    var abuseMessage = document.querySelector("#abuse-message");
-                    if (abuseMessage)
-                        abuseMessage.remove();
+            var isGame = true;
 
-                    window.pxtTickEvent(
-                        'approved.shareurl.loaded',
-                        { shareurl: "@id@",  target: "arcade", cookie: "true" },
-                    );
+            showCodeButton.addEventListener("click", function() {
+                while (embedContainer.firstChild) {
+                    embedContainer.firstChild.remove();
+                }
+
+                // toggle game vs. code view
+                if (isGame) {
+                    embedContainer.appendChild(createIFrame(editorEmbedURL));
+                    showCodeButton.textContent = "Show Game";
+                }
+                else {
+                    buildSimulator(embedContainer);
+                    showCodeButton.textContent = "Show Code";
+                }
+                isGame = !isGame;
+            });
+
+            var shareLinkIsApproved = false;
+
+            window.pxtTargetConfigPromise
+                .then(function(targetConfig) {
+                    var approvedShareLinks = targetConfig && targetConfig.shareLinks && targetConfig.shareLinks.approved;
+                    if (approvedShareLinks && approvedShareLinks.indexOf("@id@") >= 0) {
+                        // This share link has been allow listed; remove cookie banner and allow sending of tick events
+                        shareLinkIsApproved = true;
+                        var abuseMessage = document.querySelector("#abuse-message");
+                        if (abuseMessage)
+                            abuseMessage.remove();
+
+                        window.pxtTickEvent(
+                            'approved.shareurl.loaded',
+                            { shareurl: "@id@",  target: "arcade", cookie: "true" },
+                        );
+                    }
+                });
+
+            window.addEventListener('message', function (ev) {
+                if (!shareLinkIsApproved)
+                    return;
+                var d = ev.data;
+                if (d.type == "messagepacket" && d.channel == "tick-event" && d.data) {
+                    var unpackedData = "";
+                    for (var i = 0; i < d.data.length; ++i)
+                        unpackedData += String.fromCharCode(d.data[i]);
+                    try {
+                        const data = JSON.parse(unpackedData);
+                        data["shareurl"] = "@id@";
+                        data["target"] = "arcade";
+                        data["cookie"] = "true";
+                        window.pxtTickEvent(
+                            'simulator.user.tick',
+                            data,
+                        );
+                    } catch { /** failed to parse tick from game **/ }
                 }
             });
 
-        window.addEventListener('message', function (ev) {
-            if (!shareLinkIsApproved)
-                return;
-            var d = ev.data;
-            if (d.type == "messagepacket" && d.channel == "tick-event" && d.data) {
-                var unpackedData = "";
-                for (var i = 0; i < d.data.length; ++i)
-                    unpackedData += String.fromCharCode(d.data[i]);
-                try {
-                    const data = JSON.parse(unpackedData);
-                    data["shareurl"] = "@id@";
-                    data["target"] = "arcade";
-                    data["cookie"] = "true";
-                    window.pxtTickEvent(
-                        'simulator.user.tick',
-                        data,
-                    );
-                } catch { /** failed to parse tick from game **/ }
+            function buildSimulator(container) {
+                var sims = document.createElement("div");
+                sims.className = "script-embed"
+                container.appendChild(sims)
+                builtSimJSPromise.then(builtSimJs => {
+                    var options = {
+                        id: "@id@",
+                        builtJsInfo: builtSimJs,
+                    };
+                    console.log('simulating script');
+                    pxt.runner.simulateAsync(sims, options).done(function(built) {
+                        if (!builtSimJSPromise)
+                            builtSimJSPromise = Promise.resolve(built);
+                        console.log('simulator started...')
+                    })
+                });
             }
-        });
+
+            function createIFrame(src) {
+                var iframe = document.createElement("iframe");
+                iframe.className = "script-embed";
+                iframe.sandbox = "allow-popups allow-forms allow-scripts allow-same-origin";
+                iframe.frameBorder = "0";
+                iframe.src = src;
+                return iframe;
+            }
+        })();
     </script>
 
     <!-- @include tracking.html -->
