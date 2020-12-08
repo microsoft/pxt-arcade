@@ -20,14 +20,14 @@
         <div class="ui container">
                 <div id="page-header-wrapper">
                     <div class="page-header-item page-header-content no-grow">
-                        <h2 class="ui item header">@title@</h2>
+                        <h2 class="ui item header no-select">@title@</h2>
                     </div>
                     <div class="page-header-item show-code-toggle">
-                        <button id="show-code-button" class="ui tiny default button">Show Code</button>
-                        <a href="/@versionsuff@#pub:@id@" class="ui tiny button landscape only">Edit Code</a>
+                        <button id="show-code-button" class="ui mini default button">Show Code</button>
+                        <a id="editCodeButton" href="/@versionsuff@#pub:@id@" class="ui mini button landscape only">Edit Code</a>
                     </div>
                     <div class="page-header-item no-grow">
-                        <a href="https://makecode.com/org" title="Go to Microsoft MakeCode" aria-label="Microsoft MakeCode Logo" role="menuitem" target="blank" rel="noopener" class="ui item logo organization">
+                        <a href="https://makecode.com/org" title="Go to Microsoft MakeCode" aria-label="Microsoft MakeCode Logo" role="menuitem" target="blank" rel="noopener" class="ui item logo organization no-select">
                             <img class="ui logo portrait hide" src="./static/Microsoft-logo_rgb_c-gray.png" alt="Microsoft MakeCode Logo">
                             <img class="ui mini image portrait only" src="./static/Microsoft-logo_rgb_c-gray-square.png" alt="Microsoft MakeCode Logo">
                         </a>
@@ -40,12 +40,10 @@
         @BODY@
     </aside>
 
-    <div class="ui main container mainbody script-content">
+    <div class="ui main mainbody script-content">
         <div id="embed-frame"></div>
-        <!-- <iframe id="embed-frame" class="script-embed" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
-        frameborder="0"></iframe> -->
         <div class="script-bookend">
-            <div id="abuse-message" class="ui tiny blue message">
+            <div id="abuse-message" class="ui mini blue message container no-select">
                 <div class="ui grid padded">
                     <div class="abuse content">
                         <p>
@@ -127,10 +125,10 @@
 
                     <div class="ui container horizontal mini link list">
                         <!-- <a class="ui item " href="https://makecode.com/contact " target="_blank " rel="noopener ">Contact Us</a> -->
-                        <a class="ui item " href="https://makecode.com/privacy " target="_blank " rel="noopener ">Privacy &amp; Cookies</a>
-                        <a class="ui item " href="https://makecode.com/termsofuse " target="_blank " rel="noopener "> Terms Of Use</a>
-                        <a class="ui item " href="https://makecode.com/trademarks " target="_blank " rel="noopener ">Trademarks</a>
-                        <div class="ui item ">© 2020 Microsoft</div>
+                        <a class="ui item no-select" href="https://makecode.com/privacy " target="_blank " rel="noopener ">Privacy &amp; Cookies</a>
+                        <a class="ui item no-select" href="https://makecode.com/termsofuse " target="_blank " rel="noopener "> Terms Of Use</a>
+                        <a class="ui item no-select" href="https://makecode.com/trademarks " target="_blank " rel="noopener ">Trademarks</a>
+                        <div class="ui item no-select">© 2020 Microsoft</div>
                     </div>
                 </div>
         </div>
@@ -146,12 +144,13 @@
             var editorEmbedURL = "/@versionsuff@#sandbox:@id@";
             var gameEmbedURL = "/@versionsuff@--run?fullscreen=1&nofooter=1&id=@id@" + prebuiltJsSuff;
             var showCodeButton = document.getElementById("show-code-button");
+            var editCodeButton = document.getElementById("editCodeButton");
             var embedContainer = document.getElementById("embed-frame");
 
             var builtSimJSPromise = Promise.resolve(undefined);
             if (/prebuilt(?:[:=])1/i.test(window.location.href)) {
                 var versionsuff = /localhost:/.test(window.location.href) ? "" : "@versionsuff@";
-                var builtSimJsUrl = "/static/builtjs/" + id[1] + versionsuff + ".json"
+                var builtSimJsUrl = "/static/builtjs/@id@" + versionsuff + ".json"
                 // kick off fetch immediately, no need to wait for ksrunnerready
                 builtSimJSPromise = fetch(builtSimJsUrl)
                     .then(resp => resp.json())
@@ -166,6 +165,9 @@
             });
 
             var isGame = true;
+            editCodeButton.addEventListener("click", function() {
+                window.pxtTickEvent('share.editcode', { target: "arcade" });
+            })
 
             showCodeButton.addEventListener("click", function() {
                 while (embedContainer.firstChild) {
@@ -174,12 +176,14 @@
 
                 // toggle game vs. code view
                 if (isGame) {
+                    window.pxtTickEvent('share.showcode', { target: "arcade" });
                     embedContainer.appendChild(createIFrame(editorEmbedURL));
                     showCodeButton.textContent = "Show Game";
                 }
                 else {
-                    buildSimulator(embedContainer);
+                    window.pxtTickEvent('share.showgame', { target: "arcade" });
                     showCodeButton.textContent = "Show Code";
+                    buildSimulator(embedContainer);
                 }
                 isGame = !isGame;
             });
@@ -225,21 +229,24 @@
             });
 
             function buildSimulator(container) {
-                var sims = document.createElement("div");
-                sims.className = "script-embed"
-                container.appendChild(sims)
-                builtSimJSPromise.then(builtSimJs => {
-                    var options = {
-                        id: "@id@",
-                        builtJsInfo: builtSimJs,
-                    };
-                    console.log('simulating script');
-                    pxt.runner.simulateAsync(sims, options).done(function(built) {
-                        if (!builtSimJSPromise)
-                            builtSimJSPromise = Promise.resolve(built);
-                        console.log('simulator started...')
-                    })
-                });
+                // yield to UI thread before compiling
+                window.setTimeout(function() {
+                    var sims = document.createElement("div");
+                    sims.className = "script-embed"
+                    container.appendChild(sims)
+                    builtSimJSPromise.then(builtSimJs => {
+                        var options = {
+                            id: "@id@",
+                            builtJsInfo: builtSimJs,
+                        };
+                        console.log('simulating script');
+                        var simPromise = pxt.runner.simulateAsync(sims, options).done(function(built) {
+                            if (!builtSimJSPromise)
+                                builtSimJSPromise = Promise.resolve(built);
+                            console.log('simulator started...')
+                        })
+                    });
+                }, 0);
             }
 
             function createIFrame(src) {
