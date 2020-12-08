@@ -84,7 +84,8 @@ body#root.share-page .ui.mini.image.mclogo {
     padding-right: 0.5rem;
     flex-grow: 1;
 }
-#embed-frame * {
+
+#embed-frame > iframe {
     width: 100%;
     height: 100%;
 }
@@ -149,4 +150,26 @@ body#root.share-page .ui.mini.image.mclogo {
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
+}
+
+div.script-embed {
+    width: 100%;
+    height: 100%;
+}
+
+div.simframe {
+    border: none;
+    margin: 0 0 0.5rem 0;
+    position: relative !important;
+    background: transparent;
+    width: 100% !important;
+    height: 100% !important;
+    display: inline-block;
+    padding-bottom: 0 !important;
+}
+
+div.simframe > iframe {
+    position: relative !important;
+    width: 100%;
+    height: 100%;
 }
