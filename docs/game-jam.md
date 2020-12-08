@@ -30,14 +30,6 @@ Check out the winners of the 4th Official Microsoft MakeCode Game Jam, featuring
         "imageUrl": "https://pxt.azureedge.net/api/09285-20655-41262-50777/thumb"
     },
     {
-        "name": "Traffic Jam",
-        "description": "A classic puzzle game with a fun twist--can you beat level nine?",
-        "author": "Rishi",
-        "url": "https://arcade.makecode.com/08220-03361-90643-03076",
-        "cardType": "sharedExample",
-        "imageUrl": "https://pxt.azureedge.net/api/08220-03361-90643-03076/thumb"
-    },
-    {
         "name": "UFOs Control Traffic",
         "description": "Prevent car crashes as a helpful UFO traffic controller and admire the beautiful art as you do!",
         "author": "logic_lab",
