@@ -13415,8 +13415,7 @@ var ts;
             };
         }
         pxtc.BuildSourceMapHelpers = BuildSourceMapHelpers;
-        function computeUsedParts(resp, ignoreBuiltin) {
-            if (ignoreBuiltin === void 0) { ignoreBuiltin = false; }
+        function computeUsedParts(resp, filter) {
             if (!resp.usedSymbols || !pxt.appTarget.simulator || !pxt.appTarget.simulator.parts)
                 return [];
             var parts = [];
@@ -13434,10 +13433,16 @@ var ts;
                     }
                 }
             });
-            if (ignoreBuiltin) {
+            if (filter) {
                 var builtinParts_1 = pxt.appTarget.simulator.boardDefinition.onboardComponents;
-                if (builtinParts_1)
-                    parts = parts.filter(function (p) { return builtinParts_1.indexOf(p) < 0; });
+                if (builtinParts_1) {
+                    if (filter === "ignorebuiltin") {
+                        parts = parts.filter(function (p) { return builtinParts_1.indexOf(p) === -1; });
+                    }
+                    else if (filter === "onlybuiltin") {
+                        parts = parts.filter(function (p) { return builtinParts_1.indexOf(p) >= 0; });
+                    }
+                }
             }
             //sort parts (so breadboarding layout is stable w.r.t. code ordering)
             parts.sort();
@@ -13447,6 +13452,16 @@ var ts;
             return parts;
         }
         pxtc.computeUsedParts = computeUsedParts;
+        function buildSimJsInfo(compileResult) {
+            return {
+                js: compileResult.outfiles[pxtc.BINARY_JS],
+                targetVersion: pxt.appTarget.versions.target,
+                fnArgs: compileResult.usedArguments,
+                parts: pxtc.computeUsedParts(compileResult, "ignorebuiltin"),
+                usedBuiltinParts: pxtc.computeUsedParts(compileResult, "onlybuiltin"),
+            };
+        }
+        pxtc.buildSimJsInfo = buildSimJsInfo;
         /**
          * Unlocalized category name for a symbol
          */
