@@ -31,4 +31,7 @@ into real world art! Please drop us a message if you know another tool to be add
 
 ## See Also
 
+* [Tshirts](/arts-and-crafts/tshirt.md)
+* [LEGO Bricks Murals](/arts-and-crafts/lego-bricks-murals)
+* [Laser-cut Stencils](/arts-and-crafts/laser-cut-stencils)
 * [Arcade Stencilr](https://arcade-stencils.glitch.me/)
