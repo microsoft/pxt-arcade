@@ -6,6 +6,16 @@
 ```codecard
 [
 {
+  "name": "Game Maker Guide",
+  "cardType": "link",
+  "description": "Level up your game making skills by following this series of tutorials!",
+  "imageUrl":  "/static/tutorials/game-maker-guide.png",
+  "url": "https://arcade.makecode.com/skillmap",
+  "label": "New! Start Here",
+  "labelClass": "orange ribbon large",
+  "directOpen": true
+},
+{
   "name": "Chase the Pizza",
   "description": "Get started creating a simple game to chase a pizza around the screen and collect as many points as possible before time runs out!",
   "url": "/tutorials/chase-the-pizza",
@@ -13,6 +23,7 @@
   "imageUrl": "/static/tutorials/chase-the-pizza.png",
   "largeImageUrl": "/static/tutorials/chase-the-pizza.gif",
   "videoUrl": "/static/tutorials/chase-the-pizza.mp4",
+  "directOpen": true,
   "otherActions": [{
     "url": "/tutorials/spy/chase-the-pizza",
     "editor": "js",
