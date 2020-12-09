@@ -11,7 +11,7 @@ into real world art! Please drop us a message if you know another tool to be add
         "name": "Pixel Art T-shirt",
         "description": "Convert any sprite into a high-definition image that can be used to print amazing T-shirts!",
         "url": "/arts-and-crafts/lego-bricks-murals",
-        "imageUrl": "/static/arts-and-crafts/tshirt.jpg"
+        "imageUrl": "/static/arts-and-crafts/tshirt.png"
     },
     {
         "name": "LEGO Bricks Murals",
