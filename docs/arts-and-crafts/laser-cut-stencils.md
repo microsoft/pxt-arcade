@@ -5,7 +5,7 @@ t-shirts, boards, walls, etc... You will need access to a laser cutter.
 
 ![Arcade cabinet in the MakeCode Team room](/static/arts-and-crafts/stencils-cabinet.jpg)
 
-* open the sprite you want to recreate with LEGO
+* open the sprite you want to turn into stencils
 * select the image area you want to recreate with the **Marquee** tool
 * press Ctrl+C or Command+C to copy the image in the clipboard
 * open [MakeCode Arcade Stencilr](https://arcade-stencils.glitch.me/) (on glitch.me).

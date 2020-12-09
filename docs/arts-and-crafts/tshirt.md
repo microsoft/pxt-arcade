@@ -4,7 +4,7 @@ Do you want to wear your pixel art? The **Arcade Stencilr** tool converts your s
 
 ![T-shirt using Arcade pixel art](/static/arts-and-crafts/tshirt.png)
 
-* open the sprite you want to recreate with LEGO
+* open the sprite you want to make T-shirts of
 * select the image area you want to recreate with the **Marquee** tool
 * press Ctrl+C or Command+C to copy the image in the clipboard
 * open [MakeCode Arcade Stencilr](https://arcade-stencils.glitch.me/) (on glitch.me).
