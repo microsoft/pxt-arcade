@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Pixel Art T-shirt",
+        "description: "Convert any sprite into a high-definition image that can be used to print amazing T-shirts!",
+        "url": "/arts-and-crafts/lego-bricks-murals",
+        "imageUrl": "/docs/static/arts-and-craft/tshirt.jpg"
+    },
+    {
+        "name": "LEGO Bricks Murals",
+        "description: "Convert any sprite into a LEGO pieces mural!",
+        "url": "/arts-and-crafts/lego-bricks-murals",
+        "imageUrl": "/docs/static/arts-and-craft/cat-top.jpg"
+    },
+    {
+        "name": "Laser-cut Stencials",
+        "description: "Cut out stencils from your sprites and paint them anywhere!",
+        "url": "https://arcade-stencils.glitch.me/",
+        "imageUrl": "/docs/static/arts-and-craft/stencil.jpg"
+    }
+]
