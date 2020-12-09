@@ -23,7 +23,6 @@
   "imageUrl": "/static/tutorials/chase-the-pizza.png",
   "largeImageUrl": "/static/tutorials/chase-the-pizza.gif",
   "videoUrl": "/static/tutorials/chase-the-pizza.mp4",
-  "directOpen": true,
   "otherActions": [{
     "url": "/tutorials/spy/chase-the-pizza",
     "editor": "js",
