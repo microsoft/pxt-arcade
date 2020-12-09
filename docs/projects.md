@@ -66,6 +66,10 @@
         "videoUrl": "/static/graphics-math/fireworks.mp4"
     },
     {
+        "name": "Arts and Crafts",
+        "url": "/arts-and-crafts"
+    },
+    {
         "name": "Lessons",
         "url": "/lessons",
         "imageUrl": "/static/lessons/cherry-pickr.png"
@@ -106,6 +110,7 @@
 [Community Games](/community),
 [Game Design Concepts](/concepts),
 [Graphics and Math](/graphics-math),
+[Arts and Crafts](/arts-and-crafts),
 [Lessons](/lessons),
 [Courses](/courses),
 [Hardware](/hardware),
