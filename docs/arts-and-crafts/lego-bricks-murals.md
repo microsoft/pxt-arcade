@@ -1,6 +1,6 @@
 # LEGO Bricks Murals
 
-With this **Arcade Stencilr**, you will be able to take your pixel art painted in MakeCode Arcade and convert it into LEGO Bricks murals.
+With this **Arcade Stencilr** you will be able to take your pixel art painted in MakeCode Arcade and convert it into LEGO Brick murals.
 
 * open the sprite you want to recreate with LEGO
 * select the image area you want to recreate with the **Marquee** tool

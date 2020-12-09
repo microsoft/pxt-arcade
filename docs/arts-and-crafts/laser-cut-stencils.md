@@ -1,6 +1,6 @@
 # Laser Cut Stencils
 
-With this tool, you will create stencils that allow you to draw or paint pixel art on
+With this tool, you can create stencils that allow you to draw or paint pixel art on
 t-shirts, boards, walls, etc... You will need access to a laser cutter.
 
 ![Arcade cabinet in the MakeCode Team room](/static/arts-and-crafts/stencils-cabinet.jpg)
@@ -18,7 +18,7 @@ t-shirts, boards, walls, etc... You will need access to a laser cutter.
 
 ## Did you say metal?
 
-If you have the chance to have access to a water cutter, you can also 
+If you happen to have access to a water jet cutter, you can also 
 cut out your design from metal!
 
 ![A MakeCode Arcade logo cut out of a copper sheet](/static/arts-and-crafts/stencils-metal.jpg)
