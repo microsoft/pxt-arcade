@@ -41,7 +41,7 @@
     </aside>
 
     <div class="ui main mainbody script-content">
-        <iframe id="embed-frame" class="script-embed" src="/@versionsuff@--run?fullscreen=1&nofooter=1&id=@id@" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
+        <iframe id="embed-frame" class="script-embed" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
         frameborder="0"></iframe>
         <div class="script-bookend">
                 <div id="abuse-message" class="ui mini blue message container no-select">
@@ -139,11 +139,13 @@
     </div>
 
     <script>
+        var prebuiltJsSuff = !!/prebuilt(?:[:=])1/i.test(window.location.href) ? "&prebuilt=1" : "";
         var editorEmbedURL = "/@versionsuff@#sandbox:@id@";
-        var gameEmbedURL = "/@versionsuff@--run?fullscreen=1&nofooter=1&id=@id@";
+        var gameEmbedURL = "/@versionsuff@--run?fullscreen=1&nofooter=1&id=@id@" + prebuiltJsSuff;;
         var showCodeButton = document.getElementById("show-code-button");
         var editCodeButton = document.getElementById("editCodeButton")
         var frame = document.getElementById("embed-frame");
+        frame.setAttribute("src", gameEmbedURL);
 
         var isGame = true;
 
