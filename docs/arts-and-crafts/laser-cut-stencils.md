@@ -1,7 +1,9 @@
 # Laser Cut Stencils
 
 With this tool, you will create stencils that allow you to draw or paint pixel art on
-t-shirts, boards, walls, etc... You will need access to a laser cutter (or a water cutter if you want to do it in metal!).
+t-shirts, boards, walls, etc... You will need access to a laser cutter.
+
+![Arcade cabinet in the MakeCode Team room](/static/arts-and-crafts/stencils-cabinet.jpg)
 
 * open the sprite you want to recreate with LEGO
 * select the image area you want to recreate with the **Marquee** tool
@@ -12,4 +14,14 @@ t-shirts, boards, walls, etc... You will need access to a laser cutter (or a wat
 * cut out each layer into a stencil
 * use the stencils to paint/draw your designs!
 
+![Drawing stencils](/static/arts-and-crafts/stencils-draw.jpg)
+
+![Drawing stencils](/static/arts-and-crafts/stencils-draw2.jpg)
+
+## Did you say metal?
+
+If you have the chance to have access to a water cutter, you can also 
+cut out your design from metal!
+
+![A MakeCode Arcade logo cut out of a copper sheet](/static/arts-and-crafts/stencils-metal.jpg)
 
