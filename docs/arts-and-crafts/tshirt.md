@@ -1,6 +1,6 @@
 # T-Shirts
 
-Do you want to wear your pixel art? The **Arcade Stencilr** tool converts your sprite image into high-definition images that can be used for tshirts!
+Do you want to wear your pixel art? The **Arcade Stencilr** tool converts your sprite image into high-definition images that can be used for t-shirts!
 
 ![T-shirt using Arcade pixel art](/static/arts-and-crafts/tshirt.png)
 
