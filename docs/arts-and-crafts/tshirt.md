@@ -2,6 +2,8 @@
 
 Do you want to wear your pixel art? The **Arcade Stencilr** tool converts your sprite image into high-definition images that can be used for tshirts!
 
+![T-shirt using Arcade pixel art](/static/arts-and-crafts/tshirt.png)
+
 * open the sprite you want to recreate with LEGO
 * select the image area you want to recreate with the **Marquee** tool
 * press Ctrl+C or Command+C to copy the image in the clipboard

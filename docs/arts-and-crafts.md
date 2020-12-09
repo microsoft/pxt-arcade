@@ -17,7 +17,7 @@ into real world art! Please drop us a message if you know another tool to be add
         "name": "LEGO Bricks Murals",
         "description": "Convert any sprite into a LEGO pieces mural!",
         "url": "/arts-and-crafts/lego-bricks-murals",
-        "imageUrl": "/static/arts-and-crafts/bricks.jpg"
+        "imageUrl": "/static/arts-and-crafts/bricks.jpg",
     },
     {
         "name": "Laser-cut Stencils",
