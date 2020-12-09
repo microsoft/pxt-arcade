@@ -10,5 +10,4 @@ Do you want to wear your pixel art? The **Arcade Stencilr** tool converts your s
 * open [MakeCode Arcade Stencilr](https://arcade-stencils.glitch.me/) (on glitch.me).
 * press Ctrl+V or Command+V to paste the image in the image text box
 * download the image under **generate**
-
-
+* use the image with your favorite T-Shirt shop!
