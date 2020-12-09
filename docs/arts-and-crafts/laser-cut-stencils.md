@@ -16,8 +16,6 @@ t-shirts, boards, walls, etc... You will need access to a laser cutter.
 
 ![Drawing stencils](/static/arts-and-crafts/stencils-draw.jpg)
 
-![Drawing stencils](/static/arts-and-crafts/stencils-draw2.jpg)
-
 ## Did you say metal?
 
 If you have the chance to have access to a water cutter, you can also 
