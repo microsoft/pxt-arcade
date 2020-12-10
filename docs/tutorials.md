@@ -11,7 +11,7 @@
   "description": "Level up your game making skills by following this series of tutorials!",
   "imageUrl":  "/static/tutorials/game-maker-guide.png",
   "url": "https://arcade.makecode.com/skillmap",
-  "label": "New! Start Here",
+  "label": "New! Try This",
   "labelClass": "orange ribbon large",
   "directOpen": true
 },
