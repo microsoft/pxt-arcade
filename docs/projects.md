@@ -5,7 +5,7 @@
     {
         "name": "Tutorials",
         "url": "/tutorials",
-        "imageUrl": "/static/tutorials/chase-the-pizza.png",
+        "imageUrl": "/static/tutorials/game-maker-guide.png",
         "largeImageUrl": "/static/tutorials/chase-the-pizza.gif",
         "videoUrl": "/static/tutorials/chase-the-pizza.mp4"
     },
@@ -67,7 +67,8 @@
     },
     {
         "name": "Arts and Crafts",
-        "url": "/arts-and-crafts"
+        "url": "/arts-and-crafts",
+        "imageUrl": "/static/arts-and-crafts/tshirt.png"
     },
     {
         "name": "Lessons",
