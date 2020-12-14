@@ -11,11 +11,13 @@ html {
 }
 
 ol {
-	font-weight: bold;
+    font-weight: bold;
 }
 
-li span { font-weight: normal; }
-    
+li span {
+    font-weight: normal;
+}
+
 #main,
 footer,
 footer > * {
@@ -104,6 +106,7 @@ body {
     font-size: 4.8rem;
     line-height: 1;
     text-align: center;
+    padding-bottom: 2rem;
 }
 
 #main h3 {
@@ -271,7 +274,7 @@ body {
 
 #main section.intro .content-block {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 #main section.intro > .content-block > .text-content-block {
@@ -288,7 +291,7 @@ body {
     position: relative;
 }
 
-.educators-aside img {
+#main .educators-aside img {
     width: 24rem;
     height: auto;
     margin-right: 3rem;
@@ -301,9 +304,10 @@ body {
     bottom: -3rem;
 }
 
-.activities .content-row {
+#main .activities .content-row {
     display: flex;
     align-items: stretch;
+    margin-top: 3rem;
 }
 
 .activities .content-row .content-column {
@@ -324,7 +328,7 @@ body {
     text-decoration: none;
 }
 
-.activities .content-row .content-column h2 {
+#main .activities .content-row .content-column h2 {
     display: block;
     top: -2rem;
     /*padding-left: 4rem;
@@ -334,14 +338,16 @@ body {
     right: 0.5rem;
     left: 0.5rem;
     position: absolute;
+    text-transform: uppercase;
+    font-size: 4rem;
     /*letter-spacing: auto;*/
     text-align: center;
 }
 
 .activities .content-row .content-column .hero {
-    margin-left: -3.1rem;
+    margin-left: -2rem;
     margin-top: 1.5rem;
-    margin-right: -2.6rem;
+    margin-right: -1.8rem;
     margin-bottom: 2.5rem;
 }
 
@@ -360,13 +366,19 @@ body {
     bottom: -3rem;
 }
 
+#main .certificate {
+    padding-top: 0;
+    padding-bottom: 2.5rem;
+}
+
 .certificate h2 {
     padding-top: 3rem;
 }
 
-.certificate .action-button {
+#main .certificate .action-button {
     margin: 0 auto;
     margin-top: 3rem;
+    width: 30rem;
 }
 
 .additional {
@@ -414,9 +426,9 @@ body {
     text-decoration: none;
 }
 
-.explore {
+#main .explore {
     padding-top: 1rem;
-    padding-bottom: 6rem;
+    padding-bottom: 8rem;
 }
 
 section.about {
@@ -428,27 +440,84 @@ section.about {
     color: white;
 }
 
-/* 
-    phone portrait
-*/
-@media (min-width: 320px) and (max-width: 480px) {
+/* tablet */
+@media (max-width: 768px) {
+    #main header .container .left-content-block {
+        flex-basis: 100%;
+        margin: 0 auto;
+    }
+    #main header .container .right-content-block {
+        display: none;
+    }
+
     #main h1 {
         font-size: 9rem;
     }
-    #main .panel-secondary {
-        margin-bottom: 5.5rem;
+
+    #main .small-heading,
+    #main header .container .left-content-block h4 {
+        font-size: 5rem;
     }
-    .activities .content-row {
+
+    #main section {
+        padding: 4rem 2rem;
+    }
+
+    #main .activities .content-row .content-column h2 {
+        font-size: 3rem;
+    }
+
+    #main section.intro .educators-aside .content-block .text-content-block {
+        padding: 1rem;
+    }
+
+    #main section.intro .educators-aside .content-block img {
+        display: none;
+    }
+}
+
+/* phone */
+@media (max-width: 480px) {
+    #main .activities .content-row {
         flex-wrap: wrap;
-    }    
+    }
+
+    .activities .content-row .content-column {
+        margin: 0;
+        margin-bottom: 7rem;
+        flex-basis: 100%;
+    }
+
+    .activities .content-row .content-column:last-child {
+        margin-bottom: 0;
+    }
+
+    #main .activities .content-row .content-column .text-content-block {
+        padding-bottom: 3rem;
+    }
+
     #main section.intro .content-block {
         flex-wrap: wrap;
-    }    
+    }
+
+    #main section.intro > .content-block > .text-content-block {
+        flex-basis: 100%;
+        padding-top: 0;
+        padding-bottom: 2rem;
+    }
+
     .educators-aside {
-        flex: 1;
+        flex-basis: 100%;
         margin-left: 0;
     }
-    .content-column {
-        width: unset !important;
-    }    
+
+    .additional .content-row,
+    .explore .content-row {
+        flex-wrap: wrap;
+    }
+
+    .additional .content-row .content-column,
+    .explore .content-row .content-column {
+        width: 100%;
+    }
 }

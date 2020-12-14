@@ -10,6 +10,18 @@
 
 The MakeCode Arcade system is designed to support a variety of physical gaming devices in addition to a more virtual experience on a PC or mobile device. We encourage others to design and build new variants of MakeCode Arcade hardware using the guidelines presented in this document. 
 
+### ~ tip
+
+#### Minimal Open Source Reference Design
+
+![Schematics screenshot](/static/hardware/minipcb.png)
+
+We have built a minimal open source hardware reference design for an Arcade board. This consists of a schematic (available as PDF and as Altium .SchDoc), a layout (available as Gerbers and related CAM files plus an Altium .PcbDoc), and a BoM (available as a Microsoft Excel file). 
+* **Download Reference Design at [https://github.com/microsoft/pxt-arcade-hardware-designs](https://github.com/microsoft/pxt-arcade-hardware-designs)**
+
+### ~
+
+
 Arcade hardware must meet the following specifications:
 
 * An ARM Cortex M microcontroller (see [MCU](#mcu))
@@ -33,14 +45,6 @@ Other optional elements include:
 * status LEDs (see [LEDs](#leds))
 * an electrical expansion connector to support the use of plug-in accessories and connection of external 
 circuits (see [expansion coonnector](#pins))
-
-### ~ tip
-
-#### Minimal Open Source Reference Design
-
-We have built a minimal open source hardware reference design for an Arcade board. This consists of a schematic (available as PDF and as Altium .SchDoc), a layout (available as Gerbers and related CAM files plus an Altium .PcbDoc), and a BoM (available as a Microsoft Excel file). These files are available at [https://github.com/microsoft/pxt-arcade-hardware-designs](https://github.com/microsoft/pxt-arcade-hardware-designs).
-
-### ~
 
 A firmware configuration system allows a lot of flexibility regarding specific component choices and circuit designs to meet the above specification, see [Configuration](#cf2). 
 

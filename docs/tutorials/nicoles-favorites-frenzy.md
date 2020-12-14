@@ -1,10 +1,10 @@
-# Nicole goes for a walk
+# Nicole's Favorites Frenzy
 
 ## Introduction @unplugged
 
 Create your own version of Nicole’s game! Change the scene, draw yourself as the main character and add in your own favorite things!
 
-![Game playing in the simulator](/static/tutorials/nicole-goes-walk/nicole-goes-walk.gif)
+![Game playing in the simulator](/static/tutorials/nicoles-favorites-frenzy/nicoles-favorites-frenzy.gif)
 
 ## Step 1 - Change the Background Image
 
@@ -208,7 +208,7 @@ let Dog = sprites.create(img`
 
 Now that you’ve drawn your own game characters, let’s change their names. In the same ``||variables:set sprite||`` blocks, click on the Nicole drop-down menu and select **Rename Variable**. Type your name and click Ok. Do the same for your pet - instead of Dog, rename the variable to be whatever your pet is.
 
-![Rename variable from the block menu](/static/tutorials/nicole-goes-walk/rename-variable.png)
+![Rename variable from the block menu](/static/tutorials/nicoles-favorites-frenzy/rename-variable.png)
 
 ## Step 4 - Change the Starting Melody
 
@@ -226,7 +226,7 @@ Nicole’s favorite things are Boba Tea, Ramen, and Acai bowls. What are yours? 
 tiles.setTilemap(tilemap`level_0`)
 ```
 
-![MyTiles selection in tile editor](/static/tutorials/nicole-goes-walk/mytiles.png)
+![MyTiles selection in tile editor](/static/tutorials/nicoles-favorites-frenzy/mytiles.png)
 
 ## Step 6 - Set starting score to zero
 

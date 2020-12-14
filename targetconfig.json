@@ -13,7 +13,8 @@
             "microsoft/arcade-timers",
             "microsoft/arcade-text",
             "microsoft/pxt-tick-event",
-            "microsoft/pxt-tilemaps"
+            "microsoft/pxt-tilemaps",
+            "microsoft/pxt-skillmap-sample"
         ],
         "preferredRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
@@ -36,8 +37,12 @@
     },
     "shareLinks": {
         "approved": [
-            "53897-77132-13809-57062"
+            "53897-77132-13809-57062",
+            "07573-63879-62644-28924"
         ]
+    },
+    "skillMap": {
+        "defaultPath": "github:microsoft/pxt-skillmap-sample/skillmap.md"
     },
     "galleries": {
         "Tutorials": "tutorials",
@@ -50,6 +55,7 @@
         "Community Games": "community",
         "Game Design Concepts": "concepts",
         "Graphics and Math": "graphics-math",
+        "Arts and Crafts": "arts-and-crafts",
         "Lessons": "lessons",
         "Courses": "courses",
         "Hardware": "hardware",

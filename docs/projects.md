@@ -5,7 +5,7 @@
     {
         "name": "Tutorials",
         "url": "/tutorials",
-        "imageUrl": "/static/tutorials/chase-the-pizza.png",
+        "imageUrl": "/static/tutorials/game-maker-guide.png",
         "largeImageUrl": "/static/tutorials/chase-the-pizza.gif",
         "videoUrl": "/static/tutorials/chase-the-pizza.mp4"
     },
@@ -19,7 +19,7 @@
     {
         "name": "Live Coding",
         "url": "/live-coding",
-        "imageUrl": "/static/live-coding/live.png"
+        "imageUrl": "/static/live-coding/sgeHKw437oE.jpg"
     },
     {
         "name": "Blocks Games",
@@ -43,7 +43,7 @@
     {
         "name": "Advanced Livestream",
         "url": "/advanced-stream",
-        "imageUrl": "/static/advanced-stream/live.png"
+        "imageUrl": "/static/advanced-stream/SvXeJevUkb4.jpg"
     },
     {
         "name": "Community Games",
@@ -64,6 +64,11 @@
         "imageUrl": "/static/graphics-math/fireworks.png",
         "largeImageUrl": "/static/graphics-math/fireworks.gif",
         "videoUrl": "/static/graphics-math/fireworks.mp4"
+    },
+    {
+        "name": "Arts and Crafts",
+        "url": "/arts-and-crafts",
+        "imageUrl": "/static/arts-and-crafts/tshirt.png"
     },
     {
         "name": "Lessons",
@@ -106,6 +111,7 @@
 [Community Games](/community),
 [Game Design Concepts](/concepts),
 [Graphics and Math](/graphics-math),
+[Arts and Crafts](/arts-and-crafts),
 [Lessons](/lessons),
 [Courses](/courses),
 [Hardware](/hardware),
