@@ -316,6 +316,21 @@ namespace pxt.editor {
         return undefined;
     }
 
+    upgradeXml = function (code: string): void {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(code, "application/xml");
+        const tilemapProject = pxt.react.getTilemapProject();
+
+        const allTiles = doc.querySelectorAll("variable[type=BLOCKLY_TILESET_TYPE]");
+        for (let i = 0; i < allTiles.length; i++) {
+            const tile = pxt.sprite.legacy.blocklyVariableToTile(allTiles.item(i).textContent);
+            if (tile.projectId != 0) {
+                if (!tilemapProject.resolveTile("myTiles.tile" + tile.projectId))
+                    tilemapProject.createNewTile(tile.data, "myTiles.tile" + tile.projectId, tile.qualifiedName);
+            }
+        }
+    }
+
     initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
         pxt.debug('loading arcade target extensions...')
 
