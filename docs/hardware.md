@@ -100,7 +100,8 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "Add Board",
         "description": "Are you looking to build your own hardware to run Arcade games? This in-depth guide provides the technical details and specifications to get started.",
-        "url": "/hardware/adding"
+        "url": "/hardware/adding",
+        "imageUrl": "/static/hardware/minipcb.png"
     }
 ]
 ```
@@ -109,9 +110,11 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
 
 * [Makey Makey](/hardware/makey-makey), turn your banana keyboard into an arcade console!
 
-## Adding Arcade to a New Board
+## Adding a New Board to Arcade
 
-If you want to design a board with Arcade support, refer to [Adding Board](/hardware/adding) page.
+![Schematics screenshot](/static/hardware/minipcb.png)
+
+If you want to design a board with Arcade support, refer to [Adding Board page](/hardware/adding).
 
 There is some minimal documentation about adding new MCUs in the
 [Arcade Hardware Development](/hardware/dev) page.
