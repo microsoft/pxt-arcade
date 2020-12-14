@@ -4,6 +4,8 @@ node_js:
 before_install:
   - echo -e "\n\nmachine github.com\n  login $GH_TOKEN\n" >~/.netrc
 script:
+  - "npm list"
+  - "ls -l node_modules/"
   - "node node_modules/pxt-core/built/pxt.js travis"
 sudo: false
 cache:
