@@ -14,7 +14,8 @@
             "microsoft/arcade-text",
             "microsoft/pxt-tick-event",
             "microsoft/pxt-tilemaps",
-            "microsoft/pxt-skillmap-sample"
+            "microsoft/pxt-skillmap-sample",
+            "microsoft/pxt-jacdac"
         ],
         "preferredRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
@@ -33,7 +34,10 @@
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
             "microsoft/arcade-sprite-data": "min:v0.0.6"
-        }
+        },
+        "approvedEditorExtensionUrls": [
+            "https://microsoft.github.io/jacdac-ts/tools/makecode-editor-extension"
+        ]
     },
     "shareLinks": {
         "approved": [
