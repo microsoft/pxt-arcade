@@ -1,3 +1,14 @@
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -47,17 +58,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __spreadArrays = (this && this.__spreadArrays) || function () {
     for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
     for (var r = Array(s), k = 0, i = 0; i < il; i++)
@@ -101,8 +101,8 @@ var pxt;
                 if (!data)
                     pxt.aiTrackEvent(id);
                 else {
-                    var props_1 = defaultProps || {};
-                    var measures_1 = defaultMeasures || {};
+                    var props_1 = __assign({}, defaultProps) || {};
+                    var measures_1 = __assign({}, defaultMeasures) || {};
                     Object.keys(data).forEach(function (k) {
                         if (typeof data[k] == "string")
                             props_1[k] = data[k];
@@ -13415,8 +13415,7 @@ var ts;
             };
         }
         pxtc.BuildSourceMapHelpers = BuildSourceMapHelpers;
-        function computeUsedParts(resp, ignoreBuiltin) {
-            if (ignoreBuiltin === void 0) { ignoreBuiltin = false; }
+        function computeUsedParts(resp, filter) {
             if (!resp.usedSymbols || !pxt.appTarget.simulator || !pxt.appTarget.simulator.parts)
                 return [];
             var parts = [];
@@ -13434,10 +13433,16 @@ var ts;
                     }
                 }
             });
-            if (ignoreBuiltin) {
+            if (filter) {
                 var builtinParts_1 = pxt.appTarget.simulator.boardDefinition.onboardComponents;
-                if (builtinParts_1)
-                    parts = parts.filter(function (p) { return builtinParts_1.indexOf(p) < 0; });
+                if (builtinParts_1) {
+                    if (filter === "ignorebuiltin") {
+                        parts = parts.filter(function (p) { return builtinParts_1.indexOf(p) === -1; });
+                    }
+                    else if (filter === "onlybuiltin") {
+                        parts = parts.filter(function (p) { return builtinParts_1.indexOf(p) >= 0; });
+                    }
+                }
             }
             //sort parts (so breadboarding layout is stable w.r.t. code ordering)
             parts.sort();
@@ -13447,6 +13452,16 @@ var ts;
             return parts;
         }
         pxtc.computeUsedParts = computeUsedParts;
+        function buildSimJsInfo(compileResult) {
+            return {
+                js: compileResult.outfiles[pxtc.BINARY_JS],
+                targetVersion: pxt.appTarget.versions.target,
+                fnArgs: compileResult.usedArguments,
+                parts: pxtc.computeUsedParts(compileResult, "ignorebuiltin"),
+                usedBuiltinParts: pxtc.computeUsedParts(compileResult, "onlybuiltin"),
+            };
+        }
+        pxtc.buildSimJsInfo = buildSimJsInfo;
         /**
          * Unlocalized category name for a symbol
          */

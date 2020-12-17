@@ -280,8 +280,7 @@ game.onUpdateInterval(500, function () {
 
 ## Step 8
 
-Add code to ``||sprites:set the position||`` of ``||variables:bogey||`` to
-`x` to `180` and `y` to a ``||math:random number||`` between ``0`` and ``120``.
+Add code to set ``||sprites:left||`` of ``||variables:bogey||`` to the ``||scene:screen width||`` and ``||sprites:y||`` to a ``||math:random number||`` between ``0`` and ``||scene:screen height||``.
 
 ```blocks
 game.onUpdateInterval(500, function () {
@@ -305,11 +304,45 @@ game.onUpdateInterval(500, function () {
     `, SpriteKind.Enemy)
     bogey.setVelocity(-100, 0)
     // @highlight
-    bogey.setPosition(180, randint(0, 120))
+    bogey.left = scene.screenWidth()
+    // @highlight
+    bogey.y = randint(0, scene.screenHeight())
 })
 ```
 
 ## Step 9
+
+To keep the amount of ``||sprites:Enemy||`` sprites from increasing even though they leave the screen, set the ``||sprites:auto destroy||`` flag for ``||variables:bogey||`` to **ON**.
+
+```blocks
+game.onUpdateInterval(500, function () {
+    let bogey = sprites.create(img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . 9 9 . . . . . 5 . . . .
+        . . . 9 9 9 9 . . . 5 5 . . . .
+        2 2 2 2 9 9 2 2 2 2 2 f 4 4 . .
+        . . 2 2 2 2 5 5 5 2 2 f 4 4 4 .
+        . . . . . . 5 5 5 . . . . . . .
+        . . . . . . . 5 5 . . . . . . .
+        . . . . . . . . 5 . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `, SpriteKind.Enemy)
+    bogey.setVelocity(-100, 0)
+    bogey.left = scene.screenWidth()
+    bogey.y = randint(0, scene.screenHeight())
+    // @highlight
+    bogey.setFlag(SpriteFlag.AutoDestroy, true)
+})
+```
+
+## Step 10
 
 Use one more event to run code when a ``||sprites:Player sprite||`` ``||sprites:overlaps||`` with an ``||sprites:Enemy sprite||``.
 
@@ -318,7 +351,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Step 10
+## Step 11
 
 Add code to ``||sprites:destroy||`` ``||variables:otherSprite||``, which is the enemy sprite.
 
@@ -329,7 +362,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Step 11
+## Step 12
 
 In that event, add code to ``||info:remove a life||`` (or change it by ``-1``).
 
@@ -341,7 +374,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Step 12
+## Step 13
 
 Put in an event to run code when a ``||sprites:Projectile sprite||`` ``||sprites:overlaps||`` with an ``||sprites:Enemy sprite||``.
 
@@ -350,7 +383,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 })
 ```
 
-## Step 13
+## Step 14
 
 Add code to ``||sprites:destroy||`` ``||variables:otherSprite||``, the enemy sprite.
 
@@ -361,7 +394,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 })
 ```
 
-## Step 14
+## Step 15
 
 Insert code to ``||sprites:destroy||`` ``||variables:sprite||``, the projectile sprite,
 with a ``||sprites:fire effect||``.
@@ -374,7 +407,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 })
 ```
 
-## Step 15
+## Step 16
 
 Add code to add ``||info:change the score by||`` by ``1``.
 

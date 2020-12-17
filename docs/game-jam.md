@@ -33,7 +33,7 @@ Check out the winners of the 4th Official Microsoft MakeCode Game Jam, featuring
         "name": "Traffic Jam",
         "description": "A classic puzzle game with a fun twist--can you beat level nine?",
         "author": "Rishi",
-        "url": "https://arcade.makecode.com/08220-03361-90643-03076",
+        "url": "https://arcade.makecode.com/82921-64280-76040-39471",
         "cardType": "sharedExample",
         "imageUrl": "https://pxt.azureedge.net/api/08220-03361-90643-03076/thumb"
     },
