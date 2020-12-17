@@ -15,7 +15,7 @@
             "microsoft/pxt-tick-event",
             "microsoft/pxt-tilemaps",
             "microsoft/pxt-skillmap-sample",
-            "microsoft/jacdac"
+            "microsoft/pxt-jacdac"
         ],
         "preferredRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
