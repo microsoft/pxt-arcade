@@ -120,6 +120,21 @@ namespace pxt.editor {
         });
 
         /**
+         * Upgrade all myTiles.tile0 to new transparency name
+         */
+        const tileVariables = U.toArray(dom.querySelectorAll("variable[type=BLOCKLY_TILESET_TYPE]"));
+        tileVariables.forEach((node) => {
+            const tile = pxt.sprite.legacy.blocklyVariableToTile(node.textContent);
+            if (tile.projectId == 0) {
+                const transparetTileName = pxt.sprite.TILE_NAMESPACE + ".transparency" + tile.data.width;
+                U.toArray(dom.querySelectorAll("block[type=tilemap_editor]")).forEach((block) => {
+                    const field = getField(block, "tilemap");
+                    field.textContent = field.textContent.replace("myTiles.tile0", transparetTileName);
+                })
+            }
+        })
+
+        /**
          * Upgrade for scene.setTile() which went from being expandable to not
          */
         U.toArray(dom.querySelectorAll("block[type=gamesettile]")).forEach(block => {
@@ -314,21 +329,6 @@ namespace pxt.editor {
             }
         }
         return undefined;
-    }
-
-    upgradeXml = function (code: string): void {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(code, "application/xml");
-        const tilemapProject = pxt.react.getTilemapProject();
-
-        const allTiles = doc.querySelectorAll("variable[type=BLOCKLY_TILESET_TYPE]");
-        for (let i = 0; i < allTiles.length; i++) {
-            const tile = pxt.sprite.legacy.blocklyVariableToTile(allTiles.item(i).textContent);
-            if (tile.projectId != 0) {
-                if (!tilemapProject.resolveTile("myTiles.tile" + tile.projectId))
-                    tilemapProject.createNewTile(tile.data, "myTiles.tile" + tile.projectId, tile.qualifiedName);
-            }
-        }
     }
 
     initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
