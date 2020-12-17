@@ -110,7 +110,7 @@
     ],
     "compile": {
         "useUF2": true,
-        "deployDrives": "(ARCADE|PY|FTHR840BOOT)",
+        "deployDrives": "(ARCADE|PY|FTHR840BOOT|ARCD)",
         "deployFileMarker": "INFO_UF2.TXT",
         "driveName": "ARCADE",
         "floatingPoint": true,
