@@ -243,6 +243,10 @@
                 // TODO: spin spin
                 var loader = document.createElement("div");
                 loader.className = "loader";
+                for (var i = 0; i < 2; ++i) {
+                    loader.appendChild(document.createElement("div"));
+                }
+
                 simframeWrapper.appendChild(emptySim);
                 simframeWrapper.appendChild(icon);
                 simframeWrapper.appendChild(loader);
