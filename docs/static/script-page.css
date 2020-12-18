@@ -78,7 +78,7 @@ body#root.share-page .ui.mini.image.mclogo {
     flex-grow: 1;
 }
 
-#embed-frame {
+#embed-frame, .script-embed {
     width: 100%;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -195,7 +195,7 @@ body#root.share-page .ui.mini.image.mclogo {
     }
 }
 
-div.script-embed {
+div.sim-embed {
     width: 100%;
     height: 100%;
 }

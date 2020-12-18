@@ -228,7 +228,7 @@
 
             function prebuildSimulator(container) {
                 var sims = document.createElement("div");
-                sims.className = "script-embed";
+                sims.className = "sim-embed";
                 var simframeWrapper = document.createElement("div");
                 simframeWrapper.className = "simframe ui embed";
                 var emptySim = createIFrame("/sim/simulator.html")
@@ -250,8 +250,8 @@
             }
 
             function runSimulator(container) {
-                // use script embed container if abailable
-                var sims = container.querySelector(".script-embed");
+                // use script embed container if available
+                var sims = container.querySelector(".sim-embed");
                 // yield to UI thread before compiling
                 window.setTimeout(function() {
                     builtSimJSPromise.then(builtSimJS => {
@@ -271,7 +271,7 @@
 
             function createIFrame(src) {
                 var iframe = document.createElement("iframe");
-                iframe.className = "script-embed";
+                iframe.className = "sim-embed";
                 iframe.sandbox = "allow-popups allow-forms allow-scripts allow-same-origin";
                 iframe.frameBorder = "0";
                 iframe.src = src;
