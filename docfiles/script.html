@@ -144,10 +144,6 @@
             var editCodeButton = document.getElementById("editCodeButton");
             var embedContainer = document.getElementById("embed-frame");
 
-            // TODO: check that the patching in cli/cli.ts#uploadCoreAsync is actually working making this unnecessary
-            // This line gets patched up by the cloud
-            // var pxtConfig = null;
-
             var builtSimJSPromise = Promise.resolve(undefined);
             if (/prebuilt(?:[:=])1/i.test(window.location.href)) {
                 var versionsuff = /localhost:/.test(window.location.href) ? "" : "@versionsuff@";
@@ -161,8 +157,9 @@
                     });
             }
 
+            prebuildSimulator(embedContainer);
             ksRunnerReady(function() {
-                buildSimulator(embedContainer);
+                runSimulator(embedContainer);
             });
 
             var isGame = true;
@@ -184,7 +181,7 @@
                 else {
                     window.pxtTickEvent('share.showgame', { target: "arcade" });
                     showCodeButton.textContent = "Show Code";
-                    buildSimulator(embedContainer);
+                    runSimulator(embedContainer);
                 }
                 isGame = !isGame;
             });
@@ -229,18 +226,15 @@
                 }
             });
 
-            function buildSimulator(container) {
-                // todo: separate initial iframe creation from 'start simulator' so we can run this before ksrunnerready
+            function prebuildSimulator(container) {
                 var sims = document.createElement("div");
                 sims.className = "script-embed";
                 var simframeWrapper = document.createElement("div");
                 simframeWrapper.className = "simframe ui embed";
                 var emptySim = createIFrame("/sim/simulator.html")
-                // var emptySim = createIFrame(pxtConfig && pxtConfig.simUrl || "/sim/simulator.html")
                 emptySim.className = "grayscale";
                 // TODO: unused, satisfying pxtsim/simdriver.ts#setFrameState for now
                 var icon = document.createElement("div");
-                // TODO: spin spin
                 var loader = document.createElement("div");
                 loader.className = "loader";
                 for (var i = 0; i < 2; ++i) {
@@ -253,6 +247,11 @@
 
                 sims.appendChild(simframeWrapper);
                 container.appendChild(sims);
+            }
+
+            function runSimulator(container) {
+                // use script embed container if abailable
+                var sims = container.querySelector(".script-embed");
                 // yield to UI thread before compiling
                 window.setTimeout(function() {
                     builtSimJSPromise.then(builtSimJS => {
@@ -261,15 +260,11 @@
                             builtJsInfo: builtSimJS,
                         };
                         console.log('simulating script');
-                        var simPromise = pxt.runner.simulateAsync(sims, options).done(function(built) {
+                        pxt.runner.simulateAsync(sims || container, options).done(function(built) {
                             if (!builtSimJS)
                                 builtSimJSPromise = Promise.resolve(built);
-                            console.log('simulator started...')
-
-                            if (emptySim) {
-                                emptySim.className = "";
-                            }
-                        })
+                            console.log('simulator started...');
+                        });
                     });
                 }, 0);
             }
