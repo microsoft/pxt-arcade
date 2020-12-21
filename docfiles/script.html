@@ -234,13 +234,12 @@
                 simframeWrapper.className = "simframe ui embed";
                 var emptySim = createIFrame("/sim/simulator.html")
                 emptySim.className = "grayscale";
-                // TODO: unused, satisfying pxtsim/simdriver.ts#setFrameState for now
+                // unused, satisfying pxtsim/simdriver.ts#setFrameState
                 var icon = document.createElement("div");
                 var loader = document.createElement("div");
                 loader.className = "loader";
-                for (var i = 0; i < 2; ++i) {
-                    loader.appendChild(document.createElement("div"));
-                }
+                loader.appendChild(document.createElement("div"));
+                loader.appendChild(document.createElement("div"));
 
                 simframeWrapper.appendChild(emptySim);
                 simframeWrapper.appendChild(icon);
