@@ -250,8 +250,6 @@
             }
 
             function runSimulator(container) {
-                // use script embed container if available
-                var sims = container.querySelector(".sim-embed");
                 // yield to UI thread before compiling
                 window.setTimeout(function() {
                     builtSimJSPromise.then(builtSimJS => {
@@ -260,7 +258,7 @@
                             builtJsInfo: builtSimJS,
                         };
                         console.log('simulating script');
-                        pxt.runner.simulateAsync(sims || container, options).done(function(built) {
+                        pxt.runner.simulateAsync(container, options).done(function(built) {
                             if (!builtSimJS)
                                 builtSimJSPromise = Promise.resolve(built);
                             console.log('simulator started...');
