@@ -146,14 +146,15 @@
 
             var builtSimJSPromise = Promise.resolve(undefined);
             if (/prebuilt(?:[:=])1/i.test(window.location.href)) {
-                var versionsuff = /localhost:/.test(window.location.href) ? "" : "@versionsuff@";
-                var builtSimJsUrl = "/static/builtjs/@id@" + versionsuff + ".json"
+                var builtSimJsUrl = "/static/builtjs/@id@.json"
                 // kick off fetch immediately, no need to wait for ksrunnerready
                 builtSimJSPromise = fetch(builtSimJsUrl)
                     .then(resp => resp.json())
                     .catch(e => {
-                        // TODO: send tick that something broke :(
                         console.error("Failed to get prebuilt code")
+                        if (window.pxtTickEvent) {
+                            window.pxtTickEvent("share.prebuilt.missing");
+                        }
                     });
             }
 
