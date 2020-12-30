@@ -10,5 +10,13 @@
         "Right3",
         "Right2",
         "Right1"
-    ]
+    ],
+    "animations": [{
+        "name": "heroSideAttackLeft",
+        "frames": [0, 1, 2, 3]
+    },
+    {
+        "name": "heroSideAttackRight",
+        "frames": [7, 6, 5, 4]
+    }]
 }

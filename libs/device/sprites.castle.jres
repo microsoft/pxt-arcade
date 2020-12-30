@@ -8,6 +8,11 @@
     "heroFrontAttack2": "hwQYABgAAAAAAAAAAP//AAAAAAAAAAAA/73LDwAAAAAAAP//7///DwAAAAAA8P/+7v4EAAAAAAAA/+/yT+7//8DMAAAA/y7/G+0i9N/NAADwLy7v/00i9N0MAADwIi7v1E3C3M0AAADwIi7v1E3C3QwAAADwLy7v/+3OzA8AAAAA/y7/G9Tt9A8AAAAA/+/yT97t/wAAAAAA8O/+7k8OAAAAAAAAAP//7+8AAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
     "heroFrontAttack3": "hwQYABgAAAAAAAAAAP//AAAAAAAAAAAA/73LDwAAAAAAAPD/////DwAAAAAAAP/v/u7vBAAAAAAAAP/v8k/+/wAAAAAA8C/i8hsk9A8AAAAA8CLi4v8t9A8AAAAALyLi4tQt9Q8AAAAALyLi4tQt9Q/AAAAA8CLi4v8t9A7MzMwA8C/i8hv03+0cEREAAP/v8k9O1O3MzMwAAP/v/u7v7g7AAAAAAPD///8OAAAAAAAAAADw/w8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
     "heroFrontAttack4": "hwQYABgAAAAAAAAAAP//AAAAAAAAAADw/73LDwAAAAAA8P//7///DwAAAAAA/+/v7v4EAAAAAADw/y7/T+7//wAAAADw7/K/2+0i9A8AAAD/4vL+300i9A8AAAAv4vJO1E0i9QAAAAAv4vJO1E0i9QAAAAD/4vL+300i9A8AAADw7/K/2+Qi9A8AAADw/y7/T+7//wAAAAAA/+7v7k5BAAAAAAAA8P//7/9OAAAAAAAAAADw/9/tAAAAAAAAAAAAAN7tAAAAAAAAAAAAwMwOAAAAAAAAAAAAwM0AAAAAAAAAAAAA3M0AAAAAAAAAAADA3QwAAAAAAAAAAADczQAAAAAAAAAAAADcDAAAAAAAAAAAAADMAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+    "heroFrontAttack": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.heroFrontAttack1\",\"sprites.castle.heroFrontAttack2\",\"sprites.castle.heroFrontAttack3\",\"sprites.castle.heroFrontAttack4\"],\"flippedHorizontal\":false}"
+    },
     "heroSideAttackLeft1": "hwQYABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwMwAAAAAAAAAAAAAwN0MAAAAAAAAAAAAANzNAAAAAAAAAAAAAMDdzAAAAAAAAAAAAP/czQ4AAAAAAAAA/y7PzO0AAAAAAADw4uLv3u3/AAAAAAAv4vJO7URSDwAAAAD/4vJO3U5eDwAAAADv7/L+3yRC/wAAAADv/v6/0SRC/wAAAADv/i7vRC5C/wAAAADv7i9P7S5CDwAAAADw7i9P5P//AAAAAADw7+/v7g8AAAAAAAAA/////gAAAAAAAAAAAAD/DwAAAAAAAAA=",
     "heroSideAttackLeft2": "hwQYABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzAwAAAAAAAAAAAAA3AwAAAAAAAAAAAAAwM0AAAAAAAAAAAAAwN0MAAAAAAAAAAAAANzMAAAAAAAAAAAAANzNAAAAAAAAAAAAAMDMAAAAAAAAAAD//+DdDgAAAAAAAP8u7+/dDgAAAAAA8O/i7/5ODgAAAAAA8OLyTt1ODgAAAAAAL+LyTt3i/wAAAADwIuLy/t9S/wAAAADw7/7+v9tCDwAAAADw7/7+v9tCDwAAAAAA7/4u70RCDwAAAAAA7+4vT+1C/wAAAAAA7+4vT+RC/wAAAAAA8O7v7+7//wAAAAAA8O////4AAAAAAAAAAP//7w8AAAAAAAAAAADw/wAAAAAAAAA=",
     "heroSideAttackLeft3": "hwQYABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAMANAAAAAAAAAAAAAMDNAAAAAAAAAAAAAMDNAAAAAAAAAAAAAMDNAAAAAAAAAAAAAMDNAAAAAAAAAPD/D8zMDAAAAAAA8O/y/uAOAAAAAAAA/y7+7t7tAAAAAADwLy7v1N7tAAAAAADwIi7v1O3kDwAAAAAv/y7v/+3k/wAAAAD/7u//uy3+/wAAAADw7u/yTiT0DwAAAADw7v7y1C70DwAAAADw7v7yRC70/wAAAAAA7/7+7v7//wAAAAAA//7/7w8A/wAAAAAA8P///gAAAAAAAAAAAAD/DwAAAAAAAAA=",
@@ -16,6 +21,16 @@
     "heroSideAttackRight3": "hwQYABgAAAAAAAD/DwAAAAAAAAAA8P///gAAAAAAAAAA//7/7w8A/wAAAAAA7/7+7v7//wAAAADw7v7yRC70/wAAAADw7v7y1C70DwAAAADw7u/yTiT0DwAAAAD/7u//uy3+/wAAAAAv/y7v/+3k/wAAAADwIi7v1O3kDwAAAADwLy7v1N7tAAAAAAAA/y7+7t7tAAAAAAAA8O/y/uAOAAAAAAAAAPD/D8zMDAAAAAAAAAAAAMDNAAAAAAAAAAAAAMDNAAAAAAAAAAAAAMDNAAAAAAAAAAAAAMDNAAAAAAAAAAAAAMANAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
     "heroSideAttackRight2": "hwQYABgAAAAAAADw/wAAAAAAAAAAAP//7w8AAAAAAAAA8O////4AAAAAAAAA8O7v7+7//wAAAAAA7+4vT+RC/wAAAAAA7+4vT+1C/wAAAAAA7/4u70RCDwAAAADw7/7+v9tCDwAAAADw7/7+v9tCDwAAAADwIuLy/t9S/wAAAAAAL+LyTt3i/wAAAAAA8OLyTt1ODgAAAAAA8O/i7/5ODgAAAAAAAP8u7+/dDgAAAAAAAAD//+DdDgAAAAAAAAAAAMDMAAAAAAAAAAAAANzNAAAAAAAAAAAAANzMAAAAAAAAAAAAwN0MAAAAAAAAAAAAwM0AAAAAAAAAAAAA3AwAAAAAAAAAAAAAzAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
     "heroSideAttackRight1": "hwQYABgAAAAAAADw/wAAAAAAAAAA8P//7w8AAAAAAAAA//7+7v4AAAAAAAAA7/7yRP7/DwAAAADw7v7y1O4i9AAAAADw7u/yTuQi9A8AAADw7u//G00i9A8AAADw/i7v/00i9A8AAADwLy7v1O3k9QAAAADwIi7v1E4k9QAAAAAALy7+7t3+DwAAAAAA8O/yzNwOAAAAAAAAAPDP3ewAAAAAAAAAAADczQwAAAAAAAAAAMDdDAAAAAAAAAAAANzNAAAAAAAAAAAAAMwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+    "heroSideAttackLeft": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.heroSideAttackLeft1\",\"sprites.castle.heroSideAttackLeft2\",\"sprites.castle.heroSideAttackLeft3\",\"sprites.castle.heroSideAttackLeft4\"],\"flippedHorizontal\":false}"
+    },
+    "heroSideAttackRight": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.heroSideAttackRight1\",\"sprites.castle.heroSideAttackRight2\",\"sprites.castle.heroSideAttackRight3\",\"sprites.castle.heroSideAttackRight4\"],\"flippedHorizontal\":false}"
+    },
     "heroWalkFront1": "hwQQABAAAAAAAAAAAAAAAAAAAPAPAAAAAPD///7gRAAA/+/v7k9NAPD/Lv/k/v8A8O/yv9EuQv//4vL+3yRC/y/i8k7dJFIPL+LyTt0kUg//4vL+3yRC//Dv8r/RLkL/8P8u/+T+/wAA/+7v7k9NAADw///+4EQAAAAA8A8AAAAAAAAAAAAAAA==",
     "heroWalkFront2": "hwQQABAAAAAAAAAAAAAAAAAAAP8AAAAAAAD////wDgAA8P/+7u8EAAD/7/JP/v//AP8u/xskQv/wLy7v/y1C//AiLu/ULVIP8CIu79QtUg/wLy7v/+3+DwD/Lv8b1O0PAP/v8k/e7QAA8O/+7k8OAAAA////7gAAAAAA/wAAAAAAAAAAAAAAAA==",
     "heroWalkFront3": "hwQQABAAAAAAAAAAAAAAAAAAAPAPAAAAAPD///7gRAAA/+/v7k9NAPD/Lv/k/v8A8O/yv9EuQv//4vL+3yRC/y/i8k7dJFIPL+LyTt0kUg//4vL+3yRC//Dv8r/RLkL/8P8u/+T+/wAA/+7v7k9NAADw///+4EQAAAAA8A8AAAAAAAAAAAAAAA==",
@@ -24,6 +39,16 @@
     "heroWalkBack2": "hwQQABAAAAAAAAAAAAAAAAAAAADwDwAAAADw//8PAAAA8P/+7v5ODgDv7/Ly7v//AO8vL//uL//w7u/y7+4v//D+Iu/u7i8P8P4i7+7uLw/w7u8v8u4vDwDvLyLv7u8OAO/v/+7u3w4A8P/+7v7UBAAA8P//D04AAAAAAPAPAAAAAAAAAAAAAA==",
     "heroWalkBack3": "hwQQABAAAAAAAAAAAAAAAAAAAPAPAAAAAPD///7gRAAA/+/v7k9NAPD+Lv/v/v8A8P7yIu/+Qv/v/i7y7v5C/+8v8u7u/kIP7y/y7u7+Qg/v/i7y7v5C//D+8iLv/kL/8P4u/+7+/wAA/+/v7k9NAADw///+4EQAAAAA8A8AAAAAAAAAAAAAAA==",
     "heroWalkBack4": "hwQQABAAAAAAAAAAAAAAAAAAAADwDwAAAADw//8PTgAA8P/+7v7UBADv7//u7t8OAO8vIu/u7w7w7u8v8u4vD/D+Iu/u7i8P8P4i7+7uLw/w7u/y7+4v/wDvLy//7i//AO/v8vLu//8A8P/+7v5ODgAA8P//DwAAAAAAAPAPAAAAAAAAAAAAAA==",
+    "heroWalkFront": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.heroWalkFront1\",\"sprites.castle.heroWalkFront2\",\"sprites.castle.heroWalkFront3\",\"sprites.castle.heroWalkFront4\"],\"flippedHorizontal\":false}"
+    },
+    "heroWalkBack": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.heroWalkBack1\",\"sprites.castle.heroWalkBack2\",\"sprites.castle.heroWalkBack3\",\"sprites.castle.heroWalkBack4\"],\"flippedHorizontal\":false}"
+    },
     "heroWalkShieldFront1": "hwQQABAAAAAAAAAAAAAAAAAAAPAP/w8AAPD///69+wAA/+/v/r3LD/D/Lv/0vcsP8O/yv/G9+///4vL+3/9P/y/i8k7dJFIPL+LyTt0kUg//4vL+3yRC//Dv8r/RLkL/8P8u/+T+/wAA/+7v7k9NAADw///+4EQAAAAA8A8AAAAAAAAAAAAAAA==",
     "heroWalkShieldFront2": "hwQQABAAAAAAAAAAAP//AAAAAP/wvcsPAAD//////w8A8P/+7u8EAAD/7/JP/v//AP8u/xskQv/wLy7v/y1C//AiLu/ULVIP8CIu79QtUg/wLy7v/+3+DwD/Lv8b1O0PAP/v8k/e7QAA8O/+7k8OAAAA////7gAAAAAA/wAAAAAAAAAAAAAAAA==",
     "heroWalkShieldFront3": "hwQQABAAAAAAAAAAAAAAAAAAAP8AAAAAAAD////+/wAA8O/+7t+7DwD/7/JP37v8AP8u/xvfu/zwLy7v/9+7D/AiLu/U/f8P8CIu79QtUg/wLy7v/y1C/wD/Lv8bJEL/AP/v8k/+//8A8P/+7u8EAAAA////8A4AAAAA/wAAAAAAAAAAAAAAAA==",
@@ -32,6 +57,16 @@
     "heroWalkShieldBack2": "hwQQABAAAAAAAAAA8A8AAAAA8P//DwAAAPD//u7+Tg4A7+/y8u7//wDvLy//7i//8O7v8u/uL//w/iLv7u4vD/D+Iu/u7i8P8O7vL/LuLw8A7y8i7+7vDgDv7//u7t8OAPD//u7+1AQAAPD/////DwAAAADwvcsPAAAAAAD//wAAAAAAAAAAAA==",
     "heroWalkShieldBack3": "hwQQABAAAAAAAADwDwAAAADw///+4EQAAP/v7+5PTQDw/i7/7/7/APD+8iLv/kL/7/4u8u7+Qv/vL/Lu7v5CD+8v8u7u/kIP7/4u8u7+Qv/w/vIi7/5C//D+Lv/u/v8AAP/v7+5PTQAA8P///uBEAAAAAPAPAAAAAAAAAAAAAAAAAAAAAAAAAA==",
     "heroWalkShieldBack4": "hwQQABAAAAAAAAAAAAAAAAAA8P////8PAPD//u7+1AQA7+//7u7fDgDvLyLv7u8O8O7vL/LuLw/w/iLv7u4vD/D+Iu/u7i8P8O7v8u/uL/8A7y8v/+4v/wDv7/Ly7v//APD//u7+Tg4AAPD//w8AAAAAAADwDwAAAAAAAAAAAAAAAAAAAAAAAA==",
+    "heroWalkShieldFront": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.heroWalkShieldFront1\",\"sprites.castle.heroWalkShieldFront2\",\"sprites.castle.heroWalkShieldFront3\",\"sprites.castle.heroWalkShieldFront4\"],\"flippedHorizontal\":false}"
+    },
+    "heroWalkShieldBack": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.heroWalkShieldBack1\",\"sprites.castle.heroWalkShieldBack2\",\"sprites.castle.heroWalkShieldBack3\",\"sprites.castle.heroWalkShieldBack4\"],\"flippedHorizontal\":false}"
+    },
     "heroWalkShieldSideLeft1": "hwQQABAAAAAAAAAAAAAAAAAA8P8PAAAAAPDv8v4A8A8ALy7+7v////AiLu/U7VL/8C8u79RNUv/w/i7v/+3+D/Du7/8b3u0P8O7v8k7e7Q/w7v7y1E7+/wDv/vJE/v//AP/+/u4O8A8A8P//7w8AAAAAAPD/AAAAAAAAAAAAAAAAAAAAAAAAAA==",
     "heroWalkShieldSideLeft2": "hwQQABAAAAAAAAAAAAAAAAAAAADw/wAAAAD//9+7DwAA/y7v37v7APDi4u/+7/4AL+LyTt3e7Q//4vJO3d7tD+/v8v7fTv7/7/7+v9EkQv/v/i7vRC5C/+/uL0/tLkIP8O4vT+T//gDw7+/v7g8AAAD////+AAAAAAAA/w8AAAAAAAAAAAAAAA==",
     "heroWalkShieldSideLeft3": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAADw/w8AAAAA8O/y/gDwDwAvLv7u////8CIu79TtUv/wLy7v1E1S//D+Lu//7f4P8O7v/xve7Q/w7u/yTt7tD/Du/vLUTv7/AO/+8kT+//8A//7+7g7wDwDw///vDwAAAAAA8P8AAAAAAAAAAAAAAA==",
@@ -40,6 +75,16 @@
     "heroWalkShieldSideRight3": "hwQQABAAAAAAAAAAAAAAAAAAAPD/AAAAAPD//+8PAAAA//7+7g7wDwDv/vJE/v//8O7+8tRO/v/w7u/yTt7tD/Du7/8b3u0P8P4u7//t/g/wLy7v1E1S//AiLu/U7VL/AC8u/u7///8A8O/y/gDwDwAA8P8PAAAAAAAAAAAAAAAAAAAAAAAAAA==",
     "heroWalkShieldSideRight2": "hwQQABAAAAAAAAAAAAAAAAAAAP8PAAAAAP////4AAADw7+/v7g8AAPDuL0/k//4A7+4vT+0uQg/v/i7vRC5C/+/+/r/RJEL/7+/y/t9O/v//4vJO3d7tDy/i8k7d3u0P8OLi7/7v/gAA/y7v37v7AAAA///fuw8AAAAAAPD/AAAAAAAAAAAAAA==",
     "heroWalkShieldSideRight1": "hwQQABAAAAAAAAAAAAAAAAAAAPD/AAAAAPD//+8PAAAA//7+7g7wDwDv/vJE/v//8O7+8tRO/v/w7u/yTt7tD/Du7/8b3u0P8P4u7//t/g/wLy7v1E1S//AiLu/U7VL/AC8u/u7///8A8O/y/gDwDwAA8P8PAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+    "heroWalkShieldLeft": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.heroWalkShieldSideLeft4\",\"sprites.castle.heroWalkShieldSideLeft3\",\"sprites.castle.heroWalkShieldSideLeft2\",\"sprites.castle.heroWalkShieldSideLeft1\"],\"flippedHorizontal\":false}"
+    },
+    "heroWalkShieldRight": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.heroWalkShieldSideRight1\",\"sprites.castle.heroWalkShieldSideRight2\",\"sprites.castle.heroWalkShieldSideRight3\",\"sprites.castle.heroWalkShieldSideRight4\"],\"flippedHorizontal\":false}"
+    },
     "heroWalkSideLeft1": "hwQQABAAAAAAAAAAAAAAAAAA//8AAAAAAP8u7w8AAADw4uLv/v//AC/i8k7dLlIP/+LyTt0kUg/v7/L+3yRC/+/+/r/R5P7/7/4u70Te7f/v7i9P7d7tD/DuL0/kT/4A8O/v7+4PAAAA/////gAAAAAAAP8PAAAAAAAAAAAAAAAAAAAAAAAAAA==",
     "heroWalkSideLeft2": "hwQQABAAAAAAAAAAAAAAAAAA8P8PAAAAAPDv8v4A8A8ALy7+7v////AiLu/U7VL/8C8u79RNUv/w/i7v/+3+D/Du7/8b3u0P8O7v8k7e7Q/w7v7y1E7+/wDv/vJE/v//AP/+/u4O8A8A8P//7w8AAAAAAPD/AAAAAAAAAAAAAAAAAAAAAAAAAA==",
     "heroWalkSideLeft3": "hwQQABAAAAAAAAAAAAAAAAAA//8AAAAAAP8u7w8AAADw4uLv/v//AC/i8k7dLlIP/+LyTt0kUg/v7/L+3yRC/+/+/r/R5P7/7/4u70Te7f/v7i9P7d7tD/DuL0/kT/4A8O/v7+4PAAAA/////gAAAAAAAP8PAAAAAAAAAAAAAAAAAAAAAAAAAA==",
@@ -48,6 +93,16 @@
     "heroWalkSideRight3": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/w8AAAAA/////gAAAPDv7+/uDwAA8O4vT+RP/gDv7i9P7d7tD+/+Lu9E3u3/7/7+v9Hk/v/v7/L+3yRC///i8k7dJFIPL+LyTt0uUg/w4uLv/v//AAD/Lu8PAAAAAAD//wAAAAAAAAAAAAAAAA==",
     "heroWalkSideRight2": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8P8AAAAA8P//7w8AAAD//v7uDvAPAO/+8kT+///w7v7y1E7+//Du7/JO3u0P8O7v/xve7Q/w/i7v/+3+D/AvLu/UTVL/8CIu79TtUv8ALy7+7v///wDw7/L+APAPAADw/w8AAAAAAAAAAAAAAA==",
     "heroWalkSideRight1": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/w8AAAAA/////gAAAPDv7+/uDwAA8O4vT+RP/gDv7i9P7d7tD+/+Lu9E3u3/7/7+v9Hk/v/v7/L+3yRC///i8k7dJFIPL+LyTt0uUg/w4uLv/v//AAD/Lu8PAAAAAAD//wAAAAAAAAAAAAAAAA==",
+    "heroWalkLeft": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.heroWalkSideLeft1\",\"sprites.castle.heroWalkSideLeft2\",\"sprites.castle.heroWalkSideLeft3\",\"sprites.castle.heroWalkSideLeft4\"],\"flippedHorizontal\":false}"
+    },
+    "heroWalkRight": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.heroWalkSideRight1\",\"sprites.castle.heroWalkSideRight2\",\"sprites.castle.heroWalkSideRight3\",\"sprites.castle.heroWalkSideRight4\"],\"flippedHorizontal\":false}"
+    },
     "houseRed": "hwQwADAAAAAAAABARkRGREZERkRGRGxmZmZmxswAAAAAAADAbMZsxmzGbMZsxkxmZmZmZsYMAAAAAADAZsZmxmbGZsZmxkxsZmZmZmbGAAAAAAAiLiLiIiIuIuIiwkzL5u7u7m5mDAAAAAAiLiLiIiIuIuIiYkzEJN7d3W1EZAAAACDu7u7u7u7u7u7ubEzEJN7P/WzkTgYAACAuIuIiIi4i4iIibEzEJN7P/WzkTmQAACAuIuIiIi4i4iIiZkzEJN7d3W3kTs4AAO7u7u7u7u7u7u7OxkbEJN7P/WxERM4AAC4i4iIiLiLiIiLOxkbEJN7P/WzkTs4AAC4i4iIiLiLiIiJuxkbEJN7d3W3kTmQA4O7u7u7u7u7u7u5sbEbE5O7u7m7kTmQAICLiIiIuIuIiIuJsTEbERERERERERGQAICLiIiIuIuIiIuJmTGbMzMzMzMzMzMwA4u7u7u7u7u7u7s5mRsbbEWFmZmZmZmYAIuIiIi4iIi4iIs7GtEwUYWZmZmZmZmYAIuIiIi4iIi4iIm7GxEth5v7/7+7+/+8g7u7u7u7u7u7u7mxmxERhTkREREREREQg4iIi4iIi4iIi4mxMZERh7u7u7u7u7u4g4iIi4iIi4iIi4mZMZERhTkT/TkRERETu7u7u7u7u7u7uzmZGZERhTuT/TkRERETiIiIuIuIiIi4izsZEZERh7v7/7u7u7u7u7u7u7u7u7u7ubsZEZERhTvT/TkREREQiIiIiIiIiIiIiYsZEZERhTvT/TkREREQiIiIiIiIiIiIiYsZEZERh7v7/7u7u7u7u7u7u7u7u7u7ubsZEZERhTvT/TkREREQiLiIuIuIiIi4izsZEZERhTvT/TkRERETu7u7u7u7u7u7uzmZGZERh7u7/7v7/7u4g4iIi4iIi4iIi4mZMZERhTkT/TuRPT0Qg4iIi4iIi4iIi4mxMZERhTkTkTuRPT0Qg7u7u7u7u7u7u7mxmxERh7u7u7u7/7u4AIuIiIi4iIi4iIm7GxEth5u7u7u7u7u4AIuIiIi4iIi4iIs7GtEwUYWZmZmZmZmYA4u7u7u7u7u7u7s5mRsbbEWFmZmZmZmYAICLiIiIuIuIiIuJmTGbMzMzMzMzMzMwAICLiIiIuIuIiIuJsTEbERERERERERGQA4O7u7u7u7u7u7u5sbEbE5O7u7m7kTmQAAC4i4iIiLiLiIiJuxkbEJN7d3W3kTmQAAC4i4iIiLiLiIiLOxkbEJN7P/WzkTs4AAO7u7u7u7u7u7u7OxkbEJN7P/WxERM4AACAuIuIiIi4i4iIiZkzEJN7d3W3kTs4AACAuIuIiIi4i4iIibEzEJN7P/WzkTmQAACDu7u7u7u7u7u7ubEzEJN7P/WzkTgYAAAAiLiLiIiIuIuIiYkzEJN7d3W1EZAAAAAAiLiLiIiIuIuIiwkzL5u7u7m5mDAAAAADAZsZmxmbGZsZmxkxsZmZmZmbGAAAAAADAbMZsxmzGbMZsxkxmZmZmZsYMAAAAAABARkRGREZERkRGRGxmZmZmxswAAAA=",
     "houseBlue": "hwQwADAAAAAAAADQ293b3dvd293b3by7u7u7y8wAAAAAAADAvMu8y7zLvMu8y9y7u7u7u8sMAAAAAADAu8u7y7vLu8u7y9y8u7u7u7vLAAAAAACqqKqKqqqoqoqqytzLi4iIiLi7DAAAAACqqKqKqqqoqoqqutzNrTgzM7PdvQAAAKCIiIiIiIiIiIiIvNzNrTjP87y92wsAAKCoqoqqqqiqiqqqvNzNrTjP87y9270AAKCoqoqqqqiqiqqqu9zNrTgzM7O928sAAIiIiIiIiIiIiIjIy9vNrTjP87zd3csAAKiqiqqqqKqKqqrIy9vNrTjP87y928sAAKiqiqqqqKqKqqq4y9vNrTgzM7O9270AgIiIiIiIiIiIiIi8vNvNjYiIiLi9270AoKqKqqqoqoqqqoq83NvN3d3d3d3d3b0AoKqKqqqoqoqqqoq73LvMzMzMzMzMzMwAioiIiIiIiIiIiMi728vbEbG7u7u7u7sAqoqqqqiqqqiqqsjLvdwdsbu7u7u7u7sAqoqqqqiqqqiqqrjLzdux6/7/7+7+/++giIiIiIiIiIiIiLy7zd2xPjMzMzMzMzOgiqqqiqqqiqqqirzcvd2xvrvrvru7u7ugiqqqiqqqiqqqirvcvd2xPjP/PjMzMzOIiIiIiIiIiIiIyLvbvd2xPuP/PjMzMzOKqqqoqoqqqqiqyMvdvd2xvvv/vru7u7uIiIiIiIiIiIiIuMvdvd2xPvP/PjMzMzOqqqqqqqqqqqqqusvdvd2xPvP/PjMzMzOqqqqqqqqqqqqqusvdvd2xvvv/vru7u7uIiIiIiIiIiIiIuMvdvd2xPvP/PjMzMzOqqKqoqoqqqqiqyMvdvd2xPvP/PjMzMzOIiIiIiIiIiIiIyLvbvd2xvuv/vvv/u7ugiqqqiqqqiqqqirvcvd2xPjP/PuM/PzOgiqqqiqqqiqqqirzcvd2xPjPjPuM/PzOgiIiIiIiIiIiIiLy7zd2xvru7u+v/vrsAqoqqqqiqqqiqqrjLzdux6+7u7u7u7u4AqoqqqqiqqqiqqsjLvdwdsbu7u7u7u7sAioiIiIiIiIiIiMi728vbEbG7u7u7u7sAoKqKqqqoqoqqqoq73LvMzMzMzMzMzMwAoKqKqqqoqoqqqoq83NvN3d3d3d3d3b0AgIiIiIiIiIiIiIi8vNvNjYiIiLi9270AAKiqiqqqqKqKqqq4y9vNrTgzM7O9270AAKiqiqqqqKqKqqrIy9vNrTjP87y928sAAIiIiIiIiIiIiIjIy9vNrTjP87zd3csAAKCoqoqqqqiqiqqqu9zNrTgzM7O928sAAKCoqoqqqqiqiqqqvNzNrTjP87y9270AAKCIiIiIiIiIiIiIvNzNrTjP87y92wsAAACqqKqKqqqoqoqqutzNrTgzM7PdvQAAAACqqKqKqqqoqoqqytzLi4iIiLi7DAAAAADAu8u7y7vLu8u7y9y8u7u7u7vLAAAAAADAvMu8y7zLvMu8y9y7u7u7u8sMAAAAAADQ293b3dvd293b3by7u7u7y8wAAAA=",
     "princessFront0": "hwQQABAAAAAAAAAAAAAAAAAAAADwAAAAAAAA/2//AAAA8P9mZt//DwAfZv/23T8P8GH23T/zM/9VZf8//TVT/1Bi3939UzMPVWXf3f1TMw/wYf8//TVT//AW9t0/8zP/AG9h//bdPw8A8P9mZt//DwAAAP9v/wAAAAAAAPAAAAAAAAAAAAAAAA==",
@@ -59,6 +114,26 @@
     "princessBack0": "hwQQABAAAAAAAAAAAAAAAAAAAAAPAAAAAAAA8PbwAAAA8P//9t8PAABvZmb23f8P8BZmZj/1P/NQFmZm9jM181UWZmb2M1PzVWZmZvYzU/NQFmZm9jM18/BmZmY/9T/zAG9mZvbd/w8A8P//9t8PAAAAAPD28AAAAAAAAA8AAAAAAAAAAAAAAA==",
     "princessBack1": "hwQQABAAAAAAAAAAAAAAAAAAAADwAAAAAAAAAG8PAAAAAP//b/8AAADwZmZm3/8PAG9hZvbzMw8AZWFmZj8181BlYWZmP1PzUGVmZmY/Uw8AZWFmZj8/DwBvZmb21f0AAPBmZmbf/QAAAP//b/8PAAAAAABvDwAAAAAAAPAAAAAAAAAAAAAAAA==",
     "princessBack2": "hwQQABAAAAAAAAAAAAAAAAAAAADwAAAAAAAAAG8PAAAAAP//b/8PAADwZmZm3/0AAG9hZvbV/QAAZWFmZj8/D1BlYWZmP1MPUGVmZmY/U/MAZWFmZj818wBvZmb28zMPAPBmZmbf/w8AAP//b/8AAAAAAABvDwAAAAAAAPAAAAAAAAAAAAAAAA==",
+    "princessWalkFront": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.princessFront0\",\"sprites.castle.princessFront1\",\"sprites.castle.princessFront2\"],\"flippedHorizontal\":false}"
+    },
+    "princessWalkLeft": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.princessLeft0\",\"sprites.castle.princessLeft1\",\"sprites.castle.princessLeft2\"],\"flippedHorizontal\":false}"
+    },
+    "princessWalkRight": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.princessLeft0\",\"sprites.castle.princessLeft1\",\"sprites.castle.princessLeft2\"],\"flippedHorizontal\":true}"
+    },
+    "princessWalkBack": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.princessBack0\",\"sprites.castle.princessBack1\",\"sprites.castle.princessBack2\"],\"flippedHorizontal\":false}"
+    },
     "princess2Front": "hwQQABAAAAAAAAAA8A8AAAAA8P//+wAAAPA/s7vr7gAAvzOzu+/0D/A+4//+/7wPX+Szv0G/3fFPRTP+T969/VRF4+5E3t2xVEXj7kTevb1PRTP+T97d8V/ks79Bv7398D7j//7/vA8AvzOzu+/0DwDwP7O76+4AAADw///7AAAAAAAA8A8AAA==",
     "princess2WalkFront1": "hwQQABAAAAAAAAAA/wAAAAAA8P+/DwAAAADvs7v7DwAA8Dszu0v+DwDvM/7vTuQP8EU++xtO5PHwVDTj/+Te/U9VNO5O1N3xT1U07k7Uvb3wVDTj/9TdsfBFPvsbtL3xAO8z/u//vA8A8Dszu+v0DwAA77O7++4AAADw/78PAAAAAAAA/wAAAA==",
     "princess2WalkFront2": "hwQQABAAAAAAAAAA8A8AAAAA8P//+wAAAPA/s7vr7gAAvzOzu+/0D/A+4//+/7wPX+Szv0G/3fFPRTP+T969/VRF4+5E3t2xVEXj7kTevb1PRTP+T97d8V/ks79Bv7398D7j//7/vA8AvzOzu+/0DwDwP7O76+4AAADw///7AAAAAAAA8A8AAA==",
@@ -71,6 +146,26 @@
     "princess2Left2": "hwQQABAAAAAAAAAAAAAAAAAA8P8AAAAAAP8/Mw8A8A/wVD4z7v/f+0BVNO5O1N39QFU07k7U3fHwVDTj/9S9vfBFPvsb5L6x8O8z/u9P5P3wOzMzu0vk/QA/MzO7u7/7AL8zM7u7vw8A8Dszu7v/AAAA//+/+wAAAAAAAP8PAAAAAAAAAAAAAA==",
     "princess2Right1": "hwQQABAAAAAAAAAAAAAAAAAAAADwDwAAAPD////7AAAAvzOzu7sPAPA7M7O7u/8P8DMzs7v7vg+/MzOzu0/k/f8+4//+T+TxX+Szv0Hvvr1PRTP+T97dsVRF4+5E3r39VEXj7kTe3fFP5TPj/v+/D/D/PzMPAPAPAADw/wAAAAAAAAAAAAAAAA==",
     "princess2Right2": "hwQQABAAAAAAAAAAAAAAAAAAAAD/DwAAAAD//7/7AAAA8Dszu7v/AAC/MzO7u78PAD8zM7u7v/vwOzMzu0vk/fDvM/7vT+T98EU++xvkvrHwVDTj/9S9vUBVNO5O1N3xQFU07k7U3f3wVD4z7v/f+wD/PzMPAPAPAADw/wAAAAAAAAAAAAAAAA==",
+    "princess2WalkFront": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.princess2Front\",\"sprites.castle.princess2WalkFront1\",\"sprites.castle.princess2WalkFront2\",\"sprites.castle.princess2WalkFront3\"],\"flippedHorizontal\":false}"
+    },
+    "princess2WalkLeft": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.princess2Left1\",\"sprites.castle.princess2Left2\"],\"flippedHorizontal\":false}"
+    },
+    "princess2WalkRight": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.princess2Right1\",\"sprites.castle.princess2Right2\"],\"flippedHorizontal\":false}"
+    },
+    "princess2WalkBack": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.princess2Back\",\"sprites.castle.princess2WalkBack1\",\"sprites.castle.princess2WalkBack2\",\"sprites.castle.princess2WalkBack3\"],\"flippedHorizontal\":false}"
+    },
     "rock0": {
         "data": "hwQQABAAAAAAAAAAzMwAAAAAAMzLywwAAAAA3Lu8zAAAAMzcvbzMAMDMu7zdzMwAvN27y93LzADc3d2728vMDNvd3bvby7wM293du9u7vMvb3d2929u8y7Dd3b3b27zLANvdvb3bvMsA2927vb27DACwu7u7zbsMAAAA293MywAAAACwy7wLAA==",
         "tilemapTile": true
@@ -111,6 +206,36 @@
     "skellyAttackRight1": "hwQYABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAPAPAAAAAAD///8PAP8PAAAAAPDb3b3///8PAAAAAL/d3d3L//8PAAAAAB8R3d27//8PAAAA8BER0d29+/8PAAAA8BER0d3dzf8AAAAA8BER0d3L/f8AAAAA8BEREdH/vA8AAAAAAB8REdHdvAwAAAAAAL8RERHRv/0AAAAAAPDf3d29H9EPAAAAAADw////v/sAAAAAAAAAAAAAz9EPAAAAAAAAAAAA8P8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
     "skellyAttackRight2": "hwQYABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8A8AAAAAAAAAAAAAv/8AAPAPAAAAAAD/H/sPAAD/AAAAAPAbH7H/AAD/AAAAAPARH/vPD/D/AAAAAL8RwbHP////AAAAAB8REf/M////AAAAAB8R0b3/////AAAAAB8R0RzN////AAAAAB8RER/7//8PAAAAAPARERGx//8AAAAAAPAbERH7DwAAAAAAAAD/3RuxDwAAAAAAAAAA////DwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
     "skellyWalkRight2": "hwQYABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8PAPAPAAAAAAD/3b38AAD/AAAAAPDb3d3L////AAAAAPAR0d27v///AAAAAB8REd27H/v/AAAAAB8REd0dH7H/AAAAAB8REb0cH/sPAAAAAB8REfEfwbEPAAAAAPAREdEd+/8AAAAAAPAbEREdsQ8AAAAAAAD/3d37/wAAAAAAAAAA//8PAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+    "skellyWalkFront": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.skellyFront\",\"sprites.castle.skellyWalkFront1\",\"sprites.castle.skellyWalkFront2\",\"sprites.castle.skellyWalkFront3\"],\"flippedHorizontal\":false}"
+    },
+    "skellyAttackFront": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.skellyAttackFront1\",\"sprites.castle.skellyAttackFront2\",\"sprites.castle.skellyAttackFront3\",\"sprites.castle.skellyAttackFront4\"],\"flippedHorizontal\":false}"
+    },
+    "skellyWalkLeft": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.skellyWalkLeft1\",\"sprites.castle.skellyWalkLeft2\"],\"flippedHorizontal\":false}"
+    },
+    "skellyAttackLeft": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.skellyAttackLeft1\",\"sprites.castle.skellyAttackLeft2\"],\"flippedHorizontal\":false}"
+    },
+    "skellyWalkRight": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.skellyWalkRight1\",\"sprites.castle.skellyWalkRight2\"],\"flippedHorizontal\":false}"
+    },
+    "skellyAttackRight": {
+        "mimeType": "application/mkcd-animation",
+        "dataEncoding": "json",
+        "data": "{\"frames\":[\"sprites.castle.skellyAttackRight1\",\"sprites.castle.skellyAttackRight2\"],\"flippedHorizontal\":false}"
+    },
     "tileGrass2": {
         "data": "hwQQABAAAAB1d3d3d3d3d3d30XZ3F3Z3dTcRY3dxcVd3EXbRdxd2d3cRdtF3d3d3dzcRY3d3d3d3d9F2F3Z3d3d3d3dxcXd3d3d3dxd2d3d3V2V3d3d3d3d3d1d1F213d3d3VXYTMXZ3YXdnF2EXfRcXd3cXYRd9d2F3d3cTMXZ3d3d3dxdtdw==",
         "tilemapTile": true

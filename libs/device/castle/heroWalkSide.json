@@ -10,5 +10,13 @@
         "Right3",
         "Right2",
         "Right1"
-    ]
+    ],
+    "animations": [{
+        "name": "heroWalkLeft",
+        "frames": [0, 1, 2, 3]
+    },
+    {
+        "name": "heroWalkRight",
+        "frames": [7, 6, 5, 4]
+    }]
 }
