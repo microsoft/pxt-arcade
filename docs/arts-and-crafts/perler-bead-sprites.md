@@ -2,7 +2,7 @@ Perler Bead Sprites
 
 [ posted at arcade.makecode.com/arts-and-crafts/perler-bead-sprites ]
 
-[ PerlerBeadSprites.jpg ]
+![](/static/arts-and-crafts/perler-bead-sprites/perler-bead-sprites.jpg)
 
 Perler beads are small colored plastic beads that you can assemble on a pegboard into different patterns and iron them so the beads will fuse together creating your design into a single work of art. For more information, visit the website at https://www.perler.com.
 
