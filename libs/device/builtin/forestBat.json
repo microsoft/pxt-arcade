@@ -1,0 +1,23 @@
+{
+    "width": 16,
+    "height": 16,
+    "animations": [{
+        "name": "forestBatLeft",
+        "frames": [0, 1, 2, 3]
+    },
+    {
+        "name": "forestBatAttackLeft",
+        "frames": [4, 5, 6, 7]
+    },
+    {
+        "name": "forestBatRight",
+        "frames": [0, 1, 2, 3],
+        "flippedHorizontal": true
+
+    },
+    {
+        "name": "forestBatAttackRight",
+        "frames": [4, 5, 6, 7],
+        "flippedHorizontal": true
+    }]
+}

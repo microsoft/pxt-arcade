@@ -14,5 +14,21 @@
         "WalkRight1",
         "WalkRight2",
         "WalkRight3"
-    ]
+    ],
+    "animations": [{
+        "name": "villager1WalkFront",
+        "frames": [0, 1, 2]
+    },
+    {
+        "name": "villager1WalkBack",
+        "frames": [3, 4, 5]
+    },
+    {
+        "name": "villager1WalkLeft",
+        "frames": [6, 7, 8]
+    },
+    {
+        "name": "villager1WalkRight",
+        "frames": [9, 10, 11]
+    }]
 }

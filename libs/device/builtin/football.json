@@ -8,5 +8,14 @@
         "4",
         "6",
         "7"
-    ]
+    ],
+    "animations": [{
+        "name": "footballLeft",
+        "frames": [0, 1, 2, 3, 4]
+    },
+    {
+        "name": "footballRight",
+        "frames": [0, 1, 2, 3, 4],
+        "flippedHorizontal": true
+    }]
 }
