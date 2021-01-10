@@ -1,14 +1,24 @@
-# Projectile Effects
+# Projectiles and Effects
 
 ## Introduction @unplugged
 
-Now that you have enemies and projectiles, let's give your projectiles some power!
+**Let's give our projectiles some power!**
+<hr/>
 
 ![Projectiles](/static/recipes/shark-splash/03-projectiles.gif)
 
 ## Detect sprite overlaps
 
-From ``||sprites:Sprites||``, drag the ``||sprites:on||`` ``||variables:sprite||`` ``||sprites:overlaps||``  ``||variables:otherSprite||`` block into your workspace. Click the first dropdown and select ``||sprites:Projectile||``, then click the second dropdown and select ``||sprites:Enemy||``.
+First, we need to add the code that detects when a projectile has overlapped with an enemy. 
+<hr/>
+
+🔲 From the ``||sprites:Sprites||`` category, drag the 
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` container 
+into your workspace. 
+
+🔲 Change the first kind to **Projectile** and the second kind to **Enemy**.  
+<br/>
+
 
 ```blocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -17,7 +27,15 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 
 ## Destroy the enemy
 
-From ``||sprites:Sprites||``, drag the ``||sprites:destroy||`` block into your ``||sprites:on sprite overlaps||`` blocks. Drag the ``||variables:otherSprite||`` variable into the ``||sprites:destroy sprite||``.
+In this step, we'll destroy the enemy (aka: otherSprite).
+<hr/>
+
+🔲 Drag a ``||sprites:destroy [mySprite]||`` block into the new
+**on sprite overlaps** container. 
+
+🔲 Take the ``||variables:otherSprite||`` variable from the **on sprite overlaps** header
+and snap it into the **destroy** block to replace **mySprite**.  
+<br/>
 
 ```blocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -28,7 +46,16 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 
 ## Add score
 
-From ``||info:Info||``, drag the ``||info:change score||`` block into ``||sprites:on sprite overlaps||`` to give yourself a point each time you hit an enemy.
+**Let's turn this into a real game!**
+
+After we destroy enemies with a projectile, we can add points to our score.
+<hr/>
+
+🔲 From ``||info:Info||``, drag the ``||info:change score by [1]||`` block to
+the bottom of your **on sprite overlaps** container.
+
+<br/>
+
 
 ```blocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -38,25 +65,41 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 })
 ```
 
-## Spawn projectiles
+## Projectile Effects
 
-From ``||sprites:Sprites||``, drag the ``||sprites:mySprite start effect||`` block into ``||sprites:on sprite overlaps||``. Then drag the ``||variables:sprite||`` variable into the ``||sprites:start effect||`` block. Click the dropdown to select your favorite effect!
+Just for fun, let's add an effect to make the enemies more spectacular
+when they're destroyed.
+<hr/>
+
+🔲 Find your **destroy** block inside your **on sprite overlaps** container 
+and click the **⊕**.
+
+Now you have an option for adding an effect and an amount of time that the effect will run.
+
+🔲 Choose an effect from the dropdown menu, and change **500** ms to **200**ms.
+
 
 
 ```blocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    info.changeScoreBy(1)
     // @highlight
-    sprite.startEffect(effects.bubbles)
+    mySprite.destroy(effects.spray, 200)
+    info.changeScoreBy(1)
 })
 ```
 
 ## Conclusion @unplugged
 
-Now try making your enemies move or spawn multiple kinds of enemies!
+**You're on a roll!**
+<hr/>
+
+Want to make your game even more epic?  
+Choose **A)** to learn to make your enemies move around, or  
+Choose **B)** learn to spawn multiple kinds of enemies.  
+Choose **C)** to learn to design a custom background for your game!
+
 
 |      |      |      |
 |:----:|:----:|:----:|
 |  [![Moving enemies](/static/recipes/shark-splash/02-A-enemies.gif)](#recipe:/recipes/shark-splash/02-A-enemies)  | [![Multiple enemies](/static/recipes/shark-splash/02-B-enemies.gif)](#recipe:/recipes/shark-splash/02-B-enemies) | [![Background](/static/recipes/shark-splash/04-background.png)](#recipe:/recipes/04-background) |
-| [**Moving enemies**](#recipe:/recipes/shark-splash/02-A-enemies)| [**Multiple enemies**](#recipe:/recipes/shark-splash/02-B-enemies) | [**Design a background**](#recipe:/recipes/shark-splash/04-background) |
+| [**A) Moving enemies**](#recipe:/recipes/shark-splash/02-A-enemies)| [**B) Multiple enemies**](#recipe:/recipes/shark-splash/02-B-enemies) | [**C) Design a background**](#recipe:/recipes/shark-splash/04-background) |
