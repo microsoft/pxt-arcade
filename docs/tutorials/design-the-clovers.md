@@ -2,13 +2,32 @@
 
 ## Introduction @unplugged
 
-Design your own version of the Collect the Clovers game! Draw your own background scene, design your hero character, and change the enemy and collectible sprites. Will it be a pigeon in a city, an astronaut in space, or a wizard in a castle? Use your imagination!
+**Design your own version of our Collect the Clovers game!**
+<hr/>
+You can draw your own background scene, design your main character, 
+change the enemy, and edit the sprites collected! 
+
+Will your game feature a pigeon in the city? An astronaut in space? 
+Or will you follow a wizard in a castle? 
+<hr/>
+Draw whatever takes over your imagination!
 
 ![Design the Clovers game in simulator](/static/tutorials/design-the-clovers.gif)
 
 ## Step 1 - Change the Background image
 
-Find the ``||scene:set background image||`` block in the ``||loops:on start||`` block. Click on the grey oval to open the image editor, and draw a scene using the color palette and the painting tools. **Hint**: you can erase the existing image using the **Transparent Fill** tool, or the **Eraser** tool.
+🌳 Start making the game your own by changing the background 🌳
+
+<hr/>
+
+🔲 Locate the ``||scene:set background image to [ ]||`` block inside
+the ``||loops:on start||`` container and click in the grey oval to open the image editor.
+
+🔲 Edit the scene using the color palette and the painting tools, then click **Done**.
+<hr/>
+
+>> *Tip: You can erase the existing image using a combination of the __Transparent Fill__ tool and the __Eraser__ tool.*  
+<br/>
 
 ```blocks
 // @highlight
@@ -138,7 +157,17 @@ scene.setBackgroundImage(img`
 
 ## Step 2 - Design the Player Character
 
-Find the ``||variables:set mySprite||`` block (under the ``||scene:set background image||`` block) and click on the **Princess** image to open the sprite image editor. Erase the **Princess** image using the **Eraser** tool and draw your own player character.
+🎖️ Choose your hero 🎖️
+<hr/>
+🔲 Find the ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
+block (beneath the ``||scene:set background image to [ ]||`` block) and click 
+the **Princess** image to open the sprite editor. 
+
+🔲 Erase the **Princess** using the **Eraser** tool and draw your own hero 
+(or flip the top toggle to **Gallery** and choose one that has already been created).  
+<br/>
+
+
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -285,7 +314,17 @@ scene.setBackgroundImage(img`
 ```
 ## Step 3 - Draw a Collectible Object
 
-Find the ``||variables:set projectile||`` block in the ``||game:on game update on every||`` block. Click on the **Clover** image to open the sprite image editor. Erase the **Clover** image using the **Eraser** tool and draw your own object to collect in the game.
+🍀 Change your flying objects 🍀
+<hr/>
+
+🔲 Look for the ``||game:on game update on every [5000] ms||`` container. Inside,
+you'll see the blocks that creates your collectible clovers.
+
+🔲 Click on the **Clover** to open the sprite editor and customize the item that your
+hero collects.  Click **Done** once you've finished editing the collectible sprite.  
+<br/>
+
+
 
 ```blocks
 let bee: Sprite = null
@@ -333,7 +372,15 @@ game.onUpdateInterval(5000, function () {
 
 ## Step 4 - Draw an Enemy Character
 
-Find the ``||variables:set bee||`` block (under the ``||variables:set projectile||`` block). Click on the **Bee** image to open the sprite image editor. Erase the **Bee** image using the **Eraser** tool and draw your own object to act as the enemy in your game.
+🐝 Change your Enemy 🐝
+<hr/>
+
+🔲 Also inside the ``||game:on game update on every [5000] ms||`` container,
+you'll see the blocks that create the enemy bees.
+
+🔲 Click the **Bee** sprite to open the sprite editor and customize the enemy. 
+Click **Done** once you've finished editing the enemy sprite.  
+<br/> 
 
 ```blocks
 let bee: Sprite = null
@@ -381,31 +428,106 @@ game.onUpdateInterval(5000, function () {
 
 ## Step 5 - Rename the Bee variable
 
-In the ``||variables:set bee||`` block, click on the bee drop-down menu and select ``Rename Variable...``
+In coding, it's best practice to make sure your
+[__*variable*__](#varied "a label that holds the place for something that can change")
+name accurately describes the item it represents. 
 
-Type in a name that better describes your enemy sprite and click **OK**.
+If you changed your enemy to anything other than a bee, you can choose a better
+name for that now.
+<hr/>
+
+🔲 Go back to the ``||variables:set [bee] to [...]||`` block and click on the
+word **bee**.  A dropdown will appear, allowing you to select **Rename Variable...**.
+
+🔲 Enter a name that better describes your enemy sprite and click **OK**.  
+<br/>
 
 ![Select Rename variable... in the menu](/static/tutorials/design-the-clovers/rename-variable.png)
 
+
 ## Step 6 - Change Effects
 
-When your ``||sprites:Player||`` character overlaps with the collectible or enemy sprites, there is a little visual effect that displays. Let’s customize that.
+When your hero character (**Player**) overlaps either a collectible sprite 
+or an enemy sprite, fun visual effects are triggered...let’s customize those!
+<hr/>
 
-Find the two ``||sprites:destroy otherSprite||`` blocks in the ``||sprites:on sprite of kind Player overlaps||`` blocks. Using the drop-down menu, change the effects from ``confetti`` and ``disintegrate`` to different ones. You can see what the different effects look like in the **Game Simulator** by moving your player over the collectible or enemy sprites.
+🔲 Find the ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||`` container. 
+Inside, there is a ``||sprites:destroy [otherSprite] with [confetti] effect for [100]ms||`` block. 
 
-![List of effects to choose for the block](/static/tutorials/design-the-clovers/effects.png)
+🔲 Click on **confetti** to launch a dropdown menu and choose a new effect from the list.
+
+🔲 Next, find the ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Enemy]||`` container. 
+Inside, there is a ``||sprites:destroy [otherSprite] with [disintigrate] effect for [100]ms||`` block. 
+
+🔲 Click on **disintigrate** to launch a dropdown menu and choose a new effect from the list.  
+<br/>
+
+```blocks
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    //@highlight
+    otherSprite.destroy(effects.confetti, 100)
+    music.baDing.play()
+    info.changeScoreBy(1)
+})
+```
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+       //@highlight
+    otherSprite.destroy(effects.disintegrate, 100)
+    music.pewPew.play()
+    info.changeLifeBy(-1)
+})
+
+```
+
+
 
 ## Step 7 - Change Sounds
 
-When your ``||sprites:Player||`` character overlaps with the collectible or enemy sprites, there is also a sound that plays. Let’s change those sound effects.
+When your hero character (**Player**) overlaps either a collectible sprite 
+or an enemy sprite, there's also a meaningful sound. 🎶🎵
 
-Find the ``||music:play sound||`` blocks (under the ``||sprites:destroy otherSprite||`` blocks). Using the drop-down menu, change the sounds from ``ba ding`` and ``pew pew`` to different ones.
+Here's how to change those.
+<hr/>
 
-![List of sounds to choose for the block](/static/tutorials/design-the-clovers/sounds.png)
+🔲 Find the ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||`` container. 
+Inside, there is a ``||music:play sound [ba ding]||`` block. 
+
+🔲 Click on **ba ding** to launch a dropdown menu and choose a new sound from the list.
+
+🔲 Next, find the ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Enemy]||`` container. 
+Inside, there is a  ``||music:play sound [pew pew]||`` block. 
+
+🔲 Click on **pew pew** to launch a dropdown menu and choose a new sound from the list.  
+<br/>
+
+```blocks
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.hearts, 100)
+        //@highlight
+    music.baDing.play()
+    info.changeScoreBy(1)
+})
+```
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.spray, 100)
+           //@highlight
+    music.pewPew.play()
+    info.changeLifeBy(-1)
+})
+
+```
+
 
 ## Step 8 - Play your Game!
 
-That’s it! Now try playing your game in the full screen simulator. You can also try downloading your game to a hardware device, or **Share** your game with others!
+🌟 **Great Job** 🌟
+
+Now try playing your game in the full screen simulator.   
+You can also **Share** your game with friends!
 
 ```template
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
@@ -604,3 +726,4 @@ game.onUpdateInterval(5000, function () {
     bee.setKind(SpriteKind.Enemy)
 })
 ```
+
