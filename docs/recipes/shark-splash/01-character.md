@@ -2,13 +2,26 @@
 
 ## Introduction @unplugged
 
-Let's make a game! First, we'll create a main character that shoots some projectiles. Maybe that's a duck that shoots bubbles, or a monkey throwing bananas, or a cat that spits hairballs--it's up to you!
+**Let's make a game!**
+<hr/>
 
-![Duck bubbles](/static/recipes/shark-splash/01-character.gif)
+First, we'll create a main character that shoots projectiles.  
+That could be a shark that shoots bubbles, a monkey that tosses bananas, 
+or a cat that spits hairballs--it's up to you!
+
+![Shark bubbles](/static/recipes/shark-splash/shark1.gif)
 
 ## Set the scene
 
-From ``||scene:Scene||``, drag the ``||scene:set background color||`` block into the ``||loops:on start||`` block on your workspace and select a background color for your game.
+🌊 First, let's set the scene 🌊
+<hr/>
+
+🔲 From the ``||scene:Scene||`` category, drag out the 
+``||scene:set background color to [ ]||`` block and snap it into the 
+``||loops:on start||`` container that is already in your workspace.
+
+ 🔲 Click inside the grey oval to choose a background color for your game.  
+ <br/>
 
 ```blocks
 // @highlight
@@ -17,54 +30,73 @@ scene.setBackgroundColor(8)
 
 ## Draw your hero
 
-From ``||sprites:Sprites||``, drag the ``||variables:set mySprite to||`` block into ``||loops:on start|``. Click on the grey box in ``||variables:set mySprite to||`` and then select **Gallery** in the image editor. Choose your hero!
+🎖️ Now, let's add a hero to the game 🎖️
+<hr/>
+
+🔲 From the ``||sprites:Sprites||`` category, drag out a
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and 
+snap it into the bottom of the ``||loops:on start|`` container. 
+
+🔲 Click on the grey box inside the new block to open the sprite editor.
+
+🔲 Draw a character for your game or toggle to **Gallery** 
+and choose one that has been created for you.
 
 ```blocks
 scene.setBackgroundColor(8)
 // @highlight
 let mySprite = sprites.create(img`
-    . . . . . . . . . . b 5 b . . .
-    . . . . . . . . . b 5 b . . . .
-    . . . . . . . . . b c . . . . .
-    . . . . . . b b b b b b . . . .
-    . . . . . b b 5 5 5 5 5 b . . .
-    . . . . b b 5 d 1 f 5 5 d f . .
-    . . . . b 5 5 1 f f 5 d 4 c . .
-    . . . . b 5 5 d f b d d 4 4 . .
-    b d d d b b d 5 5 5 4 4 4 4 4 b
-    b b d 5 5 5 b 5 5 4 4 4 4 4 b .
-    b d c 5 5 5 5 d 5 5 5 5 5 b . .
-    c d d c d 5 5 b 5 5 5 5 5 5 b .
-    c b d d c c b 5 5 5 5 5 5 5 b .
-    . c d d d d d d 5 5 5 5 5 d b .
-    . . c b d d d d d 5 5 5 b b . .
-    . . . c c c c c c c c b b . . .
+...........fffcc...........
+...........fbbbbcfffffffff.
+............fbfffbbbbbbbbbf
+............ffbbbbffb111bbf
+..........ffcbbbbbff11111bf
+.........fcccbcbcbb11cccc1f
+ccccc...fcccbcbcbbb1c1c1cf.
+cbbddccfccccbcbcbbb1333c...
+.ccbddbcccccbbbbbbb1c333c..
+..ccbbcccccccbbbbb11c133c..
+..fccbffccccccbbbb111c31cc.
+..fccf.cbbcccccbbbc111111c.
+.fcbbf..cdddddfbbbc1111cc..
+.fbbf....cdddfbbdbffccc....
+fbbf......ccfbbdbf.........
+fff.........fffff..........
 `, SpriteKind.Player)
 ```
 
 ## Control your hero
 
-From ``||controller:Controller||``, drag the ``||controller:move mySprite with buttons||`` block **after** ``||variables:set mySprite to||``. This will allow you to move your sprite around the screen. Try it out in the simulator using the arrow keys on your keyboard or by clicking the joystick.
+Now, let's include a way to move the sprite with the controller buttons. 
+<hr/>
+
+🔲 From the ``||controller:Controller||`` category, drag a 
+``||controller:move [mySprite] with buttons||`` block into the **bottom** of the 
+``||loops:on start||`` container. 
+<hr/>
+** Now you can move your sprite around the screen!**  
+Try it out in the simulator by clicking the joystick, using
+the arrow keys on your keyboard or with the **W A S D** keys.
 
 ```blocks
 scene.setBackgroundColor(8)
 let mySprite = sprites.create(img`
-    . . . . . . . . . . b 5 b . . .
-    . . . . . . . . . b 5 b . . . .
-    . . . . . . . . . b c . . . . .
-    . . . . . . b b b b b b . . . .
-    . . . . . b b 5 5 5 5 5 b . . .
-    . . . . b b 5 d 1 f 5 5 d f . .
-    . . . . b 5 5 1 f f 5 d 4 c . .
-    . . . . b 5 5 d f b d d 4 4 . .
-    b d d d b b d 5 5 5 4 4 4 4 4 b
-    b b d 5 5 5 b 5 5 4 4 4 4 4 b .
-    b d c 5 5 5 5 d 5 5 5 5 5 b . .
-    c d d c d 5 5 b 5 5 5 5 5 5 b .
-    c b d d c c b 5 5 5 5 5 5 5 b .
-    . c d d d d d d 5 5 5 5 5 d b .
-    . . c b d d d d d 5 5 5 b b . .
-    . . . c c c c c c c c b b . . .
+...........fffcc...........
+...........fbbbbcfffffffff.
+............fbfffbbbbbbbbbf
+............ffbbbbffb111bbf
+..........ffcbbbbbff11111bf
+.........fcccbcbcbb11cccc1f
+ccccc...fcccbcbcbbb1c1c1cf.
+cbbddccfccccbcbcbbb1333c...
+.ccbddbcccccbbbbbbb1c333c..
+..ccbbcccccccbbbbb11c133c..
+..fccbffccccccbbbb111c31cc.
+..fccf.cbbcccccbbbc111111c.
+.fcbbf..cdddddfbbbc1111cc..
+.fbbf....cdddfbbdbffccc....
+fbbf......ccfbbdbf.........
+fff.........fffff..........
 `, SpriteKind.Player)
 // @highlight
 controller.moveSprite(mySprite)
@@ -72,17 +104,26 @@ controller.moveSprite(mySprite)
 
 ## Spawn projectiles
 
-Now lets have our hero shoot some projectiles! Find ``||controller:on A button pressed||`` in ``||controller:Controller||`` and drag it into the workspace.
+**Time to blow some bubbles!** 
+<hr/>
 
-```blocks
-// @highlight
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-})
-```
+🔲 From the ``||controller:Controller||`` category, drag a 
+``||controller:on [A] button [pressed]||`` container into the workspace.  
 
-## Draw your projectile
+🔲 From ``||sprites:Sprites||``, drag out 
+``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||`` 
+and snap it into the new container. 
 
-From ``||sprites:Sprites||`` drag ``||variables:projectile from mySprite||`` into the ``||controller:on A button pressed||``. Set the ``||sprites:vy||`` value to `0`, then click on the grey square to open the image editor and draw your projectile. Try shooting the projectile in the simulator using your keyboard or click the **A** button.
+🔲  Click on the grey square in your new block to open the 
+sprite editor and draw your projectile. 
+
+🔲 To keep the projectile from floating down as it moves, 
+set the ``||sprites:vy||`` value to `0`.
+<hr/>
+
+Try shooting the projectile in the simulator using your keyboard or 
+click the **A** button.
+
 
 ```blocks
 let mySprite: Sprite = null
@@ -107,10 +148,16 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Conclusion @unplugged
 
-Now that you have a hero character, let's customize your game. Maybe you want to add some villains who are attacking your character, or maybe you want to develop the scene of your game--it's up to you!
+**Now that you have a hero character, you can go on to customize your game.**
+
+Maybe you want to  
+A) Add some villains to attack your character, or  
+B) Bevelop the scene where your game takes place
+
+The decision is up to you!
 
 | |      | |      | |
 |--|:----:|-- |:----:|--|
 | &emsp;&emsp;&emsp;&emsp; | [![Enemies](/static/recipes/shark-splash/02-enemies.gif)](#recipe:/recipes/shark-splash/02-enemies) | &emsp;&emsp; | [![Background](/static/recipes/shark-splash/04-background.png)](#recipe:/recipes/shark-splash/04-background) | &emsp;&emsp;&emsp;&emsp; |
-| | [**Create enemies**](#recipe:/recipes/shark-splash/02-enemies) | | [**Design a background**](#recipe:/recipes/shark-splash/04-background) | |
+| | [**A) Create enemies**](#recipe:/recipes/shark-splash/02-enemies) | | [**B) Design a background**](#recipe:/recipes/shark-splash/04-background) | |
 | | An enemy appears! Fight! | | Draw a world for your hero to explore | |
