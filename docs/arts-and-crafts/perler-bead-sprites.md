@@ -66,7 +66,7 @@ You can purchase Perler Beads online or at your local craft store.
 
 ![Ironing the beads](/static/arts-and-crafts/perler-bead-sprites/iron-beads.jpg)
 
-* Peel away your parchment paper and voila! Your MakeCode Arcade Sprite brought to life!
+* Peel away your parchment paper and voila! Your MakeCode Arcade Sprite brought to life! 😊
 
 ![Choose and assemble the beads](/static/arts-and-crafts/perler-bead-sprites/bead-sprite.jpg)
 
