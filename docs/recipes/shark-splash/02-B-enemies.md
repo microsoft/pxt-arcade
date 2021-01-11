@@ -2,16 +2,20 @@
 
 ## Introduction @unplugged
 
-Use the ``||math:percent chance||`` block to assign a random image
-to your enemies.
-
+**Let's add a little excitement by choosing from multiple enemy images!**
+<hr/>
 ![Multiple Enemies](/static/recipes/shark-splash/02-B-enemies.gif)
 
 ## Step 1
 
-Drag an ``||sprites:on created||`` block into the workspace. Change the kind in the
-dropdown to ``||sprites:Enemy||``. If you already have an ``||sprites:on created||`` block
-for enemies, use that one instead.
+If you already have a block that edits your enemies as they're created, use the one you've got.
+Otherwise, you'll need to add one.
+<hr/>
+
+🔲 Drag an ``||sprites:on created [sprite] of kind [Player]||`` container 
+into the workspace. 
+
+🔲 Change the kind to **Enemy**.
 
 ```blocks
 sprites.onCreated(SpriteKind.Enemy, function (sprite) {
@@ -21,23 +25,18 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 
 ## Step 2
 
-Inside the ``||sprites:on created||`` block, place an ``||logic:if then else||`` statement.
+If we want to make about half of our enemies one kind of sprite, 
+then have all the others be a second sprite, we'll can use an 
+**if/else** statement with a 50% chance of being true.
+<hr/>
 
-```blocks
-sprites.onCreated(SpriteKind.Enemy, function (sprite) {
-    if (true) {
+🔲 Snap a ``||logic:if <true> then / else||`` statement into the bottom 
+of your **on created** container.
 
-    }
-    else {
+🔲 Drag a ``||math:[0] % chance||`` block into the **if/then** clause to 
+replace **`<true>`**.
 
-    }
-})
-```
-
-## Step 3
-
-Place a ``||math:% chance||`` block as the condition inside the ``||logic:if then else||``.
-Change the percentage ``||math:%||`` to `50`.
+🔲 Change the chance percent from **0** to **50**.
 
 ```blocks
 sprites.onCreated(SpriteKind.Enemy, function (sprite) {
@@ -52,10 +51,22 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 
 ## Step 3
 
-Place a ``||sprites:set image to||`` block into the first clause of ``||logic:if then else||``.
-Drag the ``||variables:sprite||`` variable from the ``||sprites:on created||`` block and use it as
-the sprite for ``||sprites:set image to||``. Click on the
-grey square to open the sprite editor and draw an image for the enemy.
+As an example, suppose we want half of our enemies to be hermit crabs and
+the other half to be sea snakes.  Here is how we would do that.
+<hr/>
+
+🔲 Snap a ``||sprites:set [mySprite] image to [ ]||`` block into the 
+empty **if/then** clause (the top section of the **if/else** container.)
+
+🔲 Grab the ``||variables:sprite||`` variable from the header of the 
+**on created** container and drag it to replace ``||variables:mySprite||``
+in the **set image** block.
+
+🔲 Click the grey square in the **set image** block
+to open the sprite editor. Toggle over to the **Gallery** and select the 
+hermit crab (or whatever sprite works for the enemy of your game.)
+
+
 
 ```blocks
 sprites.onCreated(SpriteKind.Enemy, function (sprite) {
@@ -87,10 +98,17 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 
 ## Step 4
 
-Place a second ``||sprites:set image to||`` block into the else clause of ``||logic:if then else||``.
-Drag the ``||variables:sprite||`` variable from the ``||sprites:on created||`` block and use it as
-the sprite for the second ``||sprites:set image to||`` too. Click on the
-grey square to open the sprite editor and draw a different image for the enemy.
+**Now for the snakes!**
+<hr/>
+
+🔲 Duplicate the **set image** block we just made. 
+
+🔲 Drag the copy into the empty **else** clause 
+(the bottom section of the **if/else** container.)
+
+🔲 Click on the hermit crab to open the sprite editor.  Toggle to 
+**Gallery** and change the crab to a snake (or
+whatever other enemy sprite works for your game.)
 
 ```blocks
 sprites.onCreated(SpriteKind.Enemy, function (sprite) {
@@ -116,22 +134,22 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
     }
     else {
         sprite.setImage(img`
-            . . . . . . . . . . . . . c c f f f . . . . . . . . . . . . . .
-            . . . . . . . . . . . c c d d b c f . . . . . . . . . . . . . .
-            . . . . . . . . . . c c d d b b f . . . . . . . . . . . . . . .
-            . . . . . . . . . . f c c b b c f . . . . . . . . . . . . . . .
-            . . . . . f f f f f c c c c c c f f . . . . . . . . . c c c . .
-            . . . f f b b b b b b b c b b b b c f f f . . . . c c b b c . .
-            . . f b b b b b b b b c b c b b b b c c c f f . c d b b c . . .
-            f f b b b b b b f f b b c b c b b b c c c c c f c d b b f . . .
-            f b c b b b 1 1 f f 1 b c b b b b b c c c c c f f b b f . . . .
-            f b b b 1 1 1 1 1 1 1 1 b b b b b c c c c c c c b b c f . . . .
-            . f b 1 1 1 3 3 c c 1 1 b b b b c c c c c c c c c c c f . . . .
-            . . f c c c 3 1 c 1 1 1 b b b c c c c c b d b f f b b c f . . .
-            . . . f c 1 3 c 1 1 1 c b b b f c d d d d c c . . f b b f . . .
-            . . . . f c c c 1 1 1 f b d b b c c d c c . . . . . f b b f . .
-            . . . . . . . . c c c c f c d b b c c . . . . . . . . f f f . .
-            . . . . . . . . . . . . . f f f f f . . . . . . . . . . . . . .
+           . . . . . c c c c c c c . . . . 
+        . . . . c 6 7 7 7 7 7 6 c . . . 
+        . . . c 7 c 6 6 6 6 c 7 6 c . . 
+        . . c 6 7 6 f 6 6 f 6 7 7 c . . 
+        . . c 7 7 7 7 7 7 7 7 7 7 c . . 
+        . . f 7 8 1 f f 1 6 7 7 7 f . . 
+        . . f 6 f 1 f f 1 f 7 7 7 f . . 
+        . . . f f 2 2 2 2 f 7 7 6 f . . 
+        . . c c f 2 2 2 2 7 7 6 f c . . 
+        . c 7 7 7 7 7 7 7 7 c c 7 7 c . 
+        c 7 1 1 1 7 7 7 7 f c 6 7 7 7 c 
+        f 1 1 1 1 1 7 6 f c c 6 6 6 c c 
+        f 1 1 1 1 1 1 6 6 c 6 6 6 c . . 
+        f 6 1 1 1 1 1 6 6 6 6 6 6 c . . 
+        . f 6 1 1 1 1 1 6 6 6 6 c . . . 
+        . . f f c c c c c c c c . . . . 
         `)
     }
 })
@@ -139,9 +157,15 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 
 ## Conclusion @unplugged
 
-Now let's add code to destroy the enemies with your projectiles! Or, if you're feeling creative, add a background to set the scene.
+**Thrilling!**
+<hr/>
+Feel like making your game even more epic?
+
+Choose **A)** to learn to destroy enemies with projectiles!   
+Choose **B)** to learn to add multiple lives to your game.  
+Choose **C)** if you want to set the scene with background art!  
 
 |      |      |      |
 |:----:|:----:|:----:|
 |  [![Projectiles](/static/recipes/shark-splash/03-projectiles.gif)](#recipe:/recipes/shark-splash/03-projectiles) | [![Add lives](/static/recipes/shark-splash/02-C-enemies.gif)](#recipe:/recipes/shark-splash/02-C-enemies) | [![Background](/static/recipes/shark-splash/04-background.png)](#recipe:/recipes/04-background) |
-| [**Projectile effects**](#recipe:/recipes/shark-splash/03-projectiles) | [**Add lives**](#recipe:/recipes/shark-splash/02-C-enemies) | [**Design a background**](#recipe:/recipes/shark-splash/04-background) |
+| [**A) Projectile effects**](#recipe:/recipes/shark-splash/03-projectiles) | [**B) Add lives**](#recipe:/recipes/shark-splash/02-C-enemies) | [**C) Design a background**](#recipe:/recipes/shark-splash/04-background) |
