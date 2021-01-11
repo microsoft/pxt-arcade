@@ -2,14 +2,23 @@
 
 ## Introduction @unplugged
 
-Use the ``||sprites:on created||`` event to make the enemies in your game move!
+Enemies are too easy to reach when they're sitting still. 
+
+**Let's get them moving.**
+<hr/>
 
 ![Moving Enemies](/static/recipes/shark-splash/02-A-enemies.gif)
 
 ## Step 1
 
-Drag an ``||sprites:on created||`` block into the workspace. Change the kind
-dropdown to ``||sprites:Enemy||``.
+First, we need to add the code to tell the program *when* to get 
+an enemy moving.
+<hr/>
+
+🔲 Drag an ``||sprites:on created [sprite] of kind [Player]||`` container 
+into the workspace. 
+
+🔲 Change the kind to ``||sprites:Enemy||``.
 
 ```blocks
 sprites.onCreated(SpriteKind.Enemy, function (sprite) {
@@ -19,8 +28,15 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 
 ## Step 2
 
-Inside the ``||sprites:on created||`` block, place a ``||sprites:set velocity||`` block.
-Drag the ``||variables:sprite||`` variable from the ``||sprites:on created||`` block and use it as the sprite inside of ``||sprites:set velocity||``.
+To get the enemy moving left, they'll need a negative 
+[__*velocity*__](#whatVel "speed in a direction") along the x-axis (**vx**).
+<hr/>
+
+🔲 Snap a ``||sprites:set [mySprite] velocity to vx [50] vy [50]||`` block into
+the **on created** block. 
+
+🔲 Replace  ``||variables:mySprite||`` with the ``||variables:sprite||`` variable
+from the header of the **on created** container.
 
 ```blocks
 sprites.onCreated(SpriteKind.Enemy, function (sprite) {
@@ -30,8 +46,14 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 
 ## Step 3
 
-Change the values in the ``||sprites:set velocity||`` block to set the speed and direction of your
-enemy sprite. In this example, we will set ``||sprites:vx||`` to `-50` and ``||sprites:vy||`` to `0`.
+If we leave the velocity the way it is, enemies will drift toward the
+bottom right. Let's change the arguments so they move straight to the left. 
+<hr/>
+
+🔲 To stop the downward drift, change **vy** of the **set sprite velocity** to **0**.
+
+🔲 To change their direction from right to left, change **vx** of the **set sprite velocity** 
+to **-50**.
 
 ```blocks
 sprites.onCreated(SpriteKind.Enemy, function (sprite) {
@@ -41,20 +63,21 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 
 ## Step 4
 
-Place a ``||sprites:set stay in screen||`` block below the ``||sprites:set velocity||`` block (this is called a sprite **flag**).
-Just like before, drag the ``||variables:sprite||`` variable from the ``||sprites:on created||`` block and use it as the sprite for ``||sprites:set stay in screen||``.
+Once the enemies travel out of sight, they won't ever come back. 
+Let's clean them up by telling them to auto destroy once 
+they leave the screen.
+<hr/>
 
+🔲 Snap a ``||sprites:set [mySprite] [stay in screen] <OFF>||`` block 
+into the **end** of the **on created** container.
 
-```blocks
-sprites.onCreated(SpriteKind.Enemy, function (sprite) {
-    sprite.setVelocity(-50, 0)
-    sprite.setFlag(SpriteFlag.StayInScreen, false)
-})
-```
+🔲 Replace  ``||variables:mySprite||`` with the ``||variables:sprite||`` variable
+from the header of the **on created** container.
 
-## Step 5
+🔲 Click ``||sprites:stay in screen||`` to open a dropdown.  Select ``||sprites:auto destroy||``.
 
-Using the dropdown in the ``||sprites:set stay in screen||`` block, change ``||sprites:stay in screen||`` flag to ``||sprites:auto destroy||``. Switch the setting for that from **OFF** to **ON**. This setting will cause all of the enemies to get automatically destroyed when they travel outside of the screen.
+🔲 Toggle **`<OFF>`** to **`<ON>`**.  
+<br/>
 
 ```blocks
 sprites.onCreated(SpriteKind.Enemy, function (sprite) {
@@ -65,9 +88,13 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 
 ## Conclusion @unplugged
 
-Now let's add code to destroy the enemies with your projectiles! Or, if you're feeling creative, add a background to set the scene.
+**Ready to keep going?!?**
+
+Choose **A)** to add power to your projectiles.  
+Choose **B)** to learn to spawn lots of enemies.  
+Choose **C)** to find out how to make the background your own!  
 
 |      |      |      |
 |:----:|:----:|:----:|
 |  [![Projectiles](/static/recipes/shark-splash/03-projectiles.gif)](#recipe:/recipes/shark-splash/03-projectiles) | [![Multiple enemies](/static/recipes/shark-splash/02-B-enemies.gif)](#recipe:/recipes/shark-splash/02-B-enemies) | [![Background](/static/recipes/shark-splash/04-background.png)](#recipe:/recipes/04-background) |
-| [**Projectile effects**](#recipe:/recipes/shark-splash/03-projectiles) | [**Multiple enemies**](#recipe:/recipes/shark-splash/02-B-enemies) | [**Design a background**](#recipe:/recipes/shark-splash/04-background) |
+| [**A) Projectile effects**](#recipe:/recipes/shark-splash/03-projectiles) | [**B) Multiple enemies**](#recipe:/recipes/shark-splash/02-B-enemies) | [**C) Design a background**](#recipe:/recipes/shark-splash/04-background) |
