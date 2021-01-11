@@ -2,13 +2,26 @@
 
 ## Introduction @unplugged
 
-Let's build a world for your hero to walk around in!
+Time to design a world for your hero to wander around in.
+<hr/>
 
 ![Background](/static/recipes/shark-splash/04-background.png)
 
 ## Add a background
+A background image can give your world extra pizzaz. 
+<hr/> 
 
-From ``||scene:Scene||``, drag the the ``||scene:set background image||`` block into ``||loops:on start||``. Click on the gray square to open the image editor and draw a background for your game.
+🔲 Open the ``||scene:Scene||`` category. Grab a ``||scene:set background image to [ ]||`` 
+block and snap it into the ``||loops:on start||`` container right below the 
+**set background color** block. 
+
+🔲 Click on the gray square in the new block to open the image editor 
+and draw a background for your game.
+<hr/>
+
+>> *Tip: You might need to play around with the image editor 
+to figure out what everything does, but don't be afraid! If you make a mess, 
+you can always toss the image and try again.*
 
 ```blocks
 
@@ -138,7 +151,14 @@ scene.setBackgroundImage(img`
 
 ## Decorative sprites
 
-Next, let's add some sprites to decorate your game. From ``||loops:Loops||``, drag the ``||loops:for index from||`` block into ``||loops:on start|`` and set the ``||variables:index||`` range to `10`.
+There's more to a scene than a backdrop. Let's add a few decorations.
+<hr/>
+
+🔲 Drag out a ``||loops:for [index] from 0 to [4]||`` loop and snap it into the 
+bottom of the **on start** container.
+
+🔲 Change the max index from **4** to **9**.  
+<br/>
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -263,13 +283,29 @@ scene.setBackgroundImage(img`
     b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b
     b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b
 `)
-for (let index = 0; index <= 10; index++) {
+for (let index = 0; index <= 9; index++) {
 }
 ```
 
 ## Add background sprite
 
- From ``||sprites:Sprites||``, drag the ``||variables:set mySprite to||`` block into ``||loops:for index from 0 to 10|``. Click on the grey box and in the image editor gallery, select a background object like a rock or some seaweed.
+ Now we have a loop that will run 10 times.  
+ 
+ If we put code that creates a sprite
+ inside of that loop, we'll create 10 new sprites. 
+ <hr/>
+ 
+ 🔲 From the ``||sprites:Sprites||`` category, drag a 
+ ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
+ block into the empty **for index** loop.
+
+ 🔲 Click on the grey box inside of the new block to enter the 
+ sprite editor.
+
+🔲 Draw a decoration for your scene or toggle to the **Gallery** and pick
+one that has already been created for you, like a rock or seaweed.  
+<br/>
+
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -394,7 +430,7 @@ scene.setBackgroundImage(img`
     b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b
     b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b
 `)
-for (let index = 0; index <= 10; index++) {
+for (let index = 0; index <= 9; index++) {
     let mySprite = sprites.create(img`
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
@@ -450,7 +486,19 @@ for (let index = 0; index <= 10; index++) {
 
 ## Update sprite y-position
 
-From ``||sprites:Sprites||``, drag the ``||sprites:set mySprite position||`` block into ``||loops:for index from 0 to 10||`` loop. Change the ``||sprites:y||`` value to `96`.
+
+It might still look like you only have one sprite. That's because all 10 
+were spawned in the exact same location. 
+
+Let's spread them around a little.
+<hr/>
+
+🔲 From the ``||sprites:Sprites||`` category, drag 
+a ``||sprites:set [mySprite] position to x [0] y [0]||`` block into the
+bottom of the **for index from** loop.
+
+🔲 In the new block, change **y** position to **96**.  
+<br/>
 
 
 ```blocks
@@ -576,7 +624,7 @@ scene.setBackgroundImage(img`
     b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b
     b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b
 `)
-for (let index = 0; index <= 10; index++) {
+for (let index = 0; index <= 9; index++) {
     let mySprite = sprites.create(img`
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
@@ -634,7 +682,19 @@ for (let index = 0; index <= 10; index++) {
 
 ## Update sprite x-position
 
-From ``||math:Math||``, drag the ``||math:0 x 0||`` block in as the ``||sprites:x||`` value of ``||sprites:set mySprite position||``. Change the first number to `16`, and drag the ``||variables:index||`` block for the second number. Continue adding decorations until you are satisifed with your scene!
+With a little math, we can spread the decorations evenly along the bottom
+of the screen.
+<hr/>
+
+🔲 From the ``||math:Math||`` category, grab a ``||math:[0] [x] [0]||`` block.
+
+🔲 Drag the multiplication block in to replace the **0** for the **x** value of the 
+position block.
+
+🔲 In the multiplication block, change the first number to **16**, 
+then drag the ``||variables:index||`` variable from the **for index from** header
+to be the second number.   
+<br/>
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -759,7 +819,7 @@ scene.setBackgroundImage(img`
     b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b
     b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b
 `)
-for (let index = 0; index <= 10; index++) {
+for (let index = 0; index <= 9; index++) {
     let mySprite = sprites.create(img`
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
@@ -818,7 +878,11 @@ for (let index = 0; index <= 10; index++) {
 
 ## Conclusion @unplugged
 
-Next, let's create some enemies for our hero to fight!
+**Your game is looking extra fancy, now!**
+
+If you haven't yet, let's create some enemies for our hero to fight!
+<hr/>
+
 
 | |
 |:--:|
