@@ -34,7 +34,7 @@ into real world art! Please drop us a message if you know another tool to be add
 [
     {
         "name": "KittyWumpus",
-        "description": "A mechcanical adventure companion that joins with you in your game.",
+        "description": "An adventure companion that joins with you in your game.",
         "url": "https://imakeathome.us/kittywumpus",
         "imageUrl": "/static/arts-and-crafts/kitty-wumpus.jpg"
     }
