@@ -28,6 +28,18 @@ into real world art! Please drop us a message if you know another tool to be add
 ]
 ```
 
+## Toys and Pets
+
+```codecard
+[
+    {
+        "name": "KittyWumpus",
+        "description": "An adventure companion that joins with you in your game.",
+        "url": "https://imakeathome.us/kittywumpus",
+        "imageUrl": "/static/arts-and-crafts/kitty-wumpus.jpg"
+    }
+]
+```
 
 ## See Also
 
@@ -35,3 +47,4 @@ into real world art! Please drop us a message if you know another tool to be add
 * [LEGO Bricks Murals](/arts-and-crafts/lego-bricks-murals)
 * [Laser-cut Stencils](/arts-and-crafts/laser-cut-stencils)
 * [Arcade Stencilr](https://arcade-stencils.glitch.me/)
+* [KittyWumpus](https://imakeathome.us/kittywumpus)
