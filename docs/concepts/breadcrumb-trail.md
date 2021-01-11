@@ -35,6 +35,7 @@ Find ``||loops:for element value of list||``
 and place it after the ``||scene:set tilemap to||`` block.
 
 ```blocks
+let list: number[] = []
 tiles.setTilemap(tilemap`level_1`)
 for (let value of list) {
 
