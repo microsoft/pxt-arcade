@@ -1,0 +1,13 @@
+{
+    "width": 16,
+    "height": 16,
+    "animations": [{
+        "name": "hermitCrabAwakenLeft",
+        "frames": [0, 1, 2, 3, 4, 5]
+    },
+    {
+        "name": "hermitCrabAwakenRight",
+        "frames": [0, 1, 2, 3, 4, 5],
+        "flippedHorizontal": true
+    }]
+}

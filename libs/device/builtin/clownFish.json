@@ -1,0 +1,13 @@
+{
+    "width": 16,
+    "height": 16,
+    "animations": [{
+        "name": "clownFishLeft",
+        "frames": [0, 1, 2, 3]
+    },
+    {
+        "name": "clownFishRight",
+        "frames": [0, 1, 2, 3],
+        "flippedHorizontal": true
+    }]
+}

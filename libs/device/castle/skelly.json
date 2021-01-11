@@ -18,5 +18,29 @@
         "AttackRight1",
         "AttackRight2",
         "WalkRight2"
-    ]
+    ],
+    "animations": [{
+        "name": "skellyWalkFront",
+        "frames": [0, 1, 2, 3]
+    },
+    {
+        "name": "skellyAttackFront",
+        "frames": [4, 5, 6, 7]
+    },
+    {
+        "name": "skellyWalkLeft",
+        "frames": [8, 11]
+    },
+    {
+        "name": "skellyAttackLeft",
+        "frames": [9, 10]
+    },
+    {
+        "name": "skellyWalkRight",
+        "frames": [12, 15]
+    },
+    {
+        "name": "skellyAttackRight",
+        "frames": [13, 14]
+    }]
 }

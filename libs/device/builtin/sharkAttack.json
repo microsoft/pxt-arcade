@@ -1,4 +1,13 @@
 {
     "width": 36,
-    "height": 16
+    "height": 16,
+    "animations": [{
+        "name": "sharkAttackLeft",
+        "frames": [0, 1, 2, 3, 4, 5]
+    },
+    {
+        "name": "sharkAttackRight",
+        "frames": [0, 1, 2, 3, 4, 5],
+        "flippedHorizontal": true
+    }]
 }
