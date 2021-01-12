@@ -24,6 +24,12 @@ into real world art! Please drop us a message if you know another tool to be add
         "description": "Cut out stencils from your sprites and paint them anywhere!",
         "url": "/arts-and-crafts/laser-cut-stencils",
         "imageUrl": "/static/arts-and-crafts/laser-cut-stencils.jpg"
+    },
+    {
+        "name": "Perler Bead Sprites",
+        "description": "Make Perler Bead images from the sprites in your games.",
+        "url": "/arts-and-crafts/perler-bead-sprites",
+        "imageUrl": "/static/arts-and-crafts/perler-bead-sprites.jpg"
     }
 ]
 ```

@@ -37,7 +37,7 @@ You can purchase Perler Beads online or at your local craft store.
 
 ![Paste the image](/static/arts-and-crafts/perler-bead-sprites/paste-image.gif)
 
-* In the Filename Prefix box, instead of “strawberry”, type a name in for your image.
+* In the Filename Prefix box, instead of "strawberry", type a name in for your image.
 * Click the Generate button.
 
 ![Name the image](/static/arts-and-crafts/perler-bead-sprites/filename.png)
