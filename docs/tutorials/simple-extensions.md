@@ -45,46 +45,11 @@ and set them as ``Walls``.
 ![Animation showing completion of this step](/static/tutorials/simple-extensions/create-tilemap.gif)
 
 ```blocks
-namespace myTiles {
-    //% blockIdentity=images._tile
-    export const tile0 = img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `
-}
 let myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
 myCorg.verticalMovement()
 myCorg.updateSprite()
-tiles.setTilemap(tiles.createTilemap(
-    hex`1400080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001010101010100000000000000000000000000000000000000000001010101000000000000000000000000000000000000000000000000000000000101010101010101010101000000000000000000`,
-    img`
-        . . . . . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . . . . . .
-        . 2 2 2 2 2 2 . . . . . . . . . . . . .
-        . . . . . . . . 2 2 2 2 . . . . . . . .
-        . . . . . . . . . . . . . . . . . . . .
-        2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . .
-    `,
-    [myTiles.tile0,sprites.builtin.oceanDepths4,sprites.builtin.oceanDepths0],
-    TileScale.Sixteen
-))
+tiles.setTilemap(tilemap`level_0`)
 ```
 
 ## Step 6
@@ -92,47 +57,12 @@ tiles.setTilemap(tiles.createTilemap(
 To make it so the camera follows the corgio as it leaves the screen, add ``||corgio:make camera follow myCorg left and right||`` from ``||corgio:Corgio||`` and put it under ``||variables:set myCorg to||``.
 
 ```blocks
-namespace myTiles {
-    //% blockIdentity=images._tile
-    export const tile0 = img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `
-}
 let myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
 myCorg.verticalMovement()
 myCorg.updateSprite()
 myCorg.follow()
-tiles.setTilemap(tiles.createTilemap(
-    hex`1400080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001010101010100000000000000000000000000000000000000000001010101000000000000000000000000000000000000000000000000000000000101010101010101010101000000000000000000`,
-    img`
-        . . . . . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . . . . . .
-        . 2 2 2 2 2 2 . . . . . . . . . . . . .
-        . . . . . . . . 2 2 2 2 . . . . . . . .
-        . . . . . . . . . . . . . . . . . . . .
-        2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . .
-    `,
-    [myTiles.tile0,sprites.builtin.oceanDepths4,sprites.builtin.oceanDepths0],
-    TileScale.Sixteen
-))
+tiles.setTilemap(tilemap`level_0`)
 ```
 
 ## Step 7
@@ -141,48 +71,12 @@ At the end of the tilemap, draw a column that is a different tile than the other
 This will represent the goal for the player.
 
 ```blocks
-namespace myTiles {
-    //% blockIdentity=images._tile
-    export const tile0 = img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `
-}
 let myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
 myCorg.verticalMovement()
 myCorg.updateSprite()
 myCorg.follow()
-tiles.setTilemap(tiles.createTilemap(
-    hex`1400080000000000000000000000000000000000000000030000000000000000000000000000000000000003000000000000000000000000000000000000000300000000000000000000000000000202020200030001010101010100000000000000000200000003000000000000000001010101020202020000000300000000000000000000000002000000000000030101010101010101010101020000000000000003`,
-    img`
-        . . . . . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . 2 2 2 2 . .
-        . 2 2 2 2 2 2 . . . . . . . . 2 . . . .
-        . . . . . . . . 2 2 2 2 2 2 2 2 . . . .
-        . . . . . . . . . . . . 2 . . . . . . .
-        2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . .
-    `,
-    [myTiles.tile0,sprites.builtin.oceanDepths4,sprites.builtin.oceanDepths0,sprites.builtin.coral0],
-    TileScale.Sixteen
-))
-
+tiles.setTilemap(tilemap`level_1`)
 ```
 
 ## Step 8
@@ -193,27 +87,6 @@ Inside of that event, add a ``||game:game over lose||``.
 Click ``LOSE`` to change it to ``WIN``.
 
 ```blocks
-namespace myTiles {
-    //% blockIdentity=images._tile
-    export const tile0 = img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `
-}
 scene.onOverlapTile(SpriteKind.Player, sprites.builtin.coral0, function (sprite, location) {
     game.over(true)
 })
@@ -222,27 +95,48 @@ myCorg.horizontalMovement()
 myCorg.verticalMovement()
 myCorg.updateSprite()
 myCorg.follow()
-tiles.setTilemap(tiles.createTilemap(
-            hex`1400080000000000000000000000000000000000000000030000000000000000000000000000000000000003000000000000000000000000000000000000000300000000000000000000000000000202020200030001010101010100000000000000000200000003000000000000000001010101020202020000000300000000000000000000000002000000000000030101010101010101010101020000000000000003`,
-            img`
-                . . . . . . . . . . . . . . . . . . . .
-                . . . . . . . . . . . . . . . . . . . .
-                . . . . . . . . . . . . . . . . . . . .
-                . . . . . . . . . . . . . . 2 2 2 2 . .
-                . 2 2 2 2 2 2 . . . . . . . . 2 . . . .
-                . . . . . . . . 2 2 2 2 2 2 2 2 . . . .
-                . . . . . . . . . . . . 2 . . . . . . .
-                2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . .
-            `,
-            [myTiles.tile0,sprites.builtin.oceanDepths4,sprites.builtin.oceanDepths0,sprites.builtin.coral0],
-            TileScale.Sixteen
-        ))
-
+tiles.setTilemap(tilemap`level_1`)
 ```
 
 ## Complete
 
 Congratulations, your platformer is complete! See if you can get to the wall at the end of the level.
+
+```jres
+{
+    "transparency16": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "level_0": {
+        "id": "level_0",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAxNDAwMDgwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDEwMTAxMDEwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDEwMTAxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDIyMjIwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMjIyMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMjIyMjIyMjIyMDIwMDAwMDAwMA==",
+        "tileset": [
+            "myTiles.transparency16",
+            "sprites.builtin.oceanDepths4",
+            "sprites.builtin.oceanDepths0"
+        ]
+    },
+    "level_1": {
+        "id": "level_1",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAxNDAwMDgwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDMwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAzMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAyMDIwMjAwMDMwMDAxMDEwMTAxMDEwMTAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAzMDAwMDAwMDAwMDAwMDAwMDAxMDEwMTAxMDIwMjAyMDIwMDAwMDAwMzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDAwMDAwMDAwMDMwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDIwMDAwMDAwMDAwMDAwMDAzMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMjIyMDAyMDIyMjIwMjAwMDAwMDIwMDAwMDAwMDAwMDAwMjIyMjIyMjIwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAyMjIyMjIyMjIyMjIwMDAwMDAwMA==",
+        "tileset": [
+            "myTiles.transparency16",
+            "sprites.builtin.oceanDepths4",
+            "sprites.builtin.oceanDepths0",
+            "sprites.builtin.coral0"
+        ]
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myTiles"
+    }
+}
+```
 
 ```package
 corgio
