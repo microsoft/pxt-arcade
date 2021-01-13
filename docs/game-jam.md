@@ -57,9 +57,9 @@ Check out the winners of the 4th Official Microsoft MakeCode Game Jam, featuring
         "name": "Split cars",
         "description": "LCProCODER",
         "author": "Play on hard mode using the player one and two keyboard controls to move the cars, or grab a friend to help you out.",
-        "url": "https://arcade.makecode.com/71929-42418-05612-32436",
+        "url": "https://arcade.makecode.com/91788-14792-10566-27532",
         "cardType": "sharedExample",
-        "imageUrl": "https://pxt.azureedge.net/api/71929-42418-05612-32436/thumb"
+        "imageUrl": "https://pxt.azureedge.net/api/91788-14792-10566-27532/thumb"
     },
     {
         "name": "Speedup",
