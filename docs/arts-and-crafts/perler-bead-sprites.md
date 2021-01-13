@@ -72,7 +72,7 @@ You can purchase Perler Beads online or at your local craft store.
 
 ## Example
 
-Here’s an example of my son’s game and the two alien sprites he created from his game!
+Here’s an example of two alien sprites created from the following game.
 
 ![Choose and assemble the beads](/static/arts-and-crafts/perler-bead-sprites/sage-aliens.jpg)
 
