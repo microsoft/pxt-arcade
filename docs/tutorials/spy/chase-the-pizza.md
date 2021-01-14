@@ -129,7 +129,7 @@ let pizza = sprites.create(img`
 
 Use the image editor for ``||variables:pizza||`` and then select the **Gallery** view. Scroll to find the image of a small pizza (or any other image you like!) and select it to load into the image editor.
 
-![Image gallery](/static/tutorials/chase-the-pizza/image-gallery.gif)
+![Image gallery](/static/tutorials/chase-the-pizza/image-gallery-spy.gif)
 
 ## Step 7 @resetDiff
 
