@@ -118,7 +118,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Part Four: Setting Speed Variables
 
-To get started with our speed variables, drag a ``||variables:set var to||`` and drag it into start. Rename the variable to speed and set it to ``40``.
+To get started with our speed variables, drag a ``||variables:set var to||`` and drag it into ``||loops:on start||``. Rename the variable to speed and set it to ``40``.
 
 ```blocks
 let speed = 40
@@ -266,14 +266,14 @@ game.onUpdateInterval(500, function () {
 
 ### Setting Score and Setting Lives
 
-In our game we want the player to have a score for the number of projectiles they destroy and then we want the player to have multiple lives in case they miss blocks. To do this go into ``||info:info||`` and drag ``||info:set score to||`` into the ``||loops: on start||`` block. Then grab a ``||info:set life to||`` and drag it below the set ``||info:set score to||``. Now change the number in ``||info:set life to||`` to **5** so that the player can miss five projectiles before the game ends.
+In our game we want the player to have a score for the number of projectiles they destroy and then we want the player to have multiple lives in case they miss blocks. To do this go into ``||info:info||`` and drag ``||info:set score to||`` into the ``||loops: on start||`` block. Then grab a ``||info:set life to||`` and drag it below the ``||info:set score to||``. Now change the number in ``||info:set life to||`` to **5** so that the player can miss five projectiles before the game ends.
 
 ```blocks
 info.setScore(0)
 info.setLife(5)
 ```
 
-When the player runs out of lives the game should end and the player's score should be displayed. To do this, go to ``||info:Info||``, grab ``||info:on life zero||``,and it into your workspace. Then go to ``||game:game||`` and grab ``||game:game over lose||``. Drag it into ``||info:on life zero||``. Click on the ``lose`` button so it switches to ``win`` and then click the **(+)** symbol. When you click the **(+)** you should have to option to select an effect. Select the ``confetti`` effect.
+When the player runs out of lives the game should end and the player's score should be displayed. To do this, go to ``||info:Info||``, grab ``||info:on life zero||``, and drag it into your workspace. Then go to ``||game:game||`` and grab ``||game:game over lose||``. Drag it into ``||info:on life zero||``. Click on the ``lose`` button so it switches to ``win`` and then click the **(+)** symbol. When you click the **(+)** you should have the option to select an effect. Select the ``confetti`` effect.
 
 ```blocks
 info.onLifeZero(function () {
