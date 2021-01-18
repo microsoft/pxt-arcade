@@ -440,7 +440,7 @@
         }        
     },
     "appTheme": {
-        "logoUrl": "https://github.com/microsoft/pxt-arcade",
+        "logoUrl": "https://makecode.com/org",
         "logo": "./static/logo.svg",
         "docsLogo": "./static/logo.svg",
         "cardLogo": "./static/logo.svg",
