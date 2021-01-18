@@ -97,6 +97,8 @@ Click on the gray box to open a tilemap, select tiles, and use the tools to draw
 Be sure to leave a path from the start to the end, so the user can escape.
 Leave an empty tile in both the start and end location.
 
+![Draw the maze tilemap](/static/tutorials/maze/draw-maze.gif)
+
 ```blocks
 namespace myTiles {
     //% blockIdentity=images._tile
