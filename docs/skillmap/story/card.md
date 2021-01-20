@@ -1,10 +1,92 @@
 # Greeting Card
 
+
+```ghost
+scene.setBackgroundImage(assets.image`Birthday`)
+effects.confetti.startScreenEffect()
+let mySprite = sprites.create(assets.image`Happy Birthday Text`, SpriteKind.Player)
+music.playMelody("G B A G C5 B A B ", 120)
+
+```
+
+
+## Intro @unplugged
+
+Are you ready to make a greeting card for a friend or family member?
+
+Follow these quick steps and you'll have one in no time!
+
+![Greetings](/static/skillmaps/story/storyactivity1.png "Happy birthday to you!" )
+
+
+
 ## Step 1
-Draw a background!
+
+🎨 This card is built around its artistic background 🎨
+
+To get your greeting started, insert a ``||scene:set background image to [ ]||`` block and use one of our pre-loaded assets...or draw your own!
+
+[__*(show me more...)*__](#doc:/reference/add-background-ref "Learn to add a background.")
 
 ```blocks
-let mySprite = sprites.create(assets.image`Borverly`, SpriteKind.Player)
+scene.setBackgroundImage(assets.image`Birthday`)
+```
+
+
+## Step 2
+
+💛 Let's add a heartfelt greeting 💛
+
+Now, layer on a ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and use one of our text images...or draw your own!
+
+[__*(show me more...)*__](#doc:/reference/set-sprite-ref "Learn to add a background.")
+
+```blocks
+scene.setBackgroundImage(assets.image`Birthday`)
+let mySprite = sprites.create(assets.image`Happy Birthday Text`, SpriteKind.Player)
+
+```
+
+## Step 3
+
+🎉 Time for a celebration 🎉
+
+Add some pizzazz with a ``||scene:start screen [confetti] effect||`` block!
+
+[__*(show me more...)*__](#doc:/reference/screen-effect-ref "Learn to add a background.")
+
+```blocks
+scene.setBackgroundImage(assets.image`Birthday`)
+effects.confetti.startScreenEffect()
+let mySprite = sprites.create(assets.image`Happy Valentines Text`, SpriteKind.Player)
+```
+
+
+## Step 4
+
+Add a personal 🎵 note 🎵 using ``||music:play melody [ ] at tempo [120] (bpm)||``!  You can create your own song, or choose one from our gallery!
+
+[__*(show me more...)*__](#doc:/reference/play-melody-ref "Learn to add a background.")
+
+```blocks
+scene.setBackgroundImage(assets.image`Birthday`)
+effects.confetti.startScreenEffect()
+let mySprite = sprites.create(assets.image`Happy Valentines Text`, SpriteKind.Player)
+music.playMelody("G B A G C5 B A B ", 120)
+```
+
+## Finish
+
+Congratulations, you've finished your greeting card!  
+
+Now click "Finish" to save your card to your gallery so you can share it (or keep building.)
+
+
+```blocks
+scene.setBackgroundImage(assets.image`Birthday`)
+effects.confetti.startScreenEffect()
+let mySprite = sprites.create(assets.image`Happy Valentines Text`, SpriteKind.Player)
+music.playMelody("G B A G C5 B A B ", 120)
 ```
 
 
