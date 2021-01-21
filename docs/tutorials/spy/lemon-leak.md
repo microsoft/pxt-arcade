@@ -62,7 +62,7 @@ let mySprite = sprites.create(img`
     . . . . . . c c c c c c b b 4 .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite)
-mySprite.setFlag(SpriteFlag.StayInScreen, true)
+mySprite.setStayInScreen(true)
 info.startCountdown(30)
 ```
 
