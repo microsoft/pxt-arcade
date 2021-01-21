@@ -16,7 +16,7 @@ sprites.onOverlap(SpriteKind.Projectile2, SpriteKind.Player, function (sprite, o
         . 2 2 2 2 2 2 .
         . . 2 2 2 2 . .
         `, SpriteKind.Projectile)
-    falling.setFlag(SpriteFlag.BounceOnWall, true)
+    falling.setBounceOnWall(true)
     falling.setPosition(sprite.x, sprite.y - 5)
     falling.setVelocity(sprite.vx, 0 - sprite.vy)
     falling.ay = sprite.ay
@@ -115,7 +115,7 @@ game.onUpdateInterval(2000, function () {
     limit = Math.min(10, info.score())
     falling.setVelocity(randint(-100, 100), randint(0 - limit, 5))
     falling.ay = 20
-    falling.setFlag(SpriteFlag.BounceOnWall, true)
+    falling.setBounceOnWall(true)
 })
 ```
 

@@ -39,7 +39,7 @@ Next, drag a ``||sprites:set mySprite position to x y||`` from ``||sprites:Sprit
 
 ![Player moving on the screen](/static/lessons/block-out/moving-player.gif)
 
-Next, we will make the projectile that will bounce against the paddle, walls, and blocks. Go into ``||sprites:Sprites||`` and grab a ``||sprites:set projectile to projectile from mySprite||`` and then place it in the ``||lopps:on start||``. Click on the image editor and draw a ball. Change ``mySprite`` to ``paddle`` and set **vx** to **50** and **vy** to **-55**. Go to ``||sprites:Sprites||``, grab a ``||sprites:set mySprite stay in screen||``, and drag it into the workspace. Then set the ``mySprite`` to ``projectile`` and then change the ``stay in screen`` to ``destroy on wall``. Keep the toggle set to **OFF**. Right click on the ``||sprites:set projectile destroy on wall off||`` and duplicate the block. Drag it into ``||loops:on start||``. Change ``destroy on wall`` to ``bounce on wall`` and switch the toggle to **ON**.
+Next, we will make the projectile that will bounce against the paddle, walls, and blocks. Go into ``||sprites:Sprites||`` and grab a ``||sprites:set projectile to projectile from mySprite||`` and then place it in the ``||lopps:on start||``. Click on the image editor and draw a ball. Change ``mySprite`` to ``paddle`` and set **vx** to **50** and **vy** to **-55**. Go to ``||sprites:Sprites||``, grab a ``||sprites:set mySprite stay in screen||``, and drag it into the workspace. Then set the ``mySprite`` to ``projectile`` and then change the ``stay in screen`` to ``destroy on wall``. Keep the toggle set to **OFF**. Go to ``||sprites:Sprites||``, grab a ``||sprites:set projectile bounce on wall one||``, and drag it into ``||loops:on start||``.
 
 ```blocks
 let paddle = sprites.create(img`
@@ -98,7 +98,7 @@ let projectile = sprites.createProjectileFromSprite(img`
     . . . . . . . . . . . . . . . .
 `, paddle, 50, -55)
 projectile.setFlag(SpriteFlag.DestroyOnWall, false)
-projectile.setFlag(SpriteFlag.BounceOnWall, true)
+projectile.setBounceOnWall(true)
 ```
 
 Congratulations! You have now created the main sprites for the game.
@@ -433,7 +433,7 @@ let projectile = sprites.createProjectileFromSprite(img`
     . . . . . . . . . . . . . . . .
 `, paddle, 50, -55)
 projectile.setFlag(SpriteFlag.DestroyOnWall, false)
-projectile.setFlag(SpriteFlag.BounceOnWall, true)
+projectile.setBounceOnWall(true)
 for (let index = 0; index <= 9; index++) {
     for (let index2 = 0; index2 <= 2; index2++) {
         x = index * 18

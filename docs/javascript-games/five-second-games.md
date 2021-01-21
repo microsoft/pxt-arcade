@@ -3461,7 +3461,7 @@ namespace _guppy {
                         yVel = randint(-10, 10)
                         SmolFish.setPosition(xPos, yPos)
                         SmolFish.setVelocity(xVel, yVel)
-                        SmolFish.setFlag(SpriteFlag.BounceOnWall, true)
+                        SmolFish.setBounceOnWall(true)
                         if (xVel < 0) {
                             SmolFish.setImage(img`
                                 . . . . . . . .
@@ -3489,7 +3489,7 @@ namespace _guppy {
                         yVel = randint(-10, 10)
                         MedFish.setPosition(xPos, yPos)
                         MedFish.setVelocity(xVel, yVel)
-                        MedFish.setFlag(SpriteFlag.BounceOnWall, true)
+                        MedFish.setBounceOnWall(true)
                         if (xVel < 0) {
                             MedFish.setImage(img`
                                 . . . . . . . .
@@ -3526,7 +3526,7 @@ namespace _guppy {
                     yVel = randint(-5, 5)
                     BigFish.setPosition(xPos, yPos)
                     BigFish.setVelocity(xVel, yVel)
-                    BigFish.setFlag(SpriteFlag.BounceOnWall, true)
+                    BigFish.setBounceOnWall(true)
                     if (xVel < 0) {
                         BigFish.setImage(img`
                             . . . . . . . . . . . . . . . .

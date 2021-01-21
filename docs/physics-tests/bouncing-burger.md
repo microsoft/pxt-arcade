@@ -24,7 +24,7 @@ let mySprite = sprites.create(img`
     . e e b b 4 4 4 4 4 4 4 4 e e .
     . . . c c c c c e e e e e . . .
 `, SpriteKind.Player)
-mySprite.setFlag(SpriteFlag.BounceOnWall, true)
+mySprite.setBounceOnWall(true)
 mySprite.setVelocity(1000, 1000)
 scene.setTileMap(img`
     3 3 3 3 3 3 3 3 3 3

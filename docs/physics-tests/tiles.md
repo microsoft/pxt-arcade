@@ -52,7 +52,7 @@ scene.setTile(7, img`
     7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
     7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
 `, true)
-mySprite.setFlag(SpriteFlag.BounceOnWall, true)
+mySprite.setBounceOnWall(true)
 mySprite.setVelocity(50, 50)
 mySprite.ax = 50;
 ```
