@@ -265,22 +265,22 @@ scene.setBackgroundImage(img`
     `)
     // @highlight
     let mySprite = sprites.create(img`
-    . . . . . f f 4 4 f f . . . . . 
-    . . . . f 5 4 5 5 4 5 f . . . . 
-    . . . f e 4 5 5 5 5 4 e f . . . 
-    . . f b 3 e 4 4 4 4 e 3 b f . . 
-    . . f 3 3 3 3 3 3 3 3 3 3 f . . 
-    . f 3 3 e b 3 e e 3 b e 3 3 f . 
-    . f 3 3 f f e e e e f f 3 3 f . 
-    . f b b f b f e e f b f b b f . 
-    . f b b e 1 f 4 4 f 1 e b b f . 
-    f f b b f 4 4 4 4 4 4 f b b f f 
-    f b b f f f e e e e f f f b b f 
-    . f e e f b d d d d b f e e f . 
-    . . e 4 c d d d d d d c 4 e . . 
-    . . e f b d b d b d b b f e . . 
-    . . . f f 1 d 1 d 1 d f f . . . 
-    . . . . . f f b b f f . . . . . 
+    . . . . . f f 4 4 f f . . . . .
+    . . . . f 5 4 5 5 4 5 f . . . .
+    . . . f e 4 5 5 5 5 4 e f . . .
+    . . f b 3 e 4 4 4 4 e 3 b f . .
+    . . f 3 3 3 3 3 3 3 3 3 3 f . .
+    . f 3 3 e b 3 e e 3 b e 3 3 f .
+    . f 3 3 f f e e e e f f 3 3 f .
+    . f b b f b f e e f b f b b f .
+    . f b b e 1 f 4 4 f 1 e b b f .
+    f f b b f 4 4 4 4 4 4 f b b f f
+    f b b f f f e e e e f f f b b f
+    . f e e f b d d d d b f e e f .
+    . . e 4 c d d d d d d c 4 e . .
+    . . e f b d b d b d b b f e . .
+    . . . f f 1 d 1 d 1 d f f . . .
+    . . . . . f f b b f f . . . . .
     `, SpriteKind.Player)
 ```
 ## Step 3 - Draw a Collectible Object
@@ -292,40 +292,40 @@ let bee: Sprite = null
 game.onUpdateInterval(5000, function () {
     // @highlight
     projectile = sprites.createProjectileFromSide(img`
-        f f f f f f . . . . f f f f f f 
-        f 7 7 7 7 f f . . f f 7 7 7 7 f 
-        f 7 7 7 7 7 f . . f 7 7 7 7 7 f 
-        f 7 7 7 7 7 f f f f 7 7 7 7 7 f 
-        f f 7 7 7 7 7 f 7 7 7 7 7 7 f f 
-        . f f f 7 7 7 7 7 7 7 7 f f f . 
-        . . . f f 7 7 7 7 7 f f . . . . 
-        . f f f f 7 7 7 7 7 f f f f f . 
-        f f 7 7 7 7 7 7 7 7 7 7 7 7 f f 
-        f 7 7 7 7 7 f f 7 7 7 7 7 7 7 f 
-        f 7 7 7 7 f f f f 7 7 7 7 7 7 f 
-        f 7 7 7 f . f 7 f f 7 7 7 7 7 f 
-        f 7 7 f f . f 7 . f 7 7 7 7 f . 
-        f f f f . . f 7 7 f f 7 7 f f . 
-        . . . . . . . f 7 7 . f f f . . 
-        . . . . . . . f 7 f . . . . . . 
+        f f f f f f . . . . f f f f f f
+        f 7 7 7 7 f f . . f f 7 7 7 7 f
+        f 7 7 7 7 7 f . . f 7 7 7 7 7 f
+        f 7 7 7 7 7 f f f f 7 7 7 7 7 f
+        f f 7 7 7 7 7 f 7 7 7 7 7 7 f f
+        . f f f 7 7 7 7 7 7 7 7 f f f .
+        . . . f f 7 7 7 7 7 f f . . . .
+        . f f f f 7 7 7 7 7 f f f f f .
+        f f 7 7 7 7 7 7 7 7 7 7 7 7 f f
+        f 7 7 7 7 7 f f 7 7 7 7 7 7 7 f
+        f 7 7 7 7 f f f f 7 7 7 7 7 7 f
+        f 7 7 7 f . f 7 f f 7 7 7 7 7 f
+        f 7 7 f f . f 7 . f 7 7 7 7 f .
+        f f f f . . f 7 7 f f 7 7 f f .
+        . . . . . . . f 7 7 . f f f . .
+        . . . . . . . f 7 f . . . . . .
         `, randint(-50, 50), randint(-50, 50))
     bee = sprites.createProjectileFromSide(img`
-        . . . . . . . f f f f f f . . . 
-        f . . . . f f f 1 1 1 1 f f . . 
-        . f . . . f 1 1 1 1 1 1 1 f f . 
-        . f . . . f 1 1 f 1 f 1 1 1 f . 
-        f f f . . f 1 1 f 1 f 1 1 1 f . 
-        2 f f f f f f f f f f f f f f . 
-        f f f f f f 5 f 5 f 5 f 5 f f f 
-        f f f f 5 f 5 f 5 f 5 f 5 f f f 
-        . . f f 5 f 5 f 5 f 5 f 5 f f 2 
-        . . . f f f 5 f 5 f 5 f 5 5 f 2 
-        . . . f f f f f 5 f 5 f 5 5 f f 
-        . . . f 1 f 1 f f f f f f f f f 
-        . . . f 1 f 1 f 1 f 1 1 1 f . . 
-        . . f f 1 f 1 f 1 1 1 1 f . . . 
-        . . f 1 1 1 1 1 1 1 f f . . . . 
-        . . f f f f f f f f f . . . . . 
+        . . . . . . . f f f f f f . . .
+        f . . . . f f f 1 1 1 1 f f . .
+        . f . . . f 1 1 1 1 1 1 1 f f .
+        . f . . . f 1 1 f 1 f 1 1 1 f .
+        f f f . . f 1 1 f 1 f 1 1 1 f .
+        2 f f f f f f f f f f f f f f .
+        f f f f f f 5 f 5 f 5 f 5 f f f
+        f f f f 5 f 5 f 5 f 5 f 5 f f f
+        . . f f 5 f 5 f 5 f 5 f 5 f f 2
+        . . . f f f 5 f 5 f 5 f 5 5 f 2
+        . . . f f f f f 5 f 5 f 5 5 f f
+        . . . f 1 f 1 f f f f f f f f f
+        . . . f 1 f 1 f 1 f 1 1 1 f . .
+        . . f f 1 f 1 f 1 1 1 1 f . . .
+        . . f 1 1 1 1 1 1 1 f f . . . .
+        . . f f f f f f f f f . . . . .
         `, randint(-50, 50), randint(-50, 50))
     bee.setKind(SpriteKind.Enemy)
 })
@@ -339,41 +339,41 @@ Find the ``||variables:set bee||`` block (under the ``||variables:set projectile
 let bee: Sprite = null
 game.onUpdateInterval(5000, function () {
     projectile = sprites.createProjectileFromSide(img`
-        f f f f f f . . . . f f f f f f 
-        f 7 7 7 7 f f . . f f 7 7 7 7 f 
-        f 7 7 7 7 7 f . . f 7 7 7 7 7 f 
-        f 7 7 7 7 7 f f f f 7 7 7 7 7 f 
-        f f 7 7 7 7 7 f 7 7 7 7 7 7 f f 
-        . f f f 7 7 7 7 7 7 7 7 f f f . 
-        . . . f f 7 7 7 7 7 f f . . . . 
-        . f f f f 7 7 7 7 7 f f f f f . 
-        f f 7 7 7 7 7 7 7 7 7 7 7 7 f f 
-        f 7 7 7 7 7 f f 7 7 7 7 7 7 7 f 
-        f 7 7 7 7 f f f f 7 7 7 7 7 7 f 
-        f 7 7 7 f . f 7 f f 7 7 7 7 7 f 
-        f 7 7 f f . f 7 . f 7 7 7 7 f . 
-        f f f f . . f 7 7 f f 7 7 f f . 
-        . . . . . . . f 7 7 . f f f . . 
-        . . . . . . . f 7 f . . . . . . 
+        f f f f f f . . . . f f f f f f
+        f 7 7 7 7 f f . . f f 7 7 7 7 f
+        f 7 7 7 7 7 f . . f 7 7 7 7 7 f
+        f 7 7 7 7 7 f f f f 7 7 7 7 7 f
+        f f 7 7 7 7 7 f 7 7 7 7 7 7 f f
+        . f f f 7 7 7 7 7 7 7 7 f f f .
+        . . . f f 7 7 7 7 7 f f . . . .
+        . f f f f 7 7 7 7 7 f f f f f .
+        f f 7 7 7 7 7 7 7 7 7 7 7 7 f f
+        f 7 7 7 7 7 f f 7 7 7 7 7 7 7 f
+        f 7 7 7 7 f f f f 7 7 7 7 7 7 f
+        f 7 7 7 f . f 7 f f 7 7 7 7 7 f
+        f 7 7 f f . f 7 . f 7 7 7 7 f .
+        f f f f . . f 7 7 f f 7 7 f f .
+        . . . . . . . f 7 7 . f f f . .
+        . . . . . . . f 7 f . . . . . .
         `, randint(-50, 50), randint(-50, 50))
-    // @highlight        
+    // @highlight
     bee = sprites.createProjectileFromSide(img`
-        . . . . . . . f f f f f f . . . 
-        f . . . . f f f 1 1 1 1 f f . . 
-        . f . . . f 1 1 1 1 1 1 1 f f . 
-        . f . . . f 1 1 f 1 f 1 1 1 f . 
-        f f f . . f 1 1 f 1 f 1 1 1 f . 
-        2 f f f f f f f f f f f f f f . 
-        f f f f f f 5 f 5 f 5 f 5 f f f 
-        f f f f 5 f 5 f 5 f 5 f 5 f f f 
-        . . f f 5 f 5 f 5 f 5 f 5 f f 2 
-        . . . f f f 5 f 5 f 5 f 5 5 f 2 
-        . . . f f f f f 5 f 5 f 5 5 f f 
-        . . . f 1 f 1 f f f f f f f f f 
-        . . . f 1 f 1 f 1 f 1 1 1 f . . 
-        . . f f 1 f 1 f 1 1 1 1 f . . . 
-        . . f 1 1 1 1 1 1 1 f f . . . . 
-        . . f f f f f f f f f . . . . . 
+        . . . . . . . f f f f f f . . .
+        f . . . . f f f 1 1 1 1 f f . .
+        . f . . . f 1 1 1 1 1 1 1 f f .
+        . f . . . f 1 1 f 1 f 1 1 1 f .
+        f f f . . f 1 1 f 1 f 1 1 1 f .
+        2 f f f f f f f f f f f f f f .
+        f f f f f f 5 f 5 f 5 f 5 f f f
+        f f f f 5 f 5 f 5 f 5 f 5 f f f
+        . . f f 5 f 5 f 5 f 5 f 5 f f 2
+        . . . f f f 5 f 5 f 5 f 5 5 f 2
+        . . . f f f f f 5 f 5 f 5 5 f f
+        . . . f 1 f 1 f f f f f f f f f
+        . . . f 1 f 1 f 1 f 1 1 1 f . .
+        . . f f 1 f 1 f 1 1 1 1 f . . .
+        . . f 1 1 1 1 1 1 1 f f . . . .
+        . . f f f f f f f f f . . . . .
         `, randint(-50, 50), randint(-50, 50))
     bee.setKind(SpriteKind.Enemy)
 })
@@ -543,63 +543,63 @@ scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     `)
 let mySprite = sprites.create(img`
-    . . . . . f f 4 4 f f . . . . . 
-    . . . . f 5 4 5 5 4 5 f . . . . 
-    . . . f e 4 5 5 5 5 4 e f . . . 
-    . . f b 3 e 4 4 4 4 e 3 b f . . 
-    . . f 3 3 3 3 3 3 3 3 3 3 f . . 
-    . f 3 3 e b 3 e e 3 b e 3 3 f . 
-    . f 3 3 f f e e e e f f 3 3 f . 
-    . f b b f b f e e f b f b b f . 
-    . f b b e 1 f 4 4 f 1 e b b f . 
-    f f b b f 4 4 4 4 4 4 f b b f f 
-    f b b f f f e e e e f f f b b f 
-    . f e e f b d d d d b f e e f . 
-    . . e 4 c d d d d d d c 4 e . . 
-    . . e f b d b d b d b b f e . . 
-    . . . f f 1 d 1 d 1 d f f . . . 
-    . . . . . f f b b f f . . . . . 
+    . . . . . f f 4 4 f f . . . . .
+    . . . . f 5 4 5 5 4 5 f . . . .
+    . . . f e 4 5 5 5 5 4 e f . . .
+    . . f b 3 e 4 4 4 4 e 3 b f . .
+    . . f 3 3 3 3 3 3 3 3 3 3 f . .
+    . f 3 3 e b 3 e e 3 b e 3 3 f .
+    . f 3 3 f f e e e e f f 3 3 f .
+    . f b b f b f e e f b f b b f .
+    . f b b e 1 f 4 4 f 1 e b b f .
+    f f b b f 4 4 4 4 4 4 f b b f f
+    f b b f f f e e e e f f f b b f
+    . f e e f b d d d d b f e e f .
+    . . e 4 c d d d d d d c 4 e . .
+    . . e f b d b d b d b b f e . .
+    . . . f f 1 d 1 d 1 d f f . . .
+    . . . . . f f b b f f . . . . .
     `, SpriteKind.Player)
 controller.moveSprite(mySprite)
-mySprite.setFlag(SpriteFlag.StayInScreen, true)
+mySprite.setStayInScreen(true)
 info.setScore(0)
 info.setLife(3)
 game.onUpdateInterval(5000, function () {
     projectile = sprites.createProjectileFromSide(img`
-        f f f f f f . . . . f f f f f f 
-        f 7 7 7 7 f f . . f f 7 7 7 7 f 
-        f 7 7 7 7 7 f . . f 7 7 7 7 7 f 
-        f 7 7 7 7 7 f f f f 7 7 7 7 7 f 
-        f f 7 7 7 7 7 f 7 7 7 7 7 7 f f 
-        . f f f 7 7 7 7 7 7 7 7 f f f . 
-        . . . f f 7 7 7 7 7 f f . . . . 
-        . f f f f 7 7 7 7 7 f f f f f . 
-        f f 7 7 7 7 7 7 7 7 7 7 7 7 f f 
-        f 7 7 7 7 7 f f 7 7 7 7 7 7 7 f 
-        f 7 7 7 7 f f f f 7 7 7 7 7 7 f 
-        f 7 7 7 f . f 7 f f 7 7 7 7 7 f 
-        f 7 7 f f . f 7 . f 7 7 7 7 f . 
-        f f f f . . f 7 7 f f 7 7 f f . 
-        . . . . . . . f 7 7 . f f f . . 
-        . . . . . . . f 7 f . . . . . . 
+        f f f f f f . . . . f f f f f f
+        f 7 7 7 7 f f . . f f 7 7 7 7 f
+        f 7 7 7 7 7 f . . f 7 7 7 7 7 f
+        f 7 7 7 7 7 f f f f 7 7 7 7 7 f
+        f f 7 7 7 7 7 f 7 7 7 7 7 7 f f
+        . f f f 7 7 7 7 7 7 7 7 f f f .
+        . . . f f 7 7 7 7 7 f f . . . .
+        . f f f f 7 7 7 7 7 f f f f f .
+        f f 7 7 7 7 7 7 7 7 7 7 7 7 f f
+        f 7 7 7 7 7 f f 7 7 7 7 7 7 7 f
+        f 7 7 7 7 f f f f 7 7 7 7 7 7 f
+        f 7 7 7 f . f 7 f f 7 7 7 7 7 f
+        f 7 7 f f . f 7 . f 7 7 7 7 f .
+        f f f f . . f 7 7 f f 7 7 f f .
+        . . . . . . . f 7 7 . f f f . .
+        . . . . . . . f 7 f . . . . . .
         `, randint(-50, 50), randint(-50, 50))
     bee = sprites.createProjectileFromSide(img`
-        . . . . . . . f f f f f f . . . 
-        f . . . . f f f 1 1 1 1 f f . . 
-        . f . . . f 1 1 1 1 1 1 1 f f . 
-        . f . . . f 1 1 f 1 f 1 1 1 f . 
-        f f f . . f 1 1 f 1 f 1 1 1 f . 
-        2 f f f f f f f f f f f f f f . 
-        f f f f f f 5 f 5 f 5 f 5 f f f 
-        f f f f 5 f 5 f 5 f 5 f 5 f f f 
-        . . f f 5 f 5 f 5 f 5 f 5 f f 2 
-        . . . f f f 5 f 5 f 5 f 5 5 f 2 
-        . . . f f f f f 5 f 5 f 5 5 f f 
-        . . . f 1 f 1 f f f f f f f f f 
-        . . . f 1 f 1 f 1 f 1 1 1 f . . 
-        . . f f 1 f 1 f 1 1 1 1 f . . . 
-        . . f 1 1 1 1 1 1 1 f f . . . . 
-        . . f f f f f f f f f . . . . . 
+        . . . . . . . f f f f f f . . .
+        f . . . . f f f 1 1 1 1 f f . .
+        . f . . . f 1 1 1 1 1 1 1 f f .
+        . f . . . f 1 1 f 1 f 1 1 1 f .
+        f f f . . f 1 1 f 1 f 1 1 1 f .
+        2 f f f f f f f f f f f f f f .
+        f f f f f f 5 f 5 f 5 f 5 f f f
+        f f f f 5 f 5 f 5 f 5 f 5 f f f
+        . . f f 5 f 5 f 5 f 5 f 5 f f 2
+        . . . f f f 5 f 5 f 5 f 5 5 f 2
+        . . . f f f f f 5 f 5 f 5 5 f f
+        . . . f 1 f 1 f f f f f f f f f
+        . . . f 1 f 1 f 1 f 1 1 1 f . .
+        . . f f 1 f 1 f 1 1 1 1 f . . .
+        . . f 1 1 1 1 1 1 1 f f . . . .
+        . . f f f f f f f f f . . . . .
         `, randint(-50, 50), randint(-50, 50))
     bee.setKind(SpriteKind.Enemy)
 })

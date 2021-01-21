@@ -449,7 +449,7 @@ controller.moveSprite(mySprite)
 Notice that we can actually move our player off the screen. Let’s prevent that. From the
 ``||sprites:Sprites||`` Toolbox drawer, under the **Effects** category, drag a
 ``||sprites:set mySprite stay in screen||`` block and drop after the ``||controller:move mySprite||``
-block. Click on the **OFF** toggle to slide it to **ON**.
+block.
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -593,7 +593,7 @@ f b b f f f e e e e f f f b b f
 . . . . . f f b b f f . . . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite)
-mySprite.setFlag(SpriteFlag.StayInScreen, true)
+mySprite.setStayInScreen(true)
 ```
 
 ## Step 5 - Initialize the Score and number of Player Lives
@@ -744,7 +744,7 @@ f b b f f f e e e e f f f b b f
 . . . . . f f b b f f . . . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite)
-mySprite.setFlag(SpriteFlag.StayInScreen, true)
+mySprite.setStayInScreen(true)
 info.setScore(0)
 info.setLife(3)
 ```
