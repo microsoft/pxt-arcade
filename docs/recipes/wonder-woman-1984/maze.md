@@ -1,4 +1,4 @@
-# Chaos Maze
+# Wonder Woman 1984 - Chaos Maze
 
 ## Introduction @unplugged
 
