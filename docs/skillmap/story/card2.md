@@ -24,7 +24,11 @@ Follow these quick steps and you'll have one in no time!
 
 🎨 This card is built around its artistic background 🎨
 
-To get your greeting started, insert a ``||scene:set background image to [ ]||`` block and use one of our pre-loaded assets...or draw your own!
+🔲 From the ``||scene:Scene||`` category, grab a ``||scene:set background image to [ ]||`` block and drag it into the **on start** container in the workspace.
+
+🔲 Click inside the grey square to open the image editor. 
+
+🔲 Toggle to the **Assets** window and use one of our pre-loaded assets...or stay in **Edit** mode to draw your own!
 
 [__*(show me more...)*__](#doc:/reference/add-background-ref "Learn to add a background.")
 
@@ -37,9 +41,13 @@ scene.setBackgroundImage(assets.image`Birthday`)
 
 💛 Let's add a heartfelt greeting 💛
 
-Now, layer on a ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and use one of our text images...or draw your own!
+🔲 From ``||sprites:Sprites||``, grab a ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and snap it into the bottom of the **on start** container in the workspace.
 
-[__*(show me more...)*__](#doc:/reference/set-sprite-ref "Learn to add a main sprite.")
+🔲 Click inside the grey square to open the image editor. 
+
+🔲 Toggle to the **Assets** window to use one of our pre-loaded titles...or stay in **Edit** mode to create your own.
+
+[__*(show me more...)*__](#doc:/reference/set-sprite-ref "Learn to add a sprite.")
 
 ```blocks
 scene.setBackgroundImage(assets.image`Birthday`)
@@ -51,9 +59,11 @@ let mySprite = sprites.create(assets.image`Happy Birthday Text`, SpriteKind.Play
 
 🎉 Time for a celebration 🎉
 
-Add some pizzazz with a ``||scene:start screen [confetti] effect||`` block!
+🔲 Add some pizzazz from the ``||scene:Scene||`` cagegory by grabbing a ``||scene:start screen [confetti] effect||`` block and snapping it into the bottom of the **on start** container.
 
-[__*(show me more...)*__](#doc:/reference/screen-effect-ref "Learn to add a screen effect.")
+Look at the simulator on the left to see what you've done so far!
+
+[__*(show me more...)*__](#doc:/reference/screen-effect-ref "Learn to add scene effects.")
 
 ```blocks
 scene.setBackgroundImage(assets.image`Birthday`)
@@ -64,7 +74,11 @@ let mySprite = sprites.create(assets.image`Happy Valentines Text`, SpriteKind.Pl
 
 ## Step 4
 
-Add a personal 🎵 note 🎵 using ``||music:play melody [ ] at tempo [120] (bpm)||``!  You can create your own song, or choose one from our gallery!
+🎵 Now, let's add a personal note 🎵 
+
+🔲 From the ``||music:Music||`` category, grab a ``||music:play melody [ ] at tempo [120] (bpm)||`` block and snap it into the bottom of the **on start** container.
+
+🔲 In the new block, click on the music note to open the music editor. You can write your own song, or toggle to the **Gallery** to pick one that we've written for you.
 
 [__*(show me more...)*__](#doc:/reference/play-melody-ref "Learn to add a melody.")
 
