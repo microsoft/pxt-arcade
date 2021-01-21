@@ -68,7 +68,7 @@ selected ``||scene:tiles||`` in the ``||scene:tilemap||``.
 let mySprite: Sprite = null
 tiles.setTilemap(tilemap`level_1`)
 for (let value of tiles.getTilesByType(sprites.castle.tileDarkGrass2)) {
-    let mySprite = sprites.create(img`
+    mySprite = sprites.create(img`
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
         . . . . . . d . . . . . . d . .
@@ -102,7 +102,7 @@ This will place the breadcrumbs on each ``||scene:tile||`` of the diagonal line.
 let mySprite: Sprite = null
 tiles.setTilemap(tilemap`level_1`)
 for (let value of tiles.getTilesByType(sprites.castle.tileDarkGrass2)) {
-    let mySprite = sprites.create(img`
+    mySprite = sprites.create(img`
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
         . . . . . . d . . . . . . d . .
