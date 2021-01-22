@@ -9,8 +9,8 @@ Collect as many cherries as you can before time runs out!
 Learn the basic requirements to build a functional game!
 
 * The concept of a sprite
-* How to set up a map tile
-* Spawning cherries on the map
+* How to set up a tilemap 
+* Spawning cherries on the tilemap
 * Setting and moving a character
 * Designing the map
 * Setting up a countdown
@@ -76,7 +76,7 @@ To move the player, click ``||controller:Controller||`` in the Toolbox and drag 
 
 Then go to ``||scene:Scene||`` and under the **Camera** category, drag the ``||scene:camera follow sprite||`` block into the ``||loops:on start||`` block. Again, make sure the variable selected is ``mySprite``.
 
-We do this so that when the player moves around the map, they will remain at the center of the screen.
+We do this so that when the player moves around the tilemap, they will remain at the center of the screen.
 To make the player move faster, set the ``vx`` and ``vy`` to `150`.
 
 ```blocks
@@ -109,7 +109,7 @@ game.onUpdateInterval(500, function () {
 
 To spawn cherries on the screen, we need to set a random x and y coordinate. Go to the ``||sprites:Sprites||`` tab and drag the ``||sprites:set mySprite position to||`` inside the ``||sprites:on game update every||`` block. Change ``||variables:mySprite||`` to ``||variables:cherry||``.
 
-To make the cherry spawn randomly on the map, go to the ``||math:Math||`` tab and drag one ``||math:pick random||`` block into the x-value of ``||sprites:set item position to||``. Drag another into the y-value.
+To make the cherry spawn randomly on the tilemap, go to the ``||math:Math||`` tab and drag one ``||math:pick random||`` block into the x-value of ``||sprites:set item position to||``. Drag another into the y-value.
 
 Change the values for the first ``||math:pick random||`` block to `0` and `160`. Change the values for the second ``||math:pick random||`` block to `0` and `120`.
 
@@ -125,7 +125,7 @@ game.onUpdateInterval(500, function () {
 
 ### Keep Track of Time
 
-We need to keep track of how long the game will last. To do this, go to ``||info:Info||`` and drag the ``||info:start countdown||`` into the ``||loops:on start||`` block. Click on the `0` and change it to `60` so that the game will end after 60 seconds.
+We need to keep track of how long the game will last. To do this, go to ``||info:Info||`` and drag the ``||info:start countdown||`` into the ``||loops:on start||`` block. Click on the `10` and change it to `60` so that the game will end after 60 seconds.
 
 ### Keep Track of the Score
 
@@ -160,7 +160,7 @@ To change the score when the cherry is touched, go to the ``||info:Info||`` tab 
 
 When this block runs, two new variables are created: ``||variables:sprite||`` and ``||variables:otherSprite||``. We need to remove ``||variables:otherSprite||`` from the game, which is the ``||sprites:Food||`` that collided with the ``||sprites:Player||``.
 
-To do so, go to ``||sprites:Sprites||`` in the Toolbox and, under **Lifecycle**, drag the ``||sprites:destroy||`` block into the ``||sprites:on sprite of kind Player overlaps||`` block. Then, drag the ``||variables:otherSprite||`` variable from the top of the block into the ``||sprites:destroy||`` block.
+To do so, go to ``||sprites:Sprites||`` in the Toolbox and, under **Effects**, drag the ``||sprites:destroy||`` block into the ``||sprites:on sprite of kind Player overlaps||`` block. Then, drag the ``||variables:otherSprite||`` variable from the top of the block into the ``||sprites:destroy||`` block.
 
 You might notice that the ``||variables:mySprite||`` block is removed from the ``||sprites:destroy||`` block when you replace it with ``||variables:otherSprite||``. You can delete that block by dragging it to the Toolbox.
 
