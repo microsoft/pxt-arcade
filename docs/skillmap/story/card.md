@@ -267,7 +267,7 @@ Follow these quick steps and you'll have one in no time!
 
 🎨 This card centers around an artistic background 🎨
 
-To get your greeting started, insert a ``||scene:set background image to [ ]||`` block and use one of our pre-loaded assets...or draw your own!
+To get your greeting started, insert a ``||scene:set background image to [ ]||`` block and use one of our pre-loaded assets (or draw your own!)
 
 [__*(show me more...)*__](#doc:/reference/add-background-ref "Learn to add a background.")
 
@@ -401,7 +401,7 @@ scene.setBackgroundImage(img`
 
 💛 Let's add a heartfelt greeting 💛
 
-Now, layer on a ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and use one of our text images...or draw your own!
+Layer on a ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and use one of our text images (or draw your own!)
 
 [__*(show me more...)*__](#doc:/reference/set-sprite-ref "Learn to add a main sprite.")
 
@@ -913,7 +913,8 @@ let mySprite = sprites.create(img`
 
 ## Step 4
 
-Add a personal 🎵 note 🎵 using ``||music:play melody [ ] at tempo [120] (bpm)||``!  You can create your own song, or choose one from our gallery!
+Add a personal 🎵 note 🎵 using ``||music:play melody [ ] at tempo [120] (bpm)||``!   
+You can create your own song, or choose one from our gallery!
 
 [__*(show me more...)*__](#doc:/reference/play-melody-ref "Learn to add a melody.")
 
@@ -1170,7 +1171,7 @@ music.playMelody("G B A G C5 B A B ", 120)
 
 Congratulations, you've finished your greeting card!  
 
-Now click "Finish" to save your card to your gallery so you can share it (or keep building.)
+Click "Finish" to save your card to your gallery so you can share it (or keep building.)
 
 
 

@@ -1183,7 +1183,7 @@ music.playMelody("G B A G C5 B A B ", 120)
 
 Congratulations, you've finished your greeting card!  
 
-Now click "Finish" to save your card to your gallery so you can share it (or keep building.)
+Click "Finish" to save your card to your gallery so you can share it (or keep building.)
 
 
 
