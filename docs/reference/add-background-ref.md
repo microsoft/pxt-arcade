@@ -1,9 +1,16 @@
-# Add a background image
+## Add a background image
 
-Personalize your game with a background image
+Personalize your game with a background image.
+
+The background image will sit behind any of the other assets you add to the game.
 
 
-## Found in the *Scene* category
+### Background Image Details
+
+The Arcade screen is 160px wide and 120px tall.  In general, if you want a background image that takes up the whole screen, you'll want it to be 160 x 120.
+
+
+### Example Code
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -131,7 +138,9 @@ scene.setBackgroundImage(img`
 
 ```
 
-## Edit background image
+
+
+### How to Edit a Background Image
 
 Click on the grey square (inside the grey oval) to get to the image editor. From there, you can do one of three things:
 
@@ -145,7 +154,7 @@ Click on the grey square (inside the grey oval) to get to the image editor. From
 ![assetEditor](../static/reference/image-editor-03.jpg "This is the asset editor" )
 
 
-## Draw with image editor
+### How to Draw a Background Image
 
 The Arcade image editor is a pixel painting system where you can draw with your 16-color palette. 
 

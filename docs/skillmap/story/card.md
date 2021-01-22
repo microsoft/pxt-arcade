@@ -39,7 +39,7 @@ scene.setBackgroundImage(assets.image`Birthday`)
 
 Now, layer on a ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and use one of our text images...or draw your own!
 
-[__*(show me more...)*__](#doc:/reference/set-sprite-ref "Learn to add a background.")
+[__*(show me more...)*__](#doc:/reference/set-sprite-ref "Learn to add a main sprite.")
 
 ```blocks
 scene.setBackgroundImage(assets.image`Birthday`)
@@ -53,7 +53,7 @@ let mySprite = sprites.create(assets.image`Happy Birthday Text`, SpriteKind.Play
 
 Add some pizzazz with a ``||scene:start screen [confetti] effect||`` block!
 
-[__*(show me more...)*__](#doc:/reference/screen-effect-ref "Learn to add a background.")
+[__*(show me more...)*__](#doc:/reference/screen-effect-ref "Learn to add a screen effect.")
 
 ```blocks
 scene.setBackgroundImage(assets.image`Birthday`)
@@ -66,7 +66,7 @@ let mySprite = sprites.create(assets.image`Happy Valentines Text`, SpriteKind.Pl
 
 Add a personal 🎵 note 🎵 using ``||music:play melody [ ] at tempo [120] (bpm)||``!  You can create your own song, or choose one from our gallery!
 
-[__*(show me more...)*__](#doc:/reference/play-melody-ref "Learn to add a background.")
+[__*(show me more...)*__](#doc:/reference/play-melody-ref "Learn to add a melody.")
 
 ```blocks
 scene.setBackgroundImage(assets.image`Birthday`)
