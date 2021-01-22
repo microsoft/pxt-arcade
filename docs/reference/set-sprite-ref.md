@@ -1,4 +1,4 @@
-## Add a Main Sprite
+## Add a Main Sprite 
 
 Add a main sprite to your project.
 
