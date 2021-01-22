@@ -41,84 +41,86 @@
     </aside>
 
     <div class="ui main mainbody script-content">
-        <div id="embed-frame"></div>
+        <iframe id="embed-frame" class="script-embed" src="/@versionsuff@--run?fullscreen=1&nofooter=1&id=@id@" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"
+        frameborder="0"></iframe>
         <div class="script-bookend">
-            <div id="abuse-message" class="ui mini blue message container no-select">
-                <div class="ui grid padded">
-                    <div class="abuse content">
-                        <p>
-                            The content above is provided by a user, and is not endorsed by Microsoft.
-                            <a style='text-decoration:underline' id="abuse" href="#">Report abuse</a> if you think it's not appropriate.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="ui small modal" id='abusemodal'>
-                <div class="header">Report abuse</div>
-                <div class="content">
-                    <div class="ui form">
-                        <div class="field">
-                            <label>Why do you find it offensive?</label>
-                            <textarea id='abusetext' rows="2"></textarea>
+                <div id="abuse-message" class="ui mini blue message container no-select">
+                        <div class="ui grid padded">
+                            <div class="abuse content">
+                                <p>
+                                    The content above is provided by a user, and is not endorsed by Microsoft.
+                                    <a style='text-decoration:underline' id="abuse" href="#">Report abuse</a> if you think it's not appropriate.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="actions">
-                    <div class="ui ok button violet">
-                        <i class='ui flag icon'></i> Submit
-                    </div>
-                    <div class="ui cancel button">
-                        <i class='ui cancel icon'></i> Cancel
-                    </div>
-                </div>
-            </div>
 
-            <div class="ui small modal" id='abusedone'>
-                <div class="header">Report sent</div>
-                <div class="content">
-                    <p>
-                        Thank you for helping keep Microsoft MakeCode a friendly place!
-                    </p>
-                </div>
-                <div class="actions">
-                    <div class="ui ok green button">
-                        <i class='ui trophy icon'></i> OK
+                    <div class="ui small modal" id='abusemodal'>
+                        <div class="header">Report abuse</div>
+                        <div class="content">
+                            <div class="ui form">
+                                <div class="field">
+                                    <label>Why do you find it offensive?</label>
+                                    <textarea id='abusetext' rows="2"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <div class="ui ok button violet">
+                                <i class='ui flag icon'></i> Submit
+                            </div>
+                            <div class="ui cancel button">
+                                <i class='ui cancel icon'></i> Cancel
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <script>
-                $(function() {
-                    var id = "@id@";
-                    var now = Math.round(Date.now()/1000);
-                    $(".humantime").each(function() {
-                        $(this).text(
-                            describetime(now, parseInt($(this).data("time")))
-                        )
-                    })
-                    $("#abuse").click(function() {
-                        $("#abusemodal")
-                            .modal({
-                                onApprove: function() {
-                                    $.ajax({
-                                        type: 'POST',
-                                        url: '/api/@id@/abusereports',
-                                        data: JSON.stringify({
-                                            text: $('#abusetext').val()
-                                        }),
-                                        success: function() {
-                                            $("#abusedone").modal("show");
-                                        },
-                                        contentType: "application/json",
-                                        dataType: 'json'
-                                    });
-                                }
+                    <div class="ui small modal" id='abusedone'>
+                        <div class="header">Report sent</div>
+                        <div class="content">
+                            <p>
+                                Thank you for helping keep Microsoft MakeCode a friendly place!
+                            </p>
+                        </div>
+                        <div class="actions">
+                            <div class="ui ok green button">
+                                <i class='ui trophy icon'></i> OK
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <script>
+                        $(function() {
+                            var id = "@id@";
+                            var now = Math.round(Date.now()/1000);
+                            $(".humantime").each(function() {
+                                $(this).text(
+                                    describetime(now, parseInt($(this).data("time")))
+                                )
                             })
-                            .modal("show");
-                    })
-                })
-            </script>
+                            $("#abuse").click(function() {
+                                $("#abusemodal")
+                                    .modal({
+                                        onApprove: function() {
+                                            $.ajax({
+                                                type: 'POST',
+                                                url: '/api/@id@/abusereports',
+                                                data: JSON.stringify({
+                                                    text: $('#abusetext').val()
+                                                }),
+                                                success: function() {
+                                                    $("#abusedone").modal("show");
+                                                },
+                                                contentType: "application/json",
+                                                dataType: 'json'
+                                            });
+                                        }
+                                    })
+                                    .modal("show");
+                            })
+                        })
+                    </script>
         </div>
         <div class="script-bookend">
             <div style="text-align: center;">
@@ -136,146 +138,73 @@
         @body@
     </div>
 
-    <script type="text/javascript" src="/embed.js"></script>
     <script>
-        (function() {
-            var editorEmbedURL = "/@versionsuff@#sandbox:@id@";
-            var showCodeButton = document.getElementById("show-code-button");
-            var editCodeButton = document.getElementById("editCodeButton");
-            var embedContainer = document.getElementById("embed-frame");
+        var editorEmbedURL = "/@versionsuff@#sandbox:@id@";
+        var gameEmbedURL = "/@versionsuff@--run?fullscreen=1&nofooter=1&id=@id@";
+        var showCodeButton = document.getElementById("show-code-button");
+        var editCodeButton = document.getElementById("editCodeButton")
+        var frame = document.getElementById("embed-frame");
 
-            var builtSimJSPromise = Promise.resolve(undefined);
-            if (/prebuilt(?:[:=])1/i.test(window.location.href)) {
-                var builtSimJsUrl = "/static/builtjs/@id@.json"
-                // kick off fetch immediately, no need to wait for ksrunnerready
-                builtSimJSPromise = fetch(builtSimJsUrl)
-                    .then(resp => resp.json())
-                    .catch(e => {
-                        console.error("Failed to get prebuilt code")
-                        if (window.pxtTickEvent) {
-                            window.pxtTickEvent("share.prebuilt.missing");
-                        }
-                    });
+        var isGame = true;
+
+        editCodeButton.addEventListener("click", function() {
+            window.pxtTickEvent('share.editcode', { target: "arcade" });
+        })
+
+        showCodeButton.addEventListener("click", function() {
+            // toggle game vs. code view
+            if (isGame) {
+                window.pxtTickEvent('share.showcode', { target: "arcade" });
+                frame.setAttribute("src", editorEmbedURL);
+                showCodeButton.textContent = "Show Game";
             }
+            else {
+                window.pxtTickEvent('share.showgame', { target: "arcade" });
+                frame.setAttribute("src", gameEmbedURL);
+                showCodeButton.textContent = "Show Code";
+            }
+            isGame = !isGame;
+        });
 
-            prebuildSimulator(embedContainer);
-            ksRunnerReady(function() {
-                runSimulator(embedContainer);
-            });
+        var shareLinkIsApproved = false;
 
-            var isGame = true;
-            editCodeButton.addEventListener("click", function() {
-                window.pxtTickEvent('share.editcode', { target: "arcade" });
-            })
+        window.pxtTargetConfigPromise
+            .then(function(targetConfig) {
+                var approvedShareLinks = targetConfig && targetConfig.shareLinks && targetConfig.shareLinks.approved;
+                if (approvedShareLinks && approvedShareLinks.indexOf("@id@") >= 0) {
+                    // This share link has been allow listed; remove cookie banner and allow sending of tick events
+                    shareLinkIsApproved = true;
+                    var abuseMessage = document.querySelector("#abuse-message");
+                    if (abuseMessage)
+                        abuseMessage.remove();
 
-            showCodeButton.addEventListener("click", function() {
-                while (embedContainer.firstChild) {
-                    embedContainer.firstChild.remove();
-                }
-
-                // toggle game vs. code view
-                if (isGame) {
-                    window.pxtTickEvent('share.showcode', { target: "arcade" });
-                    embedContainer.appendChild(createIFrame(editorEmbedURL));
-                    showCodeButton.textContent = "Show Game";
-                }
-                else {
-                    window.pxtTickEvent('share.showgame', { target: "arcade" });
-                    showCodeButton.textContent = "Show Code";
-                    runSimulator(embedContainer);
-                }
-                isGame = !isGame;
-            });
-
-            var shareLinkIsApproved = false;
-
-            window.pxtTargetConfigPromise
-                .then(function(targetConfig) {
-                    var approvedShareLinks = targetConfig && targetConfig.shareLinks && targetConfig.shareLinks.approved;
-                    if (approvedShareLinks && approvedShareLinks.indexOf("@id@") >= 0) {
-                        // This share link has been allow listed; remove cookie banner and allow sending of tick events
-                        shareLinkIsApproved = true;
-                        var abuseMessage = document.querySelector("#abuse-message");
-                        if (abuseMessage)
-                            abuseMessage.remove();
-
-                        window.pxtTickEvent(
-                            'approved.shareurl.loaded',
-                            { shareurl: "@id@",  target: "arcade", cookie: "true" },
-                        );
-                    }
-                });
-
-            window.addEventListener('message', function (ev) {
-                if (!shareLinkIsApproved)
-                    return;
-                var d = ev.data;
-                if (d.type == "messagepacket" && d.channel == "tick-event" && d.data) {
-                    var unpackedData = "";
-                    for (var i = 0; i < d.data.length; ++i)
-                        unpackedData += String.fromCharCode(d.data[i]);
-                    try {
-                        const data = JSON.parse(unpackedData);
-                        data["shareurl"] = "@id@";
-                        data["target"] = "arcade";
-                        data["cookie"] = "true";
-                        window.pxtTickEvent(
-                            'simulator.user.tick',
-                            data,
-                        );
-                    } catch { /** failed to parse tick from game **/ }
+                    window.pxtTickEvent(
+                        'approved.shareurl.loaded',
+                        { shareurl: "@id@",  target: "arcade", cookie: "true" },
+                    );
                 }
             });
 
-            function prebuildSimulator(container) {
-                var sims = document.createElement("div");
-                sims.className = "sim-embed";
-                var simframeWrapper = document.createElement("div");
-                simframeWrapper.className = "simframe ui embed";
-                var emptySim = createIFrame("/sim/simulator.html")
-                emptySim.className = "grayscale";
-                // unused, satisfying pxtsim/simdriver.ts#setFrameState
-                var icon = document.createElement("div");
-                var loader = document.createElement("div");
-                loader.className = "loader";
-                loader.appendChild(document.createElement("div"));
-                loader.appendChild(document.createElement("div"));
-
-                simframeWrapper.appendChild(emptySim);
-                simframeWrapper.appendChild(icon);
-                simframeWrapper.appendChild(loader);
-
-                sims.appendChild(simframeWrapper);
-                container.appendChild(sims);
+        window.addEventListener('message', function (ev) {
+            if (!shareLinkIsApproved)
+                return;
+            var d = ev.data;
+            if (d.type == "messagepacket" && d.channel == "tick-event" && d.data) {
+                var unpackedData = "";
+                for (var i = 0; i < d.data.length; ++i)
+                    unpackedData += String.fromCharCode(d.data[i]);
+                try {
+                    const data = JSON.parse(unpackedData);
+                    data["shareurl"] = "@id@";
+                    data["target"] = "arcade";
+                    data["cookie"] = "true";
+                    window.pxtTickEvent(
+                        'simulator.user.tick',
+                        data,
+                    );
+                } catch { /** failed to parse tick from game **/ }
             }
-
-            function runSimulator(container) {
-                // yield to UI thread before compiling
-                window.setTimeout(function() {
-                    builtSimJSPromise.then(builtSimJS => {
-                        var options = {
-                            id: "@id@",
-                            builtJsInfo: builtSimJS,
-                        };
-                        console.log('simulating script');
-                        pxt.runner.simulateAsync(container, options).done(function(built) {
-                            if (!builtSimJS)
-                                builtSimJSPromise = Promise.resolve(built);
-                            console.log('simulator started...');
-                        });
-                    });
-                }, 0);
-            }
-
-            function createIFrame(src) {
-                var iframe = document.createElement("iframe");
-                iframe.className = "sim-embed";
-                iframe.sandbox = "allow-popups allow-forms allow-scripts allow-same-origin";
-                iframe.frameBorder = "0";
-                iframe.src = src;
-                return iframe;
-            }
-        })();
+        });
     </script>
 
     <!-- @include tracking.html -->
