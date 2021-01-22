@@ -1,4 +1,4 @@
-# WW84 - Chaos Maze
+# WW84: Chaos Maze
 
 ## Introduction @unplugged
 
