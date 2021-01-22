@@ -537,8 +537,7 @@
             "experimentalHw",
             "recipes",
             "tutorialBlocksDiff",
-            "blocksErrorList",
-            "identity"
+            "blocksErrorList"
         ],
         "blocksCollapsing": true,
         "errorList": true,
