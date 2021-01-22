@@ -125,7 +125,7 @@ game.onUpdateInterval(500, function () {
 
 ### Keep Track of Time
 
-We need to keep track of how long the game will last. To do this, go to ``||info:Info||`` and drag the ``||info:start countdown||`` into the ``||loops:on start||`` block. Click on the `0` and change it to `60` so that the game will end after 60 seconds.
+We need to keep track of how long the game will last. To do this, go to ``||info:Info||`` and drag the ``||info:start countdown||`` into the ``||loops:on start||`` block. Click on the `10` and change it to `60` so that the game will end after 60 seconds.
 
 ### Keep Track of the Score
 
@@ -160,7 +160,7 @@ To change the score when the cherry is touched, go to the ``||info:Info||`` tab 
 
 When this block runs, two new variables are created: ``||variables:sprite||`` and ``||variables:otherSprite||``. We need to remove ``||variables:otherSprite||`` from the game, which is the ``||sprites:Food||`` that collided with the ``||sprites:Player||``.
 
-To do so, go to ``||sprites:Sprites||`` in the Toolbox and, under **Lifecycle**, drag the ``||sprites:destroy||`` block into the ``||sprites:on sprite of kind Player overlaps||`` block. Then, drag the ``||variables:otherSprite||`` variable from the top of the block into the ``||sprites:destroy||`` block.
+To do so, go to ``||sprites:Sprites||`` in the Toolbox and, under **Effects**, drag the ``||sprites:destroy||`` block into the ``||sprites:on sprite of kind Player overlaps||`` block. Then, drag the ``||variables:otherSprite||`` variable from the top of the block into the ``||sprites:destroy||`` block.
 
 You might notice that the ``||variables:mySprite||`` block is removed from the ``||sprites:destroy||`` block when you replace it with ``||variables:otherSprite||``. You can delete that block by dragging it to the Toolbox.
 
