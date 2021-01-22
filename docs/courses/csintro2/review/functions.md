@@ -110,7 +110,7 @@ To fire out a blast of sunshine:
 2. Inside the loop, create a ``||sprites:projectile||``, with an image of a single yellow pixel
 3. Set the ``||sprites:vx||`` and ``||sprites:vy||`` in the ``||sprites:projectile||`` to be random values using ``||math:pick random -75 to 75||``
 4. Click the ``+`` in ``||sprites:projectile||`` and make the projectile come ``||sprites:from sprite||`` ``||variables:mySprite||``
-5. Get ``||sprites:set mySprite stay in screen||``, change ``||variables:mySprite||`` to ``||variables:projectile||``, change ``||sprites:stay in screen||`` to ``||sprites:ghost||``, and turn it ``on``
+5. Get ``||sprites:set mySprite auto destroy||``, change ``||variables:mySprite||`` to ``||variables:projectile||``, change ``||sprites:auto destroy||`` to ``||sprites:ghost||``, and turn it ``on``
 
 ### ~
 

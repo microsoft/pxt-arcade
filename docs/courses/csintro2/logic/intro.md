@@ -83,7 +83,7 @@ mySprite = sprites.create(img`
 `, SpriteKind.Player)
 controller.moveSprite(mySprite, 0, 50)
 mySprite.x = 8
-mySprite.setFlag(SpriteFlag.StayInScreen, true)
+mySprite.setStayInScreen(true)
 info.setScore(0)
 game.onUpdateInterval(500, function () {
     projectile = sprites.createProjectile(img`
@@ -178,7 +178,7 @@ mySprite = sprites.create(img`
 . . . . . f f . . f f . . . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 100)
-mySprite.setFlag(SpriteFlag.StayInScreen, true)
+mySprite.setStayInScreen(true)
 game.splash("Collect 5 cherries")
 game.onUpdateInterval(500, function () {
     projectile = sprites.createProjectile(img`
@@ -268,7 +268,7 @@ mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 100)
-mySprite.setFlag(SpriteFlag.StayInScreen, true)
+mySprite.setStayInScreen(true)
 info.setLife(3)
 forever(function () {
     projectile = sprites.createProjectile(img`

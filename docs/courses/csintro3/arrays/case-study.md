@@ -166,7 +166,7 @@ namespace ship {
         controller.A.repeatInterval = 400;
         sprite.x = screen.width / 2;
         sprite.y = screen.height - 20;
-        sprite.setFlag(SpriteFlag.StayInScreen, true);
+        sprite.setStayInScreen(true);
         return sprite;
     }
 
