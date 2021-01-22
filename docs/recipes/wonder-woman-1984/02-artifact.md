@@ -1,4 +1,4 @@
-# Wonder Woman 1984 - Add Items to Collect
+# WW84: Add Items to Collect
 
 ## Intro @unplugged
 
@@ -65,6 +65,6 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.null, function (sprite, location)
 
 ## Step 6 @fullscreen
 
-Repeat these steps to add more artifacts for Wonder Woman to collect in her Maze. When you're ready to move on to the next tutorial, click [**this link**](#recipe:/recipes/wonder-woman-1984/enemies) to add enemies to your maze! Otherwise, click **Finish**."
+Repeat these steps to add more artifacts for Wonder Woman to collect in her Maze. When you're ready to move on to the next tutorial, click [**this link**](#recipe:/recipes/wonder-woman-1984/03-enemies) to add enemies to your maze! Otherwise, click **Finish**."
  
 ![Enemies!](/static/recipes/wonder-woman-1984/enemies-preview.png)
