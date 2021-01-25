@@ -29,14 +29,6 @@ a:hover { color: #f7c9d4; }
     background-color:  #fff;
 }
 
-.winners #rules table:nth-of-type(4) tr {
-    align-items: flex-start;
-}
-
-.winners #rules table:nth-of-type(4) td {
-    padding: 1rem;
-}
-
 /**** ACTION BUTTONS ****/
 
 .button {
