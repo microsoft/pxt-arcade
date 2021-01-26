@@ -269,7 +269,7 @@ Follow these quick steps and you'll have one in no time!
 
 To get your greeting started, insert a ``||scene:set background image to [ ]||`` block and use one of our pre-loaded assets (or draw your own!)
 
-[__*(show me more...)*__](#doc:/reference/add-background-ref "Learn to add a background.")
+[__*(see reference...)*__](#doc:/reference/add-background-ref "Learn to add a background.")
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -403,7 +403,7 @@ scene.setBackgroundImage(img`
 
 Layer on a ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and use one of our text images (or draw your own!)
 
-[__*(show me more...)*__](#doc:/reference/set-sprite-ref "Learn to add a main sprite.")
+[__*(see reference...)*__](#doc:/reference/set-sprite-ref "Learn to add a main sprite.")
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -659,7 +659,7 @@ let mySprite = sprites.create(img`
 
 Add some pizzazz with a ``||scene:start screen [confetti] effect||`` block!
 
-[__*(show me more...)*__](#doc:/reference/screen-effect-ref "Learn to add a screen effect.")
+[__*(see reference...)*__](#doc:/reference/screen-effect-ref "Learn to add a screen effect.")
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -916,7 +916,7 @@ let mySprite = sprites.create(img`
 Add a personal 🎵 note 🎵 using ``||music:play melody [ ] at tempo [120] (bpm)||``!   
 You can create your own song, or choose one from our gallery!
 
-[__*(show me more...)*__](#doc:/reference/play-melody-ref "Learn to add a melody.")
+[__*(see reference...)*__](#doc:/reference/play-melody-ref "Learn to add a melody.")
 
 ```blocks
 scene.setBackgroundImage(img`
