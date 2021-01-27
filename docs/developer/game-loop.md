@@ -33,7 +33,7 @@ In each frame, the following steps will occur (in order):
 10. The screen is updated and shown to the user.
 
 It is also possible to register code to run between these events using `game.currentScene().eventContext.registerFrameHandler`.
-The first parameter to that function is an 'order', which specifies where in the loop the even should run.
+The first parameter to that function is an 'order', which specifies where in the game loop the event should run.
 The priorities for all portions of the default game loop are defined as constants in scene.ts, and all end in `_PRIORITY`.
 
 ### Physics Step #physics
