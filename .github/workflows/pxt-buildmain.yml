@@ -29,7 +29,7 @@ jobs:
           npm install
       - name: npm install pxt-arcade-sim
         run: |
-          npm install --no-save "git+https://$GH_TOKEN@github.com/microsoft/pxt-arcade-sim"
+          npm install --no-save git+https://$GH_TOKEN@github.com/microsoft/pxt-arcade-sim
       - name: pxt ci
         run: |
           pxt ci
