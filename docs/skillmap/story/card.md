@@ -1,6 +1,5 @@
 # Greeting Card
 
-
 ```ghost
 scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
@@ -248,10 +247,7 @@ let mySprite = sprites.create(img`
     ................................................................................................................................................................
     `, SpriteKind.Player)
 music.playMelody("G B A G C5 B A B ", 120)
-
-
 ```
-
 
 ## Intro @unplugged
 
@@ -261,15 +257,13 @@ Follow these quick steps and you'll have one in no time!
 
 ![Greetings](/static/skillmaps/story/card.gif "Happy birthday to you!" )
 
-
-
 ## Step 1
 
 🎨 This card centers around an artistic background 🎨
 
 To get your greeting started, insert a ``||scene:set background image to [ ]||`` block and use one of our pre-loaded assets (or draw your own!)
 
-[__*(see reference...)*__](#doc:/reference/add-background-ref "Learn to add a background.")
+[__*(see reference...)*__](#doc:/reference/skills/add-background "Learn to add a background.")
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -403,7 +397,7 @@ scene.setBackgroundImage(img`
 
 Layer on a ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and use one of our text images (or draw your own!)
 
-[__*(see reference...)*__](#doc:/reference/set-sprite-ref "Learn to add a main sprite.")
+[__*(see reference...)*__](#doc:/reference/skills/set-sprite "Learn to add a main sprite.")
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -659,7 +653,7 @@ let mySprite = sprites.create(img`
 
 Add some pizzazz with a ``||scene:start screen [confetti] effect||`` block!
 
-[__*(see reference...)*__](#doc:/reference/screen-effect-ref "Learn to add a screen effect.")
+[__*(see reference...)*__](#doc:/reference/skills/screen-effect "Learn to add a screen effect.")
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -916,7 +910,7 @@ let mySprite = sprites.create(img`
 Add a personal 🎵 note 🎵 using ``||music:play melody [ ] at tempo [120] (bpm)||``!   
 You can create your own song, or choose one from our gallery!
 
-[__*(see reference...)*__](#doc:/reference/play-melody-ref "Learn to add a melody.")
+[__*(see reference...)*__](#doc:/reference/skills/play-melody "Learn to add a melody.")
 
 ```blocks
 scene.setBackgroundImage(img`
