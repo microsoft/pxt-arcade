@@ -272,7 +272,7 @@ Follow these quick steps and you'll have one in no time!
 
 🔲 Toggle to the **Assets** window and use one of our pre-loaded assets...or stay in **Edit** mode to draw your own!
 
-[__*(show me more...)*__](#doc:/reference/add-background-ref "Learn to add a background.")
+[__*(see reference...)*__](#doc:/reference/add-background-ref "Learn to add a background.")
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -410,7 +410,7 @@ scene.setBackgroundImage(img`
 
 🔲 Toggle to the **Assets** window to use one of our pre-loaded titles...or stay in **Edit** mode to create your own.
 
-[__*(show me more...)*__](#doc:/reference/set-sprite-ref "Learn to add a sprite.")
+[__*(see reference...)*__](#doc:/reference/set-sprite-ref "Learn to add a sprite.")
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -669,7 +669,7 @@ let mySprite = sprites.create(img`
 
 Look at the simulator on the left to see what you've done so far!
 
-[__*(show me more...)*__](#doc:/reference/screen-effect-ref "Learn to add scene effects.")
+[__*(see reference...)*__](#doc:/reference/screen-effect-ref "Learn to add scene effects.")
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -928,7 +928,7 @@ let mySprite = sprites.create(img`
 
 🔲 In the new block, click on the music note to open the music editor. You can write your own song, or toggle to the **Gallery** to pick one that we've written for you.
 
-[__*(show me more...)*__](#doc:/reference/play-melody-ref "Learn to add a melody.")
+[__*(see reference...)*__](#doc:/reference/play-melody-ref "Learn to add a melody.")
 
 ```blocks
 scene.setBackgroundImage(img`

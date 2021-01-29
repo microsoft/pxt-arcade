@@ -54,6 +54,16 @@ pxt ddt featured-game --md docs/community.md
 
 This command requires ImageMagick (https://imagemagick.org/index.php) to be installed and available at the command line as "magick".
 
+## Updating pxt-arcade-sim version
+
+When changing the version of pxt-arcade-sim referenced by pxt-arcade, you need to change the version in three places:
+
+1. `package.json`
+2. `.github/workflows/pxt-buildmain.yml`
+3. `.github/workflows/pxt-buildpush.yml`
+
+In the two yml files, you'll find the version in the `ref` field under the step that checks out pxt-arcade-sim.
+
 ## Update playlists in markdown
 
 Get a Google API key and store it in the ``GOOGLE_API_KEY`` environment variables (turn on data from the app).
