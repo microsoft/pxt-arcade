@@ -27,15 +27,17 @@ jobs:
           sudo apt-get install xvfb
           sudo npm install -g pxt
           npm install
-      - name: npm install pxt-arcade-sim
-        run: |
-          npm install --no-save git+https://$GH_TOKEN@github.com/microsoft/pxt-arcade-sim
+      - name: Checkout pxt-arcade-sim
+        uses: actions/checkout@v2
+        with:
+          repository: microsoft/pxt-arcade-sim
+          token: ${{ secrets.GH_TOKEN }}
+          path: node_modules/pxt-arcade-sim
       - name: pxt ci
         run: |
           pxt ci
         env:
           CROWDIN_KEY: ${{ secrets.CROWDIN_KEY }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
           PXT_RELEASE_REPO: ${{ secrets.PXT_RELEASE_REPO }}
           NPM_ACCESS_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
