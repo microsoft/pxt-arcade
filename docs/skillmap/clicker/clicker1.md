@@ -40,6 +40,7 @@ game.splash("Press (A) to earn clicks!")
 
 ```
 
+
 ## Introduction @unplugged
 
 Let's make a clicker game!
@@ -56,7 +57,6 @@ Let's set-up the scoreboard.
 ---
 
 🔲 
-
 
 ```blocks
 
