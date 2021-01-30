@@ -272,7 +272,7 @@ Follow these quick steps and you'll have one in no time!
 
 🔲 Choose one of our pre-loaded backgrounds...or stay in **Edit** mode to create your own.
 
-[__*(see reference...)*__](#doc:/reference/add-background-ref "Learn to add a background.")
+[__*(learn about background scenes...)*__](#doc:/reference/add-background-ref "Learn to add a background.")
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -410,7 +410,7 @@ scene.setBackgroundImage(img`
 
 🔲 Choose one of our pre-loaded titles...or stay in **Edit** mode to create your own.
 
-[__*(see reference...)*__](#doc:/reference/set-sprite-ref "Learn to add a sprite.")
+[__*(Learn about adding decorative sprites...)*__](#doc:/reference/set-sprite-ref "Learn to add a sprite.")
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -669,7 +669,7 @@ let mySprite = sprites.create(img`
 
 Look at the simulator on the left to see what you've done so far!
 
-[__*(see reference...)*__](#doc:/reference/screen-effect-ref "Learn to add scene effects.")
+[__*(learn about screen effects...)*__](#doc:/reference/screen-effect-ref "Learn to add scene effects.")
 
 ```blocks
 scene.setBackgroundImage(img`
