@@ -1,5 +1,6 @@
 # Greeting Card
 
+
 ```ghost
 scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
@@ -271,7 +272,7 @@ Follow these quick steps and you'll have one in no time!
 
 🔲 Choose one of our pre-loaded backgrounds...or stay in **Edit** mode to create your own.
 
-[__*(see reference...)*__](#doc:/reference/skills/add-background "Learn to add a background.")
+[__*(learn about background scenes...)*__](#doc:/reference/add-background-ref "Learn to add a background.")
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -409,7 +410,7 @@ scene.setBackgroundImage(img`
 
 🔲 Choose one of our pre-loaded titles...or stay in **Edit** mode to create your own.
 
-[__*(see reference...)*__](#doc:/reference/skils/set-sprite "Learn to add a sprite.")
+[__*(Learn about adding decorative sprites...)*__](#doc:/reference/set-sprite-ref "Learn to add a sprite.")
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -656,6 +657,8 @@ let mySprite = sprites.create(img`
     ................................................................................................................................................................
     ................................................................................................................................................................
     `, SpriteKind.Player)
+
+
 ```
 
 ## Step 3
@@ -666,7 +669,7 @@ let mySprite = sprites.create(img`
 
 Look at the simulator on the left to see what you've done so far!
 
-[__*(see reference...)*__](#doc:/reference/skills/screen-effect "Learn to add scene effects.")
+[__*(learn about screen effects...)*__](#doc:/reference/screen-effect-ref "Learn to add scene effects.")
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -925,7 +928,7 @@ let mySprite = sprites.create(img`
 
 🔲 In the new block, click on the music note to open the music editor. You can write your own song, or toggle to the **Gallery** to pick one that we've written for you.
 
-[__*(see reference...)*__](#doc:/reference/skills/play-melody "Learn to add a melody.")
+[__*(see reference...)*__](#doc:/reference/play-melody-ref "Learn to add a melody.")
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -1181,6 +1184,7 @@ music.playMelody("G B A G C5 B A B ", 120)
 Congratulations, you've finished your greeting card!  
 
 Click "Finish" to save your card to your gallery so you can share it (or keep building.)
+
 
 
 ```assetjson
