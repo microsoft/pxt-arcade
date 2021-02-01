@@ -92,7 +92,6 @@
 
 
 
-
 ## clicker
 * name: Make a Clicker! 
 * description: Build and embellish a clicker game in MakeCode Arcade.
@@ -128,7 +127,6 @@
 * type: tutorial
 * description: Make a simple store that lets players buy more power. 
 * tags: easy, clicker, game
-
 
 * url: https://github.com/microsoft/pxt-arcade/docs/skillmap/clicker/clicker4 
 * imageUrl: /static/skillmaps/clicker/clicker-activity4.png
