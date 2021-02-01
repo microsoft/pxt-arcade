@@ -100,7 +100,7 @@ f e e . . . . . . . . . . e e f
 . . . 1 1 1 1 1 1 1 1 1 1 . . .
 `, SpriteKind.Player)
 catcher.bottom = scene.screenHeight() - 1
-catcher.setFlag(SpriteFlag.StayInScreen, true)
+catcher.setStayInScreen(true)
 info.setScore(0)
 sprites.onOverlap(SpriteKind.Ball, SpriteKind.Player, function (sprite, otherSprite) {
     if (sprite.x > otherSprite.x - 2 && sprite.x < otherSprite.x + 2) {

@@ -505,7 +505,6 @@ Hops_and_Paw = sprites.create(img`
     . . . . f . f . . . f . f . . .
     `, SpriteKind.Player)
 controller.moveSprite(Hops_and_Paw, 80, 0)
-Hops_and_Paw.setFlag(SpriteFlag.BounceOnWall, false)
 startLevel()
 game.onUpdate(function () {
     if (Hops_and_Paw.vy < 0) {

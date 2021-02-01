@@ -55,7 +55,7 @@ function createPlayer(player: info.PlayerInfo) {
     const output = sprites.create(image.create(3, 18), SpriteKind.Player);
 
     output.image.fill(player.bg);
-    output.setFlag(SpriteFlag.StayInScreen, true);
+    output.setStayInScreen(true);
 
     player.setScore(0);
     player.showPlayer = false;

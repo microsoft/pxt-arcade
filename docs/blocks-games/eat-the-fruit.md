@@ -37,7 +37,7 @@ mySprite = sprites.create(img`
     . . . . . f f . . f f . . . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 100)
-mySprite.setFlag(SpriteFlag.StayInScreen, true)
+mySprite.setStayInScreen(true)
 info.setLife(3)
 game.onUpdateInterval(500, function () {
     choice = randint(1, 3)
