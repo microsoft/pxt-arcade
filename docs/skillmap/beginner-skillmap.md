@@ -93,7 +93,6 @@
 
 
 
-
 ## clicker
 * name: Make a Clicker! 
 * description: Build and embellish a clicker game in MakeCode Arcade.
