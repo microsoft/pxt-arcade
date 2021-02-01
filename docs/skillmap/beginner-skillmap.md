@@ -22,8 +22,6 @@
 
 
 
-
-
 ## getting-started
 * name: Getting started
 * description:  Build games in less than 30 minutes!
@@ -46,7 +44,6 @@
 * type: tutorial
 * description: Make a simple clicker game in MakeCode Arcade!
 * tags: easy, clicker, game
-* next: collector-activity1
 
 * url: https://github.com/microsoft/pxt-arcade/docs/skillmap/clicker/clicker1 
 * imageUrl: /static/skillmaps/clicker/clicker-activity1.png
@@ -92,6 +89,7 @@
 
 
 
+
 ## clicker
 * name: Make a Clicker! 
 * description: Build and embellish a clicker game in MakeCode Arcade.
@@ -127,6 +125,7 @@
 * type: tutorial
 * description: Make a simple store that lets players buy more power. 
 * tags: easy, clicker, game
+
 
 * url: https://github.com/microsoft/pxt-arcade/docs/skillmap/clicker/clicker4 
 * imageUrl: /static/skillmaps/clicker/clicker-activity4.png
