@@ -1,6 +1,6 @@
 ## Countdown timer
 
-Many games require the player to reach a goal in a certain amount of time. Those games have a timer that counts down from an initial amount of time and then ends an action or the game itself when the timer reaches zero.
+Many games require the player to reach a goal in a certain amount of time. Those games have a timer that counts down from an initial amount of time and then ends an activity or the game itself when the timer reaches zero.
 
 ### Start the countdown
 
@@ -32,7 +32,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ### Example
 
-For this example, the countdown timer is set to `30` seconds and it stops when the player sprite meets the goal of reaching the monkey sprite. Otherwise, the game ends.
+In this example, the countdown timer is set to `30` seconds and it stops when the player sprite meets the goal of reaching the monkey sprite. Otherwise, the game ends.
 
 ```blocks
 info.onCountdownEnd(function () {

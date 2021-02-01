@@ -11,7 +11,7 @@ info.setScore(0)
 info.changeScoreBy(1)
 ```
 
-Once the ``||info:set score||`` or ``||info:change score by||`` blocks are used, the current game score is displayed on the screen. You can use ``||info:set score||`` to set a beginning score or to reset it to some other value. The ``||info:change score by||`` block adds to the score by some amount, it can change the score be more that just `1` point if you want. Scores can also be negative and you can subtract points with a negative value in ``||info:change score by||``.
+Once the ``||info:set score||`` or ``||info:change score by||`` blocks are used, the current game score is displayed on the screen. You can use ``||info:set score||`` to set a beginning score or to reset it to some other value. The ``||info:change score by||`` block adds to the score by some amount, it can change the score be more than just `1` point if you want. Scores can also be negative and you can subtract points with a negative value in ``||info:change score by||``.
 
 ### Example
 
@@ -90,7 +90,7 @@ ball.x = 140
 
 ### Checking on the current score
 
-If you want access the current score in your game code, the ``||info:score||`` block has the value for the current score.
+If you want to access the current score in your game code, the ``||info:score||`` block gives the value for the current score.
 
 ```blocks
 let bonus = 0
@@ -103,7 +103,7 @@ game.onUpdateInterval(500, function () {
 
 ### What's the high score?
 
-Sometimes you might want to announce that a new high score was reached. Your game will remember the highest score counted and you can get it from the ``||info.high score||`` block.
+Sometimes you might want to announce that a new high score is reached. Your game will remember the highest score counted and you can get it from the ``||info.high score||`` block.
 
 ```blocks
 let showOnce = true

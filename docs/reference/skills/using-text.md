@@ -18,7 +18,9 @@ game.splash("Star Quest", "Journey to new and distant galaxies!")
 
 ### Show longer text messages
 
-If you need to pause the flow of a game and display some information to the player, you use a long text block. This will display a text string that is longer than a splash message. You can choose where on the screen you want the message to appear, in the corner, center, or show it on the entire screen. The positions where you can display the text are:
+If you need to pause the flow of a game and display some information to the player, you use a ``||game:show long text||`` block. This will display a text string that is longer than a splash message. You can choose where on the screen you want the message to appear, in the corner, center, or show it on the entire screen.
+
+The positions where you can display the text are:
 
 * bottom
 * left

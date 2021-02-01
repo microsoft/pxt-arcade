@@ -9,6 +9,12 @@ Reference topics for game development and programming skills in @boardname@.
 ## Game Status
 
 * [Keeping score](/reference/skills/keeping-score)
+* [Countdown timer](/reference/skills/countdown-timer)
+
+## Interactions
+
+* [Using text](/reference/skills/using-text)
+* [Customizing a dialog](/reference/skills/customize-dialog)
 
 ## Plaformer
 
