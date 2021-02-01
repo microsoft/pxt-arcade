@@ -1,4 +1,4 @@
-# sample
+# basic
 * name: Beginner's Guide to Arcade Games
 * description: Learn to create arcade games of your own by completing these tutorials.
 * infoUrl: /docs/educator-info
@@ -18,6 +18,10 @@
 
 * url: https://github.com/microsoft/pxt-skillmap-sample/tutorials/interface/activity1 
 * imageUrl: /static/skillmaps/interface/activity1.png
+
+
+
+
 
 
 ## getting-started
@@ -66,7 +70,7 @@
 
 ### story-activity3
 
-* name: Shortest Story
+* name: Joking Around
 * type: tutorial
 * description: Create your first MakeCode Arcade story using a two-line joke.
 * tags: easy, story, joke, creative
@@ -74,6 +78,23 @@
 
 * url: https://github.com/microsoft/pxt-arcade/docs/skillmap/story/story3 
 * imageUrl: /static/skillmaps/story/story-activity3.png
+
+
+### story-activity4
+
+* name: Shortest Story
+* type: tutorial
+* description: Write a short story with a scene of your own.
+* tags: easy, story, joke, creative
+
+
+* url: https://github.com/microsoft/pxt-arcade/docs/skillmap/story/story4 
+* imageUrl: /static/skillmaps/story/story-activity4.png
+
+
+
+
+
 
 ## clicker
 * name: Make a Clicker! 
@@ -92,13 +113,26 @@
 * url: https://github.com/microsoft/pxt-arcade/docs/skillmap/clicker/clicker2 
 * imageUrl: /static/skillmaps/clicker/clicker-activity2.png
 
+
 ### clicker-activity3
 
-* name: Timed Clicker
+* name: Super Clicker
 * type: tutorial
-* description: Add pressure to your basic clicker game with a countdown timer. 
+* description: Add code to make your clicker more powerful. 
 * tags: easy, clicker, game
 * next: clicker-activity4
 
 * url: https://github.com/microsoft/pxt-arcade/docs/skillmap/clicker/clicker3 
 * imageUrl: /static/skillmaps/clicker/clicker-activity3.png
+
+
+### clicker-activity4
+
+* name: Clicker Store
+* type: tutorial
+* description: Make a simple store that lets players buy more power. 
+* tags: easy, clicker, game
+
+
+* url: https://github.com/microsoft/pxt-arcade/docs/skillmap/clicker/clicker4 
+* imageUrl: /static/skillmaps/clicker/clicker-activity4.png
