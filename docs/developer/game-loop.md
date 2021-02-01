@@ -22,7 +22,7 @@ In each frame, the following steps will occur (in order):
 
 1. The controller state is updated, identifying whether buttons are pressed, released, or held down.
 2. ``||sprites:Sprites||`` controlled with ``||controller:controller.moveSprite||`` will be moved depending on which buttons are pressed.
-3. Sprite that are 'following' other sprites have their speed adjusted as necessary.
+3. Sprites that are 'following' other sprites have their speed adjusted as necessary.
 4. Physics are applied to the sprites, moving them around the screen and calculating collisions. See [the description of the physics step](#physics) for more details.
 5. All ``||game:on game update interval||`` events are run if it has been long enough since the last time that event was run.
 6. All ``||game:on game update||`` events are run.
