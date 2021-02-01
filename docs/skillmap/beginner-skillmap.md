@@ -63,7 +63,6 @@
 * description: Add to your greeting card for a gift tht keeps on giving.
 * tags: easy, card, gift, creative
 * next: story-activity3
-* required: 1 story
 
 * url: https://github.com/microsoft/pxt-arcade/docs/skillmap/story/story2 
 * imageUrl: /static/skillmaps/story/story-activity2.png
@@ -87,11 +86,8 @@
 * description: Write a short story with a scene of your own.
 * tags: easy, story, joke, creative
 
-
 * url: https://github.com/microsoft/pxt-arcade/docs/skillmap/story/story4 
 * imageUrl: /static/skillmaps/story/story-activity4.png
-
-
 
 
 
@@ -108,7 +104,6 @@
 * description: Modify your clicker so that it's unmistakably yours! 
 * tags: easy, clicker, game
 * next: clicker-activity3
-* required: 1 clicker
 
 * url: https://github.com/microsoft/pxt-arcade/docs/skillmap/clicker/clicker2 
 * imageUrl: /static/skillmaps/clicker/clicker-activity2.png
@@ -132,7 +127,6 @@
 * type: tutorial
 * description: Make a simple store that lets players buy more power. 
 * tags: easy, clicker, game
-
 
 * url: https://github.com/microsoft/pxt-arcade/docs/skillmap/clicker/clicker4 
 * imageUrl: /static/skillmaps/clicker/clicker-activity4.png
