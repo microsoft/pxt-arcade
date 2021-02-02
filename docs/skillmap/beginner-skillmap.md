@@ -60,6 +60,7 @@
 * description: Add to your greeting card for a gift tht keeps on giving.
 * tags: easy, card, gift, creative
 * next: story-activity3
+* reqired: 1 story
 
 * url: https://github.com/microsoft/pxt-arcade/docs/skillmap/story/story2 
 * imageUrl: /static/skillmaps/story/story-activity2.png
@@ -102,6 +103,7 @@
 * description: Modify your clicker so that it's unmistakably yours! 
 * tags: easy, clicker, game
 * next: clicker-activity3
+* required: 1 clicker
 
 * url: https://github.com/microsoft/pxt-arcade/docs/skillmap/clicker/clicker2 
 * imageUrl: /static/skillmaps/clicker/clicker-activity2.png
