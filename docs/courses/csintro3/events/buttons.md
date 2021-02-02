@@ -88,7 +88,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 1. Start with the code from example #2
 2. Add another ``||controller:button event||`` that makes the ``||sprites:sprite||``
 move to the right when then ``||controller:right||`` button is pressed
-3. Move the ``||sprites:sprite||`` back and forth to verify that the 
+3. Move the ``||sprites:sprite||`` back and forth to verify that the
 
 ## Concept: Pressed, Released, and Repeated
 
@@ -142,7 +142,7 @@ increase the ``||info:score||`` by 1
 ### ~hint
 
 The ``||controller:Repeated||`` ``||controller:Button||`` event can modified using
-two properties available on each button: ``repeatDelay`` and ``repeatInterval``. 
+two properties available on each button: ``repeatDelay`` and ``repeatInterval``.
 
 ``repeatDelay`` is the time delay, in milliseconds,
 between when the button is first pressed,
@@ -239,7 +239,7 @@ namespace ship {
         controller.A.repeatInterval = 400;
         sprite.x = screen.width / 2;
         sprite.y = screen.height - 20;
-        sprite.setFlag(SpriteFlag.StayInScreen, true);
+        sprite.setStayInScreen(true);
         return sprite;
     }
 

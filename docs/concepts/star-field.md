@@ -225,7 +225,7 @@ Congratulations, your starfield is complete! Build any game you wish on top of i
 
 In reality, the stars in outer space are millions of light years away from anything else. So, they shouldn't interact or collide with other objects out there.
 
-Find ``||sprites:set mySprite stay in screen||`` in ``||sprites:Sprites||``. Place it after ``||variables:set projectile to||`` and change ``||variables:mySprite||`` to ``||variables:projectile||``. Change ``||sprites:stay in screen||`` to ``||sprites:ghost||``, and click on ``OFF`` to turn it ``ON``.
+Find ``||sprites:set mySprite auto destroy||`` in ``||sprites:Sprites||``. Place it after ``||variables:set projectile to||`` and change ``||variables:mySprite||`` to ``||variables:projectile||``. Change ``||sprites:auto destroy||`` to ``||sprites:ghost||``, and click on ``OFF`` to turn it ``ON``.
 
 This also has a large effect on the frame rate, as the game can skip processing any actions related to the stars overlapping other sprites in the game.
 

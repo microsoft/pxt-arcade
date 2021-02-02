@@ -130,4 +130,4 @@
 
 
 * url: /skillmap/clicker/clicker4 
-* imageUrl: /static/skillmaps/clicker/click
+* imageUrl: /static/skillmaps/clicker/clicker-activity4.png

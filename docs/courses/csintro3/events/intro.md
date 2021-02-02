@@ -231,7 +231,7 @@ put the code related to the stars that you created into this new namespace.
 
 ### Stay in Bounds
 
-Use ``||sprites:sprite.setFlag(SpriteFlag.StayInScreen, true)||`` in the ``ship``
+Use ``||sprites:sprite.setStayInScreen(true)||`` in the ``ship``
 ``initialize`` function, so that the player cannot leave the screen.
 
 ### Solution
@@ -272,7 +272,7 @@ namespace ship {
         controller.moveSprite(sprite, 80, 30);
         sprite.x = screen.width / 2;
         sprite.y = screen.height - 20;
-        sprite.setFlag(SpriteFlag.StayInScreen, true);
+        sprite.setStayInScreen(true);
         return sprite;
     }
 }

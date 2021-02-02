@@ -134,7 +134,7 @@ let mySprite: Sprite = sprites.create(img`
     . . d d d d d d d d d d d . .
     . . . . d d d d d d d . . . .
 `)
-mySprite.setFlag(SpriteFlag.BounceOnWall, true);
+mySprite.setBounceOnWall(true);
 mySprite.vx = 50;
 ```
 

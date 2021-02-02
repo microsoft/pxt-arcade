@@ -3,136 +3,127 @@ Check out the winners of the 4th Official Microsoft MakeCode Game Jam, featuring
 
 ## Games
 
-```codecard
-[
-    {
-        "name": "Square Rescue",
-        "description": "Rotate the road segments to save the squares while avoiding the evil white triangles.",
-        "author": "donnadie",
-        "url": "https://arcade.makecode.com/25787-41781-39930-98285",
-        "cardType": "sharedExample",
-        "imageUrl": "https://pxt.azureedge.net/api/25787-41781-39930-98285/thumb"
-    },
-    {
-        "name": "HONK!",
-        "description": "Honk other cars out of your way while collecting powerups!",
-        "author": "Unsigned_Arduino",
-        "url": "https://arcade.makecode.com/97928-66031-26500-83480",
-        "cardType": "sharedExample",
-        "imageUrl": "https://pxt.azureedge.net/api/97928-66031-26500-83480/thumb"
-    },
-    {
-        "name": "Traffic Panic",
-        "description": "Arrange the randomly generated road segments into a continuous street before the cars arrive!",
-        "author": "I Am Penguin",
-        "url": "https://arcade.makecode.com/09285-20655-41262-50777",
-        "cardType": "sharedExample",
-        "imageUrl": "https://pxt.azureedge.net/api/09285-20655-41262-50777/thumb"
-    },
-    {
-        "name": "Traffic Jam",
-        "description": "A classic puzzle game with a fun twist--can you beat level nine?",
-        "author": "Rishi",
-        "url": "https://arcade.makecode.com/82921-64280-76040-39471",
-        "cardType": "sharedExample",
-        "imageUrl": "https://pxt.azureedge.net/api/08220-03361-90643-03076/thumb"
-    },
-    {
-        "name": "UFOs Control Traffic",
-        "description": "Prevent car crashes as a helpful UFO traffic controller and admire the beautiful art as you do!",
-        "author": "logic_lab",
-        "url": "https://arcade.makecode.com/63418-25020-58432-17936",
-        "cardType": "sharedExample",
-        "imageUrl": "https://pxt.azureedge.net/api/63418-25020-58432-17936/thumb"
-    },
-    {
-        "name": "Gridlock Panic",
-        "description": "An entertaining game with a dose of realism: survive gridlock while keeping the cars around you happy.",
-        "author": "Colin",
-        "url": "https://arcade.makecode.com/73780-80767-61760-73255",
-        "cardType": "sharedExample",
-        "imageUrl": "https://pxt.azureedge.net/api/73780-80767-61760-73255/thumb"
-    },
-    {
-        "name": "Split cars",
-        "description": "LCProCODER",
-        "author": "Play on hard mode using the player one and two keyboard controls to move the cars, or grab a friend to help you out.",
-        "url": "https://arcade.makecode.com/91788-14792-10566-27532",
-        "cardType": "sharedExample",
-        "imageUrl": "https://pxt.azureedge.net/api/91788-14792-10566-27532/thumb"
-    },
-    {
-        "name": "Speedup",
-        "description": "A one player racing game with a variety of levels! Drift around corners and try to beat the developer's best times.",
-        "author": "limeboat",
-        "url": "https://arcade.makecode.com/66393-37332-31697-05508",
-        "cardType": "sharedExample",
-        "imageUrl": "https://pxt.azureedge.net/api/66393-37332-31697-05508/thumb"
-    },
-    {
-        "name": "Two player Car racing",
-        "description": "A simple but very well-executed racing game; find a friend and see who can reach three laps first.",
-        "author": "Dreadmask197",
-        "url": "https://arcade.makecode.com/47207-15180-38494-73088",
-        "cardType": "sharedExample",
-        "imageUrl": "https://pxt.azureedge.net/api/47207-15180-38494-73088/thumb"
-    },
-    {
-        "name": "Box Cars",
-        "description": "An in-depth racing game with NPCs, difficulty modes, and a wide variety of levels! Can you beat Rainbow Road?",
-        "author": "Lucas the Game Builder",
-        "url": "https://arcade.makecode.com/46985-72981-72214-04491",
-        "cardType": "sharedExample",
-        "imageUrl": "https://pxt.azureedge.net/api/46985-72981-72214-04491/thumb"
-    },
-    {
-        "name": "Perpetual Racer v1.0",
-        "description": "An infinite racer game where you must avoid other cars and stay on the road.",
-        "author": "Flint",
-        "url": "https://arcade.makecode.com/62709-22716-97391-35657",
-        "cardType": "sharedExample",
-        "imageUrl": "https://pxt.azureedge.net/api/62709-22716-97391-35657/thumb"
-    },
-    {
-        "name": "Traffic",
-        "description": "SergioF",
-        "author": "Deliver packages quickly, but avoid the rival cars on the street as you go.",
-        "url": "https://arcade.makecode.com/24335-38360-89654-06487",
-        "cardType": "sharedExample",
-        "imageUrl": "https://pxt.azureedge.net/api/24335-38360-89654-06487/thumb"
-    },
-    {
-        "name": "EL TAXI A TODA LECHE",
-        "description": "Stay on the road and keep an eye on the clock as you pick up customers in your taxi!",
-        "author": "Diego",
-        "url": "https://arcade.makecode.com/21888-58698-48781-29669",
-        "cardType": "sharedExample",
-        "imageUrl": "https://pxt.azureedge.net/api/21888-58698-48781-29669/thumb"
-    },
-    {
-        "name": "Corre Coche Corre",
-        "description": "Dodge rocks and keep your car full of gas in this game! Can you find the Easter egg? ",
-        "author": "Dylan",
-        "url": "https://arcade.makecode.com/17976-94497-75273-04809",
-        "cardType": "sharedExample",
-        "imageUrl": "https://pxt.azureedge.net/api/17976-94497-75273-04809/thumb"
-    },
-    {
-        "name": "Late for Work",
-        "description": "A challenging racer where you must dodge oil spills and barricades on your way to work.",
-        "author": "Connor",
-        "url": "https://arcade.makecode.com/75492-22338-35577-46415",
-        "cardType": "sharedExample",
-        "imageUrl": "https://pxt.azureedge.net/api/75492-22338-35577-46415/thumb"
-    },
-    {
-        "name": "See more...",
-        "description": "Check out all the entries on the official game jam page!",
-        "imageUrl": "/static/gamejam/jams/traffic/assets/preview.png",
-        "url": "https://arcade.makecode.com/gamejam"
-    }
-]
-```
+### ~ codecard
+* name: The Three Brave Cats
+* description: The legendary Captain Cat sets sail with his friends Sam and Coco, to save the world from the evil Robot Cat!
+* author: lucasmayhew
+* url: https://arcade.makecode.com/04978-92601-05637-89537
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/04978-92601-05637-89537/thumb
+---
+* name: The Jolly Dodger
+* description: Outfit your ship and sail into enemy territory to plunder some booty and steal all the glory! Dodge enemy fire or you will become someone else's sunken treasure.
+* author: Andrew-ski
+* url: https://arcade.makecode.com/04007-23134-26251-74065
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/04007-23134-26251-74065/thumb
+---
+* name: War Subs
+* description: Fight for parts and use those parts to build the best War Sub from over 1000 possible ships and 1000 possible opponent ships.
+* author: Rishi
+* url: https://arcade.makecode.com/05000-25084-90099-51924
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/05000-25084-90099-51924/thumb
+---
+* name: Sea Wolf
+* description: You are the captain of a submarine. Use the A button to fire torpedoes at your enemies.
+* author: Roberto
+* url: https://arcade.makecode.com/26024-01539-84844-67918
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/26024-01539-84844-67918/thumb
+---
+* name: An Ocean Mystery
+* description: Play a daring detective and solve this high-seas mystery!
+* author: Dreadmask197
+* url: https://arcade.makecode.com/48545-28742-60637-75793
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/48545-28742-60637-75793/thumb
+---
+* name: Soggy Socks
+* description: The tide is coming in and you better run before you end up with... SOGGY SOCKS!
+* author: Andrew-ski
+* url: https://arcade.makecode.com/64763-39107-97677-08933
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/64763-39107-97677-08933/thumb
+---
+* name: Dugong Peace Game
+* description: Dugongs just want peace, but they're threatened by an ever-expanding airbase.
+* author: eoin
+* url: https://arcade.makecode.com/23852-38097-46052-09329
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/23852-38097-46052-09329/thumb
+---
+* name: Fishy Fishy Cross my Ocean!
+* description: Cross the dangerous ocean filled with a number of sharks to get to the other side!
+* author: UnsignedArduino
+* url: https://unsignedarduino.github.io/Fishy-Fishy-Cross-my-Ocean/
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/63434-59192-93007-07962/thumb
+---
+* name: Caballito Saltarin
+* description: Dodge pollution and plastic waste while trying to get to the end in this lovely platformer.
+* author: Blanca
+* url: https://arcade.makecode.com/94650-21405-93520-18500
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/94650-21405-93520-18500/thumb
+---
+* name: The little fishing Boat
+* description: You are a little fishing boat, and you must cast your nets to bring in the day's haul!
+* author: Cristina
+* url: https://arcade.makecode.com/22029-70208-79308-34060
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/22029-70208-79308-34060/thumb
+---
+* name: Migration Man
+* description: Draw a route from the starting place to the destination for marine animals to follow.
+* author: Rishi
+* url: https://arcade.makecode.com/59084-50145-15821-85726
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/59084-50145-15821-85726/thumb
+---
+* name: Sam the scuba diver
+* description: A short platformer with wonderful art, about a scuba diver named Sam.
+* author: DuckmanTheCoder
+* url: https://arcade.makecode.com/16753-20086-91706-27373
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/16753-20086-91706-27373/thumb
+---
+* name: Fish life
+* description: Live like a fish!
+* author: RetroDude128
+* url: https://arcade.makecode.com/14363-02790-83920-73318
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/14363-02790-83920-73318/thumb
+---
+* name: Nautical
+* description: Traverse the sea in your submarine, avoiding enemy vehicles and making sure to stay fueled up!
+* author: ludumStudios
+* url: https://arcade.makecode.com/47541-67265-08742-44374
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/47541-67265-08742-44374/thumb
+---
+* name: fish bot
+* description: You are a robotic fish; protect the fish tank from enemies in this twist-filled game!
+* author: the_pro551
+* url: https://arcade.makecode.com/28370-48293-84707-01529
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/28370-48293-84707-01529/thumb
+---
+* name: In The Depths
+* description: Play as a diver exploring the Mariana Trench to collect data about the mysterious creatures that dwell in the depths.
+* author: Thomas
+* url: https://arcade.makecode.com/18590-69034-08348-28523
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/18590-69034-08348-28523/thumb
+---
+* name: See more...
+* description: Check out all the entries on the official game jam page!
+* cardType: link
+* directOpen: true
+* imageUrl: /static/gamejam/jams/ocean/assets/preview.png
+* url: https://arcade.makecode.com/gamejam
+---
+### ~
 
 ## See Also
 

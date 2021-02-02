@@ -83,7 +83,7 @@ By default, the ``||sprites:kind||`` of a ``||sprites:projectile||`` is ``Projec
 
 ### ~
 
-``||sprites:auto destroy||`` is available for all sprites using the ``||sprites:set sprite auto destroy on||`` flag, but projectiles have it added in for you automatically. Select the ``||sprites:auto destroy||`` setting in the drop-down list of the ``||sprites:set sprite stay in screen||`` block.
+``||sprites:auto destroy||`` is available for all sprites using the ``||sprites:set sprite auto destroy on||`` flag, but projectiles have it added in for you automatically.
 
 ## Student Task #1: Make a ball fall down
 

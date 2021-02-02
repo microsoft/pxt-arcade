@@ -82,7 +82,7 @@ namespace _dogdodge {
         `, SpriteKind.Player)
         goodBoi.setPosition(80, 120)
         controller.moveSprite(goodBoi)
-        goodBoi.setFlag(SpriteFlag.StayInScreen, true)
+        goodBoi.setStayInScreen(true)
         game.onUpdateInterval(300, function () {
             evil = sprites.create(img`
                 . . . . . . . . . . . . . . . . . . . . . . . .
@@ -1572,7 +1572,7 @@ namespace _balloondart {
             6 c c c 6 c 6 6 f c c 6
         `, SpriteKind.Player)
         Dart.bottom = 120
-        Dart.setFlag(SpriteFlag.StayInScreen, true)
+        Dart.setStayInScreen(true)
         controller.moveSprite(Dart, 150, 0)
 
     }
@@ -1772,7 +1772,7 @@ namespace _chop {
             . . . f f f f f f f f f f . . .
             . . . . . f f . . f f . . . . .
         `, SpriteKind.Player)
-        chopper.setFlag(SpriteFlag.StayInScreen, true)
+        chopper.setStayInScreen(true)
         controller.moveSprite(chopper)
         materials = 0
 
@@ -2259,7 +2259,7 @@ namespace _conch {
         `, SpriteKind.Player)
         controller.moveSprite(DiverJoe)
         DiverJoe.setPosition(15, 12)
-        DiverJoe.setFlag(SpriteFlag.StayInScreen, true)
+        DiverJoe.setStayInScreen(true)
         scene.setTileMap(img`
             8 8 8 8 8 8 8 8 8 8
             8 8 8 8 8 8 8 8 8 8
@@ -2288,7 +2288,7 @@ namespace _conch {
             . . a a b a a a a a b a c . . .
             . c c c c c c c c c a c c c . .
         `, SpriteKind.Food)
-        Conch.setFlag(SpriteFlag.StayInScreen, true)
+        Conch.setStayInScreen(true)
         Conch.setPosition(randint(0, 160), 112)
         game.onUpdate(function () {
             if (DiverJoe.vx < 0) {
@@ -2415,7 +2415,7 @@ namespace _crossroad {
             . . . f 5 f f f 5 f f 5 f . . .
             . . . f f . . f f . . f f . . .
         `, SpriteKind.Player)
-        crossy.setFlag(SpriteFlag.StayInScreen, true)
+        crossy.setStayInScreen(true)
         crossy.setPosition(0, 60)
         controller.moveSprite(crossy)
         let goal = sprites.create(img`
@@ -3241,7 +3241,7 @@ namespace _dodge {
         PlaneSpeed = 100
         MissleList = sprites.allOfKind(SpriteKind.Enemy)
         GameActive = true
-        Plane.setFlag(SpriteFlag.StayInScreen, true)
+        Plane.setStayInScreen(true)
         gamejam.win(true)
         game.onUpdateInterval(1000, function () {
             if (GameActive) {
@@ -3431,7 +3431,7 @@ namespace _guppy {
         `, SpriteKind.Player)
         hongryFish.startEffect(effects.bubbles, 500)
         controller.moveSprite(hongryFish, 125, 100)
-        hongryFish.setFlag(SpriteFlag.StayInScreen, true)
+        hongryFish.setStayInScreen(true)
         let fish = Math.floor(randint(3, 5))
         let LimitMed = Math.floor(fish / 2)
         let LimitBig = fish - 1
@@ -3461,7 +3461,7 @@ namespace _guppy {
                         yVel = randint(-10, 10)
                         SmolFish.setPosition(xPos, yPos)
                         SmolFish.setVelocity(xVel, yVel)
-                        SmolFish.setFlag(SpriteFlag.BounceOnWall, true)
+                        SmolFish.setBounceOnWall(true)
                         if (xVel < 0) {
                             SmolFish.setImage(img`
                                 . . . . . . . .
@@ -3489,7 +3489,7 @@ namespace _guppy {
                         yVel = randint(-10, 10)
                         MedFish.setPosition(xPos, yPos)
                         MedFish.setVelocity(xVel, yVel)
-                        MedFish.setFlag(SpriteFlag.BounceOnWall, true)
+                        MedFish.setBounceOnWall(true)
                         if (xVel < 0) {
                             MedFish.setImage(img`
                                 . . . . . . . .
@@ -3526,7 +3526,7 @@ namespace _guppy {
                     yVel = randint(-5, 5)
                     BigFish.setPosition(xPos, yPos)
                     BigFish.setVelocity(xVel, yVel)
-                    BigFish.setFlag(SpriteFlag.BounceOnWall, true)
+                    BigFish.setBounceOnWall(true)
                     if (xVel < 0) {
                         BigFish.setImage(img`
                             . . . . . . . . . . . . . . . .

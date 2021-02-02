@@ -95,7 +95,7 @@ let spacePlane = sprites.create(img`
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
 // @highlight
-spacePlane.setFlag(SpriteFlag.StayInScreen, true)
+spacePlane.setStayInScreen(true)
 ```
 
 ## Step 3
@@ -137,7 +137,7 @@ let spacePlane = sprites.create(img`
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
-spacePlane.setFlag(SpriteFlag.StayInScreen, true)
+spacePlane.setStayInScreen(true)
 // @highlight
 info.setLife(3)
 ```
@@ -183,7 +183,7 @@ let spacePlane = sprites.create(img`
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
-spacePlane.setFlag(SpriteFlag.StayInScreen, true)
+spacePlane.setStayInScreen(true)
 info.setLife(3)
 // @highlight
 controller.moveSprite(spacePlane, 200, 200)

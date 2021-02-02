@@ -102,7 +102,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         randint(-150, 150)
     );
     projectile.setFlag(SpriteFlag.DestroyOnWall, false);
-    projectile.setFlag(SpriteFlag.BounceOnWall, true);
+    projectile.setBounceOnWall(true);
     projectile.setFlag(SpriteFlag.AutoDestroy, false);
 });
 
