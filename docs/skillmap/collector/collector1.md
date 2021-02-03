@@ -1,0 +1,352 @@
+# Collector Game
+
+
+```ghost
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    info.changeScoreBy(1)
+})
+let projectile: Sprite = null
+let mySprite = sprites.create(img`
+    . . . . . . . . . b 5 b . . . . 
+    . . . . . . . . . b 5 b . . . . 
+    . . . . . . b b b b b b . . . . 
+    . . . . . b b 5 5 5 5 5 b . . . 
+    . . . . b b 5 b c 5 5 d 4 c . . 
+    . b b b b 5 5 5 b f d d 4 4 4 b 
+    . b d 5 b 5 5 b c b 4 4 4 4 b . 
+    . . b 5 5 b 5 5 5 4 4 4 4 b . . 
+    . . b d 5 5 b 5 5 5 5 5 5 b . . 
+    . b d b 5 5 5 d 5 5 5 5 5 5 b . 
+    b d d c d 5 5 b 5 5 5 5 5 5 b . 
+    c d d d c c b 5 5 5 5 5 5 5 b . 
+    c b d d d d d 5 5 5 5 5 5 5 b . 
+    . c d d d d d d 5 5 5 5 5 d b . 
+    . . c b d d d d d 5 5 5 b b . . 
+    . . . c c c c c c c c b b . . . 
+    `, SpriteKind.Player)
+controller.moveSprite(mySprite, 0, 100)
+duck.setFlag(SpriteFlag.StayInScreen, true)
+forever(function () {
+    projectile = sprites.createProjectileFromSide(img`
+        . . b b b b . . 
+        . b 5 5 5 5 b . 
+        b 5 d 3 3 d 5 b 
+        b 5 3 5 5 1 5 b 
+        c 5 3 5 5 1 d c 
+        c d d 1 1 d d c 
+        . f d d d d f . 
+        . . f f f f . . 
+        `, -90, 0)
+    projectile.y = randint(0, 120)
+    pause(1500)
+})
+
+```
+
+
+## Intro @unplugged
+
+Ready to give your **W,A,S,D** keys a workout? 
+
+Let's create a game that brings back some of the iconic arcade style that we love.
+
+![Code a Collector Game](/static/skillmaps/collector/collector1.gif "Grab that coin!" )
+
+
+
+## Step 1
+
+🐤 This game needs a [__*sprite*__](#sprote "a dynamic 2-D image"). 🐤
+
+---
+
+🔲 From the ``||sprites:Sprites||`` category, grab a ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
+block and drag it into the empty **on start** container in the workspace.
+
+🔲 Get to the **Gallery** tab by clicking inside the grey sprite image square 
+and toggling the switch at the top. 
+
+🔲 Choose one of our pre-loaded sprite images...or stay in 
+**Edit** mode to create your own.  Click **Done** once you're
+happy with your sprite.
+
+[__*(learn about adding player sprites...)*__](#doc:/reference/set-sprite-ref "Learn to add a player sprite to your project.")
+
+```blocks
+//@highlight
+let mySprite = sprites.create(img`
+    . . . . . . . . . b 5 b . . . . 
+    . . . . . . . . . b 5 b . . . . 
+    . . . . . . b b b b b b . . . . 
+    . . . . . b b 5 5 5 5 5 b . . . 
+    . . . . b b 5 b c 5 5 d 4 c . . 
+    . b b b b 5 5 5 b f d d 4 4 4 b 
+    . b d 5 b 5 5 b c b 4 4 4 4 b . 
+    . . b 5 5 b 5 5 5 4 4 4 4 b . . 
+    . . b d 5 5 b 5 5 5 5 5 5 b . . 
+    . b d b 5 5 5 d 5 5 5 5 5 5 b . 
+    b d d c d 5 5 b 5 5 5 5 5 5 b . 
+    c d d d c c b 5 5 5 5 5 5 5 b . 
+    c b d d d d d 5 5 5 5 5 5 5 b . 
+    . c d d d d d d 5 5 5 5 5 d b . 
+    . . c b d d d d d 5 5 5 b b . . 
+    . . . c c c c c c c c b b . . . 
+    `, SpriteKind.Player)
+
+```
+
+
+
+
+## Step 2
+
+🤩 Fabulous 🤩
+
+Let's get our sprite moving up and down with the controller.
+
+---
+
+🔲 From the ``||contoller:Controller||`` category, grab a 
+``||controller:move [mySprite] with buttons||`` 
+block and snap it into the bottom of the **on start** container.
+
+🔲 Click the ⊕ button on the new block to show extra 
+ [__*arguments*__](#argue "extra chunks of information the block needs"). 
+
+🔲 To keep the sprite from moving side-to-side, change 
+[__*vx*__](#whatVX "horizontal velocity") to **0**.
+
+
+[__*(learn about velocity and movement...)*__](#doc:/reference/vel-accel-ref "Learn to add a player sprite to your project.")
+
+```blocks
+let mySprite = sprites.create(img`
+    . . . . . . . . . b 5 b . . . . 
+    . . . . . . . . . b 5 b . . . . 
+    . . . . . . b b b b b b . . . . 
+    . . . . . b b 5 5 5 5 5 b . . . 
+    . . . . b b 5 b c 5 5 d 4 c . . 
+    . b b b b 5 5 5 b f d d 4 4 4 b 
+    . b d 5 b 5 5 b c b 4 4 4 4 b . 
+    . . b 5 5 b 5 5 5 4 4 4 4 b . . 
+    . . b d 5 5 b 5 5 5 5 5 5 b . . 
+    . b d b 5 5 5 d 5 5 5 5 5 5 b . 
+    b d d c d 5 5 b 5 5 5 5 5 5 b . 
+    c d d d c c b 5 5 5 5 5 5 5 b . 
+    c b d d d d d 5 5 5 5 5 5 5 b . 
+    . c d d d d d d 5 5 5 5 5 d b . 
+    . . c b d d d d d 5 5 5 b b . . 
+    . . . c c c c c c c c b b . . . 
+    `, SpriteKind.Player)
+    //@highlight
+controller.moveSprite(mySprite, 0, 100)
+
+```
+
+
+
+## Step 3
+
+💰 The sprite needs something to collect 💰
+
+Let's toss some coins toward it every couple of seconds, forever.
+
+---
+
+🔲 From ``||loops:Loops||`` category, grab a 
+``||loops:forever||`` loop container and drag it out into 
+an empty spot on the workspace.
+
+🔲 From the ``||sprites:Sprites||``, grab a 
+``||variables:set [projectile] to projectile [ ] from side with vx [50] vy [50]||`` 
+block and snap it into the empty **forever** container.
+
+🔲 Choose a coin sprite for your projectile by clicking on the grey box and toggling
+to **Gallery** or stay in the **Editor** and create your own.
+
+🔲 To make the projectile fly quickly from right to left, change 
+[__*vx*__](#whatVX "horizontal velocity") to **-150**
+and [__*vy*__](#whatVY "vertical velocity") to **0**.
+
+
+[__*(learn about projectiles...)*__](#doc:/reference/projectiles-ref "Learn to add projectiles to your project.")
+
+```blocks
+forever(function () {
+    let projectile = sprites.createProjectileFromSide(img`
+        . . b b b b . . 
+        . b 5 5 5 5 b . 
+        b 5 d 3 3 d 5 b 
+        b 5 3 5 5 1 5 b 
+        c 5 3 5 5 1 d c 
+        c d d 1 1 d d c 
+        . f d d d d f . 
+        . . f f f f . . 
+        `, -90, 0)
+})
+
+```
+
+
+
+
+## Step 4
+
+😯 Now you have a steady stream of income 😯
+
+If we leave the coins like this, the game will be WAY too easy.  Let's 
+send in the projectiles from a random height each time.
+
+---
+
+🔲 From  ``||sprites:Sprites||``, grab a 
+``||sprites:set [mySprite] [x] to [0]||`` 
+block and snap it into the end of the **forever** loop container.
+
+🔲 Change **mySprite** to **projectile** using the dropdown menu.
+
+🔲 Change **x** to **y** using the dropdown menu.
+
+🔲 Now we need to replace the **0** with ``||math:pick random [0] to [10]||``
+(from the ``||math:Math||`` category.)
+
+[__*(learn about random numbers...)*__](#doc:/reference/random-ref "Learn to add a player sprite to your project.")
+
+```blocks
+forever(function () {
+    let projectile = sprites.createProjectileFromSide(img`
+        . . b b b b . . 
+        . b 5 5 5 5 b . 
+        b 5 d 3 3 d 5 b 
+        b 5 3 5 5 1 5 b 
+        c 5 3 5 5 1 d c 
+        c d d 1 1 d d c 
+        . f d d d d f . 
+        . . f f f f . . 
+        `, -90, 0)
+    projectile.y = randint(0, 10)
+
+})
+
+```
+
+
+
+## Step 5
+
+This is looking great, but the coins still stay right around the top.
+
+---
+
+🔲 Help the coins spread out by changing the largest random number from 
+**10** to **120**.
+
+🔲 Keep the coins from shooting out at the speed of light by 
+adding a ``||loops:pause [100] ms||`` block from the  ``||loops:Loops||``
+category.
+
+🔲 Change the pause time to **1500 ms** by clicking in the textbox and typing 
+**1500** instead of choosing a time from the dropdown menu.
+
+```blocks
+forever(function () {
+    let projectile = sprites.createProjectileFromSide(img`
+        . . b b b b . . 
+        . b 5 5 5 5 b . 
+        b 5 d 3 3 d 5 b 
+        b 5 3 5 5 1 5 b 
+        c 5 3 5 5 1 d c 
+        c d d 1 1 d d c 
+        . f d d d d f . 
+        . . f f f f . . 
+        `, -90, 0)
+    projectile.y = randint(0, 120)
+    pause(1500)
+
+})
+
+```
+
+## Step 6
+
+🎮 Give your game a try 🎮
+
+Notice anything missing?    
+Right now, nothing happens when you catch a coin.   
+Let's change that.
+
+---
+
+🔲 From ``||sprites:Sprites||``, grab a 
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``
+container and drop it into an empty area of the workspace.
+
+🔲 Change the second kind from **Player** to **Projectile**.
+
+```blocks
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+
+})
+```
+
+
+
+## Step 7
+
+Now we have a container for code that will run when the sprite 
+overlaps a projectile. Let's add a block to destroy the 
+coins as you catch them.
+
+---
+
+🔲 From ``||sprites:Sprites||``, grab
+``||sprites:destroy [mySprite]||`` and snap it into the empty 
+**on sprite overlaps** container. 
+
+🔲 To make sure that the right projectile is destroyed, grab the 
+``||variables:otherSprite||`` argument from the header of the 
+**on sprite overlaps** container and drop it into the
+``||sprites:destroy [mySprite]||`` block to replace **mySprite**.
+
+```blocks
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    //@highlight
+    otherSprite.destroy()
+})
+```
+
+
+## Step 8
+
+🏆 Keeping score 🏆
+
+Finally, let's add a point to your score after you catch 
+a coin.
+
+---
+
+🔲 From ``||info:Info||``, grab
+``||info:change score by [1]||`` and snap it into the bottom of the 
+**on sprite overlaps** container.
+
+
+```blocks
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    otherSprite.destroy()    
+    info.changeScoreBy(1)
+})
+```
+
+
+## Step 9
+
+🎆 Congrats 🎆
+
+Now you have your very own collector game! 
+
+Click **Finish** to publish it and get a link to share with friends and family.
