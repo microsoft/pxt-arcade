@@ -4,7 +4,7 @@
 * infoUrl: /educator-info
 
 
-## interface
+## Learn to Use Tutorial
 * name: Learn to use MakeCode Arcade
 * description: This will teach you how to complete tutorials in Microsoft MakeCode Arcade.
 * completionUrl: /static/skillmaps/certificates/understanding-arcade-tutorials.pdf
@@ -22,10 +22,11 @@
 
 
 
-## getting-started
+## Quick Examples
 * name: Getting started
 * description:  Build games in less than 30 minutes!
 * completionUrl: /static/skillmaps/certificates/getting-started.pdf
+
 
 ### story-activity1
 
@@ -38,6 +39,7 @@
 * url: /skillmap/story/story1 
 * imageUrl: /static/skillmaps/story/story-activity1.png
 
+
 ### clicker-activity1
 
 * name: Clicker Game
@@ -48,6 +50,7 @@
 
 * url: /skillmap/clicker/clicker1 
 * imageUrl: /static/skillmaps/clicker/clicker-activity1.png
+
 
 ### collector-activity1
 
@@ -156,6 +159,7 @@
 * description: Build and embellish a collector game in MakeCode Arcade.
 * completionUrl: /static/skillmaps/certificates/collector-game.pdf
 
+
 ### collector-activity2
 
 * name: Collect the Fun
@@ -163,3 +167,7 @@
 * description: Make a few simple changes for a game that's twice as fun! 
 * tags: easy, collector, game
 * required: 1 collector
+
+
+* url: /skillmap/collector/collector2 
+* imageUrl: /static/skillmaps/collector/collector-activity4.png
