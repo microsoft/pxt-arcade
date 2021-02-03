@@ -44,14 +44,29 @@
 * type: tutorial
 * description: Make a simple clicker game in MakeCode Arcade!
 * tags: easy, clicker, game
+* next: collector-activity1
 
 * url: /skillmap/clicker/clicker1 
 * imageUrl: /static/skillmaps/clicker/clicker-activity1.png
+
+### collector-activity1
+
+* name: Collector Game
+* type: tutorial
+* description: Make an arcade-style collector game!
+* tags: easy, collector, game
+
+* url: /skillmap/collector/collector1 
+* imageUrl: /static/skillmaps/collector/collector-activity1.png
+
+
+
 
 ## story
 * name: Tell stories using Arcade
 * description: Learn to tell engaging short stories using Microsoft MakeCode Arcade.
 * completionUrl: /static/skillmaps/certificates/writing-stories.pdf
+
 
 ### story-activity2
 
@@ -131,3 +146,20 @@
 
 * url: /skillmap/clicker/clicker4 
 * imageUrl: /static/skillmaps/clicker/clicker-activity4.png
+
+
+
+
+
+## Collector
+* name: Collector Game
+* description: Build and embellish a collector game in MakeCode Arcade.
+* completionUrl: /static/skillmaps/certificates/collector-game.pdf
+
+### collector-activity2
+
+* name: Collect the Fun
+* type: tutorial
+* description: Make a few simple changes for a game that's twice as fun! 
+* tags: easy, collector, game
+* required: 1 collector
