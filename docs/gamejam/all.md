@@ -1,6 +1,17 @@
 # Game Jams
 
-Past game jams that have been held in Arcade
+Past game jams that have been held in Arcade.
+
+### ~ hint
+
+#### Blocks are covered up?
+
+If you see blocks overlapping each other in the editor workspace, you can
+reformat them by selecting **Format Code** from the menu when you right-click
+on the workspace background.
+
+### ~
+
 
 ## Game Jams
 
