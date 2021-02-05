@@ -136,7 +136,7 @@
         @body@
     </div>
 
-    <script type="text/javascript" src="/embed.js"></script>
+    <script type="text/javascript" src="/---embed.js"></script>
     <script>
         (function() {
             var editorEmbedURL = "/@versionsuff@#sandbox:@id@";
@@ -232,7 +232,7 @@
                 sims.className = "sim-embed";
                 var simframeWrapper = document.createElement("div");
                 simframeWrapper.className = "simframe ui embed";
-                var emptySim = createIFrame("/sim/simulator.html")
+                var emptySim = createIFrame("@simUrl@" || "/sim/simulator.html")
                 emptySim.className = "grayscale";
                 // unused, satisfying pxtsim/simdriver.ts#setFrameState
                 var icon = document.createElement("div");
