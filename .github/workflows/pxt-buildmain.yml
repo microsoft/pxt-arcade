@@ -5,7 +5,7 @@ on:
     branches:
       - 'master'
       - 'main'
-    create:
+  create:
 
 jobs:
   build:
