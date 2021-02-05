@@ -23,7 +23,7 @@
 
 
 ## Quick Examples
-* name: Getting started
+* name: Quick Start Examples
 * description:  Build games in less than 30 minutes!
 * completionUrl: /static/skillmaps/certificates/getting-started.pdf
 
@@ -167,7 +167,35 @@
 * description: Make a few simple changes for a game that's twice as fun! 
 * tags: easy, collector, game
 * required: 1 collector
+* next: collector-activity3
 
 
 * url: /skillmap/collector/collector2 
+* imageUrl: /static/skillmaps/collector/collector-activity2.png
+
+
+
+### collector-activity3
+
+* name: Experience Danger
+* type: tutorial
+* description: Learn to add an enemy projectile to your game
+* tags: easy, collector, game
+
+
+* url: /skillmap/collector/collector3
+* imageUrl: /static/skillmaps/collector/collector-activity3.png
+
+
+
+
+### collector-activity4
+
+* name: Give it Life
+* type: tutorial
+* description: Add extra lives to your collector game
+* tags: easy, collector, game
+
+
+* url: /skillmap/collector/collector4
 * imageUrl: /static/skillmaps/collector/collector-activity4.png

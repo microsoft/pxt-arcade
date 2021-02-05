@@ -212,7 +212,7 @@ special touches to make it even more fun.
 
 ## Step 1
 
-The code for a basic clicker is already in the workspace, but a few extra 
+The code for a basic collector is already in the workspace, but a few extra 
 blocks could make it amazing.
 
 ---
