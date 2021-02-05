@@ -181,6 +181,7 @@
 * type: tutorial
 * description: Learn to add an enemy projectile to your game
 * tags: easy, collector, game
+* next: collector-activity4
 
 
 * url: /skillmap/collector/collector3
