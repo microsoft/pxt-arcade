@@ -126,6 +126,11 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 
 ---
 
+* name: PlayList
+* description: See entire playlist on YouTube
+* url: https://www.youtube.com/playlist?list=PLMMBk9hE-SeoHWvTpdezyL9JfF0tocJUT
+* youTubePlaylistId: PLMMBk9hE-SeoHWvTpdezyL9JfF0tocJUT
+* imageUrl: /static/advanced-stream/playlist.png
 
 ### ~
 
