@@ -17,7 +17,7 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 * name: Tony Albatross: Pro Dolphin
 * description: The pro dolphin lifestyle is all about sick stunts and nobody does it better than Tony. Gain speed underwater to launch yourself into the air and press A or B to rack up points.
 * cardType: forumUrl
-* url: https://forum.makecode.com/t/arcade-advanced-stream-169-tony-albatross-pro-dolphin-pt-4/5078/5
+* url: https://forum.makecode.com/t/arcade-advanced-stream-169-tony-albatross-pro-dolphin-pt-4/5078
 * imageUrl: /static/livestream-games/tony-albatross.png
 
 ---
@@ -25,7 +25,7 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 * name: Spinning Plates
 * description: Pack a dishwasher as efficiently as possible by rotating dishes in this hectic puzzle game. Try to fit as many as you can!
 * cardType: forumUrl
-* url: https://forum.makecode.com/t/arcade-advanced-stream-128-spinning-dishes/3885/3
+* url: https://forum.makecode.com/t/arcade-advanced-stream-128-spinning-dishes/3885
 * imageUrl: /static/livestream-games/spinning-plates.png
 
 ---
@@ -33,7 +33,7 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 * name: Hamlet
 * description: Y'know, it's Hamlet. With mice I guess? Seems pretty accurate to me. Oh and you control a spotlight so make sure you keep it on the actors.
 * cardType: forumUrl
-* url: https://forum.makecode.com/t/arcade-advanced-stream-155-hamlet-act-2/4537/5
+* url: https://forum.makecode.com/t/arcade-advanced-stream-155-hamlet-act-2/4537
 * imageUrl: /static/livestream-games/hamlet.png
 
 ---
@@ -41,7 +41,7 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 * name: CATch some Fish!
 * description: Join one cat on their journey to get fish straight from the source. Press A to reel in your catch and aim for more expensive fish to increase your score.
 * cardType: forumUrl
-* url: https://forum.makecode.com/t/arcade-advanced-stream-116-catch-some-fish/3621/6
+* url: https://forum.makecode.com/t/arcade-advanced-stream-116-catch-some-fish/3621
 * imageUrl: /static/livestream-games/catch-some-fish.png
 
 ---
@@ -49,7 +49,7 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 * name: Fruit flies when you're having fun
 * description: Launch fruit flies to try and break the fruit on the screen. Okay so not all the plants are fruit but the pun was worth it.
 * cardType: forumUrl
-* url: https://forum.makecode.com/t/arcade-advanced-stream-137-fruit-flies-when-youre-having-fun-brick-busting-pt-2/4114/9
+* url: https://forum.makecode.com/t/arcade-advanced-stream-137-fruit-flies-when-youre-having-fun-brick-busting-pt-2/4114
 * imageUrl: /static/livestream-games/fruit-flies.png
 
 ---
@@ -57,7 +57,7 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 * name: Golpher
 * description: Gophers are hiding in my garden! Try to click tiles to figure out where they are hiding without revealing them. You could say you are "sweeping" to save a garden that is "mine".
 * cardType: forumUrl
-* url: https://forum.makecode.com/t/arcade-advanced-stream-183-makin-minesweeper-but-gophers/5535/2
+* url: https://forum.makecode.com/t/arcade-advanced-stream-183-makin-minesweeper-but-gophers/5535
 * imageUrl: /static/livestream-games/golpher.png
 
 ---
@@ -105,7 +105,7 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 * name: Giraf-fight
 * description: Giraffes fight to defend their hats. This game is multiplayer, so grab a friend and use both sides of the keyboard!
 * cardType: forumUrl
-* url: https://forum.makecode.com/t/arcade-advanced-stream-131-giraf-fight-pt-2/3974/3
+* url: https://forum.makecode.com/t/arcade-advanced-stream-131-giraf-fight-pt-2/3974
 * imageUrl: /static/livestream-games/giraf-fight.png
 
 ---
@@ -121,7 +121,7 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 * name: Gacha jobs
 * description: Why does society focus on dogs with jobs? Other animals can have jobs too. Try and collect all the animals with jobs in the gachapon game!
 * cardType: forumUrl
-* url: https://forum.makecode.com/t/arcade-advanced-stream-112-gacha-jobs/3536/4
+* url: https://forum.makecode.com/t/arcade-advanced-stream-112-gacha-jobs/3536
 * imageUrl: /static/livestream-games/gacha-jobs.png
 
 ---
@@ -133,4 +133,3 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 ## See Also
 
 [YouTube Playlist](https://www.youtube.com/playlist?list=PLMMBk9hE-SeoHWvTpdezyL9JfF0tocJUT)
-
