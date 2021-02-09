@@ -81,7 +81,7 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 * name: Stable Table
 * description: Learn how easy it is to make a table!
 * cardType: forumUrl
-* url: https://forum.makecode.com/t/arcade-advanced-stream-123-stable-table/3792/2
+* url: https://forum.makecode.com/t/arcade-advanced-stream-123-stable-table/3792
 * imageUrl: /static/livestream-games/stable-table.png
 
 ---
