@@ -78,6 +78,14 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 
 ---
 
+* name: Stable Table
+* description: Learn how easy it is to make a table!
+* cardType: forumUrl
+* url: https://forum.makecode.com/t/arcade-advanced-stream-123-stable-table/3792/2
+* imageUrl: /static/livestream-games/stable-table.png
+
+---
+
 * name: Bartholomew finds his way
 * description: Help Bartholomew figure out the password to a computer in this point and click game! Also, don't leave your password on a post-it.
 * cardType: forumUrl
@@ -115,14 +123,6 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 * cardType: forumUrl
 * url: https://forum.makecode.com/t/arcade-advanced-stream-112-gacha-jobs/3536/4
 * imageUrl: /static/livestream-games/gacha-jobs.png
-
----
-
-* name: Stable Table
-* description: Learn how easy it is to make a table!
-* cardType: forumUrl
-* url: https://forum.makecode.com/t/arcade-advanced-stream-123-stable-table/3792/2
-* imageUrl: /static/livestream-games/stable-table.png
 
 ---
 
