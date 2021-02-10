@@ -1,5 +1,5 @@
 # Beginner Guide to Arcade Games
-* name: Beginner's Guide to Arcade Games
+* name: Beginner's Guide to Arcade Games 
 * description: Quickly create your own clicker game, greeting cards, and arcade collector game experience.
 * infoUrl: /educator-info/basic-map-info.md
 

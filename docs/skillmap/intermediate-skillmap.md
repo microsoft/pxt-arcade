@@ -1,6 +1,6 @@
 # Game Maker Guide
 * name: Game Maker Guide
-* description: Level up your game making skills by completing the tutorials in this guide.
+* description: Level up your game making skills by completing the tutorials in this guide. 
 * infoUrl: /educator-info/int-map-info.md
 
 
