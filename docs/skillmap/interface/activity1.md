@@ -32,7 +32,7 @@ game.onUpdateInterval(5000, function () {
 
 ## Introduction @unplugged
 
-![Psyched Monkey](../static/skillmaps/interface/monkey.png "Psyched Monkey is Ready!" )
+![Psyched Monkey](/static/skillmaps/interface/monkey.png "Psyched Monkey is Ready!" )
 
 **Are you ready to start coding your own games?**
 
@@ -106,7 +106,7 @@ connected, duplicated, and deleted.
 
 Keep going to learn more about blocks.
 
-![Block Animation](../static/skillmaps/interface/use_blocks.gif "Blocks appear, duplicate, and delete." )
+![Block Animation](/static/skillmaps/interface/use_blocks.gif "Blocks appear, duplicate, and delete." )
 
 
 
@@ -169,7 +169,7 @@ and drop it back into the toolbox to delete it so your sprite will be revealed!
 
 #### ~ tutorialhint
 
-![Open image editor](../static/skillmaps/misc/open-image-editor.gif "How to open the image editor." )
+![Open image editor](/static/skillmaps/misc/open-image-editor.gif "How to open the image editor." )
 
 ---
 
