@@ -1,7 +1,7 @@
-# sample
+# Game Maker Guide
 * name: Game Maker Guide
 * description: Level up your game making skills by completing the tutorials in this guide.
-* infoUrl: /docs/educator-info
+* infoUrl: /educator-info/int-map-info.md
 
 
 ## interface
