@@ -1,7 +1,7 @@
 # Beginner Arcade
 * name: Beginner's Guide to Arcade Games
 * description: Learn to create arcade games of your own by completing these tutorials.
-* infoUrl: skillmap/educator-info/basic-map-info.md
+* infoUrl: skillmap/educator-info/basic-map-info
 
 
 
