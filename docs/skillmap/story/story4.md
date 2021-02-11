@@ -151,7 +151,7 @@ Short stories are fun to read and fun to write!
 In this tutorial, we'll create our own crazy short stories that we can 
 share anywhere we like. 
 
-![Here's the story](/static/skillmaps/clicker/story-activity-4.gif "How mystical!" )
+![Here's the story](/static/skillmap/clicker/story-activity-4.gif "How mystical!" )
 
 
 ## Step 1

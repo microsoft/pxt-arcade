@@ -161,7 +161,7 @@ Making a joke (or a short story) in Arcade is a lot like creating a greeting car
 You can use your background and sprites to convey a sense of emotion and 
 add style. 
 
-![Here's the story](/static/skillmaps/clicker/saltwater.gif "Why do tropical fish like saltwater?" )
+![Here's the story](/static/skillmap/clicker/saltwater.gif "Why do tropical fish like saltwater?" )
 
 ## Step 1
 

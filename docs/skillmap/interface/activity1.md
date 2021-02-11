@@ -32,7 +32,7 @@ game.onUpdateInterval(5000, function () {
 
 ## Introduction @unplugged
 
-![Psyched Monkey](/static/skillmaps/interface/monkey.png "Psyched Monkey is Ready!" )
+![Psyched Monkey](/static/skillmap/interface/monkey.png "Psyched Monkey is Ready!" )
 
 **Are you ready to start coding your own games?**
 
@@ -106,7 +106,7 @@ connected, duplicated, and deleted.
 
 Keep going to learn more about blocks.
 
-![Block Animation](/static/skillmaps/interface/use_blocks.gif "Blocks appear, duplicate, and delete." )
+![Block Animation](/static/skillmap/interface/use_blocks.gif "Blocks appear, duplicate, and delete." )
 
 
 
@@ -169,7 +169,7 @@ and drop it back into the toolbox to delete it so your sprite will be revealed!
 
 #### ~ tutorialhint
 
-![Open image editor](/static/skillmaps/misc/open-image-editor.gif "How to open the image editor." )
+![Open image editor](/static/skillmap/misc/open-image-editor.gif "How to open the image editor." )
 
 ---
 
@@ -254,26 +254,26 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## Argument Blocks
+## Value Blocks
 
-Finally, we have [__*argument blocks*__](#aBlockIt "special pieces that add information to other blocks"). 
-Argument blocks are special pieces that add information to other
+Finally, we have [__*value blocks*__](#aBlockIt "special pieces that provide values for other blocks"). 
+Value blocks are special pieces that add information to other
 blocks. Sometimes they're pointy, sometimes they're rounded,
-but they always need another block to snap into. Argument blocks look something like this:
+but they always need another block to snap into. Value blocks look something like this:
 
-![Argument Blocks](/static/skillmaps/interface/parameter-blocks.png "This is what the shape of an argument block looks like" )
+![Value Blocks](/static/skillmap/interface/parameter-blocks.png "This is what the shape of an value block looks like" )
 
 ---
 
 🔲  Snap a ``||sprites:[mySprite] say [" "] ||`` block into the end of the
 **on A button pressed** container.
 
-🔲  Find the ``||game: ask for number [" "] ||`` argument to pop inside.
+🔲  Find the ``||game: ask for number [" "] ||`` value block to pop inside.
 
 ---
 
-**Tip:** Parameter blocks have different shapes 
-depending on what kind of information they add. Each parameter will only
+**Tip:** Value blocks have different shapes 
+depending on what kind of information they add. Each value will only
 fit in certain types of spaces. 
 
 #### ~ tutorialhint

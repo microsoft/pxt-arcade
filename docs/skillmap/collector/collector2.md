@@ -206,7 +206,7 @@ forever(function () {
 You've made a collector game, now let's add some 
 special touches to make it even more fun.
 
-![Coin Collecting](/static/skillmaps/collector/collector2.gif "Make it special!" )
+![Coin Collecting](/static/skillmap/collector/collector2.gif "Make it special!" )
 
 
 

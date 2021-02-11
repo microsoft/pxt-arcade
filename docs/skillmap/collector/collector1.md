@@ -52,7 +52,7 @@ Ready to give your **W,A,S,D** keys a workout?
 
 Let's create a game that brings back some of the iconic arcade style that we love.
 
-![Code a Collector Game](/static/skillmaps/collector/collector1.gif "Grab that coin!" )
+![Code a Collector Game](/static/skillmap/collector/collector1.gif "Grab that coin!" )
 
 
 

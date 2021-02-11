@@ -94,7 +94,7 @@ What's more fun than pressing buttons?
 
 Let's modify our clicker game to offer a simple shop.
 
-![Click away](/static/skillmaps/clicker/clicker-activity-4.gif "Click and buy bigger clickers" )
+![Click away](/static/skillmap/clicker/clicker-activity-4.gif "Click and buy bigger clickers" )
 
 ## Step 1
 

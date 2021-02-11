@@ -56,7 +56,7 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
 
 You've created a greeting, now let's send it over the top!
 
-![Send our love](/static/skillmaps/clicker/story-activity-2.gif "Why do tropical fish like saltwater?" )
+![Send our love](/static/skillmap/clicker/story-activity-2.gif "Why do tropical fish like saltwater?" )
 
 ## Step 1
 

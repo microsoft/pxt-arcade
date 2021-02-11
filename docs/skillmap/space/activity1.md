@@ -6,7 +6,7 @@ Let's explore the depths of space!
 
 In this tutorial, you'll design a spaceship for your journey.
 
-![Flying through space](/static/skillmaps/space/space1.gif "Blasting through a starfield" )
+![Flying through space](/static/skillmap/space/space1.gif "Blasting through a starfield" )
 
 ## Set the scene
 Let's give 'em something to look at 🔭

@@ -70,7 +70,7 @@ as the main mechanic.
 By the time you finish this set of tutorials, you should know all you need 
 to make a fun and engaging arcade game worth sharing.
 
-![Our first platformer](/static/skillmaps/platformer/platformer1.gif "Look what we're about to learn today!")
+![Our first platformer](/static/skillmap/platformer/platformer1.gif "Look what we're about to learn today!")
 
 
 ## Create the player

@@ -138,7 +138,7 @@ This tutorial will help add levels to your game.
 To make level changes easier (and prevent having to write the same
 code again and again) we'll also learn to create a simple [**_function_**](#funky "group of code that can be called using a specific name").
 
-![Levels and Functions](/static/skillmaps/platformer/platformer4.gif "And now for something completely different!  And a little bit the same.")
+![Levels and Functions](/static/skillmap/platformer/platformer4.gif "And now for something completely different!  And a little bit the same.")
 
 
 ## Make a function
@@ -158,7 +158,7 @@ on the ``||functions: Functions||`` category.
 
 🔲 Click inside the textbox to name this function **startNextLevel**, then click **Done**.
 
-![naming a function](/static/skillmaps/platformer/name-function.gif "Say my name, say my name.")
+![naming a function](/static/skillmap/platformer/name-function.gif "Say my name, say my name.")
 
 
 ```blocks

@@ -136,7 +136,7 @@ Collecting things is great, but avoiding danger is more exciting.
 
 This tutorial will show you how to add menacing elements to your game.
 
-![Avoid the rocks](/static/skillmaps/collector/collector3.gif "Make it exciting!" )
+![Avoid the rocks](/static/skillmap/collector/collector3.gif "Make it exciting!" )
 
 
 
