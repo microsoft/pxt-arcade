@@ -1,19 +1,19 @@
-# basic
-* name: Beginner's Guide to Arcade Games
-* description: Learn to create arcade games of your own by completing these tutorials.
-* infoUrl: /educator-info
+# Beginner Guide to Arcade Games
+* name: Beginner's Guide to Arcade Games 
+* description: Quickly create your own clicker game, greeting cards, and arcade collector game experience.
+* infoUrl: /educator-info/basic-map-info.md
 
 
 ## Learn to Use Tutorial
 * name: Learn to use MakeCode Arcade
-* description: This will teach you how to complete tutorials in Microsoft MakeCode Arcade.
+* description: Start here if you want to know the ins and outs of Arcade tutorials!
 * completionUrl: /static/skillmaps/certificates/understanding-arcade-tutorials.pdf
 
 ### interface-activity1
 
-* name: Learn to use MakeCode Arcade
+* name: Learn MakeCode Arcade
 * type: tutorial
-* description: Intro to tutorial cards
+* description: Intro to the features and vocabulary used in Arcade tutorials.
 * tags: easy
 
 * url: /skillmap/interface/activity1 
@@ -22,9 +22,9 @@
 
 
 
-## Quick Examples
-* name: Quick Start Examples
-* description:  Build games in less than 30 minutes!
+## Quick Example Games
+* name: Quick-Start Example Games
+* description:  Build your first games in less than 30 minutes!
 * completionUrl: /static/skillmaps/certificates/getting-started.pdf
 
 
@@ -32,7 +32,7 @@
 
 * name: Greeting card
 * type: tutorial
-* description: Make a greeting card and learn Arcade!
+* description: Make an amazing greeting card in minutes!
 * tags: easy, story, card, creative
 * next: clicker-activity1
 
@@ -67,7 +67,7 @@
 
 ## story
 * name: Tell stories using Arcade
-* description: Learn to tell engaging short stories using Microsoft MakeCode Arcade.
+* description: Learn to tell entertaining short stories using Arcade.
 * completionUrl: /static/skillmaps/certificates/writing-stories.pdf
 
 
@@ -75,7 +75,7 @@
 
 * name: Bigger Greeting
 * type: tutorial
-* description: Add to your greeting card for a gift tht keeps on giving.
+* description: Add to your greeting card for a gift tht keeps on giving!
 * tags: easy, card, gift, creative
 * next: story-activity3
 * reqired: 1 story
@@ -87,7 +87,7 @@
 
 * name: Joking Around
 * type: tutorial
-* description: Create your first MakeCode Arcade story using a two-line joke.
+* description: Create your first Arcade story using a two-line joke!
 * tags: easy, story, joke, creative
 * next: story-activity4
 
@@ -99,7 +99,7 @@
 
 * name: Shortest Story
 * type: tutorial
-* description: Write a short story with a scene of your own.
+* description: Write a short story with a scene of your own!
 * tags: easy, story, joke, creative
 
 * url: /skillmap/story/story4 
@@ -111,7 +111,7 @@
 
 ## clicker
 * name: Make a Clicker! 
-* description: Build and embellish a clicker game in MakeCode Arcade.
+* description: Build a timed clicker game in MakeCode Arcade!
 * completionUrl: /static/skillmaps/certificates/clicker-game.pdf
 
 ### clicker-activity2
@@ -131,7 +131,7 @@
 
 * name: Super Clicker
 * type: tutorial
-* description: Add code to make your clicker more powerful. 
+* description: Add code to make your simple clicker more powerful!
 * tags: easy, clicker, game
 * next: clicker-activity4
 
@@ -143,7 +143,7 @@
 
 * name: Clicker Store
 * type: tutorial
-* description: Make a simple store that lets players buy more power. 
+* description: Make a simple store that lets players buy more power! 
 * tags: easy, clicker, game
 
 
@@ -156,7 +156,7 @@
 
 ## Collector
 * name: Collector Game
-* description: Build and embellish a collector game in MakeCode Arcade.
+* description: Build a simple collector game in MakeCode Arcade!
 * completionUrl: /static/skillmaps/certificates/collector-game.pdf
 
 
@@ -179,7 +179,7 @@
 
 * name: Experience Danger
 * type: tutorial
-* description: Learn to add an enemy projectile to your game
+* description: Learn to add enemy projectiles to your game!
 * tags: easy, collector, game
 * next: collector-activity4
 
@@ -194,7 +194,7 @@
 
 * name: Give it Life
 * type: tutorial
-* description: Add extra lives to your collector game
+* description: Add extra lives to your collector game!
 * tags: easy, collector, game
 
 
