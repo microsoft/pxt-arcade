@@ -10,7 +10,7 @@ that depleats as you travel.
 Make sure to catch the powerups to keep your
 ship from breaking down!
 
-![Fuel Up!](/static/skillmaps/space/eat-gas.gif "Is it raining...tacos?")
+![Fuel Up!](/static/skillmap/space/eat-gas.gif "Is it raining...tacos?")
 
 
 ## Step 1
@@ -239,7 +239,7 @@ and snap it in to your newest **overlaps** container.  Change the value from **0
 into the bottom of the same **overlaps** container and replacing
 ``||variables:mySprite||`` with ``||variables:otherSprite||``
 
-![Grabbing variable from block](/static/skillmaps/space/give-var.gif "So that's how you do that!")
+![Grabbing variable from block](/static/skillmap/space/give-var.gif "So that's how you do that!")
 
 <br/>
 

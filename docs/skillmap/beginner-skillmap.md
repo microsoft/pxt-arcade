@@ -1,13 +1,13 @@
-# basic
+# Beginner Arcade
 * name: Beginner's Guide to Arcade Games
 * description: Learn to create arcade games of your own by completing these tutorials.
-* infoUrl: /educator-info
+* infoUrl: skillmap/educator-info/basic-map-info.md
 
 
 ## Learn to Use Tutorial
 * name: Learn to use MakeCode Arcade
 * description: This will teach you how to complete tutorials in Microsoft MakeCode Arcade.
-* completionUrl: /static/skillmaps/certificates/understanding-arcade-tutorials.pdf
+* completionUrl: /static/skillmap/certificates/understanding-arcade-tutorials.pdf
 
 ### interface-activity1
 
@@ -17,7 +17,7 @@
 * tags: easy
 
 * url: /skillmap/interface/activity1 
-* imageUrl: /static/skillmaps/interface/activity1.png
+* imageUrl: /static/skillmap/interface/activity1.png
 
 
 
@@ -25,7 +25,7 @@
 ## Quick Examples
 * name: Quick Start Examples
 * description:  Build games in less than 30 minutes!
-* completionUrl: /static/skillmaps/certificates/getting-started.pdf
+* completionUrl: /static/skillmap/certificates/getting-started.pdf
 
 
 ### story-activity1
@@ -37,7 +37,7 @@
 * next: clicker-activity1
 
 * url: /skillmap/story/story1 
-* imageUrl: /static/skillmaps/story/story-activity1.png
+* imageUrl: /static/skillmap/story/story-activity1.png
 
 
 ### clicker-activity1
@@ -49,7 +49,7 @@
 * next: collector-activity1
 
 * url: /skillmap/clicker/clicker1 
-* imageUrl: /static/skillmaps/clicker/clicker-activity1.png
+* imageUrl: /static/skillmap/clicker/clicker-activity1.png
 
 
 ### collector-activity1
@@ -60,7 +60,7 @@
 * tags: easy, collector, game
 
 * url: /skillmap/collector/collector1 
-* imageUrl: /static/skillmaps/collector/collector-activity1.png
+* imageUrl: /static/skillmap/collector/collector-activity1.png
 
 
 
@@ -68,7 +68,7 @@
 ## story
 * name: Tell stories using Arcade
 * description: Learn to tell engaging short stories using Microsoft MakeCode Arcade.
-* completionUrl: /static/skillmaps/certificates/writing-stories.pdf
+* completionUrl: /static/skillmap/certificates/writing-stories.pdf
 
 
 ### story-activity2
@@ -81,7 +81,7 @@
 * reqired: 1 story
 
 * url: /skillmap/story/story2 
-* imageUrl: /static/skillmaps/story/story-activity2.png
+* imageUrl: /static/skillmap/story/story-activity2.png
 
 ### story-activity3
 
@@ -92,7 +92,7 @@
 * next: story-activity4
 
 * url: /skillmap/story/story3 
-* imageUrl: /static/skillmaps/story/story-activity3.png
+* imageUrl: /static/skillmap/story/story-activity3.png
 
 
 ### story-activity4
@@ -103,7 +103,7 @@
 * tags: easy, story, joke, creative
 
 * url: /skillmap/story/story4 
-* imageUrl: /static/skillmaps/story/story-activity4.png
+* imageUrl: /static/skillmap/story/story-activity4.png
 
 
 
@@ -112,7 +112,7 @@
 ## clicker
 * name: Make a Clicker! 
 * description: Build and embellish a clicker game in MakeCode Arcade.
-* completionUrl: /static/skillmaps/certificates/clicker-game.pdf
+* completionUrl: /static/skillmap/certificates/clicker-game.pdf
 
 ### clicker-activity2
 
@@ -124,7 +124,7 @@
 * required: 1 clicker
 
 * url: /skillmap/clicker/clicker2 
-* imageUrl: /static/skillmaps/clicker/clicker-activity2.png
+* imageUrl: /static/skillmap/clicker/clicker-activity2.png
 
 
 ### clicker-activity3
@@ -136,7 +136,7 @@
 * next: clicker-activity4
 
 * url: /skillmap/clicker/clicker3 
-* imageUrl: /static/skillmaps/clicker/clicker-activity3.png
+* imageUrl: /static/skillmap/clicker/clicker-activity3.png
 
 
 ### clicker-activity4
@@ -148,7 +148,7 @@
 
 
 * url: /skillmap/clicker/clicker4 
-* imageUrl: /static/skillmaps/clicker/clicker-activity4.png
+* imageUrl: /static/skillmap/clicker/clicker-activity4.png
 
 
 
@@ -157,7 +157,7 @@
 ## Collector
 * name: Collector Game
 * description: Build and embellish a collector game in MakeCode Arcade.
-* completionUrl: /static/skillmaps/certificates/collector-game.pdf
+* completionUrl: /static/skillmap/certificates/collector-game.pdf
 
 
 ### collector-activity2
@@ -171,7 +171,7 @@
 
 
 * url: /skillmap/collector/collector2 
-* imageUrl: /static/skillmaps/collector/collector-activity2.png
+* imageUrl: /static/skillmap/collector/collector-activity2.png
 
 
 
@@ -185,7 +185,7 @@
 
 
 * url: /skillmap/collector/collector3
-* imageUrl: /static/skillmaps/collector/collector-activity3.png
+* imageUrl: /static/skillmap/collector/collector-activity3.png
 
 
 
@@ -199,4 +199,4 @@
 
 
 * url: /skillmap/collector/collector4
-* imageUrl: /static/skillmaps/collector/collector-activity4.png
+* imageUrl: /static/skillmap/collector/collector-activity4.png

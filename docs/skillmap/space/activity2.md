@@ -2,7 +2,7 @@
 
 ## Introduction @unplugged
 
-![Releasing projectiles](/static/skillmaps/space/projectiles.gif "Here, enemy ship. Would you like to borrow an asteroid?")
+![Releasing projectiles](/static/skillmap/space/projectiles.gif "Here, enemy ship. Would you like to borrow an asteroid?")
 
 Are you ready to customize your ship? 
 
@@ -20,7 +20,7 @@ kind of vehicle OR turn it into an alien creature floating through space! 👽
 
 >>*Tip: Remember, to edit a sprite, click inside the grey square where your current sprite is displayed.
 
-![Edit the sprite](/static/skillmaps/space/edit-sprite.png "Click within the square. I dare you!")
+![Edit the sprite](/static/skillmap/space/edit-sprite.png "Click within the square. I dare you!")
 
 ## Add a button event
 
@@ -35,7 +35,7 @@ flying object (or select one from the gallery.)
 <hr/>
 
 >>*Tip: Run your code in the simulator and launch a few projectiles 
-by pressing the ![The A Button](/static/skillmaps/space/a-button.png "Let's get fired up!") button.  What happens?
+by pressing the ![The A Button](/static/skillmap/space/a-button.png "Let's get fired up!") button.  What happens?
 
 
 ```blocks
@@ -81,7 +81,7 @@ In MakeCode Arcade, we call that the [__*velocity*__](#veloc "speed in a given d
 - Change whether they fly up or down by changing the [__*vy*__](#whatX "speed from top to bottom")  
 - What happens when you change both?
 
-![Directional Projectiles](/static/skillmaps/space/vxvy.gif "Round and Round")
+![Directional Projectiles](/static/skillmap/space/vxvy.gif "Round and Round")
 
 
 ## Create a projectile

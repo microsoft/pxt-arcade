@@ -97,7 +97,7 @@ In this lesson, we'll take what we made in previous tutorials and add simple ene
 
 We'll also use a sprite overlap event to have enemies interact with the player sprite.
 
-![Editing our platformer](/static/skillmaps/platformer/platformer3.gif "Time to live dangerously!")
+![Editing our platformer](/static/skillmap/platformer/platformer3.gif "Time to live dangerously!")
 
 
 ## Spawning enemies pt. 1

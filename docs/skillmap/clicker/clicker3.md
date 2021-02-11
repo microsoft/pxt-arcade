@@ -83,7 +83,7 @@ There's so much more to explore with our clicker games.
 
 Let's keep building!
 
-![Click away](/static/skillmaps/clicker/clicker-activity-3.gif "Click and buy bigger clickers" )
+![Click away](/static/skillmap/clicker/clicker-activity-3.gif "Click and buy bigger clickers" )
 
 ## Step 1
 

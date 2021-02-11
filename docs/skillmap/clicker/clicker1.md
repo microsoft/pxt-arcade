@@ -44,7 +44,7 @@ info.startCountdown(10)
 
 Let's make a clicker game!
 
-![Click away](/static/skillmaps/clicker/clicker-activity-1.gif "Click and buy bigger clickers" )
+![Click away](/static/skillmap/clicker/clicker-activity-1.gif "Click and buy bigger clickers" )
 
 
 ## Step 1

@@ -178,7 +178,7 @@ forever(function () {
 Ready to give your game some extra life?
 
 
-![Collect extra lives](/static/skillmaps/collector/collector4.gif "Collect your jar of hearts" )
+![Collect extra lives](/static/skillmap/collector/collector4.gif "Collect your jar of hearts" )
 
 
 

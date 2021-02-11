@@ -7,7 +7,7 @@ Intergalactic travel is dangerous!
 Let's add some enemies for your ship to avoid.  
 These could be asteroids, radioactive debris, or angry space sharks!
 
-![Releasing projectiles](/static/skillmaps/space/projectiles.gif "Here, enemy ship. Would you like to borrow an asteroid?")
+![Releasing projectiles](/static/skillmap/space/projectiles.gif "Here, enemy ship. Would you like to borrow an asteroid?")
 
 
 ## Step 1
@@ -234,7 +234,7 @@ That will remove one life from the player each time it is hit by an enemy.
 click on the ``||variables:otherSprite||`` variable from the top of the 
 **overlaps** container and drag it down to replace the 
 ``||variables:mySprite||`` argument in ``||sprites:destroy [mySprite] ⊕||``.
-![Grabbing variable from block](/static/skillmaps/space/give-var.gif "So that's how you do that!")
+![Grabbing variable from block](/static/skillmap/space/give-var.gif "So that's how you do that!")
 <hr/>
 >*Tip: Click the __⊕__ on the ``||sprites:destroy [otherSprite] ⊕||`` block to get
 a menu of effects to display upon your enemy's demise!*

@@ -71,7 +71,7 @@ info.startCountdown(10)
 We already have a basic clicker game, let's use what we've learned to 
 make it even more special!
 
-![Click away](/static/skillmaps/clicker/clicker-activity-2.gif "Click and buy bigger clickers" )
+![Click away](/static/skillmap/clicker/clicker-activity-2.gif "Click and buy bigger clickers" )
 
 ## Step 1
 The code for a basic clicker is already in your workspace.  
