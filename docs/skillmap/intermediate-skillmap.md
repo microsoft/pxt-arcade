@@ -4,6 +4,7 @@
 * infoUrl: skillmap/educator-info/int-map-info.md
 
 
+
 ## interface
 * name: Learn to use MakeCode Arcade
 * description: This will teach you how to complete tutorials in Microsoft MakeCode Arcade.
