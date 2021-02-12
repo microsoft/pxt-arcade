@@ -44,7 +44,7 @@ Complete this tutorial to learn how to:
 
 Before you know it, you'll have an arcade game of your very own!
 
-## step 1 
+## step 1  
 
 **⭐Welcome⭐**
 
