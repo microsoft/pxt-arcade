@@ -186,7 +186,7 @@ let spacePlane = sprites.create(img`
 `, SpriteKind.Player)
 controller.moveSprite(spacePlane, 200, 200)
 // @highlight
-spacePlane.setFlag(SpriteFlag.StayInScreen, true)
+spacePlane.setStayInScreen(true)
 ```
 
 
@@ -572,4 +572,3 @@ You can now use the direction buttons to move your space plane and
 the **Ⓐ** button to lauch darts!
 
 ![Space plane and attacking spacecraft](/static/tutorials/galga.gif)
-
