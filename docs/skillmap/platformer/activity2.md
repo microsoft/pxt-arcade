@@ -98,7 +98,9 @@ Take a moment to move the player sprite around in the simulator.
 
 Right now, the camera isn't following when the player moves off screen.  
 We can fix that!
-<hr/>
+
+---
+
 
 🔲 Drag ``||scene:camera follow sprite [mySprite]||`` into the bottom 
 of the ``||loops:on start||`` container.
@@ -140,16 +142,20 @@ Unfortunately, our player is starting in dangerous position!
 
 By default, all sprites spawn in the middle of the screen.
 Let's change the game so your player starts somewhere safe.
-<hr/>
+
+---
+
 
 🔲 Snap a ``||scene:place [mySprite] on top of random [ ]||`` block 
 into the bottom of the ``||loops:on start||`` container.
 
 🔲 Click the checkerboard tile and replace it with the green flag.
-<hr/>
+
+---
+
 **Now your sprite starts on the green flag tile!**  
 
->> *Tip: If you want your sprite to start somewhere else, 
+**Tip:** If you want your sprite to start somewhere else, 
 you can move the green flag by editing the
 [__tilemap__](#tilemp "a grid of square tiles that makes up our background").
 
@@ -187,7 +193,9 @@ tiles.placeOnRandomTile(mySprite, myTiles.tile3)
 💀 Time to add some *danger* to this game 💀  
 
 When the player overlaps the skull tile, we'll trigger a "GAME OVER".
-<hr/>
+
+---
+
 
 🔲 Drag the ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` container 
 into the workspace.
@@ -206,7 +214,9 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location
 ## You Win Pt. 1
 
 🎈 We have a way to lose, let's add a way to win 🎈  
-<hr/>
+
+---
+
 
 🔲 Drag another ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
 container into the workspace.
@@ -231,7 +241,9 @@ Now we have a simple platformer that has a way to win and a way to lose.
 
 If you like, open the [__tilemap__](#tilemp "a grid of square tiles that makes up our background") 
 editor and design your own level. 
-<hr/> 
 
->> *Tip: Make sure you use the wall tool to mark anything you don't want your sprites
-to travel through!*
+---
+ 
+
+**Tip:** Make sure you use the wall tool to mark anything you don't want your sprites
+to travel through!
