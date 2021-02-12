@@ -1,22 +1,41 @@
 # Galga
 
+
 ### ~button /#tutorial:/tutorials/galga
 
 Try this tutorial!
 
 ### ~
 
+### @autoexpandOff true
+
 ## Introduction @unplugged
 
-Fly your space plane through the oncoming bogey spacecraft. Can you survive the continuous attack? You start with three lives but you gain more by firing on the enemy ships. You lose a life with every collision, so try to blast away the enemy before they hit you.
+**In this tutorial, you'll create a space plane 
+that can fly through bogey spacecraft.**
+
+Can you survive the continuous attack? 
+
+---
 
 ![Space plane and attacking spacecraft](/static/tutorials/galga.gif)
 
 ## Step 1
 
-Add code to create a ``||sprites:sprite||``, rename it as ``||variables:spacePlane||``, and draw a plane or some kind of flying object in it.
+✈️ First, we're going to need a **space plane** [__*sprite*__](#sprote "2-D image that moves on the screen") ✈️
 
-![Space plane sprite image](/static/tutorials/galga/space-plane.jpg)
+---
+
+🔲 From the ``||sprites:Sprites||`` category, grab a 
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and 
+snap it into the **on start** block already in the workspace.
+
+🔲 Click on the word ``||variables:[mySprite]||`` in the new block to
+rename the variable ``||variables:[spacePlane]||``.
+
+🔲 Now click inside the grey box in the new block to open the image editor. 
+Draw a plane or choose something from the Gallery.
+
 
 ```blocks
 let spacePlane = sprites.create(img`
@@ -55,52 +74,26 @@ let spacePlane = sprites.create(img`
 `, SpriteKind.Player)
 ```
 
-## Step 2
 
-``||sprites:set||`` the ``||variables:spacePlane||`` to ``||sprites:stay in the screen||``.
+## Control your ship
 
-```blocks
-let spacePlane = sprites.create(img`
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . 8 2 . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . 1 1 1 . . . . . 9 9 9 9 9 . . . . . . . . . . . . . . .
-    . . . . 2 2 2 2 . . . 9 9 9 9 9 9 9 . . . . . . . . . . . . . .
-    . 4 4 4 f 8 6 6 6 6 6 6 9 9 9 9 9 6 6 6 . . . . . . . . . . . .
-    4 4 4 f 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . . .
-    . 4 4 f 6 8 8 8 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . .
-    . . 4 4 f 8 8 . . . . . 8 8 8 8 6 6 6 6 6 6 6 . . . . . . . . .
-    . . . . . . . . . . . 8 8 8 8 8 8 2 . . . . . . . . . . . . . .
-    . . . . . . . . . . . 8 8 8 8 8 2 . . . . . . . . . . . . . . .
-    . . . . . . . . . . 8 8 8 8 8 2 . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-`, SpriteKind.Player)
-// @highlight
-spacePlane.setStayInScreen(true)
-```
+**Great plane!  Let's get it moving!**
 
-## Step 3
+---
 
-Start the game with a few lives, so ``||info:set life to||`` to ``3``.
+🔲 Find the ``||controller:move [mySprite] with buttons ⊕||`` block 
+and drag it into the bottom of the ``||loops:on start||`` container.
+
+🔲 Change **mySprite** to **spacePlane**.
+
+🔲 Click the ⊕ at the right of the new block so you can change the 
+movement speed to **200** for both **vx** and **vy**.
+
+---
+
+Now your ship will move with the joystick or the **W A S D** keys.
+Try moving your ship around in the simulator!
+<br/>
 
 ```blocks
 let spacePlane = sprites.create(img`
@@ -137,68 +130,140 @@ let spacePlane = sprites.create(img`
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
-spacePlane.setStayInScreen(true)
-// @highlight
-info.setLife(3)
-```
-
-## Step 4
-
-Now ``||controller:move||`` the ``||variables:spacePlane||``
-with the ``||controller:controller buttons||`` and change the sensitivity
-``vx`` and ``vy`` to ``200``.
-
-```blocks
-let spacePlane = sprites.create(img`
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . 8 2 . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . 1 1 1 . . . . . 9 9 9 9 9 . . . . . . . . . . . . . . .
-    . . . . 2 2 2 2 . . . 9 9 9 9 9 9 9 . . . . . . . . . . . . . .
-    . 4 4 4 f 8 6 6 6 6 6 6 9 9 9 9 9 6 6 6 . . . . . . . . . . . .
-    4 4 4 f 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . . .
-    . 4 4 f 6 8 8 8 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . .
-    . . 4 4 f 8 8 . . . . . 8 8 8 8 6 6 6 6 6 6 6 . . . . . . . . .
-    . . . . . . . . . . . 8 8 8 8 8 8 2 . . . . . . . . . . . . . .
-    . . . . . . . . . . . 8 8 8 8 8 2 . . . . . . . . . . . . . . .
-    . . . . . . . . . . 8 8 8 8 8 2 . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-`, SpriteKind.Player)
-spacePlane.setStayInScreen(true)
-info.setLife(3)
 // @highlight
 controller.moveSprite(spacePlane, 200, 200)
 ```
 
-## Step 5 @fullscreen
 
-Add an event to run code when ``||controller:button A is pressed||``.
-In that event, create a ``||sprites:projectile sprite||`` named **dart** that is launched ``||sprites:from||`` the ``||variables:spacePlane||`` and set the sensitivity ``vx`` to ``200``
-and ``vy`` to ``0``.
+
+## Stay in screen
+
+**Uh-oh, if you move off screen, your plane disappears!**
+
+---
+
+🔲 To keep your ship from exploring beyond the edges, find
+ the ``||sprites:set [mySprite] [stay in screen] <ON>||`` block and
+snap it in at the end of the program.
+
+🔲 Change **mySprite** to **spacePlane**.
+ 
+
+```blocks
+let spacePlane = sprites.create(img`
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . 8 2 . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . 1 1 1 . . . . . 9 9 9 9 9 . . . . . . . . . . . . . . .
+    . . . . 2 2 2 2 . . . 9 9 9 9 9 9 9 . . . . . . . . . . . . . .
+    . 4 4 4 f 8 6 6 6 6 6 6 9 9 9 9 9 6 6 6 . . . . . . . . . . . .
+    4 4 4 f 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . . .
+    . 4 4 f 6 8 8 8 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . .
+    . . 4 4 f 8 8 . . . . . 8 8 8 8 6 6 6 6 6 6 6 . . . . . . . . .
+    . . . . . . . . . . . 8 8 8 8 8 8 2 . . . . . . . . . . . . . .
+    . . . . . . . . . . . 8 8 8 8 8 2 . . . . . . . . . . . . . . .
+    . . . . . . . . . . 8 8 8 8 8 2 . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+`, SpriteKind.Player)
+controller.moveSprite(spacePlane, 200, 200)
+// @highlight
+spacePlane.setFlag(SpriteFlag.StayInScreen, true)
+```
+
+
+## Step 4
+
+The default number of lives for your player is two.  
+Let's change that to three.
+
+---
+
+🔲 Snap a ``||info:set life to [3]||`` block into the 
+**on start** container.  
+
+
+```blocks
+let spacePlane = sprites.create(img`
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . 8 2 . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . 1 1 1 . . . . . 9 9 9 9 9 . . . . . . . . . . . . . . .
+    . . . . 2 2 2 2 . . . 9 9 9 9 9 9 9 . . . . . . . . . . . . . .
+    . 4 4 4 f 8 6 6 6 6 6 6 9 9 9 9 9 6 6 6 . . . . . . . . . . . .
+    4 4 4 f 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . . .
+    . 4 4 f 6 8 8 8 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . .
+    . . 4 4 f 8 8 . . . . . 8 8 8 8 6 6 6 6 6 6 6 . . . . . . . . .
+    . . . . . . . . . . . 8 8 8 8 8 8 2 . . . . . . . . . . . . . .
+    . . . . . . . . . . . 8 8 8 8 8 2 . . . . . . . . . . . . . . .
+    . . . . . . . . . . 8 8 8 8 8 2 . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+`, SpriteKind.Player)
+controller.moveSprite(spacePlane, 200, 200)
+spacePlane.setStayInScreen(true)
+// @highlight
+info.setLife(3)
+```
+
+
+## Step 5
+
+**For protection, we need to press a button to
+launch projectiles at oncoming enemies.**
+
+---
+
+🔲 Drag an ``||controller:on [A] button [pressed]||`` container into an empty
+area of the workspace. 
+
+🔲 Snap a  
+``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``
+block inside the new container and click inside the grey box to draw your dart.
+
+🔲 Change **mySprite** to **spacePlane**. Change **vx** to **[200]** and **vy** to **[0]**.
+
 
 ```blocks
 let spacePlane: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    let dart = sprites.createProjectileFromSprite(img`
+    let projectile = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
@@ -219,14 +284,28 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 6 @fullscreen
+## Step 6 
 
-Add another event to run code on ``||game:game update every half second||``.
-In that event, create a ``||sprites:sprite||`` of kind ``||sprites:Enemy||``, rename it to **bogey**,
-and draw the enemy plane in it.
+**Every so often, a bogey should come flying at us.**
+
+Let's add code to make that happen.
+
+---
+
+🔲 Add a an ``||game:on game update every [500] ms||`` container to
+an empty area in the workspace and change **500** to **1000**.
+
+🔲 Inside, snap a 
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and
+change the **kind** from **Player** to **Enemy**.
+
+🔲 Click ``||variables:mySprite||`` in the new block to
+rename the variable ``||variables:bogey||``.
+
+🔲 Click the grey box to draw your enemy ship.
 
 ```blocks
-game.onUpdateInterval(500, function () {
+game.onUpdateInterval(1000, function () {
     let bogey = sprites.create(img`
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
@@ -250,11 +329,20 @@ game.onUpdateInterval(500, function () {
 
 ## Step 7
 
-On the ``||variables:bogey||`` sprite, ``||sprites:set the velocity||`` with
-values to have it fly **horizontally** from **right to left**.
+**The bogey should fly from right to left.**
+
+---
+
+🔲 Grab a ``||sprites:set [mySprite] velocity to vx [50] vy [50]||`` block and snap
+it into the end of your **on game update** container. 
+
+🔲 Change the  horizontal velocity (**vx**) to **-100**
+so that it speeds toward the left edge of the screen and change the
+vertical velocity (**vy**) to **0** so that the plane doesn't
+drift up or down.
 
 ```blocks
-game.onUpdateInterval(500, function () {
+game.onUpdateInterval(1000, function () {
     let bogey = sprites.create(img`
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
@@ -280,10 +368,26 @@ game.onUpdateInterval(500, function () {
 
 ## Step 8
 
-Add code to set ``||sprites:left||`` of ``||variables:bogey||`` to the ``||scene:screen width||`` and ``||sprites:y||`` to a ``||math:random number||`` between ``0`` and ``||scene:screen height||``.
+**How can you win if bogeys [__*spawn*__](#spawnd "appear suddenly")
+right on top of you?**
+
+---
+
+🔲 Grab a ``||sprites:set [mySprite] position to vx [0] vy [0]||`` block 
+and snap it into the end of your **on game update** block. Change **mySprite**
+to **bogey**.
+
+🔲 Change the **x** location to **160** so the bogey starts at the right-most 
+edge of the screen, and grab a ``||math:pick random [0] to [10]||`` block to
+replace the **y** value so enemies come from different heights each time.
+
+🔲 Edit your random block to go from **5** to **115** to use as much of the
+screen height as possible withough exiting the playable area. 
+
+
 
 ```blocks
-game.onUpdateInterval(500, function () {
+game.onUpdateInterval(1000, function () {
     let bogey = sprites.create(img`
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
@@ -304,18 +408,24 @@ game.onUpdateInterval(500, function () {
     `, SpriteKind.Enemy)
     bogey.setVelocity(-100, 0)
     // @highlight
-    bogey.left = scene.screenWidth()
-    // @highlight
-    bogey.y = randint(0, scene.screenHeight())
+  bogey.setPosition(160, randint(5, 115))
 })
 ```
 
 ## Step 9
 
-To keep the amount of ``||sprites:Enemy||`` sprites from increasing even though they leave the screen, set the ``||sprites:auto destroy||`` flag for ``||variables:bogey||`` to **ON**.
+To keep things tidy, we need to destroy enemies who pass us
+and fly off screen.
+
+---
+
+🔲 Snap a ``||sprites:set mySprite [auto destroy] <OFF>||`` block into
+the end of the **on game update** container and toggle **`<OFF>`** to **`<ON>`**.
+
+🔲 Change **mySprite** to **bogey**.
 
 ```blocks
-game.onUpdateInterval(500, function () {
+game.onUpdateInterval(1000, function () {
     let bogey = sprites.create(img`
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
@@ -344,85 +454,122 @@ game.onUpdateInterval(500, function () {
 
 ## Step 10
 
-Use one more event to run code when a ``||sprites:Player sprite||`` ``||sprites:overlaps||`` with an ``||sprites:Enemy sprite||``.
+**Nothing happens when your dart hits a bogey...**  
+Let's change that.
+
+---
+
+🔲 Add a ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``
+container into an empty area of the workspace. 
+
+🔲 Change the first sprite kind from **Player** to **Projectile** and the 
+**otherSprite** kind from **Player** to **Enemy**.
+
 
 ```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
 })
 ```
 
 ## Step 11
 
-Add code to ``||sprites:destroy||`` ``||variables:otherSprite||``, which is the enemy sprite.
+Now add the blocks to destroy the other sprite.
+
+---
+
+🔲 Snap a ``||sprites:destroy [mySprite]||`` block into the empty 
+**on sprite overlaps** container.
+
+🔲 Drag the ``||variables:otherSprite||`` value from
+the header of the **on sprite overlaps** container and snap it in to replace
+**mySprite** in the **destroy** block. 
+
+🔲 Click the **⊕** at the right of the **destroy** block and choose the
+**fire** effect to add some flair. 
 
 ```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     // @highlight
-    otherSprite.destroy()
+    otherSprite.destroy(effects.fire, 500)
 })
 ```
+
 
 ## Step 12
 
-In that event, add code to ``||info:remove a life||`` (or change it by ``-1``).
+**SCORE!**
 
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    // @highlight
-    info.changeLifeBy(-1)
-})
-```
+We should add **1** to the player score for each bogey we hit.
 
-## Step 13
+---
 
-Put in an event to run code when a ``||sprites:Projectile sprite||`` ``||sprites:overlaps||`` with an ``||sprites:Enemy sprite||``.
-
-```blocks
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-})
-```
-
-## Step 14
-
-Add code to ``||sprites:destroy||`` ``||variables:otherSprite||``, the enemy sprite.
-
-```blocks
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    // @highlight
-    otherSprite.destroy()
-})
-```
-
-## Step 15
-
-Insert code to ``||sprites:destroy||`` ``||variables:sprite||``, the projectile sprite,
-with a ``||sprites:fire effect||``.
+🔲 Snap a ``||info:change score by [1]||`` block into the end of the 
+**on sprite overlaps** container.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()
-    // @highlight
-    sprite.destroy(effects.fire, 100)
-})
-```
-
-## Step 16
-
-Add code to add ``||info:change the score by||`` by ``1``.
-
-```blocks
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    sprite.destroy(effects.fire, 100)
+    sprite.destroy(effects.fire, 500)
     // @highlight
     info.changeScoreBy(1)
 })
 ```
 
+## Step 13
+
+**What if the bogey hits us?**
+
+We need some code that tells the program what to do if the bogey sprite
+overlaps the player.
+
+---
+
+🔲 Add a new ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``
+container into an empty area of the workspace. 
+
+🔲 Change the  **otherSprite** kind from **Player** to **Enemy**.
+
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+})
+```
+
+
+## Step 13
+
+If we're hit, we want the camera to shake, the bogey to explode,
+and a life to be removed from our indicator.
+
+---
+
+🔲 Snap a ``||sprites:destroy [mySprite]||`` block into the empty 
+**on sprite player overlaps enemy** container and replace **mySprite** with **otherSprite**.
+
+🔲 Snap a ``||scene:camera shake by [4] pixels for [500] ms||`` block into the 
+end of the **on sprite player overlaps enemy** container.
+
+🔲 Snap a ``||info:change life by [-1]||`` block into the 
+end of the **on sprite player overlaps enemy** container.
+
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    scene.cameraShake(4, 500)
+    info.changeLifeBy(-1)
+})
+```
+
+
 ## Complete @fullscreen
 
-Congratulations, you have completed your game! Use the direction buttons to move your space plane to miss the bogeys. Use button **A** to shoot darts at them.
+🎆 **Congratulations** 🎆
+
+You have completed your game! 
+
+You can now use the direction buttons to move your space plane and
+the **Ⓐ** button to lauch darts!
 
 ![Space plane and attacking spacecraft](/static/tutorials/galga.gif)
 
