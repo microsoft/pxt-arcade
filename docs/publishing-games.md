@@ -53,7 +53,7 @@ For example, these can be used when embedding the page on another platform simil
 
 ### Save file
 
-In the MakeCode Aracade editor with your game, click the Save icon on the bottom toolbar (next to the name of your project). This will download a PNG that also encodes your game! In itch.io, select 'Downloadable' as the kind of project and click the 'Upload files' button to upload your game PNG. Add title, cover image, and other details if you have them!
+In the MakeCode Arcade editor with your game, click the Save icon on the bottom toolbar (next to the name of your project). This will download a PNG that also encodes your game! In itch.io, select 'Downloadable' as the kind of project and click the 'Upload files' button to upload your game PNG. Add title, cover image, and other details if you have them!
 
 ### Share URL
 
