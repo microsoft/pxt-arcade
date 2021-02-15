@@ -206,7 +206,7 @@ forever(function () {
 You've made a collector game, now let's add some 
 special touches to make it even more fun.
 
-![Coin Collecting](/static/skillmap/collector/collector2.gif "Make it special!" )
+![Coin Collecting](/static/skillmap/collector/collector-activity-2.gif "Make it special!" )
 
 
 
@@ -258,12 +258,8 @@ Let's prevent that.
 ---
 
 🔲 From the ``||sprites:Sprites||`` category, grab a 
-``||scene:set [mySprite] stay in screen <OFF>||`` 
+``||sprites:set [mySprite] stay in screen <ON>||`` 
 block and drag it into the end of the **on start** container. 
-
-
-🔲 Toggle **`<OFF>`** to **`<ON>`** to keep your sprite inside the
-play area at all times.
 
 
 ```blocks
@@ -367,7 +363,7 @@ All we need to do is expand the **destroy** block.
 
 ---
 
-🔲 Click the **⊕** to the right of the ``||game: destroy [otherSprite] ||`` block 
+🔲 Click the **⊕** to the right of the ``||sprites: destroy [otherSprite] ⊕||`` block 
 (inside the **on sprite overlaps** container.) 
 
 🔲 Click the word **spray** to open a dropdown. Choose the effect that works 
