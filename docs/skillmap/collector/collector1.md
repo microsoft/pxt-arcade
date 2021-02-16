@@ -52,7 +52,7 @@ Ready to give your **W,A,S,D** keys a workout?
 
 Let's create a game that brings back some of the iconic arcade style that we love.
 
-![Code a Collector Game](/static/skillmap/collector/collector1.gif "Grab that coin!" )
+![Code a Collector Game](/static/skillmap/collector/collector-activity-1.gif "Grab that coin!" )
 
 
 
@@ -72,7 +72,6 @@ and toggling the switch at the top.
 **Edit** mode to create your own.  Click **Done** once you're
 happy with your sprite.
 
-[__*(learn about adding player sprites...)*__](#doc:/reference/set-sprite-ref "Learn to add a player sprite to your project.")
 
 ```blocks
 //@highlight
@@ -109,17 +108,17 @@ Let's get our sprite moving up and down with the controller.
 ---
 
 🔲 From the ``||contoller:Controller||`` category, grab a 
-``||controller:move [mySprite] with buttons||`` 
+``||controller:move [mySprite] with buttons ⊕||`` 
 block and snap it into the bottom of the **on start** container.
 
-🔲 Click the ⊕ button on the new block to show extra 
+🔲 Click the **⊕** button on the new block to show extra 
  [__*arguments*__](#argue "extra chunks of information the block needs"). 
 
 🔲 To keep the sprite from moving side-to-side, change 
 [__*vx*__](#whatVX "horizontal velocity") to **0**.
 
 
-[__*(learn about velocity and movement...)*__](#doc:/reference/vel-accel-ref "Learn to add a player sprite to your project.")
+
 
 ```blocks
 let mySprite = sprites.create(img`
@@ -171,7 +170,6 @@ to **Gallery** or stay in the **Editor** and create your own.
 and [__*vy*__](#whatVY "vertical velocity") to **0**.
 
 
-[__*(learn about projectiles...)*__](#doc:/reference/projectiles-ref "Learn to add projectiles to your project.")
 
 ```blocks
 forever(function () {
@@ -212,7 +210,6 @@ block and snap it into the end of the **forever** loop container.
 🔲 Now we need to replace the **0** with ``||math:pick random [0] to [10]||``
 (from the ``||math:Math||`` category.)
 
-[__*(learn about random numbers...)*__](#doc:/reference/random-ref "Learn to add a player sprite to your project.")
 
 ```blocks
 forever(function () {
@@ -236,7 +233,7 @@ forever(function () {
 
 ## Step 5
 
-This is looking great, but the coins still stay right around the top.
+This is looking great, but the coins still hover around the top.
 
 ---
 
@@ -303,13 +300,13 @@ coins as you catch them.
 ---
 
 🔲 From ``||sprites:Sprites||``, grab
-``||sprites:destroy [mySprite]||`` and snap it into the empty 
+``||sprites:destroy [mySprite] ⊕||`` and snap it into the empty 
 **on sprite overlaps** container. 
 
 🔲 To make sure that the right projectile is destroyed, grab the 
 ``||variables:otherSprite||`` argument from the header of the 
 **on sprite overlaps** container and drop it into the
-``||sprites:destroy [mySprite]||`` block to replace **mySprite**.
+``||sprites:destroy [mySprite] ⊕||`` block to replace **mySprite**.
 
 ```blocks
 

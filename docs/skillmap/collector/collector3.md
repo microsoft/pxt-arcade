@@ -1,4 +1,4 @@
-# Fun Collector
+# Experience Danger
 
 
 ```ghost
@@ -136,7 +136,7 @@ Collecting things is great, but avoiding danger is more exciting.
 
 This tutorial will show you how to add menacing elements to your game.
 
-![Avoid the rocks](/static/skillmap/collector/collector3.gif "Make it exciting!" )
+![Avoid the rocks](/static/skillmap/collector/collector-activity-3.gif "Make it exciting!" )
 
 
 
@@ -149,7 +149,7 @@ Let's start by adding a new kind of projectile.
 
 ---
 
-🔲 Right-click on the **forever** loop container (the one that holds
+🔲 Right-click on the ``||loops:forever||`` loop container (the one that already holds
 the code for your main projectile) and choose **Duplicate** from the 
 top of the menu.
 
@@ -157,7 +157,7 @@ top of the menu.
 **set projectile to** block. A dropdown will appear, allowing you to 
 select **New variable...** . 
 
-🔲 Name your enemy projectile **myEnemy**.
+🔲 Name this new enemy projectile **myEnemy**.
 
 
 ```blocks
@@ -188,7 +188,7 @@ in the new **forever** loop pointed to the right thing.
 
 ---
 
-🔲 Change the variable in the **set y to** block from **mySprite** 
+🔲 Change the variable in the new ``||sprites:set [projectile] [y] to (pick random [0] to [120])||`` block from **projectile** 
 to **myEnemy**.
 
 🔲 Now change the image for your **myEnemy** sprite from a coin to 
@@ -229,10 +229,10 @@ fly out at about the same rate. Let's add some variation.
 
 ---
 
-🔲 Inside the **myEnemy** forever loop, change the **vx** for **myEnemy** to **-110**
+🔲 Inside the **myEnemy** ``||loops:forever||`` loop, change the **vx** for **myEnemy** to **-110**
 
 🔲 Rocks should also be less frequent than coins.  Let's change the 
-random **pause** to stay between **1500** and **2500** ms.
+ ``||loops:pause (pick random [1000] to [2000])ms||`` to stay between **1500** and **2500** ms.
 
 
 ```blocks
@@ -317,7 +317,8 @@ What are we going to do about it?
 
 ---
 
-🔲 Duplicate the **on sprite overlaps** container that's already in the 
+🔲 Duplicate the ``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``
+ container that's already in the 
 workspace.
 
 🔲 In the header of the new container, 

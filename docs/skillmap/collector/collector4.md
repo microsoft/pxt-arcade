@@ -178,7 +178,7 @@ forever(function () {
 Ready to give your game some extra life?
 
 
-![Collect extra lives](/static/skillmap/collector/collector4.gif "Collect your jar of hearts" )
+![Collect extra lives](/static/skillmap/collector/collector-activity-4.gif "Collect your jar of hearts" )
 
 
 
@@ -190,7 +190,7 @@ The code for a collector game is already in the workspace.
 
 ---
 
-🔲 Right-click on the **forever** loop container that holds
+🔲 Right-click on the ``||loops:forever||`` loop container that holds
 the code to create **myEnemy** and choose **Duplicate** from the 
 top of the menu.
 
@@ -288,7 +288,7 @@ Let's set a longer random pause for extraLife.
 
 ---
 
-🔲 Inside the **extraLife** forever loop, change the 
+🔲 Inside the new **extraLife** forever loop, change the 
 random **pause** to stay between **4500** and **5500** ms.
 
 
