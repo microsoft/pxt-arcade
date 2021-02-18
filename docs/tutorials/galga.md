@@ -16,7 +16,7 @@ that can fly through bogey spacecraft.**
 
 Can you survive the continuous attack? 
 
----
+
 
 ![Space plane and attacking spacecraft](/static/tutorials/galga.gif)
 
