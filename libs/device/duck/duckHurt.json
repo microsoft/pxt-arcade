@@ -1,9 +1,3 @@
 {
-    "blockIdentity": "images._image",
-    "creator": "image.ofBuffer",
-    "star": {
-        "namespace": "sprites.duck",
-        "mimeType": "image/x-mkcd-f4"
-    },
     "tags": "animals"
 }
