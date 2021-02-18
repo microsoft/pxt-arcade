@@ -284,7 +284,7 @@ The code for a greeting card (with text) is already in the workspace.
 You can build from this to create a joke.
 
 To prepare for the next steps, 
-[__*click here to choose a joke from our list*__](#doc:/reference/joke-examples "Find a good two line joke here."),
+[__*click here to choose a joke from our list*__](#doc:/joke-examples "Find a good two line joke here."),
  or create your own!
 
 ```hint
