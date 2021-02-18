@@ -101,7 +101,7 @@ Let's modify our clicker game to offer a simple shop.
 The code for a clicker game is already in the workspace.
 
 When you click Ⓑ, you get a super-clicker — but 
-what fun is it to get extra power for free? Let's add the code to charge the player 10 points for the purchase.
+what fun is it to get extra power for free? Let's add code to charge the player 10 points for the purchase.
 
 ---
 
@@ -134,7 +134,7 @@ upgrade the power.
 **on B button pressed** container already in the workspace. 
 
 🔲 To compare values, open the ``||logic: Logic||``
-container and grab a ``||logic: [0] [<] [0]||`` to replace **`<true>`**.
+category and grab a ``||logic: [0] [<] [0]||`` to replace **`<true>`**.
 
 
 
@@ -160,7 +160,7 @@ before we charge the player 10 points.
 **0** in ``||logic: [0] [<] [0]||`` with **10** and change **<**
 to **≤**.
 
-🔲 Open the ``||info:Info||`` category and find the ``||info:score||`` variable.
+🔲 Open the ``||info:Info||`` category and find the ``||info:score||`` value block.
 Grab it and drop it in to replace the remaining **0** of the comparison argument.  
 
 
@@ -213,7 +213,7 @@ Let's add a message to let the player know if their purchase has succeeded.
 Open the ``||game:Game||`` category and grab a 
 ``||game:show long text [" "][bottom]||`` block. 
 
-🔲 Drop the text block into the bottom of the **if/then** container.
+🔲 Drop the text block into the end of the **if/then** container.
 
 🔲 Click inside the empty text box and write a message to the player, 
 letting them know that their purchase went through. 
@@ -237,8 +237,8 @@ buy the clicker.
 
 ---
 
-🔲 We already have a note that shows **if** the player has enough points.
-Click the ⊕ at the bottom of the **if/then** container to create a space 
+🔲 We already have a note that shows **if** the player has enough points.  
+Click the **⊕** at the bottom of the **if/then** container to create an **else** space 
 for code that runs when the **if** statement is not true.
 
 🔲 Now you have an **else** container.  Grab another 
@@ -268,4 +268,4 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 Now you have a clicker game with a simple shop.  
 
-Click **Finish** to share it with your friends and compare strategy!
+Click **Finish** to share it with your friends and compare strategy!   

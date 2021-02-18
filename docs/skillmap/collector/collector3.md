@@ -192,7 +192,7 @@ in the new **forever** loop pointed to the right thing.
 to **myEnemy**.
 
 🔲 Now change the image for your **myEnemy** sprite from a coin to 
-something a little more dangerous.
+something a little more dangerous, like a rock.  
 
 
 ```blocks
@@ -229,7 +229,7 @@ fly out at about the same rate. Let's add some variation.
 
 ---
 
-🔲 Inside the **myEnemy** ``||loops:forever||`` loop, change the **vx** for **myEnemy** to **-110**
+🔲 Inside the first block in the **myEnemy** ``||loops:forever||`` loop, change the **vx** for **myEnemy** to **-110**
 
 🔲 Rocks should also be less frequent than coins.  Let's change the 
  ``||loops:pause (pick random [1000] to [2000])ms||`` to stay between **1500** and **2500** ms.

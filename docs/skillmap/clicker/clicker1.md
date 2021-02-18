@@ -134,4 +134,4 @@ drag the ``||info: start countdown [10] (s)||`` block into the bottom of the
 
 You have your very own clicker game!
 
-Make sure to share with friends so you can compare scores.  
+Make sure to click "Finish" so you can share with friends and compare scores!  

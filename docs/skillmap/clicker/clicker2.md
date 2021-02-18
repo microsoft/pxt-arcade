@@ -124,7 +124,7 @@ with each click ✨
 
 🔲 From ``||sprites:Sprites||``, take a 
 ``||sprites: [mySprite] start [spray] effect||`` block and snap it
-into the bottom of the **on button pressed** container.
+into the bottom of the **on A button pressed** container.
 
 
 ```blocks
@@ -148,7 +148,7 @@ Let's tweak the effect to make each instance shorter.
 
 ---
 
-🔲 Click the ⊕ icon to the right of the **start effect** block (the one 
+🔲 Click the **⊕** icon to the right of the **start effect** block (the one 
 already inside the **on button pressed** container.)
 
 🔲 Shorten the number of miliseconds (ms) that the effect runs by entering
@@ -184,7 +184,7 @@ container and drop it into an empty area of the workspace.
 ``||game: game over <LOSE>||`` block.  Snap it inside the empty 
 **on countdown end** container.
 
-🔲 Toggle **LOSE** to **WIN**.
+🔲 Toggle **LOSE** to **WIN**.  
 
 ```blocks
 info.onCountdownEnd(function () {
@@ -201,7 +201,7 @@ Now add a final celebration with some **game over** effects!
 
 ---
 
-🔲 Click the ⊕ icon to the right of the **game over** block.
+🔲 Click the **⊕** icon to the right of the **game over** block.
 
 🔲 If you want an effect other than confetti, click the word **confetti**
 and choose a new option from the dropdown.
@@ -212,4 +212,4 @@ and choose a new option from the dropdown.
 That's it!  
 
 Click **Finish** to share your clicker game with 
-friends and compete for the most clicks in 10 seconds!
+friends and compete for the most clicks in 10 seconds!  

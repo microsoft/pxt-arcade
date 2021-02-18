@@ -162,7 +162,7 @@ so that every click responds to our changing values.
 ---
 
 🔲 Open the ``||variables:Variables||`` category and grab a 
-``||variables:power||`` variable.
+``||variables:power||`` value block.
 
 🔲 Drop ``||variables:power||`` into the **change score by** block (inside of
 the **on A button pressed** container),
@@ -186,6 +186,9 @@ empty **on B button pressed** container.
 ## Step 6
 
 🎇 There you have it, a Super-Clicker 🎇
+
+Now, every time you click Ⓑ the game adds **1** to the amount your score increases 
+with each press of the Ⓐ button.
 
 Click **Finish** to share your game with friends and start
 a competition!

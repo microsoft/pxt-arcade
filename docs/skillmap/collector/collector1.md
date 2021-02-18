@@ -65,7 +65,7 @@ Let's create a game that brings back some of the iconic arcade style that we lov
 🔲 From the ``||sprites:Sprites||`` category, grab a ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
 block and drag it into the empty **on start** container in the workspace.
 
-🔲 Get to the **Gallery** tab by clicking inside the grey sprite image square 
+🔲 Get to the **Gallery** by clicking inside the grey sprite image square 
 and toggling the switch at the top. 
 
 🔲 Choose one of our pre-loaded sprite images...or stay in 
@@ -158,7 +158,7 @@ Let's toss some coins toward it every couple of seconds, forever.
 ``||loops:forever||`` loop container and drag it out into 
 an empty spot on the workspace.
 
-🔲 From the ``||sprites:Sprites||``, grab a 
+🔲 From ``||sprites:Sprites||``, grab a 
 ``||variables:set [projectile] to projectile [ ] from side with vx [50] vy [50]||`` 
 block and snap it into the empty **forever** container.
 
@@ -195,7 +195,7 @@ forever(function () {
 😯 Now you have a steady stream of income 😯
 
 If we leave the coins like this, the game will be WAY too easy.  Let's 
-send in the projectiles from a random height each time.
+send projectiles from a random height each time.
 
 ---
 
@@ -276,7 +276,7 @@ Let's change that.
 
 ---
 
-🔲 From ``||sprites:Sprites||``, grab a 
+🔲 From ``||sprites:Sprites||``, grab an 
 ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``
 container and drop it into an empty area of the workspace.
 
@@ -303,7 +303,7 @@ coins as you catch them.
 ``||sprites:destroy [mySprite] ⊕||`` and snap it into the empty 
 **on sprite overlaps** container. 
 
-🔲 To make sure that the right projectile is destroyed, grab the 
+🔲 To make sure that the correct projectile is destroyed, grab the 
 ``||variables:otherSprite||`` argument from the header of the 
 **on sprite overlaps** container and drop it into the
 ``||sprites:destroy [mySprite] ⊕||`` block to replace **mySprite**.
