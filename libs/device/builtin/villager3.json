@@ -30,5 +30,6 @@
     {
         "name": "villager3WalkRight",
         "frames": [9, 10, 11]
-    }]
+    }],
+    "tags": "people"
 }

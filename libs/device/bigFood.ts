@@ -1,20 +1,29 @@
 namespace sprites.food {
     //% fixedInstance jres blockIdentity=images._image
+    //% tags="food"
     export const bigBurger = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
+    //% tags="food"
     export const bigDrumstick = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
+    //% tags="food"
     export const bigHam = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
+    //% tags="food"
     export const bigPizza = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
+    //% tags="food"
     export const bigTaco = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
+    //% tags="food"
     export const bigCake = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
+    //% tags="food"
     export const bigDonut = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
+    //% tags="food"
     export const bigIceCream = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
+    //% tags="food"
     export const plate = image.ofBuffer(hex``);
 }

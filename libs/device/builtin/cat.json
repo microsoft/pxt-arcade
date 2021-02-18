@@ -9,5 +9,6 @@
         "name": "catWalkRight",
         "frames": [0, 1, 2],
         "flippedHorizontal": true
-    }]
+    }],
+    "tags": "animals"
 }

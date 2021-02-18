@@ -1,21 +1,21 @@
 namespace sprites.dungeon {
     //% fixedInstance jres blockIdentity=images._tile
-    //% tags="?tile misc"
+    //% tags="?tile misc dungeon"
     export const buttonOrange = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
-    //% tags="?tile misc"
+    //% tags="?tile misc dungeon"
     export const buttonOrangeDepressed = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
-    //% tags="?tile misc"
+    //% tags="?tile misc dungeon"
     export const buttonTeal = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
-    //% tags="?tile misc"
+    //% tags="?tile misc dungeon"
     export const buttonTealDepressed = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
-    //% tags="?tile misc"
+    //% tags="?tile misc dungeon"
     export const buttonPink = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
-    //% tags="?tile misc"
+    //% tags="?tile misc dungeon"
     export const buttonPinkDepressed = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
     //% tags="?tile dungeon"
@@ -318,7 +318,9 @@ namespace sprites.dungeon {
     //% tags="tile dungeon"
     export const stairLadder = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
+    //% tags="dungeon"
     export const statueLight = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
+    //% tags="dungeon"
     export const statueDark = image.ofBuffer(hex``);
 }

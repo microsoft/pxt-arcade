@@ -42,5 +42,6 @@
     {
         "name": "skellyAttackRight",
         "frames": [13, 14]
-    }]
+    }],
+    "tags": "dungeon"
 }

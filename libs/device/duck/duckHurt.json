@@ -1,12 +1,9 @@
 {
-    "width": 16,
-    "height": 16,
     "blockIdentity": "images._image",
     "creator": "image.ofBuffer",
-    "basename": "smallFood",
     "star": {
-        "namespace": "sprites.food",
+        "namespace": "sprites.duck",
         "mimeType": "image/x-mkcd-f4"
     },
-    "tags": "food"
+    "tags": "animals"
 }
