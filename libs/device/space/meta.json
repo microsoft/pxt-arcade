@@ -6,5 +6,6 @@
     "star": {
         "namespace": "sprites.space",
         "mimeType": "image/x-mkcd-f4"
-    }
+    },
+    "tags": "space"
 }

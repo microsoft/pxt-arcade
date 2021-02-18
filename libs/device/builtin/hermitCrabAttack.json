@@ -9,5 +9,6 @@
         "name": "hermitCrabAttackRight",
         "frames": [0, 1, 2, 3, 4, 5],
         "flippedHorizontal": true
-    }]
+    }],
+    "tags": "animals aquatic"
 }
