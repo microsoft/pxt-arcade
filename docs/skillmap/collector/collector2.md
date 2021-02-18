@@ -219,7 +219,7 @@ blocks could make it amazing.
 
 🔲 From the ``||scene:Scene||`` category, grab a 
 ``||scene:set background color to [ ]||`` 
-block and drag it to the top of the **on start** container.  Click the 
+block and drag it to the **beginning** of the **on start** container.  Click the 
 grey box to choose a color that makes you happy.
 
 
@@ -259,7 +259,7 @@ Let's prevent that.
 
 🔲 From the ``||sprites:Sprites||`` category, grab a 
 ``||sprites:set [mySprite] stay in screen <ON>||`` 
-block and drag it into the end of the **on start** container. 
+block and drag it into the **end** of the **on start** container. 
 
 
 ```blocks
@@ -390,8 +390,8 @@ Finally, let's make the timing of the coins less predictable using random number
 🔲 From ``||math:Math||``, grab a ``||math:pick random [0] to [10]||`` block
 and snap it into place inside the **pause** block (already inside the **forever** loop.)
 
-🔲 Change the lowest value to **1000** ms (1 second) and the highest value
-to **2000** ms (2 seconds). Now your coins will randomly appear every 1-2 seconds!
+🔲 Change the lowest value to **1000** (1 second) and the highest value
+to **2000** (2 seconds). Now your coins will randomly appear every 1-2 seconds!
 
 
 ```blocks

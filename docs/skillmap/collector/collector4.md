@@ -406,7 +406,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ## Step 8
 
-There you go!
+
+**There you go!**
 
 You have a full-featured game that anyone would be proud of.
 

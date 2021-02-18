@@ -114,7 +114,7 @@ Keep going to learn more about blocks.
 
 **Blocks you need won't always be in the workspace to start.**
 
-In the instructions, block descriptions for the block you need to find will 
+In the instructions, block descriptions for the block you need will 
 often be highlighted in the same color as the toolbox 
 category where they live. 
 
@@ -150,7 +150,7 @@ game.splash("My monkey is better than yours")
 Every rule has an exception, so let's look at one of the blocks
 that doesn't share the same color as the category where it lives.
 
-The ``||variables:set my sprite to [ ]||`` block
+The ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block
 is red, but it lives inside the ``||sprites:Sprites||`` category.
 
 ---
@@ -160,7 +160,7 @@ is red, but it lives inside the ``||sprites:Sprites||`` category.
 
 🔲 Snap a ``||variables:set [my sprite] to [ ] of kind [player]||`` into the
 end of the **on start** container and 
-play around with it until your [__*sprite*__](#sprote "A 2-D image that moves on the screen") shows on the screen.
+play around with it until a [__*sprite*__](#sprote "A 2-D image that moves on the screen") shows on the screen.
 
 ---
 
@@ -169,13 +169,14 @@ and drop it back into the toolbox to delete it so your sprite will be revealed!
 
 #### ~ tutorialhint
 
-![Open image editor](/static/skillmap/misc/open-image-editor.gif "How to open the image editor." )
+![Open image editor](/static/skillmap/misc/open-image-editor-small.gif "How to open the image editor." )
 
 ---
 
 
 
 ```blocks
+scene.setBackgroundColor(5)
 let mySprite = sprites.create(img`
     e e e . . . . e e e . . . . 
     c d d c . . c d d c . . . . 
@@ -192,7 +193,6 @@ let mySprite = sprites.create(img`
     . f d f f f d f f d f . . . 
     . f f . . f f . . f f . . . 
     `, SpriteKind.Player)
-scene.setBackgroundColor(5)
 ```
 
 
@@ -213,7 +213,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ---
 
 🔲  Find an ``||controller:on [A] button pressed ||`` container 
-block and drag it into the workspace. You will add to it in the next step.
+block and drag it into the workspace. You will add to it in the next step.  
 
 #### ~ tutorialhint
 
@@ -265,10 +265,10 @@ but they always need another block to snap into. Value blocks look something lik
 
 ---
 
-🔲  Snap a ``||sprites:[mySprite] say [" "] ||`` block into the end of the
+🔲  Snap a ``||sprites:[mySprite] say [":)"] ||`` block into the end of the
 **on A button pressed** container.
 
-🔲  Find the ``||game: ask for number [" "] ||`` value block to pop inside.
+🔲  Find the ``||game: ask for number [" "] ||`` value block and pop it inside to replace **":)"**.
 
 ---
 
@@ -298,7 +298,7 @@ Play around with them and see how they affect your game!
 
 **Tip:** You can test your game whenever you want using the simulator
 to the left!  Use the refresh button (🔄) to reload it, and play your
-game using the buttons you've programmed!
+game using the buttons you've programmed!  
 
 
 
@@ -309,4 +309,4 @@ game using the buttons you've programmed!
 You've learned everything you need to know to graduate to a new tutorial.
 
 Now you can continue on and learn even more tricks for
-creating games with MakeCode Arcade!
+creating games with MakeCode Arcade!  
