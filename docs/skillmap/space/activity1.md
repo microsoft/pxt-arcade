@@ -113,11 +113,9 @@ controller.moveSprite(mySprite)
 ---
 
 🔲 To keep your ship from exploring beyond the edges, find
- the ``||sprites:set [mySprite] [stay in screen] <off>||`` block and
+ the ``||sprites:set [mySprite] stay in screen <on>||`` block and
 snap it in at the end of the program.
  
-🔲 Toggle the switch to **`<ON`>** to keep the action on screen.
-
 ---
 
  **You're all set to travel the universe!**
@@ -144,5 +142,6 @@ let mySprite = sprites.create(img`
 `, SpriteKind.Player)
 controller.moveSprite(mySprite)
 // @highlight
-mySprite.setFlag(SpriteFlag.StayInScreen, true)
+mySprite.setStayInScreen(true)
+
 ```
