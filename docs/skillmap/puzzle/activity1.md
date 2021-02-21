@@ -55,16 +55,31 @@
 ```
 
 ```ghost
-namespace SpriteKind {
-    export const Award = SpriteKind.create()
-}
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Award, function (sprite, otherSprite) {
-    game.over(true)
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+info.onLifeZero(function () {
+    mySprite.say("The number was" + myNumber + "!")
+    pause(5000)
     game.over(false)
 })
-let mySprite = sprites.create(img`
+function NewRound () {
+    yourGuess = game.askForNumber("Enter a number between 1 and 99", 2)
+    if (yourGuess == myNumber) {
+        mySprite.say("Yes! It was " + yourGuess + "!")
+        game.over(true)
+    } else {
+        if (yourGuess < myNumber) {
+            mySprite.say("Nope! Too low.")
+        } else {
+            mySprite.say("Nope! Too high!")
+        }
+        info.changeLifeBy(-1)
+        pause(5000)
+        NewRound()
+    }
+}
+let yourGuess = 0
+let myNumber = 0
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
     . . . . . f f 4 4 f f . . . . . 
     . . . . f 5 4 5 5 4 5 f . . . . 
     . . . f e 4 5 5 5 5 4 e f . . . 
@@ -82,52 +97,18 @@ let mySprite = sprites.create(img`
     . . . f f 1 d 1 d 1 d f f . . . 
     . . . . . f f b b f f . . . . . 
     `, SpriteKind.Player)
-controller.moveSprite(mySprite)
-let myAward = sprites.create(img`
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e 5 e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    `, SpriteKind.Award)
-myAward.setPosition(50, 80)
-let myEnemy = sprites.create(img`
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e 5 e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    . . . . e e e e e e e e e e . . 
-    `, SpriteKind.Enemy)
-myEnemy.setPosition(110, 80)
+myNumber = randint(1, 99)
+game.showLongText("I'm thinking of a number between 1 and 99. Can you guess it?", DialogLayout.Bottom)
+NewRound()
 
 
 ```
 
 ## Welcome @unplugged
 
-Don't think we forgot about puzzle games!  
+We've made stories, clicker games, and puzzle games...now it's time to learn the secrets behind puzzle games!
+
 
 ![A simple puzzle](/static/skillmap/puzzle/puzzle-activity1.gif "Is it a puzzle, or is it luck?")
 
+<!-- One of these doors is special and will lead you to victory. The other, despair. >
