@@ -143,7 +143,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ## Step 8
 
-When our ``||sprites:Player||`` overlaps with the ``||variables:pizza||`` sprite, let’s add a point to our game score. Pun in the code to ``||info:change score by||`` 1`.
+When our ``||sprites:Player||`` overlaps with the ``||variables:pizza||`` sprite, let’s add a point to our game score. Pun in the code to ``||info:change score by||`` `1`.
 
 ```spy
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
