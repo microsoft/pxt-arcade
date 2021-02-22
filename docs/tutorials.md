@@ -74,7 +74,15 @@
   "imageUrl": "/static/tutorials/galga.png",
   "largeImageUrl": "/static/tutorials/galga.gif",
   "videoUrl": "/static/tutorials/galga.mp4",
-  "otherActions": []
+  "otherActions": [{
+    "url": "/tutorials/spy/galga",
+    "editor": "js",
+    "cardType": "tutorial"
+  }, {
+    "url": "/tutorials/spy/galga",
+    "editor": "py",
+    "cardType": "tutorial"
+  }]
 }, {
   "name": "Free Throw",
   "description": "Take your best shot and slam dunk this Basketball free throw game!",
