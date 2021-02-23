@@ -159,10 +159,24 @@
 * type: tutorial
 * description: Make a simple store that lets players buy more power! 
 * tags: easy, clicker, game
-
+* next: clicker-activity5
 
 * url: /skillmap/clicker/clicker4 
 * imageUrl: /static/skillmap/clicker/clicker-activity4.png
+
+
+
+### clicker-activity5
+
+* name: Bigger Clicker
+* type: tutorial
+* description: Make a simple store that lets players buy more power! 
+* tags: intermediate, clicker, game, sandbox
+
+
+* url: /skillmap/clicker/clicker5 
+* imageUrl: /static/skillmap/clicker/clicker-activity5.png
+
 
 
 
