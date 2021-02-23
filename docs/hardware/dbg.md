@@ -42,6 +42,11 @@ We use the following pinout:
 The white line on the silk shows the side of the PCB where the connector should be plugged in,
 and also the side where the red wire on the ribbon cable is.
 Note that it is impossible to plug it incorrectly.
+Libraries for PCB design software will be made available
+in the [GitHub repo](https://github.com/microsoft/pxt-arcade/tree/master/docs/hardware/dbg).
+Currently, there's one for EagleCAD.
+
+### RESET pin
 
 Pins 1-4 are the same as on Cortex connector.
 Unfortunately, Cortex connector places nRESET line on pin 10, which is way out.
@@ -49,11 +54,11 @@ We instead use pin 5 for RESET (which is GND on Cortex connector).
 To make this work, you'll need a custom cable.
 
 If your debugger doesn't use Cortex connector (or has the big 20-pin 100 mil connector),
-you can make a breakout cable.
-If your debugger use the 10 pin Cortex connector, you can make a cable that connects
+you can make a **breakout cable**.
+If your debugger use the 10 pin Cortex connector, you can make a **Cortex cable** that connects
 pin 5 to pin 10.
 
-### Breakout connector
+### Breakout cable
 
 ![Breakout components and assembled cable](/docs/static/hardware/dbg/breakout-init.jpg)
 
@@ -80,21 +85,25 @@ The picture above indicates the pinout.
 
 Put electrical (insulating) tape around each twisted wire,
 then around the all wires together,
-then bend one of the cables, and put tape around the whole thing.
+then bend one of the cables 180 degrees, and put tape around the whole thing.
 
 Now, go to **Target end** section to finish the cable.
 
-### Cortex connector
+### Cortex cable
 
 ![Cortex components and cutting the cable](/docs/static/hardware/dbg/cortex-0.jpg)
 
 You will need a 10-pin IDC cable,
 a 50 mil double row male header, wire cutters, insulation strippers, insulation tape,
-and glue.
+and glue. Pliers are also useful.
+
 Cut wires 6-10 of the cable (this is exactly half the cable; red wire is number 1),
 around 50mm from the debugger side of the cable
 (with the notch facing inside).
 You need to be careful, not to cut wire number 5 here.
+
+If you don't care about connecting RESET line, you can just cut wires 5-10,
+and go directly to **Target end** section.
 
 ![Splitting wires](/docs/static/hardware/dbg/cortex-1.jpg)
 
@@ -112,9 +121,14 @@ Wrap the whole thing in electrical tape.
 
 ### Target end
 
+This section is common to both breakout and Cortex cable,
+and describes how to prepare the end of the cable that goes in the target PCB.
+
 ![Preparing male header](/docs/static/hardware/dbg/pins-0.jpg)
 
-Cut 3 rows from the header. You may want to cut 4 and remove the excessive pins.
+Cut 3 double rows from a male 50 mil header.
+You may want to cut 4 rows and remove the excessive pins
+(the plastic often breaks at the pin boundary).
 Then, remove pin number 6 - if you hold the header with the longer side
 (which will go into the IDC connector) down, it's the right-most one, closest to you.
 Finally, remove excessive plastic.
@@ -137,6 +151,9 @@ You're done!
 With either of the cables, you may want to add a momentary switch
 connecting RESET (pin 5) with GND (pin 3).
 
+You can also use 6 pin (or 8 pin) IDC connector, instead of 10 pin one,
+if you happen to have it.
+
 ### Pogo-connector
 
 It's also possible to create a connector with pogo pins for quick programming of a number of devices
@@ -144,7 +161,7 @@ or use in a test rig.
 
 ![Hack-connect XS pogo programming](/docs/static/hardware/dbg/xs-pogo-prog.jpg)
 
-Use P50-E2 0.68mm diameter pins (head diameter of 0.9mm).
+Use **P50-E2** 0.68mm diameter pins (head diameter of 0.9mm).
 
 You can use two Hack-connector XS PCBs to hold the pins together,
 but you will need to order the holes a little bigger.
@@ -154,12 +171,6 @@ but you will need to order the holes a little bigger.
 Once everything is in place, use glue gun or similar to secure the pins to the PCBs.
 
 ![Hack-connect XS pogo with glue](/docs/static/hardware/dbg/xs-pogo-glue.jpg)
-
-### CAD files
-
-Libraries for PCB design software will be made available 
-in the [GitHub repo](https://github.com/microsoft/pxt-arcade/tree/master/docs/hardware/dbg).
-Currently, there's one for EagleCAD.
 
 
 ## Hack-connect classic
