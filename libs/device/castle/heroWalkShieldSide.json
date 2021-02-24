@@ -19,5 +19,6 @@
     {
         "name": "heroWalkShieldRight",
         "frames": [7, 6, 5, 4]
-    }]
+    }],
+    "tags": "people"
 }

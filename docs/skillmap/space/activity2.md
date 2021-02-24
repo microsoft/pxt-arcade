@@ -2,7 +2,7 @@
 
 ## Introduction @unplugged
 
-![Releasing projectiles](/static/skillmaps/space/projectiles.gif "Here, enemy ship. Would you like to borrow an asteroid?")
+![Releasing projectiles](/static/skillmap/space/projectiles.gif "Here, enemy ship. Would you like to borrow an asteroid?")
 
 Are you ready to customize your ship? 
 
@@ -16,11 +16,13 @@ The workspace is pre-loaded with code for a flying ship.
 It's up to you to customize the [__*sprite*__](#sprote "2-D image that moves on the screen") and make it your own. You could design a new 
 kind of vehicle OR turn it into an alien creature floating through space! 👽
 
-<hr/>
 
->>*Tip: Remember, to edit a sprite, click inside the grey square where your current sprite is displayed.
+---
 
-![Edit the sprite](/static/skillmaps/space/edit-sprite.png "Click within the square. I dare you!")
+
+**Tip:** Remember, to edit a sprite, click inside the grey square where your current sprite is displayed.
+
+![Edit the sprite](/static/skillmap/space/edit-sprite.png "Click within the square. I dare you!")
 
 ## Add a button event
 
@@ -32,10 +34,12 @@ block inside of it.
 
 🔲 Click on the grey box inside of the new projectile block to draw your 
 flying object (or select one from the gallery.)
-<hr/>
 
->>*Tip: Run your code in the simulator and launch a few projectiles 
-by pressing the ![The A Button](/static/skillmaps/space/a-button.png "Let's get fired up!") button.  What happens?
+---
+
+
+**Tip:** Run your code in the simulator and launch a few projectiles 
+by pressing the ![The A Button](/static/skillmap/space/a-button.png "Let's get fired up!") button.  What happens?
 
 
 ```blocks
@@ -59,7 +63,9 @@ let projectile = sprites.createProjectileFromSprite(img`
 You probably noticed that your projectiles are firing toward the bottom 
 right corner. This is *not helpful* when your enemies are coming from above! Let's take 
 a second to figure out what's happening.
-<hr/>
+
+---
+
 The ``||variables:set projectile to||`` block comes preloaded with 
 an [__*argument*__](#argue "extra chunk of information that the block needs") 
 that sets both the [__*vx*__](#whatVX "horizontal velocity") 
@@ -81,7 +87,7 @@ In MakeCode Arcade, we call that the [__*velocity*__](#veloc "speed in a given d
 - Change whether they fly up or down by changing the [__*vy*__](#whatX "speed from top to bottom")  
 - What happens when you change both?
 
-![Directional Projectiles](/static/skillmaps/space/vxvy.gif "Round and Round")
+![Directional Projectiles](/static/skillmap/space/vxvy.gif "Round and Round")
 
 
 ## Create a projectile
@@ -108,7 +114,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ## Custom effects
 
 💥 Now for some special effects 💥
-<hr/>
+
+---
+
 🔲 Find 
 ``||sprites:[mySprite] start [spray] effect||`` and snap it in at 
 the bottom of the ``||controller:on [A] button pressed ||`` container.  
@@ -117,10 +125,14 @@ the bottom of the ``||controller:on [A] button pressed ||`` container.
 want the effects on your projectiles instead of on your ship.  
 
 🔲 Try different options from the ``||sprites:[spray]||`` dropdown menu and choose the one you like best!  
-<hr/>
->>*Tip: You can add another ``||sprites:[mySprite] start [spray] effect||`` block
-to add a separate effect on your spaceship*
-<hr/>
+
+---
+
+**Tip:** You can add another ``||sprites:[mySprite] start [spray] effect||`` block
+to add a separate effect on your spaceship
+
+---
+
 **Congrats! Now you're ready to move to the next tutorial.**
 
 ```blocks

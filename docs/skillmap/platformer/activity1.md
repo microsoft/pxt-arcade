@@ -70,7 +70,7 @@ as the main mechanic.
 By the time you finish this set of tutorials, you should know all you need 
 to make a fun and engaging arcade game worth sharing.
 
-![Our first platformer](/static/skillmaps/platformer/platformer1.gif "Look what we're about to learn today!")
+![Our first platformer](/static/skillmap/platformer/platformer1.gif "Look what we're about to learn today!")
 
 
 ## Create the player
@@ -88,9 +88,11 @@ block to the end of the ``||loops:on start||`` container.
  ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block
  to open the sprite editor.  From there, you can switch over to "Gallery"
  and choose a pre-drawn character.
-<hr/>
->>*Tip: Don't like any of the predrawn characters? Stay in the "Editor"
-and create one of your own*!
+
+---
+
+**Tip:** Don't like any of the predrawn characters? Stay in the "Editor"
+and create one of your own!
 
 
 ```blocks
@@ -120,7 +122,9 @@ let mySprite = sprites.create(img`
 ## Move the player
 
 🢀 Now we need to get the player moving 🢂
-<hr/>
+
+---
+
 
 🔲 Drag a ``||controller:move [mySprite] with buttons ⊕||`` block.   
 to the end of the ``||loops:on start||`` container
@@ -128,7 +132,9 @@ to the end of the ``||loops:on start||`` container
 🔲 Press the ⊕ button on the new block and change the [__*vy*__](#whatVY "vertical velocity") 
 argument to **0** so that the player won't move up or down with the joypad.
 
-<hr/>
+
+---
+
 **Now you're ready to give your game a try in the simulator!**
 <br/>
 
@@ -162,7 +168,9 @@ controller.moveSprite(mySprite, 100, 0)
 To make the game feel more realistic, let's add some gravity.
 
 To accomplish that, we can add [__*acceleration*__](#accel "increased speed in a direction") to "pull down" on our sprite.
-<hr/>
+
+---
+
 🔲 Drag a ``||sprites:set [mySprite] [x] to [0]||`` block to the end of 
 the ``||loops:on start||`` container.
 
@@ -204,7 +212,9 @@ mySprite.ay = 500
 Now that the player is on the ground, we can make them jump!
 
 Let's attach a jumping action to the 🅐 button.
-<hr/>
+
+---
+
 
 🔲 Start by dragging an ``||controller:on [A] button [pressed]||`` block into the workspace.
 

@@ -408,7 +408,7 @@ music.setVolume(0)
 balloon = sprites.create(balloonDeflated, SpriteKind.Player)
 scene.setBackgroundColor(9)
 balloon.ay = 35
-balloon.setFlag(SpriteFlag.StayInScreen, true)
+balloon.setStayInScreen(true)
 balloon.z = 100
 info.setScore(0)
 info.setLife(3)

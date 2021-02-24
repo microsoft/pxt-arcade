@@ -318,7 +318,9 @@ namespace sprites.dungeon {
     //% tags="tile dungeon"
     export const stairLadder = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
+    //% tags="dungeon"
     export const statueLight = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
+    //% tags="dungeon"
     export const statueDark = image.ofBuffer(hex``);
 }

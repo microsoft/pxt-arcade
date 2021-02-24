@@ -37,7 +37,7 @@ let ball = sprites.create(img`
     . . . c c b b .
 `, SpriteKind.Player)
 ball.setVelocity(100, 100)
-ball.setFlag(SpriteFlag.BounceOnWall, true)
+ball.setBounceOnWall(true)
 ```
 
 ## Step 3
@@ -55,7 +55,7 @@ let ball = sprites.create(img`
     . . . c c b b .
 `, SpriteKind.Player)
 ball.setVelocity(100, 100)
-ball.setFlag(SpriteFlag.BounceOnWall, true)
+ball.setBounceOnWall(true)
 ball.y = randint(0, 120)
 ```
 
@@ -75,7 +75,7 @@ function create_ball () {
         . . . c c b b .
     `, SpriteKind.Player)
     ball.setVelocity(100, 100)
-    ball.setFlag(SpriteFlag.BounceOnWall, true)
+    ball.setBounceOnWall(true)
     ball.y = randint(0, 120)
 }
 let ball: Sprite = null
@@ -170,7 +170,7 @@ let left_paddle = sprites.create(img`
     8 8 1
 `, SpriteKind.LeftPaddles)
 controller.moveSprite(left_paddle, 0, 150)
-left_paddle.setFlag(SpriteFlag.StayInScreen, true)
+left_paddle.setStayInScreen(true)
 left_paddle.left = 0
 ```
 
@@ -204,7 +204,7 @@ function create_left_paddle() {
         8 8 1
     `, SpriteKind.LeftPaddles)
     controller.moveSprite(left_paddle, 0, 150)
-    left_paddle.setFlag(SpriteFlag.StayInScreen, true)
+    left_paddle.setStayInScreen(true)
     left_paddle.left = 0
 }
 create_left_paddle()
@@ -241,7 +241,7 @@ function create_right_paddle() {
         8 8 1
     `, SpriteKind.LeftPaddles)
     controller.moveSprite(right_paddle, 0, 150)
-    right_paddle.setFlag(SpriteFlag.StayInScreen, true)
+    right_paddle.setStayInScreen(true)
     right_paddle.left = 0
 }
 let right_paddle: Sprite = null
@@ -279,7 +279,7 @@ function create_right_paddle() {
         8 8 1
     `, SpriteKind.RightPaddles)
     controller.player2.moveSprite(right_paddle, 0, 150)
-    right_paddle.setFlag(SpriteFlag.StayInScreen, true)
+    right_paddle.setStayInScreen(true)
     right_paddle.right = 160
 }
 let right_paddle: Sprite = null
@@ -305,7 +305,7 @@ function create_ball () {
         . . . c c b b .
     `, SpriteKind.Player)
     ball.setVelocity(100, 100)
-    ball.setFlag(SpriteFlag.BounceOnWall, true)
+    ball.setBounceOnWall(true)
     ball.y = randint(0, 120)
 }
 function create_left_paddle() {
@@ -328,7 +328,7 @@ function create_left_paddle() {
         8 8 1
     `, SpriteKind.LeftPaddles)
     controller.moveSprite(left_paddle, 0, 150)
-    left_paddle.setFlag(SpriteFlag.StayInScreen, true)
+    left_paddle.setStayInScreen(true)
     left_paddle.left = 0
 }
 function create_right_paddle() {
@@ -351,7 +351,7 @@ function create_right_paddle() {
         8 8 1
     `, SpriteKind.RightPaddles)
     controller.player2.moveSprite(right_paddle, 0, 150)
-    right_paddle.setFlag(SpriteFlag.StayInScreen, true)
+    right_paddle.setStayInScreen(true)
     right_paddle.right = 160
 }
 let ball: Sprite = null

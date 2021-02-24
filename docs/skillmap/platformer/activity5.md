@@ -164,7 +164,7 @@ Did you feel like the enemies in your last game were a little...well...stupid?
 
 In this lesson we'll learn how to make enemies smarter, using simple [_**AI**_](#fakeSmart "artificial intelligence").
 
-![Levels and Functions](/static/skillmaps/platformer/platformer5.gif "And now for something completely different!  And a little bit the same.")
+![Levels and Functions](/static/skillmap/platformer/platformer5.gif "And now for something completely different!  And a little bit the same.")
 
 
 
@@ -173,13 +173,17 @@ In this lesson we'll learn how to make enemies smarter, using simple [_**AI**_](
 The code for this program spawns enemies from the purple **[ ! ]** tiles.
 Once the enemies spawn, they immediately start moving to the left and get 
 stuck on a wall...so, let's add logic to prevent the enemies from getting stopped.
-<hr/>
+
+---
+
 **The enemies will need to follow two rules:**
 
 1. **If the enemy is about to run into a wall, it will try to jump over it**  
 2. **If the enemy does hit a wall, it will turn around**
 
-<hr/>
+
+---
+
 
 Each of these rules has a *condition* and an *action*.  
 
@@ -191,7 +195,9 @@ We'll need to write code to constantly check fore each of these conditions.
 To get started, we'll need an **on game update** container to trigger code 
 every time something in the game changes. Inside, we'll need a loop to check on 
 each of the enemies, one-by-one.   
-<hr/>
+
+---
+
 
 🔲 Drag out an ``||game:on game update||`` block and place it on the workspace.
 
@@ -210,7 +216,9 @@ game.onUpdate(function () {
 
 On each update, we want our loop to check on every enemy in the game.
 To do this, we'll use the same method as in previous tutorials.
-<hr/>
+
+---
+
 
 🔲 From the ``||arrays:Arrays||`` category, grab the ``||sprites:array of sprite of kind||`` 
 block from inside the **set sprite list to** block.
@@ -233,7 +241,9 @@ game.onUpdate(function () {
 Let's start the code for our first rule:
 
 > 1. **If the enemy is about to run into a wall, it will try to jump over it**  
-<hr/>
+
+---
+
 
 🔲 We're going to need to check **if** something is true. To do that, drag
 an ``||logic: if <true> then||`` logic container into the empty **on game update** container.
@@ -266,7 +276,9 @@ when it needs to jump.
  - If it's moving to the right and there's a wall to the right 
 
 We'll figure out whether either situation is happening using a new **if/then** statement.
-<hr/>
+
+---
+
 
 🔲 Drag out another ``||logic:if <true> then||`` block and place it inside of the 
 empty one already in the **for element** loop.
@@ -301,7 +313,9 @@ We're already checking to see if the next tile to the left is a wall,
 but that only matters if the enemy is traveling left.  
 
 Let's add the code to see if the enemy is moving left.
-<hr/>
+
+---
+
 In the Arcade system, left is negative and right is positive. To check that the
 sprite is moving left, you must make sure its velocity in the x direction
 is negative.  
@@ -330,7 +344,9 @@ game.onUpdate(function () {
 
 If the computer gets to this point in the code, it means it's time for the
 enemy to jump. 
-<hr/>
+
+---
+
 
 🔲 Inside the newly built **if/else** statement, connect a ``||sprites:set [mySprite] [x] to [0]||`` block.
 
@@ -355,7 +371,9 @@ game.onUpdate(function () {
 ## Jumping pt. 7
 
 Next, we'll add the code to do the same thing to the right.
-<hr/>
+
+---
+
 
 🔲 Click twice on the **⊕** button at the bottom of the innermost **if/else**
 statement that we've just completed, to add an **else** then an **else if** clause.
@@ -394,7 +412,9 @@ We've completed the code for rule #1, now let's take a look at rule #2.
 
 > 2. **If the enemy does hit a wall, it will turn around**
 
-<hr/>
+
+---
+
 The case for an enemy not running into a wall while traveling on the ground has been handled.
 Next, we need to add cases for when an enemy runs into a wall on the left or right
 while it's already trying to jump.
@@ -432,7 +452,9 @@ game.onUpdate(function () {
 
 Finally, we need to add the code to make the enemies turn right if they were
 going left and left if they were going right.
-<hr/>
+
+---
+
 
 🔲 Make two duplicates of one of the ``||sprites:set [value] [vy (velocity y)] to [-150]||`` blocks from the original **if/then**
 clause and snap one into each of the empty **else if** clauses.

@@ -451,9 +451,8 @@ mySprite.setVelocity(50, 0)
 
 Notice in the game console window that our player actually moves off the screen! We don’t want that.
 From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set||`` ``||variables:mySprite||``
-``||sprites:stay in screen||`` block and drop after the ``||sprites:set||`` ``||variables:mySprite||``
-``||sprites:velocity||`` block. In the ``||sprites:set||`` ``||variables:mySprite||`` ``||sprites:stay in screen||``
-block, use the drop-down menu to select the property **bounce on wall**, and toggle the value to **true**.
+``||sprites:bounce on wall||`` block and drop after the ``||sprites:set||`` ``||variables:mySprite||``
+``||sprites:velocity||`` block.
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -598,7 +597,7 @@ let mySprite = sprites.create(img`
 `, SpriteKind.Player)
 mySprite.setPosition(82, 111)
 mySprite.setVelocity(50, 0)
-mySprite.setFlag(SpriteFlag.BounceOnWall, true)
+mySprite.setBounceOnWall(true)
 ```
 
 ## Step 6 - Create the Basketball Hoop
@@ -750,7 +749,7 @@ let mySprite = sprites.create(img`
 `, SpriteKind.Player)
 mySprite.setPosition(82, 111)
 mySprite.setVelocity(50, 0)
-mySprite.setFlag(SpriteFlag.BounceOnWall, true)
+mySprite.setBounceOnWall(true)
 let mySprite2 = sprites.create(img`
     . . . e e e e e e e e e e e . .
     . . e e e e e e e e e e e e e .

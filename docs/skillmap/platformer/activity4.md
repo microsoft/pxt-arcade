@@ -138,7 +138,7 @@ This tutorial will help add levels to your game.
 To make level changes easier (and prevent having to write the same
 code again and again) we'll also learn to create a simple [**_function_**](#funky "group of code that can be called using a specific name").
 
-![Levels and Functions](/static/skillmaps/platformer/platformer4.gif "And now for something completely different!  And a little bit the same.")
+![Levels and Functions](/static/skillmap/platformer/platformer4.gif "And now for something completely different!  And a little bit the same.")
 
 
 ## Make a function
@@ -149,7 +149,9 @@ Functions are chunks of code that you can name and
 [**_call_**](#callingYou "insert into your code using the named label") 
 over and over from inside your program.  Unlike loops, you can run the code inside a 
 function again and again, even if you're doing something else inbetween.
-<hr/>
+
+---
+
 
 🔲 In the toolbox, expand the ``||statusbar:˅ Advanced||`` tab and click 
 on the ``||functions: Functions||`` category.
@@ -158,7 +160,7 @@ on the ``||functions: Functions||`` category.
 
 🔲 Click inside the textbox to name this function **startNextLevel**, then click **Done**.
 
-![naming a function](/static/skillmaps/platformer/name-function.gif "Say my name, say my name.")
+![naming a function](/static/skillmap/platformer/name-function.gif "Say my name, say my name.")
 
 
 ```blocks
@@ -173,13 +175,17 @@ in your workspace. Let's fill it up!
 
 Right now, the code you need for starting a level lives inside the 
 ``||loops: on start||`` container — we'll want to move it over to the function .
-<hr/>
+
+---
+
 
 🔲 Pull the ``||scene: set tilemap to [ ]||`` block out of ``||loops: on start||``.
 Everything connected below should come along with it. 
 
 🔲 Snap the whole chunk of code into your new **startNextLevel** function container.
-<hr/>
+
+---
+
 
 **Voila! Now you have a function!**  
 
@@ -229,11 +235,15 @@ instructions.
 
 Let's add a function call into our program to let the computer know
 when to run **startNextLevel**.
-<hr/>
+
+---
+
 🔲 From the ``||functions: Functions||`` category, drag a 
 ``||functions: call startNextLevel||`` block and snap it into the end of the
 ``||loops: on start||`` container.
-<hr/>
+
+---
+
 Check your game in the simulator. It shouldn't feel any different than
 the original (yet).  
 
@@ -306,7 +316,9 @@ startNextLevel()
 The trophy tile would make a perfect doorway to the next level.  We already
 have an event for when the player overlaps that tile, we just need to change
 what happens inside of it. 
-<hr/>
+
+---
+
 🔲 Remove the ``||game: game over <WIN>||`` block from the 
 **on sprite overlaps 🏆** event 
 and replace it with a new ``||functions: call startNextLevel||`` block.  
@@ -357,7 +369,9 @@ a variable.
 
 A variable will let us use the placeholder **currentLevel**
 to make decisions instead of creating new code for every possibility.
-<hr/>
+
+---
+
 
 🔲 To make a new variable, go to the ``||variables: Variables||`` menu
 and click on ``||controller: Make a Variable...||`` .
@@ -371,7 +385,9 @@ Now you have a variable named **currentLevel**.  Let's use it!
 
 We'll need to [**_increment_**](#addOn "add to")
  **currentLevel** each time the **startNextLevel** function is called.
- <hr/>
+ 
+---
+
 
 🔲 Snap a ``||variables: change [currentLevel] by [1]||`` block 
 into the **top** of the **startNextLevel** function.  
@@ -418,7 +434,9 @@ going to need to add some logic that looks at the **currentLevel** variable
 before it sets the stage.  
 
 This is the perfect place for another **if/then** element!
-<hr/>
+
+---
+
 🔲 Connect a new ``||logic: if <true> then||`` block near the **top** of 
 the **startNextLevel** function container, just below the block to **change currentLevel by 1** .  
 <br/>
@@ -465,7 +483,9 @@ function startNextLevel () {
 First, we should check and see if our current level is **1**.  
 If it is, we'll run the code for the first level,
 using our original tilemap.
-<hr/> 
+
+---
+ 
 
 🔲 Find a ``||logic:[0] [=] [0]||`` block to replace **`<true>`**
  in the empty ``||logic:if <true> then||`` container.
@@ -518,7 +538,9 @@ as expected before making it more complicated.
 
 Let's get our **if/then** logic working with our current game before we add new levels.
 
-<hr/>
+
+---
+
 If the player is on level 1, we want to show our current tile map.
 
 🔲 Move the ``||scene: set tilemap to [ ]||`` block from beneath the **if/then**
@@ -576,7 +598,9 @@ Let's think about how to do this with the conditional logic:
 Thinking about it this way means we can use an **else** clause in our condition 
 to capture any case where **currentLevel** is larger than any level numbers we've 
 already defined.
-<hr/>  
+
+---
+  
 
 🔲 Press the **⊕** button on the **if/then** container to add an **else** clause.
 
@@ -632,7 +656,9 @@ From here, adding new levels is extremely straightforward.  All you need to do i
  - Set the new tilemap inside of the new **else if**
 
  That's it!  Ready to give it a shot?
- <hr/>
+ 
+---
+
 
 🔲 Press the **⊕** button on the **if/then/else** container to add an 
 **else if** clause.
@@ -696,7 +722,9 @@ need to clean up enemies from the last level before loading a new one.
 
 To do that, you'll need to go through your entire list of enemies and 
 destroy them one by one. Fortunately, Arcade has a block for this exact purpose.
-<hr/>
+
+---
+
 
 🔲 Snap a ``||loops: for element [value] of [list]||`` loop into the very **top**
  of the **startNextLevel** function.
@@ -705,11 +733,13 @@ destroy them one by one. Fortunately, Arcade has a block for this exact purpose.
  argument and replace the **list** variable in the header of your new loop.
 
 🔲 Change the **array of sprites** kind to **Enemy**. 
-<hr/>
 
-> *Tip: To use the ``||sprites:array of sprites of kind [Player]||`` block,
+---
+
+
+**Tip:** To use the ``||sprites:array of sprites of kind [Player]||`` block,
 you'll need to remove it from  ``||variables:set [sprite list] to [array of sprites of kind [Player]]||``
-(see the hint for what the code should look like). *
+(see the hint for what the code should look like). 
 
 ```blocks
 let myEnemy: Sprite = null
@@ -761,13 +791,17 @@ function startNextLevel () {
 
 Now you have a loop that will focus on each enemy, one at a time. 
 This is your chance to destroy them!
-<hr/>
+
+---
+
 
 🔲 Drag a ``||sprites: destroy [mySprite]||`` block into the new **for element** loop.
 
 🔲 Replace ``||variables: mySprite||`` with the ``||variables: value||``
 attribute from the header of the **for element** loop.  
-<hr/>
+
+---
+
 
 ** That's it!  Your game can have as many levels as you can imagine!**
 

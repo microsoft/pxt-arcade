@@ -7,5 +7,6 @@
     "star": {
         "namespace": "sprites.food",
         "mimeType": "image/x-mkcd-f4"
-    }
+    },
+    "tags": "food"
 }

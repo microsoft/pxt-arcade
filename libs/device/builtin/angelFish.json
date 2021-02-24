@@ -9,5 +9,6 @@
         "name": "angelFishRight",
         "frames": [0, 1, 2, 3],
         "flippedHorizontal": true
-    }]
+    }],
+    "tags": "aquatic animals"
 }

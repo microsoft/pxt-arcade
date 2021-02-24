@@ -41,20 +41,20 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 
 ## Step 4
 
-Place a ``||sprites:set stay in screen||`` block below the ``||sprites:set velocity||`` block (this is called a sprite **flag**).
-Just like before, drag the ``||variables:sprite||`` variable from the ``||sprites:on created||`` block and use it as the sprite for ``||sprites:set stay in screen||``.
+Place a ``||sprites:set auto destroy||`` block below the ``||sprites:set velocity||`` block (this is called a sprite **flag**).
+Just like before, drag the ``||variables:sprite||`` variable from the ``||sprites:on created||`` block and use it as the sprite for ``||sprites:set auto destroy||``.
 
 
 ```blocks
 sprites.onCreated(SpriteKind.Enemy, function (sprite) {
     sprite.setVelocity(-50, 0)
-    sprite.setFlag(SpriteFlag.StayInScreen, false)
+    sprite.setFlag(SpriteFlag.AutoDestroy, false)
 })
 ```
 
 ## Step 5
 
-Using the dropdown in the ``||sprites:set stay in screen||`` block, change ``||sprites:stay in screen||`` flag to ``||sprites:auto destroy||``. Switch the setting for that from **OFF** to **ON**. This setting will cause all of the enemies to get automatically destroyed when they travel outside of the screen.
+In the ``||sprites:set auto destroy||`` block. Switch the setting for that from **OFF** to **ON**. This setting will cause all of the enemies to get automatically destroyed when they travel outside of the screen.
 
 ```blocks
 sprites.onCreated(SpriteKind.Enemy, function (sprite) {

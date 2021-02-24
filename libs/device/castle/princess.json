@@ -26,5 +26,6 @@
     {
         "name": "princessWalkBack",
         "frames": [6, 7, 8]
-    }]
+    }],
+    "tags": "people"
 }

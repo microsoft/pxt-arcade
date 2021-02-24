@@ -612,7 +612,7 @@ let chestsCollected = 0;
 let backgroundMusic = new music.Melody("F5:2 A5:4 F5:2 C5:2 B4:1 C5:1 D5:2 C5:2 F5:2 A5:4 F5:2 C5:2 B4:1 C5:1 D5:2 C5:2 A4:2 F5:4 A4:2 A4:2 G#4:1 A4:1 B4:2 A4:2 A4:2 F5:4 A4:2 A4:2 G#4:1 A4:1 B4:2 A4:2 A4:2 F4:2 A4:2 C5:2 A#4:8 C5:2 A#4:2 C5:2 E5:2 F5:8 C6:2 D6:2 C6:2 A#5:2 A5:2 A#5:2 A5:2 G5:2 F5:8 C5:2 E5:2 F5:2 C5:2 F5:2 A5:4 F5:2 C5:2 B4:1 C5:1 D5:2 C5:2 F5:2 A5:4 F5:2 C5:2 B4:1 C5:1 D5:2 C5:2 C5:2 E5:4 C5:2 G4:2 F4:1 G4:1 C5:2 G4:2 C5:2 E5:4 C5:2 D4:2 E4:1 F4:1 C5:2 E5:2 F5:4 :4 E5:2 A5:4 F5:2 E5:4 A4:4 B4:2 A4:4 B4:2 C5:4 E5:4 D5:2 F5:4 E5:2 C5:4 F4:4 G4:2 F4:4 G4:2 A4:4 C5:4 G4:4 :2 G4:4 B4:2 A4:4 D5:2 F5:4 E5:2 C5:4 G4:4 G4:4 :2 G4:4 B4:2 A4:4 A4:8 :2 A4:2 B4:2 A4:2 E5:2 A5:4 F5:2 E5:4 A4:4 B4:2 A4:4 B4:2 C5:4 E5:4 D5:2 F5:4 E5:2 C5:4 F4:4 G4:2 F4:4 G4:2 A4:4 C5:4 G4:4 :2 G4:4 B4:2 A4:4 D5:2 F5:4 E5:2 C5:4 G4:4 G4:4 :2 G4:4 B4:2 A4:4 A4:8 :2 A4:2 B4:2 A4:2");
 backgroundMusic.loop(8);
 
-girlSprite.setFlag(SpriteFlag.StayInScreen, true);
+girlSprite.setStayInScreen(true);
 controller.moveSprite(girlSprite);
 scene.cameraFollowSprite(girlSprite);
 ```

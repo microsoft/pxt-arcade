@@ -262,7 +262,7 @@
                 "codalTarget": {
                     "name": "codal-big-brainpad",
                     "url": "https://github.com/lancaster-university/codal-big-brainpad",
-                    "branch": "v1.2.0",
+                    "branch": "v1.3.0",
                     "type": "git"
                 },
                 "codalBinary": "STM32",
@@ -400,6 +400,8 @@
         "variablesBlocks": true,
         "textBlocks": true,
         "functionBlocks": true,
+        "breakBlock": true,
+        "continueBlock": true,
         "functionsOptions": {
             "useNewFunctions": true,
             "extraFunctionEditorTypes": [
