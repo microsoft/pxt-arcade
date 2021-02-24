@@ -225,7 +225,21 @@
 * type: tutorial
 * description: Add extra lives to your collector game!
 * tags: easy, collector, game
+* next: collector-activity5
 
 
 * url: /skillmap/collector/collector4
 * imageUrl: /static/skillmap/collector/collector-activity4.png
+
+
+
+### collector-activity5
+
+* name: Go for Gusto
+* type: tutorial
+* description: Make your game super special by doing your own thing!
+* tags: intermediate, collector, game, sandbox
+
+
+* url: /skillmap/collector/collector5
+* imageUrl: /static/skillmap/collector/collector-activity5.png

@@ -1,5 +1,4 @@
-# Make a Puzzle
-
+# Puzzling Answers
 
 
 ```jres
@@ -103,37 +102,9 @@ NewRound()
 
 ```
 
+```template
 
-
-## Welcome @unplugged
-
-We've made stories, clicker games, and collector games...now it's time to learn the secrets behind puzzle games!
-
-Today, we'll make a  number guessing puzzle.
-
-
-![A simple puzzle](/static/skillmap/puzzle/puzzle-activity-1.gif "Is it a puzzle, or is it luck?")
-
-
-## Step 2
-
-**🧙‍♂️ Let's add some character 🧙‍♂️**
-
-We'll start by adding a sprite that can interact with the user.
-
----
-
-
-🔲 From the ``||sprites:Sprites||`` category, grab a 
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and 
-snap it into the empty **on start** container already in the workspace.
-
-🔲 Click the empty grey box in the new block and draw a wise character.  
-
-
-
-```blocks
-//@highlight
+let myNumber = randint(1, 5)
 let mySprite = sprites.create(img`
     . . . . . f f 4 4 f f . . . . . 
     . . . . f 5 4 5 5 4 5 f . . . . 
@@ -152,53 +123,93 @@ let mySprite = sprites.create(img`
     . . . f f 1 d 1 d 1 d f f . . . 
     . . . . . f f b b f f . . . . . 
     `, SpriteKind.Player)
+game.showLongText("I'm thinking of a number between 1 and 5. Can you guess it?", DialogLayout.Bottom)
+if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
+    mySprite.say("Yep!")
+} else {
+    mySprite.say("Nope!")
+}
+
 
 ```
 
-## Step 3
+## Welcome @unplugged
 
-**🏅 Issue a challenge 🏅**
+Guessing games are more fun when you get to know the final answer.
 
-The sprite needs to challenge the user to guess their number.  
+This activity will add extra elements to make a more rewarding experience!
+
+![How did I do?](/static/skillmap/puzzle/puzzle-activity-2.gif "The first step is knowing.")
+
+
+## Step 2
+
+Your workspace is preloaded with a basic guessing game. 
+
+Let's add code to end the game when you get the answer right or wrong.
 
 ---
 
 
 🔲 From the ``||game:Game||`` category, grab a 
-``||game:show long text [" "] [bottom]||`` block and 
-snap it into the end of the **on start** container.
+``||game:game over <LOSE>||`` block and 
+snap it at the end of the upper
+**if/then** container.
 
-🔲 Enter your challenge message into the empty text box.   
+🔲 Toggle **`<LOSE>`** to **`<WIN>`**.
+
+🔲 Put another ``||game:game over <LOSE>||`` block at 
+the end of the lower **else** container.
+
+```blocks
+let mySprite: Sprite = null
+if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
+    mySprite.say("Yep!")
+    game.over(true)
+
+} else {
+    mySprite.say("Nope!")
+    game.over(false)
+}
+
+```
+
+## Step 3
+
+**🎮 Give your game a try 🎮**
+
+Notice that the game ends too quickly to see what your sprite said?
+
+We can fix that with a short pause.
+
+---
+
+
+🔲 From the ``||loops:Loops||`` category, grab a 
+``||loops:pause [100] ms||`` block and snap one above **each** **game over** block.
+
+🔲 Change **100** to **5000** in both of the **pause** blocks.
 
 
 
 ```blocks
-let mySprite = sprites.create(img`
-    . . . . . f f 4 4 f f . . . . . 
-    . . . . f 5 4 5 5 4 5 f . . . . 
-    . . . f e 4 5 5 5 5 4 e f . . . 
-    . . f b 3 e 4 4 4 4 e 3 b f . . 
-    . . f 3 3 3 3 3 3 3 3 3 3 f . . 
-    . f 3 3 e b 3 e e 3 b e 3 3 f . 
-    . f 3 3 f f e e e e f f 3 3 f . 
-    . f b b f b f e e f b f b b f . 
-    . f b b e 1 f 4 4 f 1 e b b f . 
-    f f b b f 4 4 4 4 4 4 f b b f f 
-    f b b f f f e e e e f f f b b f 
-    . f e e f b d d d d b f e e f . 
-    . . e 4 c d d d d d d c 4 e . . 
-    . . e f b d b d b d b b f e . . 
-    . . . f f 1 d 1 d 1 d f f . . . 
-    . . . . . f f b b f f . . . . . 
-    `, SpriteKind.Player)
-    //@highlight
-game.showLongText("I'm thinking of a number between 1 and 5. Can you guess it?", DialogLayout.Bottom)
+let mySprite: Sprite = null
+if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
+    mySprite.say("Yep!")
+    pause(5000)
+    game.over(true)
+
+} else {
+    mySprite.say("Nope!")
+    pause(5000)
+    game.over(false)
+}
 
 ```
 
 ## Step 4
 
-**🤷 Nothing to lose 🤷**
+**🎤 We need answers 🎤**
 
 Before we can check to see if the user is right, we need to choose 
 a number.  To make this work, the
@@ -246,7 +257,7 @@ game.showLongText("I'm thinking of a number between 1 and 5. Can you guess it?",
 
 ## Step 5
 
-**🔮 So random 🔮**
+🔮 So random 🔮
 
 Now we'll add the block to set our new variable to a random number.
 
@@ -288,7 +299,7 @@ game.showLongText("I'm thinking of a number between 1 and 5. Can you guess it?",
 
 ## Step 6
 
-**📝 Guess and check 📝**
+📝 Guess and check 📝
 
 Next, we need to checkto see **if** the user's guess is right. 
 
@@ -377,7 +388,7 @@ if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
 
 ## Step 8
 
-**🔎 The moment of truth 🔍**
+🔎 The moment of truth 🔍
 
 To complete the game, we need to give the users a message 
 to let them know if they guessed correctly.  
