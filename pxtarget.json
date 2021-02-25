@@ -557,7 +557,8 @@
         "openProjectNewTab": true,
         "hasReferenceDocs": true,
         "python": true,
-        "assetEditor": true
+        "assetEditor": true,
+        "allowParentController": true
     },
     "queryVariants": {
         "skillsMap=1": {
