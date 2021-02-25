@@ -58,7 +58,7 @@ Check out the winners of the 4th Official Microsoft MakeCode Game Jam, featuring
 * author: UnsignedArduino
 * url: https://unsignedarduino.github.io/Fishy-Fishy-Cross-my-Ocean/
 * cardType: sharedExample
-* imageUrl: https://pxt.azureedge.net/api/63434-59192-93007-07962/thumb
+* imageUrl: https://raw.githubusercontent.com/UnsignedArduino/Fishy-Fishy-Cross-my-Ocean/master/.github/makecode/thumb.png
 ---
 * name: Caballito Saltarin
 * description: Dodge pollution and plastic waste while trying to get to the end in this lovely platformer.
