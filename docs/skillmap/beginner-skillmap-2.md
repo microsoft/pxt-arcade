@@ -243,3 +243,27 @@
 
 * url: /skillmap/collector/collector5
 * imageUrl: /static/skillmap/collector/collector-activity5.png
+
+
+
+
+
+## Puzzle
+* name: Puzzle Game
+* description: Build a guess-the-number game!
+* completionUrl: /static/skillmap/certificates/puzzle-game.pdf
+
+
+
+### puzzle-activity2
+
+* name: Getting Feedback
+* type: tutorial
+* description: Reveal the magic answer when the game is over! 
+* tags: easy, puzzle, game
+* required: 1 puzzle
+
+
+
+* url: /skillmap/puzzle/puzzle2 
+* imageUrl: /static/skillmap/puzzle/puzzle-activity2.png
