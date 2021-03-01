@@ -557,10 +557,12 @@
         "openProjectNewTab": true,
         "hasReferenceDocs": true,
         "python": true,
-        "assetEditor": true,
-        "allowParentController": true
+        "assetEditor": true
     },
     "queryVariants": {
+        "controller=1": {
+            "allowParentController": true
+        },
         "skillsMap=1": {
             "appTheme": {
                 "embeddedTutorial": true,
