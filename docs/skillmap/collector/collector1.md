@@ -1,5 +1,6 @@
 # Collector Game
 
+### @autoexpandOff true
 
 ```ghost
 

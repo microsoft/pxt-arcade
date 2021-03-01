@@ -1,5 +1,8 @@
 # Adding Encounters
 
+### @autoexpandOff true
+
+
 ## Introduction @unplugged
 
 Your universe is pretty empty right now. Let's add some things for your ship

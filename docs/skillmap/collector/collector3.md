@@ -1,5 +1,6 @@
 # Experience Danger
 
+### @autoexpandOff true
 
 ```ghost
 info.onCountdownEnd(function () {

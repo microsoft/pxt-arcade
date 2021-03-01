@@ -1,5 +1,6 @@
 # Go for Gusto
 
+### @autoexpandOff true
 
 
 ```template

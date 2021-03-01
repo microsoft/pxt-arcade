@@ -1,5 +1,6 @@
 # Simple Platformer
 
+### @autoexpandOff true
 
 
 ```jres

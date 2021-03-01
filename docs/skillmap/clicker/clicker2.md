@@ -1,5 +1,7 @@
 # Grand Clicker
 
+### @autoexpandOff true
+
 ```template
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {

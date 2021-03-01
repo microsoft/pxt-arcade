@@ -1,5 +1,7 @@
 # Adding Fuel
 
+### @autoexpandOff true
+
 ## Introduction @unplugged
 
 Time to refuel! 
