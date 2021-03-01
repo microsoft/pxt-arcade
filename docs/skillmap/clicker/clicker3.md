@@ -1,4 +1,6 @@
-# Variable Clicker
+# Super Clicker
+
+### @autoexpandOff true
 
 ```template
 

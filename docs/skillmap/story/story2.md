@@ -1,5 +1,6 @@
 # Bigger Greeting
 
+### @autoexpandOff true
 
 ```template
 {

@@ -1,5 +1,7 @@
 # Enemy Follows
 
+### @autoexpandOff true
+
 ```jres
 {
     "transparency16": {

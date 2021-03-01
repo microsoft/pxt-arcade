@@ -6,13 +6,13 @@
 
 
 ## Learn to Use Tutorial
-* name: Learn to use MakeCode Arcade
+* name: Learn to Use MakeCode Arcade
 * description: Start here if you want to know the ins and outs of Arcade tutorials!
 * completionUrl: /static/skillmap/certificates/understanding-arcade-tutorials.pdf
 
 ### interface-activity1
 
-* name: Learn MakeCode Arcade
+* name: Get to Know MakeCode Arcade
 * type: tutorial
 * description: Intro to the features and vocabulary used in Arcade tutorials.
 * tags: easy
@@ -25,14 +25,14 @@
 
 
 ## Quick Example Games
-* name: Quick-Start Example Games
+* name: Quick-Start Games
 * description:  Build your first games in less than 30 minutes!
 * completionUrl: /static/skillmap/certificates/getting-started.pdf
 
 
 ### story-activity1
 
-* name: Greeting card
+* name: Greeting Card
 * type: tutorial
 * description: Make an amazing greeting card in minutes!
 * tags: easy, story, card, creative
@@ -78,7 +78,7 @@
 
 
 ## story
-* name: Tell stories using Arcade
+* name: Tell Stories Using Arcade
 * description: Learn to tell engaging short stories using Microsoft MakeCode Arcade.
 * completionUrl: /static/skillmap/certificates/writing-stories.pdf
 
@@ -130,7 +130,7 @@
 
 ### clicker-activity2
 
-* name: Mod Clicker
+* name: Grand Clicker
 * type: tutorial
 * description: Modify your clicker so that it's unmistakably yours! 
 * tags: easy, clicker, game
@@ -257,13 +257,40 @@
 
 ### puzzle-activity2
 
-* name: Getting Feedback
+* name: Puzzling Answers
 * type: tutorial
 * description: Reveal the magic answer when the game is over! 
 * tags: easy, puzzle, game
 * required: 1 puzzle
-
+* next: puzzle-activity3
 
 
 * url: /skillmap/puzzle/puzzle2 
 * imageUrl: /static/skillmap/puzzle/puzzle-activity2.png
+
+
+
+### puzzle-activity3
+
+* name: Guess Again
+* type: tutorial
+* description: Add multiple chances to guess correctly! 
+* tags: easy, puzzle, game
+* next: puzzle-activity4
+
+
+* url: /skillmap/puzzle/puzzle3 
+* imageUrl: /static/skillmap/puzzle/puzzle-activity3.png
+
+
+
+### puzzle-activity4
+
+* name: Getting Warmer
+* type: tutorial
+* description: Let the player know if their guesses are high or low! 
+* tags: intermediate, puzzle, game
+
+
+* url: /skillmap/puzzle/puzzle4
+* imageUrl: /static/skillmap/puzzle/puzzle-activity4.png

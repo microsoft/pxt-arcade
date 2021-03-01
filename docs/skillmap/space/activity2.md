@@ -1,5 +1,7 @@
 # Projectiles
 
+### @autoexpandOff true
+
 ## Introduction @unplugged
 
 ![Releasing projectiles](/static/skillmap/space/projectiles.gif "Here, enemy ship. Would you like to borrow an asteroid?")

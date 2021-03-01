@@ -1,5 +1,7 @@
 # Enemy AI
 
+### @autoexpandOff true
+
 ```jres
 {
     "transparency16": {

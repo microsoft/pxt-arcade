@@ -1,5 +1,6 @@
 # The Shortest Story
 
+### @autoexpandOff true
 
 ``` assetjson
 

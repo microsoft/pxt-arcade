@@ -6,7 +6,7 @@
 
 
 ## Learn to Use Tutorial
-* name: Learn to use MakeCode Arcade
+* name: Learn to Use MakeCode Arcade
 * description: Start here if you want to know the ins and outs of Arcade tutorials!
 * completionUrl: /static/skillmap/certificates/understanding-arcade-tutorials.pdf
 
@@ -68,7 +68,7 @@
 
 
 ## story
-* name: Tell stories using Arcade
+* name: Tell Stories Using Arcade
 * description: Learn to tell engaging short stories using Microsoft MakeCode Arcade.
 * completionUrl: /static/skillmap/certificates/writing-stories.pdf
 
@@ -113,7 +113,7 @@
 
 
 ## clicker
-* name: Make a Clicker! 
+* name: Make a Clicker 
 * description: Build and embellish a clicker game in MakeCode Arcade.
 * completionUrl: /static/skillmap/certificates/clicker-game.pdf
 
@@ -159,7 +159,7 @@
 
 
 ## Collector
-* name: Collector Game
+* name: Create a Collector Game
 * description: Build a simple collector game in MakeCode Arcade!
 * completionUrl: /static/skillmap/certificates/collector-game.pdf
 

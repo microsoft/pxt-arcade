@@ -1,5 +1,7 @@
 # Get to Know MakeCode Arcade 
 
+### @autoexpandOff true
+
 
 ```ghost
 let mySprite: Sprite = null;

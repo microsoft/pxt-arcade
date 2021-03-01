@@ -1,5 +1,7 @@
 # Space Explorer
 
+### @autoexpandOff true
+
 ## Introduction @unplugged
 
 Let's explore the depths of space! 

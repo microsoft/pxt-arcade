@@ -1,5 +1,6 @@
 # Greeting Card
 
+### @autoexpandOff true
 
 ```ghost
 scene.setBackgroundImage(img`

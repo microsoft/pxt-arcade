@@ -1,5 +1,7 @@
 # Multiple Levels
 
+### @autoexpandOff true
+
 ```jres
 {
     "transparency16": {

@@ -1,5 +1,6 @@
-# Fun Collector
+# Collect the Fun
 
+### @autoexpandOff true
 
 ```ghost
 let mySprite = sprites.create(img`

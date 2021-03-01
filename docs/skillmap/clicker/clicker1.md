@@ -1,4 +1,6 @@
-# Basic Clicker
+# Clicker Game
+
+### @autoexpandOff true
 
 
 ``` ghost

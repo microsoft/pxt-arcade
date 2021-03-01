@@ -1,5 +1,7 @@
 # Adding Danger
 
+### @autoexpandOff true
+
 ## Introduction @unplugged
 
 Intergalactic travel is dangerous!

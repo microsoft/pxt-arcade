@@ -1,5 +1,7 @@
 # Bigger Clicker
 
+### @autoexpandOff true
+
 ```template
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (10 <= info.score()) {

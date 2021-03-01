@@ -1,4 +1,4 @@
-# Puzzling Answers
+# Guess Again
 
 ### @autoexpandOff true
 
@@ -57,15 +57,65 @@ mySprite = sprites.create(img`
     . . . f f 1 d 1 d 1 d f f . . . 
     . . . . . f f b b f f . . . . . 
     `, SpriteKind.Player)
-myNumber = randint(1, 99)
+    for (let index = 0; index < 3; index++) {
+        myNumber = randint(1, 99)
+    }
 game.showLongText("I'm thinking of a number between 1 and 99. Can you guess it?", DialogLayout.Bottom)
 NewRound()
 
 ```
 
 ```template
+	
+}
+let myNumber = 0
+let mySprite: Sprite = null
+mySprite = sprites.create(assets.image`crystal ball`, SpriteKind.Player)
+myNumber = randint(1, 9)
+game.showLongText("I'm thinking of a number between 1 and 9. Can you guess it?", DialogLayout.Bottom)
 
-let myNumber = randint(1, 5)
+if (game.askForNumber("Enter a number between 1 and 9", 1) == myNumber) {
+    mySprite.say("Yes! It was " + myNumber + "!")
+    pause(3000)
+    game.over(true)
+} else {
+    mySprite.say("No. It was " + myNumber + "!")
+    pause(3000)
+    game.over(false)
+}
+
+
+```
+
+## Welcome @unplugged
+
+Guessing a number with one try is luck. Guessing a number in three tries is skill!
+
+This activity will help you add multiple tries to your number guessing game.
+
+![What's your number?](/static/skillmap/puzzle/puzzle-activity-3.gif "Guess again. And again.")
+
+
+
+## Step 2
+
+The code for a basic guessing game is in your workspace. 
+
+Let's add a loop to allow you to make multiple guesses.
+
+---
+
+
+🔲 From the ``||loops:Loops||`` category, grab a 
+``||loops:while <false>||`` loop and snap it into the 
+**on start** container right **above** the **if/then/else** containers.
+
+🔲 Grab everything underneath the new loop by clicking on the 
+ **if/then/else** block.  Drag that whole chunk of code up into the new
+ empty **repeat** loop. 
+
+
+```blocks
 let mySprite = sprites.create(img`
     . . . . . f f 4 4 f f . . . . . 
     . . . . f 5 4 5 5 4 5 f . . . . 
@@ -84,120 +134,120 @@ let mySprite = sprites.create(img`
     . . . f f 1 d 1 d 1 d f f . . . 
     . . . . . f f b b f f . . . . . 
     `, SpriteKind.Player)
-game.showLongText("I'm thinking of a number between 1 and 5. Can you guess it?", DialogLayout.Bottom)
-if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
-    mySprite.say("Yep!")
-} else {
-    mySprite.say("Nope!")
+let myNumber = randint(1, 9)
+game.showLongText("I'm thinking of a number between 1 and 9. Can you guess it?", DialogLayout.Bottom)
+//@highlight
+while (false) {
+    if (game.askForNumber("Enter a number between 1 and 9", 1) == myNumber) {
+        mySprite.say("Yes! It was " + myNumber + "!")
+        pause(3000)
+        game.over(true)
+    } else {
+        mySprite.say("The number was " + myNumber + "!")
+        pause(3000)
+        game.over(false)
+    }
 }
 
-
 ```
-
-## Welcome @unplugged
-
-Guessing games are more fun when you get to find out the final answer.
-
-This activity will add extra elements to make a more rewarding experience!
-
-![How did I do?](/static/skillmap/puzzle/puzzle-activity-2.gif "The first step is knowing.")
-
 
 ## Step 2
 
-Your workspace is preloaded with a basic guessing game. 
-
-Let's add code that ends your game depending on whether you get the answer right or wrong.
+We want this loop to keep running as long as lives are greater than zero.
 
 ---
 
+🔲 Grab a ``||logic:[0] [<] [0]||`` value block and use it to replace 
+**`<false>`** in the **while** loop.
 
-🔲 From the ``||game:Game||`` category, grab a 
-``||game:game over <LOSE>||`` block and 
-snap it at the end of the upper
-**if/then** container.
-
-🔲 Toggle **`<LOSE>`** to **`<WIN>`**.
-
-🔲 Put another ``||game:game over <LOSE>||`` block at 
-the end of the lower **else** container.
+🔲 Replace the second **0** of the logic value block with a ``||info:score||``
+value block.
 
 ```blocks
-let mySprite: Sprite = null
-if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
-    mySprite.say("Yep!")
-    game.over(true)
-
-} else {
-    mySprite.say("Nope!")
-    game.over(false)
+let mySprite = sprites.create(img`
+    . . . . . f f 4 4 f f . . . . . 
+    . . . . f 5 4 5 5 4 5 f . . . . 
+    . . . f e 4 5 5 5 5 4 e f . . . 
+    . . f b 3 e 4 4 4 4 e 3 b f . . 
+    . . f 3 3 3 3 3 3 3 3 3 3 f . . 
+    . f 3 3 e b 3 e e 3 b e 3 3 f . 
+    . f 3 3 f f e e e e f f 3 3 f . 
+    . f b b f b f e e f b f b b f . 
+    . f b b e 1 f 4 4 f 1 e b b f . 
+    f f b b f 4 4 4 4 4 4 f b b f f 
+    f b b f f f e e e e f f f b b f 
+    . f e e f b d d d d b f e e f . 
+    . . e 4 c d d d d d d c 4 e . . 
+    . . e f b d b d b d b b f e . . 
+    . . . f f 1 d 1 d 1 d f f . . . 
+    . . . . . f f b b f f . . . . . 
+    `, SpriteKind.Player)
+let myNumber = randint(1, 9)
+game.showLongText("I'm thinking of a number between 1 and 9. Can you guess it?", DialogLayout.Bottom)
+//@highlight
+while (0 < info.life()) {
+    if (game.askForNumber("Enter a number between 1 and 9", 1) == myNumber) {
+        mySprite.say("Yes! It was " + myNumber + "!")
+        pause(3000)
+        game.over(true)
+    } else {
+        mySprite.say("The number was " + myNumber + "!")
+        pause(3000)
+        game.over(false)
+    }
 }
 
 ```
 
-## Step 3
-
-**🎮 Give your game a try 🎮**
-
-Notice that the game ends too quickly to see what your sprite said?
-
-We can fix that with a short pause.
-
----
-
-
-🔲 From the ``||loops:Loops||`` category, grab a 
-``||loops:pause [100] ms||`` block and snap one above **each** **game over** block.
-
-🔲 Change **100** to **3000** in both of the **pause** blocks.
-
-
-
-```blocks
-let mySprite: Sprite = null
-if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
-    mySprite.say("Yep!")
-    pause(3000)
-    game.over(true)
-
-} else {
-    mySprite.say("Nope!")
-    pause(3000)
-    game.over(false)
-}
-
-```
 
 ## Step 4
 
-**🤷 But what was it? 🤷**
+**🎮 Give your game a try 🎮**
 
-Not satisfied with only right and wrong?  
-Let's add code to let the user know what the number was.
+Did the experience go as planned? If you guessed wrong, you probably noticed 
+that your **game over** block stopped you from guessing again. 
+Let's smooth that out.
 
 ---
 
 
-🔲 Click on the ``||advanced:Advanced||`` cagegory to reveal the ``||text:Text||``
-category.  
+🔲 Drag the ``||game:game over <LOSE>||`` block out of the **else** and 
+snap it into the end of the **on start** container below the **repeat** loop.
 
-🔲 Grab the ``||text:join ["Hello"] ["World"] ⊖ ⊕||`` block and use it to 
-replace the ** mySprite say text** in the **if** container.  
-
-🔲 Click the **⊕** at the right of the new
-block to turn it into ``||text:join ["Hello"] ["World"] [" "] ⊖ ⊕||``.
 
 
 ```blocks
-let mySprite: Sprite = null
-if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
-    mySprite.say("Hello" + "World" + " ")
-    pause(3000)
-    game.over(true)
+let mySprite = sprites.create(img`
+    . . . . . f f 4 4 f f . . . . . 
+    . . . . f 5 4 5 5 4 5 f . . . . 
+    . . . f e 4 5 5 5 5 4 e f . . . 
+    . . f b 3 e 4 4 4 4 e 3 b f . . 
+    . . f 3 3 3 3 3 3 3 3 3 3 f . . 
+    . f 3 3 e b 3 e e 3 b e 3 3 f . 
+    . f 3 3 f f e e e e f f 3 3 f . 
+    . f b b f b f e e f b f b b f . 
+    . f b b e 1 f 4 4 f 1 e b b f . 
+    f f b b f 4 4 4 4 4 4 f b b f f 
+    f b b f f f e e e e f f f b b f 
+    . f e e f b d d d d b f e e f . 
+    . . e 4 c d d d d d d c 4 e . . 
+    . . e f b d b d b d b b f e . . 
+    . . . f f 1 d 1 d 1 d f f . . . 
+    . . . . . f f b b f f . . . . . 
+    `, SpriteKind.Player)
+let myNumber = randint(1, 9)
+game.showLongText("I'm thinking of a number between 1 and 9. Can you guess it?", DialogLayout.Bottom)
 
-} else {
-    mySprite.say("Hello" + "World" + " ")
-    pause(3000)
+while (0 < info.life()) {
+    if (game.askForNumber("Enter a number between 1 and 9", 1) == myNumber) {
+        mySprite.say("Yes! It was " + myNumber + "!")
+        pause(3000)
+        game.over(true)
+    } else {
+        mySprite.say("The number was " + myNumber + "!")
+        pause(3000)
+    }
+    //@highlight
     game.over(false)
 }
 
@@ -205,91 +255,163 @@ if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
 
 ## Step 5
 
-The **join** block will let you display a variable inside a longer sentence.
-Here's how:
+**🧞 Wait a minute, it will come to me... 🧞**
+
+It doesn't take skill to guess a number if it's given to you!
+
+Let's move the final message to the end and add a new message for wrong guesses.
+
 
 ---
 
 
-🔲 Use the **first text slot** *(the one that currently says "Hello")* for the beginning
-of your sentence. *(Don't forget to add a space at the end!)*
+🔲 Duplicate the **mySprite say** text block from the **else** container and 
+snap the new one just above the **game over `<LOSE>`** block near the end of the program.  
 
-🔲 Drag a ``||variables:myNumber||`` value block into the **second slot** 
-*(the one that currently says "World")* to report the random number that the
-computer chose.
+🔲 Also duplicate the **pause** block and add the copy just above the 
+ **game over `<LOSE>`** block near the end of the program.
 
-🔲 Use the **third text slot** *(the blank one)* for the end
-of your sentence. *(Don't forget to add a space at the beginning of this 
-field — unless it's punctuation!)*
+🔲 Delete the **join** value block from the original **else** message 
+and change the text to something that let's the user know they were wrong without 
+giving away the answer.
 
----
-
-**When you put it all together, you should get a sentence that looks like:**  
-"Yes! It was " + **myNumber** + "!"
 
 
 ```blocks
-let mySprite: Sprite = null
-let myNumber: Sprite = null
-if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
-//@highlight
-    mySprite.say("Yes! It was " + myNumber + "!")
-    pause(3000)
-    game.over(true)
+let mySprite = sprites.create(img`
+    . . . . . f f 4 4 f f . . . . . 
+    . . . . f 5 4 5 5 4 5 f . . . . 
+    . . . f e 4 5 5 5 5 4 e f . . . 
+    . . f b 3 e 4 4 4 4 e 3 b f . . 
+    . . f 3 3 3 3 3 3 3 3 3 3 f . . 
+    . f 3 3 e b 3 e e 3 b e 3 3 f . 
+    . f 3 3 f f e e e e f f 3 3 f . 
+    . f b b f b f e e f b f b b f . 
+    . f b b e 1 f 4 4 f 1 e b b f . 
+    f f b b f 4 4 4 4 4 4 f b b f f 
+    f b b f f f e e e e f f f b b f 
+    . f e e f b d d d d b f e e f . 
+    . . e 4 c d d d d d d c 4 e . . 
+    . . e f b d b d b d b b f e . . 
+    . . . f f 1 d 1 d 1 d f f . . . 
+    . . . . . f f b b f f . . . . . 
+    `, SpriteKind.Player)
+let myNumber = randint(1, 9)
+game.showLongText("I'm thinking of a number between 1 and 9. Can you guess it?", DialogLayout.Bottom)
 
-} else {
-    mySprite.say("Hello" + "World" + " ")
+while (0 < info.life()) {
+    if (game.askForNumber("Enter a number between 1 and 9", 1) == myNumber) {
+        mySprite.say("Yes! It was " + myNumber + "!")
+        pause(3000)
+        game.over(true)
+    } else {
+        //@highlight
+        mySprite.say("Not that!")
+        pause(3000)
+    }
+    
+    mySprite.say("The number was " + myNumber + "!")
     pause(3000)
     game.over(false)
+     
 }
+
+
+```
+
+## Step 6
+
+**❤️ Life meter ❤️**
+
+Keep track of how many guesses you have left using the life meter.
+
+---
+
+
+🔲 Add a ``||info:change life by [-1]||`` block to the **end** of the **else**
+container. That way, the game will remove one heart for each wrong guess.  
+
+
+
+```blocks
+let mySprite = sprites.create(img`
+    . . . . . f f 4 4 f f . . . . . 
+    . . . . f 5 4 5 5 4 5 f . . . . 
+    . . . f e 4 5 5 5 5 4 e f . . . 
+    . . f b 3 e 4 4 4 4 e 3 b f . . 
+    . . f 3 3 3 3 3 3 3 3 3 3 f . . 
+    . f 3 3 e b 3 e e 3 b e 3 3 f . 
+    . f 3 3 f f e e e e f f 3 3 f . 
+    . f b b f b f e e f b f b b f . 
+    . f b b e 1 f 4 4 f 1 e b b f . 
+    f f b b f 4 4 4 4 4 4 f b b f f 
+    f b b f f f e e e e f f f b b f 
+    . f e e f b d d d d b f e e f . 
+    . . e 4 c d d d d d d c 4 e . . 
+    . . e f b d b d b d b b f e . . 
+    . . . f f 1 d 1 d 1 d f f . . . 
+    . . . . . f f b b f f . . . . . 
+    `, SpriteKind.Player)
+let myNumber = randint(1, 9)
+game.showLongText("I'm thinking of a number between 1 and 9. Can you guess it?", DialogLayout.Bottom)
+
+while (0 < info.life()) {
+    if (game.askForNumber("Enter a number between 1 and 9", 1) == myNumber) {
+        mySprite.say("Yes! It was " + myNumber + "!")
+        pause(3000)
+        game.over(true)
+    } else {
+        mySprite.say("Not that!")
+        pause(3000)
+         //@highlight
+         info.changeLifeBy(-1)
+    }
+    
+    mySprite.say("The number was " + myNumber + "!")
+    pause(3000)
+    game.over(false)
+     
+}
+
 
 ```
 
 
-## Step 6
+## Step 7
 
-Let's do the same thing for the incorrect answer.
+Everything looks great now, but we don't have enough
+time to read the final message before the game ends in a loss.
 
----
+Let's use an **on life zero** block to keep the auto-loss from launching when
+life meter hearts fall to zero.
 
-
-🔲 Right click on ``||text:join ["Yep! It was "] [myNumber] ["!"] ⊖ ⊕||``
-and choose **Duplicate**.  
-
-🔲 Drag the new value block into the **mySprite say** block in the 
-**else** container and change the sentence 
-to work when someone guesses wrong. 
 
 ---
 
-**When you put it all together, you should get a sentence that looks like:**  
-"Nope. It was " + **myNumber** + "!"
+
+🔲 Grab an ``||info:on life zero||`` container and drop it into an empty area 
+in your workspace.  
+
+🔲 Pull the last two blocks out of **on start** (**pause** and 
+**game over**) and snap them into the empty **on life zero** container.
+
 
 ```blocks
 
-let mySprite: Sprite = null
-let myNumber: Sprite = null
-if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
-    mySprite.say("Yes! It was " + myNumber + "!")
-    pause(3000)
-    game.over(true)
-
-} else {
-    //@highlight
-    mySprite.say("Nope. It was " + myNumber + "!")
+info.onLifeZero(function () {
     pause(3000)
     game.over(false)
-}
+})
 
 ```
 
 
 ## Finale
 
-**Fantastic!**
+**Fantastic! Give your game a try!**
 
-Now you'll know just how close you were!  
+Now you can narrow in on the correct answer like a pro!  
 
-Now, click **Finish** to publish your game and get a 
+Click **Finish** to publish your game and get a 
 link to share with family and friends. 
 

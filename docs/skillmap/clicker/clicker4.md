@@ -1,5 +1,7 @@
 # Simple Clicker Store
 
+### @autoexpandOff true
+
 ```template
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     power += 1
