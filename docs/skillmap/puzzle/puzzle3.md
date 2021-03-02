@@ -36,6 +36,8 @@ function NewRound () {
         NewRound()
     }
 }
+
+scene.setBackgroundColor(8)
 let yourGuess = 0
 let myNumber = 0
 let mySprite: Sprite = null
