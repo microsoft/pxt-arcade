@@ -330,7 +330,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     otherSprite.destroy(effects.smiles, 500)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    info.changeLifeBy(0)
+    info.changeLifeBy(-1)
     otherSprite.destroy(effects.disintegrate, 500)
 })
 let myEnemy: Sprite = null
