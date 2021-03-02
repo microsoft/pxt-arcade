@@ -222,7 +222,7 @@ To do this, we'll use the same method as in previous tutorials.
 ---
 
 
-🔲 From the ``||arrays:Arrays||`` category, grab the ``||sprites:array of sprite of kind||`` 
+🔲 From the ``||sprites:Sprites||`` category, grab the ``||sprites:array of sprite of kind||`` 
 block from inside the **set sprite list to** block.
 
 
