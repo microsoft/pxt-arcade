@@ -290,7 +290,7 @@
 * type: tutorial
 * description: Let the player know if their guesses are high or low! 
 * tags: intermediate, puzzle, game
-* next: puzzle-activity4
+* next: puzzle-activity5
 
 * url: /skillmap/puzzle/puzzle4
 * imageUrl: /static/skillmap/puzzle/puzzle-activity4.png
