@@ -290,7 +290,20 @@
 * type: tutorial
 * description: Let the player know if their guesses are high or low! 
 * tags: intermediate, puzzle, game
-
+* next: puzzle-activity4
 
 * url: /skillmap/puzzle/puzzle4
 * imageUrl: /static/skillmap/puzzle/puzzle-activity4.png
+
+
+
+### puzzle-activity5
+
+* name: Take Over
+* type: tutorial
+* description: Get creative with your guessing game! 
+* tags: intermediate, puzzle, game, sandbox
+
+
+* url: /skillmap/puzzle/puzzle5
+* imageUrl: /static/skillmap/puzzle/puzzle-activity5.png
