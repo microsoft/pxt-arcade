@@ -291,7 +291,7 @@ destroys your projectile (**otherSprite**).
 some spectacular effects when your projectile makes contact!
 
 ```blocks
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, otherSprite) {
     sprite.destroy(effects.bubbles, 500)
     otherSprite.destroy(effects.smiles, 500)
 })

@@ -292,7 +292,7 @@
 * tags: intermediate, puzzle, game
 * next: puzzle-activity4
 
-* url: /skillmap/puzzle/puzzle4
+* url: /skillmap/puzzle/puzzle5
 * imageUrl: /static/skillmap/puzzle/puzzle-activity4.png
 
 

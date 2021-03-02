@@ -731,7 +731,7 @@ destroy them one by one. Fortunately, Arcade has a block for this exact purpose.
 🔲 Snap a ``||loops: for element [value] of [list]||`` loop into the very **top**
  of the **startNextLevel** function.
 
-🔲 From the ``||arrays:Arrays||`` category, grab an ``||sprites:array of sprites of kind [Player]||``
+🔲 From the ``||sprites:Sprites||`` category, grab an ``||sprites:array of sprites of kind [Player]||``
  argument and replace the **list** variable in the header of your new loop.
 
 🔲 Change the **array of sprites** kind to **Enemy**. 
