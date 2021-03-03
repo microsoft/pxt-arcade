@@ -1,7 +1,6 @@
 # Galga
 
-``` assetjson
-
+```assetjson
 {
   "README.md": " ",
   "assets.json": "",
@@ -11,7 +10,6 @@
   "main.ts": "\n",
   "pxt.json": "{\n    \"name\": \"Planes\",\n    \"description\": \"\",\n    \"dependencies\": {\n        \"device\": \"*\"\n    },\n    \"files\": [\n        \"main.blocks\",\n        \"main.ts\",\n        \"README.md\",\n        \"assets.json\",\n        \"images.g.jres\",\n        \"images.g.ts\"\n    ],\n    \"targetVersions\": {\n        \"branch\": \"v1.3.44\",\n        \"tag\": \"v1.3.44\",\n        \"commits\": \"https://github.com/microsoft/pxt-arcade/commits/d1e057830c0eebc87e3e400f2106c8e1f0e5a077\",\n        \"target\": \"1.3.44\",\n        \"pxt\": \"6.8.33\"\n    },\n    \"preferredEditor\": \"blocksprj\"\n}\n"
 }
-
 ```
 
 
