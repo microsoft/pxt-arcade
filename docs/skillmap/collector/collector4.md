@@ -161,7 +161,24 @@ forever(function () {
 
 })
 forever(function () {
-    extraLife = sprites.createProjectileFromSide(assets.image`Heart`, -90, 0)
+    extraLife = sprites.createProjectileFromSide(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . c c c . . . . . c c c . . . 
+. c 2 2 2 c c . c c 2 2 2 c . . 
+. c 2 2 2 2 2 c 2 2 2 2 2 c . . 
+. c 2 2 2 2 2 2 2 2 2 2 2 c . . 
+. c 2 2 2 2 2 2 2 2 2 2 2 c . . 
+. c 2 2 2 2 2 2 2 2 2 2 2 c . . 
+. . c 2 2 2 2 2 2 2 2 2 c . . . 
+. . . c 2 2 2 2 2 2 2 c . . . . 
+. . . . c c 2 2 2 c c . . . . . 
+. . . . . . c 2 c . . . . . . . 
+. . . . . . . c . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, -90, 0)
     extraLife.y = randint(0, 120)
     extraLife.setKind(SpriteKind.Food)
     pause(randint(4000, 5000))
