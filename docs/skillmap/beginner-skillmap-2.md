@@ -89,7 +89,7 @@
 
 * name: Bigger Greeting
 * type: tutorial
-* description: Add to your greeting card for a gift tht keeps on giving!
+* description: Add to your greeting card for a gift that keeps on giving!
 * tags: easy, card, gift, creative
 * next: story-activity3
 * reqired: 1 story
