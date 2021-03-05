@@ -36,7 +36,7 @@
             "microsoft/arcade-sprite-data": "min:v0.0.6"
         },
         "approvedEditorExtensionUrls": [
-            "https://microsoft.github.io/jacdac-ts/tools/makecode-editor-extension"
+            "https://microsoft.github.io/jacdac-docs/tools/makecode-editor-extension"
         ]
     },
     "shareLinks": {
