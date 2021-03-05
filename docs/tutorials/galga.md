@@ -382,7 +382,7 @@ game.onUpdateInterval(1000, function () {
 
 ## Step 8
 
-**How can you win if bogeys [__*spawn*__](#spawnd "appear suddenly") right on top of you?**
+**How can you win if bogeys** [__*spawn*__] (#spawnd "appear suddenly") **right on top of you?**
 
 ---
 
