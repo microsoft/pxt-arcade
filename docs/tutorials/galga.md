@@ -382,7 +382,7 @@ game.onUpdateInterval(1000, function () {
 
 ## Step 8
 
-**How can you win if bogeys** [__*spawn*__] (#spawnd "appear suddenly") **right on top of you?**
+**How can you win if bogeys** [__*spawn*__](#spawnd "appear suddenly") **right on top of you?**
 
 ---
 
@@ -585,7 +585,6 @@ You can now use the direction buttons to move your space plane and
 the **Ⓐ** button to lauch darts!
 
 ![Space plane and attacking spacecraft](/static/tutorials/galga.gif)
-
 
 
 
