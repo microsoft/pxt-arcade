@@ -273,7 +273,7 @@ Follow these quick steps and you'll have one in no time!
 
 🔲 From the ``||scene:Scene||`` category, grab a ``||scene:set background image to [ ]||`` block and drag it into the **on start** container in the workspace.
 
-🔲 Choose a backgroumd from the image gallery by clicking inside the grey image square and toggling the switch at the top. 
+🔲 Choose a background from the image gallery by clicking inside the grey image square and toggling the switch at the top. 
 
 🔲 Choose one of our pre-loaded backgrounds...or stay in **Edit** mode to create your own.
 
