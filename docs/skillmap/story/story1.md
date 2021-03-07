@@ -273,9 +273,9 @@ Follow these quick steps and you'll have one in no time!
 
 🔲 From the ``||scene:Scene||`` category, grab a ``||scene:set background image to [ ]||`` block and drag it into the **on start** container in the workspace.
 
-🔲 Choose a background from the image gallery by clicking inside the grey image square and toggling the switch at the top. 
-
-🔲 Choose one of our pre-loaded backgrounds...or stay in **Edit** mode to create your own.
+🔲 Choose a background from the image gallery by clicking inside the grey 
+image square and toggling the switch at the top (or stay in **Edit** mode 
+to create your own.)
 
 
 ```blocks
@@ -413,7 +413,7 @@ scene.setBackgroundImage(img`
 🔲 Write a short message on your card using the image editor!
 
 🔲 Open your background again by clicking on the image thumbnail in the block. 
-The image will open in the **sprite editor** and you'll be able to draw right 
+The image will open and you'll be able to draw right 
 on top.  Click **Done** when you're finished to save your work.
 
 
@@ -551,15 +551,15 @@ Let's take a second to add a special decoration to the card.
 
 ---
 
-🔲 From ``||sprites:Sprites||``, grab a ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
-block and snap it into the end of the **on start** container in the workspace.
+🔲 From ``||sprites:Sprites||``, grab ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
+and snap it into the end of the **on start** container in the workspace.
 
-🔲 Choose a sprite from the image gallery or **My Assets** tab by clicking 
+🔲 Choose a sprite from the **Gallery** or **My Assets** tab by clicking 
 inside the grey sprite square and toggling the switch at the top. Use one of 
-our pre-loaded images...or stay in **Edit** mode to 
-create your own.
+our pre-loaded images (or stay in **Edit** mode to 
+create your own.)
 
-🔲 If needed, look in the ``||sprites:Sprites||`` category for a 
+🔲 If needed, look in ``||sprites:Sprites||`` for 
 ``||sprites:set [mySprite] position to x [0] y [0]||`` and play with the numbers
 until your decoration lands exactly where you want it. 
 

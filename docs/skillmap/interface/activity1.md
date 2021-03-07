@@ -1,7 +1,5 @@
 # Get to Know MakeCode Arcade 
 
-### @autoexpandOff true
-
 
 ```ghost
 let mySprite: Sprite = null;
@@ -120,7 +118,7 @@ In the instructions, block descriptions for the block you need will
 often be highlighted in the same color as the toolbox 
 category where they live. 
 
-**For example:** We might use the shorthand ``||game:splash "___"||`` when 
+**For example:** We might use ``||game:splash "___"||`` when 
 we want you to find this:
 
 ```block
@@ -160,13 +158,13 @@ is red, but it lives inside the ``||sprites:Sprites||`` category.
 <!-- **Tip:** If you can't find the block you're looking for, try -->
 
 
-🔲 Snap a ``||variables:set [my sprite] to [ ] of kind [player]||`` into the
+🔲 Snap ``||variables:set [my sprite] to sprite [ ] of kind [player]||`` into the
 end of the **on start** container and 
 play around with it until a [__*sprite*__](#sprote "A 2-D image that moves on the screen") shows on the screen.
 
 ---
 
-**Tip:** Drag the ``||game:splash "___"||`` out of the ``||loops:on start||`` block
+**Tip:** Drag ``||game:splash "___"||`` out of the ``||loops:on start||`` container
 and drop it back into the toolbox to delete it so your sprite will be revealed!
 
 #### ~ tutorialhint
