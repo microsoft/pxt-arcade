@@ -127,7 +127,7 @@ the player a clear endpoint.
 
 🔲  Open the ``||info:Info||`` category and 
 drag the ``||info: start countdown [10] (s)||`` block into the bottom of the 
-**on start** container.   
+``||loops:on start||`` container.   
 
 
 ## Step 5
