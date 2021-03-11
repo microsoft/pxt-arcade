@@ -16,7 +16,8 @@
             "microsoft/pxt-tilemaps",
             "microsoft/pxt-skillmap-sample",
             "microsoft/pxt-jacdac",
-            "mr-coxall/turtle-logo"
+            "mr-coxall/turtle-logo",
+            "microsoft/arcade-storytelling"
         ],
         "preferredRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
@@ -30,7 +31,8 @@
             "microsoft/arcade-minimap",
             "microsoft/arcade-timers",
             "microsoft/arcade-text",
-            "microsoft/pxt-tilemaps"
+            "microsoft/pxt-tilemaps",
+            "microsoft/arcade-storytelling"
         ],
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
