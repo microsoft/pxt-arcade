@@ -161,11 +161,11 @@ lander.setPosition(6, 102)
 
 ## Step 4 @fullscreen
 
-In ``||sprites:Sprites||`` grab a ``||sprites:set sprite stay in screen||`` and drag it under the ``||sprites:set lander position to||`` block. Toggle the switch to **ON** and set the variable to ``||variables:lander||``. Next, grab a ``||sprites:set sprite x||`` and drag it under the ``||sprites:set stay in screen block||``. Set the drop down to ``ay`` and make the value be ``30``.
+In ``||sprites:Sprites||`` grab a ``||sprites:set sprite stay in screen||`` and drag it under the ``||sprites:set lander position to||`` block. Set the variable to ``||variables:lander||``. Next, grab a ``||sprites:set sprite x||`` and drag it under the ``||sprites:set stay in screen block||``. Set the drop down to ``ay`` and make the value be ``30``.
 
 ```blocks
 let lander: Sprite = null
-lander.setFlag(SpriteFlag.StayInScreen, true)
+lander.setStayInScreen(true)
 lander.ay = 30
 ```
 

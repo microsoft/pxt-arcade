@@ -1,0 +1,256 @@
+
+{
+    "rules": {
+        "path": "/static/gamejam/jams/ocean/rules.md",
+        "tipsId": "ship-off-together"
+    },
+    "start": "2020-11-30 00:00:01 GMT-0700",
+    "end": "2020-012-11 23:59:59 GMT-0700",
+    "featured": [
+        {
+            "id": "60261-19853-16108-98043",
+            "title": "Hakay",
+            "author": "Luis"
+        },
+        {
+            "id": "98518-88049-64601-58185",
+            "title": "Fishy's Ocean Adventure",
+            "author": "N0B0DY"
+        },
+        {
+            "id": "94650-21405-93520-18500",
+            "title": "Caballito Saltarin",
+            "author": "Blanca"
+        },
+        {
+            "id": "47541-67265-08742-44374",
+            "title": "Nautical",
+            "author": "ludumStudios"
+        },
+        {
+            "id": "23246-93646-00461-00774",
+            "title": "Big Fish, Little Fish",
+            "author": "Adri314"
+        },
+        {
+            "id": "13741-79726-73573-88131",
+            "title": "Oceano",
+            "author": "Adrian"
+        },
+        {
+            "id": "22029-70208-79308-34060",
+            "title": "The little fishing Boat",
+            "author": "Cristina"
+        },
+        {
+            "id": "34619-89096-17204-24929",
+            "title": "Salvar las tortugas",
+            "author": "Alejandro"
+        },
+        {
+            "id": "85586-09448-83340-81669",
+            "title": "Turtle Adventure",
+            "author": "Gustavo"
+        },
+        {
+            "id": "04978-92601-05637-89537",
+            "title": "The Three Brave Cats",
+            "author": "lucasmayhew"
+        },
+        {
+            "id": "26024-01539-84844-67918",
+            "title": "Sea Wolf",
+            "author": "Roberto"
+        },
+        {
+            "id": "95116-85370-44603-39967",
+            "title": "Tortuguita Tortuguita",
+            "author": "Antonio"
+        },
+        {
+            "id": "87923-09033-85340-21856",
+            "title": "Gloo Gloo",
+            "author": "Carlos"
+        },
+        {
+            "id": "57456-19297-61240-20182",
+            "title": "La Foca",
+            "author": "Fran"
+        },
+        {
+            "id": "10834-78387-53673-09141",
+            "title": "Waves",
+            "author": "Anonymous"
+        },
+        {
+            "id": "20928-61123-78485-53113",
+            "title": "Cool Surfer ",
+            "author": "Isaac"
+        },
+        {
+            "id": "81862-72843-66797-70634",
+            "title": "Treasure Dash",
+            "author": "Shark_DenomiN8tion"
+        },
+        {
+            "id": "05823-80533-28232-84900",
+            "title": "Fry those Fishies",
+            "author": "Dreadmask197"
+        },
+        {
+            "id": "90506-09648-97183-61474",
+            "title": "Pollocean",
+            "author": "Shibinu Studios"
+        },
+        {
+            "id": "51070-05073-97554-91355",
+            "title": "Fish goes exploring",
+            "author": "pumpkinwearingsocks"
+        },
+        {
+            "id": "18590-69034-08348-28523",
+            "title": "In The Depths",
+            "author": "Thomas"
+        },
+        {
+            "id": "04007-23134-26251-74065",
+            "title": "The Jolly Dodger",
+            "author": "Andrew-ski"
+        },
+        {
+            "id": "04102-51991-23652-32549",
+            "title": "Shark Frenzy",
+            "author": "cosmoscowboy"
+        },
+        {
+            "id": "03922-14392-26690-11163",
+            "title": "Shark Adventure!",
+            "author": "SuperSpeedySnail007"
+        },
+        {
+            "id": "46129-14454-17750-67349",
+            "title": "ocean game jam",
+            "author": "potatoman"
+        },
+        {
+            "id": "17633-09421-03188-55501",
+            "title": "Jelly Fish",
+            "author": "Anonymous"
+        },
+        {
+            "id": "64763-39107-97677-08933",
+            "title": "Soggy Socks",
+            "author": "Andrew-ski"
+        },
+        {
+            "id": "23852-38097-46052-09329",
+            "title": "Dugong Peace Game",
+            "author": "eoin"
+        },
+        {
+            "id": "29454-30207-14139-38557",
+            "title": "Submarines",
+            "author": "HarrySuperCool"
+        },
+        {
+            "id": "35883-55233-35004-68092",
+            "title": "Dolphin Jump",
+            "author": "Juju_Gamer_2020"
+        },
+        {
+            "id": "48545-28742-60637-75793",
+            "title": "An Ocean Mystery",
+            "author": "Dreadmask197"
+        },
+        {
+            "id": "51646-86869-19257-01550",
+            "title": "Bubbly ocean",
+            "author": "Boo2020"
+        },
+        {
+            "id": "04239-08747-06968-72772",
+            "title": "Cats, Sharks, and Blobs!",
+            "author": "Levi Honkai"
+        },
+        {
+            "id":"36390-58833-03124-34888",
+            "title":"under water chase",
+            "author":"FastLikeaLamboScootScootScoot"
+         },
+         {
+            "id":"37516-44838-81031-83835",
+            "title":"Ocean Wars: the ducky Adventure",
+            "author":"Matrixbyets@2020 studios"
+         },
+         {
+            "id":"21989-40833-51134-16462",
+            "title":"Raft Craft",
+            "author":"DahbixLP"
+         },
+         {
+            "id":"56680-39809-58186-25612",
+            "title":"Shark attack",
+            "author":"J8"
+         },
+         {
+            "id":"38553-27211-43614-16088",
+            "title":"The Jolly Dodger",
+            "author":"Andrewski"
+         },
+         {
+            "id":"55911-90684-56687-33590",
+            "title":"Fish, Cook, Serve!",
+            "author":"Aiden"
+         },
+         {
+            "id":"70989-51964-38873-73090",
+            "title":"Fishy Fishy Cross my Ocean!",
+            "author":"UnsignedArduino"
+         },
+         {
+            "id":"27481-66868-80100-90028",
+            "title":"Ocean Fish ",
+            "author":"Max"
+         },
+         {
+            "id":"51581-46750-13915-69297",
+            "title":"Maze Swimmer Game Jam",
+            "author":"MarMar, That's Me."
+         },
+         {
+            "id":"08063-11664-63948-65877",
+            "title":"Pirate X",
+            "author":"Nicolas T"
+         },
+         {
+            "id":"14363-02790-83920-73318",
+            "title":"Fish life",
+            "author":"RetroDude128"
+         },
+         {
+            "id":"59084-50145-15821-85726",
+            "title":"Migration Man",
+            "author":"Rishi"
+         },
+         {
+            "id":"16753-20086-91706-27373",
+            "title":"Sam the scuba diver",
+            "author":"DuckmanTheCoder"
+         },
+         {
+            "id":"05000-25084-90099-51924",
+            "title":"War Subs",
+            "author":"Rishi"
+         },
+         {
+            "id":"28370-48293-84707-01529",
+            "title":"fish bot",
+            "author":"the_pro551"
+         },
+         {
+            "id":"64512-78215-20303-40174",
+            "title":"Ocean Platformer",
+            "author":"Ingrid"
+         }
+    ]
+}

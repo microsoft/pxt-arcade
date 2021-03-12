@@ -15,9 +15,9 @@ In this activity, students will be introduced to:
 
 [![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/TSUsPc0Kuo8)
 
-We use ``||sprites:kind||`` to classify our sprites. We can have sprites in our games that represent many different things - players, enemies, coins, food, or anything else you might want to represent in your games. 
+We use ``||sprites:kind||`` to classify our sprites. We can have sprites in our games that represent many different things - players, enemies, coins, food, or anything else you might want to represent in your games.
 
-Creating labels (``||sprites:kind||``s) for different groups of sprites helps us assign them each unique behaviors. For example, you might want to have the player in your game be able to eat 5 different food sprites, so combining them into a single ``||sprites:kind||`` allows you to write the code for a single section. 
+Creating labels (``||sprites:kind||``s) for different groups of sprites helps us assign them each unique behaviors. For example, you might want to have the player in your game be able to eat 5 different food sprites, so combining them into a single ``||sprites:kind||`` allows you to write the code for a single section.
 
 Sometimes there will be only a single sprite of a given ``||sprites:kind||`` (for example, the ``||sprites:Player||``), and other times there will be many sprites (for example, ``||sprites:Cloud||``s in the sky). Once we have ``||sprites:kind||``s for different sprites, we can check if two different sprites are overlapping one another using the ``||sprites:on overlap||`` event.
 
@@ -44,56 +44,56 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     otherSprite.destroy()
 })
 food = sprites.create(img`
-. . . . . 7 7 . . . . 7 7 . . . 
-. . . . . 7 7 7 7 . 7 7 7 7 . . 
-. . . . . 7 7 7 7 e 7 7 7 7 . . 
-. . . . . . 7 7 e e 7 7 7 . . . 
-. . . . . . . e e . . . . . . . 
-. . . . . . . 2 . . . . . . . . 
-. . . . . 2 2 2 2 2 . . . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
-. . . 2 2 2 2 2 2 2 2 2 . . . . 
-. . 2 2 2 2 2 2 2 2 2 2 2 . . . 
-. . 2 2 2 2 2 2 2 2 2 2 2 . . . 
-. . 2 2 2 2 2 2 2 2 2 2 2 . . . 
-. . . 2 2 2 2 2 2 2 2 2 . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
-. . . . . 2 2 2 2 2 . . . . . . 
-. . . . . . 2 2 2 . . . . . . . 
+. . . . . 7 7 . . . . 7 7 . . .
+. . . . . 7 7 7 7 . 7 7 7 7 . .
+. . . . . 7 7 7 7 e 7 7 7 7 . .
+. . . . . . 7 7 e e 7 7 7 . . .
+. . . . . . . e e . . . . . . .
+. . . . . . . 2 . . . . . . . .
+. . . . . 2 2 2 2 2 . . . . . .
+. . . . 2 2 2 2 2 2 2 . . . . .
+. . . 2 2 2 2 2 2 2 2 2 . . . .
+. . 2 2 2 2 2 2 2 2 2 2 2 . . .
+. . 2 2 2 2 2 2 2 2 2 2 2 . . .
+. . 2 2 2 2 2 2 2 2 2 2 2 . . .
+. . . 2 2 2 2 2 2 2 2 2 . . . .
+. . . . 2 2 2 2 2 2 2 . . . . .
+. . . . . 2 2 2 2 2 . . . . . .
+. . . . . . 2 2 2 . . . . . . .
 `, SpriteKind.Enemy)
 head = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . a a a a a a a a a a a . . . . . . . . . . . 
-. . . . . . . . a a a a a a a a a a a a a a a . . . . . . . . . 
-. . . . . . . . . a a a 5 5 5 a a a a a a a a a . . . . . . . . 
-. . . . . . . . a 5 5 5 5 5 5 5 a a a a a a a a . . . . . . . . 
-. . . . . . . 5 5 5 5 5 5 5 5 5 a a a a a a a a . . . . . . . . 
-. . . . . . 5 5 5 5 6 5 5 5 5 5 a a a a a a a a . . . . . . . . 
-. . . . 5 5 5 5 5 5 5 5 5 5 a a a a a a a a a a a . . . . . . . 
-. . . 5 5 5 5 5 5 5 5 5 5 5 a a a 5 5 5 5 5 a a a . . . . . . . 
-. . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
-. . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
-. . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
-. . . . . 1 . 1 . 1 . 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
-. . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . 
-. . . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . 
-. . . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . 
-. . . . . . . . . . . 1 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . 
-. . . . . . . . . 1 . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . 
-. . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . . 
-. . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . . . 
-. . . . . . . . . . . 5 5 5 5 5 5 5 . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . 5 5 5 5 . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . 5 5 5 5 . . . . . . . . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . a a a a a a a a a a a . . . . . . . . . . .
+. . . . . . . . a a a a a a a a a a a a a a a . . . . . . . . .
+. . . . . . . . . a a a 5 5 5 a a a a a a a a a . . . . . . . .
+. . . . . . . . a 5 5 5 5 5 5 5 a a a a a a a a . . . . . . . .
+. . . . . . . 5 5 5 5 5 5 5 5 5 a a a a a a a a . . . . . . . .
+. . . . . . 5 5 5 5 6 5 5 5 5 5 a a a a a a a a . . . . . . . .
+. . . . 5 5 5 5 5 5 5 5 5 5 a a a a a a a a a a a . . . . . . .
+. . . 5 5 5 5 5 5 5 5 5 5 5 a a a 5 5 5 5 5 a a a . . . . . . .
+. . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . .
+. . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . .
+. . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . .
+. . . . . 1 . 1 . 1 . 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . .
+. . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . .
+. . . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . .
+. . . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . .
+. . . . . . . . . . . 1 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . .
+. . . . . . . . . 1 . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . .
+. . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . .
+. . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . . .
+. . . . . . . . . . . 5 5 5 5 5 5 5 . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . 5 5 5 5 . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . 5 5 5 5 . . . . . . . . . . . . . .
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . .
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . .
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . .
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . .
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . .
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . .
 `, SpriteKind.Player)
 food.setPosition(20, 60)
 head.setPosition(120, 60)
@@ -116,7 +116,7 @@ Use ``||loops:pause||`` before using ``||sprites:sprite destroy||`` , otherwise 
 
 ## Set ``||sprites:sprite||`` ghost on
 
-The ``||sprites:ghost on||`` setting for sprites, when turned on, makes the sprite ignore ``||sprites:on overlap||`` events. By default, the setting is off. The ``||sprites:ghost on||`` setting is in the drop down list when you pull out the ``||sprites:stay in screen||`` block.
+The ``||sprites:ghost on||`` setting for sprites, when turned on, makes the sprite ignore ``||sprites:on overlap||`` events. By default, the setting is off. The ``||sprites:ghost on||`` setting is in the drop down list when you pull out the ``||sprites:auto destroy||`` block.
 
 ## Example #2: Sprite Overlap and ghost on #example-2
 
@@ -131,56 +131,56 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     otherSprite.destroy()
 })
 food = sprites.create(img`
-. . . . . 7 7 . . . . 7 7 . . . 
-. . . . . 7 7 7 7 . 7 7 7 7 . . 
-. . . . . 7 7 7 7 e 7 7 7 7 . . 
-. . . . . . 7 7 e e 7 7 7 . . . 
-. . . . . . . e e . . . . . . . 
-. . . . . . . 2 . . . . . . . . 
-. . . . . 2 2 2 2 2 . . . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
-. . . 2 2 2 2 2 2 2 2 2 . . . . 
-. . 2 2 2 2 2 2 2 2 2 2 2 . . . 
-. . 2 2 2 2 2 2 2 2 2 2 2 . . . 
-. . 2 2 2 2 2 2 2 2 2 2 2 . . . 
-. . . 2 2 2 2 2 2 2 2 2 . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
-. . . . . 2 2 2 2 2 . . . . . . 
-. . . . . . 2 2 2 . . . . . . . 
+. . . . . 7 7 . . . . 7 7 . . .
+. . . . . 7 7 7 7 . 7 7 7 7 . .
+. . . . . 7 7 7 7 e 7 7 7 7 . .
+. . . . . . 7 7 e e 7 7 7 . . .
+. . . . . . . e e . . . . . . .
+. . . . . . . 2 . . . . . . . .
+. . . . . 2 2 2 2 2 . . . . . .
+. . . . 2 2 2 2 2 2 2 . . . . .
+. . . 2 2 2 2 2 2 2 2 2 . . . .
+. . 2 2 2 2 2 2 2 2 2 2 2 . . .
+. . 2 2 2 2 2 2 2 2 2 2 2 . . .
+. . 2 2 2 2 2 2 2 2 2 2 2 . . .
+. . . 2 2 2 2 2 2 2 2 2 . . . .
+. . . . 2 2 2 2 2 2 2 . . . . .
+. . . . . 2 2 2 2 2 . . . . . .
+. . . . . . 2 2 2 . . . . . . .
 `, SpriteKind.Enemy)
 head = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . a a a a a a a a a a a . . . . . . . . . . . 
-. . . . . . . . a a a a a a a a a a a a a a a . . . . . . . . . 
-. . . . . . . . . a a a 5 5 5 a a a a a a a a a . . . . . . . . 
-. . . . . . . . a 5 5 5 5 5 5 5 a a a a a a a a . . . . . . . . 
-. . . . . . . 5 5 5 5 5 5 5 5 5 a a a a a a a a . . . . . . . . 
-. . . . . . 5 5 5 5 6 5 5 5 5 5 a a a a a a a a . . . . . . . . 
-. . . . 5 5 5 5 5 5 5 5 5 5 a a a a a a a a a a a . . . . . . . 
-. . . 5 5 5 5 5 5 5 5 5 5 5 a a a 5 5 5 5 5 a a a . . . . . . . 
-. . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
-. . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
-. . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
-. . . . . 1 . 1 . 1 . 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
-. . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . 
-. . . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . 
-. . . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . 
-. . . . . . . . . . . 1 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . 
-. . . . . . . . . 1 . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . 
-. . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . . 
-. . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . . . 
-. . . . . . . . . . . 5 5 5 5 5 5 5 . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . 5 5 5 5 . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . 5 5 5 5 . . . . . . . . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . a a a a a a a a a a a . . . . . . . . . . .
+. . . . . . . . a a a a a a a a a a a a a a a . . . . . . . . .
+. . . . . . . . . a a a 5 5 5 a a a a a a a a a . . . . . . . .
+. . . . . . . . a 5 5 5 5 5 5 5 a a a a a a a a . . . . . . . .
+. . . . . . . 5 5 5 5 5 5 5 5 5 a a a a a a a a . . . . . . . .
+. . . . . . 5 5 5 5 6 5 5 5 5 5 a a a a a a a a . . . . . . . .
+. . . . 5 5 5 5 5 5 5 5 5 5 a a a a a a a a a a a . . . . . . .
+. . . 5 5 5 5 5 5 5 5 5 5 5 a a a 5 5 5 5 5 a a a . . . . . . .
+. . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . .
+. . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . .
+. . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . .
+. . . . . 1 . 1 . 1 . 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . .
+. . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . .
+. . . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . .
+. . . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . .
+. . . . . . . . . . . 1 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . .
+. . . . . . . . . 1 . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . .
+. . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . .
+. . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . . .
+. . . . . . . . . . . 5 5 5 5 5 5 5 . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . 5 5 5 5 . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . 5 5 5 5 . . . . . . . . . . . . . .
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . .
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . .
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . .
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . .
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . .
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . .
 `, SpriteKind.Player)
 head.setFlag(SpriteFlag.Ghost, true)
 food.setPosition(20, 60)
@@ -192,18 +192,18 @@ game.onUpdate(function () {
 
 ## Student Task #2: Ghost Off and On #task-2
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-overlap1ghostntask)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/overlap1GhostNTask.mp4)
 
 1. Start with [example #2](#example-2) or [task #1](#task-1)
 2. Create 3 sprites in different locations across the screen
-3. Make the newly created sprites all be of the same ``||sprites:kind||``. 
+3. Make the newly created sprites all be of the same ``||sprites:kind||``.
 4. Set at least one sprite to have ``||sprites:ghost off||`` and one to have ``||sprites:ghost on||``. Make sure both of these are stationary (don't move)
 5. Add an event for ``||sprites:on overlap||`` of the stationary sprite ``||sprites:kind||``s with the ``||sprites:kind||`` for the movable sprite (for example, in the event have an action of sprite ``||sprites:destroy||`` and/or sprite ``||sprites:say||``)
 6. Add 2 additional stationary sprites, with one more new ``||sprites:kind||`` and overlap events for all the different ``||sprites:kind||``s (for example, Player, Enemy, Food, ...)
 
 ## Student Task #3: Multiple ``||sprites:kind||``s
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-overlap1task3)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/overlap1Task3.mp4)
 
 1. Start with [task #2](#task-2) or your own similar code
 2. Enable the sprite to move anywhere on screen along x and y axis
@@ -217,7 +217,7 @@ Be sure to use ``||music:stop all sounds||`` if completing challenge overlap eve
 
 ### ~
 
-## What did we learn? 
+## What did we learn?
 
 1. Describe how a ``||sprites:kind||`` is used to detect overlap.
 2. Suppose you have 2 or more sprites that have the same ``||sprites:kind||``, and one of them triggers an overlap event. Explain how you can reference the sprite that was involved in the overlap event, rather than one of the other sprites of that ``||sprites:kind||``.

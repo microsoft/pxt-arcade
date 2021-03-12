@@ -10,5 +10,14 @@
         "Back2",
         "Back3",
         "Back4"
-    ]
+    ],
+    "animations": [{
+        "name": "heroWalkShieldFront",
+        "frames": [0, 1, 2, 3]
+    },
+    {
+        "name": "heroWalkShieldBack",
+        "frames": [4, 5, 6, 7]
+    }],
+    "tags": "people"
 }

@@ -1,12 +1,12 @@
 # Activity: Coordinate Walker
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-03_coordinate_walker_intro_final)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/03_coordinate_walker_intro_FINAL.mp4)
 
 In this activity, students will investigate the game screen.
 
 ## Concept: Identify the X, Y coordinates of the Game Screen 
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-coordinate-walker)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/coordinate-walker.mp4)
 
 Move a walker sprite around the game screen, and use it to identify `X` and `Y` coordinates.
 

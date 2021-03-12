@@ -210,6 +210,16 @@ h1 {
     text-align: center;
     margin: 1rem;
     flex: 1;
+    max-width: 14.5rem;
+}
+
+.game img {
+    width: 100%;
+}
+
+.game > div > div {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /***** WINNERS ****/
@@ -219,6 +229,15 @@ h1 {
     display: none;
 }
 
+/***** WINNERS - HONORABLE MENTIONS ****/
+
+.winners #rules table:nth-of-type(4) tr {
+    align-items: flex-start;
+}
+
+.winners #rules table:nth-of-type(4) td {
+    padding: 1rem;
+}
 
 /**** FOOTER ****/
 
@@ -256,7 +275,7 @@ h1 {
         display: none;
     }
 
-    #rules table td:nth-child(2) {
+    .content:not(.winners) #rules table td:nth-child(2) {
         display: none;
     }
 

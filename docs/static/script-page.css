@@ -6,6 +6,7 @@ body#root {
 
 body#root.share-page {
     font-family: 'Segoe UI', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    background-color: #fdf3e0;
 }
 
 body#root.share-page #pagemenu .ui.header {
@@ -71,17 +72,22 @@ body#root.share-page .ui.mini.image.mclogo {
     flex-grow: 0;
 }
 
-.ui.container.script-content {
+.ui.script-content {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
-.script-embed {
+#embed-frame, .script-embed {
     width: 100%;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     flex-grow: 1;
+}
+
+#embed-frame > iframe {
+    width: 100%;
+    height: 100%;
 }
 
 .script-bookend {
@@ -112,8 +118,51 @@ body#root.share-page .ui.mini.image.mclogo {
     color: #333;
     padding: 0.5rem;
 }
+
+.loader {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.loader div {
+    position: absolute;
+    border: 4px solid #fff;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.loader div:nth-child(2) {
+    animation-delay: -0.5s;
+}
+
+@keyframes lds-ripple {
+    0% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+
+    100% {
+        top: 0px;
+        left: 0px;
+        width: 72px;
+        height: 72px;
+        opacity: 0;
+    }
+}
+
 @media only screen and (max-width: 1144px) {
-    .ui.container.mainbody {
+    .ui.mainbody {
         padding-left: 0!important;
         padding-right: 0!important;
         margin-left: auto!important;
@@ -127,13 +176,13 @@ body#root.share-page .ui.mini.image.mclogo {
         height: 2.8rem;
         min-height: 2.8rem !important;
     }
-    .ui.container.mainbody, .page-header .ui.container {
+    .ui.mainbody, .page-header .ui.script-content {
         margin: 0 !important;
     }
 }
 
 @media only screen and (min-width: 769px) {
-    .ui.container.mainbody, .page-header .ui.container {
+    .ui.mainbody, .page-header .ui.script-content {
         padding-left: 1em;
         padding-right: 1em;
     }
@@ -144,4 +193,26 @@ body#root.share-page .ui.mini.image.mclogo {
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
+}
+
+div.sim-embed {
+    width: 100%;
+    height: 100%;
+}
+
+div.simframe {
+    border: none;
+    margin: 0 0 0.5rem 0;
+    position: relative !important;
+    background: transparent;
+    width: 100% !important;
+    height: 100% !important;
+    display: inline-block;
+    padding-bottom: 0 !important;
+}
+
+div.simframe > iframe {
+    position: relative !important;
+    width: 100%;
+    height: 100%;
 }

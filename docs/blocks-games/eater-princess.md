@@ -146,7 +146,7 @@ princess = sprites.create(img`
     . . . f f f f f f f f f f . . .
     . . . . . f f . . f f . . . . .
 `, SpriteKind.Player)
-princess.setFlag(SpriteFlag.StayInScreen, true)
+princess.setStayInScreen(true)
 controller.moveSprite(princess)
 scene.setBackgroundColor(11)
 game.onUpdateInterval(2000, function () {

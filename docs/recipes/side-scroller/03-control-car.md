@@ -36,8 +36,6 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 From the ``||scene:Scene||`` Toolbox drawer, drag a ``||scene:is mySprite hitting wall||`` block, and drop into the ``||logic:if then||`` block replacing true. Click on the drop-down menu and select ``||scene:bottom||`` for the wall direction.
 
-![Hitting Wall](/static/recipes/side-scroller/hitting-wall.png)
-
 ```blocks
 let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -70,19 +68,20 @@ From the ``||scene:Scene||`` Toolbox drawer, drag two ``||scene:on sprite of kin
 
 ![Sprite overlaps tile wall](/static/recipes/side-scroller/sprite-overlaps-tile.png)
 
-```blocks
-scene.onOverlapTile(SpriteKind.Player, myTiles.transparency16, function (sprite, location) {
-	
-})
-```
-
 ## Step 6 - Specify obstacle and finish line tiles
 
 In the first ``||scene:on sprite of kind overlaps tile||`` block, click on the checkered square drop-down menu and select your Obstacle tile.
 
 In the second ``||scene:on sprite of kind overlaps tile||`` block, click on the checkered square drop-down menu and select your Finish Line tile.
 
-![Sprite overlaps tile wall](/static/recipes/side-scroller/obstacle-finish-tiles.png)
+```blocks
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location) {
+
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenOuterEast0, function (sprite, location) {
+
+})
+```
 
 ## Step 7 - Game over
 

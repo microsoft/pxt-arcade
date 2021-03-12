@@ -15,7 +15,29 @@
         "publishing": true,
         "githubPackages": true,
         "cloudProviders": {
-            "github": {}
+            "github": {
+                "id": "github",
+                "name": "GitHub",
+                "icon": "./static/providers/github-mark.png",
+                "identity": false,
+                "order": 3
+            },
+            "microsoft": {
+                "id": "microsoft",
+                "name": "Microsoft",
+                "icon": "./static/providers/microsoft-logo.svg",
+                "identity": true,
+                "redirect": true,
+                "order": 1
+            },
+            "google": {
+                "id": "google",
+                "name": "Google",
+                "icon": "./static/providers/google-logo.svg",
+                "identity": false,
+                "redirect": true,
+                "order": 2
+            }
         }
     },
     "bundleddirs": [
@@ -88,7 +110,7 @@
     ],
     "compile": {
         "useUF2": true,
-        "deployDrives": "(ARCADE|PY|FTHR840BOOT)",
+        "deployDrives": "(ARCADE|PY|FTHR840BOOT|ARCD)",
         "deployFileMarker": "INFO_UF2.TXT",
         "driveName": "ARCADE",
         "floatingPoint": true,
@@ -195,7 +217,6 @@
                         "tilemap\\s*\\.\\s*screenCoordinateToTile": "tiles.screenCoordinateToTile",
                         "tilemap\\s*\\.\\s*tileCoordinateToScreen": "tiles.tileCoordinateToScreen",
                         "tilemap\\s*\\.\\s*centeredTileCoordinateToScreen": "tiles.centeredTileCoordinateToScreen",
-
                         "tilemap\\s*\\.\\s*OVERWORLD_MAP_ID": "tiles.OVERWORLD_MAP_ID",
                         "tilemap\\s*\\.\\s*MAP_LOADED_EVENT": "tiles.MAP_LOADED_EVENT",
                         "tilemap\\s*\\.\\s*WorldMap": "tiles.WorldMap",
@@ -241,7 +262,7 @@
                 "codalTarget": {
                     "name": "codal-big-brainpad",
                     "url": "https://github.com/lancaster-university/codal-big-brainpad",
-                    "branch": "v1.2.0",
+                    "branch": "v1.3.1",
                     "type": "git"
                 },
                 "codalBinary": "STM32",
@@ -379,6 +400,8 @@
         "variablesBlocks": true,
         "textBlocks": true,
         "functionBlocks": true,
+        "breakBlock": true,
+        "continueBlock": true,
         "functionsOptions": {
             "useNewFunctions": true,
             "extraFunctionEditorTypes": [
@@ -410,10 +433,18 @@
         "emptyRunCode": "pxsim.pxtcore.updateScreen(new pxsim.RefImage(160, 120, 4))",
         "aspectRatio": 0.85,
         "dynamicBoardDefinition": true,
-        "keymap": true
+        "keymap": true,
+        "messageSimulators": {
+            "jacdac": {
+                "url": "https://microsoft.github.io/jacdac-docs/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$",
+                "localHostUrl": "http://localhost:8000/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$",
+                "aspectRatio": "0.89",
+                "permanent": true
+            }
+        }        
     },
     "appTheme": {
-        "logoUrl": "https://github.com/microsoft/pxt-arcade",
+        "logoUrl": "https://makecode.com/org",
         "logo": "./static/logo.svg",
         "docsLogo": "./static/logo.svg",
         "cardLogo": "./static/logo.svg",
@@ -508,7 +539,8 @@
             "experimentalHw",
             "recipes",
             "tutorialBlocksDiff",
-            "blocksErrorList"
+            "blocksErrorList",
+            "identity"
         ],
         "blocksCollapsing": true,
         "errorList": true,
@@ -528,6 +560,15 @@
         "hasReferenceDocs": true,
         "python": true,
         "assetEditor": true
+    },
+    "queryVariants": {
+        "skillsMap=1": {
+            "appTheme": {
+                "embeddedTutorial": true,
+                "allowParentController": true,
+                "shareFinishedTutorials": false
+            }
+        }
     },
     "unsupportedBrowsers": [
         {

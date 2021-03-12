@@ -43,7 +43,7 @@ controller.moveSprite(mySprite)
 
 ## Step 2
 
-To keep the lemon from leaving the screen, drag over a ``||sprites:set mySprite stay in screen||`` block. Slide the switch for it to ``ON``. Find the ``||info:start countdown||`` block and put it in at the end. Change the time from `10` to `30` seconds.
+To keep the lemon from leaving the screen, drag over a ``||sprites:set mySprite stay in screen||`` block. Find the ``||info:start countdown||`` block and put it in at the end. Change the time from `10` to `30` seconds.
 
 ```blocks
 scene.setBackgroundColor(10)
@@ -66,7 +66,7 @@ let mySprite = sprites.create(img`
     . . . . . . c c c c c c b b 4 .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite)
-mySprite.setFlag(SpriteFlag.StayInScreen, true)
+mySprite.setStayInScreen(true)
 info.startCountdown(30)
 ```
 

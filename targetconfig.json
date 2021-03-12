@@ -12,7 +12,12 @@
             "microsoft/arcade-minimap",
             "microsoft/arcade-timers",
             "microsoft/arcade-text",
-            "microsoft/pxt-tilemaps"
+            "microsoft/pxt-tick-event",
+            "microsoft/pxt-tilemaps",
+            "microsoft/pxt-skillmap-sample",
+            "microsoft/pxt-jacdac",
+            "mr-coxall/turtle-logo",
+            "microsoft/arcade-storytelling"
         ],
         "preferredRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
@@ -26,12 +31,25 @@
             "microsoft/arcade-minimap",
             "microsoft/arcade-timers",
             "microsoft/arcade-text",
-            "microsoft/pxt-tilemaps"
+            "microsoft/pxt-tilemaps",
+            "microsoft/arcade-storytelling"
         ],
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
             "microsoft/arcade-sprite-data": "min:v0.0.6"
-        }
+        },
+        "approvedEditorExtensionUrls": [
+            "https://microsoft.github.io/jacdac-docs/tools/makecode-editor-extension"
+        ]
+    },
+    "shareLinks": {
+        "approved": [
+            "53897-77132-13809-57062",
+            "07573-63879-62644-28924"
+        ]
+    },
+    "skillMap": {
+        "defaultPath": "github:microsoft/pxt-skillmap-sample/skillmap.md"
     },
     "galleries": {
         "Tutorials": "tutorials",
@@ -44,6 +62,7 @@
         "Community Games": "community",
         "Game Design Concepts": "concepts",
         "Graphics and Math": "graphics-math",
+        "Arts and Crafts": "arts-and-crafts",
         "Lessons": "lessons",
         "Courses": "courses",
         "Hardware": "hardware",
@@ -51,6 +70,6 @@
         "John Park's Workshop": "john-parks-workshop"
     },
     "electronManifest": {
-        "latest": "v1.2.7"
+        "latest": "v1.3.44"
     }
 }

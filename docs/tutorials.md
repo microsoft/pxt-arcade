@@ -6,6 +6,16 @@
 ```codecard
 [
 {
+  "name": "Game Maker Guide",
+  "cardType": "link",
+  "description": "Level up your game making skills by following this series of tutorials!",
+  "imageUrl":  "/static/tutorials/game-maker-guide.png",
+  "url": "https://arcade.makecode.com/skillmap",
+  "label": "New! Try This",
+  "labelClass": "orange ribbon large",
+  "directOpen": true
+},
+{
   "name": "Chase the Pizza",
   "description": "Get started creating a simple game to chase a pizza around the screen and collect as many points as possible before time runs out!",
   "url": "/tutorials/chase-the-pizza",
@@ -64,7 +74,15 @@
   "imageUrl": "/static/tutorials/galga.png",
   "largeImageUrl": "/static/tutorials/galga.gif",
   "videoUrl": "/static/tutorials/galga.mp4",
-  "otherActions": []
+  "otherActions": [{
+    "url": "/tutorials/spy/galga",
+    "editor": "js",
+    "cardType": "tutorial"
+  }, {
+    "url": "/tutorials/spy/galga",
+    "editor": "py",
+    "cardType": "tutorial"
+  }]
 }, {
   "name": "Free Throw",
   "description": "Take your best shot and slam dunk this Basketball free throw game!",

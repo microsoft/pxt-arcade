@@ -29,6 +29,22 @@ Build full size MakeCode Arcade cabinets and kiosks using a Raspberry Pi Zero.
 }]
 ```
 
+## Community Pie
+
+Here are alternative solutions and setups using the Raspberry Pi
+**built and maintained by the User community**.
+
+```codecard
+[{
+    "name": "McAirpos - RetroPie",
+    "description": "Running natively as ELF executables on Raspberry Pi OS with gamepad and keyboard support for up to 2 players.",
+    "url": "https://github.com/Vegz78/McAirpos",
+    "imageUrl": "/static/hardware/raspberry-pi/macairpos.png",
+    "largeImageUrl": "/static/hardware/raspberry-pi/macairpos.mp4"
+}]
+```
+
+
 ## See Also
 
 * [Wire harness](/hardware/raspberry-pi/wire-harness)

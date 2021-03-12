@@ -181,7 +181,7 @@ let Basket = sprites.create(img`
     . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
 Basket.setPosition(80, 104)
-Basket.setFlag(SpriteFlag.StayInScreen, true)
+Basket.setStayInScreen(true)
 controller.moveSprite(Basket, 100, 0)
 let Speed = 4
 scene.setTile(14, img`

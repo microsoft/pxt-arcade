@@ -1,4 +1,14 @@
 {
     "width": 16,
-    "height": 14
+    "height": 14,
+    "animations": [{
+        "name": "dogWalkLeft",
+        "frames": [0, 1, 2]
+    },
+    {
+        "name": "dogWalkRight",
+        "frames": [0, 1, 2],
+        "flippedHorizontal": true
+    }],
+    "tags": "animals"
 }
