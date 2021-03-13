@@ -33,7 +33,7 @@
     },
     "dependencies": {
         "pxt-common-packages": "8.6.3",
-        "pxt-core": "6.10.2"
+        "pxt-core": "6.10.3"
     },
     "optionalDependencies": {
         "pxt-arcade-sim": "microsoft/pxt-arcade-sim.git#dropbbird"
