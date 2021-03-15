@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "ESNext",
+        "target": "es5",
         "noImplicitAny": true,
         "noImplicitReturns": true,
         "outDir": "../built",
