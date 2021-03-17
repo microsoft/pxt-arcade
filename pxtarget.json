@@ -439,7 +439,7 @@
                 "url": "https://microsoft.github.io/jacdac-ts/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$",
                 "localHostUrl": "http://localhost:8000/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$"
             }
-        }        
+        }
     },
     "appTheme": {
         "logoUrl": "https://makecode.com/org",
@@ -557,7 +557,8 @@
         "openProjectNewTab": true,
         "hasReferenceDocs": true,
         "python": true,
-        "assetEditor": true
+        "assetEditor": true,
+        "immersiveReader": true
     },
     "queryVariants": {
         "skillsMap=1": {
