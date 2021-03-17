@@ -225,7 +225,7 @@ container into the workspace.
 
 🔲 This time, change the checkerboard to the trophy tile.
 
-🔲 Snap a ``||game:game over LOSE>||`` block into the new container and toggle 
+🔲 Snap a ``||game:game over <LOSE>||`` block into the new container and toggle 
 the &lt;LOSE&gt; switch to &lt;WIN&gt;!
 <br/>
 

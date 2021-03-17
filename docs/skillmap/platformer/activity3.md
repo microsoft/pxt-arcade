@@ -117,7 +117,7 @@ and snap it into the bottom of the ``||loops: on start||`` container.
 
 The [__*list*__](#listical  "ordered group of items") we need in the header of that 👆 loop 
 is the list of saved location for each of the **[ ! ]** blocks. 
-Fourunately, we have a piece of code that tells us where those are.
+Fortunately, we have a piece of code that tells us where those are.
 
 🔲 Find the ``||scene: array of all [ ] locations||`` argument block and 
 drag it into the header of the new loop where the **list** argument is.

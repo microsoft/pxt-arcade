@@ -129,7 +129,7 @@ The sprite needs to challenge the user to guess their number.
 ``||game:show long text [" "] [bottom]||`` block and 
 snap it into the end of the **on start** container.
 
-🔲 Enter your challenge message into the empty text box.   
+🔲 Enter a message into the empty text box to challenge the user to guess a number between 1 & 5.   
 
 
 
