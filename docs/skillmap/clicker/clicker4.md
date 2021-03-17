@@ -115,7 +115,7 @@ Let's modify our clicker game to offer a simple shop.
 
 The code for a clicker game is already in the workspace.
 
-When you click Ⓑ, you get a super-clicker — but 
+When you click **🅑**, you get a super-clicker — but 
 what fun is it to get extra power for free? Let's add code to charge the player 10 points for the purchase.
 
 ---

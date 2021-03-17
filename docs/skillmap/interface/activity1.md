@@ -50,7 +50,7 @@ Before you know it, you'll have an arcade game of your very own!
 
 You've just discovered the most important part of following a tutorial — reading instructions!
 
-If you can't see all of the instructions, click **[v More...]** to expand the box.
+If you can't see all of the instructions, click **[v More...]** below to expand the box.
 
 ---
 
@@ -125,7 +125,7 @@ we want you to find this:
 game.splash(" ")
 ```
 
-
+This block adds a [__*splash screen*__](#splasht "A full-screen message that shows while a program or level is loading") to your project.
 
 ## Your Toolbox 2
 
@@ -158,9 +158,11 @@ is red, but it lives inside the ``||sprites:Sprites||`` category.
 <!-- **Tip:** If you can't find the block you're looking for, try -->
 
 
-🔲 Snap ``||variables:set [my sprite] to sprite [ ] of kind [player]||`` into the
+🔲 Snap ``||variables:set [my sprite] to sprite [ ] of kind [Player]||`` into the
 end of the **on start** container and 
 play around with it until a [__*sprite*__](#sprote "A 2-D image that moves on the screen") shows on the screen.
+
+*(Roll your mouse over the word __sprite__ above to see a definition.)*
 
 ---
 

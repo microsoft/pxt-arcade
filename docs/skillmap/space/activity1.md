@@ -1,17 +1,16 @@
 # Space Explorer
 
-### @autoexpandOff true
 
 ## Introduction @unplugged
 
-Let's explore the depths of space! 
+** Let's explore the depths of space! **
 
 In this tutorial, you'll design a spaceship for your journey.
 
 ![Flying through space](/static/skillmap/space/space1.gif "Blasting through a starfield" )
 
 ## Set the scene
-Let's give 'em something to look at 🔭
+**Give 'em something to look at** 🔭
 
 ---
 
@@ -31,8 +30,10 @@ and watch as you blast into space! 🚀
 effects.starField.startScreenEffect()
 ```
 
+
+
 ## Draw your ship
-Time to choose our ship!
+**🧑🏿‍🚀 Time to choose our ship! 👩🏾‍🚀**
 
 ---
 
@@ -80,9 +81,10 @@ let mySprite = sprites.create(img`
 🔲 Find the ``||controller:move [mySprite] with buttons ⊕||`` block 
 and drag it into the bottom of the ``||loops:on start||`` container. 
 
-Now your ship will move with the joystick or the **W A S D** keys.
-Try moving your ship around in the simulator!
-<br/>
+** Now try moving your ship around in the simulator! **  
+Your ship will move with the joystick, arrow keys, or **W A S D** keys.  
+
+
 
 ```blocks
 effects.starField.startScreenEffect()
@@ -118,9 +120,7 @@ controller.moveSprite(mySprite)
  the ``||sprites:set [mySprite] stay in screen <on>||`` block and
 snap it in at the end of the program.
  
----
 
- **You're all set to travel the universe!**
 
 ```blocks
 effects.starField.startScreenEffect()
@@ -147,3 +147,28 @@ controller.moveSprite(mySprite)
 mySprite.setStayInScreen(true)
 
 ```
+
+
+## Finale @unplugged
+
+**Great Job!**
+
+---
+
+Now be sure to play your game on the simulator
+before you click finish on the tutorial.  
+
+![You in space](/static/skillmap/space/space1end.gif "Blasting through your own game" )
+
+Is everything how you want it? You can always go back and edit steps if you find out 
+that you'd like them to work differently.
+
+
+
+## Byeeee
+
+** 🚀 That's it! 🚀**
+
+You're all set to travel the universe!
+
+Click **"Finish"** so you can publish your game to share with family and friends.

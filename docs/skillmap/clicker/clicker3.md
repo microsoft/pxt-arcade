@@ -104,7 +104,7 @@ Incrementing by one point per click has been fun, but what if we could
 make the game more interesting?
 
 Let's allow the player to buy a more powerful clicker when they press the 
-Ⓑ button. 
+**🅑** button. 
 
 ---
 
@@ -126,7 +126,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 3
 
-Adding another increment to the Ⓑ button would only allow the score to 
+Adding another increment to the **🅑** button would only allow the score to 
 increase faster one time for each click. 
 
 To make a permanent change, we'll need to add a 
@@ -219,7 +219,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ## Step 6
 
 To make our "super-clicker", we need to make the **power**
-larger after **Ⓑ** is pressed.
+larger after **🅑** is pressed.
 
 ---
 
@@ -245,8 +245,8 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 🎇 There you have it, a Super-Clicker 🎇
 
-Now, every time you click **Ⓑ** the game adds **1** to the amount your score increases 
-with each press of the **Ⓐ** button.
+Now, every time you click **🅑** the game adds **1** to the amount your score increases 
+with each press of the **🅐** button.
 
 Click **Finish** to share your game with friends and start
 a competition!
