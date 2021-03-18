@@ -1,5 +1,5 @@
 # Greeting Card
-
+### @allowcodecarryover: false
 
 ```assetjson
 {
@@ -291,6 +291,8 @@ grab a ``||scene:set background image to [ ]||`` block and drag it into the **on
 image square and toggling the switch at the top to "Gallery" 
 (or stay in **Edit** mode to create your own.)
 
+🔲  Click **> Next** in the tutorial window to move on to the next step.
+
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -571,7 +573,7 @@ scene.setBackgroundImage(img`
 
 🔲 Add some pizzazz from the ``||scene:Scene||`` category by grabbing a ``||scene:start screen [confetti] effect||`` block and snapping it into the **on start** container.
 
-Look at the simulator on the left to see what you've done so far!
+**Look at the simulator screen to see what you've done so far!**
 
 
 ```blocks

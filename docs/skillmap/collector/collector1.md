@@ -1,6 +1,6 @@
 # Collector Game
 
-### @autoexpandOff true
+### @allowcodecarryover: false
 
 ```ghost
 
@@ -57,14 +57,15 @@ Let's create a game that brings back some of the iconic arcade style that we lov
 
 
 
-## Step 1
+## Step 2
 
-🐤 This game needs a [__*sprite*__](#sprote "a dynamic 2-D image"). 🐤
+**🐤 This game needs a** [__*sprite*__](#sprote "a dynamic 2-D image")**. 🐤**
 
 ---
 
-🔲 From the ``||sprites:Sprites||`` category, grab a ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
-block and drag it into the empty **on start** container in the workspace.
+🔲 From the ``||sprites:Sprites||`` category, grab 
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
+and drag it into the empty **on start** container in the workspace.
 
 🔲 Get to the **Gallery** by clicking inside the grey sprite image square 
 and toggling the switch at the top. 
@@ -100,9 +101,9 @@ let mySprite = sprites.create(img`
 
 
 
-## Step 2
+## Step 3
 
-🤩 Fabulous 🤩
+**🤩 Fabulous 🤩**
 
 Let's get our sprite moving up and down with the controller.
 
@@ -116,7 +117,7 @@ block and snap it into the bottom of the **on start** container.
  [__*arguments*__](#argue "extra chunks of information the block needs"). 
 
 🔲 To keep the sprite from moving side-to-side, change 
-[__*vx*__](#whatVX "horizontal velocity") to **0**.
+[__*vx*__](#whatVX "horizontal velocity") (velocity on x) to **0**.
 
 
 
@@ -147,11 +148,11 @@ controller.moveSprite(mySprite, 0, 100)
 
 
 
-## Step 3
+## Step 4
 
-💰 The sprite needs something to collect 💰
+**💰 The sprite needs something to collect 💰**
 
-Let's toss some coins toward it every couple of seconds, forever.
+Let's toss some coins toward it every couple of seconds...**forever**.
 
 ---
 
@@ -159,9 +160,9 @@ Let's toss some coins toward it every couple of seconds, forever.
 ``||loops:forever||`` loop container and drag it out into 
 an empty spot on the workspace.
 
-🔲 From ``||sprites:Sprites||``, grab a 
+🔲 From ``||sprites:Sprites||``, grab
 ``||variables:set [projectile] to projectile [ ] from side with vx [50] vy [50]||`` 
-block and snap it into the empty **forever** container.
+and snap it into the empty **forever** container.
 
 🔲 Choose a coin sprite for your projectile by clicking on the grey box and toggling
 to **Gallery** or stay in the **Editor** and create your own.
@@ -183,7 +184,7 @@ forever(function () {
         c d d 1 1 d d c 
         . f d d d d f . 
         . . f f f f . . 
-        `, -90, 0)
+        `, -150, 0)
 })
 
 ```
@@ -191,9 +192,9 @@ forever(function () {
 
 
 
-## Step 4
+## Step 5
 
-😯 Now you have a steady stream of income 😯
+**😯 Now you have a steady stream of income 😯**
 
 If we leave the coins like this, the game will be WAY too easy.  Let's 
 send projectiles from a random height each time.
@@ -204,12 +205,12 @@ send projectiles from a random height each time.
 ``||sprites:set [mySprite] [x] to [0]||`` 
 block and snap it into the end of the **forever** loop container.
 
-🔲 Change **mySprite** to **projectile** using the dropdown menu.
+🔲 Change **mySprite** to **projectile** using the first dropdown menu.
 
-🔲 Change **x** to **y** using the dropdown menu.
+🔲 Change **x** to **y** using the other dropdown menu.
 
-🔲 Now we need to replace the **0** with ``||math:pick random [0] to [10]||``
-(from the ``||math:Math||`` category.)
+🔲 Replace **0** with ``||math:pick random [0] to [10]||``.  
+(From the ``||math:Math||`` category)
 
 
 ```blocks
@@ -232,7 +233,7 @@ forever(function () {
 
 
 
-## Step 5
+## Step 6
 
 This is looking great, but the coins still hover around the top.
 
@@ -242,8 +243,8 @@ This is looking great, but the coins still hover around the top.
 **10** to **120**.
 
 🔲 Keep the coins from shooting out at the speed of light by 
-adding a ``||loops:pause [100] ms||`` block from the  ``||loops:Loops||``
-category.
+adding a ``||loops:pause [100] ms||`` block (from the  ``||loops:Loops||``
+category) to the end of the **forever** loop.
 
 🔲 Change the pause time to **1500 ms** by clicking in the textbox and typing 
 **1500** instead of choosing a time from the dropdown menu.
@@ -267,11 +268,15 @@ forever(function () {
 
 ```
 
-## Step 6
+## Step 7 @unplugged
 
-🎮 Give your game a try 🎮
+**🎮 Give your game a try in the simulator 🎮**
 
-Notice anything missing?    
+
+## Step 8
+
+**Notice anything missing?**
+
 Right now, nothing happens when you catch a coin.   
 Let's change that.
 
@@ -292,10 +297,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 
 
-## Step 7
+## Step 9
 
-Now we have a container for code that will run when the sprite 
-overlaps a projectile. Let's add a block to destroy the 
+Now we have a container for code that runs when the sprite 
+overlaps a projectile. Let's add a block to destroy 
 coins as you catch them.
 
 ---
@@ -307,7 +312,7 @@ coins as you catch them.
 🔲 To make sure that the correct projectile is destroyed, grab the 
 ``||variables:otherSprite||`` argument from the header of the 
 **on sprite overlaps** container and drop it into the
-``||sprites:destroy [mySprite] ⊕||`` block to replace **mySprite**.
+``||sprites:destroy [mySprite] ⊕||`` block to replace the value **mySprite**.
 
 ```blocks
 
@@ -318,9 +323,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 ```
 
 
-## Step 8
+## Step 10
 
-🏆 Keeping score 🏆
+**🏆 Keeping score 🏆**
 
 Finally, let's add a point to your score after you catch 
 a coin.
@@ -341,9 +346,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 ```
 
 
-## Step 9
+## Step 11
 
-🎆 Congrats 🎆
+**🎆 Congrats 🎆**
+
+---
 
 Now you have your very own collector game! 
 
