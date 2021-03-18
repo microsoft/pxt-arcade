@@ -254,7 +254,7 @@ an ``||logic: if <true> then||`` logic container into the empty **on game update
 ``||logic: <true>||`` with ``||scene: is [mySprite] hitting wall [left]||`` in the empty
 **if/then** header.  
 
-🔲 Replace ``||variables: mySprite||`` with ``||variables: list||`` to make sure 
+🔲 Replace ``||variables: mySprite||`` with ``||variables: value||`` to make sure 
 it's checking the current enemy.
 
 🔲 Change **left** to **bottom** to check that the bottom of the sprite is on the ground.
