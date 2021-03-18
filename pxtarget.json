@@ -441,7 +441,7 @@
                 "aspectRatio": "0.89",
                 "permanent": true
             }
-        }        
+        }
     },
     "appTheme": {
         "logoUrl": "https://makecode.com/org",
@@ -559,7 +559,8 @@
         "openProjectNewTab": true,
         "hasReferenceDocs": true,
         "python": true,
-        "assetEditor": true
+        "assetEditor": true,
+        "immersiveReader": true
     },
     "queryVariants": {
         "skillsMap=1": {
