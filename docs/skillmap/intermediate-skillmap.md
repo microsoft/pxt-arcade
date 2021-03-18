@@ -2,7 +2,7 @@
 * name: Game Maker Guide
 * description: Level up your game making skills by completing the tutorials in this guide.
 * infoUrl: skillmap/educator-info/int-map-info
-
+* alternatesources: https://github.com/microsoft/pxt-skillmap-sample/skillmap.md
 
 ## interface
 * name: Learn to use MakeCode Arcade
