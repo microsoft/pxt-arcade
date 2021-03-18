@@ -4,11 +4,9 @@
 * infoUrl: skillmap/educator-info/int-map-info
 
 
-
 ## interface
 * name: Learn to use MakeCode Arcade
 * description: This will teach you how to complete tutorials in Microsoft MakeCode Arcade.
-* completionUrl: /static/skillmap/certificates/understanding-arcade-tutorials.pdf
 
 ### interface-activity1
 
@@ -17,7 +15,7 @@
 * description: Intro to our tutorial cards
 * tags: easy
 
-* url: /static/skillmap/interface/activity1 
+* url: /skillmap/interface/activity1
 * imageUrl: /static/skillmap/space/activity1.png
 
 ## space
@@ -64,26 +62,23 @@
 * type: tutorial
 * description: Use an extension to add a fuel gauge to your ship. Make sure to refuel often!
 * tags: intermediate, extensions
-
+* next: space-cert-1
 
 * url: /skillmap/space/activity4
 * imageUrl: /static/skillmap/space/activity4.png
 
-<!-- ### space-activity5
+### space-cert-1
+* name: Congrats!
+* kind: completion
+* type: certificate
+* url: /static/skillmap/certificates/understanding-arcade-tutorials.pdf
+* imageUrl: https://raw.githubusercontent.com/kiki-lee/beginner-skillmap-beta/master/static/space-cert.png
 
-* name: Planets
-* type: tutorial
-* description: Space is big and empty! Add some planets and randomized objects to fill out the environment.
-* tags: intermediate, arrays
-
-* url: /skillmap/space/activity5
-* imageUrl: /static/skillmap/space/activity5.png -->
 
 
 ## platformer
 * name: Learn to Make a Platformer
 * description: A skillmap that takes you through how to build a platformer with multiple levels.
-* completionUrl: /static/skillmap/certificates/learn-to-make-a-platformer.pdf
 
 ### platformer-activity1
 
@@ -133,3 +128,11 @@
 * url: /skillmap/platformer/activity5
 * imageUrl: /static/skillmap/platformer/activity5.png
 * tags: intermediate, AI, physics
+* next: platformer-cert-1
+
+### platformer-cert-1
+* name: Congrats!
+* kind: completion
+* type: certificate
+* url: /static/skillmap/certificates/understanding-arcade-tutorials.pdf
+* imageUrl: https://raw.githubusercontent.com/kiki-lee/beginner-skillmap-beta/master/static/platformer-cert.png
