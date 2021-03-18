@@ -736,12 +736,7 @@ destroy them one by one. Fortunately, Arcade has a block for this exact purpose.
 
 🔲 Change the **array of sprites** kind to **Enemy**. 
 
----
 
-
-**Tip:** To use the ``||sprites:array of sprites of kind [Player]||`` block,
-you'll need to remove it from  ``||variables:set [sprite list] to [array of sprites of kind [Player]]||``
-(see the hint for what the code should look like). 
 
 ```blocks
 let myEnemy: Sprite = null
