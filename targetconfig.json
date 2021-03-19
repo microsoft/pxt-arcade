@@ -49,7 +49,7 @@
         ]
     },
     "skillMap": {
-        "defaultPath": "github:microsoft/pxt-skillmap-sample/skillmap.md",
+        "defaultPath": "docs:/skillmap/intermediate-skillmap",
         "pathAliases": {
             "beginner": "docs:/skillmap/beginner-skillmap-2"
         }
