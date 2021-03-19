@@ -127,9 +127,8 @@ game.splash(" ")
 
 This block adds a [__*splash screen*__](#splasht "A full-screen message that shows while a program or level is loading") to your project.
 
+
 ## Your Toolbox 2
-
-
 
 **Let's see how this works**
 
@@ -289,7 +288,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Putting it Together
 
-🎨 Now get creative 🎨
+**🎨 Now get creative 🎨**
 
 Feel free to take a look at the extra blocks we've added into the toolbox. 
 
@@ -306,9 +305,8 @@ game using the buttons you've programmed!
 
 ## Conclusion 
 
-🎈 Congratulations 🎈 
+**🎈 Congratulations 🎈** 
 
 You've learned everything you need to know to graduate to a new tutorial.
 
-Now you can continue on and learn even more tricks for
-creating games with MakeCode Arcade!  
+Now you can click **Finish** to continue and create some games with MakeCode Arcade!  

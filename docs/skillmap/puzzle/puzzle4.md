@@ -489,6 +489,5 @@ You should always be able to narrow in on the correct answers within 7 tries.
 Can you figure out how?
 
 
-Click **Finish** to publish your game and get a 
-link to share with family and friends. 
-
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

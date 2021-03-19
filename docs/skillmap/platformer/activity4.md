@@ -800,8 +800,7 @@ attribute from the header of the **for element** loop.
 ---
 
 
-** That's it!  Your game can have as many levels as you can imagine!**
-
+** Your game can have as many levels as you can imagine!**
 
 
 ```blocks
@@ -850,3 +849,9 @@ function startNextLevel () {
 }
 ```
 
+
+##Finale
+🔥 **That's it! Now give your game a try!** 🔥  
+
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

@@ -171,4 +171,5 @@ that you'd like them to work differently.
 
 You're all set to travel the universe!
 
-Click **"Finish"** so you can publish your game to share with family and friends.
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

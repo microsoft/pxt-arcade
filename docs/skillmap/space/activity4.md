@@ -305,11 +305,10 @@ statusbars.onZero(StatusBarKind.Energy, function (status) {
 
 **And that's it!** 
 
-You should have a fully functioning game that you can save to your project
-gallery and share with friends!
+Click **Finish** to return to the main page where you can add this game to your gallery and share with family & friends.
 
-BUT...you don't have to stop there.  Once your game is in your gallery, you can
-experiment with all of the blocks in your toolbox and find many other
+Once your game is in your gallery, you can
+experiment with all of the blocks in the toolbox and find many other
 exciting and special ways to customize your adventure.  
 
 

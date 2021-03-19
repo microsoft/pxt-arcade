@@ -290,6 +290,6 @@ if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
 
 Now you'll know just how close you were!  
 
-Now, click **Finish** to publish your game and get a 
-link to share with family and friends. 
+Click **Finish** to return to the main page where you can share your game
+with family and friends!
 

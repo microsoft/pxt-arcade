@@ -235,7 +235,7 @@ forever(function () {
 
 ## Step 6
 
-This is looking great, but the coins still hover around the top.
+**This is looking great, but the coins still hover around the top.**
 
 ---
 
@@ -354,4 +354,5 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 Now you have your very own collector game! 
 
-Click **Finish** to publish it and get a link to share with friends and family.
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

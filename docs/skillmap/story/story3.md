@@ -633,7 +633,8 @@ End on a high note with confetti or a screen full of smiles.
 
 Now you have a hysterical joke to share!  
 
-Click finish to get a published link to send to friends and family.
+Click **Finish** to return to the main page where you can share your game
+with family and friends!
 
 
 

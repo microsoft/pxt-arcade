@@ -668,7 +668,9 @@ to see how your card works!**
 **🎊 Congrats 🎊**
 
 Now you have a card that any friend would be excited to get.   
-Click **Finish** to share your greeting and save it to your gallery.
+
+Click **Finish** to return to the main page where you can share your game
+with family and friends!
 
 
 

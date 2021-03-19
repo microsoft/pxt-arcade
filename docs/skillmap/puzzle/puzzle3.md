@@ -414,6 +414,5 @@ info.onLifeZero(function () {
 
 Now you can narrow in on the correct answer like a pro!  
 
-Click **Finish** to publish your game and get a 
-link to share with family and friends. 
-
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

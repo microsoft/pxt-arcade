@@ -159,8 +159,9 @@ info.startCountdown(10)
 
 ## Step 7
 
-🎉 Congrats 🎉
+**🎉 Congrats 🎉**
 
 You have your very own clicker game!
 
-Make sure to click "Finish" so you can share with friends and compare scores!  
+Click **Finish** to return to the main page where you can share your game
+with family and friends to compare scores!

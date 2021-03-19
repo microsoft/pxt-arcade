@@ -253,7 +253,7 @@ controller.moveSprite(mySprite, 0, 100)
 
 ## Step 2
 
-If the game gets wild, our sprite might leave the screen.  
+**If the game gets wild, our sprite might leave the screen.**   
 Let's prevent that. 
 
 ---
@@ -293,7 +293,7 @@ mySprite.setStayInScreen(true)
 
 ## Step 3
 
-🕔 Does this game feel long to you? 🕔
+**🕔 Does this game feel long to you? 🕔**
 
 We haven't added a way to win or lose.  
 Let's do that now by adding a countdown timer.
@@ -334,7 +334,7 @@ info.startCountdown(15)
 
 ## Step 4
 
-🥇 Everyone's a winner 🥇
+**🥇 Everyone's a winner 🥇**
 
 Right now, when time runs out, you lose the game. We can change that! 
 
@@ -418,7 +418,7 @@ forever(function () {
 
 There you have it...a collector game with style AND class.  
 
-🏆 Well done 🏆
+**🏆 Well done 🏆**
 
-Click **Finish** to publish your game so you can get a link to share
-with family and friends.
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

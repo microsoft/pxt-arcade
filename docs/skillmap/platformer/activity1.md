@@ -1,6 +1,5 @@
 # Simple Platformer
 
-### @autoexpandOff true
 
 
 ```jres
@@ -76,11 +75,12 @@ to make a fun and engaging arcade game worth sharing.
 
 ## Create the player
 
-The first thing any good platformer needs is a main character. 🐒
+**The first thing any good platformer needs is a main character. 🐒**
 
 In Arcade, our characters are [__*sprites*__](#sprote "2-D images that move on the screen").  
 We'll want to create our main sprite and get it moving before we do anything else. 
-<hr>
+
+---
 
 🔲 From the ``||sprites:Sprites||`` category, drag the ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
 block to the end of the ``||loops:on start||`` container.
@@ -122,22 +122,16 @@ let mySprite = sprites.create(img`
 
 ## Move the player
 
-🢀 Now we need to get the player moving 🢂
+**🏃🏾‍♀️ Now we need to get the player moving 🏃🏾‍♀️**
 
 ---
-
 
 🔲 Drag a ``||controller:move [mySprite] with buttons ⊕||`` block.   
 to the end of the ``||loops:on start||`` container
 
 🔲 Press the ⊕ button on the new block and change the [__*vy*__](#whatVY "vertical velocity") 
-argument to **0** so that the player won't move up or down with the joypad.
+argument to **0** so that the player won't move up or down with the joypad.  
 
-
----
-
-**Now you're ready to give your game a try in the simulator!**
-<br/>
 
 ```blocks
 scene.setBackgroundColor(11)
@@ -164,11 +158,21 @@ let mySprite = sprites.create(img`
 controller.moveSprite(mySprite, 100, 0)
 ```
 
+## Try it
+
+**Be sure to give your game a try in the simulator!**
+
+---
+
+How do you like it?  Feel like making a few more changes?
+
+
 ## Add gravity
 
-To make the game feel more realistic, let's add some gravity.
+**To make the game feel more realistic, it needs gravity.**
 
-To accomplish that, we can add [__*acceleration*__](#accel "increased speed in a direction") to "pull down" on our sprite.
+To accomplish that, add [__*acceleration*__](#accel "increased speed in a direction")
+to "pull down" on the sprite.
 
 ---
 
@@ -210,7 +214,7 @@ mySprite.ay = 500
 
 ## Jump Pt. 1
 
-Now that the player is on the ground, we can make them jump!
+Now that the player is on the ground, we can make it jump!
 
 Let's attach a jumping action to the 🅐 button.
 
@@ -260,6 +264,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Done
 
-🔥 **That's it! We've created a simple platformer game.** 🔥  
+🔥 **That's it! Now give your game a try!** 🔥  
 
 In the next lesson we'll learn how to add obstacles and goals.
+
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

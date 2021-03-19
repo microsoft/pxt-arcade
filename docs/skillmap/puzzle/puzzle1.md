@@ -389,5 +389,5 @@ if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
 
 Now you've got a game that will keep you guessing!  
 
-Make sure to click **Finish** so you can publish your game and get a link to share with family and friends. 
-
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

@@ -1852,8 +1852,8 @@ let mySprite: Sprite = null
 
 Now you have a story ready to go viral.
 
-Don't forget to click "Finish" so you can save the story to your gallery and
-share it with friends and family.  
+Click **Finish** to return to the main page where you can share your game
+with family and friends!
   
 
 
