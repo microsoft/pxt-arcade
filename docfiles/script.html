@@ -235,8 +235,7 @@
                 sims.className = "sim-embed";
                 var simframeWrapper = document.createElement("div");
                 simframeWrapper.className = "simframe ui embed";
-                window.pxtConfig = { simUrl: "https://trg-arcade.userpxt.io/beta---simulator" };
-                var emptySim = createIFrame(window.pxtConfig.simUrl);
+                var emptySim = createIFrame("/sim/simulator.html")
                 emptySim.className = "grayscale";
                 // unused, satisfying pxtsim/simdriver.ts#setFrameState
                 var icon = document.createElement("div");
@@ -264,7 +263,7 @@
                         console.log('simulating script');
                         window.pxtConfig = { simUrl: window.pxt.webConfig.simUrl };
                         pxt.runner.simulateAsync(container, options).then(function(built) {
-                            var loader = document.getElementById("loader")
+                            var loader = document.getElementById("loader");
                             if (loader) loader.remove();
                             if (!builtSimJS)
                                 builtSimJSPromise = Promise.resolve(built);
