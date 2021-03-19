@@ -232,7 +232,8 @@
                 sims.className = "sim-embed";
                 var simframeWrapper = document.createElement("div");
                 simframeWrapper.className = "simframe ui embed";
-                var simUrl = "https://trg-arcade.userpxt.io/beta---simulator";
+                window.pxtConfig = { simUrl: "https://trg-arcade.userpxt.io/beta---simulator" };
+                var simUrl = window.pxtConfig.simUrl;
                 var emptySim = createIFrame(simUrl);
                 emptySim.className = "grayscale";
                 // unused, satisfying pxtsim/simdriver.ts#setFrameState
