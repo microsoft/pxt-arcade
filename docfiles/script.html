@@ -41,7 +41,9 @@
     </aside>
 
     <div class="ui main mainbody script-content">
-        <div id="embed-frame"></div>
+        <div id="embed-frame">
+            <div id="loader" style="text-align:center;margin:20% auto;font-family:monospace;font-size:25px;">loading...</div>
+        </div>
         <div class="script-bookend">
             <div id="abuse-message" class="ui mini blue message container no-select">
                 <div class="ui grid padded">
@@ -137,6 +139,7 @@
     </div>
 
     <script type="text/javascript" src="/beta---embed"></script>
+    <!-- <script type="text/javascript" src="/embed.js"></script> -->
     <script>
         (function() {
             var editorEmbedURL = "/@versionsuff@#sandbox:@id@";
@@ -158,7 +161,7 @@
                     });
             }
 
-            prebuildSimulator(embedContainer);
+            // prebuildSimulator(embedContainer);
             ksRunnerReady(function() {
                 runSimulator(embedContainer);
             });
@@ -233,8 +236,7 @@
                 var simframeWrapper = document.createElement("div");
                 simframeWrapper.className = "simframe ui embed";
                 window.pxtConfig = { simUrl: "https://trg-arcade.userpxt.io/beta---simulator" };
-                var simUrl = window.pxtConfig.simUrl;
-                var emptySim = createIFrame(simUrl);
+                var emptySim = createIFrame(window.pxtConfig.simUrl);
                 emptySim.className = "grayscale";
                 // unused, satisfying pxtsim/simdriver.ts#setFrameState
                 var icon = document.createElement("div");
@@ -260,7 +262,10 @@
                             builtJsInfo: builtSimJS,
                         };
                         console.log('simulating script');
+                        window.pxtConfig = { simUrl: window.pxt.webConfig.simUrl };
                         pxt.runner.simulateAsync(container, options).then(function(built) {
+                            var loader = document.getElementById("loader")
+                            if (loader) loader.remove();
                             if (!builtSimJS)
                                 builtSimJSPromise = Promise.resolve(built);
                             console.log('simulator started...');
