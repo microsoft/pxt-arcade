@@ -136,7 +136,7 @@
         @body@
     </div>
 
-    <script type="text/javascript" src="/---embed"></script>
+    <script type="text/javascript" src="/beta---embed"></script>
     <script>
         (function() {
             var editorEmbedURL = "/@versionsuff@#sandbox:@id@";
@@ -228,11 +228,14 @@
             });
 
             function prebuildSimulator(container) {
+                // This line gets patched up by the cloud
+                var pxtConfig = null;
+
                 var sims = document.createElement("div");
                 sims.className = "sim-embed";
                 var simframeWrapper = document.createElement("div");
                 simframeWrapper.className = "simframe ui embed";
-                var simUrl = "https://trg-arcade.userpxt.io/---simulator";
+                var simUrl = "https://trg-arcade.userpxt.io/beta---simulator";
                 var emptySim = createIFrame(simUrl);
                 emptySim.className = "grayscale";
                 // unused, satisfying pxtsim/simdriver.ts#setFrameState
@@ -259,7 +262,7 @@
                             builtJsInfo: builtSimJS,
                         };
                         console.log('simulating script');
-                        pxt.runner.simulateAsync(container, options).done(function(built) {
+                        pxt.runner.simulateAsync(container, options).then(function(built) {
                             if (!builtSimJS)
                                 builtSimJSPromise = Promise.resolve(built);
                             console.log('simulator started...');
