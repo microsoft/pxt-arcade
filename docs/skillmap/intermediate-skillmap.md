@@ -2,6 +2,11 @@
 * name: Game Maker Guide
 * description: Level up your game making skills by completing the tutorials in this guide.
 * infoUrl: skillmap/educator-info/int-map-info
+* backgroundurl: /static/skillmap/space/game-maker-guide-background.png
+* primarycolor: #2EA9B0
+* secondarycolor: #F392BD
+* tertiarycolor: #83C252
+* highlightcolor: #FAED28
 * alternatesources: github:https://github.com/microsoft/pxt-skillmap-sample/skillmap.md
 
 ## interface
