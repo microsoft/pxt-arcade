@@ -77,8 +77,6 @@
 * kind: completion
 * type: certificate
 * url: /static/skillmap/certificates/understanding-arcade-tutorials.pdf
-* imageUrl: https://raw.githubusercontent.com/kiki-lee/beginner-skillmap-beta/master/static/space-cert.png
-
 
 
 ## platformer
@@ -140,4 +138,3 @@
 * kind: completion
 * type: certificate
 * url: /static/skillmap/certificates/understanding-arcade-tutorials.pdf
-* imageUrl: https://raw.githubusercontent.com/kiki-lee/beginner-skillmap-beta/master/static/platformer-cert.png
