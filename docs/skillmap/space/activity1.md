@@ -155,10 +155,8 @@ mySprite.setStayInScreen(true)
 
 ---
 
-Now be sure to play your game on the simulator
-before you click finish on the tutorial.  
-
-![You in space](/static/skillmap/space/space1end.gif "Blasting through your own game" )
+**Try your game on the simulator
+before you click finish on the tutorial.**  
 
 Is everything how you want it? You can always go back and edit steps if you find out 
 that you'd like them to work differently.

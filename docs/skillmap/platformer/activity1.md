@@ -216,7 +216,7 @@ mySprite.ay = 500
 
 Now that the player is on the ground, we can make it jump!
 
-Let's attach a jumping action to the 🅐 button.
+Let's attach a jumping action to the Ⓐ button.
 
 ---
 

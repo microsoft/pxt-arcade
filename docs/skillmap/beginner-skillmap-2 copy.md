@@ -66,6 +66,15 @@
 * imageUrl: /static/skillmap/collector/collector-activity1.png
 
 
+### puzzle-activity1
+
+* name: Quick Puzzle
+* type: tutorial
+* description: Make a puzzle game and test your luck!
+* tags: easy, puzzle, game
+
+* url: /skillmap/puzzle/puzzle1 
+* imageUrl: /static/skillmap/puzzle/puzzle-activity1.png
 
 
 
@@ -158,6 +167,18 @@
 
 
 
+### clicker-activity5
+
+* name: Bigger Clicker
+* type: tutorial
+* description: Make a simple store that lets players buy more power! 
+* tags: intermediate, clicker, game, sandbox
+
+
+* url: /skillmap/clicker/clicker5 
+* imageUrl: /static/skillmap/clicker/clicker-activity5.png
+
+
 
 
 
@@ -213,3 +234,77 @@
 
 
 
+### collector-activity5
+
+* name: Go for Gusto
+* type: tutorial
+* description: Make your game super special by doing your own thing!
+* tags: intermediate, collector, game, sandbox
+
+
+* url: /skillmap/collector/collector5
+* imageUrl: /static/skillmap/collector/collector-activity5.png
+
+
+
+
+
+## Puzzle
+* name: Puzzle Game
+* description: Build a guess-the-number game!
+* completionUrl: /static/skillmap/certificates/puzzle-game.pdf
+
+
+
+### puzzle-activity2
+
+* name: Puzzling Answers
+* type: tutorial
+* description: Reveal the magic answer when the game is over! 
+* tags: easy, puzzle, game
+* required: 1 puzzle
+* next: puzzle-activity3
+
+
+* url: /skillmap/puzzle/puzzle2 
+* imageUrl: /static/skillmap/puzzle/puzzle-activity2.png
+
+
+
+### puzzle-activity3
+
+* name: Guess Again
+* type: tutorial
+* description: Add multiple chances to guess correctly! 
+* tags: easy, puzzle, game
+* next: puzzle-activity4
+
+
+* url: /skillmap/puzzle/puzzle3 
+* imageUrl: /static/skillmap/puzzle/puzzle-activity3.png
+
+
+
+### puzzle-activity4
+
+* name: Getting Warmer
+* type: tutorial
+* description: Let the player know if their guesses are high or low! 
+* tags: intermediate, puzzle, game
+* next: puzzle-activity5
+
+* url: /skillmap/puzzle/puzzle4
+* imageUrl: /static/skillmap/puzzle/puzzle-activity4.png
+
+
+
+### puzzle-activity5
+
+* name: Take Over
+* type: tutorial
+* description: Get creative with your guessing game! 
+* tags: intermediate, puzzle, game, sandbox
+
+
+* url: /skillmap/puzzle/puzzle5
+* imageUrl: /static/skillmap/puzzle/puzzle-activity5.png

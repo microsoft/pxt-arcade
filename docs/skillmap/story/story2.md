@@ -347,7 +347,7 @@ music.playMelody("G B A G C5 B A B", 120)
 ---
 
 🔲 If you feel like it, choose a new melody by clicking the note in 
-the ``||music:play melody [ ] at tempo [120] (bps)||`` block.
+the ``||music:play melody [ ] at tempo [120] (bpm)||`` block.
 
 
 ```blocks
@@ -487,7 +487,7 @@ music.playMelody("G B A G C5 B A B ", 120)
 ## Step 4
 
 You can make your card even more special by adding some text that 
-cycles through when the **🅐** button is pressed. 
+cycles through when the **Ⓐ** button is pressed. 
 
 ---
 
@@ -667,7 +667,7 @@ to see how your card works!**
 
 **🎊 Congrats 🎊**
 
-Now you have a card that any friend would be excited to get.   
+Now you have a card that any friend would be excited to get!   
 
 Click **Finish** to return to the main page where you can share your game
 with family and friends!
