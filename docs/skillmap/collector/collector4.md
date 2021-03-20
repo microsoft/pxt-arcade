@@ -429,5 +429,5 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 You have a full-featured game that anyone would be proud of.
 
-Click **Finish** to publish your project
-and share with friends and family!
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

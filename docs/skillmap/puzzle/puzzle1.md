@@ -251,7 +251,7 @@ game.showLongText("I'm thinking of a number between 1 and 5. Can you guess it?",
 
 **📝 Guess and check 📝**
 
-Next, we need to checkto see **if** the user's guess is right. 
+Next, we need to check to see **if** the user's guess is right. 
 
 ---
 
@@ -336,11 +336,27 @@ if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
 }
 ```
 
+
 ## Step 8
+
+
+Click on the simulator and choose your guess using the arrow pad and the space key. 
+
+**💎 Great! 💎**
+
+Your code ran, but nothing told you whether your were right or wrong...
+
+
+
+
+
+
+
+## Step 9
 
 **🔎 The moment of truth 🔍**
 
-To complete the game, we need to give the users a message 
+To complete the game, we need to give the player a message 
 to let them know if they guessed correctly.  
 
 ---
@@ -383,11 +399,12 @@ if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
 ```
 
 
-## Step 8
+## Finale
 
 **There you go!**
 
 Now you've got a game that will keep you guessing!  
 
-Make sure to click **Finish** so you can publish your game and get a link to share with family and friends. 
+Try your game, then click **Finish** to return to the main page 
+where you can get a link to share it!
 

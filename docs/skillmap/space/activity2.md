@@ -48,7 +48,7 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 
 Are you ready to customize your ship? 
 
-In this tutorial, you'll learn to fire a projectile when the **🅐** button
+In this tutorial, you'll learn to fire a projectile when the **Ⓐ** button
 is pressed and also how to add special effects.
 
 
@@ -72,7 +72,7 @@ kind of vehicle OR turn it into an alien creature using the sprite editor! 👽
 
 **Time for action!**
 
-Let's launch projectiles when the **🅐** button is pressed!
+Let's launch projectiles when the **Ⓐ** button is pressed!
 
 ---
 
@@ -89,7 +89,7 @@ flying object (or select one from the **My Assets** tab.)
 
 
 **Tip:** Run your code in the simulator and launch a few projectiles 
-by pressing the **🅐** button.  What happens?
+by pressing the **Ⓐ** button.  What happens?
 
 
 ```blocks
@@ -209,7 +209,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 🎆 **Congratulations** 🎆
 
 You can now use the direction buttons to move your space plane and
-the **🅐** button to lauch projectiles!
+the **Ⓐ** button to lauch projectiles!
 
-Play your game in the simulator, then click "Finish" so you can publish
-to share with family and friends.
+Play your game in the simulator, then click **Finish** to return to the main page where you can share your game
+with family and friends!

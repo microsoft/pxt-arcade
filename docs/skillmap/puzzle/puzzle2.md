@@ -151,6 +151,11 @@ We can fix that with a short pause.
 
 🔲 Change **100** to **3000** in both of the **pause** blocks.
 
+---
+
+**Tip:** Keep in mind that a ``||loops:pause||`` block will freeze your screen 
+so that nothing else can happen until the time expires.
+
 
 
 ```blocks
@@ -178,8 +183,8 @@ Let's add code to let the user know what the number was.
 ---
 
 
-🔲 Click on the ``||advanced:Advanced||`` cagegory to reveal the ``||text:Text||``
-category.  
+🔲 Click on the **Advanced** cagegory to reveal the ``||text:Text||``
+option.  
 
 🔲 Grab the ``||text:join ["Hello"] ["World"] ⊖ ⊕||`` block and use it to 
 replace the ** mySprite say text** in the **if** container.  
@@ -196,7 +201,7 @@ if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
     game.over(true)
 
 } else {
-    mySprite.say("Hello" + "World" + " ")
+    mySprite.say("Nope!")
     pause(3000)
     game.over(false)
 }
@@ -290,6 +295,6 @@ if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
 
 Now you'll know just how close you were!  
 
-Now, click **Finish** to publish your game and get a 
-link to share with family and friends. 
+Click **Finish** to return to the main page where you can share your game
+with family and friends!
 

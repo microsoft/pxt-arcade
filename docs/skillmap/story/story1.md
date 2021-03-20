@@ -1,4 +1,5 @@
 # Greeting Card
+
 ### @allowcodecarryover: false
 
 ```assetjson
@@ -857,7 +858,8 @@ You now have a basic greeting card!
 
 **Congratulations, you've finished your greeting card! **
 
-Click "Finish" to publish your card to share with family and friends.
+Click **Finish** to return to the main page where you can share your game
+with family and friends!
 
 
 

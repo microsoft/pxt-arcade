@@ -155,10 +155,8 @@ mySprite.setStayInScreen(true)
 
 ---
 
-Now be sure to play your game on the simulator
-before you click finish on the tutorial.  
-
-![You in space](/static/skillmap/space/space1end.gif "Blasting through your own game" )
+**Try your game on the simulator
+before you click finish on the tutorial.**  
 
 Is everything how you want it? You can always go back and edit steps if you find out 
 that you'd like them to work differently.
@@ -171,4 +169,5 @@ that you'd like them to work differently.
 
 You're all set to travel the universe!
 
-Click **"Finish"** so you can publish your game to share with family and friends.
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

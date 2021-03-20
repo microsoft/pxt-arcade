@@ -345,8 +345,8 @@ container into the workspace.
 ``||sprites:Projectile||``. 
 
 🔲 Inside, add two ``||sprites:destroy [mySprite] ⊕||`` blocks, then change the arguments
-so that one destroys the enemy (**sprite**) and the other 
-destroys your projectile (**otherSprite**).
+so that one destroys the enemy (``||variables:sprite||``) and the other 
+destroys your projectile (``||variables:otherSprite||``).
 
 ---
 
@@ -367,5 +367,6 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, oth
 Now you have a full barrage of enemies to combat!  
 Don't forget to try your game in the simulator before you click "Finish".
 
-Once you have it like you want it, click the finish button to publish and 
-share with family and friends!
+Once you have it like you want it, click **Finish** to return to the main page where you can share your game
+with family and friends!
+

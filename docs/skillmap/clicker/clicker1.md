@@ -94,7 +94,7 @@ scene.setBackgroundColor(11)
 
 ## Step 4
 Add a [__*splash screen*__](#splasht "A full-screen message that shows while a program or level is loading") to let the user know to press the 
-**🅐** button when they're ready to start playing.
+**Ⓐ** button when they're ready to start playing.
 
 ---
 
@@ -118,7 +118,7 @@ game.splash("Press (A) to earn clicks!")
 
 Now the game needs a container to hold the code that 
 [__*increments*__](#addOne "adds to a number (usually adding 1)") 
-the score when the **🅐** button is clicked.
+the score when the **Ⓐ** button is clicked.
 
 ---
 
@@ -159,8 +159,9 @@ info.startCountdown(10)
 
 ## Step 7
 
-🎉 Congrats 🎉
+**🎉 Congrats 🎉**
 
 You have your very own clicker game!
 
-Make sure to click "Finish" so you can share with friends and compare scores!  
+Click **Finish** to return to the main page where you can share your game
+with family and friends to compare scores!

@@ -18,6 +18,7 @@
 ```template
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     power += 1
+    game.showLongText("You bought one extra click!", DialogLayout.Center)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(power)
@@ -103,7 +104,7 @@ clicks = 1
 
 What's more fun than pressing buttons?
 
-🛒 Buying things 🛒
+**🛒 Buying things 🛒**
 
 ---
 
@@ -113,9 +114,9 @@ Let's modify our clicker game to offer a simple shop.
 
 ## Step 1
 
-The code for a clicker game is already in the workspace.
+**The code for a clicker game is already in the workspace.**
 
-When you click **🅑**, you get a super-clicker — but 
+When you click **Ⓑ**, you get a super-clicker — but 
 what fun is it to get extra power for free? Let's add code to charge the player 10 points for the purchase.
 
 ---
@@ -130,13 +131,14 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     //@highlight
         info.changeScoreBy(-10)
         power += 1
+        game.showLongText("You bought one extra click!", DialogLayout.Center)
 })
 ```
 
 
 ## Step 2
 
-💡 Now we're onto something 💡
+**💡 Now we're onto something 💡**
 
 But what if the player doesn't have 10 points to spend? 
 Let's do a quick check of the player's score before we 
@@ -160,7 +162,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     }
     info.changeScoreBy(-10)
     power += 1
-
+    game.showLongText("You bought one extra click!", DialogLayout.Center)
 })
 ```
 
@@ -187,6 +189,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     }
     info.changeScoreBy(-10)
     power += 1
+    game.showLongText("You bought one extra click!", DialogLayout.Center)
 })
 ```
 
@@ -199,8 +202,8 @@ Now if the player has a large enough score, you can charge them
 ---
 
 🔲 The code to adjust the score and power are already at the bottom of the 
-**on B button pressed** container.  All you need to do is grab it and 
-drag it into the empty **if/then** container.
+**on B button pressed** container.  Grab all of the code below and 
+drag it into the empty **if/then** container.  
 
 
 ```blocks
@@ -208,6 +211,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (10 <= info.score() {
         info.changeScoreBy(-10)
         power += 1
+        game.showLongText("You bought one extra click!", DialogLayout.Center)
     }
     
 
@@ -215,37 +219,14 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 5
+## Step 6 @unplugged
 
-🎮 Give your game a try 🎮
+**🎮 Give your game a try in the simulator 🎮**
 
-It should do what you expect...but it's hard to tell that's what's happening.
-Let's add a message to let the player know if their purchase has succeeded.
-
----
-
-🔲 Telling the player the purchase went through is the easy part.  
-Open the ``||game:Game||`` category and grab a 
-``||game:show long text [" "][bottom]||`` block. 
-
-🔲 Drop the text block into the end of the **if/then** container.
-
-🔲 Click inside the empty text box and write a message to the player, 
-letting them know that their purchase went through. 
+It should do what you expect...as long as you have 10 points to spend!
 
 
-```blocks
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (10 <= info.score()) {
-        let mySprite: Sprite = null
-        info.changeScoreBy(-10)
-        power +=1
-        game.showLongText("You bought an auto-clicker!", DialogLayout.Bottom)
-    }
-})
-```
-
-## Step 6
+## Step 7
 
 Finally, we should let the player know if they don't have enough points to 
 buy the clicker.
@@ -269,7 +250,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         let mySprite: Sprite = null
         info.changeScoreBy(-10)
         power +=1
-        game.showLongText("You bought an auto-clicker!", DialogLayout.Bottom)
+        game.showLongText("You bought one extra click!", DialogLayout.Bottom)
     }
     else {
         game.showLongText("Not enough points for an auto-clicker!", DialogLayout.Bottom)
@@ -277,10 +258,11 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 7
+## Finale
 
-⚡️ Amazing ⚡️
+**⚡️ Amazing ⚡️**
 
 Now you have a clicker game with a simple shop.  
 
-Click **Finish** to share it with your friends and compare strategy!   
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

@@ -114,7 +114,7 @@ Let's add a loop to allow you to make multiple guesses.
 
 🔲 Grab everything underneath the new loop by clicking on the 
  **if/then/else** block.  Drag that whole chunk of code up into the new
- empty **repeat** loop. 
+ empty **while** loop. 
 
 
 ```blocks
@@ -162,7 +162,7 @@ We want this loop to keep running as long as lives are greater than zero.
 🔲 Grab a ``||logic:[0] [<] [0]||`` value block and use it to replace 
 **`<false>`** in the **while** loop.
 
-🔲 Replace the second **0** of the logic value block with a ``||info:score||``
+🔲 Replace the second **0** of the logic value block with a ``||info:life||``
 value block.
 
 ```blocks
@@ -210,13 +210,6 @@ Did the experience go as planned? If you guessed wrong, you probably noticed
 that your **game over** block stopped you from guessing again. 
 Let's smooth that out.
 
----
-
-
-🔲 Drag the ``||game:game over <LOSE>||`` block out of the **else** and 
-snap it into the end of the **on start** container below the **repeat** loop.
-
-
 
 ```blocks
 let mySprite = sprites.create(img`
@@ -249,9 +242,10 @@ while (0 < info.life()) {
         mySprite.say("The number was " + myNumber + "!")
         pause(3000)
     }
-    //@highlight
-    game.over(false)
+   
 }
+ //@highlight
+    game.over(false)
 
 ```
 
@@ -260,23 +254,18 @@ while (0 < info.life()) {
 **🧞 Wait a minute, it will come to me... 🧞**
 
 It doesn't take skill to guess a number if it's given to you!
-
 Let's move the final message to the end and add a new message for wrong guesses.
-
 
 ---
 
+🔲 Drag all of the code out of the **else** container and snap it down
+below the **while** loop.
 
-🔲 Duplicate the **mySprite say** text block from the **else** container and 
-snap the new one just above the **game over `<LOSE>`** block near the end of the program.  
+🔲 Grab a new ``||sprites:[mySprite] say [":)"]||`` and put it in the empty **else** container.  
 
-🔲 Also duplicate the **pause** block and add the copy just above the 
- **game over `<LOSE>`** block near the end of the program.
+🔲 Fill the new block with a message that lets the player know they were incorrect.
 
-🔲 Delete the **join** value block from the original **else** message 
-and change the text to something that let's the user know they were wrong without 
-giving away the answer.
-
+🔲 Right-click to duplicate one of your **pause** blocks and snap it into the end of the **else** container.
 
 
 ```blocks
@@ -310,13 +299,11 @@ while (0 < info.life()) {
         //@highlight
         mySprite.say("Not that!")
         pause(3000)
-    }
-    
-    mySprite.say("The number was " + myNumber + "!")
+    }  
+}
+ mySprite.say("The number was " + myNumber + "!")
     pause(3000)
     game.over(false)
-     
-}
 
 
 ```
@@ -368,13 +355,11 @@ while (0 < info.life()) {
          //@highlight
          info.changeLifeBy(-1)
     }
-    
-    mySprite.say("The number was " + myNumber + "!")
-    pause(3000)
-    game.over(false)
      
 }
-
+ mySprite.say("The number was " + myNumber + "!")
+    pause(3000)
+    game.over(false)
 
 ```
 
@@ -414,6 +399,5 @@ info.onLifeZero(function () {
 
 Now you can narrow in on the correct answer like a pro!  
 
-Click **Finish** to publish your game and get a 
-link to share with family and friends. 
-
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

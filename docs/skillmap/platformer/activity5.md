@@ -500,3 +500,10 @@ Arcade has many options that haven't been explored here.  If you have time,
 you should click out to the main Arcade page and play with our full editor
 to make a game all of your own!
 
+
+##Finale
+
+🔥 **That's it! Now give your game a try!** 🔥 
+
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

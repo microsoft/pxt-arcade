@@ -262,13 +262,13 @@ add style.
 
 ![Here's the story](/static/skillmap/story/saltwater.gif "Why do tropical fish like saltwater?" )
 
-## Step 1
+## Step 2
 
 The code for a greeting card (with text) is already in the workspace. 
 You can build from this to create a joke.
 
 To prepare for the next steps, 
-[__*click here to choose a joke from our list*__](#doc:/joke-examples "Find a good two line joke here."),
+[__*click here to choose a joke from our list*__](#doc:/skillmap/story/joke-examples "Find a good two line joke here."),
  or create your own!
 
 ```hint
@@ -278,12 +278,12 @@ A: Because pepper makes them sneeze!
 ```
 
 
-## Step 2
+## Step 3
 
 
 Do you have your joke?
 
-🎨 Now design your scene 🎨
+**🎨 Now design your scene 🎨**
 
 ---
 
@@ -424,9 +424,9 @@ dddddddddd444ddddd3ddddddddddddd4ddddddddddddddddddddddddddddddddddddddddddddddd
 
 
 
-## Step 3
+## Step 4
 
-✨ Great ✨
+**✨ Great ✨**
 
 Now think about the characters at the heart of your joke. Who will the reader
 expect to see?  A fish? A sky diver? Two muffins?
@@ -549,7 +549,7 @@ let mySprite = sprites.create(img`
     mySprite.setPosition(120, 60)
 ```
 
-## Step 4
+## Step 5
 
 One benefit of having text controlled by a button is that
 the reader gets to choose the timing of the joke. 
@@ -585,7 +585,7 @@ mySprite2.say("OMIGOSH! A talking muffin!")
 ```
 
 
-## Step 5
+## Step 6
 
 Take a minute to check your joke in the simulator!
 
@@ -604,9 +604,9 @@ Does the text flow better somewhere else?
     game.showLongText("...you shouldn't try skydiving!", DialogLayout.Right)
 ```
 
-## Step 6
+## Step 7
 
-👏 Now take a bow 👏
+**👏 Now take a bow 👏**
 
 End on a high note with confetti or a screen full of smiles.
 
@@ -627,13 +627,14 @@ End on a high note with confetti or a screen full of smiles.
 
 ```
 
-## Step 7
+## Step 8
 
-🤣 Congrats 🤣
+**🤣 Congrats 🤣**
 
 Now you have a hysterical joke to share!  
 
-Click finish to get a published link to send to friends and family.
+Click **Finish** to return to the main page where you can share your game
+with family and friends!
 
 
 

@@ -370,5 +370,5 @@ What an amazing creation!
 
 This game has it all...countless riches, enemies, winning, and losing!
 
-Click **Finish** to go to the share screen and publish your project
-to share with friends and family!
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

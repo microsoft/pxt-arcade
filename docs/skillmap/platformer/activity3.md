@@ -563,8 +563,15 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ```
 
 ## Finish
-🔥 Fantastic 🔥
 
-The basic enemies tutorial is complete!  
+**The basic enemies tutorial is complete.**
+
 Try defeating the level as is, then open the tilemap editor 
-and see what happens if you add more spawn points.
+and see what happens if you add more spawn points!
+
+##Finale
+
+**🔥 Fantastic 🔥**
+
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

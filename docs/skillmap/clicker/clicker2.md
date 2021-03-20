@@ -226,5 +226,5 @@ and choose a new option from the dropdown.
 
 That's it!  
 
-Click **Finish** to share your clicker game with 
-friends and compete for the most clicks in 10 seconds!  
+Click **Finish** to return to the main page where you can share your game
+with family and friends to compete for the most clicks in 10 seconds!  
