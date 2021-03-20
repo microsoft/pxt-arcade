@@ -3,19 +3,17 @@
 * description: Level up your game making skills by completing the tutorials in this guide.
 * infoUrl: skillmap/educator-info/int-map-info
 * bannerUrl: /static/skillmap/platformer/activity4.png
-* backgroundurl: https://raw.githubusercontent.com/kiki-lee/beginner-skillmap-beta/master/static/bgb1.png  
-* primarycolor: #e6cdc5
-* secondarycolor: #7df3fe
-* tertiarycolor: #5d406b
-* highlightcolor: #ffffff
-* allowcodecarryover: true
-
+* backgroundurl: /static/skillmap/space/game-maker-guide-background.png
+* primarycolor: #2EA9B0
+* secondarycolor: #F392BD
+* tertiarycolor: #83C252
+* highlightcolor: #FAED28
+* alternatesources: github:https://github.com/microsoft/pxt-skillmap-sample/skillmap.md
 
 
 ## interface
 * name: Learn to use MakeCode Arcade
 * description: This will teach you how to complete tutorials in Microsoft MakeCode Arcade.
- 
 
     ### interface-activity1
 
@@ -41,11 +39,9 @@
     * name: Blank node
     * kind: layout
 
-
 ## space
 * name: Learn to use MakeCode Arcade
 * description: This will teach you how to complete tutorials in Microsoft MakeCode Arcade.
-* completionUrl: /static/skillmap/certificates/understanding-arcade-tutorials.pdf
 
 
     ### space-activity1
@@ -87,20 +83,15 @@
     * type: tutorial
     * description: Use an extension to add a fuel gauge to your ship. Make sure to refuel often!
     * tags: intermediate, extensions
-    * next: beginner-cert-1
-
-    * url: /skillmap/space/activity4
-    * imageUrl: /static/skillmap/space/activity4.png
+    * next: space-cert-1
 
 
-    ### beginner-cert-1
+    ### space-cert-1
     * name: Congrats!
     * kind: completion
     * type: certificate
-    * url: /static/skillmap/certificates/understanding-arcade-tutorials.pdf
-    * imageUrl: https://raw.githubusercontent.com/kiki-lee/beginner-skillmap-beta/master/static/space-cert.png
-
-
+    * url: /static/skillmap/certificates/design-a-space-explorer.pdf
+    * imageUrl: /static/skillmap/certificates/space-cert.png
 
     ### pusher1
     * name: Blank node
@@ -114,7 +105,6 @@
 ## platformer
 * name: Learn to use MakeCode Arcade
 * description: This will teach you how to complete tutorials in Microsoft MakeCode Arcade.
-* completionUrl: /static/skillmap/certificates/understanding-arcade-tutorials.pdf
 
 
     ### platformer-activity1
@@ -165,15 +155,15 @@
     * url: /skillmap/platformer/activity5
     * imageUrl: /static/skillmap/platformer/activity5.png
     * tags: intermediate, AI, physics
-    * next: beginner-cert-2
+    * next: platformer-cert-1
 
 
-    ### beginner-cert-2
+    ### platformer-cert-1
     * name: Congrats!
     * kind: completion
     * type: certificate
-    * url: /static/skillmap/certificates/understanding-arcade-tutorials.pdf
-    * imageUrl: https://raw.githubusercontent.com/kiki-lee/beginner-skillmap-beta/master/static/platformer-cert.png
+    * url: /static/skillmap/certificates/learn-to-make-a-platformer.pdf
+    * imageUrl: /static/skillmap/certificates/platformer-cert.png
 
 
     ### pusher3

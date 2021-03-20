@@ -43,7 +43,7 @@
     {
         "name": "Advanced Livestream",
         "url": "/advanced-stream",
-        "imageUrl": "/static/advanced-stream/SvXeJevUkb4.jpg"
+        "imageUrl": "/static/livestream-games/boss-rush.png"
     },
     {
         "name": "Community Games",
