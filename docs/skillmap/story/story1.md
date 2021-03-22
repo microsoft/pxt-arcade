@@ -1,6 +1,5 @@
 # Greeting Card
 
-### @allowcodecarryover: false
 
 ```assetjson
 {
@@ -270,6 +269,8 @@ music.playMelody("G B A G C5 B A B ", 120)
 
 
 ## Intro @unplugged
+* allowcodecarryover: false
+
 
 Are you ready to make greeting cards for your friends and family?
 

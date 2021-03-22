@@ -1,6 +1,5 @@
 # Clicker Game
 
-### @allowcodecarryover: false
 
 
 ``` ghost
@@ -43,6 +42,9 @@ info.startCountdown(10)
 ```
 
 ## Introduction @unplugged
+
+* allowcodecarryover: false
+
 
 Let's make a clicker game!
 

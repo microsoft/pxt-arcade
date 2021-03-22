@@ -201,7 +201,7 @@ Now we need to put our **myFuel** sprite into the _Gas_ class.
 
 ---
 
-🔲 Snap a ``||variables:set [mySprite] kind to [Player]||`` block 
+🔲 Snap a ``||sprites:set [mySprite] kind to [Player]||`` block 
 into the bottom of the newest **on game update** container.
 
 🔲 Change ``||variables:mySprite||`` to ``||variables:myFuel||``. 
