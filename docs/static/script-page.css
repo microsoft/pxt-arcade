@@ -214,5 +214,15 @@ div.simframe {
 div.simframe.ui.embed > iframe {
     position: relative !important;
     width: 100%;
-    height: 99%;
+}
+
+/* ios safari -- fix height */
+div#embed-frame {
+    display: flex;
+    align-items: stretch;
+}
+div.simframe.ui.embed,
+#embed-frame iframe.sim-embed {
+    display: flex;
+    height: auto !important;
 }
