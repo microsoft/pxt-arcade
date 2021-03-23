@@ -31,6 +31,8 @@ game.onUpdateInterval(5000, function () {
 ### @explicitHints true
 
 ## Introduction @unplugged
+* allowcodecarryover: false
+
 
 
 ![Psyched Monkey](/static/skillmap/interface/monkey.png "Psyched Monkey is Ready!" )
