@@ -61,9 +61,9 @@ Be sure to
 ---
 
 🔲  Check your player [__*sprite*__](#sprote "2-D image that moves on the screen") 
-and to make sure you're happy with it. 
+to make sure you're happy with it. 
 
-🔲  If you want to make changes, click the sprite inside the block and design a new 
+🔲  If you want to make changes, click the sprite image to design a new 
 kind of vehicle OR turn it into an alien creature using the sprite editor! 👽
 
 

@@ -31,6 +31,8 @@ game.onUpdateInterval(5000, function () {
 ### @explicitHints true
 
 ## Introduction @unplugged
+* allowcodecarryover: false
+
 
 ![Psyched Monkey](/static/skillmap/interface/monkey.png "Psyched Monkey is Ready!" )
 
@@ -269,7 +271,7 @@ but they always need another block to snap into. Value blocks look something lik
 🔲  Snap a ``||sprites:[mySprite] say [":)"] ||`` block into the end of the
 **on A button pressed** container.
 
-🔲  Find the ``||game: ask for number [" "] ||`` value block and pop it inside to replace **":)"**.
+🔲  Find the ``||game: ask for string [" "] ||`` value block and pop it inside to replace **":)"**.
 
 ---
 
@@ -282,9 +284,23 @@ fit in certain types of spaces.
 let mySprite: Sprite = null;
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.say(game.askForNumber(""))
+    mySprite.say(game.askForString(""))
 })
 ```
+
+
+
+## Play Time
+
+**🕹️ Time to play 🕹️**
+
+Check out the simulator!  
+
+Use the refresh button (🔄 ) to reload and try your
+creation using the buttons you've programmed!  
+
+
+
 
 ## Putting it Together
 
@@ -297,9 +313,8 @@ Play around with them and see how they affect your game!
 
 ---
 
-**Tip:** You can test your game whenever you want using the simulator
-to the left!  Use the refresh button (🔄) to reload it, and play your
-game using the buttons you've programmed!  
+**Tip:** Test your game after every couple of steps to make sure 
+it's behaving the way you want it to!
 
 
 
@@ -310,3 +325,4 @@ game using the buttons you've programmed!
 You've learned everything you need to know to graduate to a new tutorial.
 
 Now you can click **Finish** to continue and create some games with MakeCode Arcade!  
+

@@ -2,6 +2,8 @@
 
 
 ## Introduction @unplugged
+* allowcodecarryover: false
+
 
 ** Let's explore the depths of space! **
 
@@ -158,8 +160,7 @@ mySprite.setStayInScreen(true)
 **Try your game on the simulator
 before you click finish on the tutorial.**  
 
-Is everything how you want it? You can always go back and edit steps if you find out 
-that you'd like them to work differently.
+Is everything how you want it? You can always go back and edit steps if you discover you'd like them to work differently.
 
 
 

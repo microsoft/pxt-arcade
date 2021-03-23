@@ -1,6 +1,5 @@
 # Collector Game
 
-### @allowcodecarryover: false
 
 ```ghost
 
@@ -48,6 +47,8 @@ forever(function () {
 
 
 ## Intro @unplugged
+* allowcodecarryover: false
+
 
 Ready to give your **W,A,S,D** keys a workout? 
 
