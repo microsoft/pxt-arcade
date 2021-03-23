@@ -2,9 +2,6 @@
 
 
 ## Introduction @unplugged
-* allowcodecarryover: false
-
-
 
 ** Let's explore the depths of space! **
 
