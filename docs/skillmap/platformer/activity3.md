@@ -1,4 +1,4 @@
-# Enemy Follows
+# Simple Enemies
 
 ### @autoexpandOff true
 
@@ -137,7 +137,7 @@ Fortunately, we have a piece of code that tells us where those are.
 drag it into the header of the new loop where the **list** argument is.
 
 🔲 Click on the checkerboard and change it to the **[ ! ]** tile.
-<br/>
+  
 
 ```blocks
 let mySprite: Sprite = null
@@ -187,15 +187,17 @@ location on the tilemap!
 ---
 
 
-🔲 Drag ``||sprites: set [mySprite2] to sprite [ ] of kind [player]||`` 
+🔲 Drag ``||variables: set [mySprite2] to sprite [ ] of kind [player]||`` 
 into the new loop.
 
 🔲 Click the **mySprite2** [__*variable*__](#varied "a label that holds the place for something that can change") 
 and choose to create a **new variable** called **myEnemy**. 
 
 🔲 Click the grey sprite rectangle inside the new block to draw an image for the enemy
-(or choose one from the gallery.)
-<br/>
+(or choose one from the gallery.)  
+
+🔲 Change the kind of this sprite from **Player** to **Enemy**.    
+
 
 ```blocks
 let myEnemy: Sprite = null
@@ -228,23 +230,23 @@ info.setLife(3)
 for (let value of tiles.getTilesByType(myTiles.tile5)) {
 // @highlight
     myEnemy = sprites.create(img`
-        a a a a a a a a a a a a a a a a
-        a b b b b b b b b b b b b b b a
-        a b a a a a a a a a a a a a b a
-        a b a a b b a a a a b b a a b a
-        a b a a a a b a a b a a a a b a
-        a b a a a a a a a a a a a a b a
-        a b a a a b a a a a b a a a b a
-        a b a a a b a a a a b a a a b a
-        a b a a a a a a a a a a a a b a
-        a b a a a a a a a a a a a a b a
-        a b a a a b b b b b b a a a b a
-        a b a a b a a a a a a b a a b a
-        a b a a a a a a a a a a a a b a
-        a b a a a a a a a a a a a a b a
-        a b b b b b b b b b b b b b b a
-        a a a a a a a a a a a a a a a a
-        `, SpriteKind.Enemy)
+...........fffffff...ccfff..........
+..........fbbbbbbbffcbbbbf..........
+..........fbb111bbbbbffbf...........
+..........fb11111ffbbbbff...........
+..........f1cccc1ffbbbbbcff.........
+..........ffc1c1c1bbcbcbcccf........
+...........fcc3331bbbcbcbcccf..ccccc
+............c333c1bbbcbcbccccfcddbbc
+............c333c1bbbbbbbcccccddbcc.
+............c333c11bbbbbccccccbbcc..
+...........cc331c11bbbbccccccfbccf..
+...........cc13c11cbbbcccccbbcfccf..
+...........c111111cbbbfdddddc.fbbcf.
+............cc1111fbdbbfdddc...fbbf.
+..............cccfffbdbbfcc.....fbbf
+....................fffff........fff
+`, SpriteKind.Enemy)
 }
 ```
 
@@ -264,7 +266,7 @@ to the bottom of the **for element** loop.
 🔲 Change the sprite variable to **myEnemy** and replace the  ``||scene: tilemap col [0] row [0]||``
 argument block with the ``||variables: value||`` argument from the header of the
 **for element** loop.
-<br/>
+  
 
 ```blocks
 let myEnemy: Sprite = null
@@ -296,23 +298,23 @@ tiles.placeOnRandomTile(mySprite, myTiles.tile3)
 info.setLife(3)
 for (let value of tiles.getTilesByType(myTiles.tile5)) {
     myEnemy = sprites.create(img`
-        a a a a a a a a a a a a a a a a
-        a b b b b b b b b b b b b b b a
-        a b a a a a a a a a a a a a b a
-        a b a a b b a a a a b b a a b a
-        a b a a a a b a a b a a a a b a
-        a b a a a a a a a a a a a a b a
-        a b a a a b a a a a b a a a b a
-        a b a a a b a a a a b a a a b a
-        a b a a a a a a a a a a a a b a
-        a b a a a a a a a a a a a a b a
-        a b a a a b b b b b b a a a b a
-        a b a a b a a a a a a b a a b a
-        a b a a a a a a a a a a a a b a
-        a b a a a a a a a a a a a a b a
-        a b b b b b b b b b b b b b b a
-        a a a a a a a a a a a a a a a a
-        `, SpriteKind.Enemy)
+...........fffffff...ccfff..........
+..........fbbbbbbbffcbbbbf..........
+..........fbb111bbbbbffbf...........
+..........fb11111ffbbbbff...........
+..........f1cccc1ffbbbbbcff.........
+..........ffc1c1c1bbcbcbcccf........
+...........fcc3331bbbcbcbcccf..ccccc
+............c333c1bbbcbcbccccfcddbbc
+............c333c1bbbbbbbcccccddbcc.
+............c333c11bbbbbccccccbbcc..
+...........cc331c11bbbbccccccfbccf..
+...........cc13c11cbbbcccccbbcfccf..
+...........c111111cbbbfdddddc.fbbcf.
+............cc1111fbdbbfdddc...fbbf.
+..............cccfffbdbbfcc.....fbbf
+....................fffff........fff
+`, SpriteKind.Enemy)
         // @highlight
     tiles.placeOnTile(myEnemy, value)
 }
@@ -328,10 +330,8 @@ Let's wake-up our sprites and get them following our player.
 🔲 Snap a ``||sprites: set [myEnemy] follow [mySprite]||`` block 
 into the bottom of the **for element** loop.
 
-🔲 Change the first sprite argument to **myEnemy** and the second to **mySprite**.
-
 🔲 Press the **⊕** on the new block and change the speed to **30**.
-<br/>
+  
 
 ```blocks
 let myEnemy: Sprite = null
@@ -363,23 +363,23 @@ tiles.placeOnRandomTile(mySprite, myTiles.tile3)
 info.setLife(3)
 for (let value of tiles.getTilesByType(myTiles.tile5)) {
     myEnemy = sprites.create(img`
-        a a a a a a a a a a a a a a a a
-        a b b b b b b b b b b b b b b a
-        a b a a a a a a a a a a a a b a
-        a b a a b b a a a a b b a a b a
-        a b a a a a b a a b a a a a b a
-        a b a a a a a a a a a a a a b a
-        a b a a a b a a a a b a a a b a
-        a b a a a b a a a a b a a a b a
-        a b a a a a a a a a a a a a b a
-        a b a a a a a a a a a a a a b a
-        a b a a a b b b b b b a a a b a
-        a b a a b a a a a a a b a a b a
-        a b a a a a a a a a a a a a b a
-        a b a a a a a a a a a a a a b a
-        a b b b b b b b b b b b b b b a
-        a a a a a a a a a a a a a a a a
-        `, SpriteKind.Enemy)
+...........fffffff...ccfff..........
+..........fbbbbbbbffcbbbbf..........
+..........fbb111bbbbbffbf...........
+..........fb11111ffbbbbff...........
+..........f1cccc1ffbbbbbcff.........
+..........ffc1c1c1bbcbcbcccf........
+...........fcc3331bbbcbcbcccf..ccccc
+............c333c1bbbcbcbccccfcddbbc
+............c333c1bbbbbbbcccccddbcc.
+............c333c11bbbbbccccccbbcc..
+...........cc331c11bbbbccccccfbccf..
+...........cc13c11cbbbcccccbbcfccf..
+...........c111111cbbbfdddddc.fbbcf.
+............cc1111fbdbbfdddc...fbbf.
+..............cccfffbdbbfcc.....fbbf
+....................fffff........fff
+`, SpriteKind.Enemy)
     tiles.placeOnTile(myEnemy, value)
     myEnemy.follow(mySprite, 30)
 }
@@ -480,11 +480,10 @@ than the center (**y**) of the enemy. Here's how to do that:
 the **x** to **bottom**, and replace **mySprite** with the **sprite** 
 variable from the **on sprite overlaps** header.
 
-🔲 Right-click on the logic argument that you just finished to duplicate it. 
-
-🔲 Place the duplicate block to the right of the **<**. Replace **bottom** 
-with **y** and replace **sprite** with **otherSprite**.  
-<br/>
+🔲 On the right-hand side of the **<**, place a ``||sprites:[mySprite] [x]||`` block and change 
+the **x** to **y**, and replace **mySprite** with the **otherSprite** 
+variable from the **on sprite overlaps** header.
+  
 
 
 ```blocks
@@ -507,13 +506,14 @@ logic container and replace **mySprite** with **sprite**.
 🔲 Replace **x** with **vy (velocity y)** using the dropdown menu.
 
 🔲 Change the value from **0** to **-100**.  
-<br/>
+  
 
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()
     if (sprite.bottom < otherSprite.y) {
+        //@highlight
         sprite.vy = -100
     } 
 })
@@ -558,7 +558,7 @@ overlap in a non-jumping way.
 
 🔲 To remove a life from the player under that condition, 
 snap a ``||info: change life by [-1]||`` block into the empty **else** clause.  
-<br/>
+  
 
 ```ghost
         info.changeLifeBy(-1)

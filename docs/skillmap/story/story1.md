@@ -272,6 +272,7 @@ music.playMelody("G B A G C5 B A B ", 120)
 * allowcodecarryover: false
 
 
+
 Are you ready to make greeting cards for your friends and family?
 
 Follow these quick steps and you'll have one in no time!
@@ -428,12 +429,8 @@ scene.setBackgroundImage(img`
 
 ---
 
-🔲 Use The image editor to draw a short greeting on your background. 
+🔲 Click on the background inside your block to reopen it and add a hand-drawn message.   
 Click **Done** when you're finished to save your work.
-
-**Tip:** To edit the background again, click on the image thumbnail inside the block. 
-The image will open and you'll be able to draw right 
-on top of your background.  
 
 
 
@@ -569,7 +566,7 @@ scene.setBackgroundImage(img`
 
 ## Step 4
 
-🎉 Time for a celebration 🎉
+**🎉 Time for a celebration 🎉**
 
 ---
 
@@ -708,7 +705,7 @@ effects.confetti.startScreenEffect()
 
 ## Step 5
 
-🎵 Now, let's add a personal note 🎵 
+**🎵 Now, let's add a personal note 🎵 **
 
 ---
 

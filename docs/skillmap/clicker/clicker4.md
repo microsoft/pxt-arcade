@@ -262,7 +262,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 **⚡️ Amazing ⚡️**
 
-Now you have a clicker game with a simple shop.  
+Now you have a clicker game with a simple shop.  Give it a try in the simulator.
 
 Click **Finish** to return to the main page where you can share your game
 with family and friends!

@@ -34,6 +34,7 @@ game.onUpdateInterval(5000, function () {
 * allowcodecarryover: false
 
 
+
 ![Psyched Monkey](/static/skillmap/interface/monkey.png "Psyched Monkey is Ready!" )
 
 **Are you ready to start coding your own games?**

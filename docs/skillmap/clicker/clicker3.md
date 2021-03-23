@@ -164,7 +164,7 @@ we're already relying on.
 
 
 ```blocks
-info.setBackgroundColor(8)
+scene.setBackgroundColor(8)
 info.startCountdown(10)
 game.splash("Press (A) to earn clicks!")
 let mySprite = sprites.create(img`
