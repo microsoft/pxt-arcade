@@ -234,7 +234,7 @@ game.onUpdateInterval(5000, function () {
         5 . . . . . . . . . . . . . . 5
         5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
         `, 0, 50)
-    myFuel.x = randint(0, 160) 
+    myFuel.x = randint(5, 155) 
     // @highlight  
     myFuel.setKind(SpriteKind.Gas)
 })

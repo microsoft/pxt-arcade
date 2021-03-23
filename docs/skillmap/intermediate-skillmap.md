@@ -15,6 +15,8 @@
 * description: This will teach you how to complete tutorials in Microsoft MakeCode Arcade.
 
 ### interface-activity1
+* allowcodecarryover: false
+
 
 * name: Learn to use MakeCode Arcade
 * type: tutorial
@@ -30,6 +32,8 @@
 * completionUrl: /static/skillmap/certificates/design-a-space-explorer.pdf
 
 ### space-activity1
+* allowcodecarryover: false
+
 
 * name: Ship Design
 * type: tutorial
@@ -95,6 +99,8 @@
 * description: A skillmap that takes you through how to build a platformer with multiple levels.
 
 ### platformer-activity1
+* allowcodecarryover: false
+
 
 * name: Simple Platformer
 * type: tutorial

@@ -43,8 +43,6 @@ info.startCountdown(10)
 
 ## Introduction @unplugged
 
-* allowcodecarryover: false
-
 
 Let's make a clicker game!
 
@@ -163,7 +161,7 @@ info.startCountdown(10)
 
 **🎉 Congrats 🎉**
 
-You have your very own clicker game!
+You have your very own clicker game!  Play it in the simulator and see how many clicks you can get.
 
 Click **Finish** to return to the main page where you can share your game
 with family and friends to compare scores!

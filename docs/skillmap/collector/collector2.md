@@ -357,7 +357,7 @@ info.onCountdownEnd(function () {
 
 ## Step 5
 
-🎊 Little celebrations 🎊
+**🎊 Little celebrations 🎊**
 
 We can easily add some flavor every time our sprite reaches a coin. 
 All we need to do is expand the **destroy** block.
@@ -418,7 +418,7 @@ forever(function () {
 
 There you have it...a collector game with style AND class.  
 
-**🏆 Well done 🏆**
+**🏆 Now play your winning creation 🏆**
 
 Click **Finish** to return to the main page where you can share your game
 with family and friends!

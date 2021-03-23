@@ -129,8 +129,8 @@ mySprite = sprites.create(img`
 
 ## Step 4
 
-✨ For an extra spark, you can make your sprite react
-with each click ✨
+**✨ For an extra spark, you can make your sprite react
+with each click ✨**
 
 ---
 
@@ -156,7 +156,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 Right now, the spray effect lasts forever, so you don't see much of a 
 change between clicks. 
 
-Let's tweak the effect to make each instance shorter.
+**Let's tweak the effect to make each instance shorter.**
 
 ---
 
@@ -180,13 +180,13 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 6 @unplugged
 
-🎮 Play your game a couple of times 🎮
+**🎮 Play your game a couple of times 🎮**
 
 
 
 ## Step 7
 
-Did you notice that your game automatically keeps track of your highest score?
+**Did you notice that your game automatically keeps track of your highest score?**
 
 It also automatically tells you that **you've lost** when time runs out. 
 Let's change that.
@@ -224,7 +224,7 @@ and choose a new option from the dropdown.
 
 ## Step 9
 
-That's it!  
+**That's it!**  
 
 Click **Finish** to return to the main page where you can share your game
 with family and friends to compete for the most clicks in 10 seconds!  

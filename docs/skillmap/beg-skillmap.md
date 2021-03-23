@@ -17,6 +17,8 @@
 * description: Start here if you want to know the ins and outs of Arcade tutorials!
 
 ### interface-activity1
+* allowcodecarryover: false
+
 
 * name: Get to Know MakeCode Arcade
 * type: tutorial
@@ -48,6 +50,8 @@
 
 
 ### story-activity1
+* allowcodecarryover: false
+
 
 * name: Greeting Card
 * type: tutorial
@@ -98,6 +102,8 @@
 
 
 ### clicker-activity1
+* allowcodecarryover: false
+
 
 * name: Clicker Game
 * type: tutorial
@@ -148,6 +154,8 @@
 
 
 ### collector-activity1
+* allowcodecarryover: false
+
 
 * name: Collector Game
 * type: tutorial

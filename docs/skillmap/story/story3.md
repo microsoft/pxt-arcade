@@ -287,8 +287,7 @@ Do you have your joke?
 
 ---
 
-🔲 Locate the ``||scene: set background image to [ ]||`` block and click 
-inside the grey square to open the image editor. 
+🔲 Locate the ``||scene: set background image to [ ]||`` block (inside your **on start** container) and click the image area to open the image editor. 
 
 🔲 Create a background that shows where your joke takes place.  
 Is it the ocean? The sky? A kitchen? 
@@ -587,13 +586,13 @@ mySprite2.say("OMIGOSH! A talking muffin!")
 
 ## Step 6
 
-Take a minute to check your joke in the simulator!
+**Take a minute to check your joke in the simulator!**
 
 Is it funny?  Does the text overlap anything important on the screen?
 
 ---
 
-🔲  Experiement with the location of the text by changing the location to
+🔲  Experiment with the location of the text by changing the location to
 the **top**, **left**, or **right** in the 
 ``||game: show long text [" "] [bottom]||`` block. 
 
@@ -633,7 +632,7 @@ End on a high note with confetti or a screen full of smiles.
 
 Now you have a hysterical joke to share!  
 
-Click **Finish** to return to the main page where you can share your game
+Click **Finish** to return to the main page where you can share 
 with family and friends!
 
 

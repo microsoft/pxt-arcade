@@ -512,7 +512,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 5
 
-**💚 What a nice surprise 💚 **
+**💚 What a nice surprise 💚 **  
 Add a second message below the first to really show you care.
 
 ---
@@ -536,7 +536,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 6
 
-**🎨 Make it POP 🎨**  
+**🎨 Make it POP 🎨**   
 Customize the dialog to bring it all together. 
 
 ---
@@ -596,7 +596,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 7
 
-**🎀 The final touch 🎀**   
+**🎀 The final touch 🎀**    
 Change the color of your text so it works with your new background. 
 
 ---

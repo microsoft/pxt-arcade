@@ -47,7 +47,6 @@ forever(function () {
 
 
 ## Intro @unplugged
-* allowcodecarryover: false
 
 
 Ready to give your **W,A,S,D** keys a workout? 
@@ -301,8 +300,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 ## Step 9
 
 Now we have a container for code that runs when the sprite 
-overlaps a projectile. Let's add a block to destroy 
-coins as you catch them.
+overlaps a projectile.  
+**Let's add a block to destroy coins as you catch them.**
 
 ---
 
@@ -353,7 +352,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ---
 
-Now you have your very own collector game! 
+Now you have your very own collector game. Give it a try!
 
 Click **Finish** to return to the main page where you can share your game
 with family and friends!
