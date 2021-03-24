@@ -90,7 +90,7 @@ function startNextLevel () {
         tiles.setTilemap(tilemap`level`)
     } else if (currentLevel == 2) {
         scene.setBackgroundColor(9)
-        tiles.setTilemap(tilemap`level2`)
+        tiles.setTilemap(tilemap`level`)
     } else {
         game.over(true)
     }
