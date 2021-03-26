@@ -24,7 +24,7 @@
 * tags: easy
 
 * url: /skillmap/interface/activity1
-* imageUrl: /static/skillmap/interface/interface-activity-1.png
+* imageUrl: /static/skillmap/interface/interface-activity-1.gif
 
 ## space
 * name: Design a Space Explorer
@@ -64,7 +64,7 @@
 * next: space-activity4
 
 * url: /skillmap/space/activity3
-* imageUrl: /static/skillmap/space/projectiles.gif.png
+* imageUrl: /static/skillmap/space/enemies.gif
 
 ### space-activity4
 

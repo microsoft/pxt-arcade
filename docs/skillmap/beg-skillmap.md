@@ -27,7 +27,7 @@
 * next: story-activity1
 
 * url: /skillmap/interface/activity1 
-* imageUrl: /static/skillmap/interface/interface-activity-1.png
+* imageUrl: /static/skillmap/interface/interface-activity-1.gif
 
 
 ### pusher1
