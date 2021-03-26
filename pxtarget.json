@@ -108,6 +108,10 @@
         "libs/color-coded-tilemap",
         "libs/template"
     ],
+    "cacheusedblocksdirs": [
+        "skillmap/space",
+        "skillmap/platformer"
+    ],
     "compile": {
         "useUF2": true,
         "deployDrives": "(ARCADE|PY|FTHR840BOOT|ARCD)",
