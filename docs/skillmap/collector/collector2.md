@@ -398,7 +398,7 @@ to **2000** (2 seconds). Now your coins will randomly appear every 1-2 seconds!
 ```blocks
 
 forever(function () {
-    projectile = sprites.createProjectileFromSide(img`
+    let projectile = sprites.createProjectileFromSide(img`
         . . b b b b . . 
         . b 5 5 5 5 b . 
         b 5 d 3 3 d 5 b 

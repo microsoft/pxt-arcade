@@ -18,7 +18,7 @@
 * tags: easy
 
 * url: /skillmap/interface/activity1 
-* imageUrl: /static/skillmap/interface/activity1.png
+* imageUrl: /static/skillmap/interface/interface-activity-1.png
 
 
 
