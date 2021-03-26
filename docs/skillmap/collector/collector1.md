@@ -223,7 +223,7 @@ forever(function () {
         c d d 1 1 d d c 
         . f d d d d f . 
         . . f f f f . . 
-        `, -90, 0)
+        `, -150, 0)
     projectile.y = randint(0, 10)
 
 })
@@ -259,7 +259,7 @@ forever(function () {
         c d d 1 1 d d c 
         . f d d d d f . 
         . . f f f f . . 
-        `, -90, 0)
+        `, -150, 0)
     projectile.y = randint(0, 120)
     pause(1500)
 
