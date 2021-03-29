@@ -6,6 +6,14 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 
 ### ~ codecard
 
+* name: Space Arcade Game
+* description: Join Jacqueline and create a retro space game while learning the basics of coding in MakeCode Arcade!
+* youTubeId: 7pBGS_tKfmU
+* youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
+* imageUrl: /static/live-coding/7pBGS_tKfmU.jpg
+
+---
+
 * name: Chase the Pizza
 * description: In this video, we'll be going through the Chase the Pizza tutorial - https://arcade.makecode.com/#tutorial:/tutorials/chase-the-pizza.
 * youTubeId: sgeHKw437oE
