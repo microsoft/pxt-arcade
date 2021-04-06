@@ -50,7 +50,7 @@ mySprite = sprites.create(img`
 ```ghost
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(-20)
-    power2 += 1
+    power += 1
     game.showLongText("You bought one extra click!", DialogLayout.Top)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -60,7 +60,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 info.onCountdownEnd(function () {
     game.over(true, effects.confetti)
 })
-let power2 = 0
+let power = 0
 let mySprite: Sprite = null
 scene.setBackgroundColor(11)
 info.startCountdown(10)
@@ -83,7 +83,7 @@ mySprite = sprites.create(img`
     ........bbb11111bb............
     ..........bbbbbbb.............
     `, SpriteKind.Player)
-power2 = 1
+power = 1
 
 
 ```
@@ -104,7 +104,7 @@ Incrementing by one point per click has been fun, but what if we could
 make the game more interesting?
 
 Let's allow the player to buy a more powerful clicker when they press the 
-Ⓑ button. 
+**Ⓑ** button. 
 
 ---
 
@@ -112,7 +112,7 @@ Let's allow the player to buy a more powerful clicker when they press the
 ``||controller:on [A] button [pressed]||`` container and drop it into
 an empty area in the workspace.  
 *Note: The block will appear faded at first because it conflicts with the other 
-** on button pressed** container in the workspace.*
+**on button pressed** container in the workspace.*
 
 🔲 Click **A** in the empty **on button pressed** container, and choose 
 **B** from the dropdown menu.  
@@ -126,7 +126,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 3
 
-Adding another increment to the Ⓑ button would only allow the score to 
+Adding another increment to the **Ⓑ** button would only allow the score to 
 increase faster one time for each click. 
 
 To make a permanent change, we'll need to add a 
@@ -135,7 +135,7 @@ To make a permanent change, we'll need to add a
 ---
 
 🔲 Open the ``||variables:Variables||`` category and click the button
-to **[ Make a Variable]**.
+to **[Make a Variable]**.
 
 🔲 In the prompt, type the name of the variable that will keep track of 
 how powerful your clicker is.  For the rest of this tutorial, we'll refer to
@@ -157,14 +157,14 @@ Let's [__*initialize*__](#init "Set the starting value")
 
 🔲 From ``||variables:Variables||``, grab the 
 ``||variables:set [power] to [0]||`` block and add it to the end of the 
-**on start** container.
+``||loops:on start||`` container.
 
 🔲 Change **0** to **1** to make it easy to replace the increment value
 we're already relying on.
 
 
 ```blocks
-info.setBackgroundColor(8)
+scene.setBackgroundColor(8)
 info.startCountdown(10)
 game.splash("Press (A) to earn clicks!")
 let mySprite = sprites.create(img`
@@ -230,10 +230,34 @@ empty **on B button pressed** container.
 ```blocks
 
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.changeScoreBy(-20)
     //@highlight
     power += 1
+})
+
+```
+
+## Step 7
+
+**Add a note to let the player know what happened.**
+
+Finally, let's add a block to tell the user that they've got extra powers!
+
+---
+
+🔲 From ``||game:Game||``, grab
+``||game:show long text [" "] [bottom]||`` and snap it into the 
+end of the **on B button pressed** container.  
+
+🔲 Write your text, then play around with the location options to see where you like
+your message best.
+
+```blocks
+
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    power += 1
+     //@highlight
     game.showLongText("You bought one extra click!", DialogLayout.Center)
+
 })
 
 ```
@@ -241,13 +265,16 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## Step 7
+## Finale
 
-🎇 There you have it, a Super-Clicker 🎇
+**🎇 There you have it, a Super-Clicker 🎇**
+
+---
 
 Now, every time you click **Ⓑ** the game adds **1** to the amount your score increases 
 with each press of the **Ⓐ** button.
 
-Click **Finish** to share your game with friends and start
+Click **Finish** to return to the main page where you can share your game
+with family and friends to start
 a competition!
 

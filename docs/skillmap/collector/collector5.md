@@ -495,6 +495,5 @@ Need help thinking of something to do?
 
 
 
-When you're done, click **Finish** to publish your project
-and share with friends and family!
-
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

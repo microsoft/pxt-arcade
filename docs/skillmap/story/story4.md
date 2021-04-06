@@ -297,14 +297,14 @@ Example 3: An alien in the grocery store
 
 ## Step 2
 
-Now add your setting and main character to the story.
+**Now add your setting and main character to the story.**
 
 ---
 
-🔲 Click on the grey box in the ``||scene:set background image to []||``
+🔲 Click on the image box in the ``||scene:set background image to []||``
 block and draw your scene.
 
-🔲 Click on the grey box in the 
+🔲 Click on the image box in the 
 ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
 block and design your main character.
 
@@ -562,7 +562,7 @@ let mySprite = sprites.create(img`
 
 ## Step 3
 
-📚 Explain your set-up 📚
+**📚 Explain your set-up 📚**
 
 Why is your main character in their setting?  What are they waiting for or 
 what are they avoiding?
@@ -614,7 +614,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 4
 
-🎭 Create some drama 🎭
+**🎭 Create some drama 🎭**
 
 What happens now? Something should throw your characters off course or surprise the reader.
 
@@ -667,7 +667,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 5
 
-📕 Show the story 📕
+**📕 Show the story 📕**
 
 The story has changed, but the images on the screen haven't. 
 Let's update the scene and the characters.
@@ -881,7 +881,7 @@ let mySprite: Sprite = null
 
 ## Step 6
 
-😲 The reaction 😲
+**😲 The reaction 😲**
 
 How does the story change because of the drama?
 How does the main character react?
@@ -1095,7 +1095,7 @@ let mySprite: Sprite = null
 
 ## Step 7
 
-🌳 Change of scene 🌳
+**🌳 Change of scene 🌳**
 
 Consider changing your scene and characters again.  Can you get a close-up
 on someone's face?  Have you moved to a new location?  
@@ -1466,7 +1466,7 @@ let mySprite: Sprite = null
 
 ## Step 8
 
-🎬 The conclusion 🎬
+**🎬 The conclusion 🎬**
 
 Add a final set of text to wrap everything up.  You can also change the scene
 one last time if it helps illustrate your ending.
@@ -1852,8 +1852,8 @@ let mySprite: Sprite = null
 
 Now you have a story ready to go viral.
 
-Don't forget to click "Finish" so you can save the story to your gallery and
-share it with friends and family.  
+Click **Finish** to return to the main page where you can share your game
+with family and friends!
   
 
 

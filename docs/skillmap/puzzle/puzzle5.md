@@ -304,7 +304,7 @@ mySprite.say("The number was " + myNumber + "!")
 
 
 
-## Finale
+## Finale 
 
 **Try something new!**
 
@@ -320,9 +320,9 @@ Stuck?  Here are some ideas:
 - Create a "debugging" tool that shows you the correct answer when you click the **Menu**
 button 
 
----
 
-Click **Finish** to publish your game and get a 
-link to share with family and friends! 
+## Final Finale
 
+When you're done, click **Finish** to return to the main page where you can save the game to your gallery or share it
+with family and friends!
 

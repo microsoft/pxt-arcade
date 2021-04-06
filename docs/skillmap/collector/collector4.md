@@ -204,7 +204,7 @@ Ready to give your game some extra life?
 
 The code for a collector game is already in the workspace. 
 
-❤️ Let's add the ability to collect extra lives ❤️
+**❤️ Let's add the ability to collect extra lives ❤️**
 
 ---
 
@@ -243,7 +243,7 @@ forever(function () {
         `, -90, 0)
     myEnemy.y = randint(0, 120)
     myEnemy.setKind(SpriteKind.Enemy)
-    pause(randint(1200, 2200))
+    pause(randint(1500, 2500))
 })
 
 ```
@@ -251,7 +251,7 @@ forever(function () {
 
 ## Step 2
 
-The extra life isn't quite ready. 
+**The extra life isn't quite ready.** 
 
 Let's make sure to get all the blocks
 in the new **forever** loop pointed to the right place.
@@ -302,7 +302,7 @@ forever(function () {
 Extra lives are supposed to be special, but they appear just as much
 as the other two projectiles right now.
 
-Let's set a longer random pause for extraLife.
+**Let's set a longer random pause for extraLife.**
 
 ---
 
@@ -343,7 +343,7 @@ forever(function () {
 
 ## Step 4
 
-Play through your game once or twice.  Notice anything wrong?
+**Play through your game once or twice.  Notice anything wrong?**
 
 That's right! Nothing happens when you collect an extra life. Let's
 fix that.
@@ -429,5 +429,5 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 You have a full-featured game that anyone would be proud of.
 
-Click **Finish** to publish your project
-and share with friends and family!
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

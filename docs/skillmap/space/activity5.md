@@ -191,6 +191,14 @@ game.onUpdateInterval(2000, function () {
 })
 ```
 
+#Finale
+
+That's it! Now you're ready to click **Finish** to return to the main page where you can add this game to your gallery and share
+with family and friends!
+
+
+
+
 ```template
 namespace SpriteKind {
     export const Gas = SpriteKind.create()
