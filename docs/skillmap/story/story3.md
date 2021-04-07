@@ -187,6 +187,70 @@ scene.setBackgroundImage(img`
 
 ```ghost
 
+let mySprite = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)
+let myEnemy = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)
+pause(100)
+myEnemy.follow(mySprite)
+mySprite.destroy(effects.spray, 500)
+mySprite.setFlag(SpriteFlag.AutoDestroy, false)
+mySprite.setImage(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `)
+effects.confetti.endScreenEffect()
+scene.cameraShake(4, 500)
+scene.cameraFollowSprite(mySprite)
+scene.centerCameraAt(0, 0)
+
+
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     game.showLongText("Why do tropical fish swim in saltwater?", DialogLayout.Top)
     game.showLongText("Because, pepper makes them sneeze!", DialogLayout.Top)
@@ -194,7 +258,6 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 scene.setBackgroundColor(9)
 scene.setBackgroundImage(assets.image`Ocean`)
-let mySprite = sprites.create(assets.image`flyGirl`, SpriteKind.Player)
 mySprite.x += 0
 effects.confetti.startScreenEffect()
 effects.confetti.endScreenEffect()
