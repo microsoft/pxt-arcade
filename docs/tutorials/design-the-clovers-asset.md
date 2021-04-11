@@ -75,8 +75,8 @@ to the **My Asset** window.
 
 ---
 
-**Hint**: You can also select the **Transparent** swatch (the grey & white checkered square) 
-to erase parts of the image using the paint tools.
+**Hint**: You can also select the transparent swatch (the grey & white checkered square) 
+to erase parts of the image using any of the paint tools.
 
 ![UseImageEditor](/static/tutorials/image-editor.gif)
 
