@@ -23,7 +23,7 @@
 Here's a game where you can move your bunny around the screen to collect clovers 
 and avoid the bees.  
 
-In a couple of steps, you’ll be able make this game your own! You can design your own 
+In a couple of steps, you’ll be able to customize this game for yourself! You can design your own 
 background scene, main character, collectible objects, and even your own enemies to avoid!  
 
 Will your game be about a pigeon in the city, an astronaut in space, 
@@ -70,8 +70,6 @@ Once the image editor opens, click **> NEXT** to get to the next instruction.
 🔲 Use the pencil tools on the left to draw your own background, 
 or use the eraser to clear the image and start over.  
 
-![UseImageEditor](/static/tutorials/image-editor.gif)
-
 🔲 Once you're happy with your new background, click **Done** to save it and return 
 to the **My Asset** window. 
 
@@ -80,11 +78,13 @@ to the **My Asset** window.
 **Hint**: You can also select the **Transparent** swatch (the grey & white checkered square) 
 to erase parts of the image using the paint tools.
 
+![UseImageEditor](/static/tutorials/image-editor.gif)
+
 
 
 ## Step 5 - Try the Game
 
-**🎮 Take a look at the game simulator 🎮**
+**🕹️ Take a look at the game simulator 🕹️**
 
  How does your background look?  
  
