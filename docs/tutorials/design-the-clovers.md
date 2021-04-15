@@ -37,7 +37,7 @@ or a wizard in a castle?
 
 **🎮 Play the game 🎮**
 
-On the left side of the screen you’ll see a game simulator window.
+You should see the original game loaded and ready to play in the simulator window.
 
 Use the joystick (or arrow buttons on the keyboard) to move the bunny around 
 and collect clovers to score points, but watch out for the buzzing bees!

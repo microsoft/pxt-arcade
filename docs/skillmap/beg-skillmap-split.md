@@ -42,7 +42,7 @@
 * type: tutorial
 * description: Make an amazing greeting card in minutes!
 * tags: easy, story, card, creative
-* next: story-activity2
+* next: pusher1, story-activity2
 
 * url: /skillmap/story/story1 
 * imageUrl: /static/skillmap/story/card.gif
@@ -67,7 +67,7 @@
 * type: tutorial
 * description: Create your first Arcade story using a two-line joke!
 * tags: easy, story, joke, creative
-* next: story-activity4
+* next: story-activity4, pusher2
 
 * url: /skillmap/story/story3 
 * imageUrl: /static/skillmap/story/muffins.gif
@@ -86,6 +86,10 @@
 
 
 ### pusher1
+* name: Blank node
+* kind: layout
+
+### pusher2
 * name: Blank node
 * kind: layout
 
@@ -134,7 +138,7 @@
 * type: tutorial
 * description: Add code to make your simple clicker more powerful!
 * tags: easy, clicker, game
-* next: pusher2, clicker-activity4
+* next: pusher3, clicker-activity4
 
 * url: /skillmap/clicker/clicker3 
 * imageUrl: /static/skillmap/clicker/clicker-activity-3.gif
@@ -152,9 +156,6 @@
 * imageUrl: /static/skillmap/clicker/clicker-activity-4.gif
 
 
-### pusher2
-* name: Blank node
-* kind: layout
 
 ### pusher3
 * name: Blank node
@@ -181,7 +182,7 @@
 * type: tutorial
 * description: Make an arcade-style collector game!
 * tags: easy, collector, game
-* next: collector-activity1a, collector-activity2
+* next: collector-activity2, collector-activity1a
 
 * url: /skillmap/collector/collector1 
 * imageUrl: /static/skillmap/collector/collector-activity-1.gif
@@ -219,10 +220,23 @@
 * type: tutorial
 * description: Learn to add enemy projectiles to your game!
 * tags: easy, collector, game
-* next: collector-activity4
+* next: collector-activity3a, collector-activity4
 
 * url: /skillmap/collector/collector3
 * imageUrl: /static/skillmap/collector/collector-activity-3.gif
+
+
+### collector-activity3a
+
+* name: Multiple Enemies
+* type: tutorial
+* description: Send a mix of different enemies toward your hero!
+* tags: easy, collector, game
+* next: collector-activity4
+
+* url: /skillmap/collector/collector4
+* imageUrl: /static/skillmap/collector/collector-activity-4.gif
+
 
 
 ### collector-activity4
@@ -231,22 +245,11 @@
 * type: tutorial
 * description: Add extra lives to your collector game!
 * tags: easy, collector, game
-* next: beginner-cert-3, collector-activity4a
-
-* url: /skillmap/collector/collector4
-* imageUrl: /static/skillmap/collector/collector-activity-4.gif
-
-
-### collector-activity4a
-
-* name: Multiple Enemies
-* type: tutorial
-* description: Send a mix of different enemies toward your hero!
-* tags: easy, collector, game
 * next: beginner-cert-3
 
 * url: /skillmap/collector/collector4
 * imageUrl: /static/skillmap/collector/collector-activity-4.gif
+
 
 
 ### beginner-cert-3
