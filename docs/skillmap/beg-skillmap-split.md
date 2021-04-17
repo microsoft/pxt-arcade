@@ -3,7 +3,7 @@
 * description: Learn to create arcade games of your own by completing these tutorials.
 * infoUrl: skillmap/educator-info/basic-map-info
 * bannerUrl: /static/skillmap/story/story-activity4.png
-* backgroundurl: /static/bg1b.png  
+* backgroundurl: /static/skillmap/backgrounds/bg1b.png  
 * primarycolor: #ff7f41
 * secondarycolor: #fff53d
 * tertiarycolor: #009da2
@@ -55,7 +55,7 @@
 * type: tutorial
 * description: Add to your greeting card for a gift that keeps on giving!
 * tags: easy, card, gift, creative
-* next: story-activity3
+* next: story-activity3, pusher2
 * reqired: 1 story
 
 * url: /skillmap/story/story2 
@@ -67,7 +67,7 @@
 * type: tutorial
 * description: Create your first Arcade story using a two-line joke!
 * tags: easy, story, joke, creative
-* next: story-activity4, pusher2
+* next: pusher2, story-activity4
 
 * url: /skillmap/story/story3 
 * imageUrl: /static/skillmap/story/muffins.gif
@@ -182,7 +182,7 @@
 * type: tutorial
 * description: Make an arcade-style collector game!
 * tags: easy, collector, game
-* next: collector-activity2, collector-activity1a
+* next: collector-activity2 
 
 * url: /skillmap/collector/collector1 
 * imageUrl: /static/skillmap/collector/collector-activity-1.gif
@@ -195,7 +195,7 @@
 * type: tutorial
 * description: Spice up your game by adding a custom background!
 * tags: easy, collector, game, background
-* next: collector-activity2
+
 
 * url: /skillmap/collector/collector1 
 * imageUrl: /static/skillmap/collector/collector-activity-1.gif
@@ -208,7 +208,7 @@
 * description: Make a few simple changes for a game that's twice as fun! 
 * tags: easy, collector, game
 * required: 1 collector
-* next: collector-activity3
+* next: collector-activity1a, collector-activity3
 
 * url: /skillmap/collector/collector2 
 * imageUrl: /static/skillmap/collector/collector-activity-2.gif
@@ -220,7 +220,7 @@
 * type: tutorial
 * description: Learn to add enemy projectiles to your game!
 * tags: easy, collector, game
-* next: collector-activity3a, collector-activity4
+* next: collector-activity4, collector-activity3a
 
 * url: /skillmap/collector/collector3
 * imageUrl: /static/skillmap/collector/collector-activity-3.gif
@@ -232,7 +232,7 @@
 * type: tutorial
 * description: Send a mix of different enemies toward your hero!
 * tags: easy, collector, game
-* next: collector-activity4
+
 
 * url: /skillmap/collector/collector4
 * imageUrl: /static/skillmap/collector/collector-activity-4.gif
@@ -258,3 +258,19 @@
 * type: certificate
 * url: /static/skillmap/certificates/collector-game.pdf
 * imageUrl: /static/skillmap/certificates/collector-cert.png
+* next: pusher4, collector-activity5
+
+
+### collector-activity5
+
+* name: Play Around
+* type: tutorial
+* description: Now it's up to your imagination!
+* tags: easy, collector, game
+
+* url: /skillmap/collector/collector5
+* imageUrl: /static/skillmap/collector/collector-activity-4.gif
+
+### pusher4
+* name: Blank node
+* kind: layout
