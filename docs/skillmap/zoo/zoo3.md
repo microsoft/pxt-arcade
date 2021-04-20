@@ -1,30 +1,41 @@
+### @flyoutOnly true
+
+
 # Penguins!
+
+```customts
+tiles.setTilemap(tilemap`level1`)
+```
 
 ## Step 1 @showdialog
 
-![A dirt path with a penguin looking up at a wooden sign. Several penguins are hiding in the bushes.](https://shakao-test.github.io/zookeeper-map/images/zoo-penguins.png)
+![A dirt path with a penguin looking up at a wooden sign. Several penguins are hiding in the bushes.](static/skillmap/zoo/zoo-penguins.png)
 
-Oh thank goodness, you're here! The penguins are *everywhere*! 
-They managed to escape the penguin exhibit--you have to help, 
-they're eating all of the ice cream and sliding down the street!
+**Thank goodness, you're here!** Penguins are *everywhere*! 
+
+They're running around outside of their enclosure. You have to help!  
+They're eating all the ice cream and sliding down the street!
 
 ## Step 2
 
-Can you look through the code and figure out how the penguins 
-are escaping? Check out the `||game: on game update||` container
-block to see the code for spawning penguins.
+Look through the code and figure out how to put the penguins back into their 
+icy paradise. 
 
-You can click on the simulator and use the arrow keys to look around!
+► Can you figure out how to move the penguin spawn point? 
 
-When you've helped the penguins back into the exhibit click on 
-the **Finish** button to continue to other parts of the zoo.
+---
+
+When you've helped the penguins back into the exhibit click **Finish** 
+to continue to other parts of the zoo.
+
 
 ```block
-tiles.placeOnTile(penguin, tiles.getTileLocation(1, 1))
+let penguin: Sprite = null
+  penguin.x = 10
 ```
 
-Look at this block in particular. What is it doing? Where is 
-(1, 1) on the tilemap?
+Look at this block in particular. What is it doing? Where does 
+**x=10** put the penguins on the screen?
 
 
 
@@ -33,8 +44,7 @@ namespace SpriteKind {
     export const Penguin = SpriteKind.create()
 }
 let penguin: Sprite = null
-tiles.setTilemap(tilemap`level1`)
-game.onUpdateInterval(200, function () {
+for (let index = 0; index < 3000; index++) {
     penguin = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . f f f f . . . . . . 
@@ -53,13 +63,15 @@ game.onUpdateInterval(200, function () {
         . . f f f f 1 1 1 f f . . . . . 
         . . . f . . 1 1 . . . . . . . . 
         `, SpriteKind.Penguin)
+    penguin.x = 10
     penguin.setVelocity(randint(-150, 150), randint(-150, 150))
     penguin.setFlag(SpriteFlag.BounceOnWall, true)
     penguin.lifespan = 2000
-    tiles.placeOnTile(penguin, tiles.getTileLocation(1, 1))
-})
+    pause(500)
+}
 
 ```
+
 
 ```assetjson
 {

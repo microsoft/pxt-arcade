@@ -1,18 +1,23 @@
 ### @flyoutOnly true
 
-# First Exhibit, by Land
+# First Exhibit: By Land
+
 
 ## Step 1
 
-Your very first exhibit! Exciting, huh? Hm... it does look a little empty. 
+**Your very first exhibit! Exciting, huh?**
+
+Hm... it does look a little empty.  
 Well, what's your favorite animal? Let's invite them over!
 
-Drag the ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
-block into ``||loops:on start||``. Then click the grey box and draw your
-animal!
+---
+
+▶ Drag ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
+into ``||loops:on start||``. 
+
+▶ Click the grey box in the new block and draw your animal using the **image editor**!
 
 ```blocks
-tiles.setTilemap(tilemap`level2`)
 let mySprite = sprites.create(img`
     . . . . . . 5 5 5 . . . . . . . 
     . . . . 5 5 5 5 5 5 5 . . . . . 
@@ -35,16 +40,19 @@ let mySprite = sprites.create(img`
 
 ## Step 2 
 
-Have your animal walk around the exhibit! 
+**🦓  Take your animal for a walk! 🐆**
 
-Find the
-``||sprites:set [mySprite] velocity to vx [50] vy [50]||`` block 
-and drag it into the ``||loops:on start||`` container. Your animal friend
-should start moving! Try changing the numbers next to **vx** and **vy**
-and see what happens.
+---
+
+▶ Grab
+``||sprites:set [mySprite] velocity to vx [50] vy [50]||`` 
+and drag it into the **end** of the ``||loops:on start||`` container. Your animal friend
+should start moving! 
+
+▶ Try changing the numbers next to **vx** and **vy**
+and watch the simulator to see what happens.
 
 ```blocks
-tiles.setTilemap(tilemap`level2`)
 let mySprite = sprites.create(img`
     . . . . . . 5 5 5 . . . . . . . 
     . . . . 5 5 5 5 5 5 5 . . . . . 
@@ -68,16 +76,23 @@ mySprite.setVelocity(50, 50)
 
 ## Step 3
 
-Right now the movement isn't super interesting. Let's add some randomness.
+The same old path gets boring after a while.  
+**Let's add some randomness!**
 
-Now grab two 
+---
+
+▶ Grab two 
 ``||math:pick random [0] to [10]||`` value blocks and 
-use them to replace the **50** next to the **vx** and **vy**. 
-Change the numbers around to see different kinds of movement!
+use them to replace the numbers next to the **vx** and **vy**. 
+
+▶ Change the numbers inside the **random** blocks to see different kinds of 
+movement each time you reload!
+
+---
+**Hint:** Don't forget to try random numbers!
 
 
 ```blocks
-tiles.setTilemap(tilemap`level2`)
 let mySprite = sprites.create(img`
     . . . . . . 5 5 5 . . . . . . . 
     . . . . 5 5 5 5 5 5 5 . . . . . 
@@ -101,13 +116,21 @@ mySprite.setVelocity(randint(-50, 50), randint(-50, 50))
 
 ## Step 4 
 
-Finally, when the animal hits the edge of the enclosure they just stop moving.
+**When the animal hits the edge of the enclosure they stop moving!**
 
-You can fix that by taking the ``||sprites:set [mySprite] bounce on wall <ON>||`` 
-block and snapping it in at the end of the program.
+Let's fix that. 
+
+---
+
+▶ Snap ``||sprites:set [mySprite] bounce on wall <ON>||`` 
+in at the **end** of the program.
+
+---
+
+Now your animal can explore the entire exhibit!
+
 
 ```blocks
-tiles.setTilemap(tilemap`level2`)
 let mySprite = sprites.create(img`
     . . . . . . 5 5 5 . . . . . . . 
     . . . . 5 5 5 5 5 5 5 . . . . . 
@@ -132,20 +155,28 @@ mySprite.setBounceOnWall(true)
 
 ## Step 5 @showdialog
 
-![A clipboard with a checklist. One item is checked off](https://shakao-test.github.io/zookeeper-map/images/zoo-clipboard.png)
+![A clipboard with a checklist. One item is checked off](/static/skillmap/zoo/zoo-clipboard.png)
 
-This exhibit looks awesome! The other kids at the zoo are going to 
-love it-- whoa, what's that sound?
+**This exhibit looks awesome!**
+
+The other kids at the zoo are going to 
+love it...WHOA! What's that sound?
 
 ## Step 6 @showdialog
 
-![A rotating red siren](https://shakao-test.github.io/zookeeper-map/images/siren.gif)
+![A rotating red siren](/static/skillmap/zoo/siren.gif)
 
-An alarm? What's going on-- Hold on, we're getting a report from the penguin department-- the
+**An alarm?**
+
+What's going on? Hold on, we're getting a report from the penguin department — the
 penguins did *what*? 
 
 ## Step 7
-Oh no! You better get over there!
+**🚨 OH NO!🚨**
+
+You better get over there!
+
+
 
 
 ```customts

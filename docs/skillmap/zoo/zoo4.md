@@ -2,22 +2,31 @@
 
 # Feed the Panda
 
-## Step 1
+## Step 1  
 
-It's feeding time! 
+**🎋 It's feeding time! 🎋**
 
 Everyone's favorite panda is hungry, so let's 
-write some code to feed them some tasty bamboo. Check out the code 
-in your workspace first. Right now, we create a **panda** sprite.
+write some code to feed it some tasty bamboo. 
+
+---
+
+► Take a look at the code in your workspace. 
+It should look familiar. Can you remember what it does?
+
 
 ## Step 2
 
-First, you'll need to grab some bamboo.
+**First, you'll need to grab some bamboo.**
 
-Drag an ``||controller:on [A] button pressed ||`` container into the workspace
-and snap a ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
-block inside it. Make sure to change the kind to ``||sprites:Food||``, then click on 
-the grey square and draw a delicious piece of bamboo.
+---
+
+► Drag an ``||controller:on [A] button pressed ||`` container into the workspace.
+
+► Snap ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  inside it. 
+
+► Make sure to change the kind to ``||sprites:Food||``, then click on 
+the grey square and draw a delicious piece of bamboo in the **image editor**.
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -42,19 +51,30 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 3
 
-Now, throw it into the panda enclosure! 
+## Step 3  @showdialog
 
-Grab a ``||sprites:set [mySprite] position to x [0] y [0]||``
-block and place it in the ``||controller:on [A] button pressed ||`` container.
+**Press the Ⓐ button**
 
-Then put a ``||math:pick random [0] to [10]||`` value block and 
-use it to replace the **0**s next to **x** and **y**. Try out 
-some numbers to see how this places your bamboo **randomly** on the screen.
+---
 
-Click on the simulator to the left and use the spacebar or the 
-**A** button to drop some bamboo in!
+Look at your game simulator to see what happens.
+
+
+## Step 4
+
+**Time to scatter the bamboo around the panda enclosure!**
+
+---
+
+► Grab a ``||sprites:set [mySprite] position to x [0] y [0]||``
+block and place it at the **end** of the ``||controller:on [A] button pressed ||`` container.
+
+► Grab two ``||math:pick random [0] to [10]||`` value blocks and 
+use them to replace the **x** and **y** values. 
+
+► Try some numbers to see how they place bamboo **randomly** on the screen.
+
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -80,14 +100,23 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 4
 
-Aw, the panda isn't very good at finding the food... let's help them out! 
+## Step 5 
 
-Drag a 
-``||sprites:set [myEnemy] follow [mySprite] ⊕||`` block into the bottom
-of the ``||controller:on A button pressed||`` container. Change
-the first variable to ``||variables:panda||`` and try your code out 
+**Press the Ⓐ button (or click the space bar)** to place food for the panda.
+
+
+## Step 6
+
+**Aw, the panda isn't very good at finding the food...let's help it out!** 
+
+---
+
+► Drag
+``||sprites:set [myEnemy] follow [mySprite]||`` into the **end**
+of the ``||controller:on A button pressed||`` container. 
+
+► Change the first variable value to ``||variables:panda||``, then try your code 
 in the simulator.
 
 ```blocks
@@ -116,71 +145,85 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 5
+## Step 7
 
-Munch time! We're going to help the panda eat by running some code when the 
+**😋 Munch time 😋**
+
+We can help the panda find snacks by running code when the 
 panda **overlaps** the bamboo. 
 
-Drag an ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
-container into the workspace. Click on the first ``||sprites:Player||`` dropdown menu 
-and select **Animal**. Then click the **second** dropdown and select **Food**.
+---
+
+► Drag an ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
+container into the workspace. 
+
+► Click on the second ``||sprites:Player||`` dropdown menu 
+and select **Food**. 
 
 ```blocks
-namespace SpriteKind {
-    export const Animal = SpriteKind.create()
-}
-sprites.onOverlap(SpriteKind.Animal, SpriteKind.Food, function (sprite, otherSprite) {
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
 })
 ```
 
-## Step 6
+## Step 8
 
-Next, grab a ``||sprites:destroy [mySprite] ⊕||`` block and put it in the 
-overlaps container. You can press the plus icon on the block to add an effect. 
-Try out **fire** or **dissolve**.
+► Next, grab a ``||sprites:destroy [mySprite] ⊕||`` block and put it in the 
+overlaps container. 
 
-Way to go! That panda's getting a full meal!
+► See the oblong value block in the header of the **overlaps** container called 
+``||variables:otherSprite||``? 
+Grab it and drag it down to replace **mySprite** in the **destroy** block.
+
+► Press the plus icon on the block to add an effect that will play when the 
+panda starts munching. Both **spray** and **disintegrate** work well here!
+
 
 ```blocks
-namespace SpriteKind {
-    export const Animal = SpriteKind.create()
+
 }
-sprites.onOverlap(SpriteKind.Animal, SpriteKind.Food, function (sprite, otherSprite) {
-    otherSprite.destroy()
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.spray, 500)
 })
+```
+
+## step 9
+
+**Way to go!**
+
+That panda's getting a full meal!
+
+Give your game a try in the simulator and when you're done, 
+click **Finish** to continue your zoo journey.
+
+
+
+```customts
+tiles.setTilemap(tilemap`level1`)
 ```
 
 ```template
 let panda = sprites.create(img`
-. f f f . . . . f f f . . . . . 
-f c c c f f f f c c c f . . . . 
-f c a d 1 1 1 1 d a c f . . . . 
-f a d 1 1 1 1 1 1 d f . . . . . 
-. f c c c 1 1 c c c d f . . . . 
-. f c f c 1 1 c f c d f f f . . 
-. f c c 1 c c 1 c c f d c c f . 
-. f d 1 1 f f 1 1 d f 1 1 c c f 
-. . f d d d d d d a c 1 1 1 c f 
-. . f c 1 1 1 1 1 c c 1 1 1 c f 
-. . f c 1 1 1 1 1 c c 1 1 1 c f 
-. . f c f f f f f c c 1 1 c c f 
-. . f c f . . . f c f f f f c f 
-. . f f . . . . f f . . . . f f 
-`, SpriteKind.Animal)
+    . f f f . . . . f f f . . . . . 
+    f c c c f f f f c c c f . . . . 
+    f c a d 1 1 1 1 d a c f . . . . 
+    f a d 1 1 1 1 1 1 d f . . . . . 
+    . f c c c 1 1 c c c d f . . . . 
+    . f c f c 1 1 c f c d f f f . . 
+    . f c c 1 c c 1 c c f d c c f . 
+    . f d 1 1 f f 1 1 d f 1 1 c c f 
+    . . f d d d d d d a c 1 1 1 c f 
+    . . f c 1 1 1 1 1 c c 1 1 1 c f 
+    . . f c 1 1 1 1 1 c c 1 1 1 c f 
+    . . f c f f f f f c c 1 1 c c f 
+    . . f c f . . . f c f f f f c f 
+    . . f f . . . . f f . . . . f f 
+    `, SpriteKind.Player)
+panda.setVelocity(randint(20, 50), randint(40, 60))
+panda.setBounceOnWall(true)
 ```
 
-```customts
-namespace SpriteKind {
-    //% isKind
-    export const Animal = SpriteKind.create()
-}
-tiles.setTilemap(tilemap`level1`)
 
-sprites.onCreated(SpriteKind.Animal, function (sprite) {
-    sprite.setVelocity(70, 50)
-    sprite.setBounceOnWall(true)
-})
-```
 
 ```assetjson
 {
