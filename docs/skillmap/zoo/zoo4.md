@@ -1,4 +1,3 @@
-### @flyoutOnly true
 
 # Feed the Panda
 
