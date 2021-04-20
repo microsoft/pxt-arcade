@@ -1,18 +1,21 @@
 ### @flyoutOnly true
 
-# First Exhibit, by Sea
+# First Exhibit: By Sea
 
 ## Step 1
 
-Welcome to the aquarium! We're so excited to have you designing this exhibit.
+**🐙 Welcome to the aquarium! 🐙**  
+We're so excited to have you designing this exhibit.
 
-To start, drag the ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
-block to the bottom of ``||loops:on start||``. Then click the grey box and draw your 
-favorite sea animal to see at the zoo.
+---
+
+► To start, drag ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
+into the ``||loops:on start||`` container. 
+
+► Click the grey box and use the **image editor** to 
+draw your favorite sea animal.
 
 ```blocks
-tiles.setTilemap(tilemap`level3`)
-effects.bubbles.startScreenEffect()
 let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -34,16 +37,22 @@ let mySprite = sprites.create(img`
 ```
 
 ## Step 2 
-Just keep swimming!
 
-Find the ``||sprites:set [mySprite] x to [0]||`` block 
-and drag it into the ``||loops:on start||`` container. Replace **x** 
-with **vx (velocity x)** using the dropdown menu.
-Try changing the number and see what happens!
+**🐡 Just keep swimming! 🐡**
+
+---
+
+▶ Grab
+``||sprites:set [mySprite] [x] to [0]||`` 
+and drag it into the **end** of the ``||loops:on start||`` container. 
+
+▶ Click **x** then choose ** vx (velocity x)** from the dropdown menu.
+
+▶ Try changing the **0** in the textbox to something else 
+*(either positive or negative)*.   
+You should see your fishy friend start to move in the simulator.
 
 ```blocks
-tiles.setTilemap(tilemap`level3`)
-effects.bubbles.startScreenEffect()
 let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -67,14 +76,15 @@ mySprite.vx = 50
 
 ## Step 3
 
-Oops, let's teach our fishy friend to do a flip.
+**Let's teach our fishy friend to do a flip!**
 
-Snap the ``||sprites:set [mySprite] bounce on wall <ON>||`` block 
+---
+
+► Snap ``||sprites:set [mySprite] bounce on wall <ON>||`` 
 to the end of the program and check out your exhibit in the simulator!
 
 ```blocks
-tiles.setTilemap(tilemap`level3`)
-effects.bubbles.startScreenEffect()
+
 let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -99,22 +109,53 @@ mySprite.setBounceOnWall(true)
 
 
 ## Step 4
-Let's make this a little more exciting with some **randomness**.
 
-Grab a **new** ``||sprites:set [mySprite] x to [0]||`` block 
-and drag it to the bottom of the ``||loops:on start||`` container. 
-Replace **x** with **y** using the dropdown menu. We are going 
-to change the **vertical position** of the fish on the screen.
+**Let's make the aquarium more exciting with some** **_randomness_**.
 
-Now grab a 
-``||math:pick random [0] to [10]||`` value block and 
-use it to replace the **0** next to the **y**. Try some 
-numbers out to see how they affect the fish position!
+---
+
+► Grab a **new** ``||sprites:set [mySprite] [x] to [0]||`` block 
+and drag it to the end of the ``||loops:on start||`` container. 
+
+► Replace **x** with **y** using the dropdown menu.  
+This will change the **vertical position** of the fish on the screen.
 
 
 ```blocks
-tiles.setTilemap(tilemap`level3`)
-effects.bubbles.startScreenEffect()
+let mySprite = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . 4 4 4 4 4 4 4 
+    . . . . . . 4 4 4 4 4 4 1 f 4 4 
+    . . . . 4 4 4 4 4 4 4 4 1 1 4 4 
+    4 . . 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 . 
+    . . 4 4 4 4 4 4 4 4 4 4 4 4 . . 
+    . 4 . . . . . . 4 4 4 4 . . . . 
+    4 . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)    
+mySprite.vx = 50
+mySprite.setBounceOnWall(true)
+mySprite.y = 0
+```
+
+## Step 5
+
+► Now grab a 
+``||math:pick random [0] to [10]||`` value block and 
+use it to replace the **0** next to ``||sprites:y||``. 
+
+► Try replacing **0** and **10** with larger numbers
+to see how they affect the fish!
+
+
+```blocks
 let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -139,22 +180,20 @@ mySprite.y = randint(10, 110)
 ```
 
 
-## Step 4
-This is awesome, but it's looking a little lonely in that aquarium.
+## Step 6
+**This is awesome...**but it's looking a little lonely in that aquarium.  
 Let's give your sea critter a few friends!
 
-Grab a 
-``||loops:repeat [3] times||`` loop and snap it into the 
-**on start** container **below** the ``||scene:start screen [bubbles] effect||`` 
-block.
+---
 
-Grab everything underneath the new loop by clicking on the 
-top block. Drag that whole chunk of code up into the new
-empty **repeat** loop. 
+► Find the 
+``||loops:repeat [4] times||`` loop container and snap it into the **top** of the 
+**on start** container.
+
+► Grab the first block of code beneath the new loop and use it to drag the whole 
+chunk of code up into the empty **repeat** container. 
 
 ```blocks
-tiles.setTilemap(tilemap`level3`)
-effects.bubbles.startScreenEffect()
 for (let index = 0; index < 4; index++) {
     let mySprite = sprites.create(img`
         . . . . . . . . . . . . . . . . 
@@ -179,10 +218,32 @@ for (let index = 0; index < 4; index++) {
     mySprite.y = randint(10, 110)
 }
 ```
-## Step 5
 
-Great work! Those fish look as happy as clams. Now it's feeding time, so let's 
-get over to-- oh no, what's this?
+## Step 7 @showdialog
+
+**🌟 Great work 🌟**
+
+Those fish look as happy as clams. 
+
+Now it's feeding time, so let's 
+get over to — **OH NO! What's this?**
+
+
+## Step 8 @showdialog
+
+![A rotating red siren](/static/skillmap/zoo/siren.gif)
+
+**An alarm?**
+
+What's going on? Hold on, we're getting a report from the penguin department — the
+penguins did *what*? 
+
+## Step 9
+**🚨 You better click "Finish" and get over there!🚨**
+
+
+
+
 
 ```customts
 tiles.setTilemap(tilemap`level3`)
