@@ -389,7 +389,7 @@ game.onUpdateInterval(500, function () {
 ```
 
 ```ghost
-statusbar.positionDirection(CollisionDirection.Bottom)
+statusbar.positionDirection(CollisionDirection.Top)
 ```
 
 ```package
