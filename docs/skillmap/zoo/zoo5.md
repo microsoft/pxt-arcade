@@ -1,11 +1,11 @@
-### @flyoutOnly true
-
 # Quail Hatching
 
 ## Step 1   @showdialog
 
 It's quail hatching season! The quail are laying eggs left 
-and right; let's catch them and put them back into the 
+and right. 
+
+Let's catch them and put them back into the 
 quail coop. 
 
 ## step 2
@@ -27,7 +27,7 @@ At the moment, the glove doesn't do anything when it overlaps quail. We should f
 
 ---
 
-► Drag an ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
+► From ``||sprites:Sprites||``, drag an ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
 container into the workspace. 
 
 ► Click the **second** ``||sprites:Player||`` dropdown and 
@@ -48,11 +48,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Quail, function (sprite, otherSp
 
 ---
 
-► Drag ``||sprites:set [myEnemy] follow [mySprite] ||`` into 
+► Also from ``||sprites:Sprites||``, grab ``||sprites:set [myEnemy] follow [mySprite] ||`` and drag it into 
 the empty **overlaps** container. 
 
-► Grab ``||variables:otherSprite||`` from the header of the **overlaps** container 
-and drag it down to replace the ``||variables:myEnemy||`` argument.
+► From the header of the **on overlaps** container, grab the ``||variables:otherSprite||`` value block and
+drag it down to replace the ``||variables:myEnemy||`` argument in the **set follow** block.
 
 
 
@@ -80,7 +80,7 @@ What's not happening?
 
 ---
 
-► Drag an
+► From ``||scene:Scene||``, drag an
 ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` container into the workspace.
 
 ► Change **Player** to **Quail**, and change the empty tile to the **coop** tile.
@@ -159,7 +159,6 @@ Can you clear all of the eggs before they hatch into more quail?
 
 Once you're done playing, click **Finish** to go back to the map where you can share
 this game with family and friends!
-
 
 
 ```template

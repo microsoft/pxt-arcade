@@ -3,9 +3,6 @@
 
 # Penguins!
 
-```customts
-tiles.setTilemap(tilemap`level1`)
-```
 
 ## Step 1 @showdialog
 
@@ -38,6 +35,10 @@ Look at this block in particular. What is it doing? Where does
 **x=10** put the penguins on the screen?
 
 
+
+```customts
+tiles.setTilemap(tilemap`level1`)
+```
 
 ```template
 namespace SpriteKind {
