@@ -1,5 +1,3 @@
-### @flyoutOnly true
-
 # First Exhibit: By Land
 
 
@@ -12,7 +10,7 @@ Well, what's your favorite animal? Let's invite them over!
 
 ---
 
-▶ Drag ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
+▶ From the ``||sprites:Sprites||`` category, drag ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
 into ``||loops:on start||``. 
 
 ▶ Click the grey box in the new block and draw your animal using the **image editor**!
@@ -44,7 +42,7 @@ let mySprite = sprites.create(img`
 
 ---
 
-▶ Grab
+▶From ``||sprites:Sprites||``, grab
 ``||sprites:set [mySprite] velocity to vx [50] vy [50]||`` 
 and drag it into the **end** of the ``||loops:on start||`` container. Your animal friend
 should start moving! 
@@ -81,9 +79,9 @@ The same old path gets boring after a while.
 
 ---
 
-▶ Grab two 
-``||math:pick random [0] to [10]||`` value blocks and 
-use them to replace the numbers next to the **vx** and **vy**. 
+▶ Go to the ``||math:Math||`` category and grab two 
+``||math:pick random [0] to [10]||`` value blocks. 
+Use them to replace the numbers next to the **vx** and **vy**. 
 
 ▶ Change the numbers inside the **random** blocks to see different kinds of 
 movement each time you reload!
@@ -122,8 +120,8 @@ Let's fix that.
 
 ---
 
-▶ Snap ``||sprites:set [mySprite] bounce on wall <ON>||`` 
-in at the **end** of the program.
+▶ Open the ``||sprites:Sprites||`` category, then grab ``||sprites:set [mySprite] bounce on wall <ON>||`` 
+to snap in at the **end** of the program.
 
 ---
 
@@ -175,7 +173,6 @@ penguins did *what*?
 **🚨 OH NO!🚨**
 
 You better get over there!
-
 
 
 

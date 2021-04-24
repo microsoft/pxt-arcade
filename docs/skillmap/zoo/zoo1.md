@@ -1,5 +1,3 @@
-### @flyoutOnly true
-
 # First Day
 
 
@@ -18,7 +16,7 @@ Let's get you set up in your new place!
 
 ---
 
-▶ Drag the ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
+▶ From the ``||sprites:Sprites||`` category, drag the ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
 block into the ``||loops:on start||`` container. 
 
 ▶ Click the grey box to open the **image editor** and draw yourself in your best zookeeper outfit!
@@ -50,7 +48,7 @@ let mySprite = sprites.create(img`
 
 ---
 
-▶ Drag 
+▶ From the ``||controller:Controller||`` category, drag 
 ``||controller:move [mySprite] with buttons ⊕||``  
 into the bottom of the ``||loops:on start||`` container. 
 
@@ -89,7 +87,7 @@ controller.moveSprite(mySprite)
 
 ---
 
-▶ Drag ``||scene:camera follow sprite [mySprite]||`` into the bottom 
+▶ From the ``||scene:Scene||`` category, drag ``||scene:camera follow sprite [mySprite]||`` into the bottom 
 of the ``||loops:on start||`` container and use the arrow keys to 
 check out the hut!
 
@@ -123,6 +121,7 @@ scene.cameraFollowSprite(mySprite)
 You're all ready for your first task. 
 
 Click on the **Finish** button to head out to the **Zoo**!
+
 
 ```customts
 tiles.setTilemap(tilemap`level2`)

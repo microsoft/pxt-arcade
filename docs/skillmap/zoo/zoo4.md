@@ -1,5 +1,3 @@
-### @flyoutOnly true
-
 # Feed the Panda
 
 ## Step 1  
@@ -21,9 +19,9 @@ It should look familiar. Can you remember what it does?
 
 ---
 
-► Drag an ``||controller:on [A] button pressed ||`` container into the workspace.
+► From ``||controller:Controller||``, drag an ``||controller:on [A] button pressed ||`` container into the workspace.
 
-► Snap ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  inside it. 
+► Snap a new ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block inside it. 
 
 ► Make sure to change the kind to ``||sprites:Food||``, then click on 
 the grey square and draw a delicious piece of bamboo in the **image editor**.
@@ -67,13 +65,13 @@ Look at your game simulator to see what happens.
 
 ---
 
-► Grab a ``||sprites:set [mySprite] position to x [0] y [0]||``
+► From ``||sprites:Sprites||``, get a ``||sprites:set [mySprite] position to x [0] y [0]||``
 block and place it at the **end** of the ``||controller:on [A] button pressed ||`` container.
 
-► Grab two ``||math:pick random [0] to [10]||`` value blocks and 
-use them to replace the **x** and **y** values. 
+► From ``||math:Math||``, grab two ``||math:pick random [0] to [10]||`` value blocks and 
+use them to replace the **x** and **y** values in the new **set position** block. 
 
-► Try some numbers to see how they place bamboo **randomly** on the screen.
+► Try some different numbers to see how they affect the way the bamboo is **randomly** placed on the screen.
 
 
 ```blocks
@@ -112,8 +110,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ---
 
-► Drag
-``||sprites:set [myEnemy] follow [mySprite]||`` into the **end**
+► Open ``||sprites:Sprites||`` and drag a
+``||sprites:set [myEnemy] follow [mySprite]||`` block out into the **end**
 of the ``||controller:on A button pressed||`` container. 
 
 ► Change the first variable value to ``||variables:panda||``, then try your code 
@@ -154,8 +152,8 @@ panda **overlaps** the bamboo.
 
 ---
 
-► Drag an ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
-container into the workspace. 
+► From ``||sprites:Sprites||``, pull out an ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
+container and drop it in the workspace. 
 
 ► Click on the second ``||sprites:Player||`` dropdown menu 
 and select **Food**. 
@@ -168,10 +166,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ## Step 8
 
-► Next, grab a ``||sprites:destroy [mySprite] ⊕||`` block and put it in the 
-overlaps container. 
+► Next, grab a ``||sprites:destroy [mySprite] ⊕||`` block from ``||sprites:Sprites||``
+and put it in the **on overlaps** container. 
 
-► See the oblong value block in the header of the **overlaps** container called 
+► See the oblong value block in the header of the **on overlaps** container called 
 ``||variables:otherSprite||``? 
 Grab it and drag it down to replace **mySprite** in the **destroy** block.
 

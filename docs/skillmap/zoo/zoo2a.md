@@ -1,5 +1,3 @@
-### @flyoutOnly true
-
 # First Exhibit: By Sea
 
 ## Step 1
@@ -9,7 +7,8 @@ We're so excited to have you designing this exhibit.
 
 ---
 
-► To start, drag ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
+► To start, go to the ``||sprites:Sprites||`` category and drag 
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
 into the ``||loops:on start||`` container. 
 
 ► Click the grey box and use the **image editor** to 
@@ -42,7 +41,7 @@ let mySprite = sprites.create(img`
 
 ---
 
-▶ Grab
+▶ In ``||sprites:Sprites||``, find
 ``||sprites:set [mySprite] [x] to [0]||`` 
 and drag it into the **end** of the ``||loops:on start||`` container. 
 
@@ -80,7 +79,7 @@ mySprite.vx = 50
 
 ---
 
-► Snap ``||sprites:set [mySprite] bounce on wall <ON>||`` 
+► Open ``||sprites:Sprites||``, then snap ``||sprites:set [mySprite] bounce on wall <ON>||`` 
 to the end of the program and check out your exhibit in the simulator!
 
 ```blocks
@@ -147,7 +146,7 @@ mySprite.y = 0
 
 ## Step 5
 
-► Now grab a 
+► From the ``||math:Math||`` category, grab a 
 ``||math:pick random [0] to [10]||`` value block and 
 use it to replace the **0** next to ``||sprites:y||``. 
 
@@ -186,7 +185,7 @@ Let's give your sea critter a few friends!
 
 ---
 
-► Find the 
+► In ``||loops:Loops||``, find the 
 ``||loops:repeat [4] times||`` loop container and snap it into the **top** of the 
 **on start** container.
 
@@ -240,7 +239,6 @@ penguins did *what*?
 
 ## Step 9
 **🚨 You better click "Finish" and get over there!🚨**
-
 
 
 
