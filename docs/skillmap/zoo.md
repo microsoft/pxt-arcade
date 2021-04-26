@@ -40,7 +40,7 @@
 * url: /skillmap/zoo/zoo2a
 * imageurl: /static/skillmap/zoo/zoo2a.gif
 * tags: easy, movement, random
-* next: zoo-activity3
+* next: zoo-activity2
 
 ### zoo-activity3
 * allowcodecarryover: false
