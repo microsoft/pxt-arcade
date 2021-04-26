@@ -5,7 +5,9 @@
 
 ![A banner saying "ZOO" with a giraffe looking up at it](static/skillmap/zoo/zoo-welcome.png)
 
-Hello there rookie! First day on the job, huh? No worries, 
+Hello there rookie! First day on the job, huh? 
+
+No worries, 
 we'll show you the zookeeper ropes. First things first, 
 click that green **OK** button to see the **Keeper's Hut**.
 
@@ -20,6 +22,8 @@ Let's get you set up in your new place!
 block into the ``||loops:on start||`` container. 
 
 ▶ Click the grey box to open the **image editor** and draw yourself in your best zookeeper outfit!
+
+▶ Click **> Next** when you're ready to see the next step.
 
 ```blocks
 let mySprite = sprites.create(img`
@@ -78,6 +82,7 @@ let mySprite = sprites.create(img`
     . . . . f f f f f f . . . . 
     . . . . f f . . f f . . . . 
     `, SpriteKind.Player)
+    //@highlight
 controller.moveSprite(mySprite)
 ```
 
@@ -111,6 +116,7 @@ let mySprite = sprites.create(img`
     . . . . f f . . f f . . . . 
     `, SpriteKind.Player)
 controller.moveSprite(mySprite)
+//@highlight
 scene.cameraFollowSprite(mySprite)
 ```
 
@@ -120,7 +126,9 @@ scene.cameraFollowSprite(mySprite)
 
 You're all ready for your first task. 
 
-Click on the **Finish** button to head out to the **Zoo**!
+Click on the **Finish** button to head out to the **Zoo**!  
+
+
 
 
 ```customts

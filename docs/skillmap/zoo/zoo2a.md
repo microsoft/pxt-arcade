@@ -14,6 +14,8 @@ into the ``||loops:on start||`` container.
 ► Click the grey box and use the **image editor** to 
 draw your favorite sea animal.
 
+▶ Click **> Next** when you're ready for the next step.
+
 ```blocks
 let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
@@ -70,6 +72,7 @@ let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
+    //@highlight
 mySprite.vx = 50
 ```
 
@@ -103,6 +106,7 @@ let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
 mySprite.vx = 50
+//@highlight
 mySprite.setBounceOnWall(true)
 ```
 
@@ -117,7 +121,7 @@ mySprite.setBounceOnWall(true)
 and drag it to the end of the ``||loops:on start||`` container. 
 
 ► Replace **x** with **y** using the dropdown menu.  
-This will change the **vertical position** of the fish on the screen.
+This will change the position of the fish in the up/down direction.
 
 
 ```blocks
@@ -141,6 +145,7 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)    
 mySprite.vx = 50
 mySprite.setBounceOnWall(true)
+//@highlight
 mySprite.y = 0
 ```
 
@@ -151,7 +156,12 @@ mySprite.y = 0
 use it to replace the **0** next to ``||sprites:y||``. 
 
 ► Try replacing **0** and **10** with larger numbers
-to see how they affect the fish!
+to see how they affect your new friend!
+
+---
+
+**Hint:** The screen height only goes from **0** to **120** so numbers outside
+that range will hide your aquatic animal.
 
 
 ```blocks
@@ -175,6 +185,7 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)    
 mySprite.vx = 50
 mySprite.setBounceOnWall(true)
+//@highlight
 mySprite.y = randint(10, 110)
 ```
 
@@ -193,6 +204,7 @@ Let's give your sea critter a few friends!
 chunk of code up into the empty **repeat** container. 
 
 ```blocks
+//@highlight
 for (let index = 0; index < 4; index++) {
     let mySprite = sprites.create(img`
         . . . . . . . . . . . . . . . . 
