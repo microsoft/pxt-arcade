@@ -15,6 +15,8 @@ into ``||loops:on start||``.
 
 ▶ Click the grey box in the new block and draw your animal using the **image editor**!
 
+▶ Click **> Next** when you're ready for the next step.
+
 ```blocks
 let mySprite = sprites.create(img`
     . . . . . . 5 5 5 . . . . . . . 
@@ -69,6 +71,7 @@ let mySprite = sprites.create(img`
     . . . . . 4 . . . . 4 4 4 . 4 . 
     . . . . 4 4 . . . . 4 4 . . . 4 
     `, SpriteKind.Player)
+    //@highlight
 mySprite.setVelocity(50, 50)
 ```
 
@@ -87,7 +90,7 @@ Use them to replace the numbers next to the **vx** and **vy**.
 movement each time you reload!
 
 ---
-**Hint:** Don't forget to try random numbers!
+**Hint:** Don't forget to try negative numbers!
 
 
 ```blocks
@@ -109,6 +112,7 @@ let mySprite = sprites.create(img`
     . . . . . 4 . . . . 4 4 4 . 4 . 
     . . . . 4 4 . . . . 4 4 . . . 4 
     `, SpriteKind.Player)
+    //@highlight
 mySprite.setVelocity(randint(-50, 50), randint(-50, 50))
 ```
 
@@ -148,6 +152,7 @@ let mySprite = sprites.create(img`
     . . . . 4 4 . . . . 4 4 . . . 4 
     `, SpriteKind.Player)
 mySprite.setVelocity(randint(-50, 50), randint(-50, 50))
+//@highlight
 mySprite.setBounceOnWall(true)
 ```
 
@@ -170,7 +175,7 @@ What's going on? Hold on, we're getting a report from the penguin department —
 penguins did *what*? 
 
 ## Step 7
-**🚨 OH NO!🚨**
+**🚨 OH NO🚨**
 
 You better get over there!
 

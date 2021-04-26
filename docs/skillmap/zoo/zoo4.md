@@ -94,6 +94,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . 6 7 6 . 7 7 6 6 . . . . 
         . . . . 6 6 6 . . 7 6 . . . . . 
         `, SpriteKind.Food)
+        //@highlight
     mySprite.setPosition(randint(10, 150), randint(10, 110))
 })
 ```
@@ -139,6 +140,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . 6 6 6 . . 7 6 . . . . . 
         `, SpriteKind.Food)
     tiles.placeOnRandomTile(mySprite, sprites.castle.tilePath5)
+    //@highlight
     panda.follow(mySprite)
 })
 ```
@@ -174,13 +176,15 @@ and put it in the **on overlaps** container.
 Grab it and drag it down to replace **mySprite** in the **destroy** block.
 
 ► Press the plus icon on the block to add an effect that will play when the 
-panda starts munching. Both **spray** and **disintegrate** work well here!
+panda starts munching. Both **spray** and **disintegrate** work well here!  
+
 
 
 ```blocks
 
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    //@highlight
     otherSprite.destroy(effects.spray, 500)
 })
 ```
@@ -192,7 +196,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 That panda's getting a full meal!
 
 Give your game a try in the simulator and when you're done, 
-click **Finish** to continue your zoo journey.
+click **Finish** to continue your zoo journey.  
+
 
 
 

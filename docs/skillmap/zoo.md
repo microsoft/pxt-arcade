@@ -38,8 +38,9 @@
 * type: tutorial
 * description: It's aquarium time! Let's go to the ocean exhibits and design some sea creatures.
 * url: /skillmap/zoo/zoo2a
-* imageurl: /static/skillmap/zoo/activity2-2.png
+* imageurl: /static/skillmap/zoo/zoo2a.gif
 * tags: easy, movement, random
+* next: zoo-activity3
 
 ### zoo-activity3
 * allowcodecarryover: false
@@ -57,7 +58,7 @@
 * type: tutorial
 * description: It's feeding time! Grab your bucket of bamboo and head over to the panda enclosure.
 * url: /skillmap/zoo/zoo4
-* imageurl: /static/skillmap/zoo/activity4.png
+* imageurl: /static/skillmap/zoo/zoo4.gif
 * tags: easy, overlaps, events
 * next: zoo-activity5
 
@@ -67,7 +68,7 @@
 * type: tutorial
 * description: Quail! Everywhere! Use code to catch these speedy birds!
 * url: /skillmap/zoo/zoo5
-* imageurl: /static/skillmap/zoo/activity5.png
+* imageurl: /static/skillmap/zoo/zoo5.gif
 * tags: intermediate, overlaps, destroy
 * next: zoo-complete
 

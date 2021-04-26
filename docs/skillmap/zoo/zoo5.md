@@ -38,6 +38,7 @@ change it to ``||sprites:Quail||``.
 namespace SpriteKind {
     export const Quail = SpriteKind.create()
 }
+//@highlight
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Quail, function (sprite, otherSprite) {
 })
 ```
@@ -62,6 +63,7 @@ namespace SpriteKind {
 }
 let mySprite: Sprite = null;
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Quail, function (sprite, otherSprite) {
+    //@highlight
     otherSprite.follow(mySprite)
 })
 ```
@@ -113,6 +115,7 @@ namespace SpriteKind {
     export const Quail = SpriteKind.create()
 }
 scene.onOverlapTile(SpriteKind.Quail, assets.tile`myTile`, function (sprite, location) {
+    //@highlight
     sprite.destroy()
 })
 ```
@@ -158,7 +161,7 @@ scene.onOverlapTile(SpriteKind.Egg, assets.tile`myTile`, function (sprite, locat
 Can you clear all of the eggs before they hatch into more quail?
 
 Once you're done playing, click **Finish** to go back to the map where you can share
-this game with family and friends!
+this game with family and friends!  
 
 
 ```template
