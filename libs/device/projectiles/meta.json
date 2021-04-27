@@ -1,0 +1,10 @@
+{
+    "width": 16,
+    "height": 16,
+    "blockIdentity": "images._image",
+    "creator": "image.ofBuffer",
+    "star": {
+        "namespace": "sprites.projectile",
+        "mimeType": "image/x-mkcd-f4"
+    }
+}
