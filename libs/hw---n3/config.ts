@@ -22,6 +22,9 @@ namespace config {
     export const PIN_DISPLAY_DC = DAL.P0_10
     export const PIN_DISPLAY_RST = DAL.P1_2
 
+    // Jacdac, when jacdaptor is connected, is on the accessibility pin (P12)
+    export const PIN_JACK_TX = DAL.P0_12
+
     export const DISPLAY_WIDTH = 160
     export const DISPLAY_HEIGHT = 128
 

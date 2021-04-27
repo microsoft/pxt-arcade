@@ -20,11 +20,11 @@ The theme for this game jam is **Ocean**. This could be games about swimming, or
 
 ## Starter Game
 
-Some students may immediately have ideas for the game they want to make. If students are stuck, however, we've also provided a [basic starter game](https://makecode.com/_2PH3gEV4EiH6) that someone could build off of:
+Some students may immediately have ideas for the game they want to make. If students are stuck, however, we've also provided a [basic starter game](https://makecode.com/_E9tT2HVaqVMM) that someone could build off of:
 
 ![Starter game GIF](/static/gamejam/jams/ocean/assets/starter.gif)
 
-**Starter Game URL: https://makecode.com/_2PH3gEV4EiH6**
+**Starter Game URL: https://makecode.com/_E9tT2HVaqVMM**
 
 This is a very simple game where the player must eat smaller fish and avoid bigger fish. The code is commented to explain what each block does. Some suggestions for starting directions are:
 
