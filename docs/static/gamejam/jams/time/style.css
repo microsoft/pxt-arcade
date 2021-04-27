@@ -1,17 +1,17 @@
 body {
-    background: #e4cdc5;
+    background: #3b161d;
 }
 
 /**** ACTION BUTTONS ****/
 
 .button {
     color: #fff;
-    background-color: #4d61d7;
+    background-color: #8e3a3a;
 }
 
 .button:hover {
     color: #fff;
-    background-color: #6985eb;
+    background-color: #ac7c52;
 }
 
 /**** FOOTER ****/
