@@ -1,0 +1,14 @@
+{
+    "width": 16,
+    "height": 16,
+    "frames": [
+        "1",
+        "2",
+        "3"
+    ],
+    "animations": [{
+        "name": "flash",
+        "frames": [0, 1, 2]
+    }],
+    "tags": "misc"
+}

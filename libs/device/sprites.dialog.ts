@@ -1,6 +1,18 @@
 namespace sprites.dialog {
     //% fixedInstance jres blockIdentity=images._image
     //% tags="dialog"
+    export const bones = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
+    //% tags="dialog"
+    export const cityscape = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
+    //% tags="dialog"
+    export const desert = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
+    //% tags="dialog"
+    export const frogs = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
+    //% tags="dialog"
     export const hugeLeaf = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     //% tags="dialog"
@@ -20,6 +32,12 @@ namespace sprites.dialog {
     //% fixedInstance jres blockIdentity=images._image
     //% tags="dialog"
     export const mediumLeaf1 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
+    //% tags="dialog"
+    export const pineday = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
+    //% tags="dialog"
+    export const pinenight = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     //% tags="dialog"
     export const smallIndustrial0 = image.ofBuffer(hex``);
@@ -53,4 +71,7 @@ namespace sprites.dialog {
     //% fixedInstance jres blockIdentity=images._image
     //% tags="dialog"
     export const smallDialogcenterThick = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
+    //% tags="dialog"
+    export const starryclouds = image.ofBuffer(hex``);
 }
