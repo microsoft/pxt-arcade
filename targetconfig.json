@@ -15,7 +15,9 @@
             "microsoft/pxt-tick-event",
             "microsoft/pxt-tilemaps",
             "microsoft/pxt-skillmap-sample",
-            "microsoft/pxt-jacdac"
+            "microsoft/pxt-jacdac",
+            "mr-coxall/turtle-logo",
+            "microsoft/arcade-storytelling"
         ],
         "preferredRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
@@ -29,7 +31,8 @@
             "microsoft/arcade-minimap",
             "microsoft/arcade-timers",
             "microsoft/arcade-text",
-            "microsoft/pxt-tilemaps"
+            "microsoft/pxt-tilemaps",
+            "microsoft/arcade-storytelling"
         ],
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
@@ -46,7 +49,10 @@
         ]
     },
     "skillMap": {
-        "defaultPath": "github:microsoft/pxt-skillmap-sample/skillmap.md"
+        "defaultPath": "docs:/skillmap/intermediate-skillmap",
+        "pathAliases": {
+            "beginner": "docs:/skillmap/beginner-skillmap-2"
+        }
     },
     "galleries": {
         "Tutorials": "tutorials",
@@ -67,6 +73,6 @@
         "John Park's Workshop": "john-parks-workshop"
     },
     "electronManifest": {
-        "latest": "v1.3.44"
+        "latest": "v1.4.36"
     }
 }

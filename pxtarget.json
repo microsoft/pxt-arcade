@@ -108,6 +108,10 @@
         "libs/color-coded-tilemap",
         "libs/template"
     ],
+    "cacheusedblocksdirs": [
+        "skillmap/space",
+        "skillmap/platformer"
+    ],
     "compile": {
         "useUF2": true,
         "deployDrives": "(ARCADE|PY|FTHR840BOOT|ARCD)",
@@ -441,7 +445,7 @@
                 "aspectRatio": "0.89",
                 "permanent": true
             }
-        }        
+        }
     },
     "appTheme": {
         "logoUrl": "https://makecode.com/org",
@@ -559,7 +563,8 @@
         "openProjectNewTab": true,
         "hasReferenceDocs": true,
         "python": true,
-        "assetEditor": true
+        "assetEditor": true,
+        "immersiveReader": true
     },
     "queryVariants": {
         "skillsMap=1": {

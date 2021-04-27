@@ -1,0 +1,9 @@
+{
+    "width": 32,
+    "height": 32,
+    "animations": [{
+        "name": "bigButtonPress",
+        "frames": [0, 1]
+    }],
+    "tags": "misc"
+}

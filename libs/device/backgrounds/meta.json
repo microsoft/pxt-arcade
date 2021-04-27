@@ -1,0 +1,11 @@
+{
+    "width": 160,
+    "height": 120,
+    "blockIdentity": "images._image",
+    "creator": "image.ofBuffer",
+    "star": {
+        "namespace": "sprites.background",
+        "mimeType": "image/x-mkcd-f4"
+    },
+    "tags": "background"
+}

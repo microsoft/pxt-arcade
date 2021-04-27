@@ -22,6 +22,10 @@
         "sprites.space.ts",
         "sprites.vehicle.ts",
         "sprites.vehicle.jres",
+        "sprites.projectile.ts",
+        "sprites.projectile.jres",
+        "sprites.background.ts",
+        "sprites.background.jres",
         "startup.ts",
         "pxtsnippets.json"
     ],

@@ -265,7 +265,7 @@ forever(function () {
 
 ## Step 4
 
-😲 Uh-Oh 😲
+**😲 Uh-Oh 😲**
 
 Right now, running into an enemy INCREASES your score.  That's not right.
 
@@ -273,10 +273,10 @@ Let's make sure the code knows the difference between a projectile and myEnemy.
 
 ---
 
-🔲 From ``||sprites:Sprites||``, grab a ``||sprites:set [mySprite] kind to [Player]||``
+🔲 From ``||sprites:Sprites||``, grab a ``||sprites:set [mySprite2] kind to [Player]||``
 block and snap it just **ABOVE** the **pause** block in the enemy's **forever** loop container.
 
-🔲 In the new block, change **mySprite** to **myEnemy** and change **Player**
+🔲 In the new block, change **mySprite2** to **myEnemy** and change **Player**
 to **Enemy**.
 
 
@@ -311,7 +311,7 @@ forever(function () {
 
 ## Step 5
 
-😈 Wicked 😈
+**😈 Wicked 😈**
 
 Now the program knows your rock is an enemy. 
 What are we going to do about it?
@@ -342,7 +342,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 At this point, the player is still awarded points when they hit a rock.
 
-Let's subtract a life, instead.
+**Let's subtract a life, instead.**
 
 ---
 
@@ -366,9 +366,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## Step 7
 
-What an amazing creation!  
+**What an amazing creation!**  
 
-This game has it all...countless riches, enemies, winning, and losing!
+This game has it all...countless riches, enemies, winning, and losing!  Play it through before moving along.
 
-Click **Finish** to go to the share screen and publish your project
-to share with friends and family!
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

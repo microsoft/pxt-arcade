@@ -253,7 +253,7 @@ controller.moveSprite(mySprite, 0, 100)
 
 ## Step 2
 
-If the game gets wild, our sprite might leave the screen.  
+**If the game gets wild, our sprite might leave the screen.**   
 Let's prevent that. 
 
 ---
@@ -293,7 +293,7 @@ mySprite.setStayInScreen(true)
 
 ## Step 3
 
-🕔 Does this game feel long to you? 🕔
+**🕔 Does this game feel long to you? 🕔**
 
 We haven't added a way to win or lose.  
 Let's do that now by adding a countdown timer.
@@ -334,7 +334,7 @@ info.startCountdown(15)
 
 ## Step 4
 
-🥇 Everyone's a winner 🥇
+**🥇 Everyone's a winner 🥇**
 
 Right now, when time runs out, you lose the game. We can change that! 
 
@@ -357,7 +357,7 @@ info.onCountdownEnd(function () {
 
 ## Step 5
 
-🎊 Little celebrations 🎊
+**🎊 Little celebrations 🎊**
 
 We can easily add some flavor every time our sprite reaches a coin. 
 All we need to do is expand the **destroy** block.
@@ -398,7 +398,7 @@ to **2000** (2 seconds). Now your coins will randomly appear every 1-2 seconds!
 ```blocks
 
 forever(function () {
-    projectile = sprites.createProjectileFromSide(img`
+    let projectile = sprites.createProjectileFromSide(img`
         . . b b b b . . 
         . b 5 5 5 5 b . 
         b 5 d 3 3 d 5 b 
@@ -418,7 +418,7 @@ forever(function () {
 
 There you have it...a collector game with style AND class.  
 
-🏆 Well done 🏆
+**🏆 Now play your winning creation 🏆**
 
-Click **Finish** to publish your game so you can get a link to share
-with family and friends.
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

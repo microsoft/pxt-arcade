@@ -23,6 +23,12 @@ namespace sprites.builtin {
     //% fixedInstance jres blockIdentity=images._image
     //% tags="misc"
     export const bed2 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
+    //% tags="misc"
+    export const bigButtonPress0 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
+    //% tags="misc"
+    export const bigButtonPress1 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
     //% tags="tile misc"
     export const brick = image.ofBuffer(hex``);
@@ -587,6 +593,9 @@ namespace sprites.builtin {
     //% fixedInstance jres blockIdentity=images._tile
     //% tags="tile aquatic"
     export const oceanSand15 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
+    //% tags="misc"
+    export const pedestal = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     //% tags="aquatic"
     export const seaweed0 = image.ofBuffer(hex``);

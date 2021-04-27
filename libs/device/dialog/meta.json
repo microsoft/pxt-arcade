@@ -7,5 +7,14 @@
         "namespace": "sprites.dialog",
         "mimeType": "image/x-mkcd-f4"
     },
-    "tags": "dialog"
+    "tags": "dialog",
+    "standaloneSprites": [
+        "bones",
+        "cityscape",
+        "desert",
+        "frogs",
+        "pineday",
+        "pinenight",
+        "starryclouds"
+    ]
 }

@@ -1,6 +1,5 @@
 # Clicker Game
 
-### @autoexpandOff true
 
 
 ``` ghost
@@ -49,21 +48,40 @@ Let's make a clicker game!
 ![Click away](/static/skillmap/clicker/clicker-activity-1.gif "Click and buy bigger clickers" )
 
 
-## Step 1
-This crazy game tests your finger speed as you click your 
-way to the championships!  🏆🏆🏆
+## Step 2
+This crazy game will test your finger speed as you click your 
+way to the championships!  
+🏆🏆🏆
 
 Let's start building the scoreboard by adding a background color.
 
 ---
 
 🔲 Choose a background color by opening the ``||scene:Scene||`` category and dragging 
-the ``||scene: set background color to [ ]||`` block into the **on start** 
+``||scene: set background color to [ ]||`` into the ``||loops:on start||``
 container that's already in the workspace.
 
-🔲 Click the grey box to choose your own color.  
-*(Note: The grey represents empty, so if you leave the box grey, 
-your background will continue to look like the empty void of space.)*  
+🔲 When you're done, click **> Next** to see the next step.  
+
+
+```blocks
+//@highlight
+scene.setBackgroundColor(0)
+
+```
+
+
+## Step 3
+
+**🎨 Choose your color! 🎨**
+
+---
+
+
+🔲 Click the grey box in the new block to choose your own color.  
+
+**Note:** Grey represents empty, so if you leave the box grey, 
+your background will continue to look like the empty void of space.
 
 
 ```blocks
@@ -72,9 +90,10 @@ scene.setBackgroundColor(11)
 
 ```
 
-## Step 2
-Add a splash screen to let the user know to press the 
-Ⓐ button when they're ready to start playing.
+
+## Step 4
+Add a [__*splash screen*__](#splasht "A full-screen message that shows while a program or level is loading") to let the user know to press the 
+**Ⓐ** button when they're ready to start playing.
 
 ---
 
@@ -82,7 +101,7 @@ Add a splash screen to let the user know to press the
 drag the ``||game: splash [" "]||`` block into the bottom of the **on start** 
 container.
 
-🔲 Click inside the empty text area of the new block and type your instruction.  
+🔲 Click inside the empty text area of the new block and type your instruction.   
 
 
 ```blocks
@@ -92,13 +111,13 @@ game.splash("Press (A) to earn clicks!")
 
 ```
 
-## Step 3
+## Step 5
 
-⚡ Here comes the action ⚡
+**⚡ Here comes the action ⚡**
 
 Now the game needs a container to hold the code that 
 [__*increments*__](#addOne "adds to a number (usually adding 1)") 
-the score when the Ⓐ button is clicked.
+the score when the **Ⓐ** button is clicked.
 
 ---
 
@@ -107,7 +126,7 @@ the score when the Ⓐ button is clicked.
 empty spot in the workarea.  
 
 🔲 From ``||info:Info||``, drag out the ``||info:change score by [1]||`` block
-and snap it into the new container.  
+and snap it into the new container.   
 
 
 ```blocks
@@ -116,9 +135,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 4
+## Step 6
 
-🎮 Test your game in the simulator 🎮
+**🎮 Test your game in the simulator 🎮**
 
 This game is amazing...but it goes on forever! Add a countdown timer to give
 the player a clear endpoint.
@@ -127,13 +146,21 @@ the player a clear endpoint.
 
 🔲  Open the ``||info:Info||`` category and 
 drag the ``||info: start countdown [10] (s)||`` block into the bottom of the 
-**on start** container.   
+``||loops:on start||`` container.   
 
 
-## Step 5
+```blocks
+scene.setBackgroundColor(11)
+game.splash("Press (A) to earn clicks!")
+info.startCountdown(10)
+```
 
-🎉 Congrats 🎉
 
-You have your very own clicker game!
+## Step 7
 
-Make sure to click "Finish" so you can share with friends and compare scores!  
+**🎉 Congrats 🎉**
+
+You have your very own clicker game!  Play it in the simulator and see how many clicks you can get.
+
+Click **Finish** to return to the main page where you can share your game
+with family and friends to compare scores!

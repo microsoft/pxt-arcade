@@ -34,10 +34,23 @@
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true
     },
+    "level0": {
+        "id": "level0",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAxZTAwMGEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA0MDAwMDAwMDAwMDAwMDQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAzMDAwMDAwMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAxMDEwMDAwMDEwMDAwMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMTAxMDEwMTAxMDEwMTAxMDEwMDAwMDAwMDAwMDEwMDAwMDAwMDAwMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjIwMjIwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDIwMjIyMjIyMjIwMjAwMDAwMjAwMDAyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMg==",
+        "tileset": [
+            "myTiles.transparency16",
+            "myTiles.tile1",
+            "myTiles.tile3",
+            "myTiles.tile4",
+            "myTiles.tile5"
+        ],
+        "displayName": "level0"
+    },
     "level": {
         "id": "level",
         "mimeType": "application/mkcd-tilemap",
-        "data": "MTAxZTAwMGEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA0MDAwMDAwMDAwMDAwMDQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAzMDAwMDAwMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAxMDEwMDAwMDEwMDAwMDUwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMTAxMDEwMTAxMDEwMTAxMDEwMDAwMDAwMDAwMDUwMDAwMDAwMDAwMDUwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjIwMjIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMjIyMjIyMjIwMjAwMDAwMDAwMDAyMDIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMg==",
+        "data": "MTAxZTAwMGEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA0MDAwMDAwMDAwMDAwMDQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAzMDAwMDAwMDEwMDAwMDAwMDAwMDAwMDAxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAxMDEwMDAwMDEwNTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMTAxMDEwMTAxMDEwMTAxMDEwMDAwMDAwMDAwMDUwMDAwMDAwMDAwMDUwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMjIwMjIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMjIyMjIyMjIwMjAwMDAwMDAwMDAyMDIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMg==",
         "tileset": [
             "myTiles.transparency16",
             "myTiles.tile1",
@@ -45,7 +58,8 @@
             "myTiles.tile4",
             "myTiles.tile5",
             "myTiles.tile2"
-        ]
+        ],
+        "displayName": "platformer1"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
@@ -135,10 +149,10 @@ for (let value of tiles.getTilesByType(myTiles.tile5)) {
 
 ## Start @unplugged
 
-This tutorial will help add levels to your game. 
+This tutorial will help you add levels to your game. 
 
 To make level changes easier (and prevent having to write the same
-code again and again) we'll also learn to create a simple [**_function_**](#funky "group of code that can be called using a specific name").
+code again and again) we'll also learn to create a simple [**_function_**](#funky "grouping of code that can be called using a specific name").
 
 ![Levels and Functions](/static/skillmap/platformer/platformer4.gif "And now for something completely different!  And a little bit the same.")
 
@@ -148,14 +162,14 @@ code again and again) we'll also learn to create a simple [**_function_**](#funk
 First, let's create a new function!
 
 Functions are chunks of code that you can name and 
-[**_call_**](#callingYou "insert into your code using the named label") 
+[**_call_**](#callingYou "insert into your code using a named label") 
 over and over from inside your program.  Unlike loops, you can run the code inside a 
 function again and again, even if you're doing something else inbetween.
 
 ---
 
 
-🔲 In the toolbox, expand the ``||statusbar:˅ Advanced||`` tab and click 
+🔲 In the toolbox, expand the **˅ Advanced** tab and click 
 on the ``||functions: Functions||`` category.
 
 🔲 Press the ``||controller: Make a Function...||`` button to create your new function.
@@ -313,7 +327,7 @@ startNextLevel()
 
 ## Refactoring pt. 3
 
-🏆  Reach the trophy  🏆
+**🏆  Reach the trophy  🏆**
 
 The trophy tile would make a perfect doorway to the next level.  We already
 have an event for when the player overlaps that tile, we just need to change
@@ -323,8 +337,8 @@ what happens inside of it.
 
 🔲 Remove the ``||game: game over <WIN>||`` block from the 
 **on sprite overlaps 🏆** event 
-and replace it with a new ``||functions: call startNextLevel||`` block.  
-<br/>
+and replace it with a new ``||functions: call startNextLevel||`` block.   
+
 
 ```blocks
 let myEnemy: Sprite = null
@@ -363,7 +377,7 @@ function startNextLevel () {
 
 ## Variable
 
-👾 Lots of great games have more than two levels 👾
+**👾 Lots of great games have more than one level 👾**
 
 If we want to be able to keep track of the level we're on and
 recall that level whenever we need it, we're going to need
@@ -378,8 +392,8 @@ to make decisions instead of creating new code for every possibility.
 🔲 To make a new variable, go to the ``||variables: Variables||`` menu
 and click on ``||controller: Make a Variable...||`` .
 
-🔲 Enter **currentLevel** in the textbox and click **OK**.  
-<br/>
+🔲 Enter **currentLevel** in the textbox and click **OK**.   
+
 
 ## Variable 2
 
@@ -392,8 +406,8 @@ We'll need to [**_increment_**](#addOn "add to")
 
 
 🔲 Snap a ``||variables: change [currentLevel] by [1]||`` block 
-into the **top** of the **startNextLevel** function.  
-<br/>
+into the **top** of the **startNextLevel** function.   
+
 
 ```blocks
 let myEnemy: Sprite = null
@@ -440,8 +454,8 @@ This is the perfect place for another **if/then** element!
 ---
 
 🔲 Connect a new ``||logic: if <true> then||`` block near the **top** of 
-the **startNextLevel** function container, just below the block to **change currentLevel by 1** .  
-<br/>
+the **startNextLevel** function container, just below the block to **change currentLevel by 1** .   
+
 
 ```blocks
 let myEnemy: Sprite = null
@@ -494,8 +508,8 @@ using our original tilemap.
 
 🔲 Replace the first **0** in the logic arguement with  ``||variables:currentLevel||``. 
 
-🔲 Replace the second **0** of the logic argument with **1**.  
-<br/>
+🔲 Replace the second **0** of the logic argument with **1**.   
+
 
 ```blocks
 let myEnemy: Sprite = null
@@ -649,7 +663,7 @@ function startNextLevel () {
 
 ## Choosing a level pt. 3
 
-❓❓ Ready to take this to another level ❓❓
+**❓❓ Ready to take this to another level ❓❓**
 
 From here, adding new levels is extremely straightforward.  All you need to do is:
  - Add a new **else if** clause to your logic container
@@ -671,8 +685,8 @@ copy in the new **else if** condition slot.
 🔲 Change **1** to **2**.
 
 🔲 Duplicate the ``||scene: set tilemap to [ ]||`` block from level 1 and snap it into the 
-empty **else if** container.  
-<br/>
+empty **else if** container.   
+
 
 
 ```block
@@ -696,7 +710,7 @@ let currentLevel = 0
 
 ## Choosing a level pt. 4
 
-🎨 Time to get creative 🎨
+**🎨 Time to get creative 🎨**
 
 What would you like to add or remove from the tilemap for your second level?
 Click on the tilemap icon inside the ``||scene: set tilemap to [ ]||`` block
@@ -705,7 +719,7 @@ and edit it until you've got something of your own.
 Don't forget to leave a trophy tile in the new tilemap so the player has a way
 to win!
 
-You can follow those same steps to add a 3rd, 4th, or even 5th level!
+You can follow those same steps to add a 3rd, 4th, or even 5th level!  
 
 
 ## Enemy cleanup pt. 1
@@ -717,7 +731,7 @@ for (let value of sprites.allOfKind(SpriteKind.Enemy)) {
     }
 ```
 
-🎮 Try your game 🎮
+**🎮 Try your game 🎮**
 
 There may be a couple of hiccups with the level changes...for example, we 
 need to clean up enemies from the last level before loading a new one.
@@ -736,12 +750,7 @@ destroy them one by one. Fortunately, Arcade has a block for this exact purpose.
 
 🔲 Change the **array of sprites** kind to **Enemy**. 
 
----
 
-
-**Tip:** To use the ``||sprites:array of sprites of kind [Player]||`` block,
-you'll need to remove it from  ``||variables:set [sprite list] to [array of sprites of kind [Player]]||``
-(see the hint for what the code should look like). 
 
 ```blocks
 let myEnemy: Sprite = null
@@ -805,8 +814,7 @@ attribute from the header of the **for element** loop.
 ---
 
 
-** That's it!  Your game can have as many levels as you can imagine!**
-
+** Your game can have as many levels as you can imagine!**
 
 
 ```blocks
@@ -855,3 +863,9 @@ function startNextLevel () {
 }
 ```
 
+
+##Finale
+🔥 **That's it! Now give your game a try!** 🔥  
+
+Click **Finish** to return to the main page where you can share your game
+with family and friends!
