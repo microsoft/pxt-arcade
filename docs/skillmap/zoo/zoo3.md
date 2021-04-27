@@ -61,9 +61,10 @@ scene.onOverlapTile(SpriteKind.Penguin, assets.tile`tile`, function (sprite, loc
 })
 
 sprites.onCreated(SpriteKind.Penguin, function(sprite: Sprite) {
-    sprite.setVelocity(randint(-150, 150), randint(-150, 150))
+    sprite.setVelocity(randint(10, 150), randint(-150, 150))
     sprite.setFlag(SpriteFlag.BounceOnWall, true)
     sprite.lifespan = 2000
+    sprite.y = 80
 })
 ```
 
