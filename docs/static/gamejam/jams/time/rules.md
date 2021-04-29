@@ -2,9 +2,9 @@
 
 The theme for this jam is "time". In other words, we're looking for games with day-night cycles, countdown clocks, or other time-based mechanics. Here are some examples of how you could use this theme:
 
-1.
-2.
-3.
+1. A cooking game where you need to press a button to remove a cake from an oven at just the right moment
+2. A farming game where you plant/harvest crops based on the season
+3. A game where you need to arrange all the articles on a cover page before the deadline for tomorrow's newspaper
 
 DEMO GIF 1 | DEMO GIF 2 | DEMO GIF 3
 -- | --
@@ -12,12 +12,12 @@ DEMO GIF 1 | DEMO GIF 2 | DEMO GIF 3
 
 You can interpret "time" however you want, but someone playing your game should be able to see how it relates to the theme without extra explanation.
 
-## Duration
+## Don't run out of *time*
 The game jam will run from **May 3**, 2021 to **May 17**, 2021
 
 You will have roughly two weeks to build and submit your games for the competition! For you procrastinators out there, we will accept games up until 11:59pm on May 17th.
 
-## No experience needed!
+## First *time* user?
 
 Never programmed in Microsoft MakeCode Arcade before? No problem! Check out our [game maker guide](https://arcade.makecode.com/--skillmap) to learn the basics of making a game!
 
@@ -29,7 +29,7 @@ Never programmed in Microsoft MakeCode Arcade before? No problem! Check out our 
 4. You must be at least 9 years old to participate.
 5. All games must be submitted by someone who is at least 13 years old. Younger students are welcome to participate, but it must be in partnership with an adult and with parent permission.
 
-## Speculate Together
+## Spend some *time* with us
 
 This game jam is designed to be an easy introduction to making games, even for folks without prior programming experience! We highly encourage parents and educators to work with interested students to bring their games to life.
 
