@@ -1,0 +1,16 @@
+{
+    "width": 16,
+    "height": 16,
+    "blockIdentity": "images._image",
+    "creator": "image.ofBuffer",
+    "star": {
+        "namespace": "sprites.swamp",
+        "mimeType": "image/x-mkcd-f4"
+    },
+    "tags": "misc",
+    "standaloneSprites": [
+        "swampTree1",
+        "swampTree2",
+        "swampTree3"
+    ]
+}

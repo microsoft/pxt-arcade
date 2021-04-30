@@ -7,6 +7,9 @@ namespace sprites.background {
     export const cityscape = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     //% tags="background"
+    export const cityscape2 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
+    //% tags="background"
     export const desert = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     //% tags="background"
