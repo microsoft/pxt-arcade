@@ -1,0 +1,13 @@
+{
+    "width": 24,
+    "height": 24,
+    "animations": [{
+        "name": "kaijuMomAttackRight",
+        "frames": [0, 1, 2, 3, 4, 5]
+    }, {
+        "name": "kaijuMomAttackLeft",
+        "frames": [0, 1, 2, 3, 4, 5],
+        "flippedHorizontal": true
+    }],
+    "tags": "misc"
+}
