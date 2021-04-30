@@ -1,0 +1,7 @@
+{
+    "animations": [{
+        "name": "witchBack",
+        "frames": [0, 1, 2, 3]
+    }],
+    "tags": "forest"
+}
