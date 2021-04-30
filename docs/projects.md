@@ -19,7 +19,7 @@
     {
         "name": "Live Coding",
         "url": "/live-coding",
-        "imageUrl": "/static/live-coding/7pBGS_tKfmU.jpg"
+        "imageUrl": "/static/live-coding/sgeHKw437oE.jpg"
     },
     {
         "name": "Blocks Games",
