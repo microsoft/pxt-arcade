@@ -26,6 +26,10 @@
         "sprites.projectile.jres",
         "sprites.background.ts",
         "sprites.background.jres",
+        "sprites.kaiju.ts",
+        "sprites.kaiju.jres",
+        "sprites.swamp.ts",
+        "sprites.swamp.jres",
         "startup.ts",
         "pxtsnippets.json"
     ],
