@@ -4,17 +4,13 @@
     "blockIdentity": "images._image",
     "creator": "image.ofBuffer",
     "star": {
-        "namespace": "sprites.dialog",
+        "namespace": "sprites.swamp",
         "mimeType": "image/x-mkcd-f4"
     },
-    "tags": "dialog",
+    "tags": "misc",
     "standaloneSprites": [
-        "bones",
-        "cityscape",
-        "desert",
-        "frogs",
-        "pineday",
-        "pinenight",
-        "starryclouds"
+        "swampTree1",
+        "swampTree2",
+        "swampTree3"
     ]
 }

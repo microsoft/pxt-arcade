@@ -1,0 +1,16 @@
+{
+    "width": 16,
+    "height": 16,
+    "frames": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+    ],
+    "animations": [{
+        "name": "star",
+        "frames": [0, 1, 2, 3, 4]
+    }],
+    "tags": "misc"
+}
