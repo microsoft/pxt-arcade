@@ -16,6 +16,14 @@
   "directOpen": true
 },
 {
+  "name": "Time Flies",
+  "description": "Help a frog catch a fly before the timer runs out in this game jam themed tutorial!",
+  "url": "/tutorials/froggy",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/froggy/card.png",
+  "largeImageUrl": "/static/tutorials/froggy/frog.png"
+},
+{
   "name": "Chase the Pizza",
   "description": "Get started creating a simple game to chase a pizza around the screen and collect as many points as possible before time runs out!",
   "url": "/tutorials/chase-the-pizza",
