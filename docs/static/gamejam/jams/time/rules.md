@@ -19,7 +19,13 @@ You will have roughly two weeks to build and submit your games for the competiti
 
 ## First *time* user?
 
-Never programmed in Microsoft MakeCode Arcade before? No problem! Check out our [game maker guide](https://arcade.makecode.com/--skillmap) to learn the basics of making a game!
+<div id="froggy-gif">
+    <img src="/static/tutorials/froggy/frog.gif"/>
+</div>
+
+Never programmed in Microsoft MakeCode Arcade before? No problem! Try out our [time-themed tutorial](aka.ms/timeflies) to learn the ropes.
+
+Want even more? Check out our [game maker guide](https://arcade.makecode.com/--skillmap) to learn the basics of making a game!
 
 ## Rules
 
