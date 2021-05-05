@@ -114,7 +114,7 @@
 * tags: easy, clicker, game
 * next: clicker-activity2
 
-* url: /skillmap/clicker/clicker1 
+* url: /skillmap/clicker-themed/clickert1 
 * imageUrl: /static/skillmap/clicker/clicker-activity-1.gif
 
 
@@ -128,7 +128,7 @@
 * next: clicker-activity3
 
 
-* url: /skillmap/clicker/clicker2 
+* url: /skillmap/clicker-themed/clickert2 
 * imageUrl: /static/skillmap/clicker/clicker-activity-2.gif
 
 
@@ -140,7 +140,7 @@
 * tags: easy, clicker, game
 * next: pusher3, clicker-activity4
 
-* url: /skillmap/clicker/clicker3 
+* url: /skillmap/clicker-themed/clickert3 
 * imageUrl: /static/skillmap/clicker/clicker-activity-3.gif
 
 
@@ -152,7 +152,7 @@
 * tags: easy, clicker, game
 * next: beginner-cert-2
 
-* url: /skillmap/clicker/clicker4 
+* url: /skillmap/clicker-themed/clickert4 
 * imageUrl: /static/skillmap/clicker/clicker-activity-4.gif
 
 
@@ -184,21 +184,9 @@
 * tags: easy, collector, game
 * next: collector-activity2 
 
-* url: /skillmap/collector/collector1 
+* url: /skillmap/collector-themed/collectort1 
 * imageUrl: /static/skillmap/collector/collector-activity-1.gif
 
-
-### collector-activity1a
-* allowcodecarryover: false
-
-* name: Design Your Background
-* type: tutorial
-* description: Spice up your game by adding a custom background!
-* tags: easy, collector, game, background
-
-
-* url: /skillmap/collector/collector1 
-* imageUrl: /static/skillmap/collector/collector-activity-1.gif
 
 
 ### collector-activity2
@@ -208,9 +196,9 @@
 * description: Make a few simple changes for a game that's twice as fun! 
 * tags: easy, collector, game
 * required: 1 collector
-* next: collector-activity1a, collector-activity3
+* next: collector-activity3
 
-* url: /skillmap/collector/collector2 
+* url: /skillmap/collector-themed/collectort2 
 * imageUrl: /static/skillmap/collector/collector-activity-2.gif
 
 
@@ -220,22 +208,10 @@
 * type: tutorial
 * description: Learn to add enemy projectiles to your game!
 * tags: easy, collector, game
-* next: collector-activity4, collector-activity3a
+* next: collector-activity4
 
-* url: /skillmap/collector/collector3
+* url: /skillmap/collector-themed/collectort3
 * imageUrl: /static/skillmap/collector/collector-activity-3.gif
-
-
-### collector-activity3a
-
-* name: Multiple Enemies
-* type: tutorial
-* description: Send a mix of different enemies toward your hero!
-* tags: easy, collector, game
-
-
-* url: /skillmap/collector/collector4
-* imageUrl: /static/skillmap/collector/collector-activity-4.gif
 
 
 
@@ -245,20 +221,11 @@
 * type: tutorial
 * description: Add extra lives to your collector game!
 * tags: easy, collector, game
-* next: beginner-cert-3
+* next: collector-activity5
 
-* url: /skillmap/collector/collector4
+* url: /skillmap/collector-themed/collectort4
 * imageUrl: /static/skillmap/collector/collector-activity-4.gif
 
-
-
-### beginner-cert-3
-* name: Congrats!
-* kind: completion
-* type: certificate
-* url: /static/skillmap/certificates/collector-game.pdf
-* imageUrl: /static/skillmap/certificates/collector-cert.png
-* next: pusher4, collector-activity5
 
 
 ### collector-activity5
@@ -267,9 +234,19 @@
 * type: tutorial
 * description: Now it's up to your imagination!
 * tags: easy, collector, game
+* next: beginner-cert-3
 
-* url: /skillmap/collector/collector5
+* url: /skillmap/collector-themed/collectort5
 * imageUrl: /static/skillmap/collector/collector-activity-4.gif
+
+
+### beginner-cert-3
+* name: Congrats!
+* kind: completion
+* type: certificate
+* url: /static/skillmap/certificates/collector-game.pdf
+* imageUrl: /static/skillmap/certificates/collector-cert.png
+
 
 ### pusher4
 * name: Blank node
