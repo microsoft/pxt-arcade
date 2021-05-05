@@ -121,10 +121,10 @@ what fun is it to get extra power for free? Let's add code to charge the player 
 
 ---
 
-🔲 From the ``||info:Info||`` category, grab a ``||info:change score by [1]||``
+► From the ``||info:Info||`` category, grab a ``||info:change score by [1]||``
 block and snap it into the top of the **on B button pressed** container.
 
-🔲 Change the value in the new block from **1** to **-10**.   
+► Change the value in the new block from **1** to **-10**.   
 
 ```blocks
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -146,11 +146,11 @@ upgrade the power.
 
 ---
 
-🔲 From ``||logic:Logic||``, choose the top 
+► From ``||logic:Logic||``, choose the top 
 ``||logic:if <true> then||`` container and drag it into the top of your
 **on B button pressed** container already in the workspace. 
 
-🔲 To compare values, open the ``||logic: Logic||``
+► To compare values, open the ``||logic: Logic||``
 category and grab a ``||logic: [0] [<] [0]||`` to replace **`<true>`**.
 
 
@@ -173,11 +173,11 @@ before we charge the player 10 points.
 
 ---
 
-🔲 To make sure the score is larger than (or equal to) 10, replace the first
+► To make sure the score is larger than (or equal to) 10, replace the first
 **0** in ``||logic: [0] [<] [0]||`` with **10** and change **<**
 to **≤**.
 
-🔲 Open the ``||info:Info||`` category and find the ``||info:score||`` value block.
+► Open the ``||info:Info||`` category and find the ``||info:score||`` value block.
 Grab it and drop it in to replace the remaining **0** of the comparison argument.  
 
 
@@ -201,7 +201,7 @@ Now if the player has a large enough score, you can charge them
 
 ---
 
-🔲 The code to adjust the score and power are already at the bottom of the 
+► The code to adjust the score and power are already at the bottom of the 
 **on B button pressed** container.  Grab all of the code below and 
 drag it into the empty **if/then** container.  
 
@@ -233,14 +233,14 @@ buy the clicker.
 
 ---
 
-🔲 We already have a note that shows **if** the player has enough points.  
+► We already have a note that shows **if** the player has enough points.  
 Click the **⊕** at the bottom of the **if/then** container to create an **else** space 
 for code that runs when the **if** statement is not true.
 
-🔲 Now you have an **else** container.  Grab another 
+► Now you have an **else** container.  Grab another 
 ``||game:show long text [" "] [bottom]||`` and drag it into the empty **else**.
 
-🔲 Click into the textarea of the new block and write a message to let your
+► Click into the textarea of the new block and write a message to let your
 player know that they didn't have enough points for an auto-clicker.
 
 

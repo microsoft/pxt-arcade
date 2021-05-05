@@ -138,19 +138,7 @@
 * type: tutorial
 * description: Add code to make your simple clicker more powerful!
 * tags: easy, clicker, game
-* next: pusher3, clicker-activity4
-
-* url: /skillmap/clicker-themed/clickert3 
-* imageUrl: /static/skillmap/clicker/clicker-activity-3.gif
-
-
-### clicker-activity4
-
-* name: Clicker Store
-* type: tutorial
-* description: Make a simple store that lets players buy more power! 
-* tags: easy, clicker, game
-* next: beginner-cert-2
+* next: pusher3, beginner-cert-2
 
 * url: /skillmap/clicker-themed/clickert4 
 * imageUrl: /static/skillmap/clicker/clicker-activity-4.gif

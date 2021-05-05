@@ -62,14 +62,14 @@ Let's create a game that brings back some of the iconic arcade style that we lov
 
 ---
 
-🔲 From the ``||sprites:Sprites||`` category, grab 
+► From the ``||sprites:Sprites||`` category, grab 
 ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
 and drag it into the empty **on start** container in the workspace.
 
-🔲 Get to the **Gallery** by clicking inside the grey sprite image square 
+► Get to the **Gallery** by clicking inside the grey sprite image square 
 and toggling the switch at the top. 
 
-🔲 Choose one of our pre-loaded sprite images...or stay in 
+► Choose one of our pre-loaded sprite images...or stay in 
 **Edit** mode to create your own.  Click **Done** once you're
 happy with your sprite.
 
@@ -108,14 +108,14 @@ Let's get our sprite moving up and down with the controller.
 
 ---
 
-🔲 From the ``||contoller:Controller||`` category, grab a 
+► From the ``||contoller:Controller||`` category, grab a 
 ``||controller:move [mySprite] with buttons ⊕||`` 
 block and snap it into the bottom of the **on start** container.
 
-🔲 Click the **⊕** button on the new block to show extra 
+► Click the **⊕** button on the new block to show extra 
  [__*arguments*__](#argue "extra chunks of information the block needs"). 
 
-🔲 To keep the sprite from moving side-to-side, change 
+► To keep the sprite from moving side-to-side, change 
 [__*vx*__](#whatVX "horizontal velocity") (velocity on x) to **0**.
 
 
@@ -155,18 +155,18 @@ Let's toss some coins toward it every couple of seconds...**forever**.
 
 ---
 
-🔲 From ``||loops:Loops||`` category, grab a 
+► From ``||loops:Loops||`` category, grab a 
 ``||loops:forever||`` loop container and drag it out into 
 an empty spot on the workspace.
 
-🔲 From ``||sprites:Sprites||``, grab
+► From ``||sprites:Sprites||``, grab
 ``||variables:set [projectile] to projectile [ ] from side with vx [50] vy [50]||`` 
 and snap it into the empty **forever** container.
 
-🔲 Choose a coin sprite for your projectile by clicking on the grey box and toggling
+► Choose a coin sprite for your projectile by clicking on the grey box and toggling
 to **Gallery** or stay in the **Editor** and create your own.
 
-🔲 To make the projectile fly quickly from right to left, change 
+► To make the projectile fly quickly from right to left, change 
 [__*vx*__](#whatVX "horizontal velocity") to **-150**
 and [__*vy*__](#whatVY "vertical velocity") to **0**.
 
@@ -200,15 +200,15 @@ send projectiles from a random height each time.
 
 ---
 
-🔲 From  ``||sprites:Sprites||``, grab a 
+► From  ``||sprites:Sprites||``, grab a 
 ``||sprites:set [mySprite] [x] to [0]||`` 
 block and snap it into the end of the **forever** loop container.
 
-🔲 Change **mySprite** to **projectile** using the first dropdown menu.
+► Change **mySprite** to **projectile** using the first dropdown menu.
 
-🔲 Change **x** to **y** using the other dropdown menu.
+► Change **x** to **y** using the other dropdown menu.
 
-🔲 Replace **0** with ``||math:pick random [0] to [10]||``.  
+► Replace **0** with ``||math:pick random [0] to [10]||``.  
 (From the ``||math:Math||`` category)
 
 
@@ -238,14 +238,14 @@ forever(function () {
 
 ---
 
-🔲 Help the coins spread out by changing the largest random number from 
+► Help the coins spread out by changing the largest random number from 
 **10** to **120**.
 
-🔲 Keep the coins from shooting out at the speed of light by 
+► Keep the coins from shooting out at the speed of light by 
 adding a ``||loops:pause [100] ms||`` block (from the  ``||loops:Loops||``
 category) to the end of the **forever** loop.
 
-🔲 Change the pause time to **1500 ms** by clicking in the textbox and typing 
+► Change the pause time to **1500 ms** by clicking in the textbox and typing 
 **1500** instead of choosing a time from the dropdown menu.
 
 ```blocks
@@ -281,11 +281,11 @@ Let's change that.
 
 ---
 
-🔲 From ``||sprites:Sprites||``, grab an 
+► From ``||sprites:Sprites||``, grab an 
 ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``
 container and drop it into an empty area of the workspace.
 
-🔲 Change the second kind from **Player** to **Projectile**.
+► Change the second kind from **Player** to **Projectile**.
 
 ```blocks
 
@@ -304,11 +304,11 @@ overlaps a projectile.
 
 ---
 
-🔲 From ``||sprites:Sprites||``, grab
+► From ``||sprites:Sprites||``, grab
 ``||sprites:destroy [mySprite] ⊕||`` and snap it into the empty 
 **on sprite overlaps** container. 
 
-🔲 To make sure that the correct projectile is destroyed, grab the 
+► To make sure that the correct projectile is destroyed, grab the 
 ``||variables:otherSprite||`` argument from the header of the 
 **on sprite overlaps** container and drop it into the
 ``||sprites:destroy [mySprite] ⊕||`` block to replace the value **mySprite**.
@@ -331,7 +331,7 @@ a coin.
 
 ---
 
-🔲 From ``||info:Info||``, grab
+► From ``||info:Info||``, grab
 ``||info:change score by [1]||`` and snap it into the bottom of the 
 **on sprite overlaps** container.
 
