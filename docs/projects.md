@@ -19,7 +19,7 @@
     {
         "name": "Live Coding",
         "url": "/live-coding",
-        "imageUrl": "/static/live-coding/sgeHKw437oE.jpg"
+        "imageUrl": "/static/live-coding/7pBGS_tKfmU.jpg"
     },
     {
         "name": "Blocks Games",
@@ -43,7 +43,7 @@
     {
         "name": "Advanced Livestream",
         "url": "/advanced-stream",
-        "imageUrl": "/static/advanced-stream/SvXeJevUkb4.jpg"
+        "imageUrl": "/static/livestream-games/boss-rush.png"
     },
     {
         "name": "Community Games",

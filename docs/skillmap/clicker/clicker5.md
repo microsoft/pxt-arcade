@@ -1,6 +1,5 @@
 # Bigger Clicker
 
-### @autoexpandOff true
 
 ```assetjson
 {
@@ -18,7 +17,7 @@
 ```template
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (10 <= info.score()) {
-        power2 += 1
+        power += 1
         info.changeScoreBy(-10)
         game.showLongText("Extra click purchased", DialogLayout.Bottom)
     } else {
@@ -26,13 +25,13 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.changeScoreBy(power2)
+    info.changeScoreBy(power)
     mySprite.startEffect(effects.spray, 100)
 })
 info.onCountdownEnd(function () {
     game.over(true, effects.confetti)
 })
-let power2 = 0
+let power = 0
 let mySprite: Sprite = null
 scene.setBackgroundColor(11)
 info.startCountdown(10)
@@ -55,7 +54,7 @@ mySprite = sprites.create(img`
     ........bbb11111bb............
     ..........bbbbbbb.............
     `, SpriteKind.Player)
-power2 = 1
+power = 1
 
 
 ```
@@ -345,7 +344,8 @@ uppie = 0
 
 ## Introduction @unplugged
 
-Now you've got the skills to go off-script and make something from your own imagination. 
+Now you've got the skills to go off-script and make something from 
+your own imagination.
 
 Turn your clicker into something new.  How do you want the clicker work for you?
 
@@ -353,7 +353,10 @@ Turn your clicker into something new.  How do you want the clicker work for you?
 
 ## Step 1
 
-The code for an advanced clicker game is in the workspace, but can you do even more?
+**The code for an advanced clicker game is in the workspace,
+but can you do even more?**
+
+---
 
 Make your own magnificent creation, or attempt one of these mods:
 - Get your sprite to appear at a random location with each click
@@ -362,5 +365,7 @@ Make your own magnificent creation, or attempt one of these mods:
 - Make your sprite dance by choosing a random image with each click
 
 
+## Step 2
 
-When you're done, click **Finish** to share your game with friends and family!   
+When you're done, click **Finish** to return to the main page where you can save your game to your gallery or share it
+with family and friends!

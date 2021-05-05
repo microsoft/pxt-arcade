@@ -1,0 +1,15 @@
+{
+    "width": 16,
+    "height": 16,
+    "frames": [
+        "1",
+        "2",
+        "3",
+        "4"
+    ],
+    "animations": [{
+        "name": "laser",
+        "frames": [0, 1, 2, 3]
+    }],
+    "tags": "misc"
+}

@@ -458,8 +458,7 @@ game.onUpdateInterval(1000, function () {
         . . . . . . . . . . . . . . . .
     `, SpriteKind.Enemy)
     bogey.setVelocity(-100, 0)
-    bogey.left = scene.screenWidth()
-    bogey.y = randint(0, scene.screenHeight())
+    bogey.setPosition(160, randint(5, 115))
     // @highlight
     bogey.setFlag(SpriteFlag.AutoDestroy, true)
 })
@@ -521,8 +520,7 @@ We should add **1** to the player score for each bogey we hit.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    sprite.destroy(effects.fire, 500)
+    otherSprite.destroy(effects.fire, 500)
     // @highlight
     info.changeScoreBy(1)
 })
@@ -549,7 +547,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ```
 
 
-## Step 13
+## Step 14
 
 If we're hit, we want the camera to shake, the bogey to explode,
 and a life to be removed from our indicator.

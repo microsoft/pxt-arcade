@@ -1,0 +1,13 @@
+{
+    "width": 24,
+    "height": 16,
+    "animations": [{
+        "name": "planeLeft",
+        "frames": [0, 1, 2, 3, 4, 5]
+    }, {
+        "name": "planeRight",
+        "frames": [0, 1, 2, 3, 4, 5],
+        "flippedHorizontal": true
+    }],
+    "tags": "misc"
+}
