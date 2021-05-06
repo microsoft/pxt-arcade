@@ -9,9 +9,9 @@ Let's make a clicker game!
 
 
 ## Step 2
-**⭐ This game will test your speed as you click to show appreciation ⭐**
+**⭐ This game will test your speed as you click as quickly as possible to earn points. ⭐**
 
-Let's start prepping the stage with a background.
+Let's prep the stage by adding a background.
 
 ---
 
