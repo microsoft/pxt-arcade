@@ -140,8 +140,8 @@
 * tags: easy, clicker, game
 * next: pusher3, beginner-cert-2
 
-* url: /skillmap/clicker-themed/clickert4 
-* imageUrl: /static/skillmap/clicker/clicker-activity-4.gif
+* url: /skillmap/clicker-themed/clickert3 
+* imageUrl: /static/skillmap/clicker/clicker-activity-3.gif
 
 
 
