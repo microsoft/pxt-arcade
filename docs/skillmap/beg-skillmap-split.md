@@ -115,7 +115,7 @@
 * next: clicker-activity2
 
 * url: /skillmap/clicker-themed/clickert1 
-* imageUrl: /static/skillmap/clicker/clicker-activity-1.gif
+* imageUrl: /static/skillmap/clicker/clickert1.gif
 
 
 
@@ -129,7 +129,7 @@
 
 
 * url: /skillmap/clicker-themed/clickert2 
-* imageUrl: /static/skillmap/clicker/clicker-activity-2.gif
+* imageUrl: /static/skillmap/clicker/clickert2.gif
 
 
 ### clicker-activity3
@@ -141,7 +141,7 @@
 * next: pusher3, beginner-cert-2
 
 * url: /skillmap/clicker-themed/clickert3 
-* imageUrl: /static/skillmap/clicker/clicker-activity-3.gif
+* imageUrl: /static/skillmap/clicker/clickert3.gif
 
 
 
@@ -173,7 +173,7 @@
 * next: collector-activity2 
 
 * url: /skillmap/collector-themed/collectort1 
-* imageUrl: /static/skillmap/collector/collector-activity-1.gif
+* imageUrl: /static/skillmap/collector/collectort1.gif
 
 
 
@@ -187,7 +187,7 @@
 * next: collector-activity3
 
 * url: /skillmap/collector-themed/collectort2 
-* imageUrl: /static/skillmap/collector/collector-activity-2.gif
+* imageUrl: /static/skillmap/collector/collectort2.gif
 
 
 ### collector-activity3

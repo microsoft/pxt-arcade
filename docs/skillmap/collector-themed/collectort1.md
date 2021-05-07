@@ -3,44 +3,24 @@
 
 ```ghost
 
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    info.changeScoreBy(1)
-})
 let projectile: Sprite = null
-let mySprite = sprites.create(img`
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . b b b b b b . . . . 
-    . . . . . b b 5 5 5 5 5 b . . . 
-    . . . . b b 5 b c 5 5 d 4 c . . 
-    . b b b b 5 5 5 b f d d 4 4 4 b 
-    . b d 5 b 5 5 b c b 4 4 4 4 b . 
-    . . b 5 5 b 5 5 5 4 4 4 4 b . . 
-    . . b d 5 5 b 5 5 5 5 5 5 b . . 
-    . b d b 5 5 5 d 5 5 5 5 5 5 b . 
-    b d d c d 5 5 b 5 5 5 5 5 5 b . 
-    c d d d c c b 5 5 5 5 5 5 5 b . 
-    c b d d d d d 5 5 5 5 5 5 5 b . 
-    . c d d d d d d 5 5 5 5 5 d b . 
-    . . c b d d d d d 5 5 5 b b . . 
-    . . . c c c c c c c c b b . . . 
-    `, SpriteKind.Player)
+
+scene.setBackgroundImage(assets.image`Freeway`)
+scroller.scrollBackgroundWithSpeed(-50, 0)
+let mySprite = sprites.create(assets.image`Momma`, SpriteKind.Player)
 controller.moveSprite(mySprite, 0, 100)
-duck.setFlag(SpriteFlag.StayInScreen, true)
+mySprite.setStayInScreen(true)
+animation.runImageAnimation(
+mySprite,
+assets.animation`Momma Moving`,
+100,
+true
+)
+
 forever(function () {
-    projectile = sprites.createProjectileFromSide(img`
-        . . b b b b . . 
-        . b 5 5 5 5 b . 
-        b 5 d 3 3 d 5 b 
-        b 5 3 5 5 1 5 b 
-        c 5 3 5 5 1 d c 
-        c d d 1 1 d d c 
-        . f d d d d f . 
-        . . f f f f . . 
-        `, -90, 0)
+    projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
     projectile.y = randint(0, 120)
-    pause(1500)
+    pause(randint(1000, 2000))
 })
 
 ```
@@ -48,52 +28,38 @@ forever(function () {
 
 ## Intro @unplugged
 
-Ready to give your **W,A,S,D** keys a workout? 
+Ready to test your agility? 
 
-Let's create a game that brings back some of the iconic arcade style that we love.
+Let's create a game that brings back that iconic arcade style!
 
-![Code a Collector Game](/static/skillmap/collector/collector-activity-1.gif "Grab that coin!" )
+![Code a Collector Game](/static/skillmap/collector/collectort1.gif "Grab the baby before it runs away!" )
 
 
 
 ## Step 2
 
-**🐤 This game needs a** [__*sprite*__](#sprote "a dynamic 2-D image")**. 🐤**
+**🦖 This game needs a** [__*sprite*__](#sprote "a dynamic 2-D image") 🦖
+
+We're going to start with a momma dinosaur.
 
 ---
 
 ► From the ``||sprites:Sprites||`` category, grab 
 ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
-and drag it into the empty **on start** container in the workspace.
+and drag it into the empty ``||loops:on start||`` container in the workspace.
 
-► Get to the **Gallery** by clicking inside the grey sprite image square 
-and toggling the switch at the top. 
+► Click the **grey square** in the new block to open the image editor and draw 
+a ``||sprites:Player||`` sprite.  
 
-► Choose one of our pre-loaded sprite images...or stay in 
-**Edit** mode to create your own.  Click **Done** once you're
-happy with your sprite.
+---
+
+**Hint:** If you want to use the same sprites featured in the hints, toggle the tab 
+above the image editor until you get to **My Assets**.
 
 
 ```blocks
 //@highlight
-let mySprite = sprites.create(img`
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . b b b b b b . . . . 
-    . . . . . b b 5 5 5 5 5 b . . . 
-    . . . . b b 5 b c 5 5 d 4 c . . 
-    . b b b b 5 5 5 b f d d 4 4 4 b 
-    . b d 5 b 5 5 b c b 4 4 4 4 b . 
-    . . b 5 5 b 5 5 5 4 4 4 4 b . . 
-    . . b d 5 5 b 5 5 5 5 5 5 b . . 
-    . b d b 5 5 5 d 5 5 5 5 5 5 b . 
-    b d d c d 5 5 b 5 5 5 5 5 5 b . 
-    c d d d c c b 5 5 5 5 5 5 5 b . 
-    c b d d d d d 5 5 5 5 5 5 5 b . 
-    . c d d d d d d 5 5 5 5 5 d b . 
-    . . c b d d d d d 5 5 5 b b . . 
-    . . . c c c c c c c c b b . . . 
-    `, SpriteKind.Player)
+let mySprite = sprites.create(assets.image`Momma`, SpriteKind.Player)
 
 ```
 
@@ -110,7 +76,7 @@ Let's get our sprite moving up and down with the controller.
 
 ► From the ``||contoller:Controller||`` category, grab a 
 ``||controller:move [mySprite] with buttons ⊕||`` 
-block and snap it into the bottom of the **on start** container.
+block and snap it into **the bottom** of the **on start** container.
 
 ► Click the **⊕** button on the new block to show extra 
  [__*arguments*__](#argue "extra chunks of information the block needs"). 
@@ -119,84 +85,150 @@ block and snap it into the bottom of the **on start** container.
 [__*vx*__](#whatVX "horizontal velocity") (velocity on x) to **0**.
 
 
-
-
 ```blocks
-let mySprite = sprites.create(img`
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . b b b b b b . . . . 
-    . . . . . b b 5 5 5 5 5 b . . . 
-    . . . . b b 5 b c 5 5 d 4 c . . 
-    . b b b b 5 5 5 b f d d 4 4 4 b 
-    . b d 5 b 5 5 b c b 4 4 4 4 b . 
-    . . b 5 5 b 5 5 5 4 4 4 4 b . . 
-    . . b d 5 5 b 5 5 5 5 5 5 b . . 
-    . b d b 5 5 5 d 5 5 5 5 5 5 b . 
-    b d d c d 5 5 b 5 5 5 5 5 5 b . 
-    c d d d c c b 5 5 5 5 5 5 5 b . 
-    c b d d d d d 5 5 5 5 5 5 5 b . 
-    . c d d d d d d 5 5 5 5 5 d b . 
-    . . c b d d d d d 5 5 5 b b . . 
-    . . . c c c c c c c c b b . . . 
-    `, SpriteKind.Player)
-    //@highlight
+let mySprite = sprites.create(assets.image`Momma`, SpriteKind.Player)
+//@highlight
 controller.moveSprite(mySprite, 0, 100)
 
 ```
 
 
-
 ## Step 4
 
-**💰 The sprite needs something to collect 💰**
+**🎮  Try your game in the simulator 🎮**
+ 
+Make sure your ``||sprites:Player||`` moves up and down with the joypad, arrow keys, or **W** and **S** keys.
 
-Let's toss some coins toward it every couple of seconds...**forever**.
+
+## Step 5
+
+**Did you notice your sprite can disappear?**
+
+If things get going too fast, your sprite can leave the screen! Let's fix that.
 
 ---
 
-► From ``||loops:Loops||`` category, grab a 
-``||loops:forever||`` loop container and drag it out into 
+► From ``||sprites:Sprites||``, grab
+``||sprites:set [mySprite] stay in screen <on>||`` and snap it into **the bottom** 
+of the **on start** container.
+
+
+```blocks
+let mySprite = sprites.create(assets.image`Momma`, SpriteKind.Player)
+controller.moveSprite(mySprite, 0, 100)
+//@highlight
+mySprite.setStayInScreen(true)
+
+```
+
+
+
+## Step 6
+
+**🖼️ Let's set the scene 🖼️**
+
+---
+
+► From ``||scene:Scene||``, grab
+``||scene:set background image to [ ]||`` and snap it into **the top** 
+of the **on start** container.
+
+► Click the **grey square** in the new block and draw a landscape for the dino to navigate. Or, toggle to **My Assets** to choose the freeway!
+
+
+```blocks
+let mySprite = sprites.create(assets.image`Momma`, SpriteKind.Player)
+controller.moveSprite(mySprite, 0, 100)
+mySprite.setStayInScreen(true)
+//@highlight
+scene.setBackgroundImage(assets.image`Freeway`)
+```
+
+
+## Step 7
+
+**🛣️ Add movement to the scene 🛣️**
+
+---
+
+► To make it look like the dino is walking along the road, 
+go to ``||scroller:Scroller||`` and drag
+``||scroller:scroll background with vx [-90] vy [-90]||`` into **the end** 
+of the **on start** container.
+
+► Change the horizontal speed by changing the value of **vx** to **-50** .
+
+► Stop the background from scrolling vertically by changing the value of **vy** to **0**.
+
+
+```blocks
+let mySprite = sprites.create(assets.image`Momma`, SpriteKind.Player)
+controller.moveSprite(mySprite, 0, 100)
+mySprite.setStayInScreen(true)
+scene.setBackgroundImage(assets.image`Freeway`)
+//@highlight
+scroller.scrollBackgroundWithSpeed(-50, 0)
+```
+
+
+
+## Step 8
+
+**🎮  Take a look at the simulator 🎮**
+ 
+Your background should move on its own, and your ``||sprites:Player||`` should 
+move with the controller.
+
+
+
+## Step 9
+
+**The sprite needs something to collect!**  
+Let's add some baby dinos for the momma dinosaur to rescue 💚
+
+---
+
+► From ``||loops:Loops||``, grab a 
+``||loops:forever||`` loop container and drag it into 
 an empty spot on the workspace.
 
 ► From ``||sprites:Sprites||``, grab
 ``||variables:set [projectile] to projectile [ ] from side with vx [50] vy [50]||`` 
 and snap it into the empty **forever** container.
 
-► Choose a coin sprite for your projectile by clicking on the grey box and toggling
-to **Gallery** or stay in the **Editor** and create your own.
+► Click the grey box to draw a baby sprite (or toggle to **My Assets** to select ours.)
 
-► To make the projectile fly quickly from right to left, change 
-[__*vx*__](#whatVX "horizontal velocity") to **-150**
+
+```blocks
+forever(function () {
+    let projectile = sprites.createProjectileFromSide(assets.image`Baby`, 50, 50)
+})
+
+```
+
+## Step 10
+
+► To make the babies look like they're walking along the road, change 
+[__*vx*__](#whatVX "horizontal velocity") to **-90**
 and [__*vy*__](#whatVY "vertical velocity") to **0**.
 
 
 
 ```blocks
 forever(function () {
-    let projectile = sprites.createProjectileFromSide(img`
-        . . b b b b . . 
-        . b 5 5 5 5 b . 
-        b 5 d 3 3 d 5 b 
-        b 5 3 5 5 1 5 b 
-        c 5 3 5 5 1 d c 
-        c d d 1 1 d d c 
-        . f d d d d f . 
-        . . f f f f . . 
-        `, -150, 0)
+    let projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
 })
 
 ```
 
 
 
+## Step 11
 
-## Step 5
+**😲 They're flying 😲**
 
-**😯 Now you have a steady stream of income 😯**
-
-If we leave the coins like this, the game will be WAY too easy.  Let's 
-send projectiles from a random height each time.
+If we leave them like this, there won't be any challenge.  Let's 
+send the babies in from a random height each time.
 
 ---
 
@@ -214,135 +246,40 @@ block and snap it into the end of the **forever** loop container.
 
 ```blocks
 forever(function () {
-    let projectile = sprites.createProjectileFromSide(img`
-        . . b b b b . . 
-        . b 5 5 5 5 b . 
-        b 5 d 3 3 d 5 b 
-        b 5 3 5 5 1 5 b 
-        c 5 3 5 5 1 d c 
-        c d d 1 1 d d c 
-        . f d d d d f . 
-        . . f f f f . . 
-        `, -150, 0)
+    let projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
+    //@highlight
     projectile.y = randint(0, 10)
-
 })
 
 ```
 
 
 
-## Step 6
+## Step 12
 
-**This is looking great, but the coins still hover around the top.**
+**This is looking great, but they still hover around the top.**
 
 ---
 
-► Help the coins spread out by changing the largest random number from 
-**10** to **120**.
+► Help them spread out along the road by changing the smallest random number from **0** to **15** and the largest random number from 
+**10** to **115**.
 
-► Keep the coins from shooting out at the speed of light by 
+► Keep the babies from running out at the speed of light by 
 adding a ``||loops:pause [100] ms||`` block (from the  ``||loops:Loops||``
 category) to the end of the **forever** loop.
 
-► Change the pause time to **1500 ms** by clicking in the textbox and typing 
-**1500** instead of choosing a time from the dropdown menu.
+► Change the pause time to **1000 ms** by clicking in the textbox and typing 
+**1000** or choosing **1 second** from the dropdown menu.
 
 ```blocks
 forever(function () {
-    let projectile = sprites.createProjectileFromSide(img`
-        . . b b b b . . 
-        . b 5 5 5 5 b . 
-        b 5 d 3 3 d 5 b 
-        b 5 3 5 5 1 5 b 
-        c 5 3 5 5 1 d c 
-        c d d 1 1 d d c 
-        . f d d d d f . 
-        . . f f f f . . 
-        `, -150, 0)
-    projectile.y = randint(0, 120)
+    let projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
+    projectile.y = randint(15, 115)
     pause(1500)
-
-})
-
-```
-
-## Step 7 @unplugged
-
-**🎮 Give your game a try in the simulator 🎮**
-
-
-## Step 8
-
-**Notice anything missing?**
-
-Right now, nothing happens when you catch a coin.   
-Let's change that.
-
----
-
-► From ``||sprites:Sprites||``, grab an 
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``
-container and drop it into an empty area of the workspace.
-
-► Change the second kind from **Player** to **Projectile**.
-
-```blocks
-
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-
 })
 ```
 
 
-
-## Step 9
-
-Now we have a container for code that runs when the sprite 
-overlaps a projectile.  
-**Let's add a block to destroy coins as you catch them.**
-
----
-
-► From ``||sprites:Sprites||``, grab
-``||sprites:destroy [mySprite] ⊕||`` and snap it into the empty 
-**on sprite overlaps** container. 
-
-► To make sure that the correct projectile is destroyed, grab the 
-``||variables:otherSprite||`` argument from the header of the 
-**on sprite overlaps** container and drop it into the
-``||sprites:destroy [mySprite] ⊕||`` block to replace the value **mySprite**.
-
-```blocks
-
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    //@highlight
-    otherSprite.destroy()
-})
-```
-
-
-## Step 10
-
-**🏆 Keeping score 🏆**
-
-Finally, let's add a point to your score after you catch 
-a coin.
-
----
-
-► From ``||info:Info||``, grab
-``||info:change score by [1]||`` and snap it into the bottom of the 
-**on sprite overlaps** container.
-
-
-```blocks
-
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    otherSprite.destroy()    
-    info.changeScoreBy(1)
-})
-```
 
 
 ## Step 11
@@ -351,7 +288,24 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ---
 
-Now you have your very own collector game. Give it a try!
+Now you have the start of your very own collector game. Give it a try in the simulator!
 
-Click **Finish** to return to the main page where you can share your game
-with family and friends!
+When you're done playing, click **Finish** to return to the main page where you can share your game with family and friends!
+
+
+```package
+arcade-background-scroll=github:riknoll/arcade-background-scroll
+```
+
+```assetjson
+{
+  "README.md": "",
+  "assets.json": "",
+  "images.g.jres": "{\n    \"HSB#hx_+P`azBCey0vH4\": {\n        \"data\": \"hwQYABgAAAAAAAAAAAAAAMDMAAAAAAAAAAAAAMC9DAAAAAAAAAAAzMDdDAAAAAAAAMAMzMzdywAAAAAAAADMzLzdzQAAAADAzAC83d3dzQAAAADAzLvd3d3dvQwAAMwAvFXV3d3duwwAAMwMW1XV3d3du8wAAMC8VVXd3d3dvdsAAMBbVdXdu91V3d0AzMBVVVXdVdtV1V0AzMxVVVXdVcVdVV0AwFxVVVXdW7XbVVsAwFxVVVXVvVW8y9wAAFxVX1XVvVW8y8wAAFxV/7Vbvcy73AwAAFxV8bVbvbvL3QwAAFxVVRWzxczM2wwAAMBVVTUzxc0AvAwAAMBV1bUzxQwAzAwAAABcVbVVxQAAAAAAAADAVcXMDAAAAAAAAAAAzAwAAAAAAAA=\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"Momma\"\n    },\n    \"X4JB-Z#5z{GHg)(9D5!a\": {\n        \"data\": \"hwSgAHgAAACZmZmZ0d3dHBGxuxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u7G70bsbu7y8u7u7u7u7u7u7u7u7vLvbu7u7uZmZmZEd3RHBGxuxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u7G7Ebsbu7y8y7u7u7u7u7u7u7u7vLu7u7u7uZmZmZEd3RHMy8uxu9u7u7u7u7u7u7G7G7u7u7u7u7u7u7G7Ebvbu7zMy7u7u7u7u7u7u7u7u7vLu7u7uZmZmZ0d3dHNy9u9u9u7u7u7u7u7u7G7G7u7u7u7u7u7u7G7HbvbvLvMu7u7u7u7u7u7u7u7u7u7u7u7uZmZmZ0dHRHNy9uxu9u7u7u7u7u7u7G7G7u7u7u7u7u7u7G7EbvbvLu7u8u7u7u7u7u7u7u7u7u7u7u7uZmZmZ0d3dHNy9uxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u7G7EbsbvLu7u8u7u7u7u7u7u7u7u7u7u7u7uZmZkR0d3dHNy9uxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u7G7Ebsbu7vLu7u7u7u7u7u7u7u7u7u7u7u7uZmZnR3d3dHNy9uxuxu7u7u7u7u7u727G7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZnR3d3dHNy9u9uxu7u7u7u7u7u727G7u7u7u7u7u7u7G7Hbsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZkRERERHNy9uxuxu7u7u7u7u7u72727u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZmZmRndHNy9uxuxu7u7u7u7u7u727G7u7u7u7u7u7u727Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZmZERHdHNy9uxu9u7u7u7u7u7u7G727u7u7u7u7u7u727Ebvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZmZ0d3dHMy8u9u9u8u7u7u7u7u7G7G7u7u7u7u7u7u7273bvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZmZEd3dHBGxu9u9u7y7u7u7u7u7G7G7u7u7u7u7u7u727Hbvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZmZ0R3dHBGxuxu9u9y7u7u7u7u7G7G7u7u7u7u7u7u7G70bvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZmZ0d3dHMy8uxuxu9y7u7u7u7u7G7G7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZmZERHdHNy9u9uxu7y7u7u7u7u727G7u7u7u7u7u7u7G7Hbsbu7u7u7u7u7u7vbu7u7u7u7u7u7u7uZmZmZmRkRHNy9u9u9u8u7u7u7u7u72727u7u7u7u7u7u7G7Hbvbu7u7u7u7u7u7vbvbu7u7u7u7u7u7uZmZmZmRndHNy9uxu9u7u7u7u7u7u7u727u7u7u7u7u7u7G7Ebvbu7u7u7u7u7u7sbvbu7u7u7u7u7u7uZmZmZERHdHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZ0dHRHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZ0d3dHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZ0dHRHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZ0d3dHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZ0d3dHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G70bsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZ0dHdHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7270bsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZ0d3dHMy8uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G70bsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZ0d3dHBGxuxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmRkR0d3dHBGxu9uxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Hbsbu7u7u7u7u7u7vbsbu7u7u7u7u7u7uZmRHd3d3dHMy8u9uxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Hbsbu7u7u7u7u7u7vbsbu7u7u7u7u8u7uZGdHd3d3dHNy9u9u9u7u7u7u7u7u7u7u7u7u7u7u7u7u727Hbvbu7u7u7u7u7u7vbvbu7u7u7u7u8u7uZGd3dHd3dHNy9u9uxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Hbsbu7u7u7u7u7u7vbsbu7u7u7u7u7u7uZGd0d3d3dHNy9uxu9u7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebvbu7u7u7u7u7u7sbvbu7u7u7u7vLu7uZGd3d3d3dHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G70bsbu7u7u7u7u7u7sbsbu7u7u7u7vLu7uZGdEd3d3dHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7270bsbu7u7u7u7u7u7sbsbu7u7u7u7vLvLuZmREREdHdHNy9uxuxu7u7u7u7u7u727u7u7u7u7u7u7u7270bsbu7u7u7u7u7u7sbsbu7u7u7u7vLy7uZmZmZGRHRHNy9uxuxu7u7u7u7u7u72727u7u7u7u7u7u7G70bsbu7u7u7u7u7u7sbsbu7u7u7u7vLzLuZmZmZERHRHNy9uxuxu7u7u7u7u7u7G727u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7vbsbu7u7u7u7vLy7uZmZmZ0d0dHNy9uxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u727Ebsbu7u7u7u7u7u7vbvbu7u7u7u7vLu7yZmZkR0d3dHMy8uxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u7270bsbu7u7u7u7u7vLu7vbu7u7u7u7u8u7yZmZnR3d3dHBGxuxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u7G70bsbu7u7u7u7vLu7u7u7u7u7u7u7u7u7uZmZkR0d3dHBGxuxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u7G7Ebsbu7u7u7u7vLvbu7u7u7u7u7u7u7u7uZmZmZ0d3dHMy8uxu9u7u7u7u7u7u7G7G7u7u7u7u7u7u7G7Ebvbu7u7u7u7vLvbu7u7u7u7u7u7u7u7uZmZmZEdHdHNy9u9u9u7u7u7u7u7u7G7G7u7u7u7u7u7u7G7Hbvbu7u7u7u7vLu7u7u7u7u7u7u7u7u7uZmZmZGRHdHNy9uxu9u7u7u7u7u7u7G7G7u7u7u7u7u7u7G7Ebvbu7u7u7u7u7vLu7u7u7u7u7u7u7u7uZmZmZGRERHNy9uxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZmZGd0dHNy9uxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZmZGd3dHNy9uxuxu7u7u7u7u7u727G7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZmZGdHdHNy9u9uxu7u7u7u7u7u727G7u7u7u7u7u7u7G7Hbsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZmZGd3dHNy9uxuxu7u7u7u7u7u72727u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZmZGd3RHNy9uxuxu7u7u7u7u7u727G7u7u7u7u7u7u727Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZmZGdHRHNy9uxu9u7u7u7u7u7u7G727u7u7u7u7u7u727Ebvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7sZEREREdHdHMy8u9u9u7u7u7u7u7u7G7G7u7u7u7u7u7u7273bvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7sZ3d3d3d3dHBGxu9u9u7u7u7u7u7u7G7G7u7u7u7u7u7u727Hbvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7sZ3dHd3d3dHBGxuxu9u7u7u7u7u7u7G7G7u7u7u7u7u7u7G70bvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7sZ3dHd3d3dHMy8uxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7sZ3d3d3d3dHNy9u9uxu7u7u7u7u7u727G7u7u7u7u7u7u7G7Hbsbu7u7u7u7u7u7vbu7u7u7u7u7u7u7sZ3d3d3d3dHNy9u9u9u7u7u7u7u7u72727u7u7u7u7u7u7G7Hbvbu7u7u7u7u7u7vbvbu7u7u7u7u7u7sZ3d3d3d3dHNy9uxu9u7u7u7u7u7u7u727u7u7u7u7u7u7G7Ebvbu7u7u7u7u7u7sbvbu7u7u7u7u7u7sZ3d3d3d3dHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7sZ3R3dEd3dHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7sZ3d3d3d3dHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7sZEREREdHdHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZERHdHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZ0d3dHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G70bsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZEd3RHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7270bsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZEd3RHMy8uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G70bsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZ0d3RHBGxuxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZ0dHRHBGxu9uxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Hbsbu7u7u7u7u7u7vbsbu7u7u7u7u7u7uZmZmZ0d3dHMy8u9uxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Hbsbu7u7u7u7u7u7vbsbu7u7u7u7u7u7uZmZkREdHdHNy9u9u9u7u7u7u7u7u7u7u7u7u7u7u7u7u727Hbvbu7u7u7u7u7u7vbvbu7u7u7u7u7u7uZmRnR3d3dHNy9u9uxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Hbsbu7u7u7u7u7u7vbsbu7u7u7u7u7u7uZmRnd3d3dHNy9uxu9u7u7u7u7u7u7u7u7u7u8u7u7u7u7G7Ebvbu7u7u7u7u7u7sbvbu7u7u7u7u7u7uZmRkRERHdHNy9uxuxu7u7u7u7u7u7u7u7u8u7u7u7u7u7G70bsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZmRHdHNy9uxuxu7u7u7u7u7u7u7u7u8u7u7u7u7u7270bsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZmdHdHNy9uxuxu7u7u7u7u7u727u7u8u8u7u7u7u7270bsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZmRERHNy9uxuxu7u7u7u7u7u72727u7vLu7u7u7u7G70bsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZmRHdHNy9uxuxu7u7u7u7u7u7G727u7vLvLu7u7u7G7Ebsbu7u7u7u7u7u7vbsbu7u7u7u7u7u7uZmZmZmdHdHNy9uxuxu7u7u7u7u7u7G7G7u7u8vLu7u7u727Ebsbu7u7u7u7u7u7vbvbu7u7u7u7u7u7uZmZmZmRHdHMy8uxuxu7u7u7u7u7u7G7G7u8vLvLu7u7u7270bsbu7u7u7u7u7u7u7vbu7u7u7u7u7u7uZmRkRERERHBGxuxuxu7u7u7u7u7u7G7G7u8u8vLu7u7u7G70bsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmRndHd3RHBGxuxuxu7u7u7u7u7u7G7G7u8u7vLu7u7u7G7Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmRnd3d3dHMy8uxu9u7u7u7u7u7u7G7G7u8u7y7u7u7u7G7Ebvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmRnd3d3dHNy9u9u9u7u7u7u7u7u7G7G7u7y7u7u7u7u7G7Hbvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmRndHd3RHNy9uxu9u7u7u7u7u7u7G7G7u7u7u7u7u7u7G7Ebvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmRnd3d3dHNy9uxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmRkR0d3dHNy9uxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZmZEdHdHNy9uxuxu7u7u7u7u7u727G7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmREREdHdHNy9u9uxu7u7u7u7u7u727G7u7u7u7u7u7u7G7Hbsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmdHd3d3dHNy9uxuxu7u7u7u7u7u72727u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZEdHd0d3dHNy9uxuxu7u7u7u7u7u727G7u7u7u7u7u7u727Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZ0d3d0dHdHNy9uxu9u7u7u7u7u7u7G727u7u7u7u7u7u727Ebvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZ0d3d3d3dHMy8u9u9u7u7u7u7u7u7G7G7u7u7u7u7u7u7273bvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZ0d3d3d3dHBGxu9u9u7u7u7u7u7u7G7G7u7u7u7u7u7u727Hbvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZEdHd3d3dHBGxuxu9u7u7u7u7u7u7G7G7u7u7u7u7u7u7G70bvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmdHd3d3dHMy8uxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmRERERERHNy9u9uxu7u7u7u7u7u727G7u7u7u7u7u7u7G7Hbsbu7u7u7u7u7u7vbu7u7u7u7u7u7u7uZmZmZmZnRHNy9u9u9u7u7u7u7u7u72727u7u7u7u7u7u7G7Hbvbu7u7u7u7u7u7vbvbu7u7u7u7u7u7uZmZmZERERHNy9uxu9u7u7u7u7u7u7u727u7u7u7u7u7u7G7Ebvbu7u7u7u7u7u7sbvbu7u7u7u7u7u7uZmZmZ0d3dHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZkR0d3dHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmRER3d3dHNy9uxuxu7u7u7u7u7u7u7u7u7u7u8u7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7sZEdHd3d3dHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7y7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7sZ3d3d3d3dHNy9uxuxu7y7u7u7u7u7u7u7u7u7u9y7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7sZ3d3d3d3dHNy9uxuxu7y7u7u7u7u7u7u7u7u7u9y7u7u7G70bsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7sZ0d3d3d3dHNy9uxuxu7y7u7u7u7u7u7u7u7u7u7y7u7u7270bsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZEdHd3d3dHMy8uxuxu7y7u7u7u7u7u7u7u7u7u8u7u7u7G70bsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmRER3d3dHBGxuxuxu8u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZkR0d3dHBGxu9uxu8y7u7u7u7u7u7u7u7u7u7u7u7u7G7Hbsbu7u7u7u7u7u7vbsbu7u7u7u7u7u7uZmZmZEd3dHMy8u9uxu7y8u7u7u7u7u7u7u7u7u7u7u7u7G7Hbsbu7u7u7u7u7u7vbsbu7u7u7u7u7u7uZmZmZ0R3dHNy9u9u9y7u7u7u7u7u7u7u7u7u7u7u7u7u727Hbvbu7u7u7u7u7u7vbvbu7u7u7u7u7u7uZmZmZ0d3dHNy9u9uxy7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Hbsbu7u7u7u7u7u7vbsbu7u7u7u7u7u7uZmZmZERHdHNy9uxu9y7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebvbu7u7u7u7u7u7sbvbu7u7u7u7u7u7uZmZmZmRndHNy9uxuxy7u7u7u7u7u7u7u7u7u7u7u7u7u7G70bsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZmRkRHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7270bsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZERHdHNy9uxuxu7u7u7u7u7u727u7u7u7u7u7u7u7270bsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZ0d3dHNy9uxuxu7u7u7u7u7u72727u7u7u7u7u7u7G70bsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZ0d3dHNy9uxuxu7u7u7u7u7u7G727u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7vbsbu7u7u7u7u7u7uZmZmZ0dHRHNy9uxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u727Ebsbu7u7u7u7u7u7vbvbu7u7u7u7u7u7uZmZmZ0d3dHMy8uxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u7270bsbu7u7u7u7u7u7u7vbu7u7u7u7u7u7uZmZmZ0d3dHBGxuxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u7G70bsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZmZ0d3dHBGxuxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZmZ0dHdHMy8uxu9u7u7u7u7u7u7G7G7u7u7u7u7u7u7G7Ebvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZmZ0d3dHNy9u9u9u7u7u7u7u7u7G7G7u7u7u7u7u7u7G7Hbvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmRkR0d3dHNy9uxu9u7u7u7u7u7u7G7G7u7u7u7u7u7u7G7Ebvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmRnd3d3dHNy9uxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmRHd3d3dHNy9uxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZGdHd3d3dHNy9uxuxu7u7u7u7u7u727G7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZGd0d3d3dHNy9u9uxu7u7u7u7u7u727G7u7u7u7u7u7u7G7Hbsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZGd3dHd3dHNy9uxuxu7u7u7u7u7u72727u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZGdEd3d3dHNy9uxuxu7u7u7u7u7u727G7u7u7u7u7u7u727Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmREREdHdHNy9uxu9u7u7u7u7u7u7G727u7u7u7u7u7u727Ebvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZmZGRHRHMy8u9u9u7u7u7u7u7u7G7G7u7u7u7u7u7u7273bvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZmZGRHRHBGxu9u9u7u7u7u7u7u7G7G7u7u7u7u7u7u727Hbvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZmZEdHdHBGxuxu9u7u7u7u7u7u7G7G7u7u7u7u7u7u7G70bvbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZkR0d3dHMy8uxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7u7u7u7u7u7u7u7u7uZmZnR3d3dHNy9u9uxu7u7u7u7u7u727G7u7u7u7u7u7u7G7Hbsbu7u7u7u7u7u7vbu7u7u7u7u7u7u7uZmZnR3d3dHNy9u9u9u7u7u7u7u7u72727u7u7u7u7u7u7G7Hbvbu7u7u7u7u7u7vbvbu7u7u7u7u7u7uZmZkR0d3dHNy9uxu9u7u7u7u7u7u7u727u7u7u7u7u7u7G7Ebvbu7u7u7u7u7u7sbvbu7u7u7u7u7u7uZmZmZEdHdHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZGRHdHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZmRkRHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u727Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZGRHRHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZGd3RHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZGdHdHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G70bsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZGdHRHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7270bsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZGd3RHMy8uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G70bsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7uZmZmZGd3dHBGxuxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7sZEREREdHdHBGxu9uxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Hbsbu7u7u7u7u7u7vbsbu7u7u7u7u7u7sZ3d3d3d3dHMy8u9uxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Hbsbu7u7u7u7u7u7vbsbu7u7u7u7u7u7sZ3d3d3d3dHNy9u9u9u7u7u7u7u7u7u7u7u7u7u7u7u7u727Hbvbu7u7u7u7u7u7vbvbu7u7u7u7u7u7sZ3dHd3d3dHNy9u9uxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Hbsbu7u7u7u7u7u7vbsbu7u7u7u7u7u7sZ3d3d3d3dHNy9uxu9u7u7u7u7u7u7u7u7u7u7u7u7u7u7G7Ebvbu7u7u7u7u7u7sbvbu7u7u7u7u7u7sZ3dEd3d3dHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7G70bsbu7u7u7u7u7u7sbsbu7u7u7u7u7u7sZ3d3d3d3dHNy9uxuxu7u7u7u7u7u7u7u7u7u7u7u7u7u7270bsbu7u8u7u7u7u7sbsbu7u7u7u7u7u7sZ3R3dHd3dHNy9uxuxu7u7u7u7u7u727u7u7u7u7u7u7u7270bsbu7u8u7u7u7u7sbsbu7u7u7u7u7u7sZ3R3dEd3dHNy9uxuxu7u7u7u7u7u72727u7u7u7u7u7u7G70bsbu7u7y7u7u7u7sbsbu7u7u7u7u7u7sZ3d3d3d3dHNy9uxuxu7u7u7u7u7u7G727u7u7u7u7u7u7G7Ebsbu7u7y7u7u7u7vbsbu7u7u7vLu7u7sZ3d3d3d3dHNy9uxuxu7u7u7u7u7u7G7G7u7u7u7u7u7u727Ebsbu7u7y7u7u7u7vbvbu7u7vLu7u7u7sZERER0d3dHMy8u9uxu7u7u7u7u7u7G7G7u7u7u7u7u7u7273bsbu7y7y7u7u7u7u7vbu7u7vLvbu7u7s=\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"Freeway\"\n    },\n    \":-%p!6dsfn@Cn4?(/f-u\": {\n        \"data\": \"hwQQABAAAAAAAACIiIiIAAAAgGZmOIgIAABoZoYziAgAAGhmhoOIDwCImZmJiPi7gJiZmYuI+LyAdneGuIb4/Ghmd4e7hogPaGZ2h7uGiAhoZmaHu4aICGhmZoeIiIgPaGZmh7uG+LuAdneGuIb4vAC4mZmLiPj8AICbmbmIiA8AAIiIiIiIAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"Tourist\"\n    },\n    \"IHAx{+JAVkkR7;45OS*f\": {\n        \"data\": \"hwQQABAAAAAAAMzMDAAAAADAVcW1wAwAAFxVtVO8DMwAXFW1U7vMvMBVVRVTy8y8wFVVtVVczLzAVfFVVVXMzMBV/1VVtd3bAFxVVVW7XVUAXFVVVd1dVQDAVVXd3b27AABcVd3d3cwAAMDc3d3dDAAAAMDMzN0MAAAAAADczQAAAAAAAMAMAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"Baby\"\n    },\n    \"Bx$o-u1n\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAzMwMAAAAAMAiIsIAAAAAwCIiIgwAAADAIiIiwgAAAAAsIiLCAAAAACwiIiIMAAAAwCIiIsIAAAAsIiIiDAAAACwiIsIAAADAIiIiwgAAAMAiIiIMAAAAwCIiwgAAAAAAzMwMAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"Extra Life\"\n    },\n    \";bp3BS6:4IVA7v,VAfR(\": {\n        \"namespace\": \"\",\n        \"id\": \";bp3BS6:4IVA7v,VAfR(\",\n        \"mimeType\": \"application/mkcd-animation\",\n        \"data\": \"NjQwMDE4MDAxODAwMDYwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDBjMDBjMDAwMDAwMDAwMDAwMDAwMDAwMDBjMGNjMGMwMDAwMDAwMDAwMDAwMGMwMGMwMGNjY2NjYzBjMDAwMDAwMDAwMGMwY2NjYzVjNTU1NWM1MGMwMDAwMDAwMDAwY2M1YjU1NTU1NTU1YzUwMDAwMDBjMDBjYjA1NTU1NTU1NTU1NTUwYzAwMDBjMGNjNWI1NTU1ZjUxZjU1NTVjNTAwMDBjMGJjNTU1NTU1NTVmZjU1NWRjNTAwMDAwMDViNTU1NTU1NTU1NTU1NTVjNTAwYzAwMDViNTU1ZDU1NTViYjMxYmIwYzAwYzBjYzVkZDVkZGRkNTViYjMzNTMwYzAwMDBiY2RkZGRkZGRkZGQ1NTNiNTMwYzAwY2NkY2RkZGQ1YmI1ZGRkZDU1NTUwYzAwY2NkY2RkZGQ1YjU1YmJiYmNjY2MwMDAwYzBkY2RkZGRiZDU1NTViY2RjMGMwMGNjY2NkYmRkZGRkZGJjNTViY2NjMDAwMGRjZGRkZGRkZGQ1NWJkY2NiYjBjMDAwMGJjZGRkZGRkZGQ1NWQ1YmJjYjBjMDAwMGMwYmNkZGJkZGI1ZDU1YmJkY2NiMGMwMDAwYzBjY2JiYmJkZDU1Y2NkZGJkMGMwMDAwMDAwMGNjYmNkZGJkY2NjY2NjMGMwMDAwMDAwMDAwZGM1ZDU1Y2QwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDBjMGNjMDAwMDAwMDAwMDAwMDAwMDAwMDBjMGNjMGMwMDAwMDAwMDAwMDAwMGMwY2MwMGNjY2NjYzBjMDAwMDAwMDAwMGMwY2NjYzVjNTU1NWM1MGMwMDAwMDAwMDAwY2M1YjU1NTU1NTU1YzUwMDAwMDBjMDBjYjA1NTU1NTU1NTU1NTUwYzAwMDBjMGNjNWI1NTU1ZjUxZjU1NTVjNTAwMDAwMGJjNTU1NTU1NTVmZjU1NWRjNTAwMDAwMDViNTU1NTU1NTU1NTU1NTVjNTAwYzAwYzViNTVkZDU1NTViYjMxYmIwYzAwYzBjYzVkZDVkZGRkNTViNTMzNTMwYzAwMDBiMGRkZGRkZGRkZGQ1NTNiNTMwYzAwY2NkY2RkZGQ1YmI1ZGJkZDU1NTUwYzAwY2NkY2RkZGQ1YjU1YmJiYmNjY2MwMDAwYzBkY2RkZGRiZDU1NTViY2RjMGMwMGNjY2NkYmRkZGQ1ZGJjNTViY2NjMDAwMGRjZGRkZGRkZGQ1NTU1Y2NiYjBjMDAwMGMwZGRkZGRkZGI1ZDU1YmJjYjBjMDAwMDAwY2NkZGJkYmJkZDU1YmNkYzBjMDAwMDAwMDBjY2JiYmNkZGRkY2NkZGNkMGMwMDAwMDAwMGNjZGM1ZDU1Y2RjY2NjMGMwMDAwMDAwMDAwY2NjY2NjY2MwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMGNjMDAwMDAwMDAwMDAwMDAwMDAwMDAwMGNjMGMwMDAwMDAwMDAwMDAwMDAwY2MwY2NjY2NjYzBjMDAwMDAwMDAwMDAwY2NjYzVjNTU1NWM1MGMwMDAwMDAwMDAwY2M1YjU1NTU1NTU1YzUwMDAwMDBjMGNjYjA1NTU1ZjUxZjU1NTUwYzAwMDBjMGNjNWI1NTU1NTVmZjU1NTVjNTAwMDAwMGJjNTU1NTU1NTU1NTU1NWRjNTAwMDAwYzViNTU1NTU1NTViYjU1NTVjNTAwMDBjYzViNTVkZDVkNTViNTMxYmIwYzAwMDBjYzVkZDVkZGRkNTViNTMzNTMwYzAwMDBjMGRkZDVkZGRkZGQ1NTNiNTMwYzAwYzBiMGRkZGQ1YjU1YmJkYjU1YzUwMDAwYzBkY2RkZGRiYjU1NTViNWNjMGMwMDAwYzBkY2RkZGRkZGNjNTViNWNjMDAwMDAwYzBkY2RkZGRkZGJkY2NiY2NjY2MwMGMwYmNkZGRkZGQ1ZGQ1YmJiYjVjYzUwMGNjZGRkZGRkZGQ1ZDU1YmRjYjVjMGMwMGRjZGRkZGJkYmJkZDU1YjVjYmNjMDAwMGMwZGNkZGJkYmJkYjVkYjVjYzAwMDAwMDAwYzBjY2JiYmJkYmRkY2JkZGNjMDAwMDAwMDBjMGNjY2NkZDU1ZDVjY2NjMDAwMDAwMDAwMDAwMDBjY2NjY2MwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMGNjMDAwMDAwMDAwMDAwMDAwMDAwMDAwMGNjMGMwMDAwMDAwMDAwMDAwMDAwY2MwY2NjY2NjYzBjMDAwMDAwMDAwMDAwY2NjYzVjNTU1NWM1MGMwMDAwMDAwMDAwY2M1YjU1NTU1NTU1YzUwMDAwMDBjMGNjYjA1NTU1ZjUxZjU1NTUwYzAwMDBjMGNjNWI1NTU1NTVmZjU1NTVjNTAwMDAwMGJjNTU1NTU1NTU1NTU1NWRjNTAwMDAwYzViNTU1NTU1NTViYjU1NTVjNTAwMDBjYzViNTVkZDVkNTViNTMxYmIwYzAwMDBjYzVkZDVkZGRkNTViNTMzNTMwYzAwMDBjMGRkZDVkZGRkZGQ1NTNiNTMwYzAwYzBiMGRkZGQ1YjU1YmJkYjU1YzUwMDAwYzBkY2RkZGRiYjU1NTViNWNjMGMwMDAwYzBkY2RkZGRkZGNjNTViNWNjMDAwMGMwY2NkY2RkZGRkZGRkY2NiY2NjY2MwMGMwY2RkZGRkZGRkZDU1YmRiYjVjYzUwMGMwZGRkZGRkZGRkZDU1ZDVjYzVjMGMwMGMwZGJkZGJkYmJkYjVkNWQ1NWNjMDAwMDAwYmNkZGJkYmJiYmRkNTU1NTAwMDAwMDAwYzBjY2JiYmJiYjVkNTVjNTAwMDAwMDAwMDBjMGNjY2NjYzVjNTUwYzAwMDAwMDAwMDAwMDAwMDAwMGMwY2MwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMGNjMDAwMDAwMDAwMDAwMDAwMDAwMDAwMGNjMGMwMDAwMDAwMDAwMDAwMDAwY2MwY2NjY2NjYzBjMDAwMDAwMDAwMDAwY2NjYzVjNTU1NWM1MGMwMDAwMDAwMDAwY2M1YjU1NTU1NTU1YzUwMDAwMDBjMGNjYjA1NTU1ZjUxZjU1NTUwYzAwMDBjMGNjNWI1NTU1NTVmZjU1NTVjNTAwMDAwMGJjNTU1NTU1NTU1NTU1NWRjNTAwMDAwYzViNTU1NTU1NTViYjU1NTVjNTAwMDBjYzViNTVkZDVkNTViNTMxYmIwYzAwMDBjYzVkZDVkZGRkNTViNTMzNTMwYzAwMDBjMGRkZDVkZGRkZGQ1NTNiNTMwYzAwYzBiMGRkZGQ1YjU1YmJkYjU1YzUwMDAwYzBkY2RkZGQ1YjU1NTViNWNjMGMwMDAwY2NkY2RkZGRjZDVjNTViNWNjMDAwMGMwY2RkY2RkZGRkZGJkY2NiY2NjY2MwMGMwZGRkYmRkZGRkZGRkYmJiYjVjYzUwMGMwZGRkZGRkZGRkZDU1YmRiYjVjMGMwMGMwZGJkZGJkYmJkYjU1ZGRjYmNjMDAwMDAwYmNkZGJkYmJkYjU1ZDVjYzBjMDAwMDAwYzBjY2JiYmJiYmRkNWQ1NTBjMDAwMDAwMDBjMGNjY2NiYzVkNTU1NTBjMDAwMDAwMDAwMDAwMDBjMDVjNTVjNTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMGNjMDAwMDAwMDAwMDAwMDAwMDAwMDAwMGNjMGMwMDAwMDAwMDAwMDAwMDAwY2MwMGNjY2NjYzBjMDAwMDAwMDAwMDAwY2NjYzVjNTU1NWM1MGMwMDAwMDAwMDAwY2M1YjU1NTU1NTU1YzUwMDAwMDBjMDBjYjA1NTU1NTU1NTU1NTUwYzAwMDBjMGNjNWI1NTU1ZjUxZjU1NTVjNTAwMDAwMGJjNTU1NTU1NTVmZjU1NWRjNTAwMDAwMDViNTU1NTU1NTU1NTU1NTVjNTAwYzAwYzViNTVkZDU1NTViYjMxYmIwYzAwYzBjYzVkZDVkZGRkNTViNTMzNTMwYzAwMDBjY2RkZDVkZGRkZGQ1NTNiNTMwYzAwMDBiMGRkZGQ1YmI1ZGRkZDU1NTUwYzAwY2NkY2RkZGQ1YmI1YmJiYmNjY2MwMGMwY2NkY2RkZGRiZDU1NTViY2NjY2MwMGMwY2RkY2RkZGRkZDVjNTViYzVjYzUwMGMwZGRkZGRkZGRkZGNkY2NiYjVjMGMwMGMwZGJkZGRkZGQ1NWJkYmJjYmNjMDAwMGMwYmNkZGRkZGQ1NWQ1YmJjYmNiMDAwMDAwY2NkY2JkYmI1ZDU1YmJjYzBjMDAwMDAwMDBjY2JiYmJkYjU1YzUwYzAwMDAwMDAwMDAwMGNjY2NkYmRkYmQwYzAwMDAwMDAwMDAwMDAwMDBkYzU1NTVjZDAwMDAwMA==\",\n        \"displayName\": \"Momma Moving\"\n    },\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myImages\"\n    }\n}",
+  "images.g.ts": "// Auto-generated code. Do not edit.\nnamespace myImages {\n\n    helpers._registerFactory(\"image\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"HSB#hx_+P`azBCey0vH4\":\n            case \"Momma\":return img`\n........................\n........................\n...........cc...........\n...........cccc.........\n.......cc...ccccccc.....\n.......cccccc555555cc...\n........ccb5555555555c..\n.....cc..b555555555555c.\n.....cccb555555ff155555c\n.....ccb55555555ff55d55c\n......b5555555555555555c\n...c..b555d55555bb13bbc.\n...cccd55ddddd55bb3335c.\n....cbdddddddddd55b335c.\n..cccdddddb55bdddd5555c.\n..cccdddddb555bbbbcccc..\n...ccddddddb5555cbcdc...\nccccbdddddddcb55cbcc....\ncddddddddd55dbccbbc.....\ncbdddddddd555dbbbcc.....\n.ccbdddbbdd555bbcdbcc...\n...cccbbbbdd55ccdddbc...\n......cccbdddbccccccc...\n........cdd555dc........\n`;\n            case \"X4JB-Z#5z{GHg)(9D5!a\":\n            case \"Freeway\":return img`\n9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999\n9999999999999999999999999999999999999999999999999999111111111119999999999999999999999999999999999999991111999999999999999999999999999999999999999999111111111111\n99999999999999999999999999999999999999999999999999991ddddddddd19999999999999999999999999991111199999991dd11999999999999999999999999999999999999999991dddddddddd1\n99999999999999999999999999999911111999999999999999991ddddddddd19999999999999999999999999991ddd199999991ddd1999999999999999999991111999999999999999991dddddddddd1\n9999999999999999999999999999911ddd1199999999999999991d11dddddd19999999999999999999999999111ddd111999911ddd1199999999999999999911dd1199999999999999991dd1d1ddddd1\n999999999999999999999999999911ddddd199999999999999991ddddddd1d199999999111999999111111191ddddddd199991ddddd19999999999999999111dddd199999999999999991dddddd11dd1\n99999911119999999999999999991dddddd199911199999999991ddddddddd1999999911d19999991ddddd191ddddddd199911ddddd119999999999999991dddddd199911119999999991dddddddddd1\n9999991dd19999999999999999991ddd1d119991d199999999991ddddddddd199999991dd19999991ddddd191ddddddd199911ddddd119999999999999991ddd1d119991dd19999999991dddd1ddddd1\n1111111dd19111111991111111111dddddd19111d111999999991ddddddd1d111111111dd19999991ddddd111d11dddd19111ddddddd11111991111111111dddddd19911dd11999999991ddddddd1dd1\nd11dddddd191d1dd1991ddddddddddd1ddd111ddddd1111111111ddddddd1d11d11ddd1dd199999911dd1dd11ddddddd191dddddddddd1dd1991ddddddddddddd1d1111dddd1191111111dddddd11ddd\ndddd1dddd191dddd19911d1dd1ddddddddd111ddddd111dd1dd11ddddddddd11dddd1d1dd11111111dddddd11dd1dddd191ddddddddddddd1991dd1ddd1dddddddd1111dddd1191d11dd1ddddddddddd\nddddddddd111dd1d1111dddddddddddddddd11dddddd11ddddddddddddddddd1ddddddddd11d11d11ddddddddddddddd191ddddddddddd1d1111dddddddddddddddd11dddddd111ddddddddddddddddd\nd11d1dddd1ddddddd1dd1d1ddddddddddddd11ddddddd1dddd11ddddddddddddd1111ddddddd1ddd11dd1ddddddddddd111ddddddddddddddd1ddd1ddddddddddddd11ddddddd111d11ddddddddddddd\nddddddddd1ddddddd1dddddddddddddddddddd1dddddd11ddddddddddddddddddddddddddddd1ddd1ddddddddddddddd1d1ddddddddddddddd1dddddddddddddddddddddddddd1dddddddddddddddddd\ncccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\n1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111\n11ccccccccccc11cccccccccccc11ccccccccccc11ccccccccccc11cccccccccccc11ccccccccccc11ccccccccccc11cccccccccccc11ccccccccccc11ccccccccccc11cccccccccccc11ccccccccccc\n11cdddddddddc11cddddddddddc11cdddddddddc11cdddddddddc11cddddddddddc11cdddddddddc11cdddddddddc11cddddddddddc11cdddddddddc11cdddddddddc11cddddddddddc11cdddddddddc\n11cdddddddddc11cddddddddddc11cdddddddddc11cdddddddddc11cddddddddddc11cdddddddddc11cdddddddddc11cddddddddddc11cdddddddddc11cdddddddddc11cddddddddddc11cdddddddddc\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n111d1111d111dd11dd1111111111dddd11111111111d1111d111dd11dd1111111111dddd11111111111d1111d111dd11dd1111111111dddd11111111111d1111d111dd11dd1111111111dddd1111111d\n11ddd111111dddd11dd11111111111d1d111111111ddd111111dddd11dd11111111111d1d111111111ddd111111dddd11dd11111111111d1d111111111ddd111111dddd11dd11111111111d1d1111111\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbccccbccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbcbddbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n1111111dddd11111ddbbbbbbbbbbbbbbbbbdd1111111111dddd11111ddbbbbbbbbbbbbbbbbbdd1111111111dddd11111ddbbbbbbbbbbbbbbbbbdd1111111111dddd11111ddbbbbbbbbbbbbbbbbbdd111\n111111111d1d11111ddbbbbbbbbbbbbbbbbbdd11111111111d1d11111ddbbbbbbbbbbbbbbbbbdd11111111111d1d11111ddbbbbbbbbbbbbbbbbbdd11111111111d1d11111ddbbbbbbbbbbbbbbbbbdd11\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcccbbbccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcbbcbbcbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbccbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcbddbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n1111111111dddd11111111111d1111d111dd11dd1111111111dddd11111111111d1111d111dd11dd1111111111dddd11111111111d1111d111dd11dd1111111111dddd1111111d111d1111d111dd11dd\nd11111111111d1d111111111ddd111111dddd11dd11111111111d1d111111111ddd111111dddd11dd11111111111d1d111111111ddd111111dddd11dd11111111111d1d111111111ddd111111dddd11d\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n111d1111d111dd11dd1111111111dddd11111111111d1111d111dd11dd1111111111dddd11111111111d1111d111dd11dd1111111111dddd11111111111d1111d111dd11dd1111111111dddd1111111d\n11ddd111111dddd11dd11111111111d1d111111111ddd111111dddd11dd11111111111d1d111111111ddd111111dddd11dd11111111111d1d111111111ddd111111dddd11dd11111111111d1d1111111\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbcccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbccbbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\ncccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbc\nbccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcccc\nccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbccbbbb\nbbbbccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcbddbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbdd1111111111dddd11111ddbbbbbbbbbbbbbbbbbdd1111111111dddd11111ddbbbbbbbbbbbbbbbbbdd1111111111dddd11111ddbbbbbbbbbbbbbbbbbdd1111111111dddd11111ddb\nbbbbbbbbbbbbbbbbbdd11111111111d1d11111ddbbbbbbbbbbbbbbbbbdd11111111111d1d11111ddbbbbbbbbbbbbbbbbbdd11111111111d1d11111ddbbbbbbbbbbbbbbbbbdd11111111111d1d11111dd\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcc\ndbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcbd\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbccbbbbbbbbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n`;\n            case \":-%p!6dsfn@Cn4?(/f-u\":\n            case \"Tourist\":return img`\n. . . . . . . 8 8 8 8 8 . . . . \n. . . . . 8 8 6 6 6 6 6 8 . . . \n. . . . 8 8 6 6 6 6 6 6 6 8 . . \n. . . . 8 9 7 6 6 6 6 6 7 b 8 . \n. . 8 8 9 9 7 7 6 6 6 6 7 9 b 8 \n. 8 6 6 9 9 7 7 7 6 6 6 7 9 9 8 \n8 6 6 6 9 9 6 7 7 7 7 7 6 9 9 8 \n8 6 6 6 9 9 8 8 8 8 8 8 8 9 9 8 \n8 6 6 6 9 b 8 b b b 8 b 8 b 9 8 \n8 6 8 8 8 8 b b b b 8 b b 8 b 8 \n8 8 3 3 8 8 6 6 6 6 8 6 6 8 8 8 \n8 3 3 8 8 8 8 8 8 8 8 8 8 8 8 8 \n8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 \n8 8 8 8 f f f 8 8 8 8 f f f 8 8 \n. 8 8 f b c c f 8 8 f b c c f . \n. . . . b b f . . . . b b f . . \n`;\n            case \"IHAx{+JAVkkR7;45OS*f\":\n            case \"Baby\":return img`\n. . . . . . . . . . . . . . . . \n. . . . c c c c . . . . . . . . \n. . c c 5 5 5 5 c c . . . . . . \n. c 5 5 5 5 5 5 5 5 c . . . . . \nc 5 5 5 5 5 1 f 5 5 5 c . . . . \nc 5 5 5 5 5 f f 5 5 5 5 c . . . \nc 5 5 5 5 5 5 5 5 5 5 5 c . . . \nc c b b 1 b 5 5 5 5 5 5 d c . . \nc 5 3 3 3 5 5 5 5 5 d d d c . . \n. b 5 5 5 5 5 5 5 5 d d d c . . \n. . c b b c 5 5 b d d d d c c . \n. c b b c 5 5 b b d d d d c d c \n. c c c c c c d d d d d d d d c \n. . . c c c c d 5 5 b d d d c . \n. . c c c c c b 5 5 b c c c . . \n. . c b b b c d 5 5 b c . . . . \n`;\n            case \"Bx$o-u1n\":\n            case \"Extra Life\":return img`\n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n. . c c c . . . . . c c c . . . \n. c 2 2 2 c c . c c 2 2 2 c . . \n. c 2 2 2 2 2 c 2 2 2 2 2 c . . \n. c 2 2 2 2 2 2 2 2 2 2 2 c . . \n. c 2 2 2 2 2 2 2 2 2 2 2 c . . \n. c 2 2 2 2 2 2 2 2 2 2 2 c . . \n. . c 2 2 2 2 2 2 2 2 2 c . . . \n. . . c 2 2 2 2 2 2 2 c . . . . \n. . . . c c 2 2 2 c c . . . . . \n. . . . . . c 2 c . . . . . . . \n. . . . . . . c . . . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n`;\n        }\n        return null;\n    })\n\n    helpers._registerFactory(\"animation\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"Momma Moving\":\n            case \";bp3BS6:4IVA7v,VAfR(\":return [img`\n........................\n........................\n...........cc...........\n...........cccc.........\n.......cc...ccccccc.....\n.......cccccc555555cc...\n........ccb5555555555c..\n.....cc..b555555555555c.\n.....cccb555555ff155555c\n.....ccb55555555ff55d55c\n......b5555555555555555c\n...c..b555d55555bb13bbc.\n...cccd55ddddd55bb3335c.\n....cbdddddddddd55b335c.\n..cccdddddb55bdddd5555c.\n..cccdddddb555bbbbcccc..\n...ccddddddb5555cbcdc...\nccccbdddddddcb55cbcc....\ncddddddddd55dbccbbc.....\ncbdddddddd555dbbbcc.....\n.ccbdddbbdd555bbcdbcc...\n...cccbbbbdd55ccdddbc...\n......cccbdddbccccccc...\n........cdd555dc........\n`, img`\n........................\n........................\n...........ccc..........\n...........cccc.........\n.......ccc..ccccccc.....\n.......cccccc555555cc...\n........ccb5555555555c..\n.....cc..b555555555555c.\n.....cccb555555ff155555c\n......cb55555555ff55d55c\n......b5555555555555555c\n...cc.b555dd5555bb13bbc.\n...cccd55ddddd555b3335c.\n.....bdddddddddd55b335c.\n..cccdddddb55bbddd5555c.\n..cccdddddb555bbbbcccc..\n...ccddddddb5555cbcdc...\nccccbdddddd5cb55cbcc....\ncddddddddd5555ccbbc.....\n.cddddddbdd555bbbcc.....\n..ccdddbbbdd55cbcdc.....\n....ccbbcbddddccdddcc...\n......cccdd555dcccccc...\n........cccccccc........\n`, img`\n........................\n............cc..........\n............ccc.........\n........ccc.ccccccc.....\n........ccccc555555cc...\n........ccb5555555555c..\n.....ccc.b55555ff15555c.\n.....cccb5555555ff55555c\n......cb555555555555d55c\n....c.b555555555bb55555c\n....ccb555ddd5555b13bbc.\n....ccd55ddddd555b3335c.\n.....cdd5ddddddd55b335c.\n...c.bddddb555bbbd555c..\n...ccdddddbb55555bccc...\n...ccdddddddcc555bcc....\n...ccddddddddbcccbcccc..\n.ccbddddddd55dbbbbc55c..\nccddddddddd555dbbcc5c...\ncddddddbbbdd555bbccc....\n.ccddddbbbbdd55bcc......\n...cccbbbbbdddbcddcc....\n.....cccccdd555dcccc....\n..........cccccc........\n`, img`\n........................\n............cc..........\n............ccc.........\n........ccc.ccccccc.....\n........ccccc555555cc...\n........ccb5555555555c..\n.....ccc.b55555ff15555c.\n.....cccb5555555ff55555c\n......cb555555555555d55c\n....c.b555555555bb55555c\n....ccb555ddd5555b13bbc.\n....ccd55ddddd555b3335c.\n.....cdd5ddddddd55b335c.\n...c.bddddb555bbbd555c..\n...ccdddddbb55555bccc...\n...ccdddddddcc555bcc....\n.ccccdddddddddcccbcccc..\n.cdcdddddddd55dbbbc55c..\n.cdddddddddd555dccc5c...\n.cbddddbbbbdd5d555cc....\n..cbdddbbbbbdd5555......\n...cccbbbbbbd5555c......\n.....cccccccc555c.......\n.............ccc........\n`, img`\n........................\n............cc..........\n............ccc.........\n........ccc.ccccccc.....\n........ccccc555555cc...\n........ccb5555555555c..\n.....ccc.b55555ff15555c.\n.....cccb5555555ff55555c\n......cb555555555555d55c\n....c.b555555555bb55555c\n....ccb555ddd5555b13bbc.\n....ccd55ddddd555b3335c.\n.....cdd5ddddddd55b335c.\n...c.bddddb555bbbd555c..\n...ccdddddb555555bccc...\n..cccddddddcc5555bcc....\n.cdccddddddddbcccbcccc..\n.cddbdddddddddbbbbc55c..\n.cdddddddddd55dbbbc5c...\n.cbddddbbbbd55ddbccc....\n..cbdddbbbbd555dccc.....\n...cccbbbbbbddd555c.....\n.....ccccccbd55555c.....\n...........cc5555c......\n`, img`\n........................\n............cc..........\n............ccc.........\n........cc..ccccccc.....\n........ccccc555555cc...\n........ccb5555555555c..\n.....cc..b555555555555c.\n.....cccb555555ff155555c\n......cb55555555ff55d55c\n......b5555555555555555c\n...cc.b555dd5555bb13bbc.\n...cccd55ddddd555b3335c.\n....ccdd5ddddddd55b335c.\n.....bddddb55bdddd5555c.\n..cccdddddb55bbbbbcccc..\n.ccccddddddb5555cbcccc..\n.cdccdddddddc555cbc55c..\n.cdddddddddddcccbbc5c...\n.cbddddddd55dbbbbccc....\n.ccbdddddd555dbbbcbc....\n..cccddbbbd555bbccc.....\n....ccbbbbbd555cc.......\n......ccccbddddbc.......\n..........cd5555dc......\n`];\n        }\n        return null;\n    })\n\n}\n// Auto-generated code. Do not edit.\n",
+  "main.blocks": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><variables><variable id=\"uJ(:CqE3w:o.{e=fXtOg\">projectile</variable><variable id=\"tT|KB|]JbeNqAVg)|lp:\">myEnemy</variable><variable id=\"UbB[reC]PzdRSEd2:e7,\">extraLife</variable><variable id=\"N?,8OgWY)WXFfk150o6;\">mySprite</variable><variable type=\"KIND_SpriteKind\" id=\"#5=}[4Hvd2G.]kCB^jz2\">Player</variable><variable type=\"KIND_SpriteKind\" id=\"i55NkF}%=?YTbnqQ9#c(\">Projectile</variable><variable type=\"KIND_SpriteKind\" id=\"F9w{dScwQG8RQuK)_pjP\">Food</variable><variable type=\"KIND_SpriteKind\" id=\"jg:1_C3X7E9~JoSmb7mN\">Enemy</variable></variables><block type=\"pxt-on-start\" x=\"0\" y=\"0\"><statement name=\"HANDLER\"><block type=\"gamesetbackgroundimage\"><value name=\"img\"><shadow type=\"background_image_picker\"><field name=\"img\">assets.image`Freeway`</field><data>{\"commentRefs\":[],\"fieldData\":{\"img\":\"X4JB-Z#5z{GHg)(9D5!a\"}}</data></shadow></value><next><block type=\"scroller_scrollBackgroundWithSpeed\"><value name=\"vx\"><shadow type=\"math_number\"><field name=\"NUM\">-50</field></shadow></value><value name=\"vy\"><shadow type=\"math_number\"><field name=\"NUM\">0</field></shadow></value><next><block type=\"variables_set\"><field name=\"VAR\" id=\"N?,8OgWY)WXFfk150o6;\">mySprite</field><value name=\"VALUE\"><shadow type=\"math_number\"><field name=\"NUM\">0</field></shadow><block type=\"spritescreate\"><value name=\"img\"><shadow type=\"screen_image_picker\"><field name=\"img\">assets.image`Momma`</field><data>{\"commentRefs\":[],\"fieldData\":{\"img\":\"HSB#hx_+P`azBCey0vH4\"}}</data></shadow></value><value name=\"kind\"><shadow type=\"spritekind\"><field name=\"MEMBER\">Player</field></shadow></value></block></value><next><block type=\"game_control_sprite\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" _expanded=\"2\" _input_init=\"true\"></mutation><value name=\"sprite\"><shadow type=\"variables_get\"><field name=\"VAR\" id=\"N?,8OgWY)WXFfk150o6;\">mySprite</field></shadow></value><value name=\"vx\"><shadow type=\"math_number\"><field name=\"NUM\">0</field></shadow></value><value name=\"vy\"><shadow type=\"math_number\"><field name=\"NUM\">100</field></shadow></value><next><block type=\"spritesetsetstayinscreen\"><value name=\"sprite\"><block type=\"variables_get\"><field name=\"VAR\" id=\"N?,8OgWY)WXFfk150o6;\">mySprite</field></block></value><value name=\"on\"><shadow type=\"toggleOnOff\"><field name=\"on\">true</field></shadow></value><next><block type=\"gamecountdown\"><value name=\"duration\"><shadow type=\"math_number\"><field name=\"NUM\">15</field></shadow></value><next><block type=\"run_image_animation\"><value name=\"sprite\"><block type=\"variables_get\"><field name=\"VAR\" id=\"N?,8OgWY)WXFfk150o6;\">mySprite</field></block></value><value name=\"frames\"><block type=\"animation_editor\"><field name=\"frames\">assets.animation`Momma Moving`</field><data>{\"commentRefs\":[],\"fieldData\":{\"frames\":\";bp3BS6:4IVA7v,VAfR(\"}}</data></block></value><value name=\"frameInterval\"><shadow type=\"timePicker\"><field name=\"ms\">100</field></shadow></value><value name=\"loop\"><shadow type=\"toggleOnOff\"><field name=\"on\">true</field></shadow></value></block></next></block></next></block></next></block></next></block></next></block></next></block></statement></block><block type=\"forever\" x=\"600\" y=\"0\"><statement name=\"HANDLER\"><block type=\"variables_set\"><field name=\"VAR\" id=\"tT|KB|]JbeNqAVg)|lp:\">myEnemy</field><value name=\"VALUE\"><shadow type=\"math_number\"><field name=\"NUM\">0</field></shadow><block type=\"spritescreateprojectilefromside\"><value name=\"img\"><shadow type=\"screen_image_picker\"><field name=\"img\">assets.image`Tourist`</field><data>{\"commentRefs\":[],\"fieldData\":{\"img\":\":-%p!6dsfn@Cn4?(/f-u\"}}</data></shadow></value><value name=\"vx\"><shadow type=\"spriteSpeedPicker\"><field name=\"speed\">-90</field></shadow></value><value name=\"vy\"><shadow type=\"spriteSpeedPicker\"><field name=\"speed\">0</field></shadow></value></block></value><next><block type=\"Sprite_blockCombine_set\"><field name=\"property\">Sprite.y@set</field><value name=\"mySprite\"><block type=\"variables_get\"><field name=\"VAR\" id=\"tT|KB|]JbeNqAVg)|lp:\">myEnemy</field></block></value><value name=\"value\"><block type=\"device_random\"><value name=\"min\"><shadow type=\"math_number\"><field name=\"NUM\">0</field></shadow></value><value name=\"limit\"><shadow type=\"math_number\"><field name=\"NUM\">120</field></shadow></value></block></value><next><block type=\"spritesetkind\"><value name=\"sprite\"><block type=\"variables_get\"><field name=\"VAR\" id=\"tT|KB|]JbeNqAVg)|lp:\">myEnemy</field></block></value><value name=\"kind\"><shadow type=\"spritekind\"><field name=\"MEMBER\">Enemy</field></shadow></value><next><block type=\"device_pause\"><value name=\"pause\"><shadow type=\"timePicker\"/><block type=\"device_random\"><value name=\"min\"><shadow type=\"math_number\"><field name=\"NUM\">1200</field></shadow></value><value name=\"limit\"><shadow type=\"math_number\"><field name=\"NUM\">2200</field></shadow></value></block></value></block></next></block></next></block></next></block></statement></block><block type=\"forever\" x=\"1280\" y=\"180\"><statement name=\"HANDLER\"><block type=\"variables_set\"><field name=\"VAR\" id=\"UbB[reC]PzdRSEd2:e7,\">extraLife</field><value name=\"VALUE\"><shadow type=\"math_number\"><field name=\"NUM\">0</field></shadow><block type=\"spritescreateprojectilefromside\"><value name=\"img\"><shadow type=\"screen_image_picker\"><field name=\"img\">assets.image`Extra Life`</field><data>{\"commentRefs\":[],\"fieldData\":{\"img\":\"{P7?M9x.:ZK.Bx$o-u1n\"}}</data></shadow></value><value name=\"vx\"><shadow type=\"spriteSpeedPicker\"><field name=\"speed\">-90</field></shadow></value><value name=\"vy\"><shadow type=\"spriteSpeedPicker\"><field name=\"speed\">0</field></shadow></value></block></value><next><block type=\"Sprite_blockCombine_set\"><field name=\"property\">Sprite.y@set</field><value name=\"mySprite\"><block type=\"variables_get\"><field name=\"VAR\" id=\"UbB[reC]PzdRSEd2:e7,\">extraLife</field></block></value><value name=\"value\"><block type=\"device_random\"><value name=\"min\"><shadow type=\"math_number\"><field name=\"NUM\">0</field></shadow></value><value name=\"limit\"><shadow type=\"math_number\"><field name=\"NUM\">120</field></shadow></value></block></value><next><block type=\"spritesetkind\"><value name=\"sprite\"><block type=\"variables_get\"><field name=\"VAR\" id=\"UbB[reC]PzdRSEd2:e7,\">extraLife</field></block></value><value name=\"kind\"><shadow type=\"spritekind\"><field name=\"MEMBER\">Food</field></shadow></value><next><block type=\"device_pause\"><value name=\"pause\"><shadow type=\"timePicker\"/><block type=\"device_random\"><value name=\"min\"><shadow type=\"math_number\"><field name=\"NUM\">4000</field></shadow></value><value name=\"limit\"><shadow type=\"math_number\"><field name=\"NUM\">5000</field></shadow></value></block></value></block></next></block></next></block></next></block></statement></block><block type=\"gamecountdownevent\" x=\"960\" y=\"260\"><statement name=\"HANDLER\"><block type=\"gameOver\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" _expanded=\"0\" _input_init=\"false\"></mutation><value name=\"win\"><shadow type=\"toggleWinLose\"><field name=\"win\">true</field></shadow></value></block></statement></block><block type=\"forever\" x=\"400\" y=\"380\"><statement name=\"HANDLER\"><block type=\"variables_set\"><field name=\"VAR\" id=\"uJ(:CqE3w:o.{e=fXtOg\">projectile</field><value name=\"VALUE\"><shadow type=\"math_number\"><field name=\"NUM\">0</field></shadow><block type=\"spritescreateprojectilefromside\"><value name=\"img\"><shadow type=\"screen_image_picker\"><field name=\"img\">assets.image`Baby`</field><data>{\"commentRefs\":[],\"fieldData\":{\"img\":\"IHAx{+JAVkkR7;45OS*f\"}}</data></shadow></value><value name=\"vx\"><shadow type=\"spriteSpeedPicker\"><field name=\"speed\">-90</field></shadow></value><value name=\"vy\"><shadow type=\"spriteSpeedPicker\"><field name=\"speed\">0</field></shadow></value></block></value><next><block type=\"Sprite_blockCombine_set\"><field name=\"property\">Sprite.y@set</field><value name=\"mySprite\"><block type=\"variables_get\"><field name=\"VAR\" id=\"uJ(:CqE3w:o.{e=fXtOg\">projectile</field></block></value><value name=\"value\"><block type=\"device_random\"><value name=\"min\"><shadow type=\"math_number\"><field name=\"NUM\">0</field></shadow></value><value name=\"limit\"><shadow type=\"math_number\"><field name=\"NUM\">120</field></shadow></value></block></value><next><block type=\"device_pause\"><value name=\"pause\"><shadow type=\"timePicker\"/><block type=\"device_random\"><value name=\"min\"><shadow type=\"math_number\"><field name=\"NUM\">1000</field></shadow></value><value name=\"limit\"><shadow type=\"math_number\"><field name=\"NUM\">2000</field></shadow></value></block></value></block></next></block></next></block></statement></block><block type=\"spritesoverlap\" x=\"90\" y=\"678\"><value name=\"HANDLER_DRAG_PARAM_sprite\"><shadow type=\"argument_reporter_custom\"><mutation typename=\"Sprite\"/><field name=\"VALUE\">sprite</field></shadow></value><value name=\"kind\"><shadow type=\"spritekind\"><field name=\"MEMBER\">Player</field></shadow></value><value name=\"HANDLER_DRAG_PARAM_otherSprite\"><shadow type=\"argument_reporter_custom\"><mutation typename=\"Sprite\"/><field name=\"VALUE\">otherSprite</field></shadow></value><value name=\"otherKind\"><shadow type=\"spritekind\"><field name=\"MEMBER\">Food</field></shadow></value><statement name=\"HANDLER\"><block type=\"spritedestroy\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" _expanded=\"2\" _input_init=\"true\"></mutation><field name=\"effect\">effects.hearts</field><value name=\"sprite\"><block type=\"argument_reporter_custom\"><mutation typename=\"Sprite\"/><field name=\"VALUE\">otherSprite</field></block></value><value name=\"duration\"><shadow type=\"timePicker\"><field name=\"ms\">200</field></shadow></value><next><block type=\"hudChangeLifeBy\"><value name=\"value\"><shadow type=\"math_number\"><field name=\"NUM\">1</field></shadow></value><next><block type=\"spritesay\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" _expanded=\"0\" _input_init=\"false\"></mutation><value name=\"sprite\"><block type=\"argument_reporter_custom\"><mutation typename=\"Sprite\"/><field name=\"VALUE\">otherSprite</field></block></value><value name=\"text\"><shadow type=\"text\"><field name=\"TEXT\">+1</field></shadow></value></block></next></block></next></block></statement></block><block type=\"spritesoverlap\" x=\"833\" y=\"678\"><value name=\"HANDLER_DRAG_PARAM_sprite\"><shadow type=\"argument_reporter_custom\"><mutation typename=\"Sprite\"/><field name=\"VALUE\">sprite</field></shadow></value><value name=\"kind\"><shadow type=\"spritekind\"><field name=\"MEMBER\">Player</field></shadow></value><value name=\"HANDLER_DRAG_PARAM_otherSprite\"><shadow type=\"argument_reporter_custom\"><mutation typename=\"Sprite\"/><field name=\"VALUE\">otherSprite</field></shadow></value><value name=\"otherKind\"><shadow type=\"spritekind\"><field name=\"MEMBER\">Projectile</field></shadow></value><statement name=\"HANDLER\"><block type=\"spritedestroy\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" _expanded=\"2\" _input_init=\"true\"></mutation><field name=\"effect\">effects.rings</field><value name=\"sprite\"><block type=\"argument_reporter_custom\"><mutation typename=\"Sprite\"/><field name=\"VALUE\">otherSprite</field></block></value><value name=\"duration\"><shadow type=\"timePicker\"><field name=\"ms\">200</field></shadow></value><next><block type=\"hudChangeScoreBy\"><value name=\"value\"><shadow type=\"math_number\"><field name=\"NUM\">1</field></shadow></value></block></next></block></statement></block><block type=\"spritesoverlap\" x=\"1633\" y=\"678\"><value name=\"HANDLER_DRAG_PARAM_sprite\"><shadow type=\"argument_reporter_custom\"><mutation typename=\"Sprite\"/><field name=\"VALUE\">sprite</field></shadow></value><value name=\"kind\"><shadow type=\"spritekind\"><field name=\"MEMBER\">Player</field></shadow></value><value name=\"HANDLER_DRAG_PARAM_otherSprite\"><shadow type=\"argument_reporter_custom\"><mutation typename=\"Sprite\"/><field name=\"VALUE\">otherSprite</field></shadow></value><value name=\"otherKind\"><shadow type=\"spritekind\"><field name=\"MEMBER\">Enemy</field></shadow></value><statement name=\"HANDLER\"><block type=\"spritedestroy\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" _expanded=\"2\" _input_init=\"true\"></mutation><field name=\"effect\">effects.fire</field><value name=\"sprite\"><block type=\"argument_reporter_custom\"><mutation typename=\"Sprite\"/><field name=\"VALUE\">otherSprite</field></block></value><value name=\"duration\"><shadow type=\"timePicker\"><field name=\"ms\">200</field></shadow></value><next><block type=\"hudChangeLifeBy\"><value name=\"value\"><shadow type=\"math_number\"><field name=\"NUM\">-1</field></shadow></value></block></next></block></statement></block></xml>",
+  "main.ts": "info.onCountdownEnd(function () {\n    game.over(true)\n})\nsprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {\n    otherSprite.destroy(effects.rings, 200)\n    info.changeScoreBy(1)\n})\nsprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {\n    otherSprite.destroy(effects.hearts, 200)\n    info.changeLifeBy(1)\n    otherSprite.say(\"+1\")\n})\nsprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {\n    otherSprite.destroy(effects.fire, 200)\n    info.changeLifeBy(-1)\n})\nlet projectile: Sprite = null\nlet extraLife: Sprite = null\nlet myEnemy: Sprite = null\nscene.setBackgroundImage(assets.image`Freeway`)\nscroller.scrollBackgroundWithSpeed(-50, 0)\nlet mySprite = sprites.create(assets.image`Momma`, SpriteKind.Player)\ncontroller.moveSprite(mySprite, 0, 100)\nmySprite.setStayInScreen(true)\ninfo.startCountdown(15)\nanimation.runImageAnimation(\nmySprite,\nassets.animation`Momma Moving`,\n100,\ntrue\n)\nforever(function () {\n    myEnemy = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)\n    myEnemy.y = randint(0, 120)\n    myEnemy.setKind(SpriteKind.Enemy)\n    pause(randint(1200, 2200))\n})\nforever(function () {\n    extraLife = sprites.createProjectileFromSide(assets.image`Extra Life`, -90, 0)\n    extraLife.y = randint(0, 120)\n    extraLife.setKind(SpriteKind.Food)\n    pause(randint(4000, 5000))\n})\nforever(function () {\n    projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)\n    projectile.y = randint(0, 120)\n    pause(randint(1000, 2000))\n})\n",
+  "pxt.json": "{\n    \"name\": \"Final Collector with Animation\",\n    \"version\": \"0.0.1\",\n    \"description\": \"\",\n    \"dependencies\": {\n        \"device\": \"*\",\n        \"arcade-background-scroll\": \"github:riknoll/arcade-background-scroll#43651f88b917a98ad886fdd4c1c2ad8001ce9b9c\"\n    },\n    \"files\": [\n        \"main.blocks\",\n        \"main.ts\",\n        \"README.md\",\n        \"assets.json\",\n        \"images.g.jres\",\n        \"images.g.ts\"\n    ],\n    \"testFiles\": [\n        \"test.ts\"\n    ],\n    \"targetVersions\": {\n        \"target\": \"1.4.41\",\n        \"targetId\": \"arcade\"\n    },\n    \"supportedTargets\": [\n        \"arcade\"\n    ],\n    \"preferredEditor\": \"blocksprj\"\n}\n",
+  "test.ts": "// tests go here; this will not be compiled when this package is used as an extension.\n"
+}
+```
