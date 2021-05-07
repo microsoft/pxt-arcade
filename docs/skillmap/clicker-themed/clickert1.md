@@ -5,7 +5,7 @@
 
 Let's make a clicker game!
 
-![Click away](/static/skillmap/clicker/clicker-activity-1.gif "Click and buy bigger clickers" )
+![Click away](/static/skillmap/clicker/clickert1.gif "Click and buy bigger clickers" )
 
 
 ## Step 2
