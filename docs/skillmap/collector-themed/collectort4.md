@@ -95,7 +95,7 @@ The code for a collector game is already in the workspace.
 
 
 
-## Step 3
+## Step 3 @showdialog
 
 Let's start by animating the main ``||sprites:Player||``!
 
@@ -301,7 +301,7 @@ true
 
 Play through your game a few times to appreciate how much you've done!
 
-When you're ready, click **Finish** to return to the main page where you can share your game with family and friends!
+When you're ready, click **Finish** to return to the main page where you can share your game with family and friends!  
 
 
 

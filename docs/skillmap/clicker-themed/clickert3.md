@@ -42,7 +42,7 @@ some projectiles to make it even more interesting.
 ---
 
 ► From ``||sprites:Sprites||``, grab
-``||sprites:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||`` 
+``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||`` 
 and drop it into **the end** of the ``||controller:on [A] button [pressed]||`` container 
 already in the workspace.
 
@@ -91,7 +91,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ---
 
-► From the ``||math:Math||`` category, drag out two ``||math: pick random [0] to [10]||``
+► From the ``||math:Math||`` category, drag out **TWO** ``||math: pick random [0] to [10]||``
 blocks.  Add the first to the **vx** of the **set projectile** block and add the second to the **vy**.
 
 ► Change the range of the first random block (next to **vx**) to pick between 

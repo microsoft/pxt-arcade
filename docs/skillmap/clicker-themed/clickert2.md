@@ -24,7 +24,7 @@ make it even more special!
 
 ## Step 2
 
-First, play your game in the **simulator** to remember how it works.
+🕹️ First, play your game in the **simulator** to remember how it works 🕹️
 
 ---
 
@@ -47,6 +47,9 @@ and snap it into **the bottom** of the ``||loops:on start||`` container.
 
 **Note:** If no inspiration strikes, you can choose a ready-made button from the 
 **Gallery** or **My Assets** tab of the image editor.
+
+![Toggle to a new window](/static/skillmap/assets/gallery-toggle.gif "Choose the image editor, gallery, or my assets." )
+
 
 
 ```blocks
@@ -93,7 +96,7 @@ Right now, the button never comes back up once pressed.
 
 ► Change ``||controller:[pressed]||`` to ``||controller:[released]||`` using the dropdown menu.
 
-► Snap a new ``||sprites: set [mySprite] image to [ ]||`` block inside, and choose the same 
+► Snap a new ``||sprites: set [mySprite] image to [ ]||`` block inside, and go to the **My Assets** tab to choose the same 
 **up** button image that you used for the original sprite. 
 
 ```blocks
@@ -160,7 +163,7 @@ info.onCountdownEnd(function () {
 Play your game to see how you did.
 
 When you're done, click **Finish** to return to the main page where you can share
-with family and friends then compete for the most clicks in 10 seconds!  
+with family and friends then compete for the most clicks in 10 seconds!   
 
 ```assetjson
 {
