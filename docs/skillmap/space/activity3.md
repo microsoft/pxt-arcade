@@ -81,9 +81,9 @@ Let's add some code that will drop an enemy toward the ship every second or so.
 
 ---
  
-🔲 Add an ``||game:on game update every [500] ms||`` container to the workspace  
+► Add an ``||game:on game update every [500] ms||`` container to the workspace  
 
-🔲 Change the last argument to **1000** [__*ms*__](#millis "milliseconds...aka 1/1000 of a second") 
+► Change the last argument to **1000** [__*ms*__](#millis "milliseconds...aka 1/1000 of a second") 
 (or pick **1 second** from the dropdown)    
 <br/>
 
@@ -94,14 +94,14 @@ game.onUpdateInterval(1000, function () {
 
 ## Step 2
 
-🔲 In the ``||sprites:Sprites||`` category, find the
+► In the ``||sprites:Sprites||`` category, find the
 ``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||`` block
 and drag it into the new **on game update** container.
 
-🔲 Click on the ``||variables:[projectile2]||`` value inside the new block and 
+► Click on the ``||variables:[projectile2]||`` value inside the new block and 
 select "Rename variable..."  
 
-🔲 Change the variable name to ``||variables:myEnemy||`` so we know these are the baddies.  
+► Change the variable name to ``||variables:myEnemy||`` so we know these are the baddies.  
 <br/>
 ```blocks
 let myEnemy: Sprite = null
@@ -133,10 +133,10 @@ game.onUpdateInterval(1000, function () {
 
 ---
 
-🔲 Click the grey square inside the new block to design your enemy  
+► Click the grey square inside the new block to design your enemy  
 (or choose one from the gallery).  
 
-🔲 Play with the **vx** and **vy** values of **myEnemy** until 
+► Play with the **vx** and **vy** values of **myEnemy** until 
 your new sprites are falling straight down the side of the screen. 
 
 
@@ -174,18 +174,18 @@ so let's add an element of surprise using [__*random numbers*__](#randos "number
 ---
 
 
-🔲 Snap a ``||sprites:set [mySprite] [x] to [0]||`` block into the 
+► Snap a ``||sprites:set [mySprite] [x] to [0]||`` block into the 
 end of the **on game update** container.  
 
-🔲 To make sure we're acting on the right sprites, use the dropdown in the 
+► To make sure we're acting on the right sprites, use the dropdown in the 
 new block to change ``||variables:mySprite||`` to ``||variables:myEnemy||``.
 
-🔲 Set a random [__*x*__](#setX "horizontal location") 
+► Set a random [__*x*__](#setX "horizontal location") 
 for the enemies using a
 ``||Math:pick random [0] to [10]||`` block from the ``||Math:Math||`` category.
 Connect it to replace the **0** in the  **set mySprite x** block.
 
-🔲 Finally, update the minimum argument of the ``||Math:pick random [0] to [10]||`` block to **5** and the
+► Finally, update the minimum argument of the ``||Math:pick random [0] to [10]||`` block to **5** and the
 maximum argument to **155**. 
 
 ---
@@ -230,10 +230,10 @@ We can make sure they all have the same effect using the
 
 ---
 
-🔲 Snap a ``||sprites:set [mySprite] kind to [Player]||`` block into the bottom of the 
+► Snap a ``||sprites:set [mySprite] kind to [Player]||`` block into the bottom of the 
 **on game update** container. 
 
-🔲 Change ``||variables:mySprite||`` to ``||variables:myEnemy||``, then choose 
+► Change ``||variables:mySprite||`` to ``||variables:myEnemy||``, then choose 
  ``||sprites:Enemy||`` as the kind.  
  <br/>
 
@@ -279,10 +279,10 @@ collides with our ship.
 ---
 
 
-🔲 Drag an ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
+► Drag an ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
 container into the workspace. 
 
-🔲 Change the last argument from ``||variables:Player||`` to ``||variables:Enemy||``.
+► Change the last argument from ``||variables:Player||`` to ``||variables:Enemy||``.
 
 ---
 
@@ -304,13 +304,13 @@ we want it to subtract a life...then disappear.
 ---
 
 
-🔲 Grab the ``||info:change life by [-1]||`` block from the ``||info:Info||`` category and snap it into the 
+► Grab the ``||info:change life by [-1]||`` block from the ``||info:Info||`` category and snap it into the 
 **on player overlaps enemy** container. 
 That removes a life from the player every time it's hit by an enemy.
 
-🔲 Find the ``||sprites:destroy [mySprite] ⊕||`` block and snap it below the previous block. 
+► Find the ``||sprites:destroy [mySprite] ⊕||`` block and snap it below the previous block. 
 
-🔲 To tell the **destroy** block that you want it to affect the overlapping enemy, 
+► To tell the **destroy** block that you want it to affect the overlapping enemy, 
 click on the ``||variables:otherSprite||`` variable from the top of the 
 **overlaps** container and drag it down to replace the 
 ``||variables:mySprite||`` argument in ``||sprites:destroy [mySprite] ⊕||``.
@@ -338,13 +338,13 @@ destroy our enemies on impact.
 ---
 
 
-🔲 Drag another ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
+► Drag another ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
 container into the workspace.
 
-🔲 Change the first kind to ``||sprites:Enemy||`` and the second kind to
+► Change the first kind to ``||sprites:Enemy||`` and the second kind to
 ``||sprites:Projectile||``. 
 
-🔲 Inside, add two ``||sprites:destroy [mySprite] ⊕||`` blocks, then change the arguments
+► Inside, add two ``||sprites:destroy [mySprite] ⊕||`` blocks, then change the arguments
 so that one destroys the enemy (``||variables:sprite||``) and the other 
 destroys your projectile (``||variables:otherSprite||``).
 

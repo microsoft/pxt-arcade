@@ -126,10 +126,10 @@ what fun is it to get extra power for free? Let's add code to charge the player 
 
 ---
 
-🔲 From the ``||info:Info||`` category, grab a ``||info:change score by [1]||``
+► From the ``||info:Info||`` category, grab a ``||info:change score by [1]||``
 block and snap it into the top of the **on B button pressed** container.
 
-🔲 Change the value in the new block from **1** to **-10**.   
+► Change the value in the new block from **1** to **-10**.   
 
 ```blocks
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {

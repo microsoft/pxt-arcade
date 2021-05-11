@@ -85,11 +85,11 @@ We'll start by adding a sprite that can interact with the user.
 ---
 
 
-🔲 From the ``||sprites:Sprites||`` category, grab a 
+► From the ``||sprites:Sprites||`` category, grab a 
 ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and 
 snap it into the empty **on start** container already in the workspace.
 
-🔲 Click the empty grey box in the new block and draw a wise character.  
+► Click the empty grey box in the new block and draw a wise character.  
 
 
 
@@ -125,11 +125,11 @@ The sprite needs to challenge the user to guess their number.
 ---
 
 
-🔲 From the ``||game:Game||`` category, grab a 
+► From the ``||game:Game||`` category, grab a 
 ``||game:show long text [" "] [bottom]||`` block and 
 snap it into the end of the **on start** container.
 
-🔲 Enter a message into the empty text box to challenge the user to guess a number between 1 & 5.   
+► Enter a message into the empty text box to challenge the user to guess a number between 1 & 5.   
 
 
 
@@ -168,15 +168,15 @@ computer should choose something at random.
 ---
 
 
-🔲 First, we need a place to store the random number the computer will choose.
+► First, we need a place to store the random number the computer will choose.
 From the ``||variables:Variables||`` category, grab a 
 ``||variables:set [mySprite] to [0]||`` block and snap it into the **top**
 of the **on start** container (above where you set the player sprite.)
 
-🔲 Click **mySprite** in the new block and choose **New Variable...** from
+► Click **mySprite** in the new block and choose **New Variable...** from
 the dropdown.
 
-🔲 Give the new [__*variable*__](#varied "a label that holds the place for something that can change") 
+► Give the new [__*variable*__](#varied "a label that holds the place for something that can change") 
 a meaningful name, like **myNumber**.
 
 
@@ -214,11 +214,11 @@ Now we'll add the block to set our new variable to a random number.
 ---
 
 
-🔲 From the ``||math:Math||`` category, grab a 
+► From the ``||math:Math||`` category, grab a 
 ``||math:pick random [0] to [10]||`` value block and 
 use it to replace the **0** assigned to **myNumber**.
 
-🔲 Change the range of your random number to stay between **1** and **5**. 
+► Change the range of your random number to stay between **1** and **5**. 
 
 
 
@@ -256,11 +256,11 @@ Next, we need to check to see **if** the user's guess is right.
 ---
 
 
-🔲 From the ``||logic:Logic||`` category, grab a 
+► From the ``||logic:Logic||`` category, grab a 
 ``||logic:if <true> then / else||`` double category block and 
 snap it into the end of your **on start** container.
 
-🔲 Replace **`<true>`** with a ``||logic:[0] [=] [0]||`` value block.  
+► Replace **`<true>`** with a ``||logic:[0] [=] [0]||`` value block.  
 
 
 ```blocks
@@ -295,16 +295,16 @@ if (0 == 0) {
 ## Step 7
 
 
-🔲 Replace the first **0** in your logic value block with an 
+► Replace the first **0** in your logic value block with an 
 ``||game:ask for number [""] ⊕||`` value block.
 
-🔲 Click the **⊕** to the right of the new block and limit your max length 
+► Click the **⊕** to the right of the new block and limit your max length 
 to **1** digit.
 
-🔲 Replace the second **0** in your logic value block with a
+► Replace the second **0** in your logic value block with a
 ``||variables:myNumber||`` value block.
 
-🔲 Put a message in the **ask for number** block that reminds users
+► Put a message in the **ask for number** block that reminds users
 what to do once they're at the number pad.
 
 
@@ -362,10 +362,10 @@ to let them know if they guessed correctly.
 ---
 
 
-🔲 We've already completed the code to check **if** the user's guess matched 
+► We've already completed the code to check **if** the user's guess matched 
 the variable **myNumber**.  **If** it did, the computer will run the code in the top half of the container.  Stick a ``||sprites:[mySprite] say [":)"]||`` block in there and add a message telling the user that they're right!
 
-🔲 If the user's number didn't match **myNumber**, the computer will run any
+► If the user's number didn't match **myNumber**, the computer will run any
 code in the bottom (**else**) container. Add a ``||sprites:[mySprite] say [":)"]||`` block down there and let the user know their guess was wrong.
 
 

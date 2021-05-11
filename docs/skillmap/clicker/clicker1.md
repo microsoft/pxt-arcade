@@ -57,11 +57,11 @@ Let's start building the scoreboard by adding a background color.
 
 ---
 
-🔲 Choose a background color by opening the ``||scene:Scene||`` category and dragging 
+► Choose a background color by opening the ``||scene:Scene||`` category and dragging 
 ``||scene: set background color to [ ]||`` into the ``||loops:on start||``
 container that's already in the workspace.
 
-🔲 When you're done, click **> Next** to see the next step.  
+► When you're done, click **> Next** to see the next step.  
 
 
 ```blocks
@@ -78,7 +78,7 @@ scene.setBackgroundColor(0)
 ---
 
 
-🔲 Click the grey box in the new block to choose your own color.  
+► Click the grey box in the new block to choose your own color.  
 
 **Note:** Grey represents empty, so if you leave the box grey, 
 your background will continue to look like the empty void of space.
@@ -97,11 +97,11 @@ Add a [__*splash screen*__](#splasht "A full-screen message that shows while a p
 
 ---
 
-🔲 Open the ``||game:Game||`` category and 
+► Open the ``||game:Game||`` category and 
 drag the ``||game: splash [" "]||`` block into the bottom of the **on start** 
 container.
 
-🔲 Click inside the empty text area of the new block and type your instruction.   
+► Click inside the empty text area of the new block and type your instruction.   
 
 
 ```blocks
@@ -121,11 +121,11 @@ the score when the **Ⓐ** button is clicked.
 
 ---
 
-🔲 From the ``||controller:Controller||`` category, grab the
+► From the ``||controller:Controller||`` category, grab the
 ``||controller: on [A] button [pressed]||`` container and drop it into an 
 empty spot in the workarea.  
 
-🔲 From ``||info:Info||``, drag out the ``||info:change score by [1]||`` block
+► From ``||info:Info||``, drag out the ``||info:change score by [1]||`` block
 and snap it into the new container.   
 
 
@@ -144,7 +144,7 @@ the player a clear endpoint.
 
 ---
 
-🔲  Open the ``||info:Info||`` category and 
+►  Open the ``||info:Info||`` category and 
 drag the ``||info: start countdown [10] (s)||`` block into the bottom of the 
 ``||loops:on start||`` container.   
 

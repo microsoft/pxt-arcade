@@ -215,11 +215,11 @@ number of lives they start with.
 
 ---
 
-🔲 From the ``||info:Info||`` category, grab a 
+► From the ``||info:Info||`` category, grab a 
 ``||info:set life to [3]||`` block and snap it in at the top of the 
 **on start** container.
 
-🔲 Change the number of lives from **3** to **5**.
+► Change the number of lives from **3** to **5**.
 
 ```blocks
 
@@ -253,12 +253,12 @@ Let's expand our universe of random numbers from 9 to 99.
 
 ---
 
-🔲 Find the ``||math:pick random [1] to [9]||`` value inside of your 
+► Find the ``||math:pick random [1] to [9]||`` value inside of your 
 **set myNumber** block and change **9** to **99**.
 
-🔲 Change the number **9** to **99** throughout the rest of your project.
+► Change the number **9** to **99** throughout the rest of your project.
 
-🔲 Find your **ask for number** value block and change the max length from 
+► Find your **ask for number** value block and change the max length from 
 **1** to **2**.
 
 ```blocks
@@ -291,11 +291,11 @@ we're going to need to save your guess to a variable so we can use it more than 
 ---
 
 
-🔲 From the ``||variables:Variables||`` category, grab a 
+► From the ``||variables:Variables||`` category, grab a 
 ``||variables:set [yourGuess] to [0] ||`` block and drag it *just above* the 
 **if/then** header inside the **while** loop container.
 
-🔲 Grab the **ask for number** block out of the **if/else** header and snap it 
+► Grab the **ask for number** block out of the **if/else** header and snap it 
 in to replace the **0** of the **set yourGuess** block.
 
 
@@ -329,7 +329,7 @@ random number...
 
 ---
 
-🔲 Grab a ``||variables:yourGuess||`` value block and use it to replace the 
+► Grab a ``||variables:yourGuess||`` value block and use it to replace the 
 **0** in the header of the **if/then** container.  
 
 
@@ -369,10 +369,10 @@ condition inside of the **else** container that we're already using.
 ---
 
 
-🔲 Grab an ``||logic:if <true> then ... else||`` container and snap it 
+► Grab an ``||logic:if <true> then ... else||`` container and snap it 
 in at the very top of the **else** container already in the workspace.
 
-🔲 Right click on the **mySprite say** block immediately beneath the new 
+► Right click on the **mySprite say** block immediately beneath the new 
 **if/then/else** container and choose 
 **Delete Blocks** from the dropdown menu. That will get rid of that block without 
 having to shuffle your code.
@@ -408,10 +408,10 @@ If the computer has read this far, we know the player didn't guess correctly.
 ---
 
 
-🔲 Let's check to see if the guess was too low by replacing 
+► Let's check to see if the guess was too low by replacing 
 **`<true>`** with ``||logic: [0] [<] [0]||``.
 
-🔲 Now you can replace the first **0** in your logic value block with 
+► Now you can replace the first **0** in your logic value block with 
 ``||variables:yourGuess||`` and the second **0** with ``||variables:myNumber||`` 
 to look for the case where the user guesses lower than the computer.
 
@@ -451,10 +451,10 @@ runs when the player's guess is too high.
 ---
 
 
-🔲 Add a ``||sprites:[mySprite] say [":)"]||`` block to the top nested container 
+► Add a ``||sprites:[mySprite] say [":)"]||`` block to the top nested container 
 and change the text to tell the user their guess was too low.
 
-🔲 Add a ``||sprites:[mySprite] say [":)"]||`` block to the bottom nested container 
+► Add a ``||sprites:[mySprite] say [":)"]||`` block to the bottom nested container 
 and change the text to tell the user their guess was too high.
 
 

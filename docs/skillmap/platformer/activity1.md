@@ -96,10 +96,10 @@ We'll want to create our main sprite and get it moving before we do anything els
 
 ---
 
-🔲 From the ``||sprites:Sprites||`` category, drag the ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
+► From the ``||sprites:Sprites||`` category, drag the ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
 block to the end of the ``||loops:on start||`` container.
 
-🔲 Click on the grey box in the middle of your
+► Click on the grey box in the middle of your
  ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block
  to open the sprite editor.  From there, you can switch over to "Gallery"
  and choose a pre-drawn character.
@@ -140,10 +140,10 @@ let mySprite = sprites.create(img`
 
 ---
 
-🔲 Drag a ``||controller:move [mySprite] with buttons ⊕||`` block.   
+► Drag a ``||controller:move [mySprite] with buttons ⊕||`` block.   
 to the end of the ``||loops:on start||`` container
 
-🔲 Press the ⊕ button on the new block and change the [__*vy*__](#whatVY "vertical velocity") 
+► Press the ⊕ button on the new block and change the [__*vy*__](#whatVY "vertical velocity") 
 argument to **0** so that the player won't move up or down with the joypad.  
 
 
@@ -190,12 +190,12 @@ to "pull down" on the sprite.
 
 ---
 
-🔲 Drag a ``||sprites:set [mySprite] [x] to [0]||`` block to the end of 
+► Drag a ``||sprites:set [mySprite] [x] to [0]||`` block to the end of 
 the ``||loops:on start||`` container.
 
-🔲 Click the dropdown to change **x** to **ay (acceleration y)** 
+► Click the dropdown to change **x** to **ay (acceleration y)** 
 
-🔲 Replace **0** with **500**.
+► Replace **0** with **500**.
 <br/>
 
 
@@ -235,14 +235,14 @@ Let's attach a jumping action to the Ⓐ button.
 ---
 
 
-🔲 Start by dragging an ``||controller:on [A] button [pressed]||`` block into the workspace.
+► Start by dragging an ``||controller:on [A] button [pressed]||`` block into the workspace.
 
-🔲 Inside of that, add ``||sprites:set [mySprite] [x] to [0]||`` . 
+► Inside of that, add ``||sprites:set [mySprite] [x] to [0]||`` . 
 
-🔲 To choose the attribute for the player's [__*vertical velocity*__](#whatVelY "speed in the up/down direction"),
+► To choose the attribute for the player's [__*vertical velocity*__](#whatVelY "speed in the up/down direction"),
 click the dropdown menu and change **x** to **vy (velocity y)**.
 
-🔲 The player will jump upward if you change **0** to something smaller.
+► The player will jump upward if you change **0** to something smaller.
 Try  **-150** or **-200**.  
 <br/>
 

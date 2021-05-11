@@ -512,9 +512,9 @@ Do you have your joke?
 
 ---
 
-🔲 Locate the ``||scene: set background image to [ ]||`` block (inside your **on start** container) and click the image area to open the image editor. 
+► Locate the ``||scene: set background image to [ ]||`` block (inside your **on start** container) and click the image area to open the image editor. 
 
-🔲 Create a background that shows where your joke takes place.  
+► Create a background that shows where your joke takes place.  
 Is it the ocean? The sky? A kitchen? 
 
 
@@ -659,11 +659,11 @@ We can add these characters as [__*sprites*__](#sprotes "2-D images that moves o
 
 ---
 
-🔲 To add a character, look in the ``||sprites:Sprites||`` category for
+► To add a character, look in the ``||sprites:Sprites||`` category for
 ``||variables: set [mySprite] to sprite [ ] of kind [Player]||`` 
 and drag it into the bottom of the ``||loops:on start||`` container.
 
-🔲 Create the perfect character for your joke by clicking the grey box in the
+► Create the perfect character for your joke by clicking the grey box in the
 new sprite block so you can draw something in the image editor.
 
 
@@ -783,14 +783,14 @@ your punchline is presented separately at the end.
 
 ---
 
-🔲 Write your joke on paper and circle the punchline. It's usually 
+► Write your joke on paper and circle the punchline. It's usually 
 the last line, and it's the part that makes people laugh.
 
-🔲 Enter your punchline into the last ``||game: show long text [" "] [bottom]||``
+► Enter your punchline into the last ``||game: show long text [" "] [bottom]||``
 block inside your **on button pressed** container,
 and split the rest of the joke into other text blocks above it. 
 
-🔲 If your joke has two characters, you'll probably want to use the 
+► If your joke has two characters, you'll probably want to use the 
 ``||sprites: [mySprite] say [":)"]||`` block instead so people can tell who's talking.
 
 
@@ -817,7 +817,7 @@ Is it funny?  Does the text overlap anything important on the screen?
 
 ---
 
-🔲  Experiment with the location of the text by changing the location to
+►  Experiment with the location of the text by changing the location to
 the **top**, **left**, or **right** in the 
 ``||game: show long text [" "] [bottom]||`` block. 
 
@@ -836,10 +836,10 @@ End on a high note with confetti or a screen full of smiles.
 
 ---
 
-🔲 Move the ``||scene: start screen [confetti] effect||`` block out of the
+► Move the ``||scene: start screen [confetti] effect||`` block out of the
 **on start** container and into the end of the **on button pressed** container.
 
-🔲 Change **confetti** to whatever gives your joke the biggest punch!
+► Change **confetti** to whatever gives your joke the biggest punch!
 
 ```block
 

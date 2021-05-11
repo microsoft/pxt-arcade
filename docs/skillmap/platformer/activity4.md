@@ -169,12 +169,12 @@ function again and again, even if you're doing something else inbetween.
 ---
 
 
-🔲 In the toolbox, expand the **˅ Advanced** tab and click 
+► In the toolbox, expand the **˅ Advanced** tab and click 
 on the ``||functions: Functions||`` category.
 
-🔲 Press the ``||controller: Make a Function...||`` button to create your new function.
+► Press the ``||controller: Make a Function...||`` button to create your new function.
 
-🔲 Click inside the textbox to name this function **startNextLevel**, then click **Done**.
+► Click inside the textbox to name this function **startNextLevel**, then click **Done**.
 
 ![naming a function](/static/skillmap/platformer/name-function.gif "Say my name, say my name.")
 
@@ -195,10 +195,10 @@ Right now, the code you need for starting a level lives inside the
 ---
 
 
-🔲 Pull the ``||scene: set tilemap to [ ]||`` block out of ``||loops: on start||``.
+► Pull the ``||scene: set tilemap to [ ]||`` block out of ``||loops: on start||``.
 Everything connected below should come along with it. 
 
-🔲 Snap the whole chunk of code into your new **startNextLevel** function container.
+► Snap the whole chunk of code into your new **startNextLevel** function container.
 
 ---
 
@@ -254,7 +254,7 @@ when to run **startNextLevel**.
 
 ---
 
-🔲 From the ``||functions: Functions||`` category, drag a 
+► From the ``||functions: Functions||`` category, drag a 
 ``||functions: call startNextLevel||`` block and snap it into the end of the
 ``||loops: on start||`` container.
 
@@ -335,7 +335,7 @@ what happens inside of it.
 
 ---
 
-🔲 Remove the ``||game: game over <WIN>||`` block from the 
+► Remove the ``||game: game over <WIN>||`` block from the 
 **on sprite overlaps 🏆** event 
 and replace it with a new ``||functions: call startNextLevel||`` block.   
 
@@ -389,10 +389,10 @@ to make decisions instead of creating new code for every possibility.
 ---
 
 
-🔲 To make a new variable, go to the ``||variables: Variables||`` menu
+► To make a new variable, go to the ``||variables: Variables||`` menu
 and click on ``||controller: Make a Variable...||`` .
 
-🔲 Enter **currentLevel** in the textbox and click **OK**.   
+► Enter **currentLevel** in the textbox and click **OK**.   
 
 
 ## Variable 2
@@ -405,7 +405,7 @@ We'll need to [**_increment_**](#addOn "add to")
 ---
 
 
-🔲 Snap a ``||variables: change [currentLevel] by [1]||`` block 
+► Snap a ``||variables: change [currentLevel] by [1]||`` block 
 into the **top** of the **startNextLevel** function.   
 
 
@@ -453,7 +453,7 @@ This is the perfect place for another **if/then** element!
 
 ---
 
-🔲 Connect a new ``||logic: if <true> then||`` block near the **top** of 
+► Connect a new ``||logic: if <true> then||`` block near the **top** of 
 the **startNextLevel** function container, just below the block to **change currentLevel by 1** .   
 
 
@@ -503,12 +503,12 @@ using our original tilemap.
 ---
  
 
-🔲 Find a ``||logic:[0] [=] [0]||`` block to replace **`<true>`**
+► Find a ``||logic:[0] [=] [0]||`` block to replace **`<true>`**
  in the empty ``||logic:if <true> then||`` container.
 
-🔲 Replace the first **0** in the logic arguement with  ``||variables:currentLevel||``. 
+► Replace the first **0** in the logic arguement with  ``||variables:currentLevel||``. 
 
-🔲 Replace the second **0** of the logic argument with **1**.   
+► Replace the second **0** of the logic argument with **1**.   
 
 
 ```blocks
@@ -559,7 +559,7 @@ Let's get our **if/then** logic working with our current game before we add new 
 
 If the player is on level 1, we want to show our current tile map.
 
-🔲 Move the ``||scene: set tilemap to [ ]||`` block from beneath the **if/then**
+► Move the ``||scene: set tilemap to [ ]||`` block from beneath the **if/then**
 and snap it inside the empty container.
 
 The connected code will travel with the ``||scene: set tilemap to [ ]||`` block, 
@@ -618,9 +618,9 @@ already defined.
 ---
   
 
-🔲 Press the **⊕** button on the **if/then** container to add an **else** clause.
+► Press the **⊕** button on the **if/then** container to add an **else** clause.
 
-🔲 Snap a ``||game: game over <WIN>||`` block inside.
+► Snap a ``||game: game over <WIN>||`` block inside.
 
 ```blocks
 let myEnemy: Sprite = null
@@ -676,15 +676,15 @@ From here, adding new levels is extremely straightforward.  All you need to do i
 ---
 
 
-🔲 Press the **⊕** button on the **if/then/else** container to add an 
+► Press the **⊕** button on the **if/then/else** container to add an 
 **else if** clause.
 
-🔲 Duplicate the ``||logic:[currentLevel] [=] [1]||`` block and place the 
+► Duplicate the ``||logic:[currentLevel] [=] [1]||`` block and place the 
 copy in the new **else if** condition slot.
 
-🔲 Change **1** to **2**.
+► Change **1** to **2**.
 
-🔲 Duplicate the ``||scene: set tilemap to [ ]||`` block from level 1 and snap it into the 
+► Duplicate the ``||scene: set tilemap to [ ]||`` block from level 1 and snap it into the 
 empty **else if** container.   
 
 
@@ -742,13 +742,13 @@ destroy them one by one. Fortunately, Arcade has a block for this exact purpose.
 ---
 
 
-🔲 Snap a ``||loops: for element [value] of [list]||`` loop into the very **top**
+► Snap a ``||loops: for element [value] of [list]||`` loop into the very **top**
  of the **startNextLevel** function.
 
-🔲 From the ``||sprites:Sprites||`` category, grab an ``||sprites:array of sprites of kind [Player]||``
+► From the ``||sprites:Sprites||`` category, grab an ``||sprites:array of sprites of kind [Player]||``
  argument and replace the **list** variable in the header of your new loop.
 
-🔲 Change the **array of sprites** kind to **Enemy**. 
+► Change the **array of sprites** kind to **Enemy**. 
 
 
 
@@ -806,9 +806,9 @@ This is your chance to destroy them!
 ---
 
 
-🔲 Drag a ``||sprites: destroy [mySprite]||`` block into the new **for element** loop.
+► Drag a ``||sprites: destroy [mySprite]||`` block into the new **for element** loop.
 
-🔲 Replace ``||variables: mySprite||`` with the ``||variables: value||``
+► Replace ``||variables: mySprite||`` with the ``||variables: value||``
 attribute from the header of the **for element** loop.  
 
 ---

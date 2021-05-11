@@ -15,10 +15,10 @@ In this tutorial, you'll design a spaceship for your journey.
 ---
 
 
-🔲 Drag the ``||scene:start screen [confetti] effect ⊕||`` from the  ``||scene:Scene||`` category and
+► Drag the ``||scene:start screen [confetti] effect ⊕||`` from the  ``||scene:Scene||`` category and
 into the ``||loops:on start||`` block that's already in the workspace.
 
-🔲 Next, select ``||scene:star field||`` (instead of ``||scene:confetti||``) from the dropdown
+► Next, select ``||scene:star field||`` (instead of ``||scene:confetti||``) from the dropdown
 and watch as you blast into space! 🚀 
 
 
@@ -37,10 +37,10 @@ effects.starField.startScreenEffect()
 
 ---
 
-🔲 From the ``||sprites:Sprites||`` category, drag the ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
+► From the ``||sprites:Sprites||`` category, drag the ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
 block  and place it at the end of the ``||loops:on start||`` container.
 
-🔲 Click on the grey box in the middle of your
+► Click on the grey box in the middle of your
  ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block
 to design a ship of your own! Are you a rusty pile of scraps or a sleek, futuristic rocket?
 
@@ -78,7 +78,7 @@ let mySprite = sprites.create(img`
 
 ---
 
-🔲 Find the ``||controller:move [mySprite] with buttons ⊕||`` block 
+► Find the ``||controller:move [mySprite] with buttons ⊕||`` block 
 and drag it into the bottom of the ``||loops:on start||`` container. 
 
 ** Now try moving your ship around in the simulator! **  
@@ -116,7 +116,7 @@ controller.moveSprite(mySprite)
 
 ---
 
-🔲 To keep your ship from exploring beyond the edges, find
+► To keep your ship from exploring beyond the edges, find
  the ``||sprites:set [mySprite] stay in screen <on>||`` block and
 snap it in at the end of the program.
  

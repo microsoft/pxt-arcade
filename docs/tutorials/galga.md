@@ -38,14 +38,14 @@ Can you survive the continuous attack?
 
 ---
 
-🔲 From the ``||sprites:Sprites||`` category, grab a 
+► From the ``||sprites:Sprites||`` category, grab a 
 ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and 
 snap it into the **on start** block already in the workspace.
 
-🔲 Click on the word ``||variables:[mySprite]||`` in the new block to
+► Click on the word ``||variables:[mySprite]||`` in the new block to
 rename the variable ``||variables:[spacePlane]||``.
 
-🔲 Now click inside the grey box in the new block to open the image editor. 
+► Now click inside the grey box in the new block to open the image editor. 
 Draw a plane or choose something from the Gallery.
 
 
@@ -93,12 +93,12 @@ let spacePlane = sprites.create(img`
 
 ---
 
-🔲 Find the ``||controller:move [mySprite] with buttons ⊕||`` block 
+► Find the ``||controller:move [mySprite] with buttons ⊕||`` block 
 and drag it into the bottom of the ``||loops:on start||`` container.
 
-🔲 Change **mySprite** to **spacePlane**.
+► Change **mySprite** to **spacePlane**.
 
-🔲 Click the ⊕ at the right of the new block so you can change the 
+► Click the ⊕ at the right of the new block so you can change the 
 movement speed to **200** for both **vx** and **vy**.
 
 ---
@@ -154,11 +154,11 @@ controller.moveSprite(spacePlane, 200, 200)
 
 ---
 
-🔲 To keep your ship from exploring beyond the edges, find
+► To keep your ship from exploring beyond the edges, find
  the ``||sprites:set [mySprite] [stay in screen] <ON>||`` block and
 snap it in at the end of the program.
 
-🔲 Change **mySprite** to **spacePlane**.
+► Change **mySprite** to **spacePlane**.
  
 
 ```blocks
@@ -209,7 +209,7 @@ Let's change that to three.
 
 ---
 
-🔲 Snap a ``||info:set life to [3]||`` block into the 
+► Snap a ``||info:set life to [3]||`` block into the 
 **on start** container.  
 
 
@@ -262,14 +262,14 @@ launch projectiles at oncoming enemies.**
 
 ---
 
-🔲 Drag an ``||controller:on [A] button [pressed]||`` container into an empty
+► Drag an ``||controller:on [A] button [pressed]||`` container into an empty
 area of the workspace. 
 
-🔲 Snap a  
+► Snap a  
 ``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``
 block inside the new container and click inside the grey box to draw your dart.
 
-🔲 Change **mySprite** to **spacePlane**. Change **vx** to **[200]** and **vy** to **[0]**.
+► Change **mySprite** to **spacePlane**. Change **vx** to **[200]** and **vy** to **[0]**.
 
 
 ```blocks
@@ -304,17 +304,17 @@ Let's add code to make that happen.
 
 ---
 
-🔲 Add a an ``||game:on game update every [500] ms||`` container to
+► Add a an ``||game:on game update every [500] ms||`` container to
 an empty area in the workspace and change **500** to **1000**.
 
-🔲 Inside, snap a 
+► Inside, snap a 
 ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and
 change the **kind** from **Player** to **Enemy**.
 
-🔲 Click ``||variables:mySprite||`` in the new block to
+► Click ``||variables:mySprite||`` in the new block to
 rename the variable ``||variables:bogey||``.
 
-🔲 Click the grey box to draw your enemy ship.
+► Click the grey box to draw your enemy ship.
 
 ```blocks
 game.onUpdateInterval(1000, function () {
@@ -345,12 +345,12 @@ game.onUpdateInterval(1000, function () {
 
 ---
 
-🔲 Grab a ``||sprites:set [mySprite] velocity to vx [50] vy [50]||`` block and snap
+► Grab a ``||sprites:set [mySprite] velocity to vx [50] vy [50]||`` block and snap
 it into the end of your **on game update** container. 
 
-🔲 Replace **mySprite** with **bogey**.
+► Replace **mySprite** with **bogey**.
 
-🔲 Change the  horizontal velocity (**vx**) to **-100**
+► Change the  horizontal velocity (**vx**) to **-100**
 so that it speeds toward the left edge of the screen and change the
 vertical velocity (**vy**) to **0** so that the plane doesn't
 drift up or down.
@@ -386,15 +386,15 @@ game.onUpdateInterval(1000, function () {
 
 ---
 
-🔲 Grab a ``||sprites:set [mySprite] position to vx [0] vy [0]||`` block 
+► Grab a ``||sprites:set [mySprite] position to vx [0] vy [0]||`` block 
 and snap it into the end of your **on game update** block. Change **mySprite**
 to **bogey**.
 
-🔲 Change the **x** location to **160** so the bogey starts at the right-most 
+► Change the **x** location to **160** so the bogey starts at the right-most 
 edge of the screen, and grab a ``||math:pick random [0] to [10]||`` block to
 replace the **y** value so enemies come from different heights each time.
 
-🔲 Edit your random block to go from **5** to **115** to use as much of the
+► Edit your random block to go from **5** to **115** to use as much of the
 screen height as possible withough exiting the playable area. 
 
 
@@ -432,10 +432,10 @@ and fly off screen.
 
 ---
 
-🔲 Snap a ``||sprites:set mySprite [auto destroy] <OFF>||`` block into
+► Snap a ``||sprites:set mySprite [auto destroy] <OFF>||`` block into
 the end of the **on game update** container and toggle **`<OFF>`** to **`<ON>`**.
 
-🔲 Change **mySprite** to **bogey**.
+► Change **mySprite** to **bogey**.
 
 ```blocks
 game.onUpdateInterval(1000, function () {
@@ -471,10 +471,10 @@ Let's change that.
 
 ---
 
-🔲 Add a ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``
+► Add a ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``
 container into an empty area of the workspace. 
 
-🔲 Change the first sprite kind from **Player** to **Projectile** and the 
+► Change the first sprite kind from **Player** to **Projectile** and the 
 **otherSprite** kind from **Player** to **Enemy**.
 
 
@@ -489,14 +489,14 @@ Now add the blocks to destroy the other sprite.
 
 ---
 
-🔲 Snap a ``||sprites:destroy [mySprite]||`` block into the empty 
+► Snap a ``||sprites:destroy [mySprite]||`` block into the empty 
 **on sprite overlaps** container.
 
-🔲 Drag the ``||variables:otherSprite||`` value from
+► Drag the ``||variables:otherSprite||`` value from
 the header of the **on sprite overlaps** container and snap it in to replace
 **mySprite** in the **destroy** block. 
 
-🔲 Click the **⊕** at the right of the **destroy** block and choose the
+► Click the **⊕** at the right of the **destroy** block and choose the
 **fire** effect to add some flair. 
 
 ```blocks
@@ -515,7 +515,7 @@ We should add **1** to the player score for each bogey we hit.
 
 ---
 
-🔲 Snap a ``||info:change score by [1]||`` block into the end of the 
+► Snap a ``||info:change score by [1]||`` block into the end of the 
 **on sprite overlaps** container.
 
 ```blocks
@@ -535,10 +535,10 @@ overlaps the player.
 
 ---
 
-🔲 Add a new ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``
+► Add a new ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``
 container into an empty area of the workspace. 
 
-🔲 Change the  **otherSprite** kind from **Player** to **Enemy**.
+► Change the  **otherSprite** kind from **Player** to **Enemy**.
 
 
 ```blocks
@@ -554,13 +554,13 @@ and a life to be removed from our indicator.
 
 ---
 
-🔲 Snap a ``||sprites:destroy [mySprite]||`` block into the empty 
+► Snap a ``||sprites:destroy [mySprite]||`` block into the empty 
 **on sprite player overlaps enemy** container and replace **mySprite** with **otherSprite**.
 
-🔲 Snap a ``||scene:camera shake by [4] pixels for [500] ms||`` block into the 
+► Snap a ``||scene:camera shake by [4] pixels for [500] ms||`` block into the 
 end of the **on sprite player overlaps enemy** container.
 
-🔲 Snap a ``||info:change life by [-1]||`` block into the 
+► Snap a ``||info:change life by [-1]||`` block into the 
 end of the **on sprite player overlaps enemy** container.
 
 
