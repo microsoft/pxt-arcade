@@ -4,5 +4,62 @@
         "path": "/static/gamejam/jams/time/rules.md"
     },
     "start": "2021-5-3 00:00:01 GMT-0700",
-    "end": "2021-5-17 23:59:59 GMT-0700"
+    "end": "2021-5-17 23:59:59 GMT-0700",
+    "featured": [
+        {
+            "id": "18905-47762-39268-22513",
+            "title": "Timed Platformer",
+            "author": "fd268"
+        },
+        {
+            "id": "12663-88251-31248-05940",
+            "title": "Shrink 'N' Grow",
+            "author": "Agent 14"
+        },
+        {
+            "id": "34214-21527-42743-57747",
+            "title": "The Burger & The Duck",
+            "author": "E-EnerG Gamecentral"
+        },
+        {
+            "id": "68228-73362-22790-00606",
+            "title": "Rythm Game",
+            "author": "White Skeppy310"
+        },
+        {
+            "id": "04368-05616-26467-03349",
+            "title": "Rock Around The Clock",
+            "author": "Alex G"
+        },
+        {
+            "id": "92887-98081-01927-07188",
+            "title": "The squarenator",
+            "author": "TheOdOne"
+        },
+        {
+            "id": "59809-55449-28447-00887",
+            "title": "Chase the Pizza (Invisible Maze Version!)",
+            "author": "joshy_dubya"
+        },
+        {
+            "id": "01848-24652-71512-77216",
+            "title": "BABY KAIJU NOM NOM",
+            "author": "Anonymous"
+        },
+        {
+            "id": "13758-09245-49664-34116",
+            "title": "The Attack of the Serpents",
+            "author": "UnsignedArduino"
+        },
+        {
+            "id": "39662-55515-02517-40102",
+            "title": "Burgers & Tomatos",
+            "author": "Freddie_in_a_quonset"
+        },
+        {
+            "id": "42745-53994-57998-67485",
+            "title": "Time Stopper",
+            "author": "XDlol"
+        }
+    ]
 }
