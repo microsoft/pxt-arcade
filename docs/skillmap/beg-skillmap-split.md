@@ -9,7 +9,7 @@
 * tertiarycolor: #009da2
 * highlightcolor: #ffffff
 * allowcodecarryover: true
-* tags: easy, tutorials
+* tags: easy, beginner, tutorials
 
 
 
@@ -20,54 +20,60 @@
 ### interface-activity1
 * allowcodecarryover: false
 
-
 * name: Get to Know MakeCode Arcade
 * type: tutorial
-* description: Intro to the features and vocabulary used in Arcade tutorials.
-* tags: easy
+* description: An optional introduction to the features and vocabulary used in Arcade tutorials.
+* tags: optional, easy, introduction
+* next: pusherA, pusherB
 
 * url: /skillmap/interface/activity1 
 * imageUrl: /static/skillmap/interface/interface-activity-1.gif
 
+### pusherA
+* name: Blank node
+* kind: layout
+
+### pusherB
+* name: Blank node
+* kind: layout
+
+### pusherC
+* name: Blank node
+* kind: layout
+
 
 ## Stories
-* name: Learn to Use MakeCode Arcade
-* description: Start here if you want to know the ins and outs of Arcade tutorials!
-
 
 ### story-activity1
 * allowcodecarryover: false
 
-
 * name: Greeting Card
 * type: tutorial
 * description: Make an amazing greeting card in minutes!
-* tags: easy, story, card, creative
-* next: pusher1, story-activity2
+* tags: easy, story, creative, card
+* next: story-activity2
 
 * url: /skillmap/story/story1 
 * imageUrl: /static/skillmap/story/card.gif
 
 
-
 ### story-activity2
-
 * name: Bigger Greeting
 * type: tutorial
 * description: Add to your greeting card for a gift that keeps on giving!
-* tags: easy, card, gift, creative
-* next: story-activity3, pusher2
+* tags: easy, card, creative, art
+* next: story-activity3
 * reqired: 1 story
 
 * url: /skillmap/story/story2 
 * imageUrl: /static/skillmap/story/story-activity-2.gif
 
-### story-activity3
 
+### story-activity3
 * name: Joking Around
 * type: tutorial
 * description: Create your first Arcade story using a two-line joke!
-* tags: easy, story, joke, creative
+* tags: easy, story, joke, share
 * next: pusher2, story-activity4
 
 * url: /skillmap/story/story3 
@@ -75,11 +81,10 @@
 
 
 ### story-activity4
-
 * name: Shortest Story
 * type: tutorial
 * description: Write a short story with a scene of your own!
-* tags: easy, story, joke, creative
+* tags: easy, story, creative
 * next: beginner-cert-1
 
 * url: /skillmap/story/story4 
@@ -106,8 +111,8 @@
 ## Clicker
 
 ### clicker-activity1
+* required: 1 story
 * allowcodecarryover: false
-
 
 * name: Clicker Game
 * type: tutorial
@@ -121,38 +126,36 @@
 
 
 ### clicker-activity2
-
 * name: Grand Clicker
 * type: tutorial
-* description: Modify your clicker so that it's unmistakably yours! 
-* tags: easy, clicker, game
-* next: clicker-activity3
-
+* description: Add a visual button to your clicker! 
+* tags: easy, clicker, game, images
+* next: pusher3, clicker-activity3
 
 * url: /skillmap/clicker-themed/clickert2 
 * imageUrl: /static/skillmap/clicker/clickert2.gif
 
 
 ### clicker-activity3
-
 * name: Super Clicker
 * type: tutorial
-* description: Add code to make your simple clicker more powerful!
-* tags: easy, clicker, game
+* description: Add code to make a spray of stars with each click!
+* tags: easy, clicker, projectiles
 * next: pusher3, beginner-cert-2
 
 * url: /skillmap/clicker-themed/clickert3 
 * imageUrl: /static/skillmap/clicker/clickert3.gif
 
 
-
 ### pusher3
 * name: Blank node
 * kind: layout
 
+
 ### pusher4
 * name: Blank node
 * kind: layout
+
 
 ### beginner-cert-2
 * name: Congrats!
@@ -165,13 +168,14 @@
 ## Collector 
 
 ### collector-activity1
+* required: 1 clicker
 * allowcodecarryover: false
 
 * name: Collector Game
 * type: tutorial
 * description: Make an arcade-style collector game!
 * tags: easy, collector, game
-* next: collector-activity2 
+* next: pusher5, collector-activity2 
 
 * url: /skillmap/collector-themed/collectort1 
 * imageUrl: /static/skillmap/collector/collectort1.gif
@@ -183,8 +187,7 @@
 * name: Collect the Fun
 * type: tutorial
 * description: Make a few simple changes for a game that's twice as fun! 
-* tags: easy, collector, game
-* required: 1 collector
+* tags: easy, collector, game, projectiles
 * next: collector-activity3
 
 * url: /skillmap/collector-themed/collectort2 
@@ -196,7 +199,7 @@
 * name: Experience Danger
 * type: tutorial
 * description: Learn to add enemy projectiles to your game!
-* tags: easy, collector, game
+* tags: easy, collector, game, collisions
 * next: collector-activity4
 
 * url: /skillmap/collector-themed/collectort3
@@ -205,17 +208,14 @@
 
 
 ### collector-activity4
-
 * name: Animate It!
 * type: tutorial
 * description: Animate your characters to give them life!
 * tags: easy, game, animation
-* next: beginner-cert-3
+* next: beginner-cert-3, pusher6, pusher7, pusher8
 
 * url: /skillmap/collector-themed/collectort4
 * imageUrl: /static/skillmap/collector/collectort4.gif
-
-
 
 
 ### beginner-cert-3
@@ -226,6 +226,18 @@
 * imageUrl: /static/skillmap/certificates/collector-cert.png
 
 
-### pusher4
+### pusher5
+* name: Blank node
+* kind: layout
+
+### pusher6
+* name: Blank node
+* kind: layout
+
+### pusher7
+* name: Blank node
+* kind: layout
+
+### pusher8
 * name: Blank node
 * kind: layout
