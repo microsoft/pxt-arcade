@@ -13,7 +13,7 @@ Let's give your hero a world to protect!
 
 ---
 
-🔲 From the ``||scene:Scene||`` category, grab 
+► From the ``||scene:Scene||`` category, grab 
 ``||scene:set background image to [ ]||`` block and snap it in to the **top**
 of the **on start** container in the workspace.
 
@@ -151,9 +151,9 @@ scene.setBackgroundImage(img`
 
 ---
 
-🔲 Click on the grey square in the ``||scene:set background image to [ ]||`` block to open the **Image Editor**.
+► Click on the grey square in the ``||scene:set background image to [ ]||`` block to open the **Image Editor**.
 
-🔲 Using the **Image Editor**, draw a background image for your game (or select one 
+► Using the **Image Editor**, draw a background image for your game (or select one 
 from the **Gallery**).
 
 ```block
@@ -288,9 +288,9 @@ scene.setBackgroundImage(img`
 
 ---
 
-🔲 Try your game in the simulator.  How do you like your background?  
+► Try your game in the simulator.  How do you like your background?  
 
-🔲 Feel free to return to the **Image Editor** and change it until you get it just the way you want it!
+► Feel free to return to the **Image Editor** and change it until you get it just the way you want it!
 
 
 ## Decorative sprites
@@ -299,11 +299,11 @@ scene.setBackgroundImage(img`
 
 ---
 
-🔲 From ``||sprites:Sprites||``, drag ``||variables:set [mySprite2] to sprite [ ] of kind [Player]||`` to the bottom of the **on start** container. 
+► From ``||sprites:Sprites||``, drag ``||variables:set [mySprite2] to sprite [ ] of kind [Player]||`` to the bottom of the **on start** container. 
 
-🔲 Click the grey box and draw a decoration for your scene (or select a background object from the **Gallery**.)
+► Click the grey box and draw a decoration for your scene (or select a background object from the **Gallery**.)
 
-🔲 Click the **kind** of mySprite2 to change it from **Player** to **Add a new kind...**. Enter **Decoration** in the textbox and hit **Ok**.
+► Click the **kind** of mySprite2 to change it from **Player** to **Add a new kind...**. Enter **Decoration** in the textbox and hit **Ok**.
 
 ```block
 namespace SpriteKind {
@@ -370,12 +370,12 @@ let mySprite2 = sprites.create(img`
 
 ---
 
-🔲 From ``||sprites:Sprites||``, drag ``||sprites:set [mySprite] position to x [0] y [0]||`` 
+► From ``||sprites:Sprites||``, drag ``||sprites:set [mySprite] position to x [0] y [0]||`` 
 to the **end** of the **on start** container. 
 
-🔲 Change **mySprite** to **mySprite2**.
+► Change **mySprite** to **mySprite2**.
 
-🔲 Change the **x** and **y** values to whatever numbers give you the look that you want 
+► Change the **x** and **y** values to whatever numbers give you the look that you want 
 **OR** you can use ``||math: pick random [0] to [10]||`` value blocks to add an element of surprise.
 
 ---

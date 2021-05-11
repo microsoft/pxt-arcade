@@ -362,14 +362,14 @@ The code for a simple greeting is already in the workspace.
 
 ---
 
-🔲 Choose a background from the gallery by clicking on the grey box in 
+► Choose a background from the gallery by clicking on the grey box in 
 ``||scene:set background image to [ ]||`` and toggling to the **"Gallery"** tab at 
 the top of the window
 (or stay in the **Editor** and create your own).
 
-🔲 If you want to, you can edit your background in the image editor to add meaningful text.
+► If you want to, you can edit your background in the image editor to add meaningful text.
 
-🔲 When you're done, click **> Next** to move on to the next step.
+► When you're done, click **> Next** to move on to the next step.
 
 
 ```blocks
@@ -509,7 +509,7 @@ music.playMelody("G B A G C5 B A B", 120)
 
 ---
 
-🔲 If you feel like it, choose a new melody by clicking the note in 
+► If you feel like it, choose a new melody by clicking the note in 
 the ``||music:play melody [ ] at tempo [120] (bpm)||`` block.
 
 
@@ -654,13 +654,13 @@ cycles through when the **Ⓐ** button is pressed.
 
 ---
 
-🔲 From the ``||controller: Controller||`` category, drag an ``||controller:on [A] button [pressed]||``
+► From the ``||controller: Controller||`` category, drag an ``||controller:on [A] button [pressed]||``
 container into the workspace.
 
-🔲 From the ``||game:Game||`` category, grab the ``||game: show long text [" "] [bottom]||``
+► From the ``||game:Game||`` category, grab the ``||game: show long text [" "] [bottom]||``
 block and snap it into the **on A button pressed** container.
 
-🔲 Add a personal message into the new **show long text** block.   
+► Add a personal message into the new **show long text** block.   
 
 ``` blocks 
 
@@ -680,12 +680,12 @@ Add a second message below the first to really show you care.
 
 ---
 
-🔲 Right click ``||game: show long text [" "] [bottom]||`` and choose **Duplicate**.
+► Right click ``||game: show long text [" "] [bottom]||`` and choose **Duplicate**.
 
-🔲 Grab the copied block and snap it into the bottom of the **on A button pressed** 
+► Grab the copied block and snap it into the bottom of the **on A button pressed** 
 container.
 
-🔲 Add another personal message into the new **show long text** block.   
+► Add another personal message into the new **show long text** block.   
 
 ``` blocks
 
@@ -704,10 +704,10 @@ Customize the dialog to bring it all together.
 
 ---
 
-🔲 From ``||game:Game||``, grab a ``||game:set dialog frame to [ ]||`` block and
+► From ``||game:Game||``, grab a ``||game:set dialog frame to [ ]||`` block and
 snap it into the top of the **on button pressed** block in your workspace.
 
-🔲 Choose a dialog design by clicking on the grey box in the 
+► Choose a dialog design by clicking on the grey box in the 
 **set dialog frame** box and toggling to the **Gallery**.  
 
 
@@ -764,10 +764,10 @@ Change the color of your text so it works with your new background.
 
 ---
 
-🔲 From ``||game:Game||``, grab a ``||game:set dialog text color to [ ]||`` block and
+► From ``||game:Game||``, grab a ``||game:set dialog text color to [ ]||`` block and
 snap it into the top of the **on button pressed** block in your workspace.
 
-🔲 Click the grey box and choose a color for your message that looks good and is 
+► Click the grey box and choose a color for your message that looks good and is 
 easy to read.  It's okay if you need to change it a few times before your text
 is just right.
 

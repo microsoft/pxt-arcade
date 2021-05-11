@@ -60,10 +60,10 @@ Be sure to
 
 ---
 
-🔲  Check your player [__*sprite*__](#sprote "2-D image that moves on the screen") 
+►  Check your player [__*sprite*__](#sprote "2-D image that moves on the screen") 
 to make sure you're happy with it. 
 
-🔲  If you want to make changes, click the sprite image to design a new 
+►  If you want to make changes, click the sprite image to design a new 
 kind of vehicle OR turn it into an alien creature using the sprite editor! 👽
 
 
@@ -76,13 +76,13 @@ Let's launch projectiles when the **Ⓐ** button is pressed!
 
 ---
 
-🔲 Drag an ``||controller:on [A] button pressed ||`` container into the workspace.
+► Drag an ``||controller:on [A] button pressed ||`` container into the workspace.
 
-🔲 Snap a   
+► Snap a   
 ``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||`` 
 block inside of the new container.
 
-🔲 Click the grey box inside of the new projectile block to draw your 
+► Click the grey box inside of the new projectile block to draw your 
 flying object (or select one from the **My Assets** tab.)
 
 ---
@@ -167,14 +167,14 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ---
 
-🔲 Find 
+► Find 
 ``||sprites:[mySprite] start [spray] effect||`` and snap it in at 
 the bottom of the ``||controller:on [A] button pressed ||`` container.  
 
-🔲 Change variable ``||variables:mySprite||`` to ``||variables:projectile||`` if you
+► Change variable ``||variables:mySprite||`` to ``||variables:projectile||`` if you
 want the effects on your projectiles instead of on your ship.  
 
-🔲 Try different options from the ``||sprites:[spray]||`` dropdown menu and choose the one you like best!  
+► Try different options from the ``||sprites:[spray]||`` dropdown menu and choose the one you like best!  
 
 ---
 

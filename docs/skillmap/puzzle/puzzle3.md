@@ -108,11 +108,11 @@ Let's add a loop to allow you to make multiple guesses.
 ---
 
 
-🔲 From the ``||loops:Loops||`` category, grab a 
+► From the ``||loops:Loops||`` category, grab a 
 ``||loops:while <false>||`` loop and snap it into the 
 **on start** container right **above** the **if/then/else** containers.
 
-🔲 Grab everything underneath the new loop by clicking on the 
+► Grab everything underneath the new loop by clicking on the 
  **if/then/else** block.  Drag that whole chunk of code up into the new
  empty **while** loop. 
 
@@ -159,10 +159,10 @@ We want this loop to keep running as long as lives are greater than zero.
 
 ---
 
-🔲 Grab a ``||logic:[0] [<] [0]||`` value block and use it to replace 
+► Grab a ``||logic:[0] [<] [0]||`` value block and use it to replace 
 **`<false>`** in the **while** loop.
 
-🔲 Replace the second **0** of the logic value block with a ``||info:life||``
+► Replace the second **0** of the logic value block with a ``||info:life||``
 value block.
 
 ```blocks
@@ -258,14 +258,14 @@ Let's move the final message to the end and add a new message for wrong guesses.
 
 ---
 
-🔲 Drag all of the code out of the **else** container and snap it down
+► Drag all of the code out of the **else** container and snap it down
 below the **while** loop.
 
-🔲 Grab a new ``||sprites:[mySprite] say [":)"]||`` and put it in the empty **else** container.  
+► Grab a new ``||sprites:[mySprite] say [":)"]||`` and put it in the empty **else** container.  
 
-🔲 Fill the new block with a message that lets the player know they were incorrect.
+► Fill the new block with a message that lets the player know they were incorrect.
 
-🔲 Right-click to duplicate one of your **pause** blocks and snap it into the end of the **else** container.
+► Right-click to duplicate one of your **pause** blocks and snap it into the end of the **else** container.
 
 
 ```blocks
@@ -317,7 +317,7 @@ Keep track of how many guesses you have left using the life meter.
 ---
 
 
-🔲 Add a ``||info:change life by [-1]||`` block to the **end** of the **else**
+► Add a ``||info:change life by [-1]||`` block to the **end** of the **else**
 container. That way, the game will remove one heart for each wrong guess.  
 
 
@@ -376,10 +376,10 @@ life meter hearts fall to zero.
 ---
 
 
-🔲 Grab an ``||info:on life zero||`` container and drop it into an empty area 
+► Grab an ``||info:on life zero||`` container and drop it into an empty area 
 in your workspace.  
 
-🔲 Pull the last two blocks out of **on start** (**pause** and 
+► Pull the last two blocks out of **on start** (**pause** and 
 **game over**) and snap them into the empty **on life zero** container.
 
 

@@ -522,10 +522,10 @@ Example 3: An alien in the grocery store
 
 ---
 
-🔲 Click on the image box in the ``||scene:set background image to []||``
+► Click on the image box in the ``||scene:set background image to []||``
 block and draw your scene.
 
-🔲 Click on the image box in the 
+► Click on the image box in the 
 ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
 block and design your main character.
 
@@ -790,11 +790,11 @@ what are they avoiding?
 
 ---
 
-🔲 Look for the first ``||game: show long text [" "] [bottom]||`` block inside 
+► Look for the first ``||game: show long text [" "] [bottom]||`` block inside 
 the **on A button pressed** container
 and click in the text area.
 
-🔲 Use this space to add your first sentence or two. 
+► Use this space to add your first sentence or two. 
 
 ```block
 let mySprite2: Sprite = null
@@ -844,10 +844,10 @@ What happens now? Something should throw your characters off course or surprise 
 
 ---
 
-🔲 Look for the second ``||game: show long text [" "] [bottom]||`` block
+► Look for the second ``||game: show long text [" "] [bottom]||`` block
 and click in the text area.
 
-🔲 Use this space to add your drama. 
+► Use this space to add your drama. 
 
 ```block
 let mySprite2: Sprite = null
@@ -898,11 +898,11 @@ Let's update the scene and the characters.
 
 ---
 
-🔲 Add some code into the ``||controller:on [A] button [pressed]||`` container after the second **show long text** block.  
+► Add some code into the ``||controller:on [A] button [pressed]||`` container after the second **show long text** block.  
 
-🔲 Consider updating **mySprite** with a ``||sprites: set [mySprite] image to [ ]||`` block, adding a second sprite (**mySprite2**), or swapping out the background.
+► Consider updating **mySprite** with a ``||sprites: set [mySprite] image to [ ]||`` block, adding a second sprite (**mySprite2**), or swapping out the background.
 
-🔲 You may also want to change character positions using a couple of
+► You may also want to change character positions using a couple of
 ``||sprites:set [mySprite] position to x [0] y [0]||`` blocks.
 
 
@@ -972,7 +972,7 @@ How does the main character react?
 
 ---
 
-🔲 Add another ``||game:show long text [" "] [bottom]||`` block to the bottom 
+► Add another ``||game:show long text [" "] [bottom]||`` block to the bottom 
 of the **on A button pressed** container and add another line 
 describing the next thing that happens.
 
@@ -1045,7 +1045,7 @@ on someone's face by drawing a new image?  Did the characters move to a new loca
 
 ---
 
-🔲 Change the background, your sprites, and their positions again to 
+► Change the background, your sprites, and their positions again to 
 illustrate the changes happening in the story.
 
 
@@ -1272,9 +1272,9 @@ one last time if it helps illustrate your ending.
 
 ---
 
-🔲 Add another **show long text** block to finish out your story.
+► Add another **show long text** block to finish out your story.
 
-🔲 Consider changing the background, **mySprite** (or any other sprite 
+► Consider changing the background, **mySprite** (or any other sprite 
 you added to the story), and their positions to make the ending as satisfying
 as possible.
 

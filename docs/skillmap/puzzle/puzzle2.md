@@ -112,14 +112,14 @@ Let's add code that ends your game depending on whether you get the answer right
 ---
 
 
-🔲 From the ``||game:Game||`` category, grab a 
+► From the ``||game:Game||`` category, grab a 
 ``||game:game over <LOSE>||`` block and 
 snap it at the end of the upper
 **if/then** container.
 
-🔲 Toggle **`<LOSE>`** to **`<WIN>`**.
+► Toggle **`<LOSE>`** to **`<WIN>`**.
 
-🔲 Put another ``||game:game over <LOSE>||`` block at 
+► Put another ``||game:game over <LOSE>||`` block at 
 the end of the lower **else** container.
 
 ```blocks
@@ -146,10 +146,10 @@ We can fix that with a short pause.
 ---
 
 
-🔲 From the ``||loops:Loops||`` category, grab a 
+► From the ``||loops:Loops||`` category, grab a 
 ``||loops:pause [100] ms||`` block and snap one above **each** **game over** block.
 
-🔲 Change **100** to **3000** in both of the **pause** blocks.
+► Change **100** to **3000** in both of the **pause** blocks.
 
 ---
 
@@ -183,13 +183,13 @@ Let's add code to let the user know what the number was.
 ---
 
 
-🔲 Click on the **Advanced** cagegory to reveal the ``||text:Text||``
+► Click on the **Advanced** cagegory to reveal the ``||text:Text||``
 option.  
 
-🔲 Grab the ``||text:join ["Hello"] ["World"] ⊖ ⊕||`` block and use it to 
+► Grab the ``||text:join ["Hello"] ["World"] ⊖ ⊕||`` block and use it to 
 replace the ** mySprite say text** in the **if** container.  
 
-🔲 Click the **⊕** at the right of the new
+► Click the **⊕** at the right of the new
 block to turn it into ``||text:join ["Hello"] ["World"] [" "] ⊖ ⊕||``.
 
 
@@ -216,14 +216,14 @@ Here's how:
 ---
 
 
-🔲 Use the **first text slot** *(the one that currently says "Hello")* for the beginning
+► Use the **first text slot** *(the one that currently says "Hello")* for the beginning
 of your sentence. *(Don't forget to add a space at the end!)*
 
-🔲 Drag a ``||variables:myNumber||`` value block into the **second slot** 
+► Drag a ``||variables:myNumber||`` value block into the **second slot** 
 *(the one that currently says "World")* to report the random number that the
 computer chose.
 
-🔲 Use the **third text slot** *(the blank one)* for the end
+► Use the **third text slot** *(the blank one)* for the end
 of your sentence. *(Don't forget to add a space at the beginning of this 
 field — unless it's punctuation!)*
 
@@ -258,10 +258,10 @@ Let's do the same thing for the incorrect answer.
 ---
 
 
-🔲 Right click on ``||text:join ["Yep! It was "] [myNumber] ["!"] ⊖ ⊕||``
+► Right click on ``||text:join ["Yep! It was "] [myNumber] ["!"] ⊖ ⊕||``
 and choose **Duplicate**.  
 
-🔲 Drag the new value block into the **mySprite say** block in the 
+► Drag the new value block into the **mySprite say** block in the 
 **else** container and change the sentence 
 to work when someone guesses wrong. 
 

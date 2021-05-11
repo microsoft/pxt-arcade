@@ -118,7 +118,7 @@ We can fix that!
 ---
 
 
-🔲 Drag ``||scene:camera follow sprite [mySprite]||`` into the bottom 
+► Drag ``||scene:camera follow sprite [mySprite]||`` into the bottom 
 of the ``||loops:on start||`` container.
 <br/>
 
@@ -162,10 +162,10 @@ Let's change the game so your player starts somewhere safe.
 ---
 
 
-🔲 Snap a ``||scene:place [mySprite] on top of random [ ]||`` block 
+► Snap a ``||scene:place [mySprite] on top of random [ ]||`` block 
 into the bottom of the ``||loops:on start||`` container.
 
-🔲 Click the checkerboard tile and replace it with the green flag.
+► Click the checkerboard tile and replace it with the green flag.
 
 ---
 
@@ -213,12 +213,12 @@ When the player overlaps the skull tile, we'll trigger a "GAME OVER".
 ---
 
 
-🔲 Drag the ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` container 
+► Drag the ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` container 
 into the workspace.
 
-🔲 Click the checkerboard image and change it to the skull tile.
+► Click the checkerboard image and change it to the skull tile.
 
-🔲 Snap a ``||game:game over <LOSE>||`` block into the new container.
+► Snap a ``||game:game over <LOSE>||`` block into the new container.
 <br/>
 
 ```blocks
@@ -234,12 +234,12 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location
 ---
 
 
-🔲 Drag another ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
+► Drag another ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
 container into the workspace.
 
-🔲 This time, change the checkerboard to the trophy tile.
+► This time, change the checkerboard to the trophy tile.
 
-🔲 Snap a ``||game:game over <LOSE>||`` block into the new container and toggle 
+► Snap a ``||game:game over <LOSE>||`` block into the new container and toggle 
 the &lt;LOSE&gt; switch to &lt;WIN&gt;!
 <br/>
 

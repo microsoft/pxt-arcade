@@ -79,9 +79,9 @@ When you're ready for a new step, click **> NEXT** to get to the next instructio
 
 **🏡 Time to set the scene 🏡**
 
-🔲 Start by finding the image called **background** below.  
+► Start by finding the image called **background** below.  
 
-🔲 Click on the background image and select **Edit** from beneath the 
+► Click on the background image and select **Edit** from beneath the 
 **Asset Preview** pane to open the image editor. 
 
 ---
@@ -93,10 +93,10 @@ Once the image editor opens, click **> NEXT** to get to the next instruction.
 
 **🎨 Create your own background image 🎨**
 
-🔲 Use the pencil tools on the left to draw your own background, 
+► Use the pencil tools on the left to draw your own background, 
 or use the eraser to clear the image and start over.  
 
-🔲 Once you're happy with your new background, click **Done** to save it and return 
+► Once you're happy with your new background, click **Done** to save it and return 
 to the **My Asset** window. 
 
 ---
@@ -123,10 +123,10 @@ to erase parts of the image using any of the paint tools.
 
 **😎 Now let's edit our hero 😎**
 
-🔲 Who is the hero in your game? Click on the bunny called **hero** and choose 
+► Who is the hero in your game? Click on the bunny called **hero** and choose 
 **Edit** from below the **Asset Preview** pane.
 
-🔲 Change the bunny in any way you want or delete the bunny altogether and draw something
+► Change the bunny in any way you want or delete the bunny altogether and draw something
 new. When you're happy, click **Done** to go back out to the **My Asset** window.
 
 
@@ -142,10 +142,10 @@ new. When you're happy, click **Done** to go back out to the **My Asset** window
 
 **☘️ Makeover your clovers! ☘️**
 
-🔲 Click the clover called **collect** and choose 
+► Click the clover called **collect** and choose 
 **Edit** from below the **Asset Preview** pane.
 
-🔲 Is your hero saving puppies? Collecting coins? Picking up trash?  
+► Is your hero saving puppies? Collecting coins? Picking up trash?  
 Draw a new collectible, then click **Done** when you're happy.
 
 
@@ -154,10 +154,10 @@ Draw a new collectible, then click **Done** when you're happy.
 
 **🐝 What are you afraid of? 🐝**
 
-🔲 Finally, click the bee called **avoid** and choose 
+► Finally, click the bee called **avoid** and choose 
 **Edit** from below the **Asset Preview** pane.
 
-🔲 What are you running from? Lasers? Rocks? Shards of glass?  
+► What are you running from? Lasers? Rocks? Shards of glass?  
 Draw a new enemy, then click **Done** when you're happy.
 
 

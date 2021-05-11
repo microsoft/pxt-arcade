@@ -447,14 +447,14 @@ Follow these quick steps and you'll have one in no time!
 
 ---
 
-🔲 From the ``||scene:Scene||`` category in the toolbox, 
+► From the ``||scene:Scene||`` category in the toolbox, 
 grab a ``||scene:set background image to [ ]||`` block and drag it into the **on start** container in the workspace.
 
-🔲 Choose a background from the image gallery by clicking inside the grey 
+► Choose a background from the image gallery by clicking inside the grey 
 image square and toggling the switch at the top to "Gallery" 
 (or stay in **Edit** mode to create your own.)
 
-🔲  Click **> Next** in the tutorial window to move on to the next step.
+►  Click **> Next** in the tutorial window to move on to the next step.
 
 
 ```blocks
@@ -589,7 +589,7 @@ scene.setBackgroundImage(img`
 
 ---
 
-🔲 Click on the background inside your block to reopen it and add a hand-drawn message.   
+► Click on the background inside your block to reopen it and add a hand-drawn message.   
 Click **Done** when you're finished to save your work.
 
 
@@ -730,7 +730,7 @@ scene.setBackgroundImage(img`
 
 ---
 
-🔲 Add some pizzazz from the ``||scene:Scene||`` category by grabbing a ``||scene:start screen [confetti] effect||`` block and snapping it into the **on start** container.
+► Add some pizzazz from the ``||scene:Scene||`` category by grabbing a ``||scene:start screen [confetti] effect||`` block and snapping it into the **on start** container.
 
 **Look at the simulator screen to see what you've done so far!**
 
@@ -869,9 +869,9 @@ effects.confetti.startScreenEffect()
 
 ---
 
-🔲 From the ``||music:Music||`` category, grab a ``||music:play melody [ ] at tempo [120] (bpm)||`` block and snap it into the bottom of the **on start** container.
+► From the ``||music:Music||`` category, grab a ``||music:play melody [ ] at tempo [120] (bpm)||`` block and snap it into the bottom of the **on start** container.
 
-🔲 In the new block, click on the music note to open the music editor. 
+► In the new block, click on the music note to open the music editor. 
 You can write your own song or toggle to the **Gallery** to pick one 
 that we've written for you.  
 

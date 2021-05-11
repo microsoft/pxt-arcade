@@ -126,17 +126,17 @@ We'll use purple **[ ! ]** tiles as enemy spawn points.
 ---
 
 
-🔲 Drag out a ``||loops: for element [value] of [list]||`` [__loop__](#loopd "a segment of code that runs multiple times in a row")
+► Drag out a ``||loops: for element [value] of [list]||`` [__loop__](#loopd "a segment of code that runs multiple times in a row")
 and snap it into the bottom of the ``||loops: on start||`` container.
 
 The [__*list*__](#listical  "ordered group of items") we need in the header of that 👆 loop 
 is the list of saved location for each of the **[ ! ]** blocks. 
 Fortunately, we have a piece of code that tells us where those are.
 
-🔲 Find the ``||scene: array of all [ ] locations||`` argument block and 
+► Find the ``||scene: array of all [ ] locations||`` argument block and 
 drag it into the header of the new loop where the **list** argument is.
 
-🔲 Click on the checkerboard and change it to the **[ ! ]** tile.
+► Click on the checkerboard and change it to the **[ ! ]** tile.
   
 
 ```blocks
@@ -187,16 +187,16 @@ location on the tilemap!
 ---
 
 
-🔲 Drag ``||variables: set [mySprite2] to sprite [ ] of kind [player]||`` 
+► Drag ``||variables: set [mySprite2] to sprite [ ] of kind [player]||`` 
 into the new loop.
 
-🔲 Click the **mySprite2** [__*variable*__](#varied "a label that holds the place for something that can change") 
+► Click the **mySprite2** [__*variable*__](#varied "a label that holds the place for something that can change") 
 and choose to create a **new variable** called **myEnemy**. 
 
-🔲 Click the grey sprite rectangle inside the new block to draw an image for the enemy
+► Click the grey sprite rectangle inside the new block to draw an image for the enemy
 (or choose one from the gallery.)  
 
-🔲 Change the kind of this sprite from **Player** to **Enemy**.    
+► Change the kind of this sprite from **Player** to **Enemy**.    
 
 
 ```blocks
@@ -260,10 +260,10 @@ the **for element** loop.)
 ---
 
 
-🔲 Drag a ``||scene: place [mySprite] on top of tilemap col [0] row [0]||`` block 
+► Drag a ``||scene: place [mySprite] on top of tilemap col [0] row [0]||`` block 
 to the bottom of the **for element** loop.
 
-🔲 Change the sprite variable to **myEnemy** and replace the  ``||scene: tilemap col [0] row [0]||``
+► Change the sprite variable to **myEnemy** and replace the  ``||scene: tilemap col [0] row [0]||``
 argument block with the ``||variables: value||`` argument from the header of the
 **for element** loop.
   
@@ -327,10 +327,10 @@ Let's wake-up our sprites and get them following our player.
 
 ---
 
-🔲 Snap a ``||sprites: set [myEnemy] follow [mySprite]||`` block 
+► Snap a ``||sprites: set [myEnemy] follow [mySprite]||`` block 
 into the bottom of the **for element** loop.
 
-🔲 Press the **⊕** on the new block and change the speed to **30**.
+► Press the **⊕** on the new block and change the speed to **30**.
   
 
 ```blocks
@@ -418,16 +418,16 @@ let's code that part first.
 ---
 
 
-🔲 From the ``||sprites: Sprites||`` category, drag an 
+► From the ``||sprites: Sprites||`` category, drag an 
 ``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` 
 [__*event*__](#eventTime "element that makes something happen when a certain action is performed")
  container into the workspace.
 
-🔲 Leave the first kind as **Player** and change the second kind to **Enemy**.
+► Leave the first kind as **Player** and change the second kind to **Enemy**.
 
-🔲 Snap a ``||sprites: destroy [mySprite]  ⊕||`` block into the new event container.
+► Snap a ``||sprites: destroy [mySprite]  ⊕||`` block into the new event container.
 
-🔲 Drag the ``||variables: otherSprite||`` argument from the **on sprite overlaps** 
+► Drag the ``||variables: otherSprite||`` argument from the **on sprite overlaps** 
 event to replace the ``||variables: mySprite||`` variable inside the destroy block.
 
 ```blocks
@@ -458,7 +458,7 @@ The ``||logic:if <true> then||`` block can make that happen.
 
 ## Damage pt. 5
 
-🔲 Start by adding an ``||logic:if <true> then||`` container to the end
+► Start by adding an ``||logic:if <true> then||`` container to the end
 of the newest **on sprite overlaps** container. 
 
 ---
@@ -473,14 +473,14 @@ from the top.
 In this case, we want to check that the bottom of the player was higher
 than the center (**y**) of the enemy. Here's how to do that:
 
-🔲 Drag out a ``||logic:0 < 0||`` logic argument block and snap it into
+► Drag out a ``||logic:0 < 0||`` logic argument block and snap it into
 ``||logic:if <true> then||`` to replace the ** `<true>` ** argument.
 
-🔲 On the left-hand side of the **<**, place a ``||sprites:[mySprite] [x]||`` block and change 
+► On the left-hand side of the **<**, place a ``||sprites:[mySprite] [x]||`` block and change 
 the **x** to **bottom**, and replace **mySprite** with the **sprite** 
 variable from the **on sprite overlaps** header.
 
-🔲 On the right-hand side of the **<**, place a ``||sprites:[mySprite] [x]||`` block and change 
+► On the right-hand side of the **<**, place a ``||sprites:[mySprite] [x]||`` block and change 
 the **x** to **y**, and replace **mySprite** with the **otherSprite** 
 variable from the **on sprite overlaps** header.
   
@@ -500,12 +500,12 @@ To add more style, let's make the player bounce after they've jumped on an enemy
 ---
 
 
-🔲 Snap a ``||sprites:set [mySprite] [x] to ||`` block into the empty **if/then** 
+► Snap a ``||sprites:set [mySprite] [x] to ||`` block into the empty **if/then** 
 logic container and replace **mySprite** with **sprite**.
 
-🔲 Replace **x** with **vy (velocity y)** using the dropdown menu.
+► Replace **x** with **vy (velocity y)** using the dropdown menu.
 
-🔲 Change the value from **0** to **-100**.  
+► Change the value from **0** to **-100**.  
   
 
 
@@ -556,7 +556,7 @@ overlap in a non-jumping way.
 ---
 
 
-🔲 To remove a life from the player under that condition, 
+► To remove a life from the player under that condition, 
 snap a ``||info: change life by [-1]||`` block into the empty **else** clause.  
   
 

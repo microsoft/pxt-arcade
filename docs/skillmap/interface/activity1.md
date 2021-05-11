@@ -88,7 +88,7 @@ below the instructions where you'll connect blocks to build your program.
 
 ---
 
-🔲 Click in the text area of the ``||game:splash " "||`` block 
+► Click in the text area of the ``||game:splash " "||`` block 
 and change the sentence to something more exciting.
 
 ---
@@ -136,11 +136,11 @@ This block adds a [__*splash screen*__](#splasht "A full-screen message that sho
 
 **Let's see how this works**
 
-🔲 Find the 
+► Find the 
 ``||scene:set background color to [ ]||`` block and snap it at the top of 
 the **on start** container already in the workspace. 
 
-🔲 Click the grey box in the new block to set the background to your favorite color. 
+► Click the grey box in the new block to set the background to your favorite color. 
 
 #### ~ tutorialhint 
 ```blocks
@@ -163,10 +163,10 @@ is red, but it lives in the ``||sprites:Sprites||`` category.
 <!-- **Tip:** If you can't find the block you're looking for, try -->
 
 
-🔲 Snap ``||variables:set [my sprite] to sprite [ ] of kind [Player]||`` into the
+► Snap ``||variables:set [my sprite] to sprite [ ] of kind [Player]||`` into the
 end of the **on start** container.
 
-🔲 Click the grey box in the new block and draw a [__*sprite*__](#sprote "A 2-D image that moves on the screen")
+► Click the grey box in the new block and draw a [__*sprite*__](#sprote "A 2-D image that moves on the screen")
  or toggle to the **Gallery** to pick one of ours. 
 
 
@@ -219,7 +219,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 ---
 
-🔲  Find an ``||controller:on [A] button pressed ||`` container 
+►  Find an ``||controller:on [A] button pressed ||`` container 
 block and drag it into the workspace. You will add to it in the next step.  
 
 #### ~ tutorialhint
@@ -246,11 +246,11 @@ mySprite.startEffect(effects.spray)
 
 ---
 
-🔲  Find a ``||sprites:[mySprite] start [spray] effect ⊕||``  
+►  Find a ``||sprites:[mySprite] start [spray] effect ⊕||``  
 block and snap it into the  ``||controller:on [A] button pressed||`` 
 container...then choose your own effect!
 
-🔲  Click the **⊕** to the right of the new block to pop open an extra 
+►  Click the **⊕** to the right of the new block to pop open an extra 
 [__*argument*__](#iArgue "Additional piece of information the block uses"). 
 
 #### ~ tutorialhint
@@ -275,10 +275,10 @@ but they always need another block to snap into. Value blocks look something lik
 
 ---
 
-🔲  From the ``||math:Math||`` category, grab a ``||math: pick random [0] to [10]||``
+►  From the ``||math:Math||`` category, grab a ``||math: pick random [0] to [10]||``
 value block and snap it into the number field on the effect block.
 
-🔲  Change the random range to pick between **100** and **600**.
+►  Change the random range to pick between **100** and **600**.
 
 ---
 

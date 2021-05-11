@@ -196,9 +196,9 @@ each of the enemies, one-by-one.
 ---
 
 
-🔲 Drag out an ``||game:on game update||`` block and place it on the workspace.
+► Drag out an ``||game:on game update||`` block and place it on the workspace.
 
-🔲 Snap a ``||loops: for element [value] of [list]||`` block into the 
+► Snap a ``||loops: for element [value] of [list]||`` block into the 
 **on game update** container.
 
 ```blocks
@@ -217,13 +217,13 @@ To do this, we'll use the same method as in previous tutorials.
 ---
 
 
-🔲 From the ``||sprites:Sprites||`` category, grab the ``||sprites:array of sprite of kind||`` 
+► From the ``||sprites:Sprites||`` category, grab the ``||sprites:array of sprite of kind||`` 
 block from inside the **set sprite list to** block.
 
 
-🔲 Drop it into the **for element** loop to replace the ``||variables: list||`` variable.
+► Drop it into the **for element** loop to replace the ``||variables: list||`` variable.
 
-🔲 Change the "kind" dropdown to **Enemy**.  
+► Change the "kind" dropdown to **Enemy**.  
 
 
 ```blocks
@@ -242,17 +242,17 @@ Let's start the code for our first rule:
 ---
 
 
-🔲 We're going to need to check **if** something is true. To do that, drag
+► We're going to need to check **if** something is true. To do that, drag
 an ``||logic: if <true> then||`` logic container into the empty **on game update** container.
 
-🔲 Now make sure the enemy isn't already jumping by replacing 
+► Now make sure the enemy isn't already jumping by replacing 
 ``||logic: <true>||`` with ``||scene: is [mySprite] hitting wall [left]||`` in the empty
 **if/then** header.  
 
-🔲 Replace ``||variables: mySprite||`` with ``||variables: value||`` to make sure 
+► Replace ``||variables: mySprite||`` with ``||variables: value||`` to make sure 
 it's checking the current enemy.
 
-🔲 Change **left** to **bottom** to check that the bottom of the sprite is on the ground.
+► Change **left** to **bottom** to check that the bottom of the sprite is on the ground.
 
 
 ```blocks
@@ -277,19 +277,19 @@ We'll figure out whether either situation is happening using a new **if/then** s
 ---
 
 
-🔲 Drag out another ``||logic:if <true> then||`` block and place it inside of the 
+► Drag out another ``||logic:if <true> then||`` block and place it inside of the 
 empty one already in the **for element** loop.
 
-🔲 To check whether two things are true at the same time (moving left **and** wall to the left), 
+► To check whether two things are true at the same time (moving left **and** wall to the left), 
 pull a ``||logic: < > and < >||`` in to replace the ``||logic:<true>||`` argument 
 in the new **if/else** statement.
 
-🔲 In the right blank (to the right of the **and**) snap a ``||scene: tile to the [left] of [mySprite] is [ ]||``
+► In the right blank (to the right of the **and**) snap a ``||scene: tile to the [left] of [mySprite] is [ ]||``
 
-🔲 Replace ``||variables: mySprite||`` with ``||variables: value||`` and replace the blank
+► Replace ``||variables: mySprite||`` with ``||variables: value||`` and replace the blank
 tile with the **[X]**. 
 
-🔲 Pop a ``||logic: [0] [<] [0]||`` block to the left of the **and**.   
+► Pop a ``||logic: [0] [<] [0]||`` block to the left of the **and**.   
 
 ---
 
@@ -319,10 +319,10 @@ In the Arcade system, left is negative and right is positive. To check that the
 sprite is moving left, you must make sure its velocity in the x direction
 is negative.  
 
-🔲 Grab a ``||sprites: [mySprite] [x]||`` argument block to replace the 
+► Grab a ``||sprites: [mySprite] [x]||`` argument block to replace the 
 first **0** in ``||logic: [0] [<] [0]||``.
 
-🔲 Replace ``||variables: mySprite||`` with ``||variables: value||`` and replace 
+► Replace ``||variables: mySprite||`` with ``||variables: value||`` and replace 
 **x** with **vx (velocity x)**.   
 
 
@@ -347,12 +347,12 @@ enemy to jump.
 ---
 
 
-🔲 Inside the newly built **if/then** statement, connect a ``||sprites:set [mySprite] [x] to [0]||`` block.
+► Inside the newly built **if/then** statement, connect a ``||sprites:set [mySprite] [x] to [0]||`` block.
 
-🔲 Replace ``||variables: mySprite||`` with ``||variables: value||`` and replace 
+► Replace ``||variables: mySprite||`` with ``||variables: value||`` and replace 
 ``||sprites: x||`` with ``||sprites: vy (velocity y)||``. 
 
-🔲 Change **0** to **-150**.   
+► Change **0** to **-150**.   
 
 
 ```blocks
@@ -374,18 +374,18 @@ Next, we'll add the code to do the same thing to the right.
 ---
 
 
-🔲 Click twice on the **⊕** button at the bottom of the innermost **if/then**
+► Click twice on the **⊕** button at the bottom of the innermost **if/then**
 statement that we've just completed, to add an **else** then an **else if** clause.
 
-🔲 Duplicate the entire **and** statement, then drop the duplicate into the
+► Duplicate the entire **and** statement, then drop the duplicate into the
 header of the **else if** clause.  
 
-🔲 In the new clause, change **<** to **>** and **left** to **right**.
+► In the new clause, change **<** to **>** and **left** to **right**.
 
-🔲 Duplicate the ``||sprites:set [value] [vy (velocity y)] to [-150]||`` block 
+► Duplicate the ``||sprites:set [value] [vy (velocity y)] to [-150]||`` block 
 and snap the copy inside the empty **else if** statement.
 
-🔲 We're done with this **if/else if** statement now, so you can click the 
+► We're done with this **if/else if** statement now, so you can click the 
 **⊖** beside the empty **else** clause to remove it from the block.  
 
 
@@ -418,17 +418,17 @@ The case for an enemy not running into a wall while traveling on the ground has 
 Next, we need to add cases for when an enemy runs into a wall on the left or right
 while it's already trying to jump.
 
-🔲 Click three times on the **⊕** button at the bottom of the outermost **if/then**
+► Click three times on the **⊕** button at the bottom of the outermost **if/then**
 statement (**if <is value hitting wall bottom> then**) to add an **else** and two **else if** clauses.
 
-🔲 Duplicate the ``||scene: is [value] hitting wall [bottom]||`` argument twice and 
+► Duplicate the ``||scene: is [value] hitting wall [bottom]||`` argument twice and 
 place a copy in each of the new **else if** headers.
 
-🔲 Change **bottom** to **left** in the first **else if**.
+► Change **bottom** to **left** in the first **else if**.
 
-🔲 Change **bottom** to **right** in the second **else if**.  
+► Change **bottom** to **right** in the second **else if**.  
 
-🔲 Click the 
+► Click the 
 **⊖** beside the empty **else** clause to remove it from the block.  
 
 
@@ -458,14 +458,14 @@ going left and left if they were going right.
 ---
 
 
-🔲 Make two duplicates of one of the ``||sprites:set [value] [vy (velocity y)] to [-150]||`` blocks from the original **if/then**
+► Make two duplicates of one of the ``||sprites:set [value] [vy (velocity y)] to [-150]||`` blocks from the original **if/then**
 clause and snap one into each of the empty **else if** clauses.
 
-🔲 For the **set value** block inside the first **else if** clause 
+► For the **set value** block inside the first **else if** clause 
 (**else if <is value hitting wall left> then**), change 
 **vy (velocity y)** to **vx (velocity x)** and change **-150** to **30**.
 
-🔲 For the **set value** block inside the second **else if** clause 
+► For the **set value** block inside the second **else if** clause 
 (**else if <is value hitting wall right> then**), change 
 **vy (velocity y)** to **vx (velocity x)** and change **-150** to **-30**.
 
