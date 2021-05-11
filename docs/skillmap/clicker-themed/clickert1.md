@@ -45,6 +45,9 @@ scene.setBackgroundImage(img`
 **Note:** If you want to find any of the images used in the hints for this project, 
 toggle to the **My Assets** tab above the image editor and select them from the gallery.
 
+![Toggle to a new window](/static/skillmap/assets/gallery-toggle.gif "Choose the image editor, gallery, or my assets." )
+
+
 
 ```blocks
 //@highlight

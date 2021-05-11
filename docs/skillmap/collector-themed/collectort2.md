@@ -105,7 +105,7 @@ overlaps a projectile.
 
 ---
 
-![Grab otherSprite from header](/static/skillmap/assets/give-ar.gif "Replace mySprite with the otherSprite variable" )
+![Grab otherSprite from header](/static/skillmap/assets/give-var.gif "Replace mySprite with the otherSprite variable" )
 
 
 ```blocks

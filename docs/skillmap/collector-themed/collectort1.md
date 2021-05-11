@@ -56,6 +56,9 @@ a ``||sprites:Player||`` sprite.
 **Hint:** If you want to use the same sprites featured in the hints, toggle the tab 
 above the image editor until you get to **My Assets**.
 
+![Toggle to a new window](/static/skillmap/assets/gallery-toggle.gif "Choose the image editor, gallery, or my assets." )
+
+
 
 ```blocks
 //@highlight
@@ -134,6 +137,8 @@ mySprite.setStayInScreen(true)
 of the **on start** container.
 
 ► Click the **grey square** in the new block and draw a landscape for the dino to navigate. Or, toggle to **My Assets** to choose the freeway!
+
+![Toggle to a new window](/static/skillmap/assets/gallery-toggle.gif "Choose the image editor, gallery, or my assets." )
 
 
 ```blocks
