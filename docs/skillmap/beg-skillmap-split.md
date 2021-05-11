@@ -9,6 +9,7 @@
 * tertiarycolor: #009da2
 * highlightcolor: #ffffff
 * allowcodecarryover: true
+* tags: easy, tutorials
 
 
 
@@ -205,10 +206,10 @@
 
 ### collector-activity4
 
-* name: Give it Life
+* name: Animate It!
 * type: tutorial
-* description: Add extra lives to your collector game!
-* tags: easy, collector, game
+* description: Animate your characters to give them life!
+* tags: easy, game, animation
 * next: collector-activity5
 
 * url: /skillmap/collector-themed/collectort4

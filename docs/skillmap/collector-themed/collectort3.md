@@ -1,7 +1,6 @@
 # Experience Danger
 
 
-
 ```ghost
 info.onCountdownEnd(function () {
     game.over(true)
@@ -81,177 +80,153 @@ forever(function () {
 
 ## Intro @unplugged
 
-Saving babies is great! What happens when you also need to avoid danger? 
+Collecting things is great, but let's also add an element of **DANGER!** 
 
-This tutorial will show you how to add menacing elements to your game.
+This tutorial will show you how to take the next step with your game.
 
 ![Avoid the cars](/static/skillmap/collector/collectort3.gif "Stay safe!" )
 
+## Step 2
+
+The code for a collector game is already in the workspace.  
+🕹️ Play your game to help you remember what each chunk of code does.
 
 
-## Step 1
 
-The code for a collector game is already in the workspace. 
-We can build on this to make something that requires extra skill.
+## Step 3
 
 Let's start by adding a new kind of projectile, an ``||sprites:Enemy||``!
 
 ---
 
-► Right-click on the ``||loops:forever||`` loop container (the one that already holds
-the code for your main projectile) and choose **Duplicate** from the 
-top of the menu.
+► Grab a new ``||loops:forever||`` loop container and drop it into an empty area of the workspace. 
 
-► Inside that new loop, click on the ``||variables: projectile||`` variable in the 
-**set projectile to** block. A dropdown will appear, allowing you to 
-select **New variable...** . 
+► From ``||sprites:Sprites||``, drag ``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||``.
 
-► Name this new enemy projectile **myEnemy**.
+► Select a sprite for the enemy (we use the blue car), then change **vx** to **-110**
+and **vy** to **0**.
 
 
 ```blocks
-let projectile: Sprite = null
 forever(function () {
 //@highlight
-    let myEnemy = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
-    projectile.y = randint(15, 115)
-    pause(randint(1000, 2000))
-})
-```
-
-
-## Step 2
-
-Our new enemy isn't quite ready. Let's make sure to get all the blocks
-in the new **forever** loop pointed to the right thing.
-
----
-
-► Change the variable in the new ``||sprites:set [projectile] [y] to (pick random [15] to [115])||`` block from **projectile** 
-to **myEnemy**.
-
-► Now change the image for your **myEnemy** sprite from a baby dino to 
-something more threatening to the momma, like a car.  
-
-
-```blocks
-forever(function () {
-    let myEnemy = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
-    myEnemy.y = randint(15, 115)
-    pause(randint(1000, 2000))
-})
-```
-
-
-## Step 3
-
-If you play your game right now, you'll see that the babies and the cars
-run out at about the same rate. Let's add some variation.
-
----
-
-► Inside the first block in the **myEnemy** ``||loops:forever||`` loop, change the **vx** for **myEnemy** to **-110**
-
-► Cars should also be less frequent than babies.  Let's change the 
- ``||loops:pause (pick random [1000] to [2000])ms||`` to stay between **1500** and **2500** ms.
-
-
-```blocks
-forever(function () {
-    let myEnemy = sprites.createProjectileFromSide(assets.image`Tourist`, -110, 0)
-    myEnemy.y = randint(15, 115)
-    pause(randint(1500, 2500))
+    let projectile2 = sprites.createProjectileFromSide(assets.image`Tourist`, -110, 0)
 })
 ```
 
 
 ## Step 4
 
-**😲 Uh-Oh 😲**
-
-Right now, running into an enemy INCREASES your score.  That's not right.
-
-Let's make sure the code knows the difference between a projectile and myEnemy.
+**Our new enemy isn't quite ready.**   
+We still have to set the vertical positions on the screen and add a pause to the loop.
 
 ---
 
-► From ``||sprites:Sprites||``, grab a ``||sprites:set [mySprite2] kind to [Player]||``
+► Just like we did when making the baby dinos, we'll need to grab ``||sprites:set [mySprite] [x] to [0]||`` and snap it in **below** the new projectile block.
+
+► Change **mySprite** to **projectile2** and change **x** to **y**.  
+
+► Replace **0** with ``||math:pick random [0] to [10]||``, then set the range to pick from **15** to **115**.
+
+
+```blocks
+forever(function () {
+    let projectile2 = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
+    //@highlight
+    projectile2.y = randint(15, 115)
+})
+```
+
+## Step 5
+
+► Add ``||loops:pause [100] ms||`` to the bottom of this **forever** loop.
+
+► Replace **100** with ``||math:pick random [0] to [10]||``, then set the range to pick from **1500** to **2500**.
+
+
+```blocks
+forever(function () {
+    let projectile2 = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
+    projectile2.y = randint(15, 115)
+    //@highlight
+    pause(randint(1500, 2500))
+})
+```
+
+## Step 6
+
+
+**🎮 Now try your game in the simulator 🎮**
+
+How is it working?
+
+
+
+## Step 7
+
+**😲 Uh-Oh 😲**
+
+Running into an enemy INCREASES your score. That's not right.
+
+Let's add code to treat the two projectiles differently.
+
+---
+
+► From ``||sprites:Sprites||``, grab a ``||sprites:set [mySprite] kind to [Player]||``
 block and snap it just **ABOVE** the **pause** block in the enemy's **forever** loop container.
 
-► In the new block, change **mySprite2** to **myEnemy** and change **Player**
+► In the new block, change **mySprite** to **projectile2** and change **Player**
 to **Enemy**.
 
 
 ```blocks
 
 forever(function () {
-    let myEnemy = sprites.createProjectileFromSide(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . c c c . . . . . . 
-        . . . . . . a b a a . . . . . . 
-        . . . . . c b a f c a c . . . . 
-        . . . . c b b b f f a c c . . . 
-        . . . . b b f a b b a a c . . . 
-        . . . . c b f f b a f c a . . . 
-        . . . . . c a a c b b a . . . . 
-        . . . . . . c c c c . . . . . . 
-        . . . . . . . c . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, -110, 0)
-    myEnemy.y = randint(0, 120)
+    let projectile2 = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
+    projectile2.y = randint(15, 115)
     //@highlight
-        myEnemy.setKind(SpriteKind.Enemy)
+    projectile2.setKind(SpriteKind.Enemy)
     pause(randint(1500, 2500))
 
 })
 ```
 
-## Step 5
+## Step 8
 
 **😈 Wicked 😈**
 
-Now the program knows your rock is an enemy. 
+Now the program knows the car is an enemy.   
 What are we going to do about it?
 
 ---
 
-► Duplicate the ``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``
- container that's already in the 
-workspace.
+► Right-click the ``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``
+ container that's already in the workspace and choose **Duplicate**.
 
 ► In the header of the new container, 
 change the second **kind** from **Projectile** to **Enemy**.
 
-► Change the effect from **rings** to something more meaningful for your 
-enemy. (**Fire** is impressive.)
-
-
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.fire, 200)
+    otherSprite.destroy()
     info.changeScoreBy(1)
 })
 ```
 
 
-## Step 6
+## Step 9
 
-At this point, the player is still awarded points when they hit a rock.
+At this point, the player is still awarded points when they hit a car.
 
 **Let's subtract a life, instead.**
 
 ---
 
-► Delete the ``||info:change score by [1]||`` block from the **on overlaps Enemy**
+► Delete ``||info:change score by [1]||`` from the **on overlaps Enemy**
 container. 
 
-► From ``||info: Info||``, grab a ``||info:change life by [-1]||`` block and
+► From ``||info: Info||``, grab  ``||info:change life by [-1]||`` and
 snap it into the end of the **on overlaps Enemy**
 container. 
 
@@ -259,21 +234,20 @@ container.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.fire, 200)
+    otherSprite.destroy()
     //@highlight
     info.changeLifeBy(-1)
 })
 ```
 
 
-## Step 7
+## Step 8
 
 **What an amazing creation!**  
 
-This game has it all...countless riches, enemies, winning, and losing!  Play it through before moving along.
+This game has it all...drama, enemies, winning, and losing!  Play it through before moving along.
 
-Click **Finish** to return to the main page where you can share your game
-with family and friends!
+When you're done, click **Finish** to return to the main page where you can share your game with family and friends!
 
 
 
