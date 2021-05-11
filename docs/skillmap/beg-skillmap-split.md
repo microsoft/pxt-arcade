@@ -200,7 +200,7 @@
 * next: collector-activity4
 
 * url: /skillmap/collector-themed/collectort3
-* imageUrl: /static/skillmap/collector/collector-activity-3.gif
+* imageUrl: /static/skillmap/collector/collectort3.gif
 
 
 
@@ -210,23 +210,12 @@
 * type: tutorial
 * description: Animate your characters to give them life!
 * tags: easy, game, animation
-* next: collector-activity5
-
-* url: /skillmap/collector-themed/collectort4
-* imageUrl: /static/skillmap/collector/collector-activity-4.gif
-
-
-
-### collector-activity5
-
-* name: Play Around
-* type: tutorial
-* description: Now it's up to your imagination!
-* tags: easy, collector, game
 * next: beginner-cert-3
 
-* url: /skillmap/collector-themed/collectort5
-* imageUrl: /static/skillmap/collector/collector-activity-4.gif
+* url: /skillmap/collector-themed/collectort4
+* imageUrl: /static/skillmap/collector/collectort4.gif
+
+
 
 
 ### beginner-cert-3
