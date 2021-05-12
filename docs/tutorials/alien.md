@@ -59,7 +59,7 @@ Let's create a stampede!
 
 In this tutorial, you'll learn how to build your own alien invasion.
 
-![It's an alien invasion!](/static/tutorial/alien/alien.gif "Try not to get in their way!" )
+![It's an alien invasion!](/static/tutorials/aliens/alien.gif "Try not to get in their way!" )
 
 
 
