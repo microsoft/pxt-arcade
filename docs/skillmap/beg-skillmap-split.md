@@ -1,6 +1,6 @@
 # Beginner Arcade
 * name: Beginner's Guide to Arcade Games
-* description: Learn to create arcade games of your own by completing these tutorials.
+* description: Learn to create arcade games of your own by completing tutorials that focus on greeting cards, a clicker game, and a collector game starring a dinosuar that's determined to save dino babies!
 * infoUrl: skillmap/educator-info/basic-map-info
 * bannerUrl: /static/skillmap/backgrounds/beg-map-tile.png
 * backgroundurl: /static/skillmap/backgrounds/beg-comp.png  
