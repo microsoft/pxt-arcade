@@ -6,7 +6,7 @@
 * backgroundurl: /static/skillmap/backgrounds/beg-comp.png  
 * primarycolor: #ff7f41
 * secondarycolor: #fff53d
-* tertiarycolor: #009da2
+* tertiarycolor: #87f2ff
 * highlightcolor: #ffffff
 * allowcodecarryover: true
 * tags: easy, beginner, tutorials
