@@ -2,8 +2,8 @@
 * name: Beginner's Guide to Arcade Games
 * description: Learn to create arcade games of your own by completing these tutorials.
 * infoUrl: skillmap/educator-info/basic-map-info
-* bannerUrl: /static/skillmap/story/story-activity4.png
-* backgroundurl: /static/skillmap/backgrounds/bg1b.png  
+* bannerUrl: /static/skillmap/backgrounds/beg-map-tile.png
+* backgroundurl: /static/skillmap/backgrounds/beg-comp.png  
 * primarycolor: #ff7f41
 * secondarycolor: #fff53d
 * tertiarycolor: #009da2
@@ -54,7 +54,7 @@
 * next: story-activity2
 
 * url: /skillmap/story/story1 
-* imageUrl: /static/skillmap/story/card.gif
+* imageUrl: /static/skillmap/story/story-comp.png
 
 
 ### story-activity2
@@ -74,21 +74,12 @@
 * type: tutorial
 * description: Create your first Arcade story using a two-line joke!
 * tags: easy, story, joke, share
-* next: pusher2, story-activity4
+* next: pusher2, beginner-cert-1
 
 * url: /skillmap/story/story3 
 * imageUrl: /static/skillmap/story/muffins.gif
 
 
-### story-activity4
-* name: Shortest Story
-* type: tutorial
-* description: Write a short story with a scene of your own!
-* tags: easy, story, creative
-* next: beginner-cert-1
-
-* url: /skillmap/story/story4 
-* imageUrl: /static/skillmap/story/story-activity-4.gif
 
 
 ### pusher1
@@ -121,7 +112,7 @@
 * next: clicker-activity2
 
 * url: /skillmap/clicker-themed/clickert1 
-* imageUrl: /static/skillmap/clicker/clickert1.gif
+* imageUrl: /static/skillmap/clicker/clicker-comp.png
 
 
 
@@ -178,7 +169,7 @@
 * next: pusher5, collector-activity2 
 
 * url: /skillmap/collector-themed/collectort1 
-* imageUrl: /static/skillmap/collector/collectort1.gif
+* imageUrl: /static/skillmap/collector/collector-comp.png
 
 
 
