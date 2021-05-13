@@ -1,4 +1,4 @@
-# Collector Game
+# Alien Invasion
 
 
 ```ghost
@@ -65,7 +65,7 @@ In this tutorial, you'll learn how to build your own alien invasion.
 
 ## Step 2
 
-**🖼️ Let's start with a background 🖼️**
+**🖼️ We can start with a background 🖼️**
 
 ---
 
