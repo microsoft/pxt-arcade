@@ -9,6 +9,9 @@
     },
     "tags": "misc",
     "standaloneSprites": [
-        "egg"
+        "egg",
+        "eggRolling",
+        "kaijuBabyLarge",
+        "kaijuMomLarge"
     ]
 }
