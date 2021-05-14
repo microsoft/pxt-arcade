@@ -214,7 +214,7 @@ true
 ## Step 7
 
 
-**🎮 Now try your game in the simulator 🎮**
+**🎮 Now try your game on the game screen 🎮**
 
 How cool is that?!?
 
@@ -256,7 +256,7 @@ true
 ## Step 9
 
 
-**🎮 Play game in the simulator 🎮**
+**🎮 Try your project on the game screen! 🎮**
 
 Looking good!
 
@@ -306,7 +306,7 @@ When you're ready, click **Finish** to return to the main page where you can sha
 
 
 ```package
-arcade-background-scroll=github:riknoll/arcade-background-scroll
+arcade-background-scroll=github:microsoft/arcade-background-scroll/
 ```
 
 ```assetjson

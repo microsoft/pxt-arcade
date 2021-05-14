@@ -156,7 +156,7 @@ forever(function () {
 ## Step 6
 
 
-**🎮 Now try your game in the simulator 🎮**
+**🎮 Now try your game on the game screen 🎮**
 
 How is it working?
 
@@ -252,7 +252,7 @@ When you're done, click **Finish** to return to the main page where you can shar
 
 
 ```package
-arcade-background-scroll=github:riknoll/arcade-background-scroll
+arcade-background-scroll=github:microsoft/arcade-background-scroll/
 ```
 
 ```assetjson

@@ -102,7 +102,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 6
 
-**🎮 Test your game in the simulator 🎮**
+**🎮 Test your game on the game screen 🎮**
 
 This game is off to a great start...but it goes on forever! Add a countdown timer to give
 the player a clear endpoint.
@@ -126,7 +126,7 @@ info.startCountdown(10)
 
 **🎉 Congrats 🎉**
 
-You have started your very own clicker game!  Play it in the simulator and see how many clicks you can get.
+You have started your very own clicker game!  Play it on the game screen and see how many clicks you can get.
 
 Click **Finish** to return to the main page where you can share your game
 with family and friends to compare scores!

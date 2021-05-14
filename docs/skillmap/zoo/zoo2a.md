@@ -51,7 +51,7 @@ and drag it into the **end** of the ``||loops:on start||`` container.
 
 ▶ Try changing the **0** in the textbox to something else 
 *(either positive or negative)*.   
-You should see your fishy friend start to move in the simulator.
+You should see your fishy friend start to move on the game screen.
 
 ```blocks
 let mySprite = sprites.create(img`
@@ -83,7 +83,7 @@ mySprite.vx = 50
 ---
 
 ► Open ``||sprites:Sprites||``, then snap ``||sprites:set [mySprite] bounce on wall <ON>||`` 
-to the end of the program and check out your exhibit in the simulator!
+to the end of the program and check out your exhibit on the game screen!
 
 ```blocks
 

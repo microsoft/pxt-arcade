@@ -82,7 +82,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 3
 
-**🎮 Try your game in the simulator window to see what you think 🎮**
+**🎮 Try your project on the game screen to see what you think 🎮**
 
 
 ## Step 4

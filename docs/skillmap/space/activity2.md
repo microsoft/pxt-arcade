@@ -56,7 +56,7 @@ is pressed and also how to add special effects.
 
 The workspace is pre-loaded with code for a flying ship.  
 Be sure to 
-**play with it in the simulator** to see if it works like you expect.
+**play with it on the game screen** to see if it works like you expect.
 
 ---
 
@@ -88,7 +88,7 @@ flying object (or select one from the **My Assets** tab.)
 ---
 
 
-**Tip:** Run your code in the simulator and launch a few projectiles 
+**Tip:** Run your code on the game screen and launch a few projectiles 
 by pressing the **Ⓐ** button.  What happens?
 
 
@@ -211,5 +211,5 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 You can now use the direction buttons to move your space plane and
 the **Ⓐ** button to lauch projectiles!
 
-Play your game in the simulator, then click **Finish** to return to the main page where you can share your game
+Play your game in the game screen, then click **Finish** to return to the main page where you can share your game
 with family and friends!

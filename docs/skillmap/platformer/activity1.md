@@ -174,7 +174,7 @@ controller.moveSprite(mySprite, 100, 0)
 
 ## Try it
 
-**Be sure to give your game a try in the simulator!**
+**Be sure to give your game a try on the game screen!**
 
 ---
 
