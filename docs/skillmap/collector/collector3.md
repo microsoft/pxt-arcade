@@ -131,7 +131,7 @@ forever(function () {
 ```
 
 
-## Intro @unplugged
+## Intro @showdialog
 
 Collecting things is great, but avoiding danger is more exciting. 
 

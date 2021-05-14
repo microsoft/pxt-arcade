@@ -78,7 +78,7 @@ forever(function () {
 ```
 
 
-## Intro @unplugged
+## Intro @showdialog
 
 Collecting things is great, but let's also add an element of **DANGER!** 
 

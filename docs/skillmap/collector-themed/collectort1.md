@@ -26,7 +26,7 @@ forever(function () {
 ```
 
 
-## Intro @unplugged
+## Intro @showdialog
 
 Ready to test your agility? 
 

@@ -14,7 +14,7 @@ info.startCountdown(10)
 ```
 
 
-## Introduction @unplugged
+## Introduction @showdialog
 
 We already have a basic clicker game, let's use what we've learned to 
 make it even more special!
@@ -107,7 +107,7 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 
 ```
 
-## Step 6 @unplugged
+## Step 6 @showdialog
 
 **🎮 Play your game a couple of times 🎮**
 

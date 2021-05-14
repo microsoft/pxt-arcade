@@ -25,7 +25,7 @@ mySprite = sprites.create(assets.image`A static`, SpriteKind.Player)
 ```
 
 
-## Introduction @unplugged
+## Introduction @showdialog
 
 There's so much more to explore with our clicker games.
 

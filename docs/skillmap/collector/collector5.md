@@ -472,7 +472,7 @@ forever(function () {
 
 ```
 
-## Intro @unplugged
+## Intro @showdialog
 
 You've learned everything you know to make an exciting collector game.  Now put it all together to create something that's all your own!
 

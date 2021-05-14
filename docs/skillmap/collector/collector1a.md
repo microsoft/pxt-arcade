@@ -1,6 +1,6 @@
 # Design a Background
 
-## Introduction @unplugged
+## Introduction @showdialog
 
 Let's give your hero a world to protect!
 
@@ -282,7 +282,7 @@ scene.setBackgroundImage(img`
 ```
 
 
-## Play @@unplugged
+## Play @@showdialog
 
 **🎮 Play your game 🎮**
 

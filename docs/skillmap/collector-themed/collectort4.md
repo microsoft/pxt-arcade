@@ -79,7 +79,7 @@ forever(function () {
 ```
 
 
-## Intro @unplugged
+## Intro @showdialog
 
 A fantastic game can be made even better by adding small details.  
 

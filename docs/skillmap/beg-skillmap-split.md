@@ -71,6 +71,7 @@
 
 ### story-activity3
 * name: Joking Around
+* allowcodecarryover: false
 * type: tutorial
 * description: Create your first Arcade story using a two-line joke!
 * tags: easy, story, joke, share

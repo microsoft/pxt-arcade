@@ -89,7 +89,7 @@ if (game.askForNumber("Enter a number between 1 and 9", 1) == myNumber) {
 
 ```
 
-## Welcome @unplugged
+## Welcome @showdialog
 
 Guessing a number with one try is luck. Guessing a number in three tries is skill!
 
