@@ -56,7 +56,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ---
 
-Look at your game simulator to see what happens.
+Look at your game screen to see what happens.
 
 
 ## Step 4
@@ -116,7 +116,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 of the ``||controller:on A button pressed||`` container. 
 
 ► Change the first variable value to ``||variables:panda||``, then try your code 
-in the simulator.
+on the game screen.
 
 ```blocks
 let panda:Sprite = null;
@@ -195,7 +195,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 That panda's getting a full meal!
 
-Give your game a try in the simulator and when you're done, 
+Give your game a try using the game screen, and when you're done, 
 click **Finish** to continue your zoo journey.  
 
 

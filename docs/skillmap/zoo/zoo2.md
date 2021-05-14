@@ -50,7 +50,7 @@ and drag it into the **end** of the ``||loops:on start||`` container. Your anima
 should start moving! 
 
 ▶ Try changing the numbers next to **vx** and **vy**
-and watch the simulator to see what happens.
+and watch the game screen to see what happens.
 
 ```blocks
 let mySprite = sprites.create(img`

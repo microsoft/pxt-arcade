@@ -288,7 +288,7 @@ scene.setBackgroundImage(img`
 
 ---
 
-► Try your game in the simulator.  How do you like your background?  
+► Try your game in the game screen.  How do you like your background?  
 
 ► Feel free to return to the **Image Editor** and change it until you get it just the way you want it!
 
@@ -455,4 +455,4 @@ you select that name from the dropdown when positioning each sprite.
 
 You've made your game your own!  
 
-Now play your game in the simulator and make sure you like the way it looks. 
+Now play your game in the game screen and make sure you like the way it looks. 
