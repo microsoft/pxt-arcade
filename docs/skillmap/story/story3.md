@@ -811,7 +811,7 @@ mySprite2.say("OMIGOSH! A talking muffin!")
 
 ## Step 6
 
-**Take a minute to check your joke in the simulator!**
+**Take a minute to look at your joke on the game screen!**
 
 Is it funny?  Does the text overlap anything important on the screen?
 

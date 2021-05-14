@@ -110,7 +110,7 @@ tiles.setTilemap(tilemap`level`)
 
 ## Camera
 
-**Take a moment to move the player sprite around in the simulator. ** 
+**Take a moment to move the player sprite around on the game screen. ** 
 
 Right now, the camera isn't following when the player moves off screen.  
 We can fix that!

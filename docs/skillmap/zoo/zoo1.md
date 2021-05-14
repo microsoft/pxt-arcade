@@ -59,7 +59,7 @@ into the bottom of the ``||loops:on start||`` container.
 ---
 
 This will allow you to move your sprite around the screen. 
-Try it in the simulator using the arrow keys on your keyboard 
+Try it on the game screen using the arrow keys on your keyboard 
 or by clicking the joystick.
 
 

@@ -260,7 +260,7 @@ when to run **startNextLevel**.
 
 ---
 
-Check your game in the simulator. It shouldn't feel any different than
+Check your game on the game screen. It shouldn't feel any different than
 the original (yet).  
 
 If it doesn't feel the same, take a look at the hint

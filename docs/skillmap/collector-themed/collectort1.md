@@ -98,7 +98,7 @@ controller.moveSprite(mySprite, 0, 100)
 
 ## Step 4
 
-**🎮  Try your game in the simulator 🎮**
+**🎮  Try your project using the game screen 🎮**
  
 Make sure your ``||sprites:Player||`` moves up and down with the joypad, arrow keys, or **W** and **S** keys.
 
@@ -179,7 +179,7 @@ scroller.scrollBackgroundWithSpeed(-50, 0)
 
 ## Step 8
 
-**🎮  Take a look at the simulator 🎮**
+**🎮  Take a look at the game screen 🎮**
  
 Your background should move on its own, and your ``||sprites:Player||`` should 
 move with the controller.
@@ -293,13 +293,13 @@ forever(function () {
 
 ---
 
-Now you have the start of your very own collector game. Give it a try in the simulator!
+Now you have the start of your very own collector game. Give it a try on the game screen!
 
 When you're done playing, click **Finish** to return to the main page where you can share your game with family and friends!
 
 
 ```package
-arcade-background-scroll=github:riknoll/arcade-background-scroll
+arcade-background-scroll=github:microsoft/arcade-background-scroll/
 ```
 
 ```assetjson
