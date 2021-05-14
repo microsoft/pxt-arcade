@@ -1,0 +1,15 @@
+{
+    "width": 160,
+    "height": 120,
+    "blockIdentity": "images._image",
+    "creator": "image.ofBuffer",
+    "star": {
+        "namespace": "sprites.skillmap",
+        "mimeType": "image/x-mkcd-f4"
+    },
+    "standaloneSprites": [
+        "fans",
+        "pigeon",
+        "writer"
+    ]
+}
