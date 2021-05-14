@@ -75,7 +75,6 @@
         "libs/screen---linux",
         "libs/screen---ext",
         "libs/game",
-        "libs/game---hw",
         "libs/buttons",
         "libs/mixer",
         "libs/servo",
