@@ -46,7 +46,7 @@ Complete this tutorial to learn how to:
 - follow tutorial prompts
 - find blocks in the toolbox
 - build code in the workspace
-- run your game on the built-in simulator 
+- run your project on the built-in game screen 
 
 Before you know it, you'll have an arcade game of your very own!
 
@@ -301,7 +301,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 **🕹️ Time to play 🕹️**
 
-Check out the simulator!  
+Check out the game screen!  
 
 Click the **Ⓐ** button to clear your splash screen message.  
 Click it again to launch your effects!

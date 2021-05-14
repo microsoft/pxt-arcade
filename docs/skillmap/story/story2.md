@@ -821,7 +821,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 🥳 That's it! 🥳  
 
-**Before you click "Finish", take a look at the card in the simulator 
+**Before you click "Finish", take a look at the card in the game screen 
 to see how your card works!**
 
 

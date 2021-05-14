@@ -24,7 +24,7 @@ make it even more special!
 
 ## Step 2
 
-🕹️ First, play your game in the **simulator** to remember how it works 🕹️
+🕹️ First, play your game on the game screen to remember how it works 🕹️
 
 ---
 

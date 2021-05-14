@@ -365,7 +365,7 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, oth
 **Congratulations**
 
 Now you have a full barrage of enemies to combat!  
-Don't forget to try your game in the simulator before you click "Finish".
+Don't forget to look at your project on the game screen before you click "Finish".
 
 Once you have it like you want it, click **Finish** to return to the main page where you can share your game
 with family and friends!

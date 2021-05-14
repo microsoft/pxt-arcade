@@ -7,7 +7,7 @@
 Time to refuel! 
 
 In this tutorial we'll add a fuel bar to your spaceship
-that depleats as you travel. 
+that depletes as you travel. 
 
 Make sure to catch the powerups to keep your
 ship from breaking down!
