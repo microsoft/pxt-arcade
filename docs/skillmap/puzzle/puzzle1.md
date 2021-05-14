@@ -340,7 +340,7 @@ if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
 ## Step 8
 
 
-Click on the simulator and choose your guess using the arrow pad and the space key. 
+Click on the game screen, then choose your guess using the arrow pad and the space key. 
 
 **💎 Great! 💎**
 

@@ -61,7 +61,7 @@ special touches to make it even more fun.
 
 ## Step 2 @unplugged
 
-**🎮 Remind yourself where you left of by trying your game in the simulator 🎮**
+**🎮 Remind yourself where you left of by trying your game on the game screen 🎮**
 
 
 ## Step 3
@@ -142,7 +142,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ## Step 6
 
-**🎮 Now try it out in the simulator 🎮**
+**🎮 Now try it out on the game screen 🎮**
 
 How do you like it so far?
 
@@ -229,7 +229,7 @@ When you're done, click **Finish** to return to the main page where you can shar
 
 
 ```package
-arcade-background-scroll=github:riknoll/arcade-background-scroll
+arcade-background-scroll=github:microsoft/arcade-background-scroll/
 ```
 
 ```assetjson

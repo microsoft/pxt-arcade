@@ -269,7 +269,7 @@ forever(function () {
 
 ## Step 7 @unplugged
 
-**🎮 Give your game a try in the simulator 🎮**
+**🎮 Give your game a try in the game screen 🎮**
 
 
 ## Step 8

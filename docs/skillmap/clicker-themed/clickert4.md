@@ -221,7 +221,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 6 @unplugged
 
-**🎮 Give your game a try in the simulator 🎮**
+**🎮 Give your game a try on the game screen 🎮**
 
 It should do what you expect...as long as you have 10 points to spend!
 
@@ -262,7 +262,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 **⚡️ Amazing ⚡️**
 
-Now you have a clicker game with a simple shop.  Give it a try in the simulator.
+Now you have a clicker game with a simple shop.  Give it a try on the game screen.
 
 Click **Finish** to return to the main page where you can share your game
 with family and friends!

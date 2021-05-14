@@ -81,7 +81,7 @@ let mySprite = sprites.create(img`
 ► Find the ``||controller:move [mySprite] with buttons ⊕||`` block 
 and drag it into the bottom of the ``||loops:on start||`` container. 
 
-** Now try moving your ship around in the simulator! **  
+** Now try moving your ship around on the game screen! **  
 Your ship will move with the joystick, arrow keys, or **W A S D** keys.  
 
 
@@ -155,7 +155,7 @@ mySprite.setStayInScreen(true)
 
 ---
 
-**Try your game on the simulator
+**Try your project on the game screen
 before you click finish on the tutorial.**  
 
 Is everything how you want it? You can always go back and edit steps if you discover you'd like them to work differently.

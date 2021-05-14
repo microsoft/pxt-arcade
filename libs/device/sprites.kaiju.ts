@@ -3,6 +3,12 @@ namespace sprites.kaiju {
     //% tags="misc"
     export const egg = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
+    //% tags="misc"
+    export const eggRolling = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
+    //% tags="misc"
+    export const kaijuBabyLarge = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
     //% tags="misc misc"
     export const kaijuBabyWalk0 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
@@ -38,6 +44,9 @@ namespace sprites.kaiju {
     //% fixedInstance jres blockIdentity=images._image
     //% tags="misc misc"
     export const kaijuMomAttack5 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
+    //% tags="misc"
+    export const kaijuMomLarge = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     //% tags="misc misc"
     export const kaijuMomWalk0 = image.ofBuffer(hex``);
