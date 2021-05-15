@@ -46,7 +46,7 @@ forever(function () {
 ```
 
 
-## Intro @unplugged
+## Intro @showdialog
 
 Ready to give your **W,A,S,D** keys a workout? 
 
@@ -267,7 +267,7 @@ forever(function () {
 
 ```
 
-## Step 7 @unplugged
+## Step 7 @showdialog
 
 **🎮 Give your game a try in the game screen 🎮**
 

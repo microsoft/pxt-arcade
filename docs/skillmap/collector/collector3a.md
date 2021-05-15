@@ -207,7 +207,7 @@ forever(function () {
 ```
 
 
-## Introduction @unplugged
+## Introduction @showdialog
 
 Why settle for one enemy sprite when you could have two?
 
@@ -371,7 +371,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 })
 ```
 
-## Conclusion @unplugged
+## Conclusion @showdialog
 
 Now let's add code to destroy the enemies with your projectiles! Or, if you're feeling creative, add a background to set the scene.
 

@@ -48,7 +48,7 @@ forever(function () {
 ```
 
 
-## Intro @unplugged
+## Intro @showdialog
 
 You've made a collector game, now let's add some 
 special touches to make it even more fun.
@@ -59,7 +59,7 @@ special touches to make it even more fun.
 
 
 
-## Step 2 @unplugged
+## Step 2 @showdialog
 
 **🎮 Remind yourself where you left of by trying your game on the game screen 🎮**
 

@@ -1,7 +1,7 @@
 # Clicker Game
 
 
-## Introduction @unplugged
+## Introduction @showdialog
 
 Let's make a clicker game!
 

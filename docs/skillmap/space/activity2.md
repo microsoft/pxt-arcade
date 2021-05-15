@@ -42,7 +42,7 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 
 
 
-## Introduction @unplugged
+## Introduction @showdialog
 
 ![Releasing projectiles](/static/skillmap/space/projectiles.gif "Here, enemy ship. Would you like to borrow an asteroid?")
 
@@ -108,7 +108,7 @@ let projectile = sprites.createProjectileFromSprite(img`
 })
 ```
 
-## Retrospect @unplugged
+## Retrospect @showdialog
 
 You probably noticed that your projectiles are firing toward the bottom 
 right corner. This is *not helpful* when your enemies are coming from above! Let's take 
@@ -127,7 +127,7 @@ let mySprite: Sprite = null
 let projectile = sprites.createProjectileFromSprite(img`.`, mySprite, 50, 50)
 ```
 
-## Learn Velocity @unplugged
+## Learn Velocity @showdialog
 
 To change the direction of the projectiles, you need to change the  
 speed they travel in a certain direction.  

@@ -94,7 +94,7 @@ if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
 
 ```
 
-## Welcome @unplugged
+## Welcome @showdialog
 
 Guessing games are more fun when you get to find out the final answer.
 

@@ -1,7 +1,7 @@
 # Space Explorer
 
 
-## Introduction @unplugged
+## Introduction @showdialog
 
 ** Let's explore the depths of space! **
 
@@ -149,7 +149,7 @@ mySprite.setStayInScreen(true)
 ```
 
 
-## Finale @unplugged
+## Finale @showdialog
 
 **Great Job!**
 

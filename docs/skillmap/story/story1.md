@@ -156,7 +156,7 @@ forever(function () {
 ```
 
 
-## Intro @unplugged
+## Intro @showdialog
 
 Are you ready to make greeting cards for your friends and family?
 
@@ -310,6 +310,12 @@ scene.setBackgroundImage(img`
 ```
 
 
+---
+
+![The background gallery](/static/skillmap/assets/bg-gallery-toggle.gif "Toggle between editor and gallery" )
+
+
+
 ## Step 3
 
 **💛 Let's add a heartfelt greeting 💛**
@@ -444,7 +450,6 @@ scene.setBackgroundImage(img`
 7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
 `)
 ```
-
 
 
 
@@ -728,7 +733,15 @@ effects.confetti.startScreenEffect()
 music.playMelody("G B A G C5 B A B ", 120)
 ```
 
-## Congrats @unplugged
+
+---
+
+![The music gallery](/static/skillmap/assets/music-gallery-toggle.gif "Toggle between editor and gallery" )
+
+
+
+
+## Congrats @showdialog
 
 **🥳 That's it! 🥳**
 

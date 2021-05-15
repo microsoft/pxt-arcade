@@ -195,7 +195,7 @@ mySprite.say("The number was " + myNumber + "!")
 
 ```
 
-## Welcome @unplugged
+## Welcome @showdialog
 
 There is a strategy to being able to guess a number when you know
 that your last guess was either high or low.  

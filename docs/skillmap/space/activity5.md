@@ -3,7 +3,7 @@
 ### @autoexpandOff true
 
 
-## Introduction @unplugged
+## Introduction @showdialog
 
 Your universe is pretty empty right now. Let's add some things for your ship
 to find! These could be planets or asteroids or space debris left over from

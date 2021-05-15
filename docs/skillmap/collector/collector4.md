@@ -191,7 +191,7 @@ forever(function () {
 
 
 
-## Intro @unplugged
+## Intro @showdialog
 
 Ready to give your game some extra life?
 
