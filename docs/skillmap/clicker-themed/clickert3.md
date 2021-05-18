@@ -1,4 +1,4 @@
-# Super Clicker
+# Clicking Superstar
 
 
 ```template
@@ -27,9 +27,9 @@ mySprite = sprites.create(assets.image`A static`, SpriteKind.Player)
 
 ## Introduction @showdialog
 
-There's so much more to explore with our clicker games.
+There's so much more to explore with our clicker game.
 
-Let's keep building!
+Let's create a spray of stars that fly out as we click.
 
 ![Click away](/static/skillmap/clicker/clickert3.gif "Click and buy bigger clickers" )
 
@@ -37,7 +37,7 @@ Let's keep building!
 ## Step 2
 
 Watching the points increase each time we click is fun...but let's add 
-some projectiles to make it even more interesting.
+some flying star [__*projectiles*__](#projected "sprites that moves on their own, often in large quantities") to make it even more interesting.
 
 ---
 
@@ -64,13 +64,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 3
 
-► Click the grey square in the new block to draw something that sparks joy. 
-It could be a heart, a star, or even a flower!
+► Click the empty grey square and toggle to **My Assets** to select **Big Star**.
 
----
-
-**Note:** If no inspiration strikes, you can choose a ready-made star from the 
-**Gallery** or **My Assets** tab of the image editor.
 
 ```blocks
 let mySprite: Sprite = null
@@ -80,25 +75,42 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 3
+## Step 4
 
 **🎮 Try your project on the game screen to see what you think 🎮**
 
 
-## Step 4
+## Step 5
 
-**🌟 Now let's make the projectiles float 🌟**
+**🌟 Let's make the star projectiles float 🌟**
 
 ---
 
 ► From the ``||math:Math||`` category, drag out **TWO** ``||math: pick random [0] to [10]||``
-blocks.  Add the first to the **vx** of the **set projectile** block and add the second to the **vy**.
+blocks.  
 
-► Change the range of the first random block (next to **vx**) to pick between 
-**-100** and **100**. 
+► Add the first to the [__*vx*__](#whatVX "horizontal velocity") argument of the ``||variables:set [projectile] to projectile [⭐] from [mySprite] with vx [50] vy [50]||``  block.
 
-► Change the range of the second random block (next to **vy**) to pick between 
-**-50** and **-100**.   
+► Add the second to the [__*vy*__](#whatVY "vertical velocity") argument.
+
+
+```blocks
+let mySprite: Sprite = null
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.setImage(assets.image`A static Down`)
+    projectile = sprites.createProjectileFromSprite(assets.image`Star`, mySprite, randint(0, 10), randint(0, 10))
+})
+```
+
+
+## Step 6
+
+
+► Change the range of the first ``||math: pick random [0] to [10]||`` block (next to **vx**) to pick between 
+**-100** and **100**.  This will scatter stars randomly from side to side.
+
+► Change the range of the second ``||math: pick random [0] to [10]||`` block (next to **vy**) to pick between 
+**-50** and **-100**.  This will make sure the stars only move upward.
 
 
 
@@ -110,18 +122,20 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-
-
-## Finale
-
+## Congrats @showdialog
 **🎇 There you have it, a Super-Clicker 🎇**
 
 ---
 
-Now, every time you click **Ⓐ** you create a shower of joyful sprites!
+Now, every time you click **Ⓐ** you create a shower of joyful stars!
 
 Play your game a few times and look through the code to see if there's anything you 
 want to add or modify.
+
+
+## Finale
+
+Try playing around with the code and the images to see if you can make your own customizations!
 
 When you're done, click **Finish** to return to the main page where you can 
 get a link to share with family and friends!
