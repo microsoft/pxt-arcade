@@ -40,12 +40,10 @@ scene.setBackgroundImage(img`
 ---
 
 
-► Click the grey box in the new block to open the image editor and draw a background.  
+► Click the grey box inside ``||scene: set background image to [ ]||`` to open the 
+image editor and toggle to the **My Assets** tab.  
 
-**Note:** If you want to find any of the images used in the hints for this project, 
-toggle to the **My Assets** tab above the image editor and select them from the gallery.
-
-![Toggle to a new window](/static/skillmap/assets/gallery-toggle.gif "Choose the image editor, gallery, or my assets." )
+► Choose the **Stage** background and click **Done**.
 
 
 
@@ -53,6 +51,13 @@ toggle to the **My Assets** tab above the image editor and select them from the 
 //@highlight
 scene.setBackgroundImage(assets.image`TheStage`)
 ```
+
+---
+
+![Toggle to My Assets](/static/skillmap/assets/my-assets-toggle.gif "Choose the image editor, gallery, or my assets." )
+
+
+
 
 
 ## Step 4
@@ -62,10 +67,10 @@ Add a [__*splash screen*__](#splasht "A full-screen message that shows while a p
 ---
 
 ► Open the ``||game:Game||`` category and 
-drag the ``||game: splash [" "]||`` block into the bottom of the **on start** 
+drag the ``||game: splash [" "]||`` block into the bottom of the ``||loops:on start||`` 
 container.
 
-► Click inside the empty text area of the new block and type a message letting the 
+► Click inside the empty text area of the ``||game: splash [" "]||`` block and type a message letting the 
 user know they should press (A) to play.   
 
 
@@ -88,10 +93,10 @@ the score when the **Ⓐ** button is clicked.
 
 ► From the ``||controller:Controller||`` category, grab the
 ``||controller: on [A] button [pressed]||`` container and drop it into an 
-empty spot in the workarea.  
+empty spot in the workspace.  
 
 ► From ``||info:Info||``, drag out the ``||info:change score by [1]||`` block
-and snap it into the new container.   
+and snap it into ``||controller: on [A] button [pressed]||`.   
 
 
 ```blocks
@@ -100,9 +105,14 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
+
 ## Step 6
 
 **🎮 Test your game on the game screen 🎮**
+
+
+
+## Step 7
 
 This game is off to a great start...but it goes on forever! Add a countdown timer to give
 the player a clear endpoint.
@@ -122,11 +132,12 @@ info.startCountdown(10)
 ```
 
 
-## Step 7
+## Step 8
 
 **🎉 Congrats 🎉**
 
-You have started your very own clicker game!  Play it on the game screen and see how many clicks you can get.
+You have started your very own clicker game! 
+Play it on the game screen and see if you can get more than **40 clicks**.
 
 Click **Finish** to return to the main page where you can share your game
 with family and friends to compare scores!

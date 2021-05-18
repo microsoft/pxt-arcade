@@ -1,4 +1,4 @@
-# Grand Clicker
+# Button Clicker
 
 
 ```template
@@ -24,7 +24,7 @@ make it even more special!
 
 ## Step 2
 
-🕹️ First, play your game on the game screen to remember how it works 🕹️
+🕹️ Prepare for this activity by playing the game already in the workspace 🕹️
 
 ---
 
@@ -41,15 +41,7 @@ button [__*sprite*__](#sprote "a 2-D image that moves on the screen") to the scr
 ► From ``||sprites:Sprites||`` drag out ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
 and snap it into **the bottom** of the ``||loops:on start||`` container.
 
-► Add your sprite by clicking inside the grey square and drawing a button in the **up** position. 
-
----
-
-**Note:** If no inspiration strikes, you can choose a ready-made button from the 
-**Gallery** or **My Assets** tab of the image editor.
-
-![Toggle to a new window](/static/skillmap/assets/gallery-toggle.gif "Choose the image editor, gallery, or my assets." )
-
+► Click the grey square and toggle to **My Assets** to choose the **A** button that's already in the **up** position.
 
 
 ```blocks
@@ -61,9 +53,12 @@ info.startCountdown(10)
 mySprite = sprites.create(assets.image`A static`, SpriteKind.Player)
 ```
 
+![Toggle to a new window](/static/skillmap/clicker/toggle-my-assets.gif "Choose the image editor, gallery, or my assets." )
+
+
 ## Step 4
 
-**✨ For an extra spark, you can make your sprite react
+**✨ Make your button look like it's being pressed
 with each click ✨**
 
 ---
@@ -72,7 +67,7 @@ with each click ✨**
 ``||sprites: set [mySprite] image to [ ]||`` and snap it
 into **the bottom** of the ``||controller:on [A] button [pressed]||`` container.
 
-► Click inside the grey square to draw (or choose) a button in the **down** position. 
+► Click the grey square and toggle to **My Assets** and choose a button in the **down** position. 
 
 ```blocks
 let mySprite: Sprite = null
@@ -84,10 +79,14 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ```
 
+## Step 5 @showdialog
 
-## Step 5
+**🎮 Try it out on the game screen 🎮**
 
-Right now, the button never comes back up once pressed.  
+
+## Step 6
+
+Right now, the button never goes back up once pressed.  
 **Let's change that!**
 
 ---
@@ -96,7 +95,7 @@ Right now, the button never comes back up once pressed.
 
 ► Change ``||controller:[pressed]||`` to ``||controller:[released]||`` using the dropdown menu.
 
-► Snap a new ``||sprites: set [mySprite] image to [ ]||`` block inside, and go to the **My Assets** tab to choose the same 
+► Snap a new ``||sprites: set [mySprite] image to [ ]||`` block inside, then toggle to **My Assets** and choose the same 
 **up** button image that you used for the original sprite. 
 
 ```blocks
@@ -107,13 +106,13 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 
 ```
 
-## Step 6 @showdialog
-
-**🎮 Play your game a couple of times 🎮**
-
-
-
 ## Step 7
+
+Now test your project on the game screen to make sure the button goes up and down.
+
+
+
+## Step 8
 
 **Did you notice that your game automatically keeps track of your highest score?**
 
@@ -122,7 +121,7 @@ Let's change that.
 
 ---
 
-► From the ``||info:Info||`` category, grab a ``||info:on countdown end||``
+► From the ``||info:Info||`` category, grab an ``||info:on countdown end||``
 container and drop it into an empty area of the workspace. 
 
 ► Now, open the ``||game:Game||`` category and pick  
@@ -137,7 +136,7 @@ info.onCountdownEnd(function () {
 })
 ```
 
-## Step 8
+## Step 9
 
 **🎊 Fantastic 🎊**
 
@@ -162,8 +161,9 @@ info.onCountdownEnd(function () {
 
 Play your game to see how you did.
 
-When you're done, click **Finish** to return to the main page where you can share
-with family and friends then compete for the most clicks in 10 seconds!   
+Compete for the most clicks in 10 seconds! When you're done, click **Finish** to 
+return to the main page where you can share
+with family and friends.   
 
 ```assetjson
 {
