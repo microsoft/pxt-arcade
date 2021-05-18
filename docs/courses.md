@@ -26,6 +26,12 @@ Structured courses for teaching computer science in the classroom.
         "url": "/courses/csintro3",
         "imageUrl": "/static/courses/csintro3.png",
         "largeImageUrl": "/static/courses/csintro3.gif"
+    }, {
+        "name": "AP Computer Science Principles",
+        "description": "AP endorsed introductory class for High School students. The course is designed to attract students of all backgrounds, experience levels, and interests.",
+        "url": "https://makecode.com/csp",
+        "imageUrl": "/static/courses/csp.png",
+        "largeImageUrl": "/static/courses/csp.png"
     }
 ]
 ```
