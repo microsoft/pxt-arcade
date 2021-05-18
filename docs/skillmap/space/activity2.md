@@ -48,7 +48,7 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 
 Are you ready to customize your ship? 
 
-In this tutorial, you'll learn to fire a projectile when the **Ⓐ** button
+In this tutorial, you'll learn to fire a [__*projectile*__](#projected "a sprite that moves on its own, often in large quantities")  when the **Ⓐ** button
 is pressed and also how to add special effects.
 
 
