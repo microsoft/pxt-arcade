@@ -6,14 +6,14 @@
 * backgroundurl: /static/skillmap/backgrounds/beg-comp.png  
 * primarycolor: #ff7f41
 * secondarycolor: #fff53d
-* tertiarycolor: #009da2
+* tertiarycolor: #0befe3
 * highlightcolor: #ffffff
 * allowcodecarryover: true
 * tags: easy, beginner, tutorials
 
 
 
-## Learn to Use Tutorial
+## Learn to Use Arcade Tutorial
 * name: Learn to Use MakeCode Arcade
 * description: Start here if you want to know the ins and outs of Arcade tutorials!
 
@@ -42,7 +42,7 @@
 * kind: layout
 
 
-## Stories
+## Greeting Cards and Jokes
 
 ### story-activity1
 * allowcodecarryover: false
@@ -71,6 +71,7 @@
 
 ### story-activity3
 * name: Joking Around
+* allowcodecarryover: false
 * type: tutorial
 * description: Create your first Arcade story using a two-line joke!
 * tags: easy, story, joke, share
@@ -99,7 +100,7 @@
 * imageUrl: /static/skillmap/certificates/story-cert.png
 
 
-## Clicker
+## Make a Clicker Game
 
 ### clicker-activity1
 * required: 1 story
@@ -117,7 +118,7 @@
 
 
 ### clicker-activity2
-* name: Grand Clicker
+* name: Button Clicker
 * type: tutorial
 * description: Add a visual button to your clicker! 
 * tags: easy, clicker, game, images
@@ -128,7 +129,7 @@
 
 
 ### clicker-activity3
-* name: Super Clicker
+* name: Clicking Superstar
 * type: tutorial
 * description: Add code to make a spray of stars with each click!
 * tags: easy, clicker, projectiles
@@ -156,15 +157,15 @@
 * imageUrl: /static/skillmap/certificates/clicker-cert.png
 
 
-## Collector 
+## Rescue the Baby Dinos 
 
 ### collector-activity1
 * required: 1 clicker
 * allowcodecarryover: false
 
-* name: Collector Game
+* name: Dino Hoard
 * type: tutorial
-* description: Make an arcade-style collector game!
+* description: Create a swarm of baby dinosaurs to run down the city streets.
 * tags: easy, collector, game
 * next: pusher5, collector-activity2 
 
@@ -175,9 +176,9 @@
 
 ### collector-activity2
 
-* name: Collect the Fun
+* name: Save the Baby Dinos!
 * type: tutorial
-* description: Make a few simple changes for a game that's twice as fun! 
+* description: Make a few simple changes to create a game where Momma Dino collects her babies to take them home.
 * tags: easy, collector, game, projectiles
 * next: collector-activity3
 
@@ -187,9 +188,9 @@
 
 ### collector-activity3
 
-* name: Experience Danger
+* name: Traffic Dodger
 * type: tutorial
-* description: Learn to add enemy projectiles to your game!
+* description: Save the baby dinos before the cars get in the way!
 * tags: easy, collector, game, collisions
 * next: collector-activity4
 

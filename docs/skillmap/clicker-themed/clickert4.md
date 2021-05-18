@@ -100,7 +100,7 @@ clicks = 1
 ```
 
 
-## Introduction @unplugged
+## Introduction @showdialog
 
 What's more fun than pressing buttons?
 
@@ -219,7 +219,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 6 @unplugged
+## Step 6 @showdialog
 
 **🎮 Give your game a try on the game screen 🎮**
 

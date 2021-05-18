@@ -342,7 +342,7 @@ uppie = 0
 
 
 
-## Introduction @unplugged
+## Introduction @showdialog
 
 Now you've got the skills to go off-script and make something from 
 your own imagination.

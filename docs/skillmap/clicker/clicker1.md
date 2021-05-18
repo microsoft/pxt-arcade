@@ -41,7 +41,7 @@ info.startCountdown(10)
 
 ```
 
-## Introduction @unplugged
+## Introduction @showdialog
 
 Let's make a clicker game!
 

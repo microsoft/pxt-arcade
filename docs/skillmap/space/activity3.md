@@ -63,7 +63,7 @@ scene.cameraShake(4, 500)
 
 
 
-## Introduction @unplugged
+## Introduction @showdialog
 
 **Intergalactic travel is dangerous!**
 

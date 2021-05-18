@@ -59,12 +59,14 @@ You've just discovered the most important part of following a tutorial — readi
 Sometimes the instructions are long and you need to close them while you work.
 Sometimes, you need to open them to read the next step.
 
-To toggle instructions, click **[^Less...]** or  **[v More...]** to toggle
+To toggle instructions, click the **[^Less...]** or  **[v More...]** button below the instruction area to toggle
 this box.
 
 ---
 
 When you're ready to move to the next step, click **[ >  Next]** to continue.  
+
+---
 
 
 ## step 2
@@ -93,7 +95,7 @@ and change the sentence to something more exciting.
 
 ---
 
-**Tip:** Did you notice that the first use of the word __workspace__ had 
+**Tip:** Did you notice that the word __workspace__ in the first sentence had 
 a special look? Hover your mouse over it to see a definition.
 
 #### ~ tutorialhint 
@@ -180,6 +182,7 @@ end of the **on start** container.
 
 ```blocks
 scene.setBackgroundColor(5)
+game.splash("My monkey is better than yours")
 let mySprite = sprites.create(img`
 . . . . . f f f f f . . . . . . 
 . . . . f e e e e e f . . . . . 
@@ -198,7 +201,7 @@ let mySprite = sprites.create(img`
 . f d d f f f f d d b f f f f . 
 . f f f f f f f f f f f f f . . 
 `, SpriteKind.Player)
-    game.splash("My monkey is better than yours")
+
 
 ```
 

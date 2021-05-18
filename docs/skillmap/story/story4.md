@@ -490,7 +490,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ```
 
-## Introduction @unplugged
+## Introduction @showdialog
 
 Short stories are fun to read and fun to write!
 

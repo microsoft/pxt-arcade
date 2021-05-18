@@ -107,7 +107,7 @@ tiles.placeOnRandomTile(mySprite, myTiles.tile3)
 info.setLife(3)
 ```
 
-## Start @unplugged
+## Start @showdialog
 
 In this lesson, we'll take what we made in previous tutorials and add simple enemies.  
 
@@ -172,7 +172,7 @@ for (let value of tiles.getTilesByType(myTiles.tile5)) {
 }
 ```
 
-## A little lesson @unplugged
+## A little lesson @showdialog
 
 Now our loop will run for each tile location.  
 
@@ -385,7 +385,7 @@ for (let value of tiles.getTilesByType(myTiles.tile5)) {
 }
 ```
 
-## Damage pt. 1 @unplugged
+## Damage pt. 1 @showdialog
 
 Now the enemies should be moving toward the player.
 
@@ -436,7 +436,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Damage pt. 4 @unplugged
+## Damage pt. 4 @showdialog
 
 ❗ Here comes the exciting part ❗
 
@@ -520,7 +520,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ```
 
 
-## Damage pt. 6 @unplugged
+## Damage pt. 6 @showdialog
 
 Now we've written code that checks if the player has bounced on an enemy.  
 **But what if it didn't?**
