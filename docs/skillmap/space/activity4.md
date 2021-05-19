@@ -2,7 +2,7 @@
 
 ### @autoexpandOff true
 
-## Introduction @unplugged
+## Introduction @showdialog
 
 Time to refuel! 
 

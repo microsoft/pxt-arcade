@@ -202,7 +202,7 @@ forever(function () {
 ```
 
 
-## Intro @unplugged
+## Intro @showdialog
 
 You've made a collector game, now let's add some 
 special touches to make it even more fun.

@@ -90,7 +90,7 @@ power = 1
 
 
 
-## Introduction @unplugged
+## Introduction @showdialog
 
 There's so much more to explore with our clicker games.
 

@@ -66,7 +66,7 @@ NewRound()
 
 
 
-## Welcome @unplugged
+## Welcome @showdialog
 
 We've made stories, clicker games, and collector games...now it's time to learn the secrets behind puzzle games!
 
