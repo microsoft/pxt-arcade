@@ -22,7 +22,7 @@
         "core---stm32": "file:../core---stm32",
         "screen---st7735": "file:../screen---st7735",
         "mixer---stm32": "file:../mixer---stm32",
-        "game---hw": "file:../game---hw"
+        "game": "file:../game"
     },
     "public": true,
     "skipLocalization": true,
