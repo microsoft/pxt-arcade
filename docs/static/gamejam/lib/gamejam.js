@@ -102,8 +102,7 @@ function setTimer() {
     secondCounter.innerText = delta.toString();
 }
 function makeRules() {
-    var _a;
-    if ((_a = info) === null || _a === void 0 ? void 0 : _a.rules) {
+    if (info === null || info === void 0 ? void 0 : info.rules) {
         var rulesRequest = new XMLHttpRequest();
         rulesRequest.addEventListener("load", onLoad);
         rulesRequest.open("GET", info.rules.path);
@@ -126,13 +125,21 @@ function makeRules() {
     }
 }
 function makeGallery() {
-    var _a;
-    if (!((_a = info) === null || _a === void 0 ? void 0 : _a.featured.length)) {
+    var container = document.querySelector(".gallery");
+    var parent = document.getElementById("gallery");
+    if (!(info === null || info === void 0 ? void 0 : info.featured.length)) {
         var description = document.querySelector(".gallery .description");
         description.innerText = "Check back later to play some submitted games!";
     }
+    else {
+        var hint = document.createElement("div");
+        hint.className = "hint";
+        hint.innerText = "If you see blocks overlapping each other in the editor workspace, you can \
+            reformat them by selecting \"Format Code\" from the menu when you right-click \
+            on the workspace background.";
+        container.insertBefore(hint, parent);
+    }
     var selected = randomize(info.featured); // show all the games
-    var parent = document.getElementById("gallery");
     var row = document.createElement("div");
     for (var i = 0; i < selected.length; i++) {
         var game = selected[i];
@@ -165,8 +172,8 @@ function makeGallery() {
     }
 }
 function makeSchedule() {
-    var _a, _b;
-    var sorted = ((_b = (_a = info) === null || _a === void 0 ? void 0 : _a.sessions) === null || _b === void 0 ? void 0 : _b.sort(function (a, b) { return a.date < b.date ? -1 : 1; })) || [];
+    var _a;
+    var sorted = ((_a = info === null || info === void 0 ? void 0 : info.sessions) === null || _a === void 0 ? void 0 : _a.sort(function (a, b) { return a.date < b.date ? -1 : 1; })) || [];
     var parent = document.getElementById("schedule");
     for (var _i = 0, sorted_1 = sorted; _i < sorted_1.length; _i++) {
         var session = sorted_1[_i];
