@@ -6,8 +6,9 @@
 * backgroundurl: /static/skillmap/backgrounds/beg-comp.png  
 * primarycolor: #ff7f41
 * secondarycolor: #fff53d
-* tertiarycolor: #0befe3
+* tertiarycolor: #87f2ff
 * highlightcolor: #ffffff
+* completednodecolor: #a68b47
 * allowcodecarryover: true
 * tags: easy, beginner, tutorials
 
@@ -101,9 +102,9 @@
 
 
 ## Make a Clicker Game
+* required: 1 story
 
 ### clicker-activity1
-* required: 1 story
 * allowcodecarryover: false
 
 * name: Clicker Game
@@ -158,9 +159,9 @@
 
 
 ## Rescue the Baby Dinos 
+* required: 1 clicker
 
 ### collector-activity1
-* required: 1 clicker
 * allowcodecarryover: false
 
 * name: Dino Hoard
