@@ -53,7 +53,7 @@
     "skillMap": {
         "defaultPath": "docs:/skillmap/intermediate-skillmap",
         "pathAliases": {
-            "beginner": "docs:/skillmap/beginner-skillmap-2"
+            "beginner": "docs:/skillmap/beginner-skillmap"
         }
     },
     "galleries": {
