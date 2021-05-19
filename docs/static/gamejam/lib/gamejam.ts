@@ -144,13 +144,23 @@ function makeRules() {
 }
 
 function makeGallery() {
+    const container = document.querySelector(".gallery") as HTMLElement;
+    const parent = document.getElementById("gallery");
+
     if (!info?.featured.length) {
-        let description = document.querySelector(".gallery .description") as HTMLElement;
+        const description = document.querySelector(".gallery .description") as HTMLElement;
         description.innerText = "Check back later to play some submitted games!"
+    } else {
+        let hint = document.createElement("div");
+        hint.className = "hint"
+        hint.innerText = "If you see blocks overlapping each other in the editor workspace, you can \
+            reformat them by selecting \"Format Code\" from the menu when you right-click \
+            on the workspace background."
+
+        container.insertBefore(hint, parent);
     }
 
     let selected = randomize(info.featured); // show all the games
-    const parent = document.getElementById("gallery");
     let row = document.createElement("div");
     for (let i = 0; i < selected.length; i++) {
         const game = selected[i];
