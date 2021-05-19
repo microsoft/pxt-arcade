@@ -52,8 +52,9 @@ info.startCountdown(10)
 //@highlight
 mySprite = sprites.create(assets.image`A static`, SpriteKind.Player)
 ```
+---
 
-![Toggle to a new window](/static/skillmap/clicker/toggle-my-assets.gif "Choose the image editor, gallery, or my assets." )
+![Toggle to a new window](/static/skillmap/clicker/my-assets-toggle.gif "Choose the image editor, gallery, or my assets." )
 
 
 ## Step 4

@@ -382,8 +382,7 @@ We can add these characters as [__*sprites*__](#sprotes "2-D images that moves o
 ``||variables: set [mySprite] to sprite [ ] of kind [Player]||`` 
 and drag it into the bottom of the ``||loops:on start||`` container.
 
-► Create the perfect character for your joke by clicking the grey box in the
-new sprite block so you can draw something in the image editor.
+► Create the perfect character for your joke by clicking the grey box so you can draw something in the image editor.
 
 
 ```blocks
@@ -530,7 +529,7 @@ block and snap it into the empty ``||controller:on [A] button [pressed]||`` cont
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    game.showLongText("Why do tropical fish swim in saltwater?", DialogLayout.Bottom)
+    game.showLongText(" ", DialogLayout.Bottom)
 })
 ```
 
@@ -544,6 +543,13 @@ your punchline is presented separately at the end.
 ► Write your joke on paper and circle the punchline. It's usually 
 the last line, and it's the part that makes people laugh.
 
+► Break the rest of the joke up into small sentences. How many long text boxes will you need?
+
+
+## Step 6
+
+► Right-click and duplicate the ``||game: show long text [" "] [bottom]||`` block as many times as you need to fit your entire joke.
+
 ► Enter your punchline into the last ``||game: show long text [" "] [bottom]||``
 block inside your ``||controller:on [A] button [pressed]||`` container,
 and split the rest of the joke into other text blocks above it. 
@@ -554,6 +560,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     game.showLongText("Muffin #2: Omigosh! A talking muffin!", DialogLayout.Bottom)
 })
 ```
+
 
 
 ## Step 7
@@ -607,8 +614,3 @@ When you're done reviewing your joke on the game screen, click **Finish** to ret
 with family and friends!
 
 
-
-
-```package
-pxt-story-sprites=github:microsoft/pxt-story-sprites
-```

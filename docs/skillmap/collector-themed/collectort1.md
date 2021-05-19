@@ -134,11 +134,12 @@ of the ``||loops:on start||`` container.
 
 
 ```blocks
+//@highlight
+scene.setBackgroundImage(assets.image`Freeway`)
 let mySprite = sprites.create(assets.image`Mama`, SpriteKind.Player)
 controller.moveSprite(mySprite, 0, 100)
 mySprite.setStayInScreen(true)
-//@highlight
-scene.setBackgroundImage(assets.image`Freeway`)
+
 ```
 
 
@@ -171,7 +172,7 @@ scroller.scrollBackgroundWithSpeed(-50, 0)
 
 **🎮  Take a look at the game screen 🎮**
  
-Your background should move right to left across the screen on its own, and you should be able to move your Dino up and down with the joypad or arrow keys.
+Your background should move right-to-left across the screen on its own, and you should be able to move your dino up and down with the joypad or arrow keys.
 
 
 
@@ -222,14 +223,14 @@ forever(function () {
 
 **😲 They're flying 😲**
 
-If we leave them like this, there won't be any challenge.  Let's 
+If we leave them like this, we won't be able to see them properly.  Let's 
 send the babies in from a random height each time.
 
 ---
 
 ► From  ``||sprites:Sprites||``, grab a 
 ``||sprites:set [mySprite] [x] to [0]||`` 
-block and snap it into the end of the ``||loops:forever||`` loop container.
+block and snap it into **the end** of the ``||loops:forever||`` loop container.
 
 ► Change **mySprite** to **projectile** using the first dropdown menu.
 
@@ -254,7 +255,7 @@ forever(function () {
 (From the ``||math:Math||`` category)
 
 ► Help the babies spread out along the road by changing the smallest random number from **0** to **15** and the largest random number from 
-**15** to **115**.
+**10** to **115**.
 
 ```blocks
 forever(function () {
@@ -269,7 +270,7 @@ forever(function () {
 
 ► Keep the babies from running out at the speed of light by 
 adding a ``||loops:pause [100] ms||`` block (from the  ``||loops:Loops||``
-category) to the end of the ``||loops:forever||`` loop.
+category) to **the end** of the ``||loops:forever||`` loop.
 
 ► Change the pause time to **1000 ms** by clicking in the textbox and typing 
 **1000** (or click the dropdown and select **1 second**.)

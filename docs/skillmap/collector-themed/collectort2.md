@@ -225,7 +225,7 @@ info.onCountdownEnd(function () {
 
 **🏆 Now play your winning creation 🏆**
 
-Now our Mama Dino can collect her babies and earn points!  How many babies can you collect in 15 seconds?  
+Mama Dino can collect her babies and earn points!  How many babies can you collect in **15 seconds**?  
 
 Challenge your friends and family by clicking "Finish" and sharing the link from the main skillmap page.
 
