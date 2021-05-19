@@ -68,13 +68,13 @@ forever(function () {
     projectile2 = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
     projectile2.y = randint(15, 115)
     projectile2.setKind(SpriteKind.Enemy)
-    pause(randint(1500, 2500))
+    pause(2100)
 })
 
 forever(function () {
     projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
     projectile.y = randint(15, 115)
-    pause(randint(1000, 2000))
+    pause(1000)
 })
 ```
 
@@ -90,14 +90,14 @@ This tutorial will show you how to animate your characters.
 
 ## Step 2
 
-The code for a collector game is already in the workspace.  
-🕹️ Play your game to help you remember what the code does.
+The code for **Dino Mama** is already in the workspace.  
+🕹️ Play your game to remember what the code does.
 
 
 
 ## Step 3 @showdialog
 
-Let's start by animating the main ``||sprites:Player||``!
+Let's start by animating Mama Dino!
 
 ---
 
@@ -158,12 +158,9 @@ true
 
 ---
 
-► To select an animation, click the grey box in the new block to open the image editor.
+► To select an animation, click the grey box in ``||animation:animate [mySprite]||`` and toggle to **My Assets**.
 
-► Here, you can toggle to **My Assets** and select one of the animations that we use in the hints, or choose a different animation from the **Gallery**.
-
-► If you want to create your own animation, add new frames using the grey plus **+** button all the way to the right of the image editor window. From there, you can draw each frame one-by-one.
-
+► Select **Mama Moving** and click **Done**. 
 
 ```blocks
 let projectile: Sprite = null
@@ -228,9 +225,9 @@ You can follow the same steps to animate your ``||variables:projectile||``.
 
 ---
 
-► Drag ``||animation:animate [mySprite]||`` into the ``||loops:forever||`` loop where your main ``||variables:projectile||`` is created, and snap it **just above** the **pause** block.
+► Drag ``||animation:animate [mySprite]||`` into the ``||loops:forever||`` loop where your main ``||variables:projectile||`` is created, and snap it **just above** the ``||loops:pause [1000]||`` block.
 
-► Change **mySprite** to **projectile**.
+► Change ``||variables:mySprite||`` to ``||variables:projectile||``.
 
 ► Choose an animation for the main projectile, select the interval, and set **loop** to `<ON>`.
 
@@ -270,9 +267,9 @@ Now you can do the same thing for your enemy sprite!
 
 ---
 
-► Drag ``||animation:animate [mySprite]||`` into the ``||loops:forever||`` loop where ``||variables:projectile2||`` is created, and snap it **just above** the **pause** block.
+► Drag ``||animation:animate [mySprite]||`` into the ``||loops:forever||`` loop where ``||variables:projectile2||`` is created, and snap it **just above** the ``||loops:pause [2100]||`` block.
 
-► Change **mySprite** to **projectile2**.
+► Change ``||variables:mySprite||`` to ``||variables:projectile2||``.
 
 ► Choose an animation for the enemy projectile, select the interval, and set **loop** to `<ON>`.
 
