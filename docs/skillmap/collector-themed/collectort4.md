@@ -113,7 +113,7 @@ Let's start by animating Mama Dino!
 
 ► Drag ``||animation:animate [mySprite]||`` into **the bottom** of the ``||loops:on start||`` container.
 
-► Click the grey toggle at the bottom to switch looping to `<ON>`.
+► Click the grey toggle at the bottom to switch looping to `<ON>`.  
 
 
 ```blocks
@@ -221,7 +221,7 @@ How cool is that?!?
 
 **🔁 Let's do it again 🔁**
 
-You can follow the same steps to animate your ``||variables:projectile||``.
+You can follow the same steps to animate the baby.
 
 ---
 
@@ -229,7 +229,7 @@ You can follow the same steps to animate your ``||variables:projectile||``.
 
 ► Change ``||variables:mySprite||`` to ``||variables:projectile||``.
 
-► Choose an animation for the main projectile, select the interval, and set **loop** to `<ON>`.
+► Choose the **Animated Baby** animation, select the interval, and set **loop** to `<ON>`.
 
 
 ```blocks
@@ -244,7 +244,7 @@ assets.animation`Animated Baby`,
 100,
 true
 )
-    pause(randint(1000, 2000))
+    pause(1000)
 })
 
 ```
@@ -271,7 +271,7 @@ Now you can do the same thing for your enemy sprite!
 
 ► Change ``||variables:mySprite||`` to ``||variables:projectile2||``.
 
-► Choose an animation for the enemy projectile, select the interval, and set **loop** to `<ON>`.
+► Choose the **Animated Tourist**, select the interval, and set **loop** to `<ON>`.
 
 
 ```blocks
@@ -286,7 +286,7 @@ assets.animation`Animated Tourist`,
 100,
 true
 )
-    pause(randint(1500, 2500))
+    pause(2100)
 })
 ```
 

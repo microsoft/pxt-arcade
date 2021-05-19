@@ -54,7 +54,7 @@ scene.setBackgroundImage(assets.image`TheStage`)
 
 ---
 
-![Toggle to My Assets](/static/skillmap/assets/my-assets-toggle.gif "Choose the image editor, gallery, or my assets." )
+![Toggle to My Assets](/static/skillmap/clicker/my-assets-toggle.gif "Choose the image editor, gallery, or my assets." )
 
 
 
@@ -96,7 +96,7 @@ the score when the **Ⓐ** button is clicked.
 empty spot in the workspace.  
 
 ► From ``||info:Info||``, drag out the ``||info:change score by [1]||`` block
-and snap it into ``||controller: on [A] button [pressed]||`.   
+and snap it into ``||controller: on [A] button [pressed]||``.   
 
 
 ```blocks
