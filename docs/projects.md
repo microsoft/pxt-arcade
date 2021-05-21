@@ -5,8 +5,8 @@
     {
         "name": "Tutorials",
         "url": "/tutorials",
-        "imageUrl": "/static/skillmap/backgrounds/beginner.png",
-        "largeImageUrl": "/static/tutorials/froggy/frog.png",
+        "imageUrl": "/static/tutorials/game-maker-guide.png",
+        "largeImageUrl": "/static/tutorials/chase-the-pizza.gif",
         "videoUrl": "/static/tutorials/chase-the-pizza.mp4"
     },
     {
