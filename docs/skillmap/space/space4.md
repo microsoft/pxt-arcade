@@ -97,7 +97,7 @@ workspace and use them as a guide.
 into the workspace and change the interval to **5 seconds (5000 ms)**.
 
 ► Snap a new
-``||variables:set [projectile2] to||`` ``||sprites:projectile [ ] from side with vx [50] vy [50]||``
+``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||``
 block inside the newest **on game update** container.
 
 ► Click ``||variables:[projectile2]||`` and rename the sprite ``||variables:[myFuel]||``.
@@ -150,7 +150,8 @@ game.onUpdateInterval(5000, function () {
 })
 ```
 
-# Step 7
+
+## Step 7
 
 ► To set a random [__*x*__](#setX "horizontal location") 
 for the fuel, grab a 
@@ -217,7 +218,6 @@ namespace SpriteKind {
     export const Gas = SpriteKind.create()
 }
 
-let statusbar: StatusBarSprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Gas, function (sprite, otherSprite) {
 
 })
@@ -315,9 +315,7 @@ scene.setBackgroundImage(assets.image`Galaxy`)
 scroller.scrollBackgroundWithSpeed(0, 10)
 mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 100)
-mySprite.setFlag(SpriteFlag.StayInScreen, true)
-
-
+mySprite.setStayInScreen(true)
 game.onUpdateInterval(2000, function () {
     myEnemy = sprites.createProjectileFromSide(assets.image`Spider`, 0, 50)
     myEnemy.x = randint(5, 155)
@@ -331,7 +329,7 @@ namespace SpriteKind {
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(assets.image`Dart1`, mySprite, 0, -150)
-    projectile.startEffect(effects.ashes)
+    projectile.startEffect(effects.fire)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Gas, function (sprite, otherSprite) {
     statusbar.value = 100
@@ -341,7 +339,7 @@ statusbars.onZero(StatusBarKind.Energy, function (status) {
     game.over(false)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    sprite.destroy(effects.fire, 100)
+    sprite.destroy(effects.ashes, 100)
     otherSprite.destroy()
     info.changeScoreBy(1)
 })
@@ -358,7 +356,7 @@ scene.setBackgroundImage(assets.image`Galaxy`)
 scroller.scrollBackgroundWithSpeed(0, 10)
 mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 100)
-mySprite.setFlag(SpriteFlag.StayInScreen, true)
+mySprite.setStayInScreen(true)
 statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
 statusbar.attachToSprite(mySprite, -30, 0)
 mySprite.y = 100
