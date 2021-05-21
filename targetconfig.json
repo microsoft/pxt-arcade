@@ -51,7 +51,10 @@
     "skillMap": {
         "defaultPath": "docs:/skillmap/intermediate-skillmap",
         "pathAliases": {
-            "beginner": "docs:/skillmap/beginner-skillmap"
+            "beginner": "docs:/skillmap/beginner-skillmap",
+            "zoo": "docs:/skillmap/zoo",
+            "space": "docs:/skillmap/space",
+            "platformer": "docs:/skillmap/platformer"
         }
     },
     "galleries": {
