@@ -1,7 +1,7 @@
 # Tutorials
 
 
-## Getting started
+## Simple Tutorials
 
 ```codecard
 [
