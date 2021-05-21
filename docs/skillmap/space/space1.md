@@ -115,6 +115,7 @@ controller.moveSprite(mySprite)
 // @highlight
 mySprite.setStayInScreen(true)
 
+
 ```
 
 
@@ -154,7 +155,7 @@ scene.setBackgroundImage(assets.image`Galaxy`)
 scroller.scrollBackgroundWithSpeed(0, 10)
 mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 100)
-mySprite.setFlag(SpriteFlag.StayInScreen, true)
+mySprite.setStayInScreen(true)
 statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
 statusbar.attachToSprite(mySprite, -30, 0)
 mySprite.y = 100

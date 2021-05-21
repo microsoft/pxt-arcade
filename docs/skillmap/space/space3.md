@@ -153,7 +153,7 @@ collides with our ship.
 ► Drag an ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
 container into the workspace. 
 
-► Change the last value from ``||variables:Player||`` to ``||variables:Enemy||``.
+► Change the last value from ``||sprites:Player||`` to ``||sprites:Enemy||``.
 
 ---
 
@@ -236,7 +236,7 @@ some spectacular effects when your projectile makes contact!
 
 ```blocks
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, otherSprite) {
-    sprite.destroy(effects.fire, 200)
+    sprite.destroy(effects.ashes, 100)
     otherSprite.destroy()
 })
 ```
@@ -251,7 +251,7 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, oth
 
 ```blocks
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, otherSprite) {
-    sprite.destroy(effects.fire, 100)
+    sprite.destroy(effects.ashes, 100)
     otherSprite.destroy()
     info.changeScoreBy(1)
 })
@@ -281,7 +281,7 @@ pxt-status-bar=github:jwunderl/pxt-status-bar
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(assets.image`Dart1`, mySprite, 0, -150)
-    projectile.startEffect(effects.ashes)
+    projectile.startEffect(effects.fire, 100)
 })
 let projectile: Sprite = null
 let mySprite: Sprite = null
@@ -289,7 +289,8 @@ scene.setBackgroundImage(assets.image`Galaxy`)
 scroller.scrollBackgroundWithSpeed(0, 10)
 mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 100)
-mySprite.setFlag(SpriteFlag.StayInScreen, true)
+mySprite.setStayInScreen(true)
+
 ```
 
 ```ghost
@@ -321,7 +322,8 @@ scene.setBackgroundImage(assets.image`Galaxy`)
 scroller.scrollBackgroundWithSpeed(0, 10)
 mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 100)
-mySprite.setFlag(SpriteFlag.StayInScreen, true)
+mySprite.setStayInScreen(true)
+
 mySprite.y = 100
 game.onUpdateInterval(5000, function () {
     myFuel = sprites.createProjectileFromSide(assets.image`Fuel`, 0, 100)
