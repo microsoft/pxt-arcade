@@ -2,7 +2,7 @@
 * name: Build a Space Explorer
 * description: Learn to make a Galga-style game by following this short series of tutorials.
 * infoUrl: skillmap/educator-info/int-map-info
-* bannerUrl: /static/skillmap/platformer/spacet1.png
+* bannerUrl: /static/skillmap/platformer/spacet1.gif
 * backgroundurl: /static/skillmap/backgrounds/space-comp.png
 * primarycolor: #2EA9B0
 * secondarycolor: #d6f7fa
