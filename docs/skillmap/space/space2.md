@@ -84,7 +84,7 @@ Play with the __vx__ and __vy__ values of the projectile until they're flying st
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    projectile = sprites.createProjectileFromSprite(assets.image`Dart1`, mySprite, , -150)
+    projectile = sprites.createProjectileFromSprite(assets.image`Dart1`, mySprite, 0, -150)
 })
 ```
 
@@ -95,7 +95,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ---
 
 ► Find 
-``||sprites:[mySprite] start [spray] effect||`` and snap it in at 
+``||sprites:[mySprite] start [spray] effect ⊕||`` and snap it in at 
 the bottom of the ``||controller:on [A] button pressed ||`` container.  
 
 ► Change ``||variables:mySprite||`` to ``||variables:projectile||`` if you
@@ -105,15 +105,14 @@ want the effects on your projectiles instead of on your ship.
 
 ---
 
-**Tip:** You can add another ``||sprites:[mySprite] start [spray] effect||`` block
-to add a separate effect on your spaceship
+**Tip:** Click the __⊕__ button on the ``||sprites:[mySprite] start [spray] effect ⊕||`` block to change the time on the effect from 500 ms to **100* ms for a smoother experience.
 
 
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     let projectile = sprites.createProjectileFromSprite(assets.image`Dart1`, mySprite, 0, -150)
-    projectile.startEffect(effects.ashes)
+    projectile.startEffect(effects.fire, 100)
 })
 ```
 
@@ -138,7 +137,7 @@ arcade-background-scroll=github:microsoft/arcade-background-scroll/
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(assets.image`Dart1`, mySprite, 0, -150)
-    projectile.startEffect(effects.ashes)
+    projectile.startEffect(effects.fire)
 })
 
 let projectile: Sprite = null
@@ -148,7 +147,8 @@ scene.setBackgroundImage(assets.image`Galaxy`)
 scroller.scrollBackgroundWithSpeed(0, 10)
 mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 100)
-mySprite.setFlag(SpriteFlag.StayInScreen, true)
+mySprite.setStayInScreen(true)
+
 statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
 statusbar.attachToSprite(mySprite, -30, 0)
 mySprite.y = 100
@@ -167,7 +167,8 @@ scene.setBackgroundImage(assets.image`Galaxy`)
 scroller.scrollBackgroundWithSpeed(0, 10)
 mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 100)
-mySprite.setFlag(SpriteFlag.StayInScreen, true)
+mySprite.setStayInScreen(true)
+
 ```
 
 ```assetjson
