@@ -46,9 +46,11 @@ function getInfo(path: string) {
         info = JSON.parse(this.responseText) as JamInfo;
         startDate = new Date(info.start).getTime();
         endDate = new Date(info.end).getTime();
+        const judged = info.featured.some(el => !!el.description);
 
         makeTimer();
         makeRules();
+        if (judged) makeWinners();
         makeGallery();
         makeSchedule();
 
@@ -143,6 +145,38 @@ function makeRules() {
     }
 }
 
+function makeWinners() {
+    const content = document.querySelector(".content");
+    content.className += " winners";
+    const gallery = document.querySelector(".gallery");
+
+    const parent = document.createElement("div");
+    parent.id = "highlighted";
+    parent.className += "segment";
+    const title = document.createElement("h2");
+    title.innerText = "Honorable Mentions";
+    parent.appendChild(title);
+    const description = document.createElement("p");
+    description.innerText = "These are some games that the judges also loved! Give them a play, we're sure you'll enjoy yourself.";
+    parent.appendChild(description);
+
+    const highlighted = info.featured.filter(el => !!el.description);
+    let row = document.createElement("div");
+    for (let i = 0; i < highlighted.length; i++) {
+        row.appendChild(makeGameCard(highlighted[i]));
+
+        if (i % 2 == 1) {
+            parent.appendChild(row);
+            row = document.createElement("div")
+        }
+    }
+    if (highlighted.length % 2 != 0) {
+        parent.appendChild(row);
+    }
+
+    content.insertBefore(parent, gallery);
+}
+
 function makeGallery() {
     const container = document.querySelector(".gallery") as HTMLElement;
     const parent = document.getElementById("gallery");
@@ -163,28 +197,7 @@ function makeGallery() {
     let selected = randomize(info.featured); // show all the games
     let row = document.createElement("div");
     for (let i = 0; i < selected.length; i++) {
-        const game = selected[i];
-        let card = document.createElement("div");
-        card.className = "game";
-
-        let link = document.createElement("a");
-        link.href = game.url || `https://arcade.makecode.com/${game.id}`;
-        let textLink = link.cloneNode() as HTMLElement;
-        let img = document.createElement("img");
-        img.src = `https://pxt.azureedge.net/api/${game.id}/thumb`;
-        link.appendChild(img);
-        card.appendChild(link);
-
-        let label = document.createElement("div");
-        textLink.innerText = game.title;
-        label.appendChild(textLink);
-        if (game.author) {
-            let author = document.createElement("div");
-            author.innerText = `by ${game.author}`;
-            label.appendChild(author);
-        }
-        card.appendChild(label);
-        row.appendChild(card);
+        row.appendChild(makeGameCard(selected[i]));
 
         if (i % 3 == 2) {
             parent.appendChild(row);
@@ -194,6 +207,35 @@ function makeGallery() {
     if (selected.length % 3 != 0) {
         parent.appendChild(row);
     }
+}
+
+function makeGameCard(game: Game) {
+    let card = document.createElement("div");
+    card.className = "game";
+
+    let link = document.createElement("a");
+    link.href = game.url || `https://arcade.makecode.com/${game.id}`;
+    let textLink = link.cloneNode() as HTMLElement;
+    let img = document.createElement("img");
+    img.src = `https://pxt.azureedge.net/api/${game.id}/thumb`;
+    link.appendChild(img);
+    card.appendChild(link);
+
+    let label = document.createElement("div");
+    textLink.innerText = game.title;
+    label.appendChild(textLink);
+    if (game.author) {
+        let author = document.createElement("div");
+        author.innerText = `by ${game.author}`;
+        label.appendChild(author);
+    }
+    card.appendChild(label);
+    if (game.description) {
+        let description = document.createElement("div");
+        description.innerText = game.description;
+        label.appendChild(description);
+    }
+    return card;
 }
 
 function makeSchedule() {

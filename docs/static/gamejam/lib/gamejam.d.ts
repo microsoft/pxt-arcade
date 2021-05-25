@@ -27,4 +27,5 @@ interface Game {
     title: string;
     author?: string;
     url?: string; // for overriding share with eg github.io
+    description?: string; // after judging, games that are honorable mentions are given a description
 }
