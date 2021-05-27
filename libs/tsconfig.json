@@ -6,7 +6,8 @@
         "outDir": "../built",
         "rootDir": ".",
         "newLine": "LF",
-        "sourceMap": false
+        "sourceMap": false,
+        "skipLibCheck": true
     },
     "include": [
         "*/*.ts",
