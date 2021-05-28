@@ -441,7 +441,7 @@ music.playMelody("G B A G C5 B A B", 120)
 
 ---
 
-![The background gallery](/static/skillmap/assets/bg-gallery-toggle.gif "Toggle between editor and gallery" )
+![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
 
 
 ## Step 3
@@ -621,7 +621,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 👀 Now take a look at your card on the game screen 👀
 
-**Don't forget to press the Ⓐ button to clear your message.**
+**Don't forget to press the Ⓐ button to show your message.**
 
 
 
@@ -657,7 +657,7 @@ Customize the dialog to bring it all together.
 ---
 
 ► From ``||game:Game||``, grab a ``||game:set dialog frame to [ ]||`` block and
-snap it into the top of the ``||on [A] button [pressed]||`` 
+snap it into **the top** of the ``||on [A] button [pressed]||`` 
 container in your workspace.
 
 ► Choose a dialog design by clicking on the grey box in the 
@@ -712,7 +712,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 😍 Take a look at your card on the game screen 😍
 
-**Press the Ⓐ button twice to cycle through your messages.**
+**Press the Ⓐ button to cycle through your messages.**
 
 
 ## Step 9
@@ -795,7 +795,3 @@ with family and friends!
 
 
 
-
-```package
-pxt-story-sprites=github:microsoft/pxt-story-sprites
-```

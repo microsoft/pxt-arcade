@@ -182,8 +182,6 @@ image square and toggling the switch at the top to **Gallery**
 ►  Click **> Next** in the tutorial window to move on to the next step.
 
 
-![Greetings](/static/skillmap/story/card.gif "Happy birthday to you!" )
-
 ```blocks
 scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
@@ -309,10 +307,9 @@ scene.setBackgroundImage(img`
     `)
 ```
 
-
 ---
 
-![The background gallery](/static/skillmap/assets/bg-gallery-toggle.gif "Toggle between editor and gallery" )
+![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
 
 
 
@@ -322,7 +319,7 @@ scene.setBackgroundImage(img`
 
 ---
 
-► Click on the background inside your block to reopen it and add a hand-drawn message. When you're finished, click **Done**to save your work.
+► Click on the background inside your block to reopen it and add a hand-drawn message. When you're finished, click **Done** to save your work.
 
 
 
@@ -758,7 +755,3 @@ Click **Finish** to return to the main page where you can share your game
 with family and friends!
 
 
-
-```package
-pxt-story-sprites=github:microsoft/pxt-story-sprites
-```

@@ -7,7 +7,7 @@
 * primarycolor: #ff7f41
 * secondarycolor: #fff53d
 * tertiarycolor: #87f2ff
-* completednodecolor: #372b4e
+* completednodecolor: #738472
 * highlightcolor: #ffffff
 * allowcodecarryover: true
 * tags: easy, beginner, tutorials

@@ -82,7 +82,7 @@ forever(function () {
 
 Collecting things is great, but let's also add an element of **DANGER!** 
 
-This tutorial will show you how to add cars to avoid.
+This tutorial will show you how to add cars to the road.
 
 ![Avoid the cars](/static/skillmap/collector/collectort3.gif "Stay safe!" )
 
