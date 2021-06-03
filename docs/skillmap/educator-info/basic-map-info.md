@@ -65,7 +65,7 @@ In this learning path, students will learn how to use background images, music, 
 |---|---|
 | ![Greeting Card thumbnail](/static/skillmap/map-info/greeting-card.png) | Design a simple greeting card to send to friends and family. |
 | Blocks used | **[On Start](/blocks/on-start)** <br/><br/> ``[scene.setBackgroundImage(img`.`)]``<br/>``[effects.confetti.startScreenEffect()]``<br/> ``[music.playMelody("", 120)]``|
-| Solution option | [Greating Card Solution](#) |
+| Solution option | [Greating Card Project](#) |
 
 #### 2. Bigger Greeting
 
@@ -73,7 +73,7 @@ In this learning path, students will learn how to use background images, music, 
 |---|---|
 | ![Bigger Greeting thumbnail](/static/skillmap/map-info/bigger-greeting.png) | This activity builds off the previous Greeting Card activity.<br/>Students will add text that is revealed with the press of a &nbsp;<br/>button. |
 | Blocks used | ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[game.setDialogFrame(img`.`)]``<br/>``[game.setDialogTextColor(0)]``<br/>``[game.showLongText("", DialogLayout.Bottom)]`` |
-| Solution option | [Bigger Greating Solution](#) |
+| Solution option | [Bigger Greating Project](#) |
 
 #### 3. Joking Around
 
@@ -85,7 +85,7 @@ In this learning path, students will learn how to use background images, music, 
 
 ##### Game Mod Ideas
 
-After students complete Joking Aroun they can head back to the skillmap and click “SAVE TO MY PROJECTS,” which will open the game in a window with a full-featured toolbox.  Here are some modifications they can try: 
+After students complete Joking Around they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try: 
 
 - Add a second sprite for a joke with more interaction 
 - Move sprites or change backgrounds each time the (A) button is pressed 
@@ -96,21 +96,33 @@ After students complete Joking Aroun they can head back to the skillmap and clic
 
 In this path, students will use event containers, sprites, and projectiles to create a simple “clicker” game that takes in user input and performs an action.  Here, the user is challenged to click the (A) button as quickly as possible before time runs out. 
 
-#### Clicker Game (10 min)
+#### 1. Clicker Game
 
-Create a game that adds points for each click. 
+| Activity | Clicker Game (10 min) |
+|---|---|
+| ![Clicker Game thumbnail](/static/skillmap/map-info/clicker-game.png) | Create a game that adds points for each click. |
+| Blocks used | ``[info.startCountdown(10)]``<br/>``[info.changeScoreBy(1)]``<br/>``[info.onCountdownEnd(function () {})]``<br/>``[game.over(true)]``|
+| Solution option | [Clicker Game Project](#) |
 
-#### Button Clicker (10 min)
+#### 2. Button Clicker (10 min)
 
-This game builds off the last level, adding an animated sprite that toggles as you press and release the (A) button.
+| Activity | Button Clicker (10 min) |
+|---|---|
+| ![Button Clicker thumbnail](/static/skillmap/map-info/button-clicker.png) | This game builds off the last level, adding an animated sprite<br/>that toggles as you press and release the (A) button. |
+| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[let power = 2]``|
+| Solution option | [Button Clicker Project](#) |
 
-#### Clicking Superstar (7 min)
+#### 3. Clicking Superstar
 
-Building off the previous project, this level adds projectiles that take the form of stars spraying from the button with each press. 
+| Activity | Clicking Superstar (7 min) |
+|---|---|
+| ![Clicking Superstar thumbnail](/static/skillmap/map-info/clicking-superstar.png) | Building off the previous project, this level adds projectiles that<br/>take the form of stars spraying from the button with each press. |
+| Blocks used | ``[sprites.create(img`.`, SpriteKind.Player).startEffect(effects.spray, 100)]`` |
+| Solution option | [Clicking Superstar Project](#) |
 
 ##### Game Mod Ideas
 
-After students complete Clicking Superstar they can head back to the skillmap and click “SAVE TO MY PROJECTS,” which will open the game in a window with a full-featured toolbox.  Here are some modifications they can try: 
+After students complete Clicking Superstar they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try: 
 
 - Move the A button to the lower left and add a B Button to the lower right 
 - Add a new sprite to the pedestal, make it something special! 
@@ -120,25 +132,42 @@ After students complete Clicking Superstar they can head back to the skillmap an
 
 Students will work with sprite controller blocks, variables, and conditional statements to build a game where Mama Dino rushes to collect as many of her babies as possible while avoiding traffic.  
 
-#### Dino Hoard (10 min)
+#### 1. Dino Hoard
 
-Set an animated background for your hero sprite to travel as they search for baby dinos. 
+| Activity | Dino Hoard (10 min) |
+|---|---|
+| ![Dino Hoard thumbnail](/static/skillmap/map-info/dino-hoard.png) | Set an animated background for your hero sprite to travel as they search for baby dinos. |
+| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[controller.moveSprite(sprites.create(img`.`), 0, 100)]``<br/>``[let random = randint(0, 10)]``<br/>``[let projectile = sprites.createProjectileFromSide(img`.`, 0, 100)]``<br/>``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {})]``<br/>``[forever(function () {})]``<br/>``[sprites.create(img`.`).destroy()]`` |
+| Solution option | [Dino Hoard Project](#) |
 
-#### Save the Baby Dinos! (12 min)
 
-Build on the previous activity to add points to your game as you collect dinos. 
+#### 2. Save the Baby Dinos!
 
-#### Traffic Dodger (14 min)
+| Activity | Save the Baby Dinos! (12 min) |
+|---|---|
+| ![Save the Baby Dinos thumbnail](/static/skillmap/map-info/save-baby-dinos.png) | Build on the previous activity to add points to your game as you collect dinos. |
+| Blocks used | ``[scene.setBackgroundColor(0)]``<br/>``[scene.setBackgroundImage(img`.`)]``<br/>``[effects.blizzard.startScreenEffect()]``<br/>``[sprites.create(img`.`).setStayInScreen(true)]``|
+| Solution option | [Save the Baby Dinos Project](#) |
 
-Take your game further with cars that subtract a life if you run into them. 
+#### 3. Traffic Dodger
 
-#### Animate It! (20 min)
+| Activity | Traffic Dodger (14 min) |
+|---|---|
+| ![Traffic Dodger thumbnail](/static/skillmap/map-info/traffic-dodger.png) | Take your game further with cars that subtract a life if you run into them. |
+| Blocks used | ``[sprites.create(img`.`).setKind(SpriteKind.Enemy)]``<br/>``[sprites.create(img`.`).y = 0]``|
+| Solution option | [Traffic Dodger Project](#) |
+ 
+#### 4. Animate It!
 
-Polish your game using animation to make your characters come to life! 
+| Activity | Animate It! (20 min) |
+|---|---|
+| ![Animate It! thumbnail](/static/skillmap/map-info/animate-it.png) | Polish your game using animation to make your characters come to life! |
+| Blocks used | ``[info.changeLifeBy(1)]``|
+| Solution option | [Animate It Project](#) |
 
 ##### Game Mod Ideas
 
-After students complete Animate It! they can head back to the skillmap and click “SAVE TO MY PROJECTS,” which will open the game in a window with a full-featured toolbox.  Here are some modifications they can try: 
+After students complete Animate It! they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox.  Here are some modifications they can try: 
 
 - Make the camera shake when the dino runs into a car 
 - Add another sprite that gives more time when collected 
@@ -149,4 +178,5 @@ After students complete Animate It! they can head back to the skillmap and click
 
 After completing the Beginner’s Guide to Arcade Games, we recommend students move on to the following activities:
 
-- [Game Maker Guide (Intermediate)](https://arcade.makecode.com/--skillmap)
+* Build a Space Explorer
+* Scrolling Platformer
