@@ -59,17 +59,29 @@ Specifically, they will experience the following topics:
 
 In this learning path, students will learn how to use background images, music, and dialog boxes to build creative projects that send a message, tell a joke, or illustrate their thoughts. 
 
-#### Greeting Card (10 min)
+#### 1. Greeting Card
 
-Design a simple greeting card to send to friends and family. 
+| Activity | Greeting Card (10 min) |
+|---|---|
+| ![Greeting Card thumbnail](/static/skillmap/map-info/greeting-card.png) | Design a simple greeting card to send to friends and family. |
+| Blocks used | **[On Start](/blocks/on-start)** <br/><br/> ``[scene.setBackgroundImage(img`.`)]``<br/>``[effects.confetti.startScreenEffect()]``<br/> ``[music.playMelody("", 120)]``|
+| Solution option | [Greating Card Solution](#) |
 
-#### Bigger Greeting (10 min)
+#### 2. Bigger Greeting
 
-This activity builds off the previous Greeting Card activity.  Students will add text that is revealed with the press of a button. 
+| Activity | Bigger Greeting (10 min) |
+|---|---|
+| ![Bigger Greeting thumbnail](/static/skillmap/map-info/bigger-greeting.png) | This activity builds off the previous Greeting Card activity.<br/>Students will add text that is revealed with the press of a &nbsp;<br/>button. |
+| Blocks used | ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[game.setDialogFrame(img`.`)]``<br/>``[game.setDialogTextColor(0)]``<br/>``[game.showLongText("", DialogLayout.Bottom)]`` |
+| Solution option | [Bigger Greating Solution](#) |
 
-#### Joking Around (30 min)
+#### 3. Joking Around
 
-This activity introduces students to characters and dialog, as they bring short jokes to life.
+| Activity | Joking Around (30 min) |
+|---|---|
+| ![Joking Around thumbnail](/static/skillmap/map-info/joking-around.png) | This activity introduces students to characters and dialog,<br/>as they bring short jokes to life. |
+| Blocks used | ``[music.baDing.play()]``<br/>``[music.setVolume(20)]``<br/>``[game.splash("")]``<br/>``[sprites.create(img`.`).setPosition(0, 0)]``<br/>``[sprites.create(img`.`).startEffect(effects.spray)]``<br/>``[sprites.create(img`.`).setImage(img`.`)]``<br/>``[scene.cameraShake(4, 500)]`` |
+| Solution option | [Joking Around Project](#) |
 
 ##### Game Mod Ideas
 
