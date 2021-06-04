@@ -5,9 +5,7 @@
     {
         "name": "Skillmaps",
         "url": "/skillmaps",
-        "imageUrl": "/static/tutorials/game-maker-guide.png",
-        "largeImageUrl": "/static/tutorials/chase-the-pizza.gif",
-        "videoUrl": "/static/tutorials/chase-the-pizza.mp4"
+        "imageUrl": "/static/skillmap/backgrounds/beginner.png"
     },
     {
         "name": "Tutorials",
