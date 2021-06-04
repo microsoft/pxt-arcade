@@ -4,7 +4,7 @@
 
 Are you ready to customize your ship? 
 
-In this tutorial, you'll equip your ship with [__*projectile*__](#projected "a sprite that moves on its own, often in large quantities") and special effects.  
+In this tutorial, you'll equip your ship with [__*projectiles*__](#projected "a sprite that moves on its own, often in large quantities") and special effects.  
 
 ![Releasing projectiles](/static/skillmap/space/spacet2.gif "Here, enemy ship. Would you like to borrow a blaster?")
 

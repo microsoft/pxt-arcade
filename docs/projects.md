@@ -3,9 +3,14 @@
 ```codecard
 [
     {
+        "name": "Skillmaps",
+        "url": "/skillmaps",
+        "imageUrl": "/static/skillmap/backgrounds/beginner.png"
+    },
+    {
         "name": "Tutorials",
         "url": "/tutorials",
-        "imageUrl": "/static/tutorials/game-maker-guide.png",
+        "imageUrl": "/static/tutorials/chase-the-pizza.png",
         "largeImageUrl": "/static/tutorials/chase-the-pizza.gif",
         "videoUrl": "/static/tutorials/chase-the-pizza.mp4"
     },
@@ -101,6 +106,7 @@
 
 ## See Also
 
+[Skillmaps](/skillmaps),
 [Tutorials](/tutorials),
 [Multipart Tutorials](/multipart-tutorials),
 [Live Coding](/live-coding),
