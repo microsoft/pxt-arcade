@@ -564,7 +564,8 @@
         "hasReferenceDocs": true,
         "python": true,
         "assetEditor": true,
-        "immersiveReader": true
+        "immersiveReader": true,
+        "tutorialCodeValidation": true
     },
     "queryVariants": {
         "skillsMap=1": {
