@@ -60,6 +60,7 @@
         }
     },
     "galleries": {
+        "Skillmaps": "skillmaps",
         "Tutorials": "tutorials",
         "Multipart Tutorials": "multipart-tutorials",
         "Live Coding": "live-coding",
