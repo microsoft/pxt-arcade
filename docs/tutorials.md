@@ -6,23 +6,6 @@
 ```codecard
 [
 {
-  "name": "Beginner Skillmap",
-  "cardType": "link",
-  "description": "Learn to make exciting and shareable arcade games by following a few quick tutorials!",
-  "imageUrl":  "/static/skillmap/backgrounds/beginner.png",
-  "url": "https://arcade.makecode.com/--skillmap#beginner",
-  "label": "New? Try This!",
-  "labelClass": "orange ribbon large",
-  "directOpen": true
-},
-{
-  "name": "Game Maker Guide",
-  "cardType": "link",
-  "description": "Level up your game making skills by following this series of tutorials!",
-  "imageUrl":  "/static/tutorials/game-maker-guide.png",
-  "url": "https://arcade.makecode.com/skillmap",
-  "directOpen": true
-}, {
   "name": "Chase the Pizza",
   "description": "Get started creating a simple game to chase a pizza around the screen and collect as many points as possible before time runs out!",
   "url": "/tutorials/chase-the-pizza",
