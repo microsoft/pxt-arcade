@@ -65,7 +65,7 @@ In this learning path, students will learn how to use background images, music, 
 |---|---|
 | ![Greeting Card thumbnail](/static/skillmap/map-info/greeting-card.png) | Design a simple greeting card to send to friends and family. |
 | Blocks used | **[On Start](/blocks/on-start)** <br/><br/> ``[scene.setBackgroundImage(img`.`)]``<br/>``[effects.confetti.startScreenEffect()]``<br/> ``[music.playMelody("", 120)]``|
-| Solution option | [Greating Card Project](#) |
+| Solution option | [Greating Card Project](https://arcade.makecode.com/14885-64298-31361-79978) |
 
 #### 2. Bigger Greeting
 
@@ -73,7 +73,7 @@ In this learning path, students will learn how to use background images, music, 
 |---|---|
 | ![Bigger Greeting thumbnail](/static/skillmap/map-info/bigger-greeting.png) | This activity builds off the previous Greeting Card activity.<br/>Students will add text that is revealed with the press of a &nbsp;<br/>button. |
 | Blocks used | ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[game.setDialogFrame(img`.`)]``<br/>``[game.setDialogTextColor(0)]``<br/>``[game.showLongText("", DialogLayout.Bottom)]`` |
-| Solution option | [Bigger Greating Project](#) |
+| Solution option | [Bigger Greating Project](https://arcade.makecode.com/42444-68014-69780-79234) |
 
 #### 3. Joking Around
 
@@ -81,7 +81,7 @@ In this learning path, students will learn how to use background images, music, 
 |---|---|
 | ![Joking Around thumbnail](/static/skillmap/map-info/joking-around.png) | This activity introduces students to characters and dialog,<br/>as they bring short jokes to life. |
 | Blocks used | ``[music.baDing.play()]``<br/>``[music.setVolume(20)]``<br/>``[game.splash("")]``<br/>``[sprites.create(img`.`).setPosition(0, 0)]``<br/>``[sprites.create(img`.`).startEffect(effects.spray)]``<br/>``[sprites.create(img`.`).setImage(img`.`)]``<br/>``[scene.cameraShake(4, 500)]`` |
-| Solution option | [Joking Around Project](#) |
+| Solution option | [Joking Around Project](https://arcade.makecode.com/87828-03702-46750-80177) |
 
 ##### Game Mod Ideas
 
@@ -102,15 +102,15 @@ In this path, students will use event containers, sprites, and projectiles to cr
 |---|---|
 | ![Clicker Game thumbnail](/static/skillmap/map-info/clicker-game.png) | Create a game that adds points for each click. |
 | Blocks used | ``[info.startCountdown(10)]``<br/>``[info.changeScoreBy(1)]``<br/>``[info.onCountdownEnd(function () {})]``<br/>``[game.over(true)]``|
-| Solution option | [Clicker Game Project](#) |
+| Solution option | [Clicker Game Project](https://arcade.makecode.com/12273-78408-58405-09625) |
 
-#### 2. Button Clicker (10 min)
+#### 2. Button Clicker
 
 | Activity | Button Clicker (10 min) |
 |---|---|
 | ![Button Clicker thumbnail](/static/skillmap/map-info/button-clicker.png) | This game builds off the last level, adding an animated sprite<br/>that toggles as you press and release the (A) button. |
 | Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[let power = 2]``|
-| Solution option | [Button Clicker Project](#) |
+| Solution option | [Button Clicker Project](https://arcade.makecode.com/77414-66317-99137-92560) |
 
 #### 3. Clicking Superstar
 
@@ -118,7 +118,7 @@ In this path, students will use event containers, sprites, and projectiles to cr
 |---|---|
 | ![Clicking Superstar thumbnail](/static/skillmap/map-info/clicking-superstar.png) | Building off the previous project, this level adds projectiles that<br/>take the form of stars spraying from the button with each press. |
 | Blocks used | ``[sprites.create(img`.`, SpriteKind.Player).startEffect(effects.spray, 100)]`` |
-| Solution option | [Clicking Superstar Project](#) |
+| Solution option | [Clicking Superstar Project](https://arcade.makecode.com/24852-02760-23597-83909) |
 
 ##### Game Mod Ideas
 
@@ -138,7 +138,7 @@ Students will work with sprite controller blocks, variables, and conditional sta
 |---|---|
 | ![Dino Hoard thumbnail](/static/skillmap/map-info/dino-hoard.png) | Set an animated background for your hero sprite to travel as they search for baby dinos. |
 | Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[controller.moveSprite(sprites.create(img`.`), 0, 100)]``<br/>``[let random = randint(0, 10)]``<br/>``[let projectile = sprites.createProjectileFromSide(img`.`, 0, 100)]``<br/>``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {})]``<br/>``[forever(function () {})]``<br/>``[sprites.create(img`.`).destroy()]`` |
-| Solution option | [Dino Hoard Project](#) |
+| Solution option | [Dino Hoard Project](https://arcade.makecode.com/00050-04644-99185-20758) |
 
 
 #### 2. Save the Baby Dinos!
@@ -147,7 +147,7 @@ Students will work with sprite controller blocks, variables, and conditional sta
 |---|---|
 | ![Save the Baby Dinos thumbnail](/static/skillmap/map-info/save-baby-dinos.png) | Build on the previous activity to add points to your game as you collect dinos. |
 | Blocks used | ``[scene.setBackgroundColor(0)]``<br/>``[scene.setBackgroundImage(img`.`)]``<br/>``[effects.blizzard.startScreenEffect()]``<br/>``[sprites.create(img`.`).setStayInScreen(true)]``|
-| Solution option | [Save the Baby Dinos Project](#) |
+| Solution option | [Save the Baby Dinos Project](https://arcade.makecode.com/21438-61170-25811-66074) |
 
 #### 3. Traffic Dodger
 
@@ -155,7 +155,7 @@ Students will work with sprite controller blocks, variables, and conditional sta
 |---|---|
 | ![Traffic Dodger thumbnail](/static/skillmap/map-info/traffic-dodger.png) | Take your game further with cars that subtract a life if you run into them. |
 | Blocks used | ``[sprites.create(img`.`).setKind(SpriteKind.Enemy)]``<br/>``[sprites.create(img`.`).y = 0]``|
-| Solution option | [Traffic Dodger Project](#) |
+| Solution option | [Traffic Dodger Project](https://arcade.makecode.com/76596-99011-88241-42675) |
  
 #### 4. Animate It!
 
@@ -163,7 +163,7 @@ Students will work with sprite controller blocks, variables, and conditional sta
 |---|---|
 | ![Animate It! thumbnail](/static/skillmap/map-info/animate-it.png) | Polish your game using animation to make your characters come to life! |
 | Blocks used | ``[info.changeLifeBy(1)]``|
-| Solution option | [Animate It Project](#) |
+| Solution option | [Animate It Project](https://arcade.makecode.com/20377-15271-69070-26521) |
 
 ##### Game Mod Ideas
 
@@ -176,7 +176,7 @@ After students complete Animate It! they can head back to the skillmap and click
 
 ### What’s Next?
 
-After completing the Beginner’s Guide to Arcade Games, we recommend students move on to the following activities:
+After completing the Beginner’s Guide to Arcade Games, students move on to the following activities:
 
 * Build a Space Explorer
 * Scrolling Platformer
