@@ -1,53 +1,34 @@
-## Time Jam
+## Time Jam Winners!
 
-The theme for this jam is "time". In other words, we're looking for games with day-night cycles, countdown clocks, or other time-based mechanics. Here are some examples of how you could use this theme:
+We're thrilled to announce the winners of the fifth MakeCode Arcade game jam: Time Jam! Once again, there were so many incredibly creative and fun entries, we hope you enjoy playing them as much as we did.
 
-1. A cooking game where you need to press a button to remove a cake from an oven at just the right moment
-2. A farming game where you plant/harvest crops based on the season
-3. A game where you need to arrange all the articles on a cover page before the deadline for tomorrow's newspaper
+## First Place: Glitch
+| [![Glitch screenshot](/static/gamejam/jams/time/assets/glitch.png)](https://arcade.makecode.com/39697-95718-82872-45842) |
+| -- |
+| &nbsp; |
 
-DEMO GIF 1 | DEMO GIF 2 | DEMO GIF 3
--- | --
-![](/static/gamejam/jams/time/assets/demo-1.gif) | ![](/static/gamejam/jams/time/assets/demo-2.gif) | ![](/static/gamejam/jams/time/assets/demo-3.gif)
+Polished and imaginative, Web_Headed_Games's [Glitch](https://arcade.makecode.com/04978-92601-05637-89537), is a game where you can slow down time and modify the terrain of the world itself to survive each level. Try speedrunning this game and see if you cant beat your high score while enjoying the beautiful minimalist graphics!
 
-You can interpret "time" however you want, but someone playing your game should be able to see how it relates to the theme without extra explanation.
+## Second Place: The Last 30 Seconds of the Universe
+| [![The Last 30 Seconds of the Universe screenshot](/static/gamejam/jams/time/assets/loopfighter.png)](https://arcade.makecode.com/84204-53947-81636-40195) |
+| -- |
+| &nbsp; |
 
-## Don't run out of *time*
-The game jam will run from **May 3**, 2021 to **May 17**, 2021
+It's (almost) the end of the world, in [The Last 30 Seconds of the Universe](https://arcade.makecode.com/84204-53947-81636-40195) by felixtsu, and you are the galaxy's only hope... but are you really alone? This space shooter game may seem impossible at first, but keep playing and you might be surprised.
 
-You will have roughly two weeks to build and submit your games for the competition! For you procrastinators out there, we will accept games up until 11:59pm on May 17th.
+## Third Place (tie): True Love Time Machine
+| [![True Love Time Machine screenshot](/static/gamejam/jams/time/assets/timemachine.png)](https://arcade.makecode.com/18329-44039-92547-78466) |
+| -- |
+| &nbsp; |
 
-## First *time* user?
+**NOTE: This game contains rapidly flashing colors**
 
-<div id="froggy-gif">
-    <img src="/static/tutorials/froggy/frog.gif"/>
-</div>
+You were the first tester for a brand new time machine--what could go wrong? Well... maybe one thing. Navigate through Dylan James C. The 1st's [True Love Time Machine](https://arcade.makecode.com/18329-44039-92547-78466) to try and escape the early 2000s. See if you can get all the different possible endings!
 
-Never programmed in Microsoft MakeCode Arcade before? No problem! Try out our [time-themed tutorial](https://aka.ms/timeflies) to learn the ropes.
+## Third Place (tie): Flying Through Time
+| [![Flying Through Time screenshot](/static/gamejam/jams/time/assets/flying.png)](https://arcade.makecode.com/30418-01173-18811-61378) |
+| -- |
+| &nbsp; |
+**NOTE: This game contains rapidly flashing colors**
 
-Want even more? Check out our [game maker guide](https://arcade.makecode.com/--skillmap) to learn the basics of making a game!
-
-## Rules
-
-1. Games should be built in MakeCode Arcade
-2. Your game must relate to the jam theme. Someone playing your game should be able to see how it relates to the theme without extra explanation.
-3. Keep the games PG: no NSFW, offensive, or excessively violent content.
-4. You must be at least 9 years old to participate.
-5. All games must be submitted by someone who is at least 13 years old. Younger students are welcome to participate, but it must be in partnership with an adult and with parent permission.
-
-## Spend some *time* with us
-
-This game jam is designed to be an easy introduction to making games, even for folks without prior programming experience! We highly encourage parents and educators to work with interested students to bring their games to life.
-
-Join our [forums](https://forum.makecode.com) to chat with other coders, brainstorm ideas, or form a game jam team, and hang out with the MakeCode team as well.
-
-## Tips and tricks
-
-* When designing your game, keep in mind that Arcade is restricted to a 160x120 16-color screen and a 4 channel synthesizer for sound.
-* See [these instructions](https://arcade.makecode.com/developer/images) for information on importing images and color palettes into Arcade.
-* Check out the [developer documentation](https://arcade.makecode.com/developer) for more advanced tips to use in Arcade.
-* Also make sure you check out the winners of [our][traffic-jam] [past][garden-jam] [jams][ocean-jam]!
-
-[traffic-jam]: https://arcade.makecode.com/gamejam/traffic
-[ocean-jam]: https://arcade.makecode.com/gamejam/ocean
-[garden-jam]: https://arcade.makecode.com/gamejam/garden
+Fast and fun, with an incredible soundtrack, [Flying Through Time](https://arcade.makecode.com/30418-01173-18811-61378) by lucasmayhew is a genuine blast! Use the experimental time wings to swap between past, present, and future as you zip through different landscapes to rescue your friends.
