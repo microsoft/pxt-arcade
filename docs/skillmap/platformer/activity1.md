@@ -58,7 +58,7 @@
             "myTiles.tile5",
             "myTiles.tile2"
         ],
-        "displayName": "jungle1"
+        "displayName": "platformer1"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
@@ -84,7 +84,7 @@ as the main mechanics.
 By the time you finish this set of tutorials, you should know all you need 
 to make a fun and engaging arcade game worth sharing.
 
-![Our first platformer](/static/skillmap/jungle/jungle1.gif "Look what we're about to learn today!")
+![Our first platformer](/static/skillmap/platformer/platformer1.gif "Look what we're about to learn today!")
 
 
 ## Create the player

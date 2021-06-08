@@ -61,7 +61,7 @@
             "myTiles.tile5",
             "myTiles.tile2"
         ],
-        "displayName": "jungle1"
+        "displayName": "platformer1"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
@@ -105,7 +105,7 @@ tiles.setTilemap(tilemap`level`)
 
 **In this tutorial, we'll create a way to win or lose our platformer game.**
 
-![Editing our platformer](/static/skillmap/jungle/jungle2.gif "Time to live dangerously!")
+![Editing our platformer](/static/skillmap/platformer/platformer2.gif "Time to live dangerously!")
 
 
 ## Camera

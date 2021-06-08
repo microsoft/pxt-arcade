@@ -59,7 +59,7 @@
             "myTiles.tile5",
             "myTiles.tile2"
         ],
-        "displayName": "jungle1"
+        "displayName": "platformer1"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
@@ -161,7 +161,7 @@ Did you feel like the enemies in your last game were a little...well...stupid?
 
 In this lesson we'll learn how to make enemies smarter using simple [_**AI**_](#fakeSmart "artificial intelligence").
 
-![Levels and Functions](/static/skillmap/jungle/jungle5.gif "And now for something completely different!  And a little bit the same.")
+![Levels and Functions](/static/skillmap/platformer/platformer5.gif "And now for something completely different!  And a little bit the same.")
 
 
 
