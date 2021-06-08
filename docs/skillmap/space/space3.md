@@ -60,7 +60,7 @@ game.onUpdateInterval(2000, function () {
 
 ---
 
-► Click the grey square in the new block and toggle to **My Assets** to grab **Stealth**.
+► Click the grey square in the new block and toggle to **My Assets** to grab **Spider**.
 
 ► Play with the **vx** and **vy** values of **myEnemy** until 
 your new sprites are falling straight down the side of the screen. 

@@ -155,7 +155,7 @@ startNextLevel()
 
 ```
 
-## Start @showdialog
+## Start @unplugged
 
 Did you feel like the enemies in your last game were a little...well...stupid?
 
@@ -165,7 +165,7 @@ In this lesson we'll learn how to make enemies smarter using simple [_**AI**_](#
 
 
 
-## AI Rules @showdialog
+## AI Rules @unplugged
 
 The code for this program spawns enemies from the purple **[ ! ]** tiles.
 Once the enemies spawn, they immediately start moving to the left and get 
