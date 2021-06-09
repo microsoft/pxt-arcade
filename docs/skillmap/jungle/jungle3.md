@@ -59,7 +59,7 @@
             "myTiles.tile5",
             "myTiles.tile2"
         ],
-        "displayName": "platformer1"
+        "displayName": "jungle1"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
@@ -113,7 +113,7 @@ In this lesson, we'll take what we made in previous tutorials and add simple ene
 
 We'll also use a sprite overlap event to have enemies interact with the player sprite.
 
-![Editing our platformer](/static/skillmap/platformer/platformer3.gif "Time to live dangerously!")
+![Editing our platformer](/static/skillmap/jungle/jungle3.gif "Time to live dangerously!")
 
 
 ## Spawning enemies pt. 1
