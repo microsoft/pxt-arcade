@@ -77,10 +77,10 @@
 
 ### space-activity5
 
-* name: Fuel Up!
+* name: Level Up!
 * type: tutorial
-* description: Use an extension to add a fuel gauge to your ship. Make sure to refuel often!
-* tags: intermediate, extensions
+* description: Learn how to automatically switch to a new level when the player gains an achievement.
+* tags: intermediate, forever
 * next: space-activity6
 
 * url: /skillmap/space/space5
@@ -88,10 +88,10 @@
 
 ### space-activity6
 
-* name: Fuel Up!
+* name: The Art of Darts
 * type: tutorial
-* description: Use an extension to add a fuel gauge to your ship. Make sure to refuel often!
-* tags: intermediate, extensions
+* description: Use arrays to switch up the kinds of darts fired from your ship.
+* tags: intermediate, arrays, lists
 * next: space-cert-1
 
 * url: /skillmap/space/space6
