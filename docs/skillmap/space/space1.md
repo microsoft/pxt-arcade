@@ -57,11 +57,7 @@ scroller.scrollBackgroundWithSpeed(0, 10)
 ► From ``||sprites:Sprites||``, drag  ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  to **the end** of the ``||loops:on start||`` container.
 
 ► Click on the grey box in the middle of
- ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``, then toggle to **My Assets** and choose the **Rocket**.
-
----
-
-**Tip:** If you don't like our rocketship, feel free to draw your own!
+ ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``, then toggle to **My Assets** and choose the **Rocket**.  
 
 
 ```blocks

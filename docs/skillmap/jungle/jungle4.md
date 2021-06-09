@@ -59,7 +59,7 @@
             "myTiles.tile5",
             "myTiles.tile2"
         ],
-        "displayName": "platformer1"
+        "displayName": "jungle1"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
@@ -154,7 +154,7 @@ This tutorial will help you add levels to your game.
 To make level changes easier (and prevent having to write the same
 code again and again) we'll also learn to create a simple [**_function_**](#funky "grouping of code that can be called using a specific name").
 
-![Levels and Functions](/static/skillmap/platformer/platformer4.gif "And now for something completely different!  And a little bit the same.")
+![Levels and Functions](/static/skillmap/jungle/jungle4.gif "And now for something completely different!  And a little bit the same.")
 
 
 ## Make a function
@@ -176,7 +176,7 @@ on the ``||functions: Functions||`` category.
 
 ► Click inside the textbox to name this function **startNextLevel**, then click **Done**.
 
-![naming a function](/static/skillmap/platformer/name-function.gif "Say my name, say my name.")
+![naming a function](/static/skillmap/jungle/name-function.gif "Say my name, say my name.")
 
 
 ```blocks

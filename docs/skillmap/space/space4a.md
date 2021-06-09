@@ -1,286 +1,184 @@
-# Fuel Up!
+# All Shook Up
 
 ## Introduction @showdialog
 
-Time to refuel! 
+Let's make this game more impactful by adding effects that bring the action to life.
 
-In this tutorial we'll add a fuel bar to your spaceship
-that depletes as you travel. 
+![Fuel Up!](/static/skillmap/space/spacet4a.gif "Those aren't tacos!")
 
-Make sure to catch the powerups to keep your
-ship from breaking down!
-
-![Fuel Up!](/static/skillmap/space/spacet4.gif "Those aren't tacos!")
-
-
-## Step 1
-The code in the workspace taking up a lot of room! 😨      
-Don't worry, the workspace will expand if you scroll up &
-over (or down & over) to keep building.
-
----
-
-► Take a peek into the new ``||statusbars:Status Bars||`` category.
-You'll find ``||variables:set [statusbar] to create status bar sprite width [20] height [4] kind [Health]||``.
-Drag one to the end of the ``||loops:on start||`` container.
-
-► To keep track of how much *gas* is left, set the argument for 
-**statusbar** kind to **Energy**.
-
----
-
-```block
-let statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
-```
 
 ## Step 2
 
-If we want the status bar to show the details of **mySprite**, we'll need to link the two together.
+Let's add some drama by shaking the camera when you run into an enemy ship.
 
 ---
 
-► Drop ``||statusbars:attach [statusbar] to [mySprite] ⊕||`` 
-into **the end** of the ``||loops:on start||`` container.
-
-► Click **⊕** on the new block to reveal options
- to change the position of the status bar in relation to **mySprite**. 
- Can you figure out how to get the bar to show up *below* your ship?  
+► In the ``||scene:Scene||`` category, grab ``||scene:camera shake by [4] pixels for [500] ms||``
+and snap it in to **the bottom** of the ``||sprites:on [sprite] of kind [Player] overlaps [otherSPrite] of kind [Enemy]||`` 
+container.    
 
 
-```block
-let statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
-// @highlight
-statusbar.attachToSprite(mySprite, -30, 0)
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+    otherSprite.destroy(effects.disintegrate, 200)
+    //@highlight
+    scene.cameraShake(4, 500)
+})
 ```
 
 ## Step 3
 
-**⏰ The longer you're in the air, the more fuel you use ⏰ **
-
-Here's how to make the fuel go down as time passes. 
+**Add excitement by animating the main ship!**
 
 ---
 
-► Drag an ``||game:on game update every [500] ms||`` container into the 
-workspace. Adjust the time argument to **300 ms**.
+► In the toolbox, click ``||statusbars:Advanced||`` to reveal the 
+``||animation:Animation||`` category.
 
-► Drop ``||statusbars:change [statusbar] [value] by [0]||``
-into the empty **game update** container.
 
-► Change the amount the status bar changes from **0** to **-1**. 
-
----
-
-**Tip:** Remember this step later. If the fuel runs out too fast in 
-gameplay, you can come back and adjust these blocks.
+► Grab the ``||animation:animate [mySprite]||`` block and snap it into **the bottom**
+of the ``||loops:on start||`` container.
 
 
 ```blocks
-let statusbar: StatusBarSprite = null
-game.onUpdateInterval(300, function () {
-    statusbar.value += -1
-})
+let mySprite: Sprite = null
+scene.setBackgroundImage(assets.image`Galaxy`)
+scroller.scrollBackgroundWithSpeed(0, 10)
+mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
+controller.moveSprite(mySprite, 100, 100)
+mySprite.setStayInScreen(true)
+//@highlight
+animation.runImageAnimation(
+mySprite,
+[img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `],
+500,
+false
+)
 ```
 
 ## Step 4
+► Click the empty grey square to select your animation frames, then toggle to **My Assets**
+and choose the **Flying Rocket** animation.  Click **Done** when you are ready.
 
-**⛽ Time to refuel ⛽**
-
-The code for dropping fuel is a lot like the code for dropping enemies. 
-For a refresher on how things work, find the **myEnemy** blocks in the
-workspace and use them as a guide.
-
----
-
-► Drag a _new_  ``||game:on game update every [500] ms||`` container 
-into the workspace and change the interval to **5 seconds (5000 ms)**.
-
-► Snap a new
-``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||``
-block inside the newest **on game update** container.
-
-► Click ``||variables:[projectile2]||`` and rename the sprite ``||variables:[myFuel]||``.
-
+► Keep the animation playing throughout the game by toggling the **loop** selector to **`<ON>`**.
 
 ```blocks
-game.onUpdateInterval(5000, function () {
-    let myFuel = sprites.createProjectileFromSide(img`
-. . . . 
-. . . . 
-. . . . 
-. . . . 
-`, 50, 50)
-})
+
+let mySprite: Sprite = null
+scene.setBackgroundImage(assets.image`Galaxy`)
+scroller.scrollBackgroundWithSpeed(0, 10)
+mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
+controller.moveSprite(mySprite, 100, 100)
+mySprite.setStayInScreen(true)
+//@highlight
+animation.runImageAnimation(
+mySprite,
+assets.animation`Flying Rocket`,
+100,
+true
+)
 ```
 
 ## Step 5
 
-► Click on the grey square and toggle to **My Assets** to choose the **Fuel** sprite.
-
-► Play with the **vx** and **vy** arguments of the fuel until it's falling
-straight down at a decent speed.  
+** 🎮 Play your game and see how much more exciting it looks! 🎮 **
 
 
-
-```blocks
-game.onUpdateInterval(5000, function () {
-    let myFuel = sprites.createProjectileFromSide(assets.image`Fuel`, 0, 80)
-})
-```
 
 ## Step 6
 
-Just like with the enemies, we'll want the fuel to drop from a random position
-across the top of the screen. 
+**Why stop there when you can also animate the enemy???**  
 
 ---
 
-► Connect a ``||sprites:set [mySprite] [x] to [0]||`` block at the 
-bottom of the ``||game:on game update every [5000] ms||`` container.  
-
-► To make sure we're acting on the right sprites, use the dropdown in the 
-new block to change ``||variables:mySprite||`` to ``||variables:myFuel||``.
+► From the ``||animation:Animation||`` category, grab another ``||animation:animate [mySprite]||``
+block and snap it into **the end** of the ``||game:on game update every [2000] ms||`` container.
 
 
 ```blocks
-game.onUpdateInterval(5000, function () {
-    let myFuel = sprites.createProjectileFromSide(assets.image`Fuel`, 0, 80)
-    myFuel.x = 0
+game.onUpdateInterval(2000, function () {
+    let myEnemy = sprites.createProjectileFromSide(assets.image`Spider`, 0, 50)
+    myEnemy.x = randint(5, 155)
+    myEnemy.setKind(SpriteKind.Enemy)
+    //@highlight
+    animation.runImageAnimation(
+mySprite,
+[img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `],
+500,
+false
+)
 })
 ```
-
 
 ## Step 7
 
-► To set a random [__*x*__](#setX "horizontal location") 
-for the fuel, grab a 
-``||Math:pick random [0] to [10]||`` block
-and connect it to replace the **0** argument in the 
-``||sprites:set [mySprite] [x] to [0]||`` block.
+► To make sure we're animating the correct sprite, replace ``||variables:mySprite||`` with 
+ ``||variables:myEnemy||`` using the dropdown in the ``||animation:animate [mySprite]||`` block.
 
-► Update the minimum argument of the ``||Math:pick random [0] to [10]||`` block to **5** and the
-maximum argument to **155**. 
+► Click the empty grey square and toggle to **My Assets**
+and choose the **Flying Spider** animation, then click **Done**.
 
----
-
+► Toggle the **loop** selector to **`<ON>`**.
 
 ```blocks
-game.onUpdateInterval(5000, function () {
-    let myFuel = sprites.createProjectileFromSide(assets.image`Fuel`, 0, 80)
-    myFuel.x = randint(5, 155)
-})
-```
-
-
-## Step 8
-
-Now we need to put our **myFuel** sprite into the _Gas_ class.
-
----
-
-► Snap a ``||sprites:set [mySprite] kind to [Player]||`` block 
-into the bottom of the newest **on game update** container.
-
-► Change ``||variables:mySprite||`` to ``||variables:myFuel||``. 
-
-► Click ``||sprites:Player||`` to get the dropdown menu, then choose
-``||sprites:Add a new kind...||`` and create the type **Gas**.   
-
-
-```blocks
-namespace SpriteKind {
-    export const Gas = SpriteKind.create()
-}
-
-game.onUpdateInterval(5000, function () {
-    let myFuel = sprites.createProjectileFromSide(assets.image`Fuel`, 0, 80)
-    myFuel.x = randint(5, 155)
-    myFuel.setKind(SpriteKind.Gas)
-})
-```
-
-
-## Step 9
-When your ship overlaps fuel, you'll want the gas to disappear as the tank refills.
-
----
-
-► Drag an ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
-container into the workspace. 
-
-► Change the last argument from ``||sprites:Player||`` to ``||sprites:Gas||``.  
-
-
-  
-```blocks
-namespace SpriteKind {
-    export const Gas = SpriteKind.create()
-}
-
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Gas, function (sprite, otherSprite) {
-
-})
-```
-
-## Step 10
-
-► To refill the status bar after grabbing fuel, snag a ``||statusbars:set [statusbar] [value] to [0]||`` block 
-and snap it in to your newest **overlaps** container.  
-
-► Change the value from **0** to **100**.
-
-► Finally, make sure the used fuel disappears by snapping a ``||sprites:destroy [mySprite] ⊕||`` block 
-into the bottom of the same **overlaps** container and replacing
-``||variables:mySprite||`` with ``||variables:otherSprite||``
-
-![Grabbing variable from block](/static/skillmap/space/give-var.gif "So that's how you do that!")  
-
-  
-```blocks
-namespace SpriteKind {
-    export const Gas = SpriteKind.create()
-}
-
-let statusbar: StatusBarSprite = null
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Gas, function (sprite, otherSprite) {
-    statusbar.value = 100
-    otherSprite.destroy()
-})
-```
-
-## Step 11
-**🌌 If you run out of fuel, you'll be marooned in space! 🌌**
-
-The threat is real.
-
----
-
-► To add consequences for an empty status bar, drag a 
-``||statusbars:on status bar kind [Health] zero [status]||`` 
-container into the workspace.
-
-► Change the status bar kind to **Energy**. 
-
-► Snap a ``||game:game over <LOSE>||`` block inside as the ultimate fate.
-
-
-```blocks
-statusbars.onZero(StatusBarKind.Energy, function (status) {
-    game.over(false)
+game.onUpdateInterval(2000, function () {
+    let myEnemy = sprites.createProjectileFromSide(assets.image`Spider`, 0, 50)
+    myEnemy.x = randint(5, 155)
+    myEnemy.setKind(SpriteKind.Enemy)
+    //@highlight
+    animation.runImageAnimation(
+    myEnemy,
+    assets.animation`Flying Spider`,
+    100,
+    true
+    )
 })
 ```
 
 
 ## Finale
 
-**And that's it!** 
+**There you have it!** 
 
-Click **Finish** to return to the main page where you can add this game to your gallery and share with family & friends.
+Take a look...your game is looking so professional now!
 
-Once your game is in your gallery, you can
-experiment with all of the blocks in the toolbox and find many other
-exciting and special ways to customize your adventure.  
-
+When you're ready, click **Finish** to return to the skillmap where you can save this project 
+to your gallery and share it with friends.
 
 
 
@@ -333,9 +231,9 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     info.changeScoreBy(1)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    scene.cameraShake(4, 500)
     info.changeLifeBy(-1)
     otherSprite.destroy(effects.disintegrate, 200)
-    scene.cameraShake(4, 500)
 })
 let myEnemy: Sprite = null
 let projectile: Sprite = null
@@ -355,12 +253,6 @@ game.onUpdateInterval(2000, function () {
     myEnemy = sprites.createProjectileFromSide(assets.image`Spider`, 0, 50)
     myEnemy.x = randint(5, 155)
     myEnemy.setKind(SpriteKind.Enemy)
-    animation.runImageAnimation(
-    myEnemy,
-    assets.animation`Flying Spider`,
-    100,
-    true
-    )
 })
 
 ```
