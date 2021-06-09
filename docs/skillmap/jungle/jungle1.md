@@ -73,7 +73,7 @@ scene.setBackgroundColor(11)
 tiles.setTilemap(tilemap`level`)
 ```
 
-## Welcome @unplugged
+## Welcome @showdialog
 
 Now let's take a look at the [__*sidescrolling*__](#scrolld "games that are viewed from the side, with most of the action happening horizontally") 
 [__*platformer*__](#plat "games that rely on jump and run as their main mechanic").  
