@@ -1,239 +1,210 @@
-# Level Up!
+# The Art of Darts
 
 ## Introduction @showdialog
 
-You should be rewarded for all of your hard work!  
+It's the details that make a difference.  
 
-This tutorial will show you how to level-up after earning 10 points.
+This tutorial will show you how to send an array of different darts when you fire.
 
-![Level Up!](/static/skillmap/space/spacet5.gif "Your patience shall be rewarded")
+![Take a shot!](/static/skillmap/space/spacet6.gif "They'll never know what hit them.")
 
 
 ## Step 2
-**This game is amazing!**  
 
-Take a minute to look at each separate chunk of code.  Can you remember what they all do?  
+**🎯 Take aim! 🎯**  
+
+Let's set up an [__*array*__](#arraied "a named list of similar things that can be called by their position in the list")
+of darts.
 
 ---
 
-► Find the value that sets the speed of your enemy ship. How do you think you can make it go faster or slower?
+► Expand the ``||statusbars:Advanced||`` category in the toolbox and click
+``||arrays:Arrays||``.
 
+► Drag ``||variables:set [list] to array of [0] [1]||`` into **the top** of the 
+``||controller:on [A] button [pressed]||`` container already in the workspace.
 
 
 ```block
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 //@highlight
-    myEnemy = sprites.createProjectileFromSide(assets.image`Spider`, 0, 50)
+    list = [0, 1]
+    let projectile = sprites.createProjectileFromSprite(assets.image`Dart1`, mySprite, 0, -150)
+    projectile.startEffect(effects.ashes)
+})
 ```
 
 ## Step 3
 
-**Leveling-up should make enemy ships faster.**  
-
-If we want to use a value for their speed that changes 
-during game-play, we're going to need a [__*variable*__](#varied "a label that holds the place for something that can change").
+Right now, we have a **list** of numbers. Let's make it a list of darts.
 
 ---
 
-► Under the ``||variables:Variables||`` category, click inside the orange rectangle where it says 
-**Make a Variable...**. 
+► Click the name **list** inside ``||variables:set [list] to array of [0] [1]||`` and  
+choose "Rename variable..." from the dropdown menu.
 
-► Name your new variable **enemySpeed** and click **Ok**.  
+► Call your list **darts** and click **Ok**.  
 
-
+```block
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+//@highlight
+    darts = [0, 1]
+    let projectile = sprites.createProjectileFromSprite(assets.image`Dart1`, mySprite, 0, -150)
+    projectile.startEffect(effects.ashes)
+})
+```
 
 ## Step 4
 
-**Before we can use the new variable, we need to give it a value.**
+► Beneath the ``||statusbars:Advanced||`` category in the toolbox, click
+``||images:Images||``.
 
----
+► Drag out **3** empty grey image boxes into the workspace (we'll use them in 
+the next step).
 
-► From the ``||variables:Variables||`` category, grab ``||variables:set [enemySpeed] to [0]||``
-and snap it into **the bottom** of the ``||loops:on start||`` container.
-
-► Change the value from **0** to **50**.  
-
-
-```blocks
-let statusbar: StatusBarSprite = null
-let mySprite: Sprite = null
-scene.setBackgroundImage(assets.image`Galaxy`)
-scroller.scrollBackgroundWithSpeed(0, 10)
-mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
-controller.moveSprite(mySprite, 100, 100)
-mySprite.setStayInScreen(true)
-statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
-statusbar.attachToSprite(mySprite, -25, 0)
-//@highlight
-let enemySpeed = 50
-```
-
+  
 
 ## Step 5
 
-**🚀 Let's Fly 🚀**
+► Snap the first two grey image boxes into ``||variables:set [list] to array of [0] [1]||`` to
+replace the numbers **0** and **1**. 
 
-Now that ``||variables:enemySpeed||`` has been set to **50**, we can use the variable 
-to control the enemy ship's **vy**.
-
----
-
-► Go back to the ``||game:on game update every [2000]ms||`` container and find the block that sets-up the 
-``||variables:myEnemy||`` projectile.
-
-► From ``||variables:Variables||`` grab ``||variables:enemySpeed||`` and snap it in to 
-replace the **vy** value of **50**.
+► Add space for the new image box by clicking the **+** symbol at the right of 
+the block, then snap the last image box into place. 
 
 
 ```blocks
-game.onUpdateInterval(2000, function () {
-//@highlight
-    let myEnemy = sprites.createProjectileFromSide(assets.image`Spider`, 0, enemySpeed)
-    myEnemy.x = randint(5, 155)
-    myEnemy.setKind(SpriteKind.Enemy)
-    
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    list = [img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `]
+    let projectile = sprites.createProjectileFromSprite(assets.image`Dart1`, mySprite, 0, -150)
+    projectile.startEffect(effects.ashes)
 })
 ```
 
 ## Step 6
 
-**🕹️ Play your game and make sure it works exactly the same as before 🕹️**
+**⤅ Time to choose the darts ⬶**
 
-You shouldn't notice any difference in the speed of the ship.
+---
 
+► Click the first empty grey image box and toggle to **My Assets** to select **Dart1**.
 
+► Click the second empty grey image box and toggle to **My Assets** to select **Dart2**.
+
+► In the final box, draw your own dart!  
+
+---
+
+**Tip:** Keep in mind that the provided darts are both 3px by 4px in size. 
+What do you think will happen if you make yours larger or smaller?
+
+```blocks
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    list = [assets.image`Dart1`, assets.image`Dart2`, img`
+. 9 . 
+. 9 . 
+. 9 . 
+5 5 5 
+`]
+    let projectile = sprites.createProjectileFromSprite(assets.image`Dart1`, mySprite, 0, -150)
+    projectile.startEffect(effects.ashes)
+})
+```
 
 ## Step 7
 
-**👀 Watch the score 👀**   
-
-We need code that repeatedly checks to see **if** the score is **10**.
+**Tell the computer you want a random dart from the array each time you fire!**
 
 ---
 
-► From the ``||loops:Loops||`` category, grab a ``||loops:forever||`` loop container and drag 
-it to an empty area of the workspace.
+► From ``||arrays:Arrays||``, drag ``||arrays:get random value from [list]||`` in to replace the current 
+dart image in the ``||variables:set [projectile] to ...||`` block (just beneath the list you have created.)
 
-► In ``||logic:Logic||``, find the ``||logic:if <true> then||`` container and snap it inside the 
-``||loops:forever||`` loop container.
+► Click **list** and change it to **darts** using the dropdown menu.
 
 
 ```blocks
-forever(function () {
-    if (true) {
-    	
-    }
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    let darts = [assets.image`Dart1`, assets.image`Dart2`, img`
+. 9 . 
+. 9 . 
+. 9 . 
+5 5 5 
+`]
+    let projectile = sprites.createProjectileFromSprite(darts._pickRandom(), mySprite, 0, -150)
+    projectile.startEffect(effects.ashes)
 })
 ```
 
 
 ## Step 8
 
-► From ``||logic:Logic||``, grab ``||logic:<[0] [=] [0]>||`` and snap it in to replace **true**.
+**🎮 Now give your project a try on the game screen 🎮**
 
-► From ``||info:Info||``, grab ``||info:score||`` and snap it in to replace the **0** to the left of the **=**.
+How does it look?  
+If there's anything you don't like, now is a great time to dig in and change it!
 
-► Change the **0** on the right of the **=** to **10**. 
-
-```blocks
-forever(function () {
-    if (info.score() == 10) {
-        
-    }
-})
-```
-
-
-## Step 8
-
-The first thing we should do when the score gets to **10** is give a level-up bonus!
-
----
-
-► From ``||info:Info||``, grab ``||info:change score by [1]||`` and snap it inside the empty
-``||logic:if <[score] [=] [10]> then||`` logic container.
-
-► Change the amount added to the score from **1** to **5**.
-
-
-```blocks
-forever(function () {
-    if (info.score() == 10) {
-        info.changeScoreBy(5)
-    }
-})
-```
-
-
-## Step 9
-
-**📢 Say it LOUD 📢**
-
-Let the player know they've earned a bonus!
-
----
-
-► From ``||sprites:Sprites||``, drag ``||sprites:[mySprite] say [":)"]||`` into **the bottom**
-of the ``||logic:if <[score] [=] [10]> then||`` container. 
-
-► Change the message to say **"+5 Level-Up Bonus!"**.  
-
-► Click the **+** to the right of the **say** block and change the length of the display from **500** ms to **2 seconds** (2000 ms).
-
-
-  
-```blocks
-let mySprite: Sprite = null
-forever(function () {
-    if (info.score() == 10) {
-        info.changeScoreBy(5)
-        //@highlight
-        mySprite.say("+5 Level-Up Bonus", 2000)
-    }
-})
-```
-
-## Step 10
-
-**Here comes the fun part!**
-
-Time to speed up the enemy ships!
-
----
-
-
-► From ``||variables:Variables||``, grab ``||variables:set [enemySpeed] to [0]||``
-and snap it in to **the bottom** of  the ``||logic:if <[score] [=] [10]> then||`` container. 
-
-► Change the value from **0** to **70**.
-
-```blocks
-let mySprite: Sprite = null
-forever(function () {
-    if (info.score() == 10) {
-        mySprite.say("+5 Level-Up Bonus", 2000)
-        info.changeScoreBy(5)
-        //@highlight
-        enemySpeed = 70
-    }
-})
-```
-
-## Step 11
-**That's it!  That's all you needed to do.**
-
-Since we already have the ``||variables:enemySpeed||`` variable in place for the projectile's **vy**, 
-it will automatically update when we change the speed in another part of the program!
-
----
-
-► Play your finished game and see if you can get 10 points to level-up!
 
 
 ## Finale
 
-**Congratulations!!** 
+**You've done it!!** 
 
-Click **Finish** to return to the main page where you can add this game to your gallery and share with family & friends.
+You've finished your Space Explorer game! 
+
+When you're done playing with it, click **Finish** to return to the main 
+page where you can add this game to your gallery to keep building, then share with family & friends.
 
 
 ```package
@@ -279,19 +250,27 @@ mySprite.setStayInScreen(true)
 
 statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
 statusbar.attachToSprite(mySprite, -25, 0)
+let enemySpeed = 40
 game.onUpdateInterval(5000, function () {
     myFuel = sprites.createProjectileFromSide(assets.image`Fuel`, 0, 80)
     myFuel.x = randint(5, 155)
     myFuel.setKind(SpriteKind.Gas)
 })
 game.onUpdateInterval(2000, function () {
-    myEnemy = sprites.createProjectileFromSide(assets.image`Spider`, 0, 50)
+    myEnemy = sprites.createProjectileFromSide(assets.image`Spider`, 0, enemySpeed)
     myEnemy.x = randint(5, 155)
     myEnemy.setKind(SpriteKind.Enemy)
     
 })
 game.onUpdateInterval(300, function () {
     statusbar.value += -1
+})
+forever(function () {
+    if (info.score() == 10) {
+        mySprite.say("+5 Level-Up Bonus", 2000)
+        info.changeScoreBy(5)
+        enemySpeed = 70
+    }
 })
 ```
 
@@ -300,7 +279,8 @@ namespace SpriteKind {
     export const Gas = SpriteKind.create()
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    projectile = sprites.createProjectileFromSprite(assets.image`Dart1`, mySprite, 0, -150)
+    list = [assets.image`Dart1`, assets.image`Dart2`, assets.image`Dart3`]
+    projectile = sprites.createProjectileFromSprite(list._pickRandom(), mySprite, 0, -150)
     projectile.startEffect(effects.ashes)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Gas, function (sprite, otherSprite) {
@@ -323,6 +303,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 let myEnemy: Sprite = null
 let myFuel: Sprite = null
 let projectile: Sprite = null
+let list: Image[] = []
 let statusbar: StatusBarSprite = null
 let mySprite: Sprite = null
 scene.setBackgroundImage(assets.image`Galaxy`)
@@ -339,6 +320,7 @@ true
 statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
 statusbar.attachToSprite(mySprite, -25, 0)
 let enemySpeed = 40
+info.setScore(8)
 game.onUpdateInterval(5000, function () {
     myFuel = sprites.createProjectileFromSide(assets.image`Fuel`, 0, 80)
     myFuel.x = randint(5, 155)
@@ -355,9 +337,6 @@ game.onUpdateInterval(2000, function () {
     true
     )
 })
-game.onUpdateInterval(300, function () {
-    statusbar.value += -1
-})
 forever(function () {
     if (info.score() == 10) {
         mySprite.say("+5 Level-Up Bonus", 2000)
@@ -365,6 +344,10 @@ forever(function () {
         enemySpeed = 70
     }
 })
+game.onUpdateInterval(300, function () {
+    statusbar.value += -1
+})
+
 ```
 
 ```assetjson

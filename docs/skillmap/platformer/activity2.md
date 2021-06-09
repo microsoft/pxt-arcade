@@ -100,7 +100,7 @@ controller.moveSprite(mySprite, 100, 0)
 tiles.setTilemap(tilemap`level`)
 ```
 
-## Start @unplugged
+## Start @showdialog
 
 
 **In this tutorial, we'll create a way to win or lose our platformer game.**
@@ -249,7 +249,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile4, function (sprite, location
 })
 ```
 
-## Step Last @unplugged
+## Step Last @showdialog
 
 **🎮 Make sure to try your game in the simulator 🎮**
 

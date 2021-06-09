@@ -1,7 +1,5 @@
 # Multiple Levels
 
-### @autoexpandOff true
-
 ```jres
 {
     "transparency16": {
@@ -147,7 +145,7 @@ for (let value of tiles.getTilesByType(myTiles.tile5)) {
 
 ```
 
-## Start @unplugged
+## Start @showdialog
 
 This tutorial will help you add levels to your game. 
 
