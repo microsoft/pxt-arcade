@@ -75,7 +75,7 @@ the block, then snap the last image box into place.
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    list = [img`
+    let darts = [img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -151,7 +151,7 @@ What do you think will happen if you make yours larger or smaller?
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    list = [assets.image`Dart1`, assets.image`Dart2`, img`
+    let darts = [assets.image`Dart1`, assets.image`Dart2`, img`
 . 9 . 
 . 9 . 
 . 9 . 

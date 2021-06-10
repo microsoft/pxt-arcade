@@ -13,7 +13,7 @@ ship from breaking down!
 ![Fuel Up!](/static/skillmap/space/spacet4.gif "Those aren't tacos!")
 
 
-## Step 1
+## Step 2
 The code in the workspace taking up a lot of room! 😨      
 Don't worry, the workspace will expand if you scroll up &
 over (or down & over) to keep building.
@@ -33,7 +33,7 @@ Drag one to the end of the ``||loops:on start||`` container.
 let statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
 ```
 
-## Step 2
+## Step 3
 
 If we want the status bar to show the details of **mySprite**, we'll need to link the two together.
 
@@ -53,7 +53,7 @@ let statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
 statusbar.attachToSprite(mySprite, -30, 0)
 ```
 
-## Step 3
+## Step 4
 
 **⏰ The longer you're in the air, the more fuel you use ⏰ **
 
@@ -61,7 +61,7 @@ Here's how to make the fuel go down as time passes.
 
 ---
 
-► Drag an ``||game:on game update every [500] ms||`` container into the 
+► Drag an ``||game:on game update every [500] ms||`` container into an empty area of the 
 workspace. Adjust the time argument to **300 ms**.
 
 ► Drop ``||statusbars:change [statusbar] [value] by [0]||``
@@ -82,7 +82,7 @@ game.onUpdateInterval(300, function () {
 })
 ```
 
-## Step 4
+## Step 5
 
 **⛽ Time to refuel ⛽**
 
@@ -113,7 +113,7 @@ game.onUpdateInterval(5000, function () {
 })
 ```
 
-## Step 5
+## Step 6
 
 ► Click on the grey square and toggle to **My Assets** to choose the **Fuel** sprite.
 
@@ -128,15 +128,15 @@ game.onUpdateInterval(5000, function () {
 })
 ```
 
-## Step 6
+## Step 7
 
 Just like with the enemies, we'll want the fuel to drop from a random position
 across the top of the screen. 
 
 ---
 
-► Connect a ``||sprites:set [mySprite] [x] to [0]||`` block at the 
-bottom of the ``||game:on game update every [5000] ms||`` container.  
+► Connect a ``||sprites:set [mySprite] [x] to [0]||`` block at **the 
+bottom** of the ``||game:on game update every [5000] ms||`` container.  
 
 ► To make sure we're acting on the right sprites, use the dropdown in the 
 new block to change ``||variables:mySprite||`` to ``||variables:myFuel||``.
@@ -150,7 +150,7 @@ game.onUpdateInterval(5000, function () {
 ```
 
 
-## Step 7
+## Step 8
 
 ► To set a random [__*x*__](#setX "horizontal location") 
 for the fuel, grab a 
@@ -172,7 +172,7 @@ game.onUpdateInterval(5000, function () {
 ```
 
 
-## Step 8
+## Step 9
 
 Now we need to put our **myFuel** sprite into the _Gas_ class.
 
@@ -200,7 +200,7 @@ game.onUpdateInterval(5000, function () {
 ```
 
 
-## Step 9
+## Step 10
 When your ship overlaps fuel, you'll want the gas to disappear as the tank refills.
 
 ---
@@ -222,7 +222,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Gas, function (sprite, otherSpri
 })
 ```
 
-## Step 10
+## Step 11
 
 ► To refill the status bar after grabbing fuel, snag a ``||statusbars:set [statusbar] [value] to [0]||`` block 
 and snap it in to your newest **overlaps** container.  
@@ -248,7 +248,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Gas, function (sprite, otherSpri
 })
 ```
 
-## Step 11
+## Step 12
 **🌌 If you run out of fuel, you'll be marooned in space! 🌌**
 
 The threat is real.

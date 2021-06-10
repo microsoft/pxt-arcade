@@ -5,7 +5,6 @@
 **Intergalactic travel is dangerous!**
 
 Let's add some enemies for your ship to avoid.  
-These could be destroyers, radioactive debris, or angry space sharks!
 
 ![Fighting enemies](/static/skillmap/space/spacet3.gif "Here, enemy ship. Have one of mine.")
 
@@ -14,7 +13,7 @@ These could be destroyers, radioactive debris, or angry space sharks!
 
 **👾 Feel like making enemies rain from the sky? 👾**
 
-Let's add some code that will drop an enemy toward the ship every second or so.
+Let's add some code that will drop an enemy toward the ship every couple of seconds.
 
 ---
  
@@ -88,7 +87,7 @@ new block to change ``||variables:mySprite||`` to ``||variables:myEnemy||``.
 
 ```blocks
 game.onUpdateInterval(2000, function () {
-    myEnemy = sprites.createProjectileFromSide(assets.image`Spider`, 0, 50)
+    let myEnemy = sprites.createProjectileFromSide(assets.image`Spider`, 0, 50)
     myEnemy.x = 0
 })
 ```
@@ -98,7 +97,7 @@ game.onUpdateInterval(2000, function () {
 ► Set a random [__*x*__](#setX "horizontal location") 
 for the enemies using a
 ``||Math:pick random [0] to [10]||`` block from the ``||Math:Math||`` category.
-Connect it to replace the **0** in the ``||sprites:set [mySprite] [x] to [0]||`` block.
+Connect it to replace the **0** in the ``||sprites:set [myEnemy] [x] to [0]||`` block.
 
 ► Finally, update the minimum argument of the ``||Math:pick random [0] to [10]||`` block to **5** and the
 maximum argument to **155**. 
@@ -158,8 +157,8 @@ container into the workspace.
 ---
 
 **Tip:** Don't try to change "sprite" → "mySprite" or "otherSprite" → "myEnemy".
-The "sprite" and "otherSprite" arguments here describe two general kinds of sprites on the screen
-(not the specific creations we gave names to earlier.) 
+The values "sprite" and "otherSprite" describe any two generic sprites,  
+not the specific assets we're working with. 
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -205,7 +204,7 @@ a menu of effects to display upon your enemy's demise!
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
-    otherSprite.destroy(effects.spray, 200)
+    otherSprite.destroy(effects.spray, 500)
 })
 ```
 
@@ -262,9 +261,9 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, oth
 **Congratulations**
 
 Now you have a barrage of enemies to combat!  
-Don't forget to look at your project on the game screen before you click "Finish".
+Don't forget to play with your project in the game screen before you go.
 
-Once you're happy with your game, click **Finish** to return to the main page where you can share your game
+Once you're happy, click **Finish** to return to the main page where you can share your game
 with family and friends!
 
 

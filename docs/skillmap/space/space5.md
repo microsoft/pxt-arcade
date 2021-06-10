@@ -73,7 +73,7 @@ let enemySpeed = 50
 **🚀 Let's Fly 🚀**
 
 Now that ``||variables:enemySpeed||`` has been set to **50**, we can use the variable 
-to control the enemy ship's **vy**.
+to control the enemy ship's **vy** (vertical velocity).
 
 ---
 
