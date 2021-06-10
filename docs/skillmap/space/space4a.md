@@ -9,6 +9,15 @@ Let's make this game more impactful by adding effects that bring the action to l
 
 ## Step 2
 
+The code for the beginning of your Space Explorer game is in the workspace.
+
+---
+
+►  Play your game on the game screen to make sure you can connect each action to the proper block of code.
+
+
+## Step 3
+
 Let's add some drama by shaking the camera when you run into an enemy ship.
 
 ---
@@ -27,7 +36,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Step 3
+## Step 4
 
 **Add excitement by animating the main ship!**
 
@@ -74,8 +83,8 @@ false
 )
 ```
 
-## Step 4
-► Click the empty grey square to select your animation frames, then toggle to **My Assets**
+## Step 5
+► To select your animation frames, click the empty grey square then toggle to **My Assets**
 and choose the **Flying Rocket** animation.  Click **Done** when you are ready.
 
 ► Keep the animation playing throughout the game by toggling the **loop** selector to **`<ON>`**.
@@ -97,13 +106,13 @@ true
 )
 ```
 
-## Step 5
+## Step 6
 
 ** 🎮 Play your game and see how much more exciting it looks! 🎮 **
 
 
 
-## Step 6
+## Step 7
 
 **Why stop there when you can also animate the enemy???**  
 
@@ -145,7 +154,7 @@ false
 })
 ```
 
-## Step 7
+## Step 8
 
 ► To make sure we're animating the correct sprite, replace ``||variables:mySprite||`` with 
  ``||variables:myEnemy||`` using the dropdown in the ``||animation:animate [mySprite]||`` block.
@@ -175,12 +184,10 @@ game.onUpdateInterval(2000, function () {
 
 **There you have it!** 
 
-Take a look...your game is looking so professional now!
+Take a look...your game feels so professional now!
 
 When you're ready, click **Finish** to return to the skillmap where you can save this project 
-to your gallery and share it with friends.
-
-
+to your gallery and share it with friends.  
 
 
 ```package
@@ -254,7 +261,11 @@ game.onUpdateInterval(2000, function () {
     myEnemy.x = randint(5, 155)
     myEnemy.setKind(SpriteKind.Enemy)
 })
-
+let statusbar: StatusBarSprite = null
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Gas, function (sprite, otherSprite) {
+    statusbar.value = 100
+    otherSprite.destroy()
+})
 ```
 
 ```assetjson

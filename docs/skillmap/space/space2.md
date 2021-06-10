@@ -11,17 +11,11 @@ In this tutorial, you'll equip your ship with [__*projectiles*__](#projected "a 
 
 ## Customize sprites
 
-The workspace is pre-loaded with code for a flying ship.  
-Be sure to 
-**play with it on the game screen** to see if it works like you expect.
+**🚀 The workspace already has the code for a flying ship 🚀**
 
 ---
 
-►  Check your player [__*sprite*__](#sprote "2-D image that moves on the screen") 
-to make sure you're happy with it. 
-
-►  If you want to make changes, click the sprite image to design a new 
-vehicle OR turn it into an alien creature using the sprite editor! 👽
+►  Play with your project in the game screen to make sure it works the way you expect.
 
 
 
@@ -124,7 +118,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 You can now use the direction buttons to move your space plane and
 press **Ⓐ** to lauch projectiles!
 
-Play your game on the game screen, then click **Finish** to return to the main page where you can share with family and friends!
+Play your game on the game screen, then click **Finish** to return to the main page where you can share with family and friends!  
 
 
 

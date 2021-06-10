@@ -40,7 +40,7 @@ scene.setBackgroundImage(assets.image`Galaxy`)
 
 ► To keep the background from scrolling sideways, change **vx** to **0**.
 
-► To set a nice, slow vertical pace, change **vx** to **10**.
+► To set a nice, slow vertical pace, change **vy** to **10**.
 
 ```blocks
 scene.setBackgroundImage(assets.image`Galaxy`)
@@ -64,7 +64,7 @@ scroller.scrollBackgroundWithSpeed(0, 10)
 scene.setBackgroundImage(assets.image`Galaxy`)
 scroller.scrollBackgroundWithSpeed(0, 10)
 // @highlight
-mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
+let mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
 ```
 
 
@@ -106,7 +106,7 @@ snap it in at the end of the program.
 ```blocks
 scene.setBackgroundImage(assets.image`Galaxy`)
 scroller.scrollBackgroundWithSpeed(0, 10)
-mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
+let mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
 controller.moveSprite(mySprite)
 // @highlight
 mySprite.setStayInScreen(true)
@@ -133,7 +133,7 @@ Is everything how you want it? You can always go back and edit steps if you disc
 You're all set to travel the universe!
 
 Click **Finish** to return to the main page where you can share your game
-with family and friends!
+with family and friends!  
 
 
 ```package
