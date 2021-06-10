@@ -59,7 +59,7 @@
 * type: tutorial
 * description: Use an extension to add a fuel gauge to your ship. Make sure to refuel often!
 * tags: intermediate, extensions
-* next: space-cert-1
+* next: space-activity5
 
 * url: /skillmap/space/space4
 * imageUrl: /static/skillmap/space/spacet4.gif
