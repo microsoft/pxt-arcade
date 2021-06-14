@@ -29,7 +29,7 @@ Let's launch projectiles when the **Ⓐ** button is pressed!
 
 ► From ``||controller:Controller||``, drag an ``||controller:on [A] button pressed ||`` container into the workspace.
 
-► Snap
+► From ``||sprites:Sprites||``, snap
 ``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||`` 
 inside the new ``||controller:on [A] button pressed ||`` container.
 
@@ -99,7 +99,7 @@ want the effects on your projectiles instead of on your ship.
 
 ---
 
-**Tip:** Click the __⊕__ button on the ``||sprites:[mySprite] start [spray] effect ⊕||`` block to change the time on the effect from 500 ms to **100* ms for a smoother experience.
+**Tip:** Click the __⊕__ button on the ``||sprites:[mySprite] start [spray] effect ⊕||`` block to change the time on the effect from 500 ms to **100** ms for a smoother experience.
 
 
 

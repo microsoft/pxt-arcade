@@ -313,7 +313,7 @@ let mySprite: Sprite = null
 scene.setBackgroundImage(assets.image`Galaxy`)
 scroller.scrollBackgroundWithSpeed(0, 10)
 mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
-controller.moveSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite)
 mySprite.setStayInScreen(true)
 game.onUpdateInterval(2000, function () {
     myEnemy = sprites.createProjectileFromSide(assets.image`Spider`, 0, 50)
@@ -343,7 +343,7 @@ let mySprite: Sprite = null
 scene.setBackgroundImage(assets.image`Galaxy`)
 scroller.scrollBackgroundWithSpeed(0, 10)
 mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
-controller.moveSprite(mySprite, 100, 100)
+controller.moveSprite(mySprite)
 mySprite.setStayInScreen(true)
 animation.runImageAnimation(
 mySprite,
