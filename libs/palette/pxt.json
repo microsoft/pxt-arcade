@@ -1,4 +1,5 @@
 {
     "additionalFilePath": "../../node_modules/pxt-common-packages/libs/palette",
+    "searchOnly": true,
     "weight": 75
 }
