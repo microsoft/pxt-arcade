@@ -1,12 +1,12 @@
-# Food not Friends
+# Beware the Enemy!
 
 ## Introduction @showdialog
 
-Did you eat yet?
+There are enemies everywhere!  It's a good thing we've got lasers.
 
 ![Enemies](/static/recipes/shark-splash/02-enemies.gif)
 
-Let's send a school of fish toward the shark to keep it full and happy. 
+In this activity, we'll add enemies that pop out of nowhere and follow us around the screen. 
 
 
 ## step 2
@@ -20,51 +20,55 @@ Can you connect each chunk of code with actions on the screen?
 
 
 
+
 ## step 3
 
-**🐠 Let's go fishing 🐠**  
+**🕓 Timing is everything 🕗**  
 
-We need a container that will run our fishy code every 2100 seconds.
+Let's add a container for code that will run every 2.5 seconds.
 
 ---
 
 ► From the  ``||game:Game||`` category, drag ``||game:on game update every [500] ms||`` into an empty area of the workspace.
 
-► Double-click inside the text box and change **500** to **2100**.
+► Double-click inside the text box and change **500** to **2500**.
 
 
 ```blocks
-game.onUpdateInterval(2100, function () {
+game.onUpdateInterval(2500, function () {
 })
 ```
 
 ## Step 4
 
+** Make some enemies... **  
 
-► From ``||sprites:Sprites||``, drag ``||variables: set [mySprite2] to sprite [ ] of kind [Player]||`` into the empty ``||game:on game update every [2100] ms||`` container.
+---
 
-► Click **mySprite2** to open a dropdown menu and choose ``||variables:Rename variable...||``. Change the name to **myFood** and click **Ok**. 
+► From ``||sprites:Sprites||``, drag ``||variables: set [mySprite2] to sprite [ ] of kind [Player]||`` into the empty ``||game:on game update every [2500] ms||`` container.
 
-► Change the kind from **Player** to **Food**.
+► Click **mySprite2** to open a dropdown menu and choose ``||variables:Rename variable...||``. Change the name to **myEnemy** and click **Ok**. 
+
+► Change the kind from **Player** to **Enemy**.
 
 ```blocks
-game.onUpdateInterval(2100, function () {
+game.onUpdateInterval(2500, function () {
 // @highlight
-    let myFood = sprites.create(img`
+    let myEnemy = sprites.create(img`
         . . . 
         . . . 
-        . . . `, SpriteKind.Food)
+        . . . `, SpriteKind.Enemy)
 })
 ```
 
 ## Step 5
 
-► Click the grey box inside the ``||variables: set [myFood] to sprite [ ] of kind [Food]||`` block and toggle to **My Assets** to choose the **food** fish, then click **Done**.
+► Click the grey box inside the ``||variables: set [myEnemy] to sprite [ ] of kind [Enemy]||`` block and toggle to **My Assets** to choose the **enemy** crab, then click **Done**.
 
 ```blocks
-game.onUpdateInterval(2100, function () {
+game.onUpdateInterval(2500, function () {
 // @highlight
-    let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
+    let myEnemy = sprites.create(assets.image`enemy`, SpriteKind.Enemy)
 })
 ```
 
@@ -73,49 +77,49 @@ game.onUpdateInterval(2100, function () {
 ## Step 6
 
 
-** Never too far away **  
+** Location, Location, Location! **  
 
-It's time to tell the new food sprites where to spawn. 
+It's time to tell the new enemy sprites where to spawn. 
 
 ---
 
-► From ``||sprites:Sprites||``, drag a ``||sprites:set [mySprite] position to x [0] y [0]||`` block into **the end** of the ``||game:on game update every [2100] ms||``  container. 
+► From ``||sprites:Sprites||``, drag a ``||sprites:set [mySprite] position to x [0] y [0]||`` block into **the end** of the ``||game:on game update every [2500] ms||``  container. 
 
-► Change ``||sprites:mySprite||`` to ``||sprites:myFood||``.
+► Change ``||sprites:mySprite||`` to ``||sprites:myEnemy||``.
 
 ```blocks
-game.onUpdateInterval(2100, function () {
-    let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
+game.onUpdateInterval(2500, function () {
+    let myEnemy = sprites.create(assets.image`enemy`, SpriteKind.Enemy)
     //@highlight
-    myFood.setPosition(0, 0)
+    myEnemy.setPosition(0, 0)
 })
 ```
 
 ## Step 7
 
-**Let's start all of the fish 80 pixels in front of the shark.**  
-(This means you'll need to **add** 80 to the shark's horizontal location.) 
+**Let's start all of the enemies 60 pixels in front of the shark.**  
+(This means you'll need to **add** 60 to the shark's current location.) 
 
 ---
 
-► To add **80**, drag the ``||math:[0] [+] [0]||`` block from the ``||math:Math||`` category to replace the **x** value of the ``||sprites:set [myFood] position to x [0] y [0]||`` block.
+► To add **60**, drag the ``||math:[0] [+] [0]||`` block from the ``||math:Math||`` category to replace the first **0** of the ``||sprites:set [myEnemy] position to x [0] y [0]||`` block.
 
-► Change the first **0** to **80** (so you have ``||math:[80] [+] [0]||``).
+► Change the **0** to **the left** of the **+** sign to **60**.
 
 
 
 ```blocks
-game.onUpdateInterval(2100, function () {
-    let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
+game.onUpdateInterval(2500, function () {
+    let myEnemy = sprites.create(assets.image`enemy`, SpriteKind.Enemy)
     //@highlight
-     myFood.setPosition(80 + 0, 0)
+     myEnemy.setPosition(60 + 0, 0)
 
 })
 ```
 
 ## Step 8
 
-**🔎 Where are you? 🔍**  
+**🔎 Keep your enemies closer 🔍**  
 Now we need a block to represent the horizontal **(x)** position of the shark.
 
 ---
@@ -124,12 +128,12 @@ Now we need a block to represent the horizontal **(x)** position of the shark.
 
 
 ```blocks
-game.onUpdateInterval(2100, function () {
+game.onUpdateInterval(2500, function () {
 let mySprite: Sprite = null
 
-    let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
+    let myEnemy = sprites.create(assets.image`enemy`, SpriteKind.Enemy)
     //@highlight
-     myFood.setPosition(80 + mySprite.x, 0)
+     myEnemy.setPosition(60 + mySprite.x, 0)
 
 })
 ```
@@ -138,28 +142,28 @@ let mySprite: Sprite = null
 
 **🎮 Take a look at the game window to see how everything works 🎮**  
 
-You should have a shark that moves around with the arrow keys and food that appears in front of the shark and up toward the top of the screen.
+You should have a shark that moves around with the arrow keys and enemies that spawn in front of the shark and up toward the top of the screen.
 
 
 
 ## Step 10
 
-**🍣 Food all over the place 🍣**  
-Let's add fish at a random heights to keep the shark moving.
+**🔀 Shake up the enemy 🔀**  
+Let's start the crab at a random height to keep things interesting.
 
 ---
 
-► From ``||math:Math||`` grab  ``||math:pick random [0] to [10]||``  and snap it in to replace the **y** value.
+► From ``||math:Math||`` grab  ``||math:pick random [0] to [10]||``  and snap it in to replace the **y** value of **0**.
 
-► Change the random values to pick from a min of **5** to a max of **115**.
+► Change the random values to go from a min of **5** to a max of **115**.
 
 ```blocks
-game.onUpdateInterval(2100, function () {
+game.onUpdateInterval(2500, function () {
 let mySprite: Sprite = null
 
-    let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
+    let myEnemy = sprites.create(assets.image`enemy`, SpriteKind.Enemy)
     //@highlight
-     myFood.setPosition(80 + mySprite.x, randint(5, 115))
+     myEnemy.setPosition(60 + mySprite.x, randint(5, 115))
 
 })
 ```
@@ -168,9 +172,9 @@ let mySprite: Sprite = null
 
 ## Finale @showdialog
 
-So satisfying! Now your shark can find food anywhere it goes. 
+There you have it! Enemies will now pop up in front of your shark every couple of seconds.  
 
-Click **Finish** and continue to the next level so you can code points for each fish you eat! 
+Click **Finish** to head back out to the main map to find out what you can do next!
 
 
 
@@ -187,14 +191,6 @@ controller.moveSprite(mySprite)
 mySprite.setStayInScreen(true)
 ```
 
-```ghost
-
-game.onUpdateInterval(2100, function () {
-    let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
-    myFood.setPosition(randint(150, 160), randint(0, 120))
-    myFood.vx = -75
-})
-```
 
 ```assetjson
 {

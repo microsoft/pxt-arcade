@@ -1,6 +1,6 @@
-# Making the enemies move
+# Enemies Attack!
 
-## Introduction @unplugged
+## Introduction @showdialog
 
 Use the ``||sprites:on created||`` event to make the enemies in your game move!
 
@@ -63,11 +63,24 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 })
 ```
 
-## Conclusion @unplugged
+## Conclusion @showdialog
 
 Now let's add code to destroy the enemies with your projectiles! Or, if you're feeling creative, add a background to set the scene.
 
-|      |      |      |
-|:----:|:----:|:----:|
-|  [![Projectiles](/static/recipes/shark-splash/03-projectiles.gif)](#recipe:/recipes/shark-splash/03-projectiles) | [![Multiple enemies](/static/recipes/shark-splash/02-B-enemies.gif)](#recipe:/recipes/shark-splash/02-B-enemies) | [![Background](/static/recipes/shark-splash/04-background.png)](#recipe:/recipes/04-background) |
-| [**Projectile effects**](#recipe:/recipes/shark-splash/03-projectiles) | [**Multiple enemies**](#recipe:/recipes/shark-splash/02-B-enemies) | [**Design a background**](#recipe:/recipes/shark-splash/04-background) |
+
+
+
+```template
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    projectile = sprites.createProjectileFromSprite(assets.image`laser`, mySprite, 90, 0)
+})
+let projectile: Sprite = null
+let mySprite: Sprite = null
+scene.setBackgroundColor(8)
+mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+mySprite.setStayInScreen(true)
+```
+
+
+```assetjson
