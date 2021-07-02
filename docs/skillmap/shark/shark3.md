@@ -1,70 +1,71 @@
-# Food not Friends
+# Eat Up!
 
 ## Introduction @showdialog
 
-Did you eat yet?
+Ready for some fish?
 
 ![Enemies](/static/recipes/shark-splash/02-enemies.gif)
 
-Let's send a school of fish toward the shark to keep it full and happy. 
+In this activity, you'll write the code to help the shark earn points for each fish it eats.
 
 
 ## step 2
 
-**🕹️ Play it again 🕹️**  
+**🕹️ See what you have 🕹️**  
 
 ---
 
-Play with your project in the game window to remember where you left off.  
-Can you connect each chunk of code with actions on the screen?
+Play with your project to remember which piece of code creates which actions in the game window.
 
 
 
 ## step 3
 
-**🐠 Let's go fishing 🐠**  
+**🍜 Time to eat 🍜**  
 
-We need a container that will run our fishy code every 2100 seconds.
+We need a container that will run when the shark overlaps a fish.
 
 ---
 
-► From the  ``||game:Game||`` category, drag ``||game:on game update every [500] ms||`` into an empty area of the workspace.
+► From the  ``||sprites:Sprites||`` category, drag ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` into an empty area of the workspace.
 
-► Double-click inside the text box and change **500** to **2100**.
+► Change the last **kind** from ``||sprites:Player||`` to ``||sprites:Food||``.
 
 
 ```blocks
-game.onUpdateInterval(2100, function () {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+ 
 })
 ```
 
 ## Step 4
 
+**🦈 YUMMMMMM 🦈**  
+When the shark catches the fish, we need to make it disappear.
 
-► From ``||sprites:Sprites||``, drag ``||variables: set [mySprite2] to sprite [ ] of kind [Player]||`` into the empty ``||game:on game update every [2100] ms||`` container.
+---
 
-► Click **mySprite2** to open a dropdown menu and choose ``||variables:Rename variable...||``. Change the name to **myFood** and click **Ok**. 
+► Open ``||sprites:Sprites||``, then snap ``||sprites:destroy [mySprite]||`` into the new empty **on overlaps** container.
 
-► Change the kind from **Player** to **Food**.
+► Drag the ``||variables:otherSprite||`` value from the title of the **on overlaps** container down to replace ``||variables:mySprite||``.
+
+![Grabbing variable from block](/static/skillmap/space/give-var.gif "So that's how you do that!")
 
 ```blocks
-game.onUpdateInterval(2100, function () {
-// @highlight
-    let myFood = sprites.create(img`
-        . . . 
-        . . . 
-        . . . `, SpriteKind.Food)
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    otherSprite.destroy()
 })
 ```
 
 ## Step 5
 
-► Click the grey box inside the ``||variables: set [myFood] to sprite [ ] of kind [Food]||`` block and toggle to **My Assets** to choose the **food** fish, then click **Done**.
+► Click the plus (+) sign to the right of the ``||sprites:destroy [otherSprite]||`` block and choose an effect to play while the fish vanishes!
+
+► Change the effect duration from **500** ms to something shorter, like **100** ms. 
 
 ```blocks
-game.onUpdateInterval(2100, function () {
-// @highlight
-    let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.disintegrate, 100)
 })
 ```
 
@@ -73,131 +74,27 @@ game.onUpdateInterval(2100, function () {
 ## Step 6
 
 
-** Never too far away **  
-
-It's time to tell the new food sprites where to spawn. 
+**🎉 SCORE 🎉**  
 
 ---
 
-► From ``||sprites:Sprites||``, drag a ``||sprites:set [mySprite] position to x [0] y [0]||`` block into **the end** of the ``||game:on game update every [2100] ms||``  container. 
-
-► Change ``||variables:mySprite||`` to ``||variables:myFood||``.
-
-```blocks
-game.onUpdateInterval(2100, function () {
-    let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
-    //@highlight
-    myFood.setPosition(0, 0)
-})
-```
-
-## Step 7
-
-**Let's start all of the fish 80 pixels in front of the shark.**  
-(This means you'll need to **add** 80 to the shark's horizontal location.) 
-
----
-
-► To add **80**, drag the ``||math:[0] [+] [0]||`` block from the ``||math:Math||`` category to replace the **x** value of the ``||sprites:set [myFood] position to x [0] y [0]||`` block.
-
-► Change the first **0** to **80** (so you have ``||math:[80] [+] [0]||``).
+► Add a point to the player's score by dragging ``||info:change score by [1]||``  to the bottom of the **on overlaps** container. 
 
 
 
 ```blocks
-game.onUpdateInterval(2100, function () {
-    let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
-    //@highlight
-     myFood.setPosition(80 + 0, 0)
-
-})
-```
-
-## Step 8
-
-**🔎 Where are you? 🔍**  
-Now we need a block to represent the horizontal **(x)** position of the shark.
-
----
-
-► From ``||sprites:Sprites||`` grab the ``||sprites:[mySprite] [x]||`` value and snap it in to replace the **0** on **the right** side of the **+** sign.
-
-
-```blocks
-game.onUpdateInterval(2100, function () {
-let mySprite: Sprite = null
-
-    let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
-    //@highlight
-     myFood.setPosition(80 + mySprite.x, 0)
-
-})
-```
-
-## Step 9
-
-**🎮 Take a look at the game window to see how everything works 🎮**  
-
-You should have a shark that moves around with the arrow keys and food that appears in front of the shark and up toward the top of the screen.
-
-
-
-## Step 10
-
-**🍣 Food all over the place 🍣**  
-Let's add fish at a random heights to keep the shark moving.
-
----
-
-► From ``||math:Math||`` grab  ``||math:pick random [0] to [10]||``  and snap it in to replace the **y** value.
-
-► Change the random values to pick from a min of **5** to a max of **115**.
-
-```blocks
-game.onUpdateInterval(2100, function () {
-let mySprite: Sprite = null
-
-    let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
-    //@highlight
-     myFood.setPosition(80 + mySprite.x, randint(5, 115))
-
-})
-```
-
-## Step 11
-
-**🐡 Fast Food 🐡**  
-Get the fish swimming for a bigger challenge.
-
----
-
-► From ``||sprites:Sprites||`` grab  ``||sprites:set [mySprite] [x] to [0]||``  and snap it in at **the bottom** of your ``||game:on game update every [2100] ms||`` container.
-
-► Change ``||variables:mySprite||`` to ``||variables:myFood||``.
-
-► Change ``||sprites:x||`` to ``||sprites:vx (velocity x)||``, then change the **vx** value to **-75** to get the fish moving from right to left.
-
-```blocks
-game.onUpdateInterval(2100, function () {
-let mySprite: Sprite = null
-
-    let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
- 
-     myFood.setPosition(80 + mySprite.x, randint(5, 115))
-        //@highlight
-         myFood.vx = -75
-
-
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.disintegrate, 100)
+    info.changeScoreBy(1)
 })
 ```
 
 
+## Finale
 
-## Finale 
+**🎮 Play your game and see how many fish you can catch! 🎮**  
 
-So satisfying! Now your shark can find food anywhere it goes. 
-
-Click **Finish** and continue to the next level so you can code points for each fish you eat! 
+Click **Finish** and continue to the next activity so you can learn to make levels! 
 
 
 
@@ -212,14 +109,18 @@ scene.setBackgroundColor(8)
 mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
 controller.moveSprite(mySprite)
 mySprite.setStayInScreen(true)
-```
-
-```ghost
 
 game.onUpdateInterval(2100, function () {
     let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
-    myFood.setPosition(randint(150, 160), randint(0, 120))
+     myFood.setPosition(80 + mySprite.x, randint(5, 115))
     myFood.vx = -75
+})
+```
+
+```ghost
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.disintegrate, 100)
+    info.changeScoreBy(1)
 })
 ```
 
