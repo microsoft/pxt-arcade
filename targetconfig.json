@@ -18,7 +18,8 @@
             "microsoft/pxt-jacdac",
             "mr-coxall/turtle-logo",
             "microsoft/arcade-storytelling",
-            "microsoft/arcade-background-scroll"
+            "microsoft/arcade-background-scroll",
+            "microsoft/arcade-character-animations"
         ],
         "preferredRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
@@ -34,7 +35,8 @@
             "microsoft/arcade-text",
             "microsoft/pxt-tilemaps",
             "microsoft/arcade-storytelling",
-            "microsoft/arcade-background-scroll"
+            "microsoft/arcade-background-scroll",
+            "microsoft/arcade-character-animations"
         ],
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
