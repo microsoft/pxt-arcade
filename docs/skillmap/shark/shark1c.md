@@ -137,11 +137,5 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 })
 ```
 
-## Conclusion @unplugged
+## Conclusion 
 
-Now let's add code to destroy the enemies with your projectiles! Or, if you're feeling creative, add a background to set the scene.
-
-|      |      |      |
-|:----:|:----:|:----:|
-|  [![Projectiles](/static/recipes/shark-splash/03-projectiles.gif)](#recipe:/recipes/shark-splash/03-projectiles) | [![Add lives](/static/recipes/shark-splash/02-C-enemies.gif)](#recipe:/recipes/shark-splash/02-C-enemies) | [![Background](/static/recipes/shark-splash/04-background.png)](#recipe:/recipes/04-background) |
-| [**Projectile effects**](#recipe:/recipes/shark-splash/03-projectiles) | [**Add lives**](#recipe:/recipes/shark-splash/02-C-enemies) | [**Design a background**](#recipe:/recipes/shark-splash/04-background) |

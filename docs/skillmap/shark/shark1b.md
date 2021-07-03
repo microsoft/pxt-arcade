@@ -1,162 +1,136 @@
-# Set the Scene
+# Enemies Attack!
 
 ## Introduction @showdialog
 
-Let's make a game! 
+Sharks are fearsome, but even they have enemies!
 
-First, we'll plop a shark into the vast ocean, then we'll give it some special powers.
+![Attack of the hermit crabs](/static/skillmap/shark/shark1b.gif)
 
-![Add a shark](/static/skillmap/shark/shark1.gif)
+
+In this activity, you'll add consequences whenever your crab collides with your shark.
 
 
 ## step 2
 
-**🌊 See the sea 🌊**
+**🎮 Time to play 🎮**  
 
 ---
 
-► From the  ``||scene:Scene||`` category, drag ``||scene:set background color to [ ]||`` into the ``||loops:on start||`` container already in the workspace.
-
-► Next, click the grey oval and choose a nice, deep ocean color.
+Play with your project in the game window and try to remember which chunk of code controls which part of the game.
 
 
-```blocks
-// @highlight
-scene.setBackgroundColor(8)
-```
+## Step 3
 
-
-## step 3
-
-**🦈 Watch for sharks 🦈**
+**🐚 Enemies on the move 🐚**   
 
 ---
 
-► From the ``||sprites:Sprites||`` category, drag ``||variables:set mySprite to sprite [ ] of kind [Player]||`` into **the bottom** of the ``||loops:on start|`` container. 
-
-► Click the grey box and toggle to **My Assets** to choose the **shark** [__*sprite*__](#sprote "2-D image that moves on the screen").
+► Send your enemies after the shark by adding the ``||sprites:set [myEnemy] follow [mySprite]||`` block to **the end** of the ``||game:on game update every [2500] ms||`` container where ``||variables:myEnemy||`` is made.
 
 ```blocks
-scene.setBackgroundColor(8)
-// @highlight
-let mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
-
-```
-
-## step 4
-
-
-** Make it move! **
-
----
-
-► From ``||controller:Controller||``, drag ``||controller:move [mySprite] with buttons||`` to **the bottom** of the ``||loops:on start|`` container. This will allow you to move your sprite around the screen. 
-
-
-
-```blocks
-scene.setBackgroundColor(8)
-let mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
-// @highlight
-controller.moveSprite(mySprite)
-```
-
-## step 5
-
-**Look at the game window and try moving your shark around using the joypad or the arrow keys on your keyboard!**
-
-
-
-## step 6
-
-**👀 Keep an eye on your shark 👀**  
-
-When things get crazy, your shark can dash off-screen. Let's change that. 
-
----
-
-► From ``||sprites:Sprites||`` drag ``||sprites:set [mySprite] stay in screen <ON>||`` into **the bottom** of the ``||loops:on start||`` container.
-
-
-```blocks
-scene.setBackgroundColor(8)
-let mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-// @highlight
-mySprite.setStayInScreen(true)
-```
-
-
-## step 7
-
-** Now let's give the shark lasers! **
-
----
-
-► To make the shark fire a laser each time you press the (A) button, open the ``||controller:Controller||`` category and drag ``||controller:on [A] button [pressed]||`` into an empty area of the workspace.
-
-
-```blocks
-// @highlight
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-})
-```
-
-## step 8
-
-►  From ``||sprites:Sprites||`` drag ``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||`` into the empty  ``||controller:on [A] button [pressed]||``. 
-
-►  Set the ``||sprites:vx||`` value to **90** to get the lasers moving quickly toward the right side.
-
-►  Set the ``||sprites:vy||`` value to **0** so the lazers don't move up or down.
-
-
-
-```blocks
+game.onUpdateInterval(2500, function () {
 let mySprite: Sprite = null
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    // @highlight
-    let projectile = sprites.createProjectileFromSprite(img`
-        . . .
-        . . .
-        . . .
-    `, mySprite, 90, 0)
+    let myEnemy = sprites.create(assets.image`enemy`, SpriteKind.Enemy)
+     myEnemy.setPosition(60 + mySprite.x, randint(5, 115))
+     // @highlight
+    myEnemy.follow(mySprite, 30)
 })
 ```
 
-## step 9
 
-** Set lasers to FUN! **
+## Step 4
+
+**🐚 On a dangerous path 🐚**   
+We'll need a container to run code whenever a crab overlaps with the shark.
 
 ---
 
-► Click on the grey square to open the image editor, then toggle to **My Assets** to choose the **laser** sprite.
+► From ``||sprites:Sprites||``, drag an ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` container into an empty area of the workspace. 
+
+► Change the second **kind** from **Player** to **Enemy**. 
+
 
 ```blocks
-let mySprite: Sprite = null
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    // @highlight
-    let projectile = sprites.createProjectileFromSprite(assets.image`laser`, mySprite, 90, 0)
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+   
 })
 ```
 
-## step 10
 
-** 🎮 Time to play with your laser shark 🎮 **
+## Step 5
+
+To keep the crab from attacking again and again, we need to destroy it before removing a life from the player.
 
 ---
 
-Take a look at your game window and move your shark around while pressing the (A) button.  Are your lasers working?
+► From ``||sprites:Sprites||``, drag ``||sprites:destroy [mySprite]||`` into the empty **on overlaps** container. 
+
+► Grab the ``||variables:otherSprite||`` value from the title of the **on overlaps** block and drag it in to replace ``||variables:mySprite||``.  
+
+![Grabbing variable from block](/static/skillmap/space/give-var.gif "So that's how you do that!")
+
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+})
+```
+
+
+## Step 6
+
+
+► From ``||info:Info||``, grab ``||info:change life by [-1]||`` and snap it below the ``||sprites:destroy [otherSprite]||`` block.
+
+► For more fun, make the camera shake on impact by adding a ``||scene:camera shake by [4] pixels for [500] ms||`` block (from the ``||scene:Scene||`` category) beneath ``||info:change life by [-1]||``.
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    info.changeLifeBy(-1)
+    scene.cameraShake(4, 500)
+})
+```
 
 
 
 ## Finale 
 
-**Congratulations!**
+**Way to go!!**
 
-Now that you have a laser shark, you can click **Finish** to head back to the skillmap and add more to your game!
+All you have to do is avoid the crabs to stay alive!  
+
+When you're done playing your game, click **Finish** to continue to the next level and learn how to defend yourself with your lasers.
 
 
+
+
+```template
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    projectile = sprites.createProjectileFromSprite(assets.image`laser`, mySprite, 90, 0)
+})
+let projectile: Sprite = null
+let mySprite: Sprite = null
+scene.setBackgroundColor(8)
+mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+mySprite.setStayInScreen(true)
+game.onUpdateInterval(2500, function () {
+    let myEnemy = sprites.create(assets.image`enemy`, SpriteKind.Enemy)
+     myEnemy.setPosition(60 + mySprite.x, randint(5, 115))
+})
+```
+```ghost
+let mySprite: Sprite = null
+let myEnemy: Sprite = null
+myEnemy.follow(mySprite, 30)
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    scene.cameraShake(4, 500)
+    info.changeLifeBy(-1)
+})
+```
 
 ```assetjson
 {
@@ -171,4 +145,3 @@ Now that you have a laser shark, you can click **Finish** to head back to the sk
   "tilemap.g.ts": "// Auto-generated code. Do not edit.\nnamespace myTiles {\n    //% fixedInstance jres blockIdentity=images._tile\n    export const transparency16 = image.ofBuffer(hex``);\n\n    helpers._registerFactory(\"tile\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"transparency16\":return transparency16;\n        }\n        return null;\n    })\n\n}\n// Auto-generated code. Do not edit.\n"
 }
 ```
-

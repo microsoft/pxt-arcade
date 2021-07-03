@@ -2,7 +2,7 @@
 * name: Shark Splash
 * description: Design a survival game! We'll start by creating a hero that can throw projectiles, then you can customize the game with enemies, or a detailed setting.
 * backgroundurl: static/skillmap/backgrounds/shark-attack-bg.png
-* bannerurl: static/skillmap/shark/shark-attack.png
+* bannerurl: static/skillmap/shark/shark.gif
 * primarycolor: #ff93c4
 * secondarycolor: #87f2ff
 * tertiarycolor: #5c406c
@@ -13,7 +13,7 @@
 * name: Shark Splash
 
 ### shark-character
-* name: Create Your Hero
+* name: Set the Scene
 * type: tutorial
 * description: Create a main character that shoots some projectiles
 * url: skillmap/shark/shark1

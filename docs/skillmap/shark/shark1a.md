@@ -1,161 +1,195 @@
-# Set the Scene
+# Beware the Enemy!
 
 ## Introduction @showdialog
 
-Let's make a game! 
+There are enemies everywhere!  It's a good thing we've got lasers.
 
-First, we'll plop a shark into the vast ocean, then we'll give it some special powers.
+![Beware](/static/skillmap/shark/shark1a.gif)
 
-![Add a shark](/static/skillmap/shark/shark1.gif)
+In this activity, we'll add enemies that pop out of nowhere. 
 
 
 ## step 2
 
-**🌊 See the sea 🌊**
+**🕹️ Play it again 🕹️**  
 
 ---
 
-► From the  ``||scene:Scene||`` category, drag ``||scene:set background color to [ ]||`` into the ``||loops:on start||`` container already in the workspace.
+Play with your project in the game window to remember where you left off.  
+Can you connect each chunk of code with actions on the screen?
 
-► Next, click the grey oval and choose a nice, deep ocean color.
 
-
-```blocks
-// @highlight
-scene.setBackgroundColor(8)
-```
 
 
 ## step 3
 
-**🦈 Watch for sharks 🦈**
+**🕓 Timing is everything 🕗**  
+
+Let's add a container for code that will run every 2.5 seconds.
 
 ---
 
-► From the ``||sprites:Sprites||`` category, drag ``||variables:set mySprite to sprite [ ] of kind [Player]||`` into **the bottom** of the ``||loops:on start|`` container. 
+► From the  ``||game:Game||`` category, drag ``||game:on game update every [500] ms||`` into an empty area of the workspace.
 
-► Click the grey box and toggle to **My Assets** to choose the **shark** [__*sprite*__](#sprote "2-D image that moves on the screen").
-
-```blocks
-scene.setBackgroundColor(8)
-// @highlight
-let mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
-
-```
-
-## step 4
-
-
-** Make it move! **
-
----
-
-► From ``||controller:Controller||``, drag ``||controller:move [mySprite] with buttons||`` to **the bottom** of the ``||loops:on start|`` container. This will allow you to move your sprite around the screen. 
-
+► Double-click inside the text box and change **500** to **2500**.
 
 
 ```blocks
-scene.setBackgroundColor(8)
-let mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
-// @highlight
-controller.moveSprite(mySprite)
-```
-
-## step 5
-
-**Look at the game window and try moving your shark around using the joypad or the arrow keys on your keyboard!**
-
-
-
-## step 6
-
-**👀 Keep an eye on your shark 👀**  
-
-When things get crazy, your shark can dash off-screen. Let's change that. 
-
----
-
-► From ``||sprites:Sprites||`` drag ``||sprites:set [mySprite] stay in screen <ON>||`` into **the bottom** of the ``||loops:on start||`` container.
-
-
-```blocks
-scene.setBackgroundColor(8)
-let mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-// @highlight
-mySprite.setStayInScreen(true)
-```
-
-
-## step 7
-
-** Now let's give the shark lasers! **
-
----
-
-► To make the shark fire a laser each time you press the (A) button, open the ``||controller:Controller||`` category and drag ``||controller:on [A] button [pressed]||`` into an empty area of the workspace.
-
-
-```blocks
-// @highlight
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+game.onUpdateInterval(2500, function () {
 })
 ```
 
-## step 8
+## Step 4
 
-►  From ``||sprites:Sprites||`` drag ``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||`` into the empty  ``||controller:on [A] button [pressed]||``. 
+** Make some enemies... **  
 
-►  Set the ``||sprites:vx||`` value to **90** to get the lasers moving quickly toward the right side.
+---
 
-►  Set the ``||sprites:vy||`` value to **0** so the lazers don't move up or down.
+► From ``||sprites:Sprites||``, drag ``||variables: set [mySprite2] to sprite [ ] of kind [Player]||`` into the empty ``||game:on game update every [2500] ms||`` container.
+
+► Click **mySprite2** to open a dropdown menu and choose ``||variables:Rename variable...||``. Change the name to **myEnemy** and click **Ok**. 
+
+► Change the kind from **Player** to **Enemy**.
+
+```blocks
+game.onUpdateInterval(2500, function () {
+// @highlight
+    let myEnemy = sprites.create(img`
+        . . . 
+        . . . 
+        . . . `, SpriteKind.Enemy)
+})
+```
+
+## Step 5
+
+► Click the grey box inside the ``||variables: set [myEnemy] to sprite [ ] of kind [Enemy]||`` block and toggle to **My Assets** to choose the **enemy** crab, then click **Done**.
+
+```blocks
+game.onUpdateInterval(2500, function () {
+// @highlight
+    let myEnemy = sprites.create(assets.image`enemy`, SpriteKind.Enemy)
+})
+```
+
+
+
+## Step 6
+
+
+** Location, Location, Location! **  
+
+It's time to tell the new enemy sprites where to spawn. 
+
+---
+
+► From ``||sprites:Sprites||``, drag a ``||sprites:set [mySprite] position to x [0] y [0]||`` block into **the end** of the ``||game:on game update every [2500] ms||``  container. 
+
+► Change ``||sprites:mySprite||`` to ``||sprites:myEnemy||``.
+
+```blocks
+game.onUpdateInterval(2500, function () {
+    let myEnemy = sprites.create(assets.image`enemy`, SpriteKind.Enemy)
+    //@highlight
+    myEnemy.setPosition(0, 0)
+})
+```
+
+## Step 7
+
+**Let's start all of the enemies 60 pixels in front of the shark.**  
+(This means you'll need to **add** 60 to the shark's current location.) 
+
+---
+
+► To add **60**, drag the ``||math:[0] [+] [0]||`` block from the ``||math:Math||`` category to replace the first **0** of the ``||sprites:set [myEnemy] position to x [0] y [0]||`` block.
+
+► Change the **0** to **the left** of the **+** sign to **60**.
 
 
 
 ```blocks
+game.onUpdateInterval(2500, function () {
+    let myEnemy = sprites.create(assets.image`enemy`, SpriteKind.Enemy)
+    //@highlight
+     myEnemy.setPosition(60 + 0, 0)
+
+})
+```
+
+## Step 8
+
+**🔎 Keep your enemies closer 🔍**  
+Now we need a block to represent the horizontal **(x)** position of the shark.
+
+---
+
+► From ``||sprites:Sprites||`` grab the ``||sprites:[mySprite] [x]||`` value and snap it in to replace the **0** on **the right** side of the **+** sign.
+
+
+```blocks
+game.onUpdateInterval(2500, function () {
 let mySprite: Sprite = null
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    // @highlight
-    let projectile = sprites.createProjectileFromSprite(img`
-        . . .
-        . . .
-        . . .
-    `, mySprite, 90, 0)
+
+    let myEnemy = sprites.create(assets.image`enemy`, SpriteKind.Enemy)
+    //@highlight
+     myEnemy.setPosition(60 + mySprite.x, 0)
+
 })
 ```
 
-## step 9
+## Step 9
 
-** Set lasers to FUN! **
+**🎮 Take a look at the game window to see how everything works 🎮**  
+
+You should have a shark that moves around with the arrow keys and enemies that spawn in front of the shark and up toward the top of the screen.
+
+
+
+## Step 10
+
+**🔀 Shake up the enemy 🔀**  
+Let's start the crab at a random height to keep things interesting.
 
 ---
 
-► Click on the grey square to open the image editor, then toggle to **My Assets** to choose the **laser** sprite.
+► From ``||math:Math||`` grab  ``||math:pick random [0] to [10]||``  and snap it in to replace the **y** value of **0**.
+
+► Change the random values to go from a min of **5** to a max of **115**.
 
 ```blocks
+game.onUpdateInterval(2500, function () {
 let mySprite: Sprite = null
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    // @highlight
-    let projectile = sprites.createProjectileFromSprite(assets.image`laser`, mySprite, 90, 0)
+
+    let myEnemy = sprites.create(assets.image`enemy`, SpriteKind.Enemy)
+    //@highlight
+     myEnemy.setPosition(60 + mySprite.x, randint(5, 115))
+
 })
 ```
-
-## step 10
-
-** 🎮 Time to play with your laser shark 🎮 **
-
----
-
-Take a look at your game window and move your shark around while pressing the (A) button.  Are your lasers working?
 
 
 
 ## Finale 
 
-**Congratulations!**
+There you have it! Enemies will now pop up in front of your shark every couple of seconds.  
 
-Now that you have a laser shark, you can click **Finish** to head back to the skillmap and add more to your game!
+Click **Finish** to head back out to the main map to find out what you can do next!
 
+
+
+
+```template
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    projectile = sprites.createProjectileFromSprite(assets.image`laser`, mySprite, 90, 0)
+})
+let projectile: Sprite = null
+let mySprite: Sprite = null
+scene.setBackgroundColor(8)
+mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+mySprite.setStayInScreen(true)
+```
 
 
 ```assetjson
