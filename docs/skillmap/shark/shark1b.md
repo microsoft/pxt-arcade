@@ -4,7 +4,8 @@
 
 Sharks are fearsome, but even they have enemies!
 
-![Moving Enemies](/static/recipes/shark-splash/02-A-enemies.gif)
+![Attack of the hermit crabs](/static/skillmap/shark/shark1b.gif)
+
 
 In this activity, you'll add consequences whenever your crab collides with your shark.
 

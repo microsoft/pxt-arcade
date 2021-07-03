@@ -4,9 +4,9 @@
 
 There are enemies everywhere!  It's a good thing we've got lasers.
 
-![Enemies](/static/recipes/shark-splash/02-enemies.gif)
+![Beware](/static/skillmap/shark/shark1a.gif)
 
-In this activity, we'll add enemies that pop out of nowhere and follow us around the screen. 
+In this activity, we'll add enemies that pop out of nowhere. 
 
 
 ## step 2

@@ -6,7 +6,7 @@ Let's make a game!
 
 First, we'll plop a shark into the vast ocean, then we'll give it some special powers.
 
-![Duck bubbles](/static/recipes/shark-splash/01-character.gif)
+![Add a shark](/static/skillmap/shark/shark1.gif)
 
 
 ## step 2

@@ -4,7 +4,7 @@
 
 Did you eat yet?
 
-![Enemies](/static/recipes/shark-splash/02-enemies.gif)
+![Don't play with your food](/static/skillmap/shark/shark2.gif)
 
 Let's send a school of fish toward the shark to keep it full and happy. 
 

@@ -4,7 +4,7 @@
 
 Ready for some fish?
 
-![Enemies](/static/recipes/shark-splash/02-enemies.gif)
+![Enemies](/static/skillmap/shark/shark3.gif)
 
 In this activity, you'll write the code to help the shark earn points for each fish it eats.
 
@@ -111,6 +111,28 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 ```
 
 
+## Step 8
+
+
+**🐟 Winner, winner...fish for dinner**   
+Right now, when the timer runs out, the player loses.  Let's change that.
+
+---
+
+► From ``||info:Info||``, grab an ``||info:on countdown end||`` container and drag it into an empty area of the workspace. 
+
+► Open the ``||game:Game||`` category and drag ``||game:game over <LOSE>||`` into the empty ``||info:on countdown end||`` container.
+
+► Toggle **`<LOSE>`** to **`<WIN>`** so the player can celebrate the points they've gathered along the way. 
+
+```blocks
+info.onCountdownEnd(function () {
+    game.over(true)
+})
+```
+
+
+
 ## Finale
 
 **🎮 Play your game and see how many fish you can catch in 15 seconds! 🎮**  
@@ -142,6 +164,9 @@ game.onUpdateInterval(2100, function () {
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     otherSprite.destroy(effects.disintegrate, 100)
     info.changeScoreBy(1)
+})
+info.onCountdownEnd(function () {
+    game.over(true)
 })
 ```
 

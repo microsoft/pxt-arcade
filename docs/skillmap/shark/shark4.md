@@ -4,7 +4,7 @@
 
 Let's build a world for your shark to swim around in!
 
-![Background](/static/recipes/shark-splash/04-background.png)
+![Build a world](/static/skillmap/shark/shark4.gif)
 
 
 ## Step 2 - Add a Background
