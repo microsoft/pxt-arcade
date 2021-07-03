@@ -90,11 +90,32 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 ```
 
 
+## Step 7
+
+
+**⌛ It's about time ⌛**   
+For an added challenge, let's set a timer that ends the game when it runs out!
+
+---
+
+► From ``info:Info||``, snap  ``||info:start countdown [10] (s)||`` into **the end** of the ``||loops:on start||`` container. 
+
+► To give the player more time, change **10** seconds to **15** seconds. 
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.disintegrate, 100)
+    info.changeScoreBy(1)
+    info.startCountdown(15)
+})
+```
+
+
 ## Finale
 
-**🎮 Play your game and see how many fish you can catch! 🎮**  
+**🎮 Play your game and see how many fish you can catch in 15 seconds! 🎮**  
 
-Click **Finish** and continue to the next activity so you can learn to make levels! 
+Click **Finish** to head back out to the skillmap for more adventures! 
 
 
 
