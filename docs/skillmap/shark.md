@@ -19,7 +19,7 @@
 * url: skillmap/shark/shark1
 * tags: easy, sprites, projectiles
 * imageUrl: /static/skillmap/shark/shark1.gif
-* next: shark2, shark1a
+* next: shark1a, shark2
 
 ### shark1a
 * name: Beware the Enemy
