@@ -19,6 +19,7 @@
         h1 {
             font-size: 3em;
             margin-top: 1em;
+            color: #f5f7ec
         }
 
         .subheading {
@@ -28,6 +29,7 @@
 
         .tagline {
             opacity: 0.6;
+            color: #f5f7ec;
         }
 
         .header-image {
@@ -40,13 +42,12 @@
         }
 
         #root {
-            background: #0d0015;
+            background: #157175;
             background-image: url('static/insiders-background.png');
             display: block !important;
         }
 
         body,
-        h1,
         .ui.button {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
             font-weight: 300;
@@ -72,7 +73,7 @@
             justify-content: space-between;
             align-items: center;
             text-align: left;
-            background: #010102;
+            background: #157175;
             color: white;
             max-width: 800px;
             margin: 2em auto;
@@ -101,7 +102,7 @@
             width: 14em;
             padding: 1.5em;
             margin: 2em auto;
-            background-image: linear-gradient(116deg, #a3839e 0%, #f5f7ec 100%);
+            background-color:  #a3839e ;
             color: #ffffff;
             display: block;
             font-size: 1.4em;
@@ -111,9 +112,9 @@
 
         .ui.button:focus,
         .ui.button:hover {
-            background-image: linear-gradient(116deg, #a3839e 0%, #f5f7ec 100%);
+            background-color:  #f5f7ec ;
             box-shadow: 0 0 50px rgba(241, 193, 255, 0.75);
-            color: #ffffff;
+            color: #777777;
             filter: none;
             transform: scale(1.05);
         }
@@ -136,6 +137,11 @@
             ;
         }
 
+        ul.ui.list {
+            padding: 0;
+            margin: 0;
+        }
+
         ol.ui.list {
             padding: 0 2em;
             margin: 1em 1.25em;
@@ -153,6 +159,12 @@
             padding-bottom: 2em;
         }
 
+        .ele {
+            text-align: left;
+            max-width: 550px;
+            padding-bottom: 2em;
+        }
+
         .legal {
             font-size: .75em;
         }
@@ -163,7 +175,7 @@
 
         /** footer styling **/
         footer {
-            background-color: #0d0015 !important;
+            background-color: #157175 !important;
             border-top: 1px solid hsla(0, 0%, 100%, 0.2) !important;
             margin-top: 0 !important;
             padding-top: 2rem !important;
@@ -194,7 +206,8 @@
             }
 
             h1 {
-                font-size: 2.3em;
+                font-size: 2em;
+                font-weight: bold;
             }
         }
     </style>
@@ -214,25 +227,22 @@
 <body id="root" class="root" onload="handleOnLoad()">
     <div id="main" role="presentation">
         <div class="header-image"><img src="static/insiders-header.png" alt="MakeCode Insiders Program"></img></div>
-        <h1>Join the Microsoft MakeCode Insiders Program</h1>
+        <h1>MakeCode Insiders Program</h1>
         <p role="presentation" class="subheading">Share your opinion. Shape an experience.</p>
-        <p class="ele">
+        <br/>
+        <img src="static/insider-girl.png" alt="Girl playing with tablet"/>
+        <div class="ele">
             To be eligible for the program, students must meet the following criteria. 
             <ul>
                 <li>Aged 13-17 years old (born between December 2004 and July 2008)</li> 
-
                 <li>Live in the United States</li> 
-
                 <li>Read and speak English fluently</li> 
-
                 <li>Be available for an hour-long virtual session every week for three months</li> 
-
                 <li>Be available to dedicate up to two hours of additional time each week to Insider projects</li> 
-
                 <li>No coding experience required </li>
-</ul>
+            </ul>
             
-        </p>
+        </div>
 
         <ol class="ui ordered list">
             <li class="bottom aligned content">
@@ -254,7 +264,7 @@
                 href="https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR-NUWw6PQYtKs_JiARPQHZlURFRDMlA0M0hSTUpTWDYxRzJBNFpITE0yVC4u">Apply Now!</a>
         </ol>
 
-        <p class="cta">
+        <div ele>
             Need more resources?  See the list below:
             <ul>
                 <li>Insiders Handbook</li>
@@ -263,7 +273,7 @@
                 <li>Insider's Code of Conduct</li>
             </ul>
             
-        </p>
+        </div>
 
     </div>
 

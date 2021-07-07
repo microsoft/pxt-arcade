@@ -204,6 +204,8 @@ declare namespace control {
      */
     //% shim=control::dmesgValue
     function dmesgValue(v: any): void;
+}
+declare namespace control {
 
     /**
      * Force GC and dump basic information about heap.
