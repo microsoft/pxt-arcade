@@ -1,6 +1,6 @@
 # Build a Space Explorer
 * name: Build a Space Explorer
-* description: Learn to make a Galga-style game by following this short series of tutorials.
+* description: Learn to make a Galaga-style game by following this short series of tutorials.
 * infoUrl: skillmap/educator-info/int-map-info
 * bannerUrl: /static/skillmap/space/spacet6.gif
 * backgroundurl: /static/skillmap/backgrounds/space-comp.gif
