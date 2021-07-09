@@ -1,112 +1,94 @@
-# Under the Sea
+# A Whole New World!
+### @preferredEditor asset
+
 
 ## Introduction @showdialog
 
-Let's build a world for your shark to swim around in!
+You've made an amazing deep sea game, but now it's time to turn it into something unique!
+
+This activity will help you edit your sprites and backgrounds to create a brand new theme.
 
 ![Build a world](/static/skillmap/shark/shark4.gif)
 
 
-## Step 2 - Add a Background
+## Step 2 - Main Sprite
 
-**🌊 Under the Sea 🌊**
-
----
-
-► From the  ``||scene:Scene||`` category, drag ``||scene:set background image to [ ]||`` into the ``||loops:on start||`` container, just below  ``||scene:set background color to [ ]||``.
-
-► Click the empty grey box and toggle to **My Assets** to choose **ocean1**, then click **Done**.
-
-```blocks
-scene.setBackgroundImage(assets.image`ocean1`)
-```
-
-## Step 3 - Repeat Decorations
-
-**Next, let's add some decorative sprites to the sea floor.**
+**Let's start with the main character!**  
+Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine snatching clouds? It's up to you!
 
 ---
 
-► From ``||loops:Loops||``, drag the ``||loops:repeat [4] times||`` block to **the end** of the ``||loops:on start|`` container.
+► Click the **shark** sprite, then click the **Edit** button in the panel to the right.
 
-► Change the repeat number from **4** times to **10** times.
+► Draw your own character in the image editor, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your main character, click **Done**. 
 
-```blocks
-scene.setBackgroundImage(assets.image`ocean1`)
-//@highlight
-for (let index = 0; index < 10; index++) {
-}
-```
 
-## Step 4 - Add Background Decorations
 
-► From ``||sprites:Sprites||``, drag ``||variables:set [mySprite2] to sprite [ ] of kind [Player]||`` into ``||loops:repeat [10] times||``. 
+## Step 3 - Background
 
-► Click the ``||variables:mySprite2||`` dropdown and **Rename variable...** call this **myDecor**. 
-
-► Change the **kind** of the sprite to **Decoration**.
-
-► Click on the empty grey box and toggle to **My Assets** to select the sprite called **decoration**. (It looks like seaweed.)
-
-```blocks
-namespace SpriteKind {
-    export const Decoration = SpriteKind.create()
-}
-scene.setBackgroundImage(assets.image`ocean1`)
-for (let index = 0; index < 10; index++) {
-    let myDecor = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
-
-}
-```
-
-## Step 5 - Update Sprite Position
-
-**Placement is everything!**  
-To make the seaweed look more natural, let's change y value to position it closer to the bottom of the screen.
+**Where does your hero want to be?**
 
 ---
 
-► From ``||sprites:Sprites||``, drag the ``||sprites:set [mySprite] position to x [0] y [0]||`` block into **the end** of the ``||loops:repeat [10] times||`` loop. 
+► Scroll down until you find the **ocean1** background, then select it and click **Edit**.
 
-► Change ``||variables:mySprite||`` to ``||variables:myDecor||``.
+► Draw a background that fits your main character, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your background, click **Done**. 
 
-► Change the **y** value to **96**. 
-
-
-```blocks
-namespace SpriteKind {
-    export const Decoration = SpriteKind.create()
-}
-scene.setBackgroundImage(assets.image`ocean1`)
-for (let index = 0; index < 10; index++) {
-    let mySprite = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
-
-    mySprite.setPosition(0, 96)
-}
-```
-
-## Step 6 - Random Flow
-
-► To scatter the seaweed along the floor, drag a ``||math:pick random [0] to [10]||`` block to replace the **x** value. 
-
-► Change the lowest random number to **5**, and the highest to **155**.
+💡 You can see the name of an image by hovering over the tile or by clicking the tile and looking for the name in the Asset Preview window.
 
 
-```blocks
-scene.setBackgroundImage(assets.image`ocean1`)
-for (let index = 0; index <= 10; index++) {
-    let mySprite = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
+## Step 4 - Decorations
 
-    mySprite.setPosition(randint(5, 155), 96)
-}
-```
+**Decorations**
+
+---
+
+► Click the **decoration** sprite, then click the **Edit** button in the panel to the right.
+
+► Draw a small decoration for the ground of your scene, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your decoration, click **Done**. 
+
+
+## Step 5 - Food
+
+**Collectibles**
+
+---
+
+► Click the **myFood** sprite, then click the **Edit** button in the panel to the right.
+
+► Draw whatever you want your main character to collect (or toggle to the **Gallery** to find something that has already been created).  When you're happy with your food sprite, click **Done**. 
+
+
+
+## Step 6 - Enemies
+
+**Enemies**
+
+---
+
+► Click the **enemy** sprite, then click the **Edit** button in the panel to the right.
+
+► Draw something for your main character to avoid (or toggle to the **Gallery** to find something that has already been created).  When you're happy with your enemy sprite, click **Done**. 
+
+
+
+
+## Step 7 - Projectile
+
+**Projectiles**
+
+---
+
+► Click the **laser** sprite, then click the **Edit** button in the panel to the right.
+
+► Draw something that your main character can throw at other sprites (or toggle to the **Gallery** to find something that has already been created).  When you're happy with your projectile, click **Done**. 
 
 
 ## Finale
 
-Excellent! Now your shark has a lovely living space!
+Fantastic! You've created a game of your very own!
 
-Play your game to make sure you like the way everything looks. When you're happy, click **Finish** to get back out to the skillmap.
+Don't forget to play your game to make sure you like the way everything looks. When you're happy, click **Finish** to head back to the skillmap where you can share your game with family and friends.
 
 
 
@@ -116,34 +98,55 @@ Play your game to make sure you like the way everything looks. When you're happy
 namespace SpriteKind {
     export const Decoration = SpriteKind.create()
 }
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.disintegrate, 100)
-    info.changeScoreBy(1)
-    info.startCountdown(15)
-})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(assets.image`laser`, mySprite, 90, 0)
 })
-let projectile: Sprite = null
-let mySprite: Sprite = null
+info.onCountdownEnd(function () {
+    game.over(true)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.disintegrate, 100)
+    info.changeScoreBy(1)
+})
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.fountain, 200)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    scene.cameraShake(4, 500)
+    info.changeLifeBy(-1)
+})
 let myFood: Sprite = null
-scene.setBackgroundColor(8)
+let myEnemy: Sprite = null
+let projectile: Sprite = null
+let myDecor: Sprite = null
+let mySprite: Sprite = null
+scene.setBackgroundColor(9)
+scene.setBackgroundImage(assets.image`ocean1`)
 mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
 controller.moveSprite(mySprite)
 mySprite.setStayInScreen(true)
-
+info.startCountdown(15)
+info.setLife(3)
+for (let index = 0; index < 10; index++) {
+    myDecor = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
+    myDecor.setPosition(randint(5, 155), 96)
+}
+game.onUpdateInterval(2500, function () {
+    myEnemy = sprites.create(assets.image`enemy`, SpriteKind.Enemy)
+    myEnemy.setPosition(80 + mySprite.x, randint(5, 115))
+    myEnemy.follow(mySprite, 30)
+})
 game.onUpdateInterval(2100, function () {
     myFood = sprites.create(assets.image`food`, SpriteKind.Food)
-     myFood.setPosition(80 + mySprite.x, randint(5, 115))
+    myFood.setPosition(60 + mySprite.x, randint(5, 115))
     myFood.vx = -75
 })
+
 ```
 
 ```ghost
-for (let index = 0; index < 10; index++) {
-    mySprite2 = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
-    mySprite2.setPosition(randint(0, 160), 96)
-}
+
 ```
 
 ```assetjson
