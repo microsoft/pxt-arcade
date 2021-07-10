@@ -139,7 +139,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . 6 7 6 . 7 7 6 6 . . . . 
         . . . . 6 6 6 . . 7 6 . . . . . 
         `, SpriteKind.Food)
-    tiles.placeOnRandomTile(mySprite, sprites.castle.tilePath5)
+    mySprite.setPosition(randint(10, 150), randint(10, 110))
     //@highlight
     panda.follow(mySprite)
 })

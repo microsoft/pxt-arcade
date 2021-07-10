@@ -120,12 +120,12 @@ forever(function () {
 
 ► Click the empty grey box and toggle to **My Assets** to select the blue car.
 
-► Change the **vx** value (horizontal speed) to **-110** and the **vy** value (vertical speed) to **0** so the car moves horizontally from the right to the left.
+► Change the **vx** value (horizontal speed) to **-90** and the **vy** value (vertical speed) to **0** so the car moves horizontally from the right to the left.
 
 ```blocks
 forever(function () {
 //@highlight
-    let projectile2 = sprites.createProjectileFromSide(assets.image`Tourist`, -110, 0)
+    let projectile2 = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
 })
 ```
 

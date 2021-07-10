@@ -165,6 +165,8 @@ scroller.scrollBackgroundWithSpeed(-50, 0)
 forever(function () {
     projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
     projectile.y = randint(15, 115)
+    pause(1000)
+
 })
 ```
 
