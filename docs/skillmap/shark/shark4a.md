@@ -109,7 +109,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
     info.changeScoreBy(1)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.fountain, 200)
+    otherSprite.destroy(effects.bubbles, 100)
+    info.changeScoreBy(1)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()
@@ -127,7 +128,6 @@ mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
 controller.moveSprite(mySprite)
 mySprite.setStayInScreen(true)
 info.startCountdown(15)
-info.setLife(3)
 for (let index = 0; index < 10; index++) {
     myDecor = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
     myDecor.setPosition(randint(5, 155), 96)
@@ -145,9 +145,7 @@ game.onUpdateInterval(2100, function () {
 
 ```
 
-```ghost
 
-```
 
 ```assetjson
 {
