@@ -8,7 +8,7 @@ You've made an amazing deep sea game, but now it's time to turn it into somethin
 
 This activity will help you edit your sprites and backgrounds to create a brand new theme.
 
-![Build a world](/static/skillmap/shark/shark4.gif)
+![Build a world](/static/skillmap/shark/shark4a.gif)
 
 
 ## Step 2 - Main Sprite
@@ -18,7 +18,7 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 
 ---
 
-► Click the **shark** sprite, then click the **Edit** button in the panel to the right.
+► Click the **shark** sprite, then click the **Edit** button in the Asset Preview panel to the left.
 
 ► Draw your own character in the image editor, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your main character, click **Done**. 
 
@@ -34,39 +34,39 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 
 ► Draw a background that fits your main character, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your background, click **Done**. 
 
-💡 You can see the name of an image by hovering over the tile or by clicking the tile and looking for the name in the Asset Preview window.
+💡 You can see the name of an image if you hover over the tile or click the tile and look for the name in the Asset Preview window.
 
 
 ## Step 4 - Decorations
 
-**Decorations**
+**🎍 Decorations 🎍**
 
 ---
 
-► Click the **decoration** sprite, then click the **Edit** button in the panel to the right.
+► Click the **decoration** sprite, then click the **Edit** button in the panel to the left.
 
 ► Draw a small decoration for the ground of your scene, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your decoration, click **Done**. 
 
 
 ## Step 5 - Food
 
-**Collectibles**
+**🪙 Collectibles 🪙**
 
 ---
 
-► Click the **myFood** sprite, then click the **Edit** button in the panel to the right.
+► Click the **myFood** sprite, then click the **Edit** button in the panel to the left.
 
-► Draw whatever you want your main character to collect (or toggle to the **Gallery** to find something that has already been created).  When you're happy with your food sprite, click **Done**. 
+► Draw whatever you want your main character to collect (or toggle to the **Gallery** to find something that has already been created).  When you're happy with your sprite, click **Done**. 
 
 
 
 ## Step 6 - Enemies
 
-**Enemies**
+**😈 Enemies 😈**
 
 ---
 
-► Click the **enemy** sprite, then click the **Edit** button in the panel to the right.
+► Click the **enemy** sprite, then click the **Edit** button in the panel to the left.
 
 ► Draw something for your main character to avoid (or toggle to the **Gallery** to find something that has already been created).  When you're happy with your enemy sprite, click **Done**. 
 
@@ -75,7 +75,7 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 
 ## Step 7 - Projectile
 
-**Projectiles**
+**🧨 Projectiles 🧨**
 
 ---
 
@@ -86,7 +86,10 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 
 ## Finale
 
-Fantastic! You've created a game of your very own!
+**Fantastic!**  
+You've created a game of your very own!
+
+---
 
 Don't forget to play your game to make sure you like the way everything looks. When you're happy, click **Finish** to head back to the skillmap where you can share your game with family and friends.
 
@@ -142,10 +145,6 @@ game.onUpdateInterval(2100, function () {
     myFood.setPosition(60 + mySprite.x, randint(5, 115))
     myFood.vx = -75
 })
-
-```
-
-```ghost
 
 ```
 

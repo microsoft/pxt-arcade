@@ -45,17 +45,9 @@
 * description: An enemy appears! Fight!
 * url: skillmap/shark/shark1c
 * tags: easy, enemies
-* imageUrl: /static/skillmap/shark/shark1b.gif
-* next: shark1d
-
-### shark1d
-* name: Moving Enemies
-* type: tutorial
-* description: Uh-oh, these enemies are on the go. Learn how to code enemy movement!
-* url: skillmap/shark/shark1d
-* tags: easy, enemies, movement
-* imageUrl: /static/skillmap/shark/shark1b.gif
+* imageUrl: /static/skillmap/shark/shark1c.gif
 * next: shark2
+
 
 ### shark2
 * name: Food, Not Friends
@@ -92,7 +84,7 @@
 * description: Give your game a brand new theme and really make it yours!
 * url: skillmap/shark/shark4a
 * tags: easy, background, decorations, asset editor
-* imageUrl: /static/skillmap/shark/shark4.gif
+* imageUrl: /static/skillmap/shark/shark4a.gif
 * next: shark-finish
 
 ### shark-finish

@@ -24,7 +24,7 @@ Can you connect each chunk of code with actions on the screen?
 
 **🐠 Let's go fishing 🐠**  
 
-We need a container that will run our fishy code every 2100 seconds.
+We need a container that will run our fishy code every 2.1 seconds.
 
 ---
 
@@ -43,7 +43,7 @@ game.onUpdateInterval(2100, function () {
 
 ► From ``||sprites:Sprites||``, drag ``||variables: set [mySprite2] to sprite [ ] of kind [Player]||`` into the empty ``||game:on game update every [2100] ms||`` container.
 
-► Click **mySprite2** to open a dropdown menu and choose ``||variables:Rename variable...||``. Change the name to **myFood** and click **Ok**. 
+► To rename the sprite **myFood**, click **mySprite2** to open a dropdown menu and choose ``||variables:Rename variable...||``. Enter **myFood** and click **Ok**. 
 
 ► Change the kind from **Player** to **Food**.
 
@@ -75,7 +75,7 @@ game.onUpdateInterval(2100, function () {
 
 ** Never too far away **  
 
-It's time to tell the new food sprites where to spawn. 
+It's time to tell the food sprites where to spawn. 
 
 ---
 
@@ -100,7 +100,7 @@ game.onUpdateInterval(2100, function () {
 
 ► To add **80**, drag the ``||math:[0] [+] [0]||`` block from the ``||math:Math||`` category to replace the **x** value of the ``||sprites:set [myFood] position to x [0] y [0]||`` block.
 
-► Change the first **0** to **80** (so you have ``||math:[80] [+] [0]||``).
+► In the math block, change the first **0** to **80** (so you have ``||math:[80] [+] [0]||``).
 
 
 
@@ -138,7 +138,7 @@ let mySprite: Sprite = null
 
 **🎮 Take a look at the game window to see how everything works 🎮**  
 
-You should have a shark that moves around with the arrow keys and food that appears in front of the shark and up toward the top of the screen.
+You should have a shark that moves around with the arrow keys and food that appears in front of the shark (but up at the very top of the screen.)
 
 
 
@@ -151,7 +151,7 @@ Let's add fish at a random heights to keep the shark moving.
 
 ► From ``||math:Math||`` grab  ``||math:pick random [0] to [10]||``  and snap it in to replace the **y** value.
 
-► Change the random values to pick from a min of **5** to a max of **115**.
+► Change the random block to pick from a min of **5** to a max of **115**.
 
 ```blocks
 game.onUpdateInterval(2100, function () {
@@ -175,7 +175,7 @@ Get the fish swimming for a bigger challenge.
 
 ► Change ``||variables:mySprite||`` to ``||variables:myFood||``.
 
-► Change ``||sprites:x||`` to ``||sprites:vx (velocity x)||``, then change the **vx** value to **-75** to get the fish moving from right to left.
+► Change ``||sprites:x||`` to ``||sprites:vx (velocity x)||`` and make the value **-75** to get the fish moving from right to left.
 
 ```blocks
 game.onUpdateInterval(2100, function () {
@@ -195,9 +195,12 @@ let mySprite: Sprite = null
 
 ## Finale 
 
-So satisfying! Now your shark can find food anywhere it goes. 
+**So satisfying!**  
+Now your shark can find food anywhere it goes. 
 
-Click **Finish** and continue to the next level so you can code points for each fish you eat! 
+---
+
+Click **Finish** and continue to the next level so you can code points for each of the fish you eat! 
 
 
 

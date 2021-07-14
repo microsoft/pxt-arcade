@@ -6,7 +6,7 @@ Ready for some fish?
 
 ![Enemies](/static/skillmap/shark/shark3.gif)
 
-In this activity, you'll write the code to help the shark earn points for each fish it eats.
+In this activity, you'll create code to help the shark earn points for each fish it eats.
 
 
 ## step 2
@@ -41,11 +41,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 ## Step 4
 
 **🦈 YUMMMMMM 🦈**  
-When the shark catches the fish, we need to make it disappear.
+When the shark catches the fish, we need to make the fish disappear.
 
 ---
 
-► Open ``||sprites:Sprites||``, then snap ``||sprites:destroy [mySprite]||`` into the new empty **on overlaps** container.
+► Open ``||sprites:Sprites||``, then snap ``||sprites:destroy [mySprite]||`` into the empty **on overlaps** container.
 
 ► Drag the ``||variables:otherSprite||`` value from the title of the **on overlaps** container down to replace ``||variables:mySprite||``.
 
@@ -94,20 +94,23 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 
 **⌛ It's about time ⌛**   
-For an added challenge, let's set a timer that ends the game when it runs out!
+For an added challenge, let's go back to the ``||loops:on start||`` code to set a timer that ends the game when it runs out!
 
 ---
 
-► From ``info:Info||``, snap  ``||info:start countdown [10] (s)||`` into **the end** of the ``||loops:on start||`` container. 
+► From ``||info:Info||``, snap  ``||info:start countdown [10] (s)||`` into **the end** of the ``||loops:on start||`` container. 
 
 ► To give the player more time, change **10** seconds to **15** seconds. 
 
 ```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.disintegrate, 100)
-    info.changeScoreBy(1)
+let mySprite: Sprite = null
+scene.setBackgroundColor(8)
+mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+mySprite.setStayInScreen(true)
+//@highlight
     info.startCountdown(15)
-})
+
 ```
 
 
@@ -135,9 +138,11 @@ info.onCountdownEnd(function () {
 
 ## Finale
 
-**🎮 Play your game and see how many fish you can catch in 15 seconds! 🎮**  
+**🎮 How many fish you can catch in 15 seconds? 🎮**  
 
-Click **Finish** to head back out to the skillmap for more adventures! 
+---
+
+When you're done playing your game, click **Finish** to head back out to the skillmap for more adventures! 
 
 
 
