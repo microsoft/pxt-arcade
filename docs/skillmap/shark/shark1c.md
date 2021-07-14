@@ -78,7 +78,10 @@ When you hit the crab, it should explode into a batch of bubbles, then give the 
 
 **That's it!** 
 
-You've finished the enemy path for the shark tutorial!   
+**You've finished the _enemy_ path for the shark tutorial! **  
+
+---
+
 When you're done playing your game, click **Finish** to return to the skillmap, where you can 
 learn to add some fishy food to your game. 
 
@@ -104,10 +107,11 @@ game.onUpdateInterval(2500, function () {
 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()
-    scene.cameraShake(4, 500)
     info.changeLifeBy(-1)
+    scene.cameraShake(4, 500)
 })
 ```
+
 
 ```assetjson
 {

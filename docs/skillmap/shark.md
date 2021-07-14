@@ -48,6 +48,7 @@
 * imageUrl: /static/skillmap/shark/shark1c.gif
 * next: shark2
 
+
 ### shark2
 * name: 2. Food, Not Friends
 * type: tutorial
@@ -69,6 +70,7 @@
 
 
 ### shark4
+
 * name: 4. Under the Sea
 * type: tutorial
 * description: Decorate your shark's surroundings with an ocean background and seaweed.
@@ -78,12 +80,13 @@
 * next: shark-finish, shark4a
 
 ### shark4a
+
 * name: 4a. A Whole New World
 * type: tutorial
 * description: Give your game a brand new theme and really make it yours!
 * url: skillmap/shark/shark4a
 * tags: easy, background, decorations, asset editor
-* imageUrl: /static/skillmap/shark/shark4c.gif
+* imageUrl: /static/skillmap/shark/shark4a.gif
 * next: shark-finish
 
 ### shark-finish

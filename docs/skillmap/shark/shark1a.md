@@ -2,7 +2,7 @@
 
 ## Introduction @showdialog
 
-There are enemies everywhere!  It's a good thing we've got lasers.
+There are enemies everywhere!
 
 ![Beware](/static/skillmap/shark/shark1a.gif)
 
@@ -16,7 +16,7 @@ In this activity, we'll add enemies that pop out of nowhere.
 ---
 
 Play with your project in the game window to remember where you left off.  
-Can you connect each chunk of code with actions on the screen?
+Do you remember which chunk of code connects to each action on the screen?
 
 
 
@@ -41,13 +41,13 @@ game.onUpdateInterval(2500, function () {
 
 ## Step 4
 
-** Make some enemies... **  
+**🦹‍♂️ Make some enemies 🦹‍♂️**  
 
 ---
 
 ► From ``||sprites:Sprites||``, drag ``||variables: set [mySprite2] to sprite [ ] of kind [Player]||`` into the empty ``||game:on game update every [2500] ms||`` container.
 
-► Click **mySprite2** to open a dropdown menu and choose ``||variables:Rename variable...||``. Change the name to **myEnemy** and click **Ok**. 
+► To rename this to **myEnemy**, click **mySprite2** to open a dropdown menu and choose ``||variables:Rename variable...||``. Enter **myEnemy** and click **Ok**. 
 
 ► Change the kind from **Player** to **Enemy**.
 
@@ -102,9 +102,9 @@ game.onUpdateInterval(2500, function () {
 
 ---
 
-► To add **60**, drag the ``||math:[0] [+] [0]||`` block from the ``||math:Math||`` category to replace the first **0** of the ``||sprites:set [myEnemy] position to x [0] y [0]||`` block.
+► To add **60**, drag the ``||math:[0] [+] [0]||`` block from the ``||math:Math||`` category to replace the **x** value of the ``||sprites:set [myEnemy] position to x [0] y [0]||`` block.
 
-► Change the **0** to **the left** of the **+** sign to **60**.
+► In the math block, change the **0** to **the left** of the **+** sign to **60**.
 
 
 
@@ -142,7 +142,7 @@ let mySprite: Sprite = null
 
 **🎮 Take a look at the game window to see how everything works 🎮**  
 
-You should have a shark that moves around with the arrow keys and enemies that spawn in front of the shark and up toward the top of the screen.
+You should have a shark that moves around with the arrow keys and enemies that spawn in front of the shark and up at the very top of the screen.
 
 
 
@@ -172,7 +172,11 @@ let mySprite: Sprite = null
 
 ## Finale 
 
-There you have it! Enemies will now pop up in front of your shark every couple of seconds.  
+**There you have it!** 
+
+---
+
+Enemies will now pop up in front of your shark every couple of seconds.  
 
 Click **Finish** to head back out to the main map to find out what you can do next!
 
