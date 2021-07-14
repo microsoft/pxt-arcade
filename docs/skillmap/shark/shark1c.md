@@ -107,10 +107,11 @@ game.onUpdateInterval(2500, function () {
 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()
-    scene.cameraShake(4, 500)
     info.changeLifeBy(-1)
+    scene.cameraShake(4, 500)
 })
 ```
+
 
 ```assetjson
 {
