@@ -46,7 +46,7 @@
 * url: skillmap/shark/shark1c
 * tags: easy, enemies
 * imageUrl: /static/skillmap/shark/shark1c.gif
-* next: shark2
+
 
 
 ### shark2
@@ -87,7 +87,7 @@
 * url: skillmap/shark/shark4a
 * tags: easy, background, decorations, asset editor
 * imageUrl: /static/skillmap/shark/shark4a.gif
-* next: shark-finish
+
 
 ### shark-finish
 * kind: completion
