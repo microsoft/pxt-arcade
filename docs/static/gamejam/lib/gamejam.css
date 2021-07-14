@@ -249,16 +249,6 @@ h1 {
     display: none;
 }
 
-/***** WINNERS - HONORABLE MENTIONS (OLD) ****/
-
-.winners #rules table:nth-of-type(4) tr {
-    align-items: flex-start;
-}
-
-.winners #rules table:nth-of-type(4) td {
-    padding: 1rem;
-}
-
 /**** FOOTER ****/
 
 @media (max-width: 768px) {

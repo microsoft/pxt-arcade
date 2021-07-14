@@ -7,9 +7,76 @@
     "end": "2021-5-17 23:59:59 GMT-0700",
     "featured": [
         {
+            "id": "12051-52643-75656-27166",
+            "title": "Tomb raider",
+            "author": "Thomas_s",
+            "description": "Adventure through an ancient tomb in this tough-as-nails platformer. See if you can find all 13 ancient gems and the 3 exits before collapse!"
+        },
+        {
+            "id": "65329-73524-64041-09452",
+            "title": "The Wanderer",
+            "author": "DahbixLP",
+            "description": "Explore space and gather materials in this polished, resource-collection game as you try to fix your hyperdrive and escape the supernova!"
+        },
+        {
             "id": "18905-47762-39268-22513",
             "title": "Timed Platformer",
-            "author": "fd268"
+            "author": "fd268",
+            "description": "Make sure you don't run out of time as you play through all twelve levels of this creative platformer!"
+        },
+        {
+            "id": "88379-32882-11701-72372",
+            "title": "The Attack of the Serpents",
+            "author": "UnsignedArduino",
+            "description": "Dive into the rich world of The Attack of the Serpents as you battle legions of snakes with the power of time at your hand!"
+        },
+        {
+            "id": "40197-18454-82229-31469",
+            "title": "Tau Dilation",
+            "author": "Delta",
+            "description": "The Titan of Time, Kronos, has escaped from Tartarus and it is up to you to defeat him on his own terms."
+        },
+        {
+            "id": "35092-38497-85434-62286",
+            "title": "Time Man",
+            "author": "Rishi",
+            "description": "A complex, ambitious puzzle-platformer where you can freeze time to stop flying boulders. Be careful of quicksand and slime!"
+        },
+        {
+            "id": "24218-66945-78169-98108",
+            "title": "Time Quest",
+            "author": "Rocket Scion",
+            "description": "Travel through time to take photos, collect items, and meet friendly and not-so-friendly locals in this beautiful dungeon crawler."
+        },
+        {
+            "id": "56203-12068-28996-67940",
+            "title": "Time Flies (Different Take)",
+            "author": "BlockyChamp",
+            "description": "A creative twist on 'Time Flies' with a lot of depth! Catch time and lives as you try to beat your high score."
+        },
+        {
+            "id": "28170-65925-97085-38467",
+            "title": "Timing and Patience",
+            "author": "EgeoTube Gamez",
+            "description": "A simple, addicitive game where you must use timing and patience to try and nab the high score. Try out the different difficulty levels!"
+        },
+        {
+            "id": "09641-64692-55182-88904",
+            "title": "Time Over",
+            "author": "Daniela",
+            "description": "A beautiful game with a great premise! Collect all the numbers for your clock before time runs out!"
+        },
+        {
+            "id": "61260-89058-32987-83888",
+            "title": "fast restaurant",
+            "author": "demoCrash",
+            "description": "Deliver the right dishes to the customer as soon as possible in this creative, challenging game."
+        },
+        {
+            "id": "19854-09262-25388-69397",
+            "title": "4-in-1 time-related 8-bit fun",
+            "author": "Samuel G",
+            "description": "Four fun, unique games for the price of one! Make sure you play through each of these time-related minigames."
         },
         {
             "id": "12663-88251-31248-05940",
@@ -45,11 +112,6 @@
             "id": "01848-24652-71512-77216",
             "title": "BABY KAIJU NOM NOM",
             "author": "Anonymous"
-        },
-        {
-            "id": "88379-32882-11701-72372",
-            "title": "The Attack of the Serpents",
-            "author": "UnsignedArduino"
         },
         {
             "id": "39662-55515-02517-40102",
@@ -92,19 +154,9 @@
             "author": "Dr. Ludos"
         },
         {
-            "id": "61260-89058-32987-83888",
-            "title": "fast restaurant",
-            "author": "demoCrash"
-        },
-        {
             "id": "25844-74470-45677-95030",
             "title": "Time Stopper Tommy",
             "author": "logic_lab"
-        },
-        {
-            "id": "28170-65925-97085-38467",
-            "title": "Timing and Patience",
-            "author": "EgeoTube Gamez"
         },
         {
             "id": "92741-88760-26118-86288",
@@ -125,11 +177,6 @@
             "id": "18463-60946-96060-90098",
             "title": "Mario RipOff 2021",
             "author": "thesonicfan192"
-        },
-        {
-            "id": "09641-64692-55182-88904",
-            "title": "Time Over",
-            "author": "Daniela"
         },
         {
             "id": "01031-12206-01166-26436",
@@ -202,7 +249,7 @@
             "author": "Blanca"
         },
         {
-            "id": "57398-50194-68671-78432",
+            "id": "39697-95718-82872-45842",
             "title": "Glitch",
             "author": "Web_Headed_Games"
         },
@@ -237,21 +284,6 @@
             "author": "NoValues"
         },
         {
-            "id": "40197-18454-82229-31469",
-            "title": "Tau Dilation",
-            "author": "Delta"
-        },
-        {
-            "id": "35092-38497-85434-62286",
-            "title": "Time Man",
-            "author": "Rishi"
-        },
-        {
-            "id": "24218-66945-78169-98108",
-            "title": "Time Quest",
-            "author": "Rocket Scion"
-        },
-        {
             "id": "84710-56856-82784-71061",
             "title": "Time Flies",
             "author": "SilentGaming"
@@ -265,11 +297,6 @@
             "id": "10139-00748-15350-42729",
             "title": "detonator",
             "author": "cryptomite"
-        },
-        {
-            "id": "56203-12068-28996-67940",
-            "title": "Time Flies (Different Take)",
-            "author": "BlockyChamp"
         },
         {
             "id": "20783-42583-15473-15781",
@@ -317,24 +344,9 @@
             "author": "Alex C"
         },
         {
-            "id": "19854-09262-25388-69397",
-            "title": "4-in-1 time-related 8-bit fun",
-            "author": "Samuel G"
-        },
-        {
-            "id": "12051-52643-75656-27166",
-            "title": "Tomb raider",
-            "author": "Thomas_s"
-        },
-        {
             "id": "76574-82283-53837-47808",
             "title": "Drive Until Dawn",
             "author": "Cam"
-        },
-        {
-            "id": "65329-73524-64041-09452",
-            "title": "The Wanderer",
-            "author": "DahbixLP"
         },
         {
             "id": "18329-44039-92547-78466",
@@ -350,6 +362,11 @@
             "id": "23794-23627-23947-81462",
             "title": "go back in time (time machine)",
             "author": "girlwhocode"
+        },
+        {
+            "id": "21921-69081-33504-86653",
+            "title": "Hunter Time on a Mission",
+            "author": "MangoFLam3"
         }
     ]
 }
