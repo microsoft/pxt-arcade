@@ -47,7 +47,7 @@ game.onUpdateInterval(2500, function () {
 
 ► From ``||sprites:Sprites||``, drag ``||variables: set [mySprite2] to sprite [ ] of kind [Player]||`` into the empty ``||game:on game update every [2500] ms||`` container.
 
-► Ro rename this to **myEnemy**, click **mySprite2** to open a dropdown menu and choose ``||variables:Rename variable...||``. Enter **myEnemy** and click **Ok**. 
+► To rename this to **myEnemy**, click **mySprite2** to open a dropdown menu and choose ``||variables:Rename variable...||``. Enter **myEnemy** and click **Ok**. 
 
 ► Change the kind from **Player** to **Enemy**.
 
