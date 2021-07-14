@@ -127,15 +127,15 @@ npm run build
 
 ```
 npm install
-pxt link ../pxt
+npm link ../pxt
 ```
 
 * go to ``pxt-arcade`` and run
 
 ```
 npm install
-pxt link ../pxt
-pxt link ../pxt-common-packages
+npm link ../pxt
+npm link ../pxt-common-packages
 ```
 
 ### to run the local server

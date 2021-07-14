@@ -11,6 +11,7 @@ This activity will help you edit your sprites and backgrounds to create a brand 
 ![Build a world](/static/skillmap/shark/shark4a.gif)
 
 
+
 ## Step 2 - Main Sprite
 
 **Let's start with the main character!**  
@@ -19,6 +20,7 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 ---
 
 ► Click the **shark** sprite, then click the **Edit** button in the Asset Preview panel to the left.
+
 
 ► Draw your own character in the image editor, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your main character, click **Done**. 
 
@@ -35,6 +37,7 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 ► Draw a background that fits your main character, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your background, click **Done**. 
 
 💡 You can see the name of an image if you hover over the tile or click the tile and look for the name in the Asset Preview window.
+
 
 
 ## Step 4 - Decorations
@@ -60,6 +63,7 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 
 
 
+
 ## Step 6 - Enemies
 
 **😈 Enemies 😈**
@@ -67,6 +71,7 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 ---
 
 ► Click the **enemy** sprite, then click the **Edit** button in the panel to the left.
+
 
 ► Draw something for your main character to avoid (or toggle to the **Gallery** to find something that has already been created).  When you're happy with your enemy sprite, click **Done**. 
 
@@ -79,7 +84,7 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 
 ---
 
-► Click the **laser** sprite, then click the **Edit** button in the panel to the right.
+► Click the **laser** sprite, then click the **Edit** button in the panel to the left.
 
 ► Draw something that your main character can throw at other sprites (or toggle to the **Gallery** to find something that has already been created).  When you're happy with your projectile, click **Done**. 
 
@@ -112,7 +117,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
     info.changeScoreBy(1)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.fountain, 200)
+
+    otherSprite.destroy(effects.bubbles, 100)
+    info.changeScoreBy(1)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()
@@ -130,7 +137,6 @@ mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
 controller.moveSprite(mySprite)
 mySprite.setStayInScreen(true)
 info.startCountdown(15)
-info.setLife(3)
 for (let index = 0; index < 10; index++) {
     myDecor = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
     myDecor.setPosition(randint(5, 155), 96)
@@ -147,6 +153,7 @@ game.onUpdateInterval(2100, function () {
 })
 
 ```
+
 
 ```assetjson
 {
