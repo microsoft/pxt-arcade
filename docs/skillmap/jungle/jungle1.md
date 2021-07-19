@@ -130,7 +130,7 @@ scene.cameraFollowSprite(mySprite)
 
 
 
-## Step 8 - Jump
+## Step 9 - Jump
 
 Now that the monkey has safely landed, we can make it jump when we press the **up** arrow!
 
@@ -172,7 +172,7 @@ tiles.setTilemap(tilemap`level1`)
 ```
 
 ```ghost
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {}
 
 scene.setBackgroundImage(assets.image`background`)
 tiles.setTilemap(tilemap`level1`)
