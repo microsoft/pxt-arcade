@@ -1,230 +1,159 @@
-# Food not Friends
+# A Whole New World!
+### @preferredEditor asset
+
 
 ## Introduction @showdialog
 
-Did you eat yet?
+You've made an amazing deep sea game, but now it's time to turn it into something unique!
 
-![Don't play with your food](/static/skillmap/shark/shark2.gif)
+This activity will help you edit your sprites and backgrounds to create a brand new theme.
 
-Let's send a school of fish toward the shark to keep it full and happy. 
-
-
-## step 2
-
-**🕹️ Play it again 🕹️**  
-
----
-
-Play with your project in the game window to remember where you left off.  
-Can you connect each chunk of code with actions on the screen?
+![Build a world](/static/skillmap/shark/shark4a.gif)
 
 
 
-## step 3
+## Step 2 - Main Sprite
 
-**🐠 Let's go fishing 🐠**  
-
-We need a container that will run our fishy code every 2.1 seconds.
+**Let's start with the main character!**  
+Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine snatching clouds? It's up to you!
 
 ---
 
-► From the  ``||game:Game||`` category, drag ``||game:on game update every [500] ms||`` into an empty area of the workspace.
-
-► Double-click inside the text box and change **500** to **2100**.
+► Click the **shark** sprite, then click the **Edit** button in the Asset Preview panel to the left.
 
 
-```blocks
-game.onUpdateInterval(2100, function () {
-})
-```
-
-## Step 4
-
-
-► From ``||sprites:Sprites||``, drag ``||variables: set [mySprite2] to sprite [ ] of kind [Player]||`` into the empty ``||game:on game update every [2100] ms||`` container.
-
-► To rename the sprite **myFood**, click **mySprite2** to open a dropdown menu and choose ``||variables:Rename variable...||``. Enter **myFood** and click **Ok**. 
-
-► Change the kind from **Player** to **Food**.
-
-```blocks
-game.onUpdateInterval(2100, function () {
-// @highlight
-    let myFood = sprites.create(img`
-        . . . 
-        . . . 
-        . . . `, SpriteKind.Food)
-})
-```
-
-## Step 5
-
-► Click the grey box inside the ``||variables: set [myFood] to sprite [ ] of kind [Food]||`` block and toggle to **My Assets** to choose the **food** fish, then click **Done**.
-
-```blocks
-game.onUpdateInterval(2100, function () {
-// @highlight
-    let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
-})
-```
+► Draw your own character in the image editor, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your main character, click **Done**. 
 
 
 
-## Step 6
+## Step 3 - Background
 
-
-** Never too far away **  
-
-It's time to tell the food sprites where to spawn. 
+**Where does your hero want to be?**
 
 ---
 
-► From ``||sprites:Sprites||``, drag a ``||sprites:set [mySprite] position to x [0] y [0]||`` block into **the end** of the ``||game:on game update every [2100] ms||``  container. 
+► Scroll down until you find the **ocean1** background, then select it and click **Edit**.
 
-► Change ``||variables:mySprite||`` to ``||variables:myFood||``.
+► Draw a background that fits your main character, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your background, click **Done**. 
 
-```blocks
-game.onUpdateInterval(2100, function () {
-    let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
-    //@highlight
-    myFood.setPosition(0, 0)
-})
-```
+💡 You can see the name of an image if you hover over the tile or click the tile and look for the name in the Asset Preview window.
 
-## Step 7
 
-**Let's start all of the fish 80 pixels in front of the shark.**  
-(This means you'll need to **add** 80 to the shark's horizontal location.) 
+
+## Step 4 - Decorations
+
+**🎍 Decorations 🎍**
 
 ---
 
-► To add **80**, drag the ``||math:[0] [+] [0]||`` block from the ``||math:Math||`` category to replace the **x** value of the ``||sprites:set [myFood] position to x [0] y [0]||`` block.
+► Click the **decoration** sprite, then click the **Edit** button in the panel to the left.
 
-► In the math block, change the first **0** to **80** (so you have ``||math:[80] [+] [0]||``).
+► Draw a small decoration for the ground of your scene, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your decoration, click **Done**. 
 
 
+## Step 5 - Food
 
-```blocks
-game.onUpdateInterval(2100, function () {
-    let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
-    //@highlight
-     myFood.setPosition(80 + 0, 0)
-
-})
-```
-
-## Step 8
-
-**🔎 Where are you? 🔍**  
-Now we need a block to represent the horizontal **(x)** position of the shark.
+**🪙 Collectibles 🪙**
 
 ---
 
-► From ``||sprites:Sprites||`` grab the ``||sprites:[mySprite] [x]||`` value and snap it in to replace the **0** on **the right** side of the **+** sign.
+► Click the **myFood** sprite, then click the **Edit** button in the panel to the left.
 
-
-```blocks
-game.onUpdateInterval(2100, function () {
-let mySprite: Sprite = null
-
-    let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
-    //@highlight
-     myFood.setPosition(80 + mySprite.x, 0)
-
-})
-```
-
-## Step 9
-
-**🎮 Take a look at the game window to see how everything works 🎮**  
-
-You should have a shark that moves around with the arrow keys and food that appears in front of the shark (but up at the very top of the screen.)
+► Draw whatever you want your main character to collect (or toggle to the **Gallery** to find something that has already been created).  When you're happy with your sprite, click **Done**. 
 
 
 
-## Step 10
 
-**🍣 Food all over the place 🍣**  
-Let's add fish at a random heights to keep the shark moving.
+## Step 6 - Enemies
+
+**😈 Enemies 😈**
 
 ---
 
-► From ``||math:Math||`` grab  ``||math:pick random [0] to [10]||``  and snap it in to replace the **y** value.
+► Click the **enemy** sprite, then click the **Edit** button in the panel to the left.
 
-► Change the random block to pick from a min of **5** to a max of **115**.
 
-```blocks
-game.onUpdateInterval(2100, function () {
-let mySprite: Sprite = null
+► Draw something for your main character to avoid (or toggle to the **Gallery** to find something that has already been created).  When you're happy with your enemy sprite, click **Done**. 
 
-    let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
-    //@highlight
-     myFood.setPosition(80 + mySprite.x, randint(5, 115))
 
-})
-```
 
-## Step 11
 
-**🐡 Fast Food 🐡**  
-Get the fish swimming for a bigger challenge.
+## Step 7 - Projectile
+
+**🧨 Projectiles 🧨**
 
 ---
 
-► From ``||sprites:Sprites||`` grab  ``||sprites:set [mySprite] [x] to [0]||``  and snap it in at **the bottom** of your ``||game:on game update every [2100] ms||`` container.
+► Click the **laser** sprite, then click the **Edit** button in the panel to the left.
 
-► Change ``||variables:mySprite||`` to ``||variables:myFood||``.
-
-► Change ``||sprites:x||`` to ``||sprites:vx (velocity x)||`` and make the value **-75** to get the fish moving from right to left.
-
-```blocks
-game.onUpdateInterval(2100, function () {
-let mySprite: Sprite = null
-
-    let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
- 
-     myFood.setPosition(80 + mySprite.x, randint(5, 115))
-        //@highlight
-         myFood.vx = -75
+► Draw something that your main character can throw at other sprites (or toggle to the **Gallery** to find something that has already been created).  When you're happy with your projectile, click **Done**. 
 
 
-})
-```
+## Finale
 
-
-
-## Finale 
-
-**So satisfying!**  
-Now your shark can find food anywhere it goes. 
+**Fantastic!**  
+You've created a game of your very own!
 
 ---
 
-Click **Finish** and continue to the next level so you can code points for each of the fish you eat! 
+Don't forget to play your game to make sure you like the way everything looks. When you're happy, click **Finish** to head back to the skillmap where you can share your game with family and friends.
+
 
 
 
 
 ```template
+namespace SpriteKind {
+    export const Decoration = SpriteKind.create()
+}
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(assets.image`laser`, mySprite, 90, 0)
 })
+info.onCountdownEnd(function () {
+    game.over(true)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.disintegrate, 100)
+    info.changeScoreBy(1)
+})
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+
+    otherSprite.destroy(effects.bubbles, 100)
+    info.changeScoreBy(1)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    scene.cameraShake(4, 500)
+    info.changeLifeBy(-1)
+})
+let myFood: Sprite = null
+let myEnemy: Sprite = null
 let projectile: Sprite = null
+let myDecor: Sprite = null
 let mySprite: Sprite = null
-scene.setBackgroundColor(8)
+scene.setBackgroundColor(9)
+scene.setBackgroundImage(assets.image`ocean1`)
 mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
 controller.moveSprite(mySprite)
 mySprite.setStayInScreen(true)
-```
-
-```ghost
-
+info.startCountdown(15)
+for (let index = 0; index < 10; index++) {
+    myDecor = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
+    myDecor.setPosition(randint(5, 155), 96)
+}
+game.onUpdateInterval(2500, function () {
+    myEnemy = sprites.create(assets.image`enemy`, SpriteKind.Enemy)
+    myEnemy.setPosition(80 + mySprite.x, randint(5, 115))
+    myEnemy.follow(mySprite, 30)
+})
 game.onUpdateInterval(2100, function () {
-    let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
-    myFood.setPosition(randint(150, 160), randint(0, 120))
+    myFood = sprites.create(assets.image`food`, SpriteKind.Food)
+    myFood.setPosition(60 + mySprite.x, randint(5, 115))
     myFood.vx = -75
 })
+
 ```
+
 
 ```assetjson
 {

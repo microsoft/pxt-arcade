@@ -154,6 +154,8 @@ Take a look at your game window and move your shark around while pressing the (A
 
 **Congratulations!**
 
+---
+
 Now that you have a laser shark, you can click **Finish** to head back to the skillmap and add more to your game!
 
 

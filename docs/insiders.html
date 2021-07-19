@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Microsoft MakeCode Insiders Program</title>
+    <meta name="Description" content="Microsoft MakeCode Insiders Program" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    <!-- @include scripthead.html -->
+
+    <style>
+        h1,
+        .subheading {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-top: 1em;
+            color: #f5f7ec;            
+            
+
+        }
+
+        .subheading {
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .tagline {
+            opacity: 0.6;
+            color: #f5f7ec;
+        }
+
+        .header-image {
+            margin: -1.5em -3em;
+        }
+
+        .header-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        #root {
+            background: #157175;
+            background-image: url('static/insiders-background.png');
+            display: block !important;
+        }
+
+        body,
+        .ui.button {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+            font-weight: 300;
+        }
+
+        a {
+            color: #a3839e;
+            font-weight: 400;
+        }
+
+        a:hover {
+
+            color: #a3839e;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        #main {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+            background: #157175;
+            color: white;
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 1.5em 3em;
+            box-shadow: 2px 4px 12px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        #simulator {
+            position: relative;
+            height: 0;
+            padding-bottom: 117.6%;
+            overflow: hidden;
+            margin: 1.5em auto;
+            margin-bottom: 3em;
+        }
+
+        #simulator iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .ui.button {
+            width: 14em;
+            padding: 1.5em;
+            margin: 2em auto;
+            background-color:  #a3839e ;
+            color: #ffffff;
+            display: block;
+            font-size: 1.4em;
+            box-shadow: none;
+            transition: .25s;
+        }
+
+        .ui.button:focus,
+        .ui.button:hover {
+            background-color:  #f5f7ec ;
+            box-shadow: 0 0 50px rgba(241, 193, 255, 0.75);
+            color: #777777;
+            filter: none;
+            transform: scale(1.05);
+        }
+
+        ol li::before {
+            color: #ffffff !important;
+            font-size: 2em;
+            font-weight: 300;
+            border-radius: 50%;
+
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-left: -3rem !important;
+            margin-top: -0.5rem !important;
+
+            padding-right: 0.7rem;
+            padding-top: 0.6rem;
+
+            background-color: #a3839e !important;
+            ;
+        }
+
+        ul.ui.list {
+            padding: 0;
+            margin: 0;
+        }
+
+        ol.ui.list {
+            padding: 0 2em;
+            margin: 1em 1.25em;
+            align-self: stretch;
+        }
+
+        ol li p {
+            padding-left: 0.5em;
+            line-height: 1.5em;
+        }
+
+        .cta {
+            text-align: center;
+            max-width: 550px;
+            padding-bottom: 2em;
+        }
+
+        .ele {
+            text-align: left;
+            max-width: 550px;
+            padding-bottom: 2em;
+        }
+
+        .legal {
+            font-size: .75em;
+        }
+
+        .logotext {
+            max-width: 30%;
+        }
+
+        /** footer styling **/
+        footer {
+            background-color: #157175 !important;
+            border-top: 1px solid hsla(0, 0%, 100%, 0.2) !important;
+            margin-top: 0 !important;
+            padding-top: 2rem !important;
+        }
+
+        footer.ui * {
+            color: white !important;
+            opacity: 0.9;
+        }
+
+        .ui.divider:not(.vertical):not(.horizontal) {
+            border-top: 1px solid hsla(0, 0%, 100%, 0.3);
+            border-bottom: 1px solid hsla(0, 0%, 55%, 0.1);
+        }
+
+        @media only screen and (max-width: 813px) {
+            #main {
+                margin: 0;
+                padding: 1em;
+            }
+
+            .header-image {
+                margin: -1em;
+            }
+
+            ol.ui.list {
+                margin: 0 0;
+            }
+
+            h1 {
+                font-size: 2em;
+                font-weight: bold;
+            }
+        }
+    </style>
+
+    <script>
+        function handleOnLoad() {
+            
+
+            var langPicker = document.querySelector("#langpicker");
+            if (langPicker) {
+                langPicker.remove();
+            }
+        }
+    </script>
+</head>
+
+<body id="root" class="root" onload="handleOnLoad()">
+    <div id="main" role="presentation">
+        <div class="header-image"><img src="static/insiders-header.png" alt="MakeCode Insiders Program"></img></div>
+        <h1>MakeCode Insiders Program</h1>
+        <p role="presentation" class="subheading">Share your opinion. Shape an experience.</p>
+        <br/>
+        <img src="static/insider-girl.png" alt="Girl playing with tablet"/>
+        <br/><br/>
+        
+        <div class="ele">
+            <h3>What is MakeCode?</h3>
+            <p><a href="http://makecode.com" target="_new">Microsoft MakeCode</a> is a free, open-source code platform that allows users to write programs for a wide variety of applications even if 
+            they have little or no previous coding experience.<br/></p>   
+        </div>
+
+
+        <div class="ele">
+            <h3>Program Overview</h3>
+            <p>Through the MakeCode Insiders Program, Insiders will have the opportunity to engage with a select group of peers, while directly 
+            influencing the future development of MakeCode.  Insiders will share and build upon their knowledge of coding through weekly 
+            sessions with members of the MakeCode team. In these sessions, they will complete tutorials with their cohort of 8-10 fellow 
+            Insiders and provide feedback. Extra “at-home” activities will also be assigned over the course of twelve weeks.   
+            
+            Insiders will benefit by connecting with likeminded peers, making connections at Microsoft, building coding knowledge, 
+            and earning recognition for completing key program objectives.</p>   
+        </div>
+
+        <div class="ele">
+
+            <h3>Program Criteria</h3>
+            <p>To be eligible for the program, teens must meet the following criteria. </p>
+            <ul>
+                <li>Teens must be 13-17 years old (born between December 2004 and July 2008)</li> 
+                <li>Live in the United States</li> 
+                <li>Read and speak English fluently</li> 
+                <li>Be available for an hour-long virtual session every week for three months</li> 
+                <li>Be available to dedicate up to two hours of additional time each week to Insider projects</li> 
+                <li>No coding experience required </li>
+            </ul>
+            
+        </div>
+
+        <ol class="ui ordered list">
+            <li class="bottom aligned content">
+                <p>
+
+                    First, read through the <a href="https://microsoft-my.sharepoint.com/:w:/p/kprottsman/EftJX2NtcWlDgaub57U_6b8BPGv8x6MCX1ULPbwznp3WLA?e=et54Xb" target="_new">Insiders Handbook</a> for a description of what it means to be a MakeCode Insider. </p>
+            </li>
+
+            <li class="bottom aligned content">
+                <p>Next, fill out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAQLCKkRUMUM2WDdQS1dQRUc2UjBQU05NRkpTRjhGTy4u" target="_new">Insider Application</a> and submit it to us by 11:59pm on August 8th, 2021. 
+
+                    (Don't forget to include your video or essay!)
+                </p>
+            </li>
+
+            <li class="bottom aligned content">
+                <p>Finalists will be contacted to schedule an interview. Selected teens will be notified by 8/15/2021.
+                </p>
+            </li>
+
+            <a class="ui button" id="opentutorial" target="_blank"
+
+                href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAQLCKkRUMUM2WDdQS1dQRUc2UjBQU05NRkpTRjhGTy4u">Apply Now!</a>
+        </ol>
+
+        <div ele>
+            Need more information?  See the resources below:
+            <ul>
+                <li><a href="https://microsoft-my.sharepoint.com/:w:/p/kprottsman/EftJX2NtcWlDgaub57U_6b8BPGv8x6MCX1ULPbwznp3WLA?e=et54Xb" target="_new">Insiders Handbook</a></li>
+                <li><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAQLCKkRUMUM2WDdQS1dQRUc2UjBQU05NRkpTRjhGTy4u" target="_new">Application Form</a></li>
+                </ul>
+
+            
+        </div>
+
+    </div>
+
+    <!-- @include footer.html -->
+    
+</body>
+
+</html>

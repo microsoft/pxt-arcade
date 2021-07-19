@@ -27,6 +27,8 @@ Play with your project in the game window and try to remember which chunk of cod
 
 ► Send your enemies after the shark by adding the ``||sprites:set [myEnemy] follow [mySprite]||`` block to **the end** of the ``||game:on game update every [2500] ms||`` container where ``||variables:myEnemy||`` is made.
 
+► Click the plus sign (**+**) to the right of the ``||sprites:set [myEnemy] follow [mySprite]||`` block and set the enemy speed to **30** so it doesn't attack too fast.
+
 ```blocks
 game.onUpdateInterval(2500, function () {
 let mySprite: Sprite = null
@@ -97,6 +99,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ## Finale 
 
 **Way to go!!**
+
+---
 
 All you have to do is avoid the crabs to stay alive!  
 

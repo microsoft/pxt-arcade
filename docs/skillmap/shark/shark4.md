@@ -1,4 +1,4 @@
-# A Whole New World
+# Under the Sea
 
 ## Introduction @showdialog
 
@@ -18,7 +18,14 @@ Let's build a world for your shark to swim around in!
 ► Click the empty grey box and toggle to **My Assets** to choose **ocean1**, then click **Done**.
 
 ```blocks
+let mySprite: Sprite = null
+scene.setBackgroundColor(8)
+//@highlight
 scene.setBackgroundImage(assets.image`ocean1`)
+mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+mySprite.setStayInScreen(true)
+info.startCountdown(15)
 ```
 
 ## Step 3 - Repeat Decorations
@@ -32,7 +39,13 @@ scene.setBackgroundImage(assets.image`ocean1`)
 ► Change the repeat number from **4** times to **10** times.
 
 ```blocks
+let mySprite: Sprite = null
+scene.setBackgroundColor(8)
 scene.setBackgroundImage(assets.image`ocean1`)
+mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+mySprite.setStayInScreen(true)
+info.startCountdown(15)
 //@highlight
 for (let index = 0; index < 10; index++) {
 }
@@ -40,9 +53,9 @@ for (let index = 0; index < 10; index++) {
 
 ## Step 4 - Add Background Decorations
 
-► From ``||sprites:Sprites||``, drag ``||variables:set [mySprite2] to sprite [ ] of kind [Player]||`` into ``||loops:repeat [10] times||``. 
+► From ``||sprites:Sprites||``, drag ``||variables:set [mySprite2] to sprite [ ] of kind [Player]||`` into the empty ``||loops:repeat [10] times||`` container. 
 
-► Click the ``||variables:mySprite2||`` dropdown and **Rename variable...** call this **myDecor**. 
+► Click the ``||variables:mySprite2||`` dropdown and choose **Rename variable...** call this **myDecor**. 
 
 ► Change the **kind** of the sprite to **Decoration**.
 
@@ -52,10 +65,17 @@ for (let index = 0; index < 10; index++) {
 namespace SpriteKind {
     export const Decoration = SpriteKind.create()
 }
+let mySprite: Sprite = null
+scene.setBackgroundColor(8)
+scene.setBackgroundImage(assets.image`ocean1`)
+mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+mySprite.setStayInScreen(true)
+info.startCountdown(15)
 scene.setBackgroundImage(assets.image`ocean1`)
 for (let index = 0; index < 10; index++) {
+//@highlight
     let myDecor = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
-
 }
 ```
 
@@ -77,11 +97,17 @@ To make the seaweed look more natural, let's change y value to position it close
 namespace SpriteKind {
     export const Decoration = SpriteKind.create()
 }
+let mySprite: Sprite = null
+scene.setBackgroundColor(8)
 scene.setBackgroundImage(assets.image`ocean1`)
+mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+mySprite.setStayInScreen(true)
+info.startCountdown(15)
 for (let index = 0; index < 10; index++) {
-    let mySprite = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
-
-    mySprite.setPosition(0, 96)
+    let myDecor = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
+//@highlight
+    myDecor.setPosition(0, 96)
 }
 ```
 
@@ -93,18 +119,30 @@ for (let index = 0; index < 10; index++) {
 
 
 ```blocks
+namespace SpriteKind {
+    export const Decoration = SpriteKind.create()
+}
+let mySprite: Sprite = null
+scene.setBackgroundColor(8)
 scene.setBackgroundImage(assets.image`ocean1`)
+mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+mySprite.setStayInScreen(true)
+info.startCountdown(15)
 for (let index = 0; index <= 10; index++) {
-    let mySprite = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
-
-    mySprite.setPosition(randint(5, 155), 96)
+    let myDecor = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
+    //@highlight
+    myDecor.setPosition(randint(5, 155), 96)
 }
 ```
 
 
 ## Finale
 
-Excellent! Now your shark has a lovely living space!
+**Excellent!**  
+Now your shark has a lovely living space!
+
+___
 
 Play your game to make sure you like the way everything looks. When you're happy, click **Finish** to get back out to the skillmap.
 
@@ -119,7 +157,6 @@ namespace SpriteKind {
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     otherSprite.destroy(effects.disintegrate, 100)
     info.changeScoreBy(1)
-    info.startCountdown(15)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(assets.image`laser`, mySprite, 90, 0)
@@ -131,6 +168,7 @@ scene.setBackgroundColor(8)
 mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
 controller.moveSprite(mySprite)
 mySprite.setStayInScreen(true)
+info.startCountdown(15)
 
 game.onUpdateInterval(2100, function () {
     myFood = sprites.create(assets.image`food`, SpriteKind.Food)
