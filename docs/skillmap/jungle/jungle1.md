@@ -143,8 +143,8 @@ Now that the monkey has safely landed, we can make it jump when we press the **u
 ► Inside of the ``||controller:on [up] button [pressed]||`` container, add ``||sprites:make [mySprite] gravity jump||``. 
 
 ```blocks
-let mySprite: Sprite = null
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    let mySprite: Sprite = null
     gravity_jump(mySprite)
 })
 ```
@@ -161,7 +161,6 @@ Take a spin through the level, then click **Finish** to return to the main skill
 
 
 ```package
-arcade-background-scroll=github:microsoft/arcade-background-scroll/
 pxt-tilemaps=github:microsoft/pxt-tilemaps/
 ```
 
@@ -181,6 +180,7 @@ controller.moveSprite(mySprite, 100, 0)
 mySprite.ay = 500
 scene.cameraFollowSprite(mySprite)
 ```
+
 
 ```customts
 namespace sprites {
