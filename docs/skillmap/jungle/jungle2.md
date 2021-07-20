@@ -75,19 +75,25 @@ pxt-tilemaps=github:microsoft/pxt-tilemaps/
 
 
 ```template
-scene.setBackgroundImage(assets.image`background`)
-tiles.setTilemap(tilemap`level1`)
-```
-
-```ghost
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-
+    gravity_jump(mySprite)
+})
 scene.setBackgroundImage(assets.image`background`)
 tiles.setTilemap(tilemap`level1`)
 let mySprite = sprites.create(assets.image`Stand`, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 0)
 mySprite.ay = 500
 scene.cameraFollowSprite(mySprite)
+```
+
+```ghost
+scene.onOverlapTile(SpriteKind.Projectile, assets.tile`poison pit`, function (sprite, location) {
+    tiles.setWallAt(location, false)
+    tiles.setTileAt(location, assets.tile`transparency16`)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, location) {
+    game.over(true)
+})
 ```
 
 ```customts
