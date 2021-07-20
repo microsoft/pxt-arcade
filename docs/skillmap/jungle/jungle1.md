@@ -171,8 +171,10 @@ tiles.setTilemap(tilemap`level1`)
 ```
 
 ```ghost
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {}
-
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    gravity_jump(mySprite)
+    
+})
 scene.setBackgroundImage(assets.image`background`)
 tiles.setTilemap(tilemap`level1`)
 let mySprite = sprites.create(assets.image`Stand`, SpriteKind.Player)
