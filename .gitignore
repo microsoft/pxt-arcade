@@ -14,3 +14,4 @@ package-lock.json
 .vscode/ipch
 *.code-workspace
 *.DS_STORE
+.pxt/
