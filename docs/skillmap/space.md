@@ -15,87 +15,79 @@
 
 ## space
 * name: Design a Space Explorer
-* description: Let's explore the depths of space! We'll add a vessel for space travel, create some enemies, and make sure we have plenty of fuel for the journey.
-* completionUrl: /static/skillmap/certificates/design-a-space-explorer.pdf
+* layout: manual
 
 ### space-activity1
-* allowcodecarryover: false
-
-
 * name: Prepare Your Ship
 * type: tutorial
 * description: Get your spaceship ready for an adventure!
 * tags: easy, sprites, scroller
-* next: space-activity2, pusher1
-
+* next: space-activity2
 * url: /skillmap/space/space1
 * imageUrl: /static/skillmap/space/spacet1.gif
+* position: 0 2
 
 ### space-activity2
-
 * name: Ready, aim, fire!
 * type: tutorial
 * description: Equip your ship with projectiles and special effects.
 * tags: easy, projectiles, kinds
-* next: pusher2, space-activity3
-
+* next: space-activity3
 * url: /skillmap/space/space2
 * imageUrl: /static/skillmap/space/spacet2.gif
+* position: 1 2
 
 ### space-activity3
-
 * name: Here comes trouble!
 * description: Watch out for danger! Add enemies and countdown lives in your game.
 * type: tutorial
 * tags: intermediate, enemies, kinds
 * next: space-activity4, space-activity4a
-
 * url: /skillmap/space/space3
 * imageUrl: /static/skillmap/space/spacet3.gif
-
-### space-activity4
-
-* name: Fuel Up!
-* type: tutorial
-* description: Use an extension to add a fuel gauge to your ship. Make sure to refuel often!
-* tags: intermediate, extensions
-* next: space-activity5
-
-* url: /skillmap/space/space4
-* imageUrl: /static/skillmap/space/spacet4.gif
+* position: 2 1
 
 ### space-activity4a
-
 * name: All Shook Up
 * type: tutorial
 * description: Animate your ship 
 * tags: intermediate, animations
 * next: space-activity4
-
 * url: /skillmap/space/space4a
 * imageUrl: /static/skillmap/space/spacet4a.gif
+* position: 2 3
+* edges: 4 3, 3 2
+
+### space-activity4
+* name: Fuel Up!
+* type: tutorial
+* description: Use an extension to add a fuel gauge to your ship. Make sure to refuel often!
+* tags: intermediate, extensions
+* next: space-activity5
+* url: /skillmap/space/space4
+* imageUrl: /static/skillmap/space/spacet4.gif
+* position: 3 0
+
 
 ### space-activity5
-
 * name: Level Up!
 * type: tutorial
 * description: Learn how to automatically switch to a new level when the player gains an achievement.
 * tags: intermediate, forever
-* next: space-activity6
-
+* next: space-activity6, space-cert-1
 * url: /skillmap/space/space5
 * imageUrl: /static/skillmap/space/spacet5.gif
+* position: 4 0
 
 ### space-activity6
-
 * name: The Art of Darts
 * type: tutorial
 * description: Use arrays to switch up the kinds of darts fired from your ship.
 * tags: intermediate, arrays, lists
 * next: space-cert-1
-
 * url: /skillmap/space/space6
 * imageUrl: /static/skillmap/space/spacet6.gif
+* position: 5 1
 
 ### space-cert-1
 * name: Congrats!
@@ -103,13 +95,6 @@
 * type: certificate
 * imageUrl: /static/skillmap/certificates/space-cert.png
 * url: /static/skillmap/certificates/design-a-space-explorer.pdf
+* position: 5 0
 
-
-### pusher1
-* name: Blank node
-* kind: layout
-
-### pusher2
-* name: Blank node
-* kind: layout
 
