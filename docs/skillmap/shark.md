@@ -11,6 +11,7 @@
 
 ## shark
 * name: Shark Splash
+* layout: manual
 
 ### shark1
 * name: 1. Set the Scene
@@ -20,6 +21,7 @@
 * tags: easy, sprites, projectiles
 * imageUrl: /static/skillmap/shark/shark1.gif
 * next: shark2, shark1a
+* position: 0 0
 
 ### shark1a
 * name: 1a. Beware the Enemy
@@ -29,6 +31,7 @@
 * tags: easy, design, background
 * imageUrl: /static/skillmap/shark/shark1a.gif
 * next: shark1b
+* position: 0 2
 
 ### shark1b
 * name: 1b. Enemies Attack!
@@ -38,6 +41,7 @@
 * tags: easy, enemies, overlap, lives
 * imageUrl: /static/skillmap/shark/shark1b.gif
 * next: shark1c
+* position: 1 2
 
 ### shark1c
 * name: 1c. Add Enemies
@@ -46,6 +50,9 @@
 * url: /skillmap/shark/shark1c
 * tags: easy, enemies
 * imageUrl: /static/skillmap/shark/shark1c.gif
+* next: shark2
+* position: 2 2
+* edges: 2 1, 1 1
 
 
 
@@ -57,6 +64,7 @@
 * tags: easy, spawn, sprites
 * imageUrl: /static/skillmap/shark/shark2.gif
 * next: shark3
+* position: 1 0
 
 
 ### shark3
@@ -67,6 +75,7 @@
 * tags: easy, enemies, overlaps
 * imageUrl: /static/skillmap/shark/shark3.gif
 * next: shark4
+* position: 2 0
 
 
 ### shark4
@@ -78,6 +87,7 @@
 * tags: easy, background, decorations
 * imageUrl: /static/skillmap/shark/shark4.gif
 * next: shark-finish, shark4a
+* position: 3 0
 
 ### shark4a
 
@@ -87,9 +97,11 @@
 * url: /skillmap/shark/shark4a
 * tags: easy, background, decorations, asset editor
 * imageUrl: /static/skillmap/shark/shark4a.gif
+* position: 4 1
 
 
 ### shark-finish
 * kind: completion
 * type: certificate
 * url: /static/skillmap/certificates/collector-game.pdf
+* position: 4 0
