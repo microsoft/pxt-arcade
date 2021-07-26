@@ -6,13 +6,13 @@
 
 
 ## Learn to Use Tutorial
-* name: Learn to use MakeCode Arcade
+* name: Learn to Use MakeCode Arcade
 * description: Start here if you want to know the ins and outs of Arcade tutorials!
 * completionUrl: /static/skillmap/certificates/understanding-arcade-tutorials.pdf
 
 ### interface-activity1
 
-* name: Learn MakeCode Arcade
+* name: Get to Know MakeCode Arcade
 * type: tutorial
 * description: Intro to the features and vocabulary used in Arcade tutorials.
 * tags: easy
@@ -22,17 +22,15 @@
 
 
 
-
-
 ## Quick Example Games
-* name: Quick-Start Example Games
+* name: Quick-Start Games
 * description:  Build your first games in less than 30 minutes!
 * completionUrl: /static/skillmap/certificates/getting-started.pdf
 
 
 ### story-activity1
 
-* name: Greeting card
+* name: Greeting Card
 * type: tutorial
 * description: Make an amazing greeting card in minutes!
 * tags: easy, story, card, creative
@@ -65,20 +63,11 @@
 * imageUrl: /static/skillmap/collector/collector-activity1.png
 
 
-### puzzle-activity1
-
-* name: Quick Puzzle
-* type: tutorial
-* description: Make a puzzle game and test your luck!
-* tags: easy, puzzle, game
-
-* url: /skillmap/puzzle/puzzle1 
-* imageUrl: /static/skillmap/puzzle/puzzle-activity1.png
 
 
 
 ## story
-* name: Tell stories using Arcade
+* name: Tell Stories Using Arcade
 * description: Learn to tell engaging short stories using Microsoft MakeCode Arcade.
 * completionUrl: /static/skillmap/certificates/writing-stories.pdf
 
@@ -88,7 +77,7 @@
 
 * name: Bigger Greeting
 * type: tutorial
-* description: Add to your greeting card for a gift tht keeps on giving!
+* description: Add to your greeting card for a gift that keeps on giving!
 * tags: easy, card, gift, creative
 * next: story-activity3
 * reqired: 1 story
@@ -130,7 +119,7 @@
 
 ### clicker-activity2
 
-* name: Mod Clicker
+* name: Grand Clicker
 * type: tutorial
 * description: Modify your clicker so that it's unmistakably yours! 
 * tags: easy, clicker, game
@@ -160,11 +149,8 @@
 * description: Make a simple store that lets players buy more power! 
 * tags: easy, clicker, game
 
-
 * url: /skillmap/clicker/clicker4 
 * imageUrl: /static/skillmap/clicker/clicker-activity4.png
-
-
 
 
 
@@ -212,6 +198,8 @@
 * description: Add extra lives to your collector game!
 * tags: easy, collector, game
 
-
 * url: /skillmap/collector/collector4
 * imageUrl: /static/skillmap/collector/collector-activity4.png
+
+
+

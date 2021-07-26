@@ -1,6 +1,8 @@
 
 # Tiles and Camera
 
+### @autoexpandOff true
+
 
 ```jres
 {
@@ -34,10 +36,23 @@
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true
     },
+    "level0": {
+        "id": "level0",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAxZTAwMGEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA0MDAwMDAwMDAwMDAwMDQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAzMDAwMDAwMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAxMDEwMDAwMDEwMDAwMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMTAxMDEwMTAxMDEwMTAxMDEwMDAwMDAwMDAwMDEwMDAwMDAwMDAwMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjIwMjIwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDIwMjIyMjIyMjIwMjAwMDAwMjAwMDAyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMg==",
+        "tileset": [
+            "myTiles.transparency16",
+            "myTiles.tile1",
+            "myTiles.tile3",
+            "myTiles.tile4",
+            "myTiles.tile5"
+        ],
+        "displayName": "level0"
+    },
     "level": {
         "id": "level",
         "mimeType": "application/mkcd-tilemap",
-        "data": "MTAxZTAwMGEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA0MDAwMDAwMDAwMDAwMDQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAzMDAwMDAwMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAxMDEwMDAwMDEwMDAwMDUwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMTAxMDEwMTAxMDEwMTAxMDEwMDAwMDAwMDAwMDUwMDAwMDAwMDAwMDUwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjIwMjIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMjIyMjIyMjIwMjAwMDAwMDAwMDAyMDIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMg==",
+        "data": "MTAxZTAwMGEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA0MDAwMDAwMDAwMDAwMDQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAzMDAwMDAwMDEwMDAwMDAwMDAwMDAwMDAxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAxMDEwMDAwMDEwNTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMTAxMDEwMTAxMDEwMTAxMDEwMDAwMDAwMDAwMDUwMDAwMDAwMDAwMDUwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMjIwMjIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMjIyMjIyMjIwMjAwMDAwMDAwMDAyMDIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMg==",
         "tileset": [
             "myTiles.transparency16",
             "myTiles.tile1",
@@ -45,7 +60,8 @@
             "myTiles.tile4",
             "myTiles.tile5",
             "myTiles.tile2"
-        ]
+        ],
+        "displayName": "platformer1"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
@@ -84,17 +100,17 @@ controller.moveSprite(mySprite, 100, 0)
 tiles.setTilemap(tilemap`level`)
 ```
 
-## Start @unplugged
+## Start @showdialog
 
 
-In this tutorial, we'll create a way to win or lose our platformer game.
+**In this tutorial, we'll create a way to win or lose our platformer game.**
 
 ![Editing our platformer](/static/skillmap/platformer/platformer2.gif "Time to live dangerously!")
 
 
 ## Camera
 
-Take a moment to move the player sprite around in the simulator.  
+**Take a moment to move the player sprite around on the game screen. ** 
 
 Right now, the camera isn't following when the player moves off screen.  
 We can fix that!
@@ -102,7 +118,7 @@ We can fix that!
 ---
 
 
-🔲 Drag ``||scene:camera follow sprite [mySprite]||`` into the bottom 
+► Drag ``||scene:camera follow sprite [mySprite]||`` into the bottom 
 of the ``||loops:on start||`` container.
 <br/>
 
@@ -136,7 +152,7 @@ scene.cameraFollowSprite(mySprite)
 
 ## Start Tile 
 
-🎥 Now we can move around and the camera will follow 🎥  
+**🎥 Now we can move around and the camera will follow 🎥 **
 
 Unfortunately, our player is starting in dangerous position!
 
@@ -146,10 +162,10 @@ Let's change the game so your player starts somewhere safe.
 ---
 
 
-🔲 Snap a ``||scene:place [mySprite] on top of random [ ]||`` block 
+► Snap a ``||scene:place [mySprite] on top of random [ ]||`` block 
 into the bottom of the ``||loops:on start||`` container.
 
-🔲 Click the checkerboard tile and replace it with the green flag.
+► Click the checkerboard tile and replace it with the green flag.
 
 ---
 
@@ -190,19 +206,19 @@ tiles.placeOnRandomTile(mySprite, myTiles.tile3)
 
 ## Game Over Pt. 1
 
-💀 Time to add some *danger* to this game 💀  
+**💀 Time to add some *danger* to this game 💀 **
 
 When the player overlaps the skull tile, we'll trigger a "GAME OVER".
 
 ---
 
 
-🔲 Drag the ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` container 
+► Drag the ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` container 
 into the workspace.
 
-🔲 Click the checkerboard image and change it to the skull tile.
+► Click the checkerboard image and change it to the skull tile.
 
-🔲 Snap a ``||game:game over <LOSE>||`` block into the new container.
+► Snap a ``||game:game over <LOSE>||`` block into the new container.
 <br/>
 
 ```blocks
@@ -213,17 +229,17 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location
 
 ## You Win Pt. 1
 
-🎈 We have a way to lose, let's add a way to win 🎈  
+**🎈 We have a way to lose, let's add a way to win 🎈** 
 
 ---
 
 
-🔲 Drag another ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
+► Drag another ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
 container into the workspace.
 
-🔲 This time, change the checkerboard to the trophy tile.
+► This time, change the checkerboard to the trophy tile.
 
-🔲 Snap a ``||game:game over LOSE>||`` block into the new container and toggle 
+► Snap a ``||game:game over <LOSE>||`` block into the new container and toggle 
 the &lt;LOSE&gt; switch to &lt;WIN&gt;!
 <br/>
 
@@ -233,17 +249,22 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile4, function (sprite, location
 })
 ```
 
-## Finished
+## Step Last @showdialog
 
-**That's it!**
+**🎮 Make sure to try your game in the simulator 🎮**
 
-Now we have a simple platformer that has a way to win and a way to lose.
-
-If you like, open the [__tilemap__](#tilemp "a grid of square tiles that makes up our background") 
-editor and design your own level. 
+If you want to change the experience, try opening the [__tilemap__](#tilemp "a grid of square tiles that makes up our background") 
+editor to design your own level. 
 
 ---
  
-
 **Tip:** Make sure you use the wall tool to mark anything you don't want your sprites
 to travel through!
+
+
+## Finished
+
+**Now we have a simple platformer that has a way to win and a way to lose.**
+
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

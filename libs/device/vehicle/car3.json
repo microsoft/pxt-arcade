@@ -1,0 +1,11 @@
+{
+    "animations": [{
+        "name": "car3Left",
+        "frames": [0, 1, 2, 3]
+    }, {
+        "name": "car3Right",
+        "frames": [0, 1, 2, 3],
+        "flippedHorizontal": true
+    }],
+    "tags": "misc"
+}

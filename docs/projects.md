@@ -3,9 +3,14 @@
 ```codecard
 [
     {
+        "name": "Skillmaps",
+        "url": "/skillmaps",
+        "imageUrl": "/static/skillmap/backgrounds/beginner.png"
+    },
+    {
         "name": "Tutorials",
         "url": "/tutorials",
-        "imageUrl": "/static/tutorials/game-maker-guide.png",
+        "imageUrl": "/static/tutorials/chase-the-pizza.png",
         "largeImageUrl": "/static/tutorials/chase-the-pizza.gif",
         "videoUrl": "/static/tutorials/chase-the-pizza.mp4"
     },
@@ -19,7 +24,7 @@
     {
         "name": "Live Coding",
         "url": "/live-coding",
-        "imageUrl": "/static/live-coding/sgeHKw437oE.jpg"
+        "imageUrl": "/static/live-coding/7pBGS_tKfmU.jpg"
     },
     {
         "name": "Blocks Games",
@@ -43,7 +48,7 @@
     {
         "name": "Advanced Livestream",
         "url": "/advanced-stream",
-        "imageUrl": "/static/advanced-stream/SvXeJevUkb4.jpg"
+        "imageUrl": "/static/livestream-games/boss-rush.png"
     },
     {
         "name": "Community Games",
@@ -101,6 +106,7 @@
 
 ## See Also
 
+[Skillmaps](/skillmaps),
 [Tutorials](/tutorials),
 [Multipart Tutorials](/multipart-tutorials),
 [Live Coding](/live-coding),

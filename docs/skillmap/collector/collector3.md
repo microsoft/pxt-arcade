@@ -1,5 +1,6 @@
 # Experience Danger
 
+### @autoexpandOff true
 
 ```ghost
 info.onCountdownEnd(function () {
@@ -130,7 +131,7 @@ forever(function () {
 ```
 
 
-## Intro @unplugged
+## Intro @showdialog
 
 Collecting things is great, but avoiding danger is more exciting. 
 
@@ -149,15 +150,15 @@ Let's start by adding a new kind of projectile.
 
 ---
 
-🔲 Right-click on the ``||loops:forever||`` loop container (the one that already holds
+► Right-click on the ``||loops:forever||`` loop container (the one that already holds
 the code for your main projectile) and choose **Duplicate** from the 
 top of the menu.
 
-🔲 Inside that new loop, click on the ``||variables: projectile||`` variable in the 
+► Inside that new loop, click on the ``||variables: projectile||`` variable in the 
 **set projectile to** block. A dropdown will appear, allowing you to 
 select **New variable...** . 
 
-🔲 Name this new enemy projectile **myEnemy**.
+► Name this new enemy projectile **myEnemy**.
 
 
 ```blocks
@@ -188,10 +189,10 @@ in the new **forever** loop pointed to the right thing.
 
 ---
 
-🔲 Change the variable in the new ``||sprites:set [projectile] [y] to (pick random [0] to [120])||`` block from **projectile** 
+► Change the variable in the new ``||sprites:set [projectile] [y] to (pick random [0] to [120])||`` block from **projectile** 
 to **myEnemy**.
 
-🔲 Now change the image for your **myEnemy** sprite from a coin to 
+► Now change the image for your **myEnemy** sprite from a coin to 
 something a little more dangerous, like a rock.  
 
 
@@ -229,9 +230,9 @@ fly out at about the same rate. Let's add some variation.
 
 ---
 
-🔲 Inside the first block in the **myEnemy** ``||loops:forever||`` loop, change the **vx** for **myEnemy** to **-110**
+► Inside the first block in the **myEnemy** ``||loops:forever||`` loop, change the **vx** for **myEnemy** to **-110**
 
-🔲 Rocks should also be less frequent than coins.  Let's change the 
+► Rocks should also be less frequent than coins.  Let's change the 
  ``||loops:pause (pick random [1000] to [2000])ms||`` to stay between **1500** and **2500** ms.
 
 
@@ -264,7 +265,7 @@ forever(function () {
 
 ## Step 4
 
-😲 Uh-Oh 😲
+**😲 Uh-Oh 😲**
 
 Right now, running into an enemy INCREASES your score.  That's not right.
 
@@ -272,10 +273,10 @@ Let's make sure the code knows the difference between a projectile and myEnemy.
 
 ---
 
-🔲 From ``||sprites:Sprites||``, grab a ``||sprites:set [mySprite] kind to [Player]||``
+► From ``||sprites:Sprites||``, grab a ``||sprites:set [mySprite2] kind to [Player]||``
 block and snap it just **ABOVE** the **pause** block in the enemy's **forever** loop container.
 
-🔲 In the new block, change **mySprite** to **myEnemy** and change **Player**
+► In the new block, change **mySprite2** to **myEnemy** and change **Player**
 to **Enemy**.
 
 
@@ -310,21 +311,21 @@ forever(function () {
 
 ## Step 5
 
-😈 Wicked 😈
+**😈 Wicked 😈**
 
 Now the program knows your rock is an enemy. 
 What are we going to do about it?
 
 ---
 
-🔲 Duplicate the ``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``
+► Duplicate the ``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``
  container that's already in the 
 workspace.
 
-🔲 In the header of the new container, 
+► In the header of the new container, 
 change the second **kind** from **Projectile** to **Enemy**.
 
-🔲 Change the effect from **rings** to something more meaningful for your 
+► Change the effect from **rings** to something more meaningful for your 
 enemy. (**Fire** is impressive.)
 
 
@@ -341,14 +342,14 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 At this point, the player is still awarded points when they hit a rock.
 
-Let's subtract a life, instead.
+**Let's subtract a life, instead.**
 
 ---
 
-🔲 Delete the ``||info:change score by [1]||`` block from the **on overlaps Enemy**
+► Delete the ``||info:change score by [1]||`` block from the **on overlaps Enemy**
 container. 
 
-🔲 From ``||info: Info||``, grab a ``||info:change life by [-1]||`` block and
+► From ``||info: Info||``, grab a ``||info:change life by [-1]||`` block and
 snap it into the end of the **on overlaps Enemy**
 container. 
 
@@ -365,9 +366,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## Step 7
 
-What an amazing creation!  
+**What an amazing creation!**  
 
-This game has it all...countless riches, enemies, winning, and losing!
+This game has it all...countless riches, enemies, winning, and losing!  Play it through before moving along.
 
-Click **Finish** to go to the share screen and publish your project
-to share with friends and family!
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

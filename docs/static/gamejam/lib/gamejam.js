@@ -42,8 +42,11 @@ function getInfo(path) {
         info = JSON.parse(this.responseText);
         startDate = new Date(info.start).getTime();
         endDate = new Date(info.end).getTime();
+        var judged = info.featured.some(function (el) { return !!el.description; });
         makeTimer();
         makeRules();
+        if (judged)
+            makeWinners();
         makeGallery();
         makeSchedule();
         initTelemetry();
@@ -102,8 +105,7 @@ function setTimer() {
     secondCounter.innerText = delta.toString();
 }
 function makeRules() {
-    var _a;
-    if ((_a = info) === null || _a === void 0 ? void 0 : _a.rules) {
+    if (info === null || info === void 0 ? void 0 : info.rules) {
         var rulesRequest = new XMLHttpRequest();
         rulesRequest.addEventListener("load", onLoad);
         rulesRequest.open("GET", info.rules.path);
@@ -125,36 +127,52 @@ function makeRules() {
         }
     }
 }
+function makeWinners() {
+    var content = document.querySelector(".content");
+    content.className += " winners";
+    var gallery = document.querySelector(".gallery");
+    var parent = document.createElement("div");
+    parent.id = "highlighted";
+    parent.className += "segment";
+    var title = document.createElement("h2");
+    title.innerText = "Honorable Mentions";
+    parent.appendChild(title);
+    var description = document.createElement("p");
+    description.innerText = "These are some games that the judges also loved! Give them a play, we're sure you'll enjoy yourself.";
+    parent.appendChild(description);
+    var highlighted = info.featured.filter(function (el) { return !!el.description; });
+    var row = document.createElement("div");
+    for (var i = 0; i < highlighted.length; i++) {
+        row.appendChild(makeGameCard(highlighted[i]));
+        if (i % 2 == 1) {
+            parent.appendChild(row);
+            row = document.createElement("div");
+        }
+    }
+    if (highlighted.length % 2 != 0) {
+        parent.appendChild(row);
+    }
+    content.insertBefore(parent, gallery);
+}
 function makeGallery() {
-    var _a;
-    if (!((_a = info) === null || _a === void 0 ? void 0 : _a.featured.length)) {
+    var container = document.querySelector(".gallery");
+    var parent = document.getElementById("gallery");
+    if (!(info === null || info === void 0 ? void 0 : info.featured.length)) {
         var description = document.querySelector(".gallery .description");
         description.innerText = "Check back later to play some submitted games!";
     }
+    else {
+        var hint = document.createElement("div");
+        hint.className = "hint";
+        hint.innerText = "If you see blocks overlapping each other in the editor workspace, you can \
+            reformat them by selecting \"Format Code\" from the menu when you right-click \
+            on the workspace background.";
+        container.insertBefore(hint, parent);
+    }
     var selected = randomize(info.featured); // show all the games
-    var parent = document.getElementById("gallery");
     var row = document.createElement("div");
     for (var i = 0; i < selected.length; i++) {
-        var game = selected[i];
-        var card = document.createElement("div");
-        card.className = "game";
-        var link = document.createElement("a");
-        link.href = game.url || "https://arcade.makecode.com/" + game.id;
-        var textLink = link.cloneNode();
-        var img = document.createElement("img");
-        img.src = "https://pxt.azureedge.net/api/" + game.id + "/thumb";
-        link.appendChild(img);
-        card.appendChild(link);
-        var label = document.createElement("div");
-        textLink.innerText = game.title;
-        label.appendChild(textLink);
-        if (game.author) {
-            var author = document.createElement("div");
-            author.innerText = "by " + game.author;
-            label.appendChild(author);
-        }
-        card.appendChild(label);
-        row.appendChild(card);
+        row.appendChild(makeGameCard(selected[i]));
         if (i % 3 == 2) {
             parent.appendChild(row);
             row = document.createElement("div");
@@ -164,9 +182,35 @@ function makeGallery() {
         parent.appendChild(row);
     }
 }
+function makeGameCard(game) {
+    var card = document.createElement("div");
+    card.className = "game";
+    var link = document.createElement("a");
+    link.href = game.url || "https://arcade.makecode.com/" + game.id;
+    var textLink = link.cloneNode();
+    var img = document.createElement("img");
+    img.src = "https://pxt.azureedge.net/api/" + game.id + "/thumb";
+    link.appendChild(img);
+    card.appendChild(link);
+    var label = document.createElement("div");
+    textLink.innerText = game.title;
+    label.appendChild(textLink);
+    if (game.author) {
+        var author = document.createElement("div");
+        author.innerText = "by " + game.author;
+        label.appendChild(author);
+    }
+    card.appendChild(label);
+    if (game.description) {
+        var description = document.createElement("div");
+        description.innerText = game.description;
+        label.appendChild(description);
+    }
+    return card;
+}
 function makeSchedule() {
-    var _a, _b;
-    var sorted = ((_b = (_a = info) === null || _a === void 0 ? void 0 : _a.sessions) === null || _b === void 0 ? void 0 : _b.sort(function (a, b) { return a.date < b.date ? -1 : 1; })) || [];
+    var _a;
+    var sorted = ((_a = info === null || info === void 0 ? void 0 : info.sessions) === null || _a === void 0 ? void 0 : _a.sort(function (a, b) { return a.date < b.date ? -1 : 1; })) || [];
     var parent = document.getElementById("schedule");
     for (var _i = 0, sorted_1 = sorted; _i < sorted_1.length; _i++) {
         var session = sorted_1[_i];

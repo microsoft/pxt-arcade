@@ -1,7 +1,6 @@
 # Simple Platformer
 
 
-
 ```jres
 {
     "transparency16": {
@@ -34,8 +33,8 @@
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true
     },
-    "level": {
-        "id": "level",
+    "level0": {
+        "id": "level0",
         "mimeType": "application/mkcd-tilemap",
         "data": "MTAxZTAwMGEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA0MDAwMDAwMDAwMDAwMDQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAzMDAwMDAwMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAxMDEwMDAwMDEwMDAwMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMTAxMDEwMTAxMDEwMTAxMDEwMDAwMDAwMDAwMDEwMDAwMDAwMDAwMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjIwMjIwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDIwMjIyMjIyMjIwMjAwMDAwMjAwMDAyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMg==",
         "tileset": [
@@ -44,7 +43,22 @@
             "myTiles.tile3",
             "myTiles.tile4",
             "myTiles.tile5"
-        ]
+        ],
+        "displayName": "level0"
+    },
+    "level": {
+        "id": "level",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAxZTAwMGEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA0MDAwMDAwMDAwMDAwMDQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAzMDAwMDAwMDEwMDAwMDAwMDAwMDAwMDAxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAxMDEwMDAwMDEwNTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMTAxMDEwMTAxMDEwMTAxMDEwMDAwMDAwMDAwMDUwMDAwMDAwMDAwMDUwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMjIwMjIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMjIyMjIyMjIwMjAwMDAwMDAwMDAyMDIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMg==",
+        "tileset": [
+            "myTiles.transparency16",
+            "myTiles.tile1",
+            "myTiles.tile3",
+            "myTiles.tile4",
+            "myTiles.tile5",
+            "myTiles.tile2"
+        ],
+        "displayName": "platformer1"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
@@ -59,13 +73,13 @@ scene.setBackgroundColor(11)
 tiles.setTilemap(tilemap`level`)
 ```
 
-## Welcome @unplugged
+## Welcome @showdialog
 
 Now let's take a look at the [__*sidescrolling*__](#scrolld "games that are viewed from the side, with most of the action happening horizontally") 
 [__*platformer*__](#plat "games that rely on jump and run as their main mechanic").  
 
 This kind of game peeks in on the action from the side, using "jump" and "run"
-as the main mechanic.  
+as the main mechanics.  
 
 By the time you finish this set of tutorials, you should know all you need 
 to make a fun and engaging arcade game worth sharing.
@@ -75,16 +89,17 @@ to make a fun and engaging arcade game worth sharing.
 
 ## Create the player
 
-The first thing any good platformer needs is a main character. 🐒
+**The first thing any good platformer needs is a main character. 🐒**
 
 In Arcade, our characters are [__*sprites*__](#sprote "2-D images that move on the screen").  
 We'll want to create our main sprite and get it moving before we do anything else. 
-<hr>
 
-🔲 From the ``||sprites:Sprites||`` category, drag the ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
+---
+
+► From the ``||sprites:Sprites||`` category, drag the ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
 block to the end of the ``||loops:on start||`` container.
 
-🔲 Click on the grey box in the middle of your
+► Click on the grey box in the middle of your
  ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block
  to open the sprite editor.  From there, you can switch over to "Gallery"
  and choose a pre-drawn character.
@@ -121,22 +136,16 @@ let mySprite = sprites.create(img`
 
 ## Move the player
 
-🢀 Now we need to get the player moving 🢂
+**🏃🏾‍♀️ Now we need to get the player moving 🏃🏾‍♀️**
 
 ---
 
-
-🔲 Drag a ``||controller:move [mySprite] with buttons ⊕||`` block.   
+► Drag a ``||controller:move [mySprite] with buttons ⊕||`` block.   
 to the end of the ``||loops:on start||`` container
 
-🔲 Press the ⊕ button on the new block and change the [__*vy*__](#whatVY "vertical velocity") 
-argument to **0** so that the player won't move up or down with the joypad.
+► Press the ⊕ button on the new block and change the [__*vy*__](#whatVY "vertical velocity") 
+argument to **0** so that the player won't move up or down with the joypad.  
 
-
----
-
-**Now you're ready to give your game a try in the simulator!**
-<br/>
 
 ```blocks
 scene.setBackgroundColor(11)
@@ -163,20 +172,30 @@ let mySprite = sprites.create(img`
 controller.moveSprite(mySprite, 100, 0)
 ```
 
-## Add gravity
+## Try it
 
-To make the game feel more realistic, let's add some gravity.
-
-To accomplish that, we can add [__*acceleration*__](#accel "increased speed in a direction") to "pull down" on our sprite.
+**Be sure to give your game a try on the game screen!**
 
 ---
 
-🔲 Drag a ``||sprites:set [mySprite] [x] to [0]||`` block to the end of 
+How do you like it?  Feel like making a few more changes?
+
+
+## Add gravity
+
+**To make the game feel more realistic, it needs gravity.**
+
+To accomplish that, add [__*acceleration*__](#accel "increased speed in a direction")
+to "pull down" on the sprite.
+
+---
+
+► Drag a ``||sprites:set [mySprite] [x] to [0]||`` block to the end of 
 the ``||loops:on start||`` container.
 
-🔲 Click the dropdown to change **x** to **ay (acceleration y)** 
+► Click the dropdown to change **x** to **ay (acceleration y)** 
 
-🔲 Replace **0** with **500**.
+► Replace **0** with **500**.
 <br/>
 
 
@@ -209,21 +228,21 @@ mySprite.ay = 500
 
 ## Jump Pt. 1
 
-Now that the player is on the ground, we can make them jump!
+Now that the player is on the ground, we can make it jump!
 
-Let's attach a jumping action to the 🅐 button.
+Let's attach a jumping action to the Ⓐ button.
 
 ---
 
 
-🔲 Start by dragging an ``||controller:on [A] button [pressed]||`` block into the workspace.
+► Start by dragging an ``||controller:on [A] button [pressed]||`` block into the workspace.
 
-🔲 Inside of that, add ``||sprites:set [mySprite] [x] to [0]||`` . 
+► Inside of that, add ``||sprites:set [mySprite] [x] to [0]||`` . 
 
-🔲 To choose the attribute for the player's [__*vertical velocity*__](#whatVelY "speed in the up/down direction"),
+► To choose the attribute for the player's [__*vertical velocity*__](#whatVelY "speed in the up/down direction"),
 click the dropdown menu and change **x** to **vy (velocity y)**.
 
-🔲 The player will jump upward if you change **0** to something smaller.
+► The player will jump upward if you change **0** to something smaller.
 Try  **-150** or **-200**.  
 <br/>
 
@@ -259,6 +278,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Done
 
-🔥 **That's it! We've created a simple platformer game.** 🔥  
+🔥 **That's it! Now give your game a try!** 🔥  
 
-In the next lesson we'll learn how to add obstacles and goals.
+Can you jump from platform to platform?
+
+Click **Finish** to return to the main page and go on to the next lesson!

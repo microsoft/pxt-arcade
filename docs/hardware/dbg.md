@@ -42,18 +42,117 @@ We use the following pinout:
 The white line on the silk shows the side of the PCB where the connector should be plugged in,
 and also the side where the red wire on the ribbon cable is.
 Note that it is impossible to plug it incorrectly.
+Libraries for PCB design software will be made available
+in the [GitHub repo](https://github.com/microsoft/pxt-arcade/tree/master/docs/hardware/dbg).
+Currently, there's one for EagleCAD.
+
+### RESET pin
 
 Pins 1-4 are the same as on Cortex connector.
 Unfortunately, Cortex connector places nRESET line on pin 10, which is way out.
 We instead use pin 5 for RESET (which is GND on Cortex connector).
-To make this work, we suggest you do one of the following:
-* not insert the male pin 5 into your connector (not ideal, since it's now possible to connect the cable incorrectly)
-* not connect the RESET line on your board
-* cut the cable connected to pin 5 (you can cut all wires 5-10); optionally connect that cable through a tactile button to GND to get an external reset button
-* use a debugger with custom connector (it will still work with standard Cortex connector, as there is several GND lines)
+To make this work, you'll need a custom cable.
 
-It works well to put a drop of super-glue on the connector, to keep the male header and female housing together.
-Otherwise, the male header will often stay in the board when unplugging.
+If your debugger doesn't use Cortex connector (or has the big 20-pin 100 mil connector),
+you can make a **breakout cable**.
+If your debugger use the 10 pin Cortex connector, you can make a **Cortex cable** that connects
+pin 5 to pin 10.
+
+### Breakout cable
+
+![Breakout components and assembled cable](/docs/static/hardware/dbg/breakout-init.jpg)
+
+You will need a 10-pin IDC cable, whatever cables you need on the other side of the breakout,
+a 50 mil double row male header, wire cutters, insulation strippers, insulation tape,
+and glue.
+
+![Splitting the cable](/docs/static/hardware/dbg/breakout-0.jpg)
+
+Cut the IDC cable in half.
+You will the half with the notch facing outside (also see the picture of assambled cable above).
+Separate the first 5 wires, counting from the red write number 1.
+
+![Removing insulation](/docs/static/hardware/dbg/breakout-1.jpg)
+
+Strip the insulation from the wires.
+
+![Twisting the cables](/docs/static/hardware/dbg/breakout-2.jpg)
+
+Strip insulation from the other side of your breakout, and twist the wires together.
+The picture above indicates the pinout.
+
+![Insulating](/docs/static/hardware/dbg/breakout-3.jpg)
+
+Put electrical (insulating) tape around each twisted wire,
+then around the all wires together,
+then bend one of the cables 180 degrees, and put tape around the whole thing.
+
+Now, go to **Target end** section to finish the cable.
+
+### Cortex cable
+
+![Cortex components and cutting the cable](/docs/static/hardware/dbg/cortex-0.jpg)
+
+You will need a 10-pin IDC cable,
+a 50 mil double row male header, wire cutters, insulation strippers, insulation tape,
+and glue. Pliers are also useful.
+
+Cut wires 6-10 of the cable (this is exactly half the cable; red wire is number 1),
+around 50mm from the debugger side of the cable
+(with the notch facing inside).
+You need to be careful, not to cut wire number 5 here.
+
+If you don't care about connecting RESET line, you can just cut wires 5-10,
+and go directly to **Target end** section.
+
+![Splitting wires](/docs/static/hardware/dbg/cortex-1.jpg)
+
+Pull wires 6-10 almost all the way towards the debugger connector.
+Then, separate wire number 10.
+It may happen that it will go out of insulation - don't worry about this.
+Then, cut wire number 5, around 10mm from the debugger connector.
+Then, separate it.
+
+![Final assembly of Cortex cable](/docs/static/hardware/dbg/cortex-2.jpg)
+
+Remove insulation (if any left) from wires 5 and 10.
+Twist them together.
+Wrap the whole thing in electrical tape.
+
+### Target end
+
+This section is common to both breakout and Cortex cable,
+and describes how to prepare the end of the cable that goes in the target PCB.
+
+![Preparing male header](/docs/static/hardware/dbg/pins-0.jpg)
+
+Cut 3 double rows from a male 50 mil header.
+You may want to cut 4 rows and remove the excessive pins
+(the plastic often breaks at the pin boundary).
+Then, remove pin number 6 - if you hold the header with the longer side
+(which will go into the IDC connector) down, it's the right-most one, closest to you.
+Finally, remove excessive plastic.
+
+![Plugging in male header](/docs/static/hardware/dbg/pins-1.jpg)
+
+Now, insert the header into the connector, aligning the left side with the red wire.
+There should be 3 pins on the outer edge and 2 on the inner.
+You can test your cable now, before gluing - the header will likely stay in
+PCB when you pull out the cable, which is why we're glueing.
+After testing, pull out the header out slightly (around 1mm),
+put a drop of glue in the gap,
+and then press the connector back in.
+Leave it to dry for a few minutes (it will stick to PCB if it doesn't dry!).
+
+You're done!
+
+### Bonus
+
+With either of the cables, you may want to add a momentary switch
+connecting RESET (pin 5) with GND (pin 3).
+
+You can also use 6 pin (or 8 pin) IDC connector, instead of 10 pin one,
+if you happen to have it.
 
 ### Pogo-connector
 
@@ -62,7 +161,7 @@ or use in a test rig.
 
 ![Hack-connect XS pogo programming](/docs/static/hardware/dbg/xs-pogo-prog.jpg)
 
-Use P50-E2 0.68mm diameter pins (head diameter of 0.9mm).
+Use **P50-E2** 0.68mm diameter pins (head diameter of 0.9mm).
 
 You can use two Hack-connector XS PCBs to hold the pins together,
 but you will need to order the holes a little bigger.
@@ -72,12 +171,6 @@ but you will need to order the holes a little bigger.
 Once everything is in place, use glue gun or similar to secure the pins to the PCBs.
 
 ![Hack-connect XS pogo with glue](/docs/static/hardware/dbg/xs-pogo-glue.jpg)
-
-### CAD files
-
-Libraries for PCB design software will be made available 
-in the [GitHub repo](https://github.com/microsoft/pxt-arcade/tree/master/docs/hardware/dbg).
-Currently, there's one for EagleCAD.
 
 
 ## Hack-connect classic

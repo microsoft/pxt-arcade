@@ -75,7 +75,7 @@
         "libs/screen---linux",
         "libs/screen---ext",
         "libs/game",
-        "libs/game---hw",
+        "libs/game---light",
         "libs/buttons",
         "libs/mixer",
         "libs/servo",
@@ -107,6 +107,10 @@
         "libs/rpiprj",
         "libs/color-coded-tilemap",
         "libs/template"
+    ],
+    "cacheusedblocksdirs": [
+        "skillmap/space",
+        "skillmap/platformer"
     ],
     "compile": {
         "useUF2": true,
@@ -262,7 +266,7 @@
                 "codalTarget": {
                     "name": "codal-big-brainpad",
                     "url": "https://github.com/lancaster-university/codal-big-brainpad",
-                    "branch": "v1.3.0",
+                    "branch": "v1.3.1",
                     "type": "git"
                 },
                 "codalBinary": "STM32",
@@ -436,10 +440,12 @@
         "keymap": true,
         "messageSimulators": {
             "jacdac": {
-                "url": "https://microsoft.github.io/jacdac-ts/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$",
-                "localHostUrl": "http://localhost:8000/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$"
+                "url": "https://microsoft.github.io/jacdac-docs/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$",
+                "localHostUrl": "http://localhost:8000/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$",
+                "aspectRatio": "0.89",
+                "permanent": true
             }
-        }        
+        }
     },
     "appTheme": {
         "logoUrl": "https://makecode.com/org",
@@ -449,6 +455,8 @@
         "portraitLogo": "./static/logo.svg",
         "footerLogo": "./static/logo.svg",
         "organization": "Microsoft MakeCode",
+        "organizationText": "MakeCode Arcade",
+        "organizationShortText": "MakeCode",
         "organizationUrl": "https://makecode.com/org",
         "organizationLogo": "./static/Micorsoft_logo_rgb_W-white_D-square.png",
         "organizationWideLogo": "./static/Micorsoft_logo_rgb_W-white_D.png",
@@ -488,6 +496,7 @@
         ],
         "invertedMenu": true,
         "showHomeScreen": true,
+        "useTextLogo": true,
         "highContrast": true,
         "greenScreen": true,
         "print": true,
@@ -557,7 +566,9 @@
         "openProjectNewTab": true,
         "hasReferenceDocs": true,
         "python": true,
-        "assetEditor": true
+        "assetEditor": true,
+        "immersiveReader": true,
+        "tutorialCodeValidation": true
     },
     "queryVariants": {
         "skillsMap=1": {

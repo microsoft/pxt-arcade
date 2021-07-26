@@ -1,3 +1,4 @@
 {
-    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/mouse"
+    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/mouse",
+    "searchOnly": true
 }

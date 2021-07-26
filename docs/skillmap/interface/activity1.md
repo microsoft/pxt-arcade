@@ -13,7 +13,7 @@ scene.setBackgroundImage()
 mySprite.x += 0
 effects.confetti.startScreenEffect()
 effects.confetti.endScreenEffect()
-mySprite.setPosition(70, 80)
+mySprite.setPosition(70, randint(100, 600))
 for (let index = 0; index < 4; index++) {
     controller.moveSprite(mySprite)
     music.setVolume(20)
@@ -25,6 +25,12 @@ game.onUpdateInterval(5000, function () {
     }
     game.splash("")
 })
+
+```
+
+
+```template
+game.splash("These blocks are in your workspace!")
 
 ```
 
@@ -40,7 +46,7 @@ Complete this tutorial to learn how to:
 - follow tutorial prompts
 - find blocks in the toolbox
 - build code in the workspace
-- run your game on the built-in simulator 
+- run your project on the built-in game screen 
 
 Before you know it, you'll have an arcade game of your very own!
 
@@ -50,11 +56,17 @@ Before you know it, you'll have an arcade game of your very own!
 
 You've just discovered the most important part of following a tutorial — reading instructions!
 
-If you can't see all of the instructions, click **[v More...]** to expand the box.
+Sometimes the instructions are long and you need to close them while you work.
+Sometimes, you need to open them to read the next step.
+
+To toggle instructions, click the **[^Less...]** or  **[v More...]** button below the instruction area to toggle
+this box.
 
 ---
 
 When you're ready to move to the next step, click **[ >  Next]** to continue.  
+
+---
 
 
 ## step 2
@@ -73,30 +85,24 @@ click the lightbulb to the right for an extra hint.
 
 ## Using the workspace
 
-Now let's talk about your [__*workspace*__](#workIt "The area where you build code").
-
-Your workspace is the area below the instructions where you'll connect blocks to build your program. 
-Not all blocks will connect with one another, but we'll talk more about that later.
+Your [__*workspace*__](#workIt "The area where you build code") is the area 
+below the instructions where you'll connect blocks to build your program. 
 
 ---
 
-🔲 Click inside the text area of the ``||game:splash "___"||`` block 
-and change the current sentence to something a little more exciting.
+► Click in the text area of the ``||game:splash " "||`` block 
+and change the sentence to something more exciting.
 
 ---
 
-**Tip:** Did you notice that the first use of the word __workspace__ had a special look? 
-From time to time, we'll enhance important words. Roll your mouse over them to see a definition.
+**Tip:** Did you notice that the word __workspace__ in the first sentence had 
+a special look? Hover your mouse over it to see a definition.
 
 #### ~ tutorialhint 
 ```blocks
 game.splash("I like bananas!")
 ```
 
-```template
-game.splash("These blocks are in your workspace!")
-
-```
 
 ## Meet the Blocks  @unplugged
 
@@ -114,32 +120,33 @@ Keep going to learn more about blocks.
 
 **Blocks you need won't always be in the workspace to start.**
 
-In the instructions, block descriptions for the block you need will 
+In the instructions, descriptions of the block you need will 
 often be highlighted in the same color as the toolbox 
 category where they live. 
 
-**For example:** We might use the shorthand ``||game:splash "___"||`` when 
+**For example:** We might use ``||game:splash " "||`` when 
 we want you to find this:
 
 ```block
 game.splash(" ")
 ```
 
+This block adds a [__*splash screen*__](#splasht "A full-screen message that shows while a program or level is loading") to your project.
 
 
 ## Your Toolbox 2
 
-
-
 **Let's see how this works**
 
-🔲 Find the 
+► Find the 
 ``||scene:set background color to [ ]||`` block and snap it at the top of 
 the **on start** container already in the workspace. 
 
+► Click the grey box in the new block to set the background to your favorite color. 
+
 #### ~ tutorialhint 
 ```blocks
-scene.setBackgroundColor(0)
+scene.setBackgroundColor(7)
 game.splash("My monkey is better than yours")
 ```
 
@@ -147,25 +154,23 @@ game.splash("My monkey is better than yours")
 
 ## The Exception
 
-Every rule has an exception, so let's look at one of the blocks
-that doesn't share the same color as the category where it lives.
+Every rule has an exception, so let's look at a block
+that doesn't match its category.
 
 The ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block
-is red, but it lives inside the ``||sprites:Sprites||`` category.
+is red, but it lives in the ``||sprites:Sprites||`` category.
 
 ---
 
 <!-- **Tip:** If you can't find the block you're looking for, try -->
 
 
-🔲 Snap a ``||variables:set [my sprite] to [ ] of kind [player]||`` into the
-end of the **on start** container and 
-play around with it until a [__*sprite*__](#sprote "A 2-D image that moves on the screen") shows on the screen.
+► Snap ``||variables:set [my sprite] to sprite [ ] of kind [Player]||`` into the
+end of the **on start** container.
 
----
+► Click the grey box in the new block and draw a [__*sprite*__](#sprote "A 2-D image that moves on the screen")
+ or toggle to the **Gallery** to pick one of ours. 
 
-**Tip:** Drag the ``||game:splash "___"||`` out of the ``||loops:on start||`` block
-and drop it back into the toolbox to delete it so your sprite will be revealed!
 
 #### ~ tutorialhint
 
@@ -177,22 +182,27 @@ and drop it back into the toolbox to delete it so your sprite will be revealed!
 
 ```blocks
 scene.setBackgroundColor(5)
+game.splash("My monkey is better than yours")
 let mySprite = sprites.create(img`
-    e e e . . . . e e e . . . . 
-    c d d c . . c d d c . . . . 
-    c b d d f f d d b c . . . . 
-    c 3 b d d b d b 3 c . . . . 
-    f b 3 d d d d 3 b f . . . . 
-    e d d d d d d d d e . . . . 
-    e d f d d d d f d e . b f b 
-    f d d f d d f d d f . f d f 
-    f b d d b b d d 2 f . f d f 
-    . f 2 2 2 2 2 2 b b f f d f 
-    . f b d d d d d d b b d b f 
-    . f d d d d d b d d f f f . 
-    . f d f f f d f f d f . . . 
-    . f f . . f f . . f f . . . 
-    `, SpriteKind.Player)
+. . . . . f f f f f . . . . . . 
+. . . . f e e e e e f . . . . . 
+. . . f d d d d d d e f . . . . 
+. . f d f f d d f f d f f . . . 
+. c d d d e e d d d d e d f . . 
+. c d c d d d d c d d e f f . . 
+. c d d c c c c d d d e f f f f 
+. . c d d d d d d d e f f b d f 
+. . . c d d d d e e f f f d d f 
+. . . . f f f e e f e e e f f f 
+. . . . f e e e e e e e f f f . 
+. . . f e e e e e e f f f e f . 
+. . f f e e e e f f f f f e f . 
+. f b d f e e f b b f f f e f . 
+. f d d f f f f d d b f f f f . 
+. f f f f f f f f f f f f f . . 
+`, SpriteKind.Player)
+
+
 ```
 
 
@@ -200,8 +210,8 @@ let mySprite = sprites.create(img`
 
 **Now let's look at different types of blocks and how to use them.** 
 
-First, there are [__*container blocks*__](#blockIt "Blocks that hold other blocks"). 
-Container blocks have an edge at both the the top and bottom with an open space
+This is a [__*container block*__](#blockIt "Block that holds other blocks"). 
+Container blocks have a flat edge at both the the top and bottom with an open space
 in the middle that allows other blocks to snap inside. Container blocks control 
 *when* the code inside runs. Here is an example:
 
@@ -212,7 +222,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 ---
 
-🔲  Find an ``||controller:on [A] button pressed ||`` container 
+►  Find an ``||controller:on [A] button pressed ||`` container 
 block and drag it into the workspace. You will add to it in the next step.  
 
 #### ~ tutorialhint
@@ -239,16 +249,19 @@ mySprite.startEffect(effects.spray)
 
 ---
 
-🔲  Find a ``||sprites:[mySprite] start [spray] effect ||``  
-block and snap it into the  **on A button pressed** container...then 
-choose your own effect!
+►  Find a ``||sprites:[mySprite] start [spray] effect ⊕||``  
+block and snap it into the  ``||controller:on [A] button pressed||`` 
+container...then choose your own effect!
+
+►  Click the **⊕** to the right of the new block to pop open an extra 
+[__*argument*__](#iArgue "Additional piece of information the block uses"). 
 
 #### ~ tutorialhint
 ```blocks
 let mySprite: Sprite = null;
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.startEffect(effects.confetti)
+    mySprite.startEffect(effects.confetti, 500)
 })
 ```
 
@@ -265,10 +278,10 @@ but they always need another block to snap into. Value blocks look something lik
 
 ---
 
-🔲  Snap a ``||sprites:[mySprite] say [":)"] ||`` block into the end of the
-**on A button pressed** container.
+►  From the ``||math:Math||`` category, grab a ``||math: pick random [0] to [10]||``
+value block and snap it into the number field on the effect block.
 
-🔲  Find the ``||game: ask for number [" "] ||`` value block and pop it inside to replace **":)"**.
+►  Change the random range to pick between **100** and **600**.
 
 ---
 
@@ -281,13 +294,28 @@ fit in certain types of spaces.
 let mySprite: Sprite = null;
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.say(game.askForNumber(""))
-})
+    mySprite.startEffect(effects.confetti, randint(100,600))
+}
 ```
+
+
+
+## Play Time
+
+**🕹️ Time to play 🕹️**
+
+Check out the game screen!  
+
+Click the **Ⓐ** button to clear your splash screen message.  
+Click it again to launch your effects!
+
+
+
+
 
 ## Putting it Together
 
-🎨 Now get creative 🎨
+**🎨 Now get creative 🎨**
 
 Feel free to take a look at the extra blocks we've added into the toolbox. 
 
@@ -296,17 +324,16 @@ Play around with them and see how they affect your game!
 
 ---
 
-**Tip:** You can test your game whenever you want using the simulator
-to the left!  Use the refresh button (🔄) to reload it, and play your
-game using the buttons you've programmed!  
+**Tip:** Test your game after every couple of steps to make sure 
+it's behaving the way you want it to!
 
 
 
 ## Conclusion 
 
-🎈 Congratulations 🎈 
+**🎈 Congratulations 🎈** 
 
 You've learned everything you need to know to graduate to a new tutorial.
 
-Now you can continue on and learn even more tricks for
-creating games with MakeCode Arcade!  
+Now you can click **Finish** to continue and create some games with MakeCode Arcade!  
+

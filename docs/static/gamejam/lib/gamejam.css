@@ -196,21 +196,41 @@ h1 {
 
 /**** GALLERY ****/
 
-#gallery {
+.gallery .hint {
+    margin: 1rem;
+    padding: 1.5rem;
+
+    border-radius: 0.25rem;
+    color: #276f86;
+    background-color: #f8ffff;
+    box-shadow: inset 0 0 0 1px #a9d5de, 0 0 0 0 transparent;
+}
+
+#gallery,
+#highlighted {
     display: flex;
     flex-direction: column;
 }
 
-#gallery > div {
+#gallery > div,
+#highlighted > div {
     display: flex;
     justify-content: space-around;
 }
 
-#gallery .game {
+#gallery .game,
+#highlighted .game {
     text-align: center;
     margin: 1rem;
     flex: 1;
+}
+
+#gallery .game {
     max-width: 14.5rem;
+}
+
+#highlighted .game {
+    max-width: 21.75rem;
 }
 
 .game img {
@@ -227,16 +247,6 @@ h1 {
 .winners #events,
 .winners .submit {
     display: none;
-}
-
-/***** WINNERS - HONORABLE MENTIONS ****/
-
-.winners #rules table:nth-of-type(4) tr {
-    align-items: flex-start;
-}
-
-.winners #rules table:nth-of-type(4) td {
-    padding: 1rem;
 }
 
 /**** FOOTER ****/

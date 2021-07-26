@@ -1,5 +1,6 @@
-# Fun Collector
+# Collect the Fun
 
+### @autoexpandOff true
 
 ```ghost
 let mySprite = sprites.create(img`
@@ -201,7 +202,7 @@ forever(function () {
 ```
 
 
-## Intro @unplugged
+## Intro @showdialog
 
 You've made a collector game, now let's add some 
 special touches to make it even more fun.
@@ -217,7 +218,7 @@ blocks could make it amazing.
 
 ---
 
-🔲 From the ``||scene:Scene||`` category, grab a 
+► From the ``||scene:Scene||`` category, grab a 
 ``||scene:set background color to [ ]||`` 
 block and drag it to the **beginning** of the **on start** container.  Click the 
 grey box to choose a color that makes you happy.
@@ -252,12 +253,12 @@ controller.moveSprite(mySprite, 0, 100)
 
 ## Step 2
 
-If the game gets wild, our sprite might leave the screen.  
+**If the game gets wild, our sprite might leave the screen.**   
 Let's prevent that. 
 
 ---
 
-🔲 From the ``||sprites:Sprites||`` category, grab a 
+► From the ``||sprites:Sprites||`` category, grab a 
 ``||sprites:set [mySprite] stay in screen <ON>||`` 
 block and drag it into the **end** of the **on start** container. 
 
@@ -292,17 +293,17 @@ mySprite.setStayInScreen(true)
 
 ## Step 3
 
-🕔 Does this game feel long to you? 🕔
+**🕔 Does this game feel long to you? 🕔**
 
 We haven't added a way to win or lose.  
 Let's do that now by adding a countdown timer.
 
 ---
 
-🔲 From ``||info:Info||``,  choose the ``||info:start countdown [10] (s)||``
+► From ``||info:Info||``,  choose the ``||info:start countdown [10] (s)||``
 and snap it into the end of the **on start** container.
 
-🔲 Change **10** to **15** for more playtime goodness.
+► Change **10** to **15** for more playtime goodness.
 
 ```blocks
 scene.setBackgroundColor(11)
@@ -333,19 +334,19 @@ info.startCountdown(15)
 
 ## Step 4
 
-🥇 Everyone's a winner 🥇
+**🥇 Everyone's a winner 🥇**
 
 Right now, when time runs out, you lose the game. We can change that! 
 
 ---
 
-🔲 From ``||info:Info||``,  grab the ``||info:on countdown end||``
+► From ``||info:Info||``,  grab the ``||info:on countdown end||``
 container and drop it into a blank area of the workspace.
 
-🔲 Now, from ``||game:Game||``, pick a ``||game:game over <LOSE>||`` block
+► Now, from ``||game:Game||``, pick a ``||game:game over <LOSE>||`` block
 and snap it into the empty **on countdown end** container.
 
-🔲 Toggle **`<LOSE>`** to **`<WIN>`**.
+► Toggle **`<LOSE>`** to **`<WIN>`**.
 
 ```blocks
 info.onCountdownEnd(function () {
@@ -356,20 +357,20 @@ info.onCountdownEnd(function () {
 
 ## Step 5
 
-🎊 Little celebrations 🎊
+**🎊 Little celebrations 🎊**
 
 We can easily add some flavor every time our sprite reaches a coin. 
 All we need to do is expand the **destroy** block.
 
 ---
 
-🔲 Click the **⊕** to the right of the ``||sprites: destroy [otherSprite] ⊕||`` block 
+► Click the **⊕** to the right of the ``||sprites: destroy [otherSprite] ⊕||`` block 
 (inside the **on sprite overlaps** container.) 
 
-🔲 Click the word **spray** to open a dropdown. Choose the effect that works 
+► Click the word **spray** to open a dropdown. Choose the effect that works 
 best with your game.  (For coins, try the **rings** effect!)
 
-🔲 Change **500** ms to **200** ms to keep the effect short and sweet.
+► Change **500** ms to **200** ms to keep the effect short and sweet.
 
 
 ```blocks
@@ -387,17 +388,17 @@ Finally, let's make the timing of the coins less predictable using random number
 
 ---
 
-🔲 From ``||math:Math||``, grab a ``||math:pick random [0] to [10]||`` block
+► From ``||math:Math||``, grab a ``||math:pick random [0] to [10]||`` block
 and snap it into place inside the **pause** block (already inside the **forever** loop.)
 
-🔲 Change the lowest value to **1000** (1 second) and the highest value
+► Change the lowest value to **1000** (1 second) and the highest value
 to **2000** (2 seconds). Now your coins will randomly appear every 1-2 seconds!
 
 
 ```blocks
 
 forever(function () {
-    projectile = sprites.createProjectileFromSide(img`
+    let projectile = sprites.createProjectileFromSide(img`
         . . b b b b . . 
         . b 5 5 5 5 b . 
         b 5 d 3 3 d 5 b 
@@ -417,7 +418,7 @@ forever(function () {
 
 There you have it...a collector game with style AND class.  
 
-🏆 Well done 🏆
+**🏆 Now play your winning creation 🏆**
 
-Click **Finish** to publish your game so you can get a link to share
-with family and friends.
+Click **Finish** to return to the main page where you can share your game
+with family and friends!

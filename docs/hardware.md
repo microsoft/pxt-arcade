@@ -49,10 +49,10 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "variant": "hw---stm32f401"
     },
     {
-        "name": "Ovobot Xtron",
-        "description": "A programmable microcomputer that can be used for making MakeCode Arcade games.",
-        "imageUrl": "/static/hardware/xtron.jpg",
-        "url": "https://www.ovobot.cn/product/detail/xtron/",
+        "name": "Ovobot Xtron Pro",
+        "description": "A programmable modular console to create games, design wearables and make creative projects.",
+        "imageUrl": "/static/hardware/xtronpro.png",
+        "url": "https://www.ovobot.cc/en/product/detail/xtron-pro/",
         "variant": "hw---stm32f401"
     },
     {

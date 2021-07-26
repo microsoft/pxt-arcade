@@ -1,6 +1,9 @@
 # Adding Encounters
 
-## Introduction @unplugged
+### @autoexpandOff true
+
+
+## Introduction @showdialog
 
 Your universe is pretty empty right now. Let's add some things for your ship
 to find! These could be planets or asteroids or space debris left over from
@@ -187,6 +190,14 @@ game.onUpdateInterval(2000, function () {
     projectile.x = randint(0, 160)
 })
 ```
+
+#Finale
+
+That's it! Now you're ready to click **Finish** to return to the main page where you can add this game to your gallery and share
+with family and friends!
+
+
+
 
 ```template
 namespace SpriteKind {

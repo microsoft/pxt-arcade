@@ -2,7 +2,7 @@
 
 An example game that uses the keyboard prompt.
 
-```blocks
+```typescript
 let hint = ""
 let answer = ""
 let solution = ""

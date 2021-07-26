@@ -1,5 +1,6 @@
 # Grand Clicker
 
+
 ```template
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -52,7 +53,6 @@ info.startCountdown(10)
 ```
 
 ```assetjson
-
 {
   "README.md": " ",
   "images.g.jres": "{\n    \"image2\": {\n        \"data\": \"hwQeABAAAAAAAAAAuwsAAAAAALsbuwAAAACwGxGxAAAAALsREbELAAAAGxEREQsAAAAbERERCwAAsBsREdELAAC73RER0bsAsBHRERHRvQu7ERERERERCxsRERERERG7GxEREREREbEbERERERERsbsRERERERGxsBEREREREbEAuxERERERsQCwGxHRERG7AAAbER0dsQsAABvREdGxAAAAGxEREbsAAAAbERERCwAAsBsRERG7AACwEREREbEAALAbERERsQAAALu7ERG7AAAAALAbEQsAAAAAALsRCwAAAAAAsLsLAAAAAAAAuwAAAAAAAAAAAAA=\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"Cloud\"\n    },\n    \"image3\": \"hwQeABAAAAAAAAAAuwsAAAAAALsbuwAAAACwGxGxAAAAALsREbELAAAAGxEREQsAAAAbERERCwAAsBsREdELAAC73RER0bsAsBHRERHRvQu7ERERERERCxsRERERERG7GxEREREREbEbERERERERsbsRERERERGxsBEREREREbEAuxERERERsQCwGxHRERG7AAAbER0dsQsAABvREdGxAAAAGxEREbsAAAAbERERCwAAsBsRERG7AACwEREREbEAALAbERERsQAAALu7ERG7AAAAALAbEQsAAAAAALsRCwAAAAAAsLsLAAAAAAAAuwAAAAAAAAAAAAA=\",\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myImages\"\n    }\n}",
@@ -63,30 +63,42 @@ info.startCountdown(10)
   "tilemap.g.jres": "{\n    \"transparency16\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true\n    },\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myTiles\"\n    }\n}",
   "tilemap.g.ts": "// Auto-generated code. Do not edit.\nnamespace myTiles {\n    //% fixedInstance jres blockIdentity=images._tile\n    export const transparency16 = image.ofBuffer(hex``);\n\n    helpers._registerFactory(\"tile\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"transparency16\":return transparency16;\n        }\n        return null;\n    })\n\n}\n// Auto-generated code. Do not edit.\n"
 }
-
 ```
 
-## Introduction @unplugged
+## Introduction @showdialog
 
 We already have a basic clicker game, let's use what we've learned to 
 make it even more special!
 
 ![Click away](/static/skillmap/clicker/clicker-activity-2.gif "Click and buy bigger clickers" )
 
-## Step 1
-The code for a basic clicker is already in your workspace.  
 
-Let's make the game more fun to look at by adding a sprite to the screen.
+## Step 2
+
+First, try the project on the game screen to remember how it works.
 
 ---
 
-🔲 From ``||sprites:Sprites||`` drag out a ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
-block and snap it into the bottom of the **on start** container.
+► Click **> Next** when you're ready to edit the game.
 
-🔲 Add your sprite by clicking inside the grey square and drawing something
-eye-catching. You can draw a cloud, a sprinkler, a flower, or a cookie.   
-*Note: If no inspiration strikes, you can choose something from the **Gallery**
-or **My Assets** tab.
+
+## Step 3
+
+Let's make this game fun to look at by adding a 
+[__*sprite*__](#sprote "a 2-D image that moves on the screen") to the screen.
+
+---
+
+► From ``||sprites:Sprites||`` drag out ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
+and snap it into the bottom of the ``||loops:on start||`` container.
+
+► Add your sprite by clicking inside the grey square and drawing something
+eye-catching. You could draw a cloud, a sprinkler, a flower, or a cookie!   
+
+---
+
+**Note:** If no inspiration strikes, you can choose something from the **Gallery**
+or **My Assets** tab instead.
 
 
 ```blocks
@@ -115,16 +127,16 @@ mySprite = sprites.create(img`
     `, SpriteKind.Player)
 ```
 
-## Step 2
+## Step 4
 
-✨ For an extra spark, you can make your sprite react
-with each click ✨
+**✨ For an extra spark, you can make your sprite react
+with each click ✨**
 
 ---
 
-🔲 From ``||sprites:Sprites||``, take a 
-``||sprites: [mySprite] start [spray] effect||`` block and snap it
-into the bottom of the **on A button pressed** container.
+► From ``||sprites:Sprites||``, grab
+``||sprites: [mySprite] start [spray] effect ⊕||`` and snap it
+into the bottom of the ``||controller:on [A] button [pressed]||`` container.
 
 
 ```blocks
@@ -139,19 +151,19 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 3
+## Step 5
 
 Right now, the spray effect lasts forever, so you don't see much of a 
 change between clicks. 
 
-Let's tweak the effect to make each instance shorter.
+**Let's tweak the effect to make each instance shorter.**
 
 ---
 
-🔲 Click the **⊕** icon to the right of the **start effect** block (the one 
-already inside the **on button pressed** container.)
+► Click the **⊕** icon to the right of the ``||sprites: [mySprite] start [spray] effect ⊕||`` 
+block (the one already inside the **on A button pressed** container.)
 
-🔲 Shorten the number of miliseconds (ms) that the effect runs by entering
+► Shorten the number of miliseconds (ms) that the effect runs by entering
 **100** in the text box.
 
 ```blocks
@@ -166,25 +178,29 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ```
 
-## Step 4
+## Step 6 @showdialog
 
-🎮 Play your game a couple of times 🎮
+**🎮 Play your game a couple of times 🎮**
 
-Did you notice that it automatically keeps track of your highest score?
 
-It also automatically tells you that you've lost when time runs out. 
+
+## Step 7
+
+**Did you notice that your game automatically keeps track of your highest score?**
+
+It also automatically tells you that **you've lost** when time runs out. 
 Let's change that.
 
 ---
 
-🔲 From the ``||info:Info||`` category, grab a ``||info:on countdown end||``
+► From the ``||info:Info||`` category, grab a ``||info:on countdown end||``
 container and drop it into an empty area of the workspace. 
 
-🔲 Now, open the ``||game:Game||`` category and pick the 
-``||game: game over <LOSE>||`` block.  Snap it inside the empty 
+► Now, open the ``||game:Game||`` category and pick  
+``||game: game over <LOSE> ⊕||`` .  Snap it inside the empty 
 **on countdown end** container.
 
-🔲 Toggle **LOSE** to **WIN**.  
+► Toggle **LOSE** to **WIN**.  
 
 ```blocks
 info.onCountdownEnd(function () {
@@ -192,24 +208,23 @@ info.onCountdownEnd(function () {
 })
 ```
 
+## Step 8
 
-## Step 5
-
-🎊 Fantastic 🎊
+**🎊 Fantastic 🎊**
 
 Now add a final celebration with some **game over** effects!
 
 ---
 
-🔲 Click the **⊕** icon to the right of the **game over** block.
+► Click the **⊕** icon to the right of the ``||game: game over <WIN> ⊕||``  block.
 
-🔲 If you want an effect other than confetti, click the word **confetti**
+► If you want an effect other than confetti, click the word **confetti**
 and choose a new option from the dropdown.
 
 
-## Step 6
+## Step 9
 
-That's it!  
+**That's it!**  
 
-Click **Finish** to share your clicker game with 
-friends and compete for the most clicks in 10 seconds!  
+Click **Finish** to return to the main page where you can share your game
+with family and friends to compete for the most clicks in 10 seconds!  
