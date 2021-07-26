@@ -1,182 +1,122 @@
-# About the Beginner’s Guide to Arcade Games
+# About A Zookeeper's Adventure in Arcade Games
 
 **A page for Educators & Parents**
 
-The **Beginner’s Guide to Arcade Games** introduces the most common types of code blocks used throughout MakeCode Arcade.
+**A Zookeeper's Adventure** is an introduction to block-based coding for young students. This guide teaches basic storytelling design actions for games, like: movement, randomness, positioning, and destroying elements.
 
-In this set of activities, students will create their very first set of digital games with MakeCode Arcade.  This guide is intended for students who are new to MakeCode with little or no previous coding experience.  Through step-by-step instructions, students will focus on projects from 3 different categories: [Storytelling](#storytelling-path), [Clicker Games](#clicker-game-path), and [Collector Games](#collector-game-path).
+In this set of activities, students will use the power of coding to help manage a zoo. This guide is friendly for students who are new to MakeCode with little or no previous coding experience.  Through step-by-step instructions, students will focus on projects from 2 different categories: [Movement](#movement-path) and [Interaction](#interaction-path).
 
-Designed for students between the ages of 11 & 15, this experience contains a total of 11 tutorials (approximating 145 minutes of instruction) spread over 5 sessions.  At the end of each learning path, students receive a certificate of completion.
+Designed for students between the ages of 11 & 15, this experience contains a total of 6 tutorials (approximating 36 minutes of instruction) spread over 2 sessions.  At the end of the learning path, students receive a certificate of completion.
 
 |                 | Minutes* | Game Type | Key Concepts |
 | --------------- | -------- | --------- | ------------ |
 | **Day 1**           |          |           |              |
-| Get to Know Arcade (optional) | 12 | Intro | interface tutorial, basic blocks, events |
-| Make a Greeting Card | 10 | Story | art design, music |
-| Bigger Greeting | 10 | Story | art design, music, events |
+| Zookeeper Hut | 3 | Intro | sprite design, movement, navigation |
+| By Land | 6 | Story | sprite design, movement, random numbers |
+| By Sea | 6 | Story | sprite design, movement, random numbers, loops |
+| Penguins | 5 | Story | debugging, positioning |
 | **Day 2**           |          |           |              |
-| Joking Around   |30 | Story | storytelling, events |
-| **Day 3**           |          |           |              |
-| Clicker Game    |10  | Clicker | events, score, timer |
-| Grand Clicker   |10 | Clicker | animation, arguments, events |
-| Super Clicker   |7  | Clicker | projectiles, random numbers, events |
-| **Day 4**           |          |           |              |
-| Dino Hoard      | 10       | Collector | loops, projectiles, random numbers |
-| Save the Baby Dinos | 12   | Collector | collisions, variables, timer |
-| **Day 5**  |          |           |              |
-| Traffic Dodger | 14 | Collector | projectiles, random numbers, variables |
-| Animate It! | 20 | Collector | art design, loops |
+| Feed the Panda |10 | Story | events, random numbers, movement, destroying elements |
+| Quail Hatching | 6 | Story | events, destroying elements, duplication |
 
-\* Minutes are approximate, based on time to follow instructions as written. Providing extra time for creativity and debugging is encouraged.
+\* Minutes are approximate, based on time to follow instructions as written. They do not include time spent on sprite design. Providing extra time for creativity and debugging is encouraged.
 
 ### Objectives 
 
-After completing the Beginner’s Guide to Arcade Games, students will have gained exposure to all the elements they need to successfully create their own arcade games using MakeCode Arcade.
+After completing A Zookeeper's Adventure, students will have learned how to use coding concepts creatively. As they create their own zookeeper sprite, design animal exhibits, and take care of animals, they will be learning computer science and game design concepts.
 
 Specifically, they will experience the following topics:
 
 #### Computer Science Concepts
 
-- Events and program control flow
 - User input
 - Loops
-- Variables
 - Events
 
 #### Game Design Concepts
 
-- Storytelling
-- Sprites and Projectiles
-- Design, Sounds, and Effects
+- Sprite Design
 - Coordinates
 - Velocity
 - Game Score
-- Win/Lose Criteria
 - Randomization
 - Animation
+- Effects
 
-### Storytelling Path
+### Movement Path
 
-In this learning path, students will learn how to use background images, music, and dialog boxes to build creative projects that send a message, tell a joke, or illustrate their thoughts. 
+In this learning path, students will learn how to use art, math, and physics to spawn and move sprites around.
 
-#### 1. Greeting Card
+#### 1. Zookeeper Hut
 
-| Activity | Greeting Card (10 min) |
+| Activity | Zookeeper Hut (3 min) |
 |---|---|
-| ![Greeting Card thumbnail](/static/skillmap/map-info/greeting-card.png) | Design a simple greeting card to send to friends and family. |
-| Blocks used | **[On Start](/blocks/on-start)** <br/><br/> ``[scene.setBackgroundImage(img`.`)]``<br/>``[effects.confetti.startScreenEffect()]``<br/> ``[music.playMelody("", 120)]``|
-| Solution option | [Greating Card Project](https://arcade.makecode.com/14885-64298-31361-79978) |
+| ![Zookeeper Hut thumbnail](/static/skillmap/zoo/activity1.png) | Design your zookeeper sprite and learn how to move it around. |
+| Blocks used | ``[sprites.setBackgroundImage(img`.`)]``<br/>``[controller.moveSprite(mySprite)]``<br/> ``[scene.cameraFollowSprite(mySprite)]``|
+| Solution option | [Zookeeper Hut Project](https://makecode.com/_UrRYAkLCjTW7) |
 
-#### 2. Bigger Greeting
+#### 2. By Land
 
-| Activity | Bigger Greeting (10 min) |
+| Activity | By Land (6 min) |
 |---|---|
-| ![Bigger Greeting thumbnail](/static/skillmap/map-info/bigger-greeting.png) | This activity builds off the previous Greeting Card activity.<br/>Students will add text that is revealed with the press of a &nbsp;<br/>button. |
-| Blocks used | ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[game.setDialogFrame(img`.`)]``<br/>``[game.setDialogTextColor(0)]``<br/>``[game.showLongText("", DialogLayout.Bottom)]`` |
-| Solution option | [Bigger Greating Project](https://arcade.makecode.com/42444-68014-69780-79234) |
+| ![By Land thumbnail](/static/skillmap/zoo/activity2.png) | Design an animal enclosure on land zoo exhibit. |
+| Blocks used | ``[sprites.create(img`.`, SpriteKind.Player)]``<br/>``[mySprite.setVelocity(randint(-50, 50), randint(-50, 50))]``<br/>``[mySprite.setBounceOnWall(true)]`` |
+| Solution option | [By Land Project](https://makecode.com/_TeKEE8W21eXa) |
 
-#### 3. Joking Around
+#### 3. By Sea
 
-| Activity | Joking Around (30 min) |
+| Activity | By Sea (6 min) |
 |---|---|
-| ![Joking Around thumbnail](/static/skillmap/map-info/joking-around.png) | This activity introduces students to characters and dialog,<br/>as they bring short jokes to life. |
-| Blocks used | ``[music.baDing.play()]``<br/>``[music.setVolume(20)]``<br/>``[game.splash("")]``<br/>``[sprites.create(img`.`).setPosition(0, 0)]``<br/>``[sprites.create(img`.`).startEffect(effects.spray)]``<br/>``[sprites.create(img`.`).setImage(img`.`)]``<br/>``[scene.cameraShake(4, 500)]`` |
-| Solution option | [Joking Around Project](https://arcade.makecode.com/87828-03702-46750-80177) |
+| ![By Sea thumbnail](/static/skillmap/zoo/activity2-2.png) | Design an aquatic zoo exhibit with multiple of the same creature. |
+| Blocks used | ``[sprites.create(img`.`, SpriteKind.Player)]``<br/>``[mySprite.vx = 50]``<br/>``[mySprite.setBounceOnWall(true)]``<br/>``[mySprite.y = randint(10, 110)]``<br/><br/>**[For Loop](/blocks/loops/for)** |
+| Solution option | [By Sea Project](https://makecode.com/_6111H164u1WP7) |
+
+#### 4. Penguins
+
+| Activity | Penguins (5 min) |
+|---|---|
+| ![Penguins thumbnail](/static/skillmap/zoo/activity3.png) | This activity teaches how to debug locational errors in code. |
+| Blocks used | ``[sprites.create(img`.`, SpriteKind.mySprite)]``<br/>``[mySprite.x = 0]`` |
+| Solution option | [Penguins Project](https://makecode.com/_7FETiTYJiKq8) |
 
 ##### Game Mod Ideas
 
-After students complete Joking Around they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try: 
+After students complete Penguins, they can head back to the skillmap and click "SAVE TO MY PROJECTS" for By Land or By Sea. This will open the respective game in a window with a full-featured toolbox. Here are some modifications they can try: 
 
-- Add a second sprite for a joke with more interaction 
-- Move sprites or change backgrounds each time the (A) button is pressed 
-- Modify your project to illustrate a poem 
-- Use what you’ve learned to illustrate a longer joke or story
+- Add another sprite that also has a movement pattern 
+- Modify sprites' moving speeds so each has a different one
+- Have the sprites flip around when they hit a wall
 
-### Clicker Game Path
+### Interaction Path
 
-In this path, students will use event containers, sprites, and projectiles to create a simple “clicker” game that takes in user input and performs an action.  Here, the user is challenged to click the (A) button as quickly as possible before time runs out. 
+In this path, students will use event containers, sprite positioning, and destruction to create and visualize interaction between sprites. 
 
-#### 1. Clicker Game
+#### 1. Feed the Panda
 
-| Activity | Clicker Game (10 min) |
+| Activity | Feed the Panda (10 min) |
 |---|---|
-| ![Clicker Game thumbnail](/static/skillmap/map-info/clicker-game.png) | Create a game that adds points for each click. |
-| Blocks used | ``[info.startCountdown(10)]``<br/>``[info.changeScoreBy(1)]``<br/>``[info.onCountdownEnd(function () {})]``<br/>``[game.over(true)]``|
-| Solution option | [Clicker Game Project](https://arcade.makecode.com/12273-78408-58405-09625) |
+| ![Feed the Panda thumbnail](/static/skillmap/zoo/activity4.png) | Create bamboo and guide the panda to eat it. |
+| Blocks used | ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[let mySprite = sprites.create(img`.`, SpriteKind.Food)]``<br/>``[mySprite.setPosition(randint(10, 150), randint(10, 110))]``<br/>``[mySprite.follow(mySprite)]``<br/>``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {})]``<br/>``[otherSprite.destroy(effects.disintegrate, 500)]``|
+| Solution option | [Feed the Panda Project](https://makecode.com/_VYw5V8hfaWcC) |
 
-#### 2. Button Clicker
+#### 2. Quail Hatching
 
-| Activity | Button Clicker (10 min) |
+| Activity | Quail Hatching (6 min) |
 |---|---|
-| ![Button Clicker thumbnail](/static/skillmap/map-info/button-clicker.png) | This game builds off the last level, adding an animated sprite<br/>that toggles as you press and release the (A) button. |
-| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[let power = 2]``|
-| Solution option | [Button Clicker Project](https://arcade.makecode.com/77414-66317-99137-92560) |
-
-#### 3. Clicking Superstar
-
-| Activity | Clicking Superstar (7 min) |
-|---|---|
-| ![Clicking Superstar thumbnail](/static/skillmap/map-info/clicking-superstar.png) | Building off the previous project, this level adds projectiles that<br/>take the form of stars spraying from the button with each press. |
-| Blocks used | ``[sprites.create(img`.`, SpriteKind.Player).startEffect(effects.spray, 100)]`` |
-| Solution option | [Clicking Superstar Project](https://arcade.makecode.com/24852-02760-23597-83909) |
+| ![Quail Hatching thumbnail](/static/skillmap/zoo/activity5.png) | Use code to corral all the quails and their eggs into the coop. |
+| Blocks used | ``[sprites.onOverlap(, , function () {})]``<br/>``[otherSprite.follow(mySprite)]``<br/>``[scene.onOverlapTile(, assets.tile`myTile`, function () {})]``<br/>``[sprite.destroy()]`` |
+| Solution option | [Quail Hatching Project](https://makecode.com/_UC93YfEEVEgq) |
 
 ##### Game Mod Ideas
 
-After students complete Clicking Superstar they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try: 
+After students complete Quail Hatching, they can head back to the skillmap and click "SAVE TO MY PROJECTS" for Feed the Panda or Quail Hatching, which will open the game in a window with a full-featured toolbox. Here are some modifications they can try: 
 
-- Move the A button to the lower left and add a B Button to the lower right 
-- Add a new sprite to the pedestal, make it something special! 
-- Change the theme from stars on the stage to birds in a tree 
-
-### Collector Game Path
-
-Students will work with sprite controller blocks, variables, and conditional statements to build a game where Mama Dino rushes to collect as many of her babies as possible while avoiding traffic.  
-
-#### 1. Dino Hoard
-
-| Activity | Dino Hoard (10 min) |
-|---|---|
-| ![Dino Hoard thumbnail](/static/skillmap/map-info/dino-hoard.png) | Set an animated background for your hero sprite to travel as they search for baby dinos. |
-| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[controller.moveSprite(sprites.create(img`.`), 0, 100)]``<br/>``[let random = randint(0, 10)]``<br/>``[let projectile = sprites.createProjectileFromSide(img`.`, 0, 100)]``<br/>``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {})]``<br/>``[forever(function () {})]``<br/>``[sprites.create(img`.`).destroy()]`` |
-| Solution option | [Dino Hoard Project](https://arcade.makecode.com/00050-04644-99185-20758) |
-
-
-#### 2. Save the Baby Dinos!
-
-| Activity | Save the Baby Dinos! (12 min) |
-|---|---|
-| ![Save the Baby Dinos thumbnail](/static/skillmap/map-info/save-baby-dinos.png) | Build on the previous activity to add points to your game as you collect dinos. |
-| Blocks used | ``[scene.setBackgroundColor(0)]``<br/>``[scene.setBackgroundImage(img`.`)]``<br/>``[effects.blizzard.startScreenEffect()]``<br/>``[sprites.create(img`.`).setStayInScreen(true)]``|
-| Solution option | [Save the Baby Dinos Project](https://arcade.makecode.com/21438-61170-25811-66074) |
-
-#### 3. Traffic Dodger
-
-| Activity | Traffic Dodger (14 min) |
-|---|---|
-| ![Traffic Dodger thumbnail](/static/skillmap/map-info/traffic-dodger.png) | Take your game further with cars that subtract a life if you run into them. |
-| Blocks used | ``[sprites.create(img`.`).setKind(SpriteKind.Enemy)]``<br/>``[sprites.create(img`.`).y = 0]``|
-| Solution option | [Traffic Dodger Project](https://arcade.makecode.com/76596-99011-88241-42675) |
- 
-#### 4. Animate It!
-
-| Activity | Animate It! (20 min) |
-|---|---|
-| ![Animate It! thumbnail](/static/skillmap/map-info/animate-it.png) | Polish your game using animation to make your characters come to life! |
-| Blocks used | ``[info.changeLifeBy(1)]``|
-| Solution option | [Animate It Project](https://arcade.makecode.com/20377-15271-69070-26521) |
-
-##### Game Mod Ideas
-
-After students complete Animate It! they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox.  Here are some modifications they can try: 
-
-- Make the camera shake when the dino runs into a car 
-- Add another sprite that gives more time when collected 
-- Add a sprite that gives more lives when collected 
-- Change the scene from a dino on the street to a shark in the ocean
+- [Feed the Panda] Have the panda continue moving after eating
+- [Feed the Panda] Create another panda
+- [Quail Hatching] Make it easier to beat the game (ex. by having the glove move faster)
 
 ### What’s Next?
 
-After completing the Beginner’s Guide to Arcade Games, students move on to the following activities:
+After completing A Zookeeper's Adventure, students move on to the following activities:
 
-* Build a Space Explorer
-* Scrolling Platformer
+* TBD
