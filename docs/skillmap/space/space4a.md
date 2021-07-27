@@ -4,7 +4,7 @@
 
 Let's make this game more impactful by adding effects that bring the action to life.
 
-![Fuel Up!](/static/skillmap/space/spacet4a.gif "Those aren't tacos!")
+![Impact!](/static/skillmap/space/spacet4a.gif "That's earth-shaking!")
 
 
 ## Step 2
@@ -192,7 +192,6 @@ to your gallery and share it with friends.
 
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll/
-pxt-status-bar=github:jwunderl/pxt-status-bar
 ```
 
 

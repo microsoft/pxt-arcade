@@ -1,5 +1,5 @@
-# Build a Platformer
-* name: Build a Platformer Game
+# Jungle Monkey Platformer
+* name: Jungle Monkey Platformer
 * description: Learn how to create a sidescrolling platformer by following this short series of tutorials.
 * infoUrl: skillmap/educator-info/int-map-info
 * bannerUrl: /static/skillmap/platformer/activity4.png

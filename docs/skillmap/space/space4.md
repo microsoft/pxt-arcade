@@ -24,8 +24,8 @@ over (or down & over) to keep building.
 You'll find ``||variables:set [statusbar] to create status bar sprite width [20] height [4] kind [Health]||``.
 Drag one to the end of the ``||loops:on start||`` container.
 
-► To keep track of how much *gas* is left, set the argument for 
-**statusbar** kind to **Energy**.
+► In the **set statusbar** block, click on **Health** to get the dropdown menu, then select **Energy** to create a fuel gauge.
+
 
 ---
 
@@ -39,7 +39,7 @@ If we want the status bar to show the details of **mySprite**, we'll need to lin
 
 ---
 
-► Drop ``||statusbars:attach [statusbar] to [mySprite] ⊕||`` 
+► From the ``||statusbars:Status Bars||`` category, drag ``||statusbars:attach [statusbar] to [mySprite] ⊕||`` 
 into **the end** of the ``||loops:on start||`` container.
 
 ► Click **⊕** on the new block to reveal options
@@ -86,7 +86,7 @@ game.onUpdateInterval(300, function () {
 
 **⛽ Time to refuel ⛽**
 
-The code for dropping fuel is a lot like the code for dropping enemies. 
+The code for adding fuel sprites to your game is a lot like the code for making enemies. 
 For a refresher on how things work, find the **myEnemy** blocks in the
 workspace and use them as a guide.
 
@@ -174,7 +174,7 @@ game.onUpdateInterval(5000, function () {
 
 ## Step 9
 
-Now we need to put our **myFuel** sprite into the _Gas_ class.
+Now we need to create a new **kind** of sprite for our **Fuel**!
 
 ---
 
@@ -277,9 +277,6 @@ statusbars.onZero(StatusBarKind.Energy, function (status) {
 
 Click **Finish** to return to the main page where you can add this game to your gallery and share with family & friends.
 
-Once your game is in your gallery, you can
-experiment with all of the blocks in the toolbox and find many other
-exciting and special ways to customize your adventure.  
 
 
 

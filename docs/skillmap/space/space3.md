@@ -64,6 +64,9 @@ game.onUpdateInterval(2000, function () {
 ► Play with the **vx** and **vy** values of **myEnemy** until 
 your new sprites are falling straight down the side of the screen. 
 
+💡 Are the enemies all falling down to the left of the screen? Don't worry, we'll handle that in the next step!  
+
+
 
 ```blocks
 
@@ -119,7 +122,7 @@ game.onUpdateInterval(2000, function () {
 ## Step 7
 
 We now have two different kinds of projectiles. Let's make sure the computer knows they're different by setting this one to an
-"**Enemy**" [__*class*__](#withClass "a label you give a particular group so you can refer to it later").
+"**Enemy**" [__*kind*__](#withClass "a label you give a particular group so you can refer to it later").
 
 ---
 
@@ -128,7 +131,7 @@ We now have two different kinds of projectiles. Let's make sure the computer kno
 
 ► Change ``||variables:mySprite||`` to ``||variables:myEnemy||``, then choose 
  ``||sprites:Enemy||`` as the kind.  
- <br/>
+
 
 
 ```blocks
@@ -157,8 +160,8 @@ container into the workspace.
 ---
 
 **Tip:** Don't try to change "sprite" → "mySprite" or "otherSprite" → "myEnemy".
-The values "sprite" and "otherSprite" describe any two generic sprites,  
-not the specific assets we're working with. 
+The variable "sprite" refers to the **Player** sprite (our Rocket) and the "otherSprite" 
+variable is the specific **Enemy** sprite that our **Player** overlapped with.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -173,9 +176,8 @@ we want it to subtract a life...then disappear.
 
 ---
 
-► Grab the ``||info:change life by [-1]||`` block from the ``||info:Info||`` category and snap it into the 
-**on player overlaps enemy** container. 
-That removes a life from the player every time it's hit by an enemy.
+► From the ``||info:Info||`` category, grab the ``||info:change life by [-1]||`` block and snap it into the 
+**on player overlaps enemy** container. That removes a life from the player every time it's hit by an enemy!
 
 ► Find the ``||sprites:destroy [mySprite] ⊕||`` block and snap it below the previous block.   
 
