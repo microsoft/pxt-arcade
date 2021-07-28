@@ -91,7 +91,7 @@ let projectile = sprites.createProjectileFromSprite(img`
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
-`, mySprite, 50, 100)
+`, mySprite, 50, 50)
 ```
 
 ## Step 3 @fullscreen
@@ -142,12 +142,12 @@ let projectile = sprites.createProjectileFromSprite(img`
 . . . . 1 1 . . . . . . . . . .
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
-`, mySprite, 50, 100)
+`, mySprite, 50, 50)
 ```
 
 ## Step 4 @fullscreen
 
-In ``||sprites:projectile||``, change ``||sprites:vy||`` from `100` to `-15` so that it moves **upwards** instead of **downwards**.
+In ``||sprites:projectile||``, change ``||sprites:vy||`` from `50` to `-15` so that it moves **upwards** instead of **downwards**.
 
 ```blocks
 let mySprite = sprites.create(img`

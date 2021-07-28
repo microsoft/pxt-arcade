@@ -50,13 +50,13 @@ game.onUpdateInterval(1000, function () {
 . . f f f f f e e f f f f f e .
 . . . f f f . . . . f f f f . .
 . . . . . . . . . . . . . . . .
-`, 50, 100)
+`, 50, 50)
 })
 ```
 
 ## Step 4 @fullscreen
 
-In the ``||sprites:projectile||``, set the ``||sprites:vy||`` to 0, so that the cars drive **only** to the right.
+In the ``||sprites:projectile||``, set the ``||sprites:vy||`` to `0`, so that the cars drive **only** to the right.
 
 ```blocks
 let projectile: Sprite = null;
@@ -115,7 +115,7 @@ game.onUpdateInterval(1000, function () {
 
 Find ``||math:pick random 0 to 10||`` in ``||math:Math||``, and replace the 0 in ``||sprites:set projectile y to 0||`` with the it.
 
-This will place the ``||variables:projectile||`` in a random ``||sprites:y||`` position between 0 and 10.
+This will place the ``||variables:projectile||`` in a random ``||sprites:y||`` position between `0` and `10`.
 
 ```blocks
 let projectile: Sprite = null;
