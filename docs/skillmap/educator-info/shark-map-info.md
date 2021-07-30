@@ -1,71 +1,66 @@
-# About the Beginner’s Guide to Arcade Games
+# About Shark Splash
 
 **A page for Educators & Parents**
 
-The **Beginner’s Guide to Arcade Games** introduces the most common types of code blocks used throughout MakeCode Arcade.
+**Shark Splash** introduces a number of MakeCode Arcade game design elements.
 
-In this set of activities, students will create their very first set of digital games with MakeCode Arcade.  This guide is intended for students who are new to MakeCode with little or no previous coding experience.  Through step-by-step instructions, students will focus on projects from 3 different categories: [Storytelling](#storytelling-path), [Clicker Games](#clicker-game-path), and [Collector Games](#collector-game-path).
+In this set of activities, students will create a MakeCode Arcade game that involves blasting enemies and collecting sustenance.  This guide is intended for students who are new to MakeCode with little to moderate previous coding experience.  Through step-by-step instructions, students will focus on game creation across 3 different categories: [Enemies](#enemy-path), [Food](#food-path), and [Modification](#modification-path).
 
-Designed for students between the ages of 11 & 15, this experience contains a total of 11 tutorials (approximating 145 minutes of instruction) spread over 5 sessions.  At the end of each learning path, students receive a certificate of completion.
+Designed for students between the ages of 11 & 15, this experience contains a total of 9 tutorials (approximating at least 52 minutes of instruction) spread over 2 sessions.  At the end of the learning path, students receive a certificate of completion.
 
 |                 | Minutes* | Game Type | Key Concepts |
 | --------------- | -------- | --------- | ------------ |
 | **Day 1**           |          |           |              |
-| Get to Know Arcade (optional) | 12 | Intro | interface tutorial, basic blocks, events |
-| Make a Greeting Card | 10 | Story | art design, music |
-| Bigger Greeting | 10 | Story | art design, music, events |
+| Set the Scene | 5 | Intro | movement, events, projectiles |
+| Beware the Enemy | 8 | Shooter | events, positioning, random numbers |
+| Enemies Attack! | 8 | Shooter | movement, events, destruction, life bar |
+| Add Enemies | 5 | Shooter | events, destruction, animation, game score |
+| Multiple Enemy Sprites | 6 | Shooter | events, conditional statements |
 | **Day 2**           |          |           |              |
-| Joking Around   |30 | Story | storytelling, events |
-| **Day 3**           |          |           |              |
-| Clicker Game    |10  | Clicker | events, score, timer |
-| Grand Clicker   |10 | Clicker | animation, arguments, events |
-| Super Clicker   |7  | Clicker | projectiles, random numbers, events |
-| **Day 4**           |          |           |              |
-| Dino Hoard      | 10       | Collector | loops, projectiles, random numbers |
-| Save the Baby Dinos | 12   | Collector | collisions, variables, timer |
-| **Day 5**  |          |           |              |
-| Traffic Dodger | 14 | Collector | projectiles, random numbers, variables |
-| Animate It! | 20 | Collector | art design, loops |
+| Food not Friends | 7 | Collector | events, positioning, random numbers, movement |
+| Eat Up! | 7 | Collector | events, destroying, game score |
+| Under the Sea | 6 | Collector | loops, design, positioning, random numbers |
+| A Whole New World! | N/A | Design | art design, game modification |
 
-\* Minutes are approximate, based on time to follow instructions as written. Providing extra time for creativity and debugging is encouraged.
+\* Minutes are approximate, based on time to follow instructions as written. Times do not include time spent on designing elements or re-aquainting with previously-written code. Providing extra time for creativity and debugging is encouraged.
 
 ### Objectives 
 
-After completing the Beginner’s Guide to Arcade Games, students will have gained exposure to all the elements they need to successfully create their own arcade games using MakeCode Arcade.
+After completing Shark Splash, students will have gained exposure to multiple classic arcade game concepts using MakeCode Arcade.
 
 Specifically, they will experience the following topics:
 
 #### Computer Science Concepts
 
-- Events and program control flow
-- User input
+- Events
+- Conditional Statements
 - Loops
 - Variables
-- Events
 
 #### Game Design Concepts
 
-- Storytelling
-- Sprites and Projectiles
-- Design, Sounds, and Effects
-- Coordinates
-- Velocity
-- Game Score
-- Win/Lose Criteria
+- Movement
+- Projectiles
+- Positioning
 - Randomization
+- Effects
+- Life Bar
 - Animation
+- Game Score
+- Velocity
+- World Design
 
-### Storytelling Path
+### Enemies Path
 
-In this learning path, students will learn how to use background images, music, and dialog boxes to build creative projects that send a message, tell a joke, or illustrate their thoughts. 
+In this learning path, students will learn how to use event containers, sprite positioning, physics, and destruction to build a basic projectile-shooting game. 
 
-#### 1. Greeting Card
+#### 1. Set the Scene
 
-| Activity | Greeting Card (10 min) |
+| Activity | Set The Scene (10 min) |
 |---|---|
-| ![Greeting Card thumbnail](/static/skillmap/map-info/greeting-card.png) | Design a simple greeting card to send to friends and family. |
-| Blocks used | **[On Start](/blocks/on-start)** <br/><br/> ``[scene.setBackgroundImage(img`.`)]``<br/>``[effects.confetti.startScreenEffect()]``<br/> ``[music.playMelody("", 120)]``|
-| Solution option | [Greating Card Project](https://arcade.makecode.com/14885-64298-31361-79978) |
+| ![Set the Scene thumbnail](/static/skillmap/shark/shark1.gif) | Create a main character that FIRES LASERS! |
+| Blocks used | ``[scene.setBackgroundColor(8)]``<br/>``[mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)]``<br/>``[controller.moveSprite(mySprite)]``<br/>``[mySprite.setStayInScreen(true)]``<br>``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[projectile = sprites.createProjectileFromSprite(assets.image`laser`, mySprite, ,)]``|
+| Solution option | [Set the Scene](https://makecode.com/_ghyiPCDsJLAC) |
 
 #### 2. Bigger Greeting
 
