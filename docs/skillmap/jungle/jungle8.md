@@ -1,133 +1,157 @@
-# Leaps and Bounds
+# Extra Lives
 
 
 ## Welcome @showdialog
 
-**Right now, it's nearly impossible to complete our game!**  
-We need a way to pass the poison pits!
+**🧨 Explosions are dangerous 🧨**  
+This activity will show you how to register a hit on your player if they're standing too close to the blast. You can remove other game elements, too!
 
 ![Editing our platformer](/static/skillmap/jungle/jungle2.gif "Time to live dangerously!")
 
 
 ## Step 2 - Try It!
 
-**🕹️ First, play the game in the game window 🕹️**
+**🕹️ Start by playing your game in the game window 🕹️**
 
 ---
 
-Can you remember which piece of code controls each action?
+Can you connect each chunk of code to the actions it creates?
 
 
+## Step 3 - Fried Monkey
 
-## Step 3 - Adding Block Walls
-
-**You know what would help us get over those pits?**  
-We need some well-placed blocks! Let's add a brick beneath the player when the A button is pressed.
+**💥 STAND BACK 💥**  
+Make sure to get the monkey out of the way before the big bang!
 
 ---
 
-► From ``||controller:Controller||``, drag the ``||controller:on [A] button [pressed]||`` container into an empty area of the workspace.
+► From ``||sprites:Sprites||``, drag the 
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` container into an empty area of the workspace.
 
-► Set a wall by going to the ``||scene:Scene||`` category and dragging ``||scene:set wall <OFF> at tilemap col [0] row [0]||`` into the empty ``||controller:on [A] button [pressed]||`` container.
-
-► Toggle `<OFF>` to `<ON>`.  
-
-
-```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    tiles.setWallAt(tiles.getTileLocation(0, 0), true)
-})
-```
-
-## Step 4 - Adding Block Walls, Cont.
-
-
-► Make sure the new wall ends up in the right place by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location [left] of [location]||`` in to replace  ``||scene:tilemap col [0] row [0]||``.
-
-► Click the word **left** to open the dropdown menu, and change the direction to **bottom**.
-
-► Create the wall **under** your sprite by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location of [mySprite]||`` in to replace  ``||variables:location||``.
+► Click the first kind ``||sprites:Player||`` and change it to ``||sprites:Projectile||``.
 
 
 ```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-        tiles.setWallAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), true)
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, otherSprite) {
     
 })
 ```
 
+## Step 4 - Remove the Projectile
 
+► From the ``||sprites:Sprites||`` category, drag ``||sprites:destroy [mySprite]||`` into the empty **on Projectile overlaps Player** container.
 
-## Try It!
+► Drag the ``||variables:sprite||`` value block out of the title bar to replace ``||variables:mySprite||``.
 
-**🕹️ Give it a try in the game window 🕹️**
+![Borrow a variable](/static/skillmap/assets/give-var.gif "Don't destroy the monkey!")
 
----
-
-Try jumping while you press the (A) button. Your monkey should continue to hover in that spot! 
-
-
-
-## Step 5 - Adding Block Tiles
-
-**Where did my brick go??**  
-The walls are great, but it's hard to remember where they are. Let's add special tiles over them so we can find them again later.  
-
----
-
-► Set a tile by going to the ``||scene:Scene||`` category and dragging ``||scene:set [ ] at tilemap col [0] row [0]||`` into **the bottom** of the ``||controller:on [A] button [pressed]||`` container.
-
-► Click the empty square and choose the blue **bounce** tile.  
 
 
 ```blocks
-
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-        tiles.setWallAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), true)
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, otherSprite) {
     //@highlight
-    tiles.setTileAt(tiles.getTileLocation(0, 0), assets.tile`bounce`)
-
+    sprite.destroy()
 })
 ```
 
-## Step 6 - Adding Block Tiles, Cont.
+---
 
 
-► Make sure the new tile ends up in the right place by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location [left] of [location]||`` in to replace  ``||scene:tilemap col [0] row [0]||``.
+![Borrow a variable](/static/skillmap/assets/give-var.gif "Don't destroy the monkey!")
 
-► Click the word **left** to open the dropdown menu, and change the direction to **bottom**.
 
-► As before, create the tile **under** your sprite by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location of [mySprite]||`` in to replace  ``||variables:location||``.
+
+## Step 5 - Take a Hit
+
+Don't forget to remove HP from the monkey!
+
+---
+
+► From ``||info:Info||``, drag ``||info:change life by [-1]||`` to **the end** of the empty **on Projectile overlaps Player** container.
 
 
 ```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-        tiles.setWallAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), true)
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, otherSprite) {
+    sprite.destroy()
     //@highlight
-    tiles.setTileAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), assets.tile`bounce`)
-
+    info.changeLifeBy(-1)
 })
 ```
 
 
+
 ## Try It!
 
-**🕹️ Now try it in the game window 🕹️**
+**🕹️ Try your game 🕹️**
 
 ---
 
-Now you can set your own blocks in-mid air to help you over the poison pit!
+You should be able to jump with the up arrow, place tiles with the A button, and set an explosive with the B button.
 
+**What happens if you don't get your monkey out of the way quickly enough?**
+
+
+
+
+## Step 9 - Remove More Tiles
+
+**💥 Kablow 💥**  
+This game could have even more options if we remove **bounce** tiles and **poison pit** tiles with explosives, too.
+
+---
+
+► Find the **Projectile overlaps skyblock** container that's already in your code.
+
+► Right-click the outer container and choose **Duplicate**.
+
+► In the new container, change the **skyblock** tile to **bounce**.
+
+
+```blocks
+scene.onOverlapTile(SpriteKind.Projectile, assets.tile`skyblock`, function (sprite, location) {
+    tiles.setWallAt(location, false)
+    tiles.setTileAt(location, assets.tile`transparency16`)
+})
+scene.onOverlapTile(SpriteKind.Projectile, assets.tile`bounce`, function (sprite, location) {
+    tiles.setWallAt(location, false)
+    tiles.setTileAt(location, assets.tile`transparency16`)
+})
+```
+
+## Step 9 - Remove More Tiles
+
+Repeat the last step, but this time, choose the **poison pit** tile.
+
+
+```blocks
+scene.onOverlapTile(SpriteKind.Projectile, assets.tile`skyblock`, function (sprite, location) {
+    tiles.setWallAt(location, false)
+    tiles.setTileAt(location, assets.tile`transparency16`)
+})
+scene.onOverlapTile(SpriteKind.Projectile, assets.tile`poison pit`, function (sprite, location) {
+    tiles.setWallAt(location, false)
+    tiles.setTileAt(location, assets.tile`transparency16`)
+})
+scene.onOverlapTile(SpriteKind.Projectile, assets.tile`bounce`, function (sprite, location) {
+    tiles.setWallAt(location, false)
+    tiles.setTileAt(location, assets.tile`transparency16`)
+})
+```
+
+
+## Try It!
+
+**🕹️ Play your game 🕹️**
+
+---
+
+Now that you can add and destroy blocks, is there anywhere you can't reach?!
 
 
 
 ## Finished
 
-**Play your game and see how many points you can get.**
-
----
-
-When you're done playing, click **Finish** to return to the main page to learn how to break tiles that you set by accident.
+When you're done playing your game, click **Finish** to return to the main page to learn how to add more levels!
 
 
 
@@ -161,16 +185,14 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, lo
 scene.onOverlapTile(SpriteKind.Player, assets.tile`poison pit`, function (sprite, location) {
     game.over(false)
 })
-```
 
-```ghost
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     tiles.setWallAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), true)
     tiles.setTileAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), assets.tile`bounce`)
 })
 
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    projectile = sprites.createProjectileFromSprite(assets.image`blank`, mySprite, 0, 0)
+    let projectile = sprites.createProjectileFromSprite(assets.image`blank`, mySprite, 0, 0)
     projectile.setFlag(SpriteFlag.GhostThroughWalls, true)
     animation.runImageAnimation(
     projectile,
@@ -178,6 +200,22 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     100,
     false
     )
+})
+
+scene.onOverlapTile(SpriteKind.Projectile, assets.tile`skyblock`, function (sprite, location) {
+    tiles.setWallAt(location, false)
+    tiles.setTileAt(location, assets.tile`transparency16`)
+})
+```
+
+```ghost
+scene.onOverlapTile(SpriteKind.Projectile, assets.tile`poison pit`, function (sprite, location) {
+    tiles.setWallAt(location, false)
+    tiles.setTileAt(location, assets.tile`transparency16`)
+})
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, otherSprite) {
+    sprite.destroy()
+    info.changeLifeBy(-1)
 })
 ```
 
@@ -196,7 +234,7 @@ namespace sprites {
 
 
 ```assetjson
-{{
+{
   "README.md": " ",
   "assets.json": "",
   "images.g.jres": "{\n    \"qbxb^@}:~]7RB;]vqbU@\": {\n        \"data\": \"hwQMAAwAAAAAsLvMDwAAAABbVVX1AAAAsFS8uxUPAABbRQAA0f0AAFsMAACw/QAAWwwAALD9AABbDAAAsP0AABsTAAAU/QAAsNHMzE0PAAAAW93d/QAAAACwu8wLAAAAAAAAAAAAAAA=\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"Ring\"\n    },\n    \"~tCkp}guiNO?uzgacRl(\": {\n        \"data\": \"hwSgAHgAAAB3d3d3d3d3d3d3d2ZmZmZmZra7u7u7u7vLzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMbGZmZmZmZmZmZmZ3d3d3d3d3d3d3dmZmZmZmu7u7u7u7y8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMbGZmZmZmZmZmZmZ3d3d3d3d3d3d3ZmZmtru7u7u7u8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMbGZmZmZmZmZmZmZ3d3d3d3d3d3dndmZmZmZmZmZsxszMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMbGZmZmZmZmZmZmZ3d3d3d3d3d3dnd2ZmZmZmZmbMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMbGZmZmZmZmZmZmZ3d3d3d3d3d3d3Z3ZnZmZmZmzGzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z3dmZmZmzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dmZmZmxszMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2ZmZmZmZszMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxsZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2dmZmbGbMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxsZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z3dmZmbMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxsZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z2ZmZmbLZszMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2ZmZma7xszMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3dmd2Z2a2y8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxmZmZmZmZmZmZmZmZ3d3d3d3d3d3dnZmZ3ZmZmu2bMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z2ZmZmZmu7vLzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dmZmZmtru7y8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2d2ZmZmzMy7u8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2Z2Z2ZmxszMu7vMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2dmZ2ZmZszMzLvLzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z2ZnZmbGZszMzLy7y8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z3ZnZmbMzMzMzMy7u8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dnZmbMzMzMzMy7u8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dmd2ZmzGbMzMy8u8zMzMzMzMzMzMzMzMzMzMzMzMzMzLy7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3d3Z2ZmZmbMzMzMu8vMzMzMzMzMzMzMzMzMzMzMzLu7u7u7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3d3ZrtrZsbMzMzMu7vMzMzMzMzMu7u7u7u7u7u7u7u7u7u7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dnd7a7u8ZmzMzMvLvLzMzMzLy7u7u7u7u7u7u7u7u7u7u7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dnd2e7u7u7u8vMvLvLzMzMu7u7u7u7u7u7u7u7u7u7u7u7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dndndmtru7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3d3ZmZmZra7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u2tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3d2Z2ZmZmbGvLu7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u2tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3d2d2ZmZmZmzMy8u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u2tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dmZmZmZsbMzMzMvLu7u7u7u7u7u7u7u7vMzMzMzMy7u7u7u2tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dnZmZmZmbMzMzMzMzMzMzMvLu7u7vMzMzMzMzMzMzMvLu7u2tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2d3ZmZmZmZsxszMzMzMzMy8u7vLzMzMzMzMzMzMzMzMzMy7u7tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2d3ZmZmZmZmxszMzMzMu7u7u8vMzMzMzMzMzMzMzMzMzMzMzMxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2Z2ZmZmZmZmzMzMzMy8u7u7y8zMzMzMzMzMzMzMzMzMzMzMzMxsZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2ZmZmZmZmZmzMzMzMy7u8zMzMzMzMzMzMzMzMzMzMzMzMzMzMxsZmZmZmZmZmZmZmZ3d3d3d3d3d3d3ZndmZmZmZmZmxszMzLy7y8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z3ZnZmZmZmZmZsy7u7u7zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2ZmZmZmZra7u7u7u7vLzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMbGZmZmZmZmZmZmZ3d3d3d3d3d3d3dmZmZmZmu7u7u7u7y8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMbGZmZmZmZmZmZmZ3d3d3d3d3d3d3ZmZmtru7u7u7u8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMbGZmZmZmZmZmZmZ3d3d3d3d3d3dndmZmZmZmZmZsxszMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMbGZmZmZmZmZmZmZ3d3d3d3d3d3dnd2ZmZmZmZmbMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMbGZmZmZmZmZmZmZ3d3d3d3d3d3d3Z3ZnZmZmZmzGzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z3dmZmZmzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dmZmZmxszMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2ZmZmZmZszMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxsZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2dmZmbGbMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxsZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z3dmZmbMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxsZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z2ZmZmbLZszMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2ZmZma7xszMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3dmd2Z2a2y8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxmZmZmZmZmZmZmZmZ3d3d3d3d3d3dnZmZ3ZmZmu2bMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z2ZmZmZmu7vLzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dmZmZmtru7y8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2d2ZmZmzMy7u8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2Z2Z2ZmxszMu7vMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2dmZ2ZmZszMzLvLzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z2ZnZmbGZszMzLy7y8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z3ZnZmbMzMzMzMy7u8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dnZmbMzMzMzMy7u8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dmd2ZmzGbMzMy8u8zMzMzMzMzMzMzMzMzMzMzMzMzMzLy7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3d3Z2ZmZmbMzMzMu8vMzMzMzMzMzMzMzMzMzMzMzLu7u7u7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3d3ZrtrZsbMzMzMu7vMzMzMzMzMu7u7u7u7u7u7u7u7u7u7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dnd7a7u8ZmzMzMvLvLzMzMzLy7u7u7u7u7u7u7u7u7u7u7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dnd2e7u7u7u8vMvLvLzMzMu7u7u7u7u7u7u7u7u7u7u7u7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dndndmtru7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3d3ZmZmZra7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u2tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3d2Z2ZmZmbGvLu7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u2tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3d2d2ZmZmZmzMy8u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u2tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dmZmZmZsbMzMzMvLu7u7u7u7u7u7u7u7vMzMzMzMy7u7u7u2tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dnZmZmZmbMzMzMzMzMzMzMvLu7u7vMzMzMzMzMzMzMvLu7u2tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2d3ZmZmZmZsxszMzMzMzMy8u7vLzMzMzMzMzMzMzMzMzMy7u7tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2d3ZmZmZmZmxszMzMzMu7u7u8vMzMzMzMzMzMzMzMzMzMzMzMxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2Z2ZmZmZmZmzMzMzMy8u7u7y8zMzMzMzMzMzMzMzMzMzMzMzMxsZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2ZmZmZmZmZmzMzMzMy7u8zMzMzMzMzMzMzMzMzMzMzMzMzMzMxsZmZmZmZmZmZmZmZ3d3d3d3d3d3d3ZndmZmZmZmZmxszMzLy7y8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z3ZnZmZmZmZmZsy7u7u7zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2ZmZmZmZra7u7u7u7vLzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMbGZmZmZmZmZmZmZ3d3d3d3d3d3d3dmZmZmZmu7u7u7u7y8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMbGZmZmZmZmZmZmZ3d3d3d3d3d3d3ZmZmtru7u7u7u8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMbGZmZmZmZmZmZmZ3d3d3d3d3d3dndmZmZmZmZmZsxszMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMbGZmZmZmZmZmZmZ3d3d3d3d3d3dnd2ZmZmZmZmbMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMbGZmZmZmZmZmZmZ3d3d3d3d3d3d3Z3ZnZmZmZmzGzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z3dmZmZmzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dmZmZmxszMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2ZmZmZmZszMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxsZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2dmZmbGbMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxsZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z3dmZmbMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxsZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z2ZmZmbLZszMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2ZmZma7xszMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3dmd2Z2a2y8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxmZmZmZmZmZmZmZmZ3d3d3d3d3d3dnZmZ3ZmZmu2bMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z2ZmZmZmu7vLzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dmZmZmtru7y8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2d2ZmZmzMy7u8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2Z2Z2ZmxszMu7vMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2dmZ2ZmZszMzLvLzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z2ZnZmbGZszMzLy7y8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z3ZnZmbMzMzMzMy7u8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dnZmbMzMzMzMy7u8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dmd2ZmzGbMzMy8u8zMzMzMzMzMzMzMzMzMzMzMzMzMzLy7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3d3Z2ZmZmbMzMzMu8vMzMzMzMzMzMzMzMzMzMzMzLu7u7u7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3d3ZrtrZsbMzMzMu7vMzMzMzMzMu7u7u7u7u7u7u7u7u7u7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dnd7a7u8ZmzMzMvLvLzMzMzLy7u7u7u7u7u7u7u7u7u7u7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dnd2e7u7u7u8vMvLvLzMzMu7u7u7u7u7u7u7u7u7u7u7u7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dndndmtru7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3d3ZmZmZra7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u2tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3d2Z2ZmZmbGvLu7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u2tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3d2d2ZmZmZmzMy8u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u2tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dmZmZmZsbMzMzMvLu7u7u7u7u7u7u7u7vMzMzMzMy7u7u7u2tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dnZmZmZmbMzMzMzMzMzMzMvLu7u7vMzMzMzMzMzMzMvLu7u2tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2d3ZmZmZmZsxszMzMzMzMy8u7vLzMzMzMzMzMzMzMzMzMy7u7tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2d3ZmZmZmZmxszMzMzMu7u7u8vMzMzMzMzMzMzMzMzMzMzMzMxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2Z2ZmZmZmZmzMzMzMy8u7u7y8zMzMzMzMzMzMzMzMzMzMzMzMxsZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2ZmZmZmZmZmzMzMzMy7u8zMzMzMzMzMzMzMzMzMzMzMzMzMzMxsZmZmZmZmZmZmZmZ3d3d3d3d3d3d3ZndmZmZmZmZmxszMzLy7y8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z3ZnZmZmZmZmZsy7u7u7zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2ZmZmZmZra7u7u7u7vLzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMbGZmZmZmZmZmZmZ3d3d3d3d3d3d3dmZmZmZmu7u7u7u7y8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMbGZmZmZmZmZmZmZ3d3d3d3d3d3d3ZmZmtru7u7u7u8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMbGZmZmZmZmZmZmZ3d3d3d3d3d3dndmZmZmZmZmZsxszMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMbGZmZmZmZmZmZmZ3d3d3d3d3d3dnd2ZmZmZmZmbMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMbGZmZmZmZmZmZmZ3d3d3d3d3d3d3Z3ZnZmZmZmzGzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z3dmZmZmyczMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dmZmZmxszMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2ZmZmZmZszMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxsZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2dmZmbGbMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxsZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z3dmZmbMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxsZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z2ZmZmbLZszMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2ZmZma7xszMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3dmd2Z2a2y8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxmZmZmZmZmZmZmZmZ3d3d3d3d3d3dnZmZ3ZmZmu2bMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z2ZmZmZmu7vLzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dmZmZmtru7y8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2d2ZmZmzMy7u8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2Z2Z2ZmxszMu7vMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2dmZ2ZmZszMzLvLzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z2ZnZmbGZszMzLy7y8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z3ZnZmbMzMzMzMy7u8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dnZmbMzMzMzMy7u8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzGZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dmd2ZmzGbMzMy8u8zMzMzMzMzMzMzMzMzMzMzMzMzMzLy7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3d3Z2ZmZmbMzMzMu8vMzMzMzMzMzMzMzMzMzMzMzLu7u7u7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3d3ZrtrZsbMzMzMu7vMzMzMzMzMu7u7u7u7u7u7u7u7u7u7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dnd7a7u8ZmzMzMvLvLzMzMzLy7u7u7u7u7u7u7u7u7u7u7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dnd2e7u7u7u8vMvLvLzMzMu7u7u7u7u7u7u7u7u7u7u7u7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dndndmtru7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u2ZmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3d3ZmZmZra7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u2tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3d2Z2ZmZmbGvLu7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u2tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3d2d2ZmZmZmzMy8u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u2tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dmZmZmZsbMzMzMvLu7u7u7u7u7u7u7u7vMzMzMzMy7u7u7u2tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d3dnZmZmZmbMzMzMzMzMzMzMvLu7u7vMzMzMzMzMzMzMvLu7u2tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2d3ZmZmZmZsxszMzMzMzMy8u7vLzMzMzMzMzMzMzMzMzMy7u7tmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2d3ZmZmZmZmxszMzMzMu7u7u8vMzMzMzMzMzMzMzMzMzMzMzMxmZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2Z2ZmZmZmZmzMzMzMy8u7u7y8zMzMzMzMzMzMzMzMzMzMzMzMxsZmZmZmZmZmZmZmZ3d3d3d3d3d3d3d2ZmZmZmZmZmzMzMzMy7u8zMzMzMzMzMzMzMzMzMzMzMzMzMzMxsZmZmZmZmZmZmZmZ3d3d3d3d3d3d3ZndmZmZmZmZmxszMzLy7y8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMZmZmZmZmZmZmZmZ3d3d3d3d3d3d3Z3ZnZmZmZmZmZsy7u7u7zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMZmZmZmZmZmZmZmY=\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"background\"\n    },\n    \"image2\": {\n        \"data\": \"hwQCAAIAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"blank\"\n    },\n    \"!9JYV,L/jKs+UKIrs:QV\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAA8P8PAAAAAADw7v4AAADPDADw/wAA8N39////AAD/vev///sA8O7u7u++/QDv7u7u7779AO/e3f3v/v8A793f/e7//gDv3d/87u/+AO/d3e3+/v8A8N3t/f/f/QAA/+3f/b/9AAAA3N/9//8AAADA/P8AAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"on guard\"\n    },\n    \"*I3x=@AnYTeNAqrIrfN5\": {\n        \"data\": \"hwQQABAAAAAAAAD//w8AAAAAAO/u/gAAAAAA8P//DwAAAM8MAO/+/wDw3c3w7u79AP+9++/u/vvw7u7u7+7+++/u7u7u/r/9797d3e7u3v3v/d/d/f7//O/d3dz9/r/9793dzf3v3v3w/e/N/fD/DwDf7c39AAAAAMDczQ8AAAAAAMDMAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"stand\"\n    },\n    \"pLV*ki*oE+2pU{$bMKf3\": {\n        \"namespace\": \"myImages\",\n        \"id\": \"pLV*ki*oE+2pU{$bMKf3\",\n        \"mimeType\": \"application/mkcd-animation\",\n        \"data\": \"NjQwMDE0MDAxNDAwMGQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA0MDA0MDAwMDAwMDAwMDAwMDAwMDU0NDUwMDAwMDAwMDAwMDAwMDAwNTIyNTAwMDAwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwNDAwNDAwMDAwMDAwMDAwMDAwMDA1NDQ1MDAwMDAwMDAwMDAwMDAwMDUyMjUwMDAwMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDQwMDQwMDAwMDAwMDAwMDAwMDAwNTQ0NTAwMDAwMDAwMDAwMDAwMDA1MjI1MDAwMDAwMDAwMDAwMDAwMDIwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA0MDA0MDAwMDAwMDAwMDAwMDAwMDU0NDUwMDAwMDAwMDAwMDAwMDAwNTIyNTAwMDAwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwNDAwNDAwMDAwMDAwMDAwMDAwMDA1NDQ1MDAwMDAwMDAwMDAwMDAwMDUyMjUwMDAwMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA0MDAwMDAwMDAwMDAwMDIwMDQwMDQwMDAwMDAwMDAwMDA0MjAwNTQwNDAwMDAwMDAwMDAwMDIwZDQ1NTA0MDAwMDAwMDAwMDAwMjA1NTU1MDQwMDAwMDAwMDAwMDAwMDUyNTU0NTAwMDAwMDAwMDAwMDAwNTIyNDQ0MDAwMDAwMDAwMDAwMDA0NDAwNDIwNDAwMDAwMDAwMDA0MDA0MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAzMDAwMDAwMDAwMDA0MDAwMDA0MDMwMDMwMDAwMDAwMDQ0MDAwMDAwMzAzZDAwNDQwMDQ0NGQwMDAwMDAwMDUzNDM1NTQ0ZGQ0NDQwMDAwMDAwZDNkNTExNWRkNTQ0MDAwMDAwMDA1NDE1MTE1MTExNDUwMDAwMDA0MDU1NTUxMTE1MTE0ZDA0NDAwMDQwNWQxMTU1MTUxMTU1MDQwMDAwNDA1NDExNTU1NWQ1NTUwNDAwMDQwMDM0NWQ1NTVkZDVkZDA0MDAwMDQwNTU1ZDU1ZGQ1ZDQ1MDAwMDAwNDA1NTNkZDUzZDVkNDUwMDAwMDA0MGQ0NGRkZDRkZDM0ZDQwMDAwMDAwNTQ0NDQ0NDQ0NDA0MDAwMDAwNDA0NTAwNDQwNDAwNDQwMDAwNDA0MDA0MDAwMDAwMDA0MDA0MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMGJiYmJiYmJiMDAwMDEwMTAwMGIwMTExMTFiMTEwYjAwMDAwMGIwM2IxMWRkZGRkMWJkMGIwMDAwMWJkMWJkYmJiYmJiMTEwYjAwMDAxYjExMGIwMDAwMDBkYmJkMDAwMDMwZGQwYjAwMDAwMGRiMTEwYjAwMWIzZDAwMDAwMDAwYjAxMTBiMDAxYmJkMDAwMDAwMDBiMDExMGIwMDFiYmQwMDAwMDAwMGIwZDEwYjAwMWJiMTAwMDAwMDAwYmJkMTBiMDAxYmJkMDAwMDAwMDBkYmQzMGIwMGJiZGQwYjAwMDBiMGRkYmQwMDAwZGJkZGJkMDBiMDNiZGRiMzAwMDBiMGRkMzNiYmRiMzNiYjBiMDAwMDAwYmJkYjExZGRkZDBiMDAwMDAwMDAwMGIwYmJiYmJiMDAxMDAwMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA=\",\n        \"displayName\": \"splode\"\n    },\n    \"ww0TopSAVqq@IE=[*I5$\": {\n        \"namespace\": \"myImages\",\n        \"id\": \"ww0TopSAVqq@IE=[*I5$\",\n        \"mimeType\": \"application/mkcd-animation\",\n        \"data\": \"YzgwMDEwMDAxMDAwMDYwMDAwMDAwMGYwZmZmZjAwMDAwMDAwMDBlZmVlZWUwZjAwMDAwMGYwZWVkZWRkZmQwMDAwMDBmZmVlZmRkZGRmMGMwMGYwZGRlZWZkZGRkZjBjMDBjMGJkZWVkZGRkZWVjZDAwYzBiZGVlZGRkY2RkY2QwMDAwZmNlZWRlY2RjY2NjMDAwMGYwZWZlZWRkZGQwZjAwMDBlZmVlZmVmZmZmMDBmZmYwZWVlZWVlZmYwMDAwZWZmMGVlZWZmZWVlMGYwMGVmZjBlZWZlZWVlZmZlMDBlZmZmZmViYmJmZmRiZDBmZmZmZmJlZGRkZmZkZGQwZmYwZmZmZmZmZmZmZmZmMDAwMDAwMDBmMGZmZmYwMDAwMDAwMDAwZWZlZWVlMGYwMDAwMDBmMGVlZGVkZGZkMDAwMDAwZmZlZWZkZGRkZjBjMDBmMGRkZWVmZGRkZGYwYzAwYzBiZGVlZGRkZGVlY2QwMGMwYmRlZWRkZGNkZGNkMDAwMGZjZWVkZWNkY2NjYzAwMDBmMGVmZWVkZGRkMGYwMDAwZWZlZWZmZWVmZTAwZmZmMGVlZWVmZWZmZmYwMGVmZjBlZWZmZWViZmZkMDBlZmYwZWVmZWVmZGZmZDBmZWZmZmZlYmJmZWZmZmYwZmZmZmZiZWRkZWVmZWRkMGZmMGZmZmZmZmZmZmZmZjAwMDAwMDAwZmZmZjBmMDAwMDAwMDBmMGVlZWVmZTAwMDAwMDAwZWZkZWRkZGQwZjAwMDBmMGVmZmRkZmZkZmYwMDAwZGZlZGRkZGRlZWRkMGNmMGZmZWRkZGRjZGRjZDBjZGZmYmVkZGRjZGNjZGMwY2RmZmRlZmRlZGRkZGNkMDBmZmVmZmZlZWRkZGQwYzAwMDBlZmVlZWZmZWZmMDAwMGYwZmZlZWVlZWVmZTAwMDBmMGZlZmZlZWVlZWUwZjAwZjBmZWZmZmZlZWVlZmYwMGYwZmVmZmJiZWZmZWJkMGZmMGZmYmZkZGVmZmVkZDBmMDBmZmZmZmZmZmZmZmYwZjAwMDAwMGZmZmYwZjAwMDAwMDAwZjBlZWVlZmUwMDAwMDAwMGVmZGRkZGRkMGYwMDAwZjBkZmZmZGRmZmZkMDAwMGRmZGVkZGVkZGVkZDBjMDBmZmRlY2RkZGRkZGMwY2ZmZmZkZWRkY2NjY2RkMGNkZmZiZWZkZGRkZGRjZDAwZGZmZGZmZWVkZGRkMGMwMGZmZWZlZWVmZmVmZjAwMDBmMGZmZWVlZWVlZmUwMDAwZjBmZWZmZWVlZWVlMGYwMGYwZmVmZmZmZWVlZWZmMDBmMGZlZmZiYmVmZmViZDBmZjBmZmJmZGRmZmZmZGQwZjAwZmZmZmZmZmZmZmZmMGYwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMGYwZmZmZjAwMDAwMDAwMDBlZmVlZWUwZjAwMDAwMGYwZWVkZWRkZmQwMDAwMDBmZmVlZGRkZGZkMDAwMGYwZGRlZWZkZGZkZDBjMDBjMGJkZWVkZGRkZWVjZDAwYzBiZGVlZGRkY2ZkY2YwMDAwZWZlZWZmZWZkZmZkMDAwMGZmZmZlZmVlZGZmZGYwMGZmZmVlZWVmZWZmZmZmMDBlZmZlZWZlZWZmZjBmZjBmZWZmYmJmZmZlYmQwZmYwZmViZmRkZWZmZWRkMGYwMGZmZmZmZmZmZmZmZjBmMDAwMDAwZjBmZmZmMDAwMDAwMDAwMGVmZWVlZTBmMDAwMDAwZjBlZWRlZGRmZDAwMDAwMGZmZWVkZGRmZmQwMDAwZjBkZGVlZGRkZmRkMGMwMGMwYmRlZWRkZGRlZWNkMDBjMGJkZWVkZGRjZGRjZDAwZjBmY2VlZGRmZGZmY2YwMDAwZWZlZWZlZmZiZDBmMDAwMGVmZmVmZmZlZGQwZmYwMGZmZmVmZWVmZWZmMDBmMDBlZmZlZWVlZWZmZTAwZjBmZWZmZmZmZmVlZmUwZmYwZmVmZmJiZWZmZWJkMGZmMGZmYmZkZGVlZmZkZDBmMDBmZmZmZmZmZmZmZmYwZg==\",\n        \"displayName\": \"yowza\"\n    },\n    \"!8wbItft\": {\n        \"namespace\": \"{cJ:T`ts-ye\",\n        \"id\": \"!8wbItft\",\n        \"mimeType\": \"application/mkcd-animation\",\n        \"data\": \"MzIwMDEwMDAxMDAwMGEwMDAwMDBmZmZmMGYwMDAwMDAwMGYwZWVlZWZlMDAwMDAwMDBkZmRkZWRlZTBmMDAwMGMwZmRkZGRmZWVmZjAwMDBjMGZkZGRkZmVlZGQwZjAwZGNlZWRkZGRlZWRiMGMwMGRjZGRjZGRkZWVkYjBjMDBjY2NjZGNlZGVlY2YwMDAwZjBkZGRkZWVmZTBmMDAwMDAwZmZmZmVmZWVmZTAwMDAwMDAwZmZlZWVlZWUwZmZmMDBmMGVlZWZmZWVlMGZmZTAwZWZmZWVlZWZlZTBmZmVmMGRiZGZmYmJiZWZmZmZlZjBkZGRmZmRkZGViZmZmZjAwZmZmZmZmZmZmZmZmMGYwMDAwZmZmZjBmMDAwMDAwMDBmMGVlZWVmZTAwMDAwMDAwZGZkZGVkZWUwZjAwMDBjMGZkZGRkZmVlZmYwMDAwYzBmZGRkZGZlZWRkMGYwMGRjZWVkZGRkZWVkYjBjMDBkY2RkY2RkZGVlZGIwYzAwY2NjY2RjZWRlZWNmMDAwMGYwZGRkZGVlZmUwZjAwMDAwMGVmZWVmZmVlZmUwMDAwMDBmZmZmZWZlZWVlMGZmZjAwZGZmYmVlZmZlZTBmZmVmMGRmZmRmZWVmZWUwZmZlZjBmZmZmZWZiYmVmZmZmZWYwZGRlZmVlZGRlYmZmZmYwMGZmZmZmZmZmZmZmZjBmMDAwMGYwZmZmZjAwMDAwMDAwMDBlZmVlZWUwZjAwMDAwMGYwZGRkZGVkZmUwMDAwMDBmZmRmZmRkZmZlMGYwMGMwZGRlZWRkZGRkZWZkMDBjMGRjZGRjZGRkZGVmZjBmYzBjZGNjZGNkZGRlYmZmZDAwZGNkZGRkZWRmZWRmZmQwMGMwZGRkZGVlZmZmZWZmMDAwMGZmZWZmZWVlZmUwMDAwMDBlZmVlZWVlZWZmMGYwMGYwZWVlZWVlZmZlZjBmMDBmZmVlZWVmZmZmZWYwZmYwZGJlZmZlYmJmZmVmMGZmMGRkZWZmZWRkZmJmZjBmZjBmZmZmZmZmZmZmZmYwMDAwMDAwMGZmZmYwZjAwMDAwMDAwZjBlZWVlZmUwMDAwMDAwMGVmZGRkZGRkMGYwMDAwZjBkZmZmZGRmZmZkMDAwMGRmZGVkZGVkZGVkZDBjMDBmZmRlY2RkZGRkZGMwY2ZmZmZkZWRkY2NjY2RkMGNkZmZiZWZkZGRkZGRjZDAwZGZmZGZmZWVkZGRkMGMwMGZmZWZlZWVmZmVmZjAwMDBmMGZmZWVlZWVlZmUwMDAwZjBmZWZmZWVlZWVlMGYwMGYwZmVmZmZmZWVlZWZmMDBmMGZlZmZiYmVmZmViZDBmZjBmZmJmZGRmZmZmZGQwZjAwZmZmZmZmZmZmZmZmMGYwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMGYwZmZmZjAwMDAwMDAwMDBlZmVlZWUwZjAwMDAwMGYwZWVkZWRkZmQwMDAwMDBmZmVlZGRkZGZkMDAwMGYwZGRlZWZkZGZkZDBjMDBjMGJkZWVkZGRkZWVjZDAwYzBiZGVlZGRkY2ZkY2YwMDAwZWZlZWZmZWZkZmZkMDAwMGZmZmZlZmVlZGZmZGYwMGZmZmVlZWVmZWZmZmZmMDBlZmZlZWZlZWZmZjBmZjBmZWZmYmJmZmZlYmQwZmYwZmViZmRkZWZmZWRkMGYwMGZmZmZmZmZmZmZmZjBmMDAwMDAwZjBmZmZmMDAwMDAwMDAwMGVmZWVlZTBmMDAwMDAwZjBlZWRlZGRmZDAwMDAwMGZmZWVkZGRmZmQwMDAwZjBkZGVlZGRkZmRkMGMwMGMwYmRlZWRkZGRlZWNkMDBjMGJkZWVkZGRjZGRjZDAwZjBmY2VlZGRmZGZmY2YwMDAwZWZlZWZlZmZiZDBmMDAwMGVmZmVmZmZlZGQwZmYwMGZmZmVmZWVmZWZmMDBmMDBlZmZlZWVlZWZmZTAwZjBmZWZmZmZmZmVlZmUwZmYwZmVmZmJiZWZmZWJkMGZmMGZmYmZkZGVlZmZkZDBmMDBmZmZmZmZmZmZmZmYwZjAwMDBmMGZmZmYwMDAwMDAwMDAwZWZlZWVlMGYwMDAwMDBmMGRkZGRlZGZlMDAwMDAwZmZkZmZkZGZmZTBmMDBjMGRkZWVkZGRkZGVmZDAwYzBkY2RkY2RkZGRlZmYwZmMwY2RjY2RjZGRkZWJmZmQwMGRjZGRkZGVkZmVkZmZkMDBjMGRkZGRlZWZmZmVmZjAwMDBmZmVmZmVlZWZlMDAwMDAwZWZlZWVlZWVmZjBmMDBmMGVlZWVlZWZmZWYwZjAwZmZlZWVlZmZmZmVmMGZmMGRiZWZmZWJiZmZlZjBmZjBkZGVmZmVkZGZiZmYwZmYwZmZmZmZmZmZmZmZmMDAwMDAwZmZmZjBmMDAwMDAwMDBmMGVlZWVmZTAwMDAwMDAwZGZkZGVkZWUwZjAwMDBjMGZkZGRkZmVlZmYwMDAwYzBmZGRkZGZlZWRkMGYwMGRjZWVkZGRkZWVkYjBjMDBkY2RkY2RkZGVlZGIwYzAwY2NjY2RjZWRlZWNmMDAwMGYwZGRkZGVlZmUwZjAwMDAwMGVmZWVmZmVlZmUwMDAwMDBmZmZmZWZlZWVlMGZmZjAwZGZmYmVlZmZlZTBmZmVmMGRmZmRmZWVmZWUwZmZlZjBmZmZmZWZiYmVmZmZmZWYwZGRlZmVlZGRlYmZmZmYwMGZmZmZmZmZmZmZmZjBmMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDBmMGZmZmYwMDAwMDAwMDAwZWZlZWVlMGYwMDAwMDBmMGVlZGVkZGZkMDAwMDAwZmZlZWRkZGRmZDAwMDBmMGRkZWVmZGRmZGQwYzAwYzBiZGVlZGRkZGVlY2QwMGMwYmRlZWRkZGNmZGNmMDAwMGVmZWVmZmVmZGZmZDAwMDBmZmZmZWZlZWRmZmRmMDBmZmZlZWVlZmVmZmZmZjAwZWZmZWVmZWVmZmYwZmYwZmVmZmJiZmZmZWJkMGZmMGZlYmZkZGVmZmVkZDBmMDBmZmZmZmZmZmZmZmYwZjAwMDAwMGYwZmZmZjAwMDAwMDAwMDBlZmVlZWUwZjAwMDAwMGYwZWVkZWRkZmQwMDAwMDBmZmVlZGRkZmZkMDAwMGYwZGRlZWRkZGZkZDBjMDBjMGJkZWVkZGRkZWVjZDAwYzBiZGVlZGRkY2RkY2QwMGYwZmNlZWRkZmRmZmNmMDAwMGVmZWVmZWZmYmQwZjAwMDBlZmZlZmZmZWRkMGZmMDBmZmZlZmVlZmVmZjAwZjAwZWZmZWVlZWVmZmUwMGYwZmVmZmZmZmZlZWZlMGZmMGZlZmZiYmVmZmViZDBmZjBmZmJmZGRlZWZmZGQwZjAwZmZmZmZmZmZmZmZmMGY=\",\n        \"displayName\": \"jump\"\n    },\n    \"nJ!v68=BJb:Abieo^Us1\": {\n        \"namespace\": \"myImages\",\n        \"id\": \"nJ!v68=BJb:Abieo^Us1\",\n        \"mimeType\": \"application/mkcd-animation\",\n        \"data\": \"OTYwMDEwMDAxMDAwMDUwMDAwMDAwMGYwZmZmZjAwMDAwMDAwMDBlZmVlZWUwZjAwMDAwMGYwZWVkZWRkZmQwMDAwMDBmZmVlZmRkZGRmMGMwMGYwZGRlZWZkZGRkZjBjMDBjMGJkZWVkZGRkZWVjZGZmYzBiZGVlZGRkY2RkY2RlZjBmZmNlZWRkY2RjY2NjZWYwZmYwZWZkZWRkZGQwZmVmMGZlZmVlZmVmZmZmMDBlZmZmZWVlZWVlZmUwMDAwZjBlZmVlZmVmZWVmMGYwMDAwZWZlZWZlZmVlZjBmMDAwMGYwZmViZmZkZGIwZjAwMDBmMGJkZGJjZGRkMGYwMDAwZjBmZmZmZmZmZjAwMDAwMDAwMDBmMGZmZmYwMDAwMDAwMDAwZWZlZWVlMGYwMDAwMDBmMGVlZGVkZGZkMDAwMDAwZjBlZWZkZGRkZjBjMDAwMGZmZWVmZGRkZGYwYzAwZjBkZGVlZGRkZGVlY2QwMGMwYmRlZWRkZGNkZGNkZmZjMGJkZWVkZWNkY2NjY2VmMGZmY2VmZWVkZGRkMGZlZjBmZWZlZWZlZmZmZjBmZWZmZmVlZWVlZWZlZmYwZmYwZWZlZWZlZmVkZGRmZmQwMGVmZWVmZWZlZGJiZmZkMDBlZmZmZmZmZmZmZmZmZjAwZGZjZDBmMDAwMDAwMDAwMGZmZmYwMDAwMDAwMDAwMDAwMDAwZjBmZmZmMDAwMDAwMDAwMGVmZWVlZTBmMDAwMDAwZmZlZWRlZGRmZDAwMDBmMGRkZWVkZGRkZGQwYzAwYzBiZGVlZmRkZGRmMGNmZmMwYmRlZWZkZGRkZmNkZWYwZmZjZWVkZGRkZWVjZGVmMGZmMGVlZGVkY2RkY2RlZjBmZjBlZmVlY2RjYzBmZWYwZmVmZWVmZWZmZmYwMGYwZmZlZWVlZWVmZTAwMDAwMGVmZWVmZWVlZWZmZjAwMDBlZmVlZmZlZmZlZWYwZmYwZmJmZmZmY2ZkZGRiZmRmMGRkZmMwMGRmZGRkY2ZkMDBmZjBmMDBmZmZmZmYwZjAwMDAwMGYwZmZmZjAwMDAwMDAwZmZlZmVlZWUwZjAwMDBmMGRkZWVlZWRkZmQwMDAwYzBiZGVlZGVkZGRkMGMwMGMwYmRlZWRkZGRkZDBjZjAwZmZjZWVmZGRkZGZjZGVmMGZmMGVlZmRkZGRmY2RlZjBmZjBlZWRkZGRlZWNkZWYwZmYwZWZkZWRjZGQwZmVmMGZlZmVlZWVmZGZmMDBmMGZmZWVlZWVlZmUwMDAwMDBmZmViZWVlZWZmMDAwMDAwZmZkZGVjZmVlZjBmMDAwMDAwZmZjZmRkZGJmZDAwMDAwMGYwZGZkZGRjZmQwMDAwMDAwMGZmZmZmZjBmMDAwMDAwMDBmMGZmZmYwMDAwMDAwMDAwZWZlZWVlMGYwMDAwMDBmMGVlZGVkZGZkMDAwMDAwZmZlZWZkZGRkZjBjMDBmMGRkZWVmZGRkZGYwYzAwYzBiZGVlZGRkZGVlY2QwMGMwYmRlZWRkZGNkZGNkMDAwMGZjZWVkZWNkY2NjYzAwMDBmMGVmZWVkZGRkMGYwMDAwZWZlZWZlZmZmZjAwZmZmMGVlZWVlZWZmMDAwMGVmZjBlZWVmZmVlZTBmMDBlZmYwZWVmZWVlZWZmZTAwZWZmZmZlYmJiZmZkYmQwZmZmZmZiZWRkZGZmZGRkMGZmMGZmZmZmZmZmZmZmZjAw\",\n        \"displayName\": \"walk right\"\n    },\n    \";(ce+_wI%}f[!;{5C_zj\": {\n        \"namespace\": \"myImages\",\n        \"id\": \";(ce+_wI%}f[!;{5C_zj\",\n        \"mimeType\": \"application/mkcd-animation\",\n        \"data\": \"OTYwMDEwMDAxMDAwMDUwMDAwMDBmZmZmMGYwMDAwMDAwMGYwZWVlZWZlMDAwMDAwMDBkZmRkZWRlZTBmMDAwMGMwZmRkZGRmZWVmZjAwMDBjMGZkZGRkZmVlZGQwZjAwZGNlZWRkZGRlZWRiMGMwMGRjZGRjZGRkZWVkYjBjZmZjY2NjZGNkZGVlY2ZmMGZlZjBkZGRkZWRmZTBmZjBmZTAwZmZmZmVmZWVmZWYwZmUwMDAwZWZlZWVlZWVmZmZlMDBmMGZlZWZlZmVlZmUwZjAwZjBmZWVmZWZlZWZlMDAwMGYwYmRkZmZiZWYwZjAwMDBmMGRkZGNiZGRiMGYwMDAwMDBmZmZmZmZmZjBmMDAwMDAwZmZmZjBmMDAwMDAwMDBmMGVlZWVmZTAwMDAwMDAwZGZkZGVkZWUwZjAwMDBjMGZkZGRkZmVlMGYwMDAwYzBmZGRkZGZlZWZmMDAwMGRjZWVkZGRkZWVkZDBmMDBkY2RkY2RkZGVlZGIwYzAwY2NjY2RjZWRlZWRiMGNmZmYwZGRkZGVlZmVjZmYwZmVmMGZmZmZlZmVlZmVmMGZlZjBmZmVmZWVlZWVlZmZmZWRmZmRkZGVmZWZlZWZlMGZkZmZiYmRlZmVmZWVmZTAwZmZmZmZmZmZmZmZmZmUwMDAwMDAwMDAwZjBkY2ZkMDAwMDAwMDAwMDAwZmZmZjAwMDAwMGZmZmYwZjAwMDAwMDAwZjBlZWVlZmUwMDAwMDAwMGRmZGRlZGVlZmYwMDAwYzBkZGRkZGRlZWRkMGYwMGMwZmRkZGRmZWVkYjBjMDBkY2ZkZGRkZmVlZGIwY2ZmZGNlZWRkZGRlZWNmZjBmZWRjZGRjZGVkZWUwZmYwZmVmMGNjZGNlZWZlMGZmMGZlMDBmZmZmZWZlZWZlZjBmZTAwMDBlZmVlZWVlZWZmMGYwMGZmZmVlZWVmZWVmZTAwZjBmZWVmZmVmZmVlZmUwMGRmYmRkZGZjZmZmZmJmMGZkZmNkZGRmZDAwY2ZkZDBmZjBmZmZmZmYwMGYwZmYwMDAwMDBmZmZmMGYwMDAwMDAwMGYwZWVlZWZlZmYwMDAwMDBkZmRkZWVlZWRkMGYwMGMwZGRkZGVkZWVkYjBjMDBjMGRkZGRkZGVlZGIwYzAwZGNmZGRkZGZlZWNmZjAwZmRjZmRkZGRmZWUwZmYwZmVkY2VlZGRkZGVlMGZmMGZlZjBkZGNkZWRmZTBmZjBmZTAwZmZkZmVlZWVmZWYwZmUwMDAwZWZlZWVlZWVmZjBmMDAwMGZmZWVlZWJlZmYwMDAwZjBmZWVmY2VkZGZmMDAwMGRmYmRkZGZjZmYwMDAwMDBkZmNkZGRmZDBmMDAwMDAwZjBmZmZmZmYwMDAwMDAwMDAwZmZmZjBmMDAwMDAwMDBmMGVlZWVmZTAwMDAwMDAwZGZkZGVkZWUwZjAwMDBjMGZkZGRkZmVlZmYwMDAwYzBmZGRkZGZlZWRkMGYwMGRjZWVkZGRkZWVkYjBjMDBkY2RkY2RkZGVlZGIwYzAwY2NjY2RjZWRlZWNmMDAwMGYwZGRkZGVlZmUwZjAwMDAwMGZmZmZlZmVlZmUwMDAwMDAwMGZmZWVlZWVlMGZmZjAwZjBlZWVmZmVlZTBmZmUwMGVmZmVlZWVmZWUwZmZlZjBkYmRmZmJiYmVmZmZmZWYwZGRkZmZkZGRlYmZmZmYwMGZmZmZmZmZmZmZmZjBm\",\n        \"displayName\": \"Left Walk\"\n    },\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myImages\"\n    }\n}",
