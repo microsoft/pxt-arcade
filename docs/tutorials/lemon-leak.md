@@ -94,7 +94,7 @@ game.onUpdateInterval(1000, function () {
         e e e e 2 e 2 2 e e e c . . . .
         e e e 2 e e c e c c c . . . . .
         . c c c c c c c . . . . . . . .
-    `, 50, 100)
+    `, 50, 50)
 })
 ```
 

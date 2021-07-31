@@ -20,6 +20,8 @@ Click on the grey box in ``||scene:set tilemap to||`` to open the tilemap editor
 
 Run the code, and notice that the tilemap is shown as the background. Each pixel of the drawing in the image editor is shown as a 16x16 square on the screen.
 
+![Example creating a tile and inserting into tilemap](/static/concepts/setting-the-scene/make-a-tile.gif)
+
 ```blocks
 tiles.setTilemap(tilemap`level_0`)
 
