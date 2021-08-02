@@ -7,7 +7,7 @@
 
 This activity will show you how to add extra levels to your game.
 
-![Editing our platformer](/static/skillmap/jungle/jungle2.gif "Time to live dangerously!")
+![Editing our platformer](/static/skillmap/jungle/jungle5.gif "Time to live dangerously!")
 
 
 ## Step 2 - Try It!

@@ -7,7 +7,7 @@
 
 Now that we've added an animation for our explosives, let's animate our character to make our game feel even more exciting.
 
-![Editing our platformer](/static/skillmap/jungle/jungle2.gif "Time to live dangerously!")
+![Editing our platformer](/static/skillmap/jungle/jungle5.gif "Time to live dangerously!")
 
 
 ## Step 2 - Try It!
