@@ -14,6 +14,7 @@
 
 ## Build a Platformer Game!
 * name: Learn to Make a Platformer
+* layout: manual
 
 ### jungle1
 * allowcodecarryover: false
