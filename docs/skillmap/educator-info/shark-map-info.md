@@ -50,128 +50,97 @@ Specifically, they will experience the following topics:
 - Velocity
 - World Design
 
-### Enemies Path
+### Day 1
 
-In this learning path, students will learn how to use event containers, sprite positioning, physics, and destruction to build a basic projectile-shooting game. 
+On this day, students will use event containers, sprite positioning, physics, and destruction to build a basic projectile-shooting game.
 
 #### 1. Set the Scene
 
 | Activity | Set The Scene (10 min) |
 |---|---|
-| ![Set the Scene thumbnail](/static/skillmap/shark/shark1.gif) | Create a main character that FIRES LASERS! |
+| ![Set the Scene thumbnail](/static/skillmap/shark/shark1.gif) | Set up your laser-firing ocean shark. |
 | Blocks used | ``[scene.setBackgroundColor(8)]``<br/>``[mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)]``<br/>``[controller.moveSprite(mySprite)]``<br/>``[mySprite.setStayInScreen(true)]``<br>``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[projectile = sprites.createProjectileFromSprite(assets.image`laser`, mySprite, ,)]``|
 | Solution option | [Set the Scene](https://makecode.com/_ghyiPCDsJLAC) |
 
-#### 2. Bigger Greeting
+#### 2. Beware the Enemy
 
-| Activity | Bigger Greeting (10 min) |
+| Activity | Beware the Enemy (8 min) |
 |---|---|
-| ![Bigger Greeting thumbnail](/static/skillmap/map-info/bigger-greeting.png) | This activity builds off the previous Greeting Card activity.<br/>Students will add text that is revealed with the press of a &nbsp;<br/>button. |
-| Blocks used | ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[game.setDialogFrame(img`.`)]``<br/>``[game.setDialogTextColor(0)]``<br/>``[game.showLongText("", DialogLayout.Bottom)]`` |
-| Solution option | [Bigger Greating Project](https://arcade.makecode.com/42444-68014-69780-79234) |
+| ![Beware the Enemy thumbnail](/static/skillmap/shark/shark1a.gif) | Building off the last level, spawn enemies for your laser-firing shark to avoid. |
+| Blocks used | ``[game.onUpdateInterval(0, function () {})]``<br/>``[myEnemy = sprites.create(assets.image`enemy`, SpriteKind.Enemy)]``<br/>``[myEnemy.setPosition(0 + mySprite.x, randint(,))]`` |
+| Solution option | [Beware the Enemy](https://makecode.com/_g8iaro9p4cCW) |
 
-#### 3. Joking Around
+#### 3. Enemies Attack!
 
-| Activity | Joking Around (30 min) |
+| Activity | Enemies Attack! (8 min) |
 |---|---|
-| ![Joking Around thumbnail](/static/skillmap/map-info/joking-around.png) | This activity introduces students to characters and dialog,<br/>as they bring short jokes to life. |
-| Blocks used | ``[music.baDing.play()]``<br/>``[music.setVolume(20)]``<br/>``[game.splash("")]``<br/>``[sprites.create(img`.`).setPosition(0, 0)]``<br/>``[sprites.create(img`.`).startEffect(effects.spray)]``<br/>``[sprites.create(img`.`).setImage(img`.`)]``<br/>``[scene.cameraShake(4, 500)]`` |
-| Solution option | [Joking Around Project](https://arcade.makecode.com/87828-03702-46750-80177) |
+| ![Enemies Attack thumbnail](/static/skillmap/shark/shark1b.gif) | This game builds off the last level, adding gamification to your project by taking damage every time a crab catches your shark. |
+| Blocks used | ``[myEnemy.follow(mySprite, 30)]``<br/>``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {})]``<br/>``[otherSprite.destroy()]``<br/>``[info.changeLifeBy(-1)]``<br/>``[scene.cameraShake(4, 500)]`` |
+| Solution option | [Enemies Attack!](https://makecode.com/_RfAVJ0hfeW0e) |
+
+#### 4. Laser Focus
+
+| Activity | Laser Focus (5 min) |
+|---|---|
+| ![Laser Focus thumbnail](/static/skillmap/shark/shark1c.gif) | Adding on to the previous level, use your lasers to destroy enemies. |
+| Blocks used | ``[sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {})]``<br/>``[otherSprite.destroy(effects.(), )]``<br/>``[info.changeScoreBy()]`` |
+| Solution option | [Laser Focus](https://makecode.com/_hzV9FWJupD5F) |
 
 ##### Game Mod Ideas
 
-After students complete Joking Around they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try: 
+After students complete Laser Focus, they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try: 
 
-- Add a second sprite for a joke with more interaction 
-- Move sprites or change backgrounds each time the (A) button is pressed 
-- Modify your project to illustrate a poem 
-- Use what you’ve learned to illustrate a longer joke or story
+- Have the laser get destroyed when it kills an enemy
+- Add another type of enemy
+- Set it so the health bar is displayed on start
 
-### Clicker Game Path
+### Day 2
 
-In this path, students will use event containers, sprites, and projectiles to create a simple “clicker” game that takes in user input and performs an action.  Here, the user is challenged to click the (A) button as quickly as possible before time runs out. 
+On this day, students will use the same elements of event containers, sprite positioning, physics, and destruction to focus on another side of projectile games - ways to build life back up. Additionally, they will wrap up their experience with a creative customization project.
 
-#### 1. Clicker Game
+#### 1. Food not Friends
 
-| Activity | Clicker Game (10 min) |
+| Activity | Food not Friends (7 min) |
 |---|---|
-| ![Clicker Game thumbnail](/static/skillmap/map-info/clicker-game.png) | Create a game that adds points for each click. |
-| Blocks used | ``[info.startCountdown(10)]``<br/>``[info.changeScoreBy(1)]``<br/>``[info.onCountdownEnd(function () {})]``<br/>``[game.over(true)]``|
-| Solution option | [Clicker Game Project](https://arcade.makecode.com/12273-78408-58405-09625) |
+| ![Food not Friends thumbnail](/static/skillmap/shark/shark2.gif) | Back to an enemy-free ocean, this tutorial will go over spawing some food for your shark. |
+| Blocks used | ``[game.onUpdateInterval(2100, function () {})]``<br/>``[ myFood = sprites.create(img`.`, SpriteKind.Food)]``<br/>``[myFood.setPosition(80 + mySprite.x, randint(5, 115))]``<br/>``[myFood.vx = -75]``|
+| Solution option | [Food not Friends](https://makecode.com/_dLJHiifhR2ev) |
 
-#### 2. Button Clicker
+#### 2. Eat Up!
 
-| Activity | Button Clicker (10 min) |
+| Activity | Eat Up! (7 min) |
 |---|---|
-| ![Button Clicker thumbnail](/static/skillmap/map-info/button-clicker.png) | This game builds off the last level, adding an animated sprite<br/>that toggles as you press and release the (A) button. |
-| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[let power = 2]``|
-| Solution option | [Button Clicker Project](https://arcade.makecode.com/77414-66317-99137-92560) |
+| ![Eat Up! thumbnail](/static/skillmap/shark/shark3.gif) | This game builds off the last level. Animate and gamify your shark's consumption of fish. |
+| Blocks used | ``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {})]``<br/>``[otherSprite.destroy(effects.disintegrate,)]``<br/>``[info.changeScoreBy()]``<br/>``[info.startCountdown()]``<br/>``[info.onCountdownEnd(function () {})]``<br/>``[game.over(true)]``|
+| Solution option | [Eat Up!](https://makecode.com/_WM31H3Uur331) |
 
-#### 3. Clicking Superstar
+#### 3. Under the Sea
 
-| Activity | Clicking Superstar (7 min) |
+| Activity | Under the Sea (6 min) |
 |---|---|
-| ![Clicking Superstar thumbnail](/static/skillmap/map-info/clicking-superstar.png) | Building off the previous project, this level adds projectiles that<br/>take the form of stars spraying from the button with each press. |
-| Blocks used | ``[sprites.create(img`.`, SpriteKind.Player).startEffect(effects.spray, 100)]`` |
-| Solution option | [Clicking Superstar Project](https://arcade.makecode.com/24852-02760-23597-83909) |
+| ![Under the Sea thumbnail](/static/skillmap/shark/shark4.gif) | Building off the previous level, this level mixes design with automated generation to create a unique sea environment for your shark. |
+| Blocks used | ``[scene.setBackgroundImage(img`.`)]``<br/>``[for (let index = 0; index < 10; index++) {}]``<br/>``[myDecor = sprites.create(img`.`, SpriteKind.Decoration)]``<br/>``[myDecor.setPosition(randint(5, 155), 96)]`` |
+| Solution option | [Under the Sea](https://makecode.com/_2D9JL6Rm36yC) |
+
+#### 4. A Whole New World!
+
+| Activity | A Whole New World! (Time N/A) |
+|---|---|
+| ![A Whole New World! thumbnail](/static/skillmap/shark/shark4a.gif) | Put all the previous game elements together but redesign all of the individual components to create a new story! |
+| Blocks used | _None_ |
+| Solution option | [A Whole New World!]() |
 
 ##### Game Mod Ideas
 
-After students complete Clicking Superstar they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try: 
+As students work on A Whole New World!, we encourage them to plan out how they want to modify this game to best suit their interests. Consider the following questions: 
 
-- Move the A button to the lower left and add a B Button to the lower right 
-- Add a new sprite to the pedestal, make it something special! 
-- Change the theme from stars on the stage to birds in a tree 
-
-### Collector Game Path
-
-Students will work with sprite controller blocks, variables, and conditional statements to build a game where Mama Dino rushes to collect as many of her babies as possible while avoiding traffic.  
-
-#### 1. Dino Hoard
-
-| Activity | Dino Hoard (10 min) |
-|---|---|
-| ![Dino Hoard thumbnail](/static/skillmap/map-info/dino-hoard.png) | Set an animated background for your hero sprite to travel as they search for baby dinos. |
-| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[controller.moveSprite(sprites.create(img`.`), 0, 100)]``<br/>``[let random = randint(0, 10)]``<br/>``[let projectile = sprites.createProjectileFromSide(img`.`, 0, 100)]``<br/>``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {})]``<br/>``[forever(function () {})]``<br/>``[sprites.create(img`.`).destroy()]`` |
-| Solution option | [Dino Hoard Project](https://arcade.makecode.com/00050-04644-99185-20758) |
-
-
-#### 2. Save the Baby Dinos!
-
-| Activity | Save the Baby Dinos! (12 min) |
-|---|---|
-| ![Save the Baby Dinos thumbnail](/static/skillmap/map-info/save-baby-dinos.png) | Build on the previous activity to add points to your game as you collect dinos. |
-| Blocks used | ``[scene.setBackgroundColor(0)]``<br/>``[scene.setBackgroundImage(img`.`)]``<br/>``[effects.blizzard.startScreenEffect()]``<br/>``[sprites.create(img`.`).setStayInScreen(true)]``|
-| Solution option | [Save the Baby Dinos Project](https://arcade.makecode.com/21438-61170-25811-66074) |
-
-#### 3. Traffic Dodger
-
-| Activity | Traffic Dodger (14 min) |
-|---|---|
-| ![Traffic Dodger thumbnail](/static/skillmap/map-info/traffic-dodger.png) | Take your game further with cars that subtract a life if you run into them. |
-| Blocks used | ``[sprites.create(img`.`).setKind(SpriteKind.Enemy)]``<br/>``[sprites.create(img`.`).y = 0]``|
-| Solution option | [Traffic Dodger Project](https://arcade.makecode.com/76596-99011-88241-42675) |
- 
-#### 4. Animate It!
-
-| Activity | Animate It! (20 min) |
-|---|---|
-| ![Animate It! thumbnail](/static/skillmap/map-info/animate-it.png) | Polish your game using animation to make your characters come to life! |
-| Blocks used | ``[info.changeLifeBy(1)]``|
-| Solution option | [Animate It Project](https://arcade.makecode.com/20377-15271-69070-26521) |
-
-##### Game Mod Ideas
-
-After students complete Animate It! they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox.  Here are some modifications they can try: 
-
-- Make the camera shake when the dino runs into a car 
-- Add another sprite that gives more time when collected 
-- Add a sprite that gives more lives when collected 
-- Change the scene from a dino on the street to a shark in the ocean
+- What is an activity that I really like?
+- When I do this activity, what supplies do I need? Replace the fishy food with these supplies!
+- When I do this activity, what gets in my way? Replace the crabby enemies with these blockers!
+- What environment do I usually do this activity in? Replace the background with something similar!
 
 ### What’s Next?
 
-After completing the Beginner’s Guide to Arcade Games, students move on to the following activities:
+After completing Shark Splash, students move on to the following activities:
 
-* Build a Space Explorer
-* Scrolling Platformer
+* TBD
