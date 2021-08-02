@@ -44,11 +44,11 @@
 * position: 1 2
 
 ### shark1c
-* name: 1c. Add Enemies
+* name: 1c. Laser Focus
 * type: tutorial
-* description: An enemy appears! Fight!
+* description: You have enemies. You have lasers. Let's put them together!
 * url: /skillmap/shark/shark1c
-* tags: easy, enemies
+* tags: easy, enemies, points
 * imageUrl: /static/skillmap/shark/shark1c.gif
 * next: shark2
 * position: 2 2
