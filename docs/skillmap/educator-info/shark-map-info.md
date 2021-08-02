@@ -4,9 +4,9 @@
 
 **Shark Splash** introduces a number of MakeCode Arcade game design elements.
 
-In this set of activities, students will create a MakeCode Arcade game that involves blasting enemies and collecting sustenance.  This guide is intended for students who are new to MakeCode with little to moderate previous coding experience.  Through step-by-step instructions, students will focus on game creation across 3 different categories: [Enemies](#enemy-path), [Food](#food-path), and [Modification](#modification-path).
+In this set of activities, students will create a MakeCode Arcade game that involves blasting enemies and collecting sustenance.  This guide is intended for students who are new to MakeCode with little to moderate previous coding experience.  Through step-by-step instructions, students will focus on game creation across 3 primary topics: destroying enemies, collecting food, and custom modification.
 
-Designed for students between the ages of 11 & 15, this experience contains a total of 9 tutorials (approximating at least 52 minutes of instruction) spread over 2 sessions.  At the end of the learning path, students receive a certificate of completion.
+Designed for students between the ages of 11 & 15, this experience contains a total of 8 tutorials (approximating at least 52 minutes of instruction) plus an additional modification tutorial spread over 2 sessions.  At the end of the learning path, students receive a certificate of completion.
 
 |                 | Minutes* | Game Type | Key Concepts |
 | --------------- | -------- | --------- | ------------ |
@@ -52,14 +52,14 @@ Specifically, they will experience the following topics:
 
 ### Day 1
 
-On this day, students will use event containers, sprite positioning, physics, and destruction to build a basic projectile-shooting game.
+On this day, students will use event containers, sprite positioning, physics, and destruction to build a basic, projectile-based shooting game.
 
 #### 1. Set the Scene
 
 | Activity | Set The Scene (10 min) |
 |---|---|
 | ![Set the Scene thumbnail](/static/skillmap/shark/shark1.gif) | Set up your laser-firing ocean shark. |
-| Blocks used | ``[scene.setBackgroundColor(8)]``<br/>``[mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)]``<br/>``[controller.moveSprite(mySprite)]``<br/>``[mySprite.setStayInScreen(true)]``<br>``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[projectile = sprites.createProjectileFromSprite(assets.image`laser`, mySprite, ,)]``|
+| Blocks used | ``[scene.setBackgroundColor(0)]``<br/>``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[controller.moveSprite(mySprite)]``<br/>``[let mySprite: Sprite = null; mySprite.setStayInScreen(true)]``<br>``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[projectile = sprites.createProjectileFromSprite(img`.`, mySprite)]``|
 | Solution option | [Set the Scene](https://makecode.com/_ghyiPCDsJLAC) |
 
 #### 2. Beware the Enemy
@@ -67,7 +67,7 @@ On this day, students will use event containers, sprite positioning, physics, an
 | Activity | Beware the Enemy (8 min) |
 |---|---|
 | ![Beware the Enemy thumbnail](/static/skillmap/shark/shark1a.gif) | Building off the last level, spawn enemies for your laser-firing shark to avoid. |
-| Blocks used | ``[game.onUpdateInterval(0, function () {})]``<br/>``[myEnemy = sprites.create(assets.image`enemy`, SpriteKind.Enemy)]``<br/>``[myEnemy.setPosition(0 + mySprite.x, randint(,))]`` |
+| Blocks used | ``[game.onUpdateInterval()]``<br/>``[myEnemy = sprites.create(img`.`, SpriteKind.Enemy)]``<br/>``[let myEnemy: Sprite = null; let mySprite: Sprite = null; myEnemy.setPosition(0 + mySprite.x, randint())]`` |
 | Solution option | [Beware the Enemy](https://makecode.com/_g8iaro9p4cCW) |
 
 #### 3. Enemies Attack!
@@ -75,7 +75,7 @@ On this day, students will use event containers, sprite positioning, physics, an
 | Activity | Enemies Attack! (8 min) |
 |---|---|
 | ![Enemies Attack thumbnail](/static/skillmap/shark/shark1b.gif) | This game builds off the last level, adding gamification to your project by taking damage every time a crab catches your shark. |
-| Blocks used | ``[myEnemy.follow(mySprite, 30)]``<br/>``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {})]``<br/>``[otherSprite.destroy()]``<br/>``[info.changeLifeBy(-1)]``<br/>``[scene.cameraShake(4, 500)]`` |
+| Blocks used | ``[let myEnemy: Sprite = null; myEnemy.follow(mySprite, 0)]``<br/>``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {})]``<br/>``[let otherSprite: Sprite = null; otherSprite.destroy()]``<br/>``[info.changeLifeBy()]``<br/>``[scene.cameraShake())]`` |
 | Solution option | [Enemies Attack!](https://makecode.com/_RfAVJ0hfeW0e) |
 
 #### 4. Laser Focus
@@ -83,7 +83,7 @@ On this day, students will use event containers, sprite positioning, physics, an
 | Activity | Laser Focus (5 min) |
 |---|---|
 | ![Laser Focus thumbnail](/static/skillmap/shark/shark1c.gif) | Adding on to the previous level, use your lasers to destroy enemies. |
-| Blocks used | ``[sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {})]``<br/>``[otherSprite.destroy(effects.(), )]``<br/>``[info.changeScoreBy()]`` |
+| Blocks used | ``[sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {})]``<br/>``[let otherSprite: Sprite = null; otherSprite.destroy(effects.bubbles, )]``<br/>``[info.changeScoreBy()]`` |
 | Solution option | [Laser Focus](https://makecode.com/_hzV9FWJupD5F) |
 
 ##### Game Mod Ideas
@@ -103,7 +103,7 @@ On this day, students will use the same elements of event containers, sprite pos
 | Activity | Food not Friends (7 min) |
 |---|---|
 | ![Food not Friends thumbnail](/static/skillmap/shark/shark2.gif) | Back to an enemy-free ocean, this tutorial will go over spawing some food for your shark. |
-| Blocks used | ``[game.onUpdateInterval(2100, function () {})]``<br/>``[ myFood = sprites.create(img`.`, SpriteKind.Food)]``<br/>``[myFood.setPosition(80 + mySprite.x, randint(5, 115))]``<br/>``[myFood.vx = -75]``|
+| Blocks used | ``[game.onUpdateInterval()]``<br/>``[myFood = sprites.create(img`.`, SpriteKind.Food)]``<br/>``[let myFood: Sprite = null; let mySprite: Sprite = null; myFood.setPosition(0 + mySprite.x, randint())]``<br/>``[let myFood: Sprite = null; myFood.vx = 0]``|
 | Solution option | [Food not Friends](https://makecode.com/_dLJHiifhR2ev) |
 
 #### 2. Eat Up!
@@ -111,7 +111,7 @@ On this day, students will use the same elements of event containers, sprite pos
 | Activity | Eat Up! (7 min) |
 |---|---|
 | ![Eat Up! thumbnail](/static/skillmap/shark/shark3.gif) | This game builds off the last level. Animate and gamify your shark's consumption of fish. |
-| Blocks used | ``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {})]``<br/>``[otherSprite.destroy(effects.disintegrate,)]``<br/>``[info.changeScoreBy()]``<br/>``[info.startCountdown()]``<br/>``[info.onCountdownEnd(function () {})]``<br/>``[game.over(true)]``|
+| Blocks used | ``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {})]``<br/>``[let otherSprite: Sprite = null; otherSprite.destroy(effects.disintegrate,)]``<br/>``[info.changeScoreBy()]``<br/>``[info.startCountdown()]``<br/>``[info.onCountdownEnd(function () {})]``<br/>``[game.over(true)]``|
 | Solution option | [Eat Up!](https://makecode.com/_WM31H3Uur331) |
 
 #### 3. Under the Sea
@@ -119,7 +119,7 @@ On this day, students will use the same elements of event containers, sprite pos
 | Activity | Under the Sea (6 min) |
 |---|---|
 | ![Under the Sea thumbnail](/static/skillmap/shark/shark4.gif) | Building off the previous level, this level mixes design with automated generation to create a unique sea environment for your shark. |
-| Blocks used | ``[scene.setBackgroundImage(img`.`)]``<br/>``[for (let index = 0; index < 10; index++) {}]``<br/>``[myDecor = sprites.create(img`.`, SpriteKind.Decoration)]``<br/>``[myDecor.setPosition(randint(5, 155), 96)]`` |
+| Blocks used | ``[scene.setBackgroundImage(img`.`)]``<br/>``[for (let index = 0; index < 10; index++) {}]``<br/>``[myDecor = sprites.create(img`.`,)]``<br/>``[let myDecor: Sprite = null; myDecor.setPosition(randint())]`` |
 | Solution option | [Under the Sea](https://makecode.com/_2D9JL6Rm36yC) |
 
 #### 4. A Whole New World!
