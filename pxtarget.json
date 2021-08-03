@@ -460,6 +460,7 @@
         "organizationUrl": "https://makecode.com/org",
         "organizationLogo": "./static/Micorsoft_logo_rgb_W-white_D-square.png",
         "organizationWideLogo": "./static/Micorsoft_logo_rgb_W-white_D.png",
+        "skillmapOrganizationLogo": "assets/microsoft.png",
         "homeUrl": "https://arcade.makecode.com/",
         "embedUrl": "https://arcade.makecode.com/",
         "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
