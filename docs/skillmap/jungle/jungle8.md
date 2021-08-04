@@ -1,134 +1,119 @@
-# Leaps and Bounds
+# Make It Your Own
+### @preferredEditor asset
 
 
 ## Welcome @showdialog
 
-**Right now, it's nearly impossible to complete our game!**  
-We need a way to pass the poison pits!
+**Create your own levels!**  
 
-![Add platforms as you jump](/static/skillmap/jungle/jungle3.gif "Need a boost?")
+In this activity, you'll edit images and tilemaps to create a custom game!
+
+![Editing levels](/static/skillmap/jungle/jungle8.gif "Play with the asset editor!")
 
 
 
 ## Step 2 - Try It!
 
-**🕹️ First, play the game in the game window 🕹️**
+**🕹️ Start by playing your game in the game window 🕹️**
 
 ---
 
-Can you remember which piece of code controls each action?
+How do you feel about the main character? The background?
 
 
+## Step 3 - A New Location
 
-## Step 3 - Adding Block Walls
-
-**You know what would help us get over those pits?**  
-We need some well-placed blocks! Let's add a brick beneath the player when the A button is pressed.
+**🖼️ Let's change the scene 🖼️**  
 
 ---
 
-► From ``||controller:Controller||``, drag the ``||controller:on [A] button [pressed]||`` container into an empty area of the workspace.
+► Click **background** in the **My Assets** window, then click **Edit** under the **Asset Preview**.
 
-► Set a wall by going to the ``||scene:Scene||`` category and dragging ``||scene:set wall <OFF> at tilemap col [0] row [0]||`` into the empty ``||controller:on [A] button [pressed]||`` container.
-
-► Toggle `<OFF>` to `<ON>`.  
-
-
-```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    tiles.setWallAt(tiles.getTileLocation(0, 0), true)
-})
-```
-
-## Step 4 - Adding Block Walls, Cont.
-
-
-► Make sure the new wall ends up in the right place by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location [left] of [location]||`` in to replace  ``||scene:tilemap col [0] row [0]||``.
-
-► Click the word **left** to open the dropdown menu, and change the direction to **bottom**.
-
-► Create the wall **under** your sprite by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location of [mySprite]||`` in to replace  ``||variables:location||``.
-
-
-```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-        tiles.setWallAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), true)
-    
-})
-```
+► You can either customize the current background in the **Image Editor** or toggle to the **Gallery** to choose something new.
 
 
 
-## Try It!
+## Step 4 - Edit Your Monkeys
 
-**🕹️ Give it a try in the game window 🕹️**
+**🙈 Change the Monkey 🙈**   
 
 ---
 
-Try jumping while you press the (A) button. Your monkey should continue to hover in that spot! 
+► Go through **My Assets** and edit each of the monkeys. You can choose new characters and animations from the **Gallery** or draw your own! 
 
 
+## Step 5 - Try It!
 
-## Step 5 - Adding Block Tiles
-
-**Where did my brick go??**  
-The walls are great, but it's hard to remember where they are. Let's add special tiles over them so we can find them again later.  
+**🕹️ Play your game after each step 🕹️**
 
 ---
 
-► Set a tile by going to the ``||scene:Scene||`` category and dragging ``||scene:set [ ] at tilemap col [0] row [0]||`` into **the bottom** of the ``||controller:on [A] button [pressed]||`` container.
-
-► Click the empty square and choose the blue **bounce** tile.  
+When you play your game, it's easier to see what changes need to be made to your characters.
 
 
-```blocks
 
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-        tiles.setWallAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), true)
-    //@highlight
-    tiles.setTileAt(tiles.getTileLocation(0, 0), assets.tile`bounce`)
+## Step 6 - A New Level
 
-})
-```
-
-## Step 6 - Adding Block Tiles, Cont.
-
-
-► Make sure the new tile ends up in the right place by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location [left] of [location]||`` in to replace  ``||scene:tilemap col [0] row [0]||``.
-
-► Click the word **left** to open the dropdown menu, and change the direction to **bottom**.
-
-► As before, create the tile **under** your sprite by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location of [mySprite]||`` in to replace  ``||variables:location||``.
-
-
-```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-        tiles.setWallAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), true)
-    //@highlight
-    tiles.setTileAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), assets.tile`bounce`)
-
-})
-```
-
-
-## Try It!
-
-**🕹️ Now try it in the game window 🕹️**
+**🚧 Let's dig in to the level editor 🚧**   
 
 ---
 
-Now you can set your own blocks in-mid air to help you over the poison pit!
+► Scroll down to find **level1**, then click **Edit**. 
 
+💡 You should see the full tilemap for level 1. You can zoom in or out using the magnifying glasses at the bottom. 
+
+
+
+
+## Step 7 - Start Small
+
+Let's start by making the character's starting platform longer.
+
+---
+
+► Look for the single hovering tile at the lower left of the screen. To make it longer, click the skyblock beneath **My Tiles** and make sure the pencil icon is selected.
+
+► Click on either side of the floating platform to add extra skyblocks. 
+
+
+![Add tiles with the pencil](/static/skillmap/jungle/platform-tiles.gif)
+
+
+## Step 8 - Build a Wall
+
+Add walls on top of your new tiles so that your character doesn't fall through.
+
+---
+
+► Click the large **wall** icon (it has a corner missing at the top) and make sure the pencil is still selected.
+
+► Click on each new skyblock to add a wall to the tile (it should shade overtop with a light red color.) Then click **Done**.
+
+![Add walls with the pencil](/static/skillmap/jungle/platform-walls.gif)
+
+
+
+##  Step 9 - Try It!
+
+**🕹️ Give it a try 🕹️**
+
+---
+
+Is your game platform longer? Does it hold your main character?
+
+
+
+## Step 10 - Go Crazy!
+
+Now that you know how to add tiles and walls, you can change the levels whichever way you like.  
+
+💡 Remember that your code is built to work with certain tile names only.  If you add new tiles or change the names, you'll need to go back to the code to add your changes! 
 
 
 
 ## Finished
 
-**Play your game and see how many points you can get.**
-
----
-
-When you're done playing, click **Finish** to return to the main page to learn how to break tiles that you set by accident.
+When you're done playing your new game, click **Finish** to return to the main page to share your final game!
 
 
 
@@ -142,6 +127,12 @@ pxt-tilemaps=github:microsoft/pxt-tilemaps/
 ```template
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     sprites.gravity_jump(mySprite)
+    animation.runImageAnimation(
+    mySprite,
+    assets.animation`jump`,
+    50,
+    false
+    )
 })
 scene.setBackgroundImage(assets.image`background`)
 tiles.setTilemap(tilemap`level1`)
@@ -155,23 +146,33 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`orange bauble`, function (spr
     tiles.setTileAt(location, assets.tile`transparency16`)  
 })
 
-scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Player, assets.tile`chest2`, function (sprite, location) {
     game.over(true)
+})
+
+scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, location) {
+    scene.setBackgroundImage(assets.image`background2`)
+    tiles.setTilemap(tilemap`level2`)
+    animation.runMovementAnimation(
+    mySprite,
+    animation.animationPresets(animation.flyToCenter),
+    2000,
+    false
+    )
+    mySprite.say("Level 2!", 500)
 })
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`poison pit`, function (sprite, location) {
     game.over(false)
 })
-```
 
-```ghost
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     tiles.setWallAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), true)
     tiles.setTileAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), assets.tile`bounce`)
 })
 
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    projectile = sprites.createProjectileFromSprite(assets.image`blank`, mySprite, 0, 0)
+    let projectile = sprites.createProjectileFromSprite(assets.image`blank`, mySprite, 0, 0)
     projectile.setFlag(SpriteFlag.GhostThroughWalls, true)
     animation.runImageAnimation(
     projectile,
@@ -180,7 +181,42 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     false
     )
 })
+
+scene.onOverlapTile(SpriteKind.Projectile, assets.tile`skyblock`, function (sprite, location) {
+    tiles.setWallAt(location, false)
+    tiles.setTileAt(location, assets.tile`transparency16`)
+})
+
+scene.onOverlapTile(SpriteKind.Projectile, assets.tile`poison pit`, function (sprite, location) {
+    tiles.setWallAt(location, false)
+    tiles.setTileAt(location, assets.tile`transparency16`)
+})
+scene.onOverlapTile(SpriteKind.Projectile, assets.tile`bounce`, function (sprite, location) {
+    tiles.setWallAt(location, false)
+    tiles.setTileAt(location, assets.tile`transparency16`)
+})
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, otherSprite) {
+    sprite.destroy()
+    info.changeLifeBy(-1)
+})
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    mySprite,
+    assets.animation`walk left`,
+    200,
+    true
+    )
+})
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    mySprite,
+    assets.animation`walk right`,
+    200,
+    true
+    )
+})
 ```
+
 
 ```customts
 

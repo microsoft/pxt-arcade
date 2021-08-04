@@ -14,7 +14,7 @@
 * layout: manual
 
 ### shark1
-* name: 1. Set the Scene
+* name: Set the Scene
 * type: tutorial
 * description: Create a main character that FIRES LASERS!
 * url: /skillmap/shark/shark1
@@ -24,7 +24,7 @@
 * position: 0 0
 
 ### shark1a
-* name: 1a. Beware the Enemy
+* name: Beware the Enemy
 * type: tutorial
 * description: Crabs might be little,  but they're fierce!  Learn how to spawn enemies for your shark to avoid.
 * url: /skillmap/shark/shark1a
@@ -34,7 +34,7 @@
 * position: 0 2
 
 ### shark1b
-* name: 1b. Enemies Attack!
+* name: Enemies Attack!
 * type: tutorial
 * description: Turn your project into a game by adding damage every time a crab catches your shark.
 * url: /skillmap/shark/shark1b
@@ -44,11 +44,11 @@
 * position: 1 2
 
 ### shark1c
-* name: 1c. Add Enemies
+* name: Laser Focus
 * type: tutorial
-* description: An enemy appears! Fight!
+* description: You have enemies. You have lasers. Let's put them together!
 * url: /skillmap/shark/shark1c
-* tags: easy, enemies
+* tags: easy, enemies, points
 * imageUrl: /static/skillmap/shark/shark1c.gif
 * next: shark2
 * position: 2 2
@@ -57,7 +57,7 @@
 
 
 ### shark2
-* name: 2. Food, Not Friends
+* name: Food, Not Friends
 * type: tutorial
 * description: A shark's gotta eat!  Learn to make fish appear all over the ocean.
 * url: /skillmap/shark/shark2
@@ -68,7 +68,7 @@
 
 
 ### shark3
-* name: 3. Eat Up!
+* name: Eat Up!
 * type: tutorial
 * description: Add points for each fish you catch in 15 seconds!
 * url: /skillmap/shark/shark3
@@ -80,7 +80,7 @@
 
 ### shark4
 
-* name: 4. Under the Sea
+* name: Under the Sea
 * type: tutorial
 * description: Decorate your shark's surroundings with an ocean background and seaweed.
 * url: /skillmap/shark/shark4
@@ -91,7 +91,7 @@
 
 ### shark4a
 
-* name: 4a. A Whole New World
+* name: A Whole New World
 * type: tutorial
 * description: Give your game a brand new theme and really make it yours!
 * url: /skillmap/shark/shark4a

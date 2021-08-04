@@ -1,134 +1,145 @@
-# Leaps and Bounds
+# Animations
 
 
 ## Welcome @showdialog
 
-**Right now, it's nearly impossible to complete our game!**  
-We need a way to pass the poison pits!
+**🏃🏽‍♀️ Let's get moving 🏃🏽‍♂️**  
 
-![Add platforms as you jump](/static/skillmap/jungle/jungle3.gif "Need a boost?")
+Now that we've added an animation for our explosives, let's animate our character to make our game feel even more exciting.
+
+![Bring it to life](/static/skillmap/jungle/jungle6.gif "Step to the left. Step to the right.")
 
 
 
 ## Step 2 - Try It!
 
-**🕹️ First, play the game in the game window 🕹️**
+**🕹️ Start by playing your game in the game window 🕹️**
 
 ---
 
-Can you remember which piece of code controls each action?
+Can you connect each chunk of code to the actions it creates?
 
 
+## Step 3 - Step to the Right
 
-## Step 3 - Adding Block Walls
-
-**You know what would help us get over those pits?**  
-We need some well-placed blocks! Let's add a brick beneath the player when the A button is pressed.
+**➡️ Walking to the Right ➡️**  
+Let's make our character walk to the right when we the right arrow is pressed.
 
 ---
 
-► From ``||controller:Controller||``, drag the ``||controller:on [A] button [pressed]||`` container into an empty area of the workspace.
+► To add code that runs when the player moves to the right, open ``||controller:Controller||`` and drag ``||controller:on [A] button [pressed]||`` into an empty area of the workspace. 
 
-► Set a wall by going to the ``||scene:Scene||`` category and dragging ``||scene:set wall <OFF> at tilemap col [0] row [0]||`` into the empty ``||controller:on [A] button [pressed]||`` container.
-
-► Toggle `<OFF>` to `<ON>`.  
+► Click ``||controller:A||`` and choose ``||controller:right||`` from the dropdown.
 
 
 ```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    tiles.setWallAt(tiles.getTileLocation(0, 0), true)
-})
-```
-
-## Step 4 - Adding Block Walls, Cont.
-
-
-► Make sure the new wall ends up in the right place by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location [left] of [location]||`` in to replace  ``||scene:tilemap col [0] row [0]||``.
-
-► Click the word **left** to open the dropdown menu, and change the direction to **bottom**.
-
-► Create the wall **under** your sprite by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location of [mySprite]||`` in to replace  ``||variables:location||``.
-
-
-```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-        tiles.setWallAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), true)
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     
 })
 ```
 
+## Step 4 - Right Animation
 
+► Click the **Advanced** category in the toolbar to reveal the ``||animation:Animation||`` category.
 
-## Try It!
+► Drag the large ``||animation:animate [mySprite]||`` into the empty ``||controller:on [right] button [pressed]||`` container. 
 
-**🕹️ Give it a try in the game window 🕹️**
+► Click the empty grey box and toggle to **My Assets** to choose the **walk right** animation.
 
----
+► Toggle **loop** to **`<ON>`** so the monkey continues to walk.
 
-Try jumping while you press the (A) button. Your monkey should continue to hover in that spot! 
-
-
-
-## Step 5 - Adding Block Tiles
-
-**Where did my brick go??**  
-The walls are great, but it's hard to remember where they are. Let's add special tiles over them so we can find them again later.  
-
----
-
-► Set a tile by going to the ``||scene:Scene||`` category and dragging ``||scene:set [ ] at tilemap col [0] row [0]||`` into **the bottom** of the ``||controller:on [A] button [pressed]||`` container.
-
-► Click the empty square and choose the blue **bounce** tile.  
 
 
 ```blocks
-
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-        tiles.setWallAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), true)
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     //@highlight
-    tiles.setTileAt(tiles.getTileLocation(0, 0), assets.tile`bounce`)
-
-})
-```
-
-## Step 6 - Adding Block Tiles, Cont.
-
-
-► Make sure the new tile ends up in the right place by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location [left] of [location]||`` in to replace  ``||scene:tilemap col [0] row [0]||``.
-
-► Click the word **left** to open the dropdown menu, and change the direction to **bottom**.
-
-► As before, create the tile **under** your sprite by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location of [mySprite]||`` in to replace  ``||variables:location||``.
-
-
-```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-        tiles.setWallAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), true)
-    //@highlight
-    tiles.setTileAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), assets.tile`bounce`)
-
+    animation.runImageAnimation(
+    mySprite,
+    assets.animation`walk right`,
+    150,
+    true
+    )
 })
 ```
 
 
-## Try It!
 
-**🕹️ Now try it in the game window 🕹️**
+## Step 5 - Walk Left
+
+**⬅️ And Left ⬅️**
 
 ---
 
-Now you can set your own blocks in-mid air to help you over the poison pit!
+► Right-click the ``||controller:on [right] button [pressed]||`` container and choose **Duplicate**.
 
+► Click ``||controller:right||`` and choose ``||controller:left||`` from the dropdown.
+
+► Click the **walk right** frame set and toggle to **My Assets** to choose **walk left**.
+
+
+```blocks
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    mySprite,
+    assets.animation`walk left`,
+    150,
+    true
+    )
+})
+```
+
+
+
+## Try It!
+
+**🕹️ Try your game 🕹️**
+
+---
+
+Does your monkey walk right when you click the right arrow? Does it walk left with the left arrow?
+
+
+## Step 9 - Jump!
+
+Now we need an animation that runs when the monkey jumps!
+
+---
+
+► Find your ``||controller:on [up] button [pressed]||`` container. 
+
+► From ``||animation:Animation||``, grab an ``||animation:animate [mySprite]||`` block and drag it into **the end** of the ``||controller:on [up] button [pressed]||`` container. 
+
+► Click the empty grey box and toggle to **My Assets** to choose the **jump** animation.
+
+
+
+```blocks
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    sprites.gravity_jump(mySprite)
+    //@highlight
+    animation.runImageAnimation(
+    mySprite,
+    assets.animation`jump`,
+    50,
+    false
+    )
+})
+```
+
+
+## Try It!
+
+**🕹️ Play your game 🕹️**
+
+---
+
+Your monkey should look amazing as it runs and jumps!
 
 
 
 ## Finished
 
-**Play your game and see how many points you can get.**
-
----
-
-When you're done playing, click **Finish** to return to the main page to learn how to break tiles that you set by accident.
+When you're done playing your game, click **Finish** to return to the main page to learn how to add more levels!
 
 
 
@@ -162,16 +173,14 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, lo
 scene.onOverlapTile(SpriteKind.Player, assets.tile`poison pit`, function (sprite, location) {
     game.over(false)
 })
-```
 
-```ghost
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     tiles.setWallAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), true)
     tiles.setTileAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), assets.tile`bounce`)
 })
 
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    projectile = sprites.createProjectileFromSprite(assets.image`blank`, mySprite, 0, 0)
+    let projectile = sprites.createProjectileFromSprite(assets.image`blank`, mySprite, 0, 0)
     projectile.setFlag(SpriteFlag.GhostThroughWalls, true)
     animation.runImageAnimation(
     projectile,
@@ -180,7 +189,27 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     false
     )
 })
+
+scene.onOverlapTile(SpriteKind.Projectile, assets.tile`skyblock`, function (sprite, location) {
+    tiles.setWallAt(location, false)
+    tiles.setTileAt(location, assets.tile`transparency16`)
+})
+
+scene.onOverlapTile(SpriteKind.Projectile, assets.tile`poison pit`, function (sprite, location) {
+    tiles.setWallAt(location, false)
+    tiles.setTileAt(location, assets.tile`transparency16`)
+})
+scene.onOverlapTile(SpriteKind.Projectile, assets.tile`bounce`, function (sprite, location) {
+    tiles.setWallAt(location, false)
+    tiles.setTileAt(location, assets.tile`transparency16`)
+})
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, otherSprite) {
+    sprite.destroy()
+    //@highlight
+    info.changeLifeBy(-1)
+})
 ```
+
 
 ```customts
 
