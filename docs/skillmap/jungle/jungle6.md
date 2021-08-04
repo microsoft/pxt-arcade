@@ -10,6 +10,7 @@ Now that we've added an animation for our explosives, let's animate our characte
 ![Bring it to life](/static/skillmap/jungle/jungle6.gif "Step to the left. Step to the right.")
 
 
+
 ## Step 2 - Try It!
 
 **🕹️ Start by playing your game in the game window 🕹️**

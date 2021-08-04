@@ -10,6 +10,7 @@ This activity will show you how to add extra levels to your game.
 ![Add an extra level](/static/skillmap/jungle/jungle7.gif "Let's take this to the next level!")
 
 
+
 ## Step 2 - Try It!
 
 **🕹️ Start by playing your game in the game window 🕹️**

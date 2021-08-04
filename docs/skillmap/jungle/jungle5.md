@@ -9,6 +9,7 @@ This activity will show you how to register a hit on your player if they're stan
 ![Move away from the explosions!](/static/skillmap/jungle/jungle5.gif "Don't live too dangerously!")
 
 
+
 ## Step 2 - Try It!
 
 **🕹️ Start by playing your game in the game window 🕹️**

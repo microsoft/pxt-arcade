@@ -9,6 +9,7 @@ This activity will show you how to explode blocks so you can get every point.
 ![Using explosives to clear the way](/static/skillmap/jungle/jungle4.gif "Time to live dangerously!")
 
 
+
 ## Step 2 - Try It!
 
 **🕹️ Start by playing the game in the game window 🕹️**

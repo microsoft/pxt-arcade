@@ -9,6 +9,7 @@ We need a way to pass the poison pits!
 ![Add platforms as you jump](/static/skillmap/jungle/jungle3.gif "Need a boost?")
 
 
+
 ## Step 2 - Try It!
 
 **🕹️ First, play the game in the game window 🕹️**

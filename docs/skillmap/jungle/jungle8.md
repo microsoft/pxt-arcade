@@ -11,6 +11,7 @@ In this activity, you'll edit images and tilemaps to create a custom game!
 ![Editing levels](/static/skillmap/jungle/jungle8.gif "Play with the asset editor!")
 
 
+
 ## Step 2 - Try It!
 
 **🕹️ Start by playing your game in the game window 🕹️**
