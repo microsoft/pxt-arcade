@@ -5,7 +5,7 @@
 
 **In this tutorial, we'll make it possible to win or lose our platformer game.**
 
-![Editing our platformer](/static/skillmap/jungle/jungle2.gif "Time to live dangerously!")
+![Win and loss conditions](/static/skillmap/jungle/jungle2.gif "Win, lose, or play again!")
 
 
 

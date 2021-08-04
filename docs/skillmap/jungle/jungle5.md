@@ -6,7 +6,7 @@
 **🧨 Explosions are dangerous 🧨**  
 This activity will show you how to register a hit on your player if they're standing too close to the blast. You can remove other game elements, too!
 
-![Editing our platformer](/static/skillmap/jungle/jungle5.gif "Time to live dangerously!")
+![Move away from the explosions!](/static/skillmap/jungle/jungle5.gif "Don't live too dangerously!")
 
 
 ## Step 2 - Try It!

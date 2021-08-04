@@ -6,7 +6,7 @@
 **One of our baubles is locked away!**  
 This activity will show you how to explode blocks so you can get every point.
 
-![Editing our platformer](/static/skillmap/jungle/jungle4.gif "Time to live dangerously!")
+![Using explosives to clear the way](/static/skillmap/jungle/jungle4.gif "Time to live dangerously!")
 
 
 ## Step 2 - Try It!

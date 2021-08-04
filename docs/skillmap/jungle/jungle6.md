@@ -7,7 +7,7 @@
 
 Now that we've added an animation for our explosives, let's animate our character to make our game feel even more exciting.
 
-![Editing our platformer](/static/skillmap/jungle/jungle5.gif "Time to live dangerously!")
+![Bring it to life](/static/skillmap/jungle/jungle6.gif "Step to the left. Step to the right.")
 
 
 ## Step 2 - Try It!
@@ -206,25 +206,6 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, ot
     sprite.destroy()
     //@highlight
     info.changeLifeBy(-1)
-})
-```
-
-```ghost
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    animation.runImageAnimation(
-    mySprite,
-    assets.animation`Left Walk`,
-    200,
-    true
-    )
-})
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    animation.runImageAnimation(
-    mySprite,
-    assets.animation`walk right`,
-    200,
-    true
-    )
 })
 ```
 
