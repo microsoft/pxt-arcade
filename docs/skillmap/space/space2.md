@@ -146,11 +146,7 @@ mySprite.setStayInScreen(true)
 statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
 statusbar.attachToSprite(mySprite, -30, 0)
 mySprite.y = 100
-game.onUpdateInterval(5000, function () {
-    myFuel = sprites.createProjectileFromSide(assets.image`Fuel`, 0, 100)
-    myFuel.x = randint(5, 155)
-    myFuel.setKind(SpriteKind.Gas)
-})
+
 ```
 
 
