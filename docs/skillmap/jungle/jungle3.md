@@ -6,7 +6,8 @@
 **Right now, it's nearly impossible to complete our game!**  
 We need a way to pass the poison pits!
 
-![Editing our platformer](/static/skillmap/jungle/jungle3.gif "Time to live dangerously!")
+![Add platforms as you jump](/static/skillmap/jungle/jungle3.gif "Need a boost?")
+
 
 
 ## Step 2 - Try It!

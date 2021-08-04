@@ -3,11 +3,12 @@
 
 ## Welcome @showdialog
 
-**Time to Level UP!**  
+**Time to Level Up!**  
 
 This activity will show you how to add extra levels to your game.
 
-![Editing our platformer](/static/skillmap/jungle/jungle5.gif "Time to live dangerously!")
+![Add an extra level](/static/skillmap/jungle/jungle7.gif "Let's take this to the next level!")
+
 
 
 ## Step 2 - Try It!
@@ -16,7 +17,7 @@ This activity will show you how to add extra levels to your game.
 
 ---
 
-Can you connect each chunk of code to the actions it creates?
+Can you remember which chunk of code creates each action?
 
 
 ## Step 3 - Not So Fast
@@ -27,7 +28,7 @@ Can you connect each chunk of code to the actions it creates?
 
 ► Look for your ``||game:game over <WIN>||`` block inside of the **Player overlaps chest1** container.
 
-► Click the image of **chest1** and toggle to **My Assets** to change it to **chest2**.
+► Click the image of **chest1** and change it to **chest2**.
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`chest2`, function (sprite, location) {
@@ -35,106 +36,99 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`chest2`, function (sprite, lo
 })
 ```
 
-## Step 4 - Right Animation
+## Step 4 - A New Level
 
-► Click the **Advanced** category in the toolbar to reveal the ``||animation:Animation||`` category.
+**🙌 Add a New Level 🙌**   
+When we get to the first chest, we want to take the player to a new level
 
-► Drag the large ``||animation:animate [mySprite]||`` into the empty ``||controller:on [right] button [pressed]||`` container. 
+---
 
-► Click the empty grey box and toggle to **My Assets** to choose the **walk right** animation.
+► From ``||scene:Scene||``, drag ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` into an empty area of the workspace. 
 
-► Toggle **loop** to **`<ON>`** so the monkey continues to walk.
+► Click the empty square and choose **chest1**. 
 
 
 
 ```blocks
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    animation.runImageAnimation(
-    mySprite,
-    assets.animation`walk right`,
-    150,
-    true
-    )
+scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, location) {
+    
 })
 ```
 
 
 
-## Step 5 - Walk Left
+## Step 5 - Change of Scenery
 
-**⬅️ And Left ⬅️**
 
----
+► To show the player that the level has changed, go to ``||scene:Scene||`` and drag ``||scene:set background image to [ ]||`` into the empty **Player overlaps chest`** container.
 
-► Right-click the ``||controller:on [right] button [pressed]||`` container and choose **Duplicate**.
-
-► Click ``||controller:right||`` and choose ``||controller:left||`` from the dropdown.
-
-► Click the **walk right** frame set and toggle to **My Assets** to choose **walk left**.
+► Click the grey square and toggle to **My Assets** to choose **background 2**. 
 
 
 ```blocks
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    animation.runImageAnimation(
-    mySprite,
-    assets.animation`walk left`,
-    150,
-    true
-    )
+scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, location) {
+    scene.setBackgroundImage(assets.image`background`)
 })
 ```
 
 
-
-## Try It!
-
-**🕹️ Try your game 🕹️**
-
----
-
-Does your monkey walk right when you click the right arrow? Does it walk left with the left arrow?
+## Step 6 - Change of Location
 
 
-## Step 9 - Jump!
+► To change the level tilemap, go to ``||scene:Scene||`` and drag ``||scene:set tilemap to [ ]||`` to **the end** of the **Player overlaps chest1** container.
 
-Now we need an animation that runs when the monkey jumps!
-
----
-
-► Find your ``||controller:on [up] button [pressed]||`` container. 
-
-► From ``||animation:Animation||``, grab an ``||animation:animate [mySprite]||`` block and drag it into **the end** of the ``||controller:on [up] button [pressed]||`` container. 
-
-► Click the empty grey box and toggle to **My Assets** to choose the **jump** animation.
-
+► Click the grey square and toggle to **My Assets** to choose **level2**. 
 
 
 ```blocks
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprites.gravity_jump(mySprite)
-    animation.runImageAnimation(
+scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, location) {
+    scene.setBackgroundImage(assets.image`background2`)
+    tiles.setTilemap(tilemap`level2`)
+
+})
+```
+
+
+## Step 9 - Back to the Beginning
+
+**⏪ Here we go again! ⏪**
+
+---
+
+► To carry your character back to the beginning of the level,  visit the ``||animation:Animation||`` category and drag the ``||animation:animate [mySprite] with [fly to center]||`` block into **the end** of the **Player overlaps chest1** container.
+
+► From the ``||sprites:Sprites||`` category, drag ``||sprites:[mySprite] say [":)"]||`` into **the end** of the **Player overlaps chest1** container.
+
+► Change the text to say **Level 2!** and click the white plus **(+)** to the right of the block so that the text disappears after 500 ms.
+
+```blocks
+let mySprite: Sprite = null
+scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, location) {
+    scene.setBackgroundImage(assets.image`background2`)
+    tiles.setTilemap(tilemap`level2`)
+    animation.runMovementAnimation(
     mySprite,
-    assets.animation`jump`,
-    50,
+    animation.animationPresets(animation.flyToCenter),
+    2000,
     false
     )
+    mySprite.say("Level 2!", 500)
 })
 ```
 
 
 ## Try It!
 
-**🕹️ Play your game 🕹️**
+**🕹️ Give it a try 🕹️**
 
 ---
 
-Your monkey should look amazing as it runs and jumps!
-
+Make your way to the treasure chest. You should be transported to a new level!
 
 
 ## Finished
 
-When you're done playing your game, click **Finish** to return to the main page to learn how to add more levels!
+When you're done playing your game, click **Finish** to return to the main page to customize your final game!
 
 
 
@@ -148,6 +142,12 @@ pxt-tilemaps=github:microsoft/pxt-tilemaps/
 ```template
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     sprites.gravity_jump(mySprite)
+    animation.runImageAnimation(
+    mySprite,
+    assets.animation`jump`,
+    50,
+    false
+    )
 })
 scene.setBackgroundImage(assets.image`background`)
 tiles.setTilemap(tilemap`level1`)
@@ -200,16 +200,12 @@ scene.onOverlapTile(SpriteKind.Projectile, assets.tile`bounce`, function (sprite
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, otherSprite) {
     sprite.destroy()
-    //@highlight
     info.changeLifeBy(-1)
 })
-```
-
-```ghost
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     mySprite,
-    assets.animation`Left Walk`,
+    assets.animation`walk left`,
     200,
     true
     )
