@@ -4,18 +4,16 @@
 
 **A Zookeeper's Adventure** is an introduction to block-based coding for young students. This guide teaches basic storytelling design actions for games, like: movement, randomness, positioning, and destroying elements.
 
-In this set of activities, students will use the power of coding to help manage a zoo. This guide is friendly for students who are new to MakeCode with little or no previous coding experience.  Through step-by-step instructions, students will focus on projects from 2 different categories: [Movement](#movement-path) and [Interaction](#interaction-path).
+In this set of activities, students will use the power of coding to help manage a zoo. This guide is friendly for students who are new to MakeCode with little or no previous coding experience.  Through step-by-step instructions, students will focus on projects that involve movement and interaction.
 
-Designed for students between the ages of 11 & 15, this experience contains a total of 6 tutorials (approximating 36 minutes of instruction) spread over 2 sessions.  At the end of the learning path, students receive a certificate of completion.
+Designed for students between the ages of 11 & 15, this experience contains a total of 6 tutorials (approximating 36 minutes of instruction) spread over 1 session.  At the end of the learning path, students receive a certificate of completion.
 
 |                 | Minutes* | Game Type | Key Concepts |
 | --------------- | -------- | --------- | ------------ |
-| **Day 1**           |          |           |              |
 | Zookeeper Hut | 3 | Intro | sprite design, movement, navigation |
 | By Land | 6 | Story | sprite design, movement, random numbers |
 | By Sea | 6 | Story | sprite design, movement, random numbers, loops |
 | Penguins | 5 | Story | debugging, positioning |
-| **Day 2**           |          |           |              |
 | Feed the Panda |10 | Story | events, random numbers, movement, destroying elements |
 | Quail Hatching | 6 | Story | events, destroying elements, duplication |
 
@@ -23,7 +21,7 @@ Designed for students between the ages of 11 & 15, this experience contains a to
 
 ### Objectives 
 
-After completing A Zookeeper's Adventure, students will have learned how to use coding concepts creatively. As they create their own zookeeper sprite, design animal exhibits, and take care of animals, they will be learning computer science and game design concepts.
+As students go through A Zookeeper's Adventure, they will create their own zookeeper sprite, design animal exhibits, and take care of animals. Throughout these experiences, they will be using computer science and game design concepts.
 
 Specifically, they will experience the following topics:
 
@@ -43,15 +41,11 @@ Specifically, they will experience the following topics:
 - Animation
 - Effects
 
-### Movement Path
-
-In this learning path, students will learn how to use art, math, and physics to spawn and move sprites around.
-
 #### 1. Zookeeper Hut
 
 | Activity | Zookeeper Hut (3 min) |
 |---|---|
-| ![Zookeeper Hut thumbnail](/static/skillmap/zoo/activity1.png) | Design your zookeeper sprite and learn how to move it around. |
+| ![Zookeeper Hut thumbnail](/static/skillmap/zoo/activity1.png) | Design your zookeeper sprite and move it around. |
 | Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[controller.moveSprite(mySprite)]``<br/> ``[scene.cameraFollowSprite(mySprite)]``|
 | Solution option | [Zookeeper Hut Project](https://makecode.com/_UrRYAkLCjTW7) |
 
@@ -76,22 +70,10 @@ In this learning path, students will learn how to use art, math, and physics to 
 | Activity | Penguins (5 min) |
 |---|---|
 | ![Penguins thumbnail](/static/skillmap/zoo/activity3.png) | This activity teaches how to debug locational errors in code. |
-| Blocks used | ``[let penguin = sprites.create(img`.`, SpriteKind.Penguin)]``<br/>``[let mySprite: Sprite=null; mySprite.x = 0]`` |
+| Blocks used | ``[let penguin = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[let mySprite: Sprite=null; mySprite.x = 0]`` |
 | Solution option | [Penguins Project](https://makecode.com/_7FETiTYJiKq8) |
 
-##### Game Mod Ideas
-
-After students complete Penguins, they can head back to the skillmap and click "SAVE TO MY PROJECTS" for By Land or By Sea. This will open the respective game in a window with a full-featured toolbox. Here are some modifications they can try: 
-
-- Add another sprite that also has a movement pattern 
-- Modify sprites' moving speeds so each has a different one
-- Have the sprites flip around when they hit a wall
-
-### Interaction Path
-
-In this path, students will use event containers, sprite positioning, and destruction to create and visualize interaction between sprites. 
-
-#### 1. Feed the Panda
+#### 5. Feed the Panda
 
 | Activity | Feed the Panda (10 min) |
 |---|---|
@@ -99,7 +81,7 @@ In this path, students will use event containers, sprite positioning, and destru
 | Blocks used | ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[let mySprite = sprites.create(img`.`, SpriteKind.Food)]``<br/>``[let mySprite: Sprite=null; mySprite.setPosition(randint(), randint())]``<br/>``[let panda: Sprite=null; panda.follow(mySprite)]``<br/>``[sprites.onOverlap()]``<br/>``[let otherSprite: Sprite=null; otherSprite.destroy(effects.disintegrate, 0)]``|
 | Solution option | [Feed the Panda Project](https://makecode.com/_8AoUX74TK1Rr) |
 
-#### 2. Quail Hatching
+#### 6. Quail Hatching
 
 | Activity | Quail Hatching (6 min) |
 |---|---|
@@ -109,11 +91,14 @@ In this path, students will use event containers, sprite positioning, and destru
 
 ##### Game Mod Ideas
 
-After students complete Quail Hatching, they can head back to the skillmap and click "SAVE TO MY PROJECTS" for Feed the Panda or Quail Hatching, which will open the game in a window with a full-featured toolbox. Here are some modifications they can try: 
+After students complete Quail Hatching, they can head back to the skillmap and click "SAVE TO MY PROJECTS" for any of the modules. This will open the respective game in a window with a full-featured toolbox. Here are some modifications they can try:
 
-- [Feed the Panda] Have the panda continue moving after eating
-- [Feed the Panda] Create another panda
-- [Quail Hatching] Make it easier to beat the game (ex. by having the glove move faster)
+- _[By Land/By Sea]_ Add another sprite that also has a movement pattern 
+- _[By Sea]_ Modify sprites' moving speeds so each has a different one
+- _[By Sea]_ Have the sprites flip around when they hit a wall
+- _[Feed the Panda]_ Have the panda continue moving after eating
+- _[Feed the Panda]_ Create another panda
+- _[Quail Hatching]_ Make it easier to beat the game (ex. by having the glove move faster)
 
 ### What’s Next?
 
