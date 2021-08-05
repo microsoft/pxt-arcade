@@ -32,6 +32,8 @@
         "sprites.swamp.jres",
         "sprites.skillmap.ts",
         "sprites.skillmap.jres",
+        "sprites.jungle.ts",
+        "sprites.jungle.jres",
         "storySprites.ts",
         "storySprites.jres",
         "startup.ts",
