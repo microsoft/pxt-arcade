@@ -52,7 +52,7 @@ In this learning path, students will learn how to use art, math, and physics to 
 | Activity | Zookeeper Hut (3 min) |
 |---|---|
 | ![Zookeeper Hut thumbnail](/static/skillmap/zoo/activity1.png) | Design your zookeeper sprite and learn how to move it around. |
-| Blocks used | ``[sprites.setBackgroundImage(img`.`)]``<br/>``[controller.moveSprite(mySprite)]``<br/> ``[scene.cameraFollowSprite(mySprite)]``|
+| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[controller.moveSprite(mySprite)]``<br/> ``[scene.cameraFollowSprite(mySprite)]``|
 | Solution option | [Zookeeper Hut Project](https://makecode.com/_UrRYAkLCjTW7) |
 
 #### 2. By Land
@@ -60,7 +60,7 @@ In this learning path, students will learn how to use art, math, and physics to 
 | Activity | By Land (6 min) |
 |---|---|
 | ![By Land thumbnail](/static/skillmap/zoo/activity2.png) | Design an animal enclosure on land zoo exhibit. |
-| Blocks used | ``[sprites.create(img`.`, SpriteKind.Player)]``<br/>``[mySprite.setVelocity(randint(-50, 50), randint(-50, 50))]``<br/>``[mySprite.setBounceOnWall(true)]`` |
+| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[let mySprite: Sprite=null; mySprite.setVelocity(randint(), randint())]``<br/>``[let mySprite: Sprite=null; mySprite.setBounceOnWall(true)]`` |
 | Solution option | [By Land Project](https://makecode.com/_TeKEE8W21eXa) |
 
 #### 3. By Sea
@@ -68,15 +68,15 @@ In this learning path, students will learn how to use art, math, and physics to 
 | Activity | By Sea (6 min) |
 |---|---|
 | ![By Sea thumbnail](/static/skillmap/zoo/activity2-2.png) | Design an aquatic zoo exhibit with multiple of the same creature. |
-| Blocks used | ``[sprites.create(img`.`, SpriteKind.Player)]``<br/>``[mySprite.vx = 50]``<br/>``[mySprite.setBounceOnWall(true)]``<br/>``[mySprite.y = randint(10, 110)]``<br/><br/>**[For Loop](/blocks/loops/for)** |
-| Solution option | [By Sea Project](https://makecode.com/_6111H164u1WP7) |
+| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[let mySprite: Sprite=null; mySprite.vx = 0]``<br/>``[let mySprite: Sprite=null; mySprite.setBounceOnWall(true)]``<br/>``[let mySprite: Sprite=null; mySprite.y = randint()]``<br/>``[for (let index = 0; index < 4; index++) {}]`` |
+| Solution option | [By Sea Project](https://makecode.com/_beDHXiLcj8dk) |
 
 #### 4. Penguins
 
 | Activity | Penguins (5 min) |
 |---|---|
 | ![Penguins thumbnail](/static/skillmap/zoo/activity3.png) | This activity teaches how to debug locational errors in code. |
-| Blocks used | ``[sprites.create(img`.`, SpriteKind.mySprite)]``<br/>``[mySprite.x = 0]`` |
+| Blocks used | ``[let penguin = sprites.create(img`.`, SpriteKind.Penguin)]``<br/>``[let mySprite: Sprite=null; mySprite.x = 0]`` |
 | Solution option | [Penguins Project](https://makecode.com/_7FETiTYJiKq8) |
 
 ##### Game Mod Ideas
@@ -96,15 +96,15 @@ In this path, students will use event containers, sprite positioning, and destru
 | Activity | Feed the Panda (10 min) |
 |---|---|
 | ![Feed the Panda thumbnail](/static/skillmap/zoo/activity4.png) | Create bamboo and guide the panda to eat it. |
-| Blocks used | ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[let mySprite = sprites.create(img`.`, SpriteKind.Food)]``<br/>``[mySprite.setPosition(randint(10, 150), randint(10, 110))]``<br/>``[mySprite.follow(mySprite)]``<br/>``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {})]``<br/>``[otherSprite.destroy(effects.disintegrate, 500)]``|
-| Solution option | [Feed the Panda Project](https://makecode.com/_VYw5V8hfaWcC) |
+| Blocks used | ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[let mySprite = sprites.create(img`.`, SpriteKind.Food)]``<br/>``[let mySprite: Sprite=null; mySprite.setPosition(randint(), randint())]``<br/>``[let panda: Sprite=null; panda.follow(mySprite)]``<br/>``[sprites.onOverlap()]``<br/>``[let otherSprite: Sprite=null; otherSprite.destroy(effects.disintegrate, 0)]``|
+| Solution option | [Feed the Panda Project](https://makecode.com/_8AoUX74TK1Rr) |
 
 #### 2. Quail Hatching
 
 | Activity | Quail Hatching (6 min) |
 |---|---|
 | ![Quail Hatching thumbnail](/static/skillmap/zoo/activity5.png) | Use code to corral all the quails and their eggs into the coop. |
-| Blocks used | ``[sprites.onOverlap(, , function () {})]``<br/>``[otherSprite.follow(mySprite)]``<br/>``[scene.onOverlapTile(, assets.tile`myTile`, function () {})]``<br/>``[sprite.destroy()]`` |
+| Blocks used | ``[sprites.onOverlap()]``<br/>``[let otherSprite: Sprite=null; otherSprite.follow(mySprite)]``<br/>``[scene.onOverlapTile())]``<br/>``[let sprite: Sprite=null; sprite.destroy()]`` |
 | Solution option | [Quail Hatching Project](https://makecode.com/_UC93YfEEVEgq) |
 
 ##### Game Mod Ideas
