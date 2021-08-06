@@ -12,10 +12,10 @@ Designed for students between the ages of 11 & 15, this experience contains a to
 | --------------- | -------- | --------- | ------------ |
 | **Day 1**           |          |           |              |
 | Set the Scene | 5 | Intro | movement, events, projectiles |
-| Beware the Enemy | 8 | Shooter | events, positioning, random numbers |
-| Enemies Attack! | 8 | Shooter | movement, events, destruction, life bar |
-| Add Enemies | 5 | Shooter | events, destruction, animation, game score |
-| Multiple Enemy Sprites | 6 | Shooter | events, conditional statements |
+| Beware the Enemy | 8 | Collector | events, positioning, random numbers |
+| Enemies Attack! | 8 | Collector | movement, events, destruction, life bar |
+| Add Enemies | 5 | Collector | events, destruction, animation, game score |
+| Multiple Enemy Sprites | 6 | Collector | events, conditional statements |
 | **Day 2**           |          |           |              |
 | Food not Friends | 7 | Collector | events, positioning, random numbers, movement |
 | Eat Up! | 7 | Collector | events, destroying, game score |
@@ -128,7 +128,7 @@ On this day, students will use the same elements of event containers, sprite pos
 |---|---|
 | ![A Whole New World! thumbnail](/static/skillmap/shark/shark4a.gif) | Put all the previous game elements together but redesign all of the individual components to create a new story! |
 | Blocks used | _None_ |
-| Solution option | [A Whole New World!]() |
+| Solution option | N/A |
 
 ##### Game Mod Ideas
 
@@ -138,9 +138,3 @@ As students work on A Whole New World!, we encourage them to plan out how they w
 - When I do this activity, what supplies do I need? Replace the fishy food with these supplies!
 - When I do this activity, what gets in my way? Replace the crabby enemies with these blockers!
 - What environment do I usually do this activity in? Replace the background with something similar!
-
-### What’s Next?
-
-After completing Shark Splash, students move on to the following activities:
-
-* TBD
