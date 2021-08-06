@@ -1,6 +1,6 @@
 # Shark Splash
 * name: Shark Splash
-* description: The deep sea is a fascinating place! This skillmap will guide you through the ocean as a shark on a journey to find food and avoid crabby sealife.
+* description: The deep sea is a fascinating place! This skillmap will guide you through the ocean as a shark on a journey to find food and avoid enemies.
 * backgroundurl: /static/skillmap/backgrounds/shark-attack-bg.png
 * bannerurl: /static/skillmap/shark/shark.gif
 * primarycolor: #ff93c4
@@ -14,9 +14,9 @@
 * layout: manual
 
 ### shark1
-* name: Set the Scene
+* name: Swimming with Sharks
 * type: tutorial
-* description: Create a main character that FIRES LASERS!
+* description: First, we'll plop a shark into the vast ocean, then we'll give it lasers!
 * url: /skillmap/shark/shark1
 * tags: easy, sprites, projectiles
 * imageUrl: /static/skillmap/shark/shark1.gif

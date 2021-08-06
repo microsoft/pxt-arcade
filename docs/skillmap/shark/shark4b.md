@@ -1,179 +1,160 @@
-# Eat Up!
+# A Whole New World!
+### @preferredEditor asset
+
 
 ## Introduction @showdialog
 
-Ready for some fish?
+You've made an amazing deep sea game, but now it's time to turn it into something unique!
 
-![Enemies](/static/skillmap/shark/shark3.gif)
+This activity will help you edit your sprites and backgrounds to create a brand new theme.
 
-In this activity, you'll create code to help the shark earn points for each fish it eats.
-
-
-## step 2
-
-**🕹️ See what you have 🕹️**  
-
----
-
-Play with your project to remember which piece of code creates which actions in the game window.
+![Build a world](/static/skillmap/shark/shark4b.gif)
 
 
 
-## step 3
+## Step 2 - Main Sprite
 
-**🍜 Time to eat 🍜**  
-
-We need a container that will run when the shark overlaps a fish.
+**Let's start with the main character!**  
+Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine snatching clouds? It's up to you!
 
 ---
 
-► From the  ``||sprites:Sprites||`` category, drag ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` into an empty area of the workspace.
-
-► Change the last **kind** from ``||sprites:Player||`` to ``||sprites:Food||``.
+► Click the **shark** sprite, then click the **Edit** button in the Asset Preview panel to the left.
 
 
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
- 
-})
-```
+► Draw your own character in the image editor, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your main character, click **Done**. 
 
-## Step 4
 
-**🦈 YUMMMMMM 🦈**  
-When the shark catches the fish, we need to make the fish disappear.
+
+## Step 3 - Background
+
+**Where does your hero want to be?**
 
 ---
 
-► Open ``||sprites:Sprites||``, then snap ``||sprites:destroy [mySprite]||`` into the empty **on overlaps** container.
+► Scroll down until you find the **ocean1** background, then select it and click **Edit**.
 
-► Drag the ``||variables:otherSprite||`` value from the title of the **on overlaps** container down to replace ``||variables:mySprite||``.
+► Draw a background that fits your main character, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your background, click **Done**. 
 
-![Grabbing variable from block](/static/skillmap/space/give-var.gif "So that's how you do that!")
-
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-    otherSprite.destroy()
-})
-```
-
-## Step 5
-
-► Click the plus (+) sign to the right of the ``||sprites:destroy [otherSprite]||`` block and choose an effect to play while the fish vanishes!
-
-► Change the effect duration from **500** ms to something shorter, like **100** ms. 
-
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.disintegrate, 100)
-})
-```
+💡 You can see the name of an image if you hover over the tile or click the tile and look for the name in the Asset Preview window.
 
 
 
-## Step 6
+## Step 4 - Decorations
 
-
-**🎉 SCORE 🎉**  
+**🎍 Decorations 🎍**
 
 ---
 
-► Add a point to the player's score by dragging ``||info:change score by [1]||``  to the bottom of the **on overlaps** container. 
+► Click the **decoration** sprite, then click the **Edit** button in the panel to the left.
+
+► Draw a small decoration for the ground of your scene, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your decoration, click **Done**. 
 
 
+## Step 5 - Food
 
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.disintegrate, 100)
-    info.changeScoreBy(1)
-})
-```
-
-
-## Step 7
-
-
-**⌛ It's about time ⌛**   
-For an added challenge, let's go back to the ``||loops:on start||`` code to set a timer that ends the game when it runs out!
+**🪙 Collectibles 🪙**
 
 ---
 
-► From ``||info:Info||``, snap  ``||info:start countdown [10] (s)||`` into **the end** of the ``||loops:on start||`` container. 
+► Click the **myFood** sprite, then click the **Edit** button in the panel to the left.
 
-► To give the player more time, change **10** seconds to **15** seconds. 
-
-```blocks
-let mySprite: Sprite = null
-scene.setBackgroundColor(8)
-mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-mySprite.setStayInScreen(true)
-//@highlight
-    info.startCountdown(15)
-
-```
+► Draw whatever you want your main character to collect (or toggle to the **Gallery** to find something that has already been created).  When you're happy with your sprite, click **Done**. 
 
 
-## Step 8
 
 
-**🐟 Winner, winner...fish for dinner**   
-Right now, when the timer runs out, the player loses.  Let's change that.
+## Step 6 - Enemies
+
+**😈 Enemies 😈**
 
 ---
 
-► From ``||info:Info||``, grab an ``||info:on countdown end||`` container and drag it into an empty area of the workspace. 
+► Click the **enemy** sprite, then click the **Edit** button in the panel to the left.
 
-► Open the ``||game:Game||`` category and drag ``||game:game over <LOSE>||`` into the empty ``||info:on countdown end||`` container.
 
-► Toggle **`<LOSE>`** to **`<WIN>`** so the player can celebrate the points they've gathered along the way. 
+► Draw something for your main character to avoid (or toggle to the **Gallery** to find something that has already been created).  When you're happy with your enemy sprite, click **Done**. 
 
-```blocks
-info.onCountdownEnd(function () {
-    game.over(true)
-})
-```
 
+
+
+## Step 7 - Projectile
+
+**🧨 Projectiles 🧨**
+
+---
+
+► Click the **laser** sprite, then click the **Edit** button in the panel to the left.
+
+► Draw something that your main character can throw at other sprites (or toggle to the **Gallery** to find something that has already been created).  When you're happy with your projectile, click **Done**. 
 
 
 ## Finale
 
-**🎮 How many fish you can catch in 15 seconds? 🎮**  
+**Fantastic!**  
+You've created a game of your very own!
 
 ---
 
-When you're done playing your game, click **Finish** to head back out to the skillmap for more adventures! 
+Don't forget to play your game to make sure you like the way everything looks. When you're happy, click **Finish** to head back to the skillmap where you can share your game with family and friends.
+
 
 
 
 
 ```template
+namespace SpriteKind {
+    export const Decoration = SpriteKind.create()
+}
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(assets.image`laser`, mySprite, 200, 0)
-})
-let projectile: Sprite = null
-let mySprite: Sprite = null
-scene.setBackgroundColor(8)
-mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-mySprite.setStayInScreen(true)
-
-game.onUpdateInterval(2100, function () {
-    let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
-     myFood.setPosition(scene.screenWidth(), randint(5, 115))
-    myFood.vx = -75
-})
-```
-
-```ghost
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.disintegrate, 100)
-    info.changeScoreBy(1)
 })
 info.onCountdownEnd(function () {
     game.over(true)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.disintegrate, 100)
+    info.changeScoreBy(1)
+})
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    sprite.destroy()
+    otherSprite.destroy(effects.bubbles, 100)
+    //@highlight
+    info.changeScoreBy(1)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    scene.cameraShake(4, 500)
+    info.changeLifeBy(-1)
+})
+let myFood: Sprite = null
+let myEnemy: Sprite = null
+let projectile: Sprite = null
+let myDecor: Sprite = null
+let mySprite: Sprite = null
+scene.setBackgroundColor(9)
+scene.setBackgroundImage(assets.image`ocean1`)
+mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+mySprite.setStayInScreen(true)
+info.startCountdown(15)
+for (let index = 0; index < 10; index++) {
+    myDecor = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
+    myDecor.setPosition(randint(0, 160), 96)
+}
+game.onUpdateInterval(2500, function () {
+    myEnemy = sprites.create(assets.image`enemy`, SpriteKind.Enemy)
+     myEnemy.setPosition(scene.screenWidth(), randint(0, 120))
+    myEnemy.follow(mySprite, 30)
+})
+game.onUpdateInterval(2100, function () {
+    myFood = sprites.create(assets.image`food`, SpriteKind.Food)
+     myFood.setPosition(scene.screenWidth(), randint(5, 115))
+    myFood.vx = -75
+})
+
 ```
+
 
 ```assetjson
 {
