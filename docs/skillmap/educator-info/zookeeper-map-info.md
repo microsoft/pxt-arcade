@@ -99,9 +99,3 @@ After students complete Quail Hatching, they can head back to the skillmap and c
 - _[Feed the Panda]_ Have the panda continue moving after eating
 - _[Feed the Panda]_ Create another panda
 - _[Quail Hatching]_ Make it easier to beat the game (ex. by having the glove move faster)
-
-### What’s Next?
-
-After completing A Zookeeper's Adventure, students move on to the following activities:
-
-* TBD
