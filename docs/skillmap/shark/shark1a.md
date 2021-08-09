@@ -6,7 +6,7 @@ There are enemies everywhere!
 
 ![Beware](/static/skillmap/shark/shark1a.gif)
 
-In this activity, we'll add enemies that pop out of nowhere. 
+In this activity, we'll add enemies that pop out of nowhere and follow your shark. 
 
 
 ## step 2
@@ -120,7 +120,7 @@ game.onUpdateInterval(2500, function () {
 
 **🎮 Take a look at the game window to see how everything works 🎮**  
 
-You should have a shark that moves around with the arrow keys and enemies that spawn in front of the shark and up at the very top of the screen.
+You should have a shark that moves around with the arrow keys and enemies that spawn in the upper-right corner of the screen.
 
 
 
@@ -147,6 +147,27 @@ let mySprite: Sprite = null
 ```
 
 
+## Step 11
+
+**💥 Enemies on the move 💥**   
+
+---
+
+► Send your enemies after the shark by adding the ``||sprites:set [myEnemy] follow [mySprite]||`` block to **the end** of the ``||game:on game update every [2500] ms||`` container where ``||variables:myEnemy||`` is made.
+
+► Click the plus sign (**+**) to the right of the ``||sprites:set [myEnemy] follow [mySprite]||`` block and set the enemy speed to **30** so it doesn't attack too fast.
+
+```blocks
+game.onUpdateInterval(2500, function () {
+let mySprite: Sprite = null
+    let myEnemy = sprites.create(assets.image`enemy`, SpriteKind.Enemy)
+     myEnemy.setPosition(scene.screenWidth(), randint(0, 120))
+     // @highlight
+    myEnemy.follow(mySprite, 30)
+})
+```
+
+
 
 ## Finale 
 
@@ -154,9 +175,9 @@ let mySprite: Sprite = null
 
 ---
 
-Enemies will now pop up in front of your shark every couple of seconds.  
+Enemies will now pop up and try to attack your shark every couple of seconds.  
 
-Click **Finish** to head back out to the main map to find out what you can do next!
+Click **Finish** to head back out to the main map to find out how the enemies can create damage!
 
 
 
