@@ -106,21 +106,23 @@ You shouldn't notice any difference in the speed of the ship.
 
 **👀 Watch the score 👀**   
 
-We need code that repeatedly checks to see **if** the score is **10**.
+We need code that checks to see **if** the score is **10** every time the player adds a point.
 
 ---
 
-► From the ``||loops:Loops||`` category, grab a ``||loops:forever||`` loop container and drag 
-it to an empty area of the workspace.
+► Find the ``||sprites:on [sprite] of kind [Projectile] overlaps [otherSprite] of kind [Enemy]||`` container already in your workspace.
 
-► In ``||logic:Logic||``, find the ``||logic:if <true> then||`` container and snap it inside the 
-``||loops:forever||`` loop container.
+► From the ``||logic:Logic||`` category, drag a ``||logic:if <true> then||`` container and snap it into **the bottom** of the
+**on Projectile overlaps Enemy** container.
 
 
 ```blocks
-forever(function () {
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    sprite.destroy(effects.fire, 100)
+    otherSprite.destroy()
+    info.changeScoreBy(1)
+    //@highlight
     if (true) {
-    	
     }
 })
 ```
@@ -128,14 +130,18 @@ forever(function () {
 
 ## Step 8
 
-► From ``||logic:Logic||``, grab ``||logic:<[0] [=] [0]>||`` and snap it in to replace **true**.
+► From ``||logic:Logic||``, grab ``||logic:<[0] [=] [0]>||`` and snap it in to the **if statement** to replace **true**.
 
 ► From ``||info:Info||``, grab ``||info:score||`` and snap it in to replace the **0** to the left of the **=**.
 
 ► Change the **0** on the right of the **=** to **10**. 
 
 ```blocks
-forever(function () {
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    sprite.destroy(effects.fire, 100)
+    otherSprite.destroy()
+    info.changeScoreBy(1)
+    //@highlight
     if (info.score() == 10) {
         
     }
@@ -156,7 +162,10 @@ The first thing we should do when the score gets to **10** is give a level-up bo
 
 
 ```blocks
-forever(function () {
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    sprite.destroy(effects.fire, 100)
+    otherSprite.destroy()
+    info.changeScoreBy(1)
     if (info.score() == 10) {
         info.changeScoreBy(5)
     }
@@ -183,7 +192,10 @@ of the ``||logic:if <[score] [=] [10]> then||`` container.
   
 ```blocks
 let mySprite: Sprite = null
-forever(function () {
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    sprite.destroy(effects.fire, 100)
+    otherSprite.destroy()
+    info.changeScoreBy(1)
     if (info.score() == 10) {
         info.changeScoreBy(5)
         //@highlight
@@ -208,7 +220,10 @@ and snap it in to **the bottom** of  the ``||logic:if <[score] [=] [10]> then||`
 
 ```blocks
 let mySprite: Sprite = null
-forever(function () {
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    sprite.destroy(effects.fire, 100)
+    otherSprite.destroy()
+    info.changeScoreBy(1)
     if (info.score() == 10) {
         mySprite.say("+5 Level-Up Bonus", 2000)
         info.changeScoreBy(5)

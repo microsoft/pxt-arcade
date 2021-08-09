@@ -12,7 +12,6 @@ or ``||controller:b||`` to lower the number of balls.
 Beware that both of these actions will cost you **2** points!
 
 ```typescript
-const DESTROYED_KEY = "__destroyed";
 const BALL_IMAGE = img`
     . . e e 1 e e e . .
     . e 1 1 d d d d e .
@@ -67,16 +66,12 @@ function createBall() {
     let ball = sprites.create(BALL_IMAGE.clone(), SpriteKind.Enemy);
     ball.vy = randint(-20, 20);
     ball.vx = 60 * (Math.percentChance(50) ? 1 : -1);
-    ball.data = {};
 }
 
 game.onUpdate(function () {
     sprites
         .allOfKind(SpriteKind.Enemy)
         .forEach(b => {
-            // tagged as destroyed
-            if (b.data[DESTROYED_KEY]) return;
-
             const scoreRight = b.x < 0;
             const scoreLeft = b.x >= screen.width;
 
@@ -94,7 +89,6 @@ game.onUpdate(function () {
 
             if (scoreLeft || scoreRight) {
                 b.destroy(effects.disintegrate, 500);
-                b.data[DESTROYED_KEY] = true;
                 control.runInParallel(function () {
                     pause(250);
                     createBall();
@@ -166,7 +160,8 @@ game.onUpdate(function () {
 
     function trackBall(player: Sprite) {
         const next = nextBall(player);
-
+        if (!next)
+            return;
         if (ballFacingPlayer(player, next)) {
             // move to where ball is expected to intersect
             intersectBall(player, next);
@@ -180,10 +175,6 @@ game.onUpdate(function () {
         return sprites
             .allOfKind(SpriteKind.Enemy)
             .sort((a, b) => {
-                // if one of the balls is destroyed, ignore it
-                if (a.data) return 1;
-                else if (b.data) return -1;
-
                 const aFacingPlayer = ballFacingPlayer(player, a);
                 const bFacingPlayer = ballFacingPlayer(player, b);
 

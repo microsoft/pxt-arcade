@@ -83,6 +83,25 @@
 
 /* Small Monitor */
 @media only screen and (min-width: @computerBreakpoint) and (max-width: @largestSmallMonitor) {
+    // Display short logo ("MakeCode") instead of "MakeCode Arcade"
+    .ui.item.logo .name {
+        display: none;
+    }
+    .ui.item.logo .name-short {
+        display: block;
+    }
+}
+
+/* Small Monitor + Tablet */
+@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestSmallMonitor) {
+    // Hide Help menu in small desktop view)
+    .help-dropdown-menuitem.ui.item.dropdown {
+        display: none;
+    }
+
+    .more-dropdown-menuitem .setting-docs-item.ui.mobile.only {
+        display: block !important;
+    }
 }
 
 /* Large Monitor */
