@@ -94,7 +94,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 
 **⌛ It's about time ⌛**   
-For an added challenge, let's go back to the ``||loops:on start||`` code to set a timer that ends the game when it runs out!
+For an added challenge, let's go back to the ``||loops:on start||`` container that's already in our workspace to set a timer that ends the game when it runs out!
 
 ---
 

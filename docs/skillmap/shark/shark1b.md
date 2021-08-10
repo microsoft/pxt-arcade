@@ -19,31 +19,11 @@ In this activity, you'll add consequences whenever your submarine collides with 
 Play with your project in the game window and try to remember which chunk of code controls which part of the game.
 
 
+
 ## Step 3
 
-**💥 Enemies on the move 💥**   
-
----
-
-► Send your enemies after the shark by adding the ``||sprites:set [myEnemy] follow [mySprite]||`` block to **the end** of the ``||game:on game update every [2500] ms||`` container where ``||variables:myEnemy||`` is made.
-
-► Click the plus sign (**+**) to the right of the ``||sprites:set [myEnemy] follow [mySprite]||`` block and set the enemy speed to **30** so it doesn't attack too fast.
-
-```blocks
-game.onUpdateInterval(2500, function () {
-let mySprite: Sprite = null
-    let myEnemy = sprites.create(assets.image`enemy`, SpriteKind.Enemy)
-     myEnemy.setPosition(scene.screenWidth(), randint(0, 120))
-     // @highlight
-    myEnemy.follow(mySprite, 30)
-})
-```
-
-
-## Step 4
-
 **☠️On a dangerous path ☠️**   
-We'll need a container to run code whenever a submarine overlaps with the shark.
+To subtract hitpoints when the enemy reaches the shark, we'll need a container to run code whenever the two overlap.
 
 ---
 
@@ -59,7 +39,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ```
 
 
-## Step 5
+## Step 4
 
 To keep the submarine from attacking again and again, we need to destroy it before removing a life from the player.
 
@@ -79,7 +59,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ```
 
 
-## Step 6
+## Step 5
 
 
 ► From ``||info:Info||``, grab ``||info:change life by [-1]||`` and snap it below the ``||sprites:destroy [otherSprite]||`` block.
@@ -93,6 +73,15 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     scene.cameraShake(4, 500)
 })
 ```
+
+
+## Step 6
+
+**🎮 Try it! 🎮**  
+
+---
+
+Play your game and try to avoid the enemies! When they reach you, they should knock a heart off of your life indicator.
 
 
 
@@ -121,7 +110,8 @@ controller.moveSprite(mySprite)
 mySprite.setStayInScreen(true)
 game.onUpdateInterval(2500, function () {
     let myEnemy = sprites.create(assets.image`enemy`, SpriteKind.Enemy)
-     myEnemy.setPosition(scene.screenWidth(), randint(0, 120))
+     myEnemy.setPosition(scene.screenWidth(), randint(0, 120))    
+     myEnemy.follow(mySprite, 30)
 })
 ```
 ```ghost

@@ -58,7 +58,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ► Now we can add a special effect when a laser projectile hits a submarine. To do that, click the plus sign **+** on the right-side of the ``||sprites:destroy [otherSprite]||`` block to expand more options.
 
-► Choose a destroy effect (we like **bubbles**) and change it to run for **100** ms.
+► Choose a destroy effect (we like **bubbles**) and change it to run for **100** ms using the dropdown menu.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -88,7 +88,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 
 ---
 
-You should have a shark that can move around the screen and fire lasers at the submarines as they creep closer. When you hit the sub, it should explode into a batch of bubbles, then give the player a point.
+You should have a shark that can move around the screen and fire lasers at the submarines as they creep closer. When you hit a sub, it should explode into a batch of bubbles then give the player a point.
 
 
 ## Finale 

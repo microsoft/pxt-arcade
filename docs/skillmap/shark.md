@@ -1,8 +1,9 @@
 # Shark Splash
 * name: Shark Splash
-* description: The deep sea is a fascinating place! This skillmap will guide you through the ocean as a shark on a journey to find food and avoid enemies.
+* description: The deep sea is a fascinating place! This skillmap will guide you through the ocean as a shark on a journey to find food and avoid enemy submarines.
+* infoUrl: skillmap/educator-info/shark-map-info
 * backgroundurl: /static/skillmap/backgrounds/shark-attack-bg.png
-* bannerurl: /static/skillmap/shark/shark.gif
+* bannerurl: /static/skillmap/shark/shark4a.gif
 * primarycolor: #ff93c4
 * secondarycolor: #87f2ff
 * tertiarycolor: #5c406c
@@ -26,7 +27,7 @@
 ### shark1a
 * name: Beware the Enemy
 * type: tutorial
-* description: Crabs might be little,  but they're fierce!  Learn how to spawn enemies for your shark to avoid.
+* description: Spawn enemy submarines that track your shark!
 * url: /skillmap/shark/shark1a
 * tags: easy, design, background
 * imageUrl: /static/skillmap/shark/shark1a.gif
@@ -36,7 +37,7 @@
 ### shark1b
 * name: Enemies Attack!
 * type: tutorial
-* description: Turn your project into a game by adding damage every time a crab catches your shark.
+* description: Turn your project into a game by adding damage every time a submarine catches your shark.
 * url: /skillmap/shark/shark1b
 * tags: easy, enemies, overlap, lives
 * imageUrl: /static/skillmap/shark/shark1b.gif
@@ -86,18 +87,28 @@
 * url: /skillmap/shark/shark4
 * tags: easy, background, decorations
 * imageUrl: /static/skillmap/shark/shark4.gif
-* next: shark-finish, shark4a
+* next: shark-finish, shark4a, shark4b
 * position: 3 0
 
 ### shark4a
 
+* name: Let's Get Animated
+* type: tutorial
+* description: Bring your game to life with custom animations for your characters.
+* url: /skillmap/shark/shark4a
+* tags: easy, animations
+* imageUrl: /static/skillmap/shark/shark4a.gif
+* position: 4 1
+
+### shark4b
+
 * name: A Whole New World
 * type: tutorial
 * description: Give your game a brand new theme and really make it yours!
-* url: /skillmap/shark/shark4a
+* url: /skillmap/shark/shark4b
 * tags: easy, background, decorations, asset editor
-* imageUrl: /static/skillmap/shark/shark4a.gif
-* position: 4 1
+* imageUrl: /static/skillmap/shark/shark4b.gif
+* position: 4 2
 
 
 ### shark-finish
