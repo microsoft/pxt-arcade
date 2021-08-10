@@ -1,6 +1,7 @@
 # Zookeepers Day
 * name: A Zookeeper's Adventure!
 * description: Ever wonder what it takes to be a zookeeper? The answer may surprise you...
+* infoUrl: skillmap/educator-info/zookeeper-map-info
 * bannerurl: /static/skillmap/zoo/zoo-welcome.png
 * backgroundurl: /static/skillmap/backgrounds/zookeeper-bg.png 
 * primarycolor: #2EA9B0

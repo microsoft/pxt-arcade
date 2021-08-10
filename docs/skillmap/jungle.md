@@ -2,8 +2,8 @@
 * name: Jungle Monkey Platformer
 * description: Create a wild sidescroller called Jungle Monkey Jump! In these activities, you'll code your monkey, add magic platforms, toss explosives, and collect valuables throughout a pair of customizable level maps.
 * infoUrl: skillmap/educator-info/int-map-info
-* bannerUrl: /static/skillmap/jungle/jungle7.png
-* backgroundurl: /static/skillmap/space/game-maker-guide-background.png
+* bannerUrl: /static/skillmap/jungle/jungle6.gif
+* backgroundurl: /static/skillmap/jungle/jungle-bg.png
 * primarycolor: #2EA9B0
 * secondarycolor: #F392BD
 * tertiarycolor: #83C252
@@ -20,7 +20,7 @@
 * allowcodecarryover: false
 * name: Jungle Monkey Jump
 * type: tutorial
-* description: Make a monkey jump and move around!
+* description: Make your monkey jump and move around!
 * url: /skillmap/jungle/jungle1
 * imageUrl: /static/skillmap/jungle/jungle1.gif
 * tags: easy
@@ -30,7 +30,7 @@
 ### jungle2
 * name: Game Over
 * type: tutorial
-* description: Add points and danger to your game.
+* description: Add poisonous plants and valuable baubles to your game!
 * url: /skillmap/jungle/jungle2
 * imageUrl: /static/skillmap/jungle/jungle2.gif
 * tags: easy, tiles, tilemaps
@@ -40,7 +40,7 @@
 ### jungle3
 * name: Leaps and Bounds
 * type: tutorial
-* description: Add platforms with the touch of a button.
+* description: Add the code to spawn platforms with the touch of a button!
 * url: /skillmap/jungle/jungle3
 * imageUrl: /static/skillmap/jungle/jungle3.gif
 * tags: easy, events
@@ -50,7 +50,7 @@
 ### jungle4
 * name: Blown Away
 * type: tutorial
-* description: Use dynamite to clear platforms.
+* description: Use dynamite to clear platforms!
 * url: /skillmap/jungle/jungle4
 * imageUrl: /static/skillmap/jungle/jungle4.gif
 * tags: easy, events, overlap

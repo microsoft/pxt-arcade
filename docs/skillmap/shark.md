@@ -1,6 +1,7 @@
 # Shark Splash
 * name: Shark Splash
 * description: The deep sea is a fascinating place! This skillmap will guide you through the ocean as a shark on a journey to find food and avoid enemy submarines.
+* infoUrl: skillmap/educator-info/shark-map-info
 * backgroundurl: /static/skillmap/backgrounds/shark-attack-bg.png
 * bannerurl: /static/skillmap/shark/shark4a.gif
 * primarycolor: #ff93c4
