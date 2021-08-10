@@ -4,23 +4,23 @@
 
 **Shark Splash** introduces a number of MakeCode Arcade game design elements.
 
-In this set of activities, students will create a MakeCode Arcade game that involves blasting enemies and collecting sustenance.  This guide is intended for students who are new to MakeCode with little to moderate previous coding experience.  Through step-by-step instructions, students will focus on game creation across 3 primary topics: destroying enemies, collecting food, and custom modification.
+In this set of activities, students will create a MakeCode Arcade game that involves protecting their shark from submarines while it hunts for food.  This activity is intended for students who are new to MakeCode with little to moderate previous coding experience.  Through step-by-step instructions, students will focus on game creation across 3 primary topics: destroying enemies, collecting food, and custom modification.
 
-Designed for students between the ages of 11 & 15, this experience contains a total of 8 tutorials (approximating at least 52 minutes of instruction) plus an additional modification tutorial spread over 2 sessions.  At the end of the learning path, students receive a certificate of completion.
+Designed for students between the ages of 11 & 17, this experience contains a total of 9 tutorials (approximating at least 78 minutes of instruction) spread over 2 sessions.  At the end of the learning path, students receive a certificate of completion.
 
 |                 | Minutes* | Game Type | Key Concepts |
 | --------------- | -------- | --------- | ------------ |
 | **Day 1**           |          |           |              |
-| Set the Scene | 5 | Intro | movement, events, projectiles |
+| Set the Scene | 7 | Intro | movement, events, projectiles |
 | Beware the Enemy | 8 | Collector | events, positioning, random numbers |
 | Enemies Attack! | 8 | Collector | movement, events, destruction, life bar |
-| Add Enemies | 5 | Collector | events, destruction, animation, game score |
-| Multiple Enemy Sprites | 6 | Collector | events, conditional statements |
+| Laser Focus | 7 | Collector | events, destruction, animation, game score |
 | **Day 2**           |          |           |              |
 | Food not Friends | 7 | Collector | events, positioning, random numbers, movement |
-| Eat Up! | 7 | Collector | events, destroying, game score |
-| Under the Sea | 6 | Collector | loops, design, positioning, random numbers |
-| A Whole New World! | N/A | Design | art design, game modification |
+| Eat Up! | 8 | Collector | events, destroying, game score |
+| Under the Sea | 8 | Collector | loops, design, positioning, random numbers |
+| Let's Get Animated! | 10+ | Design | art design, animation |
+| A Whole New World! | 15+ | Design | art design, game modification |
 
 \* Minutes are approximate, based on time to follow instructions as written. Times do not include time spent on designing elements or re-aquainting with previously-written code. Providing extra time for creativity and debugging is encouraged.
 
@@ -33,7 +33,6 @@ Specifically, they will experience the following topics:
 #### Computer Science Concepts
 
 - Events
-- Conditional Statements
 - Loops
 - Variables
 
@@ -44,7 +43,7 @@ Specifically, they will experience the following topics:
 - Positioning
 - Randomization
 - Effects
-- Life Bar
+- Hit Points
 - Animation
 - Game Score
 - Velocity
@@ -52,11 +51,11 @@ Specifically, they will experience the following topics:
 
 ### Day 1
 
-On this day, students will use event containers, sprite positioning, physics, and destruction to build a basic, projectile-based shooting game.
+On this day, students will use event containers, sprite positioning, physics, and destruction to build a basic, projectile-based game.
 
 #### 1. Set the Scene
 
-| Activity | Set The Scene (10 min) |
+| Activity | Set The Scene (7 min) |
 |---|---|
 | ![Set the Scene thumbnail](/static/skillmap/shark/shark1.gif) | Set up your laser-firing ocean shark. |
 | Blocks used | ``[scene.setBackgroundColor(0)]``<br/>``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[controller.moveSprite(mySprite)]``<br/>``[let mySprite: Sprite = null; mySprite.setStayInScreen(true)]``<br>``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[projectile = sprites.createProjectileFromSprite(img`.`, mySprite)]``|
@@ -74,13 +73,13 @@ On this day, students will use event containers, sprite positioning, physics, an
 
 | Activity | Enemies Attack! (8 min) |
 |---|---|
-| ![Enemies Attack thumbnail](/static/skillmap/shark/shark1b.gif) | This game builds off the last level, adding gamification to your project by taking damage every time a crab catches your shark. |
+| ![Enemies Attack thumbnail](/static/skillmap/shark/shark1b.gif) | This game builds off the last level, adding gamification to your project by taking damage every time a submarine catches your shark. |
 | Blocks used | ``[let myEnemy: Sprite = null; myEnemy.follow(mySprite, 0)]``<br/>``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {})]``<br/>``[let otherSprite: Sprite = null; otherSprite.destroy()]``<br/>``[info.changeLifeBy()]``<br/>``[scene.cameraShake())]`` |
 | Solution option | [Enemies Attack!](https://makecode.com/_RfAVJ0hfeW0e) |
 
 #### 4. Laser Focus
 
-| Activity | Laser Focus (5 min) |
+| Activity | Laser Focus (7 min) |
 |---|---|
 | ![Laser Focus thumbnail](/static/skillmap/shark/shark1c.gif) | Adding on to the previous level, use your lasers to destroy enemies. |
 | Blocks used | ``[sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {})]``<br/>``[let otherSprite: Sprite = null; otherSprite.destroy(effects.bubbles, )]``<br/>``[info.changeScoreBy()]`` |
@@ -108,7 +107,7 @@ On this day, students will use the same elements of event containers, sprite pos
 
 #### 2. Eat Up!
 
-| Activity | Eat Up! (7 min) |
+| Activity | Eat Up! (8 min) |
 |---|---|
 | ![Eat Up! thumbnail](/static/skillmap/shark/shark3.gif) | This game builds off the last level. Animate and gamify your shark's consumption of fish. |
 | Blocks used | ``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {})]``<br/>``[let otherSprite: Sprite = null; otherSprite.destroy(effects.disintegrate,)]``<br/>``[info.changeScoreBy()]``<br/>``[info.startCountdown()]``<br/>``[info.onCountdownEnd(function () {})]``<br/>``[game.over(true)]``|
@@ -116,17 +115,27 @@ On this day, students will use the same elements of event containers, sprite pos
 
 #### 3. Under the Sea
 
-| Activity | Under the Sea (6 min) |
+| Activity | Under the Sea (8 min) |
 |---|---|
 | ![Under the Sea thumbnail](/static/skillmap/shark/shark4.gif) | Building off the previous level, this level mixes design with automated generation to create a unique sea environment for your shark. |
 | Blocks used | ``[scene.setBackgroundImage(img`.`)]``<br/>``[for (let index = 0; index < 10; index++) {}]``<br/>``[myDecor = sprites.create(img`.`,)]``<br/>``[let myDecor: Sprite = null; myDecor.setPosition(randint())]`` |
 | Solution option | [Under the Sea](https://makecode.com/_2D9JL6Rm36yC) |
 
-#### 4. A Whole New World!
 
-| Activity | A Whole New World! (Time N/A) |
+#### 4. Let's Get Animated!
+
+| Activity | Let's Get Animated! (15+) |
 |---|---|
-| ![A Whole New World! thumbnail](/static/skillmap/shark/shark4a.gif) | Put all the previous game elements together but redesign all of the individual components to create a new story! |
+| ![Let's Get Animated! thumbnail](/static/skillmap/shark/shark4a.gif) | Animate your sprites for a more life-like game! |
+| Blocks used | _None_ |
+| Solution option | N/A |
+
+
+#### 5. A Whole New World!
+
+| Activity | A Whole New World! (15+) |
+|---|---|
+| ![A Whole New World! thumbnail](/static/skillmap/shark/shark4b.gif) | Put all the previous game elements together but redesign all of the individual components to create a new story! |
 | Blocks used | _None_ |
 | Solution option | N/A |
 
@@ -136,5 +145,5 @@ As students work on A Whole New World!, we encourage them to plan out how they w
 
 - What is an activity that I really like?
 - When I do this activity, what supplies do I need? Replace the fishy food with these supplies!
-- When I do this activity, what gets in my way? Replace the crabby enemies with these blockers!
+- When I do this activity, what gets in my way? Replace the submarine enemies with these blockers!
 - What environment do I usually do this activity in? Replace the background with something similar!
