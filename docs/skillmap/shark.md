@@ -9,6 +9,7 @@
 * tertiarycolor: #5c406c
 * strokecolor: #5c406c
 * highlightcolor: #fff609
+* completednodecolor: #473c4d
 
 ## shark
 * name: Shark Splash
