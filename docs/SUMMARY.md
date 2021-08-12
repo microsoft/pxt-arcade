@@ -41,6 +41,18 @@
 
 * [Blocks Gallery](/block-gallery)
 
+## Miscellaneous #misc
+
+* Miscellaneous
+    * [About](/about)
+    * [Support](/support)
+    * [Translate](/translate)
+    * [Sharing projects](/share)
+    * [Offline support](/offline)
+    * [Save](/save)
+    * [Sign In](/identity/sign-in)
+    * [Cloud Sync](/identity/cloud-sync)
+
 ## Hardware
 
 * [Hardware](/hardware)

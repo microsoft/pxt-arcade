@@ -136,7 +136,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     // @highlight
-    let projectile = sprites.createProjectileFromSprite(assets.image`laser`, mySprite, 90, 0)
+    let projectile = sprites.createProjectileFromSprite(assets.image`laser`, mySprite, 200, 0)
 })
 ```
 

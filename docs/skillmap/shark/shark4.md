@@ -30,13 +30,13 @@ info.startCountdown(15)
 
 ## Step 3 - Repeat Decorations
 
-**Next, let's add some decorative sprites to the sea floor.**
+**Next, let's use a **repeat** loop to add some decorative sprites to the sea floor.**
 
 ---
 
 ► From ``||loops:Loops||``, drag the ``||loops:repeat [4] times||`` block to **the end** of the ``||loops:on start|`` container.
 
-► Change the repeat number from **4** times to **10** times.
+► Change the repeat number from **4** times to **10** times so the code will run 10 times in a row.
 
 ```blocks
 let mySprite: Sprite = null
@@ -82,7 +82,7 @@ for (let index = 0; index < 10; index++) {
 ## Step 5 - Update Sprite Position
 
 **Placement is everything!**  
-To make the seaweed look more natural, let's change y value to position it closer to the bottom of the screen.
+To make the seaweed look more natural, let's change the **y value** (vertical position) to place it closer to the bottom of the screen.
 
 ---
 
@@ -115,7 +115,7 @@ for (let index = 0; index < 10; index++) {
 
 ► To scatter the seaweed along the floor, drag a ``||math:pick random [0] to [10]||`` block to replace the **x** value. 
 
-► Change the lowest random number to **0** (the left edge of the screen) and the highest to **160** (the right edge).
+► Leave the lowest random number at **0** (the left edge of the screen)...but change the highest number to **160** (which represents the right edge).
 
 
 ```blocks
@@ -135,6 +135,14 @@ for (let index = 0; index <= 10; index++) {
     myDecor.setPosition(randint(0, 160), 96)
 }
 ```
+
+## step 7
+
+**🎮 Time to play 🎮**  
+
+---
+
+Check out your creation in the game window!  Refresh your project a few times to see how the seaweed takes a different random pattern in each game. 
 
 
 ## Finale
@@ -178,6 +186,9 @@ game.onUpdateInterval(2100, function () {
 ```
 
 ```ghost
+namespace SpriteKind {
+    export const Decoration = SpriteKind.create()
+}
 for (let index = 0; index < 10; index++) {
     mySprite2 = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
     mySprite2.setPosition(randint(0, 160), 96)

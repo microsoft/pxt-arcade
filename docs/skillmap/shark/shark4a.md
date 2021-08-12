@@ -17,7 +17,7 @@ There are lots of ways to animate your shark, starting with the forward swim.
 ---
 
 
-► In the toolbox, click ``||statusbars:Advanced||`` to reveal the 
+► In the toolbox, click **Advanced** to reveal the 
 ``||animation:Animation||`` category.
 
 
@@ -25,6 +25,9 @@ There are lots of ways to animate your shark, starting with the forward swim.
 of the ``||loops:on start||`` container.
 
 ```blocks
+namespace SpriteKind {
+    export const Decoration = SpriteKind.create()
+}
 let mySprite: Sprite = null
 scene.setBackgroundColor(9)
 scene.setBackgroundImage(assets.image`ocean1`)
@@ -74,6 +77,9 @@ false
 
 
 ```blocks
+namespace SpriteKind {
+    export const Decoration = SpriteKind.create()
+}
 let mySprite: Sprite = null
 scene.setBackgroundColor(9)
 scene.setBackgroundImage(assets.image`ocean1`)
@@ -209,14 +215,21 @@ The shark always spits lasers toward the right edge, so let's give it an appropr
 ---
 
 
-► From ``||animation:Animation||``, drag ``||animation:animate [mySprite]||`` into **the bottom** of the existing ``||controller:on [A] button [pressed]||`` container.
+► From ``||animation:Animation||``, drag ``||animation:animate [mySprite]||`` into **the bottom** of the existing ``||controller:on [A] button [pressed]||`` container that contains the code for the laser projectile.
 
 ► Click the grey box and toggle to **My Assets** to choose the **shooting shark** animation, then click **Done**.
 
-► Toggle looping from **`<OFF>`** to **`<ON>`**.
-
-
-
+```blocks
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    projectile = sprites.createProjectileFromSprite(assets.image`laser`, mySprite, 200, 0)
+    animation.runImageAnimation(
+    myEnemy,
+    assets.animation`shooting shark`,
+    50,
+    true
+    )
+})
+```
 
 ## Step 11 - And On and On
 

@@ -32,11 +32,11 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 
 ---
 
-► Scroll down until you find the **ocean1** background, then select it and click **Edit**.
+► Find the **ocean1** background, then select it and click **Edit**.
 
 ► Draw a background that fits your main character, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your background, click **Done**. 
 
-💡 You can see the name of an image if you hover over the tile or click the tile and look for the name in the Asset Preview window.
+💡 You can see the name of any image by hovering over the square or clicking the square and looking for the name in the **Asset Preview** window.
 
 
 
