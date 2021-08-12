@@ -4,12 +4,11 @@
 * infoUrl: skillmap/educator-info/int-map-info
 * bannerUrl: /static/skillmap/sc/sc6.gif
 * backgroundurl: /static/skillmap/backgrounds/sc-comp.png
-* primarycolor: #2EA9B0
-* secondarycolor: #F392BD
-* tertiarycolor: #83C252
-* highlightcolor: #FAED28
-
-* completednodecolor: #504c52
+* primarycolor: #ffffff
+* secondarycolor: #b32027
+* tertiarycolor: #000000
+* highlightcolor: #fcd34b
+* completednodecolor: #352125
 
 
 ## Shang-Chi and the Legend of the Ten Rings
@@ -25,7 +24,7 @@
 * imageUrl: /static/skillmap/sc/sc1.gif
 * tags: easy
 * next: sc2
-* position: 0 2
+* position: 0 1
 
 ### sc2
 * name: Know Your Surroundings
@@ -35,7 +34,7 @@
 * imageUrl: /static/skillmap/sc/sc2.gif
 * tags: easy, tiles, tilemaps
 * next: sc3
-* position: 1 2
+* position: 0 2
 
 ### sc3
 * name: Martial Arts Training
@@ -45,7 +44,7 @@
 * imageUrl: /static/skillmap/sc/sc3.gif
 * tags: easy, events
 * next: sc4
-* position: 1 3
+* position: 1 2
 
 ### sc4
 * name: Power Kick
@@ -55,7 +54,7 @@
 * imageUrl: /static/skillmap/sc/sc4.gif
 * tags: easy, events, overlap
 * next: sc5
-* position: 2 3
+* position: 1 3
 
 ### sc5
 * name: Here Comes Trouble
@@ -64,8 +63,8 @@
 * url: /skillmap/sc/sc5
 * imageUrl: /static/skillmap/sc/sc5.gif
 * tags: easy, events, overlap, lives
-* next: sc6
-* position: 2 2
+* next: sc5a, sc6
+* position: 2 3
 
 
 ### sc5a
@@ -75,8 +74,8 @@
 * url: /skillmap/sc/sc6
 * imageUrl: /static/skillmap/sc/sc6.gif
 * tags: easy, animations
-* next: sc7
-* position: 2 1
+* next: sc5b
+* position: 2 4
 
 ### sc5b
 * name: Smarter Goons
@@ -85,8 +84,9 @@
 * url: /skillmap/sc/sc6
 * imageUrl: /static/skillmap/sc/sc6.gif
 * tags: easy, animations
-* next: sc7
-* position: 2 1
+* next: sc6
+* position: 3 4
+* edges: 4 4
 
 ### sc6
 * name: Animated Characters
@@ -96,7 +96,7 @@
 * imageUrl: /static/skillmap/sc/sc6.gif
 * tags: easy, animations
 * next: sc7
-* position: 2 1
+* position: 4 3
 
 
 ### sc7
@@ -106,8 +106,8 @@
 * url: /skillmap/sc/sc7
 * imageUrl: /static/skillmap/sc/sc7.gif
 * tags: easy, levels, tilemaps
-* next: sc8, platformer-cert-1
-* position: 3 1
+* next: sc-cert-1
+* position: 5 3
 
 
 ### sc8
@@ -117,16 +117,18 @@
 * url: /skillmap/sc/sc8
 * imageUrl: /static/skillmap/sc/sc8.gif
 * tags: intermediate, art, assets
-* position: 4 0
+* position: 6 1
 
 
-### platformer-cert-1
+### sc-cert-1
 * name: Congrats!
 * kind: completion
 * type: certificate
 * imageUrl: /static/skillmap/certificates/platformer-cert.png
 * url: /static/skillmap/certificates/learn-to-make-a-platformer.pdf
-* position: 4 1
+* next: sc8
+* position: 5 2
+* edges: 6 2
 
 
 
