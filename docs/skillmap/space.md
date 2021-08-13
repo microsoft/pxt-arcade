@@ -28,7 +28,7 @@
 * position: 0 2
 
 ### space-activity2
-* name: Ready, aim, fire!
+* name: Ready, Aim, Fire!
 * type: tutorial
 * description: Equip your ship with projectiles and special effects.
 * tags: easy, projectiles, kinds
@@ -38,7 +38,7 @@
 * position: 1 2
 
 ### space-activity3
-* name: Here comes trouble!
+* name: Here Comes Trouble!
 * description: Watch out for danger! Add enemies and countdown lives in your game.
 * type: tutorial
 * tags: intermediate, enemies, kinds
