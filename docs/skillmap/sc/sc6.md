@@ -1,13 +1,12 @@
-# Animated Characters
+# Here Comes Trouble
 
 
 ## Welcome @showdialog
 
-**🏃🏽‍♀️ Let's get moving 🏃🏽‍♂️**  
+**🧨 Explosions are dangerous 🧨**  
+This activity will show you how to register a hit on your player if the monkey is standing too close to the blast. You can remove other game elements, too!
 
-Now that we've added an animation for our explosives, let's animate our character to make our game feel even more exciting.
-
-![Bring it to life](/static/skillmap/jungle/jungle6.gif "Step to the left. Step to the right.")
+![Move away from the explosions!](/static/skillmap/jungle/jungle5.gif "Don't live too dangerously!")
 
 
 
@@ -20,73 +19,63 @@ Now that we've added an animation for our explosives, let's animate our characte
 Can you connect each chunk of code to the actions it creates?
 
 
-## Step 3 - Step to the Right
+## Step 3 - Fried Monkey
 
-**➡️ Walking to the Right ➡️**  
-Let's make our character walk to the right when the right arrow is pressed.
+**💥 STAND BACK 💥**  
+Make sure to get the monkey out of the way before the big bang!
 
 ---
 
-► To add code that runs when the player moves to the right, open ``||controller:Controller||`` and drag ``||controller:on [A] button [pressed]||`` into an empty area of the workspace. 
+► From ``||sprites:Sprites||``, drag the 
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` container into an empty area of the workspace.
 
-► Click ``||controller:A||`` and choose ``||controller:right||`` from the dropdown.
+► Click the second kind ``||sprites:Player||`` and change it to ``||sprites:Projectile||``.
 
 
 ```blocks
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     
 })
 ```
 
-## Step 4 - Right Animation
+## Step 4 - Remove the Projectile
 
-► Click the **Advanced** category in the toolbar to reveal the ``||animation:Animation||`` category.
+► From the ``||sprites:Sprites||`` category, drag ``||sprites:destroy [mySprite]||`` into the empty **on Projectile overlaps Player** container.
 
-► Drag the large ``||animation:animate [mySprite]||`` into the empty ``||controller:on [right] button [pressed]||`` container. 
+► Drag the ``||variables:otherSprite||`` value block out of the title bar to replace ``||variables:mySprite||``.
 
-► Click the empty grey box and toggle to **My Assets** to choose the **walk right** animation.
-
-► Toggle **loop** to **`<ON>`** so the monkey continues to walk.
+![Borrow a variable](/static/skillmap/assets/give-var.gif "Don't destroy the monkey!")
 
 
 
 ```blocks
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     //@highlight
-    animation.runImageAnimation(
-    mySprite,
-    assets.animation`walk right`,
-    150,
-    true
-    )
+    otherSprite.destroy()
 })
 ```
 
+---
 
 
-## Step 5 - Walk Left
+![Borrow a variable](/static/skillmap/assets/give-var.gif "Don't destroy the monkey!")
 
-**⬅️ And Left ⬅️**
+
+
+## Step 5 - Take a Hit
+
+Don't forget to remove HP from the monkey!
 
 ---
 
-► Drag another ``||controller:on [A] button [pressed]||`` into an empty area of the workspace. 
-
-► Click ``||controller:A||`` and choose ``||controller:left||`` from the dropdown.
-
-► Drag ``||animation:animate [mySprite]||`` into the empty ``||controller:on [left] button [pressed]||`` container. 
-
-► Click the grey box and toggle to **My Assets** to choose the **walk left** animation, then toggle **loop** to **`<ON>`**.
+► From ``||info:Info||``, drag ``||info:change life by [-1]||`` to **the end** of the **on Projectile overlaps Player** container.
 
 
 ```blocks
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    animation.runImageAnimation(
-    mySprite,
-    assets.animation`walk left`,
-    150,
-    true
-    )
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    //@highlight
+    info.changeLifeBy(-1)
 })
 ```
 
@@ -98,33 +87,55 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ---
 
-Does your monkey walk right when you click the right arrow? Does it walk left with the left arrow?
+You should be able to jump with the up arrow, place tiles with the A button, and set an explosive with the B button.
+
+**What happens if you don't get your monkey out of the way quickly enough?**
 
 
-## Step 9 - Jump!
 
-Now we need an animation that runs when the monkey jumps!
+
+## Step 9 - Remove More Tiles
+
+**💥 Kablow 💥**  
+This game could have even more options if we remove **bounce** crates and **poison pit** tiles with explosives, too.
 
 ---
 
-► Find your ``||controller:on [up] button [pressed]||`` container. 
+► Find the **Projectile overlaps skyblock** container that's already in your code.
 
-► From ``||animation:Animation||``, grab an ``||animation:animate [mySprite]||`` block and drag it into **the end** of the ``||controller:on [up] button [pressed]||`` container. 
+► Right-click the outer container and choose **Duplicate**. The new chunk of code will be faded out, but that's okay!
 
-► Click the empty grey box and toggle to **My Assets** to choose the **jump** animation.
-
+► In the new container, change the **skyblock** tile to the **bounce** crate.
 
 
 ```blocks
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprites.gravity_jump(mySprite)
-    //@highlight
-    animation.runImageAnimation(
-    mySprite,
-    assets.animation`jump`,
-    50,
-    false
-    )
+scene.onOverlapTile(SpriteKind.Projectile, assets.tile`skyblock`, function (sprite, location) {
+    tiles.setWallAt(location, false)
+    tiles.setTileAt(location, assets.tile`transparency16`)
+})
+scene.onOverlapTile(SpriteKind.Projectile, assets.tile`bounce`, function (sprite, location) {
+    tiles.setWallAt(location, false)
+    tiles.setTileAt(location, assets.tile`transparency16`)
+})
+```
+
+## Step 9 - Remove More Tiles
+
+Repeat the process once again, but this time choose the **poison pit** tile.
+
+
+```blocks
+scene.onOverlapTile(SpriteKind.Projectile, assets.tile`skyblock`, function (sprite, location) {
+    tiles.setWallAt(location, false)
+    tiles.setTileAt(location, assets.tile`transparency16`)
+})
+scene.onOverlapTile(SpriteKind.Projectile, assets.tile`poison pit`, function (sprite, location) {
+    tiles.setWallAt(location, false)
+    tiles.setTileAt(location, assets.tile`transparency16`)
+})
+scene.onOverlapTile(SpriteKind.Projectile, assets.tile`bounce`, function (sprite, location) {
+    tiles.setWallAt(location, false)
+    tiles.setTileAt(location, assets.tile`transparency16`)
 })
 ```
 
@@ -135,13 +146,13 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ---
 
-Your monkey should look amazing as it runs and jumps!
+Now that you can add and destroy blocks, is there anywhere you can't reach?!
 
 
 
 ## Finished
 
-When you're done playing your game, click **Finish** to return to the main page to learn how to add more levels!
+When you're done playing your game, click **Finish** to return to the main page to learn how to animate your main player!
 
 
 
@@ -196,21 +207,18 @@ scene.onOverlapTile(SpriteKind.Projectile, assets.tile`skyblock`, function (spri
     tiles.setWallAt(location, false)
     tiles.setTileAt(location, assets.tile`transparency16`)
 })
+```
 
+```ghost
 scene.onOverlapTile(SpriteKind.Projectile, assets.tile`poison pit`, function (sprite, location) {
     tiles.setWallAt(location, false)
     tiles.setTileAt(location, assets.tile`transparency16`)
 })
-scene.onOverlapTile(SpriteKind.Projectile, assets.tile`bounce`, function (sprite, location) {
-    tiles.setWallAt(location, false)
-    tiles.setTileAt(location, assets.tile`transparency16`)
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    otherSprite.destroy()
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, otherSprite) {
+    sprite.destroy()
     info.changeLifeBy(-1)
 })
 ```
-
 
 ```customts
 
