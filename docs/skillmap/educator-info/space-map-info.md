@@ -6,14 +6,14 @@
 
 In this set of activities, students will use the power of coding to create a space fighter. Equipped with missiles, refillable fuel canisters, and a creative mix of bullet types, students' ships will have everything they need to defend the galaxy from enemies. We recommend that students using this guide already have familiarity with basic MakeCode elements, but our step-by-step instructions are written to be friendly towards those with little coding experience as well.
 
-Designed for students between the ages of 13 & 16, this experience contains a total of 7 tutorials (approximating ___ minutes of instruction) spread over 2 sessions.  At the end of the learning path, students receive a certificate of completion.
+Designed for students between the ages of 13 & 16, this experience contains a total of 7 tutorials (approximating 63 minutes of instruction) spread over 2 sessions.  At the end of the learning path, students receive a certificate of completion.
 
 |                 | Minutes* | Game Type | Key Concepts |
 | --------------- | -------- | --------- | ------------ |
 | **Session 1**           |          |           |              |
 | Prepare Your Ship | 5 | Intro | velocity, movement |
-| Ready, aim, fire! | 8 | Collector | events, projectiles, effects, velocity |
-| Here comes trouble! | 15 | Collector | events, velocity, randomization, life bar, effects, game score, destruction |
+| Ready, Aim, Fire! | 8 | Collector | events, projectiles, effects, velocity |
+| Here Comes Trouble! | 15 | Collector | events, velocity, randomization, life bar, effects, game score, destruction |
 | All Shook Up | 6 | Collector | effects, animation |
 | **Session 2**           |          |           |              |
 | Fuel Up! | 12 | Collector | status bar, positioning, events, destruction, velocity, randomization, game score |
@@ -24,81 +24,102 @@ Designed for students between the ages of 13 & 16, this experience contains a to
 
 ### Objectives 
 
-As students go through A Zookeeper's Adventure, they will create their own zookeeper sprite, design animal exhibits, and take care of animals. Throughout these experiences, they will be using computer science and game design concepts.
+As students go through Design a Space Explorer, they will build a galactic environment in which they can fire projectiles at enemy ships, level up the difficulty of the game, and customize projectile design, all while being cautious about their own health bars and refeuling needs. Throughout these experiences, they will be using various computer science and game design concepts.
 
 Specifically, they will experience the following topics:
 
 #### Computer Science Concepts
 
-- User input
-- Loops
 - Events
+- Conditional Statements
+- Arrays
 
 #### Game Design Concepts
 
-- Sprite Design
-- Coordinates
 - Velocity
-- Game Score
-- Randomization
-- Animation
+- Projectiles
 - Effects
+- Randomization
+- Life Bar
+- Game Score
+- Destruction
+- Animation
+- Status Bar
+- Positioning
+- Variables
+- Text Display
+- Sprite Design
 
-#### 1. Zookeeper Hut
+### Session 1
 
-| Activity | Zookeeper Hut (3 min) |
+During this session, students will set up fully-fledged, initial version of their game. These modules will walk through spaceship setup, projectile shooting, enemy ship functionality, and animations.
+
+#### 1. Prepare Your Ship
+
+| Activity | Prepare Your Ship (5 min) |
 |---|---|
-| ![Zookeeper Hut thumbnail](/static/skillmap/zoo/activity1.png) | Design your zookeeper sprite and move it around. |
-| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[controller.moveSprite(mySprite)]``<br/> ``[scene.cameraFollowSprite(mySprite)]``|
-| Solution option | [Zookeeper Hut Project](https://makecode.com/_UrRYAkLCjTW7) |
+| ![Prepare Your Ship thumbnail](/static/skillmap/space/spacet1.gif) | Set up your spaceship and galactic backdrop. |
+| Blocks used | ``[scene.setBackgroundImage(img`.`)]``<br/>``[scroller.scrollBackgroundWithSpeed()]``<br/> ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[let mySprite: Sprite=null; controller.moveSprite(mySprite)]``<br/>``[let mySprite: Sprite=null; mySprite.setStayInScreen(true)]``|
+| Solution option | [Prepare Your Ship Project](https://makecode.com/_VkqHRMAkyV4m) |
 
-#### 2. By Land
+#### 2. Ready, Aim, Fire!
 
-| Activity | By Land (6 min) |
+| Activity | Ready, Aim, Fire! (8 min) |
 |---|---|
-| ![By Land thumbnail](/static/skillmap/zoo/activity2.png) | Design an animal enclosure on land zoo exhibit. |
-| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[let mySprite: Sprite=null; mySprite.setVelocity(randint(), randint())]``<br/>``[let mySprite: Sprite=null; mySprite.setBounceOnWall(true)]`` |
-| Solution option | [By Land Project](https://makecode.com/_TeKEE8W21eXa) |
+| ![Ready, Aim, Fire! thumbnail](/static/skillmap/space/spacet2.gif) | Equip your ship with projectiles and special effects. |
+| Blocks used | ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[projectile = sprites.createProjectileFromSprite(img`.`, mySprite, 0, 0)]``<br/>``[let projectile: Sprite=null; projectile.startEffect(effects.fire, 100)]`` |
+| Solution option | [Ready, Aim, Fire! Project](https://makecode.com/_eJPFdhWzA7LW) |
 
-#### 3. By Sea
+#### 3. Here Comes Trouble!
 
-| Activity | By Sea (6 min) |
+| Activity | Here Comes Trouble! (15 min) |
 |---|---|
-| ![By Sea thumbnail](/static/skillmap/zoo/activity2-2.png) | Design an aquatic zoo exhibit with multiple of the same creature. |
-| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[let mySprite: Sprite=null; mySprite.vx = 0]``<br/>``[let mySprite: Sprite=null; mySprite.setBounceOnWall(true)]``<br/>``[let mySprite: Sprite=null; mySprite.y = randint()]``<br/>``[for (let index = 0; index < 4; index++) {}]`` |
-| Solution option | [By Sea Project](https://makecode.com/_beDHXiLcj8dk) |
+| ![Here Comes Trouble! thumbnail](/static/skillmap/space/spacet3.gif) | Add enemies, enemy functionality, and enemy destruction into your game. |
+| Blocks used | ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[let mySprite: Sprite=null; projectile = sprites.createProjectileFromSprite(img`.`, mySprite, 0, 0)]``<br/>``[let projectile: Sprite=null; projectile.startEffect()]``<br/>``[sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, otherSprite) {})]``<br/>``[sprite.destroy(effects.ashes, 0)]``<br/>``[otherSprite.destroy()]``<br/>``[info.changeScoreBy()]``<br/>``[info.changeLifeBy()]`` |
+| Solution option | [Here Comes Trouble! Project](https://makecode.com/_XrALAw82Y7Lc) |
 
-#### 4. Penguins
+#### 4. All Shook Up
 
-| Activity | Penguins (5 min) |
+| Activity | All Shook Up (6 min) |
 |---|---|
-| ![Penguins thumbnail](/static/skillmap/zoo/activity3.png) | This activity teaches how to debug locational errors in code. |
-| Blocks used | ``[let penguin = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[let mySprite: Sprite=null; mySprite.x = 0]`` |
-| Solution option | [Penguins Project](https://makecode.com/_7FETiTYJiKq8) |
+| ![All Shook Up thumbnail](/static/skillmap/space/spacet4a.gif) | Animate your and your enemies' ships. |
+| Blocks used | ``[scene.cameraShake()]``<br/>``[let mySprite: Sprite=null; animation.runImageAnimation(mySprite, [0], 100, true)]`` |
+| Solution option | [All Shook Up Project](https://makecode.com/_0wriY3fq2XWF) |
 
-#### 5. Feed the Panda
+### Session 2
 
-| Activity | Feed the Panda (10 min) |
+During this session, students will amp up their game by building in additional game design elements. These modules will walk through adding the need to refuel, an extra level, and some design modifications.
+
+#### 1. Fuel Up!
+
+| Activity | Fuel Up! (12 min) |
 |---|---|
-| ![Feed the Panda thumbnail](/static/skillmap/zoo/activity4.png) | Create bamboo and guide the panda to eat it. |
-| Blocks used | ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[let mySprite = sprites.create(img`.`, SpriteKind.Food)]``<br/>``[let mySprite: Sprite=null; mySprite.setPosition(randint(), randint())]``<br/>``[let panda: Sprite=null; panda.follow(mySprite)]``<br/>``[sprites.onOverlap()]``<br/>``[let otherSprite: Sprite=null; otherSprite.destroy(effects.disintegrate, 0)]``|
-| Solution option | [Feed the Panda Project](https://makecode.com/_8AoUX74TK1Rr) |
+| ![Fuel Up! thumbnail](/static/skillmap/space/spacet4.gif) | Add a fuel gauge to your ship and set fuel drops in your game. |
+| Blocks used | ``[let statusbar: StatusBarSprite = null; statusbar = statusbars.create(20, 4, StatusBarKind.Energy)]``<br/>``[let statusbar: StatusBarSprite = null; statusbar.attachToSprite(mySprite, -30, 0)]``<br/>``[game.onUpdateInterval(300, function () {})]``<br/>``[statusbar.value += -1]``<br/>``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Gas, function (sprite, otherSprite) {})]``<br/>``[statusbar.value = 100]``<br/>``[otherSprite.destroy()]``<br/>``[statusbars.onZero(StatusBarKind.Energy, function (status) {})]``<br/>``[game.over(false)]``|
+| Solution option | [Fuel Up! Project](https://makecode.com/_gsYg8Pdwa2oC) |
 
-#### 6. Quail Hatching
+#### 2. Level Up!
 
-| Activity | Quail Hatching (6 min) |
+| Activity | Level Up! (9 min) |
 |---|---|
-| ![Quail Hatching thumbnail](/static/skillmap/zoo/activity5.png) | Use code to corral all the quails and their eggs into the coop. |
-| Blocks used | ``[sprites.onOverlap()]``<br/>``[let otherSprite: Sprite=null; otherSprite.follow(mySprite)]``<br/>``[scene.onOverlapTile())]``<br/>``[let sprite: Sprite=null; sprite.destroy()]`` |
-| Solution option | [Quail Hatching Project](https://makecode.com/_UC93YfEEVEgq) |
+| ![Level Up! thumbnail](/static/skillmap/space/spacet5.gif) | Switch to a new level when the player gains an achievement. |
+| Blocks used | ``[enemySpeed = null]``<br/>``[myEnemy = sprites.createProjectileFromSide(img`.`, 0, enemySpeed)]``<br/>``[if () {}]``<br/>``[info.changeScoreBy()]``<br/>``[mySprite.say("", 0)]``<br/>``[enemySpeed = 0]`` |
+| Solution option | [Level Up! Project](https://makecode.com/_Hok9FKJxecLW) |
+
+#### 3. The Art of Darts
+
+| Activity | The Art of Darts (8 min) |
+|---|---|
+| ![The Art of Darts thumbnail](/static/skillmap/space/spacet6.gif) | Use arrays and randomization to switch up the kinds of darts fired from your ship. |
+| Blocks used | ``[darts = [img`.`, img`.`, img`.`]]``<br/>``[let darts = [img`.`, img`.`, img`.`]; darts._pickRandom()]`` |
+| Solution option | [The Art of Darts Project](https://makecode.com/_D6g5zvFF7Rre) |
 
 ##### Game Mod Ideas
 
-After students complete Quail Hatching, they can head back to the skillmap and click "SAVE TO MY PROJECTS" for any of the modules. This will open the respective game in a window with a full-featured toolbox. Here are some modifications they can try:
+After students complete The Art of Darts, they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox.  Here are some modifications they can try: 
 
-- _[By Land/By Sea]_ Add another sprite that also has a movement pattern 
-- _[By Sea]_ Modify sprites' moving speeds so each has a different one
-- _[By Sea]_ Have the sprites flip around when they hit a wall
-- _[Feed the Panda]_ Have the panda continue moving after eating
-- _[Feed the Panda]_ Create another panda
-- _[Quail Hatching]_ Make it easier to beat the game (ex. by having the glove move faster)
+- Add another type of enemy
+- Set it so the health bar is displayed on start
+- Add another level to the game
+- Modify level up design to include more reward elements
+- Add automated, damage-inducing projectiles to enemy ships
