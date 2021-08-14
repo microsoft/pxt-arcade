@@ -75,7 +75,7 @@ During this session, students will set up fully-fledged, initial version of thei
 | Activity | Here Comes Trouble! (15 min) |
 |---|---|
 | ![Here Comes Trouble! thumbnail](/static/skillmap/space/spacet3.gif) | Add enemies, enemy functionality, and enemy destruction into your game. |
-| Blocks used | ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[let mySprite: Sprite=null; projectile = sprites.createProjectileFromSprite(img`.`, mySprite, 0, 0)]``<br/>``[let projectile: Sprite=null; projectile.startEffect()]``<br/>``[sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, otherSprite) {})]``<br/>``[sprite.destroy(effects.ashes, 0)]``<br/>``[otherSprite.destroy()]``<br/>``[info.changeScoreBy()]``<br/>``[info.changeLifeBy()]`` |
+| Blocks used | ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[let mySprite: Sprite=null; projectile = sprites.createProjectileFromSprite(img`.`, mySprite, 0, 0)]``<br/>``[let projectile: Sprite=null; projectile.startEffect()]``<br/>``[sprites.onOverlap()]``<br/>``[let sprite: Sprite=null; sprite.destroy(effects.ashes, 0)]``<br/>``[let otherSprite: Sprite=null; otherSprite.destroy()]``<br/>``[info.changeScoreBy()]``<br/>``[info.changeLifeBy()]`` |
 | Solution option | [Here Comes Trouble! Project](https://makecode.com/_XrALAw82Y7Lc) |
 
 #### 4. All Shook Up
@@ -83,7 +83,7 @@ During this session, students will set up fully-fledged, initial version of thei
 | Activity | All Shook Up (6 min) |
 |---|---|
 | ![All Shook Up thumbnail](/static/skillmap/space/spacet4a.gif) | Animate your and your enemies' ships. |
-| Blocks used | ``[scene.cameraShake()]``<br/>``[let mySprite: Sprite=null; animation.runImageAnimation(mySprite, [0], 100, true)]`` |
+| Blocks used | ``[scene.cameraShake()]``<br/>``[animation.runImageAnimation()]`` |
 | Solution option | [All Shook Up Project](https://makecode.com/_0wriY3fq2XWF) |
 
 ### Session 2
@@ -95,7 +95,7 @@ During this session, students will amp up their game by building in additional g
 | Activity | Fuel Up! (12 min) |
 |---|---|
 | ![Fuel Up! thumbnail](/static/skillmap/space/spacet4.gif) | Add a fuel gauge to your ship and set fuel drops in your game. |
-| Blocks used | ``[let statusbar: StatusBarSprite = null; statusbar = statusbars.create(20, 4, StatusBarKind.Energy)]``<br/>``[let statusbar: StatusBarSprite = null; statusbar.attachToSprite(mySprite, -30, 0)]``<br/>``[game.onUpdateInterval(300, function () {})]``<br/>``[statusbar.value += -1]``<br/>``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Gas, function (sprite, otherSprite) {})]``<br/>``[statusbar.value = 100]``<br/>``[otherSprite.destroy()]``<br/>``[statusbars.onZero(StatusBarKind.Energy, function (status) {})]``<br/>``[game.over(false)]``|
+| Blocks used | ``[let statusbar: StatusBarSprite = null; statusbar = statusbars.create(20, 4, StatusBarKind.Energy)]``<br/>``[let statusbar: StatusBarSprite = null; statusbar.attachToSprite(mySprite, -30, 0)]``<br/>``[game.onUpdateInterval()]``<br/>``[statusbar.value += -1]``<br/>``[sprites.onOverlap()]``<br/>``[statusbar.value = 100]``<br/>``[let otherSprite: Sprite=null; otherSprite.destroy()]``<br/>``[statusbars.onZero(StatusBarKind.Energy, function (status) {})]``<br/>``[game.over(false)]``|
 | Solution option | [Fuel Up! Project](https://makecode.com/_gsYg8Pdwa2oC) |
 
 #### 2. Level Up!
@@ -103,7 +103,7 @@ During this session, students will amp up their game by building in additional g
 | Activity | Level Up! (9 min) |
 |---|---|
 | ![Level Up! thumbnail](/static/skillmap/space/spacet5.gif) | Switch to a new level when the player gains an achievement. |
-| Blocks used | ``[enemySpeed = null]``<br/>``[myEnemy = sprites.createProjectileFromSide(img`.`, 0, enemySpeed)]``<br/>``[if () {}]``<br/>``[info.changeScoreBy()]``<br/>``[mySprite.say("", 0)]``<br/>``[enemySpeed = 0]`` |
+| Blocks used | ``[let enemySpeed = null]``<br/>``[myEnemy = sprites.createProjectileFromSide(img`.`, 0, enemySpeed)]``<br/>``[if (true) {}]``<br/>``[info.changeScoreBy()]``<br/>``[let mySprite: Sprite=null; mySprite.say("", 0)]``<br/>``[enemySpeed = 0]`` |
 | Solution option | [Level Up! Project](https://makecode.com/_Hok9FKJxecLW) |
 
 #### 3. The Art of Darts
