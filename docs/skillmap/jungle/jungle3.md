@@ -78,7 +78,7 @@ The walls are great, but it's hard to remember where they are. Let's add special
 
 ► Set a tile by going to the ``||scene:Scene||`` category and dragging ``||scene:set [ ] at tilemap col [0] row [0]||`` into **the bottom** of the ``||controller:on [A] button [pressed]||`` container.
 
-► Click the empty square and choose the bcrate called **bounce**.  
+► Click the empty square and choose the crate called **bounce**.  
 
 
 ```blocks
