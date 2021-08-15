@@ -45,7 +45,7 @@ We're going to use a **Projectile** block here, even though our dynamite stays i
 
 ---
 
-► From ``||sprites:Sprites||``, drag ``||sprites:set [projectile] to projectile from [mySprite] with vx [50] vy [50]||`` into the empty ``||controller:on [B] button [pressed]||`` container.
+► From ``||sprites:Sprites||``, drag ``||variables:set [projectile] to projectile from [mySprite] with vx [50] vy [50]||`` into the empty ``||controller:on [B] button [pressed]||`` container.
 
 ► Change both **vx** (horizontal speed) and **vy** (vertical speed) to **0** so the explosive stays where you drop it.
 

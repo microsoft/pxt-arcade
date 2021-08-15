@@ -2,7 +2,7 @@
 * name: Shang-Chi and the Legend of the Ten Rings
 * description: Create your own amazing adventure based on the movie Shang-Chi and the Legend of the Ten Rings! Guided by an intro-level tutorial, you'll use code to train Shang-Chi or Xialing to build magic platforms, seek out mystical rings, and battle the Mandarin's goons.
 * infoUrl: skillmap/educator-info/int-map-info
-* bannerUrl: /static/skillmap/sc/sc6.gif
+* bannerUrl: /static/skillmap/sc/sc6a.gif
 * backgroundurl: /static/skillmap/backgrounds/sc-comp.png
 * primarycolor: #ffffff
 * secondarycolor: #b32027
@@ -60,29 +60,29 @@
 * name: Animated Characters
 * type: tutorial
 * description: Now that we've learned to animate, let's animate the rest of the main character's actions
-* url: /skillmap/sc/sc5
-* imageUrl: /static/skillmap/sc/sc5.gif
+* url: /skillmap/sc/sc6
+* imageUrl: /static/skillmap/sc/sc6.gif
 * tags: easy, animations
-* next: sc6
+* next: sc6, sc7
 * position: 2 3
 
 ### sc6
 * name: Here Comes Trouble
 * type: tutorial
-* description: Add goons to the scene, animate them, and make them chase the hero
-* url: /skillmap/sc/sc6
-* imageUrl: /static/skillmap/sc/sc6.gif
+* description: Add goons from the Ten Rings organization
+* url: /skillmap/sc/sc5
+* imageUrl: /static/skillmap/sc/sc5.gif
 * tags: easy, events, overlap, lives
-* next: sc6a, sc7
-* position: 3 3
+* next: sc6a
+* position: 2 4
 
 
 ### sc6a
 * name: Packs a Punch
 * type: tutorial
-* description: Add the code for goons to take hit points, and for your kick to destroy them
-* url: /skillmap/sc/sc6a
-* imageUrl: /static/skillmap/sc/sc6a.gif
+* description: Defend yourself against the enemy.
+* url: /skillmap/sc/sc6
+* imageUrl: /static/skillmap/sc/sc6.gif
 * tags: easy, animations
 * next: sc6b
 * position: 3 4
@@ -90,9 +90,9 @@
 ### sc6b
 * name: Smarter Goons
 * type: tutorial
-* description: Ten Rings goons wouldn't be stopped by a simple roadblock! Give them the ability to know when something is in their way so they can try to jump it
-* url: /skillmap/sc/sc6b
-* imageUrl: /static/skillmap/sc/sc6b.gif
+* description: Use simple AI to keep the enemy on the move.
+* url: /skillmap/sc/sc6
+* imageUrl: /static/skillmap/sc/sc6.gif
 * tags: easy, animations
 * next: sc7
 * position: 4 4
@@ -103,7 +103,7 @@
 ### sc7
 * name: On Another Level
 * type: tutorial
-* description: There's only five rings in the first level!  Let's add Level 2 so your player can collect all 10 rings!
+* description: Add another level to the end of your project!
 * url: /skillmap/sc/sc7
 * imageUrl: /static/skillmap/sc/sc7.gif
 * tags: easy, levels, tilemaps
@@ -114,7 +114,7 @@
 ### sc8
 * name: Bigger and Better
 * type: tutorial
-* description: (Optional) Not ready to stop? Keep going with these three prompts.  Can you figure out how to make them happen on your own?
+* description: Your imagination is the limit!
 * url: /skillmap/sc/sc8
 * imageUrl: /static/skillmap/sc/sc8.gif
 * tags: intermediate, art, assets
