@@ -3,9 +3,9 @@
 
 ## Welcome @showdialog
 
-This activity will help you add consequenses when goons overlap your sprite!
+This activity will help you add code to make your goons act more naturally!
 
-![Goons colliding with the hero](/static/skillmap/sc/sc6a.gif "Watch out for the goons!")
+![Goons overcoming obstactles and switching directions](/static/skillmap/sc/sc6b.gif "Make a smarter goon")
 
 
 
@@ -16,6 +16,7 @@ This activity will help you add consequenses when goons overlap your sprite!
 ---
 
 Can you connect each chunk of code to the actions it creates?
+
 
 
 ## Step 3 - Gotcha!
@@ -169,6 +170,7 @@ When you're done testing your project, click **Finish** to return to the main pa
 ```package
 pxt-tilemaps=github:microsoft/pxt-tilemaps/
 arcade-premium-life=github:jwunderl/arcade-premium-life/
+pxt-characterAnimations=github:microsoft/arcade-character-animations
 ```
 
 
@@ -288,7 +290,27 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 
 ```
 
-
+```ghost
+scene.onHitWall(SpriteKind.Enemy, function (sprite, location) {
+    sprites.wall_jump(sprite)
+})
+sprites.onCreated(SpriteKind.Enemy, function (sprite) {
+    animation.loopFrames2(
+    sprite,
+    assets.animation`goon right`,
+    100,
+    characterAnimations.rule(Predicate.MovingRight)
+    )
+    animation.loopFrames2(
+    sprite,
+    assets.animation`goon left`,
+    100,
+    characterAnimations.rule(Predicate.MovingLeft)
+    )
+    sprite.follow(mySprite, 30)
+    sprite.ay = 500
+})
+```
 
 
 ```customts
@@ -300,6 +322,52 @@ namespace sprites {
     }
 }
 }
+
+namespace sprites {
+    //% block="make $thisSprite=variables_get(mySprite) hurdle side wall"
+    export function wall_jump (thisSprite: Sprite) {
+        if (thisSprite.isHittingTile(CollisionDirection.Left) || thisSprite.isHittingTile(CollisionDirection.Right)) {
+            sprites.gravity_jump(thisSprite)
+        }
+    }
+}
+
+namespace animation {
+/**
+     * Requires "Character" extension
+     * Loops the passed frames on the sprite at the given interval whenever
+     * the specified rule is true for that sprite.
+     * Note: this is a dupe of a block in the character 
+     * extension that I want to fix. 
+     *
+     * If more than one rule applies, the most specific rule will be used.
+     * If multiple rules are equally specific, the currently executing rule
+     * is favored (or one is chosen at random).
+     *
+     * @param sprite    the sprite to animate
+     * @param frames    the images that make up that animation
+     * @param frame     Interval the amount of time to spend on each frame in milliseconds
+     * @param rule      the rule that decides when this animation will play
+     */
+    //% blockId=arcade_character_loop_frames2
+    //% block="animate $sprite loop frames $frames $frameInterval when $rule"
+    //% sprite.defl=mySprite
+    //% sprite.shadow=variables_get
+    //% frames.shadow=animation_editor
+    //% frameInterval.shadow=timePicker
+    //% rule.shadow=arcade_character_make_rule
+    //% weight=100
+    //% blockGap=8
+    //% help=github:arcade-character-animations/docs/loop-character-animation
+    export function loopFrames2(sprite: Sprite, frames: Image[], frameInterval: number, rule: Rule) {
+        init()
+        if (!sprite || !frames || !frames.length || !rule) { return }
+        if (Number.isNaN(frameInterval) || frameInterval < 5) { frameInterval = 5}
+        const state = getStateForSprite(sprite, true)
+        state.setLoopFrames(frames, frameInterval, rule)
+    }
+}
+
 ```
 
 
