@@ -5,7 +5,7 @@
 
 Welcome to **Jungle Monkey Jump!**
 
-Here, you'll learn how to make a [__*sidescrolling*__](#scrolld "games that are viewed from the side, with most of the action happening horizontally") 
+This activity will show you how to make a [__*sidescrolling*__](#scrolld "games that are viewed from the side, with most of the action happening horizontally") 
 [__*platformer*__](#plat "games that rely on jump and run as their main mechanic").  
 
 ![Our first platformer](/static/skillmap/jungle/jungle1.gif "Look what we're about to learn today!")
@@ -90,7 +90,7 @@ to "pull down" on the sprite.
 
 ►  From ``||sprites:Sprites||``, drag ``||sprites:set [mySprite] [x] to [0]||`` to **the end** of the ``||loops:on start||`` container.
 
-► Click the dropdown to change **x** to **ay (acceleration y)** 
+► Click the dropdown to change **x** to **ay (acceleration y)**. 
 
 ► To pull the sprite toward the ground, replace **0** with **500**.
 
