@@ -14,12 +14,12 @@ Designed for students between the ages of 11 & 17, this experience contains a to
 | Set the Scene | 7 | Intro | movement, events, projectiles |
 | Beware the Enemy | 8 | Collector | events, positioning, random numbers |
 | Enemies Attack! | 8 | Collector | movement, events, destruction, life bar |
-| Laser Focus | 7 | Collector | events, destruction, animation, game score |
+| Laser Focus | 7 | Collector | events, destruction, effects, game score |
 | **Day 2**           |          |           |              |
 | Food not Friends | 7 | Collector | events, positioning, random numbers, movement |
 | Eat Up! | 8 | Collector | events, destroying, game score |
 | Under the Sea | 8 | Collector | loops, design, positioning, random numbers |
-| Let's Get Animated! | 10+ | Design | art design, animation |
+| Let's Get Animated! | 10+ | Design | art design, effects |
 | A Whole New World! | 15+ | Design | art design, game modification |
 
 \* Minutes are approximate, based on time to follow instructions as written. Times do not include time spent on designing elements or re-aquainting with previously-written code. Providing extra time for creativity and debugging is encouraged.
@@ -44,7 +44,6 @@ Specifically, they will experience the following topics:
 - Randomization
 - Effects
 - Hit Points
-- Animation
 - Game Score
 - Velocity
 - World Design

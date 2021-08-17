@@ -36,7 +36,6 @@ As students go through A Zookeeper's Adventure, they will create their own zooke
 - Velocity
 - Game Score
 - Randomization
-- Animation
 - Effects
 
 #### 1. Zookeeper Hut
