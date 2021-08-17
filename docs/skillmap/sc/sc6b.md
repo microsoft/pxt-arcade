@@ -21,7 +21,7 @@ Can you connect each chunk of code to the actions it creates?
 
 ## Step 3 - Gotcha!
 
-Let's take hit points from your hero when a goon catches (overlaps) them. 
+Let's take hit points from your hero when a goon catches (overlaps) them.
 
 ---
 
@@ -108,7 +108,7 @@ Run into a goon and see what happens.  Does it look the way you expect?
 
 ## Step 8 - Fighting Chance
 
-**💥 Let's give our sprite a fighting chance 💥**   
+**💥 Let's give our sprite a fighting chance 💥**
 Our sprite has a powerful kick.  Let's use it to clear the enemies.
 
 ---
@@ -132,7 +132,7 @@ When our power kick (projectile) hits a goon, we want to destroy both the projec
 
 ---
 
-► From ``||sprites:Sprites||``, drag two ``||sprites:destroy [mySprite]||`` blocks into the empty 
+► From ``||sprites:Sprites||``, drag two ``||sprites:destroy [mySprite]||`` blocks into the empty
 ``||sprites:on [sprite] of kind [Projectile] overlaps [otherSprite] of kind [Enemy]||`` container.
 
 ► Drag the ``||variables:otherSprite||`` value from the outer container down to replace ``||variables:mySprite||`` in the first block and drag the ``||variables:sprite||`` value down to replace ``||variables:mySprite||`` in the second block.
@@ -213,7 +213,7 @@ scene.onOverlapTile(SpriteKind.Projectile, assets.tile`boulder`, function (sprit
 let projectile: Sprite = null
 let mySprite: Sprite = null
 scene.setBackgroundImage(assets.image`background1`)
-tiles.setTilemap(tilemap`level1`) 
+tiles.setTilemap(tilemap`level1`)
 mySprite = sprites.create(assets.image`Xialing`, SpriteKind.Player)
 profilelife.setProfileImage(assets.image`Xialing profile`)
 profilelife.setName("Xialing")
@@ -254,7 +254,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(img`
-. 
+.
 `, mySprite, 0, 0)
     projectile.setFlag(SpriteFlag.GhostThroughWalls, true)
     animation.runImageAnimation(
@@ -333,12 +333,12 @@ namespace sprites {
 }
 
 namespace animation {
-/**
+    /**
      * Requires "Character" extension
      * Loops the passed frames on the sprite at the given interval whenever
      * the specified rule is true for that sprite.
-     * Note: this is a dupe of a block in the character 
-     * extension that I want to fix. 
+     * Note: this is a dupe of a block in the character
+     * extension that I want to fix.
      *
      * If more than one rule applies, the most specific rule will be used.
      * If multiple rules are equally specific, the currently executing rule
@@ -359,12 +359,8 @@ namespace animation {
     //% weight=100
     //% blockGap=8
     //% help=github:arcade-character-animations/docs/loop-character-animation
-    export function loopFrames2(sprite: Sprite, frames: Image[], frameInterval: number, rule: Rule) {
-        init()
-        if (!sprite || !frames || !frames.length || !rule) { return }
-        if (Number.isNaN(frameInterval) || frameInterval < 5) { frameInterval = 5}
-        const state = getStateForSprite(sprite, true)
-        state.setLoopFrames(frames, frameInterval, rule)
+    export function loopFrames2(sprite: Sprite, frames: Image[], frameInterval: number, rule: number) {
+        characterAnimations.loopFrames(sprite, frames, frameInterval, rule);
     }
 }
 
