@@ -36,7 +36,7 @@ Choose a character [__*sprite*__](#sprote "a 2-D image that moves on the screen"
 
 ► From the ``||sprites:Sprites||`` category, drag ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` to **the end** of the ``||loops:on start||`` container.
 
-► To choose your own character, click the empty grey box, then toggle to **My Assets** and choose either **Shang-Chi** or **Xialing**.
+► To choose your own character, click the empty grey box, then toggle to **My Assets** and choose the standing image for either **Shang-Chi** or **Xialing**.
 
 
 ```blocks
@@ -53,7 +53,7 @@ let mySprite = sprites.create(assets.image`Xialing`, SpriteKind.Player)
 
 ## Step 4 - Build a Profile
 
-Let's add a profile pic for the sprite you chose up in the corner so we can keep track of our character's lives.
+Let's add a profile pic up in the corner so we can keep track of our character's lives.
 
 ---
 

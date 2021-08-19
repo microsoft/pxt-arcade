@@ -79,7 +79,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`door1`, function (sprite, loc
     2000,
     false
     )
-    mySprite.say("Level 2!", 500)
+    game.level_num(2)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`pit`, function (sprite, location) {
     game.over(false)
@@ -88,12 +88,28 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`ring`, function (sprite, loca
     tiles.setTileAt(location, assets.tile`transparency16`)
     info.changeScoreBy(1)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    tiles.placeOnRandomTile(otherSprite, assets.tile`rubble`)
+    info.changeLifeBy(-1)
+    animation.runImageAnimation(
+    mySprite,
+    assets.animation`sc damage`,
+    200,
+    false
+    )
+})
 
+
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+  otherSprite.destroy()
+  sprite.destroy()
+})
 
 scene.onOverlapTile(SpriteKind.Projectile, assets.tile`boulder`, function (sprite, location) {
     tiles.setWallAt(location, false)
     tiles.setTileAt(location, assets.tile`transparency16`)
 })
+
 
 let projectile: Sprite = null
 let mySprite: Sprite = null
@@ -104,26 +120,28 @@ sprites.add_profile(Choice.shang)
 mySprite.ay = 500
 scene.cameraFollowSprite(mySprite)
 controller.moveSprite(mySprite, 100, 0)
+
 animation.loopFrames2(
     mySprite,
-    assets.animation`x walk right`,
+    assets.animation`sc walk right`,
     100,
     characterAnimations.rule(Predicate.MovingRight)
     )
 animation.loopFrames2(
     mySprite,
-    assets.animation`x walk left`,
+    assets.animation`sc walk left`,
     100,
     characterAnimations.rule(Predicate.MovingLeft)
     )
 animation.loopFrames2(
     mySprite,
-    assets.animation`x jump`,
+    assets.animation`sc jump`,
     100,
     characterAnimations.rule(Predicate.MovingUp)
     )
 
 tiles.createSpritesOnTiles(assets.tile`rubble`, SpriteKind.Enemy)
+
 
 
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -147,6 +165,10 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     tiles.setTileAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), assets.tile`energy`)
 
 })
+scene.onHitWall(SpriteKind.Enemy, function (sprite, location) {
+    sprites.wall_jump(sprite)
+})
+
 sprites.onCreated(SpriteKind.Enemy, function (sprite) {
     animation.loopFrames2(
     sprite,
@@ -156,6 +178,12 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
     )
     sprite.follow(mySprite, 30)
     sprite.ay = 500
+    animation.loopFrames2(
+    sprite,
+    assets.animation`goon right`,
+    100,
+    characterAnimations.rule(Predicate.MovingRight)
+    )
 })
 ```
 
@@ -246,6 +274,13 @@ namespace animation {
     //% help=github:arcade-character-animations/docs/loop-character-animation
     export function loopFrames2(sprite: Sprite, frames: Image[], frameInterval: number, rule: number) {
         characterAnimations.loopFrames(sprite, frames, frameInterval, rule);
+    }
+}
+
+namespace game {
+    //% block="display level number $num"
+    export function level_num (num: number) {
+    game.splash("Level ", num)
     }
 }
 ```

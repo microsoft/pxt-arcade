@@ -19,76 +19,60 @@ Can you connect each chunk of code to the actions it creates?
 
 
 
-## Step 3 - Gotcha!
+## Step 3 - About Face
 
-Let's take hit points from your hero when a goon catches (overlaps) them.
+We can make your goons smart enough to turn around.
 
 ---
 
-► From ``||sprites:Sprites||``, drag a
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` container into an empty area of the workspace.
+► Find the ``||sprites:on created [sprite] of kind [Enemy]||`` container where your goons are made. 
 
-► Change the second kind to ``||sprites:Enemy||``.
+► Add a ``||animation:animate [mySprite]...when not moving||`` block anywhere inside the goon's container and drag the ``||variables:sprite||`` value from the outer container down to replace ``||variables:mySprite||``.
+
+► Choose the **goon right** animation and change **not moving** to **moving right**.
+
 
 
 ```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+sprites.onCreated(SpriteKind.Enemy, function (sprite) {
+    animation.loopFrames2(
+    sprite,
+    assets.animation`goon left`,
+    100,
+    characterAnimations.rule(Predicate.MovingLeft)
+    )
+    sprite.follow(mySprite, 30)
+    sprite.ay = 500
+    //@highlight
+    animation.loopFrames2(
+    sprite,
+    assets.animation`goon right`,
+    100,
+    characterAnimations.rule(Predicate.MovingRight)
+    )
 
 })
 ```
 
 
-## Step 4 - Damage Control
+## Step 4 - Jump, Jump!
 
-First, move the goon (otherSprite) so they don't attack too many times in a row, then you can take away a hit point.
+A little barrier wouldn't stop a Ten Rings goon. Let's teach them to jump when something stands in their way. 
 
 ---
 
 ► From ``||scene:Scene||``, drag
-``||scene:place [mySprite] on top of random [ ]||`` into **the end** of the ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Enemy]||`` container.
+``||scene:on [sprite] of kind [Player] hits wall at [location]||`` into an empty area of the workspace and change ``||scene:Player||`` to ``||scene:Enemy||``.
 
-► Drag the ``||variables:otherSprite||`` value from the outer container down to replace ``||variables:mySprite||``.
+► From ``||sprites:Sprites||`` drag ``||sprites:make [mySprite] hurdle side wall||`` into the empty container.
 
-► Click the checkered square to choose the **rubble** tile.
+► Drag the ``||variables:sprite||`` value from the outer container down to replace ``||variables:mySprite||``.
 
 
 
 ```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    tiles.placeOnRandomTile(otherSprite, assets.tile`rubble`)
-})
-```
-
-
-
-## Step 5 - Take a Hit
-
-► To remove a heart, go to ``||info:Info||`` and drag ``||info:change life by [-1]||`` into **the end** of the ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Enemy]||`` container.
-
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    tiles.placeOnRandomTile(otherSprite, assets.tile`rubble`)
-    info.changeLifeBy(-1)
-})
-```
-
-
-
-## Step 6 - Animate it
-
-► Now use an ``||animation:animate [mySprite]||`` block to show that your sprite has taken damage!
-
-
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    tiles.placeOnRandomTile(otherSprite, assets.tile`rubble`)
-    info.changeLifeBy(-1)
-    animation.runImageAnimation(
-    mySprite,
-    assets.animation`sc damage`,
-    200,
-    false
-    )
+scene.onHitWall(SpriteKind.Enemy, function (sprite, location) {
+    sprites.wall_jump(sprite)
 })
 ```
 
@@ -97,70 +81,19 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## Try It!
 
-**🕹️ Try it 🕹️**
+**🕹️ Try it! 🕹️**
 
 ---
 
-Run into a goon and see what happens.  Does it look the way you expect?
+Try to escape the goons. Can they keep up?
 
-
-
-
-## Step 8 - Fighting Chance
-
-**💥 Let's give our sprite a fighting chance 💥**
-Our sprite has a powerful kick.  Let's use it to clear the enemies.
-
----
-
-► From ``||sprites:Sprites||``, drag a new
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` container into an empty area of the workspace.
-
-► Change the **first kind** to  ``||sprites:Projectile||`` and the **second kind** to ``||sprites:Enemy||``.
-
-
-```blocks
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-
-})
-```
-
-
-## Step 9 - Destroy the Goon
-
-When our power kick (projectile) hits a goon, we want to destroy both the projectile and the goon (otherSprite).
-
----
-
-► From ``||sprites:Sprites||``, drag two ``||sprites:destroy [mySprite]||`` blocks into the empty
-``||sprites:on [sprite] of kind [Projectile] overlaps [otherSprite] of kind [Enemy]||`` container.
-
-► Drag the ``||variables:otherSprite||`` value from the outer container down to replace ``||variables:mySprite||`` in the first block and drag the ``||variables:sprite||`` value down to replace ``||variables:mySprite||`` in the second block.
-
-
-```blocks
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-  otherSprite.destroy()
-  sprite.destroy()
-})
-```
-
-
-
-## Try It!
-
-**🕹️ Give it a try 🕹️**
-
----
-
-Can you clear all of the goons, collect five rings, and win the level?
 
 
 
 
 ## Finished
 
-When you're done testing your project, click **Finish** to return to the main page to find out how you can make the enemies a little smarter.
+When you're done testing your project, click **Finish** to return to the main page to find out how to add a second level to your game!
 
 
 
