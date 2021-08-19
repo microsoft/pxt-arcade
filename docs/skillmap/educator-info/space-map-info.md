@@ -17,7 +17,7 @@ Designed for students between the ages of 13 & 16, this experience contains a to
 | All Shook Up | 6 | Collector | effects, animation |
 | **Session 2**           |          |           |              |
 | Fuel Up! | 12 | Collector | status bar, positioning, events, destruction, velocity, randomization, game score |
-| Level Up! | 9 | Collector | variables, conditional statements, game score, text display, velocity |
+| Level Up! | 9 | Collector | variables, conditional statements, game score, text display, velocity, level design |
 | The Art of Darts | 8 | Modification | arrays, randomization, sprite design |
 
 \* Minutes are approximate, based on instructions as written. They do not include time spent designing elements or re-aquainting with previously-written code. Providing extra time for creativity and debugging is encouraged.
@@ -49,6 +49,7 @@ Specifically, they will experience the following topics:
 - Positioning
 - Variables
 - Text Display
+- Level Design
 - Sprite Design
 
 ### Session 1

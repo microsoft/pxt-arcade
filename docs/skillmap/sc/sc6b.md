@@ -338,6 +338,7 @@ namespace sprites {
 
 namespace animation {
     /**
+
      * Loops the passed frames on the sprite at the given interval whenever
      * the specified rule is true for that sprite.
      *
