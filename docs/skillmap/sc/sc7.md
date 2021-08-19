@@ -97,9 +97,9 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`door1`, function (sprite, loc
 
 ► To carry your character back to the beginning of the level,  visit the ``||animation:Animation||`` category and drag the ``||animation:animate [mySprite] with [fly to center]||`` block into **the end** of the **Player overlaps door1** container.
 
-► From the ``||sprites:Sprites||`` category, drag ``||sprites:[mySprite] say [":)"]||`` into **the end** of the **Player overlaps door1** container.
+► From the ``||game:Game||`` category, drag ``||game:display level number [0]||`` into **the end** of the **Player overlaps door1** container.
 
-► Change the text to say **Level 2!** and click the white plus **(+)** to the right of the block so that the text disappears after 500 ms.
+► Change **0** to **2**.
 
 ```blocks
 let mySprite: Sprite = null
@@ -112,7 +112,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`door1`, function (sprite, loc
     2000,
     false
     )
-    mySprite.say("Level 2!", 500)
+    game.level_num(2)
 })
 ```
 
@@ -161,7 +161,22 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`ring`, function (sprite, loca
     tiles.setTileAt(location, assets.tile`transparency16`)
     info.changeScoreBy(1)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    tiles.placeOnRandomTile(otherSprite, assets.tile`rubble`)
+    info.changeLifeBy(-1)
+    animation.runImageAnimation(
+    mySprite,
+    assets.animation`sc damage`,
+    200,
+    false
+    )
+})
 
+
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+  otherSprite.destroy()
+  sprite.destroy()
+})
 
 scene.onOverlapTile(SpriteKind.Projectile, assets.tile`boulder`, function (sprite, location) {
     tiles.setWallAt(location, false)
@@ -180,19 +195,19 @@ controller.moveSprite(mySprite, 100, 0)
 
 animation.loopFrames2(
     mySprite,
-    assets.animation`x walk right`,
+    assets.animation`sc walk right`,
     100,
     characterAnimations.rule(Predicate.MovingRight)
     )
 animation.loopFrames2(
     mySprite,
-    assets.animation`x walk left`,
+    assets.animation`sc walk left`,
     100,
     characterAnimations.rule(Predicate.MovingLeft)
     )
 animation.loopFrames2(
     mySprite,
-    assets.animation`x jump`,
+    assets.animation`sc jump`,
     100,
     characterAnimations.rule(Predicate.MovingUp)
     )
@@ -222,6 +237,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     tiles.setTileAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), assets.tile`energy`)
 
 })
+scene.onHitWall(SpriteKind.Enemy, function (sprite, location) {
+    sprites.wall_jump(sprite)
+})
 
 sprites.onCreated(SpriteKind.Enemy, function (sprite) {
     animation.loopFrames2(
@@ -232,8 +250,13 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
     )
     sprite.follow(mySprite, 30)
     sprite.ay = 500
+    animation.loopFrames2(
+    sprite,
+    assets.animation`goon right`,
+    100,
+    characterAnimations.rule(Predicate.MovingRight)
+    )
 })
-
 ```
 
 ```ghost
@@ -323,6 +346,13 @@ namespace animation {
     //% help=github:arcade-character-animations/docs/loop-character-animation
     export function loopFrames2(sprite: Sprite, frames: Image[], frameInterval: number, rule: number) {
         characterAnimations.loopFrames(sprite, frames, frameInterval, rule);
+    }
+}
+
+namespace game {
+    //% block="display level number $num"
+    export function level_num (num: number) {
+    game.splash("Level ", num)
     }
 }
 ```

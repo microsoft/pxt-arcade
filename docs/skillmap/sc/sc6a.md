@@ -44,7 +44,7 @@ First, move the goon (otherSprite) so they don't attack too many times in a row,
 ---
 
 ► From ``||scene:Scene||``, drag
-``||scene:place [mySprite] on top of random [ ]||`` into **the end** of the ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Enemy]||`` container.
+``||scene:place [mySprite] on top of random [ ]||`` into the empty ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Enemy]||`` container.
 
 ► Drag the ``||variables:otherSprite||`` value from the outer container down to replace ``||variables:mySprite||``.
 
@@ -207,19 +207,19 @@ controller.moveSprite(mySprite, 100, 0)
 
 animation.loopFrames2(
     mySprite,
-    assets.animation`x walk right`,
+    assets.animation`sc walk right`,
     100,
     characterAnimations.rule(Predicate.MovingRight)
     )
 animation.loopFrames2(
     mySprite,
-    assets.animation`x walk left`,
+    assets.animation`sc walk left`,
     100,
     characterAnimations.rule(Predicate.MovingLeft)
     )
 animation.loopFrames2(
     mySprite,
-    assets.animation`x jump`,
+    assets.animation`sc jump`,
     100,
     characterAnimations.rule(Predicate.MovingUp)
     )

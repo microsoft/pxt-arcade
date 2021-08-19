@@ -95,7 +95,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 ► Choose the **goon left** animation and change **not moving** to **moving left**.
 
 
-![Borrow a variable](/static/skillmap/assets/anim-give-var2.gif "Change mySprite to sprite.")
+![Borrow a variable](/static/skillmap/assets/anim-giv-var2.gif "Change mySprite to sprite.")
 
 
 ```blocks
@@ -111,7 +111,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 
 ---
 
-![Borrow a variable](/static/skillmap/assets/anim-give-var2.gif "Change mySprite to sprite.")
+![Borrow a variable](/static/skillmap/assets/anim-giv-var2.gif "Change mySprite to sprite.")
 
 
 

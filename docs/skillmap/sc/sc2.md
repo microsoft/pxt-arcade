@@ -113,6 +113,9 @@ Uh oh!  You get WAY too many points when you touch a ring. We can fix that in th
 
 ► Replace ``||scene:tilemap col [0] row [0]||`` with the ``||variables:location||`` value from the top of the **Player overlaps ring** container.
 
+![Share your location](/static/skillmap/sc/sc-location.gif "Grab the variable from the overlap container")
+
+
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`ring`, function (sprite, location) {
@@ -135,7 +138,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`ring`, function (sprite, loca
 
 ---
 
-When you're done testing your project, click **Finish** to return to the main page to learn how to make it even more exciting.
+When you're done testing your project, click **Finish** to return to the main page to learn how to get passed the pit!
 
 
 

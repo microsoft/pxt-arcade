@@ -41,7 +41,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 4 - Set the explosive
 
-We're going to use a **Projectile** block to clear tiles when we kick.
+We're going to use a **projectile** block to clear tiles when we kick.
 
 ---
 
@@ -64,7 +64,7 @@ For the explosive to overlap the blocks around it, it needs to **go through wall
 
 ---
 
-► From ``||sprites:Sprites||``, drag ``||sprites:set [mySprite] [auto destroy] <OFF>||`` into **the end** of ``||controller:on [B] button [pressed]||`` container, then toggle **`<OFF>`** to **`<ON>`**.
+► From ``||sprites:Sprites||``, drag ``||sprites:set [mySprite] [auto destroy] <OFF>||`` into **the end** of ``||controller:on [B] button [pressed]||`` container, then toggle ``||loops:<OFF>||`` to ``||loops:<ON>||``.
 
 ► Click ``||variables:mySprite||`` and change it to ``||variables:projectile||``.
 
