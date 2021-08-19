@@ -1,7 +1,7 @@
 # Jungle Monkey Jump Platformer
 * name: Jungle Monkey Jump Platformer
 * description: Create a wild sidescroller called Jungle Monkey Jump! In these activities, you'll code your monkey, add magic platforms, toss explosives, and collect valuables throughout a pair of customizable level maps.
-* infoUrl: skillmap/educator-info/int-map-info
+* infoUrl: skillmap/educator-info/jungle-map-info
 * bannerUrl: /static/skillmap/jungle/jungle6.gif
 * backgroundurl: /static/skillmap/backgrounds/jungle-bg.png
 * primarycolor: #2EA9B0

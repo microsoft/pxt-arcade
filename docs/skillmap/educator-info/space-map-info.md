@@ -2,9 +2,9 @@
 
 **A page for Educators & Parents**
 
-**Design a Space Explorer** provides students with instruction for block-based game development. This guide walks through intermediate game development concepts and teaches them in a beginner-friendly way.
+**Design a Space Explorer** provides students with instruction for block-based game development. This skillmap walks through beginner/intermediate game development concepts, teaching them in a beginner-friendly way.
 
-In this set of activities, students will use the power of coding to create a space fighter. Equipped with missiles, refillable fuel canisters, and a creative mix of bullet types, students' ships will have everything they need to defend the galaxy from enemies. We recommend that students using this guide already have familiarity with basic MakeCode elements, but our step-by-step instructions are written to be friendly towards those with little coding experience as well.
+In this set of activities, students will use the power of coding to create a Galaga-style space fighter. Equipped with refillable fuel canisters and a creative mix of space lasers, students' will code everything they need to defend the galaxy from enemies. We recommend that students using this guide already have familiarity with basic MakeCode elements, but our step-by-step instructions are written to be friendly towards those with little coding experience as well.
 
 Designed for students between the ages of 13 & 16, this experience contains a total of 7 tutorials (approximating 63 minutes of instruction) spread over 2 sessions.  At the end of the learning path, students receive a certificate of completion.
 
@@ -20,7 +20,7 @@ Designed for students between the ages of 13 & 16, this experience contains a to
 | Level Up! | 9 | Collector | variables, conditional statements, game score, text display, velocity, level design |
 | The Art of Darts | 8 | Modification | arrays, randomization, sprite design |
 
-\* Minutes are approximate, based on time to follow instructions as written. Times do not include time spent on designing elements or re-aquainting with previously-written code. Providing extra time for creativity and debugging is encouraged.
+\* Minutes are approximate, based on instructions as written. They do not include time spent designing elements or re-aquainting with previously-written code. Providing extra time for creativity and debugging is encouraged.
 
 ### Objectives 
 
@@ -30,6 +30,7 @@ Specifically, they will experience the following topics:
 
 #### Computer Science Concepts
 
+- Loops
 - Events
 - Conditional Statements
 - Arrays
@@ -40,7 +41,7 @@ Specifically, they will experience the following topics:
 - Projectiles
 - Effects
 - Randomization
-- Life Bar
+- Hit Points
 - Game Score
 - Destruction
 - Animation
@@ -53,7 +54,7 @@ Specifically, they will experience the following topics:
 
 ### Session 1
 
-During this session, students will set up fully-fledged, initial version of their game. These modules will walk through spaceship setup, projectile shooting, enemy ship functionality, and animations.
+During this session, students will set up the initial version of their game. These modules walk through spaceship setup, projectile shooting, enemy ship functionality, and animations.
 
 #### 1. Prepare Your Ship
 
@@ -96,7 +97,7 @@ During this session, students will amp up their game by building in additional g
 | Activity | Fuel Up! (12 min) |
 |---|---|
 | ![Fuel Up! thumbnail](/static/skillmap/space/spacet4.gif) | Add a fuel gauge to your ship and set fuel drops in your game. |
-| Blocks used | ``[let statusbar: StatusBarSprite = null; statusbar = statusbars.create(20, 4, StatusBarKind.Energy)]``<br/>``[let statusbar: StatusBarSprite = null; statusbar.attachToSprite(mySprite, -30, 0)]``<br/>``[game.onUpdateInterval()]``<br/>``[statusbar.value += -1]``<br/>``[sprites.onOverlap()]``<br/>``[statusbar.value = 100]``<br/>``[let otherSprite: Sprite=null; otherSprite.destroy()]``<br/>``[statusbars.onZero(StatusBarKind.Energy, function (status) {})]``<br/>``[game.over(false)]``|
+| Blocks used | ``[let statusbar: StatusBarSprite = null; statusbar = statusbars.create(20, 4, StatusBarKind.Energy)]``<br/>``[let statusbar: StatusBarSprite = null; statusbar.attachToSprite(mySprite, -30, 0)]``<br/>``[game.onUpdateInterval()]``<br/>``[let statusbar: StatusBarSprite = null; statusbar.value += -1]``<br/>``[sprites.onOverlap()]``<br/>``[let statusbar: StatusBarSprite = null; statusbar.value = 100]``<br/>``[let otherSprite: Sprite=null; otherSprite.destroy()]``<br/>``[statusbars.onZero(StatusBarKind.Energy, function (status){})]``<br/>``[game.over(false)]``|
 | Solution option | [Fuel Up! Project](https://makecode.com/_gsYg8Pdwa2oC) |
 
 #### 2. Level Up!
@@ -112,7 +113,7 @@ During this session, students will amp up their game by building in additional g
 | Activity | The Art of Darts (8 min) |
 |---|---|
 | ![The Art of Darts thumbnail](/static/skillmap/space/spacet6.gif) | Use arrays and randomization to switch up the kinds of darts fired from your ship. |
-| Blocks used | ``[darts = [img`.`, img`.`, img`.`]]``<br/>``[let darts = [img`.`, img`.`, img`.`]; darts._pickRandom()]`` |
+| Blocks used | ``[darts = [img`.`, img`.`, img`.`]]``<br/>``[let darts = [img`.`, img`.`, img`.`] ; darts._pickRandom()]`` |
 | Solution option | [The Art of Darts Project](https://makecode.com/_D6g5zvFF7Rre) |
 
 ##### Game Mod Ideas
@@ -120,7 +121,14 @@ During this session, students will amp up their game by building in additional g
 After students complete The Art of Darts, they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox.  Here are some modifications they can try: 
 
 - Add another type of enemy
-- Set it so the health bar is displayed on start
+- Set the health bar (lives, hp) to display on start
 - Add another level to the game
-- Modify level up design to include more reward elements
+- Modify level-up design to include more reward elements
 - Add automated, damage-inducing projectiles to enemy ships
+
+
+```package
+arcade-background-scroll=github:microsoft/arcade-background-scroll/
+pxt-status-bar=github:jwunderl/pxt-status-bar
+```
+
