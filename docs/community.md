@@ -324,15 +324,6 @@ Games submitted by the MakeCode community.
         "description": ""
     },
     {
-        "url": "https://forum.makecode.com/t/furry-my-favourite-jump-and-run/2016",
-        "imageUrl": "/static/discourse/49159-47146-69570-35115.png",
-        "author": "Napomex",
-        "cardType": "forumUrl",
-        "name": "Furry my favourite jump and run",
-        "description": "",
-        "largeImageUrl": "/static/discourse/49159-47146-69570-35115.gif"
-    },
-    {
         "name": "Add Game",
         "description": "Are you looking to contribute your own game? These instructions will explain how to submit your game for the chance to appear in this carousel.",
         "imageUrl": "/static/community/add-game.png",

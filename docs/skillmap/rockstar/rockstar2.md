@@ -1,4 +1,4 @@
-# WW84: Add Items to Collect
+# Get Your Gear
 
 ## Intro @unplugged
 
