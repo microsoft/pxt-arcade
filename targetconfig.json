@@ -58,7 +58,10 @@
             "beginner": "docs:/skillmap/beginner-skillmap",
             "zoo": "docs:/skillmap/zoo",
             "space": "docs:/skillmap/space",
-            "platformer": "docs:/skillmap/platformer"
+            "platformer": "docs:/skillmap/platformer",
+            "sc": "docs:/skillmap/sc",
+            "shark": "docs:/skillmap/shark",
+            "jungle": "docs:/skillmap/jungle"
         }
     },
     "galleries": {
