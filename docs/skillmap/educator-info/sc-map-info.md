@@ -52,3 +52,42 @@ Specifically, they will experience the following topics:
 - Life Bar
 - Levels
 - Text Display
+
+### Session 1
+
+During this session, students will dive into the Marvel Cinematic Universe in the form of Shang-Chi or Xialing. By the end of this session, students will help their main character develop from a simple sprite to an animated superhero who can run, jump, create blocks, and destroy blocks.
+
+#### 1. Opening Scene
+| Activity | Opening Scene (7 min) |
+|---|---|
+| ![Opening Scene thumbnail](/static/skillmap/sc/sc1.gif) | Set up your player and make them able to move and jump. |
+| Blocks used | ``[mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[let sprites: Sprite=null; sprites.add_profile()]``<br/>``[controller.moveSprite(mySprite, 100, 0)]``<br/>``[let mySprite: Sprite=null; mySprite.ay = 500)]``<br/>``[controller.up.onEvent()]``<br/>``[let mySprite: Sprite=null; sprites.gravity_jump(mySprite)]`` |
+| Solution option | [Opening Scene Project](https://makecode.com/_Lhg5WrHfdi6w) |
+
+#### 2. Know Your Surroundings
+| Activity | Know Your Surroundings (6 min) |
+|---|---|
+| ![Know Your Surroundings thumbnail](/static/skillmap/sc/sc2.gif) | Add ways to lose, ways to win, and collectable points to your game. |
+| Blocks used | ``[scene.onOverlapTile()]``<br/>``[game.over(true)]``<br/>``[tiles.setTileAt(location, assets.tile`transparency16`)]``<br/>``[info.changeScoreBy(0)]`` |
+| Solution option | [Know Your Surroundings Project](https://makecode.com/_2CxDbh65PhLK) |
+
+#### 3. Martial Arts Training
+| Activity | Martial Arts Training (5 min) |
+|---|---|
+| ![Martial Arts Training thumbnail](/static/skillmap/sc/sc3.gif) | Give your player the ability to add blocks to the scene so you can get past obstacles. |
+| Blocks used | ``[controller.A.onEvent()]``<br/>``[tiles.setWallAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), true)]``<br/>``[tiles.setTileAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), assets.tile`energy`)]`` |
+| Solution option | [Martial Arts Training Project](https://makecode.com/_Motixg6bb5qu) |
+
+#### 4. Power Kick
+| Activity | Power Kick (9 min) |
+|---|---|
+| ![Power Kick thumbnail](/static/skillmap/sc/sc4.gif) | Give your player the ability to destroy walls with an animated power kick. |
+| Blocks used | ``[controller.B.onEvent()]``<br/>``[let mySprite: Sprite=null; projectile = sprites.createProjectileFromSprite(ing`.`, mySprite, 50, 50)]``<br/>``[let projectile: Sprite=null; projectile.setFlag(SpriteFlag.GhostThroughWalls, true)]``<br/>``[let projectile: Sprite=null; projectile.lifespan = 100]``<br/>``[animation.runImageAnimation()]``<br/>``[scene.onOverlapTile()]``<br/>``[tiles.setWallAt(location, false)]``<br/>``[tiles.setTileAt(location, assets.tile`transparency16`)]`` |
+| Solution option | [Power Kick Project](https://makecode.com/_Eht4eM507Ecd) |
+
+#### 5. Animated Characters
+| Activity | Animated Characters (4 min) |
+|---|---|
+| ![Animated Characters thumbnail](/static/skillmap/sc/sc5.gif) | Animate all of your main character's movement. |
+| Blocks used | ``[animation.loopFrames2()]`` |
+| Solution option | [Animated Characters Project](https://makecode.com/_Hah20XFTtdya) |
