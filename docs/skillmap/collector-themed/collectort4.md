@@ -117,8 +117,6 @@ Let's start by animating Mama Dino!
 
 
 ```blocks
-let projectile: Sprite = null
-let extraLife: Sprite = null
 scene.setBackgroundImage(assets.image`Freeway`)
 scroller.scrollBackgroundWithSpeed(-50, 0)
 let mySprite = sprites.create(assets.image`Mama`, SpriteKind.Player)

@@ -1,181 +1,286 @@
-# Shang-Chi: Know Your Surroundings
+# Shang-Chi: Packs a Punch
 
 
 ## Welcome @showdialog
 
-**In this tutorial, we'll make it possible to win or lose our platformer.**
+This activity will help you add consequenses when assassins overlap your sprite!
 
-![Win and loss conditions](/static/skillmap/sc/sc2.gif "Win, lose, or play again!")
-
-
-
-## Step 2 -Try It!
-
-**🕹️ Start by giving your project a try 🕹️**
-
----
-
-Make sure you know which piece of code creates each action!
+![assassins colliding with the hero](/static/skillmap/sc/sc6a.gif "Watch out for the assassins!")
 
 
 
-## Step 3 - Game Over Pt. 1
+## Step 2 - Try It!
 
-**💀 Time for danger 💀 **
-
-When the sprite overlaps the _pit_ tile, let's trigger a "GAME OVER" message.
+**🕹️ Start by trying the project you have so far 🕹️**
 
 ---
 
-► From ``||scene:Scene||``, drag the ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` container into an empty area of the workspace.
+Can you connect each chunk of code to the actions it creates?
 
-► Click the checkerboard image and change it to the pure black **pit** tile.
 
-► From ``||game:Game||``, snap a ``||game:game over <LOSE>||`` block into the new container.  
+## Step 3 - Gotcha!
+
+Let's take hit points from your hero when an assassin catches (overlaps) them. 
+
+---
+
+► From ``||sprites:Sprites||``, drag a
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` container into an empty area of the workspace.
+
+► Change the second kind to ``||sprites:Enemy||``.
 
 
 ```blocks
-scene.onOverlapTile(SpriteKind.Player, assets.tile`pit`, function (sprite, location) {
-    game.over(false)
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+
 })
 ```
+
+
+## Step 4 - Damage Control
+
+First, move the assassin (otherSprite) so they don't attack too many times in a row, then you can take away a hit point.
+
+---
+
+► From ``||scene:Scene||``, drag
+``||scene:place [mySprite] on top of random [ ]||`` into the empty ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Enemy]||`` container.
+
+► Drag the ``||variables:otherSprite||`` value from the outer container down to replace ``||variables:mySprite||``.
+
+► Click the checkered square to choose the **rubble** tile.
+
+
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    tiles.placeOnRandomTile(otherSprite, assets.tile`rubble`)
+})
+```
+
+
+
+## Step 5 - Take a Hit
+
+► To remove a heart, go to ``||info:Info||`` and drag ``||info:change life by [-1]||`` into **the end** of the ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Enemy]||`` container.
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    tiles.placeOnRandomTile(otherSprite, assets.tile`rubble`)
+    info.changeLifeBy(-1)
+})
+```
+
+
+
+## Step 6 - Animate it
+
+► Now use an ``||animation:animate [mySprite]||`` block to show that your sprite has taken damage!
+
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    tiles.placeOnRandomTile(otherSprite, assets.tile`rubble`)
+    info.changeLifeBy(-1)
+    animation.runImageAnimation(
+    mySprite,
+    assets.animation`sc damage`,
+    200,
+    false
+    )
+})
+```
+
+
+
 
 ## Try It!
 
-**🕹️ Give your project a try 🕹️**
+**🕹️ Try it 🕹️**
 
 ---
 
-When your sprite lands in a black pit, the game should end as a loss.
+Run into an assassin and see what happens.  Does it look the way you expect?
 
 
 
-## You Win Pt. 1
 
-**🎈 We have a way to lose, let's add a way to win 🎈** 
+## Step 8 - Fighting Chance
+
+**💥 Let's give our sprite a fighting chance 💥**   
+Our sprite has a powerful kick.  Let's use it to clear the enemies.
 
 ---
 
-► Drag another ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
-container into the workspace.
+► From ``||sprites:Sprites||``, drag a new
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` container into an empty area of the workspace.
 
-► This time, change the checkerboard to the **door1** tile.
-
-► Snap a ``||game:game over <LOSE>||`` block into the new container and toggle  **`<LOSE>`** to **`<WIN>`**!  
+► Change the **first kind** to  ``||sprites:Projectile||`` and the **second kind** to ``||sprites:Enemy||``.
 
 
 ```blocks
-scene.onOverlapTile(SpriteKind.Player, assets.tile`door1`, function (sprite, location) {
-    //@highlight
-    game.over(true)
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+
 })
 ```
 
 
-## You Earned Points pt. 1
+## Step 9 - Destroy the Assassin
 
-**💯 Award points when the sprite collects a ring 💯** 
+When our power kick (projectile) hits an assassin, we want to destroy both the projectile and the assassin (otherSprite).
 
 ---
 
+► From ``||sprites:Sprites||``, drag two ``||sprites:destroy [mySprite]||`` blocks into the empty 
+``||sprites:on [sprite] of kind [Projectile] overlaps [otherSprite] of kind [Enemy]||`` container.
 
-► Drag another ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
-container into the workspace.
-
-► Change the checkerboard to the **ring** tile.
-
-► From ``||info:Info||``, snap a ``||info:change score by [1]||`` block into the new container. 
+► Drag the ``||variables:otherSprite||`` value from the outer container down to replace ``||variables:mySprite||`` in the first block and drag the ``||variables:sprite||`` value down to replace ``||variables:mySprite||`` in the second block.
 
 
 ```blocks
-scene.onOverlapTile(SpriteKind.Player, assets.tile`ring`, function (sprite, location) {
-    info.changeScoreBy(1)
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+  otherSprite.destroy()
+  sprite.destroy()
 })
 ```
 
 
-## Try It Too!
 
-**🕹️ Go collect some rings! 🕹️**
+## Try It!
 
----
-
-Uh oh!  You get WAY too many points when you touch a ring. We can fix that in the next step.
-
-
-## You Earned Points pt. 2
-
-**Replace the rings you collect with an empty tile.**
+**🕹️ Give it a try 🕹️**
 
 ---
 
-► From ``||scene:Scene||``, drag ``||scene:set [ ] at tilemap col [0] row [0]||`` into **the top** of the ``||scene:on [sprite] of kind [Player] overlaps [ring] at [location]||`` container.
+Can you clear all of the assassins, collect five rings, and win the level?
 
-► Replace ``||scene:tilemap col [0] row [0]||`` with the ``||variables:location||`` value from the top of the **Player overlaps ring** container.
-
-![Share your location](/static/skillmap/sc/sc-location.gif "Grab the variable from the overlap container")
-
-
-
-```blocks
-scene.onOverlapTile(SpriteKind.Player, assets.tile`ring`, function (sprite, location) {
-    //@highlight
-    tiles.setTileAt(location, assets.tile`transparency16`)  
-    info.changeScoreBy(1)
-})
-```
-
----
-
-
-![Share your location](/static/skillmap/sc/sc-location.gif "Grab the variable from the overlap container")
 
 
 
 ## Finished
 
-**Now we have a simple platformer that has a way to win, a way to lose, and a way to collect points.**
+When you're done testing your project, click **Finish** to return to the main page to find out how you can make the enemies a little smarter.
 
----
 
-When you're done testing your project, click **Finish** to return to the main page to learn how to get passed the pit!
+
+
 
 
 
 ```package
 pxt-tilemaps=github:microsoft/pxt-tilemaps/
 arcade-premium-life=github:jwunderl/arcade-premium-life/
+pxt-characterAnimations=github:microsoft/arcade-character-animations/
 ```
 
 
 ```template
-let mySprite: Sprite = null
-scene.setBackgroundImage(assets.image`background1`)
-tiles.setTilemap(tilemap`level1`)
-mySprite = sprites.create(assets.image`Xialing`, SpriteKind.Player)
-sprites.add_profile(Choice.xialing)
-mySprite.ay = 500
-scene.cameraFollowSprite(mySprite)
-controller.moveSprite(mySprite, 100, 0)
-
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprites.gravity_jump(mySprite)
-})
-```
-
-```ghost
 namespace SpriteKind {
     export const Ring = SpriteKind.create()
 }
-scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Player, assets.tile`door1`, function (sprite, location) {
     game.over(true)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`pit`, function (sprite, location) {
+    game.over(false)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`ring`, function (sprite, location) {
     tiles.setTileAt(location, assets.tile`transparency16`)
     info.changeScoreBy(1)
 })
 
+
+scene.onOverlapTile(SpriteKind.Projectile, assets.tile`boulder`, function (sprite, location) {
+    tiles.setWallAt(location, false)
+    tiles.setTileAt(location, assets.tile`transparency16`)
+})
+
+let projectile: Sprite = null
+let mySprite: Sprite = null
+scene.setBackgroundImage(assets.image`background1`)
+tiles.setTilemap(tilemap`level1`) 
+mySprite = sprites.create(assets.image`Shang-Chi`, SpriteKind.Player)
+sprites.add_profile(Choice.shang)
+mySprite.ay = 500
+scene.cameraFollowSprite(mySprite)
+controller.moveSprite(mySprite, 100, 0)
+
+animation.loopFrames2(
+    mySprite,
+    assets.animation`sc walk right`,
+    100,
+    characterAnimations.rule(Predicate.MovingRight)
+    )
+animation.loopFrames2(
+    mySprite,
+    assets.animation`sc walk left`,
+    100,
+    characterAnimations.rule(Predicate.MovingLeft)
+    )
+animation.loopFrames2(
+    mySprite,
+    assets.animation`sc jump`,
+    100,
+    characterAnimations.rule(Predicate.MovingUp)
+    )
+
+tiles.createSpritesOnTiles(assets.tile`rubble`, SpriteKind.Enemy)
+
+
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    sprites.gravity_jump(mySprite)
+})
+
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    projectile = sprites.createProjectileFromSprite(assets.image`power kick`, mySprite, 50, 50)
+    projectile.setFlag(SpriteFlag.GhostThroughWalls, true)
+    projectile.lifespan = 100
+    animation.runImageAnimation(
+    mySprite,
+    assets.animation`sc kick`,
+    125,
+    false
+    )
+})
+
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+        tiles.setWallAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), true)
+    tiles.setTileAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), assets.tile`energy`)
+
+})
+sprites.onCreated(SpriteKind.Enemy, function (sprite) {
+    animation.loopFrames2(
+    sprite,
+    assets.animation`assassin left`,
+    100,
+    characterAnimations.rule(Predicate.MovingLeft)
+    )
+    sprite.follow(mySprite, 30)
+    sprite.ay = 500
+})
+
 ```
+
+```ghost
+
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    animation.runImageAnimation(
+    mySprite,
+    assets.animation`damage`,
+    200,
+    false
+    )
+    gravity_jump(sprite)
+    scene.cameraShake(4, 500)
+    tiles.placeOnRandomTile(otherSprite, assets.tile`rubble`)
+    info.changeLifeBy(-1)
+})
+
+```
+
 
 
 ```customts
@@ -196,6 +301,13 @@ namespace sprites {
     }
     
 
+    //% block="make $thisSprite=variables_get(mySprite) hurdle side wall"
+    export function wall_jump (thisSprite: Sprite) {
+        if (thisSprite.isHittingTile(CollisionDirection.Left) || thisSprite.isHittingTile(CollisionDirection.Right)) {
+            sprites.gravity_jump(thisSprite)
+        }
+    }
+
     //% block="add corner profile for $choice"
     export function add_profile (choice:Choice) {
         if (choice == Choice.xialing){ 
@@ -206,6 +318,35 @@ namespace sprites {
             profilelife.setProfileImage(assets.image`Shang-Chi profile`)
             profilelife.setName("Shang-Chi")
         }
+    }
+}
+
+namespace animation {
+    /**
+     * Loops the passed frames on the sprite at the given interval whenever
+     * the specified rule is true for that sprite.
+     *
+     * If more than one rule applies, the most specific rule will be used.
+     * If multiple rules are equally specific, the currently executing rule
+     * is favored (or one is chosen at random).
+     *
+     * @param sprite    the sprite to animate
+     * @param frames    the images that make up that animation
+     * @param frame     Interval the amount of time to spend on each frame in milliseconds
+     * @param rule      the rule that decides when this animation will play
+     */
+    //% blockId=arcade_character_loop_frames2
+    //% block="animate $sprite loop frames $frames interval (ms) $frameInterval when $rule"
+    //% sprite.defl=mySprite
+    //% sprite.shadow=variables_get
+    //% frames.shadow=animation_editor
+    //% frameInterval.shadow=timePicker
+    //% rule.shadow=arcade_character_make_rule
+    //% weight=100
+    //% blockGap=8
+    //% help=github:arcade-character-animations/docs/loop-character-animation
+    export function loopFrames2(sprite: Sprite, frames: Image[], frameInterval: number, rule: number) {
+        characterAnimations.loopFrames(sprite, frames, frameInterval, rule);
     }
 }
 ```

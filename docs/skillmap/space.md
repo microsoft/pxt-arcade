@@ -1,7 +1,7 @@
 # Space Adventure
 * name: Create a Space Adventure Game
 * description: Learn to make a Galaga-style game by following this short series of tutorials. You will create a rocket that fires projectiles at enemies, design your outerspace view, create amazing animations, and MORE!  What are you waiting for?  Double-click the first level to begin!" 
-* infoUrl: skillmap/educator-info/int-map-info
+* infoUrl: skillmap/educator-info/space-map-info
 * bannerUrl: /static/skillmap/space/spacet6.gif
 * backgroundurl: /static/skillmap/backgrounds/space-comp.gif
 * primarycolor: #2EA9B0
@@ -28,7 +28,7 @@
 * position: 0 2
 
 ### space-activity2
-* name: Ready, aim, fire!
+* name: Ready, Aim, Fire!
 * type: tutorial
 * description: Equip your ship with projectiles and special effects.
 * tags: easy, projectiles, kinds
@@ -38,7 +38,7 @@
 * position: 1 2
 
 ### space-activity3
-* name: Here comes trouble!
+* name: Here Comes Trouble!
 * description: Watch out for danger! Add enemies and countdown lives in your game.
 * type: tutorial
 * tags: intermediate, enemies, kinds
