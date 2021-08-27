@@ -1,4 +1,4 @@
-# Smarter Assassins
+# Shang-Chi: Smarter Assassins
 
 
 ## Welcome @showdialog
