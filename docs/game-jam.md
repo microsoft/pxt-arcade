@@ -7,9 +7,9 @@ Check out the winners of the 4th Official Microsoft MakeCode Game Jam, featuring
 * name: Glitch
 * description: Polished and imaginative, Glitch is a game where you can slow down time and modify the terrain of the world itself to survive each level.
 * author: Web_Headed_Games
-* url: https://arcade.makecode.com/39697-95718-82872-45842
+* url: https://arcade.makecode.com/39412-25824-36790-82290
 * cardType: sharedExample
-* imageUrl: https://pxt.azureedge.net/api/39697-95718-82872-45842/thumb
+* imageUrl: https://pxt.azureedge.net/api/39412-25824-36790-82290/thumb
 ---
 * name: Last 30 seconds of the universe
 * description: It's (almost) the end of the world, and you are the galaxy's only hope... but are you really alone? This space shooter game may seem impossible at first, but keep playing and you might be surprised.
