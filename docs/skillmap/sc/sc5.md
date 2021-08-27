@@ -103,7 +103,7 @@ Now we need an animation that runs when your hero jumps!
     animation.loopFrames2(
     mySprite,
     assets.animation`sc jump`,
-    100,
+    125,
     characterAnimations.rule(Predicate.MovingUp)
     )
 

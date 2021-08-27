@@ -250,7 +250,7 @@ animation.loopFrames2(
 animation.loopFrames2(
     mySprite,
     assets.animation`x jump`,
-    100,
+    125,
     characterAnimations.rule(Predicate.MovingUp)
     )
 
