@@ -16,13 +16,21 @@
   "directOpen": true
 },
 {
+  "name": "Shang-Chi and the Legend of the Ten Rings",
+  "cardType": "link",
+  "description": "Create your own amazing adventure based on the movie Shang-Chi and the Legend of the Ten Rings!",
+  "imageUrl":  "/static/skillmap/backgrounds/sc.png",
+  "url": "https://arcade.makecode.com/--skillmap#sc",
+  "directOpen": true
+},
+{
   "name": "A Zookeeper's Adventure",
   "cardType": "link",
   "description": "Ever wonder what it takes to be a zookeeper? The answer may surprise you...",
   "imageUrl":  "/static/skillmap/backgrounds/zoo.png",
   "url": "https://arcade.makecode.com/--skillmap#zoo",
   "directOpen": true
-}, 
+},
 {
   "name": "Game Maker Guide",
   "cardType": "link",
