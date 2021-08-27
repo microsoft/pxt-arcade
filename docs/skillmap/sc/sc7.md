@@ -245,7 +245,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
     animation.loopFrames2(
     sprite,
     assets.animation`assassin left`,
-    100,
+    125,
     characterAnimations.rule(Predicate.MovingLeft)
     )
     sprite.follow(mySprite, 30)
@@ -253,7 +253,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
     animation.loopFrames2(
     sprite,
     assets.animation`assassin right`,
-    100,
+    125,
     characterAnimations.rule(Predicate.MovingRight)
     )
 })
