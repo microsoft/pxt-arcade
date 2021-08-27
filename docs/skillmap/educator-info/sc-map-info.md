@@ -10,13 +10,13 @@ Designed for students between the ages of 11 & 15, this experience contains a to
 
 |                 | Minutes* | Game Type | Key Concepts |
 | --------------- | -------- | --------- | ------------ |
-| **Session 1** | 31 |  |  |
+| **Session 1** | **31** |  |  |
 | Opening Scene | 7 | Intro | movement, acceleration, user input, gravity |
 | Know Your Surroundings | 6 | Platformer | events, game score |
 | Martial Arts Training | 5 | Platformer | user input, creation |
 | Power Kick | 9 | Platformer | user input, projectiles, animation, events, destruction |
 | Animated Characters | 4 | Platformer | animation |
-| **Session 2** | 25+ |  |  |
+| **Session 2** | **25+** |  |  |
 | Here Comes Trouble | 7 | Platformer | creation, animation, movement, acceleration |
 | Packs a Punch | 9 | Platformer | events, movement, life bar, animation, destruction |
 | Smarter Assassins | 4 | Platformer | animation, artificial intelligence |
