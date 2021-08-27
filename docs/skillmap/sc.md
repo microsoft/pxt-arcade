@@ -1,6 +1,6 @@
 # Shang-Chi and the Legend of the Ten Rings
 * name: Shang-Chi and the Legend of the Ten Rings
-* description: Create your own amazing adventure based on the movie Shang-Chi and the Legend of the Ten Rings! Guided by an intro-level tutorial, you'll use code to train Shang-Chi or Xialing to build magic platforms, seek out mystical rings, and battle Wenwu's goons.
+* description: Create your own amazing adventure based on the movie Shang-Chi and the Legend of the Ten Rings! Guided by an intro-level tutorial, you'll use code to train Shang-Chi or Xialing to build magic platforms, seek out mystical rings, and battle assassins from the Ten Rings organizations.
 * infoUrl: skillmap/educator-info/int-map-info
 * bannerUrl: /static/skillmap/sc/sc6a.gif
 * backgroundurl: /static/skillmap/backgrounds/sc-comp.png
@@ -69,7 +69,7 @@
 ### sc6
 * name: Here Comes Trouble
 * type: tutorial
-* description: Add goons from the Ten Rings organization.
+* description: Add assassins from the Ten Rings organization.
 * url: /skillmap/sc/sc6
 * imageUrl: /static/skillmap/sc/sc6.gif
 * tags: easy, events, overlap, lives
@@ -88,7 +88,7 @@
 * position: 3 4
 
 ### sc6b
-* name: Smarter Goons
+* name: Smarter Assassins
 * type: tutorial
 * description: Use simple AI to keep the enemy on the move.
 * url: /skillmap/sc/sc6b
