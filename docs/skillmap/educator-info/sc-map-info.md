@@ -100,7 +100,7 @@ During this session, students will take their games to the next level (literally
 | Activity | Here Comes Trouble (7 min) |
 |---|---|
 | ![Here Comes Trouble thumbnail](/static/skillmap/sc/sc6.gif) | Add assassins from the Ten Rings organization. |
-| Blocks used | ``[tiles.createSpritesOnTiles(assets.tile`rubble`, SpriteKind.Enemy)]``<br/>``[sprites.onCreated()]``<br/>``[animation.loopFrames2()]``<br/>``[sprite.follow(mySprite, 0)]``<br/>``[let sprite: Sprite=null; sprite.ay = 0]`` |
+| Blocks used | ``[tiles.createSpritesOnTiles(assets.tile`rubble`, SpriteKind.Enemy)]``<br/>``[sprites.onCreated()]``<br/>``[animation.loopFrames2()]``<br/>``[let sprite: Sprite=null; let mySprite: Sprite=null; sprite.follow(mySprite, 0)]``<br/>``[let sprite: Sprite=null; sprite.ay = 0]`` |
 | Solution option | [Here Comes Trouble Project](https://makecode.com/_4WTHHjTCxd15) |
 
 #### 2. Packs a Punch
