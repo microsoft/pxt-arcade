@@ -50,7 +50,7 @@ Uh oh!  You get WAY too many points when you touch the guitar! We can fix that i
 
 ► From ``||scene:Scene||``, drag ``||scene:set [ ] at tilemap col [0] row [0]||`` into **the top** of the ``||scene:on [sprite] of kind [Player] overlaps [instrument1] at [location]||`` container.
 
-► Replace ``||scene:tilemap col [0] row [0]||`` with the ``||variables:location||`` value from the top of the **Player overlaps instrument** container.
+► Replace ``||scene:tilemap col [0] row [0]||`` with the ``||variables:location||`` value from the top of the **Player overlaps ins** container.
 
 ![Share your location](/static/skillmap/assets/overlap-tile-location.gif "Grab the variable from the overlap container")
 
