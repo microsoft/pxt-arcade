@@ -117,6 +117,18 @@ pxt-tilemaps=github:microsoft/pxt-tilemaps/
 ```
 
 
+```customts
+
+    //% block="on $sprite of kind $kind overlaps  $tile or $tile2  or $tile3  at $location"
+namespace scene {
+    export function onOverlapTileMulti(kind: number, tile: Image, tile2: Image, tile3: Image, handler: (sprite: Sprite, location: tiles.Location) => void){
+        handler();
+    }
+}
+
+```
+
+
 ```template
 scene.setBackgroundColor(13)
 tiles.setTilemap(tilemap`level1`)
