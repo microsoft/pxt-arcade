@@ -97,7 +97,7 @@ Let's use a timer to add some hustle to the whole experience!
 
 ► From ``||info:Info||`` drag ``||info:start countdown [10] (s)||`` into **the end**  of the ``||loops:on start||`` container.
 
-► Change 10 to 15 to give yourself a little more time. 
+► Change 10 to 30 to give yourself a little more time. 
 
 ```blocks
 scene.setBackgroundColor(13)
@@ -107,7 +107,7 @@ controller.moveSprite(mySprite, 100, 100)
 scene.cameraFollowSprite(mySprite)
 tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairLarge)
 //@highlight
-info.startCountdown(15)
+info.startCountdown(30)
 ```
 
 
