@@ -21,7 +21,7 @@
 * tags: easy, sprites, tiles
 * imageUrl: /static/skillmap/rockstar/rockstar1.gif
 * next: rockstar2
-* position: 0 3
+* position: 0 0
 
 ### rockstar2
 * name: Gather Your Gear
@@ -31,31 +31,20 @@
 * tags: easy, tiles, events
 * imageUrl: /static/skillmap/rockstar/rockstar2.gif
 * next: rockstar3
-* position: 1 2
+* position: 1 1
 
 ### rockstar3
 * name: Enemies Attack!
 * type: tutorial
-* description: Program crazed fans who steal points as souveniers unless the rockstar can avoid them!
+* description: Code some crazed fans who will steal points as souveniers unless the rockstar can avoid them!
 * url: /skillmap/rockstar/rockstar3
 * tags: easy, enemies, overlap, lives
 * imageUrl: /static/skillmap/rockstar/rockstar3.gif
-* next: rockstar-finish, rockstar3a
-* position: 2 1
-
-### rockstar3a
-* name: New Location
-* type: tutorial
-* description: Edit your game to make it your own.  You can change all the images to completely customize your maze!
-* url: /skillmap/rockstar/rockstar3a
-* tags: easy, asset editor, art
-* imageUrl: /static/skillmap/rockstar/rockstar3a.gif
-* next: rockstar2
-* position: 3 2
+* next: rockstar-finish
 
 
 ### rockstar-finish
 * kind: completion
 * type: certificate
 * url: /static/skillmap/certificates/rockstar-game.pdf
-* position: 3 0
+* position: 2 2
