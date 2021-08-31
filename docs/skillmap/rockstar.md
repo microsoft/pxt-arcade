@@ -16,7 +16,7 @@
 ### rockstar1
 * name: Trapped Backstage
 * type: tutorial
-* description: Create a rockstar backstage after the show, then create a door for them to escape through!
+* description: Create a rockstar backstage after the show, then keep an eye on them as they navigate the path!
 * url: /skillmap/rockstar/rockstar1
 * tags: easy, sprites, tiles
 * imageUrl: /static/skillmap/rockstar/rockstar1.gif
