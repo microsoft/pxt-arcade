@@ -126,7 +126,7 @@
 * kind: completion
 * type: certificate
 * imageUrl: /static/skillmap/certificates/sc-cert.png
-* url: /static/skillmap/certificates/sc-cert-comp.pdf.pdf
+* url: /static/skillmap/certificates/sc-cert-comp.pdf
 * next: sc8
 * position: 5 2
 * edges: 6 2
