@@ -7,37 +7,43 @@ set arcadeRoot=%cd%
 set TerminalPath=%LocalAppData%\Microsoft\WindowsApps\wt.exe
 set cmdPath=cmd.exe
 
+set OptPull=false
+set OptLink=false
+set OptRun=false
+set OptFirst=false
+
 :ParseArguments
-if    "%1" == ""                                                                                              goto :DoneParsing
-if /I "%1" == "/?"                                                                                            call :Usage && exit /b 1
-if /I "%1" == "/firsttime"        set "OptFirst=true" && set "OptLink=true"                                   && shift && goto :ParseArguments
-if /I "%1" == "/pull"             set "OptPull=true"                                                          && shift && goto :ParseArguments
-if /I "%1" == "/link"             set "OptLink=true"                                                          && shift && goto :ParseArguments
-if /I "%1" == "/run"              set "OptRun=true"                                                           && shift && goto :ParseArguments
-if /I "%1" == "/plr"              set "OptPull=true" && set "OptLink=true" && set "OptRun=true"               && shift && goto :ParseArguments
+if    "%1" == ""                                                                                       goto :DoneParsing
+if /I "%1" == "/?"                                                                                     call :Usage && exit /b 1
+if /I "%1" == "/firsttime"        set "OptFirst=true" && set "OptLink=true"                            && shift && goto :ParseArguments
+if /I "%1" == "/pull"             set "OptPull=true"                                                   && shift && goto :ParseArguments
+if /I "%1" == "/link"             set "OptLink=true"                                                   && shift && goto :ParseArguments
+if /I "%1" == "/run"              set "OptRun=true"                                                    && shift && goto :ParseArguments
+if /I "%1" == "/plr"              set "OptPull=true" && set "OptLink=true" && set "OptRun=true"        && shift && goto :ParseArguments
 
 call :Usage && exit /b 1
 :DoneParsing
 
-REM this assumes you're running this batch file with no prior repo cloned
 if "%OptFirst%" == "true" (
-    npm install -g pxt
-    npm install -g gulp
     git clone https://github.com/microsoft/pxt-arcade
     git clone https://github.com/microsoft/pxt
     git clone https://github.com/microsoft/pxt-common-packages
+    call npm install -g pxt
+    call npm install -g gulp
     cd pxt-arcade
     set arcadeRoot=%cd%
+    echo done cloning
 )
 
-REM The rest of these commands assume you're in the pxt-arcade repo folder
-
 if "%OptPull%" == "true" (
+    echo pull pxt-arcade
     git pull
     pushd ..\pxt
+    echo pull pxt
     git pull
     popd
     pushd ..\pxt-common-packages
+    echo pull pxt-common-packages
     git pull
     popd
 )
@@ -61,6 +67,7 @@ if "%OptRun%" == "true" (
     pxt serve --rebundle
 )
 
+echo Completed
 exit /b
 
 :Usage
