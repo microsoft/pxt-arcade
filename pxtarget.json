@@ -112,7 +112,6 @@
         "base": [
             "libs/hw",
             "libs/hw---n3",
-            "libs/hw---n4",
             "libs/hw---samd51",
             "libs/hw---stm32f401"
         ],
