@@ -49,3 +49,7 @@
 * type: certificate
 * url: /static/skillmap/certificates/rockstar-game.pdf
 * position: 3 1
+* actions:
+    * map: [Try Jungle Monkey Jump](https://arcade.makecode.com/--skillmap#jungle)
+    * map: [Try our Space Explorer](https://arcade.makecode.com/--skillmap#space)
+    * editor: [Edit Your Project in the Full Gallery]

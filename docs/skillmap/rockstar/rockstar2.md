@@ -10,7 +10,7 @@ Jerry needs to gather all of the instruments before getting on the tour bus!
 
 
 
-## You Earned Points pt. 1
+## 2. Add Points
 
 **🎸 Award points when Jerry grabs an instrument 🎸**   
 When your sprite overlaps an instrument, we'll change the score.
@@ -18,13 +18,13 @@ When your sprite overlaps an instrument, we'll change the score.
 ---
 
 
-► To detect an overlap, go open the ``||scene:Scene||`` category and drag an
+- :cubes: To detect an overlap, go open the ``||scene:Scene||`` category and drag an
 ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
 container into an empty area of the workspace.
 
-► Change the checkerboard to the red guitar called **instrument1**.
+- :mouse pointer: Change the checkerboard to the red guitar called **instrument1**.
 
-► From ``||info:Info||``, snap a ``||info:change score by [1]||`` block into the new container. 
+- :cubes: From ``||info:Info||``, snap a ``||info:change score by [1]||`` block into the new container. 
 
 
 ```blocks
@@ -33,7 +33,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument1`, function (sprit
 })
 ```
 
-## Try It Too!
+## 3. Try It!
 
 **🕹️ Try your maze and grab a guitar 🕹️**
 
@@ -42,15 +42,15 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument1`, function (sprit
 Uh oh!  You get WAY too many points when you touch the guitar! We can fix that in the next step.
 
 
-## 4. You Earned Points pt. 2
+## 4. Pick It Up
 
 **Replace the instruments you collect with an empty tile.**
 
 ---
 
-► From ``||scene:Scene||``, drag ``||scene:set [ ] at tilemap col [0] row [0]||`` into **the top** of the ``||scene:on [sprite] of kind [Player] overlaps [instrument1] at [location]||`` container.
+- :cubes: From ``||scene:Scene||``, drag ``||scene:set [ ] at tilemap col [0] row [0]||`` into **the top** of the ``||scene:on [sprite] of kind [Player] overlaps [instrument1] at [location]||`` container.
 
-► Replace ``||scene:tilemap col [0] row [0]||`` with the ``||variables:location||`` value from the top of the **Player overlaps ins** container.
+- :cubes: Replace ``||scene:tilemap col [0] row [0]||`` with the ``||variables:location||`` value from the top of the **Player overlaps ins** container.
 
 ![Share your location](/static/skillmap/assets/overlap-tile-location.gif "Grab the variable from the overlap container")
 
@@ -82,16 +82,16 @@ Follow the same steps two more times to add points for the drums and keyboard ti
 
 ---
 
-► Drag
+- :cubes: Drag
 ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
 into an empty area of the workspace and set the instrument.
 
-► Drag ``||scene:set [ ] at tilemap col [0] row [0]||`` into **the top** of the 
+- :cubes: Drag ``||scene:set [ ] at tilemap col [0] row [0]||`` into **the top** of the 
 ``||scene:on [sprite] of kind [Player] overlaps [instrument] at [location]||`` 
 container and replace ``||scene:tilemap col [0] row [0]||`` with 
 ``||variables:location||``.
 
-► Snap ``||info:change score by [1]||`` into the new container. 
+- :cubes: Snap ``||info:change score by [1]||`` into the new container. 
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument0`, function (sprite, location) {
@@ -122,15 +122,15 @@ Let's finish the game with a WIN when Jerry overlaps the door!
 
 ---
 
-► To detect an overlap, go open ``||scene:Scene||`` and drag an
+- :cubes: To detect an overlap, go open ``||scene:Scene||`` and drag an
 ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
 container into an empty area of the workspace.
 
-► Change the checkerboard to the **door** tile.
+- :mouse pointer: Change the checkerboard to the **door** tile.
 
-► From ``||game:Game||``, snap a ``||game:game over <LOSE>||`` block into the new container. 
+- :cubes: From ``||game:Game||``, snap a ``||game:game over <LOSE>||`` block into the new container. 
 
-► Toggle **`<LOSE>`** to **`<WIN>`**.
+- :mouse pointer: Toggle **`<LOSE>`** to **`<WIN>`**.
 
 
 ```blocks
@@ -141,7 +141,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`door`, function (sprite, loca
 
 
 
-## Done
+## Finale
 
 🔥 **A-MAZE-ING** 🔥   
 

@@ -105,7 +105,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## Step 8 - Kick It!
+## Step 7 - Kick It!
 
 In this step, we'll choose **an animation** for our sprite's kick!
 
