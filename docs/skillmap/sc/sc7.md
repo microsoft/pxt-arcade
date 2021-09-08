@@ -89,7 +89,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`door1`, function (sprite, loc
 ```
 
 
-## Step 9 - Back to the Beginning
+## Step 7 - Back to the Beginning
 
 **⏪ Here we go again! ⏪**
 

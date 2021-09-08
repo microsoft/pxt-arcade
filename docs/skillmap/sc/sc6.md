@@ -115,7 +115,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 
 
 
-## Step 9 - Follow the Leader
+## Step 6 - Follow the Leader
 
 **💥 Watch Out 💥**  
 
@@ -151,7 +151,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 Run around near an assassin.  Do you notice anything wrong?
 
 
-## Step 9 - Down to Earth
+## Step 8 - Down to Earth
 
 **☁️ The assassins are floating ☁️**  
 Keep them on the ground by adding acceleration.

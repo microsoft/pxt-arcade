@@ -12,30 +12,30 @@ We'll walk you through the skills you'll need to help Jerry navigate backstage t
 
 
 
-## Step 2 
+## 2. Let's Get Started 
 
 **Your scene has already been set!**
 
 ---
 
-► Look at your workspace to see that the **background color** and [__*tilemap*__](#tiled "a scene or world created using predefined tiles") 
+- :binoculars: Look at your workspace to see that the **background color** and [__*tilemap*__](#tiled "a scene or world created using predefined tiles") 
 have already been added to this activity.  
 
 💡 Both blocks have been put inside the ``||loops: on start||`` container so they load as soon as the game starts.
 
 
 
-## Step 3 - We need a HERO
+## 3. We need a HERO
 
-**👏 We need Jerry! 👏**
+**👏  We need Jerry! 👏**
 
 Our moving character is called a [__*sprite*__](#sprote "2-D image that move on the screen"). Let's create a rockstar sprite and get it moving before we do anything else. 
 
 ---
 
-► From the ``||sprites:Sprites||`` category, drag ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` to **the end** of the ``||loops:on start||`` container.
+- :cubes: From the ``||sprites:Sprites||`` category, drag ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` to **the end** of the ``||loops:on start||`` container.
 
-► To add Jerry, click the empty grey box, then toggle to **My Assets** and click  **rockstar**.
+- :mouse pointer: To add Jerry, click the empty grey box, then toggle to **My Assets** and click  **rockstar**.
 
 
 ```blocks
@@ -46,13 +46,13 @@ let mySprite = sprites.create(assets.image`rockstar`, SpriteKind.Player)
 ```
 
 
-## Step 4 - Control the Player
+## 4. Control the Player
 
-**↔️ Time to get the sprite moving ↔️**
+**Time to get the sprite moving**
 
 ---
 
-► From ``||controller:Controller||``, drag ``||controller:move [mySprite] with buttons ⊕||``   
+- :cubes: From ``||controller:Controller||``, drag ``||controller:move [mySprite] with buttons ⊕||``   
 to **the end** of the ``||loops:on start||`` container.
 
 
@@ -65,25 +65,27 @@ controller.moveSprite(mySprite)
 ```
 
 
-## Step 5 - Try It
+## 5. Try It
 
-**🕹️ Test your game on the game screen 🕹️ **
+**🕹️ Test on the game screen 🕹️ **
 
 ---
 
-Jerry appears in the middle of a wall and gets completely lost when moving off screen. We can fix that over the next couple of steps! 
+Jerry appears in the middle of a wall and gets completely lost when moving off screen!  
+
+We'll fix that over the next couple of steps.
 
 
 
-## Step 7 - Place Backstage 
+## 6. Trapped Backstage 
 
 **The sprite should appear at the stairs behind the stage. **
 
 ---
 
-►  To start Jerry at the stairs, open ``||scene:Scene||`` and drag ``||scene: place [mySprite] on top of random [ ]||`` to **the end** of the ``||loops:on start||`` container.
+- :cubes: To start Jerry at the stairs, open ``||scene:Scene||`` and drag ``||scene: place [mySprite] on top of random [ ]||`` to **the end** of the ``||loops:on start||`` container.
 
-►  Click the checkered tile and select the purple stairs from the grid menu.
+- :mouse pointer: Click the checkered tile and select the purple stairs from the grid menu.
 
 
 ```blocks
@@ -97,10 +99,10 @@ tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairLarge)
 ```
 
 
-## Step 7 - Follow with Camera 
+## 7. Follow with Camera 
 
 
-►  Next, to keep Jerry in sight, open ``||scene:Scene||`` again and drag 
+- :cubes: Next, to keep Jerry in sight, open ``||scene:Scene||`` again and drag 
 ``||scene:camera follow sprite [mySprite]||`` to **the end** of the ``||loops:on start||`` container.
 
 ```blocks
@@ -115,7 +117,7 @@ scene.cameraFollowSprite(mySprite)
 ```
 
 
-## Step 8 - Look Again
+## 8. Look Again
 
 **🕹️ Try your maze in the game window 🕹️ **
 
@@ -126,7 +128,7 @@ You should be able to see your sprite as you move it around backstage.  Can you 
 
 
 
-## Done
+## Finale
 
 🔥 **Well done!** 🔥   
 
