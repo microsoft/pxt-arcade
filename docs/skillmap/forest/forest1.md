@@ -36,11 +36,13 @@ When you're done playing with your project, click **Finish** to return to the ma
 
 ```package
 pxt-tilemaps=github:microsoft/pxt-tilemaps/
+pxt-text=github:microsoft/arcade-text
 arcade-premium-life=github:jwunderl/arcade-premium-life/
 pxt-characterAnimations=github:microsoft/arcade-character-animations/
 pxt-data=github:microsoft/arcade-sprite-data/
 pxt-story=github:microsoft/arcade-storytelling/
 arcade-sprite-util=github:jwunderl/arcade-sprite-util/
+pxt-status-bar=github:jwunderl/pxt-status-bar
 
 ```
 
@@ -57,8 +59,16 @@ sprites.set_dryness_of_grass(4)
 
 let mySprite: Sprite = null
 
+let statusbar: StatusBarSprite = null
+
+
 tiles.setTilemap(tilemap`level1`)
 
+statusbar = statusbars.create(100, 4, StatusBarKind.Health)
+statusbar.top = 4
+statusbar.left = 4
+statusbar.max = tiles.tilemapRows() * tiles.tilemapColumns()
+statusbar.value = tiles.tilemapRows() * tiles.tilemapColumns()
 mySprite = sprites.create(assets.image`firePlane`, SpriteKind.Player)
 controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)
@@ -67,6 +77,13 @@ for (let index = 0; index < 4; index++) {
     newFire = sprites.create(assets.image`fire`, SpriteKind.Fire)
     tiles.placeOnRandomTile(newFire, assets.tile`trees`)
 }
+
+
+let textSprite = textsprite.create("Remaining Forest", 0, 1)
+textSprite.setFlag(SpriteFlag.RelativeToCamera, true)
+textSprite.top = 9
+textSprite.left = 6
+
 
 sprites.onCreated(SpriteKind.Fire, function (sprite) {
     sprites.set_flame_strength(sprite, 10)
@@ -77,6 +94,50 @@ controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
     sprites.spray(mySprite, "difference")
 })
 
+game.onUpdate(function () {
+  sprites.random_spread(img`
+    . . . . . . 4 . . 
+    2 . . . . 4 4 . . 
+    2 4 . . 4 5 4 . . 
+    . 2 4 d 5 5 4 . . 
+    . 2 5 5 5 5 4 . . 
+    . . 2 5 5 5 5 4 . 
+    . . 2 5 4 2 4 4 . 
+    . . 4 4 . . 2 4 4 
+    . 4 4 . . . . . . 
+    `)    
+    if (sprites.allOfKind(SpriteKind.Fire).length == 0) {
+        info.setScore(statusbar.value / statusbar.max * 100)
+        game.over(true)
+    } else {
+        info.setScore(sprites.allOfKind(SpriteKind.Fire).length)
+    }
+})
+
+sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
+    effects.clearParticles(sprite)
+    tiles.setTileAt(tiles.locationOfSprite(sprite), assets.tile`smoulder`)
+    statusbar.value += -1
+})
+
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Fire, function (sprite, otherSprite) {
+    sprite.destroy()
+    sprites.change_flame_strength_by(otherSprite, -1)
+})
+
+sprites.onOverlap(SpriteKind.Fire, SpriteKind.Fire, function (sprite, otherSprite) {
+    otherSprite.destroy()
+})
+
+scene.onOverlapTile(SpriteKind.Fire, assets.tile`smoulder`, function (sprite, location) {
+    if (Math.percentChance(10)) {
+        sprites.random_spread(assets.image`fire`)
+    } else {
+        sprite.destroy()
+    }
+})
+
+
 ```
 
 
@@ -84,8 +145,7 @@ controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
 
 ```customts
 
-let mySprite2 = sprites.create(assets.image`q1`, SpriteKind.Player)
-mySprite2.setPosition(8, 8)
+
 
 let spreadOptions: number[] = []
 
@@ -99,12 +159,6 @@ let changeRate = 7
 
 forever(function () {
     spreadTimeBase = 4500 - (250 * windSpeed + 250 * dryGrass - 100 * tinder)
-    mySprite2.setPosition(scene.cameraProperty(CameraProperty.X) - 70, scene.cameraProperty(CameraProperty.Y) - 50)
-    mySprite2.z = 9000
-})
-
-sprites.onCreated(SpriteKind.Fire, function (sprite) {
-    sprites.setDataNumber(sprite, "spreadTime", game.runtime() + randint(spreadTimeBase, spreadTimeBase + 1000))
 })
 
 namespace sprites {
@@ -130,6 +184,13 @@ namespace sprites {
     //% num.defl=10
     export function set_flame_strength (thisSprite: Sprite, num: number) {
         sprites.setDataNumber(thisSprite, "life", num)
+        sprites.setDataNumber(thisSprite, "spreadTime",  spreadTimeBase + 1000)
+    }
+
+    //% block="change strength of $thisSprite to $num"
+    //% num.defl=-1
+    export function change_flame_strength_by (thisSprite: Sprite, num: number) {
+        sprites.changeDataNumberBy(thisSprite, "life", num)
     }
 
     //% block="spray from $thisSprite=variables_get(mySprite) using $text"
@@ -185,6 +246,42 @@ namespace sprites {
 
     }
     
+
+
+//% block="random spread $myImage"
+    //% myImage.shadow=screen_image_picker
+    export function random_spread (myImage: Image) {
+        for (let value of sprites.allOfKind(SpriteKind.Fire)) {
+            if (sprites.readDataNumber(value, "life") <= 0) {
+                effects.clearParticles(value)
+                value.destroy()
+            }
+            let list2 = [
+            -32,
+            -16,
+            0,
+            16,
+            32,
+            16,
+            -16
+            ]
+            if (game.runtime() > sprites.readDataNumber(value, "spreadTime")) {
+                sprites.setDataNumber(value, "spreadTime", game.runtime() + randint(spreadTimeBase, spreadTimeBase + 1000))
+                let newFire = sprites.create(myImage, SpriteKind.Fire)
+                newFire.setPosition(value.x + list2._pickRandom(), value.y)
+                sprites.setDataNumber(newFire, "spreadTime", game.runtime() + randint(spreadTimeBase, spreadTimeBase + 1000))
+                if (Math.percentChance(50)) {
+                    newFire.y += list2._pickRandom()
+                }
+                if (tiles.tileIsWall(tiles.locationOfSprite(newFire))) {
+                    newFire.setPosition(value.x, value.y)
+                }
+            }
+        }
+    }
+
+
+
 
 }
 ```

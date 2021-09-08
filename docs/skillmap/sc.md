@@ -1,6 +1,7 @@
-# Shang-Chi and the Legend of the Ten Rings
-* name: Shang-Chi and the Legend of the Ten Rings
-* description: Create your own amazing adventure based on the movie Shang-Chi and the Legend of the Ten Rings! Guided by an intro-level tutorial, you'll use code to train Shang-Chi or Xialing to build magic platforms, seek out mystical rings, and battle assassins from the Ten Rings organization.
+
+# Shang-Chi and The Legend of The Ten Rings
+* name: Shang-Chi and The Legend of The Ten Rings
+* description: Create your own amazing adventure based on the movie Shang-Chi and The Legend of The Ten Rings! Guided by an intro-level tutorial, you'll use code to train Shang-Chi or Xialing to build magic platforms, seek out mystical rings, and battle assassins from the Ten Rings organization.
 * infoUrl: skillmap/educator-info/sc-map-info
 * bannerUrl: /static/skillmap/sc/sc6a.gif
 * backgroundurl: /static/skillmap/backgrounds/sc-comp.png
@@ -11,8 +12,8 @@
 * completednodecolor: #352125
 
 
-## Shang-Chi and the Legend of the Ten Rings
-* name: Shang-Chi and the Legend of the Ten Rings
+## Shang-Chi and The Legend of The Ten Rings
+* name: Shang-Chi and The Legend of The Ten Rings
 * layout: manual
 
 ### sc1
@@ -126,7 +127,7 @@
 * kind: completion
 * type: certificate
 * imageUrl: /static/skillmap/certificates/sc-cert.png
-* url: /static/skillmap/certificates/sc-cert-comp.pdf.pdf
+* url: /static/skillmap/certificates/sc-cert-comp.pdf
 * next: sc8
 * position: 5 2
 * edges: 6 2
