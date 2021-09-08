@@ -43,6 +43,7 @@ pxt-data=github:microsoft/arcade-sprite-data/
 pxt-story=github:microsoft/arcade-storytelling/
 arcade-sprite-util=github:jwunderl/arcade-sprite-util/
 pxt-status-bar=github:jwunderl/pxt-status-bar
+
 ```
 
 
@@ -57,6 +58,7 @@ sprites.set_health_of_trees(6)
 sprites.set_dryness_of_grass(4)
 
 let mySprite: Sprite = null
+
 let statusbar: StatusBarSprite = null
 
 
@@ -67,7 +69,6 @@ statusbar.top = 4
 statusbar.left = 4
 statusbar.max = tiles.tilemapRows() * tiles.tilemapColumns()
 statusbar.value = tiles.tilemapRows() * tiles.tilemapColumns()
-
 mySprite = sprites.create(assets.image`firePlane`, SpriteKind.Player)
 controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)
@@ -76,6 +77,7 @@ for (let index = 0; index < 4; index++) {
     newFire = sprites.create(assets.image`fire`, SpriteKind.Fire)
     tiles.placeOnRandomTile(newFire, assets.tile`trees`)
 }
+
 
 let textSprite = textsprite.create("Remaining Forest", 0, 1)
 textSprite.setFlag(SpriteFlag.RelativeToCamera, true)
@@ -134,6 +136,7 @@ scene.onOverlapTile(SpriteKind.Fire, assets.tile`smoulder`, function (sprite, lo
         sprite.destroy()
     }
 })
+
 
 ```
 
@@ -244,6 +247,7 @@ namespace sprites {
     }
     
 
+
 //% block="random spread $myImage"
     //% myImage.shadow=screen_image_picker
     export function random_spread (myImage: Image) {
@@ -275,10 +279,6 @@ namespace sprites {
             }
         }
     }
-
-
-
-
 
 
 

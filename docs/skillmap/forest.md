@@ -1,7 +1,7 @@
 # Save the Forest
 * name: Save the Forest
 * description: Computer science is everywhere!  
-* infoUrl: skillmap/educator-info/int-map-info
+* infoUrl: skillmap/educator-info/forest-map-info
 * bannerUrl: /static/skillmap/forest/forest1.gif
 * backgroundurl: /static/skillmap/backgrounds/forest-comp.png
 * primarycolor: #ffffff
