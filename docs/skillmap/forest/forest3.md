@@ -1,122 +1,187 @@
-# Save the Forest
+# Burning Issues
 
 
 ## Welcome @showdialog
 
-Welcome to MakeCode Arcade!
+Nearly 4 out of 5 forest fires are started by humans.  
+In your game, they'll be started by your code. 
 
-The last couple of summers have been some of the hottest on record and the forest service needs you to help them keep fires under control.
-
-Let's start by setting up your plane to make sure you can get everywhere you need to be.
-
-![Get Flying](/static/skillmap/forest/forest1.gif "Look what we're about to do today!")
+![Random fires starting on the grid](/static/skillmap/forest/forest3.gif "Look what we're about to do today!")
 
 
 
 
 ## 2. Set the Scene 
 
-**🌲 Welcome to the Forest 🌲**
+**🎮 Try your game 🎮**
 
 ---
 
-► The [__*tilemap*__](#tiled "a scene or world created using predefined tiles") has already been set 
-to a forest deep in the Australian bush.  
-
-💡 Notice that the ``||scene:set tilemap to [ ]||`` block has been added to the ``||loops: on start||`` container so it 
-loads as soon as the activity starts.
+Can you remember which lines of code create each action?
 
 
 
-## 3. A Plane!
+## 3. Thinking ahead
 
-**🛫 We need a hero 🛬**
+**➰ Again and Again ➰**
 
-Choose a plane [__*sprite*__](#sprote "a 2-D image that moves on the screen") 
-to fly around the screen. 
+We're going to add 4 flames, but thanks to our **repeat loop**, we only need to write
+code once.
 
 ---
 
-► From the ``||sprites:Sprites||`` category, drag 
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
-to **the end** of the ``||loops:on start||`` container.
+► From the ``||loops:Loops||`` category, drag the
+``||loops:repeat [4] times||`` loop container into **the end** of the 
+``||loops:on start||`` container.
 
-► To choose your plane, click the empty grey box, then toggle to **My Assets** 
-and choose the **Fire Plane Right** sprite.
+► Inside the loop, add ``||variables:set [mySprite2] to sprite [ ] of kind [Player]||``.
 
 
 ```blocks
 tiles.setTilemap(tilemap`level1`)
-// @highlight
-let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
-```
-
-
-
-
-## 4. Learn to Fly
-
-**↔️ Time to get the sprite moving ↔️**
-
----
-
-► From ``||controller:Controller||``, drag 
-``||controller:move [mySprite] with buttons ⊕||``   
-to **the end** of the ``||loops:on start||`` container.
-
-
-```blocks
-tiles.setTilemap(tilemap`level1`)
-let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
-// @highlight
+mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
 controller.moveSprite(mySprite)
+scene.cameraFollowSprite(mySprite)
+//@highlight
+for (let index = 0; index < 4; index++) {
+    mySprite2 = sprites.create(img`
+. 
+`, SpriteKind.Player)
+}
 ```
 
 
-## 5. Try It
+
+
+## 4. Creating fire
+
+
+► In the  ``||variables:set [mySprite2] to sprite [ ] of kind [Player]||`` block, click 
+``||variables:mySprite2||`` and use the dropdown menu to rename the sprite **newFire**.
+
+► Now click the empty grey box and toggle to **My Assets** to select the **fire** sprite.
+
+► Finally, toggle the kind from ``||sprites:Player||`` to  ``||sprites:Fire||``.
+
+
+```blocks
+tiles.setTilemap(tilemap`level1`)
+mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+scene.cameraFollowSprite(mySprite)
+
+for (let index = 0; index < 4; index++) {
+  //@highlight
+    newFire = sprites.create(assets.image`fire`, SpriteKind.Fire)
+}
+```
+
+
+
+## 5. So Random
+
+Let's scatter the flames randomly around the map.
+
+---
+
+►  From ``||scene:Scene||``, grab
+``||scene:place [mySprite] on top of random [ ]||`` 
+and snap it into **the bottom** of the ``||loops:repeat [4] times||`` loop container.
+
+►  Change ``||variables:mySprite||`` to ``||variables:newFire||``.
+
+►  Click the checkered square and choose the **trees** tile. 
+Now your fires will each start out on top of a random tree.
+
+
+```blocks
+tiles.setTilemap(tilemap`level1`)
+mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+scene.cameraFollowSprite(mySprite)
+
+for (let index = 0; index < 4; index++) {
+    newFire = sprites.create(assets.image`fire`, SpriteKind.Fire)
+    //@highlight
+    tiles.placeOnRandomTile(newFire, assets.tile`trees`)
+}
+
+```
+
+
+
+##  Try It
 
 **🕹️ Test it out in the Game Window 🕹️ **
 
 ---
 
-Your sprite should move around the forest as you move the joypad.   
-You can also use the arrow keys on your keyboard!
+You should be able to fly around the screen and find all 4 fires!
+But they don't look very lively, do they?
 
 
 
+## 7. Just My Type
 
-## 6. Follow with Camera
+**🔥 Let's create some crackle 🔥**
 
-**😮 Ack!  Our plane flies off-screen! 😮**
+When each sprite of kind **Fire** is created, we want to make it sparkle using effects.
 
 ---
 
-►  To keep your sprite in sight, open ``||scene:Scene||`` and drag 
-``||scene:camera follow sprite [mySprite]||`` to **the end** of the ``||loops:on start||`` container.
+►  From ``||sprites:Sprites||``, drag an
+``||sprites:on created [sprite] of kind [Fire]||`` container into an empty 
+area of the workspace.
 
-💡 Don't forget to play with your project after each step to see the changes your code has made.
+►  Change kind ``||sprites:Player||`` to ``||sprites:Fire||``.
+
 
 ```blocks
-tiles.setTilemap(tilemap`level1`)
-let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-// @highlight
-scene.cameraFollowSprite(mySprite)
-
+sprites.onCreated(SpriteKind.Fire, function (sprite) {
+})
 ```
 
+
+
+## 8. Add the Spark
+
+►  From ``||sprites:Sprites||``, drag
+``||sprites:[mySprite] start [spray] effect||`` into the empty 
+``||sprites:on created [sprite] of kind [Fire]||`` container.
+
+►  Change the effect from ``||sprites:spray||`` to ``||sprites:fire||``. 
+
+►  Make sure the effects attatch to the correct sprite by dragging the 
+``||variables:sprite||`` value block out of the top of the
+``||sprites:on created [sprite] of kind [Fire]||`` container to replace 
+``||variables:mySprite||``.
+
+
+![Borrow the 'sprite' value](/static/skillmap/forest/sprite-effects.gif "It looks better there.")
+
+
+```blocks
+sprites.onCreated(SpriteKind.Fire, function (sprite) {
+    sprites.set_flame_strength(sprite, 10)
+    sprite.startEffect(effects.fire)
+})
+```
+
+---
+
+![Borrow the 'sprite' value](/static/skillmap/forest/sprite-effects.gif "It looks better there.")
 
 
 
 
 ## Finale
 
-👏 **You're off to a great start!** 👏   
+👏 **There you have it!** 👏   
 
 ---
 
-When you're done, click **Finish** to 
-head to the next activity where you'll add the FIRE.
+Check out your flames in the game window, then click **Finish** to 
+head to find out how to put out the fires.
 
 
 
@@ -134,7 +199,14 @@ pxt-status-bar=github:jwunderl/pxt-status-bar
 ```
 
 ```template
+namespace SpriteKind {
+    export const Fire = SpriteKind.create()
+    export const Burnt = SpriteKind.create()
+}
 tiles.setTilemap(tilemap`level1`)
+let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+scene.cameraFollowSprite(mySprite)
 
 ```
 
