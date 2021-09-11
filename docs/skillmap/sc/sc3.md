@@ -61,7 +61,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Try It!
 
-**🕹️ Test yur project 🕹️**
+**🕹️ Test your project 🕹️**
 
 ---
 
