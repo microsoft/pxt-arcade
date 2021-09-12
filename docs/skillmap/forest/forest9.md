@@ -251,11 +251,23 @@ namespace sprites {
 //% block="random spread $myImage"
     //% myImage.shadow=screen_image_picker
     export function random_spread (myImage: Image) {
+
+
+
         for (let value of sprites.allOfKind(SpriteKind.Fire)) {
+
+
+
+
+            // Remember to account for this existing somewhere else
             if (sprites.readDataNumber(value, "life") <= 0) {
                 effects.clearParticles(value)
                 value.destroy()
             }
+
+
+
+
             let list2 = [
             -32,
             -16,
