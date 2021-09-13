@@ -1,17 +1,17 @@
-# Burning Issues
+# Head's Up
 
 
 ## Welcome @showdialog
 
-Nearly 4 out of 5 forest fires are started by humans.  
-In your game, they'll be started by your code. 
+Lots of things affect how quickly fire spreads.  
+In this activity, you'll get the chance to explore how different variables 
+change fire danger levels.
 
-![Random fires starting on the grid](/static/skillmap/forest/forest2.gif "Look what we're about to do today!")
+![Fires are spreading very quickly](/static/skillmap/forest/forest4.gif "Look what we're about to do!")
 
 
 
-
-## 2. Set the Scene 
+## 2. Remember 
 
 **🎮 Try your game 🎮**
 
@@ -21,190 +21,270 @@ Can you remember which lines of code create each action?
 
 
 
-## 3. Thinking ahead
+## 3. Set the Environment
 
-**➰ Again and Again ➰**
+**🌲 How does the land look? 🌲**
 
-We're going to add 4 flames, but thanks to our **repeat loop**, we only need to write
-code once.
+Let's add code to simulate different elements of the environment.
 
 ---
 
-► From the ``||loops:Loops||`` category, drag the
-``||loops:repeat [4] times||`` loop container into **the end** of the 
-``||loops:on start||`` container.
+► First, from the ``||game:Game||`` category, drag ``||game:set health of trees to [6]||``
+into **the top** of the ``||loops: on start||`` container.
 
-► Inside the loop, add ``||variables:set [mySprite2] to sprite [ ] of kind [Player]||``.
 
 
 ```blocks
-tiles.setTilemap(tilemap`level1`)
-mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-scene.cameraFollowSprite(mySprite)
+namespace SpriteKind {
+    export const Water = SpriteKind.create()
+    export const Fire = SpriteKind.create()
+    export const Burnt = SpriteKind.create()
+}
+
 //@highlight
-for (let index = 0; index < 4; index++) {
-    mySprite2 = sprites.create(img`
-. 
-`, SpriteKind.Player)
-}
-```
-
-
-
-
-## 4. Creating fire
-
-
-► In the  ``||variables:set [mySprite2] to sprite [ ] of kind [Player]||`` block, click 
-``||variables:mySprite2||`` and use the dropdown menu to rename the sprite **newFire**.
-
-► Now click the empty grey box and toggle to **My Assets** to select the **fire** sprite.
-
-► Finally, toggle the kind from ``||sprites:Player||`` to  ``||sprites:Fire||``.
-
-
-```blocks
-namespace SpriteKind {
-    export const Fire = SpriteKind.create()
-    export const Burnt = SpriteKind.create()
-    export const Water = SpriteKind.create()
-}
-
+game.set_health_of_trees(6)
 tiles.setTilemap(tilemap`level1`)
-mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-scene.cameraFollowSprite(mySprite)
-
-for (let index = 0; index < 4; index++) {
-  //@highlight
-    newFire = sprites.create(assets.image`fire`, SpriteKind.Fire)
-}
-```
-
-
-
-## 5. So Random
-
-Let's scatter the flames randomly around the map.
-
----
-
-►  From ``||scene:Scene||``, grab
-``||scene:place [mySprite] on top of random [ ]||`` 
-and snap it into **the bottom** of the ``||loops:repeat [4] times||`` loop container.
-
-►  Change ``||variables:mySprite||`` to ``||variables:newFire||``.
-
-►  Click the checkered square and choose the **trees** tile. 
-Now your fires will each start out on top of a random tree.
-
-
-```blocks
-namespace SpriteKind {
-    export const Fire = SpriteKind.create()
-    export const Burnt = SpriteKind.create()
-    export const Water = SpriteKind.create()
-}
-
-tiles.setTilemap(tilemap`level1`)
-mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
 controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)
 
 for (let index = 0; index < 4; index++) {
     newFire = sprites.create(assets.image`fire`, SpriteKind.Fire)
-    //@highlight
     tiles.placeOnRandomTile(newFire, assets.tile`trees`)
 }
-
 ```
 
 
 
-##  Try It
 
-**🕹️ Test it out in the Game Window 🕹️ **
-
----
-
-You should be able to fly around the screen and find all 4 fires!
-But they don't look very lively, do they?
+## 4. Wind and Grass
 
 
-
-## 7. Just My Type
-
-**🔥 Let's create some crackle 🔥**
-
-When each sprite of kind **Fire** is created, we want to make it sparkle using effects.
-
----
-
-►  From ``||sprites:Sprites||``, drag an
-``||sprites:on created [sprite] of kind [Player]||`` container into an empty 
-area of the workspace.
-
-►  Change kind ``||sprites:Player||`` to ``||sprites:Fire||``.
+► Now, grab the blocks that set the **strength of the wind** and the **dryness of the grass** 
+and add them to **the top** of the ``||loops: on start||`` container..
 
 
 ```blocks
 namespace SpriteKind {
+    export const Water = SpriteKind.create()
     export const Fire = SpriteKind.create()
     export const Burnt = SpriteKind.create()
-    export const Water = SpriteKind.create()
 }
-sprites.onCreated(SpriteKind.Fire, function (sprite) {
-})
+
+game.set_health_of_trees(7)
+//@highlight
+game.set_strength_of_wind(3)
+game.set_dryness_of_grass(3)
+tiles.setTilemap(tilemap`level1`)
+let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+scene.cameraFollowSprite(mySprite)
+
+for (let index = 0; index < 4; index++) {
+    newFire = sprites.create(assets.image`fire`, SpriteKind.Fire)
+    tiles.placeOnRandomTile(newFire, assets.tile`trees`)
+}
 ```
 
 
 
-## 8. Add the Spark
 
-►  From ``||sprites:Sprites||``, drag
-``||sprites:[mySprite] start [spray] effect||`` into the empty 
-``||sprites:on created [sprite] of kind [Fire]||`` container.
+## 5. Fires Spreading
 
-►  Change the effect from ``||sprites:spray||`` to ``||sprites:fire||``. 
-
-►  Make sure the effects attatch to the correct sprite by dragging the 
-``||variables:sprite||`` value block out of the top of the
-``||sprites:on created [sprite] of kind [Fire]||`` container to replace 
-``||variables:mySprite||``.
+Now that the environment is set, we can add code that allows the fires to spread.
 
 ---
 
-![Borrow the 'sprite' value](/static/skillmap/forest/sprite-effects.gif "It looks better there.")
+►  From ``||game:Game||``, drop an
+``||game:on game update||`` container into an empty area of your workspace to run 
+code each time the game updates its status.
+
+►  Inside ``||game:on game update||``, add ``||sprites: random spread [ ]||`` and choose 
+the **fire** sprite.
+
+
+```blocks
+game.onUpdate(function () {
+    sprites.random_spread(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . 4 . . . . . 
+. . . . 2 . . . . 4 4 . . . . . 
+. . . . 2 4 . . 4 5 4 . . . . . 
+. . . . . 2 4 d 5 5 4 . . . . . 
+. . . . . 2 5 5 5 5 4 . . . . . 
+. . . . . . 2 5 5 5 5 4 . . . . 
+. . . . . . 2 5 4 2 4 4 . . . . 
+. . . . . . 4 4 . . 2 4 4 . . . 
+. . . . . 4 4 . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`)
+})
+
+```
+
+
+## 6. Test 
+
+**🎮 Test your game 🎮**
+
+---
+
+Is your fire spreading? Does it get out of control too quickly?
+
+
+
+## 7. No Fuel, No Fire
+
+Right now, the fires don't burn through any forest, 
+so they can burn the same spot over and over. 
+When a flame burns out, we want to mark that tile in the forest as charred.
+
+---
+
+►  Drag a ``||sprites: on destroyed [sprite] of kind [Player]||`` container into an 
+empty area of your workspace. Then, change ``||sprites: [Player]||`` to ``||sprites: [Fire]||``.
 
 
 ```blocks
 namespace SpriteKind {
+    export const Water = SpriteKind.create()
     export const Fire = SpriteKind.create()
     export const Burnt = SpriteKind.create()
-    export const Water = SpriteKind.create()
 }
-sprites.onCreated(SpriteKind.Fire, function (sprite) {
-    //@highlight
-    sprite.startEffect(effects.fire)
+
+sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
 })
+
 ```
+
+
+## 8. Burned Trees
+
+Time to change the tile at the location where the sprite was when it burned out.
 
 ---
 
-![Borrow the 'sprite' value](/static/skillmap/forest/sprite-effects.gif "It looks better there.")
+►  Inside the empty ``||sprites: on destroyed [sprite] of kind [Fire]||`` container,
+add a ``||scene:set [ ] at tilemap col [0] row [0]||`` block.
 
+
+►  Click the checkered box to choose the **smoulder** tile.
+
+
+
+```blocks
+namespace SpriteKind {
+    export const Water = SpriteKind.create()
+    export const Fire = SpriteKind.create()
+    export const Burnt = SpriteKind.create()
+}
+
+sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
+    tiles.setTileAt(tiles.getTileLocation(0, 0), assets.tile`smoulder`)
+})
+
+```
+
+
+
+## 9. Sprite Location
+
+►  To get the location of the place where the fire went out, replace 
+``||scene:tilemap col [0] row [0]||`` with ``||tiles:location of [mySprite]||``.
+
+
+►  To get the location for the correct sprite, replace 
+``||variables:mySprite||`` with the ``||variables:sprite||`` 
+value from the outer container.
+
+
+```blocks
+namespace SpriteKind {
+    export const Water = SpriteKind.create()
+    export const Fire = SpriteKind.create()
+    export const Burnt = SpriteKind.create()
+}
+
+sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
+    tiles.setTileAt(tiles.locationOfSprite(sprite), assets.tile`smoulder`)
+})
+
+```
+
+
+
+## 9. Smoke Screen
+
+When the fire overlaps a smouldering tile, the fire should be destroyed instantly.
+
+---
+
+►  Drag the ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
+container into an empty area of the workspace.
+
+►  Change the sprite kind to ``||scene:Fire||`` and change the empty tile 
+to **smoulder**.
+
+
+
+```blocks
+namespace SpriteKind {
+    export const Water = SpriteKind.create()
+    export const Fire = SpriteKind.create()
+    export const Burnt = SpriteKind.create()
+}
+scene.onOverlapTile(SpriteKind.Fire, assets.tile`smoulder`, function (sprite, location) {
+    sprite.destroy()
+})
+```
+
+## 10. Lights Out
+
+
+►  Add a ``||sprites:destroy [mySprite]||`` block into the empty container. 
+
+►  To get the location for the correct sprite, replace 
+``||variables:mySprite||`` with the ``||variables:sprite||`` 
+value from the outer container.
+
+
+
+```blocks
+namespace SpriteKind {
+    export const Water = SpriteKind.create()
+    export const Fire = SpriteKind.create()
+    export const Burnt = SpriteKind.create()
+}
+scene.onOverlapTile(SpriteKind.Fire, assets.tile`smoulder`, function (sprite, location) {
+    sprite.destroy()
+})
+```
+
+
+## 10. Test Again 
+
+**🎮 Test Again 🎮**
+
+---
+
+Your plane should be able to put out the four random fires 
+by spraying water with the (A) button.
 
 
 
 ## Finale
 
-👏 **There you have it!** 👏   
+👏 **Way to go!** 👏   
 
 ---
 
-Check out your flames in the game window, then click **Finish** to 
-head to find out how to put out the fires.
+Once you've put out the fires, click **Finish** to 
+keep moving through the skillmap so you can see how to make your fires spread.
 
 
 
@@ -223,23 +303,94 @@ pxt-status-bar=github:jwunderl/pxt-status-bar
 
 ```template
 namespace SpriteKind {
+    export const Water = SpriteKind.create()
     export const Fire = SpriteKind.create()
     export const Burnt = SpriteKind.create()
-    export const Water = SpriteKind.create()
 }
+
+controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
+    sprites.spray(mySprite, assets.image`water`)
+})
+
+game.set_health_of_trees(7)
+game.set_strength_of_wind(3)
+game.set_dryness_of_grass(3)
 tiles.setTilemap(tilemap`level1`)
 let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
 controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)
 
+for (let index = 0; index < 4; index++) {
+    newFire = sprites.create(assets.image`fire`, SpriteKind.Fire)
+    tiles.placeOnRandomTile(newFire, assets.tile`trees`)
+}
+
+sprites.onCreated(SpriteKind.Fire, function (sprite) {
+    sprite.startEffect(effects.fire)
+    sprites.set_flame_strength(sprite, 10)
+})
+
+sprites.onOverlap(SpriteKind.Water, SpriteKind.Fire, function (sprite, otherSprite) {
+    sprite.destroy()
+    sprites.change_flame_strength_by(otherSprite, -1)
+})
+
+sprites.onOverlap(SpriteKind.Fire, SpriteKind.Fire, function (sprite, otherSprite) {
+    otherSprite.destroy()
+})
+
+scene.onOverlapTile(SpriteKind.Fire, assets.tile`smoulder`, function (sprite, location) {
+    sprite.destroy()
+})
+
+sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
+    tiles.setTileAt(tiles.locationOfSprite(sprite), assets.tile`smoulder`)
+})
+
+game.onUpdate(function () {
+    sprites.random_spread(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . 4 . . . . . 
+. . . . 2 . . . . 4 4 . . . . . 
+. . . . 2 4 . . 4 5 4 . . . . . 
+. . . . . 2 4 d 5 5 4 . . . . . 
+. . . . . 2 5 5 5 5 4 . . . . . 
+. . . . . . 2 5 5 5 5 4 . . . . 
+. . . . . . 2 5 4 2 4 4 . . . . 
+. . . . . . 4 4 . . 2 4 4 . . . 
+. . . . . 4 4 . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`)
+})
+
 ```
+
+
 
 ```customts
 
-let statusbar = statusbars.create(82, 4, StatusBarKind.Health)
+
+  let spreadOptions: number[] = []
+
+  let windSpeed = 5
+  let tinder = 4
+  let dryGrass = 5
+  let spreadTimeBase = 2000
+  let hoseDirection = 270
+  let facing = 0
+  let changeRate = 7
+
+  let statusbar = statusbars.create(82, 4, StatusBarKind.Health)
 statusbar.top = 12
 statusbar.left = 4
 statusbar.max = tiles.tilemapRows() * tiles.tilemapColumns()
+statusbar.value = tiles.tilemapRows() * tiles.tilemapColumns()
+
 let statusLabel = textsprite.create("Healthy Forest", 0, 1)
 statusLabel.setFlag(SpriteFlag.RelativeToCamera, true)
 statusLabel.top = 2
@@ -251,6 +402,17 @@ fireLabel.top = 2
 fireLabel.setMaxFontHeight(4)
 fireLabel.setFlag(SpriteFlag.RelativeToCamera, true)
 
+game.onUpdate(function () {
+    spreadTimeBase = 4500 - (250 * windSpeed + 250 * dryGrass - 100 * tinder)
+    if (sprites.allOfKind(SpriteKind.Fire).length == 0) {
+        info.setScore(statusbar.value / statusbar.max * 100)
+        game.splash("You saved " + convertToText(info.score()) + "% of the forest!")
+        game.over(true)
+    } else {
+        info.setScore(sprites.allOfKind(SpriteKind.Fire).length)
+        statusbar.value = tiles.tilemapRows() * tiles.tilemapColumns() - tiles.getTilesByType(assets.tile`smoulder`).length
+    }
+})
 
 
 
@@ -282,6 +444,133 @@ namespace animation {
     export function loopFrames2(sprite: Sprite, frames: Image[], frameInterval: number, rule: number) {
         characterAnimations.loopFrames(sprite, frames, frameInterval, rule);
     }
+}
+
+
+namespace game {
+
+    //% block="set strength of wind to $num"
+    //% num.defl=3
+    export function set_strength_of_wind (num: number) {
+        windSpeed = num
+    }
+
+    //% block="set health of trees to $num"
+    //% num.defl=7
+    export function set_health_of_trees (num: number) {
+        tinder = num
+    }
+
+    //% block="set dryness of grass to $num"
+    //% num.defl=3
+    export function set_dryness_of_grass (num: number) {
+        dryGrass = num
+    }
+}
+
+namespace sprites {
+
+    //% block="set strength of $thisSprite=variables_get(mySprite) to $num"
+    //% num.defl=10
+    export function set_flame_strength (thisSprite: Sprite, num: number) {
+        sprites.setDataNumber(thisSprite, "life", num)
+        sprites.setDataNumber(thisSprite, "spreadTime",  spreadTimeBase + 1000)
+    }
+
+    //% block="change strength of $thisSprite=variables_get(mySprite) by $num"
+    //% num.defl=-1
+    export function change_flame_strength_by (thisSprite: Sprite, num: number) {
+        sprites.changeDataNumberBy(thisSprite, "life", num)
+        for (let value of sprites.allOfKind(SpriteKind.Fire)) {
+          if (sprites.readDataNumber(value, "life") <= 0) {
+              effects.clearParticles(value)
+              value.destroy()
+          }
+        }
+    }
+
+    //% block="spray from $thisSprite=variables_get(mySprite) using $img=screen_image_picker"
+    //% img.defl=water
+    export function spray (thisSprite: Sprite, img: Image) {
+
+     if (controller.up.isPressed()) {
+            if (controller.left.isPressed()) {
+                facing = 225
+            } else if (controller.right.isPressed()) {
+                facing = 315
+            } else if (controller.down.isPressed()) {
+                
+            } else {
+                facing = 270
+            }
+        } else if (controller.left.isPressed()) {
+            if (controller.right.isPressed()) {
+                
+            } else if (controller.down.isPressed()) {
+                facing = 135
+            } else {
+                facing = 180
+            }
+        } else if (controller.right.isPressed()) {
+            if (controller.down.isPressed()) {
+                facing = 45
+            } else {
+                facing = 0
+            }
+        } else if (controller.down.isPressed()) {
+            facing = 90
+        }
+  
+        if (Math.abs(facing - hoseDirection) < 180) {
+        if (facing < hoseDirection) {
+            hoseDirection += 0 - changeRate
+        } else {
+            hoseDirection += changeRate
+        }
+        } else{
+            if (facing < hoseDirection) {
+                hoseDirection += changeRate
+            } else {
+                hoseDirection += 0 - changeRate
+            }
+            if (hoseDirection < 0) {
+                hoseDirection += 360
+            } else if (hoseDirection > 360) {
+                hoseDirection += -360
+            }
+            hoseDirection = hoseDirection % 360
+        }
+        let waterProj = sprites.createProjectileFromSprite(img, thisSprite,  150 * Math.cos(spriteutils.degreesToRadians(hoseDirection)), 150 * Math.sin(spriteutils.degreesToRadians(hoseDirection)))
+        waterProj.setKind(SpriteKind.Water)
+  }
+
+
+    //% block="random spread $myImage=screen_image_picker"
+    export function random_spread (myImage: Image) {
+
+    for (let value of sprites.allOfKind(SpriteKind.Fire)) {
+            if (sprites.readDataNumber(value, "life") <= 0) {
+                effects.clearParticles(value)
+                value.destroy()
+            }
+
+            let list2 = [-32,-16,0,16,32,16,-16]
+            if (game.runtime() > sprites.readDataNumber(value, "spreadTime")) {
+                sprites.setDataNumber(value, "spreadTime", game.runtime() + randint(spreadTimeBase, spreadTimeBase + 1000))
+                let newFire = sprites.create(myImage, SpriteKind.Fire)
+                newFire.setPosition(value.x + list2._pickRandom(), value.y)
+                sprites.setDataNumber(newFire, "spreadTime", game.runtime() + randint(spreadTimeBase, spreadTimeBase + 1000))
+                if (Math.percentChance(50)) {
+                    newFire.y += list2._pickRandom()
+                }
+                if (tiles.tileIsWall(tiles.locationOfSprite(newFire))) {
+                    newFire.setPosition(value.x, value.y)
+                }
+            }
+        }
+     }
+
+
 }
 ```
 

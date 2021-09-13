@@ -134,11 +134,37 @@ pxt-status-bar=github:jwunderl/pxt-status-bar
 ```
 
 ```template
+namespace SpriteKind {
+    export const Fire = SpriteKind.create()
+    export const Burnt = SpriteKind.create()
+    export const Water = SpriteKind.create()
+}
+
 tiles.setTilemap(tilemap`level1`)
 
 ```
 
 ```customts
+
+let statusbar = statusbars.create(82, 4, StatusBarKind.Health)
+statusbar.top = 12
+statusbar.left = 4
+statusbar.max = tiles.tilemapRows() * tiles.tilemapColumns()
+let statusLabel = textsprite.create("Healthy Forest", 0, 1)
+statusLabel.setFlag(SpriteFlag.RelativeToCamera, true)
+statusLabel.top = 2
+statusLabel.left = 4
+statusbar.setColor(7, 14)
+let fireLabel = textsprite.create("Fires:")
+fireLabel.right = 145
+fireLabel.top = 2
+fireLabel.setMaxFontHeight(4)
+fireLabel.setFlag(SpriteFlag.RelativeToCamera, true)
+
+
+
+
+
 
 namespace animation {
     /**
