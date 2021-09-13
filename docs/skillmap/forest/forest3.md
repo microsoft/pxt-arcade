@@ -1,4 +1,4 @@
-# Burning Issues
+# Fire Fighting
 
 
 ## Welcome @showdialog
@@ -255,10 +255,30 @@ sprites.onCreated(SpriteKind.Fire, function (sprite) {
   let facing = 0
   let changeRate = 7
 
+  let statusbar = statusbars.create(82, 4, StatusBarKind.Health)
+statusbar.top = 12
+statusbar.left = 4
+statusbar.max = tiles.tilemapRows() * tiles.tilemapColumns()
+let statusLabel = textsprite.create("Healthy Forest", 0, 1)
+statusLabel.setFlag(SpriteFlag.RelativeToCamera, true)
+statusLabel.top = 2
+statusLabel.left = 4
+statusbar.setColor(7, 14)
+let fireLabel = textsprite.create("Fires:")
+fireLabel.right = 145
+fireLabel.top = 2
+fireLabel.setMaxFontHeight(4)
+fireLabel.setFlag(SpriteFlag.RelativeToCamera, true)
 
-  forever(function () {
+game.onUpdate(function () {
     spreadTimeBase = 4500 - (250 * windSpeed + 250 * dryGrass - 100 * tinder)
-  })
+
+    if (sprites.allOfKind(SpriteKind.Fire).length > 0) {
+        info.setScore(sprites.allOfKind(SpriteKind.Fire).length)
+        statusbar.value = tiles.tilemapRows() * tiles.tilemapColumns() - tiles.getTilesByType(assets.tile`smoulder`).length
+    }
+})
+
 
 
 
