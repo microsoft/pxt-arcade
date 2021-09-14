@@ -3,11 +3,10 @@
 
 ## Welcome @showdialog
 
-Lots of things affect how quickly fire spreads.  
-In this activity, you'll get the chance to explore how different variables 
-change fire danger levels.
+Computer science is more important to firefighting than ever before. 
+Let's add a heads-up-display (HUD) to help the pilot see what's going on. 
 
-![Fires are spreading very quickly](/static/skillmap/forest/forest4.gif "Look what we're about to do!")
+![A HUD can help keep you informed](/static/skillmap/forest/forest5.gif "Look what we're about to do!")
 
 
 
@@ -21,47 +20,16 @@ Can you remember which lines of code create each action?
 
 
 
-## 3. Set the Environment
+## 3. Look Up
 
-**🌲 How does the land look? 🌲**
-
-Let's add code to simulate different elements of the environment.
+The pilot needs to get information from headquarters. 
+Let's add a HUD to help the pilot see how many fires are burning.
 
 ---
 
-► First, from the ``||game:Game||`` category, drag ``||game:set health of trees to [6]||``
-into **the top** of the ``||loops: on start||`` container.
+► From the ``||hud:HUD||`` category, grab the ``||hud: show fire HUD <Yes>||`` 
+block and add it to **the end** of the ``||loops: on start||`` container.
 
-
-
-```blocks
-namespace SpriteKind {
-    export const Water = SpriteKind.create()
-    export const Fire = SpriteKind.create()
-    export const Burnt = SpriteKind.create()
-}
-
-//@highlight
-game.set_health_of_trees(6)
-tiles.setTilemap(tilemap`level1`)
-let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-scene.cameraFollowSprite(mySprite)
-
-for (let index = 0; index < 4; index++) {
-    newFire = sprites.create(assets.image`fire`, SpriteKind.Fire)
-    tiles.placeOnRandomTile(newFire, assets.tile`trees`)
-}
-```
-
-
-
-
-## 4. Wind and Grass
-
-
-► Now, grab the blocks that set the **strength of the wind** and the **dryness of the grass** 
-and add them to **the top** of the ``||loops: on start||`` container..
 
 
 ```blocks
@@ -72,7 +40,6 @@ namespace SpriteKind {
 }
 
 game.set_health_of_trees(7)
-//@highlight
 game.set_strength_of_wind(3)
 game.set_dryness_of_grass(3)
 tiles.setTilemap(tilemap`level1`)
@@ -84,97 +51,32 @@ for (let index = 0; index < 4; index++) {
     newFire = sprites.create(assets.image`fire`, SpriteKind.Fire)
     tiles.placeOnRandomTile(newFire, assets.tile`trees`)
 }
-```
-
-
-
-
-## 5. Fires Spreading
-
-Now that the environment is set, we can add code that allows the fires to spread.
-
----
-
-►  From ``||game:Game||``, drop an
-``||game:on game update||`` container into an empty area of your workspace to run 
-code each time the game updates its status.
-
-►  Inside ``||game:on game update||``, add ``||sprites: random spread [ ]||`` and choose 
-the **fire** sprite.
-
-
-```blocks
-game.onUpdate(function () {
-    sprites.random_spread(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . 4 . . . . . 
-. . . . 2 . . . . 4 4 . . . . . 
-. . . . 2 4 . . 4 5 4 . . . . . 
-. . . . . 2 4 d 5 5 4 . . . . . 
-. . . . . 2 5 5 5 5 4 . . . . . 
-. . . . . . 2 5 5 5 5 4 . . . . 
-. . . . . . 2 5 4 2 4 4 . . . . 
-. . . . . . 4 4 . . 2 4 4 . . . 
-. . . . . 4 4 . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`)
-})
+//@highlight
+hud.fire_hud(true)
 
 ```
 
 
-## 6. Test 
+## 4. Test 
 
 **🎮 Test your game 🎮**
 
 ---
 
-Is your fire spreading? Does it get out of control too quickly?
+Is it any easier when you know there are still fires left?
 
 
 
-## 7. No Fuel, No Fire
+## 5. Healthy Forests
 
-Right now, the fires don't burn through any forest, 
-so they can burn the same spot over and over. 
-When a flame burns out, we want to mark that tile in the forest as charred.
-
----
-
-►  Drag a ``||sprites: on destroyed [sprite] of kind [Player]||`` container into an 
-empty area of your workspace. Then, change ``||sprites: [Player]||`` to ``||sprites: [Fire]||``.
-
-
-```blocks
-namespace SpriteKind {
-    export const Water = SpriteKind.create()
-    export const Fire = SpriteKind.create()
-    export const Burnt = SpriteKind.create()
-}
-
-sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
-})
-
-```
-
-
-## 8. Burned Trees
-
-Time to change the tile at the location where the sprite was when it burned out.
+The crew needs to know how engulfed the forest is. Add another hud
+to share information on how much of the forest is still healthy.
 
 ---
 
-►  Inside the empty ``||sprites: on destroyed [sprite] of kind [Fire]||`` container,
-add a ``||scene:set [ ] at tilemap col [0] row [0]||`` block.
-
-
-►  Click the checkered box to choose the **smoulder** tile.
-
+► Grab the the ``||hud: show forest HUD <Yes>||`` 
+block and add it to **the end** of the ``||loops: on start||`` container to 
+show how much of the forest remains.
 
 
 ```blocks
@@ -184,107 +86,92 @@ namespace SpriteKind {
     export const Burnt = SpriteKind.create()
 }
 
-sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
-    tiles.setTileAt(tiles.getTileLocation(0, 0), assets.tile`smoulder`)
-})
+game.set_health_of_trees(7)
+game.set_strength_of_wind(3)
+game.set_dryness_of_grass(3)
+tiles.setTilemap(tilemap`level1`)
+let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+scene.cameraFollowSprite(mySprite)
 
-```
-
-
-
-## 9. Sprite Location
-
-►  To get the location of the place where the fire went out, replace 
-``||scene:tilemap col [0] row [0]||`` with ``||tiles:location of [mySprite]||``.
-
-
-►  To get the location for the correct sprite, replace 
-``||variables:mySprite||`` with the ``||variables:sprite||`` 
-value from the outer container.
-
-
-```blocks
-namespace SpriteKind {
-    export const Water = SpriteKind.create()
-    export const Fire = SpriteKind.create()
-    export const Burnt = SpriteKind.create()
+for (let index = 0; index < 4; index++) {
+    newFire = sprites.create(assets.image`fire`, SpriteKind.Fire)
+    tiles.placeOnRandomTile(newFire, assets.tile`trees`)
 }
-
-sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
-    tiles.setTileAt(tiles.locationOfSprite(sprite), assets.tile`smoulder`)
-})
-
+hud.fire_hud(true)
+//@highlight
+hud.forest_hud(true)
 ```
 
 
+## 6. Test Again 
 
-## 9. Smoke Screen
-
-When the fire overlaps a smouldering tile, the fire should be destroyed instantly.
+**🎮 Test your game again 🎮**
 
 ---
 
-►  Drag the ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
-container into an empty area of the workspace.
+Now you can see how quickly you're making progress. 
+But the colors feel a little off. You can fix those in the next step.
 
-►  Change the sprite kind to ``||scene:Fire||`` and change the empty tile 
-to **smoulder**.
+
+
+## 7. Customize
+
+Take a look at the rest of the blocks in the HUD category. Use as many as you want
+to customize your game screen. 
 
 
 
 ```blocks
+
 namespace SpriteKind {
     export const Water = SpriteKind.create()
     export const Fire = SpriteKind.create()
     export const Burnt = SpriteKind.create()
 }
-scene.onOverlapTile(SpriteKind.Fire, assets.tile`smoulder`, function (sprite, location) {
-    sprite.destroy()
-})
-```
 
-## 10. Lights Out
+game.set_health_of_trees(7)
+game.set_strength_of_wind(3)
+game.set_dryness_of_grass(3)
+tiles.setTilemap(tilemap`level1`)
+let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+scene.cameraFollowSprite(mySprite)
 
-
-►  Add a ``||sprites:destroy [mySprite]||`` block into the empty container. 
-
-►  To get the location for the correct sprite, replace 
-``||variables:mySprite||`` with the ``||variables:sprite||`` 
-value from the outer container.
-
-
-
-```blocks
-namespace SpriteKind {
-    export const Water = SpriteKind.create()
-    export const Fire = SpriteKind.create()
-    export const Burnt = SpriteKind.create()
+for (let index = 0; index < 4; index++) {
+    newFire = sprites.create(assets.image`fire`, SpriteKind.Fire)
+    tiles.placeOnRandomTile(newFire, assets.tile`trees`)
 }
-scene.onOverlapTile(SpriteKind.Fire, assets.tile`smoulder`, function (sprite, location) {
-    sprite.destroy()
-})
+hud.fire_hud(true)
+hud.forest_hud(true)
+hud.forest_hud_healthy(3)
+hud.forest_hud_burned(4)
+hud.forest_hud_label ("Forest Remaining")
+hud.fire_hud_label ("Hot:")
 ```
 
 
-## 10. Test Again 
+## 6. Play 
 
-**🎮 Test Again 🎮**
+**🎮 Time to play your game! 🎮**
 
 ---
 
-Your plane should be able to put out the four random fires 
-by spraying water with the (A) button.
+Is the fire spreading too quickly?  Try reducing the wind or the dryness of the grass.  
+
+What happens when you bump the numbers all the way up to 10 or all the way down to 0? 
+
 
 
 
 ## Finale
 
-👏 **Way to go!** 👏   
+👏 **You've done it!** 👏   
 
 ---
 
-Once you've put out the fires, click **Finish** to 
-keep moving through the skillmap so you can see how to make your fires spread.
+Congratulations on your game!  When you're done playing, you can click "Finish" 
+and head back out to the skillmap to share it with friends or save it in your gallery.
 
 
 
@@ -370,10 +257,17 @@ game.onUpdate(function () {
 
 ```
 
+```ghost
+hud.fire_hud(true)
+hud.forest_hud(true)
+hud.forest_hud_healthy(3)
+hud.forest_hud_burned(4)
+hud.forest_hud_label ("Healthy FOrest")
+hud.fire_hud_label ("Nope:")
+```
 
 
 ```customts
-
 
   let spreadOptions: number[] = []
 
@@ -384,13 +278,15 @@ game.onUpdate(function () {
   let hoseDirection = 270
   let facing = 0
   let changeRate = 7
+  let burnedColor = 4
+  let healthyColor = 5
 
-  let statusbar = statusbars.create(82, 4, StatusBarKind.Health)
+let statusbar = statusbars.create(82, 4, StatusBarKind.Health)
 statusbar.top = 12
 statusbar.left = 4
 statusbar.max = tiles.tilemapRows() * tiles.tilemapColumns()
 statusbar.value = tiles.tilemapRows() * tiles.tilemapColumns()
-
+statusbar.setColor(3, 4)
 let statusLabel = textsprite.create("Healthy Forest", 0, 1)
 statusLabel.setFlag(SpriteFlag.RelativeToCamera, true)
 statusLabel.top = 2
@@ -401,23 +297,31 @@ fireLabel.right = 145
 fireLabel.top = 2
 fireLabel.setMaxFontHeight(4)
 fireLabel.setFlag(SpriteFlag.RelativeToCamera, true)
+statusLabel.setFlag(SpriteFlag.Invisible, true)
+statusbar.setFlag(SpriteFlag.Invisible, true)
+fireLabel.setFlag(SpriteFlag.Invisible, true)
+info.showScore(false)
+
+
 
 game.onUpdate(function () {
+    statusbar.max = tiles.tilemapRows() * tiles.tilemapColumns()
+    statusbar.value = tiles.tilemapRows() * tiles.tilemapColumns() - tiles.getTilesByType(assets.tile`smoulder`).length
     spreadTimeBase = 4500 - (250 * windSpeed + 250 * dryGrass - 100 * tinder)
-    if (sprites.allOfKind(SpriteKind.Fire).length == 0) {
+    if (sprites.allOfKind(SpriteKind.Fire).length <= 0) {
+        hud.fire_hud(false)
         info.setScore(statusbar.value / statusbar.max * 100)
         game.splash("You saved " + convertToText(info.score()) + "% of the forest!")
         game.over(true)
     } else {
         info.setScore(sprites.allOfKind(SpriteKind.Fire).length)
-        statusbar.value = tiles.tilemapRows() * tiles.tilemapColumns() - tiles.getTilesByType(assets.tile`smoulder`).length
     }
 })
 
 
 
 namespace animation {
-    /**
+    /*
      * Loops the passed frames on the sprite at the given interval whenever
      * the specified rule is true for that sprite.
      *
@@ -449,18 +353,30 @@ namespace animation {
 
 namespace game {
 
+    /*
+     * Set the strength of your wind.
+     * Higher numbers spread fire faster.
+     */
     //% block="set strength of wind to $num"
     //% num.defl=3
     export function set_strength_of_wind (num: number) {
         windSpeed = num
     }
 
+    /*
+     * Set the health of your trees.
+     * Lower numbers spread fire faster.
+     */
     //% block="set health of trees to $num"
     //% num.defl=7
     export function set_health_of_trees (num: number) {
         tinder = num
     }
 
+    /*
+     * Set how dry your grass is.
+     * Higher numbers spread fire faster.
+     */
     //% block="set dryness of grass to $num"
     //% num.defl=3
     export function set_dryness_of_grass (num: number) {
@@ -468,8 +384,99 @@ namespace game {
     }
 }
 
+//% color="#09282d" icon="\uf1e5"
+//% block="HUD"
+namespace hud {    
+
+    /*
+     * Show or hide the current number of burning fires.
+     */
+    //% block="show fire HUD $answer"
+    //% answer.shadow="toggleYesNo"
+    //% answer.defl=true
+    export function fire_hud (answer: boolean) {
+
+        if (answer) {
+            fireLabel.setFlag(SpriteFlag.Invisible, false)
+            info.showScore(true)
+        } else {
+            fireLabel.setFlag(SpriteFlag.Invisible, true)
+            info.showScore(false)
+        }
+
+    }
+
+    /*
+     * Show or hide how much of the forest has burned.
+     */
+   //% block="show forest HUD $answer"
+    //% answer.shadow="toggleYesNo"
+    //% answer.defl=true
+    export function forest_hud (answer: boolean) {
+
+        if (answer) {
+            statusLabel.setFlag(SpriteFlag.Invisible, false)
+            statusbar.setFlag(SpriteFlag.Invisible, false)
+        
+        } else {
+            statusLabel.setFlag(SpriteFlag.Invisible, true)
+            statusbar.setFlag(SpriteFlag.Invisible, true)
+        }
+
+    }
+
+
+    /*
+     * Set the color for remaining live forest
+     */
+    //% block="set color of healthy forest meter to $color"
+    //% color.shadow="colorNumberPicker"
+    //% color.defl=2
+    export function forest_hud_healthy (color: number) {
+        healthyColor = color
+        statusbar.setColor(burnedColor, color)
+    }
+
+
+    /*
+     * Set the color for burned forest
+     */
+    //% block="set color of burned forest meter to $color"
+    //% color.shadow="colorNumberPicker"
+    //% color.defl=3
+    export function forest_hud_burned (color: number) {
+        burnedColor = color
+        statusbar.setColor(color, healthyColor)
+    }
+
+
+    /*
+     * Set the label for the forest HUD
+     */
+    //% block="set forest HUD label to $name"
+    //% name.defl="Healthy Forest"
+    export function forest_hud_label (name: string) {
+        statusLabel.setText(name)
+    }
+
+
+    /*
+     * Set the label for the fire-counting HUD
+     */
+    //% block="set fire HUD label to $name"
+    //% name.defl="Fires:"
+    export function fire_hud_label (name: string) {
+        fireLabel.setText(name)
+    }
+    
+
+}
+
 namespace sprites {
 
+    /*
+     * Set the number of "lives" for your sprite.
+     */
     //% block="set strength of $thisSprite=variables_get(mySprite) to $num"
     //% num.defl=10
     export function set_flame_strength (thisSprite: Sprite, num: number) {
@@ -477,6 +484,9 @@ namespace sprites {
         sprites.setDataNumber(thisSprite, "spreadTime",  spreadTimeBase + 1000)
     }
 
+    /*
+     * Add or remove "lives" from your sprite.
+     */
     //% block="change strength of $thisSprite=variables_get(mySprite) by $num"
     //% num.defl=-1
     export function change_flame_strength_by (thisSprite: Sprite, num: number) {
@@ -489,6 +499,9 @@ namespace sprites {
         }
     }
 
+    /*
+     * Choose a sprite to "spray" an image (in sprite form.)
+     */
     //% block="spray from $thisSprite=variables_get(mySprite) using $img=screen_image_picker"
     //% img.defl=water
     export function spray (thisSprite: Sprite, img: Image) {
@@ -544,7 +557,10 @@ namespace sprites {
         waterProj.setKind(SpriteKind.Water)
   }
 
-
+    /*
+     * Spread current fires according to wind speed, 
+     * dryness of grass, and health of trees.
+     */
     //% block="random spread $myImage=screen_image_picker"
     export function random_spread (myImage: Image) {
 
@@ -569,7 +585,6 @@ namespace sprites {
             }
         }
      }
-
 
 }
 ```

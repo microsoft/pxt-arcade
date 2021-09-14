@@ -294,8 +294,36 @@ namespace sprites {
 
 
 
-
 }
+
+
+
+
+
+    /*
+     * Set the color for remaining live forest
+     */
+    //% block="set color of healthy forest to $color"
+    //% color.shadow="colorNumberPicker"
+    export function forest_hud_healthy (color: number) {
+        healthyColor = color
+        statusbar.setColor(healthyColor, burnedColor)
+    }
+
+    /*
+     * Set the color for burned forest
+     */
+    //% block="set color of burned forest to $color"
+    //% color.shadow="colorNumberPicker"
+    export function forest_hud_burned (color: number) {
+        burnedColor = color
+        statusbar.setColor(healthyColor, burnedColor)
+    }
+
+
+
+
+
 ```
 
 

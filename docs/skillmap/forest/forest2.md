@@ -97,7 +97,7 @@ and snap it into **the bottom** of the ``||loops:repeat [4] times||`` loop conta
 ►  Change ``||variables:mySprite||`` to ``||variables:newFire||``.
 
 ►  Click the checkered square and choose the **trees** tile. 
-Now your fires will each start out on top of a random tree.
+Now your fires will each start on top of a random tree.
 
 
 ```blocks
@@ -250,12 +250,16 @@ fireLabel.right = 145
 fireLabel.top = 2
 fireLabel.setMaxFontHeight(4)
 fireLabel.setFlag(SpriteFlag.RelativeToCamera, true)
+statusLabel.setFlag(SpriteFlag.Invisible, true)
+statusbar.setFlag(SpriteFlag.Invisible, true)
+fireLabel.setFlag(SpriteFlag.Invisible, true)
+info.showScore(false)
 
 
 
 
 namespace animation {
-    /**
+    /*
      * Loops the passed frames on the sprite at the given interval whenever
      * the specified rule is true for that sprite.
      *
