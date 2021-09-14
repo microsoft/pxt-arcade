@@ -15,8 +15,8 @@ This setup gives you a local version of the editor and the ability to load packa
 
 ### Setup
 
-* install [Node.js 8+](https://nodejs.org/en/download/)
-* clone https://github.com/microsoft/pxt-arcade to ``pxt-arcade`` folder. For example, from a git bash,
+* install [Node.js 8+](https://nodejs.org/en/download/) (you might need to restart afterwards so all your environment variables are applied correctly)
+* clone https://github.com/microsoft/pxt-arcade to ``pxt-arcade`` folder. For example, from a git bash
 
 ```
 git clone https://github.com/microsoft/pxt-arcade
@@ -103,8 +103,20 @@ a package of images.
 These instructions allow you to test changes to pxt-core and pxt-common-packages. They are more involved
 as you need to clone and link 3 repos.
 
-* install Node.js 8+
+* install[Node.js 8+](https://nodejs.org/en/download/) (you might need to restart afterwards so all your environment variables are applied correctly)
 * (optional) install [Visual Studio Code](https://code.visualstudio.com/)
+
+### Automated setup
+* Download [setup.cmd](https://github.com/microsoft/pxt-arcade/blob/master/setup.cmd) to your local machine and place it on the folder you'd like to do your development work
+* Run the following command
+
+```cmd
+setup.cmd /firsttime
+```
+
+This call should automatically do the steps outlined in the manual setup and will clone and link all three repos.
+
+### Manual setup
 * install the **pxt** command line tool
 
 ```
@@ -164,6 +176,14 @@ and in a seperate terminal from `pxt serve` and in the pxt/ folder, run:
 ```
 gulp watch
 ```
+
+### Using setup.cmd
+
+Instead of having to go to each repo, pull and link each one individually you may now use the `setup.cmd` file. The usage is outlined as follows with these options: \
+     `/firsttime`           Sets up developer environment - will clone 3 repos (pxt, pxt-arcade, and pxt-common-packages) and then run /link option \
+     `/pull`                Does a git pull on 3 repos (pxt, pxt-arcade, and pxt-common-packages) \
+     `/link`                Runs npm install and links the 3 repos \
+     `/run`                 Runs local server and watches for changes using gulp
 
 ## Viewing documents
 

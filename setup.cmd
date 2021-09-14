@@ -19,7 +19,6 @@ if /I "%1" == "/firsttime"        set "OptFirst=true" && set "OptLink=true"     
 if /I "%1" == "/pull"             set "OptPull=true"                                                   && shift && goto :ParseArguments
 if /I "%1" == "/link"             set "OptLink=true"                                                   && shift && goto :ParseArguments
 if /I "%1" == "/run"              set "OptRun=true"                                                    && shift && goto :ParseArguments
-if /I "%1" == "/plr"              set "OptPull=true" && set "OptLink=true" && set "OptRun=true"        && shift && goto :ParseArguments
 
 call :Usage && exit /b 1
 :DoneParsing
@@ -78,5 +77,4 @@ echo     /firsttime           Sets up developer environment - will clone 3 repos
 echo     /pull                Does a git pull on 3 repos (pxt, pxt-arcade, and pxt-common-packages)
 echo     /link                Runs npm install and links the 3 repos
 echo     /run                 Runs local server and watches for changes
-echo     /plr                 An alias to run /pull /link /run
 goto :eof
