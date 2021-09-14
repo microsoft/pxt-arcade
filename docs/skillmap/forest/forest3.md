@@ -51,7 +51,7 @@ controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
 ► From ``||sprites:Sprites||``, grab ``||sprites:spray from [mySprite] using [ ]||`` and snap it into the empty
 ``||controller:on [A] button [repeat]||`` container.
 
-► Click the empty grey box to choose the **water** sprite that's shaped like a blue +.
+► Click the empty grey box and toggle to **My Assets** to choose the **water** sprite that's shaped like a blue +.
 
 
 ```blocks
@@ -102,7 +102,8 @@ sprites.onCreated(SpriteKind.Fire, function (sprite) {
 
 ## 7. Drench It
 
-Now that each new fire has a strength of 10, we can weaken it each time it's hit by water.
+Now that each new fire has a strength of 10, 
+we can weaken them each time they are hit by water.
 
 ---
 
@@ -255,10 +256,12 @@ sprites.onCreated(SpriteKind.Fire, function (sprite) {
   let facing = 0
   let changeRate = 7
 
-  let statusbar = statusbars.create(82, 4, StatusBarKind.Health)
+let statusbar = statusbars.create(82, 4, StatusBarKind.Health)
 statusbar.top = 12
 statusbar.left = 4
 statusbar.max = tiles.tilemapRows() * tiles.tilemapColumns()
+statusbar.value = tiles.tilemapRows() * tiles.tilemapColumns()
+
 let statusLabel = textsprite.create("Healthy Forest", 0, 1)
 statusLabel.setFlag(SpriteFlag.RelativeToCamera, true)
 statusLabel.top = 2
@@ -269,21 +272,20 @@ fireLabel.right = 145
 fireLabel.top = 2
 fireLabel.setMaxFontHeight(4)
 fireLabel.setFlag(SpriteFlag.RelativeToCamera, true)
+statusLabel.setFlag(SpriteFlag.Invisible, true)
+statusbar.setFlag(SpriteFlag.Invisible, true)
+fireLabel.setFlag(SpriteFlag.Invisible, true)
+info.showScore(false)
 
 game.onUpdate(function () {
     spreadTimeBase = 4500 - (250 * windSpeed + 250 * dryGrass - 100 * tinder)
-
-    if (sprites.allOfKind(SpriteKind.Fire).length > 0) {
-        info.setScore(sprites.allOfKind(SpriteKind.Fire).length)
-        statusbar.value = tiles.tilemapRows() * tiles.tilemapColumns() - tiles.getTilesByType(assets.tile`smoulder`).length
-    }
 })
 
 
 
 
 namespace animation {
-    /**
+    /*
      * Loops the passed frames on the sprite at the given interval whenever
      * the specified rule is true for that sprite.
      *
@@ -314,7 +316,9 @@ namespace animation {
 
 
 namespace sprites {
-
+    /*
+     * Set how many "lives" a sprite has
+     */
     //% block="set strength of $thisSprite=variables_get(mySprite) to $num"
     //% num.defl=10
     export function set_flame_strength (thisSprite: Sprite, num: number) {
@@ -322,6 +326,10 @@ namespace sprites {
         sprites.setDataNumber(thisSprite, "spreadTime",  spreadTimeBase + 1000)
     }
 
+
+    /*
+     * Add or subtract "lives" from a sprite
+     */
     //% block="change strength of $thisSprite=variables_get(mySprite) by $num"
     //% num.defl=-1
     export function change_flame_strength_by (thisSprite: Sprite, num: number) {
@@ -334,6 +342,9 @@ namespace sprites {
         }
     }
 
+    /*
+     * Choose a sprite to "spray" an image (in sprite form.)
+     */
     //% block="spray from $thisSprite=variables_get(mySprite) using $img=screen_image_picker"
     //% img.defl=water
     export function spray (thisSprite: Sprite, img: Image) {
@@ -387,11 +398,6 @@ namespace sprites {
         }
         let waterProj = sprites.createProjectileFromSprite(img, thisSprite,  150 * Math.cos(spriteutils.degreesToRadians(hoseDirection)), 150 * Math.sin(spriteutils.degreesToRadians(hoseDirection)))
         waterProj.setKind(SpriteKind.Water)
-
-
-
-
-
   }
 }
 ```

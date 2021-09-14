@@ -160,14 +160,15 @@ fireLabel.right = 145
 fireLabel.top = 2
 fireLabel.setMaxFontHeight(4)
 fireLabel.setFlag(SpriteFlag.RelativeToCamera, true)
-
-
-
+statusLabel.setFlag(SpriteFlag.Invisible, true)
+statusbar.setFlag(SpriteFlag.Invisible, true)
+fireLabel.setFlag(SpriteFlag.Invisible, true)
+info.showScore(false)
 
 
 
 namespace animation {
-    /**
+    /*
      * Loops the passed frames on the sprite at the given interval whenever
      * the specified rule is true for that sprite.
      *
