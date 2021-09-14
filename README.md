@@ -179,12 +179,12 @@ gulp watch
 
 ### Using setup.cmd
 
-Instead of having to go to each repo, pull and link each one individually you may now use the `setup.cmd` file. The usage is outlined as follows:
-   Setup options:
-     /firsttime           Sets up developer environment - will clone 3 repos (pxt, pxt-arcade, and pxt-common-packages) and then run /link option 
-     /pull                Does a git pull on 3 repos (pxt, pxt-arcade, and pxt-common-packages)
-     /link                Runs npm install and links the 3 repos
-     /run                 Runs local server and watches for changes using gulp
+Instead of having to go to each repo, pull and link each one individually you may now use the `setup.cmd` file. The usage is outlined as follows: \
+   Setup options: \
+     /firsttime           Sets up developer environment - will clone 3 repos (pxt, pxt-arcade, and pxt-common-packages) and then run /link option \
+     /pull                Does a git pull on 3 repos (pxt, pxt-arcade, and pxt-common-packages) \
+     /link                Runs npm install and links the 3 repos \
+     /run                 Runs local server and watches for changes using gulp \
 
 ## Viewing documents
 
