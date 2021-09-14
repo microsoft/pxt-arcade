@@ -61,7 +61,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Try It!
 
-**🕹️ Test yur project 🕹️**
+**🕹️ Test your project 🕹️**
 
 ---
 
@@ -69,7 +69,7 @@ Try jumping while you press the (A) button. Your sprite should continue to hover
 
 
 
-## Step 5 - Adding Block Tiles
+## Step 6 - Adding Block Tiles
 
 **Where did my wall go??**  
 The walls are great, but it's hard to remember where they are. Let's add special tiles over them so we can find them again later.  
@@ -91,7 +91,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 6 - Adding Block Tiles, Cont.
+## Step 7 - Adding Block Tiles, Cont.
 
 
 ► Make sure the new tile ends up in the right place by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location [left] of [location]||`` in to replace  ``||scene:tilemap col [0] row [0]||``.

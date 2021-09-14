@@ -261,26 +261,6 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 
 ```
 
-```ghost
-
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy()
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    animation.runImageAnimation(
-    mySprite,
-    assets.animation`damage`,
-    200,
-    false
-    )
-    gravity_jump(sprite)
-    scene.cameraShake(4, 500)
-    tiles.placeOnRandomTile(otherSprite, assets.tile`rubble`)
-    info.changeLifeBy(-1)
-})
-
-```
-
 
 
 ```customts
@@ -292,7 +272,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     shang
 }
 
-nnamespace sprites {
+namespace sprites {
 
      /**
      * Allow your sprite to jump and come back to the ground

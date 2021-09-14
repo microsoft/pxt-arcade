@@ -1,122 +1,205 @@
-# Save the Forest
+# Fire Fighting
 
 
 ## Welcome @showdialog
 
-Welcome to MakeCode Arcade!
+When a fire gets large enough, it can create its own weather system and bring its own rain. 
+Until that happens, teams rely on firetrucks and aircraft to keep wildfires from getting out of control.
 
-The last couple of summers have been some of the hottest on record and the forest service needs you to help them keep fires under control.
-
-Let's start by setting up your plane to make sure you can get everywhere you need to be.
-
-![Get Flying](/static/skillmap/forest/forest1.gif "Look what we're about to do today!")
+![Plane spraying water on fires](/static/skillmap/forest/forest3.gif "Look what we're about to do!")
 
 
 
 
-## 2. Set the Scene 
+## 2. Remember 
 
-**🌲 Welcome to the Forest 🌲**
+**🎮 Try your game 🎮**
 
 ---
 
-► The [__*tilemap*__](#tiled "a scene or world created using predefined tiles") has already been set 
-to a forest deep in the Australian bush.  
-
-💡 Notice that the ``||scene:set tilemap to [ ]||`` block has been added to the ``||loops: on start||`` container so it 
-loads as soon as the activity starts.
+Can you remember which lines of code create each action?
 
 
 
-## 3. A Plane!
+## 3. Spray Away
 
-**🛫 We need a hero 🛬**
+**💧 Drench that Fire 💧**
 
-Choose a plane [__*sprite*__](#sprote "a 2-D image that moves on the screen") 
-to fly around the screen. 
+Let's add code that sprays water when you press the (A) button.
 
 ---
 
-► From the ``||sprites:Sprites||`` category, drag 
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
-to **the end** of the ``||loops:on start||`` container.
+► First, from the ``||controller:Controller||`` category, drag the
+``||controller:on [A] button [pressed]||`` container into an empty 
+area in your workspace.
 
-► To choose your plane, click the empty grey box, then toggle to **My Assets** 
-and choose the **Fire Plane Right** sprite.
+► Change ``||controller:pressed||`` to ``||controller:repeat||`` to keep the water 
+spraying as you hold the (A) button down.
 
 
 ```blocks
-tiles.setTilemap(tilemap`level1`)
-// @highlight
-let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
+})
 ```
 
 
 
 
-## 4. Learn to Fly
+## 4. Choose Your Spray
 
-**↔️ Time to get the sprite moving ↔️**
 
----
+► From ``||sprites:Sprites||``, grab ``||sprites:spray from [mySprite] using [ ]||`` and snap it into the empty
+``||controller:on [A] button [repeat]||`` container.
 
-► From ``||controller:Controller||``, drag 
-``||controller:move [mySprite] with buttons ⊕||``   
-to **the end** of the ``||loops:on start||`` container.
+► Click the empty grey box to choose the **water** sprite that's shaped like a blue +.
 
 
 ```blocks
-tiles.setTilemap(tilemap`level1`)
-let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
-// @highlight
-controller.moveSprite(mySprite)
+controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
+    sprites.spray(mySprite, assets.image`water`)
+})
 ```
 
+## 5. Test 
 
-## 5. Try It
-
-**🕹️ Test it out in the Game Window 🕹️ **
-
----
-
-Your sprite should move around the forest as you move the joypad.   
-You can also use the arrow keys on your keyboard!
-
-
-
-
-## 6. Follow with Camera
-
-**😮 Ack!  Our plane flies off-screen! 😮**
+**🎮 Test your game 🎮**
 
 ---
 
-►  To keep your sprite in sight, open ``||scene:Scene||`` and drag 
-``||scene:camera follow sprite [mySprite]||`` to **the end** of the ``||loops:on start||`` container.
+How does it work? Can you spray the fire with water? What happens?
 
-💡 Don't forget to play with your project after each step to see the changes your code has made.
+
+## 6. Waterproof
+
+Before the water can weaken your fire, you have to set the fire's strength.
+
+---
+
+►  From ``||sprites:Sprites||``, snap
+``||sprites:set strength of [mySprite] to [10]||`` 
+into the ``||sprites:on created [sprite] of kind [Fire]||`` container already in your workspace.
+
+►  Grab the ``||variables:sprite||`` value block from the container and use it to replace
+the ``||variables:mySprite||`` value block.
+
 
 ```blocks
-tiles.setTilemap(tilemap`level1`)
-let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-// @highlight
-scene.cameraFollowSprite(mySprite)
+namespace SpriteKind {
+    export const Water = SpriteKind.create()
+    export const Fire = SpriteKind.create()
+    export const Burnt = SpriteKind.create()
+}
+
+sprites.onCreated(SpriteKind.Fire, function (sprite) {
+    sprite.startEffect(effects.fire)
+    sprites.set_flame_strength(sprite, 10)
+
+})
 
 ```
 
 
+
+## 7. Drench It
+
+Now that each new fire has a strength of 10, we can weaken it each time it's hit by water.
+
+---
+
+►  From ``||sprites:Sprites||``, drag an
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` container into an empty 
+area of the workspace.
+
+►  Change the first kind to ``||sprites:Water||`` and the second kind to ``||sprites:Fire||``.
+
+
+```blocks
+namespace SpriteKind {
+    export const Water = SpriteKind.create()
+    export const Fire = SpriteKind.create()
+    export const Burnt = SpriteKind.create()
+}
+
+sprites.onOverlap(SpriteKind.Water, SpriteKind.Fire, function (sprite, otherSprite) {
+})
+```
+
+
+
+## 8. Fire Eats Water
+
+When a water sprite hits the fire, that water sprite needs to be destroyed. 
+
+---
+
+►  Snap ``||sprites:destroy [mySprite]||`` into the empty container.
+
+►  To make sure your code destroys the **Water** sprite, grab the ``||variables:sprite||`` 
+value block from the container and use it to replace ``||variables:mySprite||``.  
+
+
+
+```blocks
+namespace SpriteKind {
+    export const Water = SpriteKind.create()
+    export const Fire = SpriteKind.create()
+    export const Burnt = SpriteKind.create()
+}
+
+sprites.onOverlap(SpriteKind.Water, SpriteKind.Fire, function (sprite, otherSprite) {
+    sprite.destroy()
+})
+```
+
+
+
+## 9. Water Weakens Fire
+
+When a water sprite hits the fire, the fire needs to decrease in strength by 1.
+
+---
+
+►  Snap ``||sprites:change strength of [mySprite] by [-1]||`` into **the end** 
+of the **on overlaps** container.
+
+►  To make sure your code weakens the **Fire** sprite, 
+grab the ``||variables:otherSprite||`` value block from the 
+container and use it to replace ``||variables:mySprite||``.  
+
+
+
+```blocks
+namespace SpriteKind {
+    export const Water = SpriteKind.create()
+    export const Fire = SpriteKind.create()
+    export const Burnt = SpriteKind.create()
+}
+
+sprites.onOverlap(SpriteKind.Water, SpriteKind.Fire, function (sprite, otherSprite) {
+    sprite.destroy()
+    sprites.change_flame_strength_by(otherSprite, -1)
+})
+```
+
+## 10. Test Again 
+
+**🎮 Test your game 🎮**
+
+---
+
+Your plane should be able to put out the four random fires 
+by spraying water with the (A) button.
 
 
 
 ## Finale
 
-👏 **You're off to a great start!** 👏   
+👏 **Way to go!** 👏   
 
 ---
 
-When you're done, click **Finish** to 
-head to the next activity where you'll add the FIRE.
+Once you've put out the fires, click **Finish** to 
+keep moving through the skillmap so you can see how to make your fires spread.
 
 
 
@@ -135,18 +218,44 @@ pxt-status-bar=github:jwunderl/pxt-status-bar
 
 ```template
 namespace SpriteKind {
+    export const Water = SpriteKind.create()
     export const Fire = SpriteKind.create()
     export const Burnt = SpriteKind.create()
-    export const Water = SpriteKind.create()
 }
 
 tiles.setTilemap(tilemap`level1`)
+let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+scene.cameraFollowSprite(mySprite)
+
+for (let index = 0; index < 4; index++) {
+    newFire = sprites.create(assets.image`fire`, SpriteKind.Fire)
+    //@highlight
+    tiles.placeOnRandomTile(newFire, assets.tile`trees`)
+}
+
+sprites.onCreated(SpriteKind.Fire, function (sprite) {
+    sprite.startEffect(effects.fire)
+})
 
 ```
 
+
+
 ```customts
 
-let statusbar = statusbars.create(82, 4, StatusBarKind.Health)
+
+  let spreadOptions: number[] = []
+
+  let windSpeed = 5
+  let tinder = 4
+  let dryGrass = 5
+  let spreadTimeBase = 2000
+  let hoseDirection = 270
+  let facing = 0
+  let changeRate = 7
+
+  let statusbar = statusbars.create(82, 4, StatusBarKind.Health)
 statusbar.top = 12
 statusbar.left = 4
 statusbar.max = tiles.tilemapRows() * tiles.tilemapColumns()
@@ -161,7 +270,14 @@ fireLabel.top = 2
 fireLabel.setMaxFontHeight(4)
 fireLabel.setFlag(SpriteFlag.RelativeToCamera, true)
 
+game.onUpdate(function () {
+    spreadTimeBase = 4500 - (250 * windSpeed + 250 * dryGrass - 100 * tinder)
 
+    if (sprites.allOfKind(SpriteKind.Fire).length > 0) {
+        info.setScore(sprites.allOfKind(SpriteKind.Fire).length)
+        statusbar.value = tiles.tilemapRows() * tiles.tilemapColumns() - tiles.getTilesByType(assets.tile`smoulder`).length
+    }
+})
 
 
 
@@ -194,6 +310,89 @@ namespace animation {
     export function loopFrames2(sprite: Sprite, frames: Image[], frameInterval: number, rule: number) {
         characterAnimations.loopFrames(sprite, frames, frameInterval, rule);
     }
+}
+
+
+namespace sprites {
+
+    //% block="set strength of $thisSprite=variables_get(mySprite) to $num"
+    //% num.defl=10
+    export function set_flame_strength (thisSprite: Sprite, num: number) {
+        sprites.setDataNumber(thisSprite, "life", num)
+        sprites.setDataNumber(thisSprite, "spreadTime",  spreadTimeBase + 1000)
+    }
+
+    //% block="change strength of $thisSprite=variables_get(mySprite) by $num"
+    //% num.defl=-1
+    export function change_flame_strength_by (thisSprite: Sprite, num: number) {
+        sprites.changeDataNumberBy(thisSprite, "life", num)
+        for (let value of sprites.allOfKind(SpriteKind.Fire)) {
+          if (sprites.readDataNumber(value, "life") <= 0) {
+              effects.clearParticles(value)
+              value.destroy()
+          }
+        }
+    }
+
+    //% block="spray from $thisSprite=variables_get(mySprite) using $img=screen_image_picker"
+    //% img.defl=water
+    export function spray (thisSprite: Sprite, img: Image) {
+
+     if (controller.up.isPressed()) {
+            if (controller.left.isPressed()) {
+                facing = 225
+            } else if (controller.right.isPressed()) {
+                facing = 315
+            } else if (controller.down.isPressed()) {
+                
+            } else {
+                facing = 270
+            }
+        } else if (controller.left.isPressed()) {
+            if (controller.right.isPressed()) {
+                
+            } else if (controller.down.isPressed()) {
+                facing = 135
+            } else {
+                facing = 180
+            }
+        } else if (controller.right.isPressed()) {
+            if (controller.down.isPressed()) {
+                facing = 45
+            } else {
+                facing = 0
+            }
+        } else if (controller.down.isPressed()) {
+            facing = 90
+        }
+  
+        if (Math.abs(facing - hoseDirection) < 180) {
+        if (facing < hoseDirection) {
+            hoseDirection += 0 - changeRate
+        } else {
+            hoseDirection += changeRate
+        }
+        } else{
+            if (facing < hoseDirection) {
+                hoseDirection += changeRate
+            } else {
+                hoseDirection += 0 - changeRate
+            }
+            if (hoseDirection < 0) {
+                hoseDirection += 360
+            } else if (hoseDirection > 360) {
+                hoseDirection += -360
+            }
+            hoseDirection = hoseDirection % 360
+        }
+        let waterProj = sprites.createProjectileFromSprite(img, thisSprite,  150 * Math.cos(spriteutils.degreesToRadians(hoseDirection)), 150 * Math.sin(spriteutils.degreesToRadians(hoseDirection)))
+        waterProj.setKind(SpriteKind.Water)
+
+
+
+
+
+  }
 }
 ```
 

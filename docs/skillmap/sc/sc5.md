@@ -48,7 +48,7 @@ Let's add an animation when our sprite moves right.
 
 
 
-## Step 5 - Walk Left
+## Step 4 - Walk Left
 
 **⬅️ And Left ⬅️**
 
@@ -84,7 +84,7 @@ Let's add an animation when our sprite moves right.
 Does your hero walk right when you click the right arrow? Do they walk left with the left arrow?  What happens when they jump?
 
 
-## Step 9 - Jump!
+## Step 6 - Jump!
 
 Now we need an animation that runs when your hero jumps!
 
