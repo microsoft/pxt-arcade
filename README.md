@@ -103,7 +103,7 @@ a package of images.
 These instructions allow you to test changes to pxt-core and pxt-common-packages. They are more involved
 as you need to clone and link 3 repos.
 
-* install[Node.js 8+](https://nodejs.org/en/download/) (you might need to restart afterwards so all your environment variables are applied correctly)
+* install [Node.js 8+](https://nodejs.org/en/download/) (you might need to restart afterwards so all your environment variables are applied correctly)
 * (optional) install [Visual Studio Code](https://code.visualstudio.com/)
 
 ### Automated setup
