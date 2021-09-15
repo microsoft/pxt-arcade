@@ -142,7 +142,8 @@
     },
     "cacheusedblocksdirs": [
         "skillmap/space",
-        "skillmap/platformer"
+        "skillmap/platformer",
+        "skillmap/sc-packaged"
     ],
     "compile": {
         "useUF2": true,

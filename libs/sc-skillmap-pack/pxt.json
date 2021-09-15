@@ -2,7 +2,11 @@
     "name": "sc-skillmap-pack",
     "version": "0.0.0",
     "description": "",
-    "dependencies": {"device": "*"},
+    "dependencies": {
+        "device": "file:../device",
+        "stable-profile-life": "file:../stable-profile-life",
+        "stable-character-animations": "file:../stable-character-animations"
+    },
     "files": ["main.ts"],
     "hidden": true,
     "testFiles": []

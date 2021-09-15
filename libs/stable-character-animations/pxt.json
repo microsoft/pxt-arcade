@@ -2,9 +2,7 @@
     "name": "stable-character-animations",
     "version": "0.0.2",
     "description": "",
-    "dependencies": {
-        "device": "*"
-    },
+    "dependencies": {"device": "file:../device"},
     "files": ["main.ts"],
     "hidden": true,
     "testFiles": []

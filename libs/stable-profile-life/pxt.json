@@ -2,7 +2,7 @@
     "name": "stable-profile-life",
     "version": "0.2.1",
     "description": "",
-    "dependencies": {"device": "*"},
+    "dependencies": {"device": "file:../device"},
     "files": ["profilelife.ts"],
     "testFiles": [],
     "hidden": true
