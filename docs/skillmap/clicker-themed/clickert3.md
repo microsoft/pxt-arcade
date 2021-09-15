@@ -13,8 +13,7 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
-    //@highlight
-        mySprite.setImage(assets.image`A static Down`)
+    mySprite.setImage(assets.image`A static Down`)
 })
 
 let mySprite: Sprite = null
@@ -51,6 +50,7 @@ already in the workspace.
 ```blocks
 let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.changeScoreBy(1)
     mySprite.setImage(assets.image`A static Down`)
     projectile = sprites.createProjectileFromSprite(img`
 . . . . 
@@ -70,6 +70,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```blocks
 let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.changeScoreBy(1)
     mySprite.setImage(assets.image`A static Down`)
     projectile = sprites.createProjectileFromSprite(assets.image`Star`, mySprite, 50, 50)
 })
@@ -97,6 +98,7 @@ blocks.
 ```blocks
 let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.changeScoreBy(1)
     mySprite.setImage(assets.image`A static Down`)
     projectile = sprites.createProjectileFromSprite(assets.image`Star`, mySprite, randint(0, 10), randint(0, 10))
 })

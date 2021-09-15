@@ -89,7 +89,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`door1`, function (sprite, loc
 ```
 
 
-## Step 9 - Back to the Beginning
+## Step 7 - Back to the Beginning
 
 **⏪ Here we go again! ⏪**
 
@@ -292,6 +292,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 }
 
 namespace sprites {
+
+     /**
+     * Allow your sprite to jump and come back to the ground
+     * before jumping again
+     */
     //% block="make $thisSprite=variables_get(mySprite) gravity jump"
     export function gravity_jump (thisSprite: Sprite) {
         if (thisSprite.isHittingTile(CollisionDirection.Bottom)) {
@@ -299,7 +304,10 @@ namespace sprites {
         }
     }
     
-
+    /**
+     * Direct sprite to automatically jump only when hitting
+     * a wall to the right or left
+     */
     //% block="make $thisSprite=variables_get(mySprite) hurdle side wall"
     export function wall_jump (thisSprite: Sprite) {
         if (thisSprite.isHittingTile(CollisionDirection.Left) || thisSprite.isHittingTile(CollisionDirection.Right)) {
@@ -307,6 +315,10 @@ namespace sprites {
         }
     }
 
+    /**
+     * Set a profile pic and name for your hero in the 
+     * upper-left hand corner of the screen
+     */
     //% block="add corner profile for $choice"
     export function add_profile (choice:Choice) {
         if (choice == Choice.xialing){ 

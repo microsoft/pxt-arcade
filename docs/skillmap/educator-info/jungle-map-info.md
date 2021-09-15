@@ -6,7 +6,7 @@
 
 In this set of activities, students will create their very own platformer game with MakeCode Arcade.  This map is intended for students who are new to MakeCode with little or no previous coding experience.  Through step-by-step instructions, students will bring a monkey friend to life in a world filled with dangerous obstacles and collectible baubles.
 
-Designed for students between the ages of 11 & 15, this experience contains a total of 8 tutorials (approximating 58+ minutes of instruction) spread over 2 sessions.  At the end of this learning path, students receive a certificate of completion.
+Designed for students between the ages of 11 & 15, this experience contains a total of 8 tutorials (approximating 68+ minutes of instruction) spread over 2 sessions.  At the end of this learning path, students receive a certificate of completion.
 
 |                 | Minutes* | Game Type | Key Concepts |
 | --------------- | -------- | --------- | ------------ |

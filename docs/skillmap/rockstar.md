@@ -47,5 +47,10 @@
 ### rockstar-finish
 * kind: completion
 * type: certificate
-* url: /static/skillmap/certificates/rockstar-game.pdf
+* url: /static/skillmap/certificates/rockstar-cert.pdf
 * position: 3 1
+* actions:
+    * map: [Try Jungle Monkey Jump](/skillmap/jungle)
+    * map: [Try our Space Explorer](/skillmap/space)
+    * editor: [Edit Your Project with a Full Toolbox](/)
+
