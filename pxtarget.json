@@ -94,6 +94,7 @@
         "libs/radio-broadcast",
         "libs/rotary-encoder",
         "libs/rpiprj",
+        "libs/sc-skillmap-pack",
         "libs/screen",
         "libs/screen---ext",
         "libs/screen---linux",
@@ -104,6 +105,9 @@
         "libs/settings",
         "libs/settings---files",
         "libs/sevenseg",
+        "libs/stable-character-animations",
+        "libs/stable-profile-life",
+        "libs/stable-tilemaps",
         "libs/storyboard",
         "libs/template",
         "libs/thermometer"

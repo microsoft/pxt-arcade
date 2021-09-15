@@ -1,0 +1,9 @@
+{
+    "name": "sc-skillmap-pack",
+    "version": "0.0.0",
+    "description": "",
+    "dependencies": {"device": "*"},
+    "files": ["main.ts"],
+    "hidden": true,
+    "testFiles": []
+}

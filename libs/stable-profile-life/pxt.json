@@ -1,0 +1,9 @@
+{
+    "name": "stable-profile-life",
+    "version": "0.2.1",
+    "description": "",
+    "dependencies": {"device": "*"},
+    "files": ["profilelife.ts"],
+    "testFiles": [],
+    "hidden": true
+}

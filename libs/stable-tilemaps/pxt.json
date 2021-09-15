@@ -1,0 +1,14 @@
+{
+    "name": "stable-tilemaps",
+    "version": "1.12.0",
+    "description": "An extension for handling multiple tilemaps and extra tilemap blocks.",
+    "dependencies": {"device": "*"},
+    "files": [
+        "tilemap.ts",
+        "overworld.ts",
+        "search.ts",
+        "tiles.util.jres",
+        "tiles.util.ts"
+    ],
+    "testFiles": []
+}
