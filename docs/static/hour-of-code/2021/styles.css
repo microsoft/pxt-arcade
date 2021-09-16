@@ -1,0 +1,746 @@
+/*
+
+Hour of Code 2021 Theming 
+
+-- Colors: 
+---- #FFFFFF
+---- #000000
+---- #3DC1AA (Marina)
+---- #EECA49 (Sunflower)
+---- #DE594B (Papaya)
+---- #453052 (Eggplant)
+
+-- Fonts: 
+---- Rowdies (Display)
+---- Roboto (Body) 
+*/
+
+/* Global --------------------------------------------------------------------------- */
+
+html {
+    font-size: 10px;
+}
+
+body,
+a,
+button,
+p {
+    font-size: 1.8rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.body-font {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.display-font {
+    font-family: 'Rowdies', sans-serif;
+    font-weight: 400;
+}
+
+/* Font scaling */
+@media (min-width: 2000px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+ol {
+    font-weight: bold;
+}
+
+li span {
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 7.2rem;
+    text-transform: uppercase;
+}
+h2 {
+    font-size: 5.4rem;
+    text-transform: uppercase;
+}
+h3 {
+    font-size: 3.6rem;
+    text-transform: uppercase;
+}
+h4 {
+    font-size: 2.4rem;
+}
+h5 {
+    font-size: 2rem;
+}
+
+.background-white {
+    color: black;
+    background-color: white;
+}
+.background-black {
+    color: white;
+    background-color: black;
+}
+.background-marina {
+    color: black;
+    background-color: #3dc1aa;
+}
+.background-sunflower {
+    color: black;
+    background-color: #eeca49;
+}
+.background-papaya {
+    color: white;
+    background-color: #de594b;
+}
+.background-eggplant {
+    color: white;
+    background-color: #453052;
+}
+
+.background-eggplant a {
+    color: #3dc1aa;
+}
+
+.background-eggplant a:hover {
+    color: #2ead98;
+}
+
+.background-marina a,
+.background-sunflower a {
+    color: #453052;
+}
+
+.background-marina a:hover,
+.background-sunflower a:hover {
+    color: #33203f;
+}
+
+.background-placeholder {
+    background-image: url('./placeholder.png');
+}
+
+.marina {
+    color: #3dc1aa;
+}
+.sunflower {
+    color: #eeca49;
+}
+.papaya {
+    color: #de594b;
+}
+.eggplant {
+    color: #453052;
+}
+
+/* Header --------------------------------------------------------------------------- */
+
+header.hoc-header {
+    height: 30rem;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+header.hoc-header .header-text {
+    text-align: center;
+}
+
+header.hoc-header .header-text .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header.hoc-header .header-text .title > * {
+    margin: 0 1.5rem;
+}
+
+header.hoc-header .header-text h3 {
+    margin-top: 0;
+}
+
+@media (max-width: 480px) {
+    header.hoc-header {
+        height: 35rem;
+    }
+
+    header.hoc-header .header-text {
+        margin-top: 3rem;
+    }
+
+    header.hoc-header .header-text .title {
+        flex-wrap: wrap;
+    }
+
+    header.hoc-header .header-text .title > * {
+        margin: 0 1rem;
+        line-height: 1;
+    }
+}
+
+/* First Section --------------------------------------------------------------------------- */
+
+section.hoc-section-01 {
+    width: 90%;
+    max-width: 110rem;
+    margin: 2rem auto;
+    padding: 4rem 0;
+    display: flex;
+    align-items: center;
+}
+
+section.hoc-section-01 .section-text {
+    margin-left: 7rem;
+}
+
+section.hoc-section-01 .section-text > *:last-child {
+    margin-bottom: 0;
+}
+
+section.hoc-section-01 .section-text .title {
+    margin-bottom: 4rem;
+}
+
+section.hoc-section-01 .activity-btn {
+    width: 35%;
+    flex-shrink: 0;
+    align-self: stretch;
+}
+
+@media (max-width: 768px) {
+    section.hoc-section-01 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+    section.hoc-section-01 .section-text {
+        margin-left: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section.hoc-section-01 {
+        flex-wrap: wrap;
+    }
+
+    section.hoc-section-01 .section-text {
+        margin: 0;
+    }
+
+    section.hoc-section-01 .activity-btn {
+        width: 100%;
+        margin-bottom: 5rem;
+    }
+
+    section.hoc-section-01 .section-text .title {
+        margin-bottom: 2rem;
+    }
+}
+
+/* First Aside --------------------------------------------------------------------------- */
+
+section.hoc-aside-01 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+section.hoc-aside-01 .hero {
+    width: 35%;
+    flex-shrink: 0;
+    align-self: stretch;
+}
+
+section.hoc-aside-01 .aside-text {
+    padding: 4rem 0;
+    margin: 0 7rem;
+}
+
+section.hoc-aside-01 .aside-text > *:last-child {
+    margin-bottom: 0;
+}
+
+section.hoc-aside-01 .aside-text .title {
+    margin-top: 2rem;
+}
+
+section.hoc-aside-01 .aside-text .subtitle {
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+section.hoc-aside-01 .aside-text .btn {
+    margin-top: 2rem;
+    float: right;
+}
+
+@media (max-width: 480px) {
+    section.hoc-aside-01 {
+        flex-wrap: wrap-reverse;
+    }
+
+    section.hoc-aside-01 .hero {
+        width: 100%;
+        height: 20rem;
+    }
+
+    section.hoc-aside-01 .aside-text {
+        padding: 2rem 0;
+        margin: 2rem;
+    }
+
+    section.hoc-aside-01 .aside-text .title {
+        margin: 0;
+    }
+
+    section.hoc-aside-01 .aside-text .subtitle {
+        margin-bottom: 2rem;
+    }
+
+    section.hoc-aside-01 .aside-text .btn {
+        margin-top: 0;
+    }
+}
+
+/* Second Section --------------------------------------------------------------------------- */
+
+section.hoc-section-02 {
+    width: 90%;
+    max-width: 110rem;
+    margin: 2rem auto;
+    padding: 4rem 0;
+}
+
+section.hoc-section-02 .section-text {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+section.hoc-section-02 .section-text .title {
+    flex-shrink: 0;
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+section.hoc-section-02 .section-text p {
+    margin-left: 7rem;
+    flex-shrink: 1;
+}
+
+section.hoc-section-02 .carousel {
+    display: flex;
+    width: 100%;
+    height: 60rem;
+}
+
+section.hoc-section-02 .carousel .body {
+    flex-basis: 100%;
+    position: relative;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+section.hoc-section-02 .carousel .body .btn {
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+}
+
+section.hoc-section-02 .carousel .list {
+    flex-basis: 25rem;
+    background-color: black;
+    flex-shrink: 0;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+section.hoc-section-02 .carousel .list .list-item {
+    display: block;
+    color: white;
+    text-transform: uppercase;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: 0.25s;
+    font-size: 2rem;
+    margin: 1rem 0;
+    user-select: none;
+}
+
+section.hoc-section-02 .carousel .list .list-item.active {
+    background-color: #eeca49;
+    color: black;
+}
+
+section.hoc-section-02 .carousel .list .list-item:hover {
+    background-color: rgb(37, 37, 37);
+    text-decoration: none;
+}
+
+section.hoc-section-02 .carousel .list .list-item.active:hover {
+    background-color: #eeca49;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    section.hoc-section-02 .carousel {
+        display: flex;
+        width: 100%;
+        height: 50rem;
+    }
+
+    section.hoc-section-02 .section-text p {
+        margin-left: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section.hoc-section-02 {
+        padding: 2rem 0;
+    }
+
+    section.hoc-section-02 .section-text {
+        flex-wrap: wrap;
+    }
+
+    section.hoc-section-02 .section-text .title {
+        margin-bottom: 2rem;
+    }
+
+    section.hoc-section-02 .section-text p {
+        margin: 0;
+    }
+
+    section.hoc-section-02 .carousel .list {
+        flex-basis: 40%;
+    }
+
+    section.hoc-section-02 .carousel .list .list-item {
+        font-size: 1.8rem;
+    }
+
+    section.hoc-section-02 .carousel .body .btn {
+        min-width: unset;
+        width: unset;
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
+
+/* Second Aside --------------------------------------------------------------------------- */
+
+section.hoc-aside-02 {
+    padding: 4rem 0;
+}
+
+section.hoc-aside-02 .wrapper {
+    margin: 0 7rem;
+    display: flex;
+    align-items: center;
+}
+
+section.hoc-aside-02 .aside-text {
+    flex-basis: 30%;
+    flex-shrink: 0;
+}
+
+section.hoc-aside-02 .aside-text .title {
+    margin-bottom: 3rem;
+}
+
+section.hoc-aside-02 .tiles {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 7rem;
+}
+
+section.hoc-aside-02 .tiles .tile {
+    display: block;
+    height: 17rem;
+    flex-basis: 28%;
+    flex-shrink: 1;
+    flex-grow: 1;
+    margin: 1rem;
+    border-radius: 2rem;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+section.hoc-aside-02 .tiles .tile:hover {
+    transform: scale(1.05);
+}
+
+section.hoc-aside-02 .tiles .tile:active {
+    transform: scale(0.95);
+}
+
+section.hoc-aside-01 .aside-text .title {
+    margin-top: 2rem;
+}
+
+section.hoc-aside-01 .aside-text .subtitle {
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+section.hoc-aside-01 .aside-text .btn {
+    margin-top: 2rem;
+    float: right;
+}
+
+@media (max-width: 768px) {
+    section.hoc-aside-02 .tiles {
+        margin-left: 4rem;
+    }
+    section.hoc-aside-02 .tiles .tile {
+        height: 12rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section.hoc-aside-02 .wrapper {
+        flex-wrap: wrap;
+        margin: 0 2rem;
+    }
+
+    section.hoc-aside-02 .aside-text {
+        flex-basis: 100%;
+    }
+
+    section.hoc-aside-02 .aside-text .title {
+        margin-bottom: 2rem;
+    }
+
+    section.hoc-aside-02 .tiles {
+        margin: 0;
+        margin-top: 2rem;
+    }
+
+    section.hoc-aside-02 .tiles .tile {
+        flex-basis: 45%;
+    }
+}
+
+/* Third Section --------------------------------------------------------------------------- */
+
+section.hoc-section-03 {
+    padding-bottom: 7rem;
+}
+
+section.hoc-section-03 .section-text {
+    margin: 0;
+    margin-right: 7rem;
+}
+
+section.hoc-section-03 .certificate {
+    width: 35%;
+    flex-shrink: 0;
+    position: relative;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+section.hoc-section-03 .certificate:hover {
+    transform: scale(1.05);
+}
+
+section.hoc-section-03 .certificate:active {
+    transform: scale(0.95);
+}
+
+section.hoc-section-03 .certificate .body {
+    height: 30rem;
+    border-radius: 2rem;
+}
+
+section.hoc-section-03 .certificate .action {
+    position: absolute;
+    bottom: -3rem;
+    right: -2rem;
+    transition: 0.25s;
+}
+
+section.hoc-section-03 .certificate:hover .action {
+    background-color: #d3b034;
+}
+
+section.hoc-section-03 .certificate:active .action {
+    background-color: black;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    section.hoc-section-03 .section-text {
+        margin-right: 4rem;
+    }
+
+    section.hoc-section-03 .certificate {
+        width: 45%;
+    }
+
+    section.hoc-section-03 .certificate .body {
+        margin-right: 2rem;
+    }
+
+    section.hoc-section-03 .certificate .action {
+        right: -1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section.hoc-section-03 .section-text {
+        margin: 0;
+        margin-bottom: 4rem;
+    }
+
+    section.hoc-section-03 .certificate {
+        width: 100%;
+    }
+
+    section.hoc-section-03 .certificate .body {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    section.hoc-section-03 .certificate .action {
+        right: -0.5rem;
+    }
+}
+
+/* Educator Button --------------------------------------------------------------------------- */
+
+a.educator-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #eeca49;
+    color: black;
+    transition: 0.25s;
+    user-select: none;
+}
+
+a.educator-btn:hover {
+    color: black;
+    text-decoration: none;
+    transform: scale(1.05);
+    background-color: #d3b034;
+}
+
+a.educator-btn:active {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    transform: scale(0.95);
+}
+
+/* Activity Button --------------------------------------------------------------------------- */
+
+a.activity-btn {
+    user-select: none;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.25s;
+    width: 100%;
+    text-align: center;
+}
+
+a.activity-btn:hover {
+    transform: scale(1.05);
+    text-decoration: none;
+    color: unset;
+}
+
+a.activity-btn:hover .action {
+    background-color: #d3b034;
+}
+
+a.activity-btn:active {
+    transform: scale(0.95);
+}
+
+a.activity-btn:active .action {
+    background-color: black;
+    color: white;
+}
+
+a.activity-btn .title {
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+a.activity-btn .body {
+    height: 30rem;
+    margin-top: -3rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+a.activity-btn .action {
+    text-transform: uppercase;
+    padding: 2rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    flex-basis: 100%;
+    transition: 0.25s;
+}
+
+/* Standard Button --------------------------------------------------------------------------- */
+
+a.btn,
+section.hoc-section-03 .action {
+    min-width: 30rem;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    background-color: #eeca49;
+    color: black;
+    transition: 0.25s;
+    user-select: none;
+    text-transform: uppercase;
+}
+
+a.btn:hover {
+    color: black;
+    text-decoration: none;
+    transform: scale(1.05);
+    background-color: #d3b034;
+}
+
+a.btn:active {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    transform: scale(0.95);
+}
+
+/* Standard Button --------------------------------------------------------------------------- */
+
+.ui.vertical.segment.footer {
+    background-color: #de594b;
+    color: white;
+    padding: 4rem 0;
+}
+
+.docs.footer.inverted a.item {
+    color: white;
+}
+
+.ui.link.list.list a.item:hover {
+    text-decoration: none;
+}
