@@ -6,13 +6,13 @@ Try this tutorial!
 
 ### ~
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 ![Game animation](/static/tutorials/catch-the-football.gif)
 
 In this tutorial you will create a game with 2 sprites, a ``||sprites:Player||`` sprite and a ``||sprites:Ball||`` sprite. The goal of the game is to catch as many balls as you can before the time runs out! Each time your player catches a ball, you gain points and the countdown is restarted.
 
-## Step 1
+## {Step 1}
 
 Open the ``||scene:Scene||`` Toolbox drawer and drag the ``||scene:set background color||`` block into the ``||loops:on start||`` block on your Workspace. Click **Next** to go to the next step in the Tutorial.
 
@@ -21,13 +21,13 @@ Open the ``||scene:Scene||`` Toolbox drawer and drag the ``||scene:set backgroun
 scene.setBackgroundColor(0)
 ```
 
-## Step 2
+## {Step 2}
 
 In the ``||scene:set background color||`` block, click on the grey color oval to open the color palette and select a color for the football field. To see what this looks like in your game, look at the Game Simulator on the left side of the screen.
 
 ![Choose background color](/static/tutorials/chase-the-pizza/background-color.jpg)
 
-## Step 3
+## {Step 3}
 
 Open the ``||sprites:Sprites||`` Toolbox drawer and drag the first block, ``||variables:set mySprite||`` into the ``||loops:on start|`` block on your Workspace. This will create a new ``||sprites:Player||`` character for your game.
 
@@ -55,13 +55,13 @@ mySprite = sprites.create(img`
 `, SpriteKind.Player)
 ```
 
-## Step 4
+## {Step 4}
 
 Choose your ``||sprites:Player||`` character by clicking on the grey square in the ``||variables:set mySprite||`` block to open the Sprite Editor. Click on the **Gallery** tab and choose your player image. Click **Done** when you are finished.
 
 ![Edit player sprite image](/static/tutorials/catch-the-football/choose-player-image.gif)
 
-## Step 5
+## {Step 5}
 
 Open the ``||controller:Controller||`` Toolbox drawer and drag the ``||controller:move mySprite with buttons||`` block after the ``||variables:set mySprite||`` block. This will allow you to move your ``||sprites:Player||`` sprite around the screen with the arrow keys. Try it out in the Game Simulator
 
@@ -90,7 +90,7 @@ let mySprite = sprites.create(img`
 controller.moveSprite(mySprite)
 ```
 
-## Step 6
+## {Step 6}
 
 Open the ``||sprites:Sprites||`` Toolbox drawer and drag another set ``||variables:set mySprite2||`` block into the ``||loops:on start||`` block on your Workspace. This will be the **ball** sprite in our game.
 
@@ -138,25 +138,25 @@ mySprite2 = sprites.create(img`
 `, SpriteKind.Player)
 ```
 
-## Step 7
+## {Step 7}
 
 In the set ``||variables:set mySprite2||`` block, click on ``||variables:mySprite2||`` to open the menu, and select ``Rename variable...`` Type in ``football`` as the new sprite name and click **Ok**.
 
 ![Rename mySprite2](/static/tutorials/catch-the-football/rename-variable.gif)
 
-## Step 8
+## {Step 8}
 
 In the ``||variables:set football||`` block, click on the ``||sprites:Player||`` kind to open the menu of different Sprite kinds.  Select ``||sprites:Projectile||`` as your ``||variables:football||`` sprite kind.
 
 ![Set sprite kind](/static/tutorials/catch-the-football/sprite-kind.png)
 
-## Step 9
+## {Step 9}
 
 Draw your football sprite by clicking on the grey square in the ``||variables:set football||`` block to open the Sprite Editor
 
 ![Edit football sprite image](/static/tutorials/catch-the-football/football-sprite-editor.gif)
 
-## Step 10
+## {Step 10}
 
 Open the ``||sprites:Sprites||`` Toolbox drawer and drag the ``||sprites:on sprite overlaps otherSprite||`` block onto your Workspace (you can place this anywhere).
 
@@ -167,13 +167,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherS
 })
 ```
 
-## Step 11
+## {Step 11}
 
 In the ``||sprites:on sprite overlaps otherSprite||`` block, click on the second ``||sprites:Player||`` kind after ``||variables:otherSprite||`` to open the menu. Select ``||sprites:Projectile||`` as its kind.
 
 ![Overlap sprite kind](/static/tutorials/catch-the-football/overlaps-projectile.png)
 
-## Step 12
+## {Step 12}
 
 When our ``||sprites:Player||`` overlaps with the ``||variables:football||`` sprite, let’s add a point to our game score. Open the ``||info:Info||`` Toolbox drawer and drag the ``||info:change score||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block.
 
@@ -184,7 +184,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 })
 ```
 
-## Step 13
+## {Step 13}
 
 Let’s set the position for ``||variables:football||`` to random locations around the screen. Open the ``||sprites:Sprites||`` Toolbox drawer and drag the ``||sprites:set mySprite position||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block on your Workspace.
 
@@ -197,13 +197,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 })
 ```
 
-## Step 14
+## {Step 14}
 
 In the ``||sprites:set mySprite position||`` block, click on the ``||variables:mySprite||`` variable to open the menu, and select your ``||variables:football||`` sprite.
 
 ![Change mySprite to football](/static/tutorials/catch-the-football/set-football-position.png)
 
-## Step 15
+## {Step 15}
 
 Open the ``||math:Math||`` Toolbox drawer and drag two ``||math:pick random||`` blocks onto the Workspace. Drop one into the ``x`` coordinate of the ``||sprites:set football position||`` block, and the other into the ``y`` coordinate replacing the ``0`` values.
 
@@ -215,7 +215,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 })
 ```
 
-## Step 16
+## {Step 16}
 
 The Arcade game screen is `160` pixels wide, and `120` pixels high. In the first ``||math:pick random||`` block in the `x` coordinate of the ``||sprites:set football position||`` block, change the maximum value from ``10`` to **160**. In the second ``||math:pick random||`` block in the ``y`` coordinate, change the maximum value from ``10`` to **120**.
 
@@ -227,7 +227,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 })
 ```
 
-## Step 17
+## {Step 17}
 
 Let’s restart our countdown each time. Open the ``||info:Info||`` Toolbox drawer and drag a ``||info:start countdown||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block on your Workspace.
 
@@ -240,7 +240,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
     info.startCountdown(10)
 })
 ```
-## Complete
+## {Complete}
 
 Congratulations, you have completed your game! Use the Game Simulator to play by moving your ``||sprites:Player||`` around the screen to try and catch as much balls as possible before the time runs out. What’s your high score?
 
