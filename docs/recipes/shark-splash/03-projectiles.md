@@ -1,12 +1,12 @@
 # Projectile Effects
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 Now that you have enemies and projectiles, let's give your projectiles some power!
 
 ![Projectiles](/static/recipes/shark-splash/03-projectiles.gif)
 
-## Detect sprite overlaps
+## {Detect sprite overlaps}
 
 From ``||sprites:Sprites||``, drag the ``||sprites:on||`` ``||variables:sprite||`` ``||sprites:overlaps||``  ``||variables:otherSprite||`` block into your workspace. Click the first dropdown and select ``||sprites:Projectile||``, then click the second dropdown and select ``||sprites:Enemy||``.
 
@@ -15,7 +15,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 })
 ```
 
-## Destroy the enemy
+## {Destroy the enemy}
 
 From ``||sprites:Sprites||``, drag the ``||sprites:destroy||`` block into your ``||sprites:on sprite overlaps||`` blocks. Drag the ``||variables:otherSprite||`` variable into the ``||sprites:destroy sprite||``.
 
@@ -26,7 +26,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 })
 ```
 
-## Add score
+## {Add score}
 
 From ``||info:Info||``, drag the ``||info:change score||`` block into ``||sprites:on sprite overlaps||`` to give yourself a point each time you hit an enemy.
 
@@ -38,7 +38,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 })
 ```
 
-## Spawn projectiles
+## {Spawn projectiles}
 
 From ``||sprites:Sprites||``, drag the ``||sprites:mySprite start effect||`` block into ``||sprites:on sprite overlaps||``. Then drag the ``||variables:sprite||`` variable into the ``||sprites:start effect||`` block. Click the dropdown to select your favorite effect!
 
@@ -52,7 +52,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 })
 ```
 
-## Conclusion @unplugged
+## {Conclusion @unplugged}
 
 Now try making your enemies move or spawn multiple kinds of enemies!
 

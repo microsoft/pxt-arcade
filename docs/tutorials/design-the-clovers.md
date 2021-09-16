@@ -44,28 +44,28 @@ game.onUpdateInterval(5000, function () {
 
 ```
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
-Here's a game where you can move your bunny around the screen to collect clovers 
-and avoid the bees.  
+Here's a game where you can move your bunny around the screen to collect clovers
+and avoid the bees.
 
-In a couple of steps, you’ll be able to customize this game for yourself! You can design your own 
-background scene, main character, collectible objects, and even your own enemies to avoid!  
+In a couple of steps, you’ll be able to customize this game for yourself! You can design your own
+background scene, main character, collectible objects, and even your own enemies to avoid!
 
-Will your game be about a pigeon in the city, an astronaut in space, 
+Will your game be about a pigeon in the city, an astronaut in space,
 or a wizard in a castle?
 
 ![Design the Clovers game in simulator](/static/tutorials/design-the-clovers.gif)
 
 
-## Step 2 - Play the OG
+## {Step 2 - Play the OG}
 
 
 **🎮 Play the game 🎮**
 
 You should see the original game loaded and ready to play in the simulator window.
 
-Use the joystick (or arrow buttons on the keyboard) to move the bunny around 
+Use the joystick (or arrow buttons on the keyboard) to move the bunny around
 and collect clovers to score points, but watch out for the buzzing bees!
 
 ---
@@ -74,101 +74,101 @@ When you're ready for a new step, click **> NEXT** to get to the next instructio
 
 
 
-## Step 3 - Open the Background image
+## {Step 3 - Open the Background image}
 
 
 **🏡 Time to set the scene 🏡**
 
-► Start by finding the image called **background** below.  
+► Start by finding the image called **background** below.
 
-► Click on the background image and select **Edit** from beneath the 
-**Asset Preview** pane to open the image editor. 
+► Click on the background image and select **Edit** from beneath the
+**Asset Preview** pane to open the image editor.
 
 ---
 
 Once the image editor opens, click **> NEXT** to get to the next instruction.
 
 
-## Step 4 - Edit the Background
+## {Step 4 - Edit the Background}
 
 **🎨 Create your own background image 🎨**
 
-► Use the pencil tools on the left to draw your own background, 
-or use the eraser to clear the image and start over.  
+► Use the pencil tools on the left to draw your own background,
+or use the eraser to clear the image and start over.
 
-► Once you're happy with your new background, click **Done** to save it and return 
-to the **My Asset** window. 
+► Once you're happy with your new background, click **Done** to save it and return
+to the **My Asset** window.
 
 ---
 
-**Hint**: You can also select the transparent swatch (the grey & white checkered square) 
+**Hint**: You can also select the transparent swatch (the grey & white checkered square)
 to erase parts of the image using any of the paint tools.
 
 ![UseImageEditor](/static/tutorials/image-editor.gif)
 
 
 
-## Step 5 - Try the Game
+## {Step 5 - Try the Game}
 
 **🕹️ Take a look at the game simulator 🕹️**
 
- How does your background look?  
- 
- If you want to make more changes, you can edit the background as many times 
+ How does your background look?
+
+ If you want to make more changes, you can edit the background as many times
  as you need to.
 
 
 
-## Step 6 - Design the Hero Character
+## {Step 6 - Design the Hero Character}
 
 **😎 Now let's edit our hero 😎**
 
-► Who is the hero in your game? Click on the bunny called **hero** and choose 
+► Who is the hero in your game? Click on the bunny called **hero** and choose
 **Edit** from below the **Asset Preview** pane.
 
 ► Change the bunny in any way you want or delete the bunny altogether and draw something
 new. When you're happy, click **Done** to go back out to the **My Asset** window.
 
 
-## Step 7 - Play Again
+## {Step 7 - Play Again}
 
 **Play your game again.**
 
- Try your game again with your new hero.  How do you like it?  
+ Try your game again with your new hero.  How do you like it?
  Does anything else need to change?
 
 
-## Step 8 - Draw a Collectible Object
+## {Step 8 - Draw a Collectible Object}
 
 **☘️ Makeover your clovers! ☘️**
 
-► Click the clover called **collect** and choose 
+► Click the clover called **collect** and choose
 **Edit** from below the **Asset Preview** pane.
 
-► Is your hero saving puppies? Collecting coins? Picking up trash?  
+► Is your hero saving puppies? Collecting coins? Picking up trash?
 Draw a new collectible, then click **Done** when you're happy.
 
 
 
-## Step 9 - Draw an Enemy Character
+## {Step 9 - Draw an Enemy Character}
 
 **🐝 What are you afraid of? 🐝**
 
-► Finally, click the bee called **avoid** and choose 
+► Finally, click the bee called **avoid** and choose
 **Edit** from below the **Asset Preview** pane.
 
-► What are you running from? Lasers? Rocks? Shards of glass?  
+► What are you running from? Lasers? Rocks? Shards of glass?
 Draw a new enemy, then click **Done** when you're happy.
 
 
 
-## Step 10 - Finale
+## {Step 10 - Finale}
 
 **Your game is ready...give it a try!**
 
-Does the game look like you want it to? How are the sizes of your sprites compared 
-to each other? 
+Does the game look like you want it to? How are the sizes of your sprites compared
+to each other?
 
-Change as many things as you want, as often as you want. Once you're happy with your game, 
+Change as many things as you want, as often as you want. Once you're happy with your game,
 click **Finish** to share your custom game with friends!
 

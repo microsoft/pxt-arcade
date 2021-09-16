@@ -1,12 +1,12 @@
 # Nicole's Favorites Frenzy
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 Create your own version of Nicole’s game! Change the scene, draw yourself as the main character and add in your own favorite things!
 
 ![Game playing in the simulator](/static/tutorials/nicoles-favorites-frenzy/nicoles-favorites-frenzy.gif)
 
-## Step 1 - Change the Background Image
+## {Step 1 - Change the Background Image}
 
 Find the ``||scene:set background image||`` block in the ``||loops:on start||`` block. Click on the grey oval to open the image editor. Draw a scene using the color palette and the painting tools. Hint - you can erase the existing image using the **Transparent Fill** tool, or the **Eraser** tool.
 
@@ -135,7 +135,7 @@ scene.setBackgroundImage(img`
     `)
 ```
 
-## Step 2 - Design your own Characters 
+## {Step 2 - Design your own Characters }
 
 Find the ``||variables:set sprite||`` blocks for Nicole and her Dog and click on the image of Nicole to open the sprite image editor. Erase the image using the **Eraser** tool and draw yourself as the main character. Then, do the same for the Dog character to draw your own pet!
 
@@ -204,13 +204,13 @@ let Dog = sprites.create(img`
     `, SpriteKind.Pet)
 ```
 
-## Step 3 - Change Sprite variable Names
+## {Step 3 - Change Sprite variable Names}
 
 Now that you’ve drawn your own game characters, let’s change their names. In the same ``||variables:set sprite||`` blocks, click on the Nicole drop-down menu and select **Rename Variable**. Type your name and click Ok. Do the same for your pet - instead of Dog, rename the variable to be whatever your pet is.
 
 ![Rename variable from the block menu](/static/tutorials/nicoles-favorites-frenzy/rename-variable.png)
 
-## Step 4 - Change the Starting Melody
+## {Step 4 - Change the Starting Melody}
 
 Let’s customize the starting music for our game. Find the ``||music:play melody||`` block in the ``||loops:on start||`` block. Click on the colored notes to open the melody editor and create your own music or pick a melody from the gallery.
 
@@ -218,7 +218,7 @@ Let’s customize the starting music for our game. Find the ``||music:play melod
 music.playMelody("C C5 D B E A F G ", 320)
 ```
 
-## Step 5 - Change your Favorite things in the Tilemap
+## {Step 5 - Change your Favorite things in the Tilemap}
 
 Nicole’s favorite things are Boba Tea, Ramen, and Acai bowls. What are yours? Find the ``||scene:set tilemap||`` block in the ``||loops:on start||`` block. Click on the grey box to open up the **Tilemap** editor. Click on **My Tiles** on the left side of the screen and find the Boba Tea, Ramen, and Acai bowl images. Click to edit each image.
 
@@ -228,7 +228,7 @@ tiles.setTilemap(tilemap`level_0`)
 
 ![MyTiles selection in tile editor](/static/tutorials/nicoles-favorites-frenzy/mytiles.png)
 
-## Step 6 - Set starting score to zero
+## {Step 6 - Set starting score to zero}
 
 Add a score for collecting your favorite objects! From the ``||info:Info||`` Toolbox drawer, drag a ``||info:set score||`` block into the ``||loops:on start||`` block. This will start the game with a score of **0**.
 
@@ -236,7 +236,7 @@ Add a score for collecting your favorite objects! From the ``||info:Info||`` Too
 info.setScore(0)
 ```
 
-## Step 7 - Add points for collecting objects
+## {Step 7 - Add points for collecting objects}
 
 From the ``||info:Info||`` Toolbox drawer, drag 3 ``||info:change score||`` blocks, and drop one each into the ``||scene:on sprite of kind Player overlaps||`` blocks for your favorite objects. In the ``||info:change score||`` block, you can specify how many points each of your favorite objects is worth.
 
@@ -251,7 +251,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile41, function (sprite, locatio
 })
 ```
 
-## Step 8 - Add a Countdown
+## {Step 8 - Add a Countdown}
 
 To make the game more challenging, add a time limit for how quickly you need to get to the end! From the ``||info:Info||`` Toolbox drawer, drag a ``||info:start countdown||`` block and drop into the ``||loops:on start||`` block. Change the number of seconds to **50**.
 
@@ -259,7 +259,7 @@ To make the game more challenging, add a time limit for how quickly you need to 
 info.startCountdown(50)
 ```
 
-## Step 9 - Play your customized Game!
+## {Step 9 - Play your customized Game!}
 
 That’s it! Now try playing your game in the full screen simulator. Other things you can change are the effects and the sounds for when your player overlaps your favorite things, or the text in the game over screens. Share your game with others!
 
