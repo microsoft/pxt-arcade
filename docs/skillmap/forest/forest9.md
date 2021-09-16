@@ -294,8 +294,36 @@ namespace sprites {
 
 
 
-
 }
+
+
+
+
+
+    /*
+     * Set the color for remaining live forest
+     */
+    //% block="set color of healthy forest to $color"
+    //% color.shadow="colorNumberPicker"
+    export function forest_hud_healthy (color: number) {
+        healthyColor = color
+        statusbar.setColor(healthyColor, burnedColor)
+    }
+
+    /*
+     * Set the color for burned forest
+     */
+    //% block="set color of burned forest to $color"
+    //% color.shadow="colorNumberPicker"
+    export function forest_hud_burned (color: number) {
+        burnedColor = color
+        statusbar.setColor(healthyColor, burnedColor)
+    }
+
+
+
+
+
 ```
 
 
@@ -313,3 +341,88 @@ namespace sprites {
 }
 ```
 
+
+----
+
+
+
+namespace SpriteKind {
+    export const Water = SpriteKind.create()
+    export const Fire = SpriteKind.create()
+    export const Burnt = SpriteKind.create()
+}
+sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
+    tiles.setTileAt(tiles.locationOfSprite(sprite), assets.tile`smoulder`)
+    music.thump.play()
+})
+sprites.onCreated(SpriteKind.Fire, function (sprite) {
+    sprite.startEffect(effects.fire)
+    sprites.set_flame_strength(sprite, 10)
+    music.jumpUp.play()
+})
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    mySprite,
+    assets.animation`Fire Plane Left Animation`,
+    200,
+    true
+    )
+})
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    mySprite,
+    assets.animation`Fire Plane Right Animation0`,
+    200,
+    true
+    )
+})
+sprites.onOverlap(SpriteKind.Fire, SpriteKind.Fire, function (sprite, otherSprite) {
+    otherSprite.destroy()
+})
+controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
+    sprites.spray(mySprite, assets.image`water`)
+})
+sprites.onOverlap(SpriteKind.Water, SpriteKind.Fire, function (sprite, otherSprite) {
+    sprite.destroy()
+    sprites.change_flame_strength_by(otherSprite, -1)
+})
+scene.onOverlapTile(SpriteKind.Fire, assets.tile`smoulder`, function (sprite, location) {
+    sprite.destroy()
+    sprite.startEffect(effects.fountain)
+    effects.clearParticles(sprite)
+})
+let newFire: Sprite = null
+let mySprite: Sprite = null
+hud.fire_hud(true)
+hud.forest_hud(true)
+game.set_health_of_trees(7)
+game.set_strength_of_wind(3)
+game.set_dryness_of_grass(3)
+tiles.setTilemap(tilemap`level1`)
+mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+scene.cameraFollowSprite(mySprite)
+for (let index = 0; index < 4; index++) {
+    newFire = sprites.create(assets.image`fire`, SpriteKind.Fire)
+    tiles.placeOnRandomTile(newFire, assets.tile`trees`)
+}
+game.onUpdate(function () {
+    sprites.random_spread(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . 4 . . . . . 
+        . . . . 2 . . . . 4 4 . . . . . 
+        . . . . 2 4 . . 4 5 4 . . . . . 
+        . . . . . 2 4 d 5 5 4 . . . . . 
+        . . . . . 2 5 5 5 5 4 . . . . . 
+        . . . . . . 2 5 5 5 5 4 . . . . 
+        . . . . . . 2 5 4 2 4 4 . . . . 
+        . . . . . . 4 4 . . 2 4 4 . . . 
+        . . . . . 4 4 . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `)
+})
