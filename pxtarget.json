@@ -66,6 +66,7 @@
         "libs/feather",
         "libs/game",
         "libs/game---light",
+        "libs/gpu",
         "libs/hw",
         "libs/hw---n3",
         "libs/hw---n4",
