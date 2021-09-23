@@ -83,7 +83,7 @@ game.onUpdateInterval(1000, function () {
 namespace sprites {
 
    
-    //% block="`ICON.arrow-right-solid`"
+    //% block="`ICON.arrow-right-white`"
     export function step_right () {
           stillWalking = 2
         for (let index = 0; index < 8; index++) {
@@ -93,7 +93,7 @@ namespace sprites {
         pause(500)
     }
 
-    //% block="`ICON.arrow-left-solid`"
+    //% block="`ICON.arrow-left-white`"
     export function step_left () {
           stillWalking = 2
         for (let index = 0; index < 8; index++) {
