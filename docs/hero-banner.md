@@ -16,4 +16,11 @@ Here are some cool activities to get you started with your @boardname@!
 * imageUrl: /static/hero-gallery/stream.png
 * url: https://www.twitch.tv/msmakecode
 * cardType: link
+---
+* name: Explore handheld game players
+* description: Explore handheld game players
+* buttonLabel: See devices
+* imageUrl: /static/hero-gallery/hardware.png
+* url: https://arcade.makecode.com/hardware
+* cardType: link
 ### ~
