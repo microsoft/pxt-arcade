@@ -54,6 +54,11 @@ Specifically, they will experience the following topics:
 
 As students progress through these projects, they will progressively build their game. They will witness the monkey's evolution from a simple creature that can only move around to an animated jump and run _master_ who can create its own platforms, blow up obstacles, and collect baubles across multiple worlds.
 
+```package
+customts=github:anzhou5/customts
+pxt-tilemaps=github:microsoft/pxt-tilemaps/
+```
+
 #### 1. Jungle Monkey Jump
 
 | Activity | Jungle Monkey Jump (10 min) |
