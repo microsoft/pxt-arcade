@@ -132,7 +132,7 @@ mySprite2.setVelocity(200, 100)
 
 **👀 Try your game in the simulator 👀**
 
-Does it do what you expected?
+Does it do what you expected? Well, the fly may have disappeared too fast for you to see!
 
 
 
