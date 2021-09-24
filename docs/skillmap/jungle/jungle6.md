@@ -3,7 +3,7 @@
 
 ## Welcome @showdialog
 
-**🏃🏽‍♀️ Let's get moving 🏃🏽‍♂️**  
+**🏃🏽‍♀️ Let's get moving 🏃🏽‍♂️**
 
 Now that we've added an animation for our explosives, let's animate our character to make our game feel even more exciting.
 
@@ -22,19 +22,19 @@ Can you connect each chunk of code to the actions it creates?
 
 ## Step 3 - Step to the Right
 
-**➡️ Walking to the Right ➡️**  
+**➡️ Walking to the Right ➡️**
 Let's make our character walk to the right when the right arrow is pressed.
 
 ---
 
-► To add code that runs when the player moves to the right, open ``||controller:Controller||`` and drag ``||controller:on [A] button [pressed]||`` into an empty area of the workspace. 
+► To add code that runs when the player moves to the right, open ``||controller:Controller||`` and drag ``||controller:on [A] button [pressed]||`` into an empty area of the workspace.
 
 ► Click ``||controller:A||`` and choose ``||controller:right||`` from the dropdown.
 
 
 ```blocks
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    
+
 })
 ```
 
@@ -42,7 +42,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ► Click the **Advanced** category in the toolbar to reveal the ``||animation:Animation||`` category.
 
-► Drag the large ``||animation:animate [mySprite]||`` into the empty ``||controller:on [right] button [pressed]||`` container. 
+► Drag the large ``||animation:animate [mySprite]||`` into the empty ``||controller:on [right] button [pressed]||`` container.
 
 ► Click the empty grey box and toggle to **My Assets** to choose the **walk right** animation.
 
@@ -70,11 +70,11 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ---
 
-► Drag another ``||controller:on [A] button [pressed]||`` into an empty area of the workspace. 
+► Drag another ``||controller:on [A] button [pressed]||`` into an empty area of the workspace.
 
 ► Click ``||controller:A||`` and choose ``||controller:left||`` from the dropdown.
 
-► Drag ``||animation:animate [mySprite]||`` into the empty ``||controller:on [left] button [pressed]||`` container. 
+► Drag ``||animation:animate [mySprite]||`` into the empty ``||controller:on [left] button [pressed]||`` container.
 
 ► Click the grey box and toggle to **My Assets** to choose the **walk left** animation, then toggle **loop** to **`<ON>`**.
 
@@ -107,9 +107,9 @@ Now we need an animation that runs when the monkey jumps!
 
 ---
 
-► Find your ``||controller:on [up] button [pressed]||`` container. 
+► Find your ``||controller:on [up] button [pressed]||`` container.
 
-► From ``||animation:Animation||``, grab an ``||animation:animate [mySprite]||`` block and drag it into **the end** of the ``||controller:on [up] button [pressed]||`` container. 
+► From ``||animation:Animation||``, grab an ``||animation:animate [mySprite]||`` block and drag it into **the end** of the ``||controller:on [up] button [pressed]||`` container.
 
 ► Click the empty grey box and toggle to **My Assets** to choose the **jump** animation.
 
@@ -141,7 +141,7 @@ Your monkey should look amazing as it runs and jumps!
 
 ## Finished
 
-When you're done playing your game, click **Finish** to return to the main page to learn how to add more levels!
+When you're done playing your game, click **Done** to return to the main page to learn how to add more levels!
 
 
 
@@ -164,7 +164,7 @@ mySprite.ay = 500
 scene.cameraFollowSprite(mySprite)
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`orange bauble`, function (sprite, location) {
-    tiles.setTileAt(location, assets.tile`transparency16`)  
+    tiles.setTileAt(location, assets.tile`transparency16`)
     info.changeScoreBy(1)
 })
 

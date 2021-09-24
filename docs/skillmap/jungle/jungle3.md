@@ -3,7 +3,7 @@
 
 ## Welcome @showdialog
 
-**Right now, it's nearly impossible to complete our game!**  
+**Right now, it's nearly impossible to complete our game!**
 We need a way to pass the poison pits!
 
 ![Add platforms as you jump](/static/skillmap/jungle/jungle3.gif "Need a boost?")
@@ -22,7 +22,7 @@ Can you remember which piece of code controls each action?
 
 ## Step 3 - Adding Block Walls
 
-**You know what would help us get over those pits?**  
+**You know what would help us get over those pits?**
 We need some well-placed platforms! Let's add a crate beneath the player when the A button is pressed.
 
 ---
@@ -31,7 +31,7 @@ We need some well-placed platforms! Let's add a crate beneath the player when th
 
 ► Set a wall by going to the ``||scene:Scene||`` category and dragging ``||scene:set wall <OFF> at tilemap col [0] row [0]||`` into the empty ``||controller:on [A] button [pressed]||`` container.
 
-► Toggle `<OFF>` to `<ON>`.  
+► Toggle `<OFF>` to `<ON>`.
 
 
 ```blocks
@@ -53,7 +53,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         tiles.setWallAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), true)
-    
+
 })
 ```
 
@@ -65,20 +65,20 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ---
 
-Try jumping while you press the (A) button. Your monkey should continue to hover in that spot! 
+Try jumping while you press the (A) button. Your monkey should continue to hover in that spot!
 
 
 
 ## Step 5 - Adding Block Tiles
 
-**Where did my brick go??**  
-The walls are great, but it's hard to remember where they are. Let's add special tiles over them so we can find them again later.  
+**Where did my brick go??**
+The walls are great, but it's hard to remember where they are. Let's add special tiles over them so we can find them again later.
 
 ---
 
 ► Set a tile by going to the ``||scene:Scene||`` category and dragging ``||scene:set [ ] at tilemap col [0] row [0]||`` into **the bottom** of the ``||controller:on [A] button [pressed]||`` container.
 
-► Click the empty square and choose the crate called **bounce**.  
+► Click the empty square and choose the crate called **bounce**.
 
 
 ```blocks
@@ -128,7 +128,7 @@ Now you can set your own blocks in-mid air to help you over the poison pit!
 
 ---
 
-When you're done playing, click **Finish** to return to the main page to learn how to **break** tiles.
+When you're done playing, click **Done** to return to the main page to learn how to **break** tiles.
 
 
 
@@ -151,7 +151,7 @@ mySprite.ay = 500
 scene.cameraFollowSprite(mySprite)
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`orange bauble`, function (sprite, location) {
-    tiles.setTileAt(location, assets.tile`transparency16`)  
+    tiles.setTileAt(location, assets.tile`transparency16`)
     info.changeScoreBy(1)
 })
 

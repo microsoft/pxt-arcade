@@ -40,22 +40,22 @@ let yourGuess = 0
 let myNumber = 0
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
-    . . . . . f f 4 4 f f . . . . . 
-    . . . . f 5 4 5 5 4 5 f . . . . 
-    . . . f e 4 5 5 5 5 4 e f . . . 
-    . . f b 3 e 4 4 4 4 e 3 b f . . 
-    . . f 3 3 3 3 3 3 3 3 3 3 f . . 
-    . f 3 3 e b 3 e e 3 b e 3 3 f . 
-    . f 3 3 f f e e e e f f 3 3 f . 
-    . f b b f b f e e f b f b b f . 
-    . f b b e 1 f 4 4 f 1 e b b f . 
-    f f b b f 4 4 4 4 4 4 f b b f f 
-    f b b f f f e e e e f f f b b f 
-    . f e e f b d d d d b f e e f . 
-    . . e 4 c d d d d d d c 4 e . . 
-    . . e f b d b d b d b b f e . . 
-    . . . f f 1 d 1 d 1 d f f . . . 
-    . . . . . f f b b f f . . . . . 
+    . . . . . f f 4 4 f f . . . . .
+    . . . . f 5 4 5 5 4 5 f . . . .
+    . . . f e 4 5 5 5 5 4 e f . . .
+    . . f b 3 e 4 4 4 4 e 3 b f . .
+    . . f 3 3 3 3 3 3 3 3 3 3 f . .
+    . f 3 3 e b 3 e e 3 b e 3 3 f .
+    . f 3 3 f f e e e e f f 3 3 f .
+    . f b b f b f e e f b f b b f .
+    . f b b e 1 f 4 4 f 1 e b b f .
+    f f b b f 4 4 4 4 4 4 f b b f f
+    f b b f f f e e e e f f f b b f
+    . f e e f b d d d d b f e e f .
+    . . e 4 c d d d d d d c 4 e . .
+    . . e f b d b d b d b b f e . .
+    . . . f f 1 d 1 d 1 d f f . . .
+    . . . . . f f b b f f . . . . .
     `, SpriteKind.Player)
 myNumber = randint(1, 99)
 game.showLongText("I'm thinking of a number between 1 and 99. Can you guess it?", DialogLayout.Bottom)
@@ -67,22 +67,22 @@ NewRound()
 
 let myNumber = randint(1, 5)
 let mySprite = sprites.create(img`
-    . . . . . f f 4 4 f f . . . . . 
-    . . . . f 5 4 5 5 4 5 f . . . . 
-    . . . f e 4 5 5 5 5 4 e f . . . 
-    . . f b 3 e 4 4 4 4 e 3 b f . . 
-    . . f 3 3 3 3 3 3 3 3 3 3 f . . 
-    . f 3 3 e b 3 e e 3 b e 3 3 f . 
-    . f 3 3 f f e e e e f f 3 3 f . 
-    . f b b f b f e e f b f b b f . 
-    . f b b e 1 f 4 4 f 1 e b b f . 
-    f f b b f 4 4 4 4 4 4 f b b f f 
-    f b b f f f e e e e f f f b b f 
-    . f e e f b d d d d b f e e f . 
-    . . e 4 c d d d d d d c 4 e . . 
-    . . e f b d b d b d b b f e . . 
-    . . . f f 1 d 1 d 1 d f f . . . 
-    . . . . . f f b b f f . . . . . 
+    . . . . . f f 4 4 f f . . . . .
+    . . . . f 5 4 5 5 4 5 f . . . .
+    . . . f e 4 5 5 5 5 4 e f . . .
+    . . f b 3 e 4 4 4 4 e 3 b f . .
+    . . f 3 3 3 3 3 3 3 3 3 3 f . .
+    . f 3 3 e b 3 e e 3 b e 3 3 f .
+    . f 3 3 f f e e e e f f 3 3 f .
+    . f b b f b f e e f b f b b f .
+    . f b b e 1 f 4 4 f 1 e b b f .
+    f f b b f 4 4 4 4 4 4 f b b f f
+    f b b f f f e e e e f f f b b f
+    . f e e f b d d d d b f e e f .
+    . . e 4 c d d d d d d c 4 e . .
+    . . e f b d b d b d b b f e . .
+    . . . f f 1 d 1 d 1 d f f . . .
+    . . . . . f f b b f f . . . . .
     `, SpriteKind.Player)
 game.showLongText("I'm thinking of a number between 1 and 5. Can you guess it?", DialogLayout.Bottom)
 if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
@@ -105,21 +105,21 @@ This activity will add extra elements to make a more rewarding experience!
 
 ## Step 2
 
-Your workspace is preloaded with a basic guessing game. 
+Your workspace is preloaded with a basic guessing game.
 
 Let's add code that ends your game depending on whether you get the answer right or wrong.
 
 ---
 
 
-► From the ``||game:Game||`` category, grab a 
-``||game:game over <LOSE>||`` block and 
+► From the ``||game:Game||`` category, grab a
+``||game:game over <LOSE>||`` block and
 snap it at the end of the upper
 **if/then** container.
 
 ► Toggle **`<LOSE>`** to **`<WIN>`**.
 
-► Put another ``||game:game over <LOSE>||`` block at 
+► Put another ``||game:game over <LOSE>||`` block at
 the end of the lower **else** container.
 
 ```blocks
@@ -146,14 +146,14 @@ We can fix that with a short pause.
 ---
 
 
-► From the ``||loops:Loops||`` category, grab a 
+► From the ``||loops:Loops||`` category, grab a
 ``||loops:pause [100] ms||`` block and snap one above **each** **game over** block.
 
 ► Change **100** to **3000** in both of the **pause** blocks.
 
 ---
 
-**Tip:** Keep in mind that a ``||loops:pause||`` block will freeze your screen 
+**Tip:** Keep in mind that a ``||loops:pause||`` block will freeze your screen
 so that nothing else can happen until the time expires.
 
 
@@ -177,17 +177,17 @@ if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
 
 **🤷 But what was it? 🤷**
 
-Not satisfied with only right and wrong?  
+Not satisfied with only right and wrong?
 Let's add code to let the user know what the number was.
 
 ---
 
 
 ► Click on the **Advanced** cagegory to reveal the ``||text:Text||``
-option.  
+option.
 
-► Grab the ``||text:join ["Hello"] ["World"] ⊖ ⊕||`` block and use it to 
-replace the ** mySprite say text** in the **if** container.  
+► Grab the ``||text:join ["Hello"] ["World"] ⊖ ⊕||`` block and use it to
+replace the ** mySprite say text** in the **if** container.
 
 ► Click the **⊕** at the right of the new
 block to turn it into ``||text:join ["Hello"] ["World"] [" "] ⊖ ⊕||``.
@@ -219,17 +219,17 @@ Here's how:
 ► Use the **first text slot** *(the one that currently says "Hello")* for the beginning
 of your sentence. *(Don't forget to add a space at the end!)*
 
-► Drag a ``||variables:myNumber||`` value block into the **second slot** 
+► Drag a ``||variables:myNumber||`` value block into the **second slot**
 *(the one that currently says "World")* to report the random number that the
 computer chose.
 
 ► Use the **third text slot** *(the blank one)* for the end
-of your sentence. *(Don't forget to add a space at the beginning of this 
+of your sentence. *(Don't forget to add a space at the beginning of this
 field — unless it's punctuation!)*
 
 ---
 
-**When you put it all together, you should get a sentence that looks like:**  
+**When you put it all together, you should get a sentence that looks like:**
 "Yes! It was " + **myNumber** + "!"
 
 
@@ -259,15 +259,15 @@ Let's do the same thing for the incorrect answer.
 
 
 ► Right click on ``||text:join ["Yep! It was "] [myNumber] ["!"] ⊖ ⊕||``
-and choose **Duplicate**.  
+and choose **Duplicate**.
 
-► Drag the new value block into the **mySprite say** block in the 
-**else** container and change the sentence 
-to work when someone guesses wrong. 
+► Drag the new value block into the **mySprite say** block in the
+**else** container and change the sentence
+to work when someone guesses wrong.
 
 ---
 
-**When you put it all together, you should get a sentence that looks like:**  
+**When you put it all together, you should get a sentence that looks like:**
 "Nope. It was " + **myNumber** + "!"
 
 ```blocks
@@ -293,8 +293,8 @@ if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
 
 **Fantastic!**
 
-Now you'll know just how close you were!  
+Now you'll know just how close you were!
 
-Click **Finish** to return to the main page where you can share your game
+Click **Done** to return to the main page where you can share your game
 with family and friends!
 

@@ -3,7 +3,7 @@
 
 ## Welcome @showdialog
 
-**Right now, it's nearly impossible to make it to the end**  
+**Right now, it's nearly impossible to make it to the end**
 We need a way to pass the pits!
 
 ![Add platforms as you jump](/static/skillmap/sc/sc3.gif "Need a boost?")
@@ -22,7 +22,7 @@ Make sure you know which piece of code creates each action!
 
 ## Step 3 - Adding Block Walls
 
-**You know what would help us get over those pits?**  
+**You know what would help us get over those pits?**
 We need some well-placed platforms! Let's add a tile beneath the player when the A button is pressed.
 
 ---
@@ -31,7 +31,7 @@ We need some well-placed platforms! Let's add a tile beneath the player when the
 
 ► Set a wall by going to the ``||scene:Scene||`` category and dragging ``||scene:set wall <OFF> at tilemap col [0] row [0]||`` into the empty ``||controller:on [A] button [pressed]||`` container.
 
-► Toggle **`<OFF>`** to **`<ON>`**.  
+► Toggle **`<OFF>`** to **`<ON>`**.
 
 
 ```blocks
@@ -53,7 +53,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         tiles.setWallAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), true)
-    
+
 })
 ```
 
@@ -71,14 +71,14 @@ Try jumping while you press the (A) button. Your sprite should continue to hover
 
 ## Step 6 - Adding Block Tiles
 
-**Where did my wall go??**  
-The walls are great, but it's hard to remember where they are. Let's add special tiles over them so we can find them again later.  
+**Where did my wall go??**
+The walls are great, but it's hard to remember where they are. Let's add special tiles over them so we can find them again later.
 
 ---
 
 ► Set a tile by going to the ``||scene:Scene||`` category and dragging ``||scene:set [ ] at tilemap col [0] row [0]||`` into **the bottom** of the ``||controller:on [A] button [pressed]||`` container.
 
-► Click the empty square and choose the tile called **energy**.  
+► Click the empty square and choose the tile called **energy**.
 
 
 ```blocks
@@ -128,7 +128,7 @@ Press the A button to set an energy tile in-mid air to help your sprite over the
 
 ---
 
-When you're done playing, click **Finish** to return to the main page to learn how to **break** tiles.
+When you're done playing, click **Done** to return to the main page to learn how to **break** tiles.
 
 
 
@@ -177,7 +177,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 }
 
 namespace sprites {
-    
+
     /**
      * Allow your sprite to jump and come back to the ground
      * before jumping again
@@ -188,14 +188,14 @@ namespace sprites {
             thisSprite.vy = -200
         }
     }
-    
+
     /**
-     * Set a profile pic and name for your hero in the 
+     * Set a profile pic and name for your hero in the
      * upper-left hand corner of the screen
      */
     //% block="add corner profile for $choice"
     export function add_profile (choice:Choice) {
-        if (choice == Choice.xialing){ 
+        if (choice == Choice.xialing){
             profilelife.setProfileImage(assets.image`Xialing profile`)
             profilelife.setName("Xialing")
         }

@@ -62,4 +62,4 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.null, function (sprite, location)
 
 ## {Step 6 Add more enemies}
 
-Repeat these steps to add more enemies for Wonder Woman to avoid in her Maze. When you're done, click **Finish** to play and share your Wonder Woman Chaos Maze with friends! Congratulations!
+Repeat these steps to add more enemies for Wonder Woman to avoid in her Maze. When you're done, click **Done** to play and share your Wonder Woman Chaos Maze with friends! Congratulations!

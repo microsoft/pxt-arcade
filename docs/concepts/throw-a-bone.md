@@ -255,7 +255,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 Congratulation, your skeleton will now throw bones!
 
-If you want to continue to grow this project, here are a few suggestions on things you can try after you click `Finish`:
+If you want to continue to grow this project, here are a few suggestions on things you can try after you click `Done`:
 
 * Add ``||controller:move mySprite with buttons||`` to the ``||loops:on start||``, to make it so the skeleton can move around the screen and throw bones from different spaces.
 * Create another sprite, and use an ``||sprites:on overlap||`` event to make it so that sprite can catch the bone.

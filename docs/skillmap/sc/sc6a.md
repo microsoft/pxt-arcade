@@ -20,7 +20,7 @@ Can you connect each chunk of code to the actions it creates?
 
 ## Step 3 - Gotcha!
 
-Let's take hit points from your hero when an assassin catches (overlaps) them. 
+Let's take hit points from your hero when an assassin catches (overlaps) them.
 
 ---
 
@@ -107,7 +107,7 @@ Run into an assassin and see what happens.  Does it look the way you expect?
 
 ## Step 8 - Fighting Chance
 
-**💥 Let's give our sprite a fighting chance 💥**   
+**💥 Let's give our sprite a fighting chance 💥**
 Our sprite has a powerful kick.  Let's use it to clear the enemies.
 
 ---
@@ -131,7 +131,7 @@ When our power kick (projectile) hits an assassin, we want to destroy both the p
 
 ---
 
-► From ``||sprites:Sprites||``, drag two ``||sprites:destroy [mySprite]||`` blocks into the empty 
+► From ``||sprites:Sprites||``, drag two ``||sprites:destroy [mySprite]||`` blocks into the empty
 ``||sprites:on [sprite] of kind [Projectile] overlaps [otherSprite] of kind [Enemy]||`` container.
 
 ► Drag the ``||variables:otherSprite||`` value from the outer container down to replace ``||variables:mySprite||`` in the first block and drag the ``||variables:sprite||`` value down to replace ``||variables:mySprite||`` in the second block.
@@ -159,7 +159,7 @@ Can you clear all of the assassins, collect five rings, and win the level?
 
 ## Finished
 
-When you're done testing your project, click **Finish** to return to the main page to find out how you can make the enemies a little smarter.
+When you're done testing your project, click **Done** to return to the main page to find out how you can make the enemies a little smarter.
 
 
 
@@ -198,7 +198,7 @@ scene.onOverlapTile(SpriteKind.Projectile, assets.tile`boulder`, function (sprit
 let projectile: Sprite = null
 let mySprite: Sprite = null
 scene.setBackgroundImage(assets.image`background1`)
-tiles.setTilemap(tilemap`level1`) 
+tiles.setTilemap(tilemap`level1`)
 mySprite = sprites.create(assets.image`Shang-Chi`, SpriteKind.Player)
 sprites.add_profile(Choice.shang)
 mySprite.ay = 500
@@ -284,7 +284,7 @@ namespace sprites {
             thisSprite.vy = -200
         }
     }
-    
+
     /**
      * Direct sprite to automatically jump only when hitting
      * a wall to the right or left
@@ -297,12 +297,12 @@ namespace sprites {
     }
 
     /**
-     * Set a profile pic and name for your hero in the 
+     * Set a profile pic and name for your hero in the
      * upper-left hand corner of the screen
      */
     //% block="add corner profile for $choice"
     export function add_profile (choice:Choice) {
-        if (choice == Choice.xialing){ 
+        if (choice == Choice.xialing){
             profilelife.setProfileImage(assets.image`Xialing profile`)
             profilelife.setName("Xialing")
         }

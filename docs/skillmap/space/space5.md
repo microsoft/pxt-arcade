@@ -2,7 +2,7 @@
 
 ## Introduction @showdialog
 
-You should be rewarded for all of your hard work!  
+You should be rewarded for all of your hard work!
 
 This tutorial will show you how to level-up after earning 10 points.
 
@@ -10,9 +10,9 @@ This tutorial will show you how to level-up after earning 10 points.
 
 
 ## Step 2
-**This game is amazing!**  
+**This game is amazing!**
 
-Take a minute to look at each separate chunk of code.  Can you remember what they all do?  
+Take a minute to look at each separate chunk of code.  Can you remember what they all do?
 
 ---
 
@@ -27,17 +27,17 @@ Take a minute to look at each separate chunk of code.  Can you remember what the
 
 ## Step 3
 
-**Leveling-up should make enemy ships faster.**  
+**Leveling-up should make enemy ships faster.**
 
-If we want to use a value for their speed that changes 
+If we want to use a value for their speed that changes
 during game-play, we're going to need a [__*variable*__](#varied "a label that holds the place for something that can change").
 
 ---
 
-► Under the ``||variables:Variables||`` category, click inside the orange rectangle where it says 
-**Make a Variable...**. 
+► Under the ``||variables:Variables||`` category, click inside the orange rectangle where it says
+**Make a Variable...**.
 
-► Name your new variable **enemySpeed** and click **Ok**.  
+► Name your new variable **enemySpeed** and click **Ok**.
 
 
 
@@ -50,7 +50,7 @@ during game-play, we're going to need a [__*variable*__](#varied "a label that h
 ► From the ``||variables:Variables||`` category, grab ``||variables:set [enemySpeed] to [0]||``
 and snap it into **the bottom** of the ``||loops:on start||`` container.
 
-► Change the value from **0** to **50**.  
+► Change the value from **0** to **50**.
 
 
 ```blocks
@@ -72,15 +72,15 @@ let enemySpeed = 50
 
 **🚀 Let's Fly 🚀**
 
-Now that ``||variables:enemySpeed||`` has been set to **50**, we can use the variable 
+Now that ``||variables:enemySpeed||`` has been set to **50**, we can use the variable
 to control the enemy ship's **vy** (vertical velocity).
 
 ---
 
-► Go back to the ``||game:on game update every [2000]ms||`` container and find the block that sets-up the 
+► Go back to the ``||game:on game update every [2000]ms||`` container and find the block that sets-up the
 ``||variables:myEnemy||`` projectile.
 
-► From ``||variables:Variables||`` grab ``||variables:enemySpeed||`` and snap it in to 
+► From ``||variables:Variables||`` grab ``||variables:enemySpeed||`` and snap it in to
 replace the **vy** value of **50**.
 
 
@@ -90,7 +90,7 @@ game.onUpdateInterval(2000, function () {
     let myEnemy = sprites.createProjectileFromSide(assets.image`Spider`, 0, enemySpeed)
     myEnemy.x = randint(5, 155)
     myEnemy.setKind(SpriteKind.Enemy)
-    
+
 })
 ```
 
@@ -104,7 +104,7 @@ You shouldn't notice any difference in the speed of the ship.
 
 ## Step 7
 
-**👀 Watch the score 👀**   
+**👀 Watch the score 👀**
 
 We need code that checks to see **if** the score is **10** every time the player adds a point.
 
@@ -134,7 +134,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 
 ► From ``||info:Info||``, grab ``||info:score||`` and snap it in to replace the **0** to the left of the **=**.
 
-► Change the **0** on the right of the **=** to **10**. 
+► Change the **0** on the right of the **=** to **10**.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -143,7 +143,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     info.changeScoreBy(1)
     //@highlight
     if (info.score() == 10) {
-        
+
     }
 })
 ```
@@ -182,14 +182,14 @@ Let the player know they've earned a bonus!
 ---
 
 ► From ``||sprites:Sprites||``, drag ``||sprites:[mySprite] say [":)"]||`` into **the bottom**
-of the ``||logic:if <[score] [=] [10]> then||`` container. 
+of the ``||logic:if <[score] [=] [10]> then||`` container.
 
-► Change the message to say **"+5 Level-Up Bonus!"**.  
+► Change the message to say **"+5 Level-Up Bonus!"**.
 
 ► Click the **+** to the right of the **say** block and change the length of the display from **500** ms to **2 seconds** (2000 ms).
 
 
-  
+
 ```blocks
 let mySprite: Sprite = null
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -214,7 +214,7 @@ Time to speed up the enemy ships!
 
 
 ► From ``||variables:Variables||``, grab ``||variables:set [enemySpeed] to [0]||``
-and snap it in to **the bottom** of  the ``||logic:if <[score] [=] [10]> then||`` container. 
+and snap it in to **the bottom** of  the ``||logic:if <[score] [=] [10]> then||`` container.
 
 ► Change the value from **0** to **70**.
 
@@ -236,7 +236,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 ## Step 11
 **That's it!  That's all you needed to do.**
 
-Since we already have the ``||variables:enemySpeed||`` variable in place for the projectile's **vy**, 
+Since we already have the ``||variables:enemySpeed||`` variable in place for the projectile's **vy**,
 it will automatically update when we change the speed in another part of the program!
 
 ---
@@ -246,9 +246,9 @@ it will automatically update when we change the speed in another part of the pro
 
 ## Finale
 
-**Congratulations!!** 
+**Congratulations!!**
 
-Click **Finish** to return to the main page where you can add this game to your gallery and share with family & friends.
+Click **Done** to return to the main page where you can add this game to your gallery and share with family & friends.
 
 
 ```package
@@ -303,7 +303,7 @@ game.onUpdateInterval(2000, function () {
     myEnemy = sprites.createProjectileFromSide(assets.image`Spider`, 0, 50)
     myEnemy.x = randint(5, 155)
     myEnemy.setKind(SpriteKind.Enemy)
-    
+
 })
 game.onUpdateInterval(300, function () {
     statusbar.value += -1

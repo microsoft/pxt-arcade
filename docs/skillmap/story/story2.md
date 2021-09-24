@@ -262,27 +262,27 @@ effects.confetti.startScreenEffect()
 music.setVolume(20)
 music.playMelody("- - - - - - - - ", 120)
 let mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
     `, SpriteKind.Player)
 mySprite.setPosition(0, 0)
 forever(function () {
     for (let index = 0; index < 4; index++) {
-    	
+
     }
 })
 
@@ -297,13 +297,13 @@ You've created a greeting, now let's send it over the top!
 
 ## Step 2
 
-The code for a simple greeting card is already in the workspace.  
+The code for a simple greeting card is already in the workspace.
 **⭐ Build a new card by editing the images ⭐**
 
 ---
 
-► Choose a background from the gallery by clicking on the grey box in 
-``||scene:set background image to [ ]||`` and toggling to the **"Gallery"** tab at 
+► Choose a background from the gallery by clicking on the grey box in
+``||scene:set background image to [ ]||`` and toggling to the **"Gallery"** tab at
 the top of the window
 (or stay in the **Editor** and create your own).
 
@@ -450,7 +450,7 @@ music.playMelody("G B A G C5 B A B", 120)
 
 ---
 
-► If you feel like it, choose a new melody by clicking the note in 
+► If you feel like it, choose a new melody by clicking the note in
 the ``||music:play melody [ ] at tempo [120] (bpm)||`` block.
 
 
@@ -595,8 +595,8 @@ music.playMelody("G B A G C5 B A B ", 120)
 
 ## Step 4
 
-You can make your card even more special by adding some text that 
-cycles through when the **Ⓐ** button is pressed. 
+You can make your card even more special by adding some text that
+cycles through when the **Ⓐ** button is pressed.
 
 ---
 
@@ -606,9 +606,9 @@ container into the workspace.
 ► From the ``||game:Game||`` category, grab the ``||game: show long text [" "] [bottom]||``
 block and snap it into the empty **on A button pressed** container.
 
-► Add a personal message into the new **show long text** block.   
+► Add a personal message into the new **show long text** block.
 
-``` blocks 
+``` blocks
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     game.showLongText("Happy Earth Day", DialogLayout.Bottom)
@@ -627,17 +627,17 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 6
 
-**💚 What a nice surprise 💚 **  
+**💚 What a nice surprise 💚 **
 Add a second message below the first to really show you care.
 
 ---
 
 ► Right click ``||game: show long text [" "] [bottom]||`` and choose **Duplicate**.
 
-► Grab the copied block and snap it into the bottom of the ``||on [A] button [pressed]||`` 
+► Grab the copied block and snap it into the bottom of the ``||on [A] button [pressed]||``
 container.
 
-► Add another personal message into the new ``||game: show long text [" "] [bottom]||`` block.   
+► Add another personal message into the new ``||game: show long text [" "] [bottom]||`` block.
 
 ``` blocks
 
@@ -651,17 +651,17 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 7
 
-**🎨 Make it POP 🎨**   
-Customize the dialog to bring it all together. 
+**🎨 Make it POP 🎨**
+Customize the dialog to bring it all together.
 
 ---
 
 ► From ``||game:Game||``, grab a ``||game:set dialog frame to [ ]||`` block and
-snap it into **the top** of the ``||on [A] button [pressed]||`` 
+snap it into **the top** of the ``||on [A] button [pressed]||``
 container in your workspace.
 
-► Choose a dialog design by clicking on the grey box in the 
-``||game:set dialog frame to [ ]||`` box and toggling to the **Gallery**.  
+► Choose a dialog design by clicking on the grey box in the
+``||game:set dialog frame to [ ]||`` box and toggling to the **Gallery**.
 
 
 ``` blocks
@@ -717,15 +717,15 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 9
 
-**🎀 The final touch 🎀**    
-Change the color of your text so it works with your new background. 
+**🎀 The final touch 🎀**
+Change the color of your text so it works with your new background.
 
 ---
 
 ► From ``||game:Game||``, grab a ``||game:set dialog text color to [ ]||`` block and
 snap it into the top of the ``||on [A] button [pressed]||`` block in your workspace.
 
-► Click the grey box and choose a color for your message that looks good and is 
+► Click the grey box and choose a color for your message that looks good and is
 easy to read.  It's okay if you need to change it a few times before your text
 is just right.
 
@@ -777,9 +777,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Congrats @showdialog
 
-🥳 That's it! 🥳  
+🥳 That's it! 🥳
 
-**Before you click "Finish", take a look at the card on your game screen 
+**Before you click "Done", take a look at the card on your game screen
 to see how it works!**
 
 
@@ -788,9 +788,9 @@ to see how it works!**
 
 **🎊 Congrats 🎊**
 
-Now you have a card that any friend would be excited to get!   
+Now you have a card that any friend would be excited to get!
 
-Click **Finish** to return to the main page where you can share your game
+Click **Done** to return to the main page where you can share your game
 with family and friends!
 
 

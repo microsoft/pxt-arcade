@@ -333,7 +333,7 @@ true
 
 Now you've created an alien invasion!
 
-Watch it go by in the simulator window and when you're done, click **Finish** to return to the main page where you can share with family and friends!
+Watch it go by in the simulator window and when you're done, click **Done** to return to the main page where you can share with family and friends!
 
 
 ```package

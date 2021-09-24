@@ -402,7 +402,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 Now move your player and try and eat as much pizza as possible before time runs out.
 
-When you're done, click **Finish** to publish your game so you can share it with
+When you're done, click **Done** to publish your game so you can share it with
 friends and family.
 
 

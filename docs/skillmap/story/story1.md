@@ -129,27 +129,27 @@ effects.confetti.startScreenEffect()
 music.setVolume(20)
 music.playMelody("- - - - - - - - ", 120)
 let mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
     `, SpriteKind.Player)
 mySprite.setPosition(0, 0)
 forever(function () {
     for (let index = 0; index < 4; index++) {
-    	
+
     }
 })
 
@@ -172,11 +172,11 @@ Follow these quick steps and you'll have one in no time!
 
 ---
 
-► From the ``||scene:Scene||`` category in the toolbox, 
+► From the ``||scene:Scene||`` category in the toolbox,
 grab a ``||scene:set background image to [ ]||`` block and drag it into the **on start** container in the workspace.
 
-► Choose a background from the image gallery by clicking inside the grey 
-image square and toggling the switch at the top to **Gallery** 
+► Choose a background from the image gallery by clicking inside the grey
+image square and toggling the switch at the top to **Gallery**
 (or stay in **Edit** mode to create your own.)
 
 ►  Click **> Next** in the tutorial window to move on to the next step.
@@ -598,9 +598,9 @@ effects.confetti.startScreenEffect()
 
 ► From the ``||music:Music||`` category, grab a ``||music:play melody [ ] at tempo [120] (bpm)||`` block and snap it into the bottom of the **on start** container.
 
-► In the new block, click on the music note to open the music editor. 
-You can write your own song or toggle to the **Gallery** to pick one 
-that we've written for you.  
+► In the new block, click on the music note to open the music editor.
+You can write your own song or toggle to the **Gallery** to pick one
+that we've written for you.
 
 
 ```blocks
@@ -742,7 +742,7 @@ music.playMelody("G B A G C5 B A B ", 120)
 
 **🥳 That's it! 🥳**
 
-You now have a basic greeting card!  
+You now have a basic greeting card!
 
 **Take a look at the game screen to see how it turned out!**
 
@@ -751,7 +751,7 @@ You now have a basic greeting card!
 
 **Congratulations, you've finished your greeting card! **
 
-Click **Finish** to return to the main page where you can share your game
+Click **Done** to return to the main page where you can share your game
 with family and friends!
 
 

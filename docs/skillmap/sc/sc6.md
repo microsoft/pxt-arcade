@@ -24,7 +24,7 @@ Let's bring some assassins to this party.
 
 ---
 
-► From ``||tiles:Tilemaps||``, drag 
+► From ``||tiles:Tilemaps||``, drag
 ``||tiles:on each [ ] tile create sprite of kind [Player]||`` into **the end** of the ``||loops:on start||`` container.
 
 ► Change ``||sprites:Player||`` to ``||sprites:Enemy||``.
@@ -79,7 +79,7 @@ To set-up your assassins, you'll need to add properties as they're created.
 
 ```blocks
 sprites.onCreated(SpriteKind.Enemy, function (sprite) {
-    
+
 })
 ```
 
@@ -117,7 +117,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 
 ## Step 6 - Follow the Leader
 
-**💥 Watch Out 💥**  
+**💥 Watch Out 💥**
 
 ---
 
@@ -153,7 +153,7 @@ Run around near an assassin.  Do you notice anything wrong?
 
 ## Step 8 - Down to Earth
 
-**☁️ The assassins are floating ☁️**  
+**☁️ The assassins are floating ☁️**
 Keep them on the ground by adding acceleration.
 
 ---
@@ -192,7 +192,7 @@ Now the assassins should run after you wherever you go!
 
 ## Finished
 
-When you're done testing your project, click **Finish** to return to the main page to find out how to add damage when you're caught by the enemy.
+When you're done testing your project, click **Done** to return to the main page to find out how to add damage when you're caught by the enemy.
 
 
 
@@ -228,7 +228,7 @@ scene.onOverlapTile(SpriteKind.Projectile, assets.tile`boulder`, function (sprit
 let projectile: Sprite = null
 let mySprite: Sprite = null
 scene.setBackgroundImage(assets.image`background1`)
-tiles.setTilemap(tilemap`level1`) 
+tiles.setTilemap(tilemap`level1`)
 mySprite = sprites.create(assets.image`Xialing`, SpriteKind.Player)
 sprites.add_profile(Choice.xialing)
 mySprite.ay = 500
@@ -322,7 +322,7 @@ namespace sprites {
             thisSprite.vy = -200
         }
     }
-    
+
     /**
      * Direct sprite to automatically jump only when hitting
      * a wall to the right or left
@@ -335,12 +335,12 @@ namespace sprites {
     }
 
     /**
-     * Set a profile pic and name for your hero in the 
+     * Set a profile pic and name for your hero in the
      * upper-left hand corner of the screen
      */
     //% block="add corner profile for $choice"
     export function add_profile (choice:Choice) {
-        if (choice == Choice.xialing){ 
+        if (choice == Choice.xialing){
             profilelife.setProfileImage(assets.image`Xialing profile`)
             profilelife.setName("Xialing")
         }

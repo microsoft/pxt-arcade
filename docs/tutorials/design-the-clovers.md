@@ -170,5 +170,5 @@ Does the game look like you want it to? How are the sizes of your sprites compar
 to each other?
 
 Change as many things as you want, as often as you want. Once you're happy with your game,
-click **Finish** to share your custom game with friends!
+click **Done** to share your custom game with friends!
 

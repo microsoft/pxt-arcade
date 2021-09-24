@@ -3,15 +3,15 @@
 
 ## Welcome @showdialog
 
-Lots of things affect how quickly fire spreads.  
-In this activity, you'll add different variables 
+Lots of things affect how quickly fire spreads.
+In this activity, you'll add different variables
 to change fire danger levels.
 
 ![Fires are spreading very quickly](/static/skillmap/forest/forest4.gif "Look what we're about to do!")
 
 
 
-## 2. Remember 
+## 2. Remember
 
 **🎮 Try your game 🎮**
 
@@ -29,7 +29,7 @@ Let's add code to simulate different elements of the environment.
 
 ---
 
-► First, from the ``||game:Game||`` category, drag 
+► First, from the ``||game:Game||`` category, drag
 ``||game:set health of trees to [7]||``
 into **the top** of the ``||loops: on start||`` container.
 
@@ -61,8 +61,8 @@ for (let index = 0; index < 4; index++) {
 ## 4. Wind and Grass
 
 
-► Now, grab the blocks that set the **strength of the wind** and the 
-**dryness of the grass** 
+► Now, grab the blocks that set the **strength of the wind** and the
+**dryness of the grass**
 and add them to **the top** of the ``||loops: on start||`` container.
 
 
@@ -98,39 +98,39 @@ Now that the environment is set, we can add code that allows the fires to spread
 ---
 
 ►  From ``||game:Game||``, drop an
-``||game:on game update||`` container into an empty area of your workspace to run 
+``||game:on game update||`` container into an empty area of your workspace to run
 code each time the game updates its status.
 
-►  Inside ``||game:on game update||``, add ``||sprites: random spread [ ]||`` and choose 
+►  Inside ``||game:on game update||``, add ``||sprites: random spread [ ]||`` and choose
 the **fire** sprite.
 
 
 ```blocks
 game.onUpdate(function () {
     sprites.random_spread(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . 4 . . . . . 
-. . . . 2 . . . . 4 4 . . . . . 
-. . . . 2 4 . . 4 5 4 . . . . . 
-. . . . . 2 4 d 5 5 4 . . . . . 
-. . . . . 2 5 5 5 5 4 . . . . . 
-. . . . . . 2 5 5 5 5 4 . . . . 
-. . . . . . 2 5 4 2 4 4 . . . . 
-. . . . . . 4 4 . . 2 4 4 . . . 
-. . . . . 4 4 . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . 4 . . . . .
+. . . . 2 . . . . 4 4 . . . . .
+. . . . 2 4 . . 4 5 4 . . . . .
+. . . . . 2 4 d 5 5 4 . . . . .
+. . . . . 2 5 5 5 5 4 . . . . .
+. . . . . . 2 5 5 5 5 4 . . . .
+. . . . . . 2 5 4 2 4 4 . . . .
+. . . . . . 4 4 . . 2 4 4 . . .
+. . . . . 4 4 . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
 `)
 })
 
 ```
 
 
-## 6. Test 
+## 6. Test
 
 **🎮 Test your game 🎮**
 
@@ -142,13 +142,13 @@ Is your fire spreading? Does it get out of control too quickly?
 
 ## 7. No Fuel, No Fire
 
-Right now, the fires don't burn through any forest, 
-so they can burn the same spot over and over. 
+Right now, the fires don't burn through any forest,
+so they can burn the same spot over and over.
 When a flame burns out, we want to mark that tile in the forest as smouldering.
 
 ---
 
-►  Drag an ``||sprites: on destroyed [sprite] of kind [Player]||`` container into an 
+►  Drag an ``||sprites: on destroyed [sprite] of kind [Player]||`` container into an
 empty area of your workspace. Then, change ``||sprites: [Player]||`` to ``||sprites: [Fire]||``.
 
 
@@ -196,12 +196,12 @@ sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
 
 ## 9. Sprite Location
 
-►  To get the location of the place where the fire went out, replace 
+►  To get the location of the place where the fire went out, replace
 ``||scene:tilemap col [0] row [0]||`` with ``||tiles:location of [mySprite]||``.
 
 
-►  To get the location for the correct sprite, replace 
-``||variables:mySprite||`` with the ``||variables:sprite||`` 
+►  To get the location for the correct sprite, replace
+``||variables:mySprite||`` with the ``||variables:sprite||``
 value from the outer container.
 
 
@@ -226,10 +226,10 @@ When the fire overlaps a smouldering tile, the fire should be destroyed instantl
 
 ---
 
-►  Drag the ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
+►  Drag the ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``
 container into an empty area of the workspace.
 
-►  Change the sprite kind to ``||scene:Fire||`` and change the empty tile 
+►  Change the sprite kind to ``||scene:Fire||`` and change the empty tile
 to **smoulder**.
 
 
@@ -247,10 +247,10 @@ scene.onOverlapTile(SpriteKind.Fire, assets.tile`smoulder`, function (sprite, lo
 ## 11. Lights Out
 
 
-►  Add a ``||sprites:destroy [mySprite]||`` block into the empty container. 
+►  Add a ``||sprites:destroy [mySprite]||`` block into the empty container.
 
-►  To destroy the correct sprite, replace 
-``||variables:mySprite||`` with the ``||variables:sprite||`` 
+►  To destroy the correct sprite, replace
+``||variables:mySprite||`` with the ``||variables:sprite||``
 value from the outer container.
 
 
@@ -274,7 +274,7 @@ When the fire overlaps another flame, we can destroy one of the flames.
 
 ---
 
-►  Drag the ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` 
+►  Drag the ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``
 container into an empty area of the workspace.
 
 ►  Change both sprite kinds to ``||scene:Fire||``.
@@ -288,17 +288,17 @@ namespace SpriteKind {
     export const Burnt = SpriteKind.create()
 }
 sprites.onOverlap(SpriteKind.Fire, SpriteKind.Fire, function (sprite, otherSprite) {
-   
+
 })
 ```
 
 ## 13. One Less Fire
 
 
-►  Add a ``||sprites:destroy [mySprite]||`` block into the empty container. 
+►  Add a ``||sprites:destroy [mySprite]||`` block into the empty container.
 
-►  To destroy the correct sprite, replace 
-``||variables:mySprite||`` with the ``||variables:sprite||`` 
+►  To destroy the correct sprite, replace
+``||variables:mySprite||`` with the ``||variables:sprite||``
 value from the outer container.
 
 
@@ -316,7 +316,7 @@ sprites.onOverlap(SpriteKind.Fire, SpriteKind.Fire, function (sprite, otherSprit
 
 
 
-## 14. Test Again 
+## 14. Test Again
 
 **🎮 Play Your Game 🎮**
 
@@ -329,11 +329,11 @@ they spread too far.
 
 ## Finale
 
-👏 **Excellent!** 👏   
+👏 **Excellent!** 👏
 
 ---
 
-Once you've put out the fires, click **Finish** to 
+Once you've put out the fires, click **Done** to
 keep moving through the skillmap to find out how to add a heads-up display to your game.
 
 
@@ -504,7 +504,7 @@ namespace game {
 
 //% color="#09282d" icon="\uf1e5"
 //% block="HUD"
-namespace hud {    
+namespace hud {
 
     /*
      * Show or hide the current number of burning fires.
@@ -535,7 +535,7 @@ namespace hud {
         if (answer) {
             statusLabel.setFlag(SpriteFlag.Invisible, false)
             statusbar.setFlag(SpriteFlag.Invisible, false)
-        
+
         } else {
             statusLabel.setFlag(SpriteFlag.Invisible, true)
             statusbar.setFlag(SpriteFlag.Invisible, true)
@@ -584,7 +584,7 @@ namespace hud {
     export function fire_hud_label (name: string) {
         fireLabel.setText(name)
     }
-    
+
 
 }
 
@@ -628,13 +628,13 @@ namespace sprites {
             } else if (controller.right.isPressed()) {
                 facing = 315
             } else if (controller.down.isPressed()) {
-                
+
             } else {
                 facing = 270
             }
         } else if (controller.left.isPressed()) {
             if (controller.right.isPressed()) {
-                
+
             } else if (controller.down.isPressed()) {
                 facing = 135
             } else {
@@ -649,7 +649,7 @@ namespace sprites {
         } else if (controller.down.isPressed()) {
             facing = 90
         }
-  
+
         if (Math.abs(facing - hoseDirection) < 180) {
         if (facing < hoseDirection) {
             hoseDirection += 0 - changeRate
@@ -674,7 +674,7 @@ namespace sprites {
   }
 
     /*
-     * Spread current fires according to wind speed, 
+     * Spread current fires according to wind speed,
      * dryness of grass, and health of trees.
      */
     //% block="random spread $myImage=screen_image_picker"

@@ -5,22 +5,22 @@
 
 Welcome to MakeCode Arcade!
 
-This activity will show you how to make a [__*sidescrolling*__](#scrolld "games that are viewed from the side, with most of the action happening horizontally") 
+This activity will show you how to make a [__*sidescrolling*__](#scrolld "games that are viewed from the side, with most of the action happening horizontally")
 [__*platformer*__](#plat "games that rely on jump and run as their main mechanic")
-based on the Marvel movie **Shang-Chi and the Legend of the Ten Rings**.  
+based on the Marvel movie **Shang-Chi and the Legend of the Ten Rings**.
 
 ![Our first platformer](/static/skillmap/sc/sc1.gif "Look what we're about to learn today!")
 
 
 
 
-## Step 2 
+## Step 2
 
 **Your scene has already been set!**
 
 ---
 
-► The **background image** and [__*tilemap*__](#tiled "a scene or world created using predefined tiles")  have already been set to look like a street scene in San Francisco.  
+► The **background image** and [__*tilemap*__](#tiled "a scene or world created using predefined tiles")  have already been set to look like a street scene in San Francisco.
 
 💡 Notice that two blocks have been added to the ``||loops: on start||`` container so they load as soon as the activity starts.
 
@@ -30,7 +30,7 @@ based on the Marvel movie **Shang-Chi and the Legend of the Ten Rings**.
 
 **💥 We need a hero 💥**
 
-Choose a character [__*sprite*__](#sprote "a 2-D image that moves on the screen") to control. 
+Choose a character [__*sprite*__](#sprote "a 2-D image that moves on the screen") to control.
 
 ---
 
@@ -79,11 +79,11 @@ sprites.add_profile(Choice.xialing)
 
 ---
 
-► From ``||controller:Controller||``, drag ``||controller:move [mySprite] with buttons ⊕||``   
+► From ``||controller:Controller||``, drag ``||controller:move [mySprite] with buttons ⊕||``
 to **the end** of the ``||loops:on start||`` container.
 
 ► Press the ⊕ button to the right of the block and change the [__*vy*__](#whatVY "vertical velocity") (up/down speed)
-argument to **0** so that the player won't hover up or down when you use the joypad.  
+argument to **0** so that the player won't hover up or down when you use the joypad.
 
 
 ```blocks
@@ -136,7 +136,7 @@ mySprite.ay = 500
 
 ---
 
-►  To keep your sprite in sight, open ``||scene:Scene||`` and drag 
+►  To keep your sprite in sight, open ``||scene:Scene||`` and drag
 ``||scene:camera follow sprite [mySprite]||`` to **the end** of the ``||loops:on start||`` container.
 
 💡 Don't forget to play with your project after each step to see the changes your code has made.
@@ -164,7 +164,7 @@ Now that your sprite has landed safely, we can make them jump using the **up** a
 
 ► Click the ``||controller:A||`` option and change it to ``||controller:up||``.
 
-► From ``||sprites:Sprites||``,  grab ``||sprites:make [mySprite] gravity jump||`` and drag it into the empty ``||controller:on [up] button [pressed]||`` container. 
+► From ``||sprites:Sprites||``,  grab ``||sprites:make [mySprite] gravity jump||`` and drag it into the empty ``||controller:on [up] button [pressed]||`` container.
 
 
 ```blocks
@@ -179,12 +179,12 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Done
 
-🔥 **That's it! Now give it a try!** 🔥   
+🔥 **That's it! Now give it a try!** 🔥
 Can you jump around between platforms?
 
 ---
 
-Take a spin through the level, then click **Finish** to return to the main skillmap and continue with the next activity to add a way to win or lose!
+Take a spin through the level, then click **Done** to return to the main skillmap and continue with the next activity to add a way to win or lose!
 
 
 ```package
@@ -233,14 +233,14 @@ namespace sprites {
             thisSprite.vy = -200
         }
     }
-    
+
     /**
-     * Set a profile pic and name for your hero in the 
+     * Set a profile pic and name for your hero in the
      * upper-left hand corner of the screen
      */
     //% block="add corner profile for $choice"
     export function add_profile (choice:Choice) {
-        if (choice == Choice.xialing){ 
+        if (choice == Choice.xialing){
             profilelife.setProfileImage(assets.image`Xialing profile`)
             profilelife.setName("Xialing")
         }

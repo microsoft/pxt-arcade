@@ -3,7 +3,7 @@
 
 ## Welcome @showdialog
 
-**Time to Level Up!**  
+**Time to Level Up!**
 
 This activity will show you how to add a HUD.
 
@@ -28,7 +28,7 @@ You did it!!  Can you follow the experience all the way to the end?
 
 ---
 
-When you're done playing with your project, click **Finish** to return to the main page for your certificate and the option to customize your final project!
+When you're done playing with your project, click **Done** to return to the main page for your certificate and the option to customize your final project!
 
 
 
@@ -96,16 +96,16 @@ controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
 
 game.onUpdate(function () {
   sprites.random_spread(img`
-    . . . . . . 4 . . 
-    2 . . . . 4 4 . . 
-    2 4 . . 4 5 4 . . 
-    . 2 4 d 5 5 4 . . 
-    . 2 5 5 5 5 4 . . 
-    . . 2 5 5 5 5 4 . 
-    . . 2 5 4 2 4 4 . 
-    . . 4 4 . . 2 4 4 
-    . 4 4 . . . . . . 
-    `)    
+    . . . . . . 4 . .
+    2 . . . . 4 4 . .
+    2 4 . . 4 5 4 . .
+    . 2 4 d 5 5 4 . .
+    . 2 5 5 5 5 4 . .
+    . . 2 5 5 5 5 4 .
+    . . 2 5 4 2 4 4 .
+    . . 4 4 . . 2 4 4
+    . 4 4 . . . . . .
+    `)
     if (sprites.allOfKind(SpriteKind.Fire).length == 0) {
         info.setScore(statusbar.value / statusbar.max * 100)
         game.over(true)
@@ -201,13 +201,13 @@ namespace sprites {
             } else if (controller.right.isPressed()) {
                 facing = 315
             } else if (controller.down.isPressed()) {
-                
+
             } else {
                 facing = 270
             }
         } else if (controller.left.isPressed()) {
             if (controller.right.isPressed()) {
-                
+
             } else if (controller.down.isPressed()) {
                 facing = 135
             } else {
@@ -222,7 +222,7 @@ namespace sprites {
         } else if (controller.down.isPressed()) {
             facing = 90
         }
-  
+
         if (Math.abs(facing - hoseDirection) < 180) {
         if (facing < hoseDirection) {
             hoseDirection += 0 - changeRate
@@ -245,7 +245,7 @@ namespace sprites {
         let waterProj = sprites.createProjectileFromSprite(assets.image`water`, thisSprite,  150 * Math.cos(spriteutils.degreesToRadians(hoseDirection)), 150 * Math.sin(spriteutils.degreesToRadians(hoseDirection)))
 
     }
-    
+
 
 
 //% block="random spread $myImage"
@@ -408,21 +408,21 @@ for (let index = 0; index < 4; index++) {
 }
 game.onUpdate(function () {
     sprites.random_spread(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . 4 . . . . . 
-        . . . . 2 . . . . 4 4 . . . . . 
-        . . . . 2 4 . . 4 5 4 . . . . . 
-        . . . . . 2 4 d 5 5 4 . . . . . 
-        . . . . . 2 5 5 5 5 4 . . . . . 
-        . . . . . . 2 5 5 5 5 4 . . . . 
-        . . . . . . 2 5 4 2 4 4 . . . . 
-        . . . . . . 4 4 . . 2 4 4 . . . 
-        . . . . . 4 4 . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . 4 . . . . .
+        . . . . 2 . . . . 4 4 . . . . .
+        . . . . 2 4 . . 4 5 4 . . . . .
+        . . . . . 2 4 d 5 5 4 . . . . .
+        . . . . . 2 5 5 5 5 4 . . . . .
+        . . . . . . 2 5 5 5 5 4 . . . .
+        . . . . . . 2 5 4 2 4 4 . . . .
+        . . . . . . 4 4 . . 2 4 4 . . .
+        . . . . . 4 4 . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
         `)
 })
