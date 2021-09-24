@@ -97,22 +97,22 @@ function startNextLevel () {
     tiles.placeOnRandomTile(mySprite, myTiles.tile3)
     for (let value of tiles.getTilesByType(myTiles.tile5)) {
         myEnemy = sprites.create(img`
-            a a a a a a a a a a a a a a a a 
-            a b b b b b b b b b b b b b b a 
-            a b a a a a a a a a a a a a b a 
-            a b a a b b a a a a b b a a b a 
-            a b a a a a b a a b a a a a b a 
-            a b a a a a a a a a a a a a b a 
-            a b a a a b a a a a b a a a b a 
-            a b a a a b a a a a b a a a b a 
-            a b a a a a a a a a a a a a b a 
-            a b a a a a a a a a a a a a b a 
-            a b a a a b b b b b b a a a b a 
-            a b a a b a a a a a a b a a b a 
-            a b a a a a a a a a a a a a b a 
-            a b a a a a a a a a a a a a b a 
-            a b b b b b b b b b b b b b b a 
-            a a a a a a a a a a a a a a a a 
+            a a a a a a a a a a a a a a a a
+            a b b b b b b b b b b b b b b a
+            a b a a a a a a a a a a a a b a
+            a b a a b b a a a a b b a a b a
+            a b a a a a b a a b a a a a b a
+            a b a a a a a a a a a a a a b a
+            a b a a a b a a a a b a a a b a
+            a b a a a b a a a a b a a a b a
+            a b a a a a a a a a a a a a b a
+            a b a a a a a a a a a a a a b a
+            a b a a a b b b b b b a a a b a
+            a b a a b a a a a a a b a a b a
+            a b a a a a a a a a a a a a b a
+            a b a a a a a a a a a a a a b a
+            a b b b b b b b b b b b b b b a
+            a a a a a a a a a a a a a a a a
             `, SpriteKind.Enemy)
         tiles.placeOnTile(myEnemy, value)
         myEnemy.follow(mySprite, 30)
@@ -130,22 +130,22 @@ let myEnemy: Sprite = null
 let currentLevel = 0
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
-    3 1 1 1 1 1 1 1 1 1 1 1 1 1 1 3 
-    3 1 3 3 3 3 3 3 3 3 3 3 3 3 1 3 
-    3 1 3 3 3 3 3 3 3 3 3 3 3 3 1 3 
-    3 1 3 3 3 3 3 3 3 3 3 3 3 3 1 3 
-    3 1 3 3 1 1 1 3 3 3 1 3 3 3 1 3 
-    3 1 3 3 1 3 3 1 3 1 1 3 3 3 1 3 
-    3 1 3 3 1 3 3 1 3 3 1 3 3 3 1 3 
-    3 1 3 3 1 1 1 3 3 3 1 3 3 3 1 3 
-    3 1 3 3 1 3 3 3 3 3 1 3 3 3 1 3 
-    3 1 3 3 1 3 3 3 3 1 1 1 3 3 1 3 
-    3 1 3 3 3 3 3 3 3 3 3 3 3 3 1 3 
-    3 1 3 3 3 3 3 3 3 3 3 3 3 3 1 3 
-    3 1 3 3 3 3 3 3 3 3 3 3 3 3 1 3 
-    3 1 1 1 1 1 1 1 1 1 1 1 1 1 1 3 
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 1 1 1 1 1 1 1 1 1 1 1 1 1 1 3
+    3 1 3 3 3 3 3 3 3 3 3 3 3 3 1 3
+    3 1 3 3 3 3 3 3 3 3 3 3 3 3 1 3
+    3 1 3 3 3 3 3 3 3 3 3 3 3 3 1 3
+    3 1 3 3 1 1 1 3 3 3 1 3 3 3 1 3
+    3 1 3 3 1 3 3 1 3 1 1 3 3 3 1 3
+    3 1 3 3 1 3 3 1 3 3 1 3 3 3 1 3
+    3 1 3 3 1 1 1 3 3 3 1 3 3 3 1 3
+    3 1 3 3 1 3 3 3 3 3 1 3 3 3 1 3
+    3 1 3 3 1 3 3 3 3 1 1 1 3 3 1 3
+    3 1 3 3 3 3 3 3 3 3 3 3 3 3 1 3
+    3 1 3 3 3 3 3 3 3 3 3 3 3 3 1 3
+    3 1 3 3 3 3 3 3 3 3 3 3 3 3 1 3
+    3 1 1 1 1 1 1 1 1 1 1 1 1 1 1 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
     `, SpriteKind.Player)
 mySprite.ay = 500
 controller.moveSprite(mySprite, 100, 0)
@@ -168,37 +168,37 @@ In this lesson we'll learn how to make enemies smarter using simple [_**AI**_](#
 ## AI Rules @showdialog
 
 The code for this program spawns enemies from the purple **[ ! ]** tiles.
-Once the enemies spawn, they immediately start moving to the left and get 
+Once the enemies spawn, they immediately start moving to the left and get
 stuck on a wall...so, let's add logic to prevent the enemies from getting stopped.
 
 ---
 
 **The enemies will need to follow two rules:**
 
-1. **If the enemy is about to run into a wall, it will try to jump over it**  
+1. **If the enemy is about to run into a wall, it will try to jump over it**
 2. **If the enemy does hit a wall, it will turn around**
 
 
 ---
 
 
-Each of these rules has a *condition* and an *action*.  
+Each of these rules has a *condition* and an *action*.
 
 If the condition is met, the action will happen.
 We'll need to write code to constantly check for each of these conditions.
 
 ## Looping pt. 1
 
-To get started, we'll need an **on game update** container to trigger code 
-every time something in the game changes. Inside, we'll need a loop to check on 
-each of the enemies, one-by-one.   
+To get started, we'll need an **on game update** container to trigger code
+every time something in the game changes. Inside, we'll need a loop to check on
+each of the enemies, one-by-one.
 
 ---
 
 
 ► Drag out an ``||game:on game update||`` block and place it on the workspace.
 
-► Snap a ``||loops: for element [value] of [list]||`` block into the 
+► Snap a ``||loops: for element [value] of [list]||`` block into the
 **on game update** container.
 
 ```blocks
@@ -217,13 +217,13 @@ To do this, we'll use the same method as in previous tutorials.
 ---
 
 
-► From the ``||sprites:Sprites||`` category, grab the ``||sprites:array of sprite of kind||`` 
+► From the ``||sprites:Sprites||`` category, grab the ``||sprites:array of sprite of kind||``
 block from inside the **set sprite list to** block.
 
 
 ► Drop it into the **for element** loop to replace the ``||variables: list||`` variable.
 
-► Change the "kind" dropdown to **Enemy**.  
+► Change the "kind" dropdown to **Enemy**.
 
 
 ```blocks
@@ -237,7 +237,7 @@ game.onUpdate(function () {
 
 Let's start the code for our first rule:
 
-> 1. **If the enemy is about to run into a wall, it will try to jump over it**  
+> 1. **If the enemy is about to run into a wall, it will try to jump over it**
 
 ---
 
@@ -245,11 +245,11 @@ Let's start the code for our first rule:
 ► We're going to need to check **if** something is true. To do that, drag
 an ``||logic: if <true> then||`` logic container into the empty **on game update** container.
 
-► Now make sure the enemy isn't already jumping by replacing 
+► Now make sure the enemy isn't already jumping by replacing
 ``||logic: <true>||`` with ``||scene: is [mySprite] hitting wall [left]||`` in the empty
-**if/then** header.  
+**if/then** header.
 
-► Replace ``||variables: mySprite||`` with ``||variables: value||`` to make sure 
+► Replace ``||variables: mySprite||`` with ``||variables: value||`` to make sure
 it's checking the current enemy.
 
 ► Change **left** to **bottom** to check that the bottom of the sprite is on the ground.
@@ -259,7 +259,7 @@ it's checking the current enemy.
 game.onUpdate(function () {
     for (let value of sprites.allOfKind(SpriteKind.Enemy)) {
         if (value.isHittingTile(CollisionDirection.Bottom)) {
-           
+
         }
     }
 })
@@ -267,33 +267,33 @@ game.onUpdate(function () {
 
 ## Jumping pt. 2
 
-Now that we know the enemy is on the ground, we will have two conditions 
-when it needs to jump.  
+Now that we know the enemy is on the ground, we will have two conditions
+when it needs to jump.
  - If it's moving to the left and there's a wall to the left
- - If it's moving to the right and there's a wall to the right 
+ - If it's moving to the right and there's a wall to the right
 
 We'll figure out whether either situation is happening using a new **if/then** statement.
 
 ---
 
 
-► Drag out another ``||logic:if <true> then||`` block and place it inside of the 
+► Drag out another ``||logic:if <true> then||`` block and place it inside of the
 empty one already in the **for element** loop.
 
-► To check whether two things are true at the same time (moving left **and** wall to the left), 
-pull a ``||logic: < > and < >||`` in to replace the ``||logic:<true>||`` argument 
+► To check whether two things are true at the same time (moving left **and** wall to the left),
+pull a ``||logic: < > and < >||`` in to replace the ``||logic:<true>||`` argument
 in the new **if/else** statement.
 
 ► In the right blank (to the right of the **and**) snap a ``||scene: tile to the [left] of [mySprite] is [ ]||``
 
 ► Replace ``||variables: mySprite||`` with ``||variables: value||`` and replace the blank
-tile with the **[X]**. 
+tile with the **[X]**.
 
-► Pop a ``||logic: [0] [<] [0]||`` block to the left of the **and**.   
+► Pop a ``||logic: [0] [<] [0]||`` block to the left of the **and**.
 
 ---
 
-We'll do more with that in the next step.    
+We'll do more with that in the next step.
 
 
 ```blocks
@@ -301,15 +301,15 @@ game.onUpdate(function () {
     for (let value of sprites.allOfKind(SpriteKind.Enemy)) {
         if (value.isHittingTile(CollisionDirection.Bottom)) {
             if (0 < 0 && value.tileKindAt(TileDirection.Left, myTiles.tile1)) {
-               
-            } 
+
+            }
 })
 ```
 
 ## Jumping pt. 3
 
 We're already checking to see if the next tile to the left is a wall,
-but that only matters if the enemy is traveling left.  
+but that only matters if the enemy is traveling left.
 
 Let's add the code to see if the enemy is moving left.
 
@@ -317,13 +317,13 @@ Let's add the code to see if the enemy is moving left.
 
 In the Arcade system, left is negative and right is positive. To check that the
 sprite is moving left, you must make sure its velocity in the x direction
-is negative.  
+is negative.
 
-► Grab a ``||sprites: [mySprite] [x]||`` argument block to replace the 
+► Grab a ``||sprites: [mySprite] [x]||`` argument block to replace the
 first **0** in ``||logic: [0] [<] [0]||``.
 
-► Replace ``||variables: mySprite||`` with ``||variables: value||`` and replace 
-**x** with **vx (velocity x)**.   
+► Replace ``||variables: mySprite||`` with ``||variables: value||`` and replace
+**x** with **vx (velocity x)**.
 
 
 
@@ -332,7 +332,7 @@ game.onUpdate(function () {
     for (let value of sprites.allOfKind(SpriteKind.Enemy)) {
         if (value.isHittingTile(CollisionDirection.Bottom)) {
             if (value.vx < 0 && value.tileKindAt(TileDirection.Left, myTiles.tile1)) {
-            }    
+            }
         }
     }
 })
@@ -342,17 +342,17 @@ game.onUpdate(function () {
 ## Jumping pt. 6
 
 If the computer gets to this point in the code, it means it's time for the
-enemy to jump. 
+enemy to jump.
 
 ---
 
 
 ► Inside the newly built **if/then** statement, connect a ``||sprites:set [mySprite] [x] to [0]||`` block.
 
-► Replace ``||variables: mySprite||`` with ``||variables: value||`` and replace 
-``||sprites: x||`` with ``||sprites: vy (velocity y)||``. 
+► Replace ``||variables: mySprite||`` with ``||variables: value||`` and replace
+``||sprites: x||`` with ``||sprites: vy (velocity y)||``.
 
-► Change **0** to **-150**.   
+► Change **0** to **-150**.
 
 
 ```blocks
@@ -361,7 +361,7 @@ game.onUpdate(function () {
         if (value.isHittingTile(CollisionDirection.Bottom)) {
             if (value.vx < 0 && value.tileKindAt(TileDirection.Left, myTiles.tile1)) {
                 value.vy = -150
-            } 
+            }
     }
 })
 ```
@@ -378,15 +378,15 @@ Next, we'll add the code to do the same thing to the right.
 statement that we've just completed, to add an **else** then an **else if** clause.
 
 ► Duplicate the entire **and** statement, then drop the duplicate into the
-header of the **else if** clause.  
+header of the **else if** clause.
 
 ► In the new clause, change **<** to **>** and **left** to **right**.
 
-► Duplicate the ``||sprites:set [value] [vy (velocity y)] to [-150]||`` block 
+► Duplicate the ``||sprites:set [value] [vy (velocity y)] to [-150]||`` block
 and snap the copy inside the empty **else if** statement.
 
-► We're done with this **if/else if** statement now, so you can click the 
-**⊖** beside the empty **else** clause to remove it from the block.  
+► We're done with this **if/else if** statement now, so you can click the
+**⊖** beside the empty **else** clause to remove it from the block.
 
 
 
@@ -399,7 +399,7 @@ game.onUpdate(function () {
             } else if (value.vx > 0 && value.tileKindAt(TileDirection.Right, myTiles.tile1)) {
                 value.vy = -150
             }
-        } 
+        }
     }
 })
 ```
@@ -421,15 +421,15 @@ while it's already trying to jump.
 ► Click three times on the **⊕** button at the bottom of the outermost **if/then**
 statement (**if <is value hitting wall bottom> then**) to add an **else** and two **else if** clauses.
 
-► Duplicate the ``||scene: is [value] hitting wall [bottom]||`` argument twice and 
+► Duplicate the ``||scene: is [value] hitting wall [bottom]||`` argument twice and
 place a copy in each of the new **else if** headers.
 
 ► Change **bottom** to **left** in the first **else if**.
 
-► Change **bottom** to **right** in the second **else if**.  
+► Change **bottom** to **right** in the second **else if**.
 
-► Click the 
-**⊖** beside the empty **else** clause to remove it from the block.  
+► Click the
+**⊖** beside the empty **else** clause to remove it from the block.
 
 
 ```blocks
@@ -444,7 +444,7 @@ game.onUpdate(function () {
         } else if (value.isHittingTile(CollisionDirection.Left)) {
 
         } else if (value.isHittingTile(CollisionDirection.Right)) {
- 
+
         }
     }
 })
@@ -461,12 +461,12 @@ going left and left if they were going right.
 ► Make two duplicates of one of the ``||sprites:set [value] [vy (velocity y)] to [-150]||`` blocks from the original **if/then**
 clause and snap one into each of the empty **else if** clauses.
 
-► For the **set value** block inside the first **else if** clause 
-(**else if <is value hitting wall left> then**), change 
+► For the **set value** block inside the first **else if** clause
+(**else if <is value hitting wall left> then**), change
 **vy (velocity y)** to **vx (velocity x)** and change **-150** to **30**.
 
-► For the **set value** block inside the second **else if** clause 
-(**else if <is value hitting wall right> then**), change 
+► For the **set value** block inside the second **else if** clause
+(**else if <is value hitting wall right> then**), change
 **vy (velocity y)** to **vx (velocity x)** and change **-150** to **-30**.
 
 
@@ -492,9 +492,9 @@ game.onUpdate(function () {
 
 ##Finale
 
-🔥 **That's it! Now give your game a try!** 🔥 
+🔥 **That's it! Now give your game a try!** 🔥
 
-Click **Finish** to return to the main page where you can share your game
+Click **Done** to return to the main page where you can share your game
 with family and friends!
 
 ---

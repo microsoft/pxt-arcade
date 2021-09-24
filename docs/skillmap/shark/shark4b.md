@@ -14,7 +14,7 @@ This activity will help you edit your sprites and backgrounds to create a brand 
 
 ## Step 2 - Main Sprite
 
-**Let's start with the main character!**  
+**Let's start with the main character!**
 Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine snatching clouds? It's up to you!
 
 ---
@@ -22,7 +22,7 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 ► Click the **shark** sprite, then click the **Edit** button in the Asset Preview panel to the left.
 
 
-► Draw your own character in the image editor, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your main character, click **Done**. 
+► Draw your own character in the image editor, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your main character, click **Done**.
 
 
 
@@ -34,7 +34,7 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 
 ► Find the **ocean1** background, then select it and click **Edit**.
 
-► Draw a background that fits your main character, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your background, click **Done**. 
+► Draw a background that fits your main character, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your background, click **Done**.
 
 💡 You can see the name of any image by hovering over the square or clicking the square and looking for the name in the **Asset Preview** window.
 
@@ -48,7 +48,7 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 
 ► Click the **decoration** sprite, then click the **Edit** button in the panel to the left.
 
-► Draw a small decoration for the ground of your scene, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your decoration, click **Done**. 
+► Draw a small decoration for the ground of your scene, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your decoration, click **Done**.
 
 
 ## Step 5 - Food
@@ -59,7 +59,7 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 
 ► Click the **myFood** sprite, then click the **Edit** button in the panel to the left.
 
-► Draw whatever you want your main character to collect (or toggle to the **Gallery** to find something that has already been created).  When you're happy with your sprite, click **Done**. 
+► Draw whatever you want your main character to collect (or toggle to the **Gallery** to find something that has already been created).  When you're happy with your sprite, click **Done**.
 
 
 
@@ -73,7 +73,7 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 ► Click the **enemy** sprite, then click the **Edit** button in the panel to the left.
 
 
-► Draw something for your main character to avoid (or toggle to the **Gallery** to find something that has already been created).  When you're happy with your enemy sprite, click **Done**. 
+► Draw something for your main character to avoid (or toggle to the **Gallery** to find something that has already been created).  When you're happy with your enemy sprite, click **Done**.
 
 
 
@@ -86,17 +86,17 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 
 ► Click the **laser** sprite, then click the **Edit** button in the panel to the left.
 
-► Draw something that your main character can throw at other sprites (or toggle to the **Gallery** to find something that has already been created).  When you're happy with your projectile, click **Done**. 
+► Draw something that your main character can throw at other sprites (or toggle to the **Gallery** to find something that has already been created).  When you're happy with your projectile, click **Done**.
 
 
 ## Finale
 
-**Fantastic!**  
+**Fantastic!**
 You've created a game of your very own!
 
 ---
 
-Don't forget to play your game to make sure you like the way everything looks. When you're happy, click **Finish** to head back to the skillmap where you can share your game with family and friends.
+Don't forget to play your game to make sure you like the way everything looks. When you're happy, click **Done** to head back to the skillmap where you can share your game with family and friends.
 
 
 

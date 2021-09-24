@@ -3,15 +3,15 @@
 
 ## Welcome @showdialog
 
-Nearly 4 out of 5 forest fires are started by humans.  
-In your game, they'll be started by your code. 
+Nearly 4 out of 5 forest fires are started by humans.
+In your game, they'll be started by your code.
 
 ![Random fires starting on the grid](/static/skillmap/forest/forest2.gif "Look what we're about to do today!")
 
 
 
 
-## 2. Set the Scene 
+## 2. Set the Scene
 
 **🎮 Try your game**
 
@@ -30,16 +30,16 @@ code once.
 
 ---
 
-- :redo:  Drag the  
-``||loops:repeat [4] times||``  
-loop container into **the end** of the  
-``||loops:on start||``  
+- :redo:  Drag the
+``||loops:repeat [4] times||``
+loop container into **the end** of the
+``||loops:on start||``
 container.
 
-- :paper plane:  Add    
-``||variables:set [mySprite2] to sprite [ ] of kind [Player]||``  
-to the end of the  
-``||loops:repeat [4] times||``  
+- :paper plane:  Add
+``||variables:set [mySprite2] to sprite [ ] of kind [Player]||``
+to the end of the
+``||loops:repeat [4] times||``
 container.
 
 
@@ -51,7 +51,7 @@ scene.cameraFollowSprite(mySprite)
 //@highlight
 for (let index = 0; index < 4; index++) {
     mySprite2 = sprites.create(img`
-. 
+.
 `, SpriteKind.Player)
 }
 ```
@@ -62,10 +62,10 @@ for (let index = 0; index < 4; index++) {
 ## 4. Creating fire
 
 
-- :mouse pointer:  In the   
-``||variables:set [mySprite2] to sprite [ ] of kind [Player]||``  
-block, click  
-``||variables:mySprite2||``  
+- :mouse pointer:  In the
+``||variables:set [mySprite2] to sprite [ ] of kind [Player]||``
+block, click
+``||variables:mySprite2||``
 and use the dropdown menu to rename the sprite **newFire**.
 
 - :paint brush:  Now click the empty grey box and toggle to **My Assets** to select the **fire** sprite.
@@ -99,15 +99,15 @@ Let's scatter flames randomly around the map.
 
 ---
 
-- :tree:  Grab  
-``||scene:place [mySprite] on top of random [ ]||``  
-and snap it into **the end** of the  
-``||loops:repeat [4] times||``  
+- :tree:  Grab
+``||scene:place [mySprite] on top of random [ ]||``
+and snap it into **the end** of the
+``||loops:repeat [4] times||``
 loop container.
 
 - :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:newFire||``.
 
-- :paint brush:   Click the checkered square and choose the **trees** tile. 
+- :paint brush:   Click the checkered square and choose the **trees** tile.
 Now your fires will each start on top of a random tree.
 
 
@@ -153,8 +153,8 @@ When each sprite of kind **Fire** is created, we want to make it sparkle using e
 
 ---
 
-- :paper plane:   Drag an  
-``||sprites:on created [sprite] of kind [Player]||``  
+- :paper plane:   Drag an
+``||sprites:on created [sprite] of kind [Player]||``
 container into an empty area of the workspace.
 
 - :mouse pointer:   Change kind ``||sprites:Player||`` to ``||sprites:Fire||``.
@@ -174,17 +174,17 @@ sprites.onCreated(SpriteKind.Fire, function (sprite) {
 
 ## 8. Add the Spark
 
-- :paper plane:   Drag  
-``||sprites:[mySprite] start [spray] effect||``  
-into the empty  
-``||sprites:on created [sprite] of kind [Fire]||``  
+- :paper plane:   Drag
+``||sprites:[mySprite] start [spray] effect||``
+into the empty
+``||sprites:on created [sprite] of kind [Fire]||``
 container.
 
-- :mouse pointer:   Change the effect from ``||sprites:spray||`` to ``||sprites:fire||``. 
+- :mouse pointer:   Change the effect from ``||sprites:spray||`` to ``||sprites:fire||``.
 
-- :mouse pointer:   Make sure the effects attatch to the correct sprite by dragging the ``||variables:sprite||`` value block out of the top of the  
-``||sprites:on created [sprite] of kind [Fire]||``  
-container to replace  
+- :mouse pointer:   Make sure the effects attatch to the correct sprite by dragging the ``||variables:sprite||`` value block out of the top of the
+``||sprites:on created [sprite] of kind [Fire]||``
+container to replace
 ``||variables:mySprite||``.
 
 ---
@@ -217,7 +217,7 @@ sprites.onCreated(SpriteKind.Fire, function (sprite) {
 
 ---
 
-Check out your flames in the game window, then click **Done** to 
+Check out your flames in the game window, then click **Done** to
 head to the next level and find out how to put the fires out!
 
 

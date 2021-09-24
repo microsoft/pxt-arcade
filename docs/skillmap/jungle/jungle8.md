@@ -4,7 +4,7 @@
 
 ## Welcome @showdialog
 
-**Create your own levels!**  
+**Create your own levels!**
 
 In this activity, you'll edit images and tilemaps to create a custom game!
 
@@ -23,7 +23,7 @@ How do you feel about the main character? The background?
 
 ## Step 3 - A New Location
 
-**🖼️ Let's change the scene 🖼️**  
+**🖼️ Let's change the scene 🖼️**
 
 ---
 
@@ -35,11 +35,11 @@ How do you feel about the main character? The background?
 
 ## Step 4 - Edit Your Monkeys
 
-**🙈 Change the Monkey 🙈**   
+**🙈 Change the Monkey 🙈**
 
 ---
 
-► Go through **My Assets** and edit each of the monkeys. You can choose new characters and animations from the **Gallery** or draw your own! 
+► Go through **My Assets** and edit each of the monkeys. You can choose new characters and animations from the **Gallery** or draw your own!
 
 
 ## Step 5 - Try It!
@@ -54,13 +54,13 @@ When you play your game, it's easier to see what changes need to be made to your
 
 ## Step 6 - A New Level
 
-**🚧 Let's dig in to the level editor 🚧**   
+**🚧 Let's dig in to the level editor 🚧**
 
 ---
 
-► Scroll down to find **level1**, then click **Edit**. 
+► Scroll down to find **level1**, then click **Edit**.
 
-💡 You should see the full tilemap for level 1. You can zoom in or out using the magnifying glasses at the bottom. 
+💡 You should see the full tilemap for level 1. You can zoom in or out using the magnifying glasses at the bottom.
 
 
 
@@ -73,7 +73,7 @@ Let's make the character's starting platform longer.
 
 ► Look for the single hovering tile at the lower left of the screen. To make it longer, click the **skyblock** square beneath **My Tiles** and make sure the pencil icon is selected above.
 
-► Click on either side of the floating platform to add extra skyblocks. 
+► Click on either side of the floating platform to add extra skyblocks.
 
 
 ![Add tiles with the pencil](/static/skillmap/jungle/platform-tiles.gif)
@@ -105,15 +105,15 @@ Is your game platform longer? Does it hold your main character?
 
 ## Step 10 - Go Crazy!
 
-Now that you know how to add tiles and walls, you can change the levels whichever way you like.  
+Now that you know how to add tiles and walls, you can change the levels whichever way you like.
 
-💡 Remember that your code is built to work with certain tile names only.  If you add new tiles or change the names, you'll need to go back to the code to add your changes! 
+💡 Remember that your code is built to work with certain tile names only.  If you add new tiles or change the names, you'll need to go back to the code to add your changes!
 
 
 
 ## Finished
 
-When you're done playing your new game, click **Finish** to return to the main page to share your final game!
+When you're done playing your new game, click **Done** to return to the main page to share your final game!
 
 
 
@@ -142,7 +142,7 @@ mySprite.ay = 500
 scene.cameraFollowSprite(mySprite)
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`orange bauble`, function (sprite, location) {
-    tiles.setTileAt(location, assets.tile`transparency16`)  
+    tiles.setTileAt(location, assets.tile`transparency16`)
     info.changeScoreBy(1)
 })
 

@@ -261,7 +261,7 @@ Now you have exactly 10 seconds to catch the fly before the game ends!
 
 Now you have a game that tests your timing and is enforced by a timer!
 
-Click **Finish** if you're ready to publish your game and share with friends, or
+Click **Done** if you're ready to publish your game and share with friends, or
 look at the challenges below for suggestions on modding your game before entering it into
 the **MakeCode Arcade Game Jam!**
 

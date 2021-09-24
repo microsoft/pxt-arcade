@@ -31,7 +31,7 @@ When the player overlaps the _poison pit_ tile, let's trigger a "GAME OVER" mess
 
 ► Click the checkerboard image and change it to the **poison pit** tile.
 
-► From ``||game:Game||``, snap a ``||game:game over <LOSE>||`` block into the new container.  
+► From ``||game:Game||``, snap a ``||game:game over <LOSE>||`` block into the new container.
 
 
 ```blocks
@@ -52,18 +52,18 @@ When your monkey lands on the poison pit, it should end the game as a loss.
 
 ## You Win Pt. 1
 
-**🎈 We have a way to lose, let's add a way to win 🎈** 
+**🎈 We have a way to lose, let's add a way to win 🎈**
 
 ---
 
 
-► Drag another ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
+► Drag another ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``
 container into the workspace.
 
 ► This time, change the checkerboard to the **chest1** tile.
 
-► Snap a ``||game:game over <LOSE>||`` block into the new container and toggle 
-the **`<LOSE>`** switch to **`<WIN>`**!  
+► Snap a ``||game:game over <LOSE>||`` block into the new container and toggle
+the **`<LOSE>`** switch to **`<WIN>`**!
 
 
 ```blocks
@@ -76,17 +76,17 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, lo
 
 ## You Earned Points pt. 1
 
-**💯 Award points when the player collects an orange bauble 💯** 
+**💯 Award points when the player collects an orange bauble 💯**
 
 ---
 
 
-► Drag another ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
+► Drag another ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``
 container into the workspace.
 
 ► Change the checkerboard to the orange sphere tile called **orange bauble**.
 
-► From ``||info:Info||``, snap a ``||info:change score by [1]||`` block into the new container. 
+► From ``||info:Info||``, snap a ``||info:change score by [1]||`` block into the new container.
 
 
 ```blocks
@@ -119,7 +119,7 @@ Uh oh!  You get WAY too many points when you touch an orange bauble. We can fix 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`orange bauble`, function (sprite, location) {
     //@highlight
-    tiles.setTileAt(location, assets.tile`transparency16`)  
+    tiles.setTileAt(location, assets.tile`transparency16`)
     info.changeScoreBy(1)
 })
 ```
@@ -132,7 +132,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`orange bauble`, function (spr
 
 ---
 
-When you're done playing with your game, click **Finish** to return to the main page to learn how to make it even more exciting.
+When you're done playing with your game, click **Done** to return to the main page to learn how to make it even more exciting.
 
 
 

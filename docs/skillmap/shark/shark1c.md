@@ -9,20 +9,20 @@ You have enemies. You have lasers. Let's put them together!
 
 ## Step 2
 
-We need a container for code that runs when 
+We need a container for code that runs when
 our laser [__*projectiles*__](#projected "a sprite that moves on its own, often in large quantities") overlap enemies.
 
 ---
 
 
-► From ``||sprites:Sprites||``, drag an ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` container into an empty area of the workspace. 
+► From ``||sprites:Sprites||``, drag an ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` container into an empty area of the workspace.
 
-► Change the first  **kind** from **Player** to **Enemy** and the second **kind** from **Player** to **Projectile**. 
+► Change the first  **kind** from **Player** to **Enemy** and the second **kind** from **Player** to **Projectile**.
 
 
 ```blocks
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, otherSprite) {
-   
+
 })
 ```
 
@@ -33,11 +33,11 @@ To keep both the submarine and the laser from continuing after they collide, we 
 
 ---
 
-► From ``||sprites:Sprites||``, drag **two** ``||sprites:destroy [mySprite]||`` blocks into the empty **on overlaps** container. 
+► From ``||sprites:Sprites||``, drag **two** ``||sprites:destroy [mySprite]||`` blocks into the empty **on overlaps** container.
 
-► Grab the ``||variables:sprite||`` value from the title of the **on overlaps** block and drag it in to replace ``||variables:mySprite||`` in the first ``||sprites:destroy [mySprite]||`` block.  
+► Grab the ``||variables:sprite||`` value from the title of the **on overlaps** block and drag it in to replace ``||variables:mySprite||`` in the first ``||sprites:destroy [mySprite]||`` block.
 
-► Grab the ``||variables:otherSprite||`` value from the title of the **on overlaps** block and drag it in to replace ``||variables:mySprite||`` in the second ``||sprites:destroy [mySprite]||`` block.  
+► Grab the ``||variables:otherSprite||`` value from the title of the **on overlaps** block and drag it in to replace ``||variables:mySprite||`` in the second ``||sprites:destroy [mySprite]||`` block.
 
 ![Grabbing variable from block](/static/skillmap/space/give-var.gif "So that's how you do that!")
 
@@ -91,15 +91,15 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 You should have a shark that can move around the screen and fire lasers at the submarines as they creep closer. When you hit a sub, it should explode into a batch of bubbles then give the player a point.
 
 
-## Finale 
+## Finale
 
-**That's it!** 
+**That's it!**
 
-**You've finished the _enemy_ path for the shark tutorial!**  
+**You've finished the _enemy_ path for the shark tutorial!**
 
 ---
 
-When you're done playing your game, click **Finish** to return to the skillmap, where you can learn to add some fishy food to your game. 
+When you're done playing your game, click **Done** to return to the skillmap, where you can learn to add some fishy food to your game.
 
 
 ```template

@@ -24,21 +24,21 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     game.splash("")
     game.setDialogTextColor(0)
     game.setDialogFrame(img`
-        . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . .
         `)
     game.showLongText("", DialogLayout.Bottom)
     music.baDing.play()
@@ -171,22 +171,22 @@ mySprite.setPosition(0, 0)
 mySprite.x = 0
 mySprite.startEffect(effects.spray)
 mySprite.setImage(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
     `)
 for (let index = 0; index < 4; index++) {
 	effects.confetti.startScreenEffect()
@@ -200,18 +200,18 @@ forever(function () {
 
 ## Introduction @showdialog
 
-Everyone loves a good joke.   
-Let's build one we can share with friends. 
+Everyone loves a good joke.
+Let's build one we can share with friends.
 
-Making a joke (or a short story) in Arcade is a lot like creating a greeting card. 
-You can use a background and text to convey a sense of emotion and 
-add style. 
+Making a joke (or a short story) in Arcade is a lot like creating a greeting card.
+You can use a background and text to convey a sense of emotion and
+add style.
 
 ![Here's the story](/static/skillmap/story/saltwater.gif "Why do tropical fish like saltwater?" )
 
 ## Step 2
 
-To prepare for the next steps, 
+To prepare for the next steps,
 [__*click here to choose a joke from our list*__](#doc:/skillmap/story/joke-examples "Find a good two line joke here."),
  or create your own!
 
@@ -234,7 +234,7 @@ Do you have a joke?
 ► Snap ``||scene: set background image to [ ]||`` into the
 ``||loops:on start||`` container already in the workspace.
 
-► Click the grey box to create a background that shows where your joke takes place. Is it the ocean? The sky? A kitchen? 
+► Click the grey box to create a background that shows where your joke takes place. Is it the ocean? The sky? A kitchen?
 
 
 
@@ -379,7 +379,7 @@ We can add these characters as [__*sprites*__](#sprotes "2-D images that moves o
 ---
 
 ► To add a character, look in the ``||sprites:Sprites||`` category for
-``||variables: set [mySprite] to sprite [ ] of kind [Player]||`` 
+``||variables: set [mySprite] to sprite [ ] of kind [Player]||``
 and drag it into the bottom of the ``||loops:on start||`` container.
 
 ► Create the perfect character for your joke by clicking the grey box so you can draw something in the image editor.
@@ -516,7 +516,7 @@ let mySprite = sprites.create(assets.image`myImage1`, SpriteKind.Player)
 ## Step 5
 
 One benefit of having text controlled by a button is that
-the reader gets to choose the timing of the joke. 
+the reader gets to choose the timing of the joke.
 
 ---
 
@@ -536,11 +536,11 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ## Step 5
 
 No matter how you split your joke, you're likely to get the biggest laugh if
-your punchline is presented separately at the end. 
+your punchline is presented separately at the end.
 
 ---
 
-► Write your joke on paper and circle the punchline. It's usually 
+► Write your joke on paper and circle the punchline. It's usually
 the last line, and it's the part that makes people laugh.
 
 ► Break the rest of the joke up into small sentences. How many long text boxes will you need?
@@ -552,7 +552,7 @@ the last line, and it's the part that makes people laugh.
 
 ► Enter your punchline into the last ``||game: show long text [" "] [bottom]||``
 block inside your ``||controller:on [A] button [pressed]||`` container,
-and split the rest of the joke into other text blocks above it. 
+and split the rest of the joke into other text blocks above it.
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -572,8 +572,8 @@ Is it funny?  Does the text overlap anything important on the screen?
 ---
 
 ►  Experiment with the location of the text by changing the location to
-the **top**, **left**, or **right** in the 
-``||game: show long text [" "] [bottom]||`` block. 
+the **top**, **left**, or **right** in the
+``||game: show long text [" "] [bottom]||`` block.
 
 Does the text flow better somewhere else?
 
@@ -608,9 +608,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 **🤣 Congrats 🤣**
 
-Now you have a hysterical joke to share!  
+Now you have a hysterical joke to share!
 
-When you're done reviewing your joke on the game screen, click **Finish** to return to the main page where you can share 
+When you're done reviewing your joke on the game screen, click **Done** to return to the main page where you can share
 with family and friends!
 
 
