@@ -5,8 +5,8 @@
 
 Welcome to **Jungle Monkey Jump!**
 
-This activity will show you how to make a [__*sidescrolling*__](#scrolld "games that are viewed from the side, with most of the action happening horizontally") 
-[__*platformer*__](#plat "games that rely on jump and run as their main mechanic").  
+This activity will show you how to make a [__*sidescrolling*__](#scrolld "games that are viewed from the side, with most of the action happening horizontally")
+[__*platformer*__](#plat "games that rely on jump and run as their main mechanic").
 
 ![Our first platformer](/static/skillmap/jungle/jungle1.gif "Look what we're about to learn today!")
 
@@ -15,13 +15,13 @@ This kind of game peeks in on the action from the side, and relies on a [__*tile
 
 
 
-## Step 2 
+## Step 2
 
 **Your scene has already been set!**
 
 ---
 
-► Look at your workspace to see that the **background image** and **tilemap** have already been set for the scene in this activity.  
+► Look at your workspace to see that the **background image** and **tilemap** have already been set for the scene in this activity.
 
 💡 Both blocks have been added to the ``||loops: on start||`` container so they load as soon as the game starts.
 
@@ -31,7 +31,7 @@ This kind of game peeks in on the action from the side, and relies on a [__*tile
 
 **🐒 We need a hero 🐒**
 
-Our moving characters are called [__*sprites*__](#sprote "2-D images that move on the screen"). Let's create a main sprite and get it moving before we do anything else. 
+Our moving characters are called [__*sprites*__](#sprote "2-D images that move on the screen"). Let's create a main sprite and get it moving before we do anything else.
 
 ---
 
@@ -54,11 +54,11 @@ let mySprite = sprites.create(assets.image`stand`, SpriteKind.Player)
 
 ---
 
-► From ``||controller:Controller||``, drag ``||controller:move [mySprite] with buttons ⊕||``   
+► From ``||controller:Controller||``, drag ``||controller:move [mySprite] with buttons ⊕||``
 to **the end** of the ``||loops:on start||`` container.
 
 ► Press the ⊕ button to the right of the block and change the [__*vy*__](#whatVY "vertical velocity") (up/down speed)
-argument to **0** so that the player won't hover up or down when you use the joypad.  
+argument to **0** so that the player won't hover up or down when you use the joypad.
 
 
 ```blocks
@@ -90,7 +90,7 @@ to "pull down" on the sprite.
 
 ►  From ``||sprites:Sprites||``, drag ``||sprites:set [mySprite] [x] to [0]||`` to **the end** of the ``||loops:on start||`` container.
 
-► Click the dropdown to change **x** to **ay (acceleration y)**. 
+► Click the dropdown to change **x** to **ay (acceleration y)**.
 
 ► To pull the sprite toward the ground, replace **0** with **500**.
 
@@ -109,7 +109,7 @@ mySprite.ay = 500
 
 ---
 
-►  To keep the monkey in sight, open ``||scene:Scene||`` and drag 
+►  To keep the monkey in sight, open ``||scene:Scene||`` and drag
 ``||scene:camera follow sprite [mySprite]||`` to **the end** of the ``||loops:on start||`` container.
 
 ```blocks
@@ -140,7 +140,7 @@ Now that the monkey has landed safely, we can make it jump using the **up** arro
 
 ► Click the **A** option and change it to **up**.
 
-► Inside of the ``||controller:on [up] button [pressed]||`` container, add ``||sprites:make [mySprite] gravity jump||``. 
+► Inside of the ``||controller:on [up] button [pressed]||`` container, add ``||sprites:make [mySprite] gravity jump||``.
 
 ```blocks
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -154,10 +154,10 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Done
 
-🔥 **That's it! Now give your game a try!** 🔥   
+🔥 **That's it! Now give your game a try!** 🔥
 Can you jump around between platforms?
 
-Take a spin through the level, then click **Finish** to return to the main skillmap and go on to the next activity!
+Take a spin through the level, then click **Done** to return to the main skillmap and go on to the next activity!
 
 
 ```package
@@ -173,7 +173,7 @@ tiles.setTilemap(tilemap`level1`)
 ```ghost
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     sprites.gravity_jump(mySprite)
-    
+
 })
 scene.setBackgroundImage(assets.image`background`)
 tiles.setTilemap(tilemap`level1`)

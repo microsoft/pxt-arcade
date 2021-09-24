@@ -3,15 +3,15 @@
 
 ## Welcome @showdialog
 
-Nearly 4 out of 5 forest fires are started by humans.  
-In your game, they'll be started by your code. 
+Nearly 4 out of 5 forest fires are started by humans.
+In your game, they'll be started by your code.
 
 ![Random fires starting on the grid](/static/skillmap/forest/forest2.gif "Look what we're about to do today!")
 
 
 
 
-## 2. Set the Scene 
+## 2. Set the Scene
 
 **🎮 Try your game 🎮**
 
@@ -31,7 +31,7 @@ code once.
 ---
 
 ► From the ``||loops:Loops||`` category, drag the
-``||loops:repeat [4] times||`` loop container into **the end** of the 
+``||loops:repeat [4] times||`` loop container into **the end** of the
 ``||loops:on start||`` container.
 
 ► Inside the loop, add ``||variables:set [mySprite2] to sprite [ ] of kind [Player]||``.
@@ -45,7 +45,7 @@ scene.cameraFollowSprite(mySprite)
 //@highlight
 for (let index = 0; index < 4; index++) {
     mySprite2 = sprites.create(img`
-. 
+.
 `, SpriteKind.Player)
 }
 ```
@@ -56,7 +56,7 @@ for (let index = 0; index < 4; index++) {
 ## 4. Creating fire
 
 
-► In the  ``||variables:set [mySprite2] to sprite [ ] of kind [Player]||`` block, click 
+► In the  ``||variables:set [mySprite2] to sprite [ ] of kind [Player]||`` block, click
 ``||variables:mySprite2||`` and use the dropdown menu to rename the sprite **newFire**.
 
 ► Now click the empty grey box and toggle to **My Assets** to select the **fire** sprite.
@@ -91,12 +91,12 @@ Let's scatter the flames randomly around the map.
 ---
 
 ►  From ``||scene:Scene||``, grab
-``||scene:place [mySprite] on top of random [ ]||`` 
+``||scene:place [mySprite] on top of random [ ]||``
 and snap it into **the bottom** of the ``||loops:repeat [4] times||`` loop container.
 
 ►  Change ``||variables:mySprite||`` to ``||variables:newFire||``.
 
-►  Click the checkered square and choose the **trees** tile. 
+►  Click the checkered square and choose the **trees** tile.
 Now your fires will each start on top of a random tree.
 
 
@@ -142,7 +142,7 @@ When each sprite of kind **Fire** is created, we want to make it sparkle using e
 ---
 
 ►  From ``||sprites:Sprites||``, drag an
-``||sprites:on created [sprite] of kind [Player]||`` container into an empty 
+``||sprites:on created [sprite] of kind [Player]||`` container into an empty
 area of the workspace.
 
 ►  Change kind ``||sprites:Player||`` to ``||sprites:Fire||``.
@@ -163,14 +163,14 @@ sprites.onCreated(SpriteKind.Fire, function (sprite) {
 ## 8. Add the Spark
 
 ►  From ``||sprites:Sprites||``, drag
-``||sprites:[mySprite] start [spray] effect||`` into the empty 
+``||sprites:[mySprite] start [spray] effect||`` into the empty
 ``||sprites:on created [sprite] of kind [Fire]||`` container.
 
-►  Change the effect from ``||sprites:spray||`` to ``||sprites:fire||``. 
+►  Change the effect from ``||sprites:spray||`` to ``||sprites:fire||``.
 
-►  Make sure the effects attatch to the correct sprite by dragging the 
+►  Make sure the effects attatch to the correct sprite by dragging the
 ``||variables:sprite||`` value block out of the top of the
-``||sprites:on created [sprite] of kind [Fire]||`` container to replace 
+``||sprites:on created [sprite] of kind [Fire]||`` container to replace
 ``||variables:mySprite||``.
 
 ---
@@ -199,11 +199,11 @@ sprites.onCreated(SpriteKind.Fire, function (sprite) {
 
 ## Finale
 
-👏 **There you have it!** 👏   
+👏 **There you have it!** 👏
 
 ---
 
-Check out your flames in the game window, then click **Finish** to 
+Check out your flames in the game window, then click **Done** to
 head to the next level and find out how to put the fires out!
 
 

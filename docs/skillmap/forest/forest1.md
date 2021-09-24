@@ -14,16 +14,16 @@ Let's start by setting up your plane to make sure you can get everywhere you nee
 
 
 
-## 2. Set the Scene 
+## 2. Set the Scene
 
 **🌲 Welcome to the Forest 🌲**
 
 ---
 
-► The [__*tilemap*__](#tiled "a scene or world created using predefined tiles") has already been set 
-to a forest near the mountains.  
+► The [__*tilemap*__](#tiled "a scene or world created using predefined tiles") has already been set
+to a forest near the mountains.
 
-💡 Notice that the ``||scene:set tilemap to [ ]||`` block has been added to the ``||loops: on start||`` container so it 
+💡 Notice that the ``||scene:set tilemap to [ ]||`` block has been added to the ``||loops: on start||`` container so it
 loads as soon as the activity starts.
 
 
@@ -32,16 +32,16 @@ loads as soon as the activity starts.
 
 **🛫 We need a hero 🛬**
 
-Choose a plane [__*sprite*__](#sprote "a 2-D image that moves on the screen") 
-to fly around the screen. 
+Choose a plane [__*sprite*__](#sprote "a 2-D image that moves on the screen")
+to fly around the screen.
 
 ---
 
-► From the ``||sprites:Sprites||`` category, drag 
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
+► From the ``||sprites:Sprites||`` category, drag
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
 to **the end** of the ``||loops:on start||`` container.
 
-► To choose your plane, click the empty grey box, then toggle to **My Assets** 
+► To choose your plane, click the empty grey box, then toggle to **My Assets**
 and choose the **Fire Plane Right** sprite.
 
 
@@ -60,8 +60,8 @@ let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
 
 ---
 
-► From ``||controller:Controller||``, drag 
-``||controller:move [mySprite] with buttons ⊕||``   
+► From ``||controller:Controller||``, drag
+``||controller:move [mySprite] with buttons ⊕||``
 to **the end** of the ``||loops:on start||`` container.
 
 
@@ -79,7 +79,7 @@ controller.moveSprite(mySprite)
 
 ---
 
-Your sprite should move around the forest as you move the joypad.   
+Your sprite should move around the forest as you move the joypad.
 You can also use the arrow keys on your keyboard!
 
 
@@ -91,7 +91,7 @@ You can also use the arrow keys on your keyboard!
 
 ---
 
-►  To keep your sprite in sight, open ``||scene:Scene||`` and drag 
+►  To keep your sprite in sight, open ``||scene:Scene||`` and drag
 ``||scene:camera follow sprite [mySprite]||`` to **the end** of the ``||loops:on start||`` container.
 
 💡 Don't forget to play with your project after each step to see the changes your code has made.
@@ -111,11 +111,11 @@ scene.cameraFollowSprite(mySprite)
 
 ## Finale
 
-👏 **You're off to a great start!** 👏   
+👏 **You're off to a great start!** 👏
 
 ---
 
-When you're done, click **Finish** to 
+When you're done, click **Done** to
 head to the next activity where you'll add the FIRE.
 
 

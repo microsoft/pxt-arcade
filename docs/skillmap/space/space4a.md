@@ -23,8 +23,8 @@ Let's add some drama by shaking the camera when you run into an enemy ship.
 ---
 
 ► In the ``||scene:Scene||`` category, grab ``||scene:camera shake by [4] pixels for [500] ms||``
-and snap it in to **the bottom** of the ``||sprites:on [sprite] of kind [Player] overlaps [otherSPrite] of kind [Enemy]||`` 
-container.    
+and snap it in to **the bottom** of the ``||sprites:on [sprite] of kind [Player] overlaps [otherSPrite] of kind [Enemy]||``
+container.
 
 
 ```blocks
@@ -42,7 +42,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ---
 
-► In the toolbox, click ``||statusbars:Advanced||`` to reveal the 
+► In the toolbox, click ``||statusbars:Advanced||`` to reveal the
 ``||animation:Animation||`` category.
 
 
@@ -61,22 +61,22 @@ mySprite.setStayInScreen(true)
 animation.runImageAnimation(
 mySprite,
 [img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
     `],
 500,
 false
@@ -114,7 +114,7 @@ true
 
 ## Step 7
 
-**Why stop there when you can also animate the enemy???**  
+**Why stop there when you can also animate the enemy???**
 
 ---
 
@@ -131,22 +131,22 @@ game.onUpdateInterval(2000, function () {
     animation.runImageAnimation(
 mySprite,
 [img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
     `],
 500,
 false
@@ -156,7 +156,7 @@ false
 
 ## Step 8
 
-► To make sure we're animating the correct sprite, replace ``||variables:mySprite||`` with 
+► To make sure we're animating the correct sprite, replace ``||variables:mySprite||`` with
  ``||variables:myEnemy||`` using the dropdown in the ``||animation:animate [mySprite]||`` block.
 
 ► Click the empty grey square and toggle to **My Assets**
@@ -182,12 +182,12 @@ game.onUpdateInterval(2000, function () {
 
 ## Finale
 
-**There you have it!** 
+**There you have it!**
 
 Take a look...your game feels so professional now!
 
-When you're ready, click **Finish** to return to the skillmap where you can save this project 
-to your gallery and share it with friends.  
+When you're ready, click **Done** to return to the skillmap where you can save this project
+to your gallery and share it with friends.
 
 
 ```package

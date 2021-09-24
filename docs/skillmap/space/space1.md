@@ -57,7 +57,7 @@ scroller.scrollBackgroundWithSpeed(0, 10)
 ► From ``||sprites:Sprites||``, drag  ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  to **the end** of the ``||loops:on start||`` container.
 
 ► Click on the grey box in the middle of
- ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``, then toggle to **My Assets** and choose the **Rocket**.  
+ ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``, then toggle to **My Assets** and choose the **Rocket**.
 
 
 ```blocks
@@ -75,11 +75,11 @@ let mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
 
 ---
 
-► Find the ``||controller:move [mySprite] with buttons ⊕||`` block 
-and drag it into the bottom of the ``||loops:on start||`` container. 
+► Find the ``||controller:move [mySprite] with buttons ⊕||`` block
+and drag it into the bottom of the ``||loops:on start||`` container.
 
-** Now try moving your ship around the game screen! **  
-Your ship will move with the joystick, arrow keys, or **W A S D** keys.  
+** Now try moving your ship around the game screen! **
+Your ship will move with the joystick, arrow keys, or **W A S D** keys.
 
 
 
@@ -100,7 +100,7 @@ controller.moveSprite(mySprite)
 ► To keep your ship from exploring beyond the edges, find
  the ``||sprites:set [mySprite] stay in screen <on>||`` block and
 snap it in at the end of the program.
- 
+
 
 
 ```blocks
@@ -132,8 +132,8 @@ Is everything how you want it? You can always go back and edit steps if you disc
 
 You're all set to travel the universe!
 
-Click **Finish** to return to the main page where you can share your game
-with family and friends!  
+Click **Done** to return to the main page where you can share your game
+with family and friends!
 
 
 ```package

@@ -25,7 +25,7 @@ We can make your assassins smart enough to turn around.
 
 ---
 
-► Find the ``||sprites:on created [sprite] of kind [Enemy]||`` container where your assassins are made. 
+► Find the ``||sprites:on created [sprite] of kind [Enemy]||`` container where your assassins are made.
 
 ► Add a ``||animation:animate [mySprite]...when not moving||`` block anywhere inside the assassin's container and drag the ``||variables:sprite||`` value from the outer container down to replace ``||variables:mySprite||``.
 
@@ -57,7 +57,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 
 ## Step 4 - Jump, Jump!
 
-A little barrier wouldn't stop a Ten Rings assassin. Let's teach them to jump when something stands in their way. 
+A little barrier wouldn't stop a Ten Rings assassin. Let's teach them to jump when something stands in their way.
 
 ---
 
@@ -93,7 +93,7 @@ Try to escape the assassins. Can they keep up?
 
 ## Finished
 
-When you're done testing your project, click **Finish** to return to the main page to find out how to add a second level to your game!
+When you're done testing your project, click **Done** to return to the main page to find out how to add a second level to your game!
 
 
 
@@ -252,7 +252,7 @@ namespace sprites {
             thisSprite.vy = -200
         }
     }
-    
+
     /**
      * Direct sprite to automatically jump only when hitting
      * a wall to the right or left
@@ -265,12 +265,12 @@ namespace sprites {
     }
 
     /**
-     * Set a profile pic and name for your hero in the 
+     * Set a profile pic and name for your hero in the
      * upper-left hand corner of the screen
      */
     //% block="add corner profile for $choice"
     export function add_profile (choice:Choice) {
-        if (choice == Choice.xialing){ 
+        if (choice == Choice.xialing){
             profilelife.setProfileImage(assets.image`Xialing profile`)
             profilelife.setName("Xialing")
         }

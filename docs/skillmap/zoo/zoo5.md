@@ -2,20 +2,20 @@
 
 ## Step 1   @showdialog
 
-It's quail hatching season! The quail are laying eggs left 
-and right. 
+It's quail hatching season! The quail are laying eggs left
+and right.
 
-Let's catch them and put them back into the 
-quail coop. 
+Let's catch them and put them back into the
+quail coop.
 
 ## step 2
 
-First, look at the code in the workspace. 
+First, look at the code in the workspace.
 
 ---
 
-► Can you find where the quail-catching glove is created 
-and where the controller buttons are enabled? 
+► Can you find where the quail-catching glove is created
+and where the controller buttons are enabled?
 
 ---
 
@@ -27,10 +27,10 @@ At the moment, the glove doesn't do anything when it overlaps quail. We should f
 
 ---
 
-► From ``||sprites:Sprites||``, drag an ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
-container into the workspace. 
+► From ``||sprites:Sprites||``, drag an ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||``
+container into the workspace.
 
-► Click the **second** ``||sprites:Player||`` dropdown and 
+► Click the **second** ``||sprites:Player||`` dropdown and
 change it to ``||sprites:Quail||``.
 
 
@@ -49,8 +49,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Quail, function (sprite, otherSp
 
 ---
 
-► Also from ``||sprites:Sprites||``, grab ``||sprites:set [myEnemy] follow [mySprite] ||`` and drag it into 
-the empty **overlaps** container. 
+► Also from ``||sprites:Sprites||``, grab ``||sprites:set [myEnemy] follow [mySprite] ||`` and drag it into
+the empty **overlaps** container.
 
 ► From the header of the **on overlaps** container, grab the ``||variables:otherSprite||`` value block and
 drag it down to replace the ``||variables:myEnemy||`` argument in the **set follow** block.
@@ -72,7 +72,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Quail, function (sprite, otherSp
 
 **Give the game a try in the simulator.**
 
-What's happening?  
+What's happening?
 What's not happening?
 
 
@@ -100,10 +100,10 @@ scene.onOverlapTile(SpriteKind.Quail, assets.tile`myTile`, function (sprite, loc
 ## Step 7
 
 ► Snap a ``||sprites:destroy [mySprite]||`` block into the empty
-overlaps container. 
+overlaps container.
 
 ► Grab the ``||variables:sprite||`` variable in the header of the
-**overlaps** container and drag it down to replace the 
+**overlaps** container and drag it down to replace the
 ``||variables:mySprite||`` argument in the **destroy** block.
 
 ---
@@ -126,14 +126,14 @@ scene.onOverlapTile(SpriteKind.Quail, assets.tile`myTile`, function (sprite, loc
 
 ---
 
-► Right-click on your 
-``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Quail]||`` 
-container and select **Duplicate** from the dropdown menu. Then change the second 
+► Right-click on your
+``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Quail]||``
+container and select **Duplicate** from the dropdown menu. Then change the second
 argument from **Quail** to **Egg**.
 
-► Right-click on your 
-``||scene:on [sprite] of kind [Quail] overlaps [coop] at [location]||`` 
-container and select **Duplicate** from the dropdown menu. 
+► Right-click on your
+``||scene:on [sprite] of kind [Quail] overlaps [coop] at [location]||``
+container and select **Duplicate** from the dropdown menu.
 Then change the kind from **Quail** to **Egg**.
 
 ---
@@ -160,28 +160,28 @@ scene.onOverlapTile(SpriteKind.Egg, assets.tile`myTile`, function (sprite, locat
 
 Can you clear all of the eggs before they hatch into more quail?
 
-Once you're done playing, click **Finish** to go back to the map where you can share
-this game with family and friends!  
+Once you're done playing, click **Done** to go back to the map where you can share
+this game with family and friends!
 
 
 ```template
 let mySprite = sprites.create(img`
-. . . . . 8 8 . 8 6 . 8 6 . . . 
-. . . . 8 6 6 8 6 7 8 6 7 6 . . 
-. . . . 8 7 7 8 6 6 8 6 7 6 . . 
-. . . . 8 6 6 8 6 6 8 6 6 8 f . 
-. . . . 8 7 7 f 7 7 f 7 7 f 7 6 
-. . . . f 7 7 f 7 7 f 7 7 f 7 6 
-. . 8 8 f 6 6 f 6 6 f 6 6 f 7 6 
-. 8 6 6 f 6 6 6 6 6 6 6 6 6 6 8 
-. 8 6 6 f 6 6 6 6 6 6 6 6 6 6 8 
-. f 6 6 6 6 6 6 6 6 6 6 6 6 6 f 
-. f 6 6 6 6 6 6 6 6 6 6 6 6 7 f 
-. . f 7 7 7 7 7 7 7 7 7 7 7 7 f 
-. . . f 7 7 7 7 7 7 7 7 7 7 f . 
-. . . f 8 7 7 7 7 7 7 7 7 6 f . 
-. . . . f 8 6 6 6 6 6 6 6 6 8 . 
-. . . . . f f f f 8 8 8 8 8 . . 
+. . . . . 8 8 . 8 6 . 8 6 . . .
+. . . . 8 6 6 8 6 7 8 6 7 6 . .
+. . . . 8 7 7 8 6 6 8 6 7 6 . .
+. . . . 8 6 6 8 6 6 8 6 6 8 f .
+. . . . 8 7 7 f 7 7 f 7 7 f 7 6
+. . . . f 7 7 f 7 7 f 7 7 f 7 6
+. . 8 8 f 6 6 f 6 6 f 6 6 f 7 6
+. 8 6 6 f 6 6 6 6 6 6 6 6 6 6 8
+. 8 6 6 f 6 6 6 6 6 6 6 6 6 6 8
+. f 6 6 6 6 6 6 6 6 6 6 6 6 6 f
+. f 6 6 6 6 6 6 6 6 6 6 6 6 7 f
+. . f 7 7 7 7 7 7 7 7 7 7 7 7 f
+. . . f 7 7 7 7 7 7 7 7 7 7 f .
+. . . f 8 7 7 7 7 7 7 7 7 6 f .
+. . . . f 8 6 6 6 6 6 6 6 6 8 .
+. . . . . f f f f 8 8 8 8 8 . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite)
 ```
@@ -210,18 +210,18 @@ namespace SpriteKind {
 tiles.setTilemap(tilemap`level1`)
 sprites.onDestroyed(SpriteKind.Egg, function (sprite) {
     quail = sprites.create(img`
-        f f . . . . . . . . . . 
-        . . f . . . . . . . . . 
-        . c c c c . . . . . . . 
-        . c 1 c c b . . . . . . 
-        f c c c b d b . . . . . 
-        . . b b b d d b . . . . 
-        . . b b b d b d b . . . 
-        . . b b b b b d d b b b 
-        . . b b b b b b b b b b 
-        . . . . b b b b b . . . 
-        . . . . . 4 . 4 . . . . 
-        . . . . . 4 . . . . . . 
+        f f . . . . . . . . . .
+        . . f . . . . . . . . .
+        . c c c c . . . . . . .
+        . c 1 c c b . . . . . .
+        f c c c b d b . . . . .
+        . . b b b d d b . . . .
+        . . b b b d b d b . . .
+        . . b b b b b d d b b b
+        . . b b b b b b b b b b
+        . . . . b b b b b . . .
+        . . . . . 4 . 4 . . . .
+        . . . . . 4 . . . . . .
         `, SpriteKind.Quail)
     quail.setPosition(sprite.x, sprite.y)
     quail.setVelocity(randint(80, 120), randint(80, 120))
@@ -233,18 +233,18 @@ let quail_egg: Sprite = null
 let quail: Sprite = null
 for (let index = 0; index < randint(3, 5); index++) {
     quail = sprites.create(img`
-        f f . . . . . . . . . . 
-        . . f . . . . . . . . . 
-        . c c c c . . . . . . . 
-        . c 1 c c b . . . . . . 
-        f c c c b d b . . . . . 
-        . . b b b d d b . . . . 
-        . . b b b d b d b . . . 
-        . . b b b b b d d b b b 
-        . . b b b b b b b b b b 
-        . . . . b b b b b . . . 
-        . . . . . 4 . 4 . . . . 
-        . . . . . 4 . . . . . . 
+        f f . . . . . . . . . .
+        . . f . . . . . . . . .
+        . c c c c . . . . . . .
+        . c 1 c c b . . . . . .
+        f c c c b d b . . . . .
+        . . b b b d d b . . . .
+        . . b b b d b d b . . .
+        . . b b b b b d d b b b
+        . . b b b b b b b b b b
+        . . . . b b b b b . . .
+        . . . . . 4 . 4 . . . .
+        . . . . . 4 . . . . . .
         `, SpriteKind.Quail)
     quail.setVelocity(randint(-100, 100), randint(-100, 100))
     quail.setPosition(randint(10, 150), randint(10, 110))
@@ -257,14 +257,14 @@ game.onUpdateInterval(3000, function () {
             let following = game.currentScene().followingSprites;
             if (!following || !following.some(el => el.self == value)) {
                 quail_egg = sprites.create(img`
-                    . . . c c . . . 
-                    . . c 1 1 c . . 
-                    . c b 1 1 b c . 
-                    c b 1 1 1 b b c 
-                    c 1 1 1 1 1 1 c 
-                    c 1 1 b 1 1 1 c 
-                    . c 1 1 1 b c . 
-                    . . c c c c . . 
+                    . . . c c . . .
+                    . . c 1 1 c . .
+                    . c b 1 1 b c .
+                    c b 1 1 1 b b c
+                    c 1 1 1 1 1 1 c
+                    c 1 1 b 1 1 1 c
+                    . c 1 1 1 b c .
+                    . . c c c c . .
                     `, SpriteKind.Egg)
                 quail_egg.setPosition(value.x, value.y)
                 quail_egg.lifespan = randint(2000, 3000)

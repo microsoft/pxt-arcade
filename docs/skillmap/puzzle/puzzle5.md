@@ -191,22 +191,22 @@ scene.setBackgroundImage(img`
     ................................................................................................................................................................
     `)
 game.setDialogCursor(img`
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
-    6 9 9 9 6 6 9 9 9 9 6 6 9 9 9 6 
-    6 9 9 6 6 9 9 c c 9 9 6 6 9 9 6 
-    6 9 6 6 9 9 c c 6 9 9 9 6 6 9 6 
-    6 6 6 9 9 9 9 c 6 6 9 9 9 6 6 6 
-    6 6 9 9 9 9 9 9 6 6 9 9 9 9 6 6 
-    6 9 9 9 6 6 6 6 9 6 9 9 c 9 9 6 
-    6 9 c 6 6 6 9 9 9 6 9 c c c 9 6 
-    6 9 c c c 9 6 9 9 9 6 6 6 c 9 6 
-    6 9 9 c 9 9 6 9 6 6 6 6 9 9 9 6 
-    6 6 9 9 9 9 6 6 9 9 9 9 9 9 6 6 
-    6 6 6 9 9 9 6 6 c 9 9 9 9 6 6 6 
-    6 9 6 6 9 9 9 6 c c 9 9 6 6 9 6 
-    6 9 9 6 6 9 9 c c 9 9 6 6 9 9 6 
-    6 9 9 9 6 6 9 9 9 9 6 6 9 9 9 6 
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+    6 9 9 9 6 6 9 9 9 9 6 6 9 9 9 6
+    6 9 9 6 6 9 9 c c 9 9 6 6 9 9 6
+    6 9 6 6 9 9 c c 6 9 9 9 6 6 9 6
+    6 6 6 9 9 9 9 c 6 6 9 9 9 6 6 6
+    6 6 9 9 9 9 9 9 6 6 9 9 9 9 6 6
+    6 9 9 9 6 6 6 6 9 6 9 9 c 9 9 6
+    6 9 c 6 6 6 9 9 9 6 9 c c c 9 6
+    6 9 c c c 9 6 9 9 9 6 6 6 c 9 6
+    6 9 9 c 9 9 6 9 6 6 6 6 9 9 9 6
+    6 6 9 9 9 9 6 6 9 9 9 9 9 9 6 6
+    6 6 6 9 9 9 6 6 c 9 9 9 9 6 6 6
+    6 9 6 6 9 9 9 6 c c 9 9 6 6 9 6
+    6 9 9 6 6 9 9 c c 9 9 6 6 9 9 6
+    6 9 9 9 6 6 9 9 9 9 6 6 9 9 9 6
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
     `)
 let mySprite = sprites.create(assets.image`wizard`, SpriteKind.Player)
 mySprite.y = 80
@@ -243,22 +243,22 @@ false
 animation.runImageAnimation(
 mySprite,
 [img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
     `],
 500,
 false
@@ -304,11 +304,11 @@ mySprite.say("The number was " + myNumber + "!")
 
 
 
-## Finale 
+## Finale
 
 **Try something new!**
 
-You don't have to stop with the lessons that we've showed you. 
+You don't have to stop with the lessons that we've showed you.
 Explore the categories to find other interesting blocks to add.
 What else can you make your guessing game do?
 
@@ -318,11 +318,11 @@ Stuck?  Here are some ideas:
 - Add sounds when you guess right or wrong
 - Animate your sprite with a happy and sad reaction to guesses
 - Create a "debugging" tool that shows you the correct answer when you click the **Menu**
-button 
+button
 
 
 ## Final Finale
 
-When you're done, click **Finish** to return to the main page where you can save the game to your gallery or share it
+When you're done, click **Done** to return to the main page where you can save the game to your gallery or share it
 with family and friends!
 

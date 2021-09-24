@@ -198,7 +198,7 @@ mySprite.say("The number was " + myNumber + "!")
 ## Welcome @showdialog
 
 There is a strategy to being able to guess a number when you know
-that your last guess was either high or low.  
+that your last guess was either high or low.
 
 This activity will help you create a game that gives that feedback.
 
@@ -208,15 +208,15 @@ This activity will help you create a game that gives that feedback.
 
 ## Step 2
 
-The code for a guessing game is in your workspace. 
+The code for a guessing game is in your workspace.
 
-Let's change the number of guesses that players will get by changing the 
+Let's change the number of guesses that players will get by changing the
 number of lives they start with.
 
 ---
 
-► From the ``||info:Info||`` category, grab a 
-``||info:set life to [3]||`` block and snap it in at the top of the 
+► From the ``||info:Info||`` category, grab a
+``||info:set life to [3]||`` block and snap it in at the top of the
 **on start** container.
 
 ► Change the number of lives from **3** to **5**.
@@ -248,17 +248,17 @@ mySprite.say("The number was " + myNumber + "!")
 
 **👩‍🚀 A larger universe 👩‍🚀**
 
-Five tries is too many when you're only choosing between nine numbers. 
-Let's expand our universe of random numbers from 9 to 99. 
+Five tries is too many when you're only choosing between nine numbers.
+Let's expand our universe of random numbers from 9 to 99.
 
 ---
 
-► Find the ``||math:pick random [1] to [9]||`` value inside of your 
+► Find the ``||math:pick random [1] to [9]||`` value inside of your
 **set myNumber** block and change **9** to **99**.
 
 ► Change the number **9** to **99** throughout the rest of your project.
 
-► Find your **ask for number** value block and change the max length from 
+► Find your **ask for number** value block and change the max length from
 **1** to **2**.
 
 ```blocks
@@ -285,17 +285,17 @@ mySprite.say("The number was " + myNumber + "!")
 
 **🧞 Greater possibilities 🧞**
 
-For the game to tell you whether your guess was too high or too low, 
+For the game to tell you whether your guess was too high or too low,
 we're going to need to save your guess to a variable so we can use it more than once.
 
 ---
 
 
-► From the ``||variables:Variables||`` category, grab a 
-``||variables:set [yourGuess] to [0] ||`` block and drag it *just above* the 
+► From the ``||variables:Variables||`` category, grab a
+``||variables:set [yourGuess] to [0] ||`` block and drag it *just above* the
 **if/then** header inside the **while** loop container.
 
-► Grab the **ask for number** block out of the **if/else** header and snap it 
+► Grab the **ask for number** block out of the **if/else** header and snap it
 in to replace the **0** of the **set yourGuess** block.
 
 
@@ -324,13 +324,13 @@ mySprite.say("The number was " + myNumber + "!")
 
 ## Step 5
 
-Let's check whether the player's guess is equal to the computer's 
+Let's check whether the player's guess is equal to the computer's
 random number...
 
 ---
 
-► Grab a ``||variables:yourGuess||`` value block and use it to replace the 
-**0** in the header of the **if/then** container.  
+► Grab a ``||variables:yourGuess||`` value block and use it to replace the
+**0** in the header of the **if/then** container.
 
 
 ```blocks
@@ -362,19 +362,19 @@ mySprite.say("The number was " + myNumber + "!")
 
 **🦉 Nesting conditions 🦉**
 
-To get the most out of our code, we're going to 
-[__*nest*__](#nestle "fit one thing inside another thing") another **if/then/else** 
+To get the most out of our code, we're going to
+[__*nest*__](#nestle "fit one thing inside another thing") another **if/then/else**
 condition inside of the **else** container that we're already using.
 
 ---
 
 
-► Grab an ``||logic:if <true> then ... else||`` container and snap it 
+► Grab an ``||logic:if <true> then ... else||`` container and snap it
 in at the very top of the **else** container already in the workspace.
 
-► Right click on the **mySprite say** block immediately beneath the new 
-**if/then/else** container and choose 
-**Delete Blocks** from the dropdown menu. That will get rid of that block without 
+► Right click on the **mySprite say** block immediately beneath the new
+**if/then/else** container and choose
+**Delete Blocks** from the dropdown menu. That will get rid of that block without
 having to shuffle your code.
 
 
@@ -403,16 +403,16 @@ let mySprite: Sprite = null
 
 **⬆️ High or low ⬇️**
 
-If the computer has read this far, we know the player didn't guess correctly.  
+If the computer has read this far, we know the player didn't guess correctly.
 
 ---
 
 
-► Let's check to see if the guess was too low by replacing 
+► Let's check to see if the guess was too low by replacing
 **`<true>`** with ``||logic: [0] [<] [0]||``.
 
-► Now you can replace the first **0** in your logic value block with 
-``||variables:yourGuess||`` and the second **0** with ``||variables:myNumber||`` 
+► Now you can replace the first **0** in your logic value block with
+``||variables:yourGuess||`` and the second **0** with ``||variables:myNumber||``
 to look for the case where the user guesses lower than the computer.
 
 
@@ -443,18 +443,18 @@ let mySprite: Sprite = null
 
 **🗨️ Giving feedback 💬**
 
-Again, if the computer reads this far, we know the player didn't guess 
+Again, if the computer reads this far, we know the player didn't guess
 the answer correctly. If they guess too low, they will see code from
-the top nested container...which means the bottom nested container only 
-runs when the player's guess is too high.    
+the top nested container...which means the bottom nested container only
+runs when the player's guess is too high.
 
 ---
 
 
-► Add a ``||sprites:[mySprite] say [":)"]||`` block to the top nested container 
+► Add a ``||sprites:[mySprite] say [":)"]||`` block to the top nested container
 and change the text to tell the user their guess was too low.
 
-► Add a ``||sprites:[mySprite] say [":)"]||`` block to the bottom nested container 
+► Add a ``||sprites:[mySprite] say [":)"]||`` block to the bottom nested container
 and change the text to tell the user their guess was too high.
 
 
@@ -489,5 +489,5 @@ You should always be able to narrow in on the correct answers within 7 tries.
 Can you figure out how?
 
 
-Click **Finish** to return to the main page where you can share your game
+Click **Done** to return to the main page where you can share your game
 with family and friends!

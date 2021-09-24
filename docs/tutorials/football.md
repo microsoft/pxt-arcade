@@ -6,14 +6,14 @@ Try this tutorial!
 
 ### ~
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 ![Game animation](/static/tutorials/football/header.gif)
 
 In this tutorial you will modify the football game in the animation above to
 use your two favorite teams!
 
-## Step 1
+## {Step 1}
 
 Open the ``||football:Football||`` Toolbox drawer and drag the
 ``||football:play as Cleveland Browns against Pittsburgh Steelers||`` block into the
@@ -25,7 +25,7 @@ Click **Next** to go to the next step in the Tutorial.
 football.createGame(league.clevelandBrowns, league.pittsburghSteelers);
 ```
 
-## Step 2
+## {Step 2}
 
 Click on ``||football:Cleveland Browns||`` to show a list of all the teams.
 Click on your favorite team in that list,
@@ -39,7 +39,7 @@ with you controlling them!
 football.createGame(league.kansasCityChiefs, league.pittsburghSteelers);
 ```
 
-## Step 3
+## {Step 3}
 
 Click on the ``||football:Pittsburgh Steelers||`` to select the second team
 that will play in your game.
@@ -51,13 +51,13 @@ click on the simulator again, the new team should show up on the right side of t
 football.createGame(league.kansasCityChiefs, league.oaklandRaiders);
 ```
 
-## Complete
+## {Complete}
 
 Congratulations, you have modded your game!
 Try to beat the computer by scoring the most points!
 When you're done, you can click **Next** to see some more options for modifying the game!
 
-## Step 6
+## {Step 6}
 
 You can make each team use alternate colors by dragging out the
 ``||football:set player team alternate colors on||`` block into the ``||loops:on start||``.
@@ -73,7 +73,7 @@ football.createGame(league.kansasCityChiefs, league.oaklandRaiders);
 football.setTeamAlternateColors(TeamId.Player, true);
 ```
 
-## Step 5
+## {Step 5}
 
 Try playing the game in **Hard Mode** by dragging out the ``||football:set hard mode on||``
 block out from the ``||football:Football||`` Toolbox drawer.
@@ -87,7 +87,7 @@ football.createGame(league.kansasCityChiefs, league.oaklandRaiders);
 football.setHardMode(true);
 ```
 
-## Step 6
+## {Step 6}
 
 You can change the length of each quarter in the game by giving **Quarter Length** a different amount of time.
 To do this,

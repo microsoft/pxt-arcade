@@ -80,7 +80,7 @@ forever(function () {
 
 ## Intro @showdialog
 
-Collecting things is great, but let's also add an element of **DANGER!** 
+Collecting things is great, but let's also add an element of **DANGER!**
 
 This tutorial will show you how to add cars to the road.
 
@@ -88,7 +88,7 @@ This tutorial will show you how to add cars to the road.
 
 ## Step 2
 
-The code for a collector game is already in the workspace.  
+The code for a collector game is already in the workspace.
 🕹️ Play your game to help you remember what each chunk of code does.
 
 
@@ -99,7 +99,7 @@ Let's start by adding a new kind of projectile, an ``||sprites:Enemy||``!
 
 ---
 
-► Grab a new ``||loops:forever||`` loop container and drop it into an empty area of the workspace. 
+► Grab a new ``||loops:forever||`` loop container and drop it into an empty area of the workspace.
 
 ► From ``||sprites:Sprites||``, drag ``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||``.
 
@@ -107,10 +107,10 @@ Let's start by adding a new kind of projectile, an ``||sprites:Enemy||``!
 forever(function () {
 //@highlight
     let projectile2 = sprites.createProjectileFromSide(img`
-. . . . 
-. . . . 
-. . . . 
-. . . . 
+. . . .
+. . . .
+. . . .
+. . . .
 `, 50, 50)
 })
 ```
@@ -132,14 +132,14 @@ forever(function () {
 
 ## Step 4
 
-**Our new enemy isn't quite ready.**   
+**Our new enemy isn't quite ready.**
 We still have to set the vertical positions on the screen and add a pause to the loop.
 
 ---
 
 ► Just like we did when making the baby dinos, we'll need to grab ``||sprites:set [mySprite] [x] to [0]||`` and snap it in **below** the new projectile block.
 
-► Change ``||variables:mySprite||`` to ``||variables:projectile2||`` and change **x** to **y**.  
+► Change ``||variables:mySprite||`` to ``||variables:projectile2||`` and change **x** to **y**.
 
 ► Replace **0** with ``||math:pick random [0] to [10]||``, then set the range to pick from **15** to **115**.
 
@@ -208,7 +208,7 @@ forever(function () {
 
 **😈 Wicked 😈**
 
-Now the program knows the car is an enemy.   
+Now the program knows the car is an enemy.
 What are we going to do about it?
 
 ---
@@ -216,9 +216,9 @@ What are we going to do about it?
 ► Right-click the ``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``
  container that's already in the workspace and choose **Duplicate**.
 
-► In the new greyed-out container, 
+► In the new greyed-out container,
 change the second **kind** from ``||sprites:Projectile||``
-to ``||sprites:Enemy||``. 
+to ``||sprites:Enemy||``.
 
 
 ```blocks
@@ -238,11 +238,11 @@ At this point, the player is still awarded points when they hit a car.
 ---
 
 ► Delete ``||info:change score by [1]||`` from the ``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Enemy]||``
-container. 
+container.
 
 ► From ``||info: Info||``, grab  ``||info:change life by [-1]||`` and
 snap it into the end of the ``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Enemy]||``
-container. 
+container.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -255,11 +255,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## Step 8
 
-**What an amazing creation!**  
+**What an amazing creation!**
 
 This game has it all...drama, enemies, winning, and losing!  Play it through before moving along.
 
-When you're done, click **Finish** to return to the main page where you can share your game with family and friends!
+When you're done, click **Done** to return to the main page where you can share your game with family and friends!
 
 
 

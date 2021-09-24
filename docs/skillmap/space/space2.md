@@ -2,9 +2,9 @@
 
 ## Introduction @showdialog
 
-Are you ready to customize your ship? 
+Are you ready to customize your ship?
 
-In this tutorial, you'll equip your ship with [__*projectiles*__](#projected "a sprite that moves on its own, often in large quantities") and special effects.  
+In this tutorial, you'll equip your ship with [__*projectiles*__](#projected "a sprite that moves on its own, often in large quantities") and special effects.
 
 ![Releasing projectiles](/static/skillmap/space/spacet2.gif "Here, enemy ship. Would you like to borrow a blaster?")
 
@@ -30,14 +30,14 @@ Let's launch projectiles when the **Ⓐ** button is pressed!
 ► From ``||controller:Controller||``, drag an ``||controller:on [A] button pressed ||`` container into the workspace.
 
 ► From ``||sprites:Sprites||``, snap
-``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||`` 
+``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``
 inside the new ``||controller:on [A] button pressed ||`` container.
 
 ► Click the grey box inside of the new projectile block and toggle to **My Assets** to choose one of the **Dart** sprites.
 
 ---
 
-**Tip:** Run your code on the game screen and launch a few projectiles 
+**Tip:** Run your code on the game screen and launch a few projectiles
 by pressing the **Ⓐ** button.  What happens?
 
 
@@ -49,24 +49,24 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Retrospect @showdialog
 
-You probably noticed that your projectiles are firing toward the bottom 
+You probably noticed that your projectiles are firing toward the bottom
 right corner. This is *not helpful* when your enemies are coming from above! Let's take a second to figure out what's happening.
 
 ---
 
-The ``||variables:set projectile to||`` block comes preloaded with 
-values setting both the [__*vx*__](#whatVX "horizontal velocity") 
+The ``||variables:set projectile to||`` block comes preloaded with
+values setting both the [__*vx*__](#whatVX "horizontal velocity")
 and [__*vy*__](#whatVY "vertical velocity") to 50.
 
 
 ## Learn Velocity @showdialog
 
-To change the direction of the projectiles, you need to change the  
-speed they travel in a certain direction.  
+To change the direction of the projectiles, you need to change the
+speed they travel in a certain direction.
 In MakeCode Arcade, we call this [__*velocity*__](#veloc "speed in a given direction").
 
-- Change whether they fly left or right by changing the [__*vx*__](#whatX "speed from left to right")  
-- Change whether they fly up or down by changing the [__*vy*__](#whatX "speed from top to bottom")  
+- Change whether they fly left or right by changing the [__*vx*__](#whatX "speed from left to right")
+- Change whether they fly up or down by changing the [__*vy*__](#whatX "speed from top to bottom")
 - What happens when you change both?
 
 ![Directional Projectiles](/static/skillmap/space/vxvy.gif "Round and Round")
@@ -88,14 +88,14 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ---
 
-► Find 
-``||sprites:[mySprite] start [spray] effect ⊕||`` and snap it in at 
-the bottom of the ``||controller:on [A] button pressed ||`` container.  
+► Find
+``||sprites:[mySprite] start [spray] effect ⊕||`` and snap it in at
+the bottom of the ``||controller:on [A] button pressed ||`` container.
 
 ► Change ``||variables:mySprite||`` to ``||variables:projectile||`` if you
-want the effects on your projectiles instead of on your ship.  
+want the effects on your projectiles instead of on your ship.
 
-► Try different options from the ``||sprites:[spray]||`` dropdown menu and choose the one you like best!  
+► Try different options from the ``||sprites:[spray]||`` dropdown menu and choose the one you like best!
 
 ---
 
@@ -111,14 +111,14 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Complete 
+## Complete
 
 🎆 **Congratulations** 🎆
 
 You can now use the direction buttons to move your space plane and
 press **Ⓐ** to lauch projectiles!
 
-Play your game on the game screen, then click **Finish** to return to the main page where you can share with family and friends!  
+Play your game on the game screen, then click **Done** to return to the main page where you can share with family and friends!
 
 
 

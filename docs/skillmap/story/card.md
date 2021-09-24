@@ -907,7 +907,7 @@ let mySprite = sprites.create(img`
 
 ## Step 4
 
-Add a personal 🎵 note 🎵 using ``||music:play melody [ ] at tempo [120] (bpm)||``!   
+Add a personal 🎵 note 🎵 using ``||music:play melody [ ] at tempo [120] (bpm)||``!
 You can create your own song, or choose one from our gallery!
 
 [__*(see reference...)*__](#doc:/reference/skills/play-melody "Learn to add a melody.")
@@ -1163,9 +1163,9 @@ music.playMelody("G B A G C5 B A B ", 120)
 
 ## Finish
 
-Congratulations, you've finished your greeting card!  
+Congratulations, you've finished your greeting card!
 
-Click "Finish" to save your card to your gallery so you can share it (or keep building.)
+Click "Done" to save your card to your gallery so you can share it (or keep building.)
 
 
 

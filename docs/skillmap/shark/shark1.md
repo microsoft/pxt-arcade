@@ -2,7 +2,7 @@
 
 ## Introduction @showdialog
 
-Let's make a game! 
+Let's make a game!
 
 First, we'll plop a shark into the vast ocean, then we'll give it lasers!
 
@@ -32,7 +32,7 @@ scene.setBackgroundColor(8)
 
 ---
 
-► From the ``||sprites:Sprites||`` category, drag ``||variables:set mySprite to sprite [ ] of kind [Player]||`` into **the bottom** of the ``||loops:on start|`` container. 
+► From the ``||sprites:Sprites||`` category, drag ``||variables:set mySprite to sprite [ ] of kind [Player]||`` into **the bottom** of the ``||loops:on start|`` container.
 
 ► Click the grey box and toggle to **My Assets** to choose the **shark** [__*sprite*__](#sprote "2-D image that moves on the screen").
 
@@ -50,7 +50,7 @@ let mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
 
 ---
 
-► From ``||controller:Controller||``, drag ``||controller:move [mySprite] with buttons||`` to **the bottom** of the ``||loops:on start|`` container. This will allow you to move your sprite around the screen. 
+► From ``||controller:Controller||``, drag ``||controller:move [mySprite] with buttons||`` to **the bottom** of the ``||loops:on start|`` container. This will allow you to move your sprite around the screen.
 
 
 
@@ -69,9 +69,9 @@ controller.moveSprite(mySprite)
 
 ## step 6
 
-**👀 Keep an eye on your shark 👀**  
+**👀 Keep an eye on your shark 👀**
 
-When things get crazy, your shark can dash off-screen. Let's change that. 
+When things get crazy, your shark can dash off-screen. Let's change that.
 
 ---
 
@@ -104,9 +104,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## step 8
 
-►  From ``||sprites:Sprites||`` drag ``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||`` into the empty  ``||controller:on [A] button [pressed]||``. 
+►  From ``||sprites:Sprites||`` drag ``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||`` into the empty  ``||controller:on [A] button [pressed]||``.
 
-►  To send your lasers moving quickly toward the right side, change the ``||sprites:vx||`` (horizontal [__*velocity*__](#veloc "speed in a given direction")) value to **200**. 
+►  To send your lasers moving quickly toward the right side, change the ``||sprites:vx||`` (horizontal [__*velocity*__](#veloc "speed in a given direction")) value to **200**.
 
 ►  Set the ``||sprites:vy||`` (vertical velocity) value to **0** so the lasers don't move up or down.
 
@@ -150,13 +150,13 @@ Take a look at your game window and move your shark around while pressing the (A
 
 
 
-## Finale 
+## Finale
 
 **Congratulations!**
 
 ---
 
-Now that you have a laser shark, you can click **Finish** to head back to the skillmap and add more to your game!
+Now that you have a laser shark, you can click **Done** to head back to the skillmap and add more to your game!
 
 
 

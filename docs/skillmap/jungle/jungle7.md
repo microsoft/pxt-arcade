@@ -3,7 +3,7 @@
 
 ## Welcome @showdialog
 
-**Time to Level Up!**  
+**Time to Level Up!**
 
 This activity will show you how to add extra levels to your game.
 
@@ -22,7 +22,7 @@ Can you remember which chunk of code creates each action?
 
 ## Step 3 - Not So Fast
 
-**🗝️ Find a second chest to win the game 🗝️**  
+**🗝️ Find a second chest to win the game 🗝️**
 
 ---
 
@@ -38,20 +38,20 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`chest2`, function (sprite, lo
 
 ## Step 4 - A New Level
 
-**🙌 Add a New Level 🙌**   
+**🙌 Add a New Level 🙌**
 When we get to the first chest, we want to take the player to a new level.
 
 ---
 
-► From ``||scene:Scene||``, drag ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` into an empty area of the workspace. 
+► From ``||scene:Scene||``, drag ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` into an empty area of the workspace.
 
-► Click the empty square and choose **chest1**. 
+► Click the empty square and choose **chest1**.
 
 
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, location) {
-    
+
 })
 ```
 
@@ -62,7 +62,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, lo
 
 ► To show the player that the level has changed, go to ``||scene:Scene||`` and drag ``||scene:set background image to [ ]||`` into the empty **Player overlaps chest1** container.
 
-► Click the grey square and toggle to **My Assets** to choose **background2**. 
+► Click the grey square and toggle to **My Assets** to choose **background2**.
 
 
 ```blocks
@@ -77,7 +77,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, lo
 
 ► To change the level tilemap, go to ``||scene:Scene||`` and drag ``||scene:set tilemap to [ ]||`` to **the end** of the **Player overlaps chest1** container.
 
-► Click the grey square and toggle to **My Assets** to choose **level2**. 
+► Click the grey square and toggle to **My Assets** to choose **level2**.
 
 
 ```blocks
@@ -133,7 +133,7 @@ You did it!!  Can you play your game all the way to the end?
 
 ---
 
-When you're done playing your game, click **Finish** to return to the main page for your certificate and the option to customize your final game!
+When you're done playing your game, click **Done** to return to the main page for your certificate and the option to customize your final game!
 
 
 
@@ -162,7 +162,7 @@ mySprite.ay = 500
 scene.cameraFollowSprite(mySprite)
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`orange bauble`, function (sprite, location) {
-    tiles.setTileAt(location, assets.tile`transparency16`)  
+    tiles.setTileAt(location, assets.tile`transparency16`)
     info.changeScoreBy(1)
 })
 

@@ -28,7 +28,7 @@ forever(function () {
 
 ## Intro @showdialog
 
-Ready to test your agility? 
+Ready to test your agility?
 
 Let's create a game where Mama Dino needs to get to her hoard of babies!
 
@@ -44,11 +44,11 @@ We're going to start with Mama Dino.
 
 ---
 
-► From the ``||sprites:Sprites||`` category, grab 
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
+► From the ``||sprites:Sprites||`` category, grab
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
 and drag it into the empty ``||loops:on start||`` container in the workspace.
 
-► Click the empty grey square and toggle to **My Assets** to select **Mama**. 
+► Click the empty grey square and toggle to **My Assets** to select **Mama**.
 
 
 ```blocks
@@ -71,14 +71,14 @@ Let's get our sprite moving up and down with the controller.
 
 ---
 
-► From the ``||contoller:Controller||`` category, grab a 
-``||controller:move [mySprite] with buttons ⊕||`` 
+► From the ``||contoller:Controller||`` category, grab a
+``||controller:move [mySprite] with buttons ⊕||``
 block and snap it into **the bottom** of the ``||loops:on start||`` container.
 
-► Click the **⊕** button on the new block to show extra 
- value fields. 
+► Click the **⊕** button on the new block to show extra
+ value fields.
 
-► To keep the sprite from moving side-to-side, change 
+► To keep the sprite from moving side-to-side, change
 [__*vx*__](#whatVX "horizontal velocity") (horizontal speed) to **0**.
 
 
@@ -93,7 +93,7 @@ controller.moveSprite(mySprite, 0, 100)
 ## Step 4
 
 **🎮  Try your project using the game screen 🎮**
- 
+
 Make sure your ``||sprites:Player||`` moves up and down with the joypad, arrow keys, or **W** and **S** keys.
 
 
@@ -106,7 +106,7 @@ If things get out of control, your sprite can leave the screen! Let's fix that.
 ---
 
 ► From ``||sprites:Sprites||``, grab
-``||sprites:set [mySprite] stay in screen <on>||`` and snap it into **the bottom** 
+``||sprites:set [mySprite] stay in screen <on>||`` and snap it into **the bottom**
 of the ``||loops:on start||`` container.
 
 
@@ -127,7 +127,7 @@ mySprite.setStayInScreen(true)
 ---
 
 ► From ``||scene:Scene||``, grab
-``||scene:set background image to [ ]||`` and snap it into **the top** 
+``||scene:set background image to [ ]||`` and snap it into **the top**
 of the ``||loops:on start||`` container.
 
 ► Click the **grey square** in the new block and toggle to **My Assets** to choose the **Freeway** background.
@@ -149,9 +149,9 @@ mySprite.setStayInScreen(true)
 
 ---
 
-► To make it look like the dino is walking along the road, 
+► To make it look like the dino is walking along the road,
 go to ``||scroller:Scroller||`` and drag
-``||scroller:scroll background with vx [-50] vy [-50]||`` into **the end** 
+``||scroller:scroll background with vx [-50] vy [-50]||`` into **the end**
 of the ``||loops:on start||`` container.
 
 ► Stop the background from scrolling vertically by changing the value of **vy** to **0**.
@@ -171,24 +171,24 @@ scroller.scrollBackgroundWithSpeed(-50, 0)
 ## Step 8
 
 **🎮  Take a look at the game screen 🎮**
- 
+
 Your background should move right-to-left across the screen on its own, and you should be able to move your dino up and down with the joypad or arrow keys.
 
 
 
 ## Step 9
 
-**The sprite needs something to collect!**  
+**The sprite needs something to collect!**
 Let's add some baby dinos for the momma dinosaur to rescue 💚
 
 ---
 
-► From ``||loops:Loops||``, grab a 
-``||loops:forever||`` loop container and drag it into 
+► From ``||loops:Loops||``, grab a
+``||loops:forever||`` loop container and drag it into
 an empty spot on the workspace.
 
 ► From ``||sprites:Sprites||``, grab
-``||variables:set [projectile] to projectile [ ] from side with vx [50] vy [50]||`` 
+``||variables:set [projectile] to projectile [ ] from side with vx [50] vy [50]||``
 and snap it into the empty ``||loops:forever||`` container.
 
 ► Click the **grey square** in the new block and toggle to **My Assets** to choose the **Baby** sprite.
@@ -203,7 +203,7 @@ forever(function () {
 
 ## Step 10
 
-► To make the babies look like they're walking along the road, change 
+► To make the babies look like they're walking along the road, change
 [__*vx*__](#whatVX "horizontal velocity") (or horizontal speed) to **-90**.
 
 ► Change [__*vy*__](#whatVY "vertical velocity") (or vertical speed) to **0** so they don't float up or down.
@@ -223,13 +223,13 @@ forever(function () {
 
 **😲 They're flying 😲**
 
-If we leave them like this, we won't be able to see them properly.  Let's 
+If we leave them like this, we won't be able to see them properly.  Let's
 send the babies in from a random height each time.
 
 ---
 
-► From  ``||sprites:Sprites||``, grab a 
-``||sprites:set [mySprite] [x] to [0]||`` 
+► From  ``||sprites:Sprites||``, grab a
+``||sprites:set [mySprite] [x] to [0]||``
 block and snap it into **the end** of the ``||loops:forever||`` loop container.
 
 ► Change **mySprite** to **projectile** using the first dropdown menu.
@@ -251,10 +251,10 @@ forever(function () {
 **This is looking great, but they still hover around the top.**
 
 ---
-► In ``||sprites:set [mySprite] [y] to [0]||`` , replace **0** with ``||math:pick random [0] to [10]||``.  
+► In ``||sprites:set [mySprite] [y] to [0]||`` , replace **0** with ``||math:pick random [0] to [10]||``.
 (From the ``||math:Math||`` category)
 
-► Help the babies spread out along the road by changing the smallest random number from **0** to **15** and the largest random number from 
+► Help the babies spread out along the road by changing the smallest random number from **0** to **15** and the largest random number from
 **10** to **115**.
 
 ```blocks
@@ -268,11 +268,11 @@ forever(function () {
 
 ## Step 13
 
-► Keep the babies from running out at the speed of light by 
+► Keep the babies from running out at the speed of light by
 adding a ``||loops:pause [100] ms||`` block (from the  ``||loops:Loops||``
 category) to **the end** of the ``||loops:forever||`` loop.
 
-► Change the pause time to **1000 ms** by clicking in the textbox and typing 
+► Change the pause time to **1000 ms** by clicking in the textbox and typing
 **1000** (or click the dropdown and select **1 second**.)
 
 ```blocks
@@ -294,7 +294,7 @@ forever(function () {
 
 You've built the foundation for a great game. Give it a try on the game screen!
 
-When you're done playing, click **Finish** to return to the main page and continue the next tutorial where we'll add points and a game timer!
+When you're done playing, click **Done** to return to the main page and continue the next tutorial where we'll add points and a game timer!
 
 
 ```package
