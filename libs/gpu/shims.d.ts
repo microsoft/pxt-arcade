@@ -1,6 +1,6 @@
 // Auto-generated. Do not edit.
 
 
-declare interface Gpu {}
+declare interface Image {}
 
 // Auto-generated. Do not edit. Really.
