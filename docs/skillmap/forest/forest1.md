@@ -15,44 +15,80 @@ Let's start by setting up your plane to make sure you can get everywhere you nee
 
 ## 2. Set the Scene 
 
-**🌲 Welcome to the Forest 🌲**
+**🌲 Welcome to the Forest**
 
 Choose a [__*tilemap*__](#tiled "a scene or world created using predefined tiles") to add a beautiful forest to your game.
 
 ---
 
-- :puzzle:  Under the ``||scene:Scene||`` category, you'll find the  
+- :tree:  Under the ``||scene:Scene||`` category in the toolbox, you'll find the  
 ``||scene:set tilemap to []||``  
 block.  Drag it into the empty  
 ``||loops:on start||``  
-container already in your workspace. 
+container already in your workspace.  
 
-- :paint brush: Click the empty grey square and toggle to **My Assets** to select the tilemap called **level1**. 
+_💡  Having trouble finding the block you need? Look to the left of the instructions for the icon of the toolbox category where your block lives!_ 
 
 - :mouse pointer: When you're ready to move on to the next set of instructions, click **Next**. 
 
+
+
 ```blocks
+//@highlight
+tiles.setTilemap(tilemap`level2`)
+```
+
+
+
+## 3. Set Your Map 
+
+- :paint brush: Click the empty grey square in   
+the  
+``||scene:set tilemap to []||``  
+and toggle to **My Assets** to select the tilemap called **level1**. 
+
+
+```blocks
+//@highlight
 tiles.setTilemap(tilemap`level1`)
 ```
 
-## 3. A Plane!
+## 4. Take a Look!
 
-**🛫 We need a hero 🛬**
+**Click the Game Window Tab **
 
-Choose a plane [__*sprite*__](#sprote "a 2-D image that moves on the screen") 
-to fly around the screen. 
+![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Look what we're about to do today!")
 
 ---
 
-- :puzzle:  From the ``||sprites:Sprites||`` category, drag  
+Open the game window to take a look at the scene you've just set up.
+
+When you're ready to continue, click back to the instructions tab for more!
+
+
+
+
+
+## 5. A Plane!
+
+**We need a hero**
+
+Choose a [__*sprite*__](#sprote "a 2-D image that moves on the screen") 
+for your aircraft that you will fly around the screen. 
+
+---
+
+- :paper plane:  Drag  
 ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  
 to **the end** of the  
 ``||loops:on start||``  
 container.
 
+_💡  Remember, the bubble on the left shows the icon of the toolbox category for the block you need._ 
+
 - :paint brush:  To choose your plane, click the empty grey box, then toggle to **My Assets** and choose your aircraft. 
 
-_💡 We'll be using the **Fire Plane Right** sprite, but whatever you choose, feel free to use the editing tools to add your own colors and customizations!_
+_💡 We'll be using the **Fire Plane Right** sprite, but you can use something else...or even recolor one we've provided!_
 
 
 ```blocks
@@ -64,15 +100,13 @@ let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
 
 
 
-## 4. Learn to Fly
+## 6. Learn to Fly
 
-**↔️ Time to get the sprite moving ↔️**
+**↔️ Time to get the sprite moving**
 
 ---
 
-- :puzzle:  From  
-``||controller:Controller||``,  
-drag  
+- :game pad: Drag  
 ``||controller:move [mySprite] with buttons ⊕||``    
 to **the end** of the  
 ``||loops:on start||``  
@@ -87,9 +121,9 @@ controller.moveSprite(mySprite)
 ```
 
 
-## 5. Try It
+## 7. Try It
 
-**🕹️ Test it out in the Game Window 🕹️ **
+**🕹️ Test it out in the Game Window **
 
 ---
 
@@ -100,15 +134,13 @@ _💡 You can also use the arrow keys on your keyboard!_
 
 
 
-## 6. Follow with Camera
+## 7. Follow with Camera
 
 **😮 Ack!  Did you notice that your airtanker flies off-screen if you go too far? **
 
 ---
 
-- :puzzle:   To keep your sprite in sight, open  
-``||scene:Scene||``  
-and drag 
+- :tree:   To keep your sprite in sight, drag 
 ``||scene:camera follow sprite [mySprite]||``  
 to **the end** of the  
 ``||loops:on start||``  
@@ -131,7 +163,7 @@ scene.cameraFollowSprite(mySprite)
 
 ## Finale
 
-👏 **You're off to a great start!** 👏   
+👏 **You're off to a great start!**   
 
 ---
 
@@ -153,13 +185,6 @@ arcade-sprite-util=github:jwunderl/arcade-sprite-util/
 pxt-status-bar=github:jwunderl/pxt-status-bar
 ```
 
-```template
-namespace SpriteKind {
-    export const Fire = SpriteKind.create()
-    export const Burnt = SpriteKind.create()
-    export const Water = SpriteKind.create()
-}
-```
 
 ```customts
 
