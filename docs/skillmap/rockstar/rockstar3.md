@@ -12,7 +12,7 @@ How did those fans get backstage?  Keep the fans away from Jerry if you want to 
 
 ## 2. Spot the Fan
 
-**📸 Remove points when Jerry runs into a fan 📸**   
+**📸 Remove points when Jerry runs into a screaming fan 📸**   
 
 When your sprite overlaps a fan, we'll change the score.
 
@@ -152,7 +152,7 @@ info.startCountdown(30)
 Grab your instruments and get Jerry to the end of the maze before time runs out! 
 
 
-When you're done playing, click **Finish** to head back to the 
+When you're done playing, click **Done** to head back to the 
 skillmap where you can share your final game or click "Save to My Projects" to keep building!
 
 
