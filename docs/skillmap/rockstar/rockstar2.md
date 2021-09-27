@@ -50,7 +50,7 @@ Uh oh!  You get WAY too many points when you touch the guitar! We can fix that i
 
 - :puzzle: From ``||scene:Scene||``, drag ``||scene:set [ ] at tilemap col [0] row [0]||`` into **the top** of the ``||scene:on [sprite] of kind [Player] overlaps [instrument1] at [location]||`` container.
 
-- :puzzle: Replace ``||scene:tilemap col [0] row [0]||`` with the ``||variables:location||`` value from the top of the **Player overlaps ins** container.
+- :puzzle: Replace ``||scene:tilemap col [0] row [0]||`` with the ``||variables:location||`` value from the top of the **Player overlaps instrument** container.
 
 ![Share your location](/static/skillmap/assets/overlap-tile-location.gif "Grab the variable from the overlap container")
 
@@ -105,7 +105,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument4`, function (sprit
 ```
 
 
-## 7. Look Again Again
+## 7. Look Again...Again
 
 **🕹️ Try your maze again 🕹️ **
 
@@ -147,7 +147,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`exit`, function (sprite, loca
 
 ---
 
-Grab your instruments and guide Jerry to the door, then click **Finish** to head back to the 
+Grab your instruments and guide Jerry to the door, then click **Done** to head back to the 
 skillmap. In the next level we'll show you how to subtract points when Jerry runs into crazed fans!
 
 

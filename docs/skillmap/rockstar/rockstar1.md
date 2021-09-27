@@ -18,7 +18,7 @@ We'll walk you through the skills you'll need to help Jerry navigate backstage t
 
 ---
 
-- :binoculars: Look at your workspace to see that the **background color** and [__*tilemap*__](#tiled "a scene or world created using predefined tiles") 
+- :binoculars: Look at your workspace to see that the **background color** and backstage [__*tilemap*__](#tiled "a scene or world created using predefined tiles") 
 have already been added to this activity.  
 
 💡 Both blocks have been put inside the ``||loops: on start||`` container so they load as soon as the game starts.
@@ -79,7 +79,7 @@ We'll fix that over the next couple of steps.
 
 ## 6. Trapped Backstage 
 
-**The sprite should appear at the stairs behind the stage. **
+The rockstar sprite should appear at the stage door. 
 
 ---
 
@@ -134,7 +134,7 @@ You should be able to see your sprite as you move it around backstage.  Can you 
 
 ---
 
-Take a look at all of the things to see in the maze, then click **Finish** to head to the next level of the 
+Take a look at all of the things hidden throughout the maze, then click **Done** to head to the next level of the 
 skillmap where we'll show you how to add points for each instrument Jerry collects!
 
 

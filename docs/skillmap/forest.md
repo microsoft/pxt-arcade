@@ -1,6 +1,6 @@
 # Save the Forest
 * name: Save the Forest
-* description: Computer science is everywhere!  
+* description: The last few summers have been some of the hottest on record and the forest service needs your air team to help keep fires under control. Use blocks to code your airtanker and set up your HUDs so your ground team can help you save the forest!
 * infoUrl: skillmap/educator-info/forest-map-info
 * bannerUrl: /static/skillmap/forest/forest1.gif
 * backgroundurl: /static/skillmap/backgrounds/forest-comp.png
@@ -12,14 +12,14 @@
 
 
 ## Save the Forest
-* name: Save the forest from the ravaging fire!
+* name: Save the Forest
 * layout: manual
 
 ### forest1
 * allowcodecarryover: false
-* name: Save the Forest
+* name: Prepare Your Plane
 * type: tutorial
-* description: Set up your plane to make sure you can get everywhere you need to be! 
+* description: Set up your airtanker to make sure you can get everywhere you need to be! 
 * url: /skillmap/forest/forest1
 * imageUrl: /static/skillmap/forest/forest1.gif
 * tags: easy, sprite, movement
@@ -27,7 +27,7 @@
 * position: 0 0
 
 ### forest2
-* name: Burning Issues
+* name: 🔥 Burning Issues 🔥
 * type: tutorial
 * description: Use loops to add random fires to your map! 
 * url: /skillmap/forest/forest2
@@ -49,8 +49,7 @@
 ### forest4
 * name: Spreads Like Wildfire
 * type: tutorial
-* description: Lots of things affect how quickly fire spreads. In this activity, you'll add variables 
-to change fire danger levels. 
+* description: Lots of things affect how quickly fire spreads. In this activity, you'll add variables to change fire danger levels. 
 * url: /skillmap/forest/forest4
 * imageUrl: /static/skillmap/forest/forest4.gif
 * tags: easy, variables, overlaps
@@ -77,6 +76,10 @@ to change fire danger levels.
 * url: /static/skillmap/certificates/forest-cert.pdf
 * next: forest6 
 * position: 3 2
+* actions:
+    * map: [Try the Time Flies Tutorial](/tutorials/froggy)
+    * map: [Try the Space Explorer Map](/skillmap/space)
+    * editor: [Edit Your Project with a Full Toolbox] (/)
 
 
 ### forest6
