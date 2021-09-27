@@ -4,6 +4,7 @@
 ## Welcome @showdialog
 
 When a fire gets large enough, it can create its own weather system and bring its own rain. 
+
 Until that happens, teams rely on firetrucks and aircraft to keep wildfires from getting out of control.
 
 ![Plane spraying water on fires](/static/skillmap/forest/forest3.gif "Look what we're about to do!")
@@ -29,12 +30,12 @@ Let's add code that sprays water when you press the (A) button.
 
 ---
 
-► First, from the ``||controller:Controller||`` category, drag the
-``||controller:on [A] button [pressed]||`` container into an empty 
-area in your workspace.
+- :puzzle: First, from the ``||controller:Controller||`` category, drag the  
+``||controller:on [A] button [pressed]||``  
+container into an empty area in your workspace.
 
-► Change ``||controller:pressed||`` to ``||controller:repeat||`` to keep the water 
-spraying as you hold the (A) button down.
+- :mouse pointer: Change ``||controller:pressed||`` to ``||controller:repeat||`` to keep the water spraying as you hold the (A) button.   
+_💡 Find it too hard to keep (A) pressed?  Try using the spacebar on your keyboard!_
 
 
 ```blocks
@@ -48,10 +49,13 @@ controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
 ## 4. Choose Your Spray
 
 
-► From ``||sprites:Sprites||``, grab ``||sprites:spray from [mySprite] using [ ]||`` and snap it into the empty
-``||controller:on [A] button [repeat]||`` container.
+- :puzzle: From ``||sprites:Sprites||``, grab  
+``||sprites:spray from [mySprite] using [ ]||``  
+and snap it into the empty  
+``||controller:on [A] button [repeat]||``  
+container.
 
-► Click the empty grey box and toggle to **My Assets** to choose the **water** sprite that's shaped like a blue +.
+- :mouse pointer: Click the empty grey box and toggle to **My Assets** to choose the **water** sprite that's shaped like a blue +.
 
 
 ```blocks
@@ -66,7 +70,7 @@ controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
 
 ---
 
-Click on the game controller icon and press and hold the (A) button to spray water. 
+Start your game, then press and hold the (A) button to spray water. 
 
 How does it work?  What happens when you move your plane around and spray water at the same time?
 
@@ -78,12 +82,15 @@ Before the water can weaken your fire, you have to set the fire's strength.
 
 ---
 
-►  From ``||sprites:Sprites||``, snap
-``||sprites:set strength of [mySprite] to [10]||`` 
-into the ``||sprites:on created [sprite] of kind [Fire]||`` container already in your workspace.
+- :puzzle:  From ``||sprites:Sprites||``, snap
+``||sprites:set strength of [mySprite] to [10]||``  
+into the  
+``||sprites:on created [sprite] of kind [Fire]||``  
+container already in your workspace.
 
-►  Grab the ``||variables:sprite||`` value block from the container and use it to replace
-the ``||variables:mySprite||`` value block.
+- :mouse pointer:  Grab the ``||variables:sprite||`` value block from the container and use it to replace the ``||variables:mySprite||`` value block.
+
+![Grab the sprite value from the title bar of the outer container](/static/skillmap/assets/sprite-from-container.gif "This is how your block knows which sprite to use")
 
 
 ```blocks
@@ -101,6 +108,10 @@ sprites.onCreated(SpriteKind.Fire, function (sprite) {
 
 ```
 
+---
+
+![Grab the sprite value from the title bar of the outer container](/static/skillmap/assets/sprite-from-container.gif "This is how your block knows which sprite to use")
+
 
 
 ## 7. Drench It
@@ -110,11 +121,11 @@ we can weaken the fires each time they are hit by water.
 
 ---
 
-►  From ``||sprites:Sprites||``, drag an
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` container into an empty 
-area of the workspace.
+- :puzzle:  From ``||sprites:Sprites||``, drag an  
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``   
+container into an empty area of the workspace.
 
-►  Change the first kind to ``||sprites:Water||`` and the second kind to ``||sprites:Fire||``.
+- :mouse pointer:  Change the first kind to ``||sprites:Water||`` and the second kind to ``||sprites:Fire||``.
 
 
 ```blocks
@@ -136,10 +147,14 @@ When a water sprite hits the fire, that water sprite needs to be destroyed.
 
 ---
 
-►  Snap ``||sprites:destroy [mySprite]||`` into the empty container.
+- :puzzle:  Snap  
+``||sprites:destroy [mySprite]||``  
+into the empty container.
 
-►  To make sure your code destroys the **Water** sprite, grab the ``||variables:sprite||`` 
-value block from the container and use it to replace ``||variables:mySprite||``.  
+- :mouse pointer:  To make sure your code destroys the **Water** sprite, grab the ``||variables:sprite||`` value block from the container and use it to replace ``||variables:mySprite||``.  
+
+![Grab the sprite value from the title bar of the outer container](/static/skillmap/assets/sprite-from-container.gif "This is how your block knows which sprite to use")
+
 
 
 
@@ -155,6 +170,11 @@ sprites.onOverlap(SpriteKind.Water, SpriteKind.Fire, function (sprite, otherSpri
 })
 ```
 
+--- 
+
+![Grab the sprite value from the title bar of the outer container](/static/skillmap/assets/sprite-from-container.gif "This is how your block knows which sprite to use")
+
+
 
 
 ## 9. Water Weakens Fire
@@ -163,13 +183,15 @@ When a water sprite hits the fire, the fire needs to decrease in strength by 1.
 
 ---
 
-►  Snap ``||sprites:change strength of [mySprite] by [-1]||`` into **the end** 
-of the **on overlaps** container.
+- :puzzle:  Snap  
+``||sprites:change strength of [mySprite] by [-1]||``  
+into **the end** of the **on overlaps** container.
 
-►  To make sure your code weakens the **Fire** sprite, 
+- :mouse pointer:  To make sure your code weakens the **Fire** sprite, 
 grab the ``||variables:otherSprite||`` value block from the 
 container and use it to replace ``||variables:mySprite||``.  
 
+![Grab the sprite value from the title bar of the outer container](/static/skillmap/assets/sprite-from-container.gif "This is how your block knows which sprite to use")
 
 
 ```blocks
@@ -184,6 +206,11 @@ sprites.onOverlap(SpriteKind.Water, SpriteKind.Fire, function (sprite, otherSpri
     sprites.change_flame_strength_by(otherSprite, -1)
 })
 ```
+
+---
+
+![Grab the sprite value from the title bar of the outer container](/static/skillmap/assets/sprite-from-container.gif "This is how your block knows which sprite to use")
+
 
 ## 10. Test Again 
 
