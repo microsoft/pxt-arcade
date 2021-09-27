@@ -13,7 +13,7 @@ In your game, they'll be started by your code.
 
 ## 2. Set the Scene 
 
-**🎮 Try your game 🎮**
+**🎮 Try your game**
 
 ---
 
@@ -23,20 +23,20 @@ Can you remember which lines of code create each action?
 
 ## 3. Thinking ahead
 
-**➰ Again and Again ➰**
+**➰ Again and Again**
 
 We're going to add 4 flames, but thanks to our **repeat loop**, we only need to write
 code once.
 
 ---
 
-- :puzzle:  From the ``||loops:Loops||`` category, drag the  
+- :redo:  Drag the  
 ``||loops:repeat [4] times||``  
 loop container into **the end** of the  
 ``||loops:on start||``  
 container.
 
-- :puzzle:  From ``||sprites:Sprites||``, add    
+- :paper plane:  Add    
 ``||variables:set [mySprite2] to sprite [ ] of kind [Player]||``  
 to the end of the  
 ``||loops:repeat [4] times||``  
@@ -99,7 +99,7 @@ Let's scatter flames randomly around the map.
 
 ---
 
-- :puzzle:   From ``||scene:Scene||``, grab  
+- :tree:  Grab  
 ``||scene:place [mySprite] on top of random [ ]||``  
 and snap it into **the end** of the  
 ``||loops:repeat [4] times||``  
@@ -135,7 +135,7 @@ for (let index = 0; index < 4; index++) {
 
 ##  Try It
 
-**🕹️ Test it out in the Game Window 🕹️ **
+**🕹️ Test it out in the Game Window **
 
 ---
 
@@ -147,13 +147,13 @@ You should be able to fly around the screen and find all 4 fires!
 
 ## 7. Just My Type
 
-**🔥 Let's create some crackle 🔥**
+**🔥 Let's create some crackle**
 
 When each sprite of kind **Fire** is created, we want to make it sparkle using effects.
 
 ---
 
-- :puzzle:   From ``||sprites:Sprites||``, drag an 
+- :paper plane:   Drag an  
 ``||sprites:on created [sprite] of kind [Player]||``  
 container into an empty area of the workspace.
 
@@ -174,7 +174,7 @@ sprites.onCreated(SpriteKind.Fire, function (sprite) {
 
 ## 8. Add the Spark
 
-- :puzzle:   From ``||sprites:Sprites||``, drag  
+- :paper plane:   Drag  
 ``||sprites:[mySprite] start [spray] effect||``  
 into the empty  
 ``||sprites:on created [sprite] of kind [Fire]||``  
@@ -213,7 +213,7 @@ sprites.onCreated(SpriteKind.Fire, function (sprite) {
 
 ## Finale
 
-👏 **There you have it!** 👏   
+👏 **There you have it!**
 
 ---
 
