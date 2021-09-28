@@ -8,29 +8,29 @@ Try this tutorial!
 
 ### @autoexpandOff true
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
-**In this tutorial, you'll create a space plane 
+**In this tutorial, you'll create a space plane
 that can fly through bogey spacecraft.**
 
-Can you survive the continuous attack? 
+Can you survive the continuous attack?
 
 ![Space plane and attacking spacecraft](/static/tutorials/galga.gif)
 
-## Step 1
+## {Step 1}
 
 ✈️ First, we're going to need a **space plane** [__*sprite*__](#sprite "2-D image that moves on the screen") ✈️
 
 ---
 
-► From the ``||sprites:Sprites||`` category, grab a 
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and 
+► From the ``||sprites:Sprites||`` category, grab a
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and
 snap it into the **on start** block already in the workspace.
 
 ► Click on the word ``||variables:[mySprite]||`` in the new block to
 rename the variable ``||variables:[spacePlane]||``.
 
-► Now click inside the grey box in the new block to open the image editor. 
+► Now click inside the grey box in the new block to open the image editor.
 Draw a plane or choose something from the Gallery.
 
 
@@ -71,18 +71,18 @@ let spacePlane = sprites.create(img`
 `, SpriteKind.Player)
 ```
 
-## Control your ship
+## {Control your ship}
 
 **Great plane!  Let's get it moving!**
 
 ---
 
-► Find the ``||controller:move [mySprite] with buttons ⊕||`` block 
+► Find the ``||controller:move [mySprite] with buttons ⊕||`` block
 and drag it into the bottom of the ``||loops:on start||`` container.
 
 ► Change **mySprite** to **spacePlane**.
 
-► Click the ⊕ at the right of the new block so you can change the 
+► Click the ⊕ at the right of the new block so you can change the
 movement speed to **200** for both **vx** and **vy**.
 
 ---
@@ -130,7 +130,7 @@ let spacePlane = sprites.create(img`
 controller.moveSprite(spacePlane, 200, 200)
 ```
 
-## Stay in screen
+## {Stay in screen}
 
 **Uh-oh, if you move off screen, your plane disappears!**
 
@@ -141,7 +141,7 @@ controller.moveSprite(spacePlane, 200, 200)
 snap it in at the end of the program.
 
 ► Change **mySprite** to **spacePlane**.
- 
+
 ```blocks
 let spacePlane = sprites.create(img`
     . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -182,15 +182,15 @@ controller.moveSprite(spacePlane, 200, 200)
 spacePlane.setStayInScreen(true)
 ```
 
-## Step 4
+## {Step 4}
 
-The default number of lives for your player is two.  
+The default number of lives for your player is two.
 Let's change that to three.
 
 ---
 
-► Snap a ``||info:set life to [3]||`` block into the 
-**on start** container.  
+► Snap a ``||info:set life to [3]||`` block into the
+**on start** container.
 
 
 ```blocks
@@ -234,7 +234,7 @@ spacePlane.setStayInScreen(true)
 info.setLife(3)
 ```
 
-## Step 5
+## {Step 5}
 
 **For protection, we need to press a button to
 launch projectiles at oncoming enemies.**
@@ -242,9 +242,9 @@ launch projectiles at oncoming enemies.**
 ---
 
 ► Drag an ``||controller:on [A] button [pressed]||`` container into an empty
-area of the workspace. 
+area of the workspace.
 
-► Snap a  
+► Snap a
 ``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``
 block inside the new container and click inside the grey box to draw your dart.
 
@@ -275,7 +275,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 6 
+## {Step 6 }
 
 **Every so often, a bogey should come flying at us.**
 
@@ -286,7 +286,7 @@ Let's add code to make that happen.
 ► Add a an ``||game:on game update every [500] ms||`` container to
 an empty area in the workspace and change **500** to **1000**.
 
-► Inside, snap a 
+► Inside, snap a
 ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and
 change the **kind** from **Player** to **Enemy**.
 
@@ -318,14 +318,14 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 7
+## {Step 7}
 
 **The bogey should fly from right to left.**
 
 ---
 
 ► Grab a ``||sprites:set [mySprite] velocity to vx [50] vy [50]||`` block and snap
-it into the end of your **on game update** container. 
+it into the end of your **on game update** container.
 
 ► Replace **mySprite** with **bogey**.
 
@@ -359,22 +359,22 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 8
+## {Step 8}
 
 **How can you win if bogeys** [__*spawn*__](#spawnd "appear suddenly") **right on top of you?**
 
 ---
 
-► Grab a ``||sprites:set [mySprite] position to vx [0] vy [0]||`` block 
+► Grab a ``||sprites:set [mySprite] position to vx [0] vy [0]||`` block
 and snap it into the end of your **on game update** block. Change **mySprite**
 to **bogey**.
 
-► Change the **x** location to **160** so the bogey starts at the right-most 
+► Change the **x** location to **160** so the bogey starts at the right-most
 edge of the screen, and grab a ``||math:pick random [0] to [10]||`` block to
 replace the **y** value so enemies come from different heights each time.
 
 ► Edit your random block to go from **5** to **115** to use as much of the
-screen height as possible withough exiting the playable area. 
+screen height as possible withough exiting the playable area.
 
 
 
@@ -404,7 +404,7 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 9
+## {Step 9}
 
 To keep things tidy, we need to destroy enemies who pass us
 and fly off screen.
@@ -443,17 +443,17 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 10
+## {Step 10}
 
-**Nothing happens when your dart hits a bogey...**  
+**Nothing happens when your dart hits a bogey...**
 Let's change that.
 
 ---
 
 ► Add a ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``
-container into an empty area of the workspace. 
+container into an empty area of the workspace.
 
-► Change the first sprite kind from **Player** to **Projectile** and the 
+► Change the first sprite kind from **Player** to **Projectile** and the
 **otherSprite** kind from **Player** to **Enemy**.
 
 
@@ -462,21 +462,21 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 })
 ```
 
-## Step 11
+## {Step 11}
 
 Now add the blocks to destroy the other sprite.
 
 ---
 
-► Snap a ``||sprites:destroy [mySprite]||`` block into the empty 
+► Snap a ``||sprites:destroy [mySprite]||`` block into the empty
 **on sprite overlaps** container.
 
 ► Drag the ``||variables:otherSprite||`` value from
 the header of the **on sprite overlaps** container and snap it in to replace
-**mySprite** in the **destroy** block. 
+**mySprite** in the **destroy** block.
 
 ► Click the **⊕** at the right of the **destroy** block and choose the
-**fire** effect to add some flair. 
+**fire** effect to add some flair.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -486,7 +486,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 ```
 
 
-## Step 12
+## {Step 12}
 
 **SCORE!**
 
@@ -494,7 +494,7 @@ We should add **1** to the player score for each bogey we hit.
 
 ---
 
-► Snap a ``||info:change score by [1]||`` block into the end of the 
+► Snap a ``||info:change score by [1]||`` block into the end of the
 **on sprite overlaps** container.
 
 ```blocks
@@ -505,7 +505,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 })
 ```
 
-## Step 13
+## {Step 13}
 
 **What if the bogey hits us?**
 
@@ -515,7 +515,7 @@ overlaps the player.
 ---
 
 ► Add a new ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``
-container into an empty area of the workspace. 
+container into an empty area of the workspace.
 
 ► Change the  **otherSprite** kind from **Player** to **Enemy**.
 
@@ -525,20 +525,20 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Step 14
+## {Step 14}
 
 If we're hit, we want the camera to shake, the bogey to explode,
 and a life to be removed from our indicator.
 
 ---
 
-► Snap a ``||sprites:destroy [mySprite]||`` block into the empty 
+► Snap a ``||sprites:destroy [mySprite]||`` block into the empty
 **on sprite player overlaps enemy** container and replace **mySprite** with **otherSprite**.
 
-► Snap a ``||scene:camera shake by [4] pixels for [500] ms||`` block into the 
+► Snap a ``||scene:camera shake by [4] pixels for [500] ms||`` block into the
 end of the **on sprite player overlaps enemy** container.
 
-► Snap a ``||info:change life by [-1]||`` block into the 
+► Snap a ``||info:change life by [-1]||`` block into the
 end of the **on sprite player overlaps enemy** container.
 
 
@@ -550,11 +550,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Complete @fullscreen
+## {Complete @fullscreen}
 
 🎆 **Congratulations** 🎆
 
-You have completed your game! 
+You have completed your game!
 
 You can now use the direction buttons to move your space plane and
 the **Ⓐ** button to lauch darts!

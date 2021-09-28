@@ -1,4 +1,4 @@
-# Get to Know MakeCode Arcade 
+# Get to Know MakeCode Arcade
 
 
 ```ghost
@@ -46,11 +46,11 @@ Complete this tutorial to learn how to:
 - follow tutorial prompts
 - find blocks in the toolbox
 - build code in the workspace
-- run your project on the built-in game screen 
+- run your project on the built-in game screen
 
 Before you know it, you'll have an arcade game of your very own!
 
-## step 1 
+## step 1
 
 **⭐Welcome⭐**
 
@@ -64,20 +64,20 @@ this box.
 
 ---
 
-When you're ready to move to the next step, click **[ >  Next]** to continue.  
+When you're ready to move to the next step, click **[ >  Next]** to continue.
 
 ---
 
 
 ## step 2
 
-This box is where you'll find information for each step. 
+This box is where you'll find information for each step.
 
-If you don't find all of the info you need, 
+If you don't find all of the info you need,
 click the lightbulb to the right for an extra hint.
 
 
-#### ~ tutorialhint 
+#### ~ tutorialhint
 ```
 **You found the hints!**
 ```
@@ -85,20 +85,20 @@ click the lightbulb to the right for an extra hint.
 
 ## Using the workspace
 
-Your [__*workspace*__](#workIt "The area where you build code") is the area 
-below the instructions where you'll connect blocks to build your program. 
+Your [__*workspace*__](#workIt "The area where you build code") is the area
+below the instructions where you'll connect blocks to build your program.
 
 ---
 
-► Click in the text area of the ``||game:splash " "||`` block 
+► Click in the text area of the ``||game:splash " "||`` block
 and change the sentence to something more exciting.
 
 ---
 
-**Tip:** Did you notice that the word __workspace__ in the first sentence had 
+**Tip:** Did you notice that the word __workspace__ in the first sentence had
 a special look? Hover your mouse over it to see a definition.
 
-#### ~ tutorialhint 
+#### ~ tutorialhint
 ```blocks
 game.splash("I like bananas!")
 ```
@@ -106,7 +106,7 @@ game.splash("I like bananas!")
 
 ## Meet the Blocks  @unplugged
 
-Blocks can be dragged out from the  [__*toolbox*__](#tools "The strip to the left of your workspace that lists block categories."), 
+Blocks can be dragged out from the  [__*toolbox*__](#tools "The strip to the left of your workspace that lists block categories."),
 
 connected, duplicated, and deleted.
 
@@ -120,11 +120,11 @@ Keep going to learn more about blocks.
 
 **Blocks you need won't always be in the workspace to start.**
 
-In the instructions, descriptions of the block you need will 
-often be highlighted in the same color as the toolbox 
-category where they live. 
+In the instructions, descriptions of the block you need will
+often be highlighted in the same color as the toolbox
+category where they live.
 
-**For example:** We might use ``||game:splash " "||`` when 
+**For example:** We might use ``||game:splash " "||`` when
 we want you to find this:
 
 ```block
@@ -138,13 +138,13 @@ This block adds a [__*splash screen*__](#splasht "A full-screen message that sho
 
 **Let's see how this works**
 
-► Find the 
-``||scene:set background color to [ ]||`` block and snap it at the top of 
-the **on start** container already in the workspace. 
+► Find the
+``||scene:set background color to [ ]||`` block and snap it at the top of
+the **on start** container already in the workspace.
 
-► Click the grey box in the new block to set the background to your favorite color. 
+► Click the grey box in the new block to set the background to your favorite color.
 
-#### ~ tutorialhint 
+#### ~ tutorialhint
 ```blocks
 scene.setBackgroundColor(7)
 game.splash("My monkey is better than yours")
@@ -169,7 +169,7 @@ is red, but it lives in the ``||sprites:Sprites||`` category.
 end of the **on start** container.
 
 ► Click the grey box in the new block and draw a [__*sprite*__](#sprote "A 2-D image that moves on the screen")
- or toggle to the **Gallery** to pick one of ours. 
+ or toggle to the **Gallery** to pick one of ours.
 
 
 #### ~ tutorialhint
@@ -184,22 +184,22 @@ end of the **on start** container.
 scene.setBackgroundColor(5)
 game.splash("My monkey is better than yours")
 let mySprite = sprites.create(img`
-. . . . . f f f f f . . . . . . 
-. . . . f e e e e e f . . . . . 
-. . . f d d d d d d e f . . . . 
-. . f d f f d d f f d f f . . . 
-. c d d d e e d d d d e d f . . 
-. c d c d d d d c d d e f f . . 
-. c d d c c c c d d d e f f f f 
-. . c d d d d d d d e f f b d f 
-. . . c d d d d e e f f f d d f 
-. . . . f f f e e f e e e f f f 
-. . . . f e e e e e e e f f f . 
-. . . f e e e e e e f f f e f . 
-. . f f e e e e f f f f f e f . 
-. f b d f e e f b b f f f e f . 
-. f d d f f f f d d b f f f f . 
-. f f f f f f f f f f f f f . . 
+. . . . . f f f f f . . . . . .
+. . . . f e e e e e f . . . . .
+. . . f d d d d d d e f . . . .
+. . f d f f d d f f d f f . . .
+. c d d d e e d d d d e d f . .
+. c d c d d d d c d d e f f . .
+. c d d c c c c d d d e f f f f
+. . c d d d d d d d e f f b d f
+. . . c d d d d e e f f f d d f
+. . . . f f f e e f e e e f f f
+. . . . f e e e e e e e f f f .
+. . . f e e e e e e f f f e f .
+. . f f e e e e f f f f f e f .
+. f b d f e e f b b f f f e f .
+. f d d f f f f d d b f f f f .
+. f f f f f f f f f f f f f . .
 `, SpriteKind.Player)
 
 
@@ -208,22 +208,22 @@ let mySprite = sprites.create(img`
 
 ## Container Blocks
 
-**Now let's look at different types of blocks and how to use them.** 
+**Now let's look at different types of blocks and how to use them.**
 
-This is a [__*container block*__](#blockIt "Block that holds other blocks"). 
+This is a [__*container block*__](#blockIt "Block that holds other blocks").
 Container blocks have a flat edge at both the the top and bottom with an open space
-in the middle that allows other blocks to snap inside. Container blocks control 
+in the middle that allows other blocks to snap inside. Container blocks control
 *when* the code inside runs. Here is an example:
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-	
+
 })
 ```
 ---
 
-►  Find an ``||controller:on [A] button pressed ||`` container 
-block and drag it into the workspace. You will add to it in the next step.  
+►  Find an ``||controller:on [A] button pressed ||`` container
+block and drag it into the workspace. You will add to it in the next step.
 
 #### ~ tutorialhint
 
@@ -235,9 +235,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Standard Blocks
 
-Next, there are [__*standard blocks*__](#sBlockIt "Single line blocks that make up the majority of most programs"). 
+Next, there are [__*standard blocks*__](#sBlockIt "Single line blocks that make up the majority of most programs").
 Standard blocks are single-line blocks with notches at the top and bottom that
-allow them to click-in between other pieces. These blocks run in order from top 
+allow them to click-in between other pieces. These blocks run in order from top
 to bottom within the container that they're placed.
 
 Here is an example of a standard block:
@@ -249,12 +249,12 @@ mySprite.startEffect(effects.spray)
 
 ---
 
-►  Find a ``||sprites:[mySprite] start [spray] effect ⊕||``  
-block and snap it into the  ``||controller:on [A] button pressed||`` 
+►  Find a ``||sprites:[mySprite] start [spray] effect ⊕||``
+block and snap it into the  ``||controller:on [A] button pressed||``
 container...then choose your own effect!
 
-►  Click the **⊕** to the right of the new block to pop open an extra 
-[__*argument*__](#iArgue "Additional piece of information the block uses"). 
+►  Click the **⊕** to the right of the new block to pop open an extra
+[__*argument*__](#iArgue "Additional piece of information the block uses").
 
 #### ~ tutorialhint
 ```blocks
@@ -269,7 +269,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Value Blocks
 
-Finally, we have [__*value blocks*__](#aBlockIt "special pieces that provide values for other blocks"). 
+Finally, we have [__*value blocks*__](#aBlockIt "special pieces that provide values for other blocks").
 Value blocks are special pieces that add information to other
 blocks. Sometimes they're pointy, sometimes they're rounded,
 but they always need another block to snap into. Value blocks look something like this:
@@ -285,9 +285,9 @@ value block and snap it into the number field on the effect block.
 
 ---
 
-**Tip:** Value blocks have different shapes 
+**Tip:** Value blocks have different shapes
 depending on what kind of information they add. Each value will only
-fit in certain types of spaces. 
+fit in certain types of spaces.
 
 #### ~ tutorialhint
 ```blocks
@@ -304,9 +304,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 **🕹️ Time to play 🕹️**
 
-Check out the game screen!  
+Check out the game screen!
 
-Click the **Ⓐ** button to clear your splash screen message.  
+Click the **Ⓐ** button to clear your splash screen message.
 Click it again to launch your effects!
 
 
@@ -317,23 +317,23 @@ Click it again to launch your effects!
 
 **🎨 Now get creative 🎨**
 
-Feel free to take a look at the extra blocks we've added into the toolbox. 
+Feel free to take a look at the extra blocks we've added into the toolbox.
 
 It's okay if you don't know what they all do.
 Play around with them and see how they affect your game!
 
 ---
 
-**Tip:** Test your game after every couple of steps to make sure 
+**Tip:** Test your game after every couple of steps to make sure
 it's behaving the way you want it to!
 
 
 
-## Conclusion 
+## Conclusion
 
-**🎈 Congratulations 🎈** 
+**🎈 Congratulations 🎈**
 
 You've learned everything you need to know to graduate to a new tutorial.
 
-Now you can click **Finish** to continue and create some games with MakeCode Arcade!  
+Now you can click **Done** to continue and create some games with MakeCode Arcade!
 

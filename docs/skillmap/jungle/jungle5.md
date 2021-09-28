@@ -3,7 +3,7 @@
 
 ## Welcome @showdialog
 
-**🧨 Explosions are dangerous 🧨**  
+**🧨 Explosions are dangerous 🧨**
 This activity will show you how to register a hit on your player if the monkey is standing too close to the blast. You can remove other game elements, too!
 
 ![Move away from the explosions!](/static/skillmap/jungle/jungle5.gif "Don't live too dangerously!")
@@ -21,12 +21,12 @@ Can you connect each chunk of code to the actions it creates?
 
 ## Step 3 - Fried Monkey
 
-**💥 STAND BACK 💥**  
+**💥 STAND BACK 💥**
 Make sure to get the monkey out of the way before the big bang!
 
 ---
 
-► From ``||sprites:Sprites||``, drag the 
+► From ``||sprites:Sprites||``, drag the
 ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` container into an empty area of the workspace.
 
 ► Click the second kind ``||sprites:Player||`` and change it to ``||sprites:Projectile||``.
@@ -34,7 +34,7 @@ Make sure to get the monkey out of the way before the big bang!
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    
+
 })
 ```
 
@@ -96,7 +96,7 @@ You should be able to jump with the up arrow, place tiles with the A button, and
 
 ## Step 9 - Remove More Tiles
 
-**💥 Kablow 💥**  
+**💥 Kablow 💥**
 This game could have even more options if we remove **bounce** crates and **poison pit** tiles with explosives, too.
 
 ---
@@ -152,7 +152,7 @@ Now that you can add and destroy blocks, is there anywhere you can't reach?!
 
 ## Finished
 
-When you're done playing your game, click **Finish** to return to the main page to learn how to animate your main player!
+When you're done playing your game, click **Done** to return to the main page to learn how to animate your main player!
 
 
 
@@ -175,7 +175,7 @@ mySprite.ay = 500
 scene.cameraFollowSprite(mySprite)
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`orange bauble`, function (sprite, location) {
-    tiles.setTileAt(location, assets.tile`transparency16`)  
+    tiles.setTileAt(location, assets.tile`transparency16`)
     info.changeScoreBy(1)
 })
 

@@ -1,12 +1,12 @@
 # Create the race car sprite
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 Create motion sprite to move a race car along a race track tilemap.
 
 ![Create car](/static/recipes/side-scroller/02-create-car.gif)
 
-## Step 1 - Create a player sprite
+## {Step 1 - Create a player sprite}
 
 From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||variables:set mySprite||`` block into the ``||loops:on start||`` block after the ``||scene:set tilemap||`` block.
 
@@ -14,26 +14,26 @@ From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||variables:set mySpri
 scene.setBackgroundColor(6)
 tiles.setTilemap(tilemap`level`)
 let mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
     `, SpriteKind.Player)
 ```
 
-## Step 2 - Design your car sprite
+## {Step 2 - Design your car sprite}
 
 In the ``||sprites:sprite||`` block, click on the grey image oval and select an image from the Gallery or draw your own **Car** sprite.
 
@@ -41,32 +41,32 @@ In the ``||sprites:sprite||`` block, click on the grey image oval and select an 
 scene.setBackgroundColor(6)
 tiles.setTilemap(tilemap`level`)
 let mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . d 3 3 3 3 3 3 c . . . . 
-    . . . c d 3 3 3 3 3 3 c c . . . 
-    . . c c d d d d d d 3 c c d . . 
-    . . c 3 a a a a a a a b c d 3 3 
-    . 3 3 a b b a b b b a a b d 3 3 
-    . 3 a b b b a b b b b a 3 3 3 3 
-    . a a 3 3 3 a 3 3 3 3 3 a 3 3 3 
-    . a a a a a a f a a a f a 3 d d 
-    . a a a a a a f a a f a a a 3 d 
-    . a a a a a a f f f a a a a a a 
-    . a f f f f a a a a f f f a a a 
-    . . f f f f f a a f f f f f a . 
-    . . . f f f . . . . f f f f . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . d 3 3 3 3 3 3 c . . . .
+    . . . c d 3 3 3 3 3 3 c c . . .
+    . . c c d d d d d d 3 c c d . .
+    . . c 3 a a a a a a a b c d 3 3
+    . 3 3 a b b a b b b a a b d 3 3
+    . 3 a b b b a b b b b a 3 3 3 3
+    . a a 3 3 3 a 3 3 3 3 3 a 3 3 3
+    . a a a a a a f a a a f a 3 d d
+    . a a a a a a f a a f a a a 3 d
+    . a a a a a a f f f a a a a a a
+    . a f f f f a a a a f f f a a a
+    . . f f f f f a a f f f f f a .
+    . . . f f f . . . . f f f f . .
+    . . . . . . . . . . . . . . . .
     `, SpriteKind.Player)
 ```
 
-## Step 3 - Add gravity
+## {Step 3 - Add gravity}
 
 Let’s add code to simulate gravity pulling our car down. We can do this by adding an acceleration force to our car.
 
 From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set mySprite x to 0||`` block and drop after the ``||variables:set mySprite||`` block.
 
-## Step 4 - Set acceleration
+## {Step 4 - Set acceleration}
 
 In the ``||sprites:set mySprite x to 0||`` block, click on the ``||sprites:x||`` property drop-down menu and select ``||sprites:ay (acceleration Y)||`` along the vertical axis. Set the value to be ``400``. This will pull our car down, simulating gravity.
 
@@ -74,27 +74,27 @@ In the ``||sprites:set mySprite x to 0||`` block, click on the ``||sprites:x||``
 scene.setBackgroundColor(6)
 tiles.setTilemap(tilemap`level`)
 let mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . d 3 3 3 3 3 3 c . . . . 
-    . . . c d 3 3 3 3 3 3 c c . . . 
-    . . c c d d d d d d 3 c c d . . 
-    . . c 3 a a a a a a a b c d 3 3 
-    . 3 3 a b b a b b b a a b d 3 3 
-    . 3 a b b b a b b b b a 3 3 3 3 
-    . a a 3 3 3 a 3 3 3 3 3 a 3 3 3 
-    . a a a a a a f a a a f a 3 d d 
-    . a a a a a a f a a f a a a 3 d 
-    . a a a a a a f f f a a a a a a 
-    . a f f f f a a a a f f f a a a 
-    . . f f f f f a a f f f f f a . 
-    . . . f f f . . . . f f f f . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . d 3 3 3 3 3 3 c . . . .
+    . . . c d 3 3 3 3 3 3 c c . . .
+    . . c c d d d d d d 3 c c d . .
+    . . c 3 a a a a a a a b c d 3 3
+    . 3 3 a b b a b b b a a b d 3 3
+    . 3 a b b b a b b b b a 3 3 3 3
+    . a a 3 3 3 a 3 3 3 3 3 a 3 3 3
+    . a a a a a a f a a a f a 3 d d
+    . a a a a a a f a a f a a a 3 d
+    . a a a a a a f f f a a a a a a
+    . a f f f f a a a a f f f a a a
+    . . f f f f f a a f f f f f a .
+    . . . f f f . . . . f f f f . .
+    . . . . . . . . . . . . . . . .
     `, SpriteKind.Player)
 mySprite.ay = 400
 ```
 
-## Step 5 - Make the car move
+## {Step 5 - Make the car move}
 
 Now let’s add code that will make our car drive forward automatically.
 
@@ -104,28 +104,28 @@ From the ``||sprites:Sprites||`` Toolbox drawer, drag another ``||sprites:set my
 scene.setBackgroundColor(6)
 tiles.setTilemap(tilemap`level`)
 let mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . d 3 3 3 3 3 3 c . . . . 
-    . . . c d 3 3 3 3 3 3 c c . . . 
-    . . c c d d d d d d 3 c c d . . 
-    . . c 3 a a a a a a a b c d 3 3 
-    . 3 3 a b b a b b b a a b d 3 3 
-    . 3 a b b b a b b b b a 3 3 3 3 
-    . a a 3 3 3 a 3 3 3 3 3 a 3 3 3 
-    . a a a a a a f a a a f a 3 d d 
-    . a a a a a a f a a f a a a 3 d 
-    . a a a a a a f f f a a a a a a 
-    . a f f f f a a a a f f f a a a 
-    . . f f f f f a a f f f f f a . 
-    . . . f f f . . . . f f f f . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . d 3 3 3 3 3 3 c . . . .
+    . . . c d 3 3 3 3 3 3 c c . . .
+    . . c c d d d d d d 3 c c d . .
+    . . c 3 a a a a a a a b c d 3 3
+    . 3 3 a b b a b b b a a b d 3 3
+    . 3 a b b b a b b b b a 3 3 3 3
+    . a a 3 3 3 a 3 3 3 3 3 a 3 3 3
+    . a a a a a a f a a a f a 3 d d
+    . a a a a a a f a a f a a a 3 d
+    . a a a a a a f f f a a a a a a
+    . a f f f f a a a a f f f a a a
+    . . f f f f f a a f f f f f a .
+    . . . f f f . . . . f f f f . .
+    . . . . . . . . . . . . . . . .
     `, SpriteKind.Player)
 mySprite.ay = 400
 mySprite.vx = 100
 ```
 
-## Step 6 - Follow sprite with camera
+## {Step 6 - Follow sprite with camera}
 
 Notice in the game simulator, that our car jumps off the screen! We need to add some code to follow our car as it moves.
 
@@ -135,29 +135,29 @@ In the ``||scene:Scene||`` Toolbox drawer, drag a ``||scene:camera follow sprite
 scene.setBackgroundColor(6)
 tiles.setTilemap(tilemap`level`)
 let mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . d 3 3 3 3 3 3 c . . . . 
-    . . . c d 3 3 3 3 3 3 c c . . . 
-    . . c c d d d d d d 3 c c d . . 
-    . . c 3 a a a a a a a b c d 3 3 
-    . 3 3 a b b a b b b a a b d 3 3 
-    . 3 a b b b a b b b b a 3 3 3 3 
-    . a a 3 3 3 a 3 3 3 3 3 a 3 3 3 
-    . a a a a a a f a a a f a 3 d d 
-    . a a a a a a f a a f a a a 3 d 
-    . a a a a a a f f f a a a a a a 
-    . a f f f f a a a a f f f a a a 
-    . . f f f f f a a f f f f f a . 
-    . . . f f f . . . . f f f f . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . d 3 3 3 3 3 3 c . . . .
+    . . . c d 3 3 3 3 3 3 c c . . .
+    . . c c d d d d d d 3 c c d . .
+    . . c 3 a a a a a a a b c d 3 3
+    . 3 3 a b b a b b b a a b d 3 3
+    . 3 a b b b a b b b b a 3 3 3 3
+    . a a 3 3 3 a 3 3 3 3 3 a 3 3 3
+    . a a a a a a f a a a f a 3 d d
+    . a a a a a a f a a f a a a 3 d
+    . a a a a a a f f f a a a a a a
+    . a f f f f a a a a f f f a a a
+    . . f f f f f a a f f f f f a .
+    . . . f f f . . . . f f f f . .
+    . . . . . . . . . . . . . . . .
     `, SpriteKind.Player)
 mySprite.ay = 400
 mySprite.vx = 100
 scene.cameraFollowSprite(mySprite)
 ```
 
-## Conclusion @unplugged
+## {Conclusion @unplugged}
 
 Since there are obstacles on the way to the finish line, we need a way to jump over them. Go on and add a jump control to the car.
 

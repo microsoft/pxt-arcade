@@ -3,13 +3,13 @@
 
 ## Welcome @showdialog
 
-Love your game, but wish you could add something more? Wish granted! 
+Love your game, but wish you could add something more? Wish granted!
 
 ![Add animations, music, and more!](/static/skillmap/forest/forest6.gif "Look what we're about to do!")
 
 
 
-## 2. Remember 
+## 2. Remember
 
 **🎮 Try your game**
 
@@ -21,7 +21,7 @@ Can you remember which lines of code create each action?
 
 ## 3. To the Left
 
-Planes don't often fly backwards. Let's animate our plane and make sure 
+Planes don't often fly backwards. Let's animate our plane and make sure
 it flips around as it goes back and forth.
 
 ---
@@ -52,7 +52,7 @@ into the empty
 ``||controller:on [left] button [pressed]||``  
 container.
 
-- :mouse pointer: Set **loop** to **`<ON>`**, then click the grey square 
+- :mouse pointer: Set **loop** to **`<ON>`**, then click the grey square
 and toggle to **My Assets** to choose the left-facing animation that goes with your aircraft.
 
 
@@ -84,7 +84,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## 6. Test 
+## 6. Test
 
 **🎮 Test your game **
 
@@ -156,7 +156,7 @@ sprites.onCreated(SpriteKind.Fire, function (sprite) {
 
 ---
 
-Don't forget to play with the grass, wind, and trees 
+Don't forget to play with the grass, wind, and trees
 variables to see how challenging your game can be.
 
 
@@ -167,7 +167,7 @@ variables to see how challenging your game can be.
 
 ---
 
-Here's your final game!  When you're finished playing, you can click "Done" 
+Here's your final game!  When you're finished playing, you can click "Done"
 and head back out to the skillmap to share with friends and save your game in your gallery.
 
 
@@ -231,22 +231,22 @@ hud.danger_hud(true)
 
 game.onUpdate(function () {
     sprites.random_spread(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . 5 . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . 4 d . . . . . . 
-. . . . . . . . . 4 d . . . . . 
-. . . . . . . . 5 4 4 . . . . . 
-. . . . . . . 5 4 5 4 . . . . . 
-. . . . . 2 5 d 5 5 4 . . . . . 
-. . . . d 2 5 5 5 5 4 . . . . . 
-. . . . 4 5 2 5 5 5 5 4 . . . . 
-. . . . 4 2 5 5 4 2 5 4 . . . . 
-. . . . 4 4 2 2 2 2 4 4 . . . . 
-. . . . . 4 4 2 2 4 4 . . . . . 
-. . . . . . 4 2 4 4 . . . . . . 
-. . . . . . . 4 4 . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . 5 . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . 4 d . . . . . .
+. . . . . . . . . 4 d . . . . .
+. . . . . . . . 5 4 4 . . . . .
+. . . . . . . 5 4 5 4 . . . . .
+. . . . . 2 5 d 5 5 4 . . . . .
+. . . . d 2 5 5 5 5 4 . . . . .
+. . . . 4 5 2 5 5 5 5 4 . . . .
+. . . . 4 2 5 5 4 2 5 4 . . . .
+. . . . 4 4 2 2 2 2 4 4 . . . .
+. . . . . 4 4 2 2 4 4 . . . . .
+. . . . . . 4 2 4 4 . . . . . .
+. . . . . . . 4 4 . . . . . . .
+. . . . . . . . . . . . . . . .
 `)
 })
 
@@ -432,7 +432,7 @@ namespace game {
 
 //% color="#09282d" icon="\uf1e5"
 //% block="HUD"
-namespace hud {    
+namespace hud {
 
     /*
      * Show or hide the current number of burning fires.
@@ -463,7 +463,7 @@ namespace hud {
         if (answer) {
             statusLabel.setFlag(SpriteFlag.Invisible, false)
             statusbar.setFlag(SpriteFlag.Invisible, false)
-        
+
         } else {
             statusLabel.setFlag(SpriteFlag.Invisible, true)
             statusbar.setFlag(SpriteFlag.Invisible, true)
@@ -483,7 +483,7 @@ namespace hud {
         if (answer) {
             hudBG.setFlag(SpriteFlag.Invisible, false)
             statusbar2.setFlag(SpriteFlag.Invisible, false)
-        
+
         } else {
             hudBG.setFlag(SpriteFlag.Invisible, true)
             statusbar2.setFlag(SpriteFlag.Invisible, true)
@@ -544,7 +544,7 @@ namespace hud {
     export function danger_hud_label (name: string) {
         statusbar2.setLabel(name)
     }
-    
+
 
 }
 
@@ -588,13 +588,13 @@ namespace sprites {
             } else if (controller.right.isPressed()) {
                 facing = 315
             } else if (controller.down.isPressed()) {
-                
+
             } else {
                 facing = 270
             }
         } else if (controller.left.isPressed()) {
             if (controller.right.isPressed()) {
-                
+
             } else if (controller.down.isPressed()) {
                 facing = 135
             } else {
@@ -609,7 +609,7 @@ namespace sprites {
         } else if (controller.down.isPressed()) {
             facing = 90
         }
-  
+
         if (Math.abs(facing - hoseDirection) < 180) {
         if (facing < hoseDirection) {
             hoseDirection += 0 - changeRate
@@ -634,7 +634,7 @@ namespace sprites {
   }
 
     /*
-     * Spread current fires according to wind speed, 
+     * Spread current fires according to wind speed,
      * dryness of grass, and health of trees.
      */
     //% block="random spread $myImage=screen_image_picker"

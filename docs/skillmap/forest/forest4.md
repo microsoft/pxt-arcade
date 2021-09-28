@@ -9,7 +9,7 @@ Conditions in the weather and environment such as drought, winds, vegetation den
 
 
 
-## 2. Remember 
+## 2. Remember
 
 **🎮 Try your game**
 
@@ -105,8 +105,8 @@ Now that the environment is set, we can add code to make the fires spread.
 container into an empty area of your workspace to run 
 code each time the game updates its status.
 
-- :mouse pointer:   From the ``||sprites:Sprites||`` category, grab  
-``||sprites: random spread [ ]||``  
+- :mouse pointer:   From the ``||sprites:Sprites||`` category, grab
+``||sprites: random spread [ ]||``
 and add it to the
 ``||game:on game update||`` container.
 
@@ -116,35 +116,35 @@ and add it to the
 ```blocks
 game.onUpdate(function () {
     sprites.random_spread(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . 5 . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . 4 d . . . . . . 
-. . . . . . . . . 4 d . . . . . 
-. . . . . . . . 5 4 4 . . . . . 
-. . . . . . . 5 4 5 4 . . . . . 
-. . . . . 2 5 d 5 5 4 . . . . . 
-. . . . d 2 5 5 5 5 4 . . . . . 
-. . . . 4 5 2 5 5 5 5 4 . . . . 
-. . . . 4 2 5 5 4 2 5 4 . . . . 
-. . . . 4 4 2 2 2 2 4 4 . . . . 
-. . . . . 4 4 2 2 4 4 . . . . . 
-. . . . . . 4 2 4 4 . . . . . . 
-. . . . . . . 4 4 . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . 5 . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . 4 d . . . . . .
+. . . . . . . . . 4 d . . . . .
+. . . . . . . . 5 4 4 . . . . .
+. . . . . . . 5 4 5 4 . . . . .
+. . . . . 2 5 d 5 5 4 . . . . .
+. . . . d 2 5 5 5 5 4 . . . . .
+. . . . 4 5 2 5 5 5 5 4 . . . .
+. . . . 4 2 5 5 4 2 5 4 . . . .
+. . . . 4 4 2 2 2 2 4 4 . . . .
+. . . . . 4 4 2 2 4 4 . . . . .
+. . . . . . 4 2 4 4 . . . . . .
+. . . . . . . 4 4 . . . . . . .
+. . . . . . . . . . . . . . . .
 `)
 })
 
 ```
 
 
-## 6. Test 
+## 6. Test
 
 **🎮 Test your game**
 
 ---
 
-Do you notice that your fire is now spreading to other nearby parts of the forest? 
+Do you notice that your fire is now spreading to other nearby parts of the forest?
 
 Does it get out of control too quickly?
 
@@ -218,7 +218,7 @@ with
 ``||tiles:location of [mySprite]||``.
 
 
-- :mouse pointer:   To get the location for the correct sprite, replace  ``||variables:mySprite||`` with the ``||variables:sprite||`` 
+- :mouse pointer:   To get the location for the correct sprite, replace  ``||variables:mySprite||`` with the ``||variables:sprite||``
 value from the outer ** on destroyed** container.
 
 
@@ -267,8 +267,8 @@ scene.onOverlapTile(SpriteKind.Fire, assets.tile`burnt tree`, function (sprite, 
 ``||sprites:destroy [mySprite]||``  
 block into the empty container. 
 
-- :mouse pointer:   To destroy the correct sprite, replace  
-``||variables:mySprite||`` with the ``||variables:sprite||``  
+- :mouse pointer:   To destroy the correct sprite, replace
+``||variables:mySprite||`` with the ``||variables:sprite||``
 value from the outer container.
 
 ![Grab the sprite value from the title bar of the outer container](/static/skillmap/assets/sprite-from-container.gif "This is how your block knows which sprite to use")
@@ -313,7 +313,7 @@ namespace SpriteKind {
     export const Burnt = SpriteKind.create()
 }
 sprites.onOverlap(SpriteKind.Fire, SpriteKind.Fire, function (sprite, otherSprite) {
-   
+
 })
 ```
 
@@ -349,7 +349,7 @@ sprites.onOverlap(SpriteKind.Fire, SpriteKind.Fire, function (sprite, otherSprit
 
 
 
-## 14. Test Again 
+## 14. Test Again
 
 **🎮 Play Your Game**
 
@@ -366,7 +366,7 @@ they spread too far.
 
 ---
 
-Once you've put out the fires, click **Done** to 
+Once you've put out the fires, click **Done** to
 keep moving through the skillmap to find out how to add a heads-up display to your game.
 
 
@@ -537,7 +537,7 @@ namespace game {
 
 //% color="#09282d" icon="\uf1e5"
 //% block="HUD"
-namespace hud {    
+namespace hud {
 
     /*
      * Show or hide the current number of burning fires.
@@ -568,7 +568,7 @@ namespace hud {
         if (answer) {
             statusLabel.setFlag(SpriteFlag.Invisible, false)
             statusbar.setFlag(SpriteFlag.Invisible, false)
-        
+
         } else {
             statusLabel.setFlag(SpriteFlag.Invisible, true)
             statusbar.setFlag(SpriteFlag.Invisible, true)
@@ -617,7 +617,7 @@ namespace hud {
     export function fire_hud_label (name: string) {
         fireLabel.setText(name)
     }
-    
+
 
 }
 
@@ -661,13 +661,13 @@ namespace sprites {
             } else if (controller.right.isPressed()) {
                 facing = 315
             } else if (controller.down.isPressed()) {
-                
+
             } else {
                 facing = 270
             }
         } else if (controller.left.isPressed()) {
             if (controller.right.isPressed()) {
-                
+
             } else if (controller.down.isPressed()) {
                 facing = 135
             } else {
@@ -682,7 +682,7 @@ namespace sprites {
         } else if (controller.down.isPressed()) {
             facing = 90
         }
-  
+
         if (Math.abs(facing - hoseDirection) < 180) {
         if (facing < hoseDirection) {
             hoseDirection += 0 - changeRate
@@ -707,7 +707,7 @@ namespace sprites {
   }
 
     /*
-     * Spread current fires according to wind speed, 
+     * Spread current fires according to wind speed,
      * dryness of grass, and health of trees.
      */
     //% block="random spread $myImage=screen_image_picker"

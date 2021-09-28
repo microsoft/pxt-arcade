@@ -1,15 +1,15 @@
 # Feed the Panda
 
-## Step 1  
+## Step 1
 
 **🎋 It's feeding time! 🎋**
 
-Everyone's favorite panda is hungry, so let's 
-write some code to feed it some tasty bamboo. 
+Everyone's favorite panda is hungry, so let's
+write some code to feed it some tasty bamboo.
 
 ---
 
-► Take a look at the code in your workspace. 
+► Take a look at the code in your workspace.
 It should look familiar. Can you remember what it does?
 
 
@@ -21,30 +21,30 @@ It should look familiar. Can you remember what it does?
 
 ► From ``||controller:Controller||``, drag an ``||controller:on [A] button pressed ||`` container into the workspace.
 
-► Snap a new ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block inside it. 
+► Snap a new ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block inside it.
 
-► Make sure to change the kind to ``||sprites:Food||``, then click on 
+► Make sure to change the kind to ``||sprites:Food||``, then click on
 the grey square and draw a delicious piece of bamboo in the **image editor**.
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     let mySprite = sprites.create(img`
-        . . . . . . . . . 6 7 . . . . . 
-        . . 7 . . . . . . 6 7 . . . . . 
-        . . 7 7 . . . . . 6 6 . . . . . 
-        . . 7 7 . . 6 . . 8 8 . . . . . 
-        . . 7 7 . . 6 . . 6 7 7 . . . . 
-        . . 6 7 6 . 6 . . 6 7 7 . . . . 
-        . . 6 6 7 . 6 . . 6 7 7 6 7 7 . 
-        7 7 8 8 7 6 6 . . 6 7 7 7 7 . . 
-        . . 7 7 7 6 . 6 . 6 6 7 6 . . . 
-        . . . 8 6 6 . 6 . 8 7 8 8 . . . 
-        . . . 6 6 6 . 6 . 6 7 7 6 . . . 
-        . . . 6 6 7 . . 6 . 7 7 . 7 . . 
-        . . . 6 6 6 6 6 6 . 7 6 7 . . . 
-        . . . . 8 8 8 . . . 6 6 . . . . 
-        . . . . 6 7 6 . 7 7 6 6 . . . . 
-        . . . . 6 6 6 . . 7 6 . . . . . 
+        . . . . . . . . . 6 7 . . . . .
+        . . 7 . . . . . . 6 7 . . . . .
+        . . 7 7 . . . . . 6 6 . . . . .
+        . . 7 7 . . 6 . . 8 8 . . . . .
+        . . 7 7 . . 6 . . 6 7 7 . . . .
+        . . 6 7 6 . 6 . . 6 7 7 . . . .
+        . . 6 6 7 . 6 . . 6 7 7 6 7 7 .
+        7 7 8 8 7 6 6 . . 6 7 7 7 7 . .
+        . . 7 7 7 6 . 6 . 6 6 7 6 . . .
+        . . . 8 6 6 . 6 . 8 7 8 8 . . .
+        . . . 6 6 6 . 6 . 6 7 7 6 . . .
+        . . . 6 6 7 . . 6 . 7 7 . 7 . .
+        . . . 6 6 6 6 6 6 . 7 6 7 . . .
+        . . . . 8 8 8 . . . 6 6 . . . .
+        . . . . 6 7 6 . 7 7 6 6 . . . .
+        . . . . 6 6 6 . . 7 6 . . . . .
         `, SpriteKind.Food)
 })
 ```
@@ -68,8 +68,8 @@ Look at your game screen to see what happens.
 ► From ``||sprites:Sprites||``, get a ``||sprites:set [mySprite] position to x [0] y [0]||``
 block and place it at the **end** of the ``||controller:on [A] button pressed ||`` container.
 
-► From ``||math:Math||``, grab two ``||math:pick random [0] to [10]||`` value blocks and 
-use them to replace the **x** and **y** values in the new **set position** block. 
+► From ``||math:Math||``, grab two ``||math:pick random [0] to [10]||`` value blocks and
+use them to replace the **x** and **y** values in the new **set position** block.
 
 ► Try some different numbers to see how they affect the way the bamboo is **randomly** placed on the screen.
 
@@ -77,22 +77,22 @@ use them to replace the **x** and **y** values in the new **set position** block
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     let mySprite = sprites.create(img`
-        . . . . . . . . . 6 7 . . . . . 
-        . . 7 . . . . . . 6 7 . . . . . 
-        . . 7 7 . . . . . 6 6 . . . . . 
-        . . 7 7 . . 6 . . 8 8 . . . . . 
-        . . 7 7 . . 6 . . 6 7 7 . . . . 
-        . . 6 7 6 . 6 . . 6 7 7 . . . . 
-        . . 6 6 7 . 6 . . 6 7 7 6 7 7 . 
-        7 7 8 8 7 6 6 . . 6 7 7 7 7 . . 
-        . . 7 7 7 6 . 6 . 6 6 7 6 . . . 
-        . . . 8 6 6 . 6 . 8 7 8 8 . . . 
-        . . . 6 6 6 . 6 . 6 7 7 6 . . . 
-        . . . 6 6 7 . . 6 . 7 7 . 7 . . 
-        . . . 6 6 6 6 6 6 . 7 6 7 . . . 
-        . . . . 8 8 8 . . . 6 6 . . . . 
-        . . . . 6 7 6 . 7 7 6 6 . . . . 
-        . . . . 6 6 6 . . 7 6 . . . . . 
+        . . . . . . . . . 6 7 . . . . .
+        . . 7 . . . . . . 6 7 . . . . .
+        . . 7 7 . . . . . 6 6 . . . . .
+        . . 7 7 . . 6 . . 8 8 . . . . .
+        . . 7 7 . . 6 . . 6 7 7 . . . .
+        . . 6 7 6 . 6 . . 6 7 7 . . . .
+        . . 6 6 7 . 6 . . 6 7 7 6 7 7 .
+        7 7 8 8 7 6 6 . . 6 7 7 7 7 . .
+        . . 7 7 7 6 . 6 . 6 6 7 6 . . .
+        . . . 8 6 6 . 6 . 8 7 8 8 . . .
+        . . . 6 6 6 . 6 . 6 7 7 6 . . .
+        . . . 6 6 7 . . 6 . 7 7 . 7 . .
+        . . . 6 6 6 6 6 6 . 7 6 7 . . .
+        . . . . 8 8 8 . . . 6 6 . . . .
+        . . . . 6 7 6 . 7 7 6 6 . . . .
+        . . . . 6 6 6 . . 7 6 . . . . .
         `, SpriteKind.Food)
         //@highlight
     mySprite.setPosition(randint(10, 150), randint(10, 110))
@@ -100,44 +100,44 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 5 
+## Step 5
 
 **Press the Ⓐ button (or click the space bar)** to place food for the panda.
 
 
 ## Step 6
 
-**Aw, the panda isn't very good at finding the food...let's help it out!** 
+**Aw, the panda isn't very good at finding the food...let's help it out!**
 
 ---
 
 ► Open ``||sprites:Sprites||`` and drag a
 ``||sprites:set [myEnemy] follow [mySprite]||`` block out into the **end**
-of the ``||controller:on A button pressed||`` container. 
+of the ``||controller:on A button pressed||`` container.
 
-► Change the first variable value to ``||variables:panda||``, then try your code 
+► Change the first variable value to ``||variables:panda||``, then try your code
 on the game screen.
 
 ```blocks
 let panda:Sprite = null;
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     let mySprite = sprites.create(img`
-        . . . . . . . . . 6 7 . . . . . 
-        . . 7 . . . . . . 6 7 . . . . . 
-        . . 7 7 . . . . . 6 6 . . . . . 
-        . . 7 7 . . 6 . . 8 8 . . . . . 
-        . . 7 7 . . 6 . . 6 7 7 . . . . 
-        . . 6 7 6 . 6 . . 6 7 7 . . . . 
-        . . 6 6 7 . 6 . . 6 7 7 6 7 7 . 
-        7 7 8 8 7 6 6 . . 6 7 7 7 7 . . 
-        . . 7 7 7 6 . 6 . 6 6 7 6 . . . 
-        . . . 8 6 6 . 6 . 8 7 8 8 . . . 
-        . . . 6 6 6 . 6 . 6 7 7 6 . . . 
-        . . . 6 6 7 . . 6 . 7 7 . 7 . . 
-        . . . 6 6 6 6 6 6 . 7 6 7 . . . 
-        . . . . 8 8 8 . . . 6 6 . . . . 
-        . . . . 6 7 6 . 7 7 6 6 . . . . 
-        . . . . 6 6 6 . . 7 6 . . . . . 
+        . . . . . . . . . 6 7 . . . . .
+        . . 7 . . . . . . 6 7 . . . . .
+        . . 7 7 . . . . . 6 6 . . . . .
+        . . 7 7 . . 6 . . 8 8 . . . . .
+        . . 7 7 . . 6 . . 6 7 7 . . . .
+        . . 6 7 6 . 6 . . 6 7 7 . . . .
+        . . 6 6 7 . 6 . . 6 7 7 6 7 7 .
+        7 7 8 8 7 6 6 . . 6 7 7 7 7 . .
+        . . 7 7 7 6 . 6 . 6 6 7 6 . . .
+        . . . 8 6 6 . 6 . 8 7 8 8 . . .
+        . . . 6 6 6 . 6 . 6 7 7 6 . . .
+        . . . 6 6 7 . . 6 . 7 7 . 7 . .
+        . . . 6 6 6 6 6 6 . 7 6 7 . . .
+        . . . . 8 8 8 . . . 6 6 . . . .
+        . . . . 6 7 6 . 7 7 6 6 . . . .
+        . . . . 6 6 6 . . 7 6 . . . . .
         `, SpriteKind.Food)
     mySprite.setPosition(randint(10, 150), randint(10, 110))
     //@highlight
@@ -149,16 +149,16 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 **😋 Munch time 😋**
 
-We can help the panda find snacks by running code when the 
-panda **overlaps** the bamboo. 
+We can help the panda find snacks by running code when the
+panda **overlaps** the bamboo.
 
 ---
 
-► From ``||sprites:Sprites||``, pull out an ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
-container and drop it in the workspace. 
+► From ``||sprites:Sprites||``, pull out an ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||``
+container and drop it in the workspace.
 
-► Click on the second ``||sprites:Player||`` dropdown menu 
-and select **Food**. 
+► Click on the second ``||sprites:Player||`` dropdown menu
+and select **Food**.
 
 ```blocks
 
@@ -169,14 +169,14 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 ## Step 8
 
 ► Next, grab a ``||sprites:destroy [mySprite] ⊕||`` block from ``||sprites:Sprites||``
-and put it in the **on overlaps** container. 
+and put it in the **on overlaps** container.
 
-► See the oblong value block in the header of the **on overlaps** container called 
-``||variables:otherSprite||``? 
+► See the oblong value block in the header of the **on overlaps** container called
+``||variables:otherSprite||``?
 Grab it and drag it down to replace **mySprite** in the **destroy** block.
 
-► Press the plus icon on the block to add an effect that will play when the 
-panda starts munching. Both **spray** and **disintegrate** work well here!  
+► Press the plus icon on the block to add an effect that will play when the
+panda starts munching. Both **spray** and **disintegrate** work well here!
 
 
 
@@ -195,8 +195,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 That panda's getting a full meal!
 
-Give your game a try using the game screen, and when you're done, 
-click **Finish** to continue your zoo journey.  
+Give your game a try using the game screen, and when you're done,
+click **Done** to continue your zoo journey.
 
 
 
@@ -207,20 +207,20 @@ tiles.setTilemap(tilemap`level1`)
 
 ```template
 let panda = sprites.create(img`
-    . f f f . . . . f f f . . . . . 
-    f c c c f f f f c c c f . . . . 
-    f c a d 1 1 1 1 d a c f . . . . 
-    f a d 1 1 1 1 1 1 d f . . . . . 
-    . f c c c 1 1 c c c d f . . . . 
-    . f c f c 1 1 c f c d f f f . . 
-    . f c c 1 c c 1 c c f d c c f . 
-    . f d 1 1 f f 1 1 d f 1 1 c c f 
-    . . f d d d d d d a c 1 1 1 c f 
-    . . f c 1 1 1 1 1 c c 1 1 1 c f 
-    . . f c 1 1 1 1 1 c c 1 1 1 c f 
-    . . f c f f f f f c c 1 1 c c f 
-    . . f c f . . . f c f f f f c f 
-    . . f f . . . . f f . . . . f f 
+    . f f f . . . . f f f . . . . .
+    f c c c f f f f c c c f . . . .
+    f c a d 1 1 1 1 d a c f . . . .
+    f a d 1 1 1 1 1 1 d f . . . . .
+    . f c c c 1 1 c c c d f . . . .
+    . f c f c 1 1 c f c d f f f . .
+    . f c c 1 c c 1 c c f d c c f .
+    . f d 1 1 f f 1 1 d f 1 1 c c f
+    . . f d d d d d d a c 1 1 1 c f
+    . . f c 1 1 1 1 1 c c 1 1 1 c f
+    . . f c 1 1 1 1 1 c c 1 1 1 c f
+    . . f c f f f f f c c 1 1 c c f
+    . . f c f . . . f c f f f f c f
+    . . f f . . . . f f . . . . f f
     `, SpriteKind.Player)
 panda.setVelocity(randint(20, 50), randint(40, 60))
 panda.setBounceOnWall(true)

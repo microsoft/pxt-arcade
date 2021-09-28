@@ -3,7 +3,7 @@
 
 ## Welcome @showdialog
 
-**One of our baubles is locked away!**  
+**One of our baubles is locked away!**
 This activity will show you how to explode tiles so you can get every point.
 
 ![Using explosives to clear the way](/static/skillmap/jungle/jungle4.gif "Time to live dangerously!")
@@ -21,7 +21,7 @@ Can you find the bauble that's blocked-in?
 
 ## Step 3 - When B Pressed
 
-**💥 Nothing a little dynamite can't fix 💥**  
+**💥 Nothing a little dynamite can't fix 💥**
 We need to remove some walls and tiles! Let's clear the way when the B button is pressed.
 
 ---
@@ -30,12 +30,12 @@ We need to remove some walls and tiles! Let's clear the way when the B button is
 
 ► Click the letter A and change it to B.
 
-► Move to the next step to learn how to spawn your explosive.  
+► Move to the next step to learn how to spawn your explosive.
 
 
 ```blocks
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    
+
 })
 ```
 
@@ -57,7 +57,7 @@ We're going to use a **Projectile** block here, even though our dynamite stays i
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     //@highlight
     projectile = sprites.createProjectileFromSprite(assets.image`blank`, mySprite, 0, 0)
-    
+
 })
 ```
 
@@ -79,7 +79,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 let projectile = sprites.createProjectileFromSprite(assets.image`blank`, mySprite, 0, 0)
     //@highlight
     projectile.setFlag(SpriteFlag.GhostThroughWalls, true)
-    
+
 })
 ```
 
@@ -91,7 +91,7 @@ In this step, we'll choose **an animation** for our projectile to make it look l
 
 ► Click the **Advanced** category in the toolbar to reveal the ``||animation:Animation||`` category.
 
-► Drag the large ``||animation:animate [mySprite]||`` block to **the end** of ``||controller:on [B] button [pressed]||``. 
+► Drag the large ``||animation:animate [mySprite]||`` block to **the end** of ``||controller:on [B] button [pressed]||``.
 
 ► Click ``||variables:mySprite||`` and change it to ``||variables:projectile||``.
 
@@ -104,22 +104,22 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     projectile,
     [img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
         `],
     500,
     false
@@ -130,11 +130,11 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 ## Step 7 - Choose the Boom!
 
 
-► Inside the large ``||animation:animate [mySprite]||`` block, click the empty grey square and toggle to **My Assets** to choose the **splode** animation, then click **Done**.  
+► Inside the large ``||animation:animate [mySprite]||`` block, click the empty grey square and toggle to **My Assets** to choose the **splode** animation, then click **Done**.
 
 ► The **interval** should automatically change to **100** ms, but if it doesn't, you can change it yourself.
 
-💡 Don't worry if the animation looks empty in your code. The beginning frames are blank to give your character time to get out of the way! 
+💡 Don't worry if the animation looks empty in your code. The beginning frames are blank to give your character time to get out of the way!
 
 
 ```blocks
@@ -165,7 +165,7 @@ You should be able to jump with the up arrow, place tiles with the A button, and
 
 ## Step 9 - Removing Block Tiles
 
-**💥 Kaboom 💥**  
+**💥 Kaboom 💥**
 When your **splode** animation overlaps a platform tile, we need to remove both the wall and the tile.
 
 ---
@@ -179,7 +179,7 @@ When your **splode** animation overlaps a platform tile, we need to remove both 
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Projectile, assets.tile`skyblock`, function (sprite, location) {
-    
+
 })
 ```
 
@@ -239,7 +239,7 @@ You should have everything you need to collect all five baubles and get to the e
 
 ---
 
-When you're done playing, click **Finish** to return to the main page to learn how to add additional consequences for your explosives.
+When you're done playing, click **Done** to return to the main page to learn how to add additional consequences for your explosives.
 
 
 
@@ -262,7 +262,7 @@ mySprite.ay = 500
 scene.cameraFollowSprite(mySprite)
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`orange bauble`, function (sprite, location) {
-    tiles.setTileAt(location, assets.tile`transparency16`)  
+    tiles.setTileAt(location, assets.tile`transparency16`)
     info.changeScoreBy(1)
 })
 

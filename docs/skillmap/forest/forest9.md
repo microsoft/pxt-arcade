@@ -3,14 +3,14 @@
 
 ## Welcome @showdialog
 
-Computer science is more important to firefighting than ever before. 
-Let's add a heads-up-display (HUD) to help the pilot get information from their fire database in real-time. 
+Computer science is more important to firefighting than ever before.
+Let's add a heads-up-display (HUD) to help the pilot get information from their fire database in real-time.
 
 ![A HUD can help keep you informed](/static/skillmap/forest/forest5.gif "Look what we're about to do!")
 
 
 
-## 2. Remember 
+## 2. Remember
 
 **🎮 Try your game 🎮**
 
@@ -26,10 +26,10 @@ A HUD will help the pilot see how many fires are burning at any moment.
 
 ---
 
-- :puzzle:  From the ``||hud:HUD||`` category, grab the  
-``||hud: show fire HUD <Yes>||``  
-block and add it to **the end** of the  
-``||loops: on start||``  
+- :puzzle:  From the ``||hud:HUD||`` category, grab the
+``||hud: show fire HUD <Yes>||``
+block and add it to **the end** of the
+``||loops: on start||``
 container.
 
 
@@ -59,7 +59,7 @@ hud.fire_hud(true)
 ```
 
 
-## 4. Test 
+## 4. Test
 
 **🎮 Test your game 🎮**
 
@@ -75,10 +75,10 @@ Anticipate how quickly fires will spread with the Fire Danger HUD.
 
 ---
 
-- :puzzle:  Find the   
-``||hud: show danger level HUD <Yes>||``  
-HUD and add it to **the end** of the  
-``||loops: on start||``  
+- :puzzle:  Find the
+``||hud: show danger level HUD <Yes>||``
+HUD and add it to **the end** of the
+``||loops: on start||``
 container so you know how quickly your fires are likely to spread.
 
 
@@ -114,10 +114,10 @@ to share information on how much of the forest is still healthy.
 
 ---
 
-- :puzzle:  Find the the  
-``||hud: show forest HUD <Yes>||``  
-block and add it to **the end** of the  
-``||loops: on start||``  
+- :puzzle:  Find the the
+``||hud: show forest HUD <Yes>||``
+block and add it to **the end** of the
+``||loops: on start||``
 container to show how much of the forest remains.
 
 
@@ -146,14 +146,14 @@ hud.danger_hud(true)
 hud.forest_hud(true)
 ```
 
-## 7. Test Again 
+## 7. Test Again
 
 **🎮 Test your game again 🎮**
 
 ---
 
-Now you can see how quickly you're making progress. 
-But the colors of the forest meter feel a little off. 
+Now you can see how quickly you're making progress.
+But the colors of the forest meter feel a little off.
 You can fix those in the next step.
 
 
@@ -196,27 +196,27 @@ hud.fire_hud_label ("Hot:")
 ```
 
 
-## 9. Play 
+## 9. Play
 
 **🎮 Time to play your game! 🎮**
 
 ---
 
-Is the fire spreading too quickly?  
-Try reducing the wind or the dryness of the grass.  
+Is the fire spreading too quickly?
+Try reducing the wind or the dryness of the grass.
 
-What happens when you bump the numbers all the way up to 10 or all the way down to 0? 
+What happens when you bump the numbers all the way up to 10 or all the way down to 0?
 
 
 
 
 ## Finale
 
-👏 **You've done it!** 👏   
+👏 **You've done it!** 👏
 
 ---
 
-Congratulations on your game!  When you're done playing, you can click "Done" 
+Congratulations on your game!  When you're done playing, you can click "Done"
 and head back out to the skillmap to share it with friends or save it in your gallery.
 
 
@@ -282,22 +282,22 @@ sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
 
 game.onUpdate(function () {
     sprites.random_spread(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . 5 . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . 4 d . . . . . . 
-. . . . . . . . . 4 d . . . . . 
-. . . . . . . . 5 4 4 . . . . . 
-. . . . . . . 5 4 5 4 . . . . . 
-. . . . . 2 5 d 5 5 4 . . . . . 
-. . . . d 2 5 5 5 5 4 . . . . . 
-. . . . 4 5 2 5 5 5 5 4 . . . . 
-. . . . 4 2 5 5 4 2 5 4 . . . . 
-. . . . 4 4 2 2 2 2 4 4 . . . . 
-. . . . . 4 4 2 2 4 4 . . . . . 
-. . . . . . 4 2 4 4 . . . . . . 
-. . . . . . . 4 4 . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . 5 . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . 4 d . . . . . .
+. . . . . . . . . 4 d . . . . .
+. . . . . . . . 5 4 4 . . . . .
+. . . . . . . 5 4 5 4 . . . . .
+. . . . . 2 5 d 5 5 4 . . . . .
+. . . . d 2 5 5 5 5 4 . . . . .
+. . . . 4 5 2 5 5 5 5 4 . . . .
+. . . . 4 2 5 5 4 2 5 4 . . . .
+. . . . 4 4 2 2 2 2 4 4 . . . .
+. . . . . 4 4 2 2 4 4 . . . . .
+. . . . . . 4 2 4 4 . . . . . .
+. . . . . . . 4 4 . . . . . . .
+. . . . . . . . . . . . . . . .
 `)
 })
 
@@ -464,7 +464,7 @@ namespace game {
 
 //% color="#09282d" icon="\uf1e5"
 //% block="HUD"
-namespace hud {    
+namespace hud {
 
     /*
      * Show or hide the current number of burning fires.
@@ -495,7 +495,7 @@ namespace hud {
         if (answer) {
             statusLabel.setFlag(SpriteFlag.Invisible, false)
             statusbar.setFlag(SpriteFlag.Invisible, false)
-        
+
         } else {
             statusLabel.setFlag(SpriteFlag.Invisible, true)
             statusbar.setFlag(SpriteFlag.Invisible, true)
@@ -515,7 +515,7 @@ namespace hud {
         if (answer) {
             hudBG.setFlag(SpriteFlag.Invisible, false)
             statusbar2.setFlag(SpriteFlag.Invisible, false)
-        
+
         } else {
             hudBG.setFlag(SpriteFlag.Invisible, true)
             statusbar2.setFlag(SpriteFlag.Invisible, true)
@@ -576,7 +576,7 @@ namespace hud {
     export function danger_hud_label (name: string) {
         statusbar2.setLabel(name)
     }
-    
+
 
 }
 
@@ -620,13 +620,13 @@ namespace sprites {
             } else if (controller.right.isPressed()) {
                 facing = 315
             } else if (controller.down.isPressed()) {
-                
+
             } else {
                 facing = 270
             }
         } else if (controller.left.isPressed()) {
             if (controller.right.isPressed()) {
-                
+
             } else if (controller.down.isPressed()) {
                 facing = 135
             } else {
@@ -641,7 +641,7 @@ namespace sprites {
         } else if (controller.down.isPressed()) {
             facing = 90
         }
-  
+
         if (Math.abs(facing - hoseDirection) < 180) {
         if (facing < hoseDirection) {
             hoseDirection += 0 - changeRate
@@ -666,7 +666,7 @@ namespace sprites {
   }
 
     /*
-     * Spread current fires according to wind speed, 
+     * Spread current fires according to wind speed,
      * dryness of grass, and health of trees.
      */
     //% block="random spread $myImage=screen_image_picker"
