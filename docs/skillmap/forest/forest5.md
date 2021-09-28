@@ -4,6 +4,7 @@
 ## Welcome @showdialog
 
 Computer science is more important to firefighting than ever before.
+
 Let's add a heads-up-display (HUD) to help the pilot get information from their fire database in real-time.
 
 ![A HUD can help keep you informed](/static/skillmap/forest/forest5.gif "Look what we're about to do!")
@@ -109,7 +110,7 @@ hud.danger_hud(true)
 
 ## 6. Healthy Forests
 
-The crew needs to know how engulfed the forest is. Add another hud
+The crew needs to know the progress of the fire. Add another hud
 to share information on how much of the forest is still healthy.
 
 ---
@@ -271,12 +272,12 @@ sprites.onOverlap(SpriteKind.Fire, SpriteKind.Fire, function (sprite, otherSprit
     sprite.destroy()
 })
 
-scene.onOverlapTile(SpriteKind.Fire, assets.tile`smoulder`, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Fire, assets.tile`burnt tree`, function (sprite, location) {
     sprite.destroy()
 })
 
 sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
-    tiles.setTileAt(tiles.locationOfSprite(sprite), assets.tile`smoulder`)
+    tiles.setTileAt(tiles.locationOfSprite(sprite), assets.tile`burnt tree`)
 })
 
 game.onUpdate(function () {
@@ -358,6 +359,7 @@ let hudBG = sprites.create(img`
 hudBG.bottom = 120
 hudBG.z = 2000
 hudBG.setFlag(SpriteFlag.Invisible, true)
+hudBG.setFlag(SpriteFlag.RelativeToCamera, true)
 let statusbar2 = statusbars.create(8, 8, StatusBarKind.Magic)
 statusbar2.setLabel("Fire Danger:")
 statusbar2.setColor(7, 2)
@@ -373,7 +375,7 @@ statusbar2.setFlag(SpriteFlag.Invisible, true)
 
 game.onUpdate(function () {
     statusbar.max = tiles.tilemapRows() * tiles.tilemapColumns()
-    statusbar.value = tiles.tilemapRows() * tiles.tilemapColumns() - tiles.getTilesByType(assets.tile`smoulder`).length
+    statusbar.value = tiles.tilemapRows() * tiles.tilemapColumns() - tiles.getTilesByType(assets.tile`burnt tree`).length
     spreadTimeBase = 4500 - (250 * windSpeed + 250 * dryGrass - 100 * tinder)
         if (spreadTimeBase >= 4000) {
         statusbar2.setColor(7, 2)
