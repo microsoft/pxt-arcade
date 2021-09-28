@@ -32,10 +32,10 @@ Let's add code that sprays water when you press the (A) button.
 
 - :game: Drag the  
 ``||controller:on [A] button [pressed]||``  
-
 container into an empty area in your workspace.
 
-- :mouse pointer: Change ``||controller:pressed||`` to ``||controller:repeat||`` to keep the water spraying as you hold the (A) button.
+- :mouse pointer: Change ``||controller:pressed||`` to ``||controller:repeat||`` to keep the water spraying as you hold the (A) button.  
+
 _💡 Find it too hard to keep (A) pressed?  Try using the spacebar on your keyboard!_
 
 

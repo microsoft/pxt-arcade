@@ -38,7 +38,7 @@ container.
 
 - :paper plane:  Add
 ``||variables:set [mySprite2] to sprite [ ] of kind [Player]||``
-to the end of the
+to the empty
 ``||loops:repeat [4] times||``
 container.
 
@@ -133,7 +133,7 @@ for (let index = 0; index < 4; index++) {
 
 
 
-##  Try It
+##  6. Try It
 
 **🕹️ Test it out in the Game Window **
 

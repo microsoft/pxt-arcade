@@ -102,7 +102,7 @@ Your plane should face left when you fly left and right when you fly right!
 
 ---
 
-- :headphones: Find a block to add sound when a sprite of kind ``||sprites:Fire||`` is **destroyed**.  
+- :headphones: Find the block that will let you add sound when a sprite of kind ``||sprites:Fire||`` is **destroyed**.  
 💡 We like the **thump** sound for this.
 
 - :question: Can you figure out where to add this block if you want it to play each time a sprite of kind **Fire** is **destroyed**?
@@ -115,7 +115,7 @@ namespace SpriteKind {
     export const Burnt = SpriteKind.create()
 }
 sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
-    tiles.setTileAt(tiles.locationOfSprite(sprite), assets.tile`smoulder`)
+    tiles.setTileAt(tiles.locationOfSprite(sprite), assets.tile`burnt tree`)
     //@highlight
     music.thump.play()
 })
@@ -156,7 +156,7 @@ sprites.onCreated(SpriteKind.Fire, function (sprite) {
 
 ---
 
-Don't forget to play with the grass, wind, and trees
+Don't forget to play with the grass, wind, and tree
 variables to see how challenging your game can be.
 
 
@@ -192,7 +192,7 @@ namespace SpriteKind {
     export const Burnt = SpriteKind.create()
 }
 sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
-    tiles.setTileAt(tiles.locationOfSprite(sprite), assets.tile`smoulder`)
+    tiles.setTileAt(tiles.locationOfSprite(sprite), assets.tile`burnt tree`)
 })
 sprites.onCreated(SpriteKind.Fire, function (sprite) {
     sprite.startEffect(effects.fire)
@@ -209,7 +209,7 @@ sprites.onOverlap(SpriteKind.Water, SpriteKind.Fire, function (sprite, otherSpri
     sprite.destroy()
     sprites.change_flame_strength_by(otherSprite, -1)
 })
-scene.onOverlapTile(SpriteKind.Fire, assets.tile`smoulder`, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Fire, assets.tile`burnt tree`, function (sprite, location) {
     sprite.destroy()
 })
 let newFire: Sprite = null
@@ -328,6 +328,7 @@ let hudBG = sprites.create(img`
 hudBG.bottom = 120
 hudBG.z = 2000
 hudBG.setFlag(SpriteFlag.Invisible, true)
+hudBG.setFlag(SpriteFlag.RelativeToCamera, true)
 let statusbar2 = statusbars.create(8, 8, StatusBarKind.Magic)
 statusbar2.setLabel("Fire Danger:")
 statusbar2.setColor(7, 2)
@@ -343,7 +344,7 @@ statusbar2.setFlag(SpriteFlag.Invisible, true)
 
 game.onUpdate(function () {
     statusbar.max = tiles.tilemapRows() * tiles.tilemapColumns()
-    statusbar.value = tiles.tilemapRows() * tiles.tilemapColumns() - tiles.getTilesByType(assets.tile`smoulder`).length
+    statusbar.value = tiles.tilemapRows() * tiles.tilemapColumns() - tiles.getTilesByType(assets.tile`burnt tree`).length
     spreadTimeBase = 4500 - (250 * windSpeed + 250 * dryGrass - 100 * tinder)
         if (spreadTimeBase >= 4000) {
         statusbar2.setColor(7, 2)
@@ -364,37 +365,6 @@ game.onUpdate(function () {
     }
 })
 
-
-
-namespace animation {
-    /*
-     * Loops the passed frames on the sprite at the given interval whenever
-     * the specified rule is true for that sprite.
-     *
-     * If more than one rule applies, the most specific rule will be used.
-     * If multiple rules are equally specific, the currently executing rule
-     * is favored (or one is chosen at random).
-     *
-     * @param sprite    the sprite to animate
-     * @param frames    the images that make up that animation
-     * @param frame     Interval the amount of time to spend on each frame in milliseconds
-     * @param rule      the rule that decides when this animation will play
-     */
-    //% blockId=arcade_character_loop_frames2
-    //% block="animate $sprite loop frames $frames interval (ms) $frameInterval when $rule"
-    //% sprite.defl=mySprite
-    //% frames.defl=Fire Plane Right
-    //% sprite.shadow=variables_get
-    //% frames.shadow=animation_editor
-    //% frameInterval.shadow=timePicker
-    //% rule.shadow=arcade_character_make_rule
-    //% weight=100
-    //% blockGap=8
-    //% help=github:arcade-character-animations/docs/loop-character-animation
-    export function loopFrames2(sprite: Sprite, frames: Image[], frameInterval: number, rule: number) {
-        characterAnimations.loopFrames(sprite, frames, frameInterval, rule);
-    }
-}
 
 
 namespace game {

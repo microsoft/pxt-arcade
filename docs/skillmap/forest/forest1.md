@@ -42,10 +42,11 @@ tiles.setTilemap(tilemap`level2`)
 
 ## 3. Set Your Map
 
-- :paint brush: Click the empty grey square in
-the
-``||scene:set tilemap to []||``
+- :paint brush: Click the empty grey square in  
+``||scene:set tilemap to []||``  
 and toggle to **My Assets** to select the tilemap called **level1**.
+
+![Toggle to My Assets](/static/skillmap/assets/my-assets.png "Resources have been provided for you!")
 
 
 ```blocks
@@ -56,13 +57,13 @@ tiles.setTilemap(tilemap`level1`)
 ## 4. Take a Look!
 
 **Click the Game Window Tab (Above)**
-![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Look what we're about to do today!")
+![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
 
 Open the game window to take a look at the scene you've just set up.
 
-When you're ready to continue, click back to the instructions tab for more!
+When you're ready to continue, click into the instructions tab again!
 
 
 
@@ -73,7 +74,7 @@ When you're ready to continue, click back to the instructions tab for more!
 **We need a hero**
 
 Choose a [__*sprite*__](#sprote "a 2-D image that moves on the screen")
-for your aircraft that you will fly around the screen.
+for your aircraft that will fly around the screen.
 
 ---
 
