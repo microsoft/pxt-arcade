@@ -42,22 +42,22 @@ let yourGuess = 0
 let myNumber = 0
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
-    . . . . . f f 4 4 f f . . . . . 
-    . . . . f 5 4 5 5 4 5 f . . . . 
-    . . . f e 4 5 5 5 5 4 e f . . . 
-    . . f b 3 e 4 4 4 4 e 3 b f . . 
-    . . f 3 3 3 3 3 3 3 3 3 3 f . . 
-    . f 3 3 e b 3 e e 3 b e 3 3 f . 
-    . f 3 3 f f e e e e f f 3 3 f . 
-    . f b b f b f e e f b f b b f . 
-    . f b b e 1 f 4 4 f 1 e b b f . 
-    f f b b f 4 4 4 4 4 4 f b b f f 
-    f b b f f f e e e e f f f b b f 
-    . f e e f b d d d d b f e e f . 
-    . . e 4 c d d d d d d c 4 e . . 
-    . . e f b d b d b d b b f e . . 
-    . . . f f 1 d 1 d 1 d f f . . . 
-    . . . . . f f b b f f . . . . . 
+    . . . . . f f 4 4 f f . . . . .
+    . . . . f 5 4 5 5 4 5 f . . . .
+    . . . f e 4 5 5 5 5 4 e f . . .
+    . . f b 3 e 4 4 4 4 e 3 b f . .
+    . . f 3 3 3 3 3 3 3 3 3 3 f . .
+    . f 3 3 e b 3 e e 3 b e 3 3 f .
+    . f 3 3 f f e e e e f f 3 3 f .
+    . f b b f b f e e f b f b b f .
+    . f b b e 1 f 4 4 f 1 e b b f .
+    f f b b f 4 4 4 4 4 4 f b b f f
+    f b b f f f e e e e f f f b b f
+    . f e e f b d d d d b f e e f .
+    . . e 4 c d d d d d d c 4 e . .
+    . . e f b d b d b d b b f e . .
+    . . . f f 1 d 1 d 1 d f f . . .
+    . . . . . f f b b f f . . . . .
     `, SpriteKind.Player)
     for (let index = 0; index < 3; index++) {
         myNumber = randint(1, 99)
@@ -68,7 +68,7 @@ NewRound()
 ```
 
 ```template
-	
+
 }
 let myNumber = 0
 let mySprite: Sprite = null
@@ -101,40 +101,40 @@ This activity will help you add multiple tries to your number guessing game.
 
 ## Step 2
 
-The code for a basic guessing game is in your workspace. 
+The code for a basic guessing game is in your workspace.
 
 Let's add a loop to allow you to make multiple guesses.
 
 ---
 
 
-► From the ``||loops:Loops||`` category, grab a 
-``||loops:while <false>||`` loop and snap it into the 
+► From the ``||loops:Loops||`` category, grab a
+``||loops:while <false>||`` loop and snap it into the
 **on start** container right **above** the **if/then/else** containers.
 
-► Grab everything underneath the new loop by clicking on the 
+► Grab everything underneath the new loop by clicking on the
  **if/then/else** block.  Drag that whole chunk of code up into the new
- empty **while** loop. 
+ empty **while** loop.
 
 
 ```blocks
 let mySprite = sprites.create(img`
-    . . . . . f f 4 4 f f . . . . . 
-    . . . . f 5 4 5 5 4 5 f . . . . 
-    . . . f e 4 5 5 5 5 4 e f . . . 
-    . . f b 3 e 4 4 4 4 e 3 b f . . 
-    . . f 3 3 3 3 3 3 3 3 3 3 f . . 
-    . f 3 3 e b 3 e e 3 b e 3 3 f . 
-    . f 3 3 f f e e e e f f 3 3 f . 
-    . f b b f b f e e f b f b b f . 
-    . f b b e 1 f 4 4 f 1 e b b f . 
-    f f b b f 4 4 4 4 4 4 f b b f f 
-    f b b f f f e e e e f f f b b f 
-    . f e e f b d d d d b f e e f . 
-    . . e 4 c d d d d d d c 4 e . . 
-    . . e f b d b d b d b b f e . . 
-    . . . f f 1 d 1 d 1 d f f . . . 
-    . . . . . f f b b f f . . . . . 
+    . . . . . f f 4 4 f f . . . . .
+    . . . . f 5 4 5 5 4 5 f . . . .
+    . . . f e 4 5 5 5 5 4 e f . . .
+    . . f b 3 e 4 4 4 4 e 3 b f . .
+    . . f 3 3 3 3 3 3 3 3 3 3 f . .
+    . f 3 3 e b 3 e e 3 b e 3 3 f .
+    . f 3 3 f f e e e e f f 3 3 f .
+    . f b b f b f e e f b f b b f .
+    . f b b e 1 f 4 4 f 1 e b b f .
+    f f b b f 4 4 4 4 4 4 f b b f f
+    f b b f f f e e e e f f f b b f
+    . f e e f b d d d d b f e e f .
+    . . e 4 c d d d d d d c 4 e . .
+    . . e f b d b d b d b b f e . .
+    . . . f f 1 d 1 d 1 d f f . . .
+    . . . . . f f b b f f . . . . .
     `, SpriteKind.Player)
 let myNumber = randint(1, 9)
 game.showLongText("I'm thinking of a number between 1 and 9. Can you guess it?", DialogLayout.Bottom)
@@ -159,7 +159,7 @@ We want this loop to keep running as long as lives are greater than zero.
 
 ---
 
-► Grab a ``||logic:[0] [<] [0]||`` value block and use it to replace 
+► Grab a ``||logic:[0] [<] [0]||`` value block and use it to replace
 **`<false>`** in the **while** loop.
 
 ► Replace the second **0** of the logic value block with a ``||info:life||``
@@ -167,22 +167,22 @@ value block.
 
 ```blocks
 let mySprite = sprites.create(img`
-    . . . . . f f 4 4 f f . . . . . 
-    . . . . f 5 4 5 5 4 5 f . . . . 
-    . . . f e 4 5 5 5 5 4 e f . . . 
-    . . f b 3 e 4 4 4 4 e 3 b f . . 
-    . . f 3 3 3 3 3 3 3 3 3 3 f . . 
-    . f 3 3 e b 3 e e 3 b e 3 3 f . 
-    . f 3 3 f f e e e e f f 3 3 f . 
-    . f b b f b f e e f b f b b f . 
-    . f b b e 1 f 4 4 f 1 e b b f . 
-    f f b b f 4 4 4 4 4 4 f b b f f 
-    f b b f f f e e e e f f f b b f 
-    . f e e f b d d d d b f e e f . 
-    . . e 4 c d d d d d d c 4 e . . 
-    . . e f b d b d b d b b f e . . 
-    . . . f f 1 d 1 d 1 d f f . . . 
-    . . . . . f f b b f f . . . . . 
+    . . . . . f f 4 4 f f . . . . .
+    . . . . f 5 4 5 5 4 5 f . . . .
+    . . . f e 4 5 5 5 5 4 e f . . .
+    . . f b 3 e 4 4 4 4 e 3 b f . .
+    . . f 3 3 3 3 3 3 3 3 3 3 f . .
+    . f 3 3 e b 3 e e 3 b e 3 3 f .
+    . f 3 3 f f e e e e f f 3 3 f .
+    . f b b f b f e e f b f b b f .
+    . f b b e 1 f 4 4 f 1 e b b f .
+    f f b b f 4 4 4 4 4 4 f b b f f
+    f b b f f f e e e e f f f b b f
+    . f e e f b d d d d b f e e f .
+    . . e 4 c d d d d d d c 4 e . .
+    . . e f b d b d b d b b f e . .
+    . . . f f 1 d 1 d 1 d f f . . .
+    . . . . . f f b b f f . . . . .
     `, SpriteKind.Player)
 let myNumber = randint(1, 9)
 game.showLongText("I'm thinking of a number between 1 and 9. Can you guess it?", DialogLayout.Bottom)
@@ -206,29 +206,29 @@ while (0 < info.life()) {
 
 **🎮 Give your game a try 🎮**
 
-Did the experience go as planned? If you guessed wrong, you probably noticed 
-that your **game over** block stopped you from guessing again. 
+Did the experience go as planned? If you guessed wrong, you probably noticed
+that your **game over** block stopped you from guessing again.
 Let's smooth that out.
 
 
 ```blocks
 let mySprite = sprites.create(img`
-    . . . . . f f 4 4 f f . . . . . 
-    . . . . f 5 4 5 5 4 5 f . . . . 
-    . . . f e 4 5 5 5 5 4 e f . . . 
-    . . f b 3 e 4 4 4 4 e 3 b f . . 
-    . . f 3 3 3 3 3 3 3 3 3 3 f . . 
-    . f 3 3 e b 3 e e 3 b e 3 3 f . 
-    . f 3 3 f f e e e e f f 3 3 f . 
-    . f b b f b f e e f b f b b f . 
-    . f b b e 1 f 4 4 f 1 e b b f . 
-    f f b b f 4 4 4 4 4 4 f b b f f 
-    f b b f f f e e e e f f f b b f 
-    . f e e f b d d d d b f e e f . 
-    . . e 4 c d d d d d d c 4 e . . 
-    . . e f b d b d b d b b f e . . 
-    . . . f f 1 d 1 d 1 d f f . . . 
-    . . . . . f f b b f f . . . . . 
+    . . . . . f f 4 4 f f . . . . .
+    . . . . f 5 4 5 5 4 5 f . . . .
+    . . . f e 4 5 5 5 5 4 e f . . .
+    . . f b 3 e 4 4 4 4 e 3 b f . .
+    . . f 3 3 3 3 3 3 3 3 3 3 f . .
+    . f 3 3 e b 3 e e 3 b e 3 3 f .
+    . f 3 3 f f e e e e f f 3 3 f .
+    . f b b f b f e e f b f b b f .
+    . f b b e 1 f 4 4 f 1 e b b f .
+    f f b b f 4 4 4 4 4 4 f b b f f
+    f b b f f f e e e e f f f b b f
+    . f e e f b d d d d b f e e f .
+    . . e 4 c d d d d d d c 4 e . .
+    . . e f b d b d b d b b f e . .
+    . . . f f 1 d 1 d 1 d f f . . .
+    . . . . . f f b b f f . . . . .
     `, SpriteKind.Player)
 let myNumber = randint(1, 9)
 game.showLongText("I'm thinking of a number between 1 and 9. Can you guess it?", DialogLayout.Bottom)
@@ -242,7 +242,7 @@ while (0 < info.life()) {
         mySprite.say("The number was " + myNumber + "!")
         pause(3000)
     }
-   
+
 }
  //@highlight
     game.over(false)
@@ -261,7 +261,7 @@ Let's move the final message to the end and add a new message for wrong guesses.
 ► Drag all of the code out of the **else** container and snap it down
 below the **while** loop.
 
-► Grab a new ``||sprites:[mySprite] say [":)"]||`` and put it in the empty **else** container.  
+► Grab a new ``||sprites:[mySprite] say [":)"]||`` and put it in the empty **else** container.
 
 ► Fill the new block with a message that lets the player know they were incorrect.
 
@@ -270,22 +270,22 @@ below the **while** loop.
 
 ```blocks
 let mySprite = sprites.create(img`
-    . . . . . f f 4 4 f f . . . . . 
-    . . . . f 5 4 5 5 4 5 f . . . . 
-    . . . f e 4 5 5 5 5 4 e f . . . 
-    . . f b 3 e 4 4 4 4 e 3 b f . . 
-    . . f 3 3 3 3 3 3 3 3 3 3 f . . 
-    . f 3 3 e b 3 e e 3 b e 3 3 f . 
-    . f 3 3 f f e e e e f f 3 3 f . 
-    . f b b f b f e e f b f b b f . 
-    . f b b e 1 f 4 4 f 1 e b b f . 
-    f f b b f 4 4 4 4 4 4 f b b f f 
-    f b b f f f e e e e f f f b b f 
-    . f e e f b d d d d b f e e f . 
-    . . e 4 c d d d d d d c 4 e . . 
-    . . e f b d b d b d b b f e . . 
-    . . . f f 1 d 1 d 1 d f f . . . 
-    . . . . . f f b b f f . . . . . 
+    . . . . . f f 4 4 f f . . . . .
+    . . . . f 5 4 5 5 4 5 f . . . .
+    . . . f e 4 5 5 5 5 4 e f . . .
+    . . f b 3 e 4 4 4 4 e 3 b f . .
+    . . f 3 3 3 3 3 3 3 3 3 3 f . .
+    . f 3 3 e b 3 e e 3 b e 3 3 f .
+    . f 3 3 f f e e e e f f 3 3 f .
+    . f b b f b f e e f b f b b f .
+    . f b b e 1 f 4 4 f 1 e b b f .
+    f f b b f 4 4 4 4 4 4 f b b f f
+    f b b f f f e e e e f f f b b f
+    . f e e f b d d d d b f e e f .
+    . . e 4 c d d d d d d c 4 e . .
+    . . e f b d b d b d b b f e . .
+    . . . f f 1 d 1 d 1 d f f . . .
+    . . . . . f f b b f f . . . . .
     `, SpriteKind.Player)
 let myNumber = randint(1, 9)
 game.showLongText("I'm thinking of a number between 1 and 9. Can you guess it?", DialogLayout.Bottom)
@@ -299,7 +299,7 @@ while (0 < info.life()) {
         //@highlight
         mySprite.say("Not that!")
         pause(3000)
-    }  
+    }
 }
  mySprite.say("The number was " + myNumber + "!")
     pause(3000)
@@ -318,28 +318,28 @@ Keep track of how many guesses you have left using the life meter.
 
 
 ► Add a ``||info:change life by [-1]||`` block to the **end** of the **else**
-container. That way, the game will remove one heart for each wrong guess.  
+container. That way, the game will remove one heart for each wrong guess.
 
 
 
 ```blocks
 let mySprite = sprites.create(img`
-    . . . . . f f 4 4 f f . . . . . 
-    . . . . f 5 4 5 5 4 5 f . . . . 
-    . . . f e 4 5 5 5 5 4 e f . . . 
-    . . f b 3 e 4 4 4 4 e 3 b f . . 
-    . . f 3 3 3 3 3 3 3 3 3 3 f . . 
-    . f 3 3 e b 3 e e 3 b e 3 3 f . 
-    . f 3 3 f f e e e e f f 3 3 f . 
-    . f b b f b f e e f b f b b f . 
-    . f b b e 1 f 4 4 f 1 e b b f . 
-    f f b b f 4 4 4 4 4 4 f b b f f 
-    f b b f f f e e e e f f f b b f 
-    . f e e f b d d d d b f e e f . 
-    . . e 4 c d d d d d d c 4 e . . 
-    . . e f b d b d b d b b f e . . 
-    . . . f f 1 d 1 d 1 d f f . . . 
-    . . . . . f f b b f f . . . . . 
+    . . . . . f f 4 4 f f . . . . .
+    . . . . f 5 4 5 5 4 5 f . . . .
+    . . . f e 4 5 5 5 5 4 e f . . .
+    . . f b 3 e 4 4 4 4 e 3 b f . .
+    . . f 3 3 3 3 3 3 3 3 3 3 f . .
+    . f 3 3 e b 3 e e 3 b e 3 3 f .
+    . f 3 3 f f e e e e f f 3 3 f .
+    . f b b f b f e e f b f b b f .
+    . f b b e 1 f 4 4 f 1 e b b f .
+    f f b b f 4 4 4 4 4 4 f b b f f
+    f b b f f f e e e e f f f b b f
+    . f e e f b d d d d b f e e f .
+    . . e 4 c d d d d d d c 4 e . .
+    . . e f b d b d b d b b f e . .
+    . . . f f 1 d 1 d 1 d f f . . .
+    . . . . . f f b b f f . . . . .
     `, SpriteKind.Player)
 let myNumber = randint(1, 9)
 game.showLongText("I'm thinking of a number between 1 and 9. Can you guess it?", DialogLayout.Bottom)
@@ -355,7 +355,7 @@ while (0 < info.life()) {
          //@highlight
          info.changeLifeBy(-1)
     }
-     
+
 }
  mySprite.say("The number was " + myNumber + "!")
     pause(3000)
@@ -376,10 +376,10 @@ life meter hearts fall to zero.
 ---
 
 
-► Grab an ``||info:on life zero||`` container and drop it into an empty area 
-in your workspace.  
+► Grab an ``||info:on life zero||`` container and drop it into an empty area
+in your workspace.
 
-► Pull the last two blocks out of **on start** (**pause** and 
+► Pull the last two blocks out of **on start** (**pause** and
 **game over**) and snap them into the empty **on life zero** container.
 
 
@@ -397,7 +397,7 @@ info.onLifeZero(function () {
 
 **Fantastic! Give your game a try!**
 
-Now you can narrow in on the correct answer like a pro!  
+Now you can narrow in on the correct answer like a pro!
 
-Click **Finish** to return to the main page where you can share your game
+Click **Done** to return to the main page where you can share your game
 with family and friends!

@@ -2,7 +2,7 @@
 * name: Shark Splash Map
 * description: Design a shooter game! We'll start by creating a hero that shoots projectiles, then you can customize the game with enemies, or a detailed setting.
 
-## shark
+## {shark}
 * name: Shark Splash
 * description: Design a shooter game! We'll start by creating a hero that shoots projectiles, then you can customize the game with enemies, or a detailed setting.
 

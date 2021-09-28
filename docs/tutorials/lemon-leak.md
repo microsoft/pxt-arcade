@@ -6,13 +6,13 @@ Try this tutorial!
 
 ### ~
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 ![Game animation](/static/tutorials/lemon-leak.gif)
 
 Hey, let's make a game where wild strawberries are out to attack our lemon player. The goal is to keep the lemon from losing its juice by avoiding the oncoming strawberries. The lemon will leak some of its juice when strawberries collide with it.
 
-## Step 1  @fullscreen
+## {Step 1  @fullscreen}
 
 In the ``||loops:on start||`` block put in the ``||scene:set background color||`` from ``||scene:Scene||``. Choose ``purple`` for the color. Pull in a ``||variables:set mySprite to||`` from ``||sprites:Sprites||``. Click on the grey box and then select the lemon from the gallery. In ``||controller:Controller||`` get a ``||controller:move mySprite with buttons||`` so we can move the lemon around.
 
@@ -41,7 +41,7 @@ let mySprite = sprites.create(img`
 controller.moveSprite(mySprite)
 ```
 
-## Step 2
+## {Step 2}
 
 To keep the lemon from leaving the screen, drag over a ``||sprites:set mySprite stay in screen||`` block. Find the ``||info:start countdown||`` block and put it in at the end. Change the time from `10` to `30` seconds.
 
@@ -70,7 +70,7 @@ mySprite.setStayInScreen(true)
 info.startCountdown(30)
 ```
 
-## Step 3
+## {Step 3}
 
 Now, pull out a ``||game:on game update every||`` from ``||game:Game||``. Set the interval time to `1000` ms, or 1 second. From ``||sprites:Sprites||``, drag the ``||variables:set projectile to||`` ``||sprites:projectile from side||`` block and drop it inside the ``||game:on game update every||``. Click on the grey image box and select the strawberry from the gallery.
 
@@ -98,7 +98,7 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 4
+## {Step 4}
 
 Over in the ``||math:Math||`` drawer, pick up a ``||math: pick random||`` and put it in ``vx`` slot for the projectile. In ``||math:pick random||`` change the first `0` to `-50` and the second from `10` to `50`. Duplicate this block and put its copy in the slot for ``vy``.
 
@@ -126,7 +126,7 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 5
+## {Step 5}
 
 From ``||sprites:Sprites||``, drag an ``||sprites:on sprite of kind overlaps||`` block onto the Workspace. Set the kind for ``otherSprite`` to ``Projectile``. From ``||sprites:Sprites||``, drag a ``||sprites:mySprite start effect||`` block and drop inside the ``||sprites:overlaps||`` block. Click the **(+)** icon to expand the block and set the time for the effect to ``200`` ms.
 
@@ -137,7 +137,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 })
 ```
 
-## Step 6
+## {Step 6}
 
 Lastly, to score hits by the strawberries on the lemon, drag a ``||info:change score by||`` block from ``||info:Info||`` in after the ``||sprites:mySprite start effect||`` block.
 
@@ -149,7 +149,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 })
 ```
 
-## Complete @fullscreen
+## {Complete @fullscreen}
 
 That's it! Now keep moving the lemon and try not lose too much juice. Everytime a strawberry hits your lemon, it leaks some juice and the strawberry team gets points. See if you can keep the juice points down during the `30` seconds of play.
 

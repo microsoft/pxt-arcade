@@ -1,12 +1,12 @@
 # Barrel Dodger
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 Make an action game where the player has to react quickly to avoid fast moving barrels. Get hit and it's **GAME OVER!**
 
 ![Barrel Dodger game playing](/static/lessons/barrel-dodger/barrel-dodger.gif)
 
-## Step 1
+## {Step 1}
 
 Let's create a platform base at the bottom of the screen.
 Get a ``||scene:set tilemap to||`` and put it in ``||loops:on start||``.
@@ -57,7 +57,7 @@ tiles.setTilemap(tiles.createTilemap(
 ))
 ```
 
-## Step 2
+## {Step 2}
 
 Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||`` and draw your player sprite.
 
@@ -120,7 +120,7 @@ let mySprite: Sprite = sprites.create(img`
 `, SpriteKind.Player)
 ```
 
-## Step 3
+## {Step 3}
 
 Open the tilemap editor and find the tile position where you want to place your place (hint: it's 1, 5!). You can see the position on the lower left of the editor.
 Use the ``||scene:place mySprite on top of tilemap col row||`` block to position your player on that tile.
@@ -185,7 +185,7 @@ let mySprite: Sprite = sprites.create(img`
 tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 5))
 ```
 
-## Step 4
+## {Step 4}
 
 Let's give the sprite the ability to jump when we press a button. We do this by moving
 the player upward in an ``||controller:on A button pressed||`` event.
@@ -197,7 +197,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 5
+## {Step 5}
 
 Drag a ``||sprites:set mySprite x||`` into the ``||loops:on start||``, click the dropdown, and select ``||sprites:ay (acceleration y)||``. Set the value to `500` so that character is pulled down by "gravity".
 
@@ -263,7 +263,7 @@ mySprite.ay = 500
 ```
 
 
-## Step 6
+## {Step 6}
 
 We need to make sure that the sprite is on the ground before jumping, so drag an ``||logic:if then||`` conditional into the ``||controller:on A button pressed||``. Replace `true` with ``||scene:is mySprite hitting wall||`` and change ``left`` side ``bottom``. Finally, put in a ``||sprites:set mySprite x||`` and choose ``||sprites:vy (velocity y)||`` from the dropdown. Set the value to `-200`.
 
@@ -276,7 +276,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 7
+## {Step 7}
 
 Let's have some barrels moving at random speeds. Make them start from the right side of the screen and fly towards the player sprite. Move an ``||game:on game update every||`` onto the editor and set the interval time to `2000` milliseconds. Drag a ``||sprites:projectile from side||`` into it and draw the barrel.
 
@@ -297,9 +297,9 @@ game.onUpdateInterval(2000, function () {
 })
 ```
 
-## Step 8
+## {Step 8}
 
-Drag a ``||math:pick random||`` block into where ``vx`` is and set the range from ``-100`` to ``-80``. Also, set the ``vy`` speed for the projectile to ``0``. 
+Drag a ``||math:pick random||`` block into where ``vx`` is and set the range from ``-100`` to ``-80``. Also, set the ``vy`` speed for the projectile to ``0``.
 
 ```blocks
 game.onUpdateInterval(2000, function () {
@@ -317,7 +317,7 @@ game.onUpdateInterval(2000, function () {
 })
 ```
 
-## Step 9
+## {Step 9}
 
 Find ``||scene:place mySprite on top of tilemap col row||`` and drag it into the ``||game:on game update interval||`` after ``||variables:set projectile to||``.
 Set the ``||scene:col||`` to 9 and the ``||scene:row||`` to 5, which is the tile on the right side of the screen directly above the wall.
@@ -340,7 +340,7 @@ game.onUpdateInterval(2000, function () {
 })
 ```
 
-## Step 10
+## {Step 10}
 
 Each time a barrel starts to move we want to increase the score. Get a ``||info:change score by||`` and put it into ``||game:on game update every||``.
 
@@ -362,7 +362,7 @@ game.onUpdateInterval(2000, function () {
 })
 ```
 
-## Step 11
+## {Step 11}
 
 Our final step is to end the game if a barrel touches the sprite player. Drag an ``||sprites:on sprite overlaps||`` onto the editor. Set the sprite kind for ``otherSprite`` to ``Projectile``. End the game with a ``||game:game over||`` block inside.
 
@@ -372,6 +372,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 })
 ```
 
-## Complete
+## {Complete}
 
 Awesome! Congratulations on making the Barrel Dodger game!

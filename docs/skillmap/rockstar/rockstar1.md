@@ -3,7 +3,7 @@
 
 ## Welcome @showdialog
 
-Congratulations!  You've just accepted a job managing Jerry, the last remaining  **80's Rockstar!** 
+Congratulations!  You've just accepted a job managing Jerry, the last remaining  **80's Rockstar!**
 
 ![Navigate the maze backstage](/static/skillmap/rockstar/rockstar1.gif "Look what we're about to do today!")
 
@@ -12,14 +12,14 @@ We'll walk you through the skills you'll need to help Jerry navigate backstage t
 
 
 
-## 2. Let's Get Started 
+## 2. Let's Get Started
 
 **Your scene has already been set!**
 
 ---
 
-- :binoculars: Look at your workspace to see that the **background color** and backstage [__*tilemap*__](#tiled "a scene or world created using predefined tiles") 
-have already been added to this activity.  
+- :binoculars: Look at your workspace to see that the **background color** and backstage [__*tilemap*__](#tiled "a scene or world created using predefined tiles")
+have already been added to this activity.
 
 💡 Both blocks have been put inside the ``||loops: on start||`` container so they load as soon as the game starts.
 
@@ -29,7 +29,7 @@ have already been added to this activity.
 
 **👏  We need Jerry! 👏**
 
-Our moving character is called a [__*sprite*__](#sprote "2-D image that move on the screen"). Let's create a rockstar sprite and get it moving before we do anything else. 
+Our moving character is called a [__*sprite*__](#sprote "2-D image that move on the screen"). Let's create a rockstar sprite and get it moving before we do anything else.
 
 ---
 
@@ -52,7 +52,7 @@ let mySprite = sprites.create(assets.image`rockstar`, SpriteKind.Player)
 
 ---
 
-- :puzzle: From ``||controller:Controller||``, drag ``||controller:move [mySprite] with buttons ⊕||``   
+- :puzzle: From ``||controller:Controller||``, drag ``||controller:move [mySprite] with buttons ⊕||``
 to **the end** of the ``||loops:on start||`` container.
 
 
@@ -71,15 +71,15 @@ controller.moveSprite(mySprite)
 
 ---
 
-Jerry appears in the middle of a wall and gets completely lost when moving off screen!  
+Jerry appears in the middle of a wall and gets completely lost when moving off screen!
 
 We'll fix that over the next couple of steps.
 
 
 
-## 6. Trapped Backstage 
+## 6. Trapped Backstage
 
-The rockstar sprite should appear at the stage door. 
+The rockstar sprite should appear at the stage door.
 
 ---
 
@@ -99,10 +99,10 @@ tiles.placeOnRandomTile(mySprite, assets.tile`stage`)
 ```
 
 
-## 7. Follow with Camera 
+## 7. Follow with Camera
 
 
-- :puzzle: Next, to keep Jerry in sight, open ``||scene:Scene||`` again and drag 
+- :puzzle: Next, to keep Jerry in sight, open ``||scene:Scene||`` again and drag
 ``||scene:camera follow sprite [mySprite]||`` to **the end** of the ``||loops:on start||`` container.
 
 ```blocks
@@ -130,11 +130,11 @@ You should be able to see your sprite as you move it around backstage.  Can you 
 
 ## Finale
 
-🔥 **Well done!** 🔥   
+🔥 **Well done!** 🔥
 
 ---
 
-Take a look at all of the things hidden throughout the maze, then click **Done** to head to the next level of the 
+Take a look at all of the things hidden throughout the maze, then click **Done** to head to the next level of the
 skillmap where we'll show you how to add points for each instrument Jerry collects!
 
 

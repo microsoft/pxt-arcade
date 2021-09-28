@@ -177,22 +177,22 @@ scene.setBackgroundImage(img`
     `)
 
 let mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
     `, SpriteKind.Player)
 
 
@@ -203,62 +203,62 @@ let mySprite = sprites.create(img`
 
 ```ghost
 let mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
     `, SpriteKind.Player)
 let myEnemy = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
     `, SpriteKind.Player)
 pause(100)
 myEnemy.follow(mySprite)
 mySprite.destroy(effects.spray, 500)
 mySprite.setFlag(SpriteFlag.AutoDestroy, false)
 mySprite.setImage(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
     `)
 effects.confetti.endScreenEffect()
 scene.cameraShake(4, 500)
@@ -286,42 +286,42 @@ game.onUpdateInterval(500, function () {
     if (game.askForString("Continue?") == "Y" || game.askForString("Continue?") == "y") {
          mySprite.say(":)")
         game.setDialogFrame(img`
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . .
             `)
     }
     game.splash("")
     game.setDialogTextColor(0)
     game.setDialogCursor(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
         `)
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -354,22 +354,22 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
         `)
     game.showLongText("The shy little dragon walked into the meadow to meet the dandelion.", DialogLayout.Bottom)
     mySprite2 = sprites.create(img`
-        . . . f f f c c c c c c f f f . 
-        . . . f 7 7 6 7 7 7 7 6 7 7 f . 
-        . . . f 7 6 6 7 7 7 7 6 6 7 f . 
-        . . . c 7 6 f 7 7 7 7 f 6 7 f . 
-        . . . c f 7 7 7 7 7 7 7 f f f . 
-        . . . f 7 7 7 f 7 7 7 7 7 7 f . 
-        . . . f 7 7 7 7 f f 7 7 7 7 f . 
-        . . . f 6 7 7 c 6 7 7 7 7 f . . 
-        . . . c f 6 7 7 c c c c f 6 . . 
-        . . c c 7 7 7 6 7 7 7 7 7 c 6 . 
-        . . c 6 7 7 7 7 c 7 7 7 c c c . 
-        . . c 6 7 7 7 7 f 6 7 1 1 c 7 c 
-        . c f 6 7 7 7 7 6 6 1 1 1 c 7 f 
-        c 7 f c 7 7 7 7 6 1 1 1 1 c 7 f 
-        f 7 7 f 7 7 7 1 6 6 1 1 1 6 7 7 
-        c 7 7 6 7 7 7 7 7 6 6 c c c 7 7 
+        . . . f f f c c c c c c f f f .
+        . . . f 7 7 6 7 7 7 7 6 7 7 f .
+        . . . f 7 6 6 7 7 7 7 6 6 7 f .
+        . . . c 7 6 f 7 7 7 7 f 6 7 f .
+        . . . c f 7 7 7 7 7 7 7 f f f .
+        . . . f 7 7 7 f 7 7 7 7 7 7 f .
+        . . . f 7 7 7 7 f f 7 7 7 7 f .
+        . . . f 6 7 7 c 6 7 7 7 7 f . .
+        . . . c f 6 7 7 c c c c f 6 . .
+        . . c c 7 7 7 6 7 7 7 7 7 c 6 .
+        . . c 6 7 7 7 7 c 7 7 7 c c c .
+        . . c 6 7 7 7 7 f 6 7 1 1 c 7 c
+        . c f 6 7 7 7 7 6 6 1 1 1 c 7 f
+        c 7 f c 7 7 7 7 6 1 1 1 1 c 7 f
+        f 7 7 f 7 7 7 1 6 6 1 1 1 6 7 7
+        c 7 7 6 7 7 7 7 7 6 6 c c c 7 7
         `, SpriteKind.Player)
     mySprite2.setPosition(44, 41)
     mySprite.setImage(img`
@@ -484,7 +484,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     scene.cameraShake(4, 500)
     pause(100)
     for (let index = 0; index < 4; index++) {
-    	
+
     }
 })
 
@@ -494,24 +494,24 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 
 Short stories are fun to read and fun to write!
 
-In this tutorial, we'll create our own crazy short stories that we can 
-share anywhere we like. 
+In this tutorial, we'll create our own crazy short stories that we can
+share anywhere we like.
 
 ![Here's the story](/static/skillmap/story/story-activity-4.gif "How mystical!" )
 
 
 ## Step 2
 
-The base code for a two-line story is already in the workspace. 
+The base code for a two-line story is already in the workspace.
 Let's build on it to create a new short story worth sharing.
 
-To start, choose a **thing** and a **place**. The thing will be your 
-main character and the place is the setting of the story.  
+To start, choose a **thing** and a **place**. The thing will be your
+main character and the place is the setting of the story.
 
 ```hint
-Example 1: A duck on the lake  
-Example 2: A unicorn in the meadow  
-Example 3: An alien in the grocery store  
+Example 1: A duck on the lake
+Example 2: A unicorn in the meadow
+Example 3: An alien in the grocery store
 
 ```
 
@@ -525,7 +525,7 @@ Example 3: An alien in the grocery store
 ► Click on the image box in the ``||scene:set background image to []||``
 block and draw your scene.
 
-► Click on the image box in the 
+► Click on the image box in the
 ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
 block and design your main character.
 
@@ -785,16 +785,16 @@ mySprite = sprites.create(img`
 
 **📚 Explain your set-up 📚**
 
-Why is your main character in their setting?  What are they waiting for or 
+Why is your main character in their setting?  What are they waiting for or
 what are they avoiding?
 
 ---
 
-► Look for the first ``||game: show long text [" "] [bottom]||`` block inside 
+► Look for the first ``||game: show long text [" "] [bottom]||`` block inside
 the **on A button pressed** container
 and click in the text area.
 
-► Use this space to add your first sentence or two. 
+► Use this space to add your first sentence or two.
 
 ```block
 let mySprite2: Sprite = null
@@ -830,7 +830,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         `)
     game.showLongText("The shy little dragon walked into the meadow to meet the dandelion.", DialogLayout.Bottom)
 
-    
+
 })
 
 ```
@@ -847,7 +847,7 @@ What happens now? Something should throw your characters off course or surprise 
 ► Look for the second ``||game: show long text [" "] [bottom]||`` block
 and click in the text area.
 
-► Use this space to add your drama. 
+► Use this space to add your drama.
 
 ```block
 let mySprite2: Sprite = null
@@ -882,7 +882,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         `)
     game.showLongText("The shy little dragon walked into the meadow to meet the dandelion.", DialogLayout.Bottom)
     game.showLongText("Just as he reached the deep grass, a giant toad jumped out from above and landed on the dragon's face.", DialogLayout.Bottom)
-   
+
 })
 
 ```
@@ -893,12 +893,12 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 **📕 Show the story 📕**
 
-The story has changed, but the images on the screen haven't. 
+The story has changed, but the images on the screen haven't.
 Let's update the scene and the characters.
 
 ---
 
-► Add some code into the ``||controller:on [A] button [pressed]||`` container after the second **show long text** block.  
+► Add some code into the ``||controller:on [A] button [pressed]||`` container after the second **show long text** block.
 
 ► Consider updating **mySprite** with a ``||sprites: set [mySprite] image to [ ]||`` block, adding a second sprite (**mySprite2**), or swapping out the background.
 
@@ -940,25 +940,25 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     game.showLongText("The shy little dragon walked into the meadow to meet the dandelion.", DialogLayout.Bottom)
     game.showLongText("Just as he reached the deep grass, a giant toad jumped out from above and landed on the dragon's face.", DialogLayout.Bottom)
     mySprite2 = sprites.create(img`
-        . . . f f f c c c c c c f f f . 
-        . . . f 7 7 6 7 7 7 7 6 7 7 f . 
-        . . . f 7 6 6 7 7 7 7 6 6 7 f . 
-        . . . c 7 6 f 7 7 7 7 f 6 7 f . 
-        . . . c f 7 7 7 7 7 7 7 f f f . 
-        . . . f 7 7 7 f 7 7 7 7 7 7 f . 
-        . . . f 7 7 7 7 f f 7 7 7 7 f . 
-        . . . f 6 7 7 c 6 7 7 7 7 f . . 
-        . . . c f 6 7 7 c c c c f 6 . . 
-        . . c c 7 7 7 6 7 7 7 7 7 c 6 . 
-        . . c 6 7 7 7 7 c 7 7 7 c c c . 
-        . . c 6 7 7 7 7 f 6 7 1 1 c 7 c 
-        . c f 6 7 7 7 7 6 6 1 1 1 c 7 f 
-        c 7 f c 7 7 7 7 6 1 1 1 1 c 7 f 
-        f 7 7 f 7 7 7 1 6 6 1 1 1 6 7 7 
-        c 7 7 6 7 7 7 7 7 6 6 c c c 7 7 
+        . . . f f f c c c c c c f f f .
+        . . . f 7 7 6 7 7 7 7 6 7 7 f .
+        . . . f 7 6 6 7 7 7 7 6 6 7 f .
+        . . . c 7 6 f 7 7 7 7 f 6 7 f .
+        . . . c f 7 7 7 7 7 7 7 f f f .
+        . . . f 7 7 7 f 7 7 7 7 7 7 f .
+        . . . f 7 7 7 7 f f 7 7 7 7 f .
+        . . . f 6 7 7 c 6 7 7 7 7 f . .
+        . . . c f 6 7 7 c c c c f 6 . .
+        . . c c 7 7 7 6 7 7 7 7 7 c 6 .
+        . . c 6 7 7 7 7 c 7 7 7 c c c .
+        . . c 6 7 7 7 7 f 6 7 1 1 c 7 c
+        . c f 6 7 7 7 7 6 6 1 1 1 c 7 f
+        c 7 f c 7 7 7 7 6 1 1 1 1 c 7 f
+        f 7 7 f 7 7 7 1 6 6 1 1 1 6 7 7
+        c 7 7 6 7 7 7 7 7 6 6 c c c 7 7
         `, SpriteKind.Player)
     mySprite2.setPosition(44, 41)
-   
+
 })
 
 ```
@@ -972,8 +972,8 @@ How does the main character react?
 
 ---
 
-► Add another ``||game:show long text [" "] [bottom]||`` block to the bottom 
-of the **on A button pressed** container and add another line 
+► Add another ``||game:show long text [" "] [bottom]||`` block to the bottom
+of the **on A button pressed** container and add another line
 describing the next thing that happens.
 
 
@@ -1011,26 +1011,26 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     game.showLongText("The shy little dragon walked into the meadow to meet the dandelion.", DialogLayout.Bottom)
     game.showLongText("Just as he reached the deep grass, a giant toad jumped out from above and landed on the dragon's face.", DialogLayout.Bottom)
     mySprite2 = sprites.create(img`
-        . . . f f f c c c c c c f f f . 
-        . . . f 7 7 6 7 7 7 7 6 7 7 f . 
-        . . . f 7 6 6 7 7 7 7 6 6 7 f . 
-        . . . c 7 6 f 7 7 7 7 f 6 7 f . 
-        . . . c f 7 7 7 7 7 7 7 f f f . 
-        . . . f 7 7 7 f 7 7 7 7 7 7 f . 
-        . . . f 7 7 7 7 f f 7 7 7 7 f . 
-        . . . f 6 7 7 c 6 7 7 7 7 f . . 
-        . . . c f 6 7 7 c c c c f 6 . . 
-        . . c c 7 7 7 6 7 7 7 7 7 c 6 . 
-        . . c 6 7 7 7 7 c 7 7 7 c c c . 
-        . . c 6 7 7 7 7 f 6 7 1 1 c 7 c 
-        . c f 6 7 7 7 7 6 6 1 1 1 c 7 f 
-        c 7 f c 7 7 7 7 6 1 1 1 1 c 7 f 
-        f 7 7 f 7 7 7 1 6 6 1 1 1 6 7 7 
-        c 7 7 6 7 7 7 7 7 6 6 c c c 7 7 
+        . . . f f f c c c c c c f f f .
+        . . . f 7 7 6 7 7 7 7 6 7 7 f .
+        . . . f 7 6 6 7 7 7 7 6 6 7 f .
+        . . . c 7 6 f 7 7 7 7 f 6 7 f .
+        . . . c f 7 7 7 7 7 7 7 f f f .
+        . . . f 7 7 7 f 7 7 7 7 7 7 f .
+        . . . f 7 7 7 7 f f 7 7 7 7 f .
+        . . . f 6 7 7 c 6 7 7 7 7 f . .
+        . . . c f 6 7 7 c c c c f 6 . .
+        . . c c 7 7 7 6 7 7 7 7 7 c 6 .
+        . . c 6 7 7 7 7 c 7 7 7 c c c .
+        . . c 6 7 7 7 7 f 6 7 1 1 c 7 c
+        . c f 6 7 7 7 7 6 6 1 1 1 c 7 f
+        c 7 f c 7 7 7 7 6 1 1 1 1 c 7 f
+        f 7 7 f 7 7 7 1 6 6 1 1 1 6 7 7
+        c 7 7 6 7 7 7 7 7 6 6 c c c 7 7
         `, SpriteKind.Player)
     mySprite2.setPosition(44, 41)
     game.showLongText("The dragon hopped into the air, and screamed with fear. ", DialogLayout.Bottom)
-   
+
 })
 
 ```
@@ -1041,11 +1041,11 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 **🌳 Change of scene 🌳**
 
 Consider changing your scene and characters again.  Can you get a close-up
-on someone's face by drawing a new image?  Did the characters move to a new location?  
+on someone's face by drawing a new image?  Did the characters move to a new location?
 
 ---
 
-► Change the background, your sprites, and their positions again to 
+► Change the background, your sprites, and their positions again to
 illustrate the changes happening in the story.
 
 
@@ -1083,22 +1083,22 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     game.showLongText("The shy little dragon walked into the meadow to meet the dandelion.", DialogLayout.Bottom)
     game.showLongText("Just as he reached the deep grass, a giant toad jumped out from above and landed on the dragon's face.", DialogLayout.Bottom)
     mySprite2 = sprites.create(img`
-        . . . f f f c c c c c c f f f . 
-        . . . f 7 7 6 7 7 7 7 6 7 7 f . 
-        . . . f 7 6 6 7 7 7 7 6 6 7 f . 
-        . . . c 7 6 f 7 7 7 7 f 6 7 f . 
-        . . . c f 7 7 7 7 7 7 7 f f f . 
-        . . . f 7 7 7 f 7 7 7 7 7 7 f . 
-        . . . f 7 7 7 7 f f 7 7 7 7 f . 
-        . . . f 6 7 7 c 6 7 7 7 7 f . . 
-        . . . c f 6 7 7 c c c c f 6 . . 
-        . . c c 7 7 7 6 7 7 7 7 7 c 6 . 
-        . . c 6 7 7 7 7 c 7 7 7 c c c . 
-        . . c 6 7 7 7 7 f 6 7 1 1 c 7 c 
-        . c f 6 7 7 7 7 6 6 1 1 1 c 7 f 
-        c 7 f c 7 7 7 7 6 1 1 1 1 c 7 f 
-        f 7 7 f 7 7 7 1 6 6 1 1 1 6 7 7 
-        c 7 7 6 7 7 7 7 7 6 6 c c c 7 7 
+        . . . f f f c c c c c c f f f .
+        . . . f 7 7 6 7 7 7 7 6 7 7 f .
+        . . . f 7 6 6 7 7 7 7 6 6 7 f .
+        . . . c 7 6 f 7 7 7 7 f 6 7 f .
+        . . . c f 7 7 7 7 7 7 7 f f f .
+        . . . f 7 7 7 f 7 7 7 7 7 7 f .
+        . . . f 7 7 7 7 f f 7 7 7 7 f .
+        . . . f 6 7 7 c 6 7 7 7 7 f . .
+        . . . c f 6 7 7 c c c c f 6 . .
+        . . c c 7 7 7 6 7 7 7 7 7 c 6 .
+        . . c 6 7 7 7 7 c 7 7 7 c c c .
+        . . c 6 7 7 7 7 f 6 7 1 1 c 7 c
+        . c f 6 7 7 7 7 6 6 1 1 1 c 7 f
+        c 7 f c 7 7 7 7 6 1 1 1 1 c 7 f
+        f 7 7 f 7 7 7 1 6 6 1 1 1 6 7 7
+        c 7 7 6 7 7 7 7 7 6 6 c c c 7 7
         `, SpriteKind.Player)
     mySprite2.setPosition(44, 41)
     game.showLongText("The dragon hopped into the air, and screamed with fear. ", DialogLayout.Bottom)
@@ -1258,7 +1258,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         ..................................................
         `)
     mySprite2.setPosition(72, 45)
-    
+
     game.showLongText("'Who are you?' He asked. 'What do you want?'", DialogLayout.Bottom)
 })
 ```
@@ -1274,7 +1274,7 @@ one last time if it helps illustrate your ending.
 
 ► Add another **show long text** block to finish out your story.
 
-► Consider changing the background, **mySprite** (or any other sprite 
+► Consider changing the background, **mySprite** (or any other sprite
 you added to the story), and their positions to make the ending as satisfying
 as possible.
 
@@ -1313,22 +1313,22 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     game.showLongText("The shy little dragon walked into the meadow to meet the dandelion.", DialogLayout.Bottom)
     game.showLongText("Just as he reached the deep grass, a giant toad jumped out from above and landed on the dragon's face.", DialogLayout.Bottom)
     mySprite2 = sprites.create(img`
-        . . . f f f c c c c c c f f f . 
-        . . . f 7 7 6 7 7 7 7 6 7 7 f . 
-        . . . f 7 6 6 7 7 7 7 6 6 7 f . 
-        . . . c 7 6 f 7 7 7 7 f 6 7 f . 
-        . . . c f 7 7 7 7 7 7 7 f f f . 
-        . . . f 7 7 7 f 7 7 7 7 7 7 f . 
-        . . . f 7 7 7 7 f f 7 7 7 7 f . 
-        . . . f 6 7 7 c 6 7 7 7 7 f . . 
-        . . . c f 6 7 7 c c c c f 6 . . 
-        . . c c 7 7 7 6 7 7 7 7 7 c 6 . 
-        . . c 6 7 7 7 7 c 7 7 7 c c c . 
-        . . c 6 7 7 7 7 f 6 7 1 1 c 7 c 
-        . c f 6 7 7 7 7 6 6 1 1 1 c 7 f 
-        c 7 f c 7 7 7 7 6 1 1 1 1 c 7 f 
-        f 7 7 f 7 7 7 1 6 6 1 1 1 6 7 7 
-        c 7 7 6 7 7 7 7 7 6 6 c c c 7 7 
+        . . . f f f c c c c c c f f f .
+        . . . f 7 7 6 7 7 7 7 6 7 7 f .
+        . . . f 7 6 6 7 7 7 7 6 6 7 f .
+        . . . c 7 6 f 7 7 7 7 f 6 7 f .
+        . . . c f 7 7 7 7 7 7 7 f f f .
+        . . . f 7 7 7 f 7 7 7 7 7 7 f .
+        . . . f 7 7 7 7 f f 7 7 7 7 f .
+        . . . f 6 7 7 c 6 7 7 7 7 f . .
+        . . . c f 6 7 7 c c c c f 6 . .
+        . . c c 7 7 7 6 7 7 7 7 7 c 6 .
+        . . c 6 7 7 7 7 c 7 7 7 c c c .
+        . . c 6 7 7 7 7 f 6 7 1 1 c 7 c
+        . c f 6 7 7 7 7 6 6 1 1 1 c 7 f
+        c 7 f c 7 7 7 7 6 1 1 1 1 c 7 f
+        f 7 7 f 7 7 7 1 6 6 1 1 1 6 7 7
+        c 7 7 6 7 7 7 7 7 6 6 c c c 7 7
         `, SpriteKind.Player)
     mySprite2.setPosition(44, 41)
     game.showLongText("The dragon hopped into the air, and screamed with fear. ", DialogLayout.Bottom)
@@ -1613,22 +1613,22 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     game.showLongText("'Who are you?' He asked. 'What do you want?'", DialogLayout.Bottom)
     mySprite.destroy()
     mySprite2.setImage(img`
-        . . . f f f c c c c c c f f f . 
-        . . . f 7 7 6 7 7 7 7 6 7 7 f . 
-        . . . f 7 6 6 7 7 7 7 6 6 7 f . 
-        . . . c 7 6 f 7 7 7 7 f 6 7 f . 
-        . . . c f 7 7 7 7 7 7 7 f f f . 
-        . . . f 7 7 7 f 7 7 7 7 7 7 f . 
-        . . . f 7 7 7 7 f f 7 7 7 7 f . 
-        . . . f 6 7 7 c 6 7 7 7 7 f . . 
-        . . . c f 6 7 7 c c c c f 6 . . 
-        . . c c 7 7 7 6 7 7 7 7 7 c 6 . 
-        . . c 6 7 7 7 7 c 7 7 7 c c c . 
-        . . c 6 7 7 7 7 f 6 7 1 1 c 7 c 
-        . c f 6 7 7 7 7 6 6 1 1 1 c 7 f 
-        c 7 f c 7 7 7 7 6 1 1 1 1 c 7 f 
-        f 7 7 f 7 7 7 1 6 6 1 1 1 6 7 7 
-        c 7 7 6 7 7 7 7 7 6 6 c c c 7 7 
+        . . . f f f c c c c c c f f f .
+        . . . f 7 7 6 7 7 7 7 6 7 7 f .
+        . . . f 7 6 6 7 7 7 7 6 6 7 f .
+        . . . c 7 6 f 7 7 7 7 f 6 7 f .
+        . . . c f 7 7 7 7 7 7 7 f f f .
+        . . . f 7 7 7 f 7 7 7 7 7 7 f .
+        . . . f 7 7 7 7 f f 7 7 7 7 f .
+        . . . f 6 7 7 c 6 7 7 7 7 f . .
+        . . . c f 6 7 7 c c c c f 6 . .
+        . . c c 7 7 7 6 7 7 7 7 7 c 6 .
+        . . c 6 7 7 7 7 c 7 7 7 c c c .
+        . . c 6 7 7 7 7 f 6 7 1 1 c 7 c
+        . c f 6 7 7 7 7 6 6 1 1 1 c 7 f
+        c 7 f c 7 7 7 7 6 1 1 1 1 c 7 f
+        f 7 7 f 7 7 7 1 6 6 1 1 1 6 7 7
+        c 7 7 6 7 7 7 7 7 6 6 c c c 7 7
         `)
     mySprite2.setPosition(72, 52)
     scene.setBackgroundImage(img`
@@ -1764,9 +1764,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 Now you have a story ready to go viral.
 
-Click **Finish** to return to the main page where you can share your game
+Click **Done** to return to the main page where you can share your game
 with family and friends!
-  
+
 
 
 ```package

@@ -6,13 +6,13 @@ Try this tutorial!
 
 ### ~
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 Create a garden game to collect 4-leaf clovers and avoid the bees!
 
 ![Collect the Clovers game in action](/static/tutorials/collect-the-clovers/collect-clovers-sim.gif)
 
-## Step 1 - Set the Background image
+## {Step 1 - Set the Background image}
 
 From the ``||scene:Scene||`` Toolbox drawer, drag a ``||scene:set background image||``
 block onto the Workspace and drop into the ``||loops:on start||`` block. In the
@@ -145,7 +145,7 @@ scene.setBackgroundImage(img`
 `)
 ```
 
-## Step 2 - Create the Player Character
+## {Step 2 - Create the Player Character}
 
 From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||variables:set mySprite||``
 block and drop it after the ``||scene:set background image||`` block. Click on the
@@ -294,7 +294,7 @@ f b b f f f e e e e f f f b b f
 `, SpriteKind.Player)
 ```
 
-## Step 3 - Move the Player Character
+## {Step 3 - Move the Player Character}
 
 Let’s add code to be able to move our player around the screen. From the ``||contorller:Controller||``
 Toolbox drawer, drag a ``||controller:move mySprite||`` block and drop after the
@@ -444,7 +444,7 @@ f b b f f f e e e e f f f b b f
 controller.moveSprite(mySprite)
 ```
 
-## Step 4 - Keep the Player in the screen
+## {Step 4 - Keep the Player in the screen}
 
 Notice that we can actually move our player off the screen. Let’s prevent that. From the
 ``||sprites:Sprites||`` Toolbox drawer, under the **Effects** category, drag a
@@ -596,7 +596,7 @@ controller.moveSprite(mySprite)
 mySprite.setStayInScreen(true)
 ```
 
-## Step 5 - Initialize the Score and number of Player Lives
+## {Step 5 - Initialize the Score and number of Player Lives}
 
 Let’s set the score to **0** and give our player **3** lives when the game starts. From the
 ``||info:Info||`` Toolbox drawer, drag both a ``||info:set score||`` block and a ``||info:set life||``
@@ -749,7 +749,7 @@ info.setScore(0)
 info.setLife(3)
 ```
 
-## Step 6 - Game Update
+## {Step 6 - Game Update}
 
 Every 5 seconds, we want a clover and a bee to appear in our game. From the ``||game:Game||``
 Toolbox drawer, drag an ``||game:on game update on every||`` block onto the Workspace
@@ -762,7 +762,7 @@ game.onUpdateInterval(5000, function () {
 })
 ```
 
-## Step 7 - Add a Clover Projectile
+## {Step 7 - Add a Clover Projectile}
 
 A Projectile is a Sprite that moves on its own. From the ``||sprites:Sprites||`` Toolbox drawer, drag a
 ``||variables:set projectile to||`` ``||sprites:projectile from side||`` block and drop into the
@@ -793,7 +793,7 @@ f f f f . . f 7 7 f f 7 7 f f .
 })
 ```
 
-## Step 8 - Add Random Movements
+## {Step 8 - Add Random Movements}
 
 Notice how our Clovers are always coming from the top right in a diagonal direction. Let’s add some random
 movements by setting the **X** and **Y** velocity values. From the ``||math:Math||`` Toolbox drawer, drag out 2
@@ -825,7 +825,7 @@ f f f f . . f 7 7 f f 7 7 f f .
 })
 ```
 
-## Step 9 - Add Bee Projectile @fullscreen
+## {Step 9 - Add Bee Projectile @fullscreen}
 
 Now let’s add a Bee projectile. Right-click on the ``||variables:set projectile to||`` ``||sprites:projectile from side||``
 clover block that we just created and select **Duplicate**. Drop the copied block after the existing clover
@@ -877,7 +877,7 @@ f f f f 5 f 5 f 5 f 5 f 5 f f f
 })
 ```
 
-## Step 10 - Set the Bee to Enemy
+## {Step 10 - Set the Bee to Enemy}
 
 To make the Bee an enemy sprite, we need to set its kind. From the ``||sprites:Sprites||`` Toolbox drawer,
 under the **Overlaps** category, drag a ``||sprites:set sprite kind||`` block and drop after the
@@ -929,7 +929,7 @@ f f f f 5 f 5 f 5 f 5 f 5 f f f
 })
 ```
 
-## Step 11 - Add Overlaps behavior
+## {Step 11 - Add Overlaps behavior}
 
 Now let’s add code that will increment our score when the ``||sprites:Player||`` collects a clover.
 From the ``||sprites:Sprites||`` Toolbox drawer, in the **Overlaps** section, drag an
@@ -942,7 +942,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 })
 ```
 
-## Step 12 - Destroy Clover
+## {Step 12 - Destroy Clover}
 
 From the ``||sprites:Sprites||`` Toolbox drawer, under the **Effects** category, drag a ``||sprites:destroy sprite||`` block and drop in the ``||sprites:on sprite overlaps||`` block.
 In the ``||sprites:on sprite overlaps||`` block, drag the ``||sprites:otherSprite||`` local variable (representing the specific overlapping clover) into the ``||sprites:destroy sprite||`` block replacing ``||sprites:mySprite||``.
@@ -953,7 +953,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 })
 ```
 
-## Step 13 - Add Effect @fullscreen
+## {Step 13 - Add Effect @fullscreen}
 
 In the ``||sprites:destroy sprite||`` block, click on the Plus **(+)** icon to expand.
 Click on the ``spray effect`` drop-down menu and select an effect that you want to display when your ``||sprites:Player||`` collects a Clover.
@@ -967,7 +967,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 })
 ```
 
-## Step 14 - Play a Sound
+## {Step 14 - Play a Sound}
 
 From the ``||music:Music||`` Toolbox drawer, drag a ``||music:play sound||`` block, and drop after
 the ``||sprites:destroy sprite||`` block.
@@ -979,7 +979,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 })
 ```
 
-## Step 15 - Change Score
+## {Step 15 - Change Score}
 
 From the ``||info:Info||`` Toolbox drawer, drag a ``||info:change score||`` block and drop after
 the ``||music:play sound||`` block.
@@ -992,7 +992,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 })
 ```
 
-## Step 16 - Add Overlaps behavior for Bee @fullscreen
+## {Step 16 - Add Overlaps behavior for Bee @fullscreen}
 
 Now let’s add behavior for when our ``||sprites:Player||`` runs into a bee.
 Right-click on the the ``||sprites:on sprite overlaps||`` block that we were just working on,
@@ -1010,7 +1010,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Step 17 - Change effects and sounds
+## {Step 17 - Change effects and sounds}
 
 In the ``||sprites:destroy||`` enemy block, select a different effect when your player runs into a bee.
 In the ``||music:play sound||`` block, select a different sound when your player runs into a bee.
@@ -1023,7 +1023,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Step 18 - Lose a life
+## {Step 18 - Lose a life}
 
 Instead of adding a score, let’s change the code to lose a life when our player runs into a bee.
 Delete the ``||info:change score||`` block.
@@ -1038,7 +1038,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Step 19 - Play your Game!
+## {Step 19 - Play your Game!}
 
 That’s it! Now try playing your game in the full screen simulator. You can also try downloading
 your game to a hardware device, or Share your game with others!

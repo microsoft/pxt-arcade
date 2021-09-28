@@ -2,7 +2,7 @@
 
 ## Introduction @showdialog
 
-It's the details that make a difference.  
+It's the details that make a difference.
 
 This tutorial will show you how to send an array of different darts when you fire.
 
@@ -11,7 +11,7 @@ This tutorial will show you how to send an array of different darts when you fir
 
 ## Step 2
 
-**🎯 Take aim! 🎯**  
+**🎯 Take aim! 🎯**
 
 Let's set up an [__*array*__](#arraied "a named list of similar things that can be called by their position in the list")
 of darts.
@@ -21,7 +21,7 @@ of darts.
 ► Expand the ``||statusbars:Advanced||`` category in the toolbox and click
 ``||arrays:Arrays||``.
 
-► Drag ``||variables:set [list] to array of [0] [1]||`` into **the top** of the 
+► Drag ``||variables:set [list] to array of [0] [1]||`` into **the top** of the
 ``||controller:on [A] button [pressed]||`` container already in the workspace.
 
 
@@ -40,10 +40,10 @@ Right now, we have a **list** of numbers. Let's make it a list of darts.
 
 ---
 
-► Click the name **list** inside ``||variables:set [list] to array of [0] [1]||`` and  
+► Click the name **list** inside ``||variables:set [list] to array of [0] [1]||`` and
 choose "Rename variable..." from the dropdown menu.
 
-► Call your list **darts** and click **Ok**.  
+► Call your list **darts** and click **Ok**.
 
 ```block
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -59,73 +59,73 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ► Beneath the ``||statusbars:Advanced||`` category in the toolbox, click
 ``||images:Images||``.
 
-► Drag out **3** empty grey image boxes into the workspace (we'll use them in 
+► Drag out **3** empty grey image boxes into the workspace (we'll use them in
 the next step).
 
-  
+
 
 ## Step 5
 
 ► Snap the first two grey image boxes into ``||variables:set [list] to array of [0] [1]||`` to
-replace the numbers **0** and **1**. 
+replace the numbers **0** and **1**.
 
-► Add space for the new image box by clicking the **+** symbol at the right of 
-the block, then snap the last image box into place. 
+► Add space for the new image box by clicking the **+** symbol at the right of
+the block, then snap the last image box into place.
 
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     let darts = [img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
         `, img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
         `, img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
         `]
     let projectile = sprites.createProjectileFromSprite(assets.image`Dart1`, mySprite, 0, -150)
     projectile.startEffect(effects.ashes)
@@ -142,20 +142,20 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ► Click the second empty grey image box and toggle to **My Assets** to select **Dart2**.
 
-► In the final box, draw your own dart!  
+► In the final box, draw your own dart!
 
 ---
 
-**Tip:** Keep in mind that the provided darts are both 3px by 4px in size. 
+**Tip:** Keep in mind that the provided darts are both 3px by 4px in size.
 What do you think will happen if you make yours larger or smaller?
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     let darts = [assets.image`Dart1`, assets.image`Dart2`, img`
-. 9 . 
-. 9 . 
-. 9 . 
-5 5 5 
+. 9 .
+. 9 .
+. 9 .
+5 5 5
 `]
     let projectile = sprites.createProjectileFromSprite(assets.image`Dart1`, mySprite, 0, -150)
     projectile.startEffect(effects.ashes)
@@ -168,7 +168,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ---
 
-► From ``||arrays:Arrays||``, drag ``||arrays:get random value from [list]||`` in to replace the current 
+► From ``||arrays:Arrays||``, drag ``||arrays:get random value from [list]||`` in to replace the current
 dart image in the ``||variables:set [projectile] to ...||`` block (just beneath the list you have created.)
 
 ► Click **list** and change it to **darts** using the dropdown menu.
@@ -177,10 +177,10 @@ dart image in the ``||variables:set [projectile] to ...||`` block (just beneath 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     let darts = [assets.image`Dart1`, assets.image`Dart2`, img`
-. 9 . 
-. 9 . 
-. 9 . 
-5 5 5 
+. 9 .
+. 9 .
+. 9 .
+5 5 5
 `]
     let projectile = sprites.createProjectileFromSprite(darts._pickRandom(), mySprite, 0, -150)
     projectile.startEffect(effects.ashes)
@@ -192,18 +192,18 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 **🎮 Now give your project a try on the game screen 🎮**
 
-How does it look?  
+How does it look?
 If there's anything you don't like, now is a great time to dig in and change it!
 
 
 
 ## Finale
 
-**You've done it!!** 
+**You've done it!!**
 
-You've finished your Space Explorer game! 
+You've finished your Space Explorer game!
 
-When you're done playing with it, click **Finish** to return to the main 
+When you're done playing with it, click **Done** to return to the main
 page where you can add this game to your gallery to keep building, then share with family & friends.
 
 
@@ -260,7 +260,7 @@ game.onUpdateInterval(2000, function () {
     myEnemy = sprites.createProjectileFromSide(assets.image`Spider`, 0, enemySpeed)
     myEnemy.x = randint(5, 155)
     myEnemy.setKind(SpriteKind.Enemy)
-    
+
 })
 game.onUpdateInterval(300, function () {
     statusbar.value += -1

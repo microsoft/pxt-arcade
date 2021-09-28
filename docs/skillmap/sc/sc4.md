@@ -3,7 +3,7 @@
 
 ## Welcome @showdialog
 
-**One of the rings is locked away!**  
+**One of the rings is locked away!**
 This activity will show you how to destroy tiles so you can get every point.
 
 ![Using powerful kicks to clear the way](/static/skillmap/sc/sc4.gif "Time to live dangerously!")
@@ -23,7 +23,7 @@ Can you find the ring that's blocked in?
 
 ## Step 3 - When B Pressed
 
-**💥 Nothing a powerful kick can't fix 💥**  
+**💥 Nothing a powerful kick can't fix 💥**
 We need to remove some walls and tiles! Let's clear the way when the B button is pressed.
 
 ---
@@ -35,7 +35,7 @@ We need to remove some walls and tiles! Let's clear the way when the B button is
 
 ```blocks
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    
+
 })
 ```
 
@@ -54,7 +54,7 @@ We're going to use a **projectile** block to clear tiles when we kick.
 ```blocks
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     let projectile = sprites.createProjectileFromSprite(assets.image`power kick`, mySprite, 50, 50)
-   
+
 })
 ```
 
@@ -113,10 +113,10 @@ In this step, we'll choose **an animation** for our sprite's kick!
 
 ► Click the **Advanced** category in the toolbar to reveal the ``||animation:Animation||`` category.
 
-► From ``||animation:Animation||``, drag the ``||animation:animate [mySprite]||`` block to **the end** of ``||controller:on [B] button [pressed]||``. 
+► From ``||animation:Animation||``, drag the ``||animation:animate [mySprite]||`` block to **the end** of ``||controller:on [B] button [pressed]||``.
 
 
-► Inside the ``||animation:animate [mySprite]||`` block, click the empty grey square and toggle to **My Assets** to choose the **kick** animation for your sprite and click **Done**.  
+► Inside the ``||animation:animate [mySprite]||`` block, click the empty grey square and toggle to **My Assets** to choose the **kick** animation for your sprite and click **Done**.
 
 💡 The **interval** should automatically change to **125** ms, but if it doesn't, you can change it yourself.
 
@@ -153,7 +153,7 @@ Press the B button to see your sprite give a powerful kick!
 
 ## Step 9 - Removing Block Tiles
 
-**💥 Kapow 💥**  
+**💥 Kapow 💥**
 When your **power kick** projectile overlaps a platform, we need to remove the wall and tile.
 
 ---
@@ -167,7 +167,7 @@ When your **power kick** projectile overlaps a platform, we need to remove the w
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Projectile, assets.tile`boulder`, function (sprite, location) {
-    
+
 })
 ```
 
@@ -227,7 +227,7 @@ You should have everything you need to collect all five rings and get to the end
 
 ---
 
-When you're done playing, click **Finish** to return to the main page to add more animations!
+When you're done playing, click **Done** to return to the main page to add more animations!
 
 
 
@@ -292,14 +292,14 @@ namespace sprites {
             thisSprite.vy = -200
         }
     }
-    
+
     /**
-     * Set a profile pic and name for your hero in the 
+     * Set a profile pic and name for your hero in the
      * upper-left hand corner of the screen
      */
     //% block="add corner profile for $choice"
     export function add_profile (choice:Choice) {
-        if (choice == Choice.xialing){ 
+        if (choice == Choice.xialing){
             profilelife.setProfileImage(assets.image`Xialing profile`)
             profilelife.setName("Xialing")
         }

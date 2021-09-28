@@ -1,10 +1,10 @@
 # Name tag
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 Let's use the image editor to create a cool name tag!
 
-## Step 1
+## {Step 1}
 
 We are going to mimic a name tag with red strips on top and bottom.
 Add a ``||scene:set background color||`` block in on start to paint the screen red.
@@ -14,7 +14,7 @@ Add a ``||scene:set background color||`` block in on start to paint the screen r
 scene.setBackgroundColor(2)
 ```
 
-## Step 2
+## {Step 2}
 
 Add a ``||scene:set background image||`` block and paint the center in white, then paint your name.
 
@@ -145,7 +145,7 @@ scene.setBackgroundImage(img`
 `)
 ```
 
-## Step 3
+## {Step 3}
 
 Drag a ``||scene:start screen effect||`` block to add some cool particle animation on your tag.
 
@@ -277,10 +277,10 @@ scene.setBackgroundImage(img`
 effects.confetti.startScreenEffect()
 ```
 
-## Step 4
+## {Step 4}
 
 Press ``||Download||`` and transfer your name tag to your device!
 
-## Complete
+## {Complete}
 
 Congratulations, your name tag is complete!

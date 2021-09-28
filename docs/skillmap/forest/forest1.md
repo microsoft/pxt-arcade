@@ -13,7 +13,7 @@ Let's start by setting up your plane to make sure you can get everywhere you nee
 
 
 
-## 2. Set the Scene 
+## 2. Set the Scene
 
 **🌲 Welcome to the Forest**
 
@@ -21,15 +21,15 @@ Choose a [__*tilemap*__](#tiled "a scene or world created using predefined tiles
 
 ---
 
-- :tree:  Under the ``||scene:Scene||`` category in the toolbox, you'll find the  
-``||scene:set tilemap to []||``  
-block.  Drag it into the empty  
-``||loops:on start||``  
-container already in your workspace.  
+- :tree:  Under the ``||scene:Scene||`` category in the toolbox, you'll find the
+``||scene:set tilemap to []||``
+block.  Drag it into the empty
+``||loops:on start||``
+container already in your workspace.
 
-_💡  Having trouble finding the block you need? Look to the left of the instructions for the icon of the toolbox category where your block lives!_ 
+_💡  Having trouble finding the block you need? Look to the left of the instructions for the icon of the toolbox category where your block lives!_
 
-- :mouse pointer: When you're ready to move on to the next set of instructions, click **Next**. 
+- :mouse pointer: When you're ready to move on to the next set of instructions, click **Next**.
 
 
 
@@ -40,12 +40,12 @@ tiles.setTilemap(tilemap`level2`)
 
 
 
-## 3. Set Your Map 
+## 3. Set Your Map
 
-- :paint brush: Click the empty grey square in   
-the  
-``||scene:set tilemap to []||``  
-and toggle to **My Assets** to select the tilemap called **level1**. 
+- :paint brush: Click the empty grey square in
+the
+``||scene:set tilemap to []||``
+and toggle to **My Assets** to select the tilemap called **level1**.
 
 
 ```blocks
@@ -73,20 +73,20 @@ When you're ready to continue, click back to the instructions tab for more!
 
 **We need a hero**
 
-Choose a [__*sprite*__](#sprote "a 2-D image that moves on the screen") 
-for your aircraft that you will fly around the screen. 
+Choose a [__*sprite*__](#sprote "a 2-D image that moves on the screen")
+for your aircraft that you will fly around the screen.
 
 ---
 
-- :paper plane:  Drag  
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  
-to **the end** of the  
-``||loops:on start||``  
+- :paper plane:  Drag
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
+to **the end** of the
+``||loops:on start||``
 container.
 
-_💡  Remember, the bubble on the left shows the icon of the toolbox category for the block you need._ 
+_💡  Remember, the bubble on the left shows the icon of the toolbox category for the block you need._
 
-- :paint brush:  To choose your plane, click the empty grey box, then toggle to **My Assets** and choose your aircraft. 
+- :paint brush:  To choose your plane, click the empty grey box, then toggle to **My Assets** and choose your aircraft.
 
 _💡 We'll be using the **Fire Plane Right** sprite, but you can use something else...or even recolor one we've provided!_
 
@@ -106,10 +106,10 @@ let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
 
 ---
 
-- :game pad: Drag  
-``||controller:move [mySprite] with buttons ⊕||``    
-to **the end** of the  
-``||loops:on start||``  
+- :game pad: Drag
+``||controller:move [mySprite] with buttons ⊕||``
+to **the end** of the
+``||loops:on start||``
 container.
 
 
@@ -127,7 +127,7 @@ controller.moveSprite(mySprite)
 
 ---
 
-Your sprite should move around the forest as you move the joypad.    
+Your sprite should move around the forest as you move the joypad.
 
 _💡 You can also use the arrow keys on your keyboard!_
 
@@ -140,10 +140,10 @@ _💡 You can also use the arrow keys on your keyboard!_
 
 ---
 
-- :tree:   To keep your sprite in sight, drag 
-``||scene:camera follow sprite [mySprite]||``  
-to **the end** of the  
-``||loops:on start||``  
+- :tree:   To keep your sprite in sight, drag
+``||scene:camera follow sprite [mySprite]||``
+to **the end** of the
+``||loops:on start||``
 container.
 
 _💡 Don't forget to play with your project after each step to see the changes your code has made._
@@ -163,11 +163,11 @@ scene.cameraFollowSprite(mySprite)
 
 ## Finale
 
-👏 **You're off to a great start!**   
+👏 **You're off to a great start!**
 
 ---
 
-When you're finished, click **Done** to 
+When you're finished, click **Done** to
 head to the next activity where you'll add the 🔥🔥🔥.
 
 

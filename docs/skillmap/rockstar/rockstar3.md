@@ -12,7 +12,7 @@ How did those fans get backstage?  Keep the fans away from Jerry if you want to 
 
 ## 2. Spot the Fan
 
-**📸 Remove points when Jerry runs into a screaming fan 📸**   
+**📸 Remove points when Jerry runs into a screaming fan 📸**
 
 When your sprite overlaps a fan, we'll change the score.
 
@@ -20,7 +20,7 @@ When your sprite overlaps a fan, we'll change the score.
 
 
 - :puzzle: To detect an overlap, go open the ``||scene:Scene||`` category and drag an
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``
 container into an empty area of the workspace.
 
 - :mouse pointer: Change the checkerboard to the tile called **fan1**.
@@ -34,8 +34,8 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`fan1`, function (sprite, loca
 ## 3. Subtract Points
 
 
-- :puzzle: From ``||info:Info||``, snap a ``||info:change score by [1]||`` block into 
-the new container. 
+- :puzzle: From ``||info:Info||``, snap a ``||info:change score by [1]||`` block into
+the new container.
 
 - :mouse pointer: Change **1** to **-1**.
 
@@ -64,14 +64,14 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`fan1`, function (sprite, loca
 
 - :puzzle: From ``||scene:Scene||``, drag ``||scene:set [ ] at tilemap col [0] row [0]||`` into **the top** of the ``||scene:on [sprite] of kind [Player] overlaps [fan1] at [location]||`` container.
 
-- :puzzle: Replace ``||scene:tilemap col [0] row [0]||`` with the 
+- :puzzle: Replace ``||scene:tilemap col [0] row [0]||`` with the
 ``||variables:location||`` value from the top of the **Player overlaps fan** container.
 
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`fan1`, function (sprite, location) {
     //@highlight
-    tiles.setTileAt(location, assets.tile`transparency16`)  
+    tiles.setTileAt(location, assets.tile`transparency16`)
     info.changeScoreBy(-1)
 })
 ```
@@ -81,29 +81,29 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`fan1`, function (sprite, loca
 
 ## 6. More Fans
 
-**🎤 Encore 🎤**   
+**🎤 Encore 🎤**
 Follow the same steps two more times to include the other fans.
 
 ---
 
 - :puzzle: Drag
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``
 into an empty area of the workspace and **set the fan tiles**.
 
-- :puzzle: Drag ``||scene:set [ ] at tilemap col [0] row [0]||`` into 
-``||scene:on [sprite] of kind [Player] overlaps [fan] at [location]||`` and replace 
-``||scene:tilemap col [0] row [0]||`` with 
+- :puzzle: Drag ``||scene:set [ ] at tilemap col [0] row [0]||`` into
+``||scene:on [sprite] of kind [Player] overlaps [fan] at [location]||`` and replace
+``||scene:tilemap col [0] row [0]||`` with
 ``||variables:location||``.
 
-- :puzzle: Snap ``||info:change score by [1]||`` into the new container and change to **-1**. 
+- :puzzle: Snap ``||info:change score by [1]||`` into the new container and change to **-1**.
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`fan2`, function (sprite, location) {
-    tiles.setTileAt(location, assets.tile`transparency16`)  
+    tiles.setTileAt(location, assets.tile`transparency16`)
     info.changeScoreBy(-1)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`fan3`, function (sprite, location) {
-    tiles.setTileAt(location, assets.tile`transparency16`)  
+    tiles.setTileAt(location, assets.tile`transparency16`)
     info.changeScoreBy(-1)
 })
 ```
@@ -115,20 +115,20 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`fan3`, function (sprite, loca
 
 ---
 
-You should lose one point for every fan you run into. 
+You should lose one point for every fan you run into.
 How many points can you keep on your way to the door?
 
 
 ## 6. Out of Time
 
-**🕒 Make it out in time 🕒**   
+**🕒 Make it out in time 🕒**
 Let's use a timer to add some hustle to the whole experience!
 
 ---
 
 - :puzzle: From ``||info:Info||`` drag ``||info:start countdown [10] (s)||`` into **the end**  of the ``||loops:on start||`` container.
 
-- :mouse pointer: Change 10 to 30 to give yourself extra time. 
+- :mouse pointer: Change 10 to 30 to give yourself extra time.
 
 ```blocks
 scene.setBackgroundColor(13)
@@ -145,14 +145,14 @@ info.startCountdown(30)
 
 ## Finale
 
-🔥 **Congratulations** 🔥   
+🔥 **Congratulations** 🔥
 
 ---
 
-Grab your instruments and get Jerry to the end of the maze before time runs out! 
+Grab your instruments and get Jerry to the end of the maze before time runs out!
 
 
-When you're done playing, click **Done** to head back to the 
+When you're done playing, click **Done** to head back to the
 skillmap where you can share your final game or click "Save to My Projects" to keep building!
 
 
