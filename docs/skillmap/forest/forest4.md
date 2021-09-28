@@ -152,7 +152,7 @@ Does it get out of control too quickly?
 
 ## 7. No Fuel, No Fire
 
-Right now, the fires don't burn the trees, 
+Right now, the fires don't burn the trees
 so they can appear on the same tree over and over. 
 When a flame burns out, we want to mark that spot in the forest with a special tile.
 
@@ -221,6 +221,8 @@ with
 - :mouse pointer:   To get the location for the correct sprite, replace  ``||variables:mySprite||`` with the ``||variables:sprite||``
 value from the outer ** on destroyed** container.
 
+![Grab the sprite value from the title bar of the outer container](/static/skillmap/assets/sprite-from-container.gif "This is how your block knows which sprite to use")
+
 
 ```blocks
 namespace SpriteKind {
@@ -234,6 +236,10 @@ sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
 })
 
 ```
+
+---
+
+![Grab the sprite value from the title bar of the outer container](/static/skillmap/assets/sprite-from-container.gif "This is how your block knows which sprite to use")
 
 
 
