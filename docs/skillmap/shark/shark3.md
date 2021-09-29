@@ -1,6 +1,6 @@
 # Eat Up!
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Ready for some fish?
 
@@ -9,7 +9,7 @@ Ready for some fish?
 In this activity, you'll create code to help the shark earn points for each fish it eats.
 
 
-## step 2
+## {step 2}
 
 **🕹️ See what you have 🕹️**
 
@@ -19,7 +19,7 @@ Play with your project to remember which piece of code creates which actions in 
 
 
 
-## step 3
+## {step 3}
 
 **🍜 Time to eat 🍜**
 
@@ -38,7 +38,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 ```
 
-## Step 4
+## {Step 4}
 
 **🦈 YUMMMMMM 🦈**
 When the shark catches the fish, we need to make the fish disappear.
@@ -57,7 +57,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 ```
 
-## Step 5
+## {Step 5}
 
 ► Click the plus (+) sign to the right of the ``||sprites:destroy [otherSprite]||`` block and choose an effect to play while the fish vanishes!
 
@@ -71,7 +71,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 
 
-## Step 6
+## {Step 6}
 
 
 **🎉 SCORE 🎉**
@@ -90,7 +90,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 ```
 
 
-## Step 7
+## {Step 7}
 
 
 **⌛ It's about time ⌛**
@@ -114,7 +114,7 @@ mySprite.setStayInScreen(true)
 ```
 
 
-## Step 8
+## {Step 8}
 
 
 **🐟 Winner, winner...fish for dinner**
@@ -136,7 +136,7 @@ info.onCountdownEnd(function () {
 
 
 
-## Finale
+## {Finale}
 
 **🎮 How many fish you can catch in 15 seconds? 🎮**
 

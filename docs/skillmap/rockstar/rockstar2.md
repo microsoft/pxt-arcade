@@ -1,7 +1,7 @@
 # 80's Rockstar: Get Your Gear
 
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
 Jerry needs to gather all of the instruments before getting on the tour bus!
 
@@ -10,7 +10,7 @@ Jerry needs to gather all of the instruments before getting on the tour bus!
 
 
 
-## 2. Add Points
+## {2. Add Points}
 
 **🎸 Award points when Jerry grabs an instrument**  
 When your sprite overlaps an instrument, we'll change the score.
@@ -35,7 +35,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument1`, function (sprit
 })
 ```
 
-## 3. Try It!
+## {3. Try It!}
 
 **🕹️ Try your maze and grab a guitar**  
 
@@ -44,7 +44,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument1`, function (sprit
 Uh oh!  You get WAY too many points when you touch the guitar! We can fix that in the next step.
 
 
-## 4. Pick It Up
+## {4. Pick It Up}
 
 **Replace the instruments you collect with an empty tile.**  
 
@@ -76,7 +76,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument1`, function (sprit
 
 
 
-## 5. Look Again
+## {5. Look Again}
 
 **🕹️ Try your maze in the game window**  
 
@@ -85,7 +85,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument1`, function (sprit
 You should get one point for every guitar you collect.  What about the drums and keyboard?
 
 
-## 6. More Instruments
+## {6. More Instruments}
 
 **🎹 Do it all again**  
 Follow the same steps two more times to add points for the **drums** and **keyboard** tiles.
@@ -120,7 +120,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument4`, function (sprit
 ```
 
 
-## 7. Look Again...Again
+## {7. Look Again...Again}
 
 **🕹️ Try your maze again**  
 
@@ -130,7 +130,7 @@ You should get one point for every instrument you collect!  Can you make it to t
 
 
 
-## 8. Out the Door
+## {8. Out the Door}
 
 **🚪 Make it out the door**  
 Let's finish the game with a WIN when Jerry overlaps the exit door!
@@ -158,7 +158,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`exit`, function (sprite, loca
 
 
 
-## Finale
+## {Finale}
 
 🔥 **A-MAZE-ING** 🔥
 

@@ -73,7 +73,7 @@ scene.setBackgroundColor(11)
 tiles.setTilemap(tilemap`level`)
 ```
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
 Now let's take a look at the [__*sidescrolling*__](#scrolld "games that are viewed from the side, with most of the action happening horizontally")
 [__*platformer*__](#plat "games that rely on jump and run as their main mechanic").
@@ -87,7 +87,7 @@ to make a fun and engaging arcade game worth sharing.
 ![Our first platformer](/static/skillmap/platformer/platformer1.gif "Look what we're about to learn today!")
 
 
-## Create the player
+## {Create the player}
 
 **The first thing any good platformer needs is a main character. 🐒**
 
@@ -134,7 +134,7 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)
 ```
 
-## Move the player
+## {Move the player}
 
 **🏃🏾‍♀️ Now we need to get the player moving 🏃🏾‍♀️**
 
@@ -172,7 +172,7 @@ let mySprite = sprites.create(img`
 controller.moveSprite(mySprite, 100, 0)
 ```
 
-## Try it
+## {Try it}
 
 **Be sure to give your game a try on the game screen!**
 
@@ -181,7 +181,7 @@ controller.moveSprite(mySprite, 100, 0)
 How do you like it?  Feel like making a few more changes?
 
 
-## Add gravity
+## {Add gravity}
 
 **To make the game feel more realistic, it needs gravity.**
 
@@ -226,7 +226,7 @@ controller.moveSprite(mySprite, 100, 0)
 mySprite.ay = 500
 ```
 
-## Jump Pt. 1
+## {Jump Pt. 1}
 
 Now that the player is on the ground, we can make it jump!
 
@@ -276,7 +276,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Done
+## {Done}
 
 🔥 **That's it! Now give your game a try!** 🔥
 

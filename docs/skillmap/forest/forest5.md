@@ -1,7 +1,7 @@
 # Head's Up
 
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
 Computer science is more important to firefighting than ever before.
 
@@ -11,7 +11,7 @@ Let's add a heads-up-display (HUD) to help the pilot get information from their 
 
 
 
-## 2. Remember
+## {2. Remember}
 
 **🎮 Try your game**
 
@@ -21,16 +21,16 @@ Can you remember which lines of code create each action?
 
 
 
-## 3. Look Up
+## {3. Look Up}
 
 A HUD (heads-up-display) will help the pilot see how many fires are burning at any moment.
 
 ---
 
-- :binoculars:  Grab the  
-``||hud: show fire HUD <Yes>||``  
-block and add it to **the end** of the  
-``||loops: on start||``  
+- :binoculars:  Grab the
+``||hud: show fire HUD <Yes>||``
+block and add it to **the end** of the
+``||loops: on start||``
 container.
 
 
@@ -60,7 +60,7 @@ hud.fire_hud(true)
 ```
 
 
-## 4. Test
+## {4. Test}
 
 **🎮 Test your game**
 
@@ -70,16 +70,16 @@ Is it any easier when you know there are still fires left?
 
 
 
-## 5. Fire Danger
+## {5. Fire Danger}
 
 Anticipate how quickly fires will spread with the **Fire Danger HUD**.
 
 ---
 
-- :binoculars:  Add  
-``||hud: show danger level HUD <Yes>||``  
-to **the end** of the  
-``||loops: on start||``  
+- :binoculars:  Add
+``||hud: show danger level HUD <Yes>||``
+to **the end** of the
+``||loops: on start||``
 container so you know how quickly your fires are likely to spread.
 
 
@@ -108,17 +108,17 @@ hud.danger_hud(true)
 ```
 
 
-## 6. Healthy Forests
+## {6. Healthy Forests}
 
 The crew needs to know the progress of the fire. Add another hud
 to share information on how much of the forest is still healthy.
 
 ---
 
-- :binoculars:  Grab the the  
-``||hud: show forest HUD <Yes>||``  
-block and add it to **the end** of the  
-``||loops: on start||``  
+- :binoculars:  Grab the the
+``||hud: show forest HUD <Yes>||``
+block and add it to **the end** of the
+``||loops: on start||``
 container to show how much of the forest remains.
 
 
@@ -147,19 +147,19 @@ hud.danger_hud(true)
 hud.forest_hud(true)
 ```
 
-## 7. Test Again
+## {7. Test Again}
 
 **🎮 Test your game again**
 
 ---
 
-Now you can see how quickly you're making progress. 
-But the colors of the forest meter don't seem to represent the forest well. 
+Now you can see how quickly you're making progress.
+But the colors of the forest meter don't seem to represent the forest well.
 You can customize those in the next step.
 
 
 
-## 8. Customize
+## {8. Customize}
 
 Take a look at the rest of the blocks in the **HUD** category. Use as many as you want
 to customize your game screen!
@@ -196,7 +196,7 @@ hud.fire_hud_label ("Hot:")
 ```
 
 
-## 9. Play
+## {9. Play}
 
 **🎮 Time to play your game!**
 
@@ -210,9 +210,9 @@ What happens when you bump the numbers all the way up to 10 or all the way down 
 
 
 
-## Finale
+## {Finale}
 
-👏 **You've done it!** 
+👏 **You've done it!**
 
 ---
 

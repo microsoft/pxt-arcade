@@ -14,7 +14,7 @@ info.startCountdown(10)
 ```
 
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 We already have a basic clicker game, let's use what we've learned to
 make it even more special!
@@ -22,7 +22,7 @@ make it even more special!
 ![Click away](/static/skillmap/clicker/clickert2.gif "Click and buy bigger clickers" )
 
 
-## Step 2
+## {Step 2}
 
 🕹️ Prepare for this activity by playing the game already in the workspace 🕹️
 
@@ -31,7 +31,7 @@ make it even more special!
 ► Click **> Next** when you're ready to edit the game.
 
 
-## Step 3
+## {Step 3}
 
 Let's make this game more engaging by adding a
 button [__*sprite*__](#sprote "a 2-D image that moves on the screen") to the screen.
@@ -55,7 +55,7 @@ mySprite = sprites.create(assets.image`A static`, SpriteKind.Player)
 
 
 
-## Step 4
+## {Step 4}
 
 **✨ Make your button look like it's being pressed
 with each click ✨**
@@ -78,12 +78,12 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ```
 
-## Step 5 @showdialog
+## {Step 5 @showdialog}
 
 **🎮 Try it out on the game screen 🎮**
 
 
-## Step 6
+## {Step 6}
 
 Right now, the button never goes back up once pressed.
 **Let's change that!**
@@ -105,13 +105,13 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 
 ```
 
-## Step 7
+## {Step 7}
 
 Now test your project on the game screen to make sure the button goes up and down.
 
 
 
-## Step 8
+## {Step 8}
 
 **Did you notice that your game automatically keeps track of your highest score?**
 
@@ -135,7 +135,7 @@ info.onCountdownEnd(function () {
 })
 ```
 
-## Step 9
+## {Step 9}
 
 **🎊 Fantastic 🎊**
 
@@ -154,7 +154,7 @@ info.onCountdownEnd(function () {
 })
 ```
 
-## Step 9
+## {Step 9}
 
 **That's it!**
 

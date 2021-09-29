@@ -1,13 +1,13 @@
 # Under the Sea
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Let's build a world for your shark to swim around in!
 
 ![Build a world](/static/skillmap/shark/shark4.gif)
 
 
-## Step 2 - Add a Background
+## {Step 2 - Add a Background}
 
 **🌊 Under the Sea 🌊**
 
@@ -28,7 +28,7 @@ mySprite.setStayInScreen(true)
 info.startCountdown(15)
 ```
 
-## Step 3 - Repeat Decorations
+## {Step 3 - Repeat Decorations}
 
 **Next, let's use a **repeat** loop to add some decorative sprites to the sea floor.**
 
@@ -51,7 +51,7 @@ for (let index = 0; index < 10; index++) {
 }
 ```
 
-## Step 4 - Add Background Decorations
+## {Step 4 - Add Background Decorations}
 
 ► From ``||sprites:Sprites||``, drag ``||variables:set [mySprite2] to sprite [ ] of kind [Player]||`` into the empty ``||loops:repeat [10] times||`` container.
 
@@ -79,7 +79,7 @@ for (let index = 0; index < 10; index++) {
 }
 ```
 
-## Step 5 - Update Sprite Position
+## {Step 5 - Update Sprite Position}
 
 **Placement is everything!**
 To make the seaweed look more natural, let's change the **y value** (vertical position) to place it closer to the bottom of the screen.
@@ -111,7 +111,7 @@ for (let index = 0; index < 10; index++) {
 }
 ```
 
-## Step 6 - Random Flow
+## {Step 6 - Random Flow}
 
 ► To scatter the seaweed along the floor, drag a ``||math:pick random [0] to [10]||`` block to replace the **x** value.
 
@@ -136,7 +136,7 @@ for (let index = 0; index <= 10; index++) {
 }
 ```
 
-## step 7
+## {step 7}
 
 **🎮 Time to play 🎮**
 
@@ -145,7 +145,7 @@ for (let index = 0; index <= 10; index++) {
 Check out your creation in the game window!  Refresh your project a few times to see how the seaweed takes a different random pattern in each game.
 
 
-## Finale
+## {Finale}
 
 **Excellent!**
 Now your shark has a lovely living space!

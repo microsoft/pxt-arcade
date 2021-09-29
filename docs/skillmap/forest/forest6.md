@@ -1,7 +1,7 @@
 # Keep Going!
 
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
 Love your game, but wish you could add something more? Wish granted!
 
@@ -9,7 +9,7 @@ Love your game, but wish you could add something more? Wish granted!
 
 
 
-## 2. Remember
+## {2. Remember}
 
 **🎮 Try your game**
 
@@ -19,15 +19,15 @@ Can you remember which lines of code create each action?
 
 
 
-## 3. To the Left
+## {3. To the Left}
 
 Planes don't often fly backwards. Let's animate our plane and make sure
 it flips around as it goes back and forth.
 
 ---
 
-- :game: Drag an  
-``||controller:on [A] button [pressed]||``  
+- :game: Drag an
+``||controller:on [A] button [pressed]||``
 container into an empty area of the workspace.
 
 - :mouse pointer: Change ``||controller:A||`` to ``||controller:left||``.
@@ -38,7 +38,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## 4. Animated Plane
+## {4. Animated Plane}
 
 Choose an animation to loop when the plane is flying left.
 
@@ -46,10 +46,10 @@ Choose an animation to loop when the plane is flying left.
 
 - :toolbox: In the toolbox, click **Advanced**, then open the ``||animation:Animation||`` category.
 
-- :sync: Drag  
-``||animation:animate [mySprite]||``  
-into the empty  
-``||controller:on [left] button [pressed]||``  
+- :sync: Drag
+``||animation:animate [mySprite]||``
+into the empty
+``||controller:on [left] button [pressed]||``
 container.
 
 - :mouse pointer: Set **loop** to **`<ON>`**, then click the grey square
@@ -67,7 +67,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## 5. To the Right
+## {5. To the Right}
 
 Follow the same steps to animate your plane when the **right** button is pressed.
 
@@ -84,7 +84,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## 6. Test
+## {6. Test}
 
 **🎮 Test your game **
 
@@ -96,13 +96,13 @@ Your plane should face left when you fly left and right when you fly right!
 
 
 
-## 7. Sounds
+## {7. Sounds}
 
 **🎶 Now add sounds**
 
 ---
 
-- :headphones: Find the block that will let you add sound when a sprite of kind ``||sprites:Fire||`` is **destroyed**.  
+- :headphones: Find the block that will let you add sound when a sprite of kind ``||sprites:Fire||`` is **destroyed**.
 💡 We like the **thump** sound for this.
 
 - :question: Can you figure out where to add this block if you want it to play each time a sprite of kind **Fire** is **destroyed**?
@@ -122,14 +122,14 @@ sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
 ```
 
 
-## 8. More Sounds
+## {8. More Sounds}
 
 It's also helpful to have a sound that lets you know when a new fire has started.
 
 ---
 
-- :headphones: Find a sound to add when a sprite 
-of kind ``||sprites:Fire||`` is **created**.  
+- :headphones: Find a sound to add when a sprite
+of kind ``||sprites:Fire||`` is **created**.
 💡 We like the **knock** sound for this.
 
 - :question: Can you figure out where to add this block if you want it to play each time a sprite of kind **Fire** is **created**?
@@ -150,7 +150,7 @@ sprites.onCreated(SpriteKind.Fire, function (sprite) {
 ```
 
 
-## 9. Play 
+## {9. Play }
 
 **🎮 Check out what you made!**
 
@@ -161,9 +161,9 @@ variables to see how challenging your game can be.
 
 
 
-## Finale
+## {Finale}
 
-👏 **That's it!** 
+👏 **That's it!**
 
 ---
 

@@ -2,7 +2,7 @@
 
 ### @autoexpandOff true
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Time to refuel!
 
@@ -15,7 +15,7 @@ ship from breaking down!
 ![Fuel Up!](/static/skillmap/space/eat-gas.gif "Is it raining...tacos?")
 
 
-## Step 1
+## {Step 1}
 😵 The starter code is taking up a lot of room!
 Don't worry, the Arcade workspace will expand for you. Just scroll up and
 over (or down and over) to keep building.
@@ -41,7 +41,7 @@ click ``||statusbars:˅ Advanced||`` and choose ``||extension:Extensions||``.
 let statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
 ```
 
-## Step 2
+## {Step 2}
 If we want the status bar to show the details of **mySprite**, we'll need to link the two together.
 
 ---
@@ -61,7 +61,7 @@ let statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
 statusbar.attachToSprite(mySprite, -25, 0)
 ```
 
-## Step 3
+## {Step 3}
 ⏰ The longer you're in the air, the more fuel you use ⏰
 
 Here's how to make the fuel go down as time passes.
@@ -90,7 +90,7 @@ game.onUpdateInterval(300, function () {
 })
 ```
 
-## Step 4
+## {Step 4}
 **⛽ Time to refuel ⛽**
 
 You can drop gas canisters, energy crystals, or juicy hamburgers...whatever
@@ -141,7 +141,7 @@ game.onUpdateInterval(5000, function () {
         `, 0, 50)
 })
 ```
-## Step 5
+## {Step 5}
 
 Just like with the enemies, we'll want the fuel to drop from a random position
 across the top of the screen.
@@ -195,7 +195,7 @@ game.onUpdateInterval(5000, function () {
 })
 ```
 
-## Step 6
+## {Step 6}
 
 Now we need to put our **myFuel** sprite into the _Gas_ class.
 
@@ -241,7 +241,7 @@ game.onUpdateInterval(5000, function () {
 ```
 
 
-## Step 7
+## {Step 7}
 When your ship overlaps fuel, you'll want the gas to disappear as the tank refills.
 
 ---
@@ -276,7 +276,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Gas, function (sprite, otherSpri
 })
 ```
 
-## Step 9
+## {Step 9}
 **🌌 If you run out of fuel, you'll be marooned in space! 🌌**
 
 The threat is real.
@@ -299,7 +299,7 @@ statusbars.onZero(StatusBarKind.Energy, function (status) {
 ```
 
 
-## Finale
+## {Finale}
 
 
 

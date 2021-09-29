@@ -1,7 +1,7 @@
 # Shang-Chi: Opening Scene
 
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
 Welcome to MakeCode Arcade!
 
@@ -14,7 +14,7 @@ based on the Marvel movie **Shang-Chi and the Legend of the Ten Rings**.
 
 
 
-## Step 2
+## {Step 2}
 
 **Your scene has already been set!**
 
@@ -26,7 +26,7 @@ based on the Marvel movie **Shang-Chi and the Legend of the Ten Rings**.
 
 
 
-## Step 3 - We need a HERO
+## {Step 3 - We need a HERO}
 
 **💥 We need a hero 💥**
 
@@ -51,7 +51,7 @@ let mySprite = sprites.create(assets.image`Xialing`, SpriteKind.Player)
 ![Choose your character sprite](/static/skillmap/sc/choose-sprite.gif "Choose your favorite sibling.")
 
 
-## Step 4 - Build a Profile
+## {Step 4 - Build a Profile}
 
 Let's add a profile pic up in the corner so we can keep track of our character's lives.
 
@@ -73,7 +73,7 @@ sprites.add_profile(Choice.xialing)
 
 
 
-## Step 5 - Control the Player
+## {Step 5 - Control the Player}
 
 **↔️ Time to get the player moving ↔️**
 
@@ -96,7 +96,7 @@ controller.moveSprite(mySprite, 100, 0)
 ```
 
 
-## Step 6 - Try It
+## {Step 6 - Try It}
 
 **🕹️ Be sure to play with your project 🕹️ **
 
@@ -105,7 +105,7 @@ controller.moveSprite(mySprite, 100, 0)
 Your hero sprite should move from side to side with the joypad, but not up or down.
 
 
-## Step 7 - Add gravity
+## {Step 7 - Add gravity}
 
 **To make this feel more realistic, we should add gravity.**
 
@@ -130,7 +130,7 @@ controller.moveSprite(mySprite, 100, 0)
 mySprite.ay = 500
 ```
 
-## Step 8 - Follow with Camera
+## {Step 8 - Follow with Camera}
 
 **😮 Ack!  Our hero falls off-screen! 😮**
 
@@ -154,7 +154,7 @@ scene.cameraFollowSprite(mySprite)
 ```
 
 
-## Step 9 - Jump
+## {Step 9 - Jump}
 
 Now that your sprite has landed safely, we can make them jump using the **up** arrow!
 
@@ -177,7 +177,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## Done
+## {Done}
 
 🔥 **That's it! Now give it a try!** 🔥
 Can you jump around between platforms?

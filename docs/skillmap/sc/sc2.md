@@ -1,7 +1,7 @@
 # Shang-Chi: Know Your Surroundings
 
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
 **In this tutorial, we'll make it possible to win or lose our platformer.**
 
@@ -9,7 +9,7 @@
 
 
 
-## Step 2 -Try It!
+## {Step 2 -Try It!}
 
 **🕹️ Start by giving your project a try 🕹️**
 
@@ -19,7 +19,7 @@ Make sure you know which piece of code creates each action!
 
 
 
-## Step 3 - Game Over Pt. 1
+## {Step 3 - Game Over Pt. 1}
 
 **💀 Time for danger 💀 **
 
@@ -40,7 +40,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`pit`, function (sprite, locat
 })
 ```
 
-## Try It!
+## {Try It!}
 
 **🕹️ Give your project a try 🕹️**
 
@@ -50,7 +50,7 @@ When your sprite lands in a black pit, the game should end as a loss.
 
 
 
-## You Win Pt. 1
+## {You Win Pt. 1}
 
 **🎈 We have a way to lose, let's add a way to win 🎈**
 
@@ -72,7 +72,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`door1`, function (sprite, loc
 ```
 
 
-## You Earned Points pt. 1
+## {You Earned Points pt. 1}
 
 **💯 Award points when the sprite collects a ring 💯**
 
@@ -94,7 +94,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`ring`, function (sprite, loca
 ```
 
 
-## Try It Too!
+## {Try It Too!}
 
 **🕹️ Go collect some rings! 🕹️**
 
@@ -103,7 +103,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`ring`, function (sprite, loca
 Uh oh!  You get WAY too many points when you touch a ring. We can fix that in the next step.
 
 
-## You Earned Points pt. 2
+## {You Earned Points pt. 2}
 
 **Replace the rings you collect with an empty tile.**
 
@@ -132,7 +132,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`ring`, function (sprite, loca
 
 
 
-## Finished
+## {Finished}
 
 **Now we have a simple platformer that has a way to win, a way to lose, and a way to collect points.**
 

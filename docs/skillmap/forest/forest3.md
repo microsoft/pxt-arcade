@@ -1,7 +1,7 @@
 # Fire Fighting
 
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
 When a fire gets large enough, it can create its own weather system and bring its own rain.
 
@@ -12,7 +12,7 @@ Until that happens, teams rely on firetrucks and aircraft to keep wildfires from
 
 
 
-## 2. Remember
+## {2. Remember}
 
 **🎮 Try your game**
 
@@ -22,7 +22,7 @@ Can you remember which lines of code create each action?
 
 
 
-## 3. Spray Away
+## {3. Spray Away}
 
 **💧 Drench that Fire**
 
@@ -30,11 +30,11 @@ Let's add code that sprays water when you press the (A) button.
 
 ---
 
-- :game: Drag the  
-``||controller:on [A] button [pressed]||``  
+- :game: Drag the
+``||controller:on [A] button [pressed]||``
 container into an empty area in your workspace.
 
-- :mouse pointer: Change ``||controller:pressed||`` to ``||controller:repeat||`` to keep the water spraying as you hold the (A) button.  
+- :mouse pointer: Change ``||controller:pressed||`` to ``||controller:repeat||`` to keep the water spraying as you hold the (A) button.
 
 _💡 Find it too hard to keep (A) pressed?  Try using the spacebar on your keyboard!_
 
@@ -47,13 +47,13 @@ controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
 
 
 
-## 4. Choose Your Spray
+## {4. Choose Your Spray}
 
 
-- :paper plane: Grab  
-``||sprites:spray from [mySprite] using [ ]||``  
-and snap it into the empty  
-``||controller:on [A] button [repeat]||``  
+- :paper plane: Grab
+``||sprites:spray from [mySprite] using [ ]||``
+and snap it into the empty
+``||controller:on [A] button [repeat]||``
 container.
 
 - :mouse pointer: Click the empty grey box and toggle to **My Assets** to choose the **water** sprite that's shaped like a blue +.
@@ -65,7 +65,7 @@ controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
 })
 ```
 
-## 5. Test
+## {5. Test}
 
 **🎮 Test your game**
 
@@ -77,16 +77,16 @@ How does it work?  What happens when you move your plane around and spray water 
 
 
 
-## 6. Waterproof
+## {6. Waterproof}
 
 Before the water can weaken your fire, you have to set the fire's strength.
 
 ---
 
 - :paper plane:  Snap
-``||sprites:set strength of [mySprite] to [10]||``  
-into the  
-``||sprites:on created [sprite] of kind [Fire]||``  
+``||sprites:set strength of [mySprite] to [10]||``
+into the
+``||sprites:on created [sprite] of kind [Fire]||``
 container already in your workspace.
 
 - :mouse pointer:  Grab the ``||variables:sprite||`` value block from the container and use it to replace the ``||variables:mySprite||`` value block.
@@ -112,15 +112,15 @@ sprites.onCreated(SpriteKind.Fire, function (sprite) {
 
 
 
-## 7. Drench It
+## {7. Drench It}
 
 Now that each new fire has a strength of 10,
 we can weaken the fires each time they are hit by water.
 
 ---
 
-- :paper plane:  Drag an  
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``   
+- :paper plane:  Drag an
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``
 container into an empty area of the workspace.
 
 - :mouse pointer:  Change the first kind to ``||sprites:Water||`` and the second kind to ``||sprites:Fire||``.
@@ -139,14 +139,14 @@ sprites.onOverlap(SpriteKind.Water, SpriteKind.Fire, function (sprite, otherSpri
 
 
 
-## 8. Fire Eats Water
+## {8. Fire Eats Water}
 
 When a water sprite hits the fire, that water sprite needs to be destroyed.
 
 ---
 
-- :paper plane:  Snap  
-``||sprites:destroy [mySprite]||``  
+- :paper plane:  Snap
+``||sprites:destroy [mySprite]||``
 into the empty container.
 
 - :mouse pointer:  To make sure your code destroys the **Water** sprite, grab the ``||variables:sprite||`` value block from the container and use it to replace ``||variables:mySprite||``.
@@ -175,14 +175,14 @@ sprites.onOverlap(SpriteKind.Water, SpriteKind.Fire, function (sprite, otherSpri
 
 
 
-## 9. Water Weakens Fire
+## {9. Water Weakens Fire}
 
 When a water sprite hits the fire, the fire needs to decrease in strength by 1.
 
 ---
 
-- :paper plane:  Snap  
-``||sprites:change strength of [mySprite] by [-1]||``  
+- :paper plane:  Snap
+``||sprites:change strength of [mySprite] by [-1]||``
 into **the end** of the **on overlaps** container.
 
 - :mouse pointer:  To make sure your code weakens the **Fire** sprite,
@@ -210,7 +210,7 @@ sprites.onOverlap(SpriteKind.Water, SpriteKind.Fire, function (sprite, otherSpri
 ![Grab the sprite value from the title bar of the outer container](/static/skillmap/assets/sprite-from-container.gif "This is how your block knows which sprite to use")
 
 
-## 10. Test Again
+## {10. Test Again}
 
 **🎮 Test your game**
 
@@ -221,9 +221,9 @@ by spraying water with the (A) button.
 
 
 
-## Finale
+## {Finale}
 
-👏 **Way to go!**   
+👏 **Way to go!**
 
 ---
 

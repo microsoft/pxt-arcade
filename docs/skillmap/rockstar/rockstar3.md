@@ -1,9 +1,9 @@
 # 80's Rockstar: Avoid the Fans
 
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
-How did those fans get backstage?  
+How did those fans get backstage?
 
 Keep the fans away from Jerry if you want to get the highest score.
 
@@ -12,17 +12,17 @@ Keep the fans away from Jerry if you want to get the highest score.
 
 
 
-## 2. Spot the Fan
+## {2. Spot the Fan}
 
-**📸 Remove points when Jerry runs into a screaming fan**  
+**📸 Remove points when Jerry runs into a screaming fan**
 
 When your sprite overlaps a fan, we'll change the score.
 
 ---
 
 
-- :tree: To detect an overlap, drag an  
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
+- :tree: To detect an overlap, drag an
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``
 container into an empty area of the workspace.
 
 - :mouse pointer: Change the checkerboard to the tile called **fan1**.
@@ -33,11 +33,11 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`fan1`, function (sprite, loca
 })
 ```
 
-## 3. Subtract Points
+## {3. Subtract Points}
 
 
-- :id card: Snap a  
-``||info:change score by [1]||``  
+- :id card: Snap a
+``||info:change score by [1]||``
 block into the new container.
 
 - :mouse pointer: Change **1** to **-1**.
@@ -50,31 +50,31 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`fan1`, function (sprite, loca
 })
 ```
 
-## 4. Try It!
+## {4. Try It!}
 
-**🕹️ Try your maze and see what happens when you run into a fan**  
+**🕹️ Try your maze and see what happens when you run into a fan**
 
 ---
 
  Did you predict that you'd lose a BUNCH of points?
 
 
-## 5. Fewer Fans
+## {5. Fewer Fans}
 
-**Replace the fans with an empty tile.**  
+**Replace the fans with an empty tile.**
 
 ---
 
-- :tree: Drag  
-``||scene:set [ ] at tilemap col [0] row [0]||``  
-into **the top** of the  
-``||scene:on [sprite] of kind [Player] overlaps [fan1] at [location]||``  
+- :tree: Drag
+``||scene:set [ ] at tilemap col [0] row [0]||``
+into **the top** of the
+``||scene:on [sprite] of kind [Player] overlaps [fan1] at [location]||``
 container.
 
-- :mouse pointer: Replace  
-``||scene:tilemap col [0] row [0]||``  
-with the  
-``||variables:location||``  
+- :mouse pointer: Replace
+``||scene:tilemap col [0] row [0]||``
+with the
+``||variables:location||``
 value from the top of the **Player overlaps fan** container.
 
 
@@ -89,23 +89,23 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`fan1`, function (sprite, loca
 ![Share your location](/static/skillmap/assets/overlap-tile-location.gif "Grab the variable from the overlap container")
 
 
-## 6. More Fans
+## {6. More Fans}
 
-**🎤 Encore 🎤**  
+**🎤 Encore 🎤**
 Follow the same steps two more times to include the other fans.
 
 ---
 
 - :tree: Drag
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``
 into an empty area of the workspace and **set the fan tiles**.
 
-- :tree: Drag  
-``||scene:set [ ] at tilemap col [0] row [0]||``  
-into  
-``||scene:on [sprite] of kind [Player] overlaps [fan] at [location]||``  
-and replace  
-``||scene:tilemap col [0] row [0]||``  
+- :tree: Drag
+``||scene:set [ ] at tilemap col [0] row [0]||``
+into
+``||scene:on [sprite] of kind [Player] overlaps [fan] at [location]||``
+and replace
+``||scene:tilemap col [0] row [0]||``
 with ``||variables:location||``.
 
 - :id card: Snap ``||info:change score by [1]||`` into the new container and change to **-1**.
@@ -122,9 +122,9 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`fan3`, function (sprite, loca
 ```
 
 
-## 7. Look Again
+## {7. Look Again}
 
-**🕹️ Try your maze in the game window**  
+**🕹️ Try your maze in the game window**
 
 ---
 
@@ -133,17 +133,17 @@ You should lose one point for every fan you run into.
 How many points can you keep on your way to the door?
 
 
-## 8. Out of Time
+## {8. Out of Time}
 
-**🕒 Make it out in time**  
+**🕒 Make it out in time**
 Let's use a timer to add some hustle to the whole experience!
 
 ---
 
-- :id card: Drag  
-``||info:start countdown [10] (s)||``  
-into **the end**  of the  
-``||loops:on start||``  
+- :id card: Drag
+``||info:start countdown [10] (s)||``
+into **the end**  of the
+``||loops:on start||``
 container.
 
 - :mouse pointer: Change 10 to 30 to give yourself extra time.
@@ -161,9 +161,9 @@ info.startCountdown(30)
 
 
 
-## Finale
+## {Finale}
 
-🔥 **Congratulations** 🔥  
+🔥 **Congratulations** 🔥
 
 ---
 

@@ -1,6 +1,6 @@
 # Enemies Attack!
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Sharks are fearsome, but even they have enemies!
 
@@ -10,7 +10,7 @@ Sharks are fearsome, but even they have enemies!
 In this activity, you'll add consequences whenever your submarine collides with your shark.
 
 
-## step 2
+## {step 2}
 
 **🎮 Time to play 🎮**
 
@@ -20,7 +20,7 @@ Play with your project in the game window and try to remember which chunk of cod
 
 
 
-## Step 3
+## {Step 3}
 
 **☠️On a dangerous path ☠️**
 To subtract hitpoints when the enemy reaches the shark, we'll need a container to run code whenever the two overlap.
@@ -39,7 +39,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ```
 
 
-## Step 4
+## {Step 4}
 
 To keep the submarine from attacking again and again, we need to destroy it before removing a life from the player.
 
@@ -59,7 +59,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ```
 
 
-## Step 5
+## {Step 5}
 
 
 ► From ``||info:Info||``, grab ``||info:change life by [-1]||`` and snap it below the ``||sprites:destroy [otherSprite]||`` block.
@@ -75,7 +75,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ```
 
 
-## Step 6
+## {Step 6}
 
 **🎮 Try it! 🎮**
 
@@ -85,7 +85,7 @@ Play your game and try to avoid the enemies! When they reach you, they should kn
 
 
 
-## Finale
+## {Finale}
 
 **Way to go!!**
 

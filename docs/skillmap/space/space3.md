@@ -1,6 +1,6 @@
 # Here comes trouble!
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 **Intergalactic travel is dangerous!**
 
@@ -11,15 +11,15 @@ Let's add some enemies for your ship to avoid.
 
 ## 2. Enemy Rain
 
-**Feel like making enemies rain from the sky?**  
-👾👾👾  
+**Feel like making enemies rain from the sky?**
+👾👾👾
 
 Let's add some code that will drop an enemy toward the ship every couple of seconds.
 
 ---
 
-- :circle: Add an  
-``||game:on game update every [500] ms||``  
+- :circle: Add an
+``||game:on game update every [500] ms||``
 container to the workspace.
 
 - :mouse pointer: Change the number value to **2000** [__*ms*__](#millis "milliseconds...aka 1/1000 of a second")
@@ -34,8 +34,8 @@ game.onUpdateInterval(2000, function () {
 
 ## 3. Rename the Variable
 
-- :paper plane: Find the  
-``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||``   
+- :paper plane: Find the
+``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||``
 block and drag it into the new **on game update** container.
 
 - :mouse pointer: Click on the ``||variables:[projectile2]||`` value inside the new block and select "Rename variable..." .
@@ -85,10 +85,10 @@ Enemies aren't likely to hit the ship if they're off to the side. Let's add an e
 
 ---
 
-- :paper plane: Snap a  
-``||sprites:set [mySprite] [x] to [0]||``  
-block into the end of the  
-``||game:on game update every [2000] ms||``  
+- :paper plane: Snap a
+``||sprites:set [mySprite] [x] to [0]||``
+block into the end of the
+``||game:on game update every [2000] ms||``
 container.
 
 - :mouse pointer: To make sure we're acting on the right sprites, use the dropdown in the new block to change ``||variables:mySprite||`` to ``||variables:myEnemy||``.
@@ -103,14 +103,14 @@ game.onUpdateInterval(2000, function () {
 ## 6. Horizontal
 
 - :calculator: Set a random [__*x*__](#setX "horizontal location")
-for the enemies using a  
-``||Math:pick random [0] to [10]||`` block.  
-Connect it to replace the **0** in the  
-``||sprites:set [myEnemy] [x] to [0]||``  
+for the enemies using a
+``||Math:pick random [0] to [10]||`` block.
+Connect it to replace the **0** in the
+``||sprites:set [myEnemy] [x] to [0]||``
 block.
 
-- :mouse pointer: Finally, update the minimum argument of the  
-``||Math:pick random [0] to [10]||``  
+- :mouse pointer: Finally, update the minimum argument of the
+``||Math:pick random [0] to [10]||``
 block to **5** and the maximum argument to **155**.
 
 ---
@@ -134,8 +134,8 @@ We now have two different kinds of projectiles. Let's make sure the computer kno
 
 ---
 
-- :paper plane: Snap a  
-``||sprites:set [mySprite] kind to [Player]||``  
+- :paper plane: Snap a
+``||sprites:set [mySprite] kind to [Player]||``
 block into the bottom of the **on game update** container.
 
 - :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:myEnemy||``, then choose ``||sprites:Enemy||`` as the kind.
@@ -160,8 +160,8 @@ collides with our ship.
 
 ---
 
-- :paper plane: Drag an  
-``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||``  
+- :paper plane: Drag an
+``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||``
 container into the workspace.
 
 - :mouse pointer: Change the last value from ``||sprites:Player||`` to ``||sprites:Enemy||``.
@@ -184,12 +184,12 @@ we want it to subtract a life...then disappear.
 
 ---
 
-- :id card: Grab the  
-``||info:change life by [-1]||``  
+- :id card: Grab the
+``||info:change life by [-1]||``
 block and snap it into the **on player overlaps enemy** container. That removes a life from the player every time it's hit by an enemy!
 
-- :paper plane: Find the  
-``||sprites:destroy [mySprite] ⊕||``  
+- :paper plane: Find the
+``||sprites:destroy [mySprite] ⊕||``
 block and snap it below the previous block.
 
 ```blocks
@@ -203,15 +203,15 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ## 10. Destroy
 
 - :mouse pointer: To tell the **destroy** block that you want it to affect the overlapping enemy, click on the ``||variables:otherSprite||`` value from the top of the **overlaps** container and drag it down to replace the
-``||variables:mySprite||`` value inside  
+``||variables:mySprite||`` value inside
 ``||sprites:destroy [mySprite] ➕||``.
 
 ![Grabbing variable from block](/static/skillmap/space/give-var.gif "So that's how you do that!")
 
 ---
 
-_💡 Click the __➕__ on the  
-``||sprites:destroy [otherSprite] ➕||``  
+_💡 Click the __➕__ on the
+``||sprites:destroy [otherSprite] ➕||``
 block to get a menu of effects to display upon your enemy's demise!_
 
 ```blocks
@@ -224,7 +224,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ## 11. Fire!
 
 **Time to save the world**
-🌍 🌍 🌍 
+🌍 🌍 🌍
 
 Another **overlap** container will help the projectiles
 destroy our enemies on impact.
@@ -232,15 +232,15 @@ destroy our enemies on impact.
 ---
 
 
-- :paper plane: Drag another  
-``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||``  
+- :paper plane: Drag another
+``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||``
 container into the workspace.
 
 - :mouse pointer: Change the first kind to ``||sprites:Enemy||`` and the second kind to
 ``||sprites:Projectile||``.
 
-- :paper plane: Inside, add two  
-``||sprites:destroy [mySprite] ⊕||``   
+- :paper plane: Inside, add two
+``||sprites:destroy [mySprite] ⊕||``
 blocks, then change the arguments
 so that one destroys the enemy (``||variables:sprite||``) and the other
 destroys your projectile (``||variables:otherSprite||``).
@@ -263,8 +263,8 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, oth
 
 ---
 
-- :id card: Drag  
-``||info:change score by [1]||``  
+- :id card: Drag
+``||info:change score by [1]||``
 into **the end** of the **on enemy overlaps projectile** container.
 
 ```blocks
@@ -281,7 +281,7 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, oth
 
 ---
 
-Now you have a bunch of enemies to combat.  
+Now you have a bunch of enemies to combat.
 Don't forget to play with your project in the game screen before you go.
 
 Once you're happy, click **Done** to return to the main skillmap where you can carry on to add some drama with an animated ship!

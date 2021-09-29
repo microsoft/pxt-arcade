@@ -1,6 +1,6 @@
 # Level Up!
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 You should be rewarded for all of your hard work!
 
@@ -34,7 +34,7 @@ during game-play, we're going to need a [__*variable*__](#varied "a label that h
 
 ---
 
-- :align justify: Under the ``||variables:Variables||`` category, click inside the orange rectangle where it says  
+- :align justify: Under the ``||variables:Variables||`` category, click inside the orange rectangle where it says
 **Make a Variable...**.
 
 - :mouse pointer: Name your new variable **enemySpeed** and click **Ok**.
@@ -47,9 +47,9 @@ during game-play, we're going to need a [__*variable*__](#varied "a label that h
 
 ---
 
-- :align justify: Grab  
-``||variables:set [enemySpeed] to [0]||``  
-and snap it into **the bottom** of the  
+- :align justify: Grab
+``||variables:set [enemySpeed] to [0]||``
+and snap it into **the bottom** of the
 ``||loops:on start||`` container.
 
 - :mouse pointer: Change the value from **0** to **50**.
@@ -79,8 +79,8 @@ to control the enemy ship's **vy** (vertical velocity).
 
 ---
 
-- :mouse pointer: Go back to the  
-``||game:on game update every [2000]ms||``  
+- :mouse pointer: Go back to the
+``||game:on game update every [2000]ms||``
 container that's already in your workspace, and find the block that sets-up the
 ``||variables:myEnemy||`` projectile.
 
@@ -116,12 +116,12 @@ We need code that checks to see **if** the score is **10** every time the player
 
 ---
 
-- :binoculars: Find the  
-``||sprites:on [sprite] of kind [Projectile] overlaps [otherSprite] of kind [Enemy]||``   
+- :binoculars: Find the
+``||sprites:on [sprite] of kind [Projectile] overlaps [otherSprite] of kind [Enemy]||``
 container already in your workspace.
 
-- :random: Drag out a  
-``||logic:if <true> then||``  
+- :random: Drag out a
+``||logic:if <true> then||``
 container and snap it into **the bottom** of the
 **on Projectile overlaps Enemy** container.
 
@@ -140,8 +140,8 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 
 ## 8. Set the Points
 
-- :random: Grab  
-``||logic:<[0] [=] [0]>||``  
+- :random: Grab
+``||logic:<[0] [=] [0]>||``
 and snap it in to the **if statement** to replace **`<true>`**.
 
 - :id card: Grab ``||info:score||`` and snap it in to replace the **0** to the left of the **=**.
@@ -167,10 +167,10 @@ The first thing we should do when the score gets to **10** is give a level-up bo
 
 ---
 
-- :id card: Grab  
-``||info:change score by [1]||``  
-and snap it inside the empty  
-``||logic:if <[score] [=] [10]> then||``  
+- :id card: Grab
+``||info:change score by [1]||``
+and snap it inside the empty
+``||logic:if <[score] [=] [10]> then||``
 logic container.
 
 - :mouse pointer: Change the amount added to the score from **1** to **5**.
@@ -196,10 +196,10 @@ Let the player know they've earned a bonus!
 
 ---
 
-- :paper plane: Drag  
-``||sprites:[mySprite] say [":)"] ➕||``  
-into **the bottom** of the  
-``||logic:if <[score] [=] [10]> then||``  
+- :paper plane: Drag
+``||sprites:[mySprite] say [":)"] ➕||``
+into **the bottom** of the
+``||logic:if <[score] [=] [10]> then||``
 container.
 
 - :mouse pointer: Change the message to say **"+5 Level-Up Bonus!"**.
@@ -231,10 +231,10 @@ Time to speed up the enemy ships!
 ---
 
 
-- :align justify: Grab  
-``||variables:set [enemySpeed] to [0]||`` 
-and snap it in to **the bottom** of  the  
-``||logic:if <[score] [=] [10]> then||``  
+- :align justify: Grab
+``||variables:set [enemySpeed] to [0]||``
+and snap it in to **the bottom** of  the
+``||logic:if <[score] [=] [10]> then||``
 container.
 
 - :mouse pointer: Change the value from **0** to **70**.
@@ -264,7 +264,7 @@ Since we already have the ``||variables:enemySpeed||`` variable in place for the
 Play your finished game and see if you can get 10 points to level-up!
 
 
-## Finale
+## {Finale}
 
 **Congratulations!!**
 

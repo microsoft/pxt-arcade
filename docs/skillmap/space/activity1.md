@@ -1,7 +1,7 @@
 # Space Explorer
 
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 ** Let's explore the depths of space! **
 
@@ -9,7 +9,7 @@ In this tutorial, you'll design a spaceship for your journey.
 
 ![Flying through space](/static/skillmap/space/space1.gif "Blasting through a starfield" )
 
-## Set the scene
+## {Set the scene}
 **Give 'em something to look at** 🔭
 
 ---
@@ -32,7 +32,7 @@ effects.starField.startScreenEffect()
 
 
 
-## Draw your ship
+## {Draw your ship}
 **🧑🏿‍🚀 Time to choose our ship! 👩🏾‍🚀**
 
 ---
@@ -72,7 +72,7 @@ let mySprite = sprites.create(img`
 `, SpriteKind.Player)
 ```
 
-## Control your ship
+## {Control your ship}
 
 🌟 Let's get your ship moving 🌟
 
@@ -110,7 +110,7 @@ let mySprite = sprites.create(img`
 controller.moveSprite(mySprite)
 ```
 
-## Stay in screen
+## {Stay in screen}
 
 **Uh-oh, if you move off screen, your ship disappears!**
 
@@ -149,7 +149,7 @@ mySprite.setStayInScreen(true)
 ```
 
 
-## Finale @showdialog
+## {Finale @showdialog}
 
 **Great Job!**
 
@@ -162,7 +162,7 @@ Is everything how you want it? You can always go back and edit steps if you disc
 
 
 
-## Byeeee
+## {Byeeee}
 
 ** 🚀 That's it! 🚀**
 

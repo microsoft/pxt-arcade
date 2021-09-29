@@ -89,7 +89,7 @@ if (game.askForNumber("Enter a number between 1 and 9", 1) == myNumber) {
 
 ```
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
 Guessing a number with one try is luck. Guessing a number in three tries is skill!
 
@@ -99,7 +99,7 @@ This activity will help you add multiple tries to your number guessing game.
 
 
 
-## Step 2
+## {Step 2}
 
 The code for a basic guessing game is in your workspace.
 
@@ -153,7 +153,7 @@ while (false) {
 
 ```
 
-## Step 2
+## {Step 2}
 
 We want this loop to keep running as long as lives are greater than zero.
 
@@ -202,7 +202,7 @@ while (0 < info.life()) {
 ```
 
 
-## Step 4
+## {Step 4}
 
 **🎮 Give your game a try 🎮**
 
@@ -249,7 +249,7 @@ while (0 < info.life()) {
 
 ```
 
-## Step 5
+## {Step 5}
 
 **🧞 Wait a minute, it will come to me... 🧞**
 
@@ -308,7 +308,7 @@ while (0 < info.life()) {
 
 ```
 
-## Step 6
+## {Step 6}
 
 **❤️ Life meter ❤️**
 
@@ -364,7 +364,7 @@ while (0 < info.life()) {
 ```
 
 
-## Step 7
+## {Step 7}
 
 Everything looks great now, but we don't have enough
 time to read the final message before the game ends in a loss.
@@ -393,7 +393,7 @@ info.onLifeZero(function () {
 ```
 
 
-## Finale
+## {Finale}
 
 **Fantastic! Give your game a try!**
 

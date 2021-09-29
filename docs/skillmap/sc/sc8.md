@@ -1,6 +1,6 @@
 # Shang-Chi: Bigger and Better
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
 
 
@@ -10,7 +10,7 @@ Are you ready to make this experience your own?
 
 
 
-## Step 2 - Try It!
+## {Step 2 - Try It!}
 
 **🕹️ Test out your project so far 🕹️**
 
@@ -20,7 +20,7 @@ Can you remember which chunk of code creates each action?
 
 
 
-## Step 3 - What's next?
+## {Step 3 - What's next?}
 
 **Need some ideas?**
 Check out the list below for changes you can make to your final project.
@@ -36,7 +36,7 @@ Check out the list below for changes you can make to your final project.
 
 
 
-## Try It!
+## {Try It!}
 
 **🕹️ Don't forget to test every step of the way 🕹️**
 
@@ -45,7 +45,7 @@ Check out the list below for changes you can make to your final project.
 Testing the project is the best way to find out if your code is working the way you want it to.
 
 
-## Finished
+## {Finished}
 
 **🥳 Fantastic 🥳**
 

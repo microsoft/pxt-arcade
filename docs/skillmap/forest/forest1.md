@@ -1,7 +1,7 @@
 # Prepare Your Plane
 
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
 
 The last couple of summers have been some of the hottest on record and the forest service needs your air team to help keep fires under control.
@@ -13,7 +13,7 @@ Let's start by setting up your plane to make sure you can get everywhere you nee
 
 
 
-## 2. Set the Scene
+## {2. Set the Scene}
 
 **🌲 Welcome to the Forest**
 
@@ -40,10 +40,10 @@ tiles.setTilemap(tilemap`level2`)
 
 
 
-## 3. Set Your Map
+## {3. Set Your Map}
 
-- :paint brush: Click the empty grey square in  
-``||scene:set tilemap to []||``  
+- :paint brush: Click the empty grey square in
+``||scene:set tilemap to []||``
 and toggle to **My Assets** to select the tilemap called **level1**.
 
 ![Toggle to My Assets](/static/skillmap/assets/my-assets.png "Resources have been provided for you!")
@@ -54,7 +54,7 @@ and toggle to **My Assets** to select the tilemap called **level1**.
 tiles.setTilemap(tilemap`level1`)
 ```
 
-## 4. Take a Look!
+## {4. Take a Look!}
 
 **Click the Game Window Tab (Above)**
 ![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
@@ -69,7 +69,7 @@ When you're ready to continue, click into the instructions tab again!
 
 
 
-## 5. A Plane!
+## {5. A Plane!}
 
 **We need a hero**
 
@@ -100,7 +100,7 @@ let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
 
 
 
-## 6. Learn to Fly
+## {6. Learn to Fly}
 
 **↔️ Time to get the sprite moving**
 
@@ -121,7 +121,7 @@ controller.moveSprite(mySprite)
 ```
 
 
-## 7. Try It
+## {7. Try It}
 
 **🕹️ Test it out in the Game Window **
 
@@ -134,7 +134,7 @@ _💡 You can also use the arrow keys on your keyboard!_
 
 
 
-## 8. Follow with Camera
+## {8. Follow with Camera}
 
 **😮 Ack!  Did you notice that your airtanker flies off-screen if you go too far? **
 
@@ -161,7 +161,7 @@ scene.cameraFollowSprite(mySprite)
 
 
 
-## Finale
+## {Finale}
 
 👏 **You're off to a great start!**
 

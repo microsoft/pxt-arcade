@@ -1,6 +1,6 @@
 # All Shook Up
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Let's make this game more impactful by adding effects that bring the action to life.
 
@@ -22,10 +22,10 @@ Let's add some drama by shaking the camera when you run into an enemy ship.
 
 ---
 
-- :tree: Grab  
-``||scene:camera shake by [4] pixels for [500] ms||``  
-and snap it in to **the bottom** of the  
-``||sprites:on [sprite] of kind [Player] overlaps [otherSPrite] of kind [Enemy]||``  
+- :tree: Grab
+``||scene:camera shake by [4] pixels for [500] ms||``
+and snap it in to **the bottom** of the
+``||sprites:on [sprite] of kind [Player] overlaps [otherSPrite] of kind [Enemy]||``
 container.
 
 
@@ -48,8 +48,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ``||animation:Animation||`` category.
 
 
-- :sync: Grab the ``||animation:animate [mySprite]||``  
-block and snap it into **the end** of the  
+- :sync: Grab the ``||animation:animate [mySprite]||``
+block and snap it into **the end** of the
 ``||loops:on start||`` container.
 
 
@@ -87,7 +87,7 @@ false
 ```
 
 ## 5. Choose Your Animation
-- :paint brush: To select your animation frames, click the empty grey square then toggle to **My Assets** and choose the **Flying Rocket** animation. 
+- :paint brush: To select your animation frames, click the empty grey square then toggle to **My Assets** and choose the **Flying Rocket** animation.
 
 - :mouse pointer: Keep the animation playing throughout the game by toggling the **loop** selector to **`<ON>`**.
 
@@ -120,10 +120,10 @@ true
 
 ---
 
-- :sync: Grab another  
-``||animation:animate [mySprite]||``  
-block and snap it into **the end** of the  
-``||game:on game update every [2000] ms||``  
+- :sync: Grab another
+``||animation:animate [mySprite]||``
+block and snap it into **the end** of the
+``||game:on game update every [2000] ms||``
 container.
 
 
@@ -159,11 +159,11 @@ false
 })
 ```
 
-## Step 8
+## {Step 8}
 
 - :mouse pointer: To make sure we're animating the correct sprite, replace
-``||variables:mySprite||`` with ``||variables:myEnemy||`` 
-using the dropdown in the  
+``||variables:mySprite||`` with ``||variables:myEnemy||``
+using the dropdown in the
 ``||animation:animate [mySprite]||`` block.
 
 - :paint brush: Click the empty grey square and toggle to **My Assets**
@@ -187,7 +187,7 @@ game.onUpdateInterval(2000, function () {
 ```
 
 
-## Finale
+## {Finale}
 
 **There you have it!**
 

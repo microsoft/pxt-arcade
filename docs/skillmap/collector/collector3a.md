@@ -160,44 +160,44 @@ mySprite.setStayInScreen(true)
 info.startCountdown(15)
 forever(function () {
     projectile = sprites.createProjectileFromSide(img`
-        . . . . . . . e e e e . . . . . 
-        . . . . . e e 4 5 5 5 e e . . . 
-        . . . . e 4 5 6 2 2 7 6 6 e . . 
-        . . . e 5 6 6 7 2 2 6 4 4 4 e . 
-        . . e 5 2 2 7 6 6 4 5 5 5 5 4 . 
-        . e 5 6 2 2 8 8 5 5 5 5 5 4 5 4 
-        . e 5 6 7 7 8 5 4 5 4 5 5 5 5 4 
-        e 4 5 8 6 6 5 5 5 5 5 5 4 5 5 4 
-        e 5 c e 8 5 5 5 4 5 5 5 5 5 5 4 
-        e 5 c c e 5 4 5 5 5 4 5 5 5 e . 
-        e 5 c c 5 5 5 5 5 5 5 5 4 e . . 
-        e 5 e c 5 4 5 4 5 5 5 e e . . . 
-        e 5 e e 5 5 5 5 5 4 e . . . . . 
-        4 5 4 e 5 5 5 5 e e . . . . . . 
-        . 4 5 4 5 5 4 e . . . . . . . . 
-        . . 4 4 e e e . . . . . . . . . 
+        . . . . . . . e e e e . . . . .
+        . . . . . e e 4 5 5 5 e e . . .
+        . . . . e 4 5 6 2 2 7 6 6 e . .
+        . . . e 5 6 6 7 2 2 6 4 4 4 e .
+        . . e 5 2 2 7 6 6 4 5 5 5 5 4 .
+        . e 5 6 2 2 8 8 5 5 5 5 5 4 5 4
+        . e 5 6 7 7 8 5 4 5 4 5 5 5 5 4
+        e 4 5 8 6 6 5 5 5 5 5 5 4 5 5 4
+        e 5 c e 8 5 5 5 4 5 5 5 5 5 5 4
+        e 5 c c e 5 4 5 5 5 4 5 5 5 e .
+        e 5 c c 5 5 5 5 5 5 5 5 4 e . .
+        e 5 e c 5 4 5 4 5 5 5 e e . . .
+        e 5 e e 5 5 5 5 5 4 e . . . . .
+        4 5 4 e 5 5 5 5 e e . . . . . .
+        . 4 5 4 5 5 4 e . . . . . . . .
+        . . 4 4 e e e . . . . . . . . .
         `, -90, 0)
     projectile.y = randint(0, 120)
     pause(randint(1000, 2000))
 })
 forever(function () {
     myEnemy = sprites.createProjectileFromSide(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . c c c . . . . . . 
-        . . . . . . a b a a . . . . . . 
-        . . . . . c b a f c a c . . . . 
-        . . . . c b b b f f a c c . . . 
-        . . . . b b f a b b a a c . . . 
-        . . . . c b f f b a f c a . . . 
-        . . . . . c a a c b b a . . . . 
-        . . . . . . c c c c . . . . . . 
-        . . . . . . . c . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . c c c . . . . . .
+        . . . . . . a b a a . . . . . .
+        . . . . . c b a f c a c . . . .
+        . . . . c b b b f f a c c . . .
+        . . . . b b f a b b a a c . . .
+        . . . . c b f f b a f c a . . .
+        . . . . . c a a c b b a . . . .
+        . . . . . . c c c c . . . . . .
+        . . . . . . . c . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
         `, -90, 0)
     myEnemy.setKind(SpriteKind.Enemy)
     myEnemy.y = randint(0, 120)
@@ -207,7 +207,7 @@ forever(function () {
 ```
 
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Why settle for one enemy sprite when you could have two?
 
@@ -216,35 +216,35 @@ In this tutorial, we'll add more enemy options.
 ![Multiple Enemies](/static/recipes/shark-splash/02-B-enemies.gif)
 
 
-## Step 2
+## {Step 2}
 
 ---
 
-► Find the ``||loops:Forever||`` loop container where your **myEnemy** projectile 
-is created. 
+► Find the ``||loops:Forever||`` loop container where your **myEnemy** projectile
+is created.
 
 
 
 ```blocks
 forever(function () {
-    let myEnemy: Sprite = null 
+    let myEnemy: Sprite = null
     myEnemy = sprites.createProjectileFromSide(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . c c c . . . . . . 
-        . . . . . . a b a a . . . . . . 
-        . . . . . c b a f c a c . . . . 
-        . . . . c b b b f f a c c . . . 
-        . . . . b b f a b b a a c . . . 
-        . . . . c b f f b a f c a . . . 
-        . . . . . c a a c b b a . . . . 
-        . . . . . . c c c c . . . . . . 
-        . . . . . . . c . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . c c c . . . . . .
+        . . . . . . a b a a . . . . . .
+        . . . . . c b a f c a c . . . .
+        . . . . c b b b f f a c c . . .
+        . . . . b b f a b b a a c . . .
+        . . . . c b f f b a f c a . . .
+        . . . . . c a a c b b a . . . .
+        . . . . . . c c c c . . . . . .
+        . . . . . . . c . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
         `, -90, 0)
     myEnemy.setKind(SpriteKind.Enemy)
     myEnemy.y = randint(0, 120)
@@ -253,7 +253,7 @@ forever(function () {
 ```
 
 
-## Step 2
+## {Step 2}
 
 Inside the ``||sprites:on created||`` block, place an ``||logic:if then else||`` statement.
 
@@ -268,7 +268,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 })
 ```
 
-## Step 3
+## {Step 3}
 
 Place a ``||math:% chance||`` block as the condition inside the ``||logic:if then else||``.
 Change the percentage ``||math:%||`` to `50`.
@@ -284,7 +284,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 })
 ```
 
-## Step 3
+## {Step 3}
 
 Place a ``||sprites:set image to||`` block into the first clause of ``||logic:if then else||``.
 Drag the ``||variables:sprite||`` variable from the ``||sprites:on created||`` block and use it as
@@ -319,7 +319,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 })
 ```
 
-## Step 4
+## {Step 4}
 
 Place a second ``||sprites:set image to||`` block into the else clause of ``||logic:if then else||``.
 Drag the ``||variables:sprite||`` variable from the ``||sprites:on created||`` block and use it as
@@ -371,7 +371,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 })
 ```
 
-## Conclusion @showdialog
+## {Conclusion @showdialog}
 
 Now let's add code to destroy the enemies with your projectiles! Or, if you're feeling creative, add a background to set the scene.
 

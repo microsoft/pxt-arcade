@@ -24,7 +24,7 @@ mySprite = sprites.create(assets.image`A static`, SpriteKind.Player)
 ```
 
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 There's so much more to explore with our clicker game.
 
@@ -33,7 +33,7 @@ Let's create a spray of stars that fly out as we click.
 ![Click away](/static/skillmap/clicker/clickert3.gif "Click and buy bigger clickers" )
 
 
-## Step 2
+## {Step 2}
 
 Watching the points increase each time we click is fun...but let's add
 some flying star [__*projectiles*__](#projected "sprites that moves on their own, often in large quantities") to make it even more interesting.
@@ -62,7 +62,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 3
+## {Step 3}
 
 ► Click the empty grey square and toggle to **My Assets** to select **Big Star**.
 
@@ -76,12 +76,12 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 4
+## {Step 4}
 
 **🎮 Try your project on the game screen to see what you think 🎮**
 
 
-## Step 5
+## {Step 5}
 
 **🌟 Let's make the star projectiles float 🌟**
 
@@ -105,7 +105,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 6
+## {Step 6}
 
 
 ► Change the range of the first ``||math: pick random [0] to [10]||`` block (next to **vx**) to pick between
@@ -124,7 +124,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Congrats @showdialog
+## {Congrats @showdialog}
 **🎇 There you have it, a Super-Clicker 🎇**
 
 ---
@@ -135,7 +135,7 @@ Play your game a few times and look through the code to see if there's anything 
 want to add or modify.
 
 
-## Finale
+## {Finale}
 
 Try playing around with the code and the images to see if you can make your own customizations!
 

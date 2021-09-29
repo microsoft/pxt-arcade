@@ -10,7 +10,7 @@ write some code to feed it some tasty bamboo.
 ---
 
 - :binoculars:  Take a look at the code in your workspace.
-It should look familiar. 
+It should look familiar.
 
 Can you remember what each block does?
 
@@ -21,12 +21,12 @@ Can you remember what each block does?
 
 ---
 
-- :game:  From ``||controller:Controller||``, drag an  
-``||controller:on [A] button pressed ||``  
+- :game:  From ``||controller:Controller||``, drag an
+``||controller:on [A] button pressed ||``
 container into the workspace.
 
-- :paper plane:  Snap a new  
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  
+- :paper plane:  Snap a new
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
 block inside it.
 
 - :mouse pointer:  Make sure to change the kind to ``||sprites:Food||``, then click on
@@ -71,14 +71,14 @@ Look at your game screen to see what happens.
 
 ---
 
-- :paper plane:  From ``||sprites:Sprites||``, get a  
-``||sprites:set [mySprite] position to x [0] y [0]||``  
-block and place it at the **end** of the  
-``||controller:on [A] button pressed ||``   
+- :paper plane:  From ``||sprites:Sprites||``, get a
+``||sprites:set [mySprite] position to x [0] y [0]||``
+block and place it at the **end** of the
+``||controller:on [A] button pressed ||``
 container.
 
-- :calculator:  From ``||math:Math||``, grab two  
-``||math:pick random [0] to [10]||``  
+- :calculator:  From ``||math:Math||``, grab two
+``||math:pick random [0] to [10]||``
 value blocks and use them to replace the **x** and **y** values in the new **set position** block.
 
 - :mouse pointer:  Try some different numbers to see how they affect the way the bamboo is **randomly** placed on the screen.
@@ -121,8 +121,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ---
 
-- :paper plane:  Open ``||sprites:Sprites||`` and drag a  
-``||sprites:set [myEnemy] follow [mySprite]||``   
+- :paper plane:  Open ``||sprites:Sprites||`` and drag a
+``||sprites:set [myEnemy] follow [mySprite]||``
 block out into the **end**
 of the ``||controller:on A button pressed||`` container.
 
@@ -164,8 +164,8 @@ panda **overlaps** the bamboo.
 
 ---
 
-- :paper plane:  From ``||sprites:Sprites||``, pull out an  
-``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||``  
+- :paper plane:  From ``||sprites:Sprites||``, pull out an
+``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||``
 container and drop it in the workspace.
 
 - :mouse pointer:  Click on the second ``||sprites:Player||`` dropdown menu
@@ -179,8 +179,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ## 8. Destroy the Sprite
 
-- :paper plane:  Next, grab a  
-``||sprites:destroy [mySprite] ⊕||``  
+- :paper plane:  Next, grab a
+``||sprites:destroy [mySprite] ⊕||``
 block from ``||sprites:Sprites||``
 and put it in the **on overlaps** container.
 
@@ -200,9 +200,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ## 9. Special Effects
 
-- :mouse pointer:  Press the plus icon on the  
-``||sprites:destroy [otherSprite] ⊕||``   
-block to add an effect that will play when the panda starts munching. 
+- :mouse pointer:  Press the plus icon on the
+``||sprites:destroy [otherSprite] ⊕||``
+block to add an effect that will play when the panda starts munching.
 
 _💡 Both **spray** and **disintegrate** work well here!_
 

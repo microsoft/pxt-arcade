@@ -1,7 +1,7 @@
 # Spreads Like Wildfire
 
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
 Conditions in the weather and environment such as drought, winds, vegetation density and dryness can cause fires to spread more quickly.  Let’s simulate these conditions in our game.
 
@@ -9,7 +9,7 @@ Conditions in the weather and environment such as drought, winds, vegetation den
 
 
 
-## 2. Remember
+## {2. Remember}
 
 **🎮 Try your game**
 
@@ -19,7 +19,7 @@ Can you remember which lines of code create each action?
 
 
 
-## 3. Set the Environment
+## {3. Set the Environment}
 
 **🌲 How does the land look?**
 
@@ -27,10 +27,10 @@ Let's add code to simulate different elements of the environment.
 
 ---
 
-- :circle:  First, drag  
-``||game:set health of trees to [7]||``  
-into **the top** of the  
-``||loops: on start||``  
+- :circle:  First, drag
+``||game:set health of trees to [7]||``
+into **the top** of the
+``||loops: on start||``
 container.
 
 
@@ -58,12 +58,12 @@ for (let index = 0; index < 4; index++) {
 
 
 
-## 4. Wind and Grass
+## {4. Wind and Grass}
 
 
-- :circle:  On your own, can you find the blocks that set the 
-**strength of the wind** and the  
-**dryness of the grass**   
+- :circle:  On your own, can you find the blocks that set the
+**strength of the wind** and the
+**dryness of the grass**
 and add them to **the top** of the ``||loops: on start||`` container?
 
 _💡 The three variables you just added can all be changed to make your game easier or more difficult!_
@@ -94,15 +94,15 @@ for (let index = 0; index < 4; index++) {
 
 
 
-## 5. Fires Spreading
+## {5. Fires Spreading}
 
 Now that the environment is set, we can add code to make the fires spread.
 
 ---
 
-- :circle:   Drop an  
-``||game:on game update||``  
-container into an empty area of your workspace to run 
+- :circle:   Drop an
+``||game:on game update||``
+container into an empty area of your workspace to run
 code each time the game updates its status.
 
 - :mouse pointer:   From the ``||sprites:Sprites||`` category, grab
@@ -138,7 +138,7 @@ game.onUpdate(function () {
 ```
 
 
-## 6. Test
+## {6. Test}
 
 **🎮 Test your game**
 
@@ -150,17 +150,17 @@ Does it get out of control too quickly?
 
 
 
-## 7. No Fuel, No Fire
+## {7. No Fuel, No Fire}
 
 Right now, the fires don't burn the trees
-so they can appear on the same tree over and over. 
+so they can appear on the same tree over and over.
 When a flame burns out, we want to mark that spot in the forest with a special tile.
 
 ---
 
-- :paper plane:   Drag an  
-``||sprites: on destroyed [sprite] of kind [Player]||``  
-container into an empty area of your workspace. 
+- :paper plane:   Drag an
+``||sprites: on destroyed [sprite] of kind [Player]||``
+container into an empty area of your workspace.
 
 - :mouse pointer:   Change ``||sprites: [Player]||`` to ``||sprites: [Fire]||``.
 
@@ -178,16 +178,16 @@ sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
 ```
 
 
-## 8. Burned Trees
+## {8. Burned Trees}
 
 Time to change the tile at the location where the sprite was when it burned out.
 
 ---
 
-- :tree:   Inside the empty  
-``||sprites: on destroyed [sprite] of kind [Fire]||``  
-container, add a  
-``||scene:set [ ] at tilemap col [0] row [0]||``  
+- :tree:   Inside the empty
+``||sprites: on destroyed [sprite] of kind [Fire]||``
+container, add a
+``||scene:set [ ] at tilemap col [0] row [0]||``
 block.
 
 
@@ -210,11 +210,11 @@ sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
 
 
 
-## 9. Sprite Location
+## {9. Sprite Location}
 
-- :map:   To get the location of the place where the fire went out, replace  
-``||scene:tilemap col [0] row [0]||``  
-with  
+- :map:   To get the location of the place where the fire went out, replace
+``||scene:tilemap col [0] row [0]||``
+with
 ``||tiles:location of [mySprite]||``.
 
 
@@ -243,14 +243,14 @@ sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
 
 
 
-## 10. Smoke Screen
+## {10. Smoke Screen}
 
 When the fire overlaps a burnt tree tile, the fire should be destroyed instantly.
 
 ---
 
-- :tree:   Drag an  
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
+- :tree:   Drag an
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``
 container into an empty area of the workspace.
 
 - :mouse pointer:   Change the sprite kind to ``||scene:Fire||`` and change the empty tile to **burnt tree**.
@@ -267,11 +267,11 @@ scene.onOverlapTile(SpriteKind.Fire, assets.tile`burnt tree`, function (sprite, 
 })
 ```
 
-## 11. Lights Out
+## {11. Lights Out}
 
-- :paper plane:   Add a  
-``||sprites:destroy [mySprite]||``  
-block into the empty container. 
+- :paper plane:   Add a
+``||sprites:destroy [mySprite]||``
+block into the empty container.
 
 - :mouse pointer:   To destroy the correct sprite, replace
 ``||variables:mySprite||`` with the ``||variables:sprite||``
@@ -298,14 +298,14 @@ scene.onOverlapTile(SpriteKind.Fire, assets.tile`burnt tree`, function (sprite, 
 
 
 
-## 12. Fire Eats Fire
+## {12. Fire Eats Fire}
 
 When the fire overlaps another flame, we can destroy one of the flames.
 
 ---
 
-- :paper plane:   Drag the  
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``  
+- :paper plane:   Drag the
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``
 container into an empty area of the workspace.
 
 - :mouse pointer:   Change both sprite kinds to ``||sprites:Fire||``.
@@ -323,15 +323,15 @@ sprites.onOverlap(SpriteKind.Fire, SpriteKind.Fire, function (sprite, otherSprit
 })
 ```
 
-## 13. One Less Fire
+## {13. One Less Fire}
 
 
-- :paper plane:   Add a  
-``||sprites:destroy [mySprite]||``  
-block into the empty container. 
+- :paper plane:   Add a
+``||sprites:destroy [mySprite]||``
+block into the empty container.
 
-- :mouse pointer:   To destroy the correct sprite, replace  
-``||variables:mySprite||`` with the ``||variables:sprite||``  
+- :mouse pointer:   To destroy the correct sprite, replace
+``||variables:mySprite||`` with the ``||variables:sprite||``
 value from the outer container.
 
 ![Grab the sprite value from the title bar of the outer container](/static/skillmap/assets/sprite-from-container.gif "This is how your block knows which sprite to use")
@@ -355,7 +355,7 @@ sprites.onOverlap(SpriteKind.Fire, SpriteKind.Fire, function (sprite, otherSprit
 
 
 
-## 14. Test Again
+## {14. Test Again}
 
 **🎮 Play Your Game**
 
@@ -366,7 +366,7 @@ they spread too far.
 
 
 
-## Finale
+## {Finale}
 
 👏 **Excellent!**
 

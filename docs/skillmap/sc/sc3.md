@@ -1,7 +1,7 @@
 # Shang-Chi: Martial Arts Training
 
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
 **Right now, it's nearly impossible to make it to the end**
 We need a way to pass the pits!
@@ -10,7 +10,7 @@ We need a way to pass the pits!
 
 
 
-## Step 2 - Try It!
+## {Step 2 - Try It!}
 
 **🕹️ Start by moving your sprite through the level 🕹️**
 
@@ -20,7 +20,7 @@ Make sure you know which piece of code creates each action!
 
 
 
-## Step 3 - Adding Block Walls
+## {Step 3 - Adding Block Walls}
 
 **You know what would help us get over those pits?**
 We need some well-placed platforms! Let's add a tile beneath the player when the A button is pressed.
@@ -40,7 +40,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 4 - Adding Block Walls, Cont.
+## {Step 4 - Adding Block Walls, Cont.}
 
 
 ► Make sure the new wall ends up in the right place by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location [left] of [location]||`` in to replace  ``||scene:tilemap col [0] row [0]||``.
@@ -59,7 +59,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## Try It!
+## {Try It!}
 
 **🕹️ Test your project 🕹️**
 
@@ -69,7 +69,7 @@ Try jumping while you press the (A) button. Your sprite should continue to hover
 
 
 
-## Step 6 - Adding Block Tiles
+## {Step 6 - Adding Block Tiles}
 
 **Where did my wall go??**
 The walls are great, but it's hard to remember where they are. Let's add special tiles over them so we can find them again later.
@@ -91,7 +91,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 7 - Adding Block Tiles, Cont.
+## {Step 7 - Adding Block Tiles, Cont.}
 
 
 ► Make sure the new tile ends up in the right place by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location [left] of [location]||`` in to replace  ``||scene:tilemap col [0] row [0]||``.
@@ -111,7 +111,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Try It!
+## {Try It!}
 
 **🕹️ Now try it! 🕹️**
 
@@ -122,7 +122,7 @@ Press the A button to set an energy tile in-mid air to help your sprite over the
 
 
 
-## Finished
+## {Finished}
 
 **How many points can you get?**
 

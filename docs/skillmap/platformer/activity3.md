@@ -107,7 +107,7 @@ tiles.placeOnRandomTile(mySprite, myTiles.tile3)
 info.setLife(3)
 ```
 
-## Start @showdialog
+## {Start @showdialog}
 
 In this lesson, we'll take what we made in previous tutorials and add simple enemies.
 
@@ -116,7 +116,7 @@ We'll also use a sprite overlap event to have enemies interact with the player s
 ![Editing our platformer](/static/skillmap/platformer/platformer3.gif "Time to live dangerously!")
 
 
-## Spawning enemies pt. 1
+## {Spawning enemies pt. 1}
 
 **Let's start by choosing a location to [__*spawn*__](#spawnd "make appear")
 some enemies on the tilemap.**
@@ -172,7 +172,7 @@ for (let value of tiles.getTilesByType(myTiles.tile5)) {
 }
 ```
 
-## A little lesson @showdialog
+## {A little lesson @showdialog}
 
 Now our loop will run for each tile location.
 
@@ -180,7 +180,7 @@ Each time through the loop, the argument **"value"** will contain another
 location on the tilemap!
 
 
-## Spawning enemies pt. 3
+## {Spawning enemies pt. 3}
 
 👾 Time to spawn some enemies 👾
 
@@ -250,7 +250,7 @@ for (let value of tiles.getTilesByType(myTiles.tile5)) {
 }
 ```
 
-## Spawning enemies pt. 3
+## {Spawning enemies pt. 3}
 Our enemies are spawning now, but they're all hanging out in one location.
 
 Let's start each of them on a different **[ ! ]** tile. (Each location will be
@@ -320,7 +320,7 @@ for (let value of tiles.getTilesByType(myTiles.tile5)) {
 }
 ```
 
-## Enemy follow
+## {Enemy follow}
 💤 Did you notice that we have the laziest enemies ever? 💤
 
 Let's wake-up our sprites and get them following our player.
@@ -385,7 +385,7 @@ for (let value of tiles.getTilesByType(myTiles.tile5)) {
 }
 ```
 
-## Damage pt. 1 @showdialog
+## {Damage pt. 1 @showdialog}
 
 Now the enemies should be moving toward the player.
 
@@ -410,7 +410,7 @@ the player takes damage and the enemy is destroyed**
 
 We'll need an **on sprite overlap** event to know if these happen!
 
-## Damage pt. 2
+## {Damage pt. 2}
 In both overlap cases, we want to destroy the enemy sprite...so
 let's code that part first.
 💥👿💥
@@ -436,7 +436,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Damage pt. 4 @showdialog
+## {Damage pt. 4 @showdialog}
 
 ❗ Here comes the exciting part ❗
 
@@ -456,7 +456,7 @@ The ``||logic:if <true> then||`` block can make that happen.
 
 
 
-## Damage pt. 5
+## {Damage pt. 5}
 
 ► Start by adding an ``||logic:if <true> then||`` container to the end
 of the newest **on sprite overlaps** container.
@@ -494,7 +494,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Damage pt. 5.5
+## {Damage pt. 5.5}
 To add more style, let's make the player bounce after they've jumped on an enemy.
 
 ---
@@ -520,7 +520,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ```
 
 
-## Damage pt. 6 @showdialog
+## {Damage pt. 6 @showdialog}
 
 Now we've written code that checks if the player has bounced on an enemy.
 **But what if it didn't?**
@@ -547,7 +547,7 @@ the **⊕** at the bottom-left corner of the **if/then** container and one will 
 })
 ```
 
-## Damage pt. 6.6
+## {Damage pt. 6.6}
 
 Now that we have an **else** clause, we can use it
 for anything that needs to run when the player and enemy
@@ -576,7 +576,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Finish
+## {Finish}
 
 **The basic enemies tutorial is complete.**
 

@@ -94,7 +94,7 @@ if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
 
 ```
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
 Guessing games are more fun when you get to find out the final answer.
 
@@ -103,7 +103,7 @@ This activity will add extra elements to make a more rewarding experience!
 ![How did I do?](/static/skillmap/puzzle/puzzle-activity-2.gif "The first step is knowing.")
 
 
-## Step 2
+## {Step 2}
 
 Your workspace is preloaded with a basic guessing game.
 
@@ -135,7 +135,7 @@ if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
 
 ```
 
-## Step 3
+## {Step 3}
 
 **🎮 Give your game a try 🎮**
 
@@ -173,7 +173,7 @@ if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
 
 ```
 
-## Step 4
+## {Step 4}
 
 **🤷 But what was it? 🤷**
 
@@ -208,7 +208,7 @@ if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
 
 ```
 
-## Step 5
+## {Step 5}
 
 The **join** block will let you display a variable inside a longer sentence.
 Here's how:
@@ -251,7 +251,7 @@ if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
 ```
 
 
-## Step 6
+## {Step 6}
 
 Let's do the same thing for the incorrect answer.
 
@@ -289,7 +289,7 @@ if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
 ```
 
 
-## Finale
+## {Finale}
 
 **Fantastic!**
 

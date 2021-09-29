@@ -1,7 +1,7 @@
 # Shang-Chi: Animated Characters
 
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
 Now that we've added an animation to break blocks, let's animate more of our sprite's moves to make our project feel even more exciting.
 
@@ -9,7 +9,7 @@ Now that we've added an animation to break blocks, let's animate more of our spr
 
 
 
-## Step 2 - Try It!
+## {Step 2 - Try It!}
 
 **🕹️ Start by trying the project so far 🕹️**
 
@@ -18,7 +18,7 @@ Now that we've added an animation to break blocks, let's animate more of our spr
 Can you connect each chunk of code to the action it creates?
 
 
-## Step 3 - Step to the Right
+## {Step 3 - Step to the Right}
 
 **➡️ Walking to the Right ➡️**
 Let's add an animation when our sprite moves right.
@@ -48,7 +48,7 @@ Let's add an animation when our sprite moves right.
 
 
 
-## Step 4 - Walk Left
+## {Step 4 - Walk Left}
 
 **⬅️ And Left ⬅️**
 
@@ -75,7 +75,7 @@ Let's add an animation when our sprite moves right.
 
 
 
-## Try It!
+## {Try It!}
 
 **🕹️ Take a look! 🕹️**
 
@@ -84,7 +84,7 @@ Let's add an animation when our sprite moves right.
 Does your hero walk right when you click the right arrow? Do they walk left with the left arrow?  What happens when they jump?
 
 
-## Step 6 - Jump!
+## {Step 6 - Jump!}
 
 Now we need an animation that runs when your hero jumps!
 
@@ -110,7 +110,7 @@ Now we need an animation that runs when your hero jumps!
 ```
 
 
-## Try It!
+## {Try It!}
 
 **🕹️ Take a look 🕹️**
 
@@ -121,7 +121,7 @@ Your hero should look amazing as they run and jump!
 
 
 
-## Finished
+## {Finished}
 
 When you're done with this activity, click **Done** to return to the main page, then add more danger!
 

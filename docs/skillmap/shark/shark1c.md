@@ -1,13 +1,13 @@
 # Laser Focus
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 You have enemies. You have lasers. Let's put them together!
 
 ![Projectiles](/static/skillmap/shark/shark1c.gif)
 
 
-## Step 2
+## {Step 2}
 
 We need a container for code that runs when
 our laser [__*projectiles*__](#projected "a sprite that moves on its own, often in large quantities") overlap enemies.
@@ -27,7 +27,7 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, oth
 ```
 
 
-## Step 3
+## {Step 3}
 
 To keep both the submarine and the laser from continuing after they collide, we need to destroy them.
 
@@ -50,7 +50,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 ```
 
 
-## Step 4
+## {Step 4}
 
 **🎉 Make it POP 🎉**
 
@@ -69,7 +69,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 ```
 
 
-## Step 5
+## {Step 5}
 
 ► Add ``||info:change score by [1]||`` to **the end** of the container to give your player a point whenever they hit an enemy with lasers!
 
@@ -82,7 +82,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 })
 ```
 
-## Step 6
+## {Step 6}
 
 **🎮 Play your game in the game window 🎮**
 
@@ -91,7 +91,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 You should have a shark that can move around the screen and fire lasers at the submarines as they creep closer. When you hit a sub, it should explode into a batch of bubbles then give the player a point.
 
 
-## Finale
+## {Finale}
 
 **That's it!**
 

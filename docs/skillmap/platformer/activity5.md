@@ -155,7 +155,7 @@ startNextLevel()
 
 ```
 
-## Start @showdialog
+## {Start @showdialog}
 
 Did you feel like the enemies in your last game were a little...well...stupid?
 
@@ -165,7 +165,7 @@ In this lesson we'll learn how to make enemies smarter using simple [_**AI**_](#
 
 
 
-## AI Rules @showdialog
+## {AI Rules @showdialog}
 
 The code for this program spawns enemies from the purple **[ ! ]** tiles.
 Once the enemies spawn, they immediately start moving to the left and get
@@ -187,7 +187,7 @@ Each of these rules has a *condition* and an *action*.
 If the condition is met, the action will happen.
 We'll need to write code to constantly check for each of these conditions.
 
-## Looping pt. 1
+## {Looping pt. 1}
 
 To get started, we'll need an **on game update** container to trigger code
 every time something in the game changes. Inside, we'll need a loop to check on
@@ -209,7 +209,7 @@ game.onUpdate(function () {
 })
 ```
 
-## Looping pt. 2
+## {Looping pt. 2}
 
 On each update, we want our loop to check on every enemy in the game.
 To do this, we'll use the same method as in previous tutorials.
@@ -233,7 +233,7 @@ game.onUpdate(function () {
 })
 ```
 
-## Jumping pt. 1
+## {Jumping pt. 1}
 
 Let's start the code for our first rule:
 
@@ -265,7 +265,7 @@ game.onUpdate(function () {
 })
 ```
 
-## Jumping pt. 2
+## {Jumping pt. 2}
 
 Now that we know the enemy is on the ground, we will have two conditions
 when it needs to jump.
@@ -306,7 +306,7 @@ game.onUpdate(function () {
 })
 ```
 
-## Jumping pt. 3
+## {Jumping pt. 3}
 
 We're already checking to see if the next tile to the left is a wall,
 but that only matters if the enemy is traveling left.
@@ -339,7 +339,7 @@ game.onUpdate(function () {
 ```
 
 
-## Jumping pt. 6
+## {Jumping pt. 6}
 
 If the computer gets to this point in the code, it means it's time for the
 enemy to jump.
@@ -367,7 +367,7 @@ game.onUpdate(function () {
 ```
 
 
-## Jumping pt. 7
+## {Jumping pt. 7}
 
 Next, we'll add the code to do the same thing to the right.
 
@@ -405,7 +405,7 @@ game.onUpdate(function () {
 ```
 
 
-## Wall bouncing pt. 1
+## {Wall bouncing pt. 1}
 
 We've completed the code for rule #1, now let's take a look at rule #2.
 
@@ -450,7 +450,7 @@ game.onUpdate(function () {
 })
 ```
 
-## Wall bouncing pt. 2
+## {Wall bouncing pt. 2}
 
 Finally, we need to add the code to make the enemies turn right if they were
 going left and left if they were going right.

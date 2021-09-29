@@ -42,7 +42,7 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 
 
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 ![Releasing projectiles](/static/skillmap/space/projectiles.gif "Here, enemy ship. Would you like to borrow an asteroid?")
 
@@ -52,7 +52,7 @@ In this tutorial, you'll learn to fire a [__*projectile*__](#projected "a sprite
 is pressed and also how to add special effects.
 
 
-## Customize sprites
+## {Customize sprites}
 
 The workspace is pre-loaded with code for a flying ship.
 Be sure to
@@ -68,7 +68,7 @@ kind of vehicle OR turn it into an alien creature using the sprite editor! 👽
 
 
 
-## Add a button event
+## {Add a button event}
 
 **Time for action!**
 
@@ -108,7 +108,7 @@ let projectile = sprites.createProjectileFromSprite(img`
 })
 ```
 
-## Retrospect @showdialog
+## {Retrospect @showdialog}
 
 You probably noticed that your projectiles are firing toward the bottom
 right corner. This is *not helpful* when your enemies are coming from above! Let's take
@@ -127,7 +127,7 @@ let mySprite: Sprite = null
 let projectile = sprites.createProjectileFromSprite(img`.`, mySprite, 50, 50)
 ```
 
-## Learn Velocity @showdialog
+## {Learn Velocity @showdialog}
 
 To change the direction of the projectiles, you need to change the
 speed they travel in a certain direction.
@@ -140,7 +140,7 @@ In MakeCode Arcade, we call that the [__*velocity*__](#veloc "speed in a given d
 ![Directional Projectiles](/static/skillmap/space/vxvy.gif "Round and Round")
 
 
-## Create a projectile
+## {Create a projectile}
 
 Play with the __vx__ and __vy__ values of the projectile until they're flying straight up at a decent speed.
 
@@ -161,7 +161,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Custom effects
+## {Custom effects}
 
 💥 Now for some special effects 💥
 
@@ -204,7 +204,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ---
 
 
-## Complete
+## {Complete}
 
 🎆 **Congratulations** 🎆
 

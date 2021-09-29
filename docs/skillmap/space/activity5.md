@@ -3,13 +3,13 @@
 ### @autoexpandOff true
 
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Your universe is pretty empty right now. Let's add some things for your ship
 to find! These could be planets or asteroids or space debris left over from
 other ships. Or maybe you encounter other travelers, or alien rockets!
 
-## Add an array
+## {Add an array}
 
 First, click on the **Advanced** item in the toolbox. From ``||arrays:Arrays||``,
  drag out the ``||variables:set list to||`` block and add it to
@@ -41,7 +41,7 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 let list = [1, 2, 3]
 ```
 
-## Draw some planets
+## {Draw some planets}
 
 Next, go under **Advanced** again and from ``||images:Images||``, drag out the
 gray image square. Put one in each slot of the array, then click on the gray
@@ -125,7 +125,7 @@ let list = [img`
 ```
 
 
-## Add game update
+## {Add game update}
 
 Now we need to actually add these planets to the game! Add an ``||game:on game
 update every||`` block to the workspace and change the interval to **2000**.
@@ -135,7 +135,7 @@ game.onUpdateInterval(2000, function () {
 })
 ```
 
-## Spawn planets
+## {Spawn planets}
 
 From ``||sprites:Sprites||`` drag ``||variables:projectile from side||`` into
 the ``||game:on game update every||``. Set the ``||sprites:vx||`` value to `0`.
@@ -146,7 +146,7 @@ game.onUpdateInterval(2000, function () {
 })
 ```
 
-## Set planet image
+## {Set planet image}
 
 You already drew your planets, so we need to grab the images from your array.
 Find the ``||arrays:get value at||`` in ``||arrays:Arrays||`` and drag it over
@@ -159,7 +159,7 @@ game.onUpdateInterval(2000, function () {
 })
 ```
 
-## Set planet position
+## {Set planet position}
 Place a ``||sprites:set position to||`` block right below the
 ``||variables:set projectile to||`` ``||sprites:projectile||`` block. Change
 the variable to ``||variables:projectile||`` in the dropdown list. You should
@@ -172,7 +172,7 @@ game.onUpdateInterval(2000, function () {
     projectile.x = 0
 })
 ```
-## Add randomness
+## {Add randomness}
 
 Let's make things a little more exciting!
 

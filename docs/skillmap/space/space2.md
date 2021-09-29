@@ -1,6 +1,6 @@
 # Ready, aim, fire!
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Are you ready to customize your ship?
 
@@ -27,14 +27,14 @@ Let's launch projectiles when the **Ⓐ** button is pressed!
 
 ---
 
-- :game: Drag an  
-``||controller:on [A] button pressed ||``  
+- :game: Drag an
+``||controller:on [A] button pressed ||``
 container into the workspace.
 
-- :paper plane: Snap  
-``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``   
-inside the new  
-``||controller:on [A] button pressed ||``  
+- :paper plane: Snap
+``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``
+inside the new
+``||controller:on [A] button pressed ||``
 container.
 
 - :paint brush: Click the grey box inside of the new projectile block and toggle to **My Assets** to choose one of the **Dart** sprites.
@@ -51,7 +51,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Retrospect @showdialog
+## {Retrospect @showdialog}
 
 You probably noticed that your projectiles are firing toward the bottom
 right corner. This is *not helpful* when your enemies are coming from above! Let's take a second to figure out what's happening.
@@ -63,7 +63,7 @@ values setting both the [__*vx*__](#whatVX "horizontal velocity")
 and [__*vy*__](#whatVY "vertical velocity") to 50.
 
 
-## Learn Velocity @showdialog
+## {Learn Velocity @showdialog}
 
 To change the direction of the projectiles, you need to change the
 speed they travel in a certain direction.
@@ -88,15 +88,15 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## 7. Custom Effects
 
-**Now for some special effects**  
-💥 💥 💥 
+**Now for some special effects**
+💥 💥 💥
 
 ---
 
-- :paper plane: Find  
-``||sprites:[mySprite] start [spray] effect ➕||``   
-and snap it in at **the end** of the  
-``||controller:on [A] button pressed ||``  
+- :paper plane: Find
+``||sprites:[mySprite] start [spray] effect ➕||``
+and snap it in at **the end** of the
+``||controller:on [A] button pressed ||``
 container.
 
 - :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:projectile||`` if you want the effects on your projectiles instead of on your ship.

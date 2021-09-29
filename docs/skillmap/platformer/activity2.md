@@ -100,7 +100,7 @@ controller.moveSprite(mySprite, 100, 0)
 tiles.setTilemap(tilemap`level`)
 ```
 
-## Start @showdialog
+## {Start @showdialog}
 
 
 **In this tutorial, we'll create a way to win or lose our platformer game.**
@@ -108,7 +108,7 @@ tiles.setTilemap(tilemap`level`)
 ![Editing our platformer](/static/skillmap/platformer/platformer2.gif "Time to live dangerously!")
 
 
-## Camera
+## {Camera}
 
 **Take a moment to move the player sprite around on the game screen. **
 
@@ -150,7 +150,7 @@ tiles.setTilemap(tilemap`level`)
 scene.cameraFollowSprite(mySprite)
 ```
 
-## Start Tile
+## {Start Tile}
 
 **🎥 Now we can move around and the camera will follow 🎥 **
 
@@ -204,7 +204,7 @@ scene.cameraFollowSprite(mySprite)
 tiles.placeOnRandomTile(mySprite, myTiles.tile3)
 ```
 
-## Game Over Pt. 1
+## {Game Over Pt. 1}
 
 **💀 Time to add some *danger* to this game 💀 **
 
@@ -227,7 +227,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location
 })
 ```
 
-## You Win Pt. 1
+## {You Win Pt. 1}
 
 **🎈 We have a way to lose, let's add a way to win 🎈**
 
@@ -249,7 +249,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile4, function (sprite, location
 })
 ```
 
-## Step Last @showdialog
+## {Step Last @showdialog}
 
 **🎮 Make sure to try your game in the simulator 🎮**
 
@@ -262,7 +262,7 @@ editor to design your own level.
 to travel through!
 
 
-## Finished
+## {Finished}
 
 **Now we have a simple platformer that has a way to win and a way to lose.**
 

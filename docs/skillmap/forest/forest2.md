@@ -1,7 +1,7 @@
 # Burning Issues
 
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
 Nearly 4 out of 5 forest fires are started by humans.
 In your game, they'll be started by your code.
@@ -11,7 +11,7 @@ In your game, they'll be started by your code.
 
 
 
-## 2. Set the Scene
+## {2. Set the Scene}
 
 **🎮 Try your game**
 
@@ -21,7 +21,7 @@ Can you remember which lines of code create each action?
 
 
 
-## 3. Thinking ahead
+## {3. Thinking ahead}
 
 **➰ Again and Again**
 
@@ -59,7 +59,7 @@ for (let index = 0; index < 4; index++) {
 
 
 
-## 4. Creating fire
+## {4. Creating fire}
 
 
 - :mouse pointer:  In the
@@ -93,7 +93,7 @@ for (let index = 0; index < 4; index++) {
 
 
 
-## 5. So Random
+## {5. So Random}
 
 Let's scatter flames randomly around the map.
 
@@ -133,7 +133,7 @@ for (let index = 0; index < 4; index++) {
 
 
 
-##  6. Try It
+## { 6. Try It}
 
 **🕹️ Test it out in the Game Window **
 
@@ -145,7 +145,7 @@ You should be able to fly around the screen and find all 4 fires!
 
 
 
-## 7. Just My Type
+## {7. Just My Type}
 
 **🔥 Let's create some crackle**
 
@@ -172,7 +172,7 @@ sprites.onCreated(SpriteKind.Fire, function (sprite) {
 
 
 
-## 8. Add the Spark
+## {8. Add the Spark}
 
 - :paper plane:   Drag
 ``||sprites:[mySprite] start [spray] effect||``
@@ -211,7 +211,7 @@ sprites.onCreated(SpriteKind.Fire, function (sprite) {
 
 
 
-## Finale
+## {Finale}
 
 👏 **There you have it!**
 

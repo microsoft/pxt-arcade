@@ -1,6 +1,6 @@
 # Swimming with Sharks
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Let's make a game!
 
@@ -9,7 +9,7 @@ First, we'll plop a shark into the vast ocean, then we'll give it lasers!
 ![Add a shark](/static/skillmap/shark/shark1.gif)
 
 
-## step 2
+## {step 2}
 
 **🌊 See the sea 🌊**
 
@@ -26,7 +26,7 @@ scene.setBackgroundColor(8)
 ```
 
 
-## step 3
+## {step 3}
 
 **🦈 Watch for sharks 🦈**
 
@@ -43,7 +43,7 @@ let mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
 
 ```
 
-## step 4
+## {step 4}
 
 
 ** Make it move! **
@@ -61,13 +61,13 @@ let mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
 controller.moveSprite(mySprite)
 ```
 
-## step 5
+## {step 5}
 
 **Look at the game window and try moving your shark around using the joypad or the arrow keys on your keyboard!**
 
 
 
-## step 6
+## {step 6}
 
 **👀 Keep an eye on your shark 👀**
 
@@ -87,7 +87,7 @@ mySprite.setStayInScreen(true)
 ```
 
 
-## step 7
+## {step 7}
 
 ** Now let's give the shark lasers! **
 
@@ -102,7 +102,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## step 8
+## {step 8}
 
 ►  From ``||sprites:Sprites||`` drag ``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||`` into the empty  ``||controller:on [A] button [pressed]||``.
 
@@ -124,7 +124,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## step 9
+## {step 9}
 
 ** Set lasers to FUN! **
 
@@ -140,7 +140,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## step 10
+## {step 10}
 
 ** 🎮 Time to play with your laser shark 🎮 **
 
@@ -150,7 +150,7 @@ Take a look at your game window and move your shark around while pressing the (A
 
 
 
-## Finale
+## {Finale}
 
 **Congratulations!**
 

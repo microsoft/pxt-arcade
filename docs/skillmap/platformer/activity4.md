@@ -147,7 +147,7 @@ for (let value of tiles.getTilesByType(myTiles.tile5)) {
 
 ```
 
-## Start @showdialog
+## {Start @showdialog}
 
 This tutorial will help you add levels to your game.
 
@@ -157,7 +157,7 @@ code again and again) we'll also learn to create a simple [**_function_**](#funk
 ![Levels and Functions](/static/skillmap/platformer/platformer4.gif "And now for something completely different!  And a little bit the same.")
 
 
-## Make a function
+## {Make a function}
 
 First, let's create a new function!
 
@@ -185,7 +185,7 @@ function startNextLevel() {
 ```
 
 
-## Refactoring pt. 1
+## {Refactoring pt. 1}
 Excellent! You should have a **startNextLevel** function container
 in your workspace. Let's fill it up!
 
@@ -237,7 +237,7 @@ function startNextLevel () {
 }
 ```
 
-## Refactoring pt. 2
+## {Refactoring pt. 2}
 
 Here's an important fact: *There's no point in building a function unless you
 __call__ it somewhere in your program.*
@@ -325,7 +325,7 @@ info.setLife(3)
 startNextLevel()
 ```
 
-## Refactoring pt. 3
+## {Refactoring pt. 3}
 
 **🏆  Reach the trophy  🏆**
 
@@ -375,7 +375,7 @@ function startNextLevel () {
 }
 ```
 
-## Variable
+## {Variable}
 
 **👾 Lots of great games have more than one level 👾**
 
@@ -395,7 +395,7 @@ and click on ``||controller: Make a Variable...||`` .
 ► Enter **currentLevel** in the textbox and click **OK**.
 
 
-## Variable 2
+## {Variable 2}
 
 Now you have a variable named **currentLevel**.  Let's use it!
 
@@ -443,7 +443,7 @@ function startNextLevel () {
 }
 ```
 
-## Choosing a level pt. 1
+## {Choosing a level pt. 1}
 
 If we want to change the scene for each new level (*spoiler...we do!*) then we're
 going to need to add some logic that looks at the **currentLevel** variable
@@ -494,7 +494,7 @@ function startNextLevel () {
 }
 ```
 
-## Choosing a level pt. 2
+## {Choosing a level pt. 2}
 
 First, we should check and see if our current level is **1**.
 If it is, we'll run the code for the first level,
@@ -547,7 +547,7 @@ function startNextLevel () {
 }
 ```
 
-## Choosing a level pt. 3
+## {Choosing a level pt. 3}
 
 💡  When restructuring a program, it's a good habit to make sure everything works
 as expected before making it more complicated.
@@ -602,7 +602,7 @@ function startNextLevel () {
 }
 ```
 
-## Choosing a level pt. 3.5
+## {Choosing a level pt. 3.5}
 
 That's a great start...but to ensure that it's working the same way
 as your original game, you'll need the player to win when they reach the trophy.
@@ -661,7 +661,7 @@ function startNextLevel () {
 }
 ```
 
-## Choosing a level pt. 3
+## {Choosing a level pt. 3}
 
 **❓❓ Ready to take this to another level ❓❓**
 
@@ -708,7 +708,7 @@ let currentLevel = 0
 
 ```
 
-## Choosing a level pt. 4
+## {Choosing a level pt. 4}
 
 **🎨 Time to get creative 🎨**
 
@@ -722,7 +722,7 @@ to win!
 You can follow those same steps to add a 3rd, 4th, or even 5th level!
 
 
-## Enemy cleanup pt. 1
+## {Enemy cleanup pt. 1}
 
 ```ghost
 sprites.allOfKind(SpriteKind.Enemy)
@@ -798,7 +798,7 @@ function startNextLevel () {
 ```
 
 
-## Enemy cleanup pt. 2
+## {Enemy cleanup pt. 2}
 
 Now you have a loop that will focus on each enemy, one at a time.
 This is your chance to destroy them!

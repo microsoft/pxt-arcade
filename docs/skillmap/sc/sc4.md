@@ -1,7 +1,7 @@
 # Shang-Chi: Power Kick
 
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
 **One of the rings is locked away!**
 This activity will show you how to destroy tiles so you can get every point.
@@ -11,7 +11,7 @@ This activity will show you how to destroy tiles so you can get every point.
 
 
 
-## Step 2 - Try It!
+## {Step 2 - Try It!}
 
 **🕹️ Start by moving your sprite through the level 🕹️**
 
@@ -21,7 +21,7 @@ Can you find the ring that's blocked in?
 
 
 
-## Step 3 - When B Pressed
+## {Step 3 - When B Pressed}
 
 **💥 Nothing a powerful kick can't fix 💥**
 We need to remove some walls and tiles! Let's clear the way when the B button is pressed.
@@ -39,7 +39,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 4 - Set the explosive
+## {Step 4 - Set the explosive}
 
 We're going to use a **projectile** block to clear tiles when we kick.
 
@@ -58,7 +58,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 5 - Make it powerful
+## {Step 5 - Make it powerful}
 
 For the explosive to overlap the blocks around it, it needs to **go through walls**!
 
@@ -79,7 +79,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 6 - Make it go away
+## {Step 6 - Make it go away}
 
 We don't want the projectile to stick around, so let's set a **lifespan** to make it disappear after 100 milliseconds.
 
@@ -105,7 +105,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## Step 7 - Kick It!
+## {Step 7 - Kick It!}
 
 In this step, we'll choose **an animation** for our sprite's kick!
 
@@ -138,7 +138,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Try It!
+## {Try It!}
 
 **🕹️ Give it a try 🕹️**
 
@@ -151,7 +151,7 @@ Press the B button to see your sprite give a powerful kick!
 
 
 
-## Step 9 - Removing Block Tiles
+## {Step 9 - Removing Block Tiles}
 
 **💥 Kapow 💥**
 When your **power kick** projectile overlaps a platform, we need to remove the wall and tile.
@@ -171,7 +171,7 @@ scene.onOverlapTile(SpriteKind.Projectile, assets.tile`boulder`, function (sprit
 })
 ```
 
-## Step 10 - Removing Walls
+## {Step 10 - Removing Walls}
 
 ► From ``||scene:Scene||``, drag ``||scene:set wall <OFF> at tilemap col [0] row [0]||`` into the empty ``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||`` container.
 
@@ -192,7 +192,7 @@ scene.onOverlapTile(SpriteKind.Projectile, assets.tile`boulder`, function (sprit
 ![Editing our platformer](/static/skillmap/jungle/projectile-wall-off.gif "Time to live dangerously!")
 
 
-## Step 11 - Removing Tiles
+## {Step 11 - Removing Tiles}
 
 Lastly, we need to remove the tile from the same place that we removed the wall.
 
@@ -211,7 +211,7 @@ scene.onOverlapTile(SpriteKind.Projectile, assets.tile`boulder`, function (sprit
 })
 ```
 
-## Try It!
+## {Try It!}
 
 **🕹️ Time to try your project 🕹️**
 
@@ -221,7 +221,7 @@ You should have everything you need to collect all five rings and get to the end
 
 
 
-## Finished
+## {Finished}
 
 **Play with your project and see how many points you can get.**
 

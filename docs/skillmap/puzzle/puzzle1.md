@@ -66,7 +66,7 @@ NewRound()
 
 
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
 We've made stories, clicker games, and collector games...now it's time to learn the secrets behind puzzle games!
 
@@ -76,7 +76,7 @@ Today, we'll make a  number guessing puzzle.
 ![A simple puzzle](/static/skillmap/puzzle/puzzle-activity-1.gif "Is it a puzzle, or is it luck?")
 
 
-## Step 2
+## {Step 2}
 
 **🧙‍♂️ Let's add some character 🧙‍♂️**
 
@@ -116,7 +116,7 @@ let mySprite = sprites.create(img`
 
 ```
 
-## Step 3
+## {Step 3}
 
 **🏅 Issue a challenge 🏅**
 
@@ -157,7 +157,7 @@ game.showLongText("I'm thinking of a number between 1 and 5. Can you guess it?",
 
 ```
 
-## Step 4
+## {Step 4}
 
 **🤷 Nothing to lose 🤷**
 
@@ -205,7 +205,7 @@ game.showLongText("I'm thinking of a number between 1 and 5. Can you guess it?",
 
 ```
 
-## Step 5
+## {Step 5}
 
 **🔮 So random 🔮**
 
@@ -247,7 +247,7 @@ game.showLongText("I'm thinking of a number between 1 and 5. Can you guess it?",
 
 ```
 
-## Step 6
+## {Step 6}
 
 **📝 Guess and check 📝**
 
@@ -292,7 +292,7 @@ if (0 == 0) {
 }
 ```
 
-## Step 7
+## {Step 7}
 
 
 ► Replace the first **0** in your logic value block with an
@@ -337,7 +337,7 @@ if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
 ```
 
 
-## Step 8
+## {Step 8}
 
 
 Click on the game screen, then choose your guess using the arrow pad and the space key.
@@ -352,7 +352,7 @@ Your code ran, but nothing told you whether your were right or wrong...
 
 
 
-## Step 9
+## {Step 9}
 
 **🔎 The moment of truth 🔍**
 
@@ -399,7 +399,7 @@ if (game.askForNumber("Enter a number between 1 and 5", 1) == myNumber) {
 ```
 
 
-## Finale
+## {Finale}
 
 **There you go!**
 

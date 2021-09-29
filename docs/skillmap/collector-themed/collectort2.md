@@ -48,7 +48,7 @@ forever(function () {
 ```
 
 
-## Intro @showdialog
+## {Intro @showdialog}
 
 The start of a collector game is in your workspace. Let's take it even further by adding points when you collect baby dinos!
 
@@ -58,12 +58,12 @@ The start of a collector game is in your workspace. Let's take it even further b
 
 
 
-## Step 2
+## {Step 2}
 
 **🎮 Play the game in the workspace before you begin 🎮**
 
 
-## Step 3
+## {Step 3}
 
 **We're off to a great start!!**
 Let's add some code that tells the game what to do when the mom reaches her baby.
@@ -85,7 +85,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 
 
-## Step 4
+## {Step 4}
 
 Now we have a container for code that runs when Mama Dino overlaps the babies.
 **Let's add a block to remove the babies from the play area when you catch them.**
@@ -115,7 +115,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 ![Grab otherSprite from header](/static/skillmap/assets/give-var.gif "Replace mySprite with the otherSprite variable" )
 
 
-## Step 5
+## {Step 5}
 
 **🏆 Keeping score 🏆**
 
@@ -138,7 +138,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 ```
 
 
-## Step 6
+## {Step 6}
 
 **🎮 Now try it out on the game screen 🎮**
 
@@ -174,7 +174,7 @@ forever(function () {
 
 
 
-## Step 7
+## {Step 7}
 
 **🕔 Does this game feel long to you? 🕔**
 
@@ -199,7 +199,7 @@ info.startCountdown(15)
 ```
 
 
-## Step 8
+## {Step 8}
 
 **🥇 Everyone's a winner 🥇**
 
@@ -223,7 +223,7 @@ info.onCountdownEnd(function () {
 
 
 
-## Step 9
+## {Step 9}
 
 **🏆 Now play your winning creation 🏆**
 

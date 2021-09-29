@@ -1,7 +1,7 @@
 # Shang-Chi: Here Comes Trouble
 
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
 This activity will show you how to add Ten Rings assassins to chase your sprite!
 
@@ -9,7 +9,7 @@ This activity will show you how to add Ten Rings assassins to chase your sprite!
 
 
 
-## Step 2 - Try It!
+## {Step 2 - Try It!}
 
 **🕹️ Start by trying the project you have so far 🕹️**
 
@@ -18,7 +18,7 @@ This activity will show you how to add Ten Rings assassins to chase your sprite!
 Can you connect each chunk of code to the actions it creates?
 
 
-## Step 3 - Enemy March
+## {Step 3 - Enemy March}
 
 Let's bring some assassins to this party.
 
@@ -64,7 +64,7 @@ tiles.createSpritesOnTiles(assets.tile`rubble`, SpriteKind.Enemy)
 ```
 
 
-## Step 4 - Choose the Enemy
+## {Step 4 - Choose the Enemy}
 
 To set-up your assassins, you'll need to add properties as they're created.
 
@@ -85,7 +85,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 
 
 
-## Step 5 - Take a Hit
+## {Step 5 - Take a Hit}
 
 ► Set each assassin's animation by snapping ``||animation:animate [mySprite]...when not moving||`` into the empty ``||sprites:on created [sprite] of kind [Enemy]||`` container.
 
@@ -115,7 +115,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 
 
 
-## Step 6 - Follow the Leader
+## {Step 6 - Follow the Leader}
 
 **💥 Watch Out 💥**
 
@@ -142,7 +142,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 ```
 
 
-## Try It!
+## {Try It!}
 
 **🕹️ How does is look? 🕹️**
 
@@ -151,7 +151,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 Run around near an assassin.  Do you notice anything wrong?
 
 
-## Step 8 - Down to Earth
+## {Step 8 - Down to Earth}
 
 **☁️ The assassins are floating ☁️**
 Keep them on the ground by adding acceleration.
@@ -180,7 +180,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 ```
 
 
-## Try It!
+## {Try It!}
 
 **🕹️ How does it look? 🕹️**
 
@@ -190,7 +190,7 @@ Now the assassins should run after you wherever you go!
 
 
 
-## Finished
+## {Finished}
 
 When you're done testing your project, click **Done** to return to the main page to find out how to add damage when you're caught by the enemy.
 

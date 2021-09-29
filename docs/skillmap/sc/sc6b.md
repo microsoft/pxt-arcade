@@ -1,7 +1,7 @@
 # Shang-Chi: Smarter Assassins
 
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
 This activity will help you add code to make your assassins act more naturally!
 
@@ -9,7 +9,7 @@ This activity will help you add code to make your assassins act more naturally!
 
 
 
-## Step 2 - Try It!
+## {Step 2 - Try It!}
 
 **🕹️ Start by trying the project you have so far 🕹️**
 
@@ -19,7 +19,7 @@ Can you connect each chunk of code to the actions it creates?
 
 
 
-## Step 3 - About Face
+## {Step 3 - About Face}
 
 We can make your assassins smart enough to turn around.
 
@@ -55,7 +55,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 ```
 
 
-## Step 4 - Jump, Jump!
+## {Step 4 - Jump, Jump!}
 
 A little barrier wouldn't stop a Ten Rings assassin. Let's teach them to jump when something stands in their way.
 
@@ -79,7 +79,7 @@ scene.onHitWall(SpriteKind.Enemy, function (sprite, location) {
 
 
 
-## Try It!
+## {Try It!}
 
 **🕹️ Try it! 🕹️**
 
@@ -91,7 +91,7 @@ Try to escape the assassins. Can they keep up?
 
 
 
-## Finished
+## {Finished}
 
 When you're done testing your project, click **Done** to return to the main page to find out how to add a second level to your game!
 

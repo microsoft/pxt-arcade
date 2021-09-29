@@ -1,7 +1,7 @@
 # Let's Get Animated!
 
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Bring your game to life with custom animations for your characters.
 
@@ -9,7 +9,7 @@ Bring your game to life with custom animations for your characters.
 
 
 
-## Step 2 - Main Sprite
+## {Step 2 - Main Sprite}
 
 **Let's start with the main character!**
 There are lots of ways to animate your shark, starting with the forward swim.
@@ -68,7 +68,7 @@ false
 
 
 
-## Step 3 - Animate mySprite Cont.
+## {Step 3 - Animate mySprite Cont.}
 
 ► Click the empty grey box and toggle to **My Assets** to choose the **swim right** animation, then click **Done**.
 
@@ -102,7 +102,7 @@ true
 ```
 
 
-## Step 4 - Try It!
+## {Step 4 - Try It!}
 
 **🕹️ Give your game a try 🕹️**
 
@@ -111,7 +111,7 @@ true
 Your shark should keep swimming as you play!
 
 
-## Step 5 - About Face
+## {Step 5 - About Face}
 
 **👈 Sharks can't swim backwards! 👈**
 If the shark needs to swim to the left, we should turn it around.
@@ -130,7 +130,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 5 - Left Animation
+## {Step 5 - Left Animation}
 
 
 ► From ``||animation:Animation||``, drag ``||animation:animate [mySprite]||`` into the empty ``||controller:on [left] button [pressed]||`` container.
@@ -152,7 +152,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 6 - Try It!
+## {Step 6 - Try It!}
 
 **🕹️ Play it again! 🕹️**
 
@@ -162,7 +162,7 @@ Now your shark turns around when you press the left button, but it never flips b
 
 
 
-## Step 8 - To the Right
+## {Step 8 - To the Right}
 
 **👉 Flip it! 👉**
 When the shark is done swimming left, it should automatically face back to the right.
@@ -183,7 +183,7 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
 ```
 
 
-## Step 9 - Animate Right
+## {Step 9 - Animate Right}
 
 
 ► From ``||animation:Animation||``, drag ``||animation:animate [mySprite]||`` into the empty ``||controller:on [left] button [released]||`` container.
@@ -207,7 +207,7 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
 ```
 
 
-## Step 10 - Spit It Out
+## {Step 10 - Spit It Out}
 
 **💥 Spitting Lasers 💥**
 The shark always spits lasers toward the right edge, so let's give it an appropriate animation!
@@ -231,7 +231,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 11 - And On and On
+## {Step 11 - And On and On}
 
 **🔁 And do it AGAIN 🔁**
 
@@ -268,7 +268,7 @@ game.onUpdateInterval(2100, function () {
 
 
 
-## Finale
+## {Finale}
 
 **WOW!**
 Look at the game you've created!  Make sure to give it a try in the game window before moving on.

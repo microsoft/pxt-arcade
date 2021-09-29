@@ -78,7 +78,7 @@ controller.moveSprite(mySprite, 100, 0)
 
 ## 5. Try It
 
-**Click the Game Window Tab (Above)**  
+**Click the Game Window Tab (Above)**
 
 ![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
@@ -96,9 +96,9 @@ to "pull down" on the sprite.
 
 ---
 
-- :paper plane:  Drag  
-``||sprites:set [mySprite] [x] to [0]||``  
-to **the end** of the  
+- :paper plane:  Drag
+``||sprites:set [mySprite] [x] to [0]||``
+to **the end** of the
 ``||loops:on start||`` container.
 
 - :mouse pointer: Click the dropdown to change **x** to **ay (acceleration y)**.
@@ -120,9 +120,9 @@ mySprite.ay = 500
 
 ---
 
-- :tree:  To keep the monkey in sight, drag  
-``||scene:camera follow sprite [mySprite]||``  
-to **the end** of the  
+- :tree:  To keep the monkey in sight, drag
+``||scene:camera follow sprite [mySprite]||``
+to **the end** of the
 ``||loops:on start||`` container.
 
 ```blocks
@@ -149,15 +149,15 @@ Now that the monkey has landed safely, we can make it jump using the **up** arro
 
 ---
 
-- :game: Drag the  
-``||controller:on [A] button [pressed]||``  
+- :game: Drag the
+``||controller:on [A] button [pressed]||``
 container into an empty area of the workspace.
 
 - :mouse pointer: Click the **A** option and change it to **up**.
 
-- :paper plane: Inside of the  
-``||controller:on [up] button [pressed]||``  
-container, add  
+- :paper plane: Inside of the
+``||controller:on [up] button [pressed]||``
+container, add
 ``||sprites:make [mySprite] gravity jump||``.
 
 ```blocks
@@ -172,7 +172,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Finale
 
-🔥 **That's it! Now give your game a try!** 🔥  
+🔥 **That's it! Now give your game a try!** 🔥
 Can you jump around between platforms?
 
 ---

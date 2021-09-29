@@ -63,7 +63,7 @@ scene.cameraShake(4, 500)
 
 
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 **Intergalactic travel is dangerous!**
 
@@ -73,7 +73,7 @@ These could be asteroids, radioactive debris, or angry space sharks!
 ![Releasing projectiles](/static/skillmap/space/projectiles.gif "Here, enemy ship. Would you like to borrow an asteroid?")
 
 
-## Step 1
+## {Step 1}
 
 **👾 Feel like making enemies rain from the sky? 👾**
 
@@ -92,7 +92,7 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 2
+## {Step 2}
 
 ► In the ``||sprites:Sprites||`` category, find the
 ``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||`` block
@@ -128,7 +128,7 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 3
+## {Step 3}
 **🎆 Let's get the enemies moving in the right direction 🎆**
 
 ---
@@ -165,7 +165,7 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 4
+## {Step 4}
 
 
 Enemies aren't likely to hit the ship if they're all the way off to the side,
@@ -222,7 +222,7 @@ game.onUpdateInterval(1000, function () {
 ```
 
 
-## Step 5
+## {Step 5}
 
 You might want to add lots of different kinds of enemies plummeting from above.
 We can make sure they all have the same effect using the
@@ -268,7 +268,7 @@ game.onUpdateInterval(1000, function () {
 
 
 
-## Step 6
+## {Step 6}
 
 
 **💥 Time to create some enemy behavior 💥**
@@ -296,7 +296,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Step 7
+## {Step 7}
 
 When the enemy collides with the ship,
 we want it to subtract a life...then disappear.
@@ -328,7 +328,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Step 8
+## {Step 8}
 
 **🌍 Time to save the world 🌏**
 
@@ -360,7 +360,7 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, oth
 })
 ```
 
-## Complete
+## {Complete}
 
 **Congratulations**
 

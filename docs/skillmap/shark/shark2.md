@@ -1,6 +1,6 @@
 # Food not Friends
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Did you eat yet?
 
@@ -9,7 +9,7 @@ Did you eat yet?
 Let's send a school of fish toward the shark to keep it full and happy.
 
 
-## step 2
+## {step 2}
 
 **🕹️ Play it again 🕹️**
 
@@ -20,7 +20,7 @@ Can you connect each chunk of code with actions on the screen?
 
 
 
-## step 3
+## {step 3}
 
 **🐠 Let's go fishing 🐠**
 
@@ -40,7 +40,7 @@ game.onUpdateInterval(2100, function () {
 
 
 
-## Step 4
+## {Step 4}
 
 
 ► From ``||sprites:Sprites||``, drag ``||variables: set [mySprite2] to sprite [ ] of kind [Player]||`` into the empty ``||game:on game update every [2100] ms||`` container.
@@ -59,7 +59,7 @@ game.onUpdateInterval(2100, function () {
 })
 ```
 
-## Step 5
+## {Step 5}
 
 ► Click the grey box inside ``||variables: set [myFood] to sprite [ ] of kind [Food]||`` and toggle to **My Assets** to choose the **food** fish, then click **Done**.
 
@@ -72,7 +72,7 @@ game.onUpdateInterval(2100, function () {
 
 
 
-## Step 6
+## {Step 6}
 
 
 ** Never too far away **
@@ -93,7 +93,7 @@ game.onUpdateInterval(2100, function () {
 })
 ```
 
-## Step 7
+## {Step 7}
 
 Let's start each fish at the right edge of the screen from a random height.
 
@@ -117,7 +117,7 @@ let mySprite: Sprite = null
 })
 ```
 
-## Step 8
+## {Step 8}
 
 **🐡 Fast Food 🐡**
 Get the fish swimming for a bigger challenge.
@@ -146,7 +146,7 @@ let mySprite: Sprite = null
 
 
 
-## Finale
+## {Finale}
 
 **So satisfying!**
 Now your shark can find food anywhere it goes.

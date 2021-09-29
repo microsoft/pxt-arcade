@@ -2,7 +2,7 @@
 ### @preferredEditor asset
 
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 You've made an amazing deep sea game, but now it's time to turn it into something unique!
 
@@ -12,7 +12,7 @@ This activity will help you edit your sprites and backgrounds to create a brand 
 
 
 
-## Step 2 - Main Sprite
+## {Step 2 - Main Sprite}
 
 **Let's start with the main character!**
 Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine snatching clouds? It's up to you!
@@ -26,7 +26,7 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 
 
 
-## Step 3 - Background
+## {Step 3 - Background}
 
 **Where does your hero want to be?**
 
@@ -40,7 +40,7 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 
 
 
-## Step 4 - Decorations
+## {Step 4 - Decorations}
 
 **🎍 Decorations 🎍**
 
@@ -51,7 +51,7 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 ► Draw a small decoration for the ground of your scene, or toggle to the **Gallery** to find one that has already been created.  When you're happy with your decoration, click **Done**.
 
 
-## Step 5 - Food
+## {Step 5 - Food}
 
 **🪙 Collectibles 🪙**
 
@@ -64,7 +64,7 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 
 
 
-## Step 6 - Enemies
+## {Step 6 - Enemies}
 
 **😈 Enemies 😈**
 
@@ -78,7 +78,7 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 
 
 
-## Step 7 - Projectile
+## {Step 7 - Projectile}
 
 **🧨 Projectiles 🧨**
 
@@ -89,7 +89,7 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 ► Draw something that your main character can throw at other sprites (or toggle to the **Gallery** to find something that has already been created).  When you're happy with your projectile, click **Done**.
 
 
-## Finale
+## {Finale}
 
 **Fantastic!**
 You've created a game of your very own!

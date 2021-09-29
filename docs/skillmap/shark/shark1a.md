@@ -1,6 +1,6 @@
 # Beware the Enemy!
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 There are enemies everywhere!
 
@@ -9,7 +9,7 @@ There are enemies everywhere!
 In this activity, we'll add enemies that pop out of nowhere and follow your shark.
 
 
-## step 2
+## {step 2}
 
 **🕹️ Play it again 🕹️**
 
@@ -21,7 +21,7 @@ Do you remember which chunk of code connects to each action on the screen?
 
 
 
-## step 3
+## {step 3}
 
 **🕓 Timing is everything 🕗**
 
@@ -39,7 +39,7 @@ game.onUpdateInterval(2500, function () {
 })
 ```
 
-## Step 4
+## {Step 4}
 
 **🦹‍♂️ Make some enemies 🦹‍♂️**
 
@@ -61,7 +61,7 @@ game.onUpdateInterval(2500, function () {
 })
 ```
 
-## Step 5
+## {Step 5}
 
 ► Click the grey box inside the ``||variables: set [myEnemy] to sprite [ ] of kind [Enemy]||`` block and toggle to **My Assets** to choose the **enemy** submarine, then click **Done**.
 
@@ -74,7 +74,7 @@ game.onUpdateInterval(2500, function () {
 
 
 
-## Step 6
+## {Step 6}
 
 
 ** Location, Location, Location! **
@@ -95,7 +95,7 @@ game.onUpdateInterval(2500, function () {
 })
 ```
 
-## Step 7
+## {Step 7}
 
 **Let's start all of the enemies at the furthest edge of the screen.**
 (This means you'll need to set the **x** value to the full width of the screen.)
@@ -116,7 +116,7 @@ game.onUpdateInterval(2500, function () {
 ```
 
 
-## Step 8
+## {Step 8}
 
 **🎮 Take a look at the game window to see how everything works 🎮**
 
@@ -124,7 +124,7 @@ You should have a shark that moves around with the arrow keys and enemies that s
 
 
 
-## Step 10
+## {Step 10}
 
 **🔀 Shake up the enemy 🔀**
 Let's start the submarine at a random height to keep things interesting.
@@ -147,7 +147,7 @@ let mySprite: Sprite = null
 ```
 
 
-## Step 11
+## {Step 11}
 
 **💥 Enemies on the move 💥**
 
@@ -169,7 +169,7 @@ let mySprite: Sprite = null
 
 
 
-## Finale
+## {Finale}
 
 **There you have it!**
 

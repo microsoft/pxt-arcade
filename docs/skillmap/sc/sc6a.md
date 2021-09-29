@@ -1,7 +1,7 @@
 # Shang-Chi: Packs a Punch
 
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
 This activity will help you add consequenses when assassins overlap your sprite!
 
@@ -9,7 +9,7 @@ This activity will help you add consequenses when assassins overlap your sprite!
 
 
 
-## Step 2 - Try It!
+## {Step 2 - Try It!}
 
 **🕹️ Start by trying the project you have so far 🕹️**
 
@@ -18,7 +18,7 @@ This activity will help you add consequenses when assassins overlap your sprite!
 Can you connect each chunk of code to the actions it creates?
 
 
-## Step 3 - Gotcha!
+## {Step 3 - Gotcha!}
 
 Let's take hit points from your hero when an assassin catches (overlaps) them.
 
@@ -37,7 +37,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ```
 
 
-## Step 4 - Damage Control
+## {Step 4 - Damage Control}
 
 First, move the assassin (otherSprite) so they don't attack too many times in a row, then you can take away a hit point.
 
@@ -60,7 +60,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 
 
-## Step 5 - Take a Hit
+## {Step 5 - Take a Hit}
 
 ► To remove a heart, go to ``||info:Info||`` and drag ``||info:change life by [-1]||`` into **the end** of the ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Enemy]||`` container.
 
@@ -73,7 +73,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 
 
-## Step 6 - Animate it
+## {Step 6 - Animate it}
 
 ► Now use an ``||animation:animate [mySprite]||`` block to show that your sprite has taken damage!
 
@@ -94,7 +94,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 
 
-## Try It!
+## {Try It!}
 
 **🕹️ Try it 🕹️**
 
@@ -105,7 +105,7 @@ Run into an assassin and see what happens.  Does it look the way you expect?
 
 
 
-## Step 8 - Fighting Chance
+## {Step 8 - Fighting Chance}
 
 **💥 Let's give our sprite a fighting chance 💥**
 Our sprite has a powerful kick.  Let's use it to clear the enemies.
@@ -125,7 +125,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 ```
 
 
-## Step 9 - Destroy the Assassin
+## {Step 9 - Destroy the Assassin}
 
 When our power kick (projectile) hits an assassin, we want to destroy both the projectile and the assassin (otherSprite).
 
@@ -146,7 +146,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 
 
 
-## Try It!
+## {Try It!}
 
 **🕹️ Give it a try 🕹️**
 
@@ -157,7 +157,7 @@ Can you clear all of the assassins, collect five rings, and win the level?
 
 
 
-## Finished
+## {Finished}
 
 When you're done testing your project, click **Done** to return to the main page to find out how you can make the enemies a little smarter.
 

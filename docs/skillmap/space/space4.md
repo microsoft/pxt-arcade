@@ -1,6 +1,6 @@
 # Fuel Up!
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Time to refuel!
 
@@ -14,17 +14,17 @@ ship from breaking down!
 
 
 ## 2. Add a Status Bar
-The code in the workspace is taking up a lot of room!  
-😨 😨 😨  
+The code in the workspace is taking up a lot of room!
+😨 😨 😨
 Don't worry, the workspace will expand if you scroll up &
 over (or down & over) to keep building.
 
 ---
 
 - :battery full: Take a peek into the new ``||statusbars:Status Bars||`` category.
-You'll find  
-``||variables:set [statusbar] to create status bar sprite width [20] height [4] kind [Health]||``.  
-Drag one to the end of the   
+You'll find
+``||variables:set [statusbar] to create status bar sprite width [20] height [4] kind [Health]||``.
+Drag one to the end of the
 ``||loops:on start||`` container.
 
 - :mouse pointer: In the **set statusbar** block, click on **Health** to get the dropdown menu, then select **Energy** to create a fuel gauge.
@@ -42,13 +42,13 @@ If we want the status bar to show the details of **mySprite**, we'll need to lin
 
 ---
 
-- :battery full: Drag  
-``||statusbars:attach [statusbar] to [mySprite] ➕||``  
-into **the end** of the  
+- :battery full: Drag
+``||statusbars:attach [statusbar] to [mySprite] ➕||``
+into **the end** of the
 ``||loops:on start||`` container.
 
 - :mouse pointer: Click ➕ on the new block to reveal options
- to change the position of the status bar in relation to **mySprite**.  
+ to change the position of the status bar in relation to **mySprite**.
 
 _💡 Can you figure out how to get the bar to show up *below* your ship?_
 
@@ -67,13 +67,13 @@ Here's how to make the fuel go down as time passes.
 
 ---
 
-- :circle: Drag an  
-``||game:on game update every [500] ms||``  
+- :circle: Drag an
+``||game:on game update every [500] ms||``
 container into an empty area of the
 workspace. Adjust the time argument to **300 ms**.
 
-- :battery full: Drop   
-``||statusbars:change [statusbar] [value] by [0]||``  
+- :battery full: Drop
+``||statusbars:change [statusbar] [value] by [0]||``
 into the empty **game update** container.
 
 - :mouse pointer: Change the amount the status bar changes from **0** to **-1**.
@@ -100,12 +100,12 @@ workspace and use them as a guide.
 
 ---
 
-- :circle: Drag a _new_   
-``||game:on game update every [500] ms||``  
+- :circle: Drag a _new_
+``||game:on game update every [500] ms||``
 container into the workspace and change the interval to **5 seconds (5000 ms)**.
 
-- :paper plane: Snap a new  
-``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||``  
+- :paper plane: Snap a new
+``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||``
 block inside the newest **on game update** container.
 
 - :mouse pointer: Click ``||variables:[projectile2]||`` and rename the sprite ``||variables:[myFuel]||``.
@@ -143,10 +143,10 @@ across the top of the screen.
 
 ---
 
-- :paper plane: Connect a  
-``||sprites:set [mySprite] [x] to [0]||``  
-block at **the bottom** of the  
-``||game:on game update every [5000] ms||``  
+- :paper plane: Connect a
+``||sprites:set [mySprite] [x] to [0]||``
+block at **the bottom** of the
+``||game:on game update every [5000] ms||``
 container.
 
 - :mouse pointer: To make sure we're acting on the right sprites, use the dropdown in the new block to change ``||variables:mySprite||`` to ``||variables:myFuel||``.
@@ -163,14 +163,14 @@ game.onUpdateInterval(5000, function () {
 ## 8. Random Location
 
 - :calculator: To set a random [__*x*__](#setX "horizontal location")
-for the fuel, grab a  
-``||Math:pick random [0] to [10]||``   
-block and connect it to replace the **0** argument in the  
-``||sprites:set [mySprite] [x] to [0]||``   
+for the fuel, grab a
+``||Math:pick random [0] to [10]||``
+block and connect it to replace the **0** argument in the
+``||sprites:set [mySprite] [x] to [0]||``
 block.
 
-- :mouse pointer: Update the minimum argument of the  
-``||Math:pick random [0] to [10]||``  
+- :mouse pointer: Update the minimum argument of the
+``||Math:pick random [0] to [10]||``
 block to **5** and the
 maximum argument to **155**.
 
@@ -191,8 +191,8 @@ Now we need to create a new **kind** of sprite for our **Fuel**!
 
 ---
 
-- :paper plane: Snap a  
-``||sprites:set [mySprite] kind to [Player]||``  
+- :paper plane: Snap a
+``||sprites:set [mySprite] kind to [Player]||``
 block into the bottom of the newest **on game update** container.
 
 - :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:myFuel||``.
@@ -219,8 +219,8 @@ When your ship overlaps fuel, you'll want the gas to disappear as the tank refil
 
 ---
 
-- :paper plane: Drag an  
-``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||``  
+- :paper plane: Drag an
+``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||``
 container into the workspace.
 
 - :mouse pointer: Change the last argument from ``||sprites:Player||`` to ``||sprites:Gas||``.
@@ -239,13 +239,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Gas, function (sprite, otherSpri
 
 ## 11. Refill
 
-- :battery full: To refill the status bar after grabbing fuel, snag a  
-``||statusbars:set [statusbar] [value] to [0]||``  
+- :battery full: To refill the status bar after grabbing fuel, snag a
+``||statusbars:set [statusbar] [value] to [0]||``
 block and snap it in to your newest **overlaps** container.
 
 - :mouse pointer: Change the value from **0** to **100**.
 
-- :paper plane: Finally, make sure the used fuel disappears by snapping a  
+- :paper plane: Finally, make sure the used fuel disappears by snapping a
 ``||sprites:destroy [mySprite] ➕||``  block
 into the bottom of the same **overlaps** container and replacing
 ``||variables:mySprite||`` with ``||variables:otherSprite||``
@@ -272,8 +272,8 @@ The threat is real.
 
 ---
 
-- :battery full: To add consequences for an empty status bar, drag an  
-``||statusbars:on status bar kind [Health] zero [status]||``  
+- :battery full: To add consequences for an empty status bar, drag an
+``||statusbars:on status bar kind [Health] zero [status]||``
 container into the workspace.
 
 - :mouse pointer: Change the status bar kind to **Energy**.
@@ -288,7 +288,7 @@ statusbars.onZero(StatusBarKind.Energy, function (status) {
 ```
 
 
-## Finale
+## {Finale}
 
 **And that's it!**
 

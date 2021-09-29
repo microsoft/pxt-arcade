@@ -195,7 +195,7 @@ mySprite.say("The number was " + myNumber + "!")
 
 ```
 
-## Welcome @showdialog
+## {Welcome @showdialog}
 
 There is a strategy to being able to guess a number when you know
 that your last guess was either high or low.
@@ -206,7 +206,7 @@ This activity will help you create a game that gives that feedback.
 
 
 
-## Step 2
+## {Step 2}
 
 The code for a guessing game is in your workspace.
 
@@ -244,7 +244,7 @@ mySprite.say("The number was " + myNumber + "!")
 
 ```
 
-## Step 3
+## {Step 3}
 
 **👩‍🚀 A larger universe 👩‍🚀**
 
@@ -281,7 +281,7 @@ mySprite.say("The number was " + myNumber + "!")
 
 ```
 
-## Step 4
+## {Step 4}
 
 **🧞 Greater possibilities 🧞**
 
@@ -322,7 +322,7 @@ mySprite.say("The number was " + myNumber + "!")
 
 ```
 
-## Step 5
+## {Step 5}
 
 Let's check whether the player's guess is equal to the computer's
 random number...
@@ -358,7 +358,7 @@ mySprite.say("The number was " + myNumber + "!")
 ```
 
 
-## Step 6
+## {Step 6}
 
 **🦉 Nesting conditions 🦉**
 
@@ -399,7 +399,7 @@ let mySprite: Sprite = null
 ```
 
 
-## Step 7
+## {Step 7}
 
 **⬆️ High or low ⬇️**
 
@@ -438,7 +438,7 @@ let mySprite: Sprite = null
 
 
 
-## Step 8
+## {Step 8}
 
 
 **🗨️ Giving feedback 💬**
@@ -481,7 +481,7 @@ let mySprite: Sprite = null
 ```
 
 
-## Finale
+## {Finale}
 
 **Fantastic! Give your game a try!**
 

@@ -20,7 +20,7 @@ and where the controller buttons are enabled?
 
 ---
 
-At the moment, the glove doesn't do anything when it overlaps quail. 
+At the moment, the glove doesn't do anything when it overlaps quail.
 
 We should fix that.
 
@@ -31,8 +31,8 @@ We should fix that.
 
 ---
 
-- :paper plane:  From ``||sprites:Sprites||``, drag an  
-``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||``  
+- :paper plane:  From ``||sprites:Sprites||``, drag an
+``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||``
 container into the workspace.
 
 - :mouse pointer:  Click the **second** ``||sprites:Player||`` dropdown and
@@ -54,8 +54,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Quail, function (sprite, otherSp
 
 ---
 
-- :paper plane:  Also from ``||sprites:Sprites||``, grab   
-``||sprites:set [myEnemy] follow [mySprite] ||``   
+- :paper plane:  Also from ``||sprites:Sprites||``, grab
+``||sprites:set [myEnemy] follow [mySprite] ||``
 and drag it into the empty **overlaps** container.
 
 - :mouse pointer:  Grab the ``||variables:otherSprite||`` value block out of the title of the outer container and
@@ -80,7 +80,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Quail, function (sprite, otherSp
 
 ---
 
-What's happening?  
+What's happening?
 What's not happening?
 
 
@@ -90,8 +90,8 @@ What's not happening?
 
 ---
 
-- :tree:  From ``||scene:Scene||``, drag an  
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
+- :tree:  From ``||scene:Scene||``, drag an
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``
 container into the workspace.
 
 - :mouse pointer:  Change **Player** to **Quail**, and change the empty tile to the **coop** tile.
@@ -108,8 +108,8 @@ scene.onOverlapTile(SpriteKind.Quail, assets.tile`myTile`, function (sprite, loc
 
 ## 7. Destroy
 
-- :paper plane:  From ``||sprites:Sprites||``, snap a  
-``||sprites:destroy [mySprite]||``  
+- :paper plane:  From ``||sprites:Sprites||``, snap a
+``||sprites:destroy [mySprite]||``
 block into the empty overlaps container.
 
 - :mouse pointer:  Grab the ``||variables:sprite||`` value block from the
@@ -136,13 +136,13 @@ scene.onOverlapTile(SpriteKind.Quail, assets.tile`myTile`, function (sprite, loc
 
 ---
 
-- :mouse pointer:  Right-click on your  
-``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Quail]||``  
+- :mouse pointer:  Right-click on your
+``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Quail]||``
 container and select **Duplicate** from the dropdown menu. Then change the second
 argument from **Quail** to **Egg**.
 
-- :mouse pointer:  Right-click on your  
-``||scene:on [sprite] of kind [Quail] overlaps [coop] at [location]||``  
+- :mouse pointer:  Right-click on your
+``||scene:on [sprite] of kind [Quail] overlaps [coop] at [location]||``
 container and select **Duplicate** from the dropdown menu.
 Then change the kind from **Quail** to **Egg**.
 
