@@ -1,13 +1,13 @@
 # Multiple enemy sprites
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 Use the ``||math:percent chance||`` block to assign a random image
 to your enemies.
 
 ![Multiple Enemies](/static/recipes/shark-splash/02-B-enemies.gif)
 
-## Step 1
+## {Step 1}
 
 Drag an ``||sprites:on created||`` block into the workspace. Change the kind in the
 dropdown to ``||sprites:Enemy||``. If you already have an ``||sprites:on created||`` block
@@ -19,7 +19,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 ```
 
 
-## Step 2
+## {Step 2}
 
 Inside the ``||sprites:on created||`` block, place an ``||logic:if then else||`` statement.
 
@@ -34,7 +34,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 })
 ```
 
-## Step 3
+## {Step 3}
 
 Place a ``||math:% chance||`` block as the condition inside the ``||logic:if then else||``.
 Change the percentage ``||math:%||`` to `50`.
@@ -50,7 +50,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 })
 ```
 
-## Step 3
+## {Step 3}
 
 Place a ``||sprites:set image to||`` block into the first clause of ``||logic:if then else||``.
 Drag the ``||variables:sprite||`` variable from the ``||sprites:on created||`` block and use it as
@@ -85,7 +85,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 })
 ```
 
-## Step 4
+## {Step 4}
 
 Place a second ``||sprites:set image to||`` block into the else clause of ``||logic:if then else||``.
 Drag the ``||variables:sprite||`` variable from the ``||sprites:on created||`` block and use it as
@@ -137,7 +137,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 })
 ```
 
-## Conclusion @unplugged
+## {Conclusion @unplugged}
 
 Now let's add code to destroy the enemies with your projectiles! Or, if you're feeling creative, add a background to set the scene.
 

@@ -1,11 +1,11 @@
 # Background tutorial
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 Bored of the back background? Follow this tutorial to learn how to change the background color
 or draw a picture on it.
 
-## Step 1: set the background color
+## {Step 1: set the background color}
 
 From ``||scene:SCENE||``, drag the ``||scene:set background color||`` block
 to change the background color of your game.
@@ -14,7 +14,7 @@ to change the background color of your game.
 scene.setBackgroundColor(6)
 ```
 
-## Step 2: set the background image
+## {Step 2: set the background image}
 
 From ``||scene:SCENE||``, drag the ``||scene:set background color||`` block
 to change the background image.
@@ -147,7 +147,7 @@ scene.setBackgroundImage(img`
 `)
 ```
 
-## Step 3: Change color or background during the game
+## {Step 3: Change color or background during the game}
 
 You can also change the color or image during the game. The blocks below will make the background red while button **A** is pressed. Try it out!
 
@@ -160,6 +160,6 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 })
 ```
 
-## Conclusion @unplugged
+## {Conclusion @unplugged}
 
 Well done! You have learned how to **set background color or image** for your games. Pew Pew!

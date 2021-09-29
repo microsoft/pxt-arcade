@@ -531,7 +531,15 @@
         "print": true,
         "hasAudio": true,
         "allowPackageExtensions": true,
-        "homeScreenHero": "./static/hero.png",
+        "homeScreenHero": {
+            "imageUrl": "/static/hero-gallery/skillmap.png",
+            "name": "Start Skillmap",
+            "url": "https://aka.ms/ArcadeSkillmap",
+            "buttonLabel": "Start Skillmap",
+            "description": "New? Start here!",
+            "cardType": "link"
+        },
+        "homeScreenHeroGallery": "/hero-banner",
         "socialOptions": {
             "orgTwitterHandle": "MSMakeCode",
             "hashtags": "MakeCode",

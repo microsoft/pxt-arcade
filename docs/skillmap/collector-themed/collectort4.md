@@ -81,7 +81,7 @@ forever(function () {
 
 ## Intro @showdialog
 
-A fantastic game can be made even better by adding small details.  
+A fantastic game can be made even better by adding small details.
 
 This tutorial will show you how to animate your characters.
 
@@ -90,7 +90,7 @@ This tutorial will show you how to animate your characters.
 
 ## Step 2
 
-The code for **Dino Mama** is already in the workspace.  
+The code for **Dino Mama** is already in the workspace.
 🕹️ Play your game to remember what the code does.
 
 
@@ -113,7 +113,7 @@ Let's start by animating Mama Dino!
 
 ► Drag ``||animation:animate [mySprite]||`` into **the bottom** of the ``||loops:on start||`` container.
 
-► Click the grey toggle at the bottom to switch looping to `<ON>`.  
+► Click the grey toggle at the bottom to switch looping to `<ON>`.
 
 
 ```blocks
@@ -127,22 +127,22 @@ info.startCountdown(15)
 animation.runImageAnimation(
 mySprite,
 [img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
     `] ,
 500,
 true
@@ -152,13 +152,13 @@ true
 
 ## Step 5
 
-**🎥 Let's get animating 🎥**   
+**🎥 Let's get animating 🎥**
 
 ---
 
 ► To select an animation, click the grey box in ``||animation:animate [mySprite]||`` and toggle to **My Assets**.
 
-► Select **Mama Moving** and click **Done**. 
+► Select **Mama Moving** and click **Done**.
 
 ```blocks
 let projectile: Sprite = null
@@ -179,7 +179,7 @@ true
 
 ## Step 6
 
-**Watch your speed!**   
+**Watch your speed!**
 
 ---
 
@@ -292,11 +292,11 @@ true
 
 ## Step 8
 
-**Now that's an exciting game!**  
+**Now that's an exciting game!**
 
 Play through your game a few times to appreciate how much you've done!
 
-When you're ready, click **Finish** to return to the main page where you can share your game with family and friends!  
+When you're ready, click **Done** to return to the main page where you can share your game with family and friends!
 
 
 

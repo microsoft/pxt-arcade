@@ -16,7 +16,7 @@ info.startCountdown(10)
 
 ## Introduction @showdialog
 
-We already have a basic clicker game, let's use what we've learned to 
+We already have a basic clicker game, let's use what we've learned to
 make it even more special!
 
 ![Click away](/static/skillmap/clicker/clickert2.gif "Click and buy bigger clickers" )
@@ -33,7 +33,7 @@ make it even more special!
 
 ## Step 3
 
-Let's make this game more engaging by adding a 
+Let's make this game more engaging by adding a
 button [__*sprite*__](#sprote "a 2-D image that moves on the screen") to the screen.
 
 ---
@@ -66,7 +66,7 @@ with each click ✨**
 ``||sprites: set [mySprite] image to [ ]||`` and snap it
 into **the bottom** of the ``||controller:on [A] button [pressed]||`` container.
 
-► Click the grey square and toggle to **My Assets** and choose a button in the **down** position. 
+► Click the grey square and toggle to **My Assets** and choose a button in the **down** position.
 
 ```blocks
 let mySprite: Sprite = null
@@ -85,7 +85,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 6
 
-Right now, the button never goes back up once pressed.  
+Right now, the button never goes back up once pressed.
 **Let's change that!**
 
 ---
@@ -94,8 +94,8 @@ Right now, the button never goes back up once pressed.
 
 ► Change ``||controller:[pressed]||`` to ``||controller:[released]||`` using the dropdown menu.
 
-► Snap a new ``||sprites: set [mySprite] image to [ ]||`` block inside, then toggle to **My Assets** and choose the same 
-**up** button image that you used for the original sprite. 
+► Snap a new ``||sprites: set [mySprite] image to [ ]||`` block inside, then toggle to **My Assets** and choose the same
+**up** button image that you used for the original sprite.
 
 ```blocks
 let mySprite: Sprite = null
@@ -115,19 +115,19 @@ Now test your project on the game screen to make sure the button goes up and dow
 
 **Did you notice that your game automatically keeps track of your highest score?**
 
-It also automatically tells you that **you've lost** when time runs out. 
+It also automatically tells you that **you've lost** when time runs out.
 Let's change that.
 
 ---
 
 ► From the ``||info:Info||`` category, grab an ``||info:on countdown end||``
-container and drop it into an empty area of the workspace. 
+container and drop it into an empty area of the workspace.
 
-► Now, open the ``||game:Game||`` category and pick  
-``||game: game over <LOSE> ⊕||`` .  Snap it inside the empty 
+► Now, open the ``||game:Game||`` category and pick
+``||game: game over <LOSE> ⊕||`` .  Snap it inside the empty
 **on countdown end** container.
 
-► Toggle **LOSE** to **WIN**.  
+► Toggle **LOSE** to **WIN**.
 
 ```blocks
 info.onCountdownEnd(function () {
@@ -156,13 +156,13 @@ info.onCountdownEnd(function () {
 
 ## Step 9
 
-**That's it!**  
+**That's it!**
 
 Play your game to see how you did.
 
-Compete for the most clicks in 10 seconds! When you're done, click **Finish** to 
+Compete for the most clicks in 10 seconds! When you're done, click **Done** to
 return to the main page where you can share
-with family and friends.   
+with family and friends.
 
 ```assetjson
 {

@@ -1,13 +1,14 @@
 # 80's Rockstar Maze!
 * name: 80's Rockstar Maze!
-* description: Create a fast-paced maze game by programming a rockstar to move through the crowded backstage area to collect all of their gear before they're mobbed by fans!
+* description: Create a fast-paced maze game by programming a rockstar to move through the crowded backstage area and collect all of their gear before they're mobbed by fans!
 * backgroundurl: /static/skillmap/backgrounds/rockstar-comp.png
 * bannerurl: /static/skillmap/rockstar/rockstar3.gif
 * primarycolor: #ff93c4
-* secondarycolor: #87f2ff
-* tertiarycolor: #5c406c
-* strokecolor: #5c406c
-* highlightcolor: #fff609
+* secondarycolor: #fdf60c
+* tertiarycolor: #161112
+* strokecolor: #ffffff
+* highlightcolor: #ffffff
+* completednodecolor: #3b3738
 
 ## rockstar
 * name: 80's Rockstar Maze
@@ -21,7 +22,7 @@
 * tags: easy, sprites, tiles
 * imageUrl: /static/skillmap/rockstar/rockstar1.gif
 * next: rockstar2
-* position: 0 0
+* position: 1 -1
 
 ### rockstar2
 * name: Gather Your Gear
@@ -31,24 +32,24 @@
 * tags: easy, tiles, events
 * imageUrl: /static/skillmap/rockstar/rockstar2.gif
 * next: rockstar3
-* position: 1 1
+* position: 2 -1
 
 ### rockstar3
-* name: Enemies Attack!
+* name: Avoid the Fans!
 * type: tutorial
 * description: Code some crazed fans who will steal points as souveniers unless the rockstar can avoid them!
 * url: /skillmap/rockstar/rockstar3
 * tags: easy, enemies, overlap, lives
 * imageUrl: /static/skillmap/rockstar/rockstar3.gif
 * next: rockstar-finish
-* position: 2 2
+* position: 3 0
 
 
 ### rockstar-finish
 * kind: completion
 * type: certificate
 * url: /static/skillmap/certificates/rockstar-cert.pdf
-* position: 3 1
+* position: 4 0
 * actions:
     * map: [Try Jungle Monkey Jump](/skillmap/jungle)
     * map: [Try our Space Explorer](/skillmap/space)
