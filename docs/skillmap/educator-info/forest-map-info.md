@@ -77,14 +77,14 @@ pxt-forest-special=github:kiki-lee/forest-special/
 | Activity | Head's Up! (9 min) |
 |---|---|
 | ![Head's Up!](/static/skillmap/forest/forest5.gif) | Computer science is more important to firefighting than ever before. Let's add a heads-up-display (HUD) to help the pilot get information from their fire database in real-time.  |
-| Blocks used | ``[]``<br/>``[]``<br/>``[]``<br/>``[]`` |
+| Blocks used | ``[hud.forest_hud(true)]``<br/>``[hud.danger_hud(true)]``<br/>``[hud.forest_hud(true)]`` |
 | Solution option | [Head's Up Project](https://makecode.com/_77cLwx4b120o) |
 
 #### 4. Keep Going
 | Activity | Keep Going (10 min) |
 |---|---|
 | ![Keep Going thumbnail](/static/skillmap/forest/forest6.gif) | Add more to your game! Experiment with sounds and animation to make your game truly unique.  |
-| Blocks used | ``[]``<br/>``[]``<br/>``[]``<br/>``[]`` |
+| Blocks used | ``[controller.left.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[animation.runImageAnimation()]``<br/>``[music.thump.play()]`` |
 | Solution option | [Keep Going Project](https://makecode.com/_0kzFyAgPMa4A) |
 
 ##### Game Mod Ideas
