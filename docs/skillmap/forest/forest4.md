@@ -384,11 +384,6 @@ pxt-forest-special=github:kiki-lee/forest-special/
 
 
 ```template
-namespace SpriteKind {
-    export const Water = SpriteKind.create()
-    export const Fire = SpriteKind.create()
-    export const Burnt = SpriteKind.create()
-}
 
 controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
     sprites.spray(mySprite, assets.image`water`)

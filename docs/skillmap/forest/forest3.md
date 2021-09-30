@@ -238,11 +238,6 @@ pxt-forest-special=github:kiki-lee/forest-special/
 ```
 
 ```template
-namespace SpriteKind {
-    export const Water = SpriteKind.create()
-    export const Fire = SpriteKind.create()
-    export const Burnt = SpriteKind.create()
-}
 
 tiles.setTilemap(tilemap`level1`)
 let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
