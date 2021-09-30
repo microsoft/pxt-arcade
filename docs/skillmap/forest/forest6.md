@@ -180,12 +180,6 @@ pxt-forest-special=github:kiki-lee/forest-special/
 
 ```template
 
-namespace SpriteKind {
-    export const Water = SpriteKind.create()
-    export const Fire = SpriteKind.create()
-    export const Burnt = SpriteKind.create()
-}
-
 sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
     tiles.setTileAt(tiles.locationOfSprite(sprite), assets.tile`burnt tree`)
 })
@@ -252,7 +246,7 @@ hud.fire_hud(true)
 hud.forest_hud(true)
 hud.forest_hud_healthy(3)
 hud.forest_hud_burned(4)
-hud.forest_hud_label ("Healthy FOrest")
+hud.forest_hud_label ("Healthy Forest")
 hud.fire_hud_label ("Nope:")
 sprite.startEffect(effects.fountain)
 effects.clearParticles(sprite)

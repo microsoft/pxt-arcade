@@ -27,13 +27,17 @@ have already been added to this activity.
 
 ## 3. We need a HERO
 
-**👏  We need Jerry! 👏**
+**👏  We need Jerry!**
 
 Our moving character is called a [__*sprite*__](#sprote "2-D image that move on the screen"). Let's create a rockstar sprite and get it moving before we do anything else.
 
 ---
 
-- :puzzle: From the ``||sprites:Sprites||`` category, drag ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` to **the end** of the ``||loops:on start||`` container.
+- :paper plane: From the ``||sprites:Sprites||`` category, drag  
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  
+to **the end** of the ``||loops:on start||`` container.
+
+_💡  Having trouble finding the block you need? Look to the left of the instructions for the icon of the toolbox category where your block lives!_
 
 - :mouse pointer: To add Jerry, click the empty grey box, then toggle to **My Assets** and click  **rockstar**.
 
@@ -52,8 +56,11 @@ let mySprite = sprites.create(assets.image`rockstar`, SpriteKind.Player)
 
 ---
 
-- :puzzle: From ``||controller:Controller||``, drag ``||controller:move [mySprite] with buttons ⊕||``
+- :game: Drag  
+``||controller:move [mySprite] with buttons ⊕||``  
 to **the end** of the ``||loops:on start||`` container.
+
+_💡  Remember, the bubble on the left shows the icon of the toolbox category for the block you need._
 
 
 ```blocks
@@ -67,7 +74,7 @@ controller.moveSprite(mySprite)
 
 ## 5. Try It
 
-**🕹️ Test on the game screen 🕹️ **
+**🕹️ Test on the game screen**
 
 ---
 
@@ -83,7 +90,11 @@ The rockstar sprite should appear at the stage door.
 
 ---
 
-- :puzzle: To start Jerry at the stage door, open ``||scene:Scene||`` and drag ``||scene: place [mySprite] on top of random [ ]||`` to **the end** of the ``||loops:on start||`` container.
+- :tree: To start Jerry at the stage door, open ``||scene:Scene||`` and drag  
+``||scene: place [mySprite] on top of random [ ]||``  
+to **the end** of the  
+``||loops:on start||``  
+container.
 
 - :mouse pointer: Click the checkered tile and select the teal stage door called **stage** from the grid menu.
 
@@ -102,8 +113,10 @@ tiles.placeOnRandomTile(mySprite, assets.tile`stage`)
 ## 7. Follow with Camera
 
 
-- :puzzle: Next, to keep Jerry in sight, open ``||scene:Scene||`` again and drag
-``||scene:camera follow sprite [mySprite]||`` to **the end** of the ``||loops:on start||`` container.
+- :tree: Next, to keep Jerry in sight, open ``||scene:Scene||`` again and drag  
+``||scene:camera follow sprite [mySprite]||``  
+to **the end** of the  
+``||loops:on start||`` container.
 
 ```blocks
 scene.setBackgroundColor(13)
@@ -119,7 +132,7 @@ scene.cameraFollowSprite(mySprite)
 
 ## 8. Look Again
 
-**🕹️ Try your maze in the game window 🕹️ **
+**🕹️ Try your maze in the game window**
 
 ---
 
