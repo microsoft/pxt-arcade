@@ -85,7 +85,7 @@ pxt-tilemaps=github:microsoft/pxt-tilemaps/
 |---|---|
 | ![Keep Going thumbnail](/static/skillmap/forest/forest6.gif) | Add more to your game! Experiment with sounds and animation to make your game truly unique.  |
 | Blocks used | ``[scene.onOverlapTile()]``<br/>``[tiles.setTileAt(location, assets.tile`transparency16`)]``<br/>``[info.changeScoreBy(-1)]``<br/>``[info.startCountdown(0)]`` |
-| Solution option | [Keep Going Project](https://makecode.com/_dW115JWAR2d0) |
+| Solution option | [Keep Going Project](https://makecode.com/_0kzFyAgPMa4A) |
 
 ##### Game Mod Ideas
 
