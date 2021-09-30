@@ -49,6 +49,7 @@
 * kind: completion
 * type: certificate
 * url: /static/skillmap/certificates/rockstar-cert.pdf
+* imageUrl: /static/skillmap/certificates/rockstar-cert.png
 * position: 4 0
 * actions:
     * map: [Try Jungle Monkey Jump](/skillmap/jungle)
