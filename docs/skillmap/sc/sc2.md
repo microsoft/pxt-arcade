@@ -31,7 +31,7 @@ When the sprite overlaps the _pit_ tile, let's trigger a "GAME OVER" message.
 
 ► Click the checkerboard image and change it to the pure black **pit** tile.
 
-► From ``||game:Game||``, snap a ``||game:game over <LOSE>||`` block into the new container.  
+► From ``||game:Game||``, snap a ``||game:game over <LOSE>||`` block into the new container.
 
 
 ```blocks
@@ -52,16 +52,16 @@ When your sprite lands in a black pit, the game should end as a loss.
 
 ## You Win Pt. 1
 
-**🎈 We have a way to lose, let's add a way to win 🎈** 
+**🎈 We have a way to lose, let's add a way to win 🎈**
 
 ---
 
-► Drag another ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
+► Drag another ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``
 container into the workspace.
 
 ► This time, change the checkerboard to the **door1** tile.
 
-► Snap a ``||game:game over <LOSE>||`` block into the new container and toggle  **`<LOSE>`** to **`<WIN>`**!  
+► Snap a ``||game:game over <LOSE>||`` block into the new container and toggle  **`<LOSE>`** to **`<WIN>`**!
 
 
 ```blocks
@@ -74,17 +74,17 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`door1`, function (sprite, loc
 
 ## You Earned Points pt. 1
 
-**💯 Award points when the sprite collects a ring 💯** 
+**💯 Award points when the sprite collects a ring 💯**
 
 ---
 
 
-► Drag another ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
+► Drag another ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``
 container into the workspace.
 
 ► Change the checkerboard to the **ring** tile.
 
-► From ``||info:Info||``, snap a ``||info:change score by [1]||`` block into the new container. 
+► From ``||info:Info||``, snap a ``||info:change score by [1]||`` block into the new container.
 
 
 ```blocks
@@ -120,7 +120,7 @@ Uh oh!  You get WAY too many points when you touch a ring. We can fix that in th
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`ring`, function (sprite, location) {
     //@highlight
-    tiles.setTileAt(location, assets.tile`transparency16`)  
+    tiles.setTileAt(location, assets.tile`transparency16`)
     info.changeScoreBy(1)
 })
 ```
@@ -138,7 +138,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`ring`, function (sprite, loca
 
 ---
 
-When you're done testing your project, click **Finish** to return to the main page to learn how to get passed the pit!
+When you're done testing your project, click **Done** to return to the main page to learn how to get passed the pit!
 
 
 
@@ -198,14 +198,14 @@ namespace sprites {
             thisSprite.vy = -200
         }
     }
-    
+
     /**
-     * Set a profile pic and name for your hero in the 
+     * Set a profile pic and name for your hero in the
      * upper-left hand corner of the screen
      */
     //% block="add corner profile for $choice"
     export function add_profile (choice:Choice) {
-        if (choice == Choice.xialing){ 
+        if (choice == Choice.xialing){
             profilelife.setProfileImage(assets.image`Xialing profile`)
             profilelife.setName("Xialing")
         }

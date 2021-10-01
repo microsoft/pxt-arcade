@@ -9,9 +9,9 @@ Conditions in the weather and environment such as drought, winds, vegetation den
 
 
 
-## 2. Remember 
+## 2. Remember
 
-**🎮 Try your game 🎮**
+**🎮 Try your game**
 
 ---
 
@@ -21,13 +21,13 @@ Can you remember which lines of code create each action?
 
 ## 3. Set the Environment
 
-**🌲 How does the land look? 🌲**
+**🌲 How does the land look?**
 
 Let's add code to simulate different elements of the environment.
 
 ---
 
-- :puzzle:  First, from the ``||game:Game||`` category, drag  
+- :circle:  First, drag  
 ``||game:set health of trees to [7]||``  
 into **the top** of the  
 ``||loops: on start||``  
@@ -61,7 +61,7 @@ for (let index = 0; index < 4; index++) {
 ## 4. Wind and Grass
 
 
-- :puzzle:  On your own, can you find the blocks that set the 
+- :circle:  On your own, can you find the blocks that set the 
 **strength of the wind** and the  
 **dryness of the grass**   
 and add them to **the top** of the ``||loops: on start||`` container?
@@ -100,13 +100,13 @@ Now that the environment is set, we can add code to make the fires spread.
 
 ---
 
-- :puzzle:   From ``||game:Game||``, drop an  
+- :circle:   Drop an  
 ``||game:on game update||``  
 container into an empty area of your workspace to run 
 code each time the game updates its status.
 
-- :mouse pointer:   From the ``||sprites:Sprites||`` category, grab  
-``||sprites: random spread [ ]||``  
+- :mouse pointer:   From the ``||sprites:Sprites||`` category, grab
+``||sprites: random spread [ ]||``
 and add it to the
 ``||game:on game update||`` container.
 
@@ -116,35 +116,35 @@ and add it to the
 ```blocks
 game.onUpdate(function () {
     sprites.random_spread(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . 5 . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . 4 d . . . . . . 
-. . . . . . . . . 4 d . . . . . 
-. . . . . . . . 5 4 4 . . . . . 
-. . . . . . . 5 4 5 4 . . . . . 
-. . . . . 2 5 d 5 5 4 . . . . . 
-. . . . d 2 5 5 5 5 4 . . . . . 
-. . . . 4 5 2 5 5 5 5 4 . . . . 
-. . . . 4 2 5 5 4 2 5 4 . . . . 
-. . . . 4 4 2 2 2 2 4 4 . . . . 
-. . . . . 4 4 2 2 4 4 . . . . . 
-. . . . . . 4 2 4 4 . . . . . . 
-. . . . . . . 4 4 . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+. . . . . . . 5 . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . 4 d . . . . . .
+. . . . . . . . . 4 d . . . . .
+. . . . . . . . 5 4 4 . . . . .
+. . . . . . . 5 4 5 4 . . . . .
+. . . . . 2 5 d 5 5 4 . . . . .
+. . . . d 2 5 5 5 5 4 . . . . .
+. . . . 4 5 2 5 5 5 5 4 . . . .
+. . . . 4 2 5 5 4 2 5 4 . . . .
+. . . . 4 4 2 2 2 2 4 4 . . . .
+. . . . . 4 4 2 2 4 4 . . . . .
+. . . . . . 4 2 4 4 . . . . . .
+. . . . . . . 4 4 . . . . . . .
+. . . . . . . . . . . . . . . .
 `)
 })
 
 ```
 
 
-## 6. Test 
+## 6. Test
 
-**🎮 Test your game 🎮**
+**🎮 Test your game**
 
 ---
 
-Do you notice that your fire is now spreading to other nearby parts of the forest? 
+Do you notice that your fire is now spreading to other nearby parts of the forest?
 
 Does it get out of control too quickly?
 
@@ -152,13 +152,13 @@ Does it get out of control too quickly?
 
 ## 7. No Fuel, No Fire
 
-Right now, the fires don't burn the trees, 
-so they can burn the same tree over and over. 
+Right now, the fires don't burn the trees
+so they can appear on the same tree over and over. 
 When a flame burns out, we want to mark that spot in the forest with a special tile.
 
 ---
 
-- :puzzle:   Drag an  
+- :paper plane:   Drag an  
 ``||sprites: on destroyed [sprite] of kind [Player]||``  
 container into an empty area of your workspace. 
 
@@ -184,14 +184,14 @@ Time to change the tile at the location where the sprite was when it burned out.
 
 ---
 
-- :puzzle:   Inside the empty  
+- :tree:   Inside the empty  
 ``||sprites: on destroyed [sprite] of kind [Fire]||``  
 container, add a  
 ``||scene:set [ ] at tilemap col [0] row [0]||``  
 block.
 
 
-- :mouse pointer:   Click the checkered box to choose the **smoulder** tile.
+- :mouse pointer:   Click the checkered box to choose the **burnt tree** tile.
 
 
 
@@ -203,7 +203,7 @@ namespace SpriteKind {
 }
 
 sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
-    tiles.setTileAt(tiles.getTileLocation(0, 0), assets.tile`smoulder`)
+    tiles.setTileAt(tiles.getTileLocation(0, 0), assets.tile`burnt tree`)
 })
 
 ```
@@ -212,14 +212,16 @@ sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
 
 ## 9. Sprite Location
 
-- :puzzle:   To get the location of the place where the fire went out, replace  
+- :map:   To get the location of the place where the fire went out, replace  
 ``||scene:tilemap col [0] row [0]||``  
 with  
 ``||tiles:location of [mySprite]||``.
 
 
-- :mouse pointer:   To get the location for the correct sprite, replace  ``||variables:mySprite||`` with the ``||variables:sprite||`` 
+- :mouse pointer:   To get the location for the correct sprite, replace  ``||variables:mySprite||`` with the ``||variables:sprite||``
 value from the outer ** on destroyed** container.
+
+![Grab the sprite value from the title bar of the outer container](/static/skillmap/assets/sprite-from-container.gif "This is how your block knows which sprite to use")
 
 
 ```blocks
@@ -230,24 +232,28 @@ namespace SpriteKind {
 }
 
 sprites.onDestroyed(SpriteKind.Fire, function (sprite) {
-    tiles.setTileAt(tiles.locationOfSprite(sprite), assets.tile`smoulder`)
+    tiles.setTileAt(tiles.locationOfSprite(sprite), assets.tile`burnt tree`)
 })
 
 ```
+
+---
+
+![Grab the sprite value from the title bar of the outer container](/static/skillmap/assets/sprite-from-container.gif "This is how your block knows which sprite to use")
 
 
 
 ## 10. Smoke Screen
 
-When the fire overlaps a smouldering tile, the fire should be destroyed instantly.
+When the fire overlaps a burnt tree tile, the fire should be destroyed instantly.
 
 ---
 
-- :puzzle:   Drag the  
+- :tree:   Drag an  
 ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
 container into an empty area of the workspace.
 
-- :mouse pointer:   Change the sprite kind to ``||scene:Fire||`` and change the empty tile to **smoulder**.
+- :mouse pointer:   Change the sprite kind to ``||scene:Fire||`` and change the empty tile to **burnt tree**.
 
 
 
@@ -257,20 +263,21 @@ namespace SpriteKind {
     export const Fire = SpriteKind.create()
     export const Burnt = SpriteKind.create()
 }
-scene.onOverlapTile(SpriteKind.Fire, assets.tile`smoulder`, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Fire, assets.tile`burnt tree`, function (sprite, location) {
 })
 ```
 
 ## 11. Lights Out
 
-
-- :puzzle:   Add a  
+- :paper plane:   Add a  
 ``||sprites:destroy [mySprite]||``  
 block into the empty container. 
 
-- :mouse pointer:   To destroy the correct sprite, replace  
-``||variables:mySprite||`` with the ``||variables:sprite||``  
+- :mouse pointer:   To destroy the correct sprite, replace
+``||variables:mySprite||`` with the ``||variables:sprite||``
 value from the outer container.
+
+![Grab the sprite value from the title bar of the outer container](/static/skillmap/assets/sprite-from-container.gif "This is how your block knows which sprite to use")
 
 
 
@@ -280,10 +287,14 @@ namespace SpriteKind {
     export const Fire = SpriteKind.create()
     export const Burnt = SpriteKind.create()
 }
-scene.onOverlapTile(SpriteKind.Fire, assets.tile`smoulder`, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Fire, assets.tile`burnt tree`, function (sprite, location) {
     sprite.destroy()
 })
 ```
+
+---
+
+![Grab the sprite value from the title bar of the outer container](/static/skillmap/assets/sprite-from-container.gif "This is how your block knows which sprite to use")
 
 
 
@@ -293,7 +304,7 @@ When the fire overlaps another flame, we can destroy one of the flames.
 
 ---
 
-- :puzzle:   Drag the  
+- :paper plane:   Drag the  
 ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``  
 container into an empty area of the workspace.
 
@@ -308,20 +319,22 @@ namespace SpriteKind {
     export const Burnt = SpriteKind.create()
 }
 sprites.onOverlap(SpriteKind.Fire, SpriteKind.Fire, function (sprite, otherSprite) {
-   
+
 })
 ```
 
 ## 13. One Less Fire
 
 
-- :puzzle:   Add a  
+- :paper plane:   Add a  
 ``||sprites:destroy [mySprite]||``  
 block into the empty container. 
 
-- :puzzle:   To destroy the correct sprite, replace  
+- :mouse pointer:   To destroy the correct sprite, replace  
 ``||variables:mySprite||`` with the ``||variables:sprite||``  
 value from the outer container.
+
+![Grab the sprite value from the title bar of the outer container](/static/skillmap/assets/sprite-from-container.gif "This is how your block knows which sprite to use")
 
 
 
@@ -336,11 +349,15 @@ sprites.onOverlap(SpriteKind.Fire, SpriteKind.Fire, function (sprite, otherSprit
 })
 ```
 
+---
+
+![Grab the sprite value from the title bar of the outer container](/static/skillmap/assets/sprite-from-container.gif "This is how your block knows which sprite to use")
 
 
-## 14. Test Again 
 
-**🎮 Play Your Game 🎮**
+## 14. Test Again
+
+**🎮 Play Your Game**
 
 ---
 
@@ -351,35 +368,22 @@ they spread too far.
 
 ## Finale
 
-👏 **Excellent!** 👏   
+👏 **Excellent!**
 
 ---
 
-Once you've put out the fires, click **Done** to 
+Once you've put out the fires, click **Done** to
 keep moving through the skillmap to find out how to add a heads-up display to your game.
 
 
 
 
-
 ```package
-pxt-tilemaps=github:microsoft/pxt-tilemaps/
-pxt-text=github:microsoft/arcade-text
-arcade-premium-life=github:jwunderl/arcade-premium-life/
-pxt-characterAnimations=github:microsoft/arcade-character-animations/
-pxt-data=github:microsoft/arcade-sprite-data/
-pxt-story=github:microsoft/arcade-storytelling/
-arcade-sprite-util=github:jwunderl/arcade-sprite-util/
-pxt-status-bar=github:jwunderl/pxt-status-bar
+pxt-forest-special=github:kiki-lee/forest-special/
 ```
 
 
 ```template
-namespace SpriteKind {
-    export const Water = SpriteKind.create()
-    export const Fire = SpriteKind.create()
-    export const Burnt = SpriteKind.create()
-}
 
 controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
     sprites.spray(mySprite, assets.image`water`)
@@ -407,327 +411,6 @@ sprites.onOverlap(SpriteKind.Water, SpriteKind.Fire, function (sprite, otherSpri
 
 ```
 
-
-```customts
-
-  let spreadOptions: number[] = []
-
-  let windSpeed = 5
-  let tinder = 4
-  let dryGrass = 5
-  let spreadTimeBase = 2000
-  let hoseDirection = 270
-  let facing = 0
-  let changeRate = 7
-  let burnedColor = 2
-  let healthyColor = 3
-
-let statusbar = statusbars.create(82, 4, StatusBarKind.Health)
-statusbar.top = 12
-statusbar.left = 4
-statusbar.max = tiles.tilemapRows() * tiles.tilemapColumns()
-statusbar.value = tiles.tilemapRows() * tiles.tilemapColumns()
-statusbar.setColor(healthyColor, burnedColor)
-let statusLabel = textsprite.create("Healthy Forest", 0, 1)
-statusLabel.setFlag(SpriteFlag.RelativeToCamera, true)
-statusLabel.top = 2
-statusLabel.left = 4
-let fireLabel = textsprite.create("Fires:")
-fireLabel.right = 145
-fireLabel.top = 2
-fireLabel.setMaxFontHeight(4)
-fireLabel.setFlag(SpriteFlag.RelativeToCamera, true)
-statusLabel.setFlag(SpriteFlag.Invisible, true)
-statusbar.setFlag(SpriteFlag.Invisible, true)
-fireLabel.setFlag(SpriteFlag.Invisible, true)
-info.showScore(false)
-
-
-
-game.onUpdate(function () {
-    statusbar.max = tiles.tilemapRows() * tiles.tilemapColumns()
-    statusbar.value = tiles.tilemapRows() * tiles.tilemapColumns() - tiles.getTilesByType(assets.tile`smoulder`).length
-    spreadTimeBase = 4500 - (250 * windSpeed + 250 * dryGrass - 100 * tinder)
-    if (sprites.allOfKind(SpriteKind.Fire).length <= 0) {
-        hud.fire_hud(false)
-        info.setScore(statusbar.value / statusbar.max * 100)
-        game.splash("You saved " + convertToText(info.score()) + "% of the forest!")
-        game.over(true)
-    } else {
-        info.setScore(sprites.allOfKind(SpriteKind.Fire).length)
-    }
-})
-
-
-
-namespace animation {
-    /*
-     * Loops the passed frames on the sprite at the given interval whenever
-     * the specified rule is true for that sprite.
-     *
-     * If more than one rule applies, the most specific rule will be used.
-     * If multiple rules are equally specific, the currently executing rule
-     * is favored (or one is chosen at random).
-     *
-     * @param sprite    the sprite to animate
-     * @param frames    the images that make up that animation
-     * @param frame     Interval the amount of time to spend on each frame in milliseconds
-     * @param rule      the rule that decides when this animation will play
-     */
-    //% blockId=arcade_character_loop_frames2
-    //% block="animate $sprite loop frames $frames interval (ms) $frameInterval when $rule"
-    //% sprite.defl=mySprite
-    //% frames.defl=Fire Plane Right
-    //% sprite.shadow=variables_get
-    //% frames.shadow=animation_editor
-    //% frameInterval.shadow=timePicker
-    //% rule.shadow=arcade_character_make_rule
-    //% weight=100
-    //% blockGap=8
-    //% help=github:arcade-character-animations/docs/loop-character-animation
-    export function loopFrames2(sprite: Sprite, frames: Image[], frameInterval: number, rule: number) {
-        characterAnimations.loopFrames(sprite, frames, frameInterval, rule);
-    }
-}
-
-
-namespace game {
-
-    /*
-     * Set the strength of your wind.
-     * Higher numbers spread fire faster.
-     */
-    //% block="set strength of wind to $num"
-    //% num.defl=3
-    export function set_strength_of_wind (num: number) {
-        windSpeed = num
-    }
-
-    /*
-     * Set the health of your trees.
-     * Lower numbers spread fire faster.
-     */
-    //% block="set health of trees to $num"
-    //% num.defl=7
-    export function set_health_of_trees (num: number) {
-        tinder = num
-    }
-
-    /*
-     * Set how dry your grass is.
-     * Higher numbers spread fire faster.
-     */
-    //% block="set dryness of grass to $num"
-    //% num.defl=3
-    export function set_dryness_of_grass (num: number) {
-        dryGrass = num
-    }
-}
-
-//% color="#09282d" icon="\uf1e5"
-//% block="HUD"
-namespace hud {    
-
-    /*
-     * Show or hide the current number of burning fires.
-     */
-    //% block="show fire HUD $answer"
-    //% answer.shadow="toggleYesNo"
-    //% answer.defl=true
-    export function fire_hud (answer: boolean) {
-
-        if (answer) {
-            fireLabel.setFlag(SpriteFlag.Invisible, false)
-            info.showScore(true)
-        } else {
-            fireLabel.setFlag(SpriteFlag.Invisible, true)
-            info.showScore(false)
-        }
-
-    }
-
-    /*
-     * Show or hide how much of the forest has burned.
-     */
-   //% block="show forest HUD $answer"
-    //% answer.shadow="toggleYesNo"
-    //% answer.defl=true
-    export function forest_hud (answer: boolean) {
-
-        if (answer) {
-            statusLabel.setFlag(SpriteFlag.Invisible, false)
-            statusbar.setFlag(SpriteFlag.Invisible, false)
-        
-        } else {
-            statusLabel.setFlag(SpriteFlag.Invisible, true)
-            statusbar.setFlag(SpriteFlag.Invisible, true)
-        }
-
-    }
-
-
-    /*
-    * Set the color for remaining live forest
-    */
-    //% block="set color of healthy forest meter to $color"
-    //% color.shadow="colorindexpicker"
-    //% color.defl=2
-    export function forest_hud_healthy (color: number) {
-        healthyColor = color
-        statusbar.setColor(healthyColor, burnedColor)
-    }
-
-    /*
-    * Set the color for burned forest
-    */
-    //% block="set color of burned forest meter to $color"
-    //% color.shadow="colorindexpicker"
-    //% color.defl=3
-    export function forest_hud_burned (color: number) {
-        burnedColor = color
-        statusbar.setColor(healthyColor, burnedColor)
-    }
-
-    /*
-     * Set the label for the forest HUD
-     */
-    //% block="set forest HUD label to $name"
-    //% name.defl="Healthy Forest"
-    export function forest_hud_label (name: string) {
-        statusLabel.setText(name)
-    }
-
-
-    /*
-     * Set the label for the fire-counting HUD
-     */
-    //% block="set fire HUD label to $name"
-    //% name.defl="Fires:"
-    export function fire_hud_label (name: string) {
-        fireLabel.setText(name)
-    }
-    
-
-}
-
-namespace sprites {
-
-    /*
-     * Set the number of "lives" for your sprite.
-     */
-    //% block="set strength of $thisSprite=variables_get(mySprite) to $num"
-    //% num.defl=10
-    export function set_flame_strength (thisSprite: Sprite, num: number) {
-        sprites.setDataNumber(thisSprite, "life", num)
-        sprites.setDataNumber(thisSprite, "spreadTime",  spreadTimeBase + 1000)
-    }
-
-    /*
-     * Add or remove "lives" from your sprite.
-     */
-    //% block="change strength of $thisSprite=variables_get(mySprite) by $num"
-    //% num.defl=-1
-    export function change_flame_strength_by (thisSprite: Sprite, num: number) {
-        sprites.changeDataNumberBy(thisSprite, "life", num)
-        for (let value of sprites.allOfKind(SpriteKind.Fire)) {
-          if (sprites.readDataNumber(value, "life") <= 0) {
-              effects.clearParticles(value)
-              value.destroy()
-          }
-        }
-    }
-
-    /*
-     * Choose a sprite to "spray" an image (in sprite form.)
-     */
-    //% block="spray from $thisSprite=variables_get(mySprite) using $img=screen_image_picker"
-    //% img.defl=water
-    export function spray (thisSprite: Sprite, img: Image) {
-
-     if (controller.up.isPressed()) {
-            if (controller.left.isPressed()) {
-                facing = 225
-            } else if (controller.right.isPressed()) {
-                facing = 315
-            } else if (controller.down.isPressed()) {
-                
-            } else {
-                facing = 270
-            }
-        } else if (controller.left.isPressed()) {
-            if (controller.right.isPressed()) {
-                
-            } else if (controller.down.isPressed()) {
-                facing = 135
-            } else {
-                facing = 180
-            }
-        } else if (controller.right.isPressed()) {
-            if (controller.down.isPressed()) {
-                facing = 45
-            } else {
-                facing = 0
-            }
-        } else if (controller.down.isPressed()) {
-            facing = 90
-        }
-  
-        if (Math.abs(facing - hoseDirection) < 180) {
-        if (facing < hoseDirection) {
-            hoseDirection += 0 - changeRate
-        } else {
-            hoseDirection += changeRate
-        }
-        } else{
-            if (facing < hoseDirection) {
-                hoseDirection += changeRate
-            } else {
-                hoseDirection += 0 - changeRate
-            }
-            if (hoseDirection < 0) {
-                hoseDirection += 360
-            } else if (hoseDirection > 360) {
-                hoseDirection += -360
-            }
-            hoseDirection = hoseDirection % 360
-        }
-        let waterProj = sprites.createProjectileFromSprite(img, thisSprite,  150 * Math.cos(spriteutils.degreesToRadians(hoseDirection)), 150 * Math.sin(spriteutils.degreesToRadians(hoseDirection)))
-        waterProj.setKind(SpriteKind.Water)
-  }
-
-    /*
-     * Spread current fires according to wind speed, 
-     * dryness of grass, and health of trees.
-     */
-    //% block="random spread $myImage=screen_image_picker"
-    export function random_spread (myImage: Image) {
-
-    for (let value of sprites.allOfKind(SpriteKind.Fire)) {
-            if (sprites.readDataNumber(value, "life") <= 0) {
-                effects.clearParticles(value)
-                value.destroy()
-            }
-
-            let list2 = [-32,-16,0,16,32,16,-16]
-            if (game.runtime() > sprites.readDataNumber(value, "spreadTime")) {
-                sprites.setDataNumber(value, "spreadTime", game.runtime() + randint(spreadTimeBase, spreadTimeBase + 1000))
-                let newFire = sprites.create(myImage, SpriteKind.Fire)
-                newFire.setPosition(value.x + list2._pickRandom(), value.y)
-                sprites.setDataNumber(newFire, "spreadTime", game.runtime() + randint(spreadTimeBase, spreadTimeBase + 1000))
-                if (Math.percentChance(50)) {
-                    newFire.y += list2._pickRandom()
-                }
-                if (tiles.tileIsWall(tiles.locationOfSprite(newFire))) {
-                    newFire.setPosition(value.x, value.y)
-                }
-            }
-        }
-     }
-
-}
-```
-
-
 ```assetjson
 {
   "README.md": " ",
@@ -737,8 +420,8 @@ namespace sprites {
   "main.blocks": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><variables><variable type=\"KIND_SpriteKind\" id=\"~zp:h99l$t:puWt^7HpS\">Fire</variable><variable type=\"KIND_SpriteKind\" id=\"b3qt}A6k{Y|Yr^LaRE6Y\">Burnt</variable><variable type=\"KIND_SpriteKind\" id=\"$J.Bxo|M{mi1P+`[A1?4\">Player</variable><variable type=\"KIND_SpriteKind\" id=\"uGq)5bGL26c-(,L_;6CB\">Projectile</variable><variable type=\"KIND_SpriteKind\" id=\"Rvp^^=8OAqmCeIUNc?{b\">Food</variable><variable type=\"KIND_SpriteKind\" id=\"@6hn/DkVnQ8`I`kv[x?{\">Enemy</variable><variable type=\"KIND_SpriteKind\" id=\"|/YN~|~tVm4.!8L*HioT\">Text</variable><variable type=\"KIND_SpriteKind\" id=\"]~dhh95wxb|OZ0;WHf|]\">StatusBar</variable><variable type=\"KIND_StatusBarKind\" id=\"nTxOIz$-~=7EJc(t7T#_\">Health</variable><variable type=\"KIND_StatusBarKind\" id=\"391Why~W9^9lqcoQQG0x\">Energy</variable><variable type=\"KIND_StatusBarKind\" id=\"GBBC+=aw4b7x0!=58!!*\">Magic</variable><variable type=\"KIND_StatusBarKind\" id=\"pJ,Vd?#{4|dO/(g(|A-H\">EnemyHealth</variable><variable id=\"8rA}EiRM2wHj_s|13j}t\">statusbar</variable><variable id=\"VLdeXP[_@1:J9GD!),Ia\">tinder</variable><variable id=\"h][qwl3T*G1}(r7MV7oZ\">mySprite</variable><variable id=\"jrX,vISS7PDA//D]zEB3\">dryGrass</variable><variable id=\"0Ko[yse36[jD#J3@^=53\">windSpeed</variable><variable id=\"fd9l0*ffabpTSLEUUfi:\">value</variable><variable id=\"d%BcCARShMY%=*.GH1gF\">list2</variable><variable id=\"aIS.OGw=J[wCQsP49qIZ\">spreadTimeBase</variable><variable id=\"lyaL+*o.a~O]/aD[uDr9\">newFire</variable><variable id=\"{V$QzFzwP$ImZ+nnTL^e\">facing</variable><variable id=\"-D8I`o1aNA~es3(JYLMk\">changeRate</variable><variable id=\"[?Yd11dvxugieayng`{_\">hoseDirection</variable><variable id=\"X[$g5gKr|jHN.aimnfy9\">projectile</variable><variable id=\"?SUf,tio_PwlgM:;5(A/\">myImage</variable><variable id=\"/LO0y==XA-vfLCV*rx!@\">mySprite2</variable><variable id=\"Yu@%}1H+Gs5NsuvWYM.y\">textSprite</variable><variable id=\"OIoJ`*MPvT]$kbOt{U=N\">textSprite2</variable></variables><comment data=\"0\" x=\"0\" y=\"0\" h=\"120\" w=\"480\">Track the remaining forest using a statusbar. You could initialize this using magic or remove the \"total tilemap rows/columns\" by just telling them what value to enter for the max/value</comment><block type=\"pxt-on-start\" x=\"-350\" y=\"-490\"><statement name=\"HANDLER\"><block type=\"variables_set\"><field name=\"VAR\" id=\"h][qwl3T*G1}(r7MV7oZ\">mySprite</field><value name=\"VALUE\"><shadow xmlns=\"http://www.w3.org/1999/xhtml\" type=\"math_number\"><field name=\"NUM\">0</field></shadow><block type=\"spritescreate\"><value name=\"img\"><shadow type=\"screen_image_picker\"><field name=\"img\">assets.image`Fire Plane Left`</field><data>{\"commentRefs\":[],\"fieldData\":{\"img\":\"myImages.image7\"}}</data></shadow></value><value name=\"kind\"><shadow type=\"spritekind\"><field name=\"MEMBER\">Player</field></shadow></value></block></value></block></statement></block></xml>",
   "main.ts": "namespace SpriteKind {\n    export const Fire = SpriteKind.create()\n    export const Burnt = SpriteKind.create()\n}\n/**\n * Track the remaining forest using a statusbar. You could initialize this using magic or remove the \"total tilemap rows/columns\" by just telling them what value to enter for the max/value\n */\nlet mySprite = sprites.create(assets.image`Fire Plane Left`, SpriteKind.Player)\n",
   "pxt.json": "{\n    \"name\": \"Save the Forest Assets Only\",\n    \"description\": \"\",\n    \"dependencies\": {\n        \"device\": \"*\",\n        \"tilemaps\": \"github:microsoft/pxt-tilemaps#v1.11.0\",\n        \"arcade-sprite-data\": \"github:microsoft/arcade-sprite-data#v0.1.0\",\n        \"arcade-sprite-util\": \"github:jwunderl/arcade-sprite-util#v0.2.4\",\n        \"arcade-story\": \"github:microsoft/arcade-storytelling#v1.0.2\",\n        \"arcade-minimap\": \"github:microsoft/arcade-minimap#v0.6.1\",\n        \"pxt-status-bar\": \"github:jwunderl/pxt-status-bar#v0.4.1\",\n        \"arcade-text\": \"github:microsoft/arcade-text#v1.3.0\"\n    },\n    \"files\": [\n        \"main.blocks\",\n        \"main.ts\",\n        \"README.md\",\n        \"assets.json\",\n        \"tilemap.g.jres\",\n        \"tilemap.g.ts\",\n        \"images.g.jres\",\n        \"images.g.ts\"\n    ],\n    \"targetVersions\": {\n        \"branch\": \"v1.5.46\",\n        \"tag\": \"v1.5.46\",\n        \"commits\": \"https://github.com/microsoft/pxt-arcade/commits/4f3f29bef862bcab766a47e42db2d3ed6b0060b1\",\n        \"target\": \"1.5.46\",\n        \"pxt\": \"7.1.25\"\n    },\n    \"preferredEditor\": \"blocksprj\"\n}\n",
-  "tilemap.g.jres": "{\n    \"transparency16\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true\n    },\n    \"tile3\": {\n        \"data\": \"hwQQABAAAABmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZg==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"wall\"\n    },\n    \"tile2\": {\n        \"data\": \"hwQQABAAAABmZma8zGxmZmZmxsu7bGZmZma268zMbGZmZsXsxrtsZmZmzETCy2xmZmbL7sTMZmZmZcZOzrzMZmZmTOTkvMtmZma8VOTMzGZmZrwuzstsZmZmy07Cy2xmZmZL5MbMbGZmZsblvMxmZmZmxsu8zGZmZmZmzMtmZmZmZma8bGZmZg==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"firePit\"\n    },\n    \"tile1\": {\n        \"data\": \"hwQQABAAAABmZmZmZmZmZmZmZoaIZmZmZmaGeHdoZmZmZndmdmdmZmaGdndmZ2ZmZnhmd2d3Zmxmd2d2Z3fGbHZ3Z3Znd+5sZndndmd3xm5meGZ3Z3dmbGaGdndmZ2ZmZmZ4ZnZnZmZmZoZ4d2hmZmZmZoaIZmZmZmZmZmZmZmZmZmZmZmZmZg==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"trees\"\n    },\n    \"tile8\": {\n        \"data\": \"hwQQABAAAABm5mZmZmb+bmZmZmZm5u5uZmb/Zmb2u/72Zr9vZr67+2Zm9vtmvfv7Zv///2+8vO/2u+6+/P///mb//+u+7O6+9mZmv+7u7v9mZmb27/7//mbWZu/+/7vvZmb2/m++y/tmZvZvZv67+2ZvZsZm5rv+Zu5vZmbm7v5m5mZmZmbmbg==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"smoulder\"\n    },\n    \"level1\": {\n        \"id\": \"level1\",\n        \"mimeType\": \"application/mkcd-tilemap\",\n        \"data\": \"MTAxMjAwMTIwMDAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMjAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA==\",\n        \"tileset\": [\n            \"myTiles.transparency16\",\n            \"myTiles.tile1\",\n            \"myTiles.tile2\",\n            \"myTiles.tile3\"\n        ],\n        \"displayName\": \"level1\"\n    },\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myTiles\"\n    }\n}",
-  "tilemap.g.ts": "// Auto-generated code. Do not edit.\nnamespace myTiles {\n    //% fixedInstance jres blockIdentity=images._tile\n    export const transparency16 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile3 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile2 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile1 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile8 = image.ofBuffer(hex``);\n\n    helpers._registerFactory(\"tilemap\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"level1\":\n            case \"level1\":return tiles.createTilemap(hex`12001200030303030303030303030303030303030303030101010101010101010101010101010103030101010101010101010101010101010103030102010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030303030303030303030303030303030303`, img`\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n`, [myTiles.transparency16,myTiles.tile1,myTiles.tile2,myTiles.tile3], TileScale.Sixteen);\n        }\n        return null;\n    })\n\n    helpers._registerFactory(\"tile\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"transparency16\":return transparency16;\n            case \"wall\":\n            case \"tile3\":return tile3;\n            case \"firePit\":\n            case \"tile2\":return tile2;\n            case \"trees\":\n            case \"tile1\":return tile1;\n            case \"smoulder\":\n            case \"tile8\":return tile8;\n        }\n        return null;\n    })\n\n}\n// Auto-generated code. Do not edit.\n"
+  "tilemap.g.jres": "{\n    \"transparency16\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true\n    },\n    \"tile3\": {\n        \"data\": \"hwQQABAAAABmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZg==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"wall\"\n    },\n    \"tile2\": {\n        \"data\": \"hwQQABAAAABmZma8zGxmZmZmxsu7bGZmZma268zMbGZmZsXsxrtsZmZmzETCy2xmZmbL7sTMZmZmZcZOzrzMZmZmTOTkvMtmZma8VOTMzGZmZrwuzstsZmZmy07Cy2xmZmZL5MbMbGZmZsblvMxmZmZmxsu8zGZmZmZmzMtmZmZmZma8bGZmZg==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"firePit\"\n    },\n    \"tile1\": {\n        \"data\": \"hwQQABAAAABmZmZmZmZmZmZmZoaIZmZmZmaGeHdoZmZmZndmdmdmZmaGdndmZ2ZmZnhmd2d3Zmxmd2d2Z3fGbHZ3Z3Znd+5sZndndmd3xm5meGZ3Z3dmbGaGdndmZ2ZmZmZ4ZnZnZmZmZoZ4d2hmZmZmZoaIZmZmZmZmZmZmZmZmZmZmZmZmZg==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"trees\"\n    },\n    \"tile8\": {\n        \"data\": \"hwQQABAAAABm5mZmZmb+bmZmZmZm5u5uZmb/Zmb2u/72Zr9vZr67+2Zm9vtmvfv7Zv///2+8vO/2u+6+/P///mb//+u+7O6+9mZmv+7u7v9mZmb27/7//mbWZu/+/7vvZmb2/m++y/tmZvZvZv67+2ZvZsZm5rv+Zu5vZmbm7v5m5mZmZmbmbg==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"burnt tree\"\n    },\n    \"level1\": {\n        \"id\": \"level1\",\n        \"mimeType\": \"application/mkcd-tilemap\",\n        \"data\": \"MTAxMjAwMTIwMDAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMjAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA==\",\n        \"tileset\": [\n            \"myTiles.transparency16\",\n            \"myTiles.tile1\",\n            \"myTiles.tile2\",\n            \"myTiles.tile3\"\n        ],\n        \"displayName\": \"level1\"\n    },\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myTiles\"\n    }\n}",
+  "tilemap.g.ts": "// Auto-generated code. Do not edit.\nnamespace myTiles {\n    //% fixedInstance jres blockIdentity=images._tile\n    export const transparency16 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile3 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile2 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile1 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile8 = image.ofBuffer(hex``);\n\n    helpers._registerFactory(\"tilemap\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"level1\":\n            case \"level1\":return tiles.createTilemap(hex`12001200030303030303030303030303030303030303030101010101010101010101010101010103030101010101010101010101010101010103030102010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030303030303030303030303030303030303`, img`\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n`, [myTiles.transparency16,myTiles.tile1,myTiles.tile2,myTiles.tile3], TileScale.Sixteen);\n        }\n        return null;\n    })\n\n    helpers._registerFactory(\"tile\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"transparency16\":return transparency16;\n            case \"wall\":\n            case \"tile3\":return tile3;\n            case \"firePit\":\n            case \"tile2\":return tile2;\n            case \"trees\":\n            case \"tile1\":return tile1;\n            case \"burnt tree\":\n            case \"tile8\":return tile8;\n        }\n        return null;\n    })\n\n}\n// Auto-generated code. Do not edit.\n"
 }
 ```
 

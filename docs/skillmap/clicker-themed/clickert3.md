@@ -35,14 +35,14 @@ Let's create a spray of stars that fly out as we click.
 
 ## Step 2
 
-Watching the points increase each time we click is fun...but let's add 
+Watching the points increase each time we click is fun...but let's add
 some flying star [__*projectiles*__](#projected "sprites that moves on their own, often in large quantities") to make it even more interesting.
 
 ---
 
 ► From ``||sprites:Sprites||``, grab
-``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||`` 
-and drop it into **the end** of the ``||controller:on [A] button [pressed]||`` container 
+``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``
+and drop it into **the end** of the ``||controller:on [A] button [pressed]||`` container
 already in the workspace.
 
 ► Click **> Next** to move on to the next instruction.
@@ -53,10 +53,10 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     mySprite.setImage(assets.image`A static Down`)
     projectile = sprites.createProjectileFromSprite(img`
-. . . . 
-. . . . 
-. . . . 
-. . . . 
+. . . .
+. . . .
+. . . .
+. . . .
 `, mySprite, 50, 50)
 })
 ```
@@ -88,7 +88,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ---
 
 ► From the ``||math:Math||`` category, drag out **TWO** ``||math: pick random [0] to [10]||``
-blocks.  
+blocks.
 
 ► Add the first to the [__*vx*__](#whatVX "horizontal velocity") argument of the ``||variables:set [projectile] to projectile [⭐] from [mySprite] with vx [50] vy [50]||``  block.
 
@@ -108,10 +108,10 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ## Step 6
 
 
-► Change the range of the first ``||math: pick random [0] to [10]||`` block (next to **vx**) to pick between 
+► Change the range of the first ``||math: pick random [0] to [10]||`` block (next to **vx**) to pick between
 **-100** and **100**.  This will scatter stars randomly from side to side.
 
-► Change the range of the second ``||math: pick random [0] to [10]||`` block (next to **vy**) to pick between 
+► Change the range of the second ``||math: pick random [0] to [10]||`` block (next to **vy**) to pick between
 **-50** and **-100**.  This will make sure the stars only move upward.
 
 
@@ -131,7 +131,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 Now, every time you click **Ⓐ** you create a shower of joyful stars!
 
-Play your game a few times and look through the code to see if there's anything you 
+Play your game a few times and look through the code to see if there's anything you
 want to add or modify.
 
 
@@ -139,7 +139,7 @@ want to add or modify.
 
 Try playing around with the code and the images to see if you can make your own customizations!
 
-When you're done, click **Finish** to return to the main page where you can 
+When you're done, click **Done** to return to the main page where you can
 get a link to share with family and friends!
 
 

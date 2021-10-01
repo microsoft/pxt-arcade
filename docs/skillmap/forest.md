@@ -2,7 +2,7 @@
 * name: Save the Forest
 * description: The last few summers have been some of the hottest on record and the forest service needs your air team to help keep fires under control. Use blocks to code your airtanker and set up your HUDs so your ground team can help you save the forest!
 * infoUrl: skillmap/educator-info/forest-map-info
-* bannerUrl: /static/skillmap/forest/forest1.gif
+* bannerUrl: /static/skillmap/forest/forest6.gif
 * backgroundurl: /static/skillmap/backgrounds/forest-comp.png
 * primarycolor: #b27ea3
 * secondarycolor: #ffffff

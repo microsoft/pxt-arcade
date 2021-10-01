@@ -1,7 +1,7 @@
 # Tutorials
 
 
-## Getting started
+## {Getting started}
 
 ```codecard
 [
@@ -147,7 +147,7 @@
 ]
 ```
 
-## See Also
+## {See Also}
 
 [Eat the Doughnut](/tutorials/eat-the-doughnut),
 [Maze](/tutorials/maze),

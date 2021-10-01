@@ -2,21 +2,21 @@
 
 ## Introduction @showdialog
 
-You should be rewarded for all of your hard work!  
+You should be rewarded for all of your hard work!
 
 This tutorial will show you how to level-up after earning 10 points.
 
 ![Level Up!](/static/skillmap/space/spacet5.gif "Your patience shall be rewarded")
 
 
-## Step 2
-**This game is amazing!**  
+## 2. Look Around
+**This game is amazing!**
 
-Take a minute to look at each separate chunk of code.  Can you remember what they all do?  
+Take a minute to look at each separate chunk of code.  Can you remember what everything does?
 
 ---
 
-► Find the value that sets the speed of your enemy ship. How do you think you can make it go faster or slower?
+- :binoculars: Find the value that sets the velocity of your enemy ship. How do you think you would make it go faster or slower?
 
 
 
@@ -25,32 +25,34 @@ Take a minute to look at each separate chunk of code.  Can you remember what the
     myEnemy = sprites.createProjectileFromSide(assets.image`Spider`, 0, 50)
 ```
 
-## Step 3
+## 3. Speed the Ships
 
-**Leveling-up should make enemy ships faster.**  
+**Leveling-up should make enemy ships faster.**
 
-If we want to use a value for their speed that changes 
+If we want to use a value for enemy speed that changes
 during game-play, we're going to need a [__*variable*__](#varied "a label that holds the place for something that can change").
 
 ---
 
-► Under the ``||variables:Variables||`` category, click inside the orange rectangle where it says 
-**Make a Variable...**. 
+- :align justify: Under the ``||variables:Variables||`` category, click inside the orange rectangle where it says  
+**Make a Variable...**.
 
-► Name your new variable **enemySpeed** and click **Ok**.  
+- :mouse pointer: Name your new variable **enemySpeed** and click **Ok**.
 
 
 
-## Step 4
+## 4. Variable Value
 
 **Before we can use the new variable, we need to give it a value.**
 
 ---
 
-► From the ``||variables:Variables||`` category, grab ``||variables:set [enemySpeed] to [0]||``
-and snap it into **the bottom** of the ``||loops:on start||`` container.
+- :align justify: Grab  
+``||variables:set [enemySpeed] to [0]||``  
+and snap it into **the bottom** of the  
+``||loops:on start||`` container.
 
-► Change the value from **0** to **50**.  
+- :mouse pointer: Change the value from **0** to **50**.
 
 
 ```blocks
@@ -68,19 +70,21 @@ let enemySpeed = 50
 ```
 
 
-## Step 5
+## 5. Add Velocity
 
 **🚀 Let's Fly 🚀**
 
-Now that ``||variables:enemySpeed||`` has been set to **50**, we can use the variable 
+Now that ``||variables:enemySpeed||`` has been set to **50**, we can use the variable
 to control the enemy ship's **vy** (vertical velocity).
 
 ---
 
-► Go back to the ``||game:on game update every [2000]ms||`` container and find the block that sets-up the 
+- :mouse pointer: Go back to the  
+``||game:on game update every [2000]ms||``  
+container that's already in your workspace, and find the block that sets-up the
 ``||variables:myEnemy||`` projectile.
 
-► From ``||variables:Variables||`` grab ``||variables:enemySpeed||`` and snap it in to 
+- :align justify: Grab ``||variables:enemySpeed||`` and snap it in to
 replace the **vy** value of **50**.
 
 
@@ -90,29 +94,35 @@ game.onUpdateInterval(2000, function () {
     let myEnemy = sprites.createProjectileFromSide(assets.image`Spider`, 0, enemySpeed)
     myEnemy.x = randint(5, 155)
     myEnemy.setKind(SpriteKind.Enemy)
-    
+
 })
 ```
 
-## Step 6
+## 6. Try it Out
 
 **🕹️ Play your game and make sure it works exactly the same as before 🕹️**
+
+---
 
 You shouldn't notice any difference in the speed of the ship.
 
 
 
-## Step 7
+## 7. Trigger the Change
 
-**👀 Watch the score 👀**   
+**👀 Watch the score 👀**
 
 We need code that checks to see **if** the score is **10** every time the player adds a point.
 
 ---
 
-► Find the ``||sprites:on [sprite] of kind [Projectile] overlaps [otherSprite] of kind [Enemy]||`` container already in your workspace.
+- :binoculars: Find the  
+``||sprites:on [sprite] of kind [Projectile] overlaps [otherSprite] of kind [Enemy]||``   
+container already in your workspace.
 
-► From the ``||logic:Logic||`` category, drag a ``||logic:if <true> then||`` container and snap it into **the bottom** of the
+- :random: Drag out a  
+``||logic:if <true> then||``  
+container and snap it into **the bottom** of the
 **on Projectile overlaps Enemy** container.
 
 
@@ -128,13 +138,15 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 ```
 
 
-## Step 8
+## 8. Set the Points
 
-► From ``||logic:Logic||``, grab ``||logic:<[0] [=] [0]>||`` and snap it in to the **if statement** to replace **true**.
+- :random: Grab  
+``||logic:<[0] [=] [0]>||``  
+and snap it in to the **if statement** to replace **`<true>`**.
 
-► From ``||info:Info||``, grab ``||info:score||`` and snap it in to replace the **0** to the left of the **=**.
+- :id card: Grab ``||info:score||`` and snap it in to replace the **0** to the left of the **=**.
 
-► Change the **0** on the right of the **=** to **10**. 
+- :mouse pointer: Change the **0** on the right of the **=** to **10**.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -143,22 +155,25 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     info.changeScoreBy(1)
     //@highlight
     if (info.score() == 10) {
-        
+
     }
 })
 ```
 
 
-## Step 8
+## 9. Level-Up
 
 The first thing we should do when the score gets to **10** is give a level-up bonus!
 
 ---
 
-► From ``||info:Info||``, grab ``||info:change score by [1]||`` and snap it inside the empty
-``||logic:if <[score] [=] [10]> then||`` logic container.
+- :id card: Grab  
+``||info:change score by [1]||``  
+and snap it inside the empty  
+``||logic:if <[score] [=] [10]> then||``  
+logic container.
 
-► Change the amount added to the score from **1** to **5**.
+- :mouse pointer: Change the amount added to the score from **1** to **5**.
 
 
 ```blocks
@@ -173,7 +188,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 ```
 
 
-## Step 9
+## 10. Bonus
 
 **📢 Say it LOUD 📢**
 
@@ -181,15 +196,18 @@ Let the player know they've earned a bonus!
 
 ---
 
-► From ``||sprites:Sprites||``, drag ``||sprites:[mySprite] say [":)"]||`` into **the bottom**
-of the ``||logic:if <[score] [=] [10]> then||`` container. 
+- :paper plane: Drag  
+``||sprites:[mySprite] say [":)"] ➕||``  
+into **the bottom** of the  
+``||logic:if <[score] [=] [10]> then||``  
+container.
 
-► Change the message to say **"+5 Level-Up Bonus!"**.  
+- :mouse pointer: Change the message to say **"+5 Level-Up Bonus!"**.
 
-► Click the **+** to the right of the **say** block and change the length of the display from **500** ms to **2 seconds** (2000 ms).
+- :mouse pointer: Click the ➕ to the right of the **say** block and change the length of the display from **500** ms to **2 seconds** (2000 ms).
 
 
-  
+
 ```blocks
 let mySprite: Sprite = null
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -204,7 +222,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 })
 ```
 
-## Step 10
+## 11. Speed It Up!
 
 **Here comes the fun part!**
 
@@ -213,10 +231,13 @@ Time to speed up the enemy ships!
 ---
 
 
-► From ``||variables:Variables||``, grab ``||variables:set [enemySpeed] to [0]||``
-and snap it in to **the bottom** of  the ``||logic:if <[score] [=] [10]> then||`` container. 
+- :align justify: Grab  
+``||variables:set [enemySpeed] to [0]||`` 
+and snap it in to **the bottom** of  the  
+``||logic:if <[score] [=] [10]> then||``  
+container.
 
-► Change the value from **0** to **70**.
+- :mouse pointer: Change the value from **0** to **70**.
 
 ```blocks
 let mySprite: Sprite = null
@@ -233,22 +254,23 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 })
 ```
 
-## Step 11
+## 12. Play Your Game
 **That's it!  That's all you needed to do.**
 
-Since we already have the ``||variables:enemySpeed||`` variable in place for the projectile's **vy**, 
-it will automatically update when we change the speed in another part of the program!
+Since we already have the ``||variables:enemySpeed||`` variable in place for the projectile's **vy**, it will automatically update when we change the speed in another part of the program!
 
 ---
 
-► Play your finished game and see if you can get 10 points to level-up!
+Play your finished game and see if you can get 10 points to level-up!
 
 
 ## Finale
 
-**Congratulations!!** 
+**Congratulations!!**
 
-Click **Finish** to return to the main page where you can add this game to your gallery and share with family & friends.
+---
+
+Click **Done** to return to the main skillmap where you can get your completion certificate before completing one last level that teaches you to customize your darts!
 
 
 ```package
@@ -280,6 +302,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
     otherSprite.destroy(effects.disintegrate, 200)
+    scene.cameraShake(4, 500)
 })
 let myEnemy: Sprite = null
 let myFuel: Sprite = null
@@ -290,7 +313,14 @@ scene.setBackgroundImage(assets.image`Galaxy`)
 scroller.scrollBackgroundWithSpeed(0, 10)
 mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
 controller.moveSprite(mySprite)
+
 mySprite.setStayInScreen(true)
+animation.runImageAnimation(
+mySprite,
+assets.animation`Flying Rocket`,
+100,
+true
+)
 
 statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
 statusbar.attachToSprite(mySprite, -25, 0)
@@ -299,11 +329,17 @@ game.onUpdateInterval(5000, function () {
     myFuel.x = randint(5, 155)
     myFuel.setKind(SpriteKind.Gas)
 })
+
 game.onUpdateInterval(2000, function () {
     myEnemy = sprites.createProjectileFromSide(assets.image`Spider`, 0, 50)
     myEnemy.x = randint(5, 155)
     myEnemy.setKind(SpriteKind.Enemy)
-    
+    animation.runImageAnimation(
+    myEnemy,
+    assets.animation`Flying Spider`,
+    100,
+    true
+    )
 })
 game.onUpdateInterval(300, function () {
     statusbar.value += -1
@@ -380,6 +416,11 @@ forever(function () {
         enemySpeed = 70
     }
 })
+```
+```customts
+//% icon="\uf054"
+namespace scroller {
+}
 ```
 
 ```assetjson

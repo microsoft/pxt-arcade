@@ -9,9 +9,9 @@
 
 
 
-## Step 2 -Try It!
+## 2. Try It!
 
-**🕹️ First, move your sprite around in the game window 🕹️**
+**🕹️ First, move your sprite around in the game window.**
 
 ---
 
@@ -19,19 +19,24 @@ Keep in mind which piece of code controls each action!
 
 
 
-## Step 3 - Game Over Pt. 1
+## 3. Game Over
 
-**💀 Time for danger 💀 **
+**Time for danger**  
+💀💀💀
 
-When the player overlaps the _poison pit_ tile, let's trigger a "GAME OVER" message.
+When the player overlaps a _poison pit_ tile, let's trigger a "GAME OVER" message.
 
 ---
 
-► From ``||scene:Scene||``, drag the ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` container into an empty area of the workspace.
+- :tree: Drag the  
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
+container into an empty area of the workspace.
 
-► Click the checkerboard image and change it to the **poison pit** tile.
+- :paint brush: Click the checkerboard image and change it to the **poison pit** tile.
 
-► From ``||game:Game||``, snap a ``||game:game over <LOSE>||`` block into the new container.  
+- :circle: Snap a  
+``||game:game over <LOSE>||``  
+block into the new container.
 
 
 ```blocks
@@ -40,9 +45,9 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`poison pit`, function (sprite
 })
 ```
 
-## Try It!
+## 4. Try It Again!
 
-**🕹️ Give it a try in the game window 🕹️**
+**Give it a try in the game window**
 
 ---
 
@@ -50,20 +55,23 @@ When your monkey lands on the poison pit, it should end the game as a loss.
 
 
 
-## You Win Pt. 1
+## 5. You Win
 
-**🎈 We have a way to lose, let's add a way to win 🎈** 
+**We have a way to lose, let's add a way to win!**
 
 ---
 
 
-► Drag another ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
+- :tree: Drag another  
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
 container into the workspace.
 
-► This time, change the checkerboard to the **chest1** tile.
+- :paint brush: This time, change the checkerboard to the **chest1** tile.
 
-► Snap a ``||game:game over <LOSE>||`` block into the new container and toggle 
-the **`<LOSE>`** switch to **`<WIN>`**!  
+- :circle: Snap a  
+``||game:game over <LOSE>||``  
+block into the new container and toggle
+the **`<LOSE>`** switch to **`<WIN>`**!
 
 
 ```blocks
@@ -73,20 +81,30 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, lo
 })
 ```
 
+## 6. Try It Again, Again!
 
-## You Earned Points pt. 1
+**Give it a try in the game window**
 
-**💯 Award points when the player collects an orange bauble 💯** 
+---
+
+It's easy to lose...but impossible to win!  How do you get over the pits?
+
+
+
+## 7. Add Points 1
+
+**💯 Award points when the player collects an orange bauble.**
 
 ---
 
 
-► Drag another ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
+- :tree: Drag another  
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
 container into the workspace.
 
-► Change the checkerboard to the orange sphere tile called **orange bauble**.
+- :paint brush: Change the checkerboard to the orange sphere tile called **orange bauble**.
 
-► From ``||info:Info||``, snap a ``||info:change score by [1]||`` block into the new container. 
+- :id card: Snap a ``||info:change score by [1]||`` block into the new container.
 
 
 ```blocks
@@ -95,7 +113,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`orange bauble`, function (spr
 })
 ```
 
-## Try It Too!
+## 8. Play!
 
 **🕹️ Play your game and collect an orange bauble 🕹️**
 
@@ -104,35 +122,41 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`orange bauble`, function (spr
 Uh oh!  You get WAY too many points when you touch an orange bauble. We can fix that in the next step.
 
 
-## You Earned Points pt. 2
+## 9. Add Points 2
 
 **Replace the baubles you collect with an empty tile.**
 
 ---
 
-► From ``||scene:Scene||``, drag ``||scene:set [ ] at tilemap col [0] row [0]||`` into **the top** of the ``||scene:on [sprite] of kind [Player] overlaps [orange bauble] at [location]||`` container.
+- :tree: Drag  
+``||scene:set [ ] at tilemap col [0] row [0]||``  
+into **the top** of the  
+``||scene:on [sprite] of kind [Player] overlaps [orange bauble] at [location]||``   container.
 
-► Replace ``||scene:tilemap col [0] row [0]||`` with the ``||variables:location||`` value from the top of the **Player overlaps orange bauble** container.
+- :mouse pointer: Replace  
+``||scene:tilemap col [0] row [0]||``  
+with the ``||variables:location||``  
+value from the top of the **Player overlaps orange bauble** container.
 
 ![Share your location](/static/skillmap/jungle/jungle-location.gif "Grab the variable from the overlap container")
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`orange bauble`, function (sprite, location) {
     //@highlight
-    tiles.setTileAt(location, assets.tile`transparency16`)  
+    tiles.setTileAt(location, assets.tile`transparency16`)
     info.changeScoreBy(1)
 })
 ```
 
 
 
-## Finished
+## Finale
 
 **Now we have a simple platformer that has a way to win, a way to lose, and a way to collect points.**
 
 ---
 
-When you're done playing with your game, click **Finish** to return to the main page to learn how to make it even more exciting.
+When you're done playing with your game, click **Done** to return to the main skillmap and keep going so we can show you how to win the game!
 
 
 

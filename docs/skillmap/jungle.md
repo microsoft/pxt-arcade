@@ -18,7 +18,7 @@
 
 ### jungle1
 * allowcodecarryover: false
-* name: Jungle Monkey Jump
+* name: Moving Monkey
 * type: tutorial
 * description: Make your monkey jump and move around!
 * url: /skillmap/jungle/jungle1
@@ -104,9 +104,13 @@
 * name: Congrats!
 * kind: completion
 * type: certificate
-* imageUrl: /static/skillmap/certificates/platformer-cert.png
-* url: /static/skillmap/certificates/learn-to-make-a-platformer.pdf
+* imageUrl: /static/skillmap/certificates/jungle-cert.png
+* url: /static/skillmap/certificates/jungle-cert.pdf
 * position: 4 1
+* actions:
+    * map: [Try 80s Rockstar Maze](/skillmap/rockstar)
+    * map: [Try our Space Explorer](/skillmap/space)
+    * editor: [Edit Your Project with a Full Toolbox](/)
 
 
 

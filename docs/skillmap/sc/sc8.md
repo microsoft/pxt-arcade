@@ -22,7 +22,7 @@ Can you remember which chunk of code creates each action?
 
 ## Step 3 - What's next?
 
-**Need some ideas?**   
+**Need some ideas?**
 Check out the list below for changes you can make to your final project.
 
 ---
@@ -51,7 +51,7 @@ Testing the project is the best way to find out if your code is working the way 
 
 ---
 
-When you're done editing here, click **Finish** to return to the main page and choose "Save to My Projects" so you can play with all of the available blocks in the MakeCode Arcade toolbox!
+When you're done editing here, click **Done** to return to the main page and choose "Save to My Projects" so you can play with all of the available blocks in the MakeCode Arcade toolbox!
 
 
 
@@ -114,7 +114,7 @@ scene.onOverlapTile(SpriteKind.Projectile, assets.tile`boulder`, function (sprit
 let projectile: Sprite = null
 let mySprite: Sprite = null
 scene.setBackgroundImage(assets.image`background1`)
-tiles.setTilemap(tilemap`level1`) 
+tiles.setTilemap(tilemap`level1`)
 mySprite = sprites.create(assets.image`Shang-Chi`, SpriteKind.Player)
 sprites.add_profile(Choice.shang)
 mySprite.ay = 500
@@ -231,7 +231,7 @@ namespace sprites {
             thisSprite.vy = -200
         }
     }
-    
+
     /**
      * Direct sprite to automatically jump only when hitting
      * a wall to the right or left
@@ -244,12 +244,12 @@ namespace sprites {
     }
 
     /**
-     * Set a profile pic and name for your hero in the 
+     * Set a profile pic and name for your hero in the
      * upper-left hand corner of the screen
      */
     //% block="add corner profile for $choice"
     export function add_profile (choice:Choice) {
-        if (choice == Choice.xialing){ 
+        if (choice == Choice.xialing){
             profilelife.setProfileImage(assets.image`Xialing profile`)
             profilelife.setName("Xialing")
         }

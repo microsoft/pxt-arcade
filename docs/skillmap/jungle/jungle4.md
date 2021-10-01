@@ -4,52 +4,60 @@
 ## Welcome @showdialog
 
 **One of our baubles is locked away!**  
+
 This activity will show you how to explode tiles so you can get every point.
 
 ![Using explosives to clear the way](/static/skillmap/jungle/jungle4.gif "Time to live dangerously!")
 
 
 
-## Step 2 - Try It!
+## 2. Try It!
 
-**🕹️ Start by playing the game in the game window 🕹️**
+**🕹️ Start by playing the game in the game window**
 
 ---
 
 Can you find the bauble that's blocked-in?
 
 
-## Step 3 - When B Pressed
+## 3. When B Pressed
 
-**💥 Nothing a little dynamite can't fix 💥**  
-We need to remove some walls and tiles! Let's clear the way when the B button is pressed.
+**Nothing a little dynamite can't fix**  
+💥💥💥  
+We need to remove some walls and tiles! Let's clear the way when the (B) button is pressed.
 
 ---
 
-► From ``||controller:Controller||``, drag the ``||controller:on [A] button [pressed]||`` container into an empty area of the workspace.
+- :game: Drag the  
+``||controller:on [A] button [pressed]||``  
+container into an empty area of the workspace.
 
-► Click the letter A and change it to B.
+- :mouse pointer: Click the letter A and change it to B.
 
-► Move to the next step to learn how to spawn your explosive.  
+_ 💡 Move to the next step to learn how to spawn your explosive._
 
 
 ```blocks
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    
+
 })
 ```
 
-## Step 4 - Set the explosive
+## 4. Set the Explosive
 
 We're going to use a **Projectile** block here, even though our dynamite stays in one place.
 
 ---
 
-► From ``||sprites:Sprites||``, drag ``||variables:set [projectile] to projectile from [mySprite] with vx [50] vy [50]||`` into the empty ``||controller:on [B] button [pressed]||`` container.
+- :paper plane: Drag  
+``||variables:set [projectile] to projectile from [mySprite] with vx [50] vy [50]||``   
+into the empty  
+``||controller:on [B] button [pressed]||``  
+container.
 
-► Change both **vx** (horizontal speed) and **vy** (vertical speed) to **0** so the explosive stays where you drop it.
+- :mouse pointer: Change both **vx** (horizontal speed) and **vy** (vertical speed) to **0** so the explosive stays where you drop it.
 
-💡 Don't set the image yet. We'll handle that in another step.
+_💡 Don't set the image yet. We'll handle that in another step._
 
 
 
@@ -57,21 +65,28 @@ We're going to use a **Projectile** block here, even though our dynamite stays i
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     //@highlight
     projectile = sprites.createProjectileFromSprite(assets.image`blank`, mySprite, 0, 0)
-    
+
 })
 ```
 
-## Step 5 - Make it powerful
+## 5. Make it Powerful
 
 For the explosive to overlap the blocks around it, we need it to be able to **go through walls**!
 
 ---
 
-► From ``||sprites:Sprites||``, drag ``||sprites:set [mySprite] [auto destroy] <OFF>||`` into **the end** of ``||controller:on [B] button [pressed]||`` container, then toggle **`<OFF>`** to **`<ON>`**.
+- :paper plane: Drag  
+``||sprites:set [mySprite] [auto destroy] <OFF>||``  
+into **the end** of  
+``||controller:on [B] button [pressed]||``  
+container, then toggle **`<OFF>`** to **`<ON>`**.
 
-► Click ``||variables:mySprite||`` and change it to ``||variables:projectile||``.
+- :mouse pointer: Click ``||variables:mySprite||`` and change it to ``||variables:projectile||``.
 
-► Click ``||sprites:auto destroy||`` and change it to ``||sprites:ghost through walls||``.
+- :mouse pointer: Click  
+``||sprites:auto destroy||``  
+and change it to  
+``||sprites:ghost through walls||``.
 
 
 ```blocks
@@ -79,21 +94,24 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 let projectile = sprites.createProjectileFromSprite(assets.image`blank`, mySprite, 0, 0)
     //@highlight
     projectile.setFlag(SpriteFlag.GhostThroughWalls, true)
-    
+
 })
 ```
 
-## Step 6 - Animate It!
+## 6. Animate It!
 
 In this step, we'll choose **an animation** for our projectile to make it look like it's exploding!
 
 ---
 
-► Click the **Advanced** category in the toolbar to reveal the ``||animation:Animation||`` category.
+- :chevron down: Click the **Advanced** category in the toolbar to reveal the ``||animation:Animation||`` category.
 
-► Drag the large ``||animation:animate [mySprite]||`` block to **the end** of ``||controller:on [B] button [pressed]||``. 
+- :sync: Drag the large  
+``||animation:animate [mySprite]||``  
+block to **the end** of  
+``||controller:on [B] button [pressed]||``.
 
-► Click ``||variables:mySprite||`` and change it to ``||variables:projectile||``.
+- :mouse pointer: Click ``||variables:mySprite||`` and change it to ``||variables:projectile||``.
 
 
 ```blocks
@@ -104,22 +122,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     projectile,
     [img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+        . 
         `],
     500,
     false
@@ -127,14 +130,14 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 7 - Choose the Boom!
+## 7. Choose the Boom!
 
 
-► Inside the large ``||animation:animate [mySprite]||`` block, click the empty grey square and toggle to **My Assets** to choose the **splode** animation, then click **Done**.  
+- :paint brush: Inside the large ``||animation:animate [mySprite]||`` block, click the empty grey square and toggle to **My Assets** to choose the **splode** animation, then click **Done**.
 
-► The **interval** should automatically change to **100** ms, but if it doesn't, you can change it yourself.
+- :binoculars: The **interval** should automatically change to **100** ms, but if it doesn't, you can change it yourself.
 
-💡 Don't worry if the animation looks empty in your code. The beginning frames are blank to give your character time to get out of the way! 
+_💡 Don't worry if the animation looks empty in your code. The beginning frames are blank to give your character time to get out of the way!_
 
 
 ```blocks
@@ -151,43 +154,52 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Try It!
+## 8. Try It Again!
 
-**🕹️ Now try your game 🕹️**
+**🕹️ Now try your game**
 
 ---
 
-You should be able to jump with the up arrow, place tiles with the A button, and set an explosive with the B button.
+You should be able to jump with the up arrow, place tiles with the (A) button, and set an explosive with the (B) button.
 
 **BUT WAIT!** The explosive doesn't do anything.  We'll fix that in the next step.
 
 
 
-## Step 9 - Removing Block Tiles
+## 9. Removing Block Tiles
 
 **💥 Kaboom 💥**  
 When your **splode** animation overlaps a platform tile, we need to remove both the wall and the tile.
 
 ---
 
-► From ``||scene:Scene||``, drag the ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` container into an empty area of the workspace.
+- :tree: Drag the  
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
+container into an empty area of the workspace.
 
-► Click ``||sprites:Player||`` and change it to ``||sprites:Projectile||``.
+- :mouse pointer: Click ``||sprites:Player||`` and change it to ``||sprites:Projectile||``.
 
-► Click the empty tile box and choose the leafy **skyblock** platform tile.
+- :paint brush: Click the empty tile box and choose the leafy **skyblock** platform tile.
 
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Projectile, assets.tile`skyblock`, function (sprite, location) {
-    
+
 })
 ```
 
-## Step 10 - Removing Walls
+## 10. Removing Walls
 
-► From ``||scene:Scene||``, drag ``||scene:set wall <OFF> at tilemap col [0] row [0]||`` into the empty ``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||`` container.
+- :tree: Drag  
+``||scene:set wall <OFF> at tilemap col [0] row [0]||``  
+into the empty  
+``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||``   
+container.
 
-► To remove the wall at the location of overlap, drag the ``||variables:location||`` value block out of the ``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||`` title and drop it in to replace ``||scene:tilemap col [0] row [0]||``.
+- :mouse pointer: To remove the wall at the location of overlap, drag the ``||variables:location||`` value block out of the  
+``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||``   
+title and drop it in to replace  
+``||scene:tilemap col [0] row [0]||``.
 
 ![Editing our platformer](/static/skillmap/jungle/projectile-wall-off.gif "Time to live dangerously!")
 
@@ -204,15 +216,21 @@ scene.onOverlapTile(SpriteKind.Projectile, assets.tile`skyblock`, function (spri
 ![Editing our platformer](/static/skillmap/jungle/projectile-wall-off.gif "Time to live dangerously!")
 
 
-## Step 11 - Removing Tiles
+## 11. Removing Tiles
 
 Lastly, we need to remove the tile from the same place that we removed the wall.
 
 ---
 
-► From ``||scene:Scene||``, drag the ``||scene:set [ ] at tilemap col [0] row [0]||`` into **the end** of the ``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||`` container.
+- :tree: Drag  
+``||scene:set [ ] at tilemap col [0] row [0]||``  
+into **the end** of the  
+``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||``  
+container.
 
-► To remove the tile at the location of overlap, drag the ``||variables:location||`` value block out of the ``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||`` title and drop it in to replace ``||scene:tilemap col [0] row [0]||``.
+- :mouse pointer: To remove the tile at the location of overlap, drag the  ``||variables:location||`` value block out of the  
+``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||``   title and drop it in to replace  
+``||scene:tilemap col [0] row [0]||``.
 
 
 ```blocks
@@ -223,7 +241,7 @@ scene.onOverlapTile(SpriteKind.Projectile, assets.tile`skyblock`, function (spri
 })
 ```
 
-## Try It!
+## 12. Play!
 
 **🕹️ Time to play your game 🕹️**
 
@@ -233,13 +251,13 @@ You should have everything you need to collect all five baubles and get to the e
 
 
 
-## Finished
+## Finale
 
 **Play your game and see how many points you can get.**
 
 ---
 
-When you're done playing, click **Finish** to return to the main page to learn how to add additional consequences for your explosives.
+When you're done playing, click **Done** to return to the main page to find out how to add additional consequences for your explosives!
 
 
 
@@ -262,7 +280,7 @@ mySprite.ay = 500
 scene.cameraFollowSprite(mySprite)
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`orange bauble`, function (sprite, location) {
-    tiles.setTileAt(location, assets.tile`transparency16`)  
+    tiles.setTileAt(location, assets.tile`transparency16`)
     info.changeScoreBy(1)
 })
 

@@ -3,7 +3,7 @@
 
 ## Welcome @showdialog
 
-**Time to Level Up!**  
+**Time to Level Up!**
 
 This activity will show you how to add extra levels.
 
@@ -22,7 +22,7 @@ Can you remember which chunk of code creates each action?
 
 ## Step 3 - Not So Fast
 
-**🗝️ Find a second door to win 🗝️**  
+**🗝️ Find a second door to win 🗝️**
 
 ---
 
@@ -38,20 +38,20 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`door2`, function (sprite, loc
 
 ## Step 4 - A New Level
 
-**🙌 Add a New Level 🙌**   
+**🙌 Add a New Level 🙌**
 When we get to the first door, we want to take the player to a new level.
 
 ---
 
-► From ``||scene:Scene||``, drag ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` into an empty area of the workspace. 
+► From ``||scene:Scene||``, drag ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` into an empty area of the workspace.
 
-► Click the empty square and choose **door1**. 
+► Click the empty square and choose **door1**.
 
 
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`door1`, function (sprite, location) {
-    
+
 })
 ```
 
@@ -62,7 +62,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`door1`, function (sprite, loc
 
 ► To show the player that the level has changed, go to ``||scene:Scene||`` and drag ``||scene:set background image to [ ]||`` into the empty **Player overlaps door1** container.
 
-► Click the grey square and toggle to **My Assets** to choose **background2**. 
+► Click the grey square and toggle to **My Assets** to choose **background2**.
 
 
 ```blocks
@@ -77,7 +77,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`door1`, function (sprite, loc
 
 ► To change the level tilemap, go to ``||scene:Scene||`` and drag ``||scene:set tilemap to [ ]||`` to **the end** of the **Player overlaps door1** container.
 
-► Click the grey square and toggle to **My Assets** to choose **level2**. 
+► Click the grey square and toggle to **My Assets** to choose **level2**.
 
 
 ```blocks
@@ -134,7 +134,7 @@ You did it!!  Can you follow the experience all the way to the end?
 
 ---
 
-When you're done playing with your project, click **Finish** to return to the main page for your certificate and the option to customize your final project!
+When you're done playing with your project, click **Done** to return to the main page for your certificate and the option to customize your final project!
 
 
 
@@ -186,7 +186,7 @@ scene.onOverlapTile(SpriteKind.Projectile, assets.tile`boulder`, function (sprit
 let projectile: Sprite = null
 let mySprite: Sprite = null
 scene.setBackgroundImage(assets.image`background1`)
-tiles.setTilemap(tilemap`level1`) 
+tiles.setTilemap(tilemap`level1`)
 mySprite = sprites.create(assets.image`Shang-Chi`, SpriteKind.Player)
 sprites.add_profile(Choice.shang)
 mySprite.ay = 500
@@ -303,7 +303,7 @@ namespace sprites {
             thisSprite.vy = -200
         }
     }
-    
+
     /**
      * Direct sprite to automatically jump only when hitting
      * a wall to the right or left
@@ -316,12 +316,12 @@ namespace sprites {
     }
 
     /**
-     * Set a profile pic and name for your hero in the 
+     * Set a profile pic and name for your hero in the
      * upper-left hand corner of the screen
      */
     //% block="add corner profile for $choice"
     export function add_profile (choice:Choice) {
-        if (choice == Choice.xialing){ 
+        if (choice == Choice.xialing){
             profilelife.setProfileImage(assets.image`Xialing profile`)
             profilelife.setName("Xialing")
         }

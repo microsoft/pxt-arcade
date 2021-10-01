@@ -1,12 +1,12 @@
 # Car race tutorial
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 Create a side-scrolling car racing game to jump over obstacles and make it to the finish line.
 
 ![Car race game play](/static/recipes/side-scroller/car-race.gif)
 
-## Step 1 - Set the background color
+## {Step 1 - Set the background color}
 
 First, let’s set the color of the background for our racing game. From the ``||scene:Scene||`` Toolbox drawer, drag a ``||scene:set background color||`` block onto the Workspace. Drop it into the ``||loops:on start||`` block.
 
@@ -18,7 +18,7 @@ In the ``||scene:set background color||`` block, click on the grey oval to selec
 scene.setBackgroundColor(6)
 ```
 
-## Step 2 - Create the tilemap
+## {Step 2 - Create the tilemap}
 
 Now let’s use a tile map to represent the road for our game. From the ``||scene:Scene||`` Toolbox drawer, drag a ``||scene:set tilemap||`` block into the ``||loops:on start||`` block, after the ``||scene:set background color||`` block.
 
@@ -29,7 +29,7 @@ scene.setBackgroundColor(6)
 tiles.setTilemap(tilemap`level_0`)
 ```
 
-## Step 3 - Set the canvas size
+## {Step 3 - Set the canvas size}
 
 In the ``||scene:set tilemap||`` block, click on the grey square to open up the Tilemap Editor.
 
@@ -37,7 +37,7 @@ In the bottom left corner, set the dimensions for the canvas to **50** by **8** 
 
 ![Canvas size](/static/recipes/side-scroller/canvas-size.png)
 
-## Step 4 - Draw the road
+## {Step 4 - Draw the road}
 
 Select a **tile** from the Tile Gallery or draw your own tile to represent the road for your race. You will notice that there is a road tile in the **Miscellaneous** part of the Tile Gallery that you can use.
 
@@ -45,7 +45,7 @@ Click on the **Pencil** icon to draw the road along the bottom of your Tilemap c
 
 ![Road tile](/static/recipes/side-scroller/road-tile.png)
 
-## Step 5 - Create obstacles
+## {Step 5 - Create obstacles}
 
 Go back to the Tilemap Editor again by clicking on the square in the ``||scene:set tilemap||`` block. This time we are going to create an obstacle for your car to jump over.
 
@@ -55,7 +55,7 @@ Place up to three obstacle tiles in a row at various points in the middle of you
 
 ![Obstacles](/static/recipes/side-scroller/obstacles.png)
 
-## Step 6 - Create finish line
+## {Step 6 - Create finish line}
 
 Open up the Tilemap Editor again by clicking on the square in the ``||scene:set tilemap||`` block. Now we are going to create the finish line for our race.
 
@@ -63,7 +63,7 @@ Select a tile from the Gallery or draw your own tile to represent the finish lin
 
 ![Finish line](/static/recipes/side-scroller/finish-line.png)
 
-## Step 7 - Draw the walls
+## {Step 7 - Draw the walls}
 
 Go one more time to the Tilemap Editor. The last thing we’re going to do in our tilemap is to add walls on the road for our car to drive on.
 
@@ -71,7 +71,7 @@ Click on the **Wall** tool, then draw along the road tiles.
 
 ![Walls](/static/recipes/side-scroller/walls.png)
 
-## Step 8 - Finished race course
+## {Step 8 - Finished race course}
 
 You should see some of your new race course in simulator. Not all of the course is visible right now but the rest of the course will appear as your car moves forward.
 
@@ -80,7 +80,7 @@ scene.setBackgroundColor(6)
 tiles.setTilemap(tilemap`level`)
 ```
 
-## Conclusion @unplugged
+## {Conclusion @unplugged}
 
 Now, let's make a race car and give it some motion properties to move it along the race course you just created.
 
