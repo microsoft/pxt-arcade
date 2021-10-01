@@ -12,7 +12,7 @@ Jerry needs to gather all of the instruments before getting on the tour bus!
 
 ## 2. Add Points
 
-**🎸 Award points when Jerry grabs an instrument**
+**🎸 Award points when Jerry grabs an instrument**  
 When your sprite overlaps an instrument, we'll change the score.
 
 ---
@@ -37,7 +37,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument1`, function (sprit
 
 ## 3. Try It!
 
-**🕹️ Try your maze and grab a guitar**
+**🕹️ Try your maze and grab a guitar**  
 
 ---
 
@@ -46,7 +46,7 @@ Uh oh!  You get WAY too many points when you touch the guitar! We can fix that i
 
 ## 4. Pick It Up
 
-**Replace the instruments you collect with an empty tile.**
+**Replace the instruments you collect with an empty tile.**  
 
 ---
 
@@ -78,7 +78,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument1`, function (sprit
 
 ## 5. Look Again
 
-**🕹️ Try your maze in the game window**
+**🕹️ Try your maze in the game window**  
 
 ---
 
@@ -87,8 +87,8 @@ You should get one point for every guitar you collect.  What about the drums and
 
 ## 6. More Instruments
 
-**🎹 Do it all again**
-Follow the same steps two more times to add points for the drums and keyboard tiles.
+**🎹 Do it all again**  
+Follow the same steps two more times to add points for the **drums** and **keyboard** tiles.
 
 ---
 
@@ -122,7 +122,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument4`, function (sprit
 
 ## 7. Look Again...Again
 
-**🕹️ Try your maze again**
+**🕹️ Try your maze again**  
 
 ---
 
@@ -132,7 +132,7 @@ You should get one point for every instrument you collect!  Can you make it to t
 
 ## 8. Out the Door
 
-**🚪 Make it out the door**
+**🚪 Make it out the door**  
 Let's finish the game with a WIN when Jerry overlaps the exit door!
 
 ---
@@ -143,7 +143,7 @@ container into an empty area of the workspace.
 
 - :mouse pointer: Change the checkerboard to red door tile named **exit**.
 
-- :game: Snap a  
+- :circle: Snap a  
 ``||game:game over <LOSE>||``  
 block into the new container.
 
@@ -164,7 +164,9 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`exit`, function (sprite, loca
 
 ---
 
-Grab your instruments and guide Jerry to the door, then click **Done** to head back to the skillmap. In the next level we'll show you how to subtract points when Jerry runs into crazed fans!
+Grab your instruments and guide Jerry to the door, then click **Done** to head back to the skillmap.  
+
+In the next level we'll show you how to subtract points when Jerry runs into crazed fans!
 
 
 ```package
