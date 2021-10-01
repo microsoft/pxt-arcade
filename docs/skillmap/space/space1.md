@@ -43,7 +43,7 @@ scene.setBackgroundImage(assets.image`Galaxy`)
 
 ---
 
-- :angle right: Grab  
+- :arrows alternate:  Grab  
 ``||scroller:scroll background with vx [-50] vy [-50]||``  
 and drop it in to **the end** of the  
 ``||loops:on start||`` container.
@@ -189,12 +189,6 @@ statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
 statusbar.attachToSprite(mySprite, -30, 0)
 mySprite.y = 100
 
-```
-
-```customts
-//% icon="\uf054"
-namespace scroller {
-}
 ```
 
 
