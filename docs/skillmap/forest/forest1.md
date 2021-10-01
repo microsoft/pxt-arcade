@@ -84,7 +84,7 @@ to **the end** of the
 ``||loops:on start||``
 container.
 
-_💡  Remember, the bubble on the left shows the icon of the toolbox category for the block you need._
+_💡  Remember, the icon to the left of the instructions shows the same icon as the toolbox category for the block you need._
 
 - :paint brush:  To choose your plane, click the empty grey box, then toggle to **My Assets** and choose your aircraft.
 

@@ -3,7 +3,9 @@
 
 ## Welcome @showdialog
 
-How did those fans get backstage?  Keep the fans away from Jerry if you want to get the highest score.
+How did those fans get backstage?  
+
+Keep the fans away from Jerry if you want to get the highest score.
 
 ![Avoid the fans](/static/skillmap/rockstar/rockstar3.gif "Look what we're about to do today!")
 
@@ -12,7 +14,7 @@ How did those fans get backstage?  Keep the fans away from Jerry if you want to 
 
 ## 2. Spot the Fan
 
-**📸 Remove points when Jerry runs into a screaming fan**
+**📸 Remove points when Jerry runs into a screaming fan**  
 
 When your sprite overlaps a fan, we'll change the score.
 
@@ -50,7 +52,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`fan1`, function (sprite, loca
 
 ## 4. Try It!
 
-**🕹️ Try your maze and see what happens when you run into a fan**
+**🕹️ Try your maze and see what happens when you run into a fan**  
 
 ---
 
@@ -59,7 +61,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`fan1`, function (sprite, loca
 
 ## 5. Fewer Fans
 
-**Replace the fans with an empty tile.**
+**Replace the fans with an empty tile.**  
 
 ---
 
@@ -89,7 +91,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`fan1`, function (sprite, loca
 
 ## 6. More Fans
 
-**🎤 Encore 🎤**
+**🎤 Encore 🎤**  
 Follow the same steps two more times to include the other fans.
 
 ---
@@ -100,7 +102,7 @@ into an empty area of the workspace and **set the fan tiles**.
 
 - :tree: Drag  
 ``||scene:set [ ] at tilemap col [0] row [0]||``  
-into
+into  
 ``||scene:on [sprite] of kind [Player] overlaps [fan] at [location]||``  
 and replace  
 ``||scene:tilemap col [0] row [0]||``  
@@ -120,19 +122,20 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`fan3`, function (sprite, loca
 ```
 
 
-## 5. Look Again
+## 7. Look Again
 
-**🕹️ Try your maze in the game window**
+**🕹️ Try your maze in the game window**  
 
 ---
 
 You should lose one point for every fan you run into.
+
 How many points can you keep on your way to the door?
 
 
-## 6. Out of Time
+## 8. Out of Time
 
-**🕒 Make it out in time**
+**🕒 Make it out in time**  
 Let's use a timer to add some hustle to the whole experience!
 
 ---
@@ -160,7 +163,7 @@ info.startCountdown(30)
 
 ## Finale
 
-🔥 **Congratulations** 🔥
+🔥 **Congratulations** 🔥  
 
 ---
 
