@@ -202,11 +202,6 @@ When you're ready, click **Done** to return to the skillmap so you can move to t
 arcade-background-scroll=github:microsoft/arcade-background-scroll/
 ```
 
-```customts
-//% icon="\uf054"
-namespace scroller {
-}
-```
 
 ```template
 

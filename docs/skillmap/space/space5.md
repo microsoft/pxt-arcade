@@ -417,11 +417,6 @@ forever(function () {
     }
 })
 ```
-```customts
-//% icon="\uf054"
-namespace scroller {
-}
-```
 
 ```assetjson
 {
