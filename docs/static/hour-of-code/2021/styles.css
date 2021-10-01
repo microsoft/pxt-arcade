@@ -24,9 +24,19 @@ html {
 body,
 a,
 button,
-p {
+p,
+li {
     font-size: 1.8rem;
     font-family: 'Roboto', sans-serif;
+}
+
+li {
+    padding: 1rem 0;
+}
+
+li li {
+    padding: 0;
+    margin: 0.5rem 0;
 }
 
 .body-font {
@@ -39,10 +49,22 @@ p {
     font-weight: 400;
 }
 
-/* Font scaling */
-@media (min-width: 2000px) {
+/* Dynamic scaling */
+@media (min-width: 4000px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 3000px) {
     html {
         font-size: 14px;
+    }
+}
+
+@media (min-width: 2000px) {
+    html {
+        font-size: 12px;
     }
 }
 
@@ -147,6 +169,20 @@ header.hoc-header {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+header.hoc-header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-image: url('./header.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 header.hoc-header .header-text {
@@ -160,7 +196,7 @@ header.hoc-header .header-text .title {
 }
 
 header.hoc-header .header-text .title > * {
-    margin: 0 1.5rem;
+    margin: 0 1rem;
 }
 
 header.hoc-header .header-text h3 {
@@ -191,7 +227,7 @@ header.hoc-header .header-text h3 {
 section.hoc-section-01 {
     width: 90%;
     max-width: 110rem;
-    margin: 2rem auto;
+    margin: 4rem auto;
     padding: 4rem 0;
     display: flex;
     align-items: center;
@@ -257,10 +293,24 @@ section.hoc-aside-01 {
     margin-bottom: 2rem;
 }
 
+section.hoc-aside-01.background-sunflower {
+    margin-bottom: 0;
+}
+
 section.hoc-aside-01 .hero {
     width: 35%;
     flex-shrink: 0;
     align-self: stretch;
+    background-image: url('./global-game-jam.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1rem solid #3dc1aa;
+}
+
+section.hoc-aside-01.background-sunflower .hero {
+    background-image: unset;
+    border: 1rem solid #eeca49;
 }
 
 section.hoc-aside-01 .aside-text {
@@ -286,6 +336,12 @@ section.hoc-aside-01 .aside-text .btn {
     float: right;
 }
 
+@media (min-width: 1400px) {
+    section.hoc-aside-01 .hero {
+        width: 50%;
+    }
+}
+
 @media (max-width: 480px) {
     section.hoc-aside-01 {
         flex-wrap: wrap-reverse;
@@ -299,10 +355,13 @@ section.hoc-aside-01 .aside-text .btn {
     section.hoc-aside-01 .aside-text {
         padding: 2rem 0;
         margin: 2rem;
+        padding-top: 0;
+        margin-top: 0;
     }
 
     section.hoc-aside-01 .aside-text .title {
         margin: 0;
+        margin-bottom: 2rem;
     }
 
     section.hoc-aside-01 .aside-text .subtitle {
@@ -319,7 +378,7 @@ section.hoc-aside-01 .aside-text .btn {
 section.hoc-section-02 {
     width: 90%;
     max-width: 110rem;
-    margin: 2rem auto;
+    margin: 4rem auto;
     padding: 4rem 0;
 }
 
@@ -351,12 +410,28 @@ section.hoc-section-02 .carousel .body {
     position: relative;
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 section.hoc-section-02 .carousel .body .btn {
     position: absolute;
     bottom: 3rem;
     right: 3rem;
+}
+
+section.hoc-section-02 .carousel .body .body-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 30%
+    );
 }
 
 section.hoc-section-02 .carousel .list {
@@ -417,6 +492,7 @@ section.hoc-section-02 .carousel .list .list-item.active:hover {
     }
 
     section.hoc-section-02 .section-text .title {
+        flex-shrink: 1;
         margin-bottom: 2rem;
     }
 
@@ -424,12 +500,16 @@ section.hoc-section-02 .carousel .list .list-item.active:hover {
         margin: 0;
     }
 
+    section.hoc-section-02 .carousel {
+        height: 52rem;
+    }
+
     section.hoc-section-02 .carousel .list {
-        flex-basis: 40%;
+        flex-basis: 35%;
     }
 
     section.hoc-section-02 .carousel .list .list-item {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     section.hoc-section-02 .carousel .body .btn {
@@ -621,6 +701,40 @@ section.hoc-section-03 .certificate:active .action {
     }
 }
 
+/* Educator Section 04 -------------------------------------------------------------------------- */
+
+section.hoc-section-04 {
+    width: 90%;
+    max-width: 110rem;
+    margin: 2rem auto;
+    padding: 4rem 0;
+    display: flex;
+    align-items: center;
+}
+
+section.hoc-section-04 .title {
+    flex-shrink: 0;
+    flex-basis: 35%;
+    margin-right: 2rem;
+}
+
+section.hoc-section-04 a.btn {
+    float: right;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    section.hoc-section-04 {
+        flex-wrap: wrap;
+    }
+
+    section.hoc-section-04 .title {
+        margin-bottom: 2rem;
+        flex-basis: 100%;
+    }
+}
+
 /* Educator Button --------------------------------------------------------------------------- */
 
 a.educator-btn {
@@ -659,6 +773,7 @@ a.activity-btn {
     transition: 0.25s;
     width: 100%;
     text-align: center;
+    position: relative;
 }
 
 a.activity-btn:hover {
@@ -669,6 +784,7 @@ a.activity-btn:hover {
 
 a.activity-btn:hover .action {
     background-color: #d3b034;
+    opacity: 1;
 }
 
 a.activity-btn:active {
@@ -678,6 +794,7 @@ a.activity-btn:active {
 a.activity-btn:active .action {
     background-color: black;
     color: white;
+    opacity: 1;
 }
 
 a.activity-btn .title {
@@ -688,19 +805,27 @@ a.activity-btn .title {
 }
 
 a.activity-btn .body {
-    height: 30rem;
+    height: 33rem;
     margin-top: -3rem;
-    border-top-left-radius: 2rem;
-    border-top-right-radius: 2rem;
+    border-radius: 2rem;
+    background-image: url('./forest-skillmap-game.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 a.activity-btn .action {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     text-transform: uppercase;
     padding: 2rem;
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
     flex-basis: 100%;
     transition: 0.25s;
+    opacity: 0;
 }
 
 /* Standard Button --------------------------------------------------------------------------- */
@@ -725,6 +850,16 @@ a.btn:hover {
     text-decoration: none;
     transform: scale(1.05);
     background-color: #d3b034;
+}
+
+.background-sunflower a.btn {
+    background-color: #de594b;
+    color: white;
+}
+
+.background-sunflower a.btn:hover {
+    background-color: #cc493a;
+    color: white;
 }
 
 a.btn:active {
@@ -757,10 +892,39 @@ a.btn.secondary:active {
     margin-top: 0;
 }
 
-.docs.footer.inverted a.item {
+.docs.footer.inverted a.item i.icon {
+    color: white;
+    transition: 0.25s;
+}
+
+.docs.footer.inverted a.item:hover i.icon {
+    transform: scale(1.1);
+    color: #f2f2f2;
+}
+
+.docs.footer.inverted a.item:active i.icon {
+    transform: scale(0.9);
+    color: black;
+}
+
+.docs.footer.inverted .divider {
+    display: none;
+}
+
+.docs.footer.inverted .ui.small.horizontal.list {
+    margin-top: 3rem;
+}
+
+.docs.footer.inverted .ui.small.horizontal.list > .item {
+    font-size: 1.4rem;
     color: white;
 }
 
-.ui.link.list.list a.item:hover {
-    text-decoration: none;
+.docs.footer.inverted .ui.small.horizontal.list > .item:hover {
+    font-size: 1.4rem;
+    color: white;
+}
+
+.docs.footer.inverted .poweredBy img {
+    filter: brightness(5) !important;
 }

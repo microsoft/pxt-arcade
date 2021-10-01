@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html
+    lang="en-US"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="http://www.facebook.com/2008/fbml"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Microsoft MakeCode Arcade Hour of Code™ 2021</title>
+        <meta name="Description" content="" />
+        <!-- TODO: Description Copy -->
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=yes"
+        />
+
+        <link rel="manifest" href="/blb/sim.webmanifest" />
+
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="apple-mobile-web-app-title"
+            content="Microsoft MakeCode Arcade Hour of Code™ 2021"
+        />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="translucent-black"
+        />
+        <meta name="format-detection" content="telephone=no" />
+        <meta
+            name="application-name"
+            content="Microsoft MakeCode Arcade Hour of Code™ 2021"
+        />
+
+        <meta name="msapplication-TileColor" content="#ff7b22" />
+        <meta
+            name="msapplication-TileImage"
+            content="/static/hour-of-code/card.png"
+        />
+        <meta name="msapplication-config" content="none" />
+        <meta name="theme-color" content="#ff7b22" />
+
+        <meta name="msapplication-TileColor" content="#3DC1AA" />
+        <meta
+            name="msapplication-TileImage"
+            content="/static/hour-of-code/2021/hoc-card.png"
+        />
+        <meta name="msapplication-config" content="none" />
+        <meta name="theme-color" content="#3DC1AA" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="MSMakeCode" />
+        <meta
+            name="twitter:title"
+            content="Microsoft MakeCode Arcade Hour of Code™ 2021"
+        />
+        <meta name="twitter:description" content="" />
+        <!-- TODO: Description Copy -->
+        <meta
+            name="twitter:image"
+            content="/static/hour-of-code/2021/hoc-card.png"
+        />
+
+        <meta
+            property="og:title"
+            content="Microsoft MakeCode Arcade Hour of Code™ 2021"
+        />
+        <meta
+            property="og:site_name"
+            content="Microsoft MakeCode Arcade Hour of Code™ 2021"
+        />
+        <meta property="og:description" content="" />
+        <!-- TODO: Description Copy -->
+        <meta
+            property="og:image"
+            content="/static/hour-of-code/2021/hoc-card.png"
+        />
+
+        <link
+            rel="apple-touch-icon"
+            href="/static/hour-of-code/2021/favicon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            href="/static/hour-of-code/2021/favicon.png"
+        />
+        <link
+            rel="shortcut icon"
+            href="/static/hour-of-code/2021/favicon.png"
+        />
+
+        <!-- @include scripthead.html -->
+        <!-- TODO: Font compliance for "Rowdies" Google Font (400 weight) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/static/hour-of-code/2021/styles.css" />
+
+        <script
+            src="https://kit.fontawesome.com/44ed5c071b.js"
+            crossorigin="anonymous"
+        ></script>
+        <!-- TODO: Replace with existing method of using FontAwesome icons -->
+
+        <script>
+            function handleOnLoad() {
+                document
+                    .querySelector('#openhome')
+                    .addEventListener('click', function () {
+                        window.pxtTickEvent('hourofcode2020.home', {
+                            src: 'educators'
+                        });
+                    });
+
+                var langPicker = document.querySelector('#langpicker');
+                if (langPicker) {
+                    langPicker.remove();
+                }
+            }
+        </script>
+    </head>
+
+    <body id="root" class="root background-eggplant" onload="handleOnLoad()">
+        <div id="main" role="presentation">
+            <nav class="background-eggplant" style="height: 60px">
+                <!-- TODO: Bring in standardized Arcade navbar and remove style prop -->
+            </nav>
+
+            <header class="hoc-header background-marina">
+                <div class="header-text">
+                    <h4 class="body-font">Microsoft MakeCode Arcade</h4>
+                    <div class="title">
+                        <h1 class="display-font">Hour</h1>
+                        <h2 class="display-font">of</h2>
+                        <h1 class="display-font">Code™</h1>
+                    </div>
+                    <h3 class="display-font">2021</h3>
+                    <h4 class="body-font">Educator Guide</h4>
+                </div>
+            </header>
+
+            <section class="hoc-section-04">
+                <h3 class="display-font title sunflower">
+                    About MakeCode Arcade
+                </h3>
+                <p>
+                    Microsoft MakeCode Arcade is a free, open-source, retro, 2D
+                    game development environment. Students between the ages of 9
+                    and 18 can use MakeCode Arcade to design and create their
+                    own games online and share them with friends and family or
+                    download to hand-held game devices. Learn more about
+                    Microsoft MakeCode at
+                    <a
+                        href="http://aka.ms/makecode"
+                        rel="noreferrer"
+                        target="_blank"
+                        >http://aka.ms/makecode</a
+                    >.
+                </p>
+            </section>
+
+            <section class="hoc-section-04">
+                <h3 class="display-font title sunflower">
+                    Activity Requirements
+                </h3>
+                <div>
+                    <p>
+                        The MakeCode Arcade Hour of Code™ activities require
+                        students to have a computer with internet access. All
+                        activities run in the browser – no download or
+                        installation required.
+                    </p>
+                    <p>
+                        Optionally, there are hand-held game devices students
+                        may purchase to download the games they code to play
+                        on-the-go. Learn more at
+                        <a
+                            href="https://arcade.makecode.com/hardware"
+                            rel="noreferrer"
+                            target="_blank"
+                            >https://arcade.makecode.com/hardware</a
+                        >.
+                    </p>
+                </div>
+            </section>
+
+            <section class="hoc-section-04">
+                <h3 class="display-font title sunflower">
+                    Learning Objectives
+                </h3>
+                <div>
+                    <p>
+                        By the end of this lesson, students will have been
+                        exposed to:
+                    </p>
+                    <ul>
+                        <li>
+                            Topic concepts:
+                            <ul>
+                                <li>
+                                    The impact of wildfires on the environment
+                                </li>
+                                <li>Common causes of forest fires</li>
+                                <li>
+                                    How computers and technology can help combat
+                                    wildfires
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Computer Science concepts:
+                            <ul>
+                                <li>Events</li>
+                                <li>Variables and constants</li>
+                                <li>Loops</li>
+                                <li>Randomization</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Game design concepts:
+                            <ul>
+                                <li>Tilemaps</li>
+                                <li>Sprites</li>
+                                <li>HUD (Head-up Display)</li>
+                                <li>Status Bar</li>
+                                <li>Art and Design</li>
+                                <li>Animations</li>
+                                <li>Effects</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="hoc-section-04">
+                <h3 class="display-font title sunflower">
+                    Teacher Preparation
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                </p>
+            </section>
+
+            <section class="hoc-section-04">
+                <h3 class="display-font title sunflower">
+                    Resources for Further Exploration
+                </h3>
+                <ul>
+                    <li>
+                        Webpages and Articles
+                        <ul>
+                            <li>
+                                <a
+                                    href="https://en.wikipedia.org/wiki/Aerial_firefighting"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >Aerial firefighting (Wikipedia)</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.fs.usda.gov/pnw/page/fire-effects-environment"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >Fire effects on the environment (US Forest
+                                    Service)</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.fs.usda.gov/managing-land/fire/planes"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >US Forest Service planes</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.space.com/2021-record-wildfire-season-from-space"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >Global fires seen from space</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.livescience.com/climate-change.html"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >Climate Change resource</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        YouTube videos
+                        <ul>
+                            <li>
+                                <a
+                                    href="https://youtu.be/6BjSaUJlf7E"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >Western US first in 2021 using aerial
+                                    scanning</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://youtu.be/pYe6QIBdTKs"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >Siberia 2021 wildfires</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://youtu.be/UXTqTh0SrLQ"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >Wildfires in Turkey and Greece</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://youtu.be/CGqaU7iTqOI"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >Salo Sciences stopping forest fires from
+                                    space</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://youtu.be/Hb0NTX_sYas"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >10 amazing fire-fighting aircrafts in the
+                                    world</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <!-- @include footer.html -->
+        <!-- @include tracking.html -->
+        <!-- @include tickevent.html -->
+    </body>
+</html>

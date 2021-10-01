@@ -33,11 +33,13 @@
             content="Microsoft MakeCode Arcade Hour of Code™ 2021"
         />
 
-        <meta name="msapplication-TileColor" content="#ff7b22" />
-        <meta name="msapplication-TileImage" content="" />
-        <!-- TODO: Card Image -->
+        <meta name="msapplication-TileColor" content="#3DC1AA" />
+        <meta
+            name="msapplication-TileImage"
+            content="/static/hour-of-code/2021/hoc-card.png"
+        />
         <meta name="msapplication-config" content="none" />
-        <meta name="theme-color" content="#ff7b22" />
+        <meta name="theme-color" content="#3DC1AA" />
 
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="MSMakeCode" />
@@ -47,8 +49,10 @@
         />
         <meta name="twitter:description" content="" />
         <!-- TODO: Description Copy -->
-        <meta name="twitter:image" content="/static/hour-of-code/card.png" />
-        <!-- TODO: Card Image -->
+        <meta
+            name="twitter:image"
+            content="/static/hour-of-code/2021/hoc-card.png"
+        />
 
         <meta
             property="og:title"
@@ -60,15 +64,24 @@
         />
         <meta property="og:description" content="" />
         <!-- TODO: Description Copy -->
-        <meta property="og:image" content="" />
-        <!-- TODO: Card Image -->
+        <meta
+            property="og:image"
+            content="/static/hour-of-code/2021/hoc-card.png"
+        />
 
-        <link rel="apple-touch-icon" href="" />
-        <!-- TODO: Card Image -->
-        <link rel="icon" type="image/png" href="" />
-        <!-- TODO: Card Image -->
-        <link rel="shortcut icon" href="" />
-        <!-- TODO: Card Image -->
+        <link
+            rel="apple-touch-icon"
+            href="/static/hour-of-code/2021/favicon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            href="/static/hour-of-code/2021/favicon.png"
+        />
+        <link
+            rel="shortcut icon"
+            href="/static/hour-of-code/2021/favicon.png"
+        />
 
         <!-- @include scripthead.html -->
         <!-- TODO: Font compliance for "Rowdies" Google Font (400 weight) -->
@@ -126,11 +139,11 @@
 
     <body id="root" class="root background-eggplant" onload="handleOnLoad()">
         <div id="main" role="presentation">
-            <nav class="background-eggplant" style="height: 6.4rem">
+            <nav class="background-eggplant" style="height: 60px">
                 <!-- TODO: Bring in standardized Arcade navbar and remove style prop -->
             </nav>
 
-            <header class="hoc-header background-marina background-placeholder">
+            <header class="hoc-header background-marina">
                 <div class="header-text">
                     <h4 class="body-font">Microsoft MakeCode Arcade</h4>
                     <div class="title">
@@ -143,13 +156,15 @@
             </header>
 
             <section class="hoc-section-01">
-                <a class="activity-btn">
+                <a
+                    class="activity-btn"
+                    href="https://arcade.makecode.com/--skillmap#docs:/skillmap/forest"
+                >
+                    <!--TODO: Make sure link above is correct-->
                     <div class="title background-papaya">
                         <h5 class="display-font">Code a Game</h5>
                     </div>
-                    <div
-                        class="body background-marina background-placeholder"
-                    ></div>
+                    <div class="body background-marina"></div>
                     <div class="action background-sunflower">
                         <h5 class="display-font">Launch</h5>
                     </div>
@@ -182,12 +197,20 @@
                         code your fire-fighting airtanker plane to spray water
                         and put out the flames!
                     </p>
-                    <a class="btn"
-                        ><h5 class="display-font">Launch Activity</h5></a
+                    <a
+                        class="btn"
+                        href="https://arcade.makecode.com/--skillmap#docs:/skillmap/forest"
                     >
-                    <a class="btn secondary"
+                        <!--TODO: Make sure link above is correct-->
+                        <h5 class="display-font">Launch Activity</h5></a
+                    >
+                    <a
+                        class="btn secondary"
+                        href="hour-of-code/educators-2021.html"
+                        target="_blank"
+                        rel="noreferrer"
                         ><h5 class="display-font">
-                            Educator Page
+                            Educator Guide
                             <i class="fas fa-external-link-alt"></i></h5
                     ></a>
                 </div>
@@ -207,15 +230,13 @@
                         ><h5 class="display-font">Enter the Game Jam</h5></a
                     >
                 </div>
-                <div
-                    class="hero background-sunflower background-placeholder"
-                ></div>
+                <div class="hero background-sunflower"></div>
             </section>
 
             <section class="hoc-section-02">
                 <div class="section-text">
                     <h3 class="title display-font sunflower">
-                        Go beyond an Hour of Code™!
+                        Go beyond Hour of Code™!
                     </h3>
                     <p>
                         Can’t get enough? Explore the activities below for more
@@ -262,10 +283,8 @@
                             >Micro:bit Tutorials</a
                         >
                     </div>
-                    <div
-                        id="carousel-body"
-                        class="body background-marina background-placeholder"
-                    >
+                    <div id="carousel-body" class="body background-marina">
+                        <div class="body-overlay"></div>
                         <a
                             id="carousel-link"
                             target="_blank"
@@ -279,12 +298,12 @@
                 <script type="application/javascript">
                     let slides = [
                         {
-                            img: '',
+                            img: '/static/hour-of-code/2021/hoc-2020.png',
                             link: 'https://arcade.makecode.com/hour-of-code',
                             text: 'Hour of Code™ 2020'
                         },
                         {
-                            img: '',
+                            img: '/static/hour-of-code/2021/beginner-skillmap.png',
                             link: 'https://arcade.makecode.com/--skillmap#beginner',
                             text: 'Launch Skillmap'
                         },
@@ -292,7 +311,7 @@
                         { img: '', link: '', text: 'Launch Skillmap' },
                         { img: '', link: '', text: 'Hour of Code™ 2021' },
                         {
-                            img: '',
+                            img: '/static/hour-of-code/2021/microbit.png',
                             link: 'https://makecode.microbit.org',
                             text: 'Go to micro:bit'
                         }
@@ -346,57 +365,25 @@
                 </script>
             </section>
 
-            <section class="hoc-aside-02 background-sunflower">
-                <div class="wrapper">
-                    <div class="aside-text">
-                        <h3 class="title display-font">Aside Title</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet,
-                            <a href="https://google.com">consectetuer</a>
-                            adipiscing elit. Aenean commodo ligula eget dolor.
-                            Aenean massa. Cum sociis natoque penatibus et magnis
-                            dis parturient montes, nascetur ridiculus mus.
-                        </p>
-                    </div>
-                    <div class="tiles">
-                        <a
-                            class="
-                                tile
-                                background-marina background-placeholder
-                            "
-                        ></a>
-                        <a
-                            class="
-                                tile
-                                background-sunflower background-placeholder
-                            "
-                        ></a>
-                        <a
-                            class="
-                                tile
-                                background-papaya background-placeholder
-                            "
-                        ></a>
-                        <a
-                            class="
-                                tile
-                                background-sunflower background-placeholder
-                            "
-                        ></a>
-                        <a
-                            class="
-                                tile
-                                background-papaya background-placeholder
-                            "
-                        ></a>
-                        <a
-                            class="
-                                tile
-                                background-marina background-placeholder
-                            "
-                        ></a>
-                    </div>
+            <section class="hoc-aside-01 background-sunflower">
+                <div class="aside-text">
+                    <h3 class="title display-font">MakeCode Insiders Club</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit
+                        anim id est laborum.
+                    </p>
+                    <a class="btn"><h5 class="display-font">Button</h5></a>
                 </div>
+                <div
+                    class="hero background-papaya background-placeholder"
+                ></div>
             </section>
 
             <!-- TODO: Customize footer to include insiders club message -->
