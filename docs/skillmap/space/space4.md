@@ -305,11 +305,6 @@ Click **Done** to return to the main skillmap to move on and find out how to add
 arcade-background-scroll=github:microsoft/arcade-background-scroll/
 pxt-status-bar=github:jwunderl/pxt-status-bar
 ```
-```customts
-//% icon="\uf054"
-namespace scroller {
-}
-```
 
 ```template
 
