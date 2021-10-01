@@ -327,11 +327,6 @@ game.onUpdateInterval(300, function () {
 })
 
 ```
-```customts
-//% icon="\uf054"
-namespace scroller {
-}
-```
 
 ```assetjson
 {
