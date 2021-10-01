@@ -1,9 +1,9 @@
-# Build a Platformer
-* name: Build a Platformer Game
-* description: Learn how to create a sidescrolling platformer by following this short series of tutorials.
-* infoUrl: skillmap/educator-info/int-map-info
-* bannerUrl: /static/skillmap/platformer/activity4.png
-* backgroundurl: /static/skillmap/space/game-maker-guide-background.png
+# Jungle Monkey Jump Platformer
+* name: Jungle Monkey Jump Platformer
+* description: Create a wild sidescroller called Jungle Monkey Jump! In these activities, you'll code your monkey, add magic platforms, toss explosives, and collect valuables throughout a pair of customizable level maps.
+* infoUrl: skillmap/educator-info/jungle-map-info
+* bannerUrl: /static/skillmap/jungle/jungle6.gif
+* backgroundurl: /static/skillmap/backgrounds/jungle-bg.png
 * primarycolor: #2EA9B0
 * secondarycolor: #F392BD
 * tertiarycolor: #83C252
@@ -13,71 +13,105 @@
 
 
 ## Build a Platformer Game!
-* name: Learn to Make a Platformer
-* description: Learn how to create a sidescrolling platformer by following this short series of tutorials.
+* name: Jungle Monkey Platformer
+* layout: manual
 
-### platformer-activity1
+### jungle1
 * allowcodecarryover: false
-
-
-* name: Simple Platformer
+* name: Moving Monkey
 * type: tutorial
-* description: Learn how to make a player character that can jump and move around a tilemap.
-* url: /skillmap/platformer/activity1
-* imageUrl: /static/skillmap/platformer/platformer1.gif
+* description: Make your monkey jump and move around!
+* url: /skillmap/jungle/jungle1
+* imageUrl: /static/skillmap/jungle/jungle1.gif
 * tags: easy
-* next: platformer-activity2
+* next: jungle2
+* position: 0 2
 
-### platformer-activity2
-
-* name: Camera and Tiles
+### jungle2
+* name: Game Over
 * type: tutorial
-* description: Learn how to use the camera and add tile overlap events to give the player a way to win and lose.
-* url: /skillmap/platformer/activity2
-* imageUrl: /static/skillmap/platformer/platformer2.gif
-* tags: easy, tiles
-* next: platformer-activity3
+* description: Add poisonous plants and valuable baubles to your game!
+* url: /skillmap/jungle/jungle2
+* imageUrl: /static/skillmap/jungle/jungle2.gif
+* tags: easy, tiles, tilemaps
+* next: jungle3
+* position: 1 2
 
-### platformer-activity3
-
-* name: Simple Enemies
+### jungle3
+* name: Leaps and Bounds
 * type: tutorial
-* description: Learn how to add enemies to your game that follow the player.
-* url: /skillmap/platformer/activity3
-* imageUrl: /static/skillmap/platformer/platformer3.gif
-* tags: intermediate, overlaps
-* next: pusher3, platformer-activity4
+* description: Add the code to spawn platforms with the touch of a button!
+* url: /skillmap/jungle/jungle3
+* imageUrl: /static/skillmap/jungle/jungle3.gif
+* tags: easy, events
+* next: jungle4
+* position: 1 3
 
-### platformer-activity4
-
-* name: Multiple Levels
+### jungle4
+* name: Blown Away
 * type: tutorial
-* description: Add a second level to your platformer using functions.
-* url: /skillmap/platformer/activity4
-* imageUrl: /static/skillmap/platformer/platformer4.gif
-* tags: intermediate, functions
-* next: platformer-activity5
+* description: Use dynamite to clear platforms!
+* url: /skillmap/jungle/jungle4
+* imageUrl: /static/skillmap/jungle/jungle4.gif
+* tags: easy, events, overlap
+* next: jungle5
+* position: 2 3
 
-### platformer-activity5
-
-* name: Enemy AI
+### jungle5
+* name: Watch Out!
 * type: tutorial
-* description: Add physics and AI to the enemies in your game.
-* url: /skillmap/platformer/activity5
-* imageUrl: /static/skillmap/platformer/platformer5.gif
-* tags: intermediate, AI, physics
-* next: platformer-cert-1
+* description: Make your dynamite just a little dangerous.
+* url: /skillmap/jungle/jungle5
+* imageUrl: /static/skillmap/jungle/jungle5.gif
+* tags: easy, events, overlap, lives
+* next: jungle6
+* position: 2 2
+
+
+### jungle6
+* name: Animations
+* type: tutorial
+* description: Animate your monkey!
+* url: /skillmap/jungle/jungle6
+* imageUrl: /static/skillmap/jungle/jungle6.gif
+* tags: easy, animations
+* next: jungle7
+* position: 2 1
+
+
+### jungle7
+* name: Extra Levels
+* type: tutorial
+* description: Add another level to the end of your game for more fun!
+* url: /skillmap/jungle/jungle7
+* imageUrl: /static/skillmap/jungle/jungle7.gif
+* tags: easy, levels, tilemaps
+* next: jungle8, platformer-cert-1
+* position: 3 1
+
+
+### jungle8
+* name: Make it Your Own
+* type: tutorial
+* description: Change your images and tilemaps to make a game of your own!
+* url: /skillmap/jungle/jungle8
+* imageUrl: /static/skillmap/jungle/jungle8.gif
+* tags: intermediate, art, assets
+* position: 4 0
+
 
 ### platformer-cert-1
 * name: Congrats!
 * kind: completion
 * type: certificate
-* imageUrl: /static/skillmap/certificates/platformer-cert.png
-* url: /static/skillmap/certificates/learn-to-make-a-platformer.pdf
+* imageUrl: /static/skillmap/certificates/jungle-cert.png
+* url: /static/skillmap/certificates/jungle-cert.pdf
+* position: 4 1
+* actions:
+    * map: [Try 80s Rockstar Maze](/skillmap/rockstar)
+    * map: [Try our Space Explorer](/skillmap/space)
+    * editor: [Edit Your Project with a Full Toolbox](/)
 
 
 
 
-### pusher3
-* name: Blank node
-* kind: layout

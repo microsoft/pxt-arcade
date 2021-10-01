@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html
+    lang="en-US"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="http://www.facebook.com/2008/fbml"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Microsoft MakeCode Arcade Hour of Code 2021</title>
+        <meta name="Description" content="" />
+        <!-- TODO: Description Copy -->
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=yes"
+        />
+
+        <link rel="manifest" href="/blb/sim.webmanifest" />
+
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="apple-mobile-web-app-title"
+            content="Microsoft MakeCode Arcade Hour of Code 2021"
+        />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="translucent-black"
+        />
+        <meta name="format-detection" content="telephone=no" />
+        <meta
+            name="application-name"
+            content="Microsoft MakeCode Arcade Hour of Code 2021"
+        />
+
+        <meta name="msapplication-TileColor" content="#ff7b22" />
+        <meta name="msapplication-TileImage" content="" />
+        <!-- TODO: Card Image -->
+        <meta name="msapplication-config" content="none" />
+        <meta name="theme-color" content="#ff7b22" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="MSMakeCode" />
+        <meta
+            name="twitter:title"
+            content="Microsoft MakeCode Arcade Hour of Code 2021"
+        />
+        <meta name="twitter:description" content="" />
+        <!-- TODO: Description Copy -->
+        <meta name="twitter:image" content="/static/hour-of-code/card.png" />
+        <!-- TODO: Card Image -->
+
+        <meta
+            property="og:title"
+            content="Microsoft MakeCode Arcade Hour of Code 2021"
+        />
+        <meta
+            property="og:site_name"
+            content="Microsoft MakeCode Arcade Hour of Code 2021"
+        />
+        <meta property="og:description" content="" />
+        <!-- TODO: Description Copy -->
+        <meta property="og:image" content="" />
+        <!-- TODO: Card Image -->
+
+        <link rel="apple-touch-icon" href="" />
+        <!-- TODO: Card Image -->
+        <link rel="icon" type="image/png" href="" />
+        <!-- TODO: Card Image -->
+        <link rel="shortcut icon" href="" />
+        <!-- TODO: Card Image -->
+
+        <!-- @include scripthead.html -->
+        <!-- TODO: Font compliance for "Rowdies" Google Font (400 weight) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/static/hour-of-code/2021/styles.css" />
+
+        <style></style>
+
+        <script
+            src="https://kit.fontawesome.com/44ed5c071b.js"
+            crossorigin="anonymous"
+        ></script>
+        <!-- TODO: Replace with existing method of using FontAwesome icons -->
+        <script>
+            // TODO: update tracking for 2021
+            function handleOnLoad() {
+                document
+                    .querySelector('#openhome')
+                    .addEventListener('click', function () {
+                        window.pxtTickEvent('hourofcode2020.home', {
+                            src: 'main'
+                        });
+                    });
+
+                document
+                    .querySelector('#playbutton')
+                    .addEventListener('click', function () {
+                        window.pxtTickEvent('hourofcode2020.play');
+                    });
+
+                document
+                    .querySelector('#designbutton')
+                    .addEventListener('click', function () {
+                        window.pxtTickEvent('hourofcode2020.design');
+                    });
+
+                document
+                    .querySelector('#codebutton')
+                    .addEventListener('click', function () {
+                        window.pxtTickEvent('hourofcode2020.code');
+                    });
+
+                var langPicker = document.querySelector('#langpicker');
+                if (langPicker) {
+                    langPicker.remove();
+                }
+            }
+        </script>
+    </head>
+
+    <body id="root" class="root background-eggplant" onload="handleOnLoad()">
+        <div id="main" role="presentation">
+            <nav class="background-eggplant" style="height: 6.4rem">
+                <!-- TODO: Bring in standardized Arcade navbar and remove style prop -->
+            </nav>
+
+            <header class="hoc-header background-marina background-placeholder">
+                <a class="educator-btn"
+                    >Educator Page <i class="fas fa-external-link-alt"></i
+                ></a>
+                <div class="header-text">
+                    <h4 class="body-font">Microsoft MakeCode Arcade</h4>
+                    <div class="title">
+                        <h1 class="display-font">Hour</h1>
+                        <h2 class="display-font">of</h2>
+                        <h1 class="display-font">Code</h1>
+                    </div>
+                    <h3 class="display-font">2021</h3>
+                </div>
+            </header>
+
+            <section class="hoc-section-01">
+                <a class="activity-btn">
+                    <div class="title background-papaya">
+                        <h5 class="display-font">Activity Title</h5>
+                    </div>
+                    <div
+                        class="body background-marina background-placeholder"
+                    ></div>
+                    <div class="action background-sunflower">
+                        <h5 class="display-font">Launch</h5>
+                    </div>
+                </a>
+                <div class="section-text">
+                    <h3 class="title display-font sunflower">Section Title</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet,
+                        <a href="https://google.com">consectetuer</a> adipiscing
+                        elit. Aenean commodo ligula eget dolor. Aenean massa.
+                        Cum sociis natoque penatibus et magnis dis parturient
+                        montes, nascetur ridiculus mus. Donec quam felis,
+                        ultricies nec, pellentesque eu, pretium quis, sem.
+                    </p>
+                    <p>
+                        Nulla consequat massa quis enim. Donec pede justo,
+                        fringilla vel, aliquet nec, vulputate eget, arcu. In
+                        enim justo, rhoncus ut, imperdiet a, venenatis vitae,
+                        justo.
+                    </p>
+                </div>
+            </section>
+
+            <section class="hoc-aside-01 background-marina">
+                <div class="aside-text">
+                    <h3 class="title display-font">Aside Title</h3>
+                    <h5 class="subtitle body-font">Aside Subtitle</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet,
+                        <a href="https://google.com">consectetuer</a> adipiscing
+                        elit. Aenean commodo ligula eget dolor. Aenean massa.
+                        Cum sociis natoque penatibus et magnis dis parturient
+                        montes, nascetur ridiculus mus. Donec quam felis,
+                        ultricies nec, pellentesque eu, pretium quis, sem.
+                    </p>
+                    <a class="btn"><h5 class="display-font">Button</h5></a>
+                </div>
+                <div
+                    class="hero background-sunflower background-placeholder"
+                ></div>
+            </section>
+
+            <section class="hoc-section-02">
+                <div class="section-text">
+                    <h3 class="title display-font sunflower">Section Title</h3>
+                    <p>
+                        Nulla consequat massa quis enim. Donec pede justo,
+                        fringilla vel, aliquet nec, vulputate eget, arcu.
+                    </p>
+                </div>
+                <!-- TODO: Script to animate this carousel -->
+                <div class="carousel">
+                    <div class="list">
+                        <a class="list-item display-font" data-ind="0"
+                            >List Item</a
+                        >
+                        <a class="list-item display-font active" data-ind="1"
+                            >List Item</a
+                        >
+                        <a class="list-item display-font" data-ind="2"
+                            >List Item</a
+                        >
+                        <a class="list-item display-font" data-ind="3"
+                            >List Item</a
+                        >
+                        <a class="list-item display-font" data-ind="4"
+                            >List Item</a
+                        >
+                        <a class="list-item display-font" data-ind="5"
+                            >List Item</a
+                        >
+                    </div>
+                    <div class="body background-marina background-placeholder">
+                        <a class="btn"><h5 class="display-font">Button</h5></a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="hoc-aside-02 background-sunflower">
+                <div class="wrapper">
+                    <div class="aside-text">
+                        <h3 class="title display-font">Aside Title</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet,
+                            <a href="https://google.com">consectetuer</a>
+                            adipiscing elit. Aenean commodo ligula eget dolor.
+                            Aenean massa. Cum sociis natoque penatibus et magnis
+                            dis parturient montes, nascetur ridiculus mus.
+                        </p>
+                    </div>
+                    <div class="tiles">
+                        <a
+                            class="
+                                tile
+                                background-marina background-placeholder
+                            "
+                        ></a>
+                        <a
+                            class="
+                                tile
+                                background-sunflower background-placeholder
+                            "
+                        ></a>
+                        <a
+                            class="
+                                tile
+                                background-papaya background-placeholder
+                            "
+                        ></a>
+                        <a
+                            class="
+                                tile
+                                background-sunflower background-placeholder
+                            "
+                        ></a>
+                        <a
+                            class="
+                                tile
+                                background-papaya background-placeholder
+                            "
+                        ></a>
+                        <a
+                            class="
+                                tile
+                                background-marina background-placeholder
+                            "
+                        ></a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="hoc-section-01 hoc-section-03">
+                <div class="section-text">
+                    <h3 class="title display-font sunflower">Section Title</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing
+                        elit. Aenean commodo ligula eget dolor. Aenean massa.
+                        Cum sociis natoque penatibus et magnis dis parturient
+                        montes, nascetur ridiculus mus.
+                    </p>
+                </div>
+                <a class="certificate">
+                    <div
+                        class="body background-marina background-placeholder"
+                    ></div>
+                    <div class="action background-sunflower">
+                        <h5 class="display-font">Button</h5>
+                    </div>
+                </a>
+            </section>
+
+            <!-- TODO: Customize footer to include insiders club message -->
+            <!-- @include footer.html -->
+        </div>
+
+        <!-- @include tracking.html -->
+        <!-- @include tickevent.html -->
+
+        <!-- TODO: update usabilia for HoC 2021 -->
+        <!-- begin usabilla live embed code -->
+        <script type="text/javascript">
+            /*{literal}<![CDATA[*/ window.lightningjs ||
+                (function (c) {
+                    function g(b, d) {
+                        d && (d += (/\?/.test(d) ? '&' : '?') + 'lv=1');
+                        c[b] ||
+                            (function () {
+                                var i = window,
+                                    h = document,
+                                    j = b,
+                                    g = h.location.protocol,
+                                    l = 'load',
+                                    k = 0;
+                                (function () {
+                                    function b() {
+                                        a.P(l);
+                                        a.w = 1;
+                                        c[j]('_load');
+                                    }
+                                    c[j] = function () {
+                                        function m() {
+                                            m.id = e;
+                                            return c[j].apply(m, arguments);
+                                        }
+                                        var b,
+                                            e = ++k;
+                                        b =
+                                            this && this != i
+                                                ? this.id || 0
+                                                : 0;
+                                        (a.s = a.s || []).push([
+                                            e,
+                                            b,
+                                            arguments
+                                        ]);
+                                        m.then = function (b, c, h) {
+                                            var d = (a.fh[e] = a.fh[e] || []),
+                                                j = (a.eh[e] = a.eh[e] || []),
+                                                f = (a.ph[e] = a.ph[e] || []);
+                                            b && d.push(b);
+                                            c && j.push(c);
+                                            h && f.push(h);
+                                            return m;
+                                        };
+                                        return m;
+                                    };
+                                    var a = (c[j]._ = {});
+                                    a.fh = {};
+                                    a.eh = {};
+                                    a.ph = {};
+                                    a.l = d
+                                        ? d.replace(
+                                              /^\/\//,
+                                              (g == 'https:' ? g : 'http:') +
+                                                  '//'
+                                          )
+                                        : d;
+                                    a.p = { 0: +new Date() };
+                                    a.P = function (b) {
+                                        a.p[b] = new Date() - a.p[0];
+                                    };
+                                    a.w && b();
+                                    i.addEventListener
+                                        ? i.addEventListener(l, b, !1)
+                                        : i.attachEvent('on' + l, b);
+                                    var q = function () {
+                                        function b() {
+                                            return [
+                                                '<head></head><',
+                                                c,
+                                                ' onload="var d=',
+                                                n,
+                                                ";d.getElementsByTagName('head')[0].",
+                                                d,
+                                                '(d.',
+                                                g,
+                                                "('script')).",
+                                                i,
+                                                "='",
+                                                a.l,
+                                                '\'"></',
+                                                c,
+                                                '>'
+                                            ].join('');
+                                        }
+                                        var c = 'body',
+                                            e = h[c];
+                                        if (!e) return setTimeout(q, 100);
+                                        a.P(1);
+                                        var d = 'appendChild',
+                                            g = 'createElement',
+                                            i = 'src',
+                                            k = h[g]('div'),
+                                            l = k[d](h[g]('div')),
+                                            f = h[g]('iframe'),
+                                            n = 'document',
+                                            p;
+                                        k.style.display = 'none';
+                                        e.insertBefore(k, e.firstChild).id =
+                                            o + '-' + j;
+                                        f.frameBorder = '0';
+                                        f.id = o + '-frame-' + j;
+                                        /MSIE[ ]+6/.test(navigator.userAgent) &&
+                                            (f[i] = 'javascript:false');
+                                        f.allowTransparency = 'true';
+                                        l[d](f);
+                                        try {
+                                            f.contentWindow[n].open();
+                                        } catch (s) {
+                                            (a.domain = h.domain),
+                                                (p =
+                                                    'javascript:var d=' +
+                                                    n +
+                                                    ".open();d.domain='" +
+                                                    h.domain +
+                                                    "';"),
+                                                (f[i] = p + 'void(0);');
+                                        }
+                                        try {
+                                            var r = f.contentWindow[n];
+                                            r.write(b());
+                                            r.close();
+                                        } catch (t) {
+                                            f[i] =
+                                                p +
+                                                'd.write("' +
+                                                b().replace(
+                                                    /"/g,
+                                                    String.fromCharCode(92) +
+                                                        '"'
+                                                ) +
+                                                '");d.close();';
+                                        }
+                                        a.P(2);
+                                    };
+                                    a.l && setTimeout(q, 0);
+                                })();
+                            })();
+                        c[b].lv = '1';
+                        return c[b];
+                    }
+                    var o = 'lightningjs',
+                        k = (window[o] = g(o));
+                    k.require = g;
+                    k.modules = c;
+                })({});
+            window.usabilla_live = lightningjs.require(
+                'usabilla_live',
+                '//w.usabilla.com/04a02d64289a.js'
+            );
+            /*]]>{/literal}*/
+        </script>
+        <!-- end usabilla live embed code -->
+    </body>
+</html>

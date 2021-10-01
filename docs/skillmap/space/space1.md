@@ -9,15 +9,22 @@ In this tutorial, you'll prepare your ship for a journey into space!
 
 ![Flying through space](/static/skillmap/space/spacet1.gif "Blasting through space")
 
-## Set the scene
-**Time to give 'em a view** 🔭
+## 2. Set the scene
+**🔭 Time to give 'em a view** 
 
 ---
 
-► From the  ``||scene:Scene||`` category, drag ``||scene:set background image to [ ]||`` into the ``||loops:on start||`` container already in the workspace.
+- :tree: From the  ``||scene:Scene||`` category, drag  
+``||scene:set background image to [ ]||``  
+into the  
+``||loops:on start||``  
+container already in the workspace. 
 
-► Next, click the grey box and toggle to **My Assets** to choose the **Galaxy** background, then click **Done**.
+_💡  Having trouble finding the block you need? Look to the left of the instructions for the icon of the toolbox category where your block lives!_
 
+- :paint brush: Next, click the grey box and toggle to **My Assets** to choose the **Galaxy** background, then click **Done**.
+
+![Toggle to My Assets](/static/skillmap/assets/my-assets-three.png "toggle to the My Assets Window")
 
 ```blocks
 // @highlight
@@ -31,16 +38,21 @@ scene.setBackgroundImage(assets.image`Galaxy`)
 
 
 
-## Make it fly
+## 3. Make it fly
 **🚀 Make it fly 🚀**
 
 ---
 
-► From  ``||scroller:Scroller||``, grab ``||scroller:scroll background with vx [-50] vy [-50]||`` and drop it in to **the end** of the ``||loops:on start||`` container.
+- :arrows alternate:  Grab  
+``||scroller:scroll background with vx [-50] vy [-50]||``  
+and drop it in to **the end** of the  
+``||loops:on start||`` container.
 
-► To keep the background from scrolling sideways, change **vx** to **0**.
+_💡  Remember, the icon to the left of the instructions shows the same icon as the toolbox category for the block you need._
 
-► To set a nice, slow vertical pace, change **vy** to **10**.
+- :mouse pointer: To keep the background from scrolling sideways, change **vx** to **0**.
+
+- :mouse pointer: To set a nice, slow vertical pace, change **vy** to **10**.
 
 ```blocks
 scene.setBackgroundImage(assets.image`Galaxy`)
@@ -49,15 +61,19 @@ scroller.scrollBackgroundWithSpeed(0, 10)
 ```
 
 
-## Draw your ship
-**🧑🏿‍🚀 Time to choose our ship! 👩🏾‍🚀**
+## 4. Draw your ship
+**Time to choose your ship!**
 
 ---
 
-► From ``||sprites:Sprites||``, drag  ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  to **the end** of the ``||loops:on start||`` container.
+- :paper plane: Drag  
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``   
+to **the end** of the  
+``||loops:on start||`` container.
 
-► Click on the grey box in the middle of
- ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``, then toggle to **My Assets** and choose the **Rocket**.  
+- :paint brush: Click on the grey box in the middle of  
+ ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``,   
+ then toggle to **My Assets** and choose the **Rocket**.
 
 
 ```blocks
@@ -69,17 +85,17 @@ let mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
 
 
 
-## Control your ship
+## 5. Control your ship
 
-🌟 Let's get your ship moving 🌟
+🌟 **Let's get your ship moving**
 
 ---
 
-► Find the ``||controller:move [mySprite] with buttons ⊕||`` block 
-and drag it into the bottom of the ``||loops:on start||`` container. 
+- :game: Find the  
+``||controller:move [mySprite] with buttons ⊕||``  
+block and drag it into the bottom of the  
+``||loops:on start||`` container.
 
-** Now try moving your ship around the game screen! **  
-Your ship will move with the joystick, arrow keys, or **W A S D** keys.  
 
 
 
@@ -91,16 +107,31 @@ mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
 controller.moveSprite(mySprite)
 ```
 
-## Stay in screen
+
+## 6. Try It
+
+**Click the Game Window Tab (Above)**  
+![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
+
+---
+
+Try moving your ship around the game screen!  Your ship will move with the joystick, arrow keys, or **W A S D** keys.
+
+What happens when you hold one arrow down for a long time?
+
+
+
+## 7. Stay on Screen
 
 **Uh-oh, if you move off screen, your ship disappears!**
 
 ---
 
-► To keep your ship from exploring beyond the edges, find
- the ``||sprites:set [mySprite] stay in screen <on>||`` block and
-snap it in at the end of the program.
- 
+- :paper plane: To keep your ship from exploring beyond the edges, find
+ the  
+ ``||sprites:set [mySprite] stay in screen <on>||``  
+ block and snap it in at the end of the program.
+
 
 
 ```blocks
@@ -115,25 +146,27 @@ mySprite.setStayInScreen(true)
 ```
 
 
-## Finale @showdialog
+## 8. Test It
 
 **Great Job!**
 
+---
 
-Now try your project on the game screen!
+Now test your project on the game screen!
 
 Is everything how you want it? You can always go back and edit steps if you discover you'd like them to work differently.
 
 
 
-## Byeeee
+## 9. Finale
 
 ** 🚀 That's it! 🚀**
 
 You're all set to travel the universe!
 
-Click **Finish** to return to the main page where you can share your game
-with family and friends!  
+---
+
+Click **Done** to return to the main skillmap where you can move on to discover how to launch projectiles!
 
 
 ```package
@@ -157,6 +190,7 @@ statusbar.attachToSprite(mySprite, -30, 0)
 mySprite.y = 100
 
 ```
+
 
 ```assetjson
 {
