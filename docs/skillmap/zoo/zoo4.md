@@ -1,6 +1,6 @@
 # Feed the Panda
 
-## Step 1
+## 1. Feed the Panda
 
 **🎋 It's feeding time! 🎋**
 
@@ -9,21 +9,27 @@ write some code to feed it some tasty bamboo.
 
 ---
 
-► Take a look at the code in your workspace.
-It should look familiar. Can you remember what it does?
+- :binoculars:  Take a look at the code in your workspace.
+It should look familiar. 
+
+Can you remember what each block does?
 
 
-## Step 2
+## 2. Get Bamboo
 
 **First, you'll need to grab some bamboo.**
 
 ---
 
-► From ``||controller:Controller||``, drag an ``||controller:on [A] button pressed ||`` container into the workspace.
+- :game:  From ``||controller:Controller||``, drag an  
+``||controller:on [A] button pressed ||``  
+container into the workspace.
 
-► Snap a new ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block inside it.
+- :paper plane:  Snap a new  
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  
+block inside it.
 
-► Make sure to change the kind to ``||sprites:Food||``, then click on
+- :mouse pointer:  Make sure to change the kind to ``||sprites:Food||``, then click on
 the grey square and draw a delicious piece of bamboo in the **image editor**.
 
 ```blocks
@@ -50,7 +56,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 3  @showdialog
+## 3. Try It!  @showdialog
 
 **Press the Ⓐ button**
 
@@ -59,19 +65,23 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 Look at your game screen to see what happens.
 
 
-## Step 4
+## 4. Random Bamboo
 
 **Time to scatter the bamboo around the panda enclosure!**
 
 ---
 
-► From ``||sprites:Sprites||``, get a ``||sprites:set [mySprite] position to x [0] y [0]||``
-block and place it at the **end** of the ``||controller:on [A] button pressed ||`` container.
+- :paper plane:  From ``||sprites:Sprites||``, get a  
+``||sprites:set [mySprite] position to x [0] y [0]||``  
+block and place it at the **end** of the  
+``||controller:on [A] button pressed ||``   
+container.
 
-► From ``||math:Math||``, grab two ``||math:pick random [0] to [10]||`` value blocks and
-use them to replace the **x** and **y** values in the new **set position** block.
+- :calculator:  From ``||math:Math||``, grab two  
+``||math:pick random [0] to [10]||``  
+value blocks and use them to replace the **x** and **y** values in the new **set position** block.
 
-► Try some different numbers to see how they affect the way the bamboo is **randomly** placed on the screen.
+- :mouse pointer:  Try some different numbers to see how they affect the way the bamboo is **randomly** placed on the screen.
 
 
 ```blocks
@@ -100,23 +110,23 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 5
+## 5. Panda Food
 
 **Press the Ⓐ button (or click the space bar)** to place food for the panda.
 
 
-## Step 6
+## 6. Help the Panda
 
 **Aw, the panda isn't very good at finding the food...let's help it out!**
 
 ---
 
-► Open ``||sprites:Sprites||`` and drag a
-``||sprites:set [myEnemy] follow [mySprite]||`` block out into the **end**
+- :paper plane:  Open ``||sprites:Sprites||`` and drag a  
+``||sprites:set [myEnemy] follow [mySprite]||``   
+block out into the **end**
 of the ``||controller:on A button pressed||`` container.
 
-► Change the first variable value to ``||variables:panda||``, then try your code
-on the game screen.
+- :mouse pointer:  Change the first variable value to ``||variables:panda||``, then try your code on the game screen.
 
 ```blocks
 let panda:Sprite = null;
@@ -145,7 +155,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 7
+## 7. Good Eats
 
 **😋 Munch time 😋**
 
@@ -154,10 +164,11 @@ panda **overlaps** the bamboo.
 
 ---
 
-► From ``||sprites:Sprites||``, pull out an ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||``
+- :paper plane:  From ``||sprites:Sprites||``, pull out an  
+``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||``  
 container and drop it in the workspace.
 
-► Click on the second ``||sprites:Player||`` dropdown menu
+- :mouse pointer:  Click on the second ``||sprites:Player||`` dropdown menu
 and select **Food**.
 
 ```blocks
@@ -166,17 +177,34 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 ```
 
-## Step 8
+## 8. Destroy the Sprite
 
-► Next, grab a ``||sprites:destroy [mySprite] ⊕||`` block from ``||sprites:Sprites||``
+- :paper plane:  Next, grab a  
+``||sprites:destroy [mySprite] ⊕||``  
+block from ``||sprites:Sprites||``
 and put it in the **on overlaps** container.
 
-► See the oblong value block in the header of the **on overlaps** container called
-``||variables:otherSprite||``?
-Grab it and drag it down to replace **mySprite** in the **destroy** block.
+- :mouse pointer:  Grab ``||variables:otherSprite||`` from the title of the **overlaps** container and drag it down to replace ``||variables:mySprite||`` in the **destroy** block.
 
-► Press the plus icon on the block to add an effect that will play when the
-panda starts munching. Both **spray** and **disintegrate** work well here!
+![An example of someone dragging the otherSprite variable out of the container and into the other block](static/skillmap/zoo/overlaps-food-sprite.gif "So that's how you do that!")
+
+```blocks
+
+}
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    //@highlight
+    otherSprite.destroy()
+})
+```
+
+
+## 9. Special Effects
+
+- :mouse pointer:  Press the plus icon on the  
+``||sprites:destroy [otherSprite] ⊕||``   
+block to add an effect that will play when the panda starts munching. 
+
+_💡 Both **spray** and **disintegrate** work well here!_
 
 
 
@@ -189,13 +217,14 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 ```
 
-## step 9
+
+## 10. Full Panda
 
 **Way to go!**
 
 That panda's getting a full meal!
 
-Give your game a try using the game screen, and when you're done,
+Give your game a try using the game screen, and when you're finished,
 click **Done** to continue your zoo journey.
 
 

@@ -2,25 +2,26 @@
 # Penguins!
 
 
-## Step 1 @showdialog
+## 1. Help! @showdialog
 
 ![A dirt path with a penguin looking up at a wooden sign. Several penguins are hiding in the bushes.](static/skillmap/zoo/zoo-penguins.png)
 
-**Thank goodness, you're here!** Penguins are *everywhere*!
+**Thank goodness, you're here!**   
+Penguins are *everywhere*!
 
 They're running around outside of their enclosure. You have to help!
 They're eating all the ice cream and sliding down the street!
 
-## Step 2
+## 2. Troubleshoot
 
 Look through the code and figure out how to put the penguins back into their
 icy paradise.
 
-► Can you figure out how to move the penguin spawn point?
+- :binoculars:  Can you figure out how to move the penguin spawn point?
 
 ---
 
-When you've helped the penguins back into the exhibit click **Done**
+Once you've helped the penguins back into the exhibit click **Done**
 to continue to other parts of the zoo.
 
 
@@ -29,8 +30,8 @@ let penguin: Sprite = null
   penguin.x = 10
 ```
 
-Look at this block in particular. What is it doing? Where does
-**x=10** put the penguins on the screen?
+☝ Look at this block. What is it doing?   
+Where does **x=10** put the penguins on the screen?
 
 
 

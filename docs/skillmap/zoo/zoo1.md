@@ -11,19 +11,21 @@ No worries,
 we'll show you the zookeeper ropes. First things first,
 click that green **OK** button to see the **Keeper's Hut**.
 
-## Step 1
 
-**🏠 Home sweet home 🏠**.
+## 2. Make a Sprite
+
+**🏠 Home sweet home 🏠**   
 Let's get you set up in your new place!
 
 ---
 
-▶ From the ``||sprites:Sprites||`` category, drag the ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
+- :paper plane:  From the ``||sprites:Sprites||`` category, drag the  
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``   
 block into the ``||loops:on start||`` container.
 
-▶ Click the grey box to open the **image editor** and draw yourself in your best zookeeper outfit!
+- :paint brush:  Click the grey box to open the **image editor** and draw yourself in your best zookeeper outfit!
 
-▶ Click **> Next** when you're ready to see the next step.
+- :mouse pointer:  Click **Next** when you're ready to see the next step.
 
 ```blocks
 let mySprite = sprites.create(img`
@@ -46,21 +48,19 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)
 ```
 
-## Step 2
+## 3. Move Around
 
-**🕰 Time to get moving 🕰**
+**🕰 Time to get move 🕰**  
 
 ---
 
-▶ From the ``||controller:Controller||`` category, drag
-``||controller:move [mySprite] with buttons ⊕||``
+- :game:  From the ``||controller:Controller||`` category, drag  
+``||controller:move [mySprite] with buttons ⊕||``  
 into the bottom of the ``||loops:on start||`` container.
 
 ---
 
 This will allow you to move your sprite around the screen.
-Try it on the game screen using the arrow keys on your keyboard
-or by clicking the joystick.
 
 
 ```blocks
@@ -86,14 +86,27 @@ let mySprite = sprites.create(img`
 controller.moveSprite(mySprite)
 ```
 
-## Step 3
+## 4. Try It
 
-**👀 Take a look around the room 👀**
+**Click the Game Window Tab (Above)**  
+![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
 
-▶ From the ``||scene:Scene||`` category, drag ``||scene:camera follow sprite [mySprite]||`` into the bottom
-of the ``||loops:on start||`` container and use the arrow keys to
+Try moving around the game screen!  Your zookeeper will move with the joypad or the arrow keys on your keyboard.
+
+
+
+## 5. Look About
+
+**Take a look around the room**  
+👀 
+
+---
+
+- :tree:  From the ``||scene:Scene||`` category, drag  
+``||scene:camera follow sprite [mySprite]||``  
+into the bottom of the ``||loops:on start||`` container and use the arrow keys to
 check out the hut!
 
 ```blocks
@@ -120,9 +133,11 @@ controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)
 ```
 
-## Step 4
+## Finale
 
 **🐯 Fantastic! 🐯**
+
+---
 
 You're all ready for your first task.
 
