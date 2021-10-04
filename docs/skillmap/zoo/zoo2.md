@@ -1,23 +1,26 @@
 # First Exhibit: By Land
 
 
-## Step 1
+## 1. Make an Animal
 
-**Your very first exhibit! Exciting, huh?**
+**Your very first exhibit!**  
+Exciting, huh?
 
 Hm... it does look a little empty.  
 Well, what's your favorite animal? Let's invite them over!
 
 ---
 
-▶ From the ``||sprites:Sprites||`` category, drag ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
+- :paper plane:  From the ``||sprites:Sprites||`` category, drag  
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``   
 into ``||loops:on start||``. 
 
-▶ Click the grey box in the new block and draw your animal using the **image editor**!
+- :paint brush:  Click the grey box in the new block and draw your animal using the **image editor**!
 
-▶ Click **> Next** when you're ready for the next step.
+- :mouse pointer:  Click **> Next** when you're ready for the next step.
 
 ```blocks
+//@highlight
 let mySprite = sprites.create(img`
     . . . . . . 5 5 5 . . . . . . . 
     . . . . 5 5 5 5 5 5 5 . . . . . 
@@ -38,19 +41,20 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)
 ```
 
-## Step 2 
+## 2. Move Around 
 
-**🦓  Take your animal for a walk! 🐆**
-
+**Take your animal for a walk!**
+🐆 🦓
 ---
 
-▶From ``||sprites:Sprites||``, grab
-``||sprites:set [mySprite] velocity to vx [50] vy [50]||`` 
-and drag it into the **end** of the ``||loops:on start||`` container. Your animal friend
-should start moving! 
+- :paper plane: From ``||sprites:Sprites||``, grab  
+``||sprites:set [mySprite] velocity to vx [50] vy [50]||``  
+and drag it into the **end** of the ``||loops:on start||`` container. 
 
-▶ Try changing the numbers next to **vx** and **vy**
-and watch the game screen to see what happens.
+Your animal friend should start moving! 
+
+- :mouse pointer:  Try changing the numbers next to **vx** and **vy**
+and watch the game screen to see what happens!
 
 ```blocks
 let mySprite = sprites.create(img`
@@ -75,22 +79,22 @@ let mySprite = sprites.create(img`
 mySprite.setVelocity(50, 50)
 ```
 
-## Step 3
+## 3. Random Mosey
 
 The same old path gets boring after a while.  
 **Let's add some randomness!**
 
 ---
 
-▶ Go to the ``||math:Math||`` category and grab two 
-``||math:pick random [0] to [10]||`` value blocks. 
-Use them to replace the numbers next to the **vx** and **vy**. 
+- :calculator:  Go to the ``||math:Math||`` category and grab two   
+``||math:pick random [0] to [10]||``   
+value blocks. 
 
-▶ Change the numbers inside the **random** blocks to see different kinds of 
-movement each time you reload!
+- :mouse pointer:  Use the two **random** value blocks to replace the numbers next to the **vx** and **vy**. 
 
----
-**Hint:** Don't forget to try negative numbers!
+- :mouse pointer:  Change the numbers inside the **random** blocks to see different kinds of movement each time you reload!
+
+_💡 Don't forget to try negative numbers!_
 
 
 ```blocks
@@ -116,18 +120,18 @@ let mySprite = sprites.create(img`
 mySprite.setVelocity(randint(-50, 50), randint(-50, 50))
 ```
 
-## Step 4 
+## 4. Bounce 
 
-**When the animal hits the edge of the enclosure they stop moving!**
+**When the animal hits the edge of the enclosure it stops moving!**
 
 Let's fix that. 
 
 ---
 
-▶ Open the ``||sprites:Sprites||`` category, then grab ``||sprites:set [mySprite] bounce on wall <ON>||`` 
+- :paper plane:  Open the ``||sprites:Sprites||`` category, then grab  
+``||sprites:set [mySprite] bounce on wall <ON>||``  
 to snap in at the **end** of the program.
 
----
 
 Now your animal can explore the entire exhibit!
 
@@ -156,7 +160,18 @@ mySprite.setVelocity(randint(-50, 50), randint(-50, 50))
 mySprite.setBounceOnWall(true)
 ```
 
-## Step 5 @showdialog
+## 5. Try It
+
+**Click the Game Window Tab (Above)**  
+![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
+
+---
+
+Watch your animal move around!
+
+
+
+## 6. Something's Happening @showdialog
 
 ![A clipboard with a checklist. One item is checked off](/static/skillmap/zoo/zoo-clipboard.png)
 
@@ -165,7 +180,7 @@ mySprite.setBounceOnWall(true)
 The other kids at the zoo are going to 
 love it...WHOA! What's that sound?
 
-## Step 6 @showdialog
+## 7. WooWoo @showdialog
 
 ![A rotating red siren](/static/skillmap/zoo/siren.gif)
 
@@ -174,10 +189,10 @@ love it...WHOA! What's that sound?
 What's going on? Hold on, we're getting a report from the penguin department — the
 penguins did *what*? 
 
-## Step 7
+## Finale
 **🚨 OH NO🚨**
 
-You better get over there!
+You better click **Done** and get over there!
 
 
 

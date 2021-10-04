@@ -7,23 +7,25 @@ Let's make this game more impactful by adding effects that bring the action to l
 ![Impact!](/static/skillmap/space/spacet4a.gif "That's earth-shaking!")
 
 
-## Step 2
+## 2. Play Your Game
 
 The code for the beginning of your Space Explorer game is in the workspace.
 
 ---
 
-►  Play your game on the game screen to make sure you can connect each action to the proper block of code.
+Play your game on the game screen to make sure you can connect each action to the proper block of code.
 
 
-## Step 3
+## 3. Shake the Camera
 
 Let's add some drama by shaking the camera when you run into an enemy ship.
 
 ---
 
-► In the ``||scene:Scene||`` category, grab ``||scene:camera shake by [4] pixels for [500] ms||``
-and snap it in to **the bottom** of the ``||sprites:on [sprite] of kind [Player] overlaps [otherSPrite] of kind [Enemy]||``
+- :tree: Grab  
+``||scene:camera shake by [4] pixels for [500] ms||``  
+and snap it in to **the bottom** of the  
+``||sprites:on [sprite] of kind [Player] overlaps [otherSPrite] of kind [Enemy]||``  
 container.
 
 
@@ -36,18 +38,19 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Step 4
+## 4. Animate the Ship
 
 **Add excitement by animating the main ship!**
 
 ---
 
-► In the toolbox, click ``||statusbars:Advanced||`` to reveal the
+- :angle down: In the toolbox, click **Advanced** to reveal the
 ``||animation:Animation||`` category.
 
 
-► Grab the ``||animation:animate [mySprite]||`` block and snap it into **the bottom**
-of the ``||loops:on start||`` container.
+- :sync: Grab the ``||animation:animate [mySprite]||``  
+block and snap it into **the end** of the  
+``||loops:on start||`` container.
 
 
 ```blocks
@@ -83,11 +86,10 @@ false
 )
 ```
 
-## Step 5
-► To select your animation frames, click the empty grey square then toggle to **My Assets**
-and choose the **Flying Rocket** animation.  Click **Done** when you are ready.
+## 5. Choose Your Animation
+- :paint brush: To select your animation frames, click the empty grey square then toggle to **My Assets** and choose the **Flying Rocket** animation. 
 
-► Keep the animation playing throughout the game by toggling the **loop** selector to **`<ON>`**.
+- :mouse pointer: Keep the animation playing throughout the game by toggling the **loop** selector to **`<ON>`**.
 
 ```blocks
 
@@ -106,20 +108,23 @@ true
 )
 ```
 
-## Step 6
+## 6. Try It Out
 
-** 🎮 Play your game and see how much more exciting it looks! 🎮 **
+**Play your game and see how much more exciting it looks!**
 
 
 
-## Step 7
+## 7. Animated Enemies
 
 **Why stop there when you can also animate the enemy???**
 
 ---
 
-► From the ``||animation:Animation||`` category, grab another ``||animation:animate [mySprite]||``
-block and snap it into **the end** of the ``||game:on game update every [2000] ms||`` container.
+- :sync: Grab another  
+``||animation:animate [mySprite]||``  
+block and snap it into **the end** of the  
+``||game:on game update every [2000] ms||``  
+container.
 
 
 ```blocks
@@ -156,13 +161,15 @@ false
 
 ## Step 8
 
-► To make sure we're animating the correct sprite, replace ``||variables:mySprite||`` with
- ``||variables:myEnemy||`` using the dropdown in the ``||animation:animate [mySprite]||`` block.
+- :mouse pointer: To make sure we're animating the correct sprite, replace
+``||variables:mySprite||`` with ``||variables:myEnemy||`` 
+using the dropdown in the  
+``||animation:animate [mySprite]||`` block.
 
-► Click the empty grey square and toggle to **My Assets**
+- :paint brush: Click the empty grey square and toggle to **My Assets**
 and choose the **Flying Spider** animation, then click **Done**.
 
-► Toggle the **loop** selector to **`<ON>`**.
+- :mouse pointer: Toggle the **loop** selector to **`<ON>`**.
 
 ```blocks
 game.onUpdateInterval(2000, function () {
@@ -184,10 +191,11 @@ game.onUpdateInterval(2000, function () {
 
 **There you have it!**
 
+---
+
 Take a look...your game feels so professional now!
 
-When you're ready, click **Done** to return to the skillmap where you can save this project
-to your gallery and share it with friends.
+When you're ready, click **Done** to return to the skillmap so you can move to the next level where we'll show you how to refuel your ship!
 
 
 ```package
