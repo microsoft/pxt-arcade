@@ -45,7 +45,8 @@ li li {
 }
 
 .display-font {
-    font-family: 'Rowdies', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    /* TODO: replace roboto with Rowdies once font is approved font-family: 'Rowdies', sans-serif; */
     font-weight: 400;
 }
 
