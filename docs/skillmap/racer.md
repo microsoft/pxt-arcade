@@ -18,9 +18,9 @@
 * name: Trapped Backstage
 * type: tutorial
 * description: Create a rockstar backstage after the show, then keep an eye on them as they navigate the path!
-* url: /skillmap/rockstar/rockstar1
+* url: /skillmap/rockstar/racer1
 * tags: easy, sprites, tiles
-* imageUrl: /static/skillmap/rockstar/rockstar1.gif
+* imageUrl: /static/skillmap/racer/racer1.gif
 * next: racer2
 * position: 1 -1
 
@@ -28,9 +28,9 @@
 * name: Gather Your Gear
 * type: tutorial
 * description: Write the code to give your rockstar points for gathering all their gear before they head out on tour.
-* url: /skillmap/rockstar/rockstar2
+* url: /skillmap/rockstar/racer2
 * tags: easy, tiles, events
-* imageUrl: /static/skillmap/rockstar/rockstar2.gif
+* imageUrl: /static/skillmap/racer/racer2.gif
 * next: racer3
 * position: 2 -1
 
@@ -38,9 +38,9 @@
 * name: Avoid the Fans!
 * type: tutorial
 * description: Code some crazed fans who will steal points as souveniers unless the rockstar can avoid them!
-* url: /skillmap/rockstar/rockstar3
+* url: /skillmap/rockstar/racer3
 * tags: easy, enemies, overlap, lives
-* imageUrl: /static/skillmap/rockstar/rockstar3.gif
+* imageUrl: /static/skillmap/racer/racer3.gif
 * next: racer-finish
 * position: 3 0
 
@@ -48,7 +48,7 @@
 ### racer-finish
 * kind: completion
 * type: certificate
-* url: /static/skillmap/certificates/rockstar-cert.pdf
+* url: /static/skillmap/certificates/racer-cert.pdf
 * position: 4 0
 * actions:
     * map: [Try Jungle Monkey Jump](/skillmap/jungle)

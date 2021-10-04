@@ -16,11 +16,27 @@
   "directOpen": true
 },
 {
-  "name": "Shang-Chi and the Legend of the Ten Rings",
+  "name": "Create a Space Adventure",
   "cardType": "link",
-  "description": "Create your own amazing adventure based on the movie Shang-Chi and the Legend of the Ten Rings!",
-  "imageUrl":  "/static/skillmap/backgrounds/sc.png",
-  "url": "https://arcade.makecode.com/--skillmap#sc",
+  "description": "Make a Galaga-style game by creating a rocket that fires at enemies. Design your outerspace view, create amazing animations, and MORE!",
+  "imageUrl":  "/static/skillmap/backgrounds/space.png",
+  "url": "https://arcade.makecode.com/--skillmap#space",
+  "directOpen": true
+},
+{
+  "name": "Jungle Monkey Jump Platformer",
+  "cardType": "link",
+  "description": "Code your monkey, add magic platforms, toss explosives, and collect valuables through customizable level maps.",
+  "imageUrl":  "/static/skillmap/backgrounds/jungle-map.png",
+  "url": "https://arcade.makecode.com/--skillmap#jungle",
+  "directOpen": true
+},
+{
+  "name": "80s Rockstar Maze",
+  "cardType": "link",
+  "description": "Code your rockstar to move through the crowded backstage area to collect all the gear before they're mobbed by fans!",
+  "imageUrl":  "/static/skillmap/backgrounds/rock-map.png",
+  "url": "https://arcade.makecode.com/--skillmap#rockstar",
   "directOpen": true
 },
 {

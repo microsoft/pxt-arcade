@@ -1,4 +1,4 @@
-# Zookeepers Day
+# A Zookeeper's Adventure!
 * name: A Zookeeper's Adventure!
 * description: Ever wonder what it takes to be a zookeeper? The answer may surprise you...
 * infoUrl: skillmap/educator-info/zookeeper-map-info
@@ -42,7 +42,7 @@
 * url: /skillmap/zoo/zoo2a
 * imageurl: /static/skillmap/zoo/zoo2a.gif
 * tags: easy, movement, random
-* next: zoo-activity2
+* next: zoo-activity3
 
 ### zoo-activity3
 * allowcodecarryover: false
