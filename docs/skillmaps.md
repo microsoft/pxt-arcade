@@ -35,7 +35,7 @@
   "name": "80s Rockstar Maze",
   "cardType": "link",
   "description": "Code your rockstar to move through the crowded backstage area to collect all the gear before they're mobbed by fans!",
-  "imageUrl":  "/static/skillmap/backgrounds/rock-map.png",
+  "imageUrl":  "/static/skillmap/backgrounds/rockstar-card.gif",
   "url": "https://arcade.makecode.com/--skillmap#rockstar",
   "directOpen": true
 },
