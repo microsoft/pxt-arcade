@@ -19,10 +19,10 @@
 ### shark1
 * name: Swimming with Sharks
 * type: tutorial
-* description: First, we'll plop a shark into the vast ocean, then we'll give it lasers!
-* url: /skillmap/shark/shark1
+* description: First, we'll plop a shark into the vast ocean, then we'll make it move!
+* url: /skillmap/shark/shark1-simple
 * tags: easy, sprites, projectiles
-* imageUrl: /static/skillmap/shark/shark1.gif
+* imageUrl: /static/skillmap/shark/shark1-simple.gif
 * next: shark2
 * position: 0 0
 
@@ -32,7 +32,7 @@
 * name: Food, Not Friends
 * type: tutorial
 * description: A shark's gotta eat!  Learn to make fish appear all over the ocean.
-* url: /skillmap/shark/shark2
+* url: /skillmap/shark/shark2-simple
 * tags: easy, spawn, sprites
 * imageUrl: /static/skillmap/shark/shark2.gif
 * next: shark3
@@ -43,7 +43,7 @@
 * name: Eat Up!
 * type: tutorial
 * description: Add points for each fish you catch in 15 seconds!
-* url: /skillmap/shark/shark3
+* url: /skillmap/shark/shark3-simple
 * tags: easy, enemies, overlaps
 * imageUrl: /static/skillmap/shark/shark3.gif
 * next: shark4
@@ -55,7 +55,7 @@
 * name: Under the Sea
 * type: tutorial
 * description: Decorate your shark's surroundings with an ocean background and seaweed.
-* url: /skillmap/shark/shark4
+* url: /skillmap/shark/shark4-simple
 * tags: easy, background, decorations
 * imageUrl: /static/skillmap/shark/shark4.gif
 * next: shark4a
@@ -66,9 +66,9 @@
 * name: Let's Get Animated
 * type: tutorial
 * description: Bring your game to life with custom animations for your characters.
-* url: /skillmap/shark/shark4a
+* url: /skillmap/shark/shark4a-simple
 * tags: easy, animations
-* imageUrl: /static/skillmap/shark/shark4a.gif
+* imageUrl: /static/skillmap/shark/shark4a-simple.gif
 * next: shark-finish
 * position: 2 0
 
