@@ -77,8 +77,8 @@
 * next: forest6 
 * position: 3 2
 * actions:
-    * map: [Try the Time Flies Tutorial](/tutorials/froggy)
-    * map: [Try the Space Explorer Map](/skillmap/space)
+    * map: [Try the Jungle Monkey Skillmap](/skillmap/jungle)
+    * map: [Try the Space Explorer Skillmap](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox] (/)
 
 
