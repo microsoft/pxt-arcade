@@ -583,7 +583,8 @@
             "recipes",
             "tutorialBlocksDiff",
             "blocksErrorList",
-            "identity"
+            "identity",
+            "accessibleBlocks"
         ],
         "blocksCollapsing": true,
         "errorList": true,
