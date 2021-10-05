@@ -164,9 +164,18 @@ h5 {
 
 /* Navbar --------------------------------------------------------------------------- */
 
-#header-bar {
+#header-bar,
+#header-bar > div {
     display: flex;
     align-items: center;
+    flex: 1;
+}
+
+.header-bar-left {
+    justify-content: flex-start;
+}
+.header-bar-right {
+    justify-content: flex-end;
 }
 
 .header-org-logo {
@@ -197,6 +206,23 @@ h5 {
     color: white;
     margin-left: 1rem;
     margin-bottom: 1px;
+}
+
+a.header-icon {
+    height: 100%;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+a.header-icon:hover,
+a.header-icon:focus {
+    color: white;
+    opacity: 0.8;
+}
+
+a.header-icon i.icon {
+    height: unset;
 }
 
 /* Header --------------------------------------------------------------------------- */
