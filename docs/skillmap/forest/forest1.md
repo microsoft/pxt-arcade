@@ -173,14 +173,6 @@ head to the next activity where you'll add the 🔥🔥🔥.
 
 
 
-```package
-pxt-forest-special=github:kiki-lee/forest-special/
-```
-
-
-
-
-
 ```assetjson
 {
   "README.md": " ",

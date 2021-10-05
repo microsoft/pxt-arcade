@@ -308,7 +308,7 @@ When the fire overlaps another flame, we can destroy one of the flames.
 ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``  
 container into an empty area of the workspace.
 
-- :mouse pointer:   Change both sprite kinds to ``||variables:Fire||``.
+- :mouse pointer:   Change both sprite kinds to ``||sprites:Fire||``.
 
 
 
