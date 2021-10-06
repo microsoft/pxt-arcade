@@ -289,13 +289,13 @@ forever(function () {
 ```
 
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 You've created a greeting, now let's send it over the top!
 
 ![Send our love](/static/skillmap/story/story-activity-2.gif "Why do tropical fish like saltwater?" )
 
-## Step 2
+## {Step 2}
 
 The code for a simple greeting card is already in the workspace.
 **⭐ Build a new card by editing the images ⭐**
@@ -444,7 +444,7 @@ music.playMelody("G B A G C5 B A B", 120)
 ![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
 
 
-## Step 3
+## {Step 3}
 
 **🎹 Cue the music 🎹**
 
@@ -593,7 +593,7 @@ music.playMelody("G B A G C5 B A B ", 120)
 
 
 
-## Step 4
+## {Step 4}
 
 You can make your card even more special by adding some text that
 cycles through when the **Ⓐ** button is pressed.
@@ -617,7 +617,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ```
 
-## Step 5
+## {Step 5}
 
 👀 Now take a look at your card on the game screen 👀
 
@@ -625,7 +625,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## Step 6
+## {Step 6}
 
 **💚 What a nice surprise 💚 **
 Add a second message below the first to really show you care.
@@ -649,7 +649,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 7
+## {Step 7}
 
 **🎨 Make it POP 🎨**
 Customize the dialog to bring it all together.
@@ -708,14 +708,14 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 8
+## {Step 8}
 
 😍 Take a look at your card on the game screen 😍
 
 **Press the Ⓐ button to cycle through your messages.**
 
 
-## Step 9
+## {Step 9}
 
 **🎀 The final touch 🎀**
 Change the color of your text so it works with your new background.
@@ -775,7 +775,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Congrats @showdialog
+## {Congrats @showdialog}
 
 🥳 That's it! 🥳
 
@@ -784,7 +784,7 @@ to see how it works!**
 
 
 
-## Finale
+## {Finale}
 
 **🎊 Congrats 🎊**
 

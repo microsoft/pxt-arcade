@@ -78,7 +78,7 @@ forever(function () {
 ```
 
 
-## Intro @showdialog
+## {Intro @showdialog}
 
 Collecting things is great, but let's also add an element of **DANGER!**
 
@@ -86,14 +86,14 @@ This tutorial will show you how to add cars to the road.
 
 ![Avoid the cars](/static/skillmap/collector/collectort3.gif "Stay safe!" )
 
-## Step 2
+## {Step 2}
 
 The code for a collector game is already in the workspace.
 🕹️ Play your game to help you remember what each chunk of code does.
 
 
 
-## Step 3
+## {Step 3}
 
 Let's start by adding a new kind of projectile, an ``||sprites:Enemy||``!
 
@@ -116,7 +116,7 @@ forever(function () {
 ```
 
 
-## Step 4
+## {Step 4}
 
 ► Click the empty grey box and toggle to **My Assets** to select the blue car.
 
@@ -130,7 +130,7 @@ forever(function () {
 ```
 
 
-## Step 4
+## {Step 4}
 
 **Our new enemy isn't quite ready.**
 We still have to set the vertical positions on the screen and add a pause to the loop.
@@ -152,7 +152,7 @@ forever(function () {
 })
 ```
 
-## Step 5
+## {Step 5}
 
 ► Add ``||loops:pause [100] ms||`` to the bottom of this ``||loops:forever||`` loop.
 
@@ -168,7 +168,7 @@ forever(function () {
 })
 ```
 
-## Step 6
+## {Step 6}
 
 
 **🎮 Now try your game on the game screen 🎮**
@@ -177,7 +177,7 @@ How is it working?
 
 
 
-## Step 7
+## {Step 7}
 
 **😲 Uh-Oh 😲**
 
@@ -204,7 +204,7 @@ forever(function () {
 })
 ```
 
-## Step 8
+## {Step 8}
 
 **😈 Wicked 😈**
 
@@ -229,7 +229,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ```
 
 
-## Step 9
+## {Step 9}
 
 At this point, the player is still awarded points when they hit a car.
 
@@ -253,7 +253,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ```
 
 
-## Step 8
+## {Step 8}
 
 **What an amazing creation!**
 

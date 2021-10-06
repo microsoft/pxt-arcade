@@ -1,14 +1,14 @@
 # Clicker Game
 
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Let's make a clicker game!
 
 ![Click away](/static/skillmap/clicker/clickert1.gif "Click and buy bigger clickers" )
 
 
-## Step 2
+## {Step 2}
 **⭐ This game will test your speed as you click as quickly as possible to earn points. ⭐**
 
 Let's prep the stage by adding a background.
@@ -33,7 +33,7 @@ scene.setBackgroundImage(img`
 ```
 
 
-## Step 3
+## {Step 3}
 
 **🖼 Choose your background! 🖼**
 
@@ -60,7 +60,7 @@ scene.setBackgroundImage(assets.image`TheStage`)
 
 
 
-## Step 4
+## {Step 4}
 Add a [__*splash screen*__](#splasht "A full-screen message that shows while a program or level is loading") to let the user know to press the
 **Ⓐ** button when they're ready to start playing.
 
@@ -81,7 +81,7 @@ game.splash("Press (A) to play!")
 
 ```
 
-## Step 5
+## {Step 5}
 
 **⚡ Here comes the action ⚡**
 
@@ -106,13 +106,13 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 6
+## {Step 6}
 
 **🎮 Test your game on the game screen 🎮**
 
 
 
-## Step 7
+## {Step 7}
 
 This game is off to a great start...but it goes on forever! Add a countdown timer to give
 the player a clear endpoint.
@@ -132,7 +132,7 @@ info.startCountdown(10)
 ```
 
 
-## Step 8
+## {Step 8}
 
 **🎉 Congrats 🎉**
 

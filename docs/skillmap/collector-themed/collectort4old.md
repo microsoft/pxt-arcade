@@ -191,7 +191,7 @@ forever(function () {
 
 
 
-## Intro @showdialog
+## {Intro @showdialog}
 
 Ready to give your game some extra life?
 
@@ -200,7 +200,7 @@ Ready to give your game some extra life?
 
 
 
-## Step 1
+## {Step 1}
 
 The code for a collector game is already in the workspace.
 
@@ -249,7 +249,7 @@ forever(function () {
 ```
 
 
-## Step 2
+## {Step 2}
 
 **The extra life isn't quite ready.**
 
@@ -297,7 +297,7 @@ forever(function () {
 ```
 
 
-## Step 3
+## {Step 3}
 
 Extra lives are supposed to be special, but they appear just as much
 as the other two projectiles right now.
@@ -341,7 +341,7 @@ forever(function () {
 
 
 
-## Step 4
+## {Step 4}
 
 **Play through your game once or twice.  Notice anything wrong?**
 
@@ -369,7 +369,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 ```
 
 
-## Step 6
+## {Step 6}
 
 The extra life is still **subtracting** a life when collected.
 
@@ -401,7 +401,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 
 
-## Step 7
+## {Step 7}
 
 ► The new **mySprite say** block is pointed toward the wrong sprite. To fix that,
 drag the ``||variables:otherSprite||`` argument out of the header of the
@@ -422,7 +422,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ```
 
-## Step 8
+## {Step 8}
 
 
 **There you go!**
