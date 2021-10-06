@@ -88,8 +88,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-        <!-- TODO: Add Rowdies back in once the font is legally approved 
-            
+        <!-- TODO: Add Rowdies back in once the font is legally approved
+
         <link
             href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap"
             rel="stylesheet"
@@ -143,8 +143,22 @@
 
     <body id="root" class="root background-eggplant" onload="handleOnLoad()">
         <div id="main" role="presentation">
-            <nav class="background-eggplant" style="height: 60px">
-                <!-- TODO: Bring in standardized Arcade navbar and remove style prop -->
+            <nav id="header-bar" class="background-eggplant" style="height: 60px">
+                <div class="header-bar-left">
+                    <div class="header-org-logo" role="menuitem">
+                        <img src="/static/logo/Microsoft_logo_rgb_W-white_D.png" alt="Microsoft">
+                    </div>
+                    <div class="header-org-logo-sm" role="menuitem">
+                        <img src="/static/logo/Microsoft_logo_rgb_W-white_D-square.png" alt="Microsoft">
+                    </div>
+                    <div class="header-title" role="menuitem"><span>@orgtitle@</span></div>
+                </div>
+                <div class="header-bar-right">
+                    <a class="header-icon" role="menuitem" aria-label="Return home" tabindex="0"
+                        href="https://arcade.makecode.com/">
+                        <i class="icon home" aria-hidden="true" role="presentation"></i>
+                    </a>
+                </div>
             </nav>
 
             <header class="hoc-header background-marina">
