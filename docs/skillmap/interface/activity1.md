@@ -36,7 +36,7 @@ game.splash("These blocks are in your workspace!")
 
 ### @explicitHints true
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 ![Psyched Monkey](/static/skillmap/interface/monkey.png "Psyched Monkey is Ready!" )
 
@@ -50,7 +50,7 @@ Complete this tutorial to learn how to:
 
 Before you know it, you'll have an arcade game of your very own!
 
-## step 1
+## {step 1}
 
 **⭐Welcome⭐**
 
@@ -69,7 +69,7 @@ When you're ready to move to the next step, click **[ >  Next]** to continue.
 ---
 
 
-## step 2
+## {step 2}
 
 This box is where you'll find information for each step.
 
@@ -83,7 +83,7 @@ click the lightbulb to the right for an extra hint.
 ```
 
 
-## Using the workspace
+## {Using the workspace}
 
 Your [__*workspace*__](#workIt "The area where you build code") is the area
 below the instructions where you'll connect blocks to build your program.
@@ -104,7 +104,7 @@ game.splash("I like bananas!")
 ```
 
 
-## Meet the Blocks  @unplugged
+## {Meet the Blocks  @unplugged}
 
 Blocks can be dragged out from the  [__*toolbox*__](#tools "The strip to the left of your workspace that lists block categories."),
 
@@ -116,7 +116,7 @@ Keep going to learn more about blocks.
 
 
 
-## Your Toolbox
+## {Your Toolbox}
 
 **Blocks you need won't always be in the workspace to start.**
 
@@ -134,7 +134,7 @@ game.splash(" ")
 This block adds a [__*splash screen*__](#splasht "A full-screen message that shows while a program or level is loading") to your project.
 
 
-## Your Toolbox 2
+## {Your Toolbox 2}
 
 **Let's see how this works**
 
@@ -152,7 +152,7 @@ game.splash("My monkey is better than yours")
 
 
 
-## The Exception
+## {The Exception}
 
 Every rule has an exception, so let's look at a block
 that doesn't match its category.
@@ -206,7 +206,7 @@ let mySprite = sprites.create(img`
 ```
 
 
-## Container Blocks
+## {Container Blocks}
 
 **Now let's look at different types of blocks and how to use them.**
 
@@ -233,7 +233,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Standard Blocks
+## {Standard Blocks}
 
 Next, there are [__*standard blocks*__](#sBlockIt "Single line blocks that make up the majority of most programs").
 Standard blocks are single-line blocks with notches at the top and bottom that
@@ -267,7 +267,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## Value Blocks
+## {Value Blocks}
 
 Finally, we have [__*value blocks*__](#aBlockIt "special pieces that provide values for other blocks").
 Value blocks are special pieces that add information to other
@@ -300,7 +300,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## Play Time
+## {Play Time}
 
 **🕹️ Time to play 🕹️**
 
@@ -313,7 +313,7 @@ Click it again to launch your effects!
 
 
 
-## Putting it Together
+## {Putting it Together}
 
 **🎨 Now get creative 🎨**
 
@@ -329,7 +329,7 @@ it's behaving the way you want it to!
 
 
 
-## Conclusion
+## {Conclusion}
 
 **🎈 Congratulations 🎈**
 

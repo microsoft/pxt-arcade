@@ -1,13 +1,13 @@
 # Design a Background
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Let's give your hero a world to protect!
 
 ![Background](/static/recipes/shark-splash/04-background.png)
 
 
-## Add a background
+## {Add a background}
 
 **We're going to need a background image.**
 
@@ -145,7 +145,7 @@ scene.setBackgroundImage(img`
     `)
 ```
 
-## Edit the background
+## {Edit the background}
 
 **🖼️ Time to get creative 🖼️**
 
@@ -282,7 +282,7 @@ scene.setBackgroundImage(img`
 ```
 
 
-## Play @@showdialog
+## {Play @@showdialog}
 
 **🎮 Play your game 🎮**
 
@@ -293,7 +293,7 @@ scene.setBackgroundImage(img`
 ► Feel free to return to the **Image Editor** and change it until you get it just the way you want it!
 
 
-## Decorative sprites
+## {Decorative sprites}
 
 ** 🐚 Add some sprites to decorate your game 🐚**
 
@@ -362,7 +362,7 @@ let mySprite2 = sprites.create(img`
 
 ```
 
-## Update sprite y-position
+## {Update sprite y-position}
 
 **You can put your sprites wherever you want...**
 
@@ -441,7 +441,7 @@ mySprite2.setPosition(randint(5, 155), 115)
 
 ```
 
-## Add More 
+## {Add More }
 
 **You can add more decorations the same way!**
 
@@ -449,7 +449,7 @@ Just give each sprite a unique name and make sure
 you select that name from the dropdown when positioning each sprite.
 
 
-## Conclusion 
+## {Conclusion }
 
 **🎉 Congratulations 🎉**
 

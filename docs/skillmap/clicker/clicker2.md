@@ -65,7 +65,7 @@ info.startCountdown(10)
 }
 ```
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 We already have a basic clicker game, let's use what we've learned to
 make it even more special!
@@ -73,7 +73,7 @@ make it even more special!
 ![Click away](/static/skillmap/clicker/clicker-activity-2.gif "Click and buy bigger clickers" )
 
 
-## Step 2
+## {Step 2}
 
 First, try the project on the game screen to remember how it works.
 
@@ -82,7 +82,7 @@ First, try the project on the game screen to remember how it works.
 ► Click **> Next** when you're ready to edit the game.
 
 
-## Step 3
+## {Step 3}
 
 Let's make this game fun to look at by adding a
 [__*sprite*__](#sprote "a 2-D image that moves on the screen") to the screen.
@@ -127,7 +127,7 @@ mySprite = sprites.create(img`
     `, SpriteKind.Player)
 ```
 
-## Step 4
+## {Step 4}
 
 **✨ For an extra spark, you can make your sprite react
 with each click ✨**
@@ -151,7 +151,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 5
+## {Step 5}
 
 Right now, the spray effect lasts forever, so you don't see much of a
 change between clicks.
@@ -178,13 +178,13 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ```
 
-## Step 6 @showdialog
+## {Step 6 @showdialog}
 
 **🎮 Play your game a couple of times 🎮**
 
 
 
-## Step 7
+## {Step 7}
 
 **Did you notice that your game automatically keeps track of your highest score?**
 
@@ -208,7 +208,7 @@ info.onCountdownEnd(function () {
 })
 ```
 
-## Step 8
+## {Step 8}
 
 **🎊 Fantastic 🎊**
 
@@ -222,7 +222,7 @@ Now add a final celebration with some **game over** effects!
 and choose a new option from the dropdown.
 
 
-## Step 9
+## {Step 9}
 
 **That's it!**
 

@@ -100,7 +100,7 @@ clicks = 1
 ```
 
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 What's more fun than pressing buttons?
 
@@ -112,7 +112,7 @@ Let's modify our clicker game to offer a simple shop.
 
 ![Click away](/static/skillmap/clicker/clicker-activity-4.gif "Click and buy bigger clickers" )
 
-## Step 1
+## {Step 1}
 
 **The code for a clicker game is already in the workspace.**
 
@@ -136,7 +136,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 2
+## {Step 2}
 
 **💡 Now we're onto something 💡**
 
@@ -166,7 +166,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 3
+## {Step 3}
 
 We should check that score is greater than (or equal to) **10**
 before we charge the player 10 points.
@@ -194,7 +194,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 4
+## {Step 4}
 
 Now if the player has a large enough score, you can charge them
 10 points and give them their extra power.
@@ -219,14 +219,14 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 6 @showdialog
+## {Step 6 @showdialog}
 
 **🎮 Give your game a try on the game screen 🎮**
 
 It should do what you expect...as long as you have 10 points to spend!
 
 
-## Step 7
+## {Step 7}
 
 Finally, we should let the player know if they don't have enough points to
 buy the clicker.
@@ -258,7 +258,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Finale
+## {Finale}
 
 **⚡️ Amazing ⚡️**
 

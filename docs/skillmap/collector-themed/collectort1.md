@@ -26,7 +26,7 @@ forever(function () {
 ```
 
 
-## Intro @showdialog
+## {Intro @showdialog}
 
 Ready to test your agility?
 
@@ -36,7 +36,7 @@ Let's create a game where Mama Dino needs to get to her hoard of babies!
 
 
 
-## Step 2
+## {Step 2}
 
 **🦖 This game needs a** [__*sprite*__](#sprote "a dynamic 2-D image") 🦖
 
@@ -63,7 +63,7 @@ let mySprite = sprites.create(assets.image`Mama`, SpriteKind.Player)
 
 
 
-## Step 3
+## {Step 3}
 
 **🤩 Fabulous 🤩**
 
@@ -90,14 +90,14 @@ controller.moveSprite(mySprite, 0, 100)
 ```
 
 
-## Step 4
+## {Step 4}
 
 **🎮  Try your project using the game screen 🎮**
 
 Make sure your ``||sprites:Player||`` moves up and down with the joypad, arrow keys, or **W** and **S** keys.
 
 
-## Step 5
+## {Step 5}
 
 **Did you notice your sprite can disappear?**
 
@@ -120,7 +120,7 @@ mySprite.setStayInScreen(true)
 
 
 
-## Step 6
+## {Step 6}
 
 **🖼️ Let's set the scene 🖼️**
 
@@ -143,7 +143,7 @@ mySprite.setStayInScreen(true)
 ```
 
 
-## Step 7
+## {Step 7}
 
 **🛣️ Add movement to the scene 🛣️**
 
@@ -168,7 +168,7 @@ scroller.scrollBackgroundWithSpeed(-50, 0)
 
 
 
-## Step 8
+## {Step 8}
 
 **🎮  Take a look at the game screen 🎮**
 
@@ -176,7 +176,7 @@ Your background should move right-to-left across the screen on its own, and you 
 
 
 
-## Step 9
+## {Step 9}
 
 **The sprite needs something to collect!**
 Let's add some baby dinos for the momma dinosaur to rescue 💚
@@ -201,7 +201,7 @@ forever(function () {
 
 ```
 
-## Step 10
+## {Step 10}
 
 ► To make the babies look like they're walking along the road, change
 [__*vx*__](#whatVX "horizontal velocity") (or horizontal speed) to **-90**.
@@ -219,7 +219,7 @@ forever(function () {
 
 
 
-## Step 11
+## {Step 11}
 
 **😲 They're flying 😲**
 
@@ -246,7 +246,7 @@ forever(function () {
 ```
 
 
-## Step 12
+## {Step 12}
 
 **This is looking great, but they still hover around the top.**
 
@@ -266,7 +266,7 @@ forever(function () {
 
 
 
-## Step 13
+## {Step 13}
 
 ► Keep the babies from running out at the speed of light by
 adding a ``||loops:pause [100] ms||`` block (from the  ``||loops:Loops||``
@@ -286,7 +286,7 @@ forever(function () {
 
 
 
-## Step 11
+## {Step 11}
 
 **🎆 Congrats 🎆**
 

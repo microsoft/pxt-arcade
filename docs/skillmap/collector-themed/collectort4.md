@@ -79,7 +79,7 @@ forever(function () {
 ```
 
 
-## Intro @showdialog
+## {Intro @showdialog}
 
 A fantastic game can be made even better by adding small details.
 
@@ -88,14 +88,14 @@ This tutorial will show you how to animate your characters.
 ![Mama dino looks like she's walking](/static/skillmap/collector/collectort4.gif "One foot in front of the other." )
 
 
-## Step 2
+## {Step 2}
 
 The code for **Dino Mama** is already in the workspace.
 🕹️ Play your game to remember what the code does.
 
 
 
-## Step 3 @showdialog
+## {Step 3 @showdialog}
 
 Let's start by animating Mama Dino!
 
@@ -106,7 +106,7 @@ Let's start by animating Mama Dino!
 
 
 
-## Step 4
+## {Step 4}
 
 
 ► In the toolbox, click **Advanced** to reveal the ``||animation:Animation||`` category.
@@ -150,7 +150,7 @@ true
 ```
 
 
-## Step 5
+## {Step 5}
 
 **🎥 Let's get animating 🎥**
 
@@ -177,7 +177,7 @@ true
 )
 ```
 
-## Step 6
+## {Step 6}
 
 **Watch your speed!**
 
@@ -206,7 +206,7 @@ true
 ```
 
 
-## Step 7
+## {Step 7}
 
 
 **🎮 Now try your game on the game screen 🎮**
@@ -215,7 +215,7 @@ How cool is that?!?
 
 
 
-## Step 8
+## {Step 8}
 
 **🔁 Let's do it again 🔁**
 
@@ -248,7 +248,7 @@ true
 ```
 
 
-## Step 9
+## {Step 9}
 
 
 **🎮 Try your project on the game screen! 🎮**
@@ -257,7 +257,7 @@ Looking good!
 
 
 
-## Step 10
+## {Step 10}
 
 **😈 Wicked 😈**
 
@@ -290,7 +290,7 @@ true
 
 
 
-## Step 8
+## {Step 8}
 
 **Now that's an exciting game!**
 
