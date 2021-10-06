@@ -67,7 +67,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 - :mouse pointer: Click the plus (+) sign to the right of the  
 ``||sprites:destroy [otherSprite]||``  
-block and choose an effect to play while the fish vanishes!
+block and choose an effect to play while the fish vanishes!  
+_💡 We like **disintegrate** for this._
 
 - :mouse pointer: Change the effect duration from **500** ms to something shorter, like **100** ms.
 
@@ -126,7 +127,8 @@ mySprite.setStayInScreen(true)
 ## Winning
 
 
-**🐟 Winner, winner...fish for dinner**  
+**🐟 Winner, winner...  
+fish for dinner**   
 Right now, when the timer runs out, the player loses.  Let's change that.
 
 ---
@@ -153,7 +155,7 @@ info.onCountdownEnd(function () {
 
 ## Finale
 
-**🎮 How many fish you can catch in 15 seconds? 🎮**
+**🎮 How many fish you can catch in 15 seconds?**
 
 ---
 

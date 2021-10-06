@@ -163,7 +163,7 @@ When the shark is done swimming left, it should automatically face back to the r
 
 ---
 
-- :question: Looking at what you have already done, can you figure out how to animate the shark back to the right when the **left arrow** is **released**?
+- :question: Looking at what you have already done, can you figure out how to change the animation back to the right when the **left** button is **released**?
 
 
 ```blocks
