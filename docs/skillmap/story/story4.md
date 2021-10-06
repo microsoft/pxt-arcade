@@ -490,7 +490,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ```
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Short stories are fun to read and fun to write!
 
@@ -500,7 +500,7 @@ share anywhere we like.
 ![Here's the story](/static/skillmap/story/story-activity-4.gif "How mystical!" )
 
 
-## Step 2
+## {Step 2}
 
 The base code for a two-line story is already in the workspace.
 Let's build on it to create a new short story worth sharing.
@@ -516,7 +516,7 @@ Example 3: An alien in the grocery store
 ```
 
 
-## Step 3
+## {Step 3}
 
 **Now add your setting and main character to the story.**
 
@@ -781,7 +781,7 @@ mySprite = sprites.create(img`
 ```
 
 
-## Step 4
+## {Step 4}
 
 **📚 Explain your set-up 📚**
 
@@ -836,7 +836,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 5
+## {Step 5}
 
 **🎭 Create some drama 🎭**
 
@@ -889,7 +889,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## Step 6
+## {Step 6}
 
 **📕 Show the story 📕**
 
@@ -963,7 +963,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ```
 
-## Step 7
+## {Step 7}
 
 **😲 The reaction 😲**
 
@@ -1036,7 +1036,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 8
+## {Step 8}
 
 **🌳 Change of scene 🌳**
 
@@ -1263,7 +1263,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 9
+## {Step 9}
 
 **🎬 The conclusion 🎬**
 
@@ -1758,7 +1758,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ```
 
-## finish
+## {finish}
 
 **And that's it!**
 
