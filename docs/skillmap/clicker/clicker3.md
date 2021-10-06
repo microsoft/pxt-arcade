@@ -90,7 +90,7 @@ power = 1
 
 
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 There's so much more to explore with our clicker games.
 
@@ -98,7 +98,7 @@ Let's keep building!
 
 ![Click away](/static/skillmap/clicker/clicker-activity-3.gif "Click and buy bigger clickers" )
 
-## Step 2
+## {Step 2}
 
 Incrementing by one point per click has been fun, but what if we could
 make the game more interesting?
@@ -124,7 +124,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 3
+## {Step 3}
 
 Adding another increment to the **Ⓑ** button would only allow the score to
 increase faster one time for each click.
@@ -146,7 +146,7 @@ that variable as **power**.
 
 
 
-## Step 4
+## {Step 4}
 
 We've got a variable, but before we can use it, it needs to mean something.
 
@@ -191,7 +191,7 @@ let power = 1
 ```
 
 
-## Step 5
+## {Step 5}
 
 Now we can drop a **power** variable into our **change score by** block
 so that every click responds to our changing values.
@@ -216,7 +216,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 6
+## {Step 6}
 
 To make our "super-clicker", we need to make the **power**
 larger after **Ⓑ** is pressed.
@@ -236,7 +236,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ```
 
-## Step 7
+## {Step 7}
 
 **Add a note to let the player know what happened.**
 
@@ -265,7 +265,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## Finale
+## {Finale}
 
 **🎇 There you have it, a Super-Clicker 🎇**
 

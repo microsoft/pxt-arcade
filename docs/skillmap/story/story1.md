@@ -156,7 +156,7 @@ forever(function () {
 ```
 
 
-## Intro @showdialog
+## {Intro @showdialog}
 
 Are you ready to make greeting cards for your friends and family?
 
@@ -166,7 +166,7 @@ Follow these quick steps and you'll have one in no time!
 
 
 
-## Step 2
+## {Step 2}
 
 **🎨 This card centers around an artistic background 🎨**
 
@@ -313,7 +313,7 @@ scene.setBackgroundImage(img`
 
 
 
-## Step 3
+## {Step 3}
 
 **💛 Let's add a heartfelt greeting 💛**
 
@@ -451,7 +451,7 @@ scene.setBackgroundImage(img`
 
 
 
-## Step 4
+## {Step 4}
 
 **🎉 Time for a celebration 🎉**
 
@@ -590,7 +590,7 @@ effects.confetti.startScreenEffect()
 ```
 
 
-## Step 5
+## {Step 5}
 
 **🎵 Let's add a personal note 🎵 **
 
@@ -738,7 +738,7 @@ music.playMelody("G B A G C5 B A B ", 120)
 
 
 
-## Congrats @showdialog
+## {Congrats @showdialog}
 
 **🥳 That's it! 🥳**
 
@@ -747,7 +747,7 @@ You now have a basic greeting card!
 **Take a look at the game screen to see how it turned out!**
 
 
-## Finish
+## {Finish}
 
 **Congratulations, you've finished your greeting card! **
 

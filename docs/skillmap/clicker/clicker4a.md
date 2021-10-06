@@ -100,7 +100,7 @@ clicks = 1
 ```
 
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 What's more fun than pressing buttons?
 
@@ -112,14 +112,14 @@ Let's modify our clicker game to offer a simple shop.
 
 ![Click away](/static/skillmap/clicker/clicker-activity-4.gif "Click and buy bigger clickers" )
 
-## Step 2
+## {Step 2}
 
 **Try the game already in the workspace!**
 
 Now that you know what the code created, you can add to it.
 
 
-## Step 3
+## {Step 3}
 
 When you click **Ⓑ**, you get a super-clicker — but
 what fun is it to get extra power for free? Let's add code to charge the player 10 points for the purchase.
@@ -141,25 +141,25 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 2
+## {Step 2}
 
 **💡 Now we're onto something 💡**
 
 
 
-## Step 6 @showdialog
+## {Step 6 @showdialog}
 
 **🎮 Give your game a try on the game screen 🎮**
 
 It should do what you expect...as long as you have 10 points to spend!
 
 
-## Step 7
+## {Step 7}
 
 Finally,
 
 
-## Finale
+## {Finale}
 
 **⚡️ Amazing ⚡️**
 
