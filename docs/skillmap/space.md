@@ -3,7 +3,7 @@
 * description: Make a Galaga-style game by following this short series of tutorials. You will create a rocket that fires projectiles at enemies, design your outerspace view, create amazing animations, and MORE!  What are you waiting for?  Double-click the first level to begin! 
 * infoUrl: skillmap/educator-info/space-map-info
 * bannerUrl: /static/skillmap/space/spacet6.gif
-* backgroundurl: /static/skillmap/backgrounds/space-comp.gif
+* backgroundurl: /static/skillmap/backgrounds/space-comp.png
 * primarycolor: #2EA9B0
 * secondarycolor: #d6f7fa
 * tertiarycolor: #5d416b
