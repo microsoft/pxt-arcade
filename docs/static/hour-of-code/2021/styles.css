@@ -183,30 +183,30 @@ h5 {
 
 .header-org-logo img,
 .header-org-logo-sm img {
-    margin: 0 1rem;
-    height: 1.4rem;
+    margin: 0 15px;
+    height: 22px;
     flex-shrink: 0;
 }
 
 .header-title:before {
-    content: "";
+    content: '';
     position: relative;
-    height: 1.5rem;
+    height: 18px;
     border-left: 2px solid white;
 }
 
 .header-title span {
-    font-family: 'Segoe UI',Tahoma,Geneva,Verdana;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana;
     font-size: 18px;
     font-weight: 700;
     color: white;
-    margin-left: 1rem;
+    margin-left: 15px;
     margin-bottom: 1px;
 }
 
 a.header-icon {
     height: 100%;
-    padding: 1rem;
+    padding: 15px;
     color: white;
     text-decoration: none;
 }
@@ -219,6 +219,47 @@ a.header-icon:focus {
 
 a.header-icon i.icon {
     height: unset;
+}
+
+nav a {
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana;
+    font-style: unset;
+    text-transform: none !important;
+}
+
+nav .icon {
+    font-size: 26px;
+    line-height: 26px;
+}
+
+nav .header-bar-left a,
+nav .header-bar-left a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+nav .header-bar-right .btn:active svg path {
+    fill: white;
+}
+
+nav .header-bar-right .btn {
+    min-width: unset;
+    padding: 10px;
+    width: 160px;
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .header-bar-right .btn span {
+    margin-right: 10px;
+    line-height: 18px;
+}
+
+nav .header-bar-right .btn svg path {
+    fill: black;
 }
 
 /* Header --------------------------------------------------------------------------- */
@@ -581,12 +622,47 @@ section.hoc-section-02 .carousel .list .list-item.active:hover {
 
 section.hoc-aside-02 {
     padding: 4rem 0;
+    text-align: center;
 }
 
-section.hoc-aside-02 .wrapper {
-    margin: 0 7rem;
-    display: flex;
+section.hoc-aside-02 p {
+    padding: 0 2rem;
+    max-width: 70rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+section.hoc-aside-02 a {
+    display: inline-flex;
     align-items: center;
+    background-color: #de594b;
+    transition: 0.25s;
+    font-size: 2.4rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+section.hoc-aside-02 a:hover {
+    background-color: #cc493a;
+    transform: scale(1.1);
+    color: white;
+    text-decoration: none;
+}
+
+section.hoc-aside-02 a:active {
+    background-color: black;
+    transform: scale(0.9);
+    color: white;
+    text-decoration: none;
+}
+
+section.hoc-aside-02 a i {
+    margin: 0 auto;
 }
 
 section.hoc-aside-02 .aside-text {
@@ -790,6 +866,43 @@ section.hoc-section-04 a.btn {
         margin-bottom: 2rem;
         flex-basis: 100%;
     }
+}
+
+/* Footer ------------------------------------------------------------------------------------ */
+
+footer.hoc-footer {
+    padding: 4rem 0;
+}
+
+footer.hoc-footer .text-content {
+    text-align: center;
+}
+
+footer.hoc-footer .text-content a {
+    color: white;
+    opacity: 0.5;
+    padding: 0 2rem;
+    border-right: 0.1rem solid white;
+}
+
+footer.hoc-footer .text-content a:last-child {
+    border: none;
+}
+
+footer.hoc-footer .text-content a:hover {
+    color: white;
+}
+
+footer.hoc-footer .msft {
+    margin: 0 auto;
+    width: 15rem;
+    margin-bottom: 2rem;
+}
+
+footer.hoc-footer .msft img {
+    width: 100%;
+    height: auto;
+    opacity: 0.5;
 }
 
 /* Educator Button --------------------------------------------------------------------------- */
