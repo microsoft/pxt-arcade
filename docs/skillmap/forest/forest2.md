@@ -239,6 +239,10 @@ scene.cameraFollowSprite(mySprite)
 
 ```
 
+```package
+pxt-forest-special=github:kiki-lee/forest-special/
+```
+
 
 ```assetjson
 {
