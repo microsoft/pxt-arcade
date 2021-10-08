@@ -235,6 +235,7 @@ nav .icon {
 
 nav .header-bar-left a,
 nav .header-bar-left a:hover {
+    display: flex;
     color: white;
     text-decoration: none;
 }
