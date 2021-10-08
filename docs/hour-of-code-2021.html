@@ -143,20 +143,60 @@
 
     <body id="root" class="root background-eggplant" onload="handleOnLoad()">
         <div id="main" role="presentation">
-            <nav id="header-bar" class="background-eggplant" style="height: 60px">
+            <nav
+                id="header-bar"
+                class="background-eggplant"
+                style="height: 60px"
+            >
                 <div class="header-bar-left">
-                    <div class="header-org-logo" role="menuitem">
-                        <img src="/static/logo/Microsoft_logo_rgb_W-white_D.png" alt="Microsoft">
-                    </div>
-                    <div class="header-org-logo-sm" role="menuitem">
-                        <img src="/static/logo/Microsoft_logo_rgb_W-white_D-square.png" alt="Microsoft">
-                    </div>
-                    <div class="header-title" role="menuitem"><span>@orgtitle@</span></div>
+                    <a href="https://www.microsoft.com/en-us/makecode"
+                        ><div class="header-org-logo" role="menuitem">
+                            <img
+                                src="/static/logo/Microsoft_logo_rgb_W-white_D.png"
+                                alt="Microsoft"
+                            />
+                        </div>
+                        <div class="header-org-logo-sm" role="menuitem">
+                            <img
+                                src="/static/logo/Microsoft_logo_rgb_W-white_D-square.png"
+                                alt="Microsoft"
+                            />
+                        </div>
+                        <div class="header-title" role="menuitem">
+                            <span>MakeCode</span>
+                        </div>
+                    </a>
                 </div>
                 <div class="header-bar-right">
-                    <a class="header-icon" role="menuitem" aria-label="Return home" tabindex="0"
-                        href="https://arcade.makecode.com/">
-                        <i class="icon home" aria-hidden="true" role="presentation"></i>
+                    <a
+                        class="header-icon"
+                        role="menuitem"
+                        aria-label="Return home"
+                        tabindex="0"
+                        href="https://arcade.makecode.com/"
+                    >
+                        <i
+                            class="icon home"
+                            aria-hidden="true"
+                            role="presentation"
+                        ></i>
+                    </a>
+
+                    <a class="btn"
+                        ><span>Sign Up</span>
+                        <svg
+                            width="22"
+                            height="24"
+                            viewBox="0 0 409 446"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M200.097 400.642C203.047 400.642 205.983 400.578 208.903 400.452C203.227 386.635 200.097 371.504 200.097 355.642C200.097 345.995 201.255 336.617 203.439 327.642H113.276C100.203 327.642 89.597 316.976 89.597 303.83V283.192C89.597 246.382 119.294 216.517 155.897 216.517H164.135C175.136 221.577 187.271 224.455 200.097 224.455C212.923 224.455 225.108 221.577 236.059 216.517H244.297C264.497 216.517 282.593 225.612 294.756 239.95C302.301 238.436 310.106 237.642 318.097 237.642C345.335 237.642 370.418 246.871 390.389 262.373C396.691 242.931 400.097 222.184 400.097 200.642C400.097 90.1851 310.554 0.64209 200.097 0.64209C89.64 0.64209 0.0969238 90.1851 0.0969238 200.642C0.0969238 311.099 89.64 400.642 200.097 400.642ZM263.24 137.142C263.24 172.216 234.974 200.642 200.097 200.642C165.22 200.642 136.954 172.216 136.954 137.142C136.954 102.068 165.22 73.6421 200.097 73.6421C234.974 73.6421 263.24 102.068 263.24 137.142ZM228.097 355.642C228.097 305.924 268.379 265.642 318.097 265.642C367.815 265.642 408.097 305.924 408.097 355.642C408.097 405.36 367.815 445.642 318.097 445.642C268.379 445.642 228.097 405.36 228.097 355.642ZM366 370.158C368.395 370.158 370.355 368.199 370.355 365.803V345.481C370.355 343.086 368.395 341.126 366 341.126H332.613V307.739C332.613 305.344 330.653 303.384 328.258 303.384H307.936C305.54 303.384 303.581 305.344 303.581 307.739V341.126H270.194C267.799 341.126 265.839 343.086 265.839 345.481V365.803C265.839 368.199 267.799 370.158 270.194 370.158H303.581V403.545C303.581 405.94 305.54 407.9 307.936 407.9H328.258C330.653 407.9 332.613 405.94 332.613 403.545V370.158H366Z"
+                            />
+                        </svg>
                     </a>
                 </div>
             </nav>
@@ -171,18 +211,32 @@
                     </div>
                     <h3 class="display-font">2021</h3>
                 </div>
+
+                <div
+                    class="header-background-image"
+                    style="
+                        background-image: url('./static/hour-of-code/2021/header.gif');
+                    "
+                ></div>
             </header>
 
             <section class="hoc-section-01">
                 <a
                     class="activity-btn"
+                    target="_blank"
+                    rel="noreferrer"
                     href="https://arcade.makecode.com/--skillmap#docs:/skillmap/forest"
                 >
                     <!--TODO: Make sure link above is correct-->
                     <div class="title background-papaya">
                         <h5 class="display-font">Code a Game</h5>
                     </div>
-                    <div class="body background-marina"></div>
+                    <div
+                        class="body background-marina"
+                        style="
+                            background-image: url('./static/hour-of-code/2021/forest-skillmap-game.gif');
+                        "
+                    ></div>
                     <div class="action background-sunflower">
                         <h5 class="display-font">Launch</h5>
                     </div>
@@ -217,6 +271,8 @@
                     </p>
                     <a
                         class="btn"
+                        target="_blank"
+                        rel="noreferrer"
                         href="https://arcade.makecode.com/--skillmap#docs:/skillmap/forest"
                     >
                         <!--TODO: Make sure link above is correct-->
@@ -244,11 +300,16 @@
                         Game Jam in partnership with the US State Department.
                         You’ll be competing to win…
                     </p>
-                    <a class="btn"
+                    <a class="btn" href="" target="_blank" rel="noreferrer"
                         ><h5 class="display-font">Enter the Game Jam</h5></a
                     >
                 </div>
-                <div class="hero background-sunflower"></div>
+                <div
+                    class="hero background-sunflower"
+                    style="
+                        background-image: url('./static/hour-of-code/2021/global-game-jam.png');
+                    "
+                ></div>
             </section>
 
             <section class="hoc-section-02">
@@ -324,8 +385,16 @@
                             link: 'https://arcade.makecode.com/--skillmap#beginner',
                             text: 'Launch Skillmap'
                         },
-                        { img: '', link: '', text: 'Launch Skillmap' },
-                        { img: '', link: '', text: 'Launch Skillmap' },
+                        {
+                            img: '/static/hour-of-code/2021/rockstar-skillmap.png',
+                            link: 'https://arcade.makecode.com/--skillmap#rockstar',
+                            text: 'Launch Skillmap'
+                        },
+                        {
+                            img: '/static/hour-of-code/2021/jungle-skillmap.png',
+                            link: 'https://arcade.makecode.com/--skillmap#jungle',
+                            text: 'Launch Skillmap'
+                        },
                         { img: '', link: '', text: 'Hour of Code™ 2021' },
                         {
                             img: '/static/hour-of-code/2021/microbit.png',
@@ -382,21 +451,45 @@
                 </script>
             </section>
 
-            <section class="hoc-aside-01 background-sunflower">
+            <section class="hoc-aside-02 background-sunflower">
                 <div class="aside-text">
-                    <h3 class="title display-font">MakeCode Insiders Club</h3>
+                    <h3 class="title display-font">
+                        Follow us on Social Media
+                    </h3>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit
-                        anim id est laborum.
+                        Find even more MakeCode content by joining us on our
+                        various social platforms:
                     </p>
-                    <a class="btn"><h5 class="display-font">Button</h5></a>
+                    <div class="social-buttons">
+                        <a
+                            href="https://www.instagram.com/msmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a
+                            href="https://twitter.com/msmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a
+                            href="https://www.twitch.tv/msmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <i class="fab fa-twitch"></i>
+                        </a>
+                        <a
+                            href="https://www.tiktok.com/@msmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
                 </div>
                 <div
                     class="hero background-papaya background-placeholder"
@@ -404,7 +497,34 @@
             </section>
 
             <!-- TODO: Customize footer to include insiders club message -->
-            <!-- @include footer.html -->
+            <footer class="hoc-footer background-papaya">
+                <div class="msft">
+                    <img
+                        src="/static/logo/Microsoft_logo_rgb_W-white_D.png"
+                        alt="Microsoft"
+                    />
+                </div>
+                <div class="text-content">
+                    <a
+                        href="https://www.microsoft.com/en-us/makecode/about"
+                        target="_blank"
+                        rel="noreferrer"
+                        >Microsoft MakeCode</a
+                    >
+                    <a
+                        href="https://www.microsoft.com/en-us/legal/terms-of-use"
+                        target="_blank"
+                        rel="noreferrer"
+                        >Terms of Use</a
+                    >
+                    <a
+                        href="https://privacy.microsoft.com/en-us/privacystatement"
+                        target="_blank"
+                        rel="noreferrer"
+                        >Privacy</a
+                    >
+                </div>
+            </footer>
         </div>
 
         <!-- @include tracking.html -->
