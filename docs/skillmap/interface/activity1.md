@@ -56,17 +56,10 @@ Before you know it, you'll have an arcade game of your very own!
 
 You've just discovered the most important part of following a tutorial — reading instructions!
 
-Sometimes the instructions are long and you need to close them while you work.
-Sometimes, you need to open them to read the next step.
+Sometimes the instructions are long and you need to scroll to read them all. 
 
-To toggle instructions, click the **[^Less...]** or  **[v More...]** button below the instruction area to toggle
-this box.
+_💡 When you're ready to move to the next step, click **[Next]** to continue._
 
----
-
-When you're ready to move to the next step, click **[ >  Next]** to continue.
-
----
 
 
 ## {step 2}
@@ -74,7 +67,7 @@ When you're ready to move to the next step, click **[ >  Next]** to continue.
 This box is where you'll find information for each step.
 
 If you don't find all of the info you need,
-click the lightbulb to the right for an extra hint.
+click the button with the lightbulb for an extra hint.
 
 
 #### ~ tutorialhint
@@ -85,18 +78,16 @@ click the lightbulb to the right for an extra hint.
 
 ## {Using the workspace}
 
-Your [__*workspace*__](#workIt "The area where you build code") is the area
-below the instructions where you'll connect blocks to build your program.
+Your [__*workspace*__](#workIt "The area where you build code") 
+is the area where you'll connect code blocks to build your program.
 
 ---
 
-► Click in the text area of the ``||game:splash " "||`` block
-and change the sentence to something more exciting.
+- :mouse pointer:  Click in the ``||game:splash " "||`` block that's already in the workspace
+and change the pre-loaded sentence to something more exciting.
 
----
-
-**Tip:** Did you notice that the word __workspace__ in the first sentence had
-a special look? Hover your mouse over it to see a definition.
+_💡 Did you notice that the word __workspace__ in the first sentence had
+a special look? Hover your mouse over it to see a definition._
 
 #### ~ tutorialhint
 ```blocks
@@ -138,11 +129,11 @@ This block adds a [__*splash screen*__](#splasht "A full-screen message that sho
 
 **Let's see how this works**
 
-► Find the
+- :tree:  Find the
 ``||scene:set background color to [ ]||`` block and snap it at the top of
 the **on start** container already in the workspace.
 
-► Click the grey box in the new block to set the background to your favorite color.
+- :paint brush:  Click the grey box in the new block to set the background to your favorite color.
 
 #### ~ tutorialhint
 ```blocks
@@ -160,15 +151,12 @@ that doesn't match its category.
 The ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block
 is red, but it lives in the ``||sprites:Sprites||`` category.
 
----
+In this case, you can look at the bubbles to the left of the instructions for the icon where you can find the block.
 
-<!-- **Tip:** If you can't find the block you're looking for, try -->
-
-
-► Snap ``||variables:set [my sprite] to sprite [ ] of kind [Player]||`` into the
+- :paper plane:  Snap ``||variables:set [my sprite] to sprite [ ] of kind [Player]||`` into the
 end of the **on start** container.
 
-► Click the grey box in the new block and draw a [__*sprite*__](#sprote "A 2-D image that moves on the screen")
+- :paint brush:  Click the grey box in the new block and draw a main player [__*sprite*__](#sprote "A 2-D image that moves on the screen")
  or toggle to the **Gallery** to pick one of ours.
 
 
@@ -222,7 +210,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 ---
 
-►  Find an ``||controller:on [A] button pressed ||`` container
+- :game:   Find an ``||controller:on [A] button pressed ||`` container
 block and drag it into the workspace. You will add to it in the next step.
 
 #### ~ tutorialhint
@@ -249,11 +237,11 @@ mySprite.startEffect(effects.spray)
 
 ---
 
-►  Find a ``||sprites:[mySprite] start [spray] effect ⊕||``
+- :paper plane:   Find a ``||sprites:[mySprite] start [spray] effect ⊕||``
 block and snap it into the  ``||controller:on [A] button pressed||``
 container...then choose your own effect!
 
-►  Click the **⊕** to the right of the new block to pop open an extra
+- :mouse pointer:   Click the **⊕** to the right of the new block to pop open an extra
 [__*argument*__](#iArgue "Additional piece of information the block uses").
 
 #### ~ tutorialhint
@@ -278,16 +266,16 @@ but they always need another block to snap into. Value blocks look something lik
 
 ---
 
-►  From the ``||math:Math||`` category, grab a ``||math: pick random [0] to [10]||``
+- :calculator:   From the ``||math:Math||`` category, grab a ``||math: pick random [0] to [10]||``
 value block and snap it into the number field on the effect block.
 
-►  Change the random range to pick between **100** and **600**.
+- :mouse pointer:   Change the random range to pick between **100** and **600**.
 
 ---
 
-**Tip:** Value blocks have different shapes
+_💡 Value blocks have different shapes
 depending on what kind of information they add. Each value will only
-fit in certain types of spaces.
+fit in certain types of spaces._
 
 #### ~ tutorialhint
 ```blocks
@@ -304,7 +292,11 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 **🕹️ Time to play 🕹️**
 
-Check out the game screen!
+Click the Game Window Tab (Above)
+
+![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
+
+---
 
 Click the **Ⓐ** button to clear your splash screen message.
 Click it again to launch your effects!
@@ -335,5 +327,5 @@ it's behaving the way you want it to!
 
 You've learned everything you need to know to graduate to a new tutorial.
 
-Now you can click **Done** to continue and create some games with MakeCode Arcade!
+Now you can click **Done** to continue on and create some games with MakeCode Arcade!
 
