@@ -91,6 +91,12 @@
             href="/static/hour-of-code/2021/favicon.png"
         />
 
+        <link
+            rel="stylesheet"
+            href="https://pxt.azureedge.net/blob/2163189fd5e35c0981ed55318415582a7c9aeb12/doccdn/semantic.css"
+            type="text/css"
+        />
+
         <!-- @include scripthead.html -->
         <!-- TODO: Font compliance for "Rowdies" Google Font (400 weight) -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -104,12 +110,6 @@
         /> -->
 
         <link rel="stylesheet" href="/static/hour-of-code/2021/styles.css" />
-
-        <script
-            src="https://kit.fontawesome.com/44ed5c071b.js"
-            crossorigin="anonymous"
-        ></script>
-        <!-- TODO: Replace with existing method of using FontAwesome icons -->
 
         <script>
             function handleOnLoad() {
@@ -131,8 +131,45 @@
 
     <body id="root" class="root background-eggplant" onload="handleOnLoad()">
         <div id="main" role="presentation">
-            <nav class="background-eggplant" style="height: 60px">
-                <!-- TODO: Bring in standardized Arcade navbar and remove style prop -->
+            <nav
+                id="header-bar"
+                class="background-eggplant"
+                style="height: 60px"
+            >
+                <div class="header-bar-left">
+                    <a href="https://www.microsoft.com/en-us/makecode"
+                        ><div class="header-org-logo" role="menuitem">
+                            <img
+                                src="/static/logo/Microsoft_logo_rgb_W-white_D.png"
+                                alt="Microsoft"
+                            />
+                        </div>
+                        <div class="header-org-logo-sm" role="menuitem">
+                            <img
+                                src="/static/logo/Microsoft_logo_rgb_W-white_D-square.png"
+                                alt="Microsoft"
+                            />
+                        </div>
+                        <div class="header-title" role="menuitem">
+                            <span>MakeCode</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="header-bar-right">
+                    <a
+                        class="header-icon"
+                        role="menuitem"
+                        aria-label="Return home"
+                        tabindex="0"
+                        href="https://arcade.makecode.com/"
+                    >
+                        <i
+                            class="icon home"
+                            aria-hidden="true"
+                            role="presentation"
+                        ></i>
+                    </a>
+                </div>
             </nav>
 
             <header class="hoc-header background-marina">
@@ -146,6 +183,13 @@
                     <h3 class="display-font">2021</h3>
                     <h4 class="body-font">Educator Guide</h4>
                 </div>
+
+                <div
+                    class="header-background-image"
+                    style="
+                        background-image: url('../static/hour-of-code/2021/header.gif');
+                    "
+                ></div>
             </header>
 
             <section class="hoc-section-04">
@@ -359,7 +403,34 @@
                 </ul>
             </section>
         </div>
-        <!-- @include footer.html -->
+        <footer class="hoc-footer background-papaya">
+            <div class="msft">
+                <img
+                    src="/static/logo/Microsoft_logo_rgb_W-white_D.png"
+                    alt="Microsoft"
+                />
+            </div>
+            <div class="text-content">
+                <a
+                    href="https://www.microsoft.com/en-us/makecode/about"
+                    target="_blank"
+                    rel="noreferrer"
+                    >Microsoft MakeCode</a
+                >
+                <a
+                    href="https://www.microsoft.com/en-us/legal/terms-of-use"
+                    target="_blank"
+                    rel="noreferrer"
+                    >Terms of Use</a
+                >
+                <a
+                    href="https://privacy.microsoft.com/en-us/privacystatement"
+                    target="_blank"
+                    rel="noreferrer"
+                    >Privacy</a
+                >
+            </div>
+        </footer>
         <!-- @include tracking.html -->
         <!-- @include tickevent.html -->
     </body>
