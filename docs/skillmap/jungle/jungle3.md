@@ -3,16 +3,16 @@
 
 ## Welcome @showdialog
 
-**Right now, it's nearly impossible to complete our game!**  
+**Right now, it's nearly impossible to complete our game!**
 We need a way to pass the poison pits!
 
 ![Add platforms as you jump](/static/skillmap/jungle/jungle3.gif "Need a boost?")
 
 
 
-## Step 2 - Try It!
+## 2. Try It!
 
-**🕹️ First, play the game in the game window 🕹️**
+**🕹️ First, play the game in the game window.**
 
 ---
 
@@ -20,18 +20,24 @@ Can you remember which piece of code controls each action?
 
 
 
-## Step 3 - Adding Block Walls
+## 3. Adding Block Walls
 
 **You know what would help us get over those pits?**  
-We need some well-placed platforms! Let's add a crate beneath the player when the A button is pressed.
+We need some well-placed platforms! Let's add a crate beneath the player when the (A) button is pressed.
 
 ---
 
-► From ``||controller:Controller||``, drag the ``||controller:on [A] button [pressed]||`` container into an empty area of the workspace.
+- :game: Drag the  
+``||controller:on [A] button [pressed]||``  
+container into an empty area of the workspace.
 
-► Set a wall by going to the ``||scene:Scene||`` category and dragging ``||scene:set wall <OFF> at tilemap col [0] row [0]||`` into the empty ``||controller:on [A] button [pressed]||`` container.
+- :tree: Set a wall by dragging  
+``||scene:set wall <OFF> at tilemap col [0] row [0]||``  
+into the empty  
+``||controller:on [A] button [pressed]||``  
+container.
 
-► Toggle `<OFF>` to `<ON>`.  
+- :mouse pointer: Toggle `<OFF>` to `<ON>`.
 
 
 ```blocks
@@ -40,45 +46,55 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 4 - Adding Block Walls, Cont.
+## 4. Block Walls, Cont.
 
 
-► Make sure the new wall ends up in the right place by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location [left] of [location]||`` in to replace  ``||scene:tilemap col [0] row [0]||``.
+- :map: Make sure the new wall ends up in the right place by dragging  
+``||tiles:location [left] of [location]||``  
+in to replace   
+``||scene:tilemap col [0] row [0]||``.
 
-► Click the word **left** to open the dropdown menu, and change the direction to **bottom**.
+- :mouse pointer: Click the word **left** to open the dropdown menu, and change the direction to **bottom**.
 
-► Create the wall **under** your sprite by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location of [mySprite]||`` in to replace  ``||variables:location||``.
+- :map: Create the wall **under** your sprite by dragging  
+``||tiles:location of [mySprite]||``  
+in to replace   
+``||variables:location||``.
 
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         tiles.setWallAt(tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Bottom), true)
-    
+
 })
 ```
 
 
 
-## Try It!
+## 5. Try It!
 
-**🕹️ Give it a try in the game window 🕹️**
+**🕹️ Give it a try in the game window.**
 
 ---
 
-Try jumping while you press the (A) button. Your monkey should continue to hover in that spot! 
+Try jumping while you press the (A) button. Your monkey should continue to hover in that spot!
 
 
 
-## Step 5 - Adding Block Tiles
+## 6. Adding Block Tiles
 
 **Where did my brick go??**  
-The walls are great, but it's hard to remember where they are. Let's add special tiles over them so we can find them again later.  
+The walls are great, but it's hard to remember where they are. Let's add special tiles over them so we can find them again later.
 
 ---
 
-► Set a tile by going to the ``||scene:Scene||`` category and dragging ``||scene:set [ ] at tilemap col [0] row [0]||`` into **the bottom** of the ``||controller:on [A] button [pressed]||`` container.
+- :tree: Set a tile by dragging  
+``||scene:set [ ] at tilemap col [0] row [0]||``  
+into **the bottom** of the  
+``||controller:on [A] button [pressed]||``  
+container.
 
-► Click the empty square and choose the crate called **bounce**.  
+- :paint brush: Click the empty square and choose the crate called **bounce**.
 
 
 ```blocks
@@ -91,14 +107,19 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 6 - Adding Block Tiles, Cont.
+## 7. Adding Block Tiles, Cont.
 
 
-► Make sure the new tile ends up in the right place by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location [left] of [location]||`` in to replace  ``||scene:tilemap col [0] row [0]||``.
+- :map: Make sure the new tile ends up in the right place by dragging  
+``||tiles:location [left] of [location]||``  
+in to replace   
+``||scene:tilemap col [0] row [0]||``.
 
-► Click the word **left** to open the dropdown menu, and change the direction to **bottom**.
+- :mouse pointer: Click the word **left** to open the dropdown menu, and change the direction to **bottom**.
 
-► As before, create the tile **under** your sprite by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location of [mySprite]||`` in to replace  ``||variables:location||``.
+- :map: As before, create the tile **under** your sprite by dragging  
+``||tiles:location of [mySprite]||``  
+in to replace  ``||variables:location||``.
 
 
 ```blocks
@@ -111,9 +132,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Try It!
+## 8. Try It!
 
-**🕹️ Now try it in the game window 🕹️**
+**🕹️ Now try it in the game window.**
 
 ---
 
@@ -122,13 +143,13 @@ Now you can set your own blocks in-mid air to help you over the poison pit!
 
 
 
-## Finished
+## Finale
 
-**Play your game and see how many points you can get.**
+**Play your game and see how many points you can get!**
 
 ---
 
-When you're done playing, click **Finish** to return to the main page to learn how to **break** tiles.
+When you're done playing, click **Done** to return to the main skillmap and continue to the next level where we will show you how to **break** tiles.
 
 
 
@@ -151,7 +172,7 @@ mySprite.ay = 500
 scene.cameraFollowSprite(mySprite)
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`orange bauble`, function (sprite, location) {
-    tiles.setTileAt(location, assets.tile`transparency16`)  
+    tiles.setTileAt(location, assets.tile`transparency16`)
     info.changeScoreBy(1)
 })
 

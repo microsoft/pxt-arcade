@@ -90,7 +90,7 @@ power = 1
 
 
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 There's so much more to explore with our clicker games.
 
@@ -98,24 +98,24 @@ Let's keep building!
 
 ![Click away](/static/skillmap/clicker/clicker-activity-3.gif "Click and buy bigger clickers" )
 
-## Step 2
+## {Step 2}
 
 Incrementing by one point per click has been fun, but what if we could
 make the game more interesting?
 
-Let's allow the player to buy a more powerful clicker when they press the 
-**Ⓑ** button. 
+Let's allow the player to buy a more powerful clicker when they press the
+**Ⓑ** button.
 
 ---
 
-► From ``||controller:Controller||``, grab an 
+► From ``||controller:Controller||``, grab an
 ``||controller:on [A] button [pressed]||`` container and drop it into
-an empty area in the workspace.  
-*Note: The block will appear faded at first because it conflicts with the other 
+an empty area in the workspace.
+*Note: The block will appear faded at first because it conflicts with the other
 **on button pressed** container in the workspace.*
 
-► Click **A** in the empty **on button pressed** container, and choose 
-**B** from the dropdown menu.  
+► Click **A** in the empty **on button pressed** container, and choose
+**B** from the dropdown menu.
 
 
 ```blocks
@@ -124,29 +124,29 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 3
+## {Step 3}
 
-Adding another increment to the **Ⓑ** button would only allow the score to 
-increase faster one time for each click. 
+Adding another increment to the **Ⓑ** button would only allow the score to
+increase faster one time for each click.
 
-To make a permanent change, we'll need to add a 
-[__*variable*__](#varied "a label that holds the place for something that can change"). 
+To make a permanent change, we'll need to add a
+[__*variable*__](#varied "a label that holds the place for something that can change").
 
 ---
 
 ► Open the ``||variables:Variables||`` category and click the button
 to **[Make a Variable]**.
 
-► In the prompt, type the name of the variable that will keep track of 
+► In the prompt, type the name of the variable that will keep track of
 how powerful your clicker is.  For the rest of this tutorial, we'll refer to
 that variable as **power**.
 
-► Click **OK** to save your variable and close the window.  
+► Click **OK** to save your variable and close the window.
 
 
 
 
-## Step 4
+## {Step 4}
 
 We've got a variable, but before we can use it, it needs to mean something.
 
@@ -155,8 +155,8 @@ Let's [__*initialize*__](#init "Set the starting value")
 
 ---
 
-► From ``||variables:Variables||``, grab the 
-``||variables:set [power] to [0]||`` block and add it to the end of the 
+► From ``||variables:Variables||``, grab the
+``||variables:set [power] to [0]||`` block and add it to the end of the
 ``||loops:on start||`` container.
 
 ► Change **0** to **1** to make it easy to replace the increment value
@@ -185,20 +185,20 @@ let mySprite = sprites.create(img`
     ........bbb11111bb............
     ..........bbbbbbb.............
     `, SpriteKind.Player)
-   
+
  //@highlight
 let power = 1
 ```
 
 
-## Step 5
+## {Step 5}
 
 Now we can drop a **power** variable into our **change score by** block
 so that every click responds to our changing values.
 
 ---
 
-► Open the ``||variables:Variables||`` category and grab a 
+► Open the ``||variables:Variables||`` category and grab a
 ``||variables:power||`` value block.
 
 ► Drop ``||variables:power||`` into the **change score by** block (inside of
@@ -216,16 +216,16 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 6
+## {Step 6}
 
 To make our "super-clicker", we need to make the **power**
 larger after **Ⓑ** is pressed.
 
 ---
 
-► Open the ``||variables:Variables||`` category. Grab a 
-``||variables:change [power] by [1]||`` variable and snap it into the 
-empty **on B button pressed** container.  
+► Open the ``||variables:Variables||`` category. Grab a
+``||variables:change [power] by [1]||`` variable and snap it into the
+empty **on B button pressed** container.
 
 ```blocks
 
@@ -236,7 +236,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ```
 
-## Step 7
+## {Step 7}
 
 **Add a note to let the player know what happened.**
 
@@ -245,8 +245,8 @@ Finally, let's add a block to tell the user that they've got extra powers!
 ---
 
 ► From ``||game:Game||``, grab
-``||game:show long text [" "] [bottom]||`` and snap it into the 
-end of the **on B button pressed** container.  
+``||game:show long text [" "] [bottom]||`` and snap it into the
+end of the **on B button pressed** container.
 
 ► Write your text, then play around with the location options to see where you like
 your message best.
@@ -265,16 +265,16 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## Finale
+## {Finale}
 
 **🎇 There you have it, a Super-Clicker 🎇**
 
 ---
 
-Now, every time you click **Ⓑ** the game adds **1** to the amount your score increases 
+Now, every time you click **Ⓑ** the game adds **1** to the amount your score increases
 with each press of the **Ⓐ** button.
 
-Click **Finish** to return to the main page where you can share your game
+Click **Done** to return to the main page where you can share your game
 with family and friends to start
 a competition!
 

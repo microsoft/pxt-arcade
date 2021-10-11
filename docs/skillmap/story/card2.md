@@ -251,7 +251,7 @@ music.playMelody("G B A G C5 B A B ", 120)
 ```
 
 
-## Intro @unplugged
+## {Intro @unplugged}
 
 Are you ready to make greeting cards for your friends and family?
 
@@ -261,13 +261,13 @@ Follow these quick steps and you'll have one in no time!
 
 
 
-## Step 1
+## {Step 1}
 
 🎨 This card centers around an artistic background 🎨
 
 ► From the ``||scene:Scene||`` category, grab a ``||scene:set background image to [ ]||`` block and drag it into the **on start** container in the workspace.
 
-► Get to the **My Assets** tab by clicking inside the grey background image square and toggling the switch at the top. 
+► Get to the **My Assets** tab by clicking inside the grey background image square and toggling the switch at the top.
 
 ► Choose one of our pre-loaded backgrounds...or stay in **Edit** mode to create your own.
 
@@ -399,13 +399,13 @@ scene.setBackgroundImage(img`
 ```
 
 
-## Step 2
+## {Step 2}
 
 💛 Let's add a heartfelt greeting 💛
 
 ► From ``||sprites:Sprites||``, grab a ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and snap it into the end of the **on start** container in the workspace.
 
-► Get to the **My Assets** tab by clicking inside the grey sprite square and toggling the switch at the top. 
+► Get to the **My Assets** tab by clicking inside the grey sprite square and toggling the switch at the top.
 
 ► Choose one of our pre-loaded titles...or stay in **Edit** mode to create your own.
 
@@ -658,7 +658,7 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)
 ```
 
-## Step 3
+## {Step 3}
 
 🎉 Time for a celebration 🎉
 
@@ -917,9 +917,9 @@ let mySprite = sprites.create(img`
 ```
 
 
-## Step 4
+## {Step 4}
 
-🎵 Now, let's add a personal note 🎵 
+🎵 Now, let's add a personal note 🎵
 
 ► From the ``||music:Music||`` category, grab a ``||music:play melody [ ] at tempo [120] (bpm)||`` block and snap it into the bottom of the **on start** container.
 
@@ -1176,11 +1176,11 @@ let mySprite = sprites.create(img`
 music.playMelody("G B A G C5 B A B ", 120)
 ```
 
-## Finish
+## {Finish}
 
-Congratulations, you've finished your greeting card!  
+Congratulations, you've finished your greeting card!
 
-Click "Finish" to save your card to your gallery so you can share it (or keep building.)
+Click "Done" to save your card to your gallery so you can share it (or keep building.)
 
 
 ```assetjson

@@ -48,7 +48,7 @@ forever(function () {
 ```
 
 
-## Intro @showdialog
+## {Intro @showdialog}
 
 The start of a collector game is in your workspace. Let's take it even further by adding points when you collect baby dinos!
 
@@ -58,19 +58,19 @@ The start of a collector game is in your workspace. Let's take it even further b
 
 
 
-## Step 2 
+## {Step 2}
 
 **🎮 Play the game in the workspace before you begin 🎮**
 
 
-## Step 3
+## {Step 3}
 
-**We're off to a great start!!**   
+**We're off to a great start!!**
 Let's add some code that tells the game what to do when the mom reaches her baby.
 
 ---
 
-► From ``||sprites:Sprites||``, grab an 
+► From ``||sprites:Sprites||``, grab an
 ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``
 container and drop it into an empty area of the workspace.
 
@@ -85,19 +85,19 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 
 
-## Step 4
+## {Step 4}
 
-Now we have a container for code that runs when Mama Dino overlaps the babies.   
+Now we have a container for code that runs when Mama Dino overlaps the babies.
 **Let's add a block to remove the babies from the play area when you catch them.**
 
 ---
 
 ► From ``||sprites:Sprites||``, grab
-``||sprites:destroy [mySprite]||`` and snap it into the empty 
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||`` container. 
+``||sprites:destroy [mySprite]||`` and snap it into the empty
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||`` container.
 
-► To make sure that the correct projectile is destroyed, grab the 
-``||variables:otherSprite||`` value from the title of 
+► To make sure that the correct projectile is destroyed, grab the
+``||variables:otherSprite||`` value from the title of
 ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||`` and drop it into the
 ``||sprites:destroy [mySprite]||`` block to replace the value **mySprite**.
 
@@ -115,7 +115,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 ![Grab otherSprite from header](/static/skillmap/assets/give-var.gif "Replace mySprite with the otherSprite variable" )
 
 
-## Step 5
+## {Step 5}
 
 **🏆 Keeping score 🏆**
 
@@ -124,21 +124,21 @@ Let's add a point to your score each time you save a baby.
 ---
 
 ► From ``||info:Info||``, grab
-``||info:change score by [1]||`` and snap it into **the bottom** of 
+``||info:change score by [1]||`` and snap it into **the bottom** of
 ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``.
 
 
 ```blocks
 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    otherSprite.destroy()  
-    //@highlight  
+    otherSprite.destroy()
+    //@highlight
     info.changeScoreBy(1)
 })
 ```
 
 
-## Step 6
+## {Step 6}
 
 **🎮 Now try it out on the game screen 🎮**
 
@@ -174,11 +174,11 @@ forever(function () {
 
 
 
-## Step 7
+## {Step 7}
 
 **🕔 Does this game feel long to you? 🕔**
 
-We haven't added a way to win or lose.  
+We haven't added a way to win or lose.
 Let's do that now by adding a countdown timer.
 
 ---
@@ -199,11 +199,11 @@ info.startCountdown(15)
 ```
 
 
-## Step 8
+## {Step 8}
 
 **🥇 Everyone's a winner 🥇**
 
-Right now, when time runs out, you lose the game. We can change that! 
+Right now, when time runs out, you lose the game. We can change that!
 
 ---
 
@@ -223,13 +223,13 @@ info.onCountdownEnd(function () {
 
 
 
-## Step 9
+## {Step 9}
 
 **🏆 Now play your winning creation 🏆**
 
-Mama Dino can collect her babies and earn points!  How many babies can you collect in **15 seconds**?  
+Mama Dino can collect her babies and earn points!  How many babies can you collect in **15 seconds**?
 
-Challenge your friends and family by clicking "Finish" and sharing the link from the main skillmap page.
+Challenge your friends and family by clicking "Done" and sharing the link from the main skillmap page.
 
 
 ```package

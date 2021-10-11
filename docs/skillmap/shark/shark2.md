@@ -6,23 +6,23 @@ Did you eat yet?
 
 ![Don't play with your food](/static/skillmap/shark/shark2.gif)
 
-Let's send a school of fish toward the shark to keep it full and happy. 
+Let's send a school of fish toward the shark to keep it full and happy.
 
 
 ## step 2
 
-**🕹️ Play it again 🕹️**  
+**🕹️ Play it again 🕹️**
 
 ---
 
-Play with your project in the game window to remember where you left off.  
+Play with your project in the game window to remember where you left off.
 Can you connect each chunk of code with actions on the screen?
 
 
 
 ## step 3
 
-**🐠 Let's go fishing 🐠**  
+**🐠 Let's go fishing 🐠**
 
 We need a container that will run our fishy code every 2.1 seconds.
 
@@ -45,7 +45,7 @@ game.onUpdateInterval(2100, function () {
 
 ► From ``||sprites:Sprites||``, drag ``||variables: set [mySprite2] to sprite [ ] of kind [Player]||`` into the empty ``||game:on game update every [2100] ms||`` container.
 
-► To rename the sprite **myFood**, click **mySprite2** to open a dropdown menu and choose ``||variables:Rename variable...||``. Enter **myFood** and click **Ok**. 
+► To rename the sprite **myFood**, click **mySprite2** to open a dropdown menu and choose ``||variables:Rename variable...||``. Enter **myFood** and click **Ok**.
 
 ► Change the kind from **Player** to **Food**.
 
@@ -53,8 +53,8 @@ game.onUpdateInterval(2100, function () {
 game.onUpdateInterval(2100, function () {
 // @highlight
     let myFood = sprites.create(img`
-        . . . 
-        . . . 
+        . . .
+        . . .
         . . . `, SpriteKind.Food)
 })
 ```
@@ -75,13 +75,13 @@ game.onUpdateInterval(2100, function () {
 ## Step 6
 
 
-** Never too far away **  
+** Never too far away **
 
-It's time to tell the food sprites where to spawn. 
+It's time to tell the food sprites where to spawn.
 
 ---
 
-► From ``||sprites:Sprites||``, drag a ``||sprites:set [mySprite] position to x [0] y [0]||`` block into **the end** of the ``||game:on game update every [2100] ms||``  container. 
+► From ``||sprites:Sprites||``, drag a ``||sprites:set [mySprite] position to x [0] y [0]||`` block into **the end** of the ``||game:on game update every [2100] ms||``  container.
 
 ► Change ``||variables:mySprite||`` to ``||variables:myFood||``.
 
@@ -119,7 +119,7 @@ let mySprite: Sprite = null
 
 ## Step 8
 
-**🐡 Fast Food 🐡**  
+**🐡 Fast Food 🐡**
 Get the fish swimming for a bigger challenge.
 
 ---
@@ -135,7 +135,7 @@ game.onUpdateInterval(2100, function () {
 let mySprite: Sprite = null
 
     let myFood = sprites.create(assets.image`food`, SpriteKind.Food)
- 
+
      myFood.setPosition(scene.screenWidth(), randint(5, 115))
         //@highlight
          myFood.vx = -75
@@ -146,14 +146,14 @@ let mySprite: Sprite = null
 
 
 
-## Finale 
+## Finale
 
-**So satisfying!**  
-Now your shark can find food anywhere it goes. 
+**So satisfying!**
+Now your shark can find food anywhere it goes.
 
 ---
 
-Click **Finish** and continue to the next level so you can code points for each of the fish you eat! 
+Click **Done** and continue to the next level so you can code points for each of the fish you eat!
 
 
 

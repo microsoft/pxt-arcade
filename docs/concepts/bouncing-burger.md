@@ -2,11 +2,11 @@
 
 [Open this tutorial in the editor!](/#tutorial:/concepts/bouncing-burger)
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 ``||sprites:Sprites||`` can be given ``||sprites:x||`` and ``||sprites:y||`` velocities so that they can move around the screen.  In this case, a ``||sprites:Sprite||`` will be used to represent a burger that bounces around the screen.
 
-## Step 1 @fullscreen
+## {Step 1 @fullscreen}
 
 Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``.
 
@@ -31,7 +31,7 @@ let mySprite = sprites.create(img`
 `, SpriteKind.Player)
 ```
 
-## Step 2 @fullscreen
+## {Step 2 @fullscreen}
 
 Click on the grey box in ``||variables:set mySprite to||`` to open the image editor. Open the Gallery, scroll to find the image of a burger, and click on the image of a burger to select that image.
 
@@ -75,7 +75,7 @@ f 6 6 d d f f f f f e e e f f e f f e e e e e f f e e d b 4 6 e
 `, SpriteKind.Player)
 ```
 
-## Step 3 @fullscreen
+## {Step 3 @fullscreen}
 
 Find ``||sprites:set mySprite x to 0||`` in ``||sprites:Sprites||``. Place it after ``||variables:set mySprite to||``, and change ``||sprites:x||`` to ``||sprites:vx||``. Change the 0 to 40.
 
@@ -120,7 +120,7 @@ f 6 6 d d f f f f f e e e f f e f f e e e e e f f e e d b 4 6 e
 mySprite.vx = 40;
 ```
 
-## Step 4 @fullscreen
+## {Step 4 @fullscreen}
 
 Find ``||sprites:set mySprite x to 0||`` in ``||sprites:Sprites||``. Place it after ``||variables:set mySprite to||``, and change ``||sprites:x||`` to ``||sprites:vy||``. Change the 0 to 60.
 
@@ -166,7 +166,7 @@ mySprite.vx = 40
 mySprite.vy = 60
 ```
 
-## Step 5 @fullscreen
+## {Step 5 @fullscreen}
 
 Find ``||sprites:set mySprite bounce on wall||`` in ``||sprites:Sprites||``. Place it after ``||variables:set mySprite to||``.
 
@@ -213,7 +213,7 @@ mySprite.vy = 60
 mySprite.setBounceOnWall(true)
 ```
 
-## Complete
+## {Complete}
 
 Congratulations, your burger will now bounce off the walls! This could be used to help implement a variety of games.
 

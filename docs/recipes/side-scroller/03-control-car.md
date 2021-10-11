@@ -1,12 +1,12 @@
 # Jump your car
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 Use a controller button to jump your car over obstacles on the race course.
 
 ![Jump the car with controller button](/static/recipes/side-scroller/03-control-car.gif)
 
-## Step 1 - Add Jump when button pressed
+## {Step 1 - Add Jump when button pressed}
 
 When the player presses button **A**, we want our car to be able to jump over the obstacles.
 
@@ -18,7 +18,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 2 - Check that car is on road
+## {Step 2 - Check that car is on road}
 
 We only want to be able to jump when our car is on the road – no flying cars! So we need to add a check.
 
@@ -32,7 +32,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 3 - Check for walls
+## {Step 3 - Check for walls}
 
 From the ``||scene:Scene||`` Toolbox drawer, drag a ``||scene:is mySprite hitting wall||`` block, and drop into the ``||logic:if then||`` block replacing true. Click on the drop-down menu and select ``||scene:bottom||`` for the wall direction.
 
@@ -45,7 +45,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 4 - Make car jump
+## {Step 4 - Make car jump}
 
 From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set mySprite x to 0||`` block into the ``||logic:if then||`` block.
 
@@ -60,7 +60,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 5 - Add overlaps behavior
+## {Step 5 - Add overlaps behavior}
 
 When our car runs into an obstacle, we should lose the game. And when our car runs into the finish line we should win the game. To write that code, we need to use ``||scene:sprite overlaps tile||`` blocks.
 
@@ -68,7 +68,7 @@ From the ``||scene:Scene||`` Toolbox drawer, drag two ``||scene:on sprite of kin
 
 ![Sprite overlaps tile wall](/static/recipes/side-scroller/sprite-overlaps-tile.png)
 
-## Step 6 - Specify obstacle and finish line tiles
+## {Step 6 - Specify obstacle and finish line tiles}
 
 In the first ``||scene:on sprite of kind overlaps tile||`` block, click on the checkered square drop-down menu and select your Obstacle tile.
 
@@ -83,7 +83,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenOuterEast0, function
 })
 ```
 
-## Step 7 - Game over
+## {Step 7 - Game over}
 
 From the ``||game:Game||`` Toolbox drawer, drag **two** ``||game:game over||`` blocks onto the Workspace – drop one into each of the ``||scene:on sprite of kind overlaps tile||`` blocks.
 
@@ -98,7 +98,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenOuterEast0, function
 })
 ```
 
-## Conclusion - Play your game! @unplugged
+## {Conclusion - Play your game! @unplugged}
 
 That’s it! Try playing your game in the full screen simulator – jump over obstacles to make it to the finish line! Next you can try adding different types of obstacles, or adding platforms for your car to jump onto.
 

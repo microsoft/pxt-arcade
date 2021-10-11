@@ -1,8 +1,8 @@
 /*
 
-Hour of Code 2021 Theming 
+Hour of Code 2021 Theming
 
--- Colors: 
+-- Colors:
 ---- #FFFFFF
 ---- #000000
 ---- #3DC1AA (Marina)
@@ -10,23 +10,33 @@ Hour of Code 2021 Theming
 ---- #DE594B (Papaya)
 ---- #453052 (Eggplant)
 
--- Fonts: 
+-- Fonts:
 ---- Rowdies (Display)
----- Roboto (Body) 
+---- Roboto (Body)
 */
 
 /* Global --------------------------------------------------------------------------- */
 
 html {
-    font-size: 10px;
+    font-size: 10px !important;
 }
 
 body,
 a,
 button,
-p {
+p,
+li {
     font-size: 1.8rem;
     font-family: 'Roboto', sans-serif;
+}
+
+li {
+    padding: 1rem 0;
+}
+
+li li {
+    padding: 0;
+    margin: 0.5rem 0;
 }
 
 .body-font {
@@ -35,20 +45,33 @@ p {
 }
 
 .display-font {
-    font-family: 'Rowdies', sans-serif;
-    font-weight: 400;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    /* TODO: replace roboto with Rowdies once font is approved font-family: 'Rowdies', sans-serif; */
+    font-weight: 700;
 }
 
-/* Font scaling */
+/* Dynamic scaling */
+@media (min-width: 4000px) {
+    html {
+        font-size: 16px !important;
+    }
+}
+
+@media (min-width: 3000px) {
+    html {
+        font-size: 14px !important;
+    }
+}
+
 @media (min-width: 2000px) {
     html {
-        font-size: 16px;
+        font-size: 12px !important;
     }
 }
 
 @media (max-width: 768px) {
     html {
-        font-size: 8px;
+        font-size: 8px !important;
     }
 }
 
@@ -122,10 +145,6 @@ h5 {
     color: #33203f;
 }
 
-.background-placeholder {
-    background-image: url('./placeholder.png');
-}
-
 .marina {
     color: #3dc1aa;
 }
@@ -139,15 +158,131 @@ h5 {
     color: #453052;
 }
 
+/* Navbar --------------------------------------------------------------------------- */
+
+#header-bar,
+#header-bar > div {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.header-bar-left {
+    justify-content: flex-start;
+}
+.header-bar-right {
+    justify-content: flex-end;
+}
+
+.header-org-logo {
+    display: flex;
+}
+.header-org-logo-sm {
+    display: none;
+}
+
+.header-org-logo img,
+.header-org-logo-sm img {
+    margin: 0 15px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+.header-title:before {
+    content: '';
+    position: relative;
+    height: 18px;
+    border-left: 2px solid white;
+}
+
+.header-title span {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    margin-left: 15px;
+    margin-bottom: 1px;
+}
+
+a.header-icon {
+    height: 100%;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+a.header-icon:hover,
+a.header-icon:focus {
+    color: white;
+    opacity: 0.8;
+}
+
+a.header-icon i.icon {
+    height: unset;
+}
+
+nav a {
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana;
+    font-style: unset;
+    text-transform: none !important;
+}
+
+nav .icon {
+    font-size: 26px;
+    line-height: 26px;
+}
+
+nav .header-bar-left a,
+nav .header-bar-left a:hover {
+    display: flex;
+    color: white;
+    text-decoration: none;
+}
+
+nav .header-bar-right .btn:active svg path {
+    fill: white;
+}
+
+nav .header-bar-right .btn {
+    min-width: unset;
+    padding: 10px;
+    width: 160px;
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .header-bar-right .btn span {
+    margin-right: 10px;
+    line-height: 18px;
+}
+
+nav .header-bar-right .btn svg path {
+    fill: black;
+}
+
 /* Header --------------------------------------------------------------------------- */
 
 header.hoc-header {
     height: 30rem;
-    position: relative;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+header.hoc-header .header-background-image {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 header.hoc-header .header-text {
@@ -161,7 +296,7 @@ header.hoc-header .header-text .title {
 }
 
 header.hoc-header .header-text .title > * {
-    margin: 0 1.5rem;
+    margin: 0 1rem;
 }
 
 header.hoc-header .header-text h3 {
@@ -192,7 +327,7 @@ header.hoc-header .header-text h3 {
 section.hoc-section-01 {
     width: 90%;
     max-width: 110rem;
-    margin: 2rem auto;
+    margin: 4rem auto;
     padding: 4rem 0;
     display: flex;
     align-items: center;
@@ -213,7 +348,12 @@ section.hoc-section-01 .section-text .title {
 section.hoc-section-01 .activity-btn {
     width: 35%;
     flex-shrink: 0;
-    align-self: stretch;
+}
+
+section.hoc-section-01 a.btn {
+    float: right;
+    margin-left: 2rem;
+    margin-top: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -253,10 +393,23 @@ section.hoc-aside-01 {
     margin-bottom: 2rem;
 }
 
+section.hoc-aside-01.background-sunflower {
+    margin-bottom: 0;
+}
+
 section.hoc-aside-01 .hero {
     width: 35%;
     flex-shrink: 0;
     align-self: stretch;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1rem solid #3dc1aa;
+}
+
+section.hoc-aside-01.background-sunflower .hero {
+    background-image: unset;
+    border: 1rem solid #eeca49;
 }
 
 section.hoc-aside-01 .aside-text {
@@ -282,6 +435,12 @@ section.hoc-aside-01 .aside-text .btn {
     float: right;
 }
 
+@media (min-width: 1400px) {
+    section.hoc-aside-01 .hero {
+        width: 50%;
+    }
+}
+
 @media (max-width: 480px) {
     section.hoc-aside-01 {
         flex-wrap: wrap-reverse;
@@ -295,10 +454,13 @@ section.hoc-aside-01 .aside-text .btn {
     section.hoc-aside-01 .aside-text {
         padding: 2rem 0;
         margin: 2rem;
+        padding-top: 0;
+        margin-top: 0;
     }
 
     section.hoc-aside-01 .aside-text .title {
         margin: 0;
+        margin-bottom: 2rem;
     }
 
     section.hoc-aside-01 .aside-text .subtitle {
@@ -315,7 +477,7 @@ section.hoc-aside-01 .aside-text .btn {
 section.hoc-section-02 {
     width: 90%;
     max-width: 110rem;
-    margin: 2rem auto;
+    margin: 4rem auto;
     padding: 4rem 0;
 }
 
@@ -347,12 +509,28 @@ section.hoc-section-02 .carousel .body {
     position: relative;
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 section.hoc-section-02 .carousel .body .btn {
     position: absolute;
     bottom: 3rem;
     right: 3rem;
+}
+
+section.hoc-section-02 .carousel .body .body-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 30%
+    );
 }
 
 section.hoc-section-02 .carousel .list {
@@ -371,6 +549,7 @@ section.hoc-section-02 .carousel .list .list-item {
     cursor: pointer;
     transition: 0.25s;
     font-size: 2rem;
+    line-height: 1.1;
     margin: 1rem 0;
     user-select: none;
 }
@@ -412,6 +591,7 @@ section.hoc-section-02 .carousel .list .list-item.active:hover {
     }
 
     section.hoc-section-02 .section-text .title {
+        flex-shrink: 1;
         margin-bottom: 2rem;
     }
 
@@ -419,12 +599,16 @@ section.hoc-section-02 .carousel .list .list-item.active:hover {
         margin: 0;
     }
 
+    section.hoc-section-02 .carousel {
+        height: 52rem;
+    }
+
     section.hoc-section-02 .carousel .list {
-        flex-basis: 40%;
+        flex-basis: 35%;
     }
 
     section.hoc-section-02 .carousel .list .list-item {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     section.hoc-section-02 .carousel .body .btn {
@@ -439,12 +623,47 @@ section.hoc-section-02 .carousel .list .list-item.active:hover {
 
 section.hoc-aside-02 {
     padding: 4rem 0;
+    text-align: center;
 }
 
-section.hoc-aside-02 .wrapper {
-    margin: 0 7rem;
-    display: flex;
+section.hoc-aside-02 p {
+    padding: 0 2rem;
+    max-width: 70rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+section.hoc-aside-02 a {
+    display: inline-flex;
     align-items: center;
+    background-color: #de594b;
+    transition: 0.25s;
+    font-size: 2.4rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+section.hoc-aside-02 a:hover {
+    background-color: #cc493a;
+    transform: scale(1.1);
+    color: white;
+    text-decoration: none;
+}
+
+section.hoc-aside-02 a:active {
+    background-color: black;
+    transform: scale(0.9);
+    color: white;
+    text-decoration: none;
+}
+
+section.hoc-aside-02 a i {
+    margin: 0 auto;
 }
 
 section.hoc-aside-02 .aside-text {
@@ -616,6 +835,77 @@ section.hoc-section-03 .certificate:active .action {
     }
 }
 
+/* Educator Section 04 -------------------------------------------------------------------------- */
+
+section.hoc-section-04 {
+    width: 90%;
+    max-width: 110rem;
+    margin: 2rem auto;
+    padding: 4rem 0;
+    display: flex;
+    align-items: center;
+}
+
+section.hoc-section-04 .title {
+    flex-shrink: 0;
+    flex-basis: 35%;
+    margin-right: 2rem;
+}
+
+section.hoc-section-04 a.btn {
+    float: right;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    section.hoc-section-04 {
+        flex-wrap: wrap;
+    }
+
+    section.hoc-section-04 .title {
+        margin-bottom: 2rem;
+        flex-basis: 100%;
+    }
+}
+
+/* Footer ------------------------------------------------------------------------------------ */
+
+footer.hoc-footer {
+    padding: 4rem 0;
+}
+
+footer.hoc-footer .text-content {
+    text-align: center;
+}
+
+footer.hoc-footer .text-content a {
+    color: white;
+    opacity: 0.5;
+    padding: 0 2rem;
+    border-right: 0.1rem solid white;
+}
+
+footer.hoc-footer .text-content a:last-child {
+    border: none;
+}
+
+footer.hoc-footer .text-content a:hover {
+    color: white;
+}
+
+footer.hoc-footer .msft {
+    margin: 0 auto;
+    width: 15rem;
+    margin-bottom: 2rem;
+}
+
+footer.hoc-footer .msft img {
+    width: 100%;
+    height: auto;
+    opacity: 0.5;
+}
+
 /* Educator Button --------------------------------------------------------------------------- */
 
 a.educator-btn {
@@ -654,6 +944,7 @@ a.activity-btn {
     transition: 0.25s;
     width: 100%;
     text-align: center;
+    position: relative;
 }
 
 a.activity-btn:hover {
@@ -664,6 +955,7 @@ a.activity-btn:hover {
 
 a.activity-btn:hover .action {
     background-color: #d3b034;
+    opacity: 1;
 }
 
 a.activity-btn:active {
@@ -673,6 +965,7 @@ a.activity-btn:active {
 a.activity-btn:active .action {
     background-color: black;
     color: white;
+    opacity: 1;
 }
 
 a.activity-btn .title {
@@ -683,19 +976,26 @@ a.activity-btn .title {
 }
 
 a.activity-btn .body {
-    height: 30rem;
+    height: 33rem;
     margin-top: -3rem;
-    border-top-left-radius: 2rem;
-    border-top-right-radius: 2rem;
+    border-radius: 2rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 a.activity-btn .action {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     text-transform: uppercase;
     padding: 2rem;
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
     flex-basis: 100%;
     transition: 0.25s;
+    opacity: 0;
 }
 
 /* Standard Button --------------------------------------------------------------------------- */
@@ -722,11 +1022,35 @@ a.btn:hover {
     background-color: #d3b034;
 }
 
+.background-sunflower a.btn {
+    background-color: #de594b;
+    color: white;
+}
+
+.background-sunflower a.btn:hover {
+    background-color: #cc493a;
+    color: white;
+}
+
 a.btn:active {
     background-color: black;
     color: white;
     text-decoration: none;
     transform: scale(0.95);
+}
+
+a.btn.secondary {
+    color: white;
+    background-color: #382544;
+}
+
+a.btn.secondary:hover {
+    color: white;
+    background-color: #2d1c38;
+}
+
+a.btn.secondary:active {
+    background-color: black;
 }
 
 /* Standard Button --------------------------------------------------------------------------- */
@@ -735,12 +1059,42 @@ a.btn:active {
     background-color: #de594b;
     color: white;
     padding: 4rem 0;
+    margin-top: 0;
 }
 
-.docs.footer.inverted a.item {
+.docs.footer.inverted a.item i.icon {
+    color: white;
+    transition: 0.25s;
+}
+
+.docs.footer.inverted a.item:hover i.icon {
+    transform: scale(1.1);
+    color: #f2f2f2;
+}
+
+.docs.footer.inverted a.item:active i.icon {
+    transform: scale(0.9);
+    color: black;
+}
+
+.docs.footer.inverted .divider {
+    display: none;
+}
+
+.docs.footer.inverted .ui.small.horizontal.list {
+    margin-top: 3rem;
+}
+
+.docs.footer.inverted .ui.small.horizontal.list > .item {
+    font-size: 1.4rem;
     color: white;
 }
 
-.ui.link.list.list a.item:hover {
-    text-decoration: none;
+.docs.footer.inverted .ui.small.horizontal.list > .item:hover {
+    font-size: 1.4rem;
+    color: white;
+}
+
+.docs.footer.inverted .poweredBy img {
+    filter: brightness(5) !important;
 }

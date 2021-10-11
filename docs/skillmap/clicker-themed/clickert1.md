@@ -1,47 +1,47 @@
 # Clicker Game
 
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Let's make a clicker game!
 
 ![Click away](/static/skillmap/clicker/clickert1.gif "Click and buy bigger clickers" )
 
 
-## Step 2
+## {Step 2}
 **⭐ This game will test your speed as you click as quickly as possible to earn points. ⭐**
 
 Let's prep the stage by adding a background.
 
 ---
 
-► Open the ``||scene:Scene||`` category and drag 
+► Open the ``||scene:Scene||`` category and drag
 ``||scene: set background image to [ ]||`` into the ``||loops:on start||``
 container that's already in the workspace.
 
-► When you're done, click **> Next** to see the next step.  
+► When you're done, click **> Next** to see the next step.
 
 
 ```blocks
 //@highlight
 scene.setBackgroundImage(img`
-. . . . 
-. . . . 
-. . . . 
-. . . . 
+. . . .
+. . . .
+. . . .
+. . . .
 `)
 ```
 
 
-## Step 3
+## {Step 3}
 
 **🖼 Choose your background! 🖼**
 
 ---
 
 
-► Click the grey box inside ``||scene: set background image to [ ]||`` to open the 
-image editor and toggle to the **My Assets** tab.  
+► Click the grey box inside ``||scene: set background image to [ ]||`` to open the
+image editor and toggle to the **My Assets** tab.
 
 ► Choose the **Stage** background and click **Done**.
 
@@ -60,18 +60,18 @@ scene.setBackgroundImage(assets.image`TheStage`)
 
 
 
-## Step 4
-Add a [__*splash screen*__](#splasht "A full-screen message that shows while a program or level is loading") to let the user know to press the 
+## {Step 4}
+Add a [__*splash screen*__](#splasht "A full-screen message that shows while a program or level is loading") to let the user know to press the
 **Ⓐ** button when they're ready to start playing.
 
 ---
 
-► Open the ``||game:Game||`` category and 
-drag the ``||game: splash [" "]||`` block into the bottom of the ``||loops:on start||`` 
+► Open the ``||game:Game||`` category and
+drag the ``||game: splash [" "]||`` block into the bottom of the ``||loops:on start||``
 container.
 
-► Click inside the empty text area of the ``||game: splash [" "]||`` block and type a message letting the 
-user know they should press (A) to play.   
+► Click inside the empty text area of the ``||game: splash [" "]||`` block and type a message letting the
+user know they should press (A) to play.
 
 
 ```blocks
@@ -81,22 +81,22 @@ game.splash("Press (A) to play!")
 
 ```
 
-## Step 5
+## {Step 5}
 
 **⚡ Here comes the action ⚡**
 
-Now the game needs a container to hold the code that 
-[__*increments*__](#addOne "adds to a number (usually adding 1)") 
+Now the game needs a container to hold the code that
+[__*increments*__](#addOne "adds to a number (usually adding 1)")
 the score when the **Ⓐ** button is clicked.
 
 ---
 
 ► From the ``||controller:Controller||`` category, grab the
-``||controller: on [A] button [pressed]||`` container and drop it into an 
-empty spot in the workspace.  
+``||controller: on [A] button [pressed]||`` container and drop it into an
+empty spot in the workspace.
 
 ► From ``||info:Info||``, drag out the ``||info:change score by [1]||`` block
-and snap it into ``||controller: on [A] button [pressed]||``.   
+and snap it into ``||controller: on [A] button [pressed]||``.
 
 
 ```blocks
@@ -106,22 +106,22 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 6
+## {Step 6}
 
 **🎮 Test your game on the game screen 🎮**
 
 
 
-## Step 7
+## {Step 7}
 
 This game is off to a great start...but it goes on forever! Add a countdown timer to give
 the player a clear endpoint.
 
 ---
 
-►  Open the ``||info:Info||`` category and 
-drag the ``||info: start countdown [10] (s)||`` block into **the bottom** of the 
-``||loops:on start||`` container.   
+►  Open the ``||info:Info||`` category and
+drag the ``||info: start countdown [10] (s)||`` block into **the bottom** of the
+``||loops:on start||`` container.
 
 
 ```blocks
@@ -132,14 +132,14 @@ info.startCountdown(10)
 ```
 
 
-## Step 8
+## {Step 8}
 
 **🎉 Congrats 🎉**
 
-You have started your very own clicker game! 
+You have started your very own clicker game!
 Play it on the game screen and see if you can get more than **40 clicks**.
 
-Click **Finish** to return to the main page where you can share your game
+Click **Done** to return to the main page where you can share your game
 with family and friends to compare scores!
 
 ```assetjson

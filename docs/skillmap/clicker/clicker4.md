@@ -77,22 +77,22 @@ clicks = 1
     game.splash("")
     game.setDialogTextColor(0)
     game.setDialogCursor(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
         `)
 })
 
@@ -100,7 +100,7 @@ clicks = 1
 ```
 
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 What's more fun than pressing buttons?
 
@@ -112,11 +112,11 @@ Let's modify our clicker game to offer a simple shop.
 
 ![Click away](/static/skillmap/clicker/clicker-activity-4.gif "Click and buy bigger clickers" )
 
-## Step 1
+## {Step 1}
 
 **The code for a clicker game is already in the workspace.**
 
-When you click **Ⓑ**, you get a super-clicker — but 
+When you click **Ⓑ**, you get a super-clicker — but
 what fun is it to get extra power for free? Let's add code to charge the player 10 points for the purchase.
 
 ---
@@ -124,7 +124,7 @@ what fun is it to get extra power for free? Let's add code to charge the player 
 ► From the ``||info:Info||`` category, grab a ``||info:change score by [1]||``
 block and snap it into the top of the **on B button pressed** container.
 
-► Change the value in the new block from **1** to **-10**.   
+► Change the value in the new block from **1** to **-10**.
 
 ```blocks
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -136,19 +136,19 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 2
+## {Step 2}
 
 **💡 Now we're onto something 💡**
 
-But what if the player doesn't have 10 points to spend? 
-Let's do a quick check of the player's score before we 
-upgrade the power. 
+But what if the player doesn't have 10 points to spend?
+Let's do a quick check of the player's score before we
+upgrade the power.
 
 ---
 
-► From ``||logic:Logic||``, choose the top 
+► From ``||logic:Logic||``, choose the top
 ``||logic:if <true> then||`` container and drag it into the top of your
-**on B button pressed** container already in the workspace. 
+**on B button pressed** container already in the workspace.
 
 ► To compare values, open the ``||logic: Logic||``
 category and grab a ``||logic: [0] [<] [0]||`` to replace **`<true>`**.
@@ -158,7 +158,7 @@ category and grab a ``||logic: [0] [<] [0]||`` to replace **`<true>`**.
 ```blocks
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (0 < 0) {
-        
+
     }
     info.changeScoreBy(-10)
     power += 1
@@ -166,10 +166,10 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 3
+## {Step 3}
 
 We should check that score is greater than (or equal to) **10**
-before we charge the player 10 points. 
+before we charge the player 10 points.
 
 ---
 
@@ -178,14 +178,14 @@ before we charge the player 10 points.
 to **≤**.
 
 ► Open the ``||info:Info||`` category and find the ``||info:score||`` value block.
-Grab it and drop it in to replace the remaining **0** of the comparison argument.  
+Grab it and drop it in to replace the remaining **0** of the comparison argument.
 
 
 
 ```blocks
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (10 <= info.score() {
-        
+
     }
     info.changeScoreBy(-10)
     power += 1
@@ -194,16 +194,16 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 4
+## {Step 4}
 
-Now if the player has a large enough score, you can charge them 
+Now if the player has a large enough score, you can charge them
 10 points and give them their extra power.
 
 ---
 
-► The code to adjust the score and power are already at the bottom of the 
-**on B button pressed** container.  Grab all of the code below and 
-drag it into the empty **if/then** container.  
+► The code to adjust the score and power are already at the bottom of the
+**on B button pressed** container.  Grab all of the code below and
+drag it into the empty **if/then** container.
 
 
 ```blocks
@@ -213,31 +213,31 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         power += 1
         game.showLongText("You bought one extra click!", DialogLayout.Center)
     }
-    
+
 
 })
 ```
 
 
-## Step 6 @showdialog
+## {Step 6 @showdialog}
 
 **🎮 Give your game a try on the game screen 🎮**
 
 It should do what you expect...as long as you have 10 points to spend!
 
 
-## Step 7
+## {Step 7}
 
-Finally, we should let the player know if they don't have enough points to 
+Finally, we should let the player know if they don't have enough points to
 buy the clicker.
 
 ---
 
-► We already have a note that shows **if** the player has enough points.  
-Click the **⊕** at the bottom of the **if/then** container to create an **else** space 
+► We already have a note that shows **if** the player has enough points.
+Click the **⊕** at the bottom of the **if/then** container to create an **else** space
 for code that runs when the **if** statement is not true.
 
-► Now you have an **else** container.  Grab another 
+► Now you have an **else** container.  Grab another
 ``||game:show long text [" "] [bottom]||`` and drag it into the empty **else**.
 
 ► Click into the textarea of the new block and write a message to let your
@@ -258,11 +258,11 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Finale
+## {Finale}
 
 **⚡️ Amazing ⚡️**
 
 Now you have a clicker game with a simple shop.  Give it a try on the game screen.
 
-Click **Finish** to return to the main page where you can share your game
+Click **Done** to return to the main page where you can share your game
 with family and friends!

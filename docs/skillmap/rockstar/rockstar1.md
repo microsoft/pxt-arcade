@@ -3,7 +3,7 @@
 
 ## Welcome @showdialog
 
-Congratulations!  You've just accepted a job managing Jerry, the last remaining  **80's Rockstar!** 
+Congratulations!  You've just accepted a job managing Jerry, the last remaining  **80's Rockstar!**
 
 ![Navigate the maze backstage](/static/skillmap/rockstar/rockstar1.gif "Look what we're about to do today!")
 
@@ -12,14 +12,14 @@ We'll walk you through the skills you'll need to help Jerry navigate backstage t
 
 
 
-## 2. Let's Get Started 
+## 2. Let's Get Started
 
-**Your scene has already been set!**
+**Your scene has already been set!**  
 
 ---
 
-- :binoculars: Look at your workspace to see that the **background color** and [__*tilemap*__](#tiled "a scene or world created using predefined tiles") 
-have already been added to this activity.  
+- :binoculars: Look at your workspace to see that the **background color** and backstage [__*tilemap*__](#tiled "a scene or world created using predefined tiles")
+have already been added to this activity.
 
 💡 Both blocks have been put inside the ``||loops: on start||`` container so they load as soon as the game starts.
 
@@ -27,15 +27,21 @@ have already been added to this activity.
 
 ## 3. We need a HERO
 
-**👏  We need Jerry! 👏**
+**👏  We need Jerry!**  
 
-Our moving character is called a [__*sprite*__](#sprote "2-D image that move on the screen"). Let's create a rockstar sprite and get it moving before we do anything else. 
+Our game character is called a [__*sprite*__](#sprote "2-D image that move on the screen"). Let's create a rockstar sprite and get it moving before we do anything else.
 
 ---
 
-- :puzzle: From the ``||sprites:Sprites||`` category, drag ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` to **the end** of the ``||loops:on start||`` container.
+- :paper plane: From the ``||sprites:Sprites||`` category, drag  
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  
+to **the end** of the ``||loops:on start||`` container.
+
+_💡  Having trouble finding the block you need? Look to the left of the instructions for the icon of the toolbox category where your block lives!_
 
 - :mouse pointer: To add Jerry, click the empty grey box, then toggle to **My Assets** and click  **rockstar**.
+
+![Toggle to My Assets](/static/skillmap/assets/my-assets-three.png "toggle to the My Assets Window")
 
 
 ```blocks
@@ -48,12 +54,15 @@ let mySprite = sprites.create(assets.image`rockstar`, SpriteKind.Player)
 
 ## 4. Control the Player
 
-**Time to get the sprite moving**
+**Time to get the sprite moving**  
 
 ---
 
-- :puzzle: From ``||controller:Controller||``, drag ``||controller:move [mySprite] with buttons ⊕||``   
+- :game: Drag  
+``||controller:move [mySprite] with buttons ⊕||``  
 to **the end** of the ``||loops:on start||`` container.
+
+_💡  Remember, the icon to the left of the instructions shows the same icon as the toolbox category for the block you need._
 
 
 ```blocks
@@ -67,25 +76,33 @@ controller.moveSprite(mySprite)
 
 ## 5. Try It
 
-**🕹️ Test on the game screen 🕹️ **
+**Click the Game Window Tab (Above)**  
+![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
 
-Jerry appears in the middle of a wall and gets completely lost when moving off screen!  
+Jerry appears in the middle of a wall and gets completely lost when moving off screen!
 
 We'll fix that over the next couple of steps.
 
 
 
-## 6. Trapped Backstage 
+## 6. Trapped Backstage
 
-**The sprite should appear at the stairs behind the stage. **
+The rockstar sprite should appear at the stage door.
 
 ---
 
-- :puzzle: To start Jerry at the stage door, open ``||scene:Scene||`` and drag ``||scene: place [mySprite] on top of random [ ]||`` to **the end** of the ``||loops:on start||`` container.
+- :tree: To start Jerry at the stage door, drag  
+``||scene: place [mySprite] on top of random [ ]||``  
+to **the end** of the  
+``||loops:on start||``  
+container.
 
 - :mouse pointer: Click the checkered tile and select the teal stage door called **stage** from the grid menu.
+
+_💡 Don't forget to play with your project after each step to see the changes your code has made._
+
 
 
 ```blocks
@@ -99,11 +116,13 @@ tiles.placeOnRandomTile(mySprite, assets.tile`stage`)
 ```
 
 
-## 7. Follow with Camera 
+## 7. Follow with Camera
 
 
-- :puzzle: Next, to keep Jerry in sight, open ``||scene:Scene||`` again and drag 
-``||scene:camera follow sprite [mySprite]||`` to **the end** of the ``||loops:on start||`` container.
+- :tree: Next, to keep Jerry in sight, drag  
+``||scene:camera follow sprite [mySprite]||``  
+to **the end** of the  
+``||loops:on start||`` container.
 
 ```blocks
 scene.setBackgroundColor(13)
@@ -119,22 +138,22 @@ scene.cameraFollowSprite(mySprite)
 
 ## 8. Look Again
 
-**🕹️ Try your maze in the game window 🕹️ **
+**🕹️ Try your maze in the game window**  
 
 ---
 
-You should be able to see your sprite as you move it around backstage.  Can you make it to the door?
+You should be able to see your sprite as you move it around backstage.  Can you make it to the exit?
 
 
 
 
 ## Finale
 
-🔥 **Well done!** 🔥   
+🔥 **Well done!** 🔥  
 
 ---
 
-Take a look at all of the things to see in the maze, then click **Finish** to head to the next level of the 
+Take a look at all of the things hidden throughout the maze, then click **Done** to head to the next level of the
 skillmap where we'll show you how to add points for each instrument Jerry collects!
 
 

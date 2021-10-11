@@ -46,7 +46,7 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 
 ![Releasing projectiles](/static/skillmap/space/projectiles.gif "Here, enemy ship. Would you like to borrow an asteroid?")
 
-Are you ready to customize your ship? 
+Are you ready to customize your ship?
 
 In this tutorial, you'll learn to fire a [__*projectile*__](#projected "a sprite that moves on its own, often in large quantities")  when the **Ⓐ** button
 is pressed and also how to add special effects.
@@ -54,16 +54,16 @@ is pressed and also how to add special effects.
 
 ## Customize sprites
 
-The workspace is pre-loaded with code for a flying ship.  
-Be sure to 
+The workspace is pre-loaded with code for a flying ship.
+Be sure to
 **play with it on the game screen** to see if it works like you expect.
 
 ---
 
-►  Check your player [__*sprite*__](#sprote "2-D image that moves on the screen") 
-to make sure you're happy with it. 
+►  Check your player [__*sprite*__](#sprote "2-D image that moves on the screen")
+to make sure you're happy with it.
 
-►  If you want to make changes, click the sprite image to design a new 
+►  If you want to make changes, click the sprite image to design a new
 kind of vehicle OR turn it into an alien creature using the sprite editor! 👽
 
 
@@ -78,17 +78,17 @@ Let's launch projectiles when the **Ⓐ** button is pressed!
 
 ► Drag an ``||controller:on [A] button pressed ||`` container into the workspace.
 
-► Snap a   
-``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||`` 
+► Snap a
+``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``
 block inside of the new container.
 
-► Click the grey box inside of the new projectile block to draw your 
+► Click the grey box inside of the new projectile block to draw your
 flying object (or select one from the **My Assets** tab.)
 
 ---
 
 
-**Tip:** Run your code on the game screen and launch a few projectiles 
+**Tip:** Run your code on the game screen and launch a few projectiles
 by pressing the **Ⓐ** button.  What happens?
 
 
@@ -110,16 +110,16 @@ let projectile = sprites.createProjectileFromSprite(img`
 
 ## Retrospect @showdialog
 
-You probably noticed that your projectiles are firing toward the bottom 
-right corner. This is *not helpful* when your enemies are coming from above! Let's take 
+You probably noticed that your projectiles are firing toward the bottom
+right corner. This is *not helpful* when your enemies are coming from above! Let's take
 a second to figure out what's happening.
 
 ---
 
-The ``||variables:set projectile to||`` block comes preloaded with 
-an [__*argument*__](#argue "extra chunk of information that the block needs") 
-that sets both the [__*vx*__](#whatVX "horizontal velocity") 
-and [__*vy*__](#whatVY "vertical velocity") 
+The ``||variables:set projectile to||`` block comes preloaded with
+an [__*argument*__](#argue "extra chunk of information that the block needs")
+that sets both the [__*vx*__](#whatVX "horizontal velocity")
+and [__*vy*__](#whatVY "vertical velocity")
 values to 50.
 
 ```block
@@ -129,12 +129,12 @@ let projectile = sprites.createProjectileFromSprite(img`.`, mySprite, 50, 50)
 
 ## Learn Velocity @showdialog
 
-To change the direction of the projectiles, you need to change the  
-speed they travel in a certain direction.  
+To change the direction of the projectiles, you need to change the
+speed they travel in a certain direction.
 In MakeCode Arcade, we call that the [__*velocity*__](#veloc "speed in a given direction").
 
-- Change whether they fly left or right by changing the [__*vx*__](#whatX "speed from left to right")  
-- Change whether they fly up or down by changing the [__*vy*__](#whatX "speed from top to bottom")  
+- Change whether they fly left or right by changing the [__*vx*__](#whatX "speed from left to right")
+- Change whether they fly up or down by changing the [__*vy*__](#whatX "speed from top to bottom")
 - What happens when you change both?
 
 ![Directional Projectiles](/static/skillmap/space/vxvy.gif "Round and Round")
@@ -167,14 +167,14 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ---
 
-► Find 
-``||sprites:[mySprite] start [spray] effect||`` and snap it in at 
-the bottom of the ``||controller:on [A] button pressed ||`` container.  
+► Find
+``||sprites:[mySprite] start [spray] effect||`` and snap it in at
+the bottom of the ``||controller:on [A] button pressed ||`` container.
 
 ► Change variable ``||variables:mySprite||`` to ``||variables:projectile||`` if you
-want the effects on your projectiles instead of on your ship.  
+want the effects on your projectiles instead of on your ship.
 
-► Try different options from the ``||sprites:[spray]||`` dropdown menu and choose the one you like best!  
+► Try different options from the ``||sprites:[spray]||`` dropdown menu and choose the one you like best!
 
 ---
 
@@ -204,12 +204,12 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ---
 
 
-## Complete 
+## Complete
 
 🎆 **Congratulations** 🎆
 
 You can now use the direction buttons to move your space plane and
 the **Ⓐ** button to lauch projectiles!
 
-Play your game in the game screen, then click **Finish** to return to the main page where you can share your game
+Play your game in the game screen, then click **Done** to return to the main page where you can share your game
 with family and friends!
