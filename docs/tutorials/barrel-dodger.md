@@ -188,7 +188,7 @@ tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 5))
 ## {Step 4}
 
 Let's give the sprite the ability to jump when we press a button. We do this by moving
-the player upward in an ``||controller:on A button pressed||`` event. Inside the event, make the sprite move up with a ``||sprites:set mySprite vy||``. Use `-200` for the `vy` value.
+the player upward in an ``||controller:on A button pressed||`` event. Inside the event, make the sprite move up with a ``||sprites:vy (velocity y)||``. Use `-200` for the `vy` value.
 
 ```blocks
 let mySprite: Sprite = null
@@ -265,7 +265,7 @@ mySprite.ay = 500
 
 ## {Step 6}
 
-We need to make sure that the sprite is on the ground before jumping, so drag an ``||logic:if then||`` conditional into the ``||controller:on A button pressed||``. Replace `true` with ``||scene:is mySprite hitting wall||`` and change ``left`` side ``bottom``. Finally, put in a ``||sprites:set mySprite x||`` and choose ``||sprites:vy (velocity y)||`` from the dropdown. Set the value to `-200`.
+We need to make sure that the sprite is on the ground before jumping, so drag an ``||logic:if then||`` conditional into the ``||controller:on A button pressed||``. Replace `true` with ``||scene:is mySprite hitting wall||`` and change the ``left`` side to ``bottom``. Now, drag the ``||sprites:vy (velocity y)||`` that was added earlier inside the ``||logic:if then||`` conditional.
 
 ```blocks
 let mySprite: Sprite = null
