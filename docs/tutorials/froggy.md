@@ -11,7 +11,7 @@ Let's get to it!
 
 ## {step 2}
 
-**🐸 Before you add a frog, it's going to need a place to sit 🐸**
+**🐸 Before you add a frog, it's going to need a place to sit**
 
 ---
 
@@ -55,7 +55,7 @@ mySprite = sprites.create(assets.image`Hero`, SpriteKind.Player)
 
 ## {Step 4}
 
-**👀 Look at your game in the simulator 👀**
+**👀 Look at your game in the simulator**
 
 ---
 
@@ -75,8 +75,8 @@ mySprite.setPosition(85, 80)
 
 ## {Step 5}
 
-**😋 It's snack time 😋**
-The frog needs something to eat.
+**😋 It's snack time**  
+The frog needs something to eat. 
 
 ---
 
@@ -103,7 +103,7 @@ mySprite2 = sprites.create(assets.image`Bouncer`, SpriteKind.Food)
 
 ## {Step 6}
 
-**😴 There's no challenge if the fly just sits there 😴**
+**😴 There's no challenge if the fly just sits there**
 
 ---
 
@@ -130,15 +130,15 @@ mySprite2.setVelocity(200, 100)
 
 ## {Step 7}
 
-**👀 Try your game in the simulator 👀**
+**👀 Try your game in the simulator**
 
-Does it do what you expected?
+Does it do what you expected? Well, the fly may have disappeared too fast for you to see!
 
 
 
 ## {Step 8}
 
-**🕐 That didn't last long 🕐**
+**🕐 That didn't last long**
 
 To give the frog a fighting chance, we'll want to keep the fly on screen.
 
@@ -235,7 +235,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## {Step 12}
 
-**👀 Try your game in the simulator 👀**
+**👀 Try your game in the simulator**
 
 How is it shaping up?
 
@@ -243,7 +243,7 @@ How is it shaping up?
 
 ## {Step 11}
 
-**⌚ Don't be late ⌚**
+**⌚ Don't be late**
 
 Add a sense of urgency by including a countdown timer.
 
@@ -257,13 +257,12 @@ Now you have exactly 10 seconds to catch the fly before the game ends!
 
 ## {Step 11}
 
-**🎉 Congratulations 🎉**
+**🎉 Congratulations**
 
 Now you have a game that tests your timing and is enforced by a timer!
 
-Click **Done** if you're ready to publish your game and share with friends, or
-look at the challenges below for suggestions on modding your game before entering it into
-the **MakeCode Arcade Game Jam!**
+Click **Done** if you're ready to publish your game and share with friends, or 
+look at the challenges below for suggestions on modding your game.
 
 ---
 
