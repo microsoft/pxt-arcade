@@ -1040,13 +1040,13 @@ a.btn:active {
 }
 
 a.btn.secondary {
-    color: white;
-    background-color: #382544;
+    color: black;
+    background-color: #3DC1AA;
 }
 
 a.btn.secondary:hover {
-    color: white;
-    background-color: #2d1c38;
+    color: black;
+    background-color: #37a391fb;
 }
 
 a.btn.secondary:active {
