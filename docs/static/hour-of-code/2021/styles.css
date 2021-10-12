@@ -21,6 +21,10 @@ html {
     font-size: 10px !important;
 }
 
+#root {
+    display: block;
+}
+
 body,
 a,
 button,
