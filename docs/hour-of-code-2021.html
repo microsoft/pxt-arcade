@@ -225,7 +225,7 @@
                     class="activity-btn"
                     target="_blank"
                     rel="noreferrer"
-                    href="https://arcade.makecode.com/--skillmap#docs:/skillmap/forest"
+                    onClick="onActivityLaunchClick()"
                 >
                     <!--TODO: Make sure link above is correct-->
                     <div class="title background-papaya">
@@ -268,7 +268,7 @@
                         class="btn"
                         target="_blank"
                         rel="noreferrer"
-                        href="https://arcade.makecode.com/--skillmap#docs:/skillmap/forest"
+                        onClick="onActivityLaunchClick()"
                     >
                         <!--TODO: Make sure link above is correct-->
                         <h5 class="display-font">Launch Activity</h5></a
@@ -418,6 +418,11 @@
                             intervalFunction,
                             intervalSpeed
                         );
+                    }
+
+                    function onActivityLaunchClick() {
+                        const url = `https://arcade.makecode.com/--skillmap${window.location.search}#docs:/skillmap/forest`
+                        window.open(url, '_blank')
                     }
 
                     function changeCarousel(ind) {
