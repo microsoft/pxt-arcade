@@ -241,7 +241,7 @@ How is it shaping up?
 
 
 
-## {Step 11}
+## {Step 13}
 
 **⌚ Don't be late**
 
@@ -255,7 +255,7 @@ the end of the ``||loops:on start||`` container.
 Now you have exactly 10 seconds to catch the fly before the game ends!
 
 
-## {Step 11}
+## {Step 14}
 
 **🎉 Congratulations**
 
