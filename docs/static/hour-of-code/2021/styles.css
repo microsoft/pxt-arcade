@@ -843,7 +843,6 @@ section.hoc-section-04 {
     margin: 2rem auto;
     padding: 4rem 0;
     display: flex;
-    align-items: center;
 }
 
 section.hoc-section-04 .title {
@@ -856,6 +855,15 @@ section.hoc-section-04 a.btn {
     float: right;
     margin-left: 2rem;
     margin-top: 1rem;
+}
+
+section.hoc-section-04 ul {
+    margin: 0;
+}
+
+section.hoc-section-04 .hoc-teams-share {
+    background-color:rgba(0,0,0,0.1);
+    padding: 2rem;
 }
 
 @media (max-width: 768px) {
