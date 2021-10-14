@@ -49,8 +49,7 @@ li li {
 }
 
 .display-font {
-    font-family: 'Segoe UI', 'Roboto', sans-serif;
-    /* TODO: replace roboto with Rowdies once font is approved font-family: 'Rowdies', sans-serif; */
+    font-family: 'Rowdies', 'Segoe UI', sans-serif;
     font-weight: 700;
 }
 
