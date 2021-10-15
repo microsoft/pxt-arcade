@@ -114,32 +114,6 @@
         <script>
             // TODO: update tracking for 2021
             function handleOnLoad() {
-                document
-                    .querySelector('#openhome')
-                    .addEventListener('click', function () {
-                        window.pxtTickEvent('hourofcode2020.home', {
-                            src: 'main'
-                        });
-                    });
-
-                document
-                    .querySelector('#playbutton')
-                    .addEventListener('click', function () {
-                        window.pxtTickEvent('hourofcode2020.play');
-                    });
-
-                document
-                    .querySelector('#designbutton')
-                    .addEventListener('click', function () {
-                        window.pxtTickEvent('hourofcode2020.design');
-                    });
-
-                document
-                    .querySelector('#codebutton')
-                    .addEventListener('click', function () {
-                        window.pxtTickEvent('hourofcode2020.code');
-                    });
-
                 var langPicker = document.querySelector('#langpicker');
                 if (langPicker) {
                     langPicker.remove();
