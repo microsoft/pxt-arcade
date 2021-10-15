@@ -30,6 +30,10 @@ li {
     font-family: 'Roboto', sans-serif;
 }
 
+.lg-p {
+    font-size: 2.2rem;
+}
+
 li {
     padding: 1rem 0;
 }
@@ -45,8 +49,7 @@ li li {
 }
 
 .display-font {
-    font-family: 'Segoe UI', 'Roboto', sans-serif;
-    /* TODO: replace roboto with Rowdies once font is approved font-family: 'Rowdies', sans-serif; */
+    font-family: 'Rowdies', 'Segoe UI', sans-serif;
     font-weight: 700;
 }
 
@@ -390,7 +393,9 @@ section.hoc-section-01 a.btn {
 section.hoc-aside-01 {
     display: flex;
     align-items: center;
-    margin-bottom: 2rem;
+    margin: 0 auto;
+    margin-bottom: 0;
+    max-width: 160rem;
 }
 
 section.hoc-aside-01.background-sunflower {
@@ -624,6 +629,7 @@ section.hoc-section-02 .carousel .list .list-item.active:hover {
 section.hoc-aside-02 {
     padding: 4rem 0;
     text-align: center;
+    padding-bottom: 2rem;
 }
 
 section.hoc-aside-02 p {
@@ -636,22 +642,22 @@ section.hoc-aside-02 p {
 section.hoc-aside-02 a {
     display: inline-flex;
     align-items: center;
-    background-color: #de594b;
+    background-color: #eeca49;
     transition: 0.25s;
     font-size: 2.4rem;
-    width: 6rem;
-    height: 6rem;
+    width: 7rem;
+    height: 7rem;
     border-radius: 50%;
-    color: white;
+    color: black;
     text-decoration: none;
     margin: 1rem;
     cursor: pointer;
 }
 
 section.hoc-aside-02 a:hover {
-    background-color: #cc493a;
+    background-color: #d3b034;
     transform: scale(1.1);
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
@@ -662,8 +668,20 @@ section.hoc-aside-02 a:active {
     text-decoration: none;
 }
 
-section.hoc-aside-02 a i {
+section.hoc-aside-02 a i,
+section.hoc-aside-02 a svg {
     margin: 0 auto;
+    line-height: 1;
+    font-size: 2.8rem;
+}
+
+section.hoc-aside-02 a svg {
+    max-height: 2.8rem;
+    width: auto;
+}
+
+section.hoc-aside-02 a:active svg path {
+    fill: white;
 }
 
 section.hoc-aside-02 .aside-text {
@@ -1041,12 +1059,12 @@ a.btn:active {
 
 a.btn.secondary {
     color: black;
-    background-color: #3DC1AA;
+    background-color: #3dc1aa;
 }
 
 a.btn.secondary:hover {
     color: black;
-    background-color: #37a391fb;
+    background-color: #2ead98;
 }
 
 a.btn.secondary:active {
