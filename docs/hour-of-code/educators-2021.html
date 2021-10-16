@@ -114,14 +114,6 @@
 
         <script>
             function handleOnLoad() {
-                document
-                    .querySelector('#openhome')
-                    .addEventListener('click', function () {
-                        window.pxtTickEvent('hourofcode2020.home', {
-                            src: 'educators'
-                        });
-                    });
-
                 var langPicker = document.querySelector('#langpicker');
                 if (langPicker) {
                     langPicker.remove();
@@ -139,6 +131,7 @@
             >
                 <div class="header-bar-left">
                     <a href="https://www.microsoft.com/en-us/makecode"
+                        onClick="window.pxtTickEvent('hourofcode2021.header.logo')"
                         ><div class="header-org-logo" role="menuitem">
                             <img
                                 src="/static/logo/Microsoft_logo_rgb_W-white_D.png"
@@ -163,6 +156,7 @@
                         aria-label="Return home"
                         tabindex="0"
                         href="https://arcade.makecode.com/"
+                        onClick="window.pxtTickEvent('hourofcode2021.header.home')"
                     >
                         <i
                             class="icon home"
@@ -208,6 +202,7 @@
                         href="http://aka.ms/makecode"
                         rel="noreferrer"
                         target="_blank"
+                        onClick="window.pxtTickEvent('hourofcode2021.educator.learnmore')"
                         >http://aka.ms/makecode</a
                     >.
                 </p>
@@ -232,6 +227,7 @@
                             href="https://arcade.makecode.com/hardware"
                             rel="noreferrer"
                             target="_blank"
+                            onClick="window.pxtTickEvent('hourofcode2021.educator.hardware')"
                             >https://arcade.makecode.com/hardware</a
                         >.
                     </p>
@@ -420,6 +416,7 @@
                             href="https://www.instagram.com/msmakecode"
                             target="_blank"
                             rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.instagram')"
                         >
                             <i class="icon instagram"></i>
                         </a>
@@ -427,6 +424,7 @@
                             href="https://www.youtube.com/microsoftmakecode"
                             target="_blank"
                             rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.youtube')"
                         >
                             <i class="icon youtube"></i>
                         </a>
@@ -434,6 +432,7 @@
                             href="https://twitter.com/msmakecode"
                             target="_blank"
                             rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.twitter')"
                         >
                             <i class="icon twitter"></i>
                         </a>
@@ -441,6 +440,7 @@
                             href="https://www.twitch.tv/msmakecode"
                             target="_blank"
                             rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.twitch')"
                         >
                             <i class="icon twitch"></i>
                         </a>
@@ -448,6 +448,7 @@
                             href="https://www.tiktok.com/@msmakecode"
                             target="_blank"
                             rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.tiktok')"
                         >
                             <svg
                                 aria-hidden="true"
@@ -480,18 +481,21 @@
                         href="https://www.microsoft.com/en-us/makecode/about"
                         target="_blank"
                         rel="noreferrer"
+                        onClick="window.pxtTickEvent('hourofcode2021.footer.about')"
                         >Microsoft MakeCode</a
                     >
                     <a
                         href="https://www.microsoft.com/en-us/legal/terms-of-use"
                         target="_blank"
                         rel="noreferrer"
+                        onClick="window.pxtTickEvent('hourofcode2021.footer.terms')"
                         >Terms of Use</a
                     >
                     <a
                         href="https://privacy.microsoft.com/en-us/privacystatement"
                         target="_blank"
                         rel="noreferrer"
+                        onClick="window.pxtTickEvent('hourofcode2021.footer.privacy')"
                         >Privacy</a
                     >
                 </div>

@@ -1,0 +1,21 @@
+body {
+    background: #453052;
+}
+
+/**** ACTION BUTTONS ****/
+
+.button {
+    color: #fff;
+    background-color: #3dc1aa;
+}
+
+.button:hover {
+    color: #fff;
+    background-color: #2ead98;
+}
+
+/**** FOOTER ****/
+
+.footer .ui.link.list .item {
+    color: #fff;
+}
