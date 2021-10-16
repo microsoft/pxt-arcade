@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <title>MakeCode Arcade Game Jam</title>
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:url" content="https://arcade.makecode.com/gamejam">
+        <meta name="twitter:title" content="MakeCode Arcade Game Jam">
+        <meta name="twitter:site" content="@MsMakeCode">
+        <meta name="twitter:creator" content="@MsMakeCode">
+        <meta name="twitter:description" content="A MakeCode Arcade game jam!">
+        <meta name="twitter:image" content="/static/gamejam/jams/global-2021/assets/preview.png">
+        <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+        <link rel="stylesheet" href="https://pxt.azureedge.net/blob/2163189fd5e35c0981ed55318415582a7c9aeb12/doccdn/semantic.css" type="text/css">
+        <link rel="stylesheet" href="/static/gamejam/lib/gamejam.css">
+        <link rel="stylesheet" href="/static/gamejam/jams/global-2021/style.css">
+        <script type="text/javascript">
+            window.pxtSkipAnalyticsCookie = true;
+        </script>
+    </head>
+    <body>
+        <div class="hero">
+            <div class="banner"><img class="top" src="/static/gamejam/jams/global-2021/assets/banner.png" /></div>
+        </div>
+        <div class="checker"></div>
+        <div class="content">
+            <h1>MakeCode Arcade Game Jam</h1>
+            <div class="segment">
+                <p>
+                    Welcome to the 6th Official Microsoft MakeCode Game Jam! This is a fun
+                    competition where you can pit your game development skills against
+                    others to build a game using <a href="https://arcade.makecode.com">MakeCode Arcade</a>,
+                    a game engine for retro pixel-art games that run in the browser
+                    or on handheld game devices. Check back in a few weeks for the theme
+                    announcement!
+                </p>
+                <div id="timer"></div>
+            </div>
+            <div class="segment">
+                <div id="rules"></div>
+            </div>
+            <div class="segment submit">
+                <h2>Submit</h2>
+                <p>You can submit your game through Microsoft Forms</p>
+                <div class="actions">
+                    <a class="button" href="URL HERE" target="_blank" rel="noopener noreferrer">Submit Your Game</a>
+                </div>
+            </div>
+            <div class="segment gallery">
+                <h2>Gallery</h2>
+                <p class="description">Check out the submitted games!</p>
+                <div id="gallery"></div>
+            </div>
+        </div>
+
+        <!-- @include tracking.html -->
+        <!-- @include tickevent.html -->
+        <!-- @include thin-footer.html -->
+
+        <script type="text/javascript"
+            src="https://pxt.azureedge.net/blob/555c1dc1d9da18154cb48388d5e494f3f16119f8/marked/marked.min.js"></script>
+        <script type="text/javascript"
+            src="https://pxt.azureedge.net/blob/3c168a772b9e4cbf3ecb648148cfb2f966e8a578/pxtembed.js"></script>
+        <script src="/static/gamejam/lib/gamejam.js"></script>
+        <script>
+            getInfo("/static/gamejam/jams/global-2021/info.json");
+        </script>
+    </body>
+</html>
