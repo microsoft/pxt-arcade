@@ -36,7 +36,7 @@ container into an empty area in your workspace.
 
 - :mouse pointer: Change ``||controller:pressed||`` to ``||controller:repeat||`` to keep the water spraying as you hold the (A) button.  
 
-_💡 Find it too hard to keep (A) pressed?  Try using the spacebar on your keyboard!_
+_💡 Find it too hard to keep (A) pressed as you play?  Try using the spacebar on your keyboard!_
 
 
 ```blocks
@@ -115,7 +115,7 @@ we can weaken the fires each time they are hit by water.
 
 ---
 
-- :scene:  Drag an  
+- :tree:  Drag an  
 ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``   
 container into an empty area of the workspace.
 
@@ -183,7 +183,7 @@ When a water sprite hits the fire tile, the fire needs to decrease in strength b
 
 - :paper plane:  Snap  
 ``||sprites:change strength of fire at [location] by [-1]||``  
-into the **on overlaps** container.
+into the same **on overlaps** container.
 
 
 
@@ -210,9 +210,9 @@ Right now, when the fire's strength reaches 0, nothing happens. Let's change tha
 
 ---
 
-- :paper plane:  Drag    
+- :paper plane:  Drag an    
 ``||sprites:on fire destroyed at [location]||``   
-into an empty area of the workspace.
+container into an empty area of the workspace.
 
 - :tree: To clear the sparks from an extinguished fire, add  
 ``||scene:clear all effects at [location]||``   

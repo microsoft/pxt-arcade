@@ -38,7 +38,7 @@ container.
 
 - :paper plane:  Add  
 ``||sprites:create spreading fire on random [ ] with image [ ]||``
-to the empty  
+into the empty  
 ``||loops:repeat [4] times||``
 container.
 
