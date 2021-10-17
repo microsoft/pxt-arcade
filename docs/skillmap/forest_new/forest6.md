@@ -69,7 +69,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## 5. To the Right
 
-Follow the same steps to animate your plane when the **right** button is pressed.
+Follow the same steps, but animate your plane when the **right** button is pressed.
 
 
 ```blocks
@@ -102,7 +102,7 @@ Your plane should face left when you fly left and right when you fly right!
 
 ---
 
-- :headphones: Find the block that will let you add sound when a sprite of kind ``||sprites:Fire||`` is **destroyed**.  
+- :headphones: Find the block that will let you play a sound when a sprite of kind ``||sprites:Fire||`` is **destroyed**.  
 💡 We like the **thump** sound for this.
 
 - :question: Can you figure out where to add this block if you want it to play each time a sprite of kind **Fire** is **destroyed**?
@@ -129,7 +129,7 @@ It's also helpful to have a sound that lets you know when a new fire has started
 
 ---
 
-- :headphones: Find a sound to add when a sprite 
+- :headphones: Find a sound to play when a sprite 
 of kind ``||sprites:Fire||`` is **created**.  
 💡 We like the **knock** sound for this.
 
@@ -168,7 +168,7 @@ variables to see how challenging your game can be.
 
 ---
 
-Here's your final game!  When you're finished playing, you can click "Done"
+You have made a complete game!  When you're finished playing, you can click "Done"
 and head back out to the skillmap to share with friends and save your game in your gallery.
 
 
