@@ -1,0 +1,195 @@
+/* Global --------------------------------------------------------------------------- */
+
+html {
+    font-size: 10px !important;
+}
+
+body,
+a,
+button,
+p,
+li {
+    font-size: 1.8rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.body-font {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.display-font {
+    font-family: 'Rowdies', 'Segoe UI', sans-serif;
+    font-weight: 700;
+}
+
+/* Dynamic scaling */
+@media (min-width: 4000px) {
+    html {
+        font-size: 16px !important;
+    }
+}
+
+@media (min-width: 3000px) {
+    html {
+        font-size: 14px !important;
+    }
+}
+
+@media (min-width: 2000px) {
+    html {
+        font-size: 12px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 8px !important;
+    }
+}
+
+
+h1 {
+    font-size: 7.2rem;
+    text-transform: uppercase;
+}
+h2 {
+    font-size: 5.4rem;
+    text-transform: uppercase;
+}
+h3 {
+    font-size: 3.6rem;
+    text-transform: uppercase;
+}
+h4 {
+    font-size: 2.4rem;
+}
+h5 {
+    font-size: 2rem;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Rowdies', 'Segoe UI', sans-serif;
+    font-weight: 700;
+}
+
+.background-white {
+    color: black;
+    background-color: white;
+}
+.background-black {
+    color: white;
+    background-color: black;
+}
+.background-marina {
+    color: black;
+    background-color: #3dc1aa;
+}
+.background-sunflower {
+    color: black;
+    background-color: #eeca49;
+}
+.background-papaya {
+    color: white;
+    background-color: #de594b;
+}
+.background-eggplant {
+    color: white;
+    background-color: #453052;
+}
+
+.background-eggplant a {
+    color: #3dc1aa;
+}
+
+.background-eggplant a:hover {
+    color: #2ead98;
+}
+
+.background-marina a,
+.background-sunflower a {
+    color: #453052;
+}
+
+.background-marina a:hover,
+.background-sunflower a:hover {
+    color: #33203f;
+}
+
+.marina {
+    color: #3dc1aa;
+}
+.sunflower {
+    color: #eeca49;
+}
+.papaya {
+    color: #de594b;
+}
+.eggplant {
+    color: #453052;
+}
+
+/* Standard Button --------------------------------------------------------------------------- */
+
+a.btn {
+    min-width: 30rem;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    background-color: #eeca49;
+    color: black;
+    transition: 0.25s;
+    user-select: none;
+    text-transform: uppercase;
+}
+
+a.btn:hover {
+    color: black;
+    text-decoration: none;
+    transform: scale(1.05);
+    background-color: #d3b034;
+}
+
+a.btn > * {
+    margin: 0;
+    padding: 0;
+}
+
+/* Footer ------------------------------------------------------------------------------------ */
+
+footer.hoc-footer {
+    padding: 4rem 0;
+}
+
+footer.hoc-footer .text-content {
+    text-align: center;
+}
+
+footer.hoc-footer .text-content a {
+    color: white;
+    opacity: 0.5;
+    padding: 0 2rem;
+    border-right: 0.1rem solid white;
+}
+
+footer.hoc-footer .text-content a:last-child {
+    border: none;
+}
+
+footer.hoc-footer .text-content a:hover {
+    color: white;
+}
+
+footer.hoc-footer .msft {
+    margin: 0 auto;
+    width: 15rem;
+    margin-bottom: 2rem;
+}
+
+footer.hoc-footer .msft img {
+    width: 100%;
+    height: auto;
+    opacity: 0.5;
+}
