@@ -131,28 +131,28 @@ h1, h2, h3, h4, h5 {
 
 /* Standard Button --------------------------------------------------------------------------- */
 
-a.btn {
+a.button {
     min-width: 30rem;
     text-align: center;
     display: inline-block;
     cursor: pointer;
     padding: 2rem;
     border-radius: 0.5rem;
-    background-color: #eeca49;
+    background-color: #3dc1aa;
     color: black;
     transition: 0.25s;
     user-select: none;
     text-transform: uppercase;
 }
 
-a.btn:hover {
+a.button:hover {
     color: black;
     text-decoration: none;
     transform: scale(1.05);
-    background-color: #d3b034;
+    background-color: #2ead98;
 }
 
-a.btn > * {
+a.button > * {
     margin: 0;
     padding: 0;
 }
