@@ -104,7 +104,6 @@
         /> -->
 
         <link rel="stylesheet" href="/static/hour-of-code/2021/styles.css" />
-        <link rel="stylesheet" href="style.css" />
 
         <script
             src="https://kit.fontawesome.com/44ed5c071b.js"
@@ -128,6 +127,10 @@
                 if (langPicker) {
                     langPicker.remove();
                 }
+            }
+
+            function onTeamsShareClicked() {
+                document.getElementById("teams-share").click();
             }
         </script>
     </head>
@@ -252,7 +255,7 @@
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                         do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. 
+                        aliqua.
                         <br />
                         <br />
                         Hour of Code certificates for your class can be found here
@@ -269,31 +272,25 @@
 
                     </p>
 
-<<<<<<< HEAD
-                    <div
-                        class="teams-share-button"
-                        data-href="https://arcade.makecode.com/hour-of-code-2021"
-                        data-icon-px-size="32"
-                        data-msg-text="Come and check this out!"
-                        data-assign-title="Hour of code 2021 Assignment "
-                        data-assign-instr="Click the 'Share my game' button when you are finished and copy the link it creates into this assignment. Have fun!"
-                        style="height:32px; width:32px;"
-                    >
-=======
                     <div class="hoc-teams-share">
                         <p>
-                        You can easily share the MakeCode Hour of Code activity with your students on Teams by clicking the button below!
+                        Share this activity to your classroom:
                         </p>
-                        <div
-                            class="teams-share-button"
-                            data-href="https://arcade.makecode.com/hour-of-code-2021"
-                            data-icon-px-size="64"
-                            data-msg-text="Please complete the MakeCode Hour of Code activity here: "
-                            data-assign-title="MakeCode Hour of Code 2021"
-                            data-assign-instr="Click the 'Share my game' button when you are finished and copy the link it creates into this assignment. Have fun!"
-                        >
+                        <div class="share-btn" onclick="onTeamsShareClicked()">
+                            <div
+                                id="teams-share"
+                                class="teams-share-button"
+                                data-href="https://arcade.makecode.com/hour-of-code-2021"
+                                data-icon-px-size="48"
+                                data-msg-text="Please complete the MakeCode Hour of Code activity here: "
+                                data-assign-title="MakeCode Hour of Code 2021"
+                                data-assign-instr="Click the 'Share my game' button when you are finished and copy the link it creates into this assignment. Have fun!"
+                            >
+                            </div>
+                            <div class="text">
+                                Assign in Teams
+                            </div>
                         </div>
->>>>>>> 0523363b95fd1ccb452c478ed2f86f49f415aa97
                     </div>
                 </div>
             </section>

@@ -943,6 +943,27 @@ a.educator-btn:active {
     transform: scale(0.95);
 }
 
+
+.share-btn {
+    display: flex;
+    cursor: pointer;
+    padding: 1rem;
+    color: black;
+    transition: 0.25s;
+    user-select: none;
+}
+
+.share-btn .teams-share-button {
+    background-color: white;
+    border-radius: .5rem 0 0 .5rem;
+    padding: 0 .5rem;
+}
+.share-btn .text {
+    font-family: 'Rowdies', sans-serif;
+    background-color: #eeca49;
+    border-radius: 0 .5rem .5rem 0;
+}
+
 /* Activity Button --------------------------------------------------------------------------- */
 
 a.activity-btn {
