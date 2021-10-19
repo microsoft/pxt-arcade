@@ -2,6 +2,66 @@ body {
     background: #453052;
 }
 
+/**** GAMEJAM PAGE OVERRIDES ****/
+
+.content {
+    background-color: unset;
+    color: #fff;
+    max-width: unset;
+    padding: 0;
+}
+
+.segment {
+    margin: 0;
+    padding: calc(2rem - .14285714em) 0;
+}
+
+#timer > .label > * {
+    padding: 0;
+}
+
+.counter > .number {
+    font-size: 3rem;
+}
+
+/**** MARKED OVERRIDES ****/
+
+h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: calc(2rem - .14285714em) 0 1rem;
+}
+
+h3 {
+    padding-top: 4rem;
+}
+
+p {
+    margin: 0;
+    padding: 0 0 1em;
+}
+
+a {
+    color: #fff;
+}
+
+a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#rules > ol,
+#rules > ul {
+    margin: 0;
+    padding-block-start: 0;
+    padding-block-end: 1em;
+    padding-inline-start: max(calc(50% - 54rem + 40px), 4rem + 40px);
+}
+
+#rules > *,
+.intro, .submit, .gallery {
+    padding-left: max(calc(50% - 54rem), 4rem);
+    padding-right: max(calc(50% - 54rem), 4rem);
+}
+
 /**** ACTION BUTTONS ****/
 
 .button {
@@ -14,8 +74,26 @@ body {
     background-color: #2ead98;
 }
 
-/**** FOOTER ****/
+/**** SECTION COLORS ****/
 
-.footer .ui.link.list .item {
-    color: #fff;
+#tips-and-tricks,
+#tips-and-tricks + p,
+#tips-and-tricks + p + ol {
+    color: #000;
+    background-color: #eeca49;
+}
+
+#hosting-your-jam,
+#hosting-your-jam + p,
+#hosting-your-jam + p + ul {
+    color: #000;
+    background-color: #3dc1aa;
+}
+
+#rules + ol,
+#tips-and-tricks + p + ol,
+#for-educators + p,
+#hosting-your-jam + p + ul,
+.submit {
+    padding-bottoM: 4rem;
 }

@@ -14,19 +14,26 @@
         <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
         <link rel="stylesheet" href="https://pxt.azureedge.net/blob/2163189fd5e35c0981ed55318415582a7c9aeb12/doccdn/semantic.css" type="text/css">
         <link rel="stylesheet" href="/static/gamejam/lib/gamejam.css">
+        <link rel="stylesheet" href="/static/gamejam/lib/hoc2021.css">
         <link rel="stylesheet" href="/static/gamejam/jams/global-2021/style.css">
         <script type="text/javascript">
             window.pxtSkipAnalyticsCookie = true;
         </script>
+        <style>
+            @font-face {
+                font-family: 'Rowdies';
+                src: url('/static/hour-of-code/2021/Rowdies/Rowdies-Bold.ttf')
+                    format('truetype');
+            }
+        </style>
     </head>
     <body>
         <div class="hero">
             <div class="banner"><img class="top" src="/static/gamejam/jams/global-2021/assets/banner.png" /></div>
         </div>
-        <div class="checker"></div>
         <div class="content">
-            <h1>MakeCode Arcade Game Jam</h1>
-            <div class="segment">
+            <div class="segment intro background-marina">
+                <h2>MakeCode Arcade Game Jam</h2>
                 <p>
                     Welcome to the 6th Official Microsoft MakeCode Game Jam! This is a fun
                     competition where you can pit your game development skills against
@@ -41,22 +48,54 @@
                 <div id="rules"></div>
             </div>
             <div class="segment submit">
-                <h2>Submit</h2>
+                <h3>Submit</h3>
                 <p>You can submit your game through Microsoft Forms</p>
                 <div class="actions">
-                    <a class="button" href="URL HERE" target="_blank" rel="noopener noreferrer">Submit Your Game</a>
+                    <a class="btn display-font" href="URL HERE" target="_blank" rel="noopener noreferrer">
+                        <h5>Submit Your Game</h5>
+                    </a>
                 </div>
             </div>
-            <div class="segment gallery">
-                <h2>Gallery</h2>
+            <div class="segment gallery background-papaya">
+                <h3>Gallery</h3>
                 <p class="description">Check out the submitted games!</p>
                 <div id="gallery"></div>
             </div>
+            <footer class="hoc-footer background-papaya">
+                <div class="msft">
+                    <img
+                        src="/static/logo/Microsoft_logo_rgb_W-white_D.png"
+                        alt="Microsoft"
+                    />
+                </div>
+                <div class="text-content">
+                    <a
+                        href="https://www.microsoft.com/en-us/makecode/about"
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick="window.pxtTickEvent('hourofcode2021.footer.about')"
+                        >Microsoft MakeCode</a
+                    >
+                    <a
+                        href="https://www.microsoft.com/en-us/legal/terms-of-use"
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick="window.pxtTickEvent('hourofcode2021.footer.terms')"
+                        >Terms of Use</a
+                    >
+                    <a
+                        href="https://privacy.microsoft.com/en-us/privacystatement"
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick="window.pxtTickEvent('hourofcode2021.footer.privacy')"
+                        >Privacy</a
+                    >
+                </div>
+            </footer>
         </div>
 
         <!-- @include tracking.html -->
         <!-- @include tickevent.html -->
-        <!-- @include thin-footer.html -->
 
         <script type="text/javascript"
             src="https://pxt.azureedge.net/blob/555c1dc1d9da18154cb48388d5e494f3f16119f8/marked/marked.min.js"></script>
