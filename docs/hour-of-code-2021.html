@@ -8,8 +8,10 @@
     <head>
         <meta charset="UTF-8" />
         <title>Microsoft MakeCode Arcade Hour of Code™ 2021</title>
-        <meta name="Description" content="" />
-        <!-- TODO: Description Copy -->
+        <meta
+            name="Description"
+            content="Join us in celebrating this year's Computer Science Education Week by playing, designing and coding your very own retro arcade games!"
+        />
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0, user-scalable=yes"
@@ -47,8 +49,11 @@
             name="twitter:title"
             content="Microsoft MakeCode Arcade Hour of Code™ 2021"
         />
-        <meta name="twitter:description" content="" />
-        <!-- TODO: Description Copy -->
+        <meta
+            name="twitter:description"
+            content="Join us in celebrating this year's Computer Science Education Week by playing, designing and coding your very own retro arcade games!"
+        />
+
         <meta
             name="twitter:image"
             content="/static/hour-of-code/2021/hoc-card.png"
@@ -62,8 +67,11 @@
             property="og:site_name"
             content="Microsoft MakeCode Arcade Hour of Code™ 2021"
         />
-        <meta property="og:description" content="" />
-        <!-- TODO: Description Copy -->
+        <meta
+            property="og:description"
+            content="Join us in celebrating this year's Computer Science Education Week by playing, designing and coding your very own retro arcade games!"
+        />
+
         <meta
             property="og:image"
             content="/static/hour-of-code/2021/hoc-card.png"
@@ -83,56 +91,29 @@
             href="/static/hour-of-code/2021/favicon.png"
         />
 
+        <link
+            rel="stylesheet"
+            href="https://pxt.azureedge.net/blob/2163189fd5e35c0981ed55318415582a7c9aeb12/doccdn/semantic.css"
+            type="text/css"
+        />
         <!-- @include scripthead.html -->
         <!-- TODO: Font compliance for "Rowdies" Google Font (400 weight) -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-        <!-- TODO: Add Rowdies back in once the font is legally approved
-
-        <link
-            href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap"
-            rel="stylesheet"
-        /> -->
+        <style>
+            @font-face {
+                font-family: 'Rowdies';
+                src: url('/static/hour-of-code/2021/Rowdies/Rowdies-Bold.ttf')
+                    format('truetype');
+            }
+        </style>
 
         <link rel="stylesheet" href="/static/hour-of-code/2021/styles.css" />
 
-        <style></style>
-
-        <script
-            src="https://kit.fontawesome.com/44ed5c071b.js"
-            crossorigin="anonymous"
-        ></script>
-        <!-- TODO: Replace with existing method of using FontAwesome icons -->
         <script>
             // TODO: update tracking for 2021
             function handleOnLoad() {
-                document
-                    .querySelector('#openhome')
-                    .addEventListener('click', function () {
-                        window.pxtTickEvent('hourofcode2020.home', {
-                            src: 'main'
-                        });
-                    });
-
-                document
-                    .querySelector('#playbutton')
-                    .addEventListener('click', function () {
-                        window.pxtTickEvent('hourofcode2020.play');
-                    });
-
-                document
-                    .querySelector('#designbutton')
-                    .addEventListener('click', function () {
-                        window.pxtTickEvent('hourofcode2020.design');
-                    });
-
-                document
-                    .querySelector('#codebutton')
-                    .addEventListener('click', function () {
-                        window.pxtTickEvent('hourofcode2020.code');
-                    });
-
                 var langPicker = document.querySelector('#langpicker');
                 if (langPicker) {
                     langPicker.remove();
@@ -150,6 +131,7 @@
             >
                 <div class="header-bar-left">
                     <a href="https://www.microsoft.com/en-us/makecode"
+                        onClick="window.pxtTickEvent('hourofcode2021.header.logo')"
                         ><div class="header-org-logo" role="menuitem">
                             <img
                                 src="/static/logo/Microsoft_logo_rgb_W-white_D.png"
@@ -174,29 +156,13 @@
                         aria-label="Return home"
                         tabindex="0"
                         href="https://arcade.makecode.com/"
+                        onClick="window.pxtTickEvent('hourofcode2021.header.home')"
                     >
                         <i
                             class="icon home"
                             aria-hidden="true"
                             role="presentation"
                         ></i>
-                    </a>
-
-                    <a class="btn"
-                        ><span>Sign Up</span>
-                        <svg
-                            width="22"
-                            height="24"
-                            viewBox="0 0 409 446"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M200.097 400.642C203.047 400.642 205.983 400.578 208.903 400.452C203.227 386.635 200.097 371.504 200.097 355.642C200.097 345.995 201.255 336.617 203.439 327.642H113.276C100.203 327.642 89.597 316.976 89.597 303.83V283.192C89.597 246.382 119.294 216.517 155.897 216.517H164.135C175.136 221.577 187.271 224.455 200.097 224.455C212.923 224.455 225.108 221.577 236.059 216.517H244.297C264.497 216.517 282.593 225.612 294.756 239.95C302.301 238.436 310.106 237.642 318.097 237.642C345.335 237.642 370.418 246.871 390.389 262.373C396.691 242.931 400.097 222.184 400.097 200.642C400.097 90.1851 310.554 0.64209 200.097 0.64209C89.64 0.64209 0.0969238 90.1851 0.0969238 200.642C0.0969238 311.099 89.64 400.642 200.097 400.642ZM263.24 137.142C263.24 172.216 234.974 200.642 200.097 200.642C165.22 200.642 136.954 172.216 136.954 137.142C136.954 102.068 165.22 73.6421 200.097 73.6421C234.974 73.6421 263.24 102.068 263.24 137.142ZM228.097 355.642C228.097 305.924 268.379 265.642 318.097 265.642C367.815 265.642 408.097 305.924 408.097 355.642C408.097 405.36 367.815 445.642 318.097 445.642C268.379 445.642 228.097 405.36 228.097 355.642ZM366 370.158C368.395 370.158 370.355 368.199 370.355 365.803V345.481C370.355 343.086 368.395 341.126 366 341.126H332.613V307.739C332.613 305.344 330.653 303.384 328.258 303.384H307.936C305.54 303.384 303.581 305.344 303.581 307.739V341.126H270.194C267.799 341.126 265.839 343.086 265.839 345.481V365.803C265.839 368.199 267.799 370.158 270.194 370.158H303.581V403.545C303.581 405.94 305.54 407.9 307.936 407.9H328.258C330.653 407.9 332.613 405.94 332.613 403.545V370.158H366Z"
-                            />
-                        </svg>
                     </a>
                 </div>
             </nav>
@@ -225,7 +191,8 @@
                     class="activity-btn"
                     target="_blank"
                     rel="noreferrer"
-                    onClick="onActivityLaunchClick()"
+                    href="https://aka.ms/forestmap"
+                    onClick="window.pxtTickEvent('hourofcode2021.skillmap.open.code')"
                 >
                     <!--TODO: Make sure link above is correct-->
                     <div class="title background-papaya">
@@ -245,18 +212,14 @@
                     <h3 class="title display-font sunflower">
                         Save the Forest!
                     </h3>
-
                     <p>
                         Technology and Computer Science is everywhere in the
                         world around us. And it’s helping to solve some of the
                         toughest problems we’re facing in the world.
                     </p>
                     <p>
-                        For this year’s Hour of Code™, let’s look at how computers
-                        and technology can help combat forest fires.  Code a
-                        game with Microsoft MakeCode Arcade that recreates the
-                        conditions for a forest fire, and then code your
-                        fire-fighting airtanker plane to spray water and put out the flames!
+                        For this year’s Hour of Code™, let’s look at how
+                        computers and technology can help combat forest fires.
                     </p>
                     <p>
                         Code a game with Microsoft MakeCode Arcade that
@@ -268,7 +231,8 @@
                         class="btn"
                         target="_blank"
                         rel="noreferrer"
-                        onClick="onActivityLaunchClick()"
+                        href="https://aka.ms/forestmap"
+                        onClick="window.pxtTickEvent('hourofcode2021.skillmap.open.launch')"
                     >
                         <!--TODO: Make sure link above is correct-->
                         <h5 class="display-font">Launch Activity</h5></a
@@ -278,9 +242,10 @@
                         href="hour-of-code/educators-2021"
                         target="_blank"
                         rel="noreferrer"
+                        onClick="window.pxtTickEvent('hourofcode2021.skillmap.educator')"
                         ><h5 class="display-font">
                             Educator Guide
-                            <i class="fas fa-external-link-alt"></i></h5
+                            <i class="external alternate icon"></i></h5
                     ></a>
                 </div>
             </section>
@@ -289,19 +254,23 @@
                 <div class="aside-text">
                     <h3 class="title display-font">Join the Game Jam!</h3>
                     <p>
-                        Once you’ve completed your “Save the Forest!” Hour of
-                        Code™ game, take some time to personalize, mod it and
-                        make it your own. Then submit it into the Climate Change
-                        Game Jam in partnership with the US State Department.
-                        You’ll be competing to win…
+                        Go beyond the Hour of Code and use the skills you gained
+                        to either modify your existing game or create something
+                        brand new to submit to the Game Jam! MakeCode is proud
+                        to announce that we are partnering with the US State
+                        Department to bring you a Global MakeCode Arcade Game
+                        Jam!
                     </p>
-                    <a class="btn" href="" target="_blank" rel="noreferrer"
-                        ><h5 class="display-font">Enter the Game Jam</h5></a
+                    <a
+                        class="btn"
+                        href="https://aka.ms/ArcadeGJ"
+                        onClick="window.pxtTickEvent('hourofcode2021.gamejam')"
+                        target="_blank"
+                        rel="noreferrer"
+                        ><h5 class="display-font">Learn More</h5></a
                     >
                 </div>
-                <div
-                    class="hero background-sunflower"
-                ></div>
+                <div class="hero background-sunflower"></div>
             </section>
 
             <section class="hoc-section-02">
@@ -361,6 +330,7 @@
                             rel="noreferrer"
                             class="btn"
                             href=""
+                            onClick="window.pxtTickEvent('hourofcode2021.carousel.action', { item: slides[globalInd].id })"
                             ><h5 id="carousel-text" class="display-font"></h5
                         ></a>
                     </div>
@@ -368,27 +338,36 @@
                 <script type="application/javascript">
                     let slides = [
                         {
+                            id: 'hourofcode2020',
                             img: '/static/hour-of-code/2021/hoc-2020.png',
                             link: 'https://arcade.makecode.com/hour-of-code',
                             text: 'Hour of Code™ 2020'
                         },
                         {
+                            id: 'skillmap.beginner',
                             img: '/static/hour-of-code/2021/beginner-skillmap.png',
                             link: 'https://arcade.makecode.com/--skillmap#beginner',
                             text: 'Launch Skillmap'
                         },
                         {
+                            id: 'skillmap.rockstar',
                             img: '/static/hour-of-code/2021/rockstar-skillmap.png',
                             link: 'https://arcade.makecode.com/--skillmap#rockstar',
                             text: 'Launch Skillmap'
                         },
                         {
+                            id: 'skillmap.jungle',
                             img: '/static/hour-of-code/2021/jungle-skillmap.png',
                             link: 'https://arcade.makecode.com/--skillmap#jungle',
                             text: 'Launch Skillmap'
                         },
-                        { img: '', link: '', text: 'Hour of Code™ 2021' },
                         {
+                            id: 'minecraft',
+                            img: '',
+                            link: '',
+                            text: 'Hour of Code™ 2021' },
+                        {
+                            id: 'microbit',
                             img: '/static/hour-of-code/2021/microbit.png',
                             link: 'https://makecode.microbit.org',
                             text: 'Go to micro:bit'
@@ -411,6 +390,7 @@
                     );
 
                     function onListItemClicked(ind) {
+                        window.pxtTickEvent('hourofcode2021.carousel.list', { item: slides[ind].id });
                         clearInterval(transition);
                         globalInd = ind;
                         changeCarousel(globalInd);
@@ -442,58 +422,82 @@
                         linkElems[ind].classList.add('active');
                         carouselBody.style.backgroundImage =
                             'url(' + slides[ind].img + ')';
-                        carouselText.innerHTML = slides[ind].text;
+                        carouselText.innerText = slides[ind].text;
                         carouselLink.href = slides[ind].link;
                     }
                 </script>
             </section>
 
-            <section class="hoc-aside-02 background-sunflower">
+            <section class="hoc-aside-02 background-papaya">
                 <div class="aside-text">
                     <h3 class="title display-font">
                         Follow us on Social Media
                     </h3>
                     <p>
-                        Find even more MakeCode content by joining us on our
-                        various social platforms:
+                        Share your fire-fighting game with us on social media.
+                        Tag us in your creations using @msmakecode or the
+                        hashtag #makecode. And don't forget to follow us to find
+                        out about the newest MakeCode Arcade updates, games, and
+                        competitions!
                     </p>
                     <div class="social-buttons">
                         <a
                             href="https://www.instagram.com/msmakecode"
                             target="_blank"
                             rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.instagram')"
                         >
-                            <i class="fab fa-instagram"></i>
+                            <i class="icon instagram"></i>
+                        </a>
+                        <a
+                            href="https://www.youtube.com/microsoftmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.youtube')"
+                        >
+                            <i class="icon youtube"></i>
                         </a>
                         <a
                             href="https://twitter.com/msmakecode"
                             target="_blank"
                             rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.twitter')"
                         >
-                            <i class="fab fa-twitter"></i>
+                            <i class="icon twitter"></i>
                         </a>
                         <a
                             href="https://www.twitch.tv/msmakecode"
                             target="_blank"
                             rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.twitch')"
                         >
-                            <i class="fab fa-twitch"></i>
+                            <i class="icon twitch"></i>
                         </a>
                         <a
                             href="https://www.tiktok.com/@msmakecode"
                             target="_blank"
                             rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.tiktok')"
                         >
-                            <i class="fab fa-tiktok"></i>
+                            <svg
+                                aria-hidden="true"
+                                focusable="false"
+                                data-prefix="fab"
+                                data-icon="tiktok"
+                                class="svg-inline--fa fa-tiktok fa-w-14"
+                                role="img"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 448 512"
+                            >
+                                <path
+                                    d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"
+                                ></path>
+                            </svg>
                         </a>
                     </div>
                 </div>
-                <div
-                    class="hero background-papaya background-placeholder"
-                ></div>
             </section>
 
-            <!-- TODO: Customize footer to include insiders club message -->
             <footer class="hoc-footer background-papaya">
                 <div class="msft">
                     <img
@@ -506,18 +510,21 @@
                         href="https://www.microsoft.com/en-us/makecode/about"
                         target="_blank"
                         rel="noreferrer"
+                        onClick="window.pxtTickEvent('hourofcode2021.footer.about')"
                         >Microsoft MakeCode</a
                     >
                     <a
                         href="https://www.microsoft.com/en-us/legal/terms-of-use"
                         target="_blank"
                         rel="noreferrer"
+                        onClick="window.pxtTickEvent('hourofcode2021.footer.terms')"
                         >Terms of Use</a
                     >
                     <a
                         href="https://privacy.microsoft.com/en-us/privacystatement"
                         target="_blank"
                         rel="noreferrer"
+                        onClick="window.pxtTickEvent('hourofcode2021.footer.privacy')"
                         >Privacy</a
                     >
                 </div>
