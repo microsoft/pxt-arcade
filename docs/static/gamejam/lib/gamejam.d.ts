@@ -10,6 +10,7 @@ interface Rules {
     path: string;
     collaborateId?: string;
     tipsId?: string;
+    submitPositionId?: string; // Insert the submit section before this ID, if present
 }
 
 interface Session {
