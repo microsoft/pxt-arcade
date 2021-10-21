@@ -4,7 +4,7 @@
 
 Let's make a game!
 
-First, we'll plop a shark into the vast ocean, then we'll give make it move!
+First, we'll plop a shark into the vast ocean, then we'll make it move!
 
 ![Add a shark](/static/skillmap/shark/shark1-simple.gif)
 
@@ -46,7 +46,7 @@ into **the bottom** of the
 
 _💡  Remember, the icon to the left of the instructions shows the same icon as the toolbox category for the block you need._
 
-- :puzzle:  Click the grey box and toggle to **My Assets** to choose the **shark** [__*sprite*__](#sprote "2-D image that moves on the screen").
+- :mouse pointer:  Click the grey box and toggle to **My Assets** to choose the **shark** [__*sprite*__](#sprote "2-D image that moves on the screen").
 
 ```blocks
 scene.setBackgroundColor(8)
@@ -133,7 +133,6 @@ It should always stay in sight.
 ---
 
 Now that you have a shark, you can click **Done** to head back to the skillmap and prepare to add fish to your game.
-
 
 
 ```assetjson

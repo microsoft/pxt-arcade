@@ -32,7 +32,7 @@ We need a container that will run our fishy code every 2.1 seconds.
 ``||game:on game update every [500] ms||``  
 into an empty area of the workspace.
 
-- :mouse pointer: Click inside the text box and ignore the dropdown of choices. Instead, change **500** to **2100** using the numbers on the keyboard.
+- :mouse pointer: Click inside the text box and ignore the dropdown of choices. Instead, type **2100** on the keyboard.
 
 
 ```blocks
@@ -178,6 +178,8 @@ Click **Done** and continue to the next level so you can add points for each of 
 
 
 ```template
+
+
 let mySprite: Sprite = null
 scene.setBackgroundColor(8)
 mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)

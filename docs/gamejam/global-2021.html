@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <title>MakeCode Arcade Game Jam</title>
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:url" content="https://arcade.makecode.com/gamejam">
+        <meta name="twitter:title" content="MakeCode Arcade Game Jam">
+        <meta name="twitter:site" content="@MsMakeCode">
+        <meta name="twitter:creator" content="@MsMakeCode">
+        <meta name="twitter:description" content="A MakeCode Arcade game jam!">
+        <meta name="twitter:image" content="/static/gamejam/jams/global-2021/assets/preview.png">
+        <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+        <link rel="stylesheet" href="https://pxt.azureedge.net/blob/2163189fd5e35c0981ed55318415582a7c9aeb12/doccdn/semantic.css" type="text/css">
+        <link rel="stylesheet" href="/static/gamejam/lib/gamejam.css">
+        <link rel="stylesheet" href="/static/gamejam/lib/hoc2021.css">
+        <link rel="stylesheet" href="/static/gamejam/jams/global-2021/style.css">
+        <script type="text/javascript">
+            window.pxtSkipAnalyticsCookie = true;
+        </script>
+        <style>
+            @font-face {
+                font-family: 'Rowdies';
+                src: url('/static/hour-of-code/2021/Rowdies/Rowdies-Bold.ttf')
+                    format('truetype');
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hero">
+            <div class="banner"><img class="top" src="/static/gamejam/jams/global-2021/assets/banner.png" /></div>
+        </div>
+        <div class="content">
+            <div class="segment intro">
+                <h2>Global MakeCode Arcade Game Jam!</h2>
+                <p>
+                    Microsoft MakeCode has partnered with US State Department to bring you the inaugural 
+                    Global MakeCode Arcade Game Jam!  Practice your game development skills in this
+                    worldwide competition using MakeCode Arcade, a platform that lets you build your own
+                    retro-style video game.
+                </p>
+                <p>
+                    Once the theme of the Game Jam is announced on November 29th, you'll have three weeks
+                    to create and submit your game. We can't wait to see what you make!
+                </p>
+            </div>
+            <div class="segment countdown background-marina">
+                <h3>Theme Announcement</h3>
+                <p>
+                    The countdown starts now! Tune-in on November 29th at 9 AM PST to find out the theme of
+                    the game jam and find out what you need to do to get started.
+                </p>
+                <div id="timer"></div>
+            </div>
+            <div class="segment">
+                <div id="rules"></div>
+            </div>
+            <div id="submit" class="segment submit">
+                <h3>Submit Your Game</h3>
+                <p>
+                    Don’t to forget to submit your game before December 17th for your chance to be featured!
+                    Standout games will be highlighted here and on MakeCode social media channels.
+                </p>
+                <p>
+                    Follow us on Instagram, Facebook or Twitter to find out who made our list of favorites.
+                </p>
+                <div class="actions">
+                    <a class="button hidden" href="" target="_blank" rel="noopener noreferrer">Submit on itch.io</a>
+                    <a class="button display-font" href="URL HERE" target="_blank" rel="noopener noreferrer">
+                        <h5>Submit Your Game</h5>
+                    </a>
+                </div>
+            </div>
+            <footer class="hoc-footer background-papaya">
+                <div class="msft">
+                    <img
+                        src="/static/logo/Microsoft_logo_rgb_W-white_D.png"
+                        alt="Microsoft"
+                    />
+                </div>
+                <div class="text-content">
+                    <a
+                        href="https://www.microsoft.com/en-us/makecode/about"
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick="window.pxtTickEvent('hourofcode2021.footer.about')"
+                        >Microsoft MakeCode</a
+                    >
+                    <a
+                        href="https://www.microsoft.com/en-us/legal/terms-of-use"
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick="window.pxtTickEvent('hourofcode2021.footer.terms')"
+                        >Terms of Use</a
+                    >
+                    <a
+                        href="https://privacy.microsoft.com/en-us/privacystatement"
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick="window.pxtTickEvent('hourofcode2021.footer.privacy')"
+                        >Privacy</a
+                    >
+                </div>
+            </footer>
+        </div>
+
+        <!-- @include tracking.html -->
+        <!-- @include tickevent.html -->
+
+        <script type="text/javascript"
+            src="https://pxt.azureedge.net/blob/555c1dc1d9da18154cb48388d5e494f3f16119f8/marked/marked.min.js"></script>
+        <script type="text/javascript"
+            src="https://pxt.azureedge.net/blob/3c168a772b9e4cbf3ecb648148cfb2f966e8a578/pxtembed.js"></script>
+        <script src="/static/gamejam/lib/gamejam.js"></script>
+        <script>
+            getInfo("/static/gamejam/jams/global-2021/info.json");
+        </script>
+    </body>
+</html>

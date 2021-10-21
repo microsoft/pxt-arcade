@@ -202,7 +202,7 @@ forever(function () {
 ```
 
 
-## Intro @showdialog
+## {Intro @showdialog}
 
 You've made a collector game, now let's add some
 special touches to make it even more fun.
@@ -211,7 +211,7 @@ special touches to make it even more fun.
 
 
 
-## Step 1
+## {Step 1}
 
 The code for a basic collector is already in the workspace, but a few extra
 blocks could make it amazing.
@@ -251,7 +251,7 @@ controller.moveSprite(mySprite, 0, 100)
 
 
 
-## Step 2
+## {Step 2}
 
 **If the game gets wild, our sprite might leave the screen.**
 Let's prevent that.
@@ -291,7 +291,7 @@ mySprite.setStayInScreen(true)
 ```
 
 
-## Step 3
+## {Step 3}
 
 **🕔 Does this game feel long to you? 🕔**
 
@@ -332,7 +332,7 @@ info.startCountdown(15)
 ```
 
 
-## Step 4
+## {Step 4}
 
 **🥇 Everyone's a winner 🥇**
 
@@ -355,7 +355,7 @@ info.onCountdownEnd(function () {
 ```
 
 
-## Step 5
+## {Step 5}
 
 **🎊 Little celebrations 🎊**
 
@@ -382,7 +382,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 ```
 
 
-## Step 6
+## {Step 6}
 
 Finally, let's make the timing of the coins less predictable using random numbers.
 
@@ -414,7 +414,7 @@ forever(function () {
 })
 ```
 
-## Step 7
+## {Step 7}
 
 There you have it...a collector game with style AND class.
 

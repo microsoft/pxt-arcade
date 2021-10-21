@@ -12,7 +12,7 @@ Let's create a platform base at the bottom of the screen.
 Get a ``||scene:set tilemap to||`` and put it in ``||loops:on start||``.
 Click on the gray box to open the ``tilemap editor``.
 In the bottom left corner, set the size of the tilemap to ``10x8``
-and draw a platform for in the bottom two rows of the tilemap.
+and draw a platform in the bottom two rows of the tilemap.
 Finally, click the `Wall` button, and fill in those two rows with wall tiles.
 
 ![Example of drawing tilemap](/static/lessons/barrel-dodger/draw-tilemap.gif)
@@ -122,7 +122,7 @@ let mySprite: Sprite = sprites.create(img`
 
 ## {Step 3}
 
-Open the tilemap editor and find the tile position where you want to place your place (hint: it's 1, 5!). You can see the position on the lower left of the editor.
+Open the tilemap editor and find the tile position where you want to place your sprite (hint: it's 1, 5!). You can see the position on the lower left of the editor.
 Use the ``||scene:place mySprite on top of tilemap col row||`` block to position your player on that tile.
 
 ```blocks
@@ -188,7 +188,7 @@ tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 5))
 ## {Step 4}
 
 Let's give the sprite the ability to jump when we press a button. We do this by moving
-the player upward in an ``||controller:on A button pressed||`` event.
+the player upward in an ``||controller:on A button pressed||`` event. Inside the event, make the sprite move up with a ``||sprites:vy (velocity y)||``. Use `-200` for the `vy` value.
 
 ```blocks
 let mySprite: Sprite = null
@@ -265,7 +265,7 @@ mySprite.ay = 500
 
 ## {Step 6}
 
-We need to make sure that the sprite is on the ground before jumping, so drag an ``||logic:if then||`` conditional into the ``||controller:on A button pressed||``. Replace `true` with ``||scene:is mySprite hitting wall||`` and change ``left`` side ``bottom``. Finally, put in a ``||sprites:set mySprite x||`` and choose ``||sprites:vy (velocity y)||`` from the dropdown. Set the value to `-200`.
+We need to make sure that the sprite is on the ground before jumping, so drag an ``||logic:if then||`` conditional into the ``||controller:on A button pressed||``. Replace `true` with ``||scene:is mySprite hitting wall||`` and change the ``left`` side to ``bottom``. Now, drag the ``||sprites:vy (velocity y)||`` that was added earlier inside the ``||logic:if then||`` conditional.
 
 ```blocks
 let mySprite: Sprite = null

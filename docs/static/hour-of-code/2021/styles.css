@@ -1,8 +1,8 @@
 /*
 
-Hour of Code 2021 Theming 
+Hour of Code 2021 Theming
 
--- Colors: 
+-- Colors:
 ---- #FFFFFF
 ---- #000000
 ---- #3DC1AA (Marina)
@@ -10,15 +10,15 @@ Hour of Code 2021 Theming
 ---- #DE594B (Papaya)
 ---- #453052 (Eggplant)
 
--- Fonts: 
+-- Fonts:
 ---- Rowdies (Display)
----- Roboto (Body) 
+---- Roboto (Body)
 */
 
 /* Global --------------------------------------------------------------------------- */
 
 html {
-    font-size: 10px;
+    font-size: 10px !important;
 }
 
 body,
@@ -28,6 +28,10 @@ p,
 li {
     font-size: 1.8rem;
     font-family: 'Roboto', sans-serif;
+}
+
+.lg-p {
+    font-size: 2.2rem;
 }
 
 li {
@@ -45,33 +49,32 @@ li li {
 }
 
 .display-font {
-    font-family: 'Roboto', sans-serif;
-    /* TODO: replace roboto with Rowdies once font is approved font-family: 'Rowdies', sans-serif; */
-    font-weight: 400;
+    font-family: 'Rowdies', 'Segoe UI', sans-serif;
+    font-weight: 700;
 }
 
 /* Dynamic scaling */
 @media (min-width: 4000px) {
     html {
-        font-size: 16px;
+        font-size: 16px !important;
     }
 }
 
 @media (min-width: 3000px) {
     html {
-        font-size: 14px;
+        font-size: 14px !important;
     }
 }
 
 @media (min-width: 2000px) {
     html {
-        font-size: 12px;
+        font-size: 12px !important;
     }
 }
 
 @media (max-width: 768px) {
     html {
-        font-size: 8px;
+        font-size: 8px !important;
     }
 }
 
@@ -145,10 +148,6 @@ h5 {
     color: #33203f;
 }
 
-.background-placeholder {
-    background-image: url('./placeholder.png');
-}
-
 .marina {
     color: #3dc1aa;
 }
@@ -162,6 +161,111 @@ h5 {
     color: #453052;
 }
 
+/* Navbar --------------------------------------------------------------------------- */
+
+#header-bar,
+#header-bar > div {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.header-bar-left {
+    justify-content: flex-start;
+}
+.header-bar-right {
+    justify-content: flex-end;
+}
+
+.header-org-logo {
+    display: flex;
+}
+.header-org-logo-sm {
+    display: none;
+}
+
+.header-org-logo img,
+.header-org-logo-sm img {
+    margin: 0 15px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+.header-title:before {
+    content: '';
+    position: relative;
+    height: 18px;
+    border-left: 2px solid white;
+}
+
+.header-title span {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    margin-left: 15px;
+    margin-bottom: 1px;
+}
+
+a.header-icon {
+    height: 100%;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+a.header-icon:hover,
+a.header-icon:focus {
+    color: white;
+    opacity: 0.8;
+}
+
+a.header-icon i.icon {
+    height: unset;
+}
+
+nav a {
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana;
+    font-style: unset;
+    text-transform: none !important;
+}
+
+nav .icon {
+    font-size: 26px;
+    line-height: 26px;
+}
+
+nav .header-bar-left a,
+nav .header-bar-left a:hover {
+    display: flex;
+    color: white;
+    text-decoration: none;
+}
+
+nav .header-bar-right .btn:active svg path {
+    fill: white;
+}
+
+nav .header-bar-right .btn {
+    min-width: unset;
+    padding: 10px;
+    width: 160px;
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .header-bar-right .btn span {
+    margin-right: 10px;
+    line-height: 18px;
+}
+
+nav .header-bar-right .btn svg path {
+    fill: black;
+}
+
 /* Header --------------------------------------------------------------------------- */
 
 header.hoc-header {
@@ -173,14 +277,12 @@ header.hoc-header {
     position: relative;
 }
 
-header.hoc-header::after {
-    content: '';
+header.hoc-header .header-background-image {
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    background-image: url('./header.gif');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -291,7 +393,9 @@ section.hoc-section-01 a.btn {
 section.hoc-aside-01 {
     display: flex;
     align-items: center;
-    margin-bottom: 2rem;
+    margin: 0 auto;
+    margin-bottom: 0;
+    max-width: 160rem;
 }
 
 section.hoc-aside-01.background-sunflower {
@@ -302,7 +406,6 @@ section.hoc-aside-01 .hero {
     width: 35%;
     flex-shrink: 0;
     align-self: stretch;
-    background-image: url('./global-game-jam.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -525,12 +628,60 @@ section.hoc-section-02 .carousel .list .list-item.active:hover {
 
 section.hoc-aside-02 {
     padding: 4rem 0;
+    text-align: center;
+    padding-bottom: 2rem;
 }
 
-section.hoc-aside-02 .wrapper {
-    margin: 0 7rem;
-    display: flex;
+section.hoc-aside-02 p {
+    padding: 0 2rem;
+    max-width: 70rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+section.hoc-aside-02 a {
+    display: inline-flex;
     align-items: center;
+    background-color: #eeca49;
+    transition: 0.25s;
+    font-size: 2.4rem;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    color: black;
+    text-decoration: none;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+section.hoc-aside-02 a:hover {
+    background-color: #d3b034;
+    transform: scale(1.1);
+    color: black;
+    text-decoration: none;
+}
+
+section.hoc-aside-02 a:active {
+    background-color: black;
+    transform: scale(0.9);
+    color: white;
+    text-decoration: none;
+}
+
+section.hoc-aside-02 a i,
+section.hoc-aside-02 a svg {
+    margin: 0 auto;
+    line-height: 1;
+    font-size: 2.8rem;
+}
+
+section.hoc-aside-02 a svg {
+    max-height: 2.8rem;
+    width: auto;
+}
+
+section.hoc-aside-02 a:active svg path {
+    fill: white;
 }
 
 section.hoc-aside-02 .aside-text {
@@ -736,6 +887,43 @@ section.hoc-section-04 a.btn {
     }
 }
 
+/* Footer ------------------------------------------------------------------------------------ */
+
+footer.hoc-footer {
+    padding: 4rem 0;
+}
+
+footer.hoc-footer .text-content {
+    text-align: center;
+}
+
+footer.hoc-footer .text-content a {
+    color: white;
+    opacity: 0.5;
+    padding: 0 2rem;
+    border-right: 0.1rem solid white;
+}
+
+footer.hoc-footer .text-content a:last-child {
+    border: none;
+}
+
+footer.hoc-footer .text-content a:hover {
+    color: white;
+}
+
+footer.hoc-footer .msft {
+    margin: 0 auto;
+    width: 15rem;
+    margin-bottom: 2rem;
+}
+
+footer.hoc-footer .msft img {
+    width: 100%;
+    height: auto;
+    opacity: 0.5;
+}
+
 /* Educator Button --------------------------------------------------------------------------- */
 
 a.educator-btn {
@@ -809,7 +997,6 @@ a.activity-btn .body {
     height: 33rem;
     margin-top: -3rem;
     border-radius: 2rem;
-    background-image: url('./forest-skillmap-game.gif');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -871,13 +1058,13 @@ a.btn:active {
 }
 
 a.btn.secondary {
-    color: white;
-    background-color: #382544;
+    color: black;
+    background-color: #3dc1aa;
 }
 
 a.btn.secondary:hover {
-    color: white;
-    background-color: #2d1c38;
+    color: black;
+    background-color: #2ead98;
 }
 
 a.btn.secondary:active {

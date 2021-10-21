@@ -472,7 +472,7 @@ forever(function () {
 
 ```
 
-## Intro @showdialog
+## {Intro @showdialog}
 
 You've learned everything you know to make an exciting collector game.  Now put it all together to create something that's all your own!
 
@@ -481,7 +481,7 @@ You've learned everything you know to make an exciting collector game.  Now put 
 
 
 
-## Step 1
+## {Step 1}
 
 The code for a collector game is already in the workspace.
 

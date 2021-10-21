@@ -167,34 +167,6 @@ scene.setBackgroundColor(13)
 tiles.setTilemap(tilemap`level1`)
 ```
 
-```ghost
-scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument3`, function (sprite, location) {
-    tiles.setTileAt(location, assets.tile`transparency16`)
-    info.changeScoreBy(1)
-})
-scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument2`, function (sprite, location) {
-    tiles.setTileAt(location, assets.tile`transparency16`)
-    info.changeScoreBy(1)
-})
-scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument1`, function (sprite, location) {
-    tiles.setTileAt(location, assets.tile`transparency16`)
-    info.changeScoreBy(1)
-})
-scene.onOverlapTile(SpriteKind.Player, assets.tile`door`, function (sprite, location) {
-    game.over(true)
-})
-scene.onOverlapTile(SpriteKind.Player, assets.tile`fan1`, function (sprite, location) {
-    tiles.setTileAt(location, assets.tile`transparency16`)
-    info.changeScoreBy(-1)
-})
-
-let mySprite = sprites.create(assets.image`rockstar`, SpriteKind.Player)
-controller.moveSprite(mySprite, 100, 100)
-scene.cameraFollowSprite(mySprite)
-tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairLarge)
-info.startCountdown(60)
-info.setScore(0)
-```
 
 
 

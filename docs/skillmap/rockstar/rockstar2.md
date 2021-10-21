@@ -1,4 +1,4 @@
-# 80's Rockstar: Get Your Gear
+# Get Your Gear
 
 
 ## Welcome @showdialog
@@ -207,7 +207,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`fan1`, function (sprite, loca
 let mySprite = sprites.create(assets.image`rockstar`, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 100)
 scene.cameraFollowSprite(mySprite)
-tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairLarge)
+tiles.placeOnRandomTile(mySprite, assets.tile`stage`)
 info.startCountdown(60)
 info.setScore(0)
 ```

@@ -131,7 +131,7 @@ forever(function () {
 ```
 
 
-## Intro @showdialog
+## {Intro @showdialog}
 
 Collecting things is great, but avoiding danger is more exciting.
 
@@ -141,7 +141,7 @@ This tutorial will show you how to add menacing elements to your game.
 
 
 
-## Step 1
+## {Step 1}
 
 The code for a collector game is already in the workspace.
 We can build on this to make something that requires extra skill.
@@ -182,7 +182,7 @@ forever(function () {
 ```
 
 
-## Step 2
+## {Step 2}
 
 Our new enemy isn't quite ready. Let's make sure to get all the blocks
 in the new **forever** loop pointed to the right thing.
@@ -223,7 +223,7 @@ forever(function () {
 ```
 
 
-## Step 3
+## {Step 3}
 
 If you play your game right now, you'll see that the rocks and the coins
 fly out at about the same rate. Let's add some variation.
@@ -263,7 +263,7 @@ forever(function () {
 ```
 
 
-## Step 4
+## {Step 4}
 
 **😲 Uh-Oh 😲**
 
@@ -309,7 +309,7 @@ forever(function () {
 })
 ```
 
-## Step 5
+## {Step 5}
 
 **😈 Wicked 😈**
 
@@ -338,7 +338,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ```
 
 
-## Step 6
+## {Step 6}
 
 At this point, the player is still awarded points when they hit a rock.
 
@@ -364,7 +364,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ```
 
 
-## Step 7
+## {Step 7}
 
 **What an amazing creation!**
 

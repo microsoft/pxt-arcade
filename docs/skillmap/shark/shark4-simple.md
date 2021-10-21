@@ -16,7 +16,8 @@ Let's build a world for your shark to swim around in!
 - :tree: Drag  
 ``||scene:set background image to [ ]||``  
 into the  
-``||loops:on start||`` container, just below   
+``||loops:on start||``  
+container, just below   
 ``||scene:set background color to [ ]||``.
 
 - :paint brush: Click the empty grey box and toggle to **My Assets** to choose **ocean1**, then click **Done**.
@@ -32,9 +33,9 @@ mySprite.setStayInScreen(true)
 info.startCountdown(15)
 ```
 
-## 3. Repeat Decorations
+## 3. Decorations
 
-**Next, let's use a **repeat** loop to add some decorative sprites to the sea floor.**
+Next, let's use a **repeat** loop to add some decorative sprites to the sea floor.
 
 ---
 
@@ -67,7 +68,31 @@ into the empty
 
 - :mouse pointer: Click the ``||variables:mySprite2||`` dropdown and choose **Rename variable...** call this **myDecor**.
 
-- :mouse pointer: Change the **kind** of the sprite to **Decoration**.
+- :mouse pointer: Click the kind **Player** and add a new option called **Decoration**.
+
+```blocks
+namespace SpriteKind {
+    export const Decoration = SpriteKind.create()
+}
+let mySprite: Sprite = null
+scene.setBackgroundColor(8)
+scene.setBackgroundImage(assets.image`ocean1`)
+mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+mySprite.setStayInScreen(true)
+info.startCountdown(15)
+scene.setBackgroundImage(assets.image`ocean1`)
+for (let index = 0; index < 10; index++) {
+//@highlight
+    let myDecor = sprites.create(img`
+    . 
+    `, SpriteKind.Decoration)
+}
+```
+
+
+## 5. Add Background Decorations
+
 
 - :paint brush: Click on the empty grey box and toggle to **My Assets** to select the sprite called **decoration**. (It looks like seaweed.)
 
@@ -89,7 +114,8 @@ for (let index = 0; index < 10; index++) {
 }
 ```
 
-## 5. Update Sprite Position
+
+## 6. Update Sprite Position
 
 **Placement is everything!**  
 To make the seaweed look more natural, let's change the **y value** (vertical position) to place it closer to the bottom of the screen.
@@ -124,7 +150,7 @@ for (let index = 0; index < 10; index++) {
 }
 ```
 
-## 6. Random Flow
+## 7. Random Flow
 
 - :calculator: To scatter the seaweed along the floor, drag a  
 ``||math:pick random [0] to [10]||``  
@@ -151,7 +177,7 @@ for (let index = 0; index <= 10; index++) {
 }
 ```
 
-## step 7
+## 8. Try It
 
 **🎮 Time to play 🎮**
 
@@ -174,9 +200,7 @@ Play your game to make sure you like the way everything looks. When you're happy
 
 
 ```template
-namespace SpriteKind {
-    export const Decoration = SpriteKind.create()
-}
+
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     otherSprite.destroy(effects.disintegrate, 100)
     info.changeScoreBy(1)

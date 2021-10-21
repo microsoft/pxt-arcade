@@ -46,7 +46,7 @@ forever(function () {
 ```
 
 
-## Intro @showdialog
+## {Intro @showdialog}
 
 Ready to give your **W,A,S,D** keys a workout?
 
@@ -56,7 +56,7 @@ Let's create a game that brings back some of the iconic arcade style that we lov
 
 
 
-## Step 2
+## {Step 2}
 
 **🐤 This game needs a** [__*sprite*__](#sprote "a dynamic 2-D image")**. 🐤**
 
@@ -100,7 +100,7 @@ let mySprite = sprites.create(img`
 
 
 
-## Step 3
+## {Step 3}
 
 **🤩 Fabulous 🤩**
 
@@ -147,7 +147,7 @@ controller.moveSprite(mySprite, 0, 100)
 
 
 
-## Step 4
+## {Step 4}
 
 **💰 The sprite needs something to collect 💰**
 
@@ -191,7 +191,7 @@ forever(function () {
 
 
 
-## Step 5
+## {Step 5}
 
 **😯 Now you have a steady stream of income 😯**
 
@@ -232,7 +232,7 @@ forever(function () {
 
 
 
-## Step 6
+## {Step 6}
 
 **This is looking great, but the coins still hover around the top.**
 
@@ -267,12 +267,12 @@ forever(function () {
 
 ```
 
-## Step 7 @showdialog
+## {Step 7 @showdialog}
 
 **🎮 Give your game a try in the game screen 🎮**
 
 
-## Step 8
+## {Step 8}
 
 **Notice anything missing?**
 
@@ -296,7 +296,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 
 
-## Step 9
+## {Step 9}
 
 Now we have a container for code that runs when the sprite
 overlaps a projectile.
@@ -322,7 +322,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 ```
 
 
-## Step 10
+## {Step 10}
 
 **🏆 Keeping score 🏆**
 
@@ -345,7 +345,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 ```
 
 
-## Step 11
+## {Step 11}
 
 **🎆 Congrats 🎆**
 
