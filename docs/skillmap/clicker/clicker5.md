@@ -342,7 +342,7 @@ uppie = 0
 
 
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Now you've got the skills to go off-script and make something from
 your own imagination.
@@ -351,7 +351,7 @@ Turn your clicker into something new.  How do you want the clicker work for you?
 
 ![Click This](/static/skillmap/clicker/clicker-activity-5.gif "Click your heart out" )
 
-## Step 1
+## {Step 1}
 
 **The code for an advanced clicker game is in the workspace,
 but can you do even more?**
@@ -365,7 +365,7 @@ Make your own magnificent creation, or attempt one of these mods:
 - Make your sprite dance by choosing a random image with each click
 
 
-## Step 2
+## {Step 2}
 
 When you're done, click **Done** to return to the main page where you can save your game to your gallery or share it
 with family and friends!

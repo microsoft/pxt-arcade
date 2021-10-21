@@ -1,4 +1,4 @@
-# 80's Rockstar: Avoid the Fans
+# Avoid the Fans
 
 
 ## Welcome @showdialog
@@ -154,7 +154,7 @@ tiles.setTilemap(tilemap`level1`)
 let mySprite = sprites.create(assets.image`rockstar`, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 100)
 scene.cameraFollowSprite(mySprite)
-tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairLarge)
+tiles.placeOnRandomTile(mySprite, assets.tile`stage`)
 //@highlight
 info.startCountdown(30)
 ```

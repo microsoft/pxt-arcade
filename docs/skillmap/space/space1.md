@@ -61,8 +61,8 @@ scroller.scrollBackgroundWithSpeed(0, 10)
 ```
 
 
-## 4. Draw your ship
-**Time to choose your ship!**
+## 4. Choose your ship
+**Time to pick your ship!**
 
 ---
 
@@ -115,7 +115,7 @@ controller.moveSprite(mySprite)
 
 ---
 
-Try moving your ship around the game screen!  Your ship will move with the joystick, arrow keys, or **W A S D** keys.
+Try moving your ship around the game screen!  Your ship will move with the joypad, arrow keys, or **W A S D** keys.
 
 What happens when you hold one arrow down for a long time?
 
@@ -170,7 +170,7 @@ Click **Done** to return to the main skillmap where you can move on to discover 
 
 
 ```package
-arcade-background-scroll=github:microsoft/arcade-background-scroll/
+arcade-background-scroll=github:microsoft/arcade-background-scroll#926e12eefffd09d453c7cde73f8d6ebd0e666d9d/
 ```
 
 

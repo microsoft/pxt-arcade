@@ -198,7 +198,7 @@ forever(function () {
 
 ```
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Everyone loves a good joke.
 Let's build one we can share with friends.
@@ -209,7 +209,7 @@ add style.
 
 ![Here's the story](/static/skillmap/story/saltwater.gif "Why do tropical fish like saltwater?" )
 
-## Step 2
+## {Step 2}
 
 To prepare for the next steps,
 [__*click here to choose a joke from our list*__](#doc:/skillmap/story/joke-examples "Find a good two line joke here."),
@@ -222,7 +222,7 @@ A: Because pepper makes them sneeze!
 ```
 
 
-## Step 3
+## {Step 3}
 
 
 Do you have a joke?
@@ -367,7 +367,7 @@ dddddddddd444ddddd3ddddddddddddd4ddddddddddddddddddddddddddddddddddddddddddddddd
 
 
 
-## Step 4
+## {Step 4}
 
 **✨ Great ✨**
 
@@ -513,7 +513,7 @@ let mySprite = sprites.create(assets.image`myImage1`, SpriteKind.Player)
 
 ```
 
-## Step 5
+## {Step 5}
 
 One benefit of having text controlled by a button is that
 the reader gets to choose the timing of the joke.
@@ -533,7 +533,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 5
+## {Step 5}
 
 No matter how you split your joke, you're likely to get the biggest laugh if
 your punchline is presented separately at the end.
@@ -546,7 +546,7 @@ the last line, and it's the part that makes people laugh.
 ► Break the rest of the joke up into small sentences. How many long text boxes will you need?
 
 
-## Step 6
+## {Step 6}
 
 ► Right-click and duplicate the ``||game: show long text [" "] [bottom]||`` block as many times as you need to fit your entire joke.
 
@@ -563,7 +563,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## Step 7
+## {Step 7}
 
 **Take a minute to look at your joke on the game screen!**
 
@@ -582,7 +582,7 @@ Does the text flow better somewhere else?
     game.showLongText("...you shouldn't try skydiving!", DialogLayout.Right)
 ```
 
-## Step 8
+## {Step 8}
 
 **👏 Now take a bow 👏**
 
@@ -604,7 +604,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Finale
+## {Finale}
 
 **🤣 Congrats 🤣**
 

@@ -1,0 +1,102 @@
+body {
+    background: #453052;
+}
+
+/**** GAMEJAM PAGE OVERRIDES ****/
+
+.content {
+    background-color: unset;
+    color: #fff;
+    max-width: unset;
+    padding: 0;
+}
+
+.segment {
+    margin: 0;
+}
+
+#timer > .label > * {
+    padding: 0;
+}
+
+.counter > .number {
+    font-size: 3rem;
+}
+
+/**** MARKED OVERRIDES ****/
+
+h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: calc(2rem - .14285714em) 0 1rem;
+}
+
+h3 {
+    padding-top: 4rem;
+}
+
+p {
+    margin: 0;
+    padding: 0 0 1em;
+}
+
+a {
+    color: #fff;
+}
+
+a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#rules > ol,
+#rules > ul {
+    margin: 0;
+    padding-block-start: 0;
+    padding-block-end: 1em;
+    padding-inline-start: max(calc(50% - 54rem + 40px), 4rem + 40px);
+}
+
+#rules > *,
+.intro, .countdown, .submit, .gallery {
+    padding-left: max(calc(50% - 54rem), 4rem);
+    padding-right: max(calc(50% - 54rem), 4rem);
+}
+
+/**** ACTION BUTTONS ****/
+
+.button {
+    color: #fff;
+    background-color: #3dc1aa;
+}
+
+.button:hover {
+    color: #fff;
+    background-color: #2ead98;
+}
+
+/**** SECTION COLORS ****/
+
+#submit {
+    color: #000;
+    background-color: #eeca49;
+}
+
+#educators-training,
+#educators-training + p {
+    color: #000;
+    background-color: #3dc1aa;
+}
+
+#new-to-makecode- + p {
+    float: right;
+    position: relative;
+    top: -5.5rem;
+}
+
+#timer,
+#game-jam-rules + ol,
+#new-to-makecode- + p,
+#educators-training + p,
+#more-game-jam- + p,
+#submit {
+    padding-bottom: 4rem;
+}
