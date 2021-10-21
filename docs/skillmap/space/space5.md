@@ -217,7 +217,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     if (info.score() == 10) {
         info.changeScoreBy(5)
         //@highlight
-        mySprite.say("+5 Level-Up Bonus", 2000)
+        mySprite.sayText("+5 Level-Up Bonus", 2000)
     }
 })
 ```
@@ -246,7 +246,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     otherSprite.destroy()
     info.changeScoreBy(1)
     if (info.score() == 10) {
-        mySprite.say("+5 Level-Up Bonus", 2000)
+        mySprite.sayText("+5 Level-Up Bonus", 2000)
         info.changeScoreBy(5)
         //@highlight
         enemySpeed = 70
@@ -274,7 +274,7 @@ Click **Done** to return to the main skillmap where you can get your completion 
 
 
 ```package
-arcade-background-scroll=github:microsoft/arcade-background-scroll/
+arcade-background-scroll=github:microsoft/arcade-background-scroll#926e12eefffd09d453c7cde73f8d6ebd0e666d9d/
 pxt-status-bar=github:jwunderl/pxt-status-bar
 ```
 
@@ -411,7 +411,7 @@ game.onUpdateInterval(300, function () {
 })
 forever(function () {
     if (info.score() == 10) {
-        mySprite.say("+5 Level-Up Bonus", 2000)
+        mySprite.sayText("+5 Level-Up Bonus", 2000)
         info.changeScoreBy(5)
         enemySpeed = 70
     }

@@ -170,7 +170,7 @@ Click **Done** to return to the main skillmap where you can move on to discover 
 
 
 ```package
-arcade-background-scroll=github:microsoft/arcade-background-scroll/
+arcade-background-scroll=github:microsoft/arcade-background-scroll#926e12eefffd09d453c7cde73f8d6ebd0e666d9d/
 ```
 
 
