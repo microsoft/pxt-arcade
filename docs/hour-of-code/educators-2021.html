@@ -123,7 +123,9 @@
             function onTeamsShareClicked() {
                 document.getElementById("teams-share").click();
             }
+
         </script>
+        <script async defer src="https://teams.microsoft.com/share/launcher.js"></script>
     </head>
 
     <body id="root" class="root background-eggplant" onload="handleOnLoad()">
@@ -318,15 +320,15 @@
                         <div class="share-btn" onclick="onTeamsShareClicked()">
                             <div
                                 id="teams-share"
-                                class="teams-share-button"
+                                class="teams-share-button icon"
                                 data-href="https://arcade.makecode.com/hour-of-code-2021"
-                                data-icon-px-size="48"
+                                data-icon-px-size="36"
                                 data-msg-text="Please complete the MakeCode Hour of Code activity here: "
                                 data-assign-title="MakeCode Hour of Code 2021"
-                                data-assign-instr="Click the 'Share my game' button when you are finished and copy the link it creates into this assignment. Have fun!"
+                                data-assign-instr="Click the 'Share' button when you are finished and copy the link it creates into this assignment. Have fun!"
                             >
                             </div>
-                            <div class="text">
+                            <div>
                                 Assign in Teams
                             </div>
                         </div>

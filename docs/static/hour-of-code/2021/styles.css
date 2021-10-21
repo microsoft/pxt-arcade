@@ -965,22 +965,23 @@ a.educator-btn:active {
 .share-btn {
     display: flex;
     cursor: pointer;
-    padding: 1rem;
-    color: black;
-    transition: 0.25s;
+    padding: 0 3rem;
+    color: #4D55BD;
     user-select: none;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    width: fit-content;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
 }
 
-.share-btn .teams-share-button {
-    background-color: white;
-    border-radius: .5rem 0 0 .5rem;
-    padding: 0 .5rem;
+.share-btn .icon {
+    padding-top: .5rem;
+    padding-right: 1rem;
 }
-.share-btn .text {
-    font-family: 'Rowdies', sans-serif;
-    background-color: #eeca49;
-    border-radius: 0 .5rem .5rem 0;
-}
+
 
 /* Activity Button --------------------------------------------------------------------------- */
 
