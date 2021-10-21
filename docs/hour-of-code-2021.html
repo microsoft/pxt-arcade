@@ -97,9 +97,6 @@
             type="text/css"
         />
         <!-- @include scripthead.html -->
-        <!-- TODO: Font compliance for "Rowdies" Google Font (400 weight) -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
         <style>
             @font-face {
@@ -130,7 +127,8 @@
                 style="height: 60px"
             >
                 <div class="header-bar-left">
-                    <a href="https://www.microsoft.com/en-us/makecode"
+                    <a
+                        href="https://www.microsoft.com/en-us/makecode"
                         onClick="window.pxtTickEvent('hourofcode2021.header.logo')"
                         ><div class="header-org-logo" role="menuitem">
                             <img
@@ -251,26 +249,33 @@
             </section>
 
             <section class="hoc-aside-01 background-marina">
-                <div class="aside-text">
-                    <h3 class="title display-font">Join the Game Jam!</h3>
-                    <p>
-                        Go beyond the Hour of Code and use the skills you gained
-                        to either modify your existing game or create something
-                        brand new to submit to the Game Jam! MakeCode is proud
-                        to announce that we are partnering with the US State
-                        Department to bring you a Global MakeCode Arcade Game
-                        Jam!
-                    </p>
-                    <a
-                        class="btn"
-                        href="https://aka.ms/ArcadeGJ"
-                        onClick="window.pxtTickEvent('hourofcode2021.gamejam')"
-                        target="_blank"
-                        rel="noreferrer"
-                        ><h5 class="display-font">Learn More</h5></a
-                    >
+                <div class="wrapper">
+                    <div class="aside-text">
+                        <h3 class="title display-font">Join the Game Jam!</h3>
+                        <p>
+                            Go beyond the Hour of Code and use the skills you
+                            gained to either modify your existing game or create
+                            something brand new to submit to the Game Jam!
+                            MakeCode is proud to announce that we are partnering
+                            with the US State Department to bring you a Global
+                            MakeCode Arcade Game Jam!
+                        </p>
+                        <a
+                            class="btn"
+                            href="https://aka.ms/ArcadeGJ"
+                            onClick="window.pxtTickEvent('hourofcode2021.gamejam')"
+                            target="_blank"
+                            rel="noreferrer"
+                            ><h5 class="display-font">Learn More</h5></a
+                        >
+                    </div>
+                    <div
+                        class="hero background-sunflower"
+                        style="
+                            background-image: url('./static/gamejam/jams/global-2021/assets/banner.png');
+                        "
+                    ></div>
                 </div>
-                <div class="hero background-sunflower"></div>
             </section>
 
             <section class="hoc-section-02">
@@ -340,7 +345,7 @@
                         {
                             id: 'hourofcode2020',
                             img: '/static/hour-of-code/2021/hoc-2020.png',
-                            link: 'https://arcade.makecode.com/hour-of-code',
+                            link: 'https://arcade.makecode.com/hour-of-code-2020',
                             text: 'Hour of Code™ 2020'
                         },
                         {
@@ -365,7 +370,8 @@
                             id: 'minecraft',
                             img: '',
                             link: '',
-                            text: 'Hour of Code™ 2021' },
+                            text: 'Hour of Code™ 2021'
+                        },
                         {
                             id: 'microbit',
                             img: '/static/hour-of-code/2021/microbit.png',
@@ -390,7 +396,9 @@
                     );
 
                     function onListItemClicked(ind) {
-                        window.pxtTickEvent('hourofcode2021.carousel.list', { item: slides[ind].id });
+                        window.pxtTickEvent('hourofcode2021.carousel.list', {
+                            item: slides[ind].id
+                        });
                         clearInterval(transition);
                         globalInd = ind;
                         changeCarousel(globalInd);
