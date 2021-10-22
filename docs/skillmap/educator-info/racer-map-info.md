@@ -1,27 +1,27 @@
-# About Save the Forest!
+# About Monster Racer
 
 **A page for Educators & Parents**
 
-The **Save the Forest!** map uses basic code blocks and extensions in MakeCode Arcade to implement simple game concepts.
+The **Monster Racer** map uses basic code blocks and extensions in MakeCode Arcade to implement simple game concepts.
 
-In this short set of activities, students code a game that recreates the conditions for a forest fire, and then code a fire-fighting airtanker plane to spray water and put out the flames! This map is intended for students who are new to MakeCode with little or no previous coding experience.
+In this short set of activities, ... This map is intended for students who are new to MakeCode with little or no previous coding experience.
 
 Designed for students between the ages of 11 & 18, this experience contains a total of 6 tutorials (approximating 54 minutes of instruction).  At the end of the learning path, students receive a certificate of completion.
 
-|                 | Minutes* | Game Type | Key Concepts |
-| --------------- | -------- | --------- | ------------ |
-| Prepare Your Plane | 7 | Intro | movement, sprites |
-| Burning Issues | 8 | Maze | events, loops, random |
-| Fire Fighting | 10 | Maze | events, projectiles |
-| Spreads Like Wildfire | 10 | Maze | events, variables, collisions |
-| Head's Up! | 9 | Maze | displays, customization |
-| Keep Going | 10 | Maze | animations, sounds |
+|                 | Minutes* |  Key Concepts |
+| --------------- | -------- | ------------ |
+| Prepare Your Plane | 7 | movement, sprites |
+| Burning Issues | 8 | events, loops, random |
+| Fire Fighting | 10 | events, projectiles |
+| Spreads Like Wildfire | 10 | events, variables, collisions |
+| Head's Up! | 9 | displays, customization |
+| Keep Going | 10 | animations, sounds |
 
 \* Minutes are approximate, based on time to follow instructions as written. Times do not include time spent on designing elements or re-aquainting with previously-written code. Providing extra time for creativity and debugging is encouraged.
 
 ### Objectives 
 
-After completing Save the Forest, students will have gained exposure to computer science and game design elements using MakeCode Arcade.
+After completing Monster Racer...
 
 Specifically, they will experience the following topics:
 
@@ -39,7 +39,7 @@ Specifically, they will experience the following topics:
 
 ### Projects
 
-As students progress through these projects, they will progressively build a game where their plane shoots water at flames to weaken them until they eventually extinguish.
+As students progress through these projects, they will progressively build a game where ...
 
 ```package
 pxt-forest-special=github:kiki-lee/forest-special/
