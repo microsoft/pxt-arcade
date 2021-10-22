@@ -103,8 +103,8 @@ Now that the environment is set, we can add code to make the fires spread.
 container into an empty area of your workspace to run 
 code each time the game updates its status. 
 
-- :paper plame:   Grab   
-``||sprites: update fire spread [ ]||``  
+- :paper plane:   Grab   
+``||sprites: update fire spread||``  
 and add it to the empty  
 ``||game:on game update||`` container.
 
