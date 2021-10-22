@@ -3,7 +3,7 @@
 
 ## Welcome @showdialog
 
-Nearly 4 out of 5 forest fires are started by humans.
+Nearly 4 out of 5 forest fires are started by humans.  
 In your game, they'll be started by your code.
 
 ![Random fires starting on the grid](/static/skillmap/forest/forest2.gif "Look what we're about to do today!")
@@ -30,16 +30,16 @@ code once.
 
 ---
 
-- :redo:  Drag the
-``||loops:repeat [4] times||``
-loop container into **the end** of the
-``||loops:on start||``
+- :redo:  Drag the  
+``||loops:repeat [4] times||``  
+loop container into **the end** of the  
+``||loops:on start||``  
 container.
 
-- :paper plane:  Add  
-``||sprites:create spreading fire on random [ ] with image [ ]||``
-into the empty  
-``||loops:repeat [4] times||``
+- :paper plane:  Add   
+``||sprites:create spreading fire on random [ ] with image [ ]||``  
+into the empty   
+``||loops:repeat [4] times||``  
 container.
 
 
@@ -60,8 +60,8 @@ for (let index = 0; index < 4; index++) {
 ## 4. Creating fire
 
 
-- :mouse pointer:  In the  
-``||sprites:create spreading fire on random [ ] with image [ ]||``  
+- :mouse pointer:  In the    
+``||sprites:create spreading fire on random [ ] with image [ ]||``   
 block, click the first checkered  square and select the **tree** tile.
 
 - :mouse pointer:  Click the second checkered  square and select the **tree fire** tile.
@@ -110,7 +110,7 @@ When each fire is created, we want to make it sparkle using effects.
 ---
 
 - :paper plane:   Drag an  
-``||sprites:on fire created at [location]||``  
+``||sprites:on fire created at [location]||``   
 container into an empty area of the workspace.
 
 
@@ -129,10 +129,10 @@ sprites.on_fire_created(function (location) {
 
 ## 7. Add the Spark
 
-- :tree:   Drag  
-``||scene:start [spray] effect at [location]||``  
+- :tree:   Drag   
+``||scene:start [spray] effect at [location]||``   
 into the empty  
-``||sprites:on fire created at [location]||``    
+``||sprites:on fire created at [location]||``     
 container.
 
 - :mouse pointer:   Change the effect from ``||scene:spray||`` to ``||scene:fire||``.

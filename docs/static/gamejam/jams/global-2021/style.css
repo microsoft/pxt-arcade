@@ -13,7 +13,6 @@ body {
 
 .segment {
     margin: 0;
-    padding: calc(2rem - .14285714em) 0;
 }
 
 #timer > .label > * {
@@ -57,7 +56,7 @@ a:hover {
 }
 
 #rules > *,
-.intro, .submit, .gallery {
+.intro, .countdown, .submit, .gallery {
     padding-left: max(calc(50% - 54rem), 4rem);
     padding-right: max(calc(50% - 54rem), 4rem);
 }
@@ -76,24 +75,28 @@ a:hover {
 
 /**** SECTION COLORS ****/
 
-#tips-and-tricks,
-#tips-and-tricks + p,
-#tips-and-tricks + p + ol {
+#submit {
     color: #000;
     background-color: #eeca49;
 }
 
-#hosting-your-jam,
-#hosting-your-jam + p,
-#hosting-your-jam + p + ul {
+#educators-training,
+#educators-training + p {
     color: #000;
     background-color: #3dc1aa;
 }
 
-#rules + ol,
-#tips-and-tricks + p + ol,
-#for-educators + p,
-#hosting-your-jam + p + ul,
-.submit {
-    padding-bottoM: 4rem;
+#new-to-makecode- + p {
+    float: right;
+    position: relative;
+    top: -5.5rem;
+}
+
+#timer,
+#game-jam-rules + ol,
+#new-to-makecode- + p,
+#educators-training + p,
+#more-game-jam- + p,
+#submit {
+    padding-bottom: 4rem;
 }
