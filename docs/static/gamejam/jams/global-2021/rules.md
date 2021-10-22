@@ -1,25 +1,22 @@
-### Rules
+### Game Jam Rules
 
-1. Games should be built in MakeCode Arcade
-2. Your game must relate to the jam theme. Someone playing your game should be able to see how it relates to the theme without extra explanation.
+1. Games must be built in MakeCode Arcade
+2. Your game must relate to the provided theme. Someone playing your game should be able to see how it relates to the theme without extra explanation.
 3. Keep the games PG: no NSFW, offensive, or excessively violent content.
-4. You must be at least 9 years old to participate.
-5. All games must be submitted by someone who is at least 13 years old. Younger students are welcome to participate, but it must be in partnership with an adult and with parent permission.
+4. All games must be submitted by someone who is at least 13 years old by December 17th. Younger students are welcome to participate, but it must be in partnership with a student over 13.
 
-### Tips and Tricks
 
-If you're new to MakeCode Arcade, check out the following links for ways to get started!
+### New to MakeCode?
 
-1. Try our [Hour of Code](/hour-of-code-2021) activity
-2. Learn the basics with the [Beginner Skillmap](https://arcade.makecode.com/--skillmap#beginner)
+![A GIF of a plane putting out fires](/static/hour-of-code/2021/forest-skillmap-game.gif)
 
-### For Educators
+If you’ve never written code or used MakeCode Arcade before, no worries! Try out climate themed [Hour of Code™](/hour-of-code-2021) activity or our [Beginner Skillmap](https://arcade.makecode.com/--skillmap#beginner) to get down the basics.
+<br /><br /><br /><br />
 
-We offer a variety of [trainings](URL_HERE) for educators!
+### Educators Training
 
-### Hosting Your Jam
+Sign up for free training on how to run the Hour of Code Activity and Global MakeCode Arcade Game Jam in your classroom. We’ll cover how to use the MakeCode Arcade Platform, learning objectives, and more!
 
-We highly encourage educators and instructors to host their own gam jams, and have a variety of resources to help you get set up!
+### More Game Jam!
 
-- [Game Jam in a Box](/gamejam/lessons/ocean): A one page getting started guide with everything you need to run a game jam in your club or classroom
-- [Educator Info](URL_HERE): A quick onboarding guide to MakeCode Arcade
+Want to put on your own game jam? Check out our how-to guide, coming soon.
