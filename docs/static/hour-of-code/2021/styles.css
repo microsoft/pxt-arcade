@@ -201,6 +201,10 @@ h5 {
     flex-shrink: 0;
 }
 
+.header-title {
+    white-space: nowrap;
+}
+
 .header-title:before {
     content: '';
     position: relative;
