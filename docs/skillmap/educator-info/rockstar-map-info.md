@@ -4,7 +4,7 @@
 
 The **80's Rockstar Maze!** map uses basic code blocks in MakeCode Arcade to implement simple game concepts.
 
-In this short set of activities, students set a rockstart sprite in a backstage maze where it must collect instruments and avoid fans after a show. This map is intended for students who are new to MakeCode with little or no previous coding experience.
+In this short set of activities, students set a rockstar sprite in a backstage maze where it must collect instruments and avoid fans after a show. This map is intended for students who are new to MakeCode with little or no previous coding experience.
 
 Designed for students between the ages of 11 & 14, this experience contains a total of 3 tutorials (approximating 22 minutes of instruction).  At the end of the learning path, students receive a certificate of completion.
 

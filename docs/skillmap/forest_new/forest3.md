@@ -18,6 +18,8 @@ Until that happens, teams rely on firetrucks and aircraft to keep wildfires from
 
 ---
 
+You should be able to find four fires across the tilemap. 
+
 Can you remember which lines of code create each action?
 
 

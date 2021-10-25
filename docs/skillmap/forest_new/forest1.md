@@ -4,7 +4,7 @@
 ## Welcome @showdialog
 
 
-The last couple summers have been some of the hottest on record and the forest service needs your air team to help keep fires under control.
+The last couple summers have been some of the hottest on record and the forest service needs you to help keep fires under control.
 
 Let's start by setting up your plane to make sure you can get everywhere you need to be.
 

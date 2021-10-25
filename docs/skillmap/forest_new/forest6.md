@@ -15,6 +15,8 @@ Love your game, but wish you could add something more? Wish granted!
 
 ---
 
+You should have a complete game that allows you to extinguish fires with the (A) button and see the health of the forest using three heads-up-displays.
+
 Can you remember which lines of code create each action?
 
 
