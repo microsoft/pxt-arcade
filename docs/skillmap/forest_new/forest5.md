@@ -17,6 +17,8 @@ Let's add a heads-up-display (HUD) to help the pilot get information from their 
 
 ---
 
+You should be able to press the (A) button to put out fires that pop-up across the map. You should also have three variables you can change to fine-tune how quickly the fires spread.
+
 Can you remember which lines of code create each action?
 
 
