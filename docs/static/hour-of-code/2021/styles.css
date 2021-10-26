@@ -139,13 +139,23 @@ h5 {
 }
 
 .background-marina a,
-.background-sunflower a {
+.background-sunflower a,
+.background-papaya a {
     color: #453052;
 }
 
 .background-marina a:hover,
-.background-sunflower a:hover {
+.background-sunflower a:hover,
+.background-papaya a:hover {
     color: #33203f;
+}
+
+.background-papaya a {
+    color: #fadd73;
+}
+
+.background-papaya a:hover {
+    color: #eeca49;
 }
 
 .marina {
@@ -189,6 +199,10 @@ h5 {
     margin: 0 15px;
     height: 22px;
     flex-shrink: 0;
+}
+
+.header-title {
+    white-space: nowrap;
 }
 
 .header-title:before {
@@ -325,6 +339,42 @@ header.hoc-header .header-text h3 {
     }
 }
 
+/* Standard/Default Section --------------------------------------------------------------------------- */
+
+section.hoc-section {
+    width: 90%;
+    max-width: 110rem;
+    margin: 4rem auto;
+    padding: 4rem 0;
+}
+
+section.hoc-section > *:last-child {
+    margin-bottom: 0;
+}
+
+section.hoc-section .title {
+    margin-bottom: 4rem;
+}
+
+section.hoc-section a.btn {
+    float: right;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    section.hoc-section {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section.hoc-section .title {
+        margin-bottom: 2rem;
+    }
+}
+
 /* First Section --------------------------------------------------------------------------- */
 
 section.hoc-section-01 {
@@ -338,6 +388,10 @@ section.hoc-section-01 {
 
 section.hoc-section-01 .section-text {
     margin-left: 7rem;
+}
+
+section.hoc-section-01 .section-text:only-child {
+    margin-left: 0;
 }
 
 section.hoc-section-01 .section-text > *:last-child {
@@ -391,11 +445,14 @@ section.hoc-section-01 a.btn {
 /* First Aside --------------------------------------------------------------------------- */
 
 section.hoc-aside-01 {
+    margin-bottom: 0;
+}
+
+section.hoc-aside-01 .wrapper {
     display: flex;
     align-items: center;
-    margin: 0 auto;
-    margin-bottom: 0;
     max-width: 160rem;
+    margin: 0 auto;
 }
 
 section.hoc-aside-01.background-sunflower {
@@ -427,7 +484,8 @@ section.hoc-aside-01 .aside-text > *:last-child {
 }
 
 section.hoc-aside-01 .aside-text .title {
-    margin-top: 2rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
 }
 
 section.hoc-aside-01 .aside-text .subtitle {
@@ -447,7 +505,7 @@ section.hoc-aside-01 .aside-text .btn {
 }
 
 @media (max-width: 480px) {
-    section.hoc-aside-01 {
+    section.hoc-aside-01 .wrapper {
         flex-wrap: wrap-reverse;
     }
 
@@ -464,8 +522,7 @@ section.hoc-aside-01 .aside-text .btn {
     }
 
     section.hoc-aside-01 .aside-text .title {
-        margin: 0;
-        margin-bottom: 2rem;
+        margin: 2rem 0;
     }
 
     section.hoc-aside-01 .aside-text .subtitle {
@@ -720,16 +777,16 @@ section.hoc-aside-02 .tiles .tile:active {
     transform: scale(0.95);
 }
 
-section.hoc-aside-01 .aside-text .title {
+section.hoc-aside-02 .aside-text .title {
     margin-top: 2rem;
 }
 
-section.hoc-aside-01 .aside-text .subtitle {
+section.hoc-aside-02 .aside-text .subtitle {
     text-transform: uppercase;
     margin-bottom: 3rem;
 }
 
-section.hoc-aside-01 .aside-text .btn {
+section.hoc-aside-02 .aside-text .btn {
     margin-top: 2rem;
     float: right;
 }
