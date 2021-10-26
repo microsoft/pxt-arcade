@@ -1,4 +1,4 @@
-# Paddle / Ball
+# Multiplayer
 
 
 ## Welcome @showdialog
@@ -13,76 +13,6 @@ Add welcome text here.
 
 text
 
-```blocks
-let ball = sprites.create(assets.image`ball`, SpriteKind.Ball)
-```
-
-
-
-## 3.  
-
-text
-
-```blocks
-let ball = sprites.create(assets.image`ball`, SpriteKind.Ball)
-ball.setVelocity(100, 100)
-ball.setBounceOnWall(true)
-```
-
-
-## 4.  
-
-text
-
-```blocks
-let left_paddle = sprites.create(assets.image`left paddle`, SpriteKind.LeftPaddle)
-```
-
-## 5.  
-
-text
-
-```blocks
-left_paddle.left = 0
-left_paddle.setStayInScreen(true)
-```
-
-
-## 6.  
-
-text
-
-```blocks
-let ball = sprites.create(assets.image`ball`, SpriteKind.Ball)
-ball.setVelocity(100, 100)
-ball.setBounceOnWall(true)
-let left_paddle = sprites.create(assets.image`left paddle`, SpriteKind.LeftPaddle)
-left_paddle.left = 0
-left_paddle.setStayInScreen(true)
-controller.player1.moveSprite(left_paddle, 0, 150)
-info.player1.setScore(0)
-```
-
-
-## 7.  
-
-text
-
-```blocks
-let ball = sprites.create(assets.image`ball`, SpriteKind.Ball)
-ball.setVelocity(100, 100)
-ball.setBounceOnWall(true)
-let left_paddle = sprites.create(assets.image`left paddle`, SpriteKind.LeftPaddle)
-left_paddle.left = 0
-left_paddle.setStayInScreen(true)
-controller.player1.moveSprite(left_paddle, 0, 150)
-info.player1.setScore(0)
-let right_paddle = sprites.create(assets.image`right paddle`, SpriteKind.RightPaddle)
-right_paddle.right = 160
-right_paddle.setStayInScreen(true)
-controller.player2.moveSprite(right_paddle, 0, 150)
-info.player2.setScore(0)
-```
 
 
 ```template
