@@ -933,6 +933,11 @@ section.hoc-section-04 a.btn {
     margin-top: 1rem;
 }
 
+section.hoc-section-04 .hoc-teams-share {
+    background-color:rgba(0,0,0,0.1);
+    padding: 2rem;
+}
+
 @media (max-width: 768px) {
     section.hoc-section-04 {
         flex-wrap: wrap;
@@ -1009,6 +1014,28 @@ a.educator-btn:active {
     text-decoration: none;
     transform: scale(0.95);
 }
+
+
+.share-btn {
+    display: flex;
+    cursor: pointer;
+    padding: 0 3rem;
+    color: #4D55BD;
+    user-select: none;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    width: fit-content;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+}
+
+.share-btn .icon {
+    padding-top: .5rem;
+    padding-right: 1rem;
+}
+
 
 /* Activity Button --------------------------------------------------------------------------- */
 
