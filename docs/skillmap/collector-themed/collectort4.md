@@ -1,84 +1,6 @@
 # Animate It!
 
 
-```ghost
-info.onCountdownEnd(function () {
-    game.over(true)
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    info.changeScoreBy(1)
-})
-
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    info.changeLifeBy(-1)
-})
-let projectile: Sprite = null
-let extraLife: Sprite = null
-scene.setBackgroundImage(assets.image`Freeway`)
-scroller.scrollBackgroundWithSpeed(-50, 0)
-let mySprite = sprites.create(assets.image`Mama`, SpriteKind.Player)
-controller.moveSprite(mySprite, 0, 100)
-mySprite.setStayInScreen(true)
-info.startCountdown(15)
-animation.runImageAnimation(
-mySprite,
-assets.animation`Mama Moving`,
-100,
-true
-)
-forever(function () {
-    projectile2 = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
-    projectile2.y = randint(0, 120)
-    projectile2.setKind(SpriteKind.Enemy)
-    pause(randint(1500, 2500))
-})
-
-forever(function () {
-    projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
-    projectile.y = randint(0, 120)
-    pause(randint(1000, 2000))
-})
-```
-
-```template
-info.onCountdownEnd(function () {
-    game.over(true)
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    info.changeScoreBy(1)
-})
-
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    info.changeLifeBy(-1)
-})
-let projectile: Sprite = null
-let projectile2: Sprite = null
-scene.setBackgroundImage(assets.image`Freeway`)
-scroller.scrollBackgroundWithSpeed(-50, 0)
-let mySprite = sprites.create(assets.image`Mama`, SpriteKind.Player)
-controller.moveSprite(mySprite, 0, 100)
-mySprite.setStayInScreen(true)
-info.startCountdown(15)
-
-forever(function () {
-    projectile2 = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
-    projectile2.y = randint(15, 115)
-    projectile2.setKind(SpriteKind.Enemy)
-    pause(2100)
-})
-
-forever(function () {
-    projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
-    projectile.y = randint(15, 115)
-    pause(1000)
-})
-```
-
-
 ## {Intro @showdialog}
 
 A fantastic game can be made even better by adding small details.
@@ -90,14 +12,15 @@ This tutorial will show you how to animate your characters.
 
 ## {Step 2}
 
-The code for **Dino Mama** is already in the workspace.
-🕹️ Play your game to remember what the code does.
+The code for **Dino Mama** is already in the workspace.  
+
+Play your game to make sure you're getting points when you grab a baby dino and that you're losing points if you run into a car.
 
 
 
 ## {Step 3 @showdialog}
 
-Let's start by animating Mama Dino!
+Let's animate Mama Dino!
 
 ---
 
@@ -109,11 +32,15 @@ Let's start by animating Mama Dino!
 ## {Step 4}
 
 
-► In the toolbox, click **Advanced** to reveal the ``||animation:Animation||`` category.
+- :chevron down:  In the toolbox, click **Advanced** to reveal the  
+``||animation:Animation||`` category.
 
-► Drag ``||animation:animate [mySprite]||`` into **the bottom** of the ``||loops:on start||`` container.
+- :sync:  Drag  
+``||animation:animate [mySprite]||``  
+into **the bottom** of the  
+``||loops:on start||`` container.
 
-► Click the grey toggle at the bottom to switch looping to `<ON>`.
+- :mouse pointer:  Click the grey toggle at the bottom to switch looping to `<ON>`.
 
 
 ```blocks
@@ -156,13 +83,12 @@ true
 
 ---
 
-► To select an animation, click the grey box in ``||animation:animate [mySprite]||`` and toggle to **My Assets**.
+- :paint brush:  To select an animation, click the grey box in  
+``||animation:animate [mySprite]||`` and toggle to **My Assets**.
 
-► Select **Mama Moving** and click **Done**.
+- :mouse pointer:  Select **Mama Moving** and click **Done**.
 
 ```blocks
-let projectile: Sprite = null
-let extraLife: Sprite = null
 scene.setBackgroundImage(assets.image`Freeway`)
 scroller.scrollBackgroundWithSpeed(-50, 0)
 let mySprite = sprites.create(assets.image`Mama`, SpriteKind.Player)
@@ -183,14 +109,14 @@ true
 
 ---
 
-► You can make your animation faster by changing the **interval** to a lower number. Try using **100** or **200**.
+- :mouse pointer:  You can make your animation faster by changing the 
+**interval** to a lower number. Try using **100** or **200**.
 
-► If you'd like to slow your animation down, choose a longer **interval**.
+- :mouse pointer:  If you'd like to slow your animation down, 
+choose a longer **interval**.
 
 
 ```blocks
-let projectile: Sprite = null
-let extraLife: Sprite = null
 scene.setBackgroundImage(assets.image`Freeway`)
 scroller.scrollBackgroundWithSpeed(-50, 0)
 let mySprite = sprites.create(assets.image`Mama`, SpriteKind.Player)
@@ -209,7 +135,8 @@ true
 ## {Step 7}
 
 
-**🎮 Now try your game on the game screen 🎮**
+**Now try your game on the game screen**  
+🎮 🎮 🎮 
 
 How cool is that?!?
 
@@ -217,17 +144,20 @@ How cool is that?!?
 
 ## {Step 8}
 
-**🔁 Let's do it again 🔁**
+**Let's do it again**
 
 You can follow the same steps to animate the baby.
 
 ---
 
-► Drag ``||animation:animate [mySprite]||`` into the ``||loops:forever||`` loop where your main ``||variables:projectile||`` is created, and snap it **just above** the ``||loops:pause [1000]||`` block.
+- :sync:  Drag  
+``||animation:animate [mySprite]||``  
+into the ``||loops:forever||`` loop where your main ``||variables:projectile||`` is created, 
+and snap it **just above** the ``||loops:pause [1000]||`` block.
 
-► Change ``||variables:mySprite||`` to ``||variables:projectile||``.
+- :mouse pointer:  Change ``||variables:mySprite||`` to ``||variables:projectile||``.
 
-► Choose the **Animated Baby** animation, select the interval, and set **loop** to `<ON>`.
+- :mouse pointer:  Choose the **Animated Baby** animation, select the interval, and set **loop** to `<ON>`.
 
 
 ```blocks
@@ -251,7 +181,8 @@ true
 ## {Step 9}
 
 
-**🎮 Try your project on the game screen! 🎮**
+**Try your project on the game screen!**  
+🎮 🎮 🎮 
 
 Looking good!
 
@@ -265,11 +196,13 @@ Now you can do the same thing for your enemy sprite!
 
 ---
 
-► Drag ``||animation:animate [mySprite]||`` into the ``||loops:forever||`` loop where ``||variables:projectile2||`` is created, and snap it **just above** the ``||loops:pause [2100]||`` block.
+- :sync:  Drag  
+``||animation:animate [mySprite]||``  
+into the ``||loops:forever||`` loop where ``||variables:projectile2||`` is created, and snap it **just above** the ``||loops:pause [2100]||`` block.
 
-► Change ``||variables:mySprite||`` to ``||variables:projectile2||``.
+- :mouse pointer:  Change ``||variables:mySprite||`` to ``||variables:projectile2||``.
 
-► Choose the **Animated Tourist**, select the interval, and set **loop** to `<ON>`.
+- :mouse pointer:  Choose the **Animated Tourist**, select the interval, and set **loop** to `<ON>`.
 
 
 ```blocks
@@ -303,6 +236,86 @@ When you're ready, click **Done** to return to the main page where you can share
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll/
 ```
+
+```template
+info.onCountdownEnd(function () {
+    game.over(true)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    info.changeScoreBy(1)
+})
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    info.changeLifeBy(-1)
+})
+let projectile: Sprite = null
+let projectile2: Sprite = null
+scene.setBackgroundImage(assets.image`Freeway`)
+scroller.scrollBackgroundWithSpeed(-50, 0)
+let mySprite = sprites.create(assets.image`Mama`, SpriteKind.Player)
+controller.moveSprite(mySprite, 0, 100)
+mySprite.setStayInScreen(true)
+info.startCountdown(15)
+
+forever(function () {
+    projectile2 = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
+    projectile2.y = randint(15, 115)
+    projectile2.setKind(SpriteKind.Enemy)
+    pause(2100)
+})
+
+forever(function () {
+    projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
+    projectile.y = randint(15, 115)
+    pause(1000)
+})
+```
+
+
+```ghost
+info.onCountdownEnd(function () {
+    game.over(true)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    info.changeScoreBy(1)
+})
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    info.changeLifeBy(-1)
+})
+let projectile: Sprite = null
+let extraLife: Sprite = null
+scene.setBackgroundImage(assets.image`Freeway`)
+scroller.scrollBackgroundWithSpeed(-50, 0)
+let mySprite = sprites.create(assets.image`Mama`, SpriteKind.Player)
+controller.moveSprite(mySprite, 0, 100)
+mySprite.setStayInScreen(true)
+info.startCountdown(15)
+animation.runImageAnimation(
+mySprite,
+assets.animation`Mama Moving`,
+100,
+true
+)
+forever(function () {
+    projectile2 = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
+    projectile2.y = randint(0, 120)
+    projectile2.setKind(SpriteKind.Enemy)
+    pause(randint(1500, 2500))
+})
+
+forever(function () {
+    projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
+    projectile.y = randint(0, 120)
+    pause(randint(1000, 2000))
+})
+```
+
+
 
 ```assetjson
 {

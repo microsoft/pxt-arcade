@@ -1,31 +1,6 @@
 # Dino Hoard
 
 
-```ghost
-
-let projectile: Sprite = null
-
-scene.setBackgroundImage(assets.image`Freeway`)
-scroller.scrollBackgroundWithSpeed(-50, 0)
-let mySprite = sprites.create(assets.image`Mama`, SpriteKind.Player)
-controller.moveSprite(mySprite, 0, 100)
-mySprite.setStayInScreen(true)
-animation.runImageAnimation(
-mySprite,
-assets.animation`Mama Moving`,
-100,
-true
-)
-
-forever(function () {
-    projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
-    projectile.y = randint(0, 120)
-    pause(randint(1000, 2000))
-})
-
-```
-
-
 ## {Intro @showdialog}
 
 Ready to test your agility?
@@ -44,11 +19,13 @@ We're going to start with Mama Dino.
 
 ---
 
-► From the ``||sprites:Sprites||`` category, grab
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
-and drag it into the empty ``||loops:on start||`` container in the workspace.
+- :paper plane:  From the ``||sprites:Sprites||`` category, grab  
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  
+and drag it into the empty  
+``||loops:on start||`` container in the workspace.
 
-► Click the empty grey square and toggle to **My Assets** to select **Mama**.
+- :paint brush:  Click the empty grey square and toggle to **My Assets** 
+to select **Mama**.
 
 
 ```blocks
@@ -71,14 +48,15 @@ Let's get our sprite moving up and down with the controller.
 
 ---
 
-► From the ``||contoller:Controller||`` category, grab a
-``||controller:move [mySprite] with buttons ⊕||``
-block and snap it into **the bottom** of the ``||loops:on start||`` container.
+- :game:  From the ``||contoller:Controller||`` category, grab a  
+``||controller:move [mySprite] with buttons ⊕||``  
+block and snap it into **the bottom** of the  
+``||loops:on start||`` container.
 
-► Click the **⊕** button on the new block to show extra
+- :mouse pointer:  Click the **⊕** button on the new block to show extra
  value fields.
 
-► To keep the sprite from moving side-to-side, change
+- :mouse pointer:  To keep the sprite from moving side-to-side, change
 [__*vx*__](#whatVX "horizontal velocity") (horizontal speed) to **0**.
 
 
@@ -92,9 +70,10 @@ controller.moveSprite(mySprite, 0, 100)
 
 ## {Step 4}
 
-**🎮  Try your project using the game screen 🎮**
+**🎮  Try your project using the game screen**
 
-Make sure your ``||sprites:Player||`` moves up and down with the joypad, arrow keys, or **W** and **S** keys.
+Make sure your ``||sprites:Player||`` moves up and down with the joypad, 
+arrow keys, or **W** and **S** keys.
 
 
 ## {Step 5}
@@ -105,8 +84,9 @@ If things get out of control, your sprite can leave the screen! Let's fix that.
 
 ---
 
-► From ``||sprites:Sprites||``, grab
-``||sprites:set [mySprite] stay in screen <on>||`` and snap it into **the bottom**
+- :paper plane:  From ``||sprites:Sprites||``, grab   
+``||sprites:set [mySprite] stay in screen <on>||``  
+and snap it into **the bottom**
 of the ``||loops:on start||`` container.
 
 
@@ -122,15 +102,17 @@ mySprite.setStayInScreen(true)
 
 ## {Step 6}
 
-**🖼️ Let's set the scene 🖼️**
+**Let's set the scene**  
+🖼️ 🖼️ 🖼️ 
 
 ---
 
-► From ``||scene:Scene||``, grab
-``||scene:set background image to [ ]||`` and snap it into **the top**
+- :paper plane:  From ``||scene:Scene||``, grab  
+``||scene:set background image to [ ]||``   
+and snap it into **the top**
 of the ``||loops:on start||`` container.
 
-► Click the **grey square** in the new block and toggle to **My Assets** to choose the **Freeway** background.
+- :paint brush:  Click the **grey square** in the new block and toggle to **My Assets** to choose the **Freeway** background.
 
 
 ```blocks
@@ -145,16 +127,17 @@ mySprite.setStayInScreen(true)
 
 ## {Step 7}
 
-**🛣️ Add movement to the scene 🛣️**
+**Add movement to the scene**
 
 ---
 
-► To make it look like the dino is walking along the road,
-go to ``||scroller:Scroller||`` and drag
-``||scroller:scroll background with vx [-50] vy [-50]||`` into **the end**
+- :arrows alternate:  To make it look like the dino is walking along the road,
+go to ``||scroller:Scroller||`` and drag  
+``||scroller:scroll background with vx [-50] vy [-50]||``  
+into **the end**
 of the ``||loops:on start||`` container.
 
-► Stop the background from scrolling vertically by changing the value of **vy** to **0**.
+- :mouse pointer:  Stop the background from scrolling vertically by changing the value of **vy** to **0**.
 
 
 ```blocks
@@ -172,7 +155,8 @@ scroller.scrollBackgroundWithSpeed(-50, 0)
 
 **🎮  Take a look at the game screen 🎮**
 
-Your background should move right-to-left across the screen on its own, and you should be able to move your dino up and down with the joypad or arrow keys.
+Your background should move right-to-left across the screen on its own, 
+and you should be able to move your dino up and down with the joypad or arrow keys.
 
 
 
@@ -183,15 +167,17 @@ Let's add some baby dinos for the momma dinosaur to rescue 💚
 
 ---
 
-► From ``||loops:Loops||``, grab a
-``||loops:forever||`` loop container and drag it into
+- :redo:  From ``||loops:Loops||``, grab a  
+``||loops:forever||``  
+loop container and drag it into
 an empty spot on the workspace.
 
-► From ``||sprites:Sprites||``, grab
-``||variables:set [projectile] to projectile [ ] from side with vx [50] vy [50]||``
-and snap it into the empty ``||loops:forever||`` container.
+- :paper plane:  From ``||sprites:Sprites||``, grab  
+``||variables:set [projectile] to projectile [ ] from side with vx [50] vy [50]||``  
+and snap it into the empty  
+``||loops:forever||`` container.
 
-► Click the **grey square** in the new block and toggle to **My Assets** to choose the **Baby** sprite.
+- :paint brush:  Click the **grey square** in the new block and toggle to **My Assets** to choose the **Baby** sprite.
 
 
 ```blocks
@@ -203,10 +189,10 @@ forever(function () {
 
 ## {Step 10}
 
-► To make the babies look like they're walking along the road, change
+- :mouse pointer:  To make the babies look like they're walking along the road, change
 [__*vx*__](#whatVX "horizontal velocity") (or horizontal speed) to **-90**.
 
-► Change [__*vy*__](#whatVY "vertical velocity") (or vertical speed) to **0** so they don't float up or down.
+- :mouse pointer:  Change [__*vy*__](#whatVY "vertical velocity") (or vertical speed) to **0** so they don't float up or down.
 
 
 
@@ -228,13 +214,14 @@ send the babies in from a random height each time.
 
 ---
 
-► From  ``||sprites:Sprites||``, grab a
-``||sprites:set [mySprite] [x] to [0]||``
-block and snap it into **the end** of the ``||loops:forever||`` loop container.
+- :paper plane:  From  ``||sprites:Sprites||``, grab a  
+``||sprites:set [mySprite] [x] to [0]||``  
+block and snap it into **the end** of the   
+``||loops:forever||`` loop container.
 
-► Change **mySprite** to **projectile** using the first dropdown menu.
+- :mouse pointer:  Change **mySprite** to **projectile** using the first dropdown menu.
 
-► To change their vertical starting point, change **x** to **y** using the other dropdown menu.
+- :mouse pointer:  To change their vertical starting point, change **x** to **y** using the other dropdown menu.
 
 ```blocks
 forever(function () {
@@ -251,10 +238,13 @@ forever(function () {
 **This is looking great, but they still hover around the top.**
 
 ---
-► In ``||sprites:set [mySprite] [y] to [0]||`` , replace **0** with ``||math:pick random [0] to [10]||``.
+- :calculator:  In  
+``||sprites:set [mySprite] [y] to [0]||``,   
+replace **0** with  
+``||math:pick random [0] to [10]||``.  
 (From the ``||math:Math||`` category)
 
-► Help the babies spread out along the road by changing the smallest random number from **0** to **15** and the largest random number from
+- :mouse pointer:  Help the babies spread out along the road by changing the smallest random number from **0** to **15** and the largest random number from
 **10** to **115**.
 
 ```blocks
@@ -268,11 +258,14 @@ forever(function () {
 
 ## {Step 13}
 
-► Keep the babies from running out at the speed of light by
-adding a ``||loops:pause [100] ms||`` block (from the  ``||loops:Loops||``
-category) to **the end** of the ``||loops:forever||`` loop.
+- :redo:  Keep the babies from running out at the speed of light by
+adding a   
+``||loops:pause [100] ms||``   
+block (from the  ``||loops:Loops||``
+category) to **the end** of the   
+``||loops:forever||`` loop.
 
-► Change the pause time to **1000 ms** by clicking in the textbox and typing
+- :mouse pointer:  Change the pause time to **1000 ms** by clicking in the textbox and typing
 **1000** (or click the dropdown and select **1 second**.)
 
 ```blocks
@@ -300,6 +293,33 @@ When you're done playing, click **Done** to return to the main page and continue
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll/
 ```
+
+
+```ghost
+
+let projectile: Sprite = null
+
+scene.setBackgroundImage(assets.image`Freeway`)
+scroller.scrollBackgroundWithSpeed(-50, 0)
+let mySprite = sprites.create(assets.image`Mama`, SpriteKind.Player)
+controller.moveSprite(mySprite, 0, 100)
+mySprite.setStayInScreen(true)
+animation.runImageAnimation(
+mySprite,
+assets.animation`Mama Moving`,
+100,
+true
+)
+
+forever(function () {
+    projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
+    projectile.y = randint(0, 120)
+    pause(randint(1000, 2000))
+})
+
+```
+
+
 
 ```assetjson
 {

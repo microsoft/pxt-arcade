@@ -1,51 +1,5 @@
 # Save the Baby Dinos!
 
-```ghost
-info.onCountdownEnd(function () {
-    game.over(true)
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.rings, 200)
-    info.changeScoreBy(1)
-})
-
-
-let projectile: Sprite = null
-scene.setBackgroundImage(assets.image`Freeway`)
-scroller.scrollBackgroundWithSpeed(-50, 0)
-let mySprite = sprites.create(assets.image`Mama`, SpriteKind.Player)
-controller.moveSprite(mySprite, 0, 100)
-mySprite.setStayInScreen(true)
-info.startCountdown(15)
-animation.runImageAnimation(
-mySprite,
-assets.animation`Mama Moving`,
-100,
-true
-)
-
-forever(function () {
-    projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
-    projectile.y = randint(0, 120)
-    pause(randint(1000, 2000))
-})
-```
-
-```template
-let projectile: Sprite = null
-
-scene.setBackgroundImage(assets.image`Freeway`)
-let mySprite = sprites.create(assets.image`Mama`, SpriteKind.Player)
-controller.moveSprite(mySprite, 0, 100)
-mySprite.setStayInScreen(true)
-scroller.scrollBackgroundWithSpeed(-50, 0)
-
-forever(function () {
-    projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
-    projectile.y = randint(15, 115)
-    pause(1000)
-})
-```
 
 
 ## {Intro @showdialog}
@@ -60,7 +14,11 @@ The start of a collector game is in your workspace. Let's take it even further b
 
 ## {Step 2}
 
-**🎮 Play the game in the workspace before you begin 🎮**
+**Play the game in the workspace before you begin**  
+🎮 🎮 🎮 
+
+Can you move Mama Dino around the screen? Do baby dinos walk toward you?
+
 
 
 ## {Step 3}
@@ -70,11 +28,12 @@ Let's add some code that tells the game what to do when the mom reaches her baby
 
 ---
 
-► From ``||sprites:Sprites||``, grab an
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``
+- :paper plane:  From ``||sprites:Sprites||``, grab an  
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``  
 container and drop it into an empty area of the workspace.
 
-► Change the second kind from ``||sprites:Player||`` to ``||sprites:Projectile||``.
+- :mouse pointer:  Change the second kind from  
+``||sprites:Player||`` to ``||sprites:Projectile||``.
 
 ```blocks
 
@@ -92,14 +51,21 @@ Now we have a container for code that runs when Mama Dino overlaps the babies.
 
 ---
 
-► From ``||sprites:Sprites||``, grab
-``||sprites:destroy [mySprite]||`` and snap it into the empty
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||`` container.
+- :paper plane:  From ``||sprites:Sprites||``, grab  
+``||sprites:destroy [mySprite]||``   
+and snap it into the empty  
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``   
+container.
 
-► To make sure that the correct projectile is destroyed, grab the
-``||variables:otherSprite||`` value from the title of
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||`` and drop it into the
-``||sprites:destroy [mySprite]||`` block to replace the value **mySprite**.
+- :mouse pointer:  To make sure that the correct projectile is destroyed, grab the
+``||variables:otherSprite||`` value from the title of  
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``  
+and drop it into the
+``||sprites:destroy [mySprite]||``  
+block to replace the value **mySprite**.
+
+![Grab otherSprite from header](/static/skillmap/assets/give-var.gif "Replace mySprite with the otherSprite variable" )
+
 
 
 ```blocks
@@ -123,8 +89,9 @@ Let's add a point to your score each time you save a baby.
 
 ---
 
-► From ``||info:Info||``, grab
-``||info:change score by [1]||`` and snap it into **the bottom** of
+- :id card:  From ``||info:Info||``, grab  
+``||info:change score by [1]||``  
+and snap it into **the bottom** of  
 ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``.
 
 
@@ -140,9 +107,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ## {Step 6}
 
-**🎮 Now try it out on the game screen 🎮**
+**Now try it out on the game screen**  
+🎮 🎮 🎮 
 
-How do you like it so far?
+How do you like your game so far?
 
 When Mama Dino overlaps with the babies, you should see them disappear and have a point get added to your score.  If something doesn’t look right, check your work by clicking on the hint.
 
@@ -176,17 +144,20 @@ forever(function () {
 
 ## {Step 7}
 
-**🕔 Does this game feel long to you? 🕔**
+**Does this game feel long to you?**  
+🕔 🕔 🕔 
 
 We haven't added a way to win or lose.
 Let's do that now by adding a countdown timer.
 
 ---
 
-► From ``||info:Info||``,  choose the ``||info:start countdown [10] (s)||``
-and snap it into the end of the ``||loops:on start||`` container.
+- :id card:  From ``||info:Info||``,  choose the  
+``||info:start countdown [10] (s)||``  
+and snap it into the end of the  
+``||loops:on start||`` container.
 
-► Change **10** to **15** for more playtime goodness.
+- :mouse pointer:  Change **10** to **15** for more playtime goodness.
 
 ```blocks
 scene.setBackgroundImage(assets.image`Freeway`)
@@ -201,19 +172,21 @@ info.startCountdown(15)
 
 ## {Step 8}
 
-**🥇 Everyone's a winner 🥇**
+**🥇 Everyone's a winner**
 
 Right now, when time runs out, you lose the game. We can change that!
 
 ---
 
-► From ``||info:Info||``,  grab the ``||info:on countdown end||``
+- :id card:  From ``||info:Info||``,  grab the  
+``||info:on countdown end||``  
 container and drop it into a blank area of the workspace.
 
-► Now, from ``||game:Game||``, pick a ``||game:game over <LOSE>||`` block
-and snap it into the empty **on countdown end** container.
+- :circle:  Now, from ``||game:Game||``, pick a  
+``||game:game over <LOSE>||``  
+block and snap it into the empty **on countdown end** container.
 
-► Toggle **`<LOSE>`** to **`<WIN>`**.
+- :mouse pointer:  Toggle **`<LOSE>`** to **`<WIN>`**.
 
 ```blocks
 info.onCountdownEnd(function () {
@@ -225,7 +198,8 @@ info.onCountdownEnd(function () {
 
 ## {Step 9}
 
-**🏆 Now play your winning creation 🏆**
+**Now play your winning creation**  
+🏆 🏆 🏆 
 
 Mama Dino can collect her babies and earn points!  How many babies can you collect in **15 seconds**?
 
@@ -235,6 +209,55 @@ Challenge your friends and family by clicking "Done" and sharing the link from t
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll/
 ```
+
+
+```template
+let projectile: Sprite = null
+
+scene.setBackgroundImage(assets.image`Freeway`)
+let mySprite = sprites.create(assets.image`Mama`, SpriteKind.Player)
+controller.moveSprite(mySprite, 0, 100)
+mySprite.setStayInScreen(true)
+scroller.scrollBackgroundWithSpeed(-50, 0)
+
+forever(function () {
+    projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
+    projectile.y = randint(15, 115)
+    pause(1000)
+})
+```
+
+```ghost
+info.onCountdownEnd(function () {
+    game.over(true)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.rings, 200)
+    info.changeScoreBy(1)
+})
+
+
+let projectile: Sprite = null
+scene.setBackgroundImage(assets.image`Freeway`)
+scroller.scrollBackgroundWithSpeed(-50, 0)
+let mySprite = sprites.create(assets.image`Mama`, SpriteKind.Player)
+controller.moveSprite(mySprite, 0, 100)
+mySprite.setStayInScreen(true)
+info.startCountdown(15)
+animation.runImageAnimation(
+mySprite,
+assets.animation`Mama Moving`,
+100,
+true
+)
+
+forever(function () {
+    projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
+    projectile.y = randint(0, 120)
+    pause(randint(1000, 2000))
+})
+```
+
 
 ```assetjson
 {

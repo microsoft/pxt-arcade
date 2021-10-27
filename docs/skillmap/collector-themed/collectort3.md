@@ -1,6 +1,244 @@
 # Traffic Dodger
 
 
+
+## {Intro @showdialog}
+
+Collecting things is great, but let's also add an element of **DANGER!**
+
+This tutorial will show you how to add cars to the road.
+
+![Avoid the cars](/static/skillmap/collector/collectort3.gif "Stay safe!" )
+
+
+## {Step 2}
+
+The code for a collector game is already in the workspace.  
+🕹️ 🕹️ 🕹️
+
+Play your game to make sure you can collect the baby dinos as they move toward you.
+
+
+
+## {Step 3}
+
+Let's add a new kind of projectile, an ``||sprites:Enemy||``!
+
+---
+
+- :redo:  Grab a new  
+``||loops:forever||``  
+loop container and drop it into an empty area of the workspace.
+
+- :paper plane:  From ``||sprites:Sprites||``, drag  
+``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||``  
+into the new  ``||loops:forever||`` loop container.
+
+```blocks
+forever(function () {
+//@highlight
+    let projectile2 = sprites.createProjectileFromSide(img`
+. . . .
+. . . .
+. . . .
+. . . .
+`, 50, 50)
+})
+```
+
+
+## {Step 4}
+
+- :paint brush:  Click the empty grey box and toggle to **My Assets** to select the blue car.
+
+- :mouse pointer:  Change the **vx** value (horizontal speed) to **-90** and the **vy** value (vertical speed) to **0** so the car moves horizontally from the right to the left.
+
+```blocks
+forever(function () {
+//@highlight
+    let projectile2 = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
+})
+```
+
+
+## {Step 4}
+
+**Our new enemy isn't quite ready.**
+We still have to set the vertical positions on the screen and add a pause to the loop.
+
+---
+
+- :paper plane:  Just like we did when making the baby dinos, we'll need to grab  
+``||sprites:set [mySprite] [x] to [0]||``  
+and snap it in **below** the new projectile block.
+
+- :mouse pointer:  Change ``||variables:mySprite||`` to ``||variables:projectile2||`` and change **x** to **y**.
+
+- :mouse pointer:  Replace **0** with ``||math:pick random [0] to [10]||``, then set the range to pick from **15** to **115**.
+
+
+```blocks
+forever(function () {
+    let projectile2 = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
+    //@highlight
+    projectile2.y = randint(15, 115)
+})
+```
+
+## {Step 5}
+
+- :redo:  Add  
+``||loops:pause [100] ms||``  
+to the bottom of this ``||loops:forever||`` loop.
+
+- :mouse pointer:  Replace **100** with **2100**.
+
+
+```blocks
+forever(function () {
+    let projectile2 = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
+    projectile2.y = randint(15, 115)
+    //@highlight
+    pause(2100)
+})
+```
+
+## {Step 6}
+
+
+**🎮 Now try your game on the game screen 🎮**
+
+How is it working?
+
+
+
+## {Step 7}
+
+**😲 Uh-Oh 😲**
+
+Running into an enemy INCREASES your score. That's not right. Let's add code to treat the two projectiles differently.
+
+---
+
+- :paper plane:  From ``||sprites:Sprites||``, grab a  
+``||sprites:set [mySprite] kind to [Player]||``  
+block and snap it just **ABOVE** the **pause** block in the enemy's  
+``||loops:forever||`` loop container.
+
+- :mouse pointer:  In  
+``||sprites:set [mySprite] kind to [Player]||``,   
+change ``||variables:mySprite||`` to ``||variables:projectile2||``   
+and change ``||sprites:Player||`` to ``||sprites:Enemy||``.
+
+
+```blocks
+
+forever(function () {
+    let projectile2 = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
+    projectile2.y = randint(15, 115)
+    //@highlight
+    projectile2.setKind(SpriteKind.Enemy)
+    pause(2100)
+
+})
+```
+
+## {Step 8}
+
+**😈 Wicked 😈**
+
+Now the program knows the car is an enemy.
+What are we going to do about it?
+
+---
+
+- :mouse pointer:  Right-click the  
+``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``  
+ container that's already in the workspace and choose **Duplicate**.
+
+- :mouse pointer:  In the new greyed-out container,
+change the second **kind** from ``||sprites:Projectile||``
+to ``||sprites:Enemy||``.
+
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    info.changeScoreBy(1)
+})
+```
+
+
+## {Step 9}
+
+At this point, the player is still awarded points when they hit a car.
+
+**Let's subtract a life, instead.**
+
+---
+
+- :mouse pointer:  **Delete **  
+``||info:change score by [1]||``   
+from the   
+``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Enemy]||``  
+container.
+
+- :id card:  From ``||info: Info||``, grab   
+``||info:change life by [-1]||``  
+and snap it into the end of the  
+``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Enemy]||``  
+container.
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    //@highlight
+    info.changeLifeBy(-1)
+})
+```
+
+
+## {Step 8}
+
+**What an amazing creation!**
+
+This game has it all...drama, enemies, winning, and losing!  Play it through before moving along.
+
+When you're done, click **Done** to return to the main page where you can share your game with family and friends!
+
+
+
+```package
+arcade-background-scroll=github:microsoft/arcade-background-scroll/
+```
+
+
+```template
+info.onCountdownEnd(function () {
+    game.over(true)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    info.changeScoreBy(1)
+})
+
+
+let projectile: Sprite = null
+scene.setBackgroundImage(assets.image`Freeway`)
+let mySprite = sprites.create(assets.image`Mama`, SpriteKind.Player)
+controller.moveSprite(mySprite, 0, 100)
+mySprite.setStayInScreen(true)
+scroller.scrollBackgroundWithSpeed(-50, 0)
+info.startCountdown(15)
+
+forever(function () {
+    projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
+    projectile.y = randint(15, 115)
+    pause(1000)
+})
+```
+
+
 ```ghost
 info.onCountdownEnd(function () {
     game.over(true)
@@ -52,220 +290,6 @@ forever(function () {
 })
 ```
 
-```template
-info.onCountdownEnd(function () {
-    game.over(true)
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    info.changeScoreBy(1)
-})
-
-
-let projectile: Sprite = null
-scene.setBackgroundImage(assets.image`Freeway`)
-let mySprite = sprites.create(assets.image`Mama`, SpriteKind.Player)
-controller.moveSprite(mySprite, 0, 100)
-mySprite.setStayInScreen(true)
-scroller.scrollBackgroundWithSpeed(-50, 0)
-info.startCountdown(15)
-
-forever(function () {
-    projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
-    projectile.y = randint(15, 115)
-    pause(1000)
-})
-```
-
-
-## {Intro @showdialog}
-
-Collecting things is great, but let's also add an element of **DANGER!**
-
-This tutorial will show you how to add cars to the road.
-
-![Avoid the cars](/static/skillmap/collector/collectort3.gif "Stay safe!" )
-
-## {Step 2}
-
-The code for a collector game is already in the workspace.
-🕹️ Play your game to help you remember what each chunk of code does.
-
-
-
-## {Step 3}
-
-Let's start by adding a new kind of projectile, an ``||sprites:Enemy||``!
-
----
-
-► Grab a new ``||loops:forever||`` loop container and drop it into an empty area of the workspace.
-
-► From ``||sprites:Sprites||``, drag ``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||``.
-
-```blocks
-forever(function () {
-//@highlight
-    let projectile2 = sprites.createProjectileFromSide(img`
-. . . .
-. . . .
-. . . .
-. . . .
-`, 50, 50)
-})
-```
-
-
-## {Step 4}
-
-► Click the empty grey box and toggle to **My Assets** to select the blue car.
-
-► Change the **vx** value (horizontal speed) to **-90** and the **vy** value (vertical speed) to **0** so the car moves horizontally from the right to the left.
-
-```blocks
-forever(function () {
-//@highlight
-    let projectile2 = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
-})
-```
-
-
-## {Step 4}
-
-**Our new enemy isn't quite ready.**
-We still have to set the vertical positions on the screen and add a pause to the loop.
-
----
-
-► Just like we did when making the baby dinos, we'll need to grab ``||sprites:set [mySprite] [x] to [0]||`` and snap it in **below** the new projectile block.
-
-► Change ``||variables:mySprite||`` to ``||variables:projectile2||`` and change **x** to **y**.
-
-► Replace **0** with ``||math:pick random [0] to [10]||``, then set the range to pick from **15** to **115**.
-
-
-```blocks
-forever(function () {
-    let projectile2 = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
-    //@highlight
-    projectile2.y = randint(15, 115)
-})
-```
-
-## {Step 5}
-
-► Add ``||loops:pause [100] ms||`` to the bottom of this ``||loops:forever||`` loop.
-
-► Replace **100** with **2100**.
-
-
-```blocks
-forever(function () {
-    let projectile2 = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
-    projectile2.y = randint(15, 115)
-    //@highlight
-    pause(2100)
-})
-```
-
-## {Step 6}
-
-
-**🎮 Now try your game on the game screen 🎮**
-
-How is it working?
-
-
-
-## {Step 7}
-
-**😲 Uh-Oh 😲**
-
-Running into an enemy INCREASES your score. That's not right. Let's add code to treat the two projectiles differently.
-
----
-
-► From ``||sprites:Sprites||``, grab a ``||sprites:set [mySprite] kind to [Player]||``
-block and snap it just **ABOVE** the **pause** block in the enemy's ``||loops:forever||`` loop container.
-
-► In ``||sprites:set [mySprite] kind to [Player]||``, change ``||variables:mySprite||`` to ``||variables:projectile2||`` and change ``||sprites:Player||``
-to ``||sprites:Enemy||``.
-
-
-```blocks
-
-forever(function () {
-    let projectile2 = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
-    projectile2.y = randint(15, 115)
-    //@highlight
-    projectile2.setKind(SpriteKind.Enemy)
-    pause(2100)
-
-})
-```
-
-## {Step 8}
-
-**😈 Wicked 😈**
-
-Now the program knows the car is an enemy.
-What are we going to do about it?
-
----
-
-► Right-click the ``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``
- container that's already in the workspace and choose **Duplicate**.
-
-► In the new greyed-out container,
-change the second **kind** from ``||sprites:Projectile||``
-to ``||sprites:Enemy||``.
-
-
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    info.changeScoreBy(1)
-})
-```
-
-
-## {Step 9}
-
-At this point, the player is still awarded points when they hit a car.
-
-**Let's subtract a life, instead.**
-
----
-
-► Delete ``||info:change score by [1]||`` from the ``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Enemy]||``
-container.
-
-► From ``||info: Info||``, grab  ``||info:change life by [-1]||`` and
-snap it into the end of the ``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Enemy]||``
-container.
-
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    //@highlight
-    info.changeLifeBy(-1)
-})
-```
-
-
-## {Step 8}
-
-**What an amazing creation!**
-
-This game has it all...drama, enemies, winning, and losing!  Play it through before moving along.
-
-When you're done, click **Done** to return to the main page where you can share your game with family and friends!
-
-
-
-```package
-arcade-background-scroll=github:microsoft/arcade-background-scroll/
-```
 
 ```assetjson
 {
