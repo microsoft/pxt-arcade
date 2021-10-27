@@ -986,6 +986,21 @@ footer.hoc-footer .msft img {
     opacity: 0.5;
 }
 
+footer.hoc-footer .code-org-trademark {
+    margin: 0 auto;
+    max-width: 70rem;
+    padding: 0 2rem;
+    margin-top: -3rem;
+    margin-bottom: 3rem;
+    opacity: 0.5;
+}
+
+footer.hoc-footer .code-org-trademark p,
+footer.hoc-footer .code-org-trademark a {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
 /* Educator Button --------------------------------------------------------------------------- */
 
 a.educator-btn {
