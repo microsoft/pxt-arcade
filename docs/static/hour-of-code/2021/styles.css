@@ -588,6 +588,7 @@ section.hoc-section-02 .carousel .body .body-overlay {
     bottom: 0;
     left: 0;
     right: 0;
+    border-bottom-right-radius: 0.5rem;
     background: linear-gradient(
         0deg,
         rgba(0, 0, 0, 1) 0%,
@@ -739,6 +740,10 @@ section.hoc-aside-02 a svg {
 
 section.hoc-aside-02 a:active svg path {
     fill: white;
+}
+
+section.hoc-aside-02 a:last-child {
+    vertical-align: bottom;
 }
 
 section.hoc-aside-02 .aside-text {
