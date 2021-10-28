@@ -283,12 +283,15 @@ nav .header-bar-right .btn svg path {
 /* Header --------------------------------------------------------------------------- */
 
 header.hoc-header {
-    height: 30rem;
+    height: 50rem;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     position: relative;
+    background-repeat: repeat-x;
+    background-size: auto 50rem;
+    background-position: center bottom;
 }
 
 header.hoc-header .header-background-image {
@@ -298,44 +301,84 @@ header.hoc-header .header-background-image {
     top: 0;
     bottom: 0;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-size: auto 50rem;
+    background-position: center bottom;
 }
 
 header.hoc-header .header-text {
+    margin-top: 8rem;
+    max-width: 50rem;
     text-align: center;
+    margin-left: 1rem;
+    user-select: none;
 }
 
 header.hoc-header .header-text .title {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-header.hoc-header .header-text .title > * {
-    margin: 0 1rem;
+header.hoc-header .header-text .title h1 {
+    filter: drop-shadow(-0.5rem 0.5rem 0 #eeca49);
+}
+
+header.hoc-header .header-text .title .code {
+    font-size: 11rem;
+    margin-top: -4rem;
+    margin-left: -1rem;
+    position: relative;
+}
+
+header.hoc-header .header-text .title .code .small {
+    font-size: 5rem;
+    position: absolute;
+    right: -3rem;
+    top: -1.5rem;
 }
 
 header.hoc-header .header-text h3 {
-    margin-top: 0;
+    margin-top: -1.5rem;
+}
+
+header.hoc-header-educators {
+    background-position: left bottom;
+    justify-content: flex-start;
+}
+
+header.hoc-header-educators .header-text {
+    margin-left: 10rem;
+}
+
+header.hoc-header-educators .header-text h3 {
+    display: inline-block;
+    margin: 0 auto;
+    background-color: #de594b;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 5rem;
+    font-size: 2.8rem;
+}
+
+@media (max-width: 768px) {
+    header.hoc-header-educators {
+        background-position: left -9rem bottom;
+    }
+
+    header.hoc-header-educators .header-text {
+        margin-left: 0;
+    }
 }
 
 @media (max-width: 480px) {
     header.hoc-header {
-        height: 35rem;
+        height: 40rem;
     }
 
     header.hoc-header .header-text {
         margin-top: 3rem;
-    }
-
-    header.hoc-header .header-text .title {
-        flex-wrap: wrap;
-    }
-
-    header.hoc-header .header-text .title > * {
-        margin: 0 1rem;
-        line-height: 1;
+        max-width: 45rem;
     }
 }
 
@@ -1097,7 +1140,7 @@ a.activity-btn .action {
 
 a.btn,
 section.hoc-section-03 .action {
-    min-width: 30rem;
+    min-width: 26rem;
     text-align: center;
     display: inline-block;
     cursor: pointer;
