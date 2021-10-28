@@ -318,6 +318,7 @@ header.hoc-header .header-text .title {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    margin-left: 0.5rem;
 }
 
 header.hoc-header .header-text .title h1 {
@@ -386,7 +387,7 @@ header.hoc-header-educators .header-text h3 {
 
 section.hoc-section {
     width: 90%;
-    max-width: 110rem;
+    max-width: 90rem;
     margin: 4rem auto;
     padding: 4rem 0;
 }
@@ -445,9 +446,16 @@ section.hoc-section-01 .section-text .title {
     margin-bottom: 4rem;
 }
 
-section.hoc-section-01 .activity-btn {
+section.hoc-section-01 .activity-btn,
+section.hoc-section-01 .hero {
     width: 35%;
     flex-shrink: 0;
+}
+
+section.hoc-section-01 .hero img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
 }
 
 section.hoc-section-01 a.btn {
@@ -475,7 +483,8 @@ section.hoc-section-01 a.btn {
         margin: 0;
     }
 
-    section.hoc-section-01 .activity-btn {
+    section.hoc-section-01 .activity-btn,
+    section.hoc-section-01 .hero {
         width: 100%;
         margin-bottom: 5rem;
     }
@@ -1116,7 +1125,7 @@ a.activity-btn .title {
 a.activity-btn .body {
     height: 33rem;
     margin-top: -3rem;
-    border-radius: 2rem;
+    border-radius: 1rem;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -1129,8 +1138,8 @@ a.activity-btn .action {
     right: 0;
     text-transform: uppercase;
     padding: 2rem;
-    border-bottom-left-radius: 2rem;
-    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
     flex-basis: 100%;
     transition: 0.25s;
     opacity: 0;
@@ -1191,48 +1200,82 @@ a.btn.secondary:active {
     background-color: black;
 }
 
-/* Standard Button --------------------------------------------------------------------------- */
+/* Educators --------------------------------------------------------------------------- */
 
-.ui.vertical.segment.footer {
-    background-color: #de594b;
-    color: white;
-    padding: 4rem 0;
-    margin-top: 0;
+.learning-columns {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
 }
 
-.docs.footer.inverted a.item i.icon {
-    color: white;
-    transition: 0.25s;
+.learning-columns .col {
+    display: flex;
+    flex-basis: 33%;
+    flex-shrink: 1;
+    flex-grow: 1;
 }
 
-.docs.footer.inverted a.item:hover i.icon {
-    transform: scale(1.1);
-    color: #f2f2f2;
-}
-
-.docs.footer.inverted a.item:active i.icon {
-    transform: scale(0.9);
+.learning-columns .col-wrapper {
+    flex-basis: 100%;
+    background-color: white;
     color: black;
+    border-radius: 1rem;
+    margin: 1.5rem;
 }
 
-.docs.footer.inverted .divider {
-    display: none;
+.learning-columns .col:first-child .col-wrapper {
+    margin-left: 0;
 }
 
-.docs.footer.inverted .ui.small.horizontal.list {
-    margin-top: 3rem;
+.learning-columns .col:last-child .col-wrapper {
+    margin-right: 0;
 }
 
-.docs.footer.inverted .ui.small.horizontal.list > .item {
-    font-size: 1.4rem;
+.learning-columns .col h4 {
+    text-transform: uppercase;
+    background-color: #cc493a;
     color: white;
+    margin: 0;
+    padding: 2rem;
+    text-align: center;
+    height: 10rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
 }
 
-.docs.footer.inverted .ui.small.horizontal.list > .item:hover {
-    font-size: 1.4rem;
-    color: white;
+.learning-columns .col ul {
+    padding-right: 2rem;
 }
 
-.docs.footer.inverted .poweredBy img {
-    filter: brightness(5) !important;
+.learning-columns .col ul li::marker {
+    color: #cc493a;
+    font-weight: 700;
+}
+
+.accent-list li::marker {
+    color: #eeca49;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .learning-columns {
+        flex-wrap: wrap;
+    }
+    .learning-columns .col {
+        min-width: 30rem;
+    }
+    .learning-columns .col-wrapper,
+    .learning-columns .col:first-child .col-wrapper,
+    .learning-columns .col:last-child .col-wrapper {
+        margin: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .learning-columns .col-wrapper,
+    .learning-columns .col:first-child .col-wrapper,
+    .learning-columns .col:last-child .col-wrapper {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
