@@ -12,7 +12,7 @@ In this activity, student will use:
 
 ## Concept: Velocity
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/physics-velocity.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/Rc3EM5-4HzA)
 
 Velocity is defined as speed in a given direction. Velocity is the distance at which an object's position changes, along with its direction, over some period of time.
 
@@ -96,7 +96,8 @@ game.onUpdateInterval(1000, function () {
 
 ## Concept: Acceleration
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/physics-acceleration.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/4yn57nZPZuI)
+
 
 Acceleration represents the rate of change in velocity. We think of this as how much an object is speeding up or slowing down in a particular direction. Gravity is a good example of acceleration where falling objects increase in velocity, falling faster and faster, in the down direction.
 
@@ -198,7 +199,7 @@ game.onUpdateInterval(1000, function () {
 
 ## Student Task #1a: Water balloons
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/physics-task-a.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/p-rR6hpInJ4)
 
 1. Review the code below
 2. Create a new project and name it "water balloon"
@@ -304,7 +305,7 @@ balloon.x += -50
 
 ## Student Task #1b: Flying Duck
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/physics-task-b.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/2wXLE1phLBE)
 
 In this task, you will make a basic version of a flying bird game. In it, the bird will fall due to gravity, and whenever the player presses ``||controller:A||`` button, the bird flies into the sky.
 
