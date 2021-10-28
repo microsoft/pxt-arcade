@@ -991,7 +991,7 @@ section.hoc-section-04 a.btn {
 }
 
 section.hoc-section-04 .hoc-teams-share {
-    background-color:rgba(0,0,0,0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     padding: 2rem;
 }
 
@@ -1087,12 +1087,11 @@ a.educator-btn:active {
     transform: scale(0.95);
 }
 
-
 .share-btn {
     display: flex;
     cursor: pointer;
     padding: 0 3rem;
-    color: #4D55BD;
+    color: #4d55bd;
     user-select: none;
     background-color: white;
     justify-content: center;
@@ -1104,10 +1103,9 @@ a.educator-btn:active {
 }
 
 .share-btn .icon {
-    padding-top: .5rem;
+    padding-top: 0.5rem;
     padding-right: 1rem;
 }
-
 
 /* Activity Button --------------------------------------------------------------------------- */
 
@@ -1175,7 +1173,8 @@ a.activity-btn .action {
 /* Standard Button --------------------------------------------------------------------------- */
 
 a.btn,
-section.hoc-section-03 .action {
+section.hoc-section-03 .action,
+.share-btn {
     min-width: 26rem;
     text-align: center;
     display: inline-block;
@@ -1189,7 +1188,8 @@ section.hoc-section-03 .action {
     text-transform: uppercase;
 }
 
-a.btn:hover {
+a.btn:hover,
+.share-btn:hover {
     color: black;
     text-decoration: none;
     transform: scale(1.05);
@@ -1206,7 +1206,8 @@ a.btn:hover {
     color: white;
 }
 
-a.btn:active {
+a.btn:active,
+.share-btn:active {
     background-color: black;
     color: white;
     text-decoration: none;
@@ -1282,6 +1283,41 @@ a.btn.secondary:active {
 .accent-list li::marker {
     color: #eeca49;
     font-weight: 700;
+}
+
+.hoc-teams-share {
+    text-align: right;
+}
+
+.hoc-teams-share p {
+    text-align: left;
+}
+
+.hoc-teams-share .share-btn {
+    margin-top: 2rem;
+    position: relative;
+}
+
+.hoc-teams-share .share-btn .icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 5rem;
+    padding: 0;
+    background-color: white;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.hoc-teams-share .share-btn h5 {
+    margin: 0;
+    margin-left: 5rem;
+}
+
+.hoc-teams-share .share-btn .icon img {
+    margin-top: 1.1rem;
+    width: 4rem !important;
 }
 
 @media (max-width: 768px) {
