@@ -447,7 +447,7 @@ controller.moveSprite(mySprite)
 ## {Step 4 - Keep the Player in the screen}
 
 Notice that we can actually move our player off the screen. Let’s prevent that. From the
-``||sprites:Sprites||`` Toolbox drawer, under the **Effects** category, drag a
+``||sprites:Sprites||`` Toolbox drawer, drag a
 ``||sprites:set mySprite stay in screen||`` block and drop after the ``||controller:move mySprite||``
 block.
 
@@ -944,7 +944,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ## {Step 12 - Destroy Clover}
 
-From the ``||sprites:Sprites||`` Toolbox drawer, under the **Effects** category, drag a ``||sprites:destroy sprite||`` block and drop in the ``||sprites:on sprite overlaps||`` block.
+From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:destroy sprite||`` block and drop in the ``||sprites:on sprite overlaps||`` block.
 In the ``||sprites:on sprite overlaps||`` block, drag the ``||sprites:otherSprite||`` local variable (representing the specific overlapping clover) into the ``||sprites:destroy sprite||`` block replacing ``||sprites:mySprite||``.
 
 ```blocks

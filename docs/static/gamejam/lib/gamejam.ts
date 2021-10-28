@@ -136,10 +136,20 @@ function makeRules() {
             parent.innerHTML = markdown;
 
             // insert schedule of events after rules
-            const node = document.getElementById(info.rules.collaborateId);
-            if (node) {
-                node.parentElement.insertBefore(document.getElementById("events"), node);
+            const collaborateNode = document.getElementById(info.rules.collaborateId);
+            if (collaborateNode) {
+                collaborateNode.parentElement.insertBefore(document.getElementById("events"), collaborateNode);
             }
+
+            // move submit section if submitPositionId exists
+            if (info.rules.submitPositionId) {
+                const beforeNode = document.getElementById(info.rules.submitPositionId);
+                const submitNode = document.getElementById("submit");
+                if (beforeNode && submitNode) {
+                    beforeNode.parentElement.insertBefore(submitNode, beforeNode);
+                }
+            }
+
             initRulesTelemetry(info.rules.tipsId);
         }
     }
@@ -180,32 +190,33 @@ function makeWinners() {
 function makeGallery() {
     const container = document.querySelector(".gallery") as HTMLElement;
     const parent = document.getElementById("gallery");
+    if (container && parent) {
+        if (!info?.featured.length) {
+            const description = document.querySelector(".gallery .description") as HTMLElement;
+            description.innerText = "Check back later to play some submitted games!"
+        } else {
+            let hint = document.createElement("div");
+            hint.className = "hint"
+            hint.innerText = "If you see blocks overlapping each other in the editor workspace, you can \
+                reformat them by selecting \"Format Code\" from the menu when you right-click \
+                on the workspace background."
 
-    if (!info?.featured.length) {
-        const description = document.querySelector(".gallery .description") as HTMLElement;
-        description.innerText = "Check back later to play some submitted games!"
-    } else {
-        let hint = document.createElement("div");
-        hint.className = "hint"
-        hint.innerText = "If you see blocks overlapping each other in the editor workspace, you can \
-            reformat them by selecting \"Format Code\" from the menu when you right-click \
-            on the workspace background."
-
-        container.insertBefore(hint, parent);
-    }
-
-    let selected = randomize(info.featured); // show all the games
-    let row = document.createElement("div");
-    for (let i = 0; i < selected.length; i++) {
-        row.appendChild(makeGameCard(selected[i]));
-
-        if (i % 3 == 2) {
-            parent.appendChild(row);
-            row = document.createElement("div")
+            container.insertBefore(hint, parent);
         }
-    }
-    if (selected.length % 3 != 0) {
-        parent.appendChild(row);
+
+        let selected = randomize(info.featured); // show all the games
+        let row = document.createElement("div");
+        for (let i = 0; i < selected.length; i++) {
+            row.appendChild(makeGameCard(selected[i]));
+
+            if (i % 3 == 2) {
+                parent.appendChild(row);
+                row = document.createElement("div")
+            }
+        }
+        if (selected.length % 3 != 0) {
+            parent.appendChild(row);
+        }
     }
 }
 
