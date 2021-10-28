@@ -35,7 +35,12 @@ ball.setBounceOnWall(true)
 text
 
 ```blocks
+let ball = sprites.create(assets.image`ball`, SpriteKind.Ball)
+ball.setVelocity(100, 100)
+ball.setBounceOnWall(true)
+//@highlight
 let left_paddle = sprites.create(assets.image`left paddle`, SpriteKind.LeftPaddle)
+
 ```
 
 ## 5.  
@@ -43,6 +48,10 @@ let left_paddle = sprites.create(assets.image`left paddle`, SpriteKind.LeftPaddl
 text
 
 ```blocks
+let ball = sprites.create(assets.image`ball`, SpriteKind.Ball)
+ball.setVelocity(100, 100)
+ball.setBounceOnWall(true)
+let left_paddle = sprites.create(assets.image`left paddle`, SpriteKind.LeftPaddle)
 left_paddle.left = 0
 left_paddle.setStayInScreen(true)
 ```
