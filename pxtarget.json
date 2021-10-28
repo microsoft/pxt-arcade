@@ -479,7 +479,7 @@
         "logoUrl": "https://makecode.com/org",
         "logo": "./static/logo.svg",
         "docsLogo": "./static/logo.svg",
-        "cardLogo": "./static/logo.svg",
+        "cardLogo": "./static/logo.png",
         "portraitLogo": "./static/logo.svg",
         "footerLogo": "./static/logo.svg",
         "organization": "Microsoft MakeCode",
