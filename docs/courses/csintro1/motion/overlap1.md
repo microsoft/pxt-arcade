@@ -192,7 +192,7 @@ game.onUpdate(function () {
 
 ## Student Task #2: Ghost Off and On #task-2
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/overlap1GhostNTask.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/QqU2Tjg6oRk)
 
 1. Start with [example #2](#example-2) or [task #1](#task-1)
 2. Create 3 sprites in different locations across the screen
@@ -203,7 +203,7 @@ game.onUpdate(function () {
 
 ## Student Task #3: Multiple ``||sprites:kind||``s
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/overlap1Task3.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/ddME-nX-Qx4)
 
 1. Start with [task #2](#task-2) or your own similar code
 2. Enable the sprite to move anywhere on screen along x and y axis
