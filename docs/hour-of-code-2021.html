@@ -165,21 +165,27 @@
                 </div>
             </nav>
 
-            <header class="hoc-header background-marina">
+            <header
+                class="hoc-header background-marina"
+                style="
+                    background-image: url('./static/hour-of-code/2021/hoc-header-scene.gif');
+                "
+            >
                 <div class="header-text">
                     <h4 class="body-font">Microsoft MakeCode Arcade</h4>
                     <div class="title">
-                        <h1 class="display-font">Hour</h1>
-                        <h2 class="display-font">of</h2>
-                        <h1 class="display-font">Code™</h1>
+                        <h1 class="display-font">Hour Of</h1>
+                        <h1 class="display-font code">
+                            Code<span class="small">™</span>
+                        </h1>
                     </div>
                     <h3 class="display-font">2021</h3>
                 </div>
 
                 <div
-                    class="header-background-image"
+                    class="header-background-image foreground"
                     style="
-                        background-image: url('./static/hour-of-code/2021/header.gif');
+                        background-image: url('./static/hour-of-code/2021/hoc-header-plane.gif');
                     "
                 ></div>
             </header>
@@ -241,10 +247,8 @@
                         target="_blank"
                         rel="noreferrer"
                         onClick="window.pxtTickEvent('hourofcode2021.skillmap.educator')"
-                        ><h5 class="display-font">
-                            Educator Guide
-                            <i class="external alternate icon"></i></h5
-                    ></a>
+                        ><h5 class="display-font">Educator Guide</h5></a
+                    >
                 </div>
             </section>
 
@@ -253,12 +257,12 @@
                     <div class="aside-text">
                         <h3 class="title display-font">Join the Game Jam!</h3>
                         <p>
-                            Go beyond the Hour of Code and use the skills you
-                            gained to either modify your existing game or create
-                            something brand new to submit to the Game Jam!
+                            After the Hour of Code™ activity, use the skills you
+                            gained to modify your existing game or create
+                            something new to submit to this year's game jam.
                             MakeCode is proud to announce that we are partnering
-                            with the US State Department to bring you a Global
-                            MakeCode Arcade Game Jam!
+                            with the US State Department to bring you the first
+                            <b>Global MakeCode Arcade Game Jam</b>!
                         </p>
                         <a
                             class="btn"
@@ -272,7 +276,7 @@
                     <div
                         class="hero background-sunflower"
                         style="
-                            background-image: url('./static/gamejam/jams/global-2021/assets/banner.png');
+                            background-image: url('./static/hour-of-code/2021/game-jam-hero.png');
                         "
                     ></div>
                 </div>
@@ -318,7 +322,7 @@
                             class="list-item display-font"
                             onClick="onListItemClicked(4)"
                             data-ind="4"
-                            >Minecraft Hour of Code</a
+                            >Minecraft Hour of Code™</a
                         >
                         <a
                             class="list-item display-font"
@@ -368,8 +372,8 @@
                         },
                         {
                             id: 'minecraft',
-                            img: '',
-                            link: '',
+                            img: '/static/hour-of-code/2021/minecraft.png',
+                            link: 'https://education.minecraft.net/en-us/resources/hour-code-2021',
                             text: 'Hour of Code™ 2021'
                         },
                         {
@@ -502,6 +506,31 @@
             </section>
 
             <footer class="hoc-footer background-papaya">
+                <div class="code-org-trademark">
+                    <p>
+                        The '<a
+                            href="http://hourofcode.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            >Hour of Code™</a
+                        >' is a nationwide initiative by
+                        <a
+                            href="http://csedweek.org/"
+                            target="_blank"
+                            rel="noreferrer"
+                            >Computer Science Education Week</a
+                        >
+                        and
+                        <a
+                            href="http://code.org/"
+                            target="_blank"
+                            rel="noreferrer"
+                            >Code.org</a
+                        >
+                        to introduce millions of students to one hour of
+                        computer science and computer programming
+                    </p>
+                </div>
                 <div class="msft">
                     <img
                         src="/static/logo/Microsoft_logo_rgb_W-white_D.png"
