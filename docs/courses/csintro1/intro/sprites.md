@@ -87,7 +87,7 @@ When using the image editor, the pixel dimensions are displayed in the lower lef
 
 ## Student Task #2: Build a "rainbow numbers" sprite that uses every color in the editor 
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/02.2VariableSpriteTask.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/G-nCAeH__rY)
 
 1. Make a blank **32x32** sprite
 2. Hover over every color and find color index 0 and add that color on the far left

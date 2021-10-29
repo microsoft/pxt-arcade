@@ -83,7 +83,7 @@ mySprite.setPosition(145, 60)
 
 ## Concept: Projectiles from other Projectile Sprites
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/projectile-from-projectile.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/SJh_4f_SQss)
 
 We can use projectiles to create an animation. The following examples build a projectile raining cloud (that is also a projectile).
 
@@ -290,7 +290,7 @@ Note the new ``||sprites:set cloud kind to Cloud||`` block was added in as well;
 
 ## Student Task #2: Projectile from Projectile
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20makecode%20arcade%20%28unit%201%29/projectile-from-proj-task.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/NEUZT6jdUkw)
 
 Make a projectile move across the bottom of the screen that, while moving, gives off different projectiles that "float" to the top of the screen. Use parts of example code above for inspiration to start you project.
 
