@@ -98,7 +98,6 @@ game.onUpdateInterval(1000, function () {
 
 [![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/4yn57nZPZuI)
 
-
 Acceleration represents the rate of change in velocity. We think of this as how much an object is speeding up or slowing down in a particular direction. Gravity is a good example of acceleration where falling objects increase in velocity, falling faster and faster, in the down direction.
 
 The relationship between acceleration and velocity is similar to the relationship between velocity and position. Velocity is the rate at which position is changing, and acceleration is the rate at which velocity is changing.
