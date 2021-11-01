@@ -16,30 +16,6 @@
   "directOpen": true
 },
 {
-  "name": "Create a Space Adventure",
-  "cardType": "link",
-  "description": "Make a Galaga-style game by creating a rocket that fires at enemies. Design your outerspace view, create amazing animations, and MORE!",
-  "imageUrl":  "/static/skillmap/backgrounds/space.png",
-  "url": "https://arcade.makecode.com/--skillmap#space",
-  "directOpen": true
-},
-{
-  "name": "Jungle Monkey Jump Platformer",
-  "cardType": "link",
-  "description": "Code your monkey, add magic platforms, toss explosives, and collect valuables through customizable level maps.",
-  "imageUrl":  "/static/skillmap/backgrounds/jungle-map.png",
-  "url": "https://arcade.makecode.com/--skillmap#jungle",
-  "directOpen": true
-},
-{
-  "name": "80s Rockstar Maze",
-  "cardType": "link",
-  "description": "Code your rockstar to move through the crowded backstage area to collect all the gear before they're mobbed by fans!",
-  "imageUrl":  "/static/skillmap/backgrounds/rockstar-card.gif",
-  "url": "https://arcade.makecode.com/--skillmap#rockstar",
-  "directOpen": true
-},
-{
   "name": "A Zookeeper's Adventure",
   "cardType": "link",
   "description": "Ever wonder what it takes to be a zookeeper? The answer may surprise you...",
@@ -48,11 +24,11 @@
   "directOpen": true
 },
 {
-  "name": "Game Maker Guide",
+  "name": "80s Rockstar Maze",
   "cardType": "link",
-  "description": "Level up your game making skills by following this series of tutorials!",
-  "imageUrl":  "/static/tutorials/game-maker-guide.png",
-  "url": "https://arcade.makecode.com/skillmap",
+  "description": "Code your rockstar to move through the crowded backstage area to collect all the gear before they're mobbed by fans!",
+  "imageUrl":  "/static/skillmap/backgrounds/rockstar-card.gif",
+  "url": "https://arcade.makecode.com/--skillmap#rockstar",
   "directOpen": true
 }
 ]

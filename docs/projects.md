@@ -3,9 +3,16 @@
 ```codecard
 [
     {
-        "name": "Skillmaps",
+        "name": "Entry-Level Skillmaps",
         "url": "/skillmaps",
         "imageUrl": "/static/skillmap/backgrounds/beginner.png"
+    },
+    {
+        "name": "Next-Level Skillmaps",
+        "url": "/skillmaps-next",
+        "imageUrl": "/static/skillmap/backgrounds/shark-map.png",
+        "largeImageUrl": "/static/skillmap/backgrounds/shark4b.gif",
+        "videoUrl": "/static/recipes/shark-splash/02-C-enemies.mp4"
     },
     {
         "name": "Tutorials",
@@ -13,13 +20,6 @@
         "imageUrl": "/static/tutorials/chase-the-pizza.png",
         "largeImageUrl": "/static/tutorials/chase-the-pizza.gif",
         "videoUrl": "/static/tutorials/chase-the-pizza.mp4"
-    },
-    {
-        "name": "Multipart Tutorials",
-        "url": "/multipart-tutorials",
-        "imageUrl": "/static/recipes/shark-splash/shark-splash.png",
-        "largeImageUrl": "/static/recipes/shark-splash/02-C-enemies.gif",
-        "videoUrl": "/static/recipes/shark-splash/02-C-enemies.mp4"
     },
     {
         "name": "Live Coding",
