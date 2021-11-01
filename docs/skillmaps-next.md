@@ -1,7 +1,7 @@
-# Skillmaps
+# Next-Level Skillmaps
 
 
-## Getting started
+## Continue the Journey
 
 ```codecard
 [
