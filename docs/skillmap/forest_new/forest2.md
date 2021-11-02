@@ -3,7 +3,7 @@
 
 ## Welcome @showdialog
 
-Nearly 4 out of 5 forest fires are started by humans.
+Nearly 4 out of 5 forest fires are started by humans.  
 In your game, they'll be started by your code.
 
 ![Random fires starting on the grid](/static/skillmap/forest/forest2.gif "Look what we're about to do today!")
@@ -16,6 +16,8 @@ In your game, they'll be started by your code.
 **🎮 Try your game**
 
 ---
+
+Your plane should be able to move around with the arrow keys and the camera should follow it across the tilemap.
 
 Can you remember which lines of code create each action?
 
@@ -30,16 +32,16 @@ code once.
 
 ---
 
-- :redo:  Drag the
-``||loops:repeat [4] times||``
-loop container into **the end** of the
-``||loops:on start||``
+- :redo:  Drag the  
+``||loops:repeat [4] times||``  
+loop container into **the end** of the  
+``||loops:on start||``  
 container.
 
-- :paper plane:  Add  
-``||sprites:create spreading fire on random [ ] with image [ ]||``
-into the empty  
-``||loops:repeat [4] times||``
+- :paper plane:  Add   
+``||sprites:create spreading fire on random [ ] with image [ ]||``  
+into the empty   
+``||loops:repeat [4] times||``  
 container.
 
 
@@ -60,8 +62,8 @@ for (let index = 0; index < 4; index++) {
 ## 4. Creating fire
 
 
-- :mouse pointer:  In the  
-``||sprites:create spreading fire on random [ ] with image [ ]||``  
+- :mouse pointer:  In the    
+``||sprites:create spreading fire on random [ ] with image [ ]||``   
 block, click the first checkered  square and select the **tree** tile.
 
 - :mouse pointer:  Click the second checkered  square and select the **tree fire** tile.
@@ -87,21 +89,33 @@ for (let index = 0; index < 4; index++) {
 ```
 
 
+## 5. Loops for the WIN @showdialog
+
+See how you only had to add one block into the loop to make something happen 4 times?
+
+```block
+for (let index = 0; index < 4; index++) {
+    sprites.create_spreading_fire(assets.tile`tree`, assets.tile`tree fire`)
+```
+
+- How many fires would start if you changed the loop to run 3 times?  
+- How many fires would you have if it ran 5 times?
 
 
-##  5. Try It
+
+##  6. Try It
 
 **🕹️ Test it out in the Game Window **
 
 ---
 
-You should be able to fly around the screen and find all 4 fires!
+You should be able to fly around the screen and find 4 fires!
 
 ...But they don't look very lively, do they?
 
 
 
-## 6. Just My Type
+## 7. Just My Type
 
 **🔥 Let's create some crackle**
 
@@ -110,7 +124,7 @@ When each fire is created, we want to make it sparkle using effects.
 ---
 
 - :paper plane:   Drag an  
-``||sprites:on fire created at [location]||``  
+``||sprites:on fire created at [location]||``   
 container into an empty area of the workspace.
 
 
@@ -127,12 +141,12 @@ sprites.on_fire_created(function (location) {
 
 
 
-## 7. Add the Spark
+## 8. Add the Spark
 
-- :tree:   Drag  
-``||scene:start [spray] effect at [location]||``  
+- :tree:   Drag   
+``||scene:start [spray] effect at [location]||``   
 into the empty  
-``||sprites:on fire created at [location]||``    
+``||sprites:on fire created at [location]||``     
 container.
 
 - :mouse pointer:   Change the effect from ``||scene:spray||`` to ``||scene:fire||``.

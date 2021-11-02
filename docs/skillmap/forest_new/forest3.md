@@ -18,6 +18,8 @@ Until that happens, teams rely on firetrucks and aircraft to keep wildfires from
 
 ---
 
+You should be able to find four fires across the tilemap. 
+
 Can you remember which lines of code create each action?
 
 
@@ -84,12 +86,11 @@ Before the water can weaken your fire, you have to set the fire's strength.
 ---
 
 - :paper plane:  Snap  
-``||sprites:set strength of fire at [location] to [10]||``  
+``||sprites:set strength of fire at [location] to [5]||``  
 into the  
 ``||sprites:on fire created at [location]||``  
 container already in your workspace.
 
-- :mouse pointer:  Change **10** to **5**.
 
 ```blocks
 namespace SpriteKind {

@@ -3,7 +3,7 @@
 
 ## Welcome @showdialog
 
-Conditions in the weather and environment such as drought, winds, and health of vegitation can cause fires to spread more quickly.  Let’s simulate these conditions in our game.
+Conditions in the weather and environment such as drought, winds, and health of vegetation can cause fires to spread more quickly.  Let’s simulate these conditions in our game.
 
 ![Fires are spreading very quickly](/static/skillmap/forest/forest4.gif "Look what we're about to do!")
 
@@ -14,6 +14,8 @@ Conditions in the weather and environment such as drought, winds, and health of 
 **🎮 Try your game**
 
 ---
+
+You should be able to spray water at fires to put them out.
 
 Can you remember which lines of code create each action?
 
@@ -27,11 +29,11 @@ Let's add code to simulate different elements of the environment.
 
 ---
 
-- :circle:  First, drag   
-``||game:set health of trees to [7]||``   
-into **the top** of the   
-``||loops: on start||``   
-container. 
+- :circle:  First, drag
+``||game:set health of trees to [7]||``
+into **the top** of the
+``||loops: on start||``
+container.
 
 
 
@@ -60,9 +62,9 @@ for (let index = 0; index < 4; index++) {
 ## 4. Wind and Grass
 
 
-- :circle:  On your own, can you find the blocks that set the 
-**strength of the wind** and the  
-**dryness of the grass**   
+- :circle:  On your own, can you find the blocks that set the
+**strength of the wind** and the
+**dryness of the grass**
 and add them to **the top** of the ``||loops: on start||`` container?
 
 _💡 The three variables you just added can all be changed to make your game easier or more difficult!_
@@ -98,14 +100,14 @@ Now that the environment is set, we can add code to make the fires spread.
 
 ---
 
-- :circle:   Drop an   
-``||game:on game update||``   
-container into an empty area of your workspace to run 
-code each time the game updates its status. 
+- :circle:   Drop an
+``||game:on game update||``
+container into an empty area of your workspace to run
+code each time the game updates its status.
 
-- :paper plame:   Grab   
-``||sprites: update fire spread [ ]||``  
-and add it to the empty  
+- :paper plane:   Grab
+``||sprites: update fire spread||``
+and add it to the empty
 ``||game:on game update||`` container.
 
 
@@ -125,7 +127,7 @@ game.onUpdate(function () {
 
 Do you notice that your fire is now spreading to other nearby parts of the forest?
 
-Does it get out of control too quickly?  Try experimenting with your variables.  
+Does it get out of control too quickly?  Try experimenting with your variables.
 
 Increase the health of the trees to make the game easier.  Increase the dryness of the grass or strength of the wind to make it harder!
 

@@ -2,23 +2,33 @@
 <html>
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
         <title>MakeCode Arcade Game Jam</title>
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:url" content="https://arcade.makecode.com/gamejam">
-        <meta name="twitter:title" content="MakeCode Arcade Game Jam">
-        <meta name="twitter:site" content="@MsMakeCode">
-        <meta name="twitter:creator" content="@MsMakeCode">
-        <meta name="twitter:description" content="A MakeCode Arcade game jam!">
-        <meta name="twitter:image" content="/static/gamejam/jams/global-2021/assets/preview.png">
-        <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
-        <link rel="stylesheet" href="https://pxt.azureedge.net/blob/2163189fd5e35c0981ed55318415582a7c9aeb12/doccdn/semantic.css" type="text/css">
-        <link rel="stylesheet" href="/static/gamejam/lib/gamejam.css">
-        <link rel="stylesheet" href="/static/gamejam/lib/hoc2021.css">
-        <link rel="stylesheet" href="/static/gamejam/jams/global-2021/style.css">
-        <script type="text/javascript">
-            window.pxtSkipAnalyticsCookie = true;
-        </script>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:url"
+            content="https://arcade.makecode.com/gamejam"
+        />
+        <meta name="twitter:title" content="MakeCode Arcade Game Jam" />
+        <meta name="twitter:site" content="@MsMakeCode" />
+        <meta name="twitter:creator" content="@MsMakeCode" />
+        <meta
+            name="twitter:description"
+            content="A MakeCode Arcade game jam!"
+        />
+        <meta
+            name="twitter:image"
+            content="/static/gamejam/jams/global-2021/assets/preview.png"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0"
+        />
+        <link
+            rel="stylesheet"
+            href="https://pxt.azureedge.net/blob/2163189fd5e35c0981ed55318415582a7c9aeb12/doccdn/semantic.css"
+            type="text/css"
+        />
         <style>
             @font-face {
                 font-family: 'Rowdies';
@@ -26,52 +36,405 @@
                     format('truetype');
             }
         </style>
+
+        <link rel="stylesheet" href="/static/hour-of-code/2021/styles.css" />
+        <link rel="stylesheet" href="/static/gamejam/lib/gamejam.css" />
+        <link
+            rel="stylesheet"
+            href="/static/gamejam/jams/global-2021/style.css"
+        />
+
+        <script type="text/javascript">
+            window.pxtSkipAnalyticsCookie = true;
+        </script>
     </head>
-    <body>
-        <div class="hero">
-            <div class="banner"><img class="top" src="/static/gamejam/jams/global-2021/assets/banner.png" /></div>
-        </div>
-        <div class="content">
-            <div class="segment intro">
-                <h2>Global MakeCode Arcade Game Jam!</h2>
-                <p>
-                    Microsoft MakeCode has partnered with US State Department to bring you the inaugural 
-                    Global MakeCode Arcade Game Jam!  Practice your game development skills in this
-                    worldwide competition using MakeCode Arcade, a platform that lets you build your own
-                    retro-style video game.
-                </p>
-                <p>
-                    Once the theme of the Game Jam is announced on November 29th, you'll have three weeks
-                    to create and submit your game. We can't wait to see what you make!
-                </p>
+
+    <body class="background-eggplant">
+        <nav id="header-bar" class="background-eggplant" style="height: 60px">
+            <div class="header-bar-left">
+                <a
+                    href="https://www.microsoft.com/en-us/makecode"
+                    onClick="window.pxtTickEvent('hourofcode2021.header.logo')"
+                    ><div class="header-org-logo" role="menuitem">
+                        <img
+                            src="/static/logo/Microsoft_logo_rgb_W-white_D.png"
+                            alt="Microsoft"
+                        />
+                    </div>
+                    <div class="header-org-logo-sm" role="menuitem">
+                        <img
+                            src="/static/logo/Microsoft_logo_rgb_W-white_D-square.png"
+                            alt="Microsoft"
+                        />
+                    </div>
+                    <div class="header-title" role="menuitem">
+                        <span>MakeCode</span>
+                    </div>
+                </a>
             </div>
-            <div class="segment countdown background-marina">
-                <h3>Theme Announcement</h3>
-                <p>
-                    The countdown starts now! Tune-in on November 29th at 9 AM PST to find out the theme of
-                    the game jam and find out what you need to do to get started.
-                </p>
-                <div id="timer"></div>
+            <div class="header-bar-right">
+                <a
+                    class="header-icon"
+                    role="menuitem"
+                    aria-label="Return home"
+                    tabindex="0"
+                    href="https://arcade.makecode.com/"
+                    onClick="window.pxtTickEvent('hourofcode2021.header.home')"
+                >
+                    <i
+                        class="icon home"
+                        aria-hidden="true"
+                        role="presentation"
+                    ></i>
+                </a>
             </div>
-            <div class="segment">
-                <div id="rules"></div>
-            </div>
-            <div id="submit" class="segment submit">
-                <h3>Submit Your Game</h3>
-                <p>
-                    Don’t to forget to submit your game before December 17th for your chance to be featured!
-                    Standout games will be highlighted here and on MakeCode social media channels.
-                </p>
-                <p>
-                    Follow us on Instagram, Facebook or Twitter to find out who made our list of favorites.
-                </p>
-                <div class="actions">
-                    <a class="button hidden" href="" target="_blank" rel="noopener noreferrer">Submit on itch.io</a>
-                    <a class="button display-font" href="URL HERE" target="_blank" rel="noopener noreferrer">
-                        <h5>Submit Your Game</h5>
-                    </a>
+        </nav>
+
+        <header
+            class="hoc-header background-marina"
+            style="
+                background-image: url('../static/gamejam/jams/global-2021/assets/climate-banner.png');
+            "
+        >
+            <img
+                class="seal"
+                alt="US State Department"
+                src="../static/gamejam/jams/global-2021/assets/dos.png"
+            />
+            <div class="header-text">
+                <h4 class="body-font">Global MakeCode Arcade</h4>
+                <div class="title">
+                    <h1 class="display-font">Game</h1>
+                    <h1 class="display-font jam">Jam</h1>
                 </div>
+                <h3 class="display-font">2021</h3>
             </div>
+
+            <div
+                class="header-background-image foreground"
+                style="
+                    background-image: url('./static/hour-of-code/2021/hoc-header-plane.gif');
+                "
+            ></div>
+        </header>
+
+        <div class="content">
+            <section class="hoc-section-01">
+                <div class="section-text">
+                    <h3 class="title display-font sunflower">
+                        Global MakeCode Arcade Game Jam!
+                    </h3>
+                    <p>
+                        Microsoft MakeCode has partnered with the US State
+                        Department to bring you the
+                        inaugural Global MakeCode Arcade Game Jam! Practice your
+                        game development skills in this worldwide competition
+                        using MakeCode Arcade, a platform that lets you build
+                        your own retro-style video game.
+                    </p>
+                    <p>
+                        Once the theme of the Game Jam is announced on
+                        <b class="sunflower">November 29th</b>, you'll have
+                        three weeks to create and submit your game. We can't
+                        wait to see what you make!
+                    </p>
+                </div>
+            </section>
+
+            <section class="hoc-aside-01 background-marina">
+                <div class="wrapper">
+                    <div class="aside-text">
+                        <h3 class="title display-font">And the theme is...</h3>
+                        <p>
+                            The countdown starts now! Tune-in on
+                            <b>November 29th at 9 AM PST</b> to find out the
+                            theme of the game jam and what you need to do to get
+                            started.
+                        </p>
+                    </div>
+
+                    <div class="hero" id="timer"></div>
+                </div>
+            </section>
+
+            <!-- AFTER COUNTDOWN CONTENT
+
+            <section class="hoc-aside-01 background-marina">
+                <div class='wrapper'>
+                    <div class="aside-text">
+                        <h3 class="title display-font">
+                            And the Theme Is...<em>Climate</em>
+                        </h3>
+                        <p>
+                            The climate crisis has become more urgent than ever. In
+                            the past few years, we have witnessed record-breaking
+                            temperatures, intense floods, storms, drought, and
+                            wildfires as they devastate communities around the
+                            world. As global citizens, we need to take
+                            bold action immediately.
+                        </p>
+                        <p>
+                            The first step in tackling climate crisis is deepening
+                            our understanding of the issue so we can develop
+                            sustainable solutions.
+                        </p>
+                        <p>
+                            Using MakeCode Arcade, build a game that helps others
+                            understand the impact of behaviors on our planet and the
+                            ways in which we all must play a role in solving these
+                            global issues.  Whether your game focuses
+                            on the way humans impact the melting of the ice
+                            caps or ideas for transitioning to renewable energy,
+                            share your knowledge of the climate crisis and encourage
+                            those playing your game to take action in their own
+                            lives! 
+                        </p>
+                        <a
+                            class="btn"
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://www.state.gov/policy-issues/climate-crisis/"
+                            ><h5 class="display-font">Learn More</h5></a
+                        >
+                    </div>
+                    <div class="hero background-sunflower"></div>
+                </div>
+            </section>
+-->
+
+            <section class="rules hoc-section">
+                <h3 class="title display-font sunflower">Game Jam Rules</h3>
+                <ol>
+                    <li>Games must be built in MakeCode Arcade</li>
+                    <li>
+                        Your game must relate to the provided theme. Someone
+                        playing your game should be able to see how it relates
+                        to the theme without extra explanation.
+                    </li>
+                    <li>
+                        Keep the games PG: no NSFW, offensive, or excessively
+                        violent content.
+                    </li>
+                    <li>
+                        All games must be submitted by someone who is at least
+                        13 years old by <b class="sunflower">December 17th</b>.
+                        Younger students are welcome to participate, but it must
+                        be in partnership with a student over 13.
+                    </li>
+                </ol>
+            </section>
+
+            <section class="submit hoc-section background-papaya">
+                <div class="wrapper">
+                    <h3 class="title display-font">Submit Your Game</h3>
+                    <p>
+                        Don’t to forget to submit your game before
+                        <b>December 17th</b>
+                        for your chance to be featured! Standout games will be
+                        highlighted here and on MakeCode social media channels.
+                    </p>
+                    <p>
+                        Follow us on
+                        <a
+                            href="https://www.instagram.com/msmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                            >Instagram</a
+                        >
+                        or
+                        <a
+                            href="https://twitter.com/msmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                            >Twitter</a
+                        >
+                        to find out who made our list of favorites.
+                    </p>
+                    <div class="actions">
+                        <a
+                            class="btn hidden"
+                            href=""
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            ><h5 class="display-font">Submit on itch.io</h5></a
+                        >
+                        <a
+                            class="btn display-font"
+                            href="URL HERE"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <h5 class="display-font">Submit Your Game</h5>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="new hoc-aside-01 background-marina">
+                <div class="wrapper">
+                    <div class="aside-text">
+                        <h3 class="title display-font">New to MakeCode?</h3>
+                        <p>
+                            If you’ve never written code or used MakeCode Arcade
+                            before, no worries! Try our climate themed Hour of
+                            Code™ activity or our Beginner Skillmap to get down
+                            the basics.
+                        </p>
+                        <div class="buttons">
+                            <a
+                                class="btn"
+                                href="https://arcade.makecode.com/--skillmap#beginner"
+                                target="_blank"
+                                rel="noreferrer"
+                                ><h5 class="display-font">
+                                    Beginner Skillmap
+                                </h5></a
+                            >
+                            <a
+                                class="btn"
+                                href="https://arcade.makecode.com/hour-of-code"
+                                target="_blank"
+                                rel="noreferrer"
+                                ><h5 class="display-font">Hour of Code</h5></a
+                            >
+                        </div>
+                    </div>
+                    <div
+                        class="hero"
+                        style="
+                            background-image: url('/static/hour-of-code/2021/forest-skillmap-game.gif');
+                        "
+                    ></div>
+                </div>
+            </section>
+
+            <section class="side-by-side">
+                <section class="hoc-section">
+                    <h3 class="title display-font sunflower">
+                        Educator Training
+                    </h3>
+                    <p>
+                        Sign for free training on how to run the Hour of Code
+                        Activity and Global MakeCode Arcade Game Jam in your
+                        classroom. We’ll cover how to use the MakeCode Arcade
+                        Platform, learning objectives, and more!
+                    </p>
+                    <a class="btn" href="" target="_blank" rel="noreferrer"
+                        ><h5 class="display-font">Free Training</h5></a
+                    >
+                </section>
+                <section class="hoc-section">
+                    <h3 class="title display-font sunflower">More Game Jam!</h3>
+                    <p>
+                        Want to put on your own game jam? Check out our
+                        <a href="" target="_blank" rel="noreferrer"
+                            >how-to guide</a
+                        >
+                        to learn how to get started!
+                    </p>
+                    <a class="btn" href="" target="_blank" rel="noreferrer"
+                        ><h5 class="display-font">Game Jam Guide</h5></a
+                    >
+                </section>
+            </section>
+
+            <!-- TODO: Winners section 
+                Sections: 
+                    - Game Jam Winners! 
+                        - Title 
+                        - Paragraph
+                    - First Place
+                        - Image 
+                        - Paragraph
+                    - Second Place 
+                        - Image 
+                        - Paragraph
+                    - Third Place 
+                        - Image 
+                        - Paragraph
+                    - Honorable Mentions
+                        - Paragraph 
+                        - Grid 
+                            - Image 
+                            - Author / Link 
+                            - Description
+                    - Gallery 
+                        <div class="segment gallery">
+                            <h2>Gallery</h2>
+                            <p class="description">Check out the submitted games!</p>
+                            <div id="gallery"></div>
+                        </div>
+            -->
+
+            <section class="hoc-aside-02 background-papaya">
+                <div class="aside-text">
+                    <h3 class="title display-font">
+                        Follow us on Social Media
+                    </h3>
+                    <p>
+                        Share your game with us on social media. Tag us in your
+                        creations using @msmakecode or the hashtag #makecode.
+                        And don't forget to follow us to find out about the
+                        newest MakeCode Arcade updates, games, and competitions!
+                    </p>
+                    <div class="social-buttons">
+                        <a
+                            href="https://www.instagram.com/msmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.instagram')"
+                        >
+                            <i class="icon instagram"></i>
+                        </a>
+                        <a
+                            href="https://www.youtube.com/microsoftmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.youtube')"
+                        >
+                            <i class="icon youtube"></i>
+                        </a>
+                        <a
+                            href="https://twitter.com/msmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.twitter')"
+                        >
+                            <i class="icon twitter"></i>
+                        </a>
+                        <a
+                            href="https://www.twitch.tv/msmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.twitch')"
+                        >
+                            <i class="icon twitch"></i>
+                        </a>
+                        <a
+                            href="https://www.tiktok.com/@msmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.tiktok')"
+                        >
+                            <svg
+                                aria-hidden="true"
+                                focusable="false"
+                                data-prefix="fab"
+                                data-icon="tiktok"
+                                class="svg-inline--fa fa-tiktok fa-w-14"
+                                role="img"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 448 512"
+                            >
+                                <path
+                                    d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"
+                                ></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
             <footer class="hoc-footer background-papaya">
                 <div class="msft">
                     <img
@@ -108,13 +471,17 @@
         <!-- @include tracking.html -->
         <!-- @include tickevent.html -->
 
-        <script type="text/javascript"
-            src="https://pxt.azureedge.net/blob/555c1dc1d9da18154cb48388d5e494f3f16119f8/marked/marked.min.js"></script>
-        <script type="text/javascript"
-            src="https://pxt.azureedge.net/blob/3c168a772b9e4cbf3ecb648148cfb2f966e8a578/pxtembed.js"></script>
+        <script
+            type="text/javascript"
+            src="https://pxt.azureedge.net/blob/555c1dc1d9da18154cb48388d5e494f3f16119f8/marked/marked.min.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="https://pxt.azureedge.net/blob/3c168a772b9e4cbf3ecb648148cfb2f966e8a578/pxtembed.js"
+        ></script>
         <script src="/static/gamejam/lib/gamejam.js"></script>
         <script>
-            getInfo("/static/gamejam/jams/global-2021/info.json");
+            getInfo('/static/gamejam/jams/global-2021/info.json');
         </script>
     </body>
 </html>
