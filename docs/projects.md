@@ -3,16 +3,9 @@
 ```codecard
 [
     {
-        "name": "Entry-Level Skillmaps",
+        "name": "Skillmaps",
         "url": "/skillmaps",
         "imageUrl": "/static/skillmap/backgrounds/beginner.png"
-    },
-    {
-        "name": "Next-Level Skillmaps",
-        "url": "/skillmaps-next",
-        "imageUrl": "/static/skillmap/backgrounds/shark-map.png",
-        "largeImageUrl": "/static/skillmap/backgrounds/shark4b.gif",
-        "videoUrl": "/static/recipes/shark-splash/02-C-enemies.mp4"
     },
     {
         "name": "Tutorials",
