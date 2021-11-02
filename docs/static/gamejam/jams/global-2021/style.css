@@ -39,6 +39,7 @@ header.hoc-header .header-text h4 {
 
 header.hoc-header .header-text .title .jam {
     font-size: 11rem;
+    margin-top: 1rem;
     margin-left: -1rem;
     position: relative;
 }
@@ -51,7 +52,7 @@ header.hoc-header .header-text h3 {
     display: flex;
     align-items: stretch;
     width: 90%;
-    max-width: 90rem;
+    max-width: 110rem;
     margin: 0 auto;
 }
 
