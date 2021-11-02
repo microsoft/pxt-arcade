@@ -53,7 +53,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     mySprite.setImage(assets.image`A static Down`)
     //@highlight
-    projectile = sprites.createProjectileFromSprite(assets.image`Star`, mySprite, 50, 50)
+    projectile = sprites.createProjectileFromSprite(assets.image`Big Star`, mySprite, 50, 50)
 })
 ```
 
@@ -86,7 +86,7 @@ let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     mySprite.setImage(assets.image`A static Down`)
-    projectile = sprites.createProjectileFromSprite(assets.image`Star`, mySprite, randint(0, 10), randint(0, 10))
+    projectile = sprites.createProjectileFromSprite(assets.image`Big Star`, mySprite, randint(0, 10), randint(0, 10))
 })
 ```
 
@@ -110,7 +110,7 @@ block (next to **vy**) to pick between
 let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite.setImage(assets.image`A static Down`)
-    projectile = sprites.createProjectileFromSprite(assets.image`Star`, mySprite, randint(-100, 100), randint(-50, -100))
+    projectile = sprites.createProjectileFromSprite(assets.image`Big Star`, mySprite, randint(-100, 100), randint(-50, -100))
 })
 ```
 
@@ -170,7 +170,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     aButton.setImage(assets.image`A static Down`)
     info.changeScoreBy(power2)
     for (let index = 0; index < power2; index++) {
-        onClick = sprites.createProjectileFromSprite(assets.image`Star`, aButton, randint(-25, 100), -100)
+        onClick = sprites.createProjectileFromSprite(assets.image`Big Star`, aButton, randint(-25, 100), -100)
     }
 })
 info.onCountdownEnd(function () {
