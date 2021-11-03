@@ -383,6 +383,109 @@ header.hoc-header-educators .header-text h3 {
     }
 }
 
+/* Video Modal --------------------------------------------------------------------------- */
+
+.video-preview {
+    width: 35%;
+    flex-shrink: 0;
+    outline: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+@media (max-width: 480px) {
+    .video-preview {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+.video-preview:hover {
+    transform: scale(1.1);
+}
+
+.video-preview img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+section.intro {
+    display: flex;
+    align-items: center;
+}
+
+section.intro + .buttons {
+    margin: 2rem 0;
+}
+
+section.intro + .buttons::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.modal-backdrop {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-backdrop.closed {
+    display: none;
+}
+
+.modal {
+    position: relative;
+    width: 80%;
+    max-width: 110rem;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .modal {
+        width: 90%;
+    }
+}
+
+.modal .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 3rem;
+    height: 0;
+    overflow: hidden;
+}
+
+.modal .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal button.btn {
+    outline: none;
+    border: none !important;
+    min-width: 15rem;
+    margin-bottom: 1rem;
+}
+
+.modal button.btn h5 {
+    margin-left: -0.2rem;
+}
+
 /* Standard/Default Section --------------------------------------------------------------------------- */
 
 section.hoc-section {
@@ -390,6 +493,10 @@ section.hoc-section {
     max-width: 90rem;
     margin: 4rem auto;
     padding: 4rem 0;
+}
+
+section.hoc-section-wide {
+    max-width: 110rem;
 }
 
 section.hoc-section > *:last-child {
@@ -430,19 +537,23 @@ section.hoc-section-01 {
     align-items: center;
 }
 
-section.hoc-section-01 .section-text {
+section.hoc-section-01 .section-text,
+section.intro .section-text {
     margin-left: 7rem;
 }
 
-section.hoc-section-01 .section-text:only-child {
+section.hoc-section-01 .section-text:only-child,
+section.intro .section-text:only-child {
     margin-left: 0;
 }
 
-section.hoc-section-01 .section-text > *:last-child {
+section.hoc-section-01 .section-text > *:last-child,
+section.intro .section-text > *:last-child {
     margin-bottom: 0;
 }
 
-section.hoc-section-01 .section-text .title {
+section.hoc-section-01 .section-text .title,
+section.intro .section-text .title {
     margin-bottom: 4rem;
 }
 
@@ -465,21 +576,25 @@ section.hoc-section-01 a.btn {
 }
 
 @media (max-width: 768px) {
-    section.hoc-section-01 {
+    section.hoc-section-01,
+    section.hoc-section.hoc-section-wide {
         margin-top: 0;
         margin-bottom: 1rem;
     }
-    section.hoc-section-01 .section-text {
+    section.hoc-section-01 .section-text,
+    section.intro .section-text {
         margin-left: 4rem;
     }
 }
 
 @media (max-width: 480px) {
-    section.hoc-section-01 {
+    section.hoc-section-01,
+    section.intro {
         flex-wrap: wrap;
     }
 
-    section.hoc-section-01 .section-text {
+    section.hoc-section-01 .section-text,
+    section.intro .section-text {
         margin: 0;
     }
 
@@ -489,7 +604,8 @@ section.hoc-section-01 a.btn {
         margin-bottom: 5rem;
     }
 
-    section.hoc-section-01 .section-text .title {
+    section.hoc-section-01 .section-text .title,
+    section.intro .section-text .title {
         margin-bottom: 2rem;
     }
 }
@@ -1173,6 +1289,7 @@ a.activity-btn .action {
 /* Standard Button --------------------------------------------------------------------------- */
 
 a.btn,
+button.btn,
 section.hoc-section-03 .action,
 .share-btn {
     min-width: 27rem;
@@ -1189,6 +1306,7 @@ section.hoc-section-03 .action,
 }
 
 a.btn:hover,
+button.btn:hover,
 .share-btn:hover {
     color: black;
     text-decoration: none;
@@ -1207,6 +1325,7 @@ a.btn:hover,
 }
 
 a.btn:active,
+button.btn:active,
 .share-btn:active {
     background-color: black;
     color: white;
@@ -1341,4 +1460,11 @@ a.btn.secondary:active {
         margin-left: 0;
         margin-right: 0;
     }
+}
+
+/* Tracking --------------------------------------------------------------------------- */
+
+.tracking {
+    position: absolute;
+    visibility: collapse;
 }

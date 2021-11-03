@@ -165,6 +165,12 @@
                 </div>
             </nav>
 
+            <img
+                class="tracking"
+                src="https://code.org/api/hour/begin_microsoft_forest.png"
+                alt="tracking"
+            />
+
             <header
                 class="hoc-header background-marina"
                 style="
@@ -190,47 +196,87 @@
                 ></div>
             </header>
 
-            <section class="hoc-section-01">
-                <a
-                    class="activity-btn"
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://aka.ms/forestmap"
-                    onClick="window.pxtTickEvent('hourofcode2021.skillmap.open.code')"
-                >
-                    <!--TODO: Make sure link above is correct-->
-                    <div class="title background-papaya">
-                        <h5 class="display-font">Code a Game</h5>
+            <div id="video-modal" class="modal-backdrop closed">
+                <div class="modal">
+                    <button class="btn close" onClick="modalClose()">
+                        <h5 class="display-font">
+                            <i class="icon close"></i>Close
+                        </h5>
+                    </button>
+                    <div class="video-container">
+                        <iframe
+                            id="video"
+                            width="560"
+                            height="315"
+                            src=""
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            autoplay="1"
+                        ></iframe>
                     </div>
-                    <div
-                        class="body background-marina"
-                        style="
-                            background-image: url('./static/hour-of-code/2021/forest-skillmap-game.gif');
-                        "
-                    ></div>
-                    <div class="action background-sunflower">
-                        <h5 class="display-font">Launch</h5>
+                </div>
+            </div>
+
+            <script type="application/javascript">
+                document.onkeydown = function keypress(e) {
+                    if (e.key === 'Escape') {
+                        modalClose();
+                    }
+                };
+
+                function modalOpen() {
+                    let modal = document.getElementById('video-modal');
+                    let video = document.getElementById('video');
+                    modal.classList.remove('closed');
+                    modal.classList.add('open');
+                    video.src =
+                        'https://www.youtube.com/embed/-_JXEcAIIy4?autoplay=1';
+                }
+
+                function modalClose() {
+                    let modal = document.getElementById('video-modal');
+                    let video = document.getElementById('video');
+                    modal.classList.remove('open');
+                    modal.classList.add('closed');
+                    video.src = '';
+                }
+            </script>
+
+            <section class="hoc-section hoc-section-wide">
+                <section class="intro">
+                    <button class="video-preview" onClick="modalOpen()">
+                        <!--TODO: Any tracking for this ^ ? -->
+                        <img
+                            src="./static/hour-of-code/2021/video-thumbnail.png"
+                            alt="Save the Forest Video"
+                        />
+                    </button>
+
+                    <div class="section-text">
+                        <h3 class="title display-font sunflower">
+                            Save the Forest!
+                        </h3>
+                        <p>
+                            Technology and Computer Science is everywhere in the
+                            world around us. And it’s helping to solve some of
+                            the toughest problems we’re facing in the world.
+                        </p>
+                        <p>
+                            For this year’s Hour of Code™, let’s look at how
+                            computers and technology can help combat forest
+                            fires.
+                        </p>
+                        <p>
+                            Code a game with Microsoft MakeCode Arcade that
+                            recreates the conditions for a forest fire, and then
+                            code your fire-fighting airtanker plane to spray
+                            water and put out the flames!
+                        </p>
                     </div>
-                </a>
-                <div class="section-text">
-                    <h3 class="title display-font sunflower">
-                        Save the Forest!
-                    </h3>
-                    <p>
-                        Technology and Computer Science is everywhere in the
-                        world around us. And it’s helping to solve some of the
-                        toughest problems we’re facing in the world.
-                    </p>
-                    <p>
-                        For this year’s Hour of Code™, let’s look at how
-                        computers and technology can help combat forest fires.
-                    </p>
-                    <p>
-                        Code a game with Microsoft MakeCode Arcade that
-                        recreates the conditions for a forest fire, and then
-                        code your fire-fighting airtanker plane to spray water
-                        and put out the flames!
-                    </p>
+                </section>
+                <div class="buttons">
                     <a
                         class="btn"
                         target="_blank"
