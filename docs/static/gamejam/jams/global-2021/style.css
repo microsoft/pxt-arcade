@@ -7,6 +7,80 @@
     padding: 0;
 }
 
+header.hoc-header .header-text {
+    margin-top: 8rem;
+}
+
+@media (max-width: 480px) {
+    header.hoc-header .header-text {
+        margin-top: 3rem;
+    }
+}
+
+header.hoc-header .seal {
+    position: absolute;
+    left: 3rem;
+    top: 2rem;
+    width: 15rem;
+    border: 0.5rem solid white;
+    border-radius: 50%;
+    height: auto;
+}
+
+@media (max-width: 480px) {
+    header.hoc-header .seal {
+        display: none;
+    }
+}
+
+header.hoc-header .header-text h4 {
+    margin-bottom: 0;
+}
+
+header.hoc-header .header-text .title .jam {
+    font-size: 11rem;
+    margin-top: 1rem;
+    margin-left: -1rem;
+    position: relative;
+}
+
+header.hoc-header .header-text h3 {
+    margin-top: 4rem;
+}
+
+.side-by-side {
+    display: flex;
+    align-items: stretch;
+    width: 90%;
+    max-width: 110rem;
+    margin: 0 auto;
+}
+
+.side-by-side .hoc-section {
+    flex-basis: 45%;
+    flex-grow: 1;
+}
+
+.side-by-side .hoc-section:first-child {
+    margin-right: 3rem;
+}
+.side-by-side .hoc-section:last-child {
+    margin-left: 3rem;
+}
+
+@media (max-width: 480px) {
+    .side-by-side {
+        flex-wrap: wrap;
+    }
+
+    .side-by-side .hoc-section {
+        flex-basis: 100%;
+        flex-grow: 1;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
 /**** Countdown Timer ****/
 
 #timer {
