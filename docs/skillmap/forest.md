@@ -19,7 +19,7 @@
 * allowcodecarryover: false
 * name: Prepare Your Plane
 * type: tutorial
-* description: Set up your airtanker to make sure you can get everywhere you need to be! 
+* description: Set up your airtanker to make sure you can get everywhere you need to be!
 * url: /skillmap/forest_new/forest1
 * imageUrl: /static/skillmap/forest/forest1.gif
 * tags: easy, sprite, movement
@@ -29,7 +29,7 @@
 ### forest2
 * name: 🔥 Burning Issues 🔥
 * type: tutorial
-* description: Use loops to add random fires to your map! 
+* description: Use loops to add random fires to your map!
 * url: /skillmap/forest_new/forest2
 * imageUrl: /static/skillmap/forest/forest2.gif
 * tags: easy, loops, sprites
@@ -39,7 +39,7 @@
 ### forest3
 * name: Fire Fighting
 * type: tutorial
-* description: Add a water hose to your plane so you can keep your fires under control. 
+* description: Add a water hose to your plane so you can keep your fires under control.
 * url: /skillmap/forest_new/forest3
 * imageUrl: /static/skillmap/forest/forest3.gif
 * tags: easy, events, sprites
@@ -49,7 +49,7 @@
 ### forest4
 * name: Spreads Like Wildfire
 * type: tutorial
-* description: Lots of things affect how quickly fire spreads. In this activity, you'll add variables to change fire danger levels. 
+* description: Lots of things affect how quickly fire spreads. In this activity, you'll add variables to change fire danger levels.
 * url: /skillmap/forest_new/forest4
 * imageUrl: /static/skillmap/forest/forest4.gif
 * tags: easy, variables, overlaps
@@ -72,10 +72,13 @@
 * name: Congrats!
 * kind: completion
 * type: certificate
-* imageUrl: /static/skillmap/certificates/forest-cert.png
 * url: /static/skillmap/certificates/forest-cert.pdf
-* next: forest6 
+* imageUrl: /static/skillmap/certificates/forest-cert.png
+* next: forest6
 * position: 3 2
+* rewards:
+    * certificate: /static/skillmap/certificates/forest-cert.pdf
+    * completion-badge: https://github.com/microsoft/pxt/raw/master/docs/static/beginner-badge.png
 * actions:
     * map: [Try the Jungle Monkey Skillmap](/skillmap/jungle)
     * map: [Try the Space Explorer Skillmap](/skillmap/space)
