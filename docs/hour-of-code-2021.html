@@ -227,6 +227,7 @@
                 };
 
                 function modalOpen() {
+                    window.pxtTickEvent("hourofcode2021.video.open");
                     let modal = document.getElementById('video-modal');
                     let video = document.getElementById('video');
                     modal.classList.remove('closed');
@@ -236,6 +237,7 @@
                 }
 
                 function modalClose() {
+                    window.pxtTickEvent("hourofcode2021.video.close");
                     let modal = document.getElementById('video-modal');
                     let video = document.getElementById('video');
                     modal.classList.remove('open');
