@@ -71,6 +71,8 @@
 ### forest-cert
 * name: Congrats!
 * kind: completion
+* type: certificate
+* url: /static/skillmap/certificates/forest-cert.pdf
 * imageUrl: /static/skillmap/certificates/forest-cert.png
 * next: forest6
 * position: 3 2
