@@ -26,11 +26,11 @@ In this activity, students are introduced to:
 
 ## Concept: Assign Number Variables and displaying numeric values
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/variablesMath1.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/0cvZZrmXeEg)
 
 ## Concept: Using Math Operators with Variables
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/variablesMath2.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/PeLTFJwaNBU)
 
 ## Example #1: Math equation in a variable #example-1
 
@@ -67,7 +67,7 @@ The splash screen is primarily designed for short sentences. This limits the len
 
 ## Concept: Basic math operators with variables 
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/variablesMath3.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/xru53piCWUk)
 
 We can convert variable based math equations, like `A = B + C`, into code using our code variables and math operators.
 
@@ -102,7 +102,7 @@ game.splash("5 * 7 = " + answer)
 
 ## Student Task #2: Basic math operators with variables
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/variablesMath4.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/-Q5jhsj4dyg)
 
 1. Start with [example #2](#example-2)
 2. Add a ``||variables:thirdNumber||`` variable with a unique value
@@ -157,7 +157,7 @@ Click edit to fix code. ``||game:splash||`` can display string characters. Revie
 
 ## Variables Summary
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/variableDataType.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/6hB7Daj2VT0)
 
 * Variables are names that point to a container that can be updated to hold different data types.
 * Data Types used in variables so far are ``||variables:Sprite||``, ``||variables:numbers||`` and ``||variables:strings||``.
