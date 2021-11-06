@@ -81,6 +81,20 @@ header.hoc-header .header-text h3 {
     }
 }
 
+section.hoc-section-01 .hero {
+    height: 30rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 1rem;
+}
+
+@media (max-width: 480px) {
+    section.hoc-section-01 .hero {
+        height: 20rem;
+    }
+}
+
 /**** Countdown Timer ****/
 
 #timer {
