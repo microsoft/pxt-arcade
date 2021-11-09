@@ -2,27 +2,29 @@
 
 ## Introduction @showdialog
 
-It's the details that make a difference.  
+It's the details that make a difference.
 
 This tutorial will show you how to send an array of different darts when you fire.
 
 ![Take a shot!](/static/skillmap/space/spacet6.gif "They'll never know what hit them.")
 
 
-## Step 2
+## 2. Start the Darts
 
-**🎯 Take aim! 🎯**  
+**🎯 Take aim! 🎯**
 
 Let's set up an [__*array*__](#arraied "a named list of similar things that can be called by their position in the list")
 of darts.
 
 ---
 
-► Expand the ``||statusbars:Advanced||`` category in the toolbox and click
-``||arrays:Arrays||``.
+- :chevron down: Expand the ``||statusbars:Advanced||`` category in the toolbox and click ``||arrays:Arrays||``.
 
-► Drag ``||variables:set [list] to array of [0] [1]||`` into **the top** of the 
-``||controller:on [A] button [pressed]||`` container already in the workspace.
+- :list ol: Drag  
+``||variables:set [list] to array of [0] [1]||``  
+into **the top** of the  
+``||controller:on [A] button [pressed]||``   
+container already in the workspace.
 
 
 ```block
@@ -34,16 +36,17 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 3
+## 3. List of Darts
 
 Right now, we have a **list** of numbers. Let's make it a list of darts.
 
 ---
 
-► Click the name **list** inside ``||variables:set [list] to array of [0] [1]||`` and  
-choose "Rename variable..." from the dropdown menu.
+- :mouse pointer: Click the name **list** inside  
+``||variables:set [list] to array of [0] [1]||``   
+and choose "Rename variable..." from the dropdown menu.
 
-► Call your list **darts** and click **Ok**.  
+- :mouse pointer: Call your list **darts** and click **Ok**.
 
 ```block
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -54,133 +57,93 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 4
+## 4. Prepare the Images
 
-► Beneath the ``||statusbars:Advanced||`` category in the toolbox, click
+- :image: Beneath the ``||statusbars:Advanced||`` category in the toolbox, click
 ``||images:Images||``.
 
-► Drag out **3** empty grey image boxes into the workspace (we'll use them in 
+- :image: Drag out **3** empty grey image boxes into the workspace (we'll use them in
 the next step).
 
-  
 
-## Step 5
 
-► Snap the first two grey image boxes into ``||variables:set [list] to array of [0] [1]||`` to
-replace the numbers **0** and **1**. 
+## 5. Dart Images 
 
-► Add space for the new image box by clicking the **+** symbol at the right of 
-the block, then snap the last image box into place. 
+- :mouse pointer: Snap the first two grey image boxes into  
+``||variables:set [list] to array of [0] [1]||``  
+to replace the numbers **0** and **1**.
+
+- :mouse pointer: Add space for the new image box by clicking the ➕ symbol at the right of
+the block, then snap the last image box into place.
 
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     let darts = [img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+.
         `, img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+        .
         `, img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+        .
         `]
     let projectile = sprites.createProjectileFromSprite(assets.image`Dart1`, mySprite, 0, -150)
     projectile.startEffect(effects.ashes)
 })
 ```
 
-## Step 6
+## 6. Choose Wisely
 
 **⤅ Time to choose the darts ⬶**
 
 ---
 
-► Click the first empty grey image box and toggle to **My Assets** to select **Dart1**.
+- :paint brush: Click the first empty grey image box and toggle to **My Assets** to select **Dart1**.
 
-► Click the second empty grey image box and toggle to **My Assets** to select **Dart2**.
+- :paint brush: Click the second empty grey image box and toggle to **My Assets** to select **Dart2**.
 
-► In the final box, draw your own dart!  
+- :paint brush: In the final box, draw your own dart!
 
 ---
 
-**Tip:** Keep in mind that the provided darts are both 3px by 4px in size. 
-What do you think will happen if you make yours larger or smaller?
+_💡 Keep in mind that the provided darts are both 3px by 4px in size.
+What do you think will happen if you make yours larger or smaller?_
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     let darts = [assets.image`Dart1`, assets.image`Dart2`, img`
-. 9 . 
-. 9 . 
-. 9 . 
-5 5 5 
+. 9 .
+. 9 .
+. 9 .
+5 5 5
 `]
     let projectile = sprites.createProjectileFromSprite(assets.image`Dart1`, mySprite, 0, -150)
     projectile.startEffect(effects.ashes)
 })
 ```
 
-## Step 7
+## 7. Random Darts
 
 **Tell the computer you want a random dart from the array each time you fire!**
 
 ---
 
-► From ``||arrays:Arrays||``, drag ``||arrays:get random value from [list]||`` in to replace the current 
-dart image in the ``||variables:set [projectile] to ...||`` block (just beneath the list you have created.)
+- :align justify: From ``||arrays:Arrays||``, drag  
+``||arrays:get random value from [list]||``  
+in to replace the current
+dart image in the  
+``||variables:set [projectile] to ...||``  
+block (just beneath the list you have created.)
 
-► Click **list** and change it to **darts** using the dropdown menu.
+- :mouse pointer: Click **list** and change it to **darts** using the dropdown menu.
 
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     let darts = [assets.image`Dart1`, assets.image`Dart2`, img`
-. 9 . 
-. 9 . 
-. 9 . 
-5 5 5 
+. 9 .
+. 9 .
+. 9 .
+5 5 5
 `]
     let projectile = sprites.createProjectileFromSprite(darts._pickRandom(), mySprite, 0, -150)
     projectile.startEffect(effects.ashes)
@@ -188,27 +151,29 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 8
+## 8. Play Your Game!
 
 **🎮 Now give your project a try on the game screen 🎮**
 
-How does it look?  
+How does it look?
 If there's anything you don't like, now is a great time to dig in and change it!
 
 
 
 ## Finale
 
-**You've done it!!** 
+**You've done it!!**
 
-You've finished your Space Explorer game! 
+---
 
-When you're done playing with it, click **Finish** to return to the main 
-page where you can add this game to your gallery to keep building, then share with family & friends.
+You've finished your Space Explorer game!
+
+When you're done playing with it, click **Done** to return to the main
+page where you can share with family and friends, then add this game to your gallery to keep building!
 
 
 ```package
-arcade-background-scroll=github:microsoft/arcade-background-scroll/
+arcade-background-scroll=github:microsoft/arcade-background-scroll#926e12eefffd09d453c7cde73f8d6ebd0e666d9d/
 pxt-status-bar=github:jwunderl/pxt-status-bar
 ```
 
@@ -236,6 +201,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
     otherSprite.destroy(effects.disintegrate, 200)
+    scene.cameraShake(4, 500)
 })
 let myEnemy: Sprite = null
 let myFuel: Sprite = null
@@ -246,7 +212,14 @@ scene.setBackgroundImage(assets.image`Galaxy`)
 scroller.scrollBackgroundWithSpeed(0, 10)
 mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
 controller.moveSprite(mySprite)
+
 mySprite.setStayInScreen(true)
+animation.runImageAnimation(
+mySprite,
+assets.animation`Flying Rocket`,
+100,
+true
+)
 
 statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
 statusbar.attachToSprite(mySprite, -25, 0)
@@ -257,17 +230,22 @@ game.onUpdateInterval(5000, function () {
     myFuel.setKind(SpriteKind.Gas)
 })
 game.onUpdateInterval(2000, function () {
-    myEnemy = sprites.createProjectileFromSide(assets.image`Spider`, 0, enemySpeed)
+    myEnemy = sprites.createProjectileFromSide(assets.image`Spider`, 0, 50)
     myEnemy.x = randint(5, 155)
     myEnemy.setKind(SpriteKind.Enemy)
-    
+    animation.runImageAnimation(
+    myEnemy,
+    assets.animation`Flying Spider`,
+    100,
+    true
+    )
 })
 game.onUpdateInterval(300, function () {
     statusbar.value += -1
 })
 forever(function () {
     if (info.score() == 10) {
-        mySprite.say("+5 Level-Up Bonus", 2000)
+        mySprite.sayText("+5 Level-Up Bonus", 2000, false)
         info.changeScoreBy(5)
         enemySpeed = 70
     }
@@ -339,7 +317,7 @@ game.onUpdateInterval(2000, function () {
 })
 forever(function () {
     if (info.score() == 10) {
-        mySprite.say("+5 Level-Up Bonus", 2000)
+        mySprite.sayText("+5 Level-Up Bonus", 2000, false)
         info.changeScoreBy(5)
         enemySpeed = 70
     }

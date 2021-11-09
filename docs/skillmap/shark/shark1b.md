@@ -12,7 +12,7 @@ In this activity, you'll add consequences whenever your submarine collides with 
 
 ## step 2
 
-**🎮 Time to play 🎮**  
+**🎮 Time to play 🎮**
 
 ---
 
@@ -22,19 +22,19 @@ Play with your project in the game window and try to remember which chunk of cod
 
 ## Step 3
 
-**☠️On a dangerous path ☠️**   
+**☠️On a dangerous path ☠️**
 To subtract hitpoints when the enemy reaches the shark, we'll need a container to run code whenever the two overlap.
 
 ---
 
-► From ``||sprites:Sprites||``, drag an ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` container into an empty area of the workspace. 
+► From ``||sprites:Sprites||``, drag an ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` container into an empty area of the workspace.
 
-► Change the second **kind** from **Player** to **Enemy**. 
+► Change the second **kind** from **Player** to **Enemy**.
 
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-   
+
 })
 ```
 
@@ -45,9 +45,9 @@ To keep the submarine from attacking again and again, we need to destroy it befo
 
 ---
 
-► From ``||sprites:Sprites||``, drag ``||sprites:destroy [mySprite]||`` into the empty **on overlaps** container. 
+► From ``||sprites:Sprites||``, drag ``||sprites:destroy [mySprite]||`` into the empty **on overlaps** container.
 
-► Grab the ``||variables:otherSprite||`` value from the title of the **on overlaps** block and drag it in to replace ``||variables:mySprite||``.  
+► Grab the ``||variables:otherSprite||`` value from the title of the **on overlaps** block and drag it in to replace ``||variables:mySprite||``.
 
 ![Grabbing variable from block](/static/skillmap/space/give-var.gif "So that's how you do that!")
 
@@ -77,7 +77,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## Step 6
 
-**🎮 Try it! 🎮**  
+**🎮 Try it! 🎮**
 
 ---
 
@@ -85,15 +85,15 @@ Play your game and try to avoid the enemies! When they reach you, they should kn
 
 
 
-## Finale 
+## Finale
 
 **Way to go!!**
 
 ---
 
-All you have to do is avoid the submarines to stay alive!  
+All you have to do is avoid the submarines to stay alive!
 
-When you're done playing your game, click **Finish** to continue to the next level and learn how to defend yourself with your lasers.
+When you're done playing your game, click **Done** to continue to the next level and learn how to defend yourself with your lasers.
 
 
 
@@ -110,7 +110,7 @@ controller.moveSprite(mySprite)
 mySprite.setStayInScreen(true)
 game.onUpdateInterval(2500, function () {
     let myEnemy = sprites.create(assets.image`enemy`, SpriteKind.Enemy)
-     myEnemy.setPosition(scene.screenWidth(), randint(0, 120))    
+     myEnemy.setPosition(scene.screenWidth(), randint(0, 120))
      myEnemy.follow(mySprite, 30)
 })
 ```

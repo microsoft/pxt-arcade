@@ -1,9 +1,9 @@
-# Space Adventure
+# Create a Space Adventure
 * name: Create a Space Adventure Game
-* description: Learn to make a Galaga-style game by following this short series of tutorials. You will create a rocket that fires projectiles at enemies, design your outerspace view, create amazing animations, and MORE!  What are you waiting for?  Double-click the first level to begin!" 
+* description: Make a Galaga-style game by following this short series of tutorials. You will create a rocket that fires projectiles at enemies, design your outerspace view, create amazing animations, and MORE!  What are you waiting for?  Double-click the first level to begin! 
 * infoUrl: skillmap/educator-info/space-map-info
 * bannerUrl: /static/skillmap/space/spacet6.gif
-* backgroundurl: /static/skillmap/backgrounds/space-comp.gif
+* backgroundurl: /static/skillmap/backgrounds/space-comp.png
 * primarycolor: #2EA9B0
 * secondarycolor: #d6f7fa
 * tertiarycolor: #5d416b
@@ -42,7 +42,7 @@
 * description: Watch out for danger! Add enemies and countdown lives in your game.
 * type: tutorial
 * tags: intermediate, enemies, kinds
-* next: space-activity4, space-activity4a
+* next: space-activity4a
 * url: /skillmap/space/space3
 * imageUrl: /static/skillmap/space/spacet3.gif
 * position: 2 1
@@ -94,7 +94,10 @@
 * kind: completion
 * type: certificate
 * imageUrl: /static/skillmap/certificates/space-cert.png
-* url: /static/skillmap/certificates/design-a-space-explorer.pdf
+* url: /static/skillmap/certificates/space-cert.pdf
 * position: 5 0
+    * map: [Try 80s Rockstar Maze](/skillmap/rockstar)
+    * map: [Try Jungle Monkey Jump](/skillmap/jungle)
+    * editor: [Edit Your Project with a Full Toolbox](/)
 
 

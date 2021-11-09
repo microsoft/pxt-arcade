@@ -479,7 +479,7 @@
         "logoUrl": "https://makecode.com/org",
         "logo": "./static/logo.svg",
         "docsLogo": "./static/logo.svg",
-        "cardLogo": "./static/logo.svg",
+        "cardLogo": "./static/logo.png",
         "portraitLogo": "./static/logo.svg",
         "footerLogo": "./static/logo.svg",
         "organization": "Microsoft MakeCode",
@@ -583,7 +583,8 @@
             "recipes",
             "tutorialBlocksDiff",
             "blocksErrorList",
-            "identity"
+            "identity",
+            "accessibleBlocks"
         ],
         "blocksCollapsing": true,
         "errorList": true,
@@ -620,5 +621,14 @@
             "id": "ie"
         }
     ],
-    "uploadDocs": true
+    "uploadDocs": true,
+    "defaultBadges": [
+        {
+            "id": "skillmap-completion-save the forest}",
+            "image": "https://github.com/microsoft/pxt/raw/master/docs/static/beginner-badge.png",
+            "sourceURL": "skillmap/forest",
+            "type": "skillmap-completion",
+            "title": "Save the Forest Skillmap"
+        }
+    ]
 }

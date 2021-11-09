@@ -1,6 +1,6 @@
 # Time Flies
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 Are you ready to make a quick, fun game that uses a timer?
 
@@ -9,21 +9,22 @@ Let's get to it!
 ![Animated picture of a frog trying to catch a fly](/static/tutorials/froggy/frog.gif "Can you help the frog catch the fly?" )
 
 
-## step 2
+## 2. Add Background
 
-**🐸 Before you add a frog, it's going to need a place to sit 🐸**
+**🐸 Before you add a frog, it's going to need a place to sit**
 
 ---
 
-► From the ``||scene:Scene||`` category, grab ``||scene: set background image to [ ]||`` 
-and snap it into the ``||loops:on start||`` container already in the workspace.
+- :tree: From the ``||scene:Scene||`` category, grab   
+``||scene: set background image to [ ]||``  
+and snap it into the   
+``||loops:on start||`` container already in the workspace.
 
-► Click the grey box in the new block to open the **image editor**.   
+- :paint brush: Click the grey box in the new block to open the **image editor**.
 
-You can draw a background for your hero, or you can switch over to the **Gallery** 
-or **My Assets** tab at the top and choose one that has already been created. 
+_💡 You can draw a background or you can switch over to the **My Assets** tab at the top and choose one that has already been created._
 
-► Click **> Next** when you're ready for the next instruction.   
+- :mouse pointer: Click **Next** when you're ready for the next instruction.
 
 
 ```blocks
@@ -31,19 +32,20 @@ or **My Assets** tab at the top and choose one that has already been created.
 scene.setBackgroundImage(assets.image`Background`)
 ```
 
-## Step 3
+## 3. Add a Sprite
 
 **Time for a hero!**
 
 ---
 
-► From ``||sprites:Sprites||``, drag ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
-into **the end** of the ``||loops:on start||`` container. 
+- :paper plane: From ``||sprites:Sprites||``, drag   
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  
+into **the end** of the  
+``||loops:on start||`` container.
 
-► Click the grey box in the new block to open the **image editor**.   
+- :paint brush: Click the grey box in the new block to open the **image editor**.
 
-You can draw your own hero, or you can switch over to the **Gallery** 
-or **My Assets** tab and choose one that has already been created. 
+_💡 Switch over to **My Assets** to choose the same frog we use, or draw one of your own!_
 
 
 ```blocks
@@ -53,17 +55,25 @@ scene.setBackgroundImage(assets.image`Background`)
 mySprite = sprites.create(assets.image`Hero`, SpriteKind.Player)
 ```
 
-## Step 4
+## 4. Try It
 
-**👀 Look at your game in the simulator 👀**
+**Click the Game Window Tab (Above)**  
+![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
 
-► If you don't like where your hero has ended up, snap a 
-``||sprites:set [mySprite] position to x [0] y [0]||`` 
-block into **the end** of the ``||loops:on start||`` container and 
-change the **x** (horizontal) and/or **y** (vertical) positions to 
-put your hero where you want it.
+Is your frog sitting where you want it?  If not, you can fix it in the next step.
+
+
+## 5. Set Position
+
+- :paper plane: If you don't like where your hero has ended up, snap a  
+``||sprites:set [mySprite] position to x [0] y [0]||``  
+block into **the end** of the   
+``||loops:on start||`` container.
+
+
+- :mouse pointer: Play with the **x** (horizontal) and/or **y** (vertical) positions until your sprite appears where you want it.
 
 ```blocks
 let mySprite: Sprite = null
@@ -73,21 +83,23 @@ mySprite = sprites.create(assets.image`Hero`, SpriteKind.Player)
 mySprite.setPosition(85, 80)
 ```
 
-## Step 5
+## 6. Add a Fly
 
-**😋 It's snack time 😋**  
+**😋 It's snack time**  
 The frog needs something to eat. 
 
 ---
 
-► Snap a new ``||variables:set [mySprite2] to sprite [ ] of kind [Player]||`` 
-block into **the end** of the ``||loops:on start||`` container. 
+- :paper plane: Snap a new   
+``||variables:set [mySprite2] to sprite [ ] of kind [Player]||``  
+block into **the end** of the  
+``||loops:on start||`` container.
 
-► Click the grey box in the new block to open the image editor and draw a flying insect.   
-*(Or switch over to __Gallery__
-or __My Assets__ and choose one that has already been created.)*
+- :paper plane: Click the grey box in the new block to open the image editor and draw a flying insect.
 
-► Switch the **kind** of the fly by clicking on **Player** and selecting **Food**.
+_💡 Or switch over to the **My Assets** tab at the top and choose a fly that has already been created._
+
+- :mouse pointer: Switch the **kind** of the fly by clicking on **Player** and selecting **Food**.
 
 
 ```blocks
@@ -101,19 +113,23 @@ mySprite2 = sprites.create(assets.image`Bouncer`, SpriteKind.Food)
 ```
 
 
-## Step 6
+## 7. Get It Moving
 
-**😴 There's no challenge if the fly just sits there 😴**
+**😴 There's no challenge if the fly just sits there**
 
 ---
 
-► To get the fly moving, snap a ``||sprites:set [mySprite] velocity to vx [50] vy [50]||``
-into the  **the end** of the ``||loops:on start||`` container. 
+- :paper plane: To get the fly moving, snap a  
+``||sprites:set [mySprite] velocity to vx [50] vy [50]||``  
+into the  **the end** of the  
+``||loops:on start||`` container.
 
-► Change **mySprite** to **mySprite2** using the dropdown menu. 
+- :mouse pointer: To make sure it's the fly that's moving, change **mySprite** to **mySprite2** using the dropdown menu.
 
-► Add some excitement by choosing larger numbers for both velocity directions.  
-*(Anything between 100 and 200 is entertaining.)*
+- :mouse pointer: Add some excitement by choosing larger numbers for both velocity directions (**vx** and **vy**).
+
+_💡 Anything between 100 and 200 is entertaining._
+
 
 ```blocks
 let mySprite: Sprite = null
@@ -128,27 +144,31 @@ mySprite2.setVelocity(200, 100)
 
 
 
-## Step 7
+## 8. Try It
 
-**👀 Try your game in the simulator 👀**
+**👀 Try your game in the simulator**
 
-Does it do what you expected?
+---
+
+Does it do what you expected? Did the fly leave the screen too fast for you to see?
 
 
 
-## Step 8
+## 9. Bounce
 
-**🕐 That didn't last long 🕐**
+**🕐 That didn't last long**
 
 To give the frog a fighting chance, we'll want to keep the fly on screen.
 
 ---
 
-► From ``||sprites:Sprites||``, grab a ``||sprites:set [mySprite] bounce on wall <on>||``
-block and snap it into the  **the end** of the ``||loops:on start||`` container. 
+- :paper plane: From ``||sprites:Sprites||``, grab a  
+``||sprites:set [mySprite] bounce on wall <on>||``  
+block and snap it into the  **the end** of the  
+``||loops:on start||`` container.
 
 
-► Change **mySprite** to **mySprite2** to make sure the block changes the behavior of the fly.
+- :mouse pointer: Change **mySprite** to **mySprite2** to make sure the block changes the behavior of the fly.
 
 
 ```blocks
@@ -164,17 +184,19 @@ mySprite2.setBounceOnWall(true)
 ```
 
 
-## Step 9
+## 10. Press the Button
 
 **We want to press the button to catch the fly!**
 
 ---
 
-► From ``||controller:Controller||``, drag ``||controller:on [A] button [pressed]||``
-out into an empty spot in the workspace.  
+- :game: From ``||controller:Controller||``, drag  
+``||controller:on [A] button [pressed]||``  
+out into an empty spot in the workspace.
 
-► Inside the new container, drop a ``||logic:if <true> then / else||`` block 
-(from the ``||logic:Logic||`` category).
+- :random: Inside the new container, drop a  
+``||logic:if <true> then / else||``  
+block (from the ``||logic:Logic||`` category).
 
 
 ```blocks
@@ -185,12 +207,14 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 10
+## 11. Get It?
 
-► From ``||sprites:Sprites||``, grab ``||sprites:<[mySprite] overlaps with [otherSprite]>||``
-and drop it in to replace **`<true>`** in the ``||logic:if <true> then / else||`` block.  
+- :paper plane: From ``||sprites:Sprites||``, grab  
+``||sprites:<[mySprite] overlaps with [otherSprite]>||``  
+and drop it in to replace **`<true>`** in the  
+``||logic:if <true> then / else||`` block.
 
-► Change **otherSprite** to **mySprite2** using the dropdown menu.
+- :mouse pointer: Change **otherSprite** to **mySprite2** using the dropdown menu.
 
 
 ```blocks
@@ -204,20 +228,24 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 11
+## 12. Check for Flies
 
-Now, when we press the Ⓐ button, one of two things will happen:  
+When we press the Ⓐ button, one of two things could be happening:
 - The fly will be overlapping the frog and we win the game with a snack
 - The fly will not be overlapping the frog and our player will lose a life
 
 ---
 
-► To create the first case, drag ``||game:game over <lose>||`` into the top
-(**if**) section of the ``||logic:if <true> then / else||`` block and toggle 
-**`<lose>`** to **`<win>`**.
+- :circle: To create the first case, drag  
+``||game:game over <lose>||``  
+into the top (**if**) section of the  
+``||logic:if <true> then / else||``  
+block and toggle **`<lose>`** to **`<win>`**.
 
-► For the second case, drag ``||info:change life by -1||`` into the bottom (**else**) 
-section of the ``||logic:if <true> then / else||`` block.
+- :id card: For the second case, drag  
+``||info:change life by -1||``  
+into the bottom (**else**) section of the  
+``||logic:if <true> then / else||`` block.
 
 
 ```blocks
@@ -233,65 +261,52 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 12
+## {Step 12}
 
-**👀 Try your game in the simulator 👀**
-
-How is it shaping up?
-
-
-
-## Step 11
-
-**⌚ Don't be late ⌚**
-
-Add a sense of urgency by including a countdown timer. 
+**👀 Try your game in the simulator**
 
 ---
 
-►  From ``||info:Info||``, grab ``||info:start countown [10]s||`` and drag it to 
-the end of the ``||loops:on start||`` container.
+How is it shaping up? Do you lose a life if the fly isn't over the frog when you press (A)? Do you win the game if it is?
+
+
+
+## {Step 11}
+
+**⌚ Don't be late**
+
+Add a sense of urgency by including a countdown timer.
+
+---
+
+- :id card:  From ``||info:Info||``, grab  
+``||info:start countown [10]s||``  
+and drag it to the end of the  
+``||loops:on start||`` container.
 
 Now you have exactly 10 seconds to catch the fly before the game ends!
 
 
-## Step 11
+## {Step 11}
 
-**🎉 Congratulations 🎉**
-
-Now you have a game that tests your timing and is enforced by a timer! 
-
-Click **Finish** if you're ready to publish your game and share with friends, or 
-look at the challenges below for suggestions on modding your game before entering it into 
-the **MakeCode Arcade Game Jam!**
+**🎉 Congratulations**
 
 ---
 
-►  Try adding a block to change the number of lives you start with
+Now you have a game that tests your timing and is enforced by a timer!
 
-►  Instead of only one fly, start with three and have one disappear each time 
-you lose a life
-
-►  Change the theme so that instead of a frog catching flies, it's something entirely different
+Click **Done** if you're ready to publish your game and share with friends, or 
+look at the challenges below for suggestions on modding your game.
 
 ---
 
-**Proud of what you've got??**   
-Submit it to aka.ms/gamejam by May 17, 2021 to be included in the **Time Jam**!
+- :question:  Try adding a block to change the number of lives you start with.
+
+- :question:  Instead of only one fly, start with three and have one disappear each time you lose a life.
+
+- :question:  Change the theme so that instead of a frog catching flies, it's something entirely different!
 
 
-```blocks
-let mySprite: Sprite = null
-let mySprite2: Sprite = null
-scene.setBackgroundImage(assets.image`Background`)
-mySprite = sprites.create(assets.image`Hero`, SpriteKind.Player)
-mySprite.setPosition(85, 80)
-mySprite2 = sprites.create(assets.image`Bouncer`, SpriteKind.Food)
-mySprite2.setVelocity(200, 100)
-mySprite2.setBounceOnWall(true)
-//@highlight
-info.startCountdown(10)
-```
 
 
 

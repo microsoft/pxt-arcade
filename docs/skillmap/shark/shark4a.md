@@ -11,13 +11,13 @@ Bring your game to life with custom animations for your characters.
 
 ## Step 2 - Main Sprite
 
-**Let's start with the main character!**  
+**Let's start with the main character!**
 There are lots of ways to animate your shark, starting with the forward swim.
 
 ---
 
 
-► In the toolbox, click **Advanced** to reveal the 
+► In the toolbox, click **Advanced** to reveal the
 ``||animation:Animation||`` category.
 
 
@@ -37,29 +37,29 @@ mySprite.setStayInScreen(true)
 info.startCountdown(15)
 info.setLife(3)
 for (let index = 0; index < 10; index++) {
-    mySprite2 = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
+    let mySprite2 = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
     mySprite2.setPosition(randint(5, 155), 96)
 }
 //@highlight
 animation.runImageAnimation(
 mySprite,
 [img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
     `],
 500,
 false
@@ -89,7 +89,7 @@ mySprite.setStayInScreen(true)
 info.startCountdown(15)
 info.setLife(3)
 for (let index = 0; index < 10; index++) {
-    mySprite2 = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
+    let mySprite2 = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
     mySprite2.setPosition(randint(5, 155), 96)
 }
 //@highlight
@@ -113,18 +113,18 @@ Your shark should keep swimming as you play!
 
 ## Step 5 - About Face
 
-**👈 Sharks can't swim backwards! 👈**  
-If the shark needs to swim to the left, we should turn it around.  
+**👈 Sharks can't swim backwards! 👈**
+If the shark needs to swim to the left, we should turn it around.
 
 ---
 
-► For this, go to ``||controller:Controller||`` and drag ``||controller:on [A] button [pressed]||`` into an empty area of the workspace. 
+► For this, go to ``||controller:Controller||`` and drag ``||controller:on [A] button [pressed]||`` into an empty area of the workspace.
 
 ► Change ``||controller:A||`` to ``||controller:left||``.
 
 ```blocks
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    
+
 })
 
 ```
@@ -164,12 +164,12 @@ Now your shark turns around when you press the left button, but it never flips b
 
 ## Step 8 - To the Right
 
-**👉 Flip it! 👉**  
-When the shark is done swimming left, it should automatically face back to the right.  
+**👉 Flip it! 👉**
+When the shark is done swimming left, it should automatically face back to the right.
 
 ---
 
-► For this, go to ``||controller:Controller||`` and drag ``||controller:on [A] button [pressed]||`` into an empty area of the workspace. 
+► For this, go to ``||controller:Controller||`` and drag ``||controller:on [A] button [pressed]||`` into an empty area of the workspace.
 
 ► Change ``||controller:A||`` to ``||controller:left||``.
 
@@ -177,7 +177,7 @@ When the shark is done swimming left, it should automatically face back to the r
 
 ```blocks
 controller.left.onEvent(ControllerButtonEvent.Released, function () {
-    
+
 })
 
 ```
@@ -209,8 +209,8 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
 
 ## Step 10 - Spit It Out
 
-**💥 Spitting Lasers 💥**  
-The shark always spits lasers toward the right edge, so let's give it an appropriate animation! 
+**💥 Spitting Lasers 💥**
+The shark always spits lasers toward the right edge, so let's give it an appropriate animation!
 
 ---
 
@@ -233,7 +233,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 11 - And On and On
 
-**🔁 And do it AGAIN 🔁**  
+**🔁 And do it AGAIN 🔁**
 
 ---
 
@@ -270,12 +270,12 @@ game.onUpdateInterval(2100, function () {
 
 ## Finale
 
-**WOW!**  
+**WOW!**
 Look at the game you've created!  Make sure to give it a try in the game window before moving on.
 
 ---
 
-When you're happy, click **Finish** to head back to the skillmap where you can share your game with family and friends.
+When you're happy, click **Done** to head back to the skillmap where you can share your game with family and friends.
 
 
 

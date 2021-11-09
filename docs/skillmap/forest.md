@@ -1,8 +1,8 @@
 # Save the Forest
 * name: Save the Forest
-* description: Computer science is everywhere!  
+* description: The last few summers have been some of the hottest on record and the forest service needs you to help keep fires under control. Use blocks to code your airtanker and set up tech so your ground team can help you save the forest!
 * infoUrl: skillmap/educator-info/forest-map-info
-* bannerUrl: /static/skillmap/forest/forest1.gif
+* bannerUrl: /static/skillmap/forest/forest6.gif
 * backgroundurl: /static/skillmap/backgrounds/forest-comp.png
 * primarycolor: #b27ea3
 * secondarycolor: #ffffff
@@ -12,25 +12,25 @@
 
 
 ## Save the Forest
-* name: Save the forest from the ravaging fire!
+* name: Save the Forest
 * layout: manual
 
 ### forest1
 * allowcodecarryover: false
-* name: Save the Forest
+* name: Prepare Your Plane
 * type: tutorial
-* description: Set up your plane to make sure you can get everywhere you need to be! 
-* url: /skillmap/forest/forest1
+* description: Set up your airtanker to make sure you can get everywhere you need to be!
+* url: /skillmap/forest_new/forest1
 * imageUrl: /static/skillmap/forest/forest1.gif
 * tags: easy, sprite, movement
 * next: forest2
 * position: 0 0
 
 ### forest2
-* name: Burning Issues
+* name: 🔥 Burning Issues 🔥
 * type: tutorial
-* description: Use loops to add random fires to your map! 
-* url: /skillmap/forest/forest2
+* description: Use loops to add random fires to your map!
+* url: /skillmap/forest_new/forest2
 * imageUrl: /static/skillmap/forest/forest2.gif
 * tags: easy, loops, sprites
 * next: forest3
@@ -39,8 +39,8 @@
 ### forest3
 * name: Fire Fighting
 * type: tutorial
-* description: Add a water hose to your plane so you can keep your fires under control. 
-* url: /skillmap/forest/forest3
+* description: Add a water hose to your plane so you can keep your fires under control.
+* url: /skillmap/forest_new/forest3
 * imageUrl: /static/skillmap/forest/forest3.gif
 * tags: easy, events, sprites
 * next: forest4
@@ -49,9 +49,8 @@
 ### forest4
 * name: Spreads Like Wildfire
 * type: tutorial
-* description: Lots of things affect how quickly fire spreads. In this activity, you'll add variables 
-to change fire danger levels. 
-* url: /skillmap/forest/forest4
+* description: Lots of things affect how quickly fire spreads. In this activity, you'll add variables to change fire danger levels.
+* url: /skillmap/forest_new/forest4
 * imageUrl: /static/skillmap/forest/forest4.gif
 * tags: easy, variables, overlaps
 * next: forest5
@@ -61,7 +60,7 @@ to change fire danger levels.
 * name: Head's Up
 * type: tutorial
 * description: Computer science is more important to firefighting than ever before! Add some technology to keep your pilots updated!
-* url: /skillmap/forest/forest5
+* url: /skillmap/forest_new/forest5
 * imageUrl: /static/skillmap/forest/forest5.gif
 * tags: easy, custom
 * next: forest-cert
@@ -73,17 +72,24 @@ to change fire danger levels.
 * name: Congrats!
 * kind: completion
 * type: certificate
-* imageUrl: /static/skillmap/certificates/forest-cert.png
 * url: /static/skillmap/certificates/forest-cert.pdf
-* next: forest6 
+* imageUrl: /static/skillmap/certificates/forest-cert.png
+* next: forest6
 * position: 3 2
+* rewards:
+    * certificate: /static/skillmap/certificates/forest-cert.pdf
+    * completion-badge: https://github.com/microsoft/pxt/raw/master/docs/static/beginner-badge.png
+* actions:
+    * map: [Try the Jungle Monkey Skillmap](/skillmap/jungle)
+    * map: [Try the Space Explorer Skillmap](/skillmap/space)
+    * editor: [Edit Your Project with a Full Toolbox] (/)
 
 
 ### forest6
 * name: Keep Going!
 * type: tutorial
 * description: Add sounds and animations to customize your game.
-* url: /skillmap/forest/forest6
+* url: /skillmap/forest_new/forest6
 * imageUrl: /static/skillmap/forest/forest6.gif
 * tags: custom, animation, sounds
 * position: 4 2

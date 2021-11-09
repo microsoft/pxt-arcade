@@ -20,14 +20,14 @@ Can you connect each chunk of code to the action it creates?
 
 ## Step 3 - Step to the Right
 
-**➡️ Walking to the Right ➡️**  
+**➡️ Walking to the Right ➡️**
 Let's add an animation when our sprite moves right.
 
 ---
 
 ► Click the **Advanced** category in the toolbar to reveal the ``||animation:Animation||`` category.
 
-► Drag the large ``||animation:animate [mySprite]...when [not moving]||`` block into **the end** of the ``||loops:on start||`` container already in the workspace. 
+► Drag the large ``||animation:animate [mySprite]...when [not moving]||`` block into **the end** of the ``||loops:on start||`` container already in the workspace.
 
 ► Click the empty grey box and toggle to **My Assets** to choose the **walk right** animation for whichever sprite you're using.
 
@@ -54,7 +54,7 @@ Let's add an animation when our sprite moves right.
 
 ---
 
-► Drag another ``||animation:animate [mySprite]...when [not moving]||`` into **the end** of the ``||loops:on start||`` container. 
+► Drag another ``||animation:animate [mySprite]...when [not moving]||`` into **the end** of the ``||loops:on start||`` container.
 
 ► Click the empty grey box and toggle to **My Assets** to choose the **walk left** animation for whichever sprite you're using.
 
@@ -90,7 +90,7 @@ Now we need an animation that runs when your hero jumps!
 
 ---
 
-► Drag another ``||animation:animate [mySprite]...when [not moving]||`` block into **the end** of the ``||loops:on start||`` container. 
+► Drag another ``||animation:animate [mySprite]...when [not moving]||`` block into **the end** of the ``||loops:on start||`` container.
 
 ► Click the empty grey box and toggle to **My Assets** to choose the **jump** animation for whichever sprite you're using.
 
@@ -123,7 +123,7 @@ Your hero should look amazing as they run and jump!
 
 ## Finished
 
-When you're done with this activity, click **Finish** to return to the main page, then add more danger!
+When you're done with this activity, click **Done** to return to the main page, then add more danger!
 
 
 
@@ -159,7 +159,7 @@ scene.onOverlapTile(SpriteKind.Projectile, assets.tile`boulder`, function (sprit
 let projectile: Sprite = null
 let mySprite: Sprite = null
 scene.setBackgroundImage(assets.image`background1`)
-tiles.setTilemap(tilemap`level1`) 
+tiles.setTilemap(tilemap`level1`)
 mySprite = sprites.create(assets.image`Shang-Chi`, SpriteKind.Player)
 sprites.add_profile(Choice.shang)
 mySprite.ay = 500
@@ -213,7 +213,7 @@ namespace sprites {
             thisSprite.vy = -200
         }
     }
-    
+
     /**
      * Direct sprite to automatically jump only when hitting
      * a wall to the right or left
@@ -226,12 +226,12 @@ namespace sprites {
     }
 
     /**
-     * Set a profile pic and name for your hero in the 
+     * Set a profile pic and name for your hero in the
      * upper-left hand corner of the screen
      */
     //% block="add corner profile for $choice"
     export function add_profile (choice:Choice) {
-        if (choice == Choice.xialing){ 
+        if (choice == Choice.xialing){
             profilelife.setProfileImage(assets.image`Xialing profile`)
             profilelife.setName("Xialing")
         }

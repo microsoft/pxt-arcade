@@ -19,7 +19,7 @@ In this tutorial, you'll design a spaceship for your journey.
 into the ``||loops:on start||`` block that's already in the workspace.
 
 ► Next, select ``||scene:star field||`` (instead of ``||scene:confetti||``) from the dropdown
-and watch as you blast into space! 🚀 
+and watch as you blast into space! 🚀
 
 
 ---
@@ -37,7 +37,7 @@ effects.starField.startScreenEffect()
 
 ---
 
-► From the ``||sprites:Sprites||`` category, drag the ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
+► From the ``||sprites:Sprites||`` category, drag the ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
 block  and place it at the end of the ``||loops:on start||`` container.
 
 ► Click on the grey box in the middle of your
@@ -78,11 +78,11 @@ let mySprite = sprites.create(img`
 
 ---
 
-► Find the ``||controller:move [mySprite] with buttons ⊕||`` block 
-and drag it into the bottom of the ``||loops:on start||`` container. 
+► Find the ``||controller:move [mySprite] with buttons ⊕||`` block
+and drag it into the bottom of the ``||loops:on start||`` container.
 
-** Now try moving your ship around on the game screen! **  
-Your ship will move with the joystick, arrow keys, or **W A S D** keys.  
+** Now try moving your ship around on the game screen! **
+Your ship will move with the joystick, arrow keys, or **W A S D** keys.
 
 
 
@@ -119,7 +119,7 @@ controller.moveSprite(mySprite)
 ► To keep your ship from exploring beyond the edges, find
  the ``||sprites:set [mySprite] stay in screen <on>||`` block and
 snap it in at the end of the program.
- 
+
 
 
 ```blocks
@@ -156,7 +156,7 @@ mySprite.setStayInScreen(true)
 ---
 
 **Try your project on the game screen
-before you click finish on the tutorial.**  
+before you click Done on the tutorial.**
 
 Is everything how you want it? You can always go back and edit steps if you discover you'd like them to work differently.
 
@@ -168,5 +168,5 @@ Is everything how you want it? You can always go back and edit steps if you disc
 
 You're all set to travel the universe!
 
-Click **Finish** to return to the main page where you can share your game
+Click **Done** to return to the main page where you can share your game
 with family and friends!
