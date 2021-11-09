@@ -16,13 +16,13 @@
   "directOpen": true
 },
 {
-  "name": "Create a Space Adventure",
+  "name": "Shark Attack",
   "cardType": "link",
-  "description": "Make a Galaga-style game by creating a rocket that fires at enemies. Design your outerspace view, create amazing animations, and MORE!",
-  "imageUrl":  "/static/skillmap/backgrounds/space.png",
-  "url": "https://arcade.makecode.com/--skillmap#space",
+  "description": "The deep sea is a fascinating place! This skillmap will guide you through the ocean as a shark on a journey to find food!",
+  "imageUrl": "/static/skillmap/backgrounds/shark-map.png",
+  "url": "https://arcade.makecode.com/--skillmap#shark",
   "directOpen": true
-},
+}, 
 {
   "name": "Jungle Monkey Jump Platformer",
   "cardType": "link",
@@ -32,13 +32,21 @@
   "directOpen": true
 },
 {
+  "name": "Create a Space Adventure",
+  "cardType": "link",
+  "description": "Make a Galaga-style game by creating a rocket that fires at enemies. Design your outerspace view, create amazing animations, and MORE!",
+  "imageUrl":  "/static/skillmap/backgrounds/space.png",
+  "url": "https://arcade.makecode.com/--skillmap#space",
+  "directOpen": true
+},
+{
   "name": "80s Rockstar Maze",
   "cardType": "link",
   "description": "Code your rockstar to move through the crowded backstage area to collect all the gear before they're mobbed by fans!",
   "imageUrl":  "/static/skillmap/backgrounds/rockstar-card.gif",
   "url": "https://arcade.makecode.com/--skillmap#rockstar",
   "directOpen": true
-},
+}, 
 {
   "name": "A Zookeeper's Adventure",
   "cardType": "link",

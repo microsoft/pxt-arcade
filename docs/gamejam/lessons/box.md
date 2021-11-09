@@ -64,9 +64,9 @@ Will you just be awarding participation certificates or calling out specific pro
 
 If you’re a teacher, we got you covered! Here are some additional resources to get you started:
 
-- [Game Jam in a Box Lesson Teacher Guide Word Document](https://microsoft.sharepoint.com/:w:/t/Prime8xMakeCode/ER2V7ZEkYQNAqcMRdCcPmCsBY-b_lWsJv-NFPratwlhIPA?e=DyEp4S)
-- [Game Jam in a Box Lesson Teacher Guide PDF](https://microsoft.sharepoint.com/:b:/t/Prime8xMakeCode/EU1Gkkw21pRAmavAOErE18IBgTEkypqVm2ADLkoQ5J8eRA?e=qWBE6I)
-- [Game Jam in a Box Presentation Template](https://microsoft.sharepoint.com/:p:/t/Prime8xMakeCode/EcPBV_23knNKg-eZxR156SMBZ7xVAzA3aecstJuxX-8wrQ?e=cpgVko)
+- [Game Jam in a Box Lesson Teacher Guide Word Document](https://1drv.ms/w/s!AqsgsTyHBmRBknY1ENeC4jdrPg81?e=7W1Guq)
+- [Game Jam in a Box Lesson Teacher Guide PDF](https://1drv.ms/b/s!AqsgsTyHBmRBkng3YIHQUvorRPe0?e=ikYw4I)
+- [Game Jam in a Box Presentation Template](https://1drv.ms/p/s!AqsgsTyHBmRBknTT2xRpZ2upij4v?e=bWiGb6)
 
 ## Resources
 
