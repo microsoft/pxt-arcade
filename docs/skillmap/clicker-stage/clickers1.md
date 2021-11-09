@@ -1,4 +1,4 @@
-# Clicker Game
+# The World's a Stage
 
 
 ## {Introduction @showdialog}
@@ -17,9 +17,9 @@ Let's prep the stage by adding a background.
 
 ---
 
-- :tree:  Open the ``||scene:Scene||`` category and drag   
+- :tree:  Open the ``||scene:Scene||`` category and drag  
 ``||scene: set background image to [ ]||``   
-into the ``||loops:on start||``   
+into the ``||loops:on start||``  
 container that's already in the workspace.
 
 - :mouse pointer:  When you're done, click **Next** to see the next step.
@@ -41,11 +41,15 @@ scene.setBackgroundImage(img`
 **Choose your background!**  
 🖼 🖼 🖼
 
+Which performer will the audience be cheering for today?  
+
+Do you want to see Buster at the mic, or are you here for Clay Calloway?
+
 ---
 
 
 - :paint brush:  Click the grey box inside  
-``||scene: set background image to [ ]||``  
+``||scene: set background image to [ ]||``   
 to open the
 image editor and toggle to the **My Assets** tab.
 
@@ -130,8 +134,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## {Step 6}
 
-**Test your game on the game screen**  
-🎮 🎮 🎮 
+**🎮 Test your game on the game screen**
 
 Do you see your score go up each time you press the  **Ⓐ** button?
 

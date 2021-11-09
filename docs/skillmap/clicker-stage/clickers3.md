@@ -1,175 +1,164 @@
-# Clicker Game
+# Clicking Superstar
 
 
 ## {Introduction @showdialog}
 
-Let's make a clicker game!
+There's so much more to explore with our clicker game.
 
-![Click away](/static/skillmap/clicker/clickert1.gif "Click and buy bigger clickers" )
+Let's create a spray of stars that fly out as we click.
+
+![Click away](/static/skillmap/clicker/clickert3.gif "Click and buy bigger clickers" )
 
 
 ## {Step 2}
-**This game will test your speed as you click as quickly as possible to earn points.**  
-⭐ ⭐ ⭐ 
 
-
-Let's prep the stage by adding a background.
+Watching the points increase each time we click is fun...but let's add
+some flying star [__*projectiles*__](#projected "sprites that moves on their own, often in large quantities") to make it even more interesting.
 
 ---
 
-- :tree:  Open the ``||scene:Scene||`` category and drag   
-``||scene: set background image to [ ]||``   
-into the ``||loops:on start||``   
-container that's already in the workspace.
+- :paper plane:  From ``||sprites:Sprites||``, grab  
+``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``  
+and drop it into **the end** of the  
+``||controller:on [A] button [pressed]||`` container
+already in the workspace.
 
-- :mouse pointer:  When you're done, click **Next** to see the next step.
-
+- :mouse pointer:  Click **Next** to move on to the next instruction.
 
 ```blocks
-//@highlight
-scene.setBackgroundImage(img`
+let mySprite: Sprite = null
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.changeScoreBy(1)
+    mySprite.setImage(assets.image`A static Down`)
+    //@highlight
+    projectile = sprites.createProjectileFromSprite(img`
 . . . .
 . . . .
 . . . .
 . . . .
-`)
+`, mySprite, 50, 50)
+})
 ```
 
 
 ## {Step 3}
 
-**Choose your background!**  
-🖼 🖼 🖼
-
----
-
-
-- :paint brush:  Click the grey box inside  
-``||scene: set background image to [ ]||``  
-to open the
-image editor and toggle to the **My Assets** tab.
-
-- :mouse pointer:  Choose the **Stage** background and click **Done**.
-
+- :paint brush:  Click the empty grey square and toggle to **My Assets** 
+to select **Big Star**.
 
 
 ```blocks
-//@highlight
-scene.setBackgroundImage(assets.image`TheStage`)
+let mySprite: Sprite = null
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.changeScoreBy(1)
+    mySprite.setImage(assets.image`A static Down`)
+    //@highlight
+    projectile = sprites.createProjectileFromSprite(assets.image`Big Star`, mySprite, 50, 50)
+})
 ```
-
----
-
-![Toggle to My Assets](/static/skillmap/clicker/my-assets-toggle.gif "Choose the image editor, gallery, or my assets." )
-
-
-
-## {Step 3.5}
-
-**Click the Game Window Tab (Above)**  
-![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
----
-
-Do you see the background you chose?
-
-
 
 ## {Step 4}
-Add a [__*splash screen*__](#splasht "A full-screen message that shows while a program or level is loading") to let the user know to press the
-**Ⓐ** button when they're ready to start playing.
 
----
+**🎮 Try your project on the game screen to see what you think**
 
-- :circle:  Open the ``||game:Game||`` category and
-drag the  
-``||game: splash [" "]||``  
-block into the bottom of the   
-``||loops:on start||`` container.
+Does a star come out of your button each time you press the (A) button?
 
-- :mouse pointer:  Click inside the empty text area of the  
-``||game: splash [" "]||``  
-block and type a message letting the
-user know they should press (A) to play.
-
-
-```blocks
-scene.setBackgroundImage(assets.image`TheStage`)
-//@highlight
-game.splash("Press (A) to play!")
-
-```
 
 ## {Step 5}
 
-**⚡ Here comes the action ⚡**
-
-Now the game needs a container to hold the code that
-[__*increments*__](#addOne "adds to a number (usually adding 1)")
-the score when the **Ⓐ** button is clicked.
+**🌟 Let's make the star projectiles float 🌟**
 
 ---
 
-- :game:  From the ``||controller:Controller||`` category, grab the  
-``||controller: on [A] button [pressed]||``  
-container and drop it into an
-empty spot in the workspace.
+- :calculator:  From the ``||math:Math||`` category, drag out **TWO**  
+``||math: pick random [0] to [10]||``  
+blocks.
 
-- :id card:  From ``||info:Info||``, drag out the  
-``||info:change score by [1]||``  
-block and snap it into  
-``||controller: on [A] button [pressed]||``.
+- :mouse pointer:  Add the first to the [__*vx*__](#whatVX "horizontal velocity") argument of the  
+``||variables:set [projectile] to projectile [⭐] from [mySprite] with vx [50] vy [50]||``   
+block.
+
+- :mouse pointer:  Add the second to the [__*vy*__](#whatVY "vertical velocity") argument.
 
 
 ```blocks
+let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
+    mySprite.setImage(assets.image`A static Down`)
+    projectile = sprites.createProjectileFromSprite(assets.image`Big Star`, mySprite, randint(0, 10), randint(0, 10))
 })
 ```
 
 
 ## {Step 6}
 
-**Test your game on the game screen**  
-🎮 🎮 🎮 
 
-Do you see your score go up each time you press the  **Ⓐ** button?
+- :mouse pointer:  Change the range of the first  
+``||math: pick random [0] to [10]||``  
+block (next to **vx**) to pick between
+**-100** and **100**.  This will scatter stars randomly from side to side.
 
+- :mouse pointer:  Change the range of the second  
+``||math: pick random [0] to [10]||``  
+block (next to **vy**) to pick between
+**-50** and **-100**.  This will make sure the stars only move upward.
 
-## {Step 7}
-
-This game is off to a great start...but it goes on forever! Add a countdown timer to give
-the player a clear endpoint.
-
----
-
-- :id card:   Open the ``||info:Info||`` category and
-drag the  
-``||info: start countdown [10] (s)||``  
-block into **the bottom** of the  
-``||loops:on start||`` container.
 
 
 ```blocks
-scene.setBackgroundImage(assets.image`TheStage`)
-game.splash("Press (A) to play!")
-//@highlight
-info.startCountdown(10)
+let mySprite: Sprite = null
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.setImage(assets.image`A static Down`)
+    projectile = sprites.createProjectileFromSprite(assets.image`Big Star`, mySprite, randint(-100, 100), randint(-50, -100))
+})
 ```
 
 
-## {Step 8}
+## {Congrats @showdialog}
+**There you have it, a Super-Clicker**  
+🎇 🎇 🎇 
 
-**🎉 Congrats 🎉**
+---
 
-You have started your very own clicker game!
-Play it on the game screen and see if you can get more than **40 clicks**.
+Now, every time you click **Ⓐ** you create a shower of joyful stars!
 
-Click **Done** to return to the main page where you can share your game
-with family and friends to compare scores!
-
+Play your game a few times and look through the code to see if there's anything you
+want to add or modify.
 
 
+## {Finale}
+
+Try playing around with the code and the images to see if you can make your own customizations!
+
+When you're done, click **Done** to return to the main page where you can
+get a link to share with family and friends!
+
+
+
+
+
+```template
+
+info.onCountdownEnd(function () {
+    game.over(true, effects.confetti)
+})
+
+controller.A.onEvent(ControllerButtonEvent.Released, function () {
+    mySprite.setImage(assets.image`A static`)
+})
+
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.changeScoreBy(1)
+    mySprite.setImage(assets.image`A static Down`)
+})
+
+let mySprite: Sprite = null
+scene.setBackgroundImage(assets.image`TheStage`)
+game.splash("Press (A) to play!")
+info.startCountdown(10)
+mySprite = sprites.create(assets.image`A static`, SpriteKind.Player)
+```
 
 
 ```ghost
@@ -181,7 +170,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     aButton.setImage(assets.image`A static Down`)
     info.changeScoreBy(power2)
     for (let index = 0; index < power2; index++) {
-        onClick = sprites.createProjectileFromSprite(assets.image`Star`, aButton, randint(-25, 100), -100)
+        onClick = sprites.createProjectileFromSprite(assets.image`Big Star`, aButton, randint(-25, 100), -100)
     }
 })
 info.onCountdownEnd(function () {
@@ -193,21 +182,16 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 controller.B.onEvent(ControllerButtonEvent.Released, function () {
     bButton.setImage(assets.image`B static`)
 })
-let onClick: Sprite = null
+let mySprite2: Sprite = null
 let projectile: Sprite = null
-let power2 = 0
-let bButton: Sprite = null
-let aButton: Sprite = null
-aButton = sprites.create(assets.image`A static`, SpriteKind.Clicker)
-bButton = sprites.create(assets.image`B static`, SpriteKind.Clicker)
-aButton.setPosition(24, 102)
-bButton.setPosition(136, 102)
+let mySprite: Sprite = null
 scene.setBackgroundImage(assets.image`TheStage`)
 game.splash("Press (A) to play!")
-let mySprite = sprites.create(assets.image`Kitten4`, SpriteKind.Player)
 info.startCountdown(10)
-power2 = 1
+mySprite = sprites.create(assets.image`A static`, SpriteKind.Player)
+let mySprite2 = sprites.create(assets.image`Kitten4`, SpriteKind.Player)
 ```
+
 
 
 ```assetjson
