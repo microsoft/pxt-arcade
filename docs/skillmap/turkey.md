@@ -2,11 +2,11 @@
 * name: Turkey Day!
 * description: It's time to break out! Help your turkey free all of its friends and climb to freedom in this fast-paced vertical platformer.
 * infoUrl: skillmap/educator-info/turkey-map-info
-* backgroundurl: /static/skillmap/backgrounds/turkey-comp.png
+* backgroundurl: static/backgrounds/turkey-comp.png
 * bannerurl: /static/skillmap/turkey/turkey2.gif
-* primarycolor: #ff93c4
+* primarycolor: #e77038
 * secondarycolor: #fdf60c
-* tertiarycolor: #161112
+* tertiarycolor: #77dc52
 * strokecolor: #ffffff
 * highlightcolor: #ffffff
 * completednodecolor: #3b3738
@@ -23,7 +23,7 @@
 * tags: easy, sprites, tiles
 * imageUrl: /static/skillmap/turkey/turkey1.gif
 * next: turkey2
-* position: 1 -1
+* position: 0 -1
 
 ### turkey2
 * name: Gather a Crowd
@@ -33,7 +33,7 @@
 * tags: easy, tiles, events
 * imageUrl: /static/skillmap/turkey/turkey2.gif
 * next: turkey3
-* position: 2 -1
+* position: 1 -1
 
 ### turkey3
 * name: Win or Lose
@@ -43,7 +43,7 @@
 * tags: easy, overlap, timer
 * imageUrl: /static/skillmap/turkey/turkey3.gif
 * next: turkey-finish
-* position: 3 0
+* position: 2 0
 
 
 ### turkey-finish
@@ -51,7 +51,7 @@
 * type: certificate
 * url: /static/skillmap/certificates/turkey-cert.pdf
 * imageUrl: /static/skillmap/certificates/turkey-cert.png
-* position: 4 0
+* position: 3 0
 * actions:
     * map: [Try our Space Explorer](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox](/)
