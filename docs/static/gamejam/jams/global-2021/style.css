@@ -19,9 +19,11 @@ header.hoc-header .header-text {
 
 header.hoc-header .seal {
     position: absolute;
-    right: 3rem;
+    left: 3rem;
     top: 2rem;
-    width: 12rem;
+    width: 15rem;
+    border: 0.5rem solid white;
+    border-radius: 50%;
     height: auto;
 }
 
@@ -37,6 +39,7 @@ header.hoc-header .header-text h4 {
 
 header.hoc-header .header-text .title .jam {
     font-size: 11rem;
+    margin-top: 1rem;
     margin-left: -1rem;
     position: relative;
 }
@@ -49,7 +52,7 @@ header.hoc-header .header-text h3 {
     display: flex;
     align-items: stretch;
     width: 90%;
-    max-width: 90rem;
+    max-width: 110rem;
     margin: 0 auto;
 }
 
@@ -75,6 +78,20 @@ header.hoc-header .header-text h3 {
         flex-grow: 1;
         margin-left: 0 !important;
         margin-right: 0 !important;
+    }
+}
+
+section.hoc-section-01 .hero {
+    height: 30rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 1rem;
+}
+
+@media (max-width: 480px) {
+    section.hoc-section-01 .hero {
+        height: 20rem;
     }
 }
 
