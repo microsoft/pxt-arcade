@@ -81,3 +81,6 @@
 * type: certificate
 * url: /static/skillmap/certificates/zookeeper-license.pdf
 * imageurl: /static/skillmap/zoo/zookeeper-license.png
+* rewards:
+    * certificate: /static/skillmap/certificates/zookeeper-license.pdf
+    * completion-badge: /static/badges/badge-zoo.png
