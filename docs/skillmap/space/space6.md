@@ -245,7 +245,7 @@ game.onUpdateInterval(300, function () {
 })
 forever(function () {
     if (info.score() == 10) {
-        mySprite.sayText("+5 Level-Up Bonus", 2000)
+        mySprite.sayText("+5 Level-Up Bonus", 2000, false)
         info.changeScoreBy(5)
         enemySpeed = 70
     }
@@ -317,7 +317,7 @@ game.onUpdateInterval(2000, function () {
 })
 forever(function () {
     if (info.score() == 10) {
-        mySprite.sayText("+5 Level-Up Bonus", 2000)
+        mySprite.sayText("+5 Level-Up Bonus", 2000, false)
         info.changeScoreBy(5)
         enemySpeed = 70
     }

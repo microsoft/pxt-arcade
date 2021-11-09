@@ -1,174 +1,185 @@
-# Clicker Game
+# Button Clicker
 
 
 ## {Introduction @showdialog}
 
-Let's make a clicker game!
+We already have a basic clicker game, let's use what we've learned to
+make it even more special!
 
-![Click away](/static/skillmap/clicker/clickert1.gif "Click and buy bigger clickers" )
+![Click away](/static/skillmap/clicker/clickert2.gif "Click and buy bigger clickers" )
+
 
 
 ## {Step 2}
-**This game will test your speed as you click as quickly as possible to earn points.**  
-⭐ ⭐ ⭐ 
 
+Prepare for this activity by playing the game already in the workspace.
 
-Let's prep the stage by adding a background.
+Does your score go up when you click the (A) button? Does the game end when time runs out?
 
 ---
 
-- :tree:  Open the ``||scene:Scene||`` category and drag   
-``||scene: set background image to [ ]||``   
-into the ``||loops:on start||``   
-container that's already in the workspace.
-
-- :mouse pointer:  When you're done, click **Next** to see the next step.
-
-
-```blocks
-//@highlight
-scene.setBackgroundImage(img`
-. . . .
-. . . .
-. . . .
-. . . .
-`)
-```
+- :mouse pointer:  Click **Next** when you're ready to edit the game.
 
 
 ## {Step 3}
 
-**Choose your background!**  
-🖼 🖼 🖼
+Let's make this game more engaging by adding a
+button [__*sprite*__](#sprote "a 2-D image that moves on the screen") to the screen.
 
 ---
 
+- :paper plane:  From ``||sprites:Sprites||`` drag out  
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  
+and snap it into **the bottom** of the  
+``||loops:on start||`` container.
 
-- :paint brush:  Click the grey box inside  
-``||scene: set background image to [ ]||``  
-to open the
-image editor and toggle to the **My Assets** tab.
-
-- :mouse pointer:  Choose the **Stage** background and click **Done**.
-
+- :paint brush:  Click the grey square and toggle to **My Assets** 
+to choose the **(A)** button that's already in the **up** position.
 
 
 ```blocks
-//@highlight
+let mySprite: Sprite = null
 scene.setBackgroundImage(assets.image`TheStage`)
+game.splash("Press (A) to play!")
+info.startCountdown(10)
+//@highlight
+mySprite = sprites.create(assets.image`A static`, SpriteKind.Player)
 ```
-
----
-
-![Toggle to My Assets](/static/skillmap/clicker/my-assets-toggle.gif "Choose the image editor, gallery, or my assets." )
-
-
-
-## {Step 3.5}
-
-**Click the Game Window Tab (Above)**  
-![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
----
-
-Do you see the background you chose?
 
 
 
 ## {Step 4}
-Add a [__*splash screen*__](#splasht "A full-screen message that shows while a program or level is loading") to let the user know to press the
-**Ⓐ** button when they're ready to start playing.
+
+**Make your button look like it's being pressed
+with each click**  
+✨ ✨ ✨
 
 ---
 
-- :circle:  Open the ``||game:Game||`` category and
-drag the  
-``||game: splash [" "]||``  
-block into the bottom of the   
-``||loops:on start||`` container.
+- :paper plane:  From ``||sprites:Sprites||``, grab   
+``||sprites: set [mySprite] image to [ ]||``   
+and snap it into **the bottom** of the  
+``||controller:on [A] button [pressed]||`` container.
 
-- :mouse pointer:  Click inside the empty text area of the  
-``||game: splash [" "]||``  
-block and type a message letting the
-user know they should press (A) to play.
-
+- :paint brush:  Click the grey square and toggle to **My Assets** and choose a button in the **down** position.
 
 ```blocks
-scene.setBackgroundImage(assets.image`TheStage`)
-//@highlight
-game.splash("Press (A) to play!")
-
-```
-
-## {Step 5}
-
-**⚡ Here comes the action ⚡**
-
-Now the game needs a container to hold the code that
-[__*increments*__](#addOne "adds to a number (usually adding 1)")
-the score when the **Ⓐ** button is clicked.
-
----
-
-- :game:  From the ``||controller:Controller||`` category, grab the  
-``||controller: on [A] button [pressed]||``  
-container and drop it into an
-empty spot in the workspace.
-
-- :id card:  From ``||info:Info||``, drag out the  
-``||info:change score by [1]||``  
-block and snap it into  
-``||controller: on [A] button [pressed]||``.
-
-
-```blocks
+let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
+    //@highlight
+        mySprite.setImage(assets.image`A static Down`)
 })
+
 ```
+
+## {Step 5 @showdialog}
+
+**🎮 Try it out on the game screen 🎮**
+
+Does the button look like it goes down when (A) is pressed?
+
 
 
 ## {Step 6}
 
-**Test your game on the game screen**  
-🎮 🎮 🎮 
-
-Do you see your score go up each time you press the  **Ⓐ** button?
-
-
-## {Step 7}
-
-This game is off to a great start...but it goes on forever! Add a countdown timer to give
-the player a clear endpoint.
+Right now, the button never goes back up once pressed.  
+**Let's change that!**
 
 ---
 
-- :id card:   Open the ``||info:Info||`` category and
-drag the  
-``||info: start countdown [10] (s)||``  
-block into **the bottom** of the  
-``||loops:on start||`` container.
+- :game:  Drag another  
+``||controller:on [A] button [pressed]||``  
+container into an empty area of the workspace.
 
+- :mouse pointer:  Change ``||controller:[pressed]||`` to ``||controller:[released]||`` using the dropdown menu.
+
+- :paper plane:  Snap a new  
+``||sprites: set [mySprite] image to [ ]||``  
+block inside, then toggle to **My Assets** and choose the same
+**up** button image that you used for the original sprite.
 
 ```blocks
-scene.setBackgroundImage(assets.image`TheStage`)
-game.splash("Press (A) to play!")
-//@highlight
-info.startCountdown(10)
+let mySprite: Sprite = null
+controller.A.onEvent(ControllerButtonEvent.Released, function () {
+    mySprite.setImage(assets.image`A static`)
+})
+
 ```
+
+## {Step 7}
+
+Now test your project on the game screen to make sure the button goes up and down.
+
 
 
 ## {Step 8}
 
-**🎉 Congrats 🎉**
+**Did you notice that your game automatically keeps track of your highest score?**
 
-You have started your very own clicker game!
-Play it on the game screen and see if you can get more than **40 clicks**.
+It also automatically tells you that **you've lost** when time runs out. Let's change that.
 
-Click **Done** to return to the main page where you can share your game
-with family and friends to compare scores!
+---
+
+- :id card:  From the ``||info:Info||`` category, grab an  
+``||info:on countdown end||``  
+container and drop it into an empty area of the workspace.
+
+- :circle:  Now, open the ``||game:Game||`` category and pick  
+``||game: game over <LOSE> ⊕||`` .   
+Snap it inside the empty **on countdown end** container.
+
+- :mouse pointer:  Toggle **LOSE** to **WIN**.
+
+```blocks
+info.onCountdownEnd(function () {
+    game.over(true)
+})
+```
+
+## {Step 9}
+
+**🎊 Fantastic 🎊**
+
+Now add a final celebration with some **game over** effects!
+
+---
+
+- :mouse pointer:  Click the **+** icon to the right of the  
+``||game: game over <WIN> ⊕||``  block.
+
+- :mouse pointer:  If you want an effect other than confetti, 
+click the word **confetti**
+and choose a new option from the dropdown.
+
+```blocks
+info.onCountdownEnd(function () {
+    game.over(true, effects.confetti)
+})
+```
+
+## {Step 9}
+
+**That's it!**
+
+Play your game to see how you did.
+
+Compete for the most clicks in 10 seconds! When you're done, click **Done** to
+return to the main page where you can share
+with family and friends.
 
 
+```template
+
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.changeScoreBy(1)
+})
+
+scene.setBackgroundImage(assets.image`TheStage`)
+game.splash("Press (A) to play!")
+info.startCountdown(10)
+
+```
 
 
 
@@ -204,8 +215,8 @@ aButton.setPosition(24, 102)
 bButton.setPosition(136, 102)
 scene.setBackgroundImage(assets.image`TheStage`)
 game.splash("Press (A) to play!")
-let mySprite = sprites.create(assets.image`Kitten4`, SpriteKind.Player)
 info.startCountdown(10)
+let mySprite = sprites.create(assets.image`Kitten4`, SpriteKind.Player)
 power2 = 1
 ```
 
@@ -221,4 +232,3 @@ power2 = 1
   "pxt.json": "{\n    \"name\": \"button - assets\",\n    \"description\": \"\",\n    \"dependencies\": {\n        \"device\": \"*\",\n        \"core\": \"*\"\n    },\n    \"files\": [\n        \"main.blocks\",\n        \"main.ts\",\n        \"README.md\",\n        \"assets.json\",\n        \"images.g.jres\",\n        \"images.g.ts\"\n    ],\n    \"targetVersions\": {\n        \"branch\": \"v1.6.24\",\n        \"tag\": \"v1.6.24\",\n        \"commits\": \"https://github.com/microsoft/pxt-arcade/commits/5bea1575ea693e0648a647cbd86cda9776d58f48\",\n        \"target\": \"1.6.24\",\n        \"pxt\": \"7.2.25\"\n    },\n    \"preferredEditor\": \"blocksprj\"\n}\n"
 }
 ```
-

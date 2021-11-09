@@ -37,7 +37,7 @@ mySprite.setStayInScreen(true)
 info.startCountdown(15)
 info.setLife(3)
 for (let index = 0; index < 10; index++) {
-    mySprite2 = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
+    let mySprite2 = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
     mySprite2.setPosition(randint(5, 155), 96)
 }
 //@highlight
@@ -89,7 +89,7 @@ mySprite.setStayInScreen(true)
 info.startCountdown(15)
 info.setLife(3)
 for (let index = 0; index < 10; index++) {
-    mySprite2 = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
+    let mySprite2 = sprites.create(assets.image`decoration`, SpriteKind.Decoration)
     mySprite2.setPosition(randint(5, 155), 96)
 }
 //@highlight
