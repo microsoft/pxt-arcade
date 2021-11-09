@@ -5,6 +5,13 @@ Here are some cool activities to get you started with your @boardname@!
 ## Intro Content
 
 ### ~ codecard
+* name: Hour of Code™ 2021
+* description: Hour of Code™ 2021
+* buttonLabel: Show Activity
+* imageUrl: /static/hero-gallery/hoc-2021.png
+* cardType: link
+* url: https://aka.ms/arcadeHOC2021
+---
 * name: How-to code a video game
 * description: How-to code a video game
 * imageUrl: /static/hero-gallery/how-to-code.png
