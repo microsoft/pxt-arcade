@@ -78,7 +78,7 @@
 * position: 3 2
 * rewards:
     * certificate: /static/skillmap/certificates/forest-cert.pdf
-    * completion-badge: https://github.com/microsoft/pxt/raw/master/docs/static/beginner-badge.png
+    * completion-badge: /static/badges/badge-forest.png
 * actions:
     * map: [Try the Jungle Monkey Skillmap](/skillmap/jungle)
     * map: [Try the Space Explorer Skillmap](/skillmap/space)
