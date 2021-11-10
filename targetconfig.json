@@ -64,13 +64,13 @@
             "jungle": "docs:/skillmap/jungle",
             "racer": "docs:/skillmap/racer",
             "rockstar": "docs:/skillmap/rockstar",
-            "forest": "docs:/skillmap/forest"
+            "forest": "docs:/skillmap/forest",
+            "turkey": "docs:/skillmap/turkey"
         }
     },
     "galleries": {
         "Skillmaps": "skillmaps",
         "Tutorials": "tutorials",
-        "Multipart Tutorials": "multipart-tutorials",
         "Live Coding": "live-coding",
         "Blocks Games": "blocks-games",
         "JavaScript Games": "javascript-games",
