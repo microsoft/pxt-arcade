@@ -30,4 +30,10 @@ Here are some cool activities to get you started with your @boardname@!
 * imageUrl: /static/hero-gallery/hardware.png
 * url: https://arcade.makecode.com/hardware
 * cardType: link
+---
+* description: Want to influence MakeCode products? Starts 11/28!
+* buttonLabel: Apply now!
+* imageUrl: /static/hero-gallery/insiders.png
+* url: https://aka.ms/mcinsiders
+* cardType: link
 ### ~
