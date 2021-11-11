@@ -624,11 +624,46 @@
     "uploadDocs": true,
     "defaultBadges": [
         {
-            "id": "skillmap-completion-save the forest}",
-            "image": "https://github.com/microsoft/pxt/raw/master/docs/static/beginner-badge.png",
-            "sourceURL": "skillmap/forest",
+            "id": "skillmap-completion-save the forest",
             "type": "skillmap-completion",
+            "image": "/static/badges/badge-forest.png",
+            "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/forest",
             "title": "Save the Forest Skillmap"
+        },
+        {
+            "id": "skillmap-completion-zookeeper",
+            "type": "skillmap-completion",
+            "image": "/static/badges/badge-zoo.png",
+            "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/zoo",
+            "title": "Zookeeper Certification Skillmap"
+        },
+        {
+            "id": "skillmap-completion-rockstar",
+            "image": "/static/badges/badge-rockstar.png",
+            "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/rockstar",
+            "type": "skillmap-completion",
+            "title": "80's Rockstar Maze Skillmap"
+        },
+        {
+            "id": "skillmap-completion-build a platformer game!",
+            "image": "/static/badges/badge-jungle.png",
+            "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/jungle",
+            "type": "skillmap-completion",
+            "title": "Jungle Monkey Platformer Skillmap"
+        },
+        {
+            "id": "skillmap-completion-space",
+            "image": "/static/badges/badge-space.png",
+            "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/space",
+            "type": "skillmap-completion",
+            "title": "Design a Space Explorer Skillmap"
+        },
+        {
+            "id": "skillmap-completion-shark",
+            "image": "/static/badges/badge-shark.png",
+            "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/shark",
+            "type": "skillmap-completion",
+            "title": "Shark Splash Skillmap"
         }
     ]
 }
