@@ -621,5 +621,49 @@
             "id": "ie"
         }
     ],
-    "uploadDocs": true
+    "uploadDocs": true,
+    "defaultBadges": [
+        {
+            "id": "skillmap-completion-save the forest",
+            "type": "skillmap-completion",
+            "image": "/static/badges/badge-forest.png",
+            "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/forest",
+            "title": "Save the Forest"
+        },
+        {
+            "id": "skillmap-completion-zookeeper",
+            "type": "skillmap-completion",
+            "image": "/static/badges/badge-zoo.png",
+            "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/zoo",
+            "title": "Zookeeper"
+        },
+        {
+            "id": "skillmap-completion-rockstar",
+            "image": "/static/badges/badge-rockstar.png",
+            "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/rockstar",
+            "type": "skillmap-completion",
+            "title": "80's Rockstar"
+        },
+        {
+            "id": "skillmap-completion-build a platformer game!",
+            "image": "/static/badges/badge-jungle.png",
+            "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/jungle",
+            "type": "skillmap-completion",
+            "title": "Jungle Monkey"
+        },
+        {
+            "id": "skillmap-completion-space",
+            "image": "/static/badges/badge-space.png",
+            "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/space",
+            "type": "skillmap-completion",
+            "title": "Space Explorer"
+        },
+        {
+            "id": "skillmap-completion-shark",
+            "image": "/static/badges/badge-shark.png",
+            "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/shark",
+            "type": "skillmap-completion",
+            "title": "Shark Splash"
+        }
+    ]
 }
