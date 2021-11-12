@@ -56,6 +56,6 @@
     * map: [Try Space Explorer](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox](/)
 * rewards:
-    * certificate: /static/skillmap/certificates/turkey-game.pdf
+    * certificate: /static/skillmap/certificates/turkey-cert.pdf
     * completion-badge: /static/badges/badge-turkey.png
 
