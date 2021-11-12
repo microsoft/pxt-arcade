@@ -81,6 +81,9 @@
 * type: certificate
 * url: /static/skillmap/certificates/zookeeper-license.pdf
 * imageurl: /static/skillmap/zoo/zookeeper-license.png
+* actions:
+    * map: [Try Beginner Skillmap](/skillmap/beginner)
+    * editor: [Edit Your Project with a Full Toolbox](/)
 * rewards:
     * certificate: /static/skillmap/certificates/zookeeper-license.pdf
     * completion-badge: /static/badges/badge-zoo.png
