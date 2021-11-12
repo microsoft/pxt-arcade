@@ -51,7 +51,9 @@
 * url: /static/skillmap/certificates/racer-cert.pdf
 * position: 4 0
 * actions:
-    * map: [Try Jungle Monkey Jump](/skillmap/jungle)
-    * map: [Try our Space Explorer](/skillmap/space)
+    * map: [Try Space Explorer](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox](/)
+* rewards:
+    * certificate: /static/skillmap/certificates/racer-game.pdf
+    * completion-badge: /static/badges/badge-racer.png
 

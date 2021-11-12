@@ -81,7 +81,6 @@
 * position: 3 0
 * actions:
     * map: [Try Jungle Monkey Jump](/skillmap/jungle)
-    * map: [Try our Space Explorer](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox](/)
 * rewards:
     * certificate: /static/skillmap/certificates/shark-cert.pdf
