@@ -172,7 +172,7 @@
             />
 
             <header
-                class="hoc-header background-marina"
+                class="hoc-header homepage background-marina"
                 style="
                     background-image: url('./static/hour-of-code/2021/hoc-header-scene.gif');
                 "
@@ -194,6 +194,15 @@
                         background-image: url('./static/hour-of-code/2021/hoc-header-plane.gif');
                     "
                 ></div>
+
+                <a
+                    class="btn"
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://aka.ms/forestmap"
+                    onClick="window.pxtTickEvent('hourofcode2021.skillmap.open.launch')"
+                    ><h5 class="display-font">Launch Activity</h5></a
+                >
             </header>
 
             <div id="video-modal" class="modal-backdrop closed">
@@ -227,7 +236,7 @@
                 };
 
                 function modalOpen() {
-                    window.pxtTickEvent("hourofcode2021.video.open");
+                    window.pxtTickEvent('hourofcode2021.video.open');
                     let modal = document.getElementById('video-modal');
                     let video = document.getElementById('video');
                     modal.classList.remove('closed');
@@ -237,7 +246,7 @@
                 }
 
                 function modalClose() {
-                    window.pxtTickEvent("hourofcode2021.video.close");
+                    window.pxtTickEvent('hourofcode2021.video.close');
                     let modal = document.getElementById('video-modal');
                     let video = document.getElementById('video');
                     modal.classList.remove('open');
@@ -327,6 +336,42 @@
                             background-image: url('./static/hour-of-code/2021/game-jam-hero.png');
                         "
                     ></div>
+                </div>
+            </section>
+
+            <section class="hoc-section-01 reverse">
+                <div class="hero">
+                    <img
+                        src="./static/hour-of-code/2021/codeninjas.png"
+                        alt="Code Ninjas"
+                    />
+                </div>
+                <div class="section-text">
+                    <h3 class="display-font title sunflower">Code Ninjas</h3>
+                    <p>
+                        Code Ninjas is collaborating with Microsoft MakeCode to
+                        bring opportunities to anyone who wants to get involved
+                        during CSEd Week. Code Ninjas will be opening their
+                        doors to the public as they host Hour of Code and Game
+                        Jam sessions at no-cost. No coding experience needed.
+                    </p>
+                    <p>
+                        Visit
+                        <a
+                            href="https://codeninjas.com/CSEdWeek"
+                            target="_blank"
+                            rel="noreferrer"
+                            >codeninjas.com/CSEdWeek</a
+                        >
+                        to find a location near you.
+                    </p>
+                    <a
+                        class="btn"
+                        href="https://codeninjas.com/CSEdWeek"
+                        target="_blank"
+                        rel="noreferrer"
+                        ><h5 class="display-font">Learn More</h5></a
+                    >
                 </div>
             </section>
 
