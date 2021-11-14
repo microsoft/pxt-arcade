@@ -111,6 +111,9 @@
     * map: [Try 80s Rockstar Maze](/skillmap/rockstar)
     * map: [Try our Space Explorer](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox](/)
+* rewards:
+    * certificate: /static/skillmap/certificates/jungle-cert.pdf
+    * completion-badge: /static/badges/badge-jungle.png
 
 
 

@@ -35,7 +35,9 @@ Our moving characters are called [__*sprites*__](#sprote "2-D images that move o
 
 ---
 
-- :paper plane: From the ``||sprites:Sprites||`` category, drag ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` to **the end** of the ``||loops:on start||`` container.
+- :paper plane: From the ``||sprites:Sprites||`` category, drag   
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  
+to **the end** of the ``||loops:on start||`` container.
 
 _💡  Having trouble finding the block you need? Look to the left of the instructions for the icon of the toolbox category where your block lives!_
 
@@ -58,7 +60,8 @@ let mySprite = sprites.create(assets.image`stand`, SpriteKind.Player)
 
 ---
 
-- :game: Drag ``||controller:move [mySprite] with buttons ➕||``
+- :game: Drag  
+``||controller:move [mySprite] with buttons ➕||``  
 to **the end** of the ``||loops:on start||`` container.
 
 _💡  Remember, the icon to the left of the instructions shows the same icon as the toolbox category for the block you need._

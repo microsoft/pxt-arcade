@@ -139,14 +139,12 @@ h5 {
 }
 
 .background-marina a,
-.background-sunflower a,
-.background-papaya a {
+.background-sunflower a {
     color: #453052;
 }
 
 .background-marina a:hover,
-.background-sunflower a:hover,
-.background-papaya a:hover {
+.background-sunflower a:hover {
     color: #33203f;
 }
 
@@ -294,6 +292,11 @@ header.hoc-header {
     background-position: center bottom;
 }
 
+header.hoc-header.homepage {
+    flex-direction: column;
+    align-items: center;
+}
+
 header.hoc-header .header-background-image {
     position: absolute;
     left: 0;
@@ -311,6 +314,16 @@ header.hoc-header .header-text {
     text-align: center;
     margin-left: 1rem;
     user-select: none;
+}
+
+header.hoc-header.homepage .header-text {
+    margin-top: -6rem;
+}
+
+header.hoc-header.homepage a.btn {
+    margin-top: 1.5rem;
+    position: relative;
+    z-index: 105;
 }
 
 header.hoc-header .header-text .title {
@@ -380,6 +393,8 @@ header.hoc-header-educators .header-text h3 {
     header.hoc-header .header-text {
         margin-top: 3rem;
         max-width: 45rem;
+        transform: scale(0.8);
+        margin-bottom: -3rem;
     }
 }
 
@@ -495,6 +510,12 @@ section.hoc-section {
     padding: 4rem 0;
 }
 
+section.hoc-section::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
 section.hoc-section-wide {
     max-width: 110rem;
 }
@@ -537,9 +558,19 @@ section.hoc-section-01 {
     align-items: center;
 }
 
+section.hoc-section-01.reverse {
+    flex-direction: row-reverse;
+}
+
 section.hoc-section-01 .section-text,
 section.intro .section-text {
     margin-left: 7rem;
+}
+
+section.hoc-section-01.reverse .section-text,
+section.intro.reverse .section-text {
+    margin-left: 0;
+    margin-right: 7rem;
 }
 
 section.hoc-section-01 .section-text:only-child,
@@ -585,6 +616,17 @@ section.hoc-section-01 a.btn {
     section.intro .section-text {
         margin-left: 4rem;
     }
+
+    section.hoc-section-01.reverse {
+        margin-top: 4rem;
+        margin-bottom: 0;
+    }
+
+    section.hoc-section-01.reverse .section-text,
+    section.intro.reverse .section-text {
+        margin-left: 0;
+        margin-right: 4rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -594,7 +636,8 @@ section.hoc-section-01 a.btn {
     }
 
     section.hoc-section-01 .section-text,
-    section.intro .section-text {
+    section.intro .section-text,
+    section.hoc-section-01.reverse .section-text {
         margin: 0;
     }
 

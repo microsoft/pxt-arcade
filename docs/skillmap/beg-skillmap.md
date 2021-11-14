@@ -230,3 +230,6 @@
 * type: certificate
 * url: /static/skillmap/certificates/collector-game.pdf
 * imageUrl: /static/skillmap/certificates/collector-cert.png
+* rewards:
+    * certificate: /static/skillmap/certificates/collector-game.pdf
+    * completion-badge: /static/badges/badge-beginner.png
