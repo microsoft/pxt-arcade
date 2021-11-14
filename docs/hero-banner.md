@@ -12,6 +12,13 @@ Here are some cool activities to get you started with your @boardname@!
 * cardType: link
 * url: https://aka.ms/arcadeHOC2021
 ---
+* name: Build a game for Turkey Day
+* description: Build a game for Turkey Day
+* buttonLabel: Try Activity
+* imageUrl: /static/hero-gallery/turkey.png
+* url: https://arcade.makecode.com/--skillmap#docs:/skillmap/turkey
+* cardType: link
+---
 * name: How-to code a video game
 * description: How-to code a video game
 * imageUrl: /static/hero-gallery/how-to-code.png
@@ -22,13 +29,6 @@ Here are some cool activities to get you started with your @boardname@!
 * buttonLabel: Watch Stream
 * imageUrl: /static/hero-gallery/stream.png
 * url: https://www.twitch.tv/msmakecode
-* cardType: link
----
-* name: Explore handheld game players
-* description: Explore handheld game players
-* buttonLabel: See devices
-* imageUrl: /static/hero-gallery/hardware.png
-* url: https://arcade.makecode.com/hardware
 * cardType: link
 ---
 * description: Want to influence MakeCode products?
