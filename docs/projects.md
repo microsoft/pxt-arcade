@@ -15,6 +15,13 @@
         "videoUrl": "/static/tutorials/chase-the-pizza.mp4"
     },
     {
+        "name": "Multipart Tutorials",
+        "url": "/multipart-tutorials",
+        "imageUrl": "/static/recipes/shark-splash/shark-splash.png",
+        "largeImageUrl": "/static/recipes/shark-splash/02-C-enemies.gif",
+        "videoUrl": "/static/recipes/shark-splash/02-C-enemies.mp4"
+    },
+    {
         "name": "Live Coding",
         "url": "/live-coding",
         "imageUrl": "/static/live-coding/7pBGS_tKfmU.jpg"
