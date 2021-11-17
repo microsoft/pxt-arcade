@@ -627,6 +627,7 @@
             "id": "skillmap-completion-save the forest",
             "type": "skillmap-completion",
             "image": "/static/badges/badge-forest.png",
+            "lockedImage": "/static/badges/badge-forest-locked.png",
             "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/forest",
             "title": "Save the Forest"
         },
@@ -634,12 +635,14 @@
             "id": "skillmap-completion-zookeeper",
             "type": "skillmap-completion",
             "image": "/static/badges/badge-zoo.png",
+            "lockedImage": "/static/badges/badge-zoo-locked.png",
             "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/zoo",
             "title": "Zookeeper"
         },
         {
             "id": "skillmap-completion-rockstar",
             "image": "/static/badges/badge-rockstar.png",
+            "lockedImage": "/static/badges/badge-rockstar-locked.png",
             "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/rockstar",
             "type": "skillmap-completion",
             "title": "80's Rockstar"
@@ -647,6 +650,7 @@
         {
             "id": "skillmap-completion-build a platformer game!",
             "image": "/static/badges/badge-jungle.png",
+            "lockedImage": "/static/badges/badge-jungle-locked.png",
             "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/jungle",
             "type": "skillmap-completion",
             "title": "Jungle Monkey"
@@ -654,6 +658,7 @@
         {
             "id": "skillmap-completion-space",
             "image": "/static/badges/badge-space.png",
+            "lockedImage": "/static/badges/badge-space-locked.png",
             "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/space",
             "type": "skillmap-completion",
             "title": "Space Explorer"
@@ -661,6 +666,7 @@
         {
             "id": "skillmap-completion-shark",
             "image": "/static/badges/badge-shark.png",
+            "lockedImage": "/static/badges/badge-shark-locked.png",
             "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/shark",
             "type": "skillmap-completion",
             "title": "Shark Splash"
