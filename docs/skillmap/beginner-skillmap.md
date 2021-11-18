@@ -3,7 +3,7 @@
 * description: Learn to create arcade games of your own by completing tutorials that focus on greeting cards, a clicker game, and a collector game starring a dinosuar that's determined to save dino babies!
 * infoUrl: skillmap/educator-info/basic-map-info
 * bannerUrl: /static/skillmap/backgrounds/beg-map-tile.png
-* backgroundurl: /static/skillmap/backgrounds/beg-comp.png  
+* backgroundurl: /static/skillmap/backgrounds/beg-comp.png
 * primarycolor: #ff7f41
 * secondarycolor: #fff53d
 * tertiarycolor: #87f2ff
@@ -27,7 +27,7 @@
 * tags: optional, easy, introduction
 * next: pusherA, pusherB
 
-* url: /skillmap/interface/activity1 
+* url: /skillmap/interface/activity1
 * imageUrl: /static/skillmap/interface/interface-activity-1.gif
 
 ### pusherA
@@ -54,7 +54,7 @@
 * tags: easy, story, creative, card
 * next: story-activity2
 
-* url: /skillmap/story/story1 
+* url: /skillmap/story/story1
 * imageUrl: /static/skillmap/story/story-comp.png
 
 
@@ -66,7 +66,7 @@
 * next: story-activity3
 * reqired: 1 story
 
-* url: /skillmap/story/story2 
+* url: /skillmap/story/story2
 * imageUrl: /static/skillmap/story/story-activity-2.gif
 
 
@@ -78,7 +78,7 @@
 * tags: easy, story, joke, share
 * next: pusher2, beginner-cert-1
 
-* url: /skillmap/story/story3 
+* url: /skillmap/story/story3
 * imageUrl: /static/skillmap/story/muffins.gif
 
 
@@ -113,7 +113,7 @@
 * tags: easy, clicker, game
 * next: clicker-activity2
 
-* url: /skillmap/clicker-themed/clickert1 
+* url: /skillmap/clicker-themed/clickert1
 * imageUrl: /static/skillmap/clicker/clicker-comp.png
 
 
@@ -121,11 +121,11 @@
 ### clicker-activity2
 * name: Button Clicker
 * type: tutorial
-* description: Add a visual button to your clicker! 
+* description: Add a visual button to your clicker!
 * tags: easy, clicker, game, images
 * next: pusher3, clicker-activity3
 
-* url: /skillmap/clicker-themed/clickert2 
+* url: /skillmap/clicker-themed/clickert2
 * imageUrl: /static/skillmap/clicker/clickert2.gif
 
 
@@ -136,7 +136,7 @@
 * tags: easy, clicker, projectiles
 * next: pusher3, beginner-cert-2
 
-* url: /skillmap/clicker-themed/clickert3 
+* url: /skillmap/clicker-themed/clickert3
 * imageUrl: /static/skillmap/clicker/clickert3.gif
 
 
@@ -158,7 +158,7 @@
 * imageUrl: /static/skillmap/certificates/clicker-cert.png
 
 
-## Rescue the Baby Dinos 
+## Rescue the Baby Dinos
 * required: 1 clicker
 
 ### collector-activity1
@@ -168,9 +168,9 @@
 * type: tutorial
 * description: Create a swarm of baby dinosaurs to run down the city streets.
 * tags: easy, collector, game
-* next: pusher5, collector-activity2 
+* next: pusher5, collector-activity2
 
-* url: /skillmap/collector-themed/collectort1 
+* url: /skillmap/collector-themed/collectort1
 * imageUrl: /static/skillmap/collector/collector-comp.png
 
 
@@ -183,7 +183,7 @@
 * tags: easy, collector, game, projectiles
 * next: collector-activity3
 
-* url: /skillmap/collector-themed/collectort2 
+* url: /skillmap/collector-themed/collectort2
 * imageUrl: /static/skillmap/collector/collectort2.gif
 
 
@@ -218,8 +218,12 @@
 * url: /static/skillmap/certificates/collector-game.pdf
 * imageUrl: /static/skillmap/certificates/collector-cert.png
 * rewards:
-    * certificate: /static/skillmap/certificates/collector-game.pdf
-    * completion-badge: /static/badges/badge-beginner.png
+    * certificate:
+        * url: /static/skillmap/certificates/collector-game.pdf
+        * preview: /static/skillmap/certificates/collector-cert.png
+    * completion-badge:
+        * image: /static/badges/badge-beginner.png
+        * name: Beginner
 
 
 ### pusher5

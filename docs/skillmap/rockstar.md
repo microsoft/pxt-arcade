@@ -57,6 +57,10 @@
     * map: [Try our Space Explorer](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox](/)
 * rewards:
-    * certificate: /static/skillmap/certificates/rockstar-cert.pdf
-    * completion-badge: /static/badges/badge-rockstar.png
+    * certificate:
+        * url: /static/skillmap/certificates/rockstar-cert.pdf
+        * preview: /static/skillmap/certificates/rockstar-cert.png
+    * completion-badge:
+        * image: /static/badges/badge-rockstar.png
+        * name: 80's Rockstar
 
