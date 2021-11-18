@@ -96,7 +96,7 @@
 * rewards:
     * certificate:
         * url: /static/skillmap/certificates/zookeeper-license.pdf
-        * preview: /static/skillmap/certificates/zookeeper-license.pdf
+        * preview: /static/skillmap/zoo/zookeeper-license.png
     * completion-badge:
         * image: /static/badges/badge-zoo.png
         * name: Zookeeper
