@@ -3,7 +3,7 @@
 * description: Learn to create a clicker game and quickly rack up the points as you applaud your favorite stars from Sing 2.
 * infoUrl: skillmap/educator-info/star-map-info
 * bannerUrl: /static/skillmap/backgrounds/star.png
-* backgroundurl: /static/skillmap/backgrounds/star-comp.png  
+* backgroundurl: /static/skillmap/backgrounds/star-comp.png
 * primarycolor: #ff7f41
 * secondarycolor: #fff53d
 * tertiarycolor: #87f2ff
@@ -26,7 +26,7 @@
 * tags: easy, clicker, points
 * next: star-activity2
 
-* url: /skillmap/clicker-star/star1 
+* url: /skillmap/clicker-star/star1
 * imageUrl: /static/skillmap/clicker-star/star-comp.png
 
 
@@ -34,11 +34,11 @@
 ### star-activity2
 * name: Join the Audience
 * type: tutorial
-* description: Add an audience that applauds as you click! 
+* description: Add an audience that applauds as you click!
 * tags: easy, clicker, game, events
 * next: star-activity3
 
-* url: /skillmap/clicker-star/clickert2 
+* url: /skillmap/clicker-star/clickert2
 * imageUrl: /static/skillmap/clicker-star/clickert2.gif
 
 
@@ -49,7 +49,7 @@
 * tags: easy, clicker, projectiles
 * next: star-activity4
 
-* url: /skillmap/clicker-star/clickert3 
+* url: /skillmap/clicker-star/clickert3
 * imageUrl: /static/clicker-star/clicker-star/clickert3.gif
 
 
@@ -60,7 +60,7 @@
 * tags: easy, clicker, projectiles, arrays
 * next: star-activity5
 
-* url: /skillmap/clicker-star/clickert4 
+* url: /skillmap/clicker-star/clickert4
 * imageUrl: /static/skillmap/clicker-star/clickert4.gif
 
 
@@ -71,7 +71,7 @@
 * tags: easy, clicker, projectiles
 * next: star-cert-2
 
-* url: /skillmap/clicker-star/clickert5 
+* url: /skillmap/clicker-star/clickert5
 * imageUrl: /static/skillmap/clicker-star/clickert5.gif
 
 
@@ -86,7 +86,11 @@
     * map: [Try Space Explorer](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox](/)
 * rewards:
-    * certificate: /static/skillmap/certificates/star-game.pdf
-    * completion-badge: /static/badges/badge-star.png
+    * certificate:
+        * url: /static/skillmap/certificates/star-game.pdf
+        * preview: /static/skillmap/certificates/star-cert.png
+    * completion-badge:
+        * image: /static/badges/badge-star.png
+        * name: Sing 2
 
 

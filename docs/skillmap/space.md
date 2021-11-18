@@ -1,6 +1,6 @@
 # Create a Space Adventure
 * name: Create a Space Adventure Game
-* description: Make a Galaga-style game by following this short series of tutorials. You will create a rocket that fires projectiles at enemies, design your outerspace view, create amazing animations, and MORE!  What are you waiting for?  Double-click the first level to begin! 
+* description: Make a Galaga-style game by following this short series of tutorials. You will create a rocket that fires projectiles at enemies, design your outerspace view, create amazing animations, and MORE!  What are you waiting for?  Double-click the first level to begin!
 * infoUrl: skillmap/educator-info/space-map-info
 * bannerUrl: /static/skillmap/space/spacet6.gif
 * backgroundurl: /static/skillmap/backgrounds/space-comp.png
@@ -50,7 +50,7 @@
 ### space-activity4a
 * name: All Shook Up
 * type: tutorial
-* description: Animate your ship 
+* description: Animate your ship
 * tags: intermediate, animations
 * next: space-activity4
 * url: /skillmap/space/space4a
@@ -101,7 +101,11 @@
     * map: [Try Jungle Monkey Jump](/skillmap/jungle)
     * editor: [Edit Your Project with a Full Toolbox](/)
 * rewards:
-    * certificate: /static/skillmap/certificates/space-cert.pdf
-    * completion-badge: /static/badges/badge-space.png
+    * certificate:
+        * url: /static/skillmap/certificates/space-cert.pdf
+        * preview: /static/skillmap/certificates/space-cert.png
+    * completion-badge:
+        * image: /static/badges/badge-space.png
+        * name: Space Explorer
 
 

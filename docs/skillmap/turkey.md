@@ -56,6 +56,9 @@
     * map: [Try Space Explorer](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox](/)
 * rewards:
-    * certificate: /static/skillmap/certificates/turkey-cert.pdf
-    * completion-badge: /static/badges/badge-turkey.png
-
+    * certificate:
+        * url: /static/skillmap/certificates/turkey-cert.pdf
+        * preview: /static/skillmap/certificates/turkey-cert.png
+    * completion-badge:
+        * image:/static/badges/badge-turkey.png
+        * name: Turkey Day!
