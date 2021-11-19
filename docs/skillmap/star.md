@@ -2,19 +2,19 @@
 * name: Sing 2 - The Big Stage
 * description: Learn to create a clicker game and quickly rack up the points as you applaud your favorite stars from Sing 2.
 * infoUrl: skillmap/educator-info/star-map-info
-* bannerUrl: /static/skillmap/backgrounds/star.png
-* backgroundurl: /static/skillmap/backgrounds/star-comp.png  
+* bannerUrl: /static/skillmap/star/star4.gif
+* backgroundurl: /static/skillmap/backgrounds/star-comp.png 
 * primarycolor: #ff7f41
 * secondarycolor: #fff53d
-* tertiarycolor: #87f2ff
-* completednodecolor: #738472
+* tertiarycolor: #02010b
+* completednodecolor: #442532
 * highlightcolor: #ffffff
 * allowcodecarryover: true
 * tags: easy, beginner, tutorials
 
 
-
 ## Sing 2 - The Big Stage
+* layout: manual
 
 
 ### star-activity1
@@ -25,9 +25,9 @@
 * description: Make a simple clicker game starring the characters from Sing 2!
 * tags: easy, clicker, points
 * next: star-activity2
-
-* url: /skillmap/clicker-star/star1 
-* imageUrl: /static/skillmap/clicker-star/star-comp.png
+* url: /skillmap/star/star1 
+* imageUrl: /static/skillmap/star/star1.gif
+* position: 0 0
 
 
 
@@ -37,9 +37,9 @@
 * description: Add an audience that applauds as you click! 
 * tags: easy, clicker, game, events
 * next: star-activity3
-
-* url: /skillmap/clicker-star/clickert2 
-* imageUrl: /static/skillmap/clicker-star/clickert2.gif
+* url: /skillmap/star/clickert2 
+* imageUrl: /static/skillmap/star/star2.gif
+* position: 1 0
 
 
 ### star-activity3
@@ -48,9 +48,9 @@
 * description: Add code to create a spray of stars with each click!
 * tags: easy, clicker, projectiles
 * next: star-activity4
-
-* url: /skillmap/clicker-star/clickert3 
-* imageUrl: /static/clicker-star/clicker-star/clickert3.gif
+* url: /skillmap/star/clickert3 
+* imageUrl: /static/star/star/star3.gif
+* position: 1 1
 
 
 ### star-activity4
@@ -58,25 +58,13 @@
 * type: tutorial
 * description: Toss a mix of stars and roses at the stage as you learn about arrays!
 * tags: easy, clicker, projectiles, arrays
-* next: star-activity5
-
-* url: /skillmap/clicker-star/clickert4 
-* imageUrl: /static/skillmap/clicker-star/clickert4.gif
-
-
-### star-activity5
-* name: Clicking Superstar
-* type: tutorial
-* description: Add code to make a spray of stars with each click!
-* tags: easy, clicker, projectiles
-* next: star-cert-2
-
-* url: /skillmap/clicker-star/clickert5 
-* imageUrl: /static/skillmap/clicker-star/clickert5.gif
+* next: star-cert
+* url: /skillmap/star/clickert4 
+* imageUrl: /static/skillmap/star/star4.gif
+* position: 2 1
 
 
-
-### star-cert-2
+### star-cert
 * name: Congrats!
 * kind: completion
 * type: certificate
@@ -88,5 +76,6 @@
 * rewards:
     * certificate: /static/skillmap/certificates/star-game.pdf
     * completion-badge: /static/badges/badge-star.png
+* position: 3 1
 
 
