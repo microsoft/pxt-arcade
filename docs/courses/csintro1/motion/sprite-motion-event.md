@@ -17,7 +17,7 @@ In these activities, the student will use:
 
 ## Change position with controller event
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/spriteMoEvent1.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/RnTENEbgAY0)
 
 ## Example #1: Increment position left and right #example-1
 
@@ -63,7 +63,7 @@ agent = sprites.create(img`
 
 ## Concept: Sprite Motion Velocity
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/spriteMoEvent2velocity.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/ajY3WZgjT14)
 
 Velocity is speed in a particular direction. In our games we typically track movement in `X` and `Y` directions. 
 
@@ -113,7 +113,7 @@ agent = sprites.create(img`
 
 ## Concept: Shorter ``||controller:dx||``/``||controller:dy||`` approach
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/spriteMoEvent3shortMethod.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/hAdJEefe8HI)
 
 We have created motion by capturing the key pad events and incrementing (or decrementing) a location coordinate or a velocity. Now that we have seen how this works for the four directional buttons, we can use a shorter method to handle this.
 
@@ -170,7 +170,7 @@ The ``||sprites:stay in screen||`` block is in the Sprites menu.
 
 ## Concept: Flip Image
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/spriteMoEvent4flip.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/Q_6Fke7g1HY)
 
 By making a mirror flip of a sprite we can simulate walking by making each leg appear differently. 
 

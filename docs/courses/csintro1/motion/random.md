@@ -11,7 +11,7 @@ In this activity, students will use:
 
 We can pick a random number in a range using ``||math:pick random||``. First, we will use this to display a random value on the screen.
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/randomSplash.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/4B7mv_oLqRs)
 
 ## Example #1: Pick Random
 
@@ -36,7 +36,7 @@ game.splash("Random Number is " + randomNumber)
 
 ## Concept: Pick a Random Location
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/randomPosition.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/XFOD-QmW4io)
 
 Games often have an element of luck and surprise to keep the player engaged. In this example, we will use random numbers to place a sprite on the screen in a random location. We can use a random range because we know the dimensions of the screen.
 
@@ -92,7 +92,7 @@ mySprite.vy = 0
 
 ## Example #3: Random and Overlaps
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/randomPositionOverlap.mp4)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/6KhZeuF4KLY)
 
 1. Review the code below
 2. Create the sample code and run the code

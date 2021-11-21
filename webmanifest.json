@@ -1,0 +1,35 @@
+{
+    "name": "arcade.makecode.com",
+    "display": "fullscreen",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/static/icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image\/png"
+        },
+        {
+            "src": "/static/icons/android-chrome-256x256.png",
+            "sizes": "256x256",
+            "type": "image\/png"
+        },
+        {
+            "src": "/static/icons/android-chrome-384x384.png",
+            "sizes": "384x384",
+            "type": "image\/png"
+        },
+        {
+            "src": "/static/icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image\/png"
+        },
+        {
+            "src": "/static/icons/maskable-icon-213x213.png",
+            "sizes": "640x640",
+            "type": "image\/png",
+            "purpose": "maskable"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "related_applications": []
+}

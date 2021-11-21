@@ -96,8 +96,12 @@
 * imageUrl: /static/skillmap/certificates/space-cert.png
 * url: /static/skillmap/certificates/space-cert.pdf
 * position: 5 0
+* actions:
     * map: [Try 80s Rockstar Maze](/skillmap/rockstar)
     * map: [Try Jungle Monkey Jump](/skillmap/jungle)
     * editor: [Edit Your Project with a Full Toolbox](/)
+* rewards:
+    * certificate: /static/skillmap/certificates/space-cert.pdf
+    * completion-badge: /static/badges/badge-space.png
 
 

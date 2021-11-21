@@ -217,7 +217,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     if (info.score() == 10) {
         info.changeScoreBy(5)
         //@highlight
-        mySprite.sayText("+5 Level-Up Bonus", 2000)
+        mySprite.sayText("+5 Level-Up Bonus", 2000, false)
     }
 })
 ```
@@ -246,7 +246,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     otherSprite.destroy()
     info.changeScoreBy(1)
     if (info.score() == 10) {
-        mySprite.sayText("+5 Level-Up Bonus", 2000)
+        mySprite.sayText("+5 Level-Up Bonus", 2000, false)
         info.changeScoreBy(5)
         //@highlight
         enemySpeed = 70
@@ -411,7 +411,7 @@ game.onUpdateInterval(300, function () {
 })
 forever(function () {
     if (info.score() == 10) {
-        mySprite.sayText("+5 Level-Up Bonus", 2000)
+        mySprite.sayText("+5 Level-Up Bonus", 2000, false)
         info.changeScoreBy(5)
         enemySpeed = 70
     }
