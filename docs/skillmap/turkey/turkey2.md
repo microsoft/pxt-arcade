@@ -36,7 +36,7 @@ container into an empty area of the workspace.
 
 - :paint brush: Click the checkerboard image and change it to the **cage** tile.
 
-- :id card: To give the playser a point for each turkey it saves, snap a   
+- :id card: To give the player a point for each turkey it saves, snap a   
 ``||info:change score by [1]||``    
 block into the new container.
 
