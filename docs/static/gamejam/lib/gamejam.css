@@ -71,9 +71,6 @@ h1 {
     align-items: center;
     justify-content: center;
     padding-top: 0.5rem;
-    color: #000000;
-    height: 90px;
-    margin-bottom: 3rem;
 }
 
 #timer > .label {
