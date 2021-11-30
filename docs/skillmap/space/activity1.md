@@ -31,6 +31,17 @@ effects.starField.startScreenEffect()
 ```
 
 
+## Take a Look!
+
+
+**Click the Game Window Tab (Above)**<br/>
+![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
+
+---
+
+Do you see the background you chose scrolling down the screen?
+
+
 
 ## Draw your ship
 **🧑🏿‍🚀 Time to choose our ship! 👩🏾‍🚀**
