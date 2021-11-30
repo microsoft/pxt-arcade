@@ -174,11 +174,16 @@ controller.moveSprite(mySprite, 100, 0)
 
 ## Try it
 
-**Be sure to give your game a try on the game screen!**
+
+**Click the Game Window Tab (Above)**<br/>
+![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
 
+Try your game using the joypad or your keyboard.
+
 How do you like it?  Feel like making a few more changes?
+
 
 
 ## Add gravity
