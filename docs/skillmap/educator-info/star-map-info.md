@@ -49,7 +49,7 @@ Specifically, they will experience the following topics:
 |---|---|
 | ![Welcome to the Show thumbnail](/static/skillmap/star/star1.gif) | Create a game using characters from Sing 2 and add points for each click. |
 | Blocks used | ``[info.startCountdown(10)]``<br/>``[info.changeScoreBy(1)]``<br/>``[info.onCountdownEnd(function () {})]``<br/>``[game.over(true)]``|
-| Solution option | [Welcome to the Show Project](https://arcade.makecode.com/12273-78408-58405-09625) |
+| Solution option | [Welcome to the Show Project](https://makecode.com/_d6TdD8VYPX1U) |
 
 #### 2. Join the Audience
 
@@ -57,7 +57,7 @@ Specifically, they will experience the following topics:
 |---|---|
 | ![Join the Audience thumbnail](/static/skillmap/star/star2.gif) | This game builds off the last level, adding an animated audience sprite<br/>that toggles as you press and release the (A) button. |
 | Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``|
-| Solution option | [Join the Audience Project](https://arcade.makecode.com/77414-66317-99137-92560) |
+| Solution option | [Join the Audience Project](https://makecode.com/_WY823cfoyTwj) |
 
 #### 3. The Biggest Star
 
@@ -65,7 +65,7 @@ Specifically, they will experience the following topics:
 |---|---|
 | ![The Biggest Star thumbnail](/static/skillmap/star/star3.gif) | Building off the previous project, this level adds projectiles that<br/>take the form of stars spraying from the audience with each press of the button. |
 | Blocks used | ``[sprites.create(img`.`, SpriteKind.Player).startEffect(effects.spray, 100)]`` |
-| Solution option | [The Biggest Star Project](https://arcade.makecode.com/24852-02760-23597-83909) |
+| Solution option | [The Biggest Star Project](https://makecode.com/_3gs2oWTCHXuw) |
 
 
 #### 4. Coming Up Roses
@@ -74,7 +74,7 @@ Specifically, they will experience the following topics:
 |---|---|
 | ![Coming Up Roses thumbnail](/static/skillmap/star/star4.gif) | Building off the previous project, this level shows students how to add items to an array, so the performer is showered with both stars and roses. |
 | Blocks used | ``[let projectile = sprites.createProjectileFromSprite([img`.`, img`.`]._pickRandom(), clapping, randint(-100, 100), randint(-50, -100))]`` |
-| Solution option | [Coming Up Roses Project](https://arcade.makecode.com/24852-02760-23597-83909) |
+| Solution option | [Coming Up Roses Project](https://makecode.com/_aK1XDbamoH20) |
 
 
 ##### Game Mod Ideas
