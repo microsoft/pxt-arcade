@@ -1,25 +1,26 @@
-# About the Beginner’s Guide to Arcade Games
+# About the Sing 2 Map
 
 **A page for Educators & Parents**
 
-The **Beginner’s Guide to Arcade Games** introduces the most common types of code blocks used throughout MakeCode Arcade.
+The **Sing 2** introduces simple game design and computer science concepts.
 
-In this set of activities, students will create their very first set of digital games with MakeCode Arcade.  This guide is intended for students who are new to MakeCode with little or no previous coding experience.  Through step-by-step instructions, students will focus on projects from 3 different categories: [Storytelling](#storytelling-path), [Clicker Games](#clicker-game-path), and [Collector Games](#collector-game-path).
+In this set of activities, students will create a simple clicker with MakeCode Arcade.  This map is intended for students who are new to MakeCode with little or no previous coding experience.
 
-Designed for students between the ages of 11 & 15, this experience contains a total of 11 tutorials (approximating 145 minutes of instruction) spread over 5 sessions.  At the end of each learning path, students receive a certificate of completion.
+Designed for students between the ages of 10 & 12, this experience contains a total of 4 tutorials (approximating 50 minutes of instruction).  At the end the learning path, students receive a certificate of completion and a badge.
 
 |                 | Minutes* |  Key Concepts |
 | --------------- | -------- |  ------------ |
-| Clicker Game    |10  |  events, score, timer |
-| Grand Clicker   |10 |  animation, arguments, events |
-| Super Clicker   |7  |  projectiles, random numbers, events |
-|
+| Welcome to the Show    |15  |  events, timer |
+| Join the Audience   |10 |  animation, events |
+| The Biggest Star   |15  |  projectiles, random numbers, events |
+| Coming Up Roses   |10  |  projectiles, random numbers, events |
+
 
 \* Minutes are approximate, based on time to follow instructions as written. Providing extra time for creativity and debugging is encouraged.
 
-### Objectives 
+### Objectives
 
-After completing the Beginner’s Guide to Arcade Games, students will have gained exposure to all the elements they need to successfully create their own arcade games using MakeCode Arcade.
+After completing Sing 2, students will have gained exposure to all the elements they need to successfully create their own clicker game using MakeCode Arcade.
 
 Specifically, they will experience the following topics:
 
@@ -27,144 +28,67 @@ Specifically, they will experience the following topics:
 
 - Events and program control flow
 - User input
-- Loops
 - Variables
-- Events
+- Lists/Arrays
+
 
 #### Game Design Concepts
 
-- Storytelling
 - Sprites and Projectiles
 - Design, Sounds, and Effects
-- Coordinates
-- Velocity
 - Game Score
-- Win/Lose Criteria
+- Win/Loss Criteria
 - Randomization
 - Animation
 
-### Storytelling Path
 
-In this learning path, students will learn how to use background images, music, and dialog boxes to build creative projects that send a message, tell a joke, or illustrate their thoughts. 
 
-#### 1. Greeting Card
+#### 1. Welcome to the Show
 
-| Activity | Greeting Card (10 min) |
+| Activity | Welcome to the Show (15 min) |
 |---|---|
-| ![Greeting Card thumbnail](/static/skillmap/map-info/greeting-card.png) | Design a simple greeting card to send to friends and family. |
-| Blocks used | **[On Start](/blocks/on-start)** <br/><br/> ``[scene.setBackgroundImage(img`.`)]``<br/>``[effects.confetti.startScreenEffect()]``<br/> ``[music.playMelody("", 120)]``|
-| Solution option | [Greating Card Project](https://arcade.makecode.com/14885-64298-31361-79978) |
-
-#### 2. Bigger Greeting
-
-| Activity | Bigger Greeting (10 min) |
-|---|---|
-| ![Bigger Greeting thumbnail](/static/skillmap/map-info/bigger-greeting.png) | This activity builds off the previous Greeting Card activity.<br/>Students will add text that is revealed with the press of a &nbsp;<br/>button. |
-| Blocks used | ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[game.setDialogFrame(img`.`)]``<br/>``[game.setDialogTextColor(0)]``<br/>``[game.showLongText("", DialogLayout.Bottom)]`` |
-| Solution option | [Bigger Greating Project](https://arcade.makecode.com/42444-68014-69780-79234) |
-
-#### 3. Joking Around
-
-| Activity | Joking Around (30 min) |
-|---|---|
-| ![Joking Around thumbnail](/static/skillmap/map-info/joking-around.png) | This activity introduces students to characters and dialog,<br/>as they bring short jokes to life. |
-| Blocks used | ``[music.baDing.play()]``<br/>``[music.setVolume(20)]``<br/>``[game.splash("")]``<br/>``[sprites.create(img`.`).setPosition(0, 0)]``<br/>``[sprites.create(img`.`).startEffect(effects.spray)]``<br/>``[sprites.create(img`.`).setImage(img`.`)]``<br/>``[scene.cameraShake(4, 500)]`` |
-| Solution option | [Joking Around Project](https://arcade.makecode.com/87828-03702-46750-80177) |
-
-##### Game Mod Ideas
-
-After students complete Joking Around they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try: 
-
-- Add a second sprite for a joke with more interaction 
-- Move sprites or change backgrounds each time the (A) button is pressed 
-- Modify your project to illustrate a poem 
-- Use what you’ve learned to illustrate a longer joke or story
-
-### Clicker Game Path
-
-In this path, students will use event containers, sprites, and projectiles to create a simple “clicker” game that takes in user input and performs an action.  Here, the user is challenged to click the (A) button as quickly as possible before time runs out. 
-
-#### 1. Clicker Game
-
-| Activity | Clicker Game (10 min) |
-|---|---|
-| ![Clicker Game thumbnail](/static/skillmap/map-info/clicker-game.png) | Create a game that adds points for each click. |
+| ![Welcome to the Show thumbnail](/static/skillmap/star/star1.gif) | Create a game using characters from Sing 2 and add points for each click. |
 | Blocks used | ``[info.startCountdown(10)]``<br/>``[info.changeScoreBy(1)]``<br/>``[info.onCountdownEnd(function () {})]``<br/>``[game.over(true)]``|
-| Solution option | [Clicker Game Project](https://arcade.makecode.com/12273-78408-58405-09625) |
+| Solution option | [Welcome to the Show Project](https://arcade.makecode.com/12273-78408-58405-09625) |
 
-#### 2. Button Clicker
+#### 2. Join the Audience
 
-| Activity | Button Clicker (10 min) |
+| Activity | Join the Audience (10 min) |
 |---|---|
-| ![Button Clicker thumbnail](/static/skillmap/map-info/button-clicker.png) | This game builds off the last level, adding an animated sprite<br/>that toggles as you press and release the (A) button. |
-| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[let power = 2]``|
-| Solution option | [Button Clicker Project](https://arcade.makecode.com/77414-66317-99137-92560) |
+| ![Join the Audience thumbnail](/static/skillmap/star/star2.gif) | This game builds off the last level, adding an animated audience sprite<br/>that toggles as you press and release the (A) button. |
+| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``|
+| Solution option | [Join the Audience Project](https://arcade.makecode.com/77414-66317-99137-92560) |
 
-#### 3. Clicking Superstar
+#### 3. The Biggest Star
 
-| Activity | Clicking Superstar (7 min) |
+| Activity | The Biggest Star (15 min) |
 |---|---|
-| ![Clicking Superstar thumbnail](/static/skillmap/map-info/clicking-superstar.png) | Building off the previous project, this level adds projectiles that<br/>take the form of stars spraying from the button with each press. |
+| ![The Biggest Star thumbnail](/static/skillmap/star/star3.gif) | Building off the previous project, this level adds projectiles that<br/>take the form of stars spraying from the audience with each press of the button. |
 | Blocks used | ``[sprites.create(img`.`, SpriteKind.Player).startEffect(effects.spray, 100)]`` |
-| Solution option | [Clicking Superstar Project](https://arcade.makecode.com/24852-02760-23597-83909) |
+| Solution option | [The Biggest Star Project](https://arcade.makecode.com/24852-02760-23597-83909) |
+
+
+#### 4. Coming Up Roses
+
+| Activity | Coming Up Roses (15 min) |
+|---|---|
+| ![Coming Up Roses thumbnail](/static/skillmap/star/star4.gif) | Building off the previous project, this level shows students how to add items to an array, so the performer is showered with both stars and roses. |
+| Blocks used | ``[let projectile = sprites.createProjectileFromSprite([img`.`, img`.`]._pickRandom(), clapping, randint(-100, 100), randint(-50, -100))]`` |
+| Solution option | [Coming Up Roses Project](https://arcade.makecode.com/24852-02760-23597-83909) |
+
 
 ##### Game Mod Ideas
 
-After students complete Clicking Superstar they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try: 
+After students complete Sing 2 they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try:
 
-- Move the A button to the lower left and add a B Button to the lower right 
-- Add a new sprite to the pedestal, make it something special! 
-- Change the theme from stars on the stage to birds in a tree 
-
-### Collector Game Path
-
-Students will work with sprite controller blocks, variables, and conditional statements to build a game where Mama Dino rushes to collect as many of her babies as possible while avoiding traffic.  
-
-#### 1. Dino Hoard
-
-| Activity | Dino Hoard (10 min) |
-|---|---|
-| ![Dino Hoard thumbnail](/static/skillmap/map-info/dino-hoard.png) | Set an animated background for your hero sprite to travel as they search for baby dinos. |
-| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[controller.moveSprite(sprites.create(img`.`), 0, 100)]``<br/>``[let random = randint(0, 10)]``<br/>``[let projectile = sprites.createProjectileFromSide(img`.`, 0, 100)]``<br/>``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {})]``<br/>``[forever(function () {})]``<br/>``[sprites.create(img`.`).destroy()]`` |
-| Solution option | [Dino Hoard Project](https://arcade.makecode.com/00050-04644-99185-20758) |
+- Change the animals in the audience to a row of clapping hands
+- Add a new sprite to the stage. Who would your performer be?
+- Add more things for the audience to throw, like confetti pieces or hearts
 
 
-#### 2. Save the Baby Dinos!
+### What's Next?
 
-| Activity | Save the Baby Dinos! (12 min) |
-|---|---|
-| ![Save the Baby Dinos thumbnail](/static/skillmap/map-info/save-baby-dinos.png) | Build on the previous activity to add points to your game as you collect dinos. |
-| Blocks used | ``[scene.setBackgroundColor(0)]``<br/>``[scene.setBackgroundImage(img`.`)]``<br/>``[effects.blizzard.startScreenEffect()]``<br/>``[sprites.create(img`.`).setStayInScreen(true)]``|
-| Solution option | [Save the Baby Dinos Project](https://arcade.makecode.com/21438-61170-25811-66074) |
+After completing Sing 2, students can move on to the following activities:
 
-#### 3. Traffic Dodger
-
-| Activity | Traffic Dodger (14 min) |
-|---|---|
-| ![Traffic Dodger thumbnail](/static/skillmap/map-info/traffic-dodger.png) | Take your game further with cars that subtract a life if you run into them. |
-| Blocks used | ``[sprites.create(img`.`).setKind(SpriteKind.Enemy)]``<br/>``[sprites.create(img`.`).y = 0]``|
-| Solution option | [Traffic Dodger Project](https://arcade.makecode.com/76596-99011-88241-42675) |
- 
-#### 4. Animate It!
-
-| Activity | Animate It! (20 min) |
-|---|---|
-| ![Animate It! thumbnail](/static/skillmap/map-info/animate-it.png) | Polish your game using animation to make your characters come to life! |
-| Blocks used | ``[info.changeLifeBy(1)]``|
-| Solution option | [Animate It Project](https://arcade.makecode.com/20377-15271-69070-26521) |
-
-##### Game Mod Ideas
-
-After students complete Animate It! they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox.  Here are some modifications they can try: 
-
-- Make the camera shake when the dino runs into a car 
-- Add another sprite that gives more time when collected 
-- Add a sprite that gives more lives when collected 
-- Change the scene from a dino on the street to a shark in the ocean
-
-### What’s Next?
-
-After completing the Beginner’s Guide to Arcade Games, students move on to the following activities:
-
-* Build a Space Explorer
-* Scrolling Platformer
+* [Build a Space Explorer](https://arcade.makecode.com/--skillmap#docs:/skillmap/space)
+* [Jungle Monkey Jump](https://arcade.makecode.com/--skillmap#docs:/skillmap/jungle)
