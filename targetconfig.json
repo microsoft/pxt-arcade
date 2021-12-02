@@ -65,7 +65,8 @@
             "racer": "docs:/skillmap/racer",
             "rockstar": "docs:/skillmap/rockstar",
             "forest": "docs:/skillmap/forest",
-            "turkey": "docs:/skillmap/turkey"
+            "turkey": "docs:/skillmap/turkey",
+            "star": "docs:/skillmap/star"
         }
     },
     "galleries": {
