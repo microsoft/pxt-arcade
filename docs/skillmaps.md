@@ -16,13 +16,37 @@
   "directOpen": true
 },
 {
+  "name": "Save the Forest",
+  "cardType": "link",
+  "description": "Use blocks to code your airtanker and set up tech so your ground team can help you save the forest!",
+  "imageUrl": "/static/skillmap/backgrounds/forest.png",
+  "url": "https://arcade.makecode.com/--skillmap#forest",
+  "directOpen": true
+},
+{
   "name": "Shark Attack",
   "cardType": "link",
   "description": "The deep sea is a fascinating place! This skillmap will guide you through the ocean as a shark on a journey to find food!",
   "imageUrl": "/static/skillmap/backgrounds/shark-map.png",
   "url": "https://arcade.makecode.com/--skillmap#shark",
   "directOpen": true
-}, 
+},
+{
+  "name": "Turkey Day",
+  "cardType": "link",
+  "description": "It's time to break out! Help your turkey free all of its friends and climb to freedom in this fast-paced vertical platformer.",
+  "imageUrl": "/static/skillmap/turkey/turkey3.gif",
+  "url": "https://arcade.makecode.com/--skillmap#turkey",
+  "directOpen": true
+},
+{
+  "name": "80s Rockstar Maze",
+  "cardType": "link",
+  "description": "Code your rockstar to move through the crowded backstage area to collect all the gear before they're mobbed by fans!",
+  "imageUrl":  "/static/skillmap/backgrounds/rockstar-card.gif",
+  "url": "https://arcade.makecode.com/--skillmap#rockstar",
+  "directOpen": true
+},
 {
   "name": "Jungle Monkey Jump Platformer",
   "cardType": "link",
@@ -39,14 +63,6 @@
   "url": "https://arcade.makecode.com/--skillmap#space",
   "directOpen": true
 },
-{
-  "name": "80s Rockstar Maze",
-  "cardType": "link",
-  "description": "Code your rockstar to move through the crowded backstage area to collect all the gear before they're mobbed by fans!",
-  "imageUrl":  "/static/skillmap/backgrounds/rockstar-card.gif",
-  "url": "https://arcade.makecode.com/--skillmap#rockstar",
-  "directOpen": true
-}, 
 {
   "name": "A Zookeeper's Adventure",
   "cardType": "link",
