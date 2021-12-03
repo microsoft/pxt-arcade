@@ -109,6 +109,9 @@ with each click** <br/>
 and snap it into **the bottom** of the <br/>
 ``||controller:on [A] button [pressed]||`` container.
 
+- :mouse pointer: Click ``||variables:mySprite||`` and change it to
+``||variables:audience||`` so that the correct sprite is swapped during your clicks.
+
 - :paint brush: Click the grey square and toggle to **My Assets** and
 choose the other audience pose (called **clap2**.)
 
@@ -132,7 +135,7 @@ Step to the next set of instructions to discover how to keep the applause going.
 
 
 
-## {Step 6}
+## {Step 7}
 
 Right now, the audience only claps once. <br/>
 **Let's change that!**
@@ -149,7 +152,9 @@ using the dropdown menu.
 
 - :paper plane: Snap a new<br/>
 ``||sprites: set [mySprite] image to [ ]||``<br/>
-block inside the empty container, then toggle to **My Assets** and choose the same
+block inside the empty container
+
+- :mouse pointer:  Change the variable to ``||variables:audience||`` and click the empty grey square to choose the same
 **clap1** image that was used for the original sprite.
 
 ```blocks

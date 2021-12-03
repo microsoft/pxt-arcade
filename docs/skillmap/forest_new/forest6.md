@@ -28,8 +28,8 @@ it flips around as it goes back and forth.
 
 ---
 
-- :game: Drag an  
-``||controller:on [A] button [pressed]||``  
+- :game: Drag an<br/>
+``||controller:on [A] button [pressed]||``<br/>
 container into an empty area of the workspace.
 
 - :mouse pointer: Change ``||controller:A||`` to ``||controller:left||``.
@@ -48,10 +48,10 @@ Choose an animation to loop when the plane is flying left.
 
 - :toolbox: In the toolbox, click **Advanced**, then open the ``||animation:Animation||`` category.
 
-- :sync: Drag  
-``||animation:animate [mySprite]||``  
-into the empty  
-``||controller:on [left] button [pressed]||``  
+- :sync: Drag<br/>
+``||animation:animate [mySprite]||``<br/>
+into the empty<br/>
+``||controller:on [left] button [pressed]||``<br/>
 container.
 
 - :mouse pointer: Set **loop** to **`<ON>`**, then click the grey square
@@ -104,7 +104,7 @@ Your plane should face left when you fly left and right when you fly right!
 
 ---
 
-- :headphones: Find the block that will let you play a sound when a sprite of kind ``||sprites:Fire||`` is **destroyed**.  
+- :headphones: Find the block that will let you play a sound when a sprite of kind ``||sprites:Fire||`` is **destroyed**.
 💡 We like the **thump** sound for this.
 
 - :question: Can you figure out where to add this block if you want it to play each time a sprite of kind **Fire** is **destroyed**?
@@ -131,8 +131,8 @@ It's also helpful to have a sound that lets you know when a new fire has started
 
 ---
 
-- :headphones: Find a sound to play when a sprite 
-of kind ``||sprites:Fire||`` is **created**.  
+- :headphones: Find a sound to play when a sprite
+of kind ``||sprites:Fire||`` is **created**.<br/>
 💡 We like the **knock** sound for this.
 
 - :question: Can you figure out where to add this block if you want it to play each time a sprite of kind **Fire** is **created**?
@@ -153,7 +153,7 @@ sprites.on_fire_created(function (location) {
 ```
 
 
-## 9. Play 
+## 9. Play
 
 **🎮 Check out what you made!**
 
@@ -166,11 +166,12 @@ variables to see how challenging your game can be.
 
 ## Finale
 
-👏 **That's it!** 
+👏 **That's it!**
 
 ---
 
-You have made a complete game!  When you're finished playing, you can click "Done"
+You have made a complete game!<br/>
+When you're finished playing, you can click "Done"
 and head back out to the skillmap to share with friends and save your game in your gallery.
 
 
