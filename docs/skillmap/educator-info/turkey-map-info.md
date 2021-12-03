@@ -4,9 +4,9 @@
 
 **Turkey Day** introduces MakeCode Arcade game design elements.
 
-In this set of activities, students will create their own jumpy platformer with 
+In this set of activities, students will create their own jumpy platformer with
 MakeCode Arcade.  This map is intended for students who are new to MakeCode with little or no previous coding experience.
-Through step-by-step instructions, students will 
+Through step-by-step instructions, students will
 build a game where they guide their turkey to freedom, rescuing friends along the way.
 
 Designed for students between the ages of 10 & 16, this experience contains a total of 3 tutorials (approximating 25 minutes of instruction.)
@@ -20,7 +20,7 @@ At the end of this learning path, students receive a certificate of completion.
 
 \* Minutes are approximate, based on time to follow instructions as written. Times do not include time spent on designing elements or re-aquainting with previously-written code. Providing extra time for creativity and debugging is encouraged.
 
-### Objectives 
+### Objectives
 
 After completing Turkey Day, students will have gained exposure to multiple arcade platformer game concepts using MakeCode Arcade.
 
@@ -41,7 +41,7 @@ Specifically, they will experience the following topics:
 
 ### Projects
 
-As students progress through these projects, they will progressively build their game. They will witness the turkey's evolution from a simple creature that can only move around 
+As students progress through these projects, they will progressively build their game. They will witness the turkey's evolution from a simple creature that can only move around
 to a jump _master_ who rescues fellow birds for points.
 
 #### 1. Move the Turkey
@@ -72,8 +72,8 @@ to a jump _master_ who rescues fellow birds for points.
 
 ##### Game Mod Ideas
 
-As students complete the skillmap, we encourage them to plan out how they want to modify 
-this game to best suit their interests. Consider the following questions: 
+As students complete the skillmap, we encourage them to plan out how they want to modify
+this game to best suit their interests. Consider the following questions:
 
 - What kind of world would I want to explore? Redesign the scene with your chosen environment!
 - What is an animal or creature that would fit in to this world? Replace the turkey with your chosen creature!
