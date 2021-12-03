@@ -37,7 +37,7 @@
 * description: Add an audience that applauds as you click! 
 * tags: easy, clicker, game, events
 * next: star-activity3
-* url: /skillmap/star/clickert2 
+* url: /skillmap/star/star2 
 * imageUrl: /static/skillmap/star/star2.gif
 * position: 1 0
 
@@ -48,7 +48,7 @@
 * description: Add code to create a spray of stars with each click!
 * tags: easy, clicker, projectiles
 * next: star-activity4
-* url: /skillmap/star/clickert3 
+* url: /skillmap/star/star3 
 * imageUrl: /static/star/star/star3.gif
 * position: 1 1
 
@@ -59,7 +59,7 @@
 * description: Toss a mix of stars and roses at the stage as you learn about arrays!
 * tags: easy, clicker, projectiles, arrays
 * next: star-cert
-* url: /skillmap/star/clickert4 
+* url: /skillmap/star/star4 
 * imageUrl: /static/skillmap/star/star4.gif
 * position: 2 1
 
