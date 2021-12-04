@@ -21,11 +21,11 @@ Choose a [__*tilemap*__](#tiled "a scene or world created using predefined tiles
 
 ---
 
-- :tree:  Under the ``||scene:Scene||`` category in the toolbox, you'll find the  
-``||scene:set tilemap to []||``  
-block.  Drag it into the empty  
-``||loops:on start||``  
-container already in your workspace.  
+- :tree: Under the ``||scene:Scene||`` category in the toolbox, you'll find the <br/>
+``||scene:set tilemap to []||`` <br/>
+block.  Drag it into the empty <br/>
+``||loops:on start||`` <br/>
+container already in your workspace.
 
 _💡  Having trouble finding the block you need? Look to the left of the instructions for the icon of the toolbox category where your block lives!_
 
@@ -42,8 +42,8 @@ tiles.setTilemap(tilemap`level2`)
 
 ## 3. Set Your Map
 
-- :paint brush: Click the empty grey square in   
-``||scene:set tilemap to []||``   
+- :paint brush: Click the empty grey square in <br/>
+``||scene:set tilemap to []||`` <br/>
 and toggle to **My Assets** to select the tilemap called **level1**.
 
 ![Toggle to My Assets](/static/skillmap/assets/my-assets.png "Resources have been provided for you!")
@@ -56,7 +56,7 @@ tiles.setTilemap(tilemap`level1`)
 
 ## 4. Take a Look!
 
-**Click the Game Window Tab (Above)**
+**Click the Game Window Tab (Above)** <br/>
 ![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
@@ -78,15 +78,15 @@ for your aircraft that will fly around the screen.
 
 ---
 
-- :paper plane:  Drag  
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  
-to **the end** of the  
-``||loops:on start||``  
+- :paper plane: Drag <br/>
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
+to **the end** of the <br/>
+``||loops:on start||`` <br/>
 container.
 
 _💡  Remember, the icon to the left of the instructions shows the same icon as the toolbox category for the block you need._
 
-- :paint brush:  To choose your plane, click the empty grey box, then toggle to **My Assets** and choose your aircraft.
+- :paint brush: To choose your plane, click the empty grey box, then toggle to **My Assets** and choose your aircraft.
 
 _💡 We'll be using the **Fire Plane Right** sprite, but you can use something else...or even recolor one we've provided!_
 
@@ -106,10 +106,10 @@ let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
 
 ---
 
-- :game pad: Drag  
-``||controller:move [mySprite] with buttons ⊕||``  
-to **the end** of the  
-``||loops:on start||``  
+- :game pad: Drag <br/>
+``||controller:move [mySprite] with buttons ⊕||`` <br/>
+to **the end** of the <br/>
+``||loops:on start||`` <br/>
 container.
 
 
@@ -140,11 +140,11 @@ _💡 You can also use the arrow keys on your keyboard!_
 
 ---
 
-- :tree:   To keep your sprite in sight, drag  
-``||scene:camera follow sprite [mySprite]||``  
-to **the end** of the  
-``||loops:on start||``  
-container.  
+- :tree:  To keep your sprite in sight, drag <br/>
+``||scene:camera follow sprite [mySprite]||`` <br/>
+to **the end** of the <br/>
+``||loops:on start||`` <br/>
+container.
 
 _💡 Don't forget to play with your project after each step to see the changes your code has made._
 
