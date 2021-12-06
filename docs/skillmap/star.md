@@ -68,7 +68,7 @@
 * name: Congrats!
 * kind: completion
 * type: certificate
-* url: /static/skillmap/certificates/star-game.pdf
+* url: /static/skillmap/certificates/star-cert.pdf
 * imageUrl: /static/skillmap/certificates/star-cert.png
 * actions:
     * map: [Try Space Explorer](/skillmap/space)
