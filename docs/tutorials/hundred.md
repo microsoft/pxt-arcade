@@ -1,5 +1,4 @@
-# Alien Invasion
-
+# 100 Day Challenge
 
 
 
@@ -15,19 +14,39 @@ Let's celebrate by creating a project with 100 of our favorite things!
 
 ## {Step 2}
 
-**Start with a background**
+Let's start by adding the code block that will create the background for our game.
 
 ---
 
-- :tree: From the ``||scene:Scene||`` category, grab  
-``||scene:set background image to [ ]||``  
-and snap it into the empty  
-``||loops:on start||``  
-container already in the workspace.   
-_💡  Having trouble finding the block you need? Look to the left of the instructions for the icon of the toolbox category where your block lives!_
+- :tree: From the ``||scene:Scene||`` category, grab <br/>
+``||scene:set background image to [ ]||`` <br/>
+and snap it into the empty <br/>
+``||loops:on start||`` <br/>
+container already in the workspace.
+
+![Here's how to choose a bg](/static/tutorials/aliens/choose-bg.gif "Toggle to My Assets and pick the background." )
 
 
-- :paint brush: Click the **grey square** in the new block to open the image editor and choose a background from the **Gallery**.   
+- :mouse pointer: Click "Next" to find out what to do next.
+
+
+
+```blocks
+//@highlight
+scene.setBackgroundImage(img`
+.
+`)
+```
+
+---
+
+![Here's how to choose a bg](/static/tutorials/aliens/choose-bg.gif "Toggle to My Assets and pick the background." )
+
+
+## {Step 2.5}
+
+
+- :paint brush: Click the **grey square** in the new block to open the image editor and choose a background from the **Gallery**.
 _💡 If you don't find a background you like, you can make one of your own!_
 
 
@@ -38,8 +57,6 @@ scene.setBackgroundImage(assets.image`Planet`)
 ```
 
 
-
-
 ## {Step 3}
 
 
@@ -47,11 +64,10 @@ scene.setBackgroundImage(assets.image`Planet`)
 
 ---
 
-- :arrows alternate: To make it look like the camera is moving,
-drag   
-``||scroller:scroll background with vx [-50] vy [-50]||``  
-into **the end** of the  
-``||loops:on start||`` container.  
+- :arrows alternate: To make it look like the camera is moving, go to ``||scroller: Scroller||`` and drag <br/>
+``||scroller:scroll background with vx [-50] vy [-50]||`` <br/>
+into **the end** of the <br/>
+``||loops:on start||`` container. <br/>
 _💡  Remember, the icon to the left of the instructions shows the same icon as the toolbox category for the block you need._
 
 
@@ -68,7 +84,7 @@ scroller.scrollBackgroundWithSpeed(-50, 0)
 
 ## {Step 4}
 
-**Click the Game Window Tab (Above)**  
+**Click the Game Window Tab (Above)**
 ![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
@@ -83,10 +99,10 @@ Your background should move on its own!
 
 ---
 
-- :redo: Grab a  
-``||loops:repeat 4 times||``  
-loop container and drag it into **the end** of the  
-``||loops:on start||`` container
+- :redo: From ``||loops:Loops||``, grab a <br/>
+``||loops:repeat 4 times||`` <br/>
+loop container and drag it into **the end** of the <br/>
+``||loops:on start||`` container. <br/>
 
 - :mouse pointer: Change **4** to **100** to build the stampede!
 
@@ -108,8 +124,8 @@ for (let index = 0; index < 100; index++) {
 
 ---
 
-- :paper plane: Grab  
-``||variables:set [projectile] to projectile [ ] from side with vx [50] vy [50]||``  
+- :paper plane: From ``||sprites:Sprites||``, grab <br/>
+``||variables:set [projectile] to projectile [ ] from side with vx [50] vy [50]||`` <br/>
 and snap it into the empty ``||loops:repeat 100 times||`` loop.
 
 - :paint brush: Click the grey box and toggle to **My Assets** to select the **Alien** sprite...OR draw one of your favorite things!
@@ -126,7 +142,7 @@ for (let index = 0; index < 100; index++) {
 
 ## {Step 6}
 
-- :mouse pointer: To make the aliens look like they're walking, change
+- :mouse pointer: To make the aliens look like they're walking from right to left, change
 [__*vx*__](#whatVX "horizontal velocity") to **-90**
 and [__*vy*__](#whatVY "vertical velocity") to **0**.
 
@@ -145,12 +161,12 @@ for (let index = 0; index < 100; index++) {forever(function () {
 
 ## {Step 6.5}
 
-**Take another look in your game window**  
+**Take another look in your game window**
 ![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
 
-This doesn't look quite right...we'll fix it in the next few steps.
+Do you have a single sprite floating across the sky? We'll fix that over the next couple of steps.
 
 
 ## {Step 7}
@@ -159,17 +175,18 @@ If we leave the sprites like this, you won't be able to see them all! Let's spre
 
 ---
 
-- :paper plane: Grab a  
-``||sprites:set [mySprite] [x] to [0]||``  
-block and snap it in at **the end** of the  
+- :paper plane: From ``||sprites:Sprites||``, grab a <br/>
+``||sprites:set [mySprite] [x] to [0]||`` <br/>
+block and snap it into **the end** of the <br/>
 ``||loops:repeat 100 times||`` loop.
 
 - :mouse pointer: Change **mySprite** to **projectile** using the first dropdown menu.
 
 - :mouse pointer: Change **x** to **y** using the other dropdown menu.
 
-- :calculator: Replace **0** with  
-``||math:pick random [0] to [10]||``.
+- :calculator: Replace **0** with <br/>
+``||math:pick random [0] to [10]||`` <br/>
+(from the ``||math:Math||`` category.)
 
 
 
@@ -214,9 +231,9 @@ Our loop spits out all the sprites at the same time. If we add a small pause, we
 
 ---
 
-- :redo: Help the sprites spread out horizontally by adding  
-``||loops: pause [100]||``  
-anywhere inside the   
+- :redo: Help the sprites spread out horizontally by adding <br/>
+``||loops: pause [100]||`` <br/>
+anywhere inside the <br/>
 ``||loops:repeat 100 times||`` loop.
 
 
@@ -241,9 +258,9 @@ Let's animate !
 
 - :chevron down: In the toolbox, click **Advanced** to reveal the ``||animation:Animation||`` category.
 
-- :sync: Drag  
-``||animation:animate [mySprite]||``  
-into **the end** of the  
+- :sync: Drag <br/>
+``||animation:animate [mySprite]||`` <br/>
+into **the end** of the <br/>
 ``||loops:repeat 100 times||`` loop.
 
 - :mouse pointer: Change **mySprite** to **projectile** and click the grey switch at the bottom to **toggle the loop `<ON>`**.
@@ -262,7 +279,7 @@ for (let index = 0; index < 100; index++) {
 animation.runImageAnimation(
 projectile,
 [img`
-    . 
+    .
     `] ,
 500,
 true
@@ -309,7 +326,7 @@ true
 
 - :mouse pointer: You can make your animation move faster by changing the **interval** to a lower number. Try using **100** or **200**.
 
-_💡 If you'd like to slow your animation down, choose a longer **interval**._
+_💡 If you'd like to slow your animation down, choose a longer **interval** by using a larger number._
 
 
 ```blocks
@@ -362,13 +379,13 @@ scene.setBackgroundImage(img`
     animation.runImageAnimation(
     projectile,
     [img`
-        . 
+        .
         `,img`
-        . 
+        .
         `,img`
-        . 
+        .
         `,img`
-        .  
+        .
         `],
     100,
     true
@@ -398,3 +415,4 @@ game.splash("Happy 100 Days!")
   "test.ts": "// tests go here; this will not be compiled when this package is used as an extension.\n"
 }
 ```
+
