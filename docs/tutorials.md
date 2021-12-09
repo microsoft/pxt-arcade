@@ -53,7 +53,6 @@
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/winter/winter.png",
   "largeImageUrl": "/static/tutorials/winter/winter.gif",
-  }]
 }, {
   "name": "Lemon Leak",
   "description": "Stay away from the wild strawberries or you'll lose your juice!",
