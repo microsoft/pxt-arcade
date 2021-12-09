@@ -70,9 +70,9 @@ Let's send all of the snow in from the side of the screen.
 
 ---
 
-- :mouse pointer: Find the <br/>
+- :mouse pointer: Find <br/>
 ``||variables:set [projectile] to projectile [❄️] from side with vx [50] vy [50]||`` <br/>
-block already in the workspace, and change **vy** to **0**.
+already in the workspace, and change **vy** to **0**.
 
 
 - :calculator: From the ``||math:Math||`` category, <br/>
@@ -90,7 +90,108 @@ game.onUpdateInterval(300, function () {
 })
 ```
 
+---
 
+![Drag the random block from the math category into the vx](/static/tutorials/winter/random.gif "Here's how to add a random number." )
+
+
+## {Step 6}
+
+Well, now the snowflakes only fly across the very top of the screen.  Let's place each snowflake at a random height.
+
+---
+
+- :paper plane: From ``||sprites:Sprites||``, drag <br/>
+``||sprites:set [mySprite] [x] to [0]||`` <br/>
+into the **on game update** container.
+
+
+- :mouse pointer: To make sure this block is working on the snowflake, click
+``||variables:mySprite||`` and change it to ``||variables:projectile||`` using the dropdown menu.
+
+- :mouse pointer: To change the up and down position on the screen, click ``||sprites:x||`` and change it to ``||sprites:y||`` using the dropdown menu
+
+
+
+```blocks
+game.onUpdateInterval(300, function () {
+    let snowflake = sprites.createProjectileFromSide(assets.image`snowflake1`, randint(-125, 125), 0)
+    snowflake.y = 0
+})
+```
+
+
+## {Step 7}
+
+
+- :calculator: To send the snowflakes in from a random height, drag <br/>
+``||math:pick random [0] to [10]||`` <br/>
+in to replace **0** in the<br/>
+``||sprites:set [projectile] [y] to [0]||``<br/>
+block.
+
+
+- :mouse pointer: To make sure the snowflakes only fly between the top of the seesaw and the bottom of the branch, change the random numbers to pick from **30** to **80**.
+
+![Drag the random block from the math category into the y value](/static/tutorials/winter/change-height.gif "Here's how to add a random number." )
+
+
+```blocks
+game.onUpdateInterval(300, function () {
+    let snowflake = sprites.createProjectileFromSide(assets.image`snowflake1`, randint(-125, 125), 0)
+    snowflake.y = randint(30, 80)
+})
+```
+
+## {Step 8}
+
+To make your game even more special, you can add some snowflakes of your own!
+
+---
+
+- :numbered list: To add more snowflakes to the game, click **Advanced** and open the ``||arrays: Arrays||`` category.
+
+
+- :numbered list: Drag <br/>
+``||arrays: choose one of [ ] [ ] +||`` <br/>
+to replace the snowflake in your red **set projectile** block.
+
+- :mouse pointer: Click each empty grey box and choose (_or draw_) a new snowflake.<br/>
+_💡 You can click the plus sign at the right of the <br/>
+``||arrays: choose one of [ ] [ ] +||`` <br/>
+block to add more empty boxes._
+
+![Add more snowflakes](/static/tutorials/winter/random-img.gif "Here's how to add a random image selector." )
+
+
+```blocks
+game.onUpdateInterval(300, function () {
+    let snowflake = sprites.createProjectileFromSide(arrays.chooseRandomImage(assets.image`snowflake1`, img`
+. d . . d . d . . d . .
+d 1 d . d 1 d 9 d 1 d .
+. d . d d . d 9 . d . .
+. d 9 1 d 1 . 1 d . . .
+1 . 1 . 1 . 1 9 d d d .
+. d 9 d . 1 . 1 . 1 . 1
+. . . 9 1 . 1 d d 9 d .
+. . d . d 1 d . 9 . . .
+. d 1 d 9 . d d 1 d . .
+d . d . 9 1 d . d . d .
+. d . . d . d . . d . .
+. . . . . 1 . . . . . .
+`, img`
+. . . 9 . 9 . 9
+9 . . . 1 . 1 .
+. 1 . 1 . 1 . .
+9 . 1 . 1 . . .
+. 1 . 1 . 1 . 9
+9 . 1 . 9 . 1 .
+. 1 . . 1 . . 9
+. . 9 . . 9 1 .
+`), randint(-125, 125), 0)
+    snowflake.y = randint(30, 80)
+})
+```
 
 
 ## {Finale}
@@ -99,7 +200,9 @@ game.onUpdateInterval(300, function () {
 
 ---
 
-Now you have a fun clicker game that lets you bounce your way to as many points as possible!
+Now try it on the game screen! Do you see all of your snowflakes?
+
+How many can you catch before time runs out?
 
 When you're finished playing, click **Done** and share your final game with family and friends!
 
@@ -112,7 +215,7 @@ game.onUpdateInterval(300, function () {
 
 ```ghost
 game.onUpdateInterval(300, function () {
-    snowflake = sprites.createProjectileFromSide(assets.image`snowflake1`, randint(-125, 125), 0)
+    let snowflake = sprites.createProjectileFromSide(assets.image`snowflake1`, randint(-125, 125), 0)
     snowflake.y = randint(30, 80)
 })
 scene.setBackgroundColor(10)
@@ -183,7 +286,7 @@ let seesaw: Sprite = null
 let active: Sprite = null
 let rightie: Sprite = null
 let leftie: Sprite = null
-scene.setBackgroundColor(10)
+scene.setBackgroundColor(8)
 tiles.setTilemap(tilemap`level1`)
 leftie = sprites.create(assets.image`leftie`, SpriteKind.Active)
 leftie.setPosition(20, 7)
@@ -213,8 +316,8 @@ pxt-star-special=github:kiki-lee/star-special/
   "main.blocks": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><variables><variable id=\"z3GzZoJYWC$znobE{d#2\">active</variable><variable id=\"B}Uc1PVr3sG^G?F;woVT\">rightie</variable><variable id=\"%V5/g^O8_vA0A@X!b7yl\">seesaw</variable><variable id=\"K8=RKkOs?3^dnULxjSxC\">leftie</variable><variable id=\"5rp3u|]FGhglL!+kG8P;\">snowflake</variable><variable type=\"KIND_SpriteKind\" id=\"Hd[5v~wyE9I^eZkF-?|^\">Snowperson</variable><variable type=\"KIND_SpriteKind\" id=\"a%7G$4R*v{$_meg[u_[V\">Active</variable><variable type=\"KIND_SpriteKind\" id=\"lo@:U,fw=W,4LBgqdiG~\">Player</variable><variable type=\"KIND_SpriteKind\" id=\"~WQH-s#.5?Mxch2@*U=p\">Projectile</variable><variable type=\"KIND_SpriteKind\" id=\"GmpfmztvLoUV`gJbqTXY\">Food</variable><variable type=\"KIND_SpriteKind\" id=\")I2gy2IAqQEK.zyg.-f4\">Enemy</variable></variables><block type=\"pxt-on-start\" x=\"0\" y=\"0\"><statement name=\"HANDLER\"><block type=\"gamesetbackgroundcolor\"><value name=\"color\"><shadow type=\"colorindexpicker\"><field name=\"index\">9</field></shadow></value><next><block type=\"tilemap_editor\"><field name=\"tilemap\">tilemap`level1`</field><data>{\"commentRefs\":[],\"fieldData\":{\"tilemap\":\"level1\"}}</data><next><block type=\"variables_set\"><field name=\"VAR\" id=\"K8=RKkOs?3^dnULxjSxC\">leftie</field><value name=\"VALUE\"><shadow type=\"math_number\"><field name=\"NUM\">0</field></shadow><block type=\"spritescreate\"><value name=\"img\"><shadow type=\"screen_image_picker\"><field name=\"img\">assets.image`leftie`</field><data>{\"commentRefs\":[],\"fieldData\":{\"img\":\"myImages.tw)YMb%W\"}}</data></shadow></value><value name=\"kind\"><shadow type=\"spritekind\"><field name=\"MEMBER\">Active</field></shadow></value></block></value><next><block type=\"spritesetpos\"><value name=\"sprite\"><block type=\"variables_get\"><field name=\"VAR\" id=\"K8=RKkOs?3^dnULxjSxC\">leftie</field></block></value><value name=\"x\"><shadow type=\"positionPicker\"><field name=\"index\">15</field></shadow></value><value name=\"y\"><shadow type=\"positionPicker\"><field name=\"index\">7</field></shadow></value><next><block type=\"variables_set\"><field name=\"VAR\" id=\"B}Uc1PVr3sG^G?F;woVT\">rightie</field><value name=\"VALUE\"><shadow type=\"math_number\"><field name=\"NUM\">0</field></shadow><block type=\"spritescreate\"><value name=\"img\"><shadow type=\"screen_image_picker\"><field name=\"img\">assets.image`rightie`</field><data>{\"commentRefs\":[],\"fieldData\":{\"img\":\"myImages.r|f$7wl#Q\"}}</data></shadow></value><value name=\"kind\"><shadow type=\"spritekind\"><field name=\"MEMBER\">Snowperson</field></shadow></value></block></value><next><block type=\"spritesetpos\"><value name=\"sprite\"><block type=\"variables_get\"><field name=\"VAR\" id=\"B}Uc1PVr3sG^G?F;woVT\">rightie</field></block></value><value name=\"x\"><shadow type=\"positionPicker\"><field name=\"index\">140</field></shadow></value><value name=\"y\"><shadow type=\"positionPicker\"><field name=\"index\">104</field></shadow></value><next><block type=\"variables_set\"><field name=\"VAR\" id=\"z3GzZoJYWC$znobE{d#2\">active</field><value name=\"VALUE\"><shadow type=\"math_number\"><field name=\"NUM\">0</field></shadow><block type=\"variables_get\"><field name=\"VAR\" id=\"K8=RKkOs?3^dnULxjSxC\">leftie</field></block></value><next><block type=\"variables_set\"><field name=\"VAR\" id=\"%V5/g^O8_vA0A@X!b7yl\">seesaw</field><value name=\"VALUE\"><shadow type=\"math_number\"><field name=\"NUM\">0</field></shadow><block type=\"spritescreate\"><value name=\"img\"><shadow type=\"screen_image_picker\"><field name=\"img\">assets.image`tiltRight`</field><data>{\"commentRefs\":[],\"fieldData\":{\"img\":\"myImages.]7PQ2-*{{~]py=iF[~r#\"}}</data></shadow></value><value name=\"kind\"><shadow type=\"spritekind\"><field name=\"MEMBER\">Player</field></shadow></value></block></value><next><block type=\"Sprite_blockCombine_set\"><field name=\"property\">Sprite.bottom@set</field><value name=\"mySprite\"><block type=\"variables_get\"><field name=\"VAR\" id=\"%V5/g^O8_vA0A@X!b7yl\">seesaw</field></block></value><value name=\"value\"><shadow type=\"math_number\"><field name=\"NUM\">120</field></shadow></value><next><block type=\"gamecountdown\"><value name=\"duration\"><shadow type=\"math_number\"><field name=\"NUM\">30</field></shadow></value></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></statement></block><block type=\"gameinterval\" x=\"686\" y=\"0\"><value name=\"period\"><shadow type=\"timePicker\"><field name=\"ms\">300</field></shadow></value><statement name=\"HANDLER\"><block type=\"variables_set\"><field name=\"VAR\" id=\"5rp3u|]FGhglL!+kG8P;\">snowflake</field><value name=\"VALUE\"><shadow type=\"math_number\"><field name=\"NUM\">0</field></shadow><block type=\"spritescreateprojectilefromside\"><value name=\"img\"><shadow type=\"screen_image_picker\"><field name=\"img\">assets.image`snowflake1`</field><data>{\"commentRefs\":[],\"fieldData\":{\"img\":\"myImages.image1\"}}</data></shadow></value><value name=\"vx\"><shadow type=\"spriteSpeedPicker\"/><block type=\"device_random\"><value name=\"min\"><shadow type=\"math_number\"><field name=\"NUM\">-125</field></shadow></value><value name=\"limit\"><shadow type=\"math_number\"><field name=\"NUM\">125</field></shadow></value></block></value><value name=\"vy\"><shadow type=\"spriteSpeedPicker\"><field name=\"speed\">0</field></shadow></value></block></value><next><block type=\"Sprite_blockCombine_set\"><field name=\"property\">Sprite.y@set</field><value name=\"mySprite\"><block type=\"variables_get\"><field name=\"VAR\" id=\"5rp3u|]FGhglL!+kG8P;\">snowflake</field></block></value><value name=\"value\"><block type=\"device_random\"><value name=\"min\"><shadow type=\"math_number\"><field name=\"NUM\">30</field></shadow></value><value name=\"limit\"><shadow type=\"math_number\"><field name=\"NUM\">80</field></shadow></value></block></value></block></next></block></statement></block><block type=\"keyonevent\" x=\"1747\" y=\"0\"><field name=\"button\">controller.A</field><field name=\"event\">ControllerButtonEvent.Pressed</field><statement name=\"HANDLER\"><block type=\"controls_if\"><value name=\"IF0\"><shadow type=\"logic_boolean\"><field name=\"BOOL\">TRUE</field></shadow><block type=\"logic_compare\"><field name=\"OP\">LT</field><value name=\"A\"><shadow type=\"math_number\"><field name=\"NUM\">0</field></shadow><block type=\"Sprite_blockCombine_get\"><field name=\"property\">Sprite.bottom</field><value name=\"mySprite\"><block type=\"variables_get\"><field name=\"VAR\" id=\"z3GzZoJYWC$znobE{d#2\">active</field></block></value></block></value><value name=\"B\"><shadow type=\"math_number\"><field name=\"NUM\">33</field></shadow></value></block></value><statement name=\"DO0\"><block type=\"Sprite_blockCombine_set\"><field name=\"property\">Sprite.vy@set</field><value name=\"mySprite\"><block type=\"variables_get\"><field name=\"VAR\" id=\"z3GzZoJYWC$znobE{d#2\">active</field></block></value><value name=\"value\"><shadow type=\"math_number\"><field name=\"NUM\">250</field></shadow></value></block></statement></block></statement></block><block type=\"spriteshitwall\" x=\"0\" y=\"669\"><value name=\"HANDLER_DRAG_PARAM_sprite\"><shadow type=\"argument_reporter_custom\"><mutation typename=\"Sprite\"/><field name=\"VALUE\">sprite</field></shadow></value><value name=\"kind\"><shadow type=\"spritekind\"><field name=\"MEMBER\">Active</field></shadow></value><value name=\"HANDLER_DRAG_PARAM_location\"><shadow type=\"argument_reporter_custom\"><mutation typename=\"tiles.Location\"/><field name=\"VALUE\">location</field></shadow></value><statement name=\"HANDLER\"><block type=\"Sprite_blockCombine_set\"><field name=\"property\">Sprite.vy@set</field><value name=\"mySprite\"><block type=\"argument_reporter_custom\"><mutation typename=\"Sprite\"/><field name=\"VALUE\">sprite</field></block></value><value name=\"value\"><shadow type=\"math_number\"><field name=\"NUM\">0</field></shadow></value><next><block type=\"controls_if\"><mutation elseif=\"1\"/><value name=\"IF0\"><shadow type=\"logic_boolean\"><field name=\"BOOL\">TRUE</field></shadow><block type=\"maplocationistile\"><value name=\"location\"><shadow type=\"mapgettile\"/><block type=\"argument_reporter_custom\"><mutation typename=\"tiles.Location\"/><field name=\"VALUE\">location</field></block></value><value name=\"tile\"><shadow type=\"tileset_tile_picker\"><field name=\"tile\">assets.tile`platform1`</field></shadow></value></block></value><statement name=\"DO0\"><block type=\"variables_set\"><field name=\"VAR\" id=\"z3GzZoJYWC$znobE{d#2\">active</field><value name=\"VALUE\"><shadow type=\"math_number\"><field name=\"NUM\">0</field></shadow><block type=\"variables_get\"><field name=\"VAR\" id=\"B}Uc1PVr3sG^G?F;woVT\">rightie</field></block></value><next><block type=\"spritesetkind\"><value name=\"sprite\"><block type=\"argument_reporter_custom\"><mutation typename=\"Sprite\"/><field name=\"VALUE\">sprite</field></block></value><value name=\"kind\"><shadow type=\"spritekind\"><field name=\"MEMBER\">Snowperson</field></shadow></value><next><block type=\"spritesetimage\"><value name=\"sprite\"><block type=\"variables_get\"><field name=\"VAR\" id=\"%V5/g^O8_vA0A@X!b7yl\">seesaw</field></block></value><value name=\"img\"><shadow type=\"screen_image_picker\"><field name=\"img\">assets.image`tiltLeft`</field><data>{\"commentRefs\":[],\"fieldData\":{\"img\":\"myImages.7jH`2dH$3O%eu)}y/t7}\"}}</data></shadow></value></block></next></block></next></block></statement><value name=\"IF1\"><shadow type=\"logic_boolean\"><field name=\"BOOL\">TRUE</field></shadow><block type=\"maplocationistile\"><value name=\"location\"><shadow type=\"mapgettile\"/><block type=\"argument_reporter_custom\"><mutation typename=\"tiles.Location\"/><field name=\"VALUE\">location</field></block></value><value name=\"tile\"><shadow type=\"tileset_tile_picker\"><field name=\"tile\">assets.tile`platform2`</field></shadow></value></block></value><statement name=\"DO1\"><block type=\"variables_set\"><field name=\"VAR\" id=\"z3GzZoJYWC$znobE{d#2\">active</field><value name=\"VALUE\"><shadow type=\"math_number\"><field name=\"NUM\">0</field></shadow><block type=\"variables_get\"><field name=\"VAR\" id=\"K8=RKkOs?3^dnULxjSxC\">leftie</field></block></value><next><block type=\"spritesetkind\"><value name=\"sprite\"><block type=\"argument_reporter_custom\"><mutation typename=\"Sprite\"/><field name=\"VALUE\">sprite</field></block></value><value name=\"kind\"><shadow type=\"spritekind\"><field name=\"MEMBER\">Snowperson</field></shadow></value><next><block type=\"spritesetimage\"><value name=\"sprite\"><block type=\"variables_get\"><field name=\"VAR\" id=\"%V5/g^O8_vA0A@X!b7yl\">seesaw</field></block></value><value name=\"img\"><shadow type=\"screen_image_picker\"><field name=\"img\">assets.image`lessTilt`</field><data>{\"commentRefs\":[],\"fieldData\":{\"img\":\"myImages.0Sl|Ag?-%VgN*Ar!yH]\"}}</data></shadow></value></block></next></block></next></block></statement><next><block type=\"Sprite_blockCombine_set\"><field name=\"property\">Sprite.vy@set</field><value name=\"mySprite\"><block type=\"variables_get\"><field name=\"VAR\" id=\"z3GzZoJYWC$znobE{d#2\">active</field></block></value><value name=\"value\"><shadow type=\"math_number\"><field name=\"NUM\">-250</field></shadow></value><next><block type=\"spritesetkind\"><value name=\"sprite\"><block type=\"variables_get\"><field name=\"VAR\" id=\"z3GzZoJYWC$znobE{d#2\">active</field></block></value><value name=\"kind\"><shadow type=\"spritekind\"><field name=\"MEMBER\">Active</field></shadow></value></block></next></block></next></block></next></block></statement></block><block type=\"spritesoverlap\" x=\"659\" y=\"669\"><value name=\"HANDLER_DRAG_PARAM_sprite\"><shadow type=\"argument_reporter_custom\"><mutation typename=\"Sprite\"/><field name=\"VALUE\">sprite</field></shadow></value><value name=\"kind\"><shadow type=\"spritekind\"><field name=\"MEMBER\">Active</field></shadow></value><value name=\"HANDLER_DRAG_PARAM_otherSprite\"><shadow type=\"argument_reporter_custom\"><mutation typename=\"Sprite\"/><field name=\"VALUE\">otherSprite</field></shadow></value><value name=\"otherKind\"><shadow type=\"spritekind\"><field name=\"MEMBER\">Projectile</field></shadow></value><statement name=\"HANDLER\"><block type=\"spritedestroy\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" _expanded=\"0\" _input_init=\"false\"></mutation><value name=\"sprite\"><block type=\"argument_reporter_custom\"><mutation typename=\"Sprite\"/><field name=\"VALUE\">otherSprite</field></block></value><next><block type=\"hudChangeScoreBy\"><value name=\"value\"><shadow type=\"math_number\"><field name=\"NUM\">1</field></shadow></value></block></next></block></statement></block><block type=\"gamecountdownevent\" x=\"590\" y=\"890\"><statement name=\"HANDLER\"><block type=\"gameOver\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" _expanded=\"0\" _input_init=\"false\"></mutation><value name=\"win\"><shadow type=\"toggleWinLose\"><field name=\"win\">true</field></shadow></value></block></statement></block></xml>",
   "main.ts": "",
   "pxt.json": "{\n    \"name\": \"winter - Assets Only\",\n    \"description\": \"\",\n    \"dependencies\": {\n        \"device\": \"*\",\n        \"arcade-character-animations\": \"github:microsoft/arcade-character-animations#v0.0.2\"\n    },\n    \"files\": [\n        \"main.blocks\",\n        \"main.ts\",\n        \"README.md\",\n        \"assets.json\",\n        \"tilemap.g.jres\",\n        \"tilemap.g.ts\",\n        \"images.g.jres\",\n        \"images.g.ts\"\n    ],\n    \"targetVersions\": {\n        \"branch\": \"v1.5.28\",\n        \"tag\": \"v1.5.28\",\n        \"commits\": \"https://github.com/microsoft/pxt-arcade/commits/67a784863907175d7e4ec434adfb6ef40b5b2f95\",\n        \"target\": \"1.5.28\",\n        \"pxt\": \"7.1.5\"\n    },\n    \"preferredEditor\": \"tsprj\"\n}\n",
-  "tilemap.g.jres": "{\n    \"transparency16\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true\n    },\n    \"tile4\": {\n        \"data\": \"hwQQABAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVQ==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"myTile2\"\n    },\n    \"tile2\": {\n        \"data\": \"hwQQABAAAAAAEBERHREdEQAREdEdER0RANERER0RHREQHREREREdERAdERERER0REdEREdERHRHR0RER3REdEdHREdEdER0R3dER0RERHRHd0RHREREdEdHREdERER0R0NEd0R3RHREQ0RERHdEREQDREREd0RERANERER3REREAERERHREREQ==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"platform1\"\n    },\n    \"tile3\": {\n        \"data\": \"hwQQABAAAAAAERER0REREQARERHRERERABEdEd0REREQER0RHREREdEdHREdERER0RERER0RERERER0RHRERERERHREdEREREBEdEdERERHQHd0R0REREdAR0RHRERER0B3REREdEREQHdERER0RERAd0RHREREREB3REdEREREQHdER0REREQ==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"platform2\"\n    },\n    \"tile5\": {\n        \"data\": \"hwQQABAAAAAAAABABAAAAAAAAEAEAAAAAAAAQAQAAAAAAABABAAAAAAAAEAEAAAAAAAAQAQAAAAAAABABAAAAAAAAEAEAAAAAAAAQAQAAAAAAABABAAAAAAAAEAEAAAAAAAAQAQAAAAAAABABAAAAAAAAEAEAAAAAAAAQAQAAAAAAABABAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"branch tile\"\n    },\n    \"tile1\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"myTile\"\n    },\n    \"level1\": {\n        \"id\": \"level1\",\n        \"mimeType\": \"application/mkcd-tilemap\",\n        \"data\": \"MTAwYTAwMDgwMDA0MDQwNDA0MDQwNDA0MDQwNDA0MDUwNTA1MDEwMTAxMDEwNTA1MDUwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMjAxMDEwMTAxMDEwMTAzMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjIyMjIyMjIyMg==\",\n        \"tileset\": [\n            \"myTiles.transparency16\",\n            \"myTiles.tile1\",\n            \"myTiles.tile2\",\n            \"myTiles.tile3\",\n            \"myTiles.tile4\",\n            \"myTiles.tile5\"\n        ],\n        \"displayName\": \"level1\"\n    },\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myTiles\"\n    }\n}",
-  "tilemap.g.ts": "// Auto-generated code. Do not edit.\nnamespace myTiles {\n    //% fixedInstance jres blockIdentity=images._tile\n    export const transparency16 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile4 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile2 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile3 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile5 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile1 = image.ofBuffer(hex``);\n\n    helpers._registerFactory(\"tilemap\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"level1\":\n            case \"level1\":return tiles.createTilemap(hex`0a0008000404040404040404040405050501010101050505010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101020101010101010301`, img`\n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n2 2 2 2 2 2 2 2 2 2 \n`, [myTiles.transparency16,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5], TileScale.Sixteen);\n        }\n        return null;\n    })\n\n    helpers._registerFactory(\"tile\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"transparency16\":return transparency16;\n            case \"myTile2\":\n            case \"tile4\":return tile4;\n            case \"platform1\":\n            case \"tile2\":return tile2;\n            case \"platform2\":\n            case \"tile3\":return tile3;\n            case \"branch tile\":\n            case \"tile5\":return tile5;\n            case \"myTile\":\n            case \"tile1\":return tile1;\n        }\n        return null;\n    })\n\n}\n// Auto-generated code. Do not edit.\n"
+  "tilemap.g.jres": "{\n    \"transparency16\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true\n    },\n    \"tile2\": {\n        \"data\": \"hwQQABAAAAAAEBERHREdEQAREdEdER0RANERER0RHREQHREREREdERAdERERER0REdEREdERHRHR0RER3REdEdHREdEdER0R3dER0RERHRHd0RHREREdEdHREdERER0R0NEd0R3RHREQ0RERHdEREQDREREd0RERANERER3REREAERERHREREQ==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"platform1\"\n    },\n    \"tile3\": {\n        \"data\": \"hwQQABAAAAAAERER0REREQARERHRERERABEdEd0REREQER0RHREREdEdHREdERER0RERER0RERERER0RHRERERERHREdEREREBEdEdERERHQHd0R0REREdAR0RHRERER0B3REREdEREQHdERER0RERAd0RHREREREB3REdEREREQHdER0REREQ==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"platform2\"\n    },\n    \"tile5\": {\n        \"data\": \"hwQQABAAAAAAAABABAAAAAAAAEAEAAAAAAAAQAQAAAAAAABABAAAAAAAAEAEAAAAAAAAQAQAAAAAAABABAAAAAAAAEAEAAAAAAAAQAQAAAAAAABABAAAAAAAAEAEAAAAAAAAQAQAAAAAAABABAAAAAAAAEAEAAAAAAAAQAQAAAAAAABABAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"branch tile\"\n    },\n    \"tile1\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"myTile\"\n    },\n    \"tile4\": {\n        \"data\": \"hwQQABAAAADMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"myTile2\"\n    },\n    \"level1\": {\n        \"id\": \"level1\",\n        \"mimeType\": \"application/mkcd-tilemap\",\n        \"data\": \"MTAwYTAwMDgwMDA0MDQwNDA0MDQwNDA0MDQwNDA0MDUwNTA1MDEwMTAxMDEwNTA1MDUwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMjAxMDEwMTAxMDEwMTAzMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjIyMjIyMjIyMg==\",\n        \"tileset\": [\n            \"myTiles.transparency16\",\n            \"myTiles.tile1\",\n            \"myTiles.tile2\",\n            \"myTiles.tile3\",\n            \"myTiles.tile4\",\n            \"myTiles.tile5\"\n        ],\n        \"displayName\": \"level1\"\n    },\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myTiles\"\n    }\n}",
+  "tilemap.g.ts": "// Auto-generated code. Do not edit.\nnamespace myTiles {\n    //% fixedInstance jres blockIdentity=images._tile\n    export const transparency16 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile2 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile3 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile5 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile1 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile4 = image.ofBuffer(hex``);\n\n    helpers._registerFactory(\"tilemap\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"level1\":\n            case \"level1\":return tiles.createTilemap(hex`0a0008000404040404040404040405050501010101050505010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101020101010101010301`, img`\n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n2 2 2 2 2 2 2 2 2 2 \n`, [myTiles.transparency16,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5], TileScale.Sixteen);\n        }\n        return null;\n    })\n\n    helpers._registerFactory(\"tile\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"transparency16\":return transparency16;\n            case \"platform1\":\n            case \"tile2\":return tile2;\n            case \"platform2\":\n            case \"tile3\":return tile3;\n            case \"branch tile\":\n            case \"tile5\":return tile5;\n            case \"myTile\":\n            case \"tile1\":return tile1;\n            case \"myTile2\":\n            case \"tile4\":return tile4;\n        }\n        return null;\n    })\n\n}\n// Auto-generated code. Do not edit.\n"
 }
 ```
 
