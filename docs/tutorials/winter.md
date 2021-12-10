@@ -214,6 +214,7 @@ game.onUpdateInterval(300, function () {
 ```
 
 ```ghost
+let leftie: Sprite = null
 game.onUpdateInterval(300, function () {
     let snowflake = sprites.createProjectileFromSide(assets.image`snowflake1`, randint(-125, 125), 0)
     snowflake.y = randint(30, 80)
