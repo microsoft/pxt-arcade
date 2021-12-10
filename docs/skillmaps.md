@@ -24,6 +24,14 @@
   "directOpen": true
 },
 {
+  "name": "Sing 2",
+  "cardType": "link",
+  "description": "Learn to create a clicker game and quickly rack up the points as you applaud your favorite stars from Sing 2.",
+  "imageUrl": "/static/skillmap/backgrounds/star-map.png",
+  "url": "https://arcade.makecode.com/--skillmap#star",
+  "directOpen": true
+},
+{
   "name": "Shark Attack",
   "cardType": "link",
   "description": "The deep sea is a fascinating place! This skillmap will guide you through the ocean as a shark on a journey to find food!",
