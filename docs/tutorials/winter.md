@@ -42,7 +42,7 @@ into the empty <br/>
 
 ```blocks
 game.onUpdateInterval(300, function () {
-    snowflake = sprites.createProjectileFromSide(assets.image`snowflake1`, 50,50)
+    let snowflake = sprites.createProjectileFromSide(assets.image`snowflake1`, 50,50)
 })
 ```
 
@@ -86,7 +86,7 @@ block over to replace the **vx** value.
 
 ```blocks
 game.onUpdateInterval(300, function () {
-    snowflake = sprites.createProjectileFromSide(assets.image`snowflake1`, randint(-125, 125), 0)
+    let snowflake = sprites.createProjectileFromSide(assets.image`snowflake1`, randint(-125, 125), 0)
 })
 ```
 
