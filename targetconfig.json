@@ -65,7 +65,8 @@
             "racer": "docs:/skillmap/racer",
             "rockstar": "docs:/skillmap/rockstar",
             "forest": "docs:/skillmap/forest",
-            "turkey": "docs:/skillmap/turkey"
+            "turkey": "docs:/skillmap/turkey",
+            "star": "docs:/skillmap/star"
         }
     },
     "galleries": {
@@ -87,6 +88,6 @@
         "John Park's Workshop": "john-parks-workshop"
     },
     "electronManifest": {
-        "latest": "v1.4.36"
+        "latest": "v1.7.24"
     }
 }

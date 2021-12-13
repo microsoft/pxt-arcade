@@ -110,6 +110,9 @@ section.hoc-section-01 .hero {
 #timer {
     margin: 0;
     padding: 0;
+    color: #000000;
+    height: 115px;
+    margin-bottom: 3rem;
 }
 
 #timer > .label {
