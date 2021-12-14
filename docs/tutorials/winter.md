@@ -12,7 +12,7 @@ Help Leftie and Rightie catch snowflakes in their winter wonderland!
 
 ## {Step 2}
 
-First thing's first, start by clicking on your game console to figure out what happens when you press the (A) button.  When you're done, click the **instructions** icon to come back and learn what to do next.
+First things first, start by clicking on your game console to figure out what happens when you press the (A) button.  When you're done, click the **instructions** icon to come back and learn what to do next.
 
 
 ![Here's how to get back to instructions](/static/tutorials/winter/inst-toggle.gif "Toggle to go from console to instructions." )
@@ -42,7 +42,7 @@ into the empty <br/>
 
 ```blocks
 game.onUpdateInterval(300, function () {
-    snowflake = sprites.createProjectileFromSide(assets.image`snowflake1`, 50,50)
+    let snowflake = sprites.createProjectileFromSide(assets.image`snowflake1`, 50,50)
 })
 ```
 
@@ -86,7 +86,7 @@ block over to replace the **vx** value.
 
 ```blocks
 game.onUpdateInterval(300, function () {
-    snowflake = sprites.createProjectileFromSide(assets.image`snowflake1`, randint(-125, 125), 0)
+    let snowflake = sprites.createProjectileFromSide(assets.image`snowflake1`, randint(-125, 125), 0)
 })
 ```
 
@@ -214,6 +214,7 @@ game.onUpdateInterval(300, function () {
 ```
 
 ```ghost
+let leftie: Sprite = null
 game.onUpdateInterval(300, function () {
     let snowflake = sprites.createProjectileFromSide(assets.image`snowflake1`, randint(-125, 125), 0)
     snowflake.y = randint(30, 80)
@@ -295,8 +296,8 @@ rightie.setPosition(140, 104)
 active = leftie
 seesaw = sprites.create(assets.image`tiltRight`, SpriteKind.Player)
 seesaw.bottom = 120
-game.splash("Press the (A) button to", "jump for snowflakes!")
-info.startCountdown(30)
+game.splash("Press the (A) button to", "jump and catch snowflakes!")
+info.startCountdown(15)
 
 
 ```
