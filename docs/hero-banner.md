@@ -5,12 +5,12 @@ Here are some cool activities to get you started with your @boardname@!
 ## Intro Content
 
 ### ~ codecard
-* name: Hour of Code™ 2021
-* description: Hour of Code™ 2021
-* buttonLabel: Show Activity
+* name: Submit to the Game Jam!
+* description: Submit to the Game Jam!
+* buttonLabel: Visit Page
 * imageUrl: /static/hero-gallery/hoc-2021.png
 * cardType: link
-* url: https://aka.ms/arcadeHOC2021
+* url: https://arcade.makecode.com/gamejam/global-2021
 ---
 * name: Build a game for Turkey Day
 * description: Build a game for Turkey Day
