@@ -1,6 +1,6 @@
-# Jump your car
+# Avoid the Obstacles!
 
-## Introduction @unplugged
+## Introduction @showdialog
 
 Use a controller button to jump your car over obstacles on the race course.
 

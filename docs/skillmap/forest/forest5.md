@@ -27,10 +27,10 @@ A HUD (heads-up-display) will help the pilot see how many fires are burning at a
 
 ---
 
-- :binoculars:  Grab the  
-``||hud: show fire HUD <Yes>||``  
-block and add it to **the end** of the  
-``||loops: on start||``  
+- :binoculars:  Grab the <br/>
+``||hud: show fire HUD <Yes>||`` <br/>
+block and add it to **the end** of the <br/>
+``||loops: on start||`` <br/>
 container.
 
 
@@ -76,10 +76,10 @@ Anticipate how quickly fires will spread with the **Fire Danger HUD**.
 
 ---
 
-- :binoculars:  Add  
-``||hud: show danger level HUD <Yes>||``  
-to **the end** of the  
-``||loops: on start||``  
+- :binoculars:  Add <br/>
+``||hud: show danger level HUD <Yes>||`` <br/>
+to **the end** of the <br/>
+``||loops: on start||`` <br/>
 container so you know how quickly your fires are likely to spread.
 
 
@@ -115,10 +115,10 @@ to share information on how much of the forest is still healthy.
 
 ---
 
-- :binoculars:  Grab the the  
-``||hud: show forest HUD <Yes>||``  
-block and add it to **the end** of the  
-``||loops: on start||``  
+- :binoculars:  Grab the the <br/>
+``||hud: show forest HUD <Yes>||`` <br/>
+block and add it to **the end** of the <br/>
+``||loops: on start||`` <br/>
 container to show how much of the forest remains.
 
 
@@ -153,8 +153,8 @@ hud.forest_hud(true)
 
 ---
 
-Now you can see how quickly you're making progress. 
-But the colors of the forest meter don't seem to represent the forest well. 
+Now you can see how quickly you're making progress.
+But the colors of the forest meter don't seem to represent the forest well.
 You can customize those in the next step.
 
 
@@ -212,7 +212,7 @@ What happens when you bump the numbers all the way up to 10 or all the way down 
 
 ## Finale
 
-👏 **You've done it!** 
+👏 **You've done it!**
 
 ---
 
