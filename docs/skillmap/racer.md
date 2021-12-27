@@ -1,8 +1,8 @@
-# Monster Racer!
+# Monster Racer
 * name: Monster Racer
-* description: Create a side-scrolling car racing game to jump over obstacles and get your monster truck to the finish line.
-* backgroundurl: /static/skillmap/rockstar/backgrounds/rockstar-comp.png
-* bannerurl: /static/skillmap/rockstar/rockstar3.gif
+* description: Create a side-scrolling monster truck racing game so you can jump obstacles and get your monster truck to the finish line.
+* backgroundurl: /static/skillmap/rockstar/backgrounds/racer-comp.png
+* bannerurl: /static/skillmap/rockstar/racer.gif
 * primarycolor: #ff93c4
 * secondarycolor: #fdf60c
 * tertiarycolor: #161112
@@ -10,24 +10,24 @@
 * highlightcolor: #ffffff
 * completednodecolor: #3b3738
 
-## rockstar
-* name: 80's Rockstar Maze
+## Monster Racer
+* name: Monster Racer
 * layout: manual
 
 ### racer1
-* name: Trapped Backstage
+* name: Playing with Monsters
 * type: tutorial
-* description: Create a rockstar backstage after the show, then keep an eye on them as they navigate the path!
+* description: Design characters for your own version of the Monster Racer game.
 * url: /skillmap/rockstar/racer1
-* tags: easy, sprites, tiles
+* tags: easy, sprites, design
 * imageUrl: /static/skillmap/racer/racer1.gif
 * next: racer2
 * position: 1 -1
 
 ### racer2
-* name: Gather Your Gear
+* name: Ready, Set, Go!
 * type: tutorial
-* description: Write the code to give your rockstar points for gathering all their gear before they head out on tour.
+* description: Get your monster truck moving and try to make it to the end of your tilemap.
 * url: /skillmap/rockstar/racer2
 * tags: easy, tiles, events
 * imageUrl: /static/skillmap/racer/racer2.gif
@@ -35,9 +35,9 @@
 * position: 2 -1
 
 ### racer3
-* name: Avoid the Fans!
+* name: Avoid the Obstacles!
 * type: tutorial
-* description: Code some crazed fans who will steal points as souveniers unless the rockstar can avoid them!
+* description: Code actions to help your racer survive the pits and perils of the cave.
 * url: /skillmap/rockstar/racer3
 * tags: easy, enemies, overlap, lives
 * imageUrl: /static/skillmap/racer/racer3.gif

@@ -30,16 +30,16 @@ code once.
 
 ---
 
-- :redo:  Drag the
-``||loops:repeat [4] times||``
-loop container into **the end** of the
-``||loops:on start||``
+- :redo:  Drag the <br/>
+``||loops:repeat [4] times||`` <br/>
+loop container into **the end** of the <br/>
+``||loops:on start||`` <br/>
 container.
 
-- :paper plane:  Add
-``||variables:set [mySprite2] to sprite [ ] of kind [Player]||``
-to the empty
-``||loops:repeat [4] times||``
+- :paper plane:  Add <br/>
+``||variables:set [mySprite2] to sprite [ ] of kind [Player]||`` <br/>
+to the empty <br/>
+``||loops:repeat [4] times||`` <br/>
 container.
 
 
@@ -62,10 +62,10 @@ for (let index = 0; index < 4; index++) {
 ## 4. Creating fire
 
 
-- :mouse pointer:  In the
-``||variables:set [mySprite2] to sprite [ ] of kind [Player]||``
-block, click
-``||variables:mySprite2||``
+- :mouse pointer:  In the <br/>
+``||variables:set [mySprite2] to sprite [ ] of kind [Player]||`` <br/>
+block, click <br/>
+``||variables:mySprite2||`` <br/>
 and use the dropdown menu to rename the sprite **newFire**.
 
 - :paint brush:  Now click the empty grey box and toggle to **My Assets** to select the **fire** sprite.
@@ -99,10 +99,10 @@ Let's scatter flames randomly around the map.
 
 ---
 
-- :tree:  Grab
-``||scene:place [mySprite] on top of random [ ]||``
-and snap it into **the end** of the
-``||loops:repeat [4] times||``
+- :tree:  Grab <br/>
+``||scene:place [mySprite] on top of random [ ]||`` <br/>
+and snap it into **the end** of the <br/>
+``||loops:repeat [4] times||`` <br/>
 loop container.
 
 - :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:newFire||``.
@@ -153,8 +153,8 @@ When each sprite of kind **Fire** is created, we want to make it sparkle using e
 
 ---
 
-- :paper plane:   Drag an
-``||sprites:on created [sprite] of kind [Player]||``
+- :paper plane:   Drag an <br/>
+``||sprites:on created [sprite] of kind [Player]||`` <br/>
 container into an empty area of the workspace.
 
 - :mouse pointer:   Change kind ``||sprites:Player||`` to ``||sprites:Fire||``.
@@ -174,17 +174,17 @@ sprites.onCreated(SpriteKind.Fire, function (sprite) {
 
 ## 8. Add the Spark
 
-- :paper plane:   Drag
-``||sprites:[mySprite] start [spray] effect||``
-into the empty
-``||sprites:on created [sprite] of kind [Fire]||``
+- :paper plane:   Drag <br/>
+``||sprites:[mySprite] start [spray] effect||`` <br/>
+into the empty <br/>
+``||sprites:on created [sprite] of kind [Fire]||`` <br/>
 container.
 
 - :mouse pointer:   Change the effect from ``||sprites:spray||`` to ``||sprites:fire||``.
 
-- :mouse pointer:   Make sure the effects attatch to the correct sprite by dragging the ``||variables:sprite||`` value block out of the top of the
-``||sprites:on created [sprite] of kind [Fire]||``
-container to replace
+- :mouse pointer:   Make sure the effects attatch to the correct sprite by dragging the ``||variables:sprite||`` value block out of the top of the <br/>
+``||sprites:on created [sprite] of kind [Fire]||`` <br/>
+container to replace <br/>
 ``||variables:mySprite||``.
 
 ---

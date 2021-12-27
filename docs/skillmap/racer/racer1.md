@@ -1,4 +1,4 @@
-# Play Monster Racer
+# Playing with Monsters
 ### @preferredEditor asset
 
 
@@ -10,83 +10,56 @@ Then, you can customize the characters to add some personal flair.
 ![Car race game play](/static/recipes/side-scroller/car-race.gif)
 
 
-## Step 1 - Play the Game
+## 2. Play the Game
 
-Click the game simulator in the bottom corner to pop open your game console. Then, use the arrows and the (A) button to steer your truck to the end.
+- :mouse pointer: Click the game simulator in the bottom corner to pop open your game console.  <br/>
+Use the arrows and the (A) button to steer your truck to the end.
+
+- :mouse pointer: When you're ready to move on to the next set of instructions, click **Next**.
+
+
+## 3. Create a Monster
+
+It's time to customize your "monster" truck!
+
+- :paint brush: Click **truck1** and use the **Image Editor** to change the colors, remove items, or add features.
+
+Now play your game again. Does your new truck fit the game?
 
 
 
 
-## Step 2 - Create the tilemap
+## 4. Beware the Enemy
 
-Now let’s use a tile map to represent the road for our game. From the ``||scene:Scene||`` Toolbox drawer, drag a ``||scene:set tilemap||`` block into the ``||loops:on start||`` block, after the ``||scene:set background color||`` block.
+Now you can edit the enemy!
 
-![Set tilemap](/static/recipes/side-scroller/set-tilemap.png)
+- :paint brush: Click the **enemy** sprite to turn the flying eyeball into something your friends fear. Will it be a bat? A flying snake? Carbs?
 
-```blocks
-scene.setBackgroundColor(6)
-tiles.setTilemap(tilemap`level_0`)
-```
 
-## Step 3 - Set the canvas size
 
-In the ``||scene:set tilemap||`` block, click on the grey square to open up the Tilemap Editor.
+## 5. Set the Scene
 
-In the bottom left corner, set the dimensions for the canvas to **50** by **8** pixels. This will make our game background very wide and short.
+Finally, you can change the scene where the race takes place.
 
-![Canvas size](/static/recipes/side-scroller/canvas-size.png)
+- :paint brush: Click the **background** tile and edit it in any way you like.  Want to add or remove trees? Do whatever you want!
 
-## Step 4 - Draw the road
 
-Select a **tile** from the Tile Gallery or draw your own tile to represent the road for your race. You will notice that there is a road tile in the **Miscellaneous** part of the Tile Gallery that you can use.
+## 6. Play Again
 
-Click on the **Pencil** icon to draw the road along the bottom of your Tilemap canvas.
+Click the game window in the lower corner to open the console again.  <br/>
+Play your game one more time using the arrow keys and (A) button. How do you like it?
 
-![Road tile](/static/recipes/side-scroller/road-tile.png)
+_💡 If you are using the keyboard to play, try hitting the **space bar** instead of the (A) button and use the W, A, S, D keys instead of arrows._
 
-## Step 5 - Create obstacles
 
-Go back to the Tilemap Editor again by clicking on the square in the ``||scene:set tilemap||`` block. This time we are going to create an obstacle for your car to jump over.
 
-Select a tile from the Gallery or draw your own tile to represent an obstacle – this could be water, hot lava or spikes!
+## Finale
 
-Place up to three obstacle tiles in a row at various points in the middle of your road.
+Congrats! You've customized the Monster Racer game!
 
-![Obstacles](/static/recipes/side-scroller/obstacles.png)
+Click **Done** to return to the skillmap and move on to the next level where we'll show you how to make the entire game your own using code!
 
-## Step 6 - Create finish line
 
-Open up the Tilemap Editor again by clicking on the square in the ``||scene:set tilemap||`` block. Now we are going to create the finish line for our race.
-
-Select a tile from the Gallery or draw your own tile to represent the finish line and draw it along the right side of our tilemap canvas.
-
-![Finish line](/static/recipes/side-scroller/finish-line.png)
-
-## Step 7 - Draw the walls
-
-Go one more time to the Tilemap Editor. The last thing we’re going to do in our tilemap is to add walls on the road for our car to drive on.
-
-Click on the **Wall** tool, then draw along the road tiles.
-
-![Walls](/static/recipes/side-scroller/walls.png)
-
-## Step 8 - Finished race course
-
-You should see some of your new race course in simulator. Not all of the course is visible right now but the rest of the course will appear as your car moves forward.
-
-```blocks
-scene.setBackgroundColor(6)
-tiles.setTilemap(tilemap`level`)
-```
-
-## Conclusion @showdialog
-
-Now, let's make a race car and give it some motion properties to move it along the race course you just created.
-
-|      |
-|:----:|
-| [![Create car](/static/recipes/side-scroller/02-create-car.gif)](#recipe:/recipes/side-scroller/02-create-car) |
-| [**Create a race car**](#recipe:/recipes/side-scroller/02-create-car) |
 
 
 ```template
