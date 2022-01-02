@@ -61,9 +61,9 @@ for (let index = 0; index < 4; index++) {
 ## 4. Wind and Grass
 
 
-- :circle:  On your own, can you find the blocks that set the
-**strength of the wind** and the
-**dryness of the grass**
+- :circle:  On your own, can you find the blocks that set the<br/>
+**strength of the wind** and the<br/>
+**dryness of the grass**<br/>
 and add them to **the top** of the ``||loops: on start||`` container?
 
 _💡 The three variables you just added can all be changed to make your game easier or more difficult!_
@@ -102,7 +102,7 @@ Now that the environment is set, we can add code to make the fires spread.
 
 - :circle:   Drop an <br/>
 ``||game:on game update||`` <br/>
-container into an empty area of your workspace to run
+container into an empty area of your workspace to run<br/>
 code each time the game updates its status.
 
 - :mouse pointer:   From the ``||sprites:Sprites||`` category, grab <br/>

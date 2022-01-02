@@ -26,8 +26,8 @@ Can you remember which chunk of code creates each action?
 
 ---
 
-- :binoculars: Look for your  
-``||game:game over <WIN>||``  
+- :binoculars: Look for your<br/>
+``||game:game over <WIN>||``<br/>
 block inside of the **Player overlaps chest1** container.
 
 - :mouse pointer: Click the image of **chest1** and change it to **chest2**.
@@ -45,8 +45,8 @@ When we get to the first chest, we want to take the player to a new level.
 
 ---
 
-- :tree: Drag  
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
+- :tree: Drag<br/>
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``<br/>
 into an empty area of the workspace.
 
 - :paint brush: Click the empty square and choose **chest1**.
@@ -64,8 +64,8 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, lo
 ## 5. Change of Scenery
 
 
-- :tree: To show the player that the level has changed, drag  
-``||scene:set background image to [ ]||``  
+- :tree: To show the player that the level has changed, drag<br/>
+``||scene:set background image to [ ]||``<br/>
 into the empty **Player overlaps chest1** container.
 
 - :paint brush: Click the grey square and toggle to **My Assets** to choose **background2**.
@@ -81,8 +81,8 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, lo
 ## 6. Change of Location
 
 
-- :tree: To change the level tilemap, drag  
-``||scene:set tilemap to [ ]||``  
+- :tree: To change the level tilemap, drag<br/>
+``||scene:set tilemap to [ ]||``<br/>
 to **the end** of the **Player overlaps chest1** container.
 
 - :paint brush: Click the grey square and toggle to **My Assets** to choose **level2**.
@@ -103,12 +103,12 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, lo
 
 ---
 
-- :sync: To carry your character back to the beginning of the level,  drag the  
-``||animation:animate [mySprite] with [fly to center]||``  
+- :sync: To carry your character back to the beginning of the level,  drag the<br/>
+``||animation:animate [mySprite] with [fly to center]||``<br/>
 block into **the end** of the **Player overlaps chest1** container.
 
-- :paper plane: Drag  
-``||sprites:[mySprite] say [":)"]||``  
+- :paper plane: Drag<br/>
+``||sprites:[mySprite] say [":)"]||``<br/>
 into **the end** of the **Player overlaps chest1** container.
 
 - :mouse pointer: Change the text to say **Level 2!** and click the white plus **(+)** to the right of the block so that the text disappears after 500 ms.
@@ -140,7 +140,7 @@ Make your way to the treasure chest. You should be transported to a new level!
 
 ## Finished
 
-**🥳 Congratulations 🥳**  
+**🥳 Congratulations 🥳**<br/>
 You did it!!  Can you play your game all the way to the end?
 
 ---

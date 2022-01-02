@@ -32,12 +32,12 @@ Let's animate Mama Dino!
 ## {Step 4}
 
 
-- :chevron down:  In the toolbox, click **Advanced** to reveal the  
+- :chevron down:  In the toolbox, click **Advanced** to reveal the<br/>
 ``||animation:Animation||`` category.
 
-- :sync:  Drag  
-``||animation:animate [mySprite]||``  
-into **the bottom** of the  
+- :sync:  Drag<br/>
+``||animation:animate [mySprite]||``<br/>
+into **the bottom** of the<br/>
 ``||loops:on start||`` container.
 
 - :mouse pointer:  Click the grey toggle at the bottom to switch looping to `<ON>`.
@@ -83,7 +83,7 @@ true
 
 ---
 
-- :paint brush:  To select an animation, click the grey box in  
+- :paint brush:  To select an animation, click the grey box in<br/>
 ``||animation:animate [mySprite]||`` and toggle to **My Assets**.
 
 - :mouse pointer:  Select **Mama Moving** and click **Done**.
@@ -109,10 +109,10 @@ true
 
 ---
 
-- :mouse pointer:  You can make your animation faster by changing the 
+- :mouse pointer:  You can make your animation faster by changing the<br/>
 **interval** to a lower number. Try using **100** or **200**.
 
-- :mouse pointer:  If you'd like to slow your animation down, 
+- :mouse pointer:  If you'd like to slow your animation down,<br/>
 choose a longer **interval**.
 
 
@@ -135,7 +135,7 @@ true
 ## {Step 7}
 
 
-**Now try your game on the game screen**  
+**Now try your game on the game screen**<br/>
 🎮 🎮 🎮 
 
 How cool is that?!?
@@ -151,8 +151,8 @@ You can follow the same steps to animate the baby.
 ---
 
 - :sync:  Drag  
-``||animation:animate [mySprite]||``  
-into the ``||loops:forever||`` loop where your main ``||variables:projectile||`` is created, 
+``||animation:animate [mySprite]||``<br/>
+into the ``||loops:forever||`` loop where your main ``||variables:projectile||`` is created,<br/>
 and snap it **just above** the ``||loops:pause [1000]||`` block.
 
 - :mouse pointer:  Change ``||variables:mySprite||`` to ``||variables:projectile||``.
@@ -181,7 +181,7 @@ true
 ## {Step 9}
 
 
-**Try your project on the game screen!**  
+**Try your project on the game screen!**<br/>
 🎮 🎮 🎮 
 
 Looking good!
@@ -197,7 +197,7 @@ Now you can do the same thing for your enemy sprite!
 ---
 
 - :sync:  Drag  
-``||animation:animate [mySprite]||``  
+``||animation:animate [mySprite]||``<br/>
 into the ``||loops:forever||`` loop where ``||variables:projectile2||`` is created, and snap it **just above** the ``||loops:pause [2100]||`` block.
 
 - :mouse pointer:  Change ``||variables:mySprite||`` to ``||variables:projectile2||``.

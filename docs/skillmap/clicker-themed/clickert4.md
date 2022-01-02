@@ -47,11 +47,11 @@ upgrade the power.
 
 ---
 
-- :mouse pointer:  From ``||logic:Logic||``, choose the top
-``||logic:if <true> then||`` container and drag it into the top of your
+- :mouse pointer:  From ``||logic:Logic||``, choose the top<br/>
+``||logic:if <true> then||`` container and drag it into the top of your<br/>
 **on B button pressed** container already in the workspace.
 
-- :mouse pointer:  To compare values, open the ``||logic: Logic||``
+- :mouse pointer:  To compare values, open the ``||logic: Logic||``<br/>
 category and grab a ``||logic: [0] [<] [0]||`` to replace **`<true>`**.
 
 
@@ -163,7 +163,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 **⚡️ Amazing ⚡️**
 
-Now you have a clicker game with a simple shop.  Give it a try on the game screen.
+Now you have a clicker game with a simple shop. Give it a try on the game screen.
 
 Click **Done** to return to the main page where you can share your game
 with family and friends!

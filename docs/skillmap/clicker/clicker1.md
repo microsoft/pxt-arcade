@@ -57,8 +57,8 @@ Let's start building the scoreboard by adding a background color.
 
 ---
 
-► Choose a background color by opening the ``||scene:Scene||`` category and dragging
-``||scene: set background color to [ ]||`` into the ``||loops:on start||``
+► Choose a background color by opening the ``||scene:Scene||`` category and dragging<br/>
+``||scene: set background color to [ ]||`` into the ``||loops:on start||``<br/>
 container that's already in the workspace.
 
 ► When you're done, click **> Next** to see the next step.
@@ -97,7 +97,7 @@ Add a [__*splash screen*__](#splasht "A full-screen message that shows while a p
 
 ---
 
-► Open the ``||game:Game||`` category and
+► Open the ``||game:Game||`` category and<br/>
 drag the ``||game: splash [" "]||`` block into the bottom of the **on start**
 container.
 
@@ -121,11 +121,11 @@ the score when the **Ⓐ** button is clicked.
 
 ---
 
-► From the ``||controller:Controller||`` category, grab the
-``||controller: on [A] button [pressed]||`` container and drop it into an
+► From the ``||controller:Controller||`` category, grab the<br/>
+``||controller: on [A] button [pressed]||`` container and drop it into an<br/>
 empty spot in the workarea.
 
-► From ``||info:Info||``, drag out the ``||info:change score by [1]||`` block
+► From ``||info:Info||``, drag out the ``||info:change score by [1]||`` block<br/>
 and snap it into the new container.
 
 
@@ -144,8 +144,8 @@ the player a clear endpoint.
 
 ---
 
-►  Open the ``||info:Info||`` category and
-drag the ``||info: start countdown [10] (s)||`` block into the bottom of the
+►  Open the ``||info:Info||`` category and<br/>
+drag the ``||info: start countdown [10] (s)||`` block into the bottom of the<br/>
 ``||loops:on start||`` container.
 
 
@@ -160,7 +160,7 @@ info.startCountdown(10)
 
 **🎉 Congrats 🎉**
 
-You have your very own clicker game!  Play it on the game screen and see how many clicks you can get.
+You have your very own clicker game! Play it on the game screen and see how many clicks you can get.
 
 Click **Done** to return to the main page where you can share your game
 with family and friends to compare scores!

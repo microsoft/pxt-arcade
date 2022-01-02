@@ -108,13 +108,13 @@ Let's allow the player to buy a more powerful clicker when they press the
 
 ---
 
-► From ``||controller:Controller||``, grab an
-``||controller:on [A] button [pressed]||`` container and drop it into
-an empty area in the workspace.
-*Note: The block will appear faded at first because it conflicts with the other
+► From ``||controller:Controller||``, grab an<br/>
+``||controller:on [A] button [pressed]||`` container and drop it into<br/>
+an empty area in the workspace.<br/>
+*Note: The block will appear faded at first because it conflicts with the other<br/>
 **on button pressed** container in the workspace.*
 
-► Click **A** in the empty **on button pressed** container, and choose
+► Click **A** in the empty **on button pressed** container, and choose<br/>
 **B** from the dropdown menu.
 
 
@@ -129,16 +129,16 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 Adding another increment to the **Ⓑ** button would only allow the score to
 increase faster one time for each click.
 
-To make a permanent change, we'll need to add a
+To make a permanent change, we'll need to add a<br/>
 [__*variable*__](#varied "a label that holds the place for something that can change").
 
 ---
 
-► Open the ``||variables:Variables||`` category and click the button
+► Open the ``||variables:Variables||`` category and click the button<br/>
 to **[Make a Variable]**.
 
-► In the prompt, type the name of the variable that will keep track of
-how powerful your clicker is.  For the rest of this tutorial, we'll refer to
+► In the prompt, type the name of the variable that will keep track of<br/>
+how powerful your clicker is.  For the rest of this tutorial, we'll refer to<br/>
 that variable as **power**.
 
 ► Click **OK** to save your variable and close the window.
@@ -150,16 +150,16 @@ that variable as **power**.
 
 We've got a variable, but before we can use it, it needs to mean something.
 
-Let's [__*initialize*__](#init "Set the starting value")
+Let's [__*initialize*__](#init "Set the starting value")<br/>
 **power** by setting a value before it's used.
 
 ---
 
-► From ``||variables:Variables||``, grab the
-``||variables:set [power] to [0]||`` block and add it to the end of the
+► From ``||variables:Variables||``, grab the<br/>
+``||variables:set [power] to [0]||`` block and add it to the end of the<br/>
 ``||loops:on start||`` container.
 
-► Change **0** to **1** to make it easy to replace the increment value
+► Change **0** to **1** to make it easy to replace the increment value<br/>
 we're already relying on.
 
 
@@ -198,11 +198,11 @@ so that every click responds to our changing values.
 
 ---
 
-► Open the ``||variables:Variables||`` category and grab a
+► Open the ``||variables:Variables||`` category and grab a<br/>
 ``||variables:power||`` value block.
 
-► Drop ``||variables:power||`` into the **change score by** block (inside of
-the **on A button pressed** container),
+► Drop ``||variables:power||`` into the **change score by** block (inside of<br/>
+the **on A button pressed** container),<br/>
 replacing the number **1**.
 
 ```blocks
@@ -223,8 +223,8 @@ larger after **Ⓑ** is pressed.
 
 ---
 
-► Open the ``||variables:Variables||`` category. Grab a
-``||variables:change [power] by [1]||`` variable and snap it into the
+► Open the ``||variables:Variables||`` category. Grab a<br/>
+``||variables:change [power] by [1]||`` variable and snap it into the<br/>
 empty **on B button pressed** container.
 
 ```blocks
@@ -244,11 +244,11 @@ Finally, let's add a block to tell the user that they've got extra powers!
 
 ---
 
-► From ``||game:Game||``, grab
-``||game:show long text [" "] [bottom]||`` and snap it into the
+► From ``||game:Game||``, grab<br/>
+``||game:show long text [" "] [bottom]||`` and snap it into the<br/>
 end of the **on B button pressed** container.
 
-► Write your text, then play around with the location options to see where you like
+► Write your text, then play around with the location options to see where you like<br/>
 your message best.
 
 ```blocks

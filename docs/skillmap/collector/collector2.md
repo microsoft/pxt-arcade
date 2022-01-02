@@ -204,8 +204,8 @@ forever(function () {
 
 ## {Intro @showdialog}
 
-You've made a collector game, now let's add some
-special touches to make it even more fun.
+You've made a collector game, now let's add some<br/>
+special touches to make it even more fun.<br/>
 
 ![Coin Collecting](/static/skillmap/collector/collector-activity-2.gif "Make it special!" )
 
@@ -213,15 +213,15 @@ special touches to make it even more fun.
 
 ## {Step 1}
 
-The code for a basic collector is already in the workspace, but a few extra
+The code for a basic collector is already in the workspace, but a few extra<br/>
 blocks could make it amazing.
 
 ---
 
-► From the ``||scene:Scene||`` category, grab a
-``||scene:set background color to [ ]||``
-block and drag it to the **beginning** of the **on start** container.  Click the
-grey box to choose a color that makes you happy.
+► From the ``||scene:Scene||`` category, grab a<br/>
+``||scene:set background color to [ ]||``<br/>
+block and drag it to the **beginning** of the **on start** container.  Click the<br/>
+grey box to choose a color that makes you happy.<br/>
 
 
 ```blocks
@@ -253,14 +253,14 @@ controller.moveSprite(mySprite, 0, 100)
 
 ## {Step 2}
 
-**If the game gets wild, our sprite might leave the screen.**
+**If the game gets wild, our sprite might leave the screen.**<br/>
 Let's prevent that.
 
 ---
 
-► From the ``||sprites:Sprites||`` category, grab a
-``||sprites:set [mySprite] stay in screen <ON>||``
-block and drag it into the **end** of the **on start** container.
+► From the ``||sprites:Sprites||`` category, grab a<br/>
+``||sprites:set [mySprite] stay in screen <ON>||``<br/>
+block and drag it into the **end** of the **on start** container.<br/>
 
 
 ```blocks
@@ -295,12 +295,12 @@ mySprite.setStayInScreen(true)
 
 **🕔 Does this game feel long to you? 🕔**
 
-We haven't added a way to win or lose.
+We haven't added a way to win or lose.<br/>
 Let's do that now by adding a countdown timer.
 
 ---
 
-► From ``||info:Info||``,  choose the ``||info:start countdown [10] (s)||``
+► From ``||info:Info||``,  choose the ``||info:start countdown [10] (s)||``<br/>
 and snap it into the end of the **on start** container.
 
 ► Change **10** to **15** for more playtime goodness.
@@ -340,10 +340,10 @@ Right now, when time runs out, you lose the game. We can change that!
 
 ---
 
-► From ``||info:Info||``,  grab the ``||info:on countdown end||``
-container and drop it into a blank area of the workspace.
+► From ``||info:Info||``,  grab the ``||info:on countdown end||``<br/>
+container and drop it into a blank area of the workspace.<br/>
 
-► Now, from ``||game:Game||``, pick a ``||game:game over <LOSE>||`` block
+► Now, from ``||game:Game||``, pick a ``||game:game over <LOSE>||`` block<br/>
 and snap it into the empty **on countdown end** container.
 
 ► Toggle **`<LOSE>`** to **`<WIN>`**.
