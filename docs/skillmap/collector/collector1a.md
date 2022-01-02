@@ -13,8 +13,8 @@ Let's give your hero a world to protect!
 
 ---
 
-► From the ``||scene:Scene||`` category, grab 
-``||scene:set background image to [ ]||`` block and snap it in to the **top**
+► From the ``||scene:Scene||`` category, grab<br/>
+``||scene:set background image to [ ]||`` block and snap it in to the **top**<br/>
 of the **on start** container in the workspace.
 
 
@@ -151,9 +151,10 @@ scene.setBackgroundImage(img`
 
 ---
 
-► Click on the grey square in the ``||scene:set background image to [ ]||`` block to open the **Image Editor**.
+► Click on the grey square in the ``||scene:set background image to [ ]||``<br/>
+block to open the **Image Editor**.
 
-► Using the **Image Editor**, draw a background image for your game (or select one 
+► Using the **Image Editor**, draw a background image for your game (or select one<br/>
 from the **Gallery**).
 
 ```block
@@ -370,16 +371,16 @@ let mySprite2 = sprites.create(img`
 
 ---
 
-► From ``||sprites:Sprites||``, drag ``||sprites:set [mySprite] position to x [0] y [0]||`` 
+► From ``||sprites:Sprites||``, drag ``||sprites:set [mySprite] position to x [0] y [0]||``<br/>
 to the **end** of the **on start** container. 
 
 ► Change **mySprite** to **mySprite2**.
 
-► Change the **x** and **y** values to whatever numbers give you the look that you want 
+► Change the **x** and **y** values to whatever numbers give you the look that you want<br/>
 **OR** you can use ``||math: pick random [0] to [10]||`` value blocks to add an element of surprise.
 
 ---
- **Hint:** Remember that the **x** dimension (horizontal width) runs from 0 to 160 pixels, 
+ **Hint:** Remember that the **x** dimension (horizontal width) runs from 0 to 160 pixels,<br/>
  while the **y** dimension (vertical height) runs from 0 to 120 pixels. 
 
 ```block

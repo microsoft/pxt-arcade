@@ -22,13 +22,13 @@ Can you connect each chunk of code to the actions it creates?
 
 ## 3. Step to the Right
 
-**➡️ Walking to the Right**  
+**➡️ Walking to the Right**<br/>
 Let's make our character walk to the right when the right arrow is pressed.
 
 ---
 
-- :game: To add code that runs when the player moves to the right, drag  
-``||controller:on [A] button [pressed]||``  
+- :game: To add code that runs when the player moves to the right, drag<br/>
+``||controller:on [A] button [pressed]||``<br/>
 into an empty area of the workspace.
 
 - :mouse pointer: Click ``||controller:A||`` and choose ``||controller:right||`` from the dropdown.
@@ -44,10 +44,10 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 
 - :chevron down: Click the **Advanced** category in the toolbar to reveal the ``||animation:Animation||`` category.
 
-- :sync: Drag the large  
-``||animation:animate [mySprite]||``  
-block into the empty  
-``||controller:on [right] button [pressed]||``  
+- :sync: Drag the large<br/>
+``||animation:animate [mySprite]||``<br/>
+block into the empty<br/>
+``||controller:on [right] button [pressed]||``<br/>
 container.
 
 - :paint brush: Click the empty grey box and toggle to **My Assets** to choose the **walk right** animation.
@@ -107,13 +107,13 @@ Now we need an animation that runs when the monkey jumps!
 
 ---
 
-- :binoculars: Find your  
-``||controller:on [up] button [pressed]||``  
+- :binoculars: Find your<br/>
+``||controller:on [up] button [pressed]||``<br/>
 container that's already in the workspace.
 
-- :sync: Grab an  
-``||animation:animate [mySprite]||``  
-block and drag it into **the end** of the  
+- :sync: Grab an<br/>
+``||animation:animate [mySprite]||``<br/>
+block and drag it into **the end** of the<br/>
 ``||controller:on [up] button [pressed]||``  
 container.
 

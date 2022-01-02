@@ -22,13 +22,13 @@ Can you connect each chunk of code to the actions it creates?
 
 ## 3. Fried Monkey?
 
-**💥 STAND BACK 💥**  
+**💥 STAND BACK 💥**<br/>
 Make sure to get the monkey out of the way before the big bang!
 
 ---
 
-- :paper plane: Drag the  
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``   
+- :paper plane: Drag the<br/>
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``<br/>
 container into an empty area of the workspace.
 
 - :mouse pointer: Click the second kind ``||sprites:Player||`` and change it to ``||sprites:Projectile||``.
@@ -42,8 +42,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ## 4. Remove the Projectile
 
-- :paper plane: Drag  
-``||sprites:destroy [mySprite]||``  
+- :paper plane: Drag<br/>
+``||sprites:destroy [mySprite]||``<br/>
 into the empty **on Projectile overlaps Player** container.
 
 - :mouse pointer: Drag the ``||variables:otherSprite||`` value block out of the title bar to replace ``||variables:mySprite||``.
@@ -72,8 +72,8 @@ Don't forget to remove HP from the monkey!
 
 ---
 
-- :id card: Drag  
-``||info:change life by [-1]||``  
+- :id card: Drag<br/>
+``||info:change life by [-1]||``<br/>
 to **the end** of the **on Projectile overlaps Player** container.
 
 
@@ -102,7 +102,7 @@ You should be able to jump with the up arrow, place tiles with the (A) button, a
 
 ## 7. Remove More Tiles
 
-**💥 Kablow 💥**  
+**💥 Kablow 💥**<br/>
 This game could have even more options if we remove **bounce** crates and **poison pit** tiles with explosives, too.
 
 ---

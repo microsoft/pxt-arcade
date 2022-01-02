@@ -150,11 +150,11 @@ Let's start by adding a new kind of projectile.
 
 ---
 
-► Right-click on the ``||loops:forever||`` loop container (the one that already holds
-the code for your main projectile) and choose **Duplicate** from the
+► Right-click on the ``||loops:forever||`` loop container (the one that already holds<br/>
+the code for your main projectile) and choose **Duplicate** from the<br/>
 top of the menu.
 
-► Inside that new loop, click on the ``||variables: projectile||`` variable in the
+► Inside that new loop, click on the ``||variables: projectile||`` variable in the<br/>
 **set projectile to** block. A dropdown will appear, allowing you to
 select **New variable...** .
 
@@ -232,7 +232,7 @@ fly out at about the same rate. Let's add some variation.
 
 ► Inside the first block in the **myEnemy** ``||loops:forever||`` loop, change the **vx** for **myEnemy** to **-110**
 
-► Rocks should also be less frequent than coins.  Let's change the
+► Rocks should also be less frequent than coins.  Let's change the<br/>
  ``||loops:pause (pick random [1000] to [2000])ms||`` to stay between **1500** and **2500** ms.
 
 
@@ -273,10 +273,10 @@ Let's make sure the code knows the difference between a projectile and myEnemy.
 
 ---
 
-► From ``||sprites:Sprites||``, grab a ``||sprites:set [mySprite2] kind to [Player]||``
+► From ``||sprites:Sprites||``, grab a ``||sprites:set [mySprite2] kind to [Player]||``<br/>
 block and snap it just **ABOVE** the **pause** block in the enemy's **forever** loop container.
 
-► In the new block, change **mySprite2** to **myEnemy** and change **Player**
+► In the new block, change **mySprite2** to **myEnemy** and change **Player**<br/>
 to **Enemy**.
 
 
@@ -318,14 +318,13 @@ What are we going to do about it?
 
 ---
 
-► Duplicate the ``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``
- container that's already in the
-workspace.
+► Duplicate the ``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``<br/>
+container that's already in the workspace.
 
-► In the header of the new container,
+► In the header of the new container,<br/>
 change the second **kind** from **Projectile** to **Enemy**.
 
-► Change the effect from **rings** to something more meaningful for your
+► Change the effect from **rings** to something more meaningful for your<br/>
 enemy. (**Fire** is impressive.)
 
 
@@ -346,12 +345,11 @@ At this point, the player is still awarded points when they hit a rock.
 
 ---
 
-► Delete the ``||info:change score by [1]||`` block from the **on overlaps Enemy**
+► Delete the ``||info:change score by [1]||`` block from the **on overlaps Enemy**<br/>
 container.
 
-► From ``||info: Info||``, grab a ``||info:change life by [-1]||`` block and
-snap it into the end of the **on overlaps Enemy**
-container.
+► From ``||info: Info||``, grab a ``||info:change life by [-1]||`` block and<br/>
+snap it into the end of the **on overlaps Enemy** container.
 
 
 

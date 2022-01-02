@@ -129,7 +129,7 @@ This block adds a [__*splash screen*__](#splasht "A full-screen message that sho
 
 **Let's see how this works**
 
-- :tree:  Find the
+- :tree:  Find the<br/>
 ``||scene:set background color to [ ]||`` block and snap it at the top of
 the **on start** container already in the workspace.
 
@@ -237,8 +237,8 @@ mySprite.startEffect(effects.spray)
 
 ---
 
-- :paper plane:   Find a ``||sprites:[mySprite] start [spray] effect ⊕||``
-block and snap it into the  ``||controller:on [A] button pressed||``
+- :paper plane:   Find a ``||sprites:[mySprite] start [spray] effect ⊕||``<br/>
+block and snap it into the  ``||controller:on [A] button pressed||``<br/>
 container...then choose your own effect!
 
 - :mouse pointer:   Click the **⊕** to the right of the new block to pop open an extra
@@ -266,7 +266,7 @@ but they always need another block to snap into. Value blocks look something lik
 
 ---
 
-- :calculator:   From the ``||math:Math||`` category, grab a ``||math: pick random [0] to [10]||``
+- :calculator:   From the ``||math:Math||`` category, grab a ``||math: pick random [0] to [10]||``<br/>
 value block and snap it into the number field on the effect block.
 
 - :mouse pointer:   Change the random range to pick between **100** and **600**.

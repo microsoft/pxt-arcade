@@ -29,13 +29,13 @@ When the player overlaps a _poison pit_ tile, let's trigger a "GAME OVER" messag
 ---
 
 - :tree: Drag the  
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``<br/>
 container into an empty area of the workspace.
 
 - :paint brush: Click the checkerboard image and change it to the **poison pit** tile.
 
-- :circle: Snap a  
-``||game:game over <LOSE>||``  
+- :circle: Snap a<br/>
+``||game:game over <LOSE>||``<br/>
 block into the new container.
 
 
@@ -63,14 +63,14 @@ When your monkey lands on the poison pit, it should end the game as a loss.
 
 
 - :tree: Drag another  
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``<br/>
 container into the workspace.
 
 - :paint brush: This time, change the checkerboard to the **chest1** tile.
 
-- :circle: Snap a  
-``||game:game over <LOSE>||``  
-block into the new container and toggle
+- :circle: Snap a<br/>
+``||game:game over <LOSE>||``<br/>
+block into the new container and toggle<br/>
 the **`<LOSE>`** switch to **`<WIN>`**!
 
 
@@ -98,8 +98,8 @@ It's easy to lose...but impossible to win!  How do you get over the pits?
 ---
 
 
-- :tree: Drag another  
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
+- :tree: Drag another<br/>
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``<br/>
 container into the workspace.
 
 - :paint brush: Change the checkerboard to the orange sphere tile called **orange bauble**.
@@ -128,14 +128,14 @@ Uh oh!  You get WAY too many points when you touch an orange bauble. We can fix 
 
 ---
 
-- :tree: Drag  
-``||scene:set [ ] at tilemap col [0] row [0]||``  
-into **the top** of the  
+- :tree: Drag<br/>
+``||scene:set [ ] at tilemap col [0] row [0]||``<br/>
+into **the top** of the<br/>
 ``||scene:on [sprite] of kind [Player] overlaps [orange bauble] at [location]||``   container.
 
-- :mouse pointer: Replace  
-``||scene:tilemap col [0] row [0]||``  
-with the ``||variables:location||``  
+- :mouse pointer: Replace<br/>
+``||scene:tilemap col [0] row [0]||``<br/>
+with the ``||variables:location||``<br/>
 value from the top of the **Player overlaps orange bauble** container.
 
 ![Share your location](/static/skillmap/jungle/jungle-location.gif "Grab the variable from the overlap container")

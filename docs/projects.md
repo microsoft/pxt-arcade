@@ -123,4 +123,3 @@
 [Hardware](/hardware),
 [How to Make a Game Videos](/how-to-make-a-game),
 [John Park's Workshop](/john-parks-workshop)
-

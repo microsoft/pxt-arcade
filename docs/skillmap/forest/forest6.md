@@ -128,8 +128,8 @@ It's also helpful to have a sound that lets you know when a new fire has started
 
 ---
 
-- :headphones: Find a sound to add when a sprite
-of kind ``||sprites:Fire||`` is **created**.
+- :headphones: Find a sound to add when a sprite<br/>
+of kind ``||sprites:Fire||`` is **created**.<br/>
 💡 We like the **knock** sound for this.
 
 - :question: Can you figure out where to add this block if you want it to play each time a sprite of kind **Fire** is **created**?

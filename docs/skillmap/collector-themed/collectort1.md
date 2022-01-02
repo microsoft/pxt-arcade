@@ -19,9 +19,9 @@ We're going to start with Mama Dino.
 
 ---
 
-- :paper plane:  From the ``||sprites:Sprites||`` category, grab  
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  
-and drag it into the empty  
+- :paper plane:  From the ``||sprites:Sprites||`` category, grab<br/>
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``<br/>
+and drag it into the empty<br/>
 ``||loops:on start||`` container in the workspace.
 
 - :paint brush:  Click the empty grey square and toggle to **My Assets** 
@@ -48,15 +48,15 @@ Let's get our sprite moving up and down with the controller.
 
 ---
 
-- :game:  From the ``||contoller:Controller||`` category, grab a  
-``||controller:move [mySprite] with buttons ⊕||``  
-block and snap it into **the bottom** of the  
+- :game:  From the ``||contoller:Controller||`` category, grab a<br/>
+``||controller:move [mySprite] with buttons ⊕||``<br/>
+block and snap it into **the bottom** of the<br/>
 ``||loops:on start||`` container.
 
-- :mouse pointer:  Click the **⊕** button on the new block to show extra
+- :mouse pointer:  Click the **⊕** button on the new block to show extra<br/>
  value fields.
 
-- :mouse pointer:  To keep the sprite from moving side-to-side, change
+- :mouse pointer:  To keep the sprite from moving side-to-side, change<br/>
 [__*vx*__](#whatVX "horizontal velocity") (horizontal speed) to **0**.
 
 
@@ -84,9 +84,9 @@ If things get out of control, your sprite can leave the screen! Let's fix that.
 
 ---
 
-- :paper plane:  From ``||sprites:Sprites||``, grab   
-``||sprites:set [mySprite] stay in screen <on>||``  
-and snap it into **the bottom**
+- :paper plane:  From ``||sprites:Sprites||``, grab<br/>
+``||sprites:set [mySprite] stay in screen <on>||``<br/>
+and snap it into **the bottom**<br/>
 of the ``||loops:on start||`` container.
 
 
@@ -107,9 +107,9 @@ mySprite.setStayInScreen(true)
 
 ---
 
-- :paper plane:  From ``||scene:Scene||``, grab  
-``||scene:set background image to [ ]||``   
-and snap it into **the top**
+- :paper plane:  From ``||scene:Scene||``, grab<br/>
+``||scene:set background image to [ ]||``<br/>
+and snap it into **the top**<br/>
 of the ``||loops:on start||`` container.
 
 - :paint brush:  Click the **grey square** in the new block and toggle to **My Assets** to choose the **Freeway** background.
@@ -131,10 +131,10 @@ mySprite.setStayInScreen(true)
 
 ---
 
-- :arrows alternate:  To make it look like the dino is walking along the road,
-go to ``||scroller:Scroller||`` and drag  
-``||scroller:scroll background with vx [-50] vy [-50]||``  
-into **the end**
+- :arrows alternate:  To make it look like the dino is walking along the road,<br/>
+go to ``||scroller:Scroller||`` and drag<br/>
+``||scroller:scroll background with vx [-50] vy [-50]||``<br/>
+into **the end**<br/>
 of the ``||loops:on start||`` container.
 
 - :mouse pointer:  Stop the background from scrolling vertically by changing the value of **vy** to **0**.
@@ -167,14 +167,14 @@ Let's add some baby dinos for the momma dinosaur to rescue 💚
 
 ---
 
-- :redo:  From ``||loops:Loops||``, grab a  
-``||loops:forever||``  
-loop container and drag it into
+- :redo:  From ``||loops:Loops||``, grab a<br/>
+``||loops:forever||``<br/>
+loop container and drag it into<br/>
 an empty spot on the workspace.
 
-- :paper plane:  From ``||sprites:Sprites||``, grab  
-``||variables:set [projectile] to projectile [ ] from side with vx [50] vy [50]||``  
-and snap it into the empty  
+- :paper plane:  From ``||sprites:Sprites||``, grab<br/>
+``||variables:set [projectile] to projectile [ ] from side with vx [50] vy [50]||``<br/>
+and snap it into the empty<br/>
 ``||loops:forever||`` container.
 
 - :paint brush:  Click the **grey square** in the new block and toggle to **My Assets** to choose the **Baby** sprite.
@@ -189,7 +189,7 @@ forever(function () {
 
 ## {Step 10}
 
-- :mouse pointer:  To make the babies look like they're walking along the road, change
+- :mouse pointer:  To make the babies look like they're walking along the road, change<br/>
 [__*vx*__](#whatVX "horizontal velocity") (or horizontal speed) to **-90**.
 
 - :mouse pointer:  Change [__*vy*__](#whatVY "vertical velocity") (or vertical speed) to **0** so they don't float up or down.
@@ -214,9 +214,9 @@ send the babies in from a random height each time.
 
 ---
 
-- :paper plane:  From  ``||sprites:Sprites||``, grab a  
-``||sprites:set [mySprite] [x] to [0]||``  
-block and snap it into **the end** of the   
+- :paper plane:  From  ``||sprites:Sprites||``, grab a<br/>
+``||sprites:set [mySprite] [x] to [0]||``<br/>
+block and snap it into **the end** of the<br/>
 ``||loops:forever||`` loop container.
 
 - :mouse pointer:  Change **mySprite** to **projectile** using the first dropdown menu.
@@ -238,13 +238,13 @@ forever(function () {
 **This is looking great, but they still hover around the top.**
 
 ---
-- :calculator:  In  
-``||sprites:set [mySprite] [y] to [0]||``,   
-replace **0** with  
-``||math:pick random [0] to [10]||``.  
+- :calculator:  In<br/>
+``||sprites:set [mySprite] [y] to [0]||``,<br/>
+replace **0** with<br/>
+``||math:pick random [0] to [10]||``.<br/>
 (From the ``||math:Math||`` category)
 
-- :mouse pointer:  Help the babies spread out along the road by changing the smallest random number from **0** to **15** and the largest random number from
+- :mouse pointer:  Help the babies spread out along the road by changing the smallest random number from **0** to **15** and the largest random number from<br/>
 **10** to **115**.
 
 ```blocks
@@ -259,10 +259,10 @@ forever(function () {
 ## {Step 13}
 
 - :redo:  Keep the babies from running out at the speed of light by
-adding a   
-``||loops:pause [100] ms||``   
+adding a<br/>
+``||loops:pause [100] ms||``<br/>
 block (from the  ``||loops:Loops||``
-category) to **the end** of the   
+category) to **the end** of the<br/>
 ``||loops:forever||`` loop.
 
 - :mouse pointer:  Change the pause time to **1000 ms** by clicking in the textbox and typing

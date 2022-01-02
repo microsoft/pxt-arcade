@@ -28,9 +28,9 @@ button [__*sprite*__](#sprote "a 2-D image that moves on the screen") to the scr
 
 ---
 
-- :paper plane:  From ``||sprites:Sprites||`` drag out  
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  
-and snap it into **the bottom** of the  
+- :paper plane:  From ``||sprites:Sprites||`` drag out<br/>
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``<br/>
+and snap it into **the bottom** of the<br/>
 ``||loops:on start||`` container.
 
 - :paint brush:  Click the grey square and toggle to **My Assets** 
@@ -51,14 +51,14 @@ mySprite = sprites.create(assets.image`A static`, SpriteKind.Player)
 ## {Step 4}
 
 **Make your button look like it's being pressed
-with each click**  
+with each click**<br/>
 ✨ ✨ ✨
 
 ---
 
-- :paper plane:  From ``||sprites:Sprites||``, grab   
-``||sprites: set [mySprite] image to [ ]||``   
-and snap it into **the bottom** of the  
+- :paper plane:  From ``||sprites:Sprites||``, grab<br/>
+``||sprites: set [mySprite] image to [ ]||``<br/>
+and snap it into **the bottom** of the<br/>
 ``||controller:on [A] button [pressed]||`` container.
 
 - :paint brush:  Click the grey square and toggle to **My Assets** and choose a button in the **down** position.
@@ -83,19 +83,21 @@ Does the button look like it goes down when (A) is pressed?
 
 ## {Step 6}
 
-Right now, the button never goes back up once pressed.  
+Right now, the button never goes back up once pressed.<br/>
 **Let's change that!**
 
 ---
 
-- :game:  Drag another  
-``||controller:on [A] button [pressed]||``  
+- :game:  Drag another<br/>
+``||controller:on [A] button [pressed]||``<br/>
 container into an empty area of the workspace.
 
-- :mouse pointer:  Change ``||controller:[pressed]||`` to ``||controller:[released]||`` using the dropdown menu.
+- :mouse pointer:  Change ``||controller:[pressed]||``<br/>
+to ``||controller:[released]||``<br/>
+using the dropdown menu.
 
-- :paper plane:  Snap a new  
-``||sprites: set [mySprite] image to [ ]||``  
+- :paper plane:  Snap a new<br/>
+``||sprites: set [mySprite] image to [ ]||``<br/>
 block inside, then toggle to **My Assets** and choose the same
 **up** button image that you used for the original sprite.
 
@@ -121,12 +123,12 @@ It also automatically tells you that **you've lost** when time runs out. Let's c
 
 ---
 
-- :id card:  From the ``||info:Info||`` category, grab an  
-``||info:on countdown end||``  
+- :id card:  From the ``||info:Info||`` category, grab an<br/>
+``||info:on countdown end||``<br/>
 container and drop it into an empty area of the workspace.
 
-- :circle:  Now, open the ``||game:Game||`` category and pick  
-``||game: game over <LOSE> ⊕||`` .   
+- :circle:  Now, open the ``||game:Game||`` category and pick<br/>
+``||game: game over <LOSE> ⊕||``.<br/>
 Snap it inside the empty **on countdown end** container.
 
 - :mouse pointer:  Toggle **LOSE** to **WIN**.
@@ -145,7 +147,7 @@ Now add a final celebration with some **game over** effects!
 
 ---
 
-- :mouse pointer:  Click the **+** icon to the right of the  
+- :mouse pointer:  Click the **+** icon to the right of the<br/>
 ``||game: game over <WIN> ⊕||``  block.
 
 - :mouse pointer:  If you want an effect other than confetti, 

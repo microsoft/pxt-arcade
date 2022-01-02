@@ -208,12 +208,12 @@ The code for a collector game is already in the workspace.
 
 ---
 
-► Right-click on the ``||loops:forever||`` loop container that holds
-the code to create **myEnemy** and choose **Duplicate** from the
+► Right-click on the ``||loops:forever||`` loop container that holds<br/>
+the code to create **myEnemy** and choose **Duplicate** from the<br/>
 top of the menu.
 
-► Inside that new loop, click on the ``||variables: myEnemy||`` variable in the
-**set projectile to** block. A dropdown will appear, allowing you to
+► Inside that new loop, click on the ``||variables: myEnemy||`` variable in the<br/>
+**set projectile to** block. A dropdown will appear, allowing you to<br/>
 select **New variable...** .
 
 ► Name your extra life projectile **extraLife**.
@@ -258,13 +258,13 @@ in the new **forever** loop pointed to the right place.
 
 ---
 
-► Change the variables in both the **set y to** block AND the **set kind to**
+► Change the variables in both the **set y to** block AND the **set kind to**<br/>
 block from ``||variables:myEnemy||`` to ``||variables:extraLife||``.
 
-► Now change the image for the **extraLife** sprite from a rock to
+► Now change the image for the **extraLife** sprite from a rock to<br/>
 something healing...like a heart or a potion.
 
-► Extra lives aren't the enemy, they're fuel! In the **set kind to** block,
+► Extra lives aren't the enemy, they're fuel! In the **set kind to** block,<br/>
 change **Enemy** to **Food**.
 
 
@@ -306,7 +306,7 @@ as the other two projectiles right now.
 
 ---
 
-► Inside the new **extraLife** forever loop, change the
+► Inside the new **extraLife** forever loop, change the<br/>
 random **pause** to stay between **4500** and **5500** ms.
 
 
@@ -350,13 +350,13 @@ fix that.
 
 ---
 
-► Duplicate the **on sprite overlaps Enemy** container that's already in the
+► Duplicate the **on sprite overlaps Enemy** container that's already in the<br/>
 workspace.
 
-► In the header of the new container,
+► In the header of the new container,<br/>
 change the second **kind** from **Enemy** to **Food**.
 
-► Change the effect from **fire** to something more appropriate for an
+► Change the effect from **fire** to something more appropriate for an<br/>
 extra life. (**Hearts** work well with this theme.)
 
 
@@ -377,11 +377,11 @@ Let's make it **add** one, instead.
 
 ---
 
-► Inside the **on sprite overlaps Food** container,
-Look for the ``||info:change life by [-1]||`` block
+► Inside the **on sprite overlaps Food** container,<br/>
+Look for the ``||info:change life by [-1]||`` block<br/>
 and change **-1** to **1**.
 
-► To exaggerate this gift even more, open the ``||sprites:Sprites||`` category
+► To exaggerate this gift even more, open the ``||sprites:Sprites||`` category<br/>
 and grab a ``||sprites:[mySprite] say [":)"]||`` block.
 
 ► Snap the new block into the **top** of the **on sprite overlaps Food** container.
@@ -403,9 +403,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ## {Step 7}
 
-► The new **mySprite say** block is pointed toward the wrong sprite. To fix that,
-drag the ``||variables:otherSprite||`` argument out of the header of the
-**on sprite overlaps Food** header and snap it in to replace the
+► The new **mySprite say** block is pointed toward the wrong sprite. To fix that,<br/>
+drag the ``||variables:otherSprite||`` argument out of the header of the<br/>
+**on sprite overlaps Food** header and snap it in to replace the<br/>
 ``||variables:mySprite||`` variable.
 
 ► Change the text from **:)** to **+1**.

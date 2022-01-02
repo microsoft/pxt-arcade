@@ -220,7 +220,7 @@ In this tutorial, we'll add more enemy options.
 
 ---
 
-► Find the ``||loops:Forever||`` loop container where your **myEnemy** projectile 
+► Find the ``||loops:Forever||`` loop container where your **myEnemy** projectile<br/>
 is created. 
 
 

@@ -9,17 +9,17 @@ Let's make a clicker game!
 
 
 ## {Step 2}
-**This game will test your speed as you click as quickly as possible to earn points.**  
-⭐ ⭐ ⭐ 
 
+**This game will test your speed as you click as quickly as possible to earn points.**<br/>
+⭐ ⭐ ⭐
 
 Let's prep the stage by adding a background.
 
 ---
 
-- :tree:  Open the ``||scene:Scene||`` category and drag   
-``||scene: set background image to [ ]||``   
-into the ``||loops:on start||``   
+- :tree:  Open the ``||scene:Scene||`` category and drag<br/>
+``||scene: set background image to [ ]||``<br/>
+into the ``||loops:on start||``<br/>
 container that's already in the workspace.
 
 - :mouse pointer:  When you're done, click **Next** to see the next step.
@@ -38,14 +38,14 @@ scene.setBackgroundImage(img`
 
 ## {Step 3}
 
-**Choose your background!**  
+**Choose your background!**<br/>
 🖼 🖼 🖼
 
 ---
 
 
-- :paint brush:  Click the grey box inside  
-``||scene: set background image to [ ]||``  
+- :paint brush:  Click the grey box inside<br/>
+``||scene: set background image to [ ]||``<br/>
 to open the
 image editor and toggle to the **My Assets** tab.
 
@@ -66,7 +66,8 @@ scene.setBackgroundImage(assets.image`TheStage`)
 
 ## {Step 3.5}
 
-**Click the Game Window Tab (Above)**  
+**Click the Game Window Tab (Above)**<br/>
+
 ![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
@@ -76,6 +77,7 @@ Do you see the background you chose?
 
 
 ## {Step 4}
+
 Add a [__*splash screen*__](#splasht "A full-screen message that shows while a program or level is loading") to let the user know to press the
 **Ⓐ** button when they're ready to start playing.
 
@@ -83,14 +85,13 @@ Add a [__*splash screen*__](#splasht "A full-screen message that shows while a p
 
 - :circle:  Open the ``||game:Game||`` category and
 drag the  
-``||game: splash [" "]||``  
-block into the bottom of the   
+``||game: splash [" "]||``<br/>
+block into the bottom of the<br/>
 ``||loops:on start||`` container.
 
-- :mouse pointer:  Click inside the empty text area of the  
-``||game: splash [" "]||``  
-block and type a message letting the
-user know they should press (A) to play.
+- :mouse pointer:  Click inside the empty text area of the<br/>
+``||game: splash [" "]||``<br/>
+block and type a message letting the user know they should press (A) to play.
 
 
 ```blocks
@@ -110,14 +111,13 @@ the score when the **Ⓐ** button is clicked.
 
 ---
 
-- :game:  From the ``||controller:Controller||`` category, grab the  
-``||controller: on [A] button [pressed]||``  
-container and drop it into an
-empty spot in the workspace.
+- :game:  From the ``||controller:Controller||`` category, grab the<br/>
+``||controller: on [A] button [pressed]||``<br/>
+container and drop it into an empty spot in the workspace.
 
-- :id card:  From ``||info:Info||``, drag out the  
-``||info:change score by [1]||``  
-block and snap it into  
+- :id card:  From ``||info:Info||``, drag out the<br/>
+``||info:change score by [1]||``<br/>
+block and snap it into<br/>
 ``||controller: on [A] button [pressed]||``.
 
 
@@ -130,7 +130,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## {Step 6}
 
-**Test your game on the game screen**  
+**Test your game on the game screen**<br/>
 🎮 🎮 🎮 
 
 Do you see your score go up each time you press the  **Ⓐ** button?
@@ -143,10 +143,9 @@ the player a clear endpoint.
 
 ---
 
-- :id card:   Open the ``||info:Info||`` category and
-drag the  
-``||info: start countdown [10] (s)||``  
-block into **the bottom** of the  
+- :id card:   Open the ``||info:Info||`` category and drag the<br/>
+``||info: start countdown [10] (s)||``<br/>
+block into **the bottom** of the<br/>
 ``||loops:on start||`` container.
 
 

@@ -17,11 +17,11 @@ some flying star [__*projectiles*__](#projected "sprites that moves on their own
 
 ---
 
-- :paper plane:  From ``||sprites:Sprites||``, grab  
-``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``  
-and drop it into **the end** of the  
-``||controller:on [A] button [pressed]||`` container
-already in the workspace.
+- :paper plane:  From ``||sprites:Sprites||``, grab<br/>
+``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``<br/>
+and drop it into **the end** of the<br/>
+``||controller:on [A] button [pressed]||``<br/>
+container already in the workspace.
 
 - :mouse pointer:  Click **Next** to move on to the next instruction.
 
@@ -70,12 +70,12 @@ Does a star come out of your button each time you press the (A) button?
 
 ---
 
-- :calculator:  From the ``||math:Math||`` category, drag out **TWO**  
-``||math: pick random [0] to [10]||``  
+- :calculator:  From the ``||math:Math||`` category, drag out **TWO**<br/>
+``||math: pick random [0] to [10]||``<br/>
 blocks.
 
-- :mouse pointer:  Add the first to the [__*vx*__](#whatVX "horizontal velocity") argument of the  
-``||variables:set [projectile] to projectile [⭐] from [mySprite] with vx [50] vy [50]||``   
+- :mouse pointer:  Add the first to the [__*vx*__](#whatVX "horizontal velocity") argument of the<br/>
+``||variables:set [projectile] to projectile [⭐] from [mySprite] with vx [50] vy [50]||``<br/>
 block.
 
 - :mouse pointer:  Add the second to the [__*vy*__](#whatVY "vertical velocity") argument.
@@ -94,14 +94,14 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ## {Step 6}
 
 
-- :mouse pointer:  Change the range of the first  
-``||math: pick random [0] to [10]||``  
-block (next to **vx**) to pick between
+- :mouse pointer:  Change the range of the first<br/>
+``||math: pick random [0] to [10]||``<br/>
+block (next to **vx**) to pick between<br/>
 **-100** and **100**.  This will scatter stars randomly from side to side.
 
-- :mouse pointer:  Change the range of the second  
-``||math: pick random [0] to [10]||``  
-block (next to **vy**) to pick between
+- :mouse pointer:  Change the range of the second<br/>
+``||math: pick random [0] to [10]||``<br/>
+block (next to **vy**) to pick between<br/>
 **-50** and **-100**.  This will make sure the stars only move upward.
 
 

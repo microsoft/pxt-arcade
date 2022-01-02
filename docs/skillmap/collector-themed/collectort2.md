@@ -14,7 +14,7 @@ The start of a collector game is in your workspace. Let's take it even further b
 
 ## {Step 2}
 
-**Play the game in the workspace before you begin**  
+**Play the game in the workspace before you begin**<br/>
 🎮 🎮 🎮 
 
 Can you move Mama Dino around the screen? Do baby dinos walk toward you?
@@ -23,16 +23,16 @@ Can you move Mama Dino around the screen? Do baby dinos walk toward you?
 
 ## {Step 3}
 
-**We're off to a great start!!**
+**We're off to a great start!!**<br/>
 Let's add some code that tells the game what to do when the mom reaches her baby.
 
 ---
 
-- :paper plane:  From ``||sprites:Sprites||``, grab an  
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``  
+- :paper plane:  From ``||sprites:Sprites||``, grab an<br/>
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``<br/>
 container and drop it into an empty area of the workspace.
 
-- :mouse pointer:  Change the second kind from  
+- :mouse pointer:  Change the second kind from<br/>
 ``||sprites:Player||`` to ``||sprites:Projectile||``.
 
 ```blocks
@@ -46,22 +46,22 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ## {Step 4}
 
-Now we have a container for code that runs when Mama Dino overlaps the babies.
+Now we have a container for code that runs when Mama Dino overlaps the babies.<br/>
 **Let's add a block to remove the babies from the play area when you catch them.**
 
 ---
 
-- :paper plane:  From ``||sprites:Sprites||``, grab  
-``||sprites:destroy [mySprite]||``   
-and snap it into the empty  
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``   
+- :paper plane:  From ``||sprites:Sprites||``, grab<br/>
+``||sprites:destroy [mySprite]||``<br/>
+and snap it into the empty<br/>
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``<br/>
 container.
 
-- :mouse pointer:  To make sure that the correct projectile is destroyed, grab the
-``||variables:otherSprite||`` value from the title of  
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``  
+- :mouse pointer:  To make sure that the correct projectile is destroyed, grab the<br/>
+``||variables:otherSprite||`` value from the title of<br/>
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``<br/>
 and drop it into the
-``||sprites:destroy [mySprite]||``  
+``||sprites:destroy [mySprite]||``<br/>
 block to replace the value **mySprite**.
 
 ![Grab otherSprite from header](/static/skillmap/assets/give-var.gif "Replace mySprite with the otherSprite variable" )
@@ -89,9 +89,9 @@ Let's add a point to your score each time you save a baby.
 
 ---
 
-- :id card:  From ``||info:Info||``, grab  
-``||info:change score by [1]||``  
-and snap it into **the bottom** of  
+- :id card:  From ``||info:Info||``, grab<br/>
+``||info:change score by [1]||``<br/>
+and snap it into **the bottom** of<br/>
 ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``.
 
 
@@ -107,7 +107,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ## {Step 6}
 
-**Now try it out on the game screen**  
+**Now try it out on the game screen**<br/>
 🎮 🎮 🎮 
 
 How do you like your game so far?
@@ -144,17 +144,17 @@ forever(function () {
 
 ## {Step 7}
 
-**Does this game feel long to you?**  
+**Does this game feel long to you?**<br/>
 🕔 🕔 🕔 
 
-We haven't added a way to win or lose.
+We haven't added a way to win or lose.<br/>
 Let's do that now by adding a countdown timer.
 
 ---
 
-- :id card:  From ``||info:Info||``,  choose the  
-``||info:start countdown [10] (s)||``  
-and snap it into the end of the  
+- :id card:  From ``||info:Info||``,  choose the<br/>
+``||info:start countdown [10] (s)||``<br/>
+and snap it into the end of the<br/>
 ``||loops:on start||`` container.
 
 - :mouse pointer:  Change **10** to **15** for more playtime goodness.
@@ -178,12 +178,12 @@ Right now, when time runs out, you lose the game. We can change that!
 
 ---
 
-- :id card:  From ``||info:Info||``,  grab the  
-``||info:on countdown end||``  
+- :id card:  From ``||info:Info||``,  grab the<br/>
+``||info:on countdown end||``<br/>
 container and drop it into a blank area of the workspace.
 
-- :circle:  Now, from ``||game:Game||``, pick a  
-``||game:game over <LOSE>||``  
+- :circle:  Now, from ``||game:Game||``, pick a<br/>
+``||game:game over <LOSE>||``<br/>
 block and snap it into the empty **on countdown end** container.
 
 - :mouse pointer:  Toggle **`<LOSE>`** to **`<WIN>`**.
@@ -198,7 +198,7 @@ info.onCountdownEnd(function () {
 
 ## {Step 9}
 
-**Now play your winning creation**  
+**Now play your winning creation**<br/>
 🏆 🏆 🏆 
 
 Mama Dino can collect her babies and earn points!  How many babies can you collect in **15 seconds**?

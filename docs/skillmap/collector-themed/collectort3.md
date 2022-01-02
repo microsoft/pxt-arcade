@@ -13,7 +13,7 @@ This tutorial will show you how to add cars to the road.
 
 ## {Step 2}
 
-The code for a collector game is already in the workspace.  
+The code for a collector game is already in the workspace.<br/>
 🕹️ 🕹️ 🕹️
 
 Play your game to make sure you can collect the baby dinos as they move toward you.
@@ -26,12 +26,12 @@ Let's add a new kind of projectile, an ``||sprites:Enemy||``!
 
 ---
 
-- :redo:  Grab a new  
-``||loops:forever||``  
+- :redo:  Grab a new<br/>
+``||loops:forever||``<br/>
 loop container and drop it into an empty area of the workspace.
 
-- :paper plane:  From ``||sprites:Sprites||``, drag  
-``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||``  
+- :paper plane:  From ``||sprites:Sprites||``, drag<br/>
+``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||``<br/>
 into the new  ``||loops:forever||`` loop container.
 
 ```blocks
@@ -63,13 +63,13 @@ forever(function () {
 
 ## {Step 4}
 
-**Our new enemy isn't quite ready.**
+**Our new enemy isn't quite ready.**<br/>
 We still have to set the vertical positions on the screen and add a pause to the loop.
 
 ---
 
-- :paper plane:  Just like we did when making the baby dinos, we'll need to grab  
-``||sprites:set [mySprite] [x] to [0]||``  
+- :paper plane:  Just like we did when making the baby dinos, we'll need to grab<br/>
+``||sprites:set [mySprite] [x] to [0]||``<br/>
 and snap it in **below** the new projectile block.
 
 - :mouse pointer:  Change ``||variables:mySprite||`` to ``||variables:projectile2||`` and change **x** to **y**.
@@ -87,8 +87,8 @@ forever(function () {
 
 ## {Step 5}
 
-- :redo:  Add  
-``||loops:pause [100] ms||``  
+- :redo:  Add<br/>
+``||loops:pause [100] ms||``<br/>
 to the bottom of this ``||loops:forever||`` loop.
 
 - :mouse pointer:  Replace **100** with **2100**.
@@ -120,14 +120,14 @@ Running into an enemy INCREASES your score. That's not right. Let's add code to 
 
 ---
 
-- :paper plane:  From ``||sprites:Sprites||``, grab a  
-``||sprites:set [mySprite] kind to [Player]||``  
-block and snap it just **ABOVE** the **pause** block in the enemy's  
+- :paper plane:  From ``||sprites:Sprites||``, grab a<br/>
+``||sprites:set [mySprite] kind to [Player]||``<br/>
+block and snap it just **ABOVE** the **pause** block in the enemy's<br/>
 ``||loops:forever||`` loop container.
 
-- :mouse pointer:  In  
-``||sprites:set [mySprite] kind to [Player]||``,   
-change ``||variables:mySprite||`` to ``||variables:projectile2||``   
+- :mouse pointer:  In<br/>
+``||sprites:set [mySprite] kind to [Player]||``,<br/>
+change ``||variables:mySprite||`` to ``||variables:projectile2||``<br/>
 and change ``||sprites:Player||`` to ``||sprites:Enemy||``.
 
 
@@ -147,17 +147,17 @@ forever(function () {
 
 **😈 Wicked 😈**
 
-Now the program knows the car is an enemy.
+Now the program knows the car is an enemy.<br/>
 What are we going to do about it?
 
 ---
 
-- :mouse pointer:  Right-click the  
-``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``  
- container that's already in the workspace and choose **Duplicate**.
+- :mouse pointer:  Right-click the<br/>
+``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``<br/>
+container that's already in the workspace and choose **Duplicate**.
 
-- :mouse pointer:  In the new greyed-out container,
-change the second **kind** from ``||sprites:Projectile||``
+- :mouse pointer:  In the new greyed-out container,<br/>
+change the second **kind** from ``||sprites:Projectile||``<br/>
 to ``||sprites:Enemy||``.
 
 
@@ -177,16 +177,16 @@ At this point, the player is still awarded points when they hit a car.
 
 ---
 
-- :mouse pointer:  **Delete **  
-``||info:change score by [1]||``   
-from the   
-``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Enemy]||``  
+- :mouse pointer:  **Delete**<br/>
+``||info:change score by [1]||``<br/>
+from the<br/>
+``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Enemy]||``<br/>
 container.
 
-- :id card:  From ``||info: Info||``, grab   
-``||info:change life by [-1]||``  
-and snap it into the end of the  
-``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Enemy]||``  
+- :id card:  From ``||info: Info||``, grab<br/>
+``||info:change life by [-1]||``<br/>
+and snap it into the end of the<br/>
+``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Enemy]||``<br/>
 container.
 
 ```blocks

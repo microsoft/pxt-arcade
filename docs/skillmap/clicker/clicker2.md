@@ -89,10 +89,10 @@ Let's make this game fun to look at by adding a
 
 ---
 
-► From ``||sprites:Sprites||`` drag out ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
+► From ``||sprites:Sprites||`` drag out ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``<br/>
 and snap it into the bottom of the ``||loops:on start||`` container.
 
-► Add your sprite by clicking inside the grey square and drawing something
+► Add your sprite by clicking inside the grey square and drawing something<br/>
 eye-catching. You could draw a cloud, a sprinkler, a flower, or a cookie!
 
 ---
@@ -134,8 +134,8 @@ with each click ✨**
 
 ---
 
-► From ``||sprites:Sprites||``, grab
-``||sprites: [mySprite] start [spray] effect ⊕||`` and snap it
+► From ``||sprites:Sprites||``, grab<br/>
+``||sprites: [mySprite] start [spray] effect ⊕||`` and snap it<br/>
 into the bottom of the ``||controller:on [A] button [pressed]||`` container.
 
 
@@ -160,10 +160,10 @@ change between clicks.
 
 ---
 
-► Click the **⊕** icon to the right of the ``||sprites: [mySprite] start [spray] effect ⊕||``
+► Click the **⊕** icon to the right of the ``||sprites: [mySprite] start [spray] effect ⊕||``<br/>
 block (the one already inside the **on A button pressed** container.)
 
-► Shorten the number of miliseconds (ms) that the effect runs by entering
+► Shorten the number of miliseconds (ms) that the effect runs by entering<br/>
 **100** in the text box.
 
 ```blocks
@@ -193,11 +193,11 @@ Let's change that.
 
 ---
 
-► From the ``||info:Info||`` category, grab a ``||info:on countdown end||``
+► From the ``||info:Info||`` category, grab a ``||info:on countdown end||``<br/>
 container and drop it into an empty area of the workspace.
 
-► Now, open the ``||game:Game||`` category and pick
-``||game: game over <LOSE> ⊕||`` .  Snap it inside the empty
+► Now, open the ``||game:Game||`` category and pick<br/>
+``||game: game over <LOSE> ⊕||`` .  Snap it inside the empty<br/>
 **on countdown end** container.
 
 ► Toggle **LOSE** to **WIN**.
@@ -216,9 +216,9 @@ Now add a final celebration with some **game over** effects!
 
 ---
 
-► Click the **⊕** icon to the right of the ``||game: game over <WIN> ⊕||``  block.
+► Click the **⊕** icon to the right of the ``||game: game over <WIN> ⊕||`` block.<br/>
 
-► If you want an effect other than confetti, click the word **confetti**
+► If you want an effect other than confetti, click the word **confetti**<br/>
 and choose a new option from the dropdown.
 
 

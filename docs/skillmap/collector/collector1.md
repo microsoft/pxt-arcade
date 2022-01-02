@@ -62,15 +62,15 @@ Let's create a game that brings back some of the iconic arcade style that we lov
 
 ---
 
-► From the ``||sprites:Sprites||`` category, grab
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
-and drag it into the empty **on start** container in the workspace.
+► From the ``||sprites:Sprites||`` category, grab<br/>
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``<br/>
+and drag it into the empty **on start** container in the workspace.<br/>
 
-► Get to the **Gallery** by clicking inside the grey sprite image square
+► Get to the **Gallery** by clicking inside the grey sprite image square<br/>
 and toggling the switch at the top.
 
-► Choose one of our pre-loaded sprite images...or stay in
-**Edit** mode to create your own.  Click **Done** once you're
+► Choose one of our pre-loaded sprite images...or stay in<br/>
+**Edit** mode to create your own.  Click **Done** once you're<br/>
 happy with your sprite.
 
 
@@ -108,14 +108,14 @@ Let's get our sprite moving up and down with the controller.
 
 ---
 
-► From the ``||contoller:Controller||`` category, grab a
-``||controller:move [mySprite] with buttons ⊕||``
+► From the ``||contoller:Controller||`` category, grab a<br/>
+``||controller:move [mySprite] with buttons ⊕||``<br/>
 block and snap it into the bottom of the **on start** container.
 
-► Click the **⊕** button on the new block to show extra
- [__*arguments*__](#argue "extra chunks of information the block needs").
+► Click the **⊕** button on the new block to show extra<br/>
+ [__*arguments*__](#argue "extra chunks of information the block needs").<br/>
 
-► To keep the sprite from moving side-to-side, change
+► To keep the sprite from moving side-to-side, change<br/>
 [__*vx*__](#whatVX "horizontal velocity") (velocity on x) to **0**.
 
 
@@ -155,19 +155,19 @@ Let's toss some coins toward it every couple of seconds...**forever**.
 
 ---
 
-► From ``||loops:Loops||`` category, grab a
-``||loops:forever||`` loop container and drag it out into
+► From ``||loops:Loops||`` category, grab a<br/>
+``||loops:forever||`` loop container and drag it out into<br/>
 an empty spot on the workspace.
 
-► From ``||sprites:Sprites||``, grab
-``||variables:set [projectile] to projectile [ ] from side with vx [50] vy [50]||``
+► From ``||sprites:Sprites||``, grab<br/>
+``||variables:set [projectile] to projectile [ ] from side with vx [50] vy [50]||``<br/>
 and snap it into the empty **forever** container.
 
-► Choose a coin sprite for your projectile by clicking on the grey box and toggling
+► Choose a coin sprite for your projectile by clicking on the grey box and toggling<br/>
 to **Gallery** or stay in the **Editor** and create your own.
 
-► To make the projectile fly quickly from right to left, change
-[__*vx*__](#whatVX "horizontal velocity") to **-150**
+► To make the projectile fly quickly from right to left, change<br/>
+[__*vx*__](#whatVX "horizontal velocity") to **-150**<br/>
 and [__*vy*__](#whatVY "vertical velocity") to **0**.
 
 
@@ -200,15 +200,15 @@ send projectiles from a random height each time.
 
 ---
 
-► From  ``||sprites:Sprites||``, grab a
-``||sprites:set [mySprite] [x] to [0]||``
+► From  ``||sprites:Sprites||``, grab a<br/>
+``||sprites:set [mySprite] [x] to [0]||``<br/>
 block and snap it into the end of the **forever** loop container.
 
 ► Change **mySprite** to **projectile** using the first dropdown menu.
 
 ► Change **x** to **y** using the other dropdown menu.
 
-► Replace **0** with ``||math:pick random [0] to [10]||``.
+► Replace **0** with ``||math:pick random [0] to [10]||``.<br/>
 (From the ``||math:Math||`` category)
 
 
@@ -238,14 +238,14 @@ forever(function () {
 
 ---
 
-► Help the coins spread out by changing the largest random number from
+► Help the coins spread out by changing the largest random number from<br/>
 **10** to **120**.
 
-► Keep the coins from shooting out at the speed of light by
-adding a ``||loops:pause [100] ms||`` block (from the  ``||loops:Loops||``
+► Keep the coins from shooting out at the speed of light by<br/>
+adding a ``||loops:pause [100] ms||`` block (from the  ``||loops:Loops||``<br/>
 category) to the end of the **forever** loop.
 
-► Change the pause time to **1500 ms** by clicking in the textbox and typing
+► Change the pause time to **1500 ms** by clicking in the textbox and typing<br/>
 **1500** instead of choosing a time from the dropdown menu.
 
 ```blocks
@@ -281,8 +281,8 @@ Let's change that.
 
 ---
 
-► From ``||sprites:Sprites||``, grab an
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``
+► From ``||sprites:Sprites||``, grab an<br/>
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``<br/>
 container and drop it into an empty area of the workspace.
 
 ► Change the second kind from **Player** to **Projectile**.
@@ -299,18 +299,18 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 ## {Step 9}
 
 Now we have a container for code that runs when the sprite
-overlaps a projectile.
+overlaps a projectile.<br/>
 **Let's add a block to destroy coins as you catch them.**
 
 ---
 
-► From ``||sprites:Sprites||``, grab
-``||sprites:destroy [mySprite] ⊕||`` and snap it into the empty
+► From ``||sprites:Sprites||``, grab<br/>
+``||sprites:destroy [mySprite] ⊕||`` and snap it into the empty<br/>
 **on sprite overlaps** container.
 
-► To make sure that the correct projectile is destroyed, grab the
-``||variables:otherSprite||`` argument from the header of the
-**on sprite overlaps** container and drop it into the
+► To make sure that the correct projectile is destroyed, grab the<br/>
+``||variables:otherSprite||`` argument from the header of the<br/>
+**on sprite overlaps** container and drop it into the<br/>
 ``||sprites:destroy [mySprite] ⊕||`` block to replace the value **mySprite**.
 
 ```blocks
@@ -331,8 +331,8 @@ a coin.
 
 ---
 
-► From ``||info:Info||``, grab
-``||info:change score by [1]||`` and snap it into the bottom of the
+► From ``||info:Info||``, grab<br/>
+``||info:change score by [1]||`` and snap it into the bottom of the<br/>
 **on sprite overlaps** container.
 
 

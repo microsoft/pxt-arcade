@@ -185,8 +185,8 @@ When a water sprite hits the fire, the fire needs to decrease in strength by 1.
 ``||sprites:change strength of [mySprite] by [-1]||`` <br/>
 into **the end** of the **on overlaps** container.
 
-- :mouse pointer:  To make sure your code weakens the **Fire** sprite,
-grab the ``||variables:otherSprite||`` value block from the
+- :mouse pointer:  To make sure your code weakens the **Fire** sprite,<br/>
+grab the ``||variables:otherSprite||`` value block from the<br/>
 container and use it to replace ``||variables:mySprite||``.
 
 ![Grab the sprite value from the title bar of the outer container](/static/skillmap/assets/sprite-from-container.gif "This is how your block knows which sprite to use")
