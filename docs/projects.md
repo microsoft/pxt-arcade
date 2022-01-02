@@ -15,6 +15,13 @@
         "videoUrl": "/static/tutorials/chase-the-pizza.mp4"
     },
     {
+        "name": "Multipart Tutorials",
+        "url": "/multipart-tutorials",
+        "imageUrl": "/static/recipes/shark-splash/shark-splash.png",
+        "largeImageUrl": "/static/recipes/shark-splash/02-C-enemies.gif",
+        "videoUrl": "/static/recipes/shark-splash/02-C-enemies.mp4"
+    },
+    {
         "name": "Live Coding",
         "url": "/live-coding",
         "imageUrl": "/static/live-coding/7pBGS_tKfmU.jpg"
@@ -101,6 +108,7 @@
 
 [Skillmaps](/skillmaps),
 [Tutorials](/tutorials),
+[Multipart Tutorials](/multipart-tutorials),
 [Live Coding](/live-coding),
 [Blocks Games](/blocks-games),
 [JavaScript Games](/javascript-games),
@@ -115,4 +123,3 @@
 [Hardware](/hardware),
 [How to Make a Game Videos](/how-to-make-a-game),
 [John Park's Workshop](/john-parks-workshop)
-
