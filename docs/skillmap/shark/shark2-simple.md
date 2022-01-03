@@ -28,8 +28,8 @@ We need a container that will run our fishy code every 2.1 seconds.
 
 ---
 
-- :circle: Drag  
-``||game:on game update every [500] ms||``  
+- :circle: Drag<br/>
+``||game:on game update every [500] ms||``<br/>
 into an empty area of the workspace.
 
 - :mouse pointer: Click inside the text box and ignore the dropdown of choices. Instead, type **2100** on the keyboard.
@@ -45,14 +45,14 @@ game.onUpdateInterval(2100, function () {
 ## 4. Food
 
 
-- :paper plane: Drag  
-``||variables: set [mySprite2] to sprite [ ] of kind [Player]||``  
-into the empty  
-``||game:on game update every [2100] ms||``  
+- :paper plane: Drag<br/>
+``||variables: set [mySprite2] to sprite [ ] of kind [Player]||``<br/>
+into the empty<br/>
+``||game:on game update every [2100] ms||``<br/>
 container.
 
-- :mouse pointer: To rename the sprite **myFood**, click **mySprite2** to open a dropdown menu and choose  
-``||variables:Rename variable...||``.  
+- :mouse pointer: To rename the sprite **myFood**, click **mySprite2** to open a dropdown menu and choose<br/>
+``||variables:Rename variable...||``.<br/>
 Enter **myFood** and click **Ok**.
 
 - :mouse pointer: Change the kind from **Player** to **Food**.
@@ -69,8 +69,8 @@ game.onUpdateInterval(2100, function () {
 
 ## 5. Pick a Fish
 
-- :paint brush: Click the grey box inside  
-``||variables: set [myFood] to sprite [ ] of kind [Food]||``  
+- :paint brush: Click the grey box inside<br/>
+``||variables: set [myFood] to sprite [ ] of kind [Food]||``<br/>
 and toggle to **My Assets** to choose **food**, then click **Done**.
 
 ```blocks
@@ -89,10 +89,10 @@ It's time to tell the food sprites where to spawn.
 
 ---
 
-- :paper plane: Drag a  
-``||sprites:set [mySprite] position to x [0] y [0]||``  
-block into **the end** of the  
-``||game:on game update every [2100] ms||``   
+- :paper plane: Drag a<br/>
+``||sprites:set [mySprite] position to x [0] y [0]||``<br/>
+block into **the end** of the<br/>
+``||game:on game update every [2100] ms||``<br/>
 container.
 
 - :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:myFood||``.
@@ -111,12 +111,12 @@ Let's start each fish at the right edge of the screen from a random height.
 
 ---
 
-- :tree: To start the fish at the furthest right edge of your screen, drag 
-``||scene:screen width||``  
+- :tree: To start the fish at the furthest right edge of your screen, drag<br/>
+``||scene:screen width||``  <br/>
 over to replace the **x** value of **0**. 
 
-- :calculator: Grab  
-``||math:pick random [0] to [10]||``   
+- :calculator: Grab<br/>
+``||math:pick random [0] to [10]||``<br/>
 and use it to replace the **y** value.
 
 - :mouse pointer: To keep the fish a little below the top edge of the screen, change min to **5**. To keep them from going all the way to the bottom, set max to **115**.
@@ -139,10 +139,10 @@ Get the fish swimming for a bigger challenge.
 
 ---
 
-- :paper plane: Grab   
-``||sprites:set [mySprite] [x] to [0]||``   
-and snap it in at **the bottom** of your  
-``||game:on game update every [2100] ms||``  
+- :paper plane: Grab<br/>
+``||sprites:set [mySprite] [x] to [0]||``<br/>
+and snap it in at **the bottom** of your<br/>
+``||game:on game update every [2100] ms||``<br/>
 container.
 
 - :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:myFood||``.
@@ -167,7 +167,7 @@ let mySprite: Sprite = null
 
 ## Finale
 
-**So satisfying!**
+**So satisfying!**<br/>
 Now your shark can find food anywhere it goes.
 
 ---

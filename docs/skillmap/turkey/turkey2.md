@@ -11,7 +11,7 @@
 
 ## 2. Try It!
 
-**First, check the game you have so far.**  
+**First, check the game you have so far.**<br/>
 🕹️ 🕹️ 🕹️ 
 
 ---
@@ -23,21 +23,21 @@ from platform to platform using the A button (or the space bar.)
 
 ## 3. Rescue the Others
 
-**Turkey to the rescue!**  
+**Turkey to the rescue!**<br/>
 🦃 🦃 🦃
 
 When the player overlaps a _cage_ tile, let's trigger some code.
 
 ---
 
-- :tree: Drag the  
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
+- :tree: Drag the<br/>
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``<br/>
 container into an empty area of the workspace.
 
 - :paint brush: Click the checkerboard image and change it to the **cage** tile.
 
-- :id card: To give the player a point for each turkey it saves, snap a   
-``||info:change score by [1]||``    
+- :id card: To give the player a point for each turkey it saves, snap a<br/>
+``||info:change score by [1]||``<br/>
 block into the new container.
 
 
@@ -65,15 +65,15 @@ Uh oh!  You get WAY too many points when you overlap a cage.
 
 ---
 
-- :tree: Drag  
-``||scene:set [ ] at tilemap col [0] row [0]||``   
-into **the end** of the   
-``||scene:on [sprite] of kind [Player] overlaps [cage] at [location]||``   
+- :tree: Drag<br/>
+``||scene:set [ ] at tilemap col [0] row [0]||``<br/>
+into **the end** of the<br/>
+``||scene:on [sprite] of kind [Player] overlaps [cage] at [location]||``<br/>
 container.
 
-- :mouse pointer: Replace  
-``||scene:tilemap col [0] row [0]||``  
-with the ``||variables:location||``  
+- :mouse pointer: Replace<br/>
+``||scene:tilemap col [0] row [0]||``<br/>
+with the ``||variables:location||``<br/>
 value from the top of the **Player overlaps cage** container.
 
 ![Share your location](/static/skillmap/turkey/turkey-location.gif "Grab the variable from the overlap container")
@@ -107,21 +107,21 @@ You should have the start of a very nice game!
 
 ---
 
-- :paper plane: Drag  
-``||sprites:set [mySprite2] to sprite [ ] of kind [Player]||``   
-into **the end** of the   
-``||scene:on [sprite] of kind [Player] overlaps [cage] at [location]||``   
+- :paper plane: Drag<br/>
+``||sprites:set [mySprite2] to sprite [ ] of kind [Player]||``<br/>
+into **the end** of the<br/>
+``||scene:on [sprite] of kind [Player] overlaps [cage] at [location]||``<br/>
 container.
 
-- :mouse pointer: Click  
-``||variables:mySprite2||``  
+- :mouse pointer: Click<br/>
+``||variables:mySprite2||``<br/>
 and rename the variable **turkey**.
 
 - :paint brush: Click the empty grey square and toggle to 
 **MyAssets** to choose the little **turkey** sprite.
 
-- :mouse pointer: Click  
-``||sprites:Player||``   
+- :mouse pointer: Click<br/>
+``||sprites:Player||``<br/>
 and change it to ``||sprites:Rescued||``.
 
 
@@ -147,18 +147,18 @@ Let's set each new turkey to appear in the same place the cage disappeared from.
 ---
 
 - :tree: Drag  
-``||scene:place [mySprite] on top of tilemap col [0] row [0]||``   
-into **the end** of the   
-``||scene:on [sprite] of kind [Player] overlaps [cage] at [location]||``   
+``||scene:place [mySprite] on top of tilemap col [0] row [0]||``<br/>
+into **the end** of the<br/>
+``||scene:on [sprite] of kind [Player] overlaps [cage] at [location]||``<br/>
 container.
 
-- :mouse pointer: Click  
-``||variables:mySprite||``  
+- :mouse pointer: Click<br/>
+``||variables:mySprite||``<br/>
 and select ``||variables:turkey||``.
 
-- :mouse pointer: Replace  
-``||scene:tilemap col [0] row [0]||``  
-with the ``||variables:location||``  
+- :mouse pointer: Replace<br/>
+``||scene:tilemap col [0] row [0]||``<br/>
+with the ``||variables:location||``<br/>
 value from the top of the **Player overlaps cage** container.
 
 
@@ -192,14 +192,14 @@ Keep following the instructions to find out how to get the little turkeys to fol
 ## 10. Be Free!
 
 
-- :paper plane: Drag  
-``||sprites:set [myEnemy] follow [mySprite]||``   
-into **the end** of the   
-``||scene:on [sprite] of kind [Player] overlaps [cage] at [location]||``   
+- :paper plane: Drag<br/>
+``||sprites:set [myEnemy] follow [mySprite]||``<br/>
+into **the end** of the<br/>
+``||scene:on [sprite] of kind [Player] overlaps [cage] at [location]||``<br/>
 container.
 
-- :mouse pointer: Click  
-``||variables:myEnemy||``  
+- :mouse pointer: Click<br/>
+``||variables:myEnemy||``<br/>
 and change to ``||variables:turkey||``.
 
 

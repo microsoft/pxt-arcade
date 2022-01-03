@@ -6,7 +6,7 @@
 
 ![A dirt path with a penguin looking up at a wooden sign. Several penguins are hiding in the bushes.](static/skillmap/zoo/zoo-penguins.png)
 
-**Thank goodness, you're here!**   
+**Thank goodness, you're here!**<br/>
 Penguins are *everywhere*!
 
 They're running around outside of their enclosure. You have to help!
@@ -30,7 +30,7 @@ let penguin: Sprite = null
   penguin.x = 10
 ```
 
-☝ Look at this block. What is it doing?   
+☝ Look at this block. What is it doing?<br/>
 Where does **x=10** put the penguins on the screen?
 
 

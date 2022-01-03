@@ -15,8 +15,8 @@ add style.
 
 ## {Step 2}
 
-To prepare for the next steps,  
-[__*click here to choose a joke from our list*__](#doc:/skillmap/story/joke-examples "Find a good two line joke here."),  
+To prepare for the next steps,<br/>
+[__*click here to choose a joke from our list*__](#doc:/skillmap/story/joke-examples "Find a good two line joke here."),<br/>
  or create your own!
 
 ```hint
@@ -31,13 +31,13 @@ A: Because pepper makes them sneeze!
 
 Do you have a joke?
 
-**Now design your scene**  
+**Now design your scene**<br/>
 🎨 🎨 🎨
 
 ---
 
-- :tree:  Snap  
-``||scene: set background image to [ ]||``  
+- :tree:  Snap<br/>
+``||scene: set background image to [ ]||``<br/>
 into the
 ``||loops:on start||`` container already in the workspace.
 
@@ -185,8 +185,8 @@ We can add these characters as [__*sprites*__](#sprotes "2-D images that moves o
 
 ---
 
-- :paper plane:  To add a character, look in the ``||sprites:Sprites||`` category for  
-``||variables: set [mySprite] to sprite [ ] of kind [Player]||``  
+- :paper plane:  To add a character, look in the ``||sprites:Sprites||`` category for<br/>
+``||variables: set [mySprite] to sprite [ ] of kind [Player]||``<br/>
 and drag it into the bottom of the ``||loops:on start||`` container.
 
 - :mouse pointer:  Create the perfect character for your joke by clicking the grey box so you can draw something in the image editor.
@@ -328,13 +328,13 @@ the reader gets to choose the timing of the joke.
 ---
 
 
-- :game:  From the ``||controller: Controller||`` category, drag an  
-``||controller:on [A] button [pressed]||`` 
+- :game:  From the ``||controller: Controller||`` category, drag an<br/>
+``||controller:on [A] button [pressed]||``<br/>
 container into the workspace.
 
-- :circle:  From the ``||game:Game||`` category, grab the  
-``||game: show long text [" "] [bottom]||``  
-block and snap it into the empty  
+- :circle:  From the ``||game:Game||`` category, grab the<br/>
+``||game: show long text [" "] [bottom]||``<br/>
+block and snap it into the empty<br/>
 ``||controller:on [A] button [pressed]||`` container.
 
 ```blocks
@@ -358,13 +358,13 @@ the last line, and it's the part that makes people laugh.
 
 ## {Step 6}
 
-- :mouse pointer:  Right-click and **duplicate** the  
-``||game: show long text [" "] [bottom]||``  
+- :mouse pointer:  Right-click and **duplicate** the<br/>
+``||game: show long text [" "] [bottom]||``<br/>
 block as many times as you need to fit your entire joke.
 
-- :mouse pointer:  Enter your punchline into the last  
-``||game: show long text [" "] [bottom]||``  
-block inside your   
+- :mouse pointer:  Enter your punchline into the last<br/>
+``||game: show long text [" "] [bottom]||``<br/>
+block inside your<br/>
 ``||controller:on [A] button [pressed]||`` container,
 and split the rest of the joke into other text blocks above it.
 
@@ -404,8 +404,8 @@ End on a high note with confetti or a screen full of smiles.
 
 ---
 
-- :mouse pointer:  Grab  
-``||scene: start screen [confetti] effect||``  
+- :mouse pointer:  Grab<br/>
+``||scene: start screen [confetti] effect||``<br/>
 and snap it into **the end**
  of the ``||controller:on [A] button [pressed]||`` container.
 

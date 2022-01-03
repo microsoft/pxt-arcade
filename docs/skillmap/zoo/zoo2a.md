@@ -2,7 +2,7 @@
 
 ## 1. Welcome
 
-**🐙 Welcome to the aquarium! 🐙**  
+**🐙 Welcome to the aquarium! 🐙**<br/>
 We're so excited to have you designing this exhibit.
 
 ---
@@ -43,8 +43,8 @@ let mySprite = sprites.create(img`
 
 ---
 
-- :paper plane:  In ``||sprites:Sprites||``, find  
-``||sprites:set [mySprite] [x] to [0]||``  
+- :paper plane:  In ``||sprites:Sprites||``, find<br/>
+``||sprites:set [mySprite] [x] to [0]||``<br/>
 and drag it into the **end** of the ``||loops:on start||`` container.
 
 - :mouse pointer:  Click **x** then choose ** vx (velocity x)** from the dropdown menu.
@@ -83,8 +83,8 @@ mySprite.vx = 50
 
 ---
 
-- :paper plane:  Open ``||sprites:Sprites||``, then snap  
-``||sprites:set [mySprite] bounce on wall <ON>||``  
+- :paper plane:  Open ``||sprites:Sprites||``, then snap<br/>
+``||sprites:set [mySprite] bounce on wall <ON>||``<br/>
 to the end of the program and check out your exhibit on the game screen!
 
 ```blocks
@@ -119,8 +119,8 @@ mySprite.setBounceOnWall(true)
 
 ---
 
-- :paper plane:  Grab a **new**  
-``||sprites:set [mySprite] [x] to [0]||``  
+- :paper plane:  Grab a **new**<br/>
+``||sprites:set [mySprite] [x] to [0]||``<br/>
 block and drag it to the end of the ``||loops:on start||`` container.
 
 - :mouse pointer:  Replace **x** with **y** using the dropdown menu.
@@ -155,8 +155,8 @@ mySprite.y = 0
 
 ## 5. Replace Values
 
-- :calculator:  From the ``||math:Math||`` category, grab a  
-``||math:pick random [0] to [10]||``   
+- :calculator:  From the ``||math:Math||`` category, grab a<br/>
+``||math:pick random [0] to [10]||``<br/>
 value block and
 use it to replace the **0** next to ``||sprites:y||``.
 
@@ -195,7 +195,7 @@ mySprite.y = randint(10, 110)
 
 ## 6. Try It
 
-**Click the Game Window Tab (Above)**  
+**Click the Game Window Tab (Above)**<br/>
 ![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
@@ -210,9 +210,9 @@ Watch your friend swim!
 
 ---
 
-- :redo:  In ``||loops:Loops||``, find the  
-``||loops:repeat [4] times||``  
-loop container and snap it into the **top** of the  
+- :redo:  In ``||loops:Loops||``, find the<br/>
+``||loops:repeat [4] times||``<br/>
+loop container and snap it into the **top** of the <br/>
 ``||loops:on start||`` container.
 
 - :mouse pointer:  Grab the first block of code beneath the new loop and use it to drag the whole chunk of code up into the empty **repeat** container.
@@ -264,7 +264,7 @@ What's going on? Hold on, we're getting a report from the penguin department —
 penguins did *what*?
 
 ## Finale
-**You better click "Done" and get over there!**  
+**You better click "Done" and get over there!**<br/>
 🚨 🚨 
 
 

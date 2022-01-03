@@ -3,16 +3,16 @@
 
 ## 1. Make an Animal
 
-**Your very first exhibit!**  
+**Your very first exhibit!**<br/>
 Exciting, huh?
 
-Hm... it does look a little empty.  
+Hm... it does look a little empty.<br/>
 Well, what's your favorite animal? Let's invite them over!
 
 ---
 
-- :paper plane:  From the ``||sprites:Sprites||`` category, drag  
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``   
+- :paper plane:  From the ``||sprites:Sprites||`` category, drag<br/>
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``<br/>
 into ``||loops:on start||``. 
 
 - :paint brush:  Click the grey box in the new block and draw your animal using the **image editor**!
@@ -43,12 +43,12 @@ let mySprite = sprites.create(img`
 
 ## 2. Move Around 
 
-**Take your animal for a walk!**
+**Take your animal for a walk!**<br/>
 🐆 🦓
 ---
 
-- :paper plane: From ``||sprites:Sprites||``, grab  
-``||sprites:set [mySprite] velocity to vx [50] vy [50]||``  
+- :paper plane: From ``||sprites:Sprites||``, grab<br/>
+``||sprites:set [mySprite] velocity to vx [50] vy [50]||``<br/>
 and drag it into the **end** of the ``||loops:on start||`` container. 
 
 Your animal friend should start moving! 
@@ -81,12 +81,12 @@ mySprite.setVelocity(50, 50)
 
 ## 3. Random Mosey
 
-The same old path gets boring after a while.  
+The same old path gets boring after a while.<br/>
 **Let's add some randomness!**
 
 ---
 
-- :calculator:  Go to the ``||math:Math||`` category and grab two   
+- :calculator:  Go to the ``||math:Math||`` category and grab two<br/>
 ``||math:pick random [0] to [10]||``   
 value blocks. 
 
@@ -128,8 +128,8 @@ Let's fix that.
 
 ---
 
-- :paper plane:  Open the ``||sprites:Sprites||`` category, then grab  
-``||sprites:set [mySprite] bounce on wall <ON>||``  
+- :paper plane:  Open the ``||sprites:Sprites||`` category, then grab<br/>
+``||sprites:set [mySprite] bounce on wall <ON>||``<br/>
 to snap in at the **end** of the program.
 
 
@@ -162,7 +162,7 @@ mySprite.setBounceOnWall(true)
 
 ## 5. Try It
 
-**Click the Game Window Tab (Above)**  
+**Click the Game Window Tab (Above)**<br/>
 ![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---

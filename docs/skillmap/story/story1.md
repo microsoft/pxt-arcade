@@ -13,14 +13,14 @@ Follow these quick steps and you'll have one in no time!
 
 ## {Step 2}
 
-**This card centers around an artistic background**  
+**This card centers around an artistic background**<br/>
 🎨 🎨 🎨 
 
 ---
 
 - :tree:  From the ``||scene:Scene||`` category in the toolbox,
-grab a  
-``||scene:set background image to [ ]||``  
+grab a<br/>
+``||scene:set background image to [ ]||``<br/>
 block and drag it into the **on start** container in the workspace.
 
 - :paint brush:  Choose a background from the image gallery by clicking inside the grey
@@ -162,7 +162,7 @@ scene.setBackgroundImage(img`
 
 ## {Step 2.5}
 
-**Click the Game Window Tab (Above)**  
+**Click the Game Window Tab (Above)**<br/>
 ![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
@@ -173,7 +173,7 @@ Do you see the background you chose?
 
 ## {Step 3}
 
-**Add a heartfelt greeting**  
+**Add a heartfelt greeting**<br/>
 💛 💛 💛
 
 ---
@@ -313,12 +313,12 @@ scene.setBackgroundImage(img`
 
 ## {Step 4}
 
-**Time for a celebration**  
+**Time for a celebration**<br/>
 🎉🎉🎉
 ---
 
-- :tree:  Add some pizzazz from the ``||scene:Scene||`` category by grabbing a  
-``||scene:start screen [confetti] effect||``  
+- :tree:  Add some pizzazz from the ``||scene:Scene||`` category by grabbing a<br/>
+``||scene:start screen [confetti] effect||``<br/>
 block and snapping it into the **on start** container.
 
 **Look at the game screen to see what you've done so far!**
@@ -454,13 +454,13 @@ effects.confetti.startScreenEffect()
 
 ## {Step 5}
 
-**Let's add a personal note**  
+**Let's add a personal note**<br/>
 🎵 🎵 🎵 
 
 ---
 
-- :headphones:  From the ``||music:Music||`` category, grab a  
-``||music:play melody [ ] at tempo [120] (bpm)||``  
+- :headphones:  From the ``||music:Music||`` category, grab a<br/>
+``||music:play melody [ ] at tempo [120] (bpm)||``<br/>
 block and snap it into the bottom of the **on start** container.
 
 - :mouse pointer:  In the new block, click on the music note to open the music editor.
@@ -614,7 +614,7 @@ You now have a basic greeting card!
 
 ## {Finish}
 
-**Congratulations, you've finished your greeting card! **
+**Congratulations, you've finished your greeting card!**
 
 Click **Done** to return to the main page where you can share your game
 with family and friends!

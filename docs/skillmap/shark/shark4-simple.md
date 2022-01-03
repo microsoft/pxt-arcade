@@ -13,11 +13,11 @@ Let's build a world for your shark to swim around in!
 
 ---
 
-- :tree: Drag  
-``||scene:set background image to [ ]||``  
-into the  
-``||loops:on start||``  
-container, just below   
+- :tree: Drag<br/>
+``||scene:set background image to [ ]||``<br/>
+into the<br/>
+``||loops:on start||``<br/>
+container, just below<br/>
 ``||scene:set background color to [ ]||``.
 
 - :paint brush: Click the empty grey box and toggle to **My Assets** to choose **ocean1**, then click **Done**.
@@ -39,9 +39,9 @@ Next, let's use a **repeat** loop to add some decorative sprites to the sea floo
 
 ---
 
-- :redo: Drag the  
-``||loops:repeat [4] times||``  
-block to **the end** of the  
+- :redo: Drag the<br/>
+``||loops:repeat [4] times||``<br/>
+block to **the end** of the<br/>
 ``||loops:on start|`` container.
 
 - :mouse pointer: Change the repeat number from **4** times to **10** times so the code will run 10 times in a row.
@@ -61,9 +61,9 @@ for (let index = 0; index < 10; index++) {
 
 ## 4. Add Background Decorations
 
-- :paper plane: Drag  
-``||variables:set [mySprite2] to sprite [ ] of kind [Player]||``  
-into the empty  
+- :paper plane: Drag<br/>
+``||variables:set [mySprite2] to sprite [ ] of kind [Player]||``<br/>
+into the empty<br/>
 ``||loops:repeat [10] times||`` container.
 
 - :mouse pointer: Click the ``||variables:mySprite2||`` dropdown and choose **Rename variable...** call this **myDecor**.
@@ -122,9 +122,9 @@ To make the seaweed look more natural, let's change the **y value** (vertical po
 
 ---
 
-- :paper plane: Drag the  
-``||sprites:set [mySprite] position to x [0] y [0]||``  
-block into **the end** of the  
+- :paper plane: Drag the<br/>
+``||sprites:set [mySprite] position to x [0] y [0]||``<br/>
+block into **the end** of the<br/>
 ``||loops:repeat [10] times||`` loop.
 
 - :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:myDecor||``.
@@ -152,8 +152,8 @@ for (let index = 0; index < 10; index++) {
 
 ## 7. Random Flow
 
-- :calculator: To scatter the seaweed along the floor, drag a  
-``||math:pick random [0] to [10]||``  
+- :calculator: To scatter the seaweed along the floor, drag a<br/>
+``||math:pick random [0] to [10]||``<br/>
 block to replace the **x** value.
 
 - :mouse pointer: Leave the lowest random number at **0** (the left edge of the screen)...but change the highest number to **160** (which represents the right edge).

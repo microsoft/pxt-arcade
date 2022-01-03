@@ -93,7 +93,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 ## Step 7
 
 
-**⌛ It's about time ⌛**
+**⌛ It's about time ⌛**<br/>
 For an added challenge, let's go back to the ``||loops:on start||`` container that's already in our workspace to set a timer that ends the game when it runs out!
 
 ---
@@ -117,7 +117,7 @@ mySprite.setStayInScreen(true)
 ## Step 8
 
 
-**🐟 Winner, winner...fish for dinner**
+**🐟 Winner, winner...fish for dinner**<br/>
 Right now, when the timer runs out, the player loses.  Let's change that.
 
 ---

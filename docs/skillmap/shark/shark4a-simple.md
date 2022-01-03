@@ -21,10 +21,10 @@ There are lots of ways to animate your shark, starting with the forward swim.
 ``||animation:Animation||`` category.
 
 
-- :sync: Grab the  
-``||animation:animate [mySprite]||``  
+- :sync: Grab the<br/>
+``||animation:animate [mySprite]||``<br/>
 block and snap it into **the bottom**
-of the  
+of the<br/>
 ``||loops:on start||`` container.
 
 ```blocks
@@ -101,13 +101,13 @@ Your shark should keep swimming as you play!
 
 ## 5. About Face
 
-**Sharks can't swim backwards!**  
+**Sharks can't swim backwards!**<br/>
 If the shark needs to swim to the left, we should turn it around.
 
 ---
 
-- :game: For this, drag  
-``||controller:on [A] button [pressed]||``  
+- :game: For this, drag<br/>
+``||controller:on [A] button [pressed]||``<br/>
 into an empty area of the workspace.
 
 - :mouse pointer: Change ``||controller:A||`` to ``||controller:left||``.
@@ -123,10 +123,10 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 ## 6. Left Animation
 
 
-- :sync: Drag  
-``||animation:animate [mySprite]||``  
-into the empty  
-``||controller:on [left] button [pressed]||``  
+- :sync: Drag<br/>
+``||animation:animate [mySprite]||``<br/>
+into the empty<br/>
+``||controller:on [left] button [pressed]||``<br/>
 container.
 
 - :mouse pointer: Click the grey box and toggle to **My Assets** to choose the **swim left** animation, then click **Done**.
@@ -158,7 +158,7 @@ Now your shark turns around when you press the left button, but it never flips b
 
 ## 8. Back to the Right
 
-**👉 Flip it! 👉**  
+**👉 Flip it! 👉**<br/>
 When the shark is done swimming left, it should automatically face back to the right.
 
 ---
@@ -180,7 +180,7 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
 
 ## Finale
 
-**WOW!**  
+**WOW!**<br/>
 Look at the game you've created!  Make sure to give it a try in the game window before moving on.
 
 ---

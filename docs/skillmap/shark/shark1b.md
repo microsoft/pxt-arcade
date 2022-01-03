@@ -22,7 +22,7 @@ Play with your project in the game window and try to remember which chunk of cod
 
 ## Step 3
 
-**☠️On a dangerous path ☠️**
+**☠️On a dangerous path ☠️**<br/>
 To subtract hitpoints when the enemy reaches the shark, we'll need a container to run code whenever the two overlap.
 
 ---

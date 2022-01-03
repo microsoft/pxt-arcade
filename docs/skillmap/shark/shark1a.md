@@ -126,7 +126,7 @@ You should have a shark that moves around with the arrow keys and enemies that s
 
 ## Step 10
 
-**🔀 Shake up the enemy 🔀**
+**🔀 Shake up the enemy 🔀**<br/>
 Let's start the submarine at a random height to keep things interesting.
 
 ---

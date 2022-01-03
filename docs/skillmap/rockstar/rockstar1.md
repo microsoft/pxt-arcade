@@ -33,8 +33,8 @@ Our game character is called a [__*sprite*__](#sprote "2-D image that move on th
 
 ---
 
-- :paper plane: From the ``||sprites:Sprites||`` category, drag  
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  
+- :paper plane: From the ``||sprites:Sprites||`` category, drag<br/>
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``<br/>
 to **the end** of the ``||loops:on start||`` container.
 
 _💡  Having trouble finding the block you need? Look to the left of the instructions for the icon of the toolbox category where your block lives!_
@@ -58,8 +58,8 @@ let mySprite = sprites.create(assets.image`rockstar`, SpriteKind.Player)
 
 ---
 
-- :game: Drag  
-``||controller:move [mySprite] with buttons ⊕||``  
+- :game: Drag<br/>
+``||controller:move [mySprite] with buttons ⊕||``<br/>
 to **the end** of the ``||loops:on start||`` container.
 
 _💡  Remember, the icon to the left of the instructions shows the same icon as the toolbox category for the block you need._
@@ -76,7 +76,7 @@ controller.moveSprite(mySprite)
 
 ## 5. Try It
 
-**Click the Game Window Tab (Above)**  
+**Click the Game Window Tab (Above)**<br/>
 ![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
@@ -93,9 +93,9 @@ The rockstar sprite should appear at the stage door.
 
 ---
 
-- :tree: To start Jerry at the stage door, drag  
-``||scene: place [mySprite] on top of random [ ]||``  
-to **the end** of the  
+- :tree: To start Jerry at the stage door, drag<br/>
+``||scene: place [mySprite] on top of random [ ]||``<br/>
+to **the end** of the<br/>
 ``||loops:on start||``  
 container.
 
@@ -119,9 +119,9 @@ tiles.placeOnRandomTile(mySprite, assets.tile`stage`)
 ## 7. Follow with Camera
 
 
-- :tree: Next, to keep Jerry in sight, drag  
-``||scene:camera follow sprite [mySprite]||``  
-to **the end** of the  
+- :tree: Next, to keep Jerry in sight, drag<br/>
+``||scene:camera follow sprite [mySprite]||``<br/>
+to **the end** of the<br/>
 ``||loops:on start||`` container.
 
 ```blocks

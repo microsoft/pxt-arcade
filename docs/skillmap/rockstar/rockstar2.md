@@ -12,20 +12,20 @@ Jerry needs to gather all of the instruments before getting on the tour bus!
 
 ## 2. Add Points
 
-**🎸 Award points when Jerry grabs an instrument**  
+**🎸 Award points when Jerry grabs an instrument**<br/>
 When your sprite overlaps an instrument, we'll change the score.
 
 ---
 
 
-- :tree: To detect an overlap, drag an  
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
+- :tree: To detect an overlap, drag an<br/>
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``<br/>
 container into an empty area of the workspace.
 
 - :mouse pointer: Change the checkerboard to the red guitar called **instrument1**.
 
-- :id card: Snap a  
-``||info:change score by [1]||``  
+- :id card: Snap a<br/>
+``||info:change score by [1]||``<br/>
 block into the new container.
 
 
@@ -50,16 +50,16 @@ Uh oh!  You get WAY too many points when you touch the guitar! We can fix that i
 
 ---
 
-- :tree: Drag  
-``||scene:set [ ] at tilemap col [0] row [0]||``  
-into **the top** of the  
-``||scene:on [sprite] of kind [Player] overlaps [instrument1] at [location]||``  
+- :tree: Drag<br/>
+``||scene:set [ ] at tilemap col [0] row [0]||``<br/>
+into **the top** of the<br/>
+``||scene:on [sprite] of kind [Player] overlaps [instrument1] at [location]||``<br/>
 container.
 
-- :mouse pointer: Replace  
-``||scene:tilemap col [0] row [0]||``  
-with the  
-``||variables:location||``  
+- :mouse pointer: Replace<br/>
+``||scene:tilemap col [0] row [0]||``<br/>
+with the<br/>
+``||variables:location||``<br/>
 value from the top of the **Player overlaps instrument** container.
 
 ![Share your location](/static/skillmap/assets/overlap-tile-location.gif "Grab the variable from the overlap container")
@@ -87,25 +87,25 @@ You should get one point for every guitar you collect.  What about the drums and
 
 ## 6. More Instruments
 
-**🎹 Do it all again**  
+**🎹 Do it all again**<br/>
 Follow the same steps two more times to add points for the **drums** and **keyboard** tiles.
 
 ---
 
-- :tree: Drag  
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
+- :tree: Drag<br/>
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``<br/>
 into an empty area of the workspace and set the instrument.
 
-- :tree: Drag  
-``||scene:set [ ] at tilemap col [0] row [0]||``  
-into **the top** of the  
-``||scene:on [sprite] of kind [Player] overlaps [instrument] at [location]||``  
-container and replace  
-``||scene:tilemap col [0] row [0]||``  
+- :tree: Drag<br/>
+``||scene:set [ ] at tilemap col [0] row [0]||``<br/>
+into **the top** of the<br/>
+``||scene:on [sprite] of kind [Player] overlaps [instrument] at [location]||``<br/>
+container and replace<br/>
+``||scene:tilemap col [0] row [0]||``<br/>
 with ``||variables:location||``.
 
-- :id card: Snap  
-``||info:change score by [1]||``  
+- :id card: Snap<br/>
+``||info:change score by [1]||``<br/>
 into the new container.
 
 ```blocks
@@ -132,19 +132,19 @@ You should get one point for every instrument you collect!  Can you make it to t
 
 ## 8. Out the Door
 
-**🚪 Make it out the door**  
+**🚪 Make it out the door**<br/>
 Let's finish the game with a WIN when Jerry overlaps the exit door!
 
 ---
 
-- :tree: To detect an overlap, drag an  
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
+- :tree: To detect an overlap, drag an<br/>
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``<br/>
 container into an empty area of the workspace.
 
 - :mouse pointer: Change the checkerboard to red door tile named **exit**.
 
-- :circle: Snap a  
-``||game:game over <LOSE>||``  
+- :circle: Snap a<br/>
+``||game:game over <LOSE>||``<br/>
 block into the new container.
 
 - :mouse pointer: Toggle **`<LOSE>`** to **`<WIN>`**.

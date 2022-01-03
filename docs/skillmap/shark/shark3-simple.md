@@ -25,11 +25,11 @@ We need a container that will run when the shark overlaps a fish.
 
 ---
 
-- :paper plane: Drag  
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``   
+- :paper plane: Drag<br/>
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``<br/>
 into an empty area of the workspace.
 
-- :mouse pointer: Change the last **kind** from  
+- :mouse pointer: Change the last **kind** from<br/>
 ``||sprites:Player||`` to ``||sprites:Food||``.
 
 
@@ -41,18 +41,18 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ## Down the Hatch
 
-**🦈 YUMMMMMM 🦈**  
+**🦈 YUMMMMMM 🦈**<br/>
 When the shark catches the fish, we need to make the fish disappear.
 
 ---
 
-- :paper plane: Snap  
-``||sprites:destroy [mySprite]||``  
+- :paper plane: Snap<br/>
+``||sprites:destroy [mySprite]||``<br/>
 into the empty **on overlaps** container.
 
-- :mouse pointer: Drag the  
-``||variables:otherSprite||``  
-value from the title of the **on overlaps** container down to replace  
+- :mouse pointer: Drag the<br/>
+``||variables:otherSprite||``<br/>
+value from the title of the **on overlaps** container down to replace<br/>
 ``||variables:mySprite||``.
 
 ![Grabbing variable from block](/static/skillmap/space/give-var.gif "So that's how you do that!")
@@ -65,9 +65,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ## 5. Special Effects
 
-- :mouse pointer: Click the plus (+) sign to the right of the  
-``||sprites:destroy [otherSprite]||``  
-block and choose an effect to play while the fish vanishes!  
+- :mouse pointer: Click the plus (+) sign to the right of the<br/>
+``||sprites:destroy [otherSprite]||``<br/>
+block and choose an effect to play while the fish vanishes!<br/>
 _💡 We like **disintegrate** for this._
 
 - :mouse pointer: Change the effect duration from **500** ms to something shorter, like **100** ms.
@@ -83,8 +83,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 ## 6. Score!
 
 
-- :id card: Add a point to the player's score by dragging  
-``||info:change score by [1]||``   
+- :id card: Add a point to the player's score by dragging<br/>
+``||info:change score by [1]||``<br/>
 to the bottom of the **on overlaps** container.
 
 
@@ -100,14 +100,14 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 ## 7. Add a Timer
 
 
-**⌛ It's about time ⌛**  
+**⌛ It's about time ⌛**<br/>
 For an added challenge, let's go back to the ``||loops:on start||`` container that's already in our workspace to set a timer that ends the game when it runs out!
 
 ---
 
-- :id card: Snap   
-``||info:start countdown [10] (s)||``  
-into **the end** of the  
+- :id card: Snap<br/>
+``||info:start countdown [10] (s)||``<br/>
+into **the end** of the<br/>
 ``||loops:on start||`` container.
 
 - :mouse pointer: To give the player more time, change **10** seconds to **15** seconds.
@@ -127,20 +127,20 @@ mySprite.setStayInScreen(true)
 ## Winning
 
 
-**🐟 Winner, winner...  
-fish for dinner**   
+**🐟 Winner, winner...**<br/>
+**fish for dinner**<br/>
 Right now, when the timer runs out, the player loses.  Let's change that.
 
 ---
 
-- :id card: Grab an  
-``||info:on countdown end||``  
+- :id card: Grab an<br/>
+``||info:on countdown end||``<br/>
 container and drag it into an empty area of the workspace.
 
-- :circle: Drag  
-``||game:game over <LOSE>||``  
-into the empty  
-``||info:on countdown end||``  
+- :circle: Drag<br/>
+``||game:game over <LOSE>||``<br/>
+into the empty<br/>
+``||info:on countdown end||``<br/>
 container.
 
 - :mouse pointer: Toggle **`<LOSE>`** to **`<WIN>`** so the player can celebrate the points they've gathered along the way.
