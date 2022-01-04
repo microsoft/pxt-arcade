@@ -8,7 +8,7 @@ Welcome to **Jungle Monkey Jump!**
 This activity will show you how to make a [__*sidescrolling*__](#scrolld "games that are viewed from the side, with most of the action happening horizontally")
 [__*platformer*__](#plat "games that rely on jump and run as their main mechanic").
 
-![Our first platformer](/static/skillmap/jungle/jungle1.gif "Look what we're about to learn today!")
+![Our first platformer](/static/skillmap/jungle/jungle1.gif "Look what we're about to make!")
 
 This kind of game peeks in on the action from the side, and relies on a [__*tilemap*__](#tiled "a scene or world created using predefined tiles")  for placement of the main goals, decorations, and obstacles.
 
@@ -35,8 +35,8 @@ Our moving characters are called [__*sprites*__](#sprote "2-D images that move o
 
 ---
 
-- :paper plane: From the ``||sprites:Sprites||`` category, drag   
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  
+- :paper plane: From the ``||sprites:Sprites||`` category, drag
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
 to **the end** of the ``||loops:on start||`` container.
 
 _💡  Having trouble finding the block you need? Look to the left of the instructions for the icon of the toolbox category where your block lives!_
@@ -60,8 +60,8 @@ let mySprite = sprites.create(assets.image`stand`, SpriteKind.Player)
 
 ---
 
-- :game: Drag  
-``||controller:move [mySprite] with buttons ➕||``  
+- :game: Drag
+``||controller:move [mySprite] with buttons ➕||``
 to **the end** of the ``||loops:on start||`` container.
 
 _💡  Remember, the icon to the left of the instructions shows the same icon as the toolbox category for the block you need._
@@ -81,7 +81,7 @@ controller.moveSprite(mySprite, 100, 0)
 
 ## 5. Try It
 
-**Click the Game Window Tab (Above)**  
+**Click the Game Window Tab (Above)**
 
 ![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
@@ -99,9 +99,9 @@ to "pull down" on the sprite.
 
 ---
 
-- :paper plane:  Drag  
-``||sprites:set [mySprite] [x] to [0]||``  
-to **the end** of the  
+- :paper plane:  Drag
+``||sprites:set [mySprite] [x] to [0]||``
+to **the end** of the
 ``||loops:on start||`` container.
 
 - :mouse pointer: Click the dropdown to change **x** to **ay (acceleration y)**.
@@ -123,9 +123,9 @@ mySprite.ay = 500
 
 ---
 
-- :tree:  To keep the monkey in sight, drag  
-``||scene:camera follow sprite [mySprite]||``  
-to **the end** of the  
+- :tree:  To keep the monkey in sight, drag
+``||scene:camera follow sprite [mySprite]||``
+to **the end** of the
 ``||loops:on start||`` container.
 
 ```blocks
@@ -152,15 +152,15 @@ Now that the monkey has landed safely, we can make it jump using the **up** arro
 
 ---
 
-- :game: Drag the  
-``||controller:on [A] button [pressed]||``  
+- :game: Drag the
+``||controller:on [A] button [pressed]||``
 container into an empty area of the workspace.
 
 - :mouse pointer: Click the **A** option and change it to **up**.
 
-- :paper plane: Inside of the  
-``||controller:on [up] button [pressed]||``  
-container, add  
+- :paper plane: Inside of the
+``||controller:on [up] button [pressed]||``
+container, add
 ``||sprites:make [mySprite] gravity jump||``.
 
 ```blocks
@@ -175,7 +175,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Finale
 
-🔥 **That's it! Now give your game a try!** 🔥  
+🔥 **That's it! Now give your game a try!** 🔥
 Can you jump around between platforms?
 
 ---

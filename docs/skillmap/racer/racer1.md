@@ -6,7 +6,7 @@ Let's make a racer game!
 
 In this tutorial, you'll add a truck to your game and make it move through a cave.
 
-![Set your sprite](/static/skillmap/racer/racer1.gif)
+![Set your sprite](/static/skillmap/racer/racer1.gif "Look what we're about to make!")
 
 
 ## 2. The Scene is Set
