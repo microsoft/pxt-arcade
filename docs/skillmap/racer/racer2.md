@@ -4,7 +4,7 @@
 
 Now that you have a truck that moves, let's add the ability to jump and navigate around obstacles.
 
-![Set your sprite](/static/skillmap/racer/racer2.gif)
+![Make your truck jump dangerous pits of acid](/static/skillmap/racer/racer2.gif "Look what we're about to make!")
 
 
 

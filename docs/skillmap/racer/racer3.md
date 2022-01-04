@@ -4,7 +4,7 @@
 
 In this tutorial, we'll customize your Monster Racer game to make it even more special.
 
-![Set your sprite](/static/skillmap/racer/racer3.gif)
+![Animating your truck.](/static/skillmap/racer/racer3.gif "Look what we're about to make!")
 
 
 ## 2. Review
@@ -12,7 +12,9 @@ In this tutorial, we'll customize your Monster Racer game to make it even more s
 
 Take a look at the code that's already in your workspace.
 
-You should see the blocks that set up your truck, as well as the blocks that let you jump.  There should also be three **overlap** events: one that ends the game when you hit an acid pit, one that ends the game when you hit a spike, and one that ends the game when you reach the other side of the cave.
+You should see the blocks that set up your truck, as well as the blocks that let you jump.
+
+There should also be three **overlap** events: one that ends the game when you hit an acid pit, one that ends the game when you hit a spike, and one that ends the game when you reach the other side of the cave.
 
 
 ## 3. Keep Rollin'
@@ -83,6 +85,43 @@ true
 )
 ```
 
+## 5. Cave Design
+
+Finally, you can edit the cave to have your own set of pits and spikes!
+
+---
+
+- :mouse pointer: Click the tile shown in the ``||scene:set tilemap to [ ]||`` block already in your program.
+
+The current tilemap will open in the **Tilemap Editor**.
+
+![Opening the tilmap](/static/skillmap/racer/racer-map.gif "Want to edit the tilemap?")
+
+
+
+## 6. Cave Walls
+
+Click the **wall** icon to solidify tiles.
+
+With the wall icon highlighted, you can select the eraser tool to remove walls, too!
+
+![Add or remove walls](/static/skillmap/racer/racer-walls.gif "Use the pencil to draw walls and the eraser to remove them. ")
+
+
+
+
+## 7. Rearranging
+
+Click the tile icon to load your pencil tool with the tiles you want to add to the map.
+
+With the wall icon highlighted, you can select the eraser tool to remove walls, too!
+
+The tiles for this game are listed under **My Tiles**.
+
+![Change tiles](/static/skillmap/racer/racer-custom.gif "Use the tile gallery to select tiles to add to the map.")
+
+
+
 
 ## Finale
 
@@ -95,6 +134,18 @@ When you're finished, click **Done** to finish the skillmap and share your game 
 
 
 ```template
+
+scene.onOverlapTile(SpriteKind.Player, assets.tile`empty cave`, function (sprite, location) {
+    game.over(true)
+})
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+        mySprite.vy = -200
+})
+
+scene.onOverlapTile(SpriteKind.Player, assets.tile`acid`, function (sprite, location) {
+    game.over(false)
+})
+
 tiles.setTilemap(tilemap`level1`)
 scene.setBackgroundImage(assets.image`background`)
 let mySprite = sprites.create(assets.image`truck1`, SpriteKind.Player)
