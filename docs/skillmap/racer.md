@@ -3,6 +3,7 @@
 * description: Create a side-scrolling monster truck racing game so you can jump obstacles and get your monster truck to the finish line.
 * backgroundurl: /static/skillmap/racer/backgrounds/racer-comp.png
 * bannerurl: /static/skillmap/racer/racer3.gif
+
 * primarycolor: #ff93c4
 * secondarycolor: #fdf60c
 * tertiarycolor: #161112
