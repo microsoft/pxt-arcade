@@ -1,8 +1,8 @@
 # Monster Racer
 * name: Monster Racer
 * description: Create a side-scrolling monster truck racing game so you can jump obstacles and get your monster truck to the finish line.
-* backgroundurl: /static/skillmap/rockstar/backgrounds/racer-comp.png
-* bannerurl: /static/skillmap/rockstar/racer.gif
+* backgroundurl: /static/skillmap/racer/backgrounds/racer-comp.png
+* bannerurl: /static/skillmap/racer/racer3.gif
 * primarycolor: #ff93c4
 * secondarycolor: #fdf60c
 * tertiarycolor: #161112
@@ -18,7 +18,7 @@
 * name: Ready, Set, Go!
 * type: tutorial
 * description: Get your monster truck moving and try to make it to the end of your tilemap.
-* url: /skillmap/rockstar/racer1
+* url: /skillmap/racer/racer1
 * tags: easy, sprites, design
 * imageUrl: /static/skillmap/racer/racer1.gif
 * next: racer2
@@ -28,7 +28,7 @@
 * name: Over and Under
 * type: tutorial
 * description: Code actions to help your racer survive the pits and perils of the cave.
-* url: /skillmap/rockstar/racer2
+* url: /skillmap/racer/racer2
 * tags: easy, tiles, events
 * imageUrl: /static/skillmap/racer/racer2.gif
 * next: racer3
@@ -38,7 +38,7 @@
 * name: Going Further
 * type: tutorial
 * description: Customize your game and make it your own by adding animations and changing your tilemap.
-* url: /skillmap/rockstar/racer3
+* url: /skillmap/racer/racer3
 * tags: easy, enemies, overlap, lives
 * imageUrl: /static/skillmap/racer/racer3.gif
 * next: racer-finish
