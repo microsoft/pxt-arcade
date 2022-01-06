@@ -50,7 +50,9 @@ to **the end** of the <br/>
 ``||loops:on start||`` <br/>
 container.
 
-- :paint brush:  To choose a truck, click the empty grey box and toggle to **My Assets** and choose it there.
+- :paint brush:  To choose a truck, click the empty grey box and toggle to **My Assets**.
+
+![Set your sprite](/static/skillmap/assets/my-assets-three.png "Look what we're about to make!")
 
 _💡 We'll be using the **truck2** sprite, but you can use whichever one you want._
 
@@ -69,7 +71,7 @@ let mySprite = sprites.create(assets.image`truck2`, SpriteKind.Player)
 To make the game feel more realistic, it needs gravity.
 
 For that, add [__*acceleration*__](#accel "increased speed in a direction")
-that will "pull down" on the sprite.
+to "pull down" on the sprite.
 
 ---
 
