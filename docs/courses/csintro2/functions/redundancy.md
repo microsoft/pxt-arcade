@@ -10,7 +10,7 @@ In this activity, students will:
 
 ## Example #1a: Movement
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-redundant-example)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/LGDwglUEb_8))
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -109,7 +109,7 @@ mySprite.destroy()
 
 ## Student Task #1: Simplification
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-redundant-task1)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/MXQTc9At7Ts)
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -191,7 +191,7 @@ game.over(false)
 
 ## Student Task #2: Events
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-redundant-task2)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/46mdlB941Yo)
 
 1. Review the code below
 2. Create the sample code and run the code
