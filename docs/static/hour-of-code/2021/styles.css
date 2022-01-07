@@ -1,0 +1,1513 @@
+/*
+
+Hour of Code 2021 Theming
+
+-- Colors:
+---- #FFFFFF
+---- #000000
+---- #3DC1AA (Marina)
+---- #EECA49 (Sunflower)
+---- #DE594B (Papaya)
+---- #453052 (Eggplant)
+
+-- Fonts:
+---- Rowdies (Display)
+---- Roboto (Body)
+*/
+
+/* Global --------------------------------------------------------------------------- */
+
+html {
+    font-size: 10px !important;
+}
+
+body,
+a,
+button,
+p,
+li {
+    font-size: 1.8rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.lg-p {
+    font-size: 2.2rem;
+}
+
+li {
+    padding: 1rem 0;
+}
+
+li li {
+    padding: 0;
+    margin: 0.5rem 0;
+}
+
+.body-font {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.display-font {
+    font-family: 'Rowdies', 'Segoe UI', sans-serif;
+    font-weight: 700;
+}
+
+/* Dynamic scaling */
+@media (min-width: 4000px) {
+    html {
+        font-size: 16px !important;
+    }
+}
+
+@media (min-width: 3000px) {
+    html {
+        font-size: 14px !important;
+    }
+}
+
+@media (min-width: 2000px) {
+    html {
+        font-size: 12px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 8px !important;
+    }
+}
+
+ol {
+    font-weight: bold;
+}
+
+li span {
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 7.2rem;
+    text-transform: uppercase;
+}
+h2 {
+    font-size: 5.4rem;
+    text-transform: uppercase;
+}
+h3 {
+    font-size: 3.6rem;
+    text-transform: uppercase;
+}
+h4 {
+    font-size: 2.4rem;
+}
+h5 {
+    font-size: 2rem;
+}
+
+.background-white {
+    color: black;
+    background-color: white;
+}
+.background-black {
+    color: white;
+    background-color: black;
+}
+.background-marina {
+    color: black;
+    background-color: #3dc1aa;
+}
+.background-sunflower {
+    color: black;
+    background-color: #eeca49;
+}
+.background-papaya {
+    color: white;
+    background-color: #de594b;
+}
+.background-eggplant {
+    color: white;
+    background-color: #453052;
+}
+
+.background-eggplant a {
+    color: #3dc1aa;
+}
+
+.background-eggplant a:hover {
+    color: #2ead98;
+}
+
+.background-marina a,
+.background-sunflower a {
+    color: #453052;
+}
+
+.background-marina a:hover,
+.background-sunflower a:hover {
+    color: #33203f;
+}
+
+.background-papaya a {
+    color: #fadd73;
+}
+
+.background-papaya a:hover {
+    color: #eeca49;
+}
+
+.marina {
+    color: #3dc1aa;
+}
+.sunflower {
+    color: #eeca49;
+}
+.papaya {
+    color: #de594b;
+}
+.eggplant {
+    color: #453052;
+}
+
+/* Navbar --------------------------------------------------------------------------- */
+
+#header-bar,
+#header-bar > div {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.header-bar-left {
+    justify-content: flex-start;
+}
+.header-bar-right {
+    justify-content: flex-end;
+}
+
+.header-org-logo {
+    display: flex;
+}
+.header-org-logo-sm {
+    display: none;
+}
+
+.header-org-logo img,
+.header-org-logo-sm img {
+    margin: 0 15px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+.header-title {
+    white-space: nowrap;
+}
+
+.header-title:before {
+    content: '';
+    position: relative;
+    height: 18px;
+    border-left: 2px solid white;
+}
+
+.header-title span {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    margin-left: 15px;
+    margin-bottom: 1px;
+}
+
+a.header-icon {
+    height: 100%;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+a.header-icon:hover,
+a.header-icon:focus {
+    color: white;
+    opacity: 0.8;
+}
+
+a.header-icon i.icon {
+    height: unset;
+}
+
+nav a {
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana;
+    font-style: unset;
+    text-transform: none !important;
+}
+
+nav .icon {
+    font-size: 26px;
+    line-height: 26px;
+}
+
+nav .header-bar-left a,
+nav .header-bar-left a:hover {
+    display: flex;
+    color: white;
+    text-decoration: none;
+}
+
+nav .header-bar-right .btn:active svg path {
+    fill: white;
+}
+
+nav .header-bar-right .btn {
+    min-width: unset;
+    padding: 10px;
+    width: 160px;
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .header-bar-right .btn span {
+    margin-right: 10px;
+    line-height: 18px;
+}
+
+nav .header-bar-right .btn svg path {
+    fill: black;
+}
+
+/* Header --------------------------------------------------------------------------- */
+
+header.hoc-header {
+    height: 50rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    background-repeat: repeat-x;
+    background-size: auto 50rem;
+    background-position: center bottom;
+}
+
+header.hoc-header.homepage {
+    flex-direction: column;
+    align-items: center;
+}
+
+header.hoc-header .header-background-image {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-size: auto 50rem;
+    background-position: center bottom;
+}
+
+header.hoc-header .header-text {
+    margin-top: 8rem;
+    max-width: 50rem;
+    text-align: center;
+    margin-left: 1rem;
+    user-select: none;
+}
+
+header.hoc-header.homepage .header-text {
+    margin-top: -6rem;
+}
+
+header.hoc-header.homepage a.btn {
+    margin-top: 1.5rem;
+    position: relative;
+    z-index: 105;
+}
+
+header.hoc-header .header-text .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: 0.5rem;
+}
+
+header.hoc-header .header-text .title h1 {
+    filter: drop-shadow(-0.5rem 0.5rem 0 #eeca49);
+}
+
+header.hoc-header .header-text .title .code {
+    font-size: 11rem;
+    margin-top: -4rem;
+    margin-left: -1rem;
+    position: relative;
+}
+
+header.hoc-header .header-text .title .code .small {
+    font-size: 5rem;
+    position: absolute;
+    right: -3rem;
+    top: -1.5rem;
+}
+
+header.hoc-header .header-text h3 {
+    margin-top: -1.5rem;
+}
+
+header.hoc-header-educators {
+    background-position: left bottom;
+    justify-content: flex-start;
+}
+
+header.hoc-header-educators .header-text {
+    margin-left: 10rem;
+}
+
+header.hoc-header-educators .header-text h3 {
+    display: inline-block;
+    margin: 0 auto;
+    background-color: #de594b;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 5rem;
+    font-size: 2.8rem;
+}
+
+@media (max-width: 768px) {
+    header.hoc-header-educators {
+        background-position: left -9rem bottom;
+    }
+
+    header.hoc-header-educators .header-text {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header.hoc-header {
+        height: 40rem;
+    }
+
+    header.hoc-header .header-text {
+        margin-top: 3rem;
+        max-width: 45rem;
+        transform: scale(0.8);
+        margin-bottom: -3rem;
+    }
+}
+
+/* Video Modal --------------------------------------------------------------------------- */
+
+.video-preview {
+    width: 35%;
+    flex-shrink: 0;
+    outline: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+@media (max-width: 480px) {
+    .video-preview {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+.video-preview:hover {
+    transform: scale(1.1);
+}
+
+.video-preview img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+section.intro {
+    display: flex;
+    align-items: center;
+}
+
+section.intro + .buttons {
+    margin: 2rem 0;
+}
+
+section.intro + .buttons::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.modal-backdrop {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-backdrop.closed {
+    display: none;
+}
+
+.modal {
+    position: relative;
+    width: 80%;
+    max-width: 110rem;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .modal {
+        width: 90%;
+    }
+}
+
+.modal .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 3rem;
+    height: 0;
+    overflow: hidden;
+}
+
+.modal .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal button.btn {
+    outline: none;
+    border: none !important;
+    min-width: 15rem;
+    margin-bottom: 1rem;
+}
+
+.modal button.btn h5 {
+    margin-left: -0.2rem;
+}
+
+/* Standard/Default Section --------------------------------------------------------------------------- */
+
+section.hoc-section {
+    width: 90%;
+    max-width: 90rem;
+    margin: 4rem auto;
+    padding: 4rem 0;
+}
+
+section.hoc-section::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+section.hoc-section-wide {
+    max-width: 110rem;
+}
+
+section.hoc-section > *:last-child {
+    margin-bottom: 0;
+}
+
+section.hoc-section .title {
+    margin-bottom: 2rem;
+}
+
+section.hoc-section a.btn {
+    float: right;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    section.hoc-section {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section.hoc-section .title {
+        margin-bottom: 2rem;
+    }
+}
+
+/* First Section --------------------------------------------------------------------------- */
+
+section.hoc-section-01 {
+    width: 90%;
+    max-width: 110rem;
+    margin: 4rem auto;
+    padding: 4rem 0;
+    display: flex;
+    align-items: center;
+}
+
+section.hoc-section-01.reverse {
+    flex-direction: row-reverse;
+}
+
+section.hoc-section-01 .section-text,
+section.intro .section-text {
+    margin-left: 7rem;
+}
+
+section.hoc-section-01.reverse .section-text,
+section.intro.reverse .section-text {
+    margin-left: 0;
+    margin-right: 7rem;
+}
+
+section.hoc-section-01 .section-text:only-child,
+section.intro .section-text:only-child {
+    margin-left: 0;
+}
+
+section.hoc-section-01 .section-text > *:last-child,
+section.intro .section-text > *:last-child {
+    margin-bottom: 0;
+}
+
+section.hoc-section-01 .section-text .title,
+section.intro .section-text .title {
+    margin-bottom: 4rem;
+}
+
+section.hoc-section-01 .activity-btn,
+section.hoc-section-01 .hero {
+    width: 35%;
+    flex-shrink: 0;
+}
+
+section.hoc-section-01 .hero img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+section.hoc-section-01 a.btn {
+    float: right;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    section.hoc-section-01,
+    section.hoc-section.hoc-section-wide {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+    section.hoc-section-01 .section-text,
+    section.intro .section-text {
+        margin-left: 4rem;
+    }
+
+    section.hoc-section-01.reverse {
+        margin-top: 4rem;
+        margin-bottom: 0;
+    }
+
+    section.hoc-section-01.reverse .section-text,
+    section.intro.reverse .section-text {
+        margin-left: 0;
+        margin-right: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section.hoc-section-01,
+    section.intro {
+        flex-wrap: wrap;
+    }
+
+    section.hoc-section-01 .section-text,
+    section.intro .section-text,
+    section.hoc-section-01.reverse .section-text {
+        margin: 0;
+    }
+
+    section.hoc-section-01 .activity-btn,
+    section.hoc-section-01 .hero {
+        width: 100%;
+        margin-bottom: 5rem;
+    }
+
+    section.hoc-section-01 .section-text .title,
+    section.intro .section-text .title {
+        margin-bottom: 2rem;
+    }
+}
+
+/* First Aside --------------------------------------------------------------------------- */
+
+section.hoc-aside-01 {
+    margin-bottom: 0;
+}
+
+section.hoc-aside-01 .wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 160rem;
+    margin: 0 auto;
+}
+
+section.hoc-aside-01.background-sunflower {
+    margin-bottom: 0;
+}
+
+section.hoc-aside-01 .hero {
+    width: 35%;
+    flex-shrink: 0;
+    align-self: stretch;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1rem solid #3dc1aa;
+}
+
+section.hoc-aside-01.background-sunflower .hero {
+    background-image: unset;
+    border: 1rem solid #eeca49;
+}
+
+section.hoc-aside-01 .aside-text {
+    padding: 4rem 0;
+    margin: 0 7rem;
+}
+
+section.hoc-aside-01 .aside-text > *:last-child {
+    margin-bottom: 0;
+}
+
+section.hoc-aside-01 .aside-text .title {
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+section.hoc-aside-01 .aside-text .subtitle {
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+section.hoc-aside-01 .aside-text .btn {
+    margin-top: 1rem;
+    float: right;
+}
+
+@media (min-width: 1400px) {
+    section.hoc-aside-01 .hero {
+        width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    section.hoc-aside-01 .wrapper {
+        flex-wrap: wrap-reverse;
+    }
+
+    section.hoc-aside-01 .hero {
+        width: 100%;
+        height: 20rem;
+    }
+
+    section.hoc-aside-01 .aside-text {
+        padding: 2rem 0;
+        margin: 2rem;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    section.hoc-aside-01 .aside-text .title {
+        margin: 2rem 0;
+    }
+
+    section.hoc-aside-01 .aside-text .subtitle {
+        margin-bottom: 2rem;
+    }
+
+    section.hoc-aside-01 .aside-text .btn {
+        margin-top: 0;
+    }
+}
+
+/* Second Section --------------------------------------------------------------------------- */
+
+section.hoc-section-02 {
+    width: 90%;
+    max-width: 110rem;
+    margin: 4rem auto;
+    padding: 4rem 0;
+}
+
+section.hoc-section-02 .section-text {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+section.hoc-section-02 .section-text .title {
+    flex-shrink: 0;
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+section.hoc-section-02 .section-text p {
+    margin-left: 7rem;
+    flex-shrink: 1;
+}
+
+section.hoc-section-02 .carousel {
+    display: flex;
+    width: 100%;
+    height: 60rem;
+}
+
+section.hoc-section-02 .carousel .body {
+    flex-basis: 100%;
+    position: relative;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+section.hoc-section-02 .carousel .body .btn {
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+}
+
+section.hoc-section-02 .carousel .body .body-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom-right-radius: 0.5rem;
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 30%
+    );
+}
+
+section.hoc-section-02 .carousel .list {
+    flex-basis: 25rem;
+    background-color: black;
+    flex-shrink: 0;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+section.hoc-section-02 .carousel .list .list-item {
+    display: block;
+    color: white;
+    text-transform: uppercase;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: 0.25s;
+    font-size: 2rem;
+    line-height: 1.1;
+    margin: 1rem 0;
+    user-select: none;
+}
+
+section.hoc-section-02 .carousel .list .list-item.active {
+    background-color: #eeca49;
+    color: black;
+}
+
+section.hoc-section-02 .carousel .list .list-item:hover {
+    background-color: rgb(37, 37, 37);
+    text-decoration: none;
+}
+
+section.hoc-section-02 .carousel .list .list-item.active:hover {
+    background-color: #eeca49;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    section.hoc-section-02 .carousel {
+        display: flex;
+        width: 100%;
+        height: 50rem;
+    }
+
+    section.hoc-section-02 .section-text p {
+        margin-left: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section.hoc-section-02 {
+        padding: 2rem 0;
+    }
+
+    section.hoc-section-02 .section-text {
+        flex-wrap: wrap;
+    }
+
+    section.hoc-section-02 .section-text .title {
+        flex-shrink: 1;
+        margin-bottom: 2rem;
+    }
+
+    section.hoc-section-02 .section-text p {
+        margin: 0;
+    }
+
+    section.hoc-section-02 .carousel {
+        height: 52rem;
+    }
+
+    section.hoc-section-02 .carousel .list {
+        flex-basis: 35%;
+    }
+
+    section.hoc-section-02 .carousel .list .list-item {
+        font-size: 1.6rem;
+    }
+
+    section.hoc-section-02 .carousel .body .btn {
+        min-width: unset;
+        width: unset;
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
+
+/* Second Aside --------------------------------------------------------------------------- */
+
+section.hoc-aside-02 {
+    padding: 4rem 0;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+section.hoc-aside-02 p {
+    padding: 0 2rem;
+    max-width: 70rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+section.hoc-aside-02 a {
+    display: inline-flex;
+    align-items: center;
+    background-color: #eeca49;
+    transition: 0.25s;
+    font-size: 2.4rem;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    color: black;
+    text-decoration: none;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+section.hoc-aside-02 a:hover {
+    background-color: #d3b034;
+    transform: scale(1.1);
+    color: black;
+    text-decoration: none;
+}
+
+section.hoc-aside-02 a:active {
+    background-color: black;
+    transform: scale(0.9);
+    color: white;
+    text-decoration: none;
+}
+
+section.hoc-aside-02 a i,
+section.hoc-aside-02 a svg {
+    margin: 0 auto;
+    line-height: 1;
+    font-size: 2.8rem;
+}
+
+section.hoc-aside-02 a svg {
+    max-height: 2.8rem;
+    width: auto;
+}
+
+section.hoc-aside-02 a:active svg path {
+    fill: white;
+}
+
+section.hoc-aside-02 a:last-child {
+    vertical-align: bottom;
+}
+
+section.hoc-aside-02 .aside-text {
+    flex-basis: 30%;
+    flex-shrink: 0;
+}
+
+section.hoc-aside-02 .aside-text .title {
+    margin-bottom: 3rem;
+}
+
+section.hoc-aside-02 .tiles {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 7rem;
+}
+
+section.hoc-aside-02 .tiles .tile {
+    display: block;
+    height: 17rem;
+    flex-basis: 28%;
+    flex-shrink: 1;
+    flex-grow: 1;
+    margin: 1rem;
+    border-radius: 2rem;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+section.hoc-aside-02 .tiles .tile:hover {
+    transform: scale(1.05);
+}
+
+section.hoc-aside-02 .tiles .tile:active {
+    transform: scale(0.95);
+}
+
+section.hoc-aside-02 .aside-text .title {
+    margin-top: 2rem;
+}
+
+section.hoc-aside-02 .aside-text .subtitle {
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+section.hoc-aside-02 .aside-text .btn {
+    margin-top: 2rem;
+    float: right;
+}
+
+@media (max-width: 768px) {
+    section.hoc-aside-02 .tiles {
+        margin-left: 4rem;
+    }
+    section.hoc-aside-02 .tiles .tile {
+        height: 12rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section.hoc-aside-02 .wrapper {
+        flex-wrap: wrap;
+        margin: 0 2rem;
+    }
+
+    section.hoc-aside-02 .aside-text {
+        flex-basis: 100%;
+    }
+
+    section.hoc-aside-02 .aside-text .title {
+        margin-bottom: 2rem;
+    }
+
+    section.hoc-aside-02 .tiles {
+        margin: 0;
+        margin-top: 2rem;
+    }
+
+    section.hoc-aside-02 .tiles .tile {
+        flex-basis: 45%;
+    }
+}
+
+/* Third Section --------------------------------------------------------------------------- */
+
+section.hoc-section-03 {
+    padding-bottom: 7rem;
+}
+
+section.hoc-section-03 .section-text {
+    margin: 0;
+    margin-right: 7rem;
+}
+
+section.hoc-section-03 .certificate {
+    width: 35%;
+    flex-shrink: 0;
+    position: relative;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+section.hoc-section-03 .certificate:hover {
+    transform: scale(1.05);
+}
+
+section.hoc-section-03 .certificate:active {
+    transform: scale(0.95);
+}
+
+section.hoc-section-03 .certificate .body {
+    height: 30rem;
+    border-radius: 2rem;
+}
+
+section.hoc-section-03 .certificate .action {
+    position: absolute;
+    bottom: -3rem;
+    right: -2rem;
+    transition: 0.25s;
+}
+
+section.hoc-section-03 .certificate:hover .action {
+    background-color: #d3b034;
+}
+
+section.hoc-section-03 .certificate:active .action {
+    background-color: black;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    section.hoc-section-03 .section-text {
+        margin-right: 4rem;
+    }
+
+    section.hoc-section-03 .certificate {
+        width: 45%;
+    }
+
+    section.hoc-section-03 .certificate .body {
+        margin-right: 2rem;
+    }
+
+    section.hoc-section-03 .certificate .action {
+        right: -1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section.hoc-section-03 .section-text {
+        margin: 0;
+        margin-bottom: 4rem;
+    }
+
+    section.hoc-section-03 .certificate {
+        width: 100%;
+    }
+
+    section.hoc-section-03 .certificate .body {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    section.hoc-section-03 .certificate .action {
+        right: -0.5rem;
+    }
+}
+
+/* Educator Section 04 -------------------------------------------------------------------------- */
+
+section.hoc-section-04 {
+    width: 90%;
+    max-width: 110rem;
+    margin: 2rem auto;
+    padding: 4rem 0;
+    display: flex;
+    align-items: center;
+}
+
+section.hoc-section-04 .title {
+    flex-shrink: 0;
+    flex-basis: 35%;
+    margin-right: 2rem;
+}
+
+section.hoc-section-04 a.btn {
+    float: right;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+section.hoc-section-04 .hoc-teams-share {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+@media (max-width: 768px) {
+    section.hoc-section-04 {
+        flex-wrap: wrap;
+    }
+
+    section.hoc-section-04 .title {
+        margin-bottom: 2rem;
+        flex-basis: 100%;
+    }
+}
+
+/* Footer ------------------------------------------------------------------------------------ */
+
+footer.hoc-footer {
+    padding: 4rem 0;
+}
+
+footer.hoc-footer .text-content {
+    text-align: center;
+}
+
+footer.hoc-footer .text-content a {
+    color: white;
+    opacity: 0.5;
+    padding: 0 2rem;
+    border-right: 0.1rem solid white;
+}
+
+footer.hoc-footer .text-content a:last-child {
+    border: none;
+}
+
+footer.hoc-footer .text-content a:hover {
+    color: white;
+}
+
+footer.hoc-footer .msft {
+    margin: 0 auto;
+    width: 15rem;
+    margin-bottom: 2rem;
+}
+
+footer.hoc-footer .msft img {
+    width: 100%;
+    height: auto;
+    opacity: 0.5;
+}
+
+footer.hoc-footer .code-org-trademark {
+    margin: 0 auto;
+    max-width: 70rem;
+    padding: 0 2rem;
+    margin-top: -3rem;
+    margin-bottom: 3rem;
+    opacity: 0.5;
+}
+
+footer.hoc-footer .code-org-trademark p,
+footer.hoc-footer .code-org-trademark a {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+/* Educator Button --------------------------------------------------------------------------- */
+
+a.educator-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #eeca49;
+    color: black;
+    transition: 0.25s;
+    user-select: none;
+}
+
+a.educator-btn:hover {
+    color: black;
+    text-decoration: none;
+    transform: scale(1.05);
+    background-color: #d3b034;
+}
+
+a.educator-btn:active {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    transform: scale(0.95);
+}
+
+.share-btn {
+    display: flex;
+    cursor: pointer;
+    padding: 0 3rem;
+    color: #4d55bd;
+    user-select: none;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    width: fit-content;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+}
+
+.share-btn .icon {
+    padding-top: 0.5rem;
+    padding-right: 1rem;
+}
+
+/* Activity Button --------------------------------------------------------------------------- */
+
+a.activity-btn {
+    user-select: none;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.25s;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+a.activity-btn:hover {
+    transform: scale(1.05);
+    text-decoration: none;
+    color: unset;
+}
+
+a.activity-btn:hover .action {
+    background-color: #d3b034;
+    opacity: 1;
+}
+
+a.activity-btn:active {
+    transform: scale(0.95);
+}
+
+a.activity-btn:active .action {
+    background-color: black;
+    color: white;
+    opacity: 1;
+}
+
+a.activity-btn .title {
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+a.activity-btn .body {
+    height: 33rem;
+    margin-top: -3rem;
+    border-radius: 1rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+a.activity-btn .action {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-transform: uppercase;
+    padding: 2rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    flex-basis: 100%;
+    transition: 0.25s;
+    opacity: 0;
+}
+
+/* Standard Button --------------------------------------------------------------------------- */
+
+a.btn,
+button.btn,
+section.hoc-section-03 .action,
+.share-btn {
+    min-width: 27rem;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    background-color: #eeca49;
+    color: black;
+    transition: 0.25s;
+    user-select: none;
+    text-transform: uppercase;
+}
+
+a.btn:hover,
+button.btn:hover,
+.share-btn:hover {
+    color: black;
+    text-decoration: none;
+    transform: scale(1.05);
+    background-color: #d3b034;
+}
+
+.background-sunflower a.btn {
+    background-color: #de594b;
+    color: white;
+}
+
+.background-sunflower a.btn:hover {
+    background-color: #cc493a;
+    color: white;
+}
+
+a.btn:active,
+button.btn:active,
+.share-btn:active {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    transform: scale(0.95);
+}
+
+a.btn.secondary {
+    color: black;
+    background-color: #3dc1aa;
+}
+
+a.btn.secondary:hover {
+    color: black;
+    background-color: #2ead98;
+}
+
+a.btn.secondary:active {
+    background-color: black;
+}
+
+/* Educators --------------------------------------------------------------------------- */
+
+.learning-columns {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.learning-columns .col {
+    display: flex;
+    flex-basis: 33%;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+.learning-columns .col-wrapper {
+    flex-basis: 100%;
+    background-color: white;
+    color: black;
+    border-radius: 1rem;
+    margin: 1.5rem;
+}
+
+.learning-columns .col:first-child .col-wrapper {
+    margin-left: 0;
+}
+
+.learning-columns .col:last-child .col-wrapper {
+    margin-right: 0;
+}
+
+.learning-columns .col h4 {
+    text-transform: uppercase;
+    background-color: #cc493a;
+    color: white;
+    margin: 0;
+    padding: 2rem;
+    text-align: center;
+    height: 10rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.learning-columns .col ul {
+    padding-right: 2rem;
+}
+
+.learning-columns .col ul li::marker {
+    color: #cc493a;
+    font-weight: 700;
+}
+
+.accent-list li::marker {
+    color: #eeca49;
+    font-weight: 700;
+}
+
+.hoc-teams-share {
+    text-align: right;
+}
+
+.hoc-teams-share p {
+    text-align: left;
+}
+
+.hoc-teams-share .share-btn {
+    margin-top: 2rem;
+    position: relative;
+}
+
+.hoc-teams-share .share-btn .icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 5rem;
+    padding: 0;
+    background-color: white;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.hoc-teams-share .share-btn h5 {
+    margin: 0;
+    margin-left: 5rem;
+}
+
+.hoc-teams-share .share-btn .icon img {
+    margin-top: 1.1rem;
+    width: 4rem !important;
+}
+
+@media (max-width: 768px) {
+    .learning-columns {
+        flex-wrap: wrap;
+    }
+    .learning-columns .col {
+        min-width: 30rem;
+    }
+    .learning-columns .col-wrapper,
+    .learning-columns .col:first-child .col-wrapper,
+    .learning-columns .col:last-child .col-wrapper {
+        margin: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .learning-columns .col-wrapper,
+    .learning-columns .col:first-child .col-wrapper,
+    .learning-columns .col:last-child .col-wrapper {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* Tracking --------------------------------------------------------------------------- */
+
+.tracking {
+    position: absolute;
+    visibility: collapse;
+}

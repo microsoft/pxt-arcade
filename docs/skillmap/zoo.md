@@ -1,6 +1,7 @@
-# Zookeepers Day
+# A Zookeeper's Adventure!
 * name: A Zookeeper's Adventure!
 * description: Ever wonder what it takes to be a zookeeper? The answer may surprise you...
+* infoUrl: skillmap/educator-info/zookeeper-map-info
 * bannerurl: /static/skillmap/zoo/zoo-welcome.png
 * backgroundurl: /static/skillmap/backgrounds/zookeeper-bg.png 
 * primarycolor: #2EA9B0
@@ -12,6 +13,7 @@
 
 ## zookeeper
 * name: Zookeeper Certification
+* layout: manual
 
 ### zoo-activity1
 * allowcodecarryover: false
@@ -22,6 +24,7 @@
 * url: /skillmap/zoo/zoo1
 * imageurl: /static/skillmap/zoo/zoo1.gif
 * tags: easy, sprite edit, controller, camera
+* position: 0 0
 
 ### zoo-activity2
 * allowcodecarryover: false
@@ -32,6 +35,7 @@
 * imageurl: /static/skillmap/zoo/zoo2.gif
 * tags: easy, movement, random
 * next: zoo-activity3
+* position: 1 0
 
 ### zoo-activity2-2
 * allowcodecarryover: false
@@ -41,7 +45,9 @@
 * url: /skillmap/zoo/zoo2a
 * imageurl: /static/skillmap/zoo/zoo2a.gif
 * tags: easy, movement, random
-* next: zoo-activity2
+* next: zoo-activity3
+* position: 1 1
+* edges: 2 1, 2 0
 
 ### zoo-activity3
 * allowcodecarryover: false
@@ -52,6 +58,7 @@
 * imageurl: /static/skillmap/zoo/zoo3.gif
 * tags: easy, positioning, debugging
 * next: zoo-activity4
+* position: 2 0
 
 ### zoo-activity4
 * allowcodecarryover: false
@@ -62,6 +69,7 @@
 * imageurl: /static/skillmap/zoo/zoo4.gif
 * tags: easy, overlaps, events
 * next: zoo-activity5
+* position: 3 0
 
 ### zoo-activity5
 * allowcodecarryover: false
@@ -72,6 +80,7 @@
 * imageurl: /static/skillmap/zoo/zoo5.gif
 * tags: intermediate, overlaps, destroy
 * next: zoo-complete
+* position: 4 0
 
 ### zoo-complete
 * allowcodecarryover: false
@@ -80,3 +89,10 @@
 * type: certificate
 * url: /static/skillmap/certificates/zookeeper-license.pdf
 * imageurl: /static/skillmap/zoo/zookeeper-license.png
+* position: 5 0
+* actions:
+    * map: [Try Beginner Skillmap](/skillmap/beginner)
+    * editor: [Edit Your Project with a Full Toolbox](/)
+* rewards:
+    * certificate: /static/skillmap/certificates/zookeeper-license.pdf
+    * completion-badge: /static/badges/badge-zoo.png

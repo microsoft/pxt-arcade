@@ -77,22 +77,22 @@ clicks = 1
     game.splash("")
     game.setDialogTextColor(0)
     game.setDialogCursor(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
         `)
 })
 
@@ -100,7 +100,7 @@ clicks = 1
 ```
 
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 What's more fun than pressing buttons?
 
@@ -112,16 +112,16 @@ Let's modify our clicker game to offer a simple shop.
 
 ![Click away](/static/skillmap/clicker/clicker-activity-4.gif "Click and buy bigger clickers" )
 
-## Step 2
+## {Step 2}
 
 **Try the game already in the workspace!**
 
 Now that you know what the code created, you can add to it.
 
 
-## Step 3
+## {Step 3}
 
-When you click **Ⓑ**, you get a super-clicker — but 
+When you click **Ⓑ**, you get a super-clicker — but
 what fun is it to get extra power for free? Let's add code to charge the player 10 points for the purchase.
 
 ---
@@ -129,7 +129,7 @@ what fun is it to get extra power for free? Let's add code to charge the player 
 ► From the ``||info:Info||`` category, grab a ``||info:change score by [1]||``
 block and snap it into the top of the **on B button pressed** container.
 
-► Change the value in the new block from **1** to **-10**.   
+► Change the value in the new block from **1** to **-10**.
 
 ```blocks
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -141,29 +141,29 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 2
+## {Step 2}
 
 **💡 Now we're onto something 💡**
 
 
 
-## Step 6 @showdialog
+## {Step 6 @showdialog}
 
 **🎮 Give your game a try on the game screen 🎮**
 
 It should do what you expect...as long as you have 10 points to spend!
 
 
-## Step 7
+## {Step 7}
 
-Finally, 
+Finally,
 
 
-## Finale
+## {Finale}
 
 **⚡️ Amazing ⚡️**
 
 Now you have a clicker game with a simple shop.  Give it a try in the simulator.
 
-Click **Finish** to return to the main page where you can share your game
+Click **Done** to return to the main page where you can share your game
 with family and friends!

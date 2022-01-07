@@ -1,10 +1,10 @@
 /* Import all components */
-@import 'pxtsemantic';
 @import 'pxt';
 @import 'blockly-toolbox';
 @import 'themes/default/globals/site.variables';
 @import 'themes/pxt/globals/site.variables';
 @import 'site/globals/site.variables';
+@import 'pxtsemantic';
 
 /* Reference import */
 @import (reference) "semantic.less";
@@ -83,6 +83,25 @@
 
 /* Small Monitor */
 @media only screen and (min-width: @computerBreakpoint) and (max-width: @largestSmallMonitor) {
+    // Display short logo ("MakeCode") instead of "MakeCode Arcade"
+    .ui.item.logo .name {
+        display: none;
+    }
+    .ui.item.logo .name-short {
+        display: block;
+    }
+}
+
+/* Small Monitor + Tablet */
+@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestSmallMonitor) {
+    // Hide Help menu in small desktop view)
+    .help-dropdown-menuitem.ui.item.dropdown {
+        display: none;
+    }
+
+    .more-dropdown-menuitem .setting-docs-item.ui.mobile.only {
+        display: block !important;
+    }
 }
 
 /* Large Monitor */
@@ -99,4 +118,9 @@
     #simulators .ui.embed .icon.xicon::before {
         top: 50%
     }
+}
+
+.hero .hero-banner-contents .action .button {
+    background-color: @teal;
+
 }

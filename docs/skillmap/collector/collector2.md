@@ -4,22 +4,22 @@
 
 ```ghost
 let mySprite = sprites.create(img`
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . b b b b b b . . . . 
-    . . . . . b b 5 5 5 5 5 b . . . 
-    . . . . b b 5 b c 5 5 d 4 c . . 
-    . b b b b 5 5 5 b f d d 4 4 4 b 
-    . b d 5 b 5 5 b c b 4 4 4 4 b . 
-    . . b 5 5 b 5 5 5 4 4 4 4 b . . 
-    . . b d 5 5 b 5 5 5 5 5 5 b . . 
-    . b d b 5 5 5 d 5 5 5 5 5 5 b . 
-    b d d c d 5 5 b 5 5 5 5 5 5 b . 
-    c d d d c c b 5 5 5 5 5 5 5 b . 
-    c b d d d d d 5 5 5 5 5 5 5 b . 
-    . c d d d d d d 5 5 5 5 5 d b . 
-    . . c b d d d d d 5 5 5 b b . . 
-    . . . c c c c c c c c b b . . . 
+    . . . . . . . . . b 5 b . . . .
+    . . . . . . . . . b 5 b . . . .
+    . . . . . . b b b b b b . . . .
+    . . . . . b b 5 5 5 5 5 b . . .
+    . . . . b b 5 b c 5 5 d 4 c . .
+    . b b b b 5 5 5 b f d d 4 4 4 b
+    . b d 5 b 5 5 b c b 4 4 4 4 b .
+    . . b 5 5 b 5 5 5 4 4 4 4 b . .
+    . . b d 5 5 b 5 5 5 5 5 5 b . .
+    . b d b 5 5 5 d 5 5 5 5 5 5 b .
+    b d d c d 5 5 b 5 5 5 5 5 5 b .
+    c d d d c c b 5 5 5 5 5 5 5 b .
+    c b d d d d d 5 5 5 5 5 5 5 b .
+    . c d d d d d d 5 5 5 5 5 d b .
+    . . c b d d d d d 5 5 5 b b . .
+    . . . c c c c c c c c b b . . .
     `, SpriteKind.Player)
 controller.moveSprite(mySprite, 0, 100)
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
@@ -165,35 +165,35 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 })
 let projectile: Sprite = null
 let mySprite = sprites.create(img`
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . b b b b b b . . . . 
-    . . . . . b b 5 5 5 5 5 b . . . 
-    . . . . b b 5 b c 5 5 d 4 c . . 
-    . b b b b 5 5 5 b f d d 4 4 4 b 
-    . b d 5 b 5 5 b c b 4 4 4 4 b . 
-    . . b 5 5 b 5 5 5 4 4 4 4 b . . 
-    . . b d 5 5 b 5 5 5 5 5 5 b . . 
-    . b d b 5 5 5 d 5 5 5 5 5 5 b . 
-    b d d c d 5 5 b 5 5 5 5 5 5 b . 
-    c d d d c c b 5 5 5 5 5 5 5 b . 
-    c b d d d d d 5 5 5 5 5 5 5 b . 
-    . c d d d d d d 5 5 5 5 5 d b . 
-    . . c b d d d d d 5 5 5 b b . . 
-    . . . c c c c c c c c b b . . . 
+    . . . . . . . . . b 5 b . . . .
+    . . . . . . . . . b 5 b . . . .
+    . . . . . . b b b b b b . . . .
+    . . . . . b b 5 5 5 5 5 b . . .
+    . . . . b b 5 b c 5 5 d 4 c . .
+    . b b b b 5 5 5 b f d d 4 4 4 b
+    . b d 5 b 5 5 b c b 4 4 4 4 b .
+    . . b 5 5 b 5 5 5 4 4 4 4 b . .
+    . . b d 5 5 b 5 5 5 5 5 5 b . .
+    . b d b 5 5 5 d 5 5 5 5 5 5 b .
+    b d d c d 5 5 b 5 5 5 5 5 5 b .
+    c d d d c c b 5 5 5 5 5 5 5 b .
+    c b d d d d d 5 5 5 5 5 5 5 b .
+    . c d d d d d d 5 5 5 5 5 d b .
+    . . c b d d d d d 5 5 5 b b . .
+    . . . c c c c c c c c b b . . .
     `, SpriteKind.Player)
 controller.moveSprite(mySprite, 0, 100)
 
 forever(function () {
     projectile = sprites.createProjectileFromSide(img`
-        . . b b b b . . 
-        . b 5 5 5 5 b . 
-        b 5 d 3 3 d 5 b 
-        b 5 3 5 5 1 5 b 
-        c 5 3 5 5 1 d c 
-        c d d 1 1 d d c 
-        . f d d d d f . 
-        . . f f f f . . 
+        . . b b b b . .
+        . b 5 5 5 5 b .
+        b 5 d 3 3 d 5 b
+        b 5 3 5 5 1 5 b
+        c 5 3 5 5 1 d c
+        c d d 1 1 d d c
+        . f d d d d f .
+        . . f f f f . .
         `, -90, 0)
     projectile.y = randint(0, 120)
     pause(1500)
@@ -202,25 +202,25 @@ forever(function () {
 ```
 
 
-## Intro @showdialog
+## {Intro @showdialog}
 
-You've made a collector game, now let's add some 
+You've made a collector game, now let's add some
 special touches to make it even more fun.
 
 ![Coin Collecting](/static/skillmap/collector/collector-activity-2.gif "Make it special!" )
 
 
 
-## Step 1
+## {Step 1}
 
-The code for a basic collector is already in the workspace, but a few extra 
+The code for a basic collector is already in the workspace, but a few extra
 blocks could make it amazing.
 
 ---
 
-► From the ``||scene:Scene||`` category, grab a 
-``||scene:set background color to [ ]||`` 
-block and drag it to the **beginning** of the **on start** container.  Click the 
+► From the ``||scene:Scene||`` category, grab a
+``||scene:set background color to [ ]||``
+block and drag it to the **beginning** of the **on start** container.  Click the
 grey box to choose a color that makes you happy.
 
 
@@ -228,22 +228,22 @@ grey box to choose a color that makes you happy.
 //@highlight
 scene.setBackgroundColor(11)
 let mySprite = sprites.create(img`
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . b b b b b b . . . . 
-    . . . . . b b 5 5 5 5 5 b . . . 
-    . . . . b b 5 b c 5 5 d 4 c . . 
-    . b b b b 5 5 5 b f d d 4 4 4 b 
-    . b d 5 b 5 5 b c b 4 4 4 4 b . 
-    . . b 5 5 b 5 5 5 4 4 4 4 b . . 
-    . . b d 5 5 b 5 5 5 5 5 5 b . . 
-    . b d b 5 5 5 d 5 5 5 5 5 5 b . 
-    b d d c d 5 5 b 5 5 5 5 5 5 b . 
-    c d d d c c b 5 5 5 5 5 5 5 b . 
-    c b d d d d d 5 5 5 5 5 5 5 b . 
-    . c d d d d d d 5 5 5 5 5 d b . 
-    . . c b d d d d d 5 5 5 b b . . 
-    . . . c c c c c c c c b b . . . 
+    . . . . . . . . . b 5 b . . . .
+    . . . . . . . . . b 5 b . . . .
+    . . . . . . b b b b b b . . . .
+    . . . . . b b 5 5 5 5 5 b . . .
+    . . . . b b 5 b c 5 5 d 4 c . .
+    . b b b b 5 5 5 b f d d 4 4 4 b
+    . b d 5 b 5 5 b c b 4 4 4 4 b .
+    . . b 5 5 b 5 5 5 4 4 4 4 b . .
+    . . b d 5 5 b 5 5 5 5 5 5 b . .
+    . b d b 5 5 5 d 5 5 5 5 5 5 b .
+    b d d c d 5 5 b 5 5 5 5 5 5 b .
+    c d d d c c b 5 5 5 5 5 5 5 b .
+    c b d d d d d 5 5 5 5 5 5 5 b .
+    . c d d d d d d 5 5 5 5 5 d b .
+    . . c b d d d d d 5 5 5 b b . .
+    . . . c c c c c c c c b b . . .
     `, SpriteKind.Player)
 controller.moveSprite(mySprite, 0, 100)
 
@@ -251,37 +251,37 @@ controller.moveSprite(mySprite, 0, 100)
 
 
 
-## Step 2
+## {Step 2}
 
-**If the game gets wild, our sprite might leave the screen.**   
-Let's prevent that. 
+**If the game gets wild, our sprite might leave the screen.**
+Let's prevent that.
 
 ---
 
-► From the ``||sprites:Sprites||`` category, grab a 
-``||sprites:set [mySprite] stay in screen <ON>||`` 
-block and drag it into the **end** of the **on start** container. 
+► From the ``||sprites:Sprites||`` category, grab a
+``||sprites:set [mySprite] stay in screen <ON>||``
+block and drag it into the **end** of the **on start** container.
 
 
 ```blocks
 scene.setBackgroundColor(11)
 let mySprite = sprites.create(img`
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . b b b b b b . . . . 
-    . . . . . b b 5 5 5 5 5 b . . . 
-    . . . . b b 5 b c 5 5 d 4 c . . 
-    . b b b b 5 5 5 b f d d 4 4 4 b 
-    . b d 5 b 5 5 b c b 4 4 4 4 b . 
-    . . b 5 5 b 5 5 5 4 4 4 4 b . . 
-    . . b d 5 5 b 5 5 5 5 5 5 b . . 
-    . b d b 5 5 5 d 5 5 5 5 5 5 b . 
-    b d d c d 5 5 b 5 5 5 5 5 5 b . 
-    c d d d c c b 5 5 5 5 5 5 5 b . 
-    c b d d d d d 5 5 5 5 5 5 5 b . 
-    . c d d d d d d 5 5 5 5 5 d b . 
-    . . c b d d d d d 5 5 5 b b . . 
-    . . . c c c c c c c c b b . . . 
+    . . . . . . . . . b 5 b . . . .
+    . . . . . . . . . b 5 b . . . .
+    . . . . . . b b b b b b . . . .
+    . . . . . b b 5 5 5 5 5 b . . .
+    . . . . b b 5 b c 5 5 d 4 c . .
+    . b b b b 5 5 5 b f d d 4 4 4 b
+    . b d 5 b 5 5 b c b 4 4 4 4 b .
+    . . b 5 5 b 5 5 5 4 4 4 4 b . .
+    . . b d 5 5 b 5 5 5 5 5 5 b . .
+    . b d b 5 5 5 d 5 5 5 5 5 5 b .
+    b d d c d 5 5 b 5 5 5 5 5 5 b .
+    c d d d c c b 5 5 5 5 5 5 5 b .
+    c b d d d d d 5 5 5 5 5 5 5 b .
+    . c d d d d d d 5 5 5 5 5 d b .
+    . . c b d d d d d 5 5 5 b b . .
+    . . . c c c c c c c c b b . . .
     `, SpriteKind.Player)
 controller.moveSprite(mySprite, 0, 100)
 //@highlight
@@ -291,11 +291,11 @@ mySprite.setStayInScreen(true)
 ```
 
 
-## Step 3
+## {Step 3}
 
 **🕔 Does this game feel long to you? 🕔**
 
-We haven't added a way to win or lose.  
+We haven't added a way to win or lose.
 Let's do that now by adding a countdown timer.
 
 ---
@@ -308,22 +308,22 @@ and snap it into the end of the **on start** container.
 ```blocks
 scene.setBackgroundColor(11)
 let mySprite = sprites.create(img`
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . b b b b b b . . . . 
-    . . . . . b b 5 5 5 5 5 b . . . 
-    . . . . b b 5 b c 5 5 d 4 c . . 
-    . b b b b 5 5 5 b f d d 4 4 4 b 
-    . b d 5 b 5 5 b c b 4 4 4 4 b . 
-    . . b 5 5 b 5 5 5 4 4 4 4 b . . 
-    . . b d 5 5 b 5 5 5 5 5 5 b . . 
-    . b d b 5 5 5 d 5 5 5 5 5 5 b . 
-    b d d c d 5 5 b 5 5 5 5 5 5 b . 
-    c d d d c c b 5 5 5 5 5 5 5 b . 
-    c b d d d d d 5 5 5 5 5 5 5 b . 
-    . c d d d d d d 5 5 5 5 5 d b . 
-    . . c b d d d d d 5 5 5 b b . . 
-    . . . c c c c c c c c b b . . . 
+    . . . . . . . . . b 5 b . . . .
+    . . . . . . . . . b 5 b . . . .
+    . . . . . . b b b b b b . . . .
+    . . . . . b b 5 5 5 5 5 b . . .
+    . . . . b b 5 b c 5 5 d 4 c . .
+    . b b b b 5 5 5 b f d d 4 4 4 b
+    . b d 5 b 5 5 b c b 4 4 4 4 b .
+    . . b 5 5 b 5 5 5 4 4 4 4 b . .
+    . . b d 5 5 b 5 5 5 5 5 5 b . .
+    . b d b 5 5 5 d 5 5 5 5 5 5 b .
+    b d d c d 5 5 b 5 5 5 5 5 5 b .
+    c d d d c c b 5 5 5 5 5 5 5 b .
+    c b d d d d d 5 5 5 5 5 5 5 b .
+    . c d d d d d d 5 5 5 5 5 d b .
+    . . c b d d d d d 5 5 5 b b . .
+    . . . c c c c c c c c b b . . .
     `, SpriteKind.Player)
 controller.moveSprite(mySprite, 0, 100)
 mySprite.setStayInScreen(true)
@@ -332,11 +332,11 @@ info.startCountdown(15)
 ```
 
 
-## Step 4
+## {Step 4}
 
 **🥇 Everyone's a winner 🥇**
 
-Right now, when time runs out, you lose the game. We can change that! 
+Right now, when time runs out, you lose the game. We can change that!
 
 ---
 
@@ -355,19 +355,19 @@ info.onCountdownEnd(function () {
 ```
 
 
-## Step 5
+## {Step 5}
 
 **🎊 Little celebrations 🎊**
 
-We can easily add some flavor every time our sprite reaches a coin. 
+We can easily add some flavor every time our sprite reaches a coin.
 All we need to do is expand the **destroy** block.
 
 ---
 
-► Click the **⊕** to the right of the ``||sprites: destroy [otherSprite] ⊕||`` block 
-(inside the **on sprite overlaps** container.) 
+► Click the **⊕** to the right of the ``||sprites: destroy [otherSprite] ⊕||`` block
+(inside the **on sprite overlaps** container.)
 
-► Click the word **spray** to open a dropdown. Choose the effect that works 
+► Click the word **spray** to open a dropdown. Choose the effect that works
 best with your game.  (For coins, try the **rings** effect!)
 
 ► Change **500** ms to **200** ms to keep the effect short and sweet.
@@ -382,7 +382,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 ```
 
 
-## Step 6
+## {Step 6}
 
 Finally, let's make the timing of the coins less predictable using random numbers.
 
@@ -399,14 +399,14 @@ to **2000** (2 seconds). Now your coins will randomly appear every 1-2 seconds!
 
 forever(function () {
     let projectile = sprites.createProjectileFromSide(img`
-        . . b b b b . . 
-        . b 5 5 5 5 b . 
-        b 5 d 3 3 d 5 b 
-        b 5 3 5 5 1 5 b 
-        c 5 3 5 5 1 d c 
-        c d d 1 1 d d c 
-        . f d d d d f . 
-        . . f f f f . . 
+        . . b b b b . .
+        . b 5 5 5 5 b .
+        b 5 d 3 3 d 5 b
+        b 5 3 5 5 1 5 b
+        c 5 3 5 5 1 d c
+        c d d 1 1 d d c
+        . f d d d d f .
+        . . f f f f . .
         `, -90, 0)
     projectile.y = randint(0, 120)
     //@highlight
@@ -414,11 +414,11 @@ forever(function () {
 })
 ```
 
-## Step 7
+## {Step 7}
 
-There you have it...a collector game with style AND class.  
+There you have it...a collector game with style AND class.
 
 **🏆 Now play your winning creation 🏆**
 
-Click **Finish** to return to the main page where you can share your game
+Click **Done** to return to the main page where you can share your game
 with family and friends!

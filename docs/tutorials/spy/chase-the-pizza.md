@@ -2,13 +2,13 @@
 
 ### @explicitHints true
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 ![Game animation](/static/tutorials/chase-the-pizza.gif)
 
 In this tutorial you will create a game with 2 sprites, a ``||sprites:Player||`` sprite and a ``||sprites:Food||`` sprite. The goal of the game is to eat as much pizza as you can before the time runs out! Each time your player catches the pizza, you gain points and the countdown is restarted.
 
-## Step 1
+## {Step 1}
 
 First, ``||scene:set background color||`` to a color you like. To see what this looks like in your game, look at the Game Simulator on the left side of the screen.
 
@@ -16,7 +16,7 @@ First, ``||scene:set background color||`` to a color you like. To see what this 
 scene.setBackgroundColor(0)
 ```
 
-## Step 2
+## {Step 2}
 
 Add code to ``||sprites:create a sprite||`` a set it to a variable name ``||variables:mySprite||``. Use
 ``||sprites:Player||`` for the ``||sprites:sprite kind||``.
@@ -43,14 +43,14 @@ let mySprite = sprites.create(img`
 `, SpriteKind.Player)
 ```
 
-## Step 3
+## {Step 3}
 
 Draw your ``||sprites:Player||`` character by using the image editor for  ``||variables:set mySprite||``.
 Use the color palette and design tools to draw an image on the canvas. Click **Done** when you are finished.
 
 ![Image editor](/static/tutorials/chase-the-pizza/image-editor-js.gif)
 
-## Step 4
+## {Step 4}
 
 Put in the code to ``||controller:move mySprite||`` with the ``||controller:controller||``.
 
@@ -77,7 +77,7 @@ let mySprite = sprites.create(img`
 controller.moveSprite(mySprite)
 ```
 
-## Step 5
+## {Step 5}
 
 Just like with ``||variables:mySprite||``, ``||sprites:create a sprite||`` again and set it to the a variable named
 ``||variables:pizza||``. This time, set the ``||sprites:sprite kind||`` to ``||sprites:food||``. This will
@@ -124,13 +124,13 @@ let pizza = sprites.create(img`
 `, SpriteKind.Food)
 ```
 
-## Step 6
+## {Step 6}
 
 Use the image editor for ``||variables:pizza||`` and then select the **Gallery** view. Scroll to find the image of a small pizza (or any other image you like!) and select it to load into the image editor.
 
 ![Image gallery](/static/tutorials/chase-the-pizza/image-gallery-spy.gif)
 
-## Step 7 @resetDiff
+## {Step 7 @resetDiff}
 
 Add a ``||sprites:on overlap||`` event to your code. Set the ``||sprites:sprite kind||`` that cooresponds to
 ``otherSprite`` as ``||sprites:Food||``.
@@ -141,7 +141,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 ```
 
-## Step 8
+## {Step 8}
 
 When our ``||sprites:Player||`` overlaps with the ``||variables:pizza||`` sprite, let’s add a point to our game score. Pun in the code to ``||info:change score by||`` `1`.
 
@@ -151,7 +151,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 ```
 
-## Step 9
+## {Step 9}
 
 Let’s set the position for ``||variables:pizza||`` to random locations around the screen. We use
 ``otherSprite`` and ``||sprites:set its position||``. Righy now, just use `0` for both `x` and `y`.
@@ -163,7 +163,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 ```
 
-## Step 10
+## {Step 10}
 
 Put in code for the `x` and `y` positions of ``otherSprite`` to use a ``||math:pick a random||`` number.
 The Arcade game screen is `160` pixels wide, and `120` pixels high. In the first ``||math:pick random||``
@@ -178,7 +178,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 ```
 
-## Step 11
+## {Step 11}
 
 Let’s restart our countdown each time. Add the code to ``||info:start countdown||`` and make the countdown
 count be `10`.
@@ -191,7 +191,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 ```
 
-## Complete @resetDiff
+## {Complete @resetDiff}
 
 Congratulations, you have completed your game! Use the Game Simulator to play by moving your ``||sprites:Player||`` around the screen to try and eat as much pizza as possible before the time runs out. What’s your high score?
 

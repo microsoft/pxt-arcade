@@ -2,10 +2,10 @@
 
 ## Introduction @showdialog
 
-Time to refuel! 
+Time to refuel!
 
 In this tutorial we'll add a fuel bar to your spaceship
-that depletes as you travel. 
+that depletes as you travel.
 
 Make sure to catch the powerups to keep your
 ship from breaking down!
@@ -13,18 +13,21 @@ ship from breaking down!
 ![Fuel Up!](/static/skillmap/space/spacet4.gif "Those aren't tacos!")
 
 
-## Step 2
-The code in the workspace taking up a lot of room! 😨      
+## 2. Add a Status Bar
+The code in the workspace is taking up a lot of room!  
+😨 😨 😨  
 Don't worry, the workspace will expand if you scroll up &
 over (or down & over) to keep building.
 
 ---
 
-► Take a peek into the new ``||statusbars:Status Bars||`` category.
-You'll find ``||variables:set [statusbar] to create status bar sprite width [20] height [4] kind [Health]||``.
-Drag one to the end of the ``||loops:on start||`` container.
+- :battery full: Take a peek into the new ``||statusbars:Status Bars||`` category.
+You'll find  
+``||variables:set [statusbar] to create status bar sprite width [20] height [4] kind [Health]||``.  
+Drag one to the end of the   
+``||loops:on start||`` container.
 
-► In the **set statusbar** block, click on **Health** to get the dropdown menu, then select **Energy** to create a fuel gauge.
+- :mouse pointer: In the **set statusbar** block, click on **Health** to get the dropdown menu, then select **Energy** to create a fuel gauge.
 
 
 ---
@@ -33,18 +36,21 @@ Drag one to the end of the ``||loops:on start||`` container.
 let statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
 ```
 
-## Step 3
+## 3. Link It
 
 If we want the status bar to show the details of **mySprite**, we'll need to link the two together.
 
 ---
 
-► From the ``||statusbars:Status Bars||`` category, drag ``||statusbars:attach [statusbar] to [mySprite] ⊕||`` 
-into **the end** of the ``||loops:on start||`` container.
+- :battery full: Drag  
+``||statusbars:attach [statusbar] to [mySprite] ➕||``  
+into **the end** of the  
+``||loops:on start||`` container.
 
-► Click **⊕** on the new block to reveal options
- to change the position of the status bar in relation to **mySprite**. 
- Can you figure out how to get the bar to show up *below* your ship?  
+- :mouse pointer: Click ➕ on the new block to reveal options
+ to change the position of the status bar in relation to **mySprite**.  
+
+_💡 Can you figure out how to get the bar to show up *below* your ship?_
 
 
 ```block
@@ -53,26 +59,29 @@ let statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
 statusbar.attachToSprite(mySprite, -30, 0)
 ```
 
-## Step 4
+## 4. Running Out
 
-**⏰ The longer you're in the air, the more fuel you use ⏰ **
+**The longer you're in the air, the more fuel you use**
 
-Here's how to make the fuel go down as time passes. 
+Here's how to make the fuel go down as time passes.
 
 ---
 
-► Drag an ``||game:on game update every [500] ms||`` container into an empty area of the 
+- :circle: Drag an  
+``||game:on game update every [500] ms||``  
+container into an empty area of the
 workspace. Adjust the time argument to **300 ms**.
 
-► Drop ``||statusbars:change [statusbar] [value] by [0]||``
+- :battery full: Drop   
+``||statusbars:change [statusbar] [value] by [0]||``  
 into the empty **game update** container.
 
-► Change the amount the status bar changes from **0** to **-1**. 
+- :mouse pointer: Change the amount the status bar changes from **0** to **-1**.
 
 ---
 
-**Tip:** Remember this step later. If the fuel runs out too fast in 
-gameplay, you can come back and adjust these blocks.
+_💡 Remember this step later. If the fuel runs out too fast in
+gameplay, you can come back and adjust these blocks._
 
 
 ```blocks
@@ -82,43 +91,42 @@ game.onUpdateInterval(300, function () {
 })
 ```
 
-## Step 5
+## 5. Refuel
 
 **⛽ Time to refuel ⛽**
 
-The code for adding fuel sprites to your game is a lot like the code for making enemies. 
-For a refresher on how things work, find the **myEnemy** blocks in the
+The code for adding fuel sprites to your game is a lot like the code for making enemies. For a refresher on how things work, find the **myEnemy** blocks in the
 workspace and use them as a guide.
 
 ---
 
-► Drag a _new_  ``||game:on game update every [500] ms||`` container 
-into the workspace and change the interval to **5 seconds (5000 ms)**.
+- :circle: Drag a _new_   
+``||game:on game update every [500] ms||``  
+container into the workspace and change the interval to **5 seconds (5000 ms)**.
 
-► Snap a new
-``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||``
+- :paper plane: Snap a new  
+``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||``  
 block inside the newest **on game update** container.
 
-► Click ``||variables:[projectile2]||`` and rename the sprite ``||variables:[myFuel]||``.
+- :mouse pointer: Click ``||variables:[projectile2]||`` and rename the sprite ``||variables:[myFuel]||``.
 
 
 ```blocks
 game.onUpdateInterval(5000, function () {
     let myFuel = sprites.createProjectileFromSide(img`
-. . . . 
-. . . . 
-. . . . 
-. . . . 
+. . . .
+. . . .
+. . . .
+. . . .
 `, 50, 50)
 })
 ```
 
-## Step 6
+## 6. Set the Sprite
 
-► Click on the grey square and toggle to **My Assets** to choose the **Fuel** sprite.
+- :paint brush: Click on the grey square and toggle to **My Assets** to choose the **Fuel** sprite.
 
-► Play with the **vx** and **vy** arguments of the fuel until it's falling
-straight down at a decent speed.  
+- :mouse pointer: Play with the **vx** and **vy** arguments of the fuel until it's falling straight down at a decent speed.
 
 
 
@@ -128,18 +136,20 @@ game.onUpdateInterval(5000, function () {
 })
 ```
 
-## Step 7
+## 7. Fuel Drop
 
 Just like with the enemies, we'll want the fuel to drop from a random position
-across the top of the screen. 
+across the top of the screen.
 
 ---
 
-► Connect a ``||sprites:set [mySprite] [x] to [0]||`` block at **the 
-bottom** of the ``||game:on game update every [5000] ms||`` container.  
+- :paper plane: Connect a  
+``||sprites:set [mySprite] [x] to [0]||``  
+block at **the bottom** of the  
+``||game:on game update every [5000] ms||``  
+container.
 
-► To make sure we're acting on the right sprites, use the dropdown in the 
-new block to change ``||variables:mySprite||`` to ``||variables:myFuel||``.
+- :mouse pointer: To make sure we're acting on the right sprites, use the dropdown in the new block to change ``||variables:mySprite||`` to ``||variables:myFuel||``.
 
 
 ```blocks
@@ -150,16 +160,19 @@ game.onUpdateInterval(5000, function () {
 ```
 
 
-## Step 8
+## 8. Random Location
 
-► To set a random [__*x*__](#setX "horizontal location") 
-for the fuel, grab a 
-``||Math:pick random [0] to [10]||`` block
-and connect it to replace the **0** argument in the 
-``||sprites:set [mySprite] [x] to [0]||`` block.
+- :calculator: To set a random [__*x*__](#setX "horizontal location")
+for the fuel, grab a  
+``||Math:pick random [0] to [10]||``   
+block and connect it to replace the **0** argument in the  
+``||sprites:set [mySprite] [x] to [0]||``   
+block.
 
-► Update the minimum argument of the ``||Math:pick random [0] to [10]||`` block to **5** and the
-maximum argument to **155**. 
+- :mouse pointer: Update the minimum argument of the  
+``||Math:pick random [0] to [10]||``  
+block to **5** and the
+maximum argument to **155**.
 
 ---
 
@@ -172,19 +185,20 @@ game.onUpdateInterval(5000, function () {
 ```
 
 
-## Step 9
+## 9. Gas Kind
 
 Now we need to create a new **kind** of sprite for our **Fuel**!
 
 ---
 
-► Snap a ``||sprites:set [mySprite] kind to [Player]||`` block 
-into the bottom of the newest **on game update** container.
+- :paper plane: Snap a  
+``||sprites:set [mySprite] kind to [Player]||``  
+block into the bottom of the newest **on game update** container.
 
-► Change ``||variables:mySprite||`` to ``||variables:myFuel||``. 
+- :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:myFuel||``.
 
-► Click ``||sprites:Player||`` to get the dropdown menu, then choose
-``||sprites:Add a new kind...||`` and create the type **Gas**.   
+- :mouse pointer: Click ``||sprites:Player||`` to get the dropdown menu, then choose
+``||sprites:Add a new kind...||`` and create the type **Gas**.
 
 
 ```blocks
@@ -200,18 +214,19 @@ game.onUpdateInterval(5000, function () {
 ```
 
 
-## Step 10
+## 10. Getting Gas
 When your ship overlaps fuel, you'll want the gas to disappear as the tank refills.
 
 ---
 
-► Drag an ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
-container into the workspace. 
+- :paper plane: Drag an  
+``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||``  
+container into the workspace.
 
-► Change the last argument from ``||sprites:Player||`` to ``||sprites:Gas||``.  
+- :mouse pointer: Change the last argument from ``||sprites:Player||`` to ``||sprites:Gas||``.
 
 
-  
+
 ```blocks
 namespace SpriteKind {
     export const Gas = SpriteKind.create()
@@ -222,20 +237,22 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Gas, function (sprite, otherSpri
 })
 ```
 
-## Step 11
+## 11. Refill
 
-► To refill the status bar after grabbing fuel, snag a ``||statusbars:set [statusbar] [value] to [0]||`` block 
-and snap it in to your newest **overlaps** container.  
+- :battery full: To refill the status bar after grabbing fuel, snag a  
+``||statusbars:set [statusbar] [value] to [0]||``  
+block and snap it in to your newest **overlaps** container.
 
-► Change the value from **0** to **100**.
+- :mouse pointer: Change the value from **0** to **100**.
 
-► Finally, make sure the used fuel disappears by snapping a ``||sprites:destroy [mySprite] ⊕||`` block 
+- :paper plane: Finally, make sure the used fuel disappears by snapping a  
+``||sprites:destroy [mySprite] ➕||``  block
 into the bottom of the same **overlaps** container and replacing
 ``||variables:mySprite||`` with ``||variables:otherSprite||``
 
-![Grabbing variable from block](/static/skillmap/space/give-var.gif "So that's how you do that!")  
+![Grabbing variable from block](/static/skillmap/space/give-var.gif "So that's how you do that!")
 
-  
+
 ```blocks
 namespace SpriteKind {
     export const Gas = SpriteKind.create()
@@ -248,20 +265,20 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Gas, function (sprite, otherSpri
 })
 ```
 
-## Step 12
-**🌌 If you run out of fuel, you'll be marooned in space! 🌌**
+## 12. Lost in Space
+**If you run out of fuel, you'll be marooned in space!**
 
 The threat is real.
 
 ---
 
-► To add consequences for an empty status bar, drag a 
-``||statusbars:on status bar kind [Health] zero [status]||`` 
+- :battery full: To add consequences for an empty status bar, drag an  
+``||statusbars:on status bar kind [Health] zero [status]||``  
 container into the workspace.
 
-► Change the status bar kind to **Energy**. 
+- :mouse pointer: Change the status bar kind to **Energy**.
 
-► Snap a ``||game:game over <LOSE>||`` block inside as the ultimate fate.
+- :circle: Snap a ``||game:game over <LOSE>||`` block inside as the ultimate fate.
 
 
 ```blocks
@@ -273,9 +290,11 @@ statusbars.onZero(StatusBarKind.Energy, function (status) {
 
 ## Finale
 
-**And that's it!** 
+**And that's it!**
 
-Click **Finish** to return to the main page where you can add this game to your gallery and share with family & friends.
+---
+
+Click **Done** to return to the main skillmap to move on and find out how to add multiple levels to your game!
 
 
 
@@ -283,10 +302,9 @@ Click **Finish** to return to the main page where you can add this game to your 
 
 
 ```package
-arcade-background-scroll=github:microsoft/arcade-background-scroll/
+arcade-background-scroll=github:microsoft/arcade-background-scroll#926e12eefffd09d453c7cde73f8d6ebd0e666d9d/
 pxt-status-bar=github:jwunderl/pxt-status-bar
 ```
-
 
 ```template
 
@@ -303,6 +321,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
     otherSprite.destroy(effects.disintegrate, 200)
+    scene.cameraShake(4, 500)
 })
 let myEnemy: Sprite = null
 let projectile: Sprite = null
@@ -312,10 +331,22 @@ scroller.scrollBackgroundWithSpeed(0, 10)
 mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
 controller.moveSprite(mySprite)
 mySprite.setStayInScreen(true)
+animation.runImageAnimation(
+mySprite,
+assets.animation`Flying Rocket`,
+100,
+true
+)
 game.onUpdateInterval(2000, function () {
     myEnemy = sprites.createProjectileFromSide(assets.image`Spider`, 0, 50)
     myEnemy.x = randint(5, 155)
     myEnemy.setKind(SpriteKind.Enemy)
+    animation.runImageAnimation(
+    myEnemy,
+    assets.animation`Flying Spider`,
+    100,
+    true
+    )
 })
 ```
 

@@ -207,7 +207,7 @@ forever(function () {
 ```
 
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Why settle for one enemy sprite when you could have two?
 
@@ -216,7 +216,7 @@ In this tutorial, we'll add more enemy options.
 ![Multiple Enemies](/static/recipes/shark-splash/02-B-enemies.gif)
 
 
-## Step 2
+## {Step 2}
 
 ---
 
@@ -253,7 +253,7 @@ forever(function () {
 ```
 
 
-## Step 2
+## {Step 2}
 
 Inside the ``||sprites:on created||`` block, place an ``||logic:if then else||`` statement.
 
@@ -268,7 +268,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 })
 ```
 
-## Step 3
+## {Step 3}
 
 Place a ``||math:% chance||`` block as the condition inside the ``||logic:if then else||``.
 Change the percentage ``||math:%||`` to `50`.
@@ -284,7 +284,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 })
 ```
 
-## Step 3
+## {Step 3}
 
 Place a ``||sprites:set image to||`` block into the first clause of ``||logic:if then else||``.
 Drag the ``||variables:sprite||`` variable from the ``||sprites:on created||`` block and use it as
@@ -319,7 +319,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 })
 ```
 
-## Step 4
+## {Step 4}
 
 Place a second ``||sprites:set image to||`` block into the else clause of ``||logic:if then else||``.
 Drag the ``||variables:sprite||`` variable from the ``||sprites:on created||`` block and use it as
@@ -371,7 +371,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 })
 ```
 
-## Conclusion @showdialog
+## {Conclusion @showdialog}
 
 Now let's add code to destroy the enemies with your projectiles! Or, if you're feeling creative, add a background to set the scene.
 

@@ -71,8 +71,8 @@
 --------------------*/
 
 @sideBarWidth: 22rem;
-@simulatorWidth: 27rem;
-@simulatorWidthSmall: 20rem;
+@simulatorWidth: @sideBarWidth;
+@simulatorWidthSmall: @sideBarWidth;
 
 /*-------------------
    Background

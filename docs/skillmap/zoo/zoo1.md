@@ -5,128 +5,143 @@
 
 ![A banner saying "ZOO" with a giraffe looking up at it](static/skillmap/zoo/zoo-welcome.png)
 
-Hello there rookie! First day on the job, huh? 
+Hello there rookie! First day on the job, huh?
 
-No worries, 
-we'll show you the zookeeper ropes. First things first, 
+No worries,
+we'll show you the zookeeper ropes. First things first,
 click that green **OK** button to see the **Keeper's Hut**.
 
-## Step 1
 
-**🏠 Home sweet home 🏠**.  
+## 2. Make a Sprite
+
+**🏠 Home sweet home 🏠**   
 Let's get you set up in your new place!
 
 ---
 
-▶ From the ``||sprites:Sprites||`` category, drag the ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
-block into the ``||loops:on start||`` container. 
+- :paper plane:  From the ``||sprites:Sprites||`` category, drag the  
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``   
+block into the ``||loops:on start||`` container.
 
-▶ Click the grey box to open the **image editor** and draw yourself in your best zookeeper outfit!
+- :paint brush:  Click the grey box to open the **image editor** and draw yourself in your best zookeeper outfit!
 
-▶ Click **> Next** when you're ready to see the next step.
+- :mouse pointer:  Click **Next** when you're ready to see the next step.
 
 ```blocks
 let mySprite = sprites.create(img`
-    . f f f . f f f f . f f f . 
-    f f f f f c c c c f f f f f 
-    f f f f b c c c c b f f f f 
-    f f f c 3 c c c c 3 c f f f 
-    . f 3 3 c c c c c c 3 3 f . 
-    . f c c c c 4 4 c c c c f . 
-    . f f c c 4 4 4 4 c c f f . 
-    . f f f b f 4 4 f b f f f . 
-    . f f 4 1 f d d f 1 4 f f . 
-    . . f f d d d d d d f f . . 
-    . . e f e 4 4 4 4 e f e . . 
-    . e 4 f b 3 3 3 3 b f 4 e . 
-    . 4 d f 3 3 3 3 3 3 c d 4 . 
-    . 4 4 f 6 6 6 6 6 6 f 4 4 . 
-    . . . . f f f f f f . . . . 
-    . . . . f f . . f f . . . . 
+    . f f f . f f f f . f f f .
+    f f f f f c c c c f f f f f
+    f f f f b c c c c b f f f f
+    f f f c 3 c c c c 3 c f f f
+    . f 3 3 c c c c c c 3 3 f .
+    . f c c c c 4 4 c c c c f .
+    . f f c c 4 4 4 4 c c f f .
+    . f f f b f 4 4 f b f f f .
+    . f f 4 1 f d d f 1 4 f f .
+    . . f f d d d d d d f f . .
+    . . e f e 4 4 4 4 e f e . .
+    . e 4 f b 3 3 3 3 b f 4 e .
+    . 4 d f 3 3 3 3 3 3 c d 4 .
+    . 4 4 f 6 6 6 6 6 6 f 4 4 .
+    . . . . f f f f f f . . . .
+    . . . . f f . . f f . . . .
     `, SpriteKind.Player)
 ```
 
-## Step 2 
+## 3. Move Around
 
-**🕰 Time to get moving 🕰**
+**🕰 Time to get move 🕰**  
 
 ---
 
-▶ From the ``||controller:Controller||`` category, drag 
+- :game:  From the ``||controller:Controller||`` category, drag  
 ``||controller:move [mySprite] with buttons ⊕||``  
-into the bottom of the ``||loops:on start||`` container. 
+into the bottom of the ``||loops:on start||`` container.
 
 ---
 
-This will allow you to move your sprite around the screen. 
-Try it on the game screen using the arrow keys on your keyboard 
-or by clicking the joystick.
+This will allow you to move your sprite around the screen.
 
 
 ```blocks
 let mySprite = sprites.create(img`
-    . f f f . f f f f . f f f . 
-    f f f f f c c c c f f f f f 
-    f f f f b c c c c b f f f f 
-    f f f c 3 c c c c 3 c f f f 
-    . f 3 3 c c c c c c 3 3 f . 
-    . f c c c c 4 4 c c c c f . 
-    . f f c c 4 4 4 4 c c f f . 
-    . f f f b f 4 4 f b f f f . 
-    . f f 4 1 f d d f 1 4 f f . 
-    . . f f d d d d d d f f . . 
-    . . e f e 4 4 4 4 e f e . . 
-    . e 4 f b 3 3 3 3 b f 4 e . 
-    . 4 d f 3 3 3 3 3 3 c d 4 . 
-    . 4 4 f 6 6 6 6 6 6 f 4 4 . 
-    . . . . f f f f f f . . . . 
-    . . . . f f . . f f . . . . 
+    . f f f . f f f f . f f f .
+    f f f f f c c c c f f f f f
+    f f f f b c c c c b f f f f
+    f f f c 3 c c c c 3 c f f f
+    . f 3 3 c c c c c c 3 3 f .
+    . f c c c c 4 4 c c c c f .
+    . f f c c 4 4 4 4 c c f f .
+    . f f f b f 4 4 f b f f f .
+    . f f 4 1 f d d f 1 4 f f .
+    . . f f d d d d d d f f . .
+    . . e f e 4 4 4 4 e f e . .
+    . e 4 f b 3 3 3 3 b f 4 e .
+    . 4 d f 3 3 3 3 3 3 c d 4 .
+    . 4 4 f 6 6 6 6 6 6 f 4 4 .
+    . . . . f f f f f f . . . .
+    . . . . f f . . f f . . . .
     `, SpriteKind.Player)
     //@highlight
 controller.moveSprite(mySprite)
 ```
 
-## Step 3
+## 4. Try It
 
-**👀 Take a look around the room 👀**
+**Click the Game Window Tab (Above)**  
+![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
 
-▶ From the ``||scene:Scene||`` category, drag ``||scene:camera follow sprite [mySprite]||`` into the bottom 
-of the ``||loops:on start||`` container and use the arrow keys to 
+Try moving around the game screen!  Your zookeeper will move with the joypad or the arrow keys on your keyboard.
+
+
+
+## 5. Look About
+
+**Take a look around the room**  
+👀 
+
+---
+
+- :tree:  From the ``||scene:Scene||`` category, drag  
+``||scene:camera follow sprite [mySprite]||``  
+into the bottom of the ``||loops:on start||`` container and use the arrow keys to
 check out the hut!
 
 ```blocks
 let mySprite = sprites.create(img`
-    . f f f . f f f f . f f f . 
-    f f f f f c c c c f f f f f 
-    f f f f b c c c c b f f f f 
-    f f f c 3 c c c c 3 c f f f 
-    . f 3 3 c c c c c c 3 3 f . 
-    . f c c c c 4 4 c c c c f . 
-    . f f c c 4 4 4 4 c c f f . 
-    . f f f b f 4 4 f b f f f . 
-    . f f 4 1 f d d f 1 4 f f . 
-    . . f f d d d d d d f f . . 
-    . . e f e 4 4 4 4 e f e . . 
-    . e 4 f b 3 3 3 3 b f 4 e . 
-    . 4 d f 3 3 3 3 3 3 c d 4 . 
-    . 4 4 f 6 6 6 6 6 6 f 4 4 . 
-    . . . . f f f f f f . . . . 
-    . . . . f f . . f f . . . . 
+    . f f f . f f f f . f f f .
+    f f f f f c c c c f f f f f
+    f f f f b c c c c b f f f f
+    f f f c 3 c c c c 3 c f f f
+    . f 3 3 c c c c c c 3 3 f .
+    . f c c c c 4 4 c c c c f .
+    . f f c c 4 4 4 4 c c f f .
+    . f f f b f 4 4 f b f f f .
+    . f f 4 1 f d d f 1 4 f f .
+    . . f f d d d d d d f f . .
+    . . e f e 4 4 4 4 e f e . .
+    . e 4 f b 3 3 3 3 b f 4 e .
+    . 4 d f 3 3 3 3 3 3 c d 4 .
+    . 4 4 f 6 6 6 6 6 6 f 4 4 .
+    . . . . f f f f f f . . . .
+    . . . . f f . . f f . . . .
     `, SpriteKind.Player)
 controller.moveSprite(mySprite)
 //@highlight
 scene.cameraFollowSprite(mySprite)
 ```
 
-## Step 4 
+## Finale
 
 **🐯 Fantastic! 🐯**
 
-You're all ready for your first task. 
+---
 
-Click on the **Finish** button to head out to the **Zoo**!  
+You're all ready for your first task.
+
+Click on the **Done** button to head out to the **Zoo**!
 
 
 

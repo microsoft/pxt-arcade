@@ -65,15 +65,15 @@ info.startCountdown(10)
 }
 ```
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
-We already have a basic clicker game, let's use what we've learned to 
+We already have a basic clicker game, let's use what we've learned to
 make it even more special!
 
 ![Click away](/static/skillmap/clicker/clicker-activity-2.gif "Click and buy bigger clickers" )
 
 
-## Step 2
+## {Step 2}
 
 First, try the project on the game screen to remember how it works.
 
@@ -82,9 +82,9 @@ First, try the project on the game screen to remember how it works.
 ► Click **> Next** when you're ready to edit the game.
 
 
-## Step 3
+## {Step 3}
 
-Let's make this game fun to look at by adding a 
+Let's make this game fun to look at by adding a
 [__*sprite*__](#sprote "a 2-D image that moves on the screen") to the screen.
 
 ---
@@ -93,7 +93,7 @@ Let's make this game fun to look at by adding a
 and snap it into the bottom of the ``||loops:on start||`` container.
 
 ► Add your sprite by clicking inside the grey square and drawing something
-eye-catching. You could draw a cloud, a sprinkler, a flower, or a cookie!   
+eye-catching. You could draw a cloud, a sprinkler, a flower, or a cookie!
 
 ---
 
@@ -127,7 +127,7 @@ mySprite = sprites.create(img`
     `, SpriteKind.Player)
 ```
 
-## Step 4
+## {Step 4}
 
 **✨ For an extra spark, you can make your sprite react
 with each click ✨**
@@ -151,16 +151,16 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Step 5
+## {Step 5}
 
-Right now, the spray effect lasts forever, so you don't see much of a 
-change between clicks. 
+Right now, the spray effect lasts forever, so you don't see much of a
+change between clicks.
 
 **Let's tweak the effect to make each instance shorter.**
 
 ---
 
-► Click the **⊕** icon to the right of the ``||sprites: [mySprite] start [spray] effect ⊕||`` 
+► Click the **⊕** icon to the right of the ``||sprites: [mySprite] start [spray] effect ⊕||``
 block (the one already inside the **on A button pressed** container.)
 
 ► Shorten the number of miliseconds (ms) that the effect runs by entering
@@ -178,29 +178,29 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ```
 
-## Step 6 @showdialog
+## {Step 6 @showdialog}
 
 **🎮 Play your game a couple of times 🎮**
 
 
 
-## Step 7
+## {Step 7}
 
 **Did you notice that your game automatically keeps track of your highest score?**
 
-It also automatically tells you that **you've lost** when time runs out. 
+It also automatically tells you that **you've lost** when time runs out.
 Let's change that.
 
 ---
 
 ► From the ``||info:Info||`` category, grab a ``||info:on countdown end||``
-container and drop it into an empty area of the workspace. 
+container and drop it into an empty area of the workspace.
 
-► Now, open the ``||game:Game||`` category and pick  
-``||game: game over <LOSE> ⊕||`` .  Snap it inside the empty 
+► Now, open the ``||game:Game||`` category and pick
+``||game: game over <LOSE> ⊕||`` .  Snap it inside the empty
 **on countdown end** container.
 
-► Toggle **LOSE** to **WIN**.  
+► Toggle **LOSE** to **WIN**.
 
 ```blocks
 info.onCountdownEnd(function () {
@@ -208,7 +208,7 @@ info.onCountdownEnd(function () {
 })
 ```
 
-## Step 8
+## {Step 8}
 
 **🎊 Fantastic 🎊**
 
@@ -222,9 +222,9 @@ Now add a final celebration with some **game over** effects!
 and choose a new option from the dropdown.
 
 
-## Step 9
+## {Step 9}
 
-**That's it!**  
+**That's it!**
 
-Click **Finish** to return to the main page where you can share your game
-with family and friends to compete for the most clicks in 10 seconds!  
+Click **Done** to return to the main page where you can share your game
+with family and friends to compete for the most clicks in 10 seconds!
