@@ -26,7 +26,7 @@ already in the workspace.
 - :mouse pointer: Click **Next** to move on to the next instruction.
 
 ```blocks
-let mySprite: Sprite = null
+let audience: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     audience.setImage(assets.image`clap1`)
@@ -36,7 +36,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 . . . .
 . . . .
 . . . .
-`, mySprite, 50, 50)
+`, audience, 50, 50)
 })
 ```
 
@@ -50,7 +50,8 @@ to select the star.
 
 
 ```blocks
-let mySprite: Sprite = null
+let audience: Sprite = null
+
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     audience.setImage(assets.image`clap1`)
@@ -84,7 +85,8 @@ block.
 
 
 ```blocks
-let mySprite: Sprite = null
+let audience: Sprite = null
+
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     audience.setImage(assets.image`clap1`)
@@ -111,7 +113,9 @@ This will make sure the stars only move upward.
 
 ```blocks
 let audience: Sprite = null
+
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.changeScoreBy(1)
     audience.setImage(assets.image`clap1`)
     projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-100, 100), randint(-50, -100))
 })
