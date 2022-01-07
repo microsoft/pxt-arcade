@@ -18,7 +18,7 @@ Until that happens, teams rely on firetrucks and aircraft to keep wildfires from
 
 ---
 
-You should be able to find four fires across the tilemap. 
+You should be able to find four fires across the tilemap.
 
 Can you remember which lines of code create each action?
 
@@ -32,13 +32,13 @@ Let's add code that sprays water when you hold the (A) button.
 
 ---
 
-- :game: Drag the  
-``||controller:on [A] button [pressed]||``  
-container into an empty area in your workspace. 
+- :game: Drag the <br/>
+``||controller:on [A] button [pressed]||`` <br/>
+container into an empty area in your workspace.
 
-- :mouse pointer: Change ``||controller:pressed||`` to ``||controller:repeat||`` to keep the water spraying as you hold the (A) button.  
+- :mouse pointer: Change ``||controller:pressed||`` to ``||controller:repeat||`` to keep the water spraying as you hold the (A) button.
 
-_💡 Find it too hard to keep (A) pressed as you play?  Try using the spacebar on your keyboard!_
+_💡 Find it too hard to keep (A) pressed as you play? Try using the spacebar on your keyboard!_
 
 
 ```blocks
@@ -52,10 +52,10 @@ controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
 ## 4. Choose Your Spray
 
 
-- :paper plane: Grab  
-``||sprites:spray from [mySprite] using [ ]||``  
-and snap it into the empty  
-``||controller:on [A] button [repeat]||``  
+- :paper plane: Grab <br/>
+``||sprites:spray from [mySprite] using [ ]||`` <br/>
+and snap it into the empty <br/>
+``||controller:on [A] button [repeat]||`` <br/>
 container.
 
 - :paint brush: Click the empty grey box and toggle to **My Assets** to choose the **water** sprite that's shaped like a blue +.
@@ -85,10 +85,10 @@ Before the water can weaken your fire, you have to set the fire's strength.
 
 ---
 
-- :paper plane:  Snap  
-``||sprites:set strength of fire at [location] to [5]||``  
-into the  
-``||sprites:on fire created at [location]||``  
+- :paper plane: Snap <br/>
+``||sprites:set strength of fire at [location] to [5]||`` <br/>
+into the  <br/>
+``||sprites:on fire created at [location]||`` <br/>
 container already in your workspace.
 
 
@@ -116,14 +116,14 @@ we can weaken the fires each time they are hit by water.
 
 ---
 
-- :tree:  Drag an  
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``   
+- :tree: Drag an <br/>
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` <br/>
 container into an empty area of the workspace.
 
 
-- :mouse pointer:  Change ``||sprites:Player||`` to ``||sprites:Water||``.
+- :mouse pointer: Change ``||sprites:Player||`` to ``||sprites:Water||``.
 
-- :mouse pointer:  Click the checkered square and choose the **tree fire** tile.
+- :mouse pointer: Click the checkered square and choose the **tree fire** tile.
 
 ```blocks
 namespace SpriteKind {
@@ -144,11 +144,11 @@ When a water sprite hits the fire, that water sprite needs to be destroyed.
 
 ---
 
-- :paper plane:  Snap  
-``||sprites:destroy [mySprite]||``  
+- :paper plane: Snap <br/>
+``||sprites:destroy [mySprite]||`` <br/>
 into the empty container.
 
-- :mouse pointer:  To make sure your code destroys the exact sprite that overlapped the tile, 
+- :mouse pointer: To make sure your code destroys the exact sprite that overlapped the tile,
 grab the red ``||variables:sprite||`` value block from the outer container and use it to replace ``||variables:mySprite||`` in the **destroy** block.
 
 ![Grab the sprite value from the title bar of the outer container](/static/skillmap/assets/sprite-from-container.gif "This is how your block knows which sprite to use")
@@ -182,8 +182,8 @@ When a water sprite hits the fire tile, the fire needs to decrease in strength b
 
 ---
 
-- :paper plane:  Snap  
-``||sprites:change strength of fire at [location] by [-1]||``  
+- :paper plane: Snap <br/>
+``||sprites:change strength of fire at [location] by [-1]||`` <br/>
 into the same **on overlaps** container.
 
 
@@ -211,14 +211,14 @@ Right now, when the fire's strength reaches 0, nothing happens. Let's change tha
 
 ---
 
-- :paper plane:  Drag an    
-``||sprites:on fire destroyed at [location]||``   
+- :paper plane: Drag an <br/>
+``||sprites:on fire destroyed at [location]||`` <br/>
 container into an empty area of the workspace.
 
-- :tree: To clear the sparks from an extinguished fire, add  
-``||scene:clear all effects at [location]||``   
-into the empty  
-``||sprites:on fire destroyed at [location]||``  
+- :tree: To clear the sparks from an extinguished fire, add <br/>
+``||scene:clear all effects at [location]||`` <br/>
+into the empty <br/>
+``||sprites:on fire destroyed at [location]||`` <br/>
 container.
 
 
@@ -240,18 +240,18 @@ sprites.on_fire_destroyed(function (location) {
 ## 11. Burned Tiles
 
 
-- :tree: To show that the fire has finished burning, add 
-``||scene:set [ ] at tilemap col [0] row [0]||``   
-into the    
-``||sprites:on fire destroyed at [location]||``  
+- :tree: To show that the fire has finished burning, add
+``||scene:set [ ] at tilemap col [0] row [0]||`` <br/>
+into the <br/>
+``||sprites:on fire destroyed at [location]||`` <br/>
 container.
 
 
 - :mouse pointer: Click the checkered square and select the **burnt tree**.
 
-- :mouse pointer: To add the location where the new burnt tree should appear, drag the red ``||variables:location||`` value from the  
-``||sprites:on fire destroyed at [location]||``   
-container down to replace  
+- :mouse pointer: To add the location where the new burnt tree should appear, drag the red ``||variables:location||`` value from the
+``||sprites:on fire destroyed at [location]||`` <br/>
+container down to replace <br/>
 ``||scene: tilemap col [0] row [0]||``.
 
 
@@ -284,7 +284,7 @@ by spraying water with the (A) button.
 
 ## Finale
 
-👏 **Way to go!**   
+👏 **Way to go!**
 
 ---
 

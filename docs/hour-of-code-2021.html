@@ -128,7 +128,7 @@
             >
                 <div class="header-bar-left">
                     <a
-                        href="https://www.microsoft.com/en-us/makecode"
+                        href="https://www.microsoft.com/makecode"
                         onClick="window.pxtTickEvent('hourofcode2021.header.logo')"
                         ><div class="header-org-logo" role="menuitem">
                             <img
@@ -165,8 +165,14 @@
                 </div>
             </nav>
 
+            <img
+                class="tracking"
+                src="https://code.org/api/hour/begin_microsoft_forest.png"
+                alt="tracking"
+            />
+
             <header
-                class="hoc-header background-marina"
+                class="hoc-header homepage background-marina"
                 style="
                     background-image: url('./static/hour-of-code/2021/hoc-header-scene.gif');
                 "
@@ -188,49 +194,100 @@
                         background-image: url('./static/hour-of-code/2021/hoc-header-plane.gif');
                     "
                 ></div>
-            </header>
 
-            <section class="hoc-section-01">
                 <a
-                    class="activity-btn"
+                    class="btn"
                     target="_blank"
                     rel="noreferrer"
                     href="https://aka.ms/forestmap"
-                    onClick="window.pxtTickEvent('hourofcode2021.skillmap.open.code')"
+                    onClick="window.pxtTickEvent('hourofcode2021.skillmap.open.launch')"
+                    ><h5 class="display-font">Launch Activity</h5></a
                 >
-                    <!--TODO: Make sure link above is correct-->
-                    <div class="title background-papaya">
-                        <h5 class="display-font">Code a Game</h5>
+            </header>
+
+            <div id="video-modal" class="modal-backdrop closed">
+                <div class="modal">
+                    <button class="btn close" onClick="modalClose()">
+                        <h5 class="display-font">
+                            <i class="icon close"></i>Close
+                        </h5>
+                    </button>
+                    <div class="video-container">
+                        <iframe
+                            id="video"
+                            width="560"
+                            height="315"
+                            src=""
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            autoplay="1"
+                        ></iframe>
                     </div>
-                    <div
-                        class="body background-marina"
-                        style="
-                            background-image: url('./static/hour-of-code/2021/forest-skillmap-game.gif');
-                        "
-                    ></div>
-                    <div class="action background-sunflower">
-                        <h5 class="display-font">Launch</h5>
+                </div>
+            </div>
+
+            <script type="application/javascript">
+                document.onkeydown = function keypress(e) {
+                    if (e.key === 'Escape') {
+                        modalClose();
+                    }
+                };
+
+                function modalOpen() {
+                    window.pxtTickEvent('hourofcode2021.video.open');
+                    let modal = document.getElementById('video-modal');
+                    let video = document.getElementById('video');
+                    modal.classList.remove('closed');
+                    modal.classList.add('open');
+                    video.src =
+                        'https://www.youtube.com/embed/-_JXEcAIIy4?autoplay=1';
+                }
+
+                function modalClose() {
+                    window.pxtTickEvent('hourofcode2021.video.close');
+                    let modal = document.getElementById('video-modal');
+                    let video = document.getElementById('video');
+                    modal.classList.remove('open');
+                    modal.classList.add('closed');
+                    video.src = '';
+                }
+            </script>
+
+            <section class="hoc-section hoc-section-wide">
+                <section class="intro">
+                    <button class="video-preview" onClick="modalOpen()">
+                        <!--TODO: Any tracking for this ^ ? -->
+                        <img
+                            src="./static/hour-of-code/2021/video-thumbnail.png"
+                            alt="Save the Forest Video"
+                        />
+                    </button>
+
+                    <div class="section-text">
+                        <h3 class="title display-font sunflower">
+                            Save the Forest!
+                        </h3>
+                        <p>
+                            Technology and Computer Science is everywhere in the
+                            world around us. And it’s helping to solve some of
+                            the toughest problems we’re facing in the world.
+                        </p>
+                        <p>
+                            For this year’s Hour of Code™, let’s look at how
+                            computers and technology can help combat forest
+                            fires.
+                        </p>
+                        <p>
+                            Code a game with Microsoft MakeCode Arcade that
+                            recreates the conditions for a forest fire, and then
+                            code your fire-fighting airtanker plane to spray
+                            water and put out the flames!
+                        </p>
                     </div>
-                </a>
-                <div class="section-text">
-                    <h3 class="title display-font sunflower">
-                        Save the Forest!
-                    </h3>
-                    <p>
-                        Technology and Computer Science is everywhere in the
-                        world around us. And it’s helping to solve some of the
-                        toughest problems we’re facing in the world.
-                    </p>
-                    <p>
-                        For this year’s Hour of Code™, let’s look at how
-                        computers and technology can help combat forest fires.
-                    </p>
-                    <p>
-                        Code a game with Microsoft MakeCode Arcade that
-                        recreates the conditions for a forest fire, and then
-                        code your fire-fighting airtanker plane to spray water
-                        and put out the flames!
-                    </p>
+                </section>
+                <div class="buttons">
                     <a
                         class="btn"
                         target="_blank"
@@ -279,6 +336,42 @@
                             background-image: url('./static/hour-of-code/2021/game-jam-hero.png');
                         "
                     ></div>
+                </div>
+            </section>
+
+            <section class="hoc-section-01 reverse">
+                <div class="hero">
+                    <img
+                        src="./static/hour-of-code/2021/codeninjas.png"
+                        alt="Code Ninjas"
+                    />
+                </div>
+                <div class="section-text">
+                    <h3 class="display-font title sunflower">Code Ninjas</h3>
+                    <p>
+                        Code Ninjas is collaborating with Microsoft MakeCode to
+                        bring opportunities to anyone who wants to get involved
+                        during CSEd Week. Code Ninjas will be opening their
+                        doors to the public as they host Hour of Code and Game
+                        Jam sessions at no-cost. No coding experience needed.
+                    </p>
+                    <p>
+                        Visit
+                        <a
+                            href="https://codeninjas.com/CSEdWeek"
+                            target="_blank"
+                            rel="noreferrer"
+                            >codeninjas.com/CSEdWeek</a
+                        >
+                        to find a location near you.
+                    </p>
+                    <a
+                        class="btn"
+                        href="https://codeninjas.com/CSEdWeek"
+                        target="_blank"
+                        rel="noreferrer"
+                        ><h5 class="display-font">Learn More</h5></a
+                    >
                 </div>
             </section>
 
@@ -373,7 +466,7 @@
                         {
                             id: 'minecraft',
                             img: '/static/hour-of-code/2021/minecraft.png',
-                            link: 'https://education.minecraft.net/en-us/resources/hour-code-2021',
+                            link: 'https://education.minecraft.net/resources/hour-code-2020',
                             text: 'Hour of Code™ 2021'
                         },
                         {
@@ -539,21 +632,21 @@
                 </div>
                 <div class="text-content">
                     <a
-                        href="https://www.microsoft.com/en-us/makecode/about"
+                        href="https://www.microsoft.com/makecode/about"
                         target="_blank"
                         rel="noreferrer"
                         onClick="window.pxtTickEvent('hourofcode2021.footer.about')"
                         >Microsoft MakeCode</a
                     >
                     <a
-                        href="https://www.microsoft.com/en-us/legal/terms-of-use"
+                        href="https://www.microsoft.com/legal/terms-of-use"
                         target="_blank"
                         rel="noreferrer"
                         onClick="window.pxtTickEvent('hourofcode2021.footer.terms')"
                         >Terms of Use</a
                     >
                     <a
-                        href="https://privacy.microsoft.com/en-us/privacystatement"
+                        href="https://privacy.microsoft.com/privacystatement"
                         target="_blank"
                         rel="noreferrer"
                         onClick="window.pxtTickEvent('hourofcode2021.footer.privacy')"

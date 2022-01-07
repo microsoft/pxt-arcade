@@ -5,6 +5,20 @@ Here are some cool activities to get you started with your @boardname@!
 ## Intro Content
 
 ### ~ codecard
+* name: Submit to the Game Jam!
+* description: Submit to the Game Jam!
+* buttonLabel: Visit Page
+* imageUrl: /static/hero-gallery/hoc-2021.png
+* cardType: link
+* url: https://arcade.makecode.com/gamejam/global-2021
+---
+* name: Build a game for Turkey Day
+* description: Build a game for Turkey Day
+* buttonLabel: Try Activity
+* imageUrl: /static/hero-gallery/turkey.png
+* url: https://arcade.makecode.com/--skillmap#docs:/skillmap/turkey
+* cardType: link
+---
 * name: How-to code a video game
 * description: How-to code a video game
 * imageUrl: /static/hero-gallery/how-to-code.png
@@ -16,11 +30,5 @@ Here are some cool activities to get you started with your @boardname@!
 * imageUrl: /static/hero-gallery/stream.png
 * url: https://www.twitch.tv/msmakecode
 * cardType: link
----
-* name: Explore handheld game players
-* description: Explore handheld game players
-* buttonLabel: See devices
-* imageUrl: /static/hero-gallery/hardware.png
-* url: https://arcade.makecode.com/hardware
-* cardType: link
+
 ### ~
