@@ -30,11 +30,11 @@ Let's add code that sprays water when you press the (A) button.
 
 ---
 
-- :game: Drag the  
-``||controller:on [A] button [pressed]||``  
+- :game: Drag the <br/>
+``||controller:on [A] button [pressed]||`` <br/>
 container into an empty area in your workspace.
 
-- :mouse pointer: Change ``||controller:pressed||`` to ``||controller:repeat||`` to keep the water spraying as you hold the (A) button.  
+- :mouse pointer: Change ``||controller:pressed||`` to ``||controller:repeat||`` to keep the water spraying as you hold the (A) button.
 
 _💡 Find it too hard to keep (A) pressed?  Try using the spacebar on your keyboard!_
 
@@ -50,10 +50,10 @@ controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
 ## 4. Choose Your Spray
 
 
-- :paper plane: Grab  
-``||sprites:spray from [mySprite] using [ ]||``  
-and snap it into the empty  
-``||controller:on [A] button [repeat]||``  
+- :paper plane: Grab <br/>
+``||sprites:spray from [mySprite] using [ ]||`` <br/>
+and snap it into the empty <br/>
+``||controller:on [A] button [repeat]||`` <br/>
 container.
 
 - :mouse pointer: Click the empty grey box and toggle to **My Assets** to choose the **water** sprite that's shaped like a blue +.
@@ -83,10 +83,10 @@ Before the water can weaken your fire, you have to set the fire's strength.
 
 ---
 
-- :paper plane:  Snap
-``||sprites:set strength of [mySprite] to [10]||``  
-into the  
-``||sprites:on created [sprite] of kind [Fire]||``  
+- :paper plane:  Snap <br/>
+``||sprites:set strength of [mySprite] to [10]||`` <br/>
+into the <br/>
+``||sprites:on created [sprite] of kind [Fire]||`` <br/>
 container already in your workspace.
 
 - :mouse pointer:  Grab the ``||variables:sprite||`` value block from the container and use it to replace the ``||variables:mySprite||`` value block.
@@ -119,8 +119,8 @@ we can weaken the fires each time they are hit by water.
 
 ---
 
-- :paper plane:  Drag an  
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``   
+- :paper plane:  Drag an <br/>
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``  <br/>
 container into an empty area of the workspace.
 
 - :mouse pointer:  Change the first kind to ``||sprites:Water||`` and the second kind to ``||sprites:Fire||``.
@@ -145,8 +145,8 @@ When a water sprite hits the fire, that water sprite needs to be destroyed.
 
 ---
 
-- :paper plane:  Snap  
-``||sprites:destroy [mySprite]||``  
+- :paper plane:  Snap <br/>
+``||sprites:destroy [mySprite]||`` <br/>
 into the empty container.
 
 - :mouse pointer:  To make sure your code destroys the **Water** sprite, grab the ``||variables:sprite||`` value block from the container and use it to replace ``||variables:mySprite||``.
@@ -181,8 +181,8 @@ When a water sprite hits the fire, the fire needs to decrease in strength by 1.
 
 ---
 
-- :paper plane:  Snap  
-``||sprites:change strength of [mySprite] by [-1]||``  
+- :paper plane:  Snap <br/>
+``||sprites:change strength of [mySprite] by [-1]||`` <br/>
 into **the end** of the **on overlaps** container.
 
 - :mouse pointer:  To make sure your code weakens the **Fire** sprite,
@@ -223,7 +223,7 @@ by spraying water with the (A) button.
 
 ## Finale
 
-👏 **Way to go!**   
+👏 **Way to go!**
 
 ---
 

@@ -54,6 +54,6 @@
 * position: 4 0
 * actions:
     * map: [Try Save the Forest](/skillmap/forest)
-    * map: [Try our Space Explorer](/skillmap/space)
+    * map: [Try Space Explorer](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox](/)
 
