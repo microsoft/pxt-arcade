@@ -4,12 +4,12 @@
 * backgroundurl: /static/skillmap/racer/backgrounds/racer-comp.png
 * bannerurl: /static/skillmap/racer/racer3.gif
 
-* primarycolor: #ff93c4
+* primarycolor: #fa8033
 * secondarycolor: #fdf60c
-* tertiarycolor: #161112
+* tertiarycolor: #000000
 * strokecolor: #ffffff
 * highlightcolor: #ffffff
-* completednodecolor: #3b3738
+* completednodecolor: #504c52
 
 ## Monster Racer
 * name: Monster Racer
@@ -32,24 +32,16 @@
 * url: /skillmap/racer/racer2
 * tags: easy, tiles, events
 * imageUrl: /static/skillmap/racer/racer2.gif
-* next: racer3
+* next: racer-finish
 * position: 2 -1
 
-### racer3
-* name: Going Further
-* type: tutorial
-* description: Customize your game and make it your own by adding animations and changing your tilemap.
-* url: /skillmap/racer/racer3
-* tags: easy, enemies, overlap, lives
-* imageUrl: /static/skillmap/racer/racer3.gif
-* next: racer-finish
-* position: 3 0
 
 
 ### racer-finish
 * kind: completion
 * type: certificate
 * url: /static/skillmap/certificates/racer-cert.pdf
+* next: racer3
 * position: 4 0
 * actions:
     * map: [Try Space Explorer](/skillmap/space)
@@ -58,3 +50,13 @@
     * certificate: /static/skillmap/certificates/racer-game.pdf
     * completion-badge: /static/badges/badge-racer.png
 
+
+
+### racer3
+* name: Going Further
+* type: tutorial
+* description: Customize your game and make it your own by adding animations and changing your tilemap.
+* url: /skillmap/racer/racer3
+* tags: easy, enemies, overlap, lives
+* imageUrl: /static/skillmap/racer/racer3.gif
+* position: 3 0
