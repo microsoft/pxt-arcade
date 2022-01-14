@@ -49,7 +49,7 @@
 * tags: easy, clicker, projectiles
 * next: star-activity4
 * url: /skillmap/star/star3
-* imageUrl: /static/star/star/star3.gif
+* imageUrl: /static/skillmap/star/star3.gif
 * position: 1 1
 
 
