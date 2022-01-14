@@ -119,7 +119,8 @@ collect your badge and share your final game with family and friends.
 
 ```template
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    audience.setImage(assets.image`clap1`)
+    info.changeScoreBy(1)
+    audience.setImage(assets.image`clap2`)
     projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-100, 100), randint(-50, -100))
 })
 info.onCountdownEnd(function () {

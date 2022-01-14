@@ -36,7 +36,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 . . . .
 . . . .
 . . . .
-`, audience, 50, 50)
+`, mySprite, 50, 50)
 })
 ```
 
