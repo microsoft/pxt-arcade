@@ -1,7 +1,7 @@
 # Monster Racer
 * name: Monster Racer
 * description: Create a side-scrolling monster truck racing game so you can jump obstacles and get your monster truck to the finish line.
-* backgroundurl: /static/skillmap/backgrounds/racer-comp.png
+* backgroundurl: /static/skillmap/backgrounds/racer-comp.gif
 * bannerurl: /static/skillmap/racer/racer3.gif
 
 * primarycolor: #fa8033
@@ -40,6 +40,7 @@
 ### racer-finish
 * kind: completion
 * type: certificate
+* imageUrl: /static/skillmap/certificates/racer-cert.png
 * url: /static/skillmap/certificates/racer-cert.pdf
 * next: racer3
 * position: 4 0
@@ -47,7 +48,7 @@
     * map: [Try Space Explorer](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox](/)
 * rewards:
-    * certificate: /static/skillmap/certificates/racer-game.pdf
+    * certificate: /static/skillmap/certificates/racer-cert.pdf
     * completion-badge: /static/badges/badge-racer.png
 
 
