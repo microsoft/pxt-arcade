@@ -1,7 +1,7 @@
 # Monster Racer
 * name: Monster Racer
 * description: Create a side-scrolling monster truck racing game so you can jump obstacles and get your monster truck to the finish line.
-* backgroundurl: /static/skillmap/racer/backgrounds/racer-comp.png
+* backgroundurl: /static/skillmap/backgrounds/racer-comp.png
 * bannerurl: /static/skillmap/racer/racer3.gif
 
 * primarycolor: #fa8033
