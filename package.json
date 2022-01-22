@@ -22,7 +22,8 @@
         "built/*.json",
         "built/*.d.ts",
         "sim/public",
-        "docs/**"
+        "docs/**",
+        "!docs/**/*.gif"
     ],
     "devDependencies": {
         "@types/marked": "^0.3.0",
