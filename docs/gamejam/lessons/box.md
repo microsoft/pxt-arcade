@@ -15,7 +15,7 @@ Some examples of previous MakeCode Arcade game jams are listed below:
 | Garden | https://arcade.makecode.com/gamejam/garden |
 | One Room | https://itch.io/jam/makecode-arcade-game-jam-2 |
 | Five Second Games | https://itch.io/jam/makecode-game-jam |
-| Climate Change Game Jam | https://arcade.makecode.com/gamejam/global-2021 |
+| Climate Change | https://arcade.makecode.com/gamejam/global-2021 |
 
 ## Preparing to host a game jam
 
