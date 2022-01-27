@@ -11,36 +11,52 @@ In this tutorial, you'll add a truck to your game and make it move through a cav
 
 ## 2. The Scene is Set
 
-**Your scene has already been set!**
+Your scene has already been set
 
 ---
 
-- :binoculars: Look at your workspace to see that your **tilemap** and
-**background image** have already been set for the scene in this activity.
+**Don't touch the blocks in the workspace yet!** <br/>
+If you do, you might make a change that keeps your game from working later.
+
+---
+
+- :binoculars: We have already added **tilemap** and
+**background image** blocks to your workspace to set the scene in this activity.
 
 _💡 Both blocks have been added to the ``||loops: on start||`` container so they load as soon as the game starts.)_
+
+- :mouse pointer: Keep scrolling down to read all of the instructions in this step before moving on to the next step.
+
+---
 
 - :mouse pointer: When you're ready to continue, click **Next**.
 
 
 
-## 3. Take a Look!
+## 3. Look at the Game!
 
-**Click the Game Window Tab (Above)**
+Open the game window to take a look at the scene you've just set up.
+
+---
+
+To take a closer look, you can either click on the **preview window** in the lower-right corner of your screen, or click the **game window tab** above:
+
 ![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
 
-Open the game window to take a look at the scene you've just set up.
-
 You should see the background with the spooky trees and a dark cave layer on top.
 
+---
+
+- :mouse pointer: When you're ready to continue, click **Next**.
 
 
-## 4. Add the Truck Sprite
 
-Choose a [__*sprite*__](#sprote "a 2-D image that moves on the screen")
-to act as your Monster Truck.
+
+## 4. Add the Truck
+
+It's time to set up your monster truck.  To do this, we'll need to create a [__*sprite*__](#sprote "a 2-D image that moves on the screen").
 
 ---
 
@@ -52,9 +68,14 @@ container.
 
 - :paint brush:  To choose a truck, click the empty grey box and toggle to **My Assets**.
 
-![Set your sprite](/static/skillmap/assets/my-assets-three.png "Look what we're about to make!")
+![Set your sprite](/static/skillmap/racer/pick-truck.gif "Choose your image from the gallery")
 
-_💡 We'll be using the **truck2** sprite, but you can use whichever one you want._
+_💡 This image shows the **truck2** sprite, but you can use whichever one you want._
+
+---
+
+- :mouse pointer: When you're ready to continue, click **Next**.
+
 
 
 ```blocks
@@ -73,6 +94,9 @@ To make the game feel more realistic, it needs gravity.
 For that, add [__*acceleration*__](#accel "increased speed in a direction")
 to "pull down" on the sprite.
 
+
+![Set the gravity](/static/skillmap/racer/acceleration.gif "Choose ay(acceleration y)")
+
 ---
 
 - :paper plane:  From the ``||sprites:Sprites||`` category, drag <br/>
@@ -83,6 +107,12 @@ to **the end** of the <br/>
 - :mouse pointer: Click the dropdown to change ``||sprites:x||`` to ``||sprites:ay (acceleration y)||``.
 
 - :mouse pointer: To pull the sprite toward the ground, replace **0** with **500**.
+
+---
+
+- :mouse pointer: When you're ready to continue, click **Next**.
+
+
 
 ```blocks
 tiles.setTilemap(tilemap`level1`)
@@ -109,6 +139,8 @@ In this game, your truck needs to start rolling as soon as the game starts.
 
 To make that happen, you need to set its **vx** or _vertical velocity_ (speed from side to side).
 
+![Set the speed](/static/skillmap/racer/velocity.gif "Choose vx(velocity x)")
+
 ---
 
 - :paper plane:  Drag a new <br/>
@@ -119,6 +151,11 @@ to **the end** of the <br/>
 - :mouse pointer: Click the dropdown to change ``||sprites:x||`` to ``||sprites:vx (velocity x)||``.
 
 - :mouse pointer: To push the sprite toward the right, replace **0** with **100**.
+
+---
+
+- :mouse pointer: When you're ready to continue, click **Next**.
+
 
 
 ```blocks
@@ -150,6 +187,11 @@ Let's make the "camera" follow the sprite so you can always see it.
 ``||scene:camera follow sprite [mySprite]||`` <br/>
 to **the end** of the <br/>
 ``||loops:on start||`` container.
+
+---
+
+- :mouse pointer: When you're ready to continue, click **Next**.
+
 
 
 ```blocks
