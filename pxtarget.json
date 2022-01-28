@@ -590,6 +590,7 @@
         ],
         "blocksCollapsing": true,
         "errorList": true,
+        "workspaceSearch": true,
         "extendEditor": true,
         "simScreenshot": true,
         "simScreenshotKey": "P",
