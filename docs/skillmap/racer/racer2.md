@@ -25,16 +25,16 @@ You'll notice some pits of acid in the road. Help your truck avoid them when you
 ---
 
 
-- :game: Drag the
-``||controller:on [A] button [pressed]||``
+- :game: From ``||controller:Controller||``, drag the <br/>
+``||controller:on [A] button [pressed]||`` <br/>
 container into an empty area of the workspace.
 
-- :paper plane: Inside of the
-``||controller:on [A] button [pressed]||``
-container, add
-``||sprites:set [mySprite] [x] to [0]||``.
+- :paper plane: Inside of the <br/>
+``||controller:on [A] button [pressed]||`` <br/>
+container, add a new <br/>
+``||sprites:set [mySprite] [x] to [0]||`` block.
 
-- :mouse pointer: Change ``||sprites:[x]||`` to ``||sprites:[vy (velocity y)]||``
+- :mouse pointer: Change ``||sprites:[x]||`` to ``||sprites:[vy (velocity y)]||`` <br/>
 so you can make the truck move in the up/down direction.
 
 - :mouse pointer: Change **0** to **-200** to send the truck upward with each press of the (A) button.
@@ -56,14 +56,14 @@ Now that you can jump the pits, let's make them dangerous.
 
 ---
 
-- :tree: Drag the
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``
+- :tree: From ``||scene:Scene||``, drag the <br/>
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` <br/>
 container into an empty area of the workspace.
 
 - :paint brush: Click the checkerboard image and change it to the **acid** tile.
 
-- :circle: Snap a
-``||game:game over <LOSE>||``
+- :circle: From ``||game:Game||``, snap a <br/>
+``||game:game over <LOSE>||`` <br/>
 block into the new container.
 
 
@@ -112,7 +112,7 @@ At the end of the cave, there is a set of pure black **empty cave** tiles.
 - :mouse pointer:  Follow the same steps to end the game when your sprite overlaps
 an **empty cave** tile as you did for the **acid** tile.
 
-- :mouse pointer: Finish by toggling ``||game: game over <LOSE>||`` to ``||game: game over <WIN>||``.
+- :mouse pointer: Finish by changing the ``||game: game over <LOSE>||`` to say ``||game: game over <WIN>||``.
 
 
 

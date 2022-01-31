@@ -63,7 +63,7 @@ Choose your truck animation.
 
 - :mouse pointer: When the truck is selected, the interval should fill automatically, but you can replace it with a larger number if you want the animation to run more slowly.
 
-- :mouse pointer: Toggle **loop** to `<TRUE>` to keep the animation playing over and over for the whole game.
+- :mouse pointer: Toggle **loop** to `<ON>` to keep the animation playing over and over for the whole game.
 
 ```blocks
 let mySprite: Sprite = null
@@ -112,9 +112,9 @@ With the wall icon highlighted, you can select the eraser tool to remove walls, 
 
 ## 7. Rearranging
 
-Click the tile icon to load your pencil tool with the tiles you want to add to the map.
+Click the **tile** icon to load your pencil tool with the tiles you want to add to the map.
 
-With the wall icon highlighted, you can select the eraser tool to remove walls, too!
+With the tile icon highlighted, you can select the eraser tool to remove tiles, too!
 
 The tiles for this game are listed under **My Tiles**.
 

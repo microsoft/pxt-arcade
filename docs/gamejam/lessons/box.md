@@ -59,7 +59,7 @@ Decide how participants will submit their games to you.
 
 ## Celebrate
 
-Will you just be awarding participation certificates or calling out specific projects for their creativity, complexity, or alignment with the assigned theme? Download, customize and award [certificates of achievement](https://microsoft.sharepoint.com/:p:/t/Prime8xMakeCode/EQ3r9N0JOKNPm-4KyAAomt0Bd7rgH1hffslRjooeUdPYtA?e=3Tw2NZ).
+Will you just be awarding participation certificates or calling out specific projects for their creativity, complexity, or alignment with the assigned theme? Download, customize and award [certificates of achievement](https://aka.ms/GameJamBoxCert).
 
 ## Educator Resources
 
