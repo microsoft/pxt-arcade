@@ -5,12 +5,7 @@ Here are some cool activities to get you started with your @boardname@!
 ## Intro Content
 
 ### ~ codecard
-* name: Submit to the Game Jam!
-* buttonLabel: Visit Page
-* imageUrl: /static/hero-gallery/hoc-2021.png
-* cardType: link
-* url: https://arcade.makecode.com/gamejam/global-2021
----
+
 * name: Try our limited-edition Sing 2 activity
 * buttonLabel: Play Now
 * imageUrl: /static/hero-gallery/star.png
