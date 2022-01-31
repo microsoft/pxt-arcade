@@ -43,7 +43,7 @@
 * imageUrl: /static/skillmap/certificates/racer-cert.png
 * url: /static/skillmap/certificates/racer-cert.pdf
 * next: racer3
-* position: 4 0
+* position: 3 0
 * actions:
     * map: [Try Space Explorer](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox](/)
@@ -60,4 +60,4 @@
 * url: /skillmap/racer/racer3
 * tags: easy, enemies, overlap, lives
 * imageUrl: /static/skillmap/racer/racer3.gif
-* position: 3 0
+* position: 4 0
