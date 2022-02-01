@@ -152,6 +152,79 @@ section.hoc-aside-01 #timer {
     width: unset;
 }
 
+section.hoc-aside-01.theme-description {
+    margin-top: 7rem;
+    margin-bottom: 5rem;
+}
+
+section.hoc-aside-01.theme-description .hero {
+    border: 0;
+}
+
+section.hoc-aside-01.game-gallery {
+    display: block;
+}
+
+section.hoc-aside-01.game-gallery .aside-text {
+    text-align: left;
+}
+
+section.hoc-aside-01.game-gallery .aside-text .hint {
+    font-family: 'Roboto', sans-serif;
+    background-color: transparent;
+    color: black;
+    padding-right: 0;
+    border: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 3rem;
+    box-shadow: none;
+    border-left: 0.5rem solid #eeca49;
+    padding-left: 2rem;
+    font-style: italic;
+    font-size: 1.8rem;
+}
+
+section.hoc-aside-01.game-gallery #gallery .game {
+    font-family: 'Roboto', sans-serif;
+    max-width: 34rem;
+    transition: 0.25s;
+}
+
+@media (max-width: 768px) {
+    section.hoc-aside-01.game-gallery #gallery .game {
+        max-width: 25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section.hoc-aside-01.game-gallery #gallery .game {
+        max-width: 12rem;
+    }
+}
+
+section.hoc-aside-01.game-gallery #gallery .game:hover {
+    transform: scale(1.05);
+}
+
+section.hoc-aside-01.game-gallery #gallery .game:active {
+    transform: scale(0.95);
+}
+
+section.hoc-aside-01.game-gallery #gallery .game div:last-child > a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: black;
+    text-decoration: none;
+    font-size: 1.8rem;
+}
+
+section.hoc-aside-01.game-gallery #gallery .game div:last-child > div {
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-size: 1.4rem;
+}
+
 /**** Rules Section ****/
 
 .rules ol {
@@ -188,7 +261,7 @@ section.hoc-aside-01 #timer {
 /**** New to MakeCode Section ****/
 
 .new {
-    margin-top: 8rem !important;
+    margin-top: 0rem !important;
 }
 
 .new .btn {
@@ -203,9 +276,13 @@ section.hoc-aside-01 #timer {
     margin-left: 2rem;
 }
 
+.new .hero {
+    border-color: #de594b !important;
+}
+
 @media (max-width: 768px) {
     .new {
-        margin-top: 5rem !important;
+        margin-top: 0rem !important;
     }
 }
 

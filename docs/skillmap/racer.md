@@ -1,15 +1,15 @@
 # Monster Racer
 * name: Monster Racer
 * description: Create a side-scrolling monster truck racing game so you can jump obstacles and get your monster truck to the finish line.
-* backgroundurl: /static/skillmap/racer/backgrounds/racer-comp.png
+* backgroundurl: /static/skillmap/backgrounds/racer-comp.gif
 * bannerurl: /static/skillmap/racer/racer3.gif
 
-* primarycolor: #ff93c4
+* primarycolor: #fa8033
 * secondarycolor: #fdf60c
-* tertiarycolor: #161112
+* tertiarycolor: #000000
 * strokecolor: #ffffff
 * highlightcolor: #ffffff
-* completednodecolor: #3b3738
+* completednodecolor: #504c52
 
 ## Monster Racer
 * name: Monster Racer
@@ -32,8 +32,26 @@
 * url: /skillmap/racer/racer2
 * tags: easy, tiles, events
 * imageUrl: /static/skillmap/racer/racer2.gif
-* next: racer3
+* next: racer-finish
 * position: 2 -1
+
+
+
+### racer-finish
+* kind: completion
+* type: certificate
+* imageUrl: /static/skillmap/certificates/racer-cert.png
+* url: /static/skillmap/certificates/racer-cert.pdf
+* next: racer3
+* position: 3 0
+* actions:
+    * map: [Try Space Explorer](/skillmap/space)
+    * editor: [Edit Your Project with a Full Toolbox](/)
+* rewards:
+    * certificate: /static/skillmap/certificates/racer-cert.pdf
+    * completion-badge: /static/badges/badge-racer.png
+
+
 
 ### racer3
 * name: Going Further
@@ -42,19 +60,4 @@
 * url: /skillmap/racer/racer3
 * tags: easy, enemies, overlap, lives
 * imageUrl: /static/skillmap/racer/racer3.gif
-* next: racer-finish
-* position: 3 0
-
-
-### racer-finish
-* kind: completion
-* type: certificate
-* url: /static/skillmap/certificates/racer-cert.pdf
 * position: 4 0
-* actions:
-    * map: [Try Space Explorer](/skillmap/space)
-    * editor: [Edit Your Project with a Full Toolbox](/)
-* rewards:
-    * certificate: /static/skillmap/certificates/racer-game.pdf
-    * completion-badge: /static/badges/badge-racer.png
-

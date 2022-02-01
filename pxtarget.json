@@ -104,6 +104,7 @@
         "libs/settings",
         "libs/settings---files",
         "libs/sevenseg",
+        "libs/sprite-scaling",
         "libs/storyboard",
         "libs/template",
         "libs/thermometer"
@@ -589,6 +590,7 @@
         ],
         "blocksCollapsing": true,
         "errorList": true,
+        "workspaceSearch": true,
         "extendEditor": true,
         "simScreenshot": true,
         "simScreenshotKey": "P",
