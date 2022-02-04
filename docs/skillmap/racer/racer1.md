@@ -11,11 +11,9 @@ In this tutorial, you'll add a truck to your game and make it move through a cav
 
 ## 2. The Scene is Set
 
-Your scene has already been set
 
----
-
-**Don't touch the blocks in the workspace yet!** <br/>
+We've added blocks to your workspace to get you started. <br/>
+⚠️**Don't touch them yet!**⚠️ <br/>
 If you do, you might make a change that keeps your game from working later.
 
 ---
@@ -91,7 +89,7 @@ let mySprite = sprites.create(assets.image`truck2`, SpriteKind.Player)
 
 To make the game feel more realistic, it needs gravity.
 
-For that, add [__*acceleration*__](#accel "increased speed in a direction")
+For that, we'll add [__*acceleration*__](#accel "increased speed in a direction")
 to "pull down" on the sprite.
 
 
