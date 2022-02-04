@@ -6,6 +6,12 @@ Here are some cool activities to get you started with your @boardname@!
 
 ### ~ codecard
 
+* name: Play the Monster Racer Tutorial
+* buttonLabel: Try Now
+* imageUrl: /static/banner/racer-banner.png
+* url: https://arcade.makecode.com/--skillmap#docs:/skillmap/racer
+* cardType: link
+---
 * name: Try our limited-edition Sing 2 activity
 * buttonLabel: Play Now
 * imageUrl: /static/hero-gallery/star.png
