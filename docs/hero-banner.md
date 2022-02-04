@@ -8,7 +8,7 @@ Here are some cool activities to get you started with your @boardname@!
 
 * name: Play the Monster Racer Tutorial
 * buttonLabel: Try Now
-* imageUrl: /static/banner/racer-banner.png
+* imageUrl: /static/banners/racer-banner.png
 * url: https://arcade.makecode.com/--skillmap#docs:/skillmap/racer
 * cardType: link
 ---
