@@ -4,8 +4,8 @@
 
 **Will you be my Valentine?**
 
-Here's a game I made just for you...<br/>
-...but the real gift is that you can edit the code to make changes to the game!
+Here's a game I made just for you<br/>
+...but the real gift is that you can edit the code to make changes of your own!
 
 ![A heart flying around to catch valentines](/static/tutorials/valentine/valentine.gif "This is what we'll be making today!" )
 
@@ -13,9 +13,11 @@ Follow the tutorial to see all of the ways you can make the game your own.
 
 
 
-## {2. Play Your Game}
+## Play First!
 
-Go ahead and give the game a try.
+To get started, switch to the game window and start playing!
+
+---
 
 ![Here's how you change to the game screen](/static/tutorials/valentine/game-screen.gif "Click the game screen icon in the upper-left corner of the screen." )
 
@@ -43,7 +45,8 @@ You can add a block to check for a win or loss each time the game updates.
 
 **Exciting!**
 
-How does the game feel?  Too hard?  To easy?
+How does the game feel? <br/>
+Too hard?  To easy?
 
 Change the difficulty by adjusting how many arrows the Valentines throw.
 
@@ -62,7 +65,7 @@ Change the difficulty by adjusting how many arrows the Valentines throw.
 
 ## {5. Bigger}
 
-Maybe you want to play around with the size of your heart.
+Want to play around with the size of your heart?
 
 You can change how fast it grows when it overlaps a valentine!
 
@@ -77,7 +80,7 @@ Larger numbers make the heart grow faster.
 
 ## {6. Smaller}
 
-Maybe you want to make your heart even smaller when an arrow hits it!
+Want to make your heart even smaller when an arrow hits it?
 
 Edit the amount it shrinks when your player overlaps an arrow. Smaller (more negative) numbers make it shrink faster.
 
@@ -89,7 +92,7 @@ Edit the amount it shrinks when your player overlaps an arrow. Smaller (more neg
 
 ## {7. Play Longer}
 
-You can even change what size of heart the game looks for when you win or lose.
+You can even change what the game looks for when you win or lose.
 
 Browse through all of the blocks in the toolbox to see if you can find a block to add that will let you change the **win** and **loss** values.
 
@@ -97,21 +100,58 @@ Where should that block go?
 
 ---
 
-_💡 Tip💡 - Check the hint button (the lightbulb between **Back** and **Next**) to see three places you might put the new block, and how each one changes the way your code works._
+_💡 Tip💡  Check the hint button (the lightbulb between **Back** and **Next**) to see three places you might put the new block, and how each one changes the way your code works._
+
+```blocks
+game.onUpdateInterval(1800, function () {
+    //@highlight
+    valentine.set_win_lose_size(120, 6)
+    valentine.check_win_or_lose()
+    valentine.send_valentine(assets.image`cupid hearts`, 3, assets.image`arrow`)
+})
+
+```
+Adding your block to the ``||game: on game update||`` container will work, but it will keep getting looked at again and again each time the game updates.
+
+---
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Valentine, function (sprite, otherSprite) {
+    //@highlight
+    valentine.set_win_lose_size(120, 6)
+    otherSprite.destroy()
+    scaling.scaleByPixels(sprite, 15, ScaleDirection.Uniformly, ScaleAnchor.Middle)
+})
+
+```
+Adding your block to one of the ``||sprites: on overlap||`` containers will also work, but it will keep getting looked at again and again each time the player runs into another sprite.
+
+
+---
+
+```blocks
+//@highlight
+valentine.set_win_lose_size(120, 6)
+
+```
+You only need to run the new code one time, so adding it to a new ``||loops: on start||``
+container is the best option!
+
 
 
 
 ## Finale
 
-Well done!
+**Fantastic!**
 
-Take a look at the experience that you've created so far.
+You now have a game that you can send to _your_ Valentine!
 
+Don't forget to click **Done** to share your game and remix it using any of the blocks from the full toolbox.
 
 
 
 ```package
-scaling = github:microsoft/pxt-common-packages/libs/sprite-scaling
+valentine-special = github:kiki-lee/valentine-special
 ```
 
 ```template
@@ -155,95 +195,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Arrow, function (sprite, otherSp
 
 ```
 
-```customts
-
-let lose_size = 0
-let win_size = 0
-let arrow: Sprite = null
-let redheart: Sprite = null
-let player_sprite: Sprite = null
-
-tiles.setCurrentTilemap(tilemap`level0`)
-player_sprite = sprites.create(assets.image`mySpriteHeart`, SpriteKind.Player)
-controller.moveSprite(player_sprite)
-scene.cameraFollowSprite(player_sprite)
-
-
-namespace SpriteKind {
-    //% isKind
-    export const Valentine = SpriteKind.create()
-
-    //% isKind
-    export const Arrow = SpriteKind.create()
-}
-
-
-//% color="#ef0568" icon="\uf004"
-//% block="Valentine"
-namespace valentine {
-
-
-    /*
-     * Send a valentine in from the top
-     * of the screen, releasing a certain
-     * number of arrows
-     */
-    //% block="send valentine $valImage with $arrowNum arrows $arrowImage"
-    //% arrowNum.defl=3
-    export function send_valentine (valImage: Image, arrowNum: number, arrowImage: Image) {
-        if (arrowNum > 100) {
-        redheart = sprites.createProjectileFromSide(valimage, randint(-20, 20), randint(30, 60))
-        redheart.startEffect(effects.coolRadial)
-        for (let index = 0; index < 30; index++) {
-            arrow = sprites.createProjectileFromSprite(arrowimage, redheart, randint(-100, 100), 150)
-            arrow.setKind(SpriteKind.Arrow)
-            arrow.startEffect(effects.coolRadial)
-        }
-        } else {
-            let divWidth = 100 / arrowNum
-            redheart = sprites.createProjectileFromSide(valImage, randint(-20, 20), randint(30, 60))
-            redheart.setPosition(randint(-64, 64) + scene.cameraProperty(CameraProperty.X), -34 + scene.cameraProperty(CameraProperty.Y))
-            redheart.setKind(SpriteKind.Valentine)
-            redheart.lifespan = 5000
-            for (let index = 0; index <= arrowNum - 1; index++) {
-                arrow = sprites.createProjectileFromSprite(arrowImage, redheart, divWidth * index - 50, 75)
-                arrow.setKind(SpriteKind.Arrow)
-            }
-        }
-    }
-
-   /*
-     * Set the parameters for winning
-     * and losing the game
-     */
-    //% block="win at width $winsize | lose at width $losesize"
-    //% winsize.defl=120
-    //% losesize.defl=6
-    export function set_win_lose_size (winsize: number, losesize: number) {
-        win_size = winsize
-        lose_size = losesize
-    }
-
-   /*
-     * Check to see whether win or
-     * loss condition is met
-     */
-    //% block="check for win or loss"
-    export function check_win_or_lose () {
-        if (player_sprite.width >= win_size) {
-            sprites.destroyAllSpritesOfKind(SpriteKind.Arrow)
-            sprites.destroyAllSpritesOfKind(SpriteKind.Valentine)
-            game.over(true)
-        } else if (player_sprite.width <= lose_size) {
-            game.over(false)
-        }
-    }
-
-}
-
-
-
-```
 
 
 
