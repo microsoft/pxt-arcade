@@ -111,7 +111,7 @@ game.onUpdateInterval(1800, function () {
 })
 
 ```
-Adding your block to the ``||game: on game update||`` container will work, but it will keep getting looked at again and again each time the game updates.
+Adding your block to the ``||game: on game update||`` container will work, but it will keep getting looked at again and again each time the game updates. 
 
 ---
 
@@ -124,8 +124,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Valentine, function (sprite, oth
 })
 
 ```
-Adding your block to one of the ``||sprites: on overlap||`` containers will also work, but it will keep getting looked at again and again each time the player runs into another sprite.
-
+Adding your block to one of the ``||sprites: on overlap||`` containers will also work, but it will keep getting looked at again and again each time the player runs into another sprite. 
+ 
 
 ---
 
@@ -136,7 +136,7 @@ valentine.set_win_lose_size(120, 6)
 ```
 You only need to run the new code one time, so adding it to a new ``||loops: on start||``
 container is the best option!
-
+ 
 
 
 
@@ -149,9 +149,8 @@ You now have a game that you can send to _your_ Valentine!
 Don't forget to click **Done** to share your game and remix it using any of the blocks from the full toolbox.
 
 
-
 ```package
-valentine-special = github:kiki-lee/valentine-special
+valentine-special = github:kiki-lee/valentine-special#v0.0.3
 ```
 
 ```template
@@ -195,6 +194,16 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Arrow, function (sprite, otherSp
 
 ```
 
+```customts
+
+let player_sprite: Sprite = null
+
+tiles.setCurrentTilemap(tilemap`level0`)
+player_sprite = sprites.create(assets.image`mySpriteHeart`, SpriteKind.Player)
+controller.moveSprite(player_sprite)
+scene.cameraFollowSprite(player_sprite)
+
+```
 
 
 
