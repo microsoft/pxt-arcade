@@ -19,7 +19,7 @@ In this activity, students will work with:
 
 ## Concept: ``||logic:if||`` and ``||logic:else||`` Statement
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-if-else-pre)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/sMFHdR6KzPo)
 
 We have seen in the previous lesson ``||logic:if||`` statements perform a test and if the logic test evaluates to true, then it will run code that is given.
 
@@ -79,7 +79,7 @@ If it is not greater than 50, it will run the else section and rank the player a
 
 Make sprite alternate between saying "A" and "B"
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-if-else-examples)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/FuABS3PVnAM)
 
 For each example below,
 
@@ -235,7 +235,7 @@ generate()
 
 ## Student Task #1a: ``||logic:else||`` with an Incorrect Response
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-if-else-tasks)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/zW7JyNiJeKI)
 
 Now that we have the basic functionality of our game, make it so that the player loses points when they press the wrong button.
 

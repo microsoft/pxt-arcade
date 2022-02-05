@@ -9,17 +9,17 @@ In this tutorial, you'll equip your ship with [__*projectiles*__](#projected "a 
 ![Releasing projectiles](/static/skillmap/space/spacet2.gif "Here, enemy ship. Would you like to borrow a blaster?")
 
 
-## Customize sprites
+## 2. Customize Sprites
 
-**🚀 The workspace already has the code for a flying ship 🚀**
+**🚀 The workspace already has the code for a flying ship**
 
 ---
 
-►  Play with your project in the game screen to make sure it works the way you expect.
+Play with your project in the game screen to make sure it works the way you expect.
 
 
 
-## Add a button event
+## 3. Add a Button Event
 
 **Time for action!**
 
@@ -27,18 +27,22 @@ Let's launch projectiles when the **Ⓐ** button is pressed!
 
 ---
 
-► From ``||controller:Controller||``, drag an ``||controller:on [A] button pressed ||`` container into the workspace.
+- :game: Drag an  
+``||controller:on [A] button pressed ||``  
+container into the workspace.
 
-► From ``||sprites:Sprites||``, snap
-``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``
-inside the new ``||controller:on [A] button pressed ||`` container.
+- :paper plane: Snap  
+``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``   
+inside the new  
+``||controller:on [A] button pressed ||``  
+container.
 
-► Click the grey box inside of the new projectile block and toggle to **My Assets** to choose one of the **Dart** sprites.
+- :paint brush: Click the grey box inside of the new projectile block and toggle to **My Assets** to choose one of the **Dart** sprites.
 
 ---
 
-**Tip:** Run your code on the game screen and launch a few projectiles
-by pressing the **Ⓐ** button.  What happens?
+_💡 Run your code on the game screen and launch a few projectiles
+by pressing the **Ⓐ** button.  What happens?_
 
 
 ```blocks
@@ -72,9 +76,9 @@ In MakeCode Arcade, we call this [__*velocity*__](#veloc "speed in a given direc
 ![Directional Projectiles](/static/skillmap/space/vxvy.gif "Round and Round")
 
 
-## Create a projectile
+## 6. Create a Projectile
 
-Play with the __vx__ and __vy__ values of the projectile until they're flying straight up at a decent speed.
+Play with the __vx__ and __vy__ values of the projectile until the lasers are flying straight up at a decent speed.
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -82,24 +86,26 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Custom effects
+## 7. Custom Effects
 
-💥 Now for some special effects 💥
-
----
-
-► Find
-``||sprites:[mySprite] start [spray] effect ⊕||`` and snap it in at
-the bottom of the ``||controller:on [A] button pressed ||`` container.
-
-► Change ``||variables:mySprite||`` to ``||variables:projectile||`` if you
-want the effects on your projectiles instead of on your ship.
-
-► Try different options from the ``||sprites:[spray]||`` dropdown menu and choose the one you like best!
+**Now for some special effects**  
+💥 💥 💥 
 
 ---
 
-**Tip:** Click the __⊕__ button on the ``||sprites:[mySprite] start [spray] effect ⊕||`` block to change the time on the effect from 500 ms to **100** ms for a smoother experience.
+- :paper plane: Find  
+``||sprites:[mySprite] start [spray] effect ➕||``   
+and snap it in at **the end** of the  
+``||controller:on [A] button pressed ||``  
+container.
+
+- :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:projectile||`` if you want the effects on your projectiles instead of on your ship.
+
+- :mouse pointer: Try different options from the ``||sprites:[spray]||`` dropdown menu and choose the one you like best!
+
+---
+
+_💡 Click the➕ button on the ``||sprites:[mySprite] start [spray] effect ➕||`` block to change the time on the effect from 500 ms to **100** ms for a smoother experience._
 
 
 
@@ -111,20 +117,22 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## Complete
+## Finale
 
 🎆 **Congratulations** 🎆
+
+---
 
 You can now use the direction buttons to move your space plane and
 press **Ⓐ** to lauch projectiles!
 
-Play your game on the game screen, then click **Done** to return to the main page where you can share with family and friends!
+Play your game on the game screen, then click **Done** to return to the main skillmap where you can carry on to find out how to add enemies to your project!
 
 
 
 
 ```package
-arcade-background-scroll=github:microsoft/arcade-background-scroll/
+arcade-background-scroll=github:microsoft/arcade-background-scroll#926e12eefffd09d453c7cde73f8d6ebd0e666d9d/
 ```
 
 ```ghost
@@ -160,6 +168,7 @@ controller.moveSprite(mySprite, 100, 100)
 mySprite.setStayInScreen(true)
 
 ```
+
 
 ```assetjson
 {

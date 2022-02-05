@@ -191,7 +191,7 @@ forever(function () {
 
 
 
-## Intro @showdialog
+## {Intro @showdialog}
 
 Ready to give your game some extra life?
 
@@ -200,7 +200,7 @@ Ready to give your game some extra life?
 
 
 
-## Step 1
+## {Step 1}
 
 The code for a collector game is already in the workspace.
 
@@ -208,15 +208,15 @@ The code for a collector game is already in the workspace.
 
 ---
 
-► Right-click on the ``||loops:forever||`` loop container that holds
+- :mouse pointer:  Right-click on the ``||loops:forever||`` loop container that holds
 the code to create **myEnemy** and choose **Duplicate** from the
 top of the menu.
 
-► Inside that new loop, click on the ``||variables: myEnemy||`` variable in the
+- :mouse pointer:  Inside that new loop, click on the ``||variables: myEnemy||`` variable in the
 **set projectile to** block. A dropdown will appear, allowing you to
 select **New variable...** .
 
-► Name your extra life projectile **extraLife**.
+- :mouse pointer:  Name your extra life projectile **extraLife**.
 
 
 ```blocks
@@ -249,7 +249,7 @@ forever(function () {
 ```
 
 
-## Step 2
+## {Step 2}
 
 **The extra life isn't quite ready.**
 
@@ -258,13 +258,13 @@ in the new **forever** loop pointed to the right place.
 
 ---
 
-► Change the variables in both the **set y to** block AND the **set kind to**
+- :mouse pointer:  Change the variables in both the **set y to** block AND the **set kind to**
 block from ``||variables:myEnemy||`` to ``||variables:extraLife||``.
 
-► Now change the image for the **extraLife** sprite from a rock to
+- :mouse pointer:  Now change the image for the **extraLife** sprite from a rock to
 something healing...like a heart or a potion.
 
-► Extra lives aren't the enemy, they're fuel! In the **set kind to** block,
+- :mouse pointer:  Extra lives aren't the enemy, they're fuel! In the **set kind to** block,
 change **Enemy** to **Food**.
 
 
@@ -297,7 +297,7 @@ forever(function () {
 ```
 
 
-## Step 3
+## {Step 3}
 
 Extra lives are supposed to be special, but they appear just as much
 as the other two projectiles right now.
@@ -306,7 +306,7 @@ as the other two projectiles right now.
 
 ---
 
-► Inside the new **extraLife** forever loop, change the
+- :mouse pointer:  Inside the new **extraLife** forever loop, change the
 random **pause** to stay between **4500** and **5500** ms.
 
 
@@ -341,7 +341,7 @@ forever(function () {
 
 
 
-## Step 4
+## {Step 4}
 
 **Play through your game once or twice.  Notice anything wrong?**
 
@@ -350,13 +350,13 @@ fix that.
 
 ---
 
-► Duplicate the **on sprite overlaps Enemy** container that's already in the
+- :mouse pointer:  Duplicate the **on sprite overlaps Enemy** container that's already in the
 workspace.
 
-► In the header of the new container,
+- :mouse pointer:  In the header of the new container,
 change the second **kind** from **Enemy** to **Food**.
 
-► Change the effect from **fire** to something more appropriate for an
+- :mouse pointer:  Change the effect from **fire** to something more appropriate for an
 extra life. (**Hearts** work well with this theme.)
 
 
@@ -369,7 +369,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 ```
 
 
-## Step 6
+## {Step 6}
 
 The extra life is still **subtracting** a life when collected.
 
@@ -377,14 +377,14 @@ Let's make it **add** one, instead.
 
 ---
 
-► Inside the **on sprite overlaps Food** container,
+- :mouse pointer:  Inside the **on sprite overlaps Food** container,
 Look for the ``||info:change life by [-1]||`` block
 and change **-1** to **1**.
 
-► To exaggerate this gift even more, open the ``||sprites:Sprites||`` category
+- :mouse pointer:  To exaggerate this gift even more, open the ``||sprites:Sprites||`` category
 and grab a ``||sprites:[mySprite] say [":)"]||`` block.
 
-► Snap the new block into the **top** of the **on sprite overlaps Food** container.
+- :mouse pointer:  Snap the new block into the **top** of the **on sprite overlaps Food** container.
 
 
 
@@ -401,14 +401,14 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 
 
-## Step 7
+## {Step 7}
 
-► The new **mySprite say** block is pointed toward the wrong sprite. To fix that,
+- :mouse pointer:  The new **mySprite say** block is pointed toward the wrong sprite. To fix that,
 drag the ``||variables:otherSprite||`` argument out of the header of the
 **on sprite overlaps Food** header and snap it in to replace the
 ``||variables:mySprite||`` variable.
 
-► Change the text from **:)** to **+1**.
+- :mouse pointer:  Change the text from **:)** to **+1**.
 
 
 ```blocks
@@ -422,7 +422,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ```
 
-## Step 8
+## {Step 8}
 
 
 **There you go!**

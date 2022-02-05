@@ -47,6 +47,13 @@
     "cardType": "tutorial"
   }]
 }, {
+  "name": "Winter",
+  "description": "Help the snow people catch snowflakes!",
+  "url": "/tutorials/winter",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/winter/winter.png",
+  "largeImageUrl": "/static/tutorials/winter/winter.gif"
+}, {
   "name": "Lemon Leak",
   "description": "Stay away from the wild strawberries or you'll lose your juice!",
   "url": "/tutorials/lemon-leak",
@@ -143,6 +150,14 @@
   "imageUrl": "/static/tutorials/maze.png",
   "largeImageUrl": "/static/tutorials/maze.gif",
   "videoUrl": "/static/tutorials/maze.mp4"
+}, {
+  "name": "Side Scroller",
+  "description": "Make a side-scrolling car racing game to jump over obstacles and win the race.",
+  "url": "/recipes/side-scroller/01-background",
+  "cardType": "tutorial",
+  "imageUrl": "/static/recipes/side-scroller/car-race.png",
+  "largeImageUrl": "/static/recipes/side-scroller/car-race.gif",
+  "videoUrl": "/static/recipes/side-scroller/car-race.mp4"
 }
 ]
 ```

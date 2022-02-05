@@ -30,16 +30,16 @@ code once.
 
 ---
 
-- :redo:  Drag the
-``||loops:repeat [4] times||``
-loop container into **the end** of the
-``||loops:on start||``
+- :redo:  Drag the <br/>
+``||loops:repeat [4] times||`` <br/>
+loop container into **the end** of the <br/>
+``||loops:on start||`` <br/>
 container.
 
-- :paper plane:  Add
-``||variables:set [mySprite2] to sprite [ ] of kind [Player]||``
-to the empty
-``||loops:repeat [4] times||``
+- :paper plane:  Add <br/>
+``||variables:set [mySprite2] to sprite [ ] of kind [Player]||`` <br/>
+to the empty <br/>
+``||loops:repeat [4] times||`` <br/>
 container.
 
 
@@ -62,10 +62,10 @@ for (let index = 0; index < 4; index++) {
 ## 4. Creating fire
 
 
-- :mouse pointer:  In the
-``||variables:set [mySprite2] to sprite [ ] of kind [Player]||``
-block, click
-``||variables:mySprite2||``
+- :mouse pointer:  In the <br/>
+``||variables:set [mySprite2] to sprite [ ] of kind [Player]||`` <br/>
+block, click <br/>
+``||variables:mySprite2||`` <br/>
 and use the dropdown menu to rename the sprite **newFire**.
 
 - :paint brush:  Now click the empty grey box and toggle to **My Assets** to select the **fire** sprite.
@@ -99,10 +99,10 @@ Let's scatter flames randomly around the map.
 
 ---
 
-- :tree:  Grab
-``||scene:place [mySprite] on top of random [ ]||``
-and snap it into **the end** of the
-``||loops:repeat [4] times||``
+- :tree:  Grab <br/>
+``||scene:place [mySprite] on top of random [ ]||`` <br/>
+and snap it into **the end** of the <br/>
+``||loops:repeat [4] times||`` <br/>
 loop container.
 
 - :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:newFire||``.
@@ -153,8 +153,8 @@ When each sprite of kind **Fire** is created, we want to make it sparkle using e
 
 ---
 
-- :paper plane:   Drag an
-``||sprites:on created [sprite] of kind [Player]||``
+- :paper plane:   Drag an <br/>
+``||sprites:on created [sprite] of kind [Player]||`` <br/>
 container into an empty area of the workspace.
 
 - :mouse pointer:   Change kind ``||sprites:Player||`` to ``||sprites:Fire||``.
@@ -174,17 +174,17 @@ sprites.onCreated(SpriteKind.Fire, function (sprite) {
 
 ## 8. Add the Spark
 
-- :paper plane:   Drag
-``||sprites:[mySprite] start [spray] effect||``
-into the empty
-``||sprites:on created [sprite] of kind [Fire]||``
+- :paper plane:   Drag <br/>
+``||sprites:[mySprite] start [spray] effect||`` <br/>
+into the empty <br/>
+``||sprites:on created [sprite] of kind [Fire]||`` <br/>
 container.
 
 - :mouse pointer:   Change the effect from ``||sprites:spray||`` to ``||sprites:fire||``.
 
-- :mouse pointer:   Make sure the effects attatch to the correct sprite by dragging the ``||variables:sprite||`` value block out of the top of the
-``||sprites:on created [sprite] of kind [Fire]||``
-container to replace
+- :mouse pointer:   Make sure the effects attatch to the correct sprite by dragging the ``||variables:sprite||`` value block out of the top of the <br/>
+``||sprites:on created [sprite] of kind [Fire]||`` <br/>
+container to replace <br/>
 ``||variables:mySprite||``.
 
 ---
@@ -224,23 +224,14 @@ head to the next level and find out how to put the fires out!
 
 
 
-```package
-pxt-tilemaps=github:microsoft/pxt-tilemaps/
-pxt-text=github:microsoft/arcade-text
-arcade-premium-life=github:jwunderl/arcade-premium-life/
-pxt-characterAnimations=github:microsoft/arcade-character-animations/
-pxt-data=github:microsoft/arcade-sprite-data/
-pxt-story=github:microsoft/arcade-storytelling/
-arcade-sprite-util=github:jwunderl/arcade-sprite-util/
-pxt-status-bar=github:jwunderl/pxt-status-bar
-```
-
 ```template
 namespace SpriteKind {
+
+    export const Water = SpriteKind.create()
     export const Fire = SpriteKind.create()
     export const Burnt = SpriteKind.create()
-    export const Water = SpriteKind.create()
 }
+
 tiles.setTilemap(tilemap`level1`)
 let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
 controller.moveSprite(mySprite)
@@ -248,59 +239,8 @@ scene.cameraFollowSprite(mySprite)
 
 ```
 
-```customts
-
-let statusbar = statusbars.create(82, 4, StatusBarKind.Health)
-statusbar.top = 12
-statusbar.left = 4
-statusbar.max = tiles.tilemapRows() * tiles.tilemapColumns()
-let statusLabel = textsprite.create("Healthy Forest", 0, 1)
-statusLabel.setFlag(SpriteFlag.RelativeToCamera, true)
-statusLabel.top = 2
-statusLabel.left = 4
-statusbar.setColor(7, 14)
-let fireLabel = textsprite.create("Fires:")
-fireLabel.right = 145
-fireLabel.top = 2
-fireLabel.setMaxFontHeight(4)
-fireLabel.setFlag(SpriteFlag.RelativeToCamera, true)
-statusLabel.setFlag(SpriteFlag.Invisible, true)
-statusbar.setFlag(SpriteFlag.Invisible, true)
-fireLabel.setFlag(SpriteFlag.Invisible, true)
-info.showScore(false)
-
-
-
-
-namespace animation {
-    /*
-     * Loops the passed frames on the sprite at the given interval whenever
-     * the specified rule is true for that sprite.
-     *
-     * If more than one rule applies, the most specific rule will be used.
-     * If multiple rules are equally specific, the currently executing rule
-     * is favored (or one is chosen at random).
-     *
-     * @param sprite    the sprite to animate
-     * @param frames    the images that make up that animation
-     * @param frame     Interval the amount of time to spend on each frame in milliseconds
-     * @param rule      the rule that decides when this animation will play
-     */
-    //% blockId=arcade_character_loop_frames2
-    //% block="animate $sprite loop frames $frames interval (ms) $frameInterval when $rule"
-    //% sprite.defl=mySprite
-    //% frames.defl=Fire Plane Right
-    //% sprite.shadow=variables_get
-    //% frames.shadow=animation_editor
-    //% frameInterval.shadow=timePicker
-    //% rule.shadow=arcade_character_make_rule
-    //% weight=100
-    //% blockGap=8
-    //% help=github:arcade-character-animations/docs/loop-character-animation
-    export function loopFrames2(sprite: Sprite, frames: Image[], frameInterval: number, rule: number) {
-        characterAnimations.loopFrames(sprite, frames, frameInterval, rule);
-    }
-}
+```package
+pxt-forest-special=github:kiki-lee/forest-special/
 ```
 
 

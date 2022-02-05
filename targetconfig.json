@@ -61,13 +61,17 @@
             "platformer": "docs:/skillmap/platformer",
             "sc": "docs:/skillmap/sc",
             "shark": "docs:/skillmap/shark",
-            "jungle": "docs:/skillmap/jungle"
+            "jungle": "docs:/skillmap/jungle",
+            "racer": "docs:/skillmap/racer",
+            "rockstar": "docs:/skillmap/rockstar",
+            "forest": "docs:/skillmap/forest",
+            "turkey": "docs:/skillmap/turkey",
+            "star": "docs:/skillmap/star"
         }
     },
     "galleries": {
         "Skillmaps": "skillmaps",
         "Tutorials": "tutorials",
-        "Multipart Tutorials": "multipart-tutorials",
         "Live Coding": "live-coding",
         "Blocks Games": "blocks-games",
         "JavaScript Games": "javascript-games",
@@ -84,6 +88,6 @@
         "John Park's Workshop": "john-parks-workshop"
     },
     "electronManifest": {
-        "latest": "v1.4.36"
+        "latest": "v1.7.24"
     }
 }

@@ -1,57 +1,63 @@
-# Monster Racer!
+# Monster Racer
 * name: Monster Racer
-* description: Create a side-scrolling car racing game to jump over obstacles and get your monster truck to the finish line.
-* backgroundurl: /static/skillmap/rockstar/backgrounds/rockstar-comp.png
-* bannerurl: /static/skillmap/rockstar/rockstar3.gif
-* primarycolor: #ff93c4
+* description: Create a side-scrolling monster truck racing game so you can jump obstacles and get your monster truck to the finish line.
+* backgroundurl: /static/skillmap/backgrounds/racer-comp.gif
+* bannerurl: /static/skillmap/racer/racer3.gif
+
+* primarycolor: #fa8033
 * secondarycolor: #fdf60c
-* tertiarycolor: #161112
+* tertiarycolor: #000000
 * strokecolor: #ffffff
 * highlightcolor: #ffffff
-* completednodecolor: #3b3738
+* completednodecolor: #504c52
 
-## rockstar
-* name: 80's Rockstar Maze
+## Monster Racer
+* name: Monster Racer
 * layout: manual
 
 ### racer1
-* name: Trapped Backstage
+* name: Ready, Set, Go!
 * type: tutorial
-* description: Create a rockstar backstage after the show, then keep an eye on them as they navigate the path!
-* url: /skillmap/rockstar/rockstar1
-* tags: easy, sprites, tiles
-* imageUrl: /static/skillmap/rockstar/rockstar1.gif
+* description: Get your monster truck moving and try to make it to the end of your tilemap.
+* url: /skillmap/racer/racer1
+* tags: easy, sprites, design
+* imageUrl: /static/skillmap/racer/racer1.gif
 * next: racer2
 * position: 1 -1
 
 ### racer2
-* name: Gather Your Gear
+* name: Over and Under
 * type: tutorial
-* description: Write the code to give your rockstar points for gathering all their gear before they head out on tour.
-* url: /skillmap/rockstar/rockstar2
+* description: Code actions to help your racer survive the pits and perils of the cave.
+* url: /skillmap/racer/racer2
 * tags: easy, tiles, events
-* imageUrl: /static/skillmap/rockstar/rockstar2.gif
-* next: racer3
+* imageUrl: /static/skillmap/racer/racer2.gif
+* next: racer-finish
 * position: 2 -1
 
-### racer3
-* name: Avoid the Fans!
-* type: tutorial
-* description: Code some crazed fans who will steal points as souveniers unless the rockstar can avoid them!
-* url: /skillmap/rockstar/rockstar3
-* tags: easy, enemies, overlap, lives
-* imageUrl: /static/skillmap/rockstar/rockstar3.gif
-* next: racer-finish
-* position: 3 0
 
 
 ### racer-finish
 * kind: completion
 * type: certificate
-* url: /static/skillmap/certificates/rockstar-cert.pdf
-* position: 4 0
+* imageUrl: /static/skillmap/certificates/racer-cert.png
+* url: /static/skillmap/certificates/racer-cert.pdf
+* next: racer3
+* position: 3 0
 * actions:
-    * map: [Try Jungle Monkey Jump](/skillmap/jungle)
-    * map: [Try our Space Explorer](/skillmap/space)
+    * map: [Try Space Explorer](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox](/)
+* rewards:
+    * certificate: /static/skillmap/certificates/racer-cert.pdf
+    * completion-badge: /static/badges/badge-racer.png
 
+
+
+### racer3
+* name: Going Further
+* type: tutorial
+* description: Customize your game and make it your own by adding animations and changing your tilemap.
+* url: /skillmap/racer/racer3
+* tags: easy, enemies, overlap, lives
+* imageUrl: /static/skillmap/racer/racer3.gif
+* position: 4 0

@@ -21,10 +21,10 @@ Choose a [__*tilemap*__](#tiled "a scene or world created using predefined tiles
 
 ---
 
-- :tree:  Under the ``||scene:Scene||`` category in the toolbox, you'll find the
-``||scene:set tilemap to []||``
-block.  Drag it into the empty
-``||loops:on start||``
+- :tree:  Under the ``||scene:Scene||`` category in the toolbox, you'll find the <br/>
+``||scene:set tilemap to []||`` <br/>
+block.  Drag it into the empty <br/>
+``||loops:on start||`` <br/>
 container already in your workspace.
 
 _💡  Having trouble finding the block you need? Look to the left of the instructions for the icon of the toolbox category where your block lives!_
@@ -42,8 +42,8 @@ tiles.setTilemap(tilemap`level2`)
 
 ## 3. Set Your Map
 
-- :paint brush: Click the empty grey square in  
-``||scene:set tilemap to []||``  
+- :paint brush: Click the empty grey square in <br/>
+``||scene:set tilemap to []||`` <br/>
 and toggle to **My Assets** to select the tilemap called **level1**.
 
 ![Toggle to My Assets](/static/skillmap/assets/my-assets.png "Resources have been provided for you!")
@@ -78,13 +78,13 @@ for your aircraft that will fly around the screen.
 
 ---
 
-- :paper plane:  Drag
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
-to **the end** of the
-``||loops:on start||``
+- :paper plane:  Drag <br/>
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
+to **the end** of the <br/>
+``||loops:on start||`` <br/>
 container.
 
-_💡  Remember, the bubble on the left shows the icon of the toolbox category for the block you need._
+_💡  Remember, the icon to the left of the instructions shows the same icon as the toolbox category for the block you need._
 
 - :paint brush:  To choose your plane, click the empty grey box, then toggle to **My Assets** and choose your aircraft.
 
@@ -106,10 +106,10 @@ let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
 
 ---
 
-- :game pad: Drag
-``||controller:move [mySprite] with buttons ⊕||``
-to **the end** of the
-``||loops:on start||``
+- :game pad: Drag <br/>
+``||controller:move [mySprite] with buttons ⊕||`` <br/>
+to **the end** of the <br/>
+``||loops:on start||`` <br/>
 container.
 
 
@@ -140,10 +140,10 @@ _💡 You can also use the arrow keys on your keyboard!_
 
 ---
 
-- :tree:   To keep your sprite in sight, drag
-``||scene:camera follow sprite [mySprite]||``
-to **the end** of the
-``||loops:on start||``
+- :tree:   To keep your sprite in sight, drag <br/>
+``||scene:camera follow sprite [mySprite]||`` <br/>
+to **the end** of the <br/>
+``||loops:on start||`` <br/>
 container.
 
 _💡 Don't forget to play with your project after each step to see the changes your code has made._
@@ -171,74 +171,6 @@ When you're finished, click **Done** to
 head to the next activity where you'll add the 🔥🔥🔥.
 
 
-
-
-
-```package
-pxt-tilemaps=github:microsoft/pxt-tilemaps/
-pxt-text=github:microsoft/arcade-text
-arcade-premium-life=github:jwunderl/arcade-premium-life/
-pxt-characterAnimations=github:microsoft/arcade-character-animations/
-pxt-data=github:microsoft/arcade-sprite-data/
-pxt-story=github:microsoft/arcade-storytelling/
-arcade-sprite-util=github:jwunderl/arcade-sprite-util/
-pxt-status-bar=github:jwunderl/pxt-status-bar
-```
-
-
-```customts
-
-let statusbar = statusbars.create(82, 4, StatusBarKind.Health)
-statusbar.top = 12
-statusbar.left = 4
-statusbar.max = tiles.tilemapRows() * tiles.tilemapColumns()
-let statusLabel = textsprite.create("Healthy Forest", 0, 1)
-statusLabel.setFlag(SpriteFlag.RelativeToCamera, true)
-statusLabel.top = 2
-statusLabel.left = 4
-statusbar.setColor(7, 14)
-let fireLabel = textsprite.create("Fires:")
-fireLabel.right = 145
-fireLabel.top = 2
-fireLabel.setMaxFontHeight(4)
-fireLabel.setFlag(SpriteFlag.RelativeToCamera, true)
-statusLabel.setFlag(SpriteFlag.Invisible, true)
-statusbar.setFlag(SpriteFlag.Invisible, true)
-fireLabel.setFlag(SpriteFlag.Invisible, true)
-info.showScore(false)
-
-
-
-namespace animation {
-    /*
-     * Loops the passed frames on the sprite at the given interval whenever
-     * the specified rule is true for that sprite.
-     *
-     * If more than one rule applies, the most specific rule will be used.
-     * If multiple rules are equally specific, the currently executing rule
-     * is favored (or one is chosen at random).
-     *
-     * @param sprite    the sprite to animate
-     * @param frames    the images that make up that animation
-     * @param frame     Interval the amount of time to spend on each frame in milliseconds
-     * @param rule      the rule that decides when this animation will play
-     */
-    //% blockId=arcade_character_loop_frames2
-    //% block="animate $sprite loop frames $frames interval (ms) $frameInterval when $rule"
-    //% sprite.defl=mySprite
-    //% frames.defl=Fire Plane Right
-    //% sprite.shadow=variables_get
-    //% frames.shadow=animation_editor
-    //% frameInterval.shadow=timePicker
-    //% rule.shadow=arcade_character_make_rule
-    //% weight=100
-    //% blockGap=8
-    //% help=github:arcade-character-animations/docs/loop-character-animation
-    export function loopFrames2(sprite: Sprite, frames: Image[], frameInterval: number, rule: number) {
-        characterAnimations.loopFrames(sprite, frames, frameInterval, rule);
-    }
-}
-```
 
 
 ```assetjson

@@ -16,7 +16,7 @@ Functions allow us to break up code into different sections. In doing so, we can
 
 ## Example #1a: Creating Sprites
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-refactoring)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/NsENrceOCDw)
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -153,7 +153,7 @@ Each function ends up being a chapter in the book with more details on what exac
 
 ## Student Task #1a: Make your own Functions
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-refactoring-task1a)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/-50-av1tblc)
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -207,7 +207,7 @@ info.startCountdown(10)
 
 ## Student Task #1b: Functions in Events
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-function-refactoring-task2a)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/m4AamaGjDoE)
 
 Functions can be used throughout your code - not just in the ``||loops:on start||`` block.
 

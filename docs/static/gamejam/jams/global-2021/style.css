@@ -1,0 +1,319 @@
+/**** GAMEJAM PAGE OVERRIDES ****/
+
+.content {
+    background-color: unset;
+    color: #fff;
+    max-width: unset;
+    padding: 0;
+}
+
+header.hoc-header .header-text {
+    margin-top: 8rem;
+}
+
+@media (max-width: 480px) {
+    header.hoc-header .header-text {
+        margin-top: 3rem;
+    }
+}
+
+header.hoc-header .seal {
+    position: absolute;
+    left: 3rem;
+    top: 2rem;
+    width: 15rem;
+    border: 0.5rem solid white;
+    border-radius: 50%;
+    height: auto;
+}
+
+@media (max-width: 480px) {
+    header.hoc-header .seal {
+        display: none;
+    }
+}
+
+header.hoc-header .header-text h4 {
+    margin-bottom: 0;
+}
+
+header.hoc-header .header-text .title .jam {
+    font-size: 11rem;
+    margin-top: 1rem;
+    margin-left: -1rem;
+    position: relative;
+}
+
+header.hoc-header .header-text h3 {
+    margin-top: 4rem;
+}
+
+.side-by-side {
+    display: flex;
+    align-items: stretch;
+    width: 90%;
+    max-width: 110rem;
+    margin: 0 auto;
+}
+
+.side-by-side .hoc-section {
+    flex-basis: 45%;
+    flex-grow: 1;
+}
+
+.side-by-side .hoc-section:first-child {
+    margin-right: 3rem;
+}
+.side-by-side .hoc-section:last-child {
+    margin-left: 3rem;
+}
+
+@media (max-width: 768px) {
+    header.hoc-header .header-text .title .jam {
+        margin-top: -1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header.hoc-header .header-text .title .jam {
+        margin-top: 0;
+    }
+
+    .side-by-side {
+        flex-wrap: wrap;
+    }
+
+    .side-by-side .hoc-section {
+        flex-basis: 100%;
+        flex-grow: 1;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+section.hoc-section-01 .hero {
+    height: 30rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 1rem;
+}
+
+@media (max-width: 480px) {
+    section.hoc-section-01 .hero {
+        height: 20rem;
+    }
+}
+
+/**** Countdown Timer ****/
+
+#timer {
+    margin: 0;
+    padding: 0;
+    color: #000000;
+    height: 115px;
+    margin-bottom: 3rem;
+}
+
+#timer > .label {
+    display: none;
+}
+
+#timer > div:last-child {
+    width: 100%;
+    height: 100%;
+    align-items: stretch;
+}
+
+#timer .counter {
+    flex-basis: 25%;
+    margin: 0 0.5rem;
+    border-radius: 1rem;
+    background-color: #eeca49;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 10rem;
+}
+
+.counter > .number {
+    font-family: 'Rowdies', 'Segoe UI', sans-serif;
+    font-weight: 700;
+    font-size: 5rem;
+}
+
+.counter > div:last-child {
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+section.hoc-aside-01 #timer {
+    width: unset;
+}
+
+section.hoc-aside-01.theme-description {
+    margin-top: 7rem;
+    margin-bottom: 5rem;
+}
+
+section.hoc-aside-01.theme-description .hero {
+    border: 0;
+}
+
+section.hoc-aside-01.game-gallery {
+    display: block;
+}
+
+section.hoc-aside-01.game-gallery .aside-text {
+    text-align: left;
+}
+
+section.hoc-aside-01.game-gallery .aside-text .hint {
+    font-family: 'Roboto', sans-serif;
+    background-color: transparent;
+    color: black;
+    padding-right: 0;
+    border: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 3rem;
+    box-shadow: none;
+    border-left: 0.5rem solid #eeca49;
+    padding-left: 2rem;
+    font-style: italic;
+    font-size: 1.8rem;
+}
+
+section.hoc-aside-01.game-gallery #gallery .game {
+    font-family: 'Roboto', sans-serif;
+    max-width: 34rem;
+    transition: 0.25s;
+}
+
+@media (max-width: 768px) {
+    section.hoc-aside-01.game-gallery #gallery .game {
+        max-width: 25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section.hoc-aside-01.game-gallery #gallery .game {
+        max-width: 12rem;
+    }
+}
+
+section.hoc-aside-01.game-gallery #gallery .game:hover {
+    transform: scale(1.05);
+}
+
+section.hoc-aside-01.game-gallery #gallery .game:active {
+    transform: scale(0.95);
+}
+
+section.hoc-aside-01.game-gallery #gallery .game div:last-child > a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: black;
+    text-decoration: none;
+    font-size: 1.8rem;
+}
+
+section.hoc-aside-01.game-gallery #gallery .game div:last-child > div {
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-size: 1.4rem;
+}
+
+/**** Rules Section ****/
+
+.rules ol {
+    padding-left: 2.5rem;
+}
+
+.rules ol li {
+    padding-left: 1rem;
+    font-weight: 400;
+}
+
+.rules ol li::marker {
+    font-weight: 700;
+    color: #eeca49;
+}
+
+/**** Submit Section ****/
+
+.submit {
+    border-radius: 1rem;
+}
+
+.submit .wrapper {
+    padding: 0 4rem;
+}
+
+.submit .actions {
+    justify-content: flex-end;
+}
+
+@media (max-width: 480px) {
+}
+
+/**** New to MakeCode Section ****/
+
+.new {
+    margin-top: 0rem !important;
+}
+
+.new .btn {
+    float: unset !important;
+}
+
+.new .buttons {
+    text-align: right;
+}
+
+.new .buttons .btn:last-child {
+    margin-left: 2rem;
+}
+
+.new .hero {
+    border-color: #de594b !important;
+}
+
+@media (max-width: 768px) {
+    .new {
+        margin-top: 0rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .new .buttons .btn:last-child {
+        margin-top: 1.5rem;
+    }
+}
+
+/**** ACTION BUTTONS ****/
+
+.button {
+    color: #fff;
+    background-color: #3dc1aa;
+}
+
+.button:hover {
+    color: #fff;
+    background-color: #2ead98;
+}
+
+/**** SECTION COLORS ****/
+
+#educators-training,
+#educators-training + p {
+    color: #000;
+    background-color: #3dc1aa;
+}
+
+#new-to-makecode- + p {
+    float: right;
+    position: relative;
+    top: -5.5rem;
+}

@@ -1,4 +1,4 @@
-# 80's Rockstar: Get Your Gear
+# Get Your Gear
 
 
 ## Welcome @showdialog
@@ -12,19 +12,21 @@ Jerry needs to gather all of the instruments before getting on the tour bus!
 
 ## 2. Add Points
 
-**🎸 Award points when Jerry grabs an instrument 🎸**
+**🎸 Award points when Jerry grabs an instrument**  
 When your sprite overlaps an instrument, we'll change the score.
 
 ---
 
 
-- :puzzle: To detect an overlap, go open the ``||scene:Scene||`` category and drag an
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``
+- :tree: To detect an overlap, drag an  
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
 container into an empty area of the workspace.
 
 - :mouse pointer: Change the checkerboard to the red guitar called **instrument1**.
 
-- :puzzle: From ``||info:Info||``, snap a ``||info:change score by [1]||`` block into the new container.
+- :id card: Snap a  
+``||info:change score by [1]||``  
+block into the new container.
 
 
 ```blocks
@@ -35,7 +37,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument1`, function (sprit
 
 ## 3. Try It!
 
-**🕹️ Try your maze and grab a guitar 🕹️**
+**🕹️ Try your maze and grab a guitar**  
 
 ---
 
@@ -44,13 +46,21 @@ Uh oh!  You get WAY too many points when you touch the guitar! We can fix that i
 
 ## 4. Pick It Up
 
-**Replace the instruments you collect with an empty tile.**
+**Replace the instruments you collect with an empty tile.**  
 
 ---
 
-- :puzzle: From ``||scene:Scene||``, drag ``||scene:set [ ] at tilemap col [0] row [0]||`` into **the top** of the ``||scene:on [sprite] of kind [Player] overlaps [instrument1] at [location]||`` container.
+- :tree: Drag  
+``||scene:set [ ] at tilemap col [0] row [0]||``  
+into **the top** of the  
+``||scene:on [sprite] of kind [Player] overlaps [instrument1] at [location]||``  
+container.
 
-- :puzzle: Replace ``||scene:tilemap col [0] row [0]||`` with the ``||variables:location||`` value from the top of the **Player overlaps instrument** container.
+- :mouse pointer: Replace  
+``||scene:tilemap col [0] row [0]||``  
+with the  
+``||variables:location||``  
+value from the top of the **Player overlaps instrument** container.
 
 ![Share your location](/static/skillmap/assets/overlap-tile-location.gif "Grab the variable from the overlap container")
 
@@ -68,7 +78,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument1`, function (sprit
 
 ## 5. Look Again
 
-**🕹️ Try your maze in the game window 🕹️ **
+**🕹️ Try your maze in the game window**  
 
 ---
 
@@ -77,21 +87,26 @@ You should get one point for every guitar you collect.  What about the drums and
 
 ## 6. More Instruments
 
-**🎹 Do it all again 🎹**
-Follow the same steps two more times to add points for the drums and keyboard tiles.
+**🎹 Do it all again**  
+Follow the same steps two more times to add points for the **drums** and **keyboard** tiles.
 
 ---
 
-- :puzzle: Drag
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``
+- :tree: Drag  
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
 into an empty area of the workspace and set the instrument.
 
-- :puzzle: Drag ``||scene:set [ ] at tilemap col [0] row [0]||`` into **the top** of the
-``||scene:on [sprite] of kind [Player] overlaps [instrument] at [location]||``
-container and replace ``||scene:tilemap col [0] row [0]||`` with
-``||variables:location||``.
+- :tree: Drag  
+``||scene:set [ ] at tilemap col [0] row [0]||``  
+into **the top** of the  
+``||scene:on [sprite] of kind [Player] overlaps [instrument] at [location]||``  
+container and replace  
+``||scene:tilemap col [0] row [0]||``  
+with ``||variables:location||``.
 
-- :puzzle: Snap ``||info:change score by [1]||`` into the new container.
+- :id card: Snap  
+``||info:change score by [1]||``  
+into the new container.
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument0`, function (sprite, location) {
@@ -107,7 +122,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument4`, function (sprit
 
 ## 7. Look Again...Again
 
-**🕹️ Try your maze again 🕹️ **
+**🕹️ Try your maze again**  
 
 ---
 
@@ -117,18 +132,20 @@ You should get one point for every instrument you collect!  Can you make it to t
 
 ## 8. Out the Door
 
-**🚪 Make it out the door 🚪**
+**🚪 Make it out the door**  
 Let's finish the game with a WIN when Jerry overlaps the exit door!
 
 ---
 
-- :puzzle: To detect an overlap, go open ``||scene:Scene||`` and drag an
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``
+- :tree: To detect an overlap, drag an  
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
 container into an empty area of the workspace.
 
 - :mouse pointer: Change the checkerboard to red door tile named **exit**.
 
-- :puzzle: From ``||game:Game||``, snap a ``||game:game over <LOSE>||`` block into the new container.
+- :circle: Snap a  
+``||game:game over <LOSE>||``  
+block into the new container.
 
 - :mouse pointer: Toggle **`<LOSE>`** to **`<WIN>`**.
 
@@ -147,8 +164,9 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`exit`, function (sprite, loca
 
 ---
 
-Grab your instruments and guide Jerry to the door, then click **Done** to head back to the
-skillmap. In the next level we'll show you how to subtract points when Jerry runs into crazed fans!
+Grab your instruments and guide Jerry to the door, then click **Done** to head back to the skillmap.  
+
+In the next level we'll show you how to subtract points when Jerry runs into crazed fans!
 
 
 ```package
@@ -189,7 +207,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`fan1`, function (sprite, loca
 let mySprite = sprites.create(assets.image`rockstar`, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 100)
 scene.cameraFollowSprite(mySprite)
-tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairLarge)
+tiles.placeOnRandomTile(mySprite, assets.tile`stage`)
 info.startCountdown(60)
 info.setScore(0)
 ```

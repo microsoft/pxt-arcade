@@ -30,11 +30,11 @@ Let's add code that sprays water when you press the (A) button.
 
 ---
 
-- :game: Drag the  
-``||controller:on [A] button [pressed]||``  
+- :game: Drag the <br/>
+``||controller:on [A] button [pressed]||`` <br/>
 container into an empty area in your workspace.
 
-- :mouse pointer: Change ``||controller:pressed||`` to ``||controller:repeat||`` to keep the water spraying as you hold the (A) button.  
+- :mouse pointer: Change ``||controller:pressed||`` to ``||controller:repeat||`` to keep the water spraying as you hold the (A) button.
 
 _💡 Find it too hard to keep (A) pressed?  Try using the spacebar on your keyboard!_
 
@@ -50,10 +50,10 @@ controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
 ## 4. Choose Your Spray
 
 
-- :paper plane: Grab  
-``||sprites:spray from [mySprite] using [ ]||``  
-and snap it into the empty  
-``||controller:on [A] button [repeat]||``  
+- :paper plane: Grab <br/>
+``||sprites:spray from [mySprite] using [ ]||`` <br/>
+and snap it into the empty <br/>
+``||controller:on [A] button [repeat]||`` <br/>
 container.
 
 - :mouse pointer: Click the empty grey box and toggle to **My Assets** to choose the **water** sprite that's shaped like a blue +.
@@ -83,10 +83,10 @@ Before the water can weaken your fire, you have to set the fire's strength.
 
 ---
 
-- :paper plane:  Snap
-``||sprites:set strength of [mySprite] to [10]||``  
-into the  
-``||sprites:on created [sprite] of kind [Fire]||``  
+- :paper plane:  Snap <br/>
+``||sprites:set strength of [mySprite] to [10]||`` <br/>
+into the <br/>
+``||sprites:on created [sprite] of kind [Fire]||`` <br/>
 container already in your workspace.
 
 - :mouse pointer:  Grab the ``||variables:sprite||`` value block from the container and use it to replace the ``||variables:mySprite||`` value block.
@@ -119,8 +119,8 @@ we can weaken the fires each time they are hit by water.
 
 ---
 
-- :paper plane:  Drag an  
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``   
+- :paper plane:  Drag an <br/>
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``  <br/>
 container into an empty area of the workspace.
 
 - :mouse pointer:  Change the first kind to ``||sprites:Water||`` and the second kind to ``||sprites:Fire||``.
@@ -145,8 +145,8 @@ When a water sprite hits the fire, that water sprite needs to be destroyed.
 
 ---
 
-- :paper plane:  Snap  
-``||sprites:destroy [mySprite]||``  
+- :paper plane:  Snap <br/>
+``||sprites:destroy [mySprite]||`` <br/>
 into the empty container.
 
 - :mouse pointer:  To make sure your code destroys the **Water** sprite, grab the ``||variables:sprite||`` value block from the container and use it to replace ``||variables:mySprite||``.
@@ -181,8 +181,8 @@ When a water sprite hits the fire, the fire needs to decrease in strength by 1.
 
 ---
 
-- :paper plane:  Snap  
-``||sprites:change strength of [mySprite] by [-1]||``  
+- :paper plane:  Snap <br/>
+``||sprites:change strength of [mySprite] by [-1]||`` <br/>
 into **the end** of the **on overlaps** container.
 
 - :mouse pointer:  To make sure your code weakens the **Fire** sprite,
@@ -223,7 +223,7 @@ by spraying water with the (A) button.
 
 ## Finale
 
-👏 **Way to go!**   
+👏 **Way to go!**
 
 ---
 
@@ -233,24 +233,11 @@ keep moving through the skillmap so you can see how to make your fires spread.
 
 
 
-
 ```package
-pxt-tilemaps=github:microsoft/pxt-tilemaps/
-pxt-text=github:microsoft/arcade-text
-arcade-premium-life=github:jwunderl/arcade-premium-life/
-pxt-characterAnimations=github:microsoft/arcade-character-animations/
-pxt-data=github:microsoft/arcade-sprite-data/
-pxt-story=github:microsoft/arcade-storytelling/
-arcade-sprite-util=github:jwunderl/arcade-sprite-util/
-pxt-status-bar=github:jwunderl/pxt-status-bar
+pxt-forest-special=github:kiki-lee/forest-special/
 ```
 
 ```template
-namespace SpriteKind {
-    export const Water = SpriteKind.create()
-    export const Fire = SpriteKind.create()
-    export const Burnt = SpriteKind.create()
-}
 
 tiles.setTilemap(tilemap`level1`)
 let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
@@ -269,166 +256,6 @@ sprites.onCreated(SpriteKind.Fire, function (sprite) {
 
 ```
 
-
-
-```customts
-
-
-  let spreadOptions: number[] = []
-
-  let windSpeed = 5
-  let tinder = 4
-  let dryGrass = 5
-  let spreadTimeBase = 2000
-  let hoseDirection = 270
-  let facing = 0
-  let changeRate = 7
-
-let statusbar = statusbars.create(82, 4, StatusBarKind.Health)
-statusbar.top = 12
-statusbar.left = 4
-statusbar.max = tiles.tilemapRows() * tiles.tilemapColumns()
-statusbar.value = tiles.tilemapRows() * tiles.tilemapColumns()
-
-let statusLabel = textsprite.create("Healthy Forest", 0, 1)
-statusLabel.setFlag(SpriteFlag.RelativeToCamera, true)
-statusLabel.top = 2
-statusLabel.left = 4
-statusbar.setColor(7, 14)
-let fireLabel = textsprite.create("Fires:")
-fireLabel.right = 145
-fireLabel.top = 2
-fireLabel.setMaxFontHeight(4)
-fireLabel.setFlag(SpriteFlag.RelativeToCamera, true)
-statusLabel.setFlag(SpriteFlag.Invisible, true)
-statusbar.setFlag(SpriteFlag.Invisible, true)
-fireLabel.setFlag(SpriteFlag.Invisible, true)
-info.showScore(false)
-
-game.onUpdate(function () {
-    spreadTimeBase = 4500 - (250 * windSpeed + 250 * dryGrass - 100 * tinder)
-})
-
-
-
-
-namespace animation {
-    /*
-     * Loops the passed frames on the sprite at the given interval whenever
-     * the specified rule is true for that sprite.
-     *
-     * If more than one rule applies, the most specific rule will be used.
-     * If multiple rules are equally specific, the currently executing rule
-     * is favored (or one is chosen at random).
-     *
-     * @param sprite    the sprite to animate
-     * @param frames    the images that make up that animation
-     * @param frame     Interval the amount of time to spend on each frame in milliseconds
-     * @param rule      the rule that decides when this animation will play
-     */
-    //% blockId=arcade_character_loop_frames2
-    //% block="animate $sprite loop frames $frames interval (ms) $frameInterval when $rule"
-    //% sprite.defl=mySprite
-    //% frames.defl=Fire Plane Right
-    //% sprite.shadow=variables_get
-    //% frames.shadow=animation_editor
-    //% frameInterval.shadow=timePicker
-    //% rule.shadow=arcade_character_make_rule
-    //% weight=100
-    //% blockGap=8
-    //% help=github:arcade-character-animations/docs/loop-character-animation
-    export function loopFrames2(sprite: Sprite, frames: Image[], frameInterval: number, rule: number) {
-        characterAnimations.loopFrames(sprite, frames, frameInterval, rule);
-    }
-}
-
-
-namespace sprites {
-    /*
-     * Set how many "lives" a sprite has
-     */
-    //% block="set strength of $thisSprite=variables_get(mySprite) to $num"
-    //% num.defl=10
-    export function set_flame_strength (thisSprite: Sprite, num: number) {
-        sprites.setDataNumber(thisSprite, "life", num)
-        sprites.setDataNumber(thisSprite, "spreadTime",  spreadTimeBase + 1000)
-    }
-
-
-    /*
-     * Add or subtract "lives" from a sprite
-     */
-    //% block="change strength of $thisSprite=variables_get(mySprite) by $num"
-    //% num.defl=-1
-    export function change_flame_strength_by (thisSprite: Sprite, num: number) {
-        sprites.changeDataNumberBy(thisSprite, "life", num)
-        for (let value of sprites.allOfKind(SpriteKind.Fire)) {
-          if (sprites.readDataNumber(value, "life") <= 0) {
-              effects.clearParticles(value)
-              value.destroy()
-          }
-        }
-    }
-
-    /*
-     * Choose a sprite to "spray" an image (in sprite form.)
-     */
-    //% block="spray from $thisSprite=variables_get(mySprite) using $img=screen_image_picker"
-    //% img.defl=water
-    export function spray (thisSprite: Sprite, img: Image) {
-
-     if (controller.up.isPressed()) {
-            if (controller.left.isPressed()) {
-                facing = 225
-            } else if (controller.right.isPressed()) {
-                facing = 315
-            } else if (controller.down.isPressed()) {
-
-            } else {
-                facing = 270
-            }
-        } else if (controller.left.isPressed()) {
-            if (controller.right.isPressed()) {
-
-            } else if (controller.down.isPressed()) {
-                facing = 135
-            } else {
-                facing = 180
-            }
-        } else if (controller.right.isPressed()) {
-            if (controller.down.isPressed()) {
-                facing = 45
-            } else {
-                facing = 0
-            }
-        } else if (controller.down.isPressed()) {
-            facing = 90
-        }
-
-        if (Math.abs(facing - hoseDirection) < 180) {
-        if (facing < hoseDirection) {
-            hoseDirection += 0 - changeRate
-        } else {
-            hoseDirection += changeRate
-        }
-        } else{
-            if (facing < hoseDirection) {
-                hoseDirection += changeRate
-            } else {
-                hoseDirection += 0 - changeRate
-            }
-            if (hoseDirection < 0) {
-                hoseDirection += 360
-            } else if (hoseDirection > 360) {
-                hoseDirection += -360
-            }
-            hoseDirection = hoseDirection % 360
-        }
-        let waterProj = sprites.createProjectileFromSprite(img, thisSprite,  150 * Math.cos(spriteutils.degreesToRadians(hoseDirection)), 150 * Math.sin(spriteutils.degreesToRadians(hoseDirection)))
-        waterProj.setKind(SpriteKind.Water)
-  }
-}
-```
 
 
 ```assetjson
