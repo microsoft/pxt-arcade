@@ -673,6 +673,22 @@
             "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/shark",
             "type": "skillmap-completion",
             "title": "Shark Splash"
+        },
+        {
+            "id": "skillmap-completion-monster racer",
+            "image": "/static/badges/badge-racer.png",
+            "lockedImage": "/static/badges/badge-racer-locked.png",
+            "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/racer",
+            "type": "skillmap-completion",
+            "title": "Monster Racer"
+        },
+        {
+            "id": "skillmap-completion-turkey",
+            "image": "/static/badges/badge-turkey.png",
+            "lockedImage": "/static/badges/badge-turkey-locked.png",
+            "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/turkey",
+            "type": "skillmap-completion",
+            "title": "Turkey Day"
         }
     ]
 }
