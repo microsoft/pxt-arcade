@@ -111,7 +111,7 @@ game.onUpdateInterval(1800, function () {
 })
 
 ```
-Adding your block to the ``||game: on game update||`` container will work, but it will keep getting looked at again and again each time the game updates. 
+Adding your block to the ``||game: on game update||`` container will work, but it will keep getting looked at again and again each time the game updates.
 
 ---
 
@@ -124,8 +124,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Valentine, function (sprite, oth
 })
 
 ```
-Adding your block to one of the ``||sprites: on overlap||`` containers will also work, but it will keep getting looked at again and again each time the player runs into another sprite. 
- 
+Adding your block to one of the ``||sprites: on overlap||`` containers will also work, but it will keep getting looked at again and again each time the player runs into another sprite.
+
 
 ---
 
@@ -136,7 +136,7 @@ valentine.set_win_lose_size(120, 6)
 ```
 You only need to run the new code one time, so adding it to a new ``||loops: on start||``
 container is the best option!
- 
+
 
 
 
@@ -150,20 +150,23 @@ Don't forget to click **Done** to share your game and remix it using any of the 
 
 
 ```package
-valentine-special = github:kiki-lee/valentine-special#v0.0.3
+valentine-special = github:kiki-lee/valentine-special#v0.0.5
 ```
 
 ```template
 
+// Every 1.8 seconds a red heart appears on the screen shooting this number of arrows
 game.onUpdateInterval(1800, function () {
     valentine.send_valentine(assets.image`cupid hearts`, 3, assets.image`arrow`)
 })
 
+// When your Player (grey heart) overlaps with a Cupid (red heart), the Cupid disappears and your Player heart grows
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Valentine, function (sprite, otherSprite) {
     otherSprite.destroy()
     scaling.scaleByPixels(sprite, 15, ScaleDirection.Uniformly, ScaleAnchor.Middle)
 })
 
+// When your Player (grey heart) overlaps with an Arrow, the Arrow disappears and your Player heart shrinks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Arrow, function (sprite, otherSprite) {
     otherSprite.destroy()
     scaling.scaleByPixels(sprite, -7, ScaleDirection.Uniformly, ScaleAnchor.Middle)
