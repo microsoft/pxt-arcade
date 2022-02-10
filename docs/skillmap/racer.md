@@ -48,8 +48,13 @@
     * map: [Try Space Explorer](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox](/)
 * rewards:
-    * certificate: /static/skillmap/certificates/racer-cert.pdf
-    * completion-badge: /static/badges/badge-racer.png
+    * certificate:
+        * url: /static/skillmap/certificates/racer-cert.pdf
+        * preview: /static/skillmap/certificates/racer-cert.png
+    * completion-badge:
+        * image: /static/badges/badge-racer.png
+        * name: Monster Truck
+
 
 
 

@@ -38,7 +38,7 @@ Open the game window to take a look at the scene you've just set up.
 
 To take a closer look, you can either click on the **preview window** in the lower-right corner of your screen, or click the **game window tab** above.
 
-![Click the Game Window tab to see your scene. ](/static/skillmap/racer/toggle-tab.png "Don't forget to look at your game!")
+![Click the Game Window tab to see your scene. ](/static/skillmap/racer/toggle-tab.gif "Don't forget to look at your game!")
 
 ---
 
