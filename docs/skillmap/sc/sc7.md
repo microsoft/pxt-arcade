@@ -143,7 +143,7 @@ When you're done playing with your project, click **Done** to return to the main
 ```package
 pxt-tilemaps=github:microsoft/pxt-tilemaps/
 arcade-premium-life=github:jwunderl/arcade-premium-life/
-pxt-characterAnimations=github:microsoft/arcade-character-animations/
+arcade-character-animations=github:microsoft/arcade-character-animations/
 ```
 
 
