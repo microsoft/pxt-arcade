@@ -12,9 +12,15 @@ In this tutorial, we'll customize your Monster Racer game to make it even more s
 
 Take a look at the code that's already in your workspace.
 
-You should see the blocks that set up your truck, as well as the blocks that let you jump.
+You should see the blocks that set up your truck and the blocks that make you jump.
 
-There should also be three **overlap** events: one that ends the game when you hit an acid pit, one that ends the game when you hit a spike, and one that ends the game when you reach the other side of the cave.
+There should also be three **overlap** containers:
+- one that ends the game when you hit an acid pit
+- one that ends the game when you hit a spike
+- and one that ends the game when you reach the other side of the cave.
+
+**Is something missing?** <br/>
+Click "Replace my code" below to replace the code in your workspace with recommended code.
 
 
 ## 3. Keep Rollin'
@@ -32,15 +38,12 @@ Let's add a block to animate your truck.
 
 
 ```blocks
-let mySprite: Sprite = null
-let speed = 0
-speed = 100
-scene.setBackgroundColor(9)
-scene.setBackgroundImage(assets.image`background`)
+
 tiles.setTilemap(tilemap`level1`)
-mySprite = sprites.create(assets.image`truck3`, SpriteKind.Player)
-mySprite.ay = 400
-mySprite.vx = speed
+scene.setBackgroundImage(assets.image`background`)
+let mySprite = sprites.create(assets.image`truck1`, SpriteKind.Player)
+mySprite.ay = 500
+mySprite.vx = 100
 scene.cameraFollowSprite(mySprite)
 //@highlight
 animation.runImageAnimation(
@@ -66,15 +69,11 @@ Choose your truck animation.
 - :mouse pointer: Toggle **loop** to `<ON>` to keep the animation playing over and over for the whole game.
 
 ```blocks
-let mySprite: Sprite = null
-let speed = 0
-speed = 100
-scene.setBackgroundColor(9)
-scene.setBackgroundImage(assets.image`background`)
 tiles.setTilemap(tilemap`level1`)
-mySprite = sprites.create(assets.image`truck3`, SpriteKind.Player)
-mySprite.ay = 400
-mySprite.vx = speed
+scene.setBackgroundImage(assets.image`background`)
+let mySprite = sprites.create(assets.image`truck1`, SpriteKind.Player)
+mySprite.ay = 500
+mySprite.vx = 100
 scene.cameraFollowSprite(mySprite)
 //@highlight
 animation.runImageAnimation(
@@ -85,7 +84,14 @@ true
 )
 ```
 
-## 5. Cave Design
+## 5. Play it Again
+
+Remember to play your game again each time you make a change.
+
+Can you see the effects of the code you just wrote?
+
+
+## 6. Cave Design
 
 Finally, you can edit the cave to have your own set of pits and spikes!
 
@@ -99,7 +105,7 @@ The current tilemap will open in the **Tilemap Editor**.
 
 
 
-## 6. Cave Walls
+## 7. Cave Walls
 
 Click the **wall** icon to solidify tiles.
 
@@ -110,7 +116,7 @@ With the wall icon highlighted, you can select the eraser tool to remove walls, 
 
 
 
-## 7. Rearranging
+## 8. Rearranging
 
 Click the **tile** icon to load your pencil tool with the tiles you want to add to the map.
 
@@ -120,6 +126,12 @@ The tiles for this game are listed under **My Tiles**.
 
 ![Change tiles](/static/skillmap/racer/racer-custom.gif "Use the tile gallery to select tiles to add to the map.")
 
+
+## 9. Add More Code
+
+Remember, if you add other tiles to your game, you'll also need to add more <br/>
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` <br/>
+containers to activate them!
 
 
 
@@ -190,7 +202,37 @@ assets.animation`truck2 animated`,
 100,
 true
 )
-
+scene.onHitWall(SpriteKind.Player, function (sprite, location) {
+    let myEnemy: Sprite = null
+    if (mySprite.isHittingTile(CollisionDirection.Left)) {
+        mySprite.x += 0
+    }
+    myEnemy.follow(mySprite)
+    mySprite.setFlag(SpriteFlag.AutoDestroy, false)
+    info.setScore(0)
+    info.changeScoreBy(1)
+    info.startCountdown(10)
+})
+info.onCountdownEnd(function () {
+    info.stopCountdown()
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+})
+info.onLifeZero(function () {
+    info.setLife(3)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`transparency16`, function (sprite, location) {
+    scene.cameraShake(4, 500)
+    effects.confetti.startScreenEffect()
+    effects.confetti.endScreenEffect()
+    tiles.placeOnRandomTile(mySprite, assets.tile`transparency16`)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
+})
+game.onUpdateInterval(500, function () {
+    game.splash("")
+    music.baDing.play()
+})
 ```
 
 ```customts

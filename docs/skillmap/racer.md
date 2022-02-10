@@ -18,7 +18,7 @@
 ### racer1
 * name: Ready, Set, Go!
 * type: tutorial
-* description: Get your monster truck moving and try to make it to the end of your tilemap.
+* description: Get your monster truck moving and try to make it to the end of your cave.
 * url: /skillmap/racer/racer1
 * tags: easy, sprites, design
 * imageUrl: /static/skillmap/racer/racer1.gif
@@ -48,8 +48,13 @@
     * map: [Try Space Explorer](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox](/)
 * rewards:
-    * certificate: /static/skillmap/certificates/racer-cert.pdf
-    * completion-badge: /static/badges/badge-racer.png
+    * certificate:
+        * url: /static/skillmap/certificates/racer-cert.pdf
+        * preview: /static/skillmap/certificates/racer-cert.png
+    * completion-badge:
+        * image: /static/badges/badge-racer.png
+        * name: Monster Truck
+
 
 
 
