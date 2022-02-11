@@ -59,7 +59,7 @@ When you're done editing here, click **Done** to return to the main page and cho
 ```package
 pxt-tilemaps=github:microsoft/pxt-tilemaps/
 arcade-premium-life=github:jwunderl/arcade-premium-life/
-pxt-characterAnimations=github:microsoft/arcade-character-animations/
+arcade-character-animations=github:microsoft/arcade-character-animations/
 ```
 
 
