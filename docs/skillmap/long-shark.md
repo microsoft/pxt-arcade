@@ -115,5 +115,15 @@
 ### shark-finish
 * kind: completion
 * type: certificate
-* url: /static/skillmap/certificates/collector-game.pdf
+* url: /static/skillmap/certificates/shark-cert.pdf
+* imageUrl: /static/skillmap/certificates/shark-cert.png
 * position: 4 0
+* rewards:
+    * certificate:
+        * url: /static/skillmap/certificates/shark-cert.pdf
+        * preview: /static/skillmap/certificates/shark-cert.png
+    * completion-badge:
+        * image: /static/badges/badge-shark.png
+        * name: Shark Splash
+
+

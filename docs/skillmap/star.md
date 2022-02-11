@@ -74,8 +74,12 @@
     * map: [Try Space Explorer](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox](/)
 * rewards:
-    * certificate: /static/skillmap/certificates/star-cert.pdf
-    * completion-badge: /static/badges/badge-star.png
+    * certificate:
+        * url: /static/skillmap/certificates/star-cert.pdf
+        * preview: /static/skillmap/certificates/star-cert.png
+    * completion-badge:
+        * image: /static/badges/badge-star.png
+        * name: Star of the Stage
 * position: 3 1
 
 
