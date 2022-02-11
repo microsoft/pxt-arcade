@@ -176,7 +176,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Arrow, function (sprite, otherSp
 
 ```ghost
 let player_sprite: Sprite = null
-let valentine: Sprite = null
+
 valentine.set_win_lose_size(120, 6)
 player_sprite.setImage(assets.image`mySpriteHeart`)
 
