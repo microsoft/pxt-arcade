@@ -150,7 +150,7 @@ Don't forget to click **Done** to share your game and remix it using any of the 
 
 
 ```package
-valentine-special = github:kiki-lee/valentine-special#v0.0.5
+valentine-special=github:kiki-lee/valentine-special#v0.0.5
 ```
 
 ```template
