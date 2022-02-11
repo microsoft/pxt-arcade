@@ -15,8 +15,8 @@ Here are some cool activities to get you started with your @boardname@!
 * name: Create a game for Valentine's Day
 * buttonLabel: Play Now
 * imageUrl: /static/hero-gallery/valentine.png
-* url: https://arcade.makecode.com/beta#tutorial:/tutorials/valentine
-* cardType: link
+* url: /tutorials/valentine
+* cardType: tutorial
 ---
 * name: How-to code a video game
 * imageUrl: /static/hero-gallery/how-to-code.png
