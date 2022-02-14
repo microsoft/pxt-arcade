@@ -9,14 +9,14 @@ You've created a greeting, now let's send it over the top!
 
 ## {Step 2}
 
-The code for a simple greeting card is already in the workspace.  
-**Build a new card by editing the images**  
+The code for a simple greeting card is already in the workspace.<br/>
+**Build a new card by editing the images**<br/>
 ⭐⭐⭐
 
 ---
 
-- :paint brush:  Choose a new background from the gallery by clicking on the grey box in  
-``||scene:set background image to [ ]||``  
+- :paint brush:  Choose a new background from the gallery by clicking on the grey box in<br/>
+``||scene:set background image to [ ]||``<br/>
 and toggling to the **"Gallery"** tab at
 the top of the window.  
 
@@ -161,7 +161,7 @@ music.playMelody("G B A G C5 B A B", 120)
 
 ## {Step 3}
  
-**Cue the music**  
+**Cue the music**<br/>
 🎹🎹🎹
 
 ---
@@ -316,12 +316,12 @@ cycles through when the **Ⓐ** button is pressed.
 
 ---
 
-- :game:  From the ``||controller: Controller||`` category, drag an  
-``||controller:on [A] button [pressed]||``  
+- :game:  From the ``||controller: Controller||`` category, drag an<br/>
+``||controller:on [A] button [pressed]||``<br/>
 container into the workspace.
 
-- :circle:  From the ``||game:Game||`` category, grab the  
-``||game: show long text [" "] [bottom]||``  
+- :circle:  From the ``||game:Game||`` category, grab the<br/>
+``||game: show long text [" "] [bottom]||``<br/>
 block and snap it into the empty **on A button pressed** container.
 
 - :mouse pointer:  Add a personal message into the new **show long text** block.
@@ -351,15 +351,15 @@ Add a second message below the first to really show you care.
 
 ---
 
-- :mouse pointer:  Right click  
-``||game: show long text [" "] [bottom]||``  
+- :mouse pointer:  Right click<br/>
+``||game: show long text [" "] [bottom]||``<br/>
 and choose **Duplicate**.
 
-- :mouse pointer:  Grab the copied block and snap it into the bottom of the  
-``||on [A] button [pressed]||``  
+- :mouse pointer:  Grab the copied block and snap it into the bottom of the<br/>
+``||on [A] button [pressed]||``<br/>
 container.
 
-- :mouse pointer:  Add another personal message into the new  
+- :mouse pointer:  Add another personal message into the new<br/>
 ``||game: show long text [" "] [bottom]||``  
 block.
 
@@ -375,20 +375,20 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## {Step 7}
 
-**🎨 Make it POP 🎨**  
+**🎨 Make it POP 🎨**<br/>
 Customize the dialog to bring it all together.
 
 ---
 
-- :mouse pointer:  From ``||game:Game||``, grab a  
-``||game:set dialog frame to [ ]||``  
+- :mouse pointer:  From ``||game:Game||``, grab a<br/>
+``||game:set dialog frame to [ ]||``<br/>
 block and
-snap it into **the top** of the  
-``||on [A] button [pressed]||``  
+snap it into **the top** of the<br/>
+``||on [A] button [pressed]||``<br/>
 container in your workspace.
 
-- :mouse pointer:  Choose a dialog design by clicking on the grey box in the  
-``||game:set dialog frame to [ ]||``  
+- :mouse pointer:  Choose a dialog design by clicking on the grey box in the<br/>
+``||game:set dialog frame to [ ]||``<br/>
 box and toggling to the **Gallery**.
 
 
@@ -453,11 +453,11 @@ Change the color of your text so it works with your new background.
 
 ---
 
-- :circle:  From ``||game:Game||``, grab a  
-``||game:set dialog text color to [ ]||``  
+- :circle:  From ``||game:Game||``, grab a<br/>
+``||game:set dialog text color to [ ]||``<br/>
 block and
-snap it into the top of the  
-``||on [A] button [pressed]||``  
+snap it into the top of the<br/>
+``||on [A] button [pressed]||``<br/>
 block in your workspace.
 
 - :mouse pointer:  Click the grey box and choose a color for your message that looks good and is

@@ -11,14 +11,14 @@ First, we'll plop a shark into the vast ocean, then we'll make it move!
 
 ## 2. Background
 
-**See the sea**  
+**See the sea**<br/>
 🌊🌊🌊
 
 ---
 
-- :tree:  From the   
-``||scene:Scene||`` category, drag  
-``||scene:set background color to [ ]||`` into the ``||loops:on start||``   
+- :tree:  From the<br/>
+``||scene:Scene||`` category, drag<br/>
+``||scene:set background color to [ ]||`` into the ``||loops:on start||``<br/>
 container already in the workspace.  
 
 _💡  Having trouble finding the block you need? Look to the left of the instructions for the icon of the toolbox category where your block lives!_
@@ -34,14 +34,14 @@ scene.setBackgroundColor(8)
 
 ## 3. Add a Sprite
 
-**Watch for sharks**  
+**Watch for sharks**<br/>
 🦈 🦈 🦈 
 
 ---
 
-- :paper plane:  Drag  
-``||variables:set mySprite to sprite [ ] of kind [Player]||``  
-into **the bottom** of the  
+- :paper plane:  Drag<br/>
+``||variables:set mySprite to sprite [ ] of kind [Player]||``<br/>
+into **the bottom** of the<br/>
 ``||loops:on start|`` container.  
 
 _💡  Remember, the icon to the left of the instructions shows the same icon as the toolbox category for the block you need._
@@ -57,7 +57,7 @@ let mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
 
 ## 4. Take a Look!
 
-**Click the Game Window Tab (Above)**
+**Click the Game Window Tab (Above)**<br/>
 ![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
@@ -70,9 +70,9 @@ When you're ready to continue, click into the instructions tab again!
 ## 5. Make it Move
 
 
-- :game:  Drag ``||controller:move [mySprite] with buttons||``  
-to **the bottom** of the  
-``||loops:on start|`` container.  
+- :game:  Drag ``||controller:move [mySprite] with buttons||``<br/>
+to **the bottom** of the<br/>
+``||loops:on start|`` container.<br/>
 This will allow you to move your sprite around the screen.
 
 
@@ -100,9 +100,9 @@ When things get crazy, your shark can dash off-screen. Let's change that.
 
 ---
 
-- :paper plane:  Drag  
-``||sprites:set [mySprite] stay in screen <ON>||``  
-into **the bottom** of the  
+- :paper plane:  Drag<br/>
+``||sprites:set [mySprite] stay in screen <ON>||``<br/>
+into **the bottom** of the<br/>
 ``||loops:on start||`` container.
 
 
@@ -121,7 +121,7 @@ mySprite.setStayInScreen(true)
 
 ---
 
-Take a look at your game window and move your shark around.  
+Take a look at your game window and move your shark around.<br/>
 It should always stay in sight.
 
 

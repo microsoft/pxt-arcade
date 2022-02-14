@@ -3,7 +3,7 @@
 
 ## Welcome @showdialog
 
-**Right now, the game never ends.**
+**Right now, the game never ends.**<br/>
 We need a way to trigger a win!
 
 ![Anigif showing the turkey winning](/static/skillmap/turkey/turkey3.gif "Win or Lose!")
@@ -12,7 +12,7 @@ We need a way to trigger a win!
 
 ## 2. Try It!
 
-**First, play the game in the game window.**
+**First, play the game in the game window.**<br/>
 🕹️ 🕹️ 🕹️
 
 ---
@@ -27,15 +27,15 @@ You should be able to move your player left and right with the arrows, and jump 
 
 ---
 
-- :tree: Drag a new
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``
+- :tree: Drag a new<br/>
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``<br/>
 container into the workspace.
 
 - :paint brush: This time, change the checkerboard to the solid purple tile.
 
-- :circle: Snap a
-``||game:game over <LOSE>||``
-block into the new container and toggle
+- :circle: Snap a<br/>
+``||game:game over <LOSE>||``<br/>
+block into the new container and toggle<br/>
 the **`<LOSE>`** switch to **`<WIN>`**!
 
 
@@ -60,8 +60,8 @@ You should win the game as soon as your turkey makes it to the purple tiles.
 ---
 
 
-- :id card: To set a countdown timer, drag
-``||info: start countdown [10] (s)||``
+- :id card: To set a countdown timer, drag<br/>
+``||info: start countdown [10] (s)||``<br/>
 into **the end** of the ``||loops: on start||`` container.
 
 - :mouse pointer: Change **10** to **120** so that you have about 2 minutes to escape.
@@ -90,13 +90,13 @@ info.startCountdown(120)
 ---
 
 
-- :id card: Drag a
-``||info: on countdown end||``
+- :id card: Drag a<br/>
+``||info: on countdown end||``<br/>
 contaner into an empty area of the workspace.
 
 
-- :circle: Snap a
-``||game:game over <LOSE>||``
+- :circle: Snap a<br/>
+``||game:game over <LOSE>||``<br/>
 block into the new container.
 
 

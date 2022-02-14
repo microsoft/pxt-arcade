@@ -525,8 +525,8 @@ Example 3: An alien in the grocery store
 - :mouse pointer:  Click on the image box in the ``||scene:set background image to []||``
 block and draw your scene.
 
-- :mouse pointer:  Click on the image box in the
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
+- :mouse pointer:  Click on the image box in the<br/>
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``<br/>
 block and design your main character.
 
 ```block

@@ -14,7 +14,7 @@ This activity will help you edit your sprites and backgrounds to create a brand 
 
 ## Step 2 - Main Sprite
 
-**Let's start with the main character!**
+**Let's start with the main character!**<br/>
 Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine snatching clouds? It's up to you!
 
 ---
@@ -91,7 +91,7 @@ Who do you want in your new game?  Will it be a bird grabbing worms? A sunshine 
 
 ## Finale
 
-**Fantastic!**
+**Fantastic!**<br/>
 You've created a game of your very own!
 
 ---

@@ -11,7 +11,7 @@ Bring your game to life with custom animations for your characters.
 
 ## Step 2 - Main Sprite
 
-**Let's start with the main character!**
+**Let's start with the main character!**<br/>
 There are lots of ways to animate your shark, starting with the forward swim.
 
 ---
@@ -113,7 +113,7 @@ Your shark should keep swimming as you play!
 
 ## Step 5 - About Face
 
-**👈 Sharks can't swim backwards! 👈**
+**👈 Sharks can't swim backwards! 👈**<br/>
 If the shark needs to swim to the left, we should turn it around.
 
 ---
@@ -164,7 +164,7 @@ Now your shark turns around when you press the left button, but it never flips b
 
 ## Step 8 - To the Right
 
-**👉 Flip it! 👉**
+**👉 Flip it! 👉**<br/>
 When the shark is done swimming left, it should automatically face back to the right.
 
 ---
@@ -209,7 +209,7 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
 
 ## Step 10 - Spit It Out
 
-**💥 Spitting Lasers 💥**
+**💥 Spitting Lasers 💥**<br/>
 The shark always spits lasers toward the right edge, so let's give it an appropriate animation!
 
 ---
@@ -270,7 +270,7 @@ game.onUpdateInterval(2100, function () {
 
 ## Finale
 
-**WOW!**
+**WOW!**<br/>
 Look at the game you've created!  Make sure to give it a try in the game window before moving on.
 
 ---

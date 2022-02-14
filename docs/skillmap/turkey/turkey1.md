@@ -40,8 +40,8 @@ Let's create a main turkey sprite and get it moving before we do anything else.
 ---
 
 - :paper plane: From the ``||sprites:Sprites||`` category, 
-drag   
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  
+drag<br/>
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``<br/>
 to **the end** of the ``||loops:on start||`` container.
 
 _💡  Having trouble finding the block you need? 
@@ -68,16 +68,16 @@ let mySprite = sprites.create(assets.image`player`, SpriteKind.Player)
 
 ---
 
-- :game: Drag    
-``||controller:move [mySprite] with buttons ⊕||``  
+- :game: Drag<br/>
+``||controller:move [mySprite] with buttons ⊕||``<br/>
 to **the end** of the ``||loops:on start||`` container.
 
 _💡  Remember, the icon to the left of the instructions shows the same icon as 
 the toolbox category for the block you need._
 
 - :mouse pointer: Press the ⊕ button to the right of the block and change 
-the   
-[__*vy*__](#whatVY "vertical velocity") (up/down speed)  
+the<br/>
+[__*vy*__](#whatVY "vertical velocity") (up/down speed)<br/>
 argument to **0** so that the player won't hover up or down when you use the joypad.
 
 
@@ -92,7 +92,7 @@ controller.moveSprite(mySprite, 100, 0)
 
 ## 5. Try It
 
-**Click the Game Window Tab (Above)**  
+**Click the Game Window Tab (Above)**<br/>
 
 ![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
@@ -110,9 +110,9 @@ to "pull down" on the sprite.
 
 ---
 
-- :paper plane:  Drag  
-``||sprites:set [mySprite] [x] to [0]||``  
-to **the end** of the  
+- :paper plane:  Drag<br/>
+``||sprites:set [mySprite] [x] to [0]||``<br/>
+to **the end** of the<br/>
 ``||loops:on start||`` container.
 
 - :mouse pointer: Click the dropdown to change **x** to **ay (acceleration y)**.
@@ -135,9 +135,9 @@ mySprite.ay = 500
 
 ---
 
-- :tree:  To keep the turkey in sight, drag  
-``||scene:camera follow sprite [mySprite]||``  
-to **the end** of the  
+- :tree:  To keep the turkey in sight, drag<br/>
+``||scene:camera follow sprite [mySprite]||``<br/>
+to **the end** of the<br/>
 ``||loops:on start||`` container.
 
 ```blocks
@@ -154,7 +154,7 @@ scene.cameraFollowSprite(mySprite)
 
 ## 8. Look Again
 
-🕹️ 🕹️ 🕹️  
+🕹️ 🕹️ 🕹️<br/>
 **Look at the game window to make sure you can see the turkey land on a platform.**
 
 
@@ -166,9 +166,9 @@ Let's start it on a special tile on the ground.
 
 ---
 
-- :tree: Drag the  
-``||scene:place [mySprite] on top of random [ ]||``  
-block into **the end** of the  
+- :tree: Drag the<br/>
+``||scene:place [mySprite] on top of random [ ]||``<br/>
+block into **the end** of the<br/>
 ``||loops:on start||`` container.
 
 - :mouse pointer: Click the checkered square and select the **start** tile, 
@@ -194,13 +194,13 @@ we need to make it jump using the **A** button!
 
 ---
 
-- :game: Drag the  
-``||controller:on [A] button [pressed]||``  
+- :game: Drag the<br/>
+``||controller:on [A] button [pressed]||``<br/>
 container into an empty area of the workspace.
 
-- :paper plane: Inside of the  
-``||controller:on [A] button [pressed]||``  
-container, add  
+- :paper plane: Inside of the<br/>
+``||controller:on [A] button [pressed]||``<br/>
+container, add<br/>
 ``||sprites:set [mySprite] [x] to [0]||``.
 
 - :mouse pointer: Change ``||sprites:[x]||`` to ``||sprites:[vy (velocity y)]||`` 
@@ -218,7 +218,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Finale
 
-🔥 **That's it! Now give your game a try!** 🔥  
+🔥 **That's it! Now give your game a try!** 🔥<br/>
 Can you make it to the top?
 
 ---

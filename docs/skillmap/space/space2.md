@@ -27,14 +27,14 @@ Let's launch projectiles when the **Ⓐ** button is pressed!
 
 ---
 
-- :game: Drag an  
-``||controller:on [A] button pressed ||``  
+- :game: Drag an<br/>
+``||controller:on [A] button pressed ||``<br/>
 container into the workspace.
 
-- :paper plane: Snap  
-``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``   
-inside the new  
-``||controller:on [A] button pressed ||``  
+- :paper plane: Snap<br/>
+``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``<br/>
+inside the new<br/>
+``||controller:on [A] button pressed ||``<br/>
 container.
 
 - :paint brush: Click the grey box inside of the new projectile block and toggle to **My Assets** to choose one of the **Dart** sprites.
@@ -88,15 +88,15 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## 7. Custom Effects
 
-**Now for some special effects**  
+**Now for some special effects**<br/>
 💥 💥 💥 
 
 ---
 
-- :paper plane: Find  
-``||sprites:[mySprite] start [spray] effect ➕||``   
-and snap it in at **the end** of the  
-``||controller:on [A] button pressed ||``  
+- :paper plane: Find<br/>
+``||sprites:[mySprite] start [spray] effect ➕||``<br/>
+and snap it in at **the end** of the<br/>
+``||controller:on [A] button pressed ||``<br/>
 container.
 
 - :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:projectile||`` if you want the effects on your projectiles instead of on your ship.

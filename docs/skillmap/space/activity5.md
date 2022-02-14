@@ -160,6 +160,7 @@ game.onUpdateInterval(2000, function () {
 ```
 
 ## Set planet position
+
 Place a ``||sprites:set position to||`` block right below the
 ``||variables:set projectile to||`` ``||sprites:projectile||`` block. Change
 the variable to ``||variables:projectile||`` in the dropdown list. You should
@@ -172,6 +173,7 @@ game.onUpdateInterval(2000, function () {
     projectile.x = 0
 })
 ```
+
 ## Add randomness
 
 Let's make things a little more exciting!
@@ -191,7 +193,7 @@ game.onUpdateInterval(2000, function () {
 })
 ```
 
-#Finale
+## Finale
 
 That's it! Now you're ready to click **Done** to return to the main page where you can add this game to your gallery and share
 with family and friends!
