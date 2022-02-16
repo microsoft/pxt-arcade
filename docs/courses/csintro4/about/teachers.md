@@ -1,8 +1,3 @@
-# Teachers -- COMING SOON
+# Teacher Resources
 
-The material for teachers is currently in production through Microsoft Imagine Academy (MSIA).
-This will include:
-
-* Microsoft OneNote notebooks for students and teachers
-* Sample solutions to all student activity
-* Teaching Guide (including videos)
+For any questions please check out the [Educator's Lounge](https://forum.makecode.com/c/educators-lounge/24) on our forum.
