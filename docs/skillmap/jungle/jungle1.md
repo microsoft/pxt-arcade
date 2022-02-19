@@ -184,6 +184,7 @@ Take a spin through the level, then click **Done** to return to the main skillma
 
 
 ```package
+arcade-background-scroll=github:microsoft/arcade-background-scroll/
 pxt-tilemaps=github:microsoft/pxt-tilemaps/
 ```
 

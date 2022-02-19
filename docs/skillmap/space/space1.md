@@ -10,15 +10,15 @@ In this tutorial, you'll prepare your ship for a journey into space!
 ![Flying through space](/static/skillmap/space/spacet1.gif "Blasting through space")
 
 ## 2. Set the scene
-**🔭 Time to give 'em a view** 
+**🔭 Time to give 'em a view**
 
 ---
 
-- :tree: From the  ``||scene:Scene||`` category, drag  
-``||scene:set background image to [ ]||``  
-into the  
-``||loops:on start||``  
-container already in the workspace. 
+- :tree: From the  ``||scene:Scene||`` category, drag
+``||scene:set background image to [ ]||``
+into the
+``||loops:on start||``
+container already in the workspace.
 
 _💡  Having trouble finding the block you need? Look to the left of the instructions for the icon of the toolbox category where your block lives!_
 
@@ -43,9 +43,9 @@ scene.setBackgroundImage(assets.image`Galaxy`)
 
 ---
 
-- :arrows alternate:  Grab  
-``||scroller:scroll background with vx [-50] vy [-50]||``  
-and drop it in to **the end** of the  
+- :arrows alternate:  Grab
+``||scroller:scroll background with vx [-50] vy [-50]||``
+and drop it in to **the end** of the
 ``||loops:on start||`` container.
 
 _💡  Remember, the icon to the left of the instructions shows the same icon as the toolbox category for the block you need._
@@ -66,13 +66,13 @@ scroller.scrollBackgroundWithSpeed(0, 10)
 
 ---
 
-- :paper plane: Drag  
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``   
-to **the end** of the  
+- :paper plane: Drag
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
+to **the end** of the
 ``||loops:on start||`` container.
 
-- :paint brush: Click on the grey box in the middle of  
- ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``,   
+- :paint brush: Click on the grey box in the middle of
+ ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``,
  then toggle to **My Assets** and choose the **Rocket**.
 
 
@@ -91,9 +91,9 @@ let mySprite = sprites.create(assets.image`Rocket`, SpriteKind.Player)
 
 ---
 
-- :game: Find the  
-``||controller:move [mySprite] with buttons ⊕||``  
-block and drag it into the bottom of the  
+- :game: Find the
+``||controller:move [mySprite] with buttons ⊕||``
+block and drag it into the bottom of the
 ``||loops:on start||`` container.
 
 
@@ -110,7 +110,7 @@ controller.moveSprite(mySprite)
 
 ## 6. Try It
 
-**Click the Game Window Tab (Above)**  
+**Click the Game Window Tab (Above)**
 ![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
@@ -128,8 +128,8 @@ What happens when you hold one arrow down for a long time?
 ---
 
 - :paper plane: To keep your ship from exploring beyond the edges, find
- the  
- ``||sprites:set [mySprite] stay in screen <on>||``  
+ the
+ ``||sprites:set [mySprite] stay in screen <on>||``
  block and snap it in at the end of the program.
 
 
@@ -171,6 +171,7 @@ Click **Done** to return to the main skillmap where you can move on to discover 
 
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll#926e12eefffd09d453c7cde73f8d6ebd0e666d9d/
+pxt-status-bar=github:jwunderl/pxt-status-bar
 ```
 
 
