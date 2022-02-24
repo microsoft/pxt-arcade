@@ -74,14 +74,14 @@
 * name: Congrats!
 * kind: completion
 * type: certificate
-* url: /static/skillmap/certificates/writing-stories.pdf
-* imageUrl: /static/skillmap/certificates/story-cert.png
+* url: /static/skillmap/certificates/beginner-cert-01.pdf
+* imageUrl: /static/skillmap/certificates/beginner-cert-01.png
 * position: 3 1
 
 * rewards:
     * certificate:
-        * url: /static/skillmap/certificates/writing-stories.pdf
-        * preview: /static/skillmap/certificates/story-cert.png
+        * url: /static/skillmap/certificates/beginner-cert-01.pdf
+        * preview: /static/skillmap/certificates/beginner-cert-01.png
     * completion-badge:
         * image: /static/badges/badge-story.png
         * name: Greetings
@@ -133,15 +133,15 @@
 * name: Congrats!
 * kind: completion
 * type: certificate
-* url: /static/skillmap/certificates/clicker-game.pdf
-* imageUrl: /static/skillmap/certificates/clicker-cert.png
+* url: /static/skillmap/certificates/beginner-cert-02.pdf
+* imageUrl: /static/skillmap/certificates/beginner-cert-02.png
 
 * position: 3 1
 
 * rewards:
     * certificate:
-        * url: /static/skillmap/certificates/clicker-game.pdf
-        * preview: /static/skillmap/certificates/clicker-cert.png
+        * url: /static/skillmap/certificates/beginner-cert-02.pdf
+        * preview: /static/skillmap/certificates/beginner-cert-02.png
     * completion-badge:
         * image: /static/badges/badge-clicker.png
         * name: Clicker
@@ -210,14 +210,14 @@
 * name: Congrats!
 * kind: completion
 * type: certificate
-* url: /static/skillmap/certificates/collector-game.pdf
-* imageUrl: /static/skillmap/certificates/collector-cert.png
+* url: /static/skillmap/certificates/beginner-cert-03.pdf
+* imageUrl: /static/skillmap/certificates/beginner-cert-03.png
 * position: 4 1
 
 * rewards:
     * certificate:
-        * url: /static/skillmap/certificates/collector-game.pdf
-        * preview: /static/skillmap/certificates/collector-cert.png
+        * url: /static/skillmap/certificates/beginner-cert-03.pdf
+        * preview: /static/skillmap/certificates/beginner-cert-03.png
     * completion-badge:
         * image: /static/badges/badge-dino.png
         * name: Baby Dino

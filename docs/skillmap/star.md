@@ -70,6 +70,7 @@
 * type: certificate
 * url: /static/skillmap/certificates/star-cert.pdf
 * imageUrl: /static/skillmap/certificates/star-cert.png
+* position: 3 1
 * actions:
     * map: [Try Space Explorer](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox](/)
@@ -80,6 +81,6 @@
     * completion-badge:
         * image: /static/badges/badge-star.png
         * name: Star of the Stage
-* position: 3 1
+
 
 
