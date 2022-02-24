@@ -566,7 +566,7 @@
         },
         "simAnimationEnter": "fly right in",
         "simAnimationExit": "fly right out",
-        "crowdinProject": "kindscript",
+        "crowdinProject": "makecode",
         "monacoColors": {
             "editor.background": "#FEF3E0"
         },
