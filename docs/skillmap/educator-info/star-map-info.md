@@ -1,12 +1,12 @@
-# About the Sing 2 Map
+# About the Talent Show Map
 
 **A page for Educators & Parents**
 
-The **Sing 2** introduces simple game design and computer science concepts.
+The **Talent Show** introduces simple game design and computer science concepts.
 
 In this set of activities, students will create a simple clicker with MakeCode Arcade.  This map is intended for students who are new to MakeCode with little or no previous coding experience.
 
-Designed for students between the ages of 10 & 12, this experience contains a total of 4 tutorials (approximating 50 minutes of instruction).  At the end the learning path, students receive a certificate of completion and a badge.
+Designed for students between the ages of 9 & 12, this experience contains a total of 4 tutorials (approximating 50 minutes of instruction).  At the end the learning path, students receive a certificate of completion and a badge.
 
 |                 | Minutes* |  Key Concepts |
 | --------------- | -------- |  ------------ |
@@ -20,7 +20,7 @@ Designed for students between the ages of 10 & 12, this experience contains a to
 
 ### Objectives
 
-After completing Sing 2, students will have gained exposure to all the elements they need to successfully create their own clicker game using MakeCode Arcade.
+After completing Talent Show, students will have gained exposure to all the elements they need to successfully create their own clicker game using MakeCode Arcade.
 
 Specifically, they will experience the following topics:
 
@@ -47,7 +47,7 @@ Specifically, they will experience the following topics:
 
 | Activity | Welcome to the Show (15 min) |
 |---|---|
-| ![Welcome to the Show thumbnail](/static/skillmap/star/star1.gif) | Create a game using characters from Sing 2 and add points for each click. |
+| ![Welcome to the Show thumbnail](/static/skillmap/star/star1.gif) | Create a game using talented animals and add points for each click. |
 | Blocks used | ``[info.startCountdown(10)]``<br/>``[info.changeScoreBy(1)]``<br/>``[info.onCountdownEnd(function () {})]``<br/>``[game.over(true)]``|
 | Solution option | [Welcome to the Show Project](https://makecode.com/_d6TdD8VYPX1U) |
 
@@ -72,23 +72,23 @@ Specifically, they will experience the following topics:
 
 | Activity | Coming Up Roses (15 min) |
 |---|---|
-| ![Coming Up Roses thumbnail](/static/skillmap/star/star4.gif) | Building off the previous project, this level shows students how to add items to an array, so the performer is showered with both stars and roses. |
+| ![Coming Up Roses thumbnail](/static/skillmap/star/star4.gif) | Building off the previous project, this level utilizes an undercover array to shower the performer with both stars and roses. |
 | Blocks used | ``[let projectile = sprites.createProjectileFromSprite([img`.`, img`.`]._pickRandom(), clapping, randint(-100, 100), randint(-50, -100))]`` |
 | Solution option | [Coming Up Roses Project](https://makecode.com/_aK1XDbamoH20) |
 
 
 ##### Game Mod Ideas
 
-After students complete Sing 2 they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try:
+After students complete Talent Show they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try:
 
 - Change the animals in the audience to a row of clapping hands
 - Add a new sprite to the stage. Who would your performer be?
-- Add more things for the audience to throw, like confetti pieces or hearts
+- Add more things for the audience to throw, like confetti or hearts
 
 
 ### What's Next?
 
-After completing Sing 2, students can move on to the following activities:
+After completing Talent Show, students can move on to the following activities:
 
 * [Build a Space Explorer](https://arcade.makecode.com/--skillmap#docs:/skillmap/space)
 * [Jungle Monkey Jump](https://arcade.makecode.com/--skillmap#docs:/skillmap/jungle)
