@@ -12,11 +12,11 @@ Here are some cool activities to get you started with your @boardname@!
 * url: https://arcade.makecode.com/--skillmap#docs:/skillmap/racer
 * cardType: link
 ---
-* name: Create a game for Valentine's Day
+* name: Try out for the Talent Show!
 * buttonLabel: Play Now
-* imageUrl: /static/hero-gallery/valentine.png
-* url: /tutorials/valentine
-* cardType: tutorial
+* imageUrl: /static/hero-gallery/star.png
+* url: https://arcade.makecode.com/--skillmap#docs:/skillmap/star
+* cardType: link
 ---
 * name: How-to code a video game
 * imageUrl: /static/hero-gallery/how-to-code.png
