@@ -23,7 +23,7 @@ How do you feel about the main character? The background?
 
 ## 3. A New Location
 
-**Let's change the scene**
+**Let's change the scene** <br/>
 🖼️ 🖼️ 🖼️
 
 

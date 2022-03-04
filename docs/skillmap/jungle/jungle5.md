@@ -22,7 +22,7 @@ Can you connect each chunk of code to the actions it creates?
 
 ## 3. Fried Monkey?
 
-**💥 STAND BACK 💥**
+**💥 STAND BACK 💥** <br/>
 Make sure to get the monkey out of the way before the big bang!
 
 ---
@@ -102,7 +102,7 @@ You should be able to jump with the up arrow, place tiles with the (A) button, a
 
 ## 7. Remove More Tiles
 
-**💥 Kablow 💥**
+**💥 Kablow 💥** <br/>
 This game could have even more options if we remove **bounce** crates and **poison pit** tiles with explosives, too.
 
 ---

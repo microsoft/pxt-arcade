@@ -22,7 +22,7 @@ Can you find the bauble that's blocked-in?
 
 ## 3. When B Pressed
 
-**Nothing a little dynamite can't fix**
+**Nothing a little dynamite can't fix** <br/>
 💥💥💥
 We need to remove some walls and tiles! Let's clear the way when the (B) button is pressed.
 
@@ -52,7 +52,7 @@ We're going to use a **Projectile** block here, even though our dynamite stays i
 - :paper plane: Drag <br/>
 ``||variables:set [projectile] to projectile from [mySprite] with vx [50] vy [50]||`` <br/>
 into the empty <br/>
-``||controller:on [B] button [pressed]||``
+``||controller:on [B] button [pressed]||`` <br/>
 container.
 
 - :mouse pointer: Change both **vx** (horizontal speed) and **vy** (vertical speed) to **0** so the explosive stays where you drop it.
@@ -168,7 +168,7 @@ You should be able to jump with the up arrow, place tiles with the (A) button, a
 
 ## 9. Removing Block Tiles
 
-**💥 Kaboom 💥**
+**💥 Kaboom 💥** <br/>
 When your **splode** animation overlaps a platform tile, we need to remove both the wall and the tile.
 
 ---

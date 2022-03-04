@@ -22,7 +22,7 @@ Can you remember which piece of code controls each action?
 
 ## 3. Adding Block Walls
 
-**You know what would help us get over those pits?**
+**You know what would help us get over those pits?** <br/>
 We need some well-placed platforms! Let's add a crate beneath the player when the (A) button is pressed.
 
 ---
@@ -83,7 +83,7 @@ Try jumping while you press the (A) button. Your monkey should continue to hover
 
 ## 6. Adding Block Tiles
 
-**Where did my brick go??**
+**Where did my brick go??** <br/>
 The walls are great, but it's hard to remember where they are. Let's add special tiles over them so we can find them again later.
 
 ---
@@ -91,7 +91,7 @@ The walls are great, but it's hard to remember where they are. Let's add special
 - :tree: Set a tile by dragging <br/>
 ``||scene:set [ ] at tilemap col [0] row [0]||`` <br/>
 into **the bottom** of the <br/>
-``||controller:on [A] button [pressed]||``
+``||controller:on [A] button [pressed]||`` <br/>
 container.
 
 - :paint brush: Click the empty square and choose the crate called **bounce**.

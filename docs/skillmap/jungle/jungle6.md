@@ -22,7 +22,7 @@ Can you connect each chunk of code to the actions it creates?
 
 ## 3. Step to the Right
 
-**➡️ Walking to the Right**
+**➡️ Walking to the Right** <br/>
 Let's make our character walk to the right when the right arrow is pressed.
 
 ---

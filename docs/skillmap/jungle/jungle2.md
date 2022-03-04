@@ -21,7 +21,7 @@ Keep in mind which piece of code controls each action!
 
 ## 3. Game Over
 
-**Time for danger**
+**Time for danger** <br/>
 💀💀💀
 
 When the player overlaps a _poison pit_ tile, let's trigger a "GAME OVER" message.

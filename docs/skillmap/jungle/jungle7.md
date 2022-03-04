@@ -40,7 +40,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`chest2`, function (sprite, lo
 
 ## 4. A New Level
 
-**🙌 Add a New Level 🙌**
+**🙌 Add a New Level 🙌** <br/>
 When we get to the first chest, we want to take the player to a new level.
 
 ---
@@ -140,7 +140,7 @@ Make your way to the treasure chest. You should be transported to a new level!
 
 ## Finished
 
-**🥳 Congratulations 🥳**
+**🥳 Congratulations 🥳** <br/>s
 You did it!!  Can you play your game all the way to the end?
 
 ---
