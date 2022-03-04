@@ -22,13 +22,13 @@ Can you connect each chunk of code to the actions it creates?
 
 ## 3. Step to the Right
 
-**➡️ Walking to the Right**  
+**➡️ Walking to the Right**
 Let's make our character walk to the right when the right arrow is pressed.
 
 ---
 
-- :game: To add code that runs when the player moves to the right, drag  
-``||controller:on [A] button [pressed]||``  
+- :game: To add code that runs when the player moves to the right, drag
+``||controller:on [A] button [pressed]||``
 into an empty area of the workspace.
 
 - :mouse pointer: Click ``||controller:A||`` and choose ``||controller:right||`` from the dropdown.
@@ -44,10 +44,10 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 
 - :chevron down: Click the **Advanced** category in the toolbar to reveal the ``||animation:Animation||`` category.
 
-- :sync: Drag the large  
-``||animation:animate [mySprite]||``  
-block into the empty  
-``||controller:on [right] button [pressed]||``  
+- :sync: Drag the large
+``||animation:animate [mySprite]||``
+block into the empty
+``||controller:on [right] button [pressed]||``
 container.
 
 - :paint brush: Click the empty grey box and toggle to **My Assets** to choose the **walk right** animation.
@@ -107,14 +107,14 @@ Now we need an animation that runs when the monkey jumps!
 
 ---
 
-- :binoculars: Find your  
-``||controller:on [up] button [pressed]||``  
+- :binoculars: Find your
+``||controller:on [up] button [pressed]||``
 container that's already in the workspace.
 
-- :sync: Grab an  
-``||animation:animate [mySprite]||``  
-block and drag it into **the end** of the  
-``||controller:on [up] button [pressed]||``  
+- :sync: Grab an
+``||animation:animate [mySprite]||``
+block and drag it into **the end** of the
+``||controller:on [up] button [pressed]||``
 container.
 
 - :paint brush: Click the empty grey box and toggle to **My Assets** to choose the **jump** animation.
@@ -123,7 +123,7 @@ container.
 
 ```blocks
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprites.gravity_jump(mySprite)
+    simplified.gravity_jump(mySprite)
     //@highlight
     animation.runImageAnimation(
     mySprite,
@@ -154,13 +154,14 @@ When you're done playing your game, click **Done** to return to the main skillma
 
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll/
+simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
 pxt-tilemaps=github:microsoft/pxt-tilemaps/
 ```
 
 
 ```template
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprites.gravity_jump(mySprite)
+    simplified.gravity_jump(mySprite)
 })
 scene.setBackgroundImage(assets.image`background`)
 tiles.setTilemap(tilemap`level1`)
@@ -217,19 +218,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 })
 ```
 
-
-```customts
-
-namespace sprites {
-    //% block="make $thisSprite=variables_get(mySprite) gravity jump"
-        export function gravity_jump (thisSprite: Sprite) {
-        if (thisSprite.isHittingTile(CollisionDirection.Bottom)) {
-            thisSprite.vy = -200
-        }
-    }
-}
-
-```
 
 
 ```assetjson

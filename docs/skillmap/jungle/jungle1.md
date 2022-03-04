@@ -167,7 +167,7 @@ container, add
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     let mySprite: Sprite = null
     //@highlight
-    sprites.gravity_jump(mySprite)
+    simplified.gravity_jump(mySprite)
 })
 ```
 
@@ -186,6 +186,7 @@ Take a spin through the level, then click **Done** to return to the main skillma
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll/
 pxt-tilemaps=github:microsoft/pxt-tilemaps/
+simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
 ```
 
 
@@ -196,7 +197,7 @@ tiles.setTilemap(tilemap`level1`)
 
 ```ghost
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprites.gravity_jump(mySprite)
+    simplified.gravity_jump(mySprite)
 
 })
 scene.setBackgroundImage(assets.image`background`)
@@ -207,17 +208,6 @@ mySprite.ay = 500
 scene.cameraFollowSprite(mySprite)
 ```
 
-
-```customts
-namespace sprites {
-    //% block="make $thisSprite=variables_get(mySprite) gravity jump"
-    export function gravity_jump (thisSprite: Sprite) {
-    if (thisSprite.isHittingTile(CollisionDirection.Bottom)) {
-        thisSprite.vy = -200
-    }
-}
-}
-```
 
 
 ```assetjson

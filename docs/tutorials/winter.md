@@ -304,7 +304,7 @@ info.startCountdown(15)
 
 
 ```package
-pxt-star-special=github:kiki-lee/star-special/
+simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
 ```
 
 
