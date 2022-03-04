@@ -77,8 +77,12 @@
 * next: forest6
 * position: 3 2
 * rewards:
-    * certificate: /static/skillmap/certificates/forest-cert.pdf
-    * completion-badge: /static/badges/badge-forest.png
+    * certificate:
+        * url: /static/skillmap/certificates/forest-cert.pdf
+        * preview: /static/skillmap/certificates/forest-cert.png
+    * completion-badge:
+        * image: /static/badges/badge-forest.png
+        * name: Save the Forest
 * actions:
     * map: [Try the Jungle Monkey Skillmap](/skillmap/jungle)
     * map: [Try the Space Explorer Skillmap](/skillmap/space)

@@ -24,9 +24,9 @@
   "directOpen": true
 },
 {
-  "name": "Sing 2",
+  "name": "Talent Show",
   "cardType": "link",
-  "description": "Learn to create a clicker game and quickly rack up the points as you applaud your favorite stars from Sing 2.",
+  "description": "Learn to create a clicker game and quickly rack up the points as you applaud your favorite performers.",
   "imageUrl": "/static/skillmap/backgrounds/star-map.png",
   "url": "https://arcade.makecode.com/--skillmap#star",
   "directOpen": true

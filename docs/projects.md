@@ -76,13 +76,13 @@
     {
         "name": "Courses",
         "url": "/courses",
-        "imageUrl": "/static/courses/csintro1.png",
-        "largeImageUrl": "/static/courses/csintro1.gif"
+        "imageUrl": "/static/courses/csp.png",
+        "largeImageUrl": "/static/courses/csp.png"
     },
     {
         "name": "Hardware",
         "url": "/hardware",
-        "imageUrl": "/static/hardware/ghiarcade.jpg"
+        "imageUrl": "/static/hardware/meowbit.png"
     },
     {
         "name": "How to Make a Game Videos",

@@ -12,7 +12,7 @@ Here are some cool activities to get you started with your @boardname@!
 * url: https://arcade.makecode.com/--skillmap#docs:/skillmap/racer
 * cardType: link
 ---
-* name: Try our limited-edition Sing 2 activity
+* name: Try out for the Talent Show!
 * buttonLabel: Play Now
 * imageUrl: /static/hero-gallery/star.png
 * url: https://arcade.makecode.com/--skillmap#docs:/skillmap/star
