@@ -27,13 +27,13 @@ We need some well-placed platforms! Let's add a crate beneath the player when th
 
 ---
 
-- :game: Drag the
-``||controller:on [A] button [pressed]||``
+- :game: Drag the <br/>
+``||controller:on [A] button [pressed]||`` <br/>
 container into an empty area of the workspace.
 
-- :tree: Set a wall by dragging
-``||scene:set wall <OFF> at tilemap col [0] row [0]||``
-into the empty
+- :tree: Set a wall by dragging <br/>
+``||scene:set wall <OFF> at tilemap col [0] row [0]||`` <br/>
+into the empty <br/>
 ``||controller:on [A] button [pressed]||``
 container.
 
@@ -49,16 +49,16 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ## 4. Block Walls, Cont.
 
 
-- :map: Make sure the new wall ends up in the right place by dragging
-``||tiles:location [left] of [location]||``
-in to replace
+- :map: Make sure the new wall ends up in the right place by dragging <br/>
+``||tiles:location [left] of [location]||`` <br/>
+in to replace <br/>
 ``||scene:tilemap col [0] row [0]||``.
 
 - :mouse pointer: Click the word **left** to open the dropdown menu, and change the direction to **bottom**.
 
-- :map: Create the wall **under** your sprite by dragging
-``||tiles:location of [mySprite]||``
-in to replace
+- :map: Create the wall **under** your sprite by dragging <br/>
+``||tiles:location of [mySprite]||`` <br/>
+in to replace <br/>
 ``||variables:location||``.
 
 
@@ -88,9 +88,9 @@ The walls are great, but it's hard to remember where they are. Let's add special
 
 ---
 
-- :tree: Set a tile by dragging
-``||scene:set [ ] at tilemap col [0] row [0]||``
-into **the bottom** of the
+- :tree: Set a tile by dragging <br/>
+``||scene:set [ ] at tilemap col [0] row [0]||`` <br/>
+into **the bottom** of the <br/>
 ``||controller:on [A] button [pressed]||``
 container.
 
@@ -110,15 +110,15 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ## 7. Adding Block Tiles, Cont.
 
 
-- :map: Make sure the new tile ends up in the right place by dragging
-``||tiles:location [left] of [location]||``
-in to replace
+- :map: Make sure the new tile ends up in the right place by dragging <br/>
+``||tiles:location [left] of [location]||`` <br/>
+in to replace <br/>
 ``||scene:tilemap col [0] row [0]||``.
 
 - :mouse pointer: Click the word **left** to open the dropdown menu, and change the direction to **bottom**.
 
-- :map: As before, create the tile **under** your sprite by dragging
-``||tiles:location of [mySprite]||``
+- :map: As before, create the tile **under** your sprite by dragging <br/>
+``||tiles:location of [mySprite]||`` <br/>
 in to replace  ``||variables:location||``.
 
 
