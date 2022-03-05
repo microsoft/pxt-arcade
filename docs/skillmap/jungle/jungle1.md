@@ -35,8 +35,8 @@ Our moving characters are called [__*sprites*__](#sprote "2-D images that move o
 
 ---
 
-- :paper plane: From the ``||sprites:Sprites||`` category, drag
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
+- :paper plane: From the ``||sprites:Sprites||`` category, drag <br/>
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
 to **the end** of the ``||loops:on start||`` container.
 
 _💡  Having trouble finding the block you need? Look to the left of the instructions for the icon of the toolbox category where your block lives!_
@@ -60,8 +60,8 @@ let mySprite = sprites.create(assets.image`stand`, SpriteKind.Player)
 
 ---
 
-- :game: Drag
-``||controller:move [mySprite] with buttons ➕||``
+- :game: Drag <br/>
+``||controller:move [mySprite] with buttons ➕||`` <br/>
 to **the end** of the ``||loops:on start||`` container.
 
 _💡  Remember, the icon to the left of the instructions shows the same icon as the toolbox category for the block you need._
@@ -99,9 +99,9 @@ to "pull down" on the sprite.
 
 ---
 
-- :paper plane:  Drag
-``||sprites:set [mySprite] [x] to [0]||``
-to **the end** of the
+- :paper plane:  Drag <br/>
+``||sprites:set [mySprite] [x] to [0]||`` <br/>
+to **the end** of the <br/>
 ``||loops:on start||`` container.
 
 - :mouse pointer: Click the dropdown to change **x** to **ay (acceleration y)**.
@@ -123,9 +123,9 @@ mySprite.ay = 500
 
 ---
 
-- :tree:  To keep the monkey in sight, drag
-``||scene:camera follow sprite [mySprite]||``
-to **the end** of the
+- :tree:  To keep the monkey in sight, drag <br/>
+``||scene:camera follow sprite [mySprite]||`` <br/>
+to **the end** of the <br/>
 ``||loops:on start||`` container.
 
 ```blocks
@@ -152,22 +152,22 @@ Now that the monkey has landed safely, we can make it jump using the **up** arro
 
 ---
 
-- :game: Drag the
-``||controller:on [A] button [pressed]||``
+- :game: Drag the <br/>
+``||controller:on [A] button [pressed]||`` <br/>
 container into an empty area of the workspace.
 
 - :mouse pointer: Click the **A** option and change it to **up**.
 
-- :paper plane: Inside of the
-``||controller:on [up] button [pressed]||``
-container, add
-``||sprites:make [mySprite] gravity jump||``.
+- :bolt: Inside of the <br/>
+``||controller:on [up] button [pressed]||`` <br/>
+container, add <br/>
+``||simplified:make [mySprite] gravity jump||``.
 
 ```blocks
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     let mySprite: Sprite = null
     //@highlight
-    sprites.gravity_jump(mySprite)
+    simplified.gravity_jump(mySprite)
 })
 ```
 
@@ -186,6 +186,7 @@ Take a spin through the level, then click **Done** to return to the main skillma
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll/
 pxt-tilemaps=github:microsoft/pxt-tilemaps/
+simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
 ```
 
 
@@ -196,7 +197,7 @@ tiles.setTilemap(tilemap`level1`)
 
 ```ghost
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprites.gravity_jump(mySprite)
+    simplified.gravity_jump(mySprite)
 
 })
 scene.setBackgroundImage(assets.image`background`)
@@ -207,17 +208,6 @@ mySprite.ay = 500
 scene.cameraFollowSprite(mySprite)
 ```
 
-
-```customts
-namespace sprites {
-    //% block="make $thisSprite=variables_get(mySprite) gravity jump"
-    export function gravity_jump (thisSprite: Sprite) {
-    if (thisSprite.isHittingTile(CollisionDirection.Bottom)) {
-        thisSprite.vy = -200
-    }
-}
-}
-```
 
 
 ```assetjson

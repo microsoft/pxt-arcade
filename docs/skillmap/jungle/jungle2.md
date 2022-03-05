@@ -21,21 +21,21 @@ Keep in mind which piece of code controls each action!
 
 ## 3. Game Over
 
-**Time for danger**  
+**Time for danger** <br/>
 💀💀💀
 
 When the player overlaps a _poison pit_ tile, let's trigger a "GAME OVER" message.
 
 ---
 
-- :tree: Drag the  
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
+- :tree: Drag the <br/>
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` <br/>
 container into an empty area of the workspace.
 
 - :paint brush: Click the checkerboard image and change it to the **poison pit** tile.
 
-- :circle: Snap a  
-``||game:game over <LOSE>||``  
+- :circle: Snap a <br/>
+``||game:game over <LOSE>||`` <br/>
 block into the new container.
 
 
@@ -62,14 +62,14 @@ When your monkey lands on the poison pit, it should end the game as a loss.
 ---
 
 
-- :tree: Drag another  
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
+- :tree: Drag another <br/>
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` <br/>
 container into the workspace.
 
 - :paint brush: This time, change the checkerboard to the **chest1** tile.
 
-- :circle: Snap a  
-``||game:game over <LOSE>||``  
+- :circle: Snap a <br/>
+``||game:game over <LOSE>||`` <br/>
 block into the new container and toggle
 the **`<LOSE>`** switch to **`<WIN>`**!
 
@@ -98,8 +98,8 @@ It's easy to lose...but impossible to win!  How do you get over the pits?
 ---
 
 
-- :tree: Drag another  
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
+- :tree: Drag another <br/>
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` <br/>
 container into the workspace.
 
 - :paint brush: Change the checkerboard to the orange sphere tile called **orange bauble**.
@@ -128,14 +128,14 @@ Uh oh!  You get WAY too many points when you touch an orange bauble. We can fix 
 
 ---
 
-- :tree: Drag  
-``||scene:set [ ] at tilemap col [0] row [0]||``  
-into **the top** of the  
+- :tree: Drag <br/>
+``||scene:set [ ] at tilemap col [0] row [0]||`` <br/>
+into **the top** of the <br/>
 ``||scene:on [sprite] of kind [Player] overlaps [orange bauble] at [location]||``   container.
 
-- :mouse pointer: Replace  
-``||scene:tilemap col [0] row [0]||``  
-with the ``||variables:location||``  
+- :mouse pointer: Replace <br/>
+``||scene:tilemap col [0] row [0]||`` <br/>
+with the ``||variables:location||`` <br/>
 value from the top of the **Player overlaps orange bauble** container.
 
 ![Share your location](/static/skillmap/jungle/jungle-location.gif "Grab the variable from the overlap container")
@@ -163,13 +163,14 @@ When you're done playing with your game, click **Done** to return to the main sk
 
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll/
+simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
 pxt-tilemaps=github:microsoft/pxt-tilemaps/
 ```
 
 
 ```template
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprites.gravity_jump(mySprite)
+    simplified.gravity_jump(mySprite)
 })
 scene.setBackgroundImage(assets.image`background`)
 tiles.setTilemap(tilemap`level1`)
@@ -189,16 +190,6 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, lo
 })
 ```
 
-```customts
-namespace sprites {
-    //% block="make $thisSprite=variables_get(mySprite) gravity jump"
-    export function gravity_jump (thisSprite: Sprite) {
-    if (thisSprite.isHittingTile(CollisionDirection.Bottom)) {
-        thisSprite.vy = -200
-    }
-}
-}
-```
 
 
 ```assetjson
