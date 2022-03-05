@@ -17,7 +17,7 @@ Instead of always throwing stars, we can put a whole list of items inside the **
 - :mouse pointer: Open the ``||simplified:Simplified||`` category.
 
 - :puzzle: Grab<br/>
-``||arrays:choose one of [ ] [ ] +||``<br/>
+``||simplified:choose one of [ ] [ ] +||``<br/>
 and use it to replace the image of the star in the **projectile**
 block (inside of <br/>
 ``||controller:on [A] button [pressed]||``).
@@ -66,7 +66,7 @@ Does the audience now throw a random number of stars and roses?
 ---
 
 - :mouse pointer: Click the white **plus** at the right of <br/>
-``||arrays:choose one of [⭐] [🌹] +||`` <br/>
+``||simplified:choose one of [⭐] [🌹] +||`` <br/>
 to create a new empty box.
 
 - :paint brush: Click the new empty box and draw another item for the audience to send to the stage (like hearts or flower petals.)

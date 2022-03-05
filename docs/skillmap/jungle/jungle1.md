@@ -158,10 +158,10 @@ container into an empty area of the workspace.
 
 - :mouse pointer: Click the **A** option and change it to **up**.
 
-- :paper plane: Inside of the <br/>
+- :bolt: Inside of the <br/>
 ``||controller:on [up] button [pressed]||`` <br/>
 container, add <br/>
-``||sprites:make [mySprite] gravity jump||``.
+``||simplified:make [mySprite] gravity jump||``.
 
 ```blocks
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
