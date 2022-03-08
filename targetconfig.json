@@ -19,7 +19,8 @@
             "mr-coxall/turtle-logo",
             "microsoft/arcade-storytelling",
             "microsoft/arcade-background-scroll",
-            "microsoft/arcade-character-animations"
+            "microsoft/arcade-character-animations",
+            "microsoft/arcade-tile-util"
         ],
         "preferredRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
@@ -33,7 +34,7 @@
             "microsoft/arcade-minimap",
             "microsoft/arcade-timers",
             "microsoft/arcade-text",
-            "microsoft/pxt-tilemaps",
+            "microsoft/arcade-tile-util",
             "microsoft/arcade-storytelling",
             "microsoft/arcade-background-scroll",
             "microsoft/arcade-character-animations"
