@@ -149,16 +149,13 @@ To make your game even more special, you can add some snowflakes of your own!
 
 ---
 
-- :numbered list: To add more snowflakes to the game, click **Advanced** and open the ``||arrays: Arrays||`` category.
-
-
-- :numbered list: Drag <br/>
-``||arrays: choose one of [ ] [ ] +||`` <br/>
+- :bolt: To add more snowflakes to the game, click the **Simplified** category and drag <br/>
+``||simplified: choose one of [ ] [ ] +||`` <br/>
 to replace the snowflake in your red **set projectile** block.
 
 - :mouse pointer: Click each empty grey box and choose (_or draw_) a new snowflake.<br/>
 _💡 You can click the plus sign at the right of the <br/>
-``||arrays: choose one of [ ] [ ] +||`` <br/>
+``||simplified: choose one of [ ] [ ] +||`` <br/>
 block to add more empty boxes._
 
 ![Add more snowflakes](/static/tutorials/winter/random-img.gif "Here's how to add a random image selector." )
@@ -166,7 +163,7 @@ block to add more empty boxes._
 
 ```blocks
 game.onUpdateInterval(300, function () {
-    let snowflake = sprites.createProjectileFromSide(arrays.chooseRandomImage(assets.image`snowflake1`, img`
+    let snowflake = sprites.createProjectileFromSide(simplified.chooseRandomImage(assets.image`snowflake1`, img`
 . d . . d . d . . d . .
 d 1 d . d 1 d 9 d 1 d .
 . d . d d . d 9 . d . .
@@ -304,7 +301,7 @@ info.startCountdown(15)
 
 
 ```package
-pxt-star-special=github:kiki-lee/star-special/
+simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
 ```
 
 

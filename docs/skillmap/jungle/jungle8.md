@@ -23,8 +23,8 @@ How do you feel about the main character? The background?
 
 ## 3. A New Location
 
-**Let's change the scene**  
-🖼️ 🖼️ 🖼️ 
+**Let's change the scene** <br/>
+🖼️ 🖼️ 🖼️
 
 
 ---
@@ -122,13 +122,14 @@ When you're done playing your new game, click **Done** to return to the main pag
 
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll/
+simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
 pxt-tilemaps=github:microsoft/pxt-tilemaps/
 ```
 
 
 ```template
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprites.gravity_jump(mySprite)
+    simplified.gravity_jump(mySprite)
     animation.runImageAnimation(
     mySprite,
     assets.animation`jump`,
@@ -219,19 +220,6 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-
-```customts
-
-namespace sprites {
-    //% block="make $thisSprite=variables_get(mySprite) gravity jump"
-        export function gravity_jump (thisSprite: Sprite) {
-        if (thisSprite.isHittingTile(CollisionDirection.Bottom)) {
-            thisSprite.vy = -200
-        }
-    }
-}
-
-```
 
 
 ```assetjson

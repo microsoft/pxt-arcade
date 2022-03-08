@@ -3,7 +3,7 @@
 
 ## Welcome @showdialog
 
-**🧨 Explosions are dangerous 🧨** 
+**🧨 Explosions are dangerous 🧨**
 
 This activity will show you how to register a hit on your player if the monkey is standing too close to the blast. You can remove other game elements, too!
 
@@ -22,13 +22,13 @@ Can you connect each chunk of code to the actions it creates?
 
 ## 3. Fried Monkey?
 
-**💥 STAND BACK 💥**  
+**💥 STAND BACK 💥** <br/>
 Make sure to get the monkey out of the way before the big bang!
 
 ---
 
-- :paper plane: Drag the  
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``   
+- :paper plane: Drag the <br/>
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` <br/>
 container into an empty area of the workspace.
 
 - :mouse pointer: Click the second kind ``||sprites:Player||`` and change it to ``||sprites:Projectile||``.
@@ -42,8 +42,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ## 4. Remove the Projectile
 
-- :paper plane: Drag  
-``||sprites:destroy [mySprite]||``  
+- :paper plane: Drag <br/>
+``||sprites:destroy [mySprite]||`` <br/>
 into the empty **on Projectile overlaps Player** container.
 
 - :mouse pointer: Drag the ``||variables:otherSprite||`` value block out of the title bar to replace ``||variables:mySprite||``.
@@ -72,8 +72,8 @@ Don't forget to remove HP from the monkey!
 
 ---
 
-- :id card: Drag  
-``||info:change life by [-1]||``  
+- :id card: Drag <br/>
+``||info:change life by [-1]||`` <br/>
 to **the end** of the **on Projectile overlaps Player** container.
 
 
@@ -102,7 +102,7 @@ You should be able to jump with the up arrow, place tiles with the (A) button, a
 
 ## 7. Remove More Tiles
 
-**💥 Kablow 💥**  
+**💥 Kablow 💥** <br/>
 This game could have even more options if we remove **bounce** crates and **poison pit** tiles with explosives, too.
 
 ---
@@ -165,13 +165,14 @@ When you're done playing your game, click **Done** to return to the main skillma
 
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll/
+simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
 pxt-tilemaps=github:microsoft/pxt-tilemaps/
 ```
 
 
 ```template
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprites.gravity_jump(mySprite)
+    simplified.gravity_jump(mySprite)
 })
 scene.setBackgroundImage(assets.image`background`)
 tiles.setTilemap(tilemap`level1`)
@@ -226,18 +227,6 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, ot
 })
 ```
 
-```customts
-
-namespace sprites {
-    //% block="make $thisSprite=variables_get(mySprite) gravity jump"
-        export function gravity_jump (thisSprite: Sprite) {
-        if (thisSprite.isHittingTile(CollisionDirection.Bottom)) {
-            thisSprite.vy = -200
-        }
-    }
-}
-
-```
 
 
 ```assetjson
