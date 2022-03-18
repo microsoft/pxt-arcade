@@ -158,6 +158,10 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`acid`, function (sprite, loca
     game.over(false)
 })
 
+scene.onOverlapTile(SpriteKind.Player, assets.tile`spikes`, function (sprite, location) {
+    game.over(false)
+})
+
 tiles.setTilemap(tilemap`level1`)
 scene.setBackgroundImage(assets.image`background`)
 let mySprite = sprites.create(assets.image`truck1`, SpriteKind.Player)
