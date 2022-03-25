@@ -20,7 +20,7 @@ This quick tutorial will show you how to design your own character for an amazin
 
 - :mouse pointer: When you're done playing, click **Next** to get to the next instruction.
 
-![This is where to find the game](/static/tutorials/bunny/bunny-game.png "Click the game tab above the instruction window")
+![This is where to find the game](/static/tutorials/bunny/bunny-game.gif "Click the game tab above the instruction window")
 
 
 
