@@ -3,12 +3,7 @@
 
 ## Welcome @showdialog
 
-Happy **Turkey Day!**
-
-We're about to jump into making our first game, but before we do,
-let's take a look at how to use MakeCode Arcade!
-
-![An anigif of the game we're about to build](/static/skillmap/turkey/turkey3.gif "Look what we're about to do today!")
+<iframe width="560" height="315" src="https://www.youtube.com/embed/inbkRGvVo0A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 
