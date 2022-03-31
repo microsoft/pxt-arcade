@@ -1,152 +1,271 @@
-# Get to Know MakeCode
+# Get Moving
 
 
+## Introduction @showdialog
 
-## Intro Video @showdialog
+Time to get your turkey moving and jumping!
 
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/inbkRGvVo0A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
+![An anigif of the game we're about to build](/static/skillmap/turkey/turkey1.gif "Look what we're about to do today!")
 
 
-## 2. Lay of the Land
+## 2. Check Your Code
 
-**Let's take a tour of MakeCode.**
+**Your code from the last activity should be in your workspace.**
+
+If you don't see any code in your workspace, or if the code in your workspace
+doesn't show a turkey on your screen, you can replace the existing code with ours
+by clicking **"Replace my code"** at the bottom of the instruction panel.
+
 
 ---
 
-- :comment: This is the **instruction panel**. This is where you'll find directions on what to do.
-
-- :mouse pointer: Click **Next** to move to the next instruction.
+- :mouse pointer: Click **Next** to see how to control your player!
 
 
+## 3. Control the Player
 
-## 3. Toolbox
+**Let's make your turkey move using the arrow buttons!**<br/>
+_(Don't forget to keep scrolling until you reach the bottom of this instruction.)_
 
+---
 
-- :comment: The panel with the colorful category names is called the
- **toolbox**. Click categories in the toolbox to find the blocks you need.
-
-
-
-<details>
-<summary>Click here for details.</summary>
-![Here's where to look for the toolbox](/static/skillmap/turkey/toolbox.gif "The toolbox is to the left of the workspace.")
-</details>
-
-
-
-- :mouse pointer: Click **Next** to move to the next instruction.
-
-
-
-## 4. Workspace
-
-
-- :comment: The panel on the right is called the **workspace**.
- That's where you'll drag the code you want to use in your program.
-
-
-<details>
-<summary>Click here for details.</summary>
-![Here's where to look for the workspace](/static/skillmap/turkey/workspace.gif "The workspace is on the right.")
-</details>
-
-
-- :mouse pointer: Click **Next** to move to the next instruction.
-
-
-
-
-## 5. Game Window
-
-
-- :comment: In the bottom corner, there's a
- **game window**. Click it to play the game you're working on.
-
-
-<details>
-<summary>Click here for details.</summary>
-![Here's where to look for the game window](/static/skillmap/turkey/game.gif "The game window is in the same panel as the instructions.")
-</details>
-
-
-- :mouse pointer: Click **Next** to move to the next instruction.
-
-
-
-
-## 6. Get Started!
-
-**We need a turkey!!** <br/>
-🦃 🦃 🦃
-
-In MakeCode, moving characters are called
-[__*sprites*__](#sprote "2-D images that move on the screen").
-
-
-<details>
-<summary>What is a **sprite**?</summary>
-In digital game design, a sprite is a 2-dimensional object that can move and change.
-Think of it as a picture that can do something and has extra information inside.
-</details>
-
-- :mouse pointer: Click **Next** to discover how to add your turkey sprite.
-
-
-## 7. Pick a Turkey
-
-
-Let's create a turkey sprite and get it moving.
-
-
-- :paper plane: From the ``||sprites:Sprites||`` category in the toolbox,
-drag <br/>
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
+- :game: From the ``||controller: Controller||`` category in the toolbox, drag <br/>
+``||controller:move [mySprite] with buttons ⊕||`` <br/>
 to **the end** of the ``||loops:on start||`` container that's already in the workspace.
 
-_(Keep scrolling until you have read all the instructions 👇👇👇)_
 
-- :paint brush: To choose the turkey hero, click the empty grey box,
-then toggle to **My Assets** and choose the first turkey, **player**.
+- :mouse pointer: Press the **+** button to the right of the block and change
+the
+[__*vy*__](#whatVY "vertical velocity") (up/down speed)
+argument to **0** so that the player won't hover up or down when you use the joypad.
+
+
+<details>
+<summary>What is **vy**?</summary>
+In short, **vy** stands for "the **velocity** along the **y** axis," which refers
+to the rate of change of the sprite from top to bottom. By setting this value to **0**,
+the sprite will not be able to move up or down.
+</details>
+
+
+<details>
+<summary>Show me how to complete these steps.</summary>
+![Move with controls](/static/skillmap/turkey/move-sprite.gif "Add the move sprite block")
+</details>
+
+- :mouse pointer: Click **Next** when you're ready to try your game.
+
+
+```blocks
+let mySprite = sprites.create(assets.image`player`, SpriteKind.Player)
+// @highlight
+controller.moveSprite(mySprite, 100, 0)
+```
+
+
+## 4. Try It
+
+**Click the Game Console **
+
+The turkey should move left when you click the left arrow and move
+right with the right arrow, but it should not move up or down.
+
+<details>
+<summary>How do I get to the game console?</summary>
+![Here's where to look for the game window](/static/skillmap/turkey/game.gif "The workspace is on the right.")
+</details>
+
+- :mouse pointer: Click **Next** when you're ready to add gravity.
+
+
+
+## 5. Add gravity
+
+**To make the game playable, the world needs gravity.**
+
+For that, add [__*acceleration*__](#accel "increased speed in a direction")
+to "pull down" on the sprite.
+
+---
+
+- :paper plane:  From the ``||sprites:Sprites||`` category in the toolbox, drag <br/>
+``||sprites:set [mySprite] [x] to [0]||`` <br/>
+to **the end** of the <br/>
+``||loops:on start||`` container in the workspace.
+
+- :mouse pointer: Click the dropdown to change ``||sprites:x||`` to
+``||sprites:ay (acceleration y)||``.
+
+- :mouse pointer: To pull the sprite quickly toward the ground,
+replace **0** with something large, like **500**.
+
+
+<details>
+<summary>What is **ay**?</summary>
+In short, **ay** stands for "the **acceleration** along the **y** axis," which refers
+to the change in speedfrom top to bottom. <br/>
+By setting this value
+to **500**, the sprite will be pulled from the top of the screen to the bottom, with an above average strength.
+</details>
+
+
+<details>
+<summary>Show me how to complete these steps.</summary>
+![Move with controls](/static/skillmap/turkey/acceleration.gif "Add the move sprite block")
+</details>
+
+- :mouse pointer: Click **Next** when you're ready to follow your turkey off-screen.
+
+
+```blocks
+let mySprite = sprites.create(assets.image`player`, SpriteKind.Player)
+controller.moveSprite(mySprite, 100, 0)
+// @highlight
+mySprite.ay = 500
+```
+
+## 6. Follow with Camera
+
+**Oops!  The turkey falls below the bottom of the screen!**
+
+---
+
+- :tree:  To keep the turkey in sight, open ``||scene: Scene||``, then drag <br/>
+``||scene:camera follow sprite [mySprite]||`` <br/>
+to **the end** of the <br/>
+``||loops:on start||`` container.
+
+
+- :mouse pointer: Click **Next** to see what happens now!
+
+
+```blocks
+let mySprite = sprites.create(assets.image`player`, SpriteKind.Player)
+controller.moveSprite(mySprite, 100, 0)
+mySprite.ay = 500
+// @highlight
+scene.cameraFollowSprite(mySprite)
+
+```
+
+
+## 7. Look Again
+
+🕹️ 🕹️ 🕹️
+
+**Look at the game window to make sure you can see the turkey land on the platform.**
+
+
+
+## 8. Start at the Bottom
+
+The turkey has landed, but it's already near the top of the play area!
+Let's start it on a special tile on the ground.
+
+---
+
+- :tree: From the ``||scene:Scene||`` category, drag the <br/>
+``||scene:place [mySprite] on top of random [ ]||`` <br/>
+block into **the end** of the <br/>
+``||loops:on start||`` container.
+
+- :mouse pointer: Click the checkered square and select the **start** tile,
+which looks like a purple line at the bottom of the square.
+
+![the start tile](/static/skillmap/turkey/start-tile.png "the tile where the turkey should start")
+
+
+<details>
+<summary>What is a tile?</summary>
+A tile is a special 16px x 16px image square
+that can be used as a part of the background scene.
+Several of these tile squares are put together into one large **tilemap** that acts as the
+backdrop for this game!
+</details>
+
+
+<details>
+<summary>Show me how to complete these steps.</summary>
+![Start the turkey on a tile](/static/skillmap/turkey/start-tile.gif "Choose the tile where the turkey should start")
+</details>
+
+- :mouse pointer: Click **Next** when you're ready make the turkey jump!
+
+```blocks
+let mySprite = sprites.create(assets.image`player`, SpriteKind.Player)
+controller.moveSprite(mySprite, 100, 0)
+mySprite.ay = 500
+scene.cameraFollowSprite(mySprite)
+//@highlight
+tiles.placeOnRandomTile(mySprite, assets.tile`start`)
+```
+
+## 9. Jump
+
+Now that the turkey is at the bottom of the game,
+we need to make it jump using the **A** button!
+
+---
+
+- :game: From ``||controller:Controller||``, drag the <br/>
+``||controller:on [A] button [pressed]||`` <br/>
+container into an empty area of the workspace.
+
+- :paper plane: Inside of the <br/>
+``||controller:on [A] button [pressed]||`` <br/>
+container, add <br/>
+``||sprites:set [mySprite] [x] to [0]||``.
+
+- :mouse pointer: Change ``||sprites:[x]||`` to ``||sprites:[vy (velocity y)]||``
+so you can temporarily change the direction the turkey is traveling.
+
+- :mouse pointer: Change **0** to **-300** to send the turkey upward with each press of the (A) button!
 
 
 
 <details>
-<summary>Click here to see how!</summary>
-![Pick player from My Assets](/static/skillmap/turkey/set-sprite.gif "Toggle to My Assets and choose player")
+<summary>Show me how to complete these steps.</summary>
+![Add a jump on A press](/static/skillmap/turkey/jump.gif "Here's how to send the turkey upward")
 </details>
 
-- :mouse pointer: Click **Next** to see a recap of what you've learned!
+- :mouse pointer: Click **Next** when you're ready to give your game a try!
 
 ```blocks
-// @highlight
+let mySprite: Sprite = null
+
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.vy = -300
+})
+```
+
+## Finale
+
+🔥 **That's it! Now try playing your game!** 🔥
+Can you get the turkey to the top?
+
+---
+
+Take a spin through the level, then click **Done**
+to return to the main skillmap and go on to the next
+activity where we'll show you how to rescue the other turkeys from their cages!
+
+
+```template
 let mySprite = sprites.create(assets.image`player`, SpriteKind.Player)
 ```
 
 
-## Finale
-
-🔥 **Way to go!**🔥
-
-In this level, you were shown how to:
-- Identify the panels for instructions, toolbox, coding workspace, and game console
-- Scroll to the bottom of the instruction to make sure you've seen all of the steps
-- Click **Next** when you get to the bottom of an instruction to see the next step
-- Create a hero sprite to be your "Player"
-
----
-
-Once you feel comfortable with all of the areas above, click **Done**
-to return to the main skillmap and go on to the next
-activity where we'll show you how to get your turkey moving and jumping!
-
-
-
-
 ```ghost
-let mySprite: Sprite = null
-mySprite = sprites.create(assets.image`player`, SpriteKind.Player)
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.vy = -300
+})
+
+let mySprite = sprites.create(assets.image`player`, SpriteKind.Player)
+controller.moveSprite(mySprite, 100, 0)
+mySprite.ay = 500
+scene.cameraFollowSprite(mySprite)
+tiles.placeOnRandomTile(mySprite, assets.tile`start`)
+
 ```
 
 
