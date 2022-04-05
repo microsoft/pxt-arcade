@@ -8,7 +8,7 @@
 Soon, you’ll be able to customize this game for yourself! You can design your own
 background scene, main character, and hurdles!
 
-What will you be racing today?
+What and how will you be racing today?
 
 ![Design the Clovers game in simulator](/static/tutorials/design-the-clovers.gif)
 
