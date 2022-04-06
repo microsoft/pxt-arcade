@@ -2,7 +2,7 @@
 
 ## Introduction @showdialog
 
-Let's make a racer game!
+Let's make a running game!
 
 In this tutorial, you'll add a peach racer to your game and get it started down a track.
 
