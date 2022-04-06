@@ -55,6 +55,7 @@
         "libs/core---nrf52",
         "libs/core---samd",
         "libs/core---stm32",
+        "libs/core---rp2040",
         "libs/core---vm",
         "libs/corgio",
         "libs/d5prj",
@@ -72,6 +73,7 @@
         "libs/hw---rpi",
         "libs/hw---samd51",
         "libs/hw---stm32f401",
+        "libs/hw---rp2040",
         "libs/hw---vm",
         "libs/keyboard",
         "libs/light",
@@ -84,6 +86,7 @@
         "libs/mixer---nrf52",
         "libs/mixer---samd",
         "libs/mixer---stm32",
+        "libs/mixer---rp2040",
         "libs/mouse",
         "libs/mqtt",
         "libs/net",
@@ -143,7 +146,7 @@
     ],
     "compile": {
         "useUF2": true,
-        "deployDrives": "(ARCADE|PY|FTHR840BOOT|ARCD)",
+        "deployDrives": "(ARCADE|PY|FTHR840BOOT|ARCD|RPI-RP2)",
         "deployFileMarker": "INFO_UF2.TXT",
         "driveName": "ARCADE",
         "floatingPoint": true,
@@ -378,6 +381,27 @@
                         }
                     }
                 }
+            }
+        },
+        "rp2040": {
+            "compile": {
+                "hasHex": true,
+                "openocdScript": "???",
+                "flashChecksumAddr": 0,
+                "flashEnd": 2097152,
+                "uf2Family": "0xe48bff56"
+            },
+            "compileService": {
+                "codalTarget": {
+                    "name": "codal-pi-pico",
+                    "url": "https://github.com/lancaster-university/codal-pi-pico",
+                    "branch": "v0.0.9",
+                    "type": "git"
+                },
+                "gittag": "v0.9.0",
+                "codalBinary": "PI-PICO",
+                "serviceId": "codal2pico",
+                "dockerImage": "pext/arm:gcc9"
             }
         },
         "rpi": {
