@@ -44,7 +44,7 @@ You should see the background with the racetrack and trees in the background.
 
 ## 4. Add the Peach
 
-It's time to set up your runner.
+It's time to set up your peach runner.
 To do this, we'll need to create a [__*sprite*__](#sprote "a 2-D image that moves on the screen").
 
 ---
