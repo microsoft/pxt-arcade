@@ -4,7 +4,7 @@
 
 Let's make a racer game!
 
-In this tutorial, you'll add a racer to your game and get it started down a track.
+In this tutorial, you'll add a peach racer to your game and get it started down a track.
 
 ![Set your sprite](/static/skillmap/racer/racer1.gif "Look what we're about to make!")
 
