@@ -357,7 +357,7 @@ class SevenSegDigit {
     }
 
     //% group="Digits" blockSetVariable="myDigit"
-    //% blockCombine block="height"
+    //% blockCombine block="width"
     get width(): number {
         return this.digitSprite.width;
     }
