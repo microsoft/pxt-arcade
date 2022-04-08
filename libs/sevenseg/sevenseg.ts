@@ -234,6 +234,7 @@ namespace sevenseg {
     //% blockSetVariable=myDigit
     //% value.min=0 value.max=9 value.defl=0
     //% weight=99
+    //% help=sevenseg/create-digit
     export function createDigit(thickness: SegmentStyle = SegmentStyle.Thick, value: number = 0): SevenSegDigit {
         return new SevenSegDigit(thickness, value)
     }
@@ -250,6 +251,7 @@ namespace sevenseg {
     //% blockSetVariable=myCounter
     //% numDigits.min=1 numDigits.max=5 numDigits.defl=1
     //% weight=100
+    //% help=sevenseg/create-counter
     export function createCounter(thickness: SegmentStyle = SegmentStyle.Thick, scale: SegmentScale = SegmentScale.Full, numDigits: number = 1): DigitCounter {
         return new DigitCounter(thickness, scale, numDigits)
     }
@@ -322,6 +324,7 @@ class SevenSegDigit {
     //% group="Digits"
     //% blockId=sevenseg_setcolor block="set %sevenseg(myDigit) display color to %color=colorindexpicker"
     //% weight=35
+    //% help=sevenseg/sevensegdigit/set-digit-color
     setDigitColor(color: number): void {
         this.color = color;
         sevenseg.drawDigit(this.digit, this.value, this.thickness, this.scale, this.color);
@@ -354,7 +357,7 @@ class SevenSegDigit {
     }
 
     //% group="Digits" blockSetVariable="myDigit"
-    //% blockCombine block="height"
+    //% blockCombine block="width"
     get width(): number {
         return this.digitSprite.width;
     }
@@ -371,6 +374,7 @@ class SevenSegDigit {
      */
     //% blockId=sevenseg_setradix block="set display radix of %sevenseg(myDigit) to %radix"
     //% group="Digits" weight=30
+    //% help=sevenseg/sevensegdigit/set-radix
     setRadix(radix: DigitRadix) {
         this._radix = radix;
         sevenseg.drawDigit(this.digit, this.value, this.thickness, this.scale, this.color);
@@ -382,7 +386,8 @@ class SevenSegDigit {
      */
     //% group="Digits"
     //% blockId=sevenseg_setdigitscale block="set %sevenseg(myDigit) to %scale size"
-    //% weight=25
+    //% weight=25 
+    //% help=sevenseg/sevensegdigit/set-scale
     setScale(scale: SegmentScale): void {
         if (scale != this.scale) {
             this.scale = scale;
@@ -502,6 +507,7 @@ class DigitCounter {
     //% group="Counter"
     //% blockId=sevenseg_setcountercolor block="set %sevenseg(myCounter) display color to %color=colorindexpicker"
     //% weight=86
+    //% help=sevenseg/digitcounter/set-digit-color
     setDigitColor(color: number): void {
         this.color = color;
         for (let i = 0; i < this.numDigits; i++) {
