@@ -6,7 +6,7 @@ Let's make a running game!
 
 In this tutorial, you'll add a peach racer to your game and get it started down a track.
 
-![Set your sprite](/static/skillmap/racer/racer1.gif "Look what we're about to make!")
+![Set your sprite](/static/skillmap/peachtree/intro_peach_race.gif "Look what we're about to make!")
 
 
 
@@ -29,7 +29,7 @@ Open the game window to take a look at the scene that has been made for you.
 
 To take a closer look, you can either click on the **preview window** in the lower-right corner of your screen, or click the **game window tab** above.
 
-![Click the Game Window tab to see your scene. ](/static/skillmap/racer/toggle-tab.gif "Don't forget to look at your game!")
+![Click the Game Window tab to see your scene. ](/static/skillmap/peachtree/toggle-tab.gif "Don't forget to look at your game!")
 
 ---
 
@@ -57,7 +57,7 @@ container.
 
 - :paint brush:  To choose your character, click the empty grey box, then select **My Assets**.
 
-![Set your sprite](/static/skillmap/racer/pick-truck.gif "Choose your image from the gallery")
+![Set your sprite](/static/skillmap/peachtree/pick-peach.gif "Choose your image from the gallery")
 
 _💡 This image shows the **peach** sprite, but you could also create your own._
 
@@ -83,7 +83,7 @@ For that, we'll add [__*acceleration*__](#accel "increased speed in a direction"
 to "pull down" on the sprite.
 
 
-![Set the gravity](/static/skillmap/racer/acceleration.gif "Choose ay(acceleration y)")
+![Set the gravity](/static/skillmap/peachtree/acceleration.gif "Choose ay(acceleration y)")
 
 ---
 
@@ -130,7 +130,7 @@ In this game, your peach needs to start running as soon as the game starts.
 
 To make that happen, you need to set its **vx** or _horizontal velocity_ (speed from side to side).
 
-![Set the speed](/static/skillmap/racer/velocity.gif "Choose vx(velocity x)")
+![Set the speed](/static/skillmap/peachtree/velocity.gif "Choose vx(velocity x)")
 
 ---
 
