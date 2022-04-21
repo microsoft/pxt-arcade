@@ -45,7 +45,7 @@ You should see the background with the racetrack and trees in the background.
 ## 4. Add the Peach
 
 It's time to set up your peach runner.
-To do this, we'll need to create a [__*sprite*__](#sprote "a 2-D image that moves on the screen").
+To do this, we'll need to create a [__*sprite*__](#sprite "a 2-D image that moves on the screen").
 
 ---
 
@@ -124,7 +124,7 @@ The peach should drop to the ground on top of the racetrack.
 
 
 
-## 7. Time to Drive
+## 7. Time to Run
 
 In this game, your peach needs to start running as soon as the game starts.
 
@@ -203,7 +203,7 @@ scene.cameraFollowSprite(mySprite)
 
 Well done!
 
-Take a look at the experience that you've created so far. Your peach should start rolling as soon as the game loads and keep going until it gets to the first set of hurdles!
+Take a look at the experience that you've created so far. Your peach should start running as soon as the game loads and keep going until it gets to the first set of hurdles!
 
 When you're ready, click **Done** to head back out to the skillmap where you can play the next level to find out how to control your peach with buttons!
 
