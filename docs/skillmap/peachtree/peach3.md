@@ -2,7 +2,7 @@
 
 ## Introduction @showdialog
 
-In this tutorial, we'll customize your racing game to make it even more special.
+In this tutorial, we'll customize your running game to make it even more special.
 
 ![Animating your peach.](/static/skillmap/racer/racer3.gif "Look what we're about to make!")
 
@@ -12,7 +12,7 @@ In this tutorial, we'll customize your racing game to make it even more special.
 
 Take a look at the code that's already in your workspace.
 
-You should see the blocks that set up your racer and the blocks that make you jump.
+You should see the blocks that set up your peach and the blocks that make you jump.
 
 There should also be three **overlap** containers:
 - one that ends the game when you hit an hurdle

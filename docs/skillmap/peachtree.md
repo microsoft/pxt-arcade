@@ -1,5 +1,5 @@
-# Infinite Racer
-* name: Infinite Racer
+# Peach Racer
+* name: Peach Racer
 * description: Create a side-scrolling racing game where you jump obstacles to get to the finish line.
 * backgroundurl: /static/skillmap/backgrounds/peachtree-bg.png
 * bannerurl: /static/skillmap/peachtree/peach3.gif
@@ -11,8 +11,8 @@
 * highlightcolor: #ffffff
 * completednodecolor: #504c52
 
-## infinite-racer
-* name: Infinite Racer
+## peach-racer
+* name: Peach Racer
 * layout: manual
 
 ### peach1
