@@ -150,7 +150,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`finish2`, function (sprite, l
 
 Congratulations!
 
-You've created your own runnning game!
+You've created your own running game!
 
 Race to the end of the track and once you're finished playing,
 click **Done** to head back out to the skillmap where you can
