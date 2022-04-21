@@ -91,7 +91,7 @@
 
 
 ## Make a Clicker Game
-* required: 1 story
+<!-- * required: 1 story -->
 * layout: manual
 
 ### clicker-activity1
@@ -150,7 +150,7 @@
 
 
 ## Rescue the Baby Dinos
-* required: 1 clicker
+<!-- * required: 1 clicker -->
 * layout: manual
 
 ### collector-activity1
