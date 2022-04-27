@@ -494,7 +494,7 @@ function intitPlayer () {
     `)
     animation.attachAnimation(mySprite, anim_walk_left)
     mySprite.ay = 300
-    mySprite.setFlag(SpriteFlag.StayInScreen, true)
+    mySprite.setStayInScreen(true)
     scene.cameraFollowSprite(mySprite)
 }
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {

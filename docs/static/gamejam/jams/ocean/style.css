@@ -1,0 +1,31 @@
+body {
+    background: #051489;
+}
+
+/**** ACTION BUTTONS ****/
+
+.button {
+    color: #fff;
+    background-color: #4d61d7;
+}
+
+.button:hover {
+    color: #fff;
+    background-color: #6985eb;
+}
+
+/**** FOOTER ****/
+
+.footer .ui.link.list .item {
+    color: #fff;
+}
+
+/***** WINNERS - HONORABLE MENTIONS (OLD) ****/
+
+.winners #rules table:nth-of-type(4) tr {
+    align-items: flex-start;
+}
+
+.winners #rules table:nth-of-type(4) td {
+    padding: 1rem;
+}

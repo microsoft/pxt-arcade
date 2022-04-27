@@ -1,4 +1,5 @@
 {
     "additionalFilePath": "../../node_modules/pxt-common-packages/libs/storyboard",
+    "searchOnly": true,
     "weight": 81
 }

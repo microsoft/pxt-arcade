@@ -12,5 +12,22 @@
         "WalkLeft2",
         "WalkRight1",
         "WalkRight2"
-    ]
+    ],
+    "animations": [{
+        "name": "villager4WalkFront",
+        "frames": [0, 1, 2]
+    },
+    {
+        "name": "villager4WalkBack",
+        "frames": [3, 4, 5]
+    },
+    {
+        "name": "villager4WalkLeft",
+        "frames": [6, 7, 8]
+    },
+    {
+        "name": "villager4WalkRight",
+        "frames": [9, 10, 11]
+    }],
+    "tags": "people"
 }

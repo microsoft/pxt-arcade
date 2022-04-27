@@ -1,6 +1,6 @@
 # Activity: Collage
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-04_collage_intro_final)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/04_collage_intro_FINAL.mp4)
 
 **Visual Design** is an important part of Game Development. This activity builds skills needed to create multiple sprites placed on a game screen by building a "Personal Interest Collage". The student will create sprites with custom variable names, and arrange the sprites on a game screen using sprite properties to set the coordinates.
 
@@ -58,7 +58,7 @@ hotSauce = sprites.create(img`
 
 ## Example #1: Sprite placement
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-collage2)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/collage2.mp4)
 
 This example uses sprite properties to set the `X` and `Y` coordinates on the game screen.
 
@@ -110,7 +110,8 @@ hotSauce.y = 40
 
 ## Student Task #1: Build a "Personal Interest Collage"
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-collage3)
+[![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/collage3.mp4)
+
 
 Make a collage with different images scattered around the screen. It can be about a hobby, a favorite musician, sports, clothes - anything that helps tell a story that is about you.
 

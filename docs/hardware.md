@@ -7,17 +7,24 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
 ```codecard
 [
     {
-        "name": "BrainPad Arcade",
-        "description": "Learn how BrainPad Arcade lets you run games on a small handheld console.",
-        "imageUrl": "/static/hardware/ghiarcade.jpg",
-        "url": "https://brainpad.com",
-        "variant": "hw---stm32f401"
-    },
-    {
         "name": "Meowbit",
         "description": "A retro game console for STEM education from Kittenbot team",
         "imageUrl": "/static/hardware/meowbit.png",
         "url": "https://www.kittenbot.cc/collections/frontpage/products/meowbit-codable-console-for-microsoft-makecode-arcade",
+        "variant": "hw---stm32f401"
+    },
+    {
+        "name": "BrainPad Arcade",
+        "description": "Learn how BrainPad Arcade lets you run games on a small handheld console.",
+        "imageUrl": "/static/hardware/ghiarcade.jpg",
+        "url": "https://brainpad.com/arcade",
+        "variant": "hw---stm32f401"
+    },
+    {
+        "name": "TinkerGen GameGo",
+        "description": "A fun-sized console to play the games you code.",
+        "imageUrl": "/static/hardware/gamego.jpg",
+        "url": "https://www.tinkergen.com/gamego",
         "variant": "hw---stm32f401"
     },
     {
@@ -42,17 +49,17 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "variant": "hw---samd51"
     },
     {
-        "name": "TinkerGen GameGo",
-        "description": "A fun-sized console to play the games you code.",
-        "imageUrl": "/static/hardware/gamego.jpg",
-        "url": "https://shop.tinkergen.com/gamego.html",
+        "name": "Ovobot Xtron Pro",
+        "description": "A programmable modular console to create games, design wearables and make creative projects.",
+        "imageUrl": "/static/hardware/xtronpro.png",
+        "url": "https://www.ovobot.cc/en/product/detail/xtron-pro/",
         "variant": "hw---stm32f401"
     },
     {
-        "name": "Ovobot Xtron",
-        "description": "A programmable microcomputer that can be used for making MakeCode Arcade games.",
-        "imageUrl": "/static/hardware/xtron.jpg",
-        "url": "https://www.ovobot.cn/product/detail/xtron/",
+        "name": "Retro Arcade for Education",
+        "description": "The Retro has a big screen, colorful protective case, d-pad and vibration motor",
+        "imageUrl": "/static/hardware/elecfreaksarcade.jpg",
+        "url": "https://www.elecfreaks.com/retro-arcade-for-education.html",
         "variant": "hw---stm32f401"
     },
     {
@@ -91,9 +98,17 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "variant": "hw---rpi"
     },
     {
+        "name": "Arcade cabinet",
+        "description": "Full size Arcade cabinet powered by a Raspberry Pi.",
+        "imageUrl": "/static/hardware/raspberry-pi/wooden-cabinet/gallery.jpg",
+        "url": "/hardware/raspberry-pi/wooden-cabinet",
+        "variant": "hw---rpi"
+    },
+    {
         "name": "Add Board",
         "description": "Are you looking to build your own hardware to run Arcade games? This in-depth guide provides the technical details and specifications to get started.",
-        "url": "/hardware/adding"
+        "url": "/hardware/adding",
+        "imageUrl": "/static/hardware/minipcb.png"
     }
 ]
 ```
@@ -102,9 +117,11 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
 
 * [Makey Makey](/hardware/makey-makey), turn your banana keyboard into an arcade console!
 
-## Adding Arcade to a New Board
+## Adding a New Board to Arcade
 
-If you want to design a board with Arcade support, refer to [Adding Board](/hardware/adding) page.
+![Schematics screenshot](/static/hardware/minipcb.png)
+
+If you want to design a board with Arcade support, refer to [Adding Board page](/hardware/adding).
 
 There is some minimal documentation about adding new MCUs in the
 [Arcade Hardware Development](/hardware/dev) page.

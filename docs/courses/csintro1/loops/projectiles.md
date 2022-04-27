@@ -83,7 +83,7 @@ By default, the ``||sprites:kind||`` of a ``||sprites:projectile||`` is ``Projec
 
 ### ~
 
-``||sprites:auto destroy||`` is available for all sprites using the ``||sprites:set sprite auto destroy on||`` flag, but projectiles have it added in for you automatically. Select the ``||sprites:auto destroy||`` setting in the drop-down list of the ``||sprites:set sprite stay in screen||`` block.
+``||sprites:auto destroy||`` is available for all sprites using the ``||sprites:set sprite auto destroy on||`` flag, but projectiles have it added in for you automatically.
 
 ## Student Task #1: Make a ball fall down
 
@@ -126,7 +126,7 @@ Games often create many projectiles, one after another. We can create multiple p
 
 ### Example #2: Projectile Loop
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-projectiles2)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/covlWZz_7Os)
 
 1. Review the code below
 2. Create a new project and name it "Random Dodge"

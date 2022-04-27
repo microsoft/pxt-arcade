@@ -34,7 +34,7 @@ let lastX = myPointer.left;
 let lastY = myPointer.bottom;
 let color = 1;
 let large = false;
-myPointer.setFlag(SpriteFlag.BounceOnWall, true);
+myPointer.setBounceOnWall(true);
 
 game.onUpdate(function () {
     let background = scene.backgroundImage();

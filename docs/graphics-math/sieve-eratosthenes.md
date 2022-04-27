@@ -78,7 +78,7 @@ game.onUpdateInterval(10, function () {
                         b 4 4 4 4 4 4 4 4 4 4 4 4 4 4 b
                         b b b b b b b b b b b b b b b b
                     `, SpriteKind.Player)
-                    boxSprite.setFlag(SpriteFlag.BounceOnWall, true)
+                    boxSprite.setBounceOnWall(true)
                     boxSprite.image.printCenter("" + naturals, 2)
                     boxSprite.left = boxX
                     boxSprite.top = boxY

@@ -1,0 +1,36 @@
+name: playlists
+
+on:
+  schedule:
+    - cron:  '30 1 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [8.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm install
+        run: |
+          sudo npm install -g pxt
+          npm install
+      - name: updated playlists
+        run: |
+          pxt downloadplaylists
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Updated playlists
+          branch: playlists/patch
+          title: 'Updated playlists'

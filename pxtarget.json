@@ -15,81 +15,136 @@
         "publishing": true,
         "githubPackages": true,
         "cloudProviders": {
-            "github": {}
+            "github": {
+                "id": "github",
+                "name": "GitHub",
+                "icon": "./static/providers/github-mark.png",
+                "identity": false,
+                "order": 3
+            },
+            "microsoft": {
+                "id": "microsoft",
+                "name": "Microsoft",
+                "icon": "./static/providers/microsoft-logo.svg",
+                "identity": true,
+                "redirect": true,
+                "order": 1
+            },
+            "google": {
+                "id": "google",
+                "name": "Google",
+                "icon": "./static/providers/google-logo.svg",
+                "identity": false,
+                "redirect": true,
+                "order": 2
+            }
         }
     },
     "bundleddirs": [
         "libs/animation",
         "libs/accelerometer",
-        "libs/lightsensor",
-        "libs/thermometer",
+        "libs/azureiot",
         "libs/base",
+        "libs/buttons",
+        "libs/color",
+        "libs/color-coded-tilemap",
+        "libs/controller",
+        "libs/controller---none",
         "libs/core",
+        "libs/core---linux",
+        "libs/core---nrf52",
         "libs/core---samd",
         "libs/core---stm32",
-        "libs/core---nrf52",
-        "libs/core---linux",
         "libs/core---vm",
-        "libs/serial",
-        "libs/serial---linux",
         "libs/corgio",
+        "libs/d5prj",
         "libs/darts",
-        "libs/keyboard",
-        "libs/mouse",
-        "libs/microphone",
+        "libs/device",
+        "libs/edge-connector",
+        "libs/esp32",
+        "libs/f4prj",
+        "libs/feather",
+        "libs/game",
+        "libs/game---light",
         "libs/hw",
-        "libs/hw---stm32f401",
-        "libs/hw---samd51",
         "libs/hw---n3",
         "libs/hw---n4",
         "libs/hw---rpi",
+        "libs/hw---samd51",
+        "libs/hw---stm32f401",
         "libs/hw---vm",
-        "libs/feather",
-        "libs/sevenseg",
-        "libs/settings",
-        "libs/settings---files",
-        "libs/screen",
-        "libs/screen---st7735",
-        "libs/screen---linux",
-        "libs/screen---ext",
-        "libs/game",
-        "libs/game---hw",
-        "libs/buttons",
-        "libs/mixer",
-        "libs/servo",
+        "libs/keyboard",
         "libs/light",
+        "libs/lightsensor",
+        "libs/microphone",
+        "libs/mixer",
+        "libs/mixer---ext",
+        "libs/mixer---linux",
+        "libs/mixer---none",
+        "libs/mixer---nrf52",
         "libs/mixer---samd",
         "libs/mixer---stm32",
-        "libs/mixer---nrf52",
-        "libs/mixer---none",
-        "libs/mixer---linux",
-        "libs/mixer---ext",
-        "libs/device",
-        "libs/power",
-        "libs/controller",
-        "libs/controller---none",
-        "libs/edge-connector",
-        "libs/esp32",
+        "libs/mouse",
         "libs/mqtt",
         "libs/net",
         "libs/net-game",
-        "libs/azureiot",
-        "libs/color",
+        "libs/online-multiplayer",
         "libs/palette",
-        "libs/storyboard",
-        "libs/rotary-encoder",
+        "libs/power",
         "libs/radio",
         "libs/radio-broadcast",
-        "libs/d5prj",
-        "libs/f4prj",
+        "libs/rotary-encoder",
         "libs/rpiprj",
-        "libs/color-coded-tilemap",
+        "libs/screen",
+        "libs/screen---ext",
+        "libs/screen---linux",
+        "libs/screen---st7735",
+        "libs/serial",
+        "libs/serial---linux",
+        "libs/servo",
+        "libs/settings",
+        "libs/settings---files",
+        "libs/sevenseg",
+        "libs/sprite-scaling",
+        "libs/storyboard",
         "libs/template",
-        "libs/online-multiplayer"
+        "libs/thermometer"
+    ],
+    "staticpkgdirs": {
+        "base": [
+            "libs/hw",
+            "libs/hw---n3",
+            "libs/hw---samd51",
+            "libs/hw---stm32f401"
+        ],
+        "extensions": [
+            "libs/accelerometer",
+            "libs/color",
+            "libs/edge-connector",
+            "libs/esp32",
+            "libs/feather",
+            "libs/light",
+            "libs/lightsensor",
+            "libs/mqtt",
+            "libs/net",
+            "libs/net-game",
+            "libs/palette",
+            "libs/radio",
+            "libs/radio-broadcast",
+            "libs/serial",
+            "libs/servo",
+            "libs/settings",
+            "libs/sevenseg",
+            "libs/thermometer"
+        ]
+    },
+    "cacheusedblocksdirs": [
+        "skillmap/space",
+        "skillmap/platformer"
     ],
     "compile": {
         "useUF2": true,
-        "deployDrives": "(ARCADE|PY|FTHR840BOOT)",
+        "deployDrives": "(ARCADE|PY|FTHR840BOOT|ARCD)",
         "deployFileMarker": "INFO_UF2.TXT",
         "driveName": "ARCADE",
         "floatingPoint": true,
@@ -196,7 +251,6 @@
                         "tilemap\\s*\\.\\s*screenCoordinateToTile": "tiles.screenCoordinateToTile",
                         "tilemap\\s*\\.\\s*tileCoordinateToScreen": "tiles.tileCoordinateToScreen",
                         "tilemap\\s*\\.\\s*centeredTileCoordinateToScreen": "tiles.centeredTileCoordinateToScreen",
-
                         "tilemap\\s*\\.\\s*OVERWORLD_MAP_ID": "tiles.OVERWORLD_MAP_ID",
                         "tilemap\\s*\\.\\s*MAP_LOADED_EVENT": "tiles.MAP_LOADED_EVENT",
                         "tilemap\\s*\\.\\s*WorldMap": "tiles.WorldMap",
@@ -224,7 +278,7 @@
     "compileService": {
         "buildEngine": "codal",
         "githubCorePackage": "lancaster-university/codal",
-        "gittag": "v0.6.3",
+        "gittag": "v0.8.0",
         "dockerImage": "pext/yotta:latest",
         "codalTarget": {
             "branches": {}
@@ -235,13 +289,14 @@
             "compile": {
                 "hasHex": true,
                 "openocdScript": "source [find interface/stlink-v2.cfg]; source [find target/stm32f4x.cfg]",
+                "flashEnd": 524288,
                 "uf2Family": "0x57755a57"
             },
             "compileService": {
                 "codalTarget": {
                     "name": "codal-big-brainpad",
                     "url": "https://github.com/lancaster-university/codal-big-brainpad",
-                    "branch": "v1.2.0",
+                    "branch": "v1.3.1",
                     "type": "git"
                 },
                 "codalBinary": "STM32",
@@ -275,6 +330,7 @@
                 "hasHex": true,
                 "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/nrf52.cfg]",
                 "webUSB": false,
+                "flashEnd": 1007616,
                 "uf2Family": "0xada52840"
             },
             "compileService": {
@@ -302,6 +358,7 @@
                 "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/nrf52.cfg]",
                 "webUSB": false,
                 "useUF2": false,
+                "flashEnd": 524288,
                 "deployDrives": ".*",
                 "deployFileMarker": "DETAILS.TXT"
             },
@@ -377,6 +434,8 @@
         "variablesBlocks": true,
         "textBlocks": true,
         "functionBlocks": true,
+        "breakBlock": true,
+        "continueBlock": true,
         "functionsOptions": {
             "useNewFunctions": true,
             "extraFunctionEditorTypes": [
@@ -408,15 +467,26 @@
         "emptyRunCode": "pxsim.pxtcore.updateScreen(new pxsim.RefImage(160, 120, 4))",
         "aspectRatio": 0.85,
         "dynamicBoardDefinition": true,
-        "keymap": true
+        "keymap": true,
+        "messageSimulators": {
+            "jacdac": {
+                "url": "https://microsoft.github.io/jacdac-docs/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$",
+                "localHostUrl": "http://localhost:8000/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$",
+                "aspectRatio": "0.89",
+                "permanent": true
+            }
+        }
     },
     "appTheme": {
-        "logoUrl": "https://github.com/microsoft/pxt-arcade",
+        "logoUrl": "https://makecode.com/org",
         "logo": "./static/logo.svg",
         "docsLogo": "./static/logo.svg",
+        "cardLogo": "./static/logo.png",
         "portraitLogo": "./static/logo.svg",
         "footerLogo": "./static/logo.svg",
         "organization": "Microsoft MakeCode",
+        "organizationText": "MakeCode Arcade",
+        "organizationShortText": "MakeCode",
         "organizationUrl": "https://makecode.com/org",
         "organizationLogo": "./static/Micorsoft_logo_rgb_W-white_D-square.png",
         "organizationWideLogo": "./static/Micorsoft_logo_rgb_W-white_D.png",
@@ -450,16 +520,28 @@
             "en",
             "zh-CN",
             "zh-TW",
-            "de"
+            "de",
+            "fr",
+            "ja",
+            "es-MX"
         ],
         "invertedMenu": true,
         "showHomeScreen": true,
+        "useTextLogo": true,
         "highContrast": true,
         "greenScreen": true,
         "print": true,
         "hasAudio": true,
         "allowPackageExtensions": true,
-        "homeScreenHero": "./static/hero.png",
+        "homeScreenHero": {
+            "imageUrl": "/static/hero-gallery/skillmap.png",
+            "name": "Start Skillmap",
+            "url": "https://aka.ms/ArcadeSkillmap",
+            "buttonLabel": "Start Skillmap",
+            "description": "New? Start here!",
+            "cardType": "link"
+        },
+        "homeScreenHeroGallery": "/hero-banner",
         "socialOptions": {
             "orgTwitterHandle": "MSMakeCode",
             "hashtags": "MakeCode",
@@ -485,7 +567,7 @@
         },
         "simAnimationEnter": "fly right in",
         "simAnimationExit": "fly right out",
-        "crowdinProject": "kindscript",
+        "crowdinProject": "makecode",
         "monacoColors": {
             "editor.background": "#FEF3E0"
         },
@@ -503,10 +585,13 @@
             "experimentalHw",
             "recipes",
             "tutorialBlocksDiff",
-            "blocksErrorList"
+            "blocksErrorList",
+            "identity",
+            "accessibleBlocks"
         ],
         "blocksCollapsing": true,
         "errorList": true,
+        "workspaceSearch": true,
         "extendEditor": true,
         "simScreenshot": true,
         "simScreenshotKey": "P",
@@ -521,12 +606,74 @@
         "chooseLanguageRestrictionOnNewProject": true,
         "openProjectNewTab": true,
         "hasReferenceDocs": true,
-        "python": true
+        "python": true,
+        "assetEditor": true,
+        "immersiveReader": true,
+        "tutorialCodeValidation": true
+    },
+    "queryVariants": {
+        "skillsMap=1": {
+            "appTheme": {
+                "embeddedTutorial": true,
+                "allowParentController": true,
+                "shareFinishedTutorials": false
+            }
+        }
     },
     "unsupportedBrowsers": [
         {
             "id": "ie"
         }
     ],
-    "uploadDocs": true
+    "uploadDocs": true,
+    "defaultBadges": [
+        {
+            "id": "skillmap-completion-save the forest",
+            "type": "skillmap-completion",
+            "image": "/static/badges/badge-forest.png",
+            "lockedImage": "/static/badges/badge-forest-locked.png",
+            "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/forest",
+            "title": "Save the Forest"
+        },
+        {
+            "id": "skillmap-completion-zookeeper",
+            "type": "skillmap-completion",
+            "image": "/static/badges/badge-zoo.png",
+            "lockedImage": "/static/badges/badge-zoo-locked.png",
+            "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/zoo",
+            "title": "Zookeeper"
+        },
+        {
+            "id": "skillmap-completion-rockstar",
+            "image": "/static/badges/badge-rockstar.png",
+            "lockedImage": "/static/badges/badge-rockstar-locked.png",
+            "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/rockstar",
+            "type": "skillmap-completion",
+            "title": "80's Rockstar"
+        },
+        {
+            "id": "skillmap-completion-build a platformer game!",
+            "image": "/static/badges/badge-jungle.png",
+            "lockedImage": "/static/badges/badge-jungle-locked.png",
+            "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/jungle",
+            "type": "skillmap-completion",
+            "title": "Jungle Monkey"
+        },
+        {
+            "id": "skillmap-completion-space",
+            "image": "/static/badges/badge-space.png",
+            "lockedImage": "/static/badges/badge-space-locked.png",
+            "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/space",
+            "type": "skillmap-completion",
+            "title": "Space Explorer"
+        },
+        {
+            "id": "skillmap-completion-shark",
+            "image": "/static/badges/badge-shark.png",
+            "lockedImage": "/static/badges/badge-shark-locked.png",
+            "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/shark",
+            "type": "skillmap-completion",
+            "title": "Shark Splash"
+        }
+    ]
 }

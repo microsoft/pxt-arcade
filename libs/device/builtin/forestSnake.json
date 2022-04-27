@@ -1,0 +1,23 @@
+{
+    "width": 16,
+    "height": 16,
+    "animations": [{
+        "name": "forestSnakeWalkLeft",
+        "frames": [0, 1]
+    },
+    {
+        "name": "forestSnakeAttackLeft",
+        "frames": [2, 3, 4, 5, 6, 7]
+    },
+    {
+        "name": "forestSnakeWalkRight",
+        "frames": [0, 1],
+        "flippedHorizontal": true
+    },
+    {
+        "name": "forestSnakeAttackRight",
+        "frames": [2, 3, 4, 5, 6, 7],
+        "flippedHorizontal": true
+    }],
+    "tags": "animals forest"
+}

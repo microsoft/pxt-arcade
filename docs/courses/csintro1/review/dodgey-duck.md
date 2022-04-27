@@ -35,7 +35,7 @@ mySprite = sprites.create(img`
 . . . . f f f f f f f f f . . .
 . . . . . . . . . f f . . . . .
 `, SpriteKind.Player)
-mySprite.setFlag(SpriteFlag.StayInScreen, true)
+mySprite.setStayInScreen(true)
 controller.moveSprite(mySprite)
 info.setScore(0)
 info.setLife(3)

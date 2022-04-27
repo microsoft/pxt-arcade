@@ -92,7 +92,7 @@ f 4 4 2 2 2 2 5 5 5 5 5 5 4 4 f
 . . . . f f f f f f f f . . . .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite, 50, 50)
-mySprite.setFlag(SpriteFlag.StayInScreen, true)
+mySprite.setStayInScreen(true)
 info.setLife(15)
 info.startCountdown(3)
 game.onUpdateInterval(500, function () {

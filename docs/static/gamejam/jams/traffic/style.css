@@ -1,0 +1,73 @@
+body {
+    background: #89b7e4;
+}
+
+.content {
+    margin-bottom: -3.55rem;
+    padding-bottom: 4rem;
+    color: #fff;
+    background-color: #14155c;
+
+    border-left: 2rem double #323786;
+    border-right: 2rem double #323786;
+    box-shadow: -1.5rem 0px 0px 0px #14155c, 1.5rem 0px 0px 0px #14155c;
+}
+
+a { color: #89b7e4; }
+a:hover { color: #f7c9d4; }
+
+.checker {
+    margin: 0 auto;
+    max-width: 57rem;
+    height: 3rem;
+    background-image: linear-gradient(45deg, #14155c 25%, transparent 25%),
+        linear-gradient(-45deg, #14155c 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #14155c 75%),
+        linear-gradient(-45deg, transparent 75%, #14155c 75%);
+    background-size: 2rem 2rem;
+    background-position: 0 0, 0 1rem, 1rem -1rem, -1rem 0px;
+    background-color:  #fff;
+}
+
+/**** ACTION BUTTONS ****/
+
+.button {
+    color: #14155c;
+    background-color: #89b7e4;
+}
+
+.button:hover {
+    color: #14155c;
+    background-color: #f7c9d4;
+}
+
+/**** STREAM SCHEDULE ****/
+
+#schedule .title {
+    color: #fff;
+    background-color: #323786;
+}
+
+#schedule .title .ics {
+    color: #fff;
+}
+
+#schedule .title .ics:hover {
+    color: #f7c9d4;
+}
+
+/**** FOOTER ****/
+
+.footer .ui.link.list .item {
+    color: #fff;
+}
+
+/***** WINNERS - HONORABLE MENTIONS (OLD) ****/
+
+.winners #rules table:nth-of-type(4) tr {
+    align-items: flex-start;
+}
+
+.winners #rules table:nth-of-type(4) td {
+    padding: 1rem;
+}

@@ -7,7 +7,20 @@
             "jwunderl/pxt-color",
             "jwunderl/pxt-status-bar",
             "microsoft/pxt-settings-blocks",
-            "microsoft/arcade-sprite-data"
+            "microsoft/arcade-sprite-data",
+            "microsoft/arcade-grid",
+            "microsoft/arcade-minimap",
+            "microsoft/arcade-timers",
+            "microsoft/arcade-text",
+            "microsoft/pxt-tick-event",
+            "microsoft/pxt-tilemaps",
+            "microsoft/pxt-skillmap-sample",
+            "microsoft/pxt-jacdac",
+            "mr-coxall/turtle-logo",
+            "microsoft/arcade-storytelling",
+            "microsoft/arcade-background-scroll",
+            "microsoft/arcade-character-animations",
+            "microsoft/arcade-tile-util"
         ],
         "preferredRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
@@ -16,16 +29,50 @@
             "jwunderl/pxt-color",
             "jwunderl/pxt-status-bar",
             "microsoft/pxt-settings-blocks",
-            "microsoft/arcade-sprite-data"
+            "microsoft/arcade-sprite-data",
+            "microsoft/arcade-grid",
+            "microsoft/arcade-minimap",
+            "microsoft/arcade-timers",
+            "microsoft/arcade-text",
+            "microsoft/arcade-tile-util",
+            "microsoft/arcade-storytelling",
+            "microsoft/arcade-background-scroll",
+            "microsoft/arcade-character-animations"
         ],
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
             "microsoft/arcade-sprite-data": "min:v0.0.6"
+        },
+        "approvedEditorExtensionUrls": [
+            "https://microsoft.github.io/jacdac-docs/tools/makecode-editor-extension"
+        ]
+    },
+    "shareLinks": {
+        "approved": [
+            "53897-77132-13809-57062",
+            "07573-63879-62644-28924"
+        ]
+    },
+    "skillMap": {
+        "defaultPath": "docs:/skillmap/intermediate-skillmap",
+        "pathAliases": {
+            "beginner": "docs:/skillmap/beginner-skillmap",
+            "zoo": "docs:/skillmap/zoo",
+            "space": "docs:/skillmap/space",
+            "platformer": "docs:/skillmap/platformer",
+            "sc": "docs:/skillmap/sc",
+            "shark": "docs:/skillmap/shark",
+            "jungle": "docs:/skillmap/jungle",
+            "racer": "docs:/skillmap/racer",
+            "rockstar": "docs:/skillmap/rockstar",
+            "forest": "docs:/skillmap/forest",
+            "turkey": "docs:/skillmap/turkey",
+            "star": "docs:/skillmap/star"
         }
     },
     "galleries": {
+        "Skillmaps": "skillmaps",
         "Tutorials": "tutorials",
-        "Multipart Tutorials": "multipart-tutorials",
         "Live Coding": "live-coding",
         "Blocks Games": "blocks-games",
         "JavaScript Games": "javascript-games",
@@ -34,10 +81,14 @@
         "Community Games": "community",
         "Game Design Concepts": "concepts",
         "Graphics and Math": "graphics-math",
+        "Arts and Crafts": "arts-and-crafts",
         "Lessons": "lessons",
         "Courses": "courses",
         "Hardware": "hardware",
         "How to Make a Game Videos": "how-to-make-a-game",
         "John Park's Workshop": "john-parks-workshop"
+    },
+    "electronManifest": {
+        "latest": "v1.8.20"
     }
 }

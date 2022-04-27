@@ -1,10 +1,10 @@
 /* Import all components */
-@import 'pxtsemantic';
 @import 'pxt';
 @import 'blockly-toolbox';
 @import 'themes/default/globals/site.variables';
 @import 'themes/pxt/globals/site.variables';
 @import 'site/globals/site.variables';
+@import 'pxtsemantic';
 
 /* Reference import */
 @import (reference) "semantic.less";
@@ -20,15 +20,6 @@
     font-weight: 400;
     src: local('Share Tech Mono'),
          data-uri('../docs/static/fonts/ShareTechMono-Regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-.ui.item.logo .name {
-    font-size: 20px;
-    font-family: @headerFont;
-    font-weight: 400;
-    color: white;
-    text-transform: uppercase;
-    margin-left: 1rem;
 }
 
 .simtoolbar .ui.button,
@@ -92,6 +83,25 @@
 
 /* Small Monitor */
 @media only screen and (min-width: @computerBreakpoint) and (max-width: @largestSmallMonitor) {
+    // Display short logo ("MakeCode") instead of "MakeCode Arcade"
+    .ui.item.logo .name {
+        display: none;
+    }
+    .ui.item.logo .name-short {
+        display: block;
+    }
+}
+
+/* Small Monitor + Tablet */
+@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestSmallMonitor) {
+    // Hide Help menu in small desktop view)
+    .help-dropdown-menuitem.ui.item.dropdown {
+        display: none;
+    }
+
+    .more-dropdown-menuitem .setting-docs-item.ui.mobile.only {
+        display: block !important;
+    }
 }
 
 /* Large Monitor */
@@ -108,4 +118,9 @@
     #simulators .ui.embed .icon.xicon::before {
         top: 50%
     }
+}
+
+.hero .hero-banner-contents .action .button {
+    background-color: @teal;
+
 }

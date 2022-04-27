@@ -25,13 +25,6 @@
   "imageUrl": "/static/recipes/shark-splash/01-character.gif"
 },
 {
-  "name": "Wonder Woman 1984",
-  "description": "Wonder Woman must find the way out of a tricky maze! In that maze, she can collect artifacts to gain points, but also needs to avoid her enemies that will steal points.",
-  "url": "/recipes/wonder-woman-1984/maze",
-  "cardType": "tutorial",
-  "imageUrl": "/static/recipes/wonder-woman-1984/ww-splash3.gif"
-},
-{
   "name": "Walking Hero",
   "description": "Learn about how characters are represented in games by making your own. New Concepts: Sprites, The image editor, Moving a sprite",
   "url": "/concepts/walking-hero",

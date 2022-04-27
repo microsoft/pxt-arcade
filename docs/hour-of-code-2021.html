@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html
+    lang="en-US"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="http://www.facebook.com/2008/fbml"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Microsoft MakeCode Arcade Hour of Code™ 2021</title>
+        <meta
+            name="Description"
+            content="Join us in celebrating this year's Computer Science Education Week by playing, designing and coding your very own retro arcade games!"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=yes"
+        />
+
+        <link rel="manifest" href="/blb/sim.webmanifest" />
+
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="apple-mobile-web-app-title"
+            content="Microsoft MakeCode Arcade Hour of Code™ 2021"
+        />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="translucent-black"
+        />
+        <meta name="format-detection" content="telephone=no" />
+        <meta
+            name="application-name"
+            content="Microsoft MakeCode Arcade Hour of Code™ 2021"
+        />
+
+        <meta name="msapplication-TileColor" content="#3DC1AA" />
+        <meta
+            name="msapplication-TileImage"
+            content="/static/hour-of-code/2021/hoc-card.png"
+        />
+        <meta name="msapplication-config" content="none" />
+        <meta name="theme-color" content="#3DC1AA" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="MSMakeCode" />
+        <meta
+            name="twitter:title"
+            content="Microsoft MakeCode Arcade Hour of Code™ 2021"
+        />
+        <meta
+            name="twitter:description"
+            content="Join us in celebrating this year's Computer Science Education Week by playing, designing and coding your very own retro arcade games!"
+        />
+
+        <meta
+            name="twitter:image"
+            content="/static/hour-of-code/2021/hoc-card.png"
+        />
+
+        <meta
+            property="og:title"
+            content="Microsoft MakeCode Arcade Hour of Code™ 2021"
+        />
+        <meta
+            property="og:site_name"
+            content="Microsoft MakeCode Arcade Hour of Code™ 2021"
+        />
+        <meta
+            property="og:description"
+            content="Join us in celebrating this year's Computer Science Education Week by playing, designing and coding your very own retro arcade games!"
+        />
+
+        <meta
+            property="og:image"
+            content="/static/hour-of-code/2021/hoc-card.png"
+        />
+
+        <link
+            rel="apple-touch-icon"
+            href="/static/hour-of-code/2021/favicon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            href="/static/hour-of-code/2021/favicon.png"
+        />
+        <link
+            rel="shortcut icon"
+            href="/static/hour-of-code/2021/favicon.png"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://pxt.azureedge.net/blob/2163189fd5e35c0981ed55318415582a7c9aeb12/doccdn/semantic.css"
+            type="text/css"
+        />
+        <!-- @include scripthead.html -->
+
+        <style>
+            @font-face {
+                font-family: 'Rowdies';
+                src: url('/static/hour-of-code/2021/Rowdies/Rowdies-Bold.ttf')
+                    format('truetype');
+            }
+        </style>
+
+        <link rel="stylesheet" href="/static/hour-of-code/2021/styles.css" />
+
+        <script>
+            // TODO: update tracking for 2021
+            function handleOnLoad() {
+                var langPicker = document.querySelector('#langpicker');
+                if (langPicker) {
+                    langPicker.remove();
+                }
+            }
+        </script>
+    </head>
+
+    <body id="root" class="root background-eggplant" onload="handleOnLoad()">
+        <div id="main" role="presentation">
+            <nav
+                id="header-bar"
+                class="background-eggplant"
+                style="height: 60px"
+            >
+                <div class="header-bar-left">
+                    <a
+                        href="https://www.microsoft.com/makecode"
+                        onClick="window.pxtTickEvent('hourofcode2021.header.logo')"
+                        ><div class="header-org-logo" role="menuitem">
+                            <img
+                                src="/static/logo/Microsoft_logo_rgb_W-white_D.png"
+                                alt="Microsoft"
+                            />
+                        </div>
+                        <div class="header-org-logo-sm" role="menuitem">
+                            <img
+                                src="/static/logo/Microsoft_logo_rgb_W-white_D-square.png"
+                                alt="Microsoft"
+                            />
+                        </div>
+                        <div class="header-title" role="menuitem">
+                            <span>MakeCode</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="header-bar-right">
+                    <a
+                        class="header-icon"
+                        role="menuitem"
+                        aria-label="Return home"
+                        tabindex="0"
+                        href="https://arcade.makecode.com/"
+                        onClick="window.pxtTickEvent('hourofcode2021.header.home')"
+                    >
+                        <i
+                            class="icon home"
+                            aria-hidden="true"
+                            role="presentation"
+                        ></i>
+                    </a>
+                </div>
+            </nav>
+
+            <img
+                class="tracking"
+                src="https://code.org/api/hour/begin_microsoft_forest.png"
+                alt="tracking"
+            />
+
+            <header
+                class="hoc-header homepage background-marina"
+                style="
+                    background-image: url('./static/hour-of-code/2021/hoc-header-scene.gif');
+                "
+            >
+                <div class="header-text">
+                    <h4 class="body-font">Microsoft MakeCode Arcade</h4>
+                    <div class="title">
+                        <h1 class="display-font">Hour Of</h1>
+                        <h1 class="display-font code">
+                            Code<span class="small">™</span>
+                        </h1>
+                    </div>
+                    <h3 class="display-font">2021</h3>
+                </div>
+
+                <div
+                    class="header-background-image foreground"
+                    style="
+                        background-image: url('./static/hour-of-code/2021/hoc-header-plane.gif');
+                    "
+                ></div>
+
+                <a
+                    class="btn"
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://aka.ms/forestmap"
+                    onClick="window.pxtTickEvent('hourofcode2021.skillmap.open.launch')"
+                    ><h5 class="display-font">Launch Activity</h5></a
+                >
+            </header>
+
+            <div id="video-modal" class="modal-backdrop closed">
+                <div class="modal">
+                    <button class="btn close" onClick="modalClose()">
+                        <h5 class="display-font">
+                            <i class="icon close"></i>Close
+                        </h5>
+                    </button>
+                    <div class="video-container">
+                        <iframe
+                            id="video"
+                            width="560"
+                            height="315"
+                            src=""
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            autoplay="1"
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <script type="application/javascript">
+                document.onkeydown = function keypress(e) {
+                    if (e.key === 'Escape') {
+                        modalClose();
+                    }
+                };
+
+                function modalOpen() {
+                    window.pxtTickEvent('hourofcode2021.video.open');
+                    let modal = document.getElementById('video-modal');
+                    let video = document.getElementById('video');
+                    modal.classList.remove('closed');
+                    modal.classList.add('open');
+                    video.src =
+                        'https://www.youtube.com/embed/-_JXEcAIIy4?autoplay=1';
+                }
+
+                function modalClose() {
+                    window.pxtTickEvent('hourofcode2021.video.close');
+                    let modal = document.getElementById('video-modal');
+                    let video = document.getElementById('video');
+                    modal.classList.remove('open');
+                    modal.classList.add('closed');
+                    video.src = '';
+                }
+            </script>
+
+            <section class="hoc-section hoc-section-wide">
+                <section class="intro">
+                    <button class="video-preview" onClick="modalOpen()">
+                        <!--TODO: Any tracking for this ^ ? -->
+                        <img
+                            src="./static/hour-of-code/2021/video-thumbnail.png"
+                            alt="Save the Forest Video"
+                        />
+                    </button>
+
+                    <div class="section-text">
+                        <h3 class="title display-font sunflower">
+                            Save the Forest!
+                        </h3>
+                        <p>
+                            Technology and Computer Science is everywhere in the
+                            world around us. And it’s helping to solve some of
+                            the toughest problems we’re facing in the world.
+                        </p>
+                        <p>
+                            For this year’s Hour of Code™, let’s look at how
+                            computers and technology can help combat forest
+                            fires.
+                        </p>
+                        <p>
+                            Code a game with Microsoft MakeCode Arcade that
+                            recreates the conditions for a forest fire, and then
+                            code your fire-fighting airtanker plane to spray
+                            water and put out the flames!
+                        </p>
+                    </div>
+                </section>
+                <div class="buttons">
+                    <a
+                        class="btn"
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://aka.ms/forestmap"
+                        onClick="window.pxtTickEvent('hourofcode2021.skillmap.open.launch')"
+                    >
+                        <!--TODO: Make sure link above is correct-->
+                        <h5 class="display-font">Launch Activity</h5></a
+                    >
+                    <a
+                        class="btn secondary"
+                        href="hour-of-code/educators-2021"
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick="window.pxtTickEvent('hourofcode2021.skillmap.educator')"
+                        ><h5 class="display-font">Educator Guide</h5></a
+                    >
+                </div>
+            </section>
+
+            <section class="hoc-aside-01 background-marina">
+                <div class="wrapper">
+                    <div class="aside-text">
+                        <h3 class="title display-font">Join the Game Jam!</h3>
+                        <p>
+                            After the Hour of Code™ activity, use the skills you
+                            gained to modify your existing game or create
+                            something new to submit to this year's game jam.
+                            MakeCode is proud to announce that we are partnering
+                            with the US State Department to bring you the first
+                            <b>Global MakeCode Arcade Game Jam</b>!
+                        </p>
+                        <a
+                            class="btn"
+                            href="https://aka.ms/ArcadeGJ"
+                            onClick="window.pxtTickEvent('hourofcode2021.gamejam')"
+                            target="_blank"
+                            rel="noreferrer"
+                            ><h5 class="display-font">Learn More</h5></a
+                        >
+                    </div>
+                    <div
+                        class="hero background-sunflower"
+                        style="
+                            background-image: url('./static/hour-of-code/2021/game-jam-hero.png');
+                        "
+                    ></div>
+                </div>
+            </section>
+
+            <section class="hoc-section-01 reverse">
+                <div class="hero">
+                    <img
+                        src="./static/hour-of-code/2021/codeninjas.png"
+                        alt="Code Ninjas"
+                    />
+                </div>
+                <div class="section-text">
+                    <h3 class="display-font title sunflower">Code Ninjas</h3>
+                    <p>
+                        Code Ninjas is collaborating with Microsoft MakeCode to
+                        bring opportunities to anyone who wants to get involved
+                        during CSEd Week. Code Ninjas will be opening their
+                        doors to the public as they host Hour of Code and Game
+                        Jam sessions at no-cost. No coding experience needed.
+                    </p>
+                    <p>
+                        Visit
+                        <a
+                            href="https://codeninjas.com/CSEdWeek"
+                            target="_blank"
+                            rel="noreferrer"
+                            >codeninjas.com/CSEdWeek</a
+                        >
+                        to find a location near you.
+                    </p>
+                    <a
+                        class="btn"
+                        href="https://codeninjas.com/CSEdWeek"
+                        target="_blank"
+                        rel="noreferrer"
+                        ><h5 class="display-font">Learn More</h5></a
+                    >
+                </div>
+            </section>
+
+            <section class="hoc-section-02">
+                <div class="section-text">
+                    <h3 class="title display-font sunflower">
+                        Go beyond Hour of Code™!
+                    </h3>
+                    <p>
+                        Can’t get enough? Explore the activities below for more
+                        MakeCode fun!
+                    </p>
+                </div>
+                <div class="carousel">
+                    <div class="list">
+                        <a
+                            class="list-item display-font active"
+                            onClick="onListItemClicked(0)"
+                            data-ind="0"
+                            >Hour of Code™ 2020</a
+                        >
+                        <a
+                            class="list-item display-font"
+                            onClick="onListItemClicked(1)"
+                            data-ind="1"
+                            >Beginner's Guide to Arcade Games</a
+                        >
+                        <a
+                            class="list-item display-font"
+                            onClick="onListItemClicked(2)"
+                            data-ind="2"
+                            >Rockstar Maze</a
+                        >
+                        <a
+                            class="list-item display-font"
+                            onClick="onListItemClicked(3)"
+                            data-ind="3"
+                            >Explore the Jungle</a
+                        >
+                        <a
+                            class="list-item display-font"
+                            onClick="onListItemClicked(4)"
+                            data-ind="4"
+                            >Minecraft Hour of Code™</a
+                        >
+                        <a
+                            class="list-item display-font"
+                            onClick="onListItemClicked(5)"
+                            data-ind="5"
+                            >Micro:bit Tutorials</a
+                        >
+                    </div>
+                    <div id="carousel-body" class="body background-marina">
+                        <div class="body-overlay"></div>
+                        <a
+                            id="carousel-link"
+                            target="_blank"
+                            rel="noreferrer"
+                            class="btn"
+                            href=""
+                            onClick="window.pxtTickEvent('hourofcode2021.carousel.action', { item: slides[globalInd].id })"
+                            ><h5 id="carousel-text" class="display-font"></h5
+                        ></a>
+                    </div>
+                </div>
+                <script type="application/javascript">
+                    let slides = [
+                        {
+                            id: 'hourofcode2020',
+                            img: '/static/hour-of-code/2021/hoc-2020.png',
+                            link: 'https://arcade.makecode.com/hour-of-code-2020',
+                            text: 'Hour of Code™ 2020'
+                        },
+                        {
+                            id: 'skillmap.beginner',
+                            img: '/static/hour-of-code/2021/beginner-skillmap.png',
+                            link: 'https://arcade.makecode.com/--skillmap#beginner',
+                            text: 'Launch Skillmap'
+                        },
+                        {
+                            id: 'skillmap.rockstar',
+                            img: '/static/hour-of-code/2021/rockstar-skillmap.png',
+                            link: 'https://arcade.makecode.com/--skillmap#rockstar',
+                            text: 'Launch Skillmap'
+                        },
+                        {
+                            id: 'skillmap.jungle',
+                            img: '/static/hour-of-code/2021/jungle-skillmap.png',
+                            link: 'https://arcade.makecode.com/--skillmap#jungle',
+                            text: 'Launch Skillmap'
+                        },
+                        {
+                            id: 'minecraft',
+                            img: '/static/hour-of-code/2021/minecraft.png',
+                            link: 'https://education.minecraft.net/resources/hour-code-2020',
+                            text: 'Hour of Code™ 2021'
+                        },
+                        {
+                            id: 'microbit',
+                            img: '/static/hour-of-code/2021/microbit.png',
+                            link: 'https://makecode.microbit.org',
+                            text: 'Go to micro:bit'
+                        }
+                    ];
+
+                    let globalInd = 0;
+                    let intervalSpeed = 4000;
+
+                    changeCarousel(0);
+
+                    function intervalFunction() {
+                        globalInd = (globalInd + 1) % 6;
+                        changeCarousel(globalInd);
+                    }
+
+                    let transition = setInterval(
+                        intervalFunction,
+                        intervalSpeed
+                    );
+
+                    function onListItemClicked(ind) {
+                        window.pxtTickEvent('hourofcode2021.carousel.list', {
+                            item: slides[ind].id
+                        });
+                        clearInterval(transition);
+                        globalInd = ind;
+                        changeCarousel(globalInd);
+                        transition = setInterval(
+                            intervalFunction,
+                            intervalSpeed
+                        );
+                    }
+
+                    function changeCarousel(ind) {
+                        let linkElems =
+                            document.getElementsByClassName('list-item');
+                        let carouselBody =
+                            document.getElementById('carousel-body');
+                        let carouselLink =
+                            document.getElementById('carousel-link');
+                        let carouselText =
+                            document.getElementById('carousel-text');
+
+                        [].forEach.call(linkElems, function (el) {
+                            el.classList.remove('active');
+                        });
+
+                        linkElems[ind].classList.add('active');
+                        carouselBody.style.backgroundImage =
+                            'url(' + slides[ind].img + ')';
+                        carouselText.innerText = slides[ind].text;
+                        carouselLink.href = slides[ind].link;
+                    }
+                </script>
+            </section>
+
+            <section class="hoc-aside-02 background-papaya">
+                <div class="aside-text">
+                    <h3 class="title display-font">
+                        Follow us on Social Media
+                    </h3>
+                    <p>
+                        Share your fire-fighting game with us on social media.
+                        Tag us in your creations using @msmakecode or the
+                        hashtag #makecode. And don't forget to follow us to find
+                        out about the newest MakeCode Arcade updates, games, and
+                        competitions!
+                    </p>
+                    <div class="social-buttons">
+                        <a
+                            href="https://www.instagram.com/msmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.instagram')"
+                        >
+                            <i class="icon instagram"></i>
+                        </a>
+                        <a
+                            href="https://www.youtube.com/microsoftmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.youtube')"
+                        >
+                            <i class="icon youtube"></i>
+                        </a>
+                        <a
+                            href="https://twitter.com/msmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.twitter')"
+                        >
+                            <i class="icon twitter"></i>
+                        </a>
+                        <a
+                            href="https://www.twitch.tv/msmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.twitch')"
+                        >
+                            <i class="icon twitch"></i>
+                        </a>
+                        <a
+                            href="https://www.tiktok.com/@msmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.tiktok')"
+                        >
+                            <svg
+                                aria-hidden="true"
+                                focusable="false"
+                                data-prefix="fab"
+                                data-icon="tiktok"
+                                class="svg-inline--fa fa-tiktok fa-w-14"
+                                role="img"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 448 512"
+                            >
+                                <path
+                                    d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"
+                                ></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="hoc-footer background-papaya">
+                <div class="code-org-trademark">
+                    <p>
+                        The '<a
+                            href="http://hourofcode.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            >Hour of Code™</a
+                        >' is a nationwide initiative by
+                        <a
+                            href="http://csedweek.org/"
+                            target="_blank"
+                            rel="noreferrer"
+                            >Computer Science Education Week</a
+                        >
+                        and
+                        <a
+                            href="http://code.org/"
+                            target="_blank"
+                            rel="noreferrer"
+                            >Code.org</a
+                        >
+                        to introduce millions of students to one hour of
+                        computer science and computer programming
+                    </p>
+                </div>
+                <div class="msft">
+                    <img
+                        src="/static/logo/Microsoft_logo_rgb_W-white_D.png"
+                        alt="Microsoft"
+                    />
+                </div>
+                <div class="text-content">
+                    <a
+                        href="https://www.microsoft.com/makecode/about"
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick="window.pxtTickEvent('hourofcode2021.footer.about')"
+                        >Microsoft MakeCode</a
+                    >
+                    <a
+                        href="https://www.microsoft.com/legal/terms-of-use"
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick="window.pxtTickEvent('hourofcode2021.footer.terms')"
+                        >Terms of Use</a
+                    >
+                    <a
+                        href="https://privacy.microsoft.com/privacystatement"
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick="window.pxtTickEvent('hourofcode2021.footer.privacy')"
+                        >Privacy</a
+                    >
+                </div>
+            </footer>
+        </div>
+
+        <!-- @include tracking.html -->
+        <!-- @include tickevent.html -->
+
+        <!-- TODO: update usabilia for HoC 2021 -->
+        <!-- begin usabilla live embed code -->
+        <script type="text/javascript">
+            /*{literal}<![CDATA[*/ window.lightningjs ||
+                (function (c) {
+                    function g(b, d) {
+                        d && (d += (/\?/.test(d) ? '&' : '?') + 'lv=1');
+                        c[b] ||
+                            (function () {
+                                var i = window,
+                                    h = document,
+                                    j = b,
+                                    g = h.location.protocol,
+                                    l = 'load',
+                                    k = 0;
+                                (function () {
+                                    function b() {
+                                        a.P(l);
+                                        a.w = 1;
+                                        c[j]('_load');
+                                    }
+                                    c[j] = function () {
+                                        function m() {
+                                            m.id = e;
+                                            return c[j].apply(m, arguments);
+                                        }
+                                        var b,
+                                            e = ++k;
+                                        b =
+                                            this && this != i
+                                                ? this.id || 0
+                                                : 0;
+                                        (a.s = a.s || []).push([
+                                            e,
+                                            b,
+                                            arguments
+                                        ]);
+                                        m.then = function (b, c, h) {
+                                            var d = (a.fh[e] = a.fh[e] || []),
+                                                j = (a.eh[e] = a.eh[e] || []),
+                                                f = (a.ph[e] = a.ph[e] || []);
+                                            b && d.push(b);
+                                            c && j.push(c);
+                                            h && f.push(h);
+                                            return m;
+                                        };
+                                        return m;
+                                    };
+                                    var a = (c[j]._ = {});
+                                    a.fh = {};
+                                    a.eh = {};
+                                    a.ph = {};
+                                    a.l = d
+                                        ? d.replace(
+                                              /^\/\//,
+                                              (g == 'https:' ? g : 'http:') +
+                                                  '//'
+                                          )
+                                        : d;
+                                    a.p = { 0: +new Date() };
+                                    a.P = function (b) {
+                                        a.p[b] = new Date() - a.p[0];
+                                    };
+                                    a.w && b();
+                                    i.addEventListener
+                                        ? i.addEventListener(l, b, !1)
+                                        : i.attachEvent('on' + l, b);
+                                    var q = function () {
+                                        function b() {
+                                            return [
+                                                '<head></head><',
+                                                c,
+                                                ' onload="var d=',
+                                                n,
+                                                ";d.getElementsByTagName('head')[0].",
+                                                d,
+                                                '(d.',
+                                                g,
+                                                "('script')).",
+                                                i,
+                                                "='",
+                                                a.l,
+                                                '\'"></',
+                                                c,
+                                                '>'
+                                            ].join('');
+                                        }
+                                        var c = 'body',
+                                            e = h[c];
+                                        if (!e) return setTimeout(q, 100);
+                                        a.P(1);
+                                        var d = 'appendChild',
+                                            g = 'createElement',
+                                            i = 'src',
+                                            k = h[g]('div'),
+                                            l = k[d](h[g]('div')),
+                                            f = h[g]('iframe'),
+                                            n = 'document',
+                                            p;
+                                        k.style.display = 'none';
+                                        e.insertBefore(k, e.firstChild).id =
+                                            o + '-' + j;
+                                        f.frameBorder = '0';
+                                        f.id = o + '-frame-' + j;
+                                        /MSIE[ ]+6/.test(navigator.userAgent) &&
+                                            (f[i] = 'javascript:false');
+                                        f.allowTransparency = 'true';
+                                        l[d](f);
+                                        try {
+                                            f.contentWindow[n].open();
+                                        } catch (s) {
+                                            (a.domain = h.domain),
+                                                (p =
+                                                    'javascript:var d=' +
+                                                    n +
+                                                    ".open();d.domain='" +
+                                                    h.domain +
+                                                    "';"),
+                                                (f[i] = p + 'void(0);');
+                                        }
+                                        try {
+                                            var r = f.contentWindow[n];
+                                            r.write(b());
+                                            r.close();
+                                        } catch (t) {
+                                            f[i] =
+                                                p +
+                                                'd.write("' +
+                                                b().replace(
+                                                    /"/g,
+                                                    String.fromCharCode(92) +
+                                                        '"'
+                                                ) +
+                                                '");d.close();';
+                                        }
+                                        a.P(2);
+                                    };
+                                    a.l && setTimeout(q, 0);
+                                })();
+                            })();
+                        c[b].lv = '1';
+                        return c[b];
+                    }
+                    var o = 'lightningjs',
+                        k = (window[o] = g(o));
+                    k.require = g;
+                    k.modules = c;
+                })({});
+            window.usabilla_live = lightningjs.require(
+                'usabilla_live',
+                '//w.usabilla.com/04a02d64289a.js'
+            );
+            /*]]>{/literal}*/
+        </script>
+        <!-- end usabilla live embed code -->
+    </body>
+</html>

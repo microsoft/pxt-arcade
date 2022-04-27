@@ -76,17 +76,22 @@ Waveform        | Value
 triangle        | 1
 sawtooth        | 2
 sine            | 3
-metallic        | 4
+tunable noise   | 4
 noise           | 5
 square (10%)    | 11
 square (20%)    | 12
 square (30%)    | 13
 square (40%)    | 14
 square (50%)    | 15
+cycle 16        | 16
+cycle 32        | 17
+cycle 64        | 18
 
-The `metallic` tone contains a (very pseudo) random sample, which sounds metallic.
+The `noise` is an actual white noise. It ignores the requested frequency or note.
 
-The `noise` is an actual white noise.
+The `tunable noise` tone contains a pseudorandom sample. At high frequency it sounds similar to white noise, at low frequency it produces irregular crackling noises.
+
+The `cycle 16`, `cycle 32`, and `cycle 64` waveforms are repeating pseudorandom patterns with a cycle length of 16/32/64 samples respectively. They sound like a noise-distorted square wave, with short cycles being more regular and long cycles being noisier.
 
 ### Command: set end frequency
 

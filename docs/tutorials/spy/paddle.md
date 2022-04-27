@@ -1,12 +1,12 @@
 # Paddle!
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 **Paddle** is a 2 player variation of the famous pong game!
 
 ![A ball bouncing on paddles](/static/tutorials/paddle.gif)
 
-## Step 1
+## {Step 1}
 
 Let's start by making the ball. Add code to ``||sprites:create the sprite||`` for
 the ball. Name the sprite variable to ``||variables:ball||``.
@@ -22,7 +22,7 @@ let ball = sprites.create(img`
 `, SpriteKind.Player)
 ```
 
-## Step 2
+## {Step 2}
 
 Put in code to make the ``||variables:ball||`` ``||sprites:bounce on walls||``
 and ``||sprites:set the velocity||`` to ``vx`` of ``100`` and ``vy`` of ``100``.
@@ -37,10 +37,10 @@ let ball = sprites.create(img`
     . . . c c b b .
 `, SpriteKind.Player)
 ball.setVelocity(100, 100)
-ball.setFlag(SpriteFlag.BounceOnWall, true)
+ball.setBounceOnWall(true)
 ```
 
-## Step 3
+## {Step 3}
 
 Use some more code to set the ``y`` of ``||variables:ball||`` to a ``||math:random||``
 value between ``0`` and ``120``.
@@ -55,11 +55,11 @@ let ball = sprites.create(img`
     . . . c c b b .
 `, SpriteKind.Player)
 ball.setVelocity(100, 100)
-ball.setFlag(SpriteFlag.BounceOnWall, true)
+ball.setBounceOnWall(true)
 ball.y = Math.randomRange(0, 120)
 ```
 
-## Step 4
+## {Step 4}
 
 Create a new function, ``create_ball``, and move the code you added in the previous
 steps into this function. Keep this function for later.
@@ -75,14 +75,14 @@ function create_ball () {
         . . . c c b b .
     `, SpriteKind.Player)
     ball.setVelocity(100, 100)
-    ball.setFlag(SpriteFlag.BounceOnWall, true)
+    ball.setBounceOnWall(true)
     ball.y = Math.randomRange(0, 120)
 }
 let ball: Sprite = null
 create_ball()
 ```
 
-## Step 5
+## {Step 5}
 
 Let's work on the left paddle. Add code to ``||sprites:create a sprite||`` for
 ``||variables:left_paddle||`` and change the kind to ``LeftPaddles``.
@@ -111,7 +111,7 @@ let left_paddle = sprites.create(img`
 `, SpriteKind.LeftPaddles)
 ```
 
-## Step 6
+## {Step 6}
 
 Make the ``||variables:left_paddle||`` move up and down using code for the
 ``||controller:controller buttons||``. Use the velocity of `0` for ``||controller:vx||`` and `150`
@@ -142,7 +142,7 @@ let left_paddle = sprites.create(img`
 controller.moveSprite(left_paddle, 0, 150)
 ```
 
-## Step 7
+## {Step 7}
 
 Add code to ``||sprites:set the left||`` position of ``||variables:left_paddle||`` to ``0``.
 Also, put in more code to make ``||variables:left_paddle||`` ``||sprites:stay in screen||``.
@@ -170,11 +170,11 @@ let left_paddle = sprites.create(img`
     8 8 1
 `, SpriteKind.LeftPaddles)
 controller.moveSprite(left_paddle, 0, 150)
-left_paddle.setFlag(SpriteFlag.StayInScreen, true)
+left_paddle.setStayInScreen(true)
 left_paddle.left = 0
 ```
 
-## Step 8
+## {Step 8}
 
 Create a new function, ``create_left_paddle``, and move the code from ``||loops:on start||``
 into it. Keep this function for later.
@@ -204,13 +204,13 @@ function create_left_paddle() {
         8 8 1
     `, SpriteKind.LeftPaddles)
     controller.moveSprite(left_paddle, 0, 150)
-    left_paddle.setFlag(SpriteFlag.StayInScreen, true)
+    left_paddle.setStayInScreen(true)
     left_paddle.left = 0
 }
 create_left_paddle()
 ```
 
-## Step 9
+## {Step 9}
 
 Create another function, ``create_right_paddle``, for the ``||variables:right_paddle||``.
 Copy all of the code from the ``create_left_paddle`` function and put it in this new
@@ -241,14 +241,14 @@ function create_right_paddle() {
         8 8 1
     `, SpriteKind.LeftPaddles)
     controller.moveSprite(right_paddle, 0, 150)
-    right_paddle.setFlag(SpriteFlag.StayInScreen, true)
+    right_paddle.setStayInScreen(true)
     right_paddle.left = 0
 }
 let right_paddle: Sprite = null
 create_right_paddle()
 ```
 
-## Step 10
+## {Step 10}
 
 Let's make some more changes inside of ``create_right_paddle``. Set the kind of the paddle sprite to ``RightPaddles``. Change the position setting of the paddle from ``||variables:left||`` to
 ``||variables:right||`` and set the value to `160`. To make this a 2 player game, replace the
@@ -279,14 +279,14 @@ function create_right_paddle() {
         8 8 1
     `, SpriteKind.RightPaddles)
     controller.player2.moveSprite(right_paddle, 0, 150)
-    right_paddle.setFlag(SpriteFlag.StayInScreen, true)
+    right_paddle.setStayInScreen(true)
     right_paddle.right = 160
 }
 let right_paddle: Sprite = null
 create_right_paddle()
 ```
 
-## Step 11
+## {Step 11}
 
 ``||functions:Call||`` all 3 functions in the ``||loops:on start||``.
 
@@ -305,7 +305,7 @@ function create_ball () {
         . . . c c b b .
     `, SpriteKind.Player)
     ball.setVelocity(100, 100)
-    ball.setFlag(SpriteFlag.BounceOnWall, true)
+    ball.setBounceOnWall(true)
     ball.y = Math.randomRange(0, 120)
 }
 function create_left_paddle() {
@@ -328,7 +328,7 @@ function create_left_paddle() {
         8 8 1
     `, SpriteKind.LeftPaddles)
     controller.moveSprite(left_paddle, 0, 150)
-    left_paddle.setFlag(SpriteFlag.StayInScreen, true)
+    left_paddle.setStayInScreen(true)
     left_paddle.left = 0
 }
 function create_right_paddle() {
@@ -351,7 +351,7 @@ function create_right_paddle() {
         8 8 1
     `, SpriteKind.RightPaddles)
     controller.player2.moveSprite(right_paddle, 0, 150)
-    right_paddle.setFlag(SpriteFlag.StayInScreen, true)
+    right_paddle.setStayInScreen(true)
     right_paddle.right = 160
 }
 let ball: Sprite = null
@@ -362,9 +362,9 @@ create_left_paddle()
 create_right_paddle()
 ```
 
-## Step 12
+## {Step 12}
 
-Add an event that runs code when ``||variables:ball||`` ``||sprites:overlaps||`` 
+Add an event that runs code when ``||variables:ball||`` ``||sprites:overlaps||``
 with ``||variables:left_paddle||``.
 
 ```blocks
@@ -375,7 +375,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.LeftPaddles, function (sprite, o
 })
 ```
 
-## Step 13
+## {Step 13}
 
 Use the inverse of the horizontal speed (``vx``) of ``||variables:sprite||`` to simulate
 the bounce on the paddle... and ``||info:change score||`` of the player by ``1``.
@@ -390,7 +390,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.LeftPaddles, function (sprite, o
 })
 ```
 
-## Step 14
+## {Step 14}
 
 Add another event that runs code when ``||variables:ball||`` ``||sprites:overlaps||``
 with ``||variables:right_paddle||``. Invert ``vx`` the right paddle's ``vx`` and

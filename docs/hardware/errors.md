@@ -216,3 +216,7 @@ This section only lists examples of some of the most common errors seen in MakeC
 For a full list, see the [internal error codes page](https://makecode.com/js/errorcodes).
 
 ### ~
+
+```package
+color-coded-tilemap
+```

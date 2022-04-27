@@ -1,0 +1,372 @@
+
+{
+    "rules": {
+        "path": "/static/gamejam/jams/time/rules.md"
+    },
+    "start": "2021-5-3 00:00:01 GMT-0700",
+    "end": "2021-5-17 23:59:59 GMT-0700",
+    "featured": [
+        {
+            "id": "12051-52643-75656-27166",
+            "title": "Tomb raider",
+            "author": "Thomas_s",
+            "description": "Adventure through an ancient tomb in this tough-as-nails platformer. See if you can find all 13 ancient gems and the 3 exits before collapse!"
+        },
+        {
+            "id": "65329-73524-64041-09452",
+            "title": "The Wanderer",
+            "author": "DahbixLP",
+            "description": "Explore space and gather materials in this polished, resource-collection game as you try to fix your hyperdrive and escape the supernova!"
+        },
+        {
+            "id": "18905-47762-39268-22513",
+            "title": "Timed Platformer",
+            "author": "fd268",
+            "description": "Make sure you don't run out of time as you play through all twelve levels of this creative platformer!"
+        },
+        {
+            "id": "88379-32882-11701-72372",
+            "title": "The Attack of the Serpents",
+            "author": "UnsignedArduino",
+            "description": "Dive into the rich world of The Attack of the Serpents as you battle legions of snakes with the power of time at your hand!"
+        },
+        {
+            "id": "40197-18454-82229-31469",
+            "title": "Tau Dilation",
+            "author": "Delta",
+            "description": "The Titan of Time, Kronos, has escaped from Tartarus and it is up to you to defeat him on his own terms."
+        },
+        {
+            "id": "35092-38497-85434-62286",
+            "title": "Time Man",
+            "author": "Rishi",
+            "description": "A complex, ambitious puzzle-platformer where you can freeze time to stop flying boulders. Be careful of quicksand and slime!"
+        },
+        {
+            "id": "24218-66945-78169-98108",
+            "title": "Time Quest",
+            "author": "Rocket Scion",
+            "description": "Travel through time to take photos, collect items, and meet friendly and not-so-friendly locals in this beautiful dungeon crawler."
+        },
+        {
+            "id": "56203-12068-28996-67940",
+            "title": "Time Flies (Different Take)",
+            "author": "BlockyChamp",
+            "description": "A creative twist on 'Time Flies' with a lot of depth! Catch time and lives as you try to beat your high score."
+        },
+        {
+            "id": "28170-65925-97085-38467",
+            "title": "Timing and Patience",
+            "author": "EgeoTube Gamez",
+            "description": "A simple, addicitive game where you must use timing and patience to try and nab the high score. Try out the different difficulty levels!"
+        },
+        {
+            "id": "09641-64692-55182-88904",
+            "title": "Time Over",
+            "author": "Daniela",
+            "description": "A beautiful game with a great premise! Collect all the numbers for your clock before time runs out!"
+        },
+        {
+            "id": "61260-89058-32987-83888",
+            "title": "fast restaurant",
+            "author": "demoCrash",
+            "description": "Deliver the right dishes to the customer as soon as possible in this creative, challenging game."
+        },
+        {
+            "id": "19854-09262-25388-69397",
+            "title": "4-in-1 time-related 8-bit fun",
+            "author": "Samuel G",
+            "description": "Four fun, unique games for the price of one! Make sure you play through each of these time-related minigames."
+        },
+        {
+            "id": "12663-88251-31248-05940",
+            "title": "Shrink 'N' Grow",
+            "author": "Agent 14"
+        },
+        {
+            "id": "43601-79018-70540-71516",
+            "title": "The Burger & The Duck",
+            "author": "E-EnerG Gamecentral"
+        },
+        {
+            "id": "68228-73362-22790-00606",
+            "title": "Rythm Game",
+            "author": "White Skeppy310"
+        },
+        {
+            "id": "04368-05616-26467-03349",
+            "title": "Rock Around The Clock",
+            "author": "Alex G"
+        },
+        {
+            "id": "92887-98081-01927-07188",
+            "title": "The squarenator",
+            "author": "TheOdOne"
+        },
+        {
+            "id": "59809-55449-28447-00887",
+            "title": "Chase the Pizza (Invisible Maze Version!)",
+            "author": "joshy_dubya"
+        },
+        {
+            "id": "01848-24652-71512-77216",
+            "title": "BABY KAIJU NOM NOM",
+            "author": "Anonymous"
+        },
+        {
+            "id": "39662-55515-02517-40102",
+            "title": "Burgers & Tomatos",
+            "author": "Freddie_in_a_quonset"
+        },
+        {
+            "id": "42745-53994-57998-67485",
+            "title": "Time Stopper",
+            "author": "XDlol"
+        },
+        {
+            "id": "30445-92841-49429-97896",
+            "title": "Frenetic Jungle",
+            "author": "HBalloon"
+        },
+        {
+            "id": "84710-56856-82784-71061",
+            "title": "Time Flies",
+            "author": "SilentGaming"
+        },
+        {
+            "id": "84204-53947-81636-40195",
+            "title": "Last 30 seconds of the universe",
+            "author": "felixtsu"
+        },
+        {
+            "id": "09238-65050-12551-40908",
+            "title": "Bomb Defuse (RP)",
+            "author": "DahbixLP"
+        },
+        {
+            "id": "73795-35071-58626-49245",
+            "title": "Time Flies By",
+            "author": "MakeCodePro1964"
+        },
+        {
+            "id": "61993-81494-45373-91879",
+            "title": "Killing Time",
+            "author": "Dr. Ludos"
+        },
+        {
+            "id": "25844-74470-45677-95030",
+            "title": "Time Stopper Tommy",
+            "author": "logic_lab"
+        },
+        {
+            "id": "92741-88760-26118-86288",
+            "title": "Running Back In Time",
+            "author": "gideonmayhew"
+        },
+        {
+            "id": "30418-01173-18811-61378",
+            "title": "Flying Through Time",
+            "author": "lucasmayhew"
+        },
+        {
+            "id": "09514-52558-23866-63415",
+            "title": "Maze time",
+            "author": "noobalo5"
+        },
+        {
+            "id": "18463-60946-96060-90098",
+            "title": "Mario RipOff 2021",
+            "author": "thesonicfan192"
+        },
+        {
+            "id": "48329-11330-24936-94155",
+            "title": "Rewind Redux 1 -The Puzzle of Time",
+            "author": "Gokul S"
+        },
+        {
+            "id": "47881-19494-31896-88121",
+            "title": "Extinction Game",
+            "author": "Ruben"
+        },
+        {
+            "id": "62555-64802-89325-08776",
+            "title": "Wedding just in Time",
+            "author": "Julia"
+        },
+        {
+            "id": "39717-95363-86247-39000",
+            "title": "Don´t waste your time (No pierdas el tiempo)",
+            "author": "Carla"
+        },
+        {
+            "id": "57440-27664-16182-05944",
+            "title": "Hurry Harry",
+            "author": "Marta"
+        },
+        {
+            "id": "43148-71378-34208-26146",
+            "title": "Los Robots del tiempo",
+            "author": "Roberto"
+        },
+        {
+            "id": "97340-44441-39986-75316",
+            "title": "Padre no hay mas enfadado (Angry father)",
+            "author": "Izhan"
+        },
+        {
+            "id": "77226-50118-20326-90581",
+            "title": "Time goes Fast",
+            "author": "Alba"
+        },
+        {
+            "id": "91908-22561-98418-66630",
+            "title": "Pause the time",
+            "author": "Erika"
+        },
+        {
+            "id": "73825-07713-66142-00284",
+            "title": "A tiempo con Mario  (Mario in Time)",
+            "author": "Nico"
+        },
+        {
+            "id": "29586-12392-41776-79758",
+            "title": "Problemas Temporales - Time Problems",
+            "author": "Carlos"
+        },
+        {
+            "id": "58350-87553-63748-22182",
+            "title": "Freight Frenzy",
+            "author": "nekolink330"
+        },
+        {
+            "id": "48506-74587-34576-88447",
+            "title": "Sandman's Sojourn",
+            "author": "Nick Boots"
+        },
+        {
+            "id": "87495-27851-67777-03452",
+            "title": "Guerra de Dioses (War of Gods)",
+            "author": "Blanca"
+        },
+        {
+            "id": "39697-95718-82872-45842",
+            "title": "Glitch",
+            "author": "Web_Headed_Games"
+        },
+        {
+            "id": "03731-24623-05343-15552",
+            "title": "DinoDenki Time",
+            "author": "Nico"
+        },
+        {
+            "id": "13955-38513-93884-72453",
+            "title": "Chicken time",
+            "author": "Samuel"
+        },
+        {
+            "id": "09187-15057-60704-09504",
+            "title": "escape the maze",
+            "author": "gusiscute64"
+        },
+        {
+            "id": "39100-58037-71323-23786",
+            "title": "Timed Runner",
+            "author": "fd268"
+        },
+        {
+            "id": "25407-78394-36544-09811",
+            "title": "Cup of Tea",
+            "author": "Anonymous"
+        },
+        {
+            "id": "44887-82902-33911-90246",
+            "title": "JUST TIME",
+            "author": "NoValues"
+        },
+        {
+            "id": "84710-56856-82784-71061",
+            "title": "Time Flies",
+            "author": "SilentGaming"
+        },
+        {
+            "id": "34247-21031-05748-04259",
+            "title": "Catch the Flies in Time!",
+            "author": "LauraCoder"
+        },
+        {
+            "id": "10139-00748-15350-42729",
+            "title": "detonator",
+            "author": "cryptomite"
+        },
+        {
+            "id": "20783-42583-15473-15781",
+            "title": "Car_Maze",
+            "author": "Renee O"
+        },
+        {
+            "id": "38751-63663-91719-78665",
+            "title": "Garbage Collector",
+            "author": "Joshua P :D"
+        },
+        {
+            "id": "49480-62488-97532-80328",
+            "title": "Car Jumper",
+            "author": "Ben L."
+        },
+        {
+            "id": "19039-61441-33696-78263",
+            "title": "TIME BOMB",
+            "author": "@rgo2006"
+        },
+        {
+            "id": "44650-05950-84497-89698",
+            "title": "babypenguin room escape",
+            "author": "JunJiwoo"
+        },
+        {
+            "id": "20181-94023-65958-31426",
+            "title": "Tank Defend Timed",
+            "author": "Cyberlocky"
+        },
+        {
+            "id": "58200-18055-84061-78046",
+            "title": "Tim (the time machine)",
+            "author": "E-EnerG Gamecentral"
+        },
+        {
+            "id": "01328-78153-87113-54613",
+            "title": "Time Climb",
+            "author": "The Tassie Two"
+        },
+        {
+            "id": "28234-80889-75196-84941",
+            "title": "Time sprint ",
+            "author": "Alex C"
+        },
+        {
+            "id": "76574-82283-53837-47808",
+            "title": "Drive Until Dawn",
+            "author": "Cam"
+        },
+        {
+            "id": "18329-44039-92547-78466",
+            "title": "True Love Time Machine",
+            "author": "Dylan James C The 1st"
+        },
+        {
+            "id": "67372-32881-17672-81630",
+            "title": "Cherry On Top",
+            "author": "Israeli Mapper"
+        },
+        {
+            "id": "23794-23627-23947-81462",
+            "title": "go back in time (time machine)",
+            "author": "girlwhocode"
+        },
+        {
+            "id": "21921-69081-33504-86653",
+            "title": "Hunter Time on a Mission",
+            "author": "MangoFLam3"
+        }
+    ]
+}

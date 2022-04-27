@@ -1,8 +1,5 @@
 // there's no UF2 bootloader for 52833 yet, so we specify example configuration here
 namespace config {
-    export const PIN_BTN_A = DAL.P0_14
-    export const PIN_BTN_B = DAL.P0_23
-
     export const PIN_BTNMX_LATCH = DAL.P0_9
     export const PIN_BTNMX_CLOCK = DAL.P1_0
     export const PIN_BTNMX_DATA = DAL.P0_1
@@ -12,7 +9,9 @@ namespace config {
     export const PIN_BTN_UP = 1051
     export const PIN_BTN_DOWN = 1052
     export const PIN_BTN_RIGHT = 1053
-    export const PIN_BTN_MENU = 1054
+    export const PIN_BTN_A = 1054
+    export const PIN_BTN_B = 1055
+    export const PIN_BTN_MENU = 1056
 
     export const PIN_JACK_SND = DAL.P0_0
 
@@ -22,6 +21,9 @@ namespace config {
     export const PIN_DISPLAY_BL = DAL.P0_26
     export const PIN_DISPLAY_DC = DAL.P0_10
     export const PIN_DISPLAY_RST = DAL.P1_2
+
+    // Jacdac, when jacdaptor is connected, is on the accessibility pin (P12)
+    export const PIN_JACK_TX = DAL.P0_12
 
     export const DISPLAY_WIDTH = 160
     export const DISPLAY_HEIGHT = 128

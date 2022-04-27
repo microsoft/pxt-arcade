@@ -30,7 +30,7 @@ Create a game where the player must avoid asteroids for 30 seconds to win.
 
 First, create a ``||sprites:sprite||`` of kind ``Player`` that
 ``||controller:moves with buttons||``.
-Set the ``||sprites:stay in screen||`` flag to ``||logic:true||``.
+Set the ``||sprites:stay in screen||`` flag to ``||logic:on||``.
 
 Use an ``||game:on game update interval||`` event that creates asteroid
 ``||sprites:projectiles||`` every **500 ms** that move across the screen
@@ -125,7 +125,7 @@ let mySprite: Sprite = sprites.create(img`
 `, SpriteKind.Player);
 controller.moveSprite(mySprite, 100, 0);
 mySprite.y = 100;
-mySprite.setFlag(SpriteFlag.StayInScreen, true);
+mySprite.setStayInScreen(true);
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     sprites.createProjectile(img`1`, 0, -60, SpriteKind.Projectile, mySprite);

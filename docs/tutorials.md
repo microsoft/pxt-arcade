@@ -1,7 +1,7 @@
 # Tutorials
 
 
-## Getting started
+## {Getting started}
 
 ```codecard
 [
@@ -22,6 +22,20 @@
     "editor": "py",
     "cardType": "tutorial"
   }]
+}, {
+  "name": "Flee My Valentine",
+  "description": "Edit the code to make your own Valentine's game where your heart gets bigger and smaller as you go!",
+  "url": "/tutorials/valentine",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/valentine/valentine.png",
+  "largeImageUrl": "/static/tutorials/valentine/valentine.gif"
+}, {
+  "name": "Time Flies",
+  "description": "Help a frog catch a fly before the timer runs out in this game jam themed tutorial!",
+  "url": "/tutorials/froggy",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/froggy/card.png",
+  "largeImageUrl": "/static/tutorials/froggy/frog.png"
 }, {
   "name": "Happy Flower",
   "description": "Create a flower that sends back happy bees",
@@ -64,7 +78,22 @@
   "imageUrl": "/static/tutorials/galga.png",
   "largeImageUrl": "/static/tutorials/galga.gif",
   "videoUrl": "/static/tutorials/galga.mp4",
-  "otherActions": []
+  "otherActions": [{
+    "url": "/tutorials/spy/galga",
+    "editor": "js",
+    "cardType": "tutorial"
+  }, {
+    "url": "/tutorials/spy/galga",
+    "editor": "py",
+    "cardType": "tutorial"
+  }]
+}, {
+  "name": "Winter",
+  "description": "Help the snow people catch snowflakes!",
+  "url": "/tutorials/winter",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/winter/winter.png",
+  "largeImageUrl": "/static/tutorials/winter/winter.gif"
 }, {
   "name": "Free Throw",
   "description": "Take your best shot and slam dunk this Basketball free throw game!",
@@ -128,11 +157,19 @@
   "imageUrl": "/static/tutorials/maze.png",
   "largeImageUrl": "/static/tutorials/maze.gif",
   "videoUrl": "/static/tutorials/maze.mp4"
+}, {
+  "name": "Side Scroller",
+  "description": "Make a side-scrolling car racing game to jump over obstacles and win the race.",
+  "url": "/recipes/side-scroller/01-background",
+  "cardType": "tutorial",
+  "imageUrl": "/static/recipes/side-scroller/car-race.png",
+  "largeImageUrl": "/static/recipes/side-scroller/car-race.gif",
+  "videoUrl": "/static/recipes/side-scroller/car-race.mp4"
 }
 ]
 ```
 
-## See Also
+## {See Also}
 
 [Eat the Doughnut](/tutorials/eat-the-doughnut),
 [Maze](/tutorials/maze),

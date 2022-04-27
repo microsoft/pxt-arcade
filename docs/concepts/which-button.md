@@ -2,11 +2,11 @@
 
 [Open this tutorial in the editor!](/#tutorial:/concepts/which-button)
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 The ``||info:Info||`` category has a number of properties that help handle common behaviors in games. By default, these properties show up on screen as soon as they are set, allowing for an easy way to give the people playing your game information about how well they are doing.
 
-## Step 1 @fullscreen
+## {Step 1 @fullscreen}
 
 Find ``||info:set score to 0||`` in ``||info:Info||``, and drag it into ``||loops:on start||``.
 
@@ -16,7 +16,7 @@ This will set the initial score of the game to 0; notice how the score now appea
 info.setScore(0)
 ```
 
-## Step 2 @fullscreen
+## {Step 2 @fullscreen}
 
 Find ``||info:set life to 3||`` in ``||info:Info||``, and drag it into ``||loops:on start||``. Change the 3 to 5.
 
@@ -27,7 +27,7 @@ info.setScore(0)
 info.setLife(5)
 ```
 
-## Step 3 @fullscreen
+## {Step 3 @fullscreen}
 
 Find ``||info:start countdown 10 (s)||`` in ``||info:Info||``, and drag it into ``||loops:on start||``.
 
@@ -39,7 +39,7 @@ info.setLife(5)
 info.startCountdown(10)
 ```
 
-## Step 4 @fullscreen
+## {Step 4 @fullscreen}
 
 Find ``||controller:on A button pressed||`` in ``||controller:Controller||``, and drag it into the workspace.
 
@@ -52,7 +52,7 @@ info.setLife(5)
 info.startCountdown(10)
 ```
 
-## Step 5 @fullscreen
+## {Step 5 @fullscreen}
 
 Find ``||info:change score by 1||`` in ``||info:Info||``, and drag it into ``||controller:on A button pressed||``.
 
@@ -67,9 +67,9 @@ info.setLife(5)
 info.startCountdown(10)
 ```
 
-## Step 6 @fullscreen
+## {Step 6 @fullscreen}
 
-Get another ``||controller:on any button pressed||``, and drag it into the workspace. Change ``||controller:any||`` to ``||controller:B||``.
+Get another ``||controller:on A button pressed||``, and drag it into the workspace. Change ``||controller:A||`` to ``||controller:B||``.
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -83,7 +83,7 @@ info.setLife(5)
 info.startCountdown(10)
 ```
 
-## Step 7 @fullscreen
+## {Step 7 @fullscreen}
 
 Find ``||info:change life by -1||`` in ``||info:Info||``, and drag it into ``||controller:on B button pressed||``.
 
@@ -101,6 +101,6 @@ info.setLife(5)
 info.startCountdown(10)
 ```
 
-## Complete @fullscreen
+## {Complete @fullscreen}
 
 Congratulations, you have completed your game! This one may be simple - with the only way to lose life being to press the wrong button - but the blocks can be combined with others, like sprite overlap events, to make games where players are rewarded or punished based on their performance.

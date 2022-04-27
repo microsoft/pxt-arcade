@@ -50,81 +50,7 @@ Go to the drop down in the block and select star field to create an outer space 
 ![Animation showing the completion of the tilemap from this set](/static/lessons/dance-party/drawing-tilemap.gif)
 
 ```blocks
-namespace myTiles {
-    //% blockIdentity=images._tile
-    export const tile0 = img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `
-    //% blockIdentity=images._tile
-    export const tile1 = img`
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    `
-    //% blockIdentity=images._tile
-    export const tile2 = img`
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-    `
-}
-tiles.setTilemap(tiles.createTilemap(
-    hex`0a0008000202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020201010101010101010101`,
-    img`
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-    `,
-    [myTiles.tile0,myTiles.tile1,myTiles.tile2],
-    TileScale.Sixteen
-))
-
+tiles.setTilemap(tilemap`level`)
 effects.starField.startScreenEffect()
 ```
 
@@ -192,7 +118,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Part Four: Setting Speed Variables
 
-To get started with our speed variables, drag a ``||variables:set var to||`` and drag it into start. Rename the variable to speed and set it to ``40``.
+To get started with our speed variables, drag a ``||variables:set var to||`` and drag it into ``||loops:on start||``. Rename the variable to speed and set it to ``40``.
 
 ```blocks
 let speed = 40
@@ -214,7 +140,7 @@ game.onUpdateInterval(2000, function () {
 
 ## Part Five: Spawning Projectiles
 
-Every half a second we want the projectiles to spawn. So go into ``||game:Game||`` and grab ``||game:on game update every ms||`` and place it in your workspace. Set the interval time at ``500 ms``. Next, we want to choose which "lane" to spawn our projectile in. We'll need a lane variable for this. To create this variable go into ``||variables:Variables||`` and grab ``||variables:set var to||``. Rename the variable to ``lane`` and then grab a ``||math:pick random||`` from ``||math:Math||`` and place it after the to in our ``||variables:set lane to||``. Set the first number to ``1`` and the second to ``4``.
+Every half a second we want the projectiles to spawn. So go into ``||game:Game||`` and grab ``||game:on game update every ms||`` and place it in your workspace. Set the interval time at ``500 ms``. Next, we want to choose which "lane" to spawn our projectile in. We'll need a lane variable for this. To create this variable, go into ``||variables:Variables||`` and click on **Make a Variable**. Set the name of the new variable as ``lane``. Drag the ``||set lane to||`` block into ``||game:on game update every ms||``. Grab a ``||math:pick random||`` from ``||math:Math||`` and place it after the **to** in our ``||variables:set lane to||``. Set the first number to ``1`` and the second to ``4`` in ``||math:pick random||``.
 
 Now we want to create the projectiles for each lane. Grab an ``||logic: if then else if||`` block from ``||logic:Logic||`` and place it under the ``lane`` variable. Then from ``||logic:Logic||`` take a ``||Logic:_ = _||`` block and place it in the first ``||logic:if then||`` statement. Now drag a ``||variables:lane||`` block and put it in the first section and type ``1`` in the second section. Duplicate this equal statement 3 times and set each second section to ``2``, ``3``, and ``4`` respectively. Click the **(+)** symbol twice in the ``||logic:if else||`` statement block and drag these equal statements into the ``||logic:else||`` statements.
 
@@ -340,14 +266,14 @@ game.onUpdateInterval(500, function () {
 
 ### Setting Score and Setting Lives
 
-In our game we want the player to have a score for the number of projectiles they destroy and then we want the player to have multiple lives in case they miss blocks. To do this go into ``||info:info||`` and drag ``||info:set score to||`` into the ``||loops: on start||`` block. Then grab a ``||info:set life to||`` and drag it below the set ``||info:set score to||``. Now change the number in ``||info:set life to||`` to **5** so that the player can miss five projectiles before the game ends.
+In our game we want the player to have a score for the number of projectiles they destroy and then we want the player to have multiple lives in case they miss blocks. To do this go into ``||info:info||`` and drag ``||info:set score to||`` into the ``||loops: on start||`` block. Then grab a ``||info:set life to||`` and drag it below the ``||info:set score to||``. Now change the number in ``||info:set life to||`` to **5** so that the player can miss five projectiles before the game ends.
 
 ```blocks
 info.setScore(0)
 info.setLife(5)
 ```
 
-When the player runs out of lives the game should end and the player's score should be displayed. To do this, go to ``||info:Info||``, grab ``||info:on life zero||``,and it into your workspace. Then go to ``||game:game||`` and grab ``||game:game over lose||``. Drag it into ``||info:on life zero||``. Click on the ``lose`` button so it switches to ``win`` and then click the **(+)** symbol. When you click the **(+)** you should have to option to select an effect. Select the ``confetti`` effect.
+When the player runs out of lives the game should end and the player's score should be displayed. To do this, go to ``||info:Info||``, grab ``||info:on life zero||``, and drag it into your workspace. Then go to ``||game:game||`` and grab ``||game:game over lose||``. Drag it into ``||info:on life zero||``. Click on the ``lose`` button so it switches to ``win`` and then click the **(+)** symbol. When you click the **(+)** you should have the option to select an effect. Select the ``confetti`` effect.
 
 ```blocks
 info.onLifeZero(function () {
@@ -361,7 +287,7 @@ You have now set up the basis of the scoring system!
 
 When a projectile hits the bottom wall, we want that to be a collision and to have the player's lives decrease by one. To add this feature, go into ``||scene:Scene||`` and select ``||scene:on sprite of kind hits wall||`` and drag it into your workspace. Now set the kind to be ``projectile``.
 
-Now go into ``||sprites:Sprite||``, select ``||sprites:destroy sprite with effect||``, and drag it into on ``||scene:sprite of kind hits wall||``. Then select the effect to as ``fire`` and click the **(+)** symbol next to it. Set the time to ``100 ms``. Drag out a ``||info:change life by||`` and put it under ``||sprites:destroy sprite with effect||``. Set the number to ``-1``. Now whenever a projectile collides with the bottom, it will be destroyed and the player's remaining lives will go down.
+Now go into ``||sprites:Sprite||``, select ``||sprites:destroy mySprite||``, and drag it into ``||scene:on sprite of kind hits wall||``. Drag the ``||variables:sprite||`` variable from the event block and replace ``||variables:mySprite||`` with it. Then, click the **(+)** symbol, select the ``fire`` effect, and set the time to ``100 ms``. Drag out a ``||info:change life by||`` and put it under ``||sprites:destroy sprite with effect||``. Set the number to ``-1``. Now whenever a projectile collides with the bottom, it will be destroyed and the player's remaining lives will go down.
 
 ![Player moving on the screen](/static/lessons/dance-party/missed-collision.gif)
 
@@ -372,7 +298,7 @@ scene.onHitWall(SpriteKind.Projectile, function (sprite) {
 })
 ```
 
-When the player collides with a projectile, their score should increase and the projectile should be destroyed. Go to ``||sprites:Sprites||`` and grab ``||sprites:on sprite of kind player overlaps otherSprite of kind||`` and drag it into your workspace. Change the field after ``otherSprite`` from ``player`` to ``projectile``. Now go back into ``||sprites:Sprites||`` and drag ``||sprites:destroy sprite with effect||`` into it. Set the effect to be ``disintegrate`` and then click the **(+)** symbol and enter ``100 ms``. Now go to ``||info:Info|`` and grab ``||info:change score by||`` and drag it under ``||sprites:destroy sprite with effect||``.
+When the player collides with a projectile, their score should increase and the projectile should be destroyed. Go to ``||sprites:Sprites||`` and grab ``||sprites:on sprite of kind player overlaps otherSprite of kind||`` and drag it into your workspace. Change the field after ``otherSprite`` from ``player`` to ``projectile``. Now go back into ``||sprites:Sprites||`` and drag ``||sprites:destroy mySprite||`` into it. Pull the ``||variables:otherSprite||`` variable from the event block over the ``||variables:mySprite||`` variable to replace it. Click the **(+)** symbol, set the effect to ``disintegrate``, and and enter ``100 ms``. Now go to ``||info:Info|`` and grab ``||info:change score by||`` and drag it under ``||sprites:destroy otherSprite with effect||``.
 
 ![Player moving on the screen](/static/lessons/dance-party/collision-projectiles.gif)
 
@@ -421,80 +347,7 @@ let steve: Sprite = null
 scene.setBackgroundColor(11)
 
 effects.starField.startScreenEffect()
-namespace myTiles {
-    //% blockIdentity=images._tile
-    export const tile0 = img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `
-    //% blockIdentity=images._tile
-    export const tile1 = img`
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    `
-    //% blockIdentity=images._tile
-    export const tile2 = img`
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-        b b b b b b b b b b b b b b b b
-    `
-}
-tiles.setTilemap(tiles.createTilemap(
-    hex`0a0008000202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020201010101010101010101`,
-    img`
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-        . . . . . . . . . .
-    `,
-    [myTiles.tile0,myTiles.tile1,myTiles.tile2],
-    TileScale.Sixteen
-))
+tiles.setTilemap(tilemap`level`)
 
 steve = sprites.create(img`
     . . . . . . . . . . . . . . . .
@@ -612,3 +465,43 @@ game.onUpdateInterval(2000, function () {
 ```
 
 ![Working Game](/static/lessons/dance-party/working-game.gif)
+
+```jres
+{
+    "transparency16": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile0": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile1": {
+        "data": "hwQQABAAAAAREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREQ==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile2": {
+        "data": "hwQQABAAAAC7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7uw==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "level": {
+        "id": "level",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAwYTAwMDgwMDAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDEwMTAxMDEwMTAxMDEwMTAxMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA==",
+        "tileset": [
+            "myTiles.tile0",
+            "myTiles.tile1",
+            "myTiles.tile2"
+        ]
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myTiles"
+    }
+}
+```

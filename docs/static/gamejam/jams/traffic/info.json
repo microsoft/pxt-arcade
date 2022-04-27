@@ -1,0 +1,541 @@
+
+{
+    "rules": {
+        "path": "/static/gamejam/jams/traffic/rules.md",
+        "tipsId": "join-the-club"
+    },
+    "start": "2020-09-14 00:00:00 GMT-0700",
+    "end": "2020-010-06 00:00:00 GMT-0700",
+    "featured": [
+        {
+            "id": "02340-91837-87735-14270",
+            "title": "Traffic Jam",
+            "author": "LCProCODER"
+        },
+        {
+            "id": "71262-47807-84859-17921",
+            "title": "Traffic Jam!",
+            "author": "John"
+        },
+        {
+            "id": "68236-15350-69155-48518",
+            "title": "tank war",
+            "author": "Jason"
+        },
+        {
+            "id": "71929-42418-05612-32436",
+            "title": "Split cars",
+            "author": "LCProCODER"
+        },
+        {
+            "id": "91183-51969-56712-08526",
+            "title": "Race Through NYC",
+            "author": "Kat"
+        },
+        {
+            "id": "75492-22338-35577-46415",
+            "title": "Late for Work",
+            "author": "Connor"
+        },
+        {
+            "id": "88629-23626-01773-97814",
+            "title": "Burger Buggy",
+            "author": "AnglesofLife201"
+        },
+        {
+            "id": "01292-69454-07801-55870",
+            "title": "Rush Hour",
+            "author": "Jack"
+        },
+        {
+            "id": "48671-72498-22846-43290",
+            "title": "Traffic Cruiser",
+            "author": "Kev"
+        },
+        {
+            "id": "11474-12111-23105-50605",
+            "title": "Desert Bus",
+            "author": "Jonathan"
+        },
+        {
+            "id": "46985-72981-72214-04491",
+            "title": "Box Cars",
+            "author": "Lucas the Game Builder "
+        },
+        {
+            "id": "24335-38360-89654-06487",
+            "title": "Traffic",
+            "author": "SergioF"
+        },
+        {
+            "id": "71248-32065-66752-58298",
+            "title": "Car Factory",
+            "author": "LCProCODER"
+        },
+        {
+            "id": "70517-92673-35064-03307",
+            "title": "Deadly Delivery",
+            "author": "EMD"
+        },
+        {
+            "id": "90214-60128-13033-63101",
+            "title": "Order Up",
+            "author": "Order Up"
+        },
+        {
+            "id": "45380-68116-46272-17777",
+            "title": "Fast Car",
+            "author": "Purna079"
+        },
+        {
+            "id": "90796-81096-31650-87632",
+            "title": "Road Trip",
+            "author": "Cate"
+        },
+        {
+            "id": "80509-41766-15131-76342",
+            "title": "car dash",
+            "author": "Trey"
+        },
+        {
+            "id": "11462-34789-55102-50512",
+            "title": "Traffic Cop Mania ",
+            "author": "Dylan"
+        },
+        {
+            "id": "82164-05809-11607-49913",
+            "title": "ab Traffic Game",
+            "author": "alexandra"
+        },
+        {
+            "id": "01001-14504-46330-69637",
+            "title": "Gabe game design pd 4 Trafic jam",
+            "author": "Gabe T."
+        },
+        {
+            "id": "30565-86644-29729-21460",
+            "title": "Traffic Run",
+            "author": "Nicholas"
+        },
+        {
+            "id": "68685-39827-13701-93484",
+            "title": "car doom",
+            "author": "pineapple player"
+        },
+        {
+            "id": "74793-26385-67848-47933",
+            "title": "Trash Man",
+            "author": "Avery"
+        },
+        {
+            "id": "47009-45226-38637-11825",
+            "title": "Golden gate crumble!",
+            "author": "Zachary"
+        },
+        {
+            "id": "96371-93420-85933-32030",
+            "title": "Rolling Down The Dungeon With My Asteroids",
+            "author": "Pryce"
+        },
+        {
+            "id": "91282-26390-53612-44924",
+            "title": "Road Rage",
+            "author": "Justin"
+        },
+        {
+            "id": "52527-56449-10618-45018",
+            "title": "Crazy Cabs",
+            "author": "LMD"
+        },
+        {
+            "id": "97928-66031-26500-83480",
+            "title": "HONK!",
+            "author": "Unsigned_Arduino"
+        },
+        {
+            "id": "96240-00247-21590-09079",
+            "title": "Y E S car Y E S v3",
+            "author": "R3ZD"
+        },
+        {
+            "id": "57948-49862-10473-22529",
+            "title": "Traffic Project",
+            "author": "Aidan"
+        },
+        {
+            "id": "09109-39870-78891-02068",
+            "title": "Kart Shooter",
+            "author": "Nikitha "
+        },
+        {
+            "id": "08220-03361-90643-03076",
+            "title": "Traffic Jam",
+            "author": "Rishi"
+        },
+        {
+            "id": "66393-37332-31697-05508",
+            "title": "Speedup",
+            "author": "limeboat"
+        },
+        {
+            "id": "13168-27640-67615-35408",
+            "title": "Pizza Delivery Man",
+            "author": "Andrew"
+        },
+        {
+            "id": "47207-15180-38494-73088",
+            "title": "Two player Car racing",
+            "author": "Dreadmask197"
+        },
+        {
+            "id": "73780-80767-61760-73255",
+            "title": "Gridlock Panic",
+            "author": "Colin"
+        },
+        {
+            "id": "94724-38967-58460-37169",
+            "title": "Getting Home",
+            "author": "burnt_brownie2"
+        },
+        {
+            "id": "89133-73186-36818-01241",
+            "title": "Racing Game (Look For CHEATS ;) )",
+            "author": "MSD777 and MKKing"
+        },
+        {
+            "id": "74103-62179-33446-12985",
+            "title": "Squeaky Clean",
+            "author": "Laila"
+        },
+        {
+            "id": "88093-95243-07774-73259",
+            "title": "Gas Guzzler",
+            "author": "Sammy "
+        },
+        {
+            "id": "54086-00663-15603-12385",
+            "title": "Dodge the Car!",
+            "author": "Purna079"
+        },
+        {
+            "id": "77094-02983-20077-58127",
+            "title": "Dodge",
+            "author": "Jayden McCurry"
+        },
+        {
+            "id": "43028-73703-68227-28330",
+            "title": "Police Evader 1984",
+            "author": "Elijah Taylor"
+        },
+        {
+            "id": "40929-71972-66866-36571",
+            "title": "Catch Peli's Train!",
+            "author": "PurplePunkinPie"
+        },
+        {
+            "id": "35838-68438-21992-68803",
+            "title": "Reach The Finish Line",
+            "author": "BenjaminW"
+        },
+        {
+            "id": "95103-09738-06811-18830",
+            "title": "Outer Transport",
+            "author": "Anakin"
+        },
+        {
+            "id": "16365-97194-93781-30064",
+            "title": "Traffic Jam Submission",
+            "author": "Highway Skater"
+        },
+        {
+            "id": "45218-15541-55114-83460",
+            "title": "Traffic Jam",
+            "author": "WWH"
+        },
+        {
+            "id": "62709-22716-97391-35657",
+            "title": "Perpetual Racer v1.0",
+            "author": "Flint"
+        },
+        {
+            "id": "58362-61768-85229-71473",
+            "title": "One Way Street",
+            "author": "Paulo"
+        },
+        {
+            "id": "52743-99164-47042-91536",
+            "title": "Late for Work",
+            "author": "your real name"
+        },
+        {
+            "id": "53508-14771-87803-79694",
+            "title": "Car Jumper",
+            "author": "Charles"
+        },
+        {
+            "id": "30689-25471-65195-07312",
+            "title": "traffic jam maze",
+            "author": "12Void12"
+        },
+        {
+            "id": "11354-46838-27233-51767",
+            "title": "Plane Blitz",
+            "author": "Andrew"
+        },
+        {
+            "id": "73967-74952-60561-59088",
+            "title": "Jet Speed",
+            "author": "Evan"
+        },
+        {
+            "id": "81274-47108-96990-89440",
+            "title": "Car Stop Maze",
+            "author": "Annapurna079"
+        },
+        {
+            "id": "14224-22066-30483-44150",
+            "title": "Meteor Traffic Hour",
+            "author": "Alexander"
+        },
+        {
+            "id": "74920-85396-24445-54089",
+            "title": "Deer Dodger",
+            "author": "Alexander"
+        },
+        {
+            "id": "76500-39082-30051-50301",
+            "title": "Traffic run",
+            "author": "Shronik"
+        },
+        {
+            "id": "36877-82826-77838-70449",
+            "title": "game",
+            "author": "jaquivus rosevelt"
+        },
+        {
+            "id": "69881-20222-27432-35145",
+            "title": "BB",
+            "author": "Mica5685"
+        },
+        {
+            "id": "01158-35457-66144-08086",
+            "title": "Super Kart",
+            "author": "Xavier"
+        },
+        {
+            "id": "13492-00549-33461-25031",
+            "title": "Treasure Tracker Official",
+            "author": "Ethan"
+        },
+        {
+            "id": "98855-73620-47488-77207",
+            "title": "Traffic rush",
+            "author": "Dreadmask197"
+        },
+        {
+            "id": "75401-05630-04319-67818",
+            "title": "trafic problem",
+            "author": "Ken"
+        },
+        {
+            "id": "74946-79064-88740-18171",
+            "title": "Duck n' Dive",
+            "author": "Divine & Robin"
+        },
+        {
+            "id": "58108-50113-12790-68597",
+            "title": "Escape Zomvid-19",
+            "author": "Ben D"
+        },
+        {
+            "id": "54568-34435-40807-53395",
+            "title": "Duck-Kart",
+            "author": "Martina"
+        },
+        {
+            "id": "53965-48502-13226-69881",
+            "title": "The Escape",
+            "author": "Resultedsnake"
+        },
+        {
+            "id": "72751-37896-44835-35865",
+            "title": "Crazy Taxi",
+            "author": "Miguel"
+        },
+        {
+            "id": "16503-41186-90963-93735",
+            "title": "Kaneki Vs Todoroki",
+            "author": "Rocio"
+        },
+        {
+            "id": "09395-47581-41004-90559",
+            "title": "The car",
+            "author": "Lucia"
+        },
+        {
+            "id": "37804-11815-29763-46594",
+            "title": "car crashers 2.0",
+            "author": "callum"
+        },
+        {
+            "id": "30108-80854-42265-17183",
+            "title": "Help Ray",
+            "author": "Miguel"
+        },
+        {
+            "id": "61694-56939-96805-32192",
+            "title": "Carrerras Ultime",
+            "author": "Isaac "
+        },
+        {
+            "id": "17976-94497-75273-04809",
+            "title": "Corre Coche Corre",
+            "author": "Dylan"
+        },
+        {
+            "id": "52729-98333-78158-29489",
+            "title": "Mad-Taxi",
+            "author": "Hugo"
+        },
+        {
+            "id": "77959-08973-39862-68201",
+            "title": "Road Crossing",
+            "author": "Thomas"
+        },
+        {
+            "id": "46844-05446-15436-52251",
+            "title": "La historia de Juan y el Color robado.",
+            "author": "Capitan JuanFra"
+        },
+        {
+            "id": "55377-75206-72099-02559",
+            "title": "auto locoooo",
+            "author": "Dario"
+        },
+        {
+            "id": "94587-41786-95388-74587",
+            "title": "Jumping Car",
+            "author": "Benjamin"
+        },
+        {
+            "id": "63418-25020-58432-17936",
+            "title": "UFOs control traffic",
+            "author": "logic_lab"
+        },
+        {
+            "id": "56401-11854-11177-06617",
+            "title": "Traffic Jam!",
+            "author": "IronKidFan8"
+        },
+        {
+            "id": "92804-31727-55284-01424",
+            "title": "Crossy Duck",
+            "author": "Adri314"
+        },
+        {
+            "id": "92804-31727-55284-01424",
+            "title": "Button masher race",
+            "author": "Adri314"
+        },
+        {
+            "id": "16701-32961-09638-52399",
+            "title": "Escape The Maze",
+            "author": "random dog"
+        },
+        {
+            "id": "88620-47568-06177-55865",
+            "title": "Taxi mania",
+            "author": "Sergio "
+        },
+        {
+            "id": "76401-96905-78081-24028",
+            "title": "School Run",
+            "author": "Nichuay"
+        },
+        {
+            "id": "21888-58698-48781-29669",
+            "title": "EL TAXI A TODA LECHE",
+            "author": "MMM@cademy"
+        },
+        {
+            "id": "83930-56558-24400-88224",
+            "title": "AstroJam",
+            "author": "Kalyen"
+        },
+        {
+            "id": "22876-43021-66025-69196",
+            "title": "Taxi loco",
+            "author": "Hugo "
+        },
+        {
+            "id": "34079-24748-31288-78584",
+            "title": "Slime Alpha4",
+            "author": "Carmelo"
+        },
+        {
+            "id": "56760-17119-53331-69749",
+            "title": "Traffic Chase",
+            "author": "Varad"
+        },
+        {
+            "id": "26543-62524-92172-81301",
+            "title": "Run",
+            "author": "David"
+        },
+        {
+            "id": "48459-68136-67993-53490",
+            "title": "I got caught",
+            "author": "Juanfran"
+        },
+        {
+            "id": "69514-75513-92587-21871",
+            "title": "taxi ligon",
+            "author": "MMM@cademy"
+        },
+        {
+            "id": "06663-03789-73969-72494",
+            "title": "Traffic: Love Jam",
+            "author": "Haredo"
+        },
+        {
+            "id": "09284-05326-59185-97782",
+            "title": "taxi crazy",
+            "author": "Alejandro "
+        },
+        {
+            "id": "23034-00279-30422-12132",
+            "title": "Race Ultra!!",
+            "author": "LemonB0y"
+        },
+        {
+            "id": "09285-20655-41262-50777",
+            "title": "Traffic Panic",
+            "author": "I Am Penguin"
+        },
+        {
+            "id": "25787-41781-39930-98285",
+            "title": "Square Rescue",
+            "author": "donnadie"
+        },
+        {
+            "id": "58044-36277-49498-43462",
+            "title": "Monster Truck",
+            "author": "logic_lab"
+        },
+        {
+            "id": "49000-26594-79561-84008",
+            "title": "Cross the Road!",
+            "author": "HotChocolateCat"
+        },
+        {
+            "id": "14111-63271-36632-32282",
+            "title": "The Cross Roads",
+            "author": "GameDev712"
+        },
+        {
+            "id": "50720-84339-05254-30236",
+            "title": "Race Delivery",
+            "author": "DriveCoreGames"
+        }
+    ]
+}

@@ -10,6 +10,18 @@
 
 The MakeCode Arcade system is designed to support a variety of physical gaming devices in addition to a more virtual experience on a PC or mobile device. We encourage others to design and build new variants of MakeCode Arcade hardware using the guidelines presented in this document. 
 
+### ~ tip
+
+#### Minimal Open Source Reference Design
+
+![Schematics screenshot](/static/hardware/minipcb.png)
+
+We have built a minimal open source hardware reference design for an Arcade board. This consists of a schematic (available as PDF and as Altium .SchDoc), a layout (available as Gerbers and related CAM files plus an Altium .PcbDoc), and a BoM (available as a Microsoft Excel file). 
+* **Download Reference Design at [https://github.com/microsoft/pxt-arcade-hardware-designs](https://github.com/microsoft/pxt-arcade-hardware-designs)**
+
+### ~
+
+
 Arcade hardware must meet the following specifications:
 
 * An ARM Cortex M microcontroller (see [MCU](#mcu))
@@ -21,7 +33,7 @@ Arcade hardware must meet the following specifications:
 
 In addition we encourage:
 
-* inclusion of a 3.5mm stereo audio connector for multi-player communications (see [JACDAC](#jacdac))
+* a connector for multi-player communications (see [Jacdac](#jacdac))
 * provision for battery power: a battery connector, a battery holder and/or a LiPo recharging circuit (see [battery](#battery))
 * **exclusion** of a power LED which would draw unnecessary current (see [power](#power))
 
@@ -33,8 +45,6 @@ Other optional elements include:
 * status LEDs (see [LEDs](#leds))
 * an electrical expansion connector to support the use of plug-in accessories and connection of external 
 circuits (see [expansion coonnector](#pins))
-
-We have built a minimal open source hardware reference design for an Arcade board. This consists of a schematic (available as PDF and as Altium .SchDoc), a layout (available as Gerbers and related CAM files plus an Altium .PcbDoc), and a BoM (available as a Microsoft Excel file). These files are available in a separate github repo [here](https://github.com/microsoft/pxt-arcade-hardware-designs).
 
 A firmware configuration system allows a lot of flexibility regarding specific component choices and circuit designs to meet the above specification, see [Configuration](#cf2). 
 
@@ -159,6 +169,17 @@ DISPLAY_CFG1 = 0x0010ff
 DISPLAY_CFG2 = 0x1000004
 ```
 
+Note that the ILI9341 have 4 configuration pins IM3, IM2, IM1, IM0.
+The following configurations are supported:
+
+| IM3 | IM2 | IM1 | IM0 | Connection       |
+| --- | --- | --- | --- | ---------------- |
+|  0  |  0  |  0  |  0  | D[7:0]   - D7:D0 |
+|  1  |  0  |  0  |  1  | D[17:10] - D7:D0 |
+
+That is, in the first config connect pin D[7] to PA5, D[6] to PA4, etc.
+In the second config, connect D[17] to PA5, D[16] to PA4, etc.
+
 ### Buttons #buttons
 
 We require a total of 8 buttons: `left`, `up`, `right`, `down` (in a directional pad or d-pad layout), `A`, `B`, `Menu` and `Reset`.
@@ -197,12 +218,7 @@ It's fine to build prototypes, but before designing any production hardware plea
 
 ### ~
 
-Multi-player communications between Arcade devices is based on [JACDAC](https://jacdac.org), a protocol for networking over a single-wire connection. It lets you play multiplayer games by connecting Arcades together with standard stereo audio cables. More than two arcades can be connected using commonly available headphone splitters.
-
-Note that JACDAC power delivery is still under development so **you must leave the tip of the jack connector disconnected**.
-
-The multi-player connector can either be a 3-way or a 4-way 3.5mm audio jack socket. Contact switching is not required. Many alternative connectors exist, the second page of the reference design schematic lists some of these. Please test a connector
-before designing it in to make sure it does not short together the base of the shaft and the tip during insertion. 
+Multi-player communications between Arcade devices is based on [Jacdac](https://aka.ms/jacdac), a protocol for networking over a single-wire connection.
 
 ### Battery power #battery
 
@@ -230,7 +246,7 @@ to activate the motor. It should be connected to the `VIBRATION` line as defined
 
 ### LEDs #leds
 
-Up to 4 LEDs can be defined. The first two can be used for JACDAC status.
+Up to 4 LEDs can be defined. The first two can be used for Jacdac status.
 
 ### Expansion connector #pins
 
@@ -314,8 +330,8 @@ Then:
     `PIN_SCK`, `PIN_SERVO_x` entries
 * if you have less than 4 LEDs remove `PIN_LEDx`
 * if you do not have a way to disable power to external components, remove `PIN_PWREN`
-* if you don't have JACDAC, remove `PIN_JACK_*`
-* if you don't have JACDAC power, remove `PIN_JACK_PWREN`
+* if you don't have Jacdac, remove `PIN_JACK_*`
+* if you don't have Jacdac power, remove `PIN_JACK_PWREN`
 * if you don't have second menu button (it's not required), remove `PIN_BTN_MENU2`
 * if you don't have voltage divider for measuring battery level (which isn't supported yet anyway),
   remove `PIN_BATTSENSE`

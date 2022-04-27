@@ -31,7 +31,7 @@ color-coded-tilemap
 
 ## Example #1: Creating a course
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-tilemap-golf )
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/ZPMexvC1BfY)
 
 1. Make a new project (name it "Golf Course")
 2. Review the code below
@@ -110,7 +110,7 @@ This behavior can be fixed using the ``||scene:on sprite of kind hits wall||`` b
 
 ## Student Task #3: Make a real course
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-tilemap-longgolf)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/VBzh-vZeWKs)
 
 Now that we have a functioning game of mini golf, we should make an interesting course for players to try to make it through. To do so, we will need to create a larger tilemap.
 

@@ -8,4 +8,3 @@
 * [IKEA FLISAT table](/hardware/raspberry-pi/ikea-flisat-table)
     * [IKEA FLISAT table](/hardware/raspberry-pi/ikea-flisat-table/make)
 * [Wooden Cabinet](/hardware/raspberry-pi/wooden-cabinet)
-* [MakeCode Wooden Cabinet](/hardware/raspberry-pi/makecode-wooden-cabinet)

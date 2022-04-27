@@ -27,7 +27,8 @@ example: March 1st would be `3.01`
 
 ### ~
 
-[![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-01_birthday_algorithm_final)
+[![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/r2MGEV6cgPo)
+
 
 Follow the Birthday Algorithm steps below working with a partner. Record the steps and the answer for each step so you can troubleshoot. Doing this with just paper and pencil adds to the challenge. If the trick doesn't work, retrace the steps and check each calculation with partner.
 

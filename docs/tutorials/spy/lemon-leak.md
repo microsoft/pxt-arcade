@@ -2,13 +2,13 @@
 
 ### @explicitHints true
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 ![Game animation](/static/tutorials/lemon-leak.gif)
 
 Hey, let's make a game where wild strawberries are out to attack our lemon player. The goal is to keep the lemon from losing its juice by avoiding the oncoming strawberries. The lemon will leak some of its juice when strawberries collide with it.
 
-## Step 1  @fullscreen
+## {Step 1  @fullscreen}
 
 First, ``||scene:set background color||`` to ``purple``. Create a new sprite called ``||variables:mySprite||``. Click on the image editor icon, go to the image galler, and select the lemon. Put in code to ``||controller:move mySprite||`` with the controller.
 
@@ -37,7 +37,7 @@ let mySprite = sprites.create(img`
 controller.moveSprite(mySprite)
 ```
 
-## Step 2
+## {Step 2}
 
 To keep the lemon from leaving the screen, set ``||variables:mySprite||`` to ``||sprites:stay in screen||``. after that, ``||info:start a countdown||`` for `30` seconds.
 
@@ -62,11 +62,11 @@ let mySprite = sprites.create(img`
     . . . . . . c c c c c c b b 4 .
 `, SpriteKind.Player)
 controller.moveSprite(mySprite)
-mySprite.setFlag(SpriteFlag.StayInScreen, true)
+mySprite.setStayInScreen(true)
 info.startCountdown(30)
 ```
 
-## Step 3 @resetDiff
+## {Step 3 @resetDiff}
 
 Add a ``||game:on game update every||`` event and set the interval time to `1000` ms, or 1 second. In the event, create a ``||variables:projectile||`` sprite and send the ``||sprites:projectile from side||``. In the image editor for ``||variables:projectile||``, go to
 the gallery and select the strawberry.
@@ -94,7 +94,7 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 4
+## {Step 4}
 
 Now, set both the ``vx`` and ``vy`` values for ``||variables:projectile||`` to ``||math:pick a random||`` number. Set the range for the ``||math:random||`` number from `-50` and `50`.
 
@@ -121,7 +121,7 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 5 @resetDiff
+## {Step 5 @resetDiff}
 
 Add an ``||sprites:on overlap||`` event to your code. Set the kind which matches the ``otherSprite`` parameter to ``Projectile``. Put code into the event to ``||sprites:start spray effect||`` on ``||variables:sprite||``. Have the effect last for ``200`` ms.
 
@@ -131,7 +131,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 })
 ```
 
-## Step 6
+## {Step 6}
 
 Lastly, to score hits by the strawberries on the lemon, in the ``||sprites:on overlap||`` event ``||info:change score by||`` the value of `1`.
 
@@ -142,7 +142,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 })
 ```
 
-## Complete @fullscreen
+## {Complete @fullscreen}
 
 That's it! Now keep moving the lemon and try not lose too much juice. Everytime a strawberry hits your lemon, it leaks some juice and the strawberry team gets points. See if you can keep the juice points down during the `30` seconds of play.
 

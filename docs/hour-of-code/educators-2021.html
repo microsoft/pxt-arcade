@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html
+    lang="en-US"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="http://www.facebook.com/2008/fbml"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Microsoft MakeCode Arcade Hour of Code™ 2021</title>
+        <meta name="Description" content="" />
+        <!-- TODO: Description Copy -->
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=yes"
+        />
+
+        <link rel="manifest" href="/blb/sim.webmanifest" />
+
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="apple-mobile-web-app-title"
+            content="Microsoft MakeCode Arcade Hour of Code™ 2021"
+        />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="translucent-black"
+        />
+        <meta name="format-detection" content="telephone=no" />
+        <meta
+            name="application-name"
+            content="Microsoft MakeCode Arcade Hour of Code™ 2021"
+        />
+
+        <meta name="msapplication-TileColor" content="#ff7b22" />
+        <meta
+            name="msapplication-TileImage"
+            content="/static/hour-of-code/card.png"
+        />
+        <meta name="msapplication-config" content="none" />
+        <meta name="theme-color" content="#ff7b22" />
+
+        <meta name="msapplication-TileColor" content="#3DC1AA" />
+        <meta
+            name="msapplication-TileImage"
+            content="/static/hour-of-code/2021/hoc-card.png"
+        />
+        <meta name="msapplication-config" content="none" />
+        <meta name="theme-color" content="#3DC1AA" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="MSMakeCode" />
+        <meta
+            name="twitter:title"
+            content="Microsoft MakeCode Arcade Hour of Code™ 2021"
+        />
+        <meta name="twitter:description" content="" />
+        <!-- TODO: Description Copy -->
+        <meta
+            name="twitter:image"
+            content="/static/hour-of-code/2021/hoc-card.png"
+        />
+
+        <meta
+            property="og:title"
+            content="Microsoft MakeCode Arcade Hour of Code™ 2021"
+        />
+        <meta
+            property="og:site_name"
+            content="Microsoft MakeCode Arcade Hour of Code™ 2021"
+        />
+        <meta property="og:description" content="" />
+        <!-- TODO: Description Copy -->
+        <meta
+            property="og:image"
+            content="/static/hour-of-code/2021/hoc-card.png"
+        />
+
+        <link
+            rel="apple-touch-icon"
+            href="/static/hour-of-code/2021/favicon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            href="/static/hour-of-code/2021/favicon.png"
+        />
+        <link
+            rel="shortcut icon"
+            href="/static/hour-of-code/2021/favicon.png"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://pxt.azureedge.net/blob/2163189fd5e35c0981ed55318415582a7c9aeb12/doccdn/semantic.css"
+            type="text/css"
+        />
+
+        <!-- @include scripthead.html -->
+        <!-- TODO: Font compliance for "Rowdies" Google Font (400 weight) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <style>
+            @font-face {
+                font-family: 'Rowdies';
+                src: url('/static/hour-of-code/2021/Rowdies/Rowdies-Bold.ttf')
+                    format('truetype');
+            }
+        </style>
+
+        <link rel="stylesheet" href="/static/hour-of-code/2021/styles.css" />
+
+        <script>
+            function handleOnLoad() {
+                var langPicker = document.querySelector('#langpicker');
+                if (langPicker) {
+                    langPicker.remove();
+                }
+            }
+
+            function onTeamsShareClicked() {
+                window.pxtTickEvent('hourofcode2021.educator.teams');
+                document.getElementById('teams-share').click();
+            }
+        </script>
+        <script
+            async
+            defer
+            src="https://teams.microsoft.com/share/launcher.js"
+        ></script>
+    </head>
+
+    <body id="root" class="root background-eggplant" onload="handleOnLoad()">
+        <div id="main" role="presentation">
+            <nav
+                id="header-bar"
+                class="background-eggplant"
+                style="height: 60px"
+            >
+                <div class="header-bar-left">
+                    <a
+                        href="https://www.microsoft.com/en-us/makecode"
+                        onClick="window.pxtTickEvent('hourofcode2021.header.logo')"
+                        ><div class="header-org-logo" role="menuitem">
+                            <img
+                                src="/static/logo/Microsoft_logo_rgb_W-white_D.png"
+                                alt="Microsoft"
+                            />
+                        </div>
+                        <div class="header-org-logo-sm" role="menuitem">
+                            <img
+                                src="/static/logo/Microsoft_logo_rgb_W-white_D-square.png"
+                                alt="Microsoft"
+                            />
+                        </div>
+                        <div class="header-title" role="menuitem">
+                            <span>MakeCode</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="header-bar-right">
+                    <a
+                        class="header-icon"
+                        role="menuitem"
+                        aria-label="Return home"
+                        tabindex="0"
+                        href="https://arcade.makecode.com/"
+                        onClick="window.pxtTickEvent('hourofcode2021.header.home')"
+                    >
+                        <i
+                            class="icon home"
+                            aria-hidden="true"
+                            role="presentation"
+                        ></i>
+                    </a>
+                </div>
+            </nav>
+
+            <header
+                class="hoc-header hoc-header-educators background-marina"
+                style="
+                    background-image: url('../static/hour-of-code/2021/hoc-header-educators.png');
+                "
+            >
+                <div class="header-text">
+                    <h4 class="body-font">Microsoft MakeCode Arcade</h4>
+                    <div class="title">
+                        <h1 class="display-font">Hour Of</h1>
+                        <h1 class="display-font code">
+                            Code<span class="small">™</span>
+                        </h1>
+                    </div>
+                    <h3 class="display-font">2021 Educator Guide</h3>
+                </div>
+            </header>
+
+            <section class="hoc-section-01">
+                <div class="hero">
+                    <img
+                        src="../static/hour-of-code/2021/makecode-example.png"
+                        alt="MakeCode Arcade"
+                    />
+                </div>
+                <div class="section-text">
+                    <h3 class="title display-font sunflower">
+                        About MakeCode Arcade
+                    </h3>
+                    <p>
+                        Microsoft MakeCode Arcade is a free, open-source, retro,
+                        2D game development environment. Students between the
+                        ages of 9 and 18 can use MakeCode Arcade to design and
+                        create their own games online and share them with
+                        friends and family or download to hand-held game
+                        devices. Learn more about Microsoft MakeCode at
+                        <a
+                            href="http://aka.ms/makecode"
+                            rel="noreferrer"
+                            target="_blank"
+                            onClick="window.pxtTickEvent('hourofcode2021.educator.learnmore.link')"
+                            >http://aka.ms/makecode</a
+                        >.
+                    </p>
+                    <a
+                        class="btn"
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://1drv.ms/u/s!AqsgsTyHBmRBkjR0izvm6EQ2NqLp?e=1YYOjW"
+                    >
+                        <h5 class="display-font">Teacher Resources</h5></a
+                    >
+                    <a
+                        class="btn"
+                        target="_blank"
+                        rel="noreferrer"
+                        href="http://aka.ms/makecode"
+                        onClick="window.pxtTickEvent('hourofcode2021.educator.learnmore.button')"
+                    >
+                        <h5 class="display-font">Learn More</h5></a
+                    >
+
+                </div>
+            </section>
+
+            <section class="hoc-aside-01 background-marina">
+                <div class="wrapper">
+                    <div class="aside-text">
+                        <h3 class="title display-font">
+                            This Year's Activity:<br /><em>Save the Forest</em>
+                        </h3>
+                        <p>
+                            Students will learn about core programming and game
+                            development concepts while building a game about
+                            fighting forest fires.
+                        </p>
+                    </div>
+                    <div
+                        class="hero background-sunflower"
+                        style="
+                            background-image: url('../static/hour-of-code/2021/forest-skillmap-game.gif');
+                        "
+                    ></div>
+                </div>
+            </section>
+
+            <section class="hoc-section">
+                <h3 class="display-font title sunflower">
+                    Activity Requirements
+                </h3>
+                <div>
+                    <p>
+                        The MakeCode Arcade Hour of Code™ activities require
+                        students to have a computer with internet access. All
+                        activities run in the browser –
+                        <b class="sunflower"
+                            >no download or installation required</b
+                        >.
+                    </p>
+                    <p>
+                        Optionally, there are hand-held game devices students
+                        may purchase to download the games they code to play
+                        on-the-go. Learn more at
+                        <a
+                            href="https://arcade.makecode.com/hardware"
+                            rel="noreferrer"
+                            target="_blank"
+                            onClick="window.pxtTickEvent('hourofcode2021.educator.hardware')"
+                            >https://arcade.makecode.com/hardware</a
+                        >.
+                    </p>
+                </div>
+            </section>
+
+            <section class="hoc-section">
+                <h3 class="display-font title sunflower">
+                    Learning Objectives
+                </h3>
+                <div>
+                    <p>
+                        By the end of this lesson, students will have been
+                        exposed to:
+                    </p>
+                    <div class="learning-columns">
+                        <div class="col">
+                            <div class="col-wrapper">
+                                <h4 class="display-font">
+                                    Game Design Concepts
+                                </h4>
+                                <ul>
+                                    <li>Tilemaps</li>
+                                    <li>Sprites</li>
+                                    <li>HUD (Head-up Display)</li>
+                                    <li>Status Bar</li>
+                                    <li>Art and Design</li>
+                                    <li>Animations</li>
+                                    <li>Effects</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="col-wrapper">
+                                <h4 class="display-font">
+                                    Programming Concepts
+                                </h4>
+                                <ul>
+                                    <li>Events</li>
+                                    <li>Variables and constants</li>
+                                    <li>Loops</li>
+                                    <li>Randomization</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="col-wrapper">
+                                <h4 class="display-font">Topical Concepts</h4>
+                                <ul>
+                                    <li>
+                                        The impact of wildfires on the
+                                        environment
+                                    </li>
+                                    <li>Common causes of forest fires</li>
+                                    <li>
+                                        How computers and technology can help
+                                        combat wildfires
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="hoc-section">
+                <h3 class="display-font title sunflower">
+                    Teacher Preparation
+                </h3>
+                <p>
+                    While it’s great to be completely prepared when teaching
+                    activities, computer science is one of those fields where
+                    students benefit from exploring and troubleshooting for
+                    themselves. If you find yourself short on time, embrace the
+                    idea that this lesson is as much about learning to solve
+                    unknown problems as it is coming out the other side with a
+                    working game.
+                </p>
+                <p>
+                    That said, for the most comfortable experience, the
+                    following advanced preparation is suggested.
+                </p>
+                <ul class="accent-list">
+                    <li>
+                        <b class="sunflower">(5-20 minutes)</b> Review <a
+                        href="https://arcade.makecode.com/--skillmap#docs:/skillmap/forest"
+                        target="_blank"
+                        rel="noreferrer"
+                        >Save the Forest Skillmap</a>
+                    </li>
+                    <li>
+                        <b class="sunflower">(10-15 minutes)</b> Review
+                        <a
+                                    href="https://1drv.ms/w/s!AqsgsTyHBmRBkjkJpSEogU2RXNAl?e=bRmU8c"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >Additional Resources</a>
+                    </li>
+                    <li>
+                        <b class="sunflower">(5 minutes)</b> Preview <a
+                        href="https://youtu.be/-_JXEcAIIy4"
+                        target="_blank"
+                        rel="noreferrer"
+                        >Save the Forest Video</a> and Questions
+                    </li>
+                    <li>
+                        <b class="sunflower">(5-10 minutes)</b> Review <a
+                        href="https://1drv.ms/p/s!AqsgsTyHBmRBkjZSWDXSaSj8dk_h?e=RXxUz5"
+                        target="_blank"
+                        rel="noreferrer"
+                        >Lesson Slides</a>
+                    </li>
+                </ul>
+                <div class="hoc-teams-share">
+                    <p class="body-font">
+                        Share this Hour of Code activity as a class assignment
+                        in Microsoft Teams by clicking on the button below.
+                    </p>
+                    <div class="share-btn" onclick="onTeamsShareClicked()">
+                        <div
+                            id="teams-share"
+                            class="teams-share-button icon"
+                            data-href="https://arcade.makecode.com/--skillmap#docs:/skillmap/forest"
+                            data-icon-px-size="36"
+                            data-msg-text="Hour of Code 2021 - Code a game with Microsoft MakeCode Arcade that recreates the conditions for a forest fire, and then code your fire-fighting airtanker plane to spray water and put out the flames! "
+                            data-assign-title="MakeCode Hour of Code 2021 - Save the Forest!"
+                            data-assign-instr="Open the link below, complete all the steps to create your Save the Forest game. When you get your certificate, click the Share button and copy and paste the link into this assignment to turn it in."
+                        ></div>
+                        <h5 class="display-font">Assign in Teams</h5>
+                    </div>
+                </div>
+            </section>
+            <section class="hoc-section">
+                <h3 class="display-font title sunflower">
+                    Educator Training and Student Lessons
+                </h3>
+                <p>
+                    Join free educator training sessions that will prepare you to
+                    facilitate the Hour of Code activity in your classroom, and
+                    participate in the Global MakeCode Arcade Game Jam. Then throughout
+                    Computer Science Education Week, tune in with your students to
+                    live lessons that provide tips and tricks on how to create a game
+                    MakeCode Arcade.
+                </p>
+                <ul class="accent-list">
+                    <li>
+                        Save the Forest | Makecode Arcade HOC Educator Training
+                         <b class="sunflower">(On Demand Recording)</b>
+                    </li>
+                    <li>
+                        Code with MakeCode Arcade Part 1: The Basics
+                         <b class="sunflower">(12/7 10:30 am PST)</b>
+                    </li>
+                    <li>
+                        Code with MakeCode Arcade Part 2: Designing Your Game with Drew Okenfuss
+                         <b class="sunflower">(12/8 10:30 am PST)</b>
+                    </li>
+                    <li>
+                        Code with MakeCode Arcade Part 3: Developing your Game with MakeCode Engineers
+                         <b class="sunflower">(12/9 10:30 am PST)</b>
+                    </li>
+                    <li>
+                        Quick Start: Creating Your Game Jam Project
+                         <b class="sunflower">(12/9 5:30 pm PST)</b>
+                    </li>
+                </ul>
+                <a class="btn" href="https://aka.ms/CSEW2021" target="_blank" rel="noreferrer"
+                        ><h5 class="display-font">Sign Up</h5></a
+                    >
+            </section>
+            <section class="hoc-section">
+                <h3 class="display-font title sunflower">
+                    Resources for Further Exploration
+                </h3>
+                <ul class="accent-list">
+                    <li>
+                        Save the Forest Skillmap
+                        <ul class="accent-list">
+                            <li>
+                                <a
+                                    href="https://1drv.ms/w/s!AqsgsTyHBmRBkjVLlAJGfFlaTcJM?e=5H2dna"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >Teacher Lesson Plan</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://1drv.ms/u/s!AqsgsTyHBmRBkjR0izvm6EQ2NqLp?e=k2cKOg"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >Teacher Resource Folder</a
+                                >
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        Game Jam
+                        <ul class="accent-list">
+                            <li>
+                                <a
+                                    href="https://arcade.makecode.com/gamejam/global-2021"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >Global MakeCode Arcade Game Jam</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://arcade.makecode.com/gamejam/lessons/box"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >Game Jam Guide</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Webpages and Articles
+                        <ul class="accent-list">
+                            <li>
+                                <a
+                                    href="https://en.wikipedia.org/wiki/Aerial_firefighting"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >Aerial firefighting (Wikipedia)</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.fs.usda.gov/pnw/page/fire-effects-environment"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >Fire effects on the environment (US Forest
+                                    Service)</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.fs.usda.gov/managing-land/fire/planes"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >US Forest Service planes</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.livescience.com/climate-change.html"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >Climate Change resource</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        YouTube videos
+                        <ul class="accent-list">
+                            <li>
+                                <a
+                                    href="https://youtu.be/6BjSaUJlf7E"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >Western US first in 2021 using aerial
+                                    scanning</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://youtu.be/pYe6QIBdTKs"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >Siberia 2021 wildfires</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://youtu.be/UXTqTh0SrLQ"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >Wildfires in Turkey and Greece</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://youtu.be/CGqaU7iTqOI"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >Salo Sciences stopping forest fires from
+                                    space</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://youtu.be/Hb0NTX_sYas"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >10 amazing fire-fighting aircrafts in the
+                                    world</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="hoc-section">
+                <h3 class="display-font title sunflower">
+                    MakeCode Insiders Club
+                </h3>
+                <p>
+                    Do you know a student who may be interested in helping to influence
+                    product development? The Microsoft MakeCode team is recruiting
+                    members for its upcoming MakeCode Insiders Club Winter Cohort. Insiders
+                    will connect with likeminded peers, make Microsoft connections,
+                    and learn coding basics! Applications for the winter cohort
+                    close 11/28!
+                </p>
+                <a class="btn" href="https://arcade.makecode.com/insiders" target="_blank" rel="noreferrer"
+                        ><h5 class="display-font">Application</h5></a
+                    >
+            </section>
+
+            <section class="hoc-aside-01 background-marina">
+                <div class="wrapper">
+                    <div class="aside-text">
+                        <h3 class="title display-font">
+                            Join the MakeCode Forum!
+                        </h3>
+                        <p>
+                            Have a question, or want to share your experiences?
+                            Join a community with other educators teaching with
+                            MakeCode.
+                        </p>
+                        <a
+                            class="btn"
+                            href="https://forum.makecode.com"
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.educator.forum')"
+                            ><h5 class="display-font">Join the Forum</h5>
+                        </a>
+                    </div>
+                    <div
+                        class="hero background-sunflower"
+                        style="
+                            background-image: url('../static/hour-of-code/2021/teacher.png');
+                        "
+                    ></div>
+                </div>
+            </section>
+
+            <section class="hoc-aside-02 background-papaya">
+                <div class="aside-text">
+                    <h3 class="title display-font">
+                        Follow us on Social Media
+                    </h3>
+                    <p>
+                        Tag us in your students' creations using @msmakecode or
+                        the hashtag #makecode. And don't forget to follow us to
+                        find out about the newest MakeCode Arcade updates,
+                        games, and competitions!
+                    </p>
+                    <div class="social-buttons">
+                        <a
+                            href="https://www.instagram.com/msmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.instagram')"
+                        >
+                            <i class="icon instagram"></i>
+                        </a>
+                        <a
+                            href="https://www.youtube.com/microsoftmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.youtube')"
+                        >
+                            <i class="icon youtube"></i>
+                        </a>
+                        <a
+                            href="https://twitter.com/msmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.twitter')"
+                        >
+                            <i class="icon twitter"></i>
+                        </a>
+                        <a
+                            href="https://www.twitch.tv/msmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.twitch')"
+                        >
+                            <i class="icon twitch"></i>
+                        </a>
+                        <a
+                            href="https://www.tiktok.com/@msmakecode"
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick="window.pxtTickEvent('hourofcode2021.social.tiktok')"
+                        >
+                            <svg
+                                aria-hidden="true"
+                                focusable="false"
+                                data-prefix="fab"
+                                data-icon="tiktok"
+                                class="svg-inline--fa fa-tiktok fa-w-14"
+                                role="img"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 448 512"
+                            >
+                                <path
+                                    d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"
+                                ></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="hoc-footer background-papaya">
+                <div class="code-org-trademark">
+                    <p>
+                        The '<a
+                            href="http://hourofcode.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            >Hour of Code™</a
+                        >' is a nationwide initiative by
+                        <a
+                            href="http://csedweek.org/"
+                            target="_blank"
+                            rel="noreferrer"
+                            >Computer Science Education Week</a
+                        >
+                        and
+                        <a
+                            href="http://code.org/"
+                            target="_blank"
+                            rel="noreferrer"
+                            >Code.org</a
+                        >
+                        to introduce millions of students to one hour of
+                        computer science and computer programming
+                    </p>
+                </div>
+                <div class="msft">
+                    <img
+                        src="/static/logo/Microsoft_logo_rgb_W-white_D.png"
+                        alt="Microsoft"
+                    />
+                </div>
+                <div class="text-content">
+                    <a
+                        href="https://www.microsoft.com/en-us/makecode/about"
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick="window.pxtTickEvent('hourofcode2021.footer.about')"
+                        >Microsoft MakeCode</a
+                    >
+                    <a
+                        href="https://www.microsoft.com/en-us/legal/terms-of-use"
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick="window.pxtTickEvent('hourofcode2021.footer.terms')"
+                        >Terms of Use</a
+                    >
+                    <a
+                        href="https://privacy.microsoft.com/en-us/privacystatement"
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick="window.pxtTickEvent('hourofcode2021.footer.privacy')"
+                        >Privacy</a
+                    >
+                </div>
+            </footer>
+        </div>
+        <!-- @include tracking.html -->
+        <!-- @include tickevent.html -->
+    </body>
+</html>

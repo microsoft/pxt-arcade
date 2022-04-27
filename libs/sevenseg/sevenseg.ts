@@ -19,7 +19,7 @@ enum DigitRadix {
     //% block="octal"
     Octal = 8,
     //% block="alpha"
-    Alpha = 25
+    Alpha = 26
 }
 
 enum SegmentScale {
@@ -29,10 +29,30 @@ enum SegmentScale {
     Half
 }
 
-// "ABCDEFHJLoPUY-°"
+// "0123456789ABCDEFHJLoPrUY-°"
 enum SegmentCharacter {
+    //% block="0"
+    ZERO,
+    //% block="1"
+    ONE,
+    //% block="2"
+    TWO,
+    //% block="3"
+    THREE,
+    //% block="4"
+    FOUR,
+    //% block="5"
+    FIVE,
+    //% block="6"
+    SIX,
+    //% block="7"
+    SEVEN,
+    //% block="8"
+    EIGHT,
+    //% block="9"
+    NINE,
     //% block="A"
-    A = 10,
+    A,
     //% block="B"
     B,
     //% block="C"
@@ -53,6 +73,8 @@ enum SegmentCharacter {
     o,
     //% block="P"
     P,
+    //% block="r"
+    r,
     //% block="U"
     U,
     //% block="Y"
@@ -158,6 +180,7 @@ namespace sevenseg {
         0b00011100, // 'L' digit maps "...def.."
         0b00111010, // 'o' digit maps "..cde.g."
         0b11001110, // 'P' digit maps "ab..efg."
+        0b00001010, // 'r' digit maps "....e.g."
         0b01111100, // 'U' digit maps ".bcdef.."
         0b01110110, // 'Y' digit maps ".bcd.fg."
         0b00000010, // '-' digit maps "......g."
@@ -166,7 +189,7 @@ namespace sevenseg {
     "hex`" + segmap.map(n => n.toString(16)).map(n => n.length < 2 ? "0" + n : n).join("") + "`"
     */
     
-    const segmap: Buffer = hex`fc60daf266b6bee0fef6ee3e9c7a9e8e6e781c3ace7c7602c6`;
+    const segmap: Buffer = hex`fc60daf266b6bee0fef6ee3e9c7a9e8e6e781c3ace0a7c7602c6`;
 
     export function drawSegment(digit: Image, segment: Buffer, thickness: SegmentStyle, color: number) {
         let offset = 0;
@@ -206,11 +229,12 @@ namespace sevenseg {
      * @param value optional initial display value, eg: 0
      */
     //% group="Create"
-    //% blockId=sevenseg_create block="create seven segment digit || of %thickness with value %value"
+    //% blockId=sevenseg_create block="seven segment digit || of %thickness with value %value"
     //% expandableArgumentMode=toggle
     //% blockSetVariable=myDigit
     //% value.min=0 value.max=9 value.defl=0
     //% weight=99
+    //% help=sevenseg/create-digit
     export function createDigit(thickness: SegmentStyle = SegmentStyle.Thick, value: number = 0): SevenSegDigit {
         return new SevenSegDigit(thickness, value)
     }
@@ -222,11 +246,12 @@ namespace sevenseg {
      * @param numDigits the number of digits displayed, eg: 1
      */
     //% group="Create"
-    //% blockId=sevenseg_createcounter block="create counter || of %thickness segments at %scale size with %numDigits digits"
+    //% blockId=sevenseg_createcounter block="counter || of %thickness segments at %scale size with %numDigits digits"
     //% expandableArgumentMode=toggle
     //% blockSetVariable=myCounter
     //% numDigits.min=1 numDigits.max=5 numDigits.defl=1
     //% weight=100
+    //% help=sevenseg/create-counter
     export function createCounter(thickness: SegmentStyle = SegmentStyle.Thick, scale: SegmentScale = SegmentScale.Full, numDigits: number = 1): DigitCounter {
         return new DigitCounter(thickness, scale, numDigits)
     }
@@ -265,10 +290,10 @@ class SevenSegDigit {
     //% blockId=sevenseg_setalpha block="set %sevenseg(myDigit) display value to %alphaChar"
     //% weight=40
     setDigitAlpha(alphaChar: SegmentCharacter) {
-        const matchChars = "0123456789ABCDEFHJLoPUY-°";
+        const matchChars = "0123456789ABCDEFHJLoPrUY-°";
         if (alphaChar == this.value || alphaChar < 0 || alphaChar >= matchChars.length)
             return;
-        this.value = alphaChar;
+        this._value = alphaChar;
         sevenseg.drawDigit(this.digit, this.value, this.thickness, this.scale, this.color);
     }
 
@@ -299,6 +324,7 @@ class SevenSegDigit {
     //% group="Digits"
     //% blockId=sevenseg_setcolor block="set %sevenseg(myDigit) display color to %color=colorindexpicker"
     //% weight=35
+    //% help=sevenseg/sevensegdigit/set-digit-color
     setDigitColor(color: number): void {
         this.color = color;
         sevenseg.drawDigit(this.digit, this.value, this.thickness, this.scale, this.color);
@@ -331,7 +357,7 @@ class SevenSegDigit {
     }
 
     //% group="Digits" blockSetVariable="myDigit"
-    //% blockCombine block="height"
+    //% blockCombine block="width"
     get width(): number {
         return this.digitSprite.width;
     }
@@ -348,6 +374,7 @@ class SevenSegDigit {
      */
     //% blockId=sevenseg_setradix block="set display radix of %sevenseg(myDigit) to %radix"
     //% group="Digits" weight=30
+    //% help=sevenseg/sevensegdigit/set-radix
     setRadix(radix: DigitRadix) {
         this._radix = radix;
         sevenseg.drawDigit(this.digit, this.value, this.thickness, this.scale, this.color);
@@ -359,7 +386,8 @@ class SevenSegDigit {
      */
     //% group="Digits"
     //% blockId=sevenseg_setdigitscale block="set %sevenseg(myDigit) to %scale size"
-    //% weight=25
+    //% weight=25 
+    //% help=sevenseg/sevensegdigit/set-scale
     setScale(scale: SegmentScale): void {
         if (scale != this.scale) {
             this.scale = scale;
@@ -479,6 +507,7 @@ class DigitCounter {
     //% group="Counter"
     //% blockId=sevenseg_setcountercolor block="set %sevenseg(myCounter) display color to %color=colorindexpicker"
     //% weight=86
+    //% help=sevenseg/digitcounter/set-digit-color
     setDigitColor(color: number): void {
         this.color = color;
         for (let i = 0; i < this.numDigits; i++) {

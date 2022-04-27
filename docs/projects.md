@@ -3,6 +3,11 @@
 ```codecard
 [
     {
+        "name": "Skillmaps",
+        "url": "/skillmaps",
+        "imageUrl": "/static/skillmap/backgrounds/beginner.png"
+    },
+    {
         "name": "Tutorials",
         "url": "/tutorials",
         "imageUrl": "/static/tutorials/chase-the-pizza.png",
@@ -10,16 +15,9 @@
         "videoUrl": "/static/tutorials/chase-the-pizza.mp4"
     },
     {
-        "name": "Multipart Tutorials",
-        "url": "/multipart-tutorials",
-        "imageUrl": "/static/recipes/shark-splash/shark-splash.png",
-        "largeImageUrl": "/static/recipes/shark-splash/02-C-enemies.gif",
-        "videoUrl": "/static/recipes/shark-splash/02-C-enemies.mp4"
-    },
-    {
         "name": "Live Coding",
         "url": "/live-coding",
-        "imageUrl": "/static/live-coding/live.png"
+        "imageUrl": "/static/live-coding/7pBGS_tKfmU.jpg"
     },
     {
         "name": "Blocks Games",
@@ -38,12 +36,12 @@
     {
         "name": "Game Jam",
         "url": "/game-jam",
-        "imageUrl": "https://pxt.azureedge.net/api/42885-92487-13042-52240/thumb"
+        "imageUrl": "https://pxt.azureedge.net/api/39412-25824-36790-82290/thumb"
     },
     {
         "name": "Advanced Livestream",
         "url": "/advanced-stream",
-        "imageUrl": "/static/advanced-stream/live.png"
+        "imageUrl": "/static/livestream-games/boss-rush.png"
     },
     {
         "name": "Community Games",
@@ -66,6 +64,11 @@
         "videoUrl": "/static/graphics-math/fireworks.mp4"
     },
     {
+        "name": "Arts and Crafts",
+        "url": "/arts-and-crafts",
+        "imageUrl": "/static/arts-and-crafts/tshirt.png"
+    },
+    {
         "name": "Lessons",
         "url": "/lessons",
         "imageUrl": "/static/lessons/cherry-pickr.png"
@@ -73,13 +76,13 @@
     {
         "name": "Courses",
         "url": "/courses",
-        "imageUrl": "/static/courses/csintro1.png",
-        "largeImageUrl": "/static/courses/csintro1.gif"
+        "imageUrl": "/static/courses/csp.png",
+        "largeImageUrl": "/static/courses/csp.png"
     },
     {
         "name": "Hardware",
         "url": "/hardware",
-        "imageUrl": "/static/hardware/ghiarcade.jpg"
+        "imageUrl": "/static/hardware/meowbit.png"
     },
     {
         "name": "How to Make a Game Videos",
@@ -96,8 +99,8 @@
 
 ## See Also
 
+[Skillmaps](/skillmaps),
 [Tutorials](/tutorials),
-[Multipart Tutorials](/multipart-tutorials),
 [Live Coding](/live-coding),
 [Blocks Games](/blocks-games),
 [JavaScript Games](/javascript-games),
@@ -106,6 +109,7 @@
 [Community Games](/community),
 [Game Design Concepts](/concepts),
 [Graphics and Math](/graphics-math),
+[Arts and Crafts](/arts-and-crafts),
 [Lessons](/lessons),
 [Courses](/courses),
 [Hardware](/hardware),

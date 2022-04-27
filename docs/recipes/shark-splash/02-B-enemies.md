@@ -1,17 +1,17 @@
 # Multiple enemy sprites
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 Use the ``||math:percent chance||`` block to assign a random image
 to your enemies.
 
 ![Multiple Enemies](/static/recipes/shark-splash/02-B-enemies.gif)
 
-## Step 1
+## {Step 1}
 
-Drag an ``||sprites:on created||`` block into the workspace. Change the kind
-dropdown to "Enemy". If you already have an ``||sprites:on created||`` block
-for enemies, use that instead.
+Drag an ``||sprites:on created||`` block into the workspace. Change the kind in the
+dropdown to ``||sprites:Enemy||``. If you already have an ``||sprites:on created||`` block
+for enemies, use that one instead.
 
 ```blocks
 sprites.onCreated(SpriteKind.Enemy, function (sprite) {
@@ -19,7 +19,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 ```
 
 
-## Step 2
+## {Step 2}
 
 Inside the ``||sprites:on created||`` block, place an ``||logic:if then else||`` statement.
 
@@ -34,10 +34,10 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 })
 ```
 
-## Step 3
+## {Step 3}
 
-Place a ``||math:percent chance||`` block inside the condition of the ``||logic:if then else||``.
-Change the percentage to 50%.
+Place a ``||math:% chance||`` block as the condition inside the ``||logic:if then else||``.
+Change the percentage ``||math:%||`` to `50`.
 
 ```blocks
 sprites.onCreated(SpriteKind.Enemy, function (sprite) {
@@ -50,11 +50,11 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 })
 ```
 
-## Step 3
+## {Step 3}
 
 Place a ``||sprites:set image to||`` block into the first clause of ``||logic:if then else||``.
-Drag the ``||variables:sprite||`` variable from the ``||sprites:on created||`` block and place it inside
-the sprite argument of ``||sprites:set image to||``. Click on the
+Drag the ``||variables:sprite||`` variable from the ``||sprites:on created||`` block and use it as
+the sprite for ``||sprites:set image to||``. Click on the
 grey square to open the sprite editor and draw an image for the enemy.
 
 ```blocks
@@ -85,11 +85,11 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 })
 ```
 
-## Step 4
+## {Step 4}
 
 Place a second ``||sprites:set image to||`` block into the else clause of ``||logic:if then else||``.
-Drag the ``||variables:sprite||`` variable from the ``||sprites:on created||`` block and place it inside
-the sprite argument of ``||sprites:set image to||``. Click on the
+Drag the ``||variables:sprite||`` variable from the ``||sprites:on created||`` block and use it as
+the sprite for the second ``||sprites:set image to||`` too. Click on the
 grey square to open the sprite editor and draw a different image for the enemy.
 
 ```blocks
@@ -137,7 +137,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 })
 ```
 
-## Conclusion @unplugged
+## {Conclusion @unplugged}
 
 Now let's add code to destroy the enemies with your projectiles! Or, if you're feeling creative, add a background to set the scene.
 
