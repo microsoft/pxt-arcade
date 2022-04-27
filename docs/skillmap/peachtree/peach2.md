@@ -98,7 +98,7 @@ Let's make the branches dangerous, too.
 
 - :mouse pointer:  Follow the same steps to end the game when your sprite overlaps the
 **branches** as you did for the **hurdle** tile. <br/>
-![Avoid the spikes!](/static/skillmap/peachtree/braches.png "Avoid the branches")
+![Avoid the spikes!](/static/skillmap/peachtree/branches.png "Avoid the branches")
 
 _💡 Need a little help figuring out what this step should look like? Click the lightbulb button below for a peek at the blocks we recommend._
 
