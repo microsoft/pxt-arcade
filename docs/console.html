@@ -53,7 +53,7 @@
     }
 
     .hackbrand {
-    color: #FFFFFF;
+    color: #6a4747;
     font-size: 200%;
     position: absolute;
     top: 0px;
@@ -368,90 +368,147 @@
 <body>
     <div class="container-instructions">
         <header>
-          <img src="p2p/styles/logo.svg" alt="MakeCode" class="logo" />
-          <button class="help-btn" onclick="window.location.href='./index.html';">
-            <i class="icon-cancel-circled" style="font-size: 32px;"></i>
-          </button>
+          <img src="https://arcade.makecode.com/static/logo.svg" alt="MakeCode" class="logo" />
+          <p class="hackbrand">MakeCode Arcade console games</p>
         </header>
 
         <div class='main-content-instructions'>
           <div id='games'>
-            <div class="game-instructions-header">Try these games!</div>
+            <div class="game-instructions-header">Try these games!</div>              
+          </div>
         </div>
-        </div>
-      </div>
-      <script>
-        let shareLinks = [
-            {
-                id : "32777-59846-95775-11055",
-                name : "Secure the river",
-                desc : `This is a cooperative game, both players share the lives in this games. 
-                        You must defeat all sckelethons or you will loose a life. 
-                        Hearth will replenish one life, while hitting ducks or fishes will drop one life`,
-            },
-            {
-                id : "13412-17300-80986-88577",
-                name : "TicTacTwo!",
-                desc:  `Ultimate battle between cats and dogs!. The player who succeeds in
-                 placing three of their marks in a horizontal, vertical, or diagonal row is the
-                  winner as the best pet`
-            },
-            {
-                id : "31578-32581-92137-64320",
-                name : "GalgaMulti",
-                desc : `TControlling a starship, both players will destroy the Galga forces, while avoiding enemies.
-                        Each player has 3 lifes, game ends once a player runs out of lifes.`
-            }
-    
-        ];
-        async function addImage(divImage, id) {
-            let response = await fetch('https://makecode.com/api/' + id + '/thumb')
-            let rawResponse = await response.blob();
-            let objectURL = URL.createObjectURL(rawResponse);
-            // create an image
-            let outputImg = document.createElement('img');
-            outputImg.src = objectURL;
-            divImage.append(outputImg);
+    </div>
+
+    <script>
+    let shareLinks = [
+        {
+            id : "32777-59846-95775-11055",
+            name : "Secure the river",
+            desc : `This is a cooperative game, both players share the lives in this games. 
+                    You must defeat all sckelethons or you will loose a life. 
+                    Hearth will replenish one life, while hitting ducks or fishes will drop one life`,
+        },
+        {
+            id : "13412-17300-80986-88577",
+            name : "TicTacTwo!",
+            desc:  `Ultimate battle between cats and dogs!. The player who succeeds in
+                placing three of their marks in a horizontal, vertical, or diagonal row is the
+                winner as the best pet`
+        },
+        {
+            id : "31578-32581-92137-64320",
+            name : "GalgaMulti",
+            desc : `TControlling a starship, both players will destroy the Galga forces, while avoiding enemies.
+                    Each player has 3 lifes, game ends once a player runs out of lifes.`
         }
 
-        function buildCard(link) {
-    
-            let iDiv = document.createElement('div');
-            iDiv.className = 'gameDesc';
-    
-            let spanTitle = document.createElement('span');
-            spanTitle.className = 'gameTitle';
-            spanTitle.textContent = link.name;
-    
-            let spanId = document.createElement('span');
-            spanId.textContent = link.id;
-    
-            let divCardHeader = document.createElement('div');
-            divCardHeader.className = 'gameDescHeader';
-    
-            divCardHeader.appendChild(spanTitle);
-            divCardHeader.appendChild(spanId);
-    
-            iDiv.appendChild(divCardHeader);
-    
-            let divImage = document.createElement('div');
-            divImage.className = "gameDescLeft"
-            addImage(divImage, link.id)
-    
-            iDiv.appendChild(divImage);
-    
-            let divDesc = document.createElement('div');
-            divDesc.className = "gameDescContent"
-            divDesc.textContent = link.desc;
-    
-            iDiv.appendChild(divDesc);
-    
-            // Then append the whole thing onto the body
-            document.getElementById('games').append(iDiv);
+    ];
+    let start = 1;
+    async function addImage(divImage, id) {
+        let response = await fetch('https://makecode.com/api/' + id + '/thumb')
+        let rawResponse = await response.blob();
+        let objectURL = URL.createObjectURL(rawResponse);
+        // create an image
+        let outputImg = document.createElement('img');
+        outputImg.src = objectURL;
+        divImage.append(outputImg);
+    }
+
+    function buildCard(link) {
+
+        let iDiv = document.createElement('div');
+        iDiv.className = 'gameDesc';
+        iDiv.tabIndex = start++;
+
+        let spanTitle = document.createElement('span');
+        spanTitle.className = 'gameTitle';
+        spanTitle.textContent = link.name;
+
+        let spanId = document.createElement('span');
+        spanId.textContent = link.id;
+
+        let divCardHeader = document.createElement('div');
+        divCardHeader.className = 'gameDescHeader';
+
+        divCardHeader.appendChild(spanTitle);
+        divCardHeader.appendChild(spanId);
+
+        iDiv.appendChild(divCardHeader);
+
+        let divImage = document.createElement('div');
+        divImage.className = "gameDescLeft"
+        addImage(divImage, link.id)
+
+        iDiv.appendChild(divImage);
+
+        let divDesc = document.createElement('div');
+        divDesc.className = "gameDescContent"
+        divDesc.textContent = link.desc;
+
+        iDiv.appendChild(divDesc);
+
+        // Then append the whole thing onto the body
+        document.getElementById('games').append(iDiv);
+        return iDiv;
+    }
+    for (let i = 0; i < shareLinks.length; i++) {
+        let div = buildCard(shareLinks[i]);
+        if (i == 0) div.focus()
+    }
+
+    const rAF = window.mozRequestAnimationFrame || window.requestAnimationFrame;
+    let index = 0;
+    let focusable = document.querySelectorAll('[tabindex]:not([tabindex="-1"])');
+
+    window.addEventListener('gamepadconnected', function (e) {
+        updateLoop();
+    });
+
+    function nextItem() {
+        index++;
+        index = index % focusable.length;
+        focusable[index].focus();
+        console.log(index);
+    }
+
+    function prevItem() {
+        if (index != 0) { 
+            index--;
         }
-        for (let i = 0; i < shareLinks.length; i++)
-            buildCard(shareLinks[i]);
-        </script>    
+        focusable[index].focus();
+        console.log(index);
+    }
+
+    function clickItem() {
+        if (focusable[index]) {
+            focusable[index].click();
+        }
+    }
+    let lastAction = false;
+
+    function updateLoop() {
+        let gp = navigator.getGamepads()[0];
+        console.log(gp.buttons[0])
+        if (gp.buttons[0].pressed) //A button
+            clickItem();
+        else if (gp.axes && gp.axes[1]) {
+            const value = gp.axes[1];
+            if (value > 0.5 && !lastAction) {
+                lastAction = true;
+                nextItem();
+            } else if (value < -0.5 && !lastAction) {
+                lastAction = true;
+                prevItem();
+            } else {
+                lastAction = false;
+            }
+        }
+    }
+    setInterval(() => {
+            updateLoop();
+    }, 150);
+
+    </script>    
     <!-- @include footer.html -->
 
 </body>
