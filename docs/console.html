@@ -404,6 +404,16 @@
             }
     
         ];
+        async function addImage(divImage, id) {
+            let response = await fetch('https://makecode.com/api/' + id + '/thumb')
+            let rawResponse = await response.blob();
+            let objectURL = URL.createObjectURL(rawResponse);
+            // create an image
+            let outputImg = document.createElement('img');
+            outputImg.src = objectURL;
+            divImage.append(outputImg);
+        }
+
         function buildCard(link) {
     
             let iDiv = document.createElement('div');
@@ -426,7 +436,7 @@
     
             let divImage = document.createElement('div');
             divImage.className = "gameDescLeft"
-            divImage.innerHTML = `<img src="img/secureTheRiver.png"/>`
+            addImage(divImage, link.id)
     
             iDiv.appendChild(divImage);
     
