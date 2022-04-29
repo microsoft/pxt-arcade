@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Microsoft MakeCode Insiders Program</title>
+    <meta name="Description" content="Microsoft MakeCode Arcade Console" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    <!-- @include scripthead.html -->
+
+    <style>
+
+    html, body {
+    background-color: rgb(254, 243, 224);
+    height: 100%;
+    width: 100%;
+    font-family: verdana;
+    padding: 0;
+    margin: 0;
+    }
+
+    #container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .container-instructions{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    header {
+    height: 50px;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    background-color: rgb(247, 104, 32);
+    }
+
+    .logo {
+    height: 40px;
+    padding: 5px;
+    }
+
+    .hackbrand {
+    color: #FFFFFF;
+    font-size: 200%;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    text-align: center;
+    max-height: 40px;
+    padding: 5px;
+    display: inline-block;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-right: -50%;
+    transform: translate(-50%, 0%);
+    }
+
+    .logo:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .main-content {
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .main-content .game-col {
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .main-content .game-col .action-section {
+    height: 80%;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 10px;
+    }
+
+    .main-content .game-col .action-section button {
+    margin-top: 12px;
+    }
+
+    .main-content .embed-footer {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    }
+
+    button.game-btn {
+    background-color: rgb(247, 104, 32);
+    border-radius: .28571429rem;
+    padding-top: .78571429em;
+    padding-bottom: .78571429em;
+    margin: 0;
+    box-shadow: inset 0 0 0 1px rgba(34,36,38,.15), inset 0 -0.3em 0 0 rgba(34,36,38,.15);
+    box-shadow: inset 0 -0.3em 0 0 rgba(34,36,38,.15);
+    border: none;
+    color: white;
+    cursor: pointer;
+    }
+
+    button.help-btn {
+    background-color: rgb(247, 104, 32);
+    border-radius: .2rem;
+    padding-top: .2rem;
+    padding-bottom: 0;
+    margin: 0;
+    box-shadow: inset 0 0 0 .5px rgba(34,36,38,.15), inset 0 -0.3em 0 0 rgba(34,36,38,.15);
+    box-shadow: inset 0 -0.1em 0 0 rgba(34,36,38,.15);
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: 2em;
+
+
+    font-size: 32px;
+    position: absolute;
+    top: 50%;
+    left: 95%;
+    margin-right: -5%;
+    transform: translate(-50%, -50%)
+    }
+
+    button.game-btn:disabled {
+    background-color: #ccc;
+
+    }
+
+    .embed-footer h2 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    }
+
+    .embed-footer textarea {
+    border: 1px black solid;
+    width: calc(100% - 18px);
+    height: 90px;
+    border-radius: 1px;
+    resize: none;
+    }
+
+    button {
+    margin: 0 1em 0 0;
+    width: 5.2em;
+    }
+    div#buttons {
+    margin: 0 0 1.7em 0;
+    }
+    div#send {
+    float: left;
+    margin: 0 3em 1em 0;
+    }
+    div#sendReceive {
+    margin: 0 0 1em 0;
+    }
+    h1 {
+    margin: 0 0 1em 0;
+    }
+    h2 {
+    margin: 0 0 0.5em 0;
+    }
+    textarea {
+    color: #444;
+    font-family: 'Courier New', monospace;
+    font-size: 1em;
+    height: 7.0em;
+    padding: 0.5em;
+    }
+
+    input {
+    border-radius: .28571429rem;
+    padding-top: .78571429em;
+    padding-bottom: .78571429em;
+    margin: 0;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    border: 1px black solid;
+    font-size: 12px;
+    margin: 5px 0px;
+    }
+
+    p.modal-content-text {
+    font-size: 16px;
+    letter-spacing: 0.1px;
+    margin: 5px 0px;
+    }
+
+    input.new-rd {
+    width: 300px;
+    }
+
+    .view-devtools {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 5px;
+    font-size: 15px;
+    border: 1px black solid;
+    border-radius: 2px;
+    }
+
+    #DevTools {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    width: 400px;
+    height: 200px;
+    background-color: #000;
+    color: white;
+    padding: 5px;
+    overflow-y: scroll;
+    display: none;
+    }
+
+    #DevTools.visible {
+    display: block;
+    }
+
+    .gameDesc{
+    display : block;
+    width : 36em;
+    overflow : auto;
+    margin : 30px auto 0 auto;
+
+    background-color : white;
+
+    font-family: 'Courier New', monospace;
+    font-size: 1em;
+    border: 10px solid #e9eef2;
+    }
+    .gameDescHeader{
+    background-color : #fcfcfc;
+    float : left;
+    clear : none;
+    height : 3em;
+    width : 36em;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: space-between;
+    }
+
+    .gameTitle{
+    font-size: larger;
+    }
+
+    .gameDescLeft{
+    float : left;
+    clear : none;
+    min-height : 10px;
+    width : 12em;
+    }
+
+    .gameDescLeft img {
+    width: 100%;
+    height: auto;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    }
+
+    .gameDescContent{
+    float : left;
+    clear : none;
+    min-height : 10px;
+    width : 20em;
+    padding: 8px;
+    }
+    .gameDescFooter{
+    float : left;
+    clear : none;
+    min-height : 10px;
+    width : 36em;
+
+    display: grid;
+    place-items: center;
+    }
+
+    table.keyPadCommands {
+    border: 1px solid #FFFFFF;
+    background-color: #FFFFFF;
+    }
+    table.keyPadCommands td, table.keyPadCommands th {
+    border: 5px solid #FFFFFF;
+    font-size: 28px;
+    }
+
+    .game-inputs {
+    display: grid;
+    place-items: center;
+    }
+
+    .main-content-instructions {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .game-instructions-header {
+    font-family: 'Courier New', monospace;
+    font-size: 2.5em;
+    display: grid;
+    place-items: center;
+    }
+
+    .game-instructions-col{
+    display: grid;
+    place-items: center;
+    }
+
+    @media only screen and (min-width: 320px) and (max-width: 479px){
+    #simContainer {
+        width: 200px;
+    }
+    }
+
+    @media only screen and (min-width: 480px) and (max-width: 767px){
+    #simContainer {
+        width: 300px;
+    }
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 991px){
+    #simContainer {
+        width: 500px;
+    }
+    }
+
+    @media only screen and (min-width: 992px){
+    #simContainer {
+        width: 600px;
+    }
+    }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container-instructions">
+        <header>
+          <img src="p2p/styles/logo.svg" alt="MakeCode" class="logo" />
+          <button class="help-btn" onclick="window.location.href='./index.html';">
+            <i class="icon-cancel-circled" style="font-size: 32px;"></i>
+          </button>
+        </header>
+
+        <div class='main-content-instructions'>
+          <div id='games'>
+            <div class="game-instructions-header">Try these games!</div>
+        </div>
+        </div>
+      </div>
+      <script>
+        let shareLinks = [
+            {
+                id : "32777-59846-95775-11055",
+                name : "Secure the river",
+                desc : `This is a cooperative game, both players share the lives in this games. 
+                        You must defeat all sckelethons or you will loose a life. 
+                        Hearth will replenish one life, while hitting ducks or fishes will drop one life`,
+            },
+            {
+                id : "13412-17300-80986-88577",
+                name : "TicTacTwo!",
+                desc:  `Ultimate battle between cats and dogs!. The player who succeeds in
+                 placing three of their marks in a horizontal, vertical, or diagonal row is the
+                  winner as the best pet`
+            },
+            {
+                id : "31578-32581-92137-64320",
+                name : "GalgaMulti",
+                desc : `TControlling a starship, both players will destroy the Galga forces, while avoiding enemies.
+                        Each player has 3 lifes, game ends once a player runs out of lifes.`
+            }
+    
+        ];
+        function buildCard(link) {
+    
+            let iDiv = document.createElement('div');
+            iDiv.className = 'gameDesc';
+    
+            let spanTitle = document.createElement('span');
+            spanTitle.className = 'gameTitle';
+            spanTitle.textContent = link.name;
+    
+            let spanId = document.createElement('span');
+            spanId.textContent = link.id;
+    
+            let divCardHeader = document.createElement('div');
+            divCardHeader.className = 'gameDescHeader';
+    
+            divCardHeader.appendChild(spanTitle);
+            divCardHeader.appendChild(spanId);
+    
+            iDiv.appendChild(divCardHeader);
+    
+            let divImage = document.createElement('div');
+            divImage.className = "gameDescLeft"
+            divImage.innerHTML = `<img src="img/secureTheRiver.png"/>`
+    
+            iDiv.appendChild(divImage);
+    
+            let divDesc = document.createElement('div');
+            divDesc.className = "gameDescContent"
+            divDesc.textContent = link.desc;
+    
+            iDiv.appendChild(divDesc);
+    
+            // Then append the whole thing onto the body
+            document.getElementById('games').append(iDiv);
+        }
+        for (let i = 0; i < shareLinks.length; i++)
+            buildCard(shareLinks[i]);
+        </script>    
+    <!-- @include footer.html -->
+
+</body>
+
+</html>
