@@ -337,6 +337,12 @@
     place-items: center;
     }
 
+    div.sim-embed {
+    width: 100%;
+    height: 100%;
+    
+    }
+
     @media only screen and (min-width: 320px) and (max-width: 479px){
     #simContainer {
         width: 200px;
@@ -372,7 +378,7 @@
           <p class="hackbrand">MakeCode Arcade console games</p>
         </header>
 
-        <div class='main-content-instructions'>
+        <div id = 'gamesParent' class='main-content-instructions'>
           <div id='games'>
             <div class="game-instructions-header">Try these games!</div>              
           </div>
@@ -401,7 +407,6 @@
             desc : `TControlling a starship, both players will destroy the Galga forces, while avoiding enemies.
                     Each player has 3 lifes, game ends once a player runs out of lifes.`
         }
-
     ];
     let start = 1;
     async function addImage(divImage, id) {
@@ -447,6 +452,37 @@
 
         iDiv.appendChild(divDesc);
 
+        let running = false;
+        iDiv.onclick = function() {
+            if (running) {
+                return;
+            }
+            let gamespace = document.getElementsByTagName("BODY")[0];
+            while (gamespace.firstChild) {
+                gamespace.firstChild.remove();
+            }
+
+            let editorEmbedURL = `https://arcade.makecode.com/---run?id=${link.id}`;
+            function createIFrame(src) {
+                var iframe = document.createElement("iframe");
+                iframe.className = "sim-embed";
+                iframe.style = "top:0;left:0;width:100%;height:100%;";
+                iframe.sandbox = "allow-popups allow-forms allow-scripts allow-same-origin";
+                iframe.frameBorder = "0";
+                iframe.src = src;
+                return iframe;
+            }
+            gamespace.appendChild(createIFrame(editorEmbedURL));
+            running = true;
+            /*
+            frame.innerHTML = `<div style="position:relative;height:0;padding-bottom:117.6%;overflow:hidden;">
+                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                src="https://arcade.makecode.com/---run?id=${link.id}" allowfullscreen="allowfullscreen" 
+                sandbox="allow-popups allow-forms allow-scripts allow-same-origin" 
+                frameborder="0"></iframe></div>`
+            */
+
+        }
         // Then append the whole thing onto the body
         document.getElementById('games').append(iDiv);
         return iDiv;
@@ -455,6 +491,8 @@
         let div = buildCard(shareLinks[i]);
         if (i == 0) div.focus()
     }
+
+
 
     const rAF = window.mozRequestAnimationFrame || window.requestAnimationFrame;
     let index = 0;
@@ -468,7 +506,6 @@
         index++;
         index = index % focusable.length;
         focusable[index].focus();
-        console.log(index);
     }
 
     function prevItem() {
@@ -476,7 +513,6 @@
             index--;
         }
         focusable[index].focus();
-        console.log(index);
     }
 
     function clickItem() {
@@ -488,7 +524,6 @@
 
     function updateLoop() {
         let gp = navigator.getGamepads()[0];
-        console.log(gp.buttons[0])
         if (gp.buttons[0].pressed) //A button
             clickItem();
         else if (gp.axes && gp.axes[1]) {
