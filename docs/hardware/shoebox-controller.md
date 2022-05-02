@@ -126,7 +126,7 @@ Different kits may have different ports, so you should check the wiring diagram 
 * Connect the USB cable to your computer and open up a MakeCode Arcade game in the browser – i.e. https://makecode.com/_XsCCsy5L1eXr
 * Make sure the Joystick and the buttons all work as expected, if not, troubleshoot by attaching different wires to different pins on the USB encoder board
 
-<Test.gif>
+![Testing the controller](/static/hardware/shoebox-controller/test.gif)
 
 ## Decorate!
 
