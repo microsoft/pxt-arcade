@@ -56,44 +56,44 @@ Want to create your very own DIY Arcade Video Game experience with fun joysticks
 * Disconnect the Joystick from the cable and make sure the black plastic washer and Joystick knob handle are removed
 * Using the pen knife cut out a small hole in the top of the shoebox to fit the Joystick handle through
 
-<JoystickHandleHole.jpg>
+![Cut out the handle hole for joystick](/static/hardware/shoebox-controller/joystick-handle-hole.jpg)
 
 * From inside the box, push the Joystick handle through the hole
 
-<InsertJoystickHandle.jpg>
+![Insert the handle of the joystick](/static/hardware/shoebox-controller/insert-joystick-handle.jpg)
 
 * From outside the box, drop the large washer and screw the top ball onto the Joystick handle
 
-<JoystickInstalled.jpg>
+![Joystick mounted in the shoebox](/static/hardware/shoebox-controller/joystick-installed.jpg)
 
 * On the inside of the box, use the pen knife to cut 2 holes in each of the 4 corners of the Joystick panel – one through the panel opening, and one on the outside of the panel
 * Make sure the orientation of the Joystick is correct (up is at the top)
 * Thread a zip tie through each of these holes securing the Joystick panel to the top of the box
 
-<JoystickZipTies.jpg>
+![Zip ties securing the joystick](/static/hardware/shoebox-controller/joystick-zip-ties.jpg)
 
 * Using the pen knife, cut holes for the buttons in the top of the box – make sure you don’t cut the holes too big so the buttons don’t fall through
 
-<CuttingButtonHoles.jpg>
+![Cut holes for the buttons](/static/hardware/shoebox-controller/cutting-button-holes.jpg)
 
 * Push the buttons through the top of the box
 
-<InstallButton.jpg>
+![Install the buttons](/static/hardware/shoebox-controller/install-button.jpg)
 
 * Then from the inside of the box, screw the black nuts onto the bottom of the buttons to secure them
 
-<ButtonNuts.jpg>
+![Attach the buttons with nuts](/static/hardware/shoebox-controller/button-nuts.jpg)
 
 ## Install USB Encoder Board in shoebox
 
 * Using the pen knife, make a small hole in the front side of the Shoebox and thread the USB cable through it
 
-<USBhole.jpg>
+![Make a hole for the USB cable](/static/hardware/shoebox-controller/usb-hole.jpg)
 
 * Place the USB encoder board inside the shoebox
 * Connect the USB encoder board to the USB cable
 
-<InstallingEncoderBoard.jpg>
+![Controller board in the shoebox](/static/hardware/shoebox-controller/installing-encoder-board.jpg)
 
 ## Wire the Joystick and buttons to the USB Encoder Board
 
