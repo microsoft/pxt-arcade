@@ -2,7 +2,7 @@
 
 Want to create your very own DIY Arcade Video Game experience with fun joysticks and buttons? It’s easier than you think! Follow these instructions to use a shoebox as your controller for Arcade games that you play on a computer. Note that these instructions will also work if you want to create a full Arcade cabinet, but instead of using a [Raspberry Pi](https://arcade.makecode.com/hardware/raspberry-pi/cardboard-control-panel), use a computer to power it.
 
-<Shoebox.jpg>
+![Shoebox controller connected](/static/hardware/shoebox-controller/shoebox.jpg)
 
 ## Materials
 
@@ -15,7 +15,7 @@ Want to create your very own DIY Arcade Video Game experience with fun joysticks
 * Pen or Pencil
 * Decorating materials – paint, markers, glitter, stickers, etc.
 
-<Materials.jpg>
+![Project materials](/static/hardware/shoebox-controller/materials.jpg)
 
 ## Instructions
 
@@ -23,7 +23,7 @@ Want to create your very own DIY Arcade Video Game experience with fun joysticks
 
 * With a Pen or Pencil on the top of the shoebox, draw out where you would like to place the Joystick and buttons
 
-<PlacingControls.jpg>
+![Placement of the controls](/static/hardware/shoebox-controller/placing-controls.jpg)
 
 * You will need space for:
 
@@ -35,21 +35,21 @@ Want to create your very own DIY Arcade Video Game experience with fun joysticks
 
 * Here is how we mapped out our controller panel:
 
-<P1Controller.png>
+![Layout of player 1 controls](/static/hardware/shoebox-controller/p1-controller.png)
 
 ### Determine orientation of your Joystick
 
 * Connect the JST cable between the Joystick and the USB encoder board – you may want to refer to the documentation in your kit to figure out which port to connect to. For our kit, there was only 1 port the right size for the joystick cable.
 
-<TestingJoystick1.jpg>
+![Testing joystick wiring](/static/hardware/shoebox-controller/testing-joystick1.jpg)
 
 * Attach the USB cable between the encoder board and your computer
 * Open up a MakeCode Arcade game in the browser – i.e. https://makecode.com/_XsCCsy5L1eXr
 * Use the Joystick to move the player around the screen and mark the correct directions on the Joystick
 
-<TestingJoystick2.jpg>
+![Testing joystick in game](/static/hardware/shoebox-controller/testing-joystick2.jpg)
 
-<JoystickOrientation.jpg>
+![Orientation of the joystick](/static/hardware/shoebox-controller/joystick-orientation.jpg)
 
 ## Install Joystick and buttons on shoebox
 
