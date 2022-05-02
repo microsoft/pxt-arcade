@@ -93,33 +93,33 @@ Want to create your very own DIY Arcade Video Game experience with fun joysticks
 * Place the USB encoder board inside the shoebox
 * Connect the USB encoder board to the USB cable
 
-![Controller board in the shoebox](/static/hardware/shoebox-controller/installing-encoder-board.jpg)
+![Encoder board in the shoebox](/static/hardware/shoebox-controller/installing-encoder-board.jpg)
 
 ## Wire the Joystick and buttons to the USB Encoder Board
 
 Different kits may have different ports, so you should check the wiring diagram that comes with your kit. We used the following mapping for the Hikig 2-Player Arcade Kit:
 
-<USBEncoderBoard.png>
+![Encoder board pin diagram](/static/hardware/shoebox-controller/usb-encoder-board.png)
 
 * Connect the Joystick JST cable between the Joystick and the USB encoder board
 
-<WiringJoystick.jpg>
+![Wiring the joystick](/static/hardware/shoebox-controller/wiring-joystick.jpg)
 
 * Connect a JST cable between Button A and the first pin (K1 in our kit) on the USB encoder board
 
-<WiringA.jpg>
+![Wiring button A](/static/hardware/shoebox-controller/wiring-a.jpg)
 
 * Connect a JST cable between Button B and the second pin (K2 in our kit) on the USB encoder board
 
-<WiringB.jpg>
+![Wiring button B](/static/hardware/shoebox-controller/wiring-b.jpg)
 
 * Connect a JST cable between the Reset Button and the K11 pin (2nd port from the end in our kit) on the USB encoder board
 
-<WiringReset.jpg>
+![Wiring Reset button](/static/hardware/shoebox-controller/wiring-reset.jpg)
 
 * Connect a JST cable between the Menu Button and the Start pin (3rd port from the end in our kit) on the USB encoder board
 
-<WiringMenu.jpg>
+![Wiring Menu button](/static/hardware/shoebox-controller/wiring-menu.jpg)
 
 ## Test
 
@@ -135,3 +135,5 @@ Different kits may have different ports, so you should check the wiring diagram 
 ## Player Two Shoebox Controller (optional):
 
 If you want to use 2 Arcade controllers for 2-player games, create a second shoebox controller. You will follow the same directions as above for the single player controller, but you will not include a Reset or Menu button. Connect both shoebox controller USB cables to your computer and open a 2-Player MakeCode Arcade game in the browser. Note that whichever controller is connected to the computer first will be the Player 1 controller.
+
+![Layout of player 2 controls](/static/hardware/shoebox-controller/p2-controller.png)
