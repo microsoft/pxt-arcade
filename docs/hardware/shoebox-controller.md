@@ -43,8 +43,8 @@ Want to create your very own DIY Arcade Video Game experience with fun joysticks
 
 <TestingJoystick1.jpg>
 
-* Attach the USB cable between the encoder board and your computer * Open up a MakeCode Arcade game in the browser – i.e. https://makecode.com/_XsCCsy5L1eXr
-
+* Attach the USB cable between the encoder board and your computer
+* Open up a MakeCode Arcade game in the browser – i.e. https://makecode.com/_XsCCsy5L1eXr
 * Use the Joystick to move the player around the screen and mark the correct directions on the Joystick
 
 <TestingJoystick2.jpg>
@@ -54,7 +54,6 @@ Want to create your very own DIY Arcade Video Game experience with fun joysticks
 ## Install Joystick and buttons on shoebox
 
 * Disconnect the Joystick from the cable and make sure the black plastic washer and Joystick knob handle are removed
-
 * Using the pen knife cut out a small hole in the top of the shoebox to fit the Joystick handle through
 
 <JoystickHandleHole.jpg>
@@ -68,9 +67,7 @@ Want to create your very own DIY Arcade Video Game experience with fun joysticks
 <JoystickInstalled.jpg>
 
 * On the inside of the box, use the pen knife to cut 2 holes in each of the 4 corners of the Joystick panel – one through the panel opening, and one on the outside of the panel
-
 * Make sure the orientation of the Joystick is correct (up is at the top)
-
 * Thread a zip tie through each of these holes securing the Joystick panel to the top of the box
 
 <JoystickZipTies.jpg>
@@ -94,7 +91,6 @@ Want to create your very own DIY Arcade Video Game experience with fun joysticks
 <USBhole.jpg>
 
 * Place the USB encoder board inside the shoebox
-
 * Connect the USB encoder board to the USB cable
 
 <InstallingEncoderBoard.jpg>
@@ -128,7 +124,6 @@ Different kits may have different ports, so you should check the wiring diagram 
 ## Test
 
 * Connect the USB cable to your computer and open up a MakeCode Arcade game in the browser – i.e. https://makecode.com/_XsCCsy5L1eXr
-
 * Make sure the Joystick and the buttons all work as expected, if not, troubleshoot by attaching different wires to different pins on the USB encoder board
 
 <Test.gif>
