@@ -33,11 +33,11 @@
         "typescript": "^4.2.3"
     },
     "dependencies": {
-        "pxt-common-packages": "9.4.10",
-        "pxt-core": "7.5.19"
+        "pxt-common-packages": "9.5.7",
+        "pxt-core": "7.5.23"
     },
     "optionalDependencies": {
-        "pxt-arcade-sim": "microsoft/pxt-arcade-sim.git#v0.8.10"
+        "pxt-arcade-sim": "microsoft/pxt-arcade-sim.git#v0.8.11"
     },
     "scripts": {
         "serve": "node node_modules/pxt-core/built/pxt.js serve"
