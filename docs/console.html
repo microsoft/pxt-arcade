@@ -340,7 +340,6 @@
     div.sim-embed {
     width: 100%;
     height: 100%;
-    
     }
 
     @media only screen and (min-width: 320px) and (max-width: 479px){
@@ -419,6 +418,8 @@
         divImage.append(outputImg);
     }
 
+    let running = false;
+
     function buildCard(link) {
 
         let iDiv = document.createElement('div');
@@ -452,7 +453,6 @@
 
         iDiv.appendChild(divDesc);
 
-        let running = false;
         iDiv.onclick = function() {
             if (running) {
                 return;
@@ -462,7 +462,7 @@
                 gamespace.firstChild.remove();
             }
 
-            let editorEmbedURL = `https://arcade.makecode.com/---run?id=${link.id}`;
+            let editorEmbedURL = `https://arcade.makecode.com/---run?id=${link.id}&&fullscreen=1`;
             function createIFrame(src) {
                 var iframe = document.createElement("iframe");
                 iframe.className = "sim-embed";
@@ -523,6 +523,9 @@
     let lastAction = false;
 
     function updateLoop() {
+        if (running) {
+            return;
+        }
         let gp = navigator.getGamepads()[0];
         if (gp.buttons[0].pressed) //A button
             clickItem();
