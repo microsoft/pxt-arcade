@@ -82,6 +82,11 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "imageUrl": "/static/hardware/adafruitjoybonnet.jpg",
         "url": "https://learn.adafruit.com/makecode-arcade-pi-zero",
         "variant": "hw---rpi"
+    },{
+        "name": "Shoebox Controller",
+        "description": "Turn a shoebox into a USB game controller for a PC.",
+        "imageUrl": "/static/hardware/shoebox.jpg",
+        "url": "/hardware/shoebox-controller"
     },
     {
         "name": "Cardboard Panel",
