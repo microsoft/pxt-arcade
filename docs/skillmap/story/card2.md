@@ -257,7 +257,7 @@ Are you ready to make greeting cards for your friends and family?
 
 Follow these quick steps and you'll have one in no time!
 
-![Greetings](/static/skillmaps/story/card.gif "Happy birthday to you!" )
+![Greetings](/static/skillmap/story/card.gif "Happy birthday to you!" )
 
 
 

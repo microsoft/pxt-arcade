@@ -16,17 +16,17 @@
   "directOpen": true
 },
 {
-  "name": "Save the Forest",
+  "name": "Monster Truck Racer",
   "cardType": "link",
-  "description": "Use blocks to code your airtanker and set up tech so your ground team can help you save the forest!",
-  "imageUrl": "/static/skillmap/backgrounds/forest.png",
-  "url": "https://arcade.makecode.com/--skillmap#forest",
+  "description": "Create a side-scrolling monster truck racing game, then jump obstacles to get your rig to the finish line.",
+  "imageUrl": "/static/skillmap/backgrounds/racer.png",
+  "url": "https://arcade.makecode.com/--skillmap#racer",
   "directOpen": true
 },
 {
-  "name": "Sing 2",
+  "name": "Talent Show",
   "cardType": "link",
-  "description": "Learn to create a clicker game and quickly rack up the points as you applaud your favorite stars from Sing 2.",
+  "description": "Learn to create a clicker game and quickly rack up the points as you applaud your favorite performers.",
   "imageUrl": "/static/skillmap/backgrounds/star-map.png",
   "url": "https://arcade.makecode.com/--skillmap#star",
   "directOpen": true
@@ -37,6 +37,14 @@
   "description": "The deep sea is a fascinating place! This skillmap will guide you through the ocean as a shark on a journey to find food!",
   "imageUrl": "/static/skillmap/backgrounds/shark-map.png",
   "url": "https://arcade.makecode.com/--skillmap#shark",
+  "directOpen": true
+},
+{
+  "name": "Save the Forest",
+  "cardType": "link",
+  "description": "Use blocks to code your airtanker and set up tech so your ground team can help you save the forest!",
+  "imageUrl": "/static/skillmap/backgrounds/forest.png",
+  "url": "https://arcade.makecode.com/--skillmap#forest",
   "directOpen": true
 },
 {

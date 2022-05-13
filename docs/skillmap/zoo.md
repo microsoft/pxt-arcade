@@ -3,7 +3,7 @@
 * description: Ever wonder what it takes to be a zookeeper? The answer may surprise you...
 * infoUrl: skillmap/educator-info/zookeeper-map-info
 * bannerurl: /static/skillmap/zoo/zoo-welcome.png
-* backgroundurl: /static/skillmap/backgrounds/zookeeper-bg.png 
+* backgroundurl: /static/skillmap/backgrounds/zookeeper-bg.png
 * primarycolor: #2EA9B0
 * secondarycolor: #fff609
 * tertiarycolor: #78DC52
@@ -94,5 +94,9 @@
     * map: [Try Beginner Skillmap](/skillmap/beginner)
     * editor: [Edit Your Project with a Full Toolbox](/)
 * rewards:
-    * certificate: /static/skillmap/certificates/zookeeper-license.pdf
-    * completion-badge: /static/badges/badge-zoo.png
+    * certificate:
+        * url: /static/skillmap/certificates/zookeeper-license.pdf
+        * preview: /static/skillmap/zoo/zookeeper-license.png
+    * completion-badge:
+        * image: /static/badges/badge-zoo.png
+        * name: Zookeeper's Day

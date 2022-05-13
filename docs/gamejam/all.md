@@ -18,10 +18,16 @@ on the workspace background.
 ```codecard
 [
     {
-        "name": "Garden Jam",
-        "description": "Garden themed jam hosted in Arcade",
-        "url": "/gamejam/garden",
-        "imageUrl": "/static/gamejam/jams/garden/assets/garden.gif"
+        "name": "Time Jam",
+        "description": "Time themed jam hosted in Arcade",
+        "url": "/gamejam/time",
+        "imageUrl": "/static/gamejam/jams/time/assets/preview.png"
+    },
+    {
+        "name": "Ocean Jam",
+        "description": "Ocean themed jam hosted in Arcade",
+        "url": "/gamejam/ocean",
+        "imageUrl": "/static/gamejam/jams/ocean/assets/preview.png"
     },
     {
         "name": "Traffic Jam",
@@ -30,16 +36,17 @@ on the workspace background.
         "imageUrl": "/static/gamejam/jams/traffic/assets/traffic.gif"
     },
     {
-        "name": "Ocean Jam",
-        "description": "Ocean themed jam hosted in Arcade",
-        "url": "/gamejam/ocean",
-        "imageUrl": "/static/gamejam/jams/ocean/assets/preview.png"
+        "name": "Garden Jam",
+        "description": "Garden themed jam hosted in Arcade",
+        "url": "/gamejam/garden",
+        "imageUrl": "/static/gamejam/jams/garden/assets/garden.gif"
     }
 ]
 ```
 
 ## See also
 
-[Garden Jam](/gamejam/garden),
+[Time Jam](/gamejam/time),
+[Ocean Jam](/gamejam/ocean),
 [Traffic Jam](/gamejam/traffic),
-[Ocean Jam](/gamejam/ocean)
+[Garden Jam](/gamejam/garden)

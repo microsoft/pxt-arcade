@@ -60,5 +60,6 @@
     * [Adding New Board](/hardware/adding)
     * [Raspberry Pi](/hardware/raspberry-pi)
     * [Makey Makey](/hardware/makey-makey)
+    * [Shoebox Controller](/hardware/shoebox-controller)
     * [Dev](/hardware/dev)
     * [Debug connector](/hardware/dbg)
