@@ -50,7 +50,7 @@ const GameList: React.FC<IProps> = ({ kiosk }) => {
 
     useEffect(() => {
         let selectedTabIndex: number = 0;
-        let focusable = document.querySelectorAll('[tabindex]:not([tabindex="-1"])') as NodeListOf<HTMLInputElement>;
+        const focusable = document.querySelectorAll('[tabindex]:not([tabindex="-1"])') as NodeListOf<HTMLInputElement>;
         const gameListParent = document.getElementById("gameList")! as HTMLDivElement;
                 
         function nextItem() {

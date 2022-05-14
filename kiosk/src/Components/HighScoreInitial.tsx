@@ -39,7 +39,7 @@ const HighScoreInitial: React.FC<IProps> = ({ kiosk, isSelected, onCharacterChan
             }
         };
 
-        var interval = setInterval(() => gamepadLoop(), configData.GamepadPollLoopMilli);
+        const interval = setInterval(() => gamepadLoop(), configData.GamepadPollLoopMilli);
         return () => clearInterval(interval);
     });
 
