@@ -19,7 +19,10 @@ export class Kiosk {
     private intervalId: any;
 
     async downloadGameList(): Promise<void> {
-        const url = configData.GameDataUrl;
+        let url = configData.GameDataUrl;
+        if (configData.Debug) {
+            url = `/static/kiosk/${url}`;
+        }
 
         const response = await fetch(url);
         if (!response.ok) {
@@ -112,7 +115,7 @@ export class Kiosk {
         if (this.state !== KioskState.PlayingGame) { return; }
         this.navigate(state);
 
-        let gamespace = document.getElementsByTagName("BODY")[0];
+        const gamespace = document.getElementsByTagName("BODY")[0];
         while (gamespace.firstChild) {
             gamespace.firstChild.remove();
         }
@@ -125,15 +128,15 @@ export class Kiosk {
         this.navigate(KioskState.PlayingGame);
 
         this.siteElements = [];
-        let gamespace = document.getElementsByTagName("BODY")[0];
+        const gamespace = document.getElementsByTagName("BODY")[0];
         while (gamespace.firstChild) {
             this.siteElements.push(gamespace.firstChild);
             gamespace.firstChild.remove();
         }
 
-        let editorEmbedURL = `https://arcade.makecode.com/---run?id=${gameId}&&fullscreen=1`;
+        const editorEmbedURL = `https://arcade.makecode.com/---run?id=${gameId}&&fullscreen=1`;
         function createIFrame(src: string) {
-            var iframe: any = document.createElement("iframe");
+            const iframe: any = document.createElement("iframe");
             iframe.className = "sim-embed";
             iframe.style = "top:0;left:0;width:100%;height:100%;";
             iframe.sandbox = "allow-popups allow-forms allow-scripts allow-same-origin";
