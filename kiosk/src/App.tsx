@@ -6,7 +6,7 @@ import { KioskState } from './Models/KioskState';
 import EnterHighScore from './Components/EnterHighScore';
 
 const kioskSingleton: Kiosk = new Kiosk();
-kioskSingleton.initialize();
+kioskSingleton.initialize().catch(error => alert(error));
 
 function App() {
   const[state, setState] = useState(kioskSingleton.state);
