@@ -1,5 +1,6 @@
 ﻿{
     "GameDataUrl":  "GameList.json",
+    "PlayUrlRoot":  "https://arcade.makecode.com/---run",
     "Debug":  true,
     "UseInPlaceGameListScroll":  true,
     "HighScoresToKeep":  10,

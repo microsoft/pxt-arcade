@@ -74,6 +74,11 @@ export class Kiosk {
 
         this.intervalId = setInterval(() => this.gamePadLoop(), configData.GamepadPollLoopMilli);
 
+        // window.addEventListener("message", (event) => {
+        //     // TODO: Listen for simulator messages that indicate the end of a game.
+        //     console.log(event);
+        //   });
+
         return this.initializePromise;
     }
 
@@ -134,7 +139,7 @@ export class Kiosk {
             gamespace.firstChild.remove();
         }
 
-        const editorEmbedURL = `https://arcade.makecode.com/---run?id=${gameId}&noFooter=1&single=1&fullscreen=1`;
+        const playUrl = `${configData.PlayUrlRoot}?id=${gameId}&hideSimButtons=1&noFooter=1&single=1&fullscreen=1`;
         function createIFrame(src: string) {
             const iframe: any = document.createElement("iframe");
             iframe.className = "sim-embed";
@@ -143,7 +148,7 @@ export class Kiosk {
             iframe.src = src;
             return iframe;
         }
-        gamespace.appendChild(createIFrame(editorEmbedURL));
+        gamespace.appendChild(createIFrame(playUrl));
     }
 
     getAllHighScores(): { [index: string]: HighScore[] } {
