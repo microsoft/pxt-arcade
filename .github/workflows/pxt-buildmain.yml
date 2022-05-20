@@ -31,7 +31,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: microsoft/pxt-arcade-sim
-          ref: v0.8.12
+          ref: v0.8.13
           token: ${{ secrets.GH_TOKEN }}
           path: node_modules/pxt-arcade-sim
       - name: pxt ci
