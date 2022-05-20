@@ -20,7 +20,7 @@
 * allowcodecarryover: false
 * name: Moving Monkey
 * type: tutorial
-* description: Make your monkey jump and move around!
+* description: Make your player jump and move around!
 * url: /skillmap/jungle/jungle1
 * imageUrl: /static/skillmap/jungle/jungle1.gif
 * tags: easy
