@@ -64,9 +64,9 @@
   "directOpen": true
 },
 {
-  "name": "Jungle Monkey Jump Platformer",
+  "name": "Jungle Jump Platformer",
   "cardType": "link",
-  "description": "Code your monkey, add magic platforms, toss explosives, and collect valuables through customizable level maps.",
+  "description": "Code your player, add magic platforms, toss explosives, and collect valuables through customizable level maps.",
   "imageUrl":  "/static/skillmap/backgrounds/jungle-map.png",
   "url": "https://arcade.makecode.com/--skillmap#jungle",
   "directOpen": true
