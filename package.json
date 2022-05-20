@@ -1,6 +1,6 @@
 {
     "name": "pxt-arcade",
-    "version": "1.9.7",
+    "version": "1.9.8",
     "description": "Small arcade editor for MakeCode",
     "keywords": [
         "JavaScript",
@@ -37,7 +37,7 @@
         "pxt-core": "7.5.37"
     },
     "optionalDependencies": {
-        "pxt-arcade-sim": "microsoft/pxt-arcade-sim.git#v0.8.12"
+        "pxt-arcade-sim": "microsoft/pxt-arcade-sim.git#v0.8.13"
     },
     "scripts": {
         "serve": "node node_modules/pxt-core/built/pxt.js serve"
