@@ -1,8 +1,8 @@
-# About Jungle Monkey Jump Platformer
+# About Jungle Jump Platformer
 
 **A page for Educators & Parents**
 
-**Jungle Monkey Jump** introduces a number of MakeCode Arcade game design elements.
+**Jungle Jump** introduces a number of MakeCode Arcade game design elements.
 
 In this set of activities, students will create their very own platformer game with MakeCode Arcade.  This map is intended for students who are new to MakeCode with little or no previous coding experience.  Through step-by-step instructions, students will bring a monkey friend to life in a world filled with dangerous obstacles and collectible baubles.
 
@@ -11,7 +11,7 @@ Designed for students between the ages of 11 & 15, this experience contains a to
 |                 | Minutes* | Game Type | Key Concepts |
 | --------------- | -------- | --------- | ------------ |
 | **Session 1** | **38** |  |  |
-| Jungle Monkey Jump | 10 | Intro | movement, acceleration, user input, gravity |
+| Jungle Jump | 10 | Intro | movement, acceleration, user input, gravity |
 | Game Over | 8 | Platformer | events, game score |
 | Leaps and Bounds | 10 | Platformer | user input, creation |
 | Blown Away | 10 | Platformer | user input, projectiles, animation, events, destruction |
@@ -23,9 +23,9 @@ Designed for students between the ages of 11 & 15, this experience contains a to
 
 \* Minutes are approximate, based on time to follow instructions as written. Times do not include time spent on designing elements or re-aquainting with previously-written code. Providing extra time for creativity and debugging is encouraged.
 
-### Objectives 
+### Objectives
 
-After completing Jungle Monkey Platformer, students will have gained exposure to multiple arcade platformer game concepts using MakeCode Arcade.
+After completing Jungle Jump Platformer, students will have gained exposure to multiple arcade platformer game concepts using MakeCode Arcade.
 
 Specifically, they will experience the following topics:
 
@@ -54,13 +54,13 @@ Specifically, they will experience the following topics:
 
 As students progress through these projects, they will progressively build their game. They will witness the monkey's evolution from a simple creature that can only move around to an animated jump and run _master_ who can create its own platforms, blow up obstacles, and collect baubles across multiple worlds.
 
-#### 1. Jungle Monkey Jump
+#### 1. Jungle Jump
 
-| Activity | Jungle Monkey Jump (10 min) |
+| Activity | Jungle Jump (10 min) |
 |---|---|
-| ![Jungle Monkey Jump thumbnail](/static/skillmap/jungle/jungle1.gif) | Set up your monkey's side-to-side and jump movements. |
+| ![Jungle Jump thumbnail](/static/skillmap/jungle/jungle1.gif) | Set up your monkey's side-to-side and jump movements. |
 | Blocks used | ``[mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[controller.moveSprite(mySprite, 0, 0)]``<br/>``[let mySprite: Sprite=null; mySprite.ay = 0]``<br/>``[scene.cameraFollowSprite(mySprite)]``<br/>``[controller.up.onEvent()]``<br/>``[let mySprite: Sprite=null; sprites.gravity_jump(mySprite)]`` |
-| Solution option | [Jungle Monkey Jump Project](https://makecode.com/_2cdMJY6x5F1U) |
+| Solution option | [Jungle Jump Project](https://makecode.com/_2cdMJY6x5F1U) |
 
 #### 2. Game Over
 
@@ -120,7 +120,7 @@ As students progress through these projects, they will progressively build their
 
 ##### Game Mod Ideas
 
-As students work on Make it Your Own, we encourage them to plan out how they want to modify this game to best suit their interests. Consider the following questions: 
+As students work on Make it Your Own, we encourage them to plan out how they want to modify this game to best suit their interests. Consider the following questions:
 
 - What kind of world would I want to explore? Redesign the scene with your chosen environment!
 - What is an animal or creature that would fit in to this world? Replace the monkey with your chosen creature!

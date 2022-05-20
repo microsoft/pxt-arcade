@@ -1,23 +1,24 @@
 html, body {
-    background-color: rgb(254, 243, 224);
     height: 100%;
     width: 100%;
     font-family: verdana;
     padding: 0;
     margin: 0;
-    }
+    overflow: hidden;    
+    background-color: black;
+}
   
 #container {
     height: 100%;
     width: 100%;
     position: absolute;
-  
     display: flex;
     justify-content: center;
     align-items: center;
 }
   
 .container-instructions{
+    background-color: rgb(254, 243, 224);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -208,4 +209,12 @@ header {
 .highScoreScore {
     display: inline-block;
     width: 200px;
+}
+
+.sim-embed {
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    position: absolute;
 }
