@@ -103,33 +103,33 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
             }
 
             <table className="center">
+                <tbody>
+                    {renderList(aboveScores, 1)}
 
-            {renderList(aboveScores, 1)}
+                    {enterInitials ? "" : <br></br>}
 
-            {enterInitials ? "" : <br></br>}
+                    <tr className="highScoreRow enterHighScoreText">
+                        <td className="highScoreIndex">
+                            {
+                                enterInitials ? 
+                                    <span>
+                                        {aboveScores.length + 1}.
+                                    </span>
+                                    :
+                                    "--"
+                            }
+                        </td>
+                        <td className="highScoreInitials">
+                            {enterInitials ? renderInitials() : "YOU"}
+                        </td>
+                        <td className="highScoreInitialsScoreSpacer"></td>
+                        <td className="highScoreScore">
+                            {kiosk.currentScore}
+                        </td>
+                    </tr>
 
-            <tr className="highScoreRow enterHighScoreText">
-                <td className="highScoreIndex">
-                    {
-                        enterInitials ? 
-                            <span>
-                                {aboveScores.length + 1}.
-                            </span>
-                            :
-                            "--"
-                    }
-                </td>
-                <td className="highScoreInitials">
-                    {enterInitials ? renderInitials() : "YOU"}
-                </td>
-                <td className="highScoreInitialsScoreSpacer"></td>
-                <td className="highScoreScore">
-                    {kiosk.currentScore}
-                </td>
-            </tr>
-
-            {renderList(belowScores, aboveScores.length + 2)}
-
+                    {renderList(belowScores, aboveScores.length + 2)}
+                </tbody>
             </table>
         </div>
     )

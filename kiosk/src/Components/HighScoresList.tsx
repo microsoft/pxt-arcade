@@ -14,7 +14,9 @@ const HighScoresList: React.FC<IProps> = ({ kiosk }) => {
 
         if (!highScores || !highScores.length) {
             return ([
-                <div className="highScoreSmallDiv" key="noscores">None yet</div>
+                <tr>
+                    <td className="highScoreSmallDiv" key="noscores">None yet</td>
+                </tr>
             ]);
         }
 
@@ -48,7 +50,9 @@ const HighScoresList: React.FC<IProps> = ({ kiosk }) => {
 
     return(
         <table className="center">
-            {renderList()}
+            <tbody>
+                {renderList()}
+            </tbody>
         </table>
     );
 }
