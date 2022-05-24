@@ -50,9 +50,7 @@ const HighScoreInitial: React.FC<IProps> = ({ kiosk, isSelected, onCharacterChan
 
     return(
         <div className={classNames.join(" ")}>
-            <div className="enterHighScorePrevNextInitialText">{configData.HighScoreInitialAllowedCharacters[getPreviousIndex()]}</div>
             <div className="highScoreInitialText">{configData.HighScoreInitialAllowedCharacters[index]}</div>
-            <div className="enterHighScorePrevNextInitialText">{configData.HighScoreInitialAllowedCharacters[getNextIndex()]}</div>
         </div>
     )
 }
