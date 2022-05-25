@@ -3,6 +3,7 @@ import { HighScore } from "./HighScore";
 import { GameData } from "./GameData";
 import { KioskState } from "./KioskState";
 import configData from "../config.json"
+import { runInThisContext } from "vm";
 
 export class Kiosk {
     games: GameData[] = [];
@@ -17,6 +18,7 @@ export class Kiosk {
     private initializePromise: any;
     private siteElements: ChildNode[] = [];
     private intervalId: any;
+    private readonly allScoresStateKey: string = "S/all-scores";
 
     async downloadGameList(): Promise<void> {
         let url = configData.GameDataUrl;
@@ -40,14 +42,7 @@ export class Kiosk {
     gamePadLoop(): void {
         const isDebug = true;
         if (isDebug) {
-            // Pressing the reset and menu buttons while playing a game will signal the game is over with
-            // a random score.
-            if (this.state === KioskState.PlayingGame &&
-                this.gamepadManager.isResetButtonPressed() &&
-                this.gamepadManager.isEscapeButtonPressed()) {
-                    this.gameOver();
-                return;
-            }
+            // Add cases for debugging via the gamepad here.
         }
 
         if (this.gamepadManager.isResetButtonPressed() &&
@@ -74,10 +69,24 @@ export class Kiosk {
 
         this.intervalId = setInterval(() => this.gamePadLoop(), configData.GamepadPollLoopMilli);
 
-        // window.addEventListener("message", (event) => {
-        //     // TODO: Listen for simulator messages that indicate the end of a game.
-        //     console.log(event);
-        //   });
+        window.addEventListener("message", (event) => {
+            switch (event.data.type) {
+                case "simulator":
+                    switch (event.data.command) {
+                        case "setstate":
+                            switch (event.data.stateKey) {
+                                case this.allScoresStateKey:
+                                    const rawData = atob(event.data.stateValue);
+                                    const json = decodeURIComponent(rawData);
+                                    this.mostRecentScores = JSON.parse(json);
+                                    this.gameOver();
+                                    break;
+                            }
+                            break;
+                    }
+                    break;
+            }
+        });
 
         return this.initializePromise;
     }
@@ -115,9 +124,7 @@ export class Kiosk {
     gameOver(): void {
         if (this.state !== KioskState.PlayingGame) { return; }
 
-        this.loadMostRecentScores();
-
-        if (this.mostRecentScores && this.mostRecentScores.length && (this.selectedGame!.highScoreMode != "None")) {
+        if (this.mostRecentScores && this.mostRecentScores.length && (this.selectedGame!.highScoreMode !== "None")) {
             this.exitGame(KioskState.EnterHighScore);
         }
         else {
@@ -200,25 +207,5 @@ export class Kiosk {
 
     resetHighScores() {
         localStorage.removeItem(this.highScoresLocalStorageKey);
-    }
-
-    private loadMostRecentScores() {
-        const scoreDataJson = localStorage.getItem(this.selectedGame!.id);
-        if (!scoreDataJson) {
-            this.mostRecentScores = [];
-            return;
-        }
-
-        const scoreData = JSON.parse(scoreDataJson);
-        const allScoresKey = "S/all-scores";
-
-        if (!scoreData[allScoresKey]) {
-            this.mostRecentScores =[];
-            return;
-        }
-        
-        const rawData = atob(scoreData[allScoresKey]);
-        const json = decodeURIComponent(rawData);
-        this.mostRecentScores = JSON.parse(json);
     }
 }
