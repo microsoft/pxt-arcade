@@ -7,8 +7,8 @@ import configData from "../config.json"
 export class Kiosk {
     games: GameData[] = [];
     gamepadManager: GamepadManager = new GamepadManager();
-    selectedGameId?: string;
-    currentScore: number = 0;
+    selectedGame?: GameData;
+    mostRecentScores: number[] = [];
     onGameSelected!: () => void;
     onNavigated!: () => void;
     state: KioskState = KioskState.MainMenu;
@@ -45,7 +45,7 @@ export class Kiosk {
             if (this.state === KioskState.PlayingGame &&
                 this.gamepadManager.isResetButtonPressed() &&
                 this.gamepadManager.isEscapeButtonPressed()) {
-                this.gameOver(Math.round(Math.random() * 100));
+                    this.gameOver();
                 return;
             }
         }
@@ -53,7 +53,7 @@ export class Kiosk {
         if (this.gamepadManager.isResetButtonPressed() &&
             this.gamepadManager.isEscapeButtonPressed() &&
             this.gamepadManager.isBButtonPressed() &&
-            this.gamepadManager.isLeftPressed()) {                
+            this.gamepadManager.isLeftPressed()) {
                 this.resetHighScores();
                 console.log("High scores reset");
                 return;
@@ -101,14 +101,28 @@ export class Kiosk {
     }
 
     selectGame(gameId: string): void {
-        this.selectedGameId = gameId;
+        const index = this.games.map(item => item.id).indexOf(gameId);
+        if (index >= 0) {
+            this.selectedGame = this.games[index];
+        }
+        else {
+            this.selectedGame = undefined;
+        }
+
         this.onGameSelected();
     }
 
-    gameOver(score: number): void {
+    gameOver(): void {
         if (this.state !== KioskState.PlayingGame) { return; }
-        this.currentScore = score;
-        this.exitGame(KioskState.EnterHighScore);
+
+        this.loadMostRecentScores();
+
+        if (this.mostRecentScores && this.mostRecentScores.length && (this.selectedGame!.highScoreMode != "None")) {
+            this.exitGame(KioskState.EnterHighScore);
+        }
+        else {
+            this.exitGame(KioskState.MainMenu);
+        }
     }
 
     escapeGame(): void {
@@ -116,7 +130,7 @@ export class Kiosk {
         this.exitGame(KioskState.MainMenu);
     }
 
-    exitGame(state: KioskState): void {
+    private exitGame(state: KioskState): void {
         if (this.state !== KioskState.PlayingGame) { return; }
         this.navigate(state);
 
@@ -186,5 +200,25 @@ export class Kiosk {
 
     resetHighScores() {
         localStorage.removeItem(this.highScoresLocalStorageKey);
+    }
+
+    private loadMostRecentScores() {
+        const scoreDataJson = localStorage.getItem(this.selectedGame!.id);
+        if (!scoreDataJson) {
+            this.mostRecentScores = [];
+            return;
+        }
+
+        const scoreData = JSON.parse(scoreDataJson);
+        const allScoresKey = "S/all-scores";
+
+        if (!scoreData[allScoresKey]) {
+            this.mostRecentScores =[];
+            return;
+        }
+        
+        const rawData = atob(scoreData[allScoresKey]);
+        const json = decodeURIComponent(rawData);
+        this.mostRecentScores = JSON.parse(json);
     }
 }

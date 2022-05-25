@@ -7,15 +7,15 @@ interface IProps {
   }
 
 const HighScoresList: React.FC<IProps> = ({ kiosk }) => {
-    const [selectedGameId, setSelectedGameId] = useState(kiosk.selectedGameId);
+    const [selectedGameId, setSelectedGameId] = useState(kiosk.selectedGame?.id);
 
     const renderList = (): JSX.Element[] => {
         const highScores: HighScore[] = kiosk.getHighScores(selectedGameId!);
 
         if (!highScores || !highScores.length) {
             return ([
-                <tr>
-                    <td className="highScoreSmallDiv" key="noscores">None yet</td>
+                <tr key="noscores">
+                    <td className="highScoreSmallDiv">None yet</td>
                 </tr>
             ]);
         }
@@ -36,7 +36,7 @@ const HighScoresList: React.FC<IProps> = ({ kiosk }) => {
 
     useEffect(() => {
         kiosk.onGameSelected = () => {
-            setSelectedGameId(kiosk.selectedGameId);
+            setSelectedGameId(kiosk.selectedGame!.id);
           };
     });
 
@@ -48,12 +48,19 @@ const HighScoresList: React.FC<IProps> = ({ kiosk }) => {
         );
     }
 
+    if (!kiosk.selectedGame || (kiosk.selectedGame!.highScoreMode === "None")) {
+        return (<></>);
+    }
+
     return(
-        <table className="center">
-            <tbody>
-                {renderList()}
-            </tbody>
-        </table>
+        <div>
+            <h2 className="mainMenuHighScoreHeader">High Scores</h2>
+            <table className="center">
+                <tbody>
+                    {renderList()}
+                </tbody>
+            </table>
+        </div>
     );
 }
   

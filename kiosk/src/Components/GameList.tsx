@@ -53,12 +53,12 @@ const GameList: React.FC<IProps> = ({ kiosk }) => {
         kiosk.initialize().then(() => {
             setGames(kiosk.games);
 
-            if (!kiosk.selectedGameId && kiosk.games.length) {
+            if (!kiosk.selectedGame && kiosk.games.length) {
                 kiosk.selectGame(kiosk.games[0].id);
             }
 
-            if (kiosk.selectedGameId) {
-                indexRef.value = kiosk.games.map(item => item.id).indexOf(kiosk.selectedGameId);
+            if (kiosk.selectedGame) {
+                indexRef.value = kiosk.games.map(item => item.id).indexOf(kiosk.selectedGame.id);
             }
         })
     });
@@ -81,6 +81,12 @@ const GameList: React.FC<IProps> = ({ kiosk }) => {
         };
     }, [games]);
 
+    useEffect(() => {
+        if (kiosk.selectedGame) {
+            setSelectedIndex(games.map(item => item.id).indexOf(kiosk.selectedGame!.id));
+        }
+    }, [kiosk.selectedGame]);
+
     if (!kiosk.games || !kiosk.games.length) {
         return(<div></div>);
     }
@@ -93,7 +99,7 @@ const GameList: React.FC<IProps> = ({ kiosk }) => {
                 }}>
                     <div className="gameContentBackground">
                         <div className="gameTitle">{game.name}</div>
-                        <div className="gameDescription">{game.desc}</div>
+                        <div className="gameDescription">{game.description}</div>
                     </div>
                 </div>,
          onClick: () => kiosk.launchGame(game.id)
