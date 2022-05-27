@@ -43,57 +43,71 @@
         ],
         "approvedRepoLib": {
             "adafruit/Circuit-Playground-Character-Icons": {
-                "preferred": true
+                "preferred": true,
+                "tags": [ "Sprite Pack" ]
             },
             "adafruit/pxt-seesaw": {
-                "preferred": true
+                "preferred": true,
+                "tags": [ "Hardware" ]
             },
             "jwunderl/pxt-button-combos": {
                 "preferred": true
             },
             "jwunderl/pxt-color": {
-                "preferred": true
+                "preferred": true,
+                "tags": [ "Visual Effects"]
             },
             "jwunderl/pxt-status-bar": {
-                "preferred": true
+                "preferred": true,
+                "tags": [ "Sprites" ]
             },
             "microsoft/pxt-settings-blocks": {
-                "preferred": true
+                "preferred": true,
+                "tags": [ "Utility" ]
             },
             "microsoft/arcade-sprite-data": {
-                "preferred": true
+                "preferred": true,
+                "tags": [ "Utility" ]
             },
-            "microsoft/arcade-grid": {
-                "preferred": true
-            },
+            "microsoft/arcade-grid": { "preferred": true },
             "microsoft/arcade-minimap": {
-                "preferred": true
+                "preferred": true,
+                "tags": [ "Sprites" ]
             },
             "microsoft/arcade-timers": {
-                "preferred": true
+                "preferred": true,
+                "tags": [ "Utility" ]
             },
             "microsoft/arcade-text": {
-                "preferred": true
+                "preferred": true,
+                "tags": [ "Sprites" ]
             },
             "microsoft/pxt-tick-event": {},
             "microsoft/pxt-tilemaps": {},
             "microsoft/pxt-skillmap-sample": {},
-            "microsoft/pxt-jacdac": {},
+            "microsoft/pxt-jacdac": {
+                "tags": [ "Hardware" ]
+            },
             "microsoft/arcade-storytelling": {
-                "preferred": true
+                "preferred": true,
+                "tags": [ "Utility" ]
             },
             "microsoft/arcade-background-scroll": {
-                "preferred": true
+                "preferred": true,
+                "tags": [ "Visual Effects" ]
             },
             "microsoft/arcade-character-animations": {
-                "preferred": true
+                "preferred": true,
+                "tags": [ "Visual Effects", "Utility", "Sprites" ]
             },
             "microsoft/arcade-tile-util": {
-                "preferred": true
+                "preferred": true,
+                "tags": [ "Utility" ]
             },
             "mr-coxall/turtle-logo": {},
             "aqeeaqee/pxt-raycasting": {
-                "preferred": true
+                "preferred": true,
+                "tags": [ "Visual Effects" ]
             }
         },
         "upgrades": {
