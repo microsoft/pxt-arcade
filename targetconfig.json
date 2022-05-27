@@ -91,7 +91,10 @@
             "microsoft/arcade-tile-util": {
                 "preferred": true
             },
-            "mr-coxall/turtle-logo": {}
+            "mr-coxall/turtle-logo": {},
+            "aqeeaqee/pxt-raycasting": {
+                "preferred": true
+            }
         },
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
