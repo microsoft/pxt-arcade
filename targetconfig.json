@@ -67,7 +67,8 @@
             },
             "microsoft/arcade-sprite-data": {
                 "preferred": true,
-                "tags": [ "Utility" ]
+                "tags": [ "Utility" ],
+                "upgrades": "min:v0.0.6"
             },
             "microsoft/arcade-grid": { "preferred": true },
             "microsoft/arcade-minimap": {
@@ -83,7 +84,9 @@
                 "tags": [ "Sprites" ]
             },
             "microsoft/pxt-tick-event": {},
-            "microsoft/pxt-tilemaps": {},
+            "microsoft/pxt-tilemaps": {
+                "upgrades": [ "min:v1.8.1" ]
+            },
             "microsoft/pxt-skillmap-sample": {},
             "microsoft/pxt-jacdac": {
                 "tags": [ "Hardware" ]
