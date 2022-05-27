@@ -39,6 +39,58 @@
             "microsoft/arcade-background-scroll",
             "microsoft/arcade-character-animations"
         ],
+        "approvedRepoLib": {
+            "adafruit/Circuit-Playground-Character-Icons": {
+                "preferred": true
+            },
+            "adafruit/pxt-seesaw": {
+                "preferred": true
+            },
+            "jwunderl/pxt-button-combos": {
+                "preferred": true
+            },
+            "jwunderl/pxt-color": {
+                "preferred": true
+            },
+            "jwunderl/pxt-status-bar": {
+                "preferred": true
+            },
+            "microsoft/pxt-settings-blocks": {
+                "preferred": true
+            },
+            "microsoft/arcade-sprite-data": {
+                "preferred": true
+            },
+            "microsoft/arcade-grid": {
+                "preferred": true
+            },
+            "microsoft/arcade-minimap": {
+                "preferred": true
+            },
+            "microsoft/arcade-timers": {
+                "preferred": true
+            },
+            "microsoft/arcade-text": {
+                "preferred": true
+            },
+            "microsoft/pxt-tick-event": {},
+            "microsoft/pxt-tilemaps": {},
+            "microsoft/pxt-skillmap-sample": {},
+            "microsoft/pxt-jacdac": {},
+            "microsoft/arcade-storytelling": {
+                "preferred": true
+            },
+            "microsoft/arcade-background-scroll": {
+                "preferred": true
+            },
+            "microsoft/arcade-character-animations": {
+                "preferred": true
+            },
+            "microsoft/arcade-tile-util": {
+                "preferred": true
+            },
+            "mr-coxall/turtle-logo": {}
+        },
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
             "microsoft/arcade-sprite-data": "min:v0.0.6"
