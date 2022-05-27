@@ -42,7 +42,7 @@
             "aqeeaqee/pxt-raycasting"
         ],
         "approvedRepoLib": {
-            "adafruit/Circuit-Playground-Character-Icons": {
+            "adafruit/circuit-playground-character-icons": {
                 "preferred": true,
                 "tags": [ "Sprite Pack" ]
             },
