@@ -42,13 +42,7 @@ export class Kiosk {
     gamePadLoop(): void {
         const isDebug = true;
         if (isDebug) {
-            // Add cases for debugging via the gamepad here.
-            if (this.state == KioskState.PlayingGame &&
-                this.gamepadManager.isResetButtonPressed() &&
-                this.gamepadManager.isEscapeButtonPressed()) {
-                    this.mostRecentScores = [ 99 ];
-                    this.gameOver();
-                }
+            // Add cases for debugging via the gamepad here.            
         }
 
         if (this.gamepadManager.isResetButtonPressed() &&
