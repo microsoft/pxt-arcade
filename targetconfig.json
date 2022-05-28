@@ -20,7 +20,8 @@
             "microsoft/arcade-storytelling",
             "microsoft/arcade-background-scroll",
             "microsoft/arcade-character-animations",
-            "microsoft/arcade-tile-util"
+            "microsoft/arcade-tile-util",
+            "aqeeaqee/pxt-raycasting"
         ],
         "preferredRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
@@ -37,7 +38,8 @@
             "microsoft/arcade-tile-util",
             "microsoft/arcade-storytelling",
             "microsoft/arcade-background-scroll",
-            "microsoft/arcade-character-animations"
+            "microsoft/arcade-character-animations",
+            "aqeeaqee/pxt-raycasting"
         ],
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
