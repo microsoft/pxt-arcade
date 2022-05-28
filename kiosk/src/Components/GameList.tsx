@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Kiosk } from "../Models/Kiosk";
 import { KioskState } from "../Models/KioskState";
 import configData from "../config.json"
@@ -12,7 +12,7 @@ interface IProps {
 
 const GameList: React.FC<IProps> = ({ kiosk }) => {
     const [games, setGames] = useState(kiosk.games);
-    const [indexRef, setIndexRef] = useState(new PrimitiveRef(0));
+    const [indexRef, ] = useState(new PrimitiveRef(0));
     const [selectedIndex, setSelectedIndex] = useState(indexRef.value);
     
     const nextItem = () => {
