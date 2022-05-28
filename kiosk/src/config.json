@@ -2,7 +2,6 @@
     "GameDataUrl":  "GameList.json",
     "PlayUrlRoot":  "https://arcade.makecode.com/beta---run",
     "Debug":  true,
-    "UseInPlaceGameListScroll":  true,
     "HighScoresToKeep":  10,
     "HighScoreInitialsLength":  3,
     "HighScoreInitialAllowedCharacters":  "_ABCDEFGHIJKLMNOPQRSTUVWXYZ",

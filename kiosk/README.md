@@ -23,6 +23,7 @@ These settings apply only to the kiosk user experience and do not impact sim gam
 |GamepadLeftRightThreshold        | The threshold to detect for a "right" action. It's negated to detect "left" actions.|
 |GamepadUpDownAxis                | The gamepad axis index for up/down detection.|
 |GamepadUpDownThreshold           | The threshold to detect for a "down" action. It's negated to detect "up" actions.|
+|Keyboard`Input`Keys              | Each is an array of string arrays matching the browser keys that map to the target behavior. The index of a list maps to the same gamepad index (player 1 is the first array at index 0, etc.) |
 
 ## Localhost testing
 ```
