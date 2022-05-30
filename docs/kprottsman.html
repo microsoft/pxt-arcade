@@ -7,10 +7,10 @@
 >
     <head>
         <meta charset="UTF-8" />
-        <title>Microsoft MakeCode Arcade Hour of Code 2020</title>
+        <title>Welcome to Kiki's MakeCode Favorites Page</title>
         <meta
             name="Description"
-            content="Join us in celebrating this year's Computer Science Education Week by playing, designing and coding your very own retro arcade games!"
+            content="Here you'll find a collection of my favorite things to do in MakeCode!"
         />
         <meta
             name="viewport"
@@ -21,87 +21,57 @@
 
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-title" content="Microsoft MakeCode Arcade Hour of Code 2020">
+        <meta name="apple-mobile-web-app-title" content="Kiki's MakeCode Favorites Page">
         <meta name="apple-mobile-web-app-status-bar-style" content="translucent-black">
         <meta name="format-detection" content="telephone=no">
-        <meta name="application-name" content="Microsoft MakeCode Arcade Hour of Code 2020">
+        <meta name="application-name" content="Kiki's MakeCode Favorites Page">
 
         <meta name="msapplication-TileColor" content="#ff7b22">
-        <meta name="msapplication-TileImage" content="/static/hour-of-code/2020/card.png">
+        <meta name="msapplication-TileImage" content="/static/pages/kprottsman/card.png">
         <meta name="msapplication-config" content="none"/>
         <meta name="theme-color" content="#ff7b22">
 
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="MSMakeCode" />
-        <meta name="twitter:title" content="Microsoft MakeCode Arcade Hour of Code 2020" />
-        <meta name="twitter:description" content="Join us in celebrating this year's Computer Science Education Week by playing, designing and coding your very own retro arcade games!" />
-        <meta name="twitter:image" content="/static/hour-of-code/2020/card.png" />
+        <meta name="twitter:title" content="Kiki's MakeCode Favorites Page" />
+        <meta name="twitter:description" content="Here you'll find a collection of my favorite things to do in MakeCode!" />
+        <meta name="twitter:image" content="/static/pages/kprottsman/card.png" />
 
-        <meta property="og:title" content="Microsoft MakeCode Arcade Hour of Code 2020" />
-        <meta property="og:site_name" content="Microsoft MakeCode Arcade Hour of Code 2020" />
-        <meta property="og:description" content="Join us in celebrating this year's Computer Science Education Week by playing, designing and coding your very own retro arcade games!" />
-        <meta property="og:image" content="/static/hour-of-code/2020/card.png" />
+        <meta property="og:title" content="Kiki's MakeCode Favorites Page" />
+        <meta property="og:site_name" content="Kiki's MakeCode Favorites Page" />
+        <meta property="og:description" content="Here you'll find a collection of my favorite things to do in MakeCode!" />
+        <meta property="og:image" content="/static/pages/kprottsman/card.png" />
 
-        <link rel="apple-touch-icon" href="/static/hour-of-code/2020/card.png">
-        <link rel="icon" type="image/png" href="/static/hour-of-code/2020/card.png">
-        <link rel="shortcut icon" href="/static/hour-of-code/2020/card.png">
+        <link rel="apple-touch-icon" href="/static/pages/kprottsman/card.png">
+        <link rel="icon" type="image/png" href="/static/pages/kprottsman/card.png">
+        <link rel="shortcut icon" href="/static/pages/kprottsman/card.png">
 
         <!-- @include scripthead.html -->
-        <link rel="stylesheet" href="/static/hour-of-code/2020/styles.css" />
+        <link rel="stylesheet" href="/static/pages/kprottsman/styles.css" />
         <style>
             body {
-                background-image: url('/static/hour-of-code/2020/pixel-background-secondary.png');
+               /* background-image: url('/static/pages/kprottsman/pixel-background-secondary.png'); */
             }
 
             #main .action-button {
-                border-image-source: url('/static/hour-of-code/2020/shadowed-button-frame.png');
+                border-image-source: url('/static/pages/kprottsman/shadowed-button-frame.png');
             }
 
             #main .panel-primary {
-                border-image-source: url('/static/hour-of-code/2020/shadowed-primary-frame.png');
+                border-image-source: url('/static/pages/kprottsman/shadowed-primary-frame.png');
             }
 
             #main .panel-secondary {
-                border-image-source: url('/static/hour-of-code/2020/shadowed-aside-frame.png');
+                border-image-source: url('/static/pages/kprottsman/shadowed-aside-frame.png');
             }
 
-            #main header {
-                background-image: url('/static/hour-of-code/2020/pixel-background-primary.png');
-            }
+            /*
+                #main header {
+                background-image: url('/static/pages/kprottsman/pixel-background-primary.png');
+            } */
         </style>
 
-        <script>
-            function handleOnLoad() {
-                document
-                    .querySelector('#openhome')
-                    .addEventListener('click', function () {
-                        window.pxtTickEvent('hourofcode2020.home', { src: "main" });
-                    });
 
-                document
-                    .querySelector("#playbutton")
-                    .addEventListener('click', function () {
-                        window.pxtTickEvent('hourofcode2020.play');
-                    });
-
-                document
-                    .querySelector("#designbutton")
-                    .addEventListener('click', function () {
-                        window.pxtTickEvent('hourofcode2020.design');
-                    });
-
-                document
-                    .querySelector("#codebutton")
-                    .addEventListener('click', function () {
-                        window.pxtTickEvent('hourofcode2020.code');
-                    });
-
-                var langPicker = document.querySelector('#langpicker');
-                if (langPicker) {
-                    langPicker.remove();
-                }
-            }
-        </script>
     </head>
 
     <body id="root" class="root background-color-secondary" onload="handleOnLoad()">
@@ -126,13 +96,11 @@
             <header class='background-color-primary'>
                 <div class="container">
                     <div class="left-content-block">
-                        <h3 class='body-font'>Microsoft MakeCode Arcade</h3>
-                        <h1 class="display-font"><span class='first-line'>Hour</span><span class='small-heading'>of</span><span class='last-line'>Code<em class='trademark'>™</em></span></h1>
-                        <h4 class="display-font">2020</h4>
+                        <h2 style="color:#ffeb9a; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600;">Kiki's MakeCode Favorites Page</h3>
                     </div>
 
                     <div class="right-content-block">
-                        <img src="/static/hour-of-code/2020/simulator.gif" alt="MakeCode Arcade Simulator" />
+                        <img src="/static/pages/kprottsman/simulator.png" alt="MakeCode Arcade Simulator" />
                     </div>
                 </div>
             </header>
@@ -142,17 +110,31 @@
                 <div class="content-row">
 
 
-                    <a href="https://arcade.makecode.com/--skillmap#shark" target="_blank" class="content-column one-third panel-secondary">
-                        <h2 class="display-font panel-primary">Code</h2>
+                    <a href="https://makecode.com/_Ho5Cixc7mKti" target="_blank" class="content-column one-third panel-secondary">
+                        <h2 class="display-font panel-primary" style="color:#ffffff;">Play Now</h2>
 
                         <div class="hero">
-                            <img src="/static/hour-of-code/2020/shark-attack.png" alt="Shark Attack" />
+                            <img src="/static/pages/kprottsman/timeflies.png" alt="Asphodel follows directions" />
                         </div>
 
                         <div class="text-content-block">
-                            Follow along the step-by-step tutorial to code your
-                            own Shark Attack game, then share with friends to
-                            play!
+                            Press the (A) button and if you time it just right, you can catch the fly!<br/><br/>
+                        </div>
+
+                        <div id="playbutton" class="action-button">
+                            Launch
+                        </div>
+                    </a>
+
+                    <a href="https://arcade.makecode.com/--skillmap#docs:skillmap/racer" target="_blank" class="content-column one-third panel-secondary">
+                        <h2 class="display-font panel-primary" style="color:#ffffff;">Code Now</h2>
+
+                        <div class="hero">
+                            <img src="/static/pages/kprottsman/monster-racer.png" alt="Monster Racer" />
+                        </div>
+
+                        <div class="text-content-block">
+                            Code your very own monster truck racing game in minutes!
                         </div>
 
                         <div id="codebutton" class="action-button">
@@ -160,42 +142,25 @@
                         </div>
                     </a>
 
-                    <a href="https://arcade.makecode.com/#tutorial:/tutorials/design-the-clovers" target="_blank" class="content-column one-third panel-secondary">
-                        <h2 class="display-font panel-primary">Design</h2>
+                    <a href="https://arcade.makecode.com/" target="_blank" class="content-column one-third panel-secondary">
+                        <h2 class="display-font panel-primary" style="color:#ffffff;">Learn More</h2>
 
                         <div class="hero">
-                            <img src="/static/hour-of-code/2020/design.png" alt="Design the Clovers" />
+                            <img src="/static/pages/kprottsman/home.png" alt="Design the Clovers" />
                         </div>
 
                         <div class="text-content-block">
-                            Get creative! Draw your own game characters using
-                            this simple game template.
+                            Find out how to create games like these on the Arcade homepage!
                         </div>
 
                         <div id="designbutton" class="action-button">Launch</div>
                     </a>
 
-                    <a href="http://aka.ms/asphodel" target="_blank" class="content-column one-third panel-secondary">
-                        <h2 class="display-font panel-primary">Play</h2>
 
-                        <div class="hero">
-                            <img src="/static/hour-of-code/2020/asphodel.png" alt="Asphodel follows directions" />
-                        </div>
-
-                        <div class="text-content-block">
-                            Move the arrows around to help Asphodel navigate to
-                            her trophy. Advance through the levels to win the
-                            game!<br/><br/>
-                        </div>
-
-                        <div id="playbutton" class="action-button">
-                            Launch
-                        </div>
-                    </a>
                 </div>
             </section>
 
-            <section class='intro container'>
+            <!-- <section class='intro container'>
                 <div class="content-block">
                     <div class="text-content-block">
                         Join us in celebrating this year's Computer Science
@@ -204,7 +169,7 @@
                     </div>
                     <div class="panel-secondary educators-aside">
                         <div class='content-block'>
-                            <img src='/static/hour-of-code/2020/apple.png' alt='For educators'/>
+                            <img src='/static/pages/kprottsman/apple.png' alt='For educators'/>
                             <div class="text-content-block">
                                 Are you a <b>teacher</b> or <b>parent</b>? Find
                                 additional information about these activities here.<br/><br/>
@@ -216,9 +181,9 @@
                         >
                     </div>
                 </div>
-            </section>
+            </section> -->
 
-            <section class='container certificate'>
+            <!-- <section class='container certificate'>
                 <div class="content-block">
                     <h2 class="display-font">Get your Certificate</h2>
                     <div class="text-content-block">
@@ -229,31 +194,54 @@
                     </div>
                     <a class="action-button" href="https://1drv.ms/b/s!AqsgsTyHBmRBjyzY4tqc7dhNDJTX">Print Your Certificate</a>
                 </div>
-            </section>
-
+            </section> -->
 
 
             <section class='container additional'>
                 <div class="content-block">
-                    <h2 class="display-font">Additional Activities</h2>
-                    <div class="text-content-block">
-                        Looking for more fun MakeCode Arcade games to build? Try
-                        any of these tutorials and share your games for your
-                        family and friends to play!
-                    </div>
-
+                    <h2 class="display-font"  style="color:#155cc5;"><br/><br/>Additional Games</h2>
 
                     <div class="content-row">
+
                         <div class="content-column one-third">
-                            <a href="https://arcade.makecode.com/hour-of-code-2021" target="_blank">
-                                <img src="/static/skillmap/backgrounds/forest.png" alt="Hour of Code 2021" />
-                                <div class='action-button'>Hour of Code 2021</div>
+                            <a href="https://arcade.makecode.com/hour-of-code-2020" target="_blank">
+                                <img src="/static/pages/kprottsman/memory.png" alt="Memory" />
+                                <div class='action-button'>Test Your Memory</div>
                             </a>
                         </div>
+                        <div class="content-column one-third">
+                            <a href="https://makecode.com/_Hz8Prc6mM3c1" target="_blank">
+                                <img src="/static/pages/kprottsman/balloon.png" alt="Hot Air Balloon" />
+                                <div class='action-button'>Hot Air Balloon</div>
+                            </a>
+                        </div>
+                        <div class="content-column one-third">
+                            <a href="https://arcade.makecode.com/--skillmap#space" target="_blank">
+                                <img src="/static/pages/kprottsman/hamlet.png" alt="Hamlet" />
+                                <div class='action-button'>Almost Hamlet</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class='container additional'>
+                <div class="content-block">
+                    <h2 class="display-font"  style="color:#155cc5;"><br/><br/>Additional Tutorials</h2>
+
+                    <div class="content-row">
+
                         <div class="content-column one-third">
                             <a href="https://arcade.makecode.com/--skillmap#beginner" target="_blank">
                                 <img src="/static/skillmap/backgrounds/beginner.png" alt="Beginner Skillmap" />
                                 <div class='action-button'>Beginner Skillmap</div>
+                            </a>
+                        </div>
+                        <div class="content-column one-third">
+                            <a href="https://arcade.makecode.com/hour-of-code-2020" target="_blank">
+                                <img src="/static/skillmap/backgrounds/shark-map.png" alt="Hour of Code 2020" />
+                                <div class='action-button'>Hour of Code 2020</div>
                             </a>
                         </div>
                         <div class="content-column one-third">
@@ -286,26 +274,24 @@
 
             <section class='container explore'>
                 <div class="content-block">
-                    <h2 class="display-font">Explore More MakeCode</h2>
-                    <div class='text-content-block'>Whether it's gaming, hacking, creating, or learning,
-                        you can use MakeCode to bring your project to life. Explore everything MakeCode Arcade has to
-                        offer, or check out our other platforms such as MakeCode micro:bit and MakeCode Minecraft.</div>
+                    <h2 class="display-font"  style="color:#155cc5;"><br/><br/>Explore More MakeCode</h2>
+
                     <div class="content-row">
                         <div class="content-column one-third">
                             <a href="https://arcade.makecode.com/" target="_blank">
-                                <img src="/static/hour-of-code/2020/arcade.png" alt="MakeCode Arcade" />
+                                <img src="/static/pages/kprottsman/arcade.png" alt="MakeCode Arcade" />
                                 <div class='action-button'>MakeCode Arcade</div>
                             </a>
                         </div>
                         <div class="content-column one-third">
                             <a href="https://makecode.microbit.org/" target="_blank">
-                                <img src="/static/hour-of-code/2020/micro-bit.png" alt="MakeCode micro:bit" />
+                                <img src="/static/pages/kprottsman/micro-bit.png" alt="MakeCode micro:bit" />
                                 <div class='action-button'>MakeCode micro:bit</div>
                             </a>
                         </div>
                         <div class="content-column one-third">
                             <a href="https://minecraft.makecode.com/setup" target="_blank">
-                                <img src="/static/hour-of-code/2020/minecraft.png" alt="MakeCode Minecraft" />
+                                <img src="/static/pages/kprottsman/minecraft.png" alt="MakeCode Minecraft" />
                                 <div class='action-button'>MakeCode Minecraft</div>
                             </a>
                         </div>
