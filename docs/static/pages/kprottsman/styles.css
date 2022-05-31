@@ -51,6 +51,12 @@ body {
     height: auto;
 }
 
+#main .containerTop {
+    width: 95%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 #main .container {
     width: 95%;
     max-width: 1200px;
@@ -198,6 +204,16 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+}
+
+#main header .container .center-content-block {
+    float: center;
+    flex-basis: 40%;
+    flex-shrink: 1;
+    max-width: 39rem;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 3rem;
 }
 
 #main header .container .left-content-block {
