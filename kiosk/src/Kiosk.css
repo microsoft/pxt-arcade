@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "Press Start 2P";
+    src: url('fonts/Press_Start_2P/PressStart2P-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Share";
+    src: url('fonts/Share/Share-Regular.ttf') format('truetype');
+}
+
 html, body {
     height: 100%;
     width: 100%;
