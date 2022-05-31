@@ -3,33 +3,37 @@
     {
         "id": "32777-59846-95775-11055",
         "name": "Secure the river!",
-        "desc": "This is a cooperative game, both players share the lives in this game. You must defeat all skeletons or you will lose a life. Hearts will replenish one life, while hitting ducks or fishes will drop one life."
+        "description": "This is a cooperative game, both players share the lives in this game. You must defeat all skeletons or you will lose a life. Hearts will replenish one life, while hitting ducks or fishes will drop one life.",
+        "highScoreMode": "SingleAscending"
     },
     {
         "id": "13412-17300-80986-88577",
         "name": "TicTacTwo!",
-        "desc": "Ultimate battle between cats and dogs! The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner as the best pet."
+        "description": "Ultimate battle between cats and dogs! The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner as the best pet.",
+        "highScoreMode": "None"
     },
     {
         "id": "31578-32581-92137-64320",
         "name": "GalgaMulti",
-        "desc": "Controlling a starship, both players will destroy the Galga forces, while avoiding enemies. Each player has 3 lives, game ends once a player runs out of lives."
+        "description": "Controlling a starship, both players will destroy the Galga forces, while avoiding enemies. Each player has 3 lives, game ends once a player runs out of lives.",
+        "highScoreMode": "SingleAscending"
     },
     {
         "id": "69052-09321-39220-20264",
         "name": "Blocky Boss Battle",
-        "desc": "A challenging bullet shooter."
+        "description": "A challenging bullet shooter.",
+        "highScoreMode": "SingleAscending"
     },
     {
         "id": "63642-20606-38782-29855",
         "name": "Breakout",
-        "desc": "Good luck getting that last one."
+        "description": "Good luck getting that last one.",
+        "highScoreMode": "None"
     },
     {
         "id": "58640-58387-80858-04361",
         "name": "Jewel Raider",
-        "desc": "It's not Tomb Raider."
-    }
-
-    
+        "description": "It's not Tomb Raider.",
+        "highScoreMode": "None"
+    }    
 ]}
