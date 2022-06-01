@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './FontPressStart2P.css';
+import './FontShare.css';
 import './Kiosk.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
