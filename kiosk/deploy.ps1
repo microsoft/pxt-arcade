@@ -13,5 +13,5 @@ $json.Debug = $debug
 $json | ConvertTo-Json | Out-File "src/config.json" -Encoding "utf8"
 
 Copy-Item -Path build -Destination ../docs/static/kiosk -Recurse
-Copy-Item -Path build/index.html -Destination ../docs/kiosk.html
-Copy-Item -Path build/GameList.json -Destination ../docs/GameList.json
+Move-Item -Path ../docs/static/kiosk/index.html -Destination ../docs/kiosk.html -Force
+Move-Item -Path ../docs/static/kiosk/GameList.json -Destination ../docs/GameList.json -Force

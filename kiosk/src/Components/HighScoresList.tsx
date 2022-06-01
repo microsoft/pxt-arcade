@@ -7,49 +7,59 @@ interface IProps {
   }
 
 const HighScoresList: React.FC<IProps> = ({ kiosk }) => {
-    const [selectedGameId, setSelectedGameId] = useState(kiosk.selectedGameId);
+    const [selectedGameId, setSelectedGameId] = useState(kiosk.selectedGame?.id);
 
     const renderList = (): JSX.Element[] => {
         const highScores: HighScore[] = kiosk.getHighScores(selectedGameId!);
 
         if (!highScores || !highScores.length) {
             return ([
-                <div className="highScoreSmallDiv" key="noscores">No high scores yet.</div>
+                <tr key="noscores">
+                    <td className="highScoreSmallDiv">None yet</td>
+                </tr>
             ]);
         }
 
-        return highScores.map((highScore, index) => {
+        return highScores.slice(0, 3).map((highScore, index) => {
             return (
-                <div className="highScoreSmallDiv" key={index}>
-                    <div className="highScoreSmallIndex">{index + 1}</div>
-                    <div className="highScoreSmallInitials">
-                        <div className="highScoreSmallInitial">{highScore.initials[0]}</div>
-                        <div className="highScoreSmallInitial">{highScore.initials[1]}</div>
-                        <div className="highScoreSmallInitial">{highScore.initials[2]}</div>
-                    </div>
-                    <div className="highScoreSmallScore">{highScore.score}</div>
-                </div>
+                <tr className="highScoreSmallDiv" key={index}>
+                    <td className="highScoreSmallIndex">{index + 1}.</td>
+                    <td className="highScoreSmallInitials">
+                        {highScore.initials}
+                    </td>
+                    <td className="highScoreSmallInitialsScoreSpacer">&nbsp;</td>
+                    <td className="highScoreSmallScore">{highScore.score}</td>
+                </tr>
             );
         })
     }
 
     useEffect(() => {
         kiosk.onGameSelected = () => {
-            setSelectedGameId(kiosk.selectedGameId);
+            setSelectedGameId(kiosk.selectedGame!.id);
           };
     });
 
     if (!selectedGameId) {
         return (
-            <span>
+            <span className="center">
                 No game selected.
             </span>
         );
     }
 
+    if (!kiosk.selectedGame || (kiosk.selectedGame!.highScoreMode === "None")) {
+        return (<></>);
+    }
+
     return(
         <div>
-            {renderList()}
+            <h2 className="mainMenuHighScoreHeader">High Scores</h2>
+            <table className="center">
+                <tbody>
+                    {renderList()}
+                </tbody>
+            </table>
         </div>
     );
 }

@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { Kiosk } from "../Models/Kiosk";
 import { KioskState } from "../Models/KioskState";
 import configData from "../config.json"
+import Carousel from "react-spring-3d-carousel";
+import { PrimitiveRef } from "../Models/PrimitiveRef";
+import "../Kiosk.css";
 
 interface IProps {
     kiosk: Kiosk
@@ -9,111 +12,63 @@ interface IProps {
 
 const GameList: React.FC<IProps> = ({ kiosk }) => {
     const [games, setGames] = useState(kiosk.games);
+    const [indexRef, ] = useState(new PrimitiveRef(0));
+    const [selectedIndex, setSelectedIndex] = useState(indexRef.value);
+    
+    const nextItem = () => {
+        indexRef.value = (indexRef.value + 1) % games.length;
+        setSelectedIndex(indexRef.value);
+        kiosk.selectGame(games[indexRef.value].id);
+    }
 
-    const renderList = (): JSX.Element[] => {
-        let tabIndex: number = 0;
-        if (kiosk.selectedGameId) {
-            const indexOfSelected = games.map(item => item.id).indexOf(kiosk.selectedGameId);
-            if (indexOfSelected > 0) {
-                const selectedSection = games.splice(indexOfSelected);
-                games.splice(0, 0, ...selectedSection);
-            }
-        }
+    const prevItem = () => {
+        indexRef.value = (indexRef.value + games.length - 1) % games.length;
+        setSelectedIndex(indexRef.value);
+        kiosk.selectGame(games[indexRef.value].id);
+    }
+
+    const clickItem = () => {
+        kiosk.launchGame(games[indexRef.value].id);
+    }
         
-        return games.map((game) => {
-            return (
-                <div className="gameDesc" tabIndex={tabIndex++} onClick={() => kiosk.launchGame(game.id)} onFocus={() => kiosk.selectGame(game.id)} key={tabIndex}>
-                    <div className="gameDescHeader">
-                        <span className="gameTitle">
-                            {game.name}
-                        </span>
-                        <span>
-                            {game.id}
-                        </span>
-                    </div>
-                    <div className="gameDescLeft">
-                        <img className="gameListGameImage" src={`https://makecode.com/api/${game.id}/thumb`} alt={game.name} />
-                    </div>
-                    <div className="gameDescContent">
-                        {game.desc}
-                    </div>
-                </div>
-            )
-        })
+    const updateLoop = () => {
+        if (kiosk.state !== KioskState.MainMenu) {
+            return;
+        }
+
+        if (kiosk.gamepadManager.isAButtonPressed()) {
+            clickItem();
+        }
+
+        if (kiosk.gamepadManager.isLeftPressed()) {
+            prevItem();
+        }
+
+        if (kiosk.gamepadManager.isRightPressed()) {
+            nextItem();
+        }
     }
 
     useEffect(() => {
         kiosk.initialize().then(() => {
             setGames(kiosk.games);
+
+            if (!kiosk.selectedGame && kiosk.games.length) {
+                kiosk.selectGame(kiosk.games[0].id);
+            }
+
+            if (kiosk.selectedGame) {
+                indexRef.value = kiosk.games.map(item => item.id).indexOf(kiosk.selectedGame.id);
+            }
         })
     });
 
     useEffect(() => {
-        let selectedTabIndex: number = 0;
-        const focusable = document.querySelectorAll('[tabindex]:not([tabindex="-1"])') as NodeListOf<HTMLInputElement>;
-        const gameListParent = document.getElementById("gameList")! as HTMLDivElement;
-                
-        function nextItem() {
-            if (configData.UseInPlaceGameListScroll) {
-                const currentGameElement = gameListParent.firstChild as HTMLInputElement;
-                currentGameElement.remove();
-                gameListParent.appendChild(currentGameElement);
-                (gameListParent.firstChild as HTMLInputElement).focus();
-            }
-            else {
-                selectedTabIndex = (selectedTabIndex + 1) % focusable.length;
-                focusable[selectedTabIndex].focus();
-            }
-        }
-    
-        function prevItem() {
-            if (configData.UseInPlaceGameListScroll) {
-                const currentGameElement = gameListParent.lastChild as HTMLInputElement;
-                currentGameElement.remove();
-                gameListParent.insertBefore(currentGameElement, gameListParent.firstChild);
-                (gameListParent.firstChild as HTMLInputElement).focus();
-            }
-            else {
-                selectedTabIndex = (selectedTabIndex + (focusable.length - 1)) % focusable.length;
-                focusable[selectedTabIndex].focus();
-            }
-        }
-    
-        function clickItem() {
-            if (configData.UseInPlaceGameListScroll) {
-                (gameListParent.firstChild as HTMLInputElement).click();
-            }
-            else {
-                if (focusable[selectedTabIndex]) {
-                    focusable[selectedTabIndex].click();
-                }
-            }
-        }
-            
-        const updateLoop = () => {
-            if (kiosk.state !== KioskState.MainMenu) {
-                return;
-            }
-            
-            if (kiosk.gamepadManager.isAButtonPressed()) {
-                clickItem();
-            }
-
-            if (kiosk.gamepadManager.isUpPressed()) {
-                prevItem();
-            }
-
-            if (kiosk.gamepadManager.isDownPressed()) {
-                nextItem();
-            }
-        }
-
         // Make sure we keep track of the interval so we can clean it up as needed.
         let intervalId: any = null;
 
-        // There are some things we only want to do if there are items in the list.
-        if (focusable.length) {
-            focusable[0].focus();
+        // There are some things we only want to do if there are games.
+        if (games.length) {
             intervalId = setInterval(() => {
                 updateLoop();
             }, configData.GamepadPollLoopMilli);
@@ -126,9 +81,38 @@ const GameList: React.FC<IProps> = ({ kiosk }) => {
         };
     }, [games]);
 
+    useEffect(() => {
+        if (kiosk.selectedGame) {
+            setSelectedIndex(games.map(item => item.id).indexOf(kiosk.selectedGame!.id));
+        }
+    }, [kiosk.selectedGame]);
+
+    if (!kiosk.games || !kiosk.games.length) {
+        return(<div></div>);
+    }
+
+    const slides = kiosk.games.map((game, index) => {
+        return {
+            content: 
+                <div className="gameTile" style={{ 
+                    backgroundImage: `url("https://makecode.com/api/${game.id}/thumb")` 
+                }}>
+                    <div className="gameContentBackground">
+                        <div className="gameTitle">{game.name}</div>
+                        <div className="gameDescription">{game.description}</div>
+                    </div>
+                </div>,
+         onClick: () => kiosk.launchGame(game.id)
+        };
+    });
+
     return(
-        <div id="gameList">
-            {renderList()}
+        <div className="carouselWrap">
+            <Carousel
+                slides={slides}
+                showNavigation={false}
+                goToSlide={selectedIndex}
+            />
         </div>
     )
 }

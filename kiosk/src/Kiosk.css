@@ -1,214 +1,198 @@
+@font-face {
+    font-family: "Press Start 2P";
+    src: url('fonts/Press_Start_2P/PressStart2P-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Share";
+    src: url('fonts/Share/Share-Regular.ttf') format('truetype');
+}
+
 html, body {
     height: 100%;
     width: 100%;
-    font-family: verdana;
     padding: 0;
     margin: 0;
     overflow: hidden;    
     background-color: black;
+    font-family: 'Press Start 2P';
+    color: white;
+    align-items: center;
 }
   
-#container {
+.bg1 {
+    background: radial-gradient(62.83% 55.51% at 50% 50%, rgba(19, 69, 90, 0.81) 0%, #13455A 100%);
     height: 100%;
     width: 100%;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-  
-.container-instructions{
-    background-color: rgb(254, 243, 224);
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-  
-header {
-    height: 50px;
-    top: 0;
-    left: 0;
-    right: 0;
-    position: fixed;
-    background-color: rgb(247, 104, 32);
-}
-  
-.logo {
-    height: 40px;
-    padding: 5px;
-}
-  
-.hackbrand {
-    color: #6a4747;
-    font-size: 200%;
-    position: absolute;
-    top: 0px;
-    left: 50%;
-    text-align: center;
-    max-height: 40px;
-    padding: 5px;
-    display: inline-block;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-    margin-right: -50%;
-    transform: translate(-50%, 0%);
-}
-  
-.logo:hover {
-    background-color: rgba(0, 0, 0, 0.2);
-}
-  
-.gameDesc {
-    display : block;
-    width : 36em;
-    overflow : auto;
-    margin : 30px auto 0 auto;
-  
-    background-color : white;
-  
-    font-family: 'Courier New', monospace;
-    font-size: 1em;
-    border: 10px solid #e9eef2;
-}
- 
-.gameDescHeader{
-    background-color : #fcfcfc;
-    float : left;
-    clear : none;
-    height : 3em;
-    width : 36em;
-    font-weight: bold;
-  
-    display: flex;
-    justify-content: space-between;
-}
-  
-.gameTitle{
-    font-size: larger;
-}
-  
-.gameDescLeft{
-    float : left;
-    clear : none;
-    min-height : 10px;
-    width : 12em;
-}
-  
-.gameDescLeft img {
-    width: 100%;
-    height: auto;
-    padding-top: 8px;
-    padding-bottom: 8px;
-}
-  
-.gameDescContent{
-    float : left;
-    clear : none;
-    min-height : 10px;
-    width : 20em;
-    padding: 8px;
 }
 
-.main-content-instructions {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
+.background {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    opacity: 0.2;
+    border: 1px solid #141414;
+    filter: blur(137px);
 }
-  
-.game-instructions-header {
-    font-family: 'Courier New', monospace;
-    font-size: 2.5em;
-    display: grid;
-    place-items: center;
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
-  
-.row {
-    display: flex;
+
+h1 {
+    font-weight: 400;
+    font-size: 54px;
+    line-height: 54px;
+    text-align: center;
 }
-  
-.column {
-    flex: 50%;
+
+h2 {
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 44px;
+    text-align: center;
+    color: white;
 }
-  
-.gameListGameImage {
-    height: 144px;
-    width: 192px;
+
+.mainMenuHighScoreHeader {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: white;
 }
-  
+
 .highScoreSmallDiv {
-    font-size: x-large;
-    width: 300px;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;    
+    text-align: center;
+    color: #8AFFF8;
 }
-  
+
+.footer {
+    text-align: center;
+    position: fixed;
+    /* These numbers are relative to the size of the footer.png logo */
+    margin-top: -68px; 
+    height: 68px;
+    width: 662px;
+    left: 50%;
+    margin-left: -331px;
+    bottom: 0;
+    background: url("footer.png");
+}
+
+.carouselWrap {
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.gameTile {
+    position: relative;
+    width: 554px;
+    height: 367px;
+    background-size:100% 100%;
+}
+
+.gameContentBackground {
+    position: absolute;
+    bottom: 0;
+    height: 128px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.gameTitle {
+    position: absolute;
+    left: 0;
+    font-family: 'Share';
+    font-weight: 700;
+    font-size: 34px;
+    height: 38px;
+    margin: 5px;
+}
+
+.gameDescription {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-family: 'Share';
+    font-weight: 400;
+    font-size: 20px;
+    height: 80px;
+    margin: 5px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.highScoreSmallList {
+    text-align: right;
+}
+
 .highScoreSmallIndex {
-    display: inline-block;
-    text-align: right;
-    width: 50px;
 }
-  
+
 .highScoreSmallInitials {
-    display: inline-block;
-    margin-left: 30px;
+    min-width: 150px;
 }
-  
-.highScoreSmallInitial {
-    display: inline-block;
-    width: 20px;
-}
-  
-.highScoreSmallScore {
-    display: inline-block;
-    margin-left: 20px;
-    text-align: right;
+
+.highScoreSmallInitialsScoreSpacer {
     width: 50px;
 }
-  
+
+.highScoreSmallScore {
+}
+
 .highScoreHighlight {
     background-color: gold;
 }
   
-.highScoreText {
-    font-size: xx-large;
+.highScoreRow {
+    font-size: 40px;
+    height: 60px;
+    color: #8AFFF8;
+}
+
+.enterHighScoreText {
+    color: white;
 }
   
 .highScoreIndex {
-    display: inline-block;
-    width: 50px;
-    margin-left: 100px;
     text-align: right;
 }
   
 .highScoreInitials {
-    display: inline-block;
-    width: 300px;
+    min-width: 150px;
     text-align: center;
 }
   
 .highScoreInitial {
     display: inline-block;
     text-align: center;
-    margin-right: 5px;
-    width: 50px;
 }
   
 .highScoreInitialControl {
-    width: 40px;
-    border: solid transparent 5px;
+    color: white;
 }
   
 .highScoreInitialControlSelected {
-    border: solid black 5px;
+    color: yellow;
 }
-  
-.enterHighScorePrevNextInitialText {
-    font-size: medium;
+
+.highScoreInitialsScoreSpacer {
+    width: 50px;
 }
-  
-.highScoreScore {
-    display: inline-block;
-    width: 200px;
+
+.highScoreScore {    
+    text-align: right;
 }
 
 .sim-embed {

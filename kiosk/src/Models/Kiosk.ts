@@ -3,12 +3,13 @@ import { HighScore } from "./HighScore";
 import { GameData } from "./GameData";
 import { KioskState } from "./KioskState";
 import configData from "../config.json"
+import { runInThisContext } from "vm";
 
 export class Kiosk {
     games: GameData[] = [];
     gamepadManager: GamepadManager = new GamepadManager();
-    selectedGameId?: string;
-    currentScore: number = 0;
+    selectedGame?: GameData;
+    mostRecentScores: number[] = [];
     onGameSelected!: () => void;
     onNavigated!: () => void;
     state: KioskState = KioskState.MainMenu;
@@ -17,6 +18,7 @@ export class Kiosk {
     private initializePromise: any;
     private siteElements: ChildNode[] = [];
     private intervalId: any;
+    private readonly allScoresStateKey: string = "S/all-scores";
 
     async downloadGameList(): Promise<void> {
         let url = configData.GameDataUrl;
@@ -40,26 +42,19 @@ export class Kiosk {
     gamePadLoop(): void {
         const isDebug = true;
         if (isDebug) {
-            // Pressing the reset and menu buttons while playing a game will signal the game is over with
-            // a random score.
-            if (this.state === KioskState.PlayingGame &&
-                this.gamepadManager.isResetButtonPressed() &&
-                this.gamepadManager.isEscapeButtonPressed()) {
-                this.gameOver(Math.round(Math.random() * 100));
-                return;
-            }
+            // Add cases for debugging via the gamepad here.            
         }
 
         if (this.gamepadManager.isResetButtonPressed() &&
             this.gamepadManager.isEscapeButtonPressed() &&
             this.gamepadManager.isBButtonPressed() &&
-            this.gamepadManager.isLeftPressed()) {                
+            this.gamepadManager.isLeftPressed()) {
                 this.resetHighScores();
                 console.log("High scores reset");
                 return;
         } 
 
-        if (this.gamepadManager.isResetButtonPressed()) {
+        if (this.gamepadManager.isEscapeButtonPressed()) {
             this.escapeGame();
             return;
         }
@@ -74,10 +69,24 @@ export class Kiosk {
 
         this.intervalId = setInterval(() => this.gamePadLoop(), configData.GamepadPollLoopMilli);
 
-        // window.addEventListener("message", (event) => {
-        //     // TODO: Listen for simulator messages that indicate the end of a game.
-        //     console.log(event);
-        //   });
+        window.addEventListener("message", (event) => {
+            switch (event.data.type) {
+                case "simulator":
+                    switch (event.data.command) {
+                        case "setstate":
+                            switch (event.data.stateKey) {
+                                case this.allScoresStateKey:
+                                    const rawData = atob(event.data.stateValue);
+                                    const json = decodeURIComponent(rawData);
+                                    this.mostRecentScores = JSON.parse(json);
+                                    this.gameOver();
+                                    break;
+                            }
+                            break;
+                    }
+                    break;
+            }
+        });
 
         return this.initializePromise;
     }
@@ -101,14 +110,26 @@ export class Kiosk {
     }
 
     selectGame(gameId: string): void {
-        this.selectedGameId = gameId;
+        const index = this.games.map(item => item.id).indexOf(gameId);
+        if (index >= 0) {
+            this.selectedGame = this.games[index];
+        }
+        else {
+            this.selectedGame = undefined;
+        }
+
         this.onGameSelected();
     }
 
-    gameOver(score: number): void {
+    gameOver(): void {
         if (this.state !== KioskState.PlayingGame) { return; }
-        this.currentScore = score;
-        this.exitGame(KioskState.EnterHighScore);
+
+        if (this.mostRecentScores && this.mostRecentScores.length && (this.selectedGame!.highScoreMode !== "None")) {
+            this.exitGame(KioskState.EnterHighScore);
+        }
+        else {
+            this.exitGame(KioskState.MainMenu);
+        }
     }
 
     escapeGame(): void {
@@ -116,7 +137,7 @@ export class Kiosk {
         this.exitGame(KioskState.MainMenu);
     }
 
-    exitGame(state: KioskState): void {
+    private exitGame(state: KioskState): void {
         if (this.state !== KioskState.PlayingGame) { return; }
         this.navigate(state);
 

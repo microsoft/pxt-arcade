@@ -13,18 +13,23 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
     const [initialIndex, setInitialIndex] = useState(0);
     const [initials, setInitials] = useState(Array(configData.HighScoreInitialsLength + 1).join(configData.HighScoreInitialAllowedCharacters[0]));
 
+    if (!kiosk.mostRecentScores || !kiosk.mostRecentScores.length) {
+        throw new Error("Cannot load high score entry view without having recent scores");
+    }
+
     const renderList = (highScores: HighScore[], offset: number): JSX.Element[] => {
         return highScores.map((highScore, i) => {
             return (
-                <div className="highScoreText" key={i}>
-                    <div className="highScoreIndex">{i + offset}</div>
-                    <div className="highScoreInitials">
-                        <div className="highScoreInitial">{highScore.initials[0]}</div>
-                        <div className="highScoreInitial">{highScore.initials[1]}</div>
-                        <div className="highScoreInitial">{highScore.initials[2]}</div>
-                    </div>
-                    <div className="highScoreScore">{highScore.score}</div>
-                </div>
+                <tr className="highScoreRow" key={i}>
+                    <td className="highScoreIndex">{i + offset}.</td>
+                    <td className="highScoreInitials">
+                        <span className="highScoreInitial">{highScore.initials[0]}</span>
+                        <span className="highScoreInitial">{highScore.initials[1]}</span>
+                        <span className="highScoreInitial">{highScore.initials[2]}</span>
+                    </td>
+                    <td className="highScoreInitialsScoreSpacer"></td>
+                    <td className="highScoreScore">{highScore.score}</td>
+                </tr>
             )
         })
     }
@@ -71,7 +76,7 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
             }
 
             if (kiosk.gamepadManager.isAButtonPressed()) {
-                kiosk.saveHighScore(kiosk.selectedGameId!, initials, kiosk.currentScore);
+                kiosk.saveHighScore(kiosk.selectedGame!.id, initials, kiosk.mostRecentScores[0]);
                 kiosk.showMainMenu();
             }
 
@@ -84,49 +89,52 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
         return () => clearInterval(interval);
     });
 
-    const existingHighScores = kiosk.getHighScores(kiosk.selectedGameId!);
-    const aboveScores = existingHighScores.filter(item => item.score > kiosk.currentScore);
-    const belowScores = existingHighScores.slice(aboveScores.length, existingHighScores.length - 1);
+    const existingHighScores = kiosk.getHighScores(kiosk.selectedGame!.id);
+    const aboveScores = existingHighScores.filter(item => item.score > kiosk.mostRecentScores[0]);
+    const belowScores = existingHighScores.slice(aboveScores.length, existingHighScores.length);
     const enterInitials = aboveScores.length < configData.HighScoresToKeep;
 
     return(
         <div>
-            <h1>High Scores</h1>
-            {renderList(aboveScores, 1)}
-
-            <div className="highScoreHighlight">
-                <div className="highScoreText">
-                    <div className="highScoreIndex">
-                        {
-                            enterInitials ? 
-                                <div>
-                                    {aboveScores.length + 1}
-                                    <div className="prevNextInitialText">&nbsp;</div>
-                                </div>
-                                :
-                                "--"}                        
+            {
+                enterInitials ?
+                    <div>
+                        <h1>YOU GOT A HIGH SCORE!</h1>
+                        <h2>Enter your initials</h2>
                     </div>
-                    <div className="highScoreInitials">
-                        {enterInitials ? renderInitials() : "YOU"}
-                    </div>
-                    <div className="highScoreScore">
-                        {kiosk.currentScore}
-                        {
-                            enterInitials ? 
-                                <div className="prevNextInitialText">&nbsp;</div>
-                                :
-                                ""
-                        }
-                    </div>
-                </div>                
-            </div>
+                    :
+                    <h1>High Scores</h1>
+            }
 
-            {renderList(belowScores, aboveScores.length + 2)}
+            <table className="center">
+                <tbody>
+                    {renderList(aboveScores, 1)}
 
-            <div>
-                <hr></hr>
-                Press A to continue. Press B to cancel.
-            </div>
+                    {enterInitials ? "" : <br></br>}
+
+                    <tr className="highScoreRow enterHighScoreText">
+                        <td className="highScoreIndex">
+                            {
+                                enterInitials ? 
+                                    <span>
+                                        {aboveScores.length + 1}.
+                                    </span>
+                                    :
+                                    "--"
+                            }
+                        </td>
+                        <td className="highScoreInitials">
+                            {enterInitials ? renderInitials() : "YOU"}
+                        </td>
+                        <td className="highScoreInitialsScoreSpacer"></td>
+                        <td className="highScoreScore">
+                            {kiosk.mostRecentScores[0]}
+                        </td>
+                    </tr>
+
+                    {renderList(belowScores, aboveScores.length + 2)}
+                </tbody>
+            </table>
         </div>
     )
 }

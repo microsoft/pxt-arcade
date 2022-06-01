@@ -6,9 +6,9 @@ These settings apply only to the kiosk user experience and do not impact sim gam
 
 |Key|Purpose|
 |---------------------------------|-|
-|GameDataUrl                      |Path to the game data JSON file with details about the games to include.|
+|GameDataUrl                      | Path to the game data JSON file with details about the games to include.|
+|PlayUrlRoot                      | Left part of the embedded player URL up to and including --run.|
 |Debug                            | Uses debug settings, such as figuring out where the game data URL is in production vs. local debugging.|
-|UseInPlaceGameListScroll         | If true, the game list keeps the selected game at the top and scrolls the list when the joystick is moved. If false, the list is static and the selected item moves up or down.|
 |HighScoresToKeep                 | The maximum number of high scores to keep for a given game.|
 |HighScoreInitialsLength          | The number of initials to allow users to enter.|
 |HighScoreInitialAllowedCharacters| The list and order of characters to allow in high scores.| 
@@ -23,6 +23,7 @@ These settings apply only to the kiosk user experience and do not impact sim gam
 |GamepadLeftRightThreshold        | The threshold to detect for a "right" action. It's negated to detect "left" actions.|
 |GamepadUpDownAxis                | The gamepad axis index for up/down detection.|
 |GamepadUpDownThreshold           | The threshold to detect for a "down" action. It's negated to detect "up" actions.|
+|Keyboard`Input`Keys              | Each is an array of string arrays matching the browser keys that map to the target behavior. The index of a list maps to the same gamepad index (player 1 is the first array at index 0, etc.) |
 
 ## Localhost testing
 ```
