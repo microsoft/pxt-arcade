@@ -19,7 +19,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "prestart": "node ./scripts/linkfonts.js",
     "start": "react-scripts start",
+    "prebuild": "node ./scripts/linkfonts.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
