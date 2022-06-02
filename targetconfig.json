@@ -41,6 +41,78 @@
             "microsoft/arcade-character-animations",
             "aqeeaqee/pxt-raycasting"
         ],
+        "approvedRepoLib": {
+            "adafruit/circuit-playground-character-icons": {
+                "preferred": true,
+                "tags": [ "Sprite Pack" ]
+            },
+            "adafruit/pxt-seesaw": {
+                "preferred": true,
+                "tags": [ "Hardware" ]
+            },
+            "jwunderl/pxt-button-combos": {
+                "preferred": true
+            },
+            "jwunderl/pxt-color": {
+                "preferred": true,
+                "tags": [ "Visual Effects"]
+            },
+            "jwunderl/pxt-status-bar": {
+                "preferred": true,
+                "tags": [ "Sprites" ]
+            },
+            "microsoft/pxt-settings-blocks": {
+                "preferred": true,
+                "tags": [ "Utility" ]
+            },
+            "microsoft/arcade-sprite-data": {
+                "preferred": true,
+                "tags": [ "Utility" ],
+                "upgrades": "min:v0.0.6"
+            },
+            "microsoft/arcade-grid": { "preferred": true },
+            "microsoft/arcade-minimap": {
+                "preferred": true,
+                "tags": [ "Sprites" ]
+            },
+            "microsoft/arcade-timers": {
+                "preferred": true,
+                "tags": [ "Utility" ]
+            },
+            "microsoft/arcade-text": {
+                "preferred": true,
+                "tags": [ "Sprites" ]
+            },
+            "microsoft/pxt-tick-event": {},
+            "microsoft/pxt-tilemaps": {
+                "upgrades": [ "min:v1.8.1" ]
+            },
+            "microsoft/pxt-skillmap-sample": {},
+            "microsoft/pxt-jacdac": {
+                "tags": [ "Hardware" ]
+            },
+            "microsoft/arcade-storytelling": {
+                "preferred": true,
+                "tags": [ "Utility" ]
+            },
+            "microsoft/arcade-background-scroll": {
+                "preferred": true,
+                "tags": [ "Visual Effects" ]
+            },
+            "microsoft/arcade-character-animations": {
+                "preferred": true,
+                "tags": [ "Visual Effects", "Utility", "Sprites" ]
+            },
+            "microsoft/arcade-tile-util": {
+                "preferred": true,
+                "tags": [ "Utility" ]
+            },
+            "mr-coxall/turtle-logo": {},
+            "aqeeaqee/pxt-raycasting": {
+                "preferred": true,
+                "tags": [ "Visual Effects" ]
+            }
+        },
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
             "microsoft/arcade-sprite-data": "min:v0.0.6"

@@ -3,13 +3,13 @@ html, body {
     width: 100%;
     padding: 0;
     margin: 0;
-    overflow: hidden;    
+    overflow: hidden;
     background-color: black;
     font-family: 'Press Start 2P';
     color: white;
     align-items: center;
 }
-  
+
 .bg1 {
     background: radial-gradient(62.83% 55.51% at 50% 50%, rgba(19, 69, 90, 0.81) 0%, #13455A 100%);
     height: 100%;
@@ -58,7 +58,7 @@ h2 {
 .highScoreSmallDiv {
     font-weight: 400;
     font-size: 32px;
-    line-height: 32px;    
+    line-height: 32px;
     text-align: center;
     color: #8AFFF8;
 }
@@ -67,7 +67,7 @@ h2 {
     text-align: center;
     position: fixed;
     /* These numbers are relative to the size of the footer.png logo */
-    margin-top: -68px; 
+    margin-top: -68px;
     height: 68px;
     width: 662px;
     left: 50%;
@@ -144,7 +144,7 @@ h2 {
 .highScoreHighlight {
     background-color: gold;
 }
-  
+
 .highScoreRow {
     font-size: 40px;
     height: 60px;
@@ -154,25 +154,25 @@ h2 {
 .enterHighScoreText {
     color: white;
 }
-  
+
 .highScoreIndex {
     text-align: right;
 }
-  
+
 .highScoreInitials {
     min-width: 150px;
     text-align: center;
 }
-  
+
 .highScoreInitial {
     display: inline-block;
     text-align: center;
 }
-  
+
 .highScoreInitialControl {
     color: white;
 }
-  
+
 .highScoreInitialControlSelected {
     color: yellow;
 }
@@ -181,7 +181,7 @@ h2 {
     width: 50px;
 }
 
-.highScoreScore {    
+.highScoreScore {
     text-align: right;
 }
 

@@ -13,6 +13,10 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
     const [initialIndex, setInitialIndex] = useState(0);
     const [initials, setInitials] = useState(Array(configData.HighScoreInitialsLength + 1).join(configData.HighScoreInitialAllowedCharacters[0]));
 
+    if (!kiosk.mostRecentScores || !kiosk.mostRecentScores.length) {
+        throw new Error("Cannot load high score entry view without having recent scores");
+    }
+
     const renderList = (highScores: HighScore[], offset: number): JSX.Element[] => {
         return highScores.map((highScore, i) => {
             return (
@@ -72,7 +76,7 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
             }
 
             if (kiosk.gamepadManager.isAButtonPressed()) {
-                kiosk.saveHighScore(kiosk.selectedGameId!, initials, kiosk.currentScore);
+                kiosk.saveHighScore(kiosk.selectedGame!.id, initials, kiosk.mostRecentScores[0]);
                 kiosk.showMainMenu();
             }
 
@@ -85,9 +89,9 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
         return () => clearInterval(interval);
     });
 
-    const existingHighScores = kiosk.getHighScores(kiosk.selectedGameId!);
-    const aboveScores = existingHighScores.filter(item => item.score > kiosk.currentScore);
-    const belowScores = existingHighScores.slice(aboveScores.length, existingHighScores.length - 1);
+    const existingHighScores = kiosk.getHighScores(kiosk.selectedGame!.id);
+    const aboveScores = existingHighScores.filter(item => item.score > kiosk.mostRecentScores[0]);
+    const belowScores = existingHighScores.slice(aboveScores.length, existingHighScores.length);
     const enterInitials = aboveScores.length < configData.HighScoresToKeep;
 
     return(
@@ -124,7 +128,7 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
                         </td>
                         <td className="highScoreInitialsScoreSpacer"></td>
                         <td className="highScoreScore">
-                            {kiosk.currentScore}
+                            {kiosk.mostRecentScores[0]}
                         </td>
                     </tr>
 
