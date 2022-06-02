@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Kiosk.css';
+import './Fonts.css';
 import { Kiosk } from './Models/Kiosk';
 import MainMenu from './Components/MainMenu';
 import { KioskState } from './Models/KioskState';
