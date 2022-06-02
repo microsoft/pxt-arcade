@@ -11,7 +11,7 @@ These settings apply only to the kiosk user experience and do not impact sim gam
 |Debug                            | Uses debug settings, such as figuring out where the game data URL is in production vs. local debugging.|
 |HighScoresToKeep                 | The maximum number of high scores to keep for a given game.|
 |HighScoreInitialsLength          | The number of initials to allow users to enter.|
-|HighScoreInitialAllowedCharacters| The list and order of characters to allow in high scores.| 
+|HighScoreInitialAllowedCharacters| The list and order of characters to allow in high scores.|
 |GamepadPollLoopMilli             | How often the gamepads are polled for user interaction with the kiosk menus and other inputs. If this is too large, actions may be missed, such as a quick button press. If it's too small, then a single action may be interpretted as multiple (like a single button press counting twice).|
 |GamepadCacheMilli                | How often the gamepad state is cached. Since multiple components access the browser's Navigator.getGamepads() API, we use a caching mechanism to optimize how often they're accessed. This value should be smaller than the gamepad polling loop.|
 |GamepadAButtonPin                | The pin index for the A button. |
@@ -31,4 +31,4 @@ npm run start
 ```
 
 ## Deploy
-Run `depoly.ps1` from `pxt-arcade/kiosk/`.
+Run `npm run deploy` from `pxt-arcade/kiosk/`.
