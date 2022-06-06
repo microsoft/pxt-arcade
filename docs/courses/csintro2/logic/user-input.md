@@ -60,7 +60,7 @@ Prompts for names, like above, allows games to be more personal. The prompts can
 ## Student Task #2: Making a (secret?) password
 
 1. Start with the code from example #2.
-2. Create a new variable (`input`)
+2. Create a new variable (`password`)
 3. Set `password` to ``||game:ask for string||`` with the prompt text "What is your password?" 
 4. Create an ``||logic:if else||`` block
 5. Use the ``||logic:=||`` block to compare the 'password' from user input with the string "Arcade"
