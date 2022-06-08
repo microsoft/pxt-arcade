@@ -59,6 +59,9 @@ if "%OptLink%" == "true" (
     npm install
     npm link ../pxt
     npm link ../pxt-common-packages
+    pushd skillmap
+    npm install
+    popd
 )
 
 if "%OptRun%" == "true" (
