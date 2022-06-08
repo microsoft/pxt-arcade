@@ -133,6 +133,8 @@ In a common folder,
 ```
 npm install
 npm run build
+cd skillmap
+npm install
 ```
 
 * go to ``pxt-common-packages`` and run

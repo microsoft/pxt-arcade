@@ -50,6 +50,9 @@ if "%OptPull%" == "true" (
 if "%OptLink%" == "true" (
     pushd ..\pxt
     npm install
+    pushd skillmap
+    npm install
+    popd
     npm run build
     popd
     pushd ..\pxt-common-packages
@@ -59,9 +62,6 @@ if "%OptLink%" == "true" (
     npm install
     npm link ../pxt
     npm link ../pxt-common-packages
-    pushd skillmap
-    npm install
-    popd
 )
 
 if "%OptRun%" == "true" (
