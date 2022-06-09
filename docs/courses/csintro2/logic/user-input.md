@@ -51,8 +51,8 @@ Beyond asking questions with a binary response (for example, "yes or no" or "tru
 3. Identify how the users input affects the game
 
 ```blocks
-let input = game.askForString("What is your name?")
-game.splash("Hello " + input + "!")
+let name = game.askForString("What is your name?")
+game.splash("Hello " + name + "!")
 ```
 
 Prompts for names, like above, allows games to be more personal. The prompts can also enable users to make choices during game play, or make guesses from clues to solve a puzzle, or to use a password.
@@ -60,8 +60,8 @@ Prompts for names, like above, allows games to be more personal. The prompts can
 ## Student Task #2: Making a (secret?) password
 
 1. Start with the code from example #2.
-2. Create a new variable (`input`)
-3. Set `input` to ``||game:ask for string||`` with the prompt text "What is your password?" 
+2. Create a new variable (`password`)
+3. Set `password` to ``||game:ask for string||`` with the prompt text "What is your password?" 
 4. Create an ``||logic:if else||`` block
 5. Use the ``||logic:=||`` block to compare the 'password' from user input with the string "Arcade"
 6. If those two are the same, ``||game:splash||`` "login successful"
