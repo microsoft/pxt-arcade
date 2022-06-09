@@ -32,24 +32,24 @@
 * url: /skillmap/turkey/turkey1a
 * tags: easy, sprites, tiles
 * imageUrl: /static/skillmap/turkey/turkey1.gif
-* next: turkey2
+* next: turkey2a
 * position: 1 -1
 
-### turkey2
+### turkey2a
 * name: Gather a Crowd
 * type: tutorial
 * description: Write the code that lets your turkey free its friends from their cages. But watch out!  You're sure to gather a crowd.
-* url: /skillmap/turkey/turkey2
+* url: /skillmap/turkey/turkey2a
 * tags: easy, tiles, events
 * imageUrl: /static/skillmap/turkey/turkey2.gif
-* next: turkey3
+* next: turkey3a
 * position: 2 0
 
-### turkey3
+### turkey3a
 * name: Win or Lose
 * type: tutorial
 * description: Set a timer and challenge yourself to free the turkeys and fly the coop as quickly as possible!
-* url: /skillmap/turkey/turkey3
+* url: /skillmap/turkey/turkey3a
 * tags: easy, overlap, timer
 * imageUrl: /static/skillmap/turkey/turkey3.gif
 * next: turkey-finish

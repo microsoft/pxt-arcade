@@ -10,7 +10,7 @@ background scene, main character, and hurdles!
 
 What and how will you be racing today?
 
-![Peachtree game in simulator](/static/skillmap/peachtree/peachracehurdles_giphy.gif)
+![Peachtree game in simulator](/static/skillmap/peachtree/peach1.gif "Animated peach with black sunglasses on track")
 
 
 ## {Step 2 - Play the OG}
@@ -60,7 +60,7 @@ to the **My Assets** window.
 💡 _You can also select the transparent swatch (the grey & white checkered square)
 to erase parts of the image using any of the paint tools._
 
-![UseImageEditor](/static/tutorials/image-editor.gif)
+![UseImageEditor](/static/tutorials/image-editor.gif "This is how you use the image editor)
 
 
 
