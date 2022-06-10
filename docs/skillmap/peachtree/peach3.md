@@ -4,7 +4,7 @@
 
 In this tutorial, we'll customize your running game to make it even more special.
 
-![Animating your peach.](/static/skillmap/racer/racer3.gif "Look what we're about to make!")
+![Animating your peach.](/static/skillmap/racer/peach3.gif "Animated peach with black sunglasses on track jumping")
 
 
 ## 2. Review
@@ -88,48 +88,6 @@ Remember to play your game again each time you make a change.
 
 Can you see the effects of the code you just wrote?
 
-
-## 6. Track Design
-
-Finally, you can edit the track to have your own set of hurdles and branches!
-
----
-
-- :mouse pointer: Click the tile shown in the ``||scene:set tilemap to [ ]||`` block already in your program.
-
-The current tilemap will open in the **Tilemap Editor**.
-
-![Opening the tilmap](/static/skillmap/racer/racer-map.gif "Want to edit the tilemap?")
-
-
-
-## 7. Walls
-
-Click the **wall** icon to solidify tiles.
-
-With the wall icon highlighted, you can select the eraser tool to remove walls, too!
-
-![Add or remove walls](/static/skillmap/racer/racer-walls.gif "Use the pencil to draw walls and the eraser to remove them. ")
-
-
-
-
-## 8. Rearranging
-
-Click the **tile** icon to load your pencil tool with the tiles you want to add to the map.
-
-With the tile icon highlighted, you can select the eraser tool to remove tiles, too!
-
-The tiles for this game are listed under **My Tiles**.
-
-![Change tiles](/static/skillmap/racer/racer-custom.gif "Use the tile gallery to select tiles to add to the map.")
-
-
-## 9. Add More Code
-
-Remember, if you add other tiles to your game, you'll also need to add more <br/>
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` <br/>
-containers to activate them!
 
 
 

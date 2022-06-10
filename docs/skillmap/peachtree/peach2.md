@@ -4,7 +4,7 @@
 
 Now that you have a peach that moves, let's add the ability to jump hurdles.
 
-![Make your peach jump dangerous pits of hurdle](/static/skillmap/peachtree/intro_peach_race.gif "Look what we're about to make!")
+![Make your peach jump dangerous pits of hurdle](/static/skillmap/peachtree/intro_peach_race.gif "Animated peach with black sunglasses on track with hurdles on the ground and branches above")
 
 
 
@@ -73,7 +73,7 @@ Now that you can jump the hurdles, let's make them dangerous.
 container into an empty area of the workspace.
 
 - :paint brush: Click the checkerboard image and change it to the **hurdle** tile.<br/>
-![Make your peach jump dangerous hurdles](/static/skillmap/peachtree/hurdle.png "Avoid the hurdle tiles")
+![Make your peach jump dangerous hurdles](/static/skillmap/peachtree/hurdle.png "track hurdle")
 
 - :circle: From ``||game:Game||``, snap a <br/>
 ``||game:game over <LOSE>||`` <br/>
@@ -98,7 +98,7 @@ Let's make the branches dangerous, too.
 
 - :mouse pointer:  Follow the same steps to end the game when your sprite overlaps the
 **branches** as you did for the **hurdle** tile. <br/>
-![Avoid the spikes!](/static/skillmap/peachtree/branches.png "Avoid the branches")
+![Avoid the spikes!](/static/skillmap/peachtree/branches.png "branches hanging")
 
 _💡 Need a little help figuring out what this step should look like? Click the lightbulb button below for a peek at the blocks we recommend._
 
@@ -133,7 +133,7 @@ At the end of the track, there is a set of flag tiles.
 - :mouse pointer:  Follow the same steps to end the game when your sprite overlaps
 a **finish** tile as you did for the **hurdle** tile.
 <br/>
-![Get to the cave](/static/skillmap/peachtree/finish.png "Choose the finish tile")
+![Get to the cave](/static/skillmap/peachtree/finish.png "Red finish banner with yellow letters “FI”")
 
 
 - :mouse pointer: Finish by changing the ``||game: game over <LOSE>||`` to say ``||game: game over <WIN>||``.
