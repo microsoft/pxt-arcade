@@ -54,7 +54,7 @@ Flipcode for the **Intro to CS** course grid: **[csintroarcade](https://flipgrid
 
 ### [Orientation](/courses/csintro1/intro)
 
-* [Orientation to Makecode](/courses/csintro1/intro/makecode-orientation)
+* [Orientation to MakeCode](/courses/csintro1/intro/makecode-orientation)
 * [Birthday Algorithm](/courses/csintro1/intro/birthday-algorithm)
 * [Sprites](/courses/csintro1/intro/sprites)
 * [Unplugged: Rock Paper Scissors](/courses/csintro1/intro/unplugged)
