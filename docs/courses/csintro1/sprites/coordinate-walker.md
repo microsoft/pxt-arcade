@@ -1,10 +1,14 @@
 # Activity: Coordinate Walker
 
+The link to this video is broken
+
 [![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/03_coordinate_walker_intro_FINAL.mp4)
 
 In this activity, students will investigate the game screen.
 
 ## Concept: Identify the X, Y coordinates of the Game Screen 
+
+The link to this video is broken as well
 
 [![Link to Video](/static/thumbnail_play_video.png)](https://lexvideoassets.blob.core.windows.net/finalfiles/40545A/intro%20cs:%20%20makecode%20arcade%20%28unit%201%29/coordinate-walker.mp4)
 
