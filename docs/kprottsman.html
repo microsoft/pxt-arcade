@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html
+    lang="en-US"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="http://www.facebook.com/2008/fbml"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Welcome to Kiki's MakeCode Favorites Page</title>
+        <meta
+            name="Description"
+            content="Here you'll find a collection of my favorite things to do in MakeCode!"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=yes"
+        />
+
+        <link rel="manifest" href="/blb/sim.webmanifest">
+
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-title" content="Kiki's MakeCode Favorites Page">
+        <meta name="apple-mobile-web-app-status-bar-style" content="translucent-black">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="application-name" content="Kiki's MakeCode Favorites Page">
+
+        <meta name="msapplication-TileColor" content="#ff7b22">
+        <meta name="msapplication-TileImage" content="/static/pages/kprottsman/card.png">
+        <meta name="msapplication-config" content="none"/>
+        <meta name="theme-color" content="#ff7b22">
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="MSMakeCode" />
+        <meta name="twitter:title" content="Kiki's MakeCode Favorites Page" />
+        <meta name="twitter:description" content="Here you'll find a collection of my favorite things to do in MakeCode!" />
+        <meta name="twitter:image" content="/static/pages/kprottsman/card.png" />
+
+        <meta property="og:title" content="Kiki's MakeCode Favorites Page" />
+        <meta property="og:site_name" content="Kiki's MakeCode Favorites Page" />
+        <meta property="og:description" content="Here you'll find a collection of my favorite things to do in MakeCode!" />
+        <meta property="og:image" content="/static/pages/kprottsman/card.png" />
+
+        <link rel="apple-touch-icon" href="/static/pages/kprottsman/card.png">
+        <link rel="icon" type="image/png" href="/static/pages/kprottsman/card.png">
+        <link rel="shortcut icon" href="/static/pages/kprottsman/card.png">
+
+        <!-- @include scripthead.html -->
+        <link rel="stylesheet" href="/static/pages/kprottsman/styles.css" />
+        <style>
+            body {
+               /* background-image: url('/static/pages/kprottsman/pixel-background-secondary.png'); */
+            }
+
+            #main .action-button {
+                border-image-source: url('/static/pages/kprottsman/shadowed-button-frame.png');
+            }
+
+            #main .panel-primary {
+                border-image-source: url('/static/pages/kprottsman/shadowed-primary-frame.png');
+            }
+
+            #main .panel-secondary {
+                border-image-source: url('/static/pages/kprottsman/shadowed-aside-frame.png');
+            }
+
+            /*
+                #main header {
+                background-image: url('/static/pages/kprottsman/pixel-background-primary.png');
+            } */
+        </style>
+
+
+    </head>
+
+    <body id="root" class="root background-color-secondary" onload="handleOnLoad()">
+        <div id="main" role="presentation">
+            <nav>
+                <div class="arcade-logo" id="openhome">
+                    <a href="/">
+                        <img src="/static/logo.svg" alt="MakeCode Arcade" />
+                    </a>
+                </div>
+
+                <div class="microsoft-logo">
+                    <a
+                        href="https://www.microsoft.com/en-us/makecode"
+                        target="_blank"
+                    >
+                        <img src="/static/Micorsoft_logo_rgb_W-white_D.png" alt="Microsoft" />
+                    </a>
+                </div>
+            </nav>
+
+            <header class='background-color-primary'>
+                <div class="container" style="max-height:250px">
+                    <div class="left-content-block">
+                        <h2 style="color:#ffeb9a; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600;">Kiki's MakeCode Favorites Page</h2>
+                    </div>
+
+                    <div class="right-content-block" >
+                        <img src="/static/pages/kprottsman/simulator.png" alt="MakeCode Arcade Simulator" style="max-height:200px; width:auto; float:right;"/>
+                    </div>
+                </div>
+            </header>
+
+
+            <section class='activities container'>
+                <div class="content-row">
+
+
+                    <a href="https://makecode.com/_Ho5Cixc7mKti" target="_blank" class="content-column one-third panel-secondary">
+                        <h2 class="display-font panel-primary" style="color:#ffffff;">Play Now</h2>
+
+                        <div class="hero">
+                            <img src="/static/pages/kprottsman/timeflies.png" alt="Time Flies" />
+                        </div>
+
+                        <div class="text-content-block">
+                            Press the (A) button and if you time it just right, you can catch the fly!<br/><br/>
+                        </div>
+
+                        <div id="playbutton" class="action-button">
+                            Launch
+                        </div>
+                    </a>
+
+                    <a href="https://arcade.makecode.com/--skillmap#docs:skillmap/racer" target="_blank" class="content-column one-third panel-secondary">
+                        <h2 class="display-font panel-primary" style="color:#ffffff;">Code Now</h2>
+
+                        <div class="hero">
+                            <img src="/static/pages/kprottsman/monster-racer.png" alt="Monster Racer" />
+                        </div>
+
+                        <div class="text-content-block">
+                            Code your very own monster truck racing game in minutes!
+                        </div>
+
+                        <div id="codebutton" class="action-button">
+                            Launch
+                        </div>
+                    </a>
+
+                    <a href="https://arcade.makecode.com/" target="_blank" class="content-column one-third panel-secondary">
+                        <h2 class="display-font panel-primary" style="color:#ffffff;">Learn More</h2>
+
+                        <div class="hero">
+                            <img src="/static/pages/kprottsman/home.png" alt="Head over to MakeCode Arcade" />
+                        </div>
+
+                        <div class="text-content-block">
+                            Find out how to create games like these on the Arcade homepage!
+                        </div>
+
+                        <div id="designbutton" class="action-button">Launch</div>
+                    </a>
+
+
+                </div>
+            </section>
+
+            <!-- <section class='intro container'>
+                <div class="content-block">
+                    <div class="text-content-block">
+                        Join us in celebrating this year's Computer Science
+                        Education Week by playing, designing and coding your
+                        very own retro arcade games!
+                    </div>
+                    <div class="panel-secondary educators-aside">
+                        <div class='content-block'>
+                            <img src='/static/pages/kprottsman/apple.png' alt='For educators'/>
+                            <div class="text-content-block">
+                                Are you a <b>teacher</b> or <b>parent</b>? Find
+                                additional information about these activities here.<br/><br/>
+                            </div>
+                        </div>
+
+                        <a class="action-button" href="/hour-of-code/educators-2020"
+                            >For Educators</a
+                        >
+                    </div>
+                </div>
+            </section> -->
+
+            <!-- <section class='container certificate'>
+                <div class="content-block">
+                    <h2 class="display-font">Get your Certificate</h2>
+                    <div class="text-content-block">
+                        Done with Microsoft MakeCode Arcade Hour of Code™
+                        activities? Congratulations!! You are a Game Maker!
+                        Print out your certificate and explore some other fun
+                        MakeCode Arcade activities below.
+                    </div>
+                    <a class="action-button" href="https://1drv.ms/b/s!AqsgsTyHBmRBjyzY4tqc7dhNDJTX">Print Your Certificate</a>
+                </div>
+            </section> -->
+
+
+            <section class='container additional'>
+                <div class="content-block">
+                    <h2 class="display-font"  style="color:#155cc5;"><br/><br/>Additional Games</h2>
+
+                    <div class="content-row">
+
+                        <div class="content-column one-third">
+                            <a href="https://arcade.makecode.com/02412-98159-07040-66197" target="_blank">
+                                <img src="/static/pages/kprottsman/memory.png" alt="Memory" />
+                                <div class='action-button'>Test Your Memory</div>
+                            </a>
+                        </div>
+                        <div class="content-column one-third">
+                            <a href="https://makecode.com/_Hz8Prc6mM3c1" target="_blank">
+                                <img src="/static/pages/kprottsman/balloon.png" alt="Hot Air Balloon" />
+                                <div class='action-button'>Hot Air Balloon</div>
+                            </a>
+                        </div>
+                        <div class="content-column one-third">
+                            <a href="https://makecode.com/_WeXWVL57u9VE" target="_blank">
+                                <img src="/static/pages/kprottsman/hamlet.png" alt="Hamlet" />
+                                <div class='action-button'>Almost Hamlet</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class='container additional'>
+                <div class="content-block">
+                    <h2 class="display-font"  style="color:#155cc5;"><br/><br/>Additional Tutorials</h2>
+
+                    <div class="content-row">
+
+                        <div class="content-column one-third">
+                            <a href="https://arcade.makecode.com/--skillmap#beginner" target="_blank">
+                                <img src="/static/skillmap/backgrounds/beginner.png" alt="Beginner Skillmap" />
+                                <div class='action-button'>Beginner Skillmap</div>
+                            </a>
+                        </div>
+                        <div class="content-column one-third">
+                            <a href="https://arcade.makecode.com/hour-of-code-2020" target="_blank">
+                                <img src="/static/skillmap/backgrounds/shark-map.png" alt="Hour of Code 2020" />
+                                <div class='action-button'>Hour of Code 2020</div>
+                            </a>
+                        </div>
+                        <div class="content-column one-third">
+                            <a href="https://arcade.makecode.com/--skillmap#space" target="_blank">
+                                <img src="/static/skillmap/backgrounds/space.png" alt="Space Adventure" />
+                                <div class='action-button'>Space Adventure</div>
+                            </a>
+                        </div>
+                        <div class="content-column one-third">
+                            <a href="https://arcade.makecode.com/--skillmap#jungle" target="_blank">
+                                <img src="/static/skillmap/backgrounds/jungle-map.png" alt="Jungle Jump" />
+                                <div class='action-button'>Jungle Jump</div>
+                            </a>
+                        </div>
+                        <div class="content-column one-third">
+                            <a href="https://arcade.makecode.com/--skillmap#rockstar" target="_blank">
+                                <img src="/static/skillmap/backgrounds/rock-map.png" alt="80's Rockstar Maze" />
+                                <div class='action-button'>80's Rockstar Maze</div>
+                            </a>
+                        </div>
+                        <div class="content-column one-third">
+                            <a href="https://arcade.makecode.com/--skillmap#zoo" target="_blank">
+                                <img src="/static/skillmap/backgrounds/zoo.png" alt="Zookeepers Adventure" />
+                                <div class='action-button'>Zookeepers Adventure</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class='container explore'>
+                <div class="content-block">
+                    <h2 class="display-font"  style="color:#155cc5;"><br/><br/>Explore More MakeCode</h2>
+
+                    <div class="content-row">
+                        <div class="content-column one-third">
+                            <a href="https://arcade.makecode.com/" target="_blank">
+                                <img src="/static/pages/kprottsman/arcade.png" alt="MakeCode Arcade" />
+                                <div class='action-button'>MakeCode Arcade</div>
+                            </a>
+                        </div>
+                        <div class="content-column one-third">
+                            <a href="https://makecode.microbit.org/" target="_blank">
+                                <img src="/static/pages/kprottsman/micro-bit.png" alt="MakeCode micro:bit" />
+                                <div class='action-button'>MakeCode micro:bit</div>
+                            </a>
+                        </div>
+                        <div class="content-column one-third">
+                            <a href="https://minecraft.makecode.com/setup" target="_blank">
+                                <img src="/static/pages/kprottsman/minecraft.png" alt="MakeCode Minecraft" />
+                                <div class='action-button'>MakeCode Minecraft</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- @include footer.html -->
+    <!-- @include tracking.html -->
+    <!-- @include tickevent.html -->
+
+    <!-- begin usabilla live embed code -->
+    <script type="text/javascript">/*{literal}<![CDATA[*/window.lightningjs||function(c){function g(b,d){d&&(d+=(/\?/.test(d)?"&":"?")+"lv=1");c[b]||function(){var i=window,h=document,j=b,g=h.location.protocol,l="load",k=0;(function(){function b(){a.P(l);a.w=1;c[j]("_load")}c[j]=function(){function m(){m.id=e;return c[j].apply(m,arguments)}var b,e=++k;b=this&&this!=i?this.id||0:0;(a.s=a.s||[]).push([e,b,arguments]);m.then=function(b,c,h){var d=a.fh[e]=a.fh[e]||[],j=a.eh[e]=a.eh[e]||[],f=a.ph[e]=a.ph[e]||[];b&&d.push(b);c&&j.push(c);h&&f.push(h);return m};return m};var a=c[j]._={};a.fh={};a.eh={};a.ph={};a.l=d?d.replace(/^\/\//,(g=="https:"?g:"http:")+"//"):d;a.p={0:+new Date};a.P=function(b){a.p[b]=new Date-a.p[0]};a.w&&b();i.addEventListener?i.addEventListener(l,b,!1):i.attachEvent("on"+l,b);var q=function(){function b(){return["<head></head><",c,' onload="var d=',n,";d.getElementsByTagName('head')[0].",d,"(d.",g,"('script')).",i,"='",a.l,"'\"></",c,">"].join("")}var c="body",e=h[c];if(!e)return setTimeout(q,100);a.P(1);var d="appendChild",g="createElement",i="src",k=h[g]("div"),l=k[d](h[g]("div")),f=h[g]("iframe"),n="document",p;k.style.display="none";e.insertBefore(k,e.firstChild).id=o+"-"+j;f.frameBorder="0";f.id=o+"-frame-"+j;/MSIE[ ]+6/.test(navigator.userAgent)&&(f[i]="javascript:false");f.allowTransparency="true";l[d](f);try{f.contentWindow[n].open()}catch(s){a.domain=h.domain,p="javascript:var d="+n+".open();d.domain='"+h.domain+"';",f[i]=p+"void(0);"}try{var r=f.contentWindow[n];r.write(b());r.close()}catch(t){f[i]=p+'d.write("'+b().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};a.l&&setTimeout(q,0)})()}();c[b].lv="1";return c[b]}var o="lightningjs",k=window[o]=g(o);k.require=g;k.modules=c}({});
+    window.usabilla_live = lightningjs.require("usabilla_live", "//w.usabilla.com/04a02d64289a.js");
+    /*]]>{/literal}*/</script>
+    <!-- end usabilla live embed code -->
+    </body>
+</html>

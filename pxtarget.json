@@ -104,6 +104,7 @@
         "libs/settings",
         "libs/settings---files",
         "libs/sevenseg",
+        "libs/sprite-scaling",
         "libs/storyboard",
         "libs/template",
         "libs/thermometer"
@@ -565,7 +566,7 @@
         },
         "simAnimationEnter": "fly right in",
         "simAnimationExit": "fly right out",
-        "crowdinProject": "kindscript",
+        "crowdinProject": "makecode",
         "monacoColors": {
             "editor.background": "#FEF3E0"
         },
@@ -589,6 +590,7 @@
         ],
         "blocksCollapsing": true,
         "errorList": true,
+        "workspaceSearch": true,
         "extendEditor": true,
         "simScreenshot": true,
         "simScreenshotKey": "P",

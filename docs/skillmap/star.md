@@ -1,19 +1,19 @@
-# Sing 2 - The Big Stage
-* name: Sing 2 - The Big Stage
-* description: Learn to create a clicker game and quickly rack up the points as you applaud your favorite stars from Sing 2.
+# Talent Show
+* name: Talent Show
+* description: Learn to create a clicker game and quickly rack up the points as you applaud the most talented animals.
 * infoUrl: skillmap/educator-info/star-map-info
 * bannerUrl: /static/skillmap/star/star4.gif
 * backgroundurl: /static/skillmap/backgrounds/star-comp.png
 * primarycolor: #ff7f41
 * secondarycolor: #fff53d
-* tertiarycolor: #02010b
-* completednodecolor: #442532
+* tertiarycolor: #000000
+* completednodecolor: #4d3740
 * highlightcolor: #ffffff
 * allowcodecarryover: true
 * tags: easy, beginner, tutorials
 
 
-## Sing 2 - The Big Stage
+## talent-show
 * layout: manual
 
 
@@ -22,7 +22,7 @@
 
 * name: Welcome to the Show
 * type: tutorial
-* description: Make a simple clicker game starring the characters from Sing 2!
+* description: Make a simple clicker game talent show starring your favorite animals!
 * tags: easy, clicker, points
 * next: star-activity2
 * url: /skillmap/star/star1
@@ -49,7 +49,7 @@
 * tags: easy, clicker, projectiles
 * next: star-activity4
 * url: /skillmap/star/star3
-* imageUrl: /static/star/star/star3.gif
+* imageUrl: /static/skillmap/star/star3.gif
 * position: 1 1
 
 
@@ -70,12 +70,17 @@
 * type: certificate
 * url: /static/skillmap/certificates/star-cert.pdf
 * imageUrl: /static/skillmap/certificates/star-cert.png
+* position: 3 1
 * actions:
     * map: [Try Space Explorer](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox](/)
 * rewards:
-    * certificate: /static/skillmap/certificates/star-cert.pdf
-    * completion-badge: /static/badges/badge-star.png
-* position: 3 1
+    * certificate:
+        * url: /static/skillmap/certificates/star-cert.pdf
+        * preview: /static/skillmap/certificates/star-cert.png
+    * completion-badge:
+        * image: /static/badges/badge-star.png
+        * name: Star of the Stage
+
 
 

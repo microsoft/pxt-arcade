@@ -15,6 +15,7 @@ Some examples of previous MakeCode Arcade game jams are listed below:
 | Garden | https://arcade.makecode.com/gamejam/garden |
 | One Room | https://itch.io/jam/makecode-arcade-game-jam-2 |
 | Five Second Games | https://itch.io/jam/makecode-game-jam |
+| Climate Change | https://arcade.makecode.com/gamejam/global-2021 |
 
 ## Preparing to host a game jam
 
@@ -58,7 +59,7 @@ Decide how participants will submit their games to you.
 
 ## Celebrate
 
-Will you just be awarding participation certificates or calling out specific projects for their creativity, complexity, or alignment with the assigned theme? Download, customize and award [certificates of achievement](https://microsoft.sharepoint.com/:p:/t/Prime8xMakeCode/EQ3r9N0JOKNPm-4KyAAomt0Bd7rgH1hffslRjooeUdPYtA?e=3Tw2NZ).
+Will you just be awarding participation certificates or calling out specific projects for their creativity, complexity, or alignment with the assigned theme? Download, customize and award [certificates of achievement](https://aka.ms/GameJamBoxCert).
 
 ## Educator Resources
 
