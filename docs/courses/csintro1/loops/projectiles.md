@@ -189,7 +189,7 @@ d d d d d d d d
 
 We have seen that it is useful for projectiles to come from random positions, but there are times when we'll want to have projectiles spawned in a more structured manner. This tasks uses a loop to offset the `Y` position of each projectile using a ``||loops:for||`` loop index.
 
-Remember that ``||loops:for||`` loops are different than ``||loops:repeat||`` loops since they use a conditon you specify instead of a simple limit value.
+Remember that ``||loops:for||`` loops are different than ``||loops:repeat||`` loops in that the ``||loops:for||`` loop introduces a variable that is automatically incremented each time through the loop.
 
 1. Review the code below
 2. Create a new project and name it "screenFill"

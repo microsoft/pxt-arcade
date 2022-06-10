@@ -13,7 +13,7 @@ Comparison logic with the ``||logic:if||`` statement
 
 In our games we will often want to compare values and take an action when the comparison statement is true.
 
-> Example: Is myValue (3) smaller than a testValue (5)? If it is ``||logic:true||`` that myValue is smaller than the testValue, then we will add 1 to myValue.
+> Example: Is laserPower (8) greter than enemyShieldStrength (5)? If it is ``||logic:true||`` that laserPower is greater than enemyShieldStrength, then we will add 1 to numEnemiesDestroyed.
 
 We perform comparison tests with ``||logic:if||``
 

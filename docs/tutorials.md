@@ -23,6 +23,13 @@
     "cardType": "tutorial"
   }]
 }, {
+  "name": "Flee My Valentine",
+  "description": "Edit the code to make your own Valentine's game where your heart gets bigger and smaller as you go!",
+  "url": "/tutorials/valentine",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/valentine/valentine.png",
+  "largeImageUrl": "/static/tutorials/valentine/valentine.gif"
+}, {
   "name": "Time Flies",
   "description": "Help a frog catch a fly before the timer runs out in this game jam themed tutorial!",
   "url": "/tutorials/froggy",
@@ -46,13 +53,6 @@
     "editor": "py",
     "cardType": "tutorial"
   }]
-}, {
-  "name": "Winter",
-  "description": "Help the snow people catch snowflakes!",
-  "url": "/tutorials/winter",
-  "cardType": "tutorial",
-  "imageUrl": "/static/tutorials/winter/winter.png",
-  "largeImageUrl": "/static/tutorials/winter/winter.gif"
 }, {
   "name": "Lemon Leak",
   "description": "Stay away from the wild strawberries or you'll lose your juice!",
@@ -87,6 +87,13 @@
     "editor": "py",
     "cardType": "tutorial"
   }]
+}, {
+  "name": "Winter",
+  "description": "Help the snow people catch snowflakes!",
+  "url": "/tutorials/winter",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/winter/winter.png",
+  "largeImageUrl": "/static/tutorials/winter/winter.gif"
 }, {
   "name": "Free Throw",
   "description": "Take your best shot and slam dunk this Basketball free throw game!",

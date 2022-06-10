@@ -158,7 +158,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         let projectile = sprites.createProjectile(img`
 1
 `, randint(-100, 100), randint(-100, 100), SpriteKind.Player, firework)
-        firework.setFlag(SpriteFlag.Ghost, true)
+        projectile.setFlag(SpriteFlag.Ghost, true)
         projectile.image.fill(randint(1, 14))
     }
     firework.destroy()
