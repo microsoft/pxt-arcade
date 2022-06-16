@@ -59,7 +59,7 @@
 
 
 ### peach3
-* name: Going Further
+* name: Customize Your Racer
 * type: tutorial
 * description: Customize your game and make it your own by adding animations and changing your tilemap.
 * url: /skillmap/peachtree/peach3
