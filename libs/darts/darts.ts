@@ -58,9 +58,8 @@ namespace darts {
  * A dart
  **/
 //% blockNamespace=darts color="#6699CC" blockGap=8
-class Dart {
-    private dart: Sprite;
-    private bkgd: Image;
+class Dart extends sprites.ExtendableSprite {
+    private renderable: scene.Renderable;
 
     private controlKeys: boolean;
     private trace: boolean;
@@ -102,9 +101,10 @@ class Dart {
                         kind: number,
                         x: number,
                         y: number) {
-        this.dart = sprites.create(img, kind);
-        this.dart.x = x;
-        this.dart.y = y;
+        super(img);
+        this.setKind(kind);
+        this.x = x;
+        this.y = y;
 
         this.gravity = 20;
         this.pow = 50;
@@ -113,7 +113,23 @@ class Dart {
         this.powerRate = 1;
         this.iter = 3;
         this.wind = 0;
-        this.bkgd = scene.backgroundImage();
+
+        this.renderable = scene.createRenderable(-0.5, (target, camera) => {
+            let xComp = darts.xComponent(this.angle, this.pow);
+            let yComp = darts.yComponent(this.angle, this.pow);
+            let xOffset = camera.offsetX;
+            let yOffset = camera.offsetY;
+
+            for (let i: number = 0.1; i < this.iter; i += i / 5) {
+                let x = this.x + i * xComp + (i ** 2) * this.wind / 2;
+                let y = this.y + i * yComp + (i ** 2) * this.gravity / 2;
+                target.setPixel(
+                    x - xOffset,
+                    y - yOffset,
+                    this.traceColor
+                );
+            }
+        }, () => !this.ay && this.trace);
 
         this.controlKeys = false;
         this.trace = false;
@@ -127,7 +143,7 @@ class Dart {
     //% blockId=dartSprite block="%dart(myDart) sprite"
     //% weight=8
     get sprite(): Sprite {
-        return this.dart;
+        return this;
     }
 
     /**
@@ -138,28 +154,7 @@ class Dart {
     //% weight=50
     //% group="Actions"
     public setTrace(on: boolean = true): void {
-        let __this: Dart = this;
         this.trace = on;
-
-        game.onUpdateInterval(50, function () {
-            let newBkgd: Image = __this.bkgd.clone();
-            scene.setBackgroundImage(newBkgd);
-            if (!__this.dart.ay && __this.trace) {
-                let xComp = darts.xComponent(__this.angle, __this.pow);
-                let yComp = darts.yComponent(__this.angle, __this.pow);
-                let camera = game.currentScene().camera
-                let xOffset = camera.offsetX;
-                let yOffset = camera.offsetY;
-
-                for (let i: number = 0.1; i < __this.iter; i += i / 5) {
-                    let x = __this.dart.x + i * xComp + (i ** 2) * __this.wind / 2;
-                    let y = __this.dart.y + i * yComp + (i ** 2) * __this.gravity / 2;
-                    newBkgd.setPixel(x - xOffset,
-                                    y - yOffset,
-                                    __this.traceColor);
-                }
-            }
-        })
     }
 
     /**
@@ -169,10 +164,10 @@ class Dart {
     //% weight=50
     //% group="Actions"
     public throwDart(): void {
-        this.dart.vx = darts.xComponent(this.angle, this.pow);
-        this.dart.vy = darts.yComponent(this.angle, this.pow);
-        this.dart.ay = this.gravity;
-        this.dart.ax = this.wind;
+        this.vx = darts.xComponent(this.angle, this.pow);
+        this.vy = darts.yComponent(this.angle, this.pow);
+        this.ay = this.gravity;
+        this.ax = this.wind;
     }
 
     /**
@@ -182,10 +177,10 @@ class Dart {
     //% weight=50
     //% group="Actions"
     public stopDart(): void {
-        this.dart.ay = 0;
-        this.dart.ax = 0;
-        this.dart.vx = 0;
-        this.dart.vy = 0;
+        this.ay = 0;
+        this.ax = 0;
+        this.vx = 0;
+        this.vy = 0;
     }
 
     /**
@@ -197,24 +192,29 @@ class Dart {
     //% weight=50
     //% group="Actions"
     public controlWithArrowKeys(on: boolean = true): void {
-        let __this: Dart = this;
         this.controlKeys = on;
 
-        game.onUpdate(function () {
-            if (__this.controlKeys) {
-                __this.angle -= controller.dx() * __this.angleRate / 5;
-                __this.pow -= controller.dy() * __this.powerRate / 5;
+        game.onUpdate(() => {
+            if (this.controlKeys) {
+                this.angle -= controller.dx() * this.angleRate / 5;
+                this.pow -= controller.dy() * this.powerRate / 5;
             }
         })
     }
 
+    destroy(effect?: effects.ParticleEffect, duration?: number) {
+        super.destroy(effect, duration);
+        this.renderable.destroy();
+    }
+
     /**
-     * Update background image to new image so dart can continue to trace
+     * NO LONGER NECESSARY as this uses renderables now to draw onto the background.
      */
     //% blockId=updateBackground block="change %dart(myDart) background to image %img=background_image_picker"
     //% weight=15
     //% group="Properties"
+    //% deprecated=true
     public updateBackground(img: Image): void {
-        this.bkgd = img;
+        scene.setBackgroundImage(img);
     }
 }
