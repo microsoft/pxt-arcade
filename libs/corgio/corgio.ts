@@ -247,7 +247,6 @@ class Corgio extends sprites.ExtendableSprite {
         this._leftAnimation = corgio._corgi_left;
         this._rightAnimation = corgio._corgi_right;
 
-        // this.player = sprites.create(this.stillAnimation[0], kind);
         this.setFlag(SpriteFlag.StayInScreen, true);
         this.ay = this.gravity;
         this.x = x;
@@ -347,21 +346,18 @@ class Corgio extends sprites.ExtendableSprite {
     //% blockId=updateSprite block="change image when %corgio(myCorg) is moving || %on=toggleOnOff"
     //% weight=100 blockGap=5
     updateSprite(on: boolean = true): void {
-        let _this = this;
-
         this.updateFlags(on, corgio.CorgiFlags.UpdateSprite);
+        game.onUpdate(() => {
+            if (!(this.controlFlags & corgio.CorgiFlags.UpdateSprite)) return;
 
-        game.onUpdate(function () {
-            if (!(_this.controlFlags & corgio.CorgiFlags.UpdateSprite)) return;
-
-            _this.count++;
+            this.count++;
 
             if (this.vx == 0) {
-                this.setImage(_this.pickNext(_this.stillAnimation, 6));
+                this.setImage(this.pickNext(this.stillAnimation, 6));
             } else if (this.vx < 0) {
-                this.setImage(_this.pickNext(_this._leftAnimation));
+                this.setImage(this.pickNext(this._leftAnimation));
             } else {
-                this.setImage(_this.pickNext(_this._rightAnimation));
+                this.setImage(this.pickNext(this._rightAnimation));
             }
         })
     }
