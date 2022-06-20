@@ -259,6 +259,7 @@ class Corgio extends sprites.ExtendableSprite {
     //% group="Properties"
     //% blockId=corgSprite block="%corgio(myCorg) sprite"
     //% weight=8
+    //% deprecated=true
     get sprite(): Sprite {
         return this;
     }
