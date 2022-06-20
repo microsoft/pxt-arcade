@@ -137,11 +137,13 @@ class Dart extends sprites.ExtendableSprite {
     }
 
     /**
-     * Gets the dart's sprite
+     * NO LONGER NECESSARY -- the dart is now a sprite by itself.
+     * Gets the dart's sprite.
      */
     //% group="Properties"
     //% blockId=dartSprite block="%dart(myDart) sprite"
     //% weight=8
+    //% deprecated=true
     get sprite(): Sprite {
         return this;
     }
