@@ -101,8 +101,7 @@ class Dart extends sprites.ExtendableSprite {
                         kind: number,
                         x: number,
                         y: number) {
-        super(img);
-        this.setKind(kind);
+        super(img, kind);
         this.x = x;
         this.y = y;
 
