@@ -56,7 +56,7 @@ tiles.setTilemap(tilemap`level_0`)
 
 To make it so the camera follows the corgio as it leaves the screen, add ``||corgio:make camera follow myCorg left and right||`` from ``||corgio:Corgio||`` and put it under ``||variables:set myCorg to||``.
 
-```blocks
+```blocks-ignore
 let myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
 myCorg.verticalMovement()
@@ -70,7 +70,7 @@ tiles.setTilemap(tilemap`level_0`)
 At the end of the tilemap, draw a column that is a different tile than the other tiles in the map.
 This will represent the goal for the player.
 
-```blocks
+```blocks-ignore
 let myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
 myCorg.verticalMovement()
@@ -86,7 +86,7 @@ then click on the checkered tile to find the tile you used as a goal.
 Inside of that event, add a ``||game:game over lose||``.
 Click ``LOSE`` to change it to ``WIN``.
 
-```blocks
+```blocks-ignore
 scene.onOverlapTile(SpriteKind.Player, sprites.builtin.coral0, function (sprite, location) {
     game.over(true)
 })
