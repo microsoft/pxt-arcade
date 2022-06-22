@@ -132,6 +132,9 @@ When you're finished playing, click **Done** to return to the main skillmap wher
 
 
 ```template
+namespace SpriteKind {
+    export const Rescued = SpriteKind.create()
+}
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite.vy = -300
@@ -161,9 +164,7 @@ info.onCountdownEnd(function () {
     game.over(false)
 })
 
-namespace SpriteKind {
-    export const Rescued = SpriteKind.create()
-}
+
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite.vy = -300
 })
@@ -194,10 +195,6 @@ info.startCountdown(120)
 
 
 ```customts
-namespace SpriteKind {
-    export const Rescued = SpriteKind.create()
-}
-
 scene.setBackgroundColor(9)
 tiles.setTilemap(tilemap`level1`)
 
