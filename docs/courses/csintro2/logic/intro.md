@@ -156,7 +156,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Cherry, function (sprite, otherS
     info.changeScoreBy(1)
     otherSprite.destroy()
     if (info.score() > 5) {
-        mySprite.say("Too many cherries")
+        mySprite.sayText("Too many cherries")
     }
 })
 mySprite = sprites.create(img`
