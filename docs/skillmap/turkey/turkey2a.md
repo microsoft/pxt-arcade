@@ -235,6 +235,9 @@ main skillmap and keep going so we can show you how to end the game with a win!
 
 
 ```template
+namespace SpriteKind {
+    export const Rescued = SpriteKind.create()
+}
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite.vy = -300
@@ -252,10 +255,6 @@ tiles.placeOnRandomTile(mySprite, assets.tile`start`)
 
 
 ```customts
-namespace SpriteKind {
-    export const Rescued = SpriteKind.create()
-}
-
 scene.setBackgroundColor(9)
 tiles.setTilemap(tilemap`level1`)
 
