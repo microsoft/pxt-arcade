@@ -4,13 +4,15 @@ import { Kiosk } from "../Models/Kiosk";
 import { KioskState } from "../Models/KioskState";
 import HighScoreInitial from "./HighScoreInitial";
 import configData from "../config.json"
+import { PrimitiveRef } from "../Models/PrimitiveRef";
 
 interface IProps {
     kiosk: Kiosk
   }
 
 const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
-    const [initialIndex, setInitialIndex] = useState(0);
+    const [initialIndexRef, ] = useState(new PrimitiveRef(0));
+    const [initialIndex, setInitialIndex] = useState(initialIndexRef.value);
     const [initials, setInitials] = useState(Array(configData.HighScoreInitialsLength + 1).join(configData.HighScoreInitialAllowedCharacters[0]));
 
     if (!kiosk.mostRecentScores || !kiosk.mostRecentScores.length) {
@@ -42,6 +44,8 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
     const renderInitials = (): JSX.Element[] => {
         const elements = [];
 
+        console.log("Initial index: " + initialIndexRef.value);
+
         for (let lcv = 0; lcv < configData.HighScoreInitialsLength; lcv++) {
             const thisIndex = lcv;
             elements.push(
@@ -54,13 +58,13 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
     }
 
     const previousInitial = () => {
-        const newIndex = (initialIndex + configData.HighScoreInitialsLength - 1) % configData.HighScoreInitialsLength;
-        setInitialIndex(newIndex);
+        initialIndexRef.value = (initialIndexRef.value + configData.HighScoreInitialsLength - 1) % configData.HighScoreInitialsLength;
+        setInitialIndex(initialIndexRef.value);
     }
 
     const nextInitial = () => {
-        const newIndex = (initialIndex + 1) % configData.HighScoreInitialsLength;
-        setInitialIndex(newIndex);
+        initialIndexRef.value = (initialIndexRef.value + 1) % configData.HighScoreInitialsLength;
+        setInitialIndex(initialIndexRef.value);
     }
 
     useEffect(() => {
@@ -85,9 +89,18 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
             }
         };
 
-        const interval = setInterval(() => gamepadLoop(), configData.GamepadPollLoopMilli);
-        return () => clearInterval(interval);
-    });
+        let interval: any = null;
+
+        setTimeout(() => {
+            interval = setInterval(() => gamepadLoop(), configData.GamepadPollLoopMilli);
+        }, configData.EnterHighScoreDelayMilli);
+
+        return () => {
+            if (interval) {
+                clearInterval(interval);
+            }
+        };
+    }, []);
 
     const existingHighScores = kiosk.getHighScores(kiosk.selectedGame!.id);
     const aboveScores = existingHighScores.filter(item => item.score > kiosk.mostRecentScores[0]);

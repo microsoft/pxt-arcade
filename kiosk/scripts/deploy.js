@@ -13,9 +13,9 @@ console.log("reading config")
 const configContents = JSON.parse(fs.readFileSync(configPath, "utf8").trim());
 
 // Save to restore once build is completed
-const debugSetting = configContents.debug;
+const debugSetting = configContents.Debug;
 
-configContents.debug = false;
+configContents.Debug = false;
 
 console.log("overwriting config")
 fs.writeFileSync(configPath, JSON.stringify(configContents, null, 4));
@@ -37,7 +37,7 @@ catch (e) {
 }
 finally {
     // Restore original debug setting
-    configContents.debug = debugSetting;
+    configContents.Debug = debugSetting;
     console.log("restoring config")
     fs.writeFileSync(configPath, JSON.stringify(configContents, null, 4));
 }
