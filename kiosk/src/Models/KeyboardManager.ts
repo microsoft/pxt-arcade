@@ -5,10 +5,10 @@ export class KeyboardManager {
 
     constructor() {
         document.addEventListener("keydown", (e) => {
-            this.keyboardState[e.key.toUpperCase()] = true;
+            this.onKeydown(e.key)
         });
         document.addEventListener("keyup", (e) => {
-            this.keyboardState[e.key.toUpperCase()] = false;
+            this.onKeyup(e.key);
         });
     }
 
@@ -56,4 +56,15 @@ export class KeyboardManager {
         return this.checkPressed(gamepadIndex, configData.KeyboardDownKeys);
     }
 
+    onKeydown(key: string) {
+        this.keyboardState[key.toUpperCase()] = true;
+    }
+
+    onKeyup(key: string) {
+        this.keyboardState[key.toUpperCase()] = false;
+    }
+
+    clear() {
+        this.keyboardState = {};
+    }
 }

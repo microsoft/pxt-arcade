@@ -54,7 +54,7 @@ export class Kiosk {
                 return;
         }
 
-        if (this.gamepadManager.isEscapeButtonPressed()) {
+        if (this.gamepadManager.isEscapeButtonPressed() || this.gamepadManager.isMenuButtonPressed()) {
             this.escapeGame();
             return;
         }
@@ -85,6 +85,15 @@ export class Kiosk {
                             break;
                     }
                     break;
+                case "messagepacket":
+                    const channel = event.data.channel;
+                    const parts = channel.split("-");
+                    if (parts[0] === "keydown") {
+                        this.gamepadManager.keyboardManager.onKeydown(parts[1]);
+                    }
+                    else {
+                        this.gamepadManager.keyboardManager.onKeyup(parts[1]);
+                    }
             }
         });
 
@@ -121,10 +130,12 @@ export class Kiosk {
         this.onGameSelected();
     }
 
-    gameOver(): void {
+    gameOver(skipHighScore?: boolean): void {
         if (this.state !== KioskState.PlayingGame) { return; }
 
-        if (this.mostRecentScores && this.mostRecentScores.length && (this.selectedGame!.highScoreMode !== "None")) {
+        this.gamepadManager.keyboardManager.clear();
+
+        if (!skipHighScore && this.mostRecentScores && this.mostRecentScores.length && (this.selectedGame!.highScoreMode !== "None")) {
             this.exitGame(KioskState.EnterHighScore);
         }
         else {
@@ -134,6 +145,7 @@ export class Kiosk {
 
     escapeGame(): void {
         if (this.state !== KioskState.PlayingGame) { return; }
+        this.gamepadManager.keyboardManager.clear();
         this.exitGame(KioskState.MainMenu);
     }
 
