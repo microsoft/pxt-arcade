@@ -8,7 +8,7 @@ export class GamepadManager {
     private minButtonPinRequired: number = 0;
     private minAxisRequired: number = 0;
 
-    private keyboardManager: KeyboardManager = new KeyboardManager();
+    public keyboardManager: KeyboardManager = new KeyboardManager();
 
     constructor() {
         this.minButtonPinRequired = Math.max(
@@ -29,9 +29,9 @@ export class GamepadManager {
         // We cache the gamepads so that we limit how often we call the underlying API. We also
         // filter down to the gamepads that are not null and have the buttons and axes we need
         // to operate based on the config settings. This might not cover all scenarios, but does
-        // a good job at filtering out the random devices (like plugged-in Surface Headphones?!?) 
+        // a good job at filtering out the random devices (like plugged-in Surface Headphones?!?)
         // that get picked up as gamepads.
-        
+
         if (this.cacheExpires <= Date.now()) {
             this.cachedGamepads = navigator.getGamepads().filter(
                 item => item &&
@@ -108,7 +108,7 @@ export class GamepadManager {
         if (threshold < 0) {
             return gamepad.axes[axisIndex] <= threshold;
         }
-        
+
         return gamepad.axes[axisIndex] >= threshold;
     }
 
