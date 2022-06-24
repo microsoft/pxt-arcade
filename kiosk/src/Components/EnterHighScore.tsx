@@ -100,7 +100,7 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
                 clearInterval(interval);
             }
         };
-    }, []);
+    }, [initials]);
 
     const existingHighScores = kiosk.getHighScores(kiosk.selectedGame!.id);
     const aboveScores = existingHighScores.filter(item => item.score > kiosk.mostRecentScores[0]);
@@ -128,7 +128,7 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
                     <tr className="highScoreRow enterHighScoreText">
                         <td className="highScoreIndex">
                             {
-                                enterInitials ? 
+                                enterInitials ?
                                     <span>
                                         {aboveScores.length + 1}.
                                     </span>
@@ -151,5 +151,5 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
         </div>
     )
 }
-  
+
 export default EnterHighScore;
