@@ -1,5 +1,11 @@
 # Kiosk
 
+First ensure node version 16 is installed. First in kiosk folder do:
+
+```
+npm install
+```
+
 ## config.json settings
 
 These settings apply only to the kiosk user experience and do not impact sim gameplay. It's assumed all gamepads use the same configuration.
