@@ -1,25 +1,25 @@
 {
   "games": [
     {
-      "id": "31578-32581-92137-64320", //Multiplayer
+      "id": "31578-32581-92137-64320",
       "name": "GalgaMulti",
       "description": "Controlling a starship, both players will destroy the Galga forces, while avoiding enemies. Each player has 3 lives, game ends once a player runs out of lives.",
       "highScoreMode": "SingleAscending"
     },
     {
-      "id": "32777-59846-95775-11055", //Multiplayer
+      "id": "32777-59846-95775-11055",
       "name": "Secure the river!",
       "description": "This is a cooperative game where both players share lives. You must defeat skeletons, collect hearts and avoid the ducks and fishes.",
       "highScoreMode": "SingleAscending"
     },
     {
-      "id": "39705-92830-48491-01106", //Multiplayer
+      "id": "39705-92830-48491-01106",
       "name": "Strawberry Slam",
       "description": "Two strawberries battle it out in the kitchen to be the Shortcake Star!",
       "highScoreMode": "SingleAscending"
     },
     {
-      "id": "13412-17300-80986-88577", //Multiplayer
+      "id": "13412-17300-80986-88577",
       "name": "TicTacTwo!",
       "description": "Ultimate battle between cats and dogs! The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner as the best pet.",
       "highScoreMode": "None"
@@ -103,10 +103,10 @@
       "highScoreMode": "None"
     },
     {
-      "id": "41564-92025-86448-02521",
+      "id": "99776-77448-58171-80239",
       "name": "Kickoff!",
       "description": "Time to practice your football throwing game! Coordinate plays and avoid defenders",
       "highScoreMode": "None"
-    },
+    }
   ]
 }
