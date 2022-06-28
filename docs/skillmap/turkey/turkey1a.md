@@ -251,6 +251,10 @@ activity where we'll show you how to rescue the other turkeys from their cages!
 
 
 ```template
+namespace SpriteKind {
+    export const Rescued = SpriteKind.create()
+}
+
 let mySprite = sprites.create(assets.image`player`, SpriteKind.Player)
 ```
 
@@ -271,9 +275,6 @@ tiles.placeOnRandomTile(mySprite, assets.tile`start`)
 
 
 ```customts
-namespace SpriteKind {
-    export const Rescued = SpriteKind.create()
-}
 
 scene.setBackgroundColor(9)
 tiles.setTilemap(tilemap`level1`)

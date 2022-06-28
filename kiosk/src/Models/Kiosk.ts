@@ -42,7 +42,7 @@ export class Kiosk {
     gamePadLoop(): void {
         const isDebug = true;
         if (isDebug) {
-            // Add cases for debugging via the gamepad here.            
+            // Add cases for debugging via the gamepad here.
         }
 
         if (this.gamepadManager.isResetButtonPressed() &&
@@ -52,9 +52,9 @@ export class Kiosk {
                 this.resetHighScores();
                 console.log("High scores reset");
                 return;
-        } 
+        }
 
-        if (this.gamepadManager.isEscapeButtonPressed()) {
+        if (this.gamepadManager.isEscapeButtonPressed() || this.gamepadManager.isMenuButtonPressed()) {
             this.escapeGame();
             return;
         }
@@ -62,7 +62,7 @@ export class Kiosk {
 
     async initialize(): Promise<void> {
         if (this.initializePromise) {
-            return this.initializePromise; 
+            return this.initializePromise;
         }
 
         this.initializePromise = this.downloadGameList();
@@ -85,6 +85,15 @@ export class Kiosk {
                             break;
                     }
                     break;
+                case "messagepacket":
+                    const channel = event.data.channel;
+                    const parts = channel.split("-");
+                    if (parts[0] === "keydown") {
+                        this.gamepadManager.keyboardManager.onKeydown(parts[1]);
+                    }
+                    else {
+                        this.gamepadManager.keyboardManager.onKeyup(parts[1]);
+                    }
             }
         });
 
@@ -121,10 +130,12 @@ export class Kiosk {
         this.onGameSelected();
     }
 
-    gameOver(): void {
+    gameOver(skipHighScore?: boolean): void {
         if (this.state !== KioskState.PlayingGame) { return; }
 
-        if (this.mostRecentScores && this.mostRecentScores.length && (this.selectedGame!.highScoreMode !== "None")) {
+        this.gamepadManager.keyboardManager.clear();
+
+        if (!skipHighScore && this.mostRecentScores && this.mostRecentScores.length && (this.selectedGame!.highScoreMode !== "None")) {
             this.exitGame(KioskState.EnterHighScore);
         }
         else {
@@ -134,6 +145,7 @@ export class Kiosk {
 
     escapeGame(): void {
         if (this.state !== KioskState.PlayingGame) { return; }
+        this.gamepadManager.keyboardManager.clear();
         this.exitGame(KioskState.MainMenu);
     }
 
@@ -160,12 +172,12 @@ export class Kiosk {
             gamespace.firstChild.remove();
         }
 
-        const playUrl = `${configData.PlayUrlRoot}?id=${gameId}&hideSimButtons=1&noFooter=1&single=1&fullscreen=1`;
+        const playUrl = `${configData.PlayUrlRoot}?id=${gameId}&hideSimButtons=1&noFooter=1&single=1&fullscreen=1&autofocus=1`;
         function createIFrame(src: string) {
-            const iframe: any = document.createElement("iframe");
+            const iframe: HTMLIFrameElement = document.createElement("iframe");
             iframe.className = "sim-embed";
             iframe.frameBorder = "0";
-            iframe.sandbox = "allow-popups allow-forms allow-scripts allow-same-origin";
+            iframe.setAttribute("sandbox", "allow-popups allow-forms allow-scripts allow-same-origin");
             iframe.src = src;
             return iframe;
         }
@@ -190,7 +202,7 @@ export class Kiosk {
 
         return allHighScores[gameId];
     }
-   
+
     saveHighScore(gameId: string, initials: string, score: number) {
         const allHighScores = this.getAllHighScores();
         if (!allHighScores[gameId]) {
@@ -202,7 +214,7 @@ export class Kiosk {
         allHighScores[gameId].sort((first, second) => second.score - first.score);
         allHighScores[gameId].splice(configData.HighScoresToKeep);
 
-        localStorage.setItem(this.highScoresLocalStorageKey, JSON.stringify(allHighScores));        
+        localStorage.setItem(this.highScoresLocalStorageKey, JSON.stringify(allHighScores));
     }
 
     resetHighScores() {
