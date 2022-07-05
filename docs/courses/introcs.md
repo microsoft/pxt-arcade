@@ -4,11 +4,11 @@
 
 The Introduction to Computer Science with MakeCode Arcade curriculum is a full academic year course designed to be taught for introductory programming classes in High School. The curriculum is free and uses web-based technology and tools that can be accessed across platforms and devices.
 
-The Introduction to Computer Science with MakeCode Arcade curriculum was adapted from the original TEALS Introduction to Computer Science curriculum and built with Microsoft MakeCode Arcade as its core teaching platform using a game-based learning approach to engage a diversity of students. The original TEALS course has been successfully implemented in hundreds of high schools.
+The Introduction to Computer Science with MakeCode Arcade curriculum was adapted from the original TEALS Introduction to Computer Science curriculum and built with [Microsoft MakeCode Arcade](https://arcade.makecode.com) as its core teaching platform using a game-based learning approach to engage a diversity of students. The original TEALS course has been successfully implemented in hundreds of high schools.
 
 The course explores a variety of basic computational thinking and programming concepts through a project-based learning framework. Every unit culminates in a comprehensive project and roughly 75% of student time is spent building projects and practicing the skills they are learning.
 
-The Introduction to Computer Science with MakeCode Arcade curriculum is designed as a course meeting daily for 55-minute periods. The curriculum includes approximately 75 days of material for each semester. Each semester is divided into a series of units which successively introduces new concepts and reinforces those learned previously. The first semester teaches programming using visual drag-and-drop Blocks and the second semester uses either JavaScript or Python. It is possible to teach Semester 1 and Semester 2 independently.
+The Introduction to Computer Science with MakeCode Arcade curriculum is designed as a course meeting daily for 55-minute periods. The curriculum includes approximately 75 days of material for each semester. Each semester is divided into a series of units which successively introduces new concepts and reinforces those learned previously. The first semester teaches programming using visual drag-and-drop Blocks and the second semester uses either JavaScript or Python. It is possible to teach [Semester 1](#semester-1) and [Semester 2](#semester-2) independently.
 
 ## Course Outline
 
