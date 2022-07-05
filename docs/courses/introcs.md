@@ -1,3 +1,5 @@
+![TEALS Intro CS Banner](/static/courses/teals-introcs-banner.png)
+
 # Introduction to Computer Science with Microsoft MakeCode Arcade
 
 The Introduction to Computer Science with MakeCode Arcade curriculum is a full academic year course designed to be taught for introductory programming classes in High School. The curriculum is free and uses web-based technology and tools that can be accessed across platforms and devices.
@@ -20,7 +22,7 @@ The Introduction to Computer Science with MakeCode Arcade curriculum is designed
 * **Unit 5 Tile maps and platform games** – In this optional unit, students learn about tile maps and their myriad uses, including in platform games.
 * **Unit 6 Capstone project** – Students work in teams to create complex projects. Students also create marketing materials for their projects.
 
-<Coordinates Lab.png>
+![Coordinates Lab example](/static/courses/coordinates-lab.png)
 
 ### Semester 2
 
@@ -33,7 +35,7 @@ The Introduction to Computer Science with MakeCode Arcade curriculum is designed
 * **Unit 6 Advanced graphics** – In this optional unit, students work with advanced graphics techniques, including parallax and mini maps.
 * **Unit 7 Capstone project** – Students work in teams to create complex projects. Students also create marketing materials for their projects.
 
-<PyJs String Lab.png>
+![PyJs Lab example](/static/courses/pyjs-string-lab.png)
 
 ## Course Materials
 
