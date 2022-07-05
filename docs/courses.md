@@ -14,6 +14,13 @@ Structured courses for teaching computer science in the classroom.
         "url": "https://makecode.com/csp",
         "imageUrl": "/static/courses/csp.png",
         "largeImageUrl": "/static/courses/csp.png"
+    },
+    {
+        "name": "Introduction to Computer Science with Microsoft MakeCode Arcade",
+        "description": "A full academic year course designed to be taught for introductory programming classes in High School.",
+        "url": "/courses/introcs",
+        "imageUrl": "/static/courses/teals-introcs.jpg",
+        "largeImageUrl": "/static/courses/teals-introcs.jpg"
     }
 ]
 ```
