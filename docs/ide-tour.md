@@ -25,10 +25,12 @@ In the **Editor** you create your Blocks, JavaScript, or Python code. There's a 
 * **Share**: Share your game in the Cloud and get a share link to give to others.
 * **Game Simulator**: Run, test, and debug your game code in a fully functioning game board simulator.
 * **Game controls**: Move your player or press function buttons. Toggle the menu or restart your game.
-* **Simulator toolbar**: The Simulator toolbar has buttons to run, pause, restart, and control the display of your game. 
+* **Simulator toolbar**: The Simulator toolbar has buttons to run, pause, restart, turn on debuggint, and control the display of your game. 
 * **Download**: Download your code to the @boardname@ hardware.
 * **Toolbox**: The Toolbox has all of the game code elements you need build your game. The game functions and methods are contained inside their related category drawers.
 * **Workspace**: The Workspace is where you make your game. You drag out your blocks from the toolbox and snap them in place where you want them to go. Once out on the Workspace, Blocks are copied, moved around, or have their properties changed.
 * **Editor toggle**: You can switch between the Blocks, JavaScript, or Python editors by just clicking the editor toggle at the top of the screen. It's the same code but one view is Blocks and the other is JavaScript or Python!
+* **Assets**: View, add, and edit your game's sprites and tilemaps.
 * **Workspace toolbar**: Undo or redo changes to your code. Zoom in or out to see more or less code on the Workspace.
 * **Save Project**: Save your game project to a file, you give it the name want. Also, the GitHub button if you want your game in a GitHub repository.
+* **GitHub**: Create a GitHub repository for your game project.
