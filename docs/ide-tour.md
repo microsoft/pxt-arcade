@@ -18,7 +18,7 @@ The **Home Page** is where you begin your game coding experience. It offers you 
 
 ## In the Editor
 
-In the **Editor** you create your Blocks or JavaScript code. There's a Toolbox with the code functions and methods to use for building your game. You can save and share projects, and even put them on GitHub. There's a complete game simulator so you can try your a game at any time while you build it.
+In the **Editor** you create your Blocks or JavaScript code. There's a Toolbox with the code functions and methods to use for building your game. You can save and share projects, and even put them on GitHub. There's a complete game simulator so you can try your game at any time while you build it.
 
 ![IDE tour slide 2](/static/ide-tour/ide-tour2.png)
 
