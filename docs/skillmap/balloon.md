@@ -32,7 +32,7 @@
 
 
 ### balloon2
-* name: Join the Audience
+* name: Burst Your Balloon
 * type: tutorial
 * description: Add an audience that applauds as you click!
 * tags: easy, clicker, game, events
