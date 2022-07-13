@@ -13,10 +13,11 @@ Let's turn our game into a carnival!
 
 
 
+
 ## {2. Play Your Game}
 
 
-**Start by playing your game!**
+**Play the clicker game!**
 
 If your code isn't working and you can't figure out why, click "Replace my code" to replace the blocks in your workspace with new starter code.
 
@@ -26,7 +27,7 @@ If your code isn't working and you can't figure out why, click "Replace my code"
 
 hint~
 
-Press the (A) button as fast as you can.  You should see the score go up with each click, and the timer should be counting down from 30 seconds.
+Press the (A) button as fast as you can.  You should see the score go up with each click and the timer should be counting down from 30 seconds.
 
 ---
 ---
@@ -34,7 +35,7 @@ Press the (A) button as fast as you can.  You should see the score go up with ea
 
 ## {3. Set the Scene}
 
-**Let's set the scene...**
+**Set the scene...**
 
 - :tree: From the ``||scene: Scene||`` category in the toolbox, grab <br/>
 
@@ -42,7 +43,7 @@ Press the (A) button as fast as you can.  You should see the score go up with ea
 scene.setBackgroundColor(0)
 ```
 
-and snap it inside and at the very top of the
+and snap it inside and at the very **top** of the
 ``||loops: on start||``
 block container that's already in your workspace.
 
@@ -76,7 +77,7 @@ In Arcade, each character or item that does something is called a sprite. Let's 
 let mySprite = sprites.create(img`.`, SpriteKind.Player)
 ```
 
-and snap it inside and at the very bottom of the
+and snap it inside and at the very **bottom** of the
 ``||loops: on start||``
 block container that's already in your workspace.
 
@@ -115,20 +116,20 @@ let mySprite: Sprite = null
 mySprite.setPosition(0, 0)
 ```
 
-and snap it inside at the bottom of the
+and snap it inside at the **bottom** of the
 ``||loops: on start||``
 block already in your workspace.
 
 - :mouse pointer: Change the **x** value to **80** and the **y** value to **93**.
 
 ~hint Why use 80 and 93? 💡
-<br/>
 
-The **x** value of **80** will place the balloon right in the middle of the screen from side to side because the screen width is 160 pixels.
+
+The width of the screen is 160 pixels, so an **x** value of **80** will place the balloon in the middle of the screen from left to right.
 
 The **y** value of **93** will put the balloon near the bottom of the screen because the screen height is 120 pixels.
 
-These numbers were carefully selected to help put the balloon in the right place for the next several steps, but you can also play around with the values to see what happens when you make them larger or smaller.
+These numbers were carefully selected to put the balloon in the right place for the next several steps...but you can also play around with the values to see what happens when you make them larger or smaller.
 
 hint~
 
@@ -157,14 +158,14 @@ mySprite.setPosition(80, 93)
 Now we need to make the balloon bigger each time (A) is pressed.
 
 
-- :-arrows-alt-v: From the ``||scaling: Scaling||`` category in the toolbox, grab
+- :up-down: From the ``||scaling: Scaling||`` category in the toolbox, grab
 
 ```block
 
 scaling.scaleByPixels_defl(mySprite, 2, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
 
 ```
-and snap it into the bottom of the <br/>
+and snap it into the **bottom** of the <br/>
 ``||controller: on [A] button [pressed]||`` <br/>
 block already in the workspace.
 
@@ -212,25 +213,25 @@ Press the (A) button as fast as you can.  You should see the balloon get bigger 
 let mySprite2 = sprites.create(img`.`, SpriteKind.Player)
 ```
 
-and snap it into the bottom of the
+and snap it into the **bottom** of the
 ``||loops: on start||``
 block already in your workspace.
 
-- :mouse pointer: Click the name ``||variables: mySprite2||`` and choose **Rename variable...** from the menu. <br/>
+- :mouse pointer: Click ``||variables: mySprite2||`` and choose **Rename variable...** from the menu. <br/>
 Change the name to **myBooth**.
 
-- :mouse pointer: Click the empty image square and when the image editor opens, switch to **My Assets** and select the booth sprite.
+- :mouse pointer: Click the grey square and when the image editor opens, switch to **My Assets** to select the **booth** sprite.
 
-- :mouse pointer: Click ``||sprites: Player||`` and change the kind to ``||sprites: Booth||``.
+- :mouse pointer: Click the kind ``||sprites: Player||`` and change it to ``||sprites: Booth||``.
 
 
 ~hint Show me how! 🕵️
 
-![Choose the red balloon from My Assets](/static/skillmap/balloon/choose-sprite.gif "Change from the Editor to My Assets and select the red balloon.")
+![Choose the booth from My Assets](/static/skillmap/balloon/booth.gif "Change from the Editor to My Assets and select the booth.")
 
 hint~
 
-💡 _Don't forget to look at the game window to see how things are shaping up!_
+💡 _Don't forget to keep your eye on the game window to see how things are shaping up!_
 
 
 ---
@@ -246,9 +247,102 @@ let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
 
 
 
-## {Step 12}
 
-**🎉 Way to Go 🎉**
+## {9. Win on Overlap}
+
+Let's make our game even more fun by adding a way to **"win"** when the balloon reaches the line!
+
+- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) { })
+```
+
+and drop it into an **empty area** in the workspace.
+
+
+- :mouse pointer: Change the last kind from ``||sprites: Player||`` to ``||sprites: Booth||``.
+
+
+~hint Show me how! 🕵️
+
+![Drop an `on overlap` event in the workspace](/static/skillmap/balloon/overlap.gif "Make sure to change the last kind to Booth.")
+
+hint~
+
+---
+---
+
+#### ~ tutorialhint
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSprite) {
+})
+```
+
+
+
+
+## {10. Game Over Win}
+
+- :circle: From the ``||game: Game||`` category in the toolbox, grab <br/>
+
+```block
+game.over(false)
+```
+
+and snap it into the empty
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSprite) { })
+```
+
+container already in the workspace.
+
+
+- :mouse pointer: Toggle **`<LOSE>`** to **`<WIN>`**.
+
+
+~hint Show me how! 🕵️
+
+![Snap a game over block into the on overlap container](/static/skillmap/balloon/win.gif "Toggle the option to <WIN>")
+
+hint~
+
+---
+---
+
+#### ~ tutorialhint
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSprite) {
+    game.over(true)
+})
+```
+
+
+## {11. Play Your Game}
+
+
+**Win your game!**
+
+Open the game console and press the (A) button as fast as you can.
+
+Can you get the balloon to reach the line before time runs out?
+
+~hint Why does this work? 💡
+
+You added an event that watches for the Player (balloon) to overlap the Booth (any part of the booth image.)
+
+When the balloon crosses the line that's part of the booth image, the overlap event triggers and runs the
+``||game: game over <WIN>||`` code, allowing you to win the game!
+
+hint~
+
+---
+---
+
+## {12. Finale}
+
+**🎈 FANTASTIC 🎈**
 
 You have started your very own clicker game!
 Try it in the console and see if you can get more than **40 points**.
