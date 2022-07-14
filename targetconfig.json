@@ -21,7 +21,8 @@
             "microsoft/arcade-background-scroll",
             "microsoft/arcade-character-animations",
             "microsoft/arcade-tile-util",
-            "aqeeaqee/pxt-raycasting"
+            "aqeeaqee/pxt-raycasting",
+            "joylabz/makeymakey-makecode-arcade-extension"            
         ],
         "preferredRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
