@@ -27,7 +27,7 @@ If your code isn't working and you can't figure out why, click "Replace my code"
 
 hint~
 
-Press the (A) button as fast as you can.  You should see the score go up with each click and the timer should be counting down from 30 seconds.
+Press the (A) button as fast as you can.  You should see the score go up with each click and the timer should be counting down from 20 seconds.
 
 ---
 ---
@@ -61,7 +61,7 @@ hint~
 #### ~ tutorialhint
 ```blocks
 scene.setBackgroundColor(1)
-info.startCountdown(30)
+info.startCountdown(20)
 ```
 
 
@@ -98,7 +98,7 @@ hint~
 #### ~ tutorialhint
 ```blocks
 scene.setBackgroundColor(1)
-info.startCountdown(30)
+info.startCountdown(20)
 let mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
 ```
 
@@ -145,7 +145,7 @@ hint~
 #### ~ tutorialhint
 ```blocks
 scene.setBackgroundColor(1)
-info.startCountdown(30)
+info.startCountdown(20)
 let mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
 mySprite.setPosition(80, 93)
 ```
@@ -240,7 +240,7 @@ hint~
 #### ~ tutorialhint
 ```blocks
 scene.setBackgroundColor(1)
-info.startCountdown(30)
+info.startCountdown(20)
 let mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
 let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
 ```
@@ -383,7 +383,7 @@ namespace scaling {
     //% block="change $sprite=variables_get(mySprite) scale by $value pixels $direction anchor $anchor || proportional $proportional"
     //% expandableArgumentMode=enabled
     //% inlineInputMode=inline
-    //% value.defl=2
+    //% value.defl=1
     //% direction.defl=ScaleDirection.Uniformly
     //% anchor.defl=ScaleAnchor.Bottom
     //% proportional.defl=0
@@ -421,7 +421,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 
 
-info.startCountdown(30)
+info.startCountdown(20)
 
 
 ```
@@ -429,7 +429,7 @@ info.startCountdown(30)
 
 ```ghost
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    scaling.scaleByPixels_defl(mySprite, 2, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+    scaling.scaleByPixels_defl(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
     info.player1.changeScoreBy(1)
 })
 
@@ -441,7 +441,7 @@ mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
 mySprite.setPosition(80, 93)
 info.startCountdown(10)
 scene.setBackgroundColor(1)
-let booth = sprites.create(assets.image`booth`, SpriteKind.Booth)
+let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
 
 ```
 

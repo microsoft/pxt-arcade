@@ -1,81 +1,239 @@
-# Burst Your Balloon
+# Pump it Up
 
 ### @explicitHints true
 
 
-## {Intro}
+## {Intro @showdialog}
 
-The code for a basic clicker is already in the workspace.
+Let's make our carnival game even more interactive!
 
-Let's turn our game into a carnival!
-
-![Click away](/static/skillmap/balloon/balloon2.gif "Let's add images to make our game more exciting." )
+![Add a mouse to represent your player](/static/skillmap/balloon/balloon3.gif "We can make a mouse that moves as you click." )
 
 
 
-## {2. Read Instructions}
 
-**🎈Start with Instructions🎈**
-
-- :comment: This is the **instruction panel** that has directions
-on what to do.
+## {2. Play Your Game}
 
 
-- :lightbulb: Don't miss anything! Scroll down to the **double lines** before moving to the next instruction.
+**Play the balloon game!**
 
+- :mouse pointer: Click the mini **game window** in the bottom corner to open the playable console!
 
-- :mouse pointer: When you're done reading, click **Next** to move to the next instruction.
+Press the (A) button as fast as you can.  You should see a balloon that gets bigger and bigger until it crosses the line and wins the game.
+
+~hint What if it doesn't work? 💡
+
+If your code doesn't work, start by looking to see if you can figure out what is going wrong.  Make sure each block is in the correct event container.
+
+```blocks
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.player1.changeScoreBy(1)
+   scaling.scaleByPixels_defl(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+})
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSprite) {
+    game.over(true)
+})
+let mySprite: Sprite = null
+info.startCountdown(20)
+scene.setBackgroundColor(1)
+
+mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
+mySprite.setPosition(80, 93)
+let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
+```
+
+If those steps don't solve your problem, click "Replace my code" to replace the blocks in your workspace with new starter code.
+
+hint~
 
 ---
 ---
 
 
-## {3. Tips and Tricks}
+## {3. Add a Mouse}
 
-**Tips and Tricks**
+Let's add a character to pump up the balloon.
 
-Be on the lookout for secret information!
+- :paper plane: Follow the steps you've taken before to add a new sprite to your game.
+
+- :mouse pointer: Rename the sprite to **myMouse**, choose the **mouse1-1** image, and change the kind to **Mouse**.
+
+![Choose the orange mouse holding the plunger](/static/skillmap/balloon/mouse1-1.png "Select `mouse1-1` from My Assets")
 
 
-~hint Click here to reveal hidden info 🕵️
+~hint Remind me how! 🕵️
 
-<br/>
-Look for clues like this scattered among the instructions.
+You'll want to add a new block to the end of the <br/>
+``||loops:on start||`` <br/>
+container and make it look like this:
 
-Each one gives extra info, tips, or tricks.
+```block
+let myMouse = sprites.create(assets.image`mouse1-1`, SpriteKind.Mouse)
+```
+
+![Add a new `set sprite` block to the end of the `on start` container.](/static/skillmap/balloon/third-sprite.gif "Add a `set sprite` block to the `on start` container and change the name and kind." )
+
+hint~
+
+~hint Why add "my" to variables? 💡
+
+Did you notice that we've called our variables **mySprite**, **myBooth**, and **myMouse**? Adding "my" to the beginning of a variable name isn't required, but it is a common practice.  Coders do this to avoid using "reserved" words as variable names.
+
+In languages like JavaScript or Python, some words have special meanings and using those special words as variables can cause trouble.  Adding "my" to the beginning of simple words helps make sure that you don't accidentally overload a word that you'll need for something else later.
 
 hint~
 
 
+---
+---
 
-- :mouse pointer: Once you see the double lines, you can click **Next** to move to the next instruction.
+#### ~ tutorialhint
+```blocks
+info.startCountdown(20)
+let myMouse: Sprite = null
+let mySprite: Sprite = null
+scene.setBackgroundColor(1)
+mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
+mySprite.setPosition(80, 93)
+let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
+myMouse = sprites.create(assets.image`mouse1-1`, SpriteKind.Mouse)
+```
+
+
+## {4. Check Your Game!}
+
+**Try your game now!**
+
+- :mouse pointer: Click the mini **game window** in the bottom corner to open the playable console!
+
+Press the (A) button as fast as you can.  You should see the balloon get bigger each time you click and you should see a mouse hovering above it.
 
 ---
 ---
 
 
-## {4. Your First Block}
 
-**Ready to start coding?**
+## {5. Move the Mouse}
 
-Let's make something happen each time you press the (A) button!
+
+You might have noticed that your mouse wasn't in front of the balloon. Let's duplicate our **mySprite** position block and use the copy for the mouse.
+
+- :mouse pointer: Right click the position block already in the workspace
+
+```block
+let mySprite: Sprite = null
+mySprite.setPosition(80, 93)
+```
+
+and select **Duplicate** from the menu.
+
+- :mouse pointer: Snap the new block into the **end** of the ``||loops: on start||`` container that's already in the workspace.
+
+- :mouse pointer: Click ``||variables:mySprite||`` and change it to ``||variables:myMouse||``.
+
+You should see your mouse move directly in front of your balloon.
+
+~hint Show me how! 🕵️
+
+![Right click to duplicate your position block](/static/skillmap/balloon/duplicate.gif "Change the sprite from mySprite to myMouse.")
+
+hint~
+
+💡 _Don't forget to look at the game window to see how things are shaping up!_
+
+
+
+---
+---
+
+#### ~ tutorialhint
+```blocks
+info.startCountdown(20)
+let myMouse: Sprite = null
+let mySprite: Sprite = null
+scene.setBackgroundColor(1)
+mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
+mySprite.setPosition(80, 93)
+let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
+myMouse = sprites.create(assets.image`mouse1-1`, SpriteKind.Mouse)
+mouse.setPosition(80, 93)
+```
+
+
+## {6. Push Mouse}
+
+Let's create the sense that the mouse is blowing up the balloon by having it push down on the pump with each button click.
+
+- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
+
+```block
+let myMouse: Sprite = null
+myMouse.setImage(img`.`)
+```
+
+and snap anywhere inside the <br/>
+``||controller: on [A] button [pressed]||`` <br/>
+block already in your workspace.
+
+- :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:myMouse||`` and change the image to **mouse1-2**.
+
+![Choose the orange mouse pushing the plunger](/static/skillmap/balloon/mouse1-2.png "Select `mouse1-2` from My Assets")
+
+~hint Show me how! 🕵️
+
+![Change the mouse image](/static/skillmap/balloon/second-mouse.gif "Use the `set [mySprite] image to [ ]` block.")
+
+hint~
+
+---
+---
+
+#### ~ tutorialhint
+```blocks
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    myMouse.setImage(assets.image`mouse1-2`)
+    scaling.scaleByPixels(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+    info.changeScoreBy(1)
+})
+```
+
+
+
+## {7. Play Again!}
+
+**Try your game again!**
+
+- :mouse pointer: Click the mini **game window** in the bottom corner to open the playable console!
+
+Press the (A) button as fast as you can.  You should see the mouse press the handle one time and the balloon should continue to inflate with each press.
+
+---
+---
+
+
+
+
+## {8. Up and Down}
+
+Did it look like the mouse quit moving after one button press? Let's add another event to change the image back to the original when you release the (A) button.
 
 
 - :game: From the ``||controller: Controller||`` category in the toolbox, grab
+
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 and drop it into an empty area of the workspace.
 
+- :mouse pointer: Change ``||controller:pressed||`` to ``||controller:released||``.
+
 
 ~hint Click here to see how 🕵️
 
-![Here's where to look for the toolbox](/static/skillmap/turkey/toolbox.gif "The toolbox is to the left of the workspace.")
+![Look under Controller for the block](/static/skillmap/balloon/add-button-release.gif "Drag out the controller block and change 'pressed' to 'released'.")
 
-- :lightbulb: The panel with the colorful category names is called the
- **toolbox**. <br/>
- Click ``||controller: Controller||`` to find the block you need.
 
 hint~
 
@@ -84,35 +242,32 @@ hint~
 
 #### ~ tutorialhint
 ```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.A.onEvent(ControllerButtonEvent.Released, function () {
 })
 ```
 
 
 
-## {5. Add Points}
+## {9. New Image}
 
-Now we need to add points when the (A) button is clicked.
+- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
 
-
-- :id card: From the ``||info: Info||`` category in the toolbox, grab
 ```block
-    info.changeScoreBy_defl1(info.player1, 1)
+let myMouse: Sprite = null
+myMouse.setImage(img`.`)
 ```
-and snap it into the empty <br/>
-``||controller: on [A] button [pressed]||`` <br/>
-block that's already in the workspace.
 
+and snap anywhere inside the <br/>
+``||controller: on [A] button [released]||`` <br/>
+block already in your workspace.
 
-~hint Click here to see how 🕵️
+- :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:myMouse||`` and change the image to **mouse1-1**.
 
-![Here's where to look for the toolbox](/static/skillmap/turkey/toolbox.gif "The toolbox is to the left of the workspace.")
+![Choose the orange mouse holding the plunger](/static/skillmap/balloon/mouse1-1.png "Select `mouse1-1` from My Assets")
 
-- :lightbulb: Make sure the new <br/>
-``||info: change player [1] score by [1]||`` <br/>
-block connects to the inside of the <br/>
-``||controller: on [A] button [pressed]||`` <br/>
-block!
+~hint Show me how! 🕵️
+
+![Change the mouse image](/static/skillmap/balloon/third-mouse.gif "Use the `set [mySprite] image to [ ]` block.")
 
 hint~
 
@@ -121,74 +276,36 @@ hint~
 
 #### ~ tutorialhint
 ```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.changeScoreBy_defl1(info.player1, 1)
+controller.A.onEvent(ControllerButtonEvent.Released, function () {
+    myMouse.setImage(assets.image`mouse1-1`)
 })
 ```
 
 
 
-## {6. Check Your Game!}
+## {9. Take a Look}
 
-Now it's time to try your game!
 
-- :mouse pointer: Click the mini **game window** in the bottom corner to open the playable console!
+**Take a look at what you have.**
 
-~hint Click here to see how 🕵️
+Open the game console and press the (A) button as fast as you can.
 
-![Look for the game window in the lower right](/static/skillmap/balloon/game.gif "Click the mini game window to pop open the playable console.")
-
-hint~
-
-Press the (A) button as fast as you can.  You should see the score go up with each click!
+Your mouse should appear to be blowing up the balloon as you play!
 
 ---
 ---
 
 
 
+## {10. Finale}
 
-## {7. Add a Timer}
+**🐭 Woo hoo! 🐭**
 
-**Let's add a challenge** ⏰
+You've completed an amazing carnival game! Take some time to play it and appreciate what you've built.
 
-- :id card: From the ``||info: Info||`` category in the toolbox,
-grab
-```block
-    info.startCountdown(10)
-```
+When you're ready, click **Done** to return to the skillmap and claim your badge and certificate.
 
-and snap it into the empty <br/>
-``||loops: on start||`` <br/>
-block that's already in the workspace.
-
-- :mouse pointer: Change the countdown time from **10** seconds to **30** seconds.
-
-
-~hint Click here to see how 🕵️
-
-![Look for the game window in the lower right](/static/skillmap/balloon/game.gif "Click the mini game window to pop open the playable console.")
-
-hint~
-
----
----
-
-#### ~ tutorialhint
-```blocks
-info.startCountdown(30)
-```
-
-
-
-## {Step 12}
-
-**🎉 Way to Go 🎉**
-
-You have started your very own clicker game!
-Try it in the console and see if you can get more than **40 points**.
-
-When you're finished, click **Done** to return to the skillmap and continue building your amazing **🎈carnival game🎈**!
+After you grab your rewards, you have the option to complete one more level to make your game a into a two player race.
 
 
 ```customts
@@ -217,53 +334,85 @@ namespace info {
     }
 
 }
+
+namespace scaling {
+
+    //% blockId=sprite_scale_by_pixels_ex_defl
+    //% block="change $sprite=variables_get(mySprite) scale by $value pixels $direction anchor $anchor || proportional $proportional"
+    //% expandableArgumentMode=enabled
+    //% inlineInputMode=inline
+    //% value.defl=1
+    //% direction.defl=ScaleDirection.Uniformly
+    //% anchor.defl=ScaleAnchor.Bottom
+    //% proportional.defl=0
+    //% help=sprites/scaling/scale-by-pixels
+    export function scaleByPixels_defl(sprite: Sprite, value: number, direction?: ScaleDirection, anchor?: ScaleAnchor, proportional?: boolean): void {
+        direction = direction || ScaleDirection.Uniformly;
+        anchor = anchor || ScaleAnchor.Bottom;
+
+        if (proportional == null) proportional = direction === ScaleDirection.Uniformly;
+
+        let sx: number;
+        let sy: number;
+
+        if (direction & ScaleDirection.Horizontally) {
+            const imgW = sprite.image.width;
+            const newW = sprite.width + value;
+            sx = newW / imgW;
+        }
+
+        if (direction & ScaleDirection.Vertically) {
+            const imgH = sprite.image.height;
+            const newH = sprite.height + value;
+            sy = newH / imgH;
+        }
+
+        sprite.setScaleCore(sx, sy, anchor, proportional);
+    }
+}
+
+```
+
+```template
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.player1.changeScoreBy(1)
+   scaling.scaleByPixels_defl(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+})
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSprite) {
+    game.over(true)
+})
+let mySprite: Sprite = null
+info.startCountdown(20)
+scene.setBackgroundColor(1)
+
+mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
+mySprite.setPosition(80, 93)
+let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
 ```
 
 
-
 ```ghost
-
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    mouse2.setImage(assets.image`mouse2-2`)
-    scaling.scaleByPixels(mySprite2, 2, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
-})
-
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    mouse.setImage(assets.image`mouse1-2`)
-    scaling.scaleByPixels(mySprite, 2, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
-    info.changeScoreBy_defl1(info.player1, 1)
-})
-info.onCountdownEnd(function () {
-    game.over(true)
+    myMouse.setImage(assets.image`mouse1-2`)
+    scaling.scaleByPixels(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+    info.changeScoreBy(1)
 })
 controller.A.onEvent(ControllerButtonEvent.Released, function () {
-    mouse.setImage(assets.image`mouse1-1`)
-})
-controller.B.onEvent(ControllerButtonEvent.Released, function () {
-    mouse2.setImage(assets.image`mouse2-1`)
+    myMouse.setImage(assets.image`mouse1-1`)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSprite) {
     game.over(true)
 })
-let mouse2: Sprite = null
-let mySprite2: Sprite = null
-let mouse: Sprite = null
+let myMouse: Sprite = null
 let mySprite: Sprite = null
+info.startCountdown(20)
 scene.setBackgroundColor(1)
-let booth = sprites.create(assets.image`booth`, SpriteKind.Booth)
 mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
-mouse = sprites.create(assets.image`mouse1-1`, SpriteKind.Mouse)
-let textSprite = textsprite.create("^ Reach the line! ^", 0, 12)
-textSprite.setPosition(80, 42)
-mySprite2 = sprites.create(assets.image`balloon-2`, SpriteKind.Player)
-mouse2 = sprites.create(assets.image`mouse2-1`, SpriteKind.Mouse)
-mouse.setPosition(50, 93)
-mouse2.setPosition(110, 93)
-mySprite.setPosition(50, 93)
-mySprite2.setPosition(110, 93)
-info.startCountdown(10)
-
-
+mySprite.setPosition(80, 93)
+let myBooth = sprites.create(assets.image`backdrop`, SpriteKind.Booth)
+myMouse = sprites.create(assets.image`mouse1-1`, SpriteKind.Mouse)
+myMouse.setPosition(80, 93)
 
 ```
 
@@ -272,7 +421,7 @@ info.startCountdown(10)
 ```package
 simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
 arcade-text=github:microsoft/arcade-text/
-pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling/
+pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling
 ```
 
 
