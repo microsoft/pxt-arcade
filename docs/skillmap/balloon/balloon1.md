@@ -157,7 +157,7 @@ and snap it into the empty <br/>
 ``||loops: on start||`` <br/>
 block that's already in the workspace.
 
-- :mouse pointer: Change the countdown time from **10** seconds to **30** seconds.
+- :mouse pointer: Change the countdown time from **10** seconds to **20** seconds.
 
 
 ~hint Click here to see how 🕵️
@@ -171,7 +171,7 @@ hint~
 
 #### ~ tutorialhint
 ```blocks
-info.startCountdown(30)
+info.startCountdown(20)
 ```
 
 
