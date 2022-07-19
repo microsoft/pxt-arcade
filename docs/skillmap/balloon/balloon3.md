@@ -5,7 +5,7 @@
 
 ## {Intro @showdialog}
 
-Let's make our carnival game even more interactive!
+Let's add on to our carnival game!
 
 ![Add a mouse to represent your player](/static/skillmap/balloon/balloon3.gif "We can make a mouse that moves as you click." )
 
@@ -192,9 +192,9 @@ hint~
 #### ~ tutorialhint
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    myMouse.setImage(assets.image`mouse1-2`)
+    info.player1.changeScoreBy(1)
     scaling.scaleByPixels(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
-    info.changeScoreBy(1)
+    myMouse.setImage(assets.image`mouse1-2`)
 })
 ```
 
@@ -410,9 +410,11 @@ info.startCountdown(20)
 scene.setBackgroundColor(1)
 mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
 mySprite.setPosition(80, 93)
-let myBooth = sprites.create(assets.image`backdrop`, SpriteKind.Booth)
+let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
 myMouse = sprites.create(assets.image`mouse1-1`, SpriteKind.Mouse)
 myMouse.setPosition(80, 93)
+info.changeScoreBy_defl1(info.player1, 1)
+scaling.scaleByPixels_defl(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
 
 ```
 

@@ -1,173 +1,164 @@
-# Burst Your Balloon
+# Two Player
 
 ### @explicitHints true
 
 
-## {Intro}
+## {Intro @showdialog}
 
-The code for a basic clicker is already in the workspace.
+This tutorial will help you turn your game into a two-player event!
 
-Let's turn our game into a carnival!
-
-![Click away](/static/skillmap/balloon/balloon2.gif "Let's add images to make our game more exciting." )
+![Use what you've learned to add a second player](/static/skillmap/balloon/balloon4.gif "We can add a second mouse and balloon." )
 
 
 
-## {2. Read Instructions}
 
-**🎈Start with Instructions🎈**
-
-- :comment: This is the **instruction panel** that has directions
-on what to do.
+## {2. Play Your Game}
 
 
-- :lightbulb: Don't miss anything! Scroll down to the **double lines** before moving to the next instruction.
-
-
-- :mouse pointer: When you're done reading, click **Next** to move to the next instruction.
-
----
----
-
-
-## {3. Tips and Tricks}
-
-**Tips and Tricks**
-
-Be on the lookout for secret information!
-
-
-~hint Click here to reveal hidden info 🕵️
-
-<br/>
-Look for clues like this scattered among the instructions.
-
-Each one gives extra info, tips, or tricks.
-
-hint~
-
-
-
-- :mouse pointer: Once you see the double lines, you can click **Next** to move to the next instruction.
-
----
----
-
-
-## {4. Your First Block}
-
-**Ready to start coding?**
-
-Let's make something happen each time you press the (A) button!
-
-
-- :game: From the ``||controller: Controller||`` category in the toolbox, grab
-```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-})
-```
-and drop it into an empty area of the workspace.
-
-
-~hint Click here to see how 🕵️
-
-![Here's where to look for the toolbox](/static/skillmap/turkey/toolbox.gif "The toolbox is to the left of the workspace.")
-
-- :lightbulb: The panel with the colorful category names is called the
- **toolbox**. <br/>
- Click ``||controller: Controller||`` to find the block you need.
-
-hint~
-
----
----
-
-#### ~ tutorialhint
-```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-})
-```
-
-
-
-## {5. Add Points}
-
-Now we need to add points when the (A) button is clicked.
-
-
-- :id card: From the ``||info: Info||`` category in the toolbox, grab
-```block
-    info.changeScoreBy_defl1(info.player1, 1)
-```
-and snap it into the empty <br/>
-``||controller: on [A] button [pressed]||`` <br/>
-block that's already in the workspace.
-
-
-~hint Click here to see how 🕵️
-
-![Here's where to look for the toolbox](/static/skillmap/turkey/toolbox.gif "The toolbox is to the left of the workspace.")
-
-- :lightbulb: Make sure the new <br/>
-``||info: change player [1] score by [1]||`` <br/>
-block connects to the inside of the <br/>
-``||controller: on [A] button [pressed]||`` <br/>
-block!
-
-hint~
-
----
----
-
-#### ~ tutorialhint
-```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.changeScoreBy_defl1(info.player1, 1)
-})
-```
-
-
-
-## {6. Check Your Game!}
-
-Now it's time to try your game!
+**Play the game!**
 
 - :mouse pointer: Click the mini **game window** in the bottom corner to open the playable console!
 
-~hint Click here to see how 🕵️
+Press the (A) button as fast as you can.  You should see a mouse pumping up a balloon that gets bigger and bigger until it crosses the line and wins the game.
 
-![Look for the game window in the lower right](/static/skillmap/balloon/game.gif "Click the mini game window to pop open the playable console.")
+~hint What if it doesn't work? 💡
+
+If your code doesn't work, start by looking to see if you can figure out what is going wrong.  Make sure each block is in the correct event container.
+
+```blocks
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.player1.changeScoreBy(1)
+    scaling.scaleByPixels(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+    myMouse.setImage(assets.image`mouse1-2`)
+})
+
+controller.A.onEvent(ControllerButtonEvent.Released, function () {
+    myMouse.setImage(assets.image`mouse1-1`)
+})
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSprite) {
+    game.over(true)
+})
+
+let myMouse: Sprite = null
+let mySprite: Sprite = null
+info.startCountdown(20)
+scene.setBackgroundColor(1)
+mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
+mySprite.setPosition(80, 93)
+let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
+myMouse = sprites.create(assets.image`mouse1-1`, SpriteKind.Mouse)
+myMouse.setPosition(80, 93)
+```
+
+If those steps don't solve your problem, click "Replace my code" to replace the blocks in your workspace with new starter code.
 
 hint~
 
-Press the (A) button as fast as you can.  You should see the score go up with each click!
+---
+---
+
+
+## {3. Add Second Player}
+
+Follow the steps from previous levels to add a second player that reacts to the (B) button!
+
+- :lightbulb: Can you figure out what to do by yourself?
+
+**Don't forget to try your game after each step!**
 
 ---
 ---
 
 
+## {4. Add a Second Button Event}
+
+- :lightbulb: Start by adding an <br/>
+``||controller:on [B] button [Pressed]||`` <br/>
+block to the workspace and adding a point for **player 2** each time it's clicked.
 
 
-## {7. Add a Timer}
+~hint What does that mean? 💡
 
-**Let's add a challenge** ⏰
+In harder tutorials, we won't be showing you the exact block you need any more.
 
-- :id card: From the ``||info: Info||`` category in the toolbox,
-grab
-```block
-    info.startCountdown(10)
+Instead, we'll give you the _name_ of what you need, and highlight it in the same color as the block you will find in the toolbox.
+
+For example, this text: </br>
+``||controller:on [A] button [Pressed]||``<br/>
+is trying to direct you toward this block:<br/>
+
+```blocks
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+})
 ```
 
-and snap it into the empty <br/>
-``||loops: on start||`` <br/>
-block that's already in the workspace.
+And this text <br/>
+``||info:change player [1] score by [1]||``<br/>
+is trying to direct you toward this block:<br/>
 
-- :mouse pointer: Change the countdown time from **10** seconds to **30** seconds.
+```block
+    info.player1.changeScoreBy(1)
+})
+```
 
 
-~hint Click here to see how 🕵️
+hint~
 
-![Look for the game window in the lower right](/static/skillmap/balloon/game.gif "Click the mini game window to pop open the playable console.")
+~hint Remind me... 🕵️
+
+
+![Add an `on button pressed` block to the workspace](/static/skillmap/balloon/add-b.gif "Add a point each time the B button is clicked." )
+
+hint~
+
+
+
+---
+---
+
+#### ~ tutorialhint
+```blocks
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.player2.changeScoreBy(1)
+})
+```
+
+
+## {5. Add the Balloon}
+
+- :lightbulb: Can you figure out how to add the second balloon for the second player?
+
+_(You'll need to move player 1 to the left, and set player 2 further right.)_
+
+
+~hint Tell me more... 🕵️
+
+- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
+``||variables: set [mySprite2] to sprite [ ] of kind [Player]||`` <br/>
+and snap it inside at the **end** of the
+``||loops: on start||``
+block already in your workspace.
+
+- :mouse pointer: Select the image of the blue balloon.
+
+- :mouse pointer: Duplicate your <br/>
+``||sprites: set [mySprite] position to x [80] y [93]||`` <br/>
+block and snap the copy inside at the **end** of the
+``||loops: on start||``
+block already in your workspace.
+
+- :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:mySprite2||`` and change the x value from 80 to **110**.
+
+- :mouse pointer: Change the positions for **mySprite** and **myMouse** to each have an x value of **50**.
+
+
+hint~
+
+~hint Show me! 🕵️
+
+
+![Balloon Bursting Carnival Final Level - Add Balloon](youtube:inbkRGvVo0A)
 
 hint~
 
@@ -176,19 +167,207 @@ hint~
 
 #### ~ tutorialhint
 ```blocks
-info.startCountdown(30)
+let mySprite2: Sprite = null
+let myMouse: Sprite = null
+let mySprite: Sprite = null
+info.startCountdown(20)
+scene.setBackgroundColor(1)
+mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
+mySprite.setPosition(50, 93)
+let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
+myMouse = sprites.create(assets.image`mouse1-1`, SpriteKind.Mouse)
+myMouse.setPosition(50, 93)
+mySprite2 = sprites.create(assets.image`balloon-2`, SpriteKind.Player)
+mySprite2.setPosition(110, 93)
+```
+
+---
+---
+
+
+
+## {6. Add the Mouse}
+
+- :lightbulb: Now it's time to add the second mouse in front of the second balloon!
+
+
+~hint Tell me more... 🕵️
+
+- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
+``||variables: set [mySprite3] to sprite [ ] of kind [Player]||`` <br/>
+and snap it inside at the **end** of the
+``||loops: on start||``
+block already in your workspace.
+
+- :mouse pointer: Rename the sprite **myMouse2**, select the **mouse2-1** image, and set the kind to **Mouse**.
+
+- :mouse pointer: Duplicate your <br/>
+``||sprites: set [mySprite2] position to x [110] y [93]||`` <br/>
+block and snap the copy inside at the **end** of the
+``||loops: on start||``
+block already in your workspace.
+
+- :mouse pointer: Change ``||variables:mySprite2||`` to ``||variables:myMouse2||``.
+
+hint~
+
+~hint Show me! 🕵️
+
+
+![Balloon Bursting Carnival Final Level - Add Mouse](youtube:inbkRGvVo0A)
+
+hint~
+
+---
+---
+
+#### ~ tutorialhint
+```blocks
+let mySprite2: Sprite = null
+let myMouse: Sprite = null
+let mySprite: Sprite = null
+let myMouse2: Sprite = null
+info.startCountdown(20)
+scene.setBackgroundColor(1)
+mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
+mySprite.setPosition(50, 93)
+let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
+myMouse = sprites.create(assets.image`mouse1-1`, SpriteKind.Mouse)
+myMouse.setPosition(50, 93)
+mySprite2 = sprites.create(assets.image`balloon-2`, SpriteKind.Player)
+mySprite2.setPosition(110, 93)
+myMouse2 = sprites.create(assets.image`mouse2-1`, SpriteKind.Mouse)
+myMouse2.setPosition(110, 93)
+```
+
+---
+---
+
+
+## {7. Push Mouse 2}
+
+You're almost there!
+
+- :lightbulb: Make the second mouse look like it's pushing and releasing the handle when the (B) button is pushed and released.
+
+
+~hint Tell me more... 🕵️
+
+- :game: From the ``||controller: Controller||`` category in the toolbox, grab <br/>
+``||controller:on [A] button [Pressed]||``<br/>
+and drop it into an empty area of the workspace.
+
+- :mouse pointer: Change  ``||controller:A||``  to  ``||controller:B||`` and change<br/>
+``||controller:pressed||`` to ``||controller:released||``.
+
+- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab two <br/>
+``||sprites: set [mySprite] image to [ ]||`` <br/>
+blocks and snap each into the <br/>
+``||controller: on [B] button||`` <br/>
+blocks already in your workspace.
+
+- :mouse pointer: Change  ``||variable:mySprite||``  to  ``||variable:myMouse2||`` in both places.
+
+- :mouse pointer: Choose the correct **mouse2** image for each block.
+
+hint~
+
+~hint Show me! 🕵️
+
+
+![Balloon Bursting Carnival Final Level - Move Mouse](youtube:inbkRGvVo0A)
+
+hint~
+
+---
+---
+
+
+#### ~ tutorialhint
+```blocks
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.player2.changeScoreBy(1)
+    myMouse2.setImage(assets.image`mouse2-2`)
+})
+
+controller.B.onEvent(ControllerButtonEvent.Released, function () {
+    myMouse2.setImage(assets.image`mouse2-1`)
+})
+```
+
+
+## {8. Inflate the Balloon}
+
+Last step!
+
+- :lightbulb: Time to make sure that the second balloon gets bigger with each step.
+
+
+~hint Tell me more... 🕵️
+
+- :up-down: From the ``||scaling: Scaling||`` category in the toolbox, grab <br/>
+``||scaling: change [mySprite] scale by [1] pixels [uniformly] anchor [bottom]|| `` <br/>
+and snap it into the <br/>
+``||controller: on [A] button [pressed]||`` <br/>
+block already in the workspace.
+
+- :mouse pointer: Change **mySprite** to **mySprite2**.
+
+
+hint~
+
+~hint Show me! 🕵️
+
+
+![Balloon Bursting Carnival Final Level - Inflate](youtube:inbkRGvVo0A)
+
+hint~
+
+---
+---
+
+
+#### ~ tutorialhint
+```blocks
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.changeScoreBy_defl1(info.player1, 1)
+    myMouse2.setImage(assets.image`mouse2-2`)
+    scaling.scaleByPixels_defl(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+})
+
+controller.B.onEvent(ControllerButtonEvent.Released, function () {
+    myMouse2.setImage(assets.image`mouse2-1`)
+})
 ```
 
 
 
-## {Step 12}
 
-**🎉 Way to Go 🎉**
+## {8. Play Your Game!}
 
-You have started your very own clicker game!
-Try it in the console and see if you can get more than **40 points**.
+**Try your game!**
 
-When you're finished, click **Done** to return to the skillmap and continue building your amazing **🎈carnival game🎈**!
+- :mouse pointer: Click the mini **game window** in the bottom corner to open the playable console!
+
+Grab a friend and have them press the space bar while you press the 'x' key.  Who makes it to the top first?
+
+💡 ** _Tip:_** _Now that you have someone to race against, you can delete <br/>
+``||info: start countdown [20] (s)||``<br/>
+from ``||loops: on start||``.
+
+
+---
+---
+
+
+
+## {10. Finale}
+
+**🥳 You've done it! 🥳**
+
+You've finished the entire skillmap.
+
+When you're ready, click **Done** to return to the skillmap and click the button in the side panel to share your game with friends!
 
 
 ```customts
@@ -217,53 +396,110 @@ namespace info {
     }
 
 }
+
+namespace scaling {
+
+    //% blockId=sprite_scale_by_pixels_ex_defl
+    //% block="change $sprite=variables_get(mySprite) scale by $value pixels $direction anchor $anchor || proportional $proportional"
+    //% expandableArgumentMode=enabled
+    //% inlineInputMode=inline
+    //% value.defl=1
+    //% direction.defl=ScaleDirection.Uniformly
+    //% anchor.defl=ScaleAnchor.Bottom
+    //% proportional.defl=0
+    //% help=sprites/scaling/scale-by-pixels
+    export function scaleByPixels_defl(sprite: Sprite, value: number, direction?: ScaleDirection, anchor?: ScaleAnchor, proportional?: boolean): void {
+        direction = direction || ScaleDirection.Uniformly;
+        anchor = anchor || ScaleAnchor.Bottom;
+
+        if (proportional == null) proportional = direction === ScaleDirection.Uniformly;
+
+        let sx: number;
+        let sy: number;
+
+        if (direction & ScaleDirection.Horizontally) {
+            const imgW = sprite.image.width;
+            const newW = sprite.width + value;
+            sx = newW / imgW;
+        }
+
+        if (direction & ScaleDirection.Vertically) {
+            const imgH = sprite.image.height;
+            const newH = sprite.height + value;
+            sy = newH / imgH;
+        }
+
+        sprite.setScaleCore(sx, sy, anchor, proportional);
+    }
+}
+
+```
+
+```template
+
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.player1.changeScoreBy(1)
+    scaling.scaleByPixels(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+    myMouse.setImage(assets.image`mouse1-2`)
+})
+
+controller.A.onEvent(ControllerButtonEvent.Released, function () {
+    myMouse.setImage(assets.image`mouse1-1`)
+})
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSprite) {
+    game.over(true)
+})
+
+let myMouse: Sprite = null
+let mySprite: Sprite = null
+info.startCountdown(20)
+scene.setBackgroundColor(1)
+mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
+mySprite.setPosition(80, 93)
+let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
+myMouse = sprites.create(assets.image`mouse1-1`, SpriteKind.Mouse)
+myMouse.setPosition(80, 93)
+
 ```
 
 
-
 ```ghost
-
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    mouse2.setImage(assets.image`mouse2-2`)
-    scaling.scaleByPixels(mySprite2, 2, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+    myMouse2.setImage(assets.image`mouse2-2`)
+    scaling.scaleByPixels(mySprite2, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+    info.player2.changeScoreBy(1)
 })
-
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    mouse.setImage(assets.image`mouse1-2`)
-    scaling.scaleByPixels(mySprite, 2, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
-    info.changeScoreBy_defl1(info.player1, 1)
-})
-info.onCountdownEnd(function () {
-    game.over(true)
+    myMouse.setImage(assets.image`mouse1-2`)
+    scaling.scaleByPixels(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+    info.player1.changeScoreBy(1)
 })
 controller.A.onEvent(ControllerButtonEvent.Released, function () {
-    mouse.setImage(assets.image`mouse1-1`)
+    myMouse.setImage(assets.image`mouse1-1`)
 })
 controller.B.onEvent(ControllerButtonEvent.Released, function () {
-    mouse2.setImage(assets.image`mouse2-1`)
+    myMouse2.setImage(assets.image`mouse2-1`)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSprite) {
     game.over(true)
 })
-let mouse2: Sprite = null
+let myMouse2: Sprite = null
 let mySprite2: Sprite = null
-let mouse: Sprite = null
+let myMouse: Sprite = null
 let mySprite: Sprite = null
 scene.setBackgroundColor(1)
 let booth = sprites.create(assets.image`booth`, SpriteKind.Booth)
 mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
-mouse = sprites.create(assets.image`mouse1-1`, SpriteKind.Mouse)
-let textSprite = textsprite.create("^ Reach the line! ^", 0, 12)
-textSprite.setPosition(80, 42)
+myMouse = sprites.create(assets.image`mouse1-1`, SpriteKind.Mouse)
 mySprite2 = sprites.create(assets.image`balloon-2`, SpriteKind.Player)
-mouse2 = sprites.create(assets.image`mouse2-1`, SpriteKind.Mouse)
-mouse.setPosition(50, 93)
-mouse2.setPosition(110, 93)
+myMouse2 = sprites.create(assets.image`mouse2-1`, SpriteKind.Mouse)
+myMouse.setPosition(50, 93)
+myMouse2.setPosition(110, 93)
 mySprite.setPosition(50, 93)
 mySprite2.setPosition(110, 93)
-info.startCountdown(10)
-
-
+info.changeScoreBy_defl1(info.player1, 1)
+scaling.scaleByPixels_defl(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
 
 ```
 
@@ -272,7 +508,7 @@ info.startCountdown(10)
 ```package
 simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
 arcade-text=github:microsoft/arcade-text/
-pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling/
+pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling
 ```
 
 

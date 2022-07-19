@@ -1,8 +1,8 @@
 # Balloon Race
 * name: Balloon Race
-* description: Create a simple carnival game where you shuffle three cups, then guess which cup is hiding the ball.
+* description: Create a simple carnival game where you click quickly to try to burst a balloon before time runs out.
 * infoUrl: skillmap/educator-info/cup-map-info
-* bannerUrl: /static/skillmap/cups/cup3.gif
+* bannerUrl: /static/skillmap/balloon/balloon3.gif
 * backgroundurl: /static/skillmap/backgrounds/balloon-comp.png
 * primarycolor: #ffffff
 * secondarycolor: #fff53d
@@ -22,8 +22,8 @@
 
 * name: Let's Get Clicking
 * type: tutorial
-* description: Learn to use MakeCode Arcade before creating a thrilling clicker game.
-* tags: easy, intro, points
+* description: Learn to use MakeCode Arcade and create a simple clicker game.
+* tags: easy, intro, points, clicker
 * next: balloon2
 * url: /skillmap/balloon/balloon1
 * imageUrl: /static/skillmap/balloon/balloon1.gif
@@ -34,8 +34,8 @@
 ### balloon2
 * name: Burst Your Balloon
 * type: tutorial
-* description: Add an audience that applauds as you click!
-* tags: easy, clicker, game, events
+* description: Add a balloon that inflates as you click!
+* tags: easy, clicker, sprite, events
 * next: balloon3
 * url: /skillmap/balloon/balloon2
 * imageUrl: /static/skillmap/balloon/balloon2.gif
@@ -43,10 +43,10 @@
 
 
 ### balloon3
-* name: The Biggest Star
+* name: Pump it Up
 * type: tutorial
-* description: Add code to create a spray of stars with each click!
-* tags: easy, clicker, projectiles
+* description: Add a carnival character to pump up your balloon!
+* tags: easy, clicker, sprite, buttons
 * next: balloon-cert
 * url: /skillmap/balloon/balloon3
 * imageUrl: /static/skillmap/balloon/balloon3.gif
@@ -61,6 +61,7 @@
 * type: certificate
 * url: /static/skillmap/certificates/balloon-cert.pdf
 * imageUrl: /static/skillmap/certificates/balloon-cert.png
+* next: balloon4
 * position: 3 1
 * actions:
     * map: [Try Space Explorer](/skillmap/space)
@@ -75,3 +76,12 @@
 
 
 
+
+### balloon4
+* name: Two Player
+* type: tutorial
+* description: Remove your timer and add a second player to compete against.
+* tags: easy, clicker, sprite, buttons, multiplayer
+* url: /skillmap/balloon/balloon4
+* imageUrl: /static/skillmap/balloon/balloon4.gif
+* position: 4 1
