@@ -43,7 +43,7 @@ Press the (A) button as fast as you can.  You should see the score go up with ea
 scene.setBackgroundColor(0)
 ```
 
-and snap it inside and at the very **top** of the
+and snap it inside and at the **end**** of the
 ``||loops: on start||``
 block container that's already in your workspace.
 
@@ -60,8 +60,8 @@ hint~
 
 #### ~ tutorialhint
 ```blocks
-scene.setBackgroundColor(1)
 info.startCountdown(20)
+scene.setBackgroundColor(1)
 ```
 
 
@@ -69,7 +69,7 @@ info.startCountdown(20)
 
 **Add a balloon sprite!**
 
-In Arcade, each character or item that does something is called a sprite. Let's add one now.
+In Arcade, each character or item that does something is called a **sprite**. Let's add one now.
 
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
 
@@ -77,7 +77,7 @@ In Arcade, each character or item that does something is called a sprite. Let's 
 let mySprite = sprites.create(img`.`, SpriteKind.Player)
 ```
 
-and snap it inside and at the very **bottom** of the
+and snap it inside and at the very **end** of the
 ``||loops: on start||``
 block container that's already in your workspace.
 
@@ -97,8 +97,8 @@ hint~
 
 #### ~ tutorialhint
 ```blocks
-scene.setBackgroundColor(1)
 info.startCountdown(20)
+scene.setBackgroundColor(1)
 let mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
 ```
 
@@ -116,7 +116,7 @@ let mySprite: Sprite = null
 mySprite.setPosition(0, 0)
 ```
 
-and snap it inside at the **bottom** of the
+and snap it inside at the **end** of the
 ``||loops: on start||``
 block already in your workspace.
 
@@ -144,8 +144,8 @@ hint~
 
 #### ~ tutorialhint
 ```blocks
-scene.setBackgroundColor(1)
 info.startCountdown(20)
+scene.setBackgroundColor(1)
 let mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
 mySprite.setPosition(80, 93)
 ```
@@ -162,10 +162,10 @@ Now we need to make the balloon bigger each time (A) is pressed.
 
 ```block
 
-scaling.scaleByPixels_defl(mySprite, 2, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+scaling.scaleByPixels_defl(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
 
 ```
-and snap it into the **bottom** of the <br/>
+and snap it into the **end** of the <br/>
 ``||controller: on [A] button [pressed]||`` <br/>
 block already in the workspace.
 
@@ -213,7 +213,7 @@ Press the (A) button as fast as you can.  You should see the balloon get bigger 
 let mySprite2 = sprites.create(img`.`, SpriteKind.Player)
 ```
 
-and snap it into the **bottom** of the
+and snap it into the **end** of the
 ``||loops: on start||``
 block already in your workspace.
 
@@ -239,8 +239,8 @@ hint~
 
 #### ~ tutorialhint
 ```blocks
-scene.setBackgroundColor(1)
 info.startCountdown(20)
+scene.setBackgroundColor(1)
 let mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
 let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
 ```
@@ -442,6 +442,7 @@ mySprite.setPosition(80, 93)
 info.startCountdown(10)
 scene.setBackgroundColor(1)
 let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
+info.changeScoreBy_defl1(info.player1, 1)
 
 ```
 
