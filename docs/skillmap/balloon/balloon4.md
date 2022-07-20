@@ -75,7 +75,7 @@ Follow the steps from previous levels to add a second player that reacts to the 
 
 - :lightbulb: Start by adding an <br/>
 ``||controller:on [B] button [Pressed]||`` <br/>
-block to the workspace and adding a point for **player 2** each time it's clicked.
+block to the workspace, then add a point for **player 2** each time it's clicked.
 
 
 ~hint What does that mean? 💡
@@ -334,8 +334,7 @@ hint~
 #### ~ tutorialhint
 ```blocks
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-        let myMouse2: Sprite = null
-
+    let myMouse2: Sprite = null
     info.changeScoreBy_defl1(info.player1, 1)
     myMouse2.setImage(assets.image`mouse2-down`)
     scaling.scaleByPixels_defl(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
@@ -359,9 +358,9 @@ controller.B.onEvent(ControllerButtonEvent.Released, function () {
 
 Grab a friend and have them press the space bar while you press the 'x' key.  Who makes it to the top first?
 
-💡 ** _Tip:_** _Now that you have someone to race against, you can delete <br/>
+💡 ** Tip:** _Now that you have someone to race against, you can right-click and choose "Delete Blocks" to delete_ <br/>
 ``||info: start countdown [20] (s)||``<br/>
-from ``||loops: on start||``.
+_from_ ``||loops: on start||``.
 
 
 ---
@@ -371,9 +370,9 @@ from ``||loops: on start||``.
 
 ## {10. Finale}
 
-**🥳 You've done it! 🥳**
+**🥳 You've done it 🥳**
 
-You've finished the entire skillmap.
+You've finished the entire skillmap!
 
 When you're ready, click **Done** to return to the skillmap and click the button in the side panel to share your game with friends!
 

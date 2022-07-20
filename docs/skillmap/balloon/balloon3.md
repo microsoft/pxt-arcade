@@ -168,8 +168,8 @@ Let's create the sense that the mouse is blowing up the balloon by having it pus
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
 
 ```block
-let myMouse: Sprite = null
-myMouse.setImage(img`.`)
+let mySprite: Sprite = null
+mySprite.setImage(img`.`)
 ```
 
 and snap anywhere inside the <br/>
@@ -256,11 +256,11 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
 
 ```block
-let myMouse: Sprite = null
-myMouse.setImage(img`.`)
+let mySprite: Sprite = null
+mySprite.setImage(img`.`)
 ```
 
-and snap anywhere inside the <br/>
+and snap inside the <br/>
 ``||controller: on [A] button [released]||`` <br/>
 block already in your workspace.
 
@@ -309,7 +309,7 @@ Your mouse should appear to be blowing up the balloon as you play!
 
 You've completed an amazing carnival game! Take some time to play it and appreciate what you've built.
 
-When you're ready, click **Done** to return to the skillmap and claim your badge and certificate.
+When you're ready, click **Done** to return to the skillmap and claim your **badge and certificate**.
 
 After you grab your rewards, you have the option to complete one more level to make your game a into a two player race.
 

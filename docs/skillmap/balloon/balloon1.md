@@ -56,7 +56,7 @@ hint~
 Let's make something happen each time you press the (A) button using **EVENTS**!
 
 
-- :game: From the ``||controller: Controller||`` category in the toolbox, grab
+- :game: From the ``||controller: Controller||`` category **in the toolbox**, grab
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
@@ -97,6 +97,8 @@ Now we need to add points when the (A) button is clicked. This will be the **ACT
 and snap it into the empty <br/>
 ``||controller: on [A] button [pressed]||`` <br/>
 block that's already in the workspace.
+
+💡 **Tip:** _Make sure the blocks connect!_
 
 
 ~hint Click here to see how 🕵️

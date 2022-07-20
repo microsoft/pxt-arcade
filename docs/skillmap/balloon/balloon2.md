@@ -5,9 +5,10 @@
 
 ## {Intro @showdialog}
 
-The code for a basic clicker is already in the workspace.
+Your code from the last activity is already in the workspace.
 
 Let's turn our game into a carnival using **EVENTS** and **SPRITES**.
+
 
 ![Click away](/static/skillmap/balloon/balloon2.gif "Let's add images to make our game more exciting." )
 
@@ -19,8 +20,6 @@ Let's turn our game into a carnival using **EVENTS** and **SPRITES**.
 
 **Play the clicker game!**
 
-If your code isn't working and you can't figure out why, click "Replace my code" to replace the blocks in your workspace with new starter code.
-
 ~hint How to open your game console 🕵️
 
 ![Look for the game window in the lower right](/static/skillmap/balloon/game.gif "Click the mini game window to pop open the playable console.")
@@ -28,6 +27,10 @@ If your code isn't working and you can't figure out why, click "Replace my code"
 hint~
 
 Press the (A) button as fast as you can.  You should see the score go up with each click and the timer should be counting down from 20 seconds.
+
+
+💡 **Tip: If your code isn't working and you can't figure out why, click "Replace my code" to replace the blocks in your workspace with new starter code.**
+
 
 ---
 ---
@@ -43,7 +46,7 @@ Press the (A) button as fast as you can.  You should see the score go up with ea
 scene.setBackgroundColor(0)
 ```
 
-and snap it inside and at the **end**** of the
+and snap it inside and at the **end** of the
 ``||loops: on start||``
 block container that's already in your workspace.
 
@@ -220,7 +223,7 @@ block already in your workspace.
 - :mouse pointer: Click ``||variables: mySprite2||`` and choose **Rename variable...** from the menu. <br/>
 Change the name to **myBooth**.
 
-- :mouse pointer: Click the grey square and when the image editor opens, switch to **My Assets** to select the **booth** sprite.
+- :mouse pointer: Click the empty square and when the image editor opens, switch to **My Assets** to select the **booth** sprite.
 
 - :mouse pointer: Click the kind ``||sprites: Player||`` and change it to ``||sprites: Booth||``.
 
@@ -334,8 +337,8 @@ Can you get the balloon to reach the line before time runs out?
 
 You added an event that watches for the Player (balloon) to overlap the Booth (any part of the booth image.)
 
-When the balloon crosses the line that's part of the booth image, the overlap event triggers and runs the
-``||game: game over <WIN>||`` code, allowing you to win the game!
+The line is part of the booth image, so when the balloon crosses the line, the overlap event triggers and runs
+``||game: game over <WIN>||``, allowing you to win the game!
 
 hint~
 
