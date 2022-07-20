@@ -27,7 +27,7 @@
 * next: balloon2
 * url: /skillmap/balloon/balloon1
 * imageUrl: /static/skillmap/balloon/balloon1.gif
-* position: 0 0
+* position: 0 1
 
 
 
@@ -39,7 +39,7 @@
 * next: balloon3
 * url: /skillmap/balloon/balloon2
 * imageUrl: /static/skillmap/balloon/balloon2.gif
-* position: 1 0
+* position: 1 1
 
 
 ### balloon3
@@ -50,7 +50,7 @@
 * next: balloon-cert
 * url: /skillmap/balloon/balloon3
 * imageUrl: /static/skillmap/backgrounds/mouse-comp.png
-* position: 1 1
+* position: 2 1
 
 
 
@@ -64,7 +64,7 @@
 * next: balloon4
 * position: 3 1
 * actions:
-    * map: [Try Space Explorer](/skillmap/space)
+    * map: [Finish the Last Level!](/skillmap/balloon)
     * editor: [Edit Your Project with a Full Toolbox](/)
 * rewards:
     * certificate:
@@ -84,4 +84,4 @@
 * tags: easy, clicker, sprite, buttons, multiplayer
 * url: /skillmap/balloon/balloon4
 * imageUrl: /static/skillmap/balloon/balloon4.gif
-* position: 4 1
+* position: 3 2

@@ -108,7 +108,7 @@ hint~
 ~hint Remind me... 🕵️
 
 
-![Add an `on button pressed` block to the workspace](/static/skillmap/balloon/add-b.gif "Add a point each time the B button is clicked." )
+![Balloon Bursting Carnival Final Level - Add B](youtube:ow6P7wTs3Uk)
 
 hint~
 
