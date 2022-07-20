@@ -7,7 +7,7 @@
 
 The code for a basic clicker is already in the workspace.
 
-Let's turn our game into a carnival!
+Let's turn our game into a carnival using **EVENTS** and **SPRITES**.
 
 ![Click away](/static/skillmap/balloon/balloon2.gif "Let's add images to make our game more exciting." )
 
@@ -69,7 +69,7 @@ scene.setBackgroundColor(1)
 
 **Add a balloon sprite!**
 
-In Arcade, each character or item that does something is called a **sprite**. Let's add one now.
+In Arcade, each character or item that does something is called a **SPRITE**. Let's add one now.
 
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
 
@@ -205,7 +205,7 @@ Press the (A) button as fast as you can.  You should see the balloon get bigger 
 
 ## {8. Add a Booth}
 
-**Let's add a booth!**
+**Let's add a booth sprite!**
 
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
 
@@ -251,6 +251,8 @@ let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
 ## {9. Win on Overlap}
 
 Let's make our game even more fun by adding a way to **"win"** when the balloon reaches the line!
+
+To do this, we'll need another event.
 
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
 

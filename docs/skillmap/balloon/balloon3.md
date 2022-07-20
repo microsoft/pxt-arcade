@@ -5,7 +5,7 @@
 
 ## {Intro @showdialog}
 
-Let's add on to our carnival game!
+Let's add more **SPRITES** and **EVENTS** to our carnival game!
 
 ![Add a mouse to represent your player](/static/skillmap/balloon/balloon3.gif "We can make a mouse that moves as you click." )
 
@@ -53,7 +53,7 @@ hint~
 
 ## {3. Add a Mouse}
 
-Let's add a character to pump up the balloon.
+Let's add a mouse sprite to pump up the balloon.
 
 - :paper plane: Follow the steps you've taken before to add a new sprite to your game.
 
@@ -157,7 +157,7 @@ mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
 mySprite.setPosition(80, 93)
 let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
 myMouse = sprites.create(assets.image`mouse1-1`, SpriteKind.Mouse)
-mouse.setPosition(80, 93)
+myMouse.setPosition(80, 93)
 ```
 
 
@@ -191,7 +191,10 @@ hint~
 
 #### ~ tutorialhint
 ```blocks
+
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    let myMouse: Sprite = null
+
     info.player1.changeScoreBy(1)
     scaling.scaleByPixels(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
     myMouse.setImage(assets.image`mouse1-2`)
@@ -276,7 +279,10 @@ hint~
 
 #### ~ tutorialhint
 ```blocks
+
 controller.A.onEvent(ControllerButtonEvent.Released, function () {
+    let myMouse: Sprite = null
+
     myMouse.setImage(assets.image`mouse1-1`)
 })
 ```

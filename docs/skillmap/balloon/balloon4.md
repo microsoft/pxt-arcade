@@ -158,7 +158,7 @@ hint~
 ~hint Show me! 🕵️
 
 
-![Balloon Bursting Carnival Final Level - Add Balloon](youtube:inbkRGvVo0A)
+![Balloon Bursting Carnival Final Level - Add Balloon](youtube:ow6P7wTs3Uk)
 
 hint~
 
@@ -214,7 +214,7 @@ hint~
 ~hint Show me! 🕵️
 
 
-![Balloon Bursting Carnival Final Level - Add Mouse](youtube:inbkRGvVo0A)
+![Balloon Bursting Carnival Final Level - Add Mouse](youtube:ow6P7wTs3Uk)
 
 hint~
 
@@ -275,7 +275,7 @@ hint~
 ~hint Show me! 🕵️
 
 
-![Balloon Bursting Carnival Final Level - Move Mouse](youtube:inbkRGvVo0A)
+![Balloon Bursting Carnival Final Level - Move Mouse](youtube:ow6P7wTs3Uk)
 
 hint~
 
@@ -286,11 +286,15 @@ hint~
 #### ~ tutorialhint
 ```blocks
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    let myMouse2: Sprite = null
+
     info.player2.changeScoreBy(1)
     myMouse2.setImage(assets.image`mouse2-2`)
 })
 
 controller.B.onEvent(ControllerButtonEvent.Released, function () {
+        let myMouse2: Sprite = null
+
     myMouse2.setImage(assets.image`mouse2-1`)
 })
 ```
@@ -319,7 +323,7 @@ hint~
 ~hint Show me! 🕵️
 
 
-![Balloon Bursting Carnival Final Level - Inflate](youtube:inbkRGvVo0A)
+![Balloon Bursting Carnival Final Level - Inflate](youtube:ow6P7wTs3Uk)
 
 hint~
 
@@ -330,12 +334,16 @@ hint~
 #### ~ tutorialhint
 ```blocks
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+        let myMouse2: Sprite = null
+
     info.changeScoreBy_defl1(info.player1, 1)
     myMouse2.setImage(assets.image`mouse2-2`)
     scaling.scaleByPixels_defl(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
 })
 
 controller.B.onEvent(ControllerButtonEvent.Released, function () {
+        let myMouse2: Sprite = null
+
     myMouse2.setImage(assets.image`mouse2-1`)
 })
 ```

@@ -4,7 +4,7 @@
 
 ## {Video Intro @showdialog}
 
-![Balloon Bursting Carnival Intro](youtube:inbkRGvVo0A)
+![Balloon Bursting Carnival Intro](youtube:ow6P7wTs3Uk)
 
 
 
@@ -53,7 +53,7 @@ hint~
 
 **Ready to start coding?**
 
-Let's make something happen each time you press the (A) button!
+Let's make something happen each time you press the (A) button using **EVENTS**!
 
 
 - :game: From the ``||controller: Controller||`` category in the toolbox, grab
@@ -70,7 +70,7 @@ and drop it into an empty area of the workspace.
 
 - :lightbulb: The panel with the colorful category names is called the
  **toolbox**. <br/>
- Click ``||controller: Controller||`` to find the block you need.
+ Click ``||controller: Controller||`` to find the event block you need.
 
 hint~
 
@@ -87,7 +87,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## {5. Add Points}
 
-Now we need to add points when the (A) button is clicked.
+Now we need to add points when the (A) button is clicked. This will be the **ACTION** that goes with the **EVENT**.
 
 
 - :id card: From the ``||info: Info||`` category in the toolbox, grab
@@ -129,13 +129,18 @@ Now it's time to try your game!
 
 - :mouse pointer: Click the mini **game window** in the bottom corner to open the playable console!
 
+Press the (A) button as fast as you can.  You should see the score go up with each click!
+
+Pressing the (A) button is the **EVENT** that causes the score to go up!
+
 ~hint Click here to see how 🕵️
 
 ![Look for the game window in the lower right](/static/skillmap/balloon/game.gif "Click the mini game window to pop open the playable console.")
 
 hint~
 
-Press the (A) button as fast as you can.  You should see the score go up with each click!
+
+
 
 ---
 ---
