@@ -1,9 +1,9 @@
 # Balloon Race
 * name: Balloon Race
 * description: Create a simple carnival game where you click quickly to try to burst a balloon before time runs out.
-* infoUrl: skillmap/educator-info/cup-map-info
+* infoUrl: skillmap/educator-info/balloon-map-info
 * bannerUrl: /static/skillmap/balloon/balloon3.gif
-* backgroundurl: /static/skillmap/backgrounds/balloon-comp.png
+* backgroundurl: /static/skillmap/backgrounds/mouse-comp.png
 * primarycolor: #ffffff
 * secondarycolor: #fff53d
 * tertiarycolor: #ffffff
