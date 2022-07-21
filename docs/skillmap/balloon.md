@@ -64,7 +64,7 @@
 * next: balloon4
 * position: 3 1
 * actions:
-    * map: [Try Space Explorer](/skillmap/space)
+    * map: [Finish the Last Level!](/skillmap/balloon)
     * editor: [Edit Your Project with a Full Toolbox](/)
 * rewards:
     * certificate:
