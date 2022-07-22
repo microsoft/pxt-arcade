@@ -3,7 +3,7 @@
 
 ## Welcome @showdialog
 
-Welcome to **Jungle Monkey Jump!**
+Welcome to **Jungle Jump!**
 
 This activity will show you how to make a [__*sidescrolling*__](#scrolld "games that are viewed from the side, with most of the action happening horizontally")
 [__*platformer*__](#plat "games that rely on jump and run as their main mechanic").

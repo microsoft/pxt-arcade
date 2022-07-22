@@ -178,7 +178,7 @@ d d d d d d d d
 ## Student Task #2a: Add vertical projectiles that move down the screen
 
 1. Start with the example above. Currently, it will spawn projectiles of ``||sprites:kind||`` ``Projectile`` that stay in random locations along the top of the screen
-2. Replace the ``||game:on game update every||`` with a ```||loops:repeat||`` loop in the ``||loops:on start||` block
+2. Replace the ``||game:on game update every||`` with a ``||loops:repeat||`` loop in the ``||loops:on start||`` block
 3. Each time a projectile is created, add one (1) point to the score using the ``||info:change score by||`` block
 4. Modify the ``||sprites:projectile from side||`` block so that each spawned projectile moves down the screen at a rate of 50
 5. **Challenge:** instead of moving at the current constant rate of 50, make the projectile move at a random rate between 40 and 60
@@ -187,9 +187,9 @@ d d d d d d d d
 
 ![spiral image](/static/courses/csintro1/loops/offset-projectiles-2b.png)
 
-We have seen that it is useful for projectiles to come from random positions, but there are times when we'll want to have projectiles spawned in a more structured manner. This tasks uses a loop to offset the `Y` position of each projectile using a ``||loops:for||`` loop index.
+We have seen that it is useful for projectiles to come from random positions, but there are times when we'll want to have projectiles spawned in a more structured manner. This task uses a loop to offset the `Y` position of each projectile using a ``||loops:for||`` loop index.
 
-Remember that ``||loops:for||`` loops are different than ``||loops:repeat||`` loops since they use a conditon you specify instead of a simple limit value.
+Remember that ``||loops:for||`` loops are different than ``||loops:repeat||`` loops in that the ``||loops:for||`` loop introduces a variable that is automatically incremented each time through the loop.
 
 1. Review the code below
 2. Create a new project and name it "screenFill"

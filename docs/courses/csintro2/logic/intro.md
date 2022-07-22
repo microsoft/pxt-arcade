@@ -13,7 +13,7 @@ Comparison logic with the ``||logic:if||`` statement
 
 In our games we will often want to compare values and take an action when the comparison statement is true.
 
-> Example: Is myValue (3) smaller than a testValue (5)? If it is ``||logic:true||`` that myValue is smaller than the testValue, then we will add 1 to myValue.
+> Example: Is laserPower (8) greter than enemyShieldStrength (5)? If it is ``||logic:true||`` that laserPower is greater than enemyShieldStrength, then we will add 1 to numEnemiesDestroyed.
 
 We perform comparison tests with ``||logic:if||``
 
@@ -34,7 +34,7 @@ To use an ``||logic:if||`` statement block, we must fill it with a comparison te
 
 ```block
 if (info.highScore() > 5) {
-    game.splash("Good luck!")
+    game.splash("Good job!")
 }
 ```
 
@@ -117,14 +117,14 @@ If that is the case, the player has just started playing the game, so the game m
 
 [![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40544a-ifless-task)
 
-## Task #1a: Scoring
+## Student Task #1a: Scoring
 
 1. Create a new project
 2. Create a ``||sprites:Sprite||``
 3. When the player presses the ``||controller:A||`` button, increase the score by 1
 4. When the player presses the ``||controller:B||`` button, if the player's score is less than 10, make the ``||sprites:Sprite||`` say something
 
-## Task #1b: Sprite Position
+## Student Task #1b: Sprite Position
 
 1. Create a new project
 2. Create a sprite, and use ``||controller:move mySprite with buttons||`` to make it move when the directional keys are pressed
@@ -156,7 +156,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Cherry, function (sprite, otherS
     info.changeScoreBy(1)
     otherSprite.destroy()
     if (info.score() > 5) {
-        mySprite.say("Too many cherries")
+        mySprite.sayText("Too many cherries")
     }
 })
 mySprite = sprites.create(img`
@@ -204,7 +204,7 @@ c 2 e e 2 2 2 2 e 2 5 4 2 c 8 .
 
 When the player collects a cherry, if the player has collected more than 5, then the sprite says "Too many cherries".
 
-## Task #2: Follow me!
+## Student Task #2: Follow me!
 
 1. Start a new project
 2. Create 2 sprites, a leader and a follower
@@ -295,7 +295,7 @@ c a 8 a a c c c c a a f f f 8 a
 
 When the player is on their final life, the image of the sprite changes and the sprite says "Last chance".
 
-## Task #3: Count to 10
+## Student Task #3: Count to 10
 
 1. Create a new project
 2. Make it so that when the player presses the ``||controller:A||`` button the score increases by 1
@@ -343,7 +343,7 @@ info.setLife(5)
 
 Notice how when the player presses the ``||controller:A||`` button, if they are on the left half of the screen, the score will increase, and if they are on the top half of the screen, their lives will decrease.
 
-## Task #4: Equal and Greater Than
+## Student Task #4: Equal and Greater Than
 
 1. Create a new project
 2. Create a ``||sprites:sprite||``

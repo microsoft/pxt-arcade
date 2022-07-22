@@ -1,5 +1,5 @@
-# Infinite Racer
-* name: Infinite Racer
+# Peach Racer
+* name: Peach Racer
 * description: Create a side-scrolling racing game where you jump obstacles to get to the finish line.
 * backgroundurl: /static/skillmap/backgrounds/peachtree-bg.png
 * bannerurl: /static/skillmap/peachtree/peach3.gif
@@ -11,8 +11,8 @@
 * highlightcolor: #ffffff
 * completednodecolor: #504c52
 
-## infinite-racer
-* name: Infinite Racer
+## peach-racer
+* name: Peach Racer
 * layout: manual
 
 ### peach1
@@ -40,8 +40,8 @@
 ### peach-finish
 * kind: completion
 * type: certificate
-* imageUrl: /static/skillmap/certificates/peach-cert.png
-* url: /static/skillmap/certificates/peach-cert.pdf
+* imageUrl: /static/skillmap/peachtree/peach-cert.png
+* url: /static/skillmap/peachtree/peach-cert.pdf
 * next: peach3
 * position: 3 0
 * actions:
@@ -49,17 +49,17 @@
     * editor: [Edit Your Project with a Full Toolbox](/)
 * rewards:
     * certificate:
-        * url: /static/skillmap/certificates/peach-cert.pdf
-        * preview: /static/skillmap/certificates/peach-cert.png
+        * url: /static/skillmap/peachtree/peach-cert.pdf
+        * preview: /static/skillmap/peachtree/peach-cert.png
     * completion-badge:
-        * image: /static/badges/badge-peach.png
+        * image: /static/skillmap/peachtree/badge-peach.png
         * name: Peachtree
 
 
 
 
 ### peach3
-* name: Going Further
+* name: Customize Your Racer
 * type: tutorial
 * description: Customize your game and make it your own by adding animations and changing your tilemap.
 * url: /skillmap/peachtree/peach3

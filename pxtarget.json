@@ -274,6 +274,14 @@
                         "tilemap\\s*\\.\\s*loadedWorldRow": "tiles.loadedWorldRow"
                     }
                 }
+            ],
+            "0.0.0 - 1.9.0": [
+                {
+                    "type": "api",
+                    "map": {
+                        "myCorg\\s*\\.\\s*follow": "myCorg.cameraFollow"
+                    }
+                }
             ]
         }
     },

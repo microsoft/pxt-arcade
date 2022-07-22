@@ -19,7 +19,7 @@ special proprietary (and expensive) connector cable.
 Here we propose two simple and cost effective solutions, which do not require soldering,
 and has zero PCB cost.
 
-## Hack-connect XS
+## Hack-connect XS / JacConnect
 
 The idea is to use a standard 2x5 pin 0.05" IDC ARM-Cortex debug connector
 and plug in a male 0.05" header into it (a male 0.05" IDC could be also used,

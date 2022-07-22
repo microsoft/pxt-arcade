@@ -139,7 +139,7 @@ Start with the code in the example. The solution isn't much different from the e
 [![Link to Video](/static/thumbnail_play_video.png)](https://youtu.be/38kp5N8lIwk)
 
 1. Add a single loop to the following code so that the boomerang goes to the right 50 pixels over the period of two seconds
-2. Make the boomerang return to it's original location over the course of two seconds using a loop
+2. Make the boomerang return to its original location over the course of two seconds using a loop
 3. **Challenge:** use the ``||images:flip picture horizontally||`` block inside the loops to make it appear like the boomerang is rotating as it flies
 
 ### ~hint
