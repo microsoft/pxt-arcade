@@ -312,7 +312,7 @@ Last step!
 - :up-down: From the ``||scaling: Scaling||`` category in the toolbox, grab <br/>
 ``||scaling: change [mySprite] scale by [1] pixels [uniformly] anchor [bottom]|| `` <br/>
 and snap it into the <br/>
-``||controller: on [A] button [pressed]||`` <br/>
+``||controller: on [B] button [pressed]||`` <br/>
 block already in the workspace.
 
 - :mouse pointer: Change **mySprite** to **mySprite2**.

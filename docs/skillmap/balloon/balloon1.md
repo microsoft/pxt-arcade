@@ -190,7 +190,7 @@ info.startCountdown(20)
 You have started your very own clicker game!
 Try it in the console and see if you can get more than **40 points**.
 
-When you're finished, click **Done** to return to the skillmap and continue building your amazing **🎈carnival game🎈**!
+When you're finished playing, come back to the instructions and click the **Done** button to return to the skillmap and continue building your amazing **🎈carnival game🎈**!
 
 ---
 ---
