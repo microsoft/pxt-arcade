@@ -85,3 +85,4 @@
 * url: /skillmap/balloon/balloon4
 * imageUrl: /static/skillmap/balloon/balloon4.gif
 * position: 2 3
+
