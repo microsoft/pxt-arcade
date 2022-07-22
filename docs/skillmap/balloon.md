@@ -1,13 +1,13 @@
 # Balloon Race
 * name: Balloon Race
 * description: Create a simple carnival game where you click quickly to try to burst a balloon before time runs out.
-* infoUrl: skillmap/educator-info/cup-map-info
+* infoUrl: skillmap/educator-info/balloon-map-info
 * bannerUrl: /static/skillmap/balloon/balloon3.gif
-* backgroundurl: /static/skillmap/backgrounds/balloon-comp.png
+* backgroundurl: /static/skillmap/backgrounds/mouse-comp.png
 * primarycolor: #ffffff
 * secondarycolor: #fff53d
-* tertiarycolor: #ffffff
-* completednodecolor: #a4839e
+* tertiarycolor: #bbeffe
+* completednodecolor: #4a8397
 * highlightcolor: #ff0000
 * allowcodecarryover: true
 * tags: easy, beginner, carnival
@@ -27,7 +27,7 @@
 * next: balloon2
 * url: /skillmap/balloon/balloon1
 * imageUrl: /static/skillmap/balloon/balloon1.gif
-* position: 0 1
+* position: -1 2
 
 
 
@@ -39,7 +39,7 @@
 * next: balloon3
 * url: /skillmap/balloon/balloon2
 * imageUrl: /static/skillmap/balloon/balloon2.gif
-* position: 1 1
+* position: 0 2
 
 
 ### balloon3
@@ -50,7 +50,7 @@
 * next: balloon-cert
 * url: /skillmap/balloon/balloon3
 * imageUrl: /static/skillmap/backgrounds/mouse-comp.png
-* position: 2 1
+* position: 1 2
 
 
 
@@ -62,7 +62,7 @@
 * url: /static/skillmap/certificates/balloon-cert.pdf
 * imageUrl: /static/skillmap/certificates/balloon-cert.png
 * next: balloon4
-* position: 3 1
+* position: 2 2
 * actions:
     * map: [Finish the Last Level!](/skillmap/balloon)
     * editor: [Edit Your Project with a Full Toolbox](/)
@@ -84,4 +84,4 @@
 * tags: easy, clicker, sprite, buttons, multiplayer
 * url: /skillmap/balloon/balloon4
 * imageUrl: /static/skillmap/balloon/balloon4.gif
-* position: 3 2
+* position: 2 3
