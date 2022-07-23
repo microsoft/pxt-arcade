@@ -26,7 +26,7 @@ Let's turn our game into a carnival using **EVENTS** and **SPRITES**.
 
 hint~
 
-Press the (A) button as fast as you can.  You should see the score go up with each click and the timer should be counting down from 20 seconds.
+Press the (A) button or **space bar** as fast as you can.  You should see the score go up with each click and the timer should be counting down from 20 seconds.
 
 
 💡 **Tip: If your code isn't working and you can't figure out why, click "Replace my code" to replace the blocks in your workspace with new starter code.**
@@ -158,7 +158,7 @@ mySprite.setPosition(80, 93)
 
 ## {6. Blow Up Balloon}
 
-Now we need to make the balloon bigger each time (A) is pressed.
+Now we need to make the balloon bigger each time the (A) button is pressed.
 
 
 - :up-down: From the ``||scaling: Scaling||`` category in the toolbox, grab
@@ -329,7 +329,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSp
 
 **Win your game!**
 
-Open the game console and press the (A) button as fast as you can.
+Open the game console and press the (A) button or **space bar** as fast as you can.
 
 Can you get the balloon to reach the line before time runs out?
 
@@ -339,6 +339,8 @@ You added an event that watches for the Player (balloon) to overlap the Booth (a
 
 The line is part of the booth image, so when the balloon crosses the line, the overlap event triggers and runs
 ``||game: game over <WIN>||``, allowing you to win the game!
+
+With this code, it takes 61 points to get to the line, so you must score 61 points before time runs out to win!
 
 hint~
 
@@ -350,9 +352,8 @@ hint~
 **🎈 FANTASTIC 🎈**
 
 You have started your very own clicker game!
-Try it in the console and see if you can get more than **40 points**.
 
-When you're finished, click **Done** to return to the skillmap and continue building your amazing **🎈carnival game🎈**!
+When you're ready, click **Done** to return to the skillmap and continue building your amazing **🎈carnival game🎈**!
 
 
 ```customts
