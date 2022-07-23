@@ -35,7 +35,7 @@ Be on the lookout for secret information!
 ~hint Click here to reveal hidden info 🕵️
 
 <br/>
-Look for clues like this scattered among the instructions.
+Look for clues like this when you read instructions.
 
 Each one gives extra info, tips, or tricks.
 
@@ -53,7 +53,7 @@ hint~
 
 **Ready to start coding?**
 
-Let's make something happen each time you press the (A) button using **EVENTS**!
+Let's make something happen each time you press the (A) button in the game window using **EVENTS**!
 
 
 - :game: From the ``||controller: Controller||`` category **in the toolbox**, grab
@@ -87,7 +87,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## {5. Add Points}
 
-Now we need to add points when the (A) button is clicked. This will be the **ACTION** that goes with the **EVENT**.
+Now we need to add points when the (A) button is clicked in the game window. This will be the **ACTION** that goes with the **EVENT**.
 
 
 - :id card: From the ``||info: Info||`` category in the toolbox, grab
@@ -131,9 +131,11 @@ Now it's time to try your game!
 
 - :mouse pointer: Click the mini **game window** in the bottom corner to open the playable console!
 
-Press the (A) button as fast as you can.  You should see the score go up with each click!
+Click the (A) button as fast as you can.  You can also use the **space bar** on your keyboard.
 
-Pressing the (A) button is the **EVENT** that causes the score to go up!
+You should see the score go up with each click.
+
+Clicking the button is the **EVENT** that causes the score to go up!
 
 ~hint Click here to see how 🕵️
 

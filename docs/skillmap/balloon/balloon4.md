@@ -108,7 +108,7 @@ hint~
 ~hint Remind me... 🕵️
 
 
-![Balloon Bursting Carnival Final Level - Add B](youtube:ow6P7wTs3Uk)
+![Balloon Bursting Carnival Final Level - Add B](youtube:HtJt9nSHO-o?start=14&end=47)
 
 hint~
 
@@ -158,7 +158,7 @@ hint~
 ~hint Show me! 🕵️
 
 
-![Balloon Bursting Carnival Final Level - Add Balloon](youtube:ow6P7wTs3Uk)
+![Balloon Bursting Carnival Final Level - Add Balloon](youtube:HtJt9nSHO-o?start=48&end=121)
 
 hint~
 
@@ -188,7 +188,7 @@ mySprite2.setPosition(110, 93)
 
 ## {6. Add the Mouse}
 
-- :lightbulb: Now it's time to add the second mouse in front of the second balloon!
+- :lightbulb: Now it's time to add the second mouse in front of the second balloon.
 
 
 ~hint Tell me more... 🕵️
@@ -214,7 +214,7 @@ hint~
 ~hint Show me! 🕵️
 
 
-![Balloon Bursting Carnival Final Level - Add Mouse](youtube:ow6P7wTs3Uk)
+![Balloon Bursting Carnival Final Level - Add Mouse](youtube:HtJt9nSHO-o?start=119&end=171)
 
 hint~
 
@@ -250,6 +250,8 @@ You're almost there!
 
 - :lightbulb: Make the second mouse look like it's pushing and releasing the handle when the (B) button is pushed and released.
 
+Don't forget to test your game using the (B) button in the game console or the **enter** key on the keyboard!
+
 
 ~hint Tell me more... 🕵️
 
@@ -275,7 +277,7 @@ hint~
 ~hint Show me! 🕵️
 
 
-![Balloon Bursting Carnival Final Level - Move Mouse](youtube:ow6P7wTs3Uk)
+![Balloon Bursting Carnival Final Level - Move Mouse](youtube:HtJt9nSHO-o?start=171&end=235)
 
 hint~
 
@@ -323,7 +325,7 @@ hint~
 ~hint Show me! 🕵️
 
 
-![Balloon Bursting Carnival Final Level - Inflate](youtube:ow6P7wTs3Uk)
+![Balloon Bursting Carnival Final Level - Inflate](youtube:HtJt9nSHO-o?start=235&end=299)
 
 hint~
 
@@ -356,7 +358,7 @@ controller.B.onEvent(ControllerButtonEvent.Released, function () {
 
 - :mouse pointer: Click the mini **game window** in the bottom corner to open the playable console!
 
-Grab a friend and have them press the space bar while you press the 'x' key.  Who makes it to the top first?
+Grab a friend and have them press the (A) button or **space bar** while you press the (B) button or **enter**** key.  Who makes it to the top first?
 
 💡 ** Tip:** _Now that you have someone to race against, you can right-click and choose "Delete Blocks" to delete_ <br/>
 ``||info: start countdown [20] (s)||``<br/>
