@@ -9,7 +9,7 @@
     "card": {
         "name": "R2",
         "description": "Board based on Raspberry Pi RP2040",
-        "learnMoreUrl": "https://arcade.makecode.com/hardware#n4",
+        "learnMoreUrl": "https://arcade.makecode.com/hardware#r2",
         "cardType": "hw"
     },
     "compileServiceVariant": "rp2040",
