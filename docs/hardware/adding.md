@@ -493,7 +493,7 @@ PIN_VIBRATION = PC14
 #### R2 #r2
 
 For RP2040, the application looks for CF2 section (see below) at 4kB before the end of 1MB, 2MB, 4MB, 8MB, 16MB, 32MB (that's megabytes) in the flash. It's recommended to place it at all these addresses (size of flash permitting). 
-See [sample config UF2](https://github.com/microsoft/pxt-arcade/blob/rp2040/libs/hw---rp2040/sample-config.uf2).
+See [sample config UF2](https://github.com/microsoft/pxt-arcade/blob/master/libs/hw---rp2040/sample-config.uf2).
 Manufacturers should provide a "factory reset" UF2 which contains all these config sections, and possibly a test game.
 This file can be used to recover after the flash has been overwritten (eg by large files in Micropython filesystem).
 
