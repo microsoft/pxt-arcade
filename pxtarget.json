@@ -403,7 +403,7 @@
                 "codalTarget": {
                     "name": "codal-pi-pico",
                     "url": "https://github.com/lancaster-university/codal-pi-pico",
-                    "branch": "v0.0.11",
+                    "branch": "v0.0.12",
                     "type": "git"
                 },
                 "gittag": "v0.9.0",
