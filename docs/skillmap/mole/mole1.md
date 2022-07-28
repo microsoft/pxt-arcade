@@ -35,7 +35,7 @@ Be on the lookout for secret information!
 ~hint Click here to reveal hidden info 🕵️
 
 <br/>
-Look for clues like this scattered among the instructions.
+Look for clues like this when you read instructions.
 
 Each one gives extra info, tips, or tricks.
 
