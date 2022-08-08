@@ -1,13 +1,15 @@
-# Pump it Up
-
+# Get Animated
 ### @explicitHints true
 
 
 ## {Intro @showdialog}
 
-Let's add more **SPRITES** and **EVENTS** to our carnival game!
+Your code from the last activity is already in the workspace.
 
-![Add a mouse to represent your player](/static/skillmap/balloon/balloon3.gif "We can make a mouse that moves as you click." )
+Let's make our game more professional by adding sound and animation.
+
+
+![Whack-em-Mole](/static/skillmap/mole/mole3.gif "Let's add sound and an animation for the hammer." )
 
 
 
@@ -15,227 +17,77 @@ Let's add more **SPRITES** and **EVENTS** to our carnival game!
 ## {2. Play Your Game}
 
 
-**Play the balloon game!**
+**Refresh your memory around what your code does.**
 
-- :mouse pointer: Click the mini **game window** in the bottom corner to open the playable console!
+- :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
 
-Press the (A) button as fast as you can.  You should see a balloon that gets bigger and bigger until it crosses the line and wins the game.
+You should be able to use the arrows to control your rubber hammer and earn 1 point each time it overlaps with the mole.
 
-~hint What if it doesn't work? 💡
+💡 **Tip:** _If your code isn't working and you can't figure out why, click "Replace my code" to replace the blocks in your workspace with new starter code._
 
-If your code doesn't work, start by looking to see if you can figure out what is going wrong.  Make sure each block is in the correct event container.
-
-```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.player1.changeScoreBy(1)
-   scaling.scaleByPixels_defl(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
-})
-
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSprite) {
-    game.over(true)
-})
-let mySprite: Sprite = null
-info.startCountdown(20)
-scene.setBackgroundColor(1)
-
-mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
-mySprite.setPosition(80, 93)
-let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
-```
-
-If those steps don't solve your problem, click "Replace my code" to replace the blocks in your workspace with new starter code.
-
-hint~
+- :mouse pointer: Don't forget to click **Next** to get back to the instructions when you're done playing.
 
 ---
 ---
 
 
-## {3. Add a Mouse}
+## {3. Add the Label}
 
-Let's add a mouse sprite to pump up the balloon.
+First, let's add a label to the bottom of the booth so everyone knows what they're playing.
 
-- :paper plane: Follow the steps you've taken before to add a new sprite to your game.
-
-- :mouse pointer: Rename the sprite to **myMouse**, choose the **mouse1-up** image, and change the kind to **Mouse**.
-
-![Choose the orange mouse holding the plunger](/static/skillmap/balloon/mouse1-up.png "Select `mouse1-up` from My Assets")
-
-
-~hint Remind me how! 🕵️
-
-You'll want to add a new block to the end of the <br/>
-``||loops:on start||`` <br/>
-container and make it look like this:
+- :tree: From the ``||scene: Scene||`` category in the toolbox, grab <br/>
 
 ```block
-let myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
+scene.add_label_to("Whack-em-Mole", areas.Bottom)
 ```
 
-![Add a new `set sprite` block to the end of the `on start` container.](/static/skillmap/balloon/third-sprite.gif "Add a `set sprite` block to the `on start` container and change the name and kind." )
+and snap it inside and at the very **end** of the
+``||loops: on start||``
+block container that's already in your workspace.
+
+
+~hint Show me how! 🕵🏽
+
+![Choose the hammer from My Assets](/static/skillmap/mole/add-label.gif "Change from the Editor to My Assets and select the hammer.")
 
 hint~
 
-~hint Why add "my" to variables? 💡
-
-Did you notice that we've called our variables **mySprite**, **myBooth**, and **myMouse**? Adding "my" to the beginning of a variable name isn't required, but it is a common practice.  Coders do this to avoid using "reserved" words as variable names.
-
-In languages like JavaScript or Python, some words have special meanings and using those special words as variables can cause trouble.  Adding "my" to the beginning of simple words helps make sure that you don't accidentally overload a word that you'll need for something else later.
-
-hint~
-
+💡 **Tip:** _Don't forget to look at the mini game window at the bottom of the screen to see what your new addition looks like!_
 
 ---
 ---
 
 #### ~ tutorialhint
+
 ```blocks
-info.startCountdown(20)
-let myMouse: Sprite = null
 let mySprite: Sprite = null
-scene.setBackgroundColor(1)
-mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
-mySprite.setPosition(80, 93)
-let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
-myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
+let myHammer: Sprite = null
+scene.setBackgroundImage(assets.image`grid`)
+mySprite = sprites.create(assets.image`mole`, SpriteKind.Enemy)
+myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
+controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
+info.startCountdownGame(15, winTypes.Score, effects.confetti)
+scene.add_label_to("Whack-em-Mole", areas.Bottom)
 ```
 
 
-## {4. Check Your Game!}
+## {4. Drop the Beat}
 
-**Try your game now!**
-
-- :mouse pointer: Click the mini **game window** in the bottom corner to open the playable console!
-
-Press the (A) button as fast as you can.  You should see the balloon get bigger each time you click and you should see a mouse hovering above it.
-
----
----
+Let's add a sound when the rubber hammer overlaps the mole.
 
 
-
-## {5. Move the Mouse}
-
-
-You might have noticed that your mouse wasn't in front of the balloon. Let's duplicate our **mySprite** position block and use the copy for the mouse.
-
-- :mouse pointer: Right click the position block already in the workspace
-
+- :headphones: From the ``||music: Music||`` category, grab <br/>
 ```block
-let mySprite: Sprite = null
-mySprite.setPosition(80, 93)
+    music.baDing.play()
 ```
+and snap it in at **the end** of the ``||sprite: on sprite overlaps otherSprite||`` block already in the workspace.
 
-and select **Duplicate** from the menu.
-
-- :mouse pointer: Snap the new block into the **end** of the ``||loops: on start||`` container that's already in the workspace.
-
-- :mouse pointer: Click ``||variables:mySprite||`` and change it to ``||variables:myMouse||``.
-
-You should see your mouse move directly in front of your balloon.
-
-~hint Show me how! 🕵️
-
-![Right click to duplicate your position block](/static/skillmap/balloon/duplicate.gif "Change the sprite from mySprite to myMouse.")
-
-hint~
-
-💡 _Don't forget to look at the game window to see how things are shaping up!_
+- :mouse pointer: Change ``||music: ba ding||`` to whatever sound brings you joy.
 
 
+~hint Click here to see how 🕵🏽
 
----
----
-
-#### ~ tutorialhint
-```blocks
-info.startCountdown(20)
-let myMouse: Sprite = null
-let mySprite: Sprite = null
-scene.setBackgroundColor(1)
-mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
-mySprite.setPosition(80, 93)
-let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
-myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
-myMouse.setPosition(80, 93)
-```
-
-
-## {6. Push Mouse}
-
-Let's create the sense that the mouse is blowing up the balloon by having it push down on the pump with each button click.
-
-- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
-
-```block
-let mySprite: Sprite = null
-mySprite.setImage(img`.`)
-```
-
-and snap anywhere inside the <br/>
-``||controller: on [A] button [pressed]||`` <br/>
-block already in your workspace.
-
-- :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:myMouse||`` and change the image to **mouse1-down**.
-
-![Choose the orange mouse pushing the plunger](/static/skillmap/balloon/mouse1-down.png "Select `mouse1-down` from My Assets")
-
-~hint Show me how! 🕵️
-
-![Change the mouse image](/static/skillmap/balloon/second-mouse.gif "Use the `set [mySprite] image to [ ]` block.")
-
-hint~
-
----
----
-
-#### ~ tutorialhint
-```blocks
-
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    let myMouse: Sprite = null
-
-    info.player1.changeScoreBy(1)
-    scaling.scaleByPixels(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
-    myMouse.setImage(assets.image`mouse1-down`)
-})
-```
-
-
-
-## {7. Play Again!}
-
-**Try your game again!**
-
-- :mouse pointer: Click the mini **game window** in the bottom corner to open the playable console!
-
-Press the (A) button as fast as you can.  You should see the mouse press the handle one time and the balloon should continue to inflate with each press.
-
----
----
-
-
-
-
-## {8. Up and Down}
-
-Did it look like the mouse quit moving after one button press? Let's add another event to change the image back to the original when you release the (A) button.
-
-
-- :game: From the ``||controller: Controller||`` category in the toolbox, grab
-
-```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-})
-```
-and drop it into an empty area of the workspace.
-
-- :mouse pointer: Change ``||controller:pressed||`` to ``||controller:released||``.
-
-
-~hint Click here to see how 🕵️
-
-![Look under Controller for the block](/static/skillmap/balloon/add-button-release.gif "Drag out the controller block and change 'pressed' to 'released'.")
+![Look under Controller for the block](/static/skillmap/mole/add-controller.gif "Drag out the controller block to use later.")
 
 
 hint~
@@ -243,34 +95,65 @@ hint~
 ---
 ---
 
+
 #### ~ tutorialhint
+
 ```blocks
-controller.A.onEvent(ControllerButtonEvent.Released, function () {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    let mySprite: Sprite = null
+    let myHammer: Sprite = null
+    info.changeScoreBy(1)
+    sprites.move_to_random_hole_on_grid(mySprite)
+    music.knock.play()
+
 })
 ```
 
 
 
-## {9. New Image}
+## {5. Check Your Game!}
 
-- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
+Let's test the game in the bigger window!
 
-```block
-let mySprite: Sprite = null
-mySprite.setImage(img`.`)
+- :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
+
+You should see the mole hopping between holes, and you should be able to move the hammer with your arrow keys or the joypad.  You should also see the Whack-em-Mole label and be able to hear a sound each time the rubber hammer tags the mole.
+
+- :mouse pointer: Don't forget to click **Next** to get back to the instructions when you're done playing.
+
+---
+---
+
+
+
+
+## {6. Add Animation}
+
+
+Finally, let's animate the rubber hammer each time it overlaps the mole.
+
+- :mouse pointer: At the bottom of the toolbox, click **Advanced** to show more categories.
+
+- :rotate: From the ``||animation: Animation||`` category, grab <br/>
+
+```blocks
+    animation.runImageAnimationHammer(
+    myHammer,
+    [img`.`],
+    100,
+    false
+    )
 ```
 
-and snap inside the <br/>
-``||controller: on [A] button [released]||`` <br/>
-block already in your workspace.
+and snap it in at **the end** of the ``||sprite: on sprite overlaps otherSprite||`` block already in the workspace.
 
-- :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:myMouse||`` and change the image to **mouse1-up**.
+- :mouse pointer: Click the empty square and when the image editor opens, switch to **My Assets** to select the **hammerAnimation** option and click **Done**.
 
-![Choose the orange mouse holding the plunger](/static/skillmap/balloon/mouse1-up.png "Select `mouse1-up` from My Assets")
 
-~hint Show me how! 🕵️
+~hint Show me how! 🕵🏽
 
-![Change the mouse image](/static/skillmap/balloon/third-mouse.gif "Use the `set [mySprite] image to [ ]` block.")
+
+![Add the sprite block.](/static/skillmap/mole/add-overlap.gif "Add a sprite to your game.")
 
 hint~
 
@@ -278,43 +161,51 @@ hint~
 ---
 
 #### ~ tutorialhint
+
 ```blocks
-
-controller.A.onEvent(ControllerButtonEvent.Released, function () {
-    let myMouse: Sprite = null
-
-    myMouse.setImage(assets.image`mouse1-up`)
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    let mySprite: Sprite = null
+    let myHammer: Sprite = null
+    info.changeScoreBy(1)
+    sprites.move_to_random_hole_on_grid(mySprite)
+    music.knock.play()
+    animation.runImageAnimationHammer(
+    myHammer,
+    [assets.image`hammerAnimation`],
+    100,
+    false
+    )
 })
 ```
 
 
+## {7. Check Your Game Again!}
 
-## {9. Take a Look}
+Take a look at what you've created!
 
+- :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
 
-**Take a look at what you have.**
+When your rubber hammer overlaps the mole, points should show up in the top-right corner, a sound should play, and you should see the rubber hammer move back and forth.
 
-Open the game console and press the (A) button as fast as you can.
+How many times can you tag the mole in 15 seconds?
 
-Your mouse should appear to be blowing up the balloon as you play!
+- :mouse pointer: Don't forget to click **Next** to get back to the instructions when you're done playing.
 
 ---
 ---
 
 
 
-## {10. Finale}
+## {11. Finale}
 
-**🐭 Woo hoo! 🐭**
+**🎡 You've done it! 🎡**
 
-You've completed an amazing carnival game! Take some time to play it and appreciate what you've built.
+You have finished your Whack-em-Mole game!
 
-When you're ready, click **Done** to return to the skillmap and claim your **badge and certificate**.
+When you're ready, click **Done** to return to the skillmap to claim your badge and share your game with friends and family.
 
-After you grab your rewards, you have the option to complete one more level to make your game a into a two player race.
-
-
-
+---
+---
 
 
 
@@ -322,7 +213,444 @@ After you grab your rewards, you have the option to complete one more level to m
 ```package
 simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
 arcade-text=github:microsoft/arcade-text/
-pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling/
+```
+
+
+```template
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+    sprites.move_to_random_hole_on_grid(mySprite)
+
+})
+let mySprite: Sprite = null
+let myHammer: Sprite = null
+scene.setBackgroundImage(assets.image`grid`)
+mySprite = sprites.create(assets.image`mole`, SpriteKind.Enemy)
+myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
+controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
+info.startCountdownGame(15, winTypes.Score, effects.confetti)
+
+game.onUpdateInterval(1000, function () {
+    sprites.move_to_random_hole_on_grid(mySprite)
+})
+
+```
+
+
+
+```ghost
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+    sprites.move_to_random_hole_on_grid(mySprite)
+    music.knock.play()
+    animation.runImageAnimationHammer(
+    myHammer,
+    [assets.image`hammerAnimation`],
+    100,
+    false
+    )
+})
+let mySprite: Sprite = null
+let myHammer: Sprite = null
+scene.setBackgroundImage(assets.image`grid`)
+mySprite = sprites.create(assets.image`mole`, SpriteKind.Enemy)
+myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
+controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
+scene.add_label_to("Whack-em-Mole", areas.Bottom)
+info.startCountdownGame(20, winTypes.Score, effects.confetti)
+
+game.onUpdateInterval(1000, function () {
+    sprites.move_to_random_hole_on_grid(mySprite)
+})
+
+```
+
+
+
+```customts
+
+enum winTypes {
+    //% block="win game"
+    Win,
+    //% block="lose game"
+    Lose,
+    //% block="high score"
+    Score,
+    //% block="multiplayer"
+    Multi
+}
+
+enum speeds {
+    //% block="fast"
+    Fast,
+    //% block="medium"
+    Med,
+    //% block="slow"
+    Slow
+}
+
+enum areas {
+    //% block="top"
+    Top,
+    //% block="middle"
+    Mid,
+    //% block="bottom"
+    Bottom
+}
+
+let textSprite: TextSprite = null
+//let fanfare: effects.BackgroundEffect = undefined;
+//let winStyle = winTypes.Score
+
+
+
+namespace animation {
+    /**
+    * Prefills animation block with hammer items
+    */
+    //% color="#03aa74"
+    //% blockId=run-image-animation-hammer
+    //% block="animate $sprite=variables_get(myHammer) frames $frames=animation_editor interval (ms) $frameInterval=timePicker loop $loop=toggleOnOff"
+    //% frameInterval.defl=100
+    //% group="Animate"
+    //% weight=100
+    //% help=animation/run-image-animation-hammer
+    export function runImageAnimationHammer(sprite: Sprite, frames: Image[], frameInterval?: number, loop?: boolean) {
+        const anim = new ImageAnimation(sprite, frames, frameInterval || 100, !!loop);
+        anim.init();
+    }
+}
+
+
+
+namespace scene {
+    /**
+    * Adds text to the top, middle, or bottom
+    * of screen as defined by circuis games
+    */
+    //% color="#4b6584"
+    //% blockId=add_label_to
+    //% block="add label $myLabel to $myPosition" of window
+    //% myLabel.defl="Whack-em-Mole"
+    //% myPosition.defl=areas.Bottom
+    //% inlineInputMode=inline
+    export function add_label_to(myLabel: string, myPosition: areas) {
+        textSprite = textsprite.create(myLabel)
+        if (myPosition == areas.Bottom) textSprite.setPosition(80, 110);
+        if (myPosition == areas.Mid) textSprite.setPosition(80, 60);
+        if (myPosition == areas.Top) textSprite.setPosition(80, 20);
+    }
+}
+
+namespace controller{
+
+    /**
+    * Combines a simple "move with arrows"
+    * and stay in screen
+    */
+    //% color="#d54322"
+    //% blockId=move_only_onscreen_with_arrows
+    //% block="move $thisSprite=variables_get(myHammer) on screen with speed $mySpeed"
+    //% mySpeed.defl=speeds.Fast
+    //% inlineInputMode=inline
+    export function move_only_onscreen_with_arrows(thisSprite: Sprite, mySpeed: speeds) {
+        thisSprite.setStayInScreen(true)
+        if (mySpeed == speeds.Fast) {
+            controller.moveSprite(thisSprite, 225, 225)
+        } else if (mySpeed == speeds.Med) {
+            controller.moveSprite(thisSprite, 175, 175)
+        } else {
+            controller.moveSprite(thisSprite, 100, 100)
+        }
+    }
+
+}
+
+namespace sprites {
+
+    /**
+    * Randomly moves mole to one of the holes on grid
+    */
+    //% color="#4b7bec"
+    //% blockId=move_to_random_hole_on_grid
+    //% block="move sprite $thisSprite=variables_get(mySprite) to random area"
+    //% inlineInputMode=inline
+    export function move_to_random_hole_on_grid(thisSprite: Sprite) {
+        thisSprite.setPosition(simplified.chooseRandomNumber(28, 80, 130), simplified.chooseRandomNumber(21, 53, 85))
+    }
+}
+
+namespace info {
+    let countdownInitialized = false;
+    /**
+     * Adds game end style to countdown
+     */
+    //% color="#cf6a87"
+    //% group=countdown
+    //% blockId=start_countdown_game
+    //% block="start countdown $myTime (s) || and game over $winType effect $winEffect"
+    //% myTime.defl=15
+    //% winType.defl=winTypes.Score
+    //% winEffect.defl=effects.confetti
+    //% inlineInputMode=inline
+    export function startCountdownGame(myTime: number, winType?: winTypes, winEffect?: effects.BackgroundEffect) {
+        if (!winType)
+            winType = winTypes.Win;
+        if (!winEffect && winType != winTypes.Lose){
+            winEffect = effects.confetti;
+        }
+        else { winEffect = effects.melt;}
+        init(winType, winEffect);
+        info.startCountdown(myTime)
+
+    }
+
+    export function newGameOver(winStyle: winTypes, fanfare: effects.BackgroundEffect) {
+
+        // Prep default variables for different win types
+        let winnerNumber = 1;
+        let thisHigh = 0;
+
+        // Save all scores as relevant to the game.
+        info.saveAllScores();
+
+        // collect the scores before popping the scenes
+        const scoreInfo1 = info.player1.getState();
+        const scoreInfo2 = info.player2.getState();
+        const scoreInfo3 = info.player3.getState();
+        const scoreInfo4 = info.player4.getState();
+        const highScore = info.highScore();
+        const allScores = [scoreInfo1.score, scoreInfo2.score, scoreInfo3.score, scoreInfo4.score];
+
+        // Find player with highest score
+        for (let i = 0; i < 4; i++) {
+            if (allScores[i] > thisHigh) {
+                thisHigh = allScores[i];
+                winnerNumber = i+1;
+            }
+        }
+        // If highest score is higher than saved high, replace
+        if (thisHigh > highScore){
+            info.saveHighScore(); }
+
+
+        // releasing memory and clear fibers. Do not add anything that releases the fiber until background is set below,
+        // or screen will be cleared on the new frame and will not appear as background in the game over screen.
+        game.popScene();
+        game.pushScene();
+        scene.setBackgroundImage(screen.clone());
+
+        music.powerUp.play();
+
+        fanfare.startScreenEffect();
+
+        pause(400);
+
+        const overDialog = new GameOverDialog(true, thisHigh, highScore, winnerNumber, winStyle);
+        scene.createRenderable(scene.HUD_Z, target => {
+            overDialog.update();
+            target.drawTransparentImage(
+                overDialog.image,
+                0,
+                (screen.height - overDialog.image.height) >> 1
+            );
+        });
+        pause(500); // wait for users to stop pressing keys
+        overDialog.displayCursor();
+        game.waitAnyButton();
+        control.reset();
+
+    }
+
+    function init(winStyle: winTypes, fanfare: effects.BackgroundEffect) {
+        if (countdownInitialized) return;
+        countdownInitialized = true;
+
+        info.onCountdownEnd(function () {
+            if (winStyle == winTypes.Win) {
+                game.over(true, fanfare)
+            } else if (winStyle == winTypes.Lose) {
+                game.over(false, fanfare)
+            } else {
+                newGameOver(winStyle, fanfare);
+            }
+        })
+    }
+
+    export class GameOverDialog extends game.BaseDialog {
+        protected cursorOn: boolean;
+        protected isNewHighScore: boolean;
+
+        constructor(
+            protected win: boolean,
+            protected score?: number,
+            protected highScore?: number,
+            protected winnerNum?: number,
+            protected winStyle?: winTypes
+        ) {
+            super(screen.width, 46, img`
+        1 1 1
+        f f f
+        1 1 1
+        `);
+            this.cursorOn = false;
+            this.isNewHighScore = this.score > this.highScore;
+        }
+
+        displayCursor() {
+            this.cursorOn = true;
+        }
+
+        update() {
+            this.clearInterior();
+            this.drawTextCore();
+
+            if (this.cursorOn) {
+                this.drawCursorRow();
+            }
+        }
+
+        drawTextCore() {
+            const titleHeight = 8;
+            if (this.winStyle == winTypes.Multi){
+                this.image.printCenter(
+                    "Player " + this.winnerNum + " wins!",
+                    titleHeight,
+                    screen.isMono ? 1 : 5,
+                    image.font8
+                );
+
+                if (this.score !== undefined) {
+                    const scoreHeight = 23;
+                    const highScoreHeight = 34;
+                    const scoreColor = screen.isMono ? 1 : 2;
+
+                    this.image.printCenter(
+                        "Score:" + this.score,
+                        scoreHeight,
+                        scoreColor,
+                        image.font8
+                    );
+
+                    if (this.isNewHighScore) {
+                        this.image.printCenter(
+                            "New High Score!",
+                            highScoreHeight,
+                            scoreColor,
+                            image.font5
+                        );
+                    } else {
+                        this.image.printCenter(
+                            "HI:" + this.highScore,
+                            highScoreHeight,
+                            scoreColor,
+                            image.font8
+                        );
+                    }
+                }
+            }
+            else {
+                this.image.printCenter(
+                    "Great Job!",
+                    titleHeight,
+                    screen.isMono ? 1 : 5,
+                    image.font8
+                );
+
+                if (this.score !== undefined) {
+                    const scoreHeight = 23;
+                    const highScoreHeight = 34;
+                    const scoreColor = screen.isMono ? 1 : 2;
+
+                    this.image.printCenter(
+                        "Score:" + this.score,
+                        scoreHeight,
+                        scoreColor,
+                        image.font8
+                    );
+
+                    if (this.isNewHighScore) {
+                        this.image.printCenter(
+                            "New High Score!",
+                            highScoreHeight,
+                            scoreColor,
+                            image.font5
+                        );
+                    } else {
+                        this.image.printCenter(
+                            "HI:" + this.highScore,
+                            highScoreHeight,
+                            scoreColor,
+                            image.font8
+                        );
+                    }
+                }
+            }
+        }
+    }
+}
+
+namespace game {
+    /**
+     * Adds additional end game styles
+     */
+    //% color="#8854d0"
+    //% group=Gameplay
+    //% blockId=on_game_over_expanded
+    //% block="game over $winType || add effect $winEffect"
+    //% winType.defl=winTypes.Win
+    //% winEffect.defl=effects.confetti
+    //% inlineInputMode=inline
+    export function onGameOverExpanded(winStyle: winTypes, winEffect?: effects.BackgroundEffect) {
+        if (!winStyle)
+            winStyle = winTypes.Win;
+        if (!winEffect && winStyle != winTypes.Lose) {
+            winEffect = effects.confetti;
+        }
+        else { winEffect = effects.melt; }
+
+        if (winStyle == winTypes.Win) {
+            game.over(true, winEffect)
+        } else if (winStyle == winTypes.Lose) {
+            game.over(false, winEffect)
+        } else {
+            info.newGameOver(winStyle, winEffect);
+        }
+    }
+}
+
+namespace simplified {
+    /**
+     * Randomly chooses one of the parameter numbers
+     *
+     * @param choice1 Numeric choice to appear in the list of player choices
+     * @param choice2 Numeric choice to appear in the list of player choices
+     * @param choice3 Numeric choice to appear in the list of player choices
+     * @param choice4 Numeric choice to appear in the list of player choices
+     * @param choice5 Numeric choice to appear in the list of player choices
+     */
+
+    //% group=Arrays
+    //% color="#fa8f08"
+    //% blockId=choose_random_num_from_array
+    //% block="choose one of $choice1 $choice2 $choice3 || $choice4 $choice5"
+    //% choice1.defl=28
+    //% choice2.defl=80
+    //% choice3.defl=130
+    //% inlineInputMode=inline
+    export function chooseRandomNumber(choice1: number, choice2: number, choice3: number, choice4?: number, choice5?: number) {
+        let myList = [choice1, choice2];
+        if (choice3) myList.push(choice3);
+        if (choice4) myList.push(choice4);
+        if (choice5) myList.push(choice5);
+        return myList._pickRandom();
+    }
+
+
+
+}
+
 ```
 
 
@@ -338,4 +666,3 @@ pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling/
   "pxt.json": "{\n    \"name\": \"Whackem2 - Assets Only\",\n    \"description\": \"\",\n    \"dependencies\": {\n        \"device\": \"*\"\n    },\n    \"files\": [\n        \"main.blocks\",\n        \"main.ts\",\n        \"README.md\",\n        \"assets.json\",\n        \"images.g.jres\",\n        \"images.g.ts\",\n        \"custom.ts\"\n    ],\n    \"targetVersions\": {\n        \"branch\": \"v1.8.26\",\n        \"tag\": \"v1.8.26\",\n        \"commits\": \"https://github.com/microsoft/pxt-arcade/commits/6434cb63948fe7c1d1a7498115a4bc495495512c\",\n        \"target\": \"1.8.26\",\n        \"pxt\": \"7.4.27\"\n    },\n    \"preferredEditor\": \"tsprj\"\n}\n"
 }
 ```
-
