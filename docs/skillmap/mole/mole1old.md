@@ -1,57 +1,25 @@
-# Two Player
-
+# Mole Hunt
 ### @explicitHints true
 
 
-## {Intro @showdialog}
+## {Video Intro @showdialog}
 
-This tutorial will help you turn your game into a two-player event!
-
-![Use what you've learned to add a second player](/static/skillmap/balloon/balloon4.gif "We can add a second mouse and balloon." )
+![Whack'em All Carnival Intro](youtube:ow6P7wTs3Uk)
 
 
 
+## {2. Read Instructions}
 
-## {2. Play Your Game}
+**🚩 Start with the basics 🚩**
 
+- :comment: This tutorial will show you how to get your mole moving. When you're done, move on to the next tutorial to add the hammer!
 
-**Play the game!**
+~hint Click here to reveal hidden info 🕵️
 
-- :mouse pointer: Click the mini **game window** in the bottom corner to open the playable console!
+<br/>
+Look for clues like this when you read instructions.
 
-Press the (A) button as fast as you can.  You should see a mouse pumping up a balloon that gets bigger and bigger until it crosses the line and wins the game.
-
-~hint What if it doesn't work? 💡
-
-If your code doesn't work, start by looking to see if you can figure out what is going wrong.  Make sure each block is in the correct event container.
-
-```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.player1.changeScoreBy(1)
-    scaling.scaleByPixels(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
-    myMouse.setImage(assets.image`mouse1-down`)
-})
-
-controller.A.onEvent(ControllerButtonEvent.Released, function () {
-    myMouse.setImage(assets.image`mouse1-up`)
-})
-
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSprite) {
-    game.over(true)
-})
-
-let myMouse: Sprite = null
-let mySprite: Sprite = null
-info.startCountdown(20)
-scene.setBackgroundColor(1)
-mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
-mySprite.setPosition(80, 93)
-let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
-myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
-myMouse.setPosition(80, 93)
-```
-
-If those steps don't solve your problem, click "Replace my code" to replace the blocks in your workspace with new starter code.
+Each one gives extra info, tips, or tricks.
 
 hint~
 
@@ -59,106 +27,35 @@ hint~
 ---
 
 
-## {3. Add Second Player}
-
-Follow the steps from previous levels to add a second player that reacts to the (B) button!
-
-- :lightbulb: Can you figure out what to do by yourself?
-
-**Don't forget to try your game after each step!**
-
----
----
 
 
-## {4. Add a Second Button Event}
+## {3. Background}
 
-- :lightbulb: Start by adding an <br/>
-``||controller:on [B] button [Pressed]||`` <br/>
-block to the workspace, then add a point for **player 2** each time it's clicked.
+**Ready to start coding?**
+
+Let's place a grid in the background where the mole can hide!
 
 
-~hint What does that mean? 💡
+- :tree: From the ``||scene: Scene||`` category **in the toolbox**, grab <br/>
+``||scene: set background image to []||`` </br>
+and snap it inside the empty ``||loops: on start||`` block already in the workspace.
 
-In harder tutorials, we won't be showing you the exact block you need any more.
 
-Instead, we'll give you the _name_ of what you need, and highlight it in the same color as the block you will find in the toolbox.
+~hint What does that mean? 🕵️
 
-For example, this text: </br>
-``||controller:on [A] button [Pressed]||``<br/>
-is trying to direct you toward this block:<br/>
+In this tutorial, the instructions will give you the names of the blocks you need, and highlight them in the same color as the block you will find in the toolbox.
 
-```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-})
-```
-
-And this text <br/>
-``||info:change player [1] score by [1]||``<br/>
-is trying to direct you toward this block:<br/>
+For example, this text: <br/>
+``||scene: set background image to []||``<br/>
+is trying to direct you toward this block:
 
 ```block
-    info.player1.changeScoreBy(1)
-})
+scene.setBackgroundImage(img`.`)
 ```
 
+And the rest of the instruction wants you to do this:
 
-hint~
-
-~hint Remind me... 🕵️
-
-
-![Balloon Bursting Carnival Final Level - Add B](youtube:ow6P7wTs3Uk)
-
-hint~
-
-
-
----
----
-
-#### ~ tutorialhint
-```blocks
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.player2.changeScoreBy(1)
-})
-```
-
-
-## {5. Add the Balloon}
-
-- :lightbulb: Can you figure out how to add the second balloon for the second player?
-
-_(You'll need to move player 1 to the left, and set player 2 further right.)_
-
-
-~hint Tell me more... 🕵️
-
-- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
-``||variables: set [mySprite2] to sprite [ ] of kind [Player]||`` <br/>
-and snap it inside at the **end** of the
-``||loops: on start||``
-block already in your workspace.
-
-- :mouse pointer: Select the image of the blue balloon.
-
-- :mouse pointer: Duplicate your <br/>
-``||sprites: set [mySprite] position to x [80] y [93]||`` <br/>
-block and snap the copy inside at the **end** of the
-``||loops: on start||``
-block already in your workspace.
-
-- :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:mySprite2||`` and change the x value from 80 to **110**.
-
-- :mouse pointer: Change the positions for **mySprite** and **myMouse** to each have an x value of **50**.
-
-
-hint~
-
-~hint Show me! 🕵️
-
-
-![Balloon Bursting Carnival Final Level - Add Balloon](youtube:ow6P7wTs3Uk)
+![Find the background block](/static/skillmap/mole/add-background.gif "Add your block to the `on start` container.")
 
 hint~
 
@@ -166,55 +63,34 @@ hint~
 ---
 
 #### ~ tutorialhint
+
 ```blocks
-let mySprite2: Sprite = null
-let myMouse: Sprite = null
-let mySprite: Sprite = null
-info.startCountdown(20)
-scene.setBackgroundColor(1)
-mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
-mySprite.setPosition(50, 93)
-let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
-myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
-myMouse.setPosition(50, 93)
-mySprite2 = sprites.create(assets.image`balloon-2`, SpriteKind.Player)
-mySprite2.setPosition(110, 93)
+scene.setBackgroundImage(img`.`)
 ```
 
----
----
+
+## {4. Choose the Grid BG}
+
+
+Now we'll select the grid from the **My Assets** library by clicking on the block.
+
+
+- :mouse pointer: Click the empty square in <br/>
+``||scene: set background image to []||``.<br/>
+The image editor will open automatically.
+
+- :mouse pointer: Click the **My Assets** tab at the top of the image editor to see the sprite assets for this tutorial.
+
+- :mouse pointer: Select the **grid** background <br/>
+![Choose the background that looks like a grid full of holes.](/static/skillmap/mole/grid.png "Select the grid from My Assets.")
+and click **Done**.
 
 
 
-## {6. Add the Mouse}
-
-- :lightbulb: Now it's time to add the second mouse in front of the second balloon!
+~hint Show me how! 🕵️
 
 
-~hint Tell me more... 🕵️
-
-- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
-``||variables: set [mySprite3] to sprite [ ] of kind [Player]||`` <br/>
-and snap it inside at the **end** of the
-``||loops: on start||``
-block already in your workspace.
-
-- :mouse pointer: Rename the sprite **myMouse2**, select the **mouse2-up** image, and set the kind to **Mouse**.
-
-- :mouse pointer: Duplicate your <br/>
-``||sprites: set [mySprite2] position to x [110] y [93]||`` <br/>
-block and snap the copy inside at the **end** of the
-``||loops: on start||``
-block already in your workspace.
-
-- :mouse pointer: Change ``||variables:mySprite2||`` to ``||variables:myMouse2||``.
-
-hint~
-
-~hint Show me! 🕵️
-
-
-![Balloon Bursting Carnival Final Level - Add Mouse](youtube:ow6P7wTs3Uk)
+![Choose the background that looks like a grid full of holes.](/static/skillmap/mole/choose-background.gif "Add your block to the `on start` container.")
 
 hint~
 
@@ -222,162 +98,62 @@ hint~
 ---
 
 #### ~ tutorialhint
+
 ```blocks
-let mySprite2: Sprite = null
-let myMouse: Sprite = null
-let mySprite: Sprite = null
-let myMouse2: Sprite = null
-info.startCountdown(20)
-scene.setBackgroundColor(1)
-mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
-mySprite.setPosition(50, 93)
-let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
-myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
-myMouse.setPosition(50, 93)
-mySprite2 = sprites.create(assets.image`balloon-2`, SpriteKind.Player)
-mySprite2.setPosition(110, 93)
-myMouse2 = sprites.create(assets.image`mouse2-up`, SpriteKind.Mouse)
-myMouse2.setPosition(110, 93)
+scene.setBackgroundImage(assets.image`grid`)
 ```
 
----
----
+
+## {5. Add the Mole}
 
 
-## {7. Push Mouse 2}
+Now we'll add the **mole** sprite to our game.
 
-You're almost there!
+- :paper plane: From the ``||sprites: Sprites||`` category **in the toolbox**, grab <br/>
+``||variables: set [mySprite] to sprite [ ] of kind [Player]||`` </br>
+and snap it inside at **the bottom** of the ``||loops: on start||`` block already in the workspace.
 
-- :lightbulb: Make the second mouse look like it's pushing and releasing the handle when the (B) button is pushed and released.
+- :mouse pointer: Click the **empty square** to open the image editor, then click the **My Assets** tab at the top to see the sprites for this tutorial.
 
+- :mouse pointer: Select the **mole** sprite <br/>
+![Choose the image that looks like a mole head.](/static/skillmap/mole/mole.png "Select the mole from My Assets.")
+and click **Done**.
 
-~hint Tell me more... 🕵️
-
-- :game: From the ``||controller: Controller||`` category in the toolbox, grab <br/>
-``||controller:on [A] button [Pressed]||``<br/>
-and drop it into an empty area of the workspace.
-
-- :mouse pointer: Change  ``||controller:A||``  to  ``||controller:B||`` and change<br/>
-``||controller:pressed||`` to ``||controller:released||``.
-
-- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab two <br/>
-``||sprites: set [mySprite] image to [ ]||`` <br/>
-blocks and snap each into the <br/>
-``||controller: on [B] button||`` <br/>
-blocks already in your workspace.
-
-- :mouse pointer: Change  ``||variable:mySprite||``  to  ``||variable:myMouse2||`` in both places.
-
-- :mouse pointer: Choose the correct **mouse2** image for each block.
-
-hint~
-
-~hint Show me! 🕵️
+- :mouse pointer: Click the kind ``||sprites: Player||`` and change it to  ``||sprites: Enemy||`` so we know the sprite isn't on our side!
 
 
-![Balloon Bursting Carnival Final Level - Move Mouse](youtube:ow6P7wTs3Uk)
+
+~hint Show me how! 🕵️
+
+
+![Choose the image that looks like a mole head.](/static/skillmap/mole/choose-mole.gif "Add a mole to your game.")
 
 hint~
 
 ---
 ---
-
 
 #### ~ tutorialhint
+
 ```blocks
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    let myMouse2: Sprite = null
-
-    info.player2.changeScoreBy(1)
-    myMouse2.setImage(assets.image`mouse2-down`)
-})
-
-controller.B.onEvent(ControllerButtonEvent.Released, function () {
-        let myMouse2: Sprite = null
-
-    myMouse2.setImage(assets.image`mouse2-up`)
-})
-```
-
-
-## {8. Inflate the Balloon}
-
-Last step!
-
-- :lightbulb: Time to make sure that the second balloon gets bigger with each step.
-
-
-~hint Tell me more... 🕵️
-
-- :up-down: From the ``||scaling: Scaling||`` category in the toolbox, grab <br/>
-``||scaling: change [mySprite] scale by [1] pixels [uniformly] anchor [bottom]|| `` <br/>
-and snap it into the <br/>
-``||controller: on [B] button [pressed]||`` <br/>
-block already in the workspace.
-
-- :mouse pointer: Change **mySprite** to **mySprite2**.
-
-
-hint~
-
-~hint Show me! 🕵️
-
-
-![Balloon Bursting Carnival Final Level - Inflate](youtube:ow6P7wTs3Uk)
-
-hint~
-
----
----
-
-
-#### ~ tutorialhint
-```blocks
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    let myMouse2: Sprite = null
-    info.changeScoreBy_defl1(info.player1, 1)
-    myMouse2.setImage(assets.image`mouse2-down`)
-    scaling.scaleByPixels_defl(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
-})
-
-controller.B.onEvent(ControllerButtonEvent.Released, function () {
-        let myMouse2: Sprite = null
-
-    myMouse2.setImage(assets.image`mouse2-up`)
-})
+scene.setBackgroundImage(assets.image`grid`)
+let mySprite = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 ```
 
 
 
 
-## {8. Play Your Game!}
+## {12. Finale}
 
-**Try your game!**
+**🎉 Way to Go 🎉**
 
-- :mouse pointer: Click the mini **game window** in the bottom corner to open the playable console!
+You have started your very own clicker game!
+Try it in the console and see if you can get more than **40 points**.
 
-Grab a friend and have them press the space bar while you press the 'x' key.  Who makes it to the top first?
-
-💡 ** Tip:** _Now that you have someone to race against, you can right-click and choose "Delete Blocks" to delete_ <br/>
-``||info: start countdown [20] (s)||``<br/>
-_from_ ``||loops: on start||``.
-
+When you're finished playing, come back to the instructions and click the **Done** button to return to the skillmap and continue building your amazing **🎈carnival game🎈**!
 
 ---
 ---
-
-
-
-## {10. Finale}
-
-**🥳 You've done it 🥳**
-
-You've finished the entire skillmap!
-
-When you're ready, click **Done** to return to the skillmap and click the button in the side panel to share your game with friends!
-
-
-
 
 
 
@@ -385,7 +161,54 @@ When you're ready, click **Done** to return to the skillmap and click the button
 ```package
 simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
 arcade-text=github:microsoft/arcade-text/
-pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling/
+```
+
+
+```ghost
+
+scene.setBackgroundImage(assets.image`grid`)
+let mySprite = sprites.create(assets.image`mole`, SpriteKind.Enemy)
+game.onUpdateInterval(1000, function () {
+    mySprite.setPosition(simplified.chooseRandomNumber(28, 80, 130), simplified.chooseRandomNumber(21, 53, 85))
+})
+
+```
+
+
+
+```customts
+
+namespace simplified {
+
+
+    /**
+     * Randomly chooses one of the parameter numbers
+     *
+     * @param choice1 Numeric choice to appear in the list of player choices
+     * @param choice2 Numeric choice to appear in the list of player choices
+     * @param choice3 Numeric choice to appear in the list of player choices
+     * @param choice4 Numeric choice to appear in the list of player choices
+     * @param choice5 Numeric choice to appear in the list of player choices
+     */
+
+    //% group=Arrays
+    //% color="#fa8f08"
+    //% blockId=choose_random_num_from_array
+    //% block="choose one of $choice1 $choice2 $choice3 || $choice4 $choice5"
+    //% choice1.defl=28
+    //% choice2.defl=80
+    //% choice3.defl=130
+    //% inlineInputMode=inline
+    export function chooseRandomNumber(choice1: number, choice2: number, choice3: number, choice4?: number, choice5?: number) {
+        let myList = [choice1, choice2];
+        if (choice3) myList.push(choice3);
+        if (choice4) myList.push(choice4);
+        if (choice5) myList.push(choice5);
+        return myList._pickRandom();
+    }
+
+}
+
 ```
 
 
@@ -401,4 +224,3 @@ pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling/
   "pxt.json": "{\n    \"name\": \"Whackem2 - Assets Only\",\n    \"description\": \"\",\n    \"dependencies\": {\n        \"device\": \"*\"\n    },\n    \"files\": [\n        \"main.blocks\",\n        \"main.ts\",\n        \"README.md\",\n        \"assets.json\",\n        \"images.g.jres\",\n        \"images.g.ts\",\n        \"custom.ts\"\n    ],\n    \"targetVersions\": {\n        \"branch\": \"v1.8.26\",\n        \"tag\": \"v1.8.26\",\n        \"commits\": \"https://github.com/microsoft/pxt-arcade/commits/6434cb63948fe7c1d1a7498115a4bc495495512c\",\n        \"target\": \"1.8.26\",\n        \"pxt\": \"7.4.27\"\n    },\n    \"preferredEditor\": \"tsprj\"\n}\n"
 }
 ```
-

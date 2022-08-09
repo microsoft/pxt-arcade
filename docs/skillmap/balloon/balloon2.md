@@ -29,7 +29,7 @@ hint~
 Press the (A) button or **space bar** as fast as you can.  You should see the score go up with each click and the timer should be counting down from 20 seconds.
 
 
-💡 **Tip: If your code isn't working and you can't figure out why, click "Replace my code" to replace the blocks in your workspace with new starter code.**
+💡 **Tip:** _If your code isn't working and you can't figure out why, click "Replace my code" to replace the blocks in your workspace with new starter code._
 
 
 ---
@@ -70,9 +70,19 @@ scene.setBackgroundColor(1)
 
 ## {4. Add Balloon}
 
-**Add a balloon sprite!**
+Add a balloon **SPRITE**!
 
-In Arcade, each character or item that does something is called a **SPRITE**. Let's add one now.
+~hint What's a sprite? 💡
+
+In Arcade, each character or image that does something is called a **SPRITE**.
+
+Sprites have properties that you can use and change -- things like scale, position, and lifespan are all properties of sprites.
+
+Our balloon will be a sprite, too.
+
+hint~
+
+<br/>
 
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
 

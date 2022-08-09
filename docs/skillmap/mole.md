@@ -22,7 +22,7 @@
 
 * name: Mole Hunt
 * type: tutorial
-* description: Learn to use MakeCode Arcade and add a character sprite to your project.
+* description: Learn to use MakeCode Arcade and add a moving character sprite to your project.
 * tags: intermediate, sprite, clicker
 * next: mole2
 * url: /skillmap/mole/mole1
@@ -32,9 +32,9 @@
 
 
 ### mole2
-* name: Whack'em
+* name: Hammer Time
 * type: tutorial
-* description: Add a hammer to help you catch the mole!
+* description: Add a rubber hammer to tag the mole and earn points!
 * tags: intermediate, clicker, sprite, events
 * next: mole3
 * url: /skillmap/mole/mole2
@@ -45,7 +45,7 @@
 ### mole3
 * name: Get Animated
 * type: tutorial
-* description: Add sound and animation!
+* description: Add sound and animation to polish your game!
 * tags: easy, clicker, sprite, buttons
 * next: mole-cert
 * url: /skillmap/mole/mole3
@@ -61,7 +61,6 @@
 * type: certificate
 * url: /static/skillmap/certificates/mole-cert.pdf
 * imageUrl: /static/skillmap/certificates/mole-cert.png
-* next: mole4
 * position: 2 2
 * actions:
     * map: [Finish the Last Level!](/skillmap/mole)
@@ -74,14 +73,3 @@
         * image: /static/badges/badge-mole.png
         * name: Whack'em Mole
 
-
-
-
-### mole4
-* name: Fancy Booth
-* type: tutorial
-* description: Add extra decorations to your game to lure in carnival goers.
-* tags: intermediate, clicker, sprite, buttons
-* url: /skillmap/mole/mole4
-* imageUrl: /static/skillmap/mole/mole4.gif
-* position: 2 3
