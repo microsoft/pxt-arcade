@@ -1,0 +1,41 @@
+{
+    "name": "hw---rp2040",
+    "description": "RP2040 board",
+    "files": [
+        "config.ts",
+        "basepins.d.ts",
+        "device.d.ts"
+    ],
+    "card": {
+        "name": "R2",
+        "description": "Board based on Raspberry Pi RP2040",
+        "learnMoreUrl": "https://arcade.makecode.com/hardware#r2",
+        "cardType": "hw"
+    },
+    "compileServiceVariant": "rp2040",
+    "cppDependencies": {
+        "accelerometer": "file:../accelerometer"
+    },
+    "dependencies": {
+        "core---rp2040": "file:../core---rp2040",
+        "screen---st7735": "file:../screen---st7735",
+        "mixer---rp2040": "file:../mixer---rp2040",
+        "game": "file:../game"
+    },
+    "public": true,
+    "skipLocalization": true,
+    "additionalFilePath": "../hw",
+    "yotta": {
+        "optionalConfig": {
+            "DEVICE_JACDAC_DEBUG": 1
+        },
+        "config": {
+            "DEVICE_USB": 1,
+            "DEVICE_WEBUSB": 1
+        }
+    },
+    "experimentalHw": true,
+    "dalDTS": {
+        "corePackage": "../core---rp2040"
+    }
+}
