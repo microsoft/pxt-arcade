@@ -327,7 +327,7 @@
                 "codalTarget": {
                     "name": "codal-itsybitsy-m4",
                     "url": "https://github.com/lancaster-university/codal-itsybitsy-m4",
-                    "branch": "v0.2.7",
+                    "branch": "v0.2.8",
                     "type": "git"
                 },
                 "codalBinary": "ITSYBITSY_M4",
