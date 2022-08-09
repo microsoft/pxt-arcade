@@ -87,7 +87,7 @@ and snap it in at **the end** of the ``||sprite: on sprite overlaps otherSprite|
 
 ~hint Click here to see how 🕵🏽
 
-![Look under Controller for the block](/static/skillmap/mole/add-controller.gif "Drag out the controller block to use later.")
+![Look under Controller for the block](/static/skillmap/mole/add-music.gif "Drag out the controller block to use later.")
 
 
 hint~
@@ -153,7 +153,7 @@ and snap it in at **the end** of the ``||sprite: on sprite overlaps otherSprite|
 ~hint Show me how! 🕵🏽
 
 
-![Add the sprite block.](/static/skillmap/mole/add-overlap.gif "Add a sprite to your game.")
+![Add the sprite block.](/static/skillmap/mole/add-animation.gif "Add a sprite to your game.")
 
 hint~
 

@@ -288,7 +288,7 @@ and snap it into **the end** of the ``||loops: on start||`` block container alre
 
 ~hint Show me how! 🕵🏽
 
-![Add timer.](/static/skillmap/mole/overlap-move.gif "start countdown 15 (s) and game over high score")
+![Add timer.](/static/skillmap/mole/countdown.gif "start countdown 15 (s) and game over high score")
 
 hint~
 

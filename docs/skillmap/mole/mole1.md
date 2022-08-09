@@ -4,7 +4,7 @@
 
 ## {Video Intro @showdialog}
 
-![Whack-em-All Carnival Intro](youtube:ow6P7wTs3Uk)
+![Whack-em-All Carnival Intro](youtube:JAb77Y42YhU)
 
 
 
@@ -279,7 +279,7 @@ and snap it into the ``||game: on game update every [1000] ms||`` block that's a
 
 ~hint Show me how! 🕵🏽
 
-![Add the random area block](/static/skillmap/mole/game-update.gif "Make sure the new block connects inside the game update block.")
+![Add the random area block](/static/skillmap/mole/move-mole.gif "Make sure the new block connects inside the game update block.")
 
 hint~
 
