@@ -77,10 +77,12 @@ Let's add a sound when the rubber hammer overlaps the mole.
 
 
 - :headphones: From the ``||music: Music||`` category, grab <br/>
+
 ```block
     music.baDing.play()
 ```
-and snap it in at **the end** of the ``||sprite: on sprite overlaps otherSprite||`` block already in the workspace.
+
+and snap it in at **the end** of the ``||sprites: on sprite overlaps otherSprite||`` block already in the workspace.
 
 - :mouse pointer: Change ``||music: ba ding||`` to whatever sound brings you joy.
 
@@ -145,7 +147,7 @@ Finally, let's animate the rubber hammer each time it overlaps the mole.
     )
 ```
 
-and snap it in at **the end** of the ``||sprite: on sprite overlaps otherSprite||`` block already in the workspace.
+and snap it in at **the end** of the ``||sprites: on sprite overlaps otherSprite||`` block already in the workspace.
 
 - :mouse pointer: Click the empty square and when the image editor opens, switch to **My Assets** to select the **hammerAnimation** option and click **Done**.
 
@@ -187,7 +189,7 @@ Take a look at what you've created!
 
 When your rubber hammer overlaps the mole, points should show up in the top-right corner, a sound should play, and you should see the rubber hammer move back and forth.
 
-How many times can you tag the mole in 15 seconds?
+**How many times can you tag the mole in 15 seconds?**
 
 - :mouse pointer: Don't forget to click **Next** to get back to the instructions when you're done playing.
 
@@ -230,35 +232,6 @@ mySprite = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
 controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
 info.startCountdownGame(15, winTypes.Score, effects.confetti)
-
-game.onUpdateInterval(1000, function () {
-    sprites.move_to_random_hole_on_grid(mySprite)
-})
-
-```
-
-
-
-```ghost
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    info.changeScoreBy(1)
-    sprites.move_to_random_hole_on_grid(mySprite)
-    music.knock.play()
-    animation.runImageAnimationHammer(
-    myHammer,
-    [assets.image`hammerAnimation`],
-    100,
-    false
-    )
-})
-let mySprite: Sprite = null
-let myHammer: Sprite = null
-scene.setBackgroundImage(assets.image`grid`)
-mySprite = sprites.create(assets.image`mole`, SpriteKind.Enemy)
-myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
-controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
-scene.add_label_to("Whack-em-Mole", areas.Bottom)
-info.startCountdownGame(20, winTypes.Score, effects.confetti)
 
 game.onUpdateInterval(1000, function () {
     sprites.move_to_random_hole_on_grid(mySprite)
