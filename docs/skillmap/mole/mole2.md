@@ -312,7 +312,7 @@ info.startCountdownGame(15, winTypes.Score, effects.confetti)
 
 ## {12. Play your game!}
 
-Play your final game!
+Play your game!
 
 - :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
 
@@ -482,12 +482,12 @@ namespace info {
     //% color="#cf6a87"
     //% group=countdown
     //% blockId=start_countdown_game
-    //% block="start countdown $myTime (s) || and game over $winType effect $winEffect"
+    //% block="start countdown $myTime (s) and game over $winType || effect $winEffect"
     //% myTime.defl=15
     //% winType.defl=winTypes.Score
     //% winEffect.defl=effects.confetti
     //% inlineInputMode=inline
-    export function startCountdownGame(myTime: number, winType?: winTypes, winEffect?: effects.BackgroundEffect) {
+    export function startCountdownGame(myTime: number, winType: winTypes, winEffect?: effects.BackgroundEffect) {
         if (!winType)
             winType = winTypes.Win;
         if (!winEffect && winType != winTypes.Lose){
