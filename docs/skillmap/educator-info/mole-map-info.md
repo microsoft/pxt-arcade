@@ -1,94 +1,87 @@
-# Balloon Race
+# Whack-em-Mole
 
 **A page for Educators & Parents**
 
-The **Balloon Race** skillmap introduces simple game design and computer science concepts.
+The **Whack-em-Mole** skillmap introduces simple game design and computer science concepts through a fun, relatable carnival interface.
 
-In this set of activities, students will create a simple clicker with MakeCode Arcade.  This map is intended for students who are new to MakeCode with little or no previous coding experience.
+In this set of activities, students will create a simple mole-chasing game with MakeCode Arcade.  This map is intended for students who are new to MakeCode with little or no previous coding experience.
 
-Designed for students between the ages of 9 & 12, this experience contains a total of 4 tutorials (approximating 50 minutes of instruction).  At the end the learning path, students receive a certificate of completion and a badge.
+Designed for students between the ages of 8 & 13, this experience contains a total of 3 tutorials (approximating 45 minutes of instruction).  At the end the learning path, students receive a certificate of completion and a badge.
 
 |                 | Minutes* |  Key Concepts |
 | --------------- | -------- |  ------------ |
-| Welcome to the Show    |15  |  events, timer |
-| Join the Audience   |10 |  animation, events |
-| The Biggest Star   |15  |  projectiles, random numbers, events |
-| Coming Up Roses   |10  |  projectiles, random numbers, events |
+| Mole Hunt    |18  |  sprites, events, timer |
+| Hammer Time   |12 |  sprites, overlaps, events |
+| Get Animated   |15  |  sound, text, animations |
 
 
 \* Minutes are approximate, based on time to follow instructions as written. Providing extra time for creativity and debugging is encouraged.
 
 ### Objectives
 
-After completing Talent Show, students will have gained exposure to all the elements they need to successfully create their own clicker game using MakeCode Arcade.
-
-Specifically, they will experience the following topics:
+After completing Whack-em-Mole, students will have gained exposure to all the elements they need to successfully create their own Whack-em-Mole game using MakeCode Arcade, including:
 
 #### Computer Science Concepts
 
-- Events and program control flow
+- Sequencing and algorithms
+- Events
 - User input
-- Variables
-- Lists/Arrays
 
 
 #### Game Design Concepts
 
-- Sprites and Projectiles
+- Sprites
 - Design, Sounds, and Effects
+- Collision / overlap
+- Countdown timers
 - Game Score
 - Win/Loss Criteria
-- Randomization
 - Animation
 
 
 
-#### 1. Welcome to the Show
+#### 1. Mole Hunt
 
-| Activity | Welcome to the Show (15 min) |
+| Activity | Mole Hunt (18 min) |
 |---|---|
-| ![Welcome to the Show thumbnail](/static/skillmap/star/star1.gif) | Create a game using talented animals and add points for each click. |
-| Blocks used | ``[info.startCountdown(10)]``<br/>``[info.changeScoreBy(1)]``<br/>``[info.onCountdownEnd(function () {})]``<br/>``[game.over(true)]``|
-| Solution option | [Welcome to the Show Project](https://makecode.com/_d6TdD8VYPX1U) |
+| ![Mole Hunt thumbnail](/static/skillmap/mole/mole1.gif) | Learn to use MakeCode Arcade and add a moving character sprite to your project. |
+| Blocks used |  ``[scene.setBackgroundImage(img`.`)]`` <br/> ``[let mySprite = sprites.create(img`.`, SpriteKind.Enemy)]`` <br/> ``[game.onUpdateInterval(1000, function () {}]``|
+| Solution option | [Mole Hunt Project](https://makecode.com/_4WPAes5LMe9z) |
 
-#### 2. Join the Audience
+#### 2. Hammer Time
 
-| Activity | Join the Audience (10 min) |
+| Activity | Hammer Time (12 min) |
 |---|---|
-| ![Join the Audience thumbnail](/static/skillmap/star/star2.gif) | This game builds off the last level, adding an animated audience sprite<br/>that toggles as you press and release the (A) button. |
-| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``|
-| Solution option | [Join the Audience Project](https://makecode.com/_WY823cfoyTwj) |
+| ![Hammer Time thumbnail](/static/skillmap/mole/mole2.gif) | Add a rubber hammer to tag the mole and earn points! |
+| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]`` <br/> ``[sprites.move_to_random_hole_on_grid(mySprite)]`` <br/> ``[controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)]`` <br/> ``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {})]`` <br/> ``[info.startCountdownGame(20, winTypes.Score, effects.confetti)]`` <br/> ``[info.changeScoreBy(1)]`` <br/> ``[sprites.move_to_random_hole_on_grid(mySprite)]`` |
+| Solution option | [Hammer Time Project](https://makecode.com/_3kzWrvbA51PL) |
 
-#### 3. The Biggest Star
+#### 3. Get Animated
 
-| Activity | The Biggest Star (15 min) |
+| Activity | Get Animated (15 min) |
 |---|---|
-| ![The Biggest Star thumbnail](/static/skillmap/star/star3.gif) | Building off the previous project, this level adds projectiles that<br/>take the form of stars spraying from the audience with each press of the button. |
-| Blocks used | ``[sprites.create(img`.`, SpriteKind.Player).startEffect(effects.spray, 100)]`` |
-| Solution option | [The Biggest Star Project](https://makecode.com/_3gs2oWTCHXuw) |
+| ![Get Animated thumbnail](/static/skillmap/mole/mole3.gif) | Add sound and animation to polish your game! |
+| Blocks used | ``[music.knock.play()]`` <br/> ``[animation.runImageAnimationHammer(myHammer,[img`.`],100,false)]`` <br/>``[scene.add_label_to("Whack-em-Mole", areas.Bottom)]`` |
+| Solution option | [Get Animated Project](https://makecode.com/_PCKW94TVLMpA) |
 
 
-#### 4. Coming Up Roses
 
-| Activity | Coming Up Roses (15 min) |
-|---|---|
-| ![Coming Up Roses thumbnail](/static/skillmap/star/star4.gif) | Building off the previous project, this level utilizes an undercover array to shower the performer with both stars and roses. |
-| Blocks used | ``[let projectile = sprites.createProjectileFromSprite([img`.`, img`.`]._pickRandom(), clapping, randint(-100, 100), randint(-50, -100))]`` |
-| Solution option | [Coming Up Roses Project](https://makecode.com/_aK1XDbamoH20) |
+
+
 
 
 ##### Game Mod Ideas
 
-After students complete Talent Show they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try:
+After students complete Whack-em-Mole they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try:
 
-- Change the animals in the audience to a row of clapping hands
-- Add a new sprite to the stage. Who would your performer be?
-- Add more things for the audience to throw, like confetti or hearts
+- Change the mole to a different character. Try a monster, an alien, or a star!
+- Animate your character each time it's tagged by the rubber hammer.
+- Add background music.
 
 
 ### What's Next?
 
-After completing Talent Show, students can move on to the following activities:
+After completing Whack-em-Mole, students can move on to the following activities:
 
-* [Build a Space Explorer](https://arcade.makecode.com/--skillmap#docs:/skillmap/space)
-* [Jungle Monkey Jump](https://arcade.makecode.com/--skillmap#docs:/skillmap/jungle)
+* [Burstin' Balloons](https://arcade.makecode.com/--skillmap#docs:/skillmap/balloon)
+* [Space Explorer](https://arcade.makecode.com/--skillmap#docs:/skillmap/space)

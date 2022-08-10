@@ -3,11 +3,11 @@
 * description: Create your own 'Whack-a-Mole' style of carnival game.
 * infoUrl: skillmap/educator-info/mole-map-info
 * bannerUrl: /static/skillmap/mole/mole3.gif
-* backgroundurl: /static/skillmap/backgrounds/mole-comp.png
+* backgroundurl: https://raw.githubusercontent.com/clkantner/whack/master/skillmap2-final.gif
 * primarycolor: #ffffff
 * secondarycolor: #fff53d
-* tertiarycolor: #bbeffe
-* completednodecolor: #4a8397
+* tertiarycolor: #82cd54
+* completednodecolor: #604c4e
 * highlightcolor: #ff0000
 * allowcodecarryover: true
 * tags: easy, beginner, carnival
@@ -27,7 +27,7 @@
 * next: mole2
 * url: /skillmap/mole/mole1
 * imageUrl: /static/skillmap/mole/mole1.gif
-* position: -1 2
+* position: -1 1
 
 
 
@@ -39,7 +39,7 @@
 * next: mole3
 * url: /skillmap/mole/mole2
 * imageUrl: /static/skillmap/mole/mole2.gif
-* position: 0 2
+* position: 0 1
 
 
 ### mole3
@@ -49,8 +49,8 @@
 * tags: easy, clicker, sprite, buttons
 * next: mole-cert
 * url: /skillmap/mole/mole3
-* imageUrl: /static/skillmap/backgrounds/mouse-comp.png
-* position: 1 2
+* imageUrl: /static/skillmap/mole/mole3.gif
+* position: 1 1
 
 
 
@@ -61,7 +61,7 @@
 * type: certificate
 * url: /static/skillmap/certificates/mole-cert.pdf
 * imageUrl: /static/skillmap/certificates/mole-cert.png
-* position: 2 2
+* position: 2 0
 * actions:
     * map: [Finish the Last Level!](/skillmap/mole)
     * editor: [Edit Your Project with a Full Toolbox](/)

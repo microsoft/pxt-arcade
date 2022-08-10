@@ -4,7 +4,7 @@
 
 ## {Video Intro @showdialog}
 
-![Whack-em-All Carnival Intro](youtube:JAb77Y42YhU)
+![Whack-em-All Carnival Intro](youtube:LwzffWleZug)
 
 
 
@@ -53,10 +53,10 @@ hint~
 
 **Ready to start coding?**
 
-Let's place the image of a grid in the background where the mole can hide!
+Let's place an image of a grassy grid of holes in the background!
 
 
-- :tree: From the ``||scene: Scene||`` category **in the toolbox**, grab <br/>
+- :tree: Go to the ``||scene: Scene||`` category **in the toolbox** and grab <br/>
 ```block
 scene.setBackgroundImage(img`.`)
 ```
@@ -87,7 +87,7 @@ scene.setBackgroundImage(img`.`)
 ## {5. Choose the Grid BG}
 
 
-Select the grid from the **My Assets** library by clicking on the square in the block.
+Let's add the grassy grid from the **My Assets** library.
 
 
 - :mouse pointer: Click the empty square in the<br/>
