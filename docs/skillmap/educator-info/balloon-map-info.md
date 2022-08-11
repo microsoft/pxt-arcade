@@ -1,26 +1,26 @@
-# Balloon Race
+# Burstin' Balloons
 
 **A page for Educators & Parents**
 
-The **Balloon Race** skillmap introduces simple game design and computer science concepts.
+The **Burstin' Balloons** skillmap introduces simple game design and computer science concepts through the creation of a competetive balloon bursting game.
 
-In this set of activities, students will create a simple clicker with MakeCode Arcade.  This map is intended for students who are new to MakeCode with little or no previous coding experience.
+In this set of activities, students will create a simple clicker with MakeCode Arcade.  This map is intended for students who are new to MakeCode with little previous coding experience.
 
-Designed for students between the ages of 9 & 12, this experience contains a total of 4 tutorials (approximating 50 minutes of instruction).  At the end the learning path, students receive a certificate of completion and a badge.
+Designed for students between the ages of 10 & 15, this experience contains a total of 3 main tutorials (approximating 50 minutes of instruction) and one optional tutorial  (approximating 30 minutes of instruction).  At the end of level 3, students receive a certificate of completion and a badge.
 
 |                 | Minutes* |  Key Concepts |
 | --------------- | -------- |  ------------ |
-| Welcome to the Show    |15  |  events, timer |
-| Join the Audience   |10 |  animation, events |
-| The Biggest Star   |15  |  projectiles, random numbers, events |
-| Coming Up Roses   |10  |  projectiles, random numbers, events |
+| Create a Clicker    |15  |  events, pints, timer |
+| Burst Your Balloon   |15 |  sprites, scale, events |
+| Pump it Up   |20  |  animation, events |
+| Two Player Party   |30  |  review |
 
 
-\* Minutes are approximate, based on time to follow instructions as written. Providing extra time for creativity and debugging is encouraged.
+\* Minutes are approximate, based on time to follow instructions as written. Providing extra time for creativity and debugging is encouraged. Note that intermediate users and older students are likely to move through nearly twice as fast.
 
 ### Objectives
 
-After completing Talent Show, students will have gained exposure to all the elements they need to successfully create their own clicker game using MakeCode Arcade.
+After completing **Burstin' Balloons**, students will have gained exposure to all the elements they need to successfully create their own clicker game using MakeCode Arcade.
 
 Specifically, they will experience the following topics:
 
@@ -29,66 +29,101 @@ Specifically, they will experience the following topics:
 - Events and program control flow
 - User input
 - Variables
-- Lists/Arrays
 
 
 #### Game Design Concepts
 
-- Sprites and Projectiles
-- Design, Sounds, and Effects
+- Sprites
+- Scaling
 - Game Score
 - Win/Loss Criteria
-- Randomization
 - Animation
 
 
 
-#### 1. Welcome to the Show
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    myMouse2.setImage(assets.image`mouse2-down`)
+    scaling.scaleByPixels(mySprite2, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+    info.player2.changeScoreBy(1)
+})
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    myMouse.setImage(assets.image`mouse1-down`)
 
-| Activity | Welcome to the Show (15 min) |
+
+})
+controller.A.onEvent(ControllerButtonEvent.Released, function () {
+    myMouse.setImage(assets.image`mouse1-up`)
+})
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSprite) {
+    game.over(true)
+})
+
+scene.setBackgroundColor(1)
+let booth = sprites.create(assets.image`booth`, SpriteKind.Booth)
+mySprite = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
+myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
+mySprite2 = sprites.create(assets.image`balloon-2`, SpriteKind.Player)
+myMouse2 = sprites.create(assets.image`mouse2-up`, SpriteKind.Mouse)
+
+
+
+
+
+
+#### 1. Create a Clicker
+
+| Activity | Create a Clicker (15 min) |
 |---|---|
-| ![Welcome to the Show thumbnail](/static/skillmap/star/star1.gif) | Create a game using talented animals and add points for each click. |
-| Blocks used | ``[info.startCountdown(10)]``<br/>``[info.changeScoreBy(1)]``<br/>``[info.onCountdownEnd(function () {})]``<br/>``[game.over(true)]``|
-| Solution option | [Welcome to the Show Project](https://makecode.com/_d6TdD8VYPX1U) |
+| ![Create a Clicker thumbnail](/static/skillmap/balloon/balloon1.gif) | Learn to use MakeCode Arcade and create a simple clicker game. |
+| Blocks used | ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]`` <br/> ``[info.startCountdown(10)]``<br/>``[info.player1.changeScoreBy(1)]``|
+| Solution option | [Create a Clicker Project](https://makecode.com/_d6TdD8VYPX1U) |
 
-#### 2. Join the Audience
+#### 2. Burst Your Balloon
 
-| Activity | Join the Audience (10 min) |
+| Activity | Burst Your Balloon (15 min) |
 |---|---|
-| ![Join the Audience thumbnail](/static/skillmap/star/star2.gif) | This game builds off the last level, adding an animated audience sprite<br/>that toggles as you press and release the (A) button. |
-| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]``<br/>``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``|
-| Solution option | [Join the Audience Project](https://makecode.com/_WY823cfoyTwj) |
+| ![Burst Your Balloon thumbnail](/static/skillmap/balloon/balloon2.gif) | Add a balloon that inflates as you click! You'll be shocked to see how full it gets before time runs out. |
+| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]`` <br/> `` [let myMouse: Sprite = null; myMouse.setPosition(50, 93)]`` <br/> ``[scaling.scaleByPixels(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)]`` <br/>``[game.over(true)]`` |
+| Solution option | [Burst Your Balloon Project](https://makecode.com/_WY823cfoyTwj) |
 
-#### 3. The Biggest Star
+#### 3. Pump it Up
 
-| Activity | The Biggest Star (15 min) |
+| Activity | Pump it Up (20 min) |
 |---|---|
-| ![The Biggest Star thumbnail](/static/skillmap/star/star3.gif) | Building off the previous project, this level adds projectiles that<br/>take the form of stars spraying from the audience with each press of the button. |
+| ![Pump it Up thumbnail](/static/skillmap/balloon/balloon3.gif) | Add a carnival character to pump up your balloon! Can you beat the clock? |
 | Blocks used | ``[sprites.create(img`.`, SpriteKind.Player).startEffect(effects.spray, 100)]`` |
-| Solution option | [The Biggest Star Project](https://makecode.com/_3gs2oWTCHXuw) |
+| Solution option | [Pump it Up Project](https://makecode.com/_3gs2oWTCHXuw) |
 
 
-#### 4. Coming Up Roses
+#### 4. Two Player Party
 
-| Activity | Coming Up Roses (15 min) |
+| Activity | Two Player Party (30 min) |
 |---|---|
-| ![Coming Up Roses thumbnail](/static/skillmap/star/star4.gif) | Building off the previous project, this level utilizes an undercover array to shower the performer with both stars and roses. |
+| ![Two Player Party thumbnail](/static/skillmap/balloon/balloon4.gif) | Remove your timer and add a second player to create a real-life competition! |
 | Blocks used | ``[let projectile = sprites.createProjectileFromSprite([img`.`, img`.`]._pickRandom(), clapping, randint(-100, 100), randint(-50, -100))]`` |
-| Solution option | [Coming Up Roses Project](https://makecode.com/_aK1XDbamoH20) |
+| Solution option | [Two Player Party Project](https://makecode.com/_aK1XDbamoH20) |
 
 
 ##### Game Mod Ideas
 
-After students complete Talent Show they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try:
+After students complete **Burstin' Balloons** they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try:
 
-- Change the animals in the audience to a row of clapping hands
-- Add a new sprite to the stage. Who would your performer be?
-- Add more things for the audience to throw, like confetti or hearts
+- Change the animals pumping up the balloons to something new.
+- Make the balloons get bigger even faster for a quicker game.
+- Add a sound-effect each time the balloon gets bigger.
 
 
 ### What's Next?
 
-After completing Talent Show, students can move on to the following activities:
+After completing Burstin' Balloons, students can move on to the following activities:
 
 * [Build a Space Explorer](https://arcade.makecode.com/--skillmap#docs:/skillmap/space)
-* [Jungle Monkey Jump](https://arcade.makecode.com/--skillmap#docs:/skillmap/jungle)
+* [Monster Racer](https://arcade.makecode.com/--skillmap#docs:/skillmap/racer)
+
+
+```package
+simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
+arcade-text=github:microsoft/arcade-text/
+pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling
+`

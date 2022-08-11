@@ -1,6 +1,6 @@
 # Whack'em All
 * name: Whack'em All
-* description: Create your own 'Whack-a-Mole' style of carnival game.
+* description: Create your own 'Whack-a-Mole' style of carnival game!
 * infoUrl: skillmap/educator-info/mole-map-info
 * bannerUrl: /static/skillmap/mole/mole3.gif
 * backgroundurl: https://raw.githubusercontent.com/clkantner/whack/master/skillmap2-final.gif
@@ -22,8 +22,8 @@
 
 * name: Mole Hunt
 * type: tutorial
-* description: Learn to use MakeCode Arcade and add a moving character sprite to your project.
-* tags: intermediate, sprite, clicker
+* description: Learn to use MakeCode Arcade and add a sneaky mole sprite to your project.
+* tags: easy, sprite, random
 * next: mole2
 * url: /skillmap/mole/mole1
 * imageUrl: /static/skillmap/mole/mole1.gif
@@ -34,8 +34,8 @@
 ### mole2
 * name: Hammer Time
 * type: tutorial
-* description: Add a rubber hammer to tag the mole and earn points!
-* tags: intermediate, clicker, sprite, events
+* description: Add a rubber hammer to tag the mole and earn points! How many points can you get before time runs out?
+* tags: easy, sprite, overlap, points
 * next: mole3
 * url: /skillmap/mole/mole2
 * imageUrl: /static/skillmap/mole/mole2.gif
@@ -45,7 +45,7 @@
 ### mole3
 * name: Get Animated
 * type: tutorial
-* description: Add sound and animation to polish your game!
+* description: Finish your game by adding a thrilling carnival sound and real frame-by-frame animations!
 * tags: easy, clicker, sprite, buttons
 * next: mole-cert
 * url: /skillmap/mole/mole3

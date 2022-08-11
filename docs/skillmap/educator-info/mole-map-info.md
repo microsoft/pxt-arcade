@@ -6,7 +6,7 @@ The **Whack-em-Mole** skillmap introduces simple game design and computer scienc
 
 In this set of activities, students will create a simple mole-chasing game with MakeCode Arcade.  This map is intended for students who are new to MakeCode with little or no previous coding experience.
 
-Designed for students between the ages of 8 & 13, this experience contains a total of 3 tutorials (approximating 45 minutes of instruction).  At the end the learning path, students receive a certificate of completion and a badge.
+Designed for students between the ages of 8 & 13, this experience contains a total of 3 tutorials (approximating 45 minutes of instruction).  At the end of the learning path, students receive a certificate of completion and a badge.
 
 |                 | Minutes* |  Key Concepts |
 | --------------- | -------- |  ------------ |
