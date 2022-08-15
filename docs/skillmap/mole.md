@@ -63,8 +63,8 @@
 * imageUrl: /static/skillmap/certificates/mole-cert.png
 * position: 2 0
 * actions:
-    * map: [Finish the Last Level!](/skillmap/mole)
-    * editor: [Edit Your Project with a Full Toolbox](/)
+    * map: [Create Another Carnival Game](/skillmap/balloon)
+    * editor: [Add to This Project](/)
 * rewards:
     * certificate:
         * url: /static/skillmap/certificates/mole-cert.pdf

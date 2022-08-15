@@ -138,7 +138,7 @@ Finally, let's animate the rubber hammer each time it overlaps the mole.
 
 - :rotate: From the ``||animation: Animation||`` category, grab <br/>
 
-```blocks
+```block
     animation.runImageAnimationHammer(
     myHammer,
     [img`.`],
@@ -202,7 +202,7 @@ When your rubber hammer overlaps the mole, points should show up in the top-righ
 
 **🎡 You've done it! 🎡**
 
-You have finished your Whack-em-Mole game!
+You've finished your Whack-em-Mole game!
 
 When you're ready, click **Done** to return to the skillmap to claim your badge and share your game with friends and family.
 
