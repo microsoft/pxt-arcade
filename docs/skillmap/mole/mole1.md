@@ -124,11 +124,11 @@ scene.setBackgroundImage(assets.image`grid`)
 
 ## {6. Check Your Game!}
 
-Now it's time to try your game!
+Now it's time to take a look!
 
 - :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
 
-You should see a green box with 9 purple holes for the mole to hide in.
+You should see a green background with 9 purple holes for the mole to hide in.
 
 - :mouse pointer: Don't forget to click **Next** to get back to the instructions.
 
@@ -273,7 +273,7 @@ game.onUpdateInterval(1000, function () {
 ```block
 sprites.move_to_random_hole_on_grid(mySprite)
 ```
-and snap it into the ``||game: on game update every [1000] ms||`` block that's already in the workspace.
+and snap it into the empty ``||game: on game update every [1000] ms||`` block that's already in the workspace.
 
 
 
@@ -299,11 +299,11 @@ game.onUpdateInterval(1000, function () {
 
 ## {11. Check Your Game!}
 
-Try your project again!
+Look at your project again!
 
 - :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
 
-You should see the mole jumping between the holes every second.
+You should see the mole changing spots every second.
 
 (Don't forget to click **Next** to get back to the instructions.)
 

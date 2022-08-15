@@ -6,7 +6,7 @@
 
 Your code from the last activity is already in the workspace.
 
-Let's add a hammer to tag our mole with **SPRITES** and **EVENTS**.
+Let's use **SPRITES** and **EVENTS** to add a rubber hammer that can tag our mole.
 
 
 ![Whack-em-Mole](/static/skillmap/mole/mole2.gif "Let's add a hammer to make our game more exciting." )
@@ -53,11 +53,11 @@ choose **rename variable** to set the title to ``||variables:myHammer||``.
 
 ~hint Why add "my" to names? 💡
 
-Did you notice that we've called our variables **mySprite** and **myHammer**? Adding "my" to the beginning of a variable name isn't required, but it's a common practice.
+Did you notice that we've called our variables **mySprite** and **myHammer**? Adding "my" to the beginning of a simple word name isn't required, but it's a common practice.
 
 Coders do this to avoid using "reserved" words as variable names.
 
-In languages like JavaScript or Python, some words have special meanings and using those special words as variables can cause trouble.  Adding "my" to the beginning of simple words helps make sure that you don't accidentally overload a word that you'll need for something else later.
+In languages like JavaScript or Python, some words have special meanings and using those special words in other ways can cause trouble.  Adding "my" to the beginning of simple words helps make sure that you don't accidentally overload a word that is needed for something else later.
 
 hint~
 
@@ -183,6 +183,23 @@ Let's make this game more exciting by adding points when the hammer overlaps the
 ```
 
 and snap it into **the empty** ``||sprites: on sprite overlaps otherSprite||`` block container already in the workspace.
+
+
+
+~hint What does that mean? 🕵🏽
+
+When we mention a block that's already in the workspace, we'll give you the _name_ of what you need, and highlight it in the same color as the block you will find in the toolbox.
+
+For example, this text: <br/>
+``||sprites: on sprite overlaps otherSprite||``<br/>
+is trying to direct you toward this block:<br/>
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) { })
+```
+
+
+hint~
 
 
 ~hint Show me how! 🕵🏽
@@ -317,6 +334,8 @@ Play your game!
 - :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
 
 You should get one point each time you tag the mole with the rubber hammer, then the mole should hop to another spot. Time should run out after 15 seconds and your high score should display!
+
+**Can you get 15 points before the timer runs out?**
 
 
 ---
