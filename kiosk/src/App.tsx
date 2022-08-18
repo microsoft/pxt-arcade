@@ -35,8 +35,7 @@ function onHashChange() {
   const hash = window.location.hash;
   const match = /pub:((?:\d{5}-\d{5}-\d{5}-\d{5})|(?:_[a-zA-Z0-9]+))/.exec(hash);
   if (match) {
-    kioskSingleton.launchGame(match[1]);
-    kioskSingleton.lockMenu = true;
+    kioskSingleton.launchGame(match[1], true);
   }
 }
 

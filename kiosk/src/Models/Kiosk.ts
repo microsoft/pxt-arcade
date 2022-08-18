@@ -13,13 +13,14 @@ export class Kiosk {
     onGameSelected!: () => void;
     onNavigated!: () => void;
     state: KioskState = KioskState.MainMenu;
-    lockMenu = false;
+
 
     private readonly highScoresLocalStorageKey: string = "HighScores";
     private initializePromise: any;
     private siteElements: ChildNode[] = [];
     private intervalId: any;
     private readonly allScoresStateKey: string = "S/all-scores";
+    private lockedGameId?: string;
 
     async downloadGameList(): Promise<void> {
         let url = configData.GameDataUrl;
@@ -134,6 +135,11 @@ export class Kiosk {
     gameOver(skipHighScore?: boolean): void {
         if (this.state !== KioskState.PlayingGame) { return; }
 
+        if (this.lockedGameId) {
+            this.launchGame(this.lockedGameId);
+            return;
+        }
+
         this.gamepadManager.keyboardManager.clear();
 
         if (!skipHighScore && this.mostRecentScores && this.mostRecentScores.length && (this.selectedGame!.highScoreMode !== "None")) {
@@ -145,7 +151,7 @@ export class Kiosk {
     }
 
     escapeGame(): void {
-        if (this.state !== KioskState.PlayingGame || this.lockMenu) { return; }
+        if (this.state !== KioskState.PlayingGame || this.lockedGameId) { return; }
         this.gamepadManager.keyboardManager.clear();
         this.exitGame(KioskState.MainMenu);
     }
@@ -162,8 +168,9 @@ export class Kiosk {
         this.siteElements.forEach(item => gamespace.appendChild(item));
     }
 
-    launchGame(gameId: string): void {
+    launchGame(gameId: string, preventReturningToMenu = false): void {
         if (this.state === KioskState.PlayingGame) { return; }
+        if (preventReturningToMenu) this.lockedGameId = gameId;
         this.navigate(KioskState.PlayingGame);
 
         this.siteElements = [];
