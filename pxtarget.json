@@ -34,7 +34,7 @@
                 "id": "google",
                 "name": "Google",
                 "icon": "/static/providers/google-logo.svg",
-                "identity": true,
+                "identity": false,
                 "redirect": true,
                 "order": 2
             }
