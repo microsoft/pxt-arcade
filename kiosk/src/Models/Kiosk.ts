@@ -13,6 +13,7 @@ export class Kiosk {
     onGameSelected!: () => void;
     onNavigated!: () => void;
     state: KioskState = KioskState.MainMenu;
+    lockMenu = false;
 
     private readonly highScoresLocalStorageKey: string = "HighScores";
     private initializePromise: any;
@@ -144,7 +145,7 @@ export class Kiosk {
     }
 
     escapeGame(): void {
-        if (this.state !== KioskState.PlayingGame) { return; }
+        if (this.state !== KioskState.PlayingGame || this.lockMenu) { return; }
         this.gamepadManager.keyboardManager.clear();
         this.exitGame(KioskState.MainMenu);
     }
