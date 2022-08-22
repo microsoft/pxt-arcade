@@ -1,4 +1,4 @@
-# Do it yourself (DIY) Hardware
+# Do-it-yourself (DIY) Hardware
 
 ## Make your own Arcade game system
 
