@@ -164,7 +164,8 @@
         "Arts and Crafts": "arts-and-crafts",
         "Lessons": "lessons",
         "Courses": "courses",
-        "Hardware": "hardware",
+        "Arcade Compatible Devices": "arcade-devices",
+        "DIY Hardware": "diy-hardware",
         "How to Make a Game Videos": "how-to-make-a-game",
         "John Park's Workshop": "john-parks-workshop"
     },
