@@ -77,7 +77,7 @@
 * next: forest6
 * position: 3 2
 * actions:
-    * map: [Try the Jungle Monkey Skillmap](/skillmap/jungle)
+    * map: [Try the Jungle Jump Skillmap](/skillmap/jungle)
     * map: [Try the Space Explorer Skillmap](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox] (/)
 * rewards:

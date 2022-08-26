@@ -2,9 +2,9 @@
 ### @explicitHints true
 
 
-## {Video Intro @showdialog}
+## Whack-the-Mole Intro @showdialog
 
-![Whack-em-All Carnival Intro](youtube:LwzffWleZug)
+![Whack-the-Mole Carnival Intro](youtube:LwzffWleZug)
 
 
 
@@ -18,18 +18,7 @@ on what to do.
 
 - :lightbulb: Don't miss anything! Scroll down to the **double lines** before moving to the next instruction.
 
-
-- :mouse pointer: When you're done reading, click **Next** to move to the next instruction.
-
----
----
-
-
-## {3. Tips and Tricks}
-
-**Tips and Tricks**
-
-Be on the lookout for secret information!
+- :lightbulb: Be on the lookout for secret information!
 
 
 ~hint Click here to reveal hidden info 🕵🏽
@@ -41,15 +30,15 @@ Each one gives extra info, tips, or tricks.
 
 hint~
 
-
-
-- :mouse pointer: Once you see the double lines, you can click **Next** to move to the next instruction.
+- :mouse pointer: When you're done reading, click **Next** to move to the next instruction.
 
 ---
 ---
 
 
-## {4. Your First Block}
+
+
+## {3. Your First Block}
 
 **Ready to start coding?**
 
@@ -84,14 +73,14 @@ scene.setBackgroundImage(img`.`)
 ```
 
 
-## {5. Choose the Grid BG}
+## {4. Choose the Grid BG}
 
 
 Let's add the grassy grid from the **My Assets** library.
 
 
 - :mouse pointer: Click the empty square in the<br/>
-``||scene: set background image to []||``.<br/>
+``||scene: set background image to []||``<br/>
 block that's already in your workspace. <br/><br/>
 The image editor will open automatically.<br/><br/>
 
@@ -101,6 +90,20 @@ The image editor will open automatically.<br/><br/>
 ![Choose the background that looks like a grid full of holes.](/static/skillmap/mole/grid.png "Select the grid from My Assets.")
 and click **Done**.
 
+~hint What does this mean? 🕵🏽
+
+When we mention a block that's already in the workspace, we'll give you the _name_ of what you need, and highlight it in the same color as the block you will find in the toolbox.
+
+For example, this text: <br/>
+``||scene: set background image to []||``<br/>
+is trying to direct you toward this block:<br/>
+
+```blocks
+scene.setBackgroundImage(img`.`)
+```
+
+
+hint~
 
 
 ~hint Show me how! 🕵🏽
@@ -122,7 +125,7 @@ scene.setBackgroundImage(assets.image`grid`)
 
 
 
-## {6. Check Your Game!}
+## {5. Check Your Game!}
 
 Now it's time to take a look!
 
@@ -148,7 +151,7 @@ hint~
 
 
 
-## {7. Add the Sprite}
+## {6. Add the Sprite}
 
 
 Now we'll add the mole **SPRITE** to our game.
@@ -163,7 +166,7 @@ Our mole will be a sprite, too.
 
 hint~
 
-<br/> <br/>
+<br/>
 
 - :paper plane: From the ``||sprites: Sprites||`` category **in the toolbox**, grab <br/>
 
@@ -193,7 +196,7 @@ let mySprite = sprites.create(img`.`, SpriteKind.Player)
 
 
 
-## {8. Add the Mole}
+## {7. Add the Mole}
 
 
 - :mouse pointer: Click the **empty square** to open the image editor, then click the **My Assets** tab at the top to see the sprites for this tutorial.
@@ -224,7 +227,7 @@ let mySprite = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 ```
 
 
-## {9. Make the Mole Move}
+## {8. Make the Mole Move}
 
 Let's get the mole jumping from hole to hole every second.
 
@@ -236,7 +239,7 @@ game.onUpdateInterval(500, function () {
 ```
 and snap it into **an empty area** of the workspace.
 
-- :mouse pointer: Click the number **500** and change it to **1 second** (which will change to 1000 ms.)
+- :mouse pointer: Click the number **500** and change it to **1 second** (which is the same as 1000 ms.)
 
 This is an **EVENT** block and it will cause an action to happen each time a second passes.
 
@@ -266,7 +269,7 @@ game.onUpdateInterval(1000, function () {
 ```
 
 
-## {10. Make the Mole Move pt. 2}
+## {9. Make the Mole Move pt. 2}
 
 
 - :paper plane: From the ``||sprites: Sprites||`` category **in the toolbox**, grab  <br/>
@@ -297,7 +300,7 @@ game.onUpdateInterval(1000, function () {
 
 
 
-## {11. Check Your Game!}
+## {10. Check Your Game!}
 
 Look at your project again!
 
@@ -314,11 +317,11 @@ You should see the mole changing spots every second.
 
 
 
-## {12. Finale}
+## {11. Finale}
 
 **🎉 Way to Go 🎉**
 
-You have started your very own Whack-em-Mole game.
+You have started your very own Whack-the-Mole game.
 
 When you're ready, click **Done** to return to the skillmap so you can add the rubber hammer that will let you tag the mole!
 
@@ -398,7 +401,7 @@ namespace scene {
     //% color="#4b6584"
     //% blockId=add_label_to
     //% block="add label $myLabel to $myPosition" of window
-    //% myLabel.defl="Whack-em-Mole"
+    //% myLabel.defl="Whack-the-Mole"
     //% myPosition.defl=areas.Bottom
     //% inlineInputMode=inline
     export function add_label_to(myLabel: string, myPosition: areas) {

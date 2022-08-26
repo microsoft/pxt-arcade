@@ -1,4 +1,4 @@
-# Whack'em All
+# Whack-the-Mole
 * name: Whack'em All
 * description: Create your own 'Whack-a-Mole' style of carnival game!
 * infoUrl: skillmap/educator-info/mole-map-info
@@ -13,7 +13,7 @@
 * tags: easy, beginner, carnival
 
 
-## whackem-all
+## whack-the-Mole
 * layout: manual
 
 
@@ -71,5 +71,5 @@
         * preview: /static/skillmap/certificates/mole-cert.png
     * completion-badge:
         * image: /static/badges/badge-mole.png
-        * name: Whack'em Mole
+        * name: Whack-the-Mole
 

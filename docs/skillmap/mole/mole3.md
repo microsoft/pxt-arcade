@@ -9,7 +9,7 @@ Your code from the last activity is already in the workspace.
 Let's make our game more professional by adding sound and animation.
 
 
-![Whack-em-Mole](/static/skillmap/mole/mole3.gif "Let's add sound and an animation for the hammer." )
+![Whack-the-Mole](/static/skillmap/mole/mole3.gif "Let's add sound and an animation for the hammer." )
 
 
 
@@ -21,7 +21,7 @@ Let's make our game more professional by adding sound and animation.
 
 - :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
 
-You should be able to use the arrows to control your rubber hammer and earn 1 point each time it overlaps with the mole.
+You should be able to use the on-screen joystick or the arrow keys on your keyboard to move the hammer around the screen and earn 1 point each time it overlaps the mole!
 
 💡 **Tip:** _If your code isn't working and you can't figure out why, click "Replace my code" to replace the blocks in your workspace with new starter code._
 
@@ -33,12 +33,12 @@ You should be able to use the arrows to control your rubber hammer and earn 1 po
 
 ## {3. Add the Label}
 
-First, let's add a label to the bottom of the booth so everyone knows what they're playing.
+First, let’s add a label to the bottom our Whack-the-Mole Carnival game booth.
 
 - :tree: From the ``||scene: Scene||`` category in the toolbox, grab <br/>
 
 ```block
-scene.add_label_to("Whack-em-Mole", areas.Bottom)
+scene.add_label_to("Whack-the-Mole", areas.Bottom)
 ```
 
 and snap it inside and at the very **end** of the
@@ -66,8 +66,8 @@ scene.setBackgroundImage(assets.image`grid`)
 mySprite = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
 controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
-info.startCountdownGame(15, winTypes.Score, effects.confetti)
-scene.add_label_to("Whack-em-Mole", areas.Bottom)
+info.startCountdownGame(15, winTypes.Score)
+scene.add_label_to("Whack-the-Mole", areas.Bottom)
 ```
 
 
@@ -119,7 +119,7 @@ Let's test the game in the bigger window!
 
 - :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
 
-You should see the mole hopping between holes, and you should be able to move the hammer with your arrow keys or the joypad.  You should also see the Whack-em-Mole label and be able to hear a sound each time the rubber hammer tags the mole.
+You should see the mole hopping between holes, and you should be able to move the hammer with your arrow keys or the joypad.  You should also see the Whack-the-Mole label and be able to hear a sound each time the rubber hammer tags the mole.
 
 - :mouse pointer: Don't forget to click **Next** to get back to the instructions when you're done playing.
 
@@ -202,7 +202,7 @@ When your rubber hammer overlaps the mole, points should show up in the top-righ
 
 **🎡 You've done it! 🎡**
 
-You've finished your Whack-em-Mole game!
+You've finished your Whack-the-Mole game!
 
 When you're ready, click **Done** to return to the skillmap to claim your badge and share your game with friends and family.
 
@@ -231,7 +231,7 @@ scene.setBackgroundImage(assets.image`grid`)
 mySprite = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
 controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
-info.startCountdownGame(15, winTypes.Score, effects.confetti)
+info.startCountdownGame(15, winTypes.Score)
 
 game.onUpdateInterval(1000, function () {
     sprites.move_to_random_hole_on_grid(mySprite)
@@ -305,7 +305,7 @@ namespace scene {
     //% color="#4b6584"
     //% blockId=add_label_to
     //% block="add label $myLabel to $myPosition" of window
-    //% myLabel.defl="Whack-em-Mole"
+    //% myLabel.defl="Whack-the-Mole"
     //% myPosition.defl=areas.Bottom
     //% inlineInputMode=inline
     export function add_label_to(myLabel: string, myPosition: areas) {

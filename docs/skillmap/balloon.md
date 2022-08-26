@@ -6,7 +6,7 @@
 * backgroundurl: /static/skillmap/backgrounds/mouse-comp.gif
 * primarycolor: #ffffff
 * secondarycolor: #fff53d
-* tertiarycolor: #bbeffe
+* tertiarycolor: #96ecfd
 * completednodecolor: #4a8397
 * highlightcolor: #ff0000
 * allowcodecarryover: true
@@ -64,8 +64,8 @@
 * next: balloon4
 * position: 2 2
 * actions:
-    * map: [Finish the Last Level!](/skillmap/balloon)
-    * editor: [Edit Your Project with a Full Toolbox](/)
+    * map: [Finish the Last Level](/skillmap/balloon)
+    * editor: [Add More to This Game](/)
 * rewards:
     * certificate:
         * url: /static/skillmap/certificates/balloon-cert.pdf
