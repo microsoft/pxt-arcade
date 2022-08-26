@@ -9,7 +9,7 @@ Your code from the last activity is already in the workspace.
 Let's use **SPRITES** and **EVENTS** to add a rubber hammer that can tag our mole.
 
 
-![Whack-em-Mole](/static/skillmap/mole/mole2.gif "Let's add a hammer to make our game more exciting." )
+![Whack-the-Mole](/static/skillmap/mole/mole2.gif "Let's add a hammer to make our game more exciting." )
 
 
 
@@ -51,15 +51,6 @@ Then click **Done**.
 - :mouse pointer: Click the ``||variables:mySprite2||`` title inside the block and
 choose **rename variable** to set the title to ``||variables:myHammer||``.
 
-~hint Why add "my" to names? 💡
-
-Did you notice that we've called our variables **mySprite** and **myHammer**? Adding "my" to the beginning of a simple word name isn't required, but it's a common practice.
-
-Coders do this to avoid using "reserved" words as variable names.
-
-In languages like JavaScript or Python, some words have special meanings and using those special words in other ways can cause trouble.  Adding "my" to the beginning of simple words helps make sure that you don't accidentally overload a word that is needed for something else later.
-
-hint~
 
 ~hint Show me how! 🕵🏽
 
@@ -83,7 +74,7 @@ myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
 
 ## {4. Move the Hammer}
 
-We need to be able to move the hammer with the arrows.
+We need to be able to move the hammer around the screen to chase the mole.
 
 
 - :controller: From the ``||controller: Controller||`` category, grab <br/>
@@ -123,7 +114,7 @@ Let's test the action in the bigger game window!
 
 - :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
 
-You should see the mole hopping between holes, and you should be able to move the hammer with your arrow keys or the joypad.
+Try using the on-screen joypad or the arrow keys on your keyboard to move the hammer around the screen.
 
 - :mouse pointer: Don't forget to click **Next** to get back to the instructions when you're done playing.
 
@@ -136,7 +127,7 @@ You should see the mole hopping between holes, and you should be able to move th
 ## {6. Add the Overlap}
 
 
-Did you notice that nothing happened when the hammer tagged the mole?
+Did you notice that nothing happened when the hammer overlapped the mole?
 
 That's because we haven't created an **EVENT** for that yet!
 
@@ -184,22 +175,6 @@ Let's make this game more exciting by adding points when the hammer overlaps the
 
 and snap it into **the empty** ``||sprites: on sprite overlaps otherSprite||`` block container already in the workspace.
 
-
-
-~hint What does that mean? 🕵🏽
-
-When we mention a block that's already in the workspace, we'll give you the _name_ of what you need, and highlight it in the same color as the block you will find in the toolbox.
-
-For example, this text: <br/>
-``||sprites: on sprite overlaps otherSprite||``<br/>
-is trying to direct you toward this block:<br/>
-
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) { })
-```
-
-
-hint~
 
 
 ~hint Show me how! 🕵🏽
@@ -321,7 +296,7 @@ scene.setBackgroundImage(assets.image`grid`)
 mySprite = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
 controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
-info.startCountdownGame(15, winTypes.Score, effects.confetti)
+info.startCountdownGame(15, winTypes.Score)
 ```
 
 
@@ -349,7 +324,7 @@ You should get one point each time you tag the mole with the rubber hammer, then
 
 **🥳 You got it! 🥳**
 
-You have a playable Whack-em-Mole game.
+You have a playable Whack-the-Mole game.
 
 When you're ready, click **Done** to return to the skillmap so you can add sound and animation to your game!
 
@@ -444,7 +419,7 @@ namespace scene {
     //% color="#4b6584"
     //% blockId=add_label_to
     //% block="add label $myLabel to $myPosition" of window
-    //% myLabel.defl="Whack-em-Mole"
+    //% myLabel.defl="Whack-the-Mole"
     //% myPosition.defl=areas.Bottom
     //% inlineInputMode=inline
     export function add_label_to(myLabel: string, myPosition: areas) {

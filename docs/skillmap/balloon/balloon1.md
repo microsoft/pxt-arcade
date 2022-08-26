@@ -2,7 +2,7 @@
 
 ### @explicitHints true
 
-## {Video Intro @showdialog}
+## Burstin' Balloons Intro @showdialog
 
 ![Balloon Bursting Carnival Intro](youtube:ttlam7rkh1U)
 

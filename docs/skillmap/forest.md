@@ -84,8 +84,8 @@
         * image: /static/badges/badge-forest.png
         * name: Save the Forest
 * actions:
-    * map: [Try the Jungle Monkey Skillmap](/skillmap/jungle)
-    * map: [Try the Space Explorer Skillmap](/skillmap/space)
+    * map: [Try Jungle Jump](/skillmap/jungle)
+    * map: [Try Space Explorer](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox] (/)
 
 

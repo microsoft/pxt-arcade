@@ -46,7 +46,7 @@
 * position: 3 0
 * actions:
     * map: [Try Space Explorer](/skillmap/space)
-    * editor: [Edit Your Project with a Full Toolbox](/)
+    * editor: [Mod this Project](/)
 * rewards:
     * certificate:
         * url: /static/skillmap/peachtree/peach-cert.pdf
