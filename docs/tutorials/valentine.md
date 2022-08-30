@@ -46,7 +46,7 @@ You can add a block to check for a win or loss each time the game updates.
 **Exciting!**
 
 How does the game feel? <br/>
-Too hard?  To easy?
+Too hard?  Too easy?
 
 Change the difficulty by adjusting how many arrows the Valentines throw.
 
