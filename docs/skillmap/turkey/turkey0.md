@@ -1,82 +1,93 @@
 # Get to Know MakeCode
 
 
-
 ## Intro Video @showdialog
 
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/inbkRGvVo0A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
+![Welcome to Turkey Day!](youtube:inbkRGvVo0A)
 
 
-## 2. Lay of the Land
+
+## {2. Lay of the Land}
 
 **Let's take a tour of MakeCode.**
 
+- :comment: This is the **instruction panel**. It has directions
+on what to do.
+
+
+- :lightbulb: Don't miss anything! Scroll down to the **double lines** before moving to the next instruction.
+
+- :lightbulb: Be on the lookout for secret information!
+
+
+~hint Click here to reveal hidden info 🕵🏽
+
+<br/>
+Look for clues like this when you read instructions.
+
+Each one gives extra info, tips, or tricks.
+
+hint~
+
+- :mouse pointer: When you're done reading, click **Next** to move to the next instruction.
+
+---
 ---
 
-- :comment: This is the **instruction panel**. This is where you'll find directions on what to do.
-
-- :mouse pointer: Click **Next** to move to the next instruction.
 
 
-
-## 3. Toolbox
+## {3. Toolbox}
 
 
 - :comment: The panel with the colorful category names is called the
  **toolbox**. Click categories in the toolbox to find the blocks you need.
 
 
+~hint See an example 💡
 
-<details>
-<summary>Click here for details.</summary>
 ![Here's where to look for the toolbox](/static/skillmap/turkey/toolbox.gif "The toolbox is to the left of the workspace.")
-</details>
 
-
-
-- :mouse pointer: Click **Next** to move to the next instruction.
-
-
-
-## 4. Workspace
+hint~
 
 
 - :comment: The panel on the right is called the **workspace**.
  That's where you'll drag the code you want to use in your program.
 
 
-<details>
-<summary>Click here for details.</summary>
+~hint  See an example 💡
+
 ![Here's where to look for the workspace](/static/skillmap/turkey/workspace.gif "The workspace is on the right.")
-</details>
+
+hint~
 
 
 - :mouse pointer: Click **Next** to move to the next instruction.
 
+---
+---
 
 
 
-## 5. Game Window
+## {5. Game Window}
 
 
 - :comment: In the bottom corner, there's a
  **game window**. Click it to play the game you're working on.
 
 
-<details>
-<summary>Click here for details.</summary>
+~hintClick here for details.</summary>
 ![Here's where to look for the game window](/static/skillmap/turkey/game.gif "The game window is in the same panel as the instructions.")
-</details>
+hint~
 
 
 - :mouse pointer: Click **Next** to move to the next instruction.
 
+---
+---
 
 
 
-## 6. Get Started!
+## {6. Get Started!}
 
 **We need a turkey!!** <br/>
 🦃 🦃 🦃
@@ -85,16 +96,20 @@ In MakeCode, moving characters are called
 [__*sprites*__](#sprote "2-D images that move on the screen").
 
 
-<details>
-<summary>What is a **sprite**?</summary>
+~hint What is a **sprite**?
+
 In digital game design, a sprite is a 2-dimensional object that can move and change.
 Think of it as a picture that can do something and has extra information inside.
-</details>
+
+hint~
 
 - :mouse pointer: Click **Next** to discover how to add your turkey sprite.
 
+---
+---
 
-## 7. Pick a Turkey
+
+## {7. Pick a Turkey}
 
 
 Let's create a turkey sprite and get it moving.
@@ -110,14 +125,18 @@ _(Keep scrolling until you have read all the instructions 👇👇👇)_
 - :paint brush: To choose the turkey hero, click the empty grey box,
 then toggle to **My Assets** and choose the first turkey, **player**.
 
+~hint Click here to see how!
 
-
-<details>
-<summary>Click here to see how!</summary>
 ![Pick player from My Assets](/static/skillmap/turkey/set-sprite.gif "Toggle to My Assets and choose player")
-</details>
+
+hint~
 
 - :mouse pointer: Click **Next** to see a recap of what you've learned!
+
+
+---
+---
+
 
 ```blocks
 // @highlight
@@ -125,7 +144,7 @@ let mySprite = sprites.create(assets.image`player`, SpriteKind.Player)
 ```
 
 
-## Finale
+## {Finale}
 
 🔥 **Way to go!**🔥
 

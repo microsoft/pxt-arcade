@@ -1,61 +1,60 @@
-# Mole Hunt
+# Hammer Time
 ### @explicitHints true
 
 
-## {Video Intro @showdialog}
+## {Intro @showdialog}
 
-![Whack'em All Carnival Intro](youtube:ow6P7wTs3Uk)
+Your code from the last activity is already in the workspace.
+
+Let's use **SPRITES** and **EVENTS** to add a rubber hammer that can tag our mole.
+
+
+![Whack-the-Mole](/static/skillmap/mole/mole2.gif "Let's add a hammer to make our game more exciting." )
 
 
 
-## {2. Read Instructions}
 
-**🚩 Start with the basics 🚩**
+## {2. Play Your Game}
 
-- :comment: This tutorial will show you how to get your mole moving. When you're done, move on to the next tutorial to add the hammer!
 
-~hint Click here to reveal hidden info 🕵️
+**Refresh your memory around what your code does.**
 
-<br/>
-Look for clues like this when you read instructions.
+- :binoculars: Take a look at the **mini game window**. You should see a mole that hops from hole to hole every second.
 
-Each one gives extra info, tips, or tricks.
 
-hint~
+💡 **Tip:** _If your code isn't working and you can't figure out why, click "Replace my code" to replace the blocks in your workspace with new starter code._
+
 
 ---
 ---
 
 
+## {3. Add the Hammer}
 
+Let's add another **SPRITE** to act as our rubber hammer.
 
-## {3. Background}
-
-**Ready to start coding?**
-
-Let's place a grid in the background where the mole can hide!
-
-
-- :tree: From the ``||scene: Scene||`` category **in the toolbox**, grab <br/>
-``||scene: set background image to []||`` </br>
-and snap it inside the empty ``||loops: on start||`` block already in the workspace.
-
-
-~hint What does that mean? 🕵️
-
-In this tutorial, the instructions will give you the names of the blocks you need, and highlight them in the same color as the block you will find in the toolbox.
-
-For example, this text: <br/>
-``||scene: set background image to []||``<br/>
-is trying to direct you toward this block:
+- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
 
 ```block
-scene.setBackgroundImage(img`.`)
+let mySprite2 = sprites.create(img`.`, SpriteKind.Player)
 ```
 
-And the rest of the instruction wants you to do this:
+and snap it inside and at the very **end** of the
+``||loops: on start||``
+block container that's already in your workspace.
 
-![Find the background block](/static/skillmap/mole/add-background.gif "Add your block to the `on start` container.")
+- :mouse pointer: Click the empty square and when the image editor opens, switch to **My Assets** to select the **hammer** sprite.
+![Choose the image that looks like a hammer.](/static/skillmap/mole/hammer.png "Select the rubber hammer from My Assets.")
+Then click **Done**.
+
+
+- :mouse pointer: Click the ``||variables:mySprite2||`` title inside the block and
+choose **rename variable** to set the title to ``||variables:myHammer||``.
+
+
+~hint Show me how! 🕵🏽
+
+![Choose the hammer from My Assets](/static/skillmap/mole/choose-hammer.gif "Change from the Editor to My Assets and select the hammer.")
 
 hint~
 
@@ -65,68 +64,89 @@ hint~
 #### ~ tutorialhint
 
 ```blocks
-scene.setBackgroundImage(img`.`)
-```
-
-
-## {4. Choose the Grid BG}
-
-
-Now we'll select the grid from the **My Assets** library by clicking on the block.
-
-
-- :mouse pointer: Click the empty square in <br/>
-``||scene: set background image to []||``.<br/>
-The image editor will open automatically.
-
-- :mouse pointer: Click the **My Assets** tab at the top of the image editor to see the sprite assets for this tutorial.
-
-- :mouse pointer: Select the **grid** background <br/>
-![Choose the background that looks like a grid full of holes.](/static/skillmap/mole/grid.png "Select the grid from My Assets.")
-and click **Done**.
-
-
-
-~hint Show me how! 🕵️
-
-
-![Choose the background that looks like a grid full of holes.](/static/skillmap/mole/choose-background.gif "Add your block to the `on start` container.")
-
-hint~
-
----
----
-
-#### ~ tutorialhint
-
-```blocks
+let mySprite: Sprite = null
+let myHammer: Sprite = null
 scene.setBackgroundImage(assets.image`grid`)
+mySprite = sprites.create(assets.image`mole`, SpriteKind.Enemy)
+myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
 ```
 
 
-## {5. Add the Mole}
+## {4. Move the Hammer}
+
+We need to be able to move the hammer around the screen to chase the mole.
 
 
-Now we'll add the **mole** sprite to our game.
-
-- :paper plane: From the ``||sprites: Sprites||`` category **in the toolbox**, grab <br/>
-``||variables: set [mySprite] to sprite [ ] of kind [Player]||`` </br>
-and snap it inside at **the bottom** of the ``||loops: on start||`` block already in the workspace.
-
-- :mouse pointer: Click the **empty square** to open the image editor, then click the **My Assets** tab at the top to see the sprites for this tutorial.
-
-- :mouse pointer: Select the **mole** sprite <br/>
-![Choose the image that looks like a mole head.](/static/skillmap/mole/mole.png "Select the mole from My Assets.")
-and click **Done**.
-
-- :mouse pointer: Click the kind ``||sprites: Player||`` and change it to  ``||sprites: Enemy||`` so we know the sprite isn't on our side!
+- :controller: From the ``||controller: Controller||`` category, grab <br/>
+```block
+controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
+```
+and snap it in at **the end** of the ``||loops: on start||`` block already in the workspace.
 
 
+~hint Click here to see how 🕵🏽
 
-~hint Show me how! 🕵️
+![Look under Controller for the block](/static/skillmap/mole/add-controller.gif "Drag out the controller block to use later.")
 
 
-![Choose the image that looks like a mole head.](/static/skillmap/mole/choose-mole.gif "Add a mole to your game.")
+hint~
+
+---
+---
+
+
+#### ~ tutorialhint
+
+```blocks
+let mySprite: Sprite = null
+let myHammer: Sprite = null
+scene.setBackgroundImage(assets.image`grid`)
+mySprite = sprites.create(assets.image`mole`, SpriteKind.Enemy)
+myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
+controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
+```
+
+
+
+## {5. Check Your Game!}
+
+Let's test the action in the bigger game window!
+
+- :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
+
+Try using the on-screen joypad or the arrow keys on your keyboard to move the hammer around the screen.
+
+- :mouse pointer: Don't forget to click **Next** to get back to the instructions when you're done playing.
+
+---
+---
+
+
+
+
+## {6. Add the Overlap}
+
+
+Did you notice that nothing happened when the hammer overlapped the mole?
+
+That's because we haven't created an **EVENT** for that yet!
+
+
+- :paper plane: From the ``||sprites: Sprites||`` category, grab <br/>
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) { })
+```
+
+and drag it to an **empty** area of the workspace.
+
+- :mouse pointer: Change the second kind from ``||sprites: Player||`` to ``||sprites: Enemy||`` so the event will be triggered when the **Player overlaps the Enemy** (when the hammer overlaps the mole).
+
+
+~hint Show me how! 🕵🏽
+
+
+![Add an overlap block.](/static/skillmap/mole/add-overlap.gif "On sprite of kind Player overlaps otherSprite of kind Enemy")
 
 hint~
 
@@ -136,21 +156,177 @@ hint~
 #### ~ tutorialhint
 
 ```blocks
-scene.setBackgroundImage(assets.image`grid`)
-let mySprite = sprites.create(assets.image`mole`, SpriteKind.Enemy)
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) { })
+```
+
+
+
+## {7. Add a Point}
+
+
+Let's make this game more exciting by adding points when the hammer overlaps the mole!
+
+
+- :id card: From the ``||info: Info||`` category, grab <br/>
+
+```block
+    info.changeScoreBy(1)
+```
+
+and snap it into **the empty** ``||sprites: on sprite overlaps otherSprite||`` block container already in the workspace.
+
+
+
+~hint Show me how! 🕵🏽
+
+
+![Add points to your game.](/static/skillmap/mole/add-points.gif "change score by 1")
+
+hint~
+
+
+---
+---
+
+#### ~ tutorialhint
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+})
 ```
 
 
 
 
-## {12. Finale}
+## {8. Check Your Game Again!}
 
-**🎉 Way to Go 🎉**
+Let's test the points in the bigger game window!
 
-You have started your very own clicker game!
-Try it in the console and see if you can get more than **40 points**.
+- :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
 
-When you're finished playing, come back to the instructions and click the **Done** button to return to the skillmap and continue building your amazing **🎈carnival game🎈**!
+When your rubber hammer overlaps the mole, you should see points start to show up in the top-right corner.
+
+- :mouse pointer: Don't forget to click **Next** to get back to the instructions when you're done playing.
+
+---
+---
+
+
+## {9. Too Many Points}
+
+Did you notice that the points added up really quickly when the rubber hammer stayed above the mole? Let's fix that.
+
+
+- :paper plane: From the ``||sprites: Sprites||`` category, grab <br/>
+
+```block
+    sprites.move_to_random_hole_on_grid(mySprite)
+```
+
+and snap it into **the end** of the ``||sprites: on sprite overlaps otherSprite||`` block container already in the workspace.
+
+Now, when the rubber hammer tags the mole, the mole will quickly run away!
+
+
+~hint Show me how! 🕵🏽
+
+![Move the mole.](/static/skillmap/mole/overlap-move.gif "Add another move mySprite to random area block to the project")
+
+hint~
+
+---
+---
+
+#### ~ tutorialhint
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+    sprites.move_to_random_hole_on_grid(mySprite)
+})
+```
+
+
+
+
+## {10. Check Your Game!}
+
+Try your game again!
+
+- :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
+
+You should get one point each time you tag the mole with the rubber hammer, then the mole should hop to another spot.
+
+
+---
+---
+
+
+
+## {11. Timer}
+
+Finally, let's add a timer to keep the game exciting.
+
+
+- :id card: From the ``||info: Info||`` category, grab <br/>
+
+```block
+info.startCountdownGame(15, winTypes.Score)
+```
+
+and snap it into **the end** of the ``||loops: on start||`` block container already in the workspace.
+
+
+~hint Show me how! 🕵🏽
+
+![Add timer.](/static/skillmap/mole/countdown.gif "start countdown 15 (s) and game over high score")
+
+hint~
+
+---
+---
+
+#### ~ tutorialhint
+
+```blocks
+let mySprite: Sprite = null
+let myHammer: Sprite = null
+scene.setBackgroundImage(assets.image`grid`)
+mySprite = sprites.create(assets.image`mole`, SpriteKind.Enemy)
+myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
+controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
+info.startCountdownGame(15, winTypes.Score)
+```
+
+
+
+
+## {12. Play your game!}
+
+Play your game!
+
+- :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
+
+You should get one point each time you tag the mole with the rubber hammer, then the mole should hop to another spot. Time should run out after 15 seconds and your high score should display!
+
+**Can you get 15 points before the timer runs out?**
+
+
+---
+---
+
+
+
+
+
+## {13. Finale}
+
+**🥳 You got it! 🥳**
+
+You have a playable Whack-the-Mole game.
+
+When you're ready, click **Done** to return to the skillmap so you can add sound and animation to your game!
 
 ---
 ---
@@ -164,23 +340,374 @@ arcade-text=github:microsoft/arcade-text/
 ```
 
 
-```ghost
+```template
 
+let mySprite: Sprite = null
 scene.setBackgroundImage(assets.image`grid`)
-let mySprite = sprites.create(assets.image`mole`, SpriteKind.Enemy)
+mySprite = sprites.create(assets.image`mole`, SpriteKind.Enemy)
+
 game.onUpdateInterval(1000, function () {
-    mySprite.setPosition(simplified.chooseRandomNumber(28, 80, 130), simplified.chooseRandomNumber(21, 53, 85))
+    sprites.move_to_random_hole_on_grid(mySprite)
 })
 
 ```
 
 
 
+
 ```customts
 
+enum winTypes {
+    //% block="win game"
+    Win,
+    //% block="lose game"
+    Lose,
+    //% block="high score"
+    Score,
+    //% block="multiplayer"
+    Multi
+}
+
+enum speeds {
+    //% block="fast"
+    Fast,
+    //% block="medium"
+    Med,
+    //% block="slow"
+    Slow
+}
+
+enum areas {
+    //% block="top"
+    Top,
+    //% block="middle"
+    Mid,
+    //% block="bottom"
+    Bottom
+}
+
+let textSprite: TextSprite = null
+//let fanfare: effects.BackgroundEffect = undefined;
+//let winStyle = winTypes.Score
+
+
+
+namespace animation {
+    /**
+    * Prefills animation block with hammer items
+    */
+    //% color="#03aa74"
+    //% blockId=run-image-animation-hammer
+    //% block="animate $sprite=variables_get(myHammer) frames $frames=animation_editor interval (ms) $frameInterval=timePicker loop $loop=toggleOnOff"
+    //% frameInterval.defl=100
+    //% group="Animate"
+    //% weight=100
+    //% help=animation/run-image-animation-hammer
+    export function runImageAnimationHammer(sprite: Sprite, frames: Image[], frameInterval?: number, loop?: boolean) {
+        const anim = new ImageAnimation(sprite, frames, frameInterval || 100, !!loop);
+        anim.init();
+    }
+}
+
+
+
+namespace scene {
+    /**
+    * Adds text to the top, middle, or bottom
+    * of screen as defined by circuis games
+    */
+    //% color="#4b6584"
+    //% blockId=add_label_to
+    //% block="add label $myLabel to $myPosition" of window
+    //% myLabel.defl="Whack-the-Mole"
+    //% myPosition.defl=areas.Bottom
+    //% inlineInputMode=inline
+    export function add_label_to(myLabel: string, myPosition: areas) {
+        textSprite = textsprite.create(myLabel)
+        if (myPosition == areas.Bottom) textSprite.setPosition(80, 110);
+        if (myPosition == areas.Mid) textSprite.setPosition(80, 60);
+        if (myPosition == areas.Top) textSprite.setPosition(80, 20);
+    }
+}
+
+namespace controller{
+
+    /**
+    * Combines a simple "move with arrows"
+    * and stay in screen
+    */
+    //% color="#d54322"
+    //% blockId=move_only_onscreen_with_arrows
+    //% block="move $thisSprite=variables_get(myHammer) on screen with speed $mySpeed"
+    //% mySpeed.defl=speeds.Fast
+    //% inlineInputMode=inline
+    export function move_only_onscreen_with_arrows(thisSprite: Sprite, mySpeed: speeds) {
+        thisSprite.setStayInScreen(true)
+        if (mySpeed == speeds.Fast) {
+            controller.moveSprite(thisSprite, 225, 225)
+        } else if (mySpeed == speeds.Med) {
+            controller.moveSprite(thisSprite, 175, 175)
+        } else {
+            controller.moveSprite(thisSprite, 100, 100)
+        }
+    }
+
+}
+
+namespace sprites {
+
+    /**
+    * Randomly moves mole to one of the holes on grid
+    */
+    //% color="#4b7bec"
+    //% blockId=move_to_random_hole_on_grid
+    //% block="move sprite $thisSprite=variables_get(mySprite) to random area"
+    //% inlineInputMode=inline
+    export function move_to_random_hole_on_grid(thisSprite: Sprite) {
+        thisSprite.setPosition(simplified.chooseRandomNumber(28, 80, 130), simplified.chooseRandomNumber(21, 53, 85))
+    }
+}
+
+namespace info {
+    let countdownInitialized = false;
+    /**
+     * Adds game end style to countdown
+     */
+    //% color="#cf6a87"
+    //% group=countdown
+    //% blockId=start_countdown_game
+    //% block="start countdown $myTime (s) and game over $winType || effect $winEffect"
+    //% myTime.defl=15
+    //% winType.defl=winTypes.Score
+    //% winEffect.defl=effects.confetti
+    //% inlineInputMode=inline
+    export function startCountdownGame(myTime: number, winType: winTypes, winEffect?: effects.BackgroundEffect) {
+        if (!winType)
+            winType = winTypes.Win;
+        if (!winEffect && winType != winTypes.Lose){
+            winEffect = effects.confetti;
+        }
+        else { winEffect = effects.melt;}
+        init(winType, winEffect);
+        info.startCountdown(myTime)
+
+    }
+
+    export function newGameOver(winStyle: winTypes, fanfare: effects.BackgroundEffect) {
+
+        // Prep default variables for different win types
+        let winnerNumber = 1;
+        let thisHigh = 0;
+
+        // Save all scores as relevant to the game.
+        info.saveAllScores();
+
+        // collect the scores before popping the scenes
+        const scoreInfo1 = info.player1.getState();
+        const scoreInfo2 = info.player2.getState();
+        const scoreInfo3 = info.player3.getState();
+        const scoreInfo4 = info.player4.getState();
+        const highScore = info.highScore();
+        const allScores = [scoreInfo1.score, scoreInfo2.score, scoreInfo3.score, scoreInfo4.score];
+
+        // Find player with highest score
+        for (let i = 0; i < 4; i++) {
+            if (allScores[i] > thisHigh) {
+                thisHigh = allScores[i];
+                winnerNumber = i+1;
+            }
+        }
+        // If highest score is higher than saved high, replace
+        if (thisHigh > highScore){
+            info.saveHighScore(); }
+
+
+        // releasing memory and clear fibers. Do not add anything that releases the fiber until background is set below,
+        // or screen will be cleared on the new frame and will not appear as background in the game over screen.
+        game.popScene();
+        game.pushScene();
+        scene.setBackgroundImage(screen.clone());
+
+        music.powerUp.play();
+
+        fanfare.startScreenEffect();
+
+        pause(400);
+
+        const overDialog = new GameOverDialog(true, thisHigh, highScore, winnerNumber, winStyle);
+        scene.createRenderable(scene.HUD_Z, target => {
+            overDialog.update();
+            target.drawTransparentImage(
+                overDialog.image,
+                0,
+                (screen.height - overDialog.image.height) >> 1
+            );
+        });
+        pause(500); // wait for users to stop pressing keys
+        overDialog.displayCursor();
+        game.waitAnyButton();
+        control.reset();
+
+    }
+
+    function init(winStyle: winTypes, fanfare: effects.BackgroundEffect) {
+        if (countdownInitialized) return;
+        countdownInitialized = true;
+
+        info.onCountdownEnd(function () {
+            if (winStyle == winTypes.Win) {
+                game.over(true, fanfare)
+            } else if (winStyle == winTypes.Lose) {
+                game.over(false, fanfare)
+            } else {
+                newGameOver(winStyle, fanfare);
+            }
+        })
+    }
+
+    export class GameOverDialog extends game.BaseDialog {
+        protected cursorOn: boolean;
+        protected isNewHighScore: boolean;
+
+        constructor(
+            protected win: boolean,
+            protected score?: number,
+            protected highScore?: number,
+            protected winnerNum?: number,
+            protected winStyle?: winTypes
+        ) {
+            super(screen.width, 46, img`
+        1 1 1
+        f f f
+        1 1 1
+        `);
+            this.cursorOn = false;
+            this.isNewHighScore = this.score > this.highScore;
+        }
+
+        displayCursor() {
+            this.cursorOn = true;
+        }
+
+        update() {
+            this.clearInterior();
+            this.drawTextCore();
+
+            if (this.cursorOn) {
+                this.drawCursorRow();
+            }
+        }
+
+        drawTextCore() {
+            const titleHeight = 8;
+            if (this.winStyle == winTypes.Multi){
+                this.image.printCenter(
+                    "Player " + this.winnerNum + " wins!",
+                    titleHeight,
+                    screen.isMono ? 1 : 5,
+                    image.font8
+                );
+
+                if (this.score !== undefined) {
+                    const scoreHeight = 23;
+                    const highScoreHeight = 34;
+                    const scoreColor = screen.isMono ? 1 : 2;
+
+                    this.image.printCenter(
+                        "Score:" + this.score,
+                        scoreHeight,
+                        scoreColor,
+                        image.font8
+                    );
+
+                    if (this.isNewHighScore) {
+                        this.image.printCenter(
+                            "New High Score!",
+                            highScoreHeight,
+                            scoreColor,
+                            image.font5
+                        );
+                    } else {
+                        this.image.printCenter(
+                            "HI:" + this.highScore,
+                            highScoreHeight,
+                            scoreColor,
+                            image.font8
+                        );
+                    }
+                }
+            }
+            else {
+                this.image.printCenter(
+                    "Great Job!",
+                    titleHeight,
+                    screen.isMono ? 1 : 5,
+                    image.font8
+                );
+
+                if (this.score !== undefined) {
+                    const scoreHeight = 23;
+                    const highScoreHeight = 34;
+                    const scoreColor = screen.isMono ? 1 : 2;
+
+                    this.image.printCenter(
+                        "Score:" + this.score,
+                        scoreHeight,
+                        scoreColor,
+                        image.font8
+                    );
+
+                    if (this.isNewHighScore) {
+                        this.image.printCenter(
+                            "New High Score!",
+                            highScoreHeight,
+                            scoreColor,
+                            image.font5
+                        );
+                    } else {
+                        this.image.printCenter(
+                            "HI:" + this.highScore,
+                            highScoreHeight,
+                            scoreColor,
+                            image.font8
+                        );
+                    }
+                }
+            }
+        }
+    }
+}
+
+namespace game {
+    /**
+     * Adds additional end game styles
+     */
+    //% color="#8854d0"
+    //% group=Gameplay
+    //% blockId=on_game_over_expanded
+    //% block="game over $winType || add effect $winEffect"
+    //% winType.defl=winTypes.Win
+    //% winEffect.defl=effects.confetti
+    //% inlineInputMode=inline
+    export function onGameOverExpanded(winStyle: winTypes, winEffect?: effects.BackgroundEffect) {
+        if (!winStyle)
+            winStyle = winTypes.Win;
+        if (!winEffect && winStyle != winTypes.Lose) {
+            winEffect = effects.confetti;
+        }
+        else { winEffect = effects.melt; }
+
+        if (winStyle == winTypes.Win) {
+            game.over(true, winEffect)
+        } else if (winStyle == winTypes.Lose) {
+            game.over(false, winEffect)
+        } else {
+            info.newGameOver(winStyle, winEffect);
+        }
+    }
+}
+
 namespace simplified {
-
-
     /**
      * Randomly chooses one of the parameter numbers
      *
@@ -206,6 +733,8 @@ namespace simplified {
         if (choice5) myList.push(choice5);
         return myList._pickRandom();
     }
+
+
 
 }
 
