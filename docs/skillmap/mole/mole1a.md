@@ -12,13 +12,12 @@
 
 **🎡 Start with Instructions 🎡**
 
-- :comment: This is the **instruction panel**. It has directions
+This is the **instruction panel**. It has directions
 on what to do.
 
+---
 
-- :lightbulb: Don't miss anything! Scroll down to the **double lines** before moving to the next instruction.
-
-- :lightbulb: Be on the lookout for secret information!
+Be on the lookout for secret information!
 
 
 ~hint Click here to reveal hidden info 🕵🏽
@@ -30,7 +29,7 @@ Each one gives extra info, tips, or tricks.
 
 hint~
 
-- :mouse pointer: When you're done reading, click **Next** to move to the next instruction.
+When you're done reading, click **Next** to move to the next instruction.
 
 ---
 ---
@@ -51,7 +50,6 @@ scene.setBackgroundImage(img`.`)
 ```
 and snap it inside the empty ``||loops: on start||`` block already in the workspace.
 
-
 ~hint Click here to see how 🕵🏽
 
 ![Look under Scene for the block you need](/static/skillmap/mole/add-bg-block.gif "Drag out the background block to fill later.")
@@ -62,65 +60,9 @@ and snap it inside the empty ``||loops: on start||`` block already in the worksp
 
 hint~
 
----
----
-
-
-#### ~ tutorialhint
-
-```blocks
-scene.setBackgroundImage(img`.`)
-```
-
-
-## {4. Choose the Grid BG}
-
-
-Let's add the grassy grid from the **My Assets** library.
-
-
-- :mouse pointer: Click the empty square in the<br/>
-``||scene: set background image to []||``<br/>
-block that's already in your workspace. <br/><br/>
-The image editor will open automatically.<br/>
-
-~hint What does this mean? 🕵🏽
-
-When we mention a block that's already in the workspace, we'll give you the _name_ of what you need, and highlight it in the same color as the block you will find in the toolbox.
-
-For example, this text: <br/>
-``||scene: set background image to []||``<br/>
-is trying to direct you toward this block:<br/>
-
-```block
-scene.setBackgroundImage(img`.`)
-```
-
-hint~
-
-- :mouse pointer: Click the **My Assets** tab at the top of the image editor to see the sprite assets for this tutorial.
-
-- :mouse pointer: Select the **grid** background <br/>
-![Choose the background that looks like a grid full of holes.](/static/skillmap/mole/grid.png "Select the grid from My Assets.")
-and click **Done**.
-
-
-
-~hint Show me how! 🕵🏽
-
-
-![Choose the background that looks like a grid full of holes.](/static/skillmap/mole/choose-bg.gif "Add your block to the `on start` container.")
-
-hint~
 
 ---
 ---
-
-#### ~ tutorialhint
-
-```blocks
-scene.setBackgroundImage(assets.image`grid`)
-```
 
 
 
@@ -141,9 +83,6 @@ You should see a green background with 9 purple holes for the mole to hide in.
 ![Look for the game window in the lower right](/static/skillmap/mole/game.gif "Click the mini game window to pop open the bigger game window.")
 
 hint~
-
-
-
 
 ---
 ---
@@ -171,7 +110,7 @@ hint~
 - :paper plane: From the ``||sprites: Sprites||`` category **in the toolbox**, grab <br/>
 
 ```block
-let mySprite = sprites.create(img`.`, SpriteKind.Player)
+let mole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 ```
 
 and snap it inside at **the bottom** of the ``||loops: on start||`` block already in the workspace.
@@ -187,44 +126,6 @@ hint~
 ---
 ---
 
-#### ~ tutorialhint
-
-```blocks
-scene.setBackgroundImage(assets.image`grid`)
-let mySprite = sprites.create(img`.`, SpriteKind.Player)
-```
-
-
-
-## {7. Add the Mole}
-
-
-- :mouse pointer: Click the **empty square** to open the image editor, then click the **My Assets** tab at the top to see the sprites for this tutorial.
-
-- :mouse pointer: Select the **mole** sprite <br/>
-![Choose the image that looks like a mole head.](/static/skillmap/mole/mole.png "Select the mole from My Assets.")
-and click **Done**.
-
-- :mouse pointer: Click the kind ``||sprites: Player||`` and change it to  ``||sprites: Enemy||`` so we know the sprite isn't on our side!
-
-
-
-~hint Show me how! 🕵🏽
-
-
-![Choose the image that looks like a mole head.](/static/skillmap/mole/choose-mole.gif "Add a mole to your game.")
-
-hint~
-
----
----
-
-#### ~ tutorialhint
-
-```blocks
-scene.setBackgroundImage(assets.image`grid`)
-let mySprite = sprites.create(assets.image`mole`, SpriteKind.Enemy)
-```
 
 
 ## {8. Make the Mole Move}
@@ -234,9 +135,10 @@ Let's get the mole jumping from hole to hole every second.
 - :circle: From the ``||game: Game||`` category **in the toolbox**, grab
 
 ```blocks
-game.onUpdateInterval(500, function () {
+game.onUpdateInterval(1000, function () {
 })
 ```
+
 and snap it into **an empty area** of the workspace.
 
 - :mouse pointer: Click the number **500** and change it to **1 second** (which is the same as 1000 ms.)
@@ -260,13 +162,7 @@ hint~
 ---
 ---
 
-#### ~ tutorialhint
 
-```blocks
-game.onUpdateInterval(1000, function () {
-
-})
-```
 
 
 ## {9. Make the Mole Move pt. 2}
@@ -289,13 +185,6 @@ hint~
 ---
 ---
 
-#### ~ tutorialhint
-
-```blocks
-game.onUpdateInterval(1000, function () {
-    sprites.move_to_random_hole_on_grid(mySprite)
-})
-```
 
 
 
@@ -329,6 +218,13 @@ When you're ready, click **Done** to return to the skillmap so you can add the r
 ---
 
 
+
+
+```blockconfig.local
+scene.setBackgroundImage(assets.image`grid`)
+game.onUpdateInterval(1000, function () { })
+let mole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
+```
 
 
 ```package

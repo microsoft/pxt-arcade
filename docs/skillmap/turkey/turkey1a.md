@@ -30,7 +30,16 @@ _(Don't forget to keep scrolling until you reach the bottom of this instruction.
 ---
 
 - :game: From the ``||controller: Controller||`` category in the toolbox, drag <br/>
-``||controller:move [mySprite] with buttons ⊕||`` <br/>
+
+
+```block
+controller.moveSprite(mySprite, 100, 0)
+```
+
+```blockconfig.local
+controller.moveSprite(mySprite, 100, 0)
+```
+
 to **the end** of the ``||loops:on start||`` container that's already in the workspace.
 
 
@@ -40,18 +49,19 @@ the
 argument to **0** so that the player won't hover up or down when you use the joypad.
 
 
-<details>
-<summary>What is **vy**?</summary>
+~hint  What is **vy**?
+
 In short, **vy** stands for "the **velocity** along the **y** axis," which refers
 to the rate of change of the sprite from top to bottom. By setting this value to **0**,
 the sprite will not be able to move up or down.
-</details>
+hint~
 
 
-<details>
-<summary>Show me how to complete these steps.</summary>
+~hint  Show me how to complete these steps.
+
+
 ![Move with controls](/static/skillmap/turkey/move-sprite.gif "Add the move sprite block")
-</details>
+hint~
 
 - :mouse pointer: Click **Next** when you're ready to try your game.
 
@@ -70,10 +80,10 @@ controller.moveSprite(mySprite, 100, 0)
 The turkey should move left when you click the left arrow and move
 right with the right arrow, but it should not move up or down.
 
-<details>
-<summary>How do I get to the game console?</summary>
+~hint  How do I get to the game console?
+
 ![Here's where to look for the game window](/static/skillmap/turkey/game.gif "The workspace is on the right.")
-</details>
+hint~
 
 - :mouse pointer: Click **Next** when you're ready to add gravity.
 
@@ -100,19 +110,19 @@ to **the end** of the <br/>
 replace **0** with something large, like **500**.
 
 
-<details>
-<summary>What is **ay**?</summary>
+~hint  What is **ay**?
+
 In short, **ay** stands for "the **acceleration** along the **y** axis," which refers
 to the change in speedfrom top to bottom. <br/>
 By setting this value
 to **500**, the sprite will be pulled from the top of the screen to the bottom, with an above average strength.
-</details>
+hint~
 
 
-<details>
-<summary>Show me how to complete these steps.</summary>
+~hint  Show me how to complete these steps.
+
 ![Move with controls](/static/skillmap/turkey/acceleration.gif "Add the move sprite block")
-</details>
+hint~
 
 - :mouse pointer: Click **Next** when you're ready to follow your turkey off-screen.
 
@@ -175,19 +185,19 @@ which looks like a purple line at the bottom of the square.
 ![the start tile](/static/skillmap/turkey/start-tile.png "the tile where the turkey should start")
 
 
-<details>
-<summary>What is a tile?</summary>
+~hint  What is a tile?
+
 A tile is a special 16px x 16px image square
 that can be used as a part of the background scene.
 Several of these tile squares are put together into one large **tilemap** that acts as the
 backdrop for this game!
-</details>
+hint~
 
 
-<details>
-<summary>Show me how to complete these steps.</summary>
+~hint  Show me how to complete these steps.
+
 ![Start the turkey on a tile](/static/skillmap/turkey/start-tile.gif "Choose the tile where the turkey should start")
-</details>
+hint~
 
 - :mouse pointer: Click **Next** when you're ready make the turkey jump!
 
@@ -223,10 +233,10 @@ so you can temporarily change the direction the turkey is traveling.
 
 
 
-<details>
-<summary>Show me how to complete these steps.</summary>
+~hint  Show me how to complete these steps.
+
 ![Add a jump on A press](/static/skillmap/turkey/jump.gif "Here's how to send the turkey upward")
-</details>
+hint~
 
 - :mouse pointer: Click **Next** when you're ready to give your game a try!
 

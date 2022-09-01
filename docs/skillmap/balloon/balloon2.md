@@ -20,7 +20,7 @@ Let's turn our game into a carnival using **EVENTS** and **SPRITES**.
 
 **Play the clicker game!**
 
-~hint How to open your bigger window 🕵🏽
+~hint How to open the bigger game window 🕵🏽
 
 ![Look for the game window in the lower right](/static/skillmap/balloon/game.gif "Click the mini game window to pop open the playable console.")
 
