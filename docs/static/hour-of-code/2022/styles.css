@@ -1,6 +1,39 @@
+
+
+@font-face {
+    font-family: 'InterBold';
+    src: url('Inter/static/Inter-Bold.ttf')
+        format('truetype');
+}
+
+
+@font-face {
+    font-family: 'NunitoRegular';
+    src: url('Nunito/static/Nunito-Regular.ttf')
+        format('truetype');
+}
+
+@font-face {
+    font-family: 'NunitoSemiBold';
+    src: url('Nunito/static/Nunito-SemiBold.ttf')
+        format('truetype');
+}
+
+@font-face {
+    font-family: 'NunitoBold';
+    src: url('Nunito/static/Nunito-Bold.ttf')
+        format('truetype');
+}
+
+@font-face {
+    font-family: 'NunitoExtraBold';
+    src: url('Nunito/static/Nunito-ExtraBold.ttf')
+        format('truetype');
+}
+
 body{
 
-    font-family: 'Nunito', sans-serif;
+    font-family: 'NunitoRegular', sans-serif;
     font-size: 22px;
     color: #ffffff;
     margin: 0;
@@ -10,7 +43,7 @@ body{
 }
 
 h2{
-    font-family: 'Nunito';
+    font-family: 'NunitoExtraBold';
     font-style: normal;
     font-weight: 800;
     font-size: 87px;
@@ -55,7 +88,7 @@ nav {
 }
 
 nav a{
-    font-family: 'Inter', sans-serif;
+    font-family: 'InterBold', sans-serif;
     font-size: 18px;
 }
 
@@ -116,7 +149,7 @@ nav ul li{
 }
 
 #hero h1{
-    font-family: 'Nunito', sans-serif;
+    font-family: 'NunitoBold', sans-serif;
     font-weight: bold;
     font-size: 147px;
     margin: 0;
@@ -151,7 +184,7 @@ nav ul li{
 }
 
 .card-item-title{
-    font-weight: bold;
+    font-family: 'NunitoBold';
 }
 .card img.thumbnail{
     width: 100%;
@@ -227,7 +260,8 @@ button, .btn{
     font-size: 22px;
     font-style: normal;
     padding: 15px;
-    font-weight: 500;
+    font-family: 'NunitoSemiBold';
+    /* font-weight: 500; */
     /* display: flex;
     align-items: center;
     justify-content: center; */
@@ -267,6 +301,14 @@ footer div img{
     font-size: .9rem;
     opacity: .9;
     max-width: 600px;
+}
+
+#social img{
+    cursor: pointer;
+}
+
+#social img:hover{
+    opacity: .9;
 }
 
 

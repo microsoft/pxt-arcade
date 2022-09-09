@@ -98,14 +98,28 @@
             type="text/css"
         /> -->
         
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet"> -->
+
 
 
         <link rel="stylesheet" href="static/hour-of-code/2022/styles.css" />
     
+        <script type="text/javascript">
+            function handleOnLoad() {
+                var langPicker = document.querySelector('#langpicker');
+                if (langPicker) {
+                    langPicker.remove();
+                }
+            }
+
+            function launchPage(url, tickEvent){
+                window.open(url, "blank");
+                window.pxtTickEvent(tickEvent);
+            }
+        </script>
     </head>
 
     <body id="root" class="root" onload="handleOnLoad()">
@@ -119,8 +133,14 @@
                 <img src="static/hour-of-code/2022/microsoftMakeCodeLogo.svg" alt="MakeCode Logo">
                 <nav>
                     <ul id="nav-items">
-                        <li><a href="#">HOUR OF CODE</a></li>
-                        <li><a href="#">ARCADE</a></li>
+                        <li><a 
+                            href="#" 
+                            onClick="launchPage('http://www.hourofcode.com', 'hourofcode2022.navigation.opportunities.hoc')"
+                            >HOUR OF CODE</a></li>
+                        <li><a 
+                            href="#" 
+                            onClick="launchPage('http://arcade.makecode.com', 'hourofcode2022.navigation.open.arcade')"
+                            >ARCADE</a></li>
                     </ul>
                 </nav>
             </header>
@@ -136,20 +156,26 @@
             </section>
             <section class="featured-list">
                 <div class="container container-grid">
-                    <div class="card">
+                    <div 
+                    class="card" 
+                    onClick="launchPage('http://www.google.com', 'hourofcode2022.skillmap.open.whackEmAll')">
                         <img id="startHere" src="static/hour-of-code/2022/startHere.png" alt="">
                         <div class="card-cta btn">Whack-Em-All</div>
                         <img class="thumbnail" src="static/hour-of-code/2022/gameImg_whack_em_all.png" alt="Whack-Em-All game screenshot">
                         <div class="card-item-title">Beginner level</div>
                         <div>A classic game of hitting moles in holes</div>
                     </div>
-                    <div class="card">
+                    <div 
+                    class="card"
+                    onClick="launchPage('http://www.google.com', 'hourofcode2022.skillmap.open.burstinBalloons')">
                         <div class="card-cta btn">Burstin’ Balloons</div>
                         <img class="thumbnail" src="static/hour-of-code/2022/gameImg_ballon.png" alt="Burstin’ Balloons game screenshot">
                         <div class="card-item-title">Intermediate level</div>
                         <div>Have a race to fill your balloon first</div>
                     </div>
-                    <div class="card">
+                    <div 
+                    class="card"
+                    onClick="launchPage('http://www.google.com', 'hourofcode2022.skillmap.open.targetBlaster')">
                         <div class="card-cta btn">Target Blaster</div>
                         <img class="thumbnail" src="static/hour-of-code/2022/gameImg_target.png" alt="Target Blaster game screenshot">
                         <div class="card-item-title">Advanced level</div>
@@ -163,7 +189,9 @@
                         <h2>Calling all teachers</h2>
                         <p>Bring Hour of Code™ into your classroom with games that make coding fun for you and your kids — no hardware or downloads required.</p>
                         <p> Whether you’ve got an hour or a week, we’ll get you started with creative tutorials, customizable lesson plans, and teacher tranings that fit into your schedule.</p>
-                        <button>Teacher resources <img src="static/hour-of-code/2022/arrow.png" alt=""></button>
+                        <button 
+                        onClick="launchPage('http://www.google.com', 'hourofcode2022.skillmap.educator')">
+                        Teacher resources <img src="static/hour-of-code/2022/arrow.png" alt=""></button>
                     </div>
                     <div>
                         <img class="rowImg" src="static/hour-of-code/2022/boothAni.gif" alt="">
@@ -201,12 +229,14 @@
                     <h3>Beyond Hour of Code™</h3>
                     <div>Create and code year-round with Microsoft MakeCode </div>
                     <div class="container-grid">
-                        <div class="card">
+                        <div class="card"
+                        onClick="launchPage('http://arcade.makecode.com', 'hourofcode2022.footer.open.arcade')">
                             <img class="thumbnail" src="static/hour-of-code/2022/arcadeImage.png" alt="Arcade image">
                             <div class="card-item-title">Arcade</div>
                             <div>Create characters, build video games, and play with friends.</div>
                         </div>
-                        <div class="card">
+                        <div class="card"
+                        onClick="launchPage('http://makecode.microbit.org', 'hourofcode2022.footer.open.microbit')">
                             <img class="thumbnail" src="static/hour-of-code/2022/microbitImage.png" alt="microbit image">
                             <div class="card-item-title">micro:bit</div>
                             <div>Program sounds, effects, and more onto a hand-held computer.</div>
@@ -219,11 +249,26 @@
                     <img src="static/hour-of-code/2022/red-pixel-heart-vmx.png" alt="">
                 </div>
                 <div id="social">
-                    <img src="static/hour-of-code/2022/social/twitter.png" alt="twitter">
-                    <img src="static/hour-of-code/2022/social/youtube.png" alt="youtube">
-                    <img src="static/hour-of-code/2022/social/instagram.png" alt="instagram">
-                    <img src="static/hour-of-code/2022/social/twitch.png" alt="twitch">
-                    <img src="static/hour-of-code/2022/social/tik_tok.png" alt="tik tok">
+                    <img 
+                        src="static/hour-of-code/2022/social/twitter.png" 
+                        alt="twitter"
+                        onClick="launchPage('https://twitter.com/MSMakeCode', 'hourofcode2022.social.twitter')">
+                    <img 
+                        src="static/hour-of-code/2022/social/youtube.png" 
+                        alt="youtube"
+                        onClick="launchPage('https://www.youtube.com/c/MicrosoftMakeCode', 'hourofcode2022.social.youtube')">
+                    <img 
+                        src="static/hour-of-code/2022/social/instagram.png" 
+                        alt="instagram"
+                        onClick="launchPage('https://www.instagram.com/msmakecode', 'hourofcode2022.social.instagram')">
+                    <img 
+                        src="static/hour-of-code/2022/social/twitch.png" 
+                        alt="twitch"
+                        onClick="launchPage('https://www.twitch.tv/msmakecode', 'hourofcode2022.social.twitch')">
+                    <img 
+                        src="static/hour-of-code/2022/social/tik_tok.png" 
+                        alt="tik tok"
+                        onClick="launchPage('https://www.tiktok.com/@msmakecode', 'hourofcode2022.social.tiktok')">
                 </div>
                 <p class="container hoc-statement">
                     The <a href="http://www.hourofcode.com" target="_blank">'Hour of Code™'</a> is a nationwide initiative by <a href="https://www.csedweek.org/"  target="_blank">Computer Science Education Week</a> and <a href="https://code.org/"  target="_blank">Code.org</a> to introduce millions of students to one hour of computer science and computer programming.
@@ -234,7 +279,13 @@
             </footer>
         </main>
 
-         <!-- @include tracking.html -->
+
+
+        
+        
+        
+        
+        <!-- @include tracking.html -->
         <!-- @include tickevent.html -->
 
         <!-- TODO: update usabilia for HoC 2021 -->
