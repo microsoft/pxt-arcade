@@ -87,7 +87,7 @@
     {
         "name": "DIY Hardware",
         "url": "/diy-hardware",
-        "imageUrl": "/static/hardware/meowbit.png"
+        "imageUrl": "/static/hardware/raspberry-pi/wooden-cabinet/gallery.jpg"
     },
     {
         "name": "How to Make a Game Videos",
