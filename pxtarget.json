@@ -376,7 +376,7 @@
                 "codalTarget": {
                     "name": "codal-nrf52833-dk",
                     "url": "https://github.com/mmoskal/codal-nrf52833-dk",
-                    "branch": "v2.0.0",
+                    "branch": "v2.0.1",
                     "type": "git"
                 },
                 "codalBinary": "NRF52840_DK",
