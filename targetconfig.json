@@ -117,7 +117,8 @@
             "joylabz/makeymakey-makecode-arcade-extension": {
                 "preferred": true,
                 "tags": [ "Hardware" ]
-            }
+            },
+            "code-ninjas-home-office/game-building-session-tutorials": {}
         },
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
