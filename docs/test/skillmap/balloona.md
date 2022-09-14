@@ -49,7 +49,7 @@
 * tags: easy, clicker, sprite, buttons
 * next: balloon-cert
 * url: /skillmap/balloon/balloon3a
-* imageUrl: /static/skillmap/backgrounds/mouse-comp.png
+* imageUrl: /static/skillmap/balloon/balloon3.gif
 * position: 1 2
 
 

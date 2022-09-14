@@ -667,7 +667,7 @@ namespace game {
     //% color="#8854d0"
     //% group=Gameplay
     //% blockId=on_game_over_expanded
-    //% block="game over $winType || add effect $winEffect"
+    //% block="game over $winStyle || add effect $winEffect"
     //% winType.defl=winTypes.Win
     //% winEffect.defl=effects.confetti
     //% inlineInputMode=inline
