@@ -21,7 +21,10 @@ Let's add more **SPRITES** and **EVENTS** to our carnival game!
 
 Press the (A) button (or **space bar**) as fast as you can.  You should see a balloon that gets bigger and bigger until it crosses the line and wins the game.
 
-~hint What if it doesn't work? 💡
+~hint My game doesn't work ⚠️
+
+---
+
 
 If your code doesn't work, start by looking to see if you can figure out what is going wrong.  Make sure each block is in the correct event container.
 
@@ -417,14 +420,19 @@ namespace scene {
     */
     //% color="#4b6584"
     //% blockId=add_label_to
-    //% block="add label $myLabel to $myPosition" of window
+    //% block="add label $myLabel to $myPosition of window || $myColor"
     //% myLabel.defl="Whack-the-Mole"
+    //% myColor.shadow="colorindexpicker"
+    //% myColor.defl=4
     //% myPosition.defl=areas.Bottom
     //% inlineInputMode=inline
-    export function add_label_to(myLabel: string, myPosition: areas) {
-        textSprite = textsprite.create(myLabel)
+    export function add_label_to(myLabel: string, myPosition: areas, myColor?:number) {
+        if (!myColor)
+            myColor = 4;
+
+        textSprite = textsprite.create(myLabel, 0, myColor)
         if (myPosition == areas.Bottom) textSprite.setPosition(80, 110);
-        if (myPosition == areas.Mid) textSprite.setPosition(80, 60);
+        if (myPosition == areas.Mid) textSprite.setPosition(80, 50);
         if (myPosition == areas.Top) textSprite.setPosition(80, 20);
     }
 }

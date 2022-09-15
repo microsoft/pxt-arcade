@@ -11,23 +11,26 @@
 ## {2. Read Instructions}
 
 
-**Tips and Tricks**
+**🎡 Start with Instructions 🎡**
+
+This is the **instruction panel**. It has directions
+on what to do.
+
+---
 
 Be on the lookout for secret information!
 
 
 ~hint Click here to reveal hidden info 🕵🏽
 
----
-
+<br/>
 Look for clues like this when you read instructions.
 
 Each one gives extra info, tips, or tricks.
 
 hint~
 
-
-Open the box above to see the information inside.
+When you're done reading, click **Next** to move to the next instruction.
 
 ---
 ---
@@ -37,7 +40,7 @@ Open the box above to see the information inside.
 
 **Ready to start coding?**
 
-Let's make something happen each time you press the (A) button in the game window using **EVENTS**!
+Let's make something happen using **EVENTS**!
 
 
 - :game: From the ``||controller: Controller||`` category **in the toolbox**, grab <br/>
@@ -86,7 +89,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 Now we need to add points when the (A) button is clicked in the game window.
 
-This will be the **ACTION** that goes with the **EVENT**.
+This will be the **ACTION** that goes with our **EVENT**.
 
 
 - :id card: From the ``||info: Info||`` category in the toolbox, grab <br/>
@@ -188,7 +191,7 @@ info.startCountdownGame(20, winTypes.Score)
 You have started your very own clicker game!
 Try it in the bigger game window and see if you can get more than **40 points**.
 
-When you're finished playing, come back to the instructions and click the **Done** button to return to the skillmap and continue building your amazing **🎈carnival game🎈**!
+When you're finished playing, come back to the instructions and click the **Done** button to return to the skillmap and continue building your amazing <br/>**🎈carnival game🎈**!
 
 ---
 ---
@@ -259,14 +262,19 @@ namespace scene {
     */
     //% color="#4b6584"
     //% blockId=add_label_to
-    //% block="add label $myLabel to $myPosition" of window
+    //% block="add label $myLabel to $myPosition of window || $myColor"
     //% myLabel.defl="Whack-the-Mole"
+    //% myColor.shadow="colorindexpicker"
+    //% myColor.defl=4
     //% myPosition.defl=areas.Bottom
     //% inlineInputMode=inline
-    export function add_label_to(myLabel: string, myPosition: areas) {
-        textSprite = textsprite.create(myLabel)
+    export function add_label_to(myLabel: string, myPosition: areas, myColor?:number) {
+        if (!myColor)
+            myColor = 4;
+
+        textSprite = textsprite.create(myLabel, 0, myColor)
         if (myPosition == areas.Bottom) textSprite.setPosition(80, 110);
-        if (myPosition == areas.Mid) textSprite.setPosition(80, 60);
+        if (myPosition == areas.Mid) textSprite.setPosition(80, 50);
         if (myPosition == areas.Top) textSprite.setPosition(80, 20);
     }
 }
