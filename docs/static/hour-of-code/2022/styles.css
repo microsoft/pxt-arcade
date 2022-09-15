@@ -194,7 +194,7 @@ nav ul li{
 
 .featured-list{
     margin: 0;
-    padding: 75px;
+    padding: 75px 75px 0px 75px;
     background: linear-gradient(180deg, #1C7100 60%, #0000AA 50%);
     display: flex;
     justify-content: center;
@@ -244,6 +244,16 @@ nav ul li{
 
 .col-2 img.rowImg{
     width: 750px;
+}
+
+.mini-col-1{
+    text-align: center;
+    max-width: 400px;
+    padding:50px;
+}
+
+.mini-col-1 button{
+    display: inline-block;
 }
 
 /* UI */
