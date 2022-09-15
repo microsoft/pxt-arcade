@@ -21,7 +21,9 @@ This tutorial will help you turn your game into a two-player event!
 
 Press the (A) button or **space bar** as fast as you can.  You should see a mouse pumping up a balloon that gets bigger and bigger until it crosses the line and wins the game.
 
-~hint What if it doesn't work? 💡
+~hint My game doesn't work ⚠️
+
+---
 
 If your code doesn't work, start by looking to see if you can figure out what is going wrong.  Make sure each block is in the correct event container.
 
@@ -80,7 +82,17 @@ Follow the steps from previous levels to add a second player that reacts to the 
 block to the workspace, then add a point for **player 2** each time it's clicked.
 
 
-~hint Remind me... 🕵🏽
+~hint Tell me more... 🕵🏽
+
+- :paper plane: From the ``||controller: Controller||`` category in the toolbox, grab the<br/>
+``||controller: on [B] button [pressed]||`` <br/>
+bundle and drop it onto an empty area of your workspace.
+
+
+hint~
+
+
+~hint Show me... 🕵🏽
 
 
 ![Balloon Bursting Carnival Final Level - Add B](youtube:HtJt9nSHO-o?start=14&end=47)
@@ -245,8 +257,8 @@ bundle and drop it into an empty area of the workspace.
 - :mouse pointer: Click the empty box and choose **mouse2-up** from **My Assets**.
 
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab another <br/>
-``||sprites: set [myBalloon] image to [ ]||`` <br/>
-blocks and snap it into the <br/>
+``||sprites: set [myMouse2] image to [ ]||`` <br/>
+block and snap it into the <br/>
 ``||controller: on [B] button [Pressed]||`` <br/>
 block already in your workspace.
 
@@ -356,9 +368,9 @@ controller.B.onEvent(ControllerButtonEvent.Released, function () {
 
 Grab a friend and have them press the (A) button or **space bar** while you press the (B) button or **enter** key.  Who makes it to the top first?
 
-💡 ** Tip:** _Now that you have someone to race against, you can right-click and choose "Delete Blocks" to delete_ <br/>
-``||info: start countdown [20] (s)||``<br/>
-_from_ ``||loops: on start||``.
+💡 ** Tip:** _Now that you have someone to race against, you can right-click <br/>
+``||info: start countdown [20] (s) and game over [high score]||``<br/>
+inside ``||loops: on start||`` and choose **Delete Blocks**.
 
 
 ---
@@ -372,11 +384,13 @@ Last step!
 
 - :lightbulb: Add a label to the booth so everyone knows the name of the game!
 
+**Play your finished game a few times!  Who can get the best 2 out of three?**
+
 
 ~hint Tell me more... 🕵🏽
 
 - :up-down: From the ``||scene: Scene||`` category in the toolbox, grab <br/>
-``||scene: add label [Burstin' Balloons] to [Middle] of window || `` <br/>
+``||scene: add label [Burstin' Balloons] to [middle] of window || `` <br/>
 and snap it into the **top** of the ``||loops: on start||``
 block already in the workspace.
 

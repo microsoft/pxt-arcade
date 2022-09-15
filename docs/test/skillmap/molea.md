@@ -25,7 +25,7 @@
 * description: Learn to use MakeCode Arcade and add a sneaky mole sprite to your project.
 * tags: easy, sprite, random
 * next: mole2
-* url: /skillmap/mole/mole1a
+* url: /test/skillmap/mole/mole1a
 * imageUrl: /static/skillmap/mole/mole1.gif
 * position: -1 1
 
@@ -37,7 +37,7 @@
 * description: Add a rubber hammer to tag the mole and earn points! How many points can you get before time runs out?
 * tags: easy, sprite, overlap, points
 * next: mole3
-* url: /skillmap/mole/mole2a
+* url: /test/skillmap/mole/mole2a
 * imageUrl: /static/skillmap/mole/mole2.gif
 * position: 0 1
 
@@ -48,7 +48,7 @@
 * description: Finish your game by adding a thrilling carnival sound and real frame-by-frame animations!
 * tags: easy, clicker, sprite, buttons
 * next: mole-cert
-* url: /skillmap/mole/mole3a
+* url: /test/skillmap/mole/mole3a
 * imageUrl: /static/skillmap/mole/mole3.gif
 * position: 1 1
 
