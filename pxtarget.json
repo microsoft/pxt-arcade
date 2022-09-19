@@ -374,21 +374,15 @@
             },
             "compileService": {
                 "codalTarget": {
-                    "name": "codal-nrf52833-dk",
-                    "url": "https://github.com/mmoskal/codal-nrf52833-dk",
-                    "branch": "v2.0.2",
+                    "name": "codal-microbit-v2",
+                    "url": "https://github.com/lancaster-university/codal-microbit-v2",
+                    "branch": "nosd",
                     "type": "git"
                 },
-                "codalBinary": "NRF52840_DK",
-                "serviceId": "codal2nrf52840",
+                "codalBinary": "MICROBIT",
+                "serviceId": "mbcodal2",
                 "dockerImage": "pext/yotta:latest",
-                "yottaConfig": {
-                    "pxt": {
-                        "board": {
-                            "id": "BOARD_ID_NRF52833"
-                        }
-                    }
-                }
+                "yottaConfigCompatibility": true
             }
         },
         "rp2040": {
