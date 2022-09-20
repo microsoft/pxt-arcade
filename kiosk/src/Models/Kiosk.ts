@@ -2,7 +2,7 @@ import { GamepadManager } from "./GamepadManager";
 import { HighScore } from "./HighScore";
 import { GameData } from "./GameData";
 import { KioskState } from "./KioskState";
-import configData from "../config.json"
+import configData from "../config.json";
 import { runInThisContext } from "vm";
 
 export class Kiosk {
@@ -13,7 +13,6 @@ export class Kiosk {
     onGameSelected!: () => void;
     onNavigated!: () => void;
     state: KioskState = KioskState.MainMenu;
-
 
     private readonly highScoresLocalStorageKey: string = "HighScores";
     private initializePromise: any;
@@ -35,6 +34,7 @@ export class Kiosk {
 
         try {
             this.games = (await response.json()).games;
+            this.games.push()
         }
         catch (error) {
             throw new Error(`Unable to process game list downloaded from "${url}": ${error}`);
@@ -68,6 +68,7 @@ export class Kiosk {
         }
 
         this.initializePromise = this.downloadGameList();
+        // this.games.unshift(new GameData("00000-00000-00000-00000", "Add Your Game", "Add your game to the kiosk", "None"));
 
         this.intervalId = setInterval(() => this.gamePadLoop(), configData.GamepadPollLoopMilli);
 
@@ -190,6 +191,10 @@ export class Kiosk {
             return iframe;
         }
         gamespace.appendChild(createIFrame(playUrl));
+    }
+
+    launchAddGame() {
+        this.navigate(KioskState.AddingGame);
     }
 
     getAllHighScores(): { [index: string]: HighScore[] } {

@@ -53,6 +53,40 @@ h2 {
     line-height: 40px;
     text-align: center;
     color: white;
+    flex: 3.6;
+    /* width: 75%; */
+    /* margin-right: -11em; */
+}
+
+/* .mainMenuTopBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vw;
+} */
+
+.buttonDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    flex: 1;
+    /* width:25%; */
+    height: 100%;
+}
+
+.addGame {
+    width: 30em;
+    margin-right: 3em;
+    border-color: lightblue;
+    background-color: transparent;
+    font-family: inherit;
+    padding: 2em 0.5em;
+    color:white;
+    border-radius: 0.75em;
+    border-width: 0.2em;
+    border-style: solid;
 }
 
 .highScoreSmallDiv {

@@ -5,13 +5,18 @@ import configData from "../config.json"
 import Carousel from "react-spring-3d-carousel";
 import { PrimitiveRef } from "../Models/PrimitiveRef";
 import "../Kiosk.css";
+import AddGameCard from "./AddGameButton";
 
 interface IProps {
-    kiosk: Kiosk
+    kiosk: Kiosk;
   }
+
+
+//Note: all commented things puts us closer to desired functionality but is not working
 
 const GameList: React.FC<IProps> = ({ kiosk }) => {
     const [games, setGames] = useState(kiosk.games);
+    // const [buttonSelected, setButtonState] = useState(false);
     const [indexRef, ] = useState(new PrimitiveRef(0));
     const [selectedIndex, setSelectedIndex] = useState(indexRef.value);
     
@@ -30,6 +35,16 @@ const GameList: React.FC<IProps> = ({ kiosk }) => {
     const clickItem = () => {
         kiosk.launchGame(games[indexRef.value].id);
     }
+
+    // const selectButton = () => {
+    //     setButtonState(true);
+    //     kiosk.selectedGame = undefined;
+    // }
+
+    // const deselectButton = () => {
+    //     setButtonState(false);
+    //     kiosk.selectGame(games[selectedIndex].id);
+    // }
         
     const updateLoop = () => {
         if (kiosk.state !== KioskState.MainMenu) {
@@ -40,6 +55,10 @@ const GameList: React.FC<IProps> = ({ kiosk }) => {
             clickItem();
         }
 
+        if (kiosk.gamepadManager.isAButtonPressed()) {
+            kiosk.launchAddGame();
+        }
+
         if (kiosk.gamepadManager.isLeftPressed()) {
             prevItem();
         }
@@ -47,6 +66,18 @@ const GameList: React.FC<IProps> = ({ kiosk }) => {
         if (kiosk.gamepadManager.isRightPressed()) {
             nextItem();
         }
+        if (kiosk.gamepadManager.isUpPressed()) {
+            kiosk.launchAddGame();
+        }
+        // if (!buttonSelected && kiosk.gamepadManager.isUpPressed()) {
+        //     selectButton()
+        // }
+        // if (buttonSelected && kiosk.gamepadManager.isDownPressed()) {
+        //     deselectButton();
+        // }
+        // if (buttonSelected && kiosk.gamepadManager.isAButtonPressed()) {
+        //     kiosk.launchAddGame();
+        // }
     }
 
     useEffect(() => {
@@ -108,6 +139,7 @@ const GameList: React.FC<IProps> = ({ kiosk }) => {
 
     return(
         <div className="carouselWrap">
+            {/* <AddGameCard kiosk={kiosk} selected={buttonSelected} /> */}
             <Carousel
                 slides={slides}
                 showNavigation={false}

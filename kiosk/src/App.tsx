@@ -5,6 +5,7 @@ import { Kiosk } from './Models/Kiosk';
 import MainMenu from './Components/MainMenu';
 import { KioskState } from './Models/KioskState';
 import EnterHighScore from './Components/EnterHighScore';
+import AddingGame from './Components/AddingGame';
 
 const kioskSingleton: Kiosk = new Kiosk();
 kioskSingleton.initialize().catch(error => alert(error));
@@ -26,6 +27,8 @@ function App() {
         return (<MainMenu kiosk={kioskSingleton} />)
       case KioskState.EnterHighScore:
         return (<EnterHighScore kiosk={kioskSingleton} />)
+      case KioskState.AddingGame:
+        return (<AddingGame kiosk={kioskSingleton} />)
     }
 
   return (<div />)
