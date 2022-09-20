@@ -68,7 +68,6 @@ export class Kiosk {
         }
 
         this.initializePromise = this.downloadGameList();
-        // this.games.unshift(new GameData("00000-00000-00000-00000", "Add Your Game", "Add your game to the kiosk", "None"));
 
         this.intervalId = setInterval(() => this.gamePadLoop(), configData.GamepadPollLoopMilli);
 

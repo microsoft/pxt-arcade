@@ -9,14 +9,15 @@ import AddGameCard from "./AddGameButton";
 
 interface IProps {
     kiosk: Kiosk;
+    buttonSelected: Boolean;
   }
 
 
 //Note: all commented things puts us closer to desired functionality but is not working
 
-const GameList: React.FC<IProps> = ({ kiosk }) => {
+const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     const [games, setGames] = useState(kiosk.games);
-    // const [buttonSelected, setButtonState] = useState(false);
+    const [freezeControls, setFreeze] = useState(buttonSelected);
     const [indexRef, ] = useState(new PrimitiveRef(0));
     const [selectedIndex, setSelectedIndex] = useState(indexRef.value);
     
@@ -35,16 +36,6 @@ const GameList: React.FC<IProps> = ({ kiosk }) => {
     const clickItem = () => {
         kiosk.launchGame(games[indexRef.value].id);
     }
-
-    // const selectButton = () => {
-    //     setButtonState(true);
-    //     kiosk.selectedGame = undefined;
-    // }
-
-    // const deselectButton = () => {
-    //     setButtonState(false);
-    //     kiosk.selectGame(games[selectedIndex].id);
-    // }
         
     const updateLoop = () => {
         if (kiosk.state !== KioskState.MainMenu) {
@@ -66,23 +57,12 @@ const GameList: React.FC<IProps> = ({ kiosk }) => {
         if (kiosk.gamepadManager.isRightPressed()) {
             nextItem();
         }
-        if (kiosk.gamepadManager.isUpPressed()) {
-            kiosk.launchAddGame();
-        }
-        // if (!buttonSelected && kiosk.gamepadManager.isUpPressed()) {
-        //     selectButton()
-        // }
-        // if (buttonSelected && kiosk.gamepadManager.isDownPressed()) {
-        //     deselectButton();
-        // }
-        // if (buttonSelected && kiosk.gamepadManager.isAButtonPressed()) {
-        //     kiosk.launchAddGame();
-        // }
     }
 
     useEffect(() => {
         kiosk.initialize().then(() => {
             setGames(kiosk.games);
+            setFreeze(buttonSelected);
 
             if (!kiosk.selectedGame && kiosk.games.length) {
                 kiosk.selectGame(kiosk.games[0].id);
@@ -101,7 +81,9 @@ const GameList: React.FC<IProps> = ({ kiosk }) => {
         // There are some things we only want to do if there are games.
         if (games.length) {
             intervalId = setInterval(() => {
-                updateLoop();
+                if (!freezeControls) {
+                    updateLoop();
+                }
             }, configData.GamepadPollLoopMilli);
         }
         
@@ -110,7 +92,7 @@ const GameList: React.FC<IProps> = ({ kiosk }) => {
                 clearInterval(intervalId);
             }
         };
-    }, [games]);
+    }, [games, freezeControls]);
 
     useEffect(() => {
         if (kiosk.selectedGame) {

@@ -9,7 +9,6 @@ interface IProps {
   }
 
 const AddGameButton: React.FC<IProps> = ({ kiosk, selected }) => {
-    
     const [buttonActive, setButtonState] = useState(selected);
     let buttonColor = buttonActive ? "lightblue" : "transparent";
 
