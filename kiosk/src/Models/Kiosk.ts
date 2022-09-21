@@ -39,6 +39,62 @@ export class Kiosk {
         catch (error) {
             throw new Error(`Unable to process game list downloaded from "${url}": ${error}`);
         }
+
+        this.addNewGamesToList();
+    }
+
+    addNewGameToLocalStorage(gameID: string): GameData | undefined {
+        // no newGames array in local storage
+        if(localStorage.getItem("newGames") === null){
+            let newGame = new GameData(gameID, "", "", "");
+            let gamesArray : GameData[] = [newGame,];
+
+            localStorage.setItem("newGames", JSON.stringify(gamesArray));
+            return newGame;
+        }
+        else {
+            let newGames : GameData[] = JSON.parse(localStorage.getItem("newGames")!);
+            let exists = false;
+            for(const game of newGames){
+                if(gameID === game.id){
+                    exists = true;
+                    break;
+                }
+            }
+
+            if(!exists){
+                let newGame = new GameData(gameID, "", "", "");
+                newGames.push(newGame);
+
+                // set the existing newGames array to one with the new game added
+                localStorage.setItem("newGames", JSON.stringify(newGames));
+                return newGame;
+            }
+            return undefined;
+        }
+    }
+
+    // Function that should be called to add a new game
+    addGame(shareID: string) : boolean {
+        let gamesData = this.addNewGameToLocalStorage(shareID);
+        if(gamesData){
+            this.addSpecificGameToList(gamesData);
+        }
+        return true;
+    }
+
+    addSpecificGameToList(gamesData: GameData) : void {
+        this.games.push(gamesData);
+    }
+
+    addNewGamesToList() : void {
+        // check if there are custom games to add to list
+        if(localStorage.getItem("newGames") !== null){
+            let newGames = JSON.parse(localStorage.getItem("newGames")!);
+            for(const game of newGames){
+                this.games.push(game);
+            }
+        }
     }
 
     gamePadLoop(): void {
