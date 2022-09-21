@@ -43,22 +43,14 @@ export class Kiosk {
         this.addNewGamesToList();
     }
 
-    addNewGameToLocalStorage(gameID: string): void {
+    addNewGameToLocalStorage(gameID: string): GameData | undefined {
         // no newGames array in local storage
         if(localStorage.getItem("newGames") === null){
             let newGame = new GameData(gameID, "", "", "");
             let gamesArray : GameData[] = [newGame,];
 
             localStorage.setItem("newGames", JSON.stringify(gamesArray));
-            let exists = false;
-            for(const game of this.games){
-                if(game.id === newGame.id){
-                    exists = true;
-                }
-            }
-            if(!exists){
-                this.games.push(newGame);
-            }
+            return newGame;
         }
         else {
             let newGames : GameData[] = JSON.parse(localStorage.getItem("newGames")!);
@@ -76,18 +68,23 @@ export class Kiosk {
 
                 // set the existing newGames array to one with the new game added
                 localStorage.setItem("newGames", JSON.stringify(newGames));
-
-                let existsInList = false;
-                for(const game of this.games){
-                    if(game.id === newGame.id){
-                        existsInList = true;
-                    }
-                }
-                if(!existsInList){
-                    this.games.push(newGame);
-                }
+                return newGame;
             }
+            return undefined;
         }
+    }
+
+    // Function that should be called to add a new game
+    addGame(shareID: string) : boolean {
+        let gamesData = this.addNewGameToLocalStorage(shareID);
+        if(gamesData){
+            this.addSpecificGameToList(gamesData);
+        }
+        return true;
+    }
+
+    addSpecificGameToList(gamesData: GameData) : void {
+        this.games.push(gamesData);
     }
 
     addNewGamesToList() : void {
