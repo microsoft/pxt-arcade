@@ -47,6 +47,43 @@ h2 {
     color: white;
 }
 
+.addInstructions h2 {
+    color: lightblue;
+    font-size: 2em;
+    margin-left: -7em;
+}
+
+.addGame h1 {
+    font-size: 2.5em;
+    font-weight: 400;
+    margin: 1em 0;
+}
+
+.addInstructions li {
+    padding: 1em 0;
+    font-size: large;
+    /* letter-spacing: 0.1em; */
+
+}
+
+.addGameContent {
+    display: flex;
+    flex-direction: row;
+    /* align-items: left; */
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 5vw;
+}
+
+.addGame {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
 .mainMenuHighScoreHeader {
     font-weight: 400;
     font-size: 40px;
@@ -76,7 +113,7 @@ h2 {
     height: 100%;
 }
 
-.addGame {
+.addGameButton {
     width: 30em;
     margin-right: 3em;
     border-color: lightblue;
