@@ -18,21 +18,21 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
     const [kioskCode, setKioskCode] = useState("");
 
     useEffect(() => {
-        async function generateQRCode() {
+        async function generateKioskCode() {
             const codeGenerationUrl = "https://staging.pxt.io/api/kiosk/newcode"
             const response = await fetch(codeGenerationUrl);
             if (!response.ok) {
-                throw new Error("Unable to generate QR code");
+                throw new Error("Unable to generate kiosk code");
             }
 
             try {
                 setKioskCode((await response.json()).code);
             }
             catch (error) {
-                throw new Error("Unable to generate QR code");
+                throw new Error("Unable to generate kiosk code");
             }
         }
-        generateQRCode();
+        generateKioskCode();
     }, []);
 
     return (
