@@ -46,9 +46,19 @@ export class Kiosk {
     addNewGameToLocalStorage(gameID: string): void {
         // no newGames array in local storage
         if(localStorage.getItem("newGames") === null){
-            let gamesArray : GameData[] = [new GameData(gameID, "", "", ""),];
+            let newGame = new GameData(gameID, "", "", "");
+            let gamesArray : GameData[] = [newGame,];
 
             localStorage.setItem("newGames", JSON.stringify(gamesArray));
+            let exists = false;
+            for(const game of this.games){
+                if(game.id === newGame.id){
+                    exists = true;
+                }
+            }
+            if(!exists){
+                this.games.push(newGame);
+            }
         }
         else {
             let newGames : GameData[] = JSON.parse(localStorage.getItem("newGames")!);
@@ -61,13 +71,23 @@ export class Kiosk {
             }
 
             if(!exists){
-                newGames.push(new GameData(gameID, "", "", ""));
+                let newGame = new GameData(gameID, "", "", "");
+                newGames.push(newGame);
 
                 // set the existing newGames array to one with the new game added
                 localStorage.setItem("newGames", JSON.stringify(newGames));
+
+                let existsInList = false;
+                for(const game of this.games){
+                    if(game.id === newGame.id){
+                        existsInList = true;
+                    }
+                }
+                if(!existsInList){
+                    this.games.push(newGame);
+                }
             }
         }
-        this.addNewGamesToList();
     }
 
     addNewGamesToList() : void {
