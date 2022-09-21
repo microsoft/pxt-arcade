@@ -16,6 +16,26 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
     // TODO: add a "generate new code" button so that when the newly generated code is expired, users can generate another
     // TODO: unfreeze the controls of the site when button not selected
     const [kioskCode, setKioskCode] = useState("");
+    const [renderQRCode, setRenderQRCode] = useState(true);
+
+    const qrDivContent = () => {
+        if (renderQRCode) {
+            return (
+                <div>
+                    {/* <img src=/> // this will be the QR code that will be generated from the kioskCode*/} 
+                    <h3>Kiosk ID</h3>
+                    <h1>{kioskCode}</h1> 
+                </div>
+            )
+        }
+        else {
+            return (
+                <div>
+                    <AddGameButton kiosk={kiosk} selected={false} content="Generate new QR code" />
+                </div>
+            )
+        }
+    };
 
     useEffect(() => {
         async function generateKioskCode() {
@@ -31,6 +51,39 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
             catch (error) {
                 throw new Error("Unable to generate kiosk code");
             }
+        }
+
+        async function getGameCode(kioskCode: string) {
+            const timeoutDuration = 5000; //wait for five seconds to poll for game code data
+            const getGameCodeUrl = `https://staging.pxt.io/api/kiosk/code/:${kioskCode}`;
+            let response = await fetch(getGameCodeUrl);
+            if (!response.ok) {
+                throw new Error("Unable to get data from the kiosk.");
+            }
+            try {
+                let pollingResult = (await response.json())?.code;
+                while (pollingResult && pollingResult === "0") {
+                    setTimeout(async () => {
+                        response = await fetch(getGameCodeUrl);
+                        if (!response.ok) {
+                            throw new Error("Unable to get data from the kiosk.");
+                        }
+                    }, timeoutDuration); 
+                }
+                // if you get here that means there is a code that you received that's non-zero
+                // so you need to call the new function to add the game to the kiosk.
+                if (pollingResult) { 
+                    //call Simran's function
+                }
+                // if you get here that means the kioskCode is no longer valid, need to render a button to generate a new code
+                else {
+                    setRenderQRCode(false);
+                }
+            }
+            catch (error) {
+                throw new Error("Unable to get data from the kiosk");
+            }
+
         }
         generateKioskCode();
     }, []);
@@ -50,9 +103,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                 </div>
 
                 <div className="QRCodeHolder">
-                    {/* <img src=/> // this will be the QR code that will be generated from the kioskCode*/} 
-                    <h3>Kiosk ID</h3>
-                    <h1>{kioskCode}</h1> 
+                    {qrDivContent()}
                 </div>
             </div>
             <AddGameButton kiosk={kiosk} selected={false} content="Return to menu" />
