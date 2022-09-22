@@ -59,6 +59,13 @@ h2 {
     margin: 1em 0;
 }
 
+.innerQRCodeContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .addInstructions li {
     padding: 1em 0;
     font-size: large;
