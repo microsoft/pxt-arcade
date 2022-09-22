@@ -82,39 +82,54 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
             try {
                 const newKioskCode = (await response.json()).code; 
                 setKioskCode(newKioskCode);
-                getGameCode(newKioskCode);
-
+                await addGameToKiosk(newKioskCode);
             }
             catch (error) {
+                setRenderQRCode(false);
                 throw new Error("Unable to generate kiosk code");
             }
         }
         generateKioskCode();
 
-        async function getGameCode(kioskCode: string) {
+        function addGameToKiosk(kioskCode: string) {
             // console.log("GETTING THE GAME CODE URL");
-            const timeoutDuration = 60000; //wait for five seconds to poll for game code data
+            const timeoutDuration = 600000; // wait for 10 minutes until the kiosk code expires
+            const whenToPull = 5000; // wait for five seconds to poll for game code data
             const getGameCodeUrl = `https://staging.pxt.io/api/kiosk/code/${kioskCode}`;
-            try {
-                // console.log("POLLING");
-
-                setTimeout(async () => {
-                    let response = await fetch(getGameCodeUrl);
-                    if (!response.ok) {
-                        // console.log(response);
-                        throw new Error("Unable to get data from the kiosk.");
-                    } else {
-                        let pollingResult = (await response.json())?.code;
-                        // console.log(pollingResult)
-                        kiosk.addGame(pollingResult);
+            const getGameCode = async () => {
+                console.log("IN GET GAME CODE");
+                let response = await fetch(getGameCodeUrl);
+                if (!response.ok) {
+                    throw new Error("Unable to get data from the kiosk.");
+                } else {
+                    const gameCode = (await response.json())?.code;
+                    console.log(gameCode);
+                    console.log(typeof(gameCode));
+                    if (gameCode !== "0") {
+                        console.log(gameCode);
+                        kiosk.addGame(gameCode);
+                        return true;
                     }
-                }, timeoutDuration);
-
+                    throw new Error("Invalid game code");
+                }
             }
-            catch (error) {
-                throw new Error("Unable to get data from the kiosk");
-            }
-
+            return new Promise<void>((resolve, reject) => {
+                let pollInterval: any;
+                let pollTimeout: any;
+                pollInterval = setInterval(() => {
+                    getGameCode()
+                        .then(() => {
+                            clearInterval(pollInterval);
+                            clearTimeout(pollTimeout);
+                            resolve();
+                        })
+                        .catch(() => null);
+                }, whenToPull);
+                pollTimeout = setTimeout(() => {
+                    clearInterval(pollInterval);
+                    reject();
+                }, timeoutDuration)
+            });
         }
     }, []);
 
