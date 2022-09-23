@@ -135,7 +135,7 @@ Now we'll add the mole **SPRITE** to our game.
 
 In Arcade, each character or image that does something is called a **SPRITE**.
 
-Sprites have properties that you can use and change -- things like scale, position, and lifespan are all properties of sprites.
+Sprites have properties that you can use and change — things like scale, position, and lifespan are all properties of sprites.
 
 Our mole will be a sprite, too.
 

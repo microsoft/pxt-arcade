@@ -47,7 +47,7 @@ scene.add_label_to("Whack-the-Mole", areas.Bottom)
 ```
 
 and snap it inside and at the very **end** of the
-``||loops: on start||``
+``||loops(noclick): on start||``
 block container that's already in your workspace.
 
 
@@ -87,9 +87,9 @@ scene.add_label_to("Whack-the-Mole", areas.Bottom)
     music.baDing.play()
 ```
 
-and snap it in at **the end** of the ``||sprites: on sprite overlaps otherSprite||`` block already in the workspace.
+and snap it in at **the end** of the ``||sprites(noclick): on sprite overlaps otherSprite||`` block already in the workspace.
 
-- :mouse pointer: Change ``||music: ba ding||`` to whatever sound brings you joy.
+- :mouse pointer: Change ``||music(noclick): ba ding||`` to whatever sound brings you joy.
 
 
 ~hint Click here to see how 🕵🏽
@@ -153,7 +153,7 @@ false
 )
 ```
 
-and snap it in at **the end** of the ``||sprites: on sprite overlaps otherSprite||`` block already in the workspace.
+and snap it in at **the end** of the ``||sprites(noclick): on sprite overlaps otherSprite||`` block already in the workspace.
 
 - :mouse pointer: Click the empty square and when the image editor opens, switch to **My Assets** to select the **hammerAnimation** option and click **Done**.
 

@@ -145,6 +145,14 @@ keep moving through the skillmap to find out how to add a heads-up display to yo
 
 
 
+```blockconfig.global
+let myPlane = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+controller.moveSprite(myPlane)
+scene.cameraFollowSprite(myPlane)
+
+```
+
+
 
 ```package
 pxt-arcade-forest-fire=github:microsoft/arcade-forest-fire
@@ -156,7 +164,6 @@ controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
     sprites.spray(mySprite, assets.image`water`)
 })
 
-tiles.setTilemap(tilemap`level1`)
 let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
 controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)
@@ -179,6 +186,27 @@ sprites.on_fire_destroyed(function (location) {
     tiles.setTileAt(location, assets.tile`burnt tree`)
 })
 ```
+
+
+
+
+```customts
+
+namespace SpriteKind {
+
+    //% isKind
+    export const Water = SpriteKind.create()
+
+    //% isKind
+    export const Fire = SpriteKind.create()
+
+    //% isKind
+     export const Burnt = SpriteKind.create()
+}
+
+tiles.setTilemap(tilemap`level1`)
+```
+
 
 ```assetjson
 {

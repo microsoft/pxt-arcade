@@ -97,7 +97,7 @@ This will be the **ACTION** that goes with our **EVENT**.
 
 
 and snap it into the empty <br/>
-``||controller: on [A] button [pressed]||`` <br/>
+``||controller(noclick): on [A] button [pressed]||`` <br/>
 block that's already in the workspace.
 
 💡 **Tip:** _Make sure the blocks connect!_
@@ -112,7 +112,7 @@ block that's already in the workspace.
 - :lightbulb: Make sure the new <br/>
 ``||info: change player [1] score by [1]||`` <br/>
 block connects to the inside of the <br/>
-``||controller: on [A] button [pressed]||`` <br/>
+``||controller(noclick): on [A] button [pressed]||`` <br/>
 block!
 
 hint~
@@ -164,7 +164,7 @@ grab <br/>
 ``||info: start countdown [20] (s) and game over [high score]||`` <br/>
 
 and snap it into the empty <br/>
-``||loops: on start||`` <br/>
+``||loops(noclick): on start||`` <br/>
 block that's already in the workspace.
 
 

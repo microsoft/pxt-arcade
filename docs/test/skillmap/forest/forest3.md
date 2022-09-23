@@ -292,15 +292,21 @@ Once you've put out the fires, click **Done** to
 keep moving through the skillmap so you can see how to make your fires spread.
 
 
+```blockconfig.global
+let myPlane = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+controller.moveSprite(myPlane)
+scene.cameraFollowSprite(myPlane)
+
+```
 
 
 ```package
 pxt-arcade-forest-fire=github:microsoft/arcade-forest-fire
 ```
 
+
 ```template
 
-tiles.setTilemap(tilemap`level1`)
 let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
 controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)
@@ -314,6 +320,26 @@ sprites.on_fire_created(function (location) {
 })
 
 ```
+
+
+```customts
+
+namespace SpriteKind {
+
+    //% isKind
+    export const Water = SpriteKind.create()
+
+    //% isKind
+    export const Fire = SpriteKind.create()
+
+    //% isKind
+     export const Burnt = SpriteKind.create()
+}
+
+tiles.setTilemap(tilemap`level1`)
+```
+
+
 
 
 

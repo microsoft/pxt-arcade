@@ -42,7 +42,7 @@ let myHammer = sprites.create(img`.`, SpriteKind.Player)
 ```
 
 and snap it inside and at the very **end** of the
-``||loops: on start||``
+``||loops(noclick): on start||``
 block container that's already in your workspace.
 
 - :mouse pointer: Click the empty square and when the image editor opens, switch to **My Assets** <br/>
@@ -83,7 +83,7 @@ We need to be able to move the hammer around the screen to chase the mole.
 ```block
 controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
 ```
-and snap it in at **the end** of the ``||loops: on start||`` block already in the workspace.
+and snap it in at **the end** of the ``||loops(noclick): on start||`` block already in the workspace.
 
 
 ~hint Click here to see how 🕵🏽
@@ -183,7 +183,7 @@ Did you notice that the points added up really quickly when the rubber hammer st
     sprites.move_to_random_hole_on_grid(myMole)
 ```
 
-and snap it into **the end** of the ``||sprites: on sprite overlaps otherSprite||`` block container already in the workspace.
+and snap it into **the end** of the ``||sprites(noclick): on sprite overlaps otherSprite||`` block container already in the workspace.
 
 Now, when the rubber hammer overlaps the mole, the mole will quickly dash away!
 
@@ -221,7 +221,7 @@ info.startCountdownGame(15, winTypes.Score)
 ```
 
 and snap it into **the end** of the <br/>
-``||loops: on start||`` <br/>
+``||loops(noclick): on start||`` <br/>
 block container already in the workspace.
 
 
