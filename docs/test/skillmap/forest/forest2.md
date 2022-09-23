@@ -66,6 +66,14 @@ bundle and snap it inside at **the end** of the <br/>
 
 hint~
 
+
+
+```blockconfig.local
+for (let index = 0; index < 4; index++) {
+    sprites.create_spreading_fire(assets.tile`transparency16`, assets.tile`transparency16`)
+}
+```
+
 #### ~ tutorialhint
 
 ```blocks
@@ -85,14 +93,19 @@ for (let index = 0; index < 4; index++) {
 
 
 - :binoculars: Find the
+
 ```block
-    sprites.create_spreading_fire(img`.`,img`.`)
+    sprites.create_spreading_fire(assets.tile`transparency16`, assets.tile`transparency16`)
 ```
-block that's now in your workspace
+
+block that's now in your workspace.
 
 - :mouse pointer: Click the first checkered square and select the **tree** tile.
+![Add the tree tile.](/static/skillmap/forest/tree-tile.png "Add the tile that looks like a tree.")
+
 
 - :mouse pointer: Click the second checkered square and select the **tree fire** tile.
+![Add the sprite block.](/static/skillmap/forest/tree-fire-tile.png "Add the tile that looks like a tree on fire.")
 
 
 
