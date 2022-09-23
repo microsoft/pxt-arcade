@@ -21,36 +21,33 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
     const [kioskCode, setKioskCode] = useState("");
     const [renderQRCode, setRenderQRCode] = useState(true);
     const kioskCodeUrl = "spujji.github.io/";
-    // const [buttonSelected, setButtonState] = useState(false);
+    const [buttonSelected, setButtonState] = useState(false);
 
-    // const updateLoop = () => {
-    //     if (!buttonSelected && kiosk.gamepadManager.isUpPressed()) {
-    //         setButtonState(true);
-    //     }
-    //     if (buttonSelected && kiosk.gamepadManager.isDownPressed()) {
-    //         setButtonState(false);
-    //     }
-    //     if (buttonSelected && kiosk.gamepadManager.isAButtonPressed()) {
-    //         kiosk.launchAddGame();
-    //     }
-    // }
+    const updateLoop = () => {
+        if (!buttonSelected && kiosk.gamepadManager.isDownPressed()) {
+            setButtonState(true);
+        }
+        if (buttonSelected && kiosk.gamepadManager.isAButtonPressed()) {
+            kiosk.showMainMenu();
+        }
+    }
 
-    // useEffect(() => {
-    //     //TODO: instead of launching the add game right away, need to make it selected
-    //     // will need to have state for the button to know if it is selected or not.
-    //     // cannot just launch the add game page if it was not selected
-    //     let intervalId: any = null;
-    //     intervalId = setInterval(() => {
-    //         updateLoop();
-    //     }, configData.GamepadPollLoopMilli);
+    useEffect(() => {
+        //TODO: instead of launching the add game right away, need to make it selected
+        // will need to have state for the button to know if it is selected or not.
+        // cannot just launch the add game page if it was not selected
+        let intervalId: any = null;
+        intervalId = setInterval(() => {
+            updateLoop();
+        }, configData.GamepadPollLoopMilli);
         
-    //     return () => {
-    //         if (intervalId) {
-    //             clearInterval(intervalId);
-    //         }
-    //     };
+        return () => {
+            if (intervalId) {
+                clearInterval(intervalId);
+            }
+        };
 
-    // });
+    });
 
     const qrDivContent = () => {
         if (renderQRCode) {
@@ -151,7 +148,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                     {qrDivContent()}
                 </div>
             </div>
-            <AddGameButton kiosk={kiosk} selected={false} content="Return to menu" />
+            <AddGameButton kiosk={kiosk} selected={buttonSelected} content="Return to menu" />
         </div>
 
     )
