@@ -85,7 +85,7 @@ block to the workspace, then add a point for **player 2** each time it's clicked
 ~hint Tell me more... 🕵🏽
 
 - :paper plane: From the ``||controller: Controller||`` category in the toolbox, grab the<br/>
-``||controller: on [B] button [pressed]||`` <br/>
+``||controller(noclick): on [B] button [pressed]||`` <br/>
 bundle and drop it onto an empty area of your workspace.
 
 
@@ -125,7 +125,7 @@ _(You'll also need to move player 1 to the left, and set player 2 further right.
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
 ``||variables: set [myBalloon2] to sprite [ ] of kind [Player]||`` <br/>
 and snap it inside at the **end** of the
-``||loops: on start||``
+``||loops(noclick): on start||``
 block already in your workspace.
 
 - :mouse pointer: Select the image of the blue balloon.
@@ -133,7 +133,7 @@ block already in your workspace.
 - :mouse pointer: Grab <br/>
 ``||sprites: set [myBalloon2] position to x [110] y [93]||`` <br/>
 and snap it inside at the **end** of the
-``||loops: on start||``
+``||loops(noclick): on start||``
 block already in your workspace.
 
 - :mouse pointer: Change the positions for the original **myBalloon** and **myMouse** to each have an x value of **50**.
@@ -184,7 +184,7 @@ myBalloon2.setPosition(110, 93)
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
 ``||variables: set [myMouse2] to sprite [ ] of kind [Mouse]||`` <br/>
 and snap it inside at the **end** of the
-``||loops: on start||``
+``||loops(noclick): on start||``
 block already in your workspace.
 
 - :mouse pointer: Select the **mouse2-up** image.
@@ -192,7 +192,7 @@ block already in your workspace.
 - :mouse pointer: Grab <br/>
 ``||sprites: set [myMouse2] position to x [110] y [93]||`` <br/>
 block and snap it inside at the **end** of the
-``||loops: on start||``
+``||loops(noclick): on start||``
 block already in your workspace.
 
 hint~
@@ -251,7 +251,7 @@ Don't forget to test your game using the (B) button in the **bigger game window*
 ~hint Tell me more... 🕵🏽
 
 - :game: From the ``||controller: Controller||`` category in the toolbox, grab the <br/>
-``||controller:on [B] button [Released]||``<br/>
+``||controller(noclick):on [B] button [Released]||``<br/>
 bundle and drop it into an empty area of the workspace.
 
 - :mouse pointer: Click the empty box and choose **mouse2-up** from **My Assets**.
@@ -259,7 +259,7 @@ bundle and drop it into an empty area of the workspace.
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab another <br/>
 ``||sprites: set [myMouse2] image to [ ]||`` <br/>
 block and snap it into the <br/>
-``||controller: on [B] button [Pressed]||`` <br/>
+``||controller(noclick): on [B] button [Pressed]||`` <br/>
 block already in your workspace.
 
 - :mouse pointer: Click the empty box and choose **mouse2-down** from **My Assets**.

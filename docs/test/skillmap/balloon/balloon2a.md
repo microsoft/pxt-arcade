@@ -47,7 +47,7 @@ hint~
 - :tree: From the ``||scene: Scene||`` category in the toolbox, grab <br/>
 ``||scene: set background color to [ ]||`` <br/>
 and snap it inside and at the **end** of the
-``||loops: on start||``
+``||loops(noclick): on start||``
 block container that's already in your workspace.
 
 ~hint Show me how! 🕵🏽
@@ -86,7 +86,7 @@ hint~
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
  ``||variables: set [myBalloon] to sprite [ ] of kind [Player]||`` <br/>
 and snap it inside and at the very **end** of the
-``||loops: on start||``
+``||loops(noclick): on start||``
 block container that's already in your workspace.
 
 - :mouse pointer: Click the empty square inside the block, and when the image editor opens, switch to **My Assets** to select the red balloon sprite.
@@ -123,7 +123,7 @@ Let's move the balloon down to give it room to grow.
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
 ``||sprites: set [myBalloon] position to x [80] y [93]||`` <br/>
 and snap it inside at the **end** of the
-``||loops: on start||``
+``||loops(noclick): on start||``
 block already in your workspace.
 
 
@@ -167,7 +167,7 @@ Now we need to make the balloon bigger each time the (A) button is pressed.
 - :up-down: From the ``||scaling: Scaling||`` category in the toolbox, grab <br/>
  ``||scaling: change [myBalloon] scale by [1] pixels||`` <br/>
 and snap it into the **end** of the <br/>
-``||controller: on [A] button [pressed]||`` <br/>
+``||controller(noclick): on [A] button [pressed]||`` <br/>
 block already in the workspace.
 
 
@@ -211,7 +211,7 @@ Press the (A) button (or **space bar**) as fast as you can.  You should see the 
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
  ``||variables: set [myBooth] to sprite [ ] of kind [Booth]||`` <br/>
 and snap it into the **end** of the
-``||loops: on start||``
+``||loops(noclick): on start||``
 block already in your workspace.
 
 - :mouse pointer: Click the empty square and when the image editor opens, switch to **My Assets** to select the **booth** sprite.
@@ -283,7 +283,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSp
 - :circle: From the ``||game: Game||`` category in the toolbox, grab <br/>
 ``||game: game over [multiplayer]||`` <br/>
 and snap it into the empty
-``||sprites: on overlaps||``
+``||sprites(noclick): on overlaps||``
 container already in the workspace.
 
 
@@ -322,7 +322,7 @@ Can you get the balloon to reach the line before time runs out?
 You added an event that watches for the Player (balloon) to overlap the Booth (any part of the booth image.)
 
 The line is part of the booth image, so when the balloon crosses the line, the overlap event triggers and runs
-``||game: game over [multiplayer]||``, allowing you to win the game!
+``||game(noclick): game over [multiplayer]||``, allowing you to win the game!
 
 With this code, it takes 61 points to get to the line, so you must score 61 points before time runs out to win!
 

@@ -220,6 +220,13 @@ and head back out to the skillmap to share it with friends or save it in your ga
 
 
 
+```blockconfig.global
+let myPlane = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+controller.moveSprite(myPlane)
+scene.cameraFollowSprite(myPlane)
+
+```
+
 
 
 ```package
@@ -235,7 +242,6 @@ controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
 game.set_health_of_trees(7)
 game.set_strength_of_wind(3)
 game.set_dryness_of_grass(3)
-tiles.setTilemap(tilemap`level1`)
 let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
 controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)
@@ -274,6 +280,26 @@ hud.forest_hud_label ("Healthy Forest:")
 hud.danger_hud_label ("Fire Danger:")
 hud.fire_hud_label ("Nope:")
 ```
+
+
+
+```customts
+
+namespace SpriteKind {
+
+    //% isKind
+    export const Water = SpriteKind.create()
+
+    //% isKind
+    export const Fire = SpriteKind.create()
+
+    //% isKind
+     export const Burnt = SpriteKind.create()
+}
+
+tiles.setTilemap(tilemap`level1`)
+```
+
 
 
 ```assetjson
