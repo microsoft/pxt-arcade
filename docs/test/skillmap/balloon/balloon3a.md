@@ -54,8 +54,7 @@ If those steps don't solve your problem, click "Replace my code" to replace the 
 
 hint~
 
----
----
+
 
 
 ## {3. Add a Mouse}
@@ -98,8 +97,7 @@ hint~
 
 
 
----
----
+
 
 #### ~ tutorialhint
 ```blocks
@@ -123,8 +121,7 @@ myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
 
 Press the (A) button as fast as you can.  You should see the balloon get bigger each time you click and you should see a mouse hovering above it.
 
----
----
+
 
 
 
@@ -151,8 +148,7 @@ hint~
 
 
 
----
----
+
 
 #### ~ tutorialhint
 ```blocks
@@ -188,8 +184,7 @@ block already in your workspace.
 
 hint~
 
----
----
+
 
 #### ~ tutorialhint
 ```blocks
@@ -213,8 +208,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 Press the (A) button as fast as you can.  You should see the mouse press the handle one time and the balloon should continue to inflate with each press.
 
----
----
+
 
 
 
@@ -239,8 +233,7 @@ bundle and drop it into an empty area of your workspace.
 
 hint~
 
----
----
+
 
 ```blockconfig.local
 let myMouse: Sprite = null
@@ -270,8 +263,7 @@ Open the bigger game window and press the (A) button in the game window (or **sp
 
 Your mouse should appear to be blowing up the balloon as you play!
 
----
----
+
 
 ```blockconfig.local
 let myMouse: Sprite = null

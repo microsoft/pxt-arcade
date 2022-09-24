@@ -36,8 +36,7 @@ If your code isn't working and you can't figure out why, click "Replace my code"
 hint~
 
 
----
----
+
 
 
 ## {3. Set the Scene}
@@ -56,8 +55,7 @@ block container that's already in your workspace.
 
 hint~
 
----
----
+
 
 #### ~ tutorialhint
 ```blocks
@@ -102,8 +100,7 @@ hint~
 💡 _Don't forget to look at the game window to see how things are shaping up!_
 
 
----
----
+
 
 
 #### ~ tutorialhint
@@ -145,8 +142,7 @@ hint~
 
 hint~
 
----
----
+
 
 #### ~ tutorialhint
 ```blocks
@@ -177,8 +173,7 @@ block already in the workspace.
 
 hint~
 
----
----
+
 
 #### ~ tutorialhint
 ```blocks
@@ -198,8 +193,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 Press the (A) button (or **space bar**) as fast as you can.  You should see the balloon get bigger each time you click!
 
----
----
+
 
 
 
@@ -227,8 +221,7 @@ hint~
 
 
 
----
----
+
 
 ```blockconfig.local
 let myBooth = sprites.create(img`.`, SpriteKind.Booth)
@@ -262,8 +255,7 @@ and drop it into an **empty area** in the workspace.
 
 hint~
 
----
----
+
 
 ```blockconfig.local
 let myBooth = sprites.create(img`.`, SpriteKind.Booth)
@@ -293,8 +285,7 @@ container already in the workspace.
 
 hint~
 
----
----
+
 
 ```blockconfig.local
 let myBooth = sprites.create(img`.`, SpriteKind.Booth)
@@ -328,8 +319,7 @@ With this code, it takes 61 points to get to the line, so you must score 61 poin
 
 hint~
 
----
----
+
 
 ## {12. Finale}
 

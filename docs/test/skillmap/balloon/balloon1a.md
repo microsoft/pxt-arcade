@@ -32,8 +32,7 @@ hint~
 
 When you're done reading, click **Next** to move to the next instruction.
 
----
----
+
 
 
 ## {4. Your First Block}
@@ -74,8 +73,7 @@ hint~
 
 hint~
 
----
----
+
 
 #### ~ tutorialhint
 ```blocks
@@ -117,8 +115,7 @@ block!
 
 hint~
 
----
----
+
 
 #### ~ tutorialhint
 ```blocks
@@ -148,8 +145,7 @@ Clicking the button is the **EVENT** that causes the score to go up!
 hint~
 
 
----
----
+
 
 
 
@@ -174,8 +170,7 @@ block that's already in the workspace.
 
 hint~
 
----
----
+
 
 #### ~ tutorialhint
 ```blocks
@@ -193,8 +188,7 @@ Try it in the bigger game window and see if you can get more than **40 points**.
 
 When you're finished playing, come back to the instructions and click the **Done** button to return to the skillmap and continue building your amazing <br/>**🎈carnival game🎈**!
 
----
----
+
 
 
 ```blockconfig.global
