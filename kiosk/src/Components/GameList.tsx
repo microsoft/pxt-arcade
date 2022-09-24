@@ -46,10 +46,6 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
             clickItem();
         }
 
-        if (kiosk.gamepadManager.isAButtonPressed()) {
-            kiosk.launchAddGame();
-        }
-
         if (kiosk.gamepadManager.isLeftPressed()) {
             prevItem();
         }

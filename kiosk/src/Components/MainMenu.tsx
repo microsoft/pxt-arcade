@@ -25,9 +25,6 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
     }
 
     useEffect(() => {
-        //TODO: instead of launching the add game right away, need to make it selected
-        // will need to have state for the button to know if it is selected or not.
-        // cannot just launch the add game page if it was not selected
         let intervalId: any = null;
         intervalId = setInterval(() => {
             updateLoop();

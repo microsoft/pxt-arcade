@@ -113,7 +113,11 @@ export class Kiosk {
         }
 
         if (this.gamepadManager.isEscapeButtonPressed() || this.gamepadManager.isMenuButtonPressed()) {
-            this.escapeGame();
+            if (this.state === KioskState.PlayingGame) {
+                this.escapeGame();
+            } else {
+                this.showMainMenu();
+            }
             return;
         }
     }

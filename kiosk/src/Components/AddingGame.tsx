@@ -2,40 +2,41 @@ import { useEffect, useState } from "react";
 import { Kiosk } from "../Models/Kiosk";
 import { KioskState } from "../Models/KioskState";
 import configData from "../config.json"
-import Carousel from "react-spring-3d-carousel";
-import { PrimitiveRef } from "../Models/PrimitiveRef";
 import "../Kiosk.css";
 import AddGameButton from "./AddGameButton";
 import {QRCodeSVG} from 'qrcode.react';
-import { resolve } from "path";
-
-
 interface IProps {
     kiosk: Kiosk
   }
 
 const AddingGame: React.FC<IProps> = ({ kiosk }) => {
-    // TODO: have the site poll for responses from /code/:kioskCode every 5 seconds until getting the no such code response
-    // TODO: add a "generate new code" button so that when the newly generated code is expired, users can generate another
-    // TODO: unfreeze the controls of the site when button not selected
+    // TODO: update the urls to be more flexible for production code.
     const [kioskCode, setKioskCode] = useState("");
     const [renderQRCode, setRenderQRCode] = useState(true);
     const kioskCodeUrl = "spujji.github.io/";
-    const [buttonSelected, setButtonState] = useState(false);
+    const [menuButtonSelected, setMenuButtonState] = useState(false);
+    const [qrCodeButtonSelected, setQrButtonState] = useState(false);
 
     const updateLoop = () => {
-        if (!buttonSelected && kiosk.gamepadManager.isDownPressed()) {
-            setButtonState(true);
+        if (!menuButtonSelected && kiosk.gamepadManager.isDownPressed()) {
+            setMenuButtonState(true);
+            if (qrCodeButtonSelected) {
+                setQrButtonState(false);
+            }
         }
-        if (buttonSelected && kiosk.gamepadManager.isAButtonPressed()) {
+        if (menuButtonSelected && kiosk.gamepadManager.isAButtonPressed()) {
             kiosk.showMainMenu();
+        }
+        if (!renderQRCode && kiosk.gamepadManager.isUpPressed()) {
+            setMenuButtonState(false);
+            setQrButtonState(true);
+        }
+        if (qrCodeButtonSelected && kiosk.gamepadManager.isAButtonPressed()) {
+            setRenderQRCode(true);
         }
     }
 
     useEffect(() => {
-        //TODO: instead of launching the add game right away, need to make it selected
-        // will need to have state for the button to know if it is selected or not.
-        // cannot just launch the add game page if it was not selected
         let intervalId: any = null;
         intervalId = setInterval(() => {
             updateLoop();
@@ -48,25 +49,6 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
         };
 
     });
-
-    const qrDivContent = () => {
-        if (renderQRCode) {
-            return (
-                <div className="innerQRCodeContent">
-                    <QRCodeSVG value={`${kioskCodeUrl}#${kioskCode}`} />,
-                    <h3>10 minute Kiosk ID</h3>
-                    <h1>{kioskCode}</h1> 
-                </div>
-            )
-        }
-        else {
-            return (
-                <div className="innerQRCodeContent">
-                    <AddGameButton kiosk={kiosk} selected={false} content="Generate new QR code" />
-                </div>
-            )
-        }
-    };
 
     useEffect(() => {
         async function generateKioskCode() {
@@ -86,25 +68,28 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                 throw new Error("Unable to generate kiosk code");
             }
         }
+
         generateKioskCode();
 
         function addGameToKiosk(kioskCode: string) {
-            // console.log("GETTING THE GAME CODE URL");
             const timeoutDuration = 600000; // wait for 10 minutes until the kiosk code expires
             const whenToPull = 5000; // wait for five seconds to poll for game code data
             const getGameCodeUrl = `https://staging.pxt.io/api/kiosk/code/${kioskCode}`;
             const getGameCode = async () => {
-                console.log("IN GET GAME CODE");
+                if (kiosk.state !== KioskState.AddingGame) {
+                    return;
+                }
                 let response = await fetch(getGameCodeUrl);
                 if (!response.ok) {
                     throw new Error("Unable to get data from the kiosk.");
                 } else {
                     const gameCode = (await response.json())?.code;
-                    console.log(gameCode);
-                    console.log(typeof(gameCode));
                     if (gameCode !== "0") {
-                        console.log(gameCode);
                         kiosk.addGame(gameCode);
+                        // this is something we might want to do in the future
+                        // ie if the game gets added, launch it immediately
+                        // instead of going back to the main menu to find it
+                        // kiosk.launchGame(gameCode);
                         return true;
                     }
                     throw new Error("Invalid game code");
@@ -128,7 +113,26 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                 }, timeoutDuration)
             });
         }
-    }, []);
+    }, [renderQRCode]);
+
+    const qrDivContent = () => {
+        if (renderQRCode) {
+            return (
+                <div className="innerQRCodeContent">
+                    <QRCodeSVG value={`${kioskCodeUrl}#${kioskCode}`} />
+                    <h3>10 minute Kiosk ID</h3>
+                    <h1>{kioskCode}</h1>
+                </div>
+            )
+        }
+        else {
+            return (
+                <div className="innerQRCodeContent">
+                    <AddGameButton kiosk={kiosk} selected={qrCodeButtonSelected} content="Generate new QR code" />
+                </div>
+            )
+        }
+    };
 
     return (
         <div className="addGame">
@@ -148,7 +152,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                     {qrDivContent()}
                 </div>
             </div>
-            <AddGameButton kiosk={kiosk} selected={buttonSelected} content="Return to menu" />
+            <AddGameButton kiosk={kiosk} selected={menuButtonSelected} content="Return to menu" />
         </div>
 
     )
