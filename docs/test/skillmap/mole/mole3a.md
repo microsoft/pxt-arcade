@@ -17,9 +17,7 @@ Let's make our game more professional by adding sound and animation.
 ## {2. Play Your Game}
 
 
-**Play the game you have so far. **
-
-- :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
+- :binoculars: Play the game you have so far.
 
 Using the joypad (or the arrow keys on your keyboard) move the hammer around the screen and earn 1 point each time it overlaps the mole!
 
@@ -34,13 +32,13 @@ hint~
 
 
 
----
----
+
+
 
 
 ## {3. Add the Label}
 
-Let’s add a label to the bottom our Whack-the-Mole game booth.
+**Let’s add a label to the bottom our Whack-the-Mole game booth.**
 
 - :tree: From the ``||scene: Scene||`` category in the toolbox, grab <br/>
 
@@ -49,7 +47,7 @@ scene.add_label_to("Whack-the-Mole", areas.Bottom)
 ```
 
 and snap it inside and at the very **end** of the
-``||loops: on start||``
+``||loops(noclick): on start||``
 block container that's already in your workspace.
 
 
@@ -59,10 +57,10 @@ block container that's already in your workspace.
 
 hint~
 
-💡 **Tip:** _Don't forget to look at the mini game window at the bottom of the screen to see what your new addition looks like!_
+💡 **Tip:** _Don't forget to look at your game to see what your new addition did!_
 
----
----
+
+
 
 #### ~ tutorialhint
 
@@ -80,7 +78,7 @@ scene.add_label_to("Whack-the-Mole", areas.Bottom)
 
 ## {4. Drop the Beat}
 
-Add a sound when the rubber hammer overlaps the mole.
+**Add a sound when the rubber hammer overlaps the mole.**
 
 
 - :headphones: From the ``||music: Music||`` category, grab <br/>
@@ -89,9 +87,9 @@ Add a sound when the rubber hammer overlaps the mole.
     music.baDing.play()
 ```
 
-and snap it in at **the end** of the ``||sprites: on sprite overlaps otherSprite||`` block already in the workspace.
+and snap it in at **the end** of the ``||sprites(noclick): on sprite overlaps otherSprite||`` block already in the workspace.
 
-- :mouse pointer: Change ``||music: ba ding||`` to whatever sound brings you joy.
+- :mouse pointer: Change ``||music(noclick): ba ding||`` to whatever sound brings you joy.
 
 
 ~hint Click here to see how 🕵🏽
@@ -101,8 +99,8 @@ and snap it in at **the end** of the ``||sprites: on sprite overlaps otherSprite
 
 hint~
 
----
----
+
+
 
 
 #### ~ tutorialhint
@@ -122,17 +120,15 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## {5. Check Your Game!}
 
-Let's test the game in the bigger window!
-
-- :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
+- :binoculars: Test your game!
 
 The mole should hop between holes and you should be able to move the hammer with your arrow keys or the joypad.
 
 You should also see the Whack-the-Mole label, and be able to hear a sound each time the rubber hammer overlaps the mole.
 
 
----
----
+
+
 
 
 
@@ -140,7 +136,7 @@ You should also see the Whack-the-Mole label, and be able to hear a sound each t
 ## {6. Add Animation}
 
 
-Finally, let's animate the rubber hammer each time it overlaps the mole.
+**Finally, let's animate the rubber hammer each time it overlaps the mole.**
 
 - :mouse pointer: At the bottom of the toolbox, click **Advanced** to show more categories.
 
@@ -157,7 +153,7 @@ false
 )
 ```
 
-and snap it in at **the end** of the ``||sprites: on sprite overlaps otherSprite||`` block already in the workspace.
+and snap it in at **the end** of the ``||sprites(noclick): on sprite overlaps otherSprite||`` block already in the workspace.
 
 - :mouse pointer: Click the empty square and when the image editor opens, switch to **My Assets** to select the **hammerAnimation** option and click **Done**.
 
@@ -169,8 +165,8 @@ and snap it in at **the end** of the ``||sprites: on sprite overlaps otherSprite
 
 hint~
 
----
----
+
+
 
 #### ~ tutorialhint
 
@@ -193,18 +189,17 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## {7. Check Your Game Again!}
 
-Take a look at what you've created!
 
-- :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
+
+- :binoculars: Take a look at what you've created!
 
 When your rubber hammer overlaps the mole, points should show up in the top-right corner, a sound should play, and you should see the rubber hammer move back and forth.
 
 **How many times can you tag the mole in 15 seconds?**
 
-- :mouse pointer: Don't forget to click **Next** to get back to the instructions when you're done playing.
 
----
----
+
+
 
 
 
@@ -216,8 +211,8 @@ You've finished your Whack-the-Mole game!
 
 When you're ready, click **Done** to return to the skillmap to claim your badge and share your game with friends and family.
 
----
----
+
+
 
 
 ```blockconfig.global

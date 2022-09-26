@@ -18,7 +18,7 @@ on what to do.
 
 - :lightbulb: Don't miss anything! Scroll down to the **double lines** before moving to the next instruction.
 
-- :lightbulb: Be on the lookout for secret information!
+- :lightbulb: Be on the lookout for secret messages!
 
 
 ~hint Click here to reveal hidden info 🕵🏽

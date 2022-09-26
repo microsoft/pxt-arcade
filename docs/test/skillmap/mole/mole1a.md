@@ -17,7 +17,7 @@ on what to do.
 
 ---
 
-Be on the lookout for secret information!
+Be on the lookout for secret messages!
 
 
 ~hint Click here to reveal hidden info 🕵🏽
@@ -31,8 +31,8 @@ hint~
 
 When you're done reading, click **Next** to move to the next instruction.
 
----
----
+
+
 
 
 
@@ -41,8 +41,7 @@ When you're done reading, click **Next** to move to the next instruction.
 
 **Ready to start coding?**
 
-Let's place an image of a grassy grid of holes in the background!
-
+We need a place for the mole to hide.
 
 - :tree: Go to the ``||scene: Scene||`` category **in the toolbox** and grab <br/>
 
@@ -50,7 +49,7 @@ Let's place an image of a grassy grid of holes in the background!
 scene.setBackgroundImage(img`.`)
 ```
 
-and snap it inside the empty ``||loops: on start||`` block already in the workspace.
+and snap it inside the empty ``||loops(noclick): on start||`` block already in the workspace.
 
 
 ~hint Click here to see how 🕵🏽
@@ -66,8 +65,8 @@ and snap it inside the empty ``||loops: on start||`` block already in the worksp
 hint~
 
 
----
----
+
+
 
 #### ~ tutorialhint
 
@@ -79,11 +78,11 @@ scene.setBackgroundImage(img`.`)
 
 ## {4. Choose the grid}
 
-Choose the grassy grid.
+**Choose the grassy grid.**
 
 - :mouse pointer: Click the empty square inside the new block and switch to the **My Assets** library.<br/>
 ![Switch to My Assets](/static/skillmap/mole/my-assets.gif "Change from the Editor to My Assets and select the grid.")
-<br/>Choose the **grid** background.<br/><br/>
+<br/>Choose the **grid** background.<br/>
 ![Choose the background that looks like a grid full of holes.](/static/skillmap/mole/grid.png "Select the grid from My Assets.")
 <br/>Then click **Done**.
 
@@ -97,8 +96,8 @@ Choose the grassy grid.
 hint~
 
 
----
----
+
+
 
 #### ~ tutorialhint
 
@@ -109,11 +108,10 @@ scene.setBackgroundImage(assets.image`grid`)
 
 ## {5. Check Your Game!}
 
-Now it's time to take a look!
 
-- :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
+- :binoculars: Look at your project in the game window to see how it has changed!
 
-You should see a green background with 9 purple holes where the moles can hide.
+You should see a green background with 9 holes where the moles can hide.
 
 
 ~hint Click here to see how 🕵🏽
@@ -122,8 +120,8 @@ You should see a green background with 9 purple holes where the moles can hide.
 
 hint~
 
----
----
+
+
 
 
 
@@ -137,7 +135,7 @@ Now we'll add the mole **SPRITE** to our game.
 
 In Arcade, each character or image that does something is called a **SPRITE**.
 
-Sprites have properties that you can use and change -- things like scale, position, and lifespan are all properties of sprites.
+Sprites have properties that you can use and change — things like scale, position, and lifespan are all properties of sprites.
 
 Our mole will be a sprite, too.
 
@@ -151,7 +149,7 @@ hint~
 let myMole = sprites.create(img`.`, SpriteKind.Enemy)
 ```
 
-and snap it inside at **the bottom** of the ``||loops: on start||`` block already in the workspace.
+and snap it inside at **the bottom** of the ``||loops(noclick): on start||`` block already in the workspace.
 
 
 ~hint Show me how! 🕵🏽
@@ -161,8 +159,8 @@ and snap it inside at **the bottom** of the ``||loops: on start||`` block alread
 
 hint~
 
----
----
+
+
 
 #### ~ tutorialhint
 
@@ -191,8 +189,8 @@ and click **Done**.
 
 hint~
 
----
----
+
+
 
 #### ~ tutorialhint
 
@@ -234,8 +232,8 @@ hint~
 
 hint~
 
----
----
+
+
 
 #### ~ tutorialhint
 
@@ -249,15 +247,14 @@ game.onUpdateInterval(1000, function () {
 
 ## {10. Check Your Game!}
 
-Look at your project again!
 
-- :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
+- :binoculars: Look at your project in the game window again to see what happened!
 
 You should see the mole changing spots every second.
 
 
----
----
+
+
 
 
 
@@ -268,10 +265,9 @@ You should see the mole changing spots every second.
 
 You have started your very own Whack-the-Mole game.
 
-When you're ready, click **Done** to return to the skillmap so you can add the rubber hammer that will let you catch the mole!
+When you're ready, click **Done** to return to the skillmap so you can add a rubber hammer!
 
----
----
+
 
 
 

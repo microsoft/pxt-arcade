@@ -6,7 +6,7 @@
 
 Your code from the last activity is already in the workspace.
 
-Let's use **SPRITES** and **EVENTS** to add a rubber hammer that can catch our mole.
+Let's use **SPRITES** and **EVENTS** to add a rubber hammer.
 
 
 ![Whack-the-Mole](/static/skillmap/mole/mole2.gif "Let's add a hammer to make our game more exciting." )
@@ -19,19 +19,21 @@ Let's use **SPRITES** and **EVENTS** to add a rubber hammer that can catch our m
 
 **Look at the game window.**
 
-- :binoculars: Take a look at the **mini game window**. You should see a mole that hops from hole to hole every second.
+- :binoculars: Look at your project in the game window to see what we're starting with.
+
+You should see a mole changing spots every second.
 
 
 💡 **Tip:** _If your code isn't working and you can't figure out why, click "Replace my code" to replace the blocks in your workspace with new starter code._
 
 
----
----
+
+
 
 
 ## {3. Add the Hammer}
 
-Let's add another **SPRITE** to act as our rubber hammer.
+Let's add another **SPRITE** for our rubber hammer.
 
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab
 
@@ -40,7 +42,7 @@ let myHammer = sprites.create(img`.`, SpriteKind.Player)
 ```
 
 and snap it inside and at the very **end** of the
-``||loops: on start||``
+``||loops(noclick): on start||``
 block container that's already in your workspace.
 
 - :mouse pointer: Click the empty square and when the image editor opens, switch to **My Assets** <br/>
@@ -58,8 +60,8 @@ block container that's already in your workspace.
 
 hint~
 
----
----
+
+
 
 #### ~ tutorialhint
 
@@ -81,7 +83,7 @@ We need to be able to move the hammer around the screen to chase the mole.
 ```block
 controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
 ```
-and snap it in at **the end** of the ``||loops: on start||`` block already in the workspace.
+and snap it in at **the end** of the ``||loops(noclick): on start||`` block already in the workspace.
 
 
 ~hint Click here to see how 🕵🏽
@@ -91,8 +93,8 @@ and snap it in at **the end** of the ``||loops: on start||`` block already in th
 
 hint~
 
----
----
+
+
 
 
 #### ~ tutorialhint
@@ -112,12 +114,12 @@ controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
 
 Let's test the action in the bigger game window!
 
-- :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
+- :binoculars: Test your project in the game window to see how it works!
 
 Try using the on-screen joypad or the arrow keys on your keyboard to move the hammer around the screen.
 
----
----
+
+
 
 
 
@@ -146,8 +148,8 @@ and drag it to an **empty** area of the workspace.
 
 hint~
 
----
----
+
+
 
 #### ~ tutorialhint
 
@@ -158,19 +160,19 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 
 
-## {8. Check Your Game Again!}
+## {7. Check Your Game Again!}
 
-Let's test the points in the bigger game window!
 
-- :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
+- :binoculars: Play with your project in the game window!
+
 
 When your rubber hammer overlaps the mole, you should see points start to show up in the top-right corner.
 
----
----
 
 
-## {9. Too Many Points}
+
+
+## {8. Too Many Points}
 
 Did you notice that the points added up really quickly when the rubber hammer stayed above the mole? Let's fix that.
 
@@ -181,7 +183,7 @@ Did you notice that the points added up really quickly when the rubber hammer st
     sprites.move_to_random_hole_on_grid(myMole)
 ```
 
-and snap it into **the end** of the ``||sprites: on sprite overlaps otherSprite||`` block container already in the workspace.
+and snap it into **the end** of the ``||sprites(noclick): on sprite overlaps otherSprite||`` block container already in the workspace.
 
 Now, when the rubber hammer overlaps the mole, the mole will quickly dash away!
 
@@ -192,8 +194,8 @@ Now, when the rubber hammer overlaps the mole, the mole will quickly dash away!
 
 hint~
 
----
----
+
+
 
 #### ~ tutorialhint
 
@@ -207,21 +209,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 
 
-## {10. Check Your Game!}
-
-Try your game again!
-
-- :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
-
-You should get one point each time you overlap the mole with the rubber hammer, then the mole should hop to another spot.
-
-
----
----
-
-
-
-## {11. Timer}
+## {9. Timer}
 
 Finally, let's add a timer to keep the game exciting.
 
@@ -232,7 +220,9 @@ Finally, let's add a timer to keep the game exciting.
 info.startCountdownGame(15, winTypes.Score)
 ```
 
-and snap it into **the end** of the ``||loops: on start||`` block container already in the workspace.
+and snap it into **the end** of the <br/>
+``||loops(noclick): on start||`` <br/>
+block container already in the workspace.
 
 
 ~hint Show me how! 🕵🏽
@@ -241,8 +231,8 @@ and snap it into **the end** of the ``||loops: on start||`` block container alre
 
 hint~
 
----
----
+
+
 
 #### ~ tutorialhint
 
@@ -259,34 +249,33 @@ info.startCountdownGame(15, winTypes.Score)
 
 
 
-## {12. Play your game!}
+## {10. Play your game!}
 
-Play your game!
 
-- :binoculars: Click the mini **game window** in the bottom corner to open the **bigger game window**!
+- :binoculars: Play your game!
 
 You should get one point each time you overlap the mole with the rubber hammer, then the mole should hop to another spot. Time should run out after 15 seconds and your high score should display!
 
 **Can you get 15 points before the timer runs out?**
 
 
----
----
 
 
 
 
 
-## {13. Finale}
+
+
+## {11. Finale}
 
 **🥳 You got it! 🥳**
 
-You have a playable Whack-the-Mole game.
+You have made a Whack-the-Mole game.
 
 When you're ready, click **Done** to return to the skillmap so you can add sound and animation to your game!
 
----
----
+
+
 
 
 ```blockconfig.global
