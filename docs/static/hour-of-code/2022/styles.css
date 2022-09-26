@@ -169,7 +169,7 @@ nav ul li{
     margin-top: 60px;
     text-align: center;
     background-color: #140083;
-    background-image:  url("/docs/static/hour-of-code/2022/hoc202_heroImage_large.gif"), url("/docs/static/hour-of-code/2022/skyTile.png");
+    background-image:  url("/static/hour-of-code/2022/hoc202_heroImage_large.gif"), url("/docs/static/hour-of-code/2022/skyTile.png");
 
     /* background-image:  url("static/hour-of-code/2022/hoc202_heroImage_large.gif"), url("static/hour-of-code/2022/skyTile.png"); */
     background-repeat: no-repeat, repeat-x;
