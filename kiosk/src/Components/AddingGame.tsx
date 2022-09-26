@@ -13,9 +13,9 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
     // TODO: update the urls to be more flexible for production code.
     const [kioskCode, setKioskCode] = useState("");
     const [renderQRCode, setRenderQRCode] = useState(true);
-    const kioskCodeUrl = "spujji.github.io/";
     const [menuButtonSelected, setMenuButtonState] = useState(false);
     const [qrCodeButtonSelected, setQrButtonState] = useState(false);
+    const kioskCodeUrl = "spujji.github.io/";
 
     const updateLoop = () => {
         if (!menuButtonSelected && kiosk.gamepadManager.isDownPressed()) {
@@ -51,6 +51,12 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
     });
 
     useEffect(() => {
+        const cleanUpObj = {
+            intervals: [],
+            timeouts: [],
+            fetches: [],
+        }
+        console.log("oop");
         async function generateKioskCode() {
             const codeGenerationUrl = "https://staging.pxt.io/api/kiosk/newcode"
             const response = await fetch(codeGenerationUrl);
@@ -77,6 +83,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
             const getGameCodeUrl = `https://staging.pxt.io/api/kiosk/code/${kioskCode}`;
             const getGameCode = async () => {
                 if (kiosk.state !== KioskState.AddingGame) {
+                    console.log("returned!!")
                     return;
                 }
                 let response = await fetch(getGameCodeUrl);
