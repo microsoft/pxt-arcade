@@ -2,34 +2,35 @@
 
 @font-face {
     font-family: 'InterBold';
-    src: url('Inter/static/Inter-Bold.ttf')
+    src: url('/docs/static/hour-of-code/2022/Inter/static/Inter-Bold.ttf')
         format('truetype');
 }
 
 
 @font-face {
     font-family: 'NunitoRegular';
-    src: url('Nunito/static/Nunito-Regular.ttf')
+    src: url('/docs/static/hour-of-code/2022/Nunito/static/Nunito-Regular.ttf')
         format('truetype');
 }
 
 @font-face {
     font-family: 'NunitoSemiBold';
-    src: url('Nunito/static/Nunito-SemiBold.ttf')
+    src: url('/docs/static/hour-of-code/2022/Nunito/static/Nunito-SemiBold.ttf')
         format('truetype');
 }
 
 @font-face {
     font-family: 'NunitoBold';
-    src: url('Nunito/static/Nunito-Bold.ttf')
+    src: url('/docs/static/hour-of-code/2022/Nunito/static/Nunito-Bold.ttf')
         format('truetype');
 }
 
 @font-face {
     font-family: 'NunitoExtraBold';
-    src: url('Nunito/static/Nunito-ExtraBold.ttf')
+    src: url('/docs/static/hour-of-code/2022/Nunito/static/Nunito-ExtraBold.ttf')
         format('truetype');
 }
+
 
 body{
 
@@ -167,7 +168,7 @@ nav ul li{
     margin-top: 60px;
     text-align: center;
     background-color: #140083;
-    background-image:  url("hoc202_heroImage_large.gif"), url("skyTile.png");
+    background-image:  url("/docs/static/hour-of-code/2022/hoc202_heroImage_large.gif"), url("/docs/static/hour-of-code/2022/skyTile.png");
 
     /* background-image:  url("static/hour-of-code/2022/hoc202_heroImage_large.gif"), url("static/hour-of-code/2022/skyTile.png"); */
     background-repeat: no-repeat, repeat-x;
