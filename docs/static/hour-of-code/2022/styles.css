@@ -152,7 +152,7 @@ nav ul li{
 }
 
 #hamburger-menu #sidebar-menu {
-    visibilty: hidden;
+    /* visibilty: hidden; */
     position: fixed;
     top: 0;
     left: -250px;
