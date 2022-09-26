@@ -2,34 +2,35 @@
 
 @font-face {
     font-family: 'InterBold';
-    src: url('Inter/static/Inter-Bold.ttf')
+    src: url('/docs/static/hour-of-code/2022/Inter/static/Inter-Bold.ttf')
         format('truetype');
 }
 
 
 @font-face {
     font-family: 'NunitoRegular';
-    src: url('Nunito/static/Nunito-Regular.ttf')
+    src: url('/docs/static/hour-of-code/2022/Nunito/static/Nunito-Regular.ttf')
         format('truetype');
 }
 
 @font-face {
     font-family: 'NunitoSemiBold';
-    src: url('Nunito/static/Nunito-SemiBold.ttf')
+    src: url('/docs/static/hour-of-code/2022/Nunito/static/Nunito-SemiBold.ttf')
         format('truetype');
 }
 
 @font-face {
     font-family: 'NunitoBold';
-    src: url('Nunito/static/Nunito-Bold.ttf')
+    src: url('/docs/static/hour-of-code/2022/Nunito/static/Nunito-Bold.ttf')
         format('truetype');
 }
 
 @font-face {
     font-family: 'NunitoExtraBold';
-    src: url('Nunito/static/Nunito-ExtraBold.ttf')
+    src: url('/docs/static/hour-of-code/2022/Nunito/static/Nunito-ExtraBold.ttf')
         format('truetype');
 }
+
 
 body{
 
@@ -68,6 +69,7 @@ section, footer{
 section{
     display: flex;
     justify-content: center;
+    padding: 50px 0 0 0;
     /* padding-bottom: 50px; */
 }
 
@@ -150,7 +152,7 @@ nav ul li{
 }
 
 #hamburger-menu #sidebar-menu {
-    visibilty: hidden;
+    /* visibilty: hidden; */
     position: fixed;
     top: 0;
     left: -250px;
@@ -167,7 +169,7 @@ nav ul li{
     margin-top: 60px;
     text-align: center;
     background-color: #140083;
-    background-image:  url("hoc202_heroImage_large.gif"), url("skyTile.png");
+    background-image:  url("/docs/static/hour-of-code/2022/hoc202_heroImage_large.gif"), url("/docs/static/hour-of-code/2022/skyTile.png");
 
     /* background-image:  url("static/hour-of-code/2022/hoc202_heroImage_large.gif"), url("static/hour-of-code/2022/skyTile.png"); */
     background-repeat: no-repeat, repeat-x;
@@ -214,9 +216,9 @@ nav ul li{
     max-width: 350px;
 }
 
-.odd{
+/* .odd{
     background-color: #0000AA; !important
-}
+} */
 
 .card:hover{
     box-shadow: 0px 3.4px 7.4px rgba(0, 0, 0, 0.132);
@@ -238,12 +240,12 @@ nav ul li{
 #start-here{
     z-index: 1;
     float:left;
-    position:relative;
+    position:absolute;
     max-width: 180px;
     height:0px;
     overflow: visible;
-    top: 50px;
-    left: 40px;
+    top: -50px;
+    left: -70px;
 }
 
 #twisted{
@@ -265,12 +267,6 @@ nav ul li{
     z-index: 10;
 }
 
-/* .featured-list #startHere{
-    position: absolute;
-    left: -100px;
-    top: -100px;
-    width: auto;
-} */
 
 .container-grid-btns button{
     margin: auto;
@@ -280,6 +276,7 @@ nav ul li{
     display: flex;
     gap: 12px;
     justify-content: center;
+    position: relative;
 }
 
 .container-grid .card{
@@ -305,7 +302,7 @@ nav ul li{
     display: block;
     text-align: center;
     max-width: 400px;
-    padding:0 0 50px 0;
+    /* padding:0 0 50px 0; */
 
 }
 
