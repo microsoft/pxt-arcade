@@ -240,12 +240,12 @@ nav ul li{
 #start-here{
     z-index: 1;
     float:left;
-    position:relative;
+    position:absolute;
     max-width: 180px;
     height:0px;
     overflow: visible;
-    top: 50px;
-    left: 40px;
+    top: -50px;
+    left: -70px;
 }
 
 #twisted{
@@ -267,12 +267,6 @@ nav ul li{
     z-index: 10;
 }
 
-/* .featured-list #startHere{
-    position: absolute;
-    left: -100px;
-    top: -100px;
-    width: auto;
-} */
 
 .container-grid-btns button{
     margin: auto;
@@ -282,6 +276,7 @@ nav ul li{
     display: flex;
     gap: 12px;
     justify-content: center;
+    position: relative;
 }
 
 .container-grid .card{

@@ -128,18 +128,29 @@
                     <div class="header-tag">One hour, millions of kids, limitless possibilities. Pick a game and step right up!</div>
                 </div>
             </section>
-            <div id="start-here">
+            <!-- <div id="start-here">
                 <div id="twisted">
                     New?<br/>
                 Start here!<br/>
                 </div>
                 <img src="static/hour-of-code/2022/start-here-arrow.png" alt="">
-            </div>
+            </div> -->
             <section class="featured-list">
                 <div class="container container-grid">
                     <div class="card"
                     onClick="launchPage('https://aka.ms/whack-the-mole', 'hourofcode2022.skillmap.open.whackEmAll')">
-                        <div class="card-cta btn">Whack-the-Mole</div>
+                        
+                    
+                    <div id="start-here">
+                        <div id="twisted">
+                            New?<br/>
+                        Start here!<br/>
+                        </div>
+                        <img src="static/hour-of-code/2022/start-here-arrow.png" alt="">
+                    </div>
+                    
+                    
+                    <div class="card-cta btn">Whack-the-Mole</div>
                         <img class="thumbnail" src="static/hour-of-code/2022/gameImg_whack_em_all.png" alt="Whack-the-Mole game screenshot">
                         <div class="card-item-title">Difficulty: <img class="difficulty" src="static/hour-of-code/2022/chili-mole.png" alt="beginner level"> </div>
                         <div>Create a classic game where you can bop moles in holes</div>
@@ -162,10 +173,10 @@
             </section>
             <section>
                 <div class="return-to-code">
-                    <button
+                    <!-- <button
                     onClick="launchPage('https://code.org/api/hour/finish', 'hourofcode2022.open.codeOrg')">
-                    Return to Code.org <img src="static/hour-of-code/2022/arrow.png" alt=""></button>
-                    <p>Finished a full hour?</p>
+                    More games</button> -->
+                    <p>Finished?<br />Get your <a href="https://code.org/api/hour/finish" target="_blank">Hour of Code™ certificate.</a></p>
                     
                 </div>
             </section>
@@ -180,8 +191,8 @@
             <section>
                 <div>
                     <div class="container">
-                        <h3>Build More Games</h3>
-                        <div>Wanna try something else? Make even more games using these tutorials.</div>
+                        <h3>Build more games</h3>
+                        <div>Find similar MakeCode games and projects.</div>
                         <div class="container-grid">
 
                             <div class="card" onClick="launchPage('https://arcade.makecode.com/--skillmap#docs:skillmap/shark', 'hourofcode2022.skillmap.open.shark')">
@@ -212,7 +223,9 @@
                         <p> Whether you’ve got an hour or a week, we’ll get you started with creative tutorials, customizable lesson plans, and teacher tranings that fit into your schedule.</p>
                         <button
                         onClick="launchPage('https://aka.ms/HoC-22-Lesson', 'hourofcode2022.skillmap.educator')">
-                        Teacher resources <img src="static/hour-of-code/2022/arrow.png" alt=""></button>
+                        Teacher resources 
+                        <!-- <img src="static/hour-of-code/2022/arrow.png" alt=""> -->
+                    </button>
                     </div>
                     <div>
                         <img class="rowImg" src="static/hour-of-code/2022/boothAni.gif" alt="">
@@ -236,8 +249,14 @@
             <section>
                 <div class="container">
                     <h3>More from Microsoft</h3>
-                    <div>Check out these Hour of Code offerings:</div>
+                    <!-- <div>Check out these Hour of Code offerings:</div> -->
                     <div class="container-grid">
+                        <div class="card"
+                        onClick="launchPage('http://arcade.makecode.com', 'hourofcode2022.footer.open.arcade')">
+                            <img class="thumbnail" src="static/hour-of-code/2022/arcadeImage.png" alt="Arcade image">
+                            <div class="card-item-title">Arcade</div>
+                            <div>Build video games, create characters, and play with friends.</div>
+                        </div>
                         <div class="card"
                         onClick="launchPage('http://makecode.microbit.org', 'hourofcode2022.footer.open.microbit')">
                             <img class="thumbnail" src="static/hour-of-code/2022/microbitImage.png" alt="microbit image">
@@ -248,7 +267,7 @@
                         onClick="launchPage('https://aka.ms/hourofcode', 'hourofcode2022.footer.open.minecraft')">
                             <img class="thumbnail" src="static/hour-of-code/2022/minecraft-hoc.png" alt="minecraft image">
                             <div class="card-item-title">Minecraft</div>
-                            <div>Can you solve the mystery and escape the house?</div>
+                            <div>Subscribe to Education Edition for fun, immersive STEM learning.</div>
                         </div>
                     </div>
                 </div>
