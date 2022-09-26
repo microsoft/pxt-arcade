@@ -84,8 +84,8 @@ scroller.scrollBackgroundWithSpeed(-50, 0)
 
 ## {Step 4}
 
-**Try your game in the simulator (Bottom Right)**  
-![Go to  the Game Simulator in the editor.](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
+**Try your game in the Game Window (Bottom Right)**  
+![Go to the Game Window in the editor.](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 ---
 
 Your background should move on its own!
@@ -161,7 +161,7 @@ for (let index = 0; index < 100; index++) {forever(function () {
 ## {Step 6.5}
 
 **Take another look at your game (Bottom Right)**  
-![Go to  the Game Simulator in the editor.](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
+![Go to the Game Window in the editor.](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
 
