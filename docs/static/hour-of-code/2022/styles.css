@@ -1,35 +1,4 @@
-
-
-@font-face {
-    font-family: 'InterBold';
-    src: url('/docs/static/hour-of-code/2022/Inter/static/Inter-Bold.ttf')
-        format('truetype');
-}
-
-
-@font-face {
-    font-family: 'NunitoRegular';
-    src: url('/docs/static/hour-of-code/2022/Nunito/static/Nunito-Regular.ttf')
-        format('truetype');
-}
-
-@font-face {
-    font-family: 'NunitoSemiBold';
-    src: url('/docs/static/hour-of-code/2022/Nunito/static/Nunito-SemiBold.ttf')
-        format('truetype');
-}
-
-@font-face {
-    font-family: 'NunitoBold';
-    src: url('/docs/static/hour-of-code/2022/Nunito/static/Nunito-Bold.ttf')
-        format('truetype');
-}
-
-@font-face {
-    font-family: 'NunitoExtraBold';
-    src: url('/docs/static/hour-of-code/2022/Nunito/static/Nunito-ExtraBold.ttf')
-        format('truetype');
-}
+/* Fonts imports are in html page */
 
 
 body{
@@ -70,7 +39,6 @@ section{
     display: flex;
     justify-content: center;
     padding: 50px 0 0 0;
-    /* padding-bottom: 50px; */
 }
 
 header{
@@ -164,18 +132,14 @@ nav ul li{
 }
 
 /* HERO */
+/* background image is in HTML page due to known pathing issue */
 #hero{
     padding: 0;
     margin-top: 60px;
     text-align: center;
     background-color: #140083;
-    background-image:  url("/static/hour-of-code/2022/hoc202_heroImage_large.gif"), url("/docs/static/hour-of-code/2022/skyTile.png");
-
-    /* background-image:  url("static/hour-of-code/2022/hoc202_heroImage_large.gif"), url("static/hour-of-code/2022/skyTile.png"); */
     background-repeat: no-repeat, repeat-x;
     background-position: center;
-    /* background-size: 1270px 416px, 416px;
-    height: 416px; */
     background-size: 1500px 500px, 500px;
     height: 500px;
 }
@@ -216,9 +180,6 @@ nav ul li{
     max-width: 350px;
 }
 
-/* .odd{
-    background-color: #0000AA; !important
-} */
 
 .card:hover{
     box-shadow: 0px 3.4px 7.4px rgba(0, 0, 0, 0.132);
@@ -249,11 +210,9 @@ nav ul li{
 }
 
 #twisted{
-    /* width: 125px; */
     transform: rotate(-25deg);
     text-align: center;
     padding-bottom: 10px;
-    /*font-size:.85em;*/
 }
 
 /* Featured */
@@ -341,10 +300,6 @@ button, .btn{
     font-style: normal;
     padding: 15px;
     font-family: 'NunitoSemiBold';
-    /* font-weight: 500; */
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
     letter-spacing: 0.035em;
     transition: opacity .15s;
     cursor: pointer;
@@ -363,13 +318,10 @@ footer{
 
 footer a:link, footer a{
     color: #ffffff;
-    /* text-decoration: none; */
 }
 
 footer div {
     padding: 20px;
-    /* display: flex;
-    gap: 20px; */
 }
 
 footer div img{
