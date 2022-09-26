@@ -65,7 +65,7 @@ section, footer{
     background-color: #0000AA;
 }
 
-section{ 
+section{
     display: flex;
     justify-content: center;
     /* padding-bottom: 50px; */
@@ -73,7 +73,7 @@ section{
 
 header{
     background-color:rgb(20 0 133 / 80%);
-    padding: 20px; 
+    padding: 20px;
     position: fixed;
     top: 0px;
     width: 100%;
@@ -84,7 +84,7 @@ header{
 
 /* Nav */
 nav {
-    width: 100%;
+    width: 80%;
 }
 
 nav a{
@@ -96,7 +96,7 @@ nav a{
 
 a {
     color: #FFBE00;
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 a:link{
@@ -104,7 +104,7 @@ a:link{
 }
 
 a:hover{
-    text-decoration: underline;   
+    text-decoration: underline;
 }
 
 p > a{
@@ -118,12 +118,47 @@ nav ul{
     padding: 0;
     height: 100%;
     align-items: center;
+    float: right;
 }
 
 nav ul li{
     list-style: none;
     /* margin-right: 1em; */
     line-height: 10px;
+}
+
+#nav-items {
+    float:right;
+}
+
+#hamburger-menu {
+    width: 30px;
+    height: 30px;
+    display: block;
+    border: none;
+    border-radius: 4px;
+    padding: 0px;
+    margin: 20px;
+    background: linear-gradient(
+      to bottom,
+      white, white 20%,
+      #140083 20%, #140083 40%,
+      white 40%, white 60%,
+      #140083 60%, #140083 80%,
+      white 80%, white 100%
+    );
+}
+
+#hamburger-menu #sidebar-menu {
+    visibilty: hidden;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 200px;
+    height: 100%;
+    background-color: #3D0E61;
+    padding: 0px 10px;
+    box-sizing: border-box;
 }
 
 /* HERO */
@@ -133,7 +168,7 @@ nav ul li{
     text-align: center;
     background-color: #140083;
     background-image:  url("hoc202_heroImage_large.gif"), url("skyTile.png");
-    
+
     /* background-image:  url("static/hour-of-code/2022/hoc202_heroImage_large.gif"), url("static/hour-of-code/2022/skyTile.png"); */
     background-repeat: no-repeat, repeat-x;
     background-position: center;
@@ -169,12 +204,18 @@ nav ul li{
 /* Cards */
 .card{
     position: relative;
+    display:block;
     padding: 20px;
     margin: 10px 0 ;
     background-color: #140083;
     border-radius: 10px;
     box-shadow: 0px 6.4px 14.4px rgba(0, 0, 0, 0.132), 0px 1.2px 3.6px rgba(0, 0, 0, 0.108);
     transition: transform .15s, opacity .15s;
+    max-width: 350px;
+}
+
+.odd{
+    background-color: #0000AA; !important
 }
 
 .card:hover{
@@ -190,6 +231,29 @@ nav ul li{
     width: 100%;
 }
 
+.difficulty {
+    max-width: 150px;
+}
+
+#start-here{
+    z-index: 1;
+    float:left;
+    position:relative;
+    max-width: 180px;
+    height:0px;
+    overflow: visible;
+    top: 50px;
+    left: 40px;
+}
+
+#twisted{
+    /* width: 125px; */
+    transform: rotate(-25deg);
+    text-align: center;
+    padding-bottom: 10px;
+    /*font-size:.85em;*/
+}
+
 /* Featured */
 
 .featured-list{
@@ -198,14 +262,15 @@ nav ul li{
     background: linear-gradient(180deg, #1C7100 60%, #0000AA 50%);
     display: flex;
     justify-content: center;
+    z-index: 10;
 }
 
-.featured-list #startHere{
+/* .featured-list #startHere{
     position: absolute;
     left: -100px;
     top: -100px;
     width: auto;
-}
+} */
 
 .container-grid-btns button{
     margin: auto;
@@ -233,7 +298,15 @@ nav ul li{
     width: 230px;
     position: absolute;
     left: 50%;
-    
+
+}
+
+.return-to-code{
+    display: block;
+    text-align: center;
+    max-width: 400px;
+    padding:0 0 50px 0;
+
 }
 
 
@@ -351,6 +424,7 @@ footer div img{
     section{
         padding: 10px 10px 30px 10px
     }
+
 
     .container-grid{
         display: block;

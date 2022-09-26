@@ -59,8 +59,7 @@ If those steps don't solve your problem, click "Replace my code" to replace the 
 
 hint~
 
----
----
+
 
 
 ## {3. Add Second Player}
@@ -71,8 +70,7 @@ Follow the steps from previous levels to add a second player that reacts to the 
 
 **Don't forget to try your game after each step!**
 
----
----
+
 
 
 ## {4. Add a Second Button Event}
@@ -100,8 +98,7 @@ hint~
 hint~
 
 
----
----
+
 
 
 
@@ -148,8 +145,7 @@ hint~
 
 hint~
 
----
----
+
 
 
 
@@ -169,8 +165,7 @@ myBalloon2 = sprites.create(assets.image`balloon-2`, SpriteKind.Player)
 myBalloon2.setPosition(110, 93)
 ```
 
----
----
+
 
 
 
@@ -204,8 +199,7 @@ hint~
 
 hint~
 
----
----
+
 
 ```blockconfig.local
 let myMouse2 = sprites.create(assets.image`balloon-2`, SpriteKind.Mouse)
@@ -235,8 +229,7 @@ myMouse2 = sprites.create(assets.image`mouse2-up`, SpriteKind.Mouse)
 myMouse2.setPosition(110, 93)
 ```
 
----
----
+
 
 
 ## {7. Push Mouse 2}
@@ -274,8 +267,7 @@ hint~
 
 hint~
 
----
----
+
 
 ```blockconfig.local
 let myMouse2 = sprites.create(assets.image`balloon-2`, SpriteKind.Mouse)
@@ -328,8 +320,7 @@ hint~
 
 hint~
 
----
----
+
 
 ```blockconfig.local
 let myMouse2 = sprites.create(assets.image`balloon-2`, SpriteKind.Mouse)
@@ -373,8 +364,7 @@ Grab a friend and have them press the (A) button or **space bar** while you pres
 inside ``||loops: on start||`` and choose **Delete Blocks**.
 
 
----
----
+
 
 
 
@@ -404,8 +394,7 @@ hint~
 
 hint~
 
----
----
+
 
 ```blockconfig.local
 let myMouse2 = sprites.create(assets.image`balloon-2`, SpriteKind.Mouse)
