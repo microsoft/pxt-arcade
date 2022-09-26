@@ -54,8 +54,8 @@ game.onUpdateInterval(300, function () {
 
 ## {Step 4}
 
-**Click the Game Window Tab (Above)**
-![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
+**Try your game in the simulator (Bottom Right)**  
+![Go to  the Game Simulator in the editor.](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
 
