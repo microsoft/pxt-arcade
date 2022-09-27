@@ -148,12 +148,12 @@ game.splash("My monkey is better than yours")
 Every rule has an exception, so let's look at a block
 that doesn't match its category.
 
-The ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block
+The ``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` block
 is red, but it lives in the ``||sprites:Sprites||`` category.
 
 In this case, you can look at the bubbles to the left of the instructions for the icon where you can find the block.
 
-- :paper plane:  Snap ``||variables:set [my sprite] to sprite [ ] of kind [Player]||`` into the
+- :paper plane:  Snap ``||variables(sprites):set [my sprite] to sprite [ ] of kind [Player]||`` into the
 end of the **on start** container.
 
 - :paint brush:  Click the grey box in the new block and draw a main player [__*sprite*__](#sprote "A 2-D image that moves on the screen")
