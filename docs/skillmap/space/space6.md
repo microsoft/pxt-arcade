@@ -131,7 +131,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ``||arrays:get random value from [list]||``  
 in to replace the current
 dart image in the  
-``||variables:set [projectile] to ...||``  
+``||variables(sprites):set [projectile] to ...||``  
 block (just beneath the list you have created.)
 
 - :mouse pointer: Click **list** and change it to **darts** using the dropdown menu.
