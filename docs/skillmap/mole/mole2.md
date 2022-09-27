@@ -48,8 +48,8 @@ block container that's already in your workspace.
 Then click **Done**.
 
 
-- :mouse pointer: Click the ``||variables:mySprite2||`` title inside the block and
-choose **rename variable** to set the title to ``||variables:myHammer||``.
+- :mouse pointer: Click the ``||variables(noclick):mySprite2||`` title inside the block and
+choose **rename variable** to set the title to ``||variables(noclick):myHammer||``.
 
 
 ~hint Show me how! 🕵🏽
