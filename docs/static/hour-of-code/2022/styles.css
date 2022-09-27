@@ -185,7 +185,7 @@ nav ul li{
     background-color: #140083;
     border-radius: 10px;
     box-shadow: 0px 6.4px 14.4px rgba(0, 0, 0, 0.132), 0px 1.2px 3.6px rgba(0, 0, 0, 0.108);
-    transition: transform .15s, opacity .15s;
+    transition: transform .15s, filter .15s;
     max-width: 350px;
 }
 
@@ -193,7 +193,8 @@ nav ul li{
 .card:hover{
     box-shadow: 0px 3.4px 7.4px rgba(0, 0, 0, 0.132);
     transform: scale(.98);
-    opacity: .8;
+    filter: brightness(75%);
+    /* opacity: .8; */
 }
 
 .card-item-title{
@@ -310,12 +311,12 @@ button, .btn{
     padding: 15px;
     font-family: 'NunitoSemiBold';
     letter-spacing: 0.035em;
-    transition: opacity .15s;
+    transition: filter .15s;
     cursor: pointer;
 }
 
 button:hover, .btn:hover{
-    opacity: .8;
+    filter: brightness(75%);
 }
 
 /* footer */
