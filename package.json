@@ -37,7 +37,7 @@
         "pxt-core": "8.3.4"
     },
     "optionalDependencies": {
-        "pxt-arcade-sim": "microsoft/pxt-arcade-sim.git#v0.9.5"
+        "pxt-arcade-sim": "microsoft/pxt-arcade-sim.git#v0.9.6"
     },
     "scripts": {
         "serve": "node node_modules/pxt-core/built/pxt.js serve",
