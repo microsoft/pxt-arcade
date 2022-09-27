@@ -604,7 +604,8 @@
         },
         "monacoFieldEditors": [
             "image-editor",
-            "tilemap-editor"
+            "tilemap-editor",
+            "soundeffect-editor"
         ],
         "scriptManager": true,
         "saveInMenu": false,
