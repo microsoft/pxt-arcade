@@ -8,7 +8,7 @@ We're so excited to have you designing this exhibit.
 ---
 
 - :paper plane:  To start, go to the ``||sprites:Sprites||`` category and drag
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||``
 into the ``||loops:on start||`` container.
 
 - :paint brush:  Click the grey box and use the **image editor** to

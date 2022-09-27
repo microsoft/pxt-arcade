@@ -20,7 +20,7 @@ Let's get you set up in your new place!
 ---
 
 - :paper plane:  From the ``||sprites:Sprites||`` category, drag the  
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``   
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||``   
 block into the ``||loops:on start||`` container.
 
 - :paint brush:  Click the grey box to open the **image editor** and draw yourself in your best zookeeper outfit!
