@@ -79,7 +79,7 @@ for your aircraft that will fly around the screen.
 ---
 
 - :paper plane: Drag <br/>
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
 to **the end** of the <br/>
 ``||loops:on start||`` <br/>
 container.
