@@ -42,9 +42,9 @@ section{
 }
 
 header{
-    background-color:rgb(20 0 133 / 80%);
-    padding: 20px;
-    position: fixed;
+    /* background-color:rgb(20 0 133 / 80%); */
+    padding: 20px 20px 0 20px;
+    position: absolute;
     top: 0px;
     width: 100%;
     z-index: 999;
@@ -61,7 +61,6 @@ nav a{
     font-family: 'InterBold', sans-serif;
     font-size: 18px;
 }
-
 
 
 a {
@@ -135,7 +134,7 @@ nav ul li{
 /* background image is in HTML page due to known pathing issue */
 #hero{
     padding: 0;
-    margin-top: 60px;
+    /* margin-top: 60px; */
     text-align: center;
     background-color: #140083;
     background-repeat: no-repeat, repeat-x;
@@ -166,6 +165,16 @@ nav ul li{
     width: 280px;
     margin: auto;
 }
+
+/* overflow games */
+.container-grid.overflow-games{
+    display: none;
+}
+
+.container-grid.overflow-games.active{
+    display: flex;
+}
+
 
 /* Cards */
 .card{
@@ -219,7 +228,7 @@ nav ul li{
 
 .featured-list{
     margin: 0;
-    padding: 75px 75px 0px 75px;
+    padding: 50px 75px 0px 75px;
     background: linear-gradient(180deg, #1C7100 60%, #0000AA 50%);
     display: flex;
     justify-content: center;
