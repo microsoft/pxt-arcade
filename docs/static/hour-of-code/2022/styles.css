@@ -42,9 +42,9 @@ section{
 }
 
 header{
-    background-color:rgb(20 0 133 / 80%);
-    padding: 20px;
-    position: fixed;
+    /* background-color:rgb(20 0 133 / 80%); */
+    padding: 20px 20px 0 20px;
+    position: absolute;
     top: 0px;
     width: 100%;
     z-index: 999;
@@ -61,7 +61,6 @@ nav a{
     font-family: 'InterBold', sans-serif;
     font-size: 18px;
 }
-
 
 
 a {
@@ -135,7 +134,7 @@ nav ul li{
 /* background image is in HTML page due to known pathing issue */
 #hero{
     padding: 0;
-    margin-top: 60px;
+    /* margin-top: 60px; */
     text-align: center;
     background-color: #140083;
     background-repeat: no-repeat, repeat-x;
@@ -167,6 +166,16 @@ nav ul li{
     margin: auto;
 }
 
+/* overflow games */
+.container-grid.overflow-games{
+    display: none;
+}
+
+.container-grid.overflow-games.active{
+    display: flex;
+}
+
+
 /* Cards */
 .card{
     position: relative;
@@ -176,18 +185,20 @@ nav ul li{
     background-color: #140083;
     border-radius: 10px;
     box-shadow: 0px 6.4px 14.4px rgba(0, 0, 0, 0.132), 0px 1.2px 3.6px rgba(0, 0, 0, 0.108);
-    transition: transform .15s, opacity .15s;
+    transition: transform .15s, filter .15s;
     max-width: 350px;
 }
 
 .card:hover{
     box-shadow: 0px 3.4px 7.4px rgba(0, 0, 0, 0.132);
     transform: scale(.98);
-    opacity: .8;
+    filter: brightness(75%);
+    /* opacity: .8; */
 }
 
 .card-item-title{
     font-family: 'NunitoBold';
+    display:flex;
 }
 .card img.thumbnail{
     width: 100%;
@@ -195,6 +206,7 @@ nav ul li{
 
 .difficulty {
     max-width: 150px;
+    padding: 0 5px;
 }
 
 #start-here{
@@ -218,7 +230,7 @@ nav ul li{
 
 .featured-list{
     margin: 0;
-    padding: 75px 75px 0px 75px;
+    padding: 50px 75px 0px 75px;
     background: linear-gradient(180deg, #1C7100 60%, #0000AA 50%);
     display: flex;
     justify-content: center;
@@ -300,12 +312,12 @@ button, .btn{
     padding: 15px;
     font-family: 'NunitoSemiBold';
     letter-spacing: 0.035em;
-    transition: opacity .15s;
+    transition: filter .15s;
     cursor: pointer;
 }
 
 button:hover, .btn:hover{
-    opacity: .8;
+    filter: brightness(75%);
 }
 
 /* footer */

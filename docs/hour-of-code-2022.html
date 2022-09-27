@@ -40,6 +40,7 @@
         <meta name="msapplication-config" content="none" />
         <meta name="theme-color" content="#3DC1AA" />
 
+
         <meta name="description" content="Join us in celebrating this year's Computer Science Education Week by playing, designing and coding your very own retro arcade games!">
 
         <!-- Facebook Meta Tags -->
@@ -129,11 +130,11 @@
     </head>
 
     <body id="root" class="root" onload="handleOnLoad()">
-        <img
+        <!-- <img
             class="tracking"
             src="https://code.org/api/hour/begin_microsoft_carnival.png"
             alt="tracking"
-        />
+        /> -->
         <main role="presentation">
             <header>
                 <img src="static/hour-of-code/2022/microsoftMakeCodeLogo.svg" alt="MakeCode Logo">
@@ -204,6 +205,26 @@
                         <h3>Build more games</h3>
                         <div>Find similar MakeCode games and projects.</div>
                         <div class="container-grid">
+                            <div class="card" onClick="launchPage('https://arcade.makecode.com/--skillmap#docs:skillmap/shark', 'hourofcode2022.skillmap.open.shark')">
+                                <img class="thumbnail" src="static/hour-of-code/2022/gameImg_shark.png" alt="Shark Attack Game Screenshot">
+                                <div class="card-item-title">Difficulty: <img class="difficulty" src="static/hour-of-code/2022/chili-balloon.png" alt="intermediate level"></div>
+                                <div>Create a shark attack game, then gobble up fish</div>
+                            </div>
+                            <div class="card" onClick="launchPage('https://arcade.makecode.com/--skillmap#docs:skillmap/racer', 'hourofcode2022.skillmap.open.racer')">
+                                <img class="thumbnail" src="static/hour-of-code/2022/gameImg_racer.png" alt="Monster Racer game screenshot">
+                                <div class="card-item-title">Difficulty: <img class="difficulty" src="static/hour-of-code/2022/chili-balloon.png" alt="intermediate level"></div>
+                                <div>Build a racing game with a creepy "monster" truck</div>
+                            </div>
+                            <div class="card" onClick="launchPage('https://arcade.makecode.com/--skillmap#docs:skillmap/forest', 'hourofcode2022.skillmap.open.forest')">
+                                <img class="thumbnail" src="static/hour-of-code/2022/gameImg_forest.png" alt="Forest Fire game screenshot">
+                                <div class="card-item-title">Difficulty: <img class="difficulty" src="static/hour-of-code/2022/chili-balloon.png" alt="intermediate level"></div>
+                                <div>Code a forest fire, then put it out with an airtanker</div>
+                            </div>
+                        </div>
+
+                    <!-- THIS IS PLACEHOLDER FOR WHEN WE HAVE OVERFLOW 
+                        
+                        <div class="container-grid overflow-games">
 
                             <div class="card" onClick="launchPage('https://arcade.makecode.com/--skillmap#docs:skillmap/shark', 'hourofcode2022.skillmap.open.shark')">
                                 <img class="thumbnail" src="static/hour-of-code/2022/gameImg_shark.png" alt="Shark Attack Game Screenshot">
@@ -221,8 +242,10 @@
                                 <div>Code a forest fire, then put it out with an airtanker</div>
                             </div>
                         </div>
+                    -->
                     </div>
-                    <div class="container container-grid-btns"><button>More games</button></div>
+                    <!-- THIS IS PLACEHOLDER FOR WHEN WE HAVE OVERFLOW
+                        <div class="container container-grid-btns"><button id="showMoreGames_btn">More games</button></div> -->
                 </div>
             </section>
             <section>
@@ -244,22 +267,8 @@
             </section>
 
             <section>
-                <div>
-                    <div class="container">
-                        <h3>Get help from CodeNinjas</h3>
-                        <div>Would you like to Code a Carnival at your school?</div>
-                        <div>
-                            CodeNinjas Banner / Blurb Here
-                        </div>
-                    </div>
-                    <div class="container container-grid-btns"><button>More games</button></div>
-                </div>
-            </section>
-
-            <section>
                 <div class="container">
                     <h3>More from Microsoft</h3>
-
                     <div class="container-grid">
                         <div class="card"
                         onClick="launchPage('http://arcade.makecode.com', 'hourofcode2022.footer.open.arcade')">
@@ -279,9 +288,30 @@
                             <div class="card-item-title">Minecraft</div>
                             <div>Subscribe to Education Edition for fun, immersive STEM learning.</div>
                         </div>
+                        <div class="card"
+                        onClick="launchPage('http://arcade.makecode.com', 'hourofcode2022.footer.open.arcade')">
+                            <img class="thumbnail" src="static/hour-of-code/2022/arcadeImage.png" alt="Arcade image">
+                            <div class="card-item-title">Arcade</div>
+                            <div>Build video games, create characters, and play with friends.</div>
+                        </div>
                     </div>
                 </div>
             </section>
+
+            <!-- WAITING ON CODE NINJA ASSETS 
+                <section>
+                <div>
+                    <div class="container">
+                        <h3>Get help from CodeNinjas</h3>
+                        <div>Would you like to Code a Carnival at your school?</div>
+                        <div>
+                            CodeNinjas Banner / Blurb Here
+                        </div>
+                    </div>
+                    <div class="container container-grid-btns"><button>More games</button></div>
+                </div>
+            </section> -->
+
             <footer id="footer">
                 <div>
                     <img src="static/hour-of-code/2022/red-pixel-heart-vmx.png" alt="">
@@ -318,7 +348,16 @@
         </main>
 
 
-
+        <script>
+            const showMoreGames_btn = document.querySelector("#showMoreGames_btn");
+            showMoreGames_btn.addEventListener('click', (event) => {
+                const overflow_games = document.querySelectorAll(".overflow-games");
+                for(var i=0; i< overflow_games.length; i++){
+                    overflow_games[i].classList.add("active");
+                }
+                showMoreGames_btn.style.display = "none";
+            });
+        </script>
 
 
 
