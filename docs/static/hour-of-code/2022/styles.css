@@ -230,7 +230,7 @@ nav ul li{
 
 .featured-list{
     margin: 0;
-    padding: 50px 75px 0px 75px;
+    padding: 10px 75px 0px 75px;
     background: linear-gradient(180deg, #1C7100 60%, #0000AA 50%);
     display: flex;
     justify-content: center;
