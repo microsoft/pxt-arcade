@@ -199,6 +199,7 @@ nav ul li{
 
 .card-item-title{
     font-family: 'NunitoBold';
+    display:flex;
 }
 .card img.thumbnail{
     width: 100%;
@@ -206,6 +207,7 @@ nav ul li{
 
 .difficulty {
     max-width: 150px;
+    padding: 0 5px;
 }
 
 #start-here{
