@@ -111,7 +111,7 @@ Uh oh!  You get WAY too many points when you touch a ring. We can fix that in th
 
 ► From ``||scene:Scene||``, drag ``||scene:set [ ] at tilemap col [0] row [0]||`` into **the top** of the ``||scene:on [sprite] of kind [Player] overlaps [ring] at [location]||`` container.
 
-► Replace ``||scene:tilemap col [0] row [0]||`` with the ``||variables:location||`` value from the top of the **Player overlaps ring** container.
+► Replace ``||scene:tilemap col [0] row [0]||`` with the ``||variables(noclick):location||`` value from the top of the **Player overlaps ring** container.
 
 ![Share your location](/static/skillmap/sc/sc-location.gif "Grab the variable from the overlap container")
 
