@@ -152,10 +152,10 @@ You can follow the same steps to animate the baby.
 
 - :sync:  Drag  
 ``||animation:animate [mySprite]||``  
-into the ``||loops:forever||`` loop where your main ``||variables:projectile||`` is created, 
+into the ``||loops:forever||`` loop where your main ``||variables(noclick):projectile||`` is created, 
 and snap it **just above** the ``||loops:pause [1000]||`` block.
 
-- :mouse pointer:  Change ``||variables:mySprite||`` to ``||variables:projectile||``.
+- :mouse pointer:  Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):projectile||``.
 
 - :mouse pointer:  Choose the **Animated Baby** animation, select the interval, and set **loop** to `<ON>`.
 
@@ -198,9 +198,9 @@ Now you can do the same thing for your enemy sprite!
 
 - :sync:  Drag  
 ``||animation:animate [mySprite]||``  
-into the ``||loops:forever||`` loop where ``||variables:projectile2||`` is created, and snap it **just above** the ``||loops:pause [2100]||`` block.
+into the ``||loops:forever||`` loop where ``||variables(noclick):projectile2||`` is created, and snap it **just above** the ``||loops:pause [2100]||`` block.
 
-- :mouse pointer:  Change ``||variables:mySprite||`` to ``||variables:projectile2||``.
+- :mouse pointer:  Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):projectile2||``.
 
 - :mouse pointer:  Choose the **Animated Tourist**, select the interval, and set **loop** to `<ON>`.
 
