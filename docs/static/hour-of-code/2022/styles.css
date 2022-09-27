@@ -189,7 +189,6 @@ nav ul li{
     max-width: 350px;
 }
 
-
 .card:hover{
     box-shadow: 0px 3.4px 7.4px rgba(0, 0, 0, 0.132);
     transform: scale(.98);
