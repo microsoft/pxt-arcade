@@ -36,7 +36,7 @@ Our moving characters are called [__*sprites*__](#sprote "2-D images that move o
 ---
 
 - :paper plane: From the ``||sprites:Sprites||`` category, drag <br/>
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
 to **the end** of the ``||loops:on start||`` container.
 
 _💡  Having trouble finding the block you need? Look to the left of the instructions for the icon of the toolbox category where your block lives!_

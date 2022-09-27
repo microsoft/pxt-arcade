@@ -59,7 +59,7 @@ in to replace <br/>
 - :map: Create the wall **under** your sprite by dragging <br/>
 ``||tiles:location of [mySprite]||`` <br/>
 in to replace <br/>
-``||variables:location||``.
+``||variables(noclick):location||``.
 
 
 ```blocks
@@ -119,7 +119,7 @@ in to replace <br/>
 
 - :map: As before, create the tile **under** your sprite by dragging <br/>
 ``||tiles:location of [mySprite]||`` <br/>
-in to replace  ``||variables:location||``.
+in to replace  ``||variables(noclick):location||``.
 
 
 ```blocks
