@@ -136,7 +136,7 @@ and select **Duplicate** from the menu.
 
 - :mouse pointer: Snap the new block into the **end** of the ``||loops: on start||`` container that's already in the workspace.
 
-- :mouse pointer: Click ``||variables:mySprite||`` and change it to ``||variables:myMouse||``.
+- :mouse pointer: Click ``||variables(noclick):mySprite||`` and change it to ``||variables(noclick):myMouse||``.
 
 You should see your mouse move directly in front of your balloon.
 
@@ -182,7 +182,7 @@ and snap anywhere inside the <br/>
 ``||controller: on [A] button [pressed]||`` <br/>
 block already in your workspace.
 
-- :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:myMouse||`` and change the image to **mouse1-down**.
+- :mouse pointer: Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):myMouse||`` and change the image to **mouse1-down**.
 
 ![Choose the orange mouse pushing the plunger](/static/skillmap/balloon/mouse1-down.png "Select `mouse1-down` from My Assets")
 
@@ -270,7 +270,7 @@ and snap inside the **empty**<br/>
 ``||controller: on [A] button [released]||`` <br/>
 block already in your workspace.
 
-- :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:myMouse||`` and change the image to **mouse1-up**.
+- :mouse pointer: Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):myMouse||`` and change the image to **mouse1-up**.
 
 ![Choose the orange mouse holding the plunger](/static/skillmap/balloon/mouse1-up.png "Select `mouse1-up` from My Assets")
 

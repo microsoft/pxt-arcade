@@ -230,7 +230,7 @@ and snap it into the **end** of the
 ``||loops: on start||``
 block already in your workspace.
 
-- :mouse pointer: Click ``||variables: mySprite2||`` and choose **Rename variable...** from the menu. <br/>
+- :mouse pointer: Click ``||variables(noclick): mySprite2||`` and choose **Rename variable...** from the menu. <br/>
 Change the name to **myBooth**.
 
 - :mouse pointer: Click the empty square and when the image editor opens, switch to **My Assets** to select the **booth** sprite.

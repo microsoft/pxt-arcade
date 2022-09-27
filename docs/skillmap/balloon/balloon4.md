@@ -134,7 +134,7 @@ _(You'll need to move player 1 to the left, and set player 2 further right.)_
 ~hint Tell me more... 🕵🏽
 
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
-``||variables: set [mySprite2] to sprite [ ] of kind [Player]||`` <br/>
+``||variables(sprites): set [mySprite2] to sprite [ ] of kind [Player]||`` <br/>
 and snap it inside at the **end** of the
 ``||loops: on start||``
 block already in your workspace.
@@ -147,7 +147,7 @@ block and snap the copy inside at the **end** of the
 ``||loops: on start||``
 block already in your workspace.
 
-- :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:mySprite2||`` and change the x value from 80 to **110**.
+- :mouse pointer: Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):mySprite2||`` and change the x value from 80 to **110**.
 
 - :mouse pointer: Change the positions for **mySprite** and **myMouse** to each have an x value of **50**.
 
@@ -193,7 +193,7 @@ mySprite2.setPosition(110, 93)
 ~hint Tell me more... 🕵🏽
 
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
-``||variables: set [mySprite3] to sprite [ ] of kind [Player]||`` <br/>
+``||variables(sprites): set [mySprite3] to sprite [ ] of kind [Player]||`` <br/>
 and snap it inside at the **end** of the
 ``||loops: on start||``
 block already in your workspace.
@@ -206,7 +206,7 @@ block and snap the copy inside at the **end** of the
 ``||loops: on start||``
 block already in your workspace.
 
-- :mouse pointer: Change ``||variables:mySprite2||`` to ``||variables:myMouse2||``.
+- :mouse pointer: Change ``||variables(noclick):mySprite2||`` to ``||variables(noclick):myMouse2||``.
 
 hint~
 
@@ -267,7 +267,7 @@ blocks and snap each into the <br/>
 ``||controller: on [B] button||`` <br/>
 blocks already in your workspace.
 
-- :mouse pointer: Change  ``||variable:mySprite||``  to  ``||variable:myMouse2||`` in both places.
+- :mouse pointer: Change  ``||variables(noclick):mySprite||``  to  ``||variables(noclick):myMouse2||`` in both places.
 
 - :mouse pointer: Choose the correct **mouse2** image for each block.
 
