@@ -14,7 +14,7 @@ Hey, let's make a game where wild strawberries are out to attack our lemon playe
 
 ## {Step 1  @fullscreen}
 
-In the ``||loops:on start||`` block put in the ``||scene:set background color||`` from ``||scene:Scene||``. Choose ``purple`` for the color. Pull in a ``||variables:set mySprite to||`` from ``||sprites:Sprites||``. Click on the grey box and then select the lemon from the gallery. In ``||controller:Controller||`` get a ``||controller:move mySprite with buttons||`` so we can move the lemon around.
+In the ``||loops:on start||`` block put in the ``||scene:set background color||`` from ``||scene:Scene||``. Choose ``purple`` for the color. Pull in a ``||variables(sprites):set mySprite to||`` from ``||sprites:Sprites||``. Click on the grey box and then select the lemon from the gallery. In ``||controller:Controller||`` get a ``||controller:move mySprite with buttons||`` so we can move the lemon around.
 
 ![Pick the lemon image](/static/tutorials/lemon-leak/pick-a-lemon.gif)
 
@@ -72,7 +72,7 @@ info.startCountdown(30)
 
 ## {Step 3}
 
-Now, pull out a ``||game:on game update every||`` from ``||game:Game||``. Set the interval time to `1000` ms, or 1 second. From ``||sprites:Sprites||``, drag the ``||variables:set projectile to||`` ``||sprites:projectile from side||`` block and drop it inside the ``||game:on game update every||``. Click on the grey image box and select the strawberry from the gallery.
+Now, pull out a ``||game:on game update every||`` from ``||game:Game||``. Set the interval time to `1000` ms, or 1 second. From ``||sprites:Sprites||``, drag the ``||variables(sprites):set projectile to||`` ``||sprites:projectile from side||`` block and drop it inside the ``||game:on game update every||``. Click on the grey image box and select the strawberry from the gallery.
 
 ```blocks
 let projectile: Sprite = null

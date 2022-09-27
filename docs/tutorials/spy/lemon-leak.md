@@ -10,7 +10,7 @@ Hey, let's make a game where wild strawberries are out to attack our lemon playe
 
 ## {Step 1  @fullscreen}
 
-First, ``||scene:set background color||`` to ``purple``. Create a new sprite called ``||variables:mySprite||``. Click on the image editor icon, go to the image galler, and select the lemon. Put in code to ``||controller:move mySprite||`` with the controller.
+First, ``||scene:set background color||`` to ``purple``. Create a new sprite called ``||variables(noclick):mySprite||``. Click on the image editor icon, go to the image galler, and select the lemon. Put in code to ``||controller:move mySprite||`` with the controller.
 
 ![Pick the lemon image](/static/tutorials/lemon-leak/pick-a-lemon-js.gif)
 
@@ -39,7 +39,7 @@ controller.moveSprite(mySprite)
 
 ## {Step 2}
 
-To keep the lemon from leaving the screen, set ``||variables:mySprite||`` to ``||sprites:stay in screen||``. after that, ``||info:start a countdown||`` for `30` seconds.
+To keep the lemon from leaving the screen, set ``||variables(noclick):mySprite||`` to ``||sprites:stay in screen||``. after that, ``||info:start a countdown||`` for `30` seconds.
 
 ```spy
 scene.setBackgroundColor(10)
@@ -68,7 +68,7 @@ info.startCountdown(30)
 
 ## {Step 3 @resetDiff}
 
-Add a ``||game:on game update every||`` event and set the interval time to `1000` ms, or 1 second. In the event, create a ``||variables:projectile||`` sprite and send the ``||sprites:projectile from side||``. In the image editor for ``||variables:projectile||``, go to
+Add a ``||game:on game update every||`` event and set the interval time to `1000` ms, or 1 second. In the event, create a ``||variables(noclick):projectile||`` sprite and send the ``||sprites:projectile from side||``. In the image editor for ``||variables(noclick):projectile||``, go to
 the gallery and select the strawberry.
 
 ```spy
@@ -96,7 +96,7 @@ game.onUpdateInterval(1000, function () {
 
 ## {Step 4}
 
-Now, set both the ``vx`` and ``vy`` values for ``||variables:projectile||`` to ``||math:pick a random||`` number. Set the range for the ``||math:random||`` number from `-50` and `50`.
+Now, set both the ``vx`` and ``vy`` values for ``||variables(noclick):projectile||`` to ``||math:pick a random||`` number. Set the range for the ``||math:random||`` number from `-50` and `50`.
 
 ```spy
 game.onUpdateInterval(1000, function () {
@@ -123,7 +123,7 @@ game.onUpdateInterval(1000, function () {
 
 ## {Step 5 @resetDiff}
 
-Add an ``||sprites:on overlap||`` event to your code. Set the kind which matches the ``otherSprite`` parameter to ``Projectile``. Put code into the event to ``||sprites:start spray effect||`` on ``||variables:sprite||``. Have the effect last for ``200`` ms.
+Add an ``||sprites:on overlap||`` event to your code. Set the kind which matches the ``otherSprite`` parameter to ``Projectile``. Put code into the event to ``||sprites:start spray effect||`` on ``||variables(noclick):sprite||``. Have the effect last for ``200`` ms.
 
 ```spy
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
