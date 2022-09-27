@@ -62,11 +62,11 @@ for (let index = 0; index < 10; index++) {
 ## 4. Add Background Decorations
 
 - :paper plane: Drag  
-``||variables:set [mySprite2] to sprite [ ] of kind [Player]||``  
+``||variables(sprites):set [mySprite2] to sprite [ ] of kind [Player]||``  
 into the empty  
 ``||loops:repeat [10] times||`` container.
 
-- :mouse pointer: Click the ``||variables:mySprite2||`` dropdown and choose **Rename variable...** call this **myDecor**.
+- :mouse pointer: Click the ``||variables(noclick):mySprite2||`` dropdown and choose **Rename variable...** call this **myDecor**.
 
 - :mouse pointer: Click the kind **Player** and add a new option called **Decoration**.
 
@@ -127,7 +127,7 @@ To make the seaweed look more natural, let's change the **y value** (vertical po
 block into **the end** of the  
 ``||loops:repeat [10] times||`` loop.
 
-- :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:myDecor||``.
+- :mouse pointer: Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):myDecor||``.
 
 - :mouse pointer: Change the **y** value to **96**.
 

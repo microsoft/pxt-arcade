@@ -239,7 +239,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 The same animation block can be used to add a wiggle to your fish and bubbles to your sub!  Try it on your own!
 
-💡 Just make sure to change ``||variables:mySprite||`` to ``||variables:myFood||`` or ``||variables:myEnemy||`` or things won't look quite right!
+💡 Just make sure to change ``||variables(noclick):mySprite||`` to ``||variables(noclick):myFood||`` or ``||variables(noclick):myEnemy||`` or things won't look quite right!
 
 ```blocks
 game.onUpdateInterval(2500, function () {

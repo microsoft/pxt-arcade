@@ -53,7 +53,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 ## Step 3
 
 Place a ``||sprites:set image to||`` block into the first clause of ``||logic:if then else||``.
-Drag the ``||variables:sprite||`` variable from the ``||sprites:on created||`` block and use it as
+Drag the ``||variables(noclick):sprite||`` variable from the ``||sprites:on created||`` block and use it as
 the sprite for ``||sprites:set image to||``. Click on the
 grey square to open the sprite editor and draw an image for the enemy.
 
@@ -88,7 +88,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 ## Step 4
 
 Place a second ``||sprites:set image to||`` block into the else clause of ``||logic:if then else||``.
-Drag the ``||variables:sprite||`` variable from the ``||sprites:on created||`` block and use it as
+Drag the ``||variables(noclick):sprite||`` variable from the ``||sprites:on created||`` block and use it as
 the sprite for the second ``||sprites:set image to||`` too. Click on the
 grey square to open the sprite editor and draw a different image for the enemy.
 
