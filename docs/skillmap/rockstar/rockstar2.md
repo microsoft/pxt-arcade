@@ -59,7 +59,7 @@ container.
 - :mouse pointer: Replace  
 ``||scene:tilemap col [0] row [0]||``  
 with the  
-``||variables:location||``  
+``||variables(noclick):location||``  
 value from the top of the **Player overlaps instrument** container.
 
 ![Share your location](/static/skillmap/assets/overlap-tile-location.gif "Grab the variable from the overlap container")
@@ -102,7 +102,7 @@ into **the top** of the
 ``||scene:on [sprite] of kind [Player] overlaps [instrument] at [location]||``  
 container and replace  
 ``||scene:tilemap col [0] row [0]||``  
-with ``||variables:location||``.
+with ``||variables(noclick):location||``.
 
 - :id card: Snap  
 ``||info:change score by [1]||``  
