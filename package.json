@@ -33,8 +33,8 @@
         "typescript": "4.8.3"
     },
     "dependencies": {
-        "pxt-common-packages": "10.1.12",
-        "pxt-core": "8.3.4"
+        "pxt-common-packages": "10.1.13",
+        "pxt-core": "8.3.5"
     },
     "optionalDependencies": {
         "pxt-arcade-sim": "microsoft/pxt-arcade-sim.git#v0.9.8"
