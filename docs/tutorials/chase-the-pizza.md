@@ -23,7 +23,7 @@ scene.setBackgroundColor(0)
 
 ## {Step 2}
 
-In the ``||scene:set background color||`` block, click on the grey color oval to open the color palette and select a background color. To see what this looks like in your game, look at the Game Simulator on the left side of the screen.
+In the ``||scene:set background color||`` block, click on the grey color oval to open the color palette and select a background color. To see what this looks like in your game, look at the Game Simulator window.
 
 ![Choose background color](/static/tutorials/chase-the-pizza/background-color.jpg)
 
