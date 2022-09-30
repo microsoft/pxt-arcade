@@ -183,7 +183,7 @@ info.startCountdownGame(20, winTypes.Score)
 
 
 
-## {3. Set the Scene}
+## {7. Set the Scene}
 
 **Now let's make it look nice**
 
