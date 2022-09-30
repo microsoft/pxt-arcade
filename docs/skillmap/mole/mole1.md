@@ -118,7 +118,7 @@ You should see a green background with 9 holes where the moles can hide.
 
 ~hint Click here to see how 🕵🏽
 
-![Look for the game window in the lower right](/static/skillmap/mole/game.png "Click the mini game window to pop open the bigger game window.")
+![Look for the game window in the lower right](/static/skillmap/mole/game1.png "Click the mini game window to pop open the bigger game window.")
 
 hint~
 
