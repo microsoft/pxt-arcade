@@ -147,7 +147,9 @@
             "rockstar": "docs:/skillmap/rockstar",
             "forest": "docs:/skillmap/forest",
             "turkey": "docs:/skillmap/turkey",
-            "star": "docs:/skillmap/star"
+            "star": "docs:/skillmap/star",
+            "mole": "docs:/skillmap/mole",
+            "balloon": "docs:/skillmap/balloon"
         }
     },
     "galleries": {
