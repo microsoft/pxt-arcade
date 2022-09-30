@@ -1,35 +1,5 @@
+/* Fonts imports are in html page */
 
-
-@font-face {
-    font-family: 'InterBold';
-    src: url('Inter/static/Inter-Bold.ttf')
-        format('truetype');
-}
-
-
-@font-face {
-    font-family: 'NunitoRegular';
-    src: url('Nunito/static/Nunito-Regular.ttf')
-        format('truetype');
-}
-
-@font-face {
-    font-family: 'NunitoSemiBold';
-    src: url('Nunito/static/Nunito-SemiBold.ttf')
-        format('truetype');
-}
-
-@font-face {
-    font-family: 'NunitoBold';
-    src: url('Nunito/static/Nunito-Bold.ttf')
-        format('truetype');
-}
-
-@font-face {
-    font-family: 'NunitoExtraBold';
-    src: url('Nunito/static/Nunito-ExtraBold.ttf')
-        format('truetype');
-}
 
 body{
 
@@ -38,8 +8,8 @@ body{
     color: #ffffff;
     margin: 0;
     padding: 0;
-    background-color: #140083;
-    min-width: 1200px;
+    background-color: #140083;  
+    /* min-width: 1200px; */
 }
 
 h2{
@@ -68,18 +38,22 @@ section, footer{
 section{
     display: flex;
     justify-content: center;
-    /* padding-bottom: 50px; */
+    padding: 50px 0 0 0;
 }
 
 header{
-    background-color:rgb(20 0 133 / 80%);
-    padding: 20px;
-    position: fixed;
+    /* background-color:rgb(20 0 133 / 80%); */
+    /* padding: 20px 20px 0 20px; */
+    position: absolute;
     top: 0px;
     width: 100%;
     z-index: 999;
     display: flex;
     gap:20px;
+}
+
+header img{
+    margin: 20px;
 }
 
 /* Nav */
@@ -91,7 +65,6 @@ nav a{
     font-family: 'InterBold', sans-serif;
     font-size: 18px;
 }
-
 
 
 a {
@@ -150,7 +123,7 @@ nav ul li{
 }
 
 #hamburger-menu #sidebar-menu {
-    visibilty: hidden;
+    /* visibilty: hidden; */
     position: fixed;
     top: 0;
     left: -250px;
@@ -162,18 +135,14 @@ nav ul li{
 }
 
 /* HERO */
+/* background image is in HTML page due to known pathing issue */
 #hero{
     padding: 0;
-    margin-top: 60px;
+    /* margin-top: 60px; */
     text-align: center;
     background-color: #140083;
-    background-image:  url("hoc202_heroImage_large.gif"), url("skyTile.png");
-
-    /* background-image:  url("static/hour-of-code/2022/hoc202_heroImage_large.gif"), url("static/hour-of-code/2022/skyTile.png"); */
     background-repeat: no-repeat, repeat-x;
     background-position: center;
-    /* background-size: 1270px 416px, 416px;
-    height: 416px; */
     background-size: 1500px 500px, 500px;
     height: 500px;
 }
@@ -197,9 +166,19 @@ nav ul li{
 
 #hero .header-tag{
     /* font-weight: bold; */
-    width: 280px;
+    width: 300px;
     margin: auto;
 }
+
+/* overflow games */
+.container-grid.overflow-games{
+    display: none;
+}
+
+.container-grid.overflow-games.active{
+    display: flex;
+}
+
 
 /* Cards */
 .card{
@@ -210,22 +189,20 @@ nav ul li{
     background-color: #140083;
     border-radius: 10px;
     box-shadow: 0px 6.4px 14.4px rgba(0, 0, 0, 0.132), 0px 1.2px 3.6px rgba(0, 0, 0, 0.108);
-    transition: transform .15s, opacity .15s;
-    max-width: 350px;
-}
-
-.odd{
-    background-color: #0000AA; !important
+    transition: transform .15s, filter .15s;
+    /* max-width: 350px; */
 }
 
 .card:hover{
     box-shadow: 0px 3.4px 7.4px rgba(0, 0, 0, 0.132);
     transform: scale(.98);
-    opacity: .8;
+    filter: brightness(75%);
+    /* opacity: .8; */
 }
 
 .card-item-title{
     font-family: 'NunitoBold';
+    display:flex;
 }
 .card img.thumbnail{
     width: 100%;
@@ -233,44 +210,37 @@ nav ul li{
 
 .difficulty {
     max-width: 150px;
+    padding: 0 5px;
 }
 
 #start-here{
     z-index: 1;
     float:left;
-    position:relative;
+    position:absolute;
     max-width: 180px;
     height:0px;
     overflow: visible;
-    top: 50px;
-    left: 40px;
+    top: -50px;
+    left: -70px;
 }
 
 #twisted{
-    /* width: 125px; */
     transform: rotate(-25deg);
     text-align: center;
     padding-bottom: 10px;
-    /*font-size:.85em;*/
 }
 
 /* Featured */
 
 .featured-list{
     margin: 0;
-    padding: 75px 75px 0px 75px;
+    padding: 10px 75px 0px 75px;
     background: linear-gradient(180deg, #1C7100 60%, #0000AA 50%);
     display: flex;
     justify-content: center;
     z-index: 10;
 }
 
-/* .featured-list #startHere{
-    position: absolute;
-    left: -100px;
-    top: -100px;
-    width: auto;
-} */
 
 .container-grid-btns button{
     margin: auto;
@@ -280,6 +250,7 @@ nav ul li{
     display: flex;
     gap: 12px;
     justify-content: center;
+    position: relative;
 }
 
 .container-grid .card{
@@ -302,10 +273,14 @@ nav ul li{
 }
 
 .return-to-code{
-    display: block;
-    text-align: center;
-    max-width: 400px;
-    padding:0 0 50px 0;
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    font-size: .8em;
+    margin-top: -80px;
+    /* text-align: center; */
+    /* max-width: 400px; */
+    /* padding:0 0 50px 0; */
 
 }
 
@@ -315,8 +290,12 @@ nav ul li{
     display: flex;
 }
 
+.col-2 > div{
+    width:50%;
+}
+
 .col-2 img.rowImg{
-    width: 750px;
+    width: 100%;
 }
 
 .mini-col-1{
@@ -344,17 +323,13 @@ button, .btn{
     font-style: normal;
     padding: 15px;
     font-family: 'NunitoSemiBold';
-    /* font-weight: 500; */
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
     letter-spacing: 0.035em;
-    transition: opacity .15s;
+    transition: filter .15s;
     cursor: pointer;
 }
 
 button:hover, .btn:hover{
-    opacity: .8;
+    filter: brightness(75%);
 }
 
 /* footer */
@@ -366,13 +341,10 @@ footer{
 
 footer a:link, footer a{
     color: #ffffff;
-    /* text-decoration: none; */
 }
 
 footer div {
     padding: 20px;
-    /* display: flex;
-    gap: 20px; */
 }
 
 footer div img{
@@ -396,7 +368,7 @@ footer div img{
 
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 950px) {
     body{
         min-width: auto;
     }
@@ -441,12 +413,17 @@ footer div img{
 
     .card {
         margin: 50px 0;
+        max-width: 600px;
     }
 
     .col-2 {
         width: 100%;
         display: block;
     }
+    .col-2 > div {
+        width: auto;
+    }
+
 
     .rowImg{
         display: none;
