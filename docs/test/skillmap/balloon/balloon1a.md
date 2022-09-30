@@ -18,10 +18,10 @@ on what to do.
 
 ---
 
-Be on the lookout for secret information!
+Be on the lookout for extra info!
 
 
-~hint Click here to reveal hidden info 🕵🏽
+~hint Click here to reveal hidden text 🕵🏽
 
 <br/>
 Look for clues like this when you read instructions.
@@ -35,7 +35,7 @@ When you're done reading, click **Next** to move to the next instruction.
 
 
 
-## {4. Your First Block}
+## {3. Your First Block}
 
 **Ready to start coding?**
 
@@ -83,7 +83,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## {5. Add Points}
+## {4. Add Points}
 
 Now we need to add points when the (A) button is clicked in the game window.
 
@@ -126,15 +126,17 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## {6. Check Your Game!}
+## {5. Check Your Game!}
 
 Now it's time to try your game!
 
-- :mouse pointer: Click the mini **game window** in the bottom corner to open the **bigger game window**!
+- :binoculars: Look at your project in the game window to see how it has changed!
 
 Click the (A) button as fast as you can.  You can also use the **space bar** on your keyboard.
 
 You should see the score go up with each click.
+
+---
 
 Clicking the button is the **EVENT** that causes the score to go up!
 
@@ -150,7 +152,7 @@ hint~
 
 
 
-## {7. Add a Timer}
+## {6. Add a Timer}
 
 **Let's add a challenge** ⏰
 
@@ -179,12 +181,43 @@ info.startCountdownGame(20, winTypes.Score)
 
 
 
-## {Step 12}
+## {3. Set the Scene}
+
+**Now let's make it look nice**
+
+- :tree: From the ``||scene: Scene||`` category in the toolbox, grab <br/>
+``||scene: set background color to [ ]||`` <br/>
+and snap it inside and at the **end** of the
+``||loops(noclick): on start||``
+block container that's already in your workspace.
+
+~hint Show me how! 🕵🏽
+
+![Open the Scene category to find the block that changes the background color](/static/skillmap/balloon/bg-color.gif "Set the background color to white." )
+
+hint~
+
+
+
+#### ~ tutorialhint
+```blocks
+info.startCountdownGame(20, winTypes.Score)
+scene.setBackgroundColor(1)
+```
+
+
+
+
+## {Finale}
 
 **🎉 Way to Go 🎉**
 
 You have started your very own clicker game!
-Try it in the bigger game window and see if you can get more than **40 points**.
+
+Click the resize icon to try it in the bigger game window and see if you can get more than **40 points**.
+![Expand the game window](/static/skillmap/assets/big-game.gif "Click the resize button to expand the game window.")
+
+---
 
 When you're finished playing, come back to the instructions and click the **Done** button to return to the skillmap and continue building your amazing <br/>**🎈carnival game🎈**!
 
@@ -193,8 +226,8 @@ When you're finished playing, come back to the instructions and click the **Done
 
 ```blockconfig.global
 info.player1.changeScoreBy(1)
-info.startCountdown(20)
 info.startCountdownGame(20, winTypes.Score)
+scene.setBackgroundColor(1)
 ```
 
 
