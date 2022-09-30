@@ -44,7 +44,6 @@ section{
 header{
     /* background-color:rgb(20 0 133 / 80%); */
     /* padding: 20px 20px 0 20px; */
-
     position: absolute;
     top: 0px;
     width: 100%;
@@ -191,7 +190,7 @@ nav ul li{
     border-radius: 10px;
     box-shadow: 0px 6.4px 14.4px rgba(0, 0, 0, 0.132), 0px 1.2px 3.6px rgba(0, 0, 0, 0.108);
     transition: transform .15s, filter .15s;
-    max-width: 350px;
+    /* max-width: 350px; */
 }
 
 .card:hover{
@@ -274,9 +273,13 @@ nav ul li{
 }
 
 .return-to-code{
-    display: block;
-    text-align: center;
-    max-width: 400px;
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    font-size: .8em;
+    margin-top: -80px;
+    /* text-align: center; */
+    /* max-width: 400px; */
     /* padding:0 0 50px 0; */
 
 }
