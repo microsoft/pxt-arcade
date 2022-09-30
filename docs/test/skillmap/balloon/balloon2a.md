@@ -39,34 +39,9 @@ hint~
 
 
 
-## {3. Set the Scene}
-
-**Set the scene...**
-
-- :tree: From the ``||scene: Scene||`` category in the toolbox, grab <br/>
-``||scene: set background color to [ ]||`` <br/>
-and snap it inside and at the **end** of the
-``||loops(noclick): on start||``
-block container that's already in your workspace.
-
-~hint Show me how! 🕵🏽
-
-![Open the Scene category to find the block that changes the background color](/static/skillmap/balloon/bg-color.gif "Set the background color to white." )
-
-hint~
-
-
-
-#### ~ tutorialhint
-```blocks
-info.startCountdownGame(20, winTypes.Score)
-scene.setBackgroundColor(1)
-```
-
-
 ## {4. Add Balloon}
 
-Add a balloon **SPRITE**!
+Let's add a balloon **SPRITE**!
 
 ~hint What's a sprite? 💡
 
@@ -189,7 +164,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 **Try your game now!**
 
-- :mouse pointer: Click the mini **game window** in the bottom corner to open the **bigger game window**!
+- :binoculars: Look at your project in the game window!
 
 Press the (A) button (or **space bar**) as fast as you can.  You should see the balloon get bigger each time you click!
 
@@ -304,9 +279,10 @@ game.onGameOverExpanded(winTypes.Multi)
 
 **Win your game!**
 
-Open the game bigger game window and press the (A) button or **space bar** as fast as you can.
 
-Can you get the balloon to reach the line before time runs out?
+Click the resize icon next to the game window to try your game in full-screen.
+
+Press the (A) button or **space bar** as fast as you can. Can you get the balloon to reach the line before time runs out?
 
 ~hint Why does this work? 💡
 
@@ -357,6 +333,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 info.startCountdownGame(20, winTypes.Score)
+scene.setBackgroundColor(1)
 
 ```
 

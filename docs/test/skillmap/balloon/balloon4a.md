@@ -17,7 +17,7 @@ This tutorial will help you turn your game into a two-player event!
 
 **Play the game!**
 
-- :mouse pointer: Click the mini **game window** in the bottom corner to open the **bigger game window**!
+- :binoculars: Look at your project in the game window.
 
 Press the (A) button or **space bar** as fast as you can.  You should see a mouse pumping up a balloon that gets bigger and bigger until it crosses the line and wins the game.
 
@@ -238,7 +238,7 @@ You're almost there!
 
 - :lightbulb: Make the second mouse look like it's pushing and releasing the handle when the (B) button is pushed and released.
 
-Don't forget to test your game using the (B) button in the **bigger game window** or the **enter** key on the keyboard!
+Don't forget to test your game using the (B) button in the **game window** or the **enter** key on the keyboard!
 
 
 ~hint Tell me more... 🕵🏽
@@ -281,16 +281,15 @@ controller.B.onEvent(ControllerButtonEvent.Released, function () {
 
 #### ~ tutorialhint
 ```blocks
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     let myMouse2: Sprite = null
 
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     info.player2.changeScoreBy(1)
     myMouse2.setImage(assets.image`mouse2-down`)
 })
 
 controller.B.onEvent(ControllerButtonEvent.Released, function () {
         let myMouse2: Sprite = null
-
     myMouse2.setImage(assets.image`mouse2-up`)
 })
 ```
@@ -326,8 +325,10 @@ hint~
 let myMouse2 = sprites.create(assets.image`balloon-2`, SpriteKind.Mouse)
 myMouse2.setPosition(110, 93)
 myMouse2.setImage(assets.image`mouse2-down`)
-controller.B.onEvent(ControllerButtonEvent.Released, function () {
-        myMouse2.setImage(assets.image`mouse2-up`)
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.player2.changeScoreBy(1)
+    myMouse2.setImage(assets.image`mouse2-down`)
+    scaling.scaleByPixels(myBalloon2, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
 })
 ```
 
@@ -335,15 +336,12 @@ controller.B.onEvent(ControllerButtonEvent.Released, function () {
 #### ~ tutorialhint
 ```blocks
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    let myMouse2: Sprite = null
-    info.changeScoreBy_defl1(info.player1, 1)
+    info.player2.changeScoreBy(1)
     myMouse2.setImage(assets.image`mouse2-down`)
-    scaling.scaleByPixels_defl(myBalloon, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+    scaling.scaleByPixels(myBalloon2, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
 })
 
 controller.B.onEvent(ControllerButtonEvent.Released, function () {
-        let myMouse2: Sprite = null
-
     myMouse2.setImage(assets.image`mouse2-up`)
 })
 ```
@@ -355,13 +353,13 @@ controller.B.onEvent(ControllerButtonEvent.Released, function () {
 
 **Try your game!**
 
-- :mouse pointer: Click the mini **game window** in the bottom corner to open the **bigger game window**!
+- :binoculars: Look at your project in full-screen by clicking the **resize** button on the normal game window!
 
-Grab a friend and have them press the (A) button or **space bar** while you press the (B) button or **enter** key.  Who makes it to the top first?
+Find a friend and have them press the (A) button or **space bar** while you press the (B) button or **enter** key.  Who makes it to the top first?
 
 💡 ** Tip:** _Now that you have someone to race against, you can right-click <br/>
 ``||info: start countdown [20] (s) and game over [high score]||``<br/>
-inside ``||loops: on start||`` and choose **Delete Blocks**.
+inside ``||loops: on start||`` and choose **Delete Blocks**._
 
 
 
@@ -513,8 +511,8 @@ myMouse.setPosition(50, 93)
 myMouse2.setPosition(110, 93)
 myBalloon.setPosition(50, 93)
 myBalloon2.setPosition(110, 93)
-info.changeScoreBy_defl1(info.player1, 1)
-scaling.scaleByPixels_defl(myBalloon, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+    info.player2.changeScoreBy(1)
+scaling.scaleByPixels(myBalloon, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
 
 ```
 

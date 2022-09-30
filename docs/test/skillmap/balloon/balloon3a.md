@@ -17,7 +17,7 @@ Let's add more **SPRITES** and **EVENTS** to our carnival game!
 
 **Play the balloon game!**
 
-- :mouse pointer: Click the mini **game window** in the bottom corner to open the **bigger game window**!
+- :binoculars: Look at your project in the game window.
 
 Press the (A) button (or **space bar**) as fast as you can.  You should see a balloon that gets bigger and bigger until it crosses the line and wins the game.
 
@@ -117,7 +117,7 @@ myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
 
 **Try your game now!**
 
-- :mouse pointer: Click the mini **game window** in the bottom corner to open the **bigger game window**!
+- :binoculars: Look at your project in the game window to see the mouse you've added!
 
 Press the (A) button as fast as you can.  You should see the balloon get bigger each time you click and you should see a mouse hovering above it.
 
@@ -204,7 +204,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 **Try your game again!**
 
-- :mouse pointer: Click the mini **game window** in the bottom corner to open the **bigger game window**!
+- :binoculars: Look at your project in the game window and give it a try!
 
 Press the (A) button as fast as you can.  You should see the mouse press the handle one time and the balloon should continue to inflate with each press.
 
@@ -257,9 +257,9 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 ## {9. Take a Look}
 
 
-**Take a look at what you have.**
+**Click the resize icon next to the game window to take a look in full-screen.**
 
-Open the bigger game window and press the (A) button in the game window (or **space bar**) as fast as you can.
+Hover over the game window and press the (A) button (or **space bar** on your keyboard) as fast as you can.
 
 Your mouse should appear to be blowing up the balloon as you play!
 

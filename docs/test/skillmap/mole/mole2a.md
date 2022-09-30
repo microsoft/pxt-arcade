@@ -252,7 +252,7 @@ info.startCountdownGame(15, winTypes.Score)
 ## {10. Play your game!}
 
 
-- :binoculars: Play your game!
+- :binoculars: Click the resize button next to the game window to see your project full-screen!
 
 You should get one point each time you overlap the mole with the rubber hammer, then the mole should hop to another spot. Time should run out after 15 seconds and your high score should display!
 
