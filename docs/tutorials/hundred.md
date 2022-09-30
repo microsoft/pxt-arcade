@@ -124,7 +124,7 @@ for (let index = 0; index < 100; index++) {
 ---
 
 - :paper plane: From ``||sprites:Sprites||``, grab <br/>
-``||variables:set [projectile] to projectile [ ] from side with vx [50] vy [50]||`` <br/>
+``||variables(sprites):set [projectile] to projectile [ ] from side with vx [50] vy [50]||`` <br/>
 and snap it into the empty ``||loops:repeat 100 times||`` loop.
 
 - :paint brush: Click the grey box and toggle to **My Assets** to select the **Alien** sprite...OR draw one of your favorite things!

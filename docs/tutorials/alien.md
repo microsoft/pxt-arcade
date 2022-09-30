@@ -135,7 +135,7 @@ Your background should move on its own!
 an empty spot on the workspace.
 
 ► From ``||sprites:Sprites||``, grab
-``||variables:set [projectile] to projectile [ ] from side with vx [50] vy [50]||``
+``||variables(sprites):set [projectile] to projectile [ ] from side with vx [50] vy [50]||``
 and snap it into the empty **forever** container.
 
 ► Click the grey box to draw an alien sprite (or toggle to **Gallery** or **My Assets** to select one of ours.)

@@ -91,7 +91,7 @@ The frog needs something to eat.
 ---
 
 - :paper plane: Snap a new   
-``||variables:set [mySprite2] to sprite [ ] of kind [Player]||``  
+``||variables(sprites):set [mySprite2] to sprite [ ] of kind [Player]||``  
 block into **the end** of the  
 ``||loops:on start||`` container.
 

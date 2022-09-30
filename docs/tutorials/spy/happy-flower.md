@@ -10,7 +10,7 @@ Flowers make everyone around them happier, especially the bees who get nectar fr
 
 ## {Step 1}
 
-First, ``||scene:set background color to||`` ``light blue``. Create a new sprite called ``||variables:mySprite||``. Draw a flower as the image for the sprite.
+First, ``||scene:set background color to||`` ``light blue``. Create a new sprite called ``||variables(noclick):mySprite||``. Draw a flower as the image for the sprite.
 
 ```spy
 scene.setBackgroundColor(9)
@@ -65,8 +65,8 @@ game.onUpdateInterval(1000, function () {
 
 ## {Step 3}
 
-Add code in the ``||game:on game update interval||`` event to set a ``||variables:projectile||``
-variable to a ``||sprites:projectile sprite from||`` the ``||variables:mySprite||``
+Add code in the ``||game:on game update interval||`` event to set a ``||variables(noclick):projectile||``
+variable to a ``||sprites:projectile sprite from||`` the ``||variables(noclick):mySprite||``
 sprite. Set the velocities for both ``vx`` and ``vy`` to `0`.
 
 ```spy
@@ -159,7 +159,7 @@ game.onUpdateInterval(1000, function () {
 
 ## {Step 5}
 
-For ``||variables:projectile||``, use a ``||Math:random||`` number for the ``vx`` velocity. Set
+For ``||variables(noclick):projectile||``, use a ``||Math:random||`` number for the ``vx`` velocity. Set
 the range to ``||Math:pick a random||`` between `-25` and `25`.
 
 ```spy
@@ -252,7 +252,7 @@ game.onUpdateInterval(1000, function () {
 
 ## {Step 7 @fullscreen}
 
-After the code to create the ``||variables:projectile||``, add code to set ``||sprites:lifespan||``
+After the code to create the ``||variables(noclick):projectile||``, add code to set ``||sprites:lifespan||``
 to `3000`.
 
 ```spy
@@ -305,7 +305,7 @@ Congratulations, your happy flower is complete! It will now send back joyful lit
 ## {Step 9}
 
 Let's setup a condition to change the image of the bee when it flys off toward the left.
-Put in a conditional that checks ``||logic:if||`` the ``vx`` value for ``||variables:projectile||`` is
+Put in a conditional that checks ``||logic:if||`` the ``vx`` value for ``||variables(noclick):projectile||`` is
 less than `0`.
 
 ```spy
@@ -357,9 +357,9 @@ game.onUpdateInterval(1000, function () {
 
 Inside the code block that checks ``||logic:if||`` the ``vx`` velocity is less than
 `0`, put in code to ``||images:flip horizontally||`` the ``||sprites:image||`` for
-``||variables:projectile||``. If you are using the Toolbox code, be careful to change
+``||variables(noclick):projectile||``. If you are using the Toolbox code, be careful to change
 the default image given for ``||images:flip horizontally||`` to be the image property
-for the ``||variables:projectile||`` instead.
+for the ``||variables(noclick):projectile||`` instead.
 
 
 ```spy
