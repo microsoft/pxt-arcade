@@ -4,7 +4,9 @@
 
 ## Whack-the-Mole Intro @showdialog
 
-![Whack-the-Mole Carnival Intro](youtube:LwzffWleZug)
+![Whack-the-Mole Carnival Intro](youtube:UKYPIXl7agI)
+
+Special thanks to MakeCode Forum User _SoftTalker_ for this submission.
 
 
 
@@ -17,10 +19,10 @@ on what to do.
 
 ---
 
-Be on the lookout for secret messages!
+Be on the lookout for extra info!
 
 
-~hint Click here to reveal hidden info 🕵🏽
+~hint Click here to reveal hidden text 🕵🏽
 
 <br/>
 Look for clues like this when you read instructions.
@@ -57,7 +59,7 @@ and snap it inside the empty ``||loops(noclick): on start||`` block already in t
 
 - :lightbulb: The panel with the colorful category names is called the
  **toolbox**. <br/>
- Click ``||scene: Scene||`` to find the event block you need.
+ Click ``||scene: Scene||`` to find the block you need.
 
 ![Look under Scene for the block you need](/static/skillmap/mole/add-bg-block.gif "Drag out the background block to fill later.")
 
@@ -116,7 +118,7 @@ You should see a green background with 9 holes where the moles can hide.
 
 ~hint Click here to see how 🕵🏽
 
-![Look for the game window in the lower right](/static/skillmap/mole/game.gif "Click the mini game window to pop open the bigger game window.")
+![Look for the game window in the lower right](/static/skillmap/mole/game.png "Click the mini game window to pop open the bigger game window.")
 
 hint~
 
@@ -248,9 +250,13 @@ game.onUpdateInterval(1000, function () {
 ## {10. Check Your Game!}
 
 
-- :binoculars: Look at your project in the game window again to see what happened!
+- :binoculars: Click the resize button next to the game window to see your project full-screen!
 
 You should see the mole changing spots every second.
+
+
+![Expand the game window](/static/skillmap/assets/big-game.gif "Click the resize button to expand the game window.")
+
 
 
 

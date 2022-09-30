@@ -65,7 +65,7 @@
 * position: 2 2
 * actions:
     * map: [Finish the Last Level](/skillmap/balloon)
-    * editor: [Add More to This Game](/)
+    * editor: [Open in Creative Mode](/)
 * rewards:
     * certificate:
         * url: /static/skillmap/certificates/balloon-cert.pdf

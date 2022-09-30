@@ -1,6 +1,6 @@
 # Whack-the-Mole
 * name: Whack-the-Mole
-* description: Create your own 'Whack-a-Mole' style of carnival game!
+* description: Create your own Whac-a-Mole® style of carnival game! (WHAC-A-MOLE is a trademark and brand of MATTEL, INC.)
 * infoUrl: skillmap/educator-info/mole-map-info
 * bannerUrl: /static/skillmap/mole/mole3.gif
 * backgroundurl: https://raw.githubusercontent.com/clkantner/whack/master/skillmap2-final.gif
@@ -13,7 +13,7 @@
 * tags: easy, beginner, carnival
 
 
-## whack-the-Mole
+## whack-the-mole
 * layout: manual
 
 
@@ -64,7 +64,7 @@
 * position: 2 0
 * actions:
     * map: [Create Another Carnival Game](/skillmap/balloon)
-    * editor: [Add to This Project](/)
+    * editor: [Open in Creative Mode](/)
 * rewards:
     * certificate:
         * url: /static/skillmap/certificates/mole-cert.pdf

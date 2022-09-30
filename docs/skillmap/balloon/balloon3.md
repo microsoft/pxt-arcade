@@ -300,7 +300,7 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 
 **Take a look at what you have.**
 
-Open the bigger game window and press the (A) button in the game window (or **space bar**) as fast as you can.
+Open the bigger game window and press the (A) button (or **space bar** on your keyboard) as fast as you can.
 
 Your mouse should appear to be blowing up the balloon as you play!
 

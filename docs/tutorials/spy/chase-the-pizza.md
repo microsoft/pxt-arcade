@@ -10,7 +10,7 @@ In this tutorial you will create a game with 2 sprites, a ``||sprites:Player||``
 
 ## {Step 1}
 
-First, ``||scene:set background color||`` to a color you like. To see what this looks like in your game, look at the Game Simulator on the left side of the screen.
+First, ``||scene:set background color||`` to a color you like. To see what this looks like in your game, look  at the Game Simulator window.
 
 ```spy
 scene.setBackgroundColor(0)

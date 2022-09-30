@@ -126,6 +126,10 @@ The mole should hop between holes and you should be able to move the hammer with
 
 You should also see the Whack-the-Mole label, and be able to hear a sound each time the rubber hammer overlaps the mole.
 
+---
+
+💡 _ If you're not hearing anything in your game, you may need to **unmute** the game window using the speaker icon._
+
 
 
 
@@ -177,7 +181,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     info.changeScoreBy(1)
     sprites.move_to_random_hole_on_grid(myMole)
     music.knock.play()
-    animation.runImageAnimationHammer(
+    animation.runImageAnimation(
     myHammer,
     [assets.image`hammerAnimation`],
     50,
@@ -191,7 +195,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 
 
-- :binoculars: Take a look at what you've created!
+- :binoculars: Click the resize button next to the game window to see your project full-screen!
 
 When your rubber hammer overlaps the mole, points should show up in the top-right corner, a sound should play, and you should see the rubber hammer move back and forth.
 
