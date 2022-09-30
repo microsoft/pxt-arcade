@@ -250,7 +250,7 @@ game.onUpdateInterval(1000, function () {
 ## {10. Check Your Game!}
 
 
-- :binoculars: Click the resize button next to the game window to see your project full-screen!
+- :binoculars: Take a look at the game window to see your project!
 
 You should see the mole changing spots every second.
 
