@@ -136,6 +136,8 @@ Click the (A) button as fast as you can.  You can also use the **space bar** on 
 
 You should see the score go up with each click.
 
+![Look for the game window in the lower right](/static/skillmap/mole/game1.png "Click the mini game window to pop open the bigger game window.")
+
 ---
 
 Clicking the button is the **EVENT** that causes the score to go up!
@@ -214,8 +216,7 @@ scene.setBackgroundColor(1)
 
 You have started your very own clicker game!
 
-Click the resize icon to try it in the bigger game window and see if you can get more than **40 points**.
-![Expand the game window](/static/skillmap/assets/big-game.gif "Click the resize button to expand the game window.")
+Can you get more than **40 points**?
 
 ---
 

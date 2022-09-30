@@ -31,7 +31,9 @@ Press the (A) button or **space bar** and watch the score go up!
 
 ---
 
-If your code isn't working and you can't figure out why, click "Replace my code" to replace the blocks in your workspace with new starter code.
+If your code isn't working and you can't figure out why, click
+<br/>"Replace my code"<br/>
+to replace the blocks in your workspace with new starter code.
 
 hint~
 
@@ -57,7 +59,7 @@ hint~
 
 
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
- ``||variables: set [myBalloon] to sprite [ ] of kind [Player]||`` <br/>
+ ``||variables(sprites): set [myBalloon] to sprite [ ] of kind [Player]||`` <br/>
 and snap it inside and at the very **end** of the
 ``||loops(noclick): on start||``
 block container that's already in your workspace.
@@ -178,12 +180,12 @@ Press the (A) button (or **space bar**) as fast as you can.  You should see the 
 **Let's add a booth sprite!**
 
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
- ``||variables: set [myBooth] to sprite [ ] of kind [Booth]||`` <br/>
+ ``||variables(sprites): set [myBooth] to sprite [ ] of kind [Booth]||`` <br/>
 and snap it into the **end** of the
 ``||loops(noclick): on start||``
 block already in your workspace.
 
-- :mouse pointer: Click the empty square and when the image editor opens, switch to **My Assets** to select the **booth** sprite.
+- :mouse pointer: Click the empty square inside the block and when the image editor opens, switch to **My Assets** to select the **booth** sprite.
 ![Choose the booth from My Assets](/static/skillmap/balloon/booth.png "It's important to use this booth until you've played with your game.")
 
 ~hint Show me how! 🕵🏽
@@ -280,7 +282,7 @@ game.onGameOverExpanded(winTypes.Multi)
 **Win your game!**
 
 
-Click the resize icon next to the game window to try your game in full-screen.
+Take a look at the game window.
 
 Press the (A) button or **space bar** as fast as you can. Can you get the balloon to reach the line before time runs out?
 
@@ -303,7 +305,7 @@ hint~
 
 You have started your very own clicker game!
 
-When you're ready, click **Done** to return to the skillmap and continue building your amazing <br/>**🎈carnival game🎈**!
+When you're ready, click **Done** to return to the skillmap and continue building your amazing <br/>**🎡 carnival game 🎡**!
 
 
 ```blockconfig.global

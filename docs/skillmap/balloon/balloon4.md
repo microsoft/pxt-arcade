@@ -120,7 +120,7 @@ _(You'll also need to move player 1 to the left, and set player 2 further right.
 ~hint Tell me more... 🕵🏽
 
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
-``||variables: set [myBalloon2] to sprite [ ] of kind [Player]||`` <br/>
+``||variables(sprites): set [myBalloon2] to sprite [ ] of kind [Player]||`` <br/>
 and snap it inside at the **end** of the
 ``||loops(noclick): on start||``
 block already in your workspace.
@@ -177,7 +177,7 @@ myBalloon2.setPosition(110, 93)
 ~hint Tell me more... 🕵🏽
 
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
-``||variables: set [myMouse2] to sprite [ ] of kind [Mouse]||`` <br/>
+``||variables(sprites): set [myMouse2] to sprite [ ] of kind [Mouse]||`` <br/>
 and snap it inside at the **end** of the
 ``||loops(noclick): on start||``
 block already in your workspace.
