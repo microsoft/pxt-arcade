@@ -4,7 +4,7 @@
 
 ## Burstin' Balloons Intro @showdialog
 
-![Balloon Bursting Carnival Intro](youtube:jZGvmt6X880)
+![balloon intro](azuremedia:64101234-a394-4f89-98af-b4edfd11143a/BurstinBalloonsIntro.ism)
 
 
 
@@ -183,7 +183,7 @@ info.startCountdownGame(20, winTypes.Score)
 
 
 
-## {3. Set the Scene}
+## {7. Set the Scene}
 
 **Now let's make it look nice**
 

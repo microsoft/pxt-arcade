@@ -93,7 +93,7 @@ hint~
 ~hint Show me... 🕵🏽
 
 
-![Balloon Bursting Carnival Final Level - Add B](youtube:C8sLPWtr0fo-o?start=0&end=24)
+![balloon multiplayer](azuremedia:9f8857ec-6232-4390-9e1e-cdcabfbd13d9/Multiplayer-Mouse-Level.ism?start=0&end=24)
 
 hint~
 
@@ -141,7 +141,7 @@ hint~
 ~hint Show me! 🕵🏽
 
 
-![Balloon Bursting Carnival Final Level - Add Balloon](youtube:C8sLPWtr0fo-o?start=24&end=89)
+![balloon multiplayer](azuremedia:9f8857ec-6232-4390-9e1e-cdcabfbd13d9/Multiplayer-Mouse-Level.ism?start=24&end=89)
 
 hint~
 
@@ -195,7 +195,7 @@ hint~
 ~hint Show me! 🕵🏽
 
 
-![Balloon Bursting Carnival Final Level - Add Mouse](youtube:C8sLPWtr0fo-o?start=89&end=116)
+![balloon multiplayer](azuremedia:9f8857ec-6232-4390-9e1e-cdcabfbd13d9/Multiplayer-Mouse-Level.ism?start=89&end=116)
 
 hint~
 
@@ -263,7 +263,7 @@ hint~
 ~hint Show me! 🕵🏽
 
 
-![Balloon Bursting Carnival Final Level - Move Mouse](youtube:C8sLPWtr0fo-o?start=127&end=172)
+![balloon multiplayer](azuremedia:9f8857ec-6232-4390-9e1e-cdcabfbd13d9/Multiplayer-Mouse-Level.ism?start=127&end=172)
 
 hint~
 
@@ -315,7 +315,7 @@ hint~
 ~hint Show me! 🕵🏽
 
 
-![Balloon Bursting Carnival Final Level - Inflate](youtube:C8sLPWtr0fo-o?start=172&end=194)
+![balloon multiplayer](azuremedia:9f8857ec-6232-4390-9e1e-cdcabfbd13d9/Multiplayer-Mouse-Level.ism?start=172&end=194)
 
 hint~
 
@@ -388,7 +388,7 @@ hint~
 ~hint Show me! 🕵🏽
 
 
-![Balloon Bursting Carnival Final Level - Inflate](youtube:C8sLPWtr0fo-o?start=212&end=250)
+![balloon multiplayer](azuremedia:9f8857ec-6232-4390-9e1e-cdcabfbd13d9/Multiplayer-Mouse-Level.ism?start=212&end=250)
 
 hint~
 
