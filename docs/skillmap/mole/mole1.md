@@ -4,7 +4,7 @@
 
 ## Whack-the-Mole Intro @showdialog
 
-![Whack-the-Mole Carnival Intro](youtube:UKYPIXl7agI)
+![whack-the-mole](azuremedia:eb645602-3355-4aa7-a756-0ea205b2ce80/Whack-the-Mole-Intro.ism)
 
 Special thanks to MakeCode Forum User _SoftTalker_ for this submission.
 
