@@ -168,6 +168,7 @@ hint~
 
 ```blocks
 scene.setBackgroundImage(assets.image`grid`)
+//@highlight
 let myMole = sprites.create(img`.`, SpriteKind.Enemy)
 ```
 
@@ -198,6 +199,7 @@ hint~
 
 ```blocks
 scene.setBackgroundImage(assets.image`grid`)
+//@highlight
 let myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 ```
 
@@ -241,7 +243,7 @@ hint~
 
 ```blocks
 game.onUpdateInterval(1000, function () {
-    sprites.move_to_random_hole_on_grid(mySprite)
+    sprites.move_to_random_hole_on_grid(myMole)
 })
 ```
 
@@ -253,13 +255,6 @@ game.onUpdateInterval(1000, function () {
 - :binoculars: Take a look at the game window to see your project!
 
 You should see the mole changing spots every second.
-
-
-![Expand the game window](/static/skillmap/assets/big-game.gif "Click the resize button to expand the game window.")
-
-
-
-
 
 
 

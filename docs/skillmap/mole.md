@@ -1,6 +1,6 @@
 # Whack-the-Mole
 * name: Whack-the-Mole
-* description: Create your own Whac-a-Mole® style of carnival game! \n (WHAC-A-MOLE is a trademark and brand of MATTEL, INC.)
+* description: Create your own mole whacking carnival game.
 * infoUrl: skillmap/educator-info/mole-map-info
 * bannerUrl: /static/skillmap/mole/mole3.gif
 * backgroundurl: https://raw.githubusercontent.com/clkantner/whack/master/skillmap2-final.gif

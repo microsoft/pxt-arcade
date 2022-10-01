@@ -50,7 +50,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSp
 
 ```
 
-If those steps don't solve your problem, click "Replace my code" to replace the blocks in your workspace with new starter code.
+If those steps don't solve your problem, click <br/>"Replace my code"<br/>
+ to replace the blocks in your workspace with new starter code.
 
 hint~
 
@@ -82,13 +83,9 @@ hint~
 
 ~hint Show me more! 🕵🏽
 
-You'll want to add a new block to the end of the <br/>
-``||loops(noclick):on start||`` <br/>
-container and make it look like this:
+---
 
-```block
-let myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
-```
+(Take a look in the ``||sprites:Sprites||`` category for the blocks you need.)
 
 ![Add a new `set sprite` block to the end of the `on start` container.](/static/skillmap/balloon/third-sprite.gif "Add a `set sprite` block to the `on start` container and change the name and kind." )
 
@@ -109,6 +106,7 @@ scene.setBackgroundColor(1)
 myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
 myBalloon.setPosition(80, 93)
 let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
+    //@highlight
 myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
 ```
 
@@ -160,6 +158,7 @@ myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
 myBalloon.setPosition(80, 93)
 let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
 myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
+    //@highlight
 myMouse.setPosition(80, 93)
 ```
 
@@ -194,7 +193,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
     info.player1.changeScoreBy(1)
     scaling.scaleByPixels(myBalloon, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
-    myMouse.setImage(assets.image`mouse1-down`)
+        //@highlight
+myMouse.setImage(assets.image`mouse1-down`)
 })
 ```
 

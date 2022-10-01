@@ -120,6 +120,7 @@ hint~
 #### ~ tutorialhint
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    //@highlight
     info.player1.changeScoreBy(1)
 })
 ```
@@ -178,6 +179,7 @@ hint~
 
 #### ~ tutorialhint
 ```blocks
+    //@highlight
 info.startCountdownGame(20, winTypes.Score)
 ```
 
@@ -204,6 +206,7 @@ hint~
 #### ~ tutorialhint
 ```blocks
 info.startCountdownGame(20, winTypes.Score)
+    //@highlight
 scene.setBackgroundColor(1)
 ```
 

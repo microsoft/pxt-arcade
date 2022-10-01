@@ -26,7 +26,9 @@ Using the joypad (or the arrow keys on your keyboard) move the hammer around the
 
 ---
 
-If your code isn't working and you can't figure out why, click "Replace my code" to replace the blocks in your workspace with new starter code.
+If your code isn't working and you can't figure out why, click
+<br/>"Replace my code"<br/>
+to replace the blocks in your workspace with new starter code.
 
 hint~
 
@@ -72,6 +74,7 @@ myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
 controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
 info.startCountdownGame(15, winTypes.Score)
+//@highlight
 scene.add_label_to("Whack-the-Mole", areas.Bottom)
 ```
 
@@ -111,7 +114,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     let myHammer: Sprite = null
     info.changeScoreBy(1)
     sprites.move_to_random_hole_on_grid(myMole)
-    music.knock.play()
+    //@highlight
+music.knock.play()
 
 })
 ```
@@ -128,7 +132,7 @@ You should also see the Whack-the-Mole label, and be able to hear a sound each t
 
 ---
 
-💡 _ If you're not hearing anything in your game, you may need to **unmute** the game window using the speaker icon._
+💡 _If you're not hearing anything in your game, you may need to **unmute** the game window using the speaker icon._
 
 
 
@@ -144,7 +148,7 @@ You should also see the Whack-the-Mole label, and be able to hear a sound each t
 
 - :mouse pointer: At the bottom of the toolbox, click **Advanced** to show more categories.
 
-- :rotate: From the ``||animation: Animation||`` category, grab <br/>
+- :arrows-rotate: From the ``||animation: Animation||`` category, grab <br/>
 
 ```block
 animation.runImageAnimation(
@@ -174,6 +178,7 @@ hint~
 
 #### ~ tutorialhint
 
+
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     let myMole: Sprite = null
@@ -181,12 +186,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     info.changeScoreBy(1)
     sprites.move_to_random_hole_on_grid(myMole)
     music.knock.play()
-    animation.runImageAnimation(
-    myHammer,
-    [assets.image`hammerAnimation`],
-    50,
-    false
-    )
+    //@highlight
+animation.runImageAnimation(
+myHammer,
+assets.animation`hammerAnimation`,
+50,
+false
+)
 })
 ```
 
@@ -195,7 +201,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 
 
-- :binoculars: Click the resize button next to the game window to see your project full-screen!
+- :binoculars: Play your game in the game window!
 
 When your rubber hammer overlaps the mole, points should show up in the top-right corner, a sound should play, and you should see the rubber hammer move back and forth.
 
