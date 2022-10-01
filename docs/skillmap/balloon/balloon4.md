@@ -55,7 +55,8 @@ game.onGameOverExpanded(winTypes.Multi)
 
 ```
 
-If those steps don't solve your problem, click "Replace my code" to replace the blocks in your workspace with new starter code.
+If those steps don't solve your problem, click <br/>"Replace my code"<br/>
+ to replace the blocks in your workspace with new starter code.
 
 hint~
 
@@ -306,7 +307,7 @@ controller.B.onEvent(ControllerButtonEvent.Released, function () {
 - :up-down: From the ``||scaling: Scaling||`` category in the toolbox, grab <br/>
 ``||scaling: change [myBalloon2] scale by [1] pixels [uniformly] anchor [bottom]|| `` <br/>
 and snap it into the <br/>
-``||controller: on [B] button [pressed]||`` <br/>
+``||controller(noclick): on [B] button [pressed]||`` <br/>
 block already in the workspace.
 
 
@@ -335,6 +336,8 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 #### ~ tutorialhint
 ```blocks
+    let myMouse2: Sprite = null
+
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     info.player2.changeScoreBy(1)
     myMouse2.setImage(assets.image`mouse2-down`)
@@ -359,7 +362,7 @@ Find a friend and have them press the (A) button or **space bar** while you pres
 
 💡 ** Tip:** _Now that you have someone to race against, you can right-click <br/>
 ``||info: start countdown [20] (s) and game over [high score]||``<br/>
-inside ``||loops: on start||`` and choose **Delete Blocks**._
+inside ``||loops(noclick): on start||`` and choose **Delete Blocks**._
 
 
 
@@ -379,7 +382,7 @@ Last step!
 
 - :up-down: From the ``||scene: Scene||`` category in the toolbox, grab <br/>
 ``||scene: add label [Burstin' Balloons] to [middle] of window || `` <br/>
-and snap it into the **top** of the ``||loops: on start||``
+and snap it into the **top** of the ``||loops(noclick): on start||``
 block already in the workspace.
 
 
@@ -405,7 +408,23 @@ controller.B.onEvent(ControllerButtonEvent.Released, function () {
 
 
 #### ~ tutorialhint
-```block
+```blocks
+let myBalloon2: Sprite = null
+let myMouse: Sprite = null
+let myBalloon: Sprite = null
+let myMouse2: Sprite = null
+info.startCountdown(20)
+scene.setBackgroundColor(1)
+myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
+myBalloon.setPosition(50, 93)
+let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
+myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
+myMouse.setPosition(50, 93)
+myBalloon2 = sprites.create(assets.image`balloon-2`, SpriteKind.Player)
+myBalloon2.setPosition(110, 93)
+myMouse2 = sprites.create(assets.image`mouse2-up`, SpriteKind.Mouse)
+myMouse2.setPosition(110, 93)
+//@highlight
 scene.add_label_to("Burstin' Balloons", areas.Mid)
 
 ```

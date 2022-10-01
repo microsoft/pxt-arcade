@@ -70,6 +70,7 @@ let myMole: Sprite = null
 let myHammer: Sprite = null
 scene.setBackgroundImage(assets.image`grid`)
 myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
+//@highlight
 myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
 ```
 
@@ -105,6 +106,7 @@ let myHammer: Sprite = null
 scene.setBackgroundImage(assets.image`grid`)
 myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
+//@highlight
 controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
 ```
 
@@ -112,11 +114,9 @@ controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
 
 ## {5. Check Your Game!}
 
-Let's test the action in the bigger game window!
-
 - :binoculars: Test your project in the game window to see how it works!
 
-Try using the on-screen joypad or the arrow keys on your keyboard to move the hammer around the screen.
+Try using the on-screen joypad (or the arrow keys on your keyboard) to move the hammer around the screen.
 
 
 
@@ -202,6 +202,7 @@ hint~
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeScoreBy(1)
+//@highlight
     sprites.move_to_random_hole_on_grid(myMole)
 })
 ```
@@ -243,6 +244,7 @@ scene.setBackgroundImage(assets.image`grid`)
 myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
 controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
+//@highlight
 info.startCountdownGame(15, winTypes.Score)
 ```
 
@@ -252,7 +254,7 @@ info.startCountdownGame(15, winTypes.Score)
 ## {10. Play your game!}
 
 
-- :binoculars: Click the resize button next to the game window to see your project full-screen!
+- :binoculars: Play your game in the game window.
 
 You should get one point each time you overlap the mole with the rubber hammer, then the mole should hop to another spot. Time should run out after 15 seconds and your high score should display!
 

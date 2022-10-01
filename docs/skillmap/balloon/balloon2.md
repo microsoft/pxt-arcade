@@ -84,6 +84,7 @@ hint~
 ```blocks
 info.startCountdownGame(20, winTypes.Score)
 scene.setBackgroundColor(1)
+    //@highlight
 let myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
 ```
 
@@ -126,6 +127,7 @@ hint~
 info.startCountdownGame(20, winTypes.Score)
 scene.setBackgroundColor(1)
 let myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
+    //@highlight
 myBalloon.setPosition(80, 93)
 ```
 
@@ -156,7 +158,8 @@ hint~
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.player1.changeScoreBy(1)
-    scaling.scaleByPixels(myBalloon, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+        //@highlight
+scaling.scaleByPixels(myBalloon, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
 })
 ```
 
@@ -209,6 +212,7 @@ let myBooth = sprites.create(img`.`, SpriteKind.Booth)
 info.startCountdownGame(20, winTypes.Score)
 scene.setBackgroundColor(1)
 let myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
+    //@highlight
 let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
 ```
 
@@ -271,6 +275,7 @@ let myBooth = sprites.create(img`.`, SpriteKind.Booth)
 #### ~ tutorialhint
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSprite) {
+    //@highlight
 game.onGameOverExpanded(winTypes.Multi)
 })
 ```
