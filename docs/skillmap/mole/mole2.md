@@ -53,6 +53,7 @@ block container that's already in your workspace.
 
 
 
+
 ~hint Show me how! 🕵🏽
 
 ![Choose the hammer from My Assets](/static/skillmap/mole/choose-hammer.gif "Change from the Editor to My Assets and select the hammer.")
