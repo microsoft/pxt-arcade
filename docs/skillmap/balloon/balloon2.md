@@ -189,7 +189,6 @@ and snap it into the **end** of the
 block already in your workspace.
 
 - :mouse pointer: Click the empty square inside the block and when the image editor opens, switch to **My Assets** to select the **booth** sprite.
-
 ![Choose the booth from My Assets](/static/skillmap/balloon/booth.png "It's important to use this booth until you've played with your game.")
 
 ~hint Show me how! 🕵🏽
