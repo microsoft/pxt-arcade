@@ -117,7 +117,8 @@
             "joylabz/makeymakey-makecode-arcade-extension": {
                 "preferred": true,
                 "tags": [ "Hardware" ]
-            }
+            },
+            "code-ninjas-home-office/game-building-session-tutorials": {}
         },
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
@@ -147,7 +148,9 @@
             "rockstar": "docs:/skillmap/rockstar",
             "forest": "docs:/skillmap/forest",
             "turkey": "docs:/skillmap/turkey",
-            "star": "docs:/skillmap/star"
+            "star": "docs:/skillmap/star",
+            "mole": "docs:/skillmap/mole",
+            "balloon": "docs:/skillmap/balloon"
         }
     },
     "galleries": {
@@ -170,6 +173,6 @@
         "John Park's Workshop": "john-parks-workshop"
     },
     "electronManifest": {
-        "latest": "v1.8.29"
+        "latest": "v1.10.34"
     }
 }

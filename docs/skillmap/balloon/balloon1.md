@@ -4,35 +4,24 @@
 
 ## Burstin' Balloons Intro @showdialog
 
-![Balloon Bursting Carnival Intro](youtube:ttlam7rkh1U)
+![balloon intro](azuremedia:64101234-a394-4f89-98af-b4edfd11143a/BurstinBalloonsIntro.ism)
 
 
 
 ## {2. Read Instructions}
 
-**🎈Start with Instructions🎈**
 
-- :comment: This is the **instruction panel** that has directions
+**🎡 Start with Instructions 🎡**
+
+This is the **instruction panel**. It has directions
 on what to do.
 
-
-- :lightbulb: Don't miss anything! Scroll down to the **double lines** before moving to the next instruction.
-
-
-- :mouse pointer: When you're done reading, click **Next** to move to the next instruction.
-
----
 ---
 
-
-## {3. Tips and Tricks}
-
-**Tips and Tricks**
-
-Be on the lookout for secret information!
+Be on the lookout for extra info!
 
 
-~hint Click here to reveal hidden info 🕵🏽
+~hint Click here to reveal hidden text 🕵🏽
 
 <br/>
 Look for clues like this when you read instructions.
@@ -41,28 +30,38 @@ Each one gives extra info, tips, or tricks.
 
 hint~
 
+When you're done reading, click **Next** to move to the next instruction.
 
 
-- :mouse pointer: Once you see the double lines, you can click **Next** to move to the next instruction.
-
----
----
 
 
-## {4. Your First Block}
+## {3. Your First Block}
 
 **Ready to start coding?**
 
-Let's make something happen each time you press the (A) button in the game window using **EVENTS**!
+Let's make something happen using **EVENTS**!
 
 
-- :game: From the ``||controller: Controller||`` category **in the toolbox**, grab
+- :game: From the ``||controller: Controller||`` category **in the toolbox**, grab <br/>
+``||controller: on [A] button [pressed]||`` <br/>
+and drop it into an empty area of the workspace.
+
+~hint What does that mean? 💡
+
+---
+
+When giving instructions, we'll highlight some text to give you a better idea of what you are looking for.
+
+For example, when we suggest the <br/>
+``||controller: on [A] button [pressed]||`` <br/>
+block, we are pointing you toward <br/>
+
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
-and drop it into an empty area of the workspace.
 
+hint~
 
 ~hint Click here to see how 🕵🏽
 
@@ -74,8 +73,7 @@ and drop it into an empty area of the workspace.
 
 hint~
 
----
----
+
 
 #### ~ tutorialhint
 ```blocks
@@ -85,17 +83,19 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## {5. Add Points}
+## {4. Add Points}
 
-Now we need to add points when the (A) button is clicked in the game window. This will be the **ACTION** that goes with the **EVENT**.
+Now we need to add points when the (A) button is clicked in the game window.
+
+This will be the **ACTION** that goes with our **EVENT**.
 
 
-- :id card: From the ``||info: Info||`` category in the toolbox, grab
-```block
-    info.changeScoreBy_defl1(info.player1, 1)
-```
+- :id card: From the ``||info: Info||`` category in the toolbox, grab <br/>
+``||info: change player [1] score by [1]||`` <br/>
+
+
 and snap it into the empty <br/>
-``||controller: on [A] button [pressed]||`` <br/>
+``||controller(noclick): on [A] button [pressed]||`` <br/>
 block that's already in the workspace.
 
 💡 **Tip:** _Make sure the blocks connect!_
@@ -103,37 +103,43 @@ block that's already in the workspace.
 
 ~hint Click here to see how 🕵🏽
 
+---
+
 ![Look under Info for the block](/static/skillmap/balloon/change-p1-score.gif "Snap the score block into the controller block")
 
 - :lightbulb: Make sure the new <br/>
 ``||info: change player [1] score by [1]||`` <br/>
 block connects to the inside of the <br/>
-``||controller: on [A] button [pressed]||`` <br/>
+``||controller(noclick): on [A] button [pressed]||`` <br/>
 block!
 
 hint~
 
----
----
+
 
 #### ~ tutorialhint
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.changeScoreBy_defl1(info.player1, 1)
+    //@highlight
+    info.player1.changeScoreBy(1)
 })
 ```
 
 
 
-## {6. Check Your Game!}
+## {5. Check Your Game!}
 
 Now it's time to try your game!
 
-- :mouse pointer: Click the mini **game window** in the bottom corner to open the **bigger game window**!
+- :binoculars: Look at your project in the game window to see how it has changed!
 
 Click the (A) button as fast as you can.  You can also use the **space bar** on your keyboard.
 
 You should see the score go up with each click.
+
+![Look for the game window in the lower right](/static/skillmap/mole/game1.png "Click the mini game window to pop open the bigger game window.")
+
+---
 
 Clicking the button is the **EVENT** that causes the score to go up!
 
@@ -146,27 +152,21 @@ hint~
 
 
 
----
----
 
 
 
-
-## {7. Add a Timer}
+## {6. Add a Timer}
 
 **Let's add a challenge** ⏰
 
 - :id card: From the ``||info: Info||`` category in the toolbox,
-grab
-```block
-    info.startCountdown(10)
-```
+grab <br/>
+
+``||info: start countdown [20] (s) and game over [high score]||`` <br/>
 
 and snap it into the empty <br/>
-``||loops: on start||`` <br/>
+``||loops(noclick): on start||`` <br/>
 block that's already in the workspace.
-
-- :mouse pointer: Change the countdown time from **10** seconds to **20** seconds.
 
 
 ~hint Click here to see how 🕵🏽
@@ -175,27 +175,71 @@ block that's already in the workspace.
 
 hint~
 
----
----
+
 
 #### ~ tutorialhint
 ```blocks
-info.startCountdown(20)
+    //@highlight
+info.startCountdownGame(20, winTypes.Score)
 ```
 
 
 
-## {Step 12}
+## {7. Set the Scene}
+
+**Now let's make it look nice**
+
+- :tree: From the ``||scene: Scene||`` category in the toolbox, grab <br/>
+``||scene: set background color to [ ]||`` <br/>
+and snap it inside and at the **end** of the
+``||loops(noclick): on start||``
+block container that's already in your workspace.
+
+~hint Show me how! 🕵🏽
+
+![Open the Scene category to find the block that changes the background color](/static/skillmap/balloon/bg-color.gif "Set the background color to white." )
+
+hint~
+
+
+
+#### ~ tutorialhint
+```blocks
+info.startCountdownGame(20, winTypes.Score)
+    //@highlight
+scene.setBackgroundColor(1)
+```
+
+
+
+
+## {Finale}
 
 **🎉 Way to Go 🎉**
 
 You have started your very own clicker game!
-Try it in the bigger game window and see if you can get more than **40 points**.
 
-When you're finished playing, come back to the instructions and click the **Done** button to return to the skillmap and continue building your amazing **🎈carnival game🎈**!
+Can you get more than **40 points**?
 
 ---
----
+
+When you're finished playing, come back to the instructions and click the **Done** button to return to the skillmap and continue building your amazing <br/>**🎈carnival game🎈**!
+
+
+
+
+```blockconfig.global
+info.player1.changeScoreBy(1)
+info.startCountdownGame(20, winTypes.Score)
+scene.setBackgroundColor(1)
+```
+
+
+```package
+simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
+arcade-text=github:microsoft/arcade-text/
+pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling/
+```
 
 
 ```customts
@@ -207,32 +251,305 @@ namespace SpriteKind {
     export const Mouse = SpriteKind.create()
 }
 
+enum winTypes {
+    //% block="win game"
+    Win,
+    //% block="lose game"
+    Lose,
+    //% block="high score"
+    Score,
+    //% block="multiplayer"
+    Multi
+}
+
+enum speeds {
+    //% block="fast"
+    Fast,
+    //% block="medium"
+    Med,
+    //% block="slow"
+    Slow
+}
+
+enum areas {
+    //% block="top"
+    Top,
+    //% block="middle"
+    Mid,
+    //% block="bottom"
+    Bottom
+}
+
+let textSprite: TextSprite = null
+//let fanfare: effects.BackgroundEffect = undefined;
+//let winStyle = winTypes.Score
+
+
+
+namespace scene {
+    /**
+    * Adds text to the top, middle, or bottom
+    * of screen as defined by circuis games
+    */
+    //% color="#4b6584"
+    //% blockId=add_label_to
+    //% block="add label $myLabel to $myPosition of window || $myColor"
+    //% myLabel.defl="Whack-the-Mole"
+    //% myColor.shadow="colorindexpicker"
+    //% myColor.defl=4
+    //% myPosition.defl=areas.Bottom
+    //% inlineInputMode=inline
+    export function add_label_to(myLabel: string, myPosition: areas, myColor?:number) {
+        if (!myColor)
+            myColor = 4;
+
+        textSprite = textsprite.create(myLabel, 0, myColor)
+        if (myPosition == areas.Bottom) textSprite.setPosition(80, 110);
+        if (myPosition == areas.Mid) textSprite.setPosition(80, 50);
+        if (myPosition == areas.Top) textSprite.setPosition(80, 20);
+    }
+}
+
+
 namespace info {
-        /**
-         * Change the score of a player
-         * @param value
-         * but with default player 1
-         */
+    let countdownInitialized = false;
+    /**
+     * Adds game end style to countdown
+     */
     //% color="#cf6a87"
-    //% help=github:carnival/docs/player_score_deflt1
-    //% blockId=pichangescore-defl1
-    //% block="change %player score by %value"
-    //% value.defl=1
-    //% player.defl=info.player1
-    export function changeScoreBy_defl1(player: info.PlayerInfo, value: number) {
-        player.setScore(player.score() + value);
+    //% group=countdown
+    //% blockId=start_countdown_game
+    //% block="start countdown $myTime (s) and game over $winType || effect $winEffect"
+    //% myTime.defl=15
+    //% winType.defl=winTypes.Score
+    //% winEffect.defl=effects.confetti
+    //% inlineInputMode=inline
+    export function startCountdownGame(myTime: number, winType: winTypes, winEffect?: effects.BackgroundEffect) {
+        if (!winType)
+            winType = winTypes.Win;
+        if (!winEffect && winType != winTypes.Lose){
+            winEffect = effects.confetti;
+        }
+        else { winEffect = effects.melt;}
+        init(winType, winEffect);
+        info.startCountdown(myTime)
+
     }
 
+    export function newGameOver(winStyle: winTypes, fanfare: effects.BackgroundEffect) {
+
+        // Prep default variables for different win types
+        let winnerNumber = 1;
+        let thisHigh = 0;
+
+        // Save all scores as relevant to the game.
+        info.saveAllScores();
+
+        // collect the scores before popping the scenes
+        const scoreInfo1 = info.player1.getState();
+        const scoreInfo2 = info.player2.getState();
+        const scoreInfo3 = info.player3.getState();
+        const scoreInfo4 = info.player4.getState();
+        const highScore = info.highScore();
+        const allScores = [scoreInfo1.score, scoreInfo2.score, scoreInfo3.score, scoreInfo4.score];
+
+        // Find player with highest score
+        for (let i = 0; i < 4; i++) {
+            if (allScores[i] > thisHigh) {
+                thisHigh = allScores[i];
+                winnerNumber = i+1;
+            }
+        }
+        // If highest score is higher than saved high, replace
+        if (thisHigh > highScore){
+            info.saveHighScore(); }
+
+
+        // releasing memory and clear fibers. Do not add anything that releases the fiber until background is set below,
+        // or screen will be cleared on the new frame and will not appear as background in the game over screen.
+        game.popScene();
+        game.pushScene();
+        scene.setBackgroundImage(screen.clone());
+
+        music.powerUp.play();
+
+        fanfare.startScreenEffect();
+
+        pause(400);
+
+        const overDialog = new GameOverDialog(true, thisHigh, highScore, winnerNumber, winStyle);
+        scene.createRenderable(scene.HUD_Z, target => {
+            overDialog.update();
+            target.drawTransparentImage(
+                overDialog.image,
+                0,
+                (screen.height - overDialog.image.height) >> 1
+            );
+        });
+        pause(500); // wait for users to stop pressing keys
+        overDialog.displayCursor();
+        game.waitAnyButton();
+        control.reset();
+
+    }
+
+    function init(winStyle: winTypes, fanfare: effects.BackgroundEffect) {
+        if (countdownInitialized) return;
+        countdownInitialized = true;
+
+        info.onCountdownEnd(function () {
+            if (winStyle == winTypes.Win) {
+                game.over(true, fanfare)
+            } else if (winStyle == winTypes.Lose) {
+                game.over(false, fanfare)
+            } else {
+                newGameOver(winStyle, fanfare);
+            }
+        })
+    }
+
+    export class GameOverDialog extends game.BaseDialog {
+        protected cursorOn: boolean;
+        protected isNewHighScore: boolean;
+
+        constructor(
+            protected win: boolean,
+            protected score?: number,
+            protected highScore?: number,
+            protected winnerNum?: number,
+            protected winStyle?: winTypes
+        ) {
+            super(screen.width, 46, img`
+        1 1 1
+        f f f
+        1 1 1
+        `);
+            this.cursorOn = false;
+            this.isNewHighScore = this.score > this.highScore;
+        }
+
+        displayCursor() {
+            this.cursorOn = true;
+        }
+
+        update() {
+            this.clearInterior();
+            this.drawTextCore();
+
+            if (this.cursorOn) {
+                this.drawCursorRow();
+            }
+        }
+
+        drawTextCore() {
+            const titleHeight = 8;
+            if (this.winStyle == winTypes.Multi){
+                this.image.printCenter(
+                    "Player " + this.winnerNum + " wins!",
+                    titleHeight,
+                    screen.isMono ? 1 : 5,
+                    image.font8
+                );
+
+                if (this.score !== undefined) {
+                    const scoreHeight = 23;
+                    const highScoreHeight = 34;
+                    const scoreColor = screen.isMono ? 1 : 2;
+
+                    this.image.printCenter(
+                        "Score:" + this.score,
+                        scoreHeight,
+                        scoreColor,
+                        image.font8
+                    );
+
+                    if (this.isNewHighScore) {
+                        this.image.printCenter(
+                            "New High Score!",
+                            highScoreHeight,
+                            scoreColor,
+                            image.font5
+                        );
+                    } else {
+                        this.image.printCenter(
+                            "HI:" + this.highScore,
+                            highScoreHeight,
+                            scoreColor,
+                            image.font8
+                        );
+                    }
+                }
+            }
+            else {
+                this.image.printCenter(
+                    "Great Job!",
+                    titleHeight,
+                    screen.isMono ? 1 : 5,
+                    image.font8
+                );
+
+                if (this.score !== undefined) {
+                    const scoreHeight = 23;
+                    const highScoreHeight = 34;
+                    const scoreColor = screen.isMono ? 1 : 2;
+
+                    this.image.printCenter(
+                        "Score:" + this.score,
+                        scoreHeight,
+                        scoreColor,
+                        image.font8
+                    );
+
+                    if (this.isNewHighScore) {
+                        this.image.printCenter(
+                            "New High Score!",
+                            highScoreHeight,
+                            scoreColor,
+                            image.font5
+                        );
+                    } else {
+                        this.image.printCenter(
+                            "HI:" + this.highScore,
+                            highScoreHeight,
+                            scoreColor,
+                            image.font8
+                        );
+                    }
+                }
+            }
+        }
+    }
 }
-```
 
+namespace game {
+    /**
+     * Adds additional end game styles
+     */
+    //% color="#8854d0"
+    //% group=Gameplay
+    //% blockId=on_game_over_expanded
+    //% block="game over $winStyle || add effect $winEffect"
+    //% winType.defl=winTypes.Win
+    //% winEffect.defl=effects.confetti
+    //% inlineInputMode=inline
+    export function onGameOverExpanded(winStyle: winTypes, winEffect?: effects.BackgroundEffect) {
+        if (!winStyle)
+            winStyle = winTypes.Win;
+        if (!winEffect && winStyle != winTypes.Lose) {
+            winEffect = effects.confetti;
+        }
+        else { winEffect = effects.melt; }
 
+        if (winStyle == winTypes.Win) {
+            game.over(true, winEffect)
+        } else if (winStyle == winTypes.Lose) {
+            game.over(false, winEffect)
+        } else {
+            info.newGameOver(winStyle, winEffect);
+        }
+    }
+}
 
-
-```package
-simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
-arcade-text=github:microsoft/arcade-text/
-pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling/
 ```
 
 

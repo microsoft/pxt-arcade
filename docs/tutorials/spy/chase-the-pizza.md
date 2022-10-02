@@ -10,7 +10,7 @@ In this tutorial you will create a game with 2 sprites, a ``||sprites:Player||``
 
 ## {Step 1}
 
-First, ``||scene:set background color||`` to a color you like. To see what this looks like in your game, look at the Game Simulator on the left side of the screen.
+First, ``||scene:set background color||`` to a color you like. To see what this looks like in your game, look  at the Game Simulator window.
 
 ```spy
 scene.setBackgroundColor(0)
@@ -18,7 +18,7 @@ scene.setBackgroundColor(0)
 
 ## {Step 2}
 
-Add code to ``||sprites:create a sprite||`` a set it to a variable name ``||variables:mySprite||``. Use
+Add code to ``||sprites:create a sprite||`` a set it to a variable name ``||variables(noclick):mySprite||``. Use
 ``||sprites:Player||`` for the ``||sprites:sprite kind||``.
 
 ```spy
@@ -46,7 +46,7 @@ mySprite = sprites.create(img`
 
 ## {Step 3}
 
-Draw your ``||sprites:Player||`` character by using the image editor for  ``||variables:set mySprite||``.
+Draw your ``||sprites:Player||`` character by using the image editor for  ``||variables(sprites):set mySprite||``.
 Use the color palette and design tools to draw an image on the canvas. Click **Done** when you are finished.
 
 ![Image editor](/static/tutorials/chase-the-pizza/image-editor-js.gif)
@@ -80,8 +80,8 @@ controller.moveSprite(mySprite)
 
 ## {Step 5}
 
-Just like with ``||variables:mySprite||``, ``||create a sprite||`` again and set it to the a variable named
-``||variables:pizza||``. This time, set the ``||sprites:sprite kind||`` to ``||sprites:food||``. This will
+Just like with ``||variables(noclick):mySprite||``, ``||create a sprite||`` again and set it to the a variable named
+``||variables(noclick):pizza||``. This time, set the ``||sprites:sprite kind||`` to ``||sprites:food||``. This will
 be the **pizza** sprite in our game.
 
 ```spy
@@ -127,7 +127,7 @@ let pizza = sprites.create(img`
 
 ## {Step 6}
 
-Use the image editor for ``||variables:pizza||`` and then select the **Gallery** view. Scroll to find the image of a small pizza (or any other image you like!) and select it to load into the image editor.
+Use the image editor for ``||variables(noclick):pizza||`` and then select the **Gallery** view. Scroll to find the image of a small pizza (or any other image you like!) and select it to load into the image editor.
 
 ![Image gallery](/static/tutorials/chase-the-pizza/image-gallery-spy.gif)
 
@@ -144,7 +144,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ## {Step 8}
 
-When our ``||sprites:Player||`` overlaps with the ``||variables:pizza||`` sprite, let’s add a point to our game score. Pun in the code to ``||info:change score by||`` 1`.
+When our ``||sprites:Player||`` overlaps with the ``||variables(noclick):pizza||`` sprite, let’s add a point to our game score. Pun in the code to ``||info:change score by||`` 1`.
 
 ```spy
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
@@ -154,7 +154,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ## {Step 9}
 
-Let’s set the position for ``||variables:pizza||`` to random locations around the screen. We use
+Let’s set the position for ``||variables(noclick):pizza||`` to random locations around the screen. We use
 ``otherSprite`` and ``||sprites:set its position||``. Righy now, just use `0` for both `x` and `y`.
 
 ```spy

@@ -1208,7 +1208,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherS
 
 ## {Step 10}
 
-In the `||sprites:on sprite overlaps otherSprite||` block, click on the second `||sprites:Player||` kind after `||variables:otherSprite||` to open the menu. Select `||sprites:Basketball||` as its kind.
+In the `||sprites:on sprite overlaps otherSprite||` block, click on the second `||sprites:Player||` kind after `||variables(noclick):otherSprite||` to open the menu. Select `||sprites(noclick):Basketball||` as its kind.
 
 ```blocks
 namespace SpriteKind {
@@ -1252,7 +1252,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Basketball, function (sprite, ot
 
 ## {Step 13}
 
-In the `||sprites:set mySprite position||` block, click on the `||variables:mySprite||` variable to open the menu, and select your `||variables:mySprite2||` sprite.
+In the `||sprites:set mySprite position||` block, click on the `||variables(noclick):mySprite||` variable to open the menu, and select your `||variables(noclick):mySprite2||` sprite.
 
 ```blocks
 namespace SpriteKind {

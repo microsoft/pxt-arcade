@@ -1,7 +1,6 @@
 /* Fonts imports are in html page */
 
 
-
 body{
 
     font-family: 'NunitoRegular', sans-serif;
@@ -9,8 +8,8 @@ body{
     color: #ffffff;
     margin: 0;
     padding: 0;
-    background-color: #140083;
-    min-width: 1200px;
+    background-color: #140083;  
+    /* min-width: 1200px; */
 }
 
 h2{
@@ -40,18 +39,21 @@ section{
     display: flex;
     justify-content: center;
     padding: 50px 0 0 0;
-
 }
 
 header{
-    background-color:rgb(20 0 133 / 80%);
-    padding: 20px;
-    position: fixed;
+    /* background-color:rgb(20 0 133 / 80%); */
+    /* padding: 20px 20px 0 20px; */
+    position: absolute;
     top: 0px;
     width: 100%;
     z-index: 999;
     display: flex;
     gap:20px;
+}
+
+header img{
+    margin: 20px;
 }
 
 /* Nav */
@@ -63,7 +65,6 @@ nav a{
     font-family: 'InterBold', sans-serif;
     font-size: 18px;
 }
-
 
 
 a {
@@ -137,7 +138,7 @@ nav ul li{
 /* background image is in HTML page due to known pathing issue */
 #hero{
     padding: 0;
-    margin-top: 60px;
+    /* margin-top: 60px; */
     text-align: center;
     background-color: #140083;
     background-repeat: no-repeat, repeat-x;
@@ -165,9 +166,19 @@ nav ul li{
 
 #hero .header-tag{
     /* font-weight: bold; */
-    width: 280px;
+    width: 300px;
     margin: auto;
 }
+
+/* overflow games */
+.container-grid.overflow-games{
+    display: none;
+}
+
+.container-grid.overflow-games.active{
+    display: flex;
+}
+
 
 /* Cards */
 .card{
@@ -178,18 +189,20 @@ nav ul li{
     background-color: #140083;
     border-radius: 10px;
     box-shadow: 0px 6.4px 14.4px rgba(0, 0, 0, 0.132), 0px 1.2px 3.6px rgba(0, 0, 0, 0.108);
-    transition: transform .15s, opacity .15s;
+    transition: transform .15s, filter .15s;
     max-width: 350px;
 }
 
 .card:hover{
     box-shadow: 0px 3.4px 7.4px rgba(0, 0, 0, 0.132);
     transform: scale(.98);
-    opacity: .8;
+    filter: brightness(75%);
+    /* opacity: .8; */
 }
 
 .card-item-title{
     font-family: 'NunitoBold';
+    display:flex;
 }
 .card img.thumbnail{
     width: 100%;
@@ -197,6 +210,7 @@ nav ul li{
 
 .difficulty {
     max-width: 150px;
+    padding: 0 5px;
 }
 
 #start-here{
@@ -220,7 +234,7 @@ nav ul li{
 
 .featured-list{
     margin: 0;
-    padding: 75px 75px 0px 75px;
+    padding: 10px 75px 0px 75px;
     background: linear-gradient(180deg, #1C7100 60%, #0000AA 50%);
     display: flex;
     justify-content: center;
@@ -259,9 +273,13 @@ nav ul li{
 }
 
 .return-to-code{
-    display: block;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-size: .8em;
+    margin: -40px 0;
     text-align: center;
-    max-width: 400px;
+    /* max-width: 400px; */
     /* padding:0 0 50px 0; */
 
 }
@@ -272,8 +290,12 @@ nav ul li{
     display: flex;
 }
 
+.col-2 > div{
+    width:50%;
+}
+
 .col-2 img.rowImg{
-    width: 750px;
+    width: 100%;
 }
 
 .mini-col-1{
@@ -302,12 +324,12 @@ button, .btn{
     padding: 15px;
     font-family: 'NunitoSemiBold';
     letter-spacing: 0.035em;
-    transition: opacity .15s;
+    transition: filter .15s;
     cursor: pointer;
 }
 
 button:hover, .btn:hover{
-    opacity: .8;
+    filter: brightness(75%);
 }
 
 /* footer */
@@ -346,7 +368,7 @@ footer div img{
 
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 950px) {
     body{
         min-width: auto;
     }
@@ -391,12 +413,17 @@ footer div img{
 
     .card {
         margin: 50px 0;
+        max-width: 600px;
     }
 
     .col-2 {
         width: 100%;
         display: block;
     }
+    .col-2 > div {
+        width: auto;
+    }
+
 
     .rowImg{
         display: none;
