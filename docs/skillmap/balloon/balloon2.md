@@ -41,7 +41,7 @@ hint~
 
 
 
-## {4. Add Balloon}
+## {3. Add Balloon}
 
 Let's add a balloon **SPRITE**!
 
@@ -89,7 +89,7 @@ let myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
 ```
 
 
-## {5. Move Balloon}
+## {4. Move Balloon}
 
 **Excellent!**
 
@@ -134,12 +134,12 @@ myBalloon.setPosition(80, 93)
 
 
 
-## {6. Blow Up Balloon}
+## {5. Blow Up Balloon}
 
 Now we need to make the balloon bigger each time the (A) button is pressed.
 
 
-- :up-down: From the ``||scaling: Scaling||`` category in the toolbox, grab <br/>
+- :arrows alternate vertical: From the ``||scaling: Scaling||`` category in the toolbox, grab <br/>
  ``||scaling: change [myBalloon] scale by [1] pixels||`` <br/>
 and snap it into the **end** of the <br/>
 ``||controller(noclick): on [A] button [pressed]||`` <br/>
@@ -165,7 +165,7 @@ scaling.scaleByPixels(myBalloon, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom
 
 
 
-## {7. Check Your Game!}
+## {6. Check Your Game!}
 
 **Try your game now!**
 
@@ -178,7 +178,7 @@ Press the (A) button (or **space bar**) as fast as you can.  You should see the 
 
 
 
-## {8. Add a Booth}
+## {7. Add a Booth}
 
 **Let's add a booth sprite!**
 
@@ -212,6 +212,8 @@ let myBooth = sprites.create(img`.`, SpriteKind.Booth)
 info.startCountdownGame(20, winTypes.Score)
 scene.setBackgroundColor(1)
 let myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
+myBalloon.setPosition(80, 93)
+
     //@highlight
 let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
 ```
@@ -219,7 +221,7 @@ let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
 
 
 
-## {9. Win on Overlap}
+## {8. Win on Overlap}
 
 Let's make our game even more fun by adding a way to **"win"** when the balloon reaches the line!
 
@@ -251,7 +253,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSp
 
 
 
-## {10. Game Over Win}
+## {9. Game Over Win}
 
 - :circle: From the ``||game: Game||`` category in the toolbox, grab <br/>
 ``||game: game over [multiplayer]||`` <br/>
@@ -281,7 +283,7 @@ game.onGameOverExpanded(winTypes.Multi)
 ```
 
 
-## {11. Play Your Game}
+## {10. Play Your Game}
 
 
 **Win your game!**
@@ -304,7 +306,7 @@ hint~
 
 
 
-## {12. Finale}
+## {11. Finale}
 
 **🎈 FANTASTIC 🎈**
 

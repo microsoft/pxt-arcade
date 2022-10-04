@@ -304,7 +304,7 @@ controller.B.onEvent(ControllerButtonEvent.Released, function () {
 
 ~hint Tell me more... 🕵🏽
 
-- :up-down: From the ``||scaling: Scaling||`` category in the toolbox, grab <br/>
+- :arrows alternate vertical: From the ``||scaling: Scaling||`` category in the toolbox, grab <br/>
 ``||scaling: change [myBalloon2] scale by [1] pixels [uniformly] anchor [bottom]|| `` <br/>
 and snap it into the <br/>
 ``||controller(noclick): on [B] button [pressed]||`` <br/>
@@ -380,7 +380,7 @@ Last step!
 
 ~hint Tell me more... 🕵🏽
 
-- :up-down: From the ``||scene: Scene||`` category in the toolbox, grab <br/>
+- :arrows alternate vertical: From the ``||scene: Scene||`` category in the toolbox, grab <br/>
 ``||scene: add label [Burstin' Balloons] to [middle] of window || `` <br/>
 and snap it into the **top** of the ``||loops(noclick): on start||``
 block already in the workspace.

@@ -137,7 +137,6 @@ Click the (A) button as fast as you can.  You can also use the **space bar** on 
 
 You should see the score go up with each click.
 
-![Look for the game window in the lower right](/static/skillmap/mole/game1.png "Click the mini game window to pop open the bigger game window.")
 
 ---
 
@@ -145,7 +144,8 @@ Clicking the button is the **EVENT** that causes the score to go up!
 
 ~hint Click here to see how 🕵🏽
 
-![Look for the game window in the lower right](/static/skillmap/balloon/game.gif "Click the mini game window to pop open the playable console.")
+
+![Look for the game window in the lower right](/static/skillmap/mole/game1.png "Click the mini game window to pop open the bigger game window.")
 
 hint~
 
